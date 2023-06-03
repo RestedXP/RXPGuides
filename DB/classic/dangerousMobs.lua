@@ -56,14 +56,14 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Fast Patrol",
         Notes = "Run around lake, can easily catch you off guard",
-        Location = ".line Elwynn Forest,50.66,50.75,48.99,66.17,48.84,68.17,50.03,68.64,52.01,68.71,52.96,67.93,53.37,68.65,54.41,68.78,54.75,68.57,55.68,69.04,56.40,68.90,57.63,67.34,57.76,65.51,56.34,63.73,53.83,63.30,52.07,66.16,50.66,50.75 (fast);.mob Murloc Streamrunner"
+        Location = ".line Elwynn Forest,50.66,65.31,48.99,66.17,48.84,68.17,50.03,68.64,52.01,68.71,52.96,67.93,53.37,68.65,54.41,68.78,54.75,68.57,55.68,69.04,56.40,68.90,57.63,67.34,57.76,65.51,56.34,63.73,53.83,63.30,52.07,66.16,50.66,50.75 (fast);.mob Murloc Streamrunner"
         },
         {
         MinLevel = 6,
         MaxLevel = 6,
         Classification = "Normal",
         Movement = "Slow Patrol",
-        Notes = "Patrol of 2. Walks around lake",
+        Notes = "Patrol of 2",
         Location = ".line Elwynn Forest,50.50,68.56,51.03,68.93,52.00,68.70,52.41,68.59,53.37,68.84,54.83,68.52,55.68,69.08,57.00,68.73,57.69,67.16,57.90,65.78,57.29,64.36,56.57,63.56,54.68,63.37,53.27,63.65,52.97,63.98,52.57,65.58,52.12,66.24,51.29,65.95,50.66,65.35;.mob Murloc Streamrunner"
         },
         {
@@ -71,7 +71,7 @@ local dangerousMobs = {
         MaxLevel = 6,
         Classification = "Normal",
         Movement = "Slow Patrol",
-        Notes = "Patrol of 2. Walks around lake",
+        Notes = "Patrol of 2",
         Location = ".line Elwynn Forest,51.10,65.84,51.77,66.31,52.03,66.23,52.56,65.57,53.31,63.78,54.01,63.16,54.75,63.47,55.96,63.66,56.61,63.57,57.76,65.43,57.77,67.20,57.27,68.38,56.15,69.10,55.30,69.10,54.69,68.72,53.22,68.96,52.58,68.76,51.97,68.74,51.38,68.90;.mob Murloc Streamrunner"
         },
       },
@@ -81,7 +81,7 @@ local dangerousMobs = {
         MaxLevel = 9,
         Classification = "Rare",
         Movement = "Idle",
-        Notes = "Backstabs for a lot of damage, don't turn your back",
+        Notes = "Backstabs ",
         Location = ".pin Elwynn Forest,29.8,59.2;.pin Elwynn Forest,50.4,59.2;.pin Elwynn Forest,53.8,59.2;.pin Elwynn Forest,50.0,85.6;.pin Elwynn Forest,52.0,80.6;.pin Elwynn Forest,88.2,81.2;.pin Elwynn Forest,90.6,79.6;.pin Elwynn Forest,87.2,78.6;.pin Elwynn Forest,90.4,76.2;.mob Thuros Lightfingers"
         },
       },
@@ -91,7 +91,7 @@ local dangerousMobs = {
         MaxLevel = 10,
         Classification = "Rare",
         Movement = "Idle",
-        Notes = "Backstabs for a lot of damage, don't turn your back",
+        Notes = "Backstabs ",
         Location = ".pin Elwynn Forest,31.6,64.8;.mob Morgaine the Sly"
         },
       },
@@ -135,7 +135,7 @@ local dangerousMobs = {
         MaxLevel = 8,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "Just hits hard. Typically has an add depending on spawn.",
+        Notes = "Hits hard and sometimes has adds",
         Location = ".pin Teldrassil,51.6,50.2;.mob Lord Melenas"
         },
       },
@@ -145,7 +145,7 @@ local dangerousMobs = {
         MaxLevel = 11,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "Lots of damage + has a self heal if not bursted down",
+        Notes = "Lots of damage, self-heals",
         Location = ".pin Teldrassil,32.2,32.8;.pin Teldrassil,34.2,29.8;.pin Teldrassil,36.8,28.0;.mob Bloodfeather Matriarch"
         },
       },
@@ -155,7 +155,7 @@ local dangerousMobs = {
         MaxLevel = 13,
         Classification = "Rare",
         Movement = "Idle",
-        Notes = "He hits really hard",
+        Notes = "Hits very hard",
         Location = ".pin Teldrassil,42.8,38.6;.pin Teldrassil,43.6,32.0;.pin Teldrassil,44.6,27.6;.pin Teldrassil,42.2,25.6;.mob Blackmoss the Fetid"
         },
       },
@@ -180,8 +180,6 @@ local dangerousMobs = {
         Notes = "High damage fireballs",
         Location = ".pin Westfall, 42.0,69.0;.pin Westfall,44.6,65.6;.pin Westfall,45.6,69.0;.mob Defias Pillager"
         },
-      },
-      ["Defias Pillager (Alexston)"] = {
         {
         MinLevel = 14,
         MaxLevel = 15,
@@ -190,8 +188,6 @@ local dangerousMobs = {
         Notes = "High damage fireballs",
         Location = ".line Westfall,37.42,58.20,37.08,58.01,36.71,57.62,36.60,56.95,36.71,56.33;.mob Defias Pillager"
         },
-      },
-      ["Defias Pillager (Moonbrook)"] = {
         {
         MinLevel = 12,
         MaxLevel = 13,
@@ -201,7 +197,7 @@ local dangerousMobs = {
         Location = ".line Westfall,43.05,67.05,43.13,68.48,43.36,68.94,43.84,68.86,44.18,68.56,44.14,67.04,43.80,66.21,43.21,66.17,43.05,67.05;.mob Defias Pillager"
         },
       },
-      ["Defias Trapper (Alexston)"] = {
+      ["Defias Trapper"] = {
         {
         MinLevel = 12,
         MaxLevel = 13,
@@ -228,7 +224,7 @@ local dangerousMobs = {
         Classification = "Rare",
         Movement = "Idle",
         Notes = "Very high level rare",
-        Location = ".pin Westfall,36.6,67.8;.pin Westfall,45.6,60.2;.pin Westfall,63.0,74.8;.pin Westfall,64.4,56.0;.pin Westfall,48.0,43.4;.pin Westfall,51.6,23.6;.mob Vultros"
+        Location = ".pin Westfall,36.6,67.8;.pin Westfall.45.6,60.2;.pin Westfall.63.0,74.8;.pin Westfall.64.4,56.0;.pin Westfall.48.0,43.4;.pin Westfall.51.6,23.6;.mob Vultros"
         },
       },
       ["Foe Reaper 4000"] = {
@@ -238,7 +234,7 @@ local dangerousMobs = {
         Classification = "Rare",
         Movement = "Idle",
         Notes = "Very high level rare",
-        Location = ".pin Westfall,50.8,26.0;.pin Westfall,50.8,21.8;.pin Westfall,44.6,32.8;.pin Westfall,44.2,39.4;.pin Westfall,37.8,47.8;.pin Westfall,38.0,51.8;.mob Foe Reaper 4000"
+        Location = ".pin Westfall.50.8,26.0;.pin Westfall.50.8,21.8;.pin Westfall.44.6,32.8;.pin Westfall.44.2,39.4;.pin Westfall.37.8,47.8;.pin Westfall,38.0,51.8;.mob Foe Reaper 4000"
         },
       },
       ["Leprithus"] = {
@@ -280,7 +276,7 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "High damage spells",
-        Location = ".pin Loch Modan,36.2,26.6;.pin Loch Modan,35.0,26.6;.pin Loch Modan,35.4,18.4;.mob Tunnel Rat Geomancer"
+        Location = ".pin Loch Modan,36.2,26.6;.pin Loch Modan,35.4,18.4;.mob Tunnel Rat Geomancer"
         },
       },
       ["Stonesplitter Geomancer"] = {
@@ -311,7 +307,7 @@ local dangerousMobs = {
         MaxLevel = 20,
         Classification = "Elite",
         Movement = "Idle",
-        Notes = "High damage. Is cheesable/fearable oddly",
+        Notes = "High damage, fearable",
         Location = ".pin Darkshore,56.8,13.8;.mob The Threshwackonator 4100"
         },
       },
@@ -444,7 +440,7 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Slow Patrol",
         Notes = "Has two adds tied to his leash",
-        Location = ".pin Redridge Mountains,79.4,37.4;.pin Redridge Mountains,81.6,38.6;.pin Redridge Mountains,79.4,40.0;.pin Redridge Mountains,82.6,40.2;.pin Redridge Mountains,84.2,46.8;.mob Lieutenant Fangore"
+        Location = ".pin Redridge Mountains,79.4,37.4;.mob Lieutenant Fangore"
         },
       },
       ["Black Dragon Whelp"] = {
@@ -454,7 +450,7 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Slow Patrol",
         Notes = "Very high damage if fought at level",
-        Location = ".pin Redridge Mountains,23.6,62.8;.pin Redridge Mountains,17.6,72.2;.pin Redridge Mountains,26.4,77.0;.pin Redridge Mountains,31.2,74.4;.pin Redridge Mountains,36.6,73.8;.pin Redridge Mountains,34.6,67.6;.pin Redridge Mountains,33.2,63.0;.pin Redridge Mountains,37.8,74.8;.pin Redridge Mountains,45.0,77.6;.pin Redridge Mountains,48.8,76.6;.pin Redridge Mountains,51.6,75.2;.pin Redridge Mountains,54.6,73.8;.pin Redridge Mountains,57.4,75.6;.pin Redridge Mountains,58.8,78.8;.pin Redridge Mountains,61.6,78.0;.pin Redridge Mountains,62.0,73.8;.pin Redridge Mountains,66.4,76.6;.pin Redridge Mountains,52.6,39.6;.pin Redridge Mountains,47.6,38.2;.pin Redridge Mountains,43.8,38.4;.pin Redridge Mountains,46.6,34.6;.pin Redridge Mountains,42.4,33.4;.pin Redridge Mountains,43.6,30.4;.pin Redridge Mountains,23.8,35.2;.mob Black Dragon Whelp"
+        Location = ".pin Redridge Mountains,23.6,62.8;.pin Redridge Mountains,17.6,72.2;.pin Redridge Mountains,26.4,77.0;.pin Redridge Mountains,31.2,74.4;.pin Redridge Mountains,36.6,73.8;.pin Redridge Mountains,34.6,67.6;.pin Redridge Mountains,33.2,63.0;.pin Redridge Mountains,45.0,77.6;.pin Redridge Mountains,48.8,76.6;.pin Redridge Mountains,51.6,75.2;.pin Redridge Mountains,54.6,73.8;.pin Redridge Mountains,57.4,75.6;.pin Redridge Mountains,61.6,78.0;.pin Redridge Mountains,62.0,73.8;.pin Redridge Mountains,66.4,76.6;.pin Redridge Mountains,52.6,39.6;.pin Redridge Mountains,43.8,38.4;.pin Redridge Mountains,46.6,34.6;.pin Redridge Mountains,42.4,33.4;.pin Redridge Mountains,23.8,35.2;.mob Black Dragon Whelp"
         },
       },
       ["Murloc Minor Tidecaller"] = {
@@ -495,7 +491,7 @@ local dangerousMobs = {
         MaxLevel = 24,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "Can summon voidwalkers and has a succubus pet",
+        Notes = "Summons voidwalker, has succubus pet",
         Location = ".pin Ashenvale,25.2,60.6;.mob Ilkrud Magthrull"
         },
       },
@@ -528,11 +524,21 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "Hyperspawns",
-        Location = ".pin Duskwood,59.4,80.2;.pin Duskwood,61.2,81.6;.pin Duskwood,62.6,82.4;.pin Duskwood,63.6,78.8;.pin Duskwood,71.4,74.4;.pin Duskwood,74.0,74.6;.pin Duskwood,74.6,71.6;.pin Duskwood,72.6,66.4;.pin Duskwood,70.4,71.6;.pin Duskwood,72.2,70.6;.mob Nightbane Vile Fang"
+        Location = ".pin Duskwood,59.4,80.2;.pin Duskwood,63.6,78.8;.pin Duskwood,71.4,74.4;.pin Duskwood,74.0,74.6;.pin Duskwood,72.6,66.4;.mob Nightbane Vile Fang"
         },
       },
     },
     ['Stonetalon Mountains'] = {
+      ["Taskmaster Whipfang "] = {
+        {
+        MinLevel = 22,
+        MaxLevel = 22,
+        Classification = "Rare Elite",
+        Movement = "Idle",
+        Notes = "Fears, hits very fast",
+        Location = ".pin Stonetalon Mountains,61.6,49.2;.pin Stonetalon Mountains,64.8,48.4;.pin Stonetalon Mountains,64.6,54.6;.pin Stonetalon Mountains,65.0,58.4;.pin Stonetalon Mountains,63.0,57.8;.pin Stonetalon Mountains,61.2,58.4;.pin Stonetalon Mountains,59.4,54.0;.pin Stonetalon Mountains,61.8,51.6;.mob Taskmaster Whipfang"
+        },
+      },
       ["Foreman Rigger"] = {
         {
         MinLevel = 24,
@@ -553,16 +559,6 @@ local dangerousMobs = {
         Location = ".line Stonetalon Mountains,47.60,47.58,47.82,48.01,48.67,48.01,48.89,48.10,49.23,47.98,49.42,47.50,48.98,47.13,48.70,47.04,48.36,47.15,48.18,46.72,47.70,46.72,47.08,45.32,46.95,44.86,47.05,44.17,47.34,43.81,47.14,43.22,46.59,42.55,45.96,41.35,45.77,40.76,45.84,39.81,45.53,39.46,44.76,39.78,44.34,39.69,44.12,40.27,44.10,41.02,44.92,41.70,44.93,42.30,45.13,43.15,45.17,43.48,44.67,43.98,44.50,44.58,44.70,44.97,45.25,44.98,45.61,45.42,45.93,45.93,46.13,46.54,46.72,47.02,47.60,47.58;.mob Pridewing Patriarch"
         },
       },
-      ["Taskmaster Whipfang "] = {
-        {
-        MinLevel = 22,
-        MaxLevel = 22,
-        Classification = "Rare Elite",
-        Movement = "Idle",
-        Notes = "Fears, hits very fast",
-        Location = ".pin Stonetalon Mountains,61.6,49.2;.pin Stonetalon Mountains,64.8,48.4;.pin Stonetalon Mountains,64.6,54.6;.pin Stonetalon Mountains,65.0,58.4;.pin Stonetalon Mountains,63.0,57.8;.pin Stonetalon Mountains,61.2,58.4;.pin Stonetalon Mountains,59.4,54.0;.pin Stonetalon Mountains,62.6,56.2;.pin Stonetalon Mountains,61.8,51.6;.mob Taskmaster Whipfang"
-        },
-      },
     },
     ['Wetlands'] = {
       ["Dragonmaw Raider"] = {
@@ -571,7 +567,7 @@ local dangerousMobs = {
         MaxLevel = 27,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "Nets and fast dps",
+        Notes = "Nets and dual wields/high dps",
         Location = ".pin Wetlands,40.2,46.4;.pin Wetlands,42.2,44.6;.pin Wetlands,42.0,39.4;.pin Wetlands,45.6,44.6;.pin Wetlands,47.8,46.0;.pin Wetlands,49.6,48.6;.pin Wetlands,52.4,45.8;.mob Dragonmaw Raider"
         },
       },
@@ -603,7 +599,7 @@ local dangerousMobs = {
         MaxLevel = 55,
         Classification = "Normal",
         Movement = "Slow Patrol",
-        Notes = "Roaming guard",
+        Notes = "Patrols up to the road leading into Alterac",
         Location = ".line Hillsbrad Foothills,61.36,20.02,61.07,20.17,60.84,20.47,60.51,21.05,59.98,21.29,59.62,21.23,59.27,21.05,59.07,20.78,58.91,20.45,58.80,20.03,58.28,19.54,58.06,19.48,57.61,19.70,57.27,19.78,56.92,19.82,56.70,19.76,56.37,19.57,56.05,19.58,55.83,19.66;.mob Tarren Mill Deathguard"
         },
       },
@@ -613,7 +609,7 @@ local dangerousMobs = {
         MaxLevel = 38,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "Many spawn in Southshore, stealth, high level",
+        Notes = "Very high level, stealth, many spawn in Southshore",
         Location = ".pin Hillsbrad Foothills,49.0,55.2;.pin Hillsbrad Foothills,52.2,56.0;.pin Hillsbrad Foothills,51.6,62.4;.pin Hillsbrad Foothills,49.4,59.0;.mob Shadowy Assassin"
         },
       },
@@ -625,16 +621,6 @@ local dangerousMobs = {
         Movement = "Slow Patrol",
         Notes = "Roaming pack of 5",
         Location = ".line Hillsbrad Foothills,82.61,57.64,81.95,56.88,81.53,56.52,80.58,55.45,79.48,54.86,78.41,54.14,77.07,53.10,75.15,50.85,74.15,49.68,72.83,48.54,72.22,48.00,70.13,46.58,68.52,45.89,67.53,45.00,66.62,43.63,65.66,42.44,64.37,41.97,63.47,41.85,61.93,41.22,61.08,40.43,59.39,38.34,57.79,36.74,57.40,35.67,56.95,34.04,56.41,31.49,56.34,30.91,56.03,29.69,55.87,28.31,55.72,27.07,55.65,24.22,55.73,22.44,55.76,20.79,55.66,19.72,56.22,19.57,56.78,19.79,57.21,19.83,58.18,19.47,58.70,19.92;.mob Forsaken Courier"
-        },
-      },
-      ["Narillasanz"] = {
-        {
-        MinLevel = 44,
-        MaxLevel = 44,
-        Classification = "Rare Elite",
-        Movement = "Slow Patrol",
-        Notes = "Roams around Hillsbrad",
-        Location = ".line Hillsbrad Foothills,73.70,56.43,74.53,54.28,75.04,53.46,76.07,53.20,76.77,52.03,76.99,50.58,76.24,48.99,75.50,48.08,75.01,47.03,77.64,45.17,78.50,43.87,79.70,43.02,80.43,44.45,80.13,46.17,81.00,47.46,81.84,49.20,81.97,50.86,79.93,54.01,78.80,53.01,78.10,50.83,78.93,49.45,78.80,47.67,79.81,47.03,80.98,48.43,82.25,49.38,83.07,50.77,83.85,52.74,83.90,54.22,84.36,55.14,84.24,56.11,82.79,56.17,81.32,55.14,79.41,58.86,78.56,61.08,77.26,62.53,75.47,63.64,74.71,63.20,74.09,60.65,74.29,60.27,73.92,58.40,73.70,56.43;.mob Narillasanz"
         },
       },
       ["Helcular's Remains"] = {
@@ -655,7 +641,7 @@ local dangerousMobs = {
         MaxLevel = 40,
         Classification = "Elite",
         Movement = "Slow Patrol",
-        Notes = "",
+        Notes = "Basic elite",
         Location = ".line Alterac Mountains,34.49,49.84,34.42,50.90,34.77,50.96,36.57,49.58,37.49,51.34,38.06,53.03,38.35,54.29,38.97,54.86,39.28,54.74;.mob Crushridge Mauler"
         },
       },
@@ -675,8 +661,48 @@ local dangerousMobs = {
         MaxLevel = 39,
         Classification = "Elite",
         Movement = "Slow Patrol",
-        Notes = "",
+        Notes = "Basic elite; has a flame ward",
         Location = ".line Alterac Mountains,35.58,54.44,35.26,54.33,35.20,54.18,35.77,53.74,36.26,55.11,36.66,54.81,36.29,53.75,37.30,52.85,37.59,52.71,38.24,52.79,38.87,51.55,39.28,50.93,39.52,49.71,40.14,47.23,40.91,46.30,40.24,46.09,40.13,47.69,39.19,51.17,38.51,52.01,38.11,52.68,37.46,52.78,36.28,53.71,35.88,52.69,35.52,53.01,35.77,53.74,35.20,54.18,35.26,54.33,35.58,54.44;.mob Grel'borg the Miser"
+        },
+      },
+      ["Lord Aliden Perenolde"] = {
+        {
+        MinLevel = 41,
+        MaxLevel = 41,
+        Classification = "Normal",
+        Movement = "Idle",
+        Notes = "High level for the area, has renew/PW:S, social aggro and house is bugged",
+        Location = ".pin Alterac Mountains,40.1,15.2;.mob Lord Aliden Perenolde"
+        },
+      },
+      ["Syndicate Assassin"] = {
+        {
+        MinLevel = 38,
+        MaxLevel = 39,
+        Classification = "Normal",
+        Movement = "Idle",
+        Notes = "Stealthed mobs around the house of Lord Aliden Perenolde, easily ass-pulled",
+        Location = ".pin Alterac Mountains,38.50,21.80;.pin Alterac Mountains,40.77,19.50;.pin Alterac Mountains,41.17,15.45;.pin Alterac Mountains,39.55,12.48;.pin Alterac Mountains,36.88,12.91;.pin Alterac Mountains,37.45,16.39;.pin Alterac Mountains,39.17,14.94;.mob Syndicate Assassin"
+        },
+      },
+      ["Syndicate Enforcer"] = {
+        {
+        MinLevel = 39,
+        MaxLevel = 40,
+        Classification = "Normal",
+        Movement = "Idle",
+        Notes = "Easily double pulled, they have a strong whirlwind ability",
+        Location = ".pin Alterac Mountains,38.50,21.80;.pin Alterac Mountains,40.77,19.50;.pin Alterac Mountains,41.17,15.45;.pin Alterac Mountains,39.55,12.48;.pin Alterac Mountains,36.88,12.91;.pin Alterac Mountains,37.45,16.39;.pin Alterac Mountains,39.17,14.94;.mob Syndicate Enforcer"
+        },
+      },
+      ["Narillasanz"] = {
+        {
+        MinLevel = 44,
+        MaxLevel = 44,
+        Classification = "Rare Elite",
+        Movement = "Slow Patrol",
+        Notes = "Fire breath, renews, immune to fear",
+        Location = ".line Alterac Mountains,73.70,56.43,74.53,54.28,75.04,53.46,76.07,53.20,76.77,52.03,76.99,50.58,76.24,48.99,75.50,48.08,75.01,47.03,77.64,45.17,78.50,43.87,79.70,43.02,80.43,44.45,80.13,46.17,81.00,47.46,81.84,49.20,81.97,50.86,79.93,54.01,78.80,53.01,78.10,50.83,78.93,49.45,78.80,47.67,79.81,47.03,80.98,48.43,82.25,49.38,83.07,50.77,83.85,52.74,83.90,54.22,84.36,55.14,84.24,56.11,82.79,56.17,81.32,55.14,79.41,58.86,78.56,61.08,77.26,62.53,75.47,63.64,74.71,63.20,74.09,60.65,74.29,60.27,73.92,58.40,73.70,56.43;.mob Narillasanz"
         },
       },
     },
@@ -701,24 +727,6 @@ local dangerousMobs = {
       },
     },
     ['Stranglethorn Vale'] = {
-      ["Bloodscalp Shaman"] = {
-        {
-        MinLevel = 33,
-        MaxLevel = 34,
-        Classification = "Normal",
-        Movement = "Idle",
-        Notes = "Enrage, Fire Nova, dense area",
-        Location = ".pin Stranglethorn Vale,24.6,9.2;.pin Stranglethorn Vale,22.6,8.4;.pin Stranglethorn Vale,23.2,10.8;.pin Stranglethorn Vale,20.8,12.2;.pin Stranglethorn Vale,19.4,12.8;.pin Stranglethorn Vale,21.4,14.4;.mob Bloodscalp Shaman"
-        },
-        {
-        MinLevel = 33,
-        MaxLevel = 34,
-        Classification = "Normal",
-        Movement = "Idle",
-        Notes = "Enrage, Fire Nova, dense area",
-        Location = ".pin Stranglethorn Vale,24.6,9.2;.pin Stranglethorn Vale,22.6,8.4;.pin Stranglethorn Vale,23.2,10.8;.pin Stranglethorn Vale,20.8,12.2;.pin Stranglethorn Vale,19.4,12.8;.pin Stranglethorn Vale,21.4,14.4;.mob Bloodscalp Shaman"
-        },
-      },
       ["Bhag'thera"] = {
         {
         MinLevel = 40,
@@ -747,6 +755,116 @@ local dangerousMobs = {
         Movement = "Idle",
         Notes = "Calls for help and summons adds at half HP",
         Location = ".pin Stranglethorn Vale,38.6,35.6;.mob King Bangalash"
+        },
+      },
+      ["Garr Salthoof"] = {
+        {
+        MinLevel = 43,
+        MaxLevel = 43,
+        Classification = "Normal",
+        Movement = "Idle",
+        Notes = "Easily double-pulled, charges, stuns",
+        Location = ".pin Stranglethorn Vale,29.2,88.8;.mob Garr Salthoof"
+        },
+      },
+      ["Mogh the Undying"] = {
+        {
+        MinLevel = 44,
+        MaxLevel = 44,
+        Classification = "Elite",
+        Movement = "Idle",
+        Notes = "Summons adds, drains them for HP, hyperspawn",
+        Location = ".pin Stranglethorn Vale,47.6,44.2;.mob Mogh the Undying"
+        },
+      },
+      ["Lord Sakrasis"] = {
+        {
+        MinLevel = 45,
+        MaxLevel = 45,
+        Classification = "Normal",
+        Movement = "Idle",
+        Notes = "Executes",
+        Location = ".pin Stranglethorn Vale,28.6,62.2;.mob Lord Sakrasis"
+        },
+      },
+      ["Ana'thek the Cruel <Skullsplitter Chief>"] = {
+        {
+        MinLevel = 45,
+        MaxLevel = 45,
+        Classification = "Normal",
+        Movement = "Slow Patrol",
+        Notes = "Executes; pulls with 2 adds in busy area",
+        Location = ".line Stranglethorn Vale,44.25,44.95,44.52,44.45,44.69,44.06,45.04,43.04,45.27,42.45,45.52,41.69,45.68,41.29,46.07,40.99,46.64,40.90,46.98,40.87;.mob Ana'thek the Cruel"
+        },
+      },
+      ["Gorlash"] = {
+        {
+        MinLevel = 47,
+        MaxLevel = 47,
+        Classification = "Elite",
+        Movement = "Idle",
+        Notes = "AoE damage",
+        Location = ".pin Stranglethorn Vale,36.6,69.6;.mob Gorlash"
+        },
+      },
+      ["Fleet Master Firallon"] = {
+        {
+        MinLevel = 48,
+        MaxLevel = 48,
+        Classification = "Normal",
+        Movement = "Idle",
+        Notes = "Double-pull, dual wields/buffs adds",
+        Location = ".pin Stranglethorn Vale,30.6,90.6;.mob Fleet Master Firallon"
+        },
+      },
+      ["Bloodscalp Shaman"] = {
+        {
+        MinLevel = 33,
+        MaxLevel = 34,
+        Classification = "Normal",
+        Movement = "Idle",
+        Notes = "Enrage, Fire Nova, dense area",
+        Location = ".pin Stranglethorn Vale,24.6,9.2;.pin Stranglethorn Vale,22.6,8.4;.pin Stranglethorn Vale,23.2,10.8;.pin Stranglethorn Vale,20.8,12.2;.pin Stranglethorn Vale,19.4,12.8;.pin Stranglethorn Vale,21.4,14.4;.mob Bloodscalp Shaman"
+        },
+      },
+      ["Bloodscalp Berserker"] = {
+        {
+        MinLevel = 36,
+        MaxLevel = 37,
+        Classification = "Normal",
+        Movement = "Idle",
+        Notes = "Enrage, dense area",
+        Location = ".pin Stranglethorn Vale,24.6,9.2;.pin Stranglethorn Vale,22.6,8.4;.pin Stranglethorn Vale,23.2,10.8;.pin Stranglethorn Vale,20.8,12.2;.pin Stranglethorn Vale,19.4,12.8;.pin Stranglethorn Vale,21.4,14.4;.mob Bloodscalp Berserker"
+        },
+      },
+      ["Bloodscalp Headhunter"] = {
+        {
+        MinLevel = 36,
+        MaxLevel = 37,
+        Classification = "Normal",
+        Movement = "Idle",
+        Notes = "Enrage, net, dense area",
+        Location = ".pin Stranglethorn Vale,24.6,9.2;.pin Stranglethorn Vale,22.6,8.4;.pin Stranglethorn Vale,23.2,10.8;.pin Stranglethorn Vale,20.8,12.2;.pin Stranglethorn Vale,19.4,12.8;.pin Stranglethorn Vale,21.4,14.4;.mob Bloodscalp Headhunter"
+        },
+      },
+      ["Bloodscalp Hunter"] = {
+        {
+        MinLevel = 33,
+        MaxLevel = 34,
+        Classification = "Normal",
+        Movement = "Idle",
+        Notes = "Net, pet",
+        Location = ".pin Stranglethorn Vale,24.6,9.2;.pin Stranglethorn Vale,22.6,8.4;.pin Stranglethorn Vale,23.2,10.8;.pin Stranglethorn Vale,20.8,12.2;.pin Stranglethorn Vale,19.4,12.8;.pin Stranglethorn Vale,21.4,14.4;.mob Bloodscalp Hunter"
+        },
+      },
+      ["Gan'zulah"] = {
+        {
+        MinLevel = 41,
+        MaxLevel = 41,
+        Classification = "Normal",
+        Movement = "Idle",
+        Notes = "Enrage, dual wield, unavoidable multi-pull, high level for area, hits hard",
+        Location = ".pin Stranglethorn Vale,23.8,8.6;.mob Gan'zulah"
         },
       },
       ["Mosh'Ogg Warmonger"] = {
@@ -779,16 +897,6 @@ local dangerousMobs = {
         Location = ".pin Stranglethorn Vale,47.0,24.8;.pin Stranglethorn Vale,49.2,27.0;.pin Stranglethorn Vale,50.4,26.4;.pin Stranglethorn Vale,48.8,28.6;.pin Stranglethorn Vale,48.4,31.6;.pin Stranglethorn Vale,49.6,31.0;.mob Mosh'Ogg Shaman"
         },
       },
-      ["Mogh the Undying"] = {
-        {
-        MinLevel = 44,
-        MaxLevel = 44,
-        Classification = "Elite",
-        Movement = "Idle",
-        Notes = "Summons adds, drains them for HP, hyperspawn",
-        Location = ".pin Stranglethorn Vale,47.6,44.2;.mob Mogh the Undying"
-        },
-      },
       ["Jon-Jon the Crow"] = {
         {
         MinLevel = 43,
@@ -799,64 +907,86 @@ local dangerousMobs = {
         Location = ".pin Stranglethorn Vale,34.8,51.8;.mob Jon-Jon the Crow"
         },
       },
-      ["Garr Salthoof"] = {
+    },
+    ['Thousand Needles'] = {
+      ["Heartrazor"] = {
         {
-        MinLevel = 43,
-        MaxLevel = 43,
+        MinLevel = 32,
+        MaxLevel = 32,
+        Classification = "Rare Elite",
+        Movement = "Slow Patrol",
+        Notes = "Poison deals considerable damage",
+        Location = ".line Thousand Needles,15.45,40.02,15.58,40.55,15.67,41.06,15.98,41.43,16.19,41.42,16.33,41.56,16.53,41.46,17.01,41.54,17.62,40.66,18.20,41.13,18.13,41.73,18.19,42.07,17.93,42.52,17.52,42.60,16.99,41.91,17.01,41.54;.mob Heartrazor"
+        },
+      },
+      ["Ironeye the Invincible"] = {
+        {
+        MinLevel = 32,
+        MaxLevel = 32,
+        Classification = "Rare Elite",
+        Movement = "Slow Patrol",
+        Notes = "Basic elite",
+        Location = ".line Thousand Needles,88.58,76.11,87.99,75.23,87.89,74.49,88.01,73.43,87.81,71.05,87.53,70.40,87.18,70.68,86.28,72.06,86.54,72.94,87.47,74.18,87.85,75.29,87.77,75.87,87.03,76.81,86.78,77.59,86.93,78.28,86.92,79.04,86.79,79.52,86.99,80.73,87.27,81.04,87.54,80.91,88.63,79.81,88.94,78.91,88.99,77.27,88.72,76.20,88.58,76.11;.mob Ironeye the Invincible"
+        },
+      },
+      ["Vile Sting"] = {
+        {
+        MinLevel = 34,
+        MaxLevel = 34,
+        Classification = "Rare Elite",
+        Movement = "Slow Patrol",
+        Notes = "Basic elite",
+        Location = ".line Thousand Needles,69.86,64.43,70.49,63.62,70.97,63.43,71.45,63.63,71.48,64.19,71.15,65.20,71.15,65.86,71.74,66.12,72.14,66.13,72.56,66.70,72.27,67.50,72.15,67.72,71.92,68.91,71.94,69.58,72.51,70.25,72.89,71.01,72.94,71.26,72.51,71.98,71.92,72.62,71.54,73.21,71.29,73.52,71.41,73.70,71.52,73.71,71.27,74.50,71.40,75.72,72.74,75.70,73.13,74.62,73.13,74.18,72.89,73.48,72.41,72.96,71.56,72.51,71.23,72.58,70.69,71.29,70.50,70.58,70.33,69.62,70.46,69.24,70.35,68.54,70.00,68.03,69.69,66.71,69.68,65.37,69.86,64.43;.mob Vile Sting"
+        },
+      },
+      ["Salt Flats Scavenger"] = {
+        {
+        MinLevel = 30,
+        MaxLevel = 32,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "Easily double-pulled, charges, stuns",
-        Location = ".pin Stranglethorn Vale,29.2,88.8;.mob Garr Salthoof"
+        Notes = "Executes",
+        Location = ".pin Thousand Needles,84.27,82.13;.pin Thousand Needles,87.56,65.48;.mob Salt Flats Scavenger"
         },
       },
-      ["Gorlash"] = {
+      ["Silithid Searcher"] = {
         {
-        MinLevel = 47,
-        MaxLevel = 47,
-        Classification = "Elite",
-        Movement = "Idle",
-        Notes = "AoE damage",
-        Location = ".pin Stranglethorn Vale,36.6,69.6;.mob Gorlash"
-        },
-      },
-      ["Fleet Master Firallon"] = {
-        {
-        MinLevel = 48,
-        MaxLevel = 48,
+        MinLevel = 32,
+        MaxLevel = 33,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "Double-pull, dual wields/buffs adds",
-        Location = ".pin Stranglethorn Vale,30.6,90.6;.mob Fleet Master Firallon"
+        Notes = "Massive social aggro radius/call for help",
+        Location = ".pin Thousand Needles,65.89,86.11;.pin Thousand Needles,68.69,83.74;.pin Thousand Needles,70.72,85.37;.pin Thousand Needles,69.40,88.20;.pin Thousand Needles,68.91,86.08;.mob Silithid Searcher"
         },
       },
-      ["Bloodscalp Hunter"] = {
+      ["Salt Flats Vulture"] = {
+        {
+        MinLevel = 32,
+        MaxLevel = 34,
+        Classification = "Normal",
+        Movement = "Idle",
+        Notes = "Executes",
+        Location = ".pin Thousand Needles,84.27,82.13;.pin Thousand Needles,87.56,65.48;.mob Salt Flats Vulture"
+        },
+      },
+      ["Silithid Hive Drone"] = {
         {
         MinLevel = 33,
         MaxLevel = 34,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "They do a net and have a pet",
-        Location = ".pin Stranglethorn Vale,24.6,9.2;.pin Stranglethorn Vale,22.6,8.4;.pin Stranglethorn Vale,23.2,10.8;.pin Stranglethorn Vale,20.8,12.2;.pin Stranglethorn Vale,19.4,12.8;.pin Stranglethorn Vale,21.4,14.4;.mob Bloodscalp Hunter"
+        Notes = "Massive social aggro radius/call for help",
+        Location = ".pin Thousand Needles,65.89,86.11;.pin Thousand Needles,68.69,83.74;.pin Thousand Needles,70.72,85.37;.pin Thousand Needles,69.40,88.20;.pin Thousand Needles,68.91,86.08;.mob Silithid Hive Drone"
         },
       },
-      ["Bloodscalp Berserker"] = {
+      ["Silithid Invader"] = {
         {
-        MinLevel = 36,
-        MaxLevel = 37,
+        MinLevel = 34,
+        MaxLevel = 35,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "Enrage, dense area",
-        Location = ".pin Stranglethorn Vale,24.6,9.2;.pin Stranglethorn Vale,22.6,8.4;.pin Stranglethorn Vale,23.2,10.8;.pin Stranglethorn Vale,20.8,12.2;.pin Stranglethorn Vale,19.4,12.8;.pin Stranglethorn Vale,21.4,14.4;.mob Bloodscalp Berserker"
-        },
-      },
-      ["Bloodscalp Headhunter"] = {
-        {
-        MinLevel = 36,
-        MaxLevel = 37,
-        Classification = "Normal",
-        Movement = "Idle",
-        Notes = "Enrage, net, dense area",
-        Location = ".pin Stranglethorn Vale,24.6,9.2;.pin Stranglethorn Vale,22.6,8.4;.pin Stranglethorn Vale,23.2,10.8;.pin Stranglethorn Vale,20.8,12.2;.pin Stranglethorn Vale,19.4,12.8;.pin Stranglethorn Vale,21.4,14.4;.mob Bloodscalp Headhunter"
+        Notes = "Massive social aggro radius/call for help",
+        Location = ".pin Thousand Needles,65.89,86.11;.pin Thousand Needles,68.69,83.74;.pin Thousand Needles,70.72,85.37;.pin Thousand Needles,69.40,88.20;.pin Thousand Needles,68.91,86.08;.mob Silithid Invader"
         },
       },
     },
@@ -877,7 +1007,7 @@ local dangerousMobs = {
         MaxLevel = 33,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "Has Fist of Stone ability, 100 dmg bonus per attack but 54% reduced attack speed/movement speed",
+        Notes = "Fist of Stone: +100 dmg per attack, 54% reduced attack/movement speed",
         Location = ".pin Arathi Highlands,53.54,76.79;.mob Boulderfist Ogre"
         },
       },
@@ -887,7 +1017,7 @@ local dangerousMobs = {
         MaxLevel = 34,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "Has Fist of Stone ability, 100 dmg bonus per attack but 54% reduced attack speed/movement speed",
+        Notes = "Fist of Stone: +100 dmg per attack, 54% reduced attack/movement speed",
         Location = ".pin Arathi Highlands,53.54,76.79;.mob Boulderfist Enforcer"
         },
       },
@@ -933,14 +1063,14 @@ local dangerousMobs = {
       },
     },
     ['Badlands'] = {
-      ["Boss Tho'grun"] = {
+      ["Siege Golem"] = {
         {
-        MinLevel = 41,
-        MaxLevel = 42,
-        Classification = "Normal",
+        MinLevel = 40,
+        MaxLevel = 40,
+        Classification = "Rare Elite",
         Movement = "Slow Patrol",
-        Notes = "Quest mob patrolling around the zone with 4-6 mob entourage",
-        Location = ".line Badlands,36.37,71.63,39.75,72.36,43.61,72.61,51.70,73.52,61.89,67.68,54.73,58.52,48.53,53.02,45.44,51.70,41.01,54.95,35.35,56.99,28.17,56.44,19.50,57.77,16.05,64.35,12.51,72.73,12.85,77.42,14.51,79.15,21.83,78.10,25.39,73.02,32.13,74.04,36.37,71.63;.mob Boss Tho'grun"
+        Notes = "Basic elite, nothing special",
+        Location = ".line Badlands,41.68,39.71,40.13,40.09,38.96,40.24,37.78,41.88,36.55,42.56,35.95,43.69,34.97,44.76,34.27,46.35,33.49,47.82,33.21,49.64,32.64,51.13,32.20,52.67,31.78,55.21,31.31,56.80,30.62,57.90,29.48,58.40,27.88,58.13,23.79,57.55,21.26,58.27,20.23,57.85,19.28,58.58,18.87,59.91,18.68,60.39,16.24,63.49,14.81,64.16,11.92,64.04,10.60,63.71,7.83,61.88,6.99,61.68;.mob Siege Golem"
         },
       },
       ["Anathemus"] = {
@@ -950,7 +1080,7 @@ local dangerousMobs = {
         Classification = "Rare Elite",
         Movement = "Slow Patrol",
         Notes = "Patrolling around the zone",
-        Location = ".line Badlands,36.37,71.63,39.75,72.36,43.61,72.61,51.70,73.52,61.89,67.68,54.73,58.52,48.53,53.02,45.44,51.70,41.01,54.95,35.35,56.99,28.17,56.44,19.50,57.77,16.05,64.35,12.51,72.73,12.85,77.42,14.51,79.15,21.83,78.10,25.39,73.02,32.13,74.04,36.37,71.63;.mob Anathemus"
+        Location = ".pin Badlands,36.37,71.63;.pin Badlands,51.70,73.52;.pin Badlands,45.44,51.70;.pin Badlands,56.44,19.50;.pin Badlands,72.73,12.85;.pin Badlands,73.02,32.13;.mob Anathemus"
         },
       },
       ["Zaricotl"] = {
@@ -960,17 +1090,17 @@ local dangerousMobs = {
         Classification = "Rare Elite",
         Movement = "Idle",
         Notes = "Extremely high level for area",
-        Location = ".pin Badlands,56.8,65.6;.pin Badlands,53.4,60.2;.pin Badlands,59.2,56.8;.pin Badlands,60.2,65.0;.pin Badlands,56.2,62.6;.pin Badlands,34.8,73.6;.pin Badlands,39.6,65.2;.pin Badlands,32.4,65.2;.pin Badlands,39.8,58.6;.pin Badlands,42.2,52.0;.pin Badlands,32.0,52.8;.pin Badlands,36.4,46.2;.mob Zaricotl"
+        Location = ".pin Badlands,53.4,60.2;.pin Badlands,59.2,56.8;.pin Badlands,60.2,65.0;.pin Badlands,56.2,62.6;.pin Badlands,34.8,73.6;.pin Badlands,39.6,65.2;.pin Badlands,32.4,65.2;.pin Badlands,39.8,58.6;.pin Badlands,42.2,52.0;.pin Badlands,32.0,52.8;.pin Badlands,36.4,46.2;.mob Zaricotl"
         },
       },
-      ["Siege Golem"] = {
+      ["Boss Tho'grun"] = {
         {
-        MinLevel = 40,
-        MaxLevel = 40,
-        Classification = "Rare Elite",
+        MinLevel = 41,
+        MaxLevel = 42,
+        Classification = "Normal",
         Movement = "Slow Patrol",
-        Notes = "Basic elite, nothing special",
-        Location = ".line Badlands,41.68,39.71,40.13,40.09,38.96,40.24,37.78,41.88,36.55,42.56,35.95,43.69,34.97,44.76,34.27,46.35,33.49,47.82,33.21,49.64,32.64,51.13,32.20,52.67,31.78,55.21,31.31,56.80,30.62,57.90,29.48,58.40,27.88,58.13,23.79,57.55,21.26,58.27,20.23,57.85,19.28,58.58,18.87,59.91,18.68,60.39,16.24,63.49,14.81,64.16,11.92,64.04,10.60,63.71,7.83,61.88,6.99,61.68;.mob Siege Golem"
+        Notes = "Quest mob patrolling around the zone with 4-6 mob entourage",
+        Location = ".line Badlands,36.37,71.63,39.75,72.36,43.61,72.61,51.70,73.52,61.89,67.68,54.73,58.52,48.53,53.02,45.44,51.70,41.01,54.95,35.35,56.99,28.17,56.44,19.50,57.77,16.05,64.35,12.51,72.73,12.85,77.42,14.51,79.15,21.83,78.10,25.39,73.02,32.13,74.04,36.37,71.63;.mob Boss Tho'grun"
         },
       },
     },
@@ -991,22 +1121,12 @@ local dangerousMobs = {
         MaxLevel = 47,
         Classification = "Elite",
         Movement = "Idle",
-        Notes = "Extremely high level/thrashes/hard to see",
-        Location = ".pin Dustwallow Marsh,75.6,32.0;.pin Dustwallow Marsh,81.0,52.8;.pin Dustwallow Marsh,74.8,72.8;.pin Dustwallow Marsh,78.2,69.0;.pin Dustwallow Marsh,67.4,61.2;.pin Dustwallow Marsh,67.2,57.2;.pin Dustwallow Marsh,69.0,55.2;.pin Dustwallow Marsh,70.6,52.4;.pin Dustwallow Marsh,70.6,49.4;.pin Dustwallow Marsh,72.6,53.6;71.4;57.8;.pin Dustwallow Marsh,62.6,32.0;.pin Dustwallow Marsh,62.6,28.2;62.8,23.8;.pin Dustwallow Marsh,65.8,22.4;.pin Dustwallow Marsh,65.6,20.2;.pin Dustwallow Marsh,66.8,27.8;.pin Dustwallow Marsh,65.8,30.8;.pin Dustwallow Marsh,64.8,32.6;.mob Brimgore"
+        Notes = "Extremely high level, thrashes, hard to see",
+        Location = ".pin Dustwallow Marsh,75.6,32.0;.pin Dustwallow Marsh,81.0,52.8;.pin Dustwallow Marsh,74.8,72.8;.pin Dustwallow Marsh,78.2,69.0;.pin Dustwallow Marsh,67.4,61.2;.pin Dustwallow Marsh,67.2,57.2;.pin Dustwallow Marsh,69.0,55.2;.pin Dustwallow Marsh,70.6,52.4;.pin Dustwallow Marsh,70.6,49.4;.pin Dustwallow Marsh,72.6,53.6;.pin Dustwallow Marsh,71.4,57.8;.pin Dustwallow Marsh,62.6,32.0;.pin Dustwallow Marsh,62.6,28.2;.pin Dustwallow Marsh,62.8,23.8;.pin Dustwallow Marsh,65.8,22.4;.pin Dustwallow Marsh,65.6,20.2;.pin Dustwallow Marsh,66.8,27.8;.pin Dustwallow Marsh,65.8,30.8;.pin Dustwallow Marsh,64.8,32.6;.mob Coral Shark"
         },
       },
     },
-    ['Hinterlands'] = {
-      ["Vilebranch Ambusher"] = {
-        {
-        MinLevel = 47,
-        MaxLevel = 48,
-        Classification = "Normal",
-        Movement = "Idle",
-        Notes = "Has execute, 3 spawn during chicken escort",
-        Location = ".pin The Hinterlands,69.6,62.4;.mob Vilebranch Ambusher"
-        },
-      },
+    ['The Hinterlands'] = {
       ["Vilebranch Scalper"] = {
         {
         MinLevel = 46,
@@ -1017,14 +1137,14 @@ local dangerousMobs = {
         Location = ".pin The Hinterlands,48.2,66.3;.pin The Hinterlands,53.4,40.6;.pin The Hinterlands,67.2,45.6;.pin The Hinterlands,72.6,48.8;.mob Vilebranch Scalper"
         },
       },
-      ["Vilebranch Kidnapper"] = {
+      ["Vilebranch Ambusher"] = {
         {
-        MinLevel = 49,
-        MaxLevel = 49,
+        MinLevel = 47,
+        MaxLevel = 48,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "3 spawn on Lard Lost His Lunch; executes",
-        Location = ".pin The Hinterlands,84.4,40.9;.mob Vilebranch Kidnapper"
+        Notes = "Has execute, 3 spawn during chicken escort",
+        Location = ".pin The Hinterlands,69.6,62.4;.mob Vilebranch Ambusher"
         },
       },
       ["Gammerita"] = {
@@ -1059,6 +1179,16 @@ local dangerousMobs = {
       },
     },
     ['Searing Gorge'] = {
+      ["Dark Iron Sentry"] = {
+        {
+        MinLevel = 48,
+        MaxLevel = 48,
+        Classification = "Elite",
+        Movement = "Idle",
+        Notes = "Sees through stealth",
+        Location = ".pin Searing Gorge,42.0,35.4;.pin Searing Gorge,34.2,54.0;.pin Searing Gorge,36.6,60.0;.pin Searing Gorge,43.4,62.0;.pin Searing Gorge,49.4,55.8;.mob Dark Iron Sentry"
+        },
+      },
       ["Twilight Dark Shaman"] = {
         {
         MinLevel = 47,
@@ -1066,7 +1196,7 @@ local dangerousMobs = {
         Classification = "Elite",
         Movement = "Idle",
         Notes = "Painful shock/heals",
-        Location = ".pin Searing Gorge,18.6,35.4;.pin Searing Gorge,22.0,36.6;.pin Searing Gorge,23.6,41.2;.pin Searing Gorge,23.6,36.0;.pin Searing Gorge,26.6,34.6;.pin Searing Gorge,25.0,39.6;.mob Twilight Dark Shaman"
+        Location = ".pin Searing Gorge,18.6,35.4;.pin Searing Gorge,22.0,36.6;.pin Searing Gorge,23.6,41.2;.pin Searing Gorge,26.6,34.6;.pin Searing Gorge,25.0,39.6;.mob Twilight Dark Shaman"
         },
       },
       ["Twilight Fire Guard"] = {
@@ -1076,7 +1206,7 @@ local dangerousMobs = {
         Classification = "Elite",
         Movement = "Idle",
         Notes = "AoE fireball",
-        Location = ".pin Searing Gorge,18.6,35.4;.pin Searing Gorge,22.0,36.6;.pin Searing Gorge,23.6,41.2;.pin Searing Gorge,23.6,36.0;.pin Searing Gorge,26.6,34.6;.pin Searing Gorge,25.0,39.6;.pin Searing Gorge,25.8,29.6;.pin Searing Gorge,23.6,27.4;.pin Searing Gorge,27.8,25.0;.pin Searing Gorge,30.6,26.4;.mob Twilight Fire Guard"
+        Location = ".pin Searing Gorge,18.6,35.4;.pin Searing Gorge,22.0,36.6;.pin Searing Gorge,23.6,41.2;.pin Searing Gorge,26.6,34.6;.pin Searing Gorge,25.0,39.6;.pin Searing Gorge,25.8,29.6;.pin Searing Gorge,23.6,27.4;.pin Searing Gorge,27.8,25.0;.pin Searing Gorge,30.6,26.4;.mob Twilight Fire Guard"
         },
       },
       ["Twilight Geomancer"] = {
@@ -1089,16 +1219,6 @@ local dangerousMobs = {
         Location = ".pin Searing Gorge,25.8,29.6;.pin Searing Gorge,23.6,27.4;.pin Searing Gorge,27.8,25.0;.pin Searing Gorge,30.6,26.4;.pin Searing Gorge,16.2,33.6;.pin Searing Gorge,13.6,42.6;.pin Searing Gorge,17.6,43.8;.mob Twilight Geomancer"
         },
       },
-      ["Twilight Idolater"] = {
-        {
-        MinLevel = 49,
-        MaxLevel = 51,
-        Classification = "Elite",
-        Movement = "Idle",
-        Notes = "Nets",
-        Location = ".pin Searing Gorge,27.4,26.0;.pin Searing Gorge,29.6,26.6;.mob Twilight Idolater"
-        },
-      },
       ["Overseer Maltorius"] = {
         {
         MinLevel = 49,
@@ -1109,26 +1229,26 @@ local dangerousMobs = {
         Location = ".pin Searing Gorge,41.0,35.4;.mob Overseer Maltorius"
         },
       },
-      ["Dark Iron Sentry"] = {
+      ["Twilight Idolater"] = {
         {
-        MinLevel = 48,
-        MaxLevel = 48,
+        MinLevel = 49,
+        MaxLevel = 51,
         Classification = "Elite",
         Movement = "Idle",
-        Notes = "Sees through stealth",
-        Location = ".pin Searing Gorge,42.0,35.4;.pin Searing Gorge,34.2,54.0;.pin Searing Gorge,36.6,60.0;.pin Searing Gorge,43.4,62.0;.pin Searing Gorge,49.4,55.8;.mob Dark Iron Sentry"
+        Notes = "Nets",
+        Location = ".pin Searing Gorge,27.4,26.0;.pin Searing Gorge,29.6,26.6;.mob Twilight Idolater"
         },
       },
     },
     ['Tanaris'] = {
-      ["Centipaar Swarmer"] = {
+      ["Wastewander Assassin"] = {
         {
-        MinLevel = 49,
-        MaxLevel = 50,
+        MinLevel = 44,
+        MaxLevel = 45,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "Summons can get out of hand very quickly",
-        Location = ".pin Tanaris,32.8,50.6;.pin Tanaris,35.6,49.8;.pin Tanaris,36.8,45.6;.pin Tanaris,36.6,40.6;.pin Tanaris,34.4,38.4;.pin Tanaris,33.0,44.2;.pin Tanaris,33.4,46.6;.pin Tanaris,34.6,42.2;.mob Centipaar Swarmer"
+        Notes = "Executes",
+        Location = ".pin Tanaris,58.8,39.2;.pin Tanaris,58.8,36.4;.pin Tanaris,60.8,32.8;.pin Tanaris,60.6,39.0;.pin Tanaris,63.8,39.8;.pin Tanaris,63.2,37.4;.mob Wastewander Assassin"
         },
       },
       ["Dunemaul Warlock"] = {
@@ -1141,16 +1261,6 @@ local dangerousMobs = {
         Location = ".pin Tanaris,39.0,74.0;.pin Tanaris,39.6,70.6;.pin Tanaris,42.0,71.2;.pin Tanaris,42.0,74.0;.pin Tanaris,45.8,63.8;.pin Tanaris,48.2,64.6;.pin Tanaris,46.8,66.8;.pin Tanaris,48.2,67.6;.pin Tanaris,38.4,57.8;.pin Tanaris,40.8,56.6;.pin Tanaris,39.6,53.0;.pin Tanaris,42.6,54.6;.mob Dunemaul Warlock"
         },
       },
-      ["Glasshide Petrifier"] = {
-        {
-        MinLevel = 48,
-        MaxLevel = 49,
-        Classification = "Normal",
-        Movement = "Idle",
-        Notes = "8 second stun, but cast can be outranged",
-        Location = ".pin Tanaris,30.2,52.0;.pin Tanaris,28.0,56.0;.pin Tanaris,28.0,60.4;.pin Tanaris,31.0,60.6;.pin Tanaris,31.2,56.8;.pin Tanaris,33.6,59.6;.pin Tanaris,32.6,55.6;.pin Tanaris,35.8,66.0;.pin Tanaris,33.0,68.4;.pin Tanaris,35.0,70.2;.pin Tanaris,35.8,75.0;.pin Tanaris,33.0,73.2;.pin Tanaris,30.0,71.8;.pin Tanaris,33.6,76.6;.pin Tanaris,43.6,76.0;.pin Tanaris,45.6,71.0;.pin Tanaris,47.8,77.0;.mob Glasshide Petrifier"
-        },
-      },
       ["Centipaar Tunneler"] = {
         {
         MinLevel = 47,
@@ -1161,14 +1271,24 @@ local dangerousMobs = {
         Location = ".pin Tanaris,39.08,29.17;.mob Centipaar Tunneler"
         },
       },
-      ["Wastewander Assassin"] = {
+      ["Glasshide Petrifier"] = {
         {
-        MinLevel = 44,
-        MaxLevel = 45,
+        MinLevel = 48,
+        MaxLevel = 49,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "Executes",
-        Location = ".pin Tanaris,58.8,39.2;.pin Tanaris,58.8,36.4;.pin Tanaris,60.8,32.8;.pin Tanaris,60.6,39.0;.pin Tanaris,63.8,39.8;.pin Tanaris,63.2,37.4;.mob Wastewander Assassin"
+        Notes = "8 second stun, but cast can be outranged",
+        Location = ".pin Tanaris,30.2,52.0;.pin Tanaris,28.0,56.0;.pin Tanaris,28.0,60.4;.pin Tanaris,31.0,60.6;.pin Tanaris,31.2,56.8;.pin Tanaris,33.6,59.6;.pin Tanaris,32.6,55.6;.pin Tanaris,35.8,66.0;.pin Tanaris,33.0,68.4;.pin Tanaris,35.0,70.2;.pin Tanaris,35.8,75.0;.pin Tanaris,33.0,73.2;.pin Tanaris,30.0,71.8;.pin Tanaris,33.6,76.6;.pin Tanaris,43.6,76.0;.pin Tanaris,45.6,71.0;.pin Tanaris,47.8,77.0;.mob Glasshide Petrifier"
+        },
+      },
+      ["Centipaar Swarmer"] = {
+        {
+        MinLevel = 49,
+        MaxLevel = 50,
+        Classification = "Normal",
+        Movement = "Idle",
+        Notes = "Summons can get out of hand very quickly",
+        Location = ".pin Tanaris,32.8,50.6;.pin Tanaris,35.6,49.8;.pin Tanaris,36.8,45.6;.pin Tanaris,36.6,40.6;.pin Tanaris,34.4,38.4;.pin Tanaris,33.0,44.2;.pin Tanaris,33.4,46.6;.pin Tanaris,34.6,42.2;.mob Centipaar Swarmer"
         },
       },
       ["Hazzali Swarmer"] = {
@@ -1190,7 +1310,7 @@ local dangerousMobs = {
         Classification = "Elite",
         Movement = "Idle",
         Notes = "Quest mob",
-        Location = ".pin Feralas,40.6,62.8;.pin Feralas,24.4,63.2;.pin Feralas,24.6,66.8;.pin Feralas,25.6,64.6;.mob Edana Hatetalon"
+        Location = ".pin Feralas,40.6,8.6;.mob Edana Hatetalon"
         },
       },
       ["Sea Spray"] = {
@@ -1219,7 +1339,7 @@ local dangerousMobs = {
         MaxLevel = 45,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "Burst surprisingly hard",
+        Notes = "Fast attack",
         Location = ".pin Feralas,72.8,62.8;.pin Feralas,76.6,63.0;.pin Feralas,76.6,59.8;.pin Feralas,73.4,60.6;.mob Zukk'ash Wasp"
         },
       },
@@ -1241,18 +1361,8 @@ local dangerousMobs = {
         MaxLevel = 45,
         Classification = "Rare Elite",
         Movement = "Slow Patrol",
-        Notes = "Patrols around Sunken Temple lake",
+        Notes = "Basic elite",
         Location = ".line Swamp of Sorrows,76.06,66.76,77.74,65.82,78.66,64.00,80.08,59.92,79.68,57.92,80.38,57.26,81.00,56.60,82.45,52.64,79.69,51.18,78.41,50.87,78.45,48.80,78.88,47.38,79.94,46.04,79.20,44.32,76.94,41.15,75.55,40.17,74.55,38.64,69.04,37.92,67.25,38.86,66.06,38.41,64.29,38.47,63.34,39.68,62.85,41.74;.mob Lord Captain Wyrmak"
-        },
-      },
-      ["Somnus"] = {
-        {
-        MinLevel = 60,
-        MaxLevel = 60,
-        Classification = "Elite",
-        Movement = "Slow Patrol",
-        Notes = "Patrols east of the Sunken Temple lake",
-        Location = ".line Swamp of Sorrows,78.02,60.41,77.21,63.47,76.49,65.57,76.20,65.95,76.18,67.63,76.45,69.93,82.06,72.29,83.61,70.89,84.58,69.16,85.28,66.42,85.33,64.40,87.00,57.71,86.28,55.28,85.22,54.43,85.75,52.05,85.35,49.94,84.25,47.87,83.26,47.49,81.29,46.04,80.24,45.49,78.78,47.78,78.41,49.96,78.71,53.66,78.84,55.21,79.37,57.55,78.67,59.27,78.02,60.41;.mob Somnus"
         },
       },
       ["Swamp Talker"] = {
@@ -1262,18 +1372,68 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "Extremely high level for area, summons adds",
-        Location = ".pin Swamp of Sorrows,63.4,91.2;.pin Swamp of Sorrows,62.2,87.8;.pin Swamp of Sorrows,61.0,84.2;.pin Swamp of Sorrows,63.4,80.4;.pin Swamp of Sorrows,65.6,80.6;.mob Swamp Talker"
+        Location = ".pin Swamp of Sorrows,63.4,91.2;.pin Swamp of Sorrows,61.0,84.2;.pin Swamp of Sorrows,63.4,80.4;.mob Swamp Talker"
+        },
+      },
+      ["Somnus"] = {
+        {
+        MinLevel = 60,
+        MaxLevel = 60,
+        Classification = "Elite",
+        Movement = "Slow Patrol",
+        Notes = "Sleep + knockback",
+        Location = ".line Swamp of Sorrows,78.02,60.41,77.21,63.47,76.49,65.57,76.20,65.95,76.18,67.63,76.45,69.93,82.06,72.29,83.61,70.89,84.58,69.16,85.28,66.42,85.33,64.40,87.00,57.71,86.28,55.28,85.22,54.43,85.75,52.05,85.35,49.94,84.25,47.87,83.26,47.49,81.29,46.04,80.24,45.49,78.78,47.78,78.41,49.96,78.71,53.66,78.84,55.21,79.37,57.55,78.67,59.27,78.02,60.41;.mob Somnus"
         },
       },
     },
     ['Burning Steppes'] = {
+      ["Frenzied Black Drake"] = {
+        {
+        MinLevel = 54,
+        MaxLevel = 54,
+        Classification = "Elite",
+        Movement = "Idle",
+        Notes = "Enrages, reduces block chance",
+        Location = ".pin Burning Steppes,94.6,31.6;.mob Frenzied Black Drake"
+        },
+      },
+      ["Malfunctioning Reaver"] = {
+        {
+        MinLevel = 56,
+        MaxLevel = 56,
+        Classification = "Normal",
+        Movement = "Idle",
+        Notes = "Stuns and knocks back near elites",
+        Location = ".pin Burning Steppes,76.8,29.8;.pin Burning Steppes,81.8,29.2;.pin Burning Steppes,88.8,32.6;.pin Burning Steppes,90.6,46.8;.pin Burning Steppes,87.0,55.0;.pin Burning Steppes,84.0,62.2;.mob Malfunctioning Reaver"
+        },
+      },
+      ["Volchan"] = {
+        {
+        MinLevel = 60,
+        MaxLevel = 60,
+        Classification = "Rare Elite",
+        Movement = "Slow Patrol",
+        Notes = "1200+ damage knockback/AoE",
+        Location = ".line Burning Steppes,85.42,58.97,89.39,57.86,90.03,52.03,90.27,46.65,90.01,42.20,92.22,37.67,91.72,32.36,90.01,30.11,87.49,30.80,85.03,29.84,83.01,29.65,81.46,28.40,77.96,30.79,76.18,33.98,74.75,36.40,73.71,38.22,74.77,42.17,74.08,46.15,74.86,50.40,76.88,52.34,79.22,55.17,80.92,59.80,83.24,61.59,85.42,58.97;.mob Volchan"
+        },
+      },
+      ["Hematos"] = {
+        {
+        MinLevel = 60,
+        MaxLevel = 60,
+        Classification = "Rare Elite",
+        Movement = "Fast Patrol",
+        Notes = "Roaming elite, breath attack",
+        Location = ".line Burning Steppes,16.40,54.96,17.51,53.22,17.88,51.09,17.74,48.30,18.44,46.04,19.93,46.60,21.42,48.65,23.18,49.50,25.11,49.82,26.94,51.35,27.47,52.42,30.70,54.19,32.98,55.00,32.06,58.18,29.46,60.50,27.59,61.17,25.90,60.80,24.31,59.25,22.03,59.88,20.95,59.30,18.99,59.30,17.93,58.71,17.12,56.61,17.06,54.63;.mob Hematos"
+        },
+      },
       ["Black Drake"] = {
         {
         MinLevel = 50,
         MaxLevel = 52,
         Classification = "Elite",
         Movement = "Slow Patrol",
-        Notes = "Patrols in Eastern Burning Steppes",
+        Notes = "Roaming elite, breath attack",
         Location = ".line Burning Steppes,91.88,37.08,91.81,38.89,91.34,40.01,91.42,40.79,90.94,41.16,90.37,42.39,89.81,43.13,90.17,45.01,90.16,48.57,91.61,51.14,91.57,53.33,92.09,53.71,92.58,54.40,93.68,55.94;.mob Black Drake"
         },
         {
@@ -1281,7 +1441,7 @@ local dangerousMobs = {
         MaxLevel = 52,
         Classification = "Elite",
         Movement = "Slow Patrol",
-        Notes = "Patrols in Southeastern Burning Steppes",
+        Notes = "Roaming elite, breath attack",
         Location = ".line Burning Steppes,89.76,52.54,89.88,55.43,89.51,56.94,87.83,57.28,85.71,59.33,83.51,60.25,82.51,61.78;.mob Black Drake"
         },
         {
@@ -1289,7 +1449,7 @@ local dangerousMobs = {
         MaxLevel = 52,
         Classification = "Elite",
         Movement = "Slow Patrol",
-        Notes = "Patrols in Northeastern Burning Steppes",
+        Notes = "Roaming elite, breath attack",
         Location = ".line Burning Steppes,82.91,27.05,83.76,28.35,84.97,28.44,85.78,28.98,86.74,30.31,88.20,30.93,89.08,31.00,90.25,31.88,91.27,33.04,91.29,35.11,90.48,35.62,90.25,36.93,89.36,37.33,89.14,37.52,88.67,39.88;.mob Black Drake"
         },
       },
@@ -1313,14 +1473,14 @@ local dangerousMobs = {
         Location = ".pin Burning Steppes,35.6,53.4;.pin Burning Steppes,40.0,62.4;.pin Burning Steppes,56.4,65.0;.pin Burning Steppes,62.4,58.6;.pin Burning Steppes,69.8,58.4;.pin Burning Steppes,85.8,95.0;.mob Scalding Drake"
         },
       },
-      ["Frenzied Black Drake"] = {
+      ["Blackrock Slayer"] = {
         {
-        MinLevel = 54,
-        MaxLevel = 54,
-        Classification = "Elite",
+        MinLevel = 56,
+        MaxLevel = 57,
+        Classification = "Normal",
         Movement = "Idle",
-        Notes = "Enrages, reduces block chance",
-        Location = ".pin Burning Steppes,94.6,31.6;.mob Frenzied Black Drake"
+        Notes = "Executes",
+        Location = ".pin Burning Steppes,40.2,33.8;.pin Burning Steppes,44.0,35.4;.pin Burning Steppes,39.6,55.6;.pin Burning Steppes,45.0,56.6;.pin Burning Steppes,44.4,50.4;.pin Burning Steppes,49.6,54.0;.pin Burning Steppes,56.0,52.8;.mob Blackrock Slayer"
         },
       },
       ["Gor'tesh"] = {
@@ -1329,28 +1489,8 @@ local dangerousMobs = {
         MaxLevel = 54,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "Absolute ton of burst damage + constant knockback",
+        Notes = "High burst damage + constant knockback",
         Location = ".pin Burning Steppes,39.4,56.6;.mob Gor'tesh"
-        },
-      },
-      ["Volchan"] = {
-        {
-        MinLevel = 60,
-        MaxLevel = 60,
-        Classification = "Rare Elite",
-        Movement = "Slow Patrol",
-        Notes = "Roaming elite",
-        Location = ".line Burning Steppes,85.42,58.97,89.39,57.86,90.03,52.03,90.27,46.65,90.01,42.20,92.22,37.67,91.72,32.36,90.01,30.11,87.49,30.80,85.03,29.84,83.01,29.65,81.46,28.40,77.96,30.79,76.18,33.98,74.75,36.40,73.71,38.22,74.77,42.17,74.08,46.15,74.86,50.40,76.88,52.34,79.22,55.17,80.92,59.80,83.24,61.59,85.42,58.97;.mob Volchan"
-        },
-      },
-      ["Hematos"] = {
-        {
-        MinLevel = 60,
-        MaxLevel = 60,
-        Classification = "Rare Elite",
-        Movement = "Fast Patrol",
-        Notes = "Roaming elite",
-        Location = ".line Burning Steppes,16.40,54.96,17.51,53.22,17.88,51.09,17.74,48.30,18.44,46.04,19.93,46.60,21.42,48.65,23.18,49.50,25.11,49.82,26.94,51.35,27.47,52.42,30.70,54.19,32.98,55.00,32.06,58.18,29.46,60.50,27.59,61.17,25.90,60.80,24.31,59.25,22.03,59.88,20.95,59.30,18.99,59.30,17.93,58.71,17.12,56.61,17.06,54.63;.mob Hematos"
         },
       },
     },
@@ -1359,10 +1499,10 @@ local dangerousMobs = {
         {
         MinLevel = 60,
         MaxLevel = 60,
-        Classification = "Rare Elite",
-        Movement = "Fast Patrol",
-        Notes = "Roaming elite",
-        Location = ".line Badlands,45.37,23.42,46.53,21.52,48.73,22.21,51.81,25.45,53.10,27.52,54.07,27.65,56.10,31.05,57.64,34.56,60.06,36.28,61.54,38.09,63.00,36.07,63.54,35.33,63.94,33.29,63.50,31.20,62.90,30.44,61.31,28.62,60.81,27.30,60.31,26.53,58.54,27.84,57.51,28.33,56.94,29.23,56.55,31.32,55.87,34.38,53.27,36.70,50.95,37.33,47.13,38.89,45.42,43.43,46.54,47.86,48.97,51.64,50.16,50.91,51.26,50.03,53.13,49.22,55.34,46.61,56.65,44.70,56.34,42.17,54.60,39.66,51.48,37.97,48.89,35.65,56.80,35.26,44.72,33.72,44.39,30.60,44.47,26.38,45.37,23.42;.mob Teremus the Devourer"
+        Classification = "Elite",
+        Movement = "Slow Patrol",
+        Notes = "Raid boss, immune to cc/snare/fire, pulses damage, breath attack",
+        Location = ".line Blasted Lands,45.37,23.42,46.53,21.52,48.73,22.21,51.81,25.45,53.10,27.52,54.07,27.65,56.10,31.05,57.64,34.56,60.06,36.28,61.54,38.09,63.00,36.07,63.54,35.33,63.94,33.29,63.50,31.20,62.90,30.44,61.31,28.62,60.81,27.30,60.31,26.53,58.54,27.84,57.51,28.33,56.94,29.23,56.55,31.32,55.87,34.38,53.27,36.70,50.95,37.33,47.13,38.89,45.42,43.43,46.54,47.86,48.97,51.64,50.16,50.91,51.26,50.03,53.13,49.22,55.34,46.61,56.65,44.70,56.34,42.17,54.60,39.66,51.48,37.97,48.89,35.65,44.72,33.72,44.39,30.60,44.47,26.38,45.37,23.42;.mob Teremus the Devourer"
         },
       },
       ["Helboar"] = {
@@ -1372,7 +1512,7 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "Fire Nova and Charge, high burst",
-        Location = ".pin Blasted Lands,44.6,32.4;.pin Blasted Lands,46.0,40.8;.pin Blasted Lands,48.0,34.4;.pin Blasted Lands,53.6,36.2;.pin Blasted Lands,54.8,44.8;.pin Blasted Lands,51.4,39.6;.pin Blasted Lands,46.6,48.2;.pin Blasted Lands,45.6,62.2;.pin Blasted Lands,51.6,55.0;.mob Helboar"
+        Location = ".pin Blasted Lands,44.6,32.4;.pin Blasted Lands,46.0,40.8;.pin Blasted Lands,48.0,34.4;.pin Blasted Lands,53.6,36.2;.pin Blasted Lands,54.8,44.8;.pin Blasted Lands,51.4,39.6;.pin Blasted Lands,46.6,48.2;.pin Blasted Lands,51.6,55.0;.mob Helboar"
         },
       },
       ["Black Slayer"] = {
@@ -1387,14 +1527,44 @@ local dangerousMobs = {
       },
     },
     ['Un’Goro Crater'] = {
-      ["Thunderstomp Stegodon"] = {
+      ["Blazerunner"] = {
         {
-        MinLevel = 54,
-        MaxLevel = 55,
+        MinLevel = 56,
+        MaxLevel = 56,
         Classification = "Elite",
         Movement = "Idle",
-        Notes = "Thunderclaps, has 5 sec stun",
-        Location = ".pin Un'Goro Crater,26.0,54.6;.pin Un'Goro Crater,27.4,63.4;.pin Un'Goro Crater,30.8,70.2;.pin Un'Goro Crater,35.6,75.8;.pin Un'Goro Crater,40.8,77.8;.pin Un'Goro Crater,39.2,70.8;.pin Un'Goro Crater,35.2,68.4;.pin Un'Goro Crater,31.4,64.0;.pin Un'Goro Crater,37.0,61.4;.pin Un'Goro Crater,40.0,67.2;.mob Thunderstomp Stegodon"
+        Notes = "Huge knockback, painful fire AoE if quest item unused",
+        Location = ".pin Un'Goro Crater,49.2,49.0;.mob Blazerunner"
+        },
+      },
+      ["Gruff"] = {
+        {
+        MinLevel = 57,
+        MaxLevel = 57,
+        Classification = "Rare Elite",
+        Movement = "Idle",
+        Notes = "Not sure if he has a short patrol path or not",
+        Location = ".pin Un'Goro Crater,31.8,79.6;.pin Un'Goro Crater,31.8,71.4;.pin Un'Goro Crater,35.6,66.0;.pin Un'Goro Crater,37.8,75.6;.mob Gruff"
+        },
+      },
+      ["Baron Charr"] = {
+        {
+        MinLevel = 58,
+        MaxLevel = 58,
+        Classification = "Elite",
+        Movement = "Slow Patrol",
+        Notes = "Patrols with 3 fire eles; stacking +fire damage taken debuff",
+        Location = ".line Un'Goro Crater,55.02,40.84,54.29,40.75,53.28,41.54,52.65,41.77,51.70,41.34,50.05,42.04,49.23,42.24,48.02,42.91,47.14,42.84,46.09,43.57,45.44,44.52,45.17,44.95,44.78,45.01,43.95,46.91,43.63,47.90,43.75,48.69,44.74,50.26,45.17,51.17,45.28,52.03,45.16,52.94,44.94,53.96,45.35,54.76,46.47,55.67,47.50,56.45,48.12,56.63,49.77,56.87,50.56,56.58,51.31,55.97,52.23,56.30,53.09,57.13,54.92,58.05,55.81,57.13,56.31,56.34,56.37,55.16,56.11,53.17,56.06,51.16,56.71,45.98,56.70,44.36,56.43,42.59,55.89,41.82,55.02,40.84;.mob Baron Charr"
+        },
+      },
+      ["Plated Stegodon"] = {
+        {
+        MinLevel = 52,
+        MaxLevel = 54,
+        Classification = "Elite",
+        Movement = "Idle",
+        Notes = "High armor, 5 sec stun",
+        Location = ".pin Un'Goro Crater,26.0,54.6;.pin Un'Goro Crater,27.4,63.4;.pin Un'Goro Crater,30.8,70.2;.pin Un'Goro Crater,35.6,75.8;.pin Un'Goro Crater,40.8,77.8;.pin Un'Goro Crater,39.2,70.8;.pin Un'Goro Crater,35.2,68.4;.pin Un'Goro Crater,31.4,64.0;.pin Un'Goro Crater,37.0,61.4;.pin Un'Goro Crater,40.0,67.2;.mob Plated Stegodon"
         },
       },
       ["Stegodon"] = {
@@ -1417,14 +1587,68 @@ local dangerousMobs = {
         Location = ".pin Un'Goro Crater,26.0,54.6;.pin Un'Goro Crater,27.4,63.4;.pin Un'Goro Crater,30.8,70.2;.pin Un'Goro Crater,35.6,75.8;.pin Un'Goro Crater,40.8,77.8;.pin Un'Goro Crater,39.2,70.8;.pin Un'Goro Crater,35.2,68.4;.pin Un'Goro Crater,31.4,64.0;.pin Un'Goro Crater,37.0,61.4;.pin Un'Goro Crater,40.0,67.2;.mob Spiked Stegodon"
         },
       },
-      ["Plated Stegodon"] = {
+      ["Tyrant Devilsaur"] = {
         {
-        MinLevel = 52,
-        MaxLevel = 54,
+        MinLevel = 54,
+        MaxLevel = 55,
+        Classification = "Elite",
+        Movement = "Fast Patrol",
+        Notes = "AoE Fear",
+        Location = ".line Un'Goro Crater,57.37,23.89,59.71,28.76,60.41,28.49,63.04,25.96,64.67,26.25,66.24,27.37,67.66,25.84,69.71,26.20,70.35,28.52,70.15,30.43,69.32,30.86,68.58,32.16,67.35,31.50,66.03,31.83,65.66,33.07,65.84,34.85;.mob Tyrant Devilsaur"
+        },
+        {
+        MinLevel = 54,
+        MaxLevel = 55,
+        Classification = "Elite",
+        Movement = "Fast Patrol",
+        Notes = "Knockback",
+        Location = ".line Un'Goro Crater,31.29,36.58,32.35,37.27,33.37,38.65,36.55,41.44,37.56,43.66,39.82,55.59,38.72,57.29,39.55,60.15,39.92,61.85,41.70,64.18;.mob Devilsaur"
+        },
+      },
+      ["Devilsaur"] = {
+        {
+        MinLevel = 54,
+        MaxLevel = 55,
+        Classification = "Elite",
+        Movement = "Fast Patrol",
+        Notes = "Knockback",
+        Location = ".line Un'Goro Crater,62.59,59.21,63.41,59.30,64.01,60.17,64.73,60.23,65.87,59.21,66.89,58.10,69.59,57.31,71.13,51.60,71.77,50.20,72.75,49.60,73.72,49.25,74.33,46.66,75.75,44.95,75.12,43.14,75.28,40.91,74.40,39.86,74.46,38.65,73.69,37.87,74.31,36.36,74.35,33.06;.mob Devilsaur"
+        },
+        {
+        MinLevel = 54,
+        MaxLevel = 55,
+        Classification = "Elite",
+        Movement = "Fast Patrol",
+        Notes = "Knockback",
+        Location = ".line Un'Goro Crater,30.15,53.32,30.79,50.89,30.82,49.21,31.10,45.38,31.99,45.33,32.70,43.84,33.13,39.47,34.69,37.35,35.62,37.19,36.54,35.18,36.61,32.96,35.60,31.16,35.71,28.77,34.61,27.52,34.65,22.07;.mob Devilsaur"
+        },
+      },
+      ["Ironhide Devilsaur"] = {
+        {
+        MinLevel = 54,
+        MaxLevel = 55,
+        Classification = "Elite",
+        Movement = "Fast Patrol",
+        Notes = "Knockback",
+        Location = ".line Un'Goro Crater,56.55,33.92,55.84,36.22,57.56,40.04,59.44,44.54,56.71,47.42,57.32,52.52,59.83,57.24,59.06,60.14,57.34,63.74,57.65,67.31,59.59,69.83,57.86,73.60,59.04,76.36;.mob Devilsaur"
+        },
+        {
+        MinLevel = 54,
+        MaxLevel = 56,
+        Classification = "Elite",
+        Movement = "Fast Patrol",
+        Notes = "High armor, long stun",
+        Location = ".line Un'Goro Crater,43.55,80.17,44.51,79.04,44.59,76.94,45.37,74.80,46.51,74.12,46.67,69.68,46.19,68.51,46.03,66.17,47.31,62.85,49.05,61.92,50.93,60.08,52.85,58.94,53.60,59.09,54.56,60.91,54.43,63.34,52.69,65.54,52.51,70.90,53.62,72.82,53.74,73.90;.mob Ironhide Devilsaur"
+        },
+      },
+      ["Thunderstomp Stegodon"] = {
+        {
+        MinLevel = 54,
+        MaxLevel = 55,
         Classification = "Elite",
         Movement = "Idle",
-        Notes = "High armor, 5 sec stun",
-        Location = ".pin Un'Goro Crater,26.0,54.6;.pin Un'Goro Crater,27.4,63.4;.pin Un'Goro Crater,30.8,70.2;.pin Un'Goro Crater,35.6,75.8;.pin Un'Goro Crater,40.8,77.8;.pin Un'Goro Crater,39.2,70.8;.pin Un'Goro Crater,35.2,68.4;.pin Un'Goro Crater,31.4,64.0;.pin Un'Goro Crater,37.0,61.4;.pin Un'Goro Crater,40.0,67.2;.mob Plated Stegodon"
+        Notes = "Thunderclaps, has 5 sec stun",
+        Location = ".pin Un'Goro Crater,26.0,54.6;.pin Un'Goro Crater,27.4,63.4;.pin Un'Goro Crater,30.8,70.2;.pin Un'Goro Crater,35.6,75.8;.pin Un'Goro Crater,40.8,77.8;.pin Un'Goro Crater,39.2,70.8;.pin Un'Goro Crater,35.2,68.4;.pin Un'Goro Crater,31.4,64.0;.pin Un'Goro Crater,37.0,61.4;.pin Un'Goro Crater,40.0,67.2;.mob Thunderstomp Stegodon"
         },
       },
       ["King Mosh"] = {
@@ -1437,88 +1661,44 @@ local dangerousMobs = {
         Location = ".pin Un'Goro Crater,29.04,36.41;.mob King Mosh"
         },
       },
-      ["Tyrant Devilsaur"] = {
+    },
+    ['Tirisfal Glades'] = {
+      ["Unseen"] = {
         {
-        MinLevel = 54,
-        MaxLevel = 55,
-        Classification = "Elite",
-        Movement = "Fast Patrol",
-        Notes = "Patrols around the zone",
-        Location = ".line Un'Goro Crater,57.37,23.89,59.71,28.76,60.41,28.49,63.04,25.96,64.67,26.25,66.24,27.37,67.66,25.84,69.71,26.20,70.35,28.52,70.15,30.43,69.32,30.86,68.58,32.16,67.35,31.50,66.03,31.83,65.66,33.07,65.84,34.85;.mob Tyrant Devilsaur"
-        },
-      },
-      ["Devilsaur"] = {
-        {
-        MinLevel = 54,
-        MaxLevel = 55,
-        Classification = "Elite",
-        Movement = "Fast Patrol",
-        Notes = "Patrols around the zone",
-        Location = ".line Un'Goro Crater,31.29,36.58,32.35,37.27,33.37,38.65,36.55,41.44,37.56,43.66,39.82,55.59,38.72,57.29,39.55,60.15,39.92,61.85,41.70,64.18;.mob Devilsaur"
-        },
-        {
-        MinLevel = 54,
-        MaxLevel = 55,
-        Classification = "Elite",
-        Movement = "Fast Patrol",
-        Notes = "Patrols around the zone",
-        Location = ".line Un'Goro Crater,62.59,59.21,63.41,59.30,64.01,60.17,64.73,60.23,65.87,59.21,66.89,58.10,69.59,57.31,71.13,51.60,71.77,50.20,72.75,49.60,73.72,49.25,74.33,46.66,75.75,44.95,75.12,43.14,75.28,40.91,74.40,39.86,74.46,38.65,73.69,37.87,74.31,36.36,74.35,33.06;.mob Devilsaur"
-        },
-        {
-        MinLevel = 54,
-        MaxLevel = 55,
-        Classification = "Elite",
-        Movement = "Fast Patrol",
-        Notes = "Patrols around the zone",
-        Location = ".line Un'Goro Crater,30.15,53.32,30.79,50.89,30.82,49.21,31.10,45.38,31.99,45.33,32.70,43.84,33.13,39.47,34.69,37.35,35.62,37.19,36.54,35.18,36.61,32.96,35.60,31.16,35.71,28.77,34.61,27.52,34.65,22.07;.mob Devilsaur"
-        },
-        {
-        MinLevel = 54,
-        MaxLevel = 55,
-        Classification = "Elite",
-        Movement = "Fast Patrol",
-        Notes = "Patrols around the zone",
-        Location = ".line Un'Goro Crater,56.55,33.92,55.84,36.22,57.56,40.04,59.44,44.54,56.71,47.42,57.32,52.52,59.83,57.24,59.06,60.14,57.34,63.74,57.65,67.31,59.59,69.83,57.86,73.60,59.04,76.36;.mob Devilsaur"
-        },
-      },
-      ["Ironhide Devilsaur"] = {
-        {
-        MinLevel = 54,
-        MaxLevel = 56,
-        Classification = "Elite",
-        Movement = "Fast Patrol",
-        Notes = "Patrols around the zone",
-        Location = ".line Un'Goro Crater,43.55,80.17,44.51,79.04,44.59,76.94,45.37,74.80,46.51,74.12,46.67,69.68,46.19,68.51,46.03,66.17,47.31,62.85,49.05,61.92,50.93,60.08,52.85,58.94,53.60,59.09,54.56,60.91,54.43,63.34,52.69,65.54,52.51,70.90,53.62,72.82,53.74,73.90;.mob Ironhide Devilsaur"
-        },
-      },
-      ["Gruff"] = {
-        {
-        MinLevel = 57,
-        MaxLevel = 57,
-        Classification = "Rare Elite",
+        MinLevel = 49,
+        MaxLevel = 51,
+        Classification = "Normal",
         Movement = "Idle",
-        Notes = "Not sure if he has a short patrol path or not",
-        Location = ".pin Un'Goro Crater,31.8,79.6;.pin Un'Goro Crater,31.8,71.4;.pin Un'Goro Crater,35.6,66.0;.pin Un'Goro Crater,37.8,75.6;.mob Gruff"
+        Notes = "Invisible mobs in UC courtyard, aggros if AoE'd",
+        Location = ".pin Tirisfal Glades,58.8,68.1;.pin Tirisfal Glades,59.2,71.7;.pin Tirisfal Glades,64.0,71.7;.pin Tirisfal Glades,64.5,67.5;.mob Unseen"
         },
-      },
-      ["Blazerunner"] = {
         {
-        MinLevel = 56,
-        MaxLevel = 56,
-        Classification = "Elite",
+        MinLevel = 49,
+        MaxLevel = 51,
+        Classification = "Normal",
         Movement = "Idle",
-        Notes = "Huge knockback, painful fire AoE if quest item unused",
-        Location = ".pin Un'Goro Crater,49.2,49.0;.mob Blazrunner"
+        Notes = "Invisible mobs in UC courtyard, aggros if AoE'd",
+        Location = ".pin Tirisfal Glades,58.8,68.1;.pin Tirisfal Glades,59.2,71.7;.pin Tirisfal Glades,64.0,71.7;.pin Tirisfal Glades,64.5,67.5;.mob Unseen"
         },
       },
-      ["Baron Charr"] = {
+    },
+    ['Undercity'] = {
+      ["Unseen"] = {
         {
-        MinLevel = 58,
-        MaxLevel = 58,
-        Classification = "Elite",
-        Movement = "Slow Patrol",
-        Notes = "Elite with adds, patrols around Fire Plume Ridge",
-        Location = ".line Un'Goro Crater,55.02,40.84,54.29,40.75,53.28,41.54,52.65,41.77,51.70,41.34,50.05,42.04,49.23,42.24,48.02,42.91,47.14,42.84,46.09,43.57,45.44,44.52,45.17,44.95,44.78,45.01,43.95,46.91,43.63,47.90,43.75,48.69,44.74,50.26,45.17,51.17,45.28,52.03,45.16,52.94,44.94,53.96,45.35,54.76,46.47,55.67,47.50,56.45,48.12,56.63,49.77,56.87,50.56,56.58,51.31,55.97,52.23,56.30,53.09,57.13,54.92,58.05,55.81,57.13,56.31,56.34,56.37,55.16,56.11,53.17,56.06,51.16,56.71,45.98,56.70,44.36,56.43,42.59,55.89,41.82,55.02,40.84;.mob Baron Charr"
+        MinLevel = 49,
+        MaxLevel = 51,
+        Classification = "Normal",
+        Movement = "Idle",
+        Notes = "Invisible mobs in UC courtyard, aggros if AoE'd",
+        Location = ".pin Undercity,61.3,7.9;.pin Undercity,71.2,7.1;.pin Undercity,64.8,15.4;.pin Undercity,68.8,14.9;.mob Unseen"
+        },
+        {
+        MinLevel = 49,
+        MaxLevel = 51,
+        Classification = "Normal",
+        Movement = "Idle",
+        Notes = "Invisible mobs in UC courtyard, aggros if AoE'd",
+        Location = ".pin Undercity,61.3,7.9;.pin Undercity,71.2,7.1;.pin Undercity,64.8,15.4;.pin Undercity,68.8,14.9;.mob Unseen"
         },
       },
     },
@@ -1529,28 +1709,8 @@ local dangerousMobs = {
         MaxLevel = 53,
         Classification = "Elite",
         Movement = "Idle",
-        Notes = "Spawns at the end of Rescue from Jaedenar, doable but maybe instructions needed",
+        Notes = "Spawns at the end of Rescue from Jaedenar, high damage output",
         Location = ".pin Felwood,35.6,59.0;.mob Spirit of Trey Lightforge"
-        },
-      },
-      ["Infernal Bodyguard"] = {
-        {
-        MinLevel = 53,
-        MaxLevel = 54,
-        Classification = "Elite",
-        Movement = "Idle",
-        Notes = "Big knockback",
-        Location = ".pin Felwood,39.2,43.4;.pin Felwood,39.0,37.8;.pin Felwood,41.8,38.2;.pin Felwood,42.6,43.6;.pin Felwood,44.6,43.0;.pin Felwood,46.6,40.2;.pin Felwood,45.6,37.0;.pin Felwood,48.6,37.2;.pin Felwood,44.4,47.0;.mob Infernal Bodyguard"
-        },
-      },
-      ["Jadefire Shadowstalker"] = {
-        {
-        MinLevel = 51,
-        MaxLevel = 52,
-        Classification = "Normal",
-        Movement = "Idle",
-        Notes = "Stealth mobs with fire shield/thorns",
-        Location = ".pin Felwood,32.2,66.0;.pin Felwood,33.6,66.6;.pin Felwood,36.4,66.8;.pin Felwood,37.6,66.6;.pin Felwood,38.4,69.6;.mob Jadefire Shadowstalker"
         },
       },
       ["Dessecus"] = {
@@ -1579,8 +1739,18 @@ local dangerousMobs = {
         MaxLevel = 59,
         Classification = "Elite",
         Movement = "Idle",
-        Notes = "Curse of Thorns, Shadow Shock (instant, high damage)",
+        Notes = "Curse of Thorns, high damage shock ability",
         Location = ".pin Felwood,36.0,44.6;.mob Lord Banehollow"
+        },
+      },
+      ["Jadefire Shadowstalker"] = {
+        {
+        MinLevel = 51,
+        MaxLevel = 52,
+        Classification = "Normal",
+        Movement = "Idle",
+        Notes = "Stealth mobs with fire shield/thorns",
+        Location = ".pin Felwood,32.2,66.0;.pin Felwood,33.6,66.6;.pin Felwood,36.4,66.8;.pin Felwood,37.6,66.6;.pin Felwood,38.4,69.6;.mob Jadefire Shadowstalker"
         },
       },
       ["Jadefire Trickster"] = {
@@ -1591,6 +1761,36 @@ local dangerousMobs = {
         Movement = "Idle",
         Notes = "Mind controls 2+ targets",
         Location = ".pin Felwood,32.2,66.0;.pin Felwood,33.6,66.6;.pin Felwood,36.4,66.8;.pin Felwood,37.6,66.6;.pin Felwood,38.4,69.6;.mob Jadefire Trickster"
+        },
+      },
+      ["Jaedenar Adept"] = {
+        {
+        MinLevel = 51,
+        MaxLevel = 52,
+        Classification = "Normal",
+        Movement = "Idle",
+        Notes = "High damage fireball and fire blast; casts Blink",
+        Location = ".pin Felwood,35.0,59.2;.pin Felwood,36.4,61.2;.pin Felwood,38.6,60.6;.mob Jaedenar Adept"
+        },
+      },
+      ["Infernal Bodyguard"] = {
+        {
+        MinLevel = 53,
+        MaxLevel = 54,
+        Classification = "Elite",
+        Movement = "Idle",
+        Notes = "Big knockback",
+        Location = ".pin Felwood,39.2,43.4;.pin Felwood,39.0,37.8;.pin Felwood,41.8,38.2;.pin Felwood,42.6,43.6;.pin Felwood,44.6,43.0;.pin Felwood,46.6,40.2;.pin Felwood,45.6,37.0;.pin Felwood,48.6,37.2;.pin Felwood,44.4,47.0;.mob Infernal Bodyguard"
+        },
+      },
+      ["Deadwood Avenger"] = {
+        {
+        MinLevel = 54,
+        MaxLevel = 55,
+        Classification = "Normal",
+        Movement = "Idle",
+        Notes = "Enrages if their allies die around them; has -50% healing taken debuff",
+        Location = ".pin Felwood,61.2,6.7;.pin Felwood,63.4,7.9;.pin Felwood,62.8,11.5;.mob Deadwood Avenger"
         },
       },
       ["Salia"] = {
@@ -1605,6 +1805,36 @@ local dangerousMobs = {
       },
     },
     ['Azshara'] = {
+      ["Thundering Invader"] = {
+        {
+        MinLevel = 55,
+        MaxLevel = 57,
+        Classification = "Normal",
+        Movement = "Idle",
+        Notes = "Invasion mobs",
+        Location = ".pin Azshara,72.8,22;.pin Azshara,73.0,16.8;.pin Azshara,74.18,21.2;.pin Azshara,78.0,26.2;.pin Azshara,81.6,22.4;.pin Azshara,82.6,17.8;.pin Azshara,77.0,15.8;.mob Thundering Invader"
+        },
+      },
+      ["Monnos the Elder"] = {
+        {
+        MinLevel = 53,
+        MaxLevel = 53,
+        Classification = "Rare Elite",
+        Movement = "Slow Patrol",
+        Notes = "Huge knockback and a high-damage 5 sec aoe stun",
+        Location = ".line Azshara,76.20,20.69,76.27,21.13,76.11,23.40,75.67,24.39,74.56,24.91,74.23,25.09,73.82,24.61,73.71,23.88,72.97,23.43,72.26,23.47,71.76,23.33,71.28,22.53,71.06,21.45,71.23,19.97,71.55,19.65,72.04,19.91,72.59,20.94,73.14,21.41,73.52,21.32,74.04,20.21,74.60,19.72,75.22,19.69,75.69,18.53,76.36,18.01,77.01,17.16,78.01,17.28,79.03,18.19,79.31,18.45,80.57,18.52,81.01,18.70,81.55,18.50,81.98,17.89;.mob Monnos the Elder"
+        },
+      },
+      ["Avalanchion"] = {
+        {
+        MinLevel = 58,
+        MaxLevel = 58,
+        Classification = "Elite",
+        Movement = "Slow Patrol",
+        Notes = "Aoe stun + several adds that stun and interrupt",
+        Location = ".line Azshara,82.17,20.69,81.93,22.12,81.54,23.16,80.97,23.85,79.12,24.49,77.70,25.02,77.21,25.04,76.65,24.33,76.22,23.15,74.96,22.07,72.94,20.81,72.65,20.18,72.56,19.07,73.01,18.11,75.30,16.67,77.46,16.69,79.24,18.26,81.74,18.58,82.07,19.26,82.17,20.69;.mob Avalanchion"
+        },
+      },
       ["Blood Elf Surveyor"] = {
         {
         MinLevel = 51,
@@ -1612,7 +1842,7 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "Large aggro radius",
-        Location = ".pin Azshara,55.2,26.4;.pin Azshara,56.2,29.8;.pin Azshara,58.2,30.8;.pin Azshara,59.2,29.6;.pin Azshara,56.6,28.8;.pin Azshara,57.8,26.4;.mob Blood Elf Surveyor"
+        Location = ".pin Azshara,55.2,26.4;.pin Azshara,58.2,30.8;.pin Azshara,59.2,29.6;.pin Azshara,56.6,28.8;.pin Azshara,57.8,26.4;.mob Blood Elf Surveyor"
         },
       },
       ["Blood Elf Reclaimer"] = {
@@ -1622,7 +1852,7 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "Large aggro radius",
-        Location = ".pin Azshara,55.2,26.4;.pin Azshara,56.2,29.8;.pin Azshara,58.2,30.8;.pin Azshara,59.2,29.6;.pin Azshara,56.6,28.8;.pin Azshara,57.8,26.4;.mob Blood Elf Reclaimer"
+        Location = ".pin Azshara,55.2,26.4;.pin Azshara,58.2,30.8;.pin Azshara,59.2,29.6;.pin Azshara,56.6,28.8;.pin Azshara,57.8,26.4;.mob Blood Elf Reclaimer"
         },
       },
       ["Cliff Walker"] = {
@@ -1655,16 +1885,6 @@ local dangerousMobs = {
         Location = ".pin Azshara,70.4,35.8;.pin Azshara,62.6,37.4;.pin Azshara,56.2,42.0;.pin Azshara,53.0,50.2;.pin Azshara,54.0,60.4;.pin Azshara,59.4,68.2;.pin Azshara,65.2,70.6;.pin Azshara,72.2,71.8;.pin Azshara,77.8,70.4;.pin Azshara,77.6,59.8;.pin Azshara,76.0,48.4;.pin Azshara,66.4,46.8;.pin Azshara,61.6,56.2;.pin Azshara,67.4,61.6;.pin Azshara,69.4,53.8;.mob Servant of Arkkoroc"
         },
       },
-      ["Monnos the Elder"] = {
-        {
-        MinLevel = 53,
-        MaxLevel = 53,
-        Classification = "Rare Elite",
-        Movement = "Slow Patrol",
-        Notes = "Has a huge knockback and a high-damage 5 sec aoe stun",
-        Location = ".line Azshara,76.20,20.69,76.27,21.13,76.11,23.40,75.67,24.39,74.56,24.91,74.23,25.09,73.82,24.61,73.71,23.88,72.97,23.43,72.26,23.47,71.76,23.33,71.28,22.53,71.06,21.45,71.23,19.97,71.55,19.65,72.04,19.91,72.59,20.94,73.14,21.41,73.52,21.32,74.04,20.21,74.60,19.72,75.22,19.69,75.69,18.53,76.36,18.01,77.01,17.16,78.01,17.28,79.03,18.19,79.31,18.45,80.57,18.52,81.01,18.70,81.55,18.50,81.98,17.89;.mob Monnos the Elder"
-        },
-      },
       ["Cliff Breaker"] = {
         {
         MinLevel = 53,
@@ -1685,48 +1905,8 @@ local dangerousMobs = {
         Location = ".pin Azshara,70.4,35.8;.pin Azshara,62.6,37.4;.pin Azshara,56.2,42.0;.pin Azshara,53.0,50.2;.pin Azshara,54.0,60.4;.pin Azshara,59.4,68.2;.pin Azshara,65.2,70.6;.pin Azshara,72.2,71.8;.pin Azshara,77.8,70.4;.pin Azshara,77.6,59.8;.pin Azshara,76.0,48.4;.pin Azshara,66.4,46.8;.pin Azshara,61.6,56.2;.pin Azshara,67.4,61.6;.pin Azshara,69.4,53.8;.mob Son of Arkkoroc"
         },
       },
-      ["Thundering Invader"] = {
-        {
-        MinLevel = 55,
-        MaxLevel = 57,
-        Classification = "Normal",
-        Movement = "Idle",
-        Notes = "Invasion mobs",
-        Location = ".pin Azshara,72.8,22;.pin Azshara,73.0,16.8;.pin Azshara,74.18,21.2;.pin Azshara,78.0,26.2;.pin Azshara,81.6,22.4;.pin Azshara,82.6,17.8;.pin Azshara,77.0,15.8;.mob Thundering Invader"
-        },
-      },
-      ["Thunderhead Hippogryph"] = {
-        {
-        MinLevel = 46,
-        MaxLevel = 54,
-        Classification = "Normal",
-        Movement = "Idle",
-        Notes = "High burst damage",
-        Location = ".pin Azshara,18.6,64.4;.pin Azshara,18.6,58.8;.pin Azshara,20.8,57.4;.pin Azshara,18.0,54.4;.pin Azshara,16.0,49.6;.mob Thunderhead Hippogryph"
-        },
-      },
     },
     ['Winterspring'] = {
-      ["Brumeran"] = {
-        {
-        MinLevel = 58,
-        MaxLevel = 58,
-        Classification = "Elite",
-        Movement = "Slow Patrol",
-        Notes = "",
-        Location = ".line Winterspring,54.74,45.75,54.98,46.46,55.00,47.48,55.34,48.57,56.01,48.99,56.25,50.01,56.37,50.93,56.60,52.04,56.93,52.43,57.19,52.90,57.85,53.42,58.33,53.96,58.66,54.20,59.56,54.60,60.58,55.48,61.55,56.52,62.23,56.86,62.55,57.91,61.88,59.55,61.42,60.12,60.93,60.42,60.51,61.04,59.98,61.46,59.53,61.60,58.89,62.24,58.84,62.86;.mob Brumeran"
-        },
-      },
-      ["Azurous"] = {
-        {
-        MinLevel = 59,
-        MaxLevel = 59,
-        Classification = "Rare Elite",
-        Movement = "Slow Patrol",
-        Notes = "",
-        Location = ".line Winterspring,54.54,45.52,54.79,45.82,54.96,46.67,55.00,47.49,55.21,48.01,55.42,48.03,55.68,47.58,55.84,46.81,55.89,46.33,56.10,45.97,56.55,45.85,56.99,45.83,57.34,45.26,57.59,44.47,57.84,44.01,58.27,43.79,58.72,44.01,59.28,43.84,59.82,42.37,60.13,41.83,61.16,41.41,61.52,41.23,62.04,41.19,62.46,41.39,62.94,41.89,63.46,41.85,63.83,41.67,64.01,41.68,64.28,42.30,64.66,42.77,65.07,42.95,65.51,43.33,65.88,43.74,66.24,44.28,66.56,44.90,66.61,45.65,66.62,47.67,66.63,48.77,66.87,49.68,66.35,51.25,66.26,52.16,66.80,53.98;.mob Azurous"
-        },
-      },
       ["Berserk Owlbeast"] = {
         {
         MinLevel = 58,
@@ -1735,6 +1915,96 @@ local dangerousMobs = {
         Movement = "Idle",
         Notes = "Enrages at low hp in dense areas",
         Location = ".pin Winterspring,63.6,16.2;.pin Winterspring,66.0,18.6;.pin Winterspring,66.6,22.8;.pin Winterspring,63.6,22.4;.pin Winterspring,59.6,59.8;.pin Winterspring,64.2,59.2;.pin Winterspring,66.6,60.0;.pin Winterspring,65.2,64.0;.pin Winterspring,65.2,61.8;.mob Berserk Owlbeast"
+        },
+      },
+      ["Mezzir the Howler"] = {
+        {
+        MinLevel = 55,
+        MaxLevel = 55,
+        Classification = "Rare",
+        Movement = "Idle",
+        Notes = "3 second AoE fear",
+        Location = ".pin Winterspring,31.6,37.4;.pin Winterspring,40.6,36.6;.pin Winterspring,45.0,37.4;.mob Mezzir the Howler"
+        },
+      },
+      ["Spellmaw"] = {
+        {
+        MinLevel = 56,
+        MaxLevel = 56,
+        Classification = "Elite",
+        Movement = "Slow Patrol",
+        Notes = "Purges",
+        Location = ".line Winterspring,57.18,52.58,56.57,51.93,56.38,51.56,56.23,51.10,56.12,50.37,56.27,48.95,55.86,48.92,55.40,48.50,55.42,47.84,55.75,47.29,56.15,46.92,56.97,46.71,57.47,46.98,57.86,47.35,58.50,47.54,58.88,47.54,59.42,47.60,59.58,47.66,59.86,48.34,60.35,48.21,60.64,48.29,61.11,49.30,61.00,49.66,60.72,49.84,60.80,50.02,61.09,50.45,60.99,51.93,60.54,53.18,60.15,52.93,59.91,52.99,59.32,53.43,58.68,54.30,58.14,54.32,57.36,53.31,57.18,52.58;.mob Spellmaw"
+        },
+      },
+      ["Ursius"] = {
+        {
+        MinLevel = 56,
+        MaxLevel = 56,
+        Classification = "Elite",
+        Movement = "Slow Patrol",
+        Notes = "Hits for 330+",
+        Location = ".line Winterspring,63.78,25.16,64.07,25.09,64.08,25.50,64.41,25.26,64.48,24.86,64.47,24.21,64.35,24.11,64.00,24.15,63.44,24.78,63.31,25.27,63.30,25.74,63.51,26.24,63.30,26.53,63.39,26.96,63.25,27.33,62.81,27.17,62.47,26.81,62.09,26.51,61.42,26.36,61.38,26.61,61.44,26.96,61.47,27.34,61.51,27.48,61.51,27.65,61.80,27.74,61.85,28.00,62.35,28.39,62.59,28.80,62.91,29.95,62.91,30.44,62.78,30.82,62.70,31.39,62.50,31.78,62.39,31.94,62.03,32.06,61.06,31.55,60.95,31.88,61.00,32.26,60.89,32.60,60.72,32.93,60.71,33.28,60.56,33.54,60.24,33.57,59.91,33.25,59.71,32.88,59.25,33.11,58.31,33.06,57.70,32.60,57.43,32.59,57.18,32.81,56.92,32.69,56.67,32.44,56.58,32.30,56.38,32.22,56.09,32.49;.mob Ursius"
+        },
+      },
+      ["Rak'shiri"] = {
+        {
+        MinLevel = 57,
+        MaxLevel = 57,
+        Classification = "Rare Elite",
+        Movement = "Idle",
+        Notes = "4 second terrify",
+        Location = ".pin Winterspring,52.4,14.6;.mob Rak'shiri"
+        },
+      },
+      ["Winterfall Runner"] = {
+        {
+        MinLevel = 57,
+        MaxLevel = 57,
+        Classification = "Normal",
+        Movement = "Slow Patrol",
+        Notes = "Grouped with two other furbolg, usually one that can heal",
+        Location = ".line Winterspring,28.07,35.29,28.02,36.46,28.32,37.14,28.47,37.92,28.53,39.39,28.80,39.76,29.32,40.86,29.91,42.27,30.44,42.54,31.65,42.44,32.60,42.17,33.59,41.99,34.67,41.91,36.04,42.16,38.21,41.98,40.23,40.75,42.32,39.97,44.29,39.90,46.45,39.66,48.38,38.86,49.19,38.15,49.35,37.79,49.65,37.59,50.57,36.63,51.67,36.21,52.25,35.75,52.75,35.30,53.46,34.27,53.75,33.38,53.93,32.50,53.97,31.32,54.60,30.91,55.51,30.05,57.14,29.72,58.07,28.93,58.74,27.94,59.01,26.99,59.24,26.48,60.37,25.02,60.62,24.75,61.11,24.44,61.29,24.35,61.92,23.82,62.34,23.92,62.37,24.95,62.21,25.30,62.60,25.99,63.04,26.55,63.50,27.81,63.95,28.34,64.12,28.94,64.10,30.84,64.21,31.40,64.97,33.08,65.44,33.48,66.44,33.71,66.63,33.93,66.80,34.47,66.87,34.87,66.97,35.22,67.53,37.01,68.12,37.76,68.65,38.20,68.76,38.13,68.94,37.84,69.29,38.40,69.61,38.29;.mob Winterfall Runner"
+        },
+      },
+      ["Brumeran"] = {
+        {
+        MinLevel = 58,
+        MaxLevel = 58,
+        Classification = "Elite",
+        Movement = "Slow Patrol",
+        Notes = "Enrages, has ice armor",
+        Location = ".line Winterspring,54.74,45.75,54.98,46.46,55.00,47.48,55.34,48.57,56.01,48.99,56.25,50.01,56.37,50.93,56.60,52.04,56.93,52.43,57.19,52.90,57.85,53.42,58.33,53.96,58.66,54.20,59.56,54.60,60.58,55.48,61.55,56.52,62.23,56.86,62.55,57.91,61.88,59.55,61.42,60.12,60.93,60.42,60.51,61.04,59.98,61.46,59.53,61.60,58.89,62.24,58.84,62.86;.mob Brumeran"
+        },
+      },
+      ["High Chief Winterfall"] = {
+        {
+        MinLevel = 59,
+        MaxLevel = 59,
+        Classification = "Elite",
+        Movement = "Idle",
+        Notes = "Grouped with two other furbolg, usually one that can heal",
+        Location = ".pin Winterspring,69.4,38.4;.mob High Chief Winterfall"
+        },
+      },
+      ["Azurous"] = {
+        {
+        MinLevel = 59,
+        MaxLevel = 59,
+        Classification = "Rare Elite",
+        Movement = "Slow Patrol",
+        Notes = "Frost breath attack",
+        Location = ".line Winterspring,54.54,45.52,54.79,45.82,54.96,46.67,55.00,47.49,55.21,48.01,55.42,48.03,55.68,47.58,55.84,46.81,55.89,46.33,56.10,45.97,56.55,45.85,56.99,45.83,57.34,45.26,57.59,44.47,57.84,44.01,58.27,43.79,58.72,44.01,59.28,43.84,59.82,42.37,60.13,41.83,61.16,41.41,61.52,41.23,62.04,41.19,62.46,41.39,62.94,41.89,63.46,41.85,63.83,41.67,64.01,41.68,64.28,42.30,64.66,42.77,65.07,42.95,65.51,43.33,65.88,43.74,66.24,44.28,66.56,44.90,66.61,45.65,66.62,47.67,66.63,48.77,66.87,49.68,66.35,51.25,66.26,52.16,66.80,53.98;.mob Azurous"
+        },
+      },
+      ["Kashoch the Reaver"] = {
+        {
+        MinLevel = 60,
+        MaxLevel = 60,
+        Classification = "Rare Elite",
+        Movement = "Idle",
+        Notes = "Basic elite",
+        Location = ".pin Winterspring,63.2,70.0;.mob Kashoch the Reaver"
         },
       },
       ["Princess Tempestria"] = {
@@ -1757,6 +2027,26 @@ local dangerousMobs = {
         Location = ".pin Winterspring,52.0,39.6;.pin Winterspring,51.4,43.4;.pin Winterspring,54.6,43.6;.pin Winterspring,54.8,39.4;.pin Winterspring,53.4,41.2;.mob Watery Invader"
         },
       },
+      ["Frostsaber Stalker"] = {
+        {
+        MinLevel = 59,
+        MaxLevel = 60,
+        Classification = "Normal",
+        Movement = "Idle",
+        Notes = "Stealthed",
+        Location = ".pin Winterspring,51.0,21.6;.pin Winterspring,53.4,17.4;.pin Winterspring,56.8,16.6;.pin Winterspring,56.8,11.8;.pin Winterspring,54.8,10.6;.pin Winterspring,52.4,10.4;.pin Winterspring,48.4,12.6;.pin Winterspring,49.0,17.0;.pin Winterspring,51.0,15.6;.pin Winterspring,53.6,13.2;.mob Frostsaber Stalker"
+        },
+      },
+      ["Cobalt Whelp"] = {
+        {
+        MinLevel = 54,
+        MaxLevel = 55,
+        Classification = "Normal",
+        Movement = "Idle",
+        Notes = "High damage frost shock + bleed",
+        Location = ".pin Winterspring,54.6,51.6;.pin Winterspring,57.6,50.2;.pin Winterspring,60.4,49.8;.mob Cobalt Whelp"
+        },
+      },
     },
     ['Silithus'] = {
       ["Krellack"] = {
@@ -1765,7 +2055,7 @@ local dangerousMobs = {
         MaxLevel = 56,
         Classification = "Rare",
         Movement = "Idle",
-        Notes = "\"fatal sting\" is an execute with a dot effect",
+        Notes = "\"Fatal Sting\" is an execute with a dot effect",
         Location = ".pin Silithus,65.80,30.32;.mob Krellack"
         },
       },
@@ -1836,7 +2126,7 @@ local dangerousMobs = {
         Classification = "Elite",
         Movement = "Slow Patrol",
         Notes = "Has 4 adds; mortal strikes and piercing howls",
-        Location = ".line Silithus,52.35,11.78,52.94,14.46,55.73,17.11,58.41,20.25,60.31,23.07,63.43,27.06,63.35,30.35,71.46,35.72,72.84,37.69,72.09,39.87,70.25,42.40,68.64,45.43,65.44,46.71,63.89,47.98,63.38,50.82,61.29,53.70,60.40,55.68,59.69,56.33,58.17,58.60,56.24,62.76,50.85,66.67,49.42,69.19,37.12,84.28,34.63,84.32,30.18,88.44,30.11,89.76,29.05,93.14,28.92,95.64;.mob Twilight Marauder Morna"
+        Location = ".line Silithus,52.35,11.78,52.94,14.46,55.73,17.11,58.41,20.25,60.31,23.07,63.43,27.06,63.35,30.35,71.46,35.72,72.84,37.69,72.09,39.87,70.25,42.40,64.6,44.1,60.1,44.9,53.1,55.1,44.4,59.5,42.8,73.4,37.3,79.7,36.3,80.0,34.4,85.0,30.9,89.2;.mob Twilight Marauder Morna"
         },
       },
       ["Lapress"] = {
@@ -1865,8 +2155,8 @@ local dangerousMobs = {
         MaxLevel = 56,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "summons 2-3 silithid near death",
-        Location = ".pin Silithus,66.0,49.6;.pin Silithus,63.8,47.2;.pin Silithus,60.8,49.6;.pin Silithus,58.6,52.6;.pin Silithus,58.8,55.8;.pin Silithus,61.6,58.4;.pin Silithus,65.0,58.4;.pin Silithus,61.6,54.0;.pin Silithus,62.8,15.8;.mob Tortured Druid"
+        Notes = "Summons 2-3 silithid near death",
+        Location = ".pin Silithus,66.0,49.6;.pin Silithus,63.8,47.2;.pin Silithus,60.8,49.6;.pin Silithus,58.6,52.6;.pin Silithus,58.8,55.8;.pin Silithus,61.6,58.4;.pin Silithus,65.0,58.4;.pin Silithus,61.6,54.0;.pin Silithus,62.8,51.8;.mob Tortured Druid"
         },
       },
       ["Tortured Sentinel"] = {
@@ -1875,8 +2165,8 @@ local dangerousMobs = {
         MaxLevel = 56,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "summons 2-3 silithid near death",
-        Location = ".pin Silithus,66.0,49.6;.pin Silithus,63.8,47.2;.pin Silithus,60.8,49.6;.pin Silithus,58.6,52.6;.pin Silithus,58.8,55.8;.pin Silithus,61.6,58.4;.pin Silithus,65.0,58.4;.pin Silithus,61.6,54.0;.pin Silithus,62.8,15.8;.mob Tortured Sentinel"
+        Notes = "Summons 2-3 silithid near death",
+        Location = ".pin Silithus,66.0,49.6;.pin Silithus,63.8,47.2;.pin Silithus,60.8,49.6;.pin Silithus,58.6,52.6;.pin Silithus,58.8,55.8;.pin Silithus,61.6,58.4;.pin Silithus,65.0,58.4;.pin Silithus,61.6,54.0;.pin Silithus,62.8,51.8;.mob Tortured Sentinel"
         },
       },
       ["Hive'Ashi Ambusher"] = {
@@ -1897,7 +2187,7 @@ local dangerousMobs = {
         MaxLevel = 52,
         Classification = "Rare",
         Movement = "Slow Patrol",
-        Notes = "physical damage taken debuff, thrashes, bleeds",
+        Notes = "Physical damage taken debuff, thrashes, bleeds",
         Location = ".line Western Plaguelands,45.69,52.34,45.75,51.39,46.20,51.03,46.64,51.29,46.72,51.95,46.36,52.37,45.69,52.34;.mob Foulmane"
         },
       },
@@ -1907,7 +2197,7 @@ local dangerousMobs = {
         MaxLevel = 53,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "spawns/aggros as soon as player/a pet gets near the cauldron",
+        Notes = "Spawns as soon as player/pet approaches cauldron",
         Location = ".pin Western Plaguelands,36.8,57.2;.mob Cauldron Lord Bilemaw"
         },
       },
@@ -1917,7 +2207,7 @@ local dangerousMobs = {
         MaxLevel = 55,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "spawns/aggros as soon as player/a pet gets near the cauldron",
+        Notes = "Spawns as soon as player/pet approaches cauldron",
         Location = ".pin Western Plaguelands,46.2,52.6;.mob Cauldron Lord Malvinious"
         },
       },
@@ -1937,7 +2227,7 @@ local dangerousMobs = {
         MaxLevel = 56,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "spawns/aggros as soon as player/a pet gets near the cauldron",
+        Notes = "Spawns as soon as player/pet approaches cauldron",
         Location = ".pin Western Plaguelands,52.8,66.0;.mob Cauldron Lord Razarch"
         },
       },
@@ -1948,7 +2238,7 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Slow Patrol",
         Notes = "Pats up and down the stairs, has a long HoJ",
-        Location = ".line Western Plaguelands,54.39,23.70,54.58,23.55,54.63,23.02,54.97,22.70,55.33,22.89,55.43,23.21,55.40,23.75,55.16,24.07,54.82,24.03,54.65,23.83,54.53,24.03,54.67,23.68,54.77,23.60,54.81,23.23,55.12,23.08,55.24,23.38,55.15,23.67,54.90,23.68;.mob Cavalier Durgen"
+        Location = ".pin Western Plaguelands,54.39,23.70;.mob Cavalier Durgen"
         },
       },
       ["Cauldron Lord Soulwrath"] = {
@@ -1957,7 +2247,7 @@ local dangerousMobs = {
         MaxLevel = 58,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "spawns/aggros as soon as player/a pet gets near the cauldron",
+        Notes = "Spawns as soon as player/pet approaches cauldron",
         Location = ".pin Western Plaguelands,62.6,59.0;.mob Cauldron Lord Soulwrath"
         },
       },
@@ -1977,7 +2267,7 @@ local dangerousMobs = {
         MaxLevel = 60,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "inflicts the \"cripple\" debuff",
+        Notes = "Inflicts the \"cripple\" debuff",
         Location = ".pin Western Plaguelands,45.6,69.2;.mob Spectral Attendant"
         },
       },
@@ -1998,7 +2288,7 @@ local dangerousMobs = {
         Classification = "Rare Elite",
         Movement = "Fast Patrol",
         Notes = "Enrages, high level, runs up/down the tower stairs",
-        Location = ".line Western Plaguelands,45.78,18.66,45.99,18.62,45.88,18.90,45.63,18.87,45.53,18.53,45.66,18.28,45.91,18.36,45.95,18.64,45.82,18.89,45.65,18.78,45.60,18.52,45.76,18.37,45.82,18.45,45.70,18.80,45.60,18.58,45.69,18.36,45.91,18.44,45.92,18.75,45.81,18.85,45.70,18.80;.mob Scarlet Executioner"
+        Location = ".pin Western Plaguelands,45.78,18.66;.mob Scarlet Executioner"
         },
       },
       ["Scarlet Interrogator"] = {
@@ -2017,7 +2307,7 @@ local dangerousMobs = {
         MaxLevel = 61,
         Classification = "Elite",
         Movement = "Idle",
-        Notes = "frostbolts hit hard, has lots of hp, and pulls with many mobs",
+        Notes = "Frostbolts hit hard, has lots of hp, and pulls with many mobs",
         Location = ".pin Western Plaguelands,45.6,69.2;.mob Araj the Summoner"
         },
       },
@@ -2067,7 +2357,7 @@ local dangerousMobs = {
         MaxLevel = 54,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "fears in a crowded area",
+        Notes = "Fears in a crowded area",
         Location = ".pin Western Plaguelands,44.8,52.2;.pin Western Plaguelands,46.6,51.6;.pin Western Plaguelands,47.4,49.2;.mob Skeletal Terror"
         },
       },
@@ -2078,7 +2368,7 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "Executes",
-        Location = ".pin Western Plaguelands,39.6,70.4;.pin Western Plaguelands,41.2,67.4;.pin Western Plaguelands,45.0,65.4;.pin Western Plaguelands,49.4,65.8;.pin Western Plaguelands,48.4,71.8;.pin Western Plaguelands,44.4,72.6;.pin Western Plaguelands,41.0,70.6;.pin Western Plaguelands,44.6,68.6;.pin Western Plaguelands,41.8,68.2;.mob Skeletal Executioner"
+        Location = ".pin Western Plaguelands,39.6,70.4;.pin Western Plaguelands,41.2,67.4;.pin Western Plaguelands,45.0,65.4;.pin Western Plaguelands,49.4,65.8;.pin Western Plaguelands,48.4,71.8;.pin Western Plaguelands,44.4,72.6;.pin Western Plaguelands,41.0,70.6;.pin Western Plaguelands,44.6,68.6;.mob Skeletal Executioner"
         },
       },
       ["Freezing Ghoul"] = {
@@ -2088,7 +2378,7 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "Has a 5 second stun",
-        Location = ".pin Western Plaguelands,52.4,63.0;.pin Western Plaguelands,53.6,64.6;.pin Western Plaguelands,52.0,66.6;.pin Western Plaguelands,53.6,67.6;.mob Freezing Ghoul"
+        Location = ".pin Western Plaguelands,52.4,63.0;.pin Western Plaguelands,53.6,67.6;.mob Freezing Ghoul"
         },
       },
       ["Scarlet Paladin"] = {
@@ -2109,6 +2399,16 @@ local dangerousMobs = {
         Movement = "Idle",
         Notes = "Sees through talented stealth, and has overpower",
         Location = ".pin Western Plaguelands,42.6,18.6;.pin Western Plaguelands,42.0,15.6;.pin Western Plaguelands,44.8,16.4;.pin Western Plaguelands,47.2,20.2;.pin Western Plaguelands,48.8,22.2;.mob Scarlet Sentinel"
+        },
+      },
+      ["Temporal Parasite"] = {
+        {
+        MinLevel = 55,
+        MaxLevel = 57,
+        Classification = "Normal",
+        Movement = "Idle",
+        Notes = "Lingers if not slain; long slow, multiplies on death",
+        Location = ".pin Western Plaguelands,44.8,61.4;.pin Western Plaguelands,48.6,63.6;.pin Western Plaguelands,48.0,66.6;.pin Western Plaguelands,49.6,69.2;.mob Temporal Parasite"
         },
       },
       ["Scarlet Priest"] = {
@@ -2147,7 +2447,7 @@ local dangerousMobs = {
         MaxLevel = 57,
         Classification = "Elite",
         Movement = "Idle",
-        Notes = "mortal strikes and stuns in a busy area",
+        Notes = "Mortal strikes and stuns in a busy area",
         Location = ".pin Western Plaguelands,44.26,63.23;.pin Western Plaguelands,42.36,66.18;.pin Western Plaguelands,40.07,71.64;.pin Western Plaguelands,46.62,71.12;.mob Skeletal Warlord"
         },
       },
@@ -2177,7 +2477,7 @@ local dangerousMobs = {
         MaxLevel = 58,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "inflicts the \"cripple\" debuff",
+        Notes = "Inflicts the \"cripple\" debuff",
         Location = ".pin Western Plaguelands,62.7,58.3;.mob Haunting Vision"
         },
       },
@@ -2190,7 +2490,7 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "Stuns; pulls with other mobs",
-        Location = ".pin Eastern Plaguelands,27.4,85.6;.mob Zaeldarr the Outcast"
+        Location = ".pin Eastern Plaguelands,27.4,85.6;.mob Zeldarr the Outcast"
         },
       },
       ["Mercutio Filthgorger"] = {
@@ -2233,14 +2533,22 @@ local dangerousMobs = {
         Location = ".line Eastern Plaguelands,19.54,30.97,19.24,31.17,19.01,31.58,18.67,32.87,18.32,33.53,17.84,33.75,17.27,33.59,16.74,33.13,16.12,32.76,15.61,32.53,15.56,31.62,15.66,31.00,15.99,30.26,15.89,29.44,15.53,29.05,15.23,29.51,14.98,30.10,14.68,30.70,14.86,31.50,14.65,31.74,13.82,31.77,13.48,33.16,12.90,33.48,12.48,33.56,12.11,34.26,11.20,34.53,10.49,35.57,10.58,36.51,10.12,37.47,9.41,37.89,8.85,37.74,8.03,38.28,7.96,39.00,8.14,39.51;.mob Nerubian Overseer"
         },
       },
-      ["Crimson Courier"] = {
+      ["Crimson Bodyguard"] = {
         {
-        MinLevel = 60,
-        MaxLevel = 60,
+        MinLevel = 57,
+        MaxLevel = 58,
         Classification = "Elite",
         Movement = "Slow Patrol",
-        Notes = "Patrols whole zone with dangerous entourage",
-        Location = ".line Eastern Plaguelands,55.06,17.48,30.85,20.06,30.95,21.06,31.04,23.39,31.57,25.91,32.01,26.80,32.95,28.02,33.41,28.57,34.29,29.10,35.77,29.43,37.58,29.43,38.44,28.76,39.11,28.47,39.55,28.59,40.54,29.23,41.29,29.60,42.77,30.54,43.77,31.05,44.70,31.46,45.79,31.82,46.93,32.53,48.82,33.62,49.73,33.94,50.66,34.26,51.76,34.59,53.33,34.90,55.76,35.46,56.51,35.88,57.60,36.74,58.73,37.92,60.50,40.32,62.25,44.52,63.66,48.15,63.82,49.64,63.71,50.72,63.18,51.91,62.64,53.60,62.46,56.39,62.75,58.46,63.22,60.47,63.27,62.14,62.96,63.35,62.31,64.95,60.81,67.20,59.92,68.37,60.83,69.91,62.64,71.40,64.19,73.01,65.20,75.50,65.70,76.12,67.44,77.08,68.39,77.46,69.21,77.87,70.67,78.33,71.62,78.48,72.17,78.84,73.78,80.37,76.54,81.80,77.36,81.79,78.12,81.64,79.23,81.65,80.26,81.73,81.02,81.96,81.11,82.39,81.36,82.76,81.74,82.71,82.05,82.30,82.51,82.43,84.75,83.67,85.55,84.17,86.61,85.06,86.52,85.30,86.93,85.65,87.04,85.36,87.57,85.77;.mob Crimson Courier"
+        Notes = "Four accompany the Crimson Courier; charges, knocks back, and disarms",
+        Location = ".line Eastern Plaguelands,30.85,20.06,30.95,21.06,31.04,23.39,31.57,25.91,32.01,26.80,32.95,28.02,33.41,28.57,34.29,29.10,35.77,29.43,37.58,29.43,38.44,28.76,39.11,28.47,39.55,28.59,40.54,29.23,41.29,29.60,42.77,30.54,43.77,31.05,44.70,31.46,45.79,31.82,46.93,32.53,48.82,33.62,49.73,33.94,50.66,34.26,51.76,34.59,53.33,34.90,55.76,35.46,56.51,35.88,57.60,36.74,58.73,37.92,60.50,40.32,62.25,44.52,63.66,48.15,63.82,49.64,63.71,50.72,63.18,51.91,62.64,53.60,62.46,56.39,62.75,58.46,63.22,60.47,63.27,62.14,62.96,63.35,62.31,64.95,60.81,67.20,59.92,68.37,60.83,69.91,62.64,71.40,64.19,73.01,65.20,75.50,65.70,76.12,67.44,77.08,68.39,77.46,69.21,77.87,70.67,78.33,71.62,78.48,72.17,78.84,73.78,80.37,76.54,81.80,77.36,81.79,78.12,81.64,79.23,81.65,80.26,81.73,81.02,81.96,81.11,82.39,81.36,82.76,81.74,82.71,82.05,82.30,82.51,82.43,84.75,83.67,85.55,84.17,86.61,85.06,86.52,85.30,86.93,85.65,87.04,85.36,87.57,85.77;.mob Crimson Bodyguard"
+        },
+        {
+        MinLevel = 57,
+        MaxLevel = 58,
+        Classification = "Elite",
+        Movement = "Slow Patrol",
+        Notes = "Four accompany the Crimson Courier; charges, knocks back, and disarms",
+        Location = ".line Eastern Plaguelands,30.85,20.06,30.95,21.06,31.04,23.39,31.57,25.91,32.01,26.80,32.95,28.02,33.41,28.57,34.29,29.10,35.77,29.43,37.58,29.43,38.44,28.76,39.11,28.47,39.55,28.59,40.54,29.23,41.29,29.60,42.77,30.54,43.77,31.05,44.70,31.46,45.79,31.82,46.93,32.53,48.82,33.62,49.73,33.94,50.66,34.26,51.76,34.59,53.33,34.90,55.76,35.46,56.51,35.88,57.60,36.74,58.73,37.92,60.50,40.32,62.25,44.52,63.66,48.15,63.82,49.64,63.71,50.72,63.18,51.91,62.64,53.60,62.46,56.39,62.75,58.46,63.22,60.47,63.27,62.14,62.96,63.35,62.31,64.95,60.81,67.20,59.92,68.37,60.83,69.91,62.64,71.40,64.19,73.01,65.20,75.50,65.70,76.12,67.44,77.08,68.39,77.46,69.21,77.87,70.67,78.33,71.62,78.48,72.17,78.84,73.78,80.37,76.54,81.80,77.36,81.79,78.12,81.64,79.23,81.65,80.26,81.73,81.02,81.96,81.11,82.39,81.36,82.76,81.74,82.71,82.05,82.30,82.51,82.43,84.75,83.67,85.55,84.17,86.61,85.06,86.52,85.30,86.93,85.65,87.04,85.36,87.57,85.77;.mob Crimson Bodyguard"
         },
       },
       ["Horgus the Ravager"] = {
@@ -2270,7 +2578,7 @@ local dangerousMobs = {
         Classification = "Elite",
         Movement = "Slow Patrol",
         Notes = "Quest mob; patrols Stratholme (Live) to Tyr's Hand with 9-10 non-elite bodyguards and lingers if not slain",
-        Location = ".line Eastern Plaguelands,55.06,17.48,30.85,20.06,30.95,21.06,31.04,23.39,31.57,25.91,32.01,26.80,32.95,28.02,33.41,28.57,34.29,29.10,35.77,29.43,37.58,29.43,38.44,28.76,39.11,28.47,39.55,28.59,40.54,29.23,41.29,29.60,42.77,30.54,43.77,31.05,44.70,31.46,45.79,31.82,46.93,32.53,48.82,33.62,49.73,33.94,50.66,34.26,51.76,34.59,53.33,34.90,55.76,35.46,56.51,35.88,57.60,36.74,58.73,37.92,60.50,40.32,62.25,44.52,63.66,48.15,63.82,49.64,63.71,50.72,63.18,51.91,62.64,53.60,62.46,56.39,62.75,58.46,63.22,60.47,63.27,62.14,62.96,63.35,62.31,64.95,60.81,67.20,59.92,68.37,60.83,69.91,62.64,71.40,64.19,73.01,65.20,75.50,65.70,76.12,67.44,77.08,68.39,77.46,69.21,77.87,70.67,78.33,71.62,78.48,72.17,78.84,73.78,80.37,76.54,81.80,77.36,81.79,78.12,81.64,79.23,81.65,80.26,81.73,81.02,81.96,81.11,82.39,81.36,82.76,81.74,82.71,82.05,82.30,82.51,82.43,84.75,83.67,85.55,84.17,86.61,85.06,86.52,85.30,86.93,85.65,87.04,85.36,87.57,85.77;.mob Demetria"
+        Location = ".line Eastern Plaguelands,30.85,20.06,30.95,21.06,31.04,23.39,31.57,25.91,32.01,26.80,32.95,28.02,33.41,28.57,34.29,29.10,35.77,29.43,37.58,29.43,38.44,28.76,39.11,28.47,39.55,28.59,40.54,29.23,41.29,29.60,42.77,30.54,43.77,31.05,44.70,31.46,45.79,31.82,46.93,32.53,48.82,33.62,49.73,33.94,50.66,34.26,51.76,34.59,53.33,34.90,55.76,35.46,56.51,35.88,57.60,36.74,58.73,37.92,60.50,40.32,62.25,44.52,63.66,48.15,63.82,49.64,63.71,50.72,63.18,51.91,62.64,53.60,62.46,56.39,62.75,58.46,63.22,60.47,63.27,62.14,62.96,63.35,62.31,64.95,60.81,67.20,59.92,68.37,60.83,69.91,62.64,71.40,64.19,73.01,65.20,75.50,65.70,76.12,67.44,77.08,68.39,77.46,69.21,77.87,70.67,78.33,71.62,78.48,72.17,78.84,73.78,80.37,76.54,81.80,77.36,81.79,78.12,81.64,79.23,81.65,80.26,81.73,81.02,81.96,81.11,82.39,81.36,82.76,81.74,82.71,82.05,82.30,82.51,82.43,84.75,83.67,85.55,84.17,86.61,85.06,86.52,85.30,86.93,85.65,87.04,85.36,87.57,85.77;.mob Demetria"
         },
       },
       ["Plaguebat"] = {
@@ -2289,18 +2597,18 @@ local dangerousMobs = {
         MaxLevel = 56,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "Invisible mob often patting in Corrin's Crossing",
-        Location = ".pin Eastern Plaguelands,54.4,62.9;.pin Eastern Plaguelands,56.0,63.4;.pin Eastern Plaguelands,55.7,61.0;.mob Unseen Servant"
+        Notes = "Invisible patrol, sees through stealth",
+        Location = ".pin Eastern Plaguelands,58.6,71.0;.pin Eastern Plaguelands,58.0,66.2;.pin Eastern Plaguelands,62.1,68.9;.mob Unseen Servant"
         },
       },
-      ["Crimson Bodyguard"] = {
+      ["Eyeless Watcher"] = {
         {
         MinLevel = 57,
         MaxLevel = 58,
-        Classification = "Elite",
-        Movement = "Slow Patrol",
-        Notes = "Four accompany the Crimson Courier; charges, knocks back, and disarms",
-        Location = ".line Eastern Plaguelands,55.06,17.48,30.85,20.06,30.95,21.06,31.04,23.39,31.57,25.91,32.01,26.80,32.95,28.02,33.41,28.57,34.29,29.10,35.77,29.43,37.58,29.43,38.44,28.76,39.11,28.47,39.55,28.59,40.54,29.23,41.29,29.60,42.77,30.54,43.77,31.05,44.70,31.46,45.79,31.82,46.93,32.53,48.82,33.62,49.73,33.94,50.66,34.26,51.76,34.59,53.33,34.90,55.76,35.46,56.51,35.88,57.60,36.74,58.73,37.92,60.50,40.32,62.25,44.52,63.66,48.15,63.82,49.64,63.71,50.72,63.18,51.91,62.64,53.60,62.46,56.39,62.75,58.46,63.22,60.47,63.27,62.14,62.96,63.35,62.31,64.95,60.81,67.20,59.92,68.37,60.83,69.91,62.64,71.40,64.19,73.01,65.20,75.50,65.70,76.12,67.44,77.08,68.39,77.46,69.21,77.87,70.67,78.33,71.62,78.48,72.17,78.84,73.78,80.37,76.54,81.80,77.36,81.79,78.12,81.64,79.23,81.65,80.26,81.73,81.02,81.96,81.11,82.39,81.36,82.76,81.74,82.71,82.05,82.30,82.51,82.43,84.75,83.67,85.55,84.17,86.61,85.06,86.52,85.30,86.93,85.65,87.04,85.36,87.57,85.77;.mob Crimson Bodyguard"
+        Classification = "Normal",
+        Movement = "Idle",
+        Notes = "Invisible patrol, sees through stealth",
+        Location = ".pin Eastern Plaguelands,81.8,45.8;.pin Eastern Plaguelands,86.2,40.8;.pin Eastern Plaguelands,41.8,54.1;.pin Eastern Plaguelands,41.7,48.8;.pin Eastern Plaguelands,38.1,50.5;.pin Eastern Plaguelands,34.6,61.2;.pin Eastern Plaguelands,69.9,30.5;.pin Eastern Plaguelands,72.4,31.4;.pin Eastern Plaguelands,74.0,34.0.mob Unseen Servant"
         },
       },
       ["Mossflayer Scout"] = {
@@ -2336,31 +2644,7 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "Stuns, spawn if player gets near graves",
-        Location = ".pin Eastern Plaguelands,69.0,20.4;.pin Eastern Plaguelands,68.4,17.4;.pin Eastern Plaguelands,71.2,15.4;.pin Eastern Plaguelands,70.6,18.8;.pin Eastern Plaguelands,70.2,17.6;.mob Infected Mossflayer"
-        },
-      },
-    },
-    ['Undercity'] = {
-      ["Unseen"] = {
-        {
-        MinLevel = 49,
-        MaxLevel = 51,
-        Classification = "Normal",
-        Movement = "Idle",
-        Notes = "Invisible mobs in UC courtyard, aggros if AoE'd",
-        Location = ".pin Undercity,61.3,7.9;.pin Undercity,71.2,7.1;.pin Undercity,64.8,15.4;.pin Undercity,68.8,14.9;.mob Unseen"
-        },
-      },
-    },
-    ['Tirisfal Glades'] = {
-      ["Unseen"] = {
-        {
-        MinLevel = 49,
-        MaxLevel = 51,
-        Classification = "Normal",
-        Movement = "Idle",
-        Notes = "Invisible mobs in UC courtyard, aggros if AoE'd",
-        Location = ".pin Tirisfal Glades,58.8,68.1;.pin Tirisfal Glades,59.2,71.7;.pin Tirisfal Glades,64.0,71.7;.pin Tirisfal Glades,64.5,67.5;.mob Unseen"
+        Location = ".pin Eastern Plaguelands,69.0,20.4;.pin Eastern Plaguelands,68.4,17.4;.pin Eastern Plaguelands,71.2,15.4;.pin Eastern Plaguelands,70.6,18.8;.mob Infected Mossflayer"
         },
       },
     },
@@ -2404,7 +2688,7 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "Stealthed mobs around the house of Lord Aliden Perenolde, easily ass-pulled",
-        Location = ".pin Alterac Mountains,38.50,21.80;.pin Alterac Mountains,40.77,19.50;.pin Alterac Mountains,41.17,15.45;.pin Alterac Mountains,39.55,12.48;.pin Alterac Mountains,36.88,12.91;.pin Alterac Mountains,37.45,16.39;.pin Alterac Mountains,39.17,14.94;.mob Syndicate Assassin"
+        Location = ".pin Alterac Mountains,38.50,21.80;.pin Alterac Mountains,40.77,19.50;.pin Alterac Mountains,39.55,12.48;.pin Alterac Mountains,36.88,12.91;.pin Alterac Mountains,37.45,16.39;.mob Syndicate Assassin"
         },
       },
       ["Syndicate Enforcer"] = {
@@ -2414,11 +2698,71 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "Easily double pulled, they have a strong whirlwind ability",
-        Location = ".pin Alterac Mountains,38.50,21.80;.pin Alterac Mountains,40.77,19.50;.pin Alterac Mountains,41.17,15.45;.pin Alterac Mountains,39.55,12.48;.pin Alterac Mountains,36.88,12.91;.pin Alterac Mountains,37.45,16.39;.pin Alterac Mountains,39.17,14.94;.mob Syndicate Enforcer"
+        Location = ".pin Alterac Mountains,38.50,21.80;.pin Alterac Mountains,40.77,19.50;.pin Alterac Mountains,39.55,12.48;.pin Alterac Mountains,36.88,12.91;.pin Alterac Mountains,37.45,16.39;.mob Syndicate Enforcer"
+        },
+      },
+      ["Crushridge Mauler"] = {
+        {
+        MinLevel = 36,
+        MaxLevel = 40,
+        Classification = "Elite",
+        Movement = "Slow Patrol",
+        Notes = "Basic elite",
+        Location = ".line Alterac Mountains,34.49,49.84,34.42,50.90,34.77,50.96,36.57,49.58,37.49,51.34,38.06,53.03,38.35,54.29,38.97,54.86,39.28,54.74;.mob Crushridge Mauler"
+        },
+      },
+      ["Crushridge Warmonger"] = {
+        {
+        MinLevel = 36,
+        MaxLevel = 40,
+        Classification = "Elite",
+        Movement = "Slow Patrol",
+        Notes = "Calls for help",
+        Location = ".line Alterac Mountains,38.06,53.66,38.17,52.65,38.75,51.61,39.12,51.15,39.31,50.61,39.65,50.14,39.84,48.34;.mob Crushridge Warmonger"
+        },
+      },
+      ["Grel'borg the Miser"] = {
+        {
+        MinLevel = 39,
+        MaxLevel = 39,
+        Classification = "Elite",
+        Movement = "Slow Patrol",
+        Notes = "Basic elite; has a flame ward",
+        Location = ".line Alterac Mountains,35.58,54.44,35.26,54.33,35.20,54.18,35.77,53.74,36.26,55.11,36.66,54.81,36.29,53.75,37.30,52.85,37.59,52.71,38.24,52.79,38.87,51.55,39.28,50.93,39.52,49.71,40.14,47.23,40.91,46.30,40.24,46.09,40.13,47.69,39.19,51.17,38.51,52.01,38.11,52.68,37.46,52.78,36.28,53.71,35.88,52.69,35.52,53.01,35.77,53.74,35.20,54.18,35.26,54.33,35.58,54.44;.mob Grel'borg the Miser"
+        },
+      },
+      ["Narillasanz"] = {
+        {
+        MinLevel = 44,
+        MaxLevel = 44,
+        Classification = "Rare Elite",
+        Movement = "Slow Patrol",
+        Notes = "Fire breath, renews, immune to fear",
+        Location = ".line Alterac Mountains,73.70,56.43,74.53,54.28,75.04,53.46,76.07,53.20,76.77,52.03,76.99,50.58,76.24,48.99,75.50,48.08,75.01,47.03,77.64,45.17,78.50,43.87,79.70,43.02,80.43,44.45,80.13,46.17,81.00,47.46,81.84,49.20,81.97,50.86,79.93,54.01,78.80,53.01,78.10,50.83,78.93,49.45,78.80,47.67,79.81,47.03,80.98,48.43,82.25,49.38,83.07,50.77,83.85,52.74,83.90,54.22,84.36,55.14,84.24,56.11,82.79,56.17,81.32,55.14,79.41,58.86,78.56,61.08,77.26,62.53,75.47,63.64,74.71,63.20,74.09,60.65,74.29,60.27,73.92,58.40,73.70,56.43;.mob Narillasanz"
         },
       },
     },
     ['Arathi Highlands'] = {
+      ["Lieutenant Valorcall"] = {
+        {
+        MinLevel = 38,
+        MaxLevel = 38,
+        Classification = "Elite",
+        Movement = "Slow Patrol",
+        Notes = "Has 2 adds, bubbles/heals",
+        Location = ".line Arathi Highlands,53.0,39.6,52.0,41.8,50.8,43.8,49.0,43.9,46.9,45.6,44.2,50.6,44.3,53.0,43.4,54.9,39.7,54.0,37.4,52.9,35.0,52.1,32.1,51.5,29.5,50.2,27.2,50.1,26.2,52.4,25.8,55.5,25.8,58.2"
+        },
+      },
+      ["Stormgarde Cavalryman"] = {
+        {
+        MinLevel = 36,
+        MaxLevel = 37,
+        Classification = "Elite",
+        Movement = "Slow Patrol",
+        Notes = "Stunning charge, high damage",
+        Location = ".line Arathi Highlands,53.0,39.6,52.0,41.8,50.8,43.8,49.0,43.9,46.9,45.6,44.2,50.6,44.3,53.0,43.4,54.9,39.7,54.0,37.4,52.9,35.0,52.1,32.1,51.5,29.5,50.2,27.2,50.1,26.2,52.4,25.8,55.5,25.8,58.2"
+        },
+      },
       ["Nimar the Slayer"] = {
         {
         MinLevel = 37,
@@ -2436,7 +2780,7 @@ local dangerousMobs = {
         Classification = "Elite",
         Movement = "Idle",
         Notes = "Basic elite in area with stealth patrols",
-        Location = ".pin Arathi Highlands,29.73,62.96;.pin Arathi Highlands,29.69,61.40;.pin Arathi Highlands,29.71,64.65;.mob Marez Cowl"
+        Location = ".pin Arathi Highlands,29.71,64.65;.mob Marez Cowl"
         },
       },
       ["Boulderfist Ogre"] = {
@@ -2445,7 +2789,7 @@ local dangerousMobs = {
         MaxLevel = 33,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "Has Fist of Stone ability, 100 dmg bonus per attack but 54% reduced attack speed/movement speed",
+        Notes = "Fist of Stone: +100 dmg per attack, 54% reduced attack/movement speed",
         Location = ".pin Arathi Highlands,53.54,76.79;.mob Bouldfist Ogre"
         },
       },
@@ -2465,7 +2809,7 @@ local dangerousMobs = {
         MaxLevel = 34,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "Has Fist of Stone ability, 100 dmg bonus per attack but 54% reduced attack speed/movement speed",
+        Notes = "Fist of Stone: +100 dmg per attack, 54% reduced attack/movement speed",
         Location = ".pin Arathi Highlands,53.54,76.79;.mob Boulderfist Enforcer"
         },
       },
@@ -2539,7 +2883,7 @@ local dangerousMobs = {
         MaxLevel = 53,
         Classification = "Rare Elite",
         Movement = "Slow Patrol",
-        Notes = "Has a huge knockback and a high-damage 5 sec aoe stun",
+        Notes = "Huge knockback and a high-damage 5 sec aoe stun",
         Location = ".line Azshara,76.20,20.69,76.27,21.13,76.11,23.40,75.67,24.39,74.56,24.91,74.23,25.09,73.82,24.61,73.71,23.88,72.97,23.43,72.26,23.47,71.76,23.33,71.28,22.53,71.06,21.45,71.23,19.97,71.55,19.65,72.04,19.91,72.59,20.94,73.14,21.41,73.52,21.32,74.04,20.21,74.60,19.72,75.22,19.69,75.69,18.53,76.36,18.01,77.01,17.16,78.01,17.28,79.03,18.19,79.31,18.45,80.57,18.52,81.01,18.70,81.55,18.50,81.98,17.89;.mob Monnos the Elder"
         },
       },
@@ -2560,7 +2904,7 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "Large aggro radius",
-        Location = ".pin Azshara,55.2,26.4;.pin Azshara,56.2,29.8;.pin Azshara,58.2,30.8;.pin Azshara,59.2,29.6;.pin Azshara,56.6,28.8;.pin Azshara,57.8,26.4;.mob Blood Elf Surveyor"
+        Location = ".pin Azshara,55.2,26.4;.pin Azshara,58.2,30.8;.pin Azshara,59.2,29.6;.pin Azshara,56.6,28.8;.pin Azshara,57.8,26.4;.mob Blood Elf Surveyor"
         },
       },
       ["Blood Elf Reclaimer"] = {
@@ -2570,7 +2914,7 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "Large aggro radius",
-        Location = ".pin Azshara,55.2,26.4;.pin Azshara,56.2,29.8;.pin Azshara,58.2,30.8;.pin Azshara,59.2,29.6;.pin Azshara,56.6,28.8;.pin Azshara,57.8,26.4;.mob Blood Elf Reclaimer"
+        Location = ".pin Azshara,55.2,26.4;.pin Azshara,58.2,30.8;.pin Azshara,59.2,29.6;.pin Azshara,56.6,28.8;.pin Azshara,57.8,26.4;.mob Blood Elf Reclaimer"
         },
       },
       ["Cliff Walker"] = {
@@ -2579,7 +2923,7 @@ local dangerousMobs = {
         MaxLevel = 53,
         Classification = "Elite",
         Movement = "Idle",
-        Notes = "Basic elite, nothing special",
+        Notes = "Basic elite",
         Location = ".pin Azshara,57.2,79.0;.pin Azshara,52.6,81.4;.pin Azshara,49.8,77.6;.pin Azshara,46.2,83.4;.pin Azshara,45.8,75.0;.pin Azshara,70.8,23.6;.pin Azshara,70.4,12.8;.pin Azshara,77.2,18.8;.mob Cliff Walker"
         },
       },
@@ -2589,7 +2933,7 @@ local dangerousMobs = {
         MaxLevel = 54,
         Classification = "Elite",
         Movement = "Idle",
-        Notes = "Basic elite, nothing special",
+        Notes = "Basic elite",
         Location = ".pin Azshara,57.2,79.0;.pin Azshara,52.6,81.4;.pin Azshara,49.8,77.6;.pin Azshara,46.2,83.4;.pin Azshara,45.8,75.0;.pin Azshara,70.8,23.6;.pin Azshara,70.4,12.8;.pin Azshara,77.2,18.8;.mob Cliff Thunderer"
         },
       },
@@ -2599,7 +2943,7 @@ local dangerousMobs = {
         MaxLevel = 54,
         Classification = "Elite",
         Movement = "Idle",
-        Notes = "Basic elite, nothing special",
+        Notes = "Basic elite",
         Location = ".pin Azshara,70.4,35.8;.pin Azshara,62.6,37.4;.pin Azshara,56.2,42.0;.pin Azshara,53.0,50.2;.pin Azshara,54.0,60.4;.pin Azshara,59.4,68.2;.pin Azshara,65.2,70.6;.pin Azshara,72.2,71.8;.pin Azshara,77.8,70.4;.pin Azshara,77.6,59.8;.pin Azshara,76.0,48.4;.pin Azshara,66.4,46.8;.pin Azshara,61.6,56.2;.pin Azshara,67.4,61.6;.pin Azshara,69.4,53.8;.mob Servant of Arkkoroc"
         },
       },
@@ -2619,7 +2963,7 @@ local dangerousMobs = {
         MaxLevel = 44,
         Classification = "Elite",
         Movement = "Idle",
-        Notes = "Basic elite, nothing special",
+        Notes = "Basic elite",
         Location = ".pin Azshara,70.4,35.8;.pin Azshara,62.6,37.4;.pin Azshara,56.2,42.0;.pin Azshara,53.0,50.2;.pin Azshara,54.0,60.4;.pin Azshara,59.4,68.2;.pin Azshara,65.2,70.6;.pin Azshara,72.2,71.8;.pin Azshara,77.8,70.4;.pin Azshara,77.6,59.8;.pin Azshara,76.0,48.4;.pin Azshara,66.4,46.8;.pin Azshara,61.6,56.2;.pin Azshara,67.4,61.6;.pin Azshara,69.4,53.8;.mob Son of Arkkoroc"
         },
       },
@@ -2631,7 +2975,7 @@ local dangerousMobs = {
         MaxLevel = 40,
         Classification = "Rare Elite",
         Movement = "Slow Patrol",
-        Notes = "Basic elite, nothing special",
+        Notes = "Basic elite",
         Location = ".line Badlands,41.68,39.71,40.13,40.09,38.96,40.24,37.78,41.88,36.55,42.56,35.95,43.69,34.97,44.76,34.27,46.35,33.49,47.82,33.21,49.64,32.64,51.13,32.20,52.67,31.78,55.21,31.31,56.80,30.62,57.90,29.48,58.40,27.88,58.13,23.79,57.55,21.26,58.27,20.23,57.85,19.28,58.58,18.87,59.91,18.68,60.39,16.24,63.49,14.81,64.16,11.92,64.04,10.60,63.71,7.83,61.88,6.99,61.68;.mob Siege Golem"
         },
       },
@@ -2641,8 +2985,8 @@ local dangerousMobs = {
         MaxLevel = 45,
         Classification = "Rare Elite",
         Movement = "Slow Patrol",
-        Notes = "Patrolling around the zone",
-        Location = ".line Badlands,36.37,71.63,39.75,72.36,43.61,72.61,51.70,73.52,61.89,67.68,54.73,58.52,48.53,53.02,45.44,51.70,41.01,54.95,35.35,56.99,28.17,56.44,19.50,57.77,16.05,64.35,12.51,72.73,12.85,77.42,14.51,79.15,21.83,78.10,25.39,73.02,32.13,74.04,36.37,71.63;.mob Anathemus"
+        Notes = "Patrols the zone",
+        Location = ".pin Badlands,36.37,71.63;.pin Badlands,51.70,73.52;.pin Badlands,45.44,51.70;.pin Badlands,56.44,19.50;.pin Badlands,72.73,12.85;.pin Badlands,73.02,32.13;.mob Anathemus"
         },
       },
       ["Zaricotl"] = {
@@ -2652,7 +2996,7 @@ local dangerousMobs = {
         Classification = "Rare Elite",
         Movement = "Idle",
         Notes = "Extremely high level for area",
-        Location = ".pin Badlands,56.8,65.6;.pin Badlands,53.4,60.2;.pin Badlands,59.2,56.8;.pin Badlands,60.2,65.0;.pin Badlands,56.2,62.6;.pin Badlands,34.8,73.6;.pin Badlands,39.6,65.2;.pin Badlands,32.4,65.2;.pin Badlands,39.8,58.6;.pin Badlands,42.2,52.0;.pin Badlands,32.0,52.8;.pin Badlands,36.4,46.2;.mob Zaricotl"
+        Location = ".pin Badlands,53.4,60.2;.pin Badlands,59.2,56.8;.pin Badlands,60.2,65.0;.pin Badlands,56.2,62.6;.pin Badlands,34.8,73.6;.pin Badlands,39.6,65.2;.pin Badlands,32.4,65.2;.pin Badlands,39.8,58.6;.pin Badlands,42.2,52.0;.pin Badlands,32.0,52.8;.pin Badlands,36.4,46.2;.mob Zaricotl"
         },
       },
       ["Boss Tho'grun"] = {
@@ -2661,7 +3005,7 @@ local dangerousMobs = {
         MaxLevel = 42,
         Classification = "Normal",
         Movement = "Slow Patrol",
-        Notes = "Quest mob patrolling around the zone with 4-6 mob entourage",
+        Notes = "Patrols zone with 4-6 mob entourage",
         Location = ".line Badlands,36.37,71.63,39.75,72.36,43.61,72.61,51.70,73.52,61.89,67.68,54.73,58.52,48.53,53.02,45.44,51.70,41.01,54.95,35.35,56.99,28.17,56.44,19.50,57.77,16.05,64.35,12.51,72.73,12.85,77.42,14.51,79.15,21.83,78.10,25.39,73.02,32.13,74.04,36.37,71.63;.mob Boss Tho'grun"
         },
       },
@@ -2674,7 +3018,7 @@ local dangerousMobs = {
         Classification = "Elite",
         Movement = "Slow Patrol",
         Notes = "Raid boss, immune to cc/snare/fire, pulses damage, breath attack",
-        Location = ".line Blasted Lands,45.37,23.42,46.53,21.52,48.73,22.21,51.81,25.45,53.10,27.52,54.07,27.65,56.10,31.05,57.64,34.56,60.06,36.28,61.54,38.09,63.00,36.07,63.54,35.33,63.94,33.29,63.50,31.20,62.90,30.44,61.31,28.62,60.81,27.30,60.31,26.53,58.54,27.84,57.51,28.33,56.94,29.23,56.55,31.32,55.87,34.38,53.27,36.70,50.95,37.33,47.13,38.89,45.42,43.43,46.54,47.86,48.97,51.64,50.16,50.91,51.26,50.03,53.13,49.22,55.34,46.61,56.65,44.70,56.34,42.17,54.60,39.66,51.48,37.97,48.89,35.65,56.80,35.26,44.72,33.72,44.39,30.60,44.47,26.38,45.37,23.42;.mob Teremus the Devourer"
+        Location = ".line Blasted Lands,45.37,23.42,46.53,21.52,48.73,22.21,51.81,25.45,53.10,27.52,54.07,27.65,56.10,31.05,57.64,34.56,60.06,36.28,61.54,38.09,63.00,36.07,63.54,35.33,63.94,33.29,63.50,31.20,62.90,30.44,61.31,28.62,60.81,27.30,60.31,26.53,58.54,27.84,57.51,28.33,56.94,29.23,56.55,31.32,55.87,34.38,53.27,36.70,50.95,37.33,47.13,38.89,45.42,43.43,46.54,47.86,48.97,51.64,50.16,50.91,51.26,50.03,53.13,49.22,55.34,46.61,56.65,44.70,56.34,42.17,54.60,39.66,51.48,37.97,48.89,35.65,44.72,33.72,44.39,30.60,44.47,26.38,45.37,23.42;.mob Teremus the Devourer"
         },
       },
       ["Helboar"] = {
@@ -2684,7 +3028,7 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "Fire Nova and Charge, high burst",
-        Location = ".pin Blasted Lands,44.6,32.4;.pin Blasted Lands,46.0,40.8;.pin Blasted Lands,48.0,34.4;.pin Blasted Lands,53.6,36.2;.pin Blasted Lands,54.8,44.8;.pin Blasted Lands,51.4,39.6;.pin Blasted Lands,46.6,48.2;.pin Blasted Lands,45.6,62.2;.pin Blasted Lands,51.6,55.0;.mob Helboar"
+        Location = ".pin Blasted Lands,44.6,32.4;.pin Blasted Lands,46.0,40.8;.pin Blasted Lands,48.0,34.4;.pin Blasted Lands,53.6,36.2;.pin Blasted Lands,54.8,44.8;.pin Blasted Lands,51.4,39.6;.pin Blasted Lands,46.6,48.2;.pin Blasted Lands,51.6,55.0;.mob Helboar"
         },
       },
       ["Black Slayer"] = {
@@ -2824,7 +3168,7 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "Executes",
-        Location = ".pin Desolace,72.0,40.2;.pin Desolace,70.8,43.6;.pin Desolace,74.4,46.8;.pin Desolace,70.8,49.0;.pin Desolace,74.0,50.6;.pin Desolace,71.6,50.6;.mob Kolkar Destroyer"
+        Location = ".pin Desolace,72.0,40.2;.pin Desolace,70.8,43.6;.pin Desolace,74.4,46.8;.pin Desolace,70.8,49.0;.pin Desolace,74.0,50.6;.mob Kolkar Destroyer"
         },
       },
       ["Deepstrider Giant"] = {
@@ -3177,6 +3521,26 @@ local dangerousMobs = {
         Location = ".pin Felwood,32.2,66.0;.pin Felwood,33.6,66.6;.pin Felwood,36.4,66.8;.pin Felwood,37.6,66.6;.pin Felwood,38.4,69.6;.mob Jadefire Shadowstalker"
         },
       },
+      ["Jadefire Trickster"] = {
+        {
+        MinLevel = 51,
+        MaxLevel = 52,
+        Classification = "Normal",
+        Movement = "Idle",
+        Notes = "Mind controls 2+ targets",
+        Location = ".pin Felwood,32.2,66.0;.pin Felwood,33.6,66.6;.pin Felwood,36.4,66.8;.pin Felwood,37.6,66.6;.pin Felwood,38.4,69.6;.mob Jadefire Trickster"
+        },
+      },
+      ["Jaedenar Adept"] = {
+        {
+        MinLevel = 51,
+        MaxLevel = 52,
+        Classification = "Normal",
+        Movement = "Idle",
+        Notes = "High damage fireball and fire blast; casts Blink",
+        Location = ".pin Felwood,35.0,59.2;.pin Felwood,36.4,61.2;.pin Felwood,38.6,60.6;.mob Jaedenar Adept"
+        },
+      },
       ["Infernal Bodyguard"] = {
         {
         MinLevel = 53,
@@ -3187,6 +3551,26 @@ local dangerousMobs = {
         Location = ".pin Felwood,39.2,43.4;.pin Felwood,39.0,37.8;.pin Felwood,41.8,38.2;.pin Felwood,42.6,43.6;.pin Felwood,44.6,43.0;.pin Felwood,46.6,40.2;.pin Felwood,45.6,37.0;.pin Felwood,48.6,37.2;.pin Felwood,44.4,47.0;.mob Infernal Bodyguard"
         },
       },
+      ["Deadwood Avenger"] = {
+        {
+        MinLevel = 54,
+        MaxLevel = 55,
+        Classification = "Normal",
+        Movement = "Idle",
+        Notes = "Enrages if their allies die around them; has -50% healing taken debuff",
+        Location = ".pin Felwood,61.2,6.7;.pin Felwood,63.4,7.9;.pin Felwood,62.8,11.5;.mob Deadwood Avenger"
+        },
+      },
+      ["Salia"] = {
+        {
+        MinLevel = 54,
+        MaxLevel = 54,
+        Classification = "Normal",
+        Movement = "Idle",
+        Notes = "Mind controls 2+ targets",
+        Location = ".pin Felwood,39.6,47.0;.mob Salia"
+        },
+      },
     },
     ['Feralas'] = {
       ["Edana Hatetalon"] = {
@@ -3195,7 +3579,7 @@ local dangerousMobs = {
         MaxLevel = 50,
         Classification = "Elite",
         Movement = "Idle",
-        Notes = "Quest mob",
+        Notes = "Quest mob; lightning cloud",
         Location = ".pin Feralas,40.6,8.6;.mob Edana Hatetalon"
         },
       },
@@ -3400,7 +3784,7 @@ local dangerousMobs = {
         Classification = "Elite",
         Movement = "Idle",
         Notes = "Painful shock/heals",
-        Location = ".pin Searing Gorge,18.6,35.4;.pin Searing Gorge,22.0,36.6;.pin Searing Gorge,23.6,41.2;.pin Searing Gorge,23.6,36.0;.pin Searing Gorge,26.6,34.6;.pin Searing Gorge,25.0,39.6;.mob Twilight Dark Shaman"
+        Location = ".pin Searing Gorge,18.6,35.4;.pin Searing Gorge,22.0,36.6;.pin Searing Gorge,23.6,41.2;.pin Searing Gorge,26.6,34.6;.pin Searing Gorge,25.0,39.6;.mob Twilight Dark Shaman"
         },
       },
       ["Twilight Fire Guard"] = {
@@ -3410,7 +3794,7 @@ local dangerousMobs = {
         Classification = "Elite",
         Movement = "Idle",
         Notes = "AoE fireball",
-        Location = ".pin Searing Gorge,18.6,35.4;.pin Searing Gorge,22.0,36.6;.pin Searing Gorge,23.6,41.2;.pin Searing Gorge,23.6,36.0;.pin Searing Gorge,26.6,34.6;.pin Searing Gorge,25.0,39.6;.pin Searing Gorge,25.8,29.6;.pin Searing Gorge,23.6,27.4;.pin Searing Gorge,27.8,25.0;.pin Searing Gorge,30.6,26.4;.mob Twilight Fire Guard"
+        Location = ".pin Searing Gorge,18.6,35.4;.pin Searing Gorge,22.0,36.6;.pin Searing Gorge,23.6,41.2;.pin Searing Gorge,26.6,34.6;.pin Searing Gorge,25.0,39.6;.pin Searing Gorge,25.8,29.6;.pin Searing Gorge,23.6,27.4;.pin Searing Gorge,27.8,25.0;.pin Searing Gorge,30.6,26.4;.mob Twilight Fire Guard"
         },
       },
       ["Twilight Geomancer"] = {
@@ -3522,7 +3906,7 @@ local dangerousMobs = {
         Classification = "Elite",
         Movement = "Slow Patrol",
         Notes = "Has 4 adds; mortal strikes and piercing howls",
-        Location = ".line Silithus,52.35,11.78,52.94,14.46,55.73,17.11,58.41,20.25,60.31,23.07,63.43,27.06,63.35,30.35,71.46,35.72,72.84,37.69,72.09,39.87,70.25,42.40,68.64,45.43,65.44,46.71,63.89,47.98,63.38,50.82,61.29,53.70,60.40,55.68,59.69,56.33,58.17,58.60,56.24,62.76,50.85,66.67,49.42,69.19,37.12,84.28,34.63,84.32,30.18,88.44,30.11,89.76,29.05,93.14,28.92,95.64;.mob Twilight Marauder Morna"
+        Location = ".line Silithus,52.35,11.78,52.94,14.46,55.73,17.11,58.41,20.25,60.31,23.07,63.43,27.06,63.35,30.35,71.46,35.72,72.84,37.69,72.09,39.87,70.25,42.40,64.6,44.1,60.1,44.9,53.1,55.1,44.4,59.5,42.8,73.4,37.3,79.7,36.3,80.0,34.4,85.0,30.9,89.2;.mob Twilight Marauder Morna"
         },
       },
       ["Lapress"] = {
@@ -3541,7 +3925,7 @@ local dangerousMobs = {
         MaxLevel = 62,
         Classification = "Elite",
         Movement = "Idle",
-        Notes = "Mind controls even if solo, then heals to full via reset (drags MCed players into many mobs deep in the cave)",
+        Notes = "Mind controls even if solo, then heals to full via reset/drags MCed players deep in the cave",
         Location = ".pin Silithus,51.8,99.4;.pin Silithus,53.6,98.0;.pin Silithus,53.8,95.2;.pin Silithus,52.6,91.6;.pin Silithus,52.2,89.8;.pin Silithus,53.8,88.2;.pin Silithus,55.8,87.2;.mob Mistress Natalia Maralith"
         },
       },
@@ -3692,7 +4076,7 @@ local dangerousMobs = {
         Classification = "Rare Elite",
         Movement = "Idle",
         Notes = "Fears, hits very fast",
-        Location = ".pin Stonetalon Mountains,61.6,49.2;.pin Stonetalon Mountains,64.8,48.4;.pin Stonetalon Mountains,64.6,54.6;.pin Stonetalon Mountains,65.0,58.4;.pin Stonetalon Mountains,63.0,57.8;.pin Stonetalon Mountains,61.2,58.4;.pin Stonetalon Mountains,59.4,54.0;.pin Stonetalon Mountains,62.6,56.2;.pin Stonetalon Mountains,61.8,51.6;.mob Taskmaster Whipfang"
+        Location = ".pin Stonetalon Mountains,61.6,49.2;.pin Stonetalon Mountains,64.8,48.4;.pin Stonetalon Mountains,64.6,54.6;.pin Stonetalon Mountains,65.0,58.4;.pin Stonetalon Mountains,63.0,57.8;.pin Stonetalon Mountains,61.2,58.4;.pin Stonetalon Mountains,59.4,54.0;.pin Stonetalon Mountains,61.8,51.6;.mob Taskmaster Whipfang"
         },
       },
       ["Foreman Rigger"] = {
@@ -3752,7 +4136,7 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "Execute mobs",
-        Location = ".pin Stonetalon Mountains,36.8,68.8;.pin Stonetalon Mountains,30.6,69.4;.pin Stonetalon Mountains,27.6,67.8;.pin Stonetalon Mountains,28.0,70.6;.pin Stonetalon Mountains,29.6,72.4;.pin Stonetalon Mountains,28.6,64.6;.pin Stonetalon Mountains,26.8,68.8;.pin Stonetalon Mountains,28.4,71.6;.pin Stonetalon Mountains,34.4,67.2;.pin Stonetalon Mountains,34.8,71.6;.pin Stonetalon Mountains,37.6,66.6;.mob Bloodfury Slayer"
+        Location = ".pin Stonetalon Mountains,36.8,68.8;.pin Stonetalon Mountains,30.6,69.4;.pin Stonetalon Mountains,27.6,67.8;.pin Stonetalon Mountains,28.0,70.6;.pin Stonetalon Mountains,29.6,72.4;.pin Stonetalon Mountains,28.4,71.6;.pin Stonetalon Mountains,34.4,67.2;.pin Stonetalon Mountains,34.8,71.6;.pin Stonetalon Mountains,37.6,66.6;.mob Bloodfury Slayer"
         },
       },
       ["Bloodfury Roguefeather"] = {
@@ -3762,7 +4146,7 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "Thrash mobs",
-        Location = ".pin Stonetalon Mountains,36.8,68.8;.pin Stonetalon Mountains,30.6,69.4;.pin Stonetalon Mountains,27.6,67.8;.pin Stonetalon Mountains,28.0,70.6;.pin Stonetalon Mountains,29.6,72.4;.pin Stonetalon Mountains,28.6,64.6;.pin Stonetalon Mountains,26.8,68.8;.pin Stonetalon Mountains,28.4,71.6;.pin Stonetalon Mountains,34.4,67.2;.pin Stonetalon Mountains,34.8,71.6;.pin Stonetalon Mountains,37.6,66.6;.mob Bloodfury Roguefeather"
+        Location = ".pin Stonetalon Mountains,36.8,68.8;.pin Stonetalon Mountains,30.6,69.4;.pin Stonetalon Mountains,27.6,67.8;.pin Stonetalon Mountains,28.0,70.6;.pin Stonetalon Mountains,29.6,72.4;.pin Stonetalon Mountains,28.4,71.6;.pin Stonetalon Mountains,34.4,67.2;.pin Stonetalon Mountains,34.8,71.6;.pin Stonetalon Mountains,37.6,66.6;.mob Bloodfury Slayer"
         },
       },
     },
@@ -3966,7 +4350,7 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "Extremely high level for area, summons adds",
-        Location = ".pin Swamp of Sorrows,63.4,91.2;.pin Swamp of Sorrows,62.2,87.8;.pin Swamp of Sorrows,61.0,84.2;.pin Swamp of Sorrows,63.4,80.4;.pin Swamp of Sorrows,65.6,80.6;.mob Swamp Talker"
+        Location = ".pin Swamp of Sorrows,63.4,91.2;.pin Swamp of Sorrows,61.0,84.2;.pin Swamp of Sorrows,63.4,80.4;.mob Swamp Talker"
         },
       },
       ["Somnus"] = {
@@ -4060,7 +4444,7 @@ local dangerousMobs = {
         Classification = "Rare Elite",
         Movement = "Idle",
         Notes = "Earthbind, Searing, Healing Totems + Healing Wave",
-        Location = ".pin The Barrens,58.60,27.7,30,0.pin The Barrens,59.24,24.37;.mob Elder Mystic Razorsnout"
+        Location = ".pin The Barrens,58.60,27.7;.pin The Barrens,59.24,24.37;.mob Elder Mystic Razorsnout"
         },
       },
       ["Rathorian"] = {
@@ -4100,7 +4484,7 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "Easy to double pull",
-        Location = ".pin The Barrens,64.2,47.2,30,0.pin The Barrens,63.6,49.0,30,0.pin The Barrens,62.4,49.4;.mob Baron Longshore"
+        Location = ".pin The Barrens,64.2,47.2;.pin The Barrens,63.6,49.0;.pin The Barrens,62.4,49.4;.mob Baron Longshore"
         },
       },
       ["Overseer Glibby"] = {
@@ -4169,7 +4553,7 @@ local dangerousMobs = {
         MaxLevel = 21,
         Classification = "Normal",
         Movement = "Slow Patrol",
-        Notes = "Unexpected strong quest mob with fire blast burst and frost nova + casts",
+        Notes = "Strong fire blast/frostbolt, and frost nova",
         Location = ".line The Barrens,45.13,79.22,44.89,78.87,44.63,78.77,44.45,78.68,43.80,79.44,43.65,79.10,43.49,78.94,43.07,78.98,42.65,79.88,42.82,80.22,43.22,80.48,43.48,80.49,43.59,80.90,43.78,81.38,44.13,81.45,44.84,80.94,45.46,80.93,45.53,80.47,45.11,80.31,44.31,80.68,44.30,80.58,43.99,80.37,43.91,80.43,43.90,80.48,44.00,80.03,44.42,79.85,44.85,79.87,45.06,79.74,45.13,79.22;.mob Kuz"
         },
       },
@@ -4189,7 +4573,7 @@ local dangerousMobs = {
         MaxLevel = 22,
         Classification = "Rare Elite",
         Movement = "Slow Patrol",
-        Notes = "Not sure if he has a small patrol path or not",
+        Notes = "Elite with an aoe fear",
         Location = ".pin The Barrens,41.4,45.6;.pin The Barrens,42.4,47.8;.pin The Barrens,44.0,48.6;.pin The Barrens,43.8,51.0;.mob Swinegart Spearhide"
         },
       },
@@ -4220,7 +4604,7 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "High level for area",
-        Location = ".pin The Barrens,49.54,59.13,30,0.pin The Barrens,44.91,62.55;.mob Owatanka"
+        Location = ".pin The Barrens,49.54,59.13;.pin The Barrens,44.91,62.55;.mob Owatanka"
         },
       },
       ["Aean Swiftriver"] = {
@@ -4239,7 +4623,7 @@ local dangerousMobs = {
         MaxLevel = 26,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "Has a parry ability and also thrashes",
+        Notes = "Has a parry ability that parryhastes, thrashes",
         Location = ".pin The Barrens,48.6,84.6;.pin The Barrens,49.6,83.6;.mob Bael'dun Officer"
         },
       },
@@ -4250,7 +4634,7 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "High dps caster with Frost Armor, easily double pulled",
-        Location = ".pin The Barrens,58.58,27.42;.pin The Barrens,58.48,27.37;.pin The Barrens,58.37,27.22;.pin The Barrens,58.59,26.97;.pin The Barrens,58.73,27.15;.pin The Barrens,58.75,27.24;.pin The Barrens,58.63,27.40;.pin The Barrens,58.58,27.42;.mob Razormane Geomancer"
+        Location = ".pin The Barrens,58.58,27.42;.mob Razormane Geomancer"
         },
       },
       ["Razormane Mystic"] = {
@@ -4260,7 +4644,7 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "Healing mobs surrounding Kreenig Snarlsnout, easily double pulled",
-        Location = ".pin The Barrens,58.58,27.42;.pin The Barrens,58.48,27.37;.pin The Barrens,58.37,27.22;.pin The Barrens,58.59,26.97;.pin The Barrens,58.73,27.15;.pin The Barrens,58.75,27.24;.pin The Barrens,58.63,27.40;.pin The Barrens,58.58,27.42;.mob Razormane Mystic"
+        Location = ".pin The Barrens,58.58,27.42;.mob Razormane Mystic"
         },
       },
       ["Witchwing Slayer"] = {
@@ -4270,7 +4654,7 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "Executes",
-        Location = ".pin The Barrens,38.75,13.59;.pin The Barrens,38.86,13.10;.pin The Barrens,39.00,12.68;.pin The Barrens,39.27,12.58;.pin The Barrens,39.48,12.85;.pin The Barrens,39.56,13.22;.pin The Barrens,39.52,13.52;.pin The Barrens,39.30,13.90;.pin The Barrens,39.05,14.45;.pin The Barrens,38.55,14.94;.pin The Barrens,38.30,15.37;.pin The Barrens,38.25,15.94;.pin The Barrens,38.32,16.09;.pin The Barrens,38.54,16.30;.pin The Barrens,38.78,16.31;.pin The Barrens,38.99,16.21;.pin The Barrens,39.11,16.11;.pin The Barrens,39.32,15.55;.pin The Barrens,39.59,15.33;.pin The Barrens,40.10,15.15;.pin The Barrens,40.58,15.68;.pin The Barrens,40.69,15.91;.pin The Barrens,40.69,16.33;.pin The Barrens,40.62,16.66;.pin The Barrens,40.35,17.01;.pin The Barrens,40.15,17.03;.pin The Barrens,39.83,16.90;.pin The Barrens,39.36,16.14;.pin The Barrens,39.18,15.80;.pin The Barrens,39.05,15.25;.pin The Barrens,38.82,14.89;.pin The Barrens,38.75,13.59;.mob Witchwing Slayer"
+        Location = ".pin The Barrens,38.75,13.59;.pin The Barrens,40.6,15.6;.mob Witchwing Slayer"
         },
       },
       ["Sunscale Scytheclaw"] = {
@@ -4460,7 +4844,7 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "Executes",
-        Location = ".pin Thousand Needles,84.27,82.13,30,0.pin Thousand Needles,87.56,65.48;.mob Salt Flats Scavenger"
+        Location = ".pin Thousand Needles,84.27,82.13;.pin Thousand Needles,87.56,65.48;.mob Salt Flats Scavenger"
         },
       },
       ["Silithid Searcher"] = {
@@ -4470,7 +4854,7 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "Massive social aggro radius/call for help",
-        Location = ".pin Thousand Needles,65.89,86.11,30,0.pin Thousand Needles,68.69,83.74,30,0.pin Thousand Needles,70.72,85.37,30,0.pin Thousand Needles,69.40,88.20,30,0.pin Thousand Needles,68.91,86.08;.mob Silithid Searcher"
+        Location = ".pin Thousand Needles,65.89,86.11;.pin Thousand Needles,68.69,83.74;.pin Thousand Needles,70.72,85.37;.pin Thousand Needles,69.40,88.20;.pin Thousand Needles,68.91,86.08;.mob Silithid Searcher"
         },
       },
       ["Salt Flats Vulture"] = {
@@ -4480,17 +4864,17 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "Executes",
-        Location = ".pin Thousand Needles,84.27,82.13,30,0.pin Thousand Needles,87.56,65.48;.mob Salt Flats Vulture"
+        Location = ".pin Thousand Needles,84.27,82.13;.pin Thousand Needles,87.56,65.48;.mob Salt Flats Vulture"
         },
       },
-      ["Silithid Hive"] = {
+      ["Silithid Hive Drone"] = {
         {
         MinLevel = 33,
         MaxLevel = 34,
         Classification = "Normal",
         Movement = "Idle",
         Notes = "Massive social aggro radius/call for help",
-        Location = ".pin Thousand Needles,65.89,86.11,30,0.pin Thousand Needles,68.69,83.74,30,0.pin Thousand Needles,70.72,85.37,30,0.pin Thousand Needles,69.40,88.20,30,0.pin Thousand Needles,68.91,86.08;.mob Silithid Hive"
+        Location = ".pin Thousand Needles,65.89,86.11;.pin Thousand Needles,68.69,83.74;.pin Thousand Needles,70.72,85.37;.pin Thousand Needles,69.40,88.20;.pin Thousand Needles,68.91,86.08;.mob Silithid Hive Drone"
         },
       },
       ["Silithid Invader"] = {
@@ -4500,7 +4884,7 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "Massive social aggro radius/call for help",
-        Location = ".pin Thousand Needles,65.89,86.11,30,0.pin Thousand Needles,68.69,83.74,30,0.pin Thousand Needles,70.72,85.37,30,0.pin Thousand Needles,69.40,88.20,30,0.pin Thousand Needles,68.91,86.08;.mob Silithid Invader"
+        Location = ".pin Thousand Needles,65.89,86.11;.pin Thousand Needles,68.69,83.74;.pin Thousand Needles,70.72,85.37;.pin Thousand Needles,69.40,88.20;.pin Thousand Needles,68.91,86.08;.mob Silithid Invader"
         },
       },
     },
@@ -4521,7 +4905,7 @@ local dangerousMobs = {
         MaxLevel = 13,
         Classification = "Normal",
         Movement = "Slow Patrol",
-        Notes = "lvl 13 rare spider with multiple poison dps abilities, south of SM",
+        Notes = "Multiple poison dps abilities",
         Location = ".line Tirisfal Glades,84.26,48.91,84.62,49.57,84.78,50.30;.mob Sri'skulk"
         },
       },
@@ -4555,7 +4939,7 @@ local dangerousMobs = {
         MaxLevel = 57,
         Classification = "Rare Elite",
         Movement = "Idle",
-        Notes = "Not sure if he has a short patrol path or not",
+        Notes = "Basic elite",
         Location = ".pin Un'Goro Crater,31.8,79.6;.pin Un'Goro Crater,31.8,71.4;.pin Un'Goro Crater,35.6,66.0;.pin Un'Goro Crater,37.8,75.6;.mob Gruff"
         },
       },
@@ -4691,7 +5075,7 @@ local dangerousMobs = {
         MaxLevel = 53,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "spawns/aggros as soon as player/a pet gets near the cauldron",
+        Notes = "Spawns as soon as player/pet approaches cauldron",
         Location = ".pin Western Plaguelands,36.8,57.2;.mob Cauldron Lord Bilemaw"
         },
       },
@@ -4701,7 +5085,7 @@ local dangerousMobs = {
         MaxLevel = 55,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "spawns/aggros as soon as player/a pet gets near the cauldron",
+        Notes = "Spawns as soon as player/pet approaches cauldron",
         Location = ".pin Western Plaguelands,46.2,52.6;.mob Cauldron Lord Malvinious"
         },
       },
@@ -4721,7 +5105,7 @@ local dangerousMobs = {
         MaxLevel = 56,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "spawns/aggros as soon as player/a pet gets near the cauldron",
+        Notes = "Spawns as soon as player/pet approaches cauldron",
         Location = ".pin Western Plaguelands,52.8,66.0;.mob Cauldron Lord Razarch"
         },
       },
@@ -4731,7 +5115,7 @@ local dangerousMobs = {
         MaxLevel = 57,
         Classification = "Normal",
         Movement = "Slow Patrol",
-        Notes = "Pats up and down the stairs, has a long HoJ",
+        Notes = "Patrols the stairs, has a long HoJ",
         Location = ".pin Western Plaguelands,54.39,23.70;.mob Cavalier Durgen"
         },
       },
@@ -4741,7 +5125,7 @@ local dangerousMobs = {
         MaxLevel = 58,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "spawns/aggros as soon as player/a pet gets near the cauldron",
+        Notes = "Spawns as soon as player/pet approaches cauldron",
         Location = ".pin Western Plaguelands,62.6,59.0;.mob Cauldron Lord Soulwrath"
         },
       },
@@ -4801,7 +5185,7 @@ local dangerousMobs = {
         MaxLevel = 61,
         Classification = "Elite",
         Movement = "Idle",
-        Notes = "frostbolts hit hard, has lots of hp, and pulls with many mobs",
+        Notes = "Frostbolts hit hard, has lots of hp, and pulls with many mobs",
         Location = ".pin Western Plaguelands,45.6,69.2;.mob Araj the Summoner"
         },
       },
@@ -4851,7 +5235,7 @@ local dangerousMobs = {
         MaxLevel = 54,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "fears in a crowded area",
+        Notes = "Fears in a crowded area",
         Location = ".pin Western Plaguelands,44.8,52.2;.pin Western Plaguelands,46.6,51.6;.pin Western Plaguelands,47.4,49.2;.mob Skeletal Terror"
         },
       },
@@ -4891,7 +5275,7 @@ local dangerousMobs = {
         MaxLevel = 56,
         Classification = "Elite",
         Movement = "Idle",
-        Notes = "Sees through talented stealth, and has overpower",
+        Notes = "Sees through talented stealth, has overpower",
         Location = ".pin Western Plaguelands,42.6,18.6;.pin Western Plaguelands,42.0,15.6;.pin Western Plaguelands,44.8,16.4;.pin Western Plaguelands,47.2,20.2;.pin Western Plaguelands,48.8,22.2;.mob Scarlet Sentinel"
         },
       },
@@ -4941,7 +5325,7 @@ local dangerousMobs = {
         MaxLevel = 57,
         Classification = "Elite",
         Movement = "Idle",
-        Notes = "mortal strikes and stuns in a busy area",
+        Notes = "Mortal strikes and stuns in a busy area",
         Location = ".pin Western Plaguelands,44.26,63.23;.pin Western Plaguelands,42.36,66.18;.pin Western Plaguelands,40.07,71.64;.pin Western Plaguelands,46.62,71.12;.mob Skeletal Warlord"
         },
       },
@@ -4971,12 +5355,22 @@ local dangerousMobs = {
         MaxLevel = 58,
         Classification = "Normal",
         Movement = "Idle",
-        Notes = "inflicts the \"cripple\" debuff",
+        Notes = "Inflicts \"Cripple\" debuff",
         Location = ".pin Western Plaguelands,62.7,58.3;.mob Haunting Vision"
         },
       },
     },
     ['Winterspring'] = {
+      ["Berserk Owlbeast"] = {
+        {
+        MinLevel = 58,
+        MaxLevel = 59,
+        Classification = "Normal",
+        Movement = "Idle",
+        Notes = "Enrages at low hp in dense areas",
+        Location = ".pin Winterspring,63.6,16.2;.pin Winterspring,66.0,18.6;.pin Winterspring,66.6,22.8;.pin Winterspring,63.6,22.4;.pin Winterspring,59.6,59.8;.pin Winterspring,64.2,59.2;.pin Winterspring,66.6,60.0;.pin Winterspring,65.2,64.0;.pin Winterspring,65.2,61.8;.mob Berserk Owlbeast"
+        },
+      },
       ["Mezzir the Howler"] = {
         {
         MinLevel = 55,
@@ -5043,7 +5437,7 @@ local dangerousMobs = {
         MaxLevel = 59,
         Classification = "Elite",
         Movement = "Idle",
-        Notes = "Grouped with two other furbolg, usually one that can heal",
+        Notes = "Enrages, socials with two furbolg (one heals)",
         Location = ".pin Winterspring,69.4,38.4;.mob High Chief Winterfall"
         },
       },
@@ -5095,6 +5489,16 @@ local dangerousMobs = {
         Movement = "Idle",
         Notes = "Stealthed",
         Location = ".pin Winterspring,51.0,21.6;.pin Winterspring,53.4,17.4;.pin Winterspring,56.8,16.6;.pin Winterspring,56.8,11.8;.pin Winterspring,54.8,10.6;.pin Winterspring,52.4,10.4;.pin Winterspring,48.4,12.6;.pin Winterspring,49.0,17.0;.pin Winterspring,51.0,15.6;.pin Winterspring,53.6,13.2;.mob Frostsaber Stalker"
+        },
+      },
+      ["Cobalt Whelp"] = {
+        {
+        MinLevel = 54,
+        MaxLevel = 55,
+        Classification = "Normal",
+        Movement = "Idle",
+        Notes = "High damage frost shock + bleed",
+        Location = ".pin Winterspring,54.6,51.6;.pin Winterspring,57.6,50.2;.pin Winterspring,60.4,49.8;.mob Cobalt Whelp"
         },
       },
     },
