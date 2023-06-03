@@ -1991,7 +1991,7 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
     element.itemName = name
 
     if step.active and questId then
-        if step.objFlags == 0 and questId then
+        if element.objFlags == 0 and questId then
             -- adds the item to the active item list, in case it's an item that starts a quest
 
             step.activeItems = step.activeItems or {}
