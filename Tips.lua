@@ -479,7 +479,6 @@ function addon.tips:LoadDangerousMobs(reloadData)
     if not zone or not addon.dangerousMobs[zone] and not addon.settings.db.profile.debug then
         addon.tips.dangerousMobs = nil
         addon.generatedSteps["dangerousMobs"] = nil
-        _G.RXPD = addon.tips.dangerousMobs
         return
     end
     local dangerousMobs = session.dangerousMobs[zone] or {}
@@ -539,7 +538,6 @@ function addon.tips:LoadDangerousMobs(reloadData)
     addon.generatedSteps["dangerousMobs"] = dangerousMobs.steps
     dangerousMobs.processed = true
     addon.tips.dangerousMobs = dangerousMobs
-    _G.RXPD = dangerousMobs
 end
 
 addon.tips.ZONE_CHANGED_NEW_AREA = addon.tips.LoadDangerousMobs

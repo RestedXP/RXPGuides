@@ -81,6 +81,7 @@ function addon.settings:InitializeSettings()
             levelSplitsFontSize = 11,
             levelSplitsOpacity = 0.9,
             enableMinimapButton = true,
+            enableWorldMapButton = true,
             minimap = {minimapPos = 146},
 
             --
@@ -129,6 +130,7 @@ function addon.settings:InitializeSettings()
             activeTargetScale = 1,
 
             enableAddonIncompatibilityCheck = true,
+            enableVendorTreasure = true,
 
             -- Themes
             activeTheme = 'Default',
@@ -159,7 +161,6 @@ function addon.settings:InitializeSettings()
             enableEmergencyActions = true,
             emergencyThreshold = 0.2,
             enableEmergencyIconAnimations = true,
-            --enableEmergencyScreenFlash = true,
 
             dungeons = {}
         }
@@ -777,6 +778,17 @@ function addon.settings:CreateAceOptionsPanel()
                             end
                         end
                     },
+                    enableWorldMapButton = {
+                        name = L("Enable World Map Button"),
+                        desc = L("Add options menu to map"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.11,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            self:SetupMapButton()
+                        end
+                    },
                     hideGuideWindow = {
                         name = L("Hide Window"),
                         desc = L("Hides the main window"),
@@ -807,6 +819,15 @@ function addon.settings:CreateAceOptionsPanel()
                             SetProfileOption(info, value)
                             addon.UpdateItemFrame()
                         end
+                    },
+                    enableVendorTreasure = {
+                        name = L("Enable Vendor Treasures"),
+                        desc = L(
+                            "Enable embedded Cpt. Stadics' Vendor Treasures"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.5,
+                        hidden = addon.game ~= "CLASSIC"
                     },
                     automationHeader = {
                         name = L("Automation"), -- TODO locale
@@ -1019,9 +1040,11 @@ function addon.settings:CreateAceOptionsPanel()
                     enableGroupQuests = {
                         name = L("Show Group Quests"),
                         desc = function()
-                            local out = L"Guides that support this feature:\n"
-                            for guide in pairs(RXPData.guideMetaData.enableGroupQuests) do
-                                out = fmt("%s\n%s",out,guide)
+                            local out = L "Guides that support this feature:\n"
+                            for guide in pairs(
+                                             RXPData.guideMetaData
+                                                 .enableGroupQuests) do
+                                out = fmt("%s\n%s", out, guide)
                             end
                             return out
                         end,
@@ -1029,7 +1052,8 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 1.4,
                         hidden = function()
-                                return not next(RXPData.guideMetaData.enableGroupQuests)
+                            return not next(
+                                       RXPData.guideMetaData.enableGroupQuests)
                         end,
                         set = function(info, value)
                             SetProfileOption(info, value)
@@ -1040,7 +1064,8 @@ function addon.settings:CreateAceOptionsPanel()
                     },
                     soloSelfFound = {
                         name = L("Solo Self Found Mode"),
-                        desc = L("If this option is enabled, it disables all steps involving trading or Auction House"),
+                        desc = L(
+                            "If this option is enabled, it disables all steps involving trading or Auction House"),
                         type = "toggle",
                         width = optionsWidth,
                         order = 1.5,
@@ -1136,26 +1161,31 @@ function addon.settings:CreateAceOptionsPanel()
                     dungeons = {
                         name = L("Dungeons"), -- TODO locale
                         desc = function()
-                            local out = L"Routes in quests for the selected dungeon\nGuides that support this feature:\n"
-                            for guide in pairs(RXPData.guideMetaData.dungeonGuides) do
-                                out = fmt("%s\n%s",out,guide)
+                            local out =
+                                L "Routes in quests for the selected dungeon\nGuides that support this feature:\n"
+                            for guide in pairs(
+                                             RXPData.guideMetaData.dungeonGuides) do
+                                out = fmt("%s\n%s", out, guide)
                             end
                             return out
                         end,
                         type = "multiselect",
                         width = optionsWidth,
                         order = 2.9,
-                        values = RXPData.guideMetaData.enabledDungeons[addon.player.faction],
-                        get = function(_,key)
+                        values = RXPData.guideMetaData.enabledDungeons[addon.player
+                            .faction],
+                        get = function(_, key)
                             return addon.settings.db.profile.dungeons[key]
                         end,
-                        set = function(_,key,state)
+                        set = function(_, key, state)
                             addon.settings.db.profile.dungeons[key] = state
                             addon.ReloadGuide()
                         end,
                         hidden = function()
-                            return not next(RXPData.guideMetaData.enabledDungeons[addon.player.faction])
-                        end,
+                            return not next(
+                                       RXPData.guideMetaData.enabledDungeons[addon.player
+                                           .faction])
+                        end
                     },
                     questCleanupHeader = {
                         name = L("Quest Cleanup"),
@@ -1837,17 +1867,20 @@ function addon.settings:CreateAceOptionsPanel()
                         width = "full",
                         order = 4.0,
                         hidden = function()
-                            return not addon.settings.db.profile.enableBetaFeatures or not addon.dangerousMobs
-                        end,
+                            return not addon.settings.db.profile
+                                       .enableBetaFeatures or
+                                       not addon.dangerousMobs
+                        end
                     },
                     showDangerousMobsMap = {
                         name = L("Track Mobs on Map"), -- TODO locale
-                        desc = L("Displays dangerous mobs and patrols on your map (WIP)"),
+                        desc = L(
+                            "Displays dangerous mobs and patrols on your map (WIP)"),
                         type = "toggle",
                         width = optionsWidth,
                         order = 4.1,
-                        set = function(info,value)
-                            --addon.settings.db.profile.showDangerousMobsMap = value
+                        set = function(info, value)
+                            -- addon.settings.db.profile.showDangerousMobsMap = value
                             SetProfileOption(info, value)
                             addon.tips:LoadDangerousMobs(true)
                         end,
@@ -1855,27 +1888,33 @@ function addon.settings:CreateAceOptionsPanel()
                             return not self.db.profile.enableTips
                         end,
                         hidden = function()
-                            return not addon.settings.db.profile.enableBetaFeatures or not addon.dangerousMobs
-                        end,
+                            return not addon.settings.db.profile
+                                       .enableBetaFeatures or
+                                       not addon.dangerousMobs
+                        end
                     },
                     showDangerousUnitscan = {
                         name = L("Scan for dangerous mobs"), -- TODO locale
-                        desc = L("Displays dangerous mobs and patrols on the targeting window (WIP)"),
+                        desc = L(
+                            "Displays dangerous mobs and patrols on the targeting window (WIP)"),
                         type = "toggle",
                         width = optionsWidth,
                         order = 4.2,
-                        set = function(info,value)
+                        set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.settings.db.profile.showDangerousUnitscan = value
+                            addon.settings.db.profile.showDangerousUnitscan =
+                                value
                             addon.tips:LoadDangerousMobs(true)
                         end,
                         disabled = function()
                             return not self.db.profile.enableTips
                         end,
                         hidden = function()
-                            return not addon.settings.db.profile.enableBetaFeatures or not addon.dangerousMobs
-                        end,
-                    },
+                            return not addon.settings.db.profile
+                                       .enableBetaFeatures or
+                                       not addon.dangerousMobs
+                        end
+                    }
                 }
             },
             helpPanel = {
@@ -1896,11 +1935,13 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 1.1,
                         get = function()
-                            return self.db.profile.activeTheme == "Default" and ""
-                                            or self.db.profile.activeTheme
+                            return self.db.profile.activeTheme == "Default" and
+                                       "" or self.db.profile.activeTheme
                         end,
                         set = function(info, value)
-                            if value == "" then value = "Default" end
+                            if value == "" then
+                                value = "Default"
+                            end
                             SetProfileOption(info, value)
                             if self.db.profile.enableThemeLiveReload then
                                 addon.RenderFrame('themeReload')
@@ -1908,7 +1949,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         values = function()
                             return addon:GetThemeOptions()
-                        end,
+                        end
                         --[[disabled = function()
                             -- Disable selector if GA/Hardcore as they're special and branded
                             return RXPCData.GA or self.db.profile.hardcore
@@ -2353,7 +2394,9 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L(
                             "Automatically picks a suitable guide whenever you log in for the first time on a character"),
                         type = "toggle",
-                        get = function() return RXPData.autoLoadStartingGuides end,
+                        get = function()
+                            return RXPData.autoLoadStartingGuides
+                        end,
                         width = optionsWidth,
                         order = 3.7,
                         hidden = not addon.defaultGuideList,
@@ -2928,5 +2971,98 @@ function addon.settings.ReplaceColors(element)
     else
         return replace(element)
     end
+
+end
+
+local function buildWorldMapMenu()
+    local menu = {}
+
+    if addon.VendorTreasures then
+        tinsert(menu, {
+            text = L("Enable Vendor Treasures"),
+            tooltipTitle = L("Enable embedded Cpt. Stadics' Vendor Treasures"),
+            icon = "Interface/GossipFrame/VendorGossipIcon.blp",
+            arg1 = "toggle",
+            checked = function()
+                return addon.settings.db.profile.enableVendorTreasure
+            end,
+            func = function()
+                addon.settings.db.profile.enableVendorTreasure =
+                    not addon.settings.db.profile.enableVendorTreasure
+
+                addon.VendorTreasures:Setup()
+                addon.VendorTreasures.UpdatePins()
+            end
+        })
+    end
+
+    -- Only add padding if specific features added already
+    if next(menu) ~= nil then
+        tinsert(menu, {text = "", notCheckable = 1, isTitle = 1})
+    end
+
+    tinsert(menu, {
+        text = _G.GAMEOPTIONS_MENU .. "...",
+        notCheckable = 1,
+        func = function()
+            _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
+            _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
+        end
+    })
+
+    tinsert(menu, {
+        text = L("Open Feedback Form"),
+        notCheckable = 1,
+        func = function() addon.comms.OpenBugReport() end
+    })
+
+    tinsert(menu, {
+        text = addon.settings.db.profile.showEnabled and _G.HIDE or _G.SHOW,
+        notCheckable = 1,
+        func = addon.settings.ToggleActive
+    })
+
+    tinsert(menu, {
+        text = _G.CLOSE,
+        notCheckable = 1,
+        func = function(self) self:Hide() end
+    })
+
+    return menu
+end
+
+function addon.settings:SetupMapButton()
+    -- Nothing outside Classic currently
+    if addon.game ~= "CLASSIC" then return end
+
+    if self.db.profile.enableWorldMapButton then
+        if self.worldMapButton then
+            self.worldMapButton:Show()
+            return
+        end
+    else
+        if self.worldMapButton then self.worldMapButton:Hide() end
+        return
+    end
+
+    if self.worldMapButton then return end
+
+    self.worldMapButton = CreateFrame("Button", "RXP_WMMenuFrame",
+                                      _G.WorldMapFrame)
+
+    self.worldMapButton:SetSize(36, 36)
+    self.worldMapButton:SetPoint("TOPRIGHT", _G.WorldMapFrame, "TOPRIGHT", -10,
+                                 -26)
+    self.worldMapButton:SetNormalTexture(addon.GetTexture("rxp_logo-64"))
+    self.worldMapButton:SetHighlightTexture(
+        "Interface/MINIMAP/UI-Minimap-ZoomButton-Highlight", "ADD")
+
+    self.worldMapButton.menuFrame = CreateFrame("Frame", "$parent_MenuFrame",
+                                                self.worldMapButton,
+                                                "UIDropDownMenuTemplate")
+    self.worldMapButton:SetScript("OnClick", function()
+        EasyMenu(buildWorldMapMenu(), self.worldMapButton.menuFrame,
+                 self.worldMapButton, 0, 0, "MENU")
+    end)
 
 end
