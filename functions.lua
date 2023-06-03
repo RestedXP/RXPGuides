@@ -1705,11 +1705,12 @@ function addon.functions.home(self, ...)
         local element = {}
         local text, location = ...
         element.tag = "home"
+        location = tonumber(location)
+        element.location = location and C_Map.GetAreaInfo(location)
         if text and text ~= "" then
             element.text = text
-        else
-            element.textOnly = true
-            element.text = fmt("%s %s", L("Set your Hearthstone to", location))
+        elseif element.location then
+            element.text = fmt("%s %s", L("Set your Hearthstone to "), element.location)
         end
         element.tooltipText = addon.icons.home .. element.text
         return element
@@ -1723,11 +1724,11 @@ function addon.functions.home(self, ...)
         return
     end
     local event = ...
-    if event == "HEARTHSTONE_BOUND" then
+    if event == "HEARTHSTONE_BOUND" or element.location and element.location == GetBindLocation() then
         addon.SetElementComplete(self)
         element.confirm = false
-    elseif event == "CONFIRM_BINDER" then
-
+    elseif event == "CONFIRM_BINDER" and
+      (not element.location or element.location == GetSubZoneText()) then
         if C_PlayerInteractionManager and C_PlayerInteractionManager.ConfirmationInteraction then
             self:SetScript("OnUpdate", function()
                 C_PlayerInteractionManager.ConfirmationInteraction(Enum.PlayerInteractionType.Binder)
@@ -5008,6 +5009,8 @@ function addon.functions.dungeon(self, text, instance)
             addon.step.dungeon = tag
             --print(tag,name)
             RXPData.guideMetaData.dungeonGuides[addon.currentGuideGroup] = true
+        elseif instance and instance:sub(1,1) == "!" then
+            addon.step.dugeon = strupper(instance)
         else
             return addon.error(
                 L("Error parsing guide") .. " "  .. addon.currentGuideName ..
