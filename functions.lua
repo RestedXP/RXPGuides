@@ -18,6 +18,7 @@ events.complete = "QUEST_LOG_UPDATE"
 events.fp = {"UI_INFO_MESSAGE", "UI_ERROR_MESSAGE", "TAXIMAP_OPENED", "GOSSIP_SHOW"}
 events.hs = "UNIT_SPELLCAST_SUCCEEDED"
 events.home = {"HEARTHSTONE_BOUND","CONFIRM_BINDER","GOSSIP_SHOW"}
+events.bindlocation = events.home
 events.fly = {"PLAYER_CONTROL_LOST", "TAXIMAP_OPENED", "ZONE_CHANGED", "GOSSIP_SHOW"}
 events.deathskip = {"CONFIRM_XP_LOSS","GOSSIP_SHOW"}
 events.xp = {"PLAYER_XP_UPDATE", "PLAYER_LEVEL_UP"}
@@ -1727,8 +1728,7 @@ function addon.functions.home(self, ...)
     if event == "HEARTHSTONE_BOUND" or element.location and element.location == GetBindLocation() then
         addon.SetElementComplete(self)
         element.confirm = false
-    elseif event == "CONFIRM_BINDER" and
-      (not element.location or element.location == GetSubZoneText()) then
+    elseif event == "CONFIRM_BINDER" then
         if C_PlayerInteractionManager and C_PlayerInteractionManager.ConfirmationInteraction then
             self:SetScript("OnUpdate", function()
                 C_PlayerInteractionManager.ConfirmationInteraction(Enum.PlayerInteractionType.Binder)
@@ -1742,6 +1742,29 @@ function addon.functions.home(self, ...)
         _G.StaticPopup1:Hide()
     elseif not element.confirm and event == "GOSSIP_SHOW" then
         addon.SelectGossipType("binder")
+    end
+end
+
+function addon.functions.bindlocation(self, ...)
+    if type(self) == "string" then -- on parse
+        local element = {}
+        local text, location, flags = ...
+        element.tag = "home"
+        location = tonumber(location)
+        element.flags = tonumber(flags) or 0
+        element.location = location and C_Map.GetAreaInfo(location)
+        element.text = text
+        element.textOnly = true
+        element.tooltipText = addon.icons.home .. element.text
+        return element
+    end
+    local element = self.element
+    local step = element.step
+    local reverse = element.flags % 2 == 1
+
+    if step.active and element.location and (element.location == GetBindLocation()) == not reverse then
+        step.completed = true
+        addon.updateSteps = true
     end
 end
 
