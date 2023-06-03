@@ -97,6 +97,7 @@ local dungeonList = {
     ["RFC"] = 2437,
     ["DM"] = 1581,
     ["WC"] = 718,
+    ["SFK"] = 209,
     ["BFD"] = 719,
     ["STOCKS"] = 717,
     ["GNOMER"] = 133,
