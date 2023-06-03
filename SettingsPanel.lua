@@ -81,7 +81,7 @@ function addon.settings:InitializeSettings()
             levelSplitsFontSize = 11,
             levelSplitsOpacity = 0.9,
             enableMinimapButton = true,
-            enableMapButton = true,
+            enableWorldMapButton = true,
             minimap = {minimapPos = 146},
 
             --
@@ -778,8 +778,8 @@ function addon.settings:CreateAceOptionsPanel()
                             end
                         end
                     },
-                    enableMapButton = {
-                        name = L("Enable Map Button"),
+                    enableWorldMapButton = {
+                        name = L("Enable World Map Button"),
                         desc = L("Add options menu to map"),
                         type = "toggle",
                         width = optionsWidth,
@@ -2976,6 +2976,31 @@ end
 
 local function buildWorldMapMenu()
     local menu = {}
+
+    if addon.VendorTreasures then
+        tinsert(menu, {
+            text = L("Enable Vendor Treasures"),
+            tooltipTitle = L("Enable embedded Cpt. Stadics' Vendor Treasures"),
+            icon = "Interface/GossipFrame/VendorGossipIcon.blp",
+            arg1 = "toggle",
+            checked = function()
+                return addon.settings.db.profile.enableVendorTreasure
+            end,
+            func = function()
+                addon.settings.db.profile.enableVendorTreasure =
+                    not addon.settings.db.profile.enableVendorTreasure
+
+                addon.VendorTreasures:Setup()
+                addon.VendorTreasures.UpdatePins()
+            end
+        })
+    end
+
+    -- Only add padding if specific features added already
+    if next(menu) ~= nil then
+        tinsert(menu, {text = "", notCheckable = 1, isTitle = 1})
+    end
+
     tinsert(menu, {
         text = _G.GAMEOPTIONS_MENU .. "...",
         notCheckable = 1,
@@ -2985,7 +3010,13 @@ local function buildWorldMapMenu()
         end
     })
 
-    tinsert(menu, #menu, {
+    tinsert(menu, {
+        text = L("Open Feedback Form"),
+        notCheckable = 1,
+        func = function() addon.comms.OpenBugReport() end
+    })
+
+    tinsert(menu, {
         text = addon.settings.db.profile.showEnabled and _G.HIDE or _G.SHOW,
         notCheckable = 1,
         func = addon.settings.ToggleActive
@@ -3002,9 +3033,9 @@ end
 
 function addon.settings:SetupMapButton()
     -- Nothing outside Classic currently
-    if addon.gameVersion > 20000 then return end
+    if addon.game ~= "CLASSIC" then return end
 
-    if self.db.profile.enableMapButton then
+    if self.db.profile.enableWorldMapButton then
         if self.worldMapButton then
             self.worldMapButton:Show()
             return
@@ -3017,19 +3048,21 @@ function addon.settings:SetupMapButton()
     if self.worldMapButton then return end
 
     self.worldMapButton = CreateFrame("Button", "RXP_WMMenuFrame",
-                                      _G.WorldMapFrame.BorderFrame,
-                                      "UIPanelButtonTemplate")
+                                      _G.WorldMapFrame)
 
-    self.worldMapButton:SetWidth(95)
-    self.worldMapButton:SetHeight(18)
-    self.worldMapButton:SetText(addonName)
-    self.worldMapButton:ClearAllPoints()
+    self.worldMapButton:SetSize(36, 36)
+    self.worldMapButton:SetPoint("TOPRIGHT", _G.WorldMapFrame, "TOPRIGHT", -10,
+                                 -26)
+    self.worldMapButton:SetNormalTexture(addon.GetTexture("rxp_logo-64"))
+    self.worldMapButton:SetHighlightTexture(
+        "Interface/MINIMAP/UI-Minimap-ZoomButton-Highlight", "ADD")
 
-    self.worldMapButton:SetParent(_G.WorldMapFrame.BorderFrame)
-    self.worldMapButton:SetPoint("LEFT", _G.WorldMapFrame.BorderFrame,
-                                 "BOTTOMLEFT", 0, 0)
-    self.worldMapButton:SetWidth(self.worldMapButton:GetTextWidth() + 14)
-    self.worldMapButton:SetHeight(22)
+    self.worldMapButton.menuFrame = CreateFrame("Frame", "$parent_MenuFrame",
+                                                self.worldMapButton,
+                                                "UIDropDownMenuTemplate")
+    self.worldMapButton:SetScript("OnClick", function()
+        EasyMenu(buildWorldMapMenu(), self.worldMapButton.menuFrame,
+                 self.worldMapButton, 0, 0, "MENU")
+    end)
 
-    self.worldMapButton:SetScript("OnClick", buildWorldMapMenu)
 end

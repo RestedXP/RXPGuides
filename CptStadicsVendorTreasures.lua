@@ -559,6 +559,8 @@ function Frame:UpdateMacros()
 end
 
 function Frame:CheckMiniMap()
+    -- TODO port World Map changes to minimap
+    if true then return end
 
     local mapID = GetMapID();
     if (mapID ~= MINI_MAP_ID) then Frame:DrawMiniMapPins(); end
@@ -838,7 +840,12 @@ function GetDistance(x1, y1, x2, y2)
     return math.sqrt(dx * dx + dy * dy)
 end
 
-hooksecurefunc(WorldMapFrame, "OnMapChanged", function()
+function addon.VendorTreasures.UpdatePins()
+    if not addon.settings.db.profile.enableVendorTreasure then
+        Frame:HideWorldMapPins()
+        return
+    end
+
     -- Only display pins for player's map unless soloSelfFound
     if not addon.settings.db.profile.soloSelfFound then
         if GetBestMapForUnit("player") ~= GetWorldMapID() then
@@ -849,10 +856,17 @@ hooksecurefunc(WorldMapFrame, "OnMapChanged", function()
 
     Frame:CheckWorldMap()
     Frame:ShowWorldMapPins()
-end)
+end
+
+hooksecurefunc(WorldMapFrame, "OnMapChanged", addon.VendorTreasures.UpdatePins)
 
 function addon.VendorTreasures:Setup()
     if not addon.settings.db.profile.enableVendorTreasure then return end
+
+    if next(DATA) ~= nil then
+        Frame:CheckZone()
+        return
+    end
 
     -- ZONE_CHANGED is new sub-zone, which doesn't apply to world map
     -- ZONE_CHANGED_NEW_AREA is new zone
