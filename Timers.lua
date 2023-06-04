@@ -95,6 +95,17 @@ local function CreateBar(label)
     return bar
 end
 
+function addon.HideTimers()
+    for _,bar in pairs(barPool) do
+        if bar:IsShown() then
+            bar:Hide()
+        end
+    end
+    RXPFrame.Footer.icon:SetAlpha(1)
+    RXPFrame.Footer.text:SetAlpha(1)
+    RXPFrame.Footer.cog:SetAlpha(1)
+end
+
 function addon.StartTimer(duration,label,options)
     if type(duration) ~= "number" or duration <= 0 or not RXPFrame:IsShown() then return end
     label = label or ""
@@ -162,10 +173,16 @@ end
 
 function addon:PLAYER_CONTROL_LOST()
     -- Don't display flight timer if addon hidden
-    if not addon.settings.db.profile.showEnabled then return end
 
     if GetTime() - flightInfo.startFlight < 1.5 then
-        flightInfo.flightBar = addon.StartTimer(flightInfo.timer,flightInfo.dest)
+        if addon.RXPFrame and addon.RXPFrame:IsShown() and
+         flightInfo.timer and addon.settings.db.profile.showFlightTimers then
+            flightInfo.flightBar = addon.StartTimer(
+                flightInfo.timer,
+                RXPCData.flightPaths[flightInfo.dest]
+            )
+        end
+        addon:SendEvent("RXP_FLIGHT_START",flightInfo.currentFP,flightInfo.dest,flightInfo.timer)
     end
 end
 
@@ -191,13 +208,17 @@ local function GetFlightTime(index)
     local faction = addon.player.faction
     local dest = flightInfo.nodeHash[addon.GetFlightHash(index)]
     local src = flightInfo.currentFP
-    local FPDB = addon.FPDB[faction]
+    flightInfo.dest = dest
+    flightInfo.activeIndex = index
+    local FPDB = addon.FPDB and addon.FPDB[faction]
+    if not FPDB then
+        flightInfo.timer = nil
+        return
+    end
     --uses the flight timer from destination to source if the timer is not found
     local time = FPDB[src] and FPDB[src][dest] or FPDB[dest] and FPDB[dest][src]
     if time then
         flightInfo.timer = time
-        flightInfo.dest = RXPCData.flightPaths[dest]
-        flightInfo.activeIndex = index
         return time
     else
         local totalTime = 0
@@ -216,11 +237,10 @@ local function GetFlightTime(index)
         end
         if totalTime > 0 then
             flightInfo.timer = totalTime
-            flightInfo.activeIndex = index
-            flightInfo.dest = RXPCData.flightPaths[dest]
             return totalTime
         end
     end
+    flightInfo.timer = nil
 end
 
  -- add flight path times to taxi map tooltips:

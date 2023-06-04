@@ -96,6 +96,7 @@ function addon.settings:InitializeSettings()
             enableXpStepSkipping = true,
             enableAutomaticXpRate = true,
             autoLoadStartingGuides = true,
+            showFlightTimers = true,
 
             -- Sliders
             arrowScale = 1,
@@ -828,6 +829,19 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.5,
                         hidden = addon.game ~= "CLASSIC"
+                    },
+                    showFlightTimers = {
+                        name = L("Show Flight Timers"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.6,
+                        hidden = not addon.FPDB,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            if not value then
+                                addon.HideTimers()
+                            end
+                        end
                     },
                     automationHeader = {
                         name = L("Automation"), -- TODO locale
