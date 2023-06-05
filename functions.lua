@@ -1784,7 +1784,7 @@ function addon.functions.fp(self, ...)
         end
 
         if location and location ~= "" and location:find("%w+") then
-            for id, fp in pairs(addon.FPDB[addon.player.faction]) do
+            for id, fp in pairs(addon.FPDB[addon.player.faction] or {}) do
                 if strupper(fp.name):find(strupper(location)) then
                     element.fpId = id
                     break
@@ -1810,7 +1810,7 @@ function addon.functions.fp(self, ...)
             local currentMap = C_Map.GetBestMapForUnit("player")
             local validFP = false
             if addon.FPbyZone then
-                for mapId,flightId in pairs(addon.FPbyZone[addon.player.faction]) do
+                for mapId,flightId in pairs(addon.FPbyZone[addon.player.faction] or {}) do
                     if currentMap == mapId then
                         validFP = true
                         if not RXPCData.flightPaths[flightId] then
@@ -1866,7 +1866,7 @@ function addon.functions.fly(self, ...)
         addon:TAXIMAP_OPENED()
         for i = 1, NumTaxiNodes() do
             local id = addon.flightInfo[i]
-            local name = id and addon.FPDB[addon.player.faction][id] and addon.FPDB[addon.player.faction][id].name
+            local name = id and addon.FPDB[addon.player.faction] and addon.FPDB[addon.player.faction][id] and addon.FPDB[addon.player.faction][id].name
             if name and strupper(name):find(element.location) then
                 local button = getglobal("TaxiButton" .. i)
                 if button then
@@ -5027,7 +5027,9 @@ function addon.functions.dungeon(self, text, instance)
     if type(self) == "string" and addon.GetDungeonName then -- on parse
         local name, tag = addon.GetDungeonName(instance)
         if tag then
-            RXPData.guideMetaData.enabledDungeons[addon.player.faction][tag] = name
+            if RXPData.guideMetaData.enabledDungeons[addon.player.faction] then
+                RXPData.guideMetaData.enabledDungeons[addon.player.faction][tag] = name
+            end
             addon.dungeons[tag] = name
             addon.step.dungeon = tag
             --print(tag,name)
