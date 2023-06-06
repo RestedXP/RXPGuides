@@ -1257,7 +1257,7 @@ s["MAGE"] = {
         8438, -- arcane explosion r3
         6127, -- conjure water r4
         8412, -- fire blast r4
-        8101, -- fireball r6
+        8401, -- fireball r6
         7302, -- ice armor
         45438, -- ice block
         3565, -- darnassus
