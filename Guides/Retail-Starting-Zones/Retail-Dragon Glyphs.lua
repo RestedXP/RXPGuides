@@ -3,7 +3,8 @@ RXPGuides.RegisterGuide([[
 #name A1 Waking Shores Dragon Glyphs
 #displayname Waking Shores Dragon Glyphs
 #version 1
-#group Dragon Glyphs
+#groupweight 1
+#group RestedXP Dragon Glyphs
 #next B1 Ohn'ahran Plains Dragon Glyphs
 
 step
@@ -488,6 +489,7 @@ RXPGuides.RegisterGuide([[
 #df
 #name E1 Forbidden Reach Dragon Glyphs
 #displayname Forbidden Reach Dragon Glyphs
+#next F1 Zaralek Cavern Dragon Glyphs
 #version 1
 #group Dragon Glyphs
 
@@ -595,4 +597,92 @@ step
     .line 2151,48.53,69.0,20.6,91.4 
     .goto 2151,20.6,91.4 
     .achievement 17411,2 >> Pick up the Dragon Glyph: Talon's Watch hidden within the bottom of the tower on an island
+]])
+
+RXPGuides.RegisterGuide([[
+#df
+#name F1 Zaralek Cavern Dragon Glyphs
+#displayname Zaralek Cavern Dragon Glyphs
+#version 1
+#group Dragon Glyphs
+
+
+step
+    .zoneskip 2133
+    +This guide requires you to have the |cFFfa9602Zaralek Caverns|r unlocked.
+step
+    .zone 2133 >>Enter Zaralek Cavern |cFFfa9602through the Thaldraszus entrance.|r
+step
+    #completewith next
+    +Use |T4640498:0|t[Skyward Ascend] to ascend and |T2103880:0|t[Surge Forward] to speed up. 
+    *|cRXP_WARN_Be sure not to use up all of your Vigor charges at once. If you need to recharge Vigor try gliding instead.|r
+step
+    #title Dragon Glyph: The Throughway
+    .line 2133,73.39,50.08,72.0,48.3
+    .goto 2133,72.0,48.3
+    .achievement 18150,6 >> Pick up the Dragon Glyph: The Throughway beneath the cave ceiling
+step
+    #completewith next
+    +Use |T4640498:0|t[Skyward Ascend] to ascend and |T2103880:0|t[Surge Forward] to speed up .
+    *|cRXP_WARN_Be sure not to use up all of your Vigor charges at once. If you need to recharge Vigor try gliding instead.|r
+step
+    #title Dragon Glyph: Loamm
+    .line 2133,72.0,48.3,54.7,54.8
+    .goto 2133,54.7,54.8
+    .achievement 18150,3 >> Pick up the Dragon Glyph: Loamm beneath the cave ceiling above Loamm 
+step
+    #completewith next
+    +Use |T4640498:0|t[Skyward Ascend] to ascend and |T2103880:0|t[Surge Forward] to speed up.
+    *|cRXP_WARN_Be sure not to use up all of your Vigor charges at once. If you need to recharge Vigor try gliding instead.|r
+step
+    #title Dragon Glyph: Nal ks'kol
+    .line 2133,54.7,54.8,62.7,70.3
+    .goto 2133,62.7,70.3
+    .achievement 18150,2 >> Pick up the Dragon Glyph: Nal ks'kol |cFFfa9602beneath the cave ceiling.|r
+step
+    #completewith next
+    +Use |T4640498:0|t[Skyward Ascend] to ascend and |T2103880:0|t[Surge Forward] to speed up.
+    *|cRXP_WARN_Be sure not to use up all of your Vigor charges at once. If you need to recharge Vigor try gliding instead.|r
+step
+    #title Dragon Glyph: Glimmerogg
+    .line 2133,62.7,70.3,41.6,80.3
+    .goto 2133,41.6,80.3
+    .achievement 18150,1 >> Pick up the Dragon Glyph: Glimmerogg |cFFfa9602beneath the cave ceiling next to a wall.|r
+step
+    #completewith next
+    +Use |T4640498:0|t[Skyward Ascend] to ascend and |T2103880:0|t[Surge Forward] to speed up.
+    *|cRXP_WARN_Be sure not to use up all of your Vigor charges at once. If you need to recharge Vigor try gliding instead.|r
+step
+    #title Dragon Glyph: Zaqali Caldera
+    >>|cFFFCDC00Pause before reaching 10 stacks of |T3163628:0|tDragonslayer's Sight|r
+    .line 2133,41.6,80.3,30.4,45.2
+    .goto 2133,30.4,45.2
+    .achievement 18150,4 >> Pick up the Dragon Glyph: Zaqali Caldera |cFFfa9602above a ledge.|r
+step
+    #completewith next
+    +Use |T4640498:0|t[Skyward Ascend] to ascend and |T2103880:0|tSurge Forward to speed up.
+    *|cRXP_WARN_Be sure not to use up all of your Vigor charges at once. If you need to recharge Vigor try gliding instead.|r
+step
+    #title Dragon Glyph: Acidbite Ravine
+    .line 2133,30.4,45.2,46.5,36.2
+    .goto 2133,46.5,36.2
+    .achievement 18150,7 >> Pick up the Dragon Glyph: Acidbite Ravine |cFFfa9602beneath the cave ceiling.|r
+step
+    #completewith next
+    +Use |T4640498:0|t[Skyward Ascend] to ascend and |T2103880:0|t[Surge Forward] to speed up.
+    *|cRXP_WARN_Be sure not to use up all of your Vigor charges at once. If you need to recharge Vigor try gliding instead.|r
+step
+    #title Dragon Glyph: Slitherdrake Roost
+    .line 2133,46.5,36.2,55.2,27.8
+    .goto 2133,55.2,27.8
+    .achievement 18150,5 >> Pick up the Dragon Glyph: Slitherdrake Roost |cFFfa9602beneath the cave ceiling hidden between the earthen icicles.|r
+step
+    #completewith next
+    +Use |T4640498:0|t[Skyward Ascend] to ascend and |T2103880:0|t[Surge Forward] to speed up.
+    *|cRXP_WARN_Be sure not to use up all of your Vigor charges at once. If you need to recharge Vigor try gliding instead.|r
+step
+    #title Dragon Glyph: Aberrus Approach
+    .line 2133,55.2,27.8,48.0,4.4
+    .goto 2133,48.0,4.4
+    .achievement 18150,8 >> Pick up the Dragon Glyph: Aberrus Approach behind the raid instance |cFFfa9602at the top of the lava waterfall.|r
 ]])
