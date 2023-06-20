@@ -175,7 +175,7 @@ function addon.settings:InitializeSettings()
 
     self:CreateAceOptionsPanel()
     self:CreateImportOptionsPanel()
-    self:MigrateSettings()
+    self:MigrateLegacySettings()
     self:LoadTextColors()
 
     self:RegisterChatCommand("rxp", self.ChatCommand)
@@ -183,7 +183,7 @@ function addon.settings:InitializeSettings()
     self:RegisterChatCommand("rxpguides", self.ChatCommand)
 end
 
-function addon.settings:MigrateSettings()
+function addon.settings:MigrateLegacySettings()
     if not RXPData or not RXPCData then return end
 
     local d = addon.settings.db.profile.debug
