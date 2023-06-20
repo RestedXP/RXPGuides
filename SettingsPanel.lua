@@ -22,6 +22,7 @@ local importCache = {
 }
 local incompatibleAddons = {}
 local settingsDB
+local loadedProfileKey
 
 -- Alias addon.locale.Get
 local L = addon.locale.Get
@@ -174,6 +175,7 @@ function addon.settings:InitializeSettings()
     settingsDB.RegisterCallback(self, "OnProfileCopied", "RefreshProfile")
     settingsDB.RegisterCallback(self, "OnProfileReset", "RefreshProfile")
     self.profile = settingsDB.profile
+    loadedProfileKey = settingsDB.keys.profile
 
     self:CreateAceOptionsPanel()
     self:CreateImportOptionsPanel()
@@ -2654,6 +2656,17 @@ function addon.settings:CreateAceOptionsPanel()
                                      settingsDB)
     optionsTable.args.profiles.order = 20
 
+    -- Add in reload prompt to Ace default pane
+    optionsTable.args.profiles.args["reloadUI"] = {
+        order = 0,
+        name = L("Reload guides and UI"),
+        type = 'execute',
+        func = function() _G.ReloadUI() end,
+        disabled = function()
+            return loadedProfileKey == settingsDB.keys.profile
+        end
+    }
+
     addon.RXPOptions = LibStub("AceConfigDialog-3.0"):AddToBlizOptions(
                            addon.title)
 
@@ -2823,6 +2836,11 @@ end
 function addon.settings:RefreshProfile()
     self.profile = settingsDB.profile
 
+    if loadedProfileKey ~= settingsDB.keys.profile then
+        addon.comms.PrettyPrint(L(
+                                    "Profile changed, Reload UI for settings to take effect"))
+    end
+
     if addon.currentGuide and addon.currentGuide.name then
         addon:LoadGuide(addon.currentGuide)
     else
@@ -2831,8 +2849,6 @@ function addon.settings:RefreshProfile()
     addon.UpdateMap()
     addon.RXPFrame.GenerateMenuTable()
     addon.RXPFrame.SetStepFrameAnchor()
-
-    -- TODO live reload... everything? Prompt for reload?
 end
 
 function addon.settings:CheckAddonCompatibility()
