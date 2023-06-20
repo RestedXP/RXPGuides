@@ -146,9 +146,9 @@ function addon.GetQuestLog(QL, LT)
     addon.next = group.next
     local stop
     local lastQuestAccepted
-    if (addon.settings.db.profile.SoM and guide.era or
-        not addon.settings.db.profile.SoM and guide.som or
-        addon.settings.db.profile.SoM and addon.settings.db.profile.phase > 2 and
+    if (addon.settings.profile.SoM and guide.era or
+        not addon.settings.profile.SoM and guide.som or
+        addon.settings.profile.SoM and addon.settings.profile.phase > 2 and
         guide["era/som"]) or not guide then return end
     for ns, step in ipairs(guide.steps) do
         local remove = tonumber(step.qremove)
@@ -329,7 +329,7 @@ function addon.GetOrphanedQuests()
             end
 
             if (isTooLow or not isPartOfGuide) and not questData.isComplete then
-                if addon.settings.db.profile.debug then
+                if addon.settings.profile.debug then
                     addon.comms.PrettyPrint("Orphaned quest found, %s",
                                             questData.questLogTitleText)
                 end

@@ -38,7 +38,7 @@ themes['RXP Red'] = {
     texturePath = "Interface/AddOns/" .. addonName .. "/Textures/Hardcore/",
     font = _G.GameFontNormal:GetFont(),
     textColor = {1, 1, 1},
-    --applicable = function() return addon.settings.db.profile.hardcore end,
+    --applicable = function() return addon.settings.profile.hardcore end,
     --applicable = true,
     applicable = function() return not RXPCData.GA end,
     author = "RestedXP",
@@ -118,7 +118,7 @@ local function GetDefaultTheme()
         return themes[addon.currentGuide.theme]
     elseif RXPCData.GA then
         return themes["RXP Gold"]
-    elseif addon.settings.db.profile.hardcore then
+    elseif addon.settings.profile.hardcore then
         return themes["RXP Red"]
     else
         return themes["Default"]
@@ -126,7 +126,7 @@ local function GetDefaultTheme()
 end
 
 function addon:LoadActiveTheme()
-    local applicableTheme = addon.settings.db.profile.activeTheme
+    local applicableTheme = addon.settings.profile.activeTheme
     local newTheme
     if applicableTheme == "Default" then
         newTheme = GetDefaultTheme()
@@ -233,7 +233,7 @@ end
 
 function addon:ImportCustomThemes()
     -- Register empty custom theme
-    self:RegisterTheme(addon.settings.db.profile.customTheme)
+    self:RegisterTheme(addon.settings.profile.customTheme)
 
     if not _G.RXPGuides_Themes then return end
 

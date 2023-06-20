@@ -112,7 +112,7 @@ function addon.AddGuide(guide)
         end
     end
 
-    if loadedGuide and addon.settings.db.profile.debug then
+    if loadedGuide and addon.settings.profile.debug then
         local debugText
         if guide.version == loadedGuide.version then
             debugText = fmt('Overwriting (%s) v%d', guide.key, guide.version)
@@ -180,7 +180,7 @@ function addon.RemoveGuide(guideKey)
     end
 
     if not loadedGuide then
-        if addon.settings.db.profile.debug then
+        if addon.settings.profile.debug then
             addon.comms.PrettyPrint('Guide not found (%s)', guideKey)
         end
         return
@@ -243,7 +243,7 @@ local function CheckDataIntegrity(str, h1, mode)
 
             local n = addon.ReadCacheData("buffer")
             if not n then
-                if addon.settings.db.profile.debug then
+                if addon.settings.profile.debug then
                     addon.comms.PrettyPrint('Failed to ReadCacheData') -- TODO locale
                 end
                 return false, L('Failed to ReadCacheData')
@@ -679,7 +679,7 @@ function addon.LoadCachedGuides()
                 guide.imported = true
                 addon.AddGuide(guide)
             else
-                if addon.settings.db.profile.debug then
+                if addon.settings.profile.debug then
                     addon.comms.PrettyPrint(L(
                                                 'Unable to decode cached guide (%s), removed'),
                                             key)

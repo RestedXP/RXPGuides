@@ -176,7 +176,7 @@ function addon:PLAYER_CONTROL_LOST()
 
     if GetTime() - flightInfo.startFlight < 1.5 then
         if addon.RXPFrame and addon.RXPFrame:IsShown() and
-         flightInfo.timer and addon.settings.db.profile.showFlightTimers then
+         flightInfo.timer and addon.settings.profile.showFlightTimers then
             flightInfo.flightBar = addon.StartTimer(
                 flightInfo.timer,
                 RXPCData.flightPaths[flightInfo.dest]

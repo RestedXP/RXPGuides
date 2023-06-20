@@ -876,7 +876,7 @@ function addon.functions.accept(self, ...)
                     addon.StartTimer(element.timer,element.timerText)
                 end
 
-                if addon.settings.db.profile.shareQuests then
+                if addon.settings.profile.shareQuests then
                     local questLogIndex,isPushable = GetLogIndexForQuestID(id);
                     if questLogIndex and isPushable then
                         if _G.SelectQuestLogEntry then
@@ -1717,7 +1717,7 @@ function addon.functions.home(self, ...)
         return element
     end
 
-    if not addon.settings.db.profile.enableBindAutomation or IsShiftKeyDown() then return end
+    if not addon.settings.profile.enableBindAutomation or IsShiftKeyDown() then return end
 
     local element = self.element
     if not element.step.active or element.completed or element.skip then
@@ -1854,14 +1854,14 @@ function addon.functions.fly(self, ...)
         return element
     end
 
-    if not addon.settings.db.profile.enableFPAutomation or IsShiftKeyDown() then return end
+    if not addon.settings.profile.enableFPAutomation or IsShiftKeyDown() then return end
 
     local element = self.element
     if not element.step.active then return end
     local event = ...
     if not element.confirm and event == "GOSSIP_SHOW" and addon.SelectGossipType("taxi") then
         element.confirm = true
-    elseif event == "TAXIMAP_OPENED" and addon.settings.db.profile.enableFPAutomation and
+    elseif event == "TAXIMAP_OPENED" and addon.settings.profile.enableFPAutomation and
         element.location then
         addon:TAXIMAP_OPENED()
         for i = 1, NumTaxiNodes() do
@@ -2233,7 +2233,7 @@ function addon.functions.xp(self, ...)
     local element = self.element
     local step = element.step
     if addon.isHidden or
-             (not addon.settings.db.profile.enableXpStepSkipping and
+             (not addon.settings.profile.enableXpStepSkipping and
                  element.textOnly == true and not element.reverseLogic) then
         return
     end
@@ -2253,7 +2253,7 @@ function addon.functions.xp(self, ...)
             (element.level == level and currentXP >= maxXP * element.xp)))) ==
         not reverseLogic then
         if element.skipstep then
-            if step.active and not step.completed and not(addon.settings.db.profile.northrendLM and not reverseLogic) then
+            if step.active and not step.completed and not(addon.settings.profile.northrendLM and not reverseLogic) then
                 addon.updateSteps = true
                 step.completed = true
                 if element.textOnly == true then
@@ -2624,7 +2624,7 @@ function addon.functions.next(skip, guide)
             local era = "(Era)"
             local som = "(SoM)"
 
-            if addon.settings.db.profile.SoM then
+            if addon.settings.profile.SoM then
                 next = next:gsub(era, som)
             else
                 next = next:gsub(som, era)
@@ -2634,11 +2634,11 @@ function addon.functions.next(skip, guide)
         nextGuide = addon.GetGuideTable(group, next)
 
         if nextGuide then
-            if (nextGuide.era and addon.settings.db.profile.SoM or nextGuide.som and
-                not addon.settings.db.profile.SoM or addon.settings.db.profile.SoM and addon.settings.db.profile.phase > 2 and
+            if (nextGuide.era and addon.settings.profile.SoM or nextGuide.som and
+                not addon.settings.profile.SoM or addon.settings.profile.SoM and addon.settings.profile.phase > 2 and
                 nextGuide["era/som"]) or
-                (nextGuide.hardcore and not (addon.settings.db.profile.hardcore) or
-                    nextGuide.softcore and addon.settings.db.profile.hardcore) then
+                (nextGuide.hardcore and not (addon.settings.profile.hardcore) or
+                    nextGuide.softcore and addon.settings.profile.hardcore) then
                 return addon.functions.next(nil, nextGuide)
             else
                 addon:LoadGuide(nextGuide)
@@ -2875,7 +2875,7 @@ function addon.functions.isQuestComplete(self, ...)
     local step = element.step
     local id = element.questId
     local event = ...
-    if event ~= "WindowUpdate" and step.active and not (IsOnQuest(id) and IsQuestComplete(id)) and not addon.settings.db.profile.debug and not addon.isHidden then
+    if event ~= "WindowUpdate" and step.active and not (IsOnQuest(id) and IsQuestComplete(id)) and not addon.settings.profile.debug and not addon.isHidden then
         step.completed = true
         addon.updateSteps = true
         element.tooltipText = "Step skipped: Missing pre-requisites"
@@ -2912,7 +2912,7 @@ function addon.functions.isOnQuest(self, text, ...)
 
     local event = ...
     local step = element.step
-    if event ~= "WindowUpdate" and step.active and not addon.settings.db.profile.debug and (not onQuest) == not element.reverse and not addon.isHidden then
+    if event ~= "WindowUpdate" and step.active and not addon.settings.profile.debug and (not onQuest) == not element.reverse and not addon.isHidden then
         element.tooltipText = "Step skipped: Missing pre-requisites"
         step.completed = true
         addon.updateSteps = true
@@ -2959,7 +2959,7 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
             questTurnedIn = questTurnedIn or IsQuestTurnedIn(id)
         end
     end
-    if event ~= "WindowUpdate" and step.active and not questTurnedIn and not addon.settings.db.profile.debug and not addon.isHidden then
+    if event ~= "WindowUpdate" and step.active and not questTurnedIn and not addon.settings.profile.debug and not addon.isHidden then
         step.completed = true
         addon.updateSteps = true
         element.tooltipText = "Step skipped: Missing pre-requisites"
@@ -3748,7 +3748,7 @@ function addon.functions.skipgossip(self, text, ...)
         return element
     end
 
-    if not addon.settings.db.profile.enableGossipAutomation or IsShiftKeyDown() then return end
+    if not addon.settings.profile.enableGossipAutomation or IsShiftKeyDown() then return end
 
     local element = self.element
     local args = element.args or {}
@@ -3819,7 +3819,7 @@ function addon.functions.skipgossipid(self, text, ...)
     local element = self.element
     if not element or not element.step.active or not element.gossipId or
         element.completed or addon.isHidden or
-        not addon.settings.db.profile.enableGossipAutomation or IsShiftKeyDown() then
+        not addon.settings.profile.enableGossipAutomation or IsShiftKeyDown() then
             return
     end
 
@@ -3872,7 +3872,7 @@ function addon.functions.gossipoption(self, ...)
 
     if not element or not element.step.active or not element.gossipId or
         element.completed or addon.isHidden or
-        not addon.settings.db.profile.enableGossipAutomation or IsShiftKeyDown() then
+        not addon.settings.profile.enableGossipAutomation or IsShiftKeyDown() then
              return
     end
 
@@ -3932,8 +3932,8 @@ function addon.functions.maxlevel(self, ...)
 
     if addon.isHidden then
         return
-    elseif level > element.level and addon.settings.db.profile.enableXpStepSkipping then
-        if step.active and not step.completed and not addon.settings.db.profile.northrendLM then
+    elseif level > element.level and addon.settings.profile.enableXpStepSkipping then
+        if step.active and not step.completed and not addon.settings.profile.northrendLM then
             addon.updateSteps = true
             step.completed = true
             if step.textOnly then
@@ -4465,7 +4465,7 @@ function addon.functions.dmf(self, ...)
         end
     end
 
-    if element.step.active and not addon.settings.db.profile.debug and (not isDmfInTown) == not element.reverse and not addon.isHidden then
+    if element.step.active and not addon.settings.profile.debug and (not isDmfInTown) == not element.reverse and not addon.isHidden then
         element.step.completed = true
         addon.updateSteps = true
     end
@@ -4497,7 +4497,7 @@ function addon.functions.pvp(self, ...)
     local element = self.element
     local isPvPEnabled = C_PvP and (C_PvP.IsWarModeDesired() or C_PvP.IsWarModeActive())
 
-    if element.step.active and not addon.settings.db.profile.debug and (not isPvPEnabled) == not element.reverse and not addon.isHidden then
+    if element.step.active and not addon.settings.profile.debug and (not isPvPEnabled) == not element.reverse and not addon.isHidden then
         element.step.completed = true
         addon.updateSteps = true
     end
@@ -4582,7 +4582,7 @@ function addon.functions.flyable(self, text, zone, skill)
         canPlayerFly = not canPlayerFly
     end
     --print(canPlayerFly,'t')
-    if element.step.active and not addon.settings.db.profile.debug and (not canPlayerFly) and not addon.isHidden then
+    if element.step.active and not addon.settings.profile.debug and (not canPlayerFly) and not addon.isHidden then
         element.step.completed = true
         addon.updateSteps = true
     end

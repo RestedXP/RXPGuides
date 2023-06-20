@@ -161,16 +161,16 @@ function addon.talents:IsSupported()
 end
 
 function addon.talents:Setup()
-    if not addon.settings.db.profile.enableTalentGuides then return end
+    if not addon.settings.profile.enableTalentGuides then return end
 
     if not self:IsSupported() then return end
 
     self:RegisterEvent("ADDON_LOADED")
 
-    self:UpdateSelectedGuide(addon.settings.db.profile.activeTalentGuide)
+    self:UpdateSelectedGuide(addon.settings.profile.activeTalentGuide)
 
     if tonumber(GetCVar("previewTalents")) == 0 and addon.gameVersion > 30000 and
-        addon.settings.db.profile.previewTalents then
+        addon.settings.profile.previewTalents then
         -- Talents are enabled in RXP, so match client
         -- This only lasts per session, does not persist in-game setting
         SetCVar("previewTalents", 1)
@@ -469,7 +469,7 @@ function addon.talents.functions.talent(element, validate)
                 addon.comms:ConfirmChoice("RXPTalentPrompt", prompt,
                                           learnClassicTalent, d)
 
-            elseif addon.settings.db.profile.previewTalents then
+            elseif addon.settings.profile.previewTalents then
                 local before = GetGroupPreviewTalentPointsSpent()
                 AddPreviewTalentPoints(talentData.tab, talentIndex, 1)
 
@@ -549,7 +549,7 @@ function addon.talents.functions.pettalent(element, validate)
 
         -- TODO handle off-plan talents
         if name and previewRankOrRank < talentData.rank then
-            if addon.settings.db.profile.previewTalents then
+            if addon.settings.profile.previewTalents then
                 local before = GetGroupPreviewTalentPointsSpent(true, 1)
                 AddPreviewTalentPoints(talentData.tab, talentIndex, 1, true,
                                        PlayerTalentFrame.talentGroup)
@@ -586,7 +586,7 @@ function addon.talents:GetCurrentGuide()
         return self.petGuides[GetPetTalentTree()]
     else
         -- TODO automatically select talent guide for chosen spec, harder to do without DB
-        return self.guides[addon.settings.db.profile.activeTalentGuide]
+        return self.guides[addon.settings.profile.activeTalentGuide]
     end
 end
 
@@ -602,7 +602,7 @@ function addon.talents:UpdateSelectedGuide(key)
         return
     end
 
-    addon.settings.db.profile.activeTalentGuide = key
+    addon.settings.profile.activeTalentGuide = key
 
     return true
 end
@@ -686,7 +686,7 @@ function addon.talents:DrawTalents()
 
     if not indexLookup['player'] then self:BuildIndexLookup() end
 
-    if not addon.settings.db.profile.hightlightTalentPlan then
+    if not addon.settings.profile.hightlightTalentPlan then
         -- If disabled, cleanup old draws for dynamic settings
         local ht
         for i in pairs(talentTooltips.highlights) do
@@ -705,7 +705,7 @@ function addon.talents:DrawTalents()
 
     local playerLevel = UnitLevel("player")
     local advancedWarning = playerLevel +
-                                addon.settings.db.profile.upcomingTalentCount
+                                addon.settings.profile.upcomingTalentCount
     local levelStep, talentIndex
 
     wipe(talentTooltips.data)
@@ -815,7 +815,7 @@ function addon.talents:ProcessTalents(validate)
 
     if not guide then return end
 
-    if validate and addon.settings.db.profile.debug then
+    if validate and addon.settings.profile.debug then
         addon.comms.PrettyPrint("Validating %s", guide.displayname)
     end
 
@@ -898,7 +898,7 @@ function addon.talents:ProcessPetTalents(validate)
 
     if not guide or not guide.pet then return end
 
-    if validate and addon.settings.db.profile.debug then
+    if validate and addon.settings.profile.debug then
         addon.comms.PrettyPrint("Validating %s", guide.displayname)
     end
 
@@ -944,7 +944,7 @@ function addon.talents:ProcessPetTalents(validate)
                 end
 
                 if result == false then
-                    if addon.settings.db.profile.debug then
+                    if addon.settings.profile.debug then
                         addon.comms.PrettyPrint(
                             "Aborting processing at step %d", stepNum)
                     end

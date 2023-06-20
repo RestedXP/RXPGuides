@@ -22,7 +22,7 @@ end
 
 addon.enabledFrames["arrowFrame"] = af
 af.IsFeatureEnabled = function ()
-    return not addon.settings.db.profile.disableArrow and (addon.hideArrow ~= nil and not addon.hideArrow)
+    return not addon.settings.profile.disableArrow and (addon.hideArrow ~= nil and not addon.hideArrow)
 end
 
 --local chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -46,7 +46,7 @@ af:SetPoint("TOP")
 af:Hide()
 
 af:SetScript("OnMouseDown", function(self, button)
-    if not addon.settings.db.profile.lockFrames and af:GetAlpha() ~= 0 then af:StartMoving() end
+    if not addon.settings.profile.lockFrames and af:GetAlpha() ~= 0 then af:StartMoving() end
 end)
 af:SetScript("OnMouseUp", function(self, button) af:StopMovingOrSizing() end)
 
@@ -60,7 +60,7 @@ end
 
 function addon.UpdateArrow(self)
 
-    if addon.settings.db.profile.disableArrow or not self then return end
+    if addon.settings.profile.disableArrow or not self then return end
     local element = self.element
     if element then
         local x, y, instance = HBD:GetPlayerWorldPosition()
@@ -113,7 +113,7 @@ local function PinOnEnter(self)
     local showTooltip
     if self.lineData then
         showTooltip = pin.step and pin.step.showTooltip and pin.step.elements
-        if addon.settings.db.profile.debug then
+        if addon.settings.profile.debug then
             local line = self.lineData
             self:SetAlpha(0.5)
             print("Line start point:", line.sX, ",", line.sY)
@@ -140,7 +140,7 @@ local function PinOnEnter(self)
         local step = element.step
         local icon = step.icon or ""
         local debug = ""
-        if addon.settings.db.profile.debug then
+        if addon.settings.profile.debug then
             debug = format("%.3f,%.3f:",element.x or 0, element.y or 0)
         end
         icon = icon:gsub("(|T.-):%d+:%d+:","%1:0:0:")
@@ -252,7 +252,7 @@ MapPinPool.creationFunc = function(framePool)
         end
 
         self.text:Show()
-        if addon.settings.db.profile.mapCircle and not isMiniMapPin and not icon then
+        if addon.settings.profile.mapCircle and not isMiniMapPin and not icon then
             local size = math.max(self.text:GetWidth(), self.text:GetHeight()) + 8
             self.inner:Show()
             if step.active then
@@ -260,7 +260,7 @@ MapPinPool.creationFunc = function(framePool)
                 self:SetWidth(size + 3)
                 self:SetHeight(size + 3)
                 self:SetBackdropColor(0.0, 0.0, 0.0,
-                                   addon.settings.db.profile.worldMapPinBackgroundOpacity)
+                                   addon.settings.profile.worldMapPinBackgroundOpacity)
                 self.inner:SetBackdropColor(1, 1, 1, 1)
                 self.inner:SetWidth(size + 3)
                 self.inner:SetHeight(size + 3)
@@ -268,7 +268,7 @@ MapPinPool.creationFunc = function(framePool)
                 self.text:SetFont(addon.font, 14, "OUTLINE")
             else
                 self:SetBackdropColor(0.1, 0.1, 0.1,
-                                   addon.settings.db.profile.worldMapPinBackgroundOpacity)
+                                   addon.settings.profile.worldMapPinBackgroundOpacity)
                 self:SetWidth(size)
                 self:SetHeight(size)
 
@@ -280,7 +280,7 @@ MapPinPool.creationFunc = function(framePool)
             self.inner:SetWidth(size)
             self.inner:SetHeight(size)
             self.text:SetPoint("CENTER", self, 0, 0)
-            self:SetScale(addon.settings.db.profile.worldMapPinScale)
+            self:SetScale(addon.settings.profile.worldMapPinScale)
             self:SetAlpha(pin.opacity)
         else
             --print('s3',GetTime())
@@ -297,7 +297,7 @@ MapPinPool.creationFunc = function(framePool)
                 self.text:SetPoint("CENTER", self, 1, 0)
             elseif step.active and not isMiniMapPin then
                 self:SetBackdropColor(0.0, 0.0, 0.0,
-                                   addon.settings.db.profile.worldMapPinBackgroundOpacity)
+                                   addon.settings.profile.worldMapPinBackgroundOpacity)
 
                 self.text:SetFont(addon.font, 14, "OUTLINE")
                 self:SetWidth(self.text:GetStringWidth() + 3)
@@ -305,7 +305,7 @@ MapPinPool.creationFunc = function(framePool)
                 self.text:SetPoint("CENTER", self, 1, 0)
             else
                 local bgAlpha = isMiniMapPin and 0 or
-                                    addon.settings.db.profile.worldMapPinBackgroundOpacity
+                                    addon.settings.profile.worldMapPinBackgroundOpacity
                 self:SetBackdropColor(0.1, 0.1, 0.1, bgAlpha)
 
                 self.text:SetFont(addon.font, 9, "OUTLINE")
@@ -314,7 +314,7 @@ MapPinPool.creationFunc = function(framePool)
                 self.text:SetPoint("CENTER", self, 1, 0)
             end
 
-            self:SetScale(addon.settings.db.profile.worldMapPinScale)
+            self:SetScale(addon.settings.profile.worldMapPinScale)
             self:SetAlpha(pin.opacity)
         end
 
@@ -440,7 +440,7 @@ lineMapFramePool = MapLinePool.create()
 
 -- Calculates if a given element is close to any other provided pins
 local function elementIsCloseToOtherPins(element, pins, isMiniMapPin)
-    local overlap = addon.settings.db.profile.distanceBetweenPins or 1
+    local overlap = addon.settings.profile.distanceBetweenPins or 1
     local pinDistanceMod, pinMaxDistance = 0, 0
     if isMiniMapPin then
         pinMaxDistance = 25
@@ -801,7 +801,7 @@ end
 -- Generate pins using the current guide's steps, then add the pins to the world map
 local function addWorldMapPins()
     -- Calculate which pins should be on the world map
-    local pins = generatePins(addon.currentGuide.steps, addon.settings.db.profile.numMapPins,
+    local pins = generatePins(addon.currentGuide.steps, addon.settings.profile.numMapPins,
                               RXPCData.currentStep, false)
 
     -- Convert each "pin" data structure into a WoW frame. Then add that frame to the world map
@@ -828,7 +828,7 @@ local function addWorldMapPins()
 end
 
 local function addWorldMapLines()
-    local lineData = generateLines(addon.currentGuide.steps, addon.settings.db.profile.numMapPins,
+    local lineData = generateLines(addon.currentGuide.steps, addon.settings.profile.numMapPins,
                                    RXPCData.currentStep, false)
 
     if #lineData > 0 then
@@ -856,9 +856,9 @@ end
 
 -- Generate pins using only the active steps, then add the pins to the Mini Map
 local function addMiniMapPins(pins)
-    if addon.settings.db.profile.hideMiniMapPins then return end
+    if addon.settings.profile.hideMiniMapPins then return end
     -- Calculate which pins should be on the mini map
-    local pins = generatePins(addon.currentGuide.steps, addon.settings.db.profile.numMapPins,
+    local pins = generatePins(addon.currentGuide.steps, addon.settings.profile.numMapPins,
                               RXPCData.currentStep, true)
 
     -- Convert each "pin" data structure into a WoW frame. Then add that frame to the mini map
@@ -891,7 +891,7 @@ local function updateArrow()
                 (element.parent.completed or element.parent.skip)) and
             not (element.text and (element.completed or isComplete) and
                 not isComplete)) then
-            af:SetShown(not addon.settings.db.profile.disableArrow and not addon.hideArrow and addon.settings.db.profile.showEnabled)
+            af:SetShown(not addon.settings.profile.disableArrow and not addon.hideArrow and addon.settings.profile.showEnabled)
             af.dist = 0
             af.orientation = 0
             af.element = element
@@ -932,8 +932,8 @@ local function updateArrow()
 end
 
 function addon.ResetArrowPosition()
-    addon.settings.db.profile.disableArrow = false
-    if not addon.settings.db.profile.showEnabled then
+    addon.settings.profile.disableArrow = false
+    if not addon.settings.profile.showEnabled then
         addon.settings.ToggleActive()
     end
     af:ClearAllPoints()
