@@ -2058,7 +2058,7 @@ function RXPFrame:GenerateMenuTable(menu)
         end
     })
 
-    if addon.settings.db and addon.settings.profile.enableTracker then
+    if addon.settings.profile and addon.settings.profile.enableTracker then
         tinsert(menuList, {
             text = L("Leveling report"),
             notCheckable = 1,
@@ -2088,7 +2088,7 @@ end
 
 function addon.UpdateGuideFontSize()
     local size =
-        (addon.settings.db and addon.settings.profile.guideFontSize) or 9
+        (addon.settings.profile and addon.settings.profile.guideFontSize) or 9
 
     GuideName.text:SetFont(addon.font, size + 2, "")
     Footer.text:SetFont(addon.font, size, "")
