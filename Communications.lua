@@ -26,16 +26,16 @@ addon.comms.state = {
 
 local function announceLevelUp(message)
     if GetNumGroupMembers() > 0 then
-        if addon.settings.db.profile.enableLevelUpAnnounceGroup then
+        if addon.settings.profile.enableLevelUpAnnounceGroup then
             SendChatMessage(message, "PARTY", nil)
         end
     else
-        if addon.settings.db.profile.enableLevelUpAnnounceSolo then
+        if addon.settings.profile.enableLevelUpAnnounceSolo then
             SendChatMessage(message, "EMOTE", nil)
         end
     end
 
-    if addon.settings.db.profile.enableLevelUpAnnounceGuild and IsInGuild() then
+    if addon.settings.profile.enableLevelUpAnnounceGuild and IsInGuild() then
         SendChatMessage(message, "GUILD", nil)
     end
 end
@@ -78,7 +78,7 @@ end
 function addon.comms:PLAYER_LEVEL_UP(_, level)
     local msg, s
 
-    if addon.settings.db.profile.enableTracker then
+    if addon.settings.profile.enableTracker then
         local levelData = addon.tracker.reportData[level - 1]
 
         if levelData and levelData.timestamp and levelData.timestamp.started and
@@ -107,7 +107,7 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
                                                  level - 1, level,
                                                  addon.comms:PrettyPrintTime(s))
                     announceLevelUp(msg)
-                elseif addon.settings.db.profile.debug then
+                elseif addon.settings.profile.debug then
                     self.PrettyPrint("Invalid .started or .finished %d", level)
                 end
             end)
@@ -232,7 +232,7 @@ function addon.comms:IsNewRelease(theirRelease, name)
     if theirRelease == 'Development' then
         return false
     elseif addon.release == 'Development' then
-        if addon.settings.db.profile.debug then
+        if addon.settings.profile.debug then
             self.PrettyPrint("%s:theirRelease = %s", name, theirRelease)
         end
         return false
@@ -273,7 +273,7 @@ function addon.comms:HandleAnnounce(data)
     self.players[data.player.name].isRxp = true
     self.players[data.player.name].lastSeen = GetTime()
 
-    if addon.settings.db.profile.checkVersions then
+    if addon.settings.profile.checkVersions then
         if not self.state.updateFound.addon and
             self:IsNewRelease(data.addon.release, data.player.name) then
 
@@ -308,7 +308,7 @@ end
 function addon.comms:AnnounceStepEvent(event, data)
     -- Only send branded messages if in an RXP party
     if not self.state.rxpGroupDetected and
-        not addon.settings.db.profile.alwaysSendBranded then return end
+        not addon.settings.profile.alwaysSendBranded then return end
 
     -- Probably step replay, shush
     -- currentStep == 1 is probably spam from rapid replay
@@ -328,7 +328,7 @@ function addon.comms:AnnounceStepEvent(event, data)
 
     if event == '.complete' then
         -- Don't handle announcements if Questie loaded
-        if _G.Questie and not addon.settings.db.profile.ignoreQuestieConflicts then
+        if _G.Questie and not addon.settings.profile.ignoreQuestieConflicts then
             return
         end
 
@@ -338,10 +338,10 @@ function addon.comms:AnnounceStepEvent(event, data)
         local msg = self.BuildNotification(L("Completed step %d - %s"),
                                            data.step, data.title)
 
-        if addon.settings.db.profile.enableCompleteStepAnnouncements and
+        if addon.settings.profile.enableCompleteStepAnnouncements and
             GetNumGroupMembers() > 0 then
             SendChatMessage(msg, "PARTY", nil)
-        elseif addon.settings.db.profile.debug then
+        elseif addon.settings.profile.debug then
             self.PrettyPrint(msg)
         end
 
@@ -349,7 +349,7 @@ function addon.comms:AnnounceStepEvent(event, data)
 
     elseif event == '.collect' then
         -- Don't handle announcements if Questie loaded
-        if _G.Questie and not addon.settings.db.profile.ignoreQuestieConflicts then
+        if _G.Questie and not addon.settings.profile.ignoreQuestieConflicts then
             return
         end
 
@@ -359,10 +359,10 @@ function addon.comms:AnnounceStepEvent(event, data)
         local msg = self.BuildNotification(L("Collected step %d - %s"),
                                            data.step, data.title)
 
-        if addon.settings.db.profile.enableCollectAnnouncements and
+        if addon.settings.profile.enableCollectAnnouncements and
             GetNumGroupMembers() > 0 then
             SendChatMessage(msg, "PARTY", nil)
-        elseif addon.settings.db.profile.debug then
+        elseif addon.settings.profile.debug then
             self.PrettyPrint(msg)
         end
 
@@ -377,10 +377,10 @@ function addon.comms:AnnounceStepEvent(event, data)
                                            addon.comms:PrettyPrintTime(
                                                data.duration))
 
-        if addon.settings.db.profile.enableFlyStepAnnouncements and
+        if addon.settings.profile.enableFlyStepAnnouncements and
             GetNumGroupMembers() > 0 then
             SendChatMessage(msg, "PARTY", nil)
-        elseif addon.settings.db.profile.debug then
+        elseif addon.settings.profile.debug then
             self.PrettyPrint(msg)
         end
     else
@@ -395,7 +395,7 @@ end
 
 function addon.comms.PrettyPrint(msg, ...)
     print(fmt("%s%s: %s", addon.title,
-              addon.settings.db.profile.debug and ' (Debug)' or '',
+              addon.settings.profile.debug and ' (Debug)' or '',
               fmt(msg, ...)))
 end
 
@@ -500,7 +500,7 @@ function addon.comms.OpenBugReport(stepNumber)
     local arrowData = af and fmt(
                           "  Shown: %s\n  Hidden by step: %s\n  Disabled: %s\n  Distance: %s\n  Same Continent: %s\n  Zone: %s\n  Coordinates: wy (%.02f) wx (%.02f)\n",
                           tostr(af:IsShown()), tostr(addon.hideArrow),
-                          tostr(addon.settings.db.profile.disableArrow),
+                          tostr(addon.settings.profile.disableArrow),
                           af.distance or -1, sameContinent,
                           af.element and af.element.zone or 'N/A',
                           af.element and af.element.wy or 0,
@@ -545,7 +545,7 @@ Arrow data
 ```
 ]], L("Describe your issue:"), L("Do not edit below this line"),
                         character or "Error", zone or "Error", guide or "Error",
-                        addon.release, addon.settings.db.profile.xprate,
+                        addon.release, addon.settings.profile.xprate,
                         GetLocale(), select(1, GetBuildInfo()), select(2,
                                                                        BNGetInfo()) ~=
                             nil and "Online" or "Offline", stepData, arrowData, addonErrors, errorFlags)

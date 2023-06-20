@@ -24,7 +24,7 @@ local RXPFrame = CreateFrame("Frame", "RXPFrame", UIParent, BackdropTemplate)
 addon.RXPFrame = RXPFrame
 addon.enabledFrames["RXPFrame"] = RXPFrame
 RXPFrame.IsFeatureEnabled = function()
-    return not addon.settings.db.profile.hideGuideWindow
+    return not addon.settings.profile.hideGuideWindow
 end
 
 local BottomFrame = CreateFrame("Frame", "$parent_bottomFrame", RXPFrame,
@@ -203,7 +203,7 @@ local function SetStepFrameAnchor()
         frame.anchor = "BOTTOM"
     end
 
-    if addon.settings.db.profile.anchorOrientation == "top" then
+    if addon.settings.profile.anchorOrientation == "top" then
         SetTop()
         if (frame:GetTop() * scale > GetScreenHeight()) then SetBottom() end
         if frame:GetBottom() * scale < 0 then SetTop() end
@@ -221,7 +221,7 @@ RXPFrame.SetStepFrameAnchor = SetStepFrameAnchor
 local isResizing
 
 RXPFrame.OnMouseDown = function(self, button, resize)
-    if addon.settings.db.profile.lockFrames then return end
+    if addon.settings.profile.lockFrames then return end
 
     if resize or IsAltKeyDown() and
         not (addon.currentGuide and addon.currentGuide.hidewindow) then
@@ -236,7 +236,7 @@ end
 RXPFrame.OnMouseUp = function(self, button)
     RXPFrame:StopMovingOrSizing()
     if isResizing then
-        addon.settings.db.profile.frameHeight = RXPFrame:GetHeight()
+        addon.settings.profile.frameHeight = RXPFrame:GetHeight()
         addon.SetStep(RXPCData.currentStep)
         RXPFrame:SetScript("OnUpdate", nil)
     end
@@ -763,7 +763,7 @@ function addon.SetStep(n, n2, loopback)
             stepframe.number.text:SetJustifyV("MIDDLE")
             stepframe.number.text:SetTextColor(
                 unpack(addon.activeTheme.textColor))
-            stepframe.number.text:SetFont(addon.font, addon.settings.db.profile
+            stepframe.number.text:SetFont(addon.font, addon.settings.profile
                                               .guideFontSize, "")
         end
         if stepframe.theme ~= addon.activeTheme then
@@ -837,7 +837,7 @@ function addon.SetStep(n, n2, loopback)
                 elementFrame.text:SetTextColor(
                     unpack(addon.activeTheme.textColor))
 
-                elementFrame.text:SetFont(addon.font, addon.settings.db.profile
+                elementFrame.text:SetFont(addon.font, addon.settings.profile
                                               .guideFontSize + 2, "") -- 11
 
                 elementFrame.icon =
@@ -1270,7 +1270,7 @@ hooksecurefunc(ScrollFrame.ScrollBar, "SetValue", function(self, value)
     local scroll = h - BottomFrame:GetHeight()
     local index = RXPCData.currentStep and RXPCData.currentStep > 1 and
                       stepPos[RXPCData.currentStep - 1]
-    local zero = addon.settings.db.profile.hideCompletedSteps and index and
+    local zero = addon.settings.profile.hideCompletedSteps and index and
                      index + RXPCData.currentStep or 0
     if scroll < zero then scroll = zero end
     if scroll <= value then ScrollFrame.ScrollBar.ScrollDownButton:Disable() end
@@ -1284,7 +1284,7 @@ ScrollFrame:SetScrollChild(ScrollChild)
 
 function addon.GetGuideName(guide)
     if not guide then guide = addon.currentGuide end
-    local som = addon.settings.db.profile.SoM
+    local som = addon.settings.profile.SoM
     if som and guide.somname then
         return guide.somname
     elseif not som and guide.eraname then
@@ -1386,18 +1386,18 @@ function addon:LoadGuide(guide, OnLoad)
     end
 
     if guide.hardcore then
-        if not addon.settings.db.profile.hardcore then
-            addon.settings.db.profile.hardcore = true
+        if not addon.settings.profile.hardcore then
+            addon.settings.profile.hardcore = true
             addon.RenderFrame(true,true)
         end
-        addon.settings.db.profile.SoM = false
-    elseif guide.softcore and addon.settings.db.profile.hardcore then
-            addon.settings.db.profile.hardcore = false
+        addon.settings.profile.SoM = false
+    elseif guide.softcore and addon.settings.profile.hardcore then
+            addon.settings.profile.hardcore = false
             addon.RenderFrame(true,true)
     end
 
-    if addon.settings.db.profile.frameHeight then
-        RXPFrame:SetHeight(addon.settings.db.profile.frameHeight)
+    if addon.settings.profile.frameHeight then
+        RXPFrame:SetHeight(addon.settings.profile.frameHeight)
     end
     if addon.noGuide then
         RXPFrame:SetHeight(addon.height)
@@ -1421,13 +1421,13 @@ function addon:LoadGuide(guide, OnLoad)
     addon.currentGuide = nil
     local renderFrame
 
-    if guide.hardcore and addon.game == "CLASSIC" and not addon.settings.db.profile.hardcore then
-        addon.settings.db.profile.hardcore = true
+    if guide.hardcore and addon.game == "CLASSIC" and not addon.settings.profile.hardcore then
+        addon.settings.profile.hardcore = true
         renderFrame = true
     end
 
     --TODO: add better theme handling
-    if guide.theme and addon.settings.db.profile.activeTheme == "Default" then
+    if guide.theme and addon.settings.profile.activeTheme == "Default" then
         renderFrame = true
     end
 
@@ -1574,7 +1574,7 @@ function addon:LoadGuide(guide, OnLoad)
             frame.number.text:SetJustifyH("CENTER")
             frame.number.text:SetJustifyV("MIDDLE")
             frame.number.text:SetTextColor(unpack(addon.activeTheme.textColor))
-            frame.number.text:SetFont(addon.font, addon.settings.db.profile
+            frame.number.text:SetFont(addon.font, addon.settings.profile
                                           .guideFontSize - 1, "") -- 8
             local prefix = ""
             if n < 10 then prefix = "0" end
@@ -1589,7 +1589,7 @@ function addon:LoadGuide(guide, OnLoad)
         frame.text:SetJustifyH("LEFT")
         frame.text:SetJustifyV("TOP")
         frame.text:SetTextColor(unpack(addon.activeTheme.textColor))
-        frame.text:SetFont(addon.font, addon.settings.db.profile.guideFontSize,
+        frame.text:SetFont(addon.font, addon.settings.profile.guideFontSize,
                            "")
 
         -- frame.text:SetHeight(1000)
@@ -1784,13 +1784,13 @@ function BottomFrame.UpdateFrame(self, stepn)
         if RXPFrame:GetHeight() < 28 then RXPFrame:SetHeight(28) end
     elseif guide and guide.hidewindow then
         if RXPFrame:GetHeight() > 50 then
-            addon.settings.db.profile.frameHeight = RXPFrame:GetHeight()
+            addon.settings.profile.frameHeight = RXPFrame:GetHeight()
         end
         RXPFrame:SetHeight(28)
         BottomFrame:Hide()
     elseif not BottomFrame:IsShown() then
-        if addon.settings.db.profile.frameHeight then
-            RXPFrame:SetHeight(math.max(addon.settings.db.profile.frameHeight,
+        if addon.settings.profile.frameHeight then
+            RXPFrame:SetHeight(math.max(addon.settings.profile.frameHeight,
                                         50))
         end
         BottomFrame:Show()
@@ -1982,7 +1982,7 @@ function RXPFrame:GenerateMenuTable(menu)
         for _, group in ipairs(farmGuides) do createMenu(group) end
     end
 
-    if addon.settings.db.profile.showUnusedGuides and #unusedGuides > 0 then
+    if addon.settings.profile.showUnusedGuides and #unusedGuides > 0 then
         tinsert(menuList,
                      {text = L("Unused Guides"), notCheckable = 1, isTitle = 1})
         for _, group in ipairs(unusedGuides) do createMenu(group) end
@@ -2005,7 +2005,7 @@ function RXPFrame:GenerateMenuTable(menu)
 
     if addon.game == "CLASSIC" then
         local guide = addon.currentGuide
-        local hc = addon.settings.db.profile.hardcore
+        local hc = addon.settings.profile.hardcore
         local hctext
         local disabled = guide and (guide.hardcore and hc or guide.softcore and not hc)
         if hc then
@@ -2058,7 +2058,7 @@ function RXPFrame:GenerateMenuTable(menu)
         end
     })
 
-    if addon.settings.db and addon.settings.db.profile.enableTracker then
+    if addon.settings.profile and addon.settings.profile.enableTracker then
         tinsert(menuList, {
             text = L("Leveling report"),
             notCheckable = 1,
@@ -2088,7 +2088,7 @@ end
 
 function addon.UpdateGuideFontSize()
     local size =
-        (addon.settings.db and addon.settings.db.profile.guideFontSize) or 9
+        (addon.settings.profile and addon.settings.profile.guideFontSize) or 9
 
     GuideName.text:SetFont(addon.font, size + 2, "")
     Footer.text:SetFont(addon.font, size, "")

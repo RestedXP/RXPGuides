@@ -65,13 +65,13 @@ local unitscanIcons = {
 local rareTargets = {}
 
 function addon.targeting:Setup()
-    if not addon.settings.db.profile.enableTargetMacro then
+    if not addon.settings.profile.enableTargetMacro then
         DeleteMacro(self.macroName)
     end
 
     self:CreateTargetFrame()
 
-    if not addon.settings.db.profile.enableTargetAutomation then return end
+    if not addon.settings.profile.enableTargetAutomation then return end
 
     self:RegisterEvent("PLAYER_REGEN_ENABLED")
 
@@ -97,12 +97,12 @@ function addon.targeting:Setup()
     self:RegisterEvent("QUEST_GREETING")
     self:RegisterEvent("QUEST_COMPLETE")
 
-    if addon.settings.db.profile.showTargetingOnProximity then
-        if addon.settings.db.profile.hideGuideWindow then
+    if addon.settings.profile.showTargetingOnProximity then
+        if addon.settings.profile.hideGuideWindow then
             addon.arrowFrame:HookScript("OnUpdate", self.CheckTargetProximity)
-        elseif addon.settings.db.profile.hideArrow then
+        elseif addon.settings.profile.hideArrow then
             addon.RXPFrame:HookScript("OnUpdate", self.CheckTargetProximity)
-        elseif addon.settings.db.profile.enableMinimapButton then
+        elseif addon.settings.profile.enableMinimapButton then
             addon.settings.minimapFrame:HookScript("OnUpdate",
                                                    self.CheckTargetProximity)
         else
@@ -124,7 +124,7 @@ end
 
 local function shouldTargetCheck()
     return not addon.isHidden and
-               addon.settings.db.profile.enableTargetAutomation and
+               addon.settings.profile.enableTargetAutomation and
                not IsInRaid() and not UnitOnTaxi("player") and
                (next(unitscanList) ~= nil or next(mobList) ~= nil or
                    next(targetList) ~= nil or next(rareTargets) ~= nil or
@@ -134,7 +134,7 @@ end
 
 function addon.targeting:UpdateMacro(queuedTargets)
     -- TODO add rare targets
-    if not addon.settings.db.profile.enableTargetMacro and shouldTargetCheck() then
+    if not addon.settings.profile.enableTargetMacro and shouldTargetCheck() then
         return
     end
 
@@ -192,7 +192,7 @@ function addon.targeting:UpdateMacro(queuedTargets)
             end
             -- Prevent multiple spams
             if not (announcedTargets[t] or lowPrioTargets[t]) and
-                addon.settings.db.profile.notifyOnTargetUpdates then
+                addon.settings.profile.notifyOnTargetUpdates then
                 -- Only notify if Active Targets frame is disabled
                 addon.comms.PrettyPrint(L("Targeting macro updated with (%s)"), t) -- TODO locale
             end
@@ -217,15 +217,15 @@ function addon.targeting:UpdateMacro(queuedTargets)
 
     EditMacro(self.macroName, self.macroName, nil, content)
 
-    if not addon.settings.db.profile.macroAnnounced and
-        addon.settings.db.profile.notifyOnTargetUpdates and next(targets) ~= nil then
+    if not addon.settings.profile.macroAnnounced and
+        addon.settings.profile.notifyOnTargetUpdates and next(targets) ~= nil then
         C_Timer.After(1, function()
             addon.comms.PrettyPrint(L(
                                         "A macro has been automatically built to aid in leveling. Please move %s to your action bars."),
                                     self.macroName)
 
         end)
-        addon.settings.db.profile.macroAnnounced = true
+        addon.settings.profile.macroAnnounced = true
     end
 
     macroTargets = {}
@@ -246,24 +246,24 @@ function addon.targeting:CheckNameplate(nameplateID)
 
     if not unitName then return end
 
-    if addon.settings.db.profile.enableFriendlyTargeting then
+    if addon.settings.profile.enableFriendlyTargeting then
         for i, name in ipairs(targetList) do
             if name == unitName then
                 self:UpdateTargetFrame(nameplateID)
 
-                if addon.settings.db.profile.enableTargetMarking then
+                if addon.settings.profile.enableTargetMarking then
                     self:UpdateMarker("friendly", nameplateID, i)
                 end
             end
         end
     end
 
-    if addon.settings.db.profile.enableEnemyTargeting then
+    if addon.settings.profile.enableEnemyTargeting then
         for i, name in ipairs(mobList) do
             if name == unitName then
                 self:UpdateTargetFrame(nameplateID)
 
-                if addon.settings.db.profile.enableMobMarking then
+                if addon.settings.profile.enableMobMarking then
                     self:UpdateMarker("mob", nameplateID, i)
                 end
             end
@@ -273,35 +273,35 @@ function addon.targeting:CheckNameplate(nameplateID)
             if name == unitName then
                 self:UpdateTargetFrame(nameplateID)
 
-                if addon.settings.db.profile.flashOnFind then
+                if addon.settings.profile.flashOnFind then
                     FlashClientIcon()
                 end
 
-                if addon.settings.db.profile.enableTargetingFlash then
+                if addon.settings.profile.enableTargetingFlash then
                     addon.tips:EnableDangerWarning(1)
                 end
 
-                if addon.settings.db.profile.enableEnemyMarking then
+                if addon.settings.profile.enableEnemyMarking then
                     self:UpdateMarker("unitscan", nameplateID, i)
                 end
             end
         end
     end
 
-    if addon.settings.db.profile.scanForRares then
+    if addon.settings.profile.scanForRares then
         for _, name in ipairs(rareTargets) do
             if name == unitName then
                 self:UpdateTargetFrame(nameplateID)
 
-                if addon.settings.db.profile.flashOnFind then
+                if addon.settings.profile.flashOnFind then
                     FlashClientIcon()
                 end
 
-                if addon.settings.db.profile.enableTargetingFlash then
+                if addon.settings.profile.enableTargetingFlash then
                     addon.tips:EnableDangerWarning(1)
                 end
 
-                if addon.settings.db.profile.enableEnemyMarking then
+                if addon.settings.profile.enableEnemyMarking then
                     -- Steal moon, lowest of enemies for mark
                     self:UpdateMarker("rare", nameplateID, 4)
                 end
@@ -334,24 +334,24 @@ function addon.targeting:UPDATE_MOUSEOVER_UNIT()
 
     if not unitName then return end
 
-    if addon.settings.db.profile.enableFriendlyTargeting then
+    if addon.settings.profile.enableFriendlyTargeting then
         for i, name in ipairs(targetList) do
             if name == unitName then
                 self:UpdateTargetFrame(kind)
 
-                if addon.settings.db.profile.enableTargetMarking then
+                if addon.settings.profile.enableTargetMarking then
                     self:UpdateMarker("friendly", kind, i)
                 end
             end
         end
     end
 
-    if addon.settings.db.profile.enableEnemyTargeting then
+    if addon.settings.profile.enableEnemyTargeting then
         for i, name in ipairs(mobList) do
             if name == unitName then
                 self:UpdateTargetFrame(kind)
 
-                if addon.settings.db.profile.enableMobMarking then
+                if addon.settings.profile.enableMobMarking then
                     self:UpdateMarker("mob", kind, i)
                 end
             end
@@ -361,35 +361,35 @@ function addon.targeting:UPDATE_MOUSEOVER_UNIT()
             if name == unitName then
                 self:UpdateTargetFrame(kind)
 
-                if addon.settings.db.profile.flashOnFind then
+                if addon.settings.profile.flashOnFind then
                     FlashClientIcon()
                 end
 
-                if addon.settings.db.profile.enableTargetingFlash then
+                if addon.settings.profile.enableTargetingFlash then
                     addon.tips:EnableDangerWarning(1)
                 end
 
-                if addon.settings.db.profile.enableEnemyMarking then
+                if addon.settings.profile.enableEnemyMarking then
                     self:UpdateMarker("unitscan", kind, i)
                 end
             end
         end
     end
 
-    if addon.settings.db.profile.scanForRares then
+    if addon.settings.profile.scanForRares then
         for _, name in ipairs(rareTargets) do
             if name == unitName then
                 self:UpdateTargetFrame(kind)
 
-                if addon.settings.db.profile.flashOnFind then
+                if addon.settings.profile.flashOnFind then
                     FlashClientIcon()
                 end
 
-                if addon.settings.db.profile.enableTargetingFlash then
+                if addon.settings.profile.enableTargetingFlash then
                     addon.tips:EnableDangerWarning(1)
                 end
 
-                if addon.settings.db.profile.enableEnemyMarking then
+                if addon.settings.profile.enableEnemyMarking then
                     -- Steal moon, lowest of enemies for mark
                     self:UpdateMarker("rare", kind, 4)
                 end
@@ -406,24 +406,24 @@ function addon.targeting:PLAYER_TARGET_CHANGED()
 
     if not unitName then return end
 
-    if addon.settings.db.profile.enableFriendlyTargeting then
+    if addon.settings.profile.enableFriendlyTargeting then
         for i, name in ipairs(targetList) do
             if name == unitName then
                 self:UpdateTargetFrame(kind)
 
-                if addon.settings.db.profile.enableTargetMarking then
+                if addon.settings.profile.enableTargetMarking then
                     self:UpdateMarker("friendly", kind, i)
                 end
             end
         end
     end
 
-    if addon.settings.db.profile.enableEnemyTargeting then
+    if addon.settings.profile.enableEnemyTargeting then
         for i, name in ipairs(mobList) do
             if name == unitName then
                 self:UpdateTargetFrame(kind)
 
-                if addon.settings.db.profile.enableMobMarking then
+                if addon.settings.profile.enableMobMarking then
                     self:UpdateMarker("mob", kind, i)
                 end
             end
@@ -433,27 +433,27 @@ function addon.targeting:PLAYER_TARGET_CHANGED()
             if name == unitName then
                 self:UpdateTargetFrame(kind)
 
-                if addon.settings.db.profile.enableEnemyMarking then
+                if addon.settings.profile.enableEnemyMarking then
                     self:UpdateMarker("unitscan", kind, i)
                 end
             end
         end
     end
 
-    if addon.settings.db.profile.scanForRares then
+    if addon.settings.profile.scanForRares then
         for _, name in ipairs(rareTargets) do
             if name == unitName then
                 self:UpdateTargetFrame(kind)
 
-                if addon.settings.db.profile.flashOnFind then
+                if addon.settings.profile.flashOnFind then
                     FlashClientIcon()
                 end
 
-                if addon.settings.db.profile.enableTargetingFlash then
+                if addon.settings.profile.enableTargetingFlash then
                     addon.tips:EnableDangerWarning(1)
                 end
 
-                if addon.settings.db.profile.enableEnemyMarking then
+                if addon.settings.profile.enableEnemyMarking then
                     -- Steal moon, lowest of enemies for mark
                     self:UpdateMarker("rare", kind, 4)
                 end
@@ -468,7 +468,7 @@ function addon.targeting:GOSSIP_SHOW()
     if not targetUnit then return end
 
     -- Return after first match, won't be an enemy and friendly target as the same step
-    if addon.settings.db.profile.enableFriendlyTargeting then
+    if addon.settings.profile.enableFriendlyTargeting then
         for i, name in ipairs(targetList) do
             if name == targetUnit then
                 tremove(targetList, i)
@@ -491,13 +491,13 @@ addon.targeting.QUEST_COMPLETE = addon.targeting.GOSSIP_SHOW
 
 function addon.targeting.CheckTargetProximity()
     if not shouldTargetCheck() or
-        not addon.settings.db.profile.showTargetingOnProximity then return end
+        not addon.settings.profile.showTargetingOnProximity then return end
 
     if GetTime() - proxmityPolling.last <= proxmityPolling.frequency then
         return
     end
 
-    if addon.settings.db.profile.enableEnemyTargeting then
+    if addon.settings.profile.enableEnemyTargeting then
         for _, name in pairs(unitscanList) do
             proxmityPolling.scanData = {name = name, kind = 'unitscan'}
             TargetUnit(name, true)
@@ -509,14 +509,14 @@ function addon.targeting.CheckTargetProximity()
         end
     end
 
-    if addon.settings.db.profile.enableFriendlyTargeting then
+    if addon.settings.profile.enableFriendlyTargeting then
         for _, name in pairs(targetList) do
             proxmityPolling.scanData = {name = name, kind = 'friendly'}
             TargetUnit(name, true)
         end
     end
 
-    if addon.settings.db.profile.scanForRares then
+    if addon.settings.profile.scanForRares then
         for _, name in ipairs(rareTargets) do
             proxmityPolling.scanData = {name = name, kind = 'rare'}
             TargetUnit(name, true)
@@ -529,7 +529,7 @@ function addon.targeting.CheckTargetProximity()
     if proxmityPolling.match and GetTime() - proxmityPolling.lastMatch >
         proxmityPolling.matchTimeout then
 
-        if addon.settings.db.profile.debug then
+        if addon.settings.profile.debug then
             addon.comms.PrettyPrint("Match expired, hiding")
         end
 
@@ -578,7 +578,7 @@ function addon.targeting:ADDON_ACTION_FORBIDDEN(_, forbiddenAddon, func)
     self:UpdateTargetFrame()
 
     if proxmityPolling.scanData.kind == 'rare' and
-        addon.settings.db.profile.notifyOnRares and
+        addon.settings.profile.notifyOnRares and
         not proxmityPolling.rareAnnounced[scannedName] then
 
         proxmityPolling.rareAnnounced[scannedName] = true
@@ -590,11 +590,11 @@ function addon.targeting:ADDON_ACTION_FORBIDDEN(_, forbiddenAddon, func)
 
     proxmityPolling.match = true
 
-    if addon.settings.db.profile.soundOnFind ~= "none" and
+    if addon.settings.profile.soundOnFind ~= "none" and
         (proxmityPolling.scanData.kind == 'rare' or
             proxmityPolling.scanData.kind == 'unitscan') then
-        PlaySound(addon.settings.db.profile.soundOnFind,
-                  addon.settings.db.profile.soundOnFindChannel)
+        PlaySound(addon.settings.profile.soundOnFind,
+                  addon.settings.profile.soundOnFindChannel)
     end
 end
 
@@ -625,7 +625,7 @@ function addon.targeting:UpdateTargetList(targets,addEntries)
 
     proxmityPolling.match = false
     proxmityPolling.lastMatch = 0
-    if addon.settings.db.profile.showTargetingOnProximity then
+    if addon.settings.profile.showTargetingOnProximity then
         for name, kind in pairs(proxmityPolling.scannedTargets) do
             if kind == 'friendly' then
                 proxmityPolling.scannedTargets[name] = nil
@@ -681,7 +681,7 @@ function addon.targeting:UpdateEnemyList(unitscan, mobs, addEntries)
 
     proxmityPolling.match = false
     proxmityPolling.lastMatch = 0
-    if addon.settings.db.profile.showTargetingOnProximity then
+    if addon.settings.profile.showTargetingOnProximity then
         for name, kind in pairs(proxmityPolling.scannedTargets) do
             if kind == 'unitscan' or kind == 'mob' then
                 proxmityPolling.scannedTargets[name] = nil
@@ -697,7 +697,7 @@ end
 function addon.targeting:CanCreateMacro() return GetNumMacros() < 119 end
 
 local function UpdateIconFrameVisuals(self,updateFrame)
-    self:SetScale(addon.settings.db.profile.activeTargetScale or 1)
+    self:SetScale(addon.settings.profile.activeTargetScale or 1)
     addon.targeting:RenderTargetFrameBackground()
     self.title:ClearBackdrop()
     self.title:SetBackdrop(addon.RXPFrame.backdrop.edge)
@@ -722,7 +722,7 @@ function addon.targeting:CreateTargetFrame()
 
     addon.enabledFrames["activeTargetFrame"] = f
     f.IsFeatureEnabled = function()
-        if addon.settings.db.profile.showTargetingOnProximity then
+        if addon.settings.profile.showTargetingOnProximity then
             return proxmityPolling.match and shouldTargetCheck()
         end
 
@@ -732,7 +732,7 @@ function addon.targeting:CreateTargetFrame()
     self:RenderTargetFrameBackground()
 
     f.onMouseDown = function()
-        if addon.settings.db.profile.lockFrames and not IsAltKeyDown() then
+        if addon.settings.profile.lockFrames and not IsAltKeyDown() then
             return
         end
         f:StartMoving()
@@ -766,7 +766,7 @@ function addon.targeting:CreateTargetFrame()
 
     f.UpdateVisuals = UpdateIconFrameVisuals
     f:SetHeight(40)
-    f:SetScale(addon.settings.db.profile.activeTargetScale)
+    f:SetScale(addon.settings.profile.activeTargetScale)
 end
 
 function addon.targeting:RenderTargetFrameBackground()
@@ -774,7 +774,7 @@ function addon.targeting:RenderTargetFrameBackground()
 
     local f = self.activeTargetFrame
     --print(RXP.activeTheme.texturePath)
-    if addon.settings.db.profile.hideActiveTargetsBackground then
+    if addon.settings.profile.hideActiveTargetsBackground then
         f:ClearBackdrop()
     else
         f:ClearBackdrop()
@@ -901,14 +901,14 @@ function addon.targeting:UpdateTargetFrame(selector,OnUpdate)
     local j = 0
     local enemiesList = {}
 
-    if not addon.settings.db.profile.showTargetingOnProximity then
+    if not addon.settings.profile.showTargetingOnProximity then
         -- If proximity disabled, show all
         for _, n in ipairs(unitscanList) do enemiesList[n] = 'unitscan' end
 
         for _, n in ipairs(mobList) do enemiesList[n] = 'mob' end
     end
 
-    if addon.settings.db.profile.showTargetingOnProximity then
+    if addon.settings.profile.showTargetingOnProximity then
         for name, targetKind in pairs(proxmityPolling.scannedTargets) do
             if targetKind ~= 'friendly' then
                 -- enemies row contains, unitscan, mob, and rare
@@ -995,10 +995,10 @@ function addon.targeting:UpdateTargetFrame(selector,OnUpdate)
     local friendlyTargetButtons = targetFrame.friendlyTargetButtons
     local i = 0
     -- If proximity disabled, show all
-    local friendlyList = addon.settings.db.profile.showTargetingOnProximity and
+    local friendlyList = addon.settings.profile.showTargetingOnProximity and
                              {} or targetList
 
-    if addon.settings.db.profile.showTargetingOnProximity then
+    if addon.settings.profile.showTargetingOnProximity then
         for name, targetkind in pairs(proxmityPolling.scannedTargets) do
             if targetkind == 'friendly' then
                 tinsert(friendlyList, name)
@@ -1081,9 +1081,9 @@ function addon.targeting:UpdateTargetFrame(selector,OnUpdate)
         enemyTargetButtons[n].icon.isDefault = true
     end
 
-    if (i == 0 and j == 0) or not addon.settings.db.profile.showEnabled then
+    if (i == 0 and j == 0) or not addon.settings.profile.showEnabled then
         targetFrame:Hide()
-    elseif addon.settings.db.profile.showTargetingOnProximity then
+    elseif addon.settings.profile.showTargetingOnProximity then
         if proxmityPolling.match then
             targetFrame:Show()
         else
@@ -1107,9 +1107,9 @@ end
 function addon.targeting:ZONE_CHANGED_NEW_AREA() self:LoadRares() end
 
 function addon.targeting:LoadRares()
-    if not addon.settings.db.profile.scanForRares or
-        not addon.settings.db.profile.showTargetingOnProximity or
-        not addon.settings.db.profile.enableTargetAutomation or not addon.rares then
+    if not addon.settings.profile.scanForRares or
+        not addon.settings.profile.showTargetingOnProximity or
+        not addon.settings.profile.enableTargetAutomation or not addon.rares then
         return
     end
 

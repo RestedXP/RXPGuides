@@ -186,7 +186,7 @@ function addon.QuestAutoTurnIn(title)
                 element = v
             end
         end
-        return addon.settings.db.profile.enableQuestRewardAutomation and element and
+        return addon.settings.profile.enableQuestRewardAutomation and element and
                 element.step.active and element.reward >= 0 and element.reward or 0
     end
 end
@@ -386,7 +386,7 @@ local function ProcessSpells(names, rank)
                             spellRequest[spellId] = true
                         end
                         if names and rank and
-                            not (addon.settings.db.profile.hardcore and
+                            not (addon.settings.profile.hardcore and
                                 addon.HCSpellList and addon.HCSpellList[spellId]) then
                             spellRequest[spellId] = nil
                             local sName = GetSpellInfo(spellId)
@@ -405,7 +405,7 @@ local function ProcessSpells(names, rank)
 end
 
 local function OnTrainer()
-    if not addon.settings.db.profile.enableTrainerAutomation then return end
+    if not addon.settings.profile.enableTrainerAutomation then return end
 
     local i = GetNumTrainerServices()
 
@@ -477,7 +477,7 @@ local GossipGetAvailableQuests = C_GossipInfo.GetAvailableQuests or
                                      _G.GetGossipAvailableQuests
 
 function addon:QuestAutomation(event, arg1, arg2, arg3)
-    if not addon.settings.db.profile.enableQuestAutomation or IsControlKeyDown() then
+    if not addon.settings.profile.enableQuestAutomation or IsControlKeyDown() then
         return
     end
 
@@ -646,8 +646,8 @@ function addon:OnInitialize()
     addon.settings:InitializeSettings()
 
     RXPCData.completedWaypoints = RXPCData.completedWaypoints or {}
-    addon.settings.db.profile.hardcore =
-        addon.game == "CLASSIC" and addon.settings.db.profile.hardcore
+    addon.settings.profile.hardcore =
+        addon.game == "CLASSIC" and addon.settings.profile.hardcore
     RXPCData.stepSkip = RXPCData.stepSkip or {}
     if not RXPCData.flightPaths or UnitLevel("player") <= 6 then
         RXPCData.flightPaths = {}
@@ -671,7 +671,7 @@ function addon:OnInitialize()
     addon.comms:Setup()
     addon.targeting:Setup()
     if addon.talents then addon.talents:Setup() end
-    if addon.settings.db.profile.enableTracker then
+    if addon.settings.profile.enableTracker then
         addon.tracker:SetupTracker()
     end
     if addon.tips then addon.tips:Setup() end
@@ -680,14 +680,14 @@ function addon:OnInitialize()
     addon.LoadCachedGuides()
     addon.LoadEmbeddedGuides()
     addon.UpdateGuideFontSize()
-    addon.isHidden = addon.settings.db.profile.hideGuideWindow
+    addon.isHidden = addon.settings.profile.hideGuideWindow
     addon.RXPFrame:SetShown(not addon.isHidden)
-    addon.RXPFrame:SetScale(addon.settings.db.profile.windowScale)
-    addon.arrowFrame:SetSize(32 * addon.settings.db.profile.arrowScale,
-                             32 * addon.settings.db.profile.arrowScale)
+    addon.RXPFrame:SetScale(addon.settings.profile.windowScale)
+    addon.arrowFrame:SetSize(32 * addon.settings.profile.arrowScale,
+                             32 * addon.settings.profile.arrowScale)
     addon.arrowFrame.text:SetFont(addon.font,
-                                  addon.settings.db.profile.arrowText, "OUTLINE")
-    addon.activeItemFrame:SetScale(addon.settings.db.profile.activeItemsScale)
+                                  addon.settings.profile.arrowText, "OUTLINE")
+    addon.activeItemFrame:SetScale(addon.settings.profile.activeItemsScale)
 end
 
 function addon:OnEnable()
@@ -764,11 +764,11 @@ function addon:OnEnable()
 
     for _, frame in pairs(addon.enabledFrames) do
         if frame.IsFeatureEnabled() then
-            frame:SetShown(addon.settings.db.profile.showEnabled)
+            frame:SetShown(addon.settings.profile.showEnabled)
         end
     end
 
-    if addon.settings.db.profile.hideInRaid then
+    if addon.settings.profile.hideInRaid then
         self:RegisterEvent("GROUP_JOINED", addon.HideInRaid)
         self:RegisterEvent("GROUP_FORMED", addon.HideInRaid)
         self:RegisterEvent("GROUP_LEFT")
@@ -808,7 +808,7 @@ function addon:PLAYER_ENTERING_WORLD(_, isInitialLogin)
     addon.hideArrow = false
     addon.UpdateMap()
     addon.isHidden = addon.settings and
-                         addon.settings.db.profile.hideGuideWindow or
+                         addon.settings.profile.hideGuideWindow or
                          not (addon.RXPFrame and addon.RXPFrame:IsShown())
 
     if isInitialLogin then
@@ -897,9 +897,9 @@ function addon:QUEST_DATA_LOAD_RESULT(_, questId, success)
 end
 
 function addon:GROUP_LEFT()
-    if not addon.settings.db.profile.hideInRaid then return end
+    if not addon.settings.profile.hideInRaid then return end
 
-    if not addon.settings.db.profile.showEnabled then return end
+    if not addon.settings.profile.showEnabled then return end
 
     for _, frame in pairs(addon.enabledFrames) do
         frame:SetShown(frame.IsFeatureEnabled())
@@ -917,7 +917,7 @@ function addon:NEW_PET_ADDED(...) addon.UpdateItemFrame() end
 function addon:TOYS_UPDATED(...) addon.UpdateItemFrame() end
 
 function addon.HideInRaid()
-    if not addon.settings.db.profile.hideInRaid then return end
+    if not addon.settings.profile.hideInRaid then return end
 
     if not UnitInRaid("player") then return end
 
@@ -1176,14 +1176,14 @@ end
 
 function addon.HardcoreToggle()
     local guide = addon.currentGuide
-    local hc = addon.settings.db.profile.hardcore
+    local hc = addon.settings.profile.hardcore
 
     if addon.game == "CLASSIC" then
         if not (guide and
                 (guide.hardcore and hc or guide.softcore and not hc)) then
-            addon.settings.db.profile.hardcore = not hc
+            addon.settings.profile.hardcore = not hc
         end
-        if hc ~= addon.settings.db.profile.hardcore then
+        if hc ~= addon.settings.profile.hardcore then
             addon.RenderFrame()
         end
     end
@@ -1224,7 +1224,7 @@ function addon.stepLogic.PhaseCheck(phase)
 
     if type(phase) == "table" then phase = phase.phase end
 
-    local currentPhase = addon.settings.db.profile.phase or 6
+    local currentPhase = addon.settings.profile.phase or 6
 
     if phase and currentPhase then
         local pmin, pmax
@@ -1265,32 +1265,32 @@ function addon.IsStepShown(step,...)
 end
 
 function addon.stepLogic.GroupCheck(step)
-    if (not addon.settings.db.profile.enableGroupQuests and step.group) or
-        (addon.settings.db.profile.enableGroupQuests and step.solo) then
+    if (not addon.settings.profile.enableGroupQuests and step.group) or
+        (addon.settings.profile.enableGroupQuests and step.solo) then
         return false
     end
     return true
 end
 
 function addon.stepLogic.AHCheck(step)
-    if (not addon.settings.db.profile.soloSelfFound and step.ssf) or
-        (addon.settings.db.profile.soloSelfFound and step.ah) then
+    if (not addon.settings.profile.soloSelfFound and step.ssf) or
+        (addon.settings.profile.soloSelfFound and step.ah) then
         return false
     end
     return true
 end
 
 function addon.stepLogic.SeasonCheck(step)
-    if addon.settings.db.profile.SoM and step.era or step.som and
-        not addon.settings.db.profile.SoM or addon.settings.db.profile.SoM and
-        addon.settings.db.profile.phase > 2 and step["era/som"] then
+    if addon.settings.profile.SoM and step.era or step.som and
+        not addon.settings.profile.SoM or addon.settings.profile.SoM and
+        addon.settings.profile.phase > 2 and step["era/som"] then
         return false
     end
     return true
 end
 
 function addon.stepLogic.HardcoreCheck(step)
-    local hc = addon.settings.db.profile.hardcore
+    local hc = addon.settings.profile.hardcore
     if step.softcore and hc or step.hardcore and not hc then return false end
     return true
 end
@@ -1313,8 +1313,8 @@ function addon.stepLogic.XpRateCheck(step)
             end
         end)
 
-        if addon.settings.db.profile.xprate < xpmin or
-            addon.settings.db.profile.xprate > xpmax then return false end
+        if addon.settings.profile.xprate < xpmin or
+            addon.settings.profile.xprate > xpmax then return false end
     end
 
     return true
@@ -1322,7 +1322,7 @@ end
 
 function addon.IsFreshAccount()
     if C_PlayerInfo and C_PlayerInfo.CanPlayerEnterChromieTime then
-        local manualOverride = addon.settings.db.profile.chromieTime
+        local manualOverride = addon.settings.profile.chromieTime
         if not manualOverride or manualOverride == "auto" then
             return not C_PlayerInfo.CanPlayerEnterChromieTime()
         elseif manualOverride == "disabled" then
@@ -1349,7 +1349,7 @@ function addon.stepLogic.FreshAccountCheck(step)
 end
 
 function addon.stepLogic.LevelCheck(step)
-    if not addon.settings.db.profile.enableXpStepSkipping then return true end
+    if not addon.settings.profile.enableXpStepSkipping then return true end
 
     local level = UnitLevel("player")
     local maxLevel = tonumber(step.maxlevel) or 1000
@@ -1360,10 +1360,10 @@ function addon.stepLogic.DungeonCheck(step)
     local dungeon = step.dungeon
     if not dungeon then
         return true
-    elseif addon.settings.db.profile.dungeons[dungeon] then
+    elseif addon.settings.profile.dungeons[dungeon] then
         return true
     elseif dungeon:sub(1,1) == "!" then
-        return not addon.settings.db.profile.dungeons[dungeon:sub(2,-1)]
+        return not addon.settings.profile.dungeons[dungeon:sub(2,-1)]
     end
 end
 

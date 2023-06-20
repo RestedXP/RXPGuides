@@ -138,7 +138,7 @@ end
 
 local function UpdateIconFrameVisuals(self,updateFrame)
     self:ClearBackdrop()
-    if not addon.settings.db.profile.activeItemHideBG then
+    if not addon.settings.profile.activeItemHideBG then
         self:SetBackdrop(addon.RXPFrame.backdrop.edge)
         local r, g, b = unpack(addon.colors.background)
         self:SetBackdropColor(r, g, b, 0.4)
@@ -176,11 +176,11 @@ function addon.CreateActiveItemFrame(self, anchor, enableText)
 
     addon.enabledFrames["activeItemFrame"] = f
     f.IsFeatureEnabled = function()
-        return not addon.settings.db.profile.disableItemWindow and next(GetActiveItemList()) ~= nil
+        return not addon.settings.profile.disableItemWindow and next(GetActiveItemList()) ~= nil
     end
 
     f.onMouseDown = function()
-        if addon.settings.db.profile.lockFrames and not IsAltKeyDown() then return end
+        if addon.settings.profile.lockFrames and not IsAltKeyDown() then return end
         f:StartMoving()
     end
     function f.onMouseUp() f:StopMovingOrSizing() end
@@ -340,7 +340,7 @@ function addon.UpdateItemFrame(itemFrame)
     -- print("s:",i)
     if i > 0 then itemFrame:SetAlpha(1) end
 
-    if i == 0 or addon.settings.db.profile.disableItemWindow or not addon.settings.db.profile.showEnabled then
+    if i == 0 or addon.settings.profile.disableItemWindow or not addon.settings.profile.showEnabled then
         itemFrame:Hide()
     else
         itemFrame:Show()

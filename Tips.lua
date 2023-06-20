@@ -39,7 +39,7 @@ local session = {
 }
 
 function addon.tips:Setup()
-    if not addon.settings.db.profile.enableTips then return end
+    if not addon.settings.profile.enableTips then return end
 
     self:CreateTipsFrame()
     self:CreateDangerWarning()
@@ -56,9 +56,9 @@ function addon.tips:Setup()
     self:RegisterEvent("ACTIONBAR_SLOT_CHANGED")
 
     -- Prioritize minimap button, as main frame can be easily hidden
-    if addon.settings.db.profile.enableMinimapButton then
+    if addon.settings.profile.enableMinimapButton then
         addon.settings.minimapFrame:HookScript("OnUpdate", self.CheckEvents)
-    elseif not addon.settings.db.profile.hideGuideWindow then
+    elseif not addon.settings.profile.hideGuideWindow then
         addon.RXPFrame:HookScript("OnUpdate", self.CheckEvents)
         -- elseif addon.tips.frame then
     else
@@ -80,13 +80,13 @@ function addon.tips:PLAYER_STARTED_MOVING()
 end
 
 function addon.tips:CreateTipsFrame()
-    if not addon.settings.db.profile.enableTipsFrame then return end
+    if not addon.settings.profile.enableTipsFrame then return end
     -- TODO
 end
 
 function addon.tips:MIRROR_TIMER_START(_, timerName, value, maxValue, rate)
     if timerName ~= "BREATH" or
-        not addon.settings.db.profile.enableDrowningWarning then return end
+        not addon.settings.profile.enableDrowningWarning then return end
 
     -- Recovering breath
     if rate > 0 then
@@ -100,13 +100,13 @@ end
 
 function addon.tips:MIRROR_TIMER_STOP(_, timerName)
     if timerName ~= "BREATH" or
-        not addon.settings.db.profile.enableDrowningWarning then return end
+        not addon.settings.profile.enableDrowningWarning then return end
 
     session.breath = nil
 end
 
 function addon.tips.CheckEvents()
-    if not addon.settings.db.profile.enableTips then return end
+    if not addon.settings.profile.enableTips then return end
 
     if GetTime() - session.checkLast <= session.checkFrequency then return end
 
@@ -115,17 +115,17 @@ function addon.tips.CheckEvents()
 
         if session.breath.value == 0 or
             (session.breath.value / session.breath.maxValue) <
-            addon.settings.db.profile.drowningThreshold then
+            addon.settings.profile.drowningThreshold then
 
             if GetTime() - session.lastAlert > session.alertFrequency then
-                if addon.settings.db.profile.enableDrowningScreenFlash then
+                if addon.settings.profile.enableDrowningScreenFlash then
                     addon.tips:EnableDangerWarning(2)
                 end
                 FlashClientIcon()
                 UIErrorsFrame:AddMessage(STRING_ENVIRONMENTAL_DAMAGE_DROWNING,
                                          1.0, 0.1, 0.1, session.alertFrequency);
 
-                if addon.settings.db.profile.enableDrowningWarningSound then
+                if addon.settings.profile.enableDrowningWarningSound then
                     PlaySound(_G.SOUNDKIT.RAID_WARNING, "Master")
                 end
                 session.lastAlert = GetTime()
@@ -139,15 +139,15 @@ function addon.tips.CheckEvents()
 end
 
 function addon.tips:CheckEmergencyActions()
-    if not addon.settings.db.profile.enableEmergencyActions then return end
+    if not addon.settings.profile.enableEmergencyActions then return end
     local maxHP = UnitHealthMax("player")
     if maxHP > 0 and UnitHealth("player") / maxHP <
-        addon.settings.db.profile.emergencyThreshold then
+        addon.settings.profile.emergencyThreshold then
 
         addon.tips:HighlightEmergencyItem()
         addon.tips:HighlightEmergencySpell()
 
-        if addon.settings.db.profile.enableEmergencyScreenFlash then
+        if addon.settings.profile.enableEmergencyScreenFlash then
             addon.tips:EnableDangerWarning(1)
         end
         return
@@ -161,7 +161,7 @@ end
 
 function addon.tips:CatalogInventory()
     if not addon.emergencyItems or
-        not addon.settings.db.profile.enableEmergencyActions then return end
+        not addon.settings.profile.enableEmergencyActions then return end
     local itemList = {}
 
     local itemName, itemTexture, id
@@ -206,7 +206,7 @@ end
 
 function addon.tips:UpdateEmergencySpells()
     if not addon.emergencySpells or
-        not addon.settings.db.profile.enableEmergencyActions then return end
+        not addon.settings.profile.enableEmergencyActions then return end
 
     local spellList = {}
 
@@ -299,7 +299,7 @@ function addon.tips:HighlightEmergencyItem()
         if bagBorder then
             if _G.IsBagOpen(item.bag) then
                 bagBorder:Show()
-                if addon.settings.db.profile.enableEmergencyIconAnimations and
+                if addon.settings.profile.enableEmergencyIconAnimations and
                     not bagBorder.animation:IsPlaying() then
                     bagBorder.animation:Play()
                 end
@@ -314,7 +314,7 @@ function addon.tips:HighlightEmergencyItem()
 
             if actionBarBorder then
                 actionBarBorder:Show()
-                if addon.settings.db.profile.enableEmergencyIconAnimations and
+                if addon.settings.profile.enableEmergencyIconAnimations and
                     not actionBarBorder.animation:IsPlaying() then
                     actionBarBorder.animation:Play()
                 end
@@ -336,7 +336,7 @@ function addon.tips:HighlightEmergencySpell()
 
             if actionBarBorder then
                 actionBarBorder:Show()
-                if addon.settings.db.profile.enableEmergencyIconAnimations and
+                if addon.settings.profile.enableEmergencyIconAnimations and
                     not actionBarBorder.animation:IsPlaying() then
                     actionBarBorder.animation:Play()
                 end
@@ -451,12 +451,12 @@ end
 
 local function IsStepActive(self)
     local levelBuffer = 1000
-    if (not addon.settings.db.profile.showDangerousMobsMap and self.mapTooltip) or
-       (self.isUnitscan and not addon.settings.db.profile.showDangerousUnitscan) then
+    if (not addon.settings.profile.showDangerousMobsMap and self.mapTooltip) or
+       (self.isUnitscan and not addon.settings.profile.showDangerousUnitscan) then
         --DevTools_Dump(self.elements[1].unitscan)
         --DevTools_Dump(self.elements[1].targets)
         return false
-    elseif not addon.settings.db.profile.debug and self.levelBuffer then
+    elseif not addon.settings.profile.debug and self.levelBuffer then
         levelBuffer = self.levelBuffer or 0
     end
     if not self.MaxLevel or
@@ -466,17 +466,17 @@ local function IsStepActive(self)
 end
 
 function addon.tips:LoadDangerousMobs(reloadData)
-    if not (addon.dangerousMobs and addon.settings.db.profile.enableBetaFeatures) then return end
+    if not (addon.dangerousMobs and addon.settings.profile.enableBetaFeatures) then return end
 
     local mapId = C_Map.GetBestMapForUnit("player") or 0
     local zone = addon.mapIdToName and addon.mapIdToName[mapId] or GetRealZoneText()
     local zoneList
     addon.UpdateMap()
-    if addon.settings.db.profile.debug then
+    if addon.settings.profile.debug then
         print("== LoadDangerousMobs: " .. (zone or 'Unknown'))
         zoneList = addon.dangerousMobs --Loads all the pins for debug purposes
     end
-    if not zone or not addon.dangerousMobs[zone] and not addon.settings.db.profile.debug then
+    if not zone or not addon.dangerousMobs[zone] and not addon.settings.profile.debug then
         addon.tips.dangerousMobs = nil
         addon.generatedSteps["dangerousMobs"] = nil
         return
@@ -515,7 +515,7 @@ function addon.tips:LoadDangerousMobs(reloadData)
                                 element.mapTooltip = fmt("%s - %s\n%s",
                                     mobData.Classification or "",mobData.Movement or "",mobData.Notes or "")
                             elseif element.targets or element.unitscan or element.mobs then
-                                if not addon.settings.db.profile.showDangerousUnitscan then
+                                if not addon.settings.profile.showDangerousUnitscan then
                                     skip = true
                                     --DevTools_Dump(self.elements[1].mobs)
                                 end

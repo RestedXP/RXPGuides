@@ -33,7 +33,7 @@ end)
 
 local function StartHSTimer()
     if HSstart == 0 then
-        local size = addon.settings.db.profile.batchSize or 6
+        local size = addon.settings.profile.batchSize or 6
         batchingWindow = size / 1e3
         currentFPS = GetCVar("maxfps")
         HSstart = GetTime()

@@ -521,7 +521,7 @@ function Frame:HidePinTooltip()
 end
 
 function Frame:CheckZone()
-    if not addon.settings.db.profile.enableVendorTreasure then return end
+    if not addon.settings.profile.enableVendorTreasure then return end
 
     self:CheckMiniMap()
     self:CheckWorldMap()
@@ -571,7 +571,7 @@ end
 function Frame:CheckWorldMap()
     if not IsWorldMapAvailable() then return end
     -- Only display pins for player's map unless soloSelfFound
-    if not addon.settings.db.profile.soloSelfFound then
+    if not addon.settings.profile.soloSelfFound then
         if GetBestMapForUnit("player") ~= GetWorldMapID() then
             Frame:HideWorldMapPins()
             return
@@ -697,7 +697,7 @@ function Frame:UpdateWorldMapPins()
         npcPin:SetPoint("CENTER", pinX, pinY)
         npcPin:SetWidth(WORLD_MAP_PIN_SIZE)
         npcPin:SetHeight(WORLD_MAP_PIN_SIZE)
-        npcPin:SetScale(addon.settings.db.profile.worldMapPinScale)
+        npcPin:SetScale(addon.settings.profile.worldMapPinScale)
     end
 
 end
@@ -841,13 +841,13 @@ function GetDistance(x1, y1, x2, y2)
 end
 
 function addon.VendorTreasures.UpdatePins()
-    if not addon.settings.db.profile.enableVendorTreasure then
+    if not addon.settings.profile.enableVendorTreasure then
         Frame:HideWorldMapPins()
         return
     end
 
     -- Only display pins for player's map unless soloSelfFound
-    if not addon.settings.db.profile.soloSelfFound then
+    if not addon.settings.profile.soloSelfFound then
         if GetBestMapForUnit("player") ~= GetWorldMapID() then
             Frame:HideWorldMapPins()
             return
@@ -861,7 +861,7 @@ end
 hooksecurefunc(WorldMapFrame, "OnMapChanged", addon.VendorTreasures.UpdatePins)
 
 function addon.VendorTreasures:Setup()
-    if not addon.settings.db.profile.enableVendorTreasure then return end
+    if not addon.settings.profile.enableVendorTreasure then return end
 
     if next(DATA) ~= nil then
         Frame:CheckZone()
