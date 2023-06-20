@@ -21,6 +21,7 @@ local importCache = {
     lastBNetQuery = GetTime()
 }
 local incompatibleAddons = {}
+local settingsDB
 
 -- Alias addon.locale.Get
 local L = addon.locale.Get
@@ -167,11 +168,13 @@ function addon.settings:InitializeSettings()
         }
     }
 
-    self.db = LibStub("AceDB-3.0"):New("RXPCSettings", settingsDBDefaults)
+    settingsDB = LibStub("AceDB-3.0"):New("RXPCSettings", settingsDBDefaults)
 
-    self.db.RegisterCallback(self, "OnProfileChanged", "RefreshProfile")
-    self.db.RegisterCallback(self, "OnProfileCopied", "RefreshProfile")
-    self.db.RegisterCallback(self, "OnProfileReset", "RefreshProfile")
+    settingsDB.RegisterCallback(self, "OnProfileChanged", "RefreshProfile")
+    settingsDB.RegisterCallback(self, "OnProfileCopied", "RefreshProfile")
+    settingsDB.RegisterCallback(self, "OnProfileReset", "RefreshProfile")
+    self.profile = settingsDB.profile
+    self.db = settingsDB -- TODO remove for outside reference
 
     self:CreateAceOptionsPanel()
     self:CreateImportOptionsPanel()
@@ -658,9 +661,7 @@ function addon.settings:CreateImportOptionsPanel()
 end
 
 function addon.settings:CreateAceOptionsPanel()
-    local function isNotAdvanced()
-        return not self.db.profile.enableBetaFeatures
-    end
+    local function isNotAdvanced() return not self.profile.enableBetaFeatures end
 
     local function requiresReload()
         return L("This requires a reload to take effect, continue?")
@@ -1280,7 +1281,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 1.2,
                         disabled = not addon.targeting:CanCreateMacro() or
-                            not self.db.profile.enableTargetAutomation
+                            not self.profile.enableTargetAutomation
                     },
                     activeTargetsHeader = {
                         name = L("Active Targets"),
@@ -1308,7 +1309,7 @@ function addon.settings:CreateAceOptionsPanel()
                             _G.ReloadUI()
                         end,
                         disabled = function()
-                            return not self.db.profile.enableTargetAutomation
+                            return not self.profile.enableTargetAutomation
                         end
                     },
                     enableFriendlyTargeting = {
@@ -1318,7 +1319,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.2,
                         disabled = function()
-                            return not self.db.profile.enableTargetAutomation
+                            return not self.profile.enableTargetAutomation
                         end
                     },
                     enableTargetMarking = {
@@ -1329,7 +1330,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth * 2,
                         order = 2.21,
                         disabled = function()
-                            return not self.db.profile.enableTargetAutomation
+                            return not self.profile.enableTargetAutomation
                         end
                     },
                     enableEnemyTargeting = {
@@ -1339,7 +1340,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.3,
                         disabled = function()
-                            return not self.db.profile.enableTargetAutomation
+                            return not self.profile.enableTargetAutomation
                         end
                     },
                     enableEnemyMarking = {
@@ -1349,7 +1350,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.31,
                         disabled = function()
-                            return not self.db.profile.enableTargetAutomation
+                            return not self.profile.enableTargetAutomation
                         end
                     },
                     enableMobMarking = {
@@ -1359,7 +1360,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.32,
                         disabled = function()
-                            return not self.db.profile.enableTargetAutomation
+                            return not self.profile.enableTargetAutomation
                         end
                     },
                     scanForRares = {
@@ -1369,9 +1370,8 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.4,
                         disabled = function()
-                            return not self.db.profile.enableTargetAutomation or
-                                       not self.db.profile
-                                           .showTargetingOnProximity
+                            return not self.profile.enableTargetAutomation or
+                                       not self.profile.showTargetingOnProximity
                         end
                     },
                     notifyOnRares = {
@@ -1381,10 +1381,9 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth * 2,
                         order = 2.41,
                         disabled = function()
-                            return not self.db.profile.enableTargetAutomation or
-                                       not self.db.profile
-                                           .showTargetingOnProximity or
-                                       not self.db.profile.scanForRares
+                            return not self.profile.enableTargetAutomation or
+                                       not self.profile.showTargetingOnProximity or
+                                       not self.profile.scanForRares
                         end
                     },
                     hideActiveTargetsBackground = {
@@ -1398,7 +1397,7 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.targeting:RenderTargetFrameBackground()
                         end,
                         disabled = function()
-                            return not self.db.profile.enableTargetAutomation
+                            return not self.profile.enableTargetAutomation
                         end
                     },
                     activeTargetScale = {
@@ -1430,9 +1429,8 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 3.1,
                         disabled = function()
-                            return not self.db.profile.enableTargetAutomation or
-                                       not self.db.profile
-                                           .showTargetingOnProximity
+                            return not self.profile.enableTargetAutomation or
+                                       not self.profile.showTargetingOnProximity
                         end
                     },
                     enableTargetingFlash = {
@@ -1443,8 +1441,8 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth * 2,
                         order = 3.2,
                         disabled = function()
-                            return not self.db.profile.enableTips or
-                                       not self.db.profile.enableDrowningWarning
+                            return not self.profile.enableTips or
+                                       not self.profile.enableDrowningWarning
                         end
                     },
                     soundOnFind = {
@@ -1467,9 +1465,8 @@ function addon.settings:CreateAceOptionsPanel()
                             [180461] = "Fel Reaver"
                         },
                         disabled = function()
-                            return not self.db.profile.enableTargetAutomation or
-                                       not self.db.profile
-                                           .showTargetingOnProximity
+                            return not self.profile.enableTargetAutomation or
+                                       not self.profile.showTargetingOnProximity
                         end
                     },
                     soundOnFindChannel = {
@@ -1484,10 +1481,9 @@ function addon.settings:CreateAceOptionsPanel()
                             ["Dialog"] = _G.DIALOG_VOLUME
                         },
                         disabled = function()
-                            return not self.db.profile.enableTargetAutomation or
-                                       not self.db.profile
-                                           .showTargetingOnProximity or
-                                       self.db.profile.soundOnFind == "none"
+                            return not self.profile.enableTargetAutomation or
+                                       not self.profile.showTargetingOnProximity or
+                                       self.profile.soundOnFind == "none"
                         end
                     },
                     testSoundOnFind = {
@@ -1495,11 +1491,11 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 3.5,
                         type = 'execute',
                         disabled = function()
-                            return self.db.profile.soundOnFind == "none"
+                            return self.profile.soundOnFind == "none"
                         end,
                         func = function()
-                            PlaySound(self.db.profile.soundOnFind,
-                                      self.db.profile.soundOnFindChannel)
+                            PlaySound(self.profile.soundOnFind,
+                                      self.profile.soundOnFindChannel)
                         end
                     }
                 }
@@ -1766,7 +1762,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 1.2,
                         disabled = function()
-                            return not self.db.profile.enableTips
+                            return not self.profile.enableTips
                         end,
                         hidden = true -- TODO Zarant
                     },
@@ -1782,7 +1778,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.1,
                         disabled = function()
-                            return not self.db.profile.enableTips
+                            return not self.profile.enableTips
                         end
                     },
                     enableDrowningWarningSound = {
@@ -1791,8 +1787,8 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.2,
                         disabled = function()
-                            return not self.db.profile.enableTips or
-                                       not self.db.profile.enableDrowningWarning
+                            return not self.profile.enableTips or
+                                       not self.profile.enableDrowningWarning
                         end
                     },
                     drowningThreshold = {
@@ -1805,8 +1801,8 @@ function addon.settings:CreateAceOptionsPanel()
                         step = 0.05,
                         isPercent = true,
                         disabled = function()
-                            return not self.db.profile.enableTips or
-                                       not self.db.profile.enableDrowningWarning
+                            return not self.profile.enableTips or
+                                       not self.profile.enableDrowningWarning
                         end
                     },
                     enableDrowningScreenFlash = {
@@ -1817,8 +1813,8 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.4,
                         disabled = function()
-                            return not self.db.profile.enableTips or
-                                       not self.db.profile.enableDrowningWarning
+                            return not self.profile.enableTips or
+                                       not self.profile.enableDrowningWarning
                         end
                     },
                     emergencyHeader = {
@@ -1833,7 +1829,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 3.1,
                         disabled = function()
-                            return not self.db.profile.enableTips
+                            return not self.profile.enableTips
                         end
                     },
                     emergencyThreshold = {
@@ -1846,9 +1842,8 @@ function addon.settings:CreateAceOptionsPanel()
                         step = 0.05,
                         isPercent = true,
                         disabled = function()
-                            return not self.db.profile.enableTips or
-                                       not self.db.profile
-                                           .enableEmergencyActions
+                            return not self.profile.enableTips or
+                                       not self.profile.enableEmergencyActions
                         end
                     },
                     enableEmergencyIconAnimations = {
@@ -1857,9 +1852,8 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 3.3,
                         disabled = function()
-                            return not self.db.profile.enableTips or
-                                       not self.db.profile
-                                           .enableEmergencyActions
+                            return not self.profile.enableTips or
+                                       not self.profile.enableEmergencyActions
                         end
                     },
                     enableEmergencyScreenFlash = {
@@ -1870,9 +1864,8 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 3.4,
                         disabled = function()
-                            return not self.db.profile.enableTips or
-                                       not self.db.profile
-                                           .enableEmergencyActions
+                            return not self.profile.enableTips or
+                                       not self.profile.enableEmergencyActions
                         end
                     },
                     dangerousMobsHeader = {
@@ -1899,7 +1892,7 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.tips:LoadDangerousMobs(true)
                         end,
                         disabled = function()
-                            return not self.db.profile.enableTips
+                            return not self.profile.enableTips
                         end,
                         hidden = function()
                             return not addon.settings.db.profile
@@ -1921,7 +1914,7 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.tips:LoadDangerousMobs(true)
                         end,
                         disabled = function()
-                            return not self.db.profile.enableTips
+                            return not self.profile.enableTips
                         end,
                         hidden = function()
                             return not addon.settings.db.profile
@@ -1949,15 +1942,16 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 1.1,
                         get = function()
-                            return self.db.profile.activeTheme == "Default" and
-                                       "" or self.db.profile.activeTheme
+                            return
+                                self.profile.activeTheme == "Default" and "" or
+                                    self.profile.activeTheme
                         end,
                         set = function(info, value)
                             if value == "" then
                                 value = "Default"
                             end
                             SetProfileOption(info, value)
-                            if self.db.profile.enableThemeLiveReload then
+                            if self.profile.enableThemeLiveReload then
                                 addon.RenderFrame('themeReload')
                             end
                         end,
@@ -1966,7 +1960,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end
                         --[[disabled = function()
                             -- Disable selector if GA/Hardcore as they're special and branded
-                            return RXPCData.GA or self.db.profile.hardcore
+                            return RXPCData.GA or self.profile.hardcore
                         end]]
                     },
                     customThemeBackground = {
@@ -1977,20 +1971,19 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 1.2,
                         hasAlpha = true,
                         get = function()
-                            return
-                                unpack(self.db.profile.customTheme.background)
+                            return unpack(self.profile.customTheme.background)
                         end,
                         set = function(_, r, g, b, a)
-                            self.db.profile.customTheme.background = {
+                            self.profile.customTheme.background = {
                                 r, g, b, a or 1
                             }
-                            addon:RegisterTheme(self.db.profile.customTheme)
-                            if self.db.profile.enableThemeLiveReload then
+                            addon:RegisterTheme(self.profile.customTheme)
+                            if self.profile.enableThemeLiveReload then
                                 addon.RenderFrame('themeReload')
                             end
                         end,
                         hidden = function()
-                            return self.db.profile.activeTheme ~= 'Custom'
+                            return self.profile.activeTheme ~= 'Custom'
                         end
                     },
                     customThemeBottomFrameBG = {
@@ -2001,20 +1994,20 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 1.3,
                         hasAlpha = true,
                         get = function()
-                            return unpack(
-                                       self.db.profile.customTheme.bottomFrameBG)
+                            return
+                                unpack(self.profile.customTheme.bottomFrameBG)
                         end,
                         set = function(_, r, g, b, a)
-                            self.db.profile.customTheme.bottomFrameBG = {
+                            self.profile.customTheme.bottomFrameBG = {
                                 r, g, b, a or 1
                             }
-                            addon:RegisterTheme(self.db.profile.customTheme)
-                            if self.db.profile.enableThemeLiveReload then
+                            addon:RegisterTheme(self.profile.customTheme)
+                            if self.profile.enableThemeLiveReload then
                                 addon.RenderFrame('themeReload')
                             end
                         end,
                         hidden = function()
-                            return self.db.profile.activeTheme ~= 'Custom'
+                            return self.profile.activeTheme ~= 'Custom'
                         end
                     },
                     customThemeBottomFrameHighlight = {
@@ -2026,20 +2019,20 @@ function addon.settings:CreateAceOptionsPanel()
                         hasAlpha = true,
                         get = function()
                             return unpack(
-                                       self.db.profile.customTheme
+                                       self.profile.customTheme
                                            .bottomFrameHighlight)
                         end,
                         set = function(_, r, g, b, a)
-                            self.db.profile.customTheme.bottomFrameHighlight = {
+                            self.profile.customTheme.bottomFrameHighlight = {
                                 r, g, b, a or 1
                             }
-                            addon:RegisterTheme(self.db.profile.customTheme)
-                            if self.db.profile.enableThemeLiveReload then
+                            addon:RegisterTheme(self.profile.customTheme)
+                            if self.profile.enableThemeLiveReload then
                                 addon.RenderFrame('themeReload')
                             end
                         end,
                         hidden = function()
-                            return self.db.profile.activeTheme ~= 'Custom'
+                            return self.profile.activeTheme ~= 'Custom'
                         end
                     },
                     customThemeMapPins = {
@@ -2050,19 +2043,17 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 1.5,
                         hasAlpha = true,
                         get = function()
-                            return unpack(self.db.profile.customTheme.mapPins)
+                            return unpack(self.profile.customTheme.mapPins)
                         end,
                         set = function(_, r, g, b, a)
-                            self.db.profile.customTheme.mapPins = {
-                                r, g, b, a or 1
-                            }
-                            addon:RegisterTheme(self.db.profile.customTheme)
-                            if self.db.profile.enableThemeLiveReload then
+                            self.profile.customTheme.mapPins = {r, g, b, a or 1}
+                            addon:RegisterTheme(self.profile.customTheme)
+                            if self.profile.enableThemeLiveReload then
                                 addon.RenderFrame('themeReload')
                             end
                         end,
                         hidden = function()
-                            return self.db.profile.activeTheme ~= 'Custom'
+                            return self.profile.activeTheme ~= 'Custom'
                         end
                     },
                     customThemeTooltip = {
@@ -2073,19 +2064,18 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 1.6,
                         get = function()
                             -- Skip '|c' and ending 'FF'
-                            return
-                                self.db.profile.customTheme.tooltip:sub(3, -3)
+                            return self.profile.customTheme.tooltip:sub(3, -3)
                         end,
                         set = function(_, value)
-                            self.db.profile.customTheme.tooltip = fmt('|c%sFF',
-                                                                      value)
-                            addon:RegisterTheme(self.db.profile.customTheme)
-                            if self.db.profile.enableThemeLiveReload then
+                            self.profile.customTheme.tooltip = fmt('|c%sFF',
+                                                                   value)
+                            addon:RegisterTheme(self.profile.customTheme)
+                            if self.profile.enableThemeLiveReload then
                                 addon.RenderFrame('themeReload')
                             end
                         end,
                         hidden = function()
-                            return self.db.profile.activeTheme ~= 'Custom'
+                            return self.profile.activeTheme ~= 'Custom'
                         end
                     },
                     customThemeFont = {
@@ -2095,7 +2085,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 1.7,
                         get = function()
-                            return self.db.profile.customTheme.font
+                            return self.profile.customTheme.font
                         end,
                         validate = function(_, fontPath)
                             local currentFont =
@@ -2110,17 +2100,17 @@ function addon.settings:CreateAceOptionsPanel()
                             return isValid
                         end,
                         set = function(_, value)
-                            self.db.profile.customTheme.font = value
+                            self.profile.customTheme.font = value
                             -- TODO replace \ with \\
 
-                            addon:RegisterTheme(self.db.profile.customTheme)
+                            addon:RegisterTheme(self.profile.customTheme)
 
-                            if self.db.profile.enableThemeLiveReload then
+                            if self.profile.enableThemeLiveReload then
                                 addon.RenderFrame('themeReload')
                             end
                         end,
                         hidden = function()
-                            return self.db.profile.activeTheme ~= 'Custom'
+                            return self.profile.activeTheme ~= 'Custom'
                         end
                     },
                     customThemeTextColor = {
@@ -2130,19 +2120,19 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 1.8,
                         get = function()
-                            return unpack(self.db.profile.customTheme.textColor)
+                            return unpack(self.profile.customTheme.textColor)
                         end,
                         set = function(_, r, g, b, a)
-                            self.db.profile.customTheme.textColor = {
+                            self.profile.customTheme.textColor = {
                                 r, g, b, a or 1
                             }
-                            addon:RegisterTheme(self.db.profile.customTheme)
-                            if self.db.profile.enableThemeLiveReload then
+                            addon:RegisterTheme(self.profile.customTheme)
+                            if self.profile.enableThemeLiveReload then
                                 addon.RenderFrame('themeReload')
                             end
                         end,
                         hidden = function()
-                            return self.db.profile.activeTheme ~= 'Custom'
+                            return self.profile.activeTheme ~= 'Custom'
                         end
                     },
                     customThemeApply = {
@@ -2159,14 +2149,14 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 1.91,
                         func = function()
-                            self.db.profile.customTheme = addon.customThemeBase
-                            addon:RegisterTheme(self.db.profile.customTheme)
-                            if self.db.profile.enableThemeLiveReload then
+                            self.profile.customTheme = addon.customThemeBase
+                            addon:RegisterTheme(self.profile.customTheme)
+                            if self.profile.enableThemeLiveReload then
                                 addon.RenderFrame('themeReload')
                             end
                         end,
                         hidden = function()
-                            return self.db.profile.activeTheme ~= 'Custom'
+                            return self.profile.activeTheme ~= 'Custom'
                         end
                     },
                     enableThemeLiveReload = {
@@ -2189,13 +2179,11 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.1,
                         get = function()
-                            return self:HexToRGB(self.db.profile.textEnemyColor)
+                            return self:HexToRGB(self.profile.textEnemyColor)
                         end,
                         set = function(_, r, g, b, a)
-                            self.db.profile.textEnemyColor = self:RGBToString(r,
-                                                                              g,
-                                                                              b,
-                                                                              a)
+                            self.profile.textEnemyColor =
+                                self:RGBToString(r, g, b, a)
                         end
                     },
                     textFriendlyColor = {
@@ -2205,12 +2193,13 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.2,
                         get = function()
-                            return self:HexToRGB(self.db.profile
-                                                     .textFriendlyColor)
+                            return self:HexToRGB(self.profile.textFriendlyColor)
                         end,
                         set = function(_, r, g, b, a)
-                            self.db.profile.textFriendlyColor =
-                                self:RGBToString(r, g, b, a)
+                            self.profile.textFriendlyColor = self:RGBToString(r,
+                                                                              g,
+                                                                              b,
+                                                                              a)
                         end
                     },
                     textLootColor = {
@@ -2220,13 +2209,11 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.3,
                         get = function()
-                            return self:HexToRGB(self.db.profile.textLootColor)
+                            return self:HexToRGB(self.profile.textLootColor)
                         end,
                         set = function(_, r, g, b, a)
-                            self.db.profile.textLootColor = self:RGBToString(r,
-                                                                             g,
-                                                                             b,
-                                                                             a)
+                            self.profile.textLootColor =
+                                self:RGBToString(r, g, b, a)
                         end
                     },
                     textWarnColor = {
@@ -2236,13 +2223,11 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.4,
                         get = function()
-                            return self:HexToRGB(self.db.profile.textWarnColor)
+                            return self:HexToRGB(self.profile.textWarnColor)
                         end,
                         set = function(_, r, g, b, a)
-                            self.db.profile.textWarnColor = self:RGBToString(r,
-                                                                             g,
-                                                                             b,
-                                                                             a)
+                            self.profile.textWarnColor =
+                                self:RGBToString(r, g, b, a)
                         end
                     },
                     textPickColor = {
@@ -2252,13 +2237,11 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.5,
                         get = function()
-                            return self:HexToRGB(self.db.profile.textPickColor)
+                            return self:HexToRGB(self.profile.textPickColor)
                         end,
                         set = function(_, r, g, b, a)
-                            self.db.profile.textPickColor = self:RGBToString(r,
-                                                                             g,
-                                                                             b,
-                                                                             a)
+                            self.profile.textPickColor =
+                                self:RGBToString(r, g, b, a)
                         end
                     },
                     textBuyColor = {
@@ -2268,12 +2251,11 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 2.6,
                         get = function()
-                            return self:HexToRGB(self.db.profile.textBuyColor)
+                            return self:HexToRGB(self.profile.textBuyColor)
                         end,
                         set = function(_, r, g, b, a)
-                            self.db.profile.textBuyColor = self:RGBToString(r,
-                                                                            g,
-                                                                            b, a)
+                            self.profile.textBuyColor =
+                                self:RGBToString(r, g, b, a)
                         end
                     },
                     customTextColorApply = {
@@ -2680,11 +2662,9 @@ function addon.settings:CreateAceOptionsPanel()
 
     AceConfig:RegisterOptionsTable(addon.title, optionsTable)
 
-    if addon.settings.db.profile.enableBetaFeatures then
-        optionsTable.args.profiles =
-            LibStub("AceDBOptions-3.0"):GetOptionsTable(self.db)
-        optionsTable.args.profiles.order = 20
-    end
+    optionsTable.args.profiles = LibStub("AceDBOptions-3.0"):GetOptionsTable(
+                                     self.db)
+    optionsTable.args.profiles.order = 20
 
     addon.RXPOptions = LibStub("AceConfigDialog-3.0"):AddToBlizOptions(
                            addon.title)
@@ -2744,7 +2724,7 @@ function addon.settings:UpdateMinimapButton()
         end
     })
 
-    LibDBIcon:Register(addonName, minimapButton, self.db.profile.minimap);
+    LibDBIcon:Register(addonName, minimapButton, self.profile.minimap);
 end
 
 function addon.settings.ToggleActive()
@@ -2852,7 +2832,11 @@ function addon.settings:DetectXPRate()
     addon.RXPFrame.GenerateMenuTable()
 end
 
-function addon.settings:RefreshProfile()
+function addon.settings:RefreshProfile(_, database)
+    self.profile = settingsDB.profile
+    print("RefreshProfile", database.keys.profile, "minimapPos",
+          self.profile.minimap.minimapPos)
+
     if addon.currentGuide and addon.currentGuide.name then
         addon:LoadGuide(addon.currentGuide)
     else
@@ -2861,11 +2845,13 @@ function addon.settings:RefreshProfile()
     addon.UpdateMap()
     addon.RXPFrame.GenerateMenuTable()
     addon.RXPFrame.SetStepFrameAnchor()
+
+    -- TODO live reload... everything? Prompt for reload?
 end
 
 function addon.settings:CheckAddonCompatibility()
     if not addon.compatibility or
-        not self.db.profile.enableAddonIncompatibilityCheck then return end
+        not self.profile.enableAddonIncompatibilityCheck then return end
 
     local a, name
 
@@ -2909,7 +2895,7 @@ end
 
 function addon.settings:LoadTextColors()
     local gtc = addon.guideTextColors
-    local p = self.db.profile
+    local p = self.profile
     gtc["RXP_FRIENDLY_"] = p.textFriendlyColor
     gtc["RXP_ENEMY_"] = p.textEnemyColor
     gtc["RXP_LOOT_"] = p.textLootColor
@@ -2931,25 +2917,25 @@ function addon.settings:LoadTextColors()
 end
 
 function addon.settings:ResetTextColors()
-    self.db.profile.textEnemyColor = addon.guideTextColors.default['RXP_ENEMY_']
-    self.db.profile.textFriendlyColor =
+    self.profile.textEnemyColor = addon.guideTextColors.default['RXP_ENEMY_']
+    self.profile.textFriendlyColor =
         addon.guideTextColors.default['RXP_FRIENDLY_']
-    self.db.profile.textLootColor = addon.guideTextColors.default['RXP_LOOT_']
-    self.db.profile.textWarnColor = addon.guideTextColors.default['RXP_WARN_']
-    self.db.profile.textPickColor = addon.guideTextColors.default['RXP_PICK_']
-    self.db.profile.textBuyColor = addon.guideTextColors.default['RXP_BUY_']
+    self.profile.textLootColor = addon.guideTextColors.default['RXP_LOOT_']
+    self.profile.textWarnColor = addon.guideTextColors.default['RXP_WARN_']
+    self.profile.textPickColor = addon.guideTextColors.default['RXP_PICK_']
+    self.profile.textBuyColor = addon.guideTextColors.default['RXP_BUY_']
     self:LoadTextColors()
 end
 
 function addon.settings:DisableTextColors()
     local default = self:RGBToString(unpack(addon.activeTheme.textColor))
 
-    self.db.profile.textEnemyColor = default
-    self.db.profile.textFriendlyColor = default
-    self.db.profile.textLootColor = default
-    self.db.profile.textWarnColor = default
-    self.db.profile.textPickColor = default
-    self.db.profile.textBuyColor = default
+    self.profile.textEnemyColor = default
+    self.profile.textFriendlyColor = default
+    self.profile.textLootColor = default
+    self.profile.textWarnColor = default
+    self.profile.textPickColor = default
+    self.profile.textBuyColor = default
     self:LoadTextColors()
 end
 
@@ -3049,7 +3035,7 @@ function addon.settings:SetupMapButton()
     -- Nothing outside Classic currently
     if addon.game ~= "CLASSIC" then return end
 
-    if self.db.profile.enableWorldMapButton then
+    if self.profile.enableWorldMapButton then
         if self.worldMapButton then
             self.worldMapButton:Show()
             return
