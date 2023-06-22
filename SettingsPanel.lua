@@ -169,7 +169,7 @@ function addon.settings:InitializeSettings()
         }
     }
 
-    settingsDB = LibStub("AceDB-3.0"):New("RXPCSettings", settingsDBDefaults)
+    settingsDB = LibStub("AceDB-3.0"):New("RXPSettings", settingsDBDefaults)
 
     settingsDB.RegisterCallback(self, "OnProfileChanged", "RefreshProfile")
     settingsDB.RegisterCallback(self, "OnProfileCopied", "RefreshProfile")
@@ -180,6 +180,7 @@ function addon.settings:InitializeSettings()
     self:CreateAceOptionsPanel()
     self:CreateImportOptionsPanel()
     self:MigrateLegacySettings()
+    self:MigrateProfile()
     self:LoadTextColors()
 
     self:RegisterChatCommand("rxp", self.ChatCommand)
@@ -338,6 +339,21 @@ function addon.settings:MigrateLegacySettings()
         db.xprate = RXPCData.xprate
         RXPCData.xprate = nil
     end
+end
+
+-- Pre 4.5.10 , settings were in RXPCSettings per character
+-- Leave RXPCSettings alone for downgrade options
+function addon.settings:MigrateProfile()
+     -- Fresh install
+    if not _G.RXPCSettings then return end
+
+    -- Already migrated a character with current profile
+    if _G.RXPSettings.profiles[loadedProfileKey].migrated then return end
+
+    -- Lazy copy profile
+    _G.RXPSettings.profiles[loadedProfileKey] = _G.RXPCSettings.profiles[loadedProfileKey]
+
+    _G.RXPSettings.profiles[loadedProfileKey].migrated = true
 end
 
 local function GetProfileOption(info) return addon.settings.profile[info[#info]] end
