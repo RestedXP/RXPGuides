@@ -3603,12 +3603,14 @@ function addon.functions.bankdeposit(self, text, ...)
     end
 
     local element = self.element
-
-    if addon.IsItemNotInBags(element.items) then
-        addon.SetElementComplete(self)
-        return
+    if element.step.active then
+        if addon.IsItemNotInBags(element.items) then
+            addon.SetElementComplete(self)
+            return
+        end
+        addon.DepositItems(element.items)
     end
-    addon.DepositItems(element.items)
+
 end
 
 function addon.functions.bankwithdraw(self, text, ...)
@@ -3624,14 +3626,15 @@ function addon.functions.bankwithdraw(self, text, ...)
         return element
     end
 
-    local event = ...
     local element = self.element
 
-    if addon.IsItemNotInBank(element.items) then
-        addon.SetElementComplete(self)
-        return
+    if element.step.active then
+        if addon.IsItemNotInBank(element.items) then
+            addon.SetElementComplete(self)
+            return
+        end
+        addon.WithdrawItems(element.items)
     end
-    addon.WithdrawItems(element.items)
 end
 
 function addon.functions.bronzetube(self, text, rev)
