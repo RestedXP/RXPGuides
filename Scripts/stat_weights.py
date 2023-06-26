@@ -26,13 +26,9 @@ with open(csvPath, 'r', newline='') as csvfile:
 
             db[row['Title']][key] = value
 
-            #db[mob['Zone']][mob['Name']].append(
-            #    f"        {{\n        MinLevel = {minLevel},\n        MaxLevel = {maxLevel},\n        Classification = \"{mob['Classification']}\",\n        Movement = \"{mob['Movement']}\",\n        Notes = \"{notes}\",\n        Location = \"{mob['Commands']}\"\n        }},\n"
-            #)
-
 #print(json.dumps(db, indent=2))
 
-with open(f'DB/classic/StatWeights.lua', 'w', newline='') as out:
+with open(f'DB/classic/statWeights.lua', 'w', newline='') as out:
   out.write('local _, addon = ...\n\n')
 
   out.write('addon.statWeights = {\n')

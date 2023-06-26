@@ -35,7 +35,8 @@ local session = {
     emergencySpells = {},
     highlights = {},
     actionBarMap = {},
-    dangerousMobs = {}
+    dangerousMobs = {},
+    statWeights = {},
 }
 
 function addon.tips:Setup()
@@ -69,6 +70,12 @@ function addon.tips:Setup()
     if addon.dangerousMobs then
         self:LoadDangerousMobs()
         self:RegisterEvent("ZONE_CHANGED_NEW_AREA")
+    end
+
+    if addon.statWeights then
+        self:LoadStatWeights()
+
+        --TODO tooltip
     end
 end
 
@@ -541,3 +548,15 @@ function addon.tips:LoadDangerousMobs(reloadData)
 end
 
 addon.tips.ZONE_CHANGED_NEW_AREA = addon.tips.LoadDangerousMobs
+
+function addon.tips:LoadStatWeights()
+    if not addon.statWeights then return end
+
+    for _, data in pairs(addon.statWeights) do
+        --TODO spec support
+        if data.class == addon.player.class then
+            session.statWeights = addon.statWeights
+            return
+        end
+    end
+end
