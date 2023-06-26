@@ -178,7 +178,7 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "High damage fireballs",
-        Location = ".pin Westfall, 42.0,69.0;.pin Westfall,44.6,65.6;.pin Westfall,45.6,69.0;.mob Defias Pillager"
+        Location = ".pin Westfall,42.0,69.0;.pin Westfall,44.6,65.6;.pin Westfall,45.6,69.0;.mob Defias Pillager"
         },
         {
         MinLevel = 14,
@@ -224,7 +224,7 @@ local dangerousMobs = {
         Classification = "Rare",
         Movement = "Idle",
         Notes = "Very high level rare",
-        Location = ".pin Westfall,36.6,67.8;.pin Westfall.45.6,60.2;.pin Westfall.63.0,74.8;.pin Westfall.64.4,56.0;.pin Westfall.48.0,43.4;.pin Westfall.51.6,23.6;.mob Vultros"
+        Location = ".pin Westfall,36.6,67.8;.pin Westfall,45.6,60.2;.pin Westfall,63.0,74.8;.pin Westfall,64.4,56.0;.pin Westfall,48.0,43.4;.pin Westfall,51.6,23.6;.mob Vultros"
         },
       },
       ["Foe Reaper 4000"] = {
@@ -234,7 +234,7 @@ local dangerousMobs = {
         Classification = "Rare",
         Movement = "Idle",
         Notes = "Very high level rare",
-        Location = ".pin Westfall.50.8,26.0;.pin Westfall.50.8,21.8;.pin Westfall.44.6,32.8;.pin Westfall.44.2,39.4;.pin Westfall.37.8,47.8;.pin Westfall,38.0,51.8;.mob Foe Reaper 4000"
+        Location = ".pin Westfall,50.8,26.0;.pin Westfall,50.8,21.8;.pin Westfall,44.6,32.8;.pin Westfall,44.2,39.4;.pin Westfall,37.8,47.8;.pin Westfall,38.0,51.8;.mob Foe Reaper 4000"
         },
       },
       ["Leprithus"] = {
@@ -493,6 +493,16 @@ local dangerousMobs = {
         Movement = "Idle",
         Notes = "Summons voidwalker, has succubus pet",
         Location = ".pin Ashenvale,25.2,60.6;.mob Ilkrud Magthrull"
+        },
+      },
+      ["Eck'alom"] = {
+        {
+        MinLevel = 27,
+        MaxLevel = 27,
+        Classification = "Rare",
+        Movement = "Idle",
+        Notes = "15 second stun + frost shock; extremely dangerous",
+        Location = ".pin Ashenvale,45.6,71.2;.pin Ashenvale,48.8,69.2;.pin Ashenvale,52.8,70.0;.unitscan Eck'alom"
         },
       },
     },
@@ -2608,7 +2618,7 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "Invisible patrol, sees through stealth",
-        Location = ".pin Eastern Plaguelands,81.8,45.8;.pin Eastern Plaguelands,86.2,40.8;.pin Eastern Plaguelands,41.8,54.1;.pin Eastern Plaguelands,41.7,48.8;.pin Eastern Plaguelands,38.1,50.5;.pin Eastern Plaguelands,34.6,61.2;.pin Eastern Plaguelands,69.9,30.5;.pin Eastern Plaguelands,72.4,31.4;.pin Eastern Plaguelands,74.0,34.0.mob Unseen Servant"
+        Location = ".pin Eastern Plaguelands,81.8,45.8;.pin Eastern Plaguelands,86.2,40.8;.pin Eastern Plaguelands,41.8,54.1;.pin Eastern Plaguelands,41.7,48.8;.pin Eastern Plaguelands,38.1,50.5;.pin Eastern Plaguelands,34.6,61.2;.pin Eastern Plaguelands,69.9,30.5;.pin Eastern Plaguelands,72.4,31.4;.pin Eastern Plaguelands,74.0,34.0;.mob Unseen Servant"
         },
       },
       ["Mossflayer Scout"] = {
@@ -2863,6 +2873,16 @@ local dangerousMobs = {
         Movement = "Slow Patrol",
         Notes = "High level for the area",
         Location = ".line Ashenvale,71.48,70.11,72.16,70.52,72.48,70.60,72.67,70.67,73.23,70.67,74.43,70.07,74.80,70.06,75.44,69.90,75.69,69.81,75.96,69.78,76.10,68.96,76.44,68.58,76.91,68.04,77.59,66.37,77.92,65.94,78.29,65.71;.mob Sharptalon"
+        },
+      },
+      ["Eck'alom"] = {
+        {
+        MinLevel = 27,
+        MaxLevel = 27,
+        Classification = "Rare",
+        Movement = "Idle",
+        Notes = "15 second stun + frost shock; extremely dangerous",
+        Location = ".pin Ashenvale,45.6,71.2;.pin Ashenvale,48.8,69.2;.pin Ashenvale,52.8,70.0;.unitscan Eck'alom"
         },
       },
     },
