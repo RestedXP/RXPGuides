@@ -554,9 +554,69 @@ function addon.tips:LoadStatWeights()
 
     for _, data in pairs(addon.statWeights) do
         --TODO spec support
-        if data.class == addon.player.class then
-            session.statWeights = addon.statWeights
+        if strupper(data.Class) == addon.player.class then
+            session.statWeights = data
+            --print("Loaded statWeights", session.statWeights.Title)
             return
+        end
+    end
+
+end
+
+local GetItemInfoInstant = _G.GetItemInfoInstant
+--local itemWeightCache = {}
+
+function addon.tips:GetItemWeight(itemID)
+    itemID = type(itemID) == "string" and itemID or "item:" .. itemID
+
+    --if itemWeightCache[itemID] then
+    --    print("(Would) Returning cached weight", itemID, itemWeightCache[itemID])
+        --return itemWeightCache[itemID]
+    --end
+
+    -- TODO handle initial failures
+    local stats = GetItemStats(itemID) or {}
+    --TODO can class use item
+
+    local _, _, itemSubType, itemEquipLoc = GetItemInfoInstant(itemID)
+    stats.itemSubType = itemSubType
+    stats.itemEquipLoc = itemEquipLoc
+
+    -- TODO 1H vs 2H
+    -- ITEM_MOD_DAMAGE_PER_SECOND_SHORT
+    -- 1H, INVTYPE_WEAPON INVTYPE_WEAPONMAINHAND
+    -- 2H, INVTYPE_2HWEAPON
+    -- Ranged, INVTYPE_RANGED INVTYPE_RANGEDRIGHT INVTYPE_THROWN
+    -- TODO handle 1H in OH, INVTYPE_WEAPONOFFHAND
+
+    -- TOOD ensure fully queried
+
+    local totalWeight = 0
+    local statWeight
+
+    --TODO some stats don't show up
+    for key, value in pairs(stats) do
+        print("Calculating", key, "from", session.statWeights[key])
+        if session.statWeights[key] and session.statWeights[key] ~= 0 then
+            statWeight = value * session.statWeights[key]
+            totalWeight = totalWeight + statWeight
+
+            print("Value", value, "weighted at", statWeight)
+        end
+    end
+
+    -- itemWeightCache[itemID] = totalWeight
+    print("Item weight", itemID, totalWeight)
+
+    -- TODO debugging
+    return stats
+end
+
+function addon.tips.Test()
+    for _, itemID in pairs({19857, 19347, 19861}) do
+        --print(itemID)
+        for key, value in pairs(addon.tips:GetItemWeight(itemID)) do
+            --print('  ', key, value)
         end
     end
 end
