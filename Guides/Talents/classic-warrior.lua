@@ -1,6 +1,6 @@
 local _, addon = ...
 
-if addon.player.class ~= "HUNTER" then return end
+if addon.player.class ~= "WARRIOR" then return end
 
 
 addon.talents.RegisterGuide([[
