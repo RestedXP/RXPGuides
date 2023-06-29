@@ -8,6 +8,7 @@ addon.talents.RegisterGuide([[
 #next Hardcore Warrior 30-55
 #minLevel 10
 #maxLevel 30
+#hardcore
 
 level -- Cruelty Rank 1
 	.talent 2,1,3,1
@@ -80,6 +81,7 @@ addon.talents.RegisterGuide([[
 #next Hardcore Warrior 55-60
 #minLevel 30
 #maxLevel 55
+#hardcore
 
 level -- Improved Rend Rank 1
 	.talent 1,1,3,1
@@ -226,6 +228,7 @@ addon.talents.RegisterGuide([[
 #name Hardcore Warrior 55-60
 #minLevel 55
 #maxLevel 60
+#hardcore
 
 level -- Cruelty Rank 1
 	.talent 2,1,3,1
@@ -388,7 +391,6 @@ addon.talents.RegisterGuide([[
 #minLevel 10
 #maxLevel 30
 
-
 level -- Cruelty Rank 1
 	.talent 2,1,3,1
 	
@@ -459,7 +461,6 @@ addon.talents.RegisterGuide([[
 #next Softcore Warrior 55-60
 #minLevel 30
 #maxLevel 55
-
 
 level -- Improved Rend Rank 1
 	.talent 1,1,3,1
@@ -605,7 +606,6 @@ addon.talents.RegisterGuide([[
 #name Softcore Warrior 55-60
 #minLevel 55
 #maxLevel 60
-
 
 level -- Cruelty Rank 1
 	.talent 2,1,3,1
