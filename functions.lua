@@ -5043,7 +5043,7 @@ function addon.functions.dungeon(self, text, instance)
             --print(tag,name)
             RXPData.guideMetaData.dungeonGuides[addon.currentGuideGroup] = true
         elseif tag and skip then
-            addon.step.dugeonskip = strupper(instance)
+            addon.step.dungeonskip = tag
         else
             return addon.error(
                 L("Error parsing guide") .. " "  .. addon.currentGuideName ..

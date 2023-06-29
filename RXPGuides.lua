@@ -1359,10 +1359,10 @@ end
 function addon.stepLogic.DungeonCheck(step)
     local dungeon = step.dungeon
     local dskip = step.dungeonskip
-
+    --print(dungeon,dskip)
     if dskip and addon.settings.profile.dungeons[dskip] then
         return false
-    elseif dungeon and addon.settings.profile.dungeons[dungeon] then
+    elseif dungeon and dungeon ~= dskip and addon.settings.profile.dungeons[dungeon] then
         return true
     elseif not dungeon then
         return true
