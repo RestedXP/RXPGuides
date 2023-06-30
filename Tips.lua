@@ -563,24 +563,25 @@ function addon.tips:LoadStatWeights()
 
 end
 
-local GetItemInfoInstant = _G.GetItemInfoInstant
---local itemWeightCache = {}
+local GetItemInfoInstant, GetInventoryItemID = _G.GetItemInfoInstant, _G.GetInventoryItemID
+local itemStatsCache = {}
 
-function addon.tips:GetItemWeight(itemID)
+function addon.tips:GetItemStats(itemID, debug)
     itemID = type(itemID) == "string" and itemID or "item:" .. itemID
 
-    --if itemWeightCache[itemID] then
-    --    print("(Would) Returning cached weight", itemID, itemWeightCache[itemID])
-        --return itemWeightCache[itemID]
+    --if itemStatsCache[itemID] then
+    --    print("(Would) Returning cached weight", itemID, itemStatsCache[itemID])
+        --return itemStatsCache[itemID]
     --end
 
     -- TODO handle initial failures
-    local stats = GetItemStats(itemID) or {}
+    local stats = GetItemStats(itemID)
+    stats.itemID = itemID
     --TODO can class use item
 
-    local _, _, itemSubType, itemEquipLoc = GetItemInfoInstant(itemID)
+    local _, _, itemSubType, InventorySlotId = GetItemInfoInstant(itemID)
     stats.itemSubType = itemSubType
-    stats.itemEquipLoc = itemEquipLoc
+    stats.InventorySlotId = InventorySlotId
 
     -- TODO 1H vs 2H
     -- ITEM_MOD_DAMAGE_PER_SECOND_SHORT
@@ -596,7 +597,6 @@ function addon.tips:GetItemWeight(itemID)
 
     --TODO some stats don't show up
     for key, value in pairs(stats) do
-        print("Calculating", key, "from", session.statWeights[key])
         if session.statWeights[key] and session.statWeights[key] ~= 0 then
             statWeight = value * session.statWeights[key]
             totalWeight = totalWeight + statWeight
@@ -605,18 +605,39 @@ function addon.tips:GetItemWeight(itemID)
         end
     end
 
-    -- itemWeightCache[itemID] = totalWeight
-    print("Item weight", itemID, totalWeight)
+    stats.totalWeight = addon.Round(totalWeight, 2)
+    itemStatsCache[itemID] = stats
 
-    -- TODO debugging
+    if debug then
+        print("Item weight", itemID, totalWeight)
+    end
+
     return stats
+end
+
+-- 1 if new > current
+-- 0 if same
+-- -1 if current > new
+-- nil if same item
+function addon.tips:CompareItemWeight(itemID)
+    local comparedStats = self:GetItemStats(itemID)
+
+    local currentItemID = GetInventoryItemID("player", comparedStats.InventorySlotId)
+
+    if not currentItemID then
+        return 1
+    elseif currentItemID.itemID == itemID then
+        return
+    end
+
+    local currentStats = self:GetItemStats(itemID)
 end
 
 function addon.tips.Test()
     for _, itemID in pairs({19857, 19347, 19861}) do
         --print(itemID)
-        for key, value in pairs(addon.tips:GetItemWeight(itemID)) do
-            --print('  ', key, value)
+        for key, value in pairs(addon.tips:GetItemStats(itemID, true)) do
+            print('  ', key, value)
         end
     end
 end
