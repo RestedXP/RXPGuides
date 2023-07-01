@@ -551,9 +551,35 @@ addon.tips.ZONE_CHANGED_NEW_AREA = addon.tips.LoadDangerousMobs
 
 -- Item Upgrades
 
-local GetItemInfoInstant, GetInventoryItemID = _G.GetItemInfoInstant, _G.GetInventoryItemID
+local GetItemInfoInstant, GetInventoryItemLink = _G.GetItemInfoInstant, _G.GetInventoryItemLink
 local GetItemStats = _G.GetItemStats
 local itemStatsCache = {}
+
+local SLOT_MAP = {
+    ["INVTYPE_HEAD"]        	= INVSLOT_HEAD,
+    ["INVTYPE_NECK"]        	= INVSLOT_NECK,
+    ["INVTYPE_SHOULDER"]    	= INVSLOT_SHOULDER,
+    ["INVTYPE_BODY"]        	= INVSLOT_BODY,
+    ["INVTYPE_CHEST"]       	= INVSLOT_CHEST,
+    ["INVTYPE_ROBE"]        	= INVSLOT_CHEST,
+    ["INVTYPE_WAIST"]       	= INVSLOT_WAIST,
+    ["INVTYPE_LEGS"]        	= INVSLOT_LEGS,
+    ["INVTYPE_FEET"]        	= INVSLOT_FEET,
+    ["INVTYPE_WRIST"]       	= INVSLOT_WRIST,
+    ["INVTYPE_HAND"]        	= INVSLOT_HAND,
+    ["INVTYPE_FINGER"]      	= { [INVSLOT_FINGER1] = true, [INVSLOT_FINGER2] = true },
+    ["INVTYPE_TRINKET"]     	= { [INVSLOT_TRINKET1] = true, [INVSLOT_TRINKET2] = true },
+    ["INVTYPE_CLOAK"]       	= INVSLOT_BACK,
+    ["INVTYPE_WEAPON"]      	= { [INVSLOT_MAINHAND] = true, [INVSLOT_OFFHAND] = true },
+    ["INVTYPE_SHIELD"]      	= INVSLOT_OFFHAND,
+    ["INVTYPE_2HWEAPON"]        = INVSLOT_MAINHAND,
+    ["INVTYPE_WEAPONMAINHAND"]  = INVSLOT_MAINHAND,
+    ["INVTYPE_WEAPONOFFHAND"]   = INVSLOT_OFFHAND,
+    ["INVTYPE_HOLDABLE"]        = INVSLOT_OFFHAND,
+    ["INVTYPE_RANGED"]          = INVSLOT_RANGED,
+    ["INVTYPE_THROWN"]          = INVSLOT_RANGED,
+    ["INVTYPE_RANGEDRIGHT"]     = INVSLOT_RANGED,
+}
 
 function addon.tips:LoadStatWeights()
     if not addon.statWeights then return end
@@ -569,25 +595,36 @@ function addon.tips:LoadStatWeights()
 
 end
 
-function addon.tips:GetItemStats(itemID, debug)
-    itemID = type(itemID) == "string" and itemID or "item:" .. itemID
+function addon.tips:GetItemStats(itemLink, debug)
+    if type(itemLink) ~= "string" then
+        addon.error("addon.tips:GetItemStats, itemLink string required")
+        return
+    end
+    --itemLink = type(itemLink) == "string" and itemLink or "item:" .. itemLink
 
-    if itemStatsCache[itemID] then
-        print("(Would) Returning cached weight", itemID, itemStatsCache[itemID].totalWeight)
-        --return itemStatsCache[itemID]
+    if itemStatsCache[itemLink] then
+        --print("(Would) Returning cached weight", itemLink, itemStatsCache[itemLink].totalWeight)
+        --return itemStatsCache[itemLink]
     end
 
-    local stats = GetItemStats(itemID)
+    local stats = GetItemStats(itemLink)
 
     -- Failed to query stats, wait for next run
     if stats == nil then return end
 
-    stats.itemID = itemID
+    stats.itemLink = itemLink
     --TODO can class use item
 
-    local _, _, itemSubType, InventorySlotId = GetItemInfoInstant(itemID)
+    local itemID, _, itemSubType, inventorySlotId = GetItemInfoInstant(itemLink)
+
+    -- Not an equippable item
+    if not inventorySlotId or inventorySlotId == "" then
+        return
+    end
+
+    stats.itemID = itemID
     stats.itemSubType = itemSubType
-    stats.InventorySlotId = InventorySlotId
+    stats.InventorySlotId = inventorySlotId
 
     -- TODO 1H vs 2H
     -- ITEM_MOD_DAMAGE_PER_SECOND_SHORT
@@ -605,45 +642,58 @@ function addon.tips:GetItemStats(itemID, debug)
             statWeight = value * session.statWeights[key]
             totalWeight = totalWeight + statWeight
 
-            print("Value", value, "weighted at", statWeight)
+            --print("Value", value, "weighted at", statWeight)
         end
     end
 
     stats.totalWeight = addon.Round(totalWeight, 2)
-    itemStatsCache[itemID] = stats
-
-    if debug then
-        print("Item weight", itemID, totalWeight)
-    end
+    itemStatsCache[itemLink] = stats
 
     return stats
 end
 
--- 1 if new > current
--- 0 if same
--- -1 if current > new
 -- nil if same item
-function addon.tips:CompareItemWeight(itemID)
-    local comparedStats = self:GetItemStats(itemID)
-    local currentStats = self:GetItemStats(itemID)
+-- % change otherwise
+function addon.tips:CompareItemWeight(itemLink)
+    local comparedStats = self:GetItemStats(itemLink)
 
     -- Failed to load, wait for next try
-    if not comparedStats or not currentStats then return end
-
-    local currentItemID = GetInventoryItemID("player", comparedStats.InventorySlotId)
-
-    if not currentItemID then
-        return 1
-    elseif currentItemID.itemID == itemID then
+    if not comparedStats then
+        --print("Failed to query comparedStats")
         return
     end
 
-    if comparedStats.totalWeight > currentStats.totalWeight then
-        return 1
-    elseif comparedStats.totalWeight < currentStats.totalWeight then
-        return -1
-    else
+    -- Not an equippable item
+    -- TODO exclude quiver
+    if not comparedStats.InventorySlotId or not SLOT_MAP[comparedStats.InventorySlotId] then return end
+
+    local equippedItemLink = GetInventoryItemLink("player", SLOT_MAP[comparedStats.InventorySlotId])
+    --print("GetInventoryItemLink", comparedStats.InventorySlotId, GetInventoryItemLink("player", comparedStats.InventorySlotId))
+
+    -- No equipped item, so anything is an upgrade from no item
+    if not equippedItemLink or equippedItemLink == "" then
+        -- print("not equippedItemLink")
+        return 100
+    elseif comparedStats.itemLink == equippedItemLink then
+        print("Same item")
         return 0
+    end
+
+    local equippedStats = self:GetItemStats(itemLink)
+
+    if not equippedStats then
+        -- Failed to load stats, wait for the next refresh
+        print("not equippedStats")
+        return
+    end
+
+    print(comparedStats.InventorySlotId, "weights", comparedStats.totalWeight, equippedStats.totalWeight)
+    if comparedStats.totalWeight > equippedStats.totalWeight then
+        return 100
+    elseif comparedStats.totalWeight < equippedStats.totalWeight then
+        return -100
+    else
+        return
     end
 end
 
@@ -651,18 +701,26 @@ local function GameTooltipSetItem(tooltip, ...)
 	local _, itemLink = GameTooltip:GetItem()
 	if not itemLink then return end
 
-    local _, itemID = strsplit(":", itemLink)
-    tooltip:AddLine("GameTooltipSetItem, itemID =" .. itemID)
+    local percentageDiff = addon.tips:CompareItemWeight(itemLink)
+
+    -- Incomplete data or same item
+    if not percentageDiff then return end
+
+    tooltip:AddLine(fmt("%s: %s%%", _G.ITEM_UPGRADE, addon.Round(percentageDiff, 1)))
 
     tooltip:Show()
 end
 
+-- Hook comparison tooltip
 GameTooltip:HookScript("OnTooltipSetItem", GameTooltipSetItem)
+
+-- Hook standalone item tooltips
+ItemRefTooltip:HookScript("OnTooltipSetItem", GameTooltipSetItem)
 
 function addon.tips.Test()
     for _, itemID in pairs({19857, 19347, 19861}) do
         --print(itemID)
-        for key, value in pairs(addon.tips:GetItemStats(itemID, true)) do
+        for key, value in pairs(addon.tips:GetItemStats("item:" .. itemID, true)) do
             print('  ', key, value)
         end
     end
