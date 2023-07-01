@@ -549,6 +549,12 @@ end
 
 addon.tips.ZONE_CHANGED_NEW_AREA = addon.tips.LoadDangerousMobs
 
+-- Item Upgrades
+
+local GetItemInfoInstant, GetInventoryItemID = _G.GetItemInfoInstant, _G.GetInventoryItemID
+local GetItemStats = _G.GetItemStats
+local itemStatsCache = {}
+
 function addon.tips:LoadStatWeights()
     if not addon.statWeights then return end
 
@@ -563,19 +569,19 @@ function addon.tips:LoadStatWeights()
 
 end
 
-local GetItemInfoInstant, GetInventoryItemID = _G.GetItemInfoInstant, _G.GetInventoryItemID
-local itemStatsCache = {}
-
 function addon.tips:GetItemStats(itemID, debug)
     itemID = type(itemID) == "string" and itemID or "item:" .. itemID
 
-    --if itemStatsCache[itemID] then
-    --    print("(Would) Returning cached weight", itemID, itemStatsCache[itemID])
+    if itemStatsCache[itemID] then
+        print("(Would) Returning cached weight", itemID, itemStatsCache[itemID].totalWeight)
         --return itemStatsCache[itemID]
-    --end
+    end
 
-    -- TODO handle initial failures
     local stats = GetItemStats(itemID)
+
+    -- Failed to query stats, wait for next run
+    if stats == nil then return end
+
     stats.itemID = itemID
     --TODO can class use item
 
@@ -589,8 +595,6 @@ function addon.tips:GetItemStats(itemID, debug)
     -- 2H, INVTYPE_2HWEAPON
     -- Ranged, INVTYPE_RANGED INVTYPE_RANGEDRIGHT INVTYPE_THROWN
     -- TODO handle 1H in OH, INVTYPE_WEAPONOFFHAND
-
-    -- TOOD ensure fully queried
 
     local totalWeight = 0
     local statWeight
@@ -621,6 +625,10 @@ end
 -- nil if same item
 function addon.tips:CompareItemWeight(itemID)
     local comparedStats = self:GetItemStats(itemID)
+    local currentStats = self:GetItemStats(itemID)
+
+    -- Failed to load, wait for next try
+    if not comparedStats or not currentStats then return end
 
     local currentItemID = GetInventoryItemID("player", comparedStats.InventorySlotId)
 
@@ -630,8 +638,26 @@ function addon.tips:CompareItemWeight(itemID)
         return
     end
 
-    local currentStats = self:GetItemStats(itemID)
+    if comparedStats.totalWeight > currentStats.totalWeight then
+        return 1
+    elseif comparedStats.totalWeight < currentStats.totalWeight then
+        return -1
+    else
+        return 0
+    end
 end
+
+local function GameTooltipSetItem(tooltip, ...)
+	local _, itemLink = GameTooltip:GetItem()
+	if not itemLink then return end
+
+    local _, itemID = strsplit(":", itemLink)
+    tooltip:AddLine("GameTooltipSetItem, itemID =" .. itemID)
+
+    tooltip:Show()
+end
+
+GameTooltip:HookScript("OnTooltipSetItem", GameTooltipSetItem)
 
 function addon.tips.Test()
     for _, itemID in pairs({19857, 19347, 19861}) do
