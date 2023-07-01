@@ -347,13 +347,20 @@ function addon.settings:MigrateProfile()
      -- Fresh install
     if not _G.RXPCSettings then return end
 
-    -- Already migrated a character with current profile
-    if _G.RXPSettings.profiles[loadedProfileKey].migrated then return end
+    local p =_G.RXPSettings.profiles
 
-    -- Lazy copy profile
-    _G.RXPSettings.profiles[loadedProfileKey] = _G.RXPCSettings.profiles[loadedProfileKey]
-
-    _G.RXPSettings.profiles[loadedProfileKey].migrated = true
+    -- Lazy copy all character profiles to account
+    for profileKey, _ in pairs(_G.RXPCSettings.profileKeys or {}) do
+        -- Already migrated a character with current profile name
+        if p[profileKey] and p[profileKey].migrated then
+            if self.profile.debug then
+                self.PrettyPrint("Character profile (%s) already migrated", profileKey)
+            end
+        else
+            p[profileKey] = _G.RXPCSettings.profiles[profileKey]
+            p[profileKey].migrated = true
+        end
+    end
 end
 
 local function GetProfileOption(info) return addon.settings.profile[info[#info]] end
