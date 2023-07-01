@@ -613,7 +613,8 @@ function addon.tips:GetItemStats(itemLink, debug)
     if stats == nil then return end
 
     stats.itemLink = itemLink
-    --TODO can class use item
+    -- TODO can class use item
+    -- TODO exclude looking at equipped items
 
     local itemID, _, itemSubType, inventorySlotId = GetItemInfoInstant(itemLink)
 
@@ -632,6 +633,7 @@ function addon.tips:GetItemStats(itemLink, debug)
     -- 2H, INVTYPE_2HWEAPON
     -- Ranged, INVTYPE_RANGED INVTYPE_RANGEDRIGHT INVTYPE_THROWN
     -- TODO handle 1H in OH, INVTYPE_WEAPONOFFHAND
+    -- TODO armor count
 
     local totalWeight = 0
     local statWeight
@@ -675,7 +677,6 @@ function addon.tips:CompareItemWeight(itemLink)
         -- print("not equippedItemLink")
         return 100
     elseif comparedStats.itemLink == equippedItemLink then
-        print("Same item")
         return 0
     end
 
@@ -689,9 +690,9 @@ function addon.tips:CompareItemWeight(itemLink)
 
     print(comparedStats.InventorySlotId, "weights", comparedStats.totalWeight, equippedStats.totalWeight)
     if comparedStats.totalWeight > equippedStats.totalWeight then
-        return 100
+        return addon.Round(comparedStats.totalWeight / equippedStats.totalWeight, 2)
     elseif comparedStats.totalWeight < equippedStats.totalWeight then
-        return -100
+        return -1 * addon.Round(comparedStats.totalWeight / equippedStats.totalWeight, 2)
     else
         return
     end
@@ -706,7 +707,9 @@ local function GameTooltipSetItem(tooltip, ...)
     -- Incomplete data or same item
     if not percentageDiff then return end
 
-    tooltip:AddLine(fmt("%s: %s%%", _G.ITEM_UPGRADE, addon.Round(percentageDiff, 1)))
+    tooltip:AddLine(addon.title)
+
+    tooltip:AddLine(fmt("%s %s%%", _G.ITEM_UPGRADE, percentageDiff))
 
     tooltip:Show()
 end
