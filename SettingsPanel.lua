@@ -347,7 +347,7 @@ function addon.settings:MigrateProfile()
      -- Fresh install
     if not _G.RXPCSettings then return end
 
-    local p =_G.RXPSettings.profiles or {}
+    local p =_G.RXPSettings.profiles
 
     -- Lazy copy all character profiles to account
     for profileKey, _ in pairs(_G.RXPCSettings.profileKeys or {}) do
