@@ -354,7 +354,7 @@ function addon.settings:MigrateProfile()
         -- Already migrated a character with current profile name
         if p[profileKey] and p[profileKey].migrated then
             if self.profile.debug then
-                self.PrettyPrint("Character profile (%s) already migrated", profileKey)
+                addon.comms.PrettyPrint("Character profile (%s) already migrated", profileKey)
             end
         else
             p[profileKey] = _G.RXPCSettings.profiles[profileKey]
