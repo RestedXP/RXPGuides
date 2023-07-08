@@ -27,6 +27,7 @@ Communications.lua
 Targeting.lua
 Tips.lua
 HardcoreIntroUI.lua
+DungeonMapsUI.lua
 
 DB/classic.xml
 

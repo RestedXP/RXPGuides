@@ -3020,6 +3020,15 @@ local function buildWorldMapMenu()
         tinsert(menu, {text = "", notCheckable = 1, isTitle = 1})
     end
 
+    if RXP_DungeonMapsUILoaded then
+        tinsert(menu, {
+            text = "Dungeons",
+            notCheckable = 1,
+            hasArrow = 1,
+            menuList = RXP_GetDungeonMapUIMenu(),
+        })
+    end
+
     tinsert(menu, {
         text = _G.GAMEOPTIONS_MENU .. "...",
         notCheckable = 1,
