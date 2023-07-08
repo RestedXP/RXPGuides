@@ -785,6 +785,50 @@ local dungeon_ui_config = {
 			},
 		},
 	},
+	["Razorfen Downs"] = {
+		["quests"] = {
+			[1] = {
+				["num"] = 1,
+				["title"] = "A Host of Evil",
+				["description"] = "Kill 8 " .. colorWrap("Razorfen Battleguard") .. ", 8 " .. colorWrap(
+					"Razorfen Thornweavers"
+				) .. ", and 8 " .. colorWrap("Death's Head Cultists") .. ".",
+			},
+			[2] = {
+				["num"] = 2,
+				["title"] = "Extinguishing The Idol",
+				["description"] = "Escort"
+					.. colorWrap("Belnistrasz")
+					.. " to the Quilboar's idol and protect him while he completes the ritual.",
+			},
+			[3] = {
+				["num"] = 3,
+				["title"] = "Bring the End " .. horde_logo,
+				["description"] = "Kill and loot " .. colorWrap("Amnennar the Coldbringer") .. ".",
+			},
+			[4] = {
+				["num"] = 3,
+				["title"] = "Bring the Light " .. alliance_logo,
+				["description"] = "Kill and loot " .. colorWrap("Amnennar the Coldbringer") .. ".",
+			},
+		},
+		["subdungeons"] = {
+			{
+				["name"] = "Razorfen Downs",
+				["texture"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonMaps\\rfd",
+				["quests"] = { 1, 2, 3, 4 },
+				["icons"] = {
+					{ 2, 0.78, 0.14, colorWrap("Belnistrasz") },
+					{ 2, 0.46, 0.17, colorWrap("Idol") },
+					{ 3, 0.43, 0.58, colorWrap("Amnennar the Coldbringer") },
+				},
+				["entrances"] = {
+					{ 1, 0.215, 0.17, nil },
+				},
+				["passages"] = {},
+			},
+		},
+	},
 }
 
 local function createHardcoreUIFrame(
