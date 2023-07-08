@@ -829,6 +829,128 @@ local dungeon_ui_config = {
 			},
 		},
 	},
+	["Maraudon"] = {
+		["quests"] = {
+			[1] = {
+				["num"] = 1,
+				["title"] = "The Pariah's Instructions",
+				["description"] = "Kill "
+					.. colorWrap("The Nameless Prophet")
+					.. " and 5 centaur khans leading up to and inside Maraudon dungeon. ",
+			},
+			[2] = {
+				["num"] = 2,
+				["title"] = "Shadowshard Fragments",
+				["description"] = "Collect 10 "
+					.. colorWrap("Shadowshard Fragments")
+					.. " from elementals that can be found in the instance of Maraudon, and in the cave system outside of the instance.",
+			},
+			[3] = {
+				["num"] = 3,
+				["title"] = "Twisted Evils",
+				["description"] = "Collect 25 "
+					.. colorWrap("Theradic Crystal Carvings")
+					.. " from enemies leading up to and inside  the instance.",
+			},
+			[4] = {
+				["num"] = 4,
+				["title"] = "Vyletongue Corruption",
+				["description"] = "Find the vial at the pool in front of the instance, and use it on the plants to spawn  "
+					.. colorWrap("Noxxious Scion")
+					.. " to kill and finish the quest.",
+			},
+			[5] = {
+				["num"] = 5,
+				["title"] = "Legends of Maraudon",
+				["description"] = "Kill "
+					.. colorWrap("Lord Vyletongue")
+					.. " for "
+					.. colorWrap("Celebrian Diamond")
+					.. " and "
+					.. colorWrap("Noxxion")
+					.. " for "
+					.. colorWrap("Celebrian Rod")
+					.. ".",
+			},
+			[6] = {
+				["num"] = 6,
+				["title"] = "The Scepter of Celebras",
+				["description"] = "Speak to  "
+					.. colorWrap("Celebras")
+					.. " after defeating him and finishing the ritual.",
+			},
+			[7] = {
+				["num"] = 7,
+				["title"] = "Corruption of Earth and Seed",
+				["description"] = "Kill " .. colorWrap("Princess Theradras") .. ".",
+			},
+		},
+		["subdungeons"] = {
+			{
+				["name"] = "The Wicked Grotto",
+				["texture"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonMaps\\maraudon3",
+				["quests"] = { 1, 2, 3, 4 },
+				["icons"] = {
+					{ 1, 0.25, 0.42, colorWrap("The Nameless Prophet") },
+					{ 1, 0.7, 0.23, colorWrap("Magra, the Third Khan") },
+					{ 4, 0.57, 0.66, colorWrap("Fill the vial here") },
+				},
+				["entrances"] = {
+					{ 3, 0.78, 0.6, nil },
+					{ 1, 0.2, 0.41, nil },
+				},
+				["passages"] = {
+					{ 2, 0.27, 0.355, 5.5 },
+				},
+			},
+			{
+				["name"] = "Foulspore Cavern",
+				["texture"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonMaps\\maraudon2",
+				["quests"] = { 1, 2, 3 },
+				["icons"] = {
+					{ 1, 0.42, 0.385, colorWrap("Gelk, the Second Khan") },
+					{ 1, 0.46, 0.705, colorWrap("Kolk, the First Khan") },
+				},
+				["entrances"] = {
+					{ 3, 0.57, 0.3, nil },
+				},
+				["passages"] = {
+					{ 1, 0.47, 0.85, 1.5 },
+				},
+			},
+			{
+				["name"] = "The Caverns of Maraudon",
+				["texture"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonMaps\\maraudon1",
+				["quests"] = { 1, 2, 3, 4, 5 },
+				["icons"] = {
+					{ 1, 0.35, 0.08, colorWrap("Noxxion") },
+					{ 1, 0.54, 0.195, colorWrap("Veng, the Fifth Khan") },
+					{ 1, 0.68, 0.67, colorWrap("Maraudos, the Fourth Khan") },
+					{ 5, 0.36, 0.698, colorWrap("Lord Vyletongue") },
+				},
+				["entrances"] = {
+					{ 2, 0.615, 0.26, nil },
+					{ 1, 0.76, 0.645, nil },
+				},
+				["passages"] = {
+					{ 4, 0.125, 0.565, 1.5 },
+				},
+			},
+			{
+				["name"] = "Zaetar's Cave",
+				["texture"] = "Interface\\Addons\\RXPGuides\\Textures\\DungeonMaps\\maraudon4",
+				["quests"] = { 6, 7 },
+				["icons"] = {
+					{ 6, 0.225, 0.11, colorWrap("Celebras") },
+					{ 7, 0.245, 0.77, colorWrap("Princess Theradras") },
+				},
+				["entrances"] = {},
+				["passages"] = {
+					{ 3, 0.28, 0.025, 4.5 },
+				},
+			},
+		},
+	},
 }
 
 local function createHardcoreUIFrame(
