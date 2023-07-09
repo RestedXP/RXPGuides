@@ -4447,6 +4447,7 @@ function addon.functions.dmf(self, ...)
 
     local element = self.element
     local isDmfInTown = false
+    local step = element.step
 
     local event
     local monthDay = GetCurrentCalendarTime().monthDay
@@ -4454,10 +4455,12 @@ function addon.functions.dmf(self, ...)
     -- Async relies on CALENDAR_UPDATE_EVENT_LIST
     -- Currently results in one false negative if on a DMF step at login
     -- If called during the loading process, (even at PLAYER_ENTERING_WORLD) the query will not return
-    if not addon.calendarLoaded then
-        OpenCalendar()
-        return
+    if not _G.IsAddOnLoaded('Blizzard_Calendar') then
+        _G.LoadAddOn("Blizzard_Calendar")
+        addon.calendarLoaded = true
     end
+
+    if not step.active then return end
 
     for i = 1, GetNumDayEvents(0, monthDay) do
         event = GetDayEvent(0, monthDay, i)
@@ -4467,9 +4470,9 @@ function addon.functions.dmf(self, ...)
             break
         end
     end
-
-    if element.step.active and not addon.settings.profile.debug and (not isDmfInTown) == not element.reverse and not addon.isHidden then
-        element.step.completed = true
+    --print('dmf',isDmfInTown,element.reverse)
+    if (not isDmfInTown == not element.reverse) and not addon.isHidden then
+        step.completed = true
         addon.updateSteps = true
     end
 end
