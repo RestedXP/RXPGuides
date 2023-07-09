@@ -12,7 +12,7 @@ end
 -- local horde_logo = "|TInterface\\Timer\\Horde-Logo:19:19:0:-2:64:64:4:60:4:60|t"
 local horde_logo = "|TInterface\\FriendsFrame\\PlusManz-Horde:18:18:0:-3:64:64:0:64:0:64|t"
 local alliance_logo = "|TInterface\\FriendsFrame\\PlusManz-Alliance:18:18:0:-3:64:64:0:64:0:64|t"
-local quest_logo = "|TInterface\\MINIMAP\\ObjectIconsAtlas:12:9:0:-3:512:512:374:395:170:199|t"
+local quest_logo = "|TInterface\\MINIMAP\\ObjectIconsAtlas:12:9:0:0:512:512:374:395:170:199|t"
 local debug = false
 
 local dungeon_ui_config = {
@@ -1149,7 +1149,7 @@ dungeon_overlay_frame_canvas.map_texture:AddMaskTexture(logo_mask)
 dungeon_overlay_frame_canvas.dungeon_title_text =
 	dungeon_overlay_frame_canvas:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 dungeon_overlay_frame_canvas.dungeon_title_text:SetPoint("TOPLEFT", dungeon_overlay_frame_canvas, "TOPLEFT", 50, -20)
-dungeon_overlay_frame_canvas.dungeon_title_text:SetFont("Fonts\\blei00d.TTF", 24, "OUTLINE")
+dungeon_overlay_frame_canvas.dungeon_title_text:SetFont("Fonts\\FRIZQT__.TTF", 24, "OUTLINE")
 dungeon_overlay_frame_canvas.dungeon_title_text:SetTextColor(0.855, 0.647, 0.125)
 dungeon_overlay_frame_canvas.dungeon_title_text:SetText("AAA")
 dungeon_overlay_frame_canvas.dungeon_title_text:Show()
@@ -1162,17 +1162,17 @@ dungeon_overlay_frame_canvas.objectives_num_text:SetPoint(
 	dungeon_overlay_frame_canvas,
 	"TOPRIGHT",
 	-105,
-	-100
+	-85
 )
-dungeon_overlay_frame_canvas.objectives_num_text:SetFont("Fonts\\blei00d.TTF", 14, "")
+dungeon_overlay_frame_canvas.objectives_num_text:SetFont("Fonts\\FRIZQT__.TTF", 14, "")
 dungeon_overlay_frame_canvas.objectives_num_text:SetTextColor(0.6, 0.6, 0.6)
 dungeon_overlay_frame_canvas.objectives_num_text:SetText("Objectives (0)")
 dungeon_overlay_frame_canvas.objectives_num_text:Show()
 
 -- Button Template Instantiation
 local function makeQuestLabel()
-	local height = 50
-	local width = 250
+	local height = 45
+	local width = 280
 	local _ratio = height / width
 	local frame = CreateFrame("frame", nil, dungeon_overlay_frame_canvas, "BackdropTemplate")
 	frame:SetPoint("TOP", dungeon_overlay_frame_canvas, "TOP", 10, 10)
@@ -1189,9 +1189,9 @@ local function makeQuestLabel()
 
 	frame.circle_frame_tex = frame:CreateTexture(nil, "OVERLAY")
 	frame.circle_frame_tex:SetDrawLayer("OVERLAY", 3)
-	frame.circle_frame_tex:SetHeight(frame:GetHeight())
+	frame.circle_frame_tex:SetHeight(frame:GetHeight() * 0.9)
 	frame.circle_frame_tex:SetPoint("CENTER", frame, "LEFT", 0, 0)
-	frame.circle_frame_tex:SetWidth(frame:GetHeight())
+	frame.circle_frame_tex:SetWidth(frame:GetHeight() * 0.9)
 	frame.circle_frame_tex:SetTexture("Interface\\Addons\\RXPGuides\\Textures\\Hardcore\\intro_ui.tga")
 	frame.circle_frame_tex:SetVertexColor(1, 1, 1, 1)
 	frame.circle_frame_tex:SetTexCoord(0.284, 0.284 + 0.0781, 1 - (0.348 + 0.0745), 1 - 0.348)
@@ -1200,15 +1200,15 @@ local function makeQuestLabel()
 	frame.circle_text = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 	frame.circle_text:SetDrawLayer("OVERLAY", 4)
 	frame.circle_text:SetPoint("CENTER", frame.circle_frame_tex, "CENTER")
-	frame.circle_text:SetFont("Fonts\\blei00d.TTF", 22, "OUTLINE")
-	frame.circle_text:SetTextColor(0.9, 0.9, 0.9)
+	frame.circle_text:SetFont("Fonts\\FRIZQT__.TTF", 20, "OUTLINE")
+	frame.circle_text:SetTextColor(0.8, 0.8, 0.75)
 	frame.circle_text:SetText("A")
 	frame.circle_text:Show()
 
 	frame.title_text = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 	frame.title_text:SetDrawLayer("OVERLAY", 4)
-	frame.title_text:SetPoint("TOPLEFT", frame, "TOPLEFT", 25, -2)
-	frame.title_text:SetFont("Fonts\\blei00d.TTF", 14, "OUTLINE")
+	frame.title_text:SetPoint("TOPLEFT", frame, "TOPLEFT", 25, -4)
+	frame.title_text:SetFont("Fonts\\FRIZQT__.TTF", 12, "OUTLINE")
 	frame.title_text:SetTextColor(0.9, 0.9, 0.9)
 	frame.title_text:SetJustifyH("LEFT")
 	frame.title_text:Show()
@@ -1216,10 +1216,11 @@ local function makeQuestLabel()
 	frame.description_text = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 	frame.description_text:SetDrawLayer("OVERLAY", 4)
 	frame.description_text:SetPoint("TOPLEFT", frame, "TOPLEFT", 25, -20)
-	frame.description_text:SetFont("Fonts\\blei00d.TTF", 10, "")
+	frame.description_text:SetFont("Fonts\\FRIZQT__.TTF", 10, "")
 	frame.description_text:SetWidth(width * 0.85)
 	frame.description_text:SetTextColor(0.9, 0.9, 0.9)
 	frame.description_text:SetJustifyH("LEFT")
+	frame.description_text:SetJustifyV("BOTTOM")
 	frame.description_text:Show()
 
 	local transparent_paper = frame:CreateTexture(nil, "ARTWORK")
@@ -1236,6 +1237,12 @@ local function makeQuestLabel()
 		frame.circle_text:SetText(num)
 		frame.title_text:SetText(quest_logo .. " " .. title)
 		frame.description_text:SetText(description)
+		frame.description_text:SetFont("Fonts\\FRIZQT__.TTF", 9, "")
+		frame.description_text:SetPoint("TOPLEFT", frame, "TOPLEFT", 25, -22)
+		if frame.description_text:GetStringHeight() > height * 0.5 then
+			frame.description_text:SetFont("Fonts\\FRIZQT__.TTF", 8, "")
+			frame.description_text:SetPoint("TOPLEFT", frame, "TOPLEFT", 25, -18)
+		end
 	end
 
 	return frame
@@ -1261,9 +1268,9 @@ local function makeIcon()
 	frame.circle_text = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 	frame.circle_text:SetDrawLayer("OVERLAY", 4)
 	frame.circle_text:SetPoint("CENTER", frame.circle_frame_tex, "CENTER")
-	frame.circle_text:SetFont("Fonts\\blei00d.TTF", 16, "")
+	frame.circle_text:SetFont("Fonts\\FRIZQT__.TTF", 13, "")
 	frame.circle_text:SetJustifyH("CENTER")
-	frame.circle_text:SetTextColor(0.9, 0.9, 0.9)
+	frame.circle_text:SetTextColor(0.8, 0.8, 0.75)
 	frame.circle_text:Show()
 
 	frame.setNumber = function(num)
@@ -1299,7 +1306,7 @@ for i = 1, 7 do
 	new_button.text:SetPoint("CENTER", new_button, "CENTER")
 	new_button.text:SetWidth(width - 15)
 	new_button.text:SetHeight(height)
-	new_button.text:SetFont("Fonts\\blei00d.TTF", 16, "")
+	new_button.text:SetFont("Fonts\\FRIZQT__.TTF", 12, "")
 	new_button.text:SetTextColor(0.5, 0.5, 0.5)
 	new_button.text:Show()
 
@@ -1383,7 +1390,7 @@ local function makeEntranceIconLabel()
 
 	frame.text = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 	frame.text:SetPoint("TOPLEFT", frame, "TOPLEFT", 29, -1)
-	frame.text:SetFont("Fonts\\blei00d.TTF", 14, "OUTLINE")
+	frame.text:SetFont("Fonts\\FRIZQT__.TTF", 14, "OUTLINE")
 	frame.text:SetTextColor(0.8, 0.8, 0.8)
 	frame.text:SetText("Entrance")
 	frame.text:Show()
@@ -1444,9 +1451,9 @@ local function setButtonTextAndFunction(idx, dungeon_name, text, load_map_func)
 	if button then
 		button.text:SetText(text)
 		if #text > 14 then
-			button.text:SetFont("Fonts\\blei00d.TTF", 14, "")
+			button.text:SetFont("Fonts\\FRIZQT__.TTF", 12, "")
 		else
-			button.text:SetFont("Fonts\\blei00d.TTF", 16, "")
+			button.text:SetFont("Fonts\\FRIZQT__.TTF", 12, "")
 		end
 		button:SetScript("OnMouseDown", function()
 			for i, v in ipairs(dungeon_overlay_frame_canvas.subdungeon_button) do
@@ -1498,6 +1505,10 @@ map_loader.loadMap = function(dungeon_name, subdungeon_idx)
 	end
 
 	local current_subdungeon = dungeon_ui_config[dungeon_name]["subdungeons"][subdungeon_idx]
+	local offset_y = 53
+	if #current_subdungeon.quests > 6 then
+		offset_y = 47
+	end
 	dungeon_overlay_frame_canvas.objectives_num_text:SetText("Objectives (" .. #current_subdungeon.quests .. ")")
 	for i, v in ipairs(current_subdungeon.quests) do
 		local quest_data = dungeon_ui_config[dungeon_name]["quests"][v]
@@ -1507,8 +1518,8 @@ map_loader.loadMap = function(dungeon_name, subdungeon_idx)
 			"TOPRIGHT",
 			dungeon_overlay_frame_canvas,
 			"TOPRIGHT",
-			-20,
-			-125 - (i - 1) * 60
+			-10,
+			-105 - (i - 1) * offset_y
 		)
 		dungeon_overlay_frame_canvas.quest_label[i].setData(
 			quest_data["num"],
@@ -1529,7 +1540,7 @@ map_loader.loadMap = function(dungeon_name, subdungeon_idx)
 			dungeon_overlay_frame_canvas,
 			"TOPRIGHT",
 			-175,
-			-125 - (#current_subdungeon.quests or 0) * 60
+			-105 - (#current_subdungeon.quests or 0) * offset_y
 		)
 	end
 
