@@ -1149,7 +1149,8 @@ dungeon_overlay_frame_canvas.map_texture:AddMaskTexture(logo_mask)
 dungeon_overlay_frame_canvas.dungeon_title_text =
 	dungeon_overlay_frame_canvas:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 dungeon_overlay_frame_canvas.dungeon_title_text:SetPoint("TOPLEFT", dungeon_overlay_frame_canvas, "TOPLEFT", 50, -20)
-dungeon_overlay_frame_canvas.dungeon_title_text:SetFont("Fonts\\FRIZQT__.TTF", 24, "OUTLINE")
+dungeon_overlay_frame_canvas.dungeon_title_text:SetFont("Fonts\\FRIZQT__.TTF", 22, "")
+
 dungeon_overlay_frame_canvas.dungeon_title_text:SetTextColor(0.855, 0.647, 0.125)
 dungeon_overlay_frame_canvas.dungeon_title_text:SetText("AAA")
 dungeon_overlay_frame_canvas.dungeon_title_text:Show()
