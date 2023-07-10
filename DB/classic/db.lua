@@ -24,10 +24,11 @@ addon.defaultGuideList = {
 
 if faction == "Horde" then
     addon.defaultGroup = "RestedXP Horde 1-22"
+    addon.defaultGroupHC = "RestedXP Survival Guide (H)"
 elseif faction == "Alliance" then
     addon.defaultGroup = "RestedXP Alliance 1-20"
+    addon.defaultGroupHC = "RestedXP Survival Guide (A)"
 end
-addon.defaultGroupHC = "RestedXP Survival Guide"
 
 if class == "HUNTER" then
     addon.defaultGuideList["Dun Morogh"] = "RestedXP Alliance 1-20\\1-6 Coldridge Valley (Hunter)"

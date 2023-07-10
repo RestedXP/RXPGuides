@@ -416,7 +416,7 @@ local function addHardcoreOptionButton(frame, title_text, description_text, tex_
 
 	local title = addOptionButtonTitle(title_text)
 	local description = addOptionDescription(description_text)
-    height = math.max(title:GetStringHeight() + description:GetStringHeight() + 10,50)
+    height = math.max(title:GetStringHeight() + description:GetStringHeight() + 10,30)
     hardcore_option_button_frame:SetHeight(height)
 
     local transparent_paper = hardcore_option_button_frame:CreateTexture(nil, "ARTWORK")
@@ -482,7 +482,7 @@ end
 
 local function addHardcoreDungeonOptionButton(frame, title_text, level_range, tex_id, x_off, y_off, zone, tex_coord)
 	if not RXPData.guideMetaData.enabledDungeons[addon.player.faction][title_text] then
-        --return
+        return
     end
     local height = 50
 	local width = 275
@@ -1126,8 +1126,8 @@ local function RXP_loadWelcomeAdventurerFrame(backFunctor, dungeons_enabled_func
         end
 	)
 	y_offset = y_offset + y_offset_delta - height
-
-    if next(RXPData.guideMetaData.enabledDungeons[addon.player.faction]) then
+    local dungeonlist = next(RXPData.guideMetaData.enabledDungeons[addon.player.faction])
+    if dungeonlist then
         addHardcoreOptionButton(
             frame,
             "Enable Dungeons",
@@ -1141,6 +1141,7 @@ local function RXP_loadWelcomeAdventurerFrame(backFunctor, dungeons_enabled_func
     else
         dungeons_enabled = false
     end
+    --print('dungeonenabled',dungeons_enabled,dungeonlist)
 	return frame
 end
 
