@@ -812,13 +812,17 @@ function addon:PLAYER_ENTERING_WORLD(_, isInitialLogin)
                          not (addon.RXPFrame and addon.RXPFrame:IsShown())
 
     if isInitialLogin then
-        C_Timer.After(5, function()
+        C_Timer.After(3.5, function()
             addon.settings:DetectXPRate()
             addon.settings:CheckAddonCompatibility()
-            --if UnitLevel("player") < 2 then startHardcoreIntroUI(RXPCData) end
+            if addon.RXPFrame:IsShown() and WOW_PROJECT_ID == WOW_PROJECT_CLASSIC and UnitLevel("player") < 2 and UnitXP('player') == 0 then
+                addon.startHardcoreIntroUI()
+            end
         end)
-    --else
-        --if UnitLevel("player") < 2 then startHardcoreIntroUI(RXPCData) end
+    --[[else
+        if addon.RXPFrame:IsShown() and WOW_PROJECT_ID == WOW_PROJECT_CLASSIC and UnitLevel("player") < 2 and UnitXP('player') == 0 then
+            addon.startHardcoreIntroUI()
+        end]]
     end
 end
 --addon:LoadGuideTable(addon.defaultGroupHC, addon.defaultGuideHC)

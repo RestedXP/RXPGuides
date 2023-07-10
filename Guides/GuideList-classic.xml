@@ -13,4 +13,19 @@
     <Script file="Guides/Classic-Horde-12-22_Barrens.lua"/>
     <Script file="Guides/Classic-Horde-Mage-12-21.lua"/>
 
+	<Script file="Guides/SurvivalGuide/A-Classic-Alliance-1-10_NightElf.lua"/>
+	<Script file="Guides/SurvivalGuide/A-Classic-Alliance-1-13_Human.lua"/>
+	<Script file="Guides/SurvivalGuide/A-Classic-Alliance-1-14_DwarfGnome.lua"/>
+	<Script file="Guides/SurvivalGuide/A-Classic-Alliance-11-16_NightElf.lua"/>
+	<Script file="Guides/SurvivalGuide/A-Classic-Alliance-11-20.lua"/>
+	<Script file="Guides/SurvivalGuide/A-Hardcore-18-19 Loch Modan.lua"/>
+	<Script file="Guides/SurvivalGuide/A-Hardcore-19-20 Redridge.lua"/>
+
+	<Script file="Guides/SurvivalGuide/H-Classic-Horde-01-13_Durotar.lua"/>
+	<Script file="Guides/SurvivalGuide/H-Classic-Horde-01-13_Undead.lua"/>
+	<Script file="Guides/SurvivalGuide/H-Classic-Horde-1-13_Mulgore.lua"/>
+	<Script file="Guides/SurvivalGuide/H-Classic-Horde-13-15_Silverpine.lua"/>
+	<Script file="Guides/SurvivalGuide/H-Classic-Horde-15-23_Barrens.lua"/>
+
+
 </Ui>

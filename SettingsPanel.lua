@@ -1889,7 +1889,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 4.0,
                         hidden = function()
                             return
-                                not addon.settings.profile.enableBetaFeatures or
+                                --not addon.settings.profile.enableBetaFeatures or
                                     not addon.dangerousMobs
                         end
                     },
@@ -1910,7 +1910,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = function()
                             return
-                                not addon.settings.profile.enableBetaFeatures or
+                                --not addon.settings.profile.enableBetaFeatures or
                                     not addon.dangerousMobs
                         end
                     },
@@ -1931,7 +1931,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = function()
                             return
-                                not addon.settings.profile.enableBetaFeatures or
+                                --not addon.settings.profile.enableBetaFeatures or
                                     not addon.dangerousMobs
                         end
                     }
