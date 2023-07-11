@@ -103,7 +103,7 @@ step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .turnin 6365 >>Turn in Meats to Orgrimmar
 .target Devrak
     .accept 6384 >>Accept Ride to Orgrimmar << !Rogue
-step << !Shaman
+step << !Warrior !Shaman
 	#era/som
     .goto The Barrens,51.5,30.1
 .target Apothecary Helbrim
@@ -111,7 +111,7 @@ step << !Shaman
     .accept 848 >>Accept Fungal Spores
     .accept 1492 >>Accept Wharfmaster Dizzywig
 	.turnin 1358 >> Turn in Sample for Helbrim << Undead/Rogue
-step << !Shaman
+step << !Warrior !Shaman
 	#som
 	#phase 3-6
     .goto The Barrens,51.5,30.1
@@ -1320,13 +1320,18 @@ step
 >>Talk to |cFF00FF25Jorn Skyseer|r
     .turnin 883 >>Turn in Lakota'mani
     .isOnQuest 883
-step
+step << !Hunter
 	.goto The Barrens,44.8,59.1
 >>Talk to |cFF00FF25Jorn Skyseer|r
     .turnin 882 >>Turn in Ishamuhale
 .target Jorn Skyseer
     .accept 907 >>Accept Enraged Thunder Lizards
-    .accept 1130 >>Accept Melor Sends Word
+step << Hunter
+    .goto The Barrens,44.8,59.1
+    >>Talk to |cFF00FF25Jorn Skyseer|r
+    .turnin 882 >>Turn in Ishamuhale
+.target Jorn Skyseer
+    .accept 907 >>Accept Enraged Thunder Lizards
     .accept 6382 >>Accept The Ashenvale Hunt
 step
     #sticky
@@ -1412,7 +1417,6 @@ step << Rogue
 step << skip
     .goto Thunder Bluff,61.538,80.919
 >>Talk to |cFF00FF25Melor Stonehoof|r
-    .turnin 1130 >>Turn in Melor Sends Word
 .target Melor Stonehoof
     .accept 1131 >>Accept Steelsnap
 step << Hunter
@@ -1782,7 +1786,7 @@ step
 .target Korran
 >>Talk to |cFF00FF25Korran|r
     .accept 868 >> Accept Egg Hunt
-step
+step << Hunter
     .goto The Barrens,51.50,30.87
 .target Thork
 >>Talk to |cFF00FF25Thork|r

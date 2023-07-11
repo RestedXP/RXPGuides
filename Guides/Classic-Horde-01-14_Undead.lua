@@ -30,7 +30,7 @@ step << Warrior/Warlock/Priest/Mage
     #completewith Vendor
     .goto Tirisfal Glades,30.70,69.28,0 << Warrior/Warlock
     .goto Tirisfal Glades,29.92,70.30,40,0
-    .goto Tirisfal Glades,30.70,69.28,40,0 
+    .goto Tirisfal Glades,30.70,69.28,40,0
     .goto Tirisfal Glades,29.18,68.94,40,0 << Priest/Mage
     .goto Tirisfal Glades,29.10,67.66,40,0 << Priest/Mage
     .goto Tirisfal Glades,30.19,65.32,40,0 << Priest/Mage
@@ -47,8 +47,8 @@ step << Priest/Mage
     #label Vendor
     .goto Tirisfal Glades,32.29,65.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Joshua|r
-    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from him|r 
-    .vendor >> Vendor Trash 
+    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from him|r
+    .vendor >> Vendor Trash
 	.collect 159,10,383,1 --Collect Refreshing Spring Water (10)
     .target Joshua Kien
 step << Warlock/Mage
@@ -61,7 +61,7 @@ step << Warlock/Mage
     .turnin 363 >> Turn in Rude Awakening
     .accept 364 >> Accept The Mindless Ones
     .goto Tirisfal Glades,30.84,66.20,0,0
-    .target Venya Marthand << tbc
+    .target Venya Marthand
     .target Shadow Priest Sarvis
 step << Warlock/Mage
     .goto Tirisfal Glades,31.35,66.21,10,0
@@ -130,21 +130,21 @@ step << Warlock
     .mob Mindless Zombie
     .mob Wretched Zombie
     .money >0.0025
-step << Warlock tbc
+step << Warlock
     .goto Tirisfal Glades,32.23,65.59,8,0
     .goto Tirisfal Glades,32.29,65.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Joshua|r
-    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from him|r 
+    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from him|r
 	.collect 159,5,383,1 --Collect Refreshing Spring Water (5)
     .target Joshua Kien
     .isOnQuest 1470
-step << Warlock tbc
+step << Warlock
     .goto Tirisfal Glades,31.35,66.21,10,0
     .goto Tirisfal Glades,30.98,66.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Venya|r
     .turnin 1470 >>Turn in Piercing the Veil
     .target Venya Marthand
-step << Warlock tbc
+step << Warlock
     #completewith next
     .cast 688 >>|cFFFCDC00Cast|r |T136218:0|t[Summon Imp]
 step
@@ -167,7 +167,7 @@ step << Mage/Warlock/Priest
     .goto Tirisfal Glades,32.23,65.59,8,0
     .goto Tirisfal Glades,32.29,65.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Joshua|r
-    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from him|r 
+    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from him|r
     .collect 159,10,383,1 --Collect Refreshing Spring Water (10)
     .vendor >> Vendor Trash
     .target Joshua Kien
@@ -179,7 +179,7 @@ step << Mage/Warlock/Priest
     .goto Tirisfal Glades,32.23,65.59,8,0
     .goto Tirisfal Glades,32.29,65.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Joshua|r
-    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from him|r 
+    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from him|r
     .collect 159,5,383,1 --Collect Refreshing Spring Water (5)
     .vendor >> Vendor Trash
     .target Joshua Kien
@@ -217,7 +217,7 @@ step << Mage/Warlock/Priest
     .goto Tirisfal Glades,32.23,65.59,8,0
     .goto Tirisfal Glades,32.29,65.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Joshua|r
-    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from him|r 
+    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from him|r
     .collect 159,10,383,1 --Collect Refreshing Spring Water (10)
     .target Joshua Kien
     .isOnQuest 364
@@ -242,7 +242,7 @@ step
     .goto Tirisfal Glades,32.07,57.74,40,0
     .goto Tirisfal Glades,32.85,58.35,40,0
     .goto Tirisfal Glades,34.32,56.79
-    >>Kill |cFFFF5722Young Scavengers|r and |cFFFF5722Ragged Scavengers|r. Loot them for their |cFF00BCD4Scavenger Paws|r 
+    >>Kill |cFFFF5722Young Scavengers|r and |cFFFF5722Ragged Scavengers|r. Loot them for their |cFF00BCD4Scavenger Paws|r
     >>Kill |cFFFF5722Duskbats|r and |cFFFF5722Mangy Duskbats|r. Loot them for their |cFF00BCD4Duskbat Wings|r
     >>|cFFFCDC00Try to avoid |cFFFF5722Mangy Duskbats|r if you can due to them being much tougher to kill than |cFFFF5722Duskbats|r|r
     .complete 376,1 --Collect Scavenger Paw (x6)
@@ -452,9 +452,9 @@ step << Rogue/Warrior
 step << Warlock/Mage/Priest
     .goto Tirisfal Glades,32.29,65.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Joshua|r
-    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from him|r 
+    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from him|r
 	.collect 159,15,383,1 << Warlock/Mage/Priest --Collect Refreshing Spring Water (15)
-    .vendor >> Vendor Trash 
+    .vendor >> Vendor Trash
     .target Joshua Kien
     .isOnQuest 6395
     .itemcount 159,<15
@@ -479,7 +479,7 @@ step
     .target Spirit Healer
 step
     .goto Tirisfal Glades,31.17,65.08
-	>>Click |cFFDB2EEFMarla's Grave|r on the ground 
+	>>Click |cFFDB2EEFMarla's Grave|r on the ground
     .complete 6395,1 --Collect Samuel's Remains Buried (1)
  step << Warlock
     #softcore
@@ -502,7 +502,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Arren|r
     .turnin 381 >> Turn in The Scarlet Crusade
     .accept 382 >> Accept The Red Messenger
-    .target Executor Arren 
+    .target Executor Arren
 step
     .goto Tirisfal Glades,32.42,65.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Archibald|r
@@ -1387,7 +1387,7 @@ step << Rogue
 >>Talk to |cFF00FF25Mennet Carkad|r
     .turnin 1886 >> Turn in The Deathstalkers
     .isQuestComplete 1886
-step
+step << Rogue
     .goto Undercity,83.52,69.10
 .target Mennet Carkad
 >>Talk to |cFF00FF25Mennet Carkad|r
