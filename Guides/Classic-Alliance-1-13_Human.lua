@@ -1892,7 +1892,7 @@ step << Paladin
 .target Stephanie Turner
     .accept 1644 >> Accept The Tome of Divinity
     .turnin 1644 >> Turn in The Tome of Divinity
-    .accept 1780 >> Accept The Tome of Divinity
+    --.accept 1780 >> Accept The Tome of Divinity
 step
     .goto StormwindClassic,66.28,62.13
 >>Talk to |cFF00FF25Dungar Longdrink|r
