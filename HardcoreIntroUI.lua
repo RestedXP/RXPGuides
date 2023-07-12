@@ -4,6 +4,7 @@ local default_x = 420
 local default_y = -60
 
 local intro_animations = true
+addon.introUI = {}
 
 ----------- Settings
 -- Note: upon finishing the splash screen setup, RXPCData will be updated
@@ -1536,5 +1537,19 @@ function addon.startHardcoreIntroUI(saved_var_settings)
 	welcome_adventurer_frame:Hide()
 	dungeon_configuration_frame:Hide()
 	dungeon_selection_frame:Hide()
+
+    addon.introUI.dungeon_configuration_frame = dungeon_configuration_frame
+    addon.introUI.dungeon_selection_frame = dungeon_selection_frame
+    addon.introUI.welcome_adventurer_frame = welcome_adventurer_frame
+    addon.introUI.ultimate_hardcore_survival_guide_frame = ultimate_hardcore_survival_guide_frame
+    addon.introUI.dungeon_selection_frame = dungeon_selection_frame
+    addon.introUI.speedrun_guide_selector = speedrun_guide_selector
+
     return saved_var_settings
+end
+
+function addon.HideIntroUI()
+    for _,frame in pairs(addon.introUI) do
+        frame:Hide()
+    end
 end
