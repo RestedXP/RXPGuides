@@ -2420,6 +2420,13 @@ function addon.functions.reputation(self, ...)
     local step = element.step
     local _, _, standing, bottomValue, topValue, earnedValue =
         GetFactionInfoByID(element.faction)
+
+    local replength = topValue - bottomValue
+    if earnedValue < 0 then
+        earnedValue = replength + earnedValue
+    end
+    --print('r:',standing,bottomValue,topValue,earnedValue,topValue-bottomValue)
+
     if ((element.repValue < 0 and (standing >= element.standing or
         (standing == element.standing - 1 and earnedValue >= topValue +
             element.repValue))) or
@@ -2429,7 +2436,7 @@ function addon.functions.reputation(self, ...)
         (element.repValue >= 0 and element.repValue < 1 and
             ((standing > element.standing) or
                 (element.standing == standing and earnedValue >=
-                    (topValue - bottomValue) * element.repValue)))) ==
+                    replength * element.repValue)))) ==
         element.operator then
         if not element.skipStep then
             addon.SetElementComplete(self, true)
