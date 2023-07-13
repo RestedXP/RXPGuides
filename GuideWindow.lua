@@ -1383,7 +1383,7 @@ function addon:LoadGuide(guide, OnLoad)
 
     if not guide.steps then
         return addon:LoadGuide(addon.emptyGuide)
-    elseif addon.HideIntroUI then
+    elseif addon.HideIntroUI and not guide.empty then
         addon.HideIntroUI()
     end
 

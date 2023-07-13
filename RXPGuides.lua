@@ -816,7 +816,8 @@ function addon:PLAYER_ENTERING_WORLD(_, isInitialLogin)
             addon.settings:DetectXPRate()
             addon.settings:CheckAddonCompatibility()
         end)
-    elseif addon.RXPFrame:IsShown() and WOW_PROJECT_ID == WOW_PROJECT_CLASSIC and
+    end
+    if addon.RXPFrame:IsShown() and WOW_PROJECT_ID == WOW_PROJECT_CLASSIC and
                 UnitLevel("player") == 1 and
                 (not addon.currentGuide or addon.currentGuide.empty) then
         addon.startHardcoreIntroUI()
