@@ -757,6 +757,7 @@ local function RXP_loadUltimateHardcoreSurvivalGuideFrame(survival_guide_functor
 		ntex:SetTexCoord(0, 0.625, 0, 0.6875)
 		ntex:SetAllPoints()
 		button:SetNormalTexture(ntex)
+        button:EnableMouse(false)
 		return button
 	end
 
