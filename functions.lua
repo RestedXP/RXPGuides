@@ -2420,12 +2420,14 @@ function addon.functions.reputation(self, ...)
     local step = element.step
     local _, _, standing, bottomValue, topValue, earnedValue =
         GetFactionInfoByID(element.faction)
-
+    local relativeValue = earnedValue
     local replength = topValue - bottomValue
-    if earnedValue < 0 then
-        earnedValue = replength + earnedValue
+    if relativeValue < 0 then
+        relativeValue = replength + earnedValue
+    else
+        relativeValue = earnedValue - replength
     end
-    --print('r:',standing,bottomValue,topValue,earnedValue,topValue-bottomValue)
+    --print('r:',standing,bottomValue,topValue,earnedValue,topValue-bottomValue,relativeValue)
 
     if ((element.repValue < 0 and (standing >= element.standing or
         (standing == element.standing - 1 and earnedValue >= topValue +
@@ -2435,7 +2437,7 @@ function addon.functions.reputation(self, ...)
                 element.repValue))) or
         (element.repValue >= 0 and element.repValue < 1 and
             ((standing > element.standing) or
-                (element.standing == standing and earnedValue >=
+                (element.standing == standing and relativeValue >=
                     replength * element.repValue)))) ==
         element.operator then
         if not element.skipStep then
