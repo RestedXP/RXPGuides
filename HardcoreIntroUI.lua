@@ -752,11 +752,11 @@ local function RXP_loadUltimateHardcoreSurvivalGuideFrame(survival_guide_functor
 		font_string:SetText("NEW FEATURE")
 		button:SetFontString(font_string)
 
-		local ntex = button:CreateTexture()
+		--[[local ntex = button:CreateTexture()
 		ntex:SetTexture("Interface/Buttons/UI-Panel-Button-Up")
 		ntex:SetTexCoord(0, 0.625, 0, 0.6875)
 		ntex:SetAllPoints()
-		button:SetNormalTexture(ntex)
+		button:SetNormalTexture(ntex)]]
         button:EnableMouse(false)
 		return button
 	end
@@ -767,7 +767,7 @@ local function RXP_loadUltimateHardcoreSurvivalGuideFrame(survival_guide_functor
 
 	local function addDescriptionFont()
 		createDescriptionFont(
-			"Check out the new Ultimate Hardcore Surivival Guide,\nspecifically crafted to guide your character as safe as\n possible to max level. |cff228B22Including new features.|r",
+			L"Check out the new Ultimate Hardcore Surivival Guide,\nspecifically crafted to level your character as safe as\n possible. |cff228B22Including new features.|r",
 			frame,
 			0,
 			-70

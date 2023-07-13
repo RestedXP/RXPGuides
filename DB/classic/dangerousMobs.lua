@@ -1,8 +1,8 @@
 local _, addon = ...
 
 local dangerousMobs = {
-  ['Alliance'] = {
-    ['Elwynn Forest'] = {
+  ["Alliance"] = {
+    ["Elwynn Forest"] = {
       ["Murloc Forager"] = {
         {
         MinLevel = 8,
@@ -96,7 +96,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Dun Morogh'] = {
+    ["Dun Morogh"] = {
       ["Vagash"] = {
         {
         MinLevel = 11,
@@ -128,7 +128,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Teldrassil'] = {
+    ["Teldrassil"] = {
       ["Lord Melenas"] = {
         {
         MinLevel = 8,
@@ -160,7 +160,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Westfall'] = {
+    ["Westfall"] = {
       ["Malformed Defias Drone"] = {
         {
         MinLevel = 20,
@@ -268,7 +268,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Loch Modan'] = {
+    ["Loch Modan"] = {
       ["Tunnel Rat Geomancer"] = {
         {
         MinLevel = 12,
@@ -300,7 +300,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Darkshore'] = {
+    ["Darkshore"] = {
       ["The Threshwackonator 4100"] = {
         {
         MinLevel = 20,
@@ -382,7 +382,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Redridge Mountains'] = {
+    ["Redridge Mountains"] = {
       ["Blackrock Outrunner"] = {
         {
         MinLevel = 20,
@@ -464,7 +464,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Ashenvale'] = {
+    ["Ashenvale"] = {
       ["Ruuzel"] = {
         {
         MinLevel = 22,
@@ -506,7 +506,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Duskwood'] = {
+    ["Duskwood"] = {
       ["Stitches"] = {
         {
         MinLevel = 35,
@@ -538,7 +538,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Stonetalon Mountains'] = {
+    ["Stonetalon Mountains"] = {
       ["Taskmaster Whipfang "] = {
         {
         MinLevel = 22,
@@ -570,7 +570,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Wetlands'] = {
+    ["Wetlands"] = {
       ["Dragonmaw Raider"] = {
         {
         MinLevel = 26,
@@ -602,7 +602,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Hillsbrad Foothills'] = {
+    ["Hillsbrad Foothills"] = {
       ["Tarren Mill Deathguard"] = {
         {
         MinLevel = 55,
@@ -644,7 +644,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Alterac Mountains'] = {
+    ["Alterac Mountains"] = {
       ["Crushridge Mauler"] = {
         {
         MinLevel = 36,
@@ -716,7 +716,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Desolace'] = {
+    ["Desolace"] = {
       ["Deepstrider Giant"] = {
         {
         MinLevel = 38,
@@ -736,7 +736,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Stranglethorn Vale'] = {
+    ["Stranglethorn Vale"] = {
       ["Bhag'thera"] = {
         {
         MinLevel = 40,
@@ -918,7 +918,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Thousand Needles'] = {
+    ["Thousand Needles"] = {
       ["Heartrazor"] = {
         {
         MinLevel = 32,
@@ -1000,7 +1000,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Arathi Highlands'] = {
+    ["Arathi Highlands"] = {
       ["Highland Thrasher"] = {
         {
         MinLevel = 33,
@@ -1072,7 +1072,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Badlands'] = {
+    ["Badlands"] = {
       ["Siege Golem"] = {
         {
         MinLevel = 40,
@@ -1114,7 +1114,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Dustwallow Marsh'] = {
+    ["Dustwallow Marsh"] = {
       ["Brimgore"] = {
         {
         MinLevel = 45,
@@ -1136,7 +1136,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['The Hinterlands'] = {
+    ["The Hinterlands"] = {
       ["Vilebranch Scalper"] = {
         {
         MinLevel = 46,
@@ -1188,7 +1188,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Searing Gorge'] = {
+    ["Searing Gorge"] = {
       ["Dark Iron Sentry"] = {
         {
         MinLevel = 48,
@@ -1250,7 +1250,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Tanaris'] = {
+    ["Tanaris"] = {
       ["Wastewander Assassin"] = {
         {
         MinLevel = 44,
@@ -1312,7 +1312,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Feralas'] = {
+    ["Feralas"] = {
       ["Edana Hatetalon"] = {
         {
         MinLevel = 50,
@@ -1364,7 +1364,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Swamp of Sorrows'] = {
+    ["Swamp of Sorrows"] = {
       ["Lord Captain Wyrmak"] = {
         {
         MinLevel = 45,
@@ -1396,7 +1396,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Burning Steppes'] = {
+    ["Burning Steppes"] = {
       ["Frenzied Black Drake"] = {
         {
         MinLevel = 54,
@@ -1504,7 +1504,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Blasted Lands'] = {
+    ["Blasted Lands"] = {
       ["Teremus the Devourer"] = {
         {
         MinLevel = 60,
@@ -1536,7 +1536,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Un’Goro Crater'] = {
+    ["Un'Goro Crater"] = {
       ["Blazerunner"] = {
         {
         MinLevel = 56,
@@ -1672,7 +1672,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Tirisfal Glades'] = {
+    ["Tirisfal Glades"] = {
       ["Unseen"] = {
         {
         MinLevel = 49,
@@ -1692,7 +1692,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Undercity'] = {
+    ["Undercity"] = {
       ["Unseen"] = {
         {
         MinLevel = 49,
@@ -1712,7 +1712,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Felwood'] = {
+    ["Felwood"] = {
       ["Spirit of Trey Lightforge"] = {
         {
         MinLevel = 53,
@@ -1814,7 +1814,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Azshara'] = {
+    ["Azshara"] = {
       ["Thundering Invader"] = {
         {
         MinLevel = 55,
@@ -1916,7 +1916,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Winterspring'] = {
+    ["Winterspring"] = {
       ["Berserk Owlbeast"] = {
         {
         MinLevel = 58,
@@ -2058,7 +2058,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Silithus'] = {
+    ["Silithus"] = {
       ["Krellack"] = {
         {
         MinLevel = 56,
@@ -2190,7 +2190,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Western Plaguelands'] = {
+    ["Western Plaguelands"] = {
       ["Foulmane"] = {
         {
         MinLevel = 52,
@@ -2492,7 +2492,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Eastern Plaguelands'] = {
+    ["Eastern Plaguelands"] = {
       ["Zaeldarr the Outcast"] = {
         {
         MinLevel = 55,
@@ -2659,8 +2659,8 @@ local dangerousMobs = {
       },
     },
   },
-  ['Horde'] = {
-    ['Alterac Mountains'] = {
+  ["Horde"] = {
+    ["Alterac Mountains"] = {
       ["Warden Belamoore"] = {
         {
         MinLevel = 36,
@@ -2752,7 +2752,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Arathi Highlands'] = {
+    ["Arathi Highlands"] = {
       ["Lieutenant Valorcall"] = {
         {
         MinLevel = 38,
@@ -2844,7 +2844,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Ashenvale'] = {
+    ["Ashenvale"] = {
       ["Vorsha the Lasher"] = {
         {
         MinLevel = 22,
@@ -2886,7 +2886,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Azshara'] = {
+    ["Azshara"] = {
       ["Thundering Invader"] = {
         {
         MinLevel = 55,
@@ -2988,7 +2988,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Badlands'] = {
+    ["Badlands"] = {
       ["Siege Golem"] = {
         {
         MinLevel = 40,
@@ -3030,7 +3030,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Blasted Lands'] = {
+    ["Blasted Lands"] = {
       ["Teremus the Devourer"] = {
         {
         MinLevel = 60,
@@ -3062,7 +3062,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Burning Steppes'] = {
+    ["Burning Steppes"] = {
       ["Frenzied Black Drake"] = {
         {
         MinLevel = 54,
@@ -3170,7 +3170,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Desolace'] = {
+    ["Desolace"] = {
       ["Khan Hratha"] = {
         {
         MinLevel = 42,
@@ -3210,7 +3210,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Durotar'] = {
+    ["Durotar"] = {
       ["Warlord Kolkanis"] = {
         {
         MinLevel = 9,
@@ -3302,7 +3302,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Dustwallow Marsh'] = {
+    ["Dustwallow Marsh"] = {
       ["Brimgore"] = {
         {
         MinLevel = 45,
@@ -3324,7 +3324,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Eastern Plaguelands'] = {
+    ["Eastern Plaguelands"] = {
       ["Zaeldarr the Outcast"] = {
         {
         MinLevel = 55,
@@ -3490,7 +3490,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Felwood'] = {
+    ["Felwood"] = {
       ["Spirit of Trey Lightforge"] = {
         {
         MinLevel = 53,
@@ -3592,7 +3592,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Feralas'] = {
+    ["Feralas"] = {
       ["Edana Hatetalon"] = {
         {
         MinLevel = 50,
@@ -3624,7 +3624,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Hillsbrad Foothills'] = {
+    ["Hillsbrad Foothills"] = {
       ["Blacksmith Verringtan"] = {
         {
         MinLevel = 26,
@@ -3656,7 +3656,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['The Hinterlands'] = {
+    ["The Hinterlands"] = {
       ["Gammerita"] = {
         {
         MinLevel = 48,
@@ -3718,7 +3718,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Mulgore'] = {
+    ["Mulgore"] = {
       ["Sister Hatelash"] = {
         {
         MinLevel = 11,
@@ -3786,7 +3786,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Searing Gorge'] = {
+    ["Searing Gorge"] = {
       ["Dark Iron Sentry"] = {
         {
         MinLevel = 48,
@@ -3848,7 +3848,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Silithus'] = {
+    ["Silithus"] = {
       ["Krellack"] = {
         {
         MinLevel = 56,
@@ -3980,7 +3980,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Silverpine Forest'] = {
+    ["Silverpine Forest"] = {
       ["Nightlash"] = {
         {
         MinLevel = 14,
@@ -4078,7 +4078,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Stonetalon Mountains'] = {
+    ["Stonetalon Mountains"] = {
       ["Besseleth "] = {
         {
         MinLevel = 21,
@@ -4170,7 +4170,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Stranglethorn Vale'] = {
+    ["Stranglethorn Vale"] = {
       ["Bhag'thera"] = {
         {
         MinLevel = 40,
@@ -4352,7 +4352,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Swamp of Sorrows'] = {
+    ["Swamp of Sorrows"] = {
       ["Lord Captain Wyrmak"] = {
         {
         MinLevel = 45,
@@ -4384,7 +4384,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Tanaris'] = {
+    ["Tanaris"] = {
       ["Wastewander Assassin"] = {
         {
         MinLevel = 44,
@@ -4446,7 +4446,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['The Barrens'] = {
+    ["The Barrens"] = {
       ["Dishu"] = {
         {
         MinLevel = 13,
@@ -4698,7 +4698,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['The Barrens (Stagnant Oasis)'] = {
+    ["The Barrens (Stagnant Oasis)"] = {
       ["Kolkar Pack Runner"] = {
         {
         MinLevel = 14,
@@ -4766,7 +4766,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Thousand Needles'] = {
+    ["Thousand Needles"] = {
       ["Arikara"] = {
         {
         MinLevel = 28,
@@ -4908,7 +4908,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Tirisfal Glades'] = {
+    ["Tirisfal Glades"] = {
       ["Unseen"] = {
         {
         MinLevel = 49,
@@ -4930,7 +4930,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Undercity'] = {
+    ["Undercity"] = {
       ["Unseen"] = {
         {
         MinLevel = 49,
@@ -4942,7 +4942,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Un’Goro Crater'] = {
+    ["Un'Goro Crater"] = {
       ["Blazerunner"] = {
         {
         MinLevel = 56,
@@ -5078,7 +5078,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Western Plaguelands'] = {
+    ["Western Plaguelands"] = {
       ["Foulmane"] = {
         {
         MinLevel = 52,
@@ -5380,7 +5380,7 @@ local dangerousMobs = {
         },
       },
     },
-    ['Winterspring'] = {
+    ["Winterspring"] = {
       ["Berserk Owlbeast"] = {
         {
         MinLevel = 58,
