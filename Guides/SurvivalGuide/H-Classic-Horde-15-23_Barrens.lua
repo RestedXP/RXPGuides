@@ -314,6 +314,10 @@ step << !Tauren !Undead
     .target Zargh
     .isOnQuest 6386
 step
+    #sticky
+    .subzone 213 >> Now you should be looking for a group to Ragefire Chasm
+    .dungeon RFC
+step
     .goto The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
     .home >> Set your Hearthstone to Crossroads
@@ -3029,13 +3033,14 @@ step << !Warlock
     .zoneskip The Barrens
     .dungeon WC
 step
+    #sticky
     .goto The Barrens,45.40,53.96,80,0
     .goto The Barrens,44.79,51.77,80,0
     .goto The Barrens,43.25,47.98,80,0
     .goto The Barrens,40.92,45.16,80,0
     .goto The Barrens,45.40,53.96
     .subzone 718 >> Now you should be looking for a group to Wailing Caverns
-    >>Grind Quilboars while assembling a Wailing Caverns group
+    >>Grind |cFFFF5722Quilboars|r while assembling a Wailing Caverns group
     .dungeon WC
 step
     .goto The Barrens,46.15,36.93,100 >> Travel to Wailing Caverns
