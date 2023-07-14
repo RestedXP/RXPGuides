@@ -434,7 +434,7 @@ function Frame:CreateMapPin(container, data)
 
     pinFrame.__data = data
     pinFrame.texture = pinTexture
-    pinFrame:SetHighlightTexture(ICON_PATH, true)
+    pinFrame:SetHighlightTexture(ICON_PATH, "ADD")
     pinFrame:Hide()
 
     return pinFrame
