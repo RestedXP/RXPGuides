@@ -516,14 +516,16 @@ function addon.targeting.CheckTargetProximity()
         end
     end
 
-    proxmityPolling.last = GetTime()
+    local now = GetTime()
+    proxmityPolling.last = now
 
     -- Unset match if >5s without a ADDON_ACTION_FORBIDDEN
-    if proxmityPolling.match and GetTime() - proxmityPolling.lastMatch >
+    -- No hits, reset everything
+    if proxmityPolling.match and now - proxmityPolling.lastMatch >
         proxmityPolling.matchTimeout then
 
         if addon.settings.profile.debug then
-            addon.comms.PrettyPrint("Match expired, hiding")
+            addon.comms.PrettyPrint("All match expired, resetting targets")
         end
 
         proxmityPolling.match = false
@@ -533,7 +535,19 @@ function addon.targeting.CheckTargetProximity()
             addon.targeting.activeTargetFrame:Hide()
         end
 
-        if IsInGroup() and not UnitIsGroupLeader('player') then return end
+        addon.comms.PrettyPrint("All matches expired")
+        -- Full reset, so don't handle per-mob checks below
+        return
+    end
+
+    for name, data in pairs(proxmityPolling.scannedTargets) do
+        if now - data.lastMatch > proxmityPolling.matchTimeout then
+            if addon.settings.profile.debug then
+                addon.comms.PrettyPrint("Individual match expired", name)
+            end
+
+            proxmityPolling.scannedTargets[name] = nil
+        end
     end
 end
 
@@ -560,14 +574,19 @@ _G.StaticPopup2:HookScript("OnHide", TextBoxHook)
 function addon.targeting:ADDON_ACTION_FORBIDDEN(_, forbiddenAddon, func)
     if func ~= "TargetUnit()" or forbiddenAddon ~= addonName then return end
 
+    -- Unexpected call from (mistakenly) RXP
     if not proxmityPolling.scanData or not proxmityPolling.scanData.name then
         return
     end
 
     local scannedName = proxmityPolling.scanData.name
+    local now = GetTime()
 
-    proxmityPolling.scannedTargets[scannedName] = proxmityPolling.scanData.kind
-    proxmityPolling.lastMatch = GetTime()
+    proxmityPolling.scannedTargets[scannedName] = {
+        kind = proxmityPolling.scanData.kind,
+        lastMatch = now
+    }
+    proxmityPolling.lastMatch = now
     self:UpdateTargetFrame()
 
     if proxmityPolling.scanData.kind == 'rare' and
@@ -619,8 +638,8 @@ function addon.targeting:UpdateTargetList(targets, addEntries)
     proxmityPolling.match = false
     proxmityPolling.lastMatch = 0
     if addon.settings.profile.showTargetingOnProximity then
-        for name, kind in pairs(proxmityPolling.scannedTargets) do
-            if kind == 'friendly' then
+        for name, data in pairs(proxmityPolling.scannedTargets) do
+            if data.kind == 'friendly' then
                 proxmityPolling.scannedTargets[name] = nil
             end
         end
@@ -675,8 +694,8 @@ function addon.targeting:UpdateEnemyList(unitscan, mobs, addEntries)
     proxmityPolling.match = false
     proxmityPolling.lastMatch = 0
     if addon.settings.profile.showTargetingOnProximity then
-        for name, kind in pairs(proxmityPolling.scannedTargets) do
-            if kind == 'unitscan' or kind == 'mob' then
+        for name, data in pairs(proxmityPolling.scannedTargets) do
+            if data.kind == 'unitscan' or data.kind == 'mob' then
                 proxmityPolling.scannedTargets[name] = nil
             end
         end
@@ -898,10 +917,10 @@ function addon.targeting:UpdateTargetFrame(selector, OnUpdate)
     end
 
     if addon.settings.profile.showTargetingOnProximity then
-        for name, targetKind in pairs(proxmityPolling.scannedTargets) do
-            if targetKind ~= 'friendly' then
+        for name, data in pairs(proxmityPolling.scannedTargets) do
+            if data.kind ~= 'friendly' then
                 -- enemies row contains, unitscan, mob, and rare
-                enemiesList[name] = targetKind
+                enemiesList[name] = data.kind
             end
         end
     end
@@ -988,8 +1007,8 @@ function addon.targeting:UpdateTargetFrame(selector, OnUpdate)
         addon.settings.profile.showTargetingOnProximity and {} or targetList
 
     if addon.settings.profile.showTargetingOnProximity then
-        for name, targetkind in pairs(proxmityPolling.scannedTargets) do
-            if targetkind == 'friendly' then
+        for name, data in pairs(proxmityPolling.scannedTargets) do
+            if data.kind == 'friendly' then
                 tinsert(friendlyList, name)
             end
         end
@@ -1104,8 +1123,8 @@ function addon.targeting:LoadRares()
     end
 
     -- Reset found rares
-    for name, kind in pairs(proxmityPolling.scannedTargets) do
-        if kind == 'rare' then proxmityPolling.scannedTargets[name] = nil end
+    for name, data in pairs(proxmityPolling.scannedTargets) do
+        if data.kind == 'rare' then proxmityPolling.scannedTargets[name] = nil end
     end
 
     local zone = GetRealZoneText()
