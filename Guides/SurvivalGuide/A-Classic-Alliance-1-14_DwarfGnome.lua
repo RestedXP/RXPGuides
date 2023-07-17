@@ -517,14 +517,12 @@ step << Priest
 step << Priest
     .xp 6 >> Grind to 6
 step << Priest/Mage/Warlock
-    #completewith next
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r
     .target Innkeeper Belm
     .goto Dun Morogh,47.377,52.523
     .home >> Set your Hearthstone to Thunderbrew Distillery
     .vendor >> |cRXP_BUY_Buy as much|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_as you can afford|r
 step << !Mage !Priest !Warlock
-    #completewith next
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r
     .target Innkeeper Belm
     .goto Dun Morogh,47.377,52.523
