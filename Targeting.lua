@@ -123,12 +123,12 @@ function addon.targeting:Setup()
 end
 
 local function shouldTargetCheck()
-    return not addon.isHidden and
-               addon.settings.profile.enableTargetAutomation and
-               not IsInRaid() and not UnitOnTaxi("player") and
-               (next(unitscanList) ~= nil or next(mobList) ~= nil or
-                   next(targetList) ~= nil or next(rareTargets) ~= nil or
-                   next(proxmityPolling.scannedTargets) ~= nil)
+    return
+        not addon.isHidden and addon.settings.profile.enableTargetAutomation and
+            not IsInRaid() and not UnitOnTaxi("player") and
+            (next(unitscanList) ~= nil or next(mobList) ~= nil or
+                next(targetList) ~= nil or next(rareTargets) ~= nil or
+                next(proxmityPolling.scannedTargets) ~= nil)
 
 end
 
@@ -150,30 +150,22 @@ function addon.targeting:UpdateMacro(queuedTargets)
         CreateMacro(self.macroName, "Ability_eyeoftheowl", "")
     end
 
-    for t in pairs(lowPrioTargets) do
-        tinsert(targets,t)
-    end
+    for t in pairs(lowPrioTargets) do tinsert(targets, t) end
     for _, t in ipairs(targetList) do
-        if not lowPrioTargets[t] then
-         tinsert(targets, t)
-        end
+        if not lowPrioTargets[t] then tinsert(targets, t) end
     end
 
     for _, t in ipairs(mobList) do
-        if not lowPrioTargets[t] then
-            tinsert(targets, t)
-        end
+        if not lowPrioTargets[t] then tinsert(targets, t) end
     end
 
     for _, t in ipairs(unitscanList) do
-        if not lowPrioTargets[t] then
-            tinsert(targets, t)
-        end
+        if not lowPrioTargets[t] then tinsert(targets, t) end
     end
 
-    --Removes duplicate entries:
+    -- Removes duplicate entries:
     local npcNames = {}
-    for i = #targets,1,-1 do
+    for i = #targets, 1, -1 do
         local t = targets[i]
         if npcNames[t] then
             targets[i] = false
@@ -194,7 +186,8 @@ function addon.targeting:UpdateMacro(queuedTargets)
             if not (announcedTargets[t] or lowPrioTargets[t]) and
                 addon.settings.profile.notifyOnTargetUpdates then
                 -- Only notify if Active Targets frame is disabled
-                addon.comms.PrettyPrint(L("Targeting macro updated with (%s)"), t) -- TODO locale
+                addon.comms.PrettyPrint(L("Targeting macro updated with (%s)"),
+                                        t) -- TODO locale
             end
 
             announcedTargets[t] = true
@@ -598,12 +591,12 @@ function addon.targeting:ADDON_ACTION_FORBIDDEN(_, forbiddenAddon, func)
     end
 end
 
-function addon.targeting:UpdateTargetList(targets,addEntries)
+function addon.targeting:UpdateTargetList(targets, addEntries)
     if addEntries then
         local update
-        for _,unit in ipairs(targets) do
+        for _, unit in ipairs(targets) do
             local found
-            for _,src in ipairs(targetList) do
+            for _, src in ipairs(targetList) do
                 if src == unit then
                     found = true
                     break
@@ -612,7 +605,7 @@ function addon.targeting:UpdateTargetList(targets,addEntries)
             if not found then
                 update = true
                 lowPrioTargets[unit] = true
-                tinsert(targetList,unit)
+                tinsert(targetList, unit)
             end
         end
         if not update then return end
@@ -641,9 +634,9 @@ end
 function addon.targeting:UpdateEnemyList(unitscan, mobs, addEntries)
     if addEntries then
         local update
-        for _,unit in ipairs(unitscan) do
+        for _, unit in ipairs(unitscan) do
             local found
-            for _,src in ipairs(unitscanList) do
+            for _, src in ipairs(unitscanList) do
                 if src == unit then
                     found = true
                     break
@@ -651,20 +644,20 @@ function addon.targeting:UpdateEnemyList(unitscan, mobs, addEntries)
             end
             if not found then
                 update = true
-                tinsert(unitscanList,unit)
+                tinsert(unitscanList, unit)
                 lowPrioTargets[unit] = true
             end
         end
-        for _,unit in ipairs(mobs) do
+        for _, unit in ipairs(mobs) do
             local found
-            for _,src in ipairs(mobList) do
+            for _, src in ipairs(mobList) do
                 if src == unit then
                     found = true
                     break
                 end
             end
             if not found then
-                tinsert(mobList,unit)
+                tinsert(mobList, unit)
                 update = true
                 lowPrioTargets[unit] = true
             end
@@ -696,7 +689,7 @@ end
 
 function addon.targeting:CanCreateMacro() return GetNumMacros() < 119 end
 
-local function UpdateIconFrameVisuals(self,updateFrame)
+local function UpdateIconFrameVisuals(self, updateFrame)
     self:SetScale(addon.settings.profile.activeTargetScale or 1)
     addon.targeting:RenderTargetFrameBackground()
     self.title:ClearBackdrop()
@@ -706,7 +699,6 @@ local function UpdateIconFrameVisuals(self,updateFrame)
     self.title.text:SetTextColor(unpack(addon.activeTheme.textColor))
     self.title:SetSize(self.title.text:GetStringWidth() + 14, 19)
 end
-
 
 function addon.targeting:CreateTargetFrame()
     if self.activeTargetFrame then return end
@@ -757,7 +749,7 @@ function addon.targeting:CreateTargetFrame()
     f.title.text:SetJustifyV("MIDDLE")
     f.title.text:SetTextColor(unpack(addon.activeTheme.textColor))
     f.title.text:SetFont(addon.font, 9, "")
-    f.title.text:SetText(L"Active Targets")
+    f.title.text:SetText(L "Active Targets")
     f.title:SetSize(f.title.text:GetStringWidth() + 14, 19)
 
     f.title:EnableMouse(true)
@@ -773,7 +765,7 @@ function addon.targeting:RenderTargetFrameBackground()
     if not self.activeTargetFrame then return end
 
     local f = self.activeTargetFrame
-    --print(RXP.activeTheme.texturePath)
+    -- print(RXP.activeTheme.texturePath)
     if addon.settings.profile.hideActiveTargetsBackground then
         f:ClearBackdrop()
     else
@@ -831,7 +823,6 @@ function addon.targeting:UpdateMarker(kind, unitId, index)
         markerId then SetRaidTarget(unitId, markerId) end
 end
 
-
 addon.targeting.portraitCache = {}
 addon.targeting.activeIcons = {}
 local iconCounter = 0
@@ -847,7 +838,7 @@ local function GetIcon(unit)
             local lastActive = time
             local oldest
             local name
-            for u,f in pairs(addon.targeting.portraitCache) do
+            for u, f in pairs(addon.targeting.portraitCache) do
                 if f.lastActive < lastActive then
                     lastActive = f.lastActive
                     oldest = f
@@ -864,19 +855,17 @@ local function GetIcon(unit)
     return texture
 end
 
-local function GetUnitTexture(self,name,unit)
+local function GetUnitTexture(self, name, unit)
     local f = addon.targeting.portraitCache[name]
-    if f and f.anchor then
-        f.anchor:Show()
-    end
-    --unit = unit or 'target'
+    if f and f.anchor then f.anchor:Show() end
+    -- unit = unit or 'target'
     if unit and name and UnitName(unit) == name then
         f = GetIcon(name)
-        SetPortraitTexture(f,unit)
+        SetPortraitTexture(f, unit)
     end
 
     if f then
-        --self.placeholder:Hide()
+        -- self.placeholder:Hide()
         f.anchor = self.placeholder
         addon.targeting.activeIcons[f] = true
         f:SetParent(self)
@@ -892,7 +881,7 @@ local function GetUnitTexture(self,name,unit)
     end
 end
 
-function addon.targeting:UpdateTargetFrame(selector,OnUpdate)
+function addon.targeting:UpdateTargetFrame(selector, OnUpdate)
     local targetFrame = self.activeTargetFrame
 
     if InCombatLockdown() then return end
@@ -980,7 +969,7 @@ function addon.targeting:UpdateTargetFrame(selector,OnUpdate)
             btn.placeholder.isDefault = true
         end
 
-        btn:GetUnitTexture(targetName,selector)
+        btn:GetUnitTexture(targetName, selector)
         btn.targetData = {name = targetName, kind = k}
         -- If target or mouseover, set portrait
         -- TODO cache icons, relies on button order, resets otherwise
@@ -995,8 +984,8 @@ function addon.targeting:UpdateTargetFrame(selector,OnUpdate)
     local friendlyTargetButtons = targetFrame.friendlyTargetButtons
     local i = 0
     -- If proximity disabled, show all
-    local friendlyList = addon.settings.profile.showTargetingOnProximity and
-                             {} or targetList
+    local friendlyList =
+        addon.settings.profile.showTargetingOnProximity and {} or targetList
 
     if addon.settings.profile.showTargetingOnProximity then
         for name, targetkind in pairs(proxmityPolling.scannedTargets) do
@@ -1054,11 +1043,12 @@ function addon.targeting:UpdateTargetFrame(selector,OnUpdate)
             btn.placeholder.isDefault = true
         end
 
-        btn:GetUnitTexture(targetName,selector)
+        btn:GetUnitTexture(targetName, selector)
 
         btn.targetData = {name = targetName, kind = "friendly"}
         -- If target or mouseover, set portrait
-        if  selector and btn.placeholder.isDefault and UnitName(selector) == targetName then
+        if selector and btn.placeholder.isDefault and UnitName(selector) ==
+            targetName then
             SetPortraitTexture(btn.placeholder, selector)
             btn.placeholder.isDefault = false
         end
@@ -1070,14 +1060,14 @@ function addon.targeting:UpdateTargetFrame(selector,OnUpdate)
     for n = i + 1, #friendlyTargetButtons do
         friendlyTargetButtons[n]:Hide()
         friendlyTargetButtons[n].placeholder:SetTexture(targetIcons[n] or
-                                                     targetPlaceholder)
+                                                            targetPlaceholder)
         friendlyTargetButtons[n].icon.isDefault = true
     end
 
     for n = j + 1, #enemyTargetButtons do
         enemyTargetButtons[n]:Hide()
         enemyTargetButtons[n].placeholder:SetTexture(unitscanIcons[n] or
-                                                  unitscanPlaceholder)
+                                                         unitscanPlaceholder)
         enemyTargetButtons[n].icon.isDefault = true
     end
 
