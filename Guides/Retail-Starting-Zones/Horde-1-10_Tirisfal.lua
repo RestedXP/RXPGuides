@@ -110,7 +110,7 @@ step << Warlock
     #completewith next
     +|cRXP_WARN_Reminder: Use |T136218:0|t[Summon Imp] to summon your pet|r
 step
-    #completwith next
+    #completewith next
     >>Kill |cRXP_ENEMY_Wretched Ghouls|r and |cRXP_ENEMY_Rattlecage Skeletons|r
     .goto 465,51.61,47.23,0,0
     .complete 26801,1 --8/8 Deathknell Scourge slain
@@ -264,7 +264,7 @@ RXPGuides.RegisterGuide([[
 
 step
     .itemcount 132516,1
-    #completwith next
+    #completewith next
     .cast 202844 >>Use |T1405809:0|t[Gunshoes]
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tRun and talk to |cRXP_FRIENDLY_Deathguard Simmer|r
@@ -371,7 +371,7 @@ step
     .zone 110 >>2) Take the portal to Silvermoon
 step
     .itemcount 132516,1
-    #completwith next
+    #completewith next
     .cast 202844 >>Use |T1405809:0|t[Gunshoes] in Silvermoon
 step
     #completewith next
@@ -475,7 +475,7 @@ step
     .target Ley-Keeper Caidanis
 step
     .itemcount 132516,1
-    #completwith next
+    #completewith next
     .cast 202844 >>Use |T1405809:0|t[Gunshoes]
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ley-Keeper Caidanis|r

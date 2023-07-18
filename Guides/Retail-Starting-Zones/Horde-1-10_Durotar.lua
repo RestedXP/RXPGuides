@@ -800,7 +800,7 @@ step
     .target Moraya
 step
     .itemcount 132516,1
-    #completwith next
+    #completewith next
     .cast 202844 >>Use |T1405809:0|t[Gunshoes]
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kijara|r (she patrols around), then talk to |cRXP_FRIENDLY_Tegashi|r
