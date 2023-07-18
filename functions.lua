@@ -2445,6 +2445,7 @@ function addon.functions.reputation(self, ...)
         elseif step.active and not addon.isHidden then
             addon.updateSteps = true
             step.completed = true
+             self.element.tooltipText = "Step skipped: Reputation condition not met"
         end
     end
 end
@@ -2596,13 +2597,23 @@ function addon.functions.next(skip, guide)
         element.textOnly = true
         return element
     elseif skip and
-        (type(skip) == "number" or (skip.step and not skip.step.active)) then
+        (type(skip) == "number" or (skip.step and (not skip.step.active and not skip.step.completed))) then
         return
     end
-    guide = guide or addon.currentGuide
-    if guide.next then
+
+    local next
+    if type(guide) == "table" then
+        next = guide.next
+    elseif type(guide) == "string" then
+        next = guide
+        guide = addon.currentGuide
+    else
+        guide = addon.currentGuide
+        next = guide.next
+    end
+
+    if next then
         local group = guide.group
-        local next = guide.next
         local guideSkip
         --Different guides can be separated by a semicolon when using #next
         for guideName in string.gmatch(guide.next,"%s*([^;]+)%s*") do
