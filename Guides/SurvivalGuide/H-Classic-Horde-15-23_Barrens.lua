@@ -130,7 +130,7 @@ step << !Tauren !Hunter !Shaman
 step << !Tauren !Hunter !Shaman
     #completewith next
     .goto The Barrens,52.34,29.27,150 >> Travel to The Crossroads
-step << !Tauren !Hunter !Shaman !Undead
+step << !Undead !Tauren
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zargh|r, |cRXP_FRIENDLY_Gazrog|r, |cRXP_FRIENDLY_Sergra|r, |cRXP_FRIENDLY_Tonga|r, |cRXP_FRIENDLY_Mankrik|r and |cRXP_FRIENDLY_Thork|r
     .accept 6365 >>Accept Meats to Orgrimmar
     .goto The Barrens,52.62,29.84
@@ -153,7 +153,7 @@ step << !Tauren !Hunter !Shaman !Undead
     .target Tonga Runetotem
     .target Mankrik
     .target Thork
-step << !Tauren !Hunter !Shaman
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazrog|r, |cRXP_FRIENDLY_Sergra|r, |cRXP_FRIENDLY_Tonga|r, |cRXP_FRIENDLY_Mankrik|r and |cRXP_FRIENDLY_Thork|r
     .accept 869 >>Accept Raptor Thieves
     .goto The Barrens,51.93,30.32
@@ -173,48 +173,42 @@ step << !Tauren !Hunter !Shaman
     .target Tonga Runetotem
     .target Mankrik
     .target Thork
-step << !Tauren !Hunter !Shaman
+step
     .goto The Barrens,51.62,30.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r
     >>|cRXP_WARN_He is at the top of the tower|r
     .accept 867 >>Accept Harpy Raiders
     .target Darsok Swiftdagger
-step << !Tauren !Undead
+step
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
-    .turnin 6365 >>Turn in Meats to Orgrimmar
-    .accept 6384 >>Accept Ride to Orgrimmar
+    .turnin 6365 >>Turn in Meats to Orgrimmar << !Tauren !Undead
+    .accept 6384 >>Accept Ride to Orgrimmar << !Tauren !Undead
     .fp Crossroads >> Get the Crossroads Flight Path
     .zoneskip Orgrimmar
     .target Devrak
     .isOnQuest 6365
 step
-    .goto The Barrens,51.50,30.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
-    .fp Crossroads >> Get the Crossroads Flight Path
-    .zoneskip Orgrimmar
-    .target Devrak
-step << !Tauren !Hunter !Shaman
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
     .accept 848 >>Accept Fungal Spores
     .accept 1492 >>Accept Wharfmaster Dizzywig
 	.turnin 1358 >> Turn in Sample for Helbrim
     .target Apothecary Helbrim
-step << !Tauren !Hunter !Shaman
+step
     #completewith DemonSeed
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Beaks|r
     .complete 844,1 --Plainstrider Beak (7)
     .mob Greater Plainstrider
     .mob Fleeting Plainstrider
-step << !Tauren !Hunter !Shaman
+step
     .group
     .goto The Barrens,51.09,22.68,40,0
     .goto The Barrens,50.33,21.85,40,0
     .goto The Barrens,49.21,20.42,40,0
     .goto The Barrens,47.58,19.38,100 >> Travel to the top of the mountain
     .isOnQuest 924
-step << !Tauren !Hunter !Shaman
+step
     .group
     #label DemonSeed
     .goto The Barrens,47.98,19.08
@@ -222,7 +216,7 @@ step << !Tauren !Hunter !Shaman
     .collect 4986,1,924 --Collect Flawed Power Stone
     .complete 924,1 --Destroy the Demon Seed (1)
     .isOnQuest 924
-step << !Tauren !Hunter !Shaman
+step
     .group
     #completewith DisruptTheAttacks
     .goto The Barrens,47.58,19.38,40,0
@@ -230,13 +224,13 @@ step << !Tauren !Hunter !Shaman
     .goto The Barrens,50.33,21.85,40,0
     .goto The Barrens,51.09,22.68,40 >> Travel down the mountain where you came from
     .isOnQuest 924
-step << !Tauren !Hunter !Shaman
+step
     #completewith DisruptTheAttacks
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Beaks|r
     .complete 844,1 --Plainstrider Beak (7)
     .mob Greater Plainstrider
     .mob Fleeting Plainstrider
-step << !Tauren !Hunter !Shaman
+step
     #completewith next
     >>Kill |cRXP_ENEMY_Water Seekers|r, |cRXP_ENEMY_Thornweavers|r and |cRXP_ENEMY_Hunters|r
     .complete 871,1 --Razormane Water Seeker (8)
@@ -245,7 +239,7 @@ step << !Tauren !Hunter !Shaman
     .mob Razormane Water Seeker
     .mob Razormane Thornweaver
     .mob Razormane Hunter
-step << !Tauren !Hunter !Shaman
+step
     .goto The Barrens,55.70,27.30
     >>Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. If it's not up you'll get it later
     .collect 4926,1,819 --Collect Chen's Empty Keg
@@ -260,7 +254,7 @@ step << !Tauren !Hunter !Shaman
     .mob Razormane Water Seeker
     .mob Razormane Thornweaver
     .mob Razormane Hunter
-step << !Tauren !Hunter !Shaman
+step
     .goto The Barrens,53.36,26.28,80,0
     .goto The Barrens,53.23,28.41,80,0
     .goto The Barrens,53.57,29.58,80,0
@@ -275,17 +269,17 @@ step << !Tauren !Hunter !Shaman
     .complete 844,1 --Plainstrider Beak (7)
     .mob Greater Plainstrider
     .mob Fleeting Plainstrider
-step << !Tauren !Hunter !Shaman
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r and |cRXP_FRIENDLY_Thork|r
     .turnin 844 >>Turn in Plainstrider Menace
     .accept 845 >>Accept The Zhevra
     .goto The Barrens,52.23,31.00
-    .turnin 871 >>Turn in The Disruption Ends
-    .accept 872 >>Accept Disrupt the Attacks
+    .turnin 871 >>Turn in Disrupt the Attacks
+    .accept 872 >>Accept The Disruption Ends
     .goto The Barrens,51.50,30.87
     .target Sergra Darkthorn
     .target Thork
-step << Tauren/Shaman/Hunter
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga|r and |cRXP_FRIENDLY_Mankrik|r
     .accept 870 >>Accept The Forgotten Pools
     .goto The Barrens,52.26,31.94
@@ -294,13 +288,13 @@ step << Tauren/Shaman/Hunter
     .goto The Barrens,52.00,31.60
     .target Tonga Runetotem
     .target Mankrik
-step << Tauren/Shaman/Hunter
+step
     .goto The Barrens,51.62,30.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r
     >>|cRXP_WARN_He is at the top of the tower|r
     .accept 867 >>Accept Harpy Raiders
     .target Darsok Swiftdagger
-step << Tauren/Shaman/Hunter
+step
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
     .accept 848 >>Accept Fungal Spores
@@ -2784,7 +2778,6 @@ step << Druid
     .accept 30 >> Accept Trial of the Sea Lion
     .target Tajarri
 step << Druid
-    #completewith SacredFlamePickup
     .hs >> Hearth to Thunder Bluff
     .use 6948
     .cooldown item,6948,>0
@@ -2795,12 +2788,6 @@ step << Druid
     .fly Thunder Bluff >> Fly to Thunder Bluff
     .target Bunthen Plainswind
     .cooldown item,6948,<0
-step
-    #label SacredFlamePickup
-    .goto Thunder Bluff,54.96,51.42
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zangen|r
-	.accept 1195 >> Accept The Sacred Flame
-    .target Zangen Stonehoof
 step << Hunter
     #completewith next
     .goto Thunder Bluff,61.31,78.25,60 >> Travel to the Hunter Rise
