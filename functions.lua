@@ -2425,7 +2425,7 @@ function addon.functions.reputation(self, ...)
     if relativeValue < 0 then
         relativeValue = replength + earnedValue
     else
-        relativeValue = earnedValue - replength
+        relativeValue = earnedValue - bottomValue
     end
     --print('r:',standing,bottomValue,topValue,earnedValue,topValue-bottomValue,relativeValue)
 
