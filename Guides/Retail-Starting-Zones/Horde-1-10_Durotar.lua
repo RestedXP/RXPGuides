@@ -1,6 +1,6 @@
 RXPGuides.RegisterGuide([[
 #df
-#version 1
+#version 2
 #group RestedXP Starting Zones
 #subgroup Orc Starting Zones << Orc
 #subgroup Troll Starting Zones << Troll
@@ -323,7 +323,7 @@ step << Troll
 
 RXPGuides.RegisterGuide([[
 #df
-#version 1
+#version 2
 #group RestedXP Starting Zones
 #name 1Troll Starting Zone << Troll
 #name 2Troll Starting Zone << Orc

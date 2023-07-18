@@ -1,6 +1,6 @@
 RXPGuides.RegisterGuide([[
 #df
-#version 1
+#version 2
 #group RestedXP Starting Zones
 #subgroup Blood Elf Starting Zones
 #name 1 Blood Elf Starting Zone
@@ -246,7 +246,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #df
-#version 1
+#version 2
 #group RestedXP Starting Zones
 #name 2 Blood Elf Eversong Woods
 #displayname Chapter 2 - Eversong Woods

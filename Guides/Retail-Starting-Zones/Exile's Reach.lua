@@ -1,6 +1,6 @@
 RXPGuides.RegisterGuide([[
 #df
-#version 1
+#version 2
 #group RestedXP Starting Zones
 #name 1Retail_Exile's Reach
 #displayname Exile's Reach

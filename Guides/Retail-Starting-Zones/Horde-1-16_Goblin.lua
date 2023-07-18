@@ -1,6 +1,6 @@
 RXPGuides.RegisterGuide([[
 #df
-#version 1
+#version 2
 #group RestedXP Starting Zones
 #subgroup Goblin Starting Zones
 #name Goblin Starting Zone

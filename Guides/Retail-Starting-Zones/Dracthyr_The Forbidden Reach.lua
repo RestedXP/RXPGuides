@@ -1,6 +1,6 @@
 RXPGuides.RegisterGuide([[
 #df
-#version 1
+#version 2
 #group RestedXP Starting Zones
 #subgroup Dracthyr Starting Zones
 #name Retail-Dracthyr_The Forbidden Reach

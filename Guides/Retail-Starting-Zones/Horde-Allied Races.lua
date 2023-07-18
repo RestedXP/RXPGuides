@@ -1,6 +1,6 @@
 RXPGuides.RegisterGuide([[
 #df
-#version 1
+#version 2
 #group RestedXP Starting Zones
 #subgroup Allied Race Starting Zones
 #name Allied Race Starting Zone

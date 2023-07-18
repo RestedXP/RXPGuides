@@ -1,6 +1,6 @@
 RXPGuides.RegisterGuide([[
 #df
-#version 1
+#version 2
 #group RestedXP Starting Zones
 #subgroup Undead Starting Zones
 #name 1 Undead Starting Zone
@@ -252,7 +252,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #df
-#version 1
+#version 2
 #group RestedXP Starting Zones
 #name 2 Undead Eversong Woods
 #displayname Chapter 2 - Eversong Woods

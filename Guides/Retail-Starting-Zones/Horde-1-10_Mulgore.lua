@@ -1,6 +1,6 @@
 RXPGuides.RegisterGuide([[
 #df
-#version 1
+#version 2
 #group RestedXP Starting Zones
 #subgroup Tauren Starting Zones
 #name 1 Tauren Starting Zone
@@ -193,7 +193,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #df
-#version 1
+#version 2
 #group RestedXP Starting Zones
 #name 2 Tauren Mulgore
 #displayname Chapter 2 - Mulgore
