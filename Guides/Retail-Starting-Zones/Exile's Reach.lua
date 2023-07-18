@@ -1676,7 +1676,7 @@ step << Alliance
 step << Horde
     .goto 1409,40.37,32.63
     >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on the |cRXP_FRIENDLY_Wyvern|r to ride to Orgrimmar. Wait out the RP
-    .complete 59985,1 Horde --1/1 Horde Wyvern rode back to Orgrimmar
+    .complete 59985,1 --1/1 Horde Wyvern rode back to Orgrimmar
     .isOnQuest 59985
     .target Horde Wyvern
 step << Alliance
@@ -1753,19 +1753,6 @@ step << Alliance
     .goto 84,77.29,66.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Curly|r
     .turnin 58908 >>Turn in Finding Your Way
-    .accept 58909 >>Accept License to Ride
-    .target Curly
-step << Alliance
-	.goto 84,77.11,67.80
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darlene|r. Train |T136103:0|t[Apprentice Riding]
-    .complete 58909,1 --Learn the Apprentice Riding skill
-    .target Darlene
-step << Alliance
-    .goto 84,77.29,66.95
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Curly|r	
-    .turnin 58909 >>Turn in License to Ride
-	.target Curly
-    .isQuestTurnedIn 59583
 step << skip
 	#label UseMount
 	#completewith Specialize
@@ -2034,50 +2021,21 @@ step << Horde
     .goto 85,52.48,84.18
     .complete 60344,2 --1/1 Speak with Cork Fizzlepop
     .goto 85,52.25,84.42
-    .skipgossip 168459,15
     .skipgossip 168441,1
+    .gossipoption 109405
     .isQuestAvailable 63219
 	.target Orgrimmar Grunt
 	.target Cork Fizzlepop
 step << Horde
-    .goto 85,51.63,79.03,30,0
-    .goto 85,52.15,71.18,30,0
-    .goto 85,50.98,65.86,30,0
-    .goto 85,56.52,65.02,30,0
-    .goto 85,58.98,60.74,30,0
-    .goto 85,60.47,49.70,30,0
-    .goto 85,62.04,48.19,15,0
-    .goto 85,63.42,51.02,15,0
-    .goto 85,67.34,47.45,30,0
-    .goto 85,67.98,39.28,30,0
-    .goto 85,69.05,33.48,30,0
-    .goto 85,67.86,32.06,30,0
     .goto 85,62.06,33.33
-    >>|cRXP_WARN_Follow|r |cRXP_FRIENDLY_Cork|r. |cRXP_WARN_Stay near him otherwise he will stop moving|r
-    .complete 60344,3 --1/1 Follow Cork Fizzlepop to the Stables
+    >>|cRXP_WARN_Ride with|r |cRXP_FRIENDLY_Cork|r.
+    .complete 60344,3 --1/1 Ride with Cork Fizzlepop to the Stables
 	.target Cork Fizzlepop
     .isQuestAvailable 63219
 step << Horde
-    .goto 85,61.42,32.76
+    .goto 85,71.57,47.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rohaka|r
     .turnin 60344 >>Turn in Finding Your Way
-    .accept 60345 >>Accept License to Ride
-	.target Rohaka Tuskmaul
-    .isQuestAvailable 63219
-step << Horde
-    .goto 85,61.32,34.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kildar|r. Train |T136103:0|t[Apprentice Riding]
-    .complete 60345,1 --Learn the Apprentice Riding skill
-	.target Kildar
-    .isQuestAvailable 63219
---VV Autotrain skill?
-step << Horde
-    .goto 85,61.42,32.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rohaka|r
-    .turnin 60345 >>Turn in License to Ride
-	.target Rohaka Tuskmaul
-    .isQuestAvailable 63219
---VV find out which races get which mount from this quest
 step << Horde
 	#label UseMount
 	#completewith Specialize
