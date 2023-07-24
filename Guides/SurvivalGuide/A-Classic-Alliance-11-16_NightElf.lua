@@ -558,17 +558,17 @@ step
     .goto StormwindClassic,7,45.471,10,0
     .goto StormwindClassic,5.560,50.125,10,0
     .goto StormwindClassic,13.669,74.499,20,0
-    .goto Westfall,42.024,70.980,60,0
-    .goto Westfall,50.153,10.276,60,0
+    .goto Westfall,42.024,70.980
     .zone Westfall >> If the website unstuck is not available, swim to Westfall
     .zoneskip Ironforge
     .subzoneskip 809--IF Gates
     .subzoneskip 2257--Deeprun Tram
 step
-    .goto Westfall,48.760,14.717,20,0
-    .goto Westfall,57.308,23.899,40,0
-    .goto Elwynn Forest,23.178,78.140,100,0
-    .zone Elwynn Forest >> Follow the road to Elwynn
+    .goto Westfall,54.28,9.26,50,0
+    .goto Westfall,55.12,14.64,40,0
+    .goto Westfall,56.36,17.81,65,0
+    .goto Elwynn Forest,23.24,77.80
+    .zone Elwynn Forest >> Run up the shore and make your way to Elwynn Forest. Be careful not to agro many |cRXP_ENEMY_Murlocs|r on the coast as there are a few that patrol
     .zoneskip Ironforge
     .subzoneskip 809
     .subzoneskip 2257
