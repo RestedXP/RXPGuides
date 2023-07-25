@@ -347,7 +347,7 @@ function addon.functions.xpto60alliance(self,...) --PLAYER_XP_UPDATE,QUEST_LOG_U
 
         if element.tag:find("hc") then
             --stones that binds us
-            print('ok',questXP)
+            --print('ok',questXP)
             if not C_QuestLog.IsQuestFlaggedCompleted(2681) then
                 questXP = floor(questXP + (7550 + 5200)*xpMod)
             end
