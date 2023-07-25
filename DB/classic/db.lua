@@ -345,14 +345,41 @@ function addon.functions.xpto60alliance(self,...) --PLAYER_XP_UPDATE,QUEST_LOG_U
             questXP = floor(questXP + (4800 + 6000)*xpMod)
         end
 
+        if element.tag:find("hc") then
+            --stones that binds us
+            print('ok',questXP)
+            if not C_QuestLog.IsQuestFlaggedCompleted(2681) then
+                questXP = floor(questXP + (7550 + 5200)*xpMod)
+            end
+
+            if not C_QuestLog.IsQuestFlaggedCompleted(2702) then
+                questXP = floor(questXP + (3000)*xpMod)
+            end
+
+            if not C_QuestLog.IsQuestFlaggedCompleted(2701) then
+                questXP = floor(questXP + (6000)*xpMod)
+            end
+
+            --Melding of influences
+            if C_QuestLog.IsQuestFlaggedCompleted(4642) then
+                questXP = floor(questXP + (7050)*xpMod)
+            end
+        end
+
 
         questXP = questXP - 50*(xpMod - 1)
     end
 
     local missingXP = UnitXPMax("player") - UnitXP("player") - questXP
     local level = UnitLevel('player')
-    if level == 58 then
+    if level <= 58 then
         missingXP = missingXP + 209800
+    end
+    if level <= 57 then
+        missingXP = missingXP + 202300
+    end
+    if level <= 56 then
+        missingXP = missingXP + 195000
     end
 
     if missingXP <= 0 and level == 59 then
@@ -372,6 +399,10 @@ function addon.functions.xpto60alliance(self,...) --PLAYER_XP_UPDATE,QUEST_LOG_U
 
     element.questXP = questXP
 
+end
+
+function addon.functions.xpto60hc(...)
+    return addon.functions.xpto60(...)
 end
 
 function addon.functions.xpto60horde(self,...)
