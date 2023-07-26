@@ -246,7 +246,7 @@ step
     .accept 819 >> Accept Chen's Empty Keg
 step << !Tauren !Hunter !Shaman
     #label DisruptTheAttacks
-    .loop 50,The Barrens,53.63,24.50,54.26,24.64,54.81,25.19,55.50,25.61,55.86,26.3,55.83,27.15,55.41,27.41,54.50,26.97,54.05,26.11,53.51,25.24,53.63,24.50
+    .loop 25,The Barrens,53.63,24.50,54.26,24.64,54.81,25.19,55.50,25.61,55.86,26.3,55.83,27.15,55.41,27.41,54.50,26.97,54.05,26.11,53.51,25.24,53.63,24.50
     >>Kill |cRXP_ENEMY_Water Seekers|r, |cRXP_ENEMY_Thornweavers|r and |cRXP_ENEMY_Hunters|r
     .complete 871,1 --Razormane Water Seeker (8)
     .complete 871,2 --Razormane Thornweaver (8)
@@ -587,7 +587,7 @@ step
     >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r. It has multiple spawn locations
     .complete 5041,1 --Crossroads' Supply Crates (1)
 step
-    .loop 40,The Barrens,59.37,25.38,59.63,24.46,59.63,23.88,59.06,23.89,58.62,23.98,57.83,24.28,56.87,24.55,56.74,25.37,57.25,25.46,57.52,25.63,57.65,25.08,58.24,24.98,58.90,25.37
+    .loop 25,The Barrens,59.37,25.38,59.63,24.46,59.63,23.88,59.06,23.89,58.62,23.98,57.83,24.28,56.87,24.55,56.74,25.37,57.25,25.46,57.52,25.63,57.65,25.08,58.24,24.98,58.90,25.37
     >>Kill |cRXP_ENEMY_Razormane Geomancers|r and |cRXP_ENEMY_Razormane Defenders|r
     .complete 872,1 --Razormane Geomancer (8)
     .complete 872,2 --Razormane Defender (8)
@@ -1056,14 +1056,23 @@ step
     .turnin 901 >>Turn in Samophlange
     .accept 902 >>Accept Samophlange
 step << Druid
-    #completewith next
+    #completewith DruidTraining1
     .cast 18960 >>Cast |T135758:0|t[Teleport: Moonglade]
     .zoneskip Moonglade
 step << Druid
     .goto Moonglade,52.53,40.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
-    .trainer >> Train your class spells
+    .train 5211 >> Train your class spells
     .target Loganaar
+    .xp <16,1
+    .xp >18,1
+step << Druid
+    #label DruidTraining1
+    .goto Moonglade,52.53,40.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
+    .train 1430 >> Train your class spells
+    .target Loganaar
+    .xp <18,1
 step
     #completewith next
     .hs >>Hearth to Ratchet
@@ -1420,7 +1429,7 @@ step
     .mob Venture Co. Drudger
     .mob Overseer Glibby
 step
-    .loop The Barrens,55.50,7.98,55.60,8.85,56.04,9.79,56.68,8.82,57.17,9.08,57.61,8.41,57.31,7.20,56.72,6.92,56.17,6.80,55.69,6.94
+    .loop 25,The Barrens,55.50,7.98,55.60,8.85,56.04,9.79,56.68,8.82,57.17,9.08,57.61,8.41,57.31,7.20,56.72,6.92,56.17,6.80,55.69,6.94
     >>Loot |cRXP_PICK_Tool Buckets|r from the ground around The Sludge Ven.
     .complete 3922,1 --Nugget Slugs (15)
 step
@@ -1468,7 +1477,7 @@ step
     .mob Sunscale Screecher
     .mob Sunscale Scytheclaw
 step
-    .loop 40,The Barrens,40.28,15.49,39.50,14.68,39.47,13.24,38.94,12.80,38.18,12.56,37.96,13.52,38.62,13.95,38.18,14.62,38.14,15.59,37.29,15.68,37.24,16.26,37.67,16.34,38.35,17.08,38.83,17.71,39.37,17.21,39.87,16.66,40.15,15.98
+    .loop 25,The Barrens,40.28,15.49,39.50,14.68,39.47,13.24,38.94,12.80,38.18,12.56,37.96,13.52,38.62,13.95,38.18,14.62,38.14,15.59,37.29,15.68,37.24,16.26,37.67,16.34,38.35,17.08,38.83,17.71,39.37,17.21,39.87,16.66,40.15,15.98
     >>Kill |cRXP_ENEMY_Witchwing Slayers|r. Loot them for their |cRXP_LOOT_Rings|r
     >>|cRXP_WARN_Be careful!|r |cRXP_ENEMY_Witchwing Slayers|r |cRXP_WARN_can execute. Stay above 20% health|r
     >>|cRXP_WARN_Watch out for|r |cRXP_ENEMY_Witchwing Ambushers|r|cRXP_WARN_. They are stealthed and patrol in the area|r
@@ -1655,7 +1664,7 @@ step
     .mob Verog the Dervish
     .isOnQuest 851
 step
-    .loop 50,The Barrens,55.80,45.78,56.75,43.41,57.01,41.22,55.45,41.37,54.99,40.84,53.41,40.26,52.99,44.73,54.31,46.81,55.80,45.78
+    .loop 25,The Barrens,55.80,45.78,56.75,43.41,57.01,41.22,55.45,41.37,54.99,40.84,53.41,40.26,52.99,44.73,54.31,46.81,55.80,45.78
     >>Grind |cRXP_ENEMY_Centaurs|r around the oasis. Loot them for their |cRXP_LOOT_Bracers|r
     .complete 855,1 --Centaur Bracers (15)
     .mob Kolkar Bloodcharger
@@ -1665,13 +1674,13 @@ step
 step
     #label Verog
     .goto The Barrens,52.95,41.75,0
-    .loop 50,The Barrens,55.80,45.78,56.75,43.41,57.01,41.22,55.45,41.37,54.99,40.84,53.41,40.26,52.99,44.73,54.31,46.81,55.80,45.78
+    .loop 25,The Barrens,55.80,45.78,56.75,43.41,57.01,41.22,55.45,41.37,54.99,40.84,53.41,40.26,52.99,44.73,54.31,46.81,55.80,45.78
     >>Grind |cRXP_ENEMY_Centaurs|r around the oasis. Once |cRXP_ENEMY_Verog|r spawns, kill him and loot him for his |cFF00BCD4Head|r
     >>|cRXP_ENEMY_Verog|r |cFFFCDC00has a chance of spawning every time a|r |cRXP_ENEMY_Centaur|r |cFFFCDC00is killed|r
     .complete 851,1 --Verog's Head (1)
     .mob Verog the Dervish
 step
-    .loop 30,The Barrens,55.72,42.14,55.49,41.75,55.09,41.58,55.03,42.24,55.27,43.17,55.78,43.47,56.15,43.28,56.08,42.58,55.72,42.14
+    .loop 25,The Barrens,55.72,42.14,55.49,41.75,55.09,41.58,55.03,42.24,55.27,43.17,55.78,43.47,56.15,43.28,56.08,42.58,55.72,42.14
     >>Collect |cRXP_PICK_Laden Mushrooms|r around The Stagnant Oasis
     .complete 848,1 --Collect Fungal Spores (x4)
 step
@@ -1814,7 +1823,7 @@ step
     .abandon 6541 >> Abandon Report to Kadrak
     .isOnQuest 6541
 step
-    .loop 50,Stonetalon Mountains,80.62,89.99,79.79,88.75,81.19,87.56,81.70,86.44,82.26,86.10,82.55,85.22,83.64,85.02,84.20,85.20,83.80,86.38,83.25,87.23,82.33,89.73,82.33,90.43,81.34,90.78
+    .loop 25,Stonetalon Mountains,80.62,89.99,79.79,88.75,81.19,87.56,81.70,86.44,82.26,86.10,82.55,85.22,83.64,85.02,84.20,85.20,83.80,86.38,83.25,87.23,82.33,89.73,82.33,90.43,81.34,90.78
     >>Kill |cRXP_ENEMY_Grimtotem Ruffians|r and |cRXP_ENEMY_Grimtotem Mercenaries|r in the area
     .complete 6548,1 --Kill Grimtotem Ruffian (x8)
     .complete 6548,2 --Kill Grimtotem Mercenary (x6)
@@ -1919,12 +1928,12 @@ step
     .complete 6461,2 --Kill Deepmoss Venomspitter (x7)
     .mob Deepmoss Venomspitter
 step
-    .loop 40,Stonetalon Mountains,59.25,61.55,60.37,60.10,61.34,59.15,61.15,57.85,61.41,56.77,62.21,58.55,63.12,60.02,64.69,60.03,62.76,61.69,62.50,62.92,62.48,64.15,61.85,66.07,60.71,66.12,60.96,63.99,60.25,63.21
+    .loop 25,Stonetalon Mountains,59.25,61.55,60.37,60.10,61.34,59.15,61.15,57.85,61.41,56.77,62.21,58.55,63.12,60.02,64.69,60.03,62.76,61.69,62.50,62.92,62.48,64.15,61.85,66.07,60.71,66.12,60.96,63.99,60.25,63.21
     >>Loot the |cRXP_PICK_Spider Eggs|r near the trees
     >>|cRXP_WARN_Be careful! The|r |cRXP_ENEMY_Deepmoss Hatchlings|r |cRXP_WARN_have a chance of summoning a level 22|r |cRXP_ENEMY_Deepmoss Matriarch|r
     .complete 1069,1 --Collect Deepmoss Egg (x15)
 step
-    .loop 40,Stonetalon Mountains,59.25,61.55,60.37,60.10,61.34,59.15,61.15,57.85,61.41,56.77,62.21,58.55,63.12,60.02,64.69,60.03,62.76,61.69,62.50,62.92,62.48,64.15,61.85,66.07,60.71,66.12,60.96,63.99,60.25,63.21
+    .loop 25,Stonetalon Mountains,59.25,61.55,60.37,60.10,61.34,59.15,61.15,57.85,61.41,56.77,62.21,58.55,63.12,60.02,64.69,60.03,62.76,61.69,62.50,62.92,62.48,64.15,61.85,66.07,60.71,66.12,60.96,63.99,60.25,63.21
     >>Kill |cRXP_ENEMY_Deepmoss Venomspitters|r
     .complete 6461,2 --Kill Deepmoss Venomspitter (x7)
     .mob Deepmoss Venomspitter
@@ -2020,7 +2029,7 @@ step
     .complete 1093,1 --Collect Super Reaper 6000 Blueprints (x1)
     .mob Venture Co. Operator
 step
-    .loop 50,Stonetalon Mountains,61.50,55.12,60.48,55.10,59.80,53.69,59.53,52.52,60.80,51.23,62.06,54.39,62.63,55.35,63.63,54.42,65.42,54.15,66.83,54.92,68.64,54.03,69.86,53.53,70.34,56.41,67.90,56.96,66.25,56.64,65.29,57.14,64.27,57.63
+    .loop 25,Stonetalon Mountains,61.50,55.12,60.48,55.10,59.80,53.69,59.53,52.52,60.80,51.23,62.06,54.39,62.63,55.35,63.63,54.42,65.42,54.15,66.83,54.92,68.64,54.03,69.86,53.53,70.34,56.41,67.90,56.96,66.25,56.64,65.29,57.14,64.27,57.63
     >>Kill |cRXP_ENEMY_Venture Co. Loggers|r
     .complete 1062,1 --Kill Venture Co. Logger (x15)
     .mob Venture Co. Logger
@@ -2045,14 +2054,23 @@ step
     .complete 6461,1 --Kill Deepmoss Creeper (x10)
     .mob Deepmoss Creeper
 step << Druid
-    #completewith next
+    #completewith DruidTraining2
     .cast 18960 >>Cast |T135758:0|t[Teleport: Moonglade]
     .zoneskip Moonglade
 step << Druid
     .goto Moonglade,52.53,40.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
-    .trainer >> Train your class spells
+    .train 1430 >> Train your class spells
     .target Loganaar
+    .xp <18,1
+    .xp >20,1
+step << Druid
+    #label DruidTraining2
+    .goto Moonglade,52.53,40.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
+    .train 768 >> Train your class spells
+    .target Loganaar
+    .xp <20,1
 step
     .hs >> Hearth to Camp Taurajo
     .use 6948
@@ -2105,7 +2123,7 @@ step
     .complete 821,3 --Thunder Lizard Horn (1)
     .mob Stormsnout
 step
-    .loop 60,The Barrens,50.71,54.60,50.74,55.33,50.73,56.78,50.42,57.23,50.50,57.65,50.87,57.50,51.26,57.84,51.74,57.69,51.79,57.10,53.08,54.69,53.65,54.27,53.63,53.53,53.35,52.72,53.00,51.83,52.62,52.19,52.59,52.71,52.41,53.07,52.32,53.71,51.39,54.22
+    .loop 25,The Barrens,50.71,54.60,50.74,55.33,50.73,56.78,50.42,57.23,50.50,57.65,50.87,57.50,51.26,57.84,51.74,57.69,51.79,57.10,53.08,54.69,53.65,54.27,53.63,53.53,53.35,52.72,53.00,51.83,52.62,52.19,52.59,52.71,52.41,53.07,52.32,53.71,51.39,54.22
     >>Kill a lot of |cRXP_ENEMY_Bristleback Quillboars|r. Loot them for their |cRXP_LOOT_Tusks|r. Save the |T134128:0|t[|cFF00BCD4Blood Shards|r you get
     .complete 878,1 --Kill Bristleback Water Seeker (x6)
     .complete 878,2 --Kill Bristleback Thornweaver (x12)
@@ -2137,7 +2155,7 @@ step
     .complete 821,2 --Plainstrider Kidney (5)
     .mob Greater Plainstrider
 step
-    .loop 40,The Barrens,55.59,43.39,55.09,43.00,55.03,42.21,55.47,41.51,55.99,42.00,56.15,42.53,56.01,43.40
+    .loop 25,The Barrens,55.59,43.39,55.09,43.00,55.03,42.21,55.47,41.51,55.99,42.00,56.15,42.53,56.01,43.40
     >>Kill |cRXP_ENEMY_Oasis Snapjaws|r in and around the lake. Loot them for their |cRXP_LOOT_Shells|r
     .complete 880,1 --Altered Snapjaw Shell (8)
     .mob Oasis Snapjaw
@@ -3499,7 +3517,7 @@ step
     .mob Vorsha the Lasher
     .group 2
 step
-    .loop 50,Ashenvale,10.86,26.99,11.23,25.73,11.83,25.75,12.51,24.09,14.18,24.03,14.85,23.08,14.13,20.77,14.73,19.56,14.59,17.90,13.38,16.39,13.62,14.48,14.15,15.31,15.88,15.42,15.40,16.96,15.22,18.81,15.33,20.78,15.33,22.51,15.32,24.90,14.76,25.52,14.62,26.49,14.52,28.25,13.55,29.36,12.41,29.15,11.22,31.04,10.38,29.60,11.01,28.57
+    .loop 25,Ashenvale,10.86,26.99,11.23,25.73,11.83,25.75,12.51,24.09,14.18,24.03,14.85,23.08,14.13,20.77,14.73,19.56,14.59,17.90,13.38,16.39,13.62,14.48,14.15,15.31,15.88,15.42,15.40,16.96,15.22,18.81,15.33,20.78,15.33,22.51,15.32,24.90,14.76,25.52,14.62,26.49,14.52,28.25,13.55,29.36,12.41,29.15,11.22,31.04,10.38,29.60,11.01,28.57
     >>Kill |cRXP_ENEMY_Wraithtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
     .complete 6442,1 --Wraithtail Head (20)
     .mob Wrathtail Razortail
@@ -3546,7 +3564,7 @@ step
     .complete 6563,1 --Sapphire of Aku'Mai (20)
     .group 4
 step
-    .loop 50,Ashenvale,10.86,26.99,11.23,25.73,11.83,25.75,12.51,24.09,14.18,24.03,14.85,23.08,14.13,20.77,14.73,19.56,14.59,17.90,13.38,16.39,13.62,14.48,14.15,15.31,15.88,15.42,15.40,16.96,15.22,18.81,15.33,20.78,15.33,22.51,15.32,24.90,14.76,25.52,14.62,26.49,14.52,28.25,13.55,29.36,12.41,29.15,11.22,31.04,10.38,29.60,11.01,28.57
+    .loop 25,Ashenvale,10.86,26.99,11.23,25.73,11.83,25.75,12.51,24.09,14.18,24.03,14.85,23.08,14.13,20.77,14.73,19.56,14.59,17.90,13.38,16.39,13.62,14.48,14.15,15.31,15.88,15.42,15.40,16.96,15.22,18.81,15.33,20.78,15.33,22.51,15.32,24.90,14.76,25.52,14.62,26.49,14.52,28.25,13.55,29.36,12.41,29.15,11.22,31.04,10.38,29.60,11.01,28.57
     .xp 23 >> Grind to level 23
 step
     .goto Ashenvale,11.56,34.29

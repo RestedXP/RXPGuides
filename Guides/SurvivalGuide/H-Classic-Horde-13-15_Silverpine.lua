@@ -38,7 +38,7 @@ step
     .goto Silverpine Forest,56.25,11.43,30,0
     .goto Silverpine Forest,56.17,12.62,30,0
     .goto Silverpine Forest,53.46,13.45
-    >>Escort |cRXP_FRIENDLY_Erland|r safely to |cRXP_FRIENDLY_Rane Yorick|r 
+    >>Escort |cRXP_FRIENDLY_Erland|r safely to |cRXP_FRIENDLY_Rane Yorick|r
     >>|cRXP_WARN_Be careful!|r |cRXP_ENEMY_Worgs|r |cRXP_WARN_can spawn on top of each other, eat and drink whenever you are able to|r
     .complete 435,1 --Erland must reach Rane Yorick (1)
     .mob Worg
@@ -75,7 +75,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwyn|r
     >>|cRXP_BUY_Buy|r |T134532:0|t[Red-speckled Mushrooms] |cRXP_BUY_from her|r
     .vendor >> Vendor trash
-    .collect 4605,20,421,1 --Red-speckled Mushroom (20) 
+    .collect 4605,20,421,1 --Red-speckled Mushroom (20)
     .target Gwyn Farrow
     .money <0.05
 step
@@ -83,7 +83,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwyn|r
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman/Druid
     .vendor >> |cRXP_BUY_Buy|r |T134830:0|t[Lesser Healing Potions] |cRXP_BUY_from him if they're up|r
-    .collect 1179,20,421,1 << Mage/Warlock/Priest/Shaman/Druid --Ice Cold Milk (20) 
+    .collect 1179,20,421,1 << Mage/Warlock/Priest/Shaman/Druid --Ice Cold Milk (20)
     .vendor >> Vendor trash
     .target Edwin Harly
     .money <0.05 << Mage/Warlock/Priest/Shaman/Druid
@@ -141,7 +141,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar|r
     .target Dalar Dawnweaver
     .turnin 421 >>Turn in Prove Your Worth
-    .accept 422 >>Accept Arugal's Folly  
+    .accept 422 >>Accept Arugal's Folly
 step
     #completewith Remedy
     .goto Silverpine Forest,52.74,27.70,80 >> Travel to Valgan's Field
@@ -192,7 +192,7 @@ step
     .unitscan Son of Arugal
 step
     #completewith Nightlash
-    >>Kill |cRXP_ENEMY_Bears|r. Loot them for their |cRXP_LOOT_Hearts|r 
+    >>Kill |cRXP_ENEMY_Bears|r. Loot them for their |cRXP_LOOT_Hearts|r
     .complete 447,1 --Grizzled Bear Heart (6)
     .mob Ferocious Grizzled Bear
     .mob Giant Grizzled Bear
@@ -200,8 +200,8 @@ step
 step
     #label Nightlash
     .goto Silverpine Forest,45.44,21.01
-    .loop 35,Silverpine Forest,46.26,19.11,46.48,19.77,46.61,21.59,46.01,22.75,44.20,22.52,44.35,21.08,44.49,19.54,45.23,19.36
-    >>Kill |cRXP_ENEMY_Rothide Gnolls|r around The Dead Field until |cRXP_ENEMY_Nightlash spawns|r. Kill and loot her for her |cRXP_LOOT_Essence|r 
+    .loop 25,Silverpine Forest,46.26,19.11,46.48,19.77,46.61,21.59,46.01,22.75,44.20,22.52,44.35,21.08,44.49,19.54,45.23,19.36
+    >>Kill |cRXP_ENEMY_Rothide Gnolls|r around The Dead Field until |cRXP_ENEMY_Nightlash spawns|r. Kill and loot her for her |cRXP_LOOT_Essence|r
     >>|cRXP_WARN_They are immune to fear!|r << Priest/Warlock
     .complete 437,1 --Enter the Dead Fields (1)
     .complete 437,2 --Essence of Nightlash (1)
@@ -210,7 +210,7 @@ step
     .mob Rot Hide Mystic
 step
     #completewith KillianVendor
-    >>Kill |cRXP_ENEMY_Bears|r. Loot them for their |cRXP_LOOT_Hearts|r 
+    >>Kill |cRXP_ENEMY_Bears|r. Loot them for their |cRXP_LOOT_Hearts|r
     .complete 447,1 --Grizzled Bear Heart (6)
     .mob Ferocious Grizzled Bear
     .mob Giant Grizzled Bear
@@ -230,7 +230,7 @@ step
     .vendor >> Vendor trash
     .target Killian Sanatha
 step
-    .loop 40,Silverpine Forest,37.25,15.99,35.67,16.01,34.96,16.34,33.99,17.24,34.14,15.26,35.06,14.50,35.85,13.83,36.33,14.20
+    .loop 25,Silverpine Forest,37.25,15.99,35.67,16.01,34.96,16.34,33.99,17.24,34.14,15.26,35.06,14.50,35.85,13.83,36.33,14.20
     >>Kill |cRXP_ENEMY_Spiders|r. Loot them for their |cRXP_LOOT_Blood|r
     .complete 447,2 --Skittering Blood (6)
     .mob Moss Stalker
@@ -243,7 +243,7 @@ step
     .goto Silverpine Forest,44.67,24.84,50,0
     .goto Silverpine Forest,46.08,26.62,50,0
     .goto Silverpine Forest,41.60,21.65
-    >>Finish killing |cRXP_ENEMY_Bears|r. Loot them for their |cRXP_LOOT_Hearts|r 
+    >>Finish killing |cRXP_ENEMY_Bears|r. Loot them for their |cRXP_LOOT_Hearts|r
     .complete 447,1 --Grizzled Bear Heart (6)
     .mob Ferocious Grizzled Bear
     .mob Giant Grizzled Bear
@@ -276,14 +276,14 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwyn|r
     >>|cRXP_BUY_Buy|r |T134532:0|t[Red-speckled Mushrooms] |cRXP_BUY_from her|r
     .vendor >> Vendor trash
-    .collect 4605,20,421,1 --Red-speckled Mushroom (20) 
+    .collect 4605,20,421,1 --Red-speckled Mushroom (20)
     .target Gwyn Farrow
 step
     .goto Silverpine Forest,43.98,39.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwyn|r
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman/Druid
     .vendor >> |cRXP_BUY_Buy|r |T134830:0|t[Lesser Healing Potions] |cRXP_BUY_from him if they're up|r
-    .collect 1179,20,421,1 << Mage/Warlock/Priest/Shaman/Druid --Ice Cold Milk (20) 
+    .collect 1179,20,421,1 << Mage/Warlock/Priest/Shaman/Druid --Ice Cold Milk (20)
     .target Edwin Harly
 step << Warlock/Mage/Priest
     .goto Silverpine Forest,44.80,39.24
@@ -348,7 +348,7 @@ step
     .unitscan Son of Arugal
 step
     #label Shackles
-    .loop 40,Silverpine Forest,44.22,31.55,43.51,32.38,42.61,31.12,41.28,30.25,39.70,30.24,38.96,29.15,38.28,27.10,37.60,24.16,38.07,23.13,38.56,21.93,39.73,23.26,41.49,23.51,41.14,25.50,41.17,28.26,42.01,29.27,43.83,31.00
+    .loop 25,Silverpine Forest,44.22,31.55,43.51,32.38,42.61,31.12,41.28,30.25,39.70,30.24,38.96,29.15,38.28,27.10,37.60,24.16,38.07,23.13,38.56,21.93,39.73,23.26,41.49,23.51,41.14,25.50,41.17,28.26,42.01,29.27,43.83,31.00
     >>Kill |cRXP_ENEMY_Moonrage Gluttons|r and |cRXP_ENEMY_Moonrage Darksouls|r. Loot them for their |cRXP_LOOT_Shackles|r
     >>|cRXP_WARN_Be careful!|r |cRXP_ENEMY_Moonrage Darksouls|r |cRXP_WARN_enrage when they are below 25% health. Kill them quickly when they are low|r
     .complete 423,1 --Glutton Shackle (6)
@@ -365,7 +365,7 @@ step
     .accept 439 >>Accept Rot Hide Clues
 step
     .goto Silverpine Forest,49.89,60.33
-    >>Click the |cRXP_PICK_Crate|r in the camp 
+    >>Click the |cRXP_PICK_Crate|r in the camp
     >>|cRXP_WARN_Be careful! These mobs cast|r |T135846:0|t[Frostbolt]|cRXP_WARN_ and flee at low health. Pull them back and kill them one by one until you can safely click on the crate|r
     .turnin 477 >>Turn in Border Crossings
     .accept 478 >>Accept Maps and Runes
@@ -501,7 +501,7 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
 step << Rogue
     .goto Undercity,61.15,40.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Louis|r|cRXP_BUY_. Buy a|r |T135343:0|t[Scimitar] |cRXP_BUY_from him.|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Louis|r|cRXP_BUY_. Buy a|r |T135343:0|t[Scimitar] |cRXP_BUY_from him.|r
     .collect 2027,1,479,1 --Collect Scimitar (1)
     .money <0.3815
     .itemStat 16,QUALITY,<7
@@ -580,7 +580,6 @@ step << Warlock
     .goto Undercity,83.52,69.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mennet|r
     .turnin 1886 >>Turn in The Deathstalkers
-    .accept 1898 >>Accept The Deathstalkers
     .target Mennet Carkad
     .isQuestComplete 1886
 step << Undead Rogue
@@ -718,7 +717,7 @@ step
     .goto Silverpine Forest,57.90,63.10,120 >> Travel toward Ambermill
     .group
 step
-    .loop 40,Silverpine Forest,57.91,62.48,59.10,61.88,59.79,63.08,60.79,62.55,61.98,62.56,61.00,64.89,60.10,65.93,59.02,67.10,57.56,67.57,57.62,65.17,57.12,63.39
+    .loop 25,Silverpine Forest,57.91,62.48,59.10,61.88,59.79,63.08,60.79,62.55,61.98,62.56,61.00,64.89,60.10,65.93,59.02,67.10,57.56,67.57,57.62,65.17,57.12,63.39
     >>Kill |cRXP_ENEMY_Dalaran Protectors|r and |cRXP_ENEMY_Dalaran Mages|r. Loot them for their |cRXP_LOOT_Pendants|r
     .complete 479,1 --Dalaran Pendant (8)
     .mob Dalaran Mage
@@ -810,15 +809,18 @@ step
     .goto Silverpine Forest,45.51,41.26,100 >> Travel back to The Sepulcher
     .group
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allister|r, |cRXP_FRIENDLY_Dalar|r and |cRXP_FRIENDLY_Renferrel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allister|r and |cRXP_FRIENDLY_Dalar|r
     .turnin 479 >>Turn in Ambermill Investigations
     .goto Silverpine Forest,43.98,40.93
     .turnin 99 >> Turn in Arugal's Folly
     .goto Silverpine Forest,44.20,39.73
-    .turnin 450 >> Turn in A Recipe for Death
-    .goto Silverpine Forest,42.79,40.87
     .target Shadow Priest Allister
     .target Dalar Dawnweaver
+    .group
+step
+    .goto Silverpine Forest,42.79,40.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renferrel|r
+    .turnin 450 >> Turn in A Recipe for Death
     .target Apothecary Renferrel
     .isQuestComplete 450
     .group
@@ -828,6 +830,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allister|r
     .turnin 479 >>Turn in Ambermill Investigations
     .target Shadow Priest Allister
+    .isQuestComplete 479
     .group
 step << Hunter
     .goto Silverpine Forest,45.01,39.30

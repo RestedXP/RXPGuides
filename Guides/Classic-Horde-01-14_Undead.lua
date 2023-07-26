@@ -412,15 +412,15 @@ step
     >>Kill |cFFFF5722Young Night Web Spiders|r inside the cave
 	.complete 380,2 --Kill Night Web Spider (x8)
     .mob Night Web Spider
-step << Warlock
-    #softcore
-    #completewith ScarletC
-    .cast 688 >>|cFFFCDC00Cast|r |T136218:0|t[Summon Imp]
 step
     #softcore
     #completewith Scavenging
     .deathskip >> Die and respawn at the |cFF00FF25Spirit Healer|r
     .target Spirit Healer
+step << Warlock
+    #softcore
+    #completewith ScarletC
+    .cast 688 >>|cFFFCDC00Cast|r |T136218:0|t[Summon Imp]
 step
     #hardcore
     #completewith next
