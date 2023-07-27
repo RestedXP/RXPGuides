@@ -524,7 +524,7 @@ step
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fly Thunder Bluff >> Fly to Thunder Bluff
-    .target Doras
+    .target Devrak
     .zoneskip Thunder Bluff
     .dungeon RFC
 step
@@ -1486,7 +1486,7 @@ step
     .mob Witchwing Slayer
     .mob Witchwing Ambusher
 step
-    #completewith
+    #completewith FoodandWater1
     .hs >> Hearth to The Crossroads
     .use 6948
     .cooldown item,6948,>0
@@ -1497,6 +1497,7 @@ step
     .cooldown item,6948,<0
     .subzoneskip 380
 step
+    #label FoodandWater1
     .goto The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
 	.vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
@@ -2346,19 +2347,123 @@ step
     .subzone 1581 >> Now you should be looking for a group to The Deadmines
     .dungeon DM
 step
-    #completewith next
+    #completewith ZepptoSTVforDM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fly Orgrimmar >> Fly to Orgrimmar
     .zoneskip Orgrimmar
     .target Devrak
     .dungeon DM
-    --VV Add trainer steps for DM players
+step << Shaman
+    .goto Orgrimmar,38.82,36.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
+    .train 8052 >> Train your class spells
+    .target Kardris Dreamseeker
+    .xp <18,1
+    .xp >20,1
+    .dungeon DM
+step << Shaman
+    .goto Orgrimmar,38.82,36.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
+    .train 2645 >> Train your class spells
+    .target Kardris Dreamseeker
+    .xp <20,1
+    .dungeon DM
+step << Hunter
+    .goto Orgrimmar,66.05,18.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormak|r
+	.train 14318 >>Train your class spells
+    .target Ormak Grimshot
+    .xp <18,1
+    .xp >20,1
+    .dungeon DM
+step << Hunter
+    .goto Orgrimmar,66.05,18.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormak|r
+	.train 14290 >>Train your class spells
+    .target Ormak Grimshot
+    .xp <20,1
+    .dungeon DM
+step << Hunter
+    .goto Orgrimmar,66.33,14.83
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xao'tsu|r
+	.train 5118 >>Train your pet spells
+	.target Xao'tsu
+    .xp <20,1
+    .dungeon DM
+step << Warrior
+    .goto Orgrimmar,79.91,31.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grezz|r
+	.train 8198 >>Train your class spells
+    .target Grezz Ragefist
+    .xp <18,1
+    .xp >20,1
+    .dungeon DM
+step << Warrior
+    .goto Orgrimmar,79.91,31.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grezz|r
+    .train 845 >> Train your class spells
+    .target Grezz Ragefist
+    .xp <20,1
+    .dungeon DM
+step << Rogue
+    .goto Orgrimmar,43.90,54.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormok|r
+    .train 1943 >> Train your class spells
+    .target Ormok
+    .xp <20,1
+    .dungeon DM
+step << Warlock
+    .goto Undercity,48.47,45.42
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Zevrost|r
+    .train 1014 >> Train your class spells
+	.target Zevrost
+    .xp <18,1
+    .xp >20,1
+    .dungeon DM
+step << Warlock
+    .goto Undercity,48.47,45.42
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Zevrost|r
+    .train 706 >> Train your class spells
+	.target Zevrost
+    .xp <20,1
+    .dungeon DM
+step << Mage
+    .goto Orgrimmar,38.36,85.54
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo|r
+    .train 3140 >> Train your class spells
+    .target Pephredo
+    .xp <18,1
+    .xp >20,1
+    .dungeon DM
+step << Mage
+    .goto Orgrimmar,38.36,85.54
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo|r
+    .train 1953 >> Train your class spells
+    .target Pephredo
+    .xp <20,1
+    .dungeon DM
+step << Priest
+    .goto Orgrimmar,35.59,87.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
+    .train 970/ >> Train your class spells
+    .target Ur'kyo
+    .xp <18,1
+    .xp >20,1
+    .dungeon DM
+step << Priest
+    .goto Orgrimmar,35.59,87.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
+    .train 14914 >> Train your class spells
+    .target Ur'kyo
+    .xp <20,1
+    .dungeon DM
 step
     #completewith next
     .zone Durotar >> Leave Orgrimmar
     .zoneskip Durotar
     .dungeon DM
 step
+    #label ZepptoSTVforDM
     .goto Durotar,50.8,13.8,40 >>Go up the Zeppelin Tower
     .zone Stranglethorn Vale >>Take the Zeppelin to Stranglethorn Vale
     .zoneskip Stranglethorn Vale
@@ -3277,7 +3382,6 @@ step << Warlock
     .target Omusa Thunderhorn
     .zoneskip Stonetalon Mountains
     .dungeon !WC
-    --VV Make sure this won't show for .WC players
 step << !Warlock
     #completewith next
     .goto Thunder Bluff,47.00,49.82

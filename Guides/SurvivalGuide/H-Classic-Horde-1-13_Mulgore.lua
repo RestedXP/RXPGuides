@@ -103,15 +103,28 @@ step
     .turnin 753 >>Turn in A Humble Task
     .accept 755 >>Accept Rites of the Earthmother
     .target Chief Hawkwind
-
-    --VV Add white staff purchase for shaman/druid optionally
-
+step << Shaman
+    .goto Mulgore,44.07,77.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Marjak|r|cRXP_BUY_. Buy a|r |T135139:0|t[Short Staff] |cRXP_BUY_from him|r
+    .collect 2132,1,750,1 --Collect Short Staff (1)
+    .money <0.0102
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.9
+    .target Marjak
+step << Rogue
+    #completewith RitesoftheEarthmother
+    +Equip the |T135139:0|t[Short Staff]
+    .use 2132
+    .itemcount 2132,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.9
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Mountain Cougars|r. Loot them for their |cRXP_LOOT_Pelts|r
     .complete 750,1 --Mountain Cougar Pelt (10)
     .mob Mountain Cougar
 step
+    #label RitesoftheEarthmother
     .goto Mulgore,42.58,92.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seer Graytongue|r
     >>|cRXP_WARN_Grind mobs on the way|r
@@ -695,14 +708,17 @@ step << Shaman
     .target Narm Skychaser
     .xp <8,1
 step
-    .goto Mulgore,51.1,58.6,50,0
-    .goto Mulgore,59.7,62.5,50,0
-    .goto Mulgore,51.1,58.6
+    .goto Mulgore,51.50,59.23,50,0
+    .goto Mulgore,53.00,60.24,50,0
+    .goto Mulgore,55.14,60.65,50,0
+    .goto Mulgore,57.47,61.26,50,0
+    .goto Mulgore,59.65,62.40,50,0
+    .goto Mulgore,55.14,60.65
+    .line Mulgore,51.50,59.23,53.00,60.24,55.14,60.65,57.47,61.26,59.65,62.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morin|r
     >>|cRXP_WARN_He patrols along the eastern road|r
     .accept 749 >>Accept The Ravaged Caravan
 	.unitscan Morin Cloudstalker
-    --VV Need .line
 step
     #completewith Clawsx
     >>|cRXP_WARN_Get the items for Mazzranache as you quest throughout the zone|r
@@ -987,10 +1003,25 @@ step
     .complete 766,4 --Swoop Gizzard (1)
 step
     .loop 25,Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
+    .xp 9+4400 >> Grind to 3020+/6500xp
+    .isQuestComplete 761
+    .isQuestComplete 766
+step
+    .loop 25,Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
+    .xp 9+4400 >> Grind to 3720+/6500xp
+    .isQuestComplete 761
+step
+    .loop 25,Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
+    .xp 9+4400 >> Grind to 3700+/6500xp
+    .isQuestComplete 766
+step
+    .loop 25,Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
     .xp 9+4400 >> Grind to 4400+/6500xp
-    --VV Extra grinds depending on 766/761
 step << !Druid
-    #completewith Bloodhooffinalturnins
+    #completewith Bloodhooffinalturninsstep
+    .loop 25,Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
+    .xp 9+4400 >> Grind to 3720+/6500xp
+    .isQuestComplete 761
     .hs >>Hearth to Bloodhoof Village
     .use 6948
 step << Druid
@@ -1123,12 +1154,13 @@ step
     .money <0.05
     .target Jhawna Oatwind
 step
-    .goto Mulgore,51.1,58.6,30,0
-    .goto Mulgore,59.7,62.5,30,0
-    .goto Mulgore,51.1,58.6,30,0
-    .goto Mulgore,59.7,62.5,30,0
-    .goto Mulgore,51.1,58.6,30,0
-    .goto Mulgore,59.7,62.5
+    .goto Mulgore,51.50,59.23,50,0
+    .goto Mulgore,53.00,60.24,50,0
+    .goto Mulgore,55.14,60.65,50,0
+    .goto Mulgore,57.47,61.26,50,0
+    .goto Mulgore,59.65,62.40,50,0
+    .goto Mulgore,55.14,60.65
+    .line Mulgore,51.50,59.23,53.00,60.24,55.14,60.65,57.47,61.26,59.65,62.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morin|r
     >>|cRXP_WARN_He patrols along the eastern road|r
     .turnin 751 >> Turn in The Ravaged Caravan
@@ -1136,19 +1168,18 @@ step
     .accept 765 >> Supervisor Fizsprocket
 	.unitscan Morin Cloudstalker
     .group
-    --VV Need .line
 step
-    .goto Mulgore,51.1,58.6,30,0
-    .goto Mulgore,59.7,62.5,30,0
-    .goto Mulgore,51.1,58.6,30,0
-    .goto Mulgore,59.7,62.5,30,0
-    .goto Mulgore,51.1,58.6,30,0
-    .goto Mulgore,59.7,62.5
+    .goto Mulgore,51.50,59.23,50,0
+    .goto Mulgore,53.00,60.24,50,0
+    .goto Mulgore,55.14,60.65,50,0
+    .goto Mulgore,57.47,61.26,50,0
+    .goto Mulgore,59.65,62.40,50,0
+    .goto Mulgore,55.14,60.65
+    .line Mulgore,51.50,59.23,53.00,60.24,55.14,60.65,57.47,61.26,59.65,62.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morin|r
     >>|cRXP_WARN_He patrols along the eastern road|r
     .turnin 751 >> Turn in The Ravaged Caravan
 	.unitscan Morin Cloudstalker
-    --VV Need .line
 step
     #completewith Fizsprocket
     .goto Mulgore,61.51,47.29,20 >> Travel to The Venture Co. Mine
@@ -1177,12 +1208,13 @@ step
     .mob Venture Co. Supervisor
     .group 2
 step
-    .goto Mulgore,51.1,58.6,30,0
-    .goto Mulgore,59.7,62.5,30,0
-    .goto Mulgore,51.1,58.6,30,0
-    .goto Mulgore,59.7,62.5,30,0
-    .goto Mulgore,51.1,58.6,30,0
-    .goto Mulgore,59.7,62.5
+    .goto Mulgore,59.65,62.40,50,0
+    .goto Mulgore,57.47,61.26,50,0
+    .goto Mulgore,55.14,60.65,50,0
+    .goto Mulgore,53.00,60.24,50,0
+    .goto Mulgore,51.50,59.23,50,0
+    .goto Mulgore,55.14,60.65
+    .line Mulgore,51.50,59.23,53.00,60.24,55.14,60.65,57.47,61.26,59.65,62.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morin|r
     >>|cRXP_WARN_He patrols along the eastern road|r
     .turnin 764 >>Turn in The Venture Co.
