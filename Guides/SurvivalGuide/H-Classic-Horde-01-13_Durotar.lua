@@ -433,7 +433,7 @@ step << Mage
 step << Priest
     .goto Durotar,42.36,68.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken'jai|r
-    .train 589,1 >> Train your class spells
+    .train 589 >> Train your class spells
     .money <0.021
     .target Ken'jai
 step << Priest
@@ -1437,16 +1437,16 @@ step << Shaman
     .train 8044 >> Train your class spells
     .target Swart
 step << Warlock
-    .goto Durotar,54.37,41.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dhugru|r
-    .train 980 >> Train your class spells
-    .target Dhugru Gorelust
-step << Warlock
+    #completewith next
     .goto Durotar,54.70,41.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kitha|r and buy |T133738:0|t[Firebolt Rank 2]
     .collect 16302,1,818,1 --Grimoire of Firebolt (Rank 2) (1)
     .target Kitha
     .money <0.01
+step << Warlock
+    #completewith Tools
+    .train 20270 >> Use the |T133738:0|t[Grimoire of Firebolt Rank 2]
+    .use 16302
 step << Hunter
     .goto Durotar,51.85,43.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r
@@ -1753,11 +1753,15 @@ step << Warlock
     .target Dhugru Gorelust
     .xp <10,1
 step << Warlock
+    #completewith next
     .goto Durotar,54.70,41.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kitha|r and buy |T133738:0|t[Firebolt Rank 2]
-    .collect 16302,1,818,1 --Grimoire of Firebolt (Rank 2) (1)
+    .collect 16302,1,837,1 --Grimoire of Firebolt (Rank 2) (1)
     .target Kitha
     .money <0.01
+step << Warlock
+    .train 20270 >> Use the |T133738:0|t[Grimoire of Firebolt Rank 2]
+    .use 16302
 step << Rogue
     .goto Durotar,51.98,43.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaplak|r
@@ -2199,10 +2203,12 @@ step
     .hs >> Hearth to Razor Hill
     .isQuestComplete 806
     .use 6948
+    .subzoneskip 362
     .group
 step << Shaman
     .hs >> Hearth to Razor Hill
     .use 6948
+    .subzoneskip 362
     .solo
 step
     .goto Durotar,51.51,41.64
@@ -2267,13 +2273,6 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dhugru|r
     .train 1120,1 >> Train your class spells
     .target Dhugru Gorelust
-    .group
-step << Warlock
-    .goto Durotar,54.70,41.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kitha|r and buy |T133738:0|t[Firebolt Rank 2]
-    .collect 16302,1,818,1 --Grimoire of Firebolt (Rank 2) (1)
-    .target Kitha
-    .money <0.01
     .group
 step << Hunter
     .goto Durotar,51.85,43.49
@@ -2503,7 +2502,7 @@ step << Troll Priest
 step << Mage
     .goto Orgrimmar,38.33,85.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pephredo|r
-    .train 122,1 >> Train your class spells
+    .train 122 >> Train your class spells
     .target Pephredo
 step
     #label Admiralorders1

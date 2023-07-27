@@ -809,13 +809,11 @@ step
     .goto Silverpine Forest,45.51,41.26,100 >> Travel back to The Sepulcher
     .group
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allister|r and |cRXP_FRIENDLY_Dalar|r
-    .turnin 479 >>Turn in Ambermill Investigations
-    .goto Silverpine Forest,43.98,40.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar|r
     .turnin 99 >> Turn in Arugal's Folly
     .goto Silverpine Forest,44.20,39.73
-    .target Shadow Priest Allister
     .target Dalar Dawnweaver
+    .isQuestComplete 99
     .group
 step
     .goto Silverpine Forest,42.79,40.87
@@ -854,11 +852,14 @@ step << Druid
 step << Tauren
     .hs >> Hearth to The Crossroads
     .use 6948
+    .zoneskip The Barrens
 step << Shaman/Hunter
     .hs >> Hearth to The Crossroads
     .use 6948
+    .zoneskip The Barrens
 step << !Tauren !Shaman !Hunter
     .hs >> Hearth to Razor Hill
     .use 6948
+    .zoneskip Durotar
 
     ]])

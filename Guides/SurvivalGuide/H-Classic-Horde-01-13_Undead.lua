@@ -780,16 +780,17 @@ step
     .mob Scarlet Warrior
 step
     #completewith BrillTurnin1
-     .hs >> Hearth to Brill
-     .use 6948
-     .cooldown item,6948,>0
+    .hs >> Hearth to Brill
+    .use 6948
+    .subzoneskip 159
+    .cooldown item,6948,>0
 step << Priest
-     .goto Tirisfal Glades,61.57,52.19
-     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beryl|r on the second floor
-     .turnin 5650 >>Turn in Garments of Darkness
-     .train 591 >>Train |T135924:0|t[Smite]
-     .train 17 >>Train |T135940:0|t[Power Word: Shield]
-     .target Dark Cleric Beryl
+    .goto Tirisfal Glades,61.57,52.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beryl|r on the second floor
+    .turnin 5650 >>Turn in Garments of Darkness
+    .train 591 >>Train |T135924:0|t[Smite]
+    .train 17 >>Train |T135940:0|t[Power Word: Shield]
+    .target Dark Cleric Beryl
 step
     #label BrillTurnin1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zygand|r, |cRXP_FRIENDLY_Johaan|r and |cRXP_FRIENDLY_Dillinger|r
@@ -1448,6 +1449,7 @@ step << Warlock
     .train 980 >> Train your class spells
     .target Dhugru Gorelust
 step << Warlock
+    #completewith next
     .goto Durotar,54.70,41.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kitha|r and buy |T133738:0|t[Firebolt Rank 2]
     .collect 16302,1,818,1 --Grimoire of Firebolt (Rank 2) (1)
@@ -1456,7 +1458,6 @@ step << Warlock
 step << Warlock
     #completewith Tools
     .train 20270 >> Use the |T133738:0|t[Grimoire of Firebolt Rank 2]
-    .itemcount 16302,1
     .use 16302
 step << Rogue
     .goto Durotar,51.98,43.69
@@ -1718,11 +1719,15 @@ step << Warlock
     .target Dhugru Gorelust
     .xp <10,1
 step << Warlock
+    #completewith next
     .goto Durotar,54.70,41.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kitha|r and buy |T133738:0|t[Firebolt Rank 2]
-    .collect 16302,1,818,1 --Grimoire of Firebolt (Rank 2) (1)
+    .collect 16302,1,837,1 --Grimoire of Firebolt (Rank 2) (1)
     .target Kitha
     .money <0.01
+step << Warlock
+    .train 20270 >> Use the |T133738:0|t[Grimoire of Firebolt Rank 2]
+    .use 16302
 step << Rogue
     .goto Durotar,51.98,43.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaplak|r
@@ -1854,10 +1859,10 @@ step
     .group 2
     --VV Add video / description for Druid / tell priest/lock to fear if pulled back and area is clear?
 step
-    #completewith next
     .hs >> Hearth to Razor Hill
     .use 6948
     .cooldown item,6948,>0
+    .subzoneskip 362
     .isQuestComplete 806
     .group
 step
@@ -2977,12 +2982,19 @@ step << Warrior
     .target Coleman Farthing
     .isQuestComplete 1821
     .group
+step << Warrior
+    .goto Tirisfal Glades,61.72,52.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman|r inside the inn
+    .turnin 1822 >>Heirloom Weapon
+    .target Coleman Farthing
+    .isQuestTurnedIn 1821
+    .group
 step
     .goto Tirisfal Glades,61.94,51.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Captured Mountaineer|r downstairs in the back of the inn
     .turnin 492 >> Turn in A New Plague
     .target Captured Mountaineer
-    step << Priest
+step << Priest
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beryl|r on the second floor
 	.train 588,1 >>Train |T135926:0|t[Inner Fire]

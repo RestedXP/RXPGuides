@@ -212,7 +212,7 @@ step
     .group
     #label DemonSeed
     .goto The Barrens,47.98,19.08
-    >>Right click the Altar. Make sure you have a |T134095:0|t[Flawed Power Stone] on you
+    >>Right click the |cRXP_PICK_Altar|r. Make sure you have a |T134095:0|t[Flawed Power Stone] on you
     .collect 4986,1,924 --Collect Flawed Power Stone
     .complete 924,1 --Destroy the Demon Seed (1)
     .isOnQuest 924
@@ -507,6 +507,7 @@ step
     .goto Undercity,64.22,39.77,10,0
     .goto Undercity,65.53,43.62,15 >> Take the lift down to the Undercity
     .goto Undercity,56.2,96.2
+    .dungeon RFC
 step
     #label Varimathras
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Varimathras|r
@@ -713,7 +714,7 @@ step << Rogue
     .target Ironzar
 step << Rogue
     #completewith BarenLongshore
-    +Equip the |T135343:0|t[Scimitar]
+    +Equip the second |T135343:0|t[Scimitar] in your off-hand
     .use 2027
     .itemcount 2027,1
     .itemStat 17,QUALITY,<7
@@ -955,7 +956,7 @@ step
     .complete 848,1 --Collect Fungal Spores (x4)
 step
     .goto The Barrens,45.06,22.54
-    >>Dive underwater to the bubble fissure
+    >>Dive underwater to the |cRXP_PICK_Bubble Fissure|r
     .complete 870,1 --Explore the waters of the Forgotten Pools
 step
     .goto The Barrens,42.82,23.52
@@ -966,9 +967,9 @@ step
 step
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
-    .turnin 850 >> Turn in Kolkar Leaders
-    .turnin 855 >> Turn in Centaur Bracers
+    .turnin 850 >>Turn in Kolkar Leaders
     .accept 851 >>Accept Verog the Dervish
+    .turnin 855 >>Turn in Centaur Bracers
     .target Regthar Deathgate
     .isQuestComplete 855
 step
@@ -1485,13 +1486,22 @@ step
     .mob Witchwing Slayer
     .mob Witchwing Ambusher
 step
+    #completewith
     .hs >> Hearth to The Crossroads
     .use 6948
     .cooldown item,6948,>0
+    .subzoneskip 380
 step
     #completewith next
     .goto The Barrens,52.09,30.43,120 >>Travel to The Crossroads. You can also grind untill your |T134414:0|t[Hearthstone] is back up
     .cooldown item,6948,<0
+    .subzoneskip 380
+step
+    .goto The Barrens,51.99,29.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
+	.vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
+    .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
+    .target Innkeeper Boorand Plainswind
 step << !Tauren !Undead
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazrog|r, |cRXP_FRIENDLY_Zargh|r, |cRXP_FRIENDLY_Sergra|r and |cRXP_FRIENDLY_Darsok|r
     .turnin 869 >>Turn in Raptor Thieves
@@ -1780,9 +1790,7 @@ step << Hunter
 step
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
-    .turnin 851 >>Turn in Verog the Dervish
     .turnin 855 >>Turn in Centaur Bracers
-    .accept 852 >>Accept Hezrul Bloodmark
     .target Regthar Deathgate
     .isQuestComplete 855
 step
@@ -1791,6 +1799,13 @@ step
     .turnin 851 >>Turn in Verog the Dervish
     .accept 852 >>Accept Hezrul Bloodmark
     .target Regthar Deathgate
+    .isQuestComplete 851
+step
+    .goto The Barrens,45.35,28.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
+    .accept 852 >>Accept Hezrul Bloodmark
+    .target Regthar Deathgate
+    .isQuestTurnedIn 851
 step
     #completewith next
     .zone Stonetalon Mountains >> Travel to Stonetalon Mountains
@@ -2124,7 +2139,7 @@ step
     .mob Stormsnout
 step
     .loop 25,The Barrens,50.71,54.60,50.74,55.33,50.73,56.78,50.42,57.23,50.50,57.65,50.87,57.50,51.26,57.84,51.74,57.69,51.79,57.10,53.08,54.69,53.65,54.27,53.63,53.53,53.35,52.72,53.00,51.83,52.62,52.19,52.59,52.71,52.41,53.07,52.32,53.71,51.39,54.22
-    >>Kill a lot of |cRXP_ENEMY_Bristleback Quillboars|r. Loot them for their |cRXP_LOOT_Tusks|r. Save the |T134128:0|t[|cFF00BCD4Blood Shards|r you get
+    >>Kill a lot of |cRXP_ENEMY_Bristleback Quillboars|r. Loot them for their |cRXP_LOOT_Tusks|r. Save the |T134128:0|t[|cFF00BCD4Blood Shards|r] you get
     .complete 878,1 --Kill Bristleback Water Seeker (x6)
     .complete 878,2 --Kill Bristleback Thornweaver (x12)
     .complete 878,3 --Kill Bristleback Geomancer (x12)
@@ -2166,10 +2181,9 @@ step
     .mob Zhevra Charger
 step
     .goto The Barrens,59.87,30.41
-    >>Use the |T134368:0|t[|cRXP_LOOT_Fresh Zhevra Carcass|r] at the dead tree to summon |cRXP_ENEMY_Ishamuhale|r. Kill and loot him for his |cRXP_LOOT_Fang|r
+    .use 10338 >>Use the |T134368:0|t[|cRXP_LOOT_Fresh Zhevra Carcass|r] at the dead tree to summon |cRXP_ENEMY_Ishamuhale|r. Kill and loot him for his |cRXP_LOOT_Fang|r
     .complete 882,1 --Ishamuhale's Fang (1)
     .mob Ishamuhale
-    .use 10338
 step
     #completewith BootyTurnin
     .goto The Barrens,63.00,36.42,100 >> Run to Ratchet
@@ -2269,7 +2283,8 @@ step
     .goto The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
     .home >>Set your Hearthstone to Crossroads
-    .vendor >>|cRXP_BUY_Sell your junk, then restock food and water|r
+	.vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
+    .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
     .target Innkeeper Boorand Plainswind
 step << Shaman
     #completewith next
@@ -2441,7 +2456,7 @@ step
     .target Mangletooth
 step
     #completewith IshamuhaleTurnin
-    +|cRXP_WARN_Use your|r |T134128:0|t[|cFF00BCD4Blood Shards|r |cRXP_WARN_to get buffs. Save at least 4 of them for later|r
+    +|cRXP_WARN_Use your|r |T134128:0|t[|cFF00BCD4Blood Shards|r] |cRXP_WARN_to get buffs. Save at least 4 of them for later|r
 step
     .goto The Barrens,44.85,59.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorn Skyseer|r
@@ -2534,6 +2549,7 @@ step
 step
     #completewith next
     .goto The Barrens,45.66,40.34,120 >> Travel to the Lushwater Oasis
+    .isQuestTurnedIn 851
 step
     .loop 25,The Barrens,45.64,38.16,45.84,37.86,45.78,37.41,45.95,37.11,45.93,36.91,46.14,36.85,46.19,36.88,46.28,36.86,46.46,37.17,46.58,37.31,46.66,37.54,46.63,37.93,46.75,38.39,47.27,38.98,47.47,39.27,48.20,39.57,48.40,39.58,48.60,39.51,48.54,39.96,48.58,40.52,48.27,40.82,48.06,40.82,47.86,41.13,47.49,41.33,47.34,41.61,47.22,41.64,46.85,42.05,46.56,41.93,46.27,41.76,46.03,41.15,45.86,41.32,46.09,40.98,46.08,40.68,45.71,40.56,45.64,38.16
     >>Find & kill |cRXP_ENEMY_Hezrul Bloodmark|r, he patrols around the lake. Loot him for his |cRXP_LOOT_Head|r
@@ -2545,31 +2561,22 @@ step
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .turnin 852 >>Turn in Hezrul Bloodmark
+    .target Regthar Deathgate
+    .isQuestComplete 852
+step
+    .goto The Barrens,45.35,28.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
+    .turnin 855 >>Turn in Centaur Bracers
+    .target Regthar Deathgate
+    .isQuestComplete 855
+step
+    .goto The Barrens,45.35,28.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .accept 4021 >>Accept Counterattack!
     .target Regthar Deathgate
     .timer 205 >>|cRXP_ENEMY_Warlord Krom'zar|r spawn
-    .isQuestComplete 852
+    .isQuestTurnedIn 852
     .group
-step
-    .goto The Barrens,45.35,28.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
-    .turnin 852 >>Turn in Hezrul Bloodmark
-    .turnin 855 >>Turn in Centaur Bracers
-    .target Regthar Deathgate
-    .isQuestComplete 852
-    .isQuestComplete 855
-step
-    .goto The Barrens,45.35,28.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
-    .turnin 852 >>Turn in Hezrul Bloodmark
-    .isQuestComplete 852
-    .target Regthar Deathgate
-step
-    .goto The Barrens,45.35,28.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
-    .turnin 855 >>Turn in Centaur Bracers
-    .target Regthar Deathgate
-    .isQuestComplete 855
 step
     .goto The Barrens,44.48,28.15
     >>Kill |cRXP_ENEMY_Warlord Krom'zar|r once he appears. Loot the |cRXP_PICK_Banner|r that he drops on the ground
@@ -2578,22 +2585,19 @@ step
     .unitscan Warlord Krom'zar
     .group 3
     .isQuestTurnedIn 852
-    --VV Add timer
 step
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .turnin 4021 >>Turn in Counterattack!
-    .turnin 855 >>Turn in Centaur Bracers
     .target Regthar Deathgate
-    .isQuestComplete 855
-    .isQuestTurnedIn 852
+    .isQuestComplete 4021
     .group
 step
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
-    .turnin 4021 >>Turn in Counterattack!
+    .turnin 855 >>Turn in Centaur Bracers
     .target Regthar Deathgate
-    .isQuestTurnedIn 852
+    .isQuestComplete 855
     .group
 step
     >>Abandon Centaur Bracers if you haven't completed it at this point
@@ -3320,8 +3324,15 @@ step
     .goto Stonetalon Mountains,47.21,64.05
     .target Tsunaman
     .target Mor'Rogal
-    .group
     .isQuestComplete 6421
+    .group
+step
+    .goto Stonetalon Mountains,47.21,64.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mor'Rogal|r
+    .accept 6481 >>Accept Earthen Arise
+    .target Mor'Rogal
+    .isQuestTurnedIn 6421
+    .group
 step
     #label InDeepTrouble2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tsunaman|r
