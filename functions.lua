@@ -1669,9 +1669,9 @@ end
 local homeText = strupper(_G.HOME or "%")
 function addon.SelectGossipType(gossipType,noOp)
     if C_GossipInfo.GetOptions then
-
-        for i,option in ipairs(GossipGetOptions()) do
-            --print(option.type,option.icon)
+        local options = GossipGetOptions()
+        for i,option in ipairs(options) do
+            print(option.type,option.icon)
             if option.type == gossipType then
                 noOp = noOp or GossipSelectOption(i)
                 return i,option.name
@@ -1684,7 +1684,9 @@ function addon.SelectGossipType(gossipType,noOp)
                         return i,option.name
                     end
                 elseif gossipType == "taxi" and option.icon == 132057 or
-                gossipType == "trainer" and option.icon == 132058  then
+                gossipType == "trainer" and option.icon == 132058 or
+                gossipType == "healer" and UnitIsDeadOrGhost('player') and option.icon == 132054 and #options == 1
+                 then
                     noOp = noOp or GossipSelectOption(i)
                     return i,option.name
                 end
@@ -1902,7 +1904,6 @@ function addon.functions.deathskip(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
         local text = ...
-        element.tag = "deathskip"
         if text and text ~= "" then
             element.text = text
         else
@@ -1916,13 +1917,17 @@ function addon.functions.deathskip(self, ...)
     local event = ...
     if event == "CONFIRM_XP_LOSS" then
         addon.SetElementComplete(self)
-        if _G.AcceptXPLoss then
+        if C_PlayerInteractionManager then
+            self:SetScript("OnUpdate", function()
+                C_PlayerInteractionManager.ConfirmationInteraction(Enum.PlayerInteractionType.SpiritHealer)
+                C_PlayerInteractionManager.ClearInteraction(Enum.PlayerInteractionType.SpiritHealer)
+                self:SetScript("OnUpdate",nil)
+            end)
+        elseif _G.AcceptXPLoss then
             _G.AcceptXPLoss()
-        elseif C_PlayerInteractionManager then
-            C_PlayerInteractionManager.ConfirmationInteraction(Enum.PlayerInteractionType.SpiritHealer)
+            _G.StaticPopup1:Hide()
+            _G.StaticPopup2:Hide()
         end
-        _G.StaticPopup1:Hide()
-        _G.StaticPopup2:Hide()
     elseif event == "GOSSIP_SHOW" then
         addon.SelectGossipType("healer")
     end
