@@ -1017,11 +1017,13 @@ step
 step
     .loop 25,Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
     .xp 9+4400 >> Grind to 4400+/6500xp
-step << !Druid
-    #completewith Bloodhooffinalturninsstep
+step
+    #completewith Bloodhooffinalturnins
     .loop 25,Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
     .xp 9+4400 >> Grind to 3720+/6500xp
     .isQuestComplete 761
+step << !Druid
+    #completewith Bloodhooffinalturnins
     .hs >>Hearth to Bloodhoof Village
     .use 6948
 step << Druid
