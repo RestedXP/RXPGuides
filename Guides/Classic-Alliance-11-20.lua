@@ -682,12 +682,6 @@ step << !Druid !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Sentinel Glynda Nal'Shea|r
     .turnin 4813 >> Turn in The Fragments Within
     .target Sentinel Glynda Nal'Shea
-step << Druid
-#map Darkshore
-    .goto Felwood,19.27,19.14
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Laird|r
-    .accept 6343 >> Accept Return to Nessa
-    .target Laird
 step
 #map Darkshore
     .goto Felwood,18.10,18.48
@@ -3889,6 +3883,11 @@ step
     .goto Redridge Mountains,19.16,51.75,70,0
     .goto Redridge Mountains,38.09,54.49,70,0
     .complete 3741,1 --Hilary's Necklace (1)
+step << Druid
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Hilary|r
+	.target Hilary
+    .goto Redridge Mountains,29.24,53.63
+    .turnin 3741 >> Turn in Hilary's Necklace
 step
     #softcore
     >>|cFFFCDC00Jump into the Lake|r
@@ -4930,7 +4929,6 @@ step
 	.target Raene Wolfrunner
     .goto Ashenvale,36.61,49.58
     .accept 991 >> Accept Raene's Cleansing
-    .accept 1054 >> Accept Culling the Threat
 step << !Warlock
     #som
     .goto Ashenvale,36.99,49.22

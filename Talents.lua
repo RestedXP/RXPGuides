@@ -957,3 +957,7 @@ function addon.talents:ProcessPetTalents(validate)
     end
 
 end
+
+_G.RXPGuides.talents = {
+    RegisterGuide = addon.talents.RegisterGuide
+}

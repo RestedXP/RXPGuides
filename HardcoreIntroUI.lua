@@ -4,6 +4,7 @@ local default_x = 420
 local default_y = -60
 
 local intro_animations = true
+addon.introUI = {}
 
 ----------- Settings
 -- Note: upon finishing the splash screen setup, RXPCData will be updated
@@ -416,7 +417,11 @@ local function addHardcoreOptionButton(frame, title_text, description_text, tex_
 
 	local title = addOptionButtonTitle(title_text)
 	local description = addOptionDescription(description_text)
-    height = math.max(title:GetStringHeight() + description:GetStringHeight() + 10,50)
+    height = math.max(title:GetStringHeight() + description:GetStringHeight() + 10,35)
+    --print('h:',height)
+    if height > 71 then
+        height = 71
+    end
     hardcore_option_button_frame:SetHeight(height)
 
     local transparent_paper = hardcore_option_button_frame:CreateTexture(nil, "ARTWORK")
@@ -482,7 +487,7 @@ end
 
 local function addHardcoreDungeonOptionButton(frame, title_text, level_range, tex_id, x_off, y_off, zone, tex_coord)
 	if not RXPData.guideMetaData.enabledDungeons[addon.player.faction][title_text] then
-        --return
+        return
     end
     local height = 50
 	local width = 275
@@ -747,11 +752,12 @@ local function RXP_loadUltimateHardcoreSurvivalGuideFrame(survival_guide_functor
 		font_string:SetText("NEW FEATURE")
 		button:SetFontString(font_string)
 
-		local ntex = button:CreateTexture()
+		--[[local ntex = button:CreateTexture()
 		ntex:SetTexture("Interface/Buttons/UI-Panel-Button-Up")
 		ntex:SetTexCoord(0, 0.625, 0, 0.6875)
 		ntex:SetAllPoints()
-		button:SetNormalTexture(ntex)
+		button:SetNormalTexture(ntex)]]
+        button:EnableMouse(false)
 		return button
 	end
 
@@ -761,7 +767,7 @@ local function RXP_loadUltimateHardcoreSurvivalGuideFrame(survival_guide_functor
 
 	local function addDescriptionFont()
 		createDescriptionFont(
-			"Check out the new Ultimate Hardcore Surivival Guide,\nspecifically crafted to guide your character as safe as\n possible to max level. |cff228B22Including new features.|r",
+			L"Check out the new Ultimate Hardcore Surivival Guide,\nspecifically crafted to level your character as safe as\n possible. |cff228B22Including new features.|r",
 			frame,
 			0,
 			-70
@@ -1083,7 +1089,7 @@ local function RXP_loadWelcomeAdventurerFrame(backFunctor, dungeons_enabled_func
 	height = addHardcoreOptionButton(
 		frame,
 		"Enable Hostile Enemy Warning",
-		"Alerts when dangerous entity is nearby and shows patrolling elites on the world map.",
+		"Alerts when a dangerous entity is nearby and shows patrolling elites on the world map.",
 		132212,
 		y_offset,
         function(enabled)
@@ -1126,8 +1132,8 @@ local function RXP_loadWelcomeAdventurerFrame(backFunctor, dungeons_enabled_func
         end
 	)
 	y_offset = y_offset + y_offset_delta - height
-
-    if next(RXPData.guideMetaData.enabledDungeons[addon.player.faction]) then
+    local dungeonlist = next(RXPData.guideMetaData.enabledDungeons[addon.player.faction])
+    if dungeonlist then
         addHardcoreOptionButton(
             frame,
             "Enable Dungeons",
@@ -1141,6 +1147,7 @@ local function RXP_loadWelcomeAdventurerFrame(backFunctor, dungeons_enabled_func
     else
         dungeons_enabled = false
     end
+    --print('dungeonenabled',dungeons_enabled,dungeonlist)
 	return frame
 end
 
@@ -1237,7 +1244,7 @@ local function RXP_dungeonConfiguration(selectAllFunctor, submitFunctor, backFun
 end
 
 local function RXP_dungeonSelection(parent)
-	local frame = createHardcoreUIFrame(770, 480, 0.6, 0.5, 0.2, parent, "TOPLEFT", "TOPRIGHT", -15, 0, 3)
+	local frame = createHardcoreUIFrame(770, 530, 0.6, 0.5, 0.2, parent, "TOPLEFT", "TOPRIGHT", -15, 0, 3)
 	frame.textures["skull_emblem"]:Hide()
 	frame.textures["top_left_dia_chain"]:Hide()
 	frame.textures["top_left_dia_chain2"]:Hide()
@@ -1256,8 +1263,8 @@ local function RXP_dungeonSelection(parent)
 	--'local y_delta = 65
     local function calculate_offset()
         local n = #dungeon_buttons
-        local x = 320 * math.floor(n/6) - 160
-        local y = -65 * (n % 6) - 60
+        local x = 320 * math.floor(n/7) - 160
+        local y = -65 * (n % 7) - 60
         return x,y
     end
     if addon.player.faction == "Horde" then
@@ -1291,6 +1298,16 @@ local function RXP_dungeonSelection(parent)
 		x_off,
 		y_off,
 		17
+	)
+	x_off,y_off = calculate_offset()
+	dungeon_buttons[#dungeon_buttons + 1] = addHardcoreDungeonOptionButton(
+		frame,
+		"SFK",
+		{ "23", "29" },
+		"Interface\\Addons\\RXPGuides\\Textures\\DungeonIcons\\shadowfangkeep.tga",
+		x_off,
+		y_off,
+		209
 	)
 	x_off,y_off = calculate_offset()
 	dungeon_buttons[#dungeon_buttons + 1] = addHardcoreDungeonOptionButton(
@@ -1408,7 +1425,8 @@ local function RXP_dungeonSelection(parent)
 	return frame
 end
 
-function startHardcoreIntroUI(saved_var_settings)
+function addon.startHardcoreIntroUI(saved_var_settings)
+    saved_var_settings = saved_var_settings or {}
 	local ultimate_hardcore_survival_guide_frame = nil
 	local function toggleUltimateSurvivalGuideFrame()
 		if ultimate_hardcore_survival_guide_frame == nil then
@@ -1428,8 +1446,10 @@ function startHardcoreIntroUI(saved_var_settings)
 		end
 		if welcome_adventurer_frame:IsShown() then
 			welcome_adventurer_frame:Hide()
+            --print('1-hide')
 		else
 			welcome_adventurer_frame:Show()
+            --print('1-show')
 		end
 	end
 
@@ -1443,10 +1463,29 @@ function startHardcoreIntroUI(saved_var_settings)
         saved_var_settings['hardcore_guide']['auction_house'] = auction_house
         saved_var_settings['hardcore_guide']['group_quests'] = group_quests
         saved_var_settings['hardcore_guide']['dungeons'] = {}
+
+        addon.settings.profile.enableGroupQuests = group_quests
+        addon.settings.profile.soloSelfFound = not auction_house
+
+        addon.settings.profile.showDangerousMobsMap = hostile_enemy_warning
+        addon.settings.profile.showDangerousUnitscan = hostile_enemy_warning
+        addon.settings.profile.dungeons = {}
+        for dungeon in pairs(dungeons) do
+            addon.settings.profile.dungeons[dungeon] = true
+        end
+        --print('OK: finalizeSettings')
         for k,_ in pairs(dungeons) do
             saved_var_settings['hardcore_guide']['dungeons'][k] = 1
         end
         addon:LoadGuideTable(addon.defaultGroupHC, addon.defaultGuideHC)
+
+        --Resets internal variables in case the splash screen is opened again
+        dungeons_enabled = false
+        dungeons_enabled = false
+        hostile_enemy_warning = false
+        auction_house = false
+        group_quests = false
+        dungeons = {}
     end
 
 	local dungeon_configuration_frame = nil
@@ -1499,4 +1538,19 @@ function startHardcoreIntroUI(saved_var_settings)
 	welcome_adventurer_frame:Hide()
 	dungeon_configuration_frame:Hide()
 	dungeon_selection_frame:Hide()
+
+    addon.introUI.dungeon_configuration_frame = dungeon_configuration_frame
+    addon.introUI.dungeon_selection_frame = dungeon_selection_frame
+    addon.introUI.welcome_adventurer_frame = welcome_adventurer_frame
+    addon.introUI.ultimate_hardcore_survival_guide_frame = ultimate_hardcore_survival_guide_frame
+    addon.introUI.dungeon_selection_frame = dungeon_selection_frame
+    addon.introUI.speedrun_guide_selector = speedrun_guide_selector
+
+    return saved_var_settings
+end
+
+function addon.HideIntroUI()
+    for _,frame in pairs(addon.introUI) do
+        frame:Hide()
+    end
 end

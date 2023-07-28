@@ -24,10 +24,11 @@ addon.defaultGuideList = {
 
 if faction == "Horde" then
     addon.defaultGroup = "RestedXP Horde 1-22"
+    addon.defaultGroupHC = "RestedXP Survival Guide (H)"
 elseif faction == "Alliance" then
     addon.defaultGroup = "RestedXP Alliance 1-20"
+    addon.defaultGroupHC = "RestedXP Survival Guide (A)"
 end
-addon.defaultGroupHC = "RestedXP Survival Guide"
 
 if class == "HUNTER" then
     addon.defaultGuideList["Dun Morogh"] = "RestedXP Alliance 1-20\\1-6 Coldridge Valley (Hunter)"
@@ -37,55 +38,55 @@ addon.questConversion = {
 }
 
 addon.mapId = {
-	["Durotar"] = 1411,
-	["Mulgore"] = 1412,
-	["The Barrens"] = 1413,
-	["Alterac Mountains"] = 1416,
-	["Arathi Highlands"] = 1417,
-	["Badlands"] = 1418,
-	["Blasted Lands"] = 1419,
-	["Tirisfal Glades"] = 1420,
-	["Silverpine Forest"] = 1421,
-	["Western Plaguelands"] = 1422,
-	["Eastern Plaguelands"] = 1423,
-	["Hillsbrad Foothills"] = 1424,
-	["The Hinterlands"] = 1425,
-	["Dun Morogh"] = 1426,
-	["Searing Gorge"] = 1427,
-	["Burning Steppes"] = 1428,
-	["Elwynn Forest"] = 1429,
-	["Deadwind Pass"] = 1430,
-	["Duskwood"] = 1431,
-	["Loch Modan"] = 1432,
-	["Redridge Mountains"] = 1433,
-	["Stranglethorn Vale"] = 1434,
-	["Swamp of Sorrows"] = 1435,
-	["Westfall"] = 1436,
-	["Wetlands"] = 1437,
-	["Teldrassil"] = 1438,
-	["Darkshore"] = 1439,
-	["Ashenvale"] = 1440,
-	["Thousand Needles"] = 1441,
-	["Stonetalon Mountains"] = 1442,
-	["Desolace"] = 1443,
-	["Feralas"] = 1444,
-	["Dustwallow Marsh"] = 1445,
-	["Tanaris"] = 1446,
-	["Azshara"] = 1447,
-	["Felwood"] = 1448,
-	["Un'Goro Crater"] = 1449,
-	["Moonglade"] = 1450,
-	["Silithus"] = 1451,
-	["Winterspring"] = 1452,
-	["Stormwind City"] = 1453,
-	["Orgrimmar"] = 1454,
-	["Ironforge"] = 1455,
-	["Thunder Bluff"] = 1456,
-	["Darnassus"] = 1457,
-	["Undercity"] = 1458,
-	["Alterac Valley"] = 1459,
-	["Kalimdor"] = 1414,
-	["Eastern Kingdoms"] = 1415,
+    ["Durotar"] = 1411,
+    ["Mulgore"] = 1412,
+    ["The Barrens"] = 1413,
+    ["Alterac Mountains"] = 1416,
+    ["Arathi Highlands"] = 1417,
+    ["Badlands"] = 1418,
+    ["Blasted Lands"] = 1419,
+    ["Tirisfal Glades"] = 1420,
+    ["Silverpine Forest"] = 1421,
+    ["Western Plaguelands"] = 1422,
+    ["Eastern Plaguelands"] = 1423,
+    ["Hillsbrad Foothills"] = 1424,
+    ["The Hinterlands"] = 1425,
+    ["Dun Morogh"] = 1426,
+    ["Searing Gorge"] = 1427,
+    ["Burning Steppes"] = 1428,
+    ["Elwynn Forest"] = 1429,
+    ["Deadwind Pass"] = 1430,
+    ["Duskwood"] = 1431,
+    ["Loch Modan"] = 1432,
+    ["Redridge Mountains"] = 1433,
+    ["Stranglethorn Vale"] = 1434,
+    ["Swamp of Sorrows"] = 1435,
+    ["Westfall"] = 1436,
+    ["Wetlands"] = 1437,
+    ["Teldrassil"] = 1438,
+    ["Darkshore"] = 1439,
+    ["Ashenvale"] = 1440,
+    ["Thousand Needles"] = 1441,
+    ["Stonetalon Mountains"] = 1442,
+    ["Desolace"] = 1443,
+    ["Feralas"] = 1444,
+    ["Dustwallow Marsh"] = 1445,
+    ["Tanaris"] = 1446,
+    ["Azshara"] = 1447,
+    ["Felwood"] = 1448,
+    ["Un'Goro Crater"] = 1449,
+    ["Moonglade"] = 1450,
+    ["Silithus"] = 1451,
+    ["Winterspring"] = 1452,
+    ["Stormwind City"] = 1453,
+    ["Orgrimmar"] = 1454,
+    ["Ironforge"] = 1455,
+    ["Thunder Bluff"] = 1456,
+    ["Darnassus"] = 1457,
+    ["Undercity"] = 1458,
+    ["Alterac Valley"] = 1459,
+    ["Kalimdor"] = 1414,
+    ["Eastern Kingdoms"] = 1415,
 }
 
 addon.mapIdToName = {}
@@ -271,93 +272,120 @@ function addon.functions.xpto60alliance(self,...) --PLAYER_XP_UPDATE,QUEST_LOG_U
     end
 
     if not element.step.active then
-		element.questXP = nil
-		return
-	end
+        element.questXP = nil
+        return
+    end
 
     local som = {som = true, phase = "2"}
     local xpMod = 1
     local eliteMod = 1
-	--1.90980392157?
+    --1.90980392157?
 
     if addon.stepLogic.SeasonCheck(som) then
-		xpMod = 1.4
+        xpMod = 1.4
         eliteMod = 1.7
-		if addon.stepLogic.PhaseCheck(som) then
-			xpMod = xpMod*2/1.4
-			eliteMod = eliteMod*2/1.4
-		end
+        if addon.stepLogic.PhaseCheck(som) then
+            xpMod = xpMod*2/1.4
+            eliteMod = eliteMod*2/1.4
+        end
     end
 
     local questXP = element.questXP
 
-	if event == "QUEST_LOG_UPDATE" or not element.questXP then
+    if event == "QUEST_LOG_UPDATE" or not element.questXP then
         questXP = 0
-		if IsOnQuest(6844) then --Moonglade chain
-			questXP = floor(questXP + (3000 + 7550 + 3000)*xpMod)
-		elseif IsQuestFlaggedCompleted(6844) then
-			if not IsQuestFlaggedCompleted(6845) then
-				questXP = floor(questXP + 7550*xpMod)
-			end
-			if not IsQuestFlaggedCompleted(1185) then
-				questXP = floor(questXP + 3000*xpMod)
-			end
-		end
+        if IsOnQuest(6844) then --Moonglade chain
+            questXP = floor(questXP + (3000 + 7550 + 3000)*xpMod)
+        elseif IsQuestFlaggedCompleted(6844) then
+            if not IsQuestFlaggedCompleted(6845) then
+                questXP = floor(questXP + 7550*xpMod)
+            end
+            if not IsQuestFlaggedCompleted(1185) then
+                questXP = floor(questXP + 3000*xpMod)
+            end
+        end
 
-		if IsQuestComplete(4507) then --pawn captures queen
-			questXP = floor(questXP + (5450 + 550  + 8150)*xpMod)
-		elseif IsQuestFlaggedCompleted(4507) then
-			if IsOnQuest(4508) then
-				questXP = floor(questXP + (550 + 8150) * xpMod )
-			elseif not IsQuestFlaggedCompleted(4510) and IsQuestFlaggedCompleted(4508) then
-				questXP = floor(questXP + 8150*xpMod)
-			end
-		end
+        if IsQuestComplete(4507) then --pawn captures queen
+            questXP = floor(questXP + (5450 + 550  + 8150)*xpMod)
+        elseif IsQuestFlaggedCompleted(4507) then
+            if IsOnQuest(4508) then
+                questXP = floor(questXP + (550 + 8150) * xpMod )
+            elseif not IsQuestFlaggedCompleted(4510) and IsQuestFlaggedCompleted(4508) then
+                questXP = floor(questXP + 8150*xpMod)
+            end
+        end
 
-		if IsQuestComplete(4504) then --super sticky
-			questXP = floor(questXP + 5450*xpMod)
-		end
+        if IsQuestComplete(4504) then --super sticky
+            questXP = floor(questXP + 5450*xpMod)
+        end
 
-		if IsQuestComplete(4809) then --chillwind horns
-			questXP = floor(questXP + 5450*xpMod)
-		end
+        if IsQuestComplete(4809) then --chillwind horns
+            questXP = floor(questXP + 5450*xpMod)
+        end
 
-		if IsQuestComplete(3962) then --It's dangerous to go alone
-			questXP = floor(questXP + 7300*eliteMod)
-		end
+        if IsQuestComplete(3962) then --It's dangerous to go alone
+            questXP = floor(questXP + 7300*eliteMod)
+        end
 
-		if IsQuestComplete(5163) then --Are we there yeti?
-			questXP = floor(questXP + 7750*xpMod)
-		end
+        if IsQuestComplete(5163) then --Are we there yeti?
+            questXP = floor(questXP + 7750*xpMod)
+        end
 
-		if IsQuestComplete(5527) then --A Reliquary of Purity
-			questXP = floor(questXP + 6600*xpMod)
-		end
+        if IsQuestComplete(5527) then --A Reliquary of Purity
+            questXP = floor(questXP + 6600*xpMod)
+        end
 
-		if IsOnQuest(4986) then--Glyphed Oaken Branch
-			questXP = floor(questXP + 5800*xpMod)
-		end
+        if IsOnQuest(4986) then--Glyphed Oaken Branch
+            questXP = floor(questXP + 5800*xpMod)
+        end
 
         if IsOnQuest(979) then
             questXP = floor(questXP + 1500 + (3000 + 4800 + 6000)*xpMod)
-		elseif IsQuestComplete(4901) then --Guardians of the altar
-			questXP = floor(questXP + (4800 + 6000)*xpMod)
-		end
+        elseif IsQuestComplete(4901) then --Guardians of the altar
+            questXP = floor(questXP + (4800 + 6000)*xpMod)
+        end
+
+        if element.tag:find("hc") then
+            --stones that binds us
+            --print('ok',questXP)
+            if not C_QuestLog.IsQuestFlaggedCompleted(2681) then
+                questXP = floor(questXP + (7550 + 5200)*xpMod)
+            end
+
+            if not C_QuestLog.IsQuestFlaggedCompleted(2702) then
+                questXP = floor(questXP + (3000)*xpMod)
+            end
+
+            if not C_QuestLog.IsQuestFlaggedCompleted(2701) then
+                questXP = floor(questXP + (6000)*xpMod)
+            end
+
+            --Melding of influences
+            if C_QuestLog.IsQuestFlaggedCompleted(4642) then
+                questXP = floor(questXP + (7050)*xpMod)
+            end
+        end
 
 
-		questXP = questXP - 50*(xpMod - 1)
-	end
-
-	local missingXP = UnitXPMax("player") - UnitXP("player") - questXP
-    local level = UnitLevel('player')
-    if level == 58 then
-        missingXP = missingXP + 209800
+        questXP = questXP - 50*(xpMod - 1)
     end
 
-	if missingXP <= 0 and level == 59 then
-		--addon.SetElementComplete(self)
-		return addon.functions.next(self) or addon.SetElementComplete(self,true)
-	end
+    local missingXP = UnitXPMax("player") - UnitXP("player") - questXP
+    local level = UnitLevel('player')
+    if level <= 58 then
+        missingXP = missingXP + 209800
+    end
+    if level <= 57 then
+        missingXP = missingXP + 202300
+    end
+    if level <= 56 then
+        missingXP = missingXP + 195000
+    end
+
+    if missingXP <= 0 and level == 59 then
+        --addon.SetElementComplete(self)
+        return addon.functions.next(self) or addon.SetElementComplete(self,true)
+    end
 
     if event == "PLAYER_XP_UPDATE" or questXP ~= element.questXP then
         if questXP > 0 then
@@ -371,6 +399,10 @@ function addon.functions.xpto60alliance(self,...) --PLAYER_XP_UPDATE,QUEST_LOG_U
 
     element.questXP = questXP
 
+end
+
+function addon.functions.xpto60hc(...)
+    return addon.functions.xpto60(...)
 end
 
 function addon.functions.xpto60horde(self,...)
@@ -403,116 +435,116 @@ function addon.functions.xpto60horde(self,...)
         self.button:Hide()
     end
     if not element.step.active then
-		element.questXP = nil
-		return
-	end
+        element.questXP = nil
+        return
+    end
 
     local som = {som = true, phase = "2"}
     local xpMod = 1
     local eliteMod = 1
-	--1.90980392157?
+    --1.90980392157?
 
     if addon.stepLogic.SeasonCheck(som) then
-		xpMod = 1.4
+        xpMod = 1.4
         eliteMod = 1.7
-		if addon.stepLogic.PhaseCheck(som) then
-			xpMod = xpMod*2/1.4
-			eliteMod = eliteMod*2/1.4
-		end
+        if addon.stepLogic.PhaseCheck(som) then
+            xpMod = xpMod*2/1.4
+            eliteMod = eliteMod*2/1.4
+        end
     end
 
     local questXP = element.questXP
-	if event == "QUEST_LOG_UPDATE" or not element.questXP then
+    if event == "QUEST_LOG_UPDATE" or not element.questXP then
         questXP = 0
-		if IsOnQuest(6844) then --Moonglade chain
-			questXP = questXP + (3000 + 7550 + 3000)*xpMod
+        if IsOnQuest(6844) then --Moonglade chain
+            questXP = questXP + (3000 + 7550 + 3000)*xpMod
             questXP = floor(questXP)
-		elseif IsQuestFlaggedCompleted(6844) then
-			if not IsQuestFlaggedCompleted(6845) then
-				questXP = questXP + 7550*xpMod
+        elseif IsQuestFlaggedCompleted(6844) then
+            if not IsQuestFlaggedCompleted(6845) then
+                questXP = questXP + 7550*xpMod
                 questXP = floor(questXP)
-			end
-			if not IsQuestFlaggedCompleted(1185) then
-				questXP = questXP + 3000*xpMod
+            end
+            if not IsQuestFlaggedCompleted(1185) then
+                questXP = questXP + 3000*xpMod
                 questXP = floor(questXP)
-			end
-		end
+            end
+        end
 
-		if IsQuestComplete(4504) then --super sticky
-			questXP = questXP + 5450*xpMod
+        if IsQuestComplete(4504) then --super sticky
+            questXP = questXP + 5450*xpMod
             questXP = floor(questXP)
-		end
+        end
 
-		if IsQuestComplete(4809) then --chillwind horns
-			questXP = questXP + 5450*xpMod
+        if IsQuestComplete(4809) then --chillwind horns
+            questXP = questXP + 5450*xpMod
             questXP = floor(questXP)
-		end
+        end
 
-		if IsQuestComplete(4507) then --pawn captures queen
-			questXP = questXP + (5450 + 550  + 8150)*xpMod
+        if IsQuestComplete(4507) then --pawn captures queen
+            questXP = questXP + (5450 + 550  + 8150)*xpMod
             questXP = floor(questXP)
-		elseif IsQuestFlaggedCompleted(4507) then
-			if IsOnQuest(4509) then
-				questXP = questXP + (550 + 8150)*xpMod
+        elseif IsQuestFlaggedCompleted(4507) then
+            if IsOnQuest(4509) then
+                questXP = questXP + (550 + 8150)*xpMod
                 questXP = floor(questXP)
-			elseif not IsQuestFlaggedCompleted(4511) and IsQuestFlaggedCompleted(4509) then
-				questXP = questXP + 8150*xpMod
+            elseif not IsQuestFlaggedCompleted(4511) and IsQuestFlaggedCompleted(4509) then
+                questXP = questXP + 8150*xpMod
                 questXP = floor(questXP)
-			end
-		end
+            end
+        end
 
-		if IsQuestComplete(3962) then --It's dangerous to go alone
-			questXP = questXP + 7300*eliteMod
+        if IsQuestComplete(3962) then --It's dangerous to go alone
+            questXP = questXP + 7300*eliteMod
             questXP = floor(questXP)
-		end
+        end
 
-		if IsQuestComplete(5163) then --Are we there yeti?
-			questXP = questXP + 7750*xpMod
+        if IsQuestComplete(5163) then --Are we there yeti?
+            questXP = questXP + 7750*xpMod
             questXP = floor(questXP)
-		end
+        end
 
-		if IsQuestComplete(5527) then --A Reliquary of Purity
-			questXP = questXP + 6600*xpMod
+        if IsQuestComplete(5527) then --A Reliquary of Purity
+            questXP = questXP + 6600*xpMod
             questXP = floor(questXP)
-		end
+        end
 
-		if IsQuestComplete(4721) then --Wild Guardians
-			questXP = questXP + 6400*xpMod
+        if IsQuestComplete(4721) then --Wild Guardians
+            questXP = questXP + 6400*xpMod
             questXP = floor(questXP)
-		end
+        end
 
-		if IsOnQuest(3942) then --linken's memory
-			questXP = questXP + 5450*xpMod
+        if IsOnQuest(3942) then --linken's memory
+            questXP = questXP + 5450*xpMod
             questXP = floor(questXP)
-		end
+        end
 
-		if IsOnQuest(5128) then --Words of the High Chief
-			questXP = questXP + 6400*xpMod
+        if IsOnQuest(5128) then --Words of the High Chief
+            questXP = questXP + 6400*xpMod
             questXP = floor(questXP)
-		end
+        end
 
-		if IsQuestComplete(5242) then --A Final Blow
-			questXP = questXP + 9300*xpMod
+        if IsQuestComplete(5242) then --A Final Blow
+            questXP = questXP + 9300*xpMod
             questXP = floor(questXP)
-		end
+        end
 
-		if IsQuestComplete(5385) then --Remains of Trey Lightforge
-			questXP = questXP + 7550*xpMod
+        if IsQuestComplete(5385) then --Remains of Trey Lightforge
+            questXP = questXP + 7550*xpMod
             questXP = floor(questXP)
-		end
+        end
 
-		questXP = questXP - 50*(xpMod - 1)
-	end
+        questXP = questXP - 50*(xpMod - 1)
+    end
 
-	local missingXP = UnitXPMax("player") - UnitXP("player") - questXP
+    local missingXP = UnitXPMax("player") - UnitXP("player") - questXP
     local level = UnitLevel('player')
     if level == 58 then
         missingXP = missingXP + 209800
     end
 
-	if missingXP <= 0 and level == 59 then
+    if missingXP <= 0 and level == 59 then
         return addon.functions.next(self) or addon.SetElementComplete(self,true)
-	end
+    end
 
     if event == "PLAYER_XP_UPDATE" or questXP ~= element.questXP then
         if questXP > 0 then
@@ -534,245 +566,245 @@ function addon.functions.xpcheck(self,text,...) --PLAYER_XP_UPDATE,QUEST_LOG_UPD
         local element = {}
         element.textOnly = true
         element.event = "PLAYER_XP_UPDATE"
-		element.guide = ...
+        element.guide = ...
         return element
     end
-	local level = UnitLevel("player")
+    local level = UnitLevel("player")
     local element = self.element
-	local step = element.step
-	local guide = element.guide
+    local step = element.step
+    local guide = element.guide
     --local ref = element.ref
 
     if level >= 24 and (not addon.IsQuestTurnedIn(494) or (addon.IsQuestTurnedIn(529) and addon.IsQuestTurnedIn(502) and addon.IsQuestTurnedIn(498))) then
-		local nextguide = addon.GetGuideTable("RestedXP Horde 22-30",guide)
-		if nextguide then
-			return addon:LoadGuide(nextguide)
-		end
+        local nextguide = addon.GetGuideTable("RestedXP Horde 22-30",guide)
+        if nextguide then
+            return addon:LoadGuide(nextguide)
+        end
     end
 end
 
 addon.mountIDs = {
-	[75] = {
-		--[67466] = true, --Argent Warhorse
-		--[58983] = true, --Big Blizzard Bear
-		--[35022] = true, --Black Hawkstrider
-		[6896] = true, --Black Ram
-		[64977] = true, --Black Skeletal Horse
-		[470] = true, --Black Stallion
-		[578] = true, --Black Wolf
-		[64658] = true, --Black Wolf
-		[35020] = true, --Blue Hawkstrider
-		[10969] = true, --Blue Mechanostrider
-		[33630] = true, --Blue Mechanostrider
-		[17463] = true, --Blue Skeletal Horse
-		--[50869] = true, --Brewfest Kodo
-		--[43899] = true, --Brewfest Ram
-		--[50870] = true, --Brewfest Ram
-		[17464] = true, --Brown Skeletal Horse
-		[6654] = true, --Brown Wolf
-		--[34406] = true, --Brown Elekk
-		[458] = true, --Brown Horse
-		[18990] = true, --Brown Kodo
-		[6899] = true, --Brown Ram
-		--[75614] = true, --Celestial Steed
-		[6648] = true, --Chestnut Mare
-		[6653] = true, --Dire Wolf
-		[8395] = true, --Emerald Raptor
-		--[394209] = true, --Festering Emerald Drake
-		--[35710] = true, --Gray Elekk
-		[18989] = true, --Gray Kodo
-		[6777] = true, --Gray Ram
-		[15780] = true, --Green Mechanostrider
-		[17453] = true, --Green Mechanostrider
-		--[48025] = true, --Headless Horseman's Mount
-		--[72286] = true, --Invincible
-		[10795] = true, --Ivory Raptor
-		--[372677] = true, --Kalu'ak Whalebone Glider
-		[472] = true, --Pinto
-		[35711] = true, --Purple Elekk
-		[35018] = true, --Purple Hawkstrider
-		--[348459] = true, --Reawakened Phase-Hunter
-		[34795] = true, --Red Hawkstrider
-		[10873] = true, --Red Mechanostrider
-		[17462] = true, --Red Skeletal Horse
-		[579] = true, --Red Wolf
-		[16080] = true, --Red Wolf
-		[42776] = true, --Spectral Tiger
-		[10789] = true, --Spotted Frostsaber
-		--[66847] = true, --Striped Dawnsaber
-		[8394] = true, --Striped Frostsaber
-		[10793] = true, --Striped Nightsaber
-		[580] = true, --Timber Wolf
-		[10796] = true, --Turquoise Raptor
-		[17454] = true, --Unpainted Mechanostrider
-		[10799] = true, --Violet Raptor
-		--[64657] = true, --White Kodo
-		[6898] = true, --White Ram
-		[468] = true, --White Stallion
-		[581] = true, --Winter Wolf
-		--[74856] = true, --Blazing Hippogryph
-		--[387320] = true, --Blazing Hippogryph
-		--[54729] = true, --Winged Steed of the Ebon Blade
-		--[71342] = true, --X-45 Heartbreaker
-		--[75973] = true, --X-53 Touring Rocket
+    [75] = {
+        --[67466] = true, --Argent Warhorse
+        --[58983] = true, --Big Blizzard Bear
+        --[35022] = true, --Black Hawkstrider
+        [6896] = true, --Black Ram
+        [64977] = true, --Black Skeletal Horse
+        [470] = true, --Black Stallion
+        [578] = true, --Black Wolf
+        [64658] = true, --Black Wolf
+        [35020] = true, --Blue Hawkstrider
+        [10969] = true, --Blue Mechanostrider
+        [33630] = true, --Blue Mechanostrider
+        [17463] = true, --Blue Skeletal Horse
+        --[50869] = true, --Brewfest Kodo
+        --[43899] = true, --Brewfest Ram
+        --[50870] = true, --Brewfest Ram
+        [17464] = true, --Brown Skeletal Horse
+        [6654] = true, --Brown Wolf
+        --[34406] = true, --Brown Elekk
+        [458] = true, --Brown Horse
+        [18990] = true, --Brown Kodo
+        [6899] = true, --Brown Ram
+        --[75614] = true, --Celestial Steed
+        [6648] = true, --Chestnut Mare
+        [6653] = true, --Dire Wolf
+        [8395] = true, --Emerald Raptor
+        --[394209] = true, --Festering Emerald Drake
+        --[35710] = true, --Gray Elekk
+        [18989] = true, --Gray Kodo
+        [6777] = true, --Gray Ram
+        [15780] = true, --Green Mechanostrider
+        [17453] = true, --Green Mechanostrider
+        --[48025] = true, --Headless Horseman's Mount
+        --[72286] = true, --Invincible
+        [10795] = true, --Ivory Raptor
+        --[372677] = true, --Kalu'ak Whalebone Glider
+        [472] = true, --Pinto
+        [35711] = true, --Purple Elekk
+        [35018] = true, --Purple Hawkstrider
+        --[348459] = true, --Reawakened Phase-Hunter
+        [34795] = true, --Red Hawkstrider
+        [10873] = true, --Red Mechanostrider
+        [17462] = true, --Red Skeletal Horse
+        [579] = true, --Red Wolf
+        [16080] = true, --Red Wolf
+        [42776] = true, --Spectral Tiger
+        [10789] = true, --Spotted Frostsaber
+        --[66847] = true, --Striped Dawnsaber
+        [8394] = true, --Striped Frostsaber
+        [10793] = true, --Striped Nightsaber
+        [580] = true, --Timber Wolf
+        [10796] = true, --Turquoise Raptor
+        [17454] = true, --Unpainted Mechanostrider
+        [10799] = true, --Violet Raptor
+        --[64657] = true, --White Kodo
+        [6898] = true, --White Ram
+        [468] = true, --White Stallion
+        [581] = true, --Winter Wolf
+        --[74856] = true, --Blazing Hippogryph
+        --[387320] = true, --Blazing Hippogryph
+        --[54729] = true, --Winged Steed of the Ebon Blade
+        --[71342] = true, --X-45 Heartbreaker
+        --[75973] = true, --X-53 Touring Rocket
         [5784] = true, --Felsteed
         [13819] = true, --Warhorse
-	},
+    },
 
-	[150] = {
-		[43688] = true, --Amani War Bear
-		[16056] = true, --Ancient Frostsaber
-		[66906] = true, --Argent Charger
-		--[60114] = true, --Armored Brown Bear
-		--[60116] = true, --Armored Brown Bear
-		--[51412] = true, --Big Battle Bear
-		--[387319] = true, --Big Battle Bear
-		--[58983] = true, --Big Blizzard Bear
-		[22719] = true, --Black Battlestrider
-		[16055] = true, --Black Nightsaber
-		[26656] = true, --Black Qiraji Battle Tank
-		[17461] = true, --Black Ram
-		--[60118] = true, --Black War Bear
-		--[60119] = true, --Black War Bear
-		[48027] = true, --Black War Elekk
-		[22718] = true, --Black War Kodo
-		[59785] = true, --Black War Mammoth
-		[59788] = true, --Black War Mammoth
-		[22720] = true, --Black War Ram
-		[22721] = true, --Black War Raptor
-		[22717] = true, --Black War Steed
-		[22723] = true, --Black War Tiger
-		[22724] = true, --Black War Wolf
-		--[25953] = true, --Blue Qiraji Battle Tank
-		[64656] = true, --Blue Skeletal Warhorse
-		--[75614] = true, --Celestial Steed
-		--[39315] = true, --Cobalt Riding Talbuk
-		--[34896] = true, --Cobalt War Talbuk
-		[73313] = true, --Crimson Deathcharger
-		--[68188] = true, --Crusader's Black Warhorse
-		--[68187] = true, --Crusader's White Warhorse
-		--[39316] = true, --Dark Riding Talbuk
-		--[34790] = true, --Dark War Talbuk
-		--[63635] = true, --Darkspear Raptor
-		--[63637] = true, --Darnassian Nightsaber
-		--[63639] = true, --Exodar Elekk
-		--[394209] = true, --Festering Emerald Drake
-		[36702] = true, --Fiery Warhorse
-		--[63643] = true, --Forsaken Warhorse
-		[17460] = true, --Frost Ram
-		[23509] = true, --Frostwolf Howler
-		--[63638] = true, --Gnomeregan Mechanostrider
-		--[61465] = true, --Grand Black War Mammoth
-		--[61467] = true, --Grand Black War Mammoth
-		--[59802] = true, --Grand Ice Mammoth
-		--[59804] = true, --Grand Ice Mammoth
-		--[61469] = true, --Grand Ice Mammoth
-		--[61470] = true, --Grand Ice Mammoth
-		--[35713] = true, --Great Blue Elekk
-		--[49379] = true, --Great Brewfest Kodo
-		[23249] = true, --Great Brown Kodo
-		[65641] = true, --Great Golden Kodo
-		[23248] = true, --Great Gray Kodo
-		--[35712] = true, --Great Green Elekk
-		--[35714] = true, --Great Purple Elekk
-		--[65637] = true, --Great Red Elekk
-		[23247] = true, --Great White Kodo
-		[18991] = true, --Green Kodo
-		--[26056] = true, --Green Qiraji Battle Tank
-		[17465] = true, --Green Skeletal Warhorse
-		--[48025] = true, --Headless Horseman's Mount
-		--[59797] = true, --Ice Mammoth
-		--[59799] = true, --Ice Mammoth
-		[17459] = true, --Icy Blue Mechanostrider Mod A
-		--[72286] = true, --Invincible
-		--[63636] = true, --Ironforge Ram
-		[17450] = true, --Ivory Raptor
-		--[372677] = true, --Kalu'ak Whalebone Glider
-		--[65917] = true, --Magic Rooster
-		--[387308] = true, --Magic Rooster
-		--[55531] = true, --Mechano-hog
-		--[60424] = true, --Mekgineer's Chopper
-		[16084] = true, --Mottled Red Raptor
-		--[66846] = true, --Ochre Skeletal Warhorse
-		--[63640] = true, --Orgrimmar Wolf
-		[16082] = true, --Palomino
-		[23246] = true, --Purple Skeletal Warhorse
-		--[66090] = true, --Quel'dorei Steed
-		--[41252] = true, --Raven Lord
-		--[26054] = true, --Red Qiraji Battle Tank
-		[22722] = true, --Red Skeletal Warhorse
-		[17481] = true, --Rivendare's Deathcharger
-		--[39317] = true, --Silver Riding Talbuk
-		--[34898] = true, --Silver War Talbuk
-		--[63642] = true, --Silvermoon Hawkstrider
-		[23510] = true, --Stormpike Battle Charger
-		--[63232] = true, --Stormwind Steed
-		--[66091] = true, --Sunreaver Hawkstrider
-		--[68057] = true, --Swift Alliance Steed
-		[23241] = true, --Swift Blue Raptor
-		--[43900] = true, --Swift Brewfest Ram
-		[23238] = true, --Swift Brown Ram
-		[23229] = true, --Swift Brown Steed
-		[23250] = true, --Swift Brown Wolf
-		--[65646] = true, --Swift Burgundy Wolf
-		[23221] = true, --Swift Frostsaber
-		[23239] = true, --Swift Gray Ram
-		--[65640] = true, --Swift Gray Steed
-		[23252] = true, --Swift Gray Wolf
-		--[35025] = true, --Swift Green Hawkstrider
-		[23225] = true, --Swift Green Mechanostrider
-		--[68056] = true, --Swift Horde Wolf
-		[23219] = true, --Swift Mistsaber
-		--[65638] = true, --Swift Moonsaber
-		[23242] = true, --Swift Olive Raptor
-		[23243] = true, --Swift Orange Raptor
-		[23227] = true, --Swift Palomino
-		--[33660] = true, --Swift Pink Hawkstrider
-		--[35027] = true, --Swift Purple Hawkstrider
-		--[65644] = true, --Swift Purple Raptor
-		[42777] = true, --Swift Spectral Tiger
-		[23338] = true, --Swift Stormsaber
-		[23251] = true, --Swift Timber Wolf
-		--[65643] = true, --Swift Violet Ram
-		--[35028] = true, --Swift Warstrider
-		--[46628] = true, --Swift White Hawkstrider
-		[23223] = true, --Swift White Mechanostrider
-		[23240] = true, --Swift White Ram
-		[23228] = true, --Swift White Steed
-		[23222] = true, --Swift Yellow Mechanostrider
-		--[48954] = true, --Swift Zhevra
-		--[49322] = true, --Swift Zhevra
-		[24252] = true, --Swift Zulian Tiger
-		--[39318] = true, --Tan Riding Talbuk
-		--[34899] = true, --Tan War Talbuk
-		[18992] = true, --Teal Kodo
-		--[63641] = true, --Thunder Bluff Kodo
-		--[61425] = true, --Traveler's Tundra Mammoth
-		--[61447] = true, --Traveler's Tundra Mammoth
-		--[65642] = true, --Turbostrider
-		--[42781] = true, --Upper Deck - Spectral Tiger Mount
-		--[64659] = true, --Venomhide Ravasaur
-		[15779] = true, --White Mechanostrider Mod B
-		[54753] = true, --White Polar Bear
-		--[39319] = true, --White Riding Talbuk
-		--[65645] = true, --White Skeletal Warhorse
-		[16083] = true, --White Stallion
-		--[34897] = true, --White War Talbuk
-		[16081] = true, --Winter Wolf
-		[17229] = true, --Winterspring Frostsaber
-		--[59791] = true, --Wooly Mammoth
-		--[59793] = true, --Wooly Mammoth
-		--[74918] = true, --Wooly White Rhino
-		--[387321] = true, --Wooly White Rhino
-		--[26055] = true, --Yellow Qiraji Battle Tank
-		--[74856] = true, --Blazing Hippogryph
-		--[387320] = true, --Blazing Hippogryph
-		--[54729] = true, --Winged Steed of the Ebon Blade
-		--[71342] = true, --X-45 Heartbreaker
-		--[75973] = true, --X-53 Touring Rocket
+    [150] = {
+        [43688] = true, --Amani War Bear
+        [16056] = true, --Ancient Frostsaber
+        [66906] = true, --Argent Charger
+        --[60114] = true, --Armored Brown Bear
+        --[60116] = true, --Armored Brown Bear
+        --[51412] = true, --Big Battle Bear
+        --[387319] = true, --Big Battle Bear
+        --[58983] = true, --Big Blizzard Bear
+        [22719] = true, --Black Battlestrider
+        [16055] = true, --Black Nightsaber
+        [26656] = true, --Black Qiraji Battle Tank
+        [17461] = true, --Black Ram
+        --[60118] = true, --Black War Bear
+        --[60119] = true, --Black War Bear
+        [48027] = true, --Black War Elekk
+        [22718] = true, --Black War Kodo
+        [59785] = true, --Black War Mammoth
+        [59788] = true, --Black War Mammoth
+        [22720] = true, --Black War Ram
+        [22721] = true, --Black War Raptor
+        [22717] = true, --Black War Steed
+        [22723] = true, --Black War Tiger
+        [22724] = true, --Black War Wolf
+        --[25953] = true, --Blue Qiraji Battle Tank
+        [64656] = true, --Blue Skeletal Warhorse
+        --[75614] = true, --Celestial Steed
+        --[39315] = true, --Cobalt Riding Talbuk
+        --[34896] = true, --Cobalt War Talbuk
+        [73313] = true, --Crimson Deathcharger
+        --[68188] = true, --Crusader's Black Warhorse
+        --[68187] = true, --Crusader's White Warhorse
+        --[39316] = true, --Dark Riding Talbuk
+        --[34790] = true, --Dark War Talbuk
+        --[63635] = true, --Darkspear Raptor
+        --[63637] = true, --Darnassian Nightsaber
+        --[63639] = true, --Exodar Elekk
+        --[394209] = true, --Festering Emerald Drake
+        [36702] = true, --Fiery Warhorse
+        --[63643] = true, --Forsaken Warhorse
+        [17460] = true, --Frost Ram
+        [23509] = true, --Frostwolf Howler
+        --[63638] = true, --Gnomeregan Mechanostrider
+        --[61465] = true, --Grand Black War Mammoth
+        --[61467] = true, --Grand Black War Mammoth
+        --[59802] = true, --Grand Ice Mammoth
+        --[59804] = true, --Grand Ice Mammoth
+        --[61469] = true, --Grand Ice Mammoth
+        --[61470] = true, --Grand Ice Mammoth
+        --[35713] = true, --Great Blue Elekk
+        --[49379] = true, --Great Brewfest Kodo
+        [23249] = true, --Great Brown Kodo
+        [65641] = true, --Great Golden Kodo
+        [23248] = true, --Great Gray Kodo
+        --[35712] = true, --Great Green Elekk
+        --[35714] = true, --Great Purple Elekk
+        --[65637] = true, --Great Red Elekk
+        [23247] = true, --Great White Kodo
+        [18991] = true, --Green Kodo
+        --[26056] = true, --Green Qiraji Battle Tank
+        [17465] = true, --Green Skeletal Warhorse
+        --[48025] = true, --Headless Horseman's Mount
+        --[59797] = true, --Ice Mammoth
+        --[59799] = true, --Ice Mammoth
+        [17459] = true, --Icy Blue Mechanostrider Mod A
+        --[72286] = true, --Invincible
+        --[63636] = true, --Ironforge Ram
+        [17450] = true, --Ivory Raptor
+        --[372677] = true, --Kalu'ak Whalebone Glider
+        --[65917] = true, --Magic Rooster
+        --[387308] = true, --Magic Rooster
+        --[55531] = true, --Mechano-hog
+        --[60424] = true, --Mekgineer's Chopper
+        [16084] = true, --Mottled Red Raptor
+        --[66846] = true, --Ochre Skeletal Warhorse
+        --[63640] = true, --Orgrimmar Wolf
+        [16082] = true, --Palomino
+        [23246] = true, --Purple Skeletal Warhorse
+        --[66090] = true, --Quel'dorei Steed
+        --[41252] = true, --Raven Lord
+        --[26054] = true, --Red Qiraji Battle Tank
+        [22722] = true, --Red Skeletal Warhorse
+        [17481] = true, --Rivendare's Deathcharger
+        --[39317] = true, --Silver Riding Talbuk
+        --[34898] = true, --Silver War Talbuk
+        --[63642] = true, --Silvermoon Hawkstrider
+        [23510] = true, --Stormpike Battle Charger
+        --[63232] = true, --Stormwind Steed
+        --[66091] = true, --Sunreaver Hawkstrider
+        --[68057] = true, --Swift Alliance Steed
+        [23241] = true, --Swift Blue Raptor
+        --[43900] = true, --Swift Brewfest Ram
+        [23238] = true, --Swift Brown Ram
+        [23229] = true, --Swift Brown Steed
+        [23250] = true, --Swift Brown Wolf
+        --[65646] = true, --Swift Burgundy Wolf
+        [23221] = true, --Swift Frostsaber
+        [23239] = true, --Swift Gray Ram
+        --[65640] = true, --Swift Gray Steed
+        [23252] = true, --Swift Gray Wolf
+        --[35025] = true, --Swift Green Hawkstrider
+        [23225] = true, --Swift Green Mechanostrider
+        --[68056] = true, --Swift Horde Wolf
+        [23219] = true, --Swift Mistsaber
+        --[65638] = true, --Swift Moonsaber
+        [23242] = true, --Swift Olive Raptor
+        [23243] = true, --Swift Orange Raptor
+        [23227] = true, --Swift Palomino
+        --[33660] = true, --Swift Pink Hawkstrider
+        --[35027] = true, --Swift Purple Hawkstrider
+        --[65644] = true, --Swift Purple Raptor
+        [42777] = true, --Swift Spectral Tiger
+        [23338] = true, --Swift Stormsaber
+        [23251] = true, --Swift Timber Wolf
+        --[65643] = true, --Swift Violet Ram
+        --[35028] = true, --Swift Warstrider
+        --[46628] = true, --Swift White Hawkstrider
+        [23223] = true, --Swift White Mechanostrider
+        [23240] = true, --Swift White Ram
+        [23228] = true, --Swift White Steed
+        [23222] = true, --Swift Yellow Mechanostrider
+        --[48954] = true, --Swift Zhevra
+        --[49322] = true, --Swift Zhevra
+        [24252] = true, --Swift Zulian Tiger
+        --[39318] = true, --Tan Riding Talbuk
+        --[34899] = true, --Tan War Talbuk
+        [18992] = true, --Teal Kodo
+        --[63641] = true, --Thunder Bluff Kodo
+        --[61425] = true, --Traveler's Tundra Mammoth
+        --[61447] = true, --Traveler's Tundra Mammoth
+        --[65642] = true, --Turbostrider
+        --[42781] = true, --Upper Deck - Spectral Tiger Mount
+        --[64659] = true, --Venomhide Ravasaur
+        [15779] = true, --White Mechanostrider Mod B
+        [54753] = true, --White Polar Bear
+        --[39319] = true, --White Riding Talbuk
+        --[65645] = true, --White Skeletal Warhorse
+        [16083] = true, --White Stallion
+        --[34897] = true, --White War Talbuk
+        [16081] = true, --Winter Wolf
+        [17229] = true, --Winterspring Frostsaber
+        --[59791] = true, --Wooly Mammoth
+        --[59793] = true, --Wooly Mammoth
+        --[74918] = true, --Wooly White Rhino
+        --[387321] = true, --Wooly White Rhino
+        --[26055] = true, --Yellow Qiraji Battle Tank
+        --[74856] = true, --Blazing Hippogryph
+        --[387320] = true, --Blazing Hippogryph
+        --[54729] = true, --Winged Steed of the Ebon Blade
+        --[71342] = true, --X-45 Heartbreaker
+        --[75973] = true, --X-53 Touring Rocket
         [23161] = true, --Dreadsteed
         [23214] = true, --Charger
-	},
+    },
 }
 
 addon.emergencyItems = {

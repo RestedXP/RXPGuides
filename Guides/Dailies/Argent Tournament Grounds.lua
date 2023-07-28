@@ -12,18 +12,12 @@ step
 	.goto IcecrownGlacier,69.66,22.86
 	.accept 13667 >> Accept The Argent Tournament << Alliance
 	.accept 13668 >> Accept The Argent Tournament << Horde
-	.accept 13820 >> Accept The Blastbolt Brothers -- Remove when TOGC is released
 	.target Justicar Mariel Trueheart
 step
 	#completewith next
 	.goto IcecrownGlacier,72.59,22.61
 	.fp Argent Tournament Grounds >> Get the Argent Tournament Grounds flight path
-	.target Helidan Lightwing	
-step -- Remove step when TOGC is released
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Bezzle Blastbolt|r
-	.goto IcecrownGlacier,74.23,24.55
-	.turnin 13820 >> Turn in The Blastbolt Brothers
-	.target Bezzle Blastbolt
+	.target Helidan Lightwing
 step
 	>>Enter the Alliance Silver Covenant Pavilion << Alliance
 	>>Enter the Horde Sunreaver Pavilion << Horde
@@ -4859,30 +4853,26 @@ step
 	.goto IcecrownGlacier,69.43,23.02
 	.turnin 13664 >> Turn in The Black Knight's Fall
 	.target Crusader Rhydalla
-step
-	.goto IcecrownGlacier,69.43,23.02
-	+|cFFFCDC00This is the end of |cFFFF5722The Black Knight's|r Story. There are 2 more quests that unlock next patch in 3.2 (Phase 3) with the opening of |cFF00BCD4Trial of the Crusader|r
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Return to |cFF00FF25Crusader Rhydalla|r then!
-	
-step << skip -- 14016 and 14017 added in 3.2 - Add in Phase 3
+
+step -- 14016 and 14017 added in 3.2 - Add in Phase 3	
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Crusader Rhydalla|r
 	.goto IcecrownGlacier,69.43,23.02
 	.accept 14016 >> Accept The Black Knight's Curse
 	.target Crusader Rhydalla
-step << skip
+step
 	>>Head east to the Graveyard of the |T236690:0|tArgent Tournament Grounds
 	>>Kill the |cFFFF5722Cult Assassin|r after the short RP 
 	.goto IcecrownGlacier,79.50,23.27
 	.complete 14016,1 -- Investigate the Black Knight's Grave
 	.isOnQuest 14016
 	.target Cult Assassin
-step << skip
+step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Crusader Rhydalla|r
 	.goto IcecrownGlacier,69.43,23.02
 	.turnin 14016 >> Turn in The Black Knight's Grave
 	.accept 14017 >> Accept The Black Knight's Fate
 	.target Crusader Rhydalla
-step << skip
+step
 	>>Fly east to Deathspeaker's Watch
 	>>Kill |cFFFF5722Doctor Kolher|r. Loot him for his |cFF00BCD4Orders|r	
 	>>He patrols around on the platform
@@ -4890,12 +4880,12 @@ step << skip
 	.complete 14017,1 -- Doctor Kohler's Orders (1)
 	.isOnQuest 14017
 	.target Doctor Kolher
-step << skip
+step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Crusader Rhydalla|r
 	.goto IcecrownGlacier,69.43,23.02
 	.turnin 14017 >> Turn in The Black Knight's Grave
 	.target Crusader Rhydalla
-step << skip
+step
 	+|cFFFCDC00This is the end of |cFFFF5722The Black Knight's|r Story!
 ]])
 
@@ -5335,116 +5325,359 @@ step
 	+|cFFFCDC00You have finished all Champion Daily Quests for today! Reload this Guide tomorrow to continue them.|r
 ]])
 
-RXPGuides.RegisterGuide([[
-#wotlk
-#version 1
-#group +Argent Tournament
-#name |cFFFFA500|rGoblin Daily Quests |cFFFFA500[|rNo Pre Requirements|cFFFFA500]|r
-
-step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Bozzle Blastbolt|r and |cFF00FF25Bezzle Blastbolt|r
-	.accept 13681 >> Accept A Chip Off the Ulduar Block
-	.goto IcecrownGlacier,74.00,24.56
-	.accept 13627 >> Accept Jack Me Some Lumber
-	.goto IcecrownGlacier,74.24,24.55
-	.target Bozzle Blastbolt	
-	.target Bezzle Blastbolt
-step
-	#completewith next
-	.goto TheStormPeaks,35.85,40.79,300 >> Travel to The Storm Peaks
-	.isOnQuest 13681
-step
-	.goto TheStormPeaks,35.85,40.79,60,0
-	.goto TheStormPeaks,36.21,42.14,60,0
-	.goto TheStormPeaks,37.97,39.81,60,0
-	.goto TheStormPeaks,39.66,41.15,60,0
-	.goto TheStormPeaks,42.21,39.05,60,0
-	.goto TheStormPeaks,41.84,43.09,60,0
-	.goto TheStormPeaks,38.84,43.86,60,0
-	.goto TheStormPeaks,36.92,42.73,60,0
-	.goto TheStormPeaks,40.10,40.72
-	.use 45281 >>Use the |T136173:0|t|cFFFFFF99Goblin Chisel|r in your Bags on Stone Blocks. |cFFFCDC00Move away after! It drops a bomb that deals SIGNIFICANT damage in the area!|r
-	>>Loot |cFF00BCD4Small Stone Blocks|r
-	.complete 13681,1 -- Small Stone Block (15)
-	.isOnQuest 13681
-step << Mage
-	#completewith next
-	.zone Dalaran >>Teleport to Dalaran
-	.isOnQuest 13627
-step
-	#completewith next
-	.goto CrystalsongForest,13.32,27.15,300 >> Travel to Crystalsong Forest
-	.isOnQuest 13627
-step
-	.use 45046 >>Use the |T132410:0|t|cFFFFFF99Lumberjack's Axe|r in your Bags on Crystalsong Oak trees
-	>>Collect |cFF00BCD4Rough Hewn Planks|r
-	.goto CrystalsongForest,13.32,27.15,50,0
-	.goto CrystalsongForest,17.91,31.48,50,0
-	.goto CrystalsongForest,15.34,37.65,50,0
-	.goto CrystalsongForest,10.68,36.33,50,0
-	.goto CrystalsongForest,11.49,26.33,50,0
-	.goto CrystalsongForest,17.91,31.48
-	.complete 13627,1 -- Rough Hewn Plank (12)
-	.isOnQuest 13627
-	.target Crystalsong Oak
-step
-	#completewith next
-	.goto IcecrownGlacier,74.00,24.56,300 >> Return to the |T236690:0|tArgent Tournament Grounds in Icecrown
-step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Bozzle Blastbolt|r and |cFF00FF25Bezzle Blastbolt|r
-	.turnin 13681 >> Turn in A Chip Off the Ulduar Block
-	.goto IcecrownGlacier,74.00,24.56
-	.turnin 13627 >> Turn in Jack Me Some Lumber
-	.goto IcecrownGlacier,74.24,24.55
-	.target Bozzle Blastbolt	
-	.target Bezzle Blastbolt	
-step
-	+|cFFFCDC00You have finished the Goblin Daily Quests for today! Reload this Guide tomorrow to continue them.|r
-]])
-
-RXPGuides.RegisterGuide([[
-#wotlk
-#version 1
-#group +Argent Tournament
-#name |cFFFFA500|r|cFFF64D4D###|r Preparation for |cFFFCDC00Phase 3|r Daily Quests |cFFF64D4D###|r
-	step
-	#sticky
-	+|cFFFCDC00Phase 3 introduces 2 new Daily Quest Hubs.|r
-	>>The first is from having the title |cFFEE41D6Crusader|r
-	>>This is gained from the achievement |cFFFCDC00Exalted Argent Champion of the Alliance|r << Alliance
-	>>This is gained from the achievement |cFFFCDC00Exalted Argent Champion of the Horde|r << Horde
-	>>You must have Exalted status with and the right to represent the entire Alliance in the Argent Tournament, plus Exalted status with the Argent Crusade << Alliance
-	>>You must have Exalted status with and the right to represent the entire Horde in the Argent Tournament, plus Exalted status with the Argent Crusade << Horde
-	>>Complete all |cFF00FF252.0 Champion|r Guides for all races. Increase your reputation with all Alliance cities to Exalted by taking the |cFFFF5722Champion's Writ|r reward when completing |cFFFF57223.0 Champion|r Daily Quests << Alliance
-	>>Complete all |cFF00FF252.0 Champion|r Guides for all races. Increase your reputation with all Horde cities to Exalted by taking the |cFFFF5722Champion's Writ|r reward when completing |cFFFF57223.0 Champion|r Daily Quests << Horde
-	step
-	#sticky
-	>>The second is unlocked by being Exalted with the |cFFFCDC00Silver Covenant|r and becoming a |cFFFF5722Champion|r which gives the achievement |cFFFCDC00A Silver Confidant|r << Alliance
-	>>The second is unlocked by being Exalted with the |cFFFCDC00Sunreavers|r and becoming a |cFFFF5722Champion|r which gives the achievement |cFFFCDC00The Sunreavers|r << Horde	
-	>>Simply by doing step 1, this will gain you Exalted over time and as well as |cFFFF5722Champion|r
-]])
-
 -- The following are added in 3.2 - Implement in Phase 3
 
--- RXPGuides.RegisterGuide([[
--- #wotlk
--- #version 1
--- #group +Argent Tournament
--- #name |cFFFF57223.0|r Crusader Daily Quests
--- ]])
+RXPGuides.RegisterGuide([[
+#wotlk
+#version 1
+#group +Argent Tournament
+#name |cFFFF57223.1|r Crusader Daily Quests
+step
+	#completewith next
+	+|cFFFCDC00Phase 3 introduces the Crusader Daily Quests|r
+	>>To access the Crusader Daily Quests, you must have the achievement:
+	.achievement 2817 << Alliance
+	.achievement 2816 << Horde
+step
+	>>Enter the Argent Pavilion
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25High Crusader Adelard|r and |cFF00FF25 Crusader Silverdawn|r.
+	.daily 14105,14101,14102,14104 >>Accept Deathspeaker Kharos
+	>>|c99ffff99OR|r Drottinn Hrothgar
+	>>|c99ffff99OR|r Mistcaller Yngvar
+	>>|c99ffff99OR|r Ornolf The Scarred
+	.daily 14108,14107 >>Accept Get Kraken!
+	>>|c99ffff99OR|r The Fate Of The Fallen
+	.goto Icecrown,69.51,23.15
+	.target High Crusader Adelard
+	.target Crusader Silverdawn
+step
+	.isOnQuest 14105
+	>>Head to Deathspeaker's Watch
+	>>Kill |cFFFF5722Deathspeaker Kharos|r
+	.complete 14105,1
+	.goto Icecrown,64.2,21.4
+	.target Deathspeaker Kharos
+step
+	#completewith next
+	.isOnQuest 14108
+	.goto Icecrown,69.79,22.21,5 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to a |cFF00FF25Stabled Argent Hippogryph|r outside the Argent Pavilion.
+	.skipgossip
+step
+	.isOnQuest 14108
+	>>Throw |c99ffff99Flaming Spears|r at the |cFFFF5722North Sea Kraken|r and |cFFFF5722Kvaldir Deepcallers|r.
+	.complete 14108,1
+	.complete 14108,2
+	.use 46954
+	.mob North Sea Kraken
+	.mob Kvaldir Deepcaller
+step
+	.isOnQuest 14101
+	>>Head to the Tualiq Monuments at Hrothgar's Landing.
+	>>Use the |c99ffff99Kvaldir War Horn|r
+	>>Kill |cFFFF5722Drottinn Hrothgar|r
+	.complete 14101,1
+	.use 47006
+	.goto Hrothgar's Landing,50.4,15.6
+	.target Drottinn Hrothgar
+step
+	.isOnQuest 14102
+	>>Head to the Mistcaller's Cave at Hrothgar's Landing.
+	>>Use the |c99ffff99Mistcaller's Charm|r
+	>>Kill |cFFFF5722Mistcaller Yngvar|r
+	.complete 14102,1
+	.use 47009
+	.goto Hrothgar's Landing,43.8,24.6
+	.target Mistcaller Yngvar
+step
+	.isOnQuest 14104
+	>>Head to the deck of Bor's Fury at Hrothgar's Landing.
+	>>Use the |c99ffff99Captured Kvaldir Banner|r
+	>>Kill |cFFFF5722Ornolf The Scarred|r
+	.complete 14104,1
+	.use 47029
+	.goto Hrothgar's Landing,58.6,31.6
+step
+	.isOnQuest 14107
+	>>Loot |cFFDB2EEFDiscarded Sould Crystals|r on the ground.
+	>>Use the |c99ffff99Light-Blessed Relic|r on Fallen Hero's Spirits.
+	.collect 47035,6,14107,1,-1
+	.complete 14107,1
+	.use 47033
+	.goto Icecrown,49.19,40.42
+	.target Fallen Hero's Spirit
+step
+	>>Return to the Argent Pavilion
+	.dailyturnin 14105,14101,14102,14104 >>Turn in Deathspeaker Kharos
+	>>|c99ffff99OR|r Drottinn Hrothgar
+	>>|c99ffff99OR|r Mistcaller Yngvar
+	>>|c99ffff99OR|r Ornolf The Scarred
+	.dailyturnin 14108,14107 >>Turn in Get Kraken!
+	>>|c99ffff99OR|r The Fate Of The Fallen
+	.goto Icecrown,69.51,23.15
+	.target High Crusader Adelard
+	.target Crusader Silverdawn
+step
+	+|cFFFCDC00You have finished all Silver Covenant Daily Quests for today! Reload this Guide tomorrow to continue them.|r
+]])
 
--- RXPGuides.RegisterGuide([[
--- #wotlk
--- #version 1
--- #group +Argent Tournament
--- #name |cFFFF57223.0|r Silver Covenant Daily Quests
--- << Alliance
--- ]])
+RXPGuides.RegisterGuide([[
+#wotlk
+#version 1
+#group +Argent Tournament
+#name |cFFFF57223.2|r Silver Covenant Daily Quests
+<< Alliance
 
--- RXPGuides.RegisterGuide([[
--- #wotlk
--- #version 1
--- #group +Argent Tournament
--- #name |cFFFF57223.0|r Sunreavers Daily Quests
--- << Horde
--- ]])
+step
+	#completewith next
+	+|cFFFCDC00Phase 3 introduces the Silver Covenant Daily Quests|r
+	>>To access Silver Covenant Daily Quests, you must be Exalted with the |cFFFCDC00Silver Covenant|r and be a |cFFFF5722Champion|r which gives the achievement:
+	.achievement 3676,1
+step
+	>>Enter the Alliance Silver Covenant Pavilion
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Narasi Snowdawn|r and |cFF00FF25Savinia Loresong|r.
+	.daily 14096 >>Accept You've Really Done It This Time, Kul
+	.daily 14074,14152,14080,14077 >>Accept A Leg Up
+	>>|c99ffff99OR|r Rescue at Sea
+	>>|c99ffff99OR|r Stop The Aggressors
+	>>|c99ffff99OR|r The Light's Mercy
+	.daily 14076,14090,14112 >>Accept Breakfast of Champions
+	>>|c99ffff99OR|r Gormok Wants His Snobolds
+	>>|c99ffff99OR|r What Do You Feed a Yeti, Anyway?
+	.goto Icecrown,76.26,19.62
+	.target Narasi Snowdawn
+	.target Savinia Loresong
+step
+	.isOnQuest 14074
+	>>Head to Hrothgar's Landing
+	>>Loot |cFF00BCD4Stolen Tallstrider Legs|r from the ground or kill |cFFFF5722Kvaldir mobs|r.
+	.complete 14074,1
+	.goto Hrothgar's Landing,43.4,29.8
+	.mob Kvaldir Reaver
+	.mob Kvaldir Mist Binder
+step
+	.isOnQuest 14152
+	>>Head to the Alliance boat in Hrothgar's Landing.
+	>>Kill |cFFFF5722Kvaldir Berserkers|r and |cFFFF5722Kvaldir Harpooners|r.
+	.complete 14152,1
+	.complete 14152,2
+	.goto Hrothgar's Landing,49.97,49.45
+	.mob Kvaldir Berserker
+	.mob Kvaldir Harpooner
+step
+	.isOnQuest 14080
+	>>Head to Hrothgar's Landing
+	>>Kill |cFFFF5722Kvaldir Reavers|r or |cFFFF5722Kvaldir Mist Binder|r.
+	.complete 14080,1
+	.goto Hrothgar's Landing,48.65,32.64
+	.mob Kvaldir Reaver
+	.mob Kvaldir Mist Binder
+step
+	.isOnQuest 14077
+	>>Head to Hrothgar's Landing
+	>>Use the |c99ffff99Confessor's Prayer Book|r to perform last rites for |cFF00FF25Slain Tualiq Villagers|r.
+	.complete 14077,1
+	.use 46870
+	.goto Hrothgar's Landing,51,30,10,0
+	.goto Hrothgar's Landing,50.60,28.28,10,0
+	.goto Hrothgar's Landing,51.84,26.61,10,0
+	.goto Hrothgar's Landing,54.03,23.98,10,0
+	.goto Hrothgar's Landing,55.65,25.20,10,0
+	.goto Hrothgar's Landing,57.41,24.37,10,0
+	.goto Hrothgar's Landing,57.10,21.39
+	.target Slain Tualiq Villager
+step
+	.isOnQuest 14112
+	#completewith next
+	>>Loot |cFFDB2EEFFresh Chum|r from the buckets on the Alliance boat.
+	.collect 47036,5
+	.goto Icecrown,67.11,7.89
+step
+	.isOnQuest 14112
+	>>Jump into the water and use the |cFFDB2EEFFresh Chum|r.
+	>>Kill |cFFFF5722Sharks|r for |cFF00BCD4North Sea Shark Meat|r.
+	.complete 14112,1
+	.use 47036
+step
+	.isOnQuest 14096
+	>>Kill |cFFFF5722Dark Zealots|r and |cFFFF5722Dark Ritualists|r for |cFFDB2EEFBlack Cage Keys|r.
+	>>Use the keys to free the |cFF00FF25Captive Aspirants|r from the cages.
+	.collect 46895,5,14096,2,-1
+    .complete 14096,2
+	.goto Icecrown,65.17,22.19,15,0
+	.goto Icecrown,64.66,21.74,15,0
+	.goto Icecrown,63.04,21.32,15,0
+	.goto Icecrown,61.42,20.74,15,0
+	.goto Icecrown,60.25,21.08
+	.mob Dark Zealot
+	.mob Dark Ritualist
+step
+	.isOnQuest 14096
+	>>Kill |cFFFF5722Dark Zealots|r and |cFFFF5722Dark Ritualists|r for |cFFDB2EEFBlack Cage Keys|r.
+	>>Free |cFF00FF25Kul the Reckless|r from his cage.
+    .complete 14096,1
+	.goto Icecrown,60.82,23.15
+step
+	.isOnQuest 14076
+	>>Head to The Storm Peaks
+	>>Use the |c99ffff99Earthshaker Drum|r next to the snow mounds.
+	>>Kill |cFFFF5722Deep Jormungars|r that spawn for |cFF00BCD4Jormungar Egg Sacs|r.
+	.complete 14076,1
+	.use 46893
+	.goto The Storm Peaks,43.33,57.74
+	.target Deep Jormungar
+step
+	.isOnQuest 14090
+	>>Head to The Storm Peaks
+	>>Use the |c99ffff99Weighted Net|r to capture |cFFFF5722Snowblind Followers|r.
+	.complete 14090,1
+	.use 46885
+	.goto The Storm Peaks,43.88,81.60
+	.target Snowblind Follower
+step
+	>>Return to the Alliance Silver Covenant Pavilion
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Narasi Snowdawn|r and |cFF00FF25Savinia Loresong|r.
+	.dailyturnin 14096 >>Turn in You've Really Done It This Time, Kul
+	.dailyturnin 14074,14152,14080,14077 >>Turn in A Leg Up
+	>>|c99ffff99OR|r Rescue at Sea
+	>>|c99ffff99OR|r Stop The Aggressors
+	>>|c99ffff99OR|r The Light's Mercy
+	.dailyturnin 14076,14090,14112 >>Turn in Breakfast of Champions
+	>>|c99ffff99OR|r Gormok Wants His Snobolds
+	>>|c99ffff99OR|r What Do You Feed a Yeti, Anyway?
+	.goto Icecrown,76.26,19.62
+	.target Narasi Snowdawn
+	.target Savinia Loresong
+step
+	+|cFFFCDC00You have finished all Silver Covenant Daily Quests for today! Reload this Guide tomorrow to continue them.|r
+]])
+
+RXPGuides.RegisterGuide([[
+#wotlk
+#version 1
+#group +Argent Tournament
+#name |cFFFF57223.2|r Sunreavers Daily Quests
+<< Horde
+
+step
+	#completewith next
+	+|cFFFCDC00Phase 3 introduces the Sunreavers Daily Quests|r
+	>>To access Sunreavers Daily Quests, you must be Exalted with the |cFFFCDC00Sunreavers|r and be a |cFFFF5722Champion|r which gives the achievement:
+	.achievement 3677,1
+step
+	>>Enter the Sunreaver Pavilion
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Girana the Blooded|r and |cFF00FF25Tylos Dawnrunner|r.
+	.daily 14142 >>Accept You've Really Done It This Time, Kul
+	.daily 14143,14136,14140,14144 >>Accept A Leg Up
+	>>|c99ffff99OR|r Rescue at Sea
+	>>|c99ffff99OR|r Stop The Aggressors
+	>>|c99ffff99OR|r The Light's Mercy
+	.daily 14092,14141,14145 >>Accept Breakfast of Champions
+	>>|c99ffff99OR|r Gormok Wants His Snobolds
+	>>|c99ffff99OR|r What Do You Feed a Yeti, Anyway?
+	.goto Icecrown,76.09,24.08
+	.target Girana the Blooded
+	.target Tylos Dawnrunner
+step
+	.isOnQuest 14143
+	>>Head to Hrothgar's Landing
+	>>Loot |cFF00BCD4Stolen Tallstrider Legs|r from the ground or kill |cFFFF5722Kvaldir mobs|r.
+	.complete 14143,1
+	.goto Hrothgar's Landing,43.4,29.8
+	.mob Kvaldir Reaver
+	.mob Kvaldir Mist Binder
+step
+	.isOnQuest 14136
+	>>Head to the Horde boat in Hrothgar's Landing.
+	>>Kill |cFFFF5722Kvaldir Berserkers|r and |cFFFF5722Kvaldir Harpooners|r.
+	.complete 14136,1
+	.complete 14136,2
+	.goto Hrothgar's Landing,44.14,54.22
+	.mob Kvaldir Berserker
+	.mob Kvaldir Harpooner
+step
+	.isOnQuest 14080
+	>>Head to Hrothgar's Landing
+	>>Kill |cFFFF5722Kvaldir Reavers|r or |cFFFF5722Kvaldir Mist Binder|r.
+	.complete 14080,1
+	.goto Hrothgar's Landing,48.65,32.64
+	.mob Kvaldir Reaver
+	.mob Kvaldir Mist Binder
+step
+	.isOnQuest 14144
+	>>Head to Hrothgar's Landing
+	>>Use the |c99ffff99Confessor's Prayer Book|r to perform last rites for |cFF00FF25Slain Tualiq Villagers|r.
+	.complete 14144,1
+	.use 46870
+	.goto Hrothgar's Landing,51,30,10,0
+	.goto Hrothgar's Landing,50.60,28.28,10,0
+	.goto Hrothgar's Landing,51.84,26.61,10,0
+	.goto Hrothgar's Landing,54.03,23.98,10,0
+	.goto Hrothgar's Landing,55.65,25.20,10,0
+	.goto Hrothgar's Landing,57.41,24.37,10,0
+	.goto Hrothgar's Landing,57.10,21.39
+	.target Slain Tualiq Villager
+step
+	.isOnQuest 14145
+	#completewith next
+	>>Loot |cFFDB2EEFFresh Chum|r from the buckets on the Horde boat.
+	.collect 47036,5
+	.goto Icecrown,73.97,9.42
+step
+	.isOnQuest 14145
+	>>Jump into the water and use the |cFFDB2EEFFresh Chum|r.
+	>>Kill |cFFFF5722Sharks|r for |cFF00BCD4North Sea Shark Meat|r.
+	.complete 14145,1
+	.use 47036
+step
+	.isOnQuest 14142
+	>>Kill |cFFFF5722Dark Zealots|r and |cFFFF5722Dark Ritualists|r for |cFFDB2EEFBlack Cage Keys|r.
+	>>Use the keys to free the |cFF00FF25Captive Aspirants|r from the cages.
+	.collect 46895,5,14142,2,-1
+    .complete 14142,2
+	.goto Icecrown,65.17,22.19,15,0
+	.goto Icecrown,64.66,21.74,15,0
+	.goto Icecrown,63.04,21.32,15,0
+	.goto Icecrown,61.42,20.74,15,0
+	.goto Icecrown,60.25,21.08
+	.mob Dark Zealot
+	.mob Dark Ritualist
+step
+	.isOnQuest 14142
+	>>Kill |cFFFF5722Dark Zealots|r and |cFFFF5722Dark Ritualists|r for |cFFDB2EEFBlack Cage Keys|r.
+	>>Free |cFF00FF25Kul the Reckless|r from his cage.
+    .complete 14142,1
+	.goto Icecrown,60.82,23.15
+step
+	.isOnQuest 14092
+	>>Head to The Storm Peaks
+	>>Use the |c99ffff99Earthshaker Drum|r next to the snow mounds.
+	>>Kill |cFFFF5722Deep Jormungars|r that spawn for |cFF00BCD4Jormungar Egg Sacs|r.
+	.complete 14092,1
+	.use 46893
+	.goto The Storm Peaks,43.33,57.74
+	.target Deep Jormungar
+step
+	.isOnQuest 14141
+	>>Head to The Storm Peaks
+	>>Use the |c99ffff99Weighted Net|r to capture |cFFFF5722Snowblind Followers|r.
+	.complete 14141,1
+	.use 46885
+	.goto The Storm Peaks,43.88,81.60
+	.target Snowblind Follower
+step
+	>>Return to the Sunreaver Pavilion
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Girana the Blooded|r and |cFF00FF25Tylos Dawnrunner|r.
+	.dailyturnin 14142 >>Turn in You've Really Done It This Time, Kul
+	.dailyturnin 14143,14136,14080,14144 >>Turn in A Leg Up
+	>>|c99ffff99OR|r Rescue at Sea
+	>>|c99ffff99OR|r Stop The Aggressors
+	>>|c99ffff99OR|r The Light's Mercy
+	.dailyturnin 14092,14141,14145 >>Turn in Breakfast of Champions
+	>>|c99ffff99OR|r Gormok Wants His Snobolds
+	>>|c99ffff99OR|r What Do You Feed a Yeti, Anyway?
+	.goto Icecrown,76.09,24.08
+	.target Girana the Blooded
+	.target Tylos Dawnrunner
+step
+	+|cFFFCDC00You have finished all Sunreaver Daily Quests for today! Reload this Guide tomorrow to continue them.|r
+]])

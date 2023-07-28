@@ -1669,9 +1669,9 @@ end
 local homeText = strupper(_G.HOME or "%")
 function addon.SelectGossipType(gossipType,noOp)
     if C_GossipInfo.GetOptions then
-
-        for i,option in ipairs(GossipGetOptions()) do
-            --print(option.type,option.icon)
+        local options = GossipGetOptions()
+        for i,option in ipairs(options) do
+            print(option.type,option.icon)
             if option.type == gossipType then
                 noOp = noOp or GossipSelectOption(i)
                 return i,option.name
@@ -1679,12 +1679,14 @@ function addon.SelectGossipType(gossipType,noOp)
                 if gossipType == "binder" then
                     local text = strupper(option.name or "")
                     --print(option.name,option.icon)
-                    if option.icon == 132052 and text:find(homeText) then
+                    if option.icon == 132052 or option.icon == 136458 and text:find(homeText) then
                         noOp = noOp or GossipSelectOption(i)
                         return i,option.name
                     end
                 elseif gossipType == "taxi" and option.icon == 132057 or
-                gossipType == "trainer" and option.icon == 132058  then
+                gossipType == "trainer" and option.icon == 132058 or
+                gossipType == "healer" and UnitIsDeadOrGhost('player') and option.icon == 132054 and #options == 1
+                 then
                     noOp = noOp or GossipSelectOption(i)
                     return i,option.name
                 end
@@ -1902,7 +1904,6 @@ function addon.functions.deathskip(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
         local text = ...
-        element.tag = "deathskip"
         if text and text ~= "" then
             element.text = text
         else
@@ -1916,13 +1917,17 @@ function addon.functions.deathskip(self, ...)
     local event = ...
     if event == "CONFIRM_XP_LOSS" then
         addon.SetElementComplete(self)
-        if _G.AcceptXPLoss then
+        if C_PlayerInteractionManager then
+            self:SetScript("OnUpdate", function()
+                C_PlayerInteractionManager.ConfirmationInteraction(Enum.PlayerInteractionType.SpiritHealer)
+                C_PlayerInteractionManager.ClearInteraction(Enum.PlayerInteractionType.SpiritHealer)
+                self:SetScript("OnUpdate",nil)
+            end)
+        elseif _G.AcceptXPLoss then
             _G.AcceptXPLoss()
-        elseif C_PlayerInteractionManager then
-            C_PlayerInteractionManager.ConfirmationInteraction(Enum.PlayerInteractionType.SpiritHealer)
+            _G.StaticPopup1:Hide()
+            _G.StaticPopup2:Hide()
         end
-        _G.StaticPopup1:Hide()
-        _G.StaticPopup2:Hide()
     elseif event == "GOSSIP_SHOW" then
         addon.SelectGossipType("healer")
     end
@@ -2420,6 +2425,15 @@ function addon.functions.reputation(self, ...)
     local step = element.step
     local _, _, standing, bottomValue, topValue, earnedValue =
         GetFactionInfoByID(element.faction)
+    local relativeValue = earnedValue
+    local replength = topValue - bottomValue
+    if relativeValue < 0 then
+        relativeValue = replength + earnedValue
+    else
+        relativeValue = earnedValue - bottomValue
+    end
+    --print('r:',standing,bottomValue,topValue,earnedValue,topValue-bottomValue,relativeValue)
+
     if ((element.repValue < 0 and (standing >= element.standing or
         (standing == element.standing - 1 and earnedValue >= topValue +
             element.repValue))) or
@@ -2428,14 +2442,15 @@ function addon.functions.reputation(self, ...)
                 element.repValue))) or
         (element.repValue >= 0 and element.repValue < 1 and
             ((standing > element.standing) or
-                (element.standing == standing and earnedValue >=
-                    (topValue - bottomValue) * element.repValue)))) ==
+                (element.standing == standing and relativeValue >=
+                    replength * element.repValue)))) ==
         element.operator then
         if not element.skipStep then
             addon.SetElementComplete(self, true)
         elseif step.active and not addon.isHidden then
             addon.updateSteps = true
             step.completed = true
+             self.element.tooltipText = "Step skipped: Reputation condition not met"
         end
     end
 end
@@ -2587,13 +2602,23 @@ function addon.functions.next(skip, guide)
         element.textOnly = true
         return element
     elseif skip and
-        (type(skip) == "number" or (skip.step and not skip.step.active)) then
+        (type(skip) == "number" or (skip.step and (not skip.step.active and not skip.step.completed))) then
         return
     end
-    guide = guide or addon.currentGuide
-    if guide.next then
+
+    local next
+    if type(guide) == "table" then
+        next = guide.next
+    elseif type(guide) == "string" then
+        next = guide
+        guide = addon.currentGuide
+    else
+        guide = addon.currentGuide
+        next = guide.next
+    end
+
+    if next then
         local group = guide.group
-        local next = guide.next
         local guideSkip
         --Different guides can be separated by a semicolon when using #next
         for guideName in string.gmatch(guide.next,"%s*([^;]+)%s*") do
