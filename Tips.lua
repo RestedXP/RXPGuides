@@ -596,6 +596,14 @@ function addon.tips:LoadStatWeights()
 
 end
 
+-- Maps regex global string with stat rating key
+-- Most green text is 'ITEM_MOD_THING_RATING' description with '_SHORT' added for key
+local function GreenToKey(keyString)
+    if _G[keyString] and _G[keyString .. '_SHORT'] then
+        return _G[keyString .. '_SHORT']
+    end
+end
+
 function addon.tips:GetItemStats(itemLink, debug)
     if type(itemLink) ~= "string" then
         addon.error("addon.tips:GetItemStats, itemLink string required")
