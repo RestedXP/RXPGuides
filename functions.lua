@@ -1671,7 +1671,7 @@ function addon.SelectGossipType(gossipType,noOp)
     if C_GossipInfo.GetOptions then
         local options = GossipGetOptions()
         for i,option in ipairs(options) do
-            print(option.type,option.icon)
+            --print(option.type,option.icon)
             if option.type == gossipType then
                 noOp = noOp or GossipSelectOption(i)
                 return i,option.name
@@ -1679,7 +1679,7 @@ function addon.SelectGossipType(gossipType,noOp)
                 if gossipType == "binder" then
                     local text = strupper(option.name or "")
                     --print(option.name,option.icon)
-                    if option.icon == 132052 or option.icon == 136458 and text:find(homeText) then
+                    if (option.icon == 132052 or option.icon == 136458) and text:find(homeText) then
                         noOp = noOp or GossipSelectOption(i)
                         return i,option.name
                     end
