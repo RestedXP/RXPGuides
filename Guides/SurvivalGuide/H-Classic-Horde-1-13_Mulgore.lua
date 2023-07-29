@@ -818,7 +818,7 @@ step << Hunter
 step << Hunter
     .goto Mulgore,45.86,57.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Loorat|r
-    .collect 2512,1000,818,1 << Hunter --Rough Arrow (1000)
+    .collect 2516,1000,818,1 << Hunter --Light Shot (1000)
     .target Moorat Longstride
     .itemcount 2512,<800 << Hunter
 step << Shaman/Druid
@@ -1504,6 +1504,9 @@ step << !Shaman
     .zone Durotar >> Travel to Durotar
     .zoneskip Durotar
 step
+    .abandon 764 >>Abandon The Venture Co.
+    .abandon 765 >>Abandon Supervisor Fizsprocket
+step
     #completewith next
     .goto Durotar,49.75,40.38,6,0
     .goto Durotar,49.77,40.24,6,0
@@ -1536,36 +1539,6 @@ step
     .accept 784 >>Accept Vanquish the Betrayers
     .accept 837 >>Accept Encroachment
     .target Gar'thok
-step << Hunter
-    .goto Durotar,52.97,41.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ghrawt|r
-    .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135489:0|t[Laminated Recurve Bow] (17s 51c). You'll come back later if you don't have enough yet
-    .target Ghrawt
-    .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
-    .group
-step << Hunter
-    .goto Durotar,52.97,41.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ghrawt|r|cRXP_BUY_. Buy a|r |T135499:0|t[Laminated Recurve Bow] |cRXP_BUY_from him|r
-    .collect 2507,1,784,1 --Collect Laminated Recurve Bow (1)
-    .money <0.1751
-    .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
-    .group
-step << Hunter
-    .goto Durotar,52.97,41.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ghrawt|r
-    .collect 2515,1200,784,1 << Hunter --Sharp Arrow (1200)
-    .target Ghrawt
-    .itemcount 2515,<600 << Hunter
-    .group
-step << Hunter
-    #completewith Benedict
-    +Equip the |T135499:0|t[Laminated Recurve Bow]
-    .use 2507
-    .itemcount 2507,1
-    .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
 step
     #completewith Benedict
     .goto Durotar,58.08,57.13,120 >> Travel to Tiragarde Keep
@@ -1872,43 +1845,6 @@ step
     .collect 4496,1,818,1 --Small Brown Pouch (1)
     .target Jark
     .money >0.05
-step << Hunter
-    .goto Durotar,51.85,43.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r
-    .train 14281 >> Train your class spells
-    .target Thotar
-    .xp <12,1
-step << Hunter
-    .goto Durotar,52.97,41.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ghrawt|r
-    .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135489:0|t[Laminated Recurve Bow] (17s 51c). You'll come back later if you don't have enough yet
-    .target Ghrawt
-    .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
-    .group
-step << Hunter
-    .goto Durotar,52.97,41.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ghrawt|r|cRXP_BUY_. Buy a|r |T135499:0|t[Laminated Recurve Bow] |cRXP_BUY_from him|r
-    .collect 2507,1,837,1 --Collect Laminated Recurve Bow (1)
-    .money <0.1751
-    .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
-    .group
-step << Hunter
-    .goto Durotar,52.97,41.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ghrawt|r
-    .collect 2515,1200,837,1 << Hunter --Sharp Arrow (1200)
-    .target Ghrawt
-    .itemcount 2515,<600 << Hunter
-    .group
-step << Hunter
-    #completewith Encroachment
-    +Equip the |T135499:0|t[Laminated Recurve Bow]
-    .use 2507
-    .itemcount 2507,1
-    .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
-    .group
 step << Warrior
     .goto Durotar,54.18,42.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw|r
@@ -2102,13 +2038,6 @@ step << Hunter
     .target Thotar
     .xp <12,1
     .group
-step << Hunter
-    .goto Durotar,52.97,41.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ghrawt|r
-    .collect 2515,1200,837,1 << Hunter --Sharp Arrow (1200)
-    .target Ghrawt
-    .itemcount 2515,<600 << Hunter
-    .group
 step << Warrior
     .goto Durotar,54.18,42.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw|r
@@ -2122,13 +2051,6 @@ step << Shaman
     .train 1535 >> Train your class spells
     .target Swart
     .xp <12,1
-step << Hunter
-    .goto Durotar,52.97,41.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ghrawt|r
-    .collect 2515,1200,828,1 << Hunter --Sharp Arrow (1200)
-    .target Ghrawt
-    .itemcount 2515,<600 << Hunter
-    .group
 step
     #completewith next
     .goto Durotar,55.40,36.73,80,0
@@ -2849,6 +2771,15 @@ step
     .fp Undercity >> Get the Undercity flight path
     >>|cRXP_WARN_Skip this step if you already took the flight path!|r
     .target Michael Garrett
+step
+    .abandon 806 >> Abandon Dark Storms
+    .isOnQuest 806
+step
+    .abandon 408 >> Abandon The Family Crypt
+    .isOnQuest 408
+step << Warrior
+    .abandon 1821 >> Abandon Agamand Heirlooms
+    .isOnQuest 1821
 step
     #label LeaveUndercity3
     #completewith EscortErland

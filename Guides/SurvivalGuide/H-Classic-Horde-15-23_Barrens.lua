@@ -83,23 +83,7 @@ step << !Tauren !Hunter !Shaman
     .target Takrin Pathseeker
     .isQuestAvailable 840
 step
-    #completewith KreenigSnarlsnout
-    >>Abandon A Recipe for Death, there's no opportunity left to do it
-    .abandon 450 >> Abandon A Recipe for Death
-    .isOnQuest 450
-step
-    #completewith KreenigSnarlsnout
-    >>Abandon Arugal's Folly, there's no opportunity left to do it
-    .abandon 99 >> Abandon Arugal's Folly
-step
-    #completewith KreenigSnarlsnout
-    >>Abandon Pyrewood Ambush, there's no opportunity left to do it
-    .abandon 452 >> Abandon Pyrewood Ambush
-    .isOnQuest 452
-step
-    #completewith KreenigSnarlsnout
-    >>Abandon The Weaver to avoid quest log issues. You'll pick it up again later
-    .abandon 480 >> Abandon The Weaver
+    .abandon 480 >> Abandon The Weaver to avoid quest log issues. You'll pick it up again later
     .isOnQuest 480
 step
     #completewith next
@@ -548,6 +532,22 @@ step
     .target Tal
     .cooldown item,6948,<0
     .zoneskip The Barrens
+    .dungeon RFC
+step
+    .abandon 5723 >> Abandon Testing an Enemy's Strength
+    .isOnQuest 5723
+    .dungeon RFC
+step
+    .abandon 5725 >> Abandon Turn in The Power to Destroy...
+    .isOnQuest 5725
+    .dungeon RFC
+step
+    .abandon 5728 >> Abandon Hidden Enemies
+    .isOnQuest 5728
+    .dungeon RFC
+step
+    .abandon 5761 >> Abandon Slaying the Beast
+    .isOnQuest 5761
     .dungeon RFC
 step
     .goto The Barrens,55.70,27.30,20,0
@@ -3383,13 +3383,37 @@ step << Warlock
     .zoneskip Stonetalon Mountains
     .dungeon !WC
 step << !Warlock
-    #completewith next
+    #completewith KayaLives
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fp Thunder Bluff >> Get the Thunder Bluff flight path << !Tauren
     .fly Sun Rock Retreat >>Fly to Sun Rock Retreat
     .target Tal
     .zoneskip Thunder Bluff,1
+step
+    .abandon 1486 >> Abandon Deviate Hides
+    .isOnQuest 1486
+    .dungeon WC
+step
+    .abandon 1487 >> Abandon Deviate Eradication
+    .isOnQuest 1487
+    .dungeon WC
+step
+    .abandon 1491 >> Abandon Smart Drinks
+    .isOnQuest 1491
+    .dungeon WC
+step
+    .abandon 959 >> Abandon Trouble at the Docks
+    .isOnQuest 959
+    .dungeon WC
+step
+    .abandon 914 >> Abandon Leaders of the Fang
+    .isOnQuest 914
+    .dungeon WC
+step
+    .abandon 962 >> Abandon Serpentbloom
+    .isOnQuest 962
+    .dungeon WC
 step
     #label KayaLives
     .goto Stonetalon Mountains,47.46,58.37
@@ -4012,6 +4036,24 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trak'gen|r|cRXP_BUY_. Buy |r |T135423:0|t[Deadly Throwing Axe] |cRXP_BUY_from him|r
     .collect 3137,200,6544,1 --Deadly Throwing Axe (200)
     .target K'waii
+step
+    .abandon 6421 >> Abandon Boulderslide Ravine
+    .isOnQuest 6421
+step
+    .abandon 4021 >> Abandon Counterattack!
+    .isOnQuest 4021
+step
+    .abandon 6481 >> Abandon Earthen Arise
+    .isOnQuest 6481
+step
+    .abandon 6284 >> Abandon Arachnophobia
+    .isOnQuest 6284
+step
+    .abandon 6641 >> Abandon Vorsha the Lasher
+    .isOnQuest 6641
+step
+    .abandon 6563 >> Abandon The Essence of Aku'Mai
+    .isOnQuest 6563
 step
     #completewith next
     .zone Durotar >> Leave Orgrimmar

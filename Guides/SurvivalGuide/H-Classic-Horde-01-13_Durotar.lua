@@ -1030,6 +1030,12 @@ step
     .turnin 786 >>Turn in Thwarting Kolkar Aggression << !Shaman
     .target Lar Prowltusk
 step
+    .goto Durotar,55.95,74.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vornal|r
+    .turnin 818 >>Turn in A Solvent Spirit
+    .target Master Vornal
+    .isQuestComplete 818
+step
     .goto Durotar,55.62,73.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hai'zan|r
     >>|cRXP_BUY_Buy|r |T133974:0|t[Haunch of Meat] |cRXP_BUY_from him|r << Warrior/Rogue/Shaman
@@ -1662,7 +1668,6 @@ step
     .goto Durotar,55.95,74.39
     .turnin 817 >>Turn in Practical Prey
     .goto Durotar,55.95,73.93
-    .goto Durotar,54.1,76.6
     .target Master Gadrin
     .target Master Vornal
     .target Vel'rin Fang
@@ -4502,11 +4507,21 @@ step << Priest/Warlock
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
 step << Priest/Warlock
+    #completewith Entersilverpine
     +Equip the |T135139:0|t[Lesser Magic Wand]
     .use 11287
     .itemcount 11287,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
+step
+    .abandon 806 >> Abandon Dark Storms
+    .isOnQuest 806
+step
+    .abandon 408 >> Abandon The Family Crypt
+    .isOnQuest 408
+step << Warrior
+    .abandon 1821 >> Abandon Agamand Heirlooms
+    .isOnQuest 1821
 step
     #label LeaveUndercity3
     .goto Undercity,47.25,39.12,50,0

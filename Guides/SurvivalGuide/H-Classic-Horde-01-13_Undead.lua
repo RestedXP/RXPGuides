@@ -1127,6 +1127,12 @@ step
     .turnin 786 >>Turn in Thwarting Kolkar Aggression
     .target Lar Prowltusk
 step
+    .goto Durotar,55.95,74.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vornal|r
+    .turnin 818 >>Turn in A Solvent Spirit
+    .target Master Vornal
+    .isQuestComplete 818
+step
     .goto Durotar,55.62,73.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hai'zan|r
     .vendor 3933 >> Sell your trash
@@ -3236,15 +3242,24 @@ step << Priest/Warlock
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
 step << Priest/Warlock
-    #completewith WorgHearts
+    #completewith Entersilverpine
     +Equip the |T135139:0|t[Lesser Magic Wand]
     .use 11287
     .itemcount 11287,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
 step
+    .abandon 806 >> Abandon Dark Storms
+    .isOnQuest 806
+step
+    .abandon 408 >> Abandon The Family Crypt
+    .isOnQuest 408
+step << Warrior
+    .abandon 1821 >> Abandon Agamand Heirlooms
+    .isOnQuest 1821
+step
     #label LeaveUndercity3
-    #completewith WorgHearts
+    #completewith next
     .goto Undercity,47.25,39.12,50,0
     .goto Undercity,46.35,43.86,10,0
     .goto Undercity,45.24,39.35,10,0
