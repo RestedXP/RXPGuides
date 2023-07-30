@@ -37,3 +37,5 @@ Guides/GuideList.xml
 
 Talents.lua
 Guides/Talents/wotlk.xml
+
+ItemUpgrades.lua
