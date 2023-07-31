@@ -1383,6 +1383,7 @@ step << Warlock
     .turnin 176 >> Turn in Wanted: "Hogger"
     >>|cRXP_WARN_Choose the|r |T135145:0|t[|cRXP_FRIENDLY_Balanced Fighting Stick|r] |cRXP_WARN_as your reward. Equip it|r
     .turnin 123 >> Turn in The Collector
+    .accept 147 >> Accept Manhunt
 step << Warlock
     .goto Elwynn Forest,42.105,65.927
     .target Marshal Dughan
@@ -1390,12 +1391,30 @@ step << Warlock
     .turnin 176 >> Turn in Wanted: "Hogger"
     >>|cRXP_WARN_Choose the|r |T135145:0|t[|cRXP_FRIENDLY_Balanced Fighting Stick|r] |cRXP_WARN_as your reward. Equip it|r
 step << Warlock
+    .isQuestTurnedIn 123
+    .goto Elwynn Forest,42.105,65.927
+    .target Marshal Dughan
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
+    .accept 147 >> Accept Manhunt
+step << Warlock
     .xp 11 >> Grind to 11
 step << Warlock
-    #completewith next
+    #completewith LockVW
     .goto Elwynn Forest,71.0,80.8,150 >> Travel to the Brackwell Pumpkin Patch
     >>|cRXP_WARN_Grind en-route. Try to level your Staff skill for later|r
 step << Warlock
+    .isOnQuest 147
+    .goto Elwynn Forest,71.10,80.66
+    >>Kill |cRXP_ENEMY_Surena Caledon|r. Loot her for her |cRXP_LOOT_Choker|r
+    >>Kill |cRXP_ENEMY_Morgan the Collector|r. Loot him for |cRXP_LOOT_The Collector's Ring|r
+    >>|cRXP_WARN_Focus on killing |cRXP_ENEMY_Surena Caledon|r very quickly|r
+    >>|cRXP_WARN_Cast|r |T136183:0|t[Fear] |cRXP_WARN_on |cRXP_ENEMY_Morgan the Collector|r continously|r
+    .complete 1688,1 --Surena's Choker (1)
+    .complete 147,1 -- The Collector's Ring (1)
+    .mob Surena Caledon
+    .mob Morgan the Collector
+step << Warlock
+    #label LockVW
     .goto Elwynn Forest,71.10,80.66
     >>Kill |cRXP_ENEMY_Surena Caledon|r. Loot her for her |cRXP_LOOT_Choker|r
     >>|cRXP_WARN_Focus on killing |cRXP_ENEMY_Surena Caledon|r very quickly|r
@@ -1433,6 +1452,22 @@ step << Warlock
     .fp Redridge Mountains >> Get the Redridge Mountains flight path
     .fly Stormwind >> Fly to Stormwind
     .target Ariena Stormfeather
+step << Warlock
+    .isQuestComplete 147
+    #completewith next
+    .goto Elwynn Forest,42.105,65.927,100 >> Exit Stormwind. Travel to Goldshire
+step << Warlock
+    .isQuestComplete 147
+    .goto Elwynn Forest,42.105,65.927
+    .target Marshal Dughan
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
+    .turnin 147 >> Turn in Manhunt
+step << Warlock
+    #completewith TravelIF
+    .isQuestTurnedIn 147
+    .goto StormwindClassic,70.07,86.82
+    .zone Stormwind City >> Travel to Stormwind City
+    .zoneskip Elwynn Forest,1
 step << Warlock
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
@@ -1534,6 +1569,7 @@ step << Warrior/Paladin/Rogue
     .vendor >>|cRXP_WARN_Buy a|r |T134708:0|t[Mining Pick]|cRXP_WARN_. You'll train|r |T134708:0|t[Mining] |cRXP_WARN_very soon|r
     .target Kaita Deepforge
 step
+    #label TravelIF
     #completewith next
     .goto StormwindClassic,61.149,11.568,25,0
     .goto StormwindClassic,64.0,8.10
