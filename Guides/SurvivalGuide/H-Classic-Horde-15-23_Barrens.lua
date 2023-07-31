@@ -293,6 +293,7 @@ step << !Tauren !Undead
     .isOnQuest 6386
 step
     #sticky
+    #completewith EnterRFC
     .subzone 213 >> Now you should be looking for a group to Ragefire Chasm
     .dungeon RFC
 step
@@ -386,6 +387,7 @@ step
     .target Thrall
     .dungeon RFC
 step
+    #label EnterRFC
     .goto Orgrimmar,52.77,48.97
     .zone 213 >> Enter the RFC Instance portal. Zone in
     .dungeon RFC
@@ -2828,9 +2830,9 @@ step
     .goto Thunder Bluff,50.75,37.07,40 >> Take the elevator up to Thunder Bluff
 step << Druid
     .goto Thunder Bluff,47.12,57.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chesmu|r. Deposit the following into your bank:
-    .bankdeposit 5075 >> |T134128:0|t[Blood Shards]
-    .bankdeposit 868 >> |T132938:0|t[Digging Claw]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chesmu|r
+    .bankdeposit 5075 >> Deposit your |T134128:0|t[Blood Shards]
+    .bankdeposit 868 >> Deposit your |T132938:0|t[Digging Claw]
     .target Chesmu
 step << Druid
     .goto Thunder Bluff,45.83,64.74
@@ -2944,9 +2946,9 @@ step << !Druid
     .target Innkeeper Pala
 step << !Druid
     .goto Thunder Bluff,47.12,57.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chesmu|r. Deposit the following into your bank:
-    .bankdeposit 5075 >> |T134128:0|t[Blood Shards]
-    .bankdeposit 868 >> |T132938:0|t[Digging Claw]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chesmu|r
+    .bankdeposit 5075 >> Deposit your |T134128:0|t[Blood Shards]
+    .bankdeposit 868 >> Deposit your |T132938:0|t[Digging Claw]
     .target Chesmu
 step << Orc Warrior/Tauren Warrior
     .goto Thunder Bluff,40.93,62.73
@@ -3148,6 +3150,7 @@ step << !Warlock
     .dungeon WC
 step
     #sticky
+    #completewith EnterWC
     .goto The Barrens,45.40,53.96,80,0
     .goto The Barrens,44.79,51.77,80,0
     .goto The Barrens,43.25,47.98,80,0
