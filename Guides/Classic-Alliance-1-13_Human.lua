@@ -9,43 +9,33 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Alliance 1-20
 #defaultfor Human
 #next 6-11 Elwynn Forest; 6-13 Elwynn Forest
-step
+step << !Human
     #sticky
     #completewith next
     .goto Elwynn Forest,48.171,42.943
     +You have selected a guide meant for Humans. You should choose the same starter zone that you start in
 step << Mage
     #completewith next
-    +Note that you have selected the single target mage guide. Single target is a lot safer than AoE Mage, but a LOT slower
+    +Note that you have selected the single target Mage guide. Single target is a lot safer than AoE Mage, but a LOT slower
 step << Warlock
-    #sticky
     #completewith next
-    +Kill |cFF00BCD4Wolves|r for 10 copper worth of vendor trash. It's worth training Immolate early
-    .goto Elwynn Forest,49.4,45.6
-step << Warlock
-    .goto Elwynn Forest,50.1,42.7
-    >> Talk to |cFF00FF25Dane Winslow|r
-    .vendor >> Vendor trash
+    .goto Elwynn Forest,50.051,42.689
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dane Winslow|r
+    .vendor >> |cRXP_WARN_Vendor your Body Armor, Shirt, Pants and Boots along with the Food and Water in your bags. You need 10c total|r
     .target Dane Winslow
 step << Warlock
     .goto Elwynn Forest,49.873,42.649
-    >> Talk to |cFF00FF25Drusilla La Salle|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drusilla La Salle|r
     .accept 1598 >> Accept The Stolen Tome
-    .trainer >>Train Immolate
+    .train 348 >> Train |T135817:0|t[Immolate]
     .target Drusilla La Salle
 step << Warlock
-    #hardcore
     .goto Elwynn Forest,52.9,44.3,60,0
-    >>Kill some Wolves en route, |cFFFCDC00then watch this video|r. |cFFFCDC00DO NOT DO THE DEATHSKIP.|r Use your hearthstone after you loot the book.
-    .link https://www.youtube.com/watch?v=_-KEke9Yeik >>CLICK HERE
     .goto Elwynn Forest,56.7,44.0
-    .complete 1598,1 --Collect Powers of the Void (x1)
-step << Warlock
-    #softcore
-    .goto Elwynn Forest,52.9,44.3,60,0
-    >>Kill some Wolves en route, |cFFFCDC00then watch this video|r.
-    .link https://www.youtube.com/watch?v=_-KEke9Yeik >>CLICK HERE
-    .goto Elwynn Forest,56.7,44.0
+    >>|cRXP_WARN_Run into the Tent at the Defias Camp|r
+    >>Open the |cRXP_PICK_Stolen Books|r. Loot it for the |cRXP_LOOT_Powers of the Void|r
+    >>|cRXP_WARN_You can loot the |cRXP_LOOT_Powers of the Void|r safely while inside the Tent! Watch the video on how to do this|r
+    .link https://www.youtube.com/watch?v=0zC2bDBl6C4 >> |cRXP_WARN_Click here for video reference|r
     .complete 1598,1 --Collect Powers of the Void (x1)
 step << Warlock
     #softcore
@@ -53,99 +43,115 @@ step << Warlock
 step << Warlock
     #hardcore
     #completewith next
-    >>Make sure you're deep inside the tent so you don't reaggro
-    .hs >> Hearth back to Northshire Valley
+    .goto Elwynn Forest,56.828,43.734
+    >>|cRXP_WARN_Remain inside the Tent so |cRXP_ENEMY_Defias Thugs|r can't hit you|r
+    .hs >> Hearth to Northshire Valley
 step << Warlock
-    >> Talk to |cFF00FF25Drusilla La Salle|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drusilla La Salle|r
     .goto Elwynn Forest,49.873,42.649
     .turnin 1598 >> Turn in The Stolen Tome
     .target Drusilla La Salle
+step << Warlock
+    #completewith next
+    .cast 688 >> |cRXP_WARN_Cast|r |T136218:0|t[Summon Imp]
 step
-    >>Summon Imp, rebuff Demon Skin << Warlock
-    >> Talk to |cFF00FF25Deputy Willem|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r
     .target Deputy Willem
     .goto Elwynn Forest,48.17,42.94
     .accept 783 >> Accept A Threat Within
 step << Warrior
-    #sticky
-    #completewith next
-    +Kill |cFF00BCD4Wolves|r for 10c+ of vendor trash. It's worth training Battle Shout early
-    .goto Elwynn Forest,46.4,40.3
-step << Warrior
-    >> Talk to |cFF00FF25Brother Danil|r
+    .goto Elwynn Forest,46.4,40.3,35,0
+    >>Kill |cRXP_ENEMY_Young Wolves|r until you have 10c+ worth of vendor trash
+    >>|cRXP_WARN_You will train|r |T132333:0|t[Battle Shout] |cRXP_WARN_which increases early leveling speeds|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Danil|r
+    .vendor >> |cRXP_WARN_Vendor trash|r
+    .goto Elwynn Forest,47.486,41.566
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Llane Beshere|r
+    .train 6673 >>Train |T132333:0|t[Battle Shout]
+    .goto Elwynn Forest,50.242,42.287
+    .mob Young Wolf
     .target Brother Danil
-    .goto Elwynn Forest,47.5,41.6
-    .vendor >> Vendor trash
+    .target Llane Beshere
 step
-    >> Speak with |cFF00FF25Marshal McBridge|r inside the Abbey
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r
     .target Marshal McBride
     .goto Elwynn Forest,48.923,41.606
     .turnin 783 >> Turn in A Threat Within
     .accept 7 >> Accept Kobold Camp Cleanup
-step << Warrior
-    >> Talk to |cFF00FF25Llane Beshere|r
-    .target Llane Beshere
-    .goto Elwynn Forest,50.242,42.287
-    .trainer >>Train Battle Shout
 step
-    >>Run back outside << Warrior
-    >> Talk to |cFF00FF25Deputy Willem|r again
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r
     .target Deputy Willem
     .goto Elwynn Forest,48.171,42.943
     .accept 5261 >> Accept Eagan Peltskinner
-step << Priest/Mage/Warlock
-    .goto Elwynn Forest,46.2,40.4
-    .vendor >>Kill |cFF00BCD4Wolves|r until 50c worth of vendor trash. Vendor, then buy x10 water from |cFF00FF25Brother Danil|r.
-    .target Brother Danil
-    .collect 159,10 --Collect Refreshing Spring Water (x10)
-step << Priest/Mage
-    .xp 2 >> Grind to 2
 step
-    >> Talk to |cFF00FF25Eagan Peltskinner|r outside the Abbey
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eagan Peltskinner|r
     .target Eagan Peltskinner
-    .goto Elwynn Forest,48.9,40.2
+    .goto Elwynn Forest,48.941,40.166
     .turnin 5261 >> Turn in Eagan Peltskinner
     .accept 33 >> Accept Wolves Across The Border
+step << Priest/Mage/Warlock
+    #completewith next
+    .goto Elwynn Forest,46.2,40.4,40,0
+    .goto Elwynn Forest,47.486,41.566
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Danil|r
+    .vendor >> |cRXP_WARN_Once you have 50c worth of vendor trash, buy 10|r |T132794:0|t[Refreshing Spring Water] 
+    .target Brother Danil
+    .collect 159,10 --Collect Refreshing Spring Water (x10)
 step
-    .goto Elwynn Forest,46.70,37.78
-    >>Kill |cFF00BCD4Young Wolves|r. Loot them for their |cFF00BCD4Meat|r
-	.target Young Wolf
-	.target Timber Wolf
+    #completewith next
+    >>Kill |cRXP_ENEMY_Young Wolves|r and |cRXP_ENEMY_Timber Wolves|r. Loot them for their |cRXP_LOOT_Meat|r
+	.mob Young Wolf
+	.mob Timber Wolf
     .complete 33,1 --Collect Tough Wolf Meat (x8)
 step
-    .goto Elwynn Forest,49.05,35.33
-    >>Kill |cFFFF5722Kobold Vermin|r
-	.target Kobold Vermin
+    .goto Elwynn Forest,47.6,35.9,40,0
+    .goto Elwynn Forest,49.6,35.8,40,0
+    .goto Elwynn Forest,51.6,37.0,40,0
+    .goto Elwynn Forest,49.6,35.8
+    >>Kill |cRXP_ENEMY_Kobold Vermins|r
+	.mob Kobold Vermin
     .complete 7,1 --Kill Kobold Vermin (x10)
 step
-    .goto Elwynn Forest,48.9,40.2
-    >> Return to |cFF00FF25Eagan Peltskinner|r
+    .goto Elwynn Forest,46.41,41.94,40,0
+    .goto Elwynn Forest,46.61,35.09,40,0
+    .goto Elwynn Forest,51.91,37.85,40,0
+    .goto Elwynn Forest,46.61,35.09,40,0
+    .goto Elwynn Forest,46.41,41.94
+    >>Kill |cRXP_ENEMY_Young Wolves|r and |cRXP_ENEMY_Timber Wolves|r. Loot them for their |cRXP_LOOT_Meat|r
+	.mob Young Wolf
+	.mob Timber Wolf
+    .complete 33,1 --Collect Tough Wolf Meat (x8)
+step
+    .goto Elwynn Forest,48.941,40.166
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eagan Peltskinner|r
     .target Eagan Peltskinner
     .turnin 33,2 >> Turn in Wolves Across The Border << Warrior/Paladin/Rogue
     .turnin 33,1 >> Turn in Wolves Across The Border << !Warrior !Paladin !Rogue
 step << Priest/Mage/Warlock
-    .goto Elwynn Forest,47.6,41.5
-    .vendor >>Vendor trash, then buy x10 more water from |cFF00FF25Brother Danil|r.
+    .goto Elwynn Forest,47.486,41.566
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Danil|r
+    .vendor >>|cRXP_WARN_Vendor trash|r
+    >>|cRXP_WARN_Buy 10|r |T132794:0|t[Refreshing Spring Water] 
     .target Brother Danil
     .collect 159,10 --Collect Refreshing Spring Water (x10)
 step << !Priest !Mage !Warlock !Rogue
-    >> Talk to |cFF00FF25Godric Rothgar|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Godric Rothgar|r
     .target Godric Rothgar
-    .goto Elwynn Forest,47.6,41.5
-    .vendor >>Vendor trash
+    .goto Elwynn Forest,47.691,41.417
+    .vendor >>|cRXP_WARN_Vendor trash|r
 step << Rogue
-    >> Talk to |cFF00FF25Janos|r
-    .goto Elwynn Forest,47.2,41.8
-    .vendor >>Vendor trash. Buy a |T135650:0|t[Dirk]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Janos|r
+    .goto Elwynn Forest,47.240,41.900
+    .vendor >>|cRXP_BUY_Buy a|r |T135650:0|t[Dirk]
     .target Janos Hammerknuckle
 step << Rogue
     #completewith next
-    +Equip the |T135650:0|t[Dirk]
+    +|cRXP_WARN_Equip the|r |T135650:0|t[Dirk]
     .use 2139
     .itemcount 2139,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.3
 step
-    >> Speak with |cFF00FF25Marshal McBridge|r inside the Abbey
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r
     .target Marshal McBride
     .goto Elwynn Forest,48.923,41.606
     .turnin 7 >> Turn in Kobold Camp Cleanup
@@ -159,9 +165,12 @@ step
 step
     .xp 3 >> Grind to 3
 step
-    .goto Elwynn Forest,47.42,32.68
-    >>Kill |cFFFF5722Kobold Workers|r
-	.target Kobold Worker
+    .goto Elwynn Forest,47.2,35.1,40,0
+    .goto Elwynn Forest,48.9,32.8,40,0
+    .goto Elwynn Forest,51.7,37.7,40,0
+    .goto Elwynn Forest,47.2,35.1
+    >>Kill |cRXP_ENEMY_Kobold Workers|r
+	.mob Kobold Worker
     .complete 15,1 --Kill Kobold Worker (x10)
 step
     #sticky
@@ -169,74 +178,73 @@ step
     .xp 3+1110 >>Grind to 1110+/1400xp on your way back
 step
     #completewith next
-    >> Talk to |cFF00FF25Godric Rothgar|r.
+    .goto Elwynn Forest,47.691,41.417
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Godric Rothgar|r
     .target Godric Rothgar
-    .vendor >> Vendor trash
+    .vendor >> |cRXP_WARN_Vendor trash|r
 --N need SoM xp note
 step
     #requires xp3
-    >> Speak with |cFF00FF25Marshal McBridge|r inside the Abbey
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r
     .target Marshal McBride
     .goto Elwynn Forest,48.923,41.606
     .turnin 15 >> Turn in Investigate Echo Ridge
     .accept 21 >> Accept Skirmish at Echo Ridge
 step << Priest/Mage
-    #sticky
     #completewith next
-    .goto Elwynn Forest,49.3,40.7,15 >> Go here
+    .goto Elwynn Forest,49.52,39.99,10 >> Travel upstairs << Mage
+    .goto Elwynn Forest,49.3,40.7,15 >> Travel toward |cRXP_FRIENDLY_Priestess Anetta|r << Priest
 step << Mage
-    #sticky
-    #completewith next
-    .goto Elwynn Forest,49.5,40.0,15 >>Go upstairs
-step << Mage
-    >> Talk to |cFF00FF25Khelden Bremen|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khelden Bremen|r
     .target Khelden Bremen
     .goto Elwynn Forest,49.661,39.402
     .turnin 3104 >> Turn in Glyphic Letter
     .trainer >> Train your class spells
     .target Khelden Bremen
 step << Priest
-    #sticky
     #completewith next
-    .goto Elwynn Forest,49.8,40.2,15 >> Go through the doorway
+    .goto Elwynn Forest,49.8,40.2,10 >> Travel through the doorway
 step << Priest
-    >> Talk to |cFF00FF25Priestess Anetta|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Anetta|r
     .target Priestess Anetta
     .goto Elwynn Forest,49.808,39.489
     .turnin 3103 >> Turn in Hallowed Letter
     .trainer >> Train your class spells
 step << Warrior/Paladin
-    #sticky
     #completewith next
-    .goto Elwynn Forest,49.6,41.8,15 >>Stay downstairs
+    .goto Elwynn Forest,49.6,41.8,15 >> Travel toward |cRXP_FRIENDLY_Llane Beshere|r << Warrior
+    .goto Elwynn Forest,49.6,41.8,15 >> Travel toward |cRXP_FRIENDLY_Brother Sammuel|r << Paladin
 step << Warrior
-    >> Talk to |cFF00FF25Llane Beshere|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Llane Beshere|r
     .target Llane Beshere
     .goto Elwynn Forest,50.242,42.287
     .turnin 3100 >> Turn in Simple Letter
     .trainer >> Train your class spells
 step << Paladin
-    >> Talk to |cFF00FF25Brother Sammuel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Sammuel|r
     .target Brother Sammuel
     .goto Elwynn Forest,50.433,42.124
     .turnin 3101 >> Turn in Consecrated Letter
     .trainer >> Train your class spells
 step
-    >> Talk to |cFF00FF25Deputy Willem|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r
     .target Deputy Willem
     .goto Elwynn Forest,48.171,42.943
     .accept 18 >> Accept Brotherhood of Thieves
 step << Warlock
-    >> Talk to |cFF00FF25Drusilla La Salle|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drusilla La Salle|r
     .target Drusilla La Salle
     .goto Elwynn Forest,49.873,42.649
     .turnin 3105 >> Turn in Tainted Letter
     .xp 4 >> Grind to 4
-    .trainer >>Train Corruption
+    .trainer >>Train |T136118:0|t[Corruption]
 step
+    .goto Elwynn Forest,53.9,49.2,50,0
+    .goto Elwynn Forest,55.5,42.1,50,0
+    .goto Elwynn Forest,53.9,49.2
     .goto Elwynn Forest,54.57,49.03
-    >>Kill |cFF00BCD4Defias Thugs|r. Loot them for |cFF00BCD4Bandanas|r
-	.target Defias Thug
+    >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for their |cRXP_LOOT_Bandanas|r
+	.mob Defias Thug
     .complete 18,1 --Collect Red Burlap Bandana (x12)
 step << Rogue
     .xp 4 >> Grind to 4
@@ -245,7 +253,7 @@ step
     #softcore
     .deathskip >> Die and respawn at the Spirit Healer
 step
-    >> Talk to |cFF00FF25Deputy Willem|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r
     .target Deputy Willem
     .goto Elwynn Forest,48.17,42.94
     .turnin 18,4 >> Turn in Brotherhood of Thieves << Paladin
@@ -268,38 +276,41 @@ step << skip
     .goto Elwynn Forest,47.7,41.4
     .vendor >> Vendor trash, repair
 step
-    .goto Elwynn Forest,47.66,31.88,40,0
+    #completewith next
+    .goto Elwynn Forest,47.63,32.07,20 >> Enter the Echo Ridge Mine
+step
     .goto Elwynn Forest,48.61,27.63
-    >>Kill |cFFFF5722Kobold Laborers|r in the mine
-	.target Kobold Laborer
+    >>Kill |cRXP_ENEMY_Kobold Laborers|r
+	.mob Kobold Laborer
     .complete 21,1 --Kill Kobold Laborer (x12)
 step
     .xp 5 >> Grind to 5
 step << !Priest !Mage
-    >> Speak with |cFF00FF25Milly Osworth|r
+    .goto Elwynn Forest,50.692,39.347
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milly Osworth|r
+    .turnin 3903 >> Turn in Milly Osworth
+    >>|cRXP_WARN_Skip the followup|r
     .target Milly Osworth
-    .goto Elwynn Forest,50.7,39.2
-    .turnin 3903 >> Turn in Milly Osworth. Skip followup
 step << Priest/Mage
-    >> Speak with |cFF00FF25Milly Osworth|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milly Osworth|r
     .target Milly Osworth
-    .goto Elwynn Forest,50.7,39.2
+    .goto Elwynn Forest,50.692,39.347
     .turnin 3903 >> Turn in Milly Osworth
     .accept 3904 >> Accept Milly's Harvest
 step << Rogue
-    >> Speak with |cFF00FF25Jorik Kerridan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorik Kerridan|r
     .target Jorik Kerridan
     .goto Elwynn Forest,50.314,39.916
-    >>You don't need to train any spells
     .turnin 3102 >> Turn in Encrypted Letter
+    >>|cRXP_WARN_You don't need to train any spells|r
 step << Priest/Mage
-    >>Loot the |cFFDB2EEFBuckets of Grapes|r in the field
+    >>Loot |cRXP_PICK_Milly's Harvest|r on the ground
     .goto Elwynn Forest,54.5,49.4
     .complete 3904,1 --Collect Milly's Harvest (x8)
 step
     .goto Elwynn Forest,57.5,48.2
-    >>Grind en route. Kill |cFF00BCD4Garrick Padfoot|r and loot his |cFF00BCD4Head|r
-	.unitscan Garrick Padfoot
+    >>Kill |cRXP_ENEMY_Garrick Padfoot|r. Loot him for his |cRXP_LOOT_Head|r
+	.mob Garrick Padfoot
     .complete 6,1 --Collect Garrick's Head (x1)
 step << !Priest !Mage
     #sticky
@@ -316,19 +327,19 @@ step
     #softcore
     .deathskip >> Die and respawn at the Spirit Healer
 step << Priest/Mage
-    >> Speak with |cFF00FF25Milly Osworth|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milly Osworth|r
     .target Milly Osworth
-    .goto Elwynn Forest,50.7,39.2
+    .goto Elwynn Forest,50.692,39.347
     .turnin 3904 >> Turn in Milly's Harvest
     .accept 3905 >>Accept Grape Manifest
 step
-    >> Talk to |cFF00FF25Deputy Willem|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r
     .target Deputy Willem
     .goto Elwynn Forest,48.17,42.94
     .turnin 6,2 >> Turn in Bounty on Garrick Padfoot << Warrior/Rogue/Paladin
     .turnin 6,1 >> Turn in Bounty on Garrick Padfoot << !Warrior !Rogue !Paladin
 step
-    >> Speak with |cFF00FF25Marshal McBridge|r inside the Abbey
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r inside the Abbey
     .target Marshal McBride
     .goto Elwynn Forest,48.923,41.606
     .turnin 21,1 >> Turn in Skirmish at Echo Ridge << Rogue
@@ -339,21 +350,21 @@ step << Priest/Mage
     #sticky
     #completewith next
     .goto Elwynn Forest,49.6,41.6,15,0
-    .goto Elwynn Forest,48.9,41.3,10 >>Go upstairs
+    .goto Elwynn Forest,48.9,41.3,10 >>Travel upstairs
 step << Priest/Mage
-    >> Talk to |cFF00FF25Brother Neals|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Neals|r upstairs
     .target Brother Neals
     .goto Elwynn Forest,49.471,41.586
     .turnin 3905,1 >>Turn in Grape Manifest
 step << Priest
-    >> Talk to |cFF00FF25Priestess Anetta|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Anetta|r
     .target Priestess Anetta
     .goto Elwynn Forest,49.808,39.489
     .accept 5623 >> Accept In Favor of the Light
 step
-    >> Leave Northshire Valley and talk to |cFF00FF25Falkhaan Isenstrider|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falkhaan Isenstrider|r
     .target Falkhaan Isenstrider
-    .goto Elwynn Forest,45.6,47.7
+    .goto Elwynn Forest,45.563,47.742
     .accept 2158 >> Accept Rest and Relaxation
 ]])
 

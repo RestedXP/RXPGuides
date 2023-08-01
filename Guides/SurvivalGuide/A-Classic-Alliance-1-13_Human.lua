@@ -188,11 +188,8 @@ step
     .accept 21 >> Accept Skirmish at Echo Ridge
 step << Priest/Mage
     #completewith next
-    .goto Elwynn Forest,49.3,40.7,15 >> Travel upstairs << Mage
+    .goto Elwynn Forest,49.52,39.99,10 >> Travel upstairs << Mage
     .goto Elwynn Forest,49.3,40.7,15 >> Travel toward |cRXP_FRIENDLY_Priestess Anetta|r << Priest
-step << Mage
-    #completewith next
-    .goto Elwynn Forest,49.5,40.0,15 >>Go upstairs
 step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khelden Bremen|r
     .target Khelden Bremen
@@ -202,7 +199,7 @@ step << Mage
     .target Khelden Bremen
 step << Priest
     #completewith next
-    .goto Elwynn Forest,49.8,40.2,15 >> Travel through the doorway
+    .goto Elwynn Forest,49.8,40.2,10 >> Travel through the doorway
 step << Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Anetta|r
     .target Priestess Anetta
@@ -236,7 +233,7 @@ step << Warlock
     .goto Elwynn Forest,49.873,42.649
     .turnin 3105 >> Turn in Tainted Letter
     .xp 4 >> Grind to 4
-    .trainer >>Train Corruption
+    .trainer >>Train |T136118:0|t[Corruption]
 step
     .goto Elwynn Forest,53.9,49.2,50,0
     .goto Elwynn Forest,55.5,42.1,50,0
@@ -285,10 +282,11 @@ step
 step
     .xp 5 >> Grind to 5
 step << !Priest !Mage
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milly Osworth|r
-    .target Milly Osworth
     .goto Elwynn Forest,50.692,39.347
-    .turnin 3903 >> Turn in Milly Osworth. Skip followup
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milly Osworth|r
+    .turnin 3903 >> Turn in Milly Osworth
+    >>|cRXP_WARN_Skip the followup|r
+    .target Milly Osworth
 step << Priest/Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milly Osworth|r
     .target Milly Osworth
@@ -302,7 +300,7 @@ step << Rogue
     .turnin 3102 >> Turn in Encrypted Letter
     >>|cRXP_WARN_You don't need to train any spells|r
 step << Priest/Mage
-    >>Loot the |cRXP_PICK_Buckets of Grapes|r in the field
+    >>Loot |cRXP_PICK_Milly's Harvest|r on the ground
     .goto Elwynn Forest,54.5,49.4
     .complete 3904,1 --Collect Milly's Harvest (x8)
 step
