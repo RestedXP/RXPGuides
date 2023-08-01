@@ -379,19 +379,15 @@ RXPGuides.RegisterGuide([[
 #defaultfor Human
 #next 11-13 Loch Modan
 step
+    #completewith next
+    .subzone 87 >> Travel to Goldshire
+step
     #hardcore
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshall Dughan|r
     .target Marshal Dughan
     .goto Elwynn Forest,42.105,65.927
     .turnin 54 >> Turn in Report to Goldshire
     .accept 62 >> Accept The Fargodeep Mine
-step
-    #softcore
-    #completewith Goldshire
-    .deathskip >> Die and respawn at the Spirit Healer
-step
-    #completewith next
-    .goto Elwynn Forest,39.5,60.5,100 >> Travel to Goldshire
 step << Warrior/Rogue/Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smith Argus|r
     .target Smith Argus
