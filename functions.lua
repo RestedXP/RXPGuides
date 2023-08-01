@@ -602,7 +602,7 @@ function addon.SetElementComplete(self, disable)
 end
 
 function addon.SetElementIncomplete(self)
-    if self.element.completed then
+    if self.element.completed and not self.element.textOnly then
         self.element.completed = false
         addon.UpdateMap()
     end
@@ -1277,14 +1277,15 @@ function addon.UpdateQuestCompletionData(self)
 
     completed = completed or isQuestComplete
 
-    element.tooltipText = icon .. objtext:gsub("\n", "\n   " .. icon)
-    local text = objtext
-    element.text = text
+    if element.flags % 2 == 0 then
+        element.tooltipText = icon .. objtext:gsub("\n", "\n   " .. icon)
+        element.text = objtext
+    end
 
     addon.UpdateStepText(self)
 
     if completed then
-        if not element.completed and step.active == true then
+        if not element.completed and step.active == true and element.flags % 2 == 0 then
             addon.comms:AnnounceStepEvent('.complete', {
                 title = element.title,
                 completionText = element.text,
@@ -1296,6 +1297,13 @@ function addon.UpdateQuestCompletionData(self)
             end
         end
 
+        if element.flags % 2 == 1 and step.active then
+            addon.updateSteps = true
+            step.completed = true
+            if element.textOnly == true then
+                element.tooltipText = L"Step skipped: This step requires a quest available that is already complete"
+            end
+        end
         addon.SetElementComplete(self, true)
         -- elseif skip then
         --    addon.SetElementComplete(self)
@@ -1308,7 +1316,9 @@ end
 function addon.functions.complete(self, ...)
     if type(self) == "string" then -- on parse
 
-        local text, id, obj, objMax = ...
+        local text, id, obj, objMax, flags = ...
+
+        flags = tonumber(flags) or 0
         id = tonumber(id)
         obj = tonumber(obj)
         if not (id and obj) then
@@ -1316,17 +1326,21 @@ function addon.functions.complete(self, ...)
                             ": Invalid objective or quest ID\n" .. self)
             return
         end
-
+        objMax = tonumber(objMax)
+        if objMax and objMax <= 0 then
+            objMax = nil
+        end
         id = id and questConversion[id] or id
         local element = {questId = id, dynamicText = true, obj = obj,
-                         objMax = tonumber(objMax), requestFromServer = true,
-                         text = ""
+                         objMax = objMax, requestFromServer = true,
+                         text = "", flags = flags, textOnly = (flags % 2) == 1
                         }
         if id and id < 0 then
             id = math.abs(id)
             element.skipIfMissing = true
             element.questId = id
         end
+
         -- element.title = addon.GetQuestName(id)
         -- local objectives = addon.GetQuestObjectives(id)--queries the server for items/creature names associated with the quest
         return element
