@@ -565,16 +565,13 @@ step << Priest/Warlock
     .train 3908 >> Train |T136249:0|t[Tailoring]. Save up your |T132889:0|t[Linen Cloth]. This will allow you to create a wand later
     .target Bowen Brisboise
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r, |cRXP_FRIENDLY_Johaan|r and |cRXP_FRIENDLY_Zygand|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r and |cRXP_FRIENDLY_Zygand|r
     .accept 404 >>Accept A Putrid Task
     .goto Tirisfal Glades,58.20,51.45
-    .accept 367 >>Accept A New Plague
-    .goto Tirisfal Glades,59.45,52.40
     .turnin 383 >>Turn in Vital Intelligence
     .accept 427 >>Accept At War With The Scarlet Crusade
     .goto Tirisfal Glades,60.59,51.77
     .target Deathguard Dillinger
-    .target Apothecary Johaan
     .target Executor Zygand
 step << Rogue
     .goto Tirisfal Glades,61.15,52.59
@@ -645,6 +642,7 @@ step << Priest
     .accept 5650 >> Accept Garments of Darkness
 	.train 591 >>Train |T135924:0|t[Smite]
     .train 17 >>Train |T135940:0|t[Power Word: Shield]
+    .train 2052 >>Train |T135929:0|t[Lesser Heal Rank 2]
     .target Dark Cleric Beryl
 step << Mage
     .goto Tirisfal Glades,61.97,52.47
@@ -707,9 +705,15 @@ step
     .money <0.025 << Warrior/Rogue
     .money <0.0375 << Mage/Priest/Warlock
     .target Innkeeper Renee
+ step
+    .goto Tirisfal Glades,59.45,52.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r
+    .accept 367 >>Accept A New Plague
+    .target Apothecary Johaan
 step << Priest
     .goto Tirisfal Glades,59.18,46.49
     >>Cast |T135929:0|t[Lesser Heal] and |T135987:0|t[Power Word: Fortitude] on |cRXP_FRIENDLY_Deathguard Kel|r
+    >>|cRXP_WARN_You need Lesser Heal Rank 2 for this quest|r
     .complete 5650,1 --Heal and fortify Deathguard Kel (1)
     .target Deathguard Kel
 step
