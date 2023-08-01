@@ -30,6 +30,7 @@ step << Warlock
     .train 348 >> Train |T135817:0|t[Immolate]
     .target Drusilla La Salle
 step << Warlock
+    #hardcore
     .goto Elwynn Forest,52.9,44.3,60,0
     .goto Elwynn Forest,56.7,44.0
     >>|cRXP_WARN_Run into the Tent at the Defias Camp|r
@@ -38,14 +39,23 @@ step << Warlock
     .link https://www.youtube.com/watch?v=0zC2bDBl6C4 >> |cRXP_WARN_Click here for video reference|r
     .complete 1598,1 --Collect Powers of the Void (x1)
 step << Warlock
-    #softcore
-    .deathskip >> Die and respawn at the Spirit Healer
-step << Warlock
     #hardcore
     #completewith next
     .goto Elwynn Forest,56.828,43.734
     >>|cRXP_WARN_Remain inside the Tent so |cRXP_ENEMY_Defias Thugs|r can't hit you|r
     .hs >> Hearth to Northshire Valley
+step << Warlock
+    #softcore
+    .goto Elwynn Forest,52.9,44.3,60,0
+    .goto Elwynn Forest,56.7,44.0
+    >>|cRXP_WARN_Run into the Tent at the Defias Camp|r
+    >>Open the |cRXP_PICK_Stolen Books|r. Loot it for the |cRXP_LOOT_Powers of the Void|r
+    >>|cRXP_WARN_You can loot the |cRXP_LOOT_Powers of the Void|r safely while inside the Tent! Watch the video on how to do this|r
+    .link https://www.youtube.com/watch?v=_-KEke9Yeik >> |cRXP_WARN_Click here for video reference|r
+    .complete 1598,1 --Collect Powers of the Void (x1)
+step << Warlock
+    #softcore
+    .deathskip >> Die and respawn at the Spirit Healer
 step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drusilla La Salle|r
     .goto Elwynn Forest,49.873,42.649
@@ -380,7 +390,11 @@ RXPGuides.RegisterGuide([[
 #next 11-13 Loch Modan
 step
     #hardcore
-    >> Talk to |cFF00FF25Marshall Dughan|r
+    #completewith next
+    .subzone 87 >> Travel to Goldshire
+step
+    #hardcore
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshall Dughan|r
     .target Marshal Dughan
     .goto Elwynn Forest,42.105,65.927
     .turnin 54 >> Turn in Report to Goldshire
@@ -389,86 +403,92 @@ step
     #softcore
     #completewith Goldshire
     .deathskip >> Die and respawn at the Spirit Healer
-step
-    #completewith next
-    .goto Elwynn Forest,39.5,60.5,200 >> Run to Goldshire
-step << Warrior/Paladin/Rogue
+step << Warrior/Rogue/Paladin
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smith Argus|r
     .target Smith Argus
     .goto Elwynn Forest,41.706,65.544
-    .trainer >> Train Blacksmithing from |cFF00FF25Smith Argus|r. This will allow you to make +2 damage sharpening stones for your weapon which are very strong. Make around 20 of them max. << Warrior/Rogue
-    .trainer >> Train Blacksmithing from |cFF00FF25Smith Argus|r. This will allow you to make +2 damage weightstones for your weapon which are very strong. Make around 20 of them max. << Paladin
+    .trainer >> Train |T136241:0|t[Blacksmithing]
+    >>|cRXP_WARN_This will allow you to make |T135248:0|t[Rough Sharpening Stones] which increase melee hits by +2 Damage. This is very significant early on|r << Warrior/Rogue
+    >>|cRXP_WARN_This will allow you to make |T135255:0|t[Rough Weightstones] which increase melee hits by +2 Damage. This is very significant early on|r << Paladin
 step << Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
+    >>|cRXP_WARN_Buy and equip a|r |T135321:0|t[Gladius]
     .target Corina Steele
-    .goto Elwynn Forest,41.5,65.9
-    >>Repair your weapon. If you have enough money (5s 36c) buy a Gladius from Corina. Otherwise, skip this step (you'll come back later)
-    .collect 2488,1
+    .money <0.0536
+    .goto Elwynn Forest,41.529,65.900
+    .collect 2488,1 --Collect Gladius (1)
 step << Rogue
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
+    >>|cRXP_WARN_Buy and equip a|r |T135641:0|t[Stiletto]
     .target Corina Steele
-    .goto Elwynn Forest,41.5,65.9
-    >>Repair your weapon. If you have enough money (4s 1c) buy a Stiletto from Corina. Otherwise, skip this step (you'll come back later)
-    .collect 2494,1
+    .money <0.0400
+    .goto Elwynn Forest,41.529,65.900
+    .collect 2494,1 --Collect Stiletto (1)
 step << Paladin
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
+    >>|cRXP_WARN_Buy and equip a|r |T133053:0|t[Wooden Mallet]
     .target Corina Steele
-    .goto Elwynn Forest,41.5,65.9
-    >>Repair your weapon. If you have enough money (7s 1c) buy a Wooden Mallet from Corina. Otherwise, skip this step (you'll come back later)
-    .collect 2493,1 --Collect Wooden Mallet
+    .money <0.0631
+    .goto Elwynn Forest,41.529,65.900
+    .collect 2493,1 --Collect Wooden Mallet (1)
 step << Mage/Priest/Warlock
     #completewith next
-    >> Talk to |cFF00FF25Andrew Krighton|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andrew Krighton|r
     .target Andrew Krighton
-    .goto Elwynn Forest,41.7,65.9
-    .vendor >> Vendor trash, repair
+    .goto Elwynn Forest,41.706,65.786
+    .vendor >> |cRXP_WARN_Vendor trash|r
 step
     #label Goldshire
-    >> Talk to |cFF00FF25Marshall Dughan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshall Dughan|r
     .target Marshal Dughan
     .goto Elwynn Forest,42.105,65.927
     .turnin 54 >> Turn in Report to Goldshire
     .accept 62 >> Accept The Fargodeep Mine
 step
-    >>On your close left as you go in the Inn talk to |cFF00FF25William Pestle|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
     .target William Pestle
-    .goto Elwynn Forest,42.9,65.7,15,0
-    .goto Elwynn Forest,43.283,65.721
+    .goto Elwynn Forest,43.318,65.705
     .accept 60 >> Accept Kobold Candles
 step
     .goto Elwynn Forest,43.771,65.803
-    >> Talk to |cFF00FF25Innkeeper Farley|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Farley|r
     .target Innkeeper Farley
-    >>Do NOT buy any food/drink here << Warlock
     .turnin 2158,1 >> Turn in Rest and Relaxation << Rogue/Warrior
     .turnin 2158,2 >> Turn in Rest and Relaxation << !Rogue !Warrior
     .home >> Set your Hearthstone to Goldshire
 step
     .xp 6 >> Grind to 6
 step << Rogue
-    >> Talk to |cFF00FF25Brog Hamfist|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brog Hamfist|r
     .target Brog Hamfist
     .goto Elwynn Forest,43.96,65.92
-    .vendor 151 >> Buy the level 3 thrown from Brog. Equip it
+    .vendor 151 >> >>|cRXP_WARN_Buy a|r |T135641:0|t[Balanced Throwing Dagger] and equip it|r
 step << Warlock
-    #sticky
     #completewith next
-    .goto Elwynn Forest,44.1,66.0,10 >>Go to the room behind the innkeeper, then go downstairs.
+    .goto Elwynn Forest,44.1,66.0,10 >> Travel downstairs 
 step << Warlock
-    >> Talk to |cFF00FF25Maximillian Crowe|r and |cFF00FF25Cylina Darkheart|r
+    .goto Elwynn Forest,44.392,66.240
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maximillian Crowe|r
     .target Maximillian Crowe
+    .trainer >> Train your class spells
+step << Warlock
+    .goto Elwynn Forest,44.397,65.989
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cylina Darkheart|r
+    .vendor >> |cRXP_WARN_Buy the|r |T133738:0|t[Grimoire of Blood Pact (Rank 1)] |cRXP_WARN_if you can afford it. If not you will buy it later|r
     .target Cylina Darkheart
-    .goto Elwynn Forest,44.4,66.2
-    .trainer >> Train your class spells. It is in the basement.
-    .goto Elwynn Forest,44.4,66.0
-    .vendor >> Buy the Blood Pact book if you have money after training (otherwise buy it later)
-step << Mage/Priest/Rogue
-    #sticky
+
+
+
+step << Mage/Rogue/Priest
     #completewith next
-    .goto Elwynn Forest,43.7,66.4,12 >>Go upstairs
+    .goto Elwynn Forest,43.877,66.546,9 >> Travel upstairs in the Inn
 step << Mage
-	>> Talk to |cFF00FF25Zaldimar Wefhellt|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaldimar Wefhellt|r
 	.target Zaldimar Wefhellt
-    .goto Elwynn Forest,43.2,66.2
+    .goto Elwynn Forest,43.25,66.19
     .trainer >> Train your class spells
 step << Priest
-	>> Talk to |cFF00FF25Priestess Josetta|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Josetta|r
 	.target Priestess Josetta
     .goto Elwynn Forest,43.283,65.721
     .turnin 5623 >> Turn in In Favor of the Light
@@ -476,213 +496,215 @@ step << Priest
     .trainer >> Train your class spells
 step << Rogue
     .money <0.01
-    >> Talk to |cFF00FF25Keryn Sylvius|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keryn Sylvius|r
     .target Keryn Sylvius
-    .goto Elwynn Forest,43.9,65.9
+    .goto Elwynn Forest,43.872,65.937
     .trainer >> Train your class spells
 step << Rogue/Warrior
     .money <0.01
-    >> Talk to |cFF00FF25Michelle Belle|r
+    .goto Elwynn Forest,43.877,66.546,9,0 << Warrior
+    .goto Elwynn Forest,43.392,65.550
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Michelle Belle|r upstairs
     .target Michelle Belle
-    .goto Elwynn Forest,43.4,65.5
-    .train 3273 >> Train First Aid - Don't make all your bandages at once, better time to make them later
-step << Warrior
+    .train 3273 >> Train |T135966:0|t[First Aid]
+step << Warrior/Rogue
     .goto Elwynn Forest,43.771,65.803
-    .vendor >> Buy level 5 food down to 1 Silver
-step << Rogue
-    .goto Elwynn Forest,43.771,65.803
-    .vendor >> Buy up to 20 level 5 food
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Farley|r
+    .vendor >> |cRXP_BUY_Buy|r |T133995:0|t[Dalaran Sharp] |cRXP_BUY_until you're down to 1 Silver|r << Warrior
+    .vendor >> |cRXP_BUY_Buy up to 20|r |T133995:0|t[Dalaran Sharp] << Rogue
+    .target Innkeeper Farley   
 step << Warrior
-    >> Talk to |cFF00FF25Lyria Du Lac|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyria Du Lac|r
     .target Lyria Du Lac
     .goto Elwynn Forest,41.087,65.768
     .trainer >> Train your class spells
 step << Paladin
-    >> Talk to |cFF00FF25Brother Wilhelm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Wilhelm|r
     .target Brother Wilhelm
-    .goto Elwynn Forest,41.1,66.0
+    .goto Elwynn Forest,41.096,66.041
     .trainer >> Train your class spells
 step
-    >> Speak with |cFF00FF25Remy "Two Times"|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r
     .target Remy "Two Times"
-    .goto Elwynn Forest,42.1,67.3
+    .goto Elwynn Forest,42.140,67.254
     .accept 47 >> Accept Gold Dust Exchange
 step << Priest
-    >>Use Lesser Heal Rank 2 and then Power Word: Fortitude on |cFF00FF25Guard Roberts|r
+    >>|cRXP_WARN_Cast|r |T135929:0|t[Lesser Heal (Rank 2)] |cRXP_WARN_and|r |T135987:0|t[Power Word: Fortitude] |cRXP_WARN_on|r |cRXP_FRIENDLY_Guard Roberts|r
     .target Guard Roberts
-    .goto Elwynn Forest,48.2,68.0
+    .goto Elwynn Forest,48.148,68.046
     .complete 5624,1 --Heal and fortify Guard Roberts
 step
     #completewith BoarMeat1
-    >>Start killing |cFF00BCD4Boars|r you see for |cFF00BCD4Chunks of Boar Meat|r
+    >>Kill |cRXP_ENEMY_Stonetusk Boars|r. Loot them for their |cRXP_LOOT_Chunks of Boar Meat|r
     .collect 769,4 --Collect Chunk of Boar Meat (x4)
+    .mob Stonetusk Boar
 step
-    >> Talk to |cFF00FF25Ma Stonefield|r and |cFF00FF25"Auntie" Bernice Stonefield|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r and |cRXP_FRIENDLY_"Auntie" Bernice Stonefield|r
     .target "Auntie" Bernice Stonefield
+    .target Ma Stonefield
     .accept 85 >> Accept Lost Necklace
     .goto Elwynn Forest,34.486,84.253
     .accept 88 >> Accept Princess Must Die!
 	.goto Elwynn Forest,34.660,84.482
+
+
 step
-    #completewith Candles
-    >> Kill |cFF00BCD4Kobolds|r and loot them for |cFF00BCD4Candles|r
-    .complete 60,1 --Collect Kobold Candle (x8)
-step
-    #label Candles
     #completewith next
-    >> Kill |cFF00BCD4Kobolds|r and loot them for |cFF00BCD4Gold Dust|r
-    .complete 47,1 --Collect Gold Dust (x10)
-step << Priest/Mage/Warlock
-    #label Dust
-    >>Grind mobs east and talk to |cFF00FF25Billy Maclure|r
+    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Candles|r and |cRXP_LOOT_Dust|r
+    >>|cRXP_WARN_If you loot any|r |T135232:0|t[Rough Stones] |cRXP_WARN_turn them into|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
+    >>|cRXP_WARN_If you loot any|r |T135232:0|t[Rough Stones] |cRXP_WARN_turn them into|r |T135255:0|t[Rough Weightstones] << Paladin
+    .complete 60,1 --Kobold Candle (8)
+    .complete 47,1 --Gold Dust (10)
+    .mob Kobold Tunneler
+    .mob Kobold Miner
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Billy Maclure|r
     .target Billy Maclure
-    .goto Elwynn Forest,43.132,85.722
+    .goto Elwynn Forest,43.131,85.722
     .turnin 85 >> Turn in Lost Necklace
     .accept 86 >> Accept Pie for Billy
-step << Warrior
-    #label Dust
-    >>Grind mobs east and talk to |cFF00FF25Billy Maclure|r
-    .target Billy Maclure
-    >> If you get a Rough Stone at any point, make it into a Sharpening Stone via Blacksmithing, and apply it on your sword
-    .goto Elwynn Forest,43.132,85.722
-    .turnin 85 >> Turn in Lost Necklace
-    .accept 86 >> Accept Pie for Billy
-step << Rogue
-    #label Dust
-    >>Grind mobs east and talk to |cFF00FF25Billy Maclure|r
-    .target Billy Maclure
-    >> If you get a Rough Stone at any point, make it into a Sharpening Stone via Blacksmithing, and apply it on your dagger
-    .goto Elwynn Forest,43.132,85.722
-    .turnin 85 >> Turn in Lost Necklace
-    .accept 86 >> Accept Pie for Billy
-step << Paladin
-    #label Dust
-    >>Grind mobs east and talk to |cFF00FF25Billy Maclure|r
-    .target Billy Maclure
-    >> If you get a Rough Stone at any point, Make it into a Weightstone via Blacksmithing, and apply it to your mace
-    .goto Elwynn Forest,43.132,85.722
-    .turnin 85 >> Turn in Lost Necklace
-    .accept 86 >> Accept Pie for Billy
+step
+    .goto Elwynn Forest,43.154,89.625
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maybell Maclure|r
+    .accept 106 >> Accept Young Lovers
+    .target Maybell Maclure
+step
+    #completewith next
+    .goto Elwynn Forest,42.357,89.373
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Joshua Maclure|r
+    .target Joshua Maclure
+    .vendor >>|cRXP_BUY_Buy as much|r |T132815:0|t[Ice Cold Milk] |cRXP_WARN_as you can afford|r << Priest/Warlock/Mage
+    .vendor >>|cRXP_WARN_Vendor trash|r << !Priest !Warlock !Mage
+step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Candles|r and |cRXP_LOOT_Dust|r
+    >>|cRXP_WARN_If you loot any|r |T135232:0|t[Rough Stones] |cRXP_WARN_turn them into|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
+    >>|cRXP_WARN_If you loot any|r |T135232:0|t[Rough Stones] |cRXP_WARN_turn them into|r |T135255:0|t[Rough Weightstones] << Paladin
+    .complete 60,1 --Kobold Candle (8)
+    .complete 47,1 --Gold Dust (10)
+    .mob Kobold Tunneler
+    .mob Kobold Miner
 step
     #label BoarMeat1
-    >> Talk to |cFF00FF25Maybell Maclure|r in the small house
-    .target Maybell Maclure
-    .goto Elwynn Forest,43.2,89.6
-    .accept 106 >> Accept Young Lovers
-step << Mage tbc/Priest tbc/Warlock tbc
-    .goto Elwynn Forest,42.4,89.4
-    >> Talk to |cFF00FF25Joshua Maclure|r
-    .target Joshua Maclure
-    .vendor >>Vendor, buy as much milk as you can
-step << !Mage !Priest !Warlock tbc
-    >> Talk to |cFF00FF25Joshua Maclure|r
-    .target Joshua Maclure
-    .goto Elwynn Forest,42.4,89.4
-    .vendor >>vendor trash
-step
-    #completewith next
-    >>Grind |cFF00BCD4Boars|r you see for |cFF00BCD4Chunks of Boar Meat|r en route
-    .collect 769,4 --Collect Chunk of Boar Meat (x4)
-step
-    >> Head back to the Stonefield farm, then keep going to the river. Talk to |cFF00FF25Tommy Joe Stonefield|r
-    .target Tommy Joe Stonefield
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tommy Joe Stonefield|r
     .goto Elwynn Forest,29.840,85.997
     .turnin 106 >> Turn in Young Lovers
     .accept 111 >> Accept Speak with Gramma
+    .target Tommy Joe Stonefield
 step
     .goto Elwynn Forest,32.5,85.5
-    >>Finish killing |cFF00BCD4Boars|r you see for |cFF00BCD4Chunks of Boar Meat|r
+    >>Kill |cRXP_ENEMY_Stonetusk Boars|r. Loot them for their |cRXP_LOOT_Chunks of Boar Meat|r
     .complete 86,1 --Collect Chunk of Boar Meat (x4)
+    .mob Stonetusk Boar
 step
-    >> Return to |cFF00FF25"Auntie" Bernice Stonefield|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Auntie" Bernice Stonefield|r
     .target "Auntie" Bernice Stonefield
     .goto Elwynn Forest,34.486,84.253
     .turnin 86 >> Turn in Pie for Billy
     .accept 84 >> Accept Back to Billy
 step
-    >> Speak with |cFF00FF25Gramma Stonefield|r inside the house
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gramma Stonefield|r
     .target Gramma Stonefield
     .goto Elwynn Forest,34.9,83.9
     .turnin 111 >> Turn in Speak with Gramma
     .accept 107 >> Accept Note to William
 step
-    #sticky
     #completewith next
-    >> Kill |cFF00BCD4Kobolds|r and loot them for |cFF00BCD4Candles|r and |cFF00BCD4Gold Dust|r
-    .complete 47,1 --Collect Gold Dust (x10)
-    .complete 60,1 --Collect Kobold Candle (x8)
+    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Candles|r and |cRXP_LOOT_Dust|r
+    >>|cRXP_WARN_If you loot any|r |T135232:0|t[Rough Stones] |cRXP_WARN_turn them into|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
+    >>|cRXP_WARN_If you loot any|r |T135232:0|t[Rough Stones] |cRXP_WARN_turn them into|r |T135255:0|t[Rough Weightstones] << Paladin
+    .complete 60,1 --Kobold Candle (8)
+    .complete 47,1 --Gold Dust (10)
+    .mob Kobold Tunneler
+    .mob Kobold Miner
 step
-    >>Grind mobs east through the outside of the mine and talk to |cFF00FF25Billy Maclure|r on the farm
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Billy Maclure|r
     .target Billy Maclure
-    .goto Elwynn Forest,43.132,85.722
+    .goto Elwynn Forest,43.131,85.722
     .turnin 84 >> Turn in Back to Billy
     .accept 87 >> Accept Goldtooth
 step
-    #completewith next
-    >> Kill |cFF00BCD4Kobolds|r and loot them for |cFF00BCD4Candles|r and |cFF00BCD4Gold Dust|r
-    .complete 47,1 --Collect Gold Dust (x10)
-    .complete 60,1 --Collect Kobold Candle (x8)
+    #completewith KillGoldtooth
+    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Candles|r and |cRXP_LOOT_Dust|r
+    >>|cRXP_WARN_If you loot any|r |T135232:0|t[Rough Stones] |cRXP_WARN_turn them into|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
+    >>|cRXP_WARN_If you loot any|r |T135232:0|t[Rough Stones] |cRXP_WARN_turn them into|r |T135255:0|t[Rough Weightstones] << Paladin
+    .complete 60,1 --Kobold Candle (8)
+    .complete 47,1 --Gold Dust (10)
+    .mob Kobold Tunneler
+    .mob Kobold Miner
 step
-    >>Go into the mine
+    #completewith next 
+    .goto Elwynn Forest,38.677,81.778,50,0
     .goto Elwynn Forest,40.5,82.3
+    >>Explore Fargodeep Mine
     .complete 62,1 --Scout Through the Fargodeep Mine
-step << Warrior
-    >>|cFFFCDC00Pool as much rage as you can|r (grind Rage off of other mobs) then kill |cFF00BCD4Goldtooth|r for |cFF00BCD4Bernice's Necklace|r
+step
+    #label KillGoldtooth
+    >>Kill |cRXP_ENEMY_Goldtooth|r. Loot him for |cRXP_LOOT_Bernice's Necklace|r
     .goto Elwynn Forest,41.7,78.1
     .complete 87,1 --Collect Bernice's Necklace  (x1)
     .unitscan Goldtooth
-step << !Warrior
-    >>Kill |cFF00BCD4Goldtooth|r for |cFF00BCD4Bernice's Necklace|r
-    .goto Elwynn Forest,41.7,78.1
-    .complete 87,1 --Collect Bernice's Necklace  (x1)
-    .unitscan Goldtooth
+step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Candles|r and |cRXP_LOOT_Dust|r
+    >>|cRXP_WARN_If you loot any|r |T135232:0|t[Rough Stones] |cRXP_WARN_turn them into|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
+    >>|cRXP_WARN_If you loot any|r |T135232:0|t[Rough Stones] |cRXP_WARN_turn them into|r |T135255:0|t[Rough Weightstones] << Paladin
+    .complete 60,1 --Kobold Candle (8)
+    .complete 47,1 --Gold Dust (10)
+    .mob Kobold Tunneler
+    .mob Kobold Miner
+step
+    .goto Elwynn Forest,40.5,82.3
+    >>Explore Fargodeep Mine
+    .complete 62,1 --Scout Through the Fargodeep Mine
+step
+    .goto Elwynn Forest,40.5,82.3,25,0
+    .goto Elwynn Forest,37.71,83.76,25,0
+    .goto Elwynn Forest,40.5,82.3,25,0
+    .goto Elwynn Forest,37.71,83.76,25,0
+    .goto Elwynn Forest,40.5,82.3
+    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Candles|r and |cRXP_LOOT_Dust|r
+    >>|cRXP_WARN_If you loot any|r |T135232:0|t[Rough Stones] |cRXP_WARN_turn them into|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
+    >>|cRXP_WARN_If you loot any|r |T135232:0|t[Rough Stones] |cRXP_WARN_turn them into|r |T135255:0|t[Rough Weightstones] << Paladin
+    .complete 60,1 --Kobold Candle (8)
+    .complete 47,1 --Gold Dust (10)
+    .mob Kobold Tunneler
+    .mob Kobold Miner
 step << Warrior
-    #sticky
     #completewith Goldtooth
-    +|cFFFCDC00Try to save a single healing potion from now on as you will need it for Rolf's Corpse later|r
+    +|cRXP_WARN_Try to save a single|r |T134829:0|t[Minor Healing Potion] |cRXP_WARN_from now on as you will need it for Rolf's Corpse later|r
 step << Warrior/Rogue
-    >>Remember to make Sharpening Stones if you picked up a Rough Stone
+    >>|cRXP_WARN_Remember to make|r |T135248:0|t[Rough Sharpening Stones] |cRXP_WARN_if you picked up a|r |T135232:0|t[Rough Stones]
     .xp 7+1600 >>Grind until 1600+/4500xp
 step << Paladin
-    >>Remember to make Weightstones if you picked up a Rough Stone
+    >>|cRXP_WARN_Remember to make|r |T135255:0|t[Rough Weightstones] |cRXP_WARN_if you picked up a|r |T135232:0|t[Rough Stones]
     .xp 7+1600 >>Grind until 1600+/4500xp
 step << !Priest !Paladin !Warrior !Rogue
     .xp 7+1600 >>Grind until 1600+/4500xp
 step << Priest
     .xp 7+1260 >>Grind until 1260+/4500xp
 step
-    #label KoboldTurnins
-    .goto Elwynn Forest,40.5,82.3
-    >> Kill |cFF00BCD4Kobolds|r and loot them for |cFF00BCD4Candles|r and |cFF00BCD4Gold Dust|r
-    .complete 47,1 --Collect Gold Dust (x10)
-    .complete 60,1 --Collect Kobold Candle (x8)
-step
     #label Goldtooth
-    #requires KoboldTurnins
-    >> Head back to |cFF00FF25"Auntie" Bernice Stonefield|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Auntie" Bernice Stonefield|r
     .target "Auntie" Bernice Stonefield
     .goto Elwynn Forest,34.486,84.253
     .turnin 87 >> Turn in Goldtooth
 step
-    >>Grind some mobs back to Goldshire
     .xp 7+2690 >>Grind until 2690+/4500xp << !Priest
     .xp 7+2350 >>Grind until 2350+/4500xp << Priest
     .goto Elwynn Forest,42.1,67.3
-step << wotlk
-    #completewith next
-    .hs >> Hearth or run back to Goldshire
 step
-    >> Talk to |cFF00FF25Remy "Two Times"|r
+    #completewith next
+    .goto Elwynn Forest,42.20,66.00,100 >> Travel to Goldshire
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r
     .target Remy "Two Times"
-    .goto Elwynn Forest,42.1,67.3
+    .goto Elwynn Forest,42.140,67.254
     .turnin 47 >> Turn in Gold Dust Exchange
     .accept 40 >> Accept A Fishy Peril
-step << Rogue
-    .goto Elwynn Forest,41.5,65.9
-    >>Repair your weapon. If you have enough money (3s 82c) buy a Stiletto from Corina. Otherwise, skip this step (you'll come back later)
-    .collect 2494,1
+    >>|cRXP_WARN_Do NOT vendor the|r |T133581:0|t[Bag of Marbles] |cRXP_WARN_reward. This is an incredibly valuable item all the way through to level 60|r
 step
-    >> Talk to |cFF00FF25Marshal Dughan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .target Marshal Dughan
     .goto Elwynn Forest,42.105,65.927
     .turnin 40 >> Turn in A Fishy Peril
@@ -691,206 +713,234 @@ step
     .accept 76 >> Accept The Jasperlode Mine
 step
     #completewith next
-    .goto Elwynn Forest,41.7,65.9
-    .vendor >>vendor trash, repair
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
+    .goto Elwynn Forest,41.529,65.900
+    .vendor >>|cRXP_WARN_Vendor trash|r
+    .target Corina Steele
 step << Warrior
-    .goto Elwynn Forest,41.5,65.9
-    >>Repair your weapon. If you have enough money (5s 36c) buy a Gladius from Corina. Otherwise, skip this step (you'll come back later)
-    .collect 2488,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
+    >>|cRXP_WARN_Buy and equip a|r |T135321:0|t[Gladius]
+    .target Corina Steele
+    .money <0.0536
+    .goto Elwynn Forest,41.529,65.900
+    .collect 2488,1 --Collect Gladius (1)
 step << Rogue
-    .goto Elwynn Forest,41.5,65.9
-    >>Repair your weapon. If you have enough money (4s 1c) buy a Stiletto from Corina. Otherwise, skip this step (you'll come back later)
-    .collect 2494,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
+    >>|cRXP_WARN_Buy and equip a|r |T135641:0|t[Stiletto]
+    .target Corina Steele
+    .money <0.0400
+    .goto Elwynn Forest,41.529,65.900
+    .collect 2494,1 --Collect Stiletto (1)
 step << Paladin
-    .goto Elwynn Forest,41.5,65.9
-    >>Repair your weapon. If you have enough money (7s 1c) buy a Wooden Mallet from Corina. Otherwise, skip this step (you'll come back later)
-    .collect 2493,1 --Collect Wooden Mallet
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
+    >>|cRXP_WARN_Buy and equip a|r |T133053:0|t[Wooden Mallet]
+    .target Corina Steele
+    .money <0.0631
+    .goto Elwynn Forest,41.529,65.900
+    .collect 2493,1 --Collect Wooden Mallet (1)
 step
-    >> Talk to |cFF00FF25William Pestle|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
     .target William Pestle
-    .goto Elwynn Forest,43.283,65.721
+    .goto Elwynn Forest,43.318,65.705
     .turnin 60 >> Turn in Kobold Candles
     .accept 61 >> Accept Shipment to Stormwind
     .turnin 107 >> Turn in Note to William
     .accept 112 >> Accept Collecting Kelp
 step
     .xp 8 >> Grind to 8
-step << Warlock
-    >>Go back into the basement
-    .goto Elwynn Forest,44.4,66.2
-    .trainer >> Train your class spells
-    .goto Elwynn Forest,44.4,66.0
-    .vendor >> Buy the Firebolt book if you have money after training (otherwise buy it later)
-step
-    .money <0.1250
-    .goto Elwynn Forest,44.0,65.9
-    .vendor >>Buy a 6 slot bag from |cFF00FF25Brog Hamfist|r
-	.target Brogg
 step << Warrior
-    >> Talk to |cFF00FF25Lyria Du Lac|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyria Du Lac|r
     .target Lyria Du Lac
     .goto Elwynn Forest,41.087,65.768
     .trainer >> Train your class spells
 step << Paladin
-    >> Talk to |cFF00FF25Brother Wilhelm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Wilhelm|r
     .target Brother Wilhelm
-    .goto Elwynn Forest,41.1,66.0
+    .goto Elwynn Forest,41.096,66.041
     .trainer >> Train your class spells
-step << Mage/Priest/Rogue/Warrior
+step << Warlock
     #completewith next
-    .goto Elwynn Forest,43.7,66.4,15 >>Go upstairs
+    .goto Elwynn Forest,44.1,66.0,10 >> Travel downstairs in the Inn
+step << Warlock
+    .goto Elwynn Forest,44.392,66.240
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maximillian Crowe|r
+    .target Maximillian Crowe
+    .trainer >> Train your class spells
+step << Warlock
+    .goto Elwynn Forest,44.397,65.989
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cylina Darkheart|r
+    .vendor >> |cRXP_WARN_Buy the|r |T133738:0|t[Grimoire of Firebolt (Rank 2)] |cRXP_WARN_if you can afford it. If not you will buy it later|r
+    .target Cylina Darkheart
+step << Mage/Priest/Rogue/Warrior/Paladin
+    #completewith next
+    .goto Elwynn Forest,43.877,66.546,9 >> Travel upstairs in the Inn
 step << Mage
-	>> Talk to |cFF00FF25Zaldimar Wefhellt|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaldimar Wefhellt|r
 	.target Zaldimar Wefhellt
-    .goto Elwynn Forest,43.2,66.2
+    .goto Elwynn Forest,43.25,66.19
     .trainer >> Train your class spells
 step << Priest
-	>> Talk to |cFF00FF25Priestess Josetta|r
+    .goto Elwynn Forest,43.283,65.721
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Josetta|r
 	.target Priestess Josetta
     .turnin 5624 >> Turn in Garments of the Light
     .trainer >> Train your class spells
 step << Rogue
-    >> Talk to |cFF00FF25Keryn Sylvius|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keryn Sylvius|r
     .target Keryn Sylvius
-    .goto Elwynn Forest,43.9,65.9
+    .goto Elwynn Forest,43.872,65.937
     .trainer >> Train your class spells
 step << Rogue/Warrior/Paladin
     .money <0.01
-    >> Talk to |cFF00FF25Michelle Belle|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Michelle Belle|r
     .target Michelle Belle
-    .goto Elwynn Forest,43.4,65.5
-    .train 3273 >> Train First Aid - Don't make all your bandages at once, better time to make them later
-step << !Warrior !Rogue
-    .goto Elwynn Forest,43.771,65.803
-    .vendor >>Buy level 5 Water up to 40
-step << Warrior/Rogue
-    .goto Elwynn Forest,43.771,65.803
-    .vendor 295 >>Buy level 5 Food up to 40
+    .goto Elwynn Forest,43.392,65.550
+    .train 3273 >> Train |T135966:0|t[First Aid]
 step
-    >>Grind |cFF00BCD4Murlocs|r toward the east and loot them for |cFF00BCD4Crystal Kelp Frond|r.
-	.target Murloc
-	.target Murloc Streamrunner
-    .goto Elwynn Forest,47.6,63.3,100,0
-    .goto Elwynn Forest,51.4,64.6,100,0
-    .goto Elwynn Forest,57.6,62.8,100,0
-    .goto Elwynn Forest,56.4,66.6,100,0
-    .goto Elwynn Forest,53.8,66.8,100,0
+    .money <0.1250
+    .goto Elwynn Forest,43.96,65.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brog Hamfist|r
+    .vendor >> |cRXP_WARN_Buy a|r |T133634:0|t[Small Brown Pouch] |cRXP_WARN_if needed|r
+	.target Brog Hamfist
+step
+    #completewith next
+    .goto Elwynn Forest,43.771,65.803
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Farley|r
+    .vendor >> |cRXP_WARN_Buy up to 40|r |T132815:0|t[Ice Cold Milk] << !Warrior !Rogue !Paladin
+    .vendor >> |cRXP_WARN_Buy up to 40|r |T133995:0|t[Dalaran Sharp] << Warrior/Rogue
+    .vendor >> |cRXP_WARN_Buy up to 10|r |T133995:0|t[Dalaran Sharp] |cRXP_WARN_and 10|r |T132815:0|t[Ice Cold Milk] << Paladin
+    .target Innkeeper Farley
+step
+    >>Kill |cRXP_ENEMY_Murlocs|r and |cRXP_ENEMY_Murloc Streamrunners|r. Loot them for |cRXP_LOOT_Kelp Fronds|r
+    .goto Elwynn Forest,47.6,63.3,60,0
+    .goto Elwynn Forest,51.4,64.6,60,0
+    .goto Elwynn Forest,57.6,62.8,60,0
+    .goto Elwynn Forest,56.4,66.6,60,0
+    .goto Elwynn Forest,53.8,66.8,60,0
     .goto Elwynn Forest,57.6,62.8
     .complete 112,1 --Collect Crystal Kelp Frond (x4)
+	.mob Murloc
+	.mob Murloc Streamrunner
 step
-    >>Go in the mine, and keep following the middle path
-    >>Grind mobs en route
-    .goto Elwynn Forest,61.8,54.0,70,0
+    #completewith next
+    .goto Elwynn Forest,61.654,53.608,15 >> Enter the Jasperlode Mine
+step
+    >>|cRXP_WARN_Follow the path through middle to explore Jasperlode Mine|r
+    >>|cRXP_WARN_Exit Jasperlode Mine as soon as the objective completes|r
     .goto Elwynn Forest,60.4,50.2
     .complete 76,1 --Scout through the Jasperlode Mine
 step
-    >> Talk to |cFF00FF25Guard Thomas|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
     .target Guard Thomas
     .goto Elwynn Forest,73.973,72.179
     .turnin 35 >> Turn in Further Concerns
     .accept 37 >> Accept Find the Lost Guards
     .accept 52 >> Accept Protect the Frontier
 step
-    #sticky
-    #completewith Prowlers
-    >>Kill |cFFFF5722Prowlers|r as you do other quests
-	.target Prowler
+    #completewith AcceptBundle
+    >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r
+    >>|cRXP_WARN_Prioritize killing any |cRXP_ENEMY_Young Forest Bears|r you see|r
     .complete 52,1 --Kill Prowler (x8)
-step
-    #sticky
-    #completewith Bears
-    >>Kill |cFFFF5722Young Forest Bears|r as you do other quests. Go out of your way for bears.
-	.unitscan Young Forest Bear
     .complete 52,2 --Kill Young Forest Bear (x5)
+    .mob Prowler
+    .mob Young Forest Bear
 step
-	>> Click on the |cFFDB2EEFcorpse|r on the ground
-    .goto Elwynn Forest,72.7,60.3
+    >>Click |cRXP_PICK_A half-eaten body|r on the ground
+    .goto Elwynn Forest,72.656,60.334
     .turnin 37 >> Turn in Find the Lost Guards
     .accept 45 >> Accept Discover Rolf's Fate
 step
-    >> Talk to |cFF00FF25Supervisor Raelen|r
+    #label AcceptBundle
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Supervisor Raelen|r
     .target Supervisor Raelen
     .goto Elwynn Forest,81.382,66.112
     .accept 5545 >> Accept A Bundle of Trouble
 step
-    >> Talk to |cFF00FF25Rallic Finn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rallic Finn|r
     .target Rallic Finn
-    .goto Elwynn Forest,83.3,66.1
-    .vendor >> Vendor trash, repair
-step << Paladin
-    #softcore
-    .goto Elwynn Forest,76.8,62.4,100,0
-    .goto Elwynn Forest,83.7,59.4,100,0
-    .goto Elwynn Forest,76.8,62.4,100,0
-    .goto Elwynn Forest,83.7,59.4,100,0
-    .goto Elwynn Forest,76.8,62.4
-    >>Collect the |cFFDB2EEFbundles of wood|r at the base of the trees
-    .complete 5545,1 --Collect Bundle of Wood (x8)
-step << Paladin
-    #hardcore
-    #completewith Bundles
-    >>Collect the |cFFDB2EEFbundles of wood|r at the base of the trees
-    .complete 5545,1 --Collect Bundle of Wood (x8)
-step << !Paladin
-    #sticky
+    .goto Elwynn Forest,83.283,66.089
+    .vendor >> |cRXP_WARN_Vendor trash|r
+    .zoneskip Elwynn Forest,1
+step
+    #completewith Prowlers
+    >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r
+    >>|cRXP_WARN_Prioritize killing any |cRXP_ENEMY_Young Forest Bears|r you see|r
+    .complete 52,1 --Kill Prowler (x8)
+    .complete 52,2 --Kill Young Forest Bear (x5)
+    .mob Prowler
+    .mob Young Forest Bear
+step
     #completewith next
-    >>Collect the |cFFDB2EEFbundles of wood|r at the base of the trees
-    .complete 5545,1 --Collect Bundle of Wood (x8)
-step
-    #label Bundles
-    .goto Elwynn Forest,79.8,55.5,90 >> Go toward the guard's corpse
-step << Priest
-    .goto Elwynn Forest,79.8,55.5
-    >> Kill mobs surrounding the corpse. Precast Renew and Shield, get full mana, then pull the 2 mobs in front of the huts, move away, then nuke one. Run away when you kill one, then kill the other. Click on the |cFFDB2EEFcorpse|r on the ground
-    >> Be careful as this quest is difficult
-    .turnin 45 >> Turn in Discover Rolf's Fate
-    .accept 71 >> Accept Report to Thomas
-step << !Paladin
-    .goto Elwynn Forest,79.8,55.5
-    >> Kill mobs surrounding the corpse. Pull the 2 mobs in front of the huts, move away and sheep one whilst killing the other, then kill the sheeped mob. Click on the |cFFDB2EEFcorpse|r on the ground << Mage
-    >> Pool Rage, then kill the 2 mobs surrounding the corpse. Pull the 2 mobs in front of the huts, move away and keep one hamstrung whilst killing the other. Run away when you kill one (use marbles on it), then pull and kill the other. Click on the |cFFDB2EEFcorpse|r on the ground << Warrior
-    >> Kill mobs surrounding the corpse. Pull the 2 mobs in front of the huts, move away and nuke one mob. Use Evasion. Run away when you kill one, then kill the other. Click on the |cFFDB2EEFcorpse|r on the ground << Rogue
-     >>Kill mobs surrounding the corpse. Pull the 2 mobs in front of the huts, move away then keep one feared, and try to keep dots on both. Click on the |cFFDB2EEFcorpse|r on the ground << Warlock
-    >> |cFFFCDC00Be careful as this quest is difficult|r
-    .turnin 45 >> Turn in Discover Rolf's Fate
-    .accept 71 >> Accept Report to Thomas
+    >>Loot the |cRXP_LOOT_Bundle of Wood|r on the ground. |cRXP_WARN_They are found beneath the trees|r
+    .complete 5545,1 -- Bundle of Wood (8)
 step << Paladin
     #softcore
-    .goto Elwynn Forest,79.8,55.5
-    >> Run on top of the |cFFDB2EEFcorpse|r, then use Divine Protection and IMMEDIATELY loot the |cFFDB2EEFcorpse|r, handin, and accept the quest. You'll die after
+    #label Prowlers
+    .goto Elwynn Forest,79.80,55.50
+    >>|cRXP_WARN_Run on top of |cRXP_PICK_Rolf's corpse|r and cast|r |T135954:0|t[Divine Protection] |cRXP_WARN_and then immediately click|r |cRXP_PICK_Rolf's corpse|r
+    >>|cRXP_WARN_Run away and reset the |cRXP_ENEMY_Murlocs|r after completing the quest|r
     .turnin 45 >> Turn in Discover Rolf's Fate
     .accept 71 >> Accept Report to Thomas
 step << Paladin
     #hardcore
-    .goto Elwynn Forest,79.8,55.5
-    >> Kill mobs surrounding the corpse. Pull the 2 mobs in front of the huts, move away, and nuke one of the hut mobs. Bubble, heal/run away if needed, then come back and kill the other mob
-    >> Be careful as this quest is difficult
+    #label Prowlers
+    .goto Elwynn Forest,79.80,55.50
+    >>Click |cRXP_PICK_Rolf's corpse|r on the ground
+    >>|cRXP_ENEMY_Murloc Foragers|r |cRXP_WARN_will cast|r |T135915:0|t[Drink Minor Potion] |cRXP_WARN_which heals themselves for 61-68|r
+    >>|cRXP_WARN_Pull the 2|r |cRXP_ENEMY_Murlocs|r |cRXP_WARN_in front of the huts, move away and nuke one of them down fast. Use|r |T135954:0|t[Divine Protection] |cRXP_WARN_and your Heals as required. This is a good opportunity to use|r |T133581:0|t[Bag of Marbles]|cRXP_WARN_. Run away and reset once you've killed one|r << Paladin
+    >>|cRXP_WARN_Remember during|r |T135954:0|t[Divine Protection] |cRXP_WARN_you are unable to attack|r << Paladin
     .turnin 45 >> Turn in Discover Rolf's Fate
     .accept 71 >> Accept Report to Thomas
-step << Paladin
-    #softcore
-    #sticky
-    #completewith Bundles2
-    .goto Elwynn Forest,83.6,69.7,120 >>Die and respawn at the Spirit Healer, or start running back if someone cleared the corpse prior
+step << !Paladin
+    #label Prowlers
+    .goto Elwynn Forest,79.80,55.50
+    >>Click |cRXP_PICK_Rolf's corpse|r on the ground
+    >>|cRXP_ENEMY_Murloc Foragers|r |cRXP_WARN_will cast|r |T135915:0|t[Drink Minor Potion] |cRXP_WARN_which heals themselves for 61-68|r
+    >>|cRXP_WARN_Cast|r |T135953:0|t[Renew] |cRXP_WARN_and|r |T135940:0|t[Power Word: Shield] |cRXP_WARN_then get full mana. Pull the 2 |cRXP_ENEMY_Murlocs|r in front of the huts, move away, then nuke one. Run away when you kill one, then kill the other|r << Priest
+    >>|cRXP_WARN_Pull the 2|r |cRXP_ENEMY_Murlocs|r |cRXP_WARN_in front of the huts, move away and|r |T136071:0|t[Polymorph] |cRXP_WARN_one whilst killing the other. Kill the|r |T136071:0|tPolymorphed |cRXP_WARN_one after|r << Mage
+    >>|cRXP_WARN_Pool 100 Rage. Pull the 2|r |cRXP_ENEMY_Murlocs|r |cRXP_WARN_in front of the huts, move away and keep|r |T132316:0|t[Hamstring] |cRXP_WARN_on one whilst killing the other. Also use|r |T133581:0|t[Bag of Marbles] |cRXP_WARN_on the one you're killing. Run away and reset the one being kited with|r |T132316:0|t[Hamstring] |cRXP_WARN_after you've killed one|r << Warrior
+    >>|cRXP_WARN_Pull the 2|r |cRXP_ENEMY_Murlocs|r |cRXP_WARN_in front of the huts, move away and focus killing one of them. Use|r |T136205:0|t[Evasion] |cRXP_WARN_once they're both attacking you. This is a good opportunity to use|r |T133581:0|t[Bag of Marbles]|cRXP_WARN_. Run away and reset once you've killed one|r << Rogue
+    >>|cRXP_WARN_Pull the 2|r |cRXP_ENEMY_Murlocs|r |cRXP_WARN_in front of the huts, move away and cast|r |T136183:0|t[Fear] |cRXP_WARN_on one of them constantly, and try to keep DoTs on both|r << Warlock
+    .turnin 45 >> Turn in Discover Rolf's Fate
+    .accept 71 >> Accept Report to Thomas
 step
-    .goto Elwynn Forest,76.8,62.4,90,0
-    .goto Elwynn Forest,83.7,59.4,90,0
-    .goto Elwynn Forest,76.8,62.4,90,0
-    .goto Elwynn Forest,83.7,59.4,90,0
-    .goto Elwynn Forest,76.8,62.4,90,0
-    .goto Elwynn Forest,83.7,59.4,90,0
-    .goto Elwynn Forest,76.8,62.4
-    >>Start running back, finish off the turn|cFFDB2EEFbundles of wood|r
-    .complete 5545,1 --Collect Bundle of Wood (x8)
+    #completewith next
+    >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r
+    >>|cRXP_WARN_Prioritize killing any |cRXP_ENEMY_Young Forest Bears|r you see|r
+    .complete 52,1 --Kill Prowler (x8)
+    .complete 52,2 --Kill Young Forest Bear (x5)
+    .mob Prowler
+    .mob Young Forest Bear
 step
-    #label Bundles2
-	 >> Talk to |cFF00FF25Supervisor Raelen|r
+    .goto Elwynn Forest,76.8,62.4,40,0
+    .goto Elwynn Forest,83.7,59.4,40,0
+    .goto Elwynn Forest,76.8,62.4,40,0
+    .goto Elwynn Forest,83.7,59.4,40,0
+    .goto Elwynn Forest,76.8,62.4,40,0
+    .goto Elwynn Forest,83.7,59.4
+    >>Loot the |cRXP_LOOT_Bundle of Wood|r on the ground. |cRXP_WARN_They are found beneath the trees|r
+    .complete 5545,1 -- Bundle of Wood (8)
+step
+    #completewith XP9
+    >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r
+    >>|cRXP_WARN_Prioritize killing any |cRXP_ENEMY_Young Forest Bears|r you see|r
+    .complete 52,1 --Kill Prowler (x8)
+    .complete 52,2 --Kill Young Forest Bear (x5)
+    .mob Prowler
+    .mob Young Forest Bear
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Supervisor Raelen|r
     .target Supervisor Raelen
     .goto Elwynn Forest,81.382,66.112
     .turnin 5545 >> Turn in A Bundle of Trouble
 step
-    #label Prowlers
-	    .goto Elwynn Forest,76.8,62.4,90,0
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sara Timberlain|r
+    .target Sara Timberlain
+    .goto Elwynn Forest,79.457,68.789
+    .accept 83 >> Accept Red Linen Goods
+step
+    #label XP9
+	.goto Elwynn Forest,76.8,62.4,90,0
     .goto Elwynn Forest,83.7,59.4,90,0
     .goto Elwynn Forest,76.8,62.4,90,0
     .goto Elwynn Forest,83.7,59.4,90,0
@@ -899,22 +949,18 @@ step
     .goto Elwynn Forest,76.8,62.4
     .xp 9 >> Grind to 9
 step
-    #label Bears
-	>> Talk to |cFF00FF25Sara Timberlain|r
-    .target Sara Timberlain
-    .goto Elwynn Forest,79.457,68.789
-    .accept 83 >> Accept Red Linen Goods
-step
-    .goto Elwynn Forest,76.7,75.6,100,0
-    .goto Elwynn Forest,79.7,83.7,100,0
-    .goto Elwynn Forest,82.0,76.8,100,0
-    .goto Elwynn Forest,76.7,75.6,100,0
-    .goto Elwynn Forest,79.7,83.7,100,0
-    .goto Elwynn Forest,82.0,76.8,100,0
-    .goto Elwynn Forest,76.7,75.6
-    >>Kill the last mobs for Protect the Frontier
+    .goto Elwynn Forest,76.7,75.6,60,0
+    .goto Elwynn Forest,79.7,83.7,60,0
+    .goto Elwynn Forest,82.0,76.8,60,0
+    .goto Elwynn Forest,76.7,75.6,60,0
+    .goto Elwynn Forest,79.7,83.7,60,0
+    .goto Elwynn Forest,82.0,76.8,60,0
+    .goto Elwynn Forest,86.99,64.83
+    >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r
     .complete 52,1 --Kill Prowler (x8)
     .complete 52,2 --Kill Young Forest Bear (x5)
+    .mob Prowler
+    .mob Young Forest Bear
 step
 	>> Talk to |cFF00FF25Guard Thomas|r
     .target Guard Thomas

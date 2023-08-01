@@ -716,16 +716,6 @@ step << Paladin
     .money <0.0631
     .goto Elwynn Forest,41.529,65.900
     .collect 2493,1 --Collect Wooden Mallet (1)
-step << Warrior
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyria Du Lac|r
-    .target Lyria Du Lac
-    .goto Elwynn Forest,41.087,65.768
-    .trainer >> Train your class spells
-step << Paladin
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Wilhelm|r
-    .target Brother Wilhelm
-    .goto Elwynn Forest,41.096,66.041
-    .trainer >> Train your class spells
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
     .target William Pestle
@@ -736,6 +726,16 @@ step
     .accept 112 >> Accept Collecting Kelp
 step
     .xp 8 >> Grind to 8
+step << Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyria Du Lac|r
+    .target Lyria Du Lac
+    .goto Elwynn Forest,41.087,65.768
+    .trainer >> Train your class spells
+step << Paladin
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Wilhelm|r
+    .target Brother Wilhelm
+    .goto Elwynn Forest,41.096,66.041
+    .trainer >> Train your class spells
 step << Warlock
     #completewith next
     .goto Elwynn Forest,44.1,66.0,10 >> Travel downstairs in the Inn
@@ -749,13 +749,7 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cylina Darkheart|r
     .vendor >> |cRXP_WARN_Buy the|r |T133738:0|t[Grimoire of Firebolt (Rank 2)] |cRXP_WARN_if you can afford it. If not you will buy it later|r
     .target Cylina Darkheart
-step
-    .money <0.1250
-    .goto Elwynn Forest,43.96,65.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brog Hamfist|r
-    .vendor >> |cRXP_WARN_Buy a|r |T133634:0|t[Small Brown Pouch] |cRXP_WARN_if needed|r
-	.target Brog Hamfist
-step << Mage/Priest/Rogue/Warrior
+step << Mage/Priest/Rogue/Warrior/Paladin
     #completewith next
     .goto Elwynn Forest,43.877,66.546,9 >> Travel upstairs in the Inn
 step << Mage
@@ -780,6 +774,12 @@ step << Rogue/Warrior/Paladin
     .target Michelle Belle
     .goto Elwynn Forest,43.392,65.550
     .train 3273 >> Train |T135966:0|t[First Aid]
+step
+    .money <0.1250
+    .goto Elwynn Forest,43.96,65.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brog Hamfist|r
+    .vendor >> |cRXP_WARN_Buy a|r |T133634:0|t[Small Brown Pouch] |cRXP_WARN_if needed|r
+	.target Brog Hamfist
 step
     #completewith next
     .goto Elwynn Forest,43.771,65.803
@@ -815,7 +815,7 @@ step
     .accept 37 >> Accept Find the Lost Guards
     .accept 52 >> Accept Protect the Frontier
 step
-    #completewith Prowlers
+    #completewith AcceptBundle
     >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r
     >>|cRXP_WARN_Prioritize killing any |cRXP_ENEMY_Young Forest Bears|r you see|r
     .complete 52,1 --Kill Prowler (x8)
@@ -828,16 +828,25 @@ step
     .turnin 37 >> Turn in Find the Lost Guards
     .accept 45 >> Accept Discover Rolf's Fate
 step
+    #label AcceptBundle
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Supervisor Raelen|r
     .target Supervisor Raelen
     .goto Elwynn Forest,81.382,66.112
     .accept 5545 >> Accept A Bundle of Trouble
 step
-    #completewith next
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rallic Finn|r
     .target Rallic Finn
     .goto Elwynn Forest,83.283,66.089
     .vendor >> |cRXP_WARN_Vendor trash|r
+    .zoneskip Elwynn Forest,1
+step
+    #completewith Prowlers
+    >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r
+    >>|cRXP_WARN_Prioritize killing any |cRXP_ENEMY_Young Forest Bears|r you see|r
+    .complete 52,1 --Kill Prowler (x8)
+    .complete 52,2 --Kill Young Forest Bear (x5)
+    .mob Prowler
+    .mob Young Forest Bear
 step
     #completewith Bundles
     >>Loot the |cRXP_LOOT_Bundle of Wood|r on the ground. |cRXP_WARN_They are found beneath the trees|r
