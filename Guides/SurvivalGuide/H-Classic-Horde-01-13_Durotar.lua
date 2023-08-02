@@ -1022,8 +1022,8 @@ step
     .goto Durotar,50.95,79.14,30 >>Leave the Kolkar base
     .isQuestComplete 786
 step
-    .goto Durotar,54.09,76.31
-    .goto Durotar,54.52,74.83
+    .goto Durotar,54.09,76.31,25,0
+    .goto Durotar,54.52,74.83,25,0
     .goto Durotar,54.20,73.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lar|r. He patrols a little
     .turnin 786,1 >>Turn in Thwarting Kolkar Aggression << Shaman
@@ -1655,7 +1655,7 @@ step
 step << Mage
     .goto Durotar,56.3,75.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Un'Thuwa|r
-    .train 118,1 >> Train your class spells
+    .train 118 >> Train your class spells
     .target Un'Thuwa
 step
     #label Zalazaneturnin
@@ -1690,7 +1690,7 @@ step
     .complete 837,2 --Razormane Scout (4)
     .mob Razormane Quilboar
     .mob Razormane Scout
-step << Hunter
+step << Shaman/Hunter
     .loop 25,Durotar,44.45,39.74,44.49,37.47,43.30,37.32,41.70,37.09,41.64,38.27,41.94,40.46,43.30,40.40,44.45,39.74
     >>Kill |cRXP_ENEMY_Razormane Dustrunners|r and |cRXP_ENEMY_Razormane Battleguards|r
     >>|cRXP_WARN_Be careful.|r |cRXP_ENEMY_Dustrunners|r |cRXP_WARN_cast Rejuvenation (Heal) and|r |cRXP_ENEMY_Battleguards|r |cRXP_WARN_are tanky|r
@@ -1700,11 +1700,11 @@ step << Hunter
     .mob Razormane Battleguard
 step << Shaman/Hunter
     .loop 25,Durotar,47.52,48.67,46.12,45.47,43.65,43.91,41.68,44.69,41.00,46.13,42.47,48.50,44.21,49.68,47.17,49.44,47.52,48.67
-    .xp 9+5100 >> Grind to 5100+/6500xp
+    .xp 9+4470 >> Grind to 4470+/6500xp
 step
     #completewith next
     .goto Durotar,51.12,42.46,150 >> Run to Razor Hill
-step << Hunter
+step << Shaman/Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Torka|r and |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 815 >>Turn in Break a Few Eggs
     .goto Durotar,51.12,42.46

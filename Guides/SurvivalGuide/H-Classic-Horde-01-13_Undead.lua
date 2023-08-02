@@ -1124,8 +1124,8 @@ step
     .goto Durotar,50.95,79.14,30 >>Leave the Kolkar base
     .isQuestComplete 786
 step
-    .goto Durotar,54.09,76.31
-    .goto Durotar,54.52,74.83
+    .goto Durotar,54.09,76.31,25,0
+    .goto Durotar,54.52,74.83,25,0
     .goto Durotar,54.20,73.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lar|r. He patrols a little
     .turnin 786 >>Turn in Thwarting Kolkar Aggression
