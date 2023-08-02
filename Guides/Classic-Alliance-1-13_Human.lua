@@ -56,6 +56,7 @@ step << Warlock
 step << Warlock
     #softcore
     .deathskip >> Die and respawn at the Spirit Healer
+    .target Spirit Healer
 step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drusilla La Salle|r
     .goto Elwynn Forest,49.873,42.649
@@ -262,6 +263,7 @@ step
     #completewith next
     #softcore
     .deathskip >> Die and respawn at the Spirit Healer
+    .target Spirit Healer
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r
     .target Deputy Willem
@@ -336,6 +338,7 @@ step
     #completewith next
     #softcore
     .deathskip >> Die and respawn at the Spirit Healer
+    .target Spirit Healer
 step << Priest/Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milly Osworth|r
     .target Milly Osworth
@@ -403,6 +406,7 @@ step
     #softcore
     #completewith Goldshire
     .deathskip >> Die and respawn at the Spirit Healer
+    .target Spirit Healer
 step << Warrior/Rogue/Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smith Argus|r
     .target Smith Argus
@@ -962,334 +966,419 @@ step
     .mob Prowler
     .mob Young Forest Bear
 step
-	>> Talk to |cFF00FF25Guard Thomas|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
     .target Guard Thomas
     .goto Elwynn Forest,73.973,72.179
     .turnin 52 >> Turn in Protect the Frontier
     .turnin 71 >> Turn in Report to Thomas
     .accept 39 >> Accept Deliver Thomas' Report
     .accept 109 >> Accept Report to Gryan Stoutmantle
+    .xp <9,1
 step
-    #sticky
-    #completewith Deed
-    >>Keep an eye out for |cFF00BCD4Westfall Deed|r from the Defias (lucky drop)
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
+    .target Guard Thomas
+    .goto Elwynn Forest,73.973,72.179
+    .turnin 52 >> Turn in Protect the Frontier
+    .turnin 71 >> Turn in Report to Thomas
+    .accept 39 >> Accept Deliver Thomas' Report
+step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for their |cRXP_LOOT_Bandanas|r
+    .complete 83,1 --Collect Red Linen Bandana (x6)
+    .mob Defias Bandit
+step
+    .goto Elwynn Forest,69.3,79.0
+    >>Kill |cRXP_ENEMY_Princess|r. Loot her for her |cRXP_LOOT_Collar|r
+    >>|cRXP_ENEMY_Princess|r |cRXP_WARN_will agro with both of her|r |cRXP_ENEMY_Porcine Entourage|r
+    >>|cRXP_ENEMY_Princess|r |cRXP_WARN_will also cast|r |T132368:0|t[Rushing Charge] |cRXP_WARN_which deals heavy damage|r
+    >>|cRXP_WARN_Pool 100 Rage before you engage|r |cRXP_ENEMY_Princess|r << Warrior
+    >>|cRXP_WARN_Be sure |T136205:0|t[Evasion] |cRXP_WARN_is ready. If you're struggling, you can use the Fence with Throwing Weapons to abuse pathing and buy time|r << Rogue
+    >>|cRXP_WARN_Be ready to use a|r |T134830:0|t[Lesser Healing Potion]
+    .link https://www.youtube.com/watch?v=GRrXOV-UvD4 >> |cRXP_WARN_Click here for video reference|r << !Warrior
+    .complete 88,1 --Collect Brass Collar (x1)
+    .mob Princess
+step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for the |T134939:0|t[|cRXP_LOOT_Westfall Deed|r]
+    .use 1972>>|cRXP_WARN_Use the |T134939:0|t[|cRXP_LOOT_Westfall Deed|r] to start the quest|r
+    >>|cRXP_WARN_The|r |T134939:0|t[|cRXP_LOOT_Westfall Deed|r] |cRXP_WARN_is a very rare drop. Ignore this step if you don't get it|r
     .collect 1972,1,184 --Collect Westfall Deed (x1)
     .accept 184 >> Accept Furlbrow's Deed
 step
-    .goto Elwynn Forest,69.53,79.47
-    >>Start circling the farm, killing |cFF00BCD4Defias|r and looting them for |cFF00BCD4Red Linen Bandanas|r
-	.target Defias Bandit
+    >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for their |cRXP_LOOT_Bandanas|r
+    .goto Elwynn Forest,70.5,77.6,60,0
+    .goto Elwynn Forest,68.1,77.5,60,0
+    .goto Elwynn Forest,68.2,81.4,60,0
+    .goto Elwynn Forest,70.8,80.9,60,0
+    .goto Elwynn Forest,70.5,77.6,60,0
+    .goto Elwynn Forest,68.1,77.5,60,0
+    .goto Elwynn Forest,68.2,81.4,60,0
+    .goto Elwynn Forest,70.8,80.9,60,0
+    .goto Elwynn Forest,70.5,77.6,60,0
+    .goto Elwynn Forest,68.1,77.5,60,0
+    .goto Elwynn Forest,68.2,81.4,60,0
+    .goto Elwynn Forest,70.8,80.9,60,0
+    .goto Elwynn Forest,69.3,79.0
     .complete 83,1 --Collect Red Linen Bandana (x6)
-step << Warrior
-    .goto Elwynn Forest,69.4,79.2
-    >>Pool Rage, then kill |cFF00BCD4Princess|r. Use a Lesser Heal Potion from before if needed. Loot her for the |cFF00BCD4Brass Collar|r
-    .complete 88,1 --Collect Brass Collar (x1)
-step << Rogue
-    .goto Elwynn Forest,69.4,79.2
-    >>Make sure Evasion is up, then kill |cFF00BCD4Princess|r. Use a Lesser Heal Potion from before if needed. Loot her for the |cFF00BCD4Brass Collar|r
-	>>If you're struggling, you can use the Fence with Throwing Weapons to abuse pathing and buy time
-    .complete 88,1 --Collect Brass Collar (x1)
-step << !Rogue !Warrior
-    .goto Elwynn Forest,69.4,79.2
-    >>Kill |cFF00BCD4Princess|r. Use a Lesser Heal Potion from before if needed. Loot her for the |cFF00BCD4Brass Collar|r
-    >>If you're struggling, you can use the Fence to abuse pathing and buy time
-    .complete 88,1 --Collect Brass Collar (x1)
-    .link https://www.youtube.com/watch?v=GRrXOV-UvD4 >> Click here if struggling
+    .mob Defias Bandit
 step
 	.goto Elwynn Forest,69.53,79.47
     .xp 9+3400 >> Grind to 3400+/6500xp
 step
     #softcore
-    #sticky
     #completewith next
     .goto Elwynn Forest,83.6,69.7,120 >>Die and respawn at the Spirit Healer if you're low health, otherwise just run back and handin
 step
-    #label Deed
-	>> Talk to |cFF00FF25Sara Timberlain|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sara Timberlain|r
     .target Sara Timberlain
-    .goto Elwynn Forest,79.5,68.9
+    .goto Elwynn Forest,79.457,68.789
     .turnin 83 >> Turn in Red Linen Goods
-step << !Warlock
-    #softcore
-    .goto Elwynn Forest,83.3,66.1
-    .vendor >> vendor trash, repair
 step << !Warlock
     .goto Redridge Mountains,8.5,72.0
     .xp 9+4475 >> Grind until 4475+/6500xp
 step << !Warlock
-    .goto Redridge Mountains,8.5,72.0
-    .zone Redridge Mountains >> Travel east to Redridge Mountains
-step << !Warlock
     #softcore
-    #sticky
-    #completewith next
-    +Die to the mobs here
     .goto Redridge Mountains,11.2,78.4
+    .zone Redridge Mountains >> Travel to Redridge Mountains
 step << !Warlock
     #softcore
-    .goto Redridge Mountains,20.8,56.6,100 >>Respawn at the Spirit Healer
+    #completewith next
+    .deathskip >> Die and respawn at the Spirit Healer 
+    .target Spirit Healer
 step << !Warlock
     #softcore
-    .goto Redridge Mountains,30.6,59.4
+    .goto Redridge Mountains,30.590,59.410
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
     .fp Redridge Mountains >> Get the Redridge Mountains flight path
+    .target Ariena Stormfeather
 step << !Warlock
     #hardcore
-    >>Run toward the Flight Path. Be exceedingly careful to not aggro or die to any mobs en route. Try sticking to the road and keeping an eye out
-    .goto Redridge Mountains,30.6,59.4
+    #completewith next
+    .goto Redridge Mountains,17.4,69.6
+    .zone Redridge Mountains >> Travel to Redridge Mountains
+step << !Warlock
+    #hardcore
+    .goto Redridge Mountains,18.581,69.208,15,0
+    .goto Redridge Mountains,23.325,71.373,25,0
+    .goto Redridge Mountains,29.565,67.930,25,0
+    .goto Redridge Mountains,30.590,59.410
+    >>|cRXP_WARN_STICK TO THE MAIN ROAD AND AVOID ANY CLOSE MOBS EN-ROUTE|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
     .fp Redridge Mountains >> Get the Redridge Mountains flight path
+    .target Ariena Stormfeather
 step
+    #completewith next
     .hs >> Hearth to Goldshire
 step
-	>> Talk to |cFF00FF25William Pestle|r
-    .target William Pestle
-    .goto Elwynn Forest,43.283,65.721
-    >>Don't wait for his rp event
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
+    .goto Elwynn Forest,43.318,65.705
     .turnin 112 >> Turn in Collecting Kelp
+    .accept 114 >> Accept The Escape
+    .target William Pestle
 step << Warrior/Rogue
-    >> Talk to |cFF00FF25Michelle Belle|r
+    #completewith next
+    .goto Elwynn Forest,43.877,66.546,9 >> Travel upstairs in the Inn
+step << Warrior/Rogue
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Michelle Belle|r
     .target Michelle Belle
-    .goto Elwynn Forest,43.4,65.6
-    >>Speak with the first aid trainer upstairs
-    .train 3273 >> Train First Aid
+    .goto Elwynn Forest,43.392,65.550
+    .train 3273 >> Train |T135966:0|t[First Aid]
 step
-	>> Talk to |cFF00FF25Marshal Dughan|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .target Marshal Dughan
-    .goto Elwynn Forest,42.2,65.8
+    .goto Elwynn Forest,42.105,65.927
     .turnin 39 >> Turn in Deliver Thomas' Report
     .turnin 76 >> Turn in The Jasperlode Mine
     .accept 239 >> Accept Westbrook Garrison Needs Help!
-    .accept 59 >>Accept Cloth and Leather Armor << Warlock
+    .accept 59 >> Accept Cloth and Leather Armor << Warlock
+    .accept 109 >> Accept Report to Gryan Stoutmantle
 step
-	>> Talk to |cFF00FF25Smith Argus|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smith Argus|r
     .target Smith Argus
     .goto Elwynn Forest,41.706,65.544
     .accept 1097 >> Accept Elmore's Task
 step
     .xp 10 >> Grind to 10
-step
-    #softcore
-    .goto Elwynn Forest,41.7,65.9
-    .vendor >>vendor trash, repair
 step << Warrior
     .goto Elwynn Forest,41.087,65.768
-.target Ilsa Corbin
-.target Lyria Du Lac
->>Talk to |cFF00FF25Lyria Du Lac|r
--->>Talk to |cFF00FF25Ilsa Corbin|r
+    .target Lyria Du Lac
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyria Du Lac|r
     .accept 1638 >> Accept A Warrior's Training
     .trainer >> Train your class spells
 step << Paladin
-    .goto Elwynn Forest,41.1,66.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Wilhelm|r
+    .target Brother Wilhelm
+    .goto Elwynn Forest,41.096,66.041
     .trainer >> Train your class spells
-step
-	>> Talk to |cFF00FF25William Pestle|r
-    .target William Pestle
-    .goto Elwynn Forest,43.283,65.721
-    .accept 114 >> Accept The Escape
 step << Warlock
-    >>Go back down into the basement
-    .goto Elwynn Forest,44.4,66.2
-.target Remen Marcot
->>Talk to |cFF00FF25Remen Marcot|r
-    .accept 1685 >> Accept Gakin's Summons
+    #completewith next
+    .goto Elwynn Forest,44.1,66.0,10 >> Travel downstairs in the Inn
+step << Warlock
+    .goto Elwynn Forest,44.392,66.240
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maximillian Crowe|r
+    .target Maximillian Crowe
     .trainer >> Train your class spells
+step << Warlock
+    .goto Elwynn Forest,44.485,66.268
+    .target Remen Marcot
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remen Marcot|r
+    .accept 1685 >> Accept Gakin's Summons
 step << Mage/Priest/Rogue
     #sticky
     #completewith next
     .goto Elwynn Forest,43.7,66.4,10 >>Go Upstairs
 step << Priest
     .goto Elwynn Forest,43.283,65.721
-.target Priestess Josetta
->>Talk to |cFF00FF25Priestess Josetta|r
+    .target Priestess Josetta
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Josetta|r
     .accept 5635 >> Accept Desperate Prayer
     .trainer >> Train your class spells
 step << Mage
-    .goto Elwynn Forest,43.2,66.2
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaldimar Wefhellt|r
+	.target Zaldimar Wefhellt
+    .goto Elwynn Forest,43.25,66.19
     .trainer >> Train your class spells
 step << Rogue
-    .goto Elwynn Forest,43.9,65.9
-    >>Don't worry about not having 2 weapons, we'll get another soon
-    >>|cFFFCDC00Be VERY careful about your money when training here.|r Make sure you train Dual Wield and Sprint though
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keryn Sylvius|r
+    .target Keryn Sylvius
+    .goto Elwynn Forest,43.872,65.937
     .trainer >> Train your class spells
+    >>|cRXP_WARN_Train|r |T132147:0|t[Dual Wield] |cRXP_WARN_and|r |T132307:0|t[Sprint] |cRXP_WARN_as a minimum. Do not train excess abilities. Save your money|r
+    .train 674 >> Train |T132147:0|t[Dual Wield]
+    .train 2983 >> Train |T132307:0|t[Sprint]
 step << Rogue
     #som
-    .goto Elwynn Forest,41.7,65.9
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
+    >>|cRXP_WARN_Buy and equip a|r |T135641:0|t[Stiletto] |cRXP_WARN_for your Off-Hand|r
+    .target Corina Steele
     .money >0.3197
-    .vendor >>You don't have enough money, so buy Stiletto for your Offhand
+    .goto Elwynn Forest,41.529,65.900
+    .collect 2494,1 --Collect Stiletto (1)
 step << Rogue
     #era
-    .goto Elwynn Forest,41.7,65.9
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
+    >>|cRXP_WARN_Buy and equip a|r |T135641:0|t[Stiletto] |cRXP_WARN_for your Off-Hand|r
+    .target Corina Steele
     .money >0.3152
-    .vendor >>You don't have enough money, so buy Stiletto for your Offhand
+    .goto Elwynn Forest,41.529,65.900
+    .collect 2494,1 --Collect Stiletto (1)
 step
-	>> Talk to |cFF00FF25Maybell Maclure|r
-    .target Maybell Maclure
-    >>Run out of the inn and go south
-    .goto Elwynn Forest,43.2,89.6
+    #completewith next
+    .goto Elwynn Forest,43.154,89.625,50 >> Travel to The Maclure Vineyards
+step
+    .goto Elwynn Forest,43.154,89.625
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maybell Maclure|r
     .turnin 114 >> Turn in The Escape
+    .target Maybell Maclure
 step
     .goto Elwynn Forest,34.660,84.482
-.target Ma Stonefield
->>Talk to |cFF00FF25Ma Stonefield|r
+    .target Ma Stonefield
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r
     .turnin 88,1 >> Turn in Princess Must Die! << Rogue/Hunter
     .turnin 88,2 >> Turn in Princess Must Die! << Warrior/Paladin
     .turnin 88,3 >> Turn in Princess Must Die! << !Rogue !Hunter !Warrior !Paladin
-step << Warlock
-    >>Click any of the wanted posters around
-    .goto Elwynn Forest,24.6,74.7
-    .accept 176 >> Accept Wanted:   "Hogger"
 step
-	>> Talk to |cFF00FF25Deputy Rainer|r
-    .target Deputy Rainer
-    .goto Elwynn Forest,24.2,74.5
+    #completewith next
+    .goto Elwynn Forest,24.82,76.25,80 >> Travel to Westbrook Garrison
+step << !Rogue
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r
     .turnin 239 >> Turn in Westbrook Garrison Needs Help!
     .accept 11 >> Accept Riverpaw Gnoll Bounty << Warlock
+    .goto Elwynn Forest,24.234,74.450
+    >>Click the |cRXP_PICK_Wanted Poster|r << Warlock
+    .accept 176 >> Accept Wanted: "Hogger" << Warlock
+    .goto Elwynn Forest,24.548,74.672 << Warlock
+    .target Deputy Rainer
+step << Rogue
+    #era
+    .money >0.3152
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r
+    .turnin 239 >> Turn in Westbrook Garrison Needs Help!
+    .accept 11 >> Accept Riverpaw Gnoll Bounty
+    .goto Elwynn Forest,24.234,74.450
+    .target Deputy Rainer
+step << Rogue
+    #som
+    .money >0.3197
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r
+    .turnin 239 >> Turn in Westbrook Garrison Needs Help!
+    .accept 11 >> Accept Riverpaw Gnoll Bounty
+    .goto Elwynn Forest,24.234,74.450
+    .target Deputy Rainer
 step << Warrior
     .money >0.3174
     #som
-    >>Grind a bit until you have 31s 74c+ of vendorables/money
-    >>This is for thrown, 2h mace, and 2h sword training. It's also for level 11 thrown, and flying to Stormwind
-    .goto Elwynn Forest,27.6,93.0
+    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r
+    >>|cRXP_WARN_Grind until you have 31s 74c+ of vendorables/money. This is for Thrown, 2h Mace and 2h Sword training. It's also for to buy a level 3 Throwing Weapon, and flying to Stormwind soon|r
+    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto Elwynn Forest,26.1,89.9,70,0
+    .goto Elwynn Forest,25.2,92.7,70,0
+    .goto Elwynn Forest,27.0,93.9,70,0
+    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto Elwynn Forest,26.1,89.9,70,0
+    .goto Elwynn Forest,25.2,92.7,70,0
+    .goto Elwynn Forest,27.0,93.9,70,0
+    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto Elwynn Forest,26.1,89.9,70,0
+    .goto Elwynn Forest,25.2,92.7,70,0
+    .goto Elwynn Forest,27.0,93.9,70,0
+    .goto Elwynn Forest,25.9,93.9
 step << Warrior
     .money >0.3129
     #era
-    >>Grind a bit until you have 31s 29c+ of vendorables/money
-    >>This is for thrown, 2h mace, and 2h sword training. It's also for level 3 thrown, and flying to Stormwind
-    .goto Elwynn Forest,27.6,93.0
+    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r
+    >>|cRXP_WARN_Grind until you have 31s 29c+ of vendorables/money. This is for Thrown, 2h Mace and 2h Sword training. It's also for to buy a level 3 Throwing Weapon, and flying to Stormwind soon|r
+    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto Elwynn Forest,26.1,89.9,70,0
+    .goto Elwynn Forest,25.2,92.7,70,0
+    .goto Elwynn Forest,27.0,93.9,70,0
+    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto Elwynn Forest,26.1,89.9,70,0
+    .goto Elwynn Forest,25.2,92.7,70,0
+    .goto Elwynn Forest,27.0,93.9,70,0
+    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto Elwynn Forest,26.1,89.9,70,0
+    .goto Elwynn Forest,25.2,92.7,70,0
+    .goto Elwynn Forest,27.0,93.9,70,0
+    .goto Elwynn Forest,25.9,93.9
 step << Warlock
-    #sticky
-    #completewith Armbands
-    >>Keep an eye out for the |cFF00BCD4Gold Pickup Schedule|r (lucky drop), or a 100% Drop from |cFFFF5722Gruff Swiftbite|r (rare).
-	.unitscan Gruff Swiftbite
+    #completewith GnollEnd
+    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for the |T134939:0|t[|cRXP_LOOT_Gold Pickup Schedule|r]
+    .use 1307 >>|cRXP_WARN_Use the |T134939:0|t[|cRXP_LOOT_Gold Pickup Schedule|r] to start the quest|r
+    >>|cRXP_WARN_The|r |T134939:0|t[|cRXP_LOOT_Gold Pickup Schedule|r] |cRXP_WARN_is a very rare drop. Ignore this step if you don't get it|r
+    >>|cRXP_ENEMY_Gruff Swiftbite|r |cRXP_WARN_a rare spawn, does have a 100% drop chance|r
     .collect 1307,1,123 --Collect Gold Pickup Schedule (x1)
     .accept 123 >> Accept The Collector
+    .unitscan Gruff Swiftbite
 step << Warlock
-    #label Hogger
+    #completewith next
+    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for their |cRXP_LOOT_Armbands|r
+    .complete 11,1 -- Painted Gnoll Armband (8)
+    .mob Riverpaw Runt
+    .mob Riverpaw Outrunner
+step << Warlock
+    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto Elwynn Forest,26.1,89.9,70,0
+    .goto Elwynn Forest,25.2,92.7,70,0
+    .goto Elwynn Forest,27.0,93.9,70,0
+    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto Elwynn Forest,26.1,89.9,70,0
+    .goto Elwynn Forest,25.2,92.7,70,0
+    .goto Elwynn Forest,27.0,93.9,70,0
+    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto Elwynn Forest,26.1,89.9,70,0
+    .goto Elwynn Forest,25.2,92.7,70,0
+    .goto Elwynn Forest,27.0,93.9,70,0
+    .goto Elwynn Forest,25.9,93.9
+    >>Kill |cRXP_ENEMY_Hogger|r. Loot him for his |cRXP_LOOT_Claw|r
+    >>|cRXP_ENEMY_Hogger|r |cRXP_WARN_can spawn in multiple locations|r
+    >>|cRXP_WARN_Cast|r |T136183:0|t[Fear] |cRXP_WARN_on |cRXP_ENEMY_Hogger|r continously and use your regular DoTs to kill him|r
+    >>|cRXP_WARN_Kite him back to the guard tower if required ensuring you've done at least 50% damage to him|r
+    .complete 176,1 --Huge Gnoll Claw (1)
     .unitscan Hogger
-    .goto Elwynn Forest,27.0,86.7,80,0
-    .goto Elwynn Forest,26.1,89.9,80,0
-    .goto Elwynn Forest,25.2,92.7,80,0
-    .goto Elwynn Forest,27.0,93.9,80,0
-    .goto Elwynn Forest,27.0,86.7,80,0
-    .goto Elwynn Forest,26.1,89.9,80,0
-    .goto Elwynn Forest,25.2,92.7,80,0
-    .goto Elwynn Forest,27.0,93.9,80,0
-    .goto Elwynn Forest,27.0,86.7,80,0
-    .goto Elwynn Forest,26.1,89.9,80,0
-    .goto Elwynn Forest,25.2,92.7,80,0
-    .goto Elwynn Forest,27.0,93.9,80,0
-    .goto Elwynn Forest,24.24,80.67,0
-    >>|cFF00BCD4Hogger|r can be in multiple spots in the area. Keep him fear chained, and/or kite him at <60% hp to the tower at 24,80. Loot him for his |cFF00BCD4Huge Gnoll Claw|r
-    >>Be careful as he can be feared into other mobs, hits hard, and can stun
-    .complete 176,1 --Collect Huge Gnoll Claw (1)
-step << Warlock
-    #label Armbands
-    .goto Elwynn Forest,27.0,93.9
-    >> Kill |cFF00BCD4Gnolls|r. Loot them for |cFF00BCD4Painted Gnoll Armbands|r
-	.target Riverpaw Outrunner
-	.target Riverpaw Runt
-    .complete 11,1 --Collect Painted Gnoll Armband (8)
-step << Rogue
-    #era
-    #label Armbands
-    .money >0.3152
-	>> Talk to |cFF00FF25Deputy Rainer|r
-    .target Deputy Rainer
-    .goto Elwynn Forest,24.2,74.5
-    .accept 11 >> Accept Riverpaw Gnoll Bounty
-step << Rogue
-    #som
-    #label Armbands
-	>> Talk to |cFF00FF25Deputy Rainer|r
-    .target Deputy Rainer
-    .money >0.3197
-    .goto Elwynn Forest,24.2,74.5
-    .accept 11 >> Accept Riverpaw Gnoll Bounty
-step << Rogue
-    .goto Elwynn Forest,27.0,93.9
-    >> Kill |cFF00BCD4Gnolls|r. Loot them for |cFF00BCD4Painted Gnoll Armbands|r
-	.target Riverpaw Outrunner
-	.target Riverpaw Runt
-    .complete 11,1 --Collect Painted Gnoll Armband (x8)
-    .isOnQuest 11
 step << Warlock/Rogue
-	>> Talk to |cFF00FF25Deputy Rainer|r
-    .target Deputy Rainer
-    .goto Elwynn Forest,24.2,74.5
-    .turnin 11 >> Turn in Riverpaw Gnoll Bounty
     .isOnQuest 11
+    #label GnollEnd
+    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto Elwynn Forest,26.1,89.9,70,0
+    .goto Elwynn Forest,25.2,92.7,70,0
+    .goto Elwynn Forest,27.0,93.9,70,0
+    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto Elwynn Forest,26.1,89.9,70,0
+    .goto Elwynn Forest,25.2,92.7,70,0
+    .goto Elwynn Forest,27.0,93.9,70,0
+    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto Elwynn Forest,26.1,89.9,70,0
+    .goto Elwynn Forest,25.2,92.7,70,0
+    .goto Elwynn Forest,27.0,93.9,70,0
+    .goto Elwynn Forest,25.9,93.9
+    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for their |cRXP_LOOT_Armbands|r
+    .complete 11,1 -- Painted Gnoll Armband (8)
+    .mob Riverpaw Runt
+    .mob Riverpaw Outrunner
+step << Warlock/Rogue
+    .isQuestComplete 11
+    .goto Elwynn Forest,24.234,74.450
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r
+    .turnin 11 >> Turn in Riverpaw Gnoll Bounty
+    .target Deputy Rainer
 step << Rogue
     .abandon 123 >>Abandon The Collector
 step
-    .goto Westfall,60.0,19.4
-.target Farmer Furlbrow
->>Talk to |cFF00FF25Farmer Furlbrow|r
+    #completewith WestEntry
+    .goto Westfall,59.95,19.35
+    .zone Westfall >> Travel to Westfall
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Furlbrow|r
+    .target Farmer Furlbrow
+    .goto Westfall,59.95,19.35
     .turnin 184 >> Turn in Furlbrow's Deed
     .isOnQuest 184
 step
-    .goto Westfall,59.95,19.36
-.target Farmer Furlbrow
->>Talk to |cFF00FF25Farmer Furlbrow|r
-    .accept 64 >>Accept The Forgotten Heirloom
-step
-    .goto Westfall,59.918,19.416
-.target Verna Furlbrow
->>Talk to |cFF00FF25Verna Furlbrow|r
+    #label WestEntry
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Furlbrow|r and |cRXP_FRIENDLY_Verna Furlbrow|r
+    .accept 64 >> Accept The Forgotten Heirloom
+    .goto Westfall,59.95,19.35
+    .accept 151 >> Accept Poor Old Blanchy
     .accept 36 >> Accept Westfall Stew
-    .accept 151 >>Accept Poor Old Blanchy
+    .goto Westfall,59.92,19.42
+    .target Farmer Furlbrow
+	.target Verna Furlbrow
 step
-    .goto Westfall,56.04,31.22
-.target Farmer Saldean
->>Talk to |cFF00FF25Farmer Saldean|r
-    .accept 9 >>Accept The Killing Fields
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Saldean|r
+    .target Farmer Saldean
+    .goto Westfall,56.04,31.23
+    .accept 9 >> Accept The Killing Fields
 step
     .goto Westfall,56.416,30.519
->>Talk to |cFF00FF25Salma Saldean|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Salma Saldean|r
     .turnin 36 >> Turn in Westfall Stew
-.target Salma Saldean
+    .target Salma Saldean
     .accept 38 >> Accept Westfall Stew
     .accept 22 >>Accept Goretusk Liver Pie
 step
     #softcore
     #completewith next
-    .deathskip >> Die and respawn at the |cFF00FF25Spirit Healer|r
+    .deathskip >> Die and respawn at the Spirit Healer
     .target Spirit Healer
 step
     .goto Westfall,56.327,47.520
->>Talk to |cFF00FF25Gryan Stoutmantle|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
     .turnin 109 >> Turn in Report to Gryan Stoutmantle
-.target Gryan Stoutmantle
+    .target Gryan Stoutmantle
     .accept 12 >> Accept The People's Militia
 step
     #era
-    .goto Westfall,56.327,47.520
-.target Captain Danuvin
->>Talk to |cFF00FF25Captain Danuvin|r
+    .goto Westfall,56.421,47.623
+    .target Captain Danuvin
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Danuvin|r
     .accept 102 >> Accept Patrolling Westfall
 step << Human
     .goto Westfall,57.002,47.169
-    .vendor >>vendor trash
-.target Quartermaster Lewis
->>Talk to |cFF00FF25Quartermaster Lewis|r
+    .target Quartermaster Lewis
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quartermaster Lewis|r
     .accept 6181 >> Accept A Swift Message
+    .vendor >>|cRXP_WARN_Vendor trash|r
 step << Rogue
     #era
     .money >0.3152
-    +Grind until you have 31s 52c of vendorables/money
+    +|cRXP_WARN_Grind until you have 31s 52c of vendorables/money|r
 step << Rogue
     #som
     .money >0.3197
     +Grind until you have 31s 97c of vendorables/money
---Not taking into account Shipment q turnin money so its insurance money
+    --Not taking into account Shipment q turnin money so its insurance money
+step << Human
+    .goto Westfall,56.55,52.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
+    .turnin 6181 >> Turn in A Swift Message
+    .accept 6281 >> Accept Continue To Stormwind
+    .target Thor
 step
-    .goto Westfall,56.6,52.6
->>Talk to |cFF00FF25Thor|r
-    .turnin 6181 >> Turn in A Swift Message << Human
-.target Thor
-    .accept 6281 >> Accept Continue To Stormwind << Human
-step
-    .goto Westfall,56.6,52.6
+    .goto Westfall,56.55,52.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
     .fly Stormwind >> Fly to Stormwind
+    .target Thor
 step << Rogue
     #som
     >>Go inside the building
@@ -1298,328 +1387,371 @@ step << Rogue
     .vendor >> Buy the level 11 thrown from Thurman. Equip it when you're level 11
 step << Rogue
     #era
-    >>Go inside the building
     .goto StormwindClassic,57.32,62.08,20,0
-    .goto StormwindClassic,58.37,61.69
-    .vendor >> Buy the level 3 thrown from Thurman. Equip it
+    .goto StormwindClassic,58.362,61.678
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thurman Mullby|r
+    .vendor >> |cRXP_WARN_Buy a|r |T135641:0|t[Balanced Throwing Dagger]|cRXP_WARN_. Equip it|r
+    .target Thurman Mullby
 step
-    .goto StormwindClassic,56.2,64.6
-    >>Choose the Rockets as the reward. These have very good damage, and can be used for splitpulling
-.target Morgan Pestle
->>Talk to |cFF00FF25Morgan Pestle|r
-    .turnin 61 >> Turn in Shipment to Stormwind
-step << !Warlock
-    .goto StormwindClassic,52.61,65.71
-    .home >> Set your Hearthstone to Stormwind City
-step << Warrior
-    .goto StormwindClassic,57.1,57.7
-    .trainer >> Train 2h Swords if you have enough money. You must save 20s for later
-step << Priest
-    .goto StormwindClassic,57.1,57.7
-    .trainer >>Train Staves
-step << Mage/Warlock
-    .goto StormwindClassic,57.1,57.7
-    .trainer >> Train Staves, then 1h Swords if you still have money
+    .goto StormwindClassic,56.201,64.585
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morgan Pestle|r
+    .turnin 61,1 >> Turn in Shipment to Stormwind
+    >>|cRXP_WARN_We choose the|r |T132383:0|t[Explosive Rockets] |cRXP_WARN_as the reward. It deals decent damage, and can be used for "Split pulling" which is incredibly useful|r
+    .link https://www.youtube.com/watch?v=H-IwZ6P-ldY >> |cRXP_WARN_Click here for video reference on "Split pulling". It is a short video and invaluable to learn|r
+    .target Morgan Pestle
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Woo Ping|r
+    .target Woo Ping
+    .goto StormwindClassic,57.129,57.698
+    .trainer >>Train 1h Swords << Rogue
+    .trainer >>Train Staves << Warlock/Mage/Priest
+    .trainer >>Train 2h Swords << Warrior/Paladin
+    >>|cRXP_WARN_Train 2h Swords if you have enough money. You must save 20s for later|r << Warrior
+    >>|cRXP_WARN_Train 1h Swords as well if you still have money|r << Mage/Warlock
 step << Rogue
-    .goto StormwindClassic,57.1,57.7
-    .trainer >>Train 1h Swords
-step << Rogue
-    .goto StormwindClassic,57.6,57.1
-    .vendor >>Buy a Cutlass from Gunther and equip it, Stiletto in Offhand
-step << Paladin
-    .goto StormwindClassic,57.1,57.7
-    .trainer >>Train 2h Swords
-step << Warlock
-    .goto StormwindClassic,52.61,65.71
+    .goto StormwindClassic,57.547,57.076
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
+    .target Gunther Weller
+    .vendor >> |cRXP_WARN_Buy a|r |T135346:0|t[Cutlass] |cRXP_WARN_and equip it in your Main-Hand|r
+step
+    .goto StormwindClassic,52.623,65.701
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Allison|r
     .home >> Set your Hearthstone to Stormwind City
+    .target Innkeeper Allison
 step << Warlock
-    #sticky
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
-    .goto StormwindClassic,27.2,78.1,15 >> Go into The Slaughtered Lamb and go downstairs
+    .goto StormwindClassic,27.2,78.1,15 >> Travel to The Slaughtered Lamb and go downstairs
 step << Warlock
-    .goto StormwindClassic,25.2,78.5
->>Talk to |cFF00FF25Gakin the Darkbinder|r
+    .goto StormwindClassic,25.25,78.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gakin the Darkbinder|r
     .turnin 1685 >> Turn in Gakin's Summons
-.target Gakin the Darkbinder
+    .target Gakin the Darkbinder
     .accept 1688 >> Accept Surena Caledon
 step << Warlock
     #softcore
-    .deathskip >> Die and respawn at the Spirit Healer by using Life Tap and standing on the Bonfire next to you
+    .deathskip >> Die and respawn at the Spirit Healer by using |T136126:0|t[Life Tap] and standing on the Bonfire next to you
+    .target Spirit Healer
 step << Warlock
+    #softcore
     .goto Elwynn Forest,42.105,65.927
-    .zone Elwynn Forest >> Run back out of Stormwind to Elwynn
+    .subzone 87 >> Travel to Goldshire
+step << Warlock
+    #hardcore
+    .goto Elwynn Forest,42.105,65.927
+    .zone Elwynn Forest >> Exit Stormwind. Travel to Goldshire
 step << Warlock
     .isOnQuest 123
     .goto Elwynn Forest,42.105,65.927
-    >>Choose the Staff then equip it
-.target Marshal Dughan
->>Talk to |cFF00FF25Marshal Dughan|r
-    .turnin 176 >> Turn in Wanted:    "Hogger"
+    .target Marshal Dughan
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
+    .turnin 176 >> Turn in Wanted: "Hogger"
+    >>|cRXP_WARN_Choose the|r |T135145:0|t[|cRXP_FRIENDLY_Balanced Fighting Stick|r] |cRXP_WARN_as your reward. Equip it|r
     .turnin 123 >> Turn in The Collector
 step << Warlock
     .goto Elwynn Forest,42.105,65.927
-    >>Choose the Staff then equip it
-.target Marshal Dughan
->>Talk to |cFF00FF25Marshal Dughan|r
-    .turnin 176 >> Turn in Wanted:    "Hogger"
+    .target Marshal Dughan
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
+    .turnin 176 >> Turn in Wanted: "Hogger"
+    >>|cRXP_WARN_Choose the|r |T135145:0|t[|cRXP_FRIENDLY_Balanced Fighting Stick|r] |cRXP_WARN_as your reward. Equip it|r
 step << Warlock
     .xp 11 >> Grind to 11
 step << Warlock
-    >>Grind en route, try to level your staves skill for later
-    >>Kill the mobs inside the house, keep Morgan feared (he gouges and kills pet), nuke Surena. Loot her for her Choker
-    .goto Elwynn Forest,71.0,80.8
-    .complete 1688,1 --Collect Surena's Choker (x1)
+    #completewith next
+    .goto Elwynn Forest,71.0,80.8,150 >> Travel to the Brackwell Pumpkin Patch
+    >>|cRXP_WARN_Grind en-route. Try to level your Staff skill for later|r
+step << Warlock
+    .goto Elwynn Forest,71.10,80.66
+    >>Kill |cRXP_ENEMY_Surena Caledon|r. Loot her for her |cRXP_LOOT_Choker|r
+    >>|cRXP_WARN_Focus on killing |cRXP_ENEMY_Surena Caledon|r very quickly|r
+    >>|cRXP_WARN_Cast|r |T136183:0|t[Fear] |cRXP_WARN_on |cRXP_ENEMY_Morgan the Collector|r continously|r
+    .complete 1688,1 --Surena's Choker (1)
+    .mob Surena Caledon
 step << Warlock
     .goto Elwynn Forest,79.457,68.789
-.target Sara Timberlain
->>Talk to |cFF00FF25Sara Timberlain|r
+    .target Sara Timberlain
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sara Timberlain|r
     .turnin 59 >> Turn in Cloth and Leather Armor
 step << Warlock
-    #sticky
     #completewith next
     .goto Redridge Mountains,17.4,69.6
-    .zone Redridge Mountains >> Grind en route to Redridge, make sure to have at least 2 Soul Shards (using Drain Soul)
+    .zone Redridge Mountains >> Travel to Redridge Mountains
+    >>|cRXP_WARN_Grind en-route. Make sure you have at least 2|r |T134075:0|t[Soul Shards] |cRXP_WARN_by using|r |T136163:0|t[Drain Soul]
     .collect 6265,2 --Soul Shard (2)
 step << Warlock
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Parker|r
+    .target Guard Parker
     .goto Redridge Mountains,17.4,69.6
-.target Guard Parker
->>Talk to |cFF00FF25Guard Parker|r
     .accept 244 >> Accept Encroaching Gnolls
 step << Warlock
-    >>Be careful of the mobs en route
+    #softcore
     .goto Redridge Mountains,30.733,59.996
-.target Deputy Feldon
->>Talk to |cFF00FF25Deputy Feldon|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r
+    >>|cRXP_WARN_Be careful of mobs en-route|r
     .turnin 244 >> Turn in Encroaching Gnolls
+    .target Deputy Feldon
 step << Warlock
-    .goto Redridge Mountains,30.6,59.4
+    #hardcore
+    .goto Redridge Mountains,18.581,69.208,15,0
+    .goto Redridge Mountains,23.325,71.373,25,0
+    .goto Redridge Mountains,29.565,67.930,25,0
+    .goto Redridge Mountains,30.733,59.996
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r
+    >>|cRXP_WARN_STICK TO THE MAIN ROAD AND AVOID ANY CLOSE MOBS EN-ROUTE|r
+    .turnin 244 >> Turn in Encroaching Gnolls
+    .target Deputy Feldon
+step << Warlock
+    .goto Redridge Mountains,30.590,59.410
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
     .fp Redridge Mountains >> Get the Redridge Mountains flight path
     .fly Stormwind >> Fly to Stormwind
+    .target Ariena Stormfeather
 step << Warlock
-    #sticky
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
-    .goto StormwindClassic,27.2,78.1,15 >> Go into The Slaughtered Lamb and go downstairs
+    .goto StormwindClassic,27.2,78.1,15 >> Travel to The Slaughtered Lamb and go downstairs
 step << Warlock
-    .goto StormwindClassic,25.2,78.5
->>Talk to |cFF00FF25Gakin the Darkbinder|r
+    .goto StormwindClassic,26.117,77.225
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursula Deline|r
+    .trainer >> Train your class spells
+    .target Ursula Deline
+step << Warlock
+    .goto StormwindClassic,25.25,78.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gakin the Darkbinder|r
     .turnin 1688 >> Turn in Surena Caledon
-.target Gakin the Darkbinder
     .accept 1689 >> Accept The Binding
+    .target Gakin the Darkbinder
 step << Warlock
-    .goto StormwindClassic,25.2,80.7,14,0
-    .goto StormwindClassic,23.2,79.5,14,0
-    .goto StormwindClassic,26.3,79.5,14,0
-    .goto StormwindClassic,25.5,78.1
-    >>Go to the bottom of the crypt. Summon the Voidwalker using the Bloodstone Choker and kill it
+    #completewith next
+    .goto StormwindClassic,25.2,80.7,18,0
+    .goto StormwindClassic,23.2,79.5,18,0
+    .goto StormwindClassic,26.3,79.5,18,0
+    .goto StormwindClassic,25.154,77.406
+    >>|cRXP_WARN_Travel to the bottom of The Slaughtered Lamb|r
+    .cast 7728 >> |cRXP_WARN_Use the|r |T133292:0|t[Bloodstone Choker] |cRXP_WARN_to call forth a|r |cRXP_ENEMY_Summoned Voidwalker|r
+    .use 6928
+step << Warlock
+    .goto StormwindClassic,25.154,77.406
+    .use 6928 >> Kill the |cRXP_ENEMY_Summoned Voidwalker|r
     .complete 1689,1 --Kill Summoned Voidwalker (x1)
+    .mob Summoned Voidwalker
 step << Warlock
-    .goto StormwindClassic,25.2,78.5
-    >>Don't summon your voidwalker once you learn it
-.target Gakin the Darkbinder
->>Talk to |cFF00FF25Gakin the Darkbinder|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gakin the Darkbinder|r
+    .target Gakin the Darkbinder
+    .goto StormwindClassic,25.25,78.59
     .turnin 1689 >> Turn in The Binding
 step << Human
-    .goto StormwindClassic,74.3,47.2
->>Talk to |cFF00FF25Osric Strang|r
+    .goto StormwindClassic,74.312,47.240
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osric Strang|r
     .turnin 6281 >> Turn in Continue to Stormwind
-.target Osric Strang
+    .target Osric Strang
     .accept 6261 >> Accept Dungar Longdrink
 step << Warrior
-     >>Enter the inn
-    .goto StormwindClassic,71.7,39.9,20,0
-    .goto StormwindClassic,74.3,37.3
->>Talk to |cFF00FF25Harry Burlguard|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harry Burlguard|r
+    .target Harry Burlguard
+    .goto StormwindClassic,74.249,37.244
     .turnin 1638 >> Turn in A Warrior's Training
-.target Harry Burlguard
     .accept 1639 >> Accept Bartleby the Drunk
 step << Warrior
-    .goto StormwindClassic,73.8,36.3
->>Talk to |cFF00FF25Bartleby|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bartleby|r
+    .target Bartleby
+    .goto StormwindClassic,73.787,36.323
     .turnin 1639 >> Turn in Bartleby the Drunk
-.target Bartleby
     .accept 1640 >> Accept Beat Bartleby
-    .complete 1640,1 --Beat Bartleby
 step << Warrior
-    .goto StormwindClassic,73.8,36.3
->>Talk to |cFF00FF25Bartleby|r
+    .goto StormwindClassic,73.787,36.323
+    >>Attack |cRXP_ENEMY_Bartleby|r. He will submit at 1%
+    .complete 1640,1 --Beat Bartleby
+    .mob Bartleby
+step << Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bartleby|r
+    .target Bartleby
+    .goto StormwindClassic,73.787,36.323
     .turnin 1640 >> Turn in Beat Bartleby
-.target Bartleby
     .accept 1665 >> Accept Bartleby's Mug
 step << Warrior
-    >>You'll now learn Defensive Stance and Sunder Armor
-    .goto StormwindClassic,74.3,37.3
-.target Harry Burlguard
->>Talk to |cFF00FF25Harry Burlguard|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harry Burlguard|r
+    .target Harry Burlguard
+    .goto StormwindClassic,74.249,37.244
     .turnin 1665 >> Turn in Bartleby's Mug
 step << Priest
     #completewith next
-    .goto StormwindClassic,38.8,26.4
-.target High Priestess Laurena
->>Talk to |cFF00FF25High Priestess Laurena|r
+    .goto StormwindClassic,42.51,33.51,20 >> Travel to the Stormwind Cathedral
+step << Priest
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
+    .target High Priestess Laurena
+    .goto StormwindClassic,38.54,26.86
+    .trainer >> Train your class spells
     .turnin 5635 >> Turn in Desperate Prayer
 step << Priest
     .goto StormwindClassic,38.62,26.10
-    .train 13908 >> Train Desperate Prayer
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
+    .train 13908 >> Train |T135954:0|t[Desperate Prayer]
+    .target High Priestess Laurena
 step
-    #completewith next
-    .goto StormwindClassic,51.8,12.1
-.target Grimand Elmore
->>Talk to |cFF00FF25Grimand Elmore|r
+    .goto StormwindClassic,51.757,12.091
+    .target Grimand Elmore
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grimand Elmore|r
     .turnin 1097 >> Turn in Elmore's Task
 step
-    .goto StormwindClassic,51.8,12.1
-.target Grimand Elmore
->>Talk to |cFF00FF25Grimand Elmore|r
+    .goto StormwindClassic,51.757,12.091
+    .target Grimand Elmore
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grimand Elmore|r
     .accept 353 >> Accept Stormpike's Delivery
-step << Warrior/Paladin/Rogue
-    >>Put Sunder Armor on your bars (it's better damage than Heroic Strike) << Warrior
-    .goto StormwindClassic,56.3,17.0
-    .vendor >>Buy a Mining Pick. You'll train Mining later
-step
-    #sticky
+step << Warrior
     #completewith next
-    .goto StormwindClassic,63.9,8.3,20 >>Enter the Deeprun Tram
+    +|cRXP_WARN_Put|r |T132363:0|t[Sunder Armor] |cRXP_WARN_on your action bar and ensure to use it constantly. It is more effective than using|r |T132282:0|t[Heroic Strike]
+step << Warrior/Paladin/Rogue
+    .goto StormwindClassic,56.3,17.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaita Deepforge|r
+    .vendor >>|cRXP_WARN_Buy a|r |T134708:0|t[Mining Pick]|cRXP_WARN_. You'll train|r |T134708:0|t[Mining] |cRXP_WARN_very soon|r
+    .target Kaita Deepforge
 step
-    >>Take the tram when it arrives, then get off when it arrives on the other side << !Rogue !Warrior !Paladin !Warlock
-    >>Take the tram when it arrives. Make bandages whilst waiting for the tram and when you get on it. Accept q when you get to the other side << Rogue/Warrior/Paladin
-    >>Take the tram when it arrives. Cast Summon Voidwalker and Create Healthstone. Get off the tram on the other side << Warlock
-.target Monty
->>Talk to |cFF00FF25Monty|r
+    #completewith next
+    .goto StormwindClassic,61.149,11.568,25,0
+    .goto StormwindClassic,64.0,8.10
+    .zone Ironforge >> Enter the Deeprun Tram. Take the Tram to Ironforge
+    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_if needed while waiting for the tram|r << Rogue/Warrior/Paladin
+step
+    >>|cRXP_WARN_Get on the Tram once it arrives. Get off on the other side and look for |cRXP_FRIENDLY_Monty|r on the middle platform|r
+    >>|cRXP_WARN_Cast|r |T136221:0|t[Summon Voidwalker] |cRXP_WARN_and|r |T135230:0|t[Create Healthstone] |cRXP_WARN_while waiting|r << Warlock
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monty|r
     .accept 6661 >> Accept Deeprun Rat Roundup
+    .target Monty
 step
-    >>Use your flute on the rats scattered around
+    .use 17117 >>|cRXP_WARN_Use the|r |T133942:0|t[Rat Catcher's Flute] |cRXP_WARN_on|r |cRXP_ENEMY_Deeprun Rats|r
     .complete 6661,1 --Rats Captured (x5)
+    .mob Deeprun Rat
 step
-.target Monty
->>Talk to |cFF00FF25Monty|r
+    .target Monty
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monty|r
     .turnin 6661 >> Turn in Deeprun Rat Roundup
 step
-    .goto Ironforge,77.0,51.0
     .zone Ironforge >>Enter Ironforge
 step
     .goto Ironforge,55.501,47.742
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
     .fp Ironforge >> Get the Ironforge flight path
+    .target Gryth Thurden
 step << Warrior
-    .goto Ironforge,61.2,89.5
-    .trainer >>Train 2h Maces and Thrown
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bixi Wobblebonk|r and |cRXP_FRIENDLY_Buliwyf Stonehand|r
+    .train 2567 >> Train Thrown
+    .goto Ironforge,62.237,89.628
+    .train 199 >> Train 2h Maces
+    .goto Ironforge,61.177,89.508
+    .target Bixi Wobblebonk
+    .target Buliwyf Stonehand
+step << Warrior
+    .goto Ironforge,62.375,88.679
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r down stairs
+    .vendor >>|cRXP_WARN_Buy a|r |T135641:0|t[Balanced Throwing Dagger] and equip it|r
+    .target Brenwyn Wintersteel
 step
-    #sticky
-    #som
-    #completewith next
-    .goto Dun Morogh,53.5,34.9,100 >>Run out of Ironforge
-    >>Equip your level 11 thrown << Warrior
-step
-    #sticky
-    #era
-    #completewith next
-    .goto Dun Morogh,53.5,34.9,100 >>Run out of Ironforge
-    >>Equip your level 3 thrown << Warrior
-step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
+    .target Rudra Amberstill
     .goto Dun Morogh,60.1,52.6,50,0
-    .goto Dun Morogh,63.1,49.8
-.target Rudra Amberstill
->>Talk to |cFF00FF25Rudra Amberstill|r
+    .goto Dun Morogh,63.082,49.851
     .accept 314 >> Accept Protecting the Herd
 step
-    #sticky
     #completewith next
     .goto Dun Morogh,62.3,50.3,14,0
-    .goto Dun Morogh,62.2,49.4,12 >>Run up this part of the mountain
+    .goto Dun Morogh,62.2,49.4,10 >>Run up this part of the mountain
 step
-    >>Kill Vagash. Loot him for his Fang
-    >>Kite him to the guard south of the ranch. Make sure you do 51%+ damage to him
-    >>Be careful as this quest can be difficult
     .goto Dun Morogh,62.6,46.1
-    .goto Dun Morogh,62.78,54.60,0
-    .complete 314,1 --Collect Fang of Vagash (1)
-    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> CLICK HERE for a guide on how to solo Vagash
+    >>Kill |cRXP_ENEMY_Vagash|r. Loot him for his |cRXP_LOOT_Fang|r
+    >>|cRXP_WARN_Kite him to the guard south of the ranch. Make sure you do 51%+ damage to him|r
+    >>|cRXP_WARN_Watch the video below before you attempt to kill |cRXP_ENEMY_Vagash|r. It can be solo'd on any class|r
+    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r 
+    .complete 314,1 --Collect Fang of Vagash (1) 
+    .mob Vagash
 step
-    .goto Dun Morogh,63.1,49.8
-.target Rudra Amberstill
->>Talk to |cFF00FF25Rudra Amberstill|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
+    .target Rudra Amberstill
+    .goto Dun Morogh,63.082,49.851
     .turnin 314 >> Turn in Protecting the Herd
 step
-    #sticky
-    #label Cooking
-    .goto Dun Morogh,68.4,54.5
-    .trainer >> Train Cooking from Ghilm
+    .goto Dun Morogh,68.379,54.492
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cook Ghilm|r
+    .train 2550 >> Train |T133971:0|t[Cooking]
+    .target Cook Ghilm
 step
-    .goto Dun Morogh,68.6,54.7
-    .vendor >>Vendor, buy food+water << !Rogue !Warrior
-    .vendor >>Vendor, buy food << Rogue/Warrior
+    .goto Dun Morogh,68.614,54.643
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kazan Mogosh|r
+    .vendor >> |cRXP_BUY_Buy|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_if needed|r << Warrior/Rogue
+    .vendor >> |cRXP_BUY_Buy|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_and|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_if needed|r << !Warrior !Rogue
+    .target Kazan Mogosh
 step
-    #requires Cooking
-    .goto Dun Morogh,68.7,56.0
-.target Senator Mehr Stonehallow
->>Talk to |cFF00FF25Senator Mehr Stonehallow|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r and |cRXP_FRIENDLY_Foreman Stonebrow|r
     .accept 433 >> Accept The Public Servant
-step
-    .goto Dun Morogh,69.084,56.330
-.target Foreman Stonebrow
->>Talk to |cFF00FF25Foreman Stonebrow|r
+    .goto Dun Morogh,68.671,55.969
     .accept 432 >> Accept Those Blasted Troggs!
+    .goto Dun Morogh,69.084,56.330
+    .target Senator Mehr Stonehallow
+    .target Foreman Stonebrow
 step << Warrior/Paladin/Rogue
-    .goto Dun Morogh,69.3,55.5
-    .train 2575 >>Train Mining, cast Find Minerals
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dank Drizzlecut|r
+    .goto Dun Morogh,69.324,55.456
+    .train 2575 >>Train |T134708:0|t[Mining]
+step << Warrior/Paladin/Rogue
+    .cast 2580 >> |cRXP_WARN_Cast|r |T136025:0|t[Find Minerals]
 step
     .goto Dun Morogh,70.7,56.4,40,0
-    .goto Dun Morogh,70.62,52.39
-    >>Kill Troggs in the cave
-    >>Keep an eye out for nodes to get more rough stones. << Rogue/Warrior/Paladin
-    .complete 432,1 --Kill Rockjaw Skullthumper (6)
-    .complete 433,1 --Kill Rockjaw Bonesnapper (10)
+    .goto Dun Morogh,70.62,52.39,25,0
+    .goto Dun Morogh,70.7,56.4
+    >>Kill |cRXP_ENEMY_Rockjaw Skullthumpers|r and |cRXP_ENEMY_Rockjaw Bonesnappers|r
+    .complete 432,1 --Kill Rockjaw Skullthumper (x6)
+    .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
+    .mob Rockjaw Skullthumper
+    .mob Rockjaw Bonesnapper
 step << !Warlock
     .xp 10+6350 >>Grind until 6350+/7600
 step << Warlock
     .xp 12
 step
-    .goto Dun Morogh,69.084,56.330
-.target Foreman Stonebrow
->>Talk to |cFF00FF25Foreman Stonebrow|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Stonebrow|r and |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
     .turnin 432 >> Turn in Those Blasted Troggs!
-step
-    .goto Dun Morogh,68.9,55.9
-    .vendor >> vendor trash, repair
-step
-    .goto Dun Morogh,68.7,56.0
-.target Senator Mehr Stonehallow
->>Talk to |cFF00FF25Senator Mehr Stonehallow|r
+    .goto Dun Morogh,69.084,56.330
     .turnin 433 >> Turn in The Public Servant
+    .goto Dun Morogh,68.671,55.969
+    .target Senator Mehr Stonehallow
+    .target Foreman Stonebrow
+step
+    .goto Dun Morogh,68.614,54.643
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kazan Mogosh|r
+    .vendor >> |cRXP_WARN_Vendor trash|r << !Priest !Warlock !Mage
+    .vendor >> |cRXP_BUY_Buy 20|r |T132815:0|t[Ice Cold Milk] << Priest/Warlock/Mage
+    .target Kazan Mogosh
 step << !Warlock
     .xp 11
 step
-    .goto Dun Morogh,68.6,54.7
-    .vendor >>Vendor, buy x30 level 5 drink << Mage/Warlock/Priest
-step
     .goto Dun Morogh,81.2,42.7,45,0
     .goto Dun Morogh,83.892,39.188
-.target Pilot Hammerfoot
->>Talk to |cFF00FF25Pilot Hammerfoot|r
+    .target Pilot Hammerfoot
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Hammerfoot|r
     .accept 419 >> Accept The Lost Pilot
 step
-    >>Click the Dwarf Corpse
-    .goto Dun Morogh,79.7,36.2
+    >>Click the |cRXP_PICK_Dwarven Corpse|r
+    .goto Dun Morogh,79.672,36.171
     .turnin 419 >> Turn in The Lost Pilot
     .accept 417 >> Accept A Pilot's Revenge
 step
-    >>Kill Mangeclaw. Loot him for his Claw
-    .goto Dun Morogh,78.9,37.0
+    >>Kill |cRXP_ENEMY_Mangeclaw|r. Loot him for his |cRXP_LOOT_Claw|r
+    .goto Dun Morogh,78.97,37.14
     .complete 417,1 --Collect Mangy Claw (x1)
+    .unitscan Mangeclaw
 step
     #som
     .goto Dun Morogh,83.892,39.188
     >>Choose the dagger, use it as your offhand until you get a vendor sword << Rogue
-.target Pilot Hammerfoot
->>Talk to |cFF00FF25Pilot Hammerfoot|r
+    .target Pilot Hammerfoot
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Hammerfoot|r
     .turnin 417 >> Turn in A Pilot's Revenge
 step
     #era
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Hammerfoot|r
+    >>|cRXP_WARN_Choose the|r |T135641:0|t[|cRXP_FRIENDLY_Craftsman's Dagger|r] |cRXP_WARN_as your reward. Equip it in your Off-Hand|r << Rogue
+    .target Pilot Hammerfoot
     .goto Dun Morogh,83.892,39.188
-    >>Choose the dagger, use it as your offhand << Rogue
-.target Pilot Hammerfoot
->>Talk to |cFF00FF25Pilot Hammerfoot|r
     .turnin 417 >> Turn in A Pilot's Revenge
 step
     .goto Dun Morogh,84.4,31.1,25 >>Go through the tunnel to Loch Modan

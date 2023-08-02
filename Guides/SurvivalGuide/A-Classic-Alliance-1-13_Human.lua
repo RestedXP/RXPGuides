@@ -1593,7 +1593,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monty|r
     .turnin 6661 >> Turn in Deeprun Rat Roundup
 step
-    .goto Ironforge,77.0,51.0
     .zone Ironforge >>Enter Ironforge
 step
     .goto Ironforge,55.501,47.742
@@ -1774,6 +1773,10 @@ step
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
     .mob Rockjaw Skullthumper
     .mob Rockjaw Bonesnapper
+step << !Warlock
+    .xp 10+6350 >>Grind until 6350+/7600
+step << Warlock
+    .xp 12
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Stonebrow|r and |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
     .turnin 432 >> Turn in Those Blasted Troggs!
@@ -1782,10 +1785,6 @@ step
     .goto Dun Morogh,68.671,55.969
     .target Senator Mehr Stonehallow
     .target Foreman Stonebrow
-step << !Warlock
-    .xp 10+6350 >>Grind until 6350+/7600
-step << Warlock
-    .xp 12
 step
     .goto Dun Morogh,68.614,54.643
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kazan Mogosh|r
@@ -1800,7 +1799,6 @@ step
     .target Pilot Hammerfoot
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Hammerfoot|r
     .accept 419 >> Accept The Lost Pilot
-
 step
     >>Click the |cRXP_PICK_Dwarven Corpse|r
     .goto Dun Morogh,79.672,36.171
