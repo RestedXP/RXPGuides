@@ -1477,9 +1477,7 @@ step << Rogue
 step << Priest
     .goto Durotar,54.26,42.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'jin|r
-    .turnin 5649 >> In Favor of Spirituality
-    .accept 5648 >> Garments of Spirituality
-    .trainer >> Train your class spells
+    .train 139 >> Train your class spells
     .target Tai'jin
 step << Priest
     .goto Durotar,53.10,46.46
