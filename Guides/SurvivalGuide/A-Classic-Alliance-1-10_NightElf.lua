@@ -221,7 +221,7 @@ step
     .turnin 3522 >> Turn in Iverron's Antidote
 step
     #completewith next
-    56.73,31.17,25 >> Enter the Shadowthread Cave
+    .goto Teldrassil,56.73,31.17,25 >> Enter the Shadowthread Cave
 step
     .goto Teldrassil,57.0,26.4
     >>Loot a |cRXP_LOOT_Webwood Egg|r on the ground at the back of the Cave
@@ -1318,7 +1318,7 @@ step << Hunter/Warrior/Priest
     .target Ilyenia Moonfire
 step << Hunter
     .goto Darnassus,58.76,44.48
-	.money <0.01751
+	.money <0.1751
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariyell Skyshadow|r
 	>>|cRXP_BUY_Buy and equip a|r |T135489:0|t[Laminated Recurve Bow]
     >>|cRXP_BUY_Buy|r |T132382:0|t[Sharp Arrows]
