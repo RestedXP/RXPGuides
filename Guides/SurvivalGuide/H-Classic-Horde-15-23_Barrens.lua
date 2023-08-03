@@ -740,6 +740,9 @@ step
     .target Innkeeper Wiley
 step
     #completewith BarenLongshore
+    +Destroy the |T133735:0|t[Control Console Operating Manual] as you won't need it
+step
+    #completewith BarenLongshore
     >>Kill |cRXP_ENEMY_Southsea Brigands|r and |cRXP_ENEMY_Southsea Cannoneers|r
     .complete 887,1 --Southsea Brigand (12)
     .complete 887,2 --Southsea Cannoneer (6)
@@ -3852,16 +3855,15 @@ step << Priest
     .target Ur'kyo
     .xp <24,1
 step << Rogue/Druid
+    #completewith MissionProbable
     .goto Orgrimmar,26.22,61.58,80,0
     .goto Orgrimmar,15.66,63.33,30,0
-    .goto Orgrimmar,18.03,60.51,0
+    .goto Orgrimmar,18.03,60.51,30,0
     .zone The Barrens >> Enter The Barrens through the Western Exit
     .zoneskip The Barrens
-    .isOnQuest 3924
 step << Rogue/Druid
     #completewith MissionProbable
     .goto The Barrens,57.63,7.48,120 >> Travel toward the Sludge Ven
-    .isOnQuest 3924
 step << Druid
     .goto The Barrens,56.67,8.32
     >>Loot the |cRXP_PICK_Strange Lockbox|r in the water for the |T133443:0|t[Half Pendant of Aquatic Agility]
@@ -3869,9 +3871,8 @@ step << Druid
 step << Rogue
     #completewith next
     .goto The Barrens,55.70,5.89
-	.cast 10113 >>Target |cRXP_FRIENDLY_Taskmaster Fizzule|r, then use your |T134536:0|t[Flare Gun] TWICE and type /Salute
+	.use 8051 >>Target |cRXP_FRIENDLY_Taskmaster Fizzule|r, then use your |T134536:0|t[Flare Gun] TWICE and type /Salute
     >>|cRXP_WARN_Be careful! Do NOT approach him until he becomes friendly or he will attack you!|r
-    .use 8051
     .target Taskmaster Fizzule
 step << Rogue
     #label MissionProbable

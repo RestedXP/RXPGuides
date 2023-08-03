@@ -2611,7 +2611,7 @@ step << Shaman
     .itemcount 854,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.4
-step << !Hunter
+step << !Hunter !Shaman
     #label LeaveOrg2
     #completewith ZeptoUC1
     .zone Durotar >> Leave Orgrimmar
@@ -2737,7 +2737,7 @@ step << Shaman/Hunter
     .turnin 809 >>Turn in Ak'Zeloth
     .accept 924 >>Accept The Demon Seed
     .target Ak'Zeloth
-    .isOnQuest 809
+    .isQuestTurnedIn 829
     .group
 step << Shaman/Hunter
     .goto The Barrens,62.34,20.03
@@ -2963,7 +2963,7 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.4
 step << Shaman
     #completewith ZeptoUC1
-    +Equip the |T135154:0|t[Quarter Staff] when you are level 11
+    +Equip the |T135154:0|t[Quarter Staff]
     .use 854
     .itemcount 854,1
     .itemStat 16,QUALITY,<7
