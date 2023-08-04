@@ -3953,7 +3953,7 @@ step
     .isOnQuest 356
 step << Priest/Warlock
     #completewith Scarletrings
-    >>|cRXP_WARN_Collect 3 stacks of|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for your wand. This is the last chance to get enough before Silverpine Forest|r
+    >>|cRXP_WARN_Collect 3 stacks of|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for your Lesser Magic Wand. This is the last chance to get enough before Silverpine Forest|r
     .collect 2589,60,435,1 --Linen Cloth (60)
     .mob Scarlet Friar
     .mob Scarlet Zealot

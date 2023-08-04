@@ -2495,7 +2495,6 @@ step
 step << Troll Warrior/Undead Warrior
     #completewith next
     +|cRXP_WARN_Pick the|r |T135158:0|t[Blemished Wooden Staff] |cRXP_WARN_as your quest reward and save it. You will get staff training in Orgrimmar|r
-    .group
 step
     .goto Durotar,46.37,22.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rezlak|r
@@ -3056,7 +3055,7 @@ step << Shaman/Hunter
     .goto Orgrimmar,52.77,48.97,10,0
     .deathskip >> Enter RFC to die on purpose. Respawn at the |cRXP_FRIENDLY_Spirit Healer|r. Alternatively, run out of Orgrimmar
 step << Shaman/Hunter
-    #softcore
+    #hardcore
     #label Leaveorg2
     #completewith next
     .zone Durotar >> Leave Orgrimmar
@@ -3152,7 +3151,7 @@ step
     .target Coleman Farthing
     .target Gretchen Dedmar
     .maxlevel 11 << !Warrior !Warlock
-    .maxlevel 12 << !Warlock
+    .maxlevel 12 << Warlock
     .maxlevel 13 << Warrior
 step << Warrior
     .goto Tirisfal Glades,61.85,52.55
@@ -3291,7 +3290,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Simmer|r
     .accept 365 >>Accept Fields of Grief
     .target Deathguard Simmer
-    .maxlevel 10
+    .maxlevel 10 << !Warlock
+    .maxlevel 11 << Warlock
 step
     .goto Tirisfal Glades,37.20,52.17,50,0
     .goto Tirisfal Glades,36.64,50.09,50,0
@@ -3322,11 +3322,11 @@ step
     .isOnQuest 367
 step
     #softcore
-    #completewith Brillturnins2
+    #completewith ZealotGriefer
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step
     #hardcore
-    #completewith Brillturnins2
+    #completewith ZealotGriefer
     .goto Tirisfal Glades,58.20,51.43,120 >> Travel back to Brill
 step
     .goto Tirisfal Glades,58.20,51.43
@@ -3387,12 +3387,13 @@ step
     .target Deathguard Burgess
     .isQuestTurnedIn 427
 step
+    #label ZealotGriefer
     .goto Tirisfal Glades,61.97,51.29
     >>|cRXP_WARN_Enter the room behind the innkeeper, then go downstairs|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captured Scarlet Zealot|r
     .turnin 407 >>Turn in Fields of Grief
     .target Captured Scarlet Zealot
-    .isOnQuest 407
+    .isQuestTurnedIn 365
 step << Warlock/Mage
     #completewith UCflightpath1
     .goto Tirisfal Glades,61.80,65.06,20,0
@@ -3601,9 +3602,6 @@ step << Warlock
     .goto Tirisfal Glades,61.92,64.85,50,0
     .zone Tirisfal Glades >> Exit Undercity
     .zoneskip Tirisfal Glades
-
-
-
 step
     #completewith next
     >>Kill any |cRXP_ENEMY_Duskbat|r that you see. Loot them for their |cRXP_LOOT_Pelts|r
@@ -3698,6 +3696,7 @@ step
     .mob Vile Fin Puddlejumper
     .mob Vile Fin Minor Oracle
     .mob Vile Fin Muckdweller
+    .isOnQuest 368
 step
     #completewith RotHideGnolls
     >>Kill any |cRXP_ENEMY_Duskbat|r that you see. Loot them for their |cRXP_LOOT_Pelts|r
