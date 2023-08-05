@@ -2565,17 +2565,9 @@ step
     .turnin 5052 >>Turn in Blood Shards of Agamaggan
     .target Mangletooth
 step
-    #completewith IshamuhaleTurnin
+    #completewith Thunderhawk
     +|cRXP_WARN_Use your|r |T134128:0|t[|cFF00BCD4Blood Shards|r] |cRXP_WARN_to get buffs. Save at least 4 of them for later|r
     +|cRXP_WARN_Make sure to turn off any autocomplete functions from addons such as Questie or Leatrix Plus for this!|r
-step
-    .goto The Barrens,44.85,59.14
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorn Skyseer|r
-    .turnin 882 >>Turn in Ishamuhale
-    .turnin 883 >>Turn in Lakota'mani
-    .accept 907 >>Accept Enraged Thunder Lizards
-    .target Jorn Skyseer
-    .isOnQuest 883
 step
     #label IshamuhaleTurnin
     .goto The Barrens,44.85,59.14
@@ -2583,6 +2575,13 @@ step
     .turnin 882 >>Turn in Ishamuhale
     .accept 907 >>Accept Enraged Thunder Lizards
     .target Jorn Skyseer
+step
+    .goto The Barrens,44.85,59.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorn Skyseer|r
+    .accept 883 >>Accept Lakota'Mani
+    .turnin 883 >>Turn in Lakota'mani
+    .target Jorn Skyseer
+    .itemcount 5099,1
 step
     .goto The Barrens,44.32,60.84,60,0
     .goto The Barrens,44.25,61.78,60,0
@@ -2604,6 +2603,7 @@ step
     .mob Thunderhead
     .mob Stormsnout
 step
+    #label Thunderhawk
     .goto The Barrens,44.85,59.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorn|r
     .turnin 907 >>Turn in Enraged Thunder Lizards
@@ -4069,3 +4069,4 @@ step
     .zoneskip Tirisfal Glades
 
 ]])
+
