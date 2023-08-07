@@ -3203,6 +3203,7 @@ step
      >> Talk to the guard patrolling Thelsamar
 .target Mountaineer Kadrell
 >>Talk to |cFF00FF25Mountaineer Kadrell|r
+    .turnin -414 >> Turn in Stout to Kadrell
     .accept 416 >> Accept Rat Catching
     .accept 1339 >> Accept Mountaineer Stormpike's Task
 step
@@ -6091,6 +6092,7 @@ step
     --.accept 416 >> Accept Rat Catching
 .target Mountaineer Kadrell
 >>Talk to |cFF00FF25Mountaineer Kadrell|r
+    .turnin -414 >> Turn in Stout to Kadrell
     .accept 1339 >> Accept Mountaineer Stormpike's Task
 step
        .goto Loch Modan,35.5,48.4
