@@ -3186,260 +3186,299 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Alliance 1-20
 #next RestedXP Alliance 20-30\21-23 Ashenvale/Stonetalon
---WIP. Did not start polish/overhaul
+
 step
 #map Darkshore
     #sticky
     #label prospector
     .goto Felwood,18.08,64.03
-.target Prospector Remtravel
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Prospector Remtravel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Remtravel|r
     .turnin 729 >> Turn in The Absent Minded Prospector
-step <<  Hunter
+    .target Prospector Remtravel
+step
     .goto Darkshore,35.72,83.69
-     >> Start the escort quest
-    >>This quest is hard, proceed with caution
-.target Prospector Remtravel
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Prospector Remtravel|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Remtravel|r
+    >>This will start an escort
     .accept 731,1 >> Accept The Absent Minded Prospector
-    .link https://www.twitch.tv/videos/1182180918 >> Click here for video reference
-step <<  Hunter
+    >>|cRXP_WARN_This quest is VERY difficult. Skip this step if you're unable to find a group or solo it|r
+    .link https://www.twitch.tv/videos/1182180918 >> |cRXP_WARN_Click here for a video guide|r
+    .target Prospector Remtravel
+step
     #requires prospector
-     >> Escort Prospector Remtravel
-     .complete 731,1
-    .link https://www.twitch.tv/videos/1182180918 >> Click here for video reference
+    >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Prospector Remtravel|r through the Excavation|r
+    >>|cRXP_WARN_This quest is VERY difficult. Skip this step if you're unable to find a group or solo it|r
+    .link https://www.twitch.tv/videos/1182180918 >> |cRXP_WARN_Click here for a video guide|r
+    .complete 731,1
+    .isOnQuest 731
 step
-    #completewith next
     .goto Ashenvale,22.36,3.98
-    >>Start the escort quest
-.target Therylune
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Therylune|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therylune|r. This will start an escort
+    >>|cRXP_WARN_Skip this step if she is not there|r
     .accept 945 >> Accept Therylune's Escape
+    .target Therylune
 step
-    .goto Ashenvale,22.36,3.98
-    >> Escort Therylune
-    .complete 945,1
+    .goto Darkshore,40.51,87.09
+    >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Therylune|r out of The Masters Glaive|r
+    .complete 945,1 -- Escort Therylune
+    .isOnQuest 945
 step
-	#era/som
+    #era/som
     .goto Ashenvale,13.97,4.10
+    >>Click the |cRXP_PICK_Beached Sea Creature|r
     .accept 4733 >> Accept Beached Sea Creature
-    >>This quest can be a little hard, try to pull the murlocs 1 by 1, otherwise you can end up aggroing the whole camp
-    .link https://www.twitch.tv/videos/992307825?t=05h48m36s >> Click here for video reference
+    >>|cRXP_WARN_This quest can be VERY difficult. Engage the |cRXP_ENEMY_Murlocs|r 1 by 1, otherwise you may agro multiple at the same time|r
+    .link https://www.twitch.tv/videos/992307825?t=05h48m36s >> |cRXP_WARN_Click here for a video guide|r
 step
-	#era/som
+    #era/som
     .goto Ashenvale,13.93,2.01
+    >>Click the |cRXP_PICK_Beached Sea Turtle|r
     .accept 4732 >> Accept Beached Sea Turtle
 step
 #map Darkshore
-	#era/som
+    #era/som
     .goto Felwood,13.47,64.01
+    >>Click the |cRXP_PICK_Beached Sea Turtle|r
     .accept 4731 >> Accept Beached Sea Turtle
 step
 #map Darkshore
-	#era/som
+    #era/som
     .goto Felwood,14.62,60.72
+    >>Click the |cRXP_PICK_Beached Sea Creature|r
     .accept 4730 >> Accept Beached Sea Creature
 step
 	#era/som
-    >>Kill Grizzled Thistle Bears
-    .complete 1003,1
+    .goto Darkshore,41.44,86.06,50,0
+    .goto Darkshore,41.77,84.60,50,0
+    .goto Darkshore,42.94,82.25,50,0
+    .goto Darkshore,43.59,80.02,50,0
+    .goto Darkshore,39.74,80.43,50,0
+    .goto Darkshore,38.00,83.55
+    >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Scalps|r
+    .complete 1003,1 -- Grizzled Scalp (4)
+    .isOnQuest 1003
+    .mob Grizzled Thistle Bear
 step
-#map Darkshore
-	#era/som
-    .goto Felwood,24.53,60.46
+    #era/som
+    .goto Darkshore,41.389,80.565
+    >>Click the |cRXP_PICK_Buzzbox 525|r on the ground
     .turnin 1003 >> Turn in Buzzbox 525
+    .isOnQuest 1003
 step
     #label lostmaster1
     #completewith lostmaster2
-    #sticky
-    .goto Ashenvale,29.58,1.67
-.target Volcor
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Volcor|r
+    .goto Darkshore,45.00,85.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Volcor|r
     .turnin 993 >> Turn in A Lost Master
+    .target Volcor
+    .isQuestTurnedIn 986
 step
 	#era/som
-     >> Clear the furbolgs near the cave before accepting this quest
-.target Volcor
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Volcor|r
+    .target Volcor
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Volcor|r
+    >>Clear the furbolgs near the cave before accepting this quest
     .accept 994 >> Accept Escape Through Force
 step
 	#som
 	#phase 3-6
-     >> Accept the quest and wait for the RP sequence to finish
-.target Volcor
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Volcor|r
+    .target Volcor
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Volcor|r
     .accept 995 >> Accept Escape Through Stealth
+    .timer 20,Escape Through Stealth RP
 step
 	#era/som
     #requires lostmaster1
     #label lostmaster2
-     >> Escort Volcor
-     .complete 994,1
+    >>Escort |cFF00FF25Volcor|r
+    .complete 994,1
 step
 	#som
 	#phase 3-6
     #requires lostmaster1
     #label lostmaster2
-     >> Wait for the RP dialogue to end
-     .complete 995,1
+    .goto Darkshore,44.44,84.69
+    >>|cRXP_WARN_Wait out the RP|r
+    .complete 995,1
+    .isQuestTurnedIn 986
 step
-#map Darkshore
+    #map Darkshore
     .goto Felwood,27.00,55.59
-.target Onu
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Onu|r
+    .target Onu
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Onu|r
     .turnin 951 >> Turn in Mathystra Relics
 step
 #map Darkshore
     .goto Felwood,27.96,55.76
-    >>Speak to Kerlonian and start the escort quest
-    >>If he's not there, you can skip this quest (can take up to 25 minutes to respawn depending on other players)
-.target Kerlonian Evershade
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Kerlonian Evershade|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kerlonian Evershade|r to start the escort
+    >>|cRXP_WARN_Skip this step if he is not there. It can take up to 25 minutes for him to respawn|r
+	.target Kerlonian Evershade
     .accept 5321 >> Accept The Sleeper Has Awakened
 step
     .isOnQuest 5321
     .goto Darkshore,44.38,76.30
-     >> Loot the chest next to the quest giver
-    .complete 5321,1
+    >>Open |cRXP_PICK_Kerlonian's Chest|r. Loot it for the |T134229:0|t[|cRXP_LOOT_Horn of Awakening|r]
+    .complete 5321,1 -- Horn of Awakening (1)
 step
-     #completewith tower
-     .zone Ashenvale >> Head south to Ashenvale
-     .goto Ashenvale,29.7,13.6
-step
-    .goto Ashenvale,27.26,35.58
-    >>Avoid walking on the main road while doing the escort quest
-     .complete 5321,2
-     .isOnQuest 5321
+    #completewith tower
+    .zone Ashenvale >> Travel south to Ashenvale
+    .goto Ashenvale,29.7,13.6
 step
     .goto Ashenvale,27.26,35.58
-.target Liladris Moonriver
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Liladris Moonriver|r
+    >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Kerlonian|r to Maestra's Post in Ashenvale|r
+    .use 13536 >> |cRXP_WARN_Use the|r |T134229:0|t[|cRXP_LOOT_Horn of Awakening|r] |cRXP_WARN_whenever |cRXP_FRIENDLY_Kerlonian|r falls asleep next to him|r
+    >>|cRXP_WARN_Avoid running on the main road as much as possible. Enemies will only spawn if you're on the road|r
+    .complete 5321,2
+    .isOnQuest 5321
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Liadris Moonriver|r
+	.target Liladris Moonriver
+    .goto Ashenvale,27.26,35.58
     .turnin 5321 >> Turn in The Sleeper Has Awakened
     .isQuestComplete 5321
 step
     #label tower
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
+	.target Delgren the Purifier
     .goto Ashenvale,26.19,38.69
-.target Delgren the Purifier
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Delgren the Purifier|r
     .turnin 967 >> Turn in The Tower of Althalaxx
 step
 	#era/som
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
+	.target Delgren the Purifier
     .goto Ashenvale,26.19,38.69
-.target Delgren the Purifier
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Delgren the Purifier|r
     .accept 970 >> Accept The Tower of Althalaxx
 step
-	#era/som
-     #completewith next
-    .goto Ashenvale,31.41,30.66
-     >> Kill cultists
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orendil Broadleaf|r
+	.target Orendil Broadleaf
+    .goto Ashenvale,26.43,38.59
+    .accept 1010 >> Accept Bathran's Hair
+    .xp <20,1
+step
+    #era/som
+    .goto Ashenvale,31.25,30.70
+    >>Kill |cRXP_ENEMY_Dark Strand Cultists|r, |cRXP_ENEMY_Dark Strand Adepts|r, |cRXP_ENEMY_Dark Strand Enforcers|r and |cRXP_ENEMY_Dark Strand Excavators|r. Loot them for the |cRXP_LOOT_Glowing Soul Gem|r
     .complete 970,1
+    .xp 20
+    .mob Dark Strand Cultist
+    .mob Dark Strand Adept
+    .mob Dark Strand Enforcer
+    .mob Dark Strand Excavator
+step
+    .goto Ashenvale,33.01,21.41,50,0
+    .goto Ashenvale,29.53,24.33,40,0
+    .goto Ashenvale,31.89,22.53
+    >>Open the |cRXP_PICK_Plant Bundles|r on the ground. Loot them for |cRXP_LOOT_Bathran's Hairs|r
+    >>|cRXP_WARN_They look like small brown sacks. They can be hard to see|r
+    .complete 1010,1
+    .isOnQuest 1010
 step
 	#era/som
-     #completewith next
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
+	.target Delgren the Purifier
     .goto Ashenvale,26.19,38.69
-.target Delgren the Purifier
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Delgren the Purifier|r
     .turnin 970 >> Turn in The Tower of Althalaxx
 step
+    .goto Ashenvale,31.89,22.53
     .xp 20 >> Grind to level 20
 step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orendil Broadleaf|r
+	.target Orendil Broadleaf
     .goto Ashenvale,26.43,38.59
-.target Orendil Broadleaf
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Orendil Broadleaf|r
     .accept 1010 >> Accept Bathran's Hair
 step
-    .goto Ashenvale,31.63,22.33
-     >> Look out for the herb sacks on the ground
+    .goto Ashenvale,33.01,21.41,50,0
+    .goto Ashenvale,29.53,24.33,40,0
+    .goto Ashenvale,31.89,22.53
+    >>Open the |cRXP_PICK_Plant Bundles|r on the ground. Loot them for |cRXP_LOOT_Bathran's Hairs|r
+    >>|cRXP_WARN_They look like small brown sacks. They can be hard to see|r
     .complete 1010,1
+    .isOnQuest 1010
 step
-	#era/som
-    .goto Ashenvale,31.41,30.66
-     >> Kill cultists
-    .complete 970,1
-step
-    #sticky
-    #label hair
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orendil Broadleaf|r
+	.target Orendil Broadleaf
     .goto Ashenvale,26.43,38.59
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Orendil Broadleaf|r
     .turnin 1010 >> Turn in Bathran's Hair
-.target Orendil Broadleaf
     .accept 1020 >> Accept Orendil's Cure
 step
 	#era/som
-    .goto Ashenvale,26.43,38.59
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Delgren the Purifier|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
+	.target Delgren the Purifier
+    .goto Ashenvale,26.19,38.69
     .turnin 970 >> Turn in The Tower of Althalaxx
-.target Delgren the Purifier
     .accept 973 >> Accept The Tower of Althalaxx
 step
-    #requires hair
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therysil|r
+	.target Therysil
     .goto Ashenvale,22.64,51.91
-.target Therysil
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Therysil|r
     .turnin 945 >> Turn in Therylune's Escape
     .isQuestComplete 945
 step
     #completewith end
-     +Save up to 6 Gooey Spider Legs looted from the Spiders in the zone for later
-step <<  Hunter
-    .goto Ashenvale,18.00,59.80
-    >>Head to the Hunter trainer in Ashenvale
-    .train 5118 >> Speak to the hunter trainer and learn Aspect of the Cheetah
-    .train 15147 >> Train pet skills
+    +Save up to 6 |cRXP_LOOT_Gooey Spider Legs|r looted from the |cRXP_LOOT_Spiders|r in the zone for later
+    .collect 2251,6,93,1 -- Gooey Spider Legs
+step << Hunter
+    .goto Ashenvale,18.010,59.832
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alenndaar Lapidaar|r
+    .trainer >> Train your class skills
+    .train 5118 >> Train |T132242:0|t[Aspect of the Cheetah]
+    .target Alenndaar Lapidaar
+step << Hunter
+    .goto Ashenvale,17.976,60.039
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bolyun|r
+    .trainer >> Train your pet skills
+    .target Bolyun
 step
     .goto Ashenvale,34.40,48.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daelyshia|r
     .fp Astranaar>> Get the Astranaar Flight Path
+	.target Daelyshia
 step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shindrell Swiftfire|r
+	.target Shindrell Swiftfire
     .goto Ashenvale,34.67,48.83
-.target Shindrell Swiftfire
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Shindrell Swiftfire|r
     .accept 1008 >> Accept The Zoram Strand
 step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Thenysil|r
+	.target Sentinel Thenysil
     .goto Ashenvale,34.89,49.79
-.target Sentinel Thenysil
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Sentinel Thenysil|r
     .accept 1070 >> Accept On Guard in Stonetalon
 step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faldreas Goeth'Shael|r
+	.target Faldreas Goeth'Shael
     .goto Ashenvale,35.76,49.10
-.target Faldreas Goeth'Shael
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Faldreas Goeth'Shael|r
     .accept 1056 >> Accept Journey to Stonetalon Peak
 step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r
+	.target Raene Wolfrunner
     .goto Ashenvale,36.61,49.58
-.target Raene Wolfrunner
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Raene Wolfrunner|r
     .accept 991 >> Accept Raene's Cleansing
     .accept 1054 >> Accept Culling the Threat
-step <<  !Dwarf/!Hunter
-    .home >> Set your HS to Astranaar
+step << !Dwarf/!Hunter
+    .goto Ashenvale,36.99,49.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kimlya|r
+    .home >> Set your Hearthstone to Astranaar
+    .target Innkeeper Kimlya
 step
     .goto Ashenvale,37.36,51.79
-.target Pelturas Whitemoon
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Pelturas Whitemoon|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Pelturas Whitemoon|r
+	.target Pelturas Whitemoon
     .turnin 1020 >> Turn in Orendil's Cure
     .timer 26,Orendil's Cure RP
-step
-    .goto Ashenvale,37.36,51.79
-     >> Wait for the RP sequence to end
-.target Pelturas Whitemoon
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Pelturas Whitemoon|r
     .accept 1033 >> Accept Elune's Tear
 step
     .goto Ashenvale,46.37,46.38
-     >> Loot the pearl shaped objects
-    >>Be careful with mobs sneaking underwater
+    >>Loot |cRXP_LOOT_Elune's Tear|r on the ground
     .complete 1033,1
 step
     .goto Ashenvale,37.36,51.79
-     >> Wait for the RP sequence to end
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Pelturas Whitemoon|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pelturas Whitemoon|r
+	.target Pelturas Whitemoon
     .turnin 1033 >> Turn in Elune's Tear
-.target Pelturas Whitemoon
+    .timer 17,Elune's Tear RP
     .accept 1034 >> Accept The Ruins of Stardust
 step
     .goto Ashenvale,33.30,67.79
-     >> Loot the bushes at the lake island
+    >>Loot the |cRXP_PICK_Stardust Covered Bushes|r for the |cRXP_LOOT_Handful of Stardust|r
+    >>|cRXP_WARN_Their spawn locations are scattered throughout the island|r
     .complete 1034,1
 step
     #completewith next
@@ -3450,133 +3489,174 @@ step
     .goto Ashenvale,27.50,60.76,8 >> Climb the hill next to the big tree to the right of the Fire Scar Shrine entrance
     >>Jump over the tree root and hug the right to avoid aggroing mobs
 step
-	#era/som
+    #era/som
     .goto Ashenvale,25.27,60.68
-    >>Kill Ilkrud Magthrull
-    >>This quest is HARD, you can skip this right now and do it later at level 23
+    >>Kill |cRXP_ENEMY_Ilkrud Magthrull|r. Loot him for his |cRXP_LOOT_Tome|r
+    >>|cRXP_ENEMY_Ilkrud Magthrull|r |cRXP_WARN_will cast|r |T136221:0|t[Ilkrud's Guardians] |cRXP_WARN_which is a 5 second long cast and will summon 2 Voidwalkers. Stop this cast if you're able to|r
+    >>|cRXP_WARN_Clear an exit path if needed so you can reset them along with the |cRXP_ENEMY_Succubus|r if needed. You may skip this and do it at level 23 if you wish|r
     .complete 973,1
-    .link https://www.twitch.tv/videos/1182187763 >> Click here for video reference
+    .link https://www.twitch.tv/videos/1182187763 >> |cRXP_WARN_Click here for video reference|r
 	.isOnQuest 973
+    .mob Ilkrud Magthrull
 step
-	#era/som
+    #era/som
     .isQuestComplete 973
     .goto Ashenvale,26.19,38.69
-.target Delgren the Purifier
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Delgren the Purifier|r
+    .target Delgren the Purifier
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
     .turnin 973 >> Turn in The Tower of Althalaxx
 step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talen|r
+	.target Talen
     .goto Ashenvale,14.79,31.29
-.target Talen
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Talen|r
     .accept 1007 >> Accept The Ancient Statuette
 step
-    #sticky
-    #label nagas
-    .goto Ashenvale,7.00,15.20,0
-     >> Kill nagas around the coast
+    #completewith nagas
+    >>Kill |cRXP_ENEMY_Wrathtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
+    >>|cRXP_WARN_Don't go out of your way to complete this yet|r
+	.mob Wrathtail Wave Rider
+	.mob Wrathtail Sorceress
     .complete 1008,1
 step
     .goto Ashenvale,14.20,20.64
-     >> Loot The Ancient Statuette
+    >>Loot the |cRXP_LOOT_Ancient Statuette|r on the ground
     .complete 1007,1
 step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talen|r
+	.target Talen
     .goto Ashenvale,14.79,31.29
-     >> Wait for the RP sequence
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Talen|r
     .turnin 1007 >> Turn in The Ancient Statuette
-    .timer 25,The Ancient Statuette RP
-.target Talen
+    .timer 22,The Ancient Statuette RP
     .accept 1009 >> Accept Ruuzel
 step
-    .goto Ashenvale,7.40,13.40
-     >> Kill Ruuzel
-    >>Lady Vespia (rare) can also drop the ring
+    #label nagas
+    .goto Ashenvale,6.528,13.361
+    >>Kill |cRXP_ENEMY_Ruuzel|r. Loot her for the |cRXP_LOOT_Ring of Zoram|r
+    >>|cRXP_ENEMY_Ruuzel|r |cRXP_WARN_patrols the island with a |cRXP_ENEMY_Wrathtail Myrmidon|r and |cRXP_ENEMY_Wrathtail Sea Witch|r. Kill one of them and then reset them if needed|r
+    >>|cRXP_ENEMY_Lady Vespia|r |cRXP_WARN_is a rarespawn that can also drop the |cRXP_LOOT_Ring of Zoram|r if you see her|r
+	.unitscan Lady Vespia
+	.mob Ruuzel
     .complete 1009,1
-    .unitscan Lady Vespia
 step
+    .goto Ashenvale,7.00,15.20,0
+    .goto Ashenvale,14.46,17.15,0
+    .goto Ashenvale,14.86,21.06,0
+    .goto Ashenvale,13.13,25.03,0
+    .goto Ashenvale,10.89,30.03,0
+    .goto Ashenvale,7.00,15.20,70,0
+    .goto Ashenvale,14.46,17.15,70,0
+    .goto Ashenvale,14.86,21.06,70,0
+    .goto Ashenvale,13.13,25.03,70,0
+    .goto Ashenvale,10.89,30.03,70,0
+    .goto Ashenvale,13.13,25.03,70,0
+    .goto Ashenvale,14.86,21.06,70,0
+    .goto Ashenvale,14.46,17.15,70,0
+    >>Kill |cRXP_ENEMY_Wrathtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
+	.mob Wrathtail Wave Rider
+	.mob Wrathtail Sorceress
+    .mob Wrathtail Myrmidon
+    .mob Wrathtail Priestess
+    .mob Wrathtail Razortail
+    .mob Wrathtail Sea Witch
+    .complete 1008,1
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talen|r
+	.target Talen
     .goto Ashenvale,14.79,31.29
-.target Talen
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Talen|r
     .turnin 1009 >> Turn in Ruuzel
 step
-    #requires nagas
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teronis' Corpse|r
+	.target Teronis' Corpse
     .goto Ashenvale,20.31,42.33
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Teronis' Corpse|r
     .turnin 991 >> Turn in Raene's Cleansing
-.target Teronis' Corpse
-    .accept 1023 >> Accept Raene's Cleansing
+    .accept 1023 >> Accept Raene's Cleansing   
 step
-    .goto Ashenvale,20.41,43.82
-    >> Kill Murlocs until the Glowing Gem drops
-    >>Save Murloc Fins for later
-    >>Be careful as the Oracles can heal, and have a 90 damage instant-cast shock spell every few seconds
+    .goto Ashenvale,20.41,43.82,50,0
+    .goto Ashenvale,19.43,42.09,50,0
+    .goto Ashenvale,21.01,41.61,50,0
+    .goto Ashenvale,20.31,42.33
+    >>Kill |cRXP_ENEMY_Saltspittle Murlocs|r. Loot them for the |cRXP_LOOT_Glowing Gem|r
+    >>|cRXP_WARN_Save |cRXP_LOOT_Murloc Fins|r for later|r
+    >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Oracles|r can heal, and have a 90 damage instant-cast shock spell every few seconds|r
+	.mob Saltspittle Warrior
+	.mob Saltspittle Muckdweller
+	.mob Saltspittle Oracle
+	.mob Saltspittle Puddlejumper
     .complete 1023,1
-step <<  Dwarf Hunter
+step << Dwarf Hunter
     .hs >> Hearth to Auberdine
-step <<  !Dwarf/!Hunter
+step << !Dwarf/!Hunter
     #softcore
     #completewith next
-    .deathskip >> Die on the eastern side of the lake and spirit rez at Astranaar
-step <<  !Dwarf/!Hunter
+    .deathskip >> Die on the eastern side of the lake and spirit res at Astranaar
+step << !Dwarf/!Hunter
     #hardcore
     #completewith next
-    .goto Ashenvale,34.40,48.00,200 >> Run back to Astranaar
-step <<  Hunter
-    #completewith end
-    .stable  >> Stable your pet
-step <<  !Dwarf/!Hunter
-    .goto Ashenvale,34.40,48.00
-    .fly Darkshore>>Fly to Darkshore
+    .goto Ashenvale,34.40,48.00,200 >> Travel to Astranaar
+step << !Dwarf/!Hunter
+    .goto Ashenvale,34.41,47.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daelyshia|r
+    .fly Darkshore>> Fly to Darkshore
+    .target Daelyshia
 step
-#map Darkshore
-    .goto Felwood,20.04,16.35
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Archaeologist Hollee|r
+    .goto Darkshore,37.44,41.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Hollee|r
     .turnin 731 >> Turn in The Absent Minded Prospector
-.target Archaeologist Hollee
+    .target Archaeologist Hollee
     .accept 741 >> Accept The Absent Minded Prospector
 step
     #completewith end
     .vendor >> Restock/Resupply
 step
-#map Darkshore
-    .goto Felwood,22.24,18.22
-.target Terenthis
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Terenthis|r
-    .turnin 995 >> Turn in Escape Through Stealth
     .isOnQuest 995
+    .goto Darkshore,39.37,43.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
+    .turnin 995 >> Turn in Escape Through Stealth
+    .target Terenthis
 step
-#map Darkshore
-    .goto Felwood,22.24,18.22
-.target Terenthis
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Terenthis|r
-    .turnin 994 >> Turn in Escape Through Force
     .isOnQuest 994
+    .goto Darkshore,39.37,43.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
+    .turnin 994 >> Turn in Escape Through Force
+    .target Terenthis
 step
-#map Darkshore
-	#era/som
-    .goto Darkshore,36.71,44.98,5,0
-    .goto Felwood,19.10,20.63
-.target Gwennyth Bly'Leggonde
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gwennyth Bly'Leggonde|r
+    .goto Darkshore,36.62,45.59
+    .target Gwennyth Bly'Leggonde
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .turnin 4730 >> Turn in Beached Sea Creature
     .turnin 4731 >> Turn in Beached Sea Turtle
     .turnin 4732 >> Turn in Beached Sea Turtle
     .turnin 4733 >> Turn in Beached Sea Creature
 step
-    #completewith next
-    .fly Teldrassil>> Fly to Teldrassil
+    .goto Darkshore,36.336,45.574
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caylais Moonfeather|r
+    .fly Teldrassil >> Fly to Teldrassil
+	.target Caylais Moonfeather
 step
+    #completewith next
+    .goto Teldrassil,55.889,89.456
+    .zone Darnassus >> Take the purple portal into Darnassus
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Archaeologist Greywhisker|r
+	.target Chief Archaeologist Greywhisker
     .goto Teldrassil,23.70,64.51
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Chief Archaeologist Greywhisker|r
     .turnin 741 >> Turn in The Absent Minded Prospector
-.target Chief Archaeologist Greywhisker
     .accept 942 >> Accept The Absent Minded Prospector
-step <<  !Dwarf/!Hunter
+step << !Dwarf/!Hunter
     #label end
     .hs >> Hearth to Astranaar
-step <<  Dwarf Hunter
+step << Dwarf Hunter
+    .goto Darnassus,29.466,41.405
+    .zone Teldrassil >> Travel through the purple portal to Rut'theran Village
+    .zoneskip Ashenvale
+    .zoneskip Darkshore
+step << Dwarf Hunter
     #label end
+    .goto Teldrassil,58.39,94.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vesprystus|r
     .fly Ashenvale >> Fly to Ashenvale
+    .target Vesprystus
+    .zoneskip Ashenvale
 ]])
 
 RXPGuides.RegisterGuide([[
