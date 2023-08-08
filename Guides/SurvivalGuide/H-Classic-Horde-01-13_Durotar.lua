@@ -4131,7 +4131,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gretchen|r upstairs
     .turnin 375 >>Turn in The Chill of Death
     .target Gretchen Dedmar
-    .isOnQuest 375
+    .isQuestComplete 375
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beryl|r on the second floor
