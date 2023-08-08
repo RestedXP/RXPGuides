@@ -849,6 +849,21 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
     .trainer >> Train your class spells
     .target Loganaar
+step
+    .abandon 424 >> Abandon Arugal's Folly
+    .isOnQuest 424
+step
+    .abandon 479 >> Abandon Ambermill Investigations
+    .isOnQuest 479
+step
+    .abandon 99 >> Abandon Arugal's Folly
+    .isOnQuest 99
+step
+    .abandon 450 >> Abandon A Recipe For Death
+    .isOnQuest 450
+step
+    .abandon 452 >> Abandon Pyrewood Ambush
+    .isOnQuest 452
 step << Tauren
     .hs >> Hearth to The Crossroads
     .use 6948

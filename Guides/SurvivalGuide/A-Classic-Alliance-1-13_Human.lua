@@ -188,11 +188,8 @@ step
     .accept 21 >> Accept Skirmish at Echo Ridge
 step << Priest/Mage
     #completewith next
-    .goto Elwynn Forest,49.3,40.7,15 >> Travel upstairs << Mage
+    .goto Elwynn Forest,49.52,39.99,10 >> Travel upstairs << Mage
     .goto Elwynn Forest,49.3,40.7,15 >> Travel toward |cRXP_FRIENDLY_Priestess Anetta|r << Priest
-step << Mage
-    #completewith next
-    .goto Elwynn Forest,49.5,40.0,15 >>Go upstairs
 step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khelden Bremen|r
     .target Khelden Bremen
@@ -202,7 +199,7 @@ step << Mage
     .target Khelden Bremen
 step << Priest
     #completewith next
-    .goto Elwynn Forest,49.8,40.2,15 >> Travel through the doorway
+    .goto Elwynn Forest,49.8,40.2,10 >> Travel through the doorway
 step << Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Anetta|r
     .target Priestess Anetta
@@ -236,7 +233,7 @@ step << Warlock
     .goto Elwynn Forest,49.873,42.649
     .turnin 3105 >> Turn in Tainted Letter
     .xp 4 >> Grind to 4
-    .trainer >>Train Corruption
+    .trainer >>Train |T136118:0|t[Corruption]
 step
     .goto Elwynn Forest,53.9,49.2,50,0
     .goto Elwynn Forest,55.5,42.1,50,0
@@ -285,10 +282,11 @@ step
 step
     .xp 5 >> Grind to 5
 step << !Priest !Mage
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milly Osworth|r
-    .target Milly Osworth
     .goto Elwynn Forest,50.692,39.347
-    .turnin 3903 >> Turn in Milly Osworth. Skip followup
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milly Osworth|r
+    .turnin 3903 >> Turn in Milly Osworth
+    >>|cRXP_WARN_Skip the followup|r
+    .target Milly Osworth
 step << Priest/Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milly Osworth|r
     .target Milly Osworth
@@ -302,7 +300,7 @@ step << Rogue
     .turnin 3102 >> Turn in Encrypted Letter
     >>|cRXP_WARN_You don't need to train any spells|r
 step << Priest/Mage
-    >>Loot the |cRXP_PICK_Buckets of Grapes|r in the field
+    >>Loot |cRXP_PICK_Milly's Harvest|r on the ground
     .goto Elwynn Forest,54.5,49.4
     .complete 3904,1 --Collect Milly's Harvest (x8)
 step
@@ -379,19 +377,15 @@ RXPGuides.RegisterGuide([[
 #defaultfor Human
 #next 11-13 Loch Modan
 step
+    #completewith next
+    .subzone 87 >> Travel to Goldshire
+step
     #hardcore
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshall Dughan|r
     .target Marshal Dughan
     .goto Elwynn Forest,42.105,65.927
     .turnin 54 >> Turn in Report to Goldshire
     .accept 62 >> Accept The Fargodeep Mine
-step
-    #softcore
-    #completewith Goldshire
-    .deathskip >> Die and respawn at the Spirit Healer
-step
-    #completewith next
-    .goto Elwynn Forest,39.5,60.5,100 >> Travel to Goldshire
 step << Warrior/Rogue/Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smith Argus|r
     .target Smith Argus
@@ -722,16 +716,6 @@ step << Paladin
     .money <0.0631
     .goto Elwynn Forest,41.529,65.900
     .collect 2493,1 --Collect Wooden Mallet (1)
-step << Warrior
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyria Du Lac|r
-    .target Lyria Du Lac
-    .goto Elwynn Forest,41.087,65.768
-    .trainer >> Train your class spells
-step << Paladin
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Wilhelm|r
-    .target Brother Wilhelm
-    .goto Elwynn Forest,41.096,66.041
-    .trainer >> Train your class spells
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
     .target William Pestle
@@ -742,6 +726,16 @@ step
     .accept 112 >> Accept Collecting Kelp
 step
     .xp 8 >> Grind to 8
+step << Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyria Du Lac|r
+    .target Lyria Du Lac
+    .goto Elwynn Forest,41.087,65.768
+    .trainer >> Train your class spells
+step << Paladin
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Wilhelm|r
+    .target Brother Wilhelm
+    .goto Elwynn Forest,41.096,66.041
+    .trainer >> Train your class spells
 step << Warlock
     #completewith next
     .goto Elwynn Forest,44.1,66.0,10 >> Travel downstairs in the Inn
@@ -755,13 +749,7 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cylina Darkheart|r
     .vendor >> |cRXP_WARN_Buy the|r |T133738:0|t[Grimoire of Firebolt (Rank 2)] |cRXP_WARN_if you can afford it. If not you will buy it later|r
     .target Cylina Darkheart
-step
-    .money <0.1250
-    .goto Elwynn Forest,43.96,65.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brog Hamfist|r
-    .vendor >> |cRXP_WARN_Buy a|r |T133634:0|t[Small Brown Pouch] |cRXP_WARN_if needed|r
-	.target Brog Hamfist
-step << Mage/Priest/Rogue/Warrior
+step << Mage/Priest/Rogue/Warrior/Paladin
     #completewith next
     .goto Elwynn Forest,43.877,66.546,9 >> Travel upstairs in the Inn
 step << Mage
@@ -786,6 +774,12 @@ step << Rogue/Warrior/Paladin
     .target Michelle Belle
     .goto Elwynn Forest,43.392,65.550
     .train 3273 >> Train |T135966:0|t[First Aid]
+step
+    .money <0.1250
+    .goto Elwynn Forest,43.96,65.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brog Hamfist|r
+    .vendor >> |cRXP_WARN_Buy a|r |T133634:0|t[Small Brown Pouch] |cRXP_WARN_if needed|r
+	.target Brog Hamfist
 step
     #completewith next
     .goto Elwynn Forest,43.771,65.803
@@ -821,7 +815,7 @@ step
     .accept 37 >> Accept Find the Lost Guards
     .accept 52 >> Accept Protect the Frontier
 step
-    #completewith Prowlers
+    #completewith AcceptBundle
     >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r
     >>|cRXP_WARN_Prioritize killing any |cRXP_ENEMY_Young Forest Bears|r you see|r
     .complete 52,1 --Kill Prowler (x8)
@@ -834,16 +828,25 @@ step
     .turnin 37 >> Turn in Find the Lost Guards
     .accept 45 >> Accept Discover Rolf's Fate
 step
+    #label AcceptBundle
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Supervisor Raelen|r
     .target Supervisor Raelen
     .goto Elwynn Forest,81.382,66.112
     .accept 5545 >> Accept A Bundle of Trouble
 step
-    #completewith next
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rallic Finn|r
     .target Rallic Finn
     .goto Elwynn Forest,83.283,66.089
     .vendor >> |cRXP_WARN_Vendor trash|r
+    .zoneskip Elwynn Forest,1
+step
+    #completewith Prowlers
+    >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r
+    >>|cRXP_WARN_Prioritize killing any |cRXP_ENEMY_Young Forest Bears|r you see|r
+    .complete 52,1 --Kill Prowler (x8)
+    .complete 52,2 --Kill Young Forest Bear (x5)
+    .mob Prowler
+    .mob Young Forest Bear
 step
     #completewith Bundles
     >>Loot the |cRXP_LOOT_Bundle of Wood|r on the ground. |cRXP_WARN_They are found beneath the trees|r
@@ -1383,6 +1386,7 @@ step << Warlock
     .turnin 176 >> Turn in Wanted: "Hogger"
     >>|cRXP_WARN_Choose the|r |T135145:0|t[|cRXP_FRIENDLY_Balanced Fighting Stick|r] |cRXP_WARN_as your reward. Equip it|r
     .turnin 123 >> Turn in The Collector
+    .accept 147 >> Accept Manhunt
 step << Warlock
     .goto Elwynn Forest,42.105,65.927
     .target Marshal Dughan
@@ -1390,12 +1394,30 @@ step << Warlock
     .turnin 176 >> Turn in Wanted: "Hogger"
     >>|cRXP_WARN_Choose the|r |T135145:0|t[|cRXP_FRIENDLY_Balanced Fighting Stick|r] |cRXP_WARN_as your reward. Equip it|r
 step << Warlock
+    .isQuestTurnedIn 123
+    .goto Elwynn Forest,42.105,65.927
+    .target Marshal Dughan
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
+    .accept 147 >> Accept Manhunt
+step << Warlock
     .xp 11 >> Grind to 11
 step << Warlock
-    #completewith next
+    #completewith LockVW
     .goto Elwynn Forest,71.0,80.8,150 >> Travel to the Brackwell Pumpkin Patch
     >>|cRXP_WARN_Grind en-route. Try to level your Staff skill for later|r
 step << Warlock
+    .isOnQuest 147
+    .goto Elwynn Forest,71.10,80.66
+    >>Kill |cRXP_ENEMY_Surena Caledon|r. Loot her for her |cRXP_LOOT_Choker|r
+    >>Kill |cRXP_ENEMY_Morgan the Collector|r. Loot him for |cRXP_LOOT_The Collector's Ring|r
+    >>|cRXP_WARN_Focus on killing |cRXP_ENEMY_Surena Caledon|r very quickly|r
+    >>|cRXP_WARN_Cast|r |T136183:0|t[Fear] |cRXP_WARN_on |cRXP_ENEMY_Morgan the Collector|r continously|r
+    .complete 1688,1 --Surena's Choker (1)
+    .complete 147,1 -- The Collector's Ring (1)
+    .mob Surena Caledon
+    .mob Morgan the Collector
+step << Warlock
+    #label LockVW
     .goto Elwynn Forest,71.10,80.66
     >>Kill |cRXP_ENEMY_Surena Caledon|r. Loot her for her |cRXP_LOOT_Choker|r
     >>|cRXP_WARN_Focus on killing |cRXP_ENEMY_Surena Caledon|r very quickly|r
@@ -1433,6 +1455,22 @@ step << Warlock
     .fp Redridge Mountains >> Get the Redridge Mountains flight path
     .fly Stormwind >> Fly to Stormwind
     .target Ariena Stormfeather
+step << Warlock
+    .isQuestComplete 147
+    #completewith next
+    .goto Elwynn Forest,42.105,65.927,100 >> Exit Stormwind. Travel to Goldshire
+step << Warlock
+    .isQuestComplete 147
+    .goto Elwynn Forest,42.105,65.927
+    .target Marshal Dughan
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
+    .turnin 147 >> Turn in Manhunt
+step << Warlock
+    #completewith TravelIF
+    .isQuestTurnedIn 147
+    .goto StormwindClassic,70.07,86.82
+    .zone Stormwind City >> Travel to Stormwind City
+    .zoneskip Elwynn Forest,1
 step << Warlock
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
@@ -1534,6 +1572,7 @@ step << Warrior/Paladin/Rogue
     .vendor >>|cRXP_WARN_Buy a|r |T134708:0|t[Mining Pick]|cRXP_WARN_. You'll train|r |T134708:0|t[Mining] |cRXP_WARN_very soon|r
     .target Kaita Deepforge
 step
+    #label TravelIF
     #completewith next
     .goto StormwindClassic,61.149,11.568,25,0
     .goto StormwindClassic,64.0,8.10
@@ -1554,7 +1593,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monty|r
     .turnin 6661 >> Turn in Deeprun Rat Roundup
 step
-    .goto Ironforge,77.0,51.0
     .zone Ironforge >>Enter Ironforge
 step
     .goto Ironforge,55.501,47.742
@@ -1735,6 +1773,10 @@ step
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
     .mob Rockjaw Skullthumper
     .mob Rockjaw Bonesnapper
+step << !Warlock
+    .xp 10+6350 >>Grind until 6350+/7600
+step << Warlock
+    .xp 12
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Stonebrow|r and |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
     .turnin 432 >> Turn in Those Blasted Troggs!
@@ -1743,10 +1785,6 @@ step
     .goto Dun Morogh,68.671,55.969
     .target Senator Mehr Stonehallow
     .target Foreman Stonebrow
-step << !Warlock
-    .xp 10+6350 >>Grind until 6350+/7600
-step << Warlock
-    .xp 12
 step
     .goto Dun Morogh,68.614,54.643
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kazan Mogosh|r
@@ -1761,7 +1799,6 @@ step
     .target Pilot Hammerfoot
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Hammerfoot|r
     .accept 419 >> Accept The Lost Pilot
-
 step
     >>Click the |cRXP_PICK_Dwarven Corpse|r
     .goto Dun Morogh,79.672,36.171
@@ -2157,15 +2194,17 @@ step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
     .accept 1641 >> Accept The Tome of Divinity
     .turnin 1641 >> Turn in The Tome of Divinity
+    .target Duthorian Rall
 step << Paladin
-    .goto Ironforge,39.80,29.77
+    .goto StormwindClassic,39.80,29.77
     .use 6775>>|cRXP_WARN_Use the |T133464:0|t[|cRXP_LOOT_The Tome of Divinity|r] to start the quest|r
     .accept 1642 >>Accept The Tome of Divinity
 step << Paladin
-    .goto Ironforge,39.80,29.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tiza Battleforge|r
+    .goto StormwindClassic,39.80,29.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
     .turnin 1642 >>Turn in The Tome of Divinity
     .accept 1643 >>Accept The Tome of Divinity
+    .target Duthorian Rall
 step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r
     .goto StormwindClassic,38.82,31.27,10,0

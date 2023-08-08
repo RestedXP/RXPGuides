@@ -1022,13 +1022,19 @@ step
     .goto Durotar,50.95,79.14,30 >>Leave the Kolkar base
     .isQuestComplete 786
 step
-    .goto Durotar,54.09,76.31
-    .goto Durotar,54.52,74.83
+    .goto Durotar,54.09,76.31,25,0
+    .goto Durotar,54.52,74.83,25,0
     .goto Durotar,54.20,73.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lar|r. He patrols a little
     .turnin 786,1 >>Turn in Thwarting Kolkar Aggression << Shaman
     .turnin 786 >>Turn in Thwarting Kolkar Aggression << !Shaman
     .target Lar Prowltusk
+step
+    .goto Durotar,55.95,74.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vornal|r
+    .turnin 818 >>Turn in A Solvent Spirit
+    .target Master Vornal
+    .isQuestComplete 818
 step
     .goto Durotar,55.62,73.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hai'zan|r
@@ -1649,7 +1655,7 @@ step
 step << Mage
     .goto Durotar,56.3,75.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Un'Thuwa|r
-    .train 118,1 >> Train your class spells
+    .train 118 >> Train your class spells
     .target Un'Thuwa
 step
     #label Zalazaneturnin
@@ -1662,7 +1668,6 @@ step
     .goto Durotar,55.95,74.39
     .turnin 817 >>Turn in Practical Prey
     .goto Durotar,55.95,73.93
-    .goto Durotar,54.1,76.6
     .target Master Gadrin
     .target Master Vornal
     .target Vel'rin Fang
@@ -1685,7 +1690,7 @@ step
     .complete 837,2 --Razormane Scout (4)
     .mob Razormane Quilboar
     .mob Razormane Scout
-step << Hunter
+step << Shaman/Hunter
     .loop 25,Durotar,44.45,39.74,44.49,37.47,43.30,37.32,41.70,37.09,41.64,38.27,41.94,40.46,43.30,40.40,44.45,39.74
     >>Kill |cRXP_ENEMY_Razormane Dustrunners|r and |cRXP_ENEMY_Razormane Battleguards|r
     >>|cRXP_WARN_Be careful.|r |cRXP_ENEMY_Dustrunners|r |cRXP_WARN_cast Rejuvenation (Heal) and|r |cRXP_ENEMY_Battleguards|r |cRXP_WARN_are tanky|r
@@ -1695,11 +1700,11 @@ step << Hunter
     .mob Razormane Battleguard
 step << Shaman/Hunter
     .loop 25,Durotar,47.52,48.67,46.12,45.47,43.65,43.91,41.68,44.69,41.00,46.13,42.47,48.50,44.21,49.68,47.17,49.44,47.52,48.67
-    .xp 9+5100 >> Grind to 5100+/6500xp
+    .xp 9+4470 >> Grind to 4470+/6500xp
 step
     #completewith next
     .goto Durotar,51.12,42.46,150 >> Run to Razor Hill
-step << Hunter
+step << Shaman/Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Torka|r and |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 815 >>Turn in Break a Few Eggs
     .goto Durotar,51.12,42.46
@@ -2606,7 +2611,7 @@ step << Shaman
     .itemcount 854,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.4
-step << !Hunter
+step << !Hunter !Shaman
     #label LeaveOrg2
     #completewith ZeptoUC1
     .zone Durotar >> Leave Orgrimmar
@@ -2732,7 +2737,7 @@ step << Shaman/Hunter
     .turnin 809 >>Turn in Ak'Zeloth
     .accept 924 >>Accept The Demon Seed
     .target Ak'Zeloth
-    .isOnQuest 809
+    .isQuestTurnedIn 829
     .group
 step << Shaman/Hunter
     .goto The Barrens,62.34,20.03
@@ -2958,7 +2963,7 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.4
 step << Shaman
     #completewith ZeptoUC1
-    +Equip the |T135154:0|t[Quarter Staff] when you are level 11
+    +Equip the |T135154:0|t[Quarter Staff]
     .use 854
     .itemcount 854,1
     .itemStat 16,QUALITY,<7
@@ -3948,7 +3953,7 @@ step
     .isOnQuest 356
 step << Priest/Warlock
     #completewith Scarletrings
-    >>|cRXP_WARN_Collect 3 stacks of|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for your wand. This is the last chance to get enough before Silverpine Forest|r
+    >>|cRXP_WARN_Collect 3 stacks of|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for your Lesser Magic Wand. This is the last chance to get enough before Silverpine Forest|r
     .collect 2589,60,435,1 --Linen Cloth (60)
     .mob Scarlet Friar
     .mob Scarlet Zealot
@@ -4502,11 +4507,21 @@ step << Priest/Warlock
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
 step << Priest/Warlock
+    #completewith Entersilverpine
     +Equip the |T135139:0|t[Lesser Magic Wand]
     .use 11287
     .itemcount 11287,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
+step
+    .abandon 806 >> Abandon Dark Storms
+    .isOnQuest 806
+step
+    .abandon 408 >> Abandon The Family Crypt
+    .isOnQuest 408
+step << Warrior
+    .abandon 1821 >> Abandon Agamand Heirlooms
+    .isOnQuest 1821
 step
     #label LeaveUndercity3
     .goto Undercity,47.25,39.12,50,0

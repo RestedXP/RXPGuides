@@ -1196,7 +1196,7 @@ addon.dungeonWeights = {
     [0] = L"Terrible",
     [1] = L"Bad",
     [2] = L"Good",
-    [3] = L"Excellent"
+    [3] = L"Excellent",
 }
 
 addon.dungeonProfessions = {
@@ -1251,11 +1251,11 @@ addon.dungeonStats = {
         WC = {
             travel = 0,
             quest = 2,
-            DRUID = 3,
-            HUNTER = 3,
+            DRUID = 2,
+            HUNTER = 2,
             MAGE = 1,
             PRIEST = 1,
-            ROGUE = 3,
+            ROGUE = 2,
             PALADIN = 1,
             WARLOCK = 1,
             WARRIOR = 1,

@@ -6,6 +6,21 @@ local default_y = -60
 local intro_animations = true
 addon.introUI = {}
 
+addon.dungeonScore = {}
+for tag,dungeon in pairs(addon.dungeonStats[addon.player.faction]) do
+    local score = (dungeon.travel or 0) * 0.7 + (dungeon.quest or 0) * 1.2 + (dungeon[addon.player.class] or 0) * 1.4
+    addon.dungeonScore[tag] = score
+    --print(tag,addon.dungeonScore[tag])
+end
+
+if addon.player.faction == "Alliance" then
+    local class = addon.player.class
+    addon.dungeonScore["STOCKS"] = 9
+    if class == "PALADIN" or class == "WARRIOR" then
+        addon.dungeonScore["SM"] = 9
+    end
+end
+
 ----------- Settings
 -- Note: upon finishing the splash screen setup, RXPCData will be updated
 -- RXPCData['hardcore_guide'] = {['enabled'] = 1}
@@ -16,6 +31,7 @@ local auction_house = false -- RXPCData['hardcore_guide']['auction_house'] =
 local group_quests = false -- RXPCData['hardcore_guide']['group_quests'] =
 local dungeons = {} -- RXPCData['hardcore_guide']['dungeons'] = {dungeon_title,...}
 local dungeonConfigButton
+local dungeonConfigButton2
 
 ----------- Widgets
 
@@ -686,6 +702,11 @@ local function addHardcoreDungeonOptionButton(frame, title_text, level_range, te
             dungeons[title_text] = 1
 			button_selected_glow:Show()
 		end
+        if dungeonConfigButton2 and not dungeonConfigButton2.lock then
+            dungeonConfigButton2.state = false
+            dungeonConfigButton2.button_selected_glow:Hide()
+            dungeonConfigButton2.check_mark_tex:Hide()
+        end
 		if functor then
 			functor()
 		end
@@ -696,6 +717,7 @@ local function addHardcoreDungeonOptionButton(frame, title_text, level_range, te
 	end)
 
 	addOptionTitle(title_text)
+    hardcore_option_button_frame.title = title_text
 	return hardcore_option_button_frame
 end
 
@@ -1151,7 +1173,7 @@ local function RXP_loadWelcomeAdventurerFrame(backFunctor, dungeons_enabled_func
 	return frame
 end
 
-local function RXP_dungeonConfiguration(selectAllFunctor, submitFunctor, backFunctor)
+local function RXP_dungeonConfiguration(selectAllFunctor, submitFunctor, backFunctor, selectRecDungeonsFunctor)
 	local frame = createHardcoreUIFrame(375, 580, 0.35, 0.5, 0.2, UIParent, "TOP", "TOP", default_x, default_y, 3)
 	createLargeTitleFont("DUNGEON\nCONFIGURATION", frame, 0, 145)
 	createDescriptionFont(
@@ -1170,6 +1192,14 @@ local function RXP_dungeonConfiguration(selectAllFunctor, submitFunctor, backFun
 		selectAllFunctor
 	)
 
+	 _,dungeonConfigButton2 = addHardcoreOptionButton(
+		frame,
+		"Select Recommended Dungeons",
+		"Factor only the high impact dungeons into the route",
+		135741,
+		-375,
+		selectRecDungeonsFunctor
+	)
 	local function addSubmitAndContinue()
 		local button = CreateFrame("Button", nil, frame)
 		button:SetPoint("RIGHT", frame, "RIGHT", -35, -260)
@@ -1422,6 +1452,21 @@ local function RXP_dungeonSelection(parent)
 			dungeon_button:select(state)
 		end
 	end
+    frame.selectRec = function(self)
+        local button = dungeonConfigButton2
+        local state = not button.state
+        button.state = state
+        button.lock = true
+		for i = 1, #dungeon_buttons do
+            local dungeon_button = dungeon_buttons[i]
+            if (addon.dungeonScore[dungeon_button.title] or 0) > 7 and state then
+                dungeon_button:select(state)
+            else
+                dungeon_button:select(false)
+            end
+		end
+        button.lock = false
+	end
 	return frame
 end
 
@@ -1519,6 +1564,12 @@ function addon.startHardcoreIntroUI(saved_var_settings)
 		end
 	end
 
+    local function selectRecDungeonsFunctor(self)
+		if dungeon_selection_frame then
+			dungeon_selection_frame:selectRec()
+		end
+	end
+
     local function selectSpeedrunMode()
         saved_var_settings['hardcore_guide'] = {['enabled'] = 0}
         addon:LoadGuideTable(addon.defaultGroup, addon.defaultGuide)
@@ -1531,7 +1582,8 @@ function addon.startHardcoreIntroUI(saved_var_settings)
 	dungeon_configuration_frame = RXP_dungeonConfiguration(
 		selectAllDungeonsFunctor,
         finalizeSettings,
-		toggleSurivalGuideFunctor
+		toggleSurivalGuideFunctor,
+        selectRecDungeonsFunctor
 	)
 	dungeon_selection_frame = RXP_dungeonSelection(dungeon_configuration_frame)
 	ultimate_hardcore_survival_guide_frame:Show()

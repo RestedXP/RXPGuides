@@ -83,23 +83,7 @@ step << !Tauren !Hunter !Shaman
     .target Takrin Pathseeker
     .isQuestAvailable 840
 step
-    #completewith KreenigSnarlsnout
-    >>Abandon A Recipe for Death, there's no opportunity left to do it
-    .abandon 450 >> Abandon A Recipe for Death
-    .isOnQuest 450
-step
-    #completewith KreenigSnarlsnout
-    >>Abandon Arugal's Folly, there's no opportunity left to do it
-    .abandon 99 >> Abandon Arugal's Folly
-step
-    #completewith KreenigSnarlsnout
-    >>Abandon Pyrewood Ambush, there's no opportunity left to do it
-    .abandon 452 >> Abandon Pyrewood Ambush
-    .isOnQuest 452
-step
-    #completewith KreenigSnarlsnout
-    >>Abandon The Weaver to avoid quest log issues. You'll pick it up again later
-    .abandon 480 >> Abandon The Weaver
+    .abandon 480 >> Abandon The Weaver to avoid quest log issues. You'll pick it up again later
     .isOnQuest 480
 step
     #completewith next
@@ -309,6 +293,7 @@ step << !Tauren !Undead
     .isOnQuest 6386
 step
     #sticky
+    #completewith EnterRFC
     .subzone 213 >> Now you should be looking for a group to Ragefire Chasm
     .dungeon RFC
 step
@@ -402,6 +387,7 @@ step
     .target Thrall
     .dungeon RFC
 step
+    #label EnterRFC
     .goto Orgrimmar,52.77,48.97
     .zone 213 >> Enter the RFC Instance portal. Zone in
     .dungeon RFC
@@ -548,6 +534,22 @@ step
     .target Tal
     .cooldown item,6948,<0
     .zoneskip The Barrens
+    .dungeon RFC
+step
+    .abandon 5723 >> Abandon Testing an Enemy's Strength
+    .isOnQuest 5723
+    .dungeon RFC
+step
+    .abandon 5725 >> Abandon Turn in The Power to Destroy...
+    .isOnQuest 5725
+    .dungeon RFC
+step
+    .abandon 5728 >> Abandon Hidden Enemies
+    .isOnQuest 5728
+    .dungeon RFC
+step
+    .abandon 5761 >> Abandon Slaying the Beast
+    .isOnQuest 5761
     .dungeon RFC
 step
     .goto The Barrens,55.70,27.30,20,0
@@ -736,6 +738,9 @@ step
     .collect 1205,20,895,1 << Mage/Warlock/Priest/Shaman/Druid --Melon Juice (20)
     .home >>Set your Hearthstone to Ratchet
     .target Innkeeper Wiley
+step
+    #completewith BarenLongshore
+    +Destroy the |T133735:0|t[Control Console Operating Manual] as you won't need it
 step
     #completewith BarenLongshore
     >>Kill |cRXP_ENEMY_Southsea Brigands|r and |cRXP_ENEMY_Southsea Cannoneers|r
@@ -2560,16 +2565,9 @@ step
     .turnin 5052 >>Turn in Blood Shards of Agamaggan
     .target Mangletooth
 step
-    #completewith IshamuhaleTurnin
+    #completewith Thunderhawk
     +|cRXP_WARN_Use your|r |T134128:0|t[|cFF00BCD4Blood Shards|r] |cRXP_WARN_to get buffs. Save at least 4 of them for later|r
-step
-    .goto The Barrens,44.85,59.14
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorn Skyseer|r
-    .turnin 882 >>Turn in Ishamuhale
-    .turnin 883 >>Turn in Lakota'mani
-    .accept 907 >>Accept Enraged Thunder Lizards
-    .target Jorn Skyseer
-    .isOnQuest 883
+    +|cRXP_WARN_Make sure to turn off any autocomplete functions from addons such as Questie or Leatrix Plus for this!|r
 step
     #label IshamuhaleTurnin
     .goto The Barrens,44.85,59.14
@@ -2577,6 +2575,13 @@ step
     .turnin 882 >>Turn in Ishamuhale
     .accept 907 >>Accept Enraged Thunder Lizards
     .target Jorn Skyseer
+step
+    .goto The Barrens,44.85,59.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorn Skyseer|r
+    .accept 883 >>Accept Lakota'Mani
+    .turnin 883 >>Turn in Lakota'mani
+    .target Jorn Skyseer
+    .itemcount 5099,1
 step
     .goto The Barrens,44.32,60.84,60,0
     .goto The Barrens,44.25,61.78,60,0
@@ -2598,6 +2603,7 @@ step
     .mob Thunderhead
     .mob Stormsnout
 step
+    #label Thunderhawk
     .goto The Barrens,44.85,59.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorn|r
     .turnin 907 >>Turn in Enraged Thunder Lizards
@@ -2828,9 +2834,9 @@ step
     .goto Thunder Bluff,50.75,37.07,40 >> Take the elevator up to Thunder Bluff
 step << Druid
     .goto Thunder Bluff,47.12,57.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chesmu|r. Deposit the following into your bank:
-    .bankdeposit 5075 >> |T134128:0|t[Blood Shards]
-    .bankdeposit 868 >> |T132938:0|t[Digging Claw]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chesmu|r
+    .bankdeposit 5075 >> Deposit your |T134128:0|t[Blood Shards]
+    .bankdeposit 868 >> Deposit your |T132938:0|t[Digging Claw]
     .target Chesmu
 step << Druid
     .goto Thunder Bluff,45.83,64.74
@@ -2944,9 +2950,9 @@ step << !Druid
     .target Innkeeper Pala
 step << !Druid
     .goto Thunder Bluff,47.12,57.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chesmu|r. Deposit the following into your bank:
-    .bankdeposit 5075 >> |T134128:0|t[Blood Shards]
-    .bankdeposit 868 >> |T132938:0|t[Digging Claw]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chesmu|r
+    .bankdeposit 5075 >> Deposit your |T134128:0|t[Blood Shards]
+    .bankdeposit 868 >> Deposit your |T132938:0|t[Digging Claw]
     .target Chesmu
 step << Orc Warrior/Tauren Warrior
     .goto Thunder Bluff,40.93,62.73
@@ -3148,6 +3154,7 @@ step << !Warlock
     .dungeon WC
 step
     #sticky
+    #completewith EnterWC
     .goto The Barrens,45.40,53.96,80,0
     .goto The Barrens,44.79,51.77,80,0
     .goto The Barrens,43.25,47.98,80,0
@@ -3383,13 +3390,37 @@ step << Warlock
     .zoneskip Stonetalon Mountains
     .dungeon !WC
 step << !Warlock
-    #completewith next
+    #completewith KayaLives
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fp Thunder Bluff >> Get the Thunder Bluff flight path << !Tauren
     .fly Sun Rock Retreat >>Fly to Sun Rock Retreat
     .target Tal
     .zoneskip Thunder Bluff,1
+step
+    .abandon 1486 >> Abandon Deviate Hides
+    .isOnQuest 1486
+    .dungeon WC
+step
+    .abandon 1487 >> Abandon Deviate Eradication
+    .isOnQuest 1487
+    .dungeon WC
+step
+    .abandon 1491 >> Abandon Smart Drinks
+    .isOnQuest 1491
+    .dungeon WC
+step
+    .abandon 959 >> Abandon Trouble at the Docks
+    .isOnQuest 959
+    .dungeon WC
+step
+    .abandon 914 >> Abandon Leaders of the Fang
+    .isOnQuest 914
+    .dungeon WC
+step
+    .abandon 962 >> Abandon Serpentbloom
+    .isOnQuest 962
+    .dungeon WC
 step
     #label KayaLives
     .goto Stonetalon Mountains,47.46,58.37
@@ -3825,16 +3856,15 @@ step << Priest
     .target Ur'kyo
     .xp <24,1
 step << Rogue/Druid
+    #completewith MissionProbable
     .goto Orgrimmar,26.22,61.58,80,0
     .goto Orgrimmar,15.66,63.33,30,0
-    .goto Orgrimmar,18.03,60.51,0
+    .goto Orgrimmar,18.03,60.51,30,0
     .zone The Barrens >> Enter The Barrens through the Western Exit
     .zoneskip The Barrens
-    .isOnQuest 3924
 step << Rogue/Druid
     #completewith MissionProbable
     .goto The Barrens,57.63,7.48,120 >> Travel toward the Sludge Ven
-    .isOnQuest 3924
 step << Druid
     .goto The Barrens,56.67,8.32
     >>Loot the |cRXP_PICK_Strange Lockbox|r in the water for the |T133443:0|t[Half Pendant of Aquatic Agility]
@@ -3842,9 +3872,8 @@ step << Druid
 step << Rogue
     #completewith next
     .goto The Barrens,55.70,5.89
-	.cast 10113 >>Target |cRXP_FRIENDLY_Taskmaster Fizzule|r, then use your |T134536:0|t[Flare Gun] TWICE and type /Salute
+	.use 8051 >>Target |cRXP_FRIENDLY_Taskmaster Fizzule|r, then use your |T134536:0|t[Flare Gun] TWICE and type /Salute
     >>|cRXP_WARN_Be careful! Do NOT approach him until he becomes friendly or he will attack you!|r
-    .use 8051
     .target Taskmaster Fizzule
 step << Rogue
     #label MissionProbable
@@ -4013,6 +4042,24 @@ step << Rogue
     .collect 3137,200,6544,1 --Deadly Throwing Axe (200)
     .target K'waii
 step
+    .abandon 6421 >> Abandon Boulderslide Ravine
+    .isOnQuest 6421
+step
+    .abandon 4021 >> Abandon Counterattack!
+    .isOnQuest 4021
+step
+    .abandon 6481 >> Abandon Earthen Arise
+    .isOnQuest 6481
+step
+    .abandon 6284 >> Abandon Arachnophobia
+    .isOnQuest 6284
+step
+    .abandon 6641 >> Abandon Vorsha the Lasher
+    .isOnQuest 6641
+step
+    .abandon 6563 >> Abandon The Essence of Aku'Mai
+    .isOnQuest 6563
+step
     #completewith next
     .zone Durotar >> Leave Orgrimmar
     .zoneskip Durotar
@@ -4022,3 +4069,4 @@ step
     .zoneskip Tirisfal Glades
 
 ]])
+

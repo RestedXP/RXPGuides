@@ -704,6 +704,13 @@ step
     .goto Dun Morogh,40.6,62.6,50,0
     .goto Dun Morogh,40.682,65.130
     .turnin 5541 >> Turn in Ammo for Rumbleshot
+step << Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hegnar Rumbleshot|r
+    .goto Dun Morogh,40.682,65.130
+    >>|cRXP_BUY_Buy and equip a|r |T135611:0|t[Ornate Blunderbuss]|cRXP_BUY_. Skip this step if you can't afford it|r
+    .collect 2509,1 -- Ornate Blunderbuss (1)
+    .money <0.0414
+    .target Hegnar Rumbleshot
 step << !Paladin !Warrior !Rogue
     .xp 7 >> Grind to 7
 step << Paladin/Warrior/Rogue
@@ -978,7 +985,10 @@ step << !Paladin !Rogue !Warrior
     .xp 8 >> Grind to 8
 step << Hunter
     .goto Dun Morogh,45.810,53.039
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grif Wildheart|r
+    .trainer >> Train your class spells
     .train 5116>> Train Concussive Shot
+    .target Grif Wildheart
 step << Warlock
     .goto Dun Morogh,47.327,53.693
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gimrizz Shadowcog|r
@@ -1220,6 +1230,7 @@ step
     .goto Dun Morogh,47.180,52.610
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thamner Pol|r
     .train 3273 >> Train |T135966:0|t[First Aid]
+    .target Thamner Pol
 step << !Hunter
     .goto Dun Morogh,46.005,48.637,8,0
     .goto Dun Morogh,45.846,49.365
@@ -1267,12 +1278,17 @@ step << Hunter
 step << Warrior
     #sticky
     #completewith next
-    .money >0.1300
+    .money >0.1030
     +|cRXP_WARN_Grind until you have 10s30c, then run into Ironforge|r
-step << Warrior
+step << Warrior/Hunter
     .goto Dun Morogh,47.58,41.58,40,0
     .goto Dun Morogh,50.19,40.79,20,0
     .goto Ironforge,14.90,87.10,40 >> Travel to Ironforge
+step << Hunter
+    .goto Ironforge,70.86,85.83
+    .target Belia Thundergranite
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belia Thundergranite|r
+    .turnin 6086 >> Turn in Training the Beast
 step << Warrior
     .goto Ironforge,62.237,89.628
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bixi Wobblebonk|r
@@ -1283,10 +1299,11 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r down stairs
     >>|cRXP_BUY_Buy a|r |T135641:0|t[Balanced Throwing Dagger] and equip it|r
     .target Brenwyn Wintersteel
-step << Warrior
+step << Warrior/Hunter
     #completewith next
 	.goto Dun Morogh,53.5,34.9,60,0
-    .goto Dun Morogh,54.47,39.55,80 >> Exit Ironforge
+    .goto Dun Morogh,52.90,35.62 
+    .zone Dun Morogh >> Exit Ironforge
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
     .target Rudra Amberstill
@@ -1523,11 +1540,6 @@ step << !Hunter
     .goto Ironforge,55.501,47.742
     .turnin 6388 >> Turn in Gryth Thurden
     .accept 6392 >> Accept Return to Brock
-step << Hunter
-    .goto Ironforge,70.86,85.83
-    .target Belia Thundergranite
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belia Thundergranite|r
-    .turnin 6086 >> Turn in Training the Beast
 step << !Hunter
     #completewith next
     +Perform a Logout skip by jumping on top of one of the Gryphon's heads, and logging out, then back in

@@ -18,6 +18,9 @@ RXPGuides.lua
 GuideWindow.lua
 Help.lua
 SettingsPanel.lua
+
+DB/classic.xml
+
 HSBatching.lua
 QuestLog.lua
 ActiveItemFrame.lua
@@ -26,13 +29,12 @@ Timers.lua
 Communications.lua
 Targeting.lua
 Tips.lua
-HardcoreIntroUI.lua
 
-DB/classic.xml
 
 map.lua
 functions.lua
 GuideLoader.lua
+HardcoreIntroUI.lua
 
 Guides/GuideList-classic.xml
 
