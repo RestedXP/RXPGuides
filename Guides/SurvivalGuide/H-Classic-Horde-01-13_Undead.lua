@@ -2289,7 +2289,6 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Charles|r |cRXP_BUY_ in the Rogue's Quarter. Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
     .collect 851,1,435,1 --Collect Cutlass (1)
     .money <0.2023
-    .skill Swords,<1,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
     .target Charles Seaton
@@ -2306,6 +2305,7 @@ step << Undead Rogue
     >>|cRXP_WARN_If you see|r |cRXP_FRIENDLY_Astor|r|cRXP_WARN_, talk to him and kill him. Loot him for the letter. He patrols the road between Brill and The Sepulcher|r
     .complete 1886,1 --Astor's Letter of Introduction (1)
     .unitscan Astor Hadren
+    .isOnQuest 1886
 step << Warlock/Mage/Rogue/Priest
     #completewith ScarletCrusade1
     .goto Undercity,47.25,39.12,50,0
@@ -2567,6 +2567,7 @@ step
     .goto Tirisfal Glades,61.72,52.29
     .turnin 375 >>Turn in The Chill of Death
     .goto Tirisfal Glades,61.89,52.73
+    .target Yvette Farthing
     .target Coleman Farthing
     .target Gretchen Dedmar
     .isQuestComplete 375
@@ -2598,6 +2599,7 @@ step
     .accept 1821 >>Accept Agamand Heirlooms << Warrior
     .accept 355 >>Accept Speak with Sevren
     .goto Tirisfal Glades,61.72,52.29
+    .target Yvette Farthing
     .target Coleman Farthing
     .isOnQuest 361
     .group
@@ -2623,6 +2625,7 @@ step
     .goto Tirisfal Glades,61.72,52.29
     .turnin 375 >>Turn in The Chill of Death
     .goto Tirisfal Glades,61.89,52.73
+    .target Yvette Farthing
     .target Coleman Farthing
     .target Gretchen Dedmar
     .isQuestComplete 375
@@ -2650,6 +2653,7 @@ step
     .turnin 1820 >>Turn in Speak with Coleman << Warrior
     .accept 355 >>Accept Speak with Sevren
     .goto Tirisfal Glades,61.72,52.29
+    .target Yvette Farthing
     .target Coleman Farthing
     .isOnQuest 361
 step
@@ -3135,7 +3139,6 @@ step << Rogue
     .goto Undercity,77.08,49.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Charles|r |cRXP_BUY_ in the Rogue's Quarter. Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
     .collect 851,1,435,1 --Collect Cutlass (1)
-    .skill Swords,<1,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
     .target Charles Seaton
