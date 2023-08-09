@@ -7,7 +7,6 @@ local fmt, tinsert, ipairs = string.format, table.insert, ipairs
 local GetItemInfoInstant, GetInventoryItemLink, IsEquippedItem =
     _G.GetItemInfoInstant, _G.GetInventoryItemLink, _G.IsEquippedItem
 local GetItemStats = _G.GetItemStats
-local GameTooltip = _G.GameTooltip
 
 addon.itemUpgrades = addon:NewModule("ItemUpgrades", "AceEvent-3.0")
 
@@ -19,7 +18,9 @@ local session = {
     statsRegexes = {},
 
     -- Item stats cache
-    itemCache = {}
+    itemCache = {},
+
+    comparisonTip = nil
 }
 
 local SLOT_MAP = {
@@ -83,6 +84,12 @@ local KEY_TO_TEXT = {
     ['ITEM_MOD_PARRY_RATING_SHORT'] = _G.ITEM_MOD_PARRY_RATING
 }
 
+local function regexify(input)
+    -- Replace '%s' with '(%d+)' to match numbers
+    -- Remove leading control characters on stats
+    return input:gsub("%%[ds]", "(%%d%+)"):gsub("^%%c", '')
+end
+
 -- Maps regex global string with stat rating key
 -- Turn descriptive text into number friendly regexes
 local function KeyToRegex(keyString)
@@ -94,14 +101,10 @@ local function KeyToRegex(keyString)
     -- Return nil for keys without mappings
     if not regex then return end
 
-    -- Replace '%s' with '(%d+)' to match numbers
     if type(regex) == "table" then
-        for i, _ in ipairs(regex) do
-            regex[i] = regex[i]:gsub("%%d", "(%%d%+)"):gsub("%%s", "(%%d%+)")
-        end
+        for i, _ in ipairs(regex) do regex[i] = regexify(regex[i]) end
     else
-        regex = regex:gsub("%%d", "(%%d%+)"):gsub("%%s", "(%%d%+)")
-        print("Regex", regex)
+        regex = regexify(regex)
     end
 
     session.statsRegexes[keyString] = regex
@@ -119,20 +122,30 @@ function addon.itemUpgrades:Setup()
         -- print("Checking", key)
         lookup = KeyToRegex(key)
         if lookup then
-            print("Notable key", key)
-            print("Match loaded", lookup)
+            -- print("Match loaded", lookup)
             session.statsRegexes[key] = lookup
         end
 
     end
+
+    -- TODO handle thread-safe?
+    session.comparisonTip = CreateFrame("GameTooltip",
+                                        "RXPItemUpgradesComparison", nil,
+                                        "GameTooltipTemplate")
+    session.comparisonTip:SetOwner(UIParent, "ANCHOR_NONE")
+    session.comparisonTip:Hide()
 end
 
 function addon.itemUpgrades:LoadStatWeights()
     if not addon.statWeights then return end
 
+    local activeKind = addon.settings.profile.hardcore and "HARDCORE" or
+                           "SPEEDRUN"
+
     for _, data in pairs(addon.statWeights) do
         -- TODO spec support
-        if strupper(data.Class) == addon.player.class then
+        if strupper(data.Class) == addon.player.class and strupper(data.Kind) ==
+            activeKind then
             session.statWeights = data
             -- print("Loaded statWeights", session.statWeights.Title)
             return
@@ -141,12 +154,7 @@ function addon.itemUpgrades:LoadStatWeights()
 
 end
 
--- ShoppingTooltip1
--- ShoppingTooltip2
--- ItemRefTooltip
-
 local function GetTooltipLines(tooltip)
-    tooltip = tooltip or GameTooltip
     local textLines = {}
     local regions = {tooltip:GetRegions()}
     for _, r in ipairs(regions) do
@@ -157,7 +165,7 @@ local function GetTooltipLines(tooltip)
     return textLines
 end
 
-function addon.itemUpgrades:GetItemData(itemLink)
+function addon.itemUpgrades:GetItemData(itemLink, tooltip)
     if type(itemLink) ~= "string" then
         addon.error("addon.itemUpgrades:GetItemData, itemLink string required")
         return
@@ -165,13 +173,9 @@ function addon.itemUpgrades:GetItemData(itemLink)
     -- itemLink = type(itemLink) == "string" and itemLink or "item:" .. itemLink
 
     if session.itemCache[itemLink] then
-        print("Returning cached weight", itemLink,
-              session.itemCache[itemLink].totalWeight)
+        -- print("Returning cached weight", itemLink, session.itemCache[itemLink].totalWeight)
         return session.itemCache[itemLink]
     end
-
-    -- Exclude comparing an equipped item
-    if IsEquippedItem(itemLink) then return end
 
     -- TODO can class use item - IsEquippableItem doesn't really work
 
@@ -193,19 +197,32 @@ function addon.itemUpgrades:GetItemData(itemLink)
     }
 
     local totalWeight = 0
-    local statWeight
+    local statWeight, tooltipTextLines
 
     -- Some stats don't show up
     -- Parse API stats first before processing tooltips
     for key, value in pairs(stats) do
+        -- print("Checking built-in calls")
         if session.statWeights[key] and session.statWeights[key] ~= 0 then
             stats[key] = value
         end
     end
 
     -- Parse tooltip for all additional stats
-    -- TODO only applies to new tooltips
-    local results = GetTooltipLines(GameTooltip)
+    if tooltip then
+        tooltipTextLines = GetTooltipLines(tooltip)
+    else -- If not tooltip, set hidden comparison tooltip
+        print("Not tooltip, setting", itemID)
+        session.comparisonTip:ClearLines()
+        --session.comparisonTip:SetItemByID(itemID)
+        session.comparisonTip:SetHyperlink(itemLink)
+        session.comparisonTip:Show()
+        RXPD = session.comparisonTip
+        print("session.comparisonTip:GetItem()", select(2, session.comparisonTip:GetItem()))
+        tooltipTextLines = GetTooltipLines(session.comparisonTip)
+        --session.comparisonTip:Hide()
+    end
+    -- RXPD = tooltipTextLines
 
     local match1, match2
 
@@ -216,8 +233,8 @@ function addon.itemUpgrades:GetItemData(itemLink)
         if not stats[key] then
 
             -- Check all tooltip lines for regex matches
-            for i, line in ipairs(results) do
-                --print("Checking", i, line)
+            for i, line in ipairs(tooltipTextLines) do
+                -- print("Checking", i, line)
 
                 if type(regex) == "table" then
                     for _, r in ipairs(regex) do
@@ -226,17 +243,17 @@ function addon.itemUpgrades:GetItemData(itemLink)
 
                         -- Only expect one number per line, so ignore if double match
                         if match1 and not match2 then
-                            print("Extracted", tonumber(match1), "from", line)
+                            -- print("Extracted", tonumber(match1), "from", line)
                             stats[key] = tonumber(match1)
                         end
                     end
                 else
-                    -- print("Parsing", i, line)
+                    -- print("Parsing", i, line, "for", regex)
                     match1, match2 = string.match(line, regex)
 
                     -- Only expect one number per line, so ignore if double match
                     if match1 and not match2 then
-                        print("Extracted", tonumber(match1), "from", line)
+                        -- print("Extracted", tonumber(match1), "from", line)
                         stats[key] = tonumber(match1)
                     end
                 end
@@ -266,12 +283,13 @@ end
 
 -- nil if same item
 -- % change otherwise
-function addon.itemUpgrades:CompareItemWeight(itemLink)
-    local comparedData = self:GetItemData(itemLink)
+function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
+    -- Always be GameTooltip as the top-most tooltip
+    local comparedData = self:GetItemData(itemLink, tooltip)
 
     -- Failed to load, wait for next try
     if not comparedData then
-        -- print("Failed to query comparedStats")
+        print("Failed to query comparedStats")
         return
     end
 
@@ -280,6 +298,7 @@ function addon.itemUpgrades:CompareItemWeight(itemLink)
     if not comparedData.InventorySlotId or
         not SLOT_MAP[comparedData.InventorySlotId] then return end
 
+    -- TODO handle slot map array and multiple matches
     local equippedItemLink = GetInventoryItemLink("player",
                                                   SLOT_MAP[comparedData.InventorySlotId])
     -- print("GetInventoryItemLink", comparedStats.InventorySlotId, GetInventoryItemLink("player", comparedStats.InventorySlotId))
@@ -292,7 +311,8 @@ function addon.itemUpgrades:CompareItemWeight(itemLink)
         return 0
     end
 
-    local equippedData = self:GetItemData(itemLink)
+    -- Load equipped item into hidden tooltip for parsing
+    local equippedData = self:GetItemData(equippedItemLink, nil)
 
     if not equippedData then
         -- Failed to load stats, wait for the next refresh
@@ -300,8 +320,13 @@ function addon.itemUpgrades:CompareItemWeight(itemLink)
         return
     end
 
-    -- print(comparedStats.InventorySlotId, "weights", comparedStats.totalWeight, equippedStats.totalWeight)
-    if comparedData.totalWeight > equippedData.totalWeight then
+    print(comparedData.InventorySlotId, "weights", comparedData.totalWeight,
+          equippedData.totalWeight)
+
+    if equippedData.totalWeight == 0 or equippedData.totalWeight == 0 then
+        -- Prevent division by 0
+        return
+    elseif comparedData.totalWeight > equippedData.totalWeight then
         return addon.Round(comparedData.totalWeight / equippedData.totalWeight,
                            2)
     elseif comparedData.totalWeight < equippedData.totalWeight then
@@ -313,13 +338,18 @@ function addon.itemUpgrades:CompareItemWeight(itemLink)
     end
 end
 
-local function GameTooltipSetItem(tooltip, ...)
-    local _, itemLink = GameTooltip:GetItem()
+local function TooltipSetItem(tooltip, ...)
+    local _, itemLink = tooltip:GetItem()
     if not itemLink then return end
+    -- print("TooltipSetItem", tooltip:GetName(), itemLink)
 
-    local percentageDiff = addon.itemUpgrades:CompareItemWeight(itemLink)
+    -- Exclude addon text for an equipped item
+    if IsEquippedItem(itemLink) then return end
 
-    -- Incomplete data or same item
+    local percentageDiff = addon.itemUpgrades:CompareItemWeight(itemLink,
+                                                                tooltip)
+    --print("percentageDiff", percentageDiff)
+    -- Incomplete data
     if not percentageDiff then return end
 
     tooltip:AddLine(addon.title)
@@ -329,18 +359,25 @@ local function GameTooltipSetItem(tooltip, ...)
     tooltip:Show()
 end
 
--- Hook comparison tooltip
-GameTooltip:HookScript("OnTooltipSetItem", GameTooltipSetItem)
-
--- Hook standalone item tooltips
-ItemRefTooltip:HookScript("OnTooltipSetItem", GameTooltipSetItem)
+GameTooltip:HookScript("OnTooltipSetItem", TooltipSetItem)
+-- ShoppingTooltip1:HookScript("OnTooltipSetItem", TooltipSetItem)
+-- ShoppingTooltip2:HookScript("OnTooltipSetItem", TooltipSetItem)
+ItemRefTooltip:HookScript("OnTooltipSetItem", TooltipSetItem)
 
 function addon.itemUpgrades.Test()
+    local itemData
     for _, itemID in pairs({19857, 19347, 19861}) do
         -- print(itemID)
-        for key, value in pairs(addon.itemUpgrades:GetItemData(
-                                    "item:" .. itemID, true)) do
-            print('  ', key, value)
+        itemData =
+            addon.itemUpgrades:GetItemData("item:" .. itemID, GameTooltip)
+
+        if itemData then
+            for key, value in pairs(itemData) do
+                print('  ', key, value)
+            end
+            for key, value in pairs(itemData.stats) do
+                print('  - ', key, value)
+            end
         end
     end
 end
