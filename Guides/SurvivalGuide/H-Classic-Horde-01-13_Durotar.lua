@@ -3328,10 +3328,10 @@ step
     .isQuestComplete 404
 step
     #label Brillturnins2
+    .goto Tirisfal Glades,59.45,52.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r
     .turnin 367 >>Turn in A New Plague
     .accept 368 >>Accept A New Plague
-    .goto Tirisfal Glades,59.45,52.40
     .target Apothecary Johaan
 step
     .goto Tirisfal Glades,61.97,51.29
