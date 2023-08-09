@@ -5104,7 +5104,8 @@ function addon.functions.group(self, ...)
         local text, number = ...
         local generateText
         if not number then generateText = true end
-        text = text or number and
+        number = tonumber(number)
+        text = text or (number and number > 0) and
             fmt(L"Do NOT attempt this quest unless you are in a group of at least %s",number)
 
         addon.step.group = true
@@ -5118,9 +5119,10 @@ function addon.functions.group(self, ...)
         for _,e in pairs(element.step.elements) do
             if e.tag == "complete" or e.tag == "collect" then
                 element.text = L"This step is meant to be completed as a group, be careful"
+                element.generateText = nil
+                return
             end
         end
-        element.generateText = nil
     end
 end
 
