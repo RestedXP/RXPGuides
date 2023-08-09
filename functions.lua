@@ -5106,7 +5106,7 @@ function addon.functions.group(self, ...)
         if not number then generateText = true end
         number = tonumber(number)
         text = text or (number and number > 0) and
-            fmt(L"Do NOT attempt this quest unless you are in a group of at least %s",number)
+            fmt(L"Do NOT attempt this quest unless you are in a group of at least %d",number)
 
         addon.step.group = true
         addon.step.solo = false
