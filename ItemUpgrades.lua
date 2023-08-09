@@ -23,33 +23,65 @@ local session = {
 }
 
 local SLOT_MAP = {
-    ["INVTYPE_HEAD"] = INVSLOT_HEAD,
-    ["INVTYPE_NECK"] = INVSLOT_NECK,
-    ["INVTYPE_SHOULDER"] = INVSLOT_SHOULDER,
-    ["INVTYPE_BODY"] = INVSLOT_BODY,
-    ["INVTYPE_CHEST"] = INVSLOT_CHEST,
-    ["INVTYPE_ROBE"] = INVSLOT_CHEST,
-    ["INVTYPE_WAIST"] = INVSLOT_WAIST,
-    ["INVTYPE_LEGS"] = INVSLOT_LEGS,
-    ["INVTYPE_FEET"] = INVSLOT_FEET,
-    ["INVTYPE_WRIST"] = INVSLOT_WRIST,
-    ["INVTYPE_HAND"] = INVSLOT_HAND,
-    ["INVTYPE_FINGER"] = {[INVSLOT_FINGER1] = true, [INVSLOT_FINGER2] = true},
-    ["INVTYPE_TRINKET"] = {[INVSLOT_TRINKET1] = true, [INVSLOT_TRINKET2] = true},
-    ["INVTYPE_CLOAK"] = INVSLOT_BACK,
-    ["INVTYPE_WEAPON"] = {[INVSLOT_MAINHAND] = true, [INVSLOT_OFFHAND] = true},
-    ["INVTYPE_SHIELD"] = INVSLOT_OFFHAND,
-    ["INVTYPE_2HWEAPON"] = INVSLOT_MAINHAND,
-    ["INVTYPE_WEAPONMAINHAND"] = INVSLOT_MAINHAND,
-    ["INVTYPE_WEAPONOFFHAND"] = INVSLOT_OFFHAND,
-    ["INVTYPE_HOLDABLE"] = INVSLOT_OFFHAND,
-    ["INVTYPE_RANGED"] = INVSLOT_RANGED,
-    ["INVTYPE_THROWN"] = INVSLOT_RANGED,
-    ["INVTYPE_RANGEDRIGHT"] = INVSLOT_RANGED
+    ["INVTYPE_HEAD"] = _G.INVSLOT_HEAD,
+    ["INVTYPE_NECK"] = _G.INVSLOT_NECK,
+    ["INVTYPE_SHOULDER"] = _G.INVSLOT_SHOULDER,
+    ["INVTYPE_BODY"] = _G.INVSLOT_BODY,
+    ["INVTYPE_CHEST"] = _G.INVSLOT_CHEST,
+    ["INVTYPE_ROBE"] = _G.INVSLOT_CHEST,
+    ["INVTYPE_WAIST"] = _G.INVSLOT_WAIST,
+    ["INVTYPE_LEGS"] = _G.INVSLOT_LEGS,
+    ["INVTYPE_FEET"] = _G.INVSLOT_FEET,
+    ["INVTYPE_WRIST"] = _G.INVSLOT_WRIST,
+    ["INVTYPE_HAND"] = _G.INVSLOT_HAND,
+    ["INVTYPE_FINGER"] = {
+        [_G.INVSLOT_FINGER1] = true,
+        [_G.INVSLOT_FINGER2] = true
+    },
+    ["INVTYPE_TRINKET"] = {
+        [_G.INVSLOT_TRINKET1] = true,
+        [_G.INVSLOT_TRINKET2] = true
+    },
+    ["INVTYPE_CLOAK"] = _G.INVSLOT_BACK,
+    ["INVTYPE_WEAPON"] = {
+        [_G.INVSLOT_MAINHAND] = true,
+        [_G.INVSLOT_OFFHAND] = true
+    },
+    ["INVTYPE_SHIELD"] = _G.INVSLOT_OFFHAND,
+    ["INVTYPE_2HWEAPON"] = _G.INVSLOT_MAINHAND,
+    ["INVTYPE_WEAPONMAINHAND"] = _G.INVSLOT_MAINHAND,
+    ["INVTYPE_WEAPONOFFHAND"] = _G.INVSLOT_OFFHAND,
+    ["INVTYPE_HOLDABLE"] = _G.INVSLOT_OFFHAND,
+    ["INVTYPE_RANGED"] = _G.INVSLOT_RANGED,
+    ["INVTYPE_THROWN"] = _G.INVSLOT_RANGED,
+    ["INVTYPE_RANGEDRIGHT"] = _G.INVSLOT_RANGED
 }
 
 -- Map quasi-friendly key from GSheet/StatWeights to regex-friendly value
-local KEY_TO_TEXT = {['STAT_ARMOR'] = _G.ARMOR_TEMPLATE}
+-- GSheet or pretty name = Regex formatting
+local KEY_TO_TEXT = {
+    ['STAT_ARMOR'] = _G.ARMOR_TEMPLATE,
+    ['ITEM_MOD_STRENGTH_SHORT'] = _G.ITEM_MOD_STRENGTH,
+    ['ITEM_MOD_AGILITY_SHORT'] = _G.ITEM_MOD_AGILITY,
+    ['ITEM_MOD_INTELLECT_SHORT'] = _G.ITEM_MOD_INTELLECT,
+    ['ITEM_MOD_STAMINA_SHORT'] = _G.ITEM_MOD_STAMINA,
+    ['ITEM_MOD_SPIRIT_SHORT'] = _G.ITEM_MOD_SPIRIT,
+    ['ITEM_MOD_HEALTH_REGEN_SHORT'] = _G.ITEM_MOD_HEALTH_REGEN,
+    ['ITEM_MOD_POWER_REGEN0_SHORT'] = _G.ITEM_MOD_MANA_REGENERATION,
+    ['ITEM_MOD_SPELL_DAMAGE_DONE_SHORT'] = {
+        _G.ITEM_MOD_SPELL_POWER, _G.ITEM_MOD_SPELL_DAMAGE_DONE
+    },
+    ['ITEM_MOD_SPELL_HEALING_DONE_SHORT'] = _G.ITEM_MOD_SPELL_HEALING_DONE,
+    ['ITEM_MOD_HIT_SPELL_RATING_SHORT'] = _G.ITEM_MOD_HIT_SPELL_RATING,
+    ['ITEM_MOD_CRIT_SPELL_RATING_SHORT'] = _G.ITEM_MOD_CRIT_SPELL_RATING,
+    ['ITEM_MOD_ATTACK_POWER_SHORT'] = _G.ITEM_MOD_ATTACK_POWER,
+    ['ITEM_MOD_HIT_RATING_SHORT'] = _G.ITEM_MOD_HIT_RATING,
+    ['ITEM_MOD_CRIT_RATING_SHORT'] = _G.ITEM_MOD_CRIT_RATING,
+    ['ITEM_MOD_RANGED_ATTACK_POWER_SHORT'] = _G.ITEM_MOD_RANGED_ATTACK_POWER,
+    ['ITEM_MOD_DEFENSE_SKILL_RATING_SHORT'] = _G.ITEM_MOD_DEFENSE_SKILL_RATING,
+    ['ITEM_MOD_DODGE_RATING_SHORT'] = _G.ITEM_MOD_DODGE_RATING,
+    ['ITEM_MOD_PARRY_RATING_SHORT'] = _G.ITEM_MOD_PARRY_RATING
+}
 
 -- Maps regex global string with stat rating key
 -- Turn descriptive text into number friendly regexes
@@ -62,8 +94,15 @@ local function KeyToRegex(keyString)
     -- Return nil for keys without mappings
     if not regex then return end
 
-    -- Replace '%s' with '(%d)' to match numbers
-    regex = regex:gsub("%%s", "(%%d%+)")
+    -- Replace '%s' with '(%d+)' to match numbers
+    if type(regex) == "table" then
+        for i, _ in ipairs(regex) do
+            regex[i] = regex[i]:gsub("%%d", "(%%d%+)"):gsub("%%s", "(%%d%+)")
+        end
+    else
+        regex = regex:gsub("%%d", "(%%d%+)"):gsub("%%s", "(%%d%+)")
+        print("Regex", regex)
+    end
 
     session.statsRegexes[keyString] = regex
 
@@ -118,15 +157,16 @@ local function GetTooltipLines(tooltip)
     return textLines
 end
 
-function addon.itemUpgrades:GetItemStats(itemLink)
+function addon.itemUpgrades:GetItemData(itemLink)
     if type(itemLink) ~= "string" then
-        addon.error("addon.itemUpgrades:GetItemStats, itemLink string required")
+        addon.error("addon.itemUpgrades:GetItemData, itemLink string required")
         return
     end
     -- itemLink = type(itemLink) == "string" and itemLink or "item:" .. itemLink
 
     if session.itemCache[itemLink] then
-        print("Returning cached weight", itemLink, session.itemCache[itemLink].totalWeight)
+        print("Returning cached weight", itemLink,
+              session.itemCache[itemLink].totalWeight)
         return session.itemCache[itemLink]
     end
 
@@ -145,10 +185,12 @@ function addon.itemUpgrades:GetItemStats(itemLink)
     -- Failed to query stats, wait for next run
     if stats == nil then return end
 
-    stats.itemLink = itemLink
-    stats.itemID = itemID
-    stats.itemSubType = itemSubType
-    stats.InventorySlotId = inventorySlotId
+    local itemData = {
+        itemLink = itemLink,
+        itemID = itemID,
+        itemSubType = itemSubType,
+        InventorySlotId = inventorySlotId
+    }
 
     local totalWeight = 0
     local statWeight
@@ -175,15 +217,28 @@ function addon.itemUpgrades:GetItemStats(itemLink)
 
             -- Check all tooltip lines for regex matches
             for i, line in ipairs(results) do
-                -- print("Checking", i, line)
+                --print("Checking", i, line)
 
-                -- print("Parsing", i, line)
-                match1, match2 = string.match(line, regex)
+                if type(regex) == "table" then
+                    for _, r in ipairs(regex) do
+                        -- print("Parsing", i, line)
+                        match1, match2 = string.match(line, r)
 
-                -- Only expect one number per line, so ignore if double match
-                if match1 and not match2 then
-                    print("Extracted", tonumber(match1), "from", line)
-                    stats[key] = tonumber(match1)
+                        -- Only expect one number per line, so ignore if double match
+                        if match1 and not match2 then
+                            print("Extracted", tonumber(match1), "from", line)
+                            stats[key] = tonumber(match1)
+                        end
+                    end
+                else
+                    -- print("Parsing", i, line)
+                    match1, match2 = string.match(line, regex)
+
+                    -- Only expect one number per line, so ignore if double match
+                    if match1 and not match2 then
+                        print("Extracted", tonumber(match1), "from", line)
+                        stats[key] = tonumber(match1)
+                    end
                 end
             end
         end
@@ -202,56 +257,57 @@ function addon.itemUpgrades:GetItemStats(itemLink)
         end
     end
 
-    stats.totalWeight = addon.Round(totalWeight, 2)
-    session.itemCache[itemLink] = stats
+    itemData.totalWeight = addon.Round(totalWeight, 2)
+    itemData.stats = stats
+    session.itemCache[itemLink] = itemData
 
-    return stats
+    return itemData
 end
 
 -- nil if same item
 -- % change otherwise
 function addon.itemUpgrades:CompareItemWeight(itemLink)
-    local comparedStats = self:GetItemStats(itemLink)
+    local comparedData = self:GetItemData(itemLink)
 
     -- Failed to load, wait for next try
-    if not comparedStats then
+    if not comparedData then
         -- print("Failed to query comparedStats")
         return
     end
 
     -- Not an equippable item
     -- TODO exclude quiver
-    if not comparedStats.InventorySlotId or
-        not SLOT_MAP[comparedStats.InventorySlotId] then return end
+    if not comparedData.InventorySlotId or
+        not SLOT_MAP[comparedData.InventorySlotId] then return end
 
     local equippedItemLink = GetInventoryItemLink("player",
-                                                  SLOT_MAP[comparedStats.InventorySlotId])
+                                                  SLOT_MAP[comparedData.InventorySlotId])
     -- print("GetInventoryItemLink", comparedStats.InventorySlotId, GetInventoryItemLink("player", comparedStats.InventorySlotId))
 
     -- No equipped item, so anything is an upgrade from no item
     if not equippedItemLink or equippedItemLink == "" then
         -- print("not equippedItemLink")
         return 100
-    elseif comparedStats.itemLink == equippedItemLink then
+    elseif comparedData.itemLink == equippedItemLink then
         return 0
     end
 
-    local equippedStats = self:GetItemStats(itemLink)
+    local equippedData = self:GetItemData(itemLink)
 
-    if not equippedStats then
+    if not equippedData then
         -- Failed to load stats, wait for the next refresh
         print("not equippedStats")
         return
     end
 
     -- print(comparedStats.InventorySlotId, "weights", comparedStats.totalWeight, equippedStats.totalWeight)
-    if comparedStats.totalWeight > equippedStats.totalWeight then
-        return addon.Round(
-                   comparedStats.totalWeight / equippedStats.totalWeight, 2)
-    elseif comparedStats.totalWeight < equippedStats.totalWeight then
+    if comparedData.totalWeight > equippedData.totalWeight then
+        return addon.Round(comparedData.totalWeight / equippedData.totalWeight,
+                           2)
+    elseif comparedData.totalWeight < equippedData.totalWeight then
         return -1 *
                    addon.Round(
-                       comparedStats.totalWeight / equippedStats.totalWeight, 2)
+                       comparedData.totalWeight / equippedData.totalWeight, 2)
     else
         return
     end
@@ -282,8 +338,8 @@ ItemRefTooltip:HookScript("OnTooltipSetItem", GameTooltipSetItem)
 function addon.itemUpgrades.Test()
     for _, itemID in pairs({19857, 19347, 19861}) do
         -- print(itemID)
-        for key, value in pairs(addon.itemUpgrades:GetItemStats("item:" ..
-                                                                    itemID, true)) do
+        for key, value in pairs(addon.itemUpgrades:GetItemData(
+                                    "item:" .. itemID, true)) do
             print('  ', key, value)
         end
     end
