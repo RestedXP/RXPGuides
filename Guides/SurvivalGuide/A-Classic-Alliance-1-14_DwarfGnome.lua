@@ -2314,12 +2314,10 @@ step
     .goto Westfall,56.55,52.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
     .fp Sentinel Hill >> Get the Sentinel Hill flight path
+    .fly Stormwind >> Fly to Stormwind << Dwarf Paladin
     .target Thor
 step << !Paladin
     .hs >> Hearth to Loch Modan
-step << Dwarf Paladin
-    #completewith next
-    .hs >> Hearth to Stormwind
 step << Dwarf Paladin
     .goto StormwindClassic,61.149,11.568,25,0
     .goto StormwindClassic,64.0,8.10
@@ -2421,6 +2419,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vrok Blunderblast|r
     >>|cRXP_BUY_Buy a|r |T135613:0|t[Hunter's Boomstick] |cRXP_BUY_if you can afford it|r
     .collect 2511,1
+    .money <0.1300
     .target Vrok Blunderblast
 step
     .group
@@ -2686,31 +2685,26 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Juli Stormkettle|r
     .trainer >> Train your class spells
     .target Juli Stormkettle
+
 step << Mage/Priest/Warlock
-    #softcore
-    #sticky
-    #label Wand1
-    #completewith Wand2
-     >>Try to buy a Greater Magic Wand from the AH if it costs <33s 40c
-    .goto Ironforge,25.74,75.43
+    #ah
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to an |cRXP_FRIENDLY_Ironforge Auctioneer|r
+    >>|cRXP_BUY_Buy a|r |T135144:0|t[Greater Magic Wand] |cRXP_BUY_if it costs less than 33s 40c|r
+    .goto Ironforge,25.800,75.500,-1
+    .goto Ironforge,24.200,74.600,-1
+    .goto Ironforge,23.800,71.800,-1
     .collect 11288,1 --Greater Magic Wand (1)
+    .target Auctioneer Lympkin
+    .target Auctioneer Redmuse
+    .target Auctioneer Buckler
 step << Mage/Priest/Warlock
-    #softcore
-    #label Wand2
-    #completewith Wand1
-    >>If you can't find a Greater Magic Wand for a good price, buy a Smoldering Wand from the wand vendor
-    .goto Ironforge,24.09,16.63,14,0
-    .goto Ironforge,23.13,15.96
-    .collect 5208,1 --Smoldering Wand (1)
-step << Mage/Priest/Warlock
-    #hardcore
     .goto Ironforge,22.837,17.094,8,0
     .goto Ironforge,21.131,17.276,5,0
     .goto Ironforge,23.135,15.936
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harick Boulderdrum|r downstairs
-    >>|cRXP_BUY_Buy a|r |T135468:0|t[Smoldering Wand]|cRXP_BUY_. Equip it when you are 15|r
+    >>|cRXP_WARN_If you aren't able to acquire a|r |T135144:0|t[Greater Magic Wand] |cRXP_WARN_buy a|r |T135468:0|t[Smoldering Wand] |cRXP_WARN_and equip it when you are 15|r
     .collect 5208,1 --Smoldering Wand (1)
-    .target Harick Boulderdrum
+    .target Harick Boulderdrum    
 step << Warlock
     #softcore
     #requires Wand2

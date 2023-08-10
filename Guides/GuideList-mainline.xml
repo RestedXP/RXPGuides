@@ -20,5 +20,16 @@
  <Script file="Guides/Retail-Starting-Zones/Neutral-Demon Hunter_Mardum.lua"/>
  <Script file="Guides/Retail-Starting-Zones/Neutral-Pandaren_The Wandering Isle.lua"/>
  <Script file="Guides/Retail-Starting-Zones/Retail-Dragon Glyphs.lua"/>
+
+<Script file="Guides/Retail-Allied-Races/Retail-Alliance-DarkIronDwarf.lua"/>
+<Script file="Guides/Retail-Allied-Races/Retail-Alliance-Kultiran.lua"/>
+<Script file="Guides/Retail-Allied-Races/Retail-Alliance-LightForgedDraenei.lua"/>
+<Script file="Guides/Retail-Allied-Races/Retail-Alliance-Mechagnome.lua"/>
+<Script file="Guides/Retail-Allied-Races/Retail-Alliance-VoidElf.lua"/>
+<Script file="Guides/Retail-Allied-Races/Retail-Horde-HighmountainTauren.lua"/>
+<Script file="Guides/Retail-Allied-Races/Retail-Horde-MagharOrc.lua"/>
+<Script file="Guides/Retail-Allied-Races/Retail-Horde-Nightborne.lua"/>
+<Script file="Guides/Retail-Allied-Races/Retail-Horde-Vulpera.lua"/>
+<Script file="Guides/Retail-Allied-Races/Retail-Horde-ZandalariTroll.lua"/>
   
 </Ui>

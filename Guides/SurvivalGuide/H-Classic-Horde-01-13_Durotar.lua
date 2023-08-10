@@ -1481,18 +1481,6 @@ step << Priest
     .trainer >> Train your class spells
     .target Tai'jin
 step
-    .goto Durotar,51.51,41.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
-    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman
-    >>|cRXP_BUY_Buy|r |T133974:0|t[Haunch of Meat] |cRXP_BUY_from him|r << Rogue/Warrior
-    .vendor >> Vendor Trash
-    .home >> Set your Hearthstone to Razor Hill
-    .turnin 2161 >>Turn in A Peon's Burden
-    .collect 1179,10,818,1 << Mage/Warlock/Priest/Shaman --Ice Cold Milk (10)
-    .collect 2287,10,818,1 << Rogue/Warrior --Haunch of Meat (10)
-    .target Innkeeper Grosk
-    .money <0.025
-step
     .goto Durotar,54.17,41.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rawrk|r
     .train 3273 >>Train |T135966:0|t[First Aid]
@@ -1505,6 +1493,18 @@ step
     .collect 4496,1,818,1 --Small Brown Pouch (1)
     .target Jark
     .money <0.05
+step
+    .goto Durotar,51.51,41.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
+    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman
+    >>|cRXP_BUY_Buy|r |T133974:0|t[Haunch of Meat] |cRXP_BUY_from him|r << Rogue/Warrior
+    .vendor >> Vendor Trash
+    .home >> Set your Hearthstone to Razor Hill
+    .turnin 2161 >>Turn in A Peon's Burden
+    .collect 1179,10,818,1 << Mage/Warlock/Priest/Shaman --Ice Cold Milk (10)
+    .collect 2287,10,818,1 << Rogue/Warrior --Haunch of Meat (10)
+    .target Innkeeper Grosk
+    .money <0.025
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Crawlers|r and |cRXP_ENEMY_Makruras|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r. This does not need to be finished now
@@ -3043,9 +3043,8 @@ step << Orc Rogue/Troll Rogue
 step << Orc Rogue/Troll Rogue
     .goto Undercity,77.08,49.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Charles|r |cRXP_BUY_ in the Rogue's Quarter. Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
-    .collect 851,1,398,1 --Collect Cutlass (1)
+    .collect 851,1,435,1 --Collect Cutlass (1)
     .money <0.2023
-    .skill Swords,<1,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
     .target Charles Seaton
@@ -3329,10 +3328,10 @@ step
     .isQuestComplete 404
 step
     #label Brillturnins2
+    .goto Tirisfal Glades,59.45,52.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r
     .turnin 367 >>Turn in A New Plague
     .accept 368 >>Accept A New Plague
-    .goto Tirisfal Glades,59.45,52.40
     .target Apothecary Johaan
 step
     .goto Tirisfal Glades,61.97,51.29
@@ -3441,9 +3440,8 @@ step << Rogue
 step << Rogue
     .goto Undercity,77.08,49.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Charles|r |cRXP_BUY_ in the Rogue's Quarter. Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
-    .collect 851,1,398,1 --Collect Cutlass (1)
+    .collect 851,1,435,1 --Collect Cutlass (1)
     .money <0.2023
-    .skill Swords,<1,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
     .target Charles Seaton
@@ -3765,6 +3763,7 @@ step
     .goto Tirisfal Glades,61.72,52.29
     .turnin 375 >>Turn in The Chill of Death
     .goto Tirisfal Glades,61.89,52.73
+    .target Yvette Farthing
     .target Coleman Farthing
     .target Gretchen Dedmar
     .isQuestComplete 375
@@ -3796,6 +3795,7 @@ step
     .accept 1821 >>Accept Agamand Heirlooms << Warrior
     .accept 355 >>Accept Speak with Sevren
     .goto Tirisfal Glades,61.72,52.29
+    .target Yvette Farthing
     .target Coleman Farthing
     .isOnQuest 361
     .group
@@ -3822,6 +3822,7 @@ step
     .goto Tirisfal Glades,61.72,52.29
     .turnin 375 >>Turn in The Chill of Death
     .goto Tirisfal Glades,61.89,52.73
+    .target Yvette Farthing
     .target Coleman Farthing
     .target Gretchen Dedmar
     .isQuestComplete 375
@@ -3849,6 +3850,7 @@ step
     .turnin 1820 >>Turn in Speak with Coleman << Warrior
     .accept 355 >>Accept Speak with Sevren
     .goto Tirisfal Glades,61.72,52.29
+    .target Yvette Farthing
     .target Coleman Farthing
     .isOnQuest 361
 step
@@ -3915,7 +3917,7 @@ step
     .accept 360 >>Accept Return to the Magistrate
     .accept 356 >>Accept Rear Guard Patrol
     .target Deathguard Linnea
-    .isOnQuest 359
+    .isQuestTurnedIn 358
     .maxlevel 13
 step
     .goto Tirisfal Glades,65.49,60.25
@@ -4006,7 +4008,7 @@ step << Priest/Warlock
     .goto Tirisfal Glades,76.12,57.22,40,0
     .goto Tirisfal Glades,77.16,56.75,40,0
     .goto Tirisfal Glades,79.82,56.40
-    >>|cRXP_WARN_Collect 3 stacks of|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for your wand. This is the last chance to get enough before Silverpine Forest|r
+    >>|cRXP_WARN_Collect 3 stacks of|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for your Lesser Magic Wand. This is the last chance to get enough before Silverpine Forest|r
     .collect 2589,60,435,1 --Linen Cloth (60)
     .mob Scarlet Friar
     .mob Scarlet Zealot
@@ -4129,7 +4131,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gretchen|r upstairs
     .turnin 375 >>Turn in The Chill of Death
     .target Gretchen Dedmar
-    .isOnQuest 375
+    .isQuestComplete 375
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beryl|r on the second floor
@@ -4398,7 +4400,6 @@ step << Rogue
     .goto Undercity,77.08,49.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Charles|r |cRXP_BUY_ in the Rogue's Quarter. Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
     .collect 851,1,435,1 --Collect Cutlass (1)
-    .skill Swords,<1,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
     .target Charles Seaton

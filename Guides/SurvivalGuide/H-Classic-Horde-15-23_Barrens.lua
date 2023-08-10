@@ -1199,7 +1199,7 @@ step
 step << Rogue
     .goto Orgrimmar,43.05,53.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shenthul|r
-    .train 8045 >> Train |T136058:0|t[Pick Lock]
+    .train 1804 >> Train |T136058:0|t[Pick Lock]
     .train 921 >> Train |T133644:0|t[Pick Pocket]
     .accept 2379 >> Accept Zando'Zan
     .target Shenthul
@@ -1927,7 +1927,8 @@ step
 step
     .goto Stonetalon Mountains,47.61,61.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Jeeda|r |cRXP_BUY_on the second floor of the inn|r
-    .vendor >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_from her if they're up|r
+    .vendor >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_from her if they're up|r << !Warrior
+    .vendor >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_and|r |T134413:0|t[Liferoot] |cRXP_BUY_from her if they're up|r << Warrior
     .target Jeeda
 step
     .goto Stonetalon Mountains,45.13,59.85
@@ -2975,6 +2976,11 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ansekhwa|r
     .train 198 >>Train Maces
     .target Ansekhwa
+step << Rogue
+    .goto Thunder Bluff,38.95,64.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kuruk|r|cRXP_BUY_. Buy |r |T135423:0|t[Deadly Throwing Axe] |cRXP_BUY_from him|r
+    .collect 3137,200,6544,1 --Deadly Throwing Axe (200)
+    .target Kuruk
 step
     #completewith next
     .goto Thunder Bluff,28.14,32.97,40,0
@@ -3441,7 +3447,8 @@ step
 step
     .goto Stonetalon Mountains,47.61,61.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Jeeda|r |cRXP_BUY_on the second floor of the inn|r
-    .vendor >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_from her if they're up|r
+    .vendor >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_from her if they're up|r << !Warrior
+    .vendor >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_and|r |T134413:0|t[Liferoot] |cRXP_BUY_from her if they're up|r << Warrior
     .target Jeeda
 step
     #completewith InDeepTrouble2

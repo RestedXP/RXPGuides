@@ -238,7 +238,7 @@ step
     .target Magmar Fellhew
 step
     .goto Loch Modan,65.934,65.622
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magmar Fellhew|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Ironband|r
     .accept 298 >> Accept Excavation Progress Report
     .target Prospector Ironband
 step
@@ -369,7 +369,7 @@ step
 step
     .goto Ironforge,74.645,11.742
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Stormpike|r
-    .turnin 301 >> Turn in Excavation Progress Report
+    .turnin 301 >> Turn in Report to Ironforge
     .target Prospector Stormpike
 step
     .isQuestTurnedIn 2078

@@ -576,6 +576,14 @@ step << Warlock
     .target Richard Kerwin
     .xp <16,1
     .group
+step << Priest/Mage/Warlock
+    .goto Undercity,69.54,26.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Zane|r|cRXP_BUY_. Buy a|r |T133718:0|t[Smoldering Wand] |cRXP_BUY_from him|r
+    .collect 5754,1 --Smoldering Wand (1)
+    .money <0.3515
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<13.4
+	.target Zane Bradford
  step << Undead Rogue
     .goto Undercity,83.52,69.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mennet|r
