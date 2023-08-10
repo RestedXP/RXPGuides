@@ -1839,7 +1839,7 @@ step
     >>|cRXP_BUY_Buy one or more|r |T133634:0|t[Small Brown Pouches] |cRXP_BUY_from|r |cRXP_FRIENDLY_him|r
     .collect 4496,1,818,1 --Small Brown Pouch (1)
     .target Jark
-    .money >0.05
+    .money <0.05
 step << Warrior
     .goto Durotar,54.18,42.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw|r
