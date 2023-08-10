@@ -226,16 +226,11 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
     if tooltip then
         tooltipTextLines = GetTooltipLines(tooltip)
     else -- If not tooltip, set hidden comparison tooltip
-        print("Not tooltip, setting", itemLink)
         tooltip = GetComparisonTip()
         tooltip:SetHyperlink(itemLink)
-        -- tooltip:SetItemByID(itemID)
-        -- tooltip:Show()
 
         tooltipTextLines = GetTooltipLines(tooltip)
-        -- tooltip:Hide()
     end
-    -- RXPD = tooltipTextLines
 
     local match1, match2
 
