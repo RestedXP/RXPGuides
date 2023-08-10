@@ -20,6 +20,7 @@ local session = {
     -- Item stats cache
     itemCache = {},
 
+    -- TODO handle thread-safe?
     comparisonTip = nil
 }
 
@@ -128,12 +129,6 @@ function addon.itemUpgrades:Setup()
 
     end
 
-    -- TODO handle thread-safe?
-    session.comparisonTip = CreateFrame("GameTooltip",
-                                        "RXPItemUpgradesComparison", nil,
-                                        "GameTooltipTemplate")
-    session.comparisonTip:SetOwner(UIParent, "ANCHOR_NONE")
-    session.comparisonTip:Hide()
 end
 
 function addon.itemUpgrades:LoadStatWeights()
@@ -156,13 +151,33 @@ end
 
 local function GetTooltipLines(tooltip)
     local textLines = {}
+    -- print("GetTooltipLines, tooltip", tooltip:GetName())
+
     local regions = {tooltip:GetRegions()}
     for _, r in ipairs(regions) do
-        if r:IsObjectType("FontString") then
+
+        if r:IsObjectType("FontString") and r:GetText() then
+            -- print("GetTooltipLines, regions", r:GetText())
             tinsert(textLines, r:GetText())
         end
     end
     return textLines
+end
+
+local function GetComparisonTip()
+    if session.comparisonTip then return session.comparisonTip end
+
+    session.comparisonTip = CreateFrame("GameTooltip",
+                                        "RXPItemUpgradesComparison", nil,
+                                        "GameTooltipTemplate")
+    session.comparisonTip:SetOwner(WorldFrame, "ANCHOR_NONE")
+    session.comparisonTip:AddFontStrings(
+        session.comparisonTip:CreateFontString("$parentTextLeft1", nil,
+                                               "GameTooltipText"),
+        session.comparisonTip:CreateFontString("$parentTextRight1", nil,
+                                               "GameTooltipText"))
+
+    return session.comparisonTip
 end
 
 function addon.itemUpgrades:GetItemData(itemLink, tooltip)
@@ -170,7 +185,6 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
         addon.error("addon.itemUpgrades:GetItemData, itemLink string required")
         return
     end
-    -- itemLink = type(itemLink) == "string" and itemLink or "item:" .. itemLink
 
     if session.itemCache[itemLink] then
         -- print("Returning cached weight", itemLink, session.itemCache[itemLink].totalWeight)
@@ -212,15 +226,14 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
     if tooltip then
         tooltipTextLines = GetTooltipLines(tooltip)
     else -- If not tooltip, set hidden comparison tooltip
-        print("Not tooltip, setting", itemID)
-        session.comparisonTip:ClearLines()
-        --session.comparisonTip:SetItemByID(itemID)
-        session.comparisonTip:SetHyperlink(itemLink)
-        session.comparisonTip:Show()
-        RXPD = session.comparisonTip
-        print("session.comparisonTip:GetItem()", select(2, session.comparisonTip:GetItem()))
-        tooltipTextLines = GetTooltipLines(session.comparisonTip)
-        --session.comparisonTip:Hide()
+        print("Not tooltip, setting", itemLink)
+        tooltip = GetComparisonTip()
+        tooltip:SetHyperlink(itemLink)
+        -- tooltip:SetItemByID(itemID)
+        -- tooltip:Show()
+
+        tooltipTextLines = GetTooltipLines(tooltip)
+        -- tooltip:Hide()
     end
     -- RXPD = tooltipTextLines
 
@@ -284,12 +297,11 @@ end
 -- nil if same item
 -- % change otherwise
 function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
-    -- Always be GameTooltip as the top-most tooltip
     local comparedData = self:GetItemData(itemLink, tooltip)
 
     -- Failed to load, wait for next try
     if not comparedData then
-        print("Failed to query comparedStats")
+        print("Failed to query comparedStats", itemLink)
         return
     end
 
@@ -305,10 +317,9 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
 
     -- No equipped item, so anything is an upgrade from no item
     if not equippedItemLink or equippedItemLink == "" then
-        -- print("not equippedItemLink")
-        return 100
+        return 1
     elseif comparedData.itemLink == equippedItemLink then
-        return 0
+        return
     end
 
     -- Load equipped item into hidden tooltip for parsing
@@ -316,12 +327,11 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
 
     if not equippedData then
         -- Failed to load stats, wait for the next refresh
-        print("not equippedStats")
+        print("not equippedStats", equippedItemLink)
         return
     end
 
-    print(comparedData.InventorySlotId, "weights", comparedData.totalWeight,
-          equippedData.totalWeight)
+    -- print(comparedData.InventorySlotId, "weights", comparedData.totalWeight, equippedData.totalWeight)
 
     if equippedData.totalWeight == 0 or equippedData.totalWeight == 0 then
         -- Prevent division by 0
@@ -333,6 +343,8 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
         return -1 *
                    addon.Round(
                        comparedData.totalWeight / equippedData.totalWeight, 2)
+    elseif comparedData.totalWeight == equippedData.totalWeight then
+        return 0
     else
         return
     end
@@ -346,15 +358,15 @@ local function TooltipSetItem(tooltip, ...)
     -- Exclude addon text for an equipped item
     if IsEquippedItem(itemLink) then return end
 
-    local percentageDiff = addon.itemUpgrades:CompareItemWeight(itemLink,
+    local ratio = addon.itemUpgrades:CompareItemWeight(itemLink,
                                                                 tooltip)
-    --print("percentageDiff", percentageDiff)
+    -- print("percentageDiff", percentageDiff)
     -- Incomplete data
-    if not percentageDiff then return end
+    if not ratio then return end
 
     tooltip:AddLine(addon.title)
 
-    tooltip:AddLine(fmt("%s %s%%", _G.ITEM_UPGRADE, percentageDiff))
+    tooltip:AddLine(fmt("%s %s%%", _G.ITEM_UPGRADE, ratio * 100))
 
     tooltip:Show()
 end
