@@ -2837,7 +2837,7 @@ step << Druid
     .goto Thunder Bluff,47.12,57.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chesmu|r
     .bankdeposit 5075 >> Deposit your |T134128:0|t[Blood Shards]
-    .bankdeposit 868 >> Deposit your |T132938:0|t[Digging Claw]
+    .bankdeposit 5099 >> Deposit your |T132938:0|t[Digging Claw]
     .target Chesmu
 step << Druid
     .goto Thunder Bluff,45.83,64.74
@@ -2960,11 +2960,11 @@ step << Orc Warrior/Tauren Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ansekhwa|r
     .train 227 >>Train Staves
     .train 199 >>Train Two-Handed Maces
+    .target Ansekhwa
 step << Troll Warrior
     .goto Thunder Bluff,40.93,62.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ansekhwa|r
     .train 199 >>Train Two-Handed Maces
-    .target Ansekhwa
     .target Ansekhwa
 step << Warlock/Priest
     .goto Thunder Bluff,40.93,62.73

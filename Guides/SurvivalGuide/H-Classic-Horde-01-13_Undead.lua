@@ -1479,16 +1479,6 @@ step << Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'jin|r
     .train 139 >> Train your class spells
     .target Tai'jin
-step << Priest
-    .goto Durotar,53.10,46.46
-    >>Cast |T135929:0|t[Lesser Heal] and |T135987:0|t[Power Word: Fortitude] on |cRXP_FRIENDLY_Kor'ja|r
-    .complete 5648,1 --Heal and fortify Grunt Kor'ja
-    .target Grunt Kor'ja
-step << Priest
-    .goto Durotar,54.26,42.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'jin|r
-    .turnin 5648 >>Turn in Garments of Spirituality
-    .target Tai'jin
 step
     .goto Durotar,51.51,41.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
@@ -1512,7 +1502,7 @@ step
     >>|cRXP_BUY_Buy a|r |T133634:0|t[Small Brown Pouch] |cRXP_BUY_from|r |cRXP_FRIENDLY_him|r
     .collect 4496,1,818,1 --Small Brown Pouch (1)
     .target Jark
-    .money >0.05
+    .money <0.05
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Crawlers|r and |cRXP_ENEMY_Makruras|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r. This does not need to be finished now
@@ -1855,7 +1845,7 @@ step
     >>|cRXP_WARN_Pull him backwards towards the|r |cRXP_ENEMY_Lightning Hides|r |cRXP_WARN_you just killed. Otherwise you may bodypull additional burning blade mobs|r
     >>|cRXP_WARN_Kill the imp first. Use|r |T132155:0|t[Gouge] |cRXP_WARN_when he casts|r |T136169:0|t[Soul Siphon] << Rogue
     >>|cRXP_WARN_Kill the imp first. Use|r |T136026:0|t[Earth Shock] |cRXP_WARN_when he casts|r |T136169:0|t[Soul Siphon] << Shaman
-    >>|cRXP_WARN_You can cast |T136071:0|t[polymorph] on |cRXP_ENEMY_Fizzle|r and kill the |cRXP_ENEMY_Imp|r first << Mage
+    >>|cRXP_WARN_You can cast|r |T136071:0|t[Polymorph] |cRXP_WARN_on|r |cRXP_ENEMY_Fizzle|r |cRXP_WARN_and kill the|r |cRXP_ENEMY_Imp|r |cRXP_WARN_first|r << Mage
     >>|cRXP_WARN_Kill the imp first.|r << Warrior/Warlock/Priest
     >>|cRXP_WARN_Use a|r |T134829:0|t[Minor Healing Potion] |cRXP_WARN_if you have it and your|r |T133728:0|t[Faintly Glowing Skull] |cRXP_WARN_if needed|r << !Warlock
     >>|cRXP_WARN_Use a|r |T134829:0|t[Minor Healing Potion], |T133728:0|t[Minor Healthstone] |cRXP_WARN_if you have it and your|r |T133728:0|t[Faintly Glowing Skull] |cRXP_WARN_if needed|r << Warlock
@@ -1885,24 +1875,24 @@ step
     .money <0.0375
     .group
 step
+    .goto Durotar,51.95,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil|r
     .turnin 806 >>Turn in Dark Storms
     .accept 828 >>Accept Margoz
-    .goto Durotar,51.95,43.50
     .target Orgnil Soulscar
     .isQuestComplete 806
     .group
 step
+    .goto Durotar,51.95,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil|r again
     .accept 828 >>Accept Margoz
-    .goto Durotar,51.95,43.50
     .target Orgnil Soulscar
     .isQuestTurnedIn 806
     .group
 step
+    .goto Durotar,51.95,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 837 >>Turn in Encroachment
-    .goto Durotar,51.95,43.50
     .target Gar'Thok
     .group
 step << Warrior
@@ -2821,12 +2811,6 @@ step
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
-step
-    #label LinneaTurnin
-    .goto Tirisfal Glades,65.49,60.25
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Linnea|r
-    .turnin 356 >>Turn in Rear Guard Patrol
-    .target Deathguard Linnea
 step
     .goto Tirisfal Glades,61.03,52.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Abigail|r
