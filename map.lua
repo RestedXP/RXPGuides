@@ -703,7 +703,7 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
 
         while (numActivePins < numPins or ignoreCounter) and j <= #step.elements do
             local element = step.elements[j]
-
+            local flags = element.bigLoop and 3 or 1
             local nPoints = element.segments and
                                 math.floor(#element.segments / 2)
             local nSegments = element.segments and #element.segments
@@ -762,14 +762,14 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
                             InsertLine(element, sX, sY, fX, fY, element.lineAlpha or 1)
                         end
                         if element.showArrow and step.active then
-                            AddPoint(sX,sY,element,1,addon.linePoints,addon.activeWaypoints)
+                            AddPoint(sX,sY,element,flags,addon.linePoints,addon.activeWaypoints)
                         end
                     end
                 end
                 if element.drawCenterPoint and step.active and centerX ~= 0 and centerY then
                     centerX = centerX/nEdges
                     centerY = centerY/nEdges
-                    AddPoint(centerX,centerY,element,1,step.centerPins)
+                    AddPoint(centerX,centerY,element,flags,step.centerPins)
                 end
             end
 
@@ -1098,15 +1098,16 @@ function addon.UpdateGotoSteps()
     local anchorPoint = currentPoint
     local linePoints = addon.linePoints
     local nPoints = 0
+    local reset
     for i, element in ipairs(linePoints) do
         local radius = element.anchor.range
-        if radius then
+        if radius and not element.anchor.pointCount then
             nPoints = nPoints + 1
             local _, dist = HBD:GetWorldVector(instance, x, y, element.wx,
                                                element.wy)
             element.dist = dist
             if dist then
-                if radius and dist <= radius then
+                if dist <= radius then
                     currentPoint = i
                     if anchorPoint ~= i then
                         lastPoint = anchorPoint
@@ -1129,10 +1130,35 @@ function addon.UpdateGotoSteps()
                 end
             end
             if currentPoint == i then element.lowPrio = true end
+        elseif element.wpHash == af.element.wpHash and radius and element.anchor.pointCount then
+            local _, dist = HBD:GetWorldVector(instance, x, y, element.wx,
+                                               element.wy)
+            if dist <= radius then
+                if not element.lowPrio then
+                    element.anchor.pointCount = element.anchor.pointCount + 1
+                    element.lowPrio = true
+                    forceArrowUpdate = true
+                    --print('ok',element.anchor.pointCount,linePoints)
+                    if element.anchor.pointCount >= #linePoints then
+                        element.anchor.pointCount = 0
+                        reset = element
+                        --print('reset')
+                    end
+                end
+            end
         end
     end
 
-    if currentPoint and nPoints > 0 then
+    if reset then
+        --print('reset-ok')
+        for _, element in ipairs(linePoints) do
+            if element ~= reset then
+                element.lowPrio = false
+            else
+                element.anchor.pointCount = element.lowPrio and 1 or 0
+            end
+        end
+    elseif currentPoint and nPoints > 0 then
         nPoints = #linePoints
         local nextPoint = currentPoint % nPoints + 1
         local prevPoint = (currentPoint - 2) % nPoints + 1
