@@ -1012,12 +1012,14 @@ function addon.UpdateGotoSteps()
         af:Hide()
         return
     end
+
     local minDist
-    local zone = C_Map.GetBestMapForUnit("player")
+    --local zone = C_Map.GetBestMapForUnit("player")
     local x, y, instance = HBD:GetPlayerWorldPosition()
     if af.element and af.element.instance ~= instance and instance ~= -1 then hideArrow = true end
     for i, element in ipairs(addon.activeWaypoints) do
-        if element.step and element.step.active then
+        local step = element.step
+        if step and step.active then
 
             if (element.radius or element.dynamic) and element.arrow and
                 not (element.parent and
@@ -1044,17 +1046,42 @@ function addon.UpdateGotoSteps()
                     end
                     if element.radius then
                         if dist <= element.radius then
-                            if element.persistent then
-                                hideArrow = true
-                            elseif not (element.textOnly and element.hidePin and
-                                         element.wpHash ~= af.element.wpHash and not element.generated) then
+                            if element.persistent and not element.skip then
                                 element.skip = true
                                 addon.UpdateMap()
-                                addon.SetElementComplete(element.frame)
+                            elseif not (element.textOnly and element.hidePin and
+                                         element.wpHash ~= af.element.wpHash and not element.generated) then
+                                if step.loop and not element.skip then
+                                    local hasValidWPs
+                                    element.skip = true
+                                    for _,wp in pairs(step.elements) do
+                                        if wp.arrow and not wp.skip and wp.textOnly then
+                                            hasValidWPs = true
+                                        end
+                                    end
+                                    if not hasValidWPs then
+                                        for _,wp in pairs(step.elements) do
+                                            if wp.arrow and wp.wpHash ~= element.wpHash and wp.textOnly then
+                                                wp.skip = false
+                                                RXPCData.completedWaypoints[step.index or "tip"][wp.wpHash] = false
+                                            end
+                                        end
+                                        forceArrowUpdate = true
+                                    end
+                                end
+                                element.skip = true
+                                addon.UpdateMap()
+                                if not element.textOnly then
+                                    addon.SetElementComplete(element.frame)
+                                end
                                 if element.timer then
                                     addon.StartTimer(element.timer,element.timerText)
                                 end
                             end
+                        elseif element.persistent and element.skip then
+                            element.skip = false
+                            RXPCData.completedWaypoints[step.index or "tip"][element.wpHash] = false
+                            addon.UpdateMap()
                         end
                     end
                 end
