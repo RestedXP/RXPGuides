@@ -127,7 +127,23 @@ step << Warlock
     .goto Durotar,45.30,56.42,100 >> Travel toward the Burning Blade Coven
     .isOnQuest 1485
 step << Warlock
-    .loop 50,Durotar,43.87,58.42,44.53,58.62,45.18,58.42,45.83,58.59,45.79,57.43,46.46,57.57,47.19,57.12,46.21,56.69,46.28,56.11,45.65,56.90,45.35,56.32,44.77,56.87,44.58,56.10,44.27,56.59,43.85,55.52,43.87,58.42
+#loop
+.goto Durotar,43.87,58.42,50,0
+.goto Durotar,44.53,58.62,50,0
+.goto Durotar,45.18,58.42,50,0
+.goto Durotar,45.83,58.59,50,0
+.goto Durotar,45.79,57.43,50,0
+.goto Durotar,46.46,57.57,50,0
+.goto Durotar,47.19,57.12,50,0
+.goto Durotar,46.21,56.69,50,0
+.goto Durotar,46.28,56.11,50,0
+.goto Durotar,45.65,56.90,50,0
+.goto Durotar,45.35,56.32,50,0
+.goto Durotar,44.77,56.87,50,0
+.goto Durotar,44.58,56.10,50,0
+.goto Durotar,44.27,56.59,50,0
+.goto Durotar,43.85,55.52,50,0
+.goto Durotar,43.87,58.42,50,0
     >>Kill |cFFFF5722Vile Familiars|r. Loot them for |cFF00BCD4Vile Familiar Heads|r
     .complete 1485,1 --Vile Familiar Head (6)
     .mob Vile Familiar
@@ -145,11 +161,11 @@ step
     .target Hana'zua
 step
     #label Sarkoth
+	#loop
 	.goto Durotar,40.88,66.41,40,0
 	.goto Durotar,40.41,66.64,40,0
 	.goto Durotar,40.43,67.36,40,0
 	.goto Durotar,40.72,67.39,40,0
-	.loop 20,Durotar,40.88,66.41,40.41,66.64,40.43,67.36,40.72,67.39,40.88,66.41
     >>Kill |cFFFF5722Sarkoth|r. Loot him for |cFF00BCD4Sarkoth's Mangled Claw|r
     .complete 790,1 --Sarkoth's Mangled Claw (1)
     .mob Sarkoth
@@ -160,19 +176,85 @@ step
     .accept 804 >>Accept Sarkoth
     .target Hana'zua
 step
-    .loop 50,Durotar,41.30,65.03,41.92,64.74,42.66,64.92,43.31,65.02,43.90,65.96,44.54,65.96,45.16,65.77,45.72,65.93,45.72,65.04,45.21,63.95,45.83,63.01,45.81,62.17,45.78,61.14,45.15,60.20,44.50,59.45,43.86,60.43,43.07,60.24,42.58,60.09,42.02,61.19,42.02,62.15,42.00,62.92,41.99,64.03,41.30,65.03
+.goto Durotar,41.30,65.03,50,0
+.goto Durotar,41.92,64.74,50,0
+.goto Durotar,42.66,64.92,50,0
+.goto Durotar,43.31,65.02,50,0
+.goto Durotar,43.90,65.96,50,0
+.goto Durotar,44.54,65.96,50,0
+.goto Durotar,45.16,65.77,50,0
+.goto Durotar,45.72,65.93,50,0
+.goto Durotar,45.72,65.04,50,0
+.goto Durotar,45.21,63.95,50,0
+.goto Durotar,45.83,63.01,50,0
+.goto Durotar,45.81,62.17,50,0
+.goto Durotar,45.78,61.14,50,0
+.goto Durotar,45.15,60.20,50,0
+.goto Durotar,44.50,59.45,50,0
+.goto Durotar,43.86,60.43,50,0
+.goto Durotar,43.07,60.24,50,0
+.goto Durotar,42.58,60.09,50,0
+.goto Durotar,42.02,61.19,50,0
+.goto Durotar,42.02,62.15,50,0
+.goto Durotar,42.00,62.92,50,0
+.goto Durotar,41.99,64.03,50,0
+    #loop
     >>Kill |cFFFF5722Mottled Boars|r
     .complete 788,1 --Mottled Boar (10)
     .mob Mottled Boar
 step << Warlock/Warrior/Shaman/Hunter
     #som
-    .loop 50,Durotar,41.30,65.03,41.92,64.74,42.66,64.92,43.31,65.02,43.90,65.96,44.54,65.96,45.16,65.77,45.72,65.93,45.72,65.04,45.21,63.95,45.83,63.01,45.81,62.17,45.78,61.14,45.15,60.20,44.50,59.45,43.86,60.43,43.07,60.24,42.58,60.09,42.02,61.19,42.02,62.15,42.00,62.92,41.99,64.03,41.30,65.03
+.goto Durotar,41.30,65.03,50,0
+.goto Durotar,41.92,64.74,50,0
+.goto Durotar,42.66,64.92,50,0
+.goto Durotar,43.31,65.02,50,0
+.goto Durotar,43.90,65.96,50,0
+.goto Durotar,44.54,65.96,50,0
+.goto Durotar,45.16,65.77,50,0
+.goto Durotar,45.72,65.93,50,0
+.goto Durotar,45.72,65.04,50,0
+.goto Durotar,45.21,63.95,50,0
+.goto Durotar,45.83,63.01,50,0
+.goto Durotar,45.81,62.17,50,0
+.goto Durotar,45.78,61.14,50,0
+.goto Durotar,45.15,60.20,50,0
+.goto Durotar,44.50,59.45,50,0
+.goto Durotar,43.86,60.43,50,0
+.goto Durotar,43.07,60.24,50,0
+.goto Durotar,42.58,60.09,50,0
+.goto Durotar,42.02,61.19,50,0
+.goto Durotar,42.02,62.15,50,0
+.goto Durotar,42.00,62.92,50,0
+.goto Durotar,41.99,64.03,50,0
+    #loop
     .xp 2+870 >> Grind to 870+/900xp << Warlock
     .xp 3+760 >> Grind to 760+/1400xp << Warrior/Shaman/Hunter
     .mob Mottled Boar
 step << Warlock
     #era
-    .loop 50,Durotar,41.30,65.03,41.92,64.74,42.66,64.92,43.31,65.02,43.90,65.96,44.54,65.96,45.16,65.77,45.72,65.93,45.72,65.04,45.21,63.95,45.83,63.01,45.81,62.17,45.78,61.14,45.15,60.20,44.50,59.45,43.86,60.43,43.07,60.24,42.58,60.09,42.02,61.19,42.02,62.15,42.00,62.92,41.99,64.03,41.30,65.03
+.goto Durotar,41.30,65.03,50,0
+.goto Durotar,41.92,64.74,50,0
+.goto Durotar,42.66,64.92,50,0
+.goto Durotar,43.31,65.02,50,0
+.goto Durotar,43.90,65.96,50,0
+.goto Durotar,44.54,65.96,50,0
+.goto Durotar,45.16,65.77,50,0
+.goto Durotar,45.72,65.93,50,0
+.goto Durotar,45.72,65.04,50,0
+.goto Durotar,45.21,63.95,50,0
+.goto Durotar,45.83,63.01,50,0
+.goto Durotar,45.81,62.17,50,0
+.goto Durotar,45.78,61.14,50,0
+.goto Durotar,45.15,60.20,50,0
+.goto Durotar,44.50,59.45,50,0
+.goto Durotar,43.86,60.43,50,0
+.goto Durotar,43.07,60.24,50,0
+.goto Durotar,42.58,60.09,50,0
+.goto Durotar,42.02,61.19,50,0
+.goto Durotar,42.02,62.15,50,0
+.goto Durotar,42.00,62.92,50,0
+.goto Durotar,41.99,64.03,50,0
+    #loop
     .xp 3+685 >> Grind to 685+/1400xp
     .mob Mottled Boar
 step << Warlock
@@ -435,25 +517,120 @@ step << !Warlock
     .mob Scorpid Worker
 step << !Warlock
     #label Imps
-    .loop 45,Durotar,43.87,58.42,44.53,58.62,45.18,58.42,45.83,58.59,45.79,57.43,46.46,57.57,47.19,57.12,46.21,56.69,46.28,56.11,45.65,56.90,45.35,56.32,44.77,56.87,44.58,56.10,44.27,56.59,43.85,55.52,43.87,58.42
+    #loop
+.goto Durotar,43.87,58.42,45,0
+.goto Durotar,44.53,58.62,45,0
+.goto Durotar,45.18,58.42,45,0
+.goto Durotar,45.83,58.59,45,0
+.goto Durotar,45.79,57.43,45,0
+.goto Durotar,46.46,57.57,45,0
+.goto Durotar,47.19,57.12,45,0
+.goto Durotar,46.21,56.69,45,0
+.goto Durotar,46.28,56.11,45,0
+.goto Durotar,45.65,56.90,45,0
+.goto Durotar,45.35,56.32,45,0
+.goto Durotar,44.77,56.87,45,0
+.goto Durotar,44.58,56.10,45,0
+.goto Durotar,44.27,56.59,45,0
+.goto Durotar,43.85,55.52,45,0
+.goto Durotar,43.87,58.42,45,0
     >>Kill |cFFFF5722Vile Familiars|r
     .complete 792,1 --Vile Familiar (12)
     .mob Vile Familiar
 step
     #label Tails
-    .loop 45,Durotar,43.26,58.28,42.81,58.41,41.90,58.35,41.97,59.20,41.36,60.35,40.66,61.27,40.07,61.35,39.42,61.29,39.46,62.17,39.55,63.10,40.13,64.04,40.84,64.06,40.74,65.86,39.93,66.03,40.04,66.99,40.09,67.66,40.13,68.50,40.72,68.55,41.30,67.84,41.37,66.72,41.89,66.05,41.27,65.71,41.36,64.07,41.33,63.12,41.35,61.98,41.49,61.25,41.90,60.24,42.51,59.34,43.08,59.62,43.91,59.33,45.15,59.46,45.81,59.30,45.85,60.34,46.46,61.11,47.09,62.24,47.08,63.15,47.14,64.08,47.58,64.04,47.08,63.15,47.09,62.24,46.90,61.15,46.98,60.18,47.07,59.34,46.47,58.28,45.81,59.30,45.15,59.46,43.91,59.33,43.26,58.28
+    #loop
+.goto Durotar,43.26,58.28,45,0
+.goto Durotar,42.81,58.41,45,0
+.goto Durotar,41.90,58.35,45,0
+.goto Durotar,41.97,59.20,45,0
+.goto Durotar,41.36,60.35,45,0
+.goto Durotar,40.66,61.27,45,0
+.goto Durotar,40.07,61.35,45,0
+.goto Durotar,39.42,61.29,45,0
+.goto Durotar,39.46,62.17,45,0
+.goto Durotar,39.55,63.10,45,0
+.goto Durotar,40.13,64.04,45,0
+.goto Durotar,40.84,64.06,45,0
+.goto Durotar,40.74,65.86,45,0
+.goto Durotar,39.93,66.03,45,0
+.goto Durotar,40.04,66.99,45,0
+.goto Durotar,40.09,67.66,45,0
+.goto Durotar,40.13,68.50,45,0
+.goto Durotar,40.72,68.55,45,0
+.goto Durotar,41.30,67.84,45,0
+.goto Durotar,41.37,66.72,45,0
+.goto Durotar,41.89,66.05,45,0
+.goto Durotar,41.27,65.71,45,0
+.goto Durotar,41.36,64.07,45,0
+.goto Durotar,41.33,63.12,45,0
+.goto Durotar,41.35,61.98,45,0
+.goto Durotar,41.49,61.25,45,0
+.goto Durotar,41.90,60.24,45,0
+.goto Durotar,42.51,59.34,45,0
+.goto Durotar,43.08,59.62,45,0
+.goto Durotar,43.91,59.33,45,0
+.goto Durotar,45.15,59.46,45,0
+.goto Durotar,45.81,59.30,45,0
+.goto Durotar,45.85,60.34,45,0
+.goto Durotar,46.46,61.11,45,0
+.goto Durotar,47.09,62.24,45,0
+.goto Durotar,47.08,63.15,45,0
+.goto Durotar,47.14,64.08,45,0
+.goto Durotar,47.58,64.04,45,0
+.goto Durotar,47.08,63.15,45,0
+.goto Durotar,47.09,62.24,45,0
+.goto Durotar,46.90,61.15,45,0
+.goto Durotar,46.98,60.18,45,0
+.goto Durotar,47.07,59.34,45,0
+.goto Durotar,46.47,58.28,45,0
+.goto Durotar,45.81,59.30,45,0
+.goto Durotar,45.15,59.46,45,0
+    #loop
     >>Kill |cFFFF5722Scorpid Workers|r. Loot them for |cFF00BCD4Scorpid Worker Tails|r
     .complete 789,1 --Scorpid Worker Tail (10)
     .mob Scorpid Worker
 step
-    .loop 40,Durotar,44.98,69.13,45.64,65.70,47.37,65.67,46.74,60.66,47.09,57.90,43.90,57.79,42.70,57.25,41.27,58.95,40.91,60.41,38.83,61.84,44.98,69.13
+.goto Durotar,44.98,69.13,40,0
+.goto Durotar,45.64,65.70,40,0
+.goto Durotar,47.37,65.67,40,0
+.goto Durotar,46.74,60.66,40,0
+.goto Durotar,47.09,57.90,40,0
+.goto Durotar,43.90,57.79,40,0
+.goto Durotar,42.70,57.25,40,0
+.goto Durotar,41.27,58.95,40,0
+.goto Durotar,40.91,60.41,40,0
+.goto Durotar,38.83,61.84,40,0
+    #loop
     >>Use the |T133486:0|t[Foreman's Blackjack] on sleeping |cFF00FF25Lazy Peons|r
     .complete 5441,1 --Peons Awoken (5)
     .target Lazy Peon
     .use 16114
 step
     #era
-    .loop 50,Durotar,41.30,65.03,41.92,64.74,42.66,64.92,43.31,65.02,43.90,65.96,44.54,65.96,45.16,65.77,45.72,65.93,45.72,65.04,45.21,63.95,45.83,63.01,45.81,62.17,45.78,61.14,45.15,60.20,44.50,59.45,43.86,60.43,43.07,60.24,42.58,60.09,42.02,61.19,42.02,62.15,42.00,62.92,41.99,64.03,41.30,65.03
+.goto Durotar,41.30,65.03,50,0
+.goto Durotar,41.92,64.74,50,0
+.goto Durotar,42.66,64.92,50,0
+.goto Durotar,43.31,65.02,50,0
+.goto Durotar,43.90,65.96,50,0
+.goto Durotar,44.54,65.96,50,0
+.goto Durotar,45.16,65.77,50,0
+.goto Durotar,45.72,65.93,50,0
+.goto Durotar,45.72,65.04,50,0
+.goto Durotar,45.21,63.95,50,0
+.goto Durotar,45.83,63.01,50,0
+.goto Durotar,45.81,62.17,50,0
+.goto Durotar,45.78,61.14,50,0
+.goto Durotar,45.15,60.20,50,0
+.goto Durotar,44.50,59.45,50,0
+.goto Durotar,43.86,60.43,50,0
+.goto Durotar,43.07,60.24,50,0
+.goto Durotar,42.58,60.09,50,0
+.goto Durotar,42.02,61.19,50,0
+.goto Durotar,42.02,62.15,50,0
+.goto Durotar,42.00,62.92,50,0
+.goto Durotar,41.99,64.03,50,0
+    #loop
     .xp 4 >> Grind to level 4
     .mob Mottled Boar
     .mob Scorpid Worker
@@ -576,18 +753,50 @@ step
     .goto Durotar,46.87,60.36,25,0
     .goto Durotar,47.28,62.80,25,0
     .goto Durotar,46.08,62.98,25,0
-    .loop 25,Durotar,44.67,64.92,43.45,62.96,43.82,62.72,44.85,61.54,44.88,59.66,44.61,58.20,45.46,58.49,45.93,60.62,46.87,60.36,47.28,62.80,46.08,62.98,44.67,64.92
+    #loop
     >>Loot the |cFF00BCD4Cactus Apples|r near the Cacti
     .complete 4402,1 --Cactus Apple (10)
 step << !Warrior !Rogue !Shaman
     #era
-    .loop 45,Durotar,43.87,58.42,44.53,58.62,45.18,58.42,45.83,58.59,45.79,57.43,46.46,57.57,47.19,57.12,46.21,56.69,46.28,56.11,45.65,56.90,45.35,56.32,44.77,56.87,44.58,56.10,44.27,56.59,43.85,55.52,43.87,58.42
+    #loop
+.goto Durotar,43.87,58.42,45,0
+.goto Durotar,44.53,58.62,45,0
+.goto Durotar,45.18,58.42,45,0
+.goto Durotar,45.83,58.59,45,0
+.goto Durotar,45.79,57.43,45,0
+.goto Durotar,46.46,57.57,45,0
+.goto Durotar,47.19,57.12,45,0
+.goto Durotar,46.21,56.69,45,0
+.goto Durotar,46.28,56.11,45,0
+.goto Durotar,45.65,56.90,45,0
+.goto Durotar,45.35,56.32,45,0
+.goto Durotar,44.77,56.87,45,0
+.goto Durotar,44.58,56.10,45,0
+.goto Durotar,44.27,56.59,45,0
+.goto Durotar,43.85,55.52,45,0
+.goto Durotar,43.87,58.42,45,0
     .xp 4+1720 >> Grind to 1720+/2100xp
     .mob Vile Familiar
     .isOnQuest 4402
 step << !Warrior !Rogue !Shaman
     #era
-    .loop 45,Durotar,43.87,58.42,44.53,58.62,45.18,58.42,45.83,58.59,45.79,57.43,46.46,57.57,47.19,57.12,46.21,56.69,46.28,56.11,45.65,56.90,45.35,56.32,44.77,56.87,44.58,56.10,44.27,56.59,43.85,55.52,43.87,58.42
+    #loop
+.goto Durotar,43.87,58.42,45,0
+.goto Durotar,44.53,58.62,45,0
+.goto Durotar,45.18,58.42,45,0
+.goto Durotar,45.83,58.59,45,0
+.goto Durotar,45.79,57.43,45,0
+.goto Durotar,46.46,57.57,45,0
+.goto Durotar,47.19,57.12,45,0
+.goto Durotar,46.21,56.69,45,0
+.goto Durotar,46.28,56.11,45,0
+.goto Durotar,45.65,56.90,45,0
+.goto Durotar,45.35,56.32,45,0
+.goto Durotar,44.77,56.87,45,0
+.goto Durotar,44.58,56.10,45,0
+.goto Durotar,44.27,56.59,45,0
+.goto Durotar,43.85,55.52,45,0
+.goto Durotar,43.87,58.42,45,0
     .xp 5 >> Grind to level 5
     .mob Vile Familiar
     .isQuestTurnedIn 4402
@@ -629,19 +838,79 @@ step
     .complete 794,1 --Burning Blade Medallion (1)
 	.mob Yarrog Baneshadow
 step << Shaman
-    .loop 25,Durotar,42.70,52.99,42.97,51.14,43.56,52.05,43.74,52.65,44.13,52.85,44.82,52.51,44.83,53.40,44.78,54.57,45.14,55.02,45.51,55.23,45.14,55.02,44.51,55.03,44.21,54.12,43.92,54.30,43.87,55.22,43.46,55.56,43.05,55.24,42.38,54.22,42.53,53.48,43.27,53.82,42.70,52.99
+.goto Durotar,42.70,52.99,25,0
+.goto Durotar,42.97,51.14,25,0
+.goto Durotar,43.56,52.05,25,0
+.goto Durotar,43.74,52.65,25,0
+.goto Durotar,44.13,52.85,25,0
+.goto Durotar,44.82,52.51,25,0
+.goto Durotar,44.83,53.40,25,0
+.goto Durotar,44.78,54.57,25,0
+.goto Durotar,45.14,55.02,25,0
+.goto Durotar,45.51,55.23,25,0
+.goto Durotar,45.14,55.02,25,0
+.goto Durotar,44.51,55.03,25,0
+.goto Durotar,44.21,54.12,25,0
+.goto Durotar,43.92,54.30,25,0
+.goto Durotar,43.87,55.22,25,0
+.goto Durotar,43.46,55.56,25,0
+.goto Durotar,43.05,55.24,25,0
+.goto Durotar,42.38,54.22,25,0
+.goto Durotar,42.53,53.48,25,0
+.goto Durotar,43.27,53.82,25,0
+    #loop
     >>Kill |cFFFF5722Felstalkers|r. Loot them for |cFF00BCD4Felstalker Hooves|r
     .complete 1516,1 --Felstalker Hoof (2)
     .mob Felstalker
 step
     #era
-    .loop 25,Durotar,42.70,52.99,42.97,51.14,43.56,52.05,43.74,52.65,44.13,52.85,44.82,52.51,44.83,53.40,44.78,54.57,45.14,55.02,45.51,55.23,45.14,55.02,44.51,55.03,44.21,54.12,43.92,54.30,43.87,55.22,43.46,55.56,43.05,55.24,42.38,54.22,42.53,53.48,43.27,53.82,42.70,52.99
+.goto Durotar,42.70,52.99,25,0
+.goto Durotar,42.97,51.14,25,0
+.goto Durotar,43.56,52.05,25,0
+.goto Durotar,43.74,52.65,25,0
+.goto Durotar,44.13,52.85,25,0
+.goto Durotar,44.82,52.51,25,0
+.goto Durotar,44.83,53.40,25,0
+.goto Durotar,44.78,54.57,25,0
+.goto Durotar,45.14,55.02,25,0
+.goto Durotar,45.51,55.23,25,0
+.goto Durotar,45.14,55.02,25,0
+.goto Durotar,44.51,55.03,25,0
+.goto Durotar,44.21,54.12,25,0
+.goto Durotar,43.92,54.30,25,0
+.goto Durotar,43.87,55.22,25,0
+.goto Durotar,43.46,55.56,25,0
+.goto Durotar,43.05,55.24,25,0
+.goto Durotar,42.38,54.22,25,0
+.goto Durotar,42.53,53.48,25,0
+.goto Durotar,43.27,53.82,25,0
+    #loop
     .xp 5+1635 >> Grind to 1635+/2800xp << !Shaman
     .xp 5+645 >> Grind to 645+/2800xp << Shaman
     .isQuestTurnedIn 4402
 step
     #era
-    .loop 25,Durotar,42.70,52.99,42.97,51.14,43.56,52.05,43.74,52.65,44.13,52.85,44.82,52.51,44.83,53.40,44.78,54.57,45.14,55.02,45.51,55.23,45.14,55.02,44.51,55.03,44.21,54.12,43.92,54.30,43.87,55.22,43.46,55.56,43.05,55.24,42.38,54.22,42.53,53.48,43.27,53.82,42.70,52.99
+.goto Durotar,42.70,52.99,25,0
+.goto Durotar,42.97,51.14,25,0
+.goto Durotar,43.56,52.05,25,0
+.goto Durotar,43.74,52.65,25,0
+.goto Durotar,44.13,52.85,25,0
+.goto Durotar,44.82,52.51,25,0
+.goto Durotar,44.83,53.40,25,0
+.goto Durotar,44.78,54.57,25,0
+.goto Durotar,45.14,55.02,25,0
+.goto Durotar,45.51,55.23,25,0
+.goto Durotar,45.14,55.02,25,0
+.goto Durotar,44.51,55.03,25,0
+.goto Durotar,44.21,54.12,25,0
+.goto Durotar,43.92,54.30,25,0
+.goto Durotar,43.87,55.22,25,0
+.goto Durotar,43.46,55.56,25,0
+.goto Durotar,43.05,55.24,25,0
+.goto Durotar,42.38,54.22,25,0
+.goto Durotar,42.53,53.48,25,0
+.goto Durotar,43.27,53.82,25,0
+    #loop
     .xp 5+1255 >> Grind to 1255+/2800xp << !Shaman
     .xp 5+265 >> Grind to 265+/2800xp << Shaman
     .isOnQuest 4402
