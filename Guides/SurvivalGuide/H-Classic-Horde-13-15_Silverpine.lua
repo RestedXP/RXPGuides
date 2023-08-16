@@ -219,6 +219,7 @@ step
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Spiders|r. Loot them for their |cRXP_LOOT_Blood|r
+    >>|cRXP_WARN_Be careful if|r |cRXP_ENEMY_Krethis Shadowspinner|r |cRXP_WARN_is up, SHE WILL KILL YOU! She has a 130 damage shield on a 15s cooldown, and 110 damage instant shock ability|r
     .complete 447,2 --Skittering Blood (6)
     .mob Moss Stalker
     .unitscan Krethis Shadowspinner
@@ -232,6 +233,7 @@ step
 step
     .loop 25,Silverpine Forest,37.25,15.99,35.67,16.01,34.96,16.34,33.99,17.24,34.14,15.26,35.06,14.50,35.85,13.83,36.33,14.20
     >>Kill |cRXP_ENEMY_Spiders|r. Loot them for their |cRXP_LOOT_Blood|r
+    >>|cRXP_WARN_Be careful if|r |cRXP_ENEMY_Krethis Shadowspinner|r |cRXP_WARN_is up, SHE WILL KILL YOU! She has a 130 damage shield on a 15s cooldown, and 110 damage instant shock ability|r
     .complete 447,2 --Skittering Blood (6)
     .mob Moss Stalker
     .unitscan Krethis Shadowspinner

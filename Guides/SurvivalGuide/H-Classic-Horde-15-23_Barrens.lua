@@ -206,7 +206,7 @@ step
     .goto The Barrens,47.58,19.38,40,0
     .goto The Barrens,49.21,20.42,40,0
     .goto The Barrens,50.33,21.85,40,0
-    .goto The Barrens,51.09,22.68,40 >> Travel down the mountain where you came from
+    .goto The Barrens,51.09,22.68,100 >> Travel down the mountain where you came from
     .isOnQuest 924
 step
     #completewith DisruptTheAttacks
@@ -598,7 +598,7 @@ step
     .mob Razormane Defender
 step
     #completewith next
-    >>Kill any |cRXP_ENEMY_Zhevra|r you see. Loot them for |cRXP_LOOT_Hooves|r
+    >>Kill any |cRXP_ENEMY_Zhevra|r you see. Loot them for their |cRXP_LOOT_Hooves|r
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
 step
@@ -610,7 +610,7 @@ step
     .isQuestComplete 924
 step
     #completewith next
-    >>Kill any |cRXP_ENEMY_Zhevra|r you see. Loot them for |cRXP_LOOT_Hooves|r
+    >>Kill any |cRXP_ENEMY_Zhevra|r you see. Loot them for their |cRXP_LOOT_Hooves|r
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
 step

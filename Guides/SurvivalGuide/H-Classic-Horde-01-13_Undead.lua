@@ -1946,7 +1946,7 @@ step
     #completewith next
     .goto Durotar,56.49,25.04,50,0
     .goto Durotar,56.11,27.94,50,0
-    .goto Durotar,53.18,29.15,50 >> Travel toward Skull Rock
+    .goto Durotar,53.18,29.15,50 >> Travel toward Dustwind Cave
     .isQuestTurnedIn 806
     .group
 step
