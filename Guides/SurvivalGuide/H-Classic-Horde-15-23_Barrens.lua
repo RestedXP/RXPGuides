@@ -225,7 +225,7 @@ step
     .mob Razormane Hunter
 step
     .goto The Barrens,55.70,27.30
-    >>Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. If it's not up you'll get it later
+    .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. If it's not up you'll get it later
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Accept Chen's Empty Keg
 step << !Tauren !Hunter !Shaman
@@ -554,7 +554,7 @@ step
 step
     .goto The Barrens,55.70,27.30,20,0
     .goto The Barrens,55.78,20.00
-    >>Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest
+    .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Accept Chen's Empty Keg
 step
@@ -1019,8 +1019,11 @@ step
 step
     #sticky
     #completewith Samophlange
-    >>Kill Plainstriders. Loot them for their Kidneys
+    >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Kidneys|r
     .complete 821,2 --Plainstrider Kidney (5)
+    .mob Greater Plainstrider
+    .mob Fleeting Plainstrider
+    .mob Ornery Plainstrider
 step
     .goto The Barrens,43.80,12.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vrang|r
