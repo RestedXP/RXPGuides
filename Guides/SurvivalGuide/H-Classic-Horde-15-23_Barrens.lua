@@ -2206,7 +2206,6 @@ step
     #label BootyTurnin
     .goto The Barrens,62.68,36.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazlowe|r
-    .turnin 892 >>Turn in The Missing Shipment
     .turnin 888 >>Turn in Stolen Booty
     .target Gazlowe
 step
