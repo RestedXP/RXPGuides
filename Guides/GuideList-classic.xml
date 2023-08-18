@@ -3,6 +3,7 @@
 
     <Script file="Guides/Classic-Alliance-Mage-1-12.lua"/>
     <Script file="Guides/Classic-Alliance-Mage-12-21.lua"/>
+	<Script file="Guides/Classic-Alliance-ADV-AoE-Mage-1-22.lua"/>
     <Script file="Guides/Classic-Alliance-1-10_NightElf.lua"/>
     <Script file="Guides/Classic-Alliance-1-13_Human.lua"/>
     <Script file="Guides/Classic-Alliance-1-14_DwarfGnome.lua"/>
