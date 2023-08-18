@@ -1711,8 +1711,9 @@ step
     >>Kill |cFFFF5722Crag Boars|r and |cFFFF5722Juvenile Snow Leopards|r en route
     >>Loot the |cFFFF5722Crag Boars|r for their |cFF00BCD4Crag Boar Ribs|r
     >>|cFFFCDC00Be careful as |cFFFF5722Crag Boars|r cast|r |T132337:0|t[Charge] |cFFFCDC00(Self Instant: Increases movespeed for 3 seconds, dealing 25-70 melee damage on hit. Only castable at range)|r
-    .goto Dun Morogh,40.682,65.130,20 >>Travel toward |cFF00FF25Hegnar|r
     .complete 384,1 --Crag Boar Rib (6)
+    .disablecheckbox
+    .goto Dun Morogh,40.682,65.130,20 >>Travel toward |cFF00FF25Hegnar|r
     .mob Crag Boar
     .mob Juvenile Snow Leopard
     .xp >7-1000,1
@@ -1749,9 +1750,9 @@ step
     >>|cFFFCDC00Deal 51%+ damage to nearby |cFFFF5722Juvenile Snow Leopards|r and |cFFFF5722Young Black Bears|r, then pull them to the |cFF00FF25Ironforge Mountaineer|r to kill them more efficiently|r
     >>Kill |cFFFF5722Large Crag Boars|r and |cFFFF5722Crag Boars|r en route. Loot them for their |cFF00BCD4Crag Boar Ribs|r
     >>|cFFFCDC00Be careful as |cFFFF5722Large Crag Boars|r and |cFFFF5722Crag Boars|r cast|r |T132337:0|t[Charge] |cFFFCDC00(Self Instant: Increases movespeed for 3 seconds, dealing 25-70 melee damage on hit. Only castable at range)|r
-    .xp 7 >> Grind to Level 7 en route to |cFF00FF25Tundra|r before talking to him
     .complete 384,1 --Crag Boar Rib (6)
     .disablecheckbox
+    .xp 7 >> Grind to Level 7 en route to |cFF00FF25Tundra|r before talking to him
     .target Ironforge Mountaineer
     .mob Crag Boar
     .mob Juvenile Snow Leopard
@@ -1938,7 +1939,6 @@ step
     >>|cFFFCDC00Be careful, as he patrols between all the stationary|r |cFFFF5722Frostmane Seers|r
     >>|cFFFCDC00Be careful as they cast|r |T132222:0|t[Shoot] |cFFFCDC00(Ranged Cast: Deals 8-15 damage)|r
     .complete 287,1 --Kill Frostmane Headhunters (5)
-    .isOnQuest 315
     .mob Frostmane Headhunter
 step
     #label ShimmerB
