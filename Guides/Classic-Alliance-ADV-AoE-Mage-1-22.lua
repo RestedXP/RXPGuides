@@ -1524,11 +1524,16 @@ step
     .accept 318 >> Accept Evershine
     .target Pilot Bellowfiz
 step
+    .loop 40,Dun Morogh,51.70,49.66,51.08,52.42,51.43,53.21,50.06,51.66,49.56,50.82,48.12,49.10,48.21,46.93,45.48,50.04,44.07,52.50,43.69,55.59,42.78,56.86,44.45,59.33,46.31,61.85,46.26,59.49,48.08,59.05,49.40,58.97,48.30,56.86,49.09,54.74,49.61,54.32,51.43,53.21
+    .xp 5+2690 >> Grind to 2690+/2800xp
+    .mob Young Black Bear
+    .mob Crag Boar
+step
     #completewith InnLS1
     +|cFFFCDC00Remember the Inn Logout Skip soon. Unequip your current|r |T135148:0|t[Staff]
     >>|cFFFCDC00NOTE: Itemrack currently can cause problems after logout skipping where your ingame UI freezes. Make sure to disable the addon or make a /reload command you can click when/if that happens|r
 step
-    #completewith next
+    #completewith Tannok
     .cast 1459 >> Rebuff |T135932:0|t[Arcane Intellect]
     .cast 168 >> Rebuff |T135843:0|t[Frost Armor]
 step
@@ -1536,6 +1541,16 @@ step
     >>Talk to |cFF00FF25Ragnar|r
     .accept 384 >> Accept Beer Basted Boar Ribs
     .target Ragnar Thunderbrew
+step
+    #completewith next
+    .goto Dun Morogh,46.97,51.99,10,0
+    .goto Dun Morogh,47.50,52.08,12 >>Go inside
+step
+    .goto Dun Morogh,47.217,52.195
+    >>Talk to |cFF00FF25Tannok|r
+    .turnin 2160,2 >> Turn in Supplies to Tannok
+    .target Tannok Frosthammer
+    .xp >6,1
 step
     #completewith next
     .goto Dun Morogh,46.97,51.99,10,0
@@ -1553,6 +1568,7 @@ step
     .trainer >> Train your class spells (Fireball R2, Fire Blast)
     .target Magis Sparkmantle
 step
+    #completewith Golorn
     #requires Tannok
     .goto Dun Morogh,47.38,52.52
     >>Talk to |cFF00FF25Belm|r
@@ -1642,20 +1658,19 @@ step
     .money <0.0107
 step
     #completewith SenirO
-    .goto Dun Morogh,47.46,52.60
-    +|cFFFCDC00Jump up on top of the barrels on the wall behind |cFF00FF25Belm|r. Logout Skip to Kharanos|r
+    .goto Dun Morogh,47.46,52.60,-1
+    .goto Dun Morogh,47.13,54.91,35 >>|cFFFCDC00Jump up on top of the barrels on the wall behind |cFF00FF25Belm|r. Logout Skip to Kharanos|r
 step
     #sticky
     #label Golorn
-    .goto Dun Morogh,46.77,53.72,8,0
-    .goto Dun Morogh,46.67,53.49
+    .goto Dun Morogh,46.77,53.72,-1
     >>Talk to |cFF00FF25Golorn|r
     >>|cFF0E8312Buy a|r |T135637:0|t[Skinning Knife] |cFF0E8312from him|r
     .collect 7005,1,312,1 --Skinning Knife (1)
     .target Golorn Frostbeard
 step
     #label SenirO
-    .goto Dun Morogh,46.726,53.826
+    .goto Dun Morogh,46.726,53.826,-1
     >>Talk to |cFF00FF25Senir|r
     .turnin 420 >> Turn in Senir's Observations
     .target Senir Whitebeard
