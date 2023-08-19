@@ -1820,6 +1820,7 @@ step
     .zone Stonetalon Mountains >> Travel to Stonetalon Mountains
     .zoneskip Stonetalon Mountains
 step
+    #map Stonetalon Mountains
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seereth|r and |cRXP_FRIENDLY_Makaba|r
     .turnin 1061 >> Turn in The Spirits of Stonetalon
     .accept 1062 >> Accept Goblin Invaders
@@ -1854,6 +1855,7 @@ step
     .mob Grimtotem Ruffian
     .mob Grimtotem Mercenary
 step
+    #map Stonetalon Mountains
     .goto The Barrens,35.19,27.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Makaba|r
     .turnin 6548 >> Turn in Avenge My Village
@@ -2759,6 +2761,7 @@ step
     .zone Stonetalon Mountains >> Travel to Stonetalon Mountains
     .zoneskip Stonetalon Mountains
 step
+    #map Stonetalon Mountains
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seereth|r and |cRXP_FRIENDLY_Makaba|r
     .turnin 1062 >>Turn in Goblin Invaders
     .accept 1063 >>Accept The Elder Crone
@@ -3479,10 +3482,10 @@ step
     .group
 step
     #label InDeepTrouble2
+    .goto Stonetalon Mountains,47.36,64.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tsunaman|r
     .accept 6562 >>Accept Trouble in the Deeps
     .accept 6393 >>Accept Elemental War
-    .goto Stonetalon Mountains,47.36,64.25
     .target Tsunaman
 step
     .goto Stonetalon Mountains,59.08,75.70
