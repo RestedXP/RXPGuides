@@ -1035,7 +1035,7 @@ step
     .goto Dun Morogh,72.55,51.50,40,0
     .goto Dun Morogh,72.62,52.56
     >>Kill |cFFFF5722Rockjaw Bonesnappers|r inside the cave
-    >>|cFFFCDC00Be careful as they cast|r |T132154:0|t[Knockdown]|cFFFCDC00(Melee Instant: Stuns for 2 seconds)|r
+    >>|cFFFCDC00Be careful as they cast|r |T132154:0|t[Knockdown] |cFFFCDC00(Melee Instant: Stuns for 2 seconds)|r
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
     .mob Rockjaw Bonesnapper
 step
@@ -1051,6 +1051,7 @@ step
     >>Talk to |cFF00FF25Frast|r
     .vendor >> Vendor Trash
     .target Frast Dokner
+    .isQuestAvailable 419
 step
     >>Talk to |cFF00FF25Stonebrow|r and |cFF00FF25Mehr|r
     .turnin 432 >> Turn in Those Blasted Troggs!
@@ -1068,6 +1069,7 @@ step
 step
     #label Shortcut1
     #completewith Pilot
+    .goto Dun Morogh,70.35,55.28,5,0
     .link https://youtu.be/G2IscpFZVeQ?t=4034 >>|cFFFCDC00CLICK HERE if you're struggling|r
     .goto Dun Morogh,70.52,54.75,12 >>Take the shortcut up behind |cFF00FF25Dank|r
 step
@@ -1080,6 +1082,7 @@ step
     .mob Rockjaw Ambusher
     .unitscan Ironforge Mountaineer
 step
+    #requires Shortcut2
     #completewith next
     .goto Dun Morogh,81.23,42.66,50,0
     .goto Dun Morogh,83.01,40.31,30 >>Kite a |cFFFF5722Scarred Crag Boar|r through the tunnel
@@ -1100,7 +1103,7 @@ step
     .turnin 419 >> Turn in The Lost Pilot
     .accept 417 >> Accept A Pilot's Revenge
 step
-    .goto Dun Morogh,78.41,37.80,50,0
+    .goto Dun Morogh,78.41,37.80,60,0
     .goto Dun Morogh,83.89,39.19
     >>Kill |cFFFF5722Mangeclaw|r. Loot him for the |cFF00BCD4Mangy Claw|r
     >>|cFFFCDC00Kite him all the way over to |cFF00FF25Hammerfoot|r (make sure to deal 51%+ damage to get credit)|r
@@ -1169,6 +1172,7 @@ step
     .goto Loch Modan,19.50,62.56,30 >>Go back into the Tunnel
 step
     .goto Loch Modan,18.84,61.48
+    .link https://www.youtube.com/watch?v=AOAlX9B5aO0 >>|cFFFCDC00CLICK HERE If you're struggling|r
     .goto Loch Modan,32.19,46.95,30 >>|cFFFCDC00Jumping Logout Skip from the Brazier inside the tunnel to Thelsamar|r
     .isOnQuest 267
 step
@@ -1237,7 +1241,8 @@ step
     >>|cFF0E8312Buy 15|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from him|r
     .vendor >> Vendor Trash
     .collect 159,15 --Collect Refreshing Spring Water (x15)
-    .target Adlin Pridedrifta
+    .target Adlin Pridedrift
+    .isQuestAvailable 233
 step
     >>Talk to |cFF00FF25Sten|r and |cFF00FF25Balir|r
     .turnin 179,3 >> Turn in Dwarven Outfitters
@@ -1374,6 +1379,7 @@ step
     .goto Dun Morogh,28.709,66.366
     .target Durnan Furcutter
     .target Marryk Nurribit
+    .isQuestAvailable 420
 step
     .goto Dun Morogh,29.71,71.25
     >>Talk to |cFF00FF25Balir|r
@@ -1422,6 +1428,9 @@ step
     .goto Dun Morogh,33.85,72.24
     .target Mountaineer Thalos
     .target Hands Springsprocket
+step
+    #completewith StockingJ
+    .abandon 170 >> Abandon A New Threat
 step
     .goto Dun Morogh,34.13,71.49,20,0
     .goto Dun Morogh,35.70,65.89,30 >>Go through the tunnel
@@ -1567,6 +1576,7 @@ step
     >>Talk to |cFF00FF25Magis|r upstairs
     .trainer >> Train your class spells (Fireball R2, Fire Blast)
     .target Magis Sparkmantle
+    .isQuestAvailable 312
 step
     #completewith Golorn
     #requires Tannok
@@ -1680,8 +1690,8 @@ step
     +Equip the |T135637:0|t[Skinning Knife]
     .use 7005
     .itemcount 7005,1
---  .itemStat 16,QUALITY,<7
---  .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.2
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.2
 step
     #requires Golorn
     .loop 30,Dun Morogh,42.57,54.80,41.89,54.51,42.13,52.68,42.46,51.96,41.91,51.43,42.46,51.96,42.13,52.68,42.57,54.80
@@ -1692,17 +1702,32 @@ step
     .mob Wendigo
 step
     .goto Dun Morogh,44.13,56.95
-    >>Loot |cFF00BCD4Rumbleshot's Ammo|r on the ground
+    >>Open the |cFFDB2EEFAmmo Crate|r on the ground. Loot it for |cFF00BCD4Rumbleshot's Ammo|r
     >>|cFFFCDC00This has a 5 second cast time|r
     .complete 5541,1 --Collect Rumbleshot's Ammo (x1)
 step
     #completewith Ammo
     .goto Dun Morogh,40.60,62.24,45,0
-    >>Kill |cFFFF5722Crag Boars|r and |cFFFF5722Juvenile Snow Leopards|r on route
+    >>Kill |cFFFF5722Crag Boars|r and |cFFFF5722Juvenile Snow Leopards|r en route
+    >>Loot the |cFFFF5722Crag Boars|r for their |cFF00BCD4Crag Boar Ribs|r
+    >>|cFFFCDC00Be careful as |cFFFF5722Crag Boars|r cast|r |T132337:0|t[Charge] |cFFFCDC00(Self Instant: Increases movespeed for 3 seconds, dealing 25-70 melee damage on hit. Only castable at range)|r
+    .complete 384,1 --Crag Boar Rib (6)
+    .disablecheckbox
     .goto Dun Morogh,40.682,65.130,20 >>Travel toward |cFF00FF25Hegnar|r
     .mob Crag Boar
     .mob Juvenile Snow Leopard
     .xp >7-1000,1
+    .isQuestAvailable 384
+step
+    #completewith Ammo
+    .goto Dun Morogh,40.60,62.24,45,0
+    >>Kill |cFFFF5722Crag Boars|r and |cFFFF5722Juvenile Snow Leopards|r en route
+    >>|cFFFCDC00Be careful as |cFFFF5722Crag Boars|r cast|r |T132337:0|t[Charge] |cFFFCDC00(Self Instant: Increases movespeed for 3 seconds, dealing 25-70 melee damage on hit. Only castable at range)|r
+    .goto Dun Morogh,40.682,65.130,20 >>Travel toward |cFF00FF25Hegnar|r
+    .mob Crag Boar
+    .mob Juvenile Snow Leopard
+    .xp >7-1000,1
+    .isQuestTurnedIn 384
 step
     #completewith next
     .goto Dun Morogh,40.60,62.24,45,0
@@ -1717,23 +1742,45 @@ step
     .target Hegnar Rumbleshot
     .isQuestAvailable 312
 step
-    #completewith next
+    #completewith TundraOne
     .goto Dun Morogh,37.98,61.90,50,0
-    >>|cFFFCDC00Deal 51%+ damage to nearby |cFFFF5722Juvenile Snow Leopards|r and |cFFFF5722Young Black Bears|r, then pull them to the |cFF00FF25Ironforge Mountaineer|r to kill them more efficiently|r
-    .xp 7 >> Grind to Level 7
-    .mob Crag Boar
-    .mob Juvenile Snow Leopard
-step
     .goto Dun Morogh,35.11,56.78,45,0
     .goto Dun Morogh,35.62,54.73,50,0
     .goto Dun Morogh,36.38,52.49,40,0
+    >>|cFFFCDC00Deal 51%+ damage to nearby |cFFFF5722Juvenile Snow Leopards|r and |cFFFF5722Young Black Bears|r, then pull them to the |cFF00FF25Ironforge Mountaineer|r to kill them more efficiently|r
+    >>Kill |cFFFF5722Large Crag Boars|r and |cFFFF5722Crag Boars|r en route. Loot them for their |cFF00BCD4Crag Boar Ribs|r
+    >>|cFFFCDC00Be careful as |cFFFF5722Large Crag Boars|r and |cFFFF5722Crag Boars|r cast|r |T132337:0|t[Charge] |cFFFCDC00(Self Instant: Increases movespeed for 3 seconds, dealing 25-70 melee damage on hit. Only castable at range)|r
+    .complete 384,1 --Crag Boar Rib (6)
+    .disablecheckbox
+    .xp 7 >> Grind to Level 7 en route to |cFF00FF25Tundra|r before talking to him
+    .target Ironforge Mountaineer
+    .mob Crag Boar
+    .mob Juvenile Snow Leopard
+    .isQuestAvailable 384
+step
+    #completewith next
+    .goto Dun Morogh,37.98,61.90,50,0
+    .goto Dun Morogh,35.11,56.78,45,0
+    .goto Dun Morogh,35.62,54.73,50,0
+    .goto Dun Morogh,36.38,52.49,40,0
+    >>|cFFFCDC00Deal 51%+ damage to nearby |cFFFF5722Juvenile Snow Leopards|r and |cFFFF5722Young Black Bears|r, then pull them to the |cFF00FF25Ironforge Mountaineer|r to kill them more efficiently|r
+    >>Kill |cFFFF5722Large Crag Boars|r and |cFFFF5722Crag Boars|r en route
+    >>|cFFFCDC00Be careful as |cFFFF5722Large Crag Boars|r and |cFFFF5722Crag Boars|r cast|r |T132337:0|t[Charge] |cFFFCDC00(Self Instant: Increases movespeed for 3 seconds, dealing 25-70 melee damage on hit. Only castable at range)|r
+    .xp 7 >> Grind to Level 7 en route to |cFF00FF25Tundra|r before talking to him
+    .target Ironforge Mountaineer
+    .mob Crag Boar
+    .mob Juvenile Snow Leopard
+    .isQuestTurnedIn 384
+step
+    #label TundraOne
     .goto Dun Morogh,34.57,51.66
     >>Talk to |cFF00FF25Tundra|r
     .accept 312 >> Accept Tundra MacGrann's Stolen Stash
     .target Tundra MacGrann
 step
     #completewith next
-    +|cFFFCDC00Kite an |cFFFF5722Ice Claw Bear|r toward|r |cFF00FF25Rejold|r
+    +|cFFFCDC00Kite an |cFFFF5722Ice Claw Bear|r toward|r |cFF00FF25Rejold|r 
+    >>|cFFFCDC00Try to accept the quest before the |cFFFF5722Ice Claw Bear|r dies to get quest credit|r
     >>|cFFFCDC00Be careful as they cast|r |T135853:0|t[Ice Claw] |cFFFCDC00(Melee Instant: Deals an additional 4 melee damage)|r
     >>|cFFFCDC00Make sure to deal 51%+ damage to get credit|r
     .mob Ice Claw Bear
@@ -1754,7 +1801,7 @@ step
     .vendor >> Vendor Trash
     .collect 1179,10,312,1 --Ice Cold Milk (10)
     .target Keeg Gibn
-    .itemcount 1179,<10
+    .itemcount 1179,10
     .money <0.0350
     .isOnQuest 319 
 step
@@ -1764,14 +1811,29 @@ step
     .vendor >> Vendor Trash
     .collect 1179,5,312,1 --Ice Cold Milk (5)
     .target Keeg Gibn
-    .itemcount 1179,<5
+    .itemcount 1179,5
     .money <0.0225
     .isOnQuest 319
 step
     #completewith CaveLS
     .goto Dun Morogh,33.51,47.50,50,0
     .goto Dun Morogh,36.85,45.48,50,0
-    >>Kill |cFFFF5722Ice Claw Bears|r, |cFFFF5722Elder Crag Boars|r, and |cFFFF5722Snow Leopards|r en route to the Cave
+    >>Kill |cFFFF5722Ice Claw Bears|r, |cFFFF5722Elder Crag Boars|r, and |cFFFF5722Snow Leopards|r en route to the Cave. Loot the |cFFFF5722Elder Crag Boars|r for |cFF00BCD4Crag Boar Ribs|r
+    >>|cFFFCDC00Focus on the|r |cFFFF5722Snow Leopards|r
+    >>|cFFFCDC00Be careful as |cFFFF5722Ice Claw Bears|r cast|r |T135853:0|t[Ice Claw] |cFFFCDC00(Melee Instant: Deals an additional 4 melee damage), and |cFFFF5722Elder Crag Boars|r cast|r |T132337:0|t[Charge] |cFFFCDC00(Self Instant: Increases movespeed for 3 seconds, dealing 25-70 melee damage on hit. Only castable at range)|r
+    .complete 319,1 --Kill Ice Claw Bear (x6)
+    .complete 319,2 --Kill Elder Crag Boar (x8)
+    .complete 319,3 --Kill Snow Leopard (x8)
+    .complete 384,1 --Crag Boar Rib (6)
+    .mob Ice Claw Bear
+    .mob Elder Crag Boar
+    .mob Snow Leopard
+    .isQuestAvailable 384
+step
+    #completewith CaveLS
+    .goto Dun Morogh,33.51,47.50,50,0
+    .goto Dun Morogh,36.85,45.48,50,0
+    >>Kill |cFFFF5722Ice Claw Bears|r, |cFFFF5722Elder Crag Boars|r, and |cFFFF5722Snow Leopards|r en route to the Cave. Loot the |cFFFF5722Elder Crag Boars|r for |cFF00BCD4Crag Boar Ribs|r
     >>|cFFFCDC00Focus on the|r |cFFFF5722Snow Leopards|r
     >>|cFFFCDC00Be careful as |cFFFF5722Ice Claw Bears|r cast|r |T135853:0|t[Ice Claw] |cFFFCDC00(Melee Instant: Deals an additional 4 melee damage), and |cFFFF5722Elder Crag Boars|r cast|r |T132337:0|t[Charge] |cFFFCDC00(Self Instant: Increases movespeed for 3 seconds, dealing 25-70 melee damage on hit. Only castable at range)|r
     .complete 319,1 --Kill Ice Claw Bear (x6)
@@ -1780,6 +1842,7 @@ step
     .mob Ice Claw Bear
     .mob Elder Crag Boar
     .mob Snow Leopard
+    .isQuestTurnedIn 384
 step
     #completewith next
     .goto Dun Morogh,38.00,42.77,30 >> Go inside the Cave
@@ -1822,12 +1885,12 @@ step
 step
     #completewith next
     .goto Dun Morogh,47.65,52.66
-    >>Talk to |cFF00FF25Jarven|r
+    >>Talk to |cFF00FF25Jarven|r downstairs
     .turnin 308 >> Turn in Distracting Jarven
     .target Jarven Thunderbrew
 step
     .goto Dun Morogh,47.72,52.70
-    >>Keep mousing over the |cFFDB2EEFGuarded Thunder Ale Barrel|r. Wait for the |cFFDB2EEFGuarded Thunder Ale Barrel|r to become Unguarded
+    >>Keep mousing over the |cFFDB2EEFGuarded Thunder Ale Barrel|r downstairs. Wait for the |cFFDB2EEFGuarded Thunder Ale Barrel|r to become Unguarded
     >>Click the |cFFDB2EEFUnguarded Thunder Ale Barrel|r
     .turnin 310 >> Turn in Bitter Rivals
     .accept 311 >> Accept Return to Marleth
@@ -1837,7 +1900,6 @@ step
     >>|cFF0E8312Buy up to 10 more|r |T132815:0|t[Ice Cold Milk] |cFF0E8312from him|r
     .collect 1179,10,312,1 --Ice Cold Milk (10)
     .target Innkeeper Belm
-    .itemcount 1179,<10
     .money <0.0250
 step
     .goto Dun Morogh,47.38,52.52
@@ -1845,13 +1907,12 @@ step
     >>|cFF0E8312Buy up to 5 more|r |T132815:0|t[Ice Cold Milk] |cFF0E8312from him|r
     .collect 1179,5,312,1 --Ice Cold Milk (5)
     .target Innkeeper Belm
-    .itemcount 1179,<5
     .money <0.0125
 step
-    #completewith SeerRamp
     .goto Dun Morogh,47.19,52.02,12,0
     .goto Dun Morogh,46.97,51.99,10,0
     .goto Dun Morogh,46.83,52.36,20 >>Exit the Inn
+    .isOnQuest 287
 step
     .goto Dun Morogh,46.83,52.36
     >>Talk to |cFF00FF25Ragnar|r
@@ -1860,24 +1921,24 @@ step
     .isQuestComplete 384
 step
     #completewith next
-    +|cFFFCDC00Deal 51%+ damage to nearby |cFFFF5722Snow Tracker Wolves|r, |cFFFF5722Winter Wolves|r, and  |cFFFF5722Young Black Bears|r. Pull them to the |cFF00FF25Ironforge Mountaineer|r to kill them more efficiently (if you need more xp)|r
+    .goto Dun Morogh,46.65,47.42,40,0
+    +|cFFFCDC00Deal 51%+ damage to nearby |cFFFF5722Snow Tracker Wolves|r, |cFFFF5722Winter Wolves|r, and |cFFFF5722Young Black Bears|r. Pull them to the |cFF00FF25Ironforge Mountaineer|r to kill them more efficiently|r
     >>|cFFFCDC00Be careful as |cFFFF5722Snow Tracker Wolves|r have|r |T132150:0|t[Increased Aggro Range] |cFFFCDC00(Aggro range is increased by about 8 yards)|r
     .mob Snow Tracker Wolf
     .mob Winter Wolf
     .mob Young Black Bear
+    .target Ironforge Mountaineer
 step
-    #label SeerRamp
-    #completewith ShimmerB
     .goto Dun Morogh,42.91,45.17,25,0
     .goto Dun Morogh,42.32,45.27,45 >> Run up the ramp toward the |cFFFF5722Frostmane Seers|r
     .isOnQuest 315
 step
     #requires SeerRamp
     #completewith next
-    >>Kill |cFFFF5722Frostmane Headhunters|r
+    >>Kill the |cFFFF5722Frostmane Headhunter|r patrol
+    >>|cFFFCDC00Be careful, as he patrols between all the stationary|r |cFFFF5722Frostmane Seers|r
     >>|cFFFCDC00Be careful as they cast|r |T132222:0|t[Shoot] |cFFFCDC00(Ranged Cast: Deals 8-15 damage)|r
     .complete 287,1 --Kill Frostmane Headhunters (5)
-    .isOnQuest 315
     .mob Frostmane Headhunter
 step
     #label ShimmerB
@@ -1908,7 +1969,7 @@ step
     .goto Dun Morogh,40.45,47.23,40,0
     .goto Dun Morogh,37.72,51.88,40,0
     >>Kill the two |cFFFF5722Elder Crag Boars|r en route to the cave (if they're up)
-    >>|cFFFCDC00Be careful as they cast|r |T132337:0|t[Charge] |cFFFCDC00(Self Instant: Increases movespeed for 3 seconds, dealing 25-70 melee damage on hit. Only castable at range)|r
+    >>|cFFFCDC00Be careful as they cast|r |T132337:0|t[Charge] |cFFFCDC00(Self Instant: Increases movespeed for 3 seconds, dealing 25-85 melee damage on hit. Only castable at range)|r
     .complete 319,2 --Kill Elder Crag Boar (x8)
     .mob Elder Crag Boar
 step
@@ -1916,9 +1977,12 @@ step
     .goto Dun Morogh,37.85,53.71,50 >>Travel toward the Cave
     .isOnQuest 312
 step
+    #completewith next
+    +|cFFFCDC00After looting it, remember to jump-turn his attacks to avoid the Daze and to jump on the tree log to temporarily evade him|r
+step
     .goto Dun Morogh,38.51,53.93
     >>|cFFFCDC00If |cFFFF5722Old Icebeard|r is in the cave, kite him up the side of the cave, then all the way above it. Wait for him to get close, then jump back down then go toward the back of the cave|r
-    >>Loot |cFF00BCD4Macgrann's Dried Meats|r on the ground
+    >>Open |cFFDB2EEFMacGrann's Meat Locker|r on the ground. Loot it for |cFF00BCD4Macgrann's Dried Meats|r
     .link https://youtu.be/Zg4FNWw-P5k?t=3120 >>|cFFFCDC00CLICK HERE If you're struggling|r
     .complete 312,1 --Collect MacGrann's Dried Meats (x1)
     .mob Old Icebeard
@@ -1928,10 +1992,30 @@ step
     .turnin 312,1 >> Turn in Tundra MacGrann's Stolen Stash
     .target Tundra MacGrann
 step
-    #completewith Perfect
-    >>Kill |cFFFF5722Elder Crag Boars|r. Loot them for their |cFF00BCD4Crag Boar Ribs|r
+    .goto Dun Morogh,32.11,49.72,40,0
+    .goto Dun Morogh,29.38,53.83,40,0
+    .goto Dun Morogh,28.91,50.05,40,0
+    .goto Dun Morogh,28.42,45.14,40,0
+    .goto Dun Morogh,28.85,41.75,40,0
+    .goto Dun Morogh,31.30,39.17,40,0
+    .goto Dun Morogh,32.11,49.72,40,0
+    .goto Dun Morogh,29.38,53.83,40,0
+    .goto Dun Morogh,28.91,50.05,40,0
+    .goto Dun Morogh,28.42,45.14,40,0
+    .goto Dun Morogh,28.85,41.75,40,0
+    .goto Dun Morogh,31.30,39.17
+    >>Kill |cFFFF5722Ice Claw Bears|r, |cFFFF5722Elder Crag Boars|r, and |cFFFF5722Snow Leopards|r. Loot the |cFFFF5722Elder Crag Boars|r for |cFF00BCD4Crag Boar Ribs|r
+    >>|cFFFCDC00Remember to kite an |cFFFF5722Ice Claw Bear|r or |cFFFF5722Snow Leopards|r back to the questgiver if possible|r
+    >>|cFFFCDC00Be careful as |cFFFF5722Ice Claw Bears|r cast|r |T135853:0|t[Ice Claw] |cFFFCDC00(Melee Instant: Deals an additional 4 melee damage), and |cFFFF5722Elder Crag Boars|r cast|r |T132337:0|t[Charge] |cFFFCDC00(Self Instant: Increases movespeed for 3 seconds, dealing 35-85 melee damage on hit. Only castable at range)|r
+    .complete 319,1 --Kill Ice Claw Bear (x6)
+    .complete 319,2 --Kill Elder Crag Boar (x8)
+    .complete 319,3 --Kill Snow Leopard (x8)
     .complete 384,1 --Crag Boar Rib (6)
+    .disablecheckbox
+    .mob Ice Claw Bear
     .mob Elder Crag Boar
+    .mob Snow Leopard
+    .isQuestAvailable 384
 step
     .goto Dun Morogh,32.11,49.72,40,0
     .goto Dun Morogh,29.38,53.83,40,0
@@ -1947,15 +2031,15 @@ step
     .goto Dun Morogh,31.30,39.17
     >>Kill |cFFFF5722Ice Claw Bears|r, |cFFFF5722Elder Crag Boars|r, and |cFFFF5722Snow Leopards|r
     >>|cFFFCDC00Remember to kite an |cFFFF5722Ice Claw Bear|r or |cFFFF5722Snow Leopards|r back to the questgiver if possible|r
-    >>|cFFFCDC00Be careful as |cFFFF5722Ice Claw Bears|r cast|r |T135853:0|t[Ice Claw] |cFFFCDC00(Melee Instant: Deals an additional 4 melee damage), and |cFFFF5722Elder Crag Boars|r cast|r |T132337:0|t[Charge] |cFFFCDC00(Self Instant: Increases movespeed for 3 seconds, dealing 25-70 melee damage on hit. Only castable at range)|r
+    >>|cFFFCDC00Be careful as |cFFFF5722Ice Claw Bears|r cast|r |T135853:0|t[Ice Claw] |cFFFCDC00(Melee Instant: Deals an additional 4 melee damage), and |cFFFF5722Elder Crag Boars|r cast|r |T132337:0|t[Charge] |cFFFCDC00(Self Instant: Increases movespeed for 3 seconds, dealing 35-85 melee damage on hit. Only castable at range)|r
     .complete 319,1 --Kill Ice Claw Bear (x6)
     .complete 319,2 --Kill Elder Crag Boar (x8)
     .complete 319,3 --Kill Snow Leopard (x8)
     .mob Ice Claw Bear
     .mob Elder Crag Boar
     .mob Snow Leopard
+    .isQuestTurnedIn 384
 step
-    #label Perfect
     >>Talk to |cFF00FF25Rejold|r and |cFF00FF25Marleth|r
     .turnin 315,1 >> Turn in The Perfect Stout
     .accept 413 >> Accept Shimmer Stout
@@ -1969,17 +2053,15 @@ step
     .goto Dun Morogh,30.45,46.01
     >>Talk to |cFF00FF25Keeg|r
     >>|cFF0E8312Buy up to 10 more|r |T132815:0|t[Ice Cold Milk] |cFF0E8312from him|r
-    .collect 1179,10,312,1 --Ice Cold Milk (10)
+    .collect 1179,10,287,1 --Ice Cold Milk (10)
     .target Keeg Gibn
-    .itemcount 1179,<10
     .money <0.0250
 step
     .goto Dun Morogh,30.45,46.01
     >>Talk to |cFF00FF25Keeg|r
     >>|cFF0E8312Buy up to 5 more|r |T132815:0|t[Ice Cold Milk] |cFF0E8312from him|r
-    .collect 1179,5,312,1 --Ice Cold Milk (5)
+    .collect 1179,5,287,1 --Ice Cold Milk (5)
     .target Keeg Gibn
-    .itemcount 1179,<5
     .money <0.0125
 step
     .goto Dun Morogh,32.11,49.72,40,0
@@ -1995,12 +2077,13 @@ step
     .goto Dun Morogh,28.85,41.75,40,0
     .goto Dun Morogh,31.30,39.17
     >>Kill |cFFFF5722Elder Crag Boars|r. Loot them for their |cFF00BCD4Crag Boar Ribs|r
-    >>|cFFFCDC00Be careful as they cast|r |T132337:0|t[Charge] |cFFFCDC00(Self Instant: Increases movespeed for 3 seconds, dealing 25-70 melee damage on hit. Only castable at range)|r
+    >>|cFFFCDC00Be careful as they cast|r |T132337:0|t[Charge] |cFFFCDC00(Self Instant: Increases movespeed for 3 seconds, dealing 35-85 melee damage on hit. Only castable at range)|r
     .complete 384,1 --Crag Boar Rib (6)
     .mob Elder Crag Boar
 step
     #completewith Explore
-    .goto Dun Morogh,24.95,50.57,25 >>Enter the cave
+    .goto Dun Morogh,25.12,49.54,35,0
+    .goto Dun Morogh,24.94,50.61,12 >>Enter the cave from the north side
 step
     .goto Dun Morogh,24.29,50.80,40,0
     .goto Dun Morogh,23.31,51.36
@@ -2014,6 +2097,7 @@ step
     .goto Dun Morogh,23.01,52.04,8,0
     .goto Dun Morogh,22.90,52.09
     >>|cFFFCDC00Carefully WALK down onto the nook below (do NOT fall down). Walk carefully down the nook until you get credit|r
+    >>|cFFFCDC00Be careful of the |cFFFF5722Frostmane Hideskinner|r below, as he may be able to attack you on the nook if he's close to it|r
     >>|cFFFCDC00Get ready to cast|r |T134414:0|t[Hearthstone]
     .link https://youtu.be/Zg4FNWw-P5k?t=3619 >>|cFFFCDC00CLICK HERE If you're struggling|r
     .complete 287,2 --Fully explore Frostmane Hold
@@ -2034,6 +2118,7 @@ step
     >>Talk to |cFF00FF25Magis|r upstairs
     .trainer >> Train your class spells (Frostbolt r2, Polymorph)
     .target Magis Sparkmantle
+    .isQuestAvailable 314
 step
     #completewith Senir2
     +|cFFFCDC00Remember to save|r |T133970:0|t[Chunks of Boar Meat] |cFFFCDC00you get for leveling|r |T133971:0|t[Cooking] |cFFFCDC00to 50 later|r
@@ -2100,7 +2185,7 @@ step
     >>Talk to |cFF00FF25Rudra|r
     .turnin 314,3 >> Turn in Protecting the Herd
     .target Rudra Amberstill
-step
+step << skip
     #completewith Ghilm
     +|cFFFCDC00Remember to save|r |T133970:0|t[Chunks of Boar Meat] |cFFFCDC00you get for leveling|r |T133971:0|t[Cooking] |cFFFCDC00to 50 later|r
 step
@@ -2167,7 +2252,7 @@ step
     .goto Dun Morogh,72.55,51.50,40,0
     .goto Dun Morogh,72.62,52.56
     >>Kill |cFFFF5722Rockjaw Bonesnappers|r inside the cave
-    >>|cFFFCDC00Be careful as they cast|r |T132154:0|t[Knockdown]|cFFFCDC00(Melee Instant: Stuns for 2 seconds|r
+    >>|cFFFCDC00Be careful as they cast|r |T132154:0|t[Knockdown] |cFFFCDC00(Melee Instant: Stuns for 2 seconds)|r
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
     .mob Rockjaw Bonesnapper
 step
@@ -2200,6 +2285,7 @@ step
 step
     #label Shortcut1
     #completewith Pilot
+    .goto Dun Morogh,70.35,55.28,5,0
     .link https://youtu.be/G2IscpFZVeQ?t=4034 >>|cFFFCDC00CLICK HERE if you're struggling|r
     .goto Dun Morogh,70.52,54.75,12 >>Take the shortcut up behind |cFF00FF25Dank|r
 step
@@ -2212,6 +2298,7 @@ step
     .mob Rockjaw Ambusher
     .unitscan Ironforge Mountaineer
 step
+    #requires Shortcut2
     #completewith next
     .goto Dun Morogh,81.23,42.66,50,0
     .goto Dun Morogh,83.01,40.31,30 >>Kite a |cFFFF5722Scarred Crag Boar|r through the tunnel
@@ -2223,6 +2310,7 @@ step
     >>Talk to |cFF00FF25Hammerfoot|r
     .accept 419 >> Accept The Lost Pilot
     .target Pilot Hammerfoot
+    .isQuestAvailable 419
 step
     .goto Dun Morogh,81.37,37.02,30,0
     .goto Dun Morogh,79.67,36.17
@@ -2232,7 +2320,7 @@ step
     .turnin 419 >> Turn in The Lost Pilot
     .accept 417 >> Accept A Pilot's Revenge
 step
-    .goto Dun Morogh,78.41,37.80,50,0
+    .goto Dun Morogh,78.41,37.80,60,0
     .goto Dun Morogh,83.89,39.19
     >>Kill |cFFFF5722Mangeclaw|r. Loot him for the |cFF00BCD4Mangy Claw|r
     >>|cFFFCDC00Kite him all the way over to |cFF00FF25Hammerfoot|r (make sure to deal 51%+ damage to get credit)|r
@@ -2336,6 +2424,7 @@ step
     .goto Loch Modan,19.50,62.56,30 >>Go back into the Tunnel
 step
     .goto Loch Modan,18.84,61.48
+    .link https://www.youtube.com/watch?v=AOAlX9B5aO0 >>|cFFFCDC00CLICK HERE If you're struggling|r
     .goto Loch Modan,32.19,46.95,30 >>|cFFFCDC00Jumping Logout Skip from the Brazier inside the tunnel to Thelsamar|r
     .isOnQuest 414
 step
@@ -2388,6 +2477,7 @@ step
     .accept 6388 >>Accept Gryth Thurden
     .vendor >> Vendor Trash
     .target Golnir Bouldertoe
+    .isOnQuest 291
 step
     #completewith next
     .goto Ironforge,49.67,28.23,12,0
@@ -2488,7 +2578,7 @@ step
     >>|cFFFCDC00Do the Deathless Dun Morogh -> Wetlands skip|r
     >>|cFFFCDC00Eat to full after each fall if you don't feel confident|r
     .link https://youtu.be/QcEUvwu49KI?t=73 >> |cFFFCDC00CLICK HERE for reference (it is HEAVILY advised you do so)|r
-    .goto Dun Morogh,60.65,11.38,15 >>Carefully drop down the mountain side
+    .goto Dun Morogh,60.65,11.38,20 >>Carefully drop down the mountain side
     .isQuestAvailable 983
 step
     .goto Dun Morogh,60.80,10.33,10,0
@@ -2503,12 +2593,14 @@ step
     .goto Wetlands,15.31,65.47,20,0
     .goto Wetlands,15.10,63.72,12,0
     >>|cFFFCDC00Do the Deathless Dun Morogh -> Wetlands skip|r
-    >>|cFFFCDC00Avoid the |cFFFF5722Young Wetlands Crocolisks|r when crossing the sea. Wait for them to patrol away|r
+    >>|cFFFCDC00Be careful of |cFFFF5722Sludginn|r (rare) before you drop down toward the coast (if he's up)|r
     >>|cFFFCDC00Be careful of the |cFFFF5722Bluegill Raiders|r to the west when you reach the sea|r
+    >>|cFFFCDC00Avoid the |cFFFF5722Young Wetlands Crocolisks|r when crossing the sea. Wait for them to patrol away|r
     .link https://youtu.be/QcEUvwu49KI?t=336 >> |cFFFCDC00CLICK HERE for reference (it is HEAVILY advised you do so)|r
     .goto Wetlands,12.69,60.97,15 >> Travel to Menethil Harbor
     .mob Young Wetlands Crocolisk
     .mob Bluegill Raider
+    .unitscan Sludginn
     .isQuestAvailable 983
 --VV Custom Video
 step
@@ -2556,18 +2648,25 @@ step
     .goto Wetlands,4.25,57.21
     .zone Darkshore >> Take the boat to Darkshore
 step
+    #label Darkshoreshore
+    #completewith Wizbang
+    .goto Darkshore,35.73,45.23,60 >>Jump off the boat when you're closest to the shore
+step
+    #requires Darkshoreshore
     #completewith Wizbang
     +|cFFFCDC00Kite 2-3 |cFFFF5722Pygmy Tide Crawlers|r toward |cFF00FF25Wizbang|r (Remember to use|r |T135848:0|t[Frost Nova]|cFFFCDC00) Kill them when you accept the quest|r
     .mob Pygmy Tide Crawler
 step
-    #sticky
-    #label LairdFish
+    #requires Darkshoreshore
+    #completewith next
     .goto Darkshore,36.77,44.28,0,0
     >>Talk to |cFF00FF25Laird|r
     >>|cFF0E8312Buy up to 20|r |T133918:0|t[Longjaw Mud Snappers] |cFF0E8312from him|r
     .vendor >> Vendor Trash
     .collect 4592,20,983,1 --Longjaw Mud Snapper (20)
+    .isQuestAvailable 983
 step
+    #requires Darkshoreshore
     #completewith next
     .goto Darkshore,36.72,44.52,20,0
     .goto Darkshore,36.84,44.18,10,0
@@ -2587,7 +2686,6 @@ step
     .mob Pygmy Tide Crawler
 step
     #completewith next
-    #requires LairdFish
     .goto Darkshore,37.44,43.12,20,0
     .goto Darkshore,37.73,41.40,20,0
     .goto Darkshore,37.39,40.13,10 >>Travel toward |cFF00FF25Thundris|r
@@ -2599,8 +2697,8 @@ step
     .vendor 4182 >> |cFF0E8312Buy as many|r |T133634:0|t[Small Brown Pouches] |cFF0E8312as you need/can|r
     .target Dalmond
     .money <0.0500
+    .isQuestAvailable 954
 step
-    #requires LairdFish
     .goto Darkshore,37.39,40.13
     >>Talk to |cFF00FF25Thundris|r
     .accept 954 >>Accept Bashal'Aran
@@ -2608,7 +2706,6 @@ step
     .target Thundris Windweaver
 	.skill cooking,10,1
 step
-    #requires LairdFish
     >>Talk to |cFF00FF25Thundris|r and |cFF00FF25Alanndarian|r
     .accept 954 >>Accept Bashal'Aran
     .accept 958 >>Accept Tools of the Highborne
@@ -2634,6 +2731,14 @@ step
     .goto Darkshore,38.84,43.41
     .target Terenthis
     .target Tharnariun Treetender
+ step
+    .goto Darkshore,36.77,44.28
+    >>Talk to |cFF00FF25Laird|r
+    >>|cFF0E8312Buy up to 20|r |T133918:0|t[Longjaw Mud Snappers] |cFF0E8312from him|r
+    .vendor >> Vendor Trash
+    .collect 4592,20,983,1 --Longjaw Mud Snapper (20)
+    .isQuestAvailable 983
+    .itemcount 4592,<20
 step
     #completewith next
     .goto Darkshore,36.22,44.89,50,0
@@ -2641,10 +2746,9 @@ step
     .goto Darkshore,35.86,47.35,50,0
     .goto Darkshore,35.74,48.20,50,0
     .goto Darkshore,36.25,49.90,50,0
-    >>Kill |cFFFF5722Pygmy Tide Crawlers|r and |cFFFF5722Young Reef Crawlers|r. Loot them for their |cFF00BCD4Crawler Legs|r
+    >>Kill |cFFFF5722Pygmy Tide Crawlers|r. Loot them for their |cFF00BCD4Crawler Legs|r
     .complete 983,1 --Crawler Leg (6)
     .mob Pygmy Tide Crawler
-    .mob Young Reef Crawler
 step
     #completewith next
     .goto Darkshore,38.23,52.84,75,0
@@ -2659,7 +2763,7 @@ step
     >>|cFFFCDC00Do not attempt to fight the|r |cFFFF5722Blackwood Windtalker|r
     .complete 984,1 --Find a corrupt furbolg camp (1)
 step
-    .goto Darkshore,38.24,56.67,60,0
+    .goto Darkshore,38.63,56.34,60,0
     .goto Darkshore,38.80,58.29,60,0
     .goto Darkshore,38.38,60.75,60,0
     .goto Darkshore,38.57,66.39
@@ -2674,14 +2778,16 @@ step
     .accept 953 >>Accept The Fall of Ameth'Aran
     .target Sentinel Tysha Moonblade
 step
+    #completewith Relics
+    +|cFFFCDC00Avoid pulling |cFFFF5722Lady Moongazer|r (rare) if she's up|r
+    .unitscan Lady Moongazer
+step
     #completewith Fall
-    >>Kill |cFFFF5722Cursed Highbornes|r and |cFFFF5722Writhing Highbornes|r
+    >>Kill |cFFFF5722Cursed Highbornes|r and |cFFFF5722Writhing Highbornes|r. Loot them for |cFF00BCD4Highborne Relics|r
     >>|cFFFCDC00Kill |cFFFF5722Wailing Highbornes|r only if they're in your way|r
-    >>|cFFFCDC00Avoid pulling |cFFFF5722Lady Moongazer|r if she's up|r
     .complete 958,1 --Highborne Relic (7)
     .mob Cursed Highborne
     .mob Writhing Highborne
-    .unitscan Lady Moongazer
 step
     .goto Darkshore,42.65,63.15
     >>Click |cFFDB2EEFThe Fall of Ameth'Aran|r on the ground
@@ -2699,6 +2805,7 @@ step
     .turnin 953 >>Turn in The Fall of Ameth'Aran
     .target Sentinel Tysha Moonblade
 step
+    #label Relics
     .goto Darkshore,41.76,57.96,50,0
     .goto Darkshore,43.11,57.55,50,0
     .goto Darkshore,43.82,58.29,50,0
@@ -2709,7 +2816,6 @@ step
     .goto Darkshore,41.76,57.96
     >>Kill |cFFFF5722Cursed Highbornes|r and |cFFFF5722Writhing Highbornes|r
     >>|cFFFCDC00Kill |cFFFF5722Wailing Highbornes|r only if they're in your way|r
-    >>|cFFFCDC00Avoid pulling |cFFFF5722Lady Moongazer|r if she's up|r
     .complete 958,1 --Highborne Relic (7)
     .mob Cursed Highborne
     .mob Writhing Highborne
@@ -2720,7 +2826,7 @@ step
     .isOnQuest 958
 step
     .goto Darkshore,45.75,53.08
-    .goto Darkshore,41.70,36.51,30 >>|cFFFCDC00Kill the |cFFFF5722Moonkin Oracle|r inside the cave, then Logout Skip by logging out on top of the Mushroom at the back of the cave|r
+    .goto Darkshore,41.70,36.51,30 >>|cFFFCDC00Kill the |cFFFF5722Moonkin Oracle|r inside the cave, then drink Logout Skip by logging out on top of the Mushroom at the back of the cave|r
     >>|cFFFCDC00Be careful as it casts|r |T136006:0|t[Wrath] |cFFFCDC00(Ranged Cast: Deals 30-45 Nature damage),|r |T136096:0|t[Moonfire] |cFFFCDC00(Ranged Instant: Deals 20-30 Nature damage, then 44 Nature damage over 12 seconds), and|r |T136085:0|t[Regrowth] |cFFFCDC00(Self Cast: Heals for about 150 damage. Rare, but run if this happens)|r
     >>|cFFFCDC00You can LoS his|r |T136006:0|t[Wrath] |cFFFCDC00behind the rocks inside the mouth of the cave|r
     .mob Moonkin Oracle
@@ -2736,8 +2842,14 @@ step
     .accept 955 >> Accept Bashal'Aran
     .target Asterion
 step
+    #completewith BashalF
+    +|cFFFCDC00Be careful as |cFFFF5722Licillin|r (rare) may be up|r
+    >>|cFFFCDC00He casts|r |T136197:0|t[Shadow Bolt] |cFFFCDC00(Ranged Cast: Deals 55-70 Shadow damage)|r
+    .unitscan Licillin
+step
     .loop 35,Darkshore,44.57,36.57,44.47,38.11,44.02,38.55,45.01,39.62,45.61,38.81,45.18,37.51,45.86,36.96,46.91,37.11,45.47,36.01,44.57,36.57
     >>Kill |cFFFF5722Vile Sprites|r and |cFFFF5722Wild Grells|r. Loot them for their |cFF00BCD4Grell Earrings|r
+    >>|cFFFCDC00Be careful as the |cFFFF5722Vile Sprites|r cast|r |T136016:0|t[Poison] |cFFFCDC00(Melee Instant: Deals 3 damage every 3 seconds for 15 seconds) and |cFFFF5722Wild Grells|r cast|r |T136215:0|t[Crazed] |cFFFCDC00(Self Instant: Increases attack speed by 20% at <20% health)|r
     .complete 955,1 --Grell Earring (8)
     .mob Vile Sprite
     .mob Wild Grell
@@ -2765,6 +2877,7 @@ step
     .goto Darkshore,47.77,37.20,45,0
     .goto Darkshore,47.44,36.76
     >>Kill |cFFFF5722Deth'ryll Satyrs|r. Loot them for the |cFF00BCD4Ancient Moonstone Seal|r
+    >>|cFFFCDC00Be careful as they cast|r |T132222:0|t[Shoot] |cFFFCDC00(Ranged Cast: Deals 15-25 damage)|r
     .complete 956,1 --Ancient Moonstone Seal (1)
     .mob Deth'ryll Satyr
 step
@@ -2775,6 +2888,7 @@ step
 --910+900+750+975+850 = 4385 (Turnins starting from Bashal Seal turnin)
 --675+975 = 1650 (Turtle turnins)
 step
+    #label BashalF
     .goto Darkshore,44.17,36.29
     >>Talk to |cFF00FF25Asterion|r
     .turnin 956 >> Turn in Bashal'Aran
@@ -2787,6 +2901,7 @@ step
     >>Talk to |cFF00FF25Dalmond|r
     .vendor >> Vendor Trash
     .target Dalmond
+    .isQuestAvailable 3524
 step
     .goto Darkshore,37.40,40.13
     >>Talk to |cFF00FF25Thundris|r
@@ -2838,12 +2953,16 @@ step
 step
     #requires Gwennyth
     #completewith next
-    +Save the |T133884:0|t[Murloc Eyes] you loot from the |cFFFF5722Greymist Coastrunners|r and |cFFFF5722Greymist Raiders|r
+    >>|cFFFCDC00Save the|r |T133884:0|t[Murloc Eyes] |cFFFCDC00you loot from the |cFFFF5722Greymist Coastrunners|r and|r |cFFFF5722Greymist Raiders|r
+    .collect 730,3,38,1 --Murloc Eyes (3)
+    .mob Greymist Coastrunner
+    .mob Greymist Raider
 step
     #requires Gwennyth
     #label Bones
     .goto Darkshore,36.38,50.88
     >>Loot the |cFF00BCD4Beached Sea Creature|r
+    >>|cFFFCDC00Be careful as the nearby |cFFFF5722Greymist Coastrunners|r have|r |T132307:0|t[Increased Movespeed]
     >>|cFFFCDC00This has a 5 second cast time|r
     .complete 3524,1 --Sea Creature Bones (1)
 step
@@ -2946,6 +3065,7 @@ step
     .goto Ironforge,67.83,42.47,-1
     .vendor 5175 >> Logout skip on the pillar above |cFF00FF25Dink|r to check |cFF00FF25Cogspinner|r for a |T133024:0|t[Bronze Tube] if you wish
     .itemcount 4371,<1
+    .isQuestAvailable 418
 step
     #completewith next
     +|cFFFCDC00Start spam casting|r |T132794:0|t[Conjure Water r2] |cFFFCDC00to conjure as much water as possible before taking the flight|r
@@ -3220,6 +3340,7 @@ step << Gnome
     .goto Loch Modan,64.83,66.05
     >>Talk to |cFF00FF25Aldren|r
     .vendor 1214 >> |cFF0E8312Buy the |r |T132491:0|t[Wise Man's Belt] |cFF0E8312from him (if it's up)|r
+    .isQuestAvailable 298
 step << Gnome
     >>Talk to |cFF00FF25Ironband|r and |cFF00FF25Magmar|r
     .accept 298 >> Accept Excavation Progress Report
@@ -3350,6 +3471,7 @@ step
     >>|cFF0E8312Buy as many|r |T133634:0|t[Small Brown Pouches] |cFF0E8312as you need/can|r
     >>|cFFFCDC00Do NOT go below 45 Silver|r
     .vendor >> Vendor Trash
+    .isOnQuest 1338
 step
     #completewith next
     #requires Kadrell
