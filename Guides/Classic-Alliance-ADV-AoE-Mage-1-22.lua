@@ -1640,6 +1640,7 @@ step
     >>Talk to |cFF00FF25Belm|r
     >>|cFF0E8312Buy 20|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from him|r
     .collect 159,20,312,1 --Refreshing Spring Water (20)
+    .itemcount 1179,<1
     .target Innkeeper Belm
     .money <0.0182
 step
@@ -1648,6 +1649,7 @@ step
     >>Talk to |cFF00FF25Belm|r
     >>|cFF0E8312Buy 15|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from him|r
     .collect 159,15,312,1 --Refreshing Spring Water (15)
+    .itemcount 1179,<1
     .target Innkeeper Belm
     .money <0.0157
 step
@@ -1656,6 +1658,7 @@ step
     >>Talk to |cFF00FF25Belm|r
     >>|cFF0E8312Buy 10|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from him|r
     .collect 159,10,312,1 --Refreshing Spring Water (10)
+    .itemcount 1179,<1
     .target Innkeeper Belm
     .money <0.0132
 step
@@ -1664,6 +1667,7 @@ step
     >>Talk to |cFF00FF25Belm|r
     >>|cFF0E8312Buy 5|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from him|r
     .collect 159,5,312,1 --Refreshing Spring Water (5)
+    .itemcount 1179,<1
     .target Innkeeper Belm
     .money <0.0107
 step
@@ -1694,7 +1698,7 @@ step
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.2
 step
     #requires Golorn
-    .loop 30,Dun Morogh,42.57,54.80,41.89,54.51,42.13,52.68,42.46,51.96,41.91,51.43,42.46,51.96,42.13,52.68,42.57,54.80
+    .loop 10,Dun Morogh,42.57,54.80,41.89,54.51,42.13,52.68,42.46,51.96,41.91,51.43,42.46,51.96,42.13,52.68,42.57,54.80
     >>Kill |cFFFF5722Young Wendigos|r and |cFFFF5722Wendigos|r. Loot them for their |cFF00BCD4Wendigo Manes|r
     >>|cFFFCDC00Be careful as they cast|r |T135848:0|t[Frost Breath] |cFFFCDC00(Melee Cast: Deals 6-10 Frost damage) and have increased|r |T135849:0|t[Frost Resistance]
     .complete 313,1 --Collect Wendigo Mane (x8)
@@ -1833,7 +1837,7 @@ step
     #completewith CaveLS
     .goto Dun Morogh,33.51,47.50,50,0
     .goto Dun Morogh,36.85,45.48,50,0
-    >>Kill |cFFFF5722Ice Claw Bears|r, |cFFFF5722Elder Crag Boars|r, and |cFFFF5722Snow Leopards|r en route to the Cave. Loot the |cFFFF5722Elder Crag Boars|r for |cFF00BCD4Crag Boar Ribs|r
+    >>Kill |cFFFF5722Ice Claw Bears|r, |cFFFF5722Elder Crag Boars|r, and |cFFFF5722Snow Leopards|r en route to the Cave
     >>|cFFFCDC00Focus on the|r |cFFFF5722Snow Leopards|r
     >>|cFFFCDC00Be careful as |cFFFF5722Ice Claw Bears|r cast|r |T135853:0|t[Ice Claw] |cFFFCDC00(Melee Instant: Deals an additional 4 melee damage), and |cFFFF5722Elder Crag Boars|r cast|r |T132337:0|t[Charge] |cFFFCDC00(Self Instant: Increases movespeed for 3 seconds, dealing 25-70 melee damage on hit. Only castable at range)|r
     .complete 319,1 --Kill Ice Claw Bear (x6)
