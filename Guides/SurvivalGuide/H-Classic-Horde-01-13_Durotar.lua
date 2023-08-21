@@ -3664,81 +3664,57 @@ step
     .mob Rot Hide Graverobber
     .isOnQuest 358
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r, |cRXP_FRIENDLY_Johaan|r, |cRXP_FRIENDLY_Zygand|r and |cRXP_FRIENDLY_Sevren|r
-    .turnin 426 >>Turn in The Mills Overrun
     .goto Tirisfal Glades,58.19,51.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r
+    .turnin 426 >>Turn in The Mills Overrun
+    .target Deathguard Dillinger
+    .isQuestComplete 426
+step
+    .goto Tirisfal Glades,59.45,52.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r
     .turnin 368 >>Turn in A New Plague
     .accept 369 >>Accept A New Plague
+    .target Apothecary Johaan
+    .isQuestComplete 368
+step
     .goto Tirisfal Glades,59.45,52.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r
+    .accept 369 >>Accept A New Plague
+    .target Apothecary Johaan
+    .isQuestTurnedIn 368
+step
+    .goto Tirisfal Glades,60.58,51.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zygand|r
     .turnin 398 >>Turn in Wanted: Maggot Eye
     .turnin 370 >>Turn in At War With The Scarlet Crusade
     .accept 371 >>Accept At War With The Scarlet Crusade
-    .goto Tirisfal Glades,60.58,51.77
-    .turnin 358 >>Turn in Graverobbers
-    .accept 359 >>Accept Forsaken Duties
-    .goto Tirisfal Glades,61.26,50.84
-    .target Deathguard Dillinger
-    .target Apothecary Johaan
     .target Executor Zygand
-    .target Magistrate Sevren
-    .isQuestComplete 426
     .isQuestComplete 370
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r, |cRXP_FRIENDLY_Zygand|r and |cRXP_FRIENDLY_Sevren|r
-    .turnin 368 >>Turn in A New Plague
-    .accept 369 >>Accept A New Plague
-    .goto Tirisfal Glades,59.45,52.40
+    .goto Tirisfal Glades,60.58,51.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zygand|r
     .turnin 398 >>Turn in Wanted: Maggot Eye
-    .turnin 370 >>Turn in At War With The Scarlet Crusade
+    .target Executor Zygand
+    .isQuestComplete 398
+step
+    .goto Tirisfal Glades,60.58,51.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zygand|r
     .accept 371 >>Accept At War With The Scarlet Crusade
-    .goto Tirisfal Glades,60.58,51.77
-    .turnin 358 >>Turn in Graverobbers
-    .accept 359 >>Accept Forsaken Duties
-    .goto Tirisfal Glades,61.26,50.84
-    .target Apothecary Johaan
     .target Executor Zygand
-    .target Magistrate Sevren
-    .isQuestComplete 370
+    .isQuestTurnedIn 370
 step
+    .goto Tirisfal Glades,61.26,50.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r, |cRXP_FRIENDLY_Johaan|r, |cRXP_FRIENDLY_Zygand|r and |cRXP_FRIENDLY_Sevren|r
-    .turnin 426 >>Turn in The Mills Overrun
-    .goto Tirisfal Glades,58.19,51.44
-    .turnin 368 >>Turn in A New Plague
-    .accept 369 >>Accept A New Plague
-    .goto Tirisfal Glades,59.45,52.40
-    .turnin 398 >>Turn in Wanted: Maggot Eye
-    .goto Tirisfal Glades,60.58,51.77
     .turnin 358 >>Turn in Graverobbers
     .accept 359 >>Accept Forsaken Duties
-    .goto Tirisfal Glades,61.26,50.84
-    .target Deathguard Dillinger
-    .target Apothecary Johaan
-    .target Executor Zygand
-    .target Magistrate Sevren
-    .isQuestComplete 426
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r, |cRXP_FRIENDLY_Zygand|r and |cRXP_FRIENDLY_Sevren|r
-    .turnin 368 >>Turn in A New Plague
-    .accept 369 >>Accept A New Plague
-    .goto Tirisfal Glades,59.45,52.40
-    .turnin 398 >>Turn in Wanted: Maggot Eye
-    .goto Tirisfal Glades,60.58,51.77
-    .turnin 358 >>Turn in Graverobbers
-    .accept 359 >>Accept Forsaken Duties
-    .goto Tirisfal Glades,61.26,50.84
-    .target Apothecary Johaan
-    .target Executor Zygand
     .target Magistrate Sevren
     .isQuestComplete 358
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r and |cRXP_FRIENDLY_Zygand|r
-    .turnin 368 >>Turn in A New Plague
-    .goto Tirisfal Glades,59.45,52.40
-    .turnin 398 >>Turn in Wanted: Maggot Eye
     .goto Tirisfal Glades,61.26,50.84
-    .target Apothecary Johaan
-    .target Executor Zygand
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r, |cRXP_FRIENDLY_Johaan|r, |cRXP_FRIENDLY_Zygand|r and |cRXP_FRIENDLY_Sevren|r
+    .accept 359 >>Accept Forsaken Duties
     .target Magistrate Sevren
+    .isQuestTurnedin 358
 step
     #completewith HorrorsandSpirits
     +|cRXP_WARN_Bind your|r |T133849:0|t[Slumber Sand]|cRXP_WARN_. Save it for emergency situations|r
