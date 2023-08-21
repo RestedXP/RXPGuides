@@ -5691,6 +5691,7 @@ step
     .target Liladris Moonriver
     .isOnQuest 5321
 step
+    #label Delgren
     .goto Ashenvale,26.19,38.70
     >>Talk to |cFF00FF25Delgren|r
     .turnin 967 >>Turn in The Tower of Althalaxx
