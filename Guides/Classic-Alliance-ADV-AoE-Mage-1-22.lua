@@ -3321,6 +3321,15 @@ step
     .target Brock Stoneseeker
     .target Jern Hornhelm
     .xp >13+5500,1 << Gnome
+step
+    .goto Loch Modan,37.23,47.37
+    >>Talk to |cFF00FF25Jern|r
+    >>|cFFFCDC00He can be inside or outside the building|r
+    .accept 436 >> Accept Ironband's Excavation
+    .target Brock Stoneseeker
+    .target Jern Hornhelm
+    .xp >13+6550,1 << Gnome
+    .isQuestTurnedIn 6392
 step << Human
     .loop 50,Loch Modan,31.01,24.84,32.69,28.67,34.93,31.55,36.78,33.19,39.65,32.82,38.15,38.16,33.53,40.53,29.87,53.51,29.58,46.54,29.95,39.84,27.09,40.10,29.03,33.44,27.19,29.01,25.77,25.60,23.64,22.20,31.01,24.84
     .xp 13+8675 >> Grind to 8675+/11400xp
@@ -5691,6 +5700,7 @@ step
     .target Liladris Moonriver
     .isOnQuest 5321
 step
+    #label Delgren
     .goto Ashenvale,26.19,38.70
     >>Talk to |cFF00FF25Delgren|r
     .turnin 967 >>Turn in The Tower of Althalaxx
