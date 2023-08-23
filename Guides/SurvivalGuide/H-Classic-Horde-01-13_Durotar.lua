@@ -637,7 +637,7 @@ step
     .vendor >> Vendor Trash
     .target Duokna
     .money >0.03
-step
+step << Priest
     .goto Durotar,42.36,68.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken'jai|r
 	.accept 5649 >> Accept In Favor of Spirituality << Troll Priest
