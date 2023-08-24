@@ -3010,7 +3010,8 @@ step
 step << Priest
     .goto Thunder Bluff,25.31,15.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miles|r
-    .accept 5644 >> Accept Devouring Plague
+    .accept 5644 >> Accept Devouring Plague << Undead Priest
+    .accept 5642 >> Accept Shadowguard << Troll Priest
     .trainer >> Train your class spells
     .target Miles Welsh
 step << Mage
@@ -3854,14 +3855,20 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo|r at the top of the hut
     .train 3567 >> Train |T135759:0|t[Teleport: Orgrimmar]
     .target Thuul
-step << Priest
+step << Troll Priest
+    .goto Orgrimmar,35.59,87.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
+    .turnin 5642 >> Turn in Shadowguard
+    .trainer >> Train your class spells
+    .target Ur'kyo
+step << Undead Priest
     .goto Orgrimmar,35.59,87.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 8103 >> Train your class spells
     .target Ur'kyo
     .xp <22,1
     .xp >24,1
-step << Priest
+step << Undead Priest
     .goto Orgrimmar,35.59,87.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 3747 >> Train your class spells
