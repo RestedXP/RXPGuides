@@ -90,7 +90,7 @@ step << Priest/Mage/Warlock
     .goto Elwynn Forest,46.2,40.4,40,0
     .goto Elwynn Forest,47.486,41.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Danil|r
-    .vendor >> |cRXP_WARN_Once you have 50c worth of vendor trash, buy 10|r |T132794:0|t[Refreshing Spring Water] 
+    .vendor >> |cRXP_WARN_Once you have 50c worth of vendor trash, buy 10|r |T132794:0|t[Refreshing Spring Water]
     .target Brother Danil
     .collect 159,10 --Collect Refreshing Spring Water (x10)
 step
@@ -127,7 +127,7 @@ step << Priest/Mage/Warlock
     .goto Elwynn Forest,47.486,41.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Danil|r
     .vendor >>|cRXP_WARN_Vendor trash|r
-    >>|cRXP_WARN_Buy 10|r |T132794:0|t[Refreshing Spring Water] 
+    >>|cRXP_WARN_Buy 10|r |T132794:0|t[Refreshing Spring Water]
     .target Brother Danil
     .collect 159,10 --Collect Refreshing Spring Water (x10)
 step << !Priest !Mage !Warlock !Rogue
@@ -448,7 +448,7 @@ step << Rogue
     .vendor 151 >> >>|cRXP_WARN_Buy a|r |T135641:0|t[Balanced Throwing Dagger] and equip it|r
 step << Warlock
     #completewith next
-    .goto Elwynn Forest,44.1,66.0,10 >> Travel downstairs 
+    .goto Elwynn Forest,44.1,66.0,10 >> Travel downstairs
 step << Warlock
     .goto Elwynn Forest,44.392,66.240
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maximillian Crowe|r
@@ -492,7 +492,7 @@ step << Warrior/Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Farley|r
     .vendor >> |cRXP_BUY_Buy|r |T133995:0|t[Dalaran Sharp] |cRXP_BUY_until you're down to 1 Silver|r << Warrior
     .vendor >> |cRXP_BUY_Buy up to 20|r |T133995:0|t[Dalaran Sharp] << Rogue
-    .target Innkeeper Farley   
+    .target Innkeeper Farley
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyria Du Lac|r
     .target Lyria Du Lac
@@ -611,7 +611,7 @@ step
     .mob Kobold Tunneler
     .mob Kobold Miner
 step
-    #completewith next 
+    #completewith next
     .goto Elwynn Forest,38.677,81.778,50,0
     .goto Elwynn Forest,40.5,82.3
     >>Explore Fargodeep Mine
@@ -1612,7 +1612,7 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r down stairs
     .vendor >>|cRXP_WARN_Buy a|r |T135641:0|t[Balanced Throwing Dagger] and equip it|r
     .target Brenwyn Wintersteel
-    
+
 step << skip
     #sticky
     #som
@@ -1731,8 +1731,8 @@ step
     >>Kill |cRXP_ENEMY_Vagash|r. Loot him for his |cRXP_LOOT_Fang|r
     >>|cRXP_WARN_This quest is difficult. Find a group for him if needed. Skip this step if you're unable to find a group or solo him|r
     >>|cRXP_WARN_Watch the video below before you attempt to kill |cRXP_ENEMY_Vagash|r. It can be solo'd on any class|r
-    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r 
-    .complete 314,1 --Collect Fang of Vagash (1) 
+    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r
+    .complete 314,1 --Collect Fang of Vagash (1)
     .mob Vagash
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
@@ -1865,9 +1865,9 @@ step
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
-    .complete 418,1 --Collect Boar Intestines (x3)
-    .complete 418,2 --Collect Bear Meat (x3)
-    .complete 418,3 --Collect Spider Ichor (x3)
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
     >>|cRXP_WARN_Save any|r |T133970:0|t[Chunks of Boar Meat] |cRXP_WARN_to use for leveling |T133971:0|t[Cooking] |cRXP_WARN_later|r
     .mob Elder Black Bear
     .mob Mountain Boar
@@ -1917,9 +1917,9 @@ step
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
-    .complete 418,1 --Collect Boar Intestines (x3)
-    .complete 418,2 --Collect Bear Meat (x3)
-    .complete 418,3 --Collect Spider Ichor (x3)
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
     .mob Elder Black Bear
     .mob Mountain Boar
     .mob Forest Lurker
@@ -1929,9 +1929,9 @@ step
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
-    .complete 418,1 --Collect Boar Intestines (x3)
-    .complete 418,2 --Collect Bear Meat (x3)
-    .complete 418,3 --Collect Spider Ichor (x3)
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
     .mob Elder Black Bear
     .mob Mountain Boar
     .mob Forest Lurker
@@ -1965,9 +1965,9 @@ step
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
-    .complete 418,1 --Collect Boar Intestines (x3)
-    .complete 418,2 --Collect Bear Meat (x3)
-    .complete 418,3 --Collect Spider Ichor (x3)
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
     .mob Elder Black Bear
     .mob Mountain Boar
     .mob Forest Lurker
@@ -1992,7 +1992,7 @@ step
     >>|cRXP_WARN_Ensure you have 10|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for your upcoming Paladin class quest|r << Paladin
     >>|cRXP_ENEMY_Tunnel Rats|r |cRXP_WARN_can spawn throughout Loch Modan. Check your World Map for their locations|r
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
-    .collect 2589,10,1644,1,1 << Paladin -- Linen Cloth (10) 
+    .collect 2589,10,1644,1,1 << Paladin -- Linen Cloth (10)
     .mob Tunnel Rat Scout
     .mob Tunnel Rat Vermin
     .mob Tunnel Rat Forager
@@ -2023,7 +2023,7 @@ step
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
-    .complete 418,2 --Bear Meat (3)
+    .collect 3173,3,418,1 --Bear Meat (3)
     .goto Loch Modan,26.9,10.7,90,0
     .goto Loch Modan,30.9,10.6,90,0
     .goto Loch Modan,28.6,15.4,90,0
@@ -2037,7 +2037,7 @@ step
     .goto Loch Modan,33.4,30.3,90,0
     .goto Loch Modan,39.4,33.3,90,0
     .goto Loch Modan,26.9,10.7
-    .complete 418,1 --Boar Intestines (3)    
+    .collect 3172,3,418,1 --Boar Intestines (3)
     .goto Loch Modan,38.0,34.9,90,0
     .goto Loch Modan,37.1,39.8,90,0
     .goto Loch Modan,29.8,35.9,90,0
@@ -2049,7 +2049,7 @@ step
     .goto Loch Modan,27.7,25.3,90,0
     .goto Loch Modan,28.6,22.6,90,0
     .goto Loch Modan,38.0,34.9
-    .complete 418,3 --Spider Ichor (3)
+    .collect 3174,3,418,1 --Spider Ichor (3)
     .goto Loch Modan,31.9,16.4,90,0
     .goto Loch Modan,28.0,20.6,90,0
     .goto Loch Modan,33.8,40.5,90,0
@@ -2088,7 +2088,7 @@ step
     >>|cRXP_WARN_Buy a|r |T135237:0|t[Flint and Tinder] |cRXP_WARN_along with 2|r |T135435:0|t[Simple Wood]|cRXP_WARN_. Buy any|r|T133634:0|t[Small Brown Pouches] |cRXP_WARN_if needed|r
     .collect 4470,2 --Simple Wood (2)
     .collect 4471,1 --Flint and Tinder (1)
-    .target Yanni Stoutheart  
+    .target Yanni Stoutheart
 step
     .goto Loch Modan,33.938,50.954
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
@@ -2212,7 +2212,7 @@ step << Paladin
     .trainer >> Train your class spells
     .target Arthur the Faithful
 step << Priest
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Joshua|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Joshua|r
     .goto StormwindClassic,38.54,26.86
     .trainer >> Train your class spells
     .target Brother Joshua

@@ -806,7 +806,7 @@ step
     #completewith next
     .goto StormwindClassic,57.32,59.15,10,0
     .goto StormwindClassic,58.17,57.90,12,0
-    .goto StormwindClassic,57.81,54.73,12,0 
+    .goto StormwindClassic,57.81,54.73,12,0
     .goto StormwindClassic,60.05,51.60,12,0
     .goto StormwindClassic,67.54,46.88,12,0
     .goto StormwindClassic,71.01,48.62,12,0
@@ -866,7 +866,7 @@ step
     .isQuestAvailable 314
 step
     .goto Ironforge,67.83,42.47
-    >>Talk to |cFF00FF25Cogspinner|r 
+    >>Talk to |cFF00FF25Cogspinner|r
     .vendor 5175 >>|cFF0E8312Buy a|r |T133024:0|t[Bronze Tube] |cFF0E8312from him if its up|r
     .target Gearcutter Cogspinner
     .itemcount 4371,<1
@@ -1139,7 +1139,7 @@ step
 step
     #completewith Rugelfuss
     +|cFFFCDC00Try to kite a nearby |cFFFF5722Elder Black Bear|r or |cFFFF5722Forest Lurker|r into the Bunker with you (remember to deal 51%+ damage to get credit)|r
-    >>|cFFFCDC00Loot the |cFFFF5722Elder Black Bears|r for their|r |T134027:0|t[|cFF00BCD4Bear Meat|r] 
+    >>|cFFFCDC00Loot the |cFFFF5722Elder Black Bears|r for their|r |T134027:0|t[|cFF00BCD4Bear Meat|r]
     >>|cFFFCDC00Loot the |cFFFF5722Forest Lurkers|r for their|r |T134437:0|t[|cFF00BCD4Spider Ichor|r]
     >>|cFF00FF25Cobbleflint|r|cFFFCDC00, |cFF00FF25Gravelgaw|r, and |cFF00FF25Wallbang|r won't assist you|r
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
@@ -1779,7 +1779,7 @@ step
     .target Tundra MacGrann
 step
     #completewith next
-    +|cFFFCDC00Kite an |cFFFF5722Ice Claw Bear|r toward|r |cFF00FF25Rejold|r 
+    +|cFFFCDC00Kite an |cFFFF5722Ice Claw Bear|r toward|r |cFF00FF25Rejold|r
     >>|cFFFCDC00Try to accept the quest before the |cFFFF5722Ice Claw Bear|r dies to get quest credit|r
     >>|cFFFCDC00Be careful as they cast|r |T135853:0|t[Ice Claw] |cFFFCDC00(Melee Instant: Deals an additional 4 melee damage)|r
     >>|cFFFCDC00Make sure to deal 51%+ damage to get credit|r
@@ -1803,7 +1803,7 @@ step
     .target Keeg Gibn
     .itemcount 1179,10
     .money <0.0350
-    .isOnQuest 319 
+    .isOnQuest 319
 step
     .goto Dun Morogh,30.45,46.01,0,0
     >>Talk to |cFF00FF25Keeg|r
@@ -2391,7 +2391,7 @@ step
     #requires CragB1
     #completewith Rugelfuss
     +|cFFFCDC00Try to kite a nearby |cFFFF5722Elder Black Bear|r or |cFFFF5722Forest Lurker|r into the Bunker with you (remember to deal 51%+ damage to get credit)|r
-    >>|cFFFCDC00Loot the |cFFFF5722Elder Black Bears|r for their|r |T134027:0|t[|cFF00BCD4Bear Meat|r] 
+    >>|cFFFCDC00Loot the |cFFFF5722Elder Black Bears|r for their|r |T134027:0|t[|cFF00BCD4Bear Meat|r]
     >>|cFFFCDC00Loot the |cFFFF5722Forest Lurkers|r for their|r |T134437:0|t[|cFF00BCD4Spider Ichor|r]
     >>|cFF00FF25Cobbleflint|r|cFFFCDC00, |cFF00FF25Gravelgaw|r, and |cFF00FF25Wallbang|r won't assist you|r
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
@@ -2470,7 +2470,7 @@ step
     .goto Ironforge,49.67,28.23,12,0
     >>Go inside the building
     .goto Ironforge,51.54,26.30,10 >>Travel toward |cFF00FF25Golnir|r
-step 
+step
     .goto Ironforge,51.54,26.30
     >>Talk to |cFF00FF25Golnir|r
     .turnin 6391 >>Turn in Ride to Ironforge
@@ -3506,7 +3506,7 @@ step
     .goto Ironforge,76.41,51.22,30 >>Logout Skip to the outside of the Deeprun Tram
 step
     .goto Ironforge,67.83,42.47
-    >>Talk to |cFF00FF25Cogspinner|r 
+    >>Talk to |cFF00FF25Cogspinner|r
     .vendor 5175 >>|cFF0E8312Buy a|r |T133024:0|t[Bronze Tube] |cFF0E8312from him if its up|r
     .target Gearcutter Cogspinner
     .itemcount 4371,<1
@@ -4352,7 +4352,7 @@ step
     .goto Darkshore,36.62,45.59
     >>Talk to |cFF00FF25Gwennyth|r
     .turnin 4727 >> Turn in Beached Sea Turtle
-    .target Gwennyth Bly'Leggonde    
+    .target Gwennyth Bly'Leggonde
 step
     .goto Darkshore,37.04,44.13
     >>|cFFFCDC00===PAY ATTENTION===|r
@@ -4613,7 +4613,7 @@ step
     >>|cFF0E8312Buy 15|r |T132796:0|t[Melon Juice] |cFF0E8312from her|r
     .collect 1205,15,64,1 --Melon Juice (15)
 	.target Innkeeper Heather
-    .money <0.15 
+    .money <0.15
 step
     .goto Westfall,52.86,53.72
 	>>Talk to |cFF00FF25Heather|r
@@ -4804,7 +4804,7 @@ step
 step
     #completewith Watch
     .goto Westfall,44.54,34.71,60,0
-    >>AoE |cFFFF5722Harvest Watchers|r 
+    >>AoE |cFFFF5722Harvest Watchers|r
     .complete 9,1 --Harvest Watcher (20)
     .mob Harvest Watcher
 step
@@ -4847,7 +4847,7 @@ step
     #completewith Oats
     .goto Westfall,50.50,21.38,60,0
     .goto Westfall,51.70,23.16,60,0
-    >>AoE |cFFFF5722Harvest Watchers|r 
+    >>AoE |cFFFF5722Harvest Watchers|r
     .complete 9,1 --Harvest Watcher (20)
     .mob Harvest Watcher
 step
@@ -4902,7 +4902,7 @@ step
 step
     .goto Westfall,52.84,30.46,60,0
     .goto Westfall,51.70,23.16
-    >>AoE |cFFFF5722Harvest Watchers|r 
+    >>AoE |cFFFF5722Harvest Watchers|r
     .complete 9,1 --Harvest Watcher (20)
     .mob Harvest Watcher
 step
@@ -4911,7 +4911,7 @@ step
     .isQuestComplete 12
 step
     .goto Westfall,51.70,23.16
-    >>|cFFFCDC00Skip this step if you've finished the objective of The People's Militia|r 
+    >>|cFFFCDC00Skip this step if you've finished the objective of The People's Militia|r
     .xp 17+12800 >> Grind to 12800+/17700xp
 step
     >>Talk to |cFF00FF25Farmer Saldean|r and then |cFF00FF25Salma|r inside
@@ -5077,7 +5077,7 @@ step
     .hs >> |cFFFCDC00Hearthstone BATCH from Stormwind to Auberdine|r
     .target Innkeeper Allison
     .zoneskip Darkshore
-]]) 
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -5817,7 +5817,7 @@ step
     .accept 942 >>Accept The Absent Minded Prospector
     .target Chief Archaeologist Greywhisker
 
-]]) 
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -6220,14 +6220,14 @@ step << skip
 step << skip
     #completewith Gnolls
     >>AoE |cFFFF5722Great Goretusks|r. Loot them for |cFF00BCD4Great Goretusk Snouts|r and |cFF00BCD4Chunks of Boar Meat|r
-    .complete 92,1 --Great Goretusk Snout (5)
+    .collect 2296,5,92,1 --Great Goretusk Snout (5)
     .collect 769,50,90,1,1 --Chunk of Boar Meat (50)
     .mob Great Goretusk
     .skill cooking,50,1
 step << skip
     #completewith next
     >>AoE |cFFFF5722Great Goretusks|r. Loot them for |cFF00BCD4Great Goretusk Snouts|r
-    .complete 92,1 --Great Goretusk Snout (5)
+    .collect 2296,5,92,1 --Great Goretusk Snout (5)
     .mob Great Goretusk
     .skill cooking,50
 step
@@ -6736,7 +6736,7 @@ step
     .zone Ironforge >> Take the Deeprun Tram to Ironforge
 step
     .goto Ironforge,67.83,42.47
-    >>Talk to |cFF00FF25Cogspinner|r 
+    >>Talk to |cFF00FF25Cogspinner|r
     .vendor 5175>>|cFF0E8312Buy a|r |T133024:0|t[Bronze Tube] |cFF0E8312from him if its up|r
     .target Gearcutter Cogspinner
     .itemcount 4371,<1

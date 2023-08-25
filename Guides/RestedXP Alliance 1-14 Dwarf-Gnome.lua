@@ -1247,19 +1247,19 @@ step << Mage
     #sticky
     #completewith ThelsamarFood
     >>Kill Spiders. Loot them for Spider Ichor
-    .complete 418,3 --Collect Spider Ichor (x3)
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
 step << Mage
 #xprate <1.5
     #sticky
     #completewith ThelsamarFood
     >>Kill Bears. Loot them for Bear Meat
-    .complete 418,2 --Collect Bear Meat (x3)
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
 step << Mage
 #xprate <1.5
     #sticky
     #completewith ThelsamarFood
     >>Kill Boars. Kill them for Boar Intestines
-    .complete 418,1 --Collect Boar Intestines (x3)
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
 step << Mage
 #xprate <1.5
     #label ThelsamarFood
@@ -1317,19 +1317,19 @@ step << Mage
     #sticky
     #completewith Thelsamar3
     >>Kill Spiders in the zone for Thelsamar Blood Sausages
-    .complete 418,3 --Collect Spider Ichor (x3)
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
 step << Mage
 #xprate <1.5
     #sticky
     #completewith Thelsamar3
     >>Kill Bears in the zone for Thelsamar Blood Sausages
-    .complete 418,2 --Collect Bear Meat (x3)
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
 step << Mage
 #xprate <1.5
     #sticky
     #completewith Thelsamar3
     >>Kill Boars in the zone for Thelsamar Blood Sausages
-    .complete 418,1 --Collect Boar Intestines (x3)
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
 step << Mage
 #xprate <1.5
     #label Thelsamar3
@@ -1360,7 +1360,7 @@ step << Mage
     .goto Loch Modan,39.4,33.3,40,0
 .goto Loch Modan,26.9,10.7
     >>Kill Bears. Loot them for Meat
-    .complete 418,2 --Collect Bear Meat (x3)
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
 step << Mage
 #xprate <1.5
     #sticky
@@ -1377,7 +1377,7 @@ step << Mage
     .goto Loch Modan,39.0,32.1,40,0
     .goto Loch Modan,31.9,16.4
     >>Kill Spiders. Loot them for Ichor
-    .complete 418,3 --Collect Spider Ichor (x3)
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
 step << Mage
 #xprate <1.5
     #sticky
@@ -1394,7 +1394,7 @@ step << Mage
     .goto Loch Modan,28.6,22.6,40,0
     .goto Loch Modan,38.0,34.9
     >>Kill Boars. Loot them for Intestines
-    .complete 418,1 --Collect Boar Intestines (x3)
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
 step << Mage
 #xprate <1.5
     #requires Meat9
@@ -2356,17 +2356,17 @@ step << tbc
     #sticky
     #completewith ThelsamarFood
     >>Kill Spiders. Loot them for Spider Ichor
-    .complete 418,3 --Collect Spider Ichor (x3)
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
 step << tbc
     #sticky
     #completewith ThelsamarFood
     >>Kill Bears. Loot them for Bear Meat
-    .complete 418,2 --Collect Bear Meat (x3)
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
 step << tbc
     #sticky
     #completewith ThelsamarFood
     >>Kill Boars. Kill them for Boar Intestines
-    .complete 418,1 --Collect Boar Intestines (x3)
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
 step
     #completewith next
     #label ThelsamarFood
@@ -2911,17 +2911,17 @@ step
 #sticky
 #completewith Thelsamar
 >>Kill Spiders in the zone for Thelsamar Blood Sausages
-.complete 418,3 --Collect Spider Ichor (x3)
+.collect 3174,3,418,1 --Collect Spider Ichor (x3)
 step
     #sticky
     #completewith Thelsamar
 >>Kill Bears in the zone for Thelsamar Blood Sausages
-.complete 418,2 --Collect Bear Meat (x3)
+.collect 3173,3,418,1 --Collect Bear Meat (x3)
 step
     #sticky
     #completewith Thelsamar
 >>Kill Boars in the zone for Thelsamar Blood Sausages
-.complete 418,1 --Collect Boar Intestines (x3)
+.collect 3172,3,418,1 --Collect Boar Intestines (x3)
 step
     #label Thelsamar
 .goto Loch Modan,39.3,27.0,100 >>Grind some mobs for Boar Intestines, Bear Meat and Spider Ichor en route
@@ -2958,17 +2958,17 @@ step
 #sticky
 #completewith Thelsamar3
 >>Kill Spiders in the zone for Thelsamar Blood Sausages
-.complete 418,3 --Collect Spider Ichor (x3)
+.collect 3174,3,418,1 --Collect Spider Ichor (x3)
 step
     #sticky
     #completewith Thelsamar3
 >>Kill Bears in the zone for Thelsamar Blood Sausages
-.complete 418,2 --Collect Bear Meat (x3)
+.collect 3173,3,418,1 --Collect Bear Meat (x3)
 step
     #sticky
     #completewith Thelsamar3
 >>Kill Boars in the zone for Thelsamar Blood Sausages
-.complete 418,1 --Collect Boar Intestines (x3)
+.collect 3172,3,418,1 --Collect Boar Intestines (x3)
 step
     #label Thelsamar3
 .goto Loch Modan,23.3,17.9,30 >>Run back to the bunker, grinding en route
@@ -2999,7 +2999,7 @@ step
     .goto Loch Modan,39.4,33.3,40,0
 .goto Loch Modan,26.9,10.7
     >>Kill Bears. Loot them for Meat
-    .complete 418,2 --Collect Bear Meat (x3)
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
 step
     #sticky
 #label Ichor9
@@ -3015,7 +3015,7 @@ step
     .goto Loch Modan,39.0,32.1,40,0
 .goto Loch Modan,31.9,16.4
     >>Kill Spiders. Loot them for Ichor
-    .complete 418,3 --Collect Spider Ichor (x3)
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
 step
     #sticky
 #label Intestines9
@@ -3031,7 +3031,7 @@ step
     .goto Loch Modan,28.6,22.6,40,0
 .goto Loch Modan,38.0,34.9
     >>Kill Boars. Loot them for Intestines
-    .complete 418,1 --Collect Boar Intestines (x3)
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
 step
     #requires Meat9
 .goto Loch Modan,36.9,46.1,2500 >> .

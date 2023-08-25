@@ -1549,17 +1549,17 @@ step
     #sticky
     #completewith Thelsamar1
     >>Kill Spiders in the zone for Thelsamar Blood Sausages
-    .complete 418,3 --Collect Spider Ichor (x3)
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
 step
     #sticky
     #completewith Thelsamar1
     >>Kill Bears in the zone for Thelsamar Blood Sausages
-    .complete 418,2 --Collect Bear Meat (x3)
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
 step
     #sticky
     #completewith Thelsamar1
     >>Kill Boars in the zone for Thelsamar Blood Sausages
-    .complete 418,1 --Collect Boar Intestines (x3)
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
 step << Gnome
     .goto Loch Modan,24.1,18.2
     .vendor >>Vendor and repair
@@ -1610,17 +1610,17 @@ step
     #sticky
     #completewith Thelsamar2
     >>Kill Spiders in the zone for Thelsamar Blood Sausages
-    .complete 418,3 --Collect Spider Ichor (x3)
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
 step
     #sticky
     #completewith Thelsamar2
     >>Kill Bears in the zone for Thelsamar Blood Sausages
-    .complete 418,2 --Collect Bear Meat (x3)
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
 step
     #sticky
     #completewith Thelsamar2
     >>Kill Boars in the zone for Thelsamar Blood Sausages
-    .complete 418,1 --Collect Boar Intestines (x3)
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
 step
     #label Thelsamar2
     .goto Loch Modan,23.3,17.9,60 >>Run back to the bunker, grinding en route
@@ -1651,7 +1651,7 @@ step
     .goto Loch Modan,39.4,33.3,40,0
     .goto Loch Modan,26.9,10.7
     >>Kill Bears. Loot them for Meat
-    .complete 418,2 --Collect Bear Meat (x3)
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
 step
     #sticky
     #label Ichor9
@@ -1667,7 +1667,7 @@ step
     .goto Loch Modan,39.0,32.1,40,0
     .goto Loch Modan,31.9,16.4
     >>Kill Spiders. Loot them for Ichor
-    .complete 418,3 --Collect Spider Ichor (x3)
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
 step
     .goto Loch Modan,38.0,34.9,40,0
     .goto Loch Modan,37.1,39.8,40,0
@@ -1681,7 +1681,7 @@ step
     .goto Loch Modan,28.6,22.6,40,0
     .goto Loch Modan,38.0,34.9
     >>Kill Boars. Loot them for Intestines
-    .complete 418,1 --Collect Boar Intestines (x3)
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
 step
 #hidewindow
     #requires Meat9
