@@ -1114,9 +1114,9 @@ step
 step
     #completewith HarvestW
     >>Kill |cFFFF5722Young Goretusks|r and |cFFFF5722Young Fleshrippers|r. Loot them for their |cFF00BCD4Vulture Meat|r, |cFF00BCD4Snouts|r and |cFF00BCD4Livers|r
-    .complete 38,1 --Stringy Vulture Meat (3)
-    .complete 38,3 --Goretusk Snout (3)
-    .complete 22,1 --Goretusk Liver (8)
+    .collect 729,3,38,1 --Stringy Vulture Meat (3)
+    .collect 731,3,38,1 --Goretusk Snout (3)
+    .collect 723,8,22,1 --Goretusk Liver (8)
     .mob Young Goretusk
     .mob Goretusk
     .mob Young Fleshripper
@@ -1168,7 +1168,7 @@ step
     .goto Westfall,52.13,10.36,60,0
     .goto Westfall,56.40,9.40
     >>Kill |cFFFF5722Murloc Raiders|r and |cFFFF5722Murloc Coastrunners|r. Loot them for their |cFF00BCD4Eyes|r
-    .complete 38,2 --Murloc Eye (3)
+    .collect 730,3,38,1 --Murloc Eye (3)
     .mob Murloc Raider
     .mob Murloc Coastrunner
 step
@@ -1224,7 +1224,7 @@ step
     .goto Westfall,50.80,21.76
     >>Kill |cFFFF5722Harvest Watchers|r. Loot them for their |cFF00BCD4Okra|r
     .complete 9,1 --Harvest Watcher (20)
-    .complete 38,4 --Okra (3)
+    .collect 732,3,38,1 --Okra (3)
     .mob Harvest Watcher
 step
     .goto Westfall,52.49,42.11,75,0
@@ -1236,9 +1236,9 @@ step
     .goto Westfall,47.89,42.94,75,0
     .goto Westfall,54.42,40.38
     >>Kill |cFFFF5722Young Goretusks|r and |cFFFF5722Young Fleshrippers|r. Loot them for their |cFF00BCD4Vulture Meat|r, |cFF00BCD4Snouts|r and |cFF00BCD4Livers|r
-    .complete 38,1 --Stringy Vulture Meat (3)
-    .complete 38,3 --Goretusk Snout (3)
-    .complete 22,1 --Goretusk Liver (8)
+    .collect 729,3,38,1 --Stringy Vulture Meat (3)
+    .collect 731,3,38,1 --Goretusk Snout (3)
+    .collect 723,8,22,1 --Goretusk Liver (8)
     .mob Young Goretusk
     .mob Goretusk
     .mob Young Fleshripper
@@ -3569,7 +3569,7 @@ step
 	.target Teronis' Corpse
     .goto Ashenvale,20.31,42.33
     .turnin 991 >> Turn in Raene's Cleansing
-    .accept 1023 >> Accept Raene's Cleansing   
+    .accept 1023 >> Accept Raene's Cleansing
 step
     .goto Ashenvale,20.41,43.82,50,0
     .goto Ashenvale,19.43,42.09,50,0

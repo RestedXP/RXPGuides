@@ -4540,9 +4540,9 @@ step << Gnome
     #completewith next
     >>AoE |cFFFF5722Young Goretusks|r. Loot them for their |cFF00BCD4Goretusk Livers|r and |cFF00BCD4Goretusk Snouts|r
     >>AoE |cFFFF5722Young Fleshrippers|r. Loot them for their |cFF00BCD4Stringy Vulture Meat|r
-    .complete 22,1 --Goretusk Liver (8)
-    .complete 38,3 --Goretusk Snout (3)
-    .complete 38,1 --Stringy Vulture Meat (3)
+    .collect 723,8,22,1 --Goretusk Liver (8)
+    .collect 731,3,38,1 --Goretusk Snout (3)
+    .collect 729,3,38,1 --Stringy Vulture Meat (3)
     .mob Young Goretusk
     .mob Young Fleshripper
 step
@@ -4637,9 +4637,9 @@ step
     #completewith Oil
     >>AoE |cFFFF5722Goretusks|r. Loot them for their |cFF00BCD4Goretusk Livers|r and |cFF00BCD4Goretusk Snouts|r
     >>AoE |cFFFF5722Fleshrippers|r. Loot them for their |cFF00BCD4Stringy Vulture Meat|r
-    .complete 22,1 --Goretusk Liver (8)
-    .complete 38,3 --Goretusk Snout (3)
-    .complete 38,1 --Stringy Vulture Meat (3)
+    .collect 723,8,22,1 --Goretusk Liver (8)
+    .collect 731,3,38,1 --Goretusk Snout (3)
+    .collect 729,3,38,1 --Stringy Vulture Meat (3)
     .mob Goretusk
     .mob Fleshripper
 step
@@ -4779,9 +4779,9 @@ step
     #completewith AoE1
     >>AoE |cFFFF5722Goretusks|r. Loot them for their |cFF00BCD4Goretusk Livers|r and |cFF00BCD4Goretusk Snouts|r
     >>AoE |cFFFF5722Fleshrippers|r. Loot them for their |cFF00BCD4Stringy Vulture Meat|r
-    .complete 22,1 --Goretusk Liver (8)
-    .complete 38,3 --Goretusk Snout (3)
-    .complete 38,1 --Stringy Vulture Meat (3)
+    .collect 723,8,22,1 --Goretusk Liver (8)
+    .collect 731,3,38,1 --Goretusk Snout (3)
+    .collect 729,3,38,1 --Stringy Vulture Meat (3)
     .mob Great Goretusk
     .mob Goretusk
     .mob Young Goretusk
@@ -4811,9 +4811,9 @@ step
     #completewith Furlbrows
     >>AoE |cFFFF5722Young Goretusks|r. Loot them for their |cFF00BCD4Goretusk Livers|r and |cFF00BCD4Goretusk Snouts|r
     >>AoE |cFFFF5722Fleshrippers|r and |cFFFF5722Young Fleshrippers|r. Loot them for their |cFF00BCD4Stringy Vulture Meat|r
-    .complete 22,1 --Goretusk Liver (8)
-    .complete 38,3 --Goretusk Snout (3)
-    .complete 38,1 --Stringy Vulture Meat (3)
+    .collect 723,8,22,1 --Goretusk Liver (8)
+    .collect 731,3,38,1 --Goretusk Snout (3)
+    .collect 729,3,38,1 --Stringy Vulture Meat (3)
     .mob Young Goretusk
     .mob Fleshripper
     .mob Young Fleshripper
@@ -4862,7 +4862,7 @@ step
     .goto Westfall,53.80,10.69,60,0
     .goto Westfall,55.96,8.22
     >>AoE |cFFFF5722Murloc Coastrunners|r and |cFFFF5722Murloc Raiders|r. Loot them for their |cFF00BCD4Murloc Eyes|r
-    .complete 38,2 --Murloc Eye (3)
+    .collect 730,3,38,1 --Murloc Eye (3)
     .mob Murloc Coastrunner
     .mob Murloc Raider
 step
@@ -4892,9 +4892,9 @@ step
     .goto Westfall,60.24,47.40
     >>AoE |cFFFF5722Goretusks|r and |cFFFF5722Young Goretusks|r. Loot them for their |cFF00BCD4Goretusk Livers|r and |cFF00BCD4Goretusk Snouts|r
     >>AoE |cFFFF5722Fleshrippers|r |cFFFF5722Young Fleshrippers|r. Loot them for their |cFF00BCD4Stringy Vulture Meat|r
-    .complete 22,1 --Goretusk Liver (8)
-    .complete 38,3 --Goretusk Snout (3)
-    .complete 38,1 --Stringy Vulture Meat (3)
+    .collect 723,8,22,1 --Goretusk Liver (8)
+    .collect 731,3,38,1 --Goretusk Snout (3)
+    .collect 729,3,38,1 --Stringy Vulture Meat (3)
     .mob Goretusk
     .mob Young Goretusk
     .mob Fleshripper
