@@ -1007,7 +1007,7 @@ step
     >>Save 8 Fins for later
     .goto Redridge Mountains,48.82,69.49
     .complete 127,1 --Spotted Sunfish (10)
-    .complete 150,1 --Murloc Fin (8)
+    .collect 1468,8,150,1 --Murloc Fin (8)
 step
     #era/som
     >>Get the Condor Meat and Whelp scales from around this area. If you're waiting on respawns, then go east to get some Axes then come back here
