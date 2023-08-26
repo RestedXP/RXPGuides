@@ -1597,6 +1597,7 @@ function addon.startHardcoreIntroUI(saved_var_settings)
     addon.introUI.ultimate_hardcore_survival_guide_frame = ultimate_hardcore_survival_guide_frame
     addon.introUI.dungeon_selection_frame = dungeon_selection_frame
     addon.introUI.speedrun_guide_selector = speedrun_guide_selector
+    _G.SettingsPanel:Hide()
 
     return saved_var_settings
 end

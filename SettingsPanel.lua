@@ -717,6 +717,15 @@ function addon.settings:CreateAceOptionsPanel()
                 width = "normal",
                 func = addon.comms.OpenBugReport
             },
+            splashUI = {
+                order = 1.1,
+                name = L("Run Guide Configurator"),
+                type = "execute",
+                width = 1.2,
+                func = addon.startHardcoreIntroUI,
+                hidden = addon.game ~= "CLASSIC"
+            },
+
             generalSettings = {
                 type = "group",
                 name = _G.GENERAL,
