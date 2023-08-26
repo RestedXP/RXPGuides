@@ -703,7 +703,7 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
 
         while (numActivePins < numPins or ignoreCounter) and j <= #step.elements do
             local element = step.elements[j]
-
+            local flags = element.bigLoop and 3 or 1
             local nPoints = element.segments and
                                 math.floor(#element.segments / 2)
             local nSegments = element.segments and #element.segments
@@ -762,14 +762,14 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
                             InsertLine(element, sX, sY, fX, fY, element.lineAlpha or 1)
                         end
                         if element.showArrow and step.active then
-                            AddPoint(sX,sY,element,1,addon.linePoints,addon.activeWaypoints)
+                            AddPoint(sX,sY,element,flags,addon.linePoints,addon.activeWaypoints)
                         end
                     end
                 end
                 if element.drawCenterPoint and step.active and centerX ~= 0 and centerY then
                     centerX = centerX/nEdges
                     centerY = centerY/nEdges
-                    AddPoint(centerX,centerY,element,1,step.centerPins)
+                    AddPoint(centerX,centerY,element,flags,step.centerPins)
                 end
             end
 
@@ -1012,12 +1012,14 @@ function addon.UpdateGotoSteps()
         af:Hide()
         return
     end
+
     local minDist
-    local zone = C_Map.GetBestMapForUnit("player")
+    --local zone = C_Map.GetBestMapForUnit("player")
     local x, y, instance = HBD:GetPlayerWorldPosition()
     if af.element and af.element.instance ~= instance and instance ~= -1 then hideArrow = true end
     for i, element in ipairs(addon.activeWaypoints) do
-        if element.step and element.step.active then
+        local step = element.step
+        if step and step.active then
 
             if (element.radius or element.dynamic) and element.arrow and
                 not (element.parent and
@@ -1044,17 +1046,42 @@ function addon.UpdateGotoSteps()
                     end
                     if element.radius then
                         if dist <= element.radius then
-                            if element.persistent then
-                                hideArrow = true
-                            elseif not (element.textOnly and element.hidePin and
-                                         element.wpHash ~= af.element.wpHash and not element.generated) then
+                            if element.persistent and not element.skip then
                                 element.skip = true
                                 addon.UpdateMap()
-                                addon.SetElementComplete(element.frame)
+                            elseif not (element.textOnly and element.hidePin and
+                                         element.wpHash ~= af.element.wpHash and not element.generated) then
+                                if step.loop and not element.skip then
+                                    local hasValidWPs
+                                    element.skip = true
+                                    for _,wp in pairs(step.elements) do
+                                        if wp.arrow and not wp.skip and wp.textOnly then
+                                            hasValidWPs = true
+                                        end
+                                    end
+                                    if not hasValidWPs then
+                                        for _,wp in pairs(step.elements) do
+                                            if wp.arrow and wp.wpHash ~= element.wpHash and wp.textOnly then
+                                                wp.skip = false
+                                                RXPCData.completedWaypoints[step.index or "tip"][wp.wpHash] = false
+                                            end
+                                        end
+                                        forceArrowUpdate = true
+                                    end
+                                end
+                                element.skip = true
+                                addon.UpdateMap()
+                                if not element.textOnly then
+                                    addon.SetElementComplete(element.frame)
+                                end
                                 if element.timer then
                                     addon.StartTimer(element.timer,element.timerText)
                                 end
                             end
+                        elseif element.persistent and element.skip then
+                            element.skip = false
+                            RXPCData.completedWaypoints[step.index or "tip"][element.wpHash] = false
+                            addon.UpdateMap()
                         end
                     end
                 end
@@ -1071,15 +1098,16 @@ function addon.UpdateGotoSteps()
     local anchorPoint = currentPoint
     local linePoints = addon.linePoints
     local nPoints = 0
+    local reset
     for i, element in ipairs(linePoints) do
         local radius = element.anchor.range
-        if radius then
+        if radius and not element.anchor.pointCount then
             nPoints = nPoints + 1
             local _, dist = HBD:GetWorldVector(instance, x, y, element.wx,
                                                element.wy)
             element.dist = dist
             if dist then
-                if radius and dist <= radius then
+                if dist <= radius then
                     currentPoint = i
                     if anchorPoint ~= i then
                         lastPoint = anchorPoint
@@ -1102,10 +1130,35 @@ function addon.UpdateGotoSteps()
                 end
             end
             if currentPoint == i then element.lowPrio = true end
+        elseif element.wpHash == af.element.wpHash and radius and element.anchor.pointCount then
+            local _, dist = HBD:GetWorldVector(instance, x, y, element.wx,
+                                               element.wy)
+            if dist <= radius then
+                if not element.lowPrio then
+                    element.anchor.pointCount = element.anchor.pointCount + 1
+                    element.lowPrio = true
+                    forceArrowUpdate = true
+                    --print('ok',element.anchor.pointCount,linePoints)
+                    if element.anchor.pointCount >= #linePoints then
+                        element.anchor.pointCount = 0
+                        reset = element
+                        --print('reset')
+                    end
+                end
+            end
         end
     end
 
-    if currentPoint and nPoints > 0 then
+    if reset then
+        --print('reset-ok')
+        for _, element in ipairs(linePoints) do
+            if element ~= reset then
+                element.lowPrio = false
+            else
+                element.anchor.pointCount = element.lowPrio and 1 or 0
+            end
+        end
+    elseif currentPoint and nPoints > 0 then
         nPoints = #linePoints
         local nextPoint = currentPoint % nPoints + 1
         local prevPoint = (currentPoint - 2) % nPoints + 1

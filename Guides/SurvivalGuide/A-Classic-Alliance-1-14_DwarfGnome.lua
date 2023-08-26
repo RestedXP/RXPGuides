@@ -145,7 +145,7 @@ step
     .complete 170,1 --Kill Rockjaw Trogg (x6)
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
     .mob Rockjaw Trogg
-    .mob Burly Rockjaw Trogg  
+    .mob Burly Rockjaw Trogg
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talin Keeneye|r
     .target Talin Keeneye
@@ -193,7 +193,7 @@ step << Paladin/Mage/Warlock/Hunter
     .complete 170,1 --Kill Rockjaw Trogg (x6)
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
     .mob Rockjaw Trogg
-    .mob Burly Rockjaw Trogg  
+    .mob Burly Rockjaw Trogg
 step << Paladin/Mage/Warlock/Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r
     .target Nori Pridedrift
@@ -259,7 +259,7 @@ step << !Paladin !Mage !Warlock !Hunter
     .complete 170,1 --Kill Rockjaw Trogg (x6)
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
     .mob Rockjaw Trogg
-    .mob Burly Rockjaw Trogg  
+    .mob Burly Rockjaw Trogg
 step << Paladin/Mage/Warlock/Hunter
     .goto Dun Morogh,26.3,79.2,40,0
     .goto Dun Morogh,22.7,79.3,40,0
@@ -287,7 +287,7 @@ step << !Paladin !Mage
     .complete 170,1 --Kill Rockjaw Trogg (x6)
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
     .mob Rockjaw Trogg
-    .mob Burly Rockjaw Trogg 
+    .mob Burly Rockjaw Trogg
 step << !Paladin !Mage !Warlock !Hunter
     .xp 4 >> Grind to 4
 step << !Paladin !Mage !Warlock !Hunter
@@ -417,7 +417,7 @@ RXPGuides.RegisterGuide([[
 #subgroup RXP Survival Guide 1-20
 #defaultfor Dwarf/Gnome
 #next 10-11 Elwynn (Dwarf/Gnome)
-step 
+step
     #completewith BoarMeat44 << !Paladin !Warrior !Rogue
     #completewith BearFur << Paladin/Warrior/Rogue
     >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Large Crag Boars|r. Loot them for their |cRXP_LOOT_Chunks of Boar Meat|r
@@ -603,7 +603,7 @@ step << Warrior/Paladin/Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loslor Rudge|r
     .goto Dun Morogh,50.084,49.420
     >>|cRXP_BUY_Buy a|r |T134708:0|t[Mining Pick] |cRXP_BUY_if you trained|r |T136241:0|t[Blacksmithing]
-    .collect 2901,1 
+    .collect 2901,1
     .target Loslor Rudge
 step << Warrior/Paladin/Rogue
     .goto Dun Morogh,50.01,50.31
@@ -821,7 +821,7 @@ step << !Paladin !Warrior !Rogue
     .goto Dun Morogh,35.2,56.4,60,0
     .goto Dun Morogh,36.0,52.0,60,0
     .goto Dun Morogh,34.577,51.652,40 >> Travel toward |cRXP_FRIENDLY_Tundra MacGrann|r
-    >>Kill |cRXP_ENEMY_Boars|r, |cRXP_ENEMY_Bears|r and |cRXP_ENEMY_Wolves|r en-route    
+    >>Kill |cRXP_ENEMY_Boars|r, |cRXP_ENEMY_Bears|r and |cRXP_ENEMY_Wolves|r en-route
 step << !Paladin !Warrior !Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tundra MacGrann|r
     .target Tundra MacGrann
@@ -969,7 +969,7 @@ step
     .goto Dun Morogh,47.779,52.426,6,0
     .goto Dun Morogh,47.644,52.655,3,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jarven Thunderbrew|r downstairs
-    .turnin 308 >> Turn in Distracting Jarven 
+    .turnin 308 >> Turn in Distracting Jarven
     .target Jarven Thunderbrew
 step
     .goto Dun Morogh,47.716,52.696
@@ -1302,7 +1302,7 @@ step << Warrior
 step << Warrior/Hunter
     #completewith next
 	.goto Dun Morogh,53.5,34.9,60,0
-    .goto Dun Morogh,52.90,35.62 
+    .goto Dun Morogh,52.90,35.62
     .zone Dun Morogh >> Exit Ironforge
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
@@ -1319,8 +1319,8 @@ step
     >>Kill |cRXP_ENEMY_Vagash|r. Loot him for his |cRXP_LOOT_Fang|r
     >>|cRXP_WARN_This quest is difficult. Find a group for him if needed. Skip this step if you're unable to find a group or solo him|r
     >>|cRXP_WARN_Watch the video below before you attempt to kill |cRXP_ENEMY_Vagash|r. It can be solo'd on any class|r
-    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r 
-    .complete 314,1 --Collect Fang of Vagash (1) 
+    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r
+    .complete 314,1 --Collect Fang of Vagash (1)
     .mob Vagash
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
@@ -1460,9 +1460,9 @@ step
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
-    .complete 418,1 --Collect Boar Intestines (x3)
-    .complete 418,2 --Collect Bear Meat (x3)
-    .complete 418,3 --Collect Spider Ichor (x3)
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
     >>|cRXP_WARN_Save any|r |T133970:0|t[Chunks of Boar Meat] |cRXP_WARN_to use for leveling |T133971:0|t[Cooking] |cRXP_WARN_later|r
     >>|cRXP_WARN_Don't go out of your way to complete this right now. You'll come back to Loch Modan soon|r
     .mob Elder Black Bear
@@ -2093,7 +2093,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keryn Sylvius|r
     .target Keryn Sylvius
     .goto Elwynn Forest,43.872,65.937
-    .trainer >> Train your class spells    
+    .trainer >> Train your class spells
 step << Priest
     .goto Elwynn Forest,43.283,65.719
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Josetta|r
@@ -2166,7 +2166,7 @@ step << !Warlock
     >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for their |cRXP_LOOT_Armbands|r
     >>|cRXP_WARN_Ensure you have 10|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for your upcoming Paladin class quest|r << Dwarf Paladin
     .complete 11,1 -- Painted Gnoll Armband (8)
-    .collect 2589,10,1648,1,1 << Dwarf Paladin -- Linen Cloth (10) 
+    .collect 2589,10,1648,1,1 << Dwarf Paladin -- Linen Cloth (10)
     .mob Riverpaw Runt
     .mob Riverpaw Outrunner
 step << Warlock
@@ -2174,7 +2174,7 @@ step << Warlock
     >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for their |cRXP_LOOT_Armbands|r
     >>|cRXP_WARN_Ensure you have 10|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for your upcoming Paladin class quest|r << Dwarf Paladin
     .complete 11,1 -- Painted Gnoll Armband (8)
-    .collect 2589,10,1648,1,1 << Dwarf Paladin -- Linen Cloth (10) 
+    .collect 2589,10,1648,1,1 << Dwarf Paladin -- Linen Cloth (10)
     .mob Riverpaw Runt
     .mob Riverpaw Outrunner
 step << Warlock
@@ -2235,7 +2235,7 @@ step
     >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for their |cRXP_LOOT_Armbands|r
     >>|cRXP_WARN_Ensure you have 10|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for your upcoming Paladin class quest|r << Dwarf Paladin
     .complete 11,1 -- Painted Gnoll Armband (8)
-    .collect 2589,10,1648,1,1 << Dwarf Paladin -- Linen Cloth (10) 
+    .collect 2589,10,1648,1,1 << Dwarf Paladin -- Linen Cloth (10)
     .mob Riverpaw Runt
     .mob Riverpaw Outrunner
 step
@@ -2427,9 +2427,9 @@ step
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
-    .complete 418,1 --Collect Boar Intestines (x3)
-    .complete 418,2 --Collect Bear Meat (x3)
-    .complete 418,3 --Collect Spider Ichor (x3)
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
     .mob Elder Black Bear
     .mob Mountain Boar
     .mob Forest Lurker
@@ -2439,9 +2439,9 @@ step
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
-    .complete 418,1 --Collect Boar Intestines (x3)
-    .complete 418,2 --Collect Bear Meat (x3)
-    .complete 418,3 --Collect Spider Ichor (x3)
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
     .mob Elder Black Bear
     .mob Mountain Boar
     .mob Forest Lurker
@@ -2475,9 +2475,9 @@ step
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
-    .complete 418,1 --Collect Boar Intestines (x3)
-    .complete 418,2 --Collect Bear Meat (x3)
-    .complete 418,3 --Collect Spider Ichor (x3)
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
     .mob Elder Black Bear
     .mob Mountain Boar
     .mob Forest Lurker
@@ -2530,7 +2530,7 @@ step
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
-    .complete 418,2 --Bear Meat (3)
+    .collect 3173,3,418,1 --Bear Meat (3)
     .goto Loch Modan,26.9,10.7,90,0
     .goto Loch Modan,30.9,10.6,90,0
     .goto Loch Modan,28.6,15.4,90,0
@@ -2544,7 +2544,7 @@ step
     .goto Loch Modan,33.4,30.3,90,0
     .goto Loch Modan,39.4,33.3,90,0
     .goto Loch Modan,26.9,10.7
-    .complete 418,1 --Boar Intestines (3)    
+    .collect 3172,3,418,1 --Boar Intestines (3)
     .goto Loch Modan,38.0,34.9,90,0
     .goto Loch Modan,37.1,39.8,90,0
     .goto Loch Modan,29.8,35.9,90,0
@@ -2556,7 +2556,7 @@ step
     .goto Loch Modan,27.7,25.3,90,0
     .goto Loch Modan,28.6,22.6,90,0
     .goto Loch Modan,38.0,34.9
-    .complete 418,3 --Spider Ichor (3)
+    .collect 3174,3,418,1 --Spider Ichor (3)
     .goto Loch Modan,31.9,16.4,90,0
     .goto Loch Modan,28.0,20.6,90,0
     .goto Loch Modan,33.8,40.5,90,0
@@ -2595,7 +2595,7 @@ step
     >>|cRXP_BUY_Buy a|r |T135237:0|t[Flint and Tinder] |cRXP_BUY_along with 2|r |T135435:0|t[Simple Wood]|cRXP_BUY_. Buy any|r|T133634:0|t[Small Brown Pouches] |cRXP_BUY_if needed|r
     .collect 4470,2 --Simple Wood (2)
     .collect 4471,1 --Flint and Tinder (1)
-    .target Yanni Stoutheart  
+    .target Yanni Stoutheart
 step
     .goto Loch Modan,27.01,48.74,0
     .goto Loch Modan,27.68,56.83,0
@@ -2704,7 +2704,7 @@ step << Mage/Priest/Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harick Boulderdrum|r downstairs
     >>|cRXP_WARN_If you aren't able to acquire a|r |T135144:0|t[Greater Magic Wand] |cRXP_WARN_buy a|r |T135468:0|t[Smoldering Wand] |cRXP_WARN_and equip it when you are 15|r
     .collect 5208,1 --Smoldering Wand (1)
-    .target Harick Boulderdrum    
+    .target Harick Boulderdrum
 step << Warlock
     #softcore
     #requires Wand2
@@ -2733,7 +2733,7 @@ step << Rogue
     .trainer >> Train your class spells
     .target Hulfdan Blackbeard
 step << Priest
-    .goto Ironforge,25.207,10.756    
+    .goto Ironforge,25.207,10.756
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Toldren Deepiron|r
     .trainer >> Train your class spells
     .target Toldren Deepiron

@@ -56,7 +56,7 @@ step << NightElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laird|r
     .turnin 6342 >> Turn in Flight to Auberdine
     .target Laird
-step 
+step
 #map Darkshore
     #completewith next
     .goto Felwood,19.27,19.14
@@ -166,7 +166,7 @@ step
 #map Darkshore
     .goto Felwood,19.13,21.39
     >>Click the |cRXP_PICK_Buzzbox 827|r on the ground
-    .turnin 983 >> Turn in Buzzbox 827 
+    .turnin 983 >> Turn in Buzzbox 827
 step
 #map Darkshore
     #era/som
@@ -178,7 +178,7 @@ step
     .goto Darkshore,36.71,44.98,10,0
     .goto Felwood,19.10,20.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
-    .turnin 3524 >> Turn in Washed Ashore 
+    .turnin 3524 >> Turn in Washed Ashore
     .accept 4681 >> Accept Washed Ashore
     .target Gwennyth Bly'Leggonde
 step
@@ -192,7 +192,7 @@ step
 #map Darkshore
     .goto Felwood,22.24,18.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
-    .turnin 984 >> Turn in How Big a Threat? 
+    .turnin 984 >> Turn in How Big a Threat?
     .accept 985 >> Accept How Big a Threat?
     .accept 4761 >> Accept Thundris Windweaver
     .target Terenthis
@@ -322,7 +322,7 @@ step << Warrior/Rogue
     #completewith next
     .goto Felwood,19.27,19.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laird|r
-    .vendor >>|cRXP_WARN_Buy 40|r |T133918:0|t[Longjaw Mud Snapper] 
+    .vendor >>|cRXP_WARN_Buy 40|r |T133918:0|t[Longjaw Mud Snapper]
     .target Laird
 step
     .goto Darkshore,37.708,43.431
@@ -332,7 +332,7 @@ step
 step
 #map Darkshore
     #label Bashal1
-    .goto Felwood,27.70,10.03 
+    .goto Felwood,27.70,10.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asterion|r
     >>|cRXP_WARN_Follow the road to Bashal'Aran|r
     >>|cRXP_WARN_Avoid killing |cRXP_ENEMY_Wild Grells|r and |cRXP_ENEMY_Vile Sprites|r en-route|r
@@ -374,7 +374,7 @@ step
     .target Asterion
 step
     #completewith Tysha
-    >>|cRXP_WARN_Follow the road south and look for nearby|r |cRXP_ENEMY_Foreststrider Fledglings|r 
+    >>|cRXP_WARN_Follow the road south and look for nearby|r |cRXP_ENEMY_Foreststrider Fledglings|r
     >>Kill |cRXP_ENEMY_Foreststrider Fledgling|r. Loot them for their |cRXP_LOOT_Strider Meat|r
     .collect 5469,5
     .mob Foreststrider Fledgling
@@ -430,7 +430,7 @@ step
     .turnin 953 >> Turn in The Fall of Ameth'Aran
 step
     #completewith BashalFinal
-    >>|cRXP_WARN_Follow the road north and look for nearby|r |cRXP_ENEMY_Foreststrider Fledglings|r 
+    >>|cRXP_WARN_Follow the road north and look for nearby|r |cRXP_ENEMY_Foreststrider Fledglings|r
     >>Kill |cRXP_ENEMY_Foreststrider Fledgling|r. Loot them for their |cRXP_LOOT_Strider Meat|r
     .collect 5469,5
     .mob Foreststrider Fledgling
@@ -495,7 +495,7 @@ step
     .turnin 958 >> Turn in Tools of the Highborne
 step
     #label end
-    .goto Darkshore,32.417,43.809,15,0 
+    .goto Darkshore,32.417,43.809,15,0
     .goto Darkshore,32.417,43.809,0
     .zone Wetlands >> Take the boat to Menethil Harbor
     >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid]|cRXP_WARN_while waiting for the boat to Menethil Harbor|r
@@ -583,7 +583,7 @@ step
 step
     .goto StormwindClassic,55.724,65.401
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keldric Boucher|r
-    .vendor >> |cRXP_BUY_Buy|r |T134830:0|t[Lesser Healing Potion] |cRXP_BUY_if in stock|r 
+    .vendor >> |cRXP_BUY_Buy|r |T134830:0|t[Lesser Healing Potion] |cRXP_BUY_if in stock|r
     .target Keldric Boucher
     .zoneskip Ironforge
     .subzoneskip 809
@@ -670,8 +670,8 @@ step
     >>Kill |cRXP_ENEMY_Vagash|r. Loot him for his |cRXP_LOOT_Fang|r
     >>|cRXP_WARN_This quest is difficult. Find a group for him if needed. Skip this step if you're unable to find a group or solo him|r
     >>|cRXP_WARN_Watch the video below before you attempt to kill |cRXP_ENEMY_Vagash|r. It can be solo'd on any class|r
-    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r 
-    .complete 314,1 --Collect Fang of Vagash (1) 
+    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r
+    .complete 314,1 --Collect Fang of Vagash (1)
     .mob Vagash
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
@@ -767,9 +767,9 @@ step
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
-    .complete 418,1 --Collect Boar Intestines (x3)
-    .complete 418,2 --Collect Bear Meat (x3)
-    .complete 418,3 --Collect Spider Ichor (x3)
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
     >>|cRXP_WARN_Save any|r |T133970:0|t[Chunks of Boar Meat] |cRXP_WARN_to use for leveling |T133971:0|t[Cooking] |cRXP_WARN_later|r
     .mob Elder Black Bear
     .mob Mountain Boar
@@ -819,9 +819,9 @@ step
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
-    .complete 418,1 --Collect Boar Intestines (x3)
-    .complete 418,2 --Collect Bear Meat (x3)
-    .complete 418,3 --Collect Spider Ichor (x3)
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
     .mob Elder Black Bear
     .mob Mountain Boar
     .mob Forest Lurker
@@ -831,9 +831,9 @@ step
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
-    .complete 418,1 --Collect Boar Intestines (x3)
-    .complete 418,2 --Collect Bear Meat (x3)
-    .complete 418,3 --Collect Spider Ichor (x3)
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
     .mob Elder Black Bear
     .mob Mountain Boar
     .mob Forest Lurker
@@ -867,9 +867,9 @@ step
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
-    .complete 418,1 --Collect Boar Intestines (x3)
-    .complete 418,2 --Collect Bear Meat (x3)
-    .complete 418,3 --Collect Spider Ichor (x3)
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
     .mob Elder Black Bear
     .mob Mountain Boar
     .mob Forest Lurker
@@ -894,7 +894,7 @@ step
     >>|cRXP_WARN_Ensure you have 10|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for your upcoming Paladin class quest|r << Paladin
     >>|cRXP_ENEMY_Tunnel Rats|r |cRXP_WARN_can spawn throughout Loch Modan. Check your World Map for their locations|r
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
-    .collect 2589,10,1644,1,1 << Paladin -- Linen Cloth (10) 
+    .collect 2589,10,1644,1,1 << Paladin -- Linen Cloth (10)
     .mob Tunnel Rat Scout
     .mob Tunnel Rat Vermin
     .mob Tunnel Rat Forager
@@ -925,7 +925,7 @@ step
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
-    .complete 418,2 --Bear Meat (3)
+    .collect 3173,3,418,1 --Bear Meat (3)
     .goto Loch Modan,26.9,10.7,90,0
     .goto Loch Modan,30.9,10.6,90,0
     .goto Loch Modan,28.6,15.4,90,0
@@ -939,7 +939,7 @@ step
     .goto Loch Modan,33.4,30.3,90,0
     .goto Loch Modan,39.4,33.3,90,0
     .goto Loch Modan,26.9,10.7
-    .complete 418,1 --Boar Intestines (3)    
+    .collect 3172,3,418,1 --Boar Intestines (3)
     .goto Loch Modan,38.0,34.9,90,0
     .goto Loch Modan,37.1,39.8,90,0
     .goto Loch Modan,29.8,35.9,90,0
@@ -951,7 +951,7 @@ step
     .goto Loch Modan,27.7,25.3,90,0
     .goto Loch Modan,28.6,22.6,90,0
     .goto Loch Modan,38.0,34.9
-    .complete 418,3 --Spider Ichor (3)
+    .collect 3174,3,418,1 --Spider Ichor (3)
     .goto Loch Modan,31.9,16.4,90,0
     .goto Loch Modan,28.0,20.6,90,0
     .goto Loch Modan,33.8,40.5,90,0
@@ -990,7 +990,7 @@ step
     >>|cRXP_WARN_Buy a|r |T135237:0|t[Flint and Tinder] |cRXP_WARN_along with 1|r |T135435:0|t[Simple Wood]|cRXP_WARN_. Buy any|r|T133634:0|t[Small Brown Pouches] |cRXP_WARN_if needed|r
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
-    .target Yanni Stoutheart  
+    .target Yanni Stoutheart
 step
     .goto Loch Modan,33.938,50.954
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
@@ -1054,7 +1054,7 @@ step << Priest
     .collect 5208,1 --Smoldering Wand (1)
     .target Ardwyn Cailen
 step << Priest
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Toldren Deepiron|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Toldren Deepiron|r
     .goto Ironforge,25.204,10.749
     .trainer >> Train your class spells
     .target Toldren Deepiron
@@ -1145,7 +1145,7 @@ step << Druid
 step
     .goto StormwindClassic,55.724,65.401
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keldric Boucher|r
-    .vendor >> |cRXP_BUY_Buy|r |T134830:0|t[Lesser Healing Potion] |cRXP_BUY_if in stock|r 
+    .vendor >> |cRXP_BUY_Buy|r |T134830:0|t[Lesser Healing Potion] |cRXP_BUY_if in stock|r
     .target Keldric Boucher
 step
     .goto StormwindClassic,66.277,62.137

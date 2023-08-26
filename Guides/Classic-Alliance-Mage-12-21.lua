@@ -982,9 +982,9 @@ step
     #completewith Murlocs
     >>Grind the first 3 items for Redridge Goulash as you do other quests. Also get enough Chunks of Boar Meat to get you to 50 cooking
     >>Try to focus heavily on the Goretusks, don't really worry about spider meat yet
-    .complete 92,1 --Great Goretusk Snout (5)
-    .complete 92,2 --Tough Condor Meat (5)
-    .complete 92,3 --Crisp Spider Meat (5)
+    .collect 2296,5,92,1 --Great Goretusk Snout (5)
+    .collect 1080,5,92,1 --Tough Condor Meat (5)
+    .collect 1081,5,92,1 --Crisp Spider Meat (5)
 step
     #completewith Murlocs
     >>Kill Dragon Whelps. Loot them for their scales
@@ -1007,12 +1007,12 @@ step
     >>Save 8 Fins for later
     .goto Redridge Mountains,48.82,69.49
     .complete 127,1 --Spotted Sunfish (10)
-    .complete 150,1 --Murloc Fin (8)
+    .collect 1468,8,150,1 --Murloc Fin (8)
 step
     #era/som
     >>Get the Condor Meat and Whelp scales from around this area. If you're waiting on respawns, then go east to get some Axes then come back here
     .goto Redridge Mountains,61.04,77.55
-    .complete 92,2 --Tough Condor Meat (5)
+    .collect 1080,5,92,1 --Tough Condor Meat (5)
     .complete 122,1 --Underbelly Whelp Scale (6)
 step
     #som
@@ -1037,7 +1037,7 @@ step
     #era/som
     >>Finish off the Goretusk snouts here
     .goto Redridge Mountains,32.07,70.54
-    .complete 92,1 --Great Goretusk Snout (5)
+    .collect 2296,5,92,1 --Great Goretusk Snout (5)
 step
     .goto Redridge Mountains,30.74,60.00
 .target Deputy Feldon
@@ -1124,7 +1124,7 @@ step
     >>Be careful as their poison can do some damage
     >>Be careful of Chatter (rare), as he has an 8 second-long stun
     .goto Redridge Mountains,57.23,45.24
-    .complete 92,3 --Crisp Spider Meat (5)
+    .collect 1081,5,92,1 --Crisp Spider Meat (5)
 step
     >>Finish off killing Orcs for the axes
     .goto Redridge Mountains,61.74,42.82

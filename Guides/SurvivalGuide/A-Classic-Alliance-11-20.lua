@@ -94,9 +94,9 @@ step
 step
     #completewith HarvestW
     >>Kill |cRXP_ENEMY_Young Goretusks|r and |cRXP_ENEMY_Young Fleshrippers|r. Loot them for their |cRXP_LOOT_Vulture Meat|r, |cRXP_LOOT_Snouts|r and |cRXP_LOOT_Livers|r
-    .complete 38,1 --Stringy Vulture Meat (3)
-    .complete 38,3 --Goretusk Snout (3)
-    .complete 22,1 --Goretusk Liver (8)
+    .collect 729,3,38,1 --Stringy Vulture Meat (3)
+    .collect 731,3,38,1 --Goretusk Snout (3)
+    .collect 723,8,22,1 --Goretusk Liver (8)
     .mob Young Goretusk
     .mob Goretusk
     .mob Young Fleshripper
@@ -148,7 +148,7 @@ step
     .goto Westfall,52.13,10.36,60,0
     .goto Westfall,56.40,9.40
     >>Kill |cRXP_ENEMY_Murloc Raiders|r and |cRXP_ENEMY_Murloc Coastrunners|r. Loot them for their |cRXP_LOOT_Eyes|r
-    .complete 38,2 --Murloc Eye (3)
+    .collect 730,3,38,1 --Murloc Eye (3)
     .mob Murloc Raider
     .mob Murloc Coastrunner
 step
@@ -204,7 +204,7 @@ step
     .goto Westfall,50.80,21.76
     >>Kill |cRXP_ENEMY_Harvest Watchers|r. Loot them for their |cRXP_LOOT_Flask of Oil|r and |cRXP_LOOT_Okra|r
     .complete 9,1 --Harvest Watcher (20)
-    .complete 38,4 --Okra (3)
+    .collect 732,3,38,1 --Okra (3)
     .collect 814,5,103,1
     .mob Harvest Watcher
 step
@@ -217,9 +217,9 @@ step
     .goto Westfall,47.89,42.94,75,0
     .goto Westfall,54.42,40.38
     >>Kill |cRXP_ENEMY_Young Goretusks|r and |cRXP_ENEMY_Young Fleshrippers|r. Loot them for their |cRXP_LOOT_Vulture Meat|r, |cRXP_LOOT_Snouts|r and |cRXP_LOOT_Livers|r
-    .complete 38,1 --Stringy Vulture Meat (3)
-    .complete 38,3 --Goretusk Snout (3)
-    .complete 22,1 --Goretusk Liver (8)
+    .collect 729,3,38,1 --Stringy Vulture Meat (3)
+    .collect 731,3,38,1 --Goretusk Snout (3)
+    .collect 723,8,22,1 --Goretusk Liver (8)
     .mob Young Goretusk
     .mob Goretusk
     .mob Young Fleshripper

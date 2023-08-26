@@ -206,7 +206,7 @@ step
     .goto The Barrens,47.58,19.38,40,0
     .goto The Barrens,49.21,20.42,40,0
     .goto The Barrens,50.33,21.85,40,0
-    .goto The Barrens,51.09,22.68,40 >> Travel down the mountain where you came from
+    .goto The Barrens,51.09,22.68,100 >> Travel down the mountain where you came from
     .isOnQuest 924
 step
     #completewith DisruptTheAttacks
@@ -225,7 +225,7 @@ step
     .mob Razormane Hunter
 step
     .goto The Barrens,55.70,27.30
-    >>Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. If it's not up you'll get it later
+    .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. If it's not up you'll get it later
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Accept Chen's Empty Keg
 step << !Tauren !Hunter !Shaman
@@ -554,7 +554,7 @@ step
 step
     .goto The Barrens,55.70,27.30,20,0
     .goto The Barrens,55.78,20.00
-    >>Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest
+    .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Accept Chen's Empty Keg
 step
@@ -598,7 +598,7 @@ step
     .mob Razormane Defender
 step
     #completewith next
-    >>Kill any |cRXP_ENEMY_Zhevra|r you see. Loot them for |cRXP_LOOT_Hooves|r
+    >>Kill any |cRXP_ENEMY_Zhevra|r you see. Loot them for their |cRXP_LOOT_Hooves|r
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
 step
@@ -610,7 +610,7 @@ step
     .isQuestComplete 924
 step
     #completewith next
-    >>Kill any |cRXP_ENEMY_Zhevra|r you see. Loot them for |cRXP_LOOT_Hooves|r
+    >>Kill any |cRXP_ENEMY_Zhevra|r you see. Loot them for their |cRXP_LOOT_Hooves|r
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
 step
@@ -1019,8 +1019,11 @@ step
 step
     #sticky
     #completewith Samophlange
-    >>Kill Plainstriders. Loot them for their Kidneys
+    >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Kidneys|r
     .complete 821,2 --Plainstrider Kidney (5)
+    .mob Greater Plainstrider
+    .mob Fleeting Plainstrider
+    .mob Ornery Plainstrider
 step
     .goto The Barrens,43.80,12.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vrang|r
@@ -1817,6 +1820,7 @@ step
     .zone Stonetalon Mountains >> Travel to Stonetalon Mountains
     .zoneskip Stonetalon Mountains
 step
+    #map Stonetalon Mountains
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seereth|r and |cRXP_FRIENDLY_Makaba|r
     .turnin 1061 >> Turn in The Spirits of Stonetalon
     .accept 1062 >> Accept Goblin Invaders
@@ -1851,6 +1855,7 @@ step
     .mob Grimtotem Ruffian
     .mob Grimtotem Mercenary
 step
+    #map Stonetalon Mountains
     .goto The Barrens,35.19,27.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Makaba|r
     .turnin 6548 >> Turn in Avenge My Village
@@ -2203,7 +2208,6 @@ step
     #label BootyTurnin
     .goto The Barrens,62.68,36.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazlowe|r
-    .turnin 892 >>Turn in The Missing Shipment
     .turnin 888 >>Turn in Stolen Booty
     .target Gazlowe
 step
@@ -2757,6 +2761,7 @@ step
     .zone Stonetalon Mountains >> Travel to Stonetalon Mountains
     .zoneskip Stonetalon Mountains
 step
+    #map Stonetalon Mountains
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seereth|r and |cRXP_FRIENDLY_Makaba|r
     .turnin 1062 >>Turn in Goblin Invaders
     .accept 1063 >>Accept The Elder Crone
@@ -2837,7 +2842,7 @@ step << Druid
     .goto Thunder Bluff,47.12,57.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chesmu|r
     .bankdeposit 5075 >> Deposit your |T134128:0|t[Blood Shards]
-    .bankdeposit 868 >> Deposit your |T132938:0|t[Digging Claw]
+    .bankdeposit 5099 >> Deposit your |T132938:0|t[Digging Claw]
     .target Chesmu
 step << Druid
     .goto Thunder Bluff,45.83,64.74
@@ -2960,11 +2965,11 @@ step << Orc Warrior/Tauren Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ansekhwa|r
     .train 227 >>Train Staves
     .train 199 >>Train Two-Handed Maces
+    .target Ansekhwa
 step << Troll Warrior
     .goto Thunder Bluff,40.93,62.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ansekhwa|r
     .train 199 >>Train Two-Handed Maces
-    .target Ansekhwa
     .target Ansekhwa
 step << Warlock/Priest
     .goto Thunder Bluff,40.93,62.73
@@ -3005,7 +3010,8 @@ step
 step << Priest
     .goto Thunder Bluff,25.31,15.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miles|r
-    .accept 5644 >> Accept Devouring Plague
+    .accept 5644 >> Accept Devouring Plague << Undead Priest
+    .accept 5642 >> Accept Shadowguard << Troll Priest
     .trainer >> Train your class spells
     .target Miles Welsh
 step << Mage
@@ -3477,10 +3483,10 @@ step
     .group
 step
     #label InDeepTrouble2
+    .goto Stonetalon Mountains,47.36,64.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tsunaman|r
     .accept 6562 >>Accept Trouble in the Deeps
     .accept 6393 >>Accept Elemental War
-    .goto Stonetalon Mountains,47.36,64.25
     .target Tsunaman
 step
     .goto Stonetalon Mountains,59.08,75.70
@@ -3849,14 +3855,20 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo|r at the top of the hut
     .train 3567 >> Train |T135759:0|t[Teleport: Orgrimmar]
     .target Thuul
-step << Priest
+step << Troll Priest
+    .goto Orgrimmar,35.59,87.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
+    .turnin 5642 >> Turn in Shadowguard
+    .trainer >> Train your class spells
+    .target Ur'kyo
+step << Undead Priest
     .goto Orgrimmar,35.59,87.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 8103 >> Train your class spells
     .target Ur'kyo
     .xp <22,1
     .xp >24,1
-step << Priest
+step << Undead Priest
     .goto Orgrimmar,35.59,87.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 3747 >> Train your class spells

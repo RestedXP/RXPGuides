@@ -1609,12 +1609,16 @@ function addon.functions.loop(self, text, range, zone, ...)
         element.segments = segments
         if range then
             local prefix = range:sub(1,1)
+            element.pointCount = 0
             if prefix == "+" then
                 element.drawCenterPoint = true
                 element.thickness = 1
                 range = range:sub(2,-1)
             elseif prefix == "*" then
                 element.lineAlpha = 0
+                range = range:sub(2,-1)
+            elseif prefix == "@" then
+                element.pointCount = nil
                 range = range:sub(2,-1)
             end
             --print('ok2')
@@ -4144,7 +4148,11 @@ function addon.functions.itemcount(self, ...)
         if step.active and not step.completed then
             addon.updateSteps = true
             step.completed = true
-            element.tooltipText = "Step skipped: You don't have the required item for this step"
+            if operator < 0 then
+                element.tooltipText = "Step skipped: You already have the required item for this step"
+            else
+                element.tooltipText = "Step skipped: You don't have the required item for this step"
+            end
         end
     elseif step.active then
         element.tooltipText = nil

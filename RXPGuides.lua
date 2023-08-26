@@ -740,6 +740,7 @@ function addon:OnEnable()
     self:RegisterEvent("PLAYER_LEAVING_WORLD")
 
     self:RegisterEvent("CALENDAR_UPDATE_EVENT_LIST")
+    self:RegisterEvent("ZONE_CHANGED")
 
     if addon.gameVersion > 90000 then
         self:RegisterEvent("COMPANION_LEARNED")
@@ -842,6 +843,8 @@ function addon:GET_ITEM_INFO_RECEIVED(_, itemNumber, success)
         addon.updateStepText = true
     end
 end
+
+function addon:ZONE_CHANGED() addon.UpdateMap() end
 
 function addon:BAG_UPDATE_DELAYED(...) addon.UpdateItemFrame() end
 

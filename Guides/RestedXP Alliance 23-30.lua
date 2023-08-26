@@ -616,7 +616,7 @@ step
     .goto Redridge Mountains,57.3,52.4
 	>> Kill murlocs. Loot them for their Sunfish and Fins
     .complete 127,1 --Collect Spotted Sunfish (x10)
-    .complete 150,1 --Collect Murloc Fin (x8)
+    .collect 1468,8,150,1 --Collect Murloc Fin (x8)
 step << Rogue tbc
 	#completewith next
     +Open the chests to train lockpicking, you will need 75 skill points for a quest later. Do NOT open the brown chest until you've done this

@@ -758,7 +758,7 @@ step
     .mob Prairie Wolf Alpha
     .mob Flatland Cougar
 step
-    #completewith Mazzturnin
+    #completewith Thunderhorn
     .goto Mulgore,46.5,55.5,150 >> Travel back to Bloodhoof Village
 step << Hunter
     .goto Mulgore,47.81,55.69
@@ -859,10 +859,11 @@ step
     .target Harken Windtotem
     .isQuestComplete 761
 step
+    #label Thunderhorn
+    .goto Mulgore,48.53,60.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mull|r
     .turnin 756 >>Turn in Thunderhorn Totem
     .accept 758 >>Accept Thunderhorn Cleansing
-    .goto Mulgore,48.53,60.40
     .target Mull Thunderhorn
 step << Shaman
     .goto Mulgore,48.38,59.15
@@ -1219,11 +1220,14 @@ step
 	.unitscan Morin Cloudstalker
     .group
 step
+    #completewith next
     .goto Mulgore,69.6,60.4,100,0
     .zone The Barrens >> Run into The Barrens
 step
-    .goto The Barrens,44.5,59.1
+    .goto The Barrens,44.45,59.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Omusa|r
     .fp Camp Taurajo >> Get the Camp Taurajo flight path
+    .target Omusa Thunderhorn
 step << Tauren
     .goto The Barrens,44.9,58.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kirge Sternhorn|r
@@ -1274,8 +1278,10 @@ step << Hunter/Druid
     .accept 6363 >>Accept Tal the Wind Rider Master
     .target Ahanu
 step << Druid
-    .goto Thunder Bluff,45.8,64.4
+    .goto Thunder Bluff,45.83,64.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Pala|r
     .home >>Set your Hearthstone to Thunder Bluff
+    .target Innkeeper Pala
 step << Hunter/Druid
     .goto Thunder Bluff,60.0,51.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cairne|r
@@ -1839,7 +1845,7 @@ step
     >>|cRXP_BUY_Buy one or more|r |T133634:0|t[Small Brown Pouches] |cRXP_BUY_from|r |cRXP_FRIENDLY_him|r
     .collect 4496,1,818,1 --Small Brown Pouch (1)
     .target Jark
-    .money >0.05
+    .money <0.05
 step << Warrior
     .goto Durotar,54.18,42.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw|r
@@ -1956,7 +1962,7 @@ step
     >>|cRXP_WARN_Pull him backwards towards the|r |cRXP_ENEMY_Lightning Hides|r |cRXP_WARN_you just killed. Otherwise you may bodypull additional burning blade mobs|r
     >>|cRXP_WARN_Kill the imp first. Use|r |T132155:0|t[Gouge] |cRXP_WARN_when he casts|r |T136169:0|t[Soul Siphon] << Rogue
     >>|cRXP_WARN_Kill the imp first. Use|r |T136026:0|t[Earth Shock] |cRXP_WARN_when he casts|r |T136169:0|t[Soul Siphon] << Shaman
-    >>|cRXP_WARN_You can cast |T136071:0|t[polymorph] on |cRXP_ENEMY_Fizzle|r and kill the |cRXP_ENEMY_Imp|r first << Mage
+    >>|cRXP_WARN_You can cast|r |T136071:0|t[Polymorph] |cRXP_WARN_on|r |cRXP_ENEMY_Fizzle|r |cRXP_WARN_and kill the|r |cRXP_ENEMY_Imp|r |cRXP_WARN_first|r << Mage
     >>|cRXP_WARN_Kill the imp first.|r << Warrior/Warlock/Priest
     >>|cRXP_WARN_Use a|r |T134829:0|t[Minor Healing Potion] |cRXP_WARN_if you have it and your|r |T133728:0|t[Faintly Glowing Skull] |cRXP_WARN_if needed|r << !Warlock
     >>|cRXP_WARN_Use a|r |T134829:0|t[Minor Healing Potion], |T133728:0|t[Minor Healthstone] |cRXP_WARN_if you have it and your|r |T133728:0|t[Faintly Glowing Skull] |cRXP_WARN_if needed|r << Warlock
@@ -2006,24 +2012,24 @@ step
     .money <0.05
     .group
 step
+    .goto Durotar,51.95,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil|r
     .turnin 806 >>Turn in Dark Storms
     .accept 828 >>Accept Margoz
-    .goto Durotar,51.95,43.50
     .target Orgnil Soulscar
     .isQuestComplete 806
     .group
 step
+    .goto Durotar,51.95,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil|r again
     .accept 828 >>Accept Margoz
-    .goto Durotar,51.95,43.50
     .target Orgnil Soulscar
     .isQuestTurnedIn 806
     .group
 step
+    .goto Durotar,51.95,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 837 >>Turn in Encroachment
-    .goto Durotar,51.95,43.50
     .target Gar'Thok
     .group
 step << Hunter
@@ -2064,13 +2070,13 @@ step
     .group
 step << Shaman
     #completewith Collars1
-    .goto Durotar,53.18,29.15,50 >> Travel to Skull Rock
+    .goto Durotar,53.18,29.15,50 >> Travel to Dustwind Cave
     .solo
 step
     #completewith next
     .goto Durotar,56.49,25.04,50,0
     .goto Durotar,56.11,27.94,50,0
-    .goto Durotar,53.18,29.15,50 >> Travel to Skull Rock
+    .goto Durotar,53.18,29.15,50 >> Travel to Dustwind Cave
     .isQuestTurnedIn 806
     .group
 step << Shaman
@@ -2385,7 +2391,7 @@ step << Shaman
     .target Kranal Fiss
 step << Shaman
     .goto The Barrens,55.78,20.00
-    >>Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. If it's not up you'll get it later
+    .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. If it's not up you'll get it later
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Accept Chen's Empty Keg
 step
@@ -2435,7 +2441,7 @@ step
     .mob Razormane Hunter
 step
     .goto The Barrens,55.70,27.30
-    >>Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. If it's not up you'll get it later
+    .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. If it's not up you'll get it later
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Accept Chen's Empty Keg
 step

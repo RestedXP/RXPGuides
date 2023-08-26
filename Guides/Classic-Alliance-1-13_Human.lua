@@ -105,7 +105,7 @@ step << Priest/Mage/Warlock
     .goto Elwynn Forest,46.2,40.4,40,0
     .goto Elwynn Forest,47.486,41.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Danil|r
-    .vendor >> |cRXP_WARN_Once you have 50c worth of vendor trash, buy 10|r |T132794:0|t[Refreshing Spring Water] 
+    .vendor >> |cRXP_WARN_Once you have 50c worth of vendor trash, buy 10|r |T132794:0|t[Refreshing Spring Water]
     .target Brother Danil
     .collect 159,10 --Collect Refreshing Spring Water (x10)
 step
@@ -142,7 +142,7 @@ step << Priest/Mage/Warlock
     .goto Elwynn Forest,47.486,41.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Danil|r
     .vendor >>|cRXP_WARN_Vendor trash|r
-    >>|cRXP_WARN_Buy 10|r |T132794:0|t[Refreshing Spring Water] 
+    >>|cRXP_WARN_Buy 10|r |T132794:0|t[Refreshing Spring Water]
     .target Brother Danil
     .collect 159,10 --Collect Refreshing Spring Water (x10)
 step << !Priest !Mage !Warlock !Rogue
@@ -469,7 +469,7 @@ step << Rogue
     .vendor 151 >> >>|cRXP_WARN_Buy a|r |T135641:0|t[Balanced Throwing Dagger] and equip it|r
 step << Warlock
     #completewith next
-    .goto Elwynn Forest,44.1,66.0,10 >> Travel downstairs 
+    .goto Elwynn Forest,44.1,66.0,10 >> Travel downstairs
 step << Warlock
     .goto Elwynn Forest,44.392,66.240
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maximillian Crowe|r
@@ -516,7 +516,7 @@ step << Warrior/Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Farley|r
     .vendor >> |cRXP_BUY_Buy|r |T133995:0|t[Dalaran Sharp] |cRXP_BUY_until you're down to 1 Silver|r << Warrior
     .vendor >> |cRXP_BUY_Buy up to 20|r |T133995:0|t[Dalaran Sharp] << Rogue
-    .target Innkeeper Farley   
+    .target Innkeeper Farley
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyria Du Lac|r
     .target Lyria Du Lac
@@ -637,7 +637,7 @@ step
     .mob Kobold Tunneler
     .mob Kobold Miner
 step
-    #completewith next 
+    #completewith next
     .goto Elwynn Forest,38.677,81.778,50,0
     .goto Elwynn Forest,40.5,82.3
     >>Explore Fargodeep Mine
@@ -1043,7 +1043,7 @@ step << !Warlock
 step << !Warlock
     #softcore
     #completewith next
-    .deathskip >> Die and respawn at the Spirit Healer 
+    .deathskip >> Die and respawn at the Spirit Healer
     .target Spirit Healer
 step << !Warlock
     #softcore
@@ -1661,8 +1661,8 @@ step
     >>Kill |cRXP_ENEMY_Vagash|r. Loot him for his |cRXP_LOOT_Fang|r
     >>|cRXP_WARN_Kite him to the guard south of the ranch. Make sure you do 51%+ damage to him|r
     >>|cRXP_WARN_Watch the video below before you attempt to kill |cRXP_ENEMY_Vagash|r. It can be solo'd on any class|r
-    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r 
-    .complete 314,1 --Collect Fang of Vagash (1) 
+    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r
+    .complete 314,1 --Collect Fang of Vagash (1)
     .mob Vagash
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
@@ -1818,17 +1818,17 @@ step
     #sticky
     #completewith Thelsamar1
     >>Kill Spiders in the zone for Thelsamar Blood Sausages
-    .complete 418,3 --Collect Spider Ichor (x3)
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
 step
     #sticky
     #completewith Thelsamar1
     >>Kill Bears in the zone for Thelsamar Blood Sausages
-    .complete 418,2 --Collect Bear Meat (x3)
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
 step
     #sticky
     #completewith Thelsamar1
     >>Kill Boars in the zone for Thelsamar Blood Sausages
-    .complete 418,1 --Collect Boar Intestines (x3)
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
 step
     #label Thelsamar1
     .goto Loch Modan,39.3,27.0,130 >>Grind some mobs for Boar Intestines, Bear Meat and Spider Ichor en route
@@ -1857,17 +1857,17 @@ step
     #sticky
     #completewith Thelsamar2
     >>Kill Spiders in the zone for Thelsamar Blood Sausages
-    .complete 418,3 --Collect Spider Ichor (x3)
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
 step
     #sticky
     #completewith Thelsamar2
     >>Kill Bears in the zone for Thelsamar Blood Sausages
-    .complete 418,2 --Collect Bear Meat (x3)
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
 step
     #sticky
     #completewith Thelsamar2
     >>Kill Boars in the zone for Thelsamar Blood Sausages
-    .complete 418,1 --Collect Boar Intestines (x3)
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
 step
     #label Thelsamar2
     .goto Loch Modan,23.3,17.9,45 >>Run back to the bunker, grinding en route
@@ -1899,7 +1899,7 @@ step
     .goto Loch Modan,39.4,33.3,100,0
     .goto Loch Modan,26.9,10.7
     >>Kill Bears. Loot them for Meat
-    .complete 418,2 --Collect Bear Meat (x3)
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
 step
     #sticky
     #label Ichor9
@@ -1915,7 +1915,7 @@ step
     .goto Loch Modan,39.0,32.1,100,0
     .goto Loch Modan,31.9,16.4
     >>Kill Spiders. Loot them for Ichor
-    .complete 418,3 --Collect Spider Ichor (x3)
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
 step
     .goto Loch Modan,38.0,34.9,100,0
     .goto Loch Modan,37.1,39.8,100,0
@@ -1929,7 +1929,7 @@ step
     .goto Loch Modan,28.6,22.6,100,0
     .goto Loch Modan,38.0,34.9
     >>Kill Boars. Loot them for Intestines
-    .complete 418,1 --Collect Boar Intestines (x3)
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
 step
     #hidewindow
     #requires Meat9

@@ -640,7 +640,7 @@ step
 step << Priest
     .goto Durotar,42.36,68.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken'jai|r
-	.accept 5649 >> Accept In Favor of Spirituality
+	.accept 5649 >> Accept In Favor of Spirituality << Troll Priest
 	.train 591 >>Train |T135924:0|t[Smite]
     .train 17 >>Train |T135940:0|t[Power Word: Shield]
     .target Ken'jai
@@ -1463,13 +1463,13 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaplak|r
     .train 6760 >> Train your class spells
     .target Kaplak
-step << Priest
+step << Troll Priest
     .goto Durotar,54.26,42.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'jin|r
     .turnin 5649 >> In Favor of Spirituality
     .accept 5648 >> Garments of Spirituality
     .target Tai'jin
-step << Priest
+step << Troll Priest
     .goto Durotar,53.10,46.46
     >>Cast |T135929:0|t[Lesser Heal] and |T135987:0|t[Power Word: Fortitude] on |cRXP_FRIENDLY_Kor'ja|r
     .complete 5648,1 --Heal and fortify Grunt Kor'ja
@@ -1477,7 +1477,7 @@ step << Priest
 step << Priest
     .goto Durotar,54.26,42.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'jin|r
-    .turnin 5648 >>Turn in Garments of Spirituality
+    .turnin 5648 >>Turn in Garments of Spirituality << Troll Priest
     .trainer >> Train your class spells
     .target Tai'jin
 step
@@ -2193,7 +2193,7 @@ step
     >>|cRXP_WARN_Pull him backwards towards the|r |cRXP_ENEMY_Lightning Hides|r |cRXP_WARN_you just killed. Otherwise you may bodypull additional burning blade mobs|r
     >>|cRXP_WARN_Kill the imp first. Use|r |T132155:0|t[Gouge] |cRXP_WARN_when he casts|r |T136169:0|t[Soul Siphon] << Rogue
     >>|cRXP_WARN_Kill the imp first. Use|r |T136026:0|t[Earth Shock] |cRXP_WARN_when he casts|r |T136169:0|t[Soul Siphon] << Shaman
-    >>|cRXP_WARN_You can cast |T136071:0|t[polymorph] on |cRXP_ENEMY_Fizzle|r and kill the |cRXP_ENEMY_Imp|r first << Mage
+    >>|cRXP_WARN_You can cast|r |T136071:0|t[Polymorph] |cRXP_WARN_on|r |cRXP_ENEMY_Fizzle|r |cRXP_WARN_and kill the|r |cRXP_ENEMY_Imp|r |cRXP_WARN_first|r << Mage
     >>|cRXP_WARN_Kill the imp first.|r << Warrior/Warlock/Priest
     >>|cRXP_WARN_Use a|r |T134829:0|t[Minor Healing Potion] |cRXP_WARN_if you have it and your|r |T133728:0|t[Faintly Glowing Skull] |cRXP_WARN_if needed|r << !Warlock
     >>|cRXP_WARN_Use a|r |T134829:0|t[Minor Healing Potion], |T133728:0|t[Minor Healthstone] |cRXP_WARN_if you have it and your|r |T133728:0|t[Faintly Glowing Skull] |cRXP_WARN_if needed|r << Warlock
@@ -2237,30 +2237,30 @@ step << Shaman
     .target Innkeeper Grosk
     .money <0.0375
 step
+    .goto Durotar,51.95,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil|r
     .turnin 806 >>Turn in Dark Storms
     .accept 828 >>Accept Margoz
-    .goto Durotar,51.95,43.50
     .target Orgnil Soulscar
     .isQuestComplete 806
     .group
 step
+    .goto Durotar,51.95,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil|r again
     .accept 828 >>Accept Margoz
-    .goto Durotar,51.95,43.50
     .target Orgnil Soulscar
     .isQuestTurnedIn 806
     .group
 step
+    .goto Durotar,51.95,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 837 >>Turn in Encroachment
-    .goto Durotar,51.95,43.50
     .target Gar'Thok
     .group
 step << Shaman
+    .goto Durotar,51.95,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 837 >>Turn in Encroachment
-    .goto Durotar,51.95,43.50
     .target Gar'Thok
 step << Warrior
     .goto Durotar,54.18,42.46
@@ -2346,13 +2346,13 @@ step
     .group
 step << Shaman
     #completewith Collars1
-    .goto Durotar,53.18,29.15,50 >> Travel toward Skull Rock
+    .goto Durotar,53.18,29.15,50 >> Travel toward Dustwind Cave
     .solo
 step
     #completewith next
     .goto Durotar,56.49,25.04,50,0
     .goto Durotar,56.11,27.94,50,0
-    .goto Durotar,53.18,29.15,50 >> Travel toward Skull Rock
+    .goto Durotar,53.18,29.15,50 >> Travel toward Dustwind Cave
     .isQuestTurnedIn 806
     .group
 step
@@ -2787,7 +2787,7 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
 step << Shaman
     .goto The Barrens,55.78,20.00
-    >>Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. If it's not up you'll get it later
+    .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. If it's not up you'll get it later
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Accept Chen's Empty Keg
 step << Shaman/Hunter
@@ -2837,7 +2837,7 @@ step << Hunter
     .mob Razormane Hunter
 step << Hunter
     .goto The Barrens,55.70,27.30
-    >>Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. If it's not up you'll get it later
+    .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. If it's not up you'll get it later
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Accept Chen's Empty Keg
 step << Shaman/Hunter
@@ -3664,81 +3664,57 @@ step
     .mob Rot Hide Graverobber
     .isOnQuest 358
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r, |cRXP_FRIENDLY_Johaan|r, |cRXP_FRIENDLY_Zygand|r and |cRXP_FRIENDLY_Sevren|r
-    .turnin 426 >>Turn in The Mills Overrun
     .goto Tirisfal Glades,58.19,51.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r
+    .turnin 426 >>Turn in The Mills Overrun
+    .target Deathguard Dillinger
+    .isQuestComplete 426
+step
+    .goto Tirisfal Glades,59.45,52.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r
     .turnin 368 >>Turn in A New Plague
     .accept 369 >>Accept A New Plague
+    .target Apothecary Johaan
+    .isQuestComplete 368
+step
     .goto Tirisfal Glades,59.45,52.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r
+    .accept 369 >>Accept A New Plague
+    .target Apothecary Johaan
+    .isQuestTurnedIn 368
+step
+    .goto Tirisfal Glades,60.58,51.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zygand|r
     .turnin 398 >>Turn in Wanted: Maggot Eye
     .turnin 370 >>Turn in At War With The Scarlet Crusade
     .accept 371 >>Accept At War With The Scarlet Crusade
-    .goto Tirisfal Glades,60.58,51.77
-    .turnin 358 >>Turn in Graverobbers
-    .accept 359 >>Accept Forsaken Duties
-    .goto Tirisfal Glades,61.26,50.84
-    .target Deathguard Dillinger
-    .target Apothecary Johaan
     .target Executor Zygand
-    .target Magistrate Sevren
-    .isQuestComplete 426
     .isQuestComplete 370
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r, |cRXP_FRIENDLY_Zygand|r and |cRXP_FRIENDLY_Sevren|r
-    .turnin 368 >>Turn in A New Plague
-    .accept 369 >>Accept A New Plague
-    .goto Tirisfal Glades,59.45,52.40
+    .goto Tirisfal Glades,60.58,51.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zygand|r
     .turnin 398 >>Turn in Wanted: Maggot Eye
-    .turnin 370 >>Turn in At War With The Scarlet Crusade
+    .target Executor Zygand
+    .isQuestComplete 398
+step
+    .goto Tirisfal Glades,60.58,51.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zygand|r
     .accept 371 >>Accept At War With The Scarlet Crusade
-    .goto Tirisfal Glades,60.58,51.77
-    .turnin 358 >>Turn in Graverobbers
-    .accept 359 >>Accept Forsaken Duties
-    .goto Tirisfal Glades,61.26,50.84
-    .target Apothecary Johaan
     .target Executor Zygand
-    .target Magistrate Sevren
-    .isQuestComplete 370
+    .isQuestTurnedIn 370
 step
+    .goto Tirisfal Glades,61.26,50.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r, |cRXP_FRIENDLY_Johaan|r, |cRXP_FRIENDLY_Zygand|r and |cRXP_FRIENDLY_Sevren|r
-    .turnin 426 >>Turn in The Mills Overrun
-    .goto Tirisfal Glades,58.19,51.44
-    .turnin 368 >>Turn in A New Plague
-    .accept 369 >>Accept A New Plague
-    .goto Tirisfal Glades,59.45,52.40
-    .turnin 398 >>Turn in Wanted: Maggot Eye
-    .goto Tirisfal Glades,60.58,51.77
     .turnin 358 >>Turn in Graverobbers
     .accept 359 >>Accept Forsaken Duties
-    .goto Tirisfal Glades,61.26,50.84
-    .target Deathguard Dillinger
-    .target Apothecary Johaan
-    .target Executor Zygand
-    .target Magistrate Sevren
-    .isQuestComplete 426
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r, |cRXP_FRIENDLY_Zygand|r and |cRXP_FRIENDLY_Sevren|r
-    .turnin 368 >>Turn in A New Plague
-    .accept 369 >>Accept A New Plague
-    .goto Tirisfal Glades,59.45,52.40
-    .turnin 398 >>Turn in Wanted: Maggot Eye
-    .goto Tirisfal Glades,60.58,51.77
-    .turnin 358 >>Turn in Graverobbers
-    .accept 359 >>Accept Forsaken Duties
-    .goto Tirisfal Glades,61.26,50.84
-    .target Apothecary Johaan
-    .target Executor Zygand
     .target Magistrate Sevren
     .isQuestComplete 358
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r and |cRXP_FRIENDLY_Zygand|r
-    .turnin 368 >>Turn in A New Plague
-    .goto Tirisfal Glades,59.45,52.40
-    .turnin 398 >>Turn in Wanted: Maggot Eye
     .goto Tirisfal Glades,61.26,50.84
-    .target Apothecary Johaan
-    .target Executor Zygand
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r, |cRXP_FRIENDLY_Johaan|r, |cRXP_FRIENDLY_Zygand|r and |cRXP_FRIENDLY_Sevren|r
+    .accept 359 >>Accept Forsaken Duties
     .target Magistrate Sevren
+    .isQuestTurnedIn 358
 step
     #completewith HorrorsandSpirits
     +|cRXP_WARN_Bind your|r |T133849:0|t[Slumber Sand]|cRXP_WARN_. Save it for emergency situations|r

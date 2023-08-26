@@ -498,13 +498,16 @@ function addon.comms.OpenBugReport(stepNumber)
     end
 
     local arrowData = af and fmt(
-                          "  Shown: %s\n  Hidden by step: %s\n  Disabled: %s\n  Distance: %s\n  Same Continent: %s\n  Zone: %s\n  Coordinates: wy (%.02f) wx (%.02f)\n",
+                          "  Shown: %s\n  Hidden by step: %s\n  Disabled: %s\n  Distance: %s\n  Same Continent: %s\n  Zone: %s\n  Coordinates (w): wy (%.02f) wx (%.02f); zy (%.03f) zx (%.03f)",
                           tostr(af:IsShown()), tostr(addon.hideArrow),
                           tostr(addon.settings.profile.disableArrow),
                           af.distance or -1, sameContinent,
                           af.element and af.element.zone or 'N/A',
                           af.element and af.element.wy or 0,
-                          af.element and af.element.wx or 0) or 'N/A'
+                          af.element and af.element.wx or 0,
+                          af.element and af.element.y or 0,
+                          af.element and af.element.x or 0
+                          ) or 'N/A'
 
     local addonErrors = ""
     if next(addon.errors) then

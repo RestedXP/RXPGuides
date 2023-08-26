@@ -548,7 +548,7 @@ step
     .accept 111 >> Accept Speak with Gramma
 step
     .goto Elwynn Forest,32.5,85.5
-    >>Finish killing |cFF00BCD4Boars|r you see for |cFF00BCD4Chunks of Boar Meat|r 
+    >>Finish killing |cFF00BCD4Boars|r you see for |cFF00BCD4Chunks of Boar Meat|r
     .complete 86,1 --Collect Chunk of Boar Meat (x4)
 step
     >> Return to |cFF00FF25"Auntie" Bernice Stonefield|r
@@ -1785,17 +1785,17 @@ step << Warlock/Mage/Rogue
 #xprate <1.5
     #completewith Thelsamar1
     >>Kill Spiders in the zone for Thelsamar Blood Sausages
-    .complete 418,3 --Collect Spider Ichor (x3)
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
 step << Warlock/Mage/Rogue
 #xprate <1.5
     #completewith Thelsamar1
     >>Kill Bears in the zone for Thelsamar Blood Sausages
-    .complete 418,2 --Collect Bear Meat (x3)
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
 step << Warlock/Mage/Rogue
 #xprate <1.5
     #completewith Thelsamar1
     >>Kill Boars in the zone for Thelsamar Blood Sausages.
-    .complete 418,1 --Collect Boar Intestines (x3)
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
 step << Warlock/Mage/Rogue
 #xprate <1.5
     #label Thelsamar1
@@ -1820,17 +1820,17 @@ step << Warlock/Mage/Rogue
 #xprate <1.5
     #completewith Ichor9
     >>Kill Spiders in the zone for Thelsamar Blood Sausages
-    .complete 418,3 --Collect Spider Ichor (x3)
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
 step << Warlock/Mage/Rogue
 #xprate <1.5
     #completewith Meat9
     >>Kill Bears in the zone for Thelsamar Blood Sausages
-    .complete 418,2 --Collect Bear Meat (x3)
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
 step << Warlock/Mage/Rogue
 #xprate <1.5
     #completewith Intest9
     >>Kill Boars in the zone for Thelsamar Blood Sausages
-    .complete 418,1 --Collect Boar Intestines (x3)
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
 step << Warlock/Mage/Rogue
 #xprate <1.5
     .goto Loch Modan,23.3,17.9,45 >>Run back to the bunker, grinding en route
@@ -1864,7 +1864,7 @@ step << Warlock/Mage/Rogue
     .goto Loch Modan,39.4,33.3,100,0
     .goto Loch Modan,26.9,10.7
     >>Kill Bears. Loot them for Meat
-    .complete 418,2 --Collect Bear Meat (x3)
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
 step << Warlock/Mage/Rogue
 #xprate <1.5
     #sticky
@@ -1881,7 +1881,7 @@ step << Warlock/Mage/Rogue
     .goto Loch Modan,39.0,32.1,100,0
     .goto Loch Modan,31.9,16.4
     >>Kill Spiders. Loot them for Ichor
-    .complete 418,3 --Collect Spider Ichor (x3)
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
 step << Warlock/Mage/Rogue
 #xprate <1.5
     #label Intest9
@@ -1897,7 +1897,7 @@ step << Warlock/Mage/Rogue
     .goto Loch Modan,28.6,22.6,100,0
     .goto Loch Modan,38.0,34.9
     >>Kill Boars. Loot them for Intestines
-    .complete 418,1 --Collect Boar Intestines (x3)
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
 step << Warlock/Mage/Rogue
 #xprate <1.5
     #requires Meat9
