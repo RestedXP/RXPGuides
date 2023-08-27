@@ -114,8 +114,10 @@ local function KeyToRegex(keyString)
 end
 
 function addon.itemUpgrades:Setup()
-    -- TODO reset cache on level up or training
     self:LoadStatWeights()
+
+    self:RegisterEvent("PLAYER_LEVEL_UP")
+    self:RegisterEvent("TRAINER_SHOW")
 
     local lookup
     -- Only load stats coming from GSheet
@@ -129,6 +131,16 @@ function addon.itemUpgrades:Setup()
 
     end
 
+end
+
+-- Reset cache on levelup
+function addon.itemUpgrades:PLAYER_LEVEL_UP()
+    wipe(session.itemCache)
+end
+
+-- Reset cache on trainer
+function addon.itemUpgrades:TRAINER_SHOW()
+    wipe(session.itemCache)
 end
 
 function addon.itemUpgrades:LoadStatWeights()
@@ -299,12 +311,11 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
 
     -- Failed to load, wait for next try
     if not comparedData then
-        print("Failed to query comparedStats", itemLink)
+        -- print("Failed to query comparedStats", itemLink)
         return
     end
 
     -- Not an equippable item
-    -- TODO exclude quiver
     if not comparedData.InventorySlotId or
         not SLOT_MAP[comparedData.InventorySlotId] then return end
 
@@ -376,7 +387,7 @@ ItemRefTooltip:HookScript("OnTooltipSetItem", TooltipSetItem)
 
 function addon.itemUpgrades.Test()
     local itemData
-    for _, itemID in pairs({19857, 19347, 19861}) do
+    for _, itemID in pairs({19857, 19347, 19861, 19319}) do
         -- print(itemID)
         itemData =
             addon.itemUpgrades:GetItemData("item:" .. itemID, GameTooltip)
