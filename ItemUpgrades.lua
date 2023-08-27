@@ -227,6 +227,9 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
         tooltipTextLines = GetTooltipLines(tooltip)
     else -- If not tooltip, set hidden comparison tooltip
         tooltip = GetComparisonTip()
+
+        if not tooltip then return end
+
         tooltip:SetHyperlink(itemLink)
 
         tooltipTextLines = GetTooltipLines(tooltip)
