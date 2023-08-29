@@ -507,7 +507,7 @@ step << Rogue
     .collect 2027,1,479,1 --Collect Scimitar (1)
     .money <0.3815
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
     .target Louis Warren
 step << Rogue
     #completewith PyrewoodAmbush
@@ -515,7 +515,7 @@ step << Rogue
     .use 2027
     .itemcount 2027,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faranell|r and |cRXP_FRIENDLY_Zinge|r in The Apothecarium
     .turnin 447 >>Turn in A Recipe For Death
@@ -581,7 +581,7 @@ step << Warlock
 step << Priest/Mage/Warlock
     .goto Undercity,69.54,26.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Zane|r|cRXP_BUY_. Buy a|r |T133718:0|t[Smoldering Wand] |cRXP_BUY_from him|r
-    .collect 5754,1 --Smoldering Wand (1)
+    .collect 5208,1 --Smoldering Wand (1)
     .money <0.3515
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<13.4
