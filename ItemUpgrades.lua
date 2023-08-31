@@ -395,7 +395,6 @@ local function IsWeaponSlot(itemEquipLoc)
 end
 
 local function IsUsableForClass(itemSubTypeID, itemEquipLoc)
-    -- TODO need itemType for category because of enumes
     if type(itemSubTypeID) ~= "number" then
         addon.error("IsUsableForClass, itemSubTypeID number required")
         return
