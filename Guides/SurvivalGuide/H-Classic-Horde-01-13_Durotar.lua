@@ -985,6 +985,7 @@ step
     .complete 818,2 --Crawler Mucus (8)
     .complete 818,1 --Intact Makrura Eye (4)
     .mob Pygmy Surf Crawler
+    .mob Surf Crawler
     .mob Makrura Shellhide
     .mob Makrura Clacker
 step
@@ -3014,12 +3015,14 @@ step
     .zone Tirisfal Glades >>Take the Zeppelin to Tirisfal Glades
     .zoneskip Tirisfal Glades
 step << Orc Rogue/Troll Rogue
+    #optional
     #completewith Swordtraining1
     .goto Tirisfal Glades,61.80,65.06,20,0
     .zone Undercity >> Enter Undercity
     .zoneskip Undercity
     .money <0.3023
 step << Orc Rogue/Troll Rogue
+    #optional
     #completewith Swordtraining1
     .goto Undercity,66.09,20.06,20,0
     .goto Undercity,64.37,23.94,20,0
@@ -3029,11 +3032,13 @@ step << Orc Rogue/Troll Rogue
     .goto Undercity,65.53,43.62,15 >> Take the lift down to the Undercity
     .money <0.3023
 step << Orc Rogue/Troll Rogue
+    #optional
     .goto Undercity,63.25,48.56
     .fp Undercity >> Get the Undercity flight path
     .target Michael Garrett
     .money <0.3023
 step << Orc Rogue/Troll Rogue
+    #optional
     #label Swordtraining1
     .goto Undercity,57.29,32.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Archibald|r in the War Quarter
@@ -3041,6 +3046,7 @@ step << Orc Rogue/Troll Rogue
     .target Archibald
     .money <0.3023
 step << Orc Rogue/Troll Rogue
+    #optional
     .goto Undercity,77.08,49.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Charles|r |cRXP_BUY_ in the Rogue's Quarter. Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
     .collect 851,1,435,1 --Collect Cutlass (1)
@@ -3049,6 +3055,7 @@ step << Orc Rogue/Troll Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
     .target Charles Seaton
 step << Orc Rogue/Troll Rogue
+    #optional
     #completewith KillDevlin
     +Equip the |T135346:0|t[Cutlass]
     .use 851
@@ -3056,6 +3063,7 @@ step << Orc Rogue/Troll Rogue
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Orc Rogue/Troll Rogue
+    #optional
     .goto Undercity,84.86,20.34
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Perform a Logout Skip in the Magic Quarter by positioning your character on the highest part of the lowest staircase until it looks like they're floating, then logging out and back in|r
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_CLICK HERE for an example|r
@@ -3065,6 +3073,7 @@ step
     #completewith next
     .goto Tirisfal Glades,61.52,53.20,80 >> Travel to Brill
 step
+    #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman|r and |cRXP_FRIENDLY_Gretchen|r inside the inn
     >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_is on the second floor|r
     .accept 354 >>Accept Deaths in the Family
@@ -3117,6 +3126,7 @@ step
     .target Mrs. Winters
     .money <0.05
 step
+    #optional
     .goto Tirisfal Glades,60.59,51.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zygand|r
     .accept 427 >>Accept At War With The Scarlet Crusade
@@ -3127,6 +3137,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wanted Poster|r
     .accept 398 >>Accept Wanted: Maggot Eye
 step
+    #optional
     .goto Tirisfal Glades,61.26,50.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sevren|r inside the building
     .accept 358 >>Accept Graverobbers
@@ -3139,6 +3150,7 @@ step
     .accept 367 >>Accept A New Plague
     .target Apothecary Johaan
 step
+    #optional
     .goto Tirisfal Glades,58.20,51.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r
     .accept 404 >>Accept A Putrid Task
@@ -3169,6 +3181,7 @@ step
     .mob Decrepit Darkhound
     .mob Cursed Darkhound
 step
+    #optional
     #label Claws
     .goto Tirisfal Glades,54.95,50.53,50,0
     .goto Tirisfal Glades,53.35,50.29,50,0
@@ -3185,6 +3198,7 @@ step
     .mob Ravaged Corpse
     .isOnQuest 404
 step
+    #optional
     #completewith Pumpkins
     >>Kill any |cRXP_ENEMY_Duskbat|r that you see. Loot them for their |cRXP_LOOT_Pelts|r
     .complete 375,1 --Duskbat Pelt (5)
@@ -3192,6 +3206,7 @@ step
     .mob Vampiric Duskbat
     .isOnQuest 375
 step
+    #optional
     #label Pumpkins
     .goto Tirisfal Glades,40.91,54.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Simmer|r
@@ -3199,6 +3214,7 @@ step
     .target Deathguard Simmer
     .maxlevel 11
 step
+    #optional
     .goto Tirisfal Glades,37.20,52.17,50,0
     .goto Tirisfal Glades,36.64,50.09,50,0
     .goto Tirisfal Glades,36.10,49.07,50,0
@@ -3210,6 +3226,7 @@ step
     .complete 365,1 --Tirisfal Pumpkin (10)
     .isOnQuest 365
 step
+    #optional
     .loop 25,Tirisfal Glades,33.73,49.34,33.65,51.07,31.78,51.36,30.02,50.48,29.91,49.24,30.62,47.53,31.01,46.50,32.15,44.83,33.73,45.29,34.10,47.88,33.73,49.34
     >>Kill |cRXP_ENEMY_Scarlet Warriors|r
     .complete 427,1 --Scarlet Warrior (10)
@@ -3230,6 +3247,7 @@ step
     #completewith Brillturnins2
     .goto Tirisfal Glades,58.20,51.43,120 >> Travel back to Brill
 step
+    #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r, |cRXP_FRIENDLY_Johaan|r, |cRXP_FRIENDLY_Zygand|r and |cRXP_FRIENDLY_Burgess|r
     .turnin 404 >>Turn in A Putrid Task
     .accept 426 >>Accept The Mills Overrun
@@ -3252,6 +3270,7 @@ step
     .isQuestComplete 427
     .isQuestComplete 404
 step
+    #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r, |cRXP_FRIENDLY_Johaan|r, |cRXP_FRIENDLY_Zygand|r and |cRXP_FRIENDLY_Burgess|r
     .turnin 404 >>Turn in A Putrid Task
     .accept 426 >>Accept The Mills Overrun
@@ -3271,6 +3290,7 @@ step
     .isQuestComplete 427
     .isQuestComplete 404
 step
+    #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r and |cRXP_FRIENDLY_Johaan|r
     .turnin 404 >>Turn in A Putrid Task
     .accept 426 >>Accept The Mills Overrun
@@ -3285,6 +3305,7 @@ step
     .isQuestComplete 404
     .isQuestComplete 365
 step
+    #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r, |cRXP_FRIENDLY_Zygand|r and |cRXP_FRIENDLY_Burgess|r
     .turnin 367 >>Turn in A New Plague
     .turnin 365 >> Turn in Fields of Grief
@@ -3302,6 +3323,7 @@ step
     .isQuestComplete 427
     .isQuestComplete 365
 step
+    #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r, |cRXP_FRIENDLY_Zygand|r and |cRXP_FRIENDLY_Burgess|r
     .turnin 367 >>Turn in A New Plague
     .accept 368 >>Accept A New Plague
@@ -3316,6 +3338,7 @@ step
     .target Deathguard Burgess
     .isQuestComplete 427
 step
+    #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r and |cRXP_FRIENDLY_Johaan|r
     .turnin 404 >>Turn in A Putrid Task
     .accept 426 >>Accept The Mills Overrun
@@ -3334,6 +3357,7 @@ step
     .accept 368 >>Accept A New Plague
     .target Apothecary Johaan
 step
+    #optional
     .goto Tirisfal Glades,61.97,51.29
     >>|cRXP_WARN_Enter the room behind the innkeeper, then go downstairs|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captured Scarlet Zealot|r
@@ -3384,6 +3408,7 @@ step << Undead Priest
     .goto Undercity,64.22,39.77,10,0
     .goto Undercity,65.53,43.62,15 >> Take the lift down to the Undercity
 step << Undead Priest
+    #optional
     .goto Undercity,48.98,18.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aelthalyste|r
     .turnin 5660 >> Turn in Touch of Weakness
@@ -3404,6 +3429,7 @@ step << Rogue
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Rogue
+    #optional
     #completewith Swordtraining1
     .goto Undercity,66.09,20.06,20,0
     .goto Undercity,64.37,23.94,20,0
@@ -3415,6 +3441,7 @@ step << Rogue
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Rogue
+    #optional
     .goto Undercity,63.25,48.56
     .fp Undercity >> Get the Undercity flight path
     .target Michael Garrett
@@ -3422,6 +3449,7 @@ step << Rogue
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Undead Rogue
+    #optional
     .goto Undercity,83.52,69.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mennet|r
     .turnin 1885 >>Turn in Mennet Carkad
@@ -3431,6 +3459,7 @@ step << Undead Rogue
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Rogue
+    #optional
     #label Swordtraining1
     .goto Undercity,57.29,32.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Archibald|r in the War Quarter
@@ -3438,6 +3467,7 @@ step << Rogue
     .target Archibald
     .money <0.3023
 step << Rogue
+    #optional
     .goto Undercity,77.08,49.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Charles|r |cRXP_BUY_ in the Rogue's Quarter. Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
     .collect 851,1,435,1 --Collect Cutlass (1)
@@ -3446,6 +3476,7 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
     .target Charles Seaton
 step << Rogue
+    #optional
     #completewith KillDevlin
     +Equip the |T135346:0|t[Cutlass]
     .use 851
@@ -3453,6 +3484,7 @@ step << Rogue
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Warlock/Mage/Rogue
+    #optional
     #completewith KillDevlin
     .goto Undercity,47.25,39.12,50,0
     .goto Undercity,46.35,43.86,10,0
@@ -3466,6 +3498,7 @@ step << Warlock/Mage/Rogue
     .zone Tirisfal Glades >> Leave Undercity through the Sewers
     .zoneskip Tirisfal Glades
 step << Undead Priest
+    #optional
     #completewith KillDevlin
     .goto Undercity,47.25,39.12,50,0
     .goto Undercity,46.35,43.86,10,0
@@ -3479,16 +3512,19 @@ step << Undead Priest
     .zone Tirisfal Glades >> Leave Undercity through the Sewers
     .zoneskip Tirisfal Glades
 step
+    #optional
     #completewith ScarletCrusade1
     >>Collect |cRXP_LOOT_Scarlet Insignia Rings|r. You don't have to complete this step now
     .complete 374,1 --Scarlet Insignia Ring (10)
     .isOnQuest 374
 step << Warlock
+    #optional
     #completewith next
     .goto Tirisfal Glades,51.06,67.57
     >>Loot |cRXP_PICK_Perrine's Chest|r for |T133733:0|t[Egalin's Grimoire]
     .complete 1473,1 --Egalin's Grimoire (1)
 step
+    #optional
     #label ScarletCrusade1
     .loop 25,Tirisfal Glades,50.07,68.87,50.23,66.94,51.16,65.73,51.75,66.04,52.93,67.62,52.72,69.33,51.96,69.57,51.03,69.55
     >>Kill |cRXP_ENEMY_Captain Perrine|r, |cRXP_ENEMY_Zealots|r and |cRXP_ENEMY_Missionaries|r.
@@ -3548,6 +3584,7 @@ step << Warlock
     .zone Tirisfal Glades >> Exit Undercity
     .zoneskip Tirisfal Glades
 step
+    #optional
     #completewith next
     >>Kill any |cRXP_ENEMY_Duskbat|r that you see. Loot them for their |cRXP_LOOT_Pelts|r
     .complete 375,1 --Duskbat Pelt (5)
@@ -3555,15 +3592,19 @@ step
     .mob Vampiric Duskbat
     .isOnQuest 375
 step
+    #optional
     .goto Tirisfal Glades,47.60,44.03,150 >> Travel northwest toward Agamand Mills
     .isOnQuest 362
 step
+    #optional
     #completewith ThurmanGregor
     >>|T134939:0|t[|cFF00BCD4Thurman's Letter|r] |cRXP_WARN_may drop from these mobs. Accept the quest if it does|r
     .collect 2839,1,361 --Collect A Letter to Yvette (1)
     .accept 361 >> Accept A Letter Undelivered
     .use 2839
+    .isOnQuest 362
 step
+    #optional
     #sticky
     #label MillsOverun
     >>Kill |cRXP_ENEMY_Soldiers|r and |cRXP_ENEMY_Bonecasters|r. Loot them for their |cRXP_LOOT_Ribs|r and |cRXP_LOOT_Skulls|r
@@ -3574,6 +3615,7 @@ step
     .mob Cracked Skull Soldier
     .isOnQuest 426
 step
+    #optional
     #label KillDevlin
     .goto Tirisfal Glades,47.34,40.78
     >>Kill |cRXP_ENEMY_Devlin|r. Loot him for his |cRXP_LOOT_Remains|r
@@ -3581,12 +3623,14 @@ step
     .mob Devlin Agamand
     .isOnQuest 362
 step
+    #optional
     .goto Tirisfal Glades,49.34,36.02
     >>Kill |cRXP_ENEMY_Nissa|r. Loot her for her |cRXP_LOOT_Remains|r. She can be inside the building
     .complete 354,2 --Nissa's Remains (1)
     .mob Nissa Agamand
     .isOnQuest 354
 step
+    #optional
     #label ThurmanGregor
     .goto Tirisfal Glades,43.71,35.25,60,0
     .goto Tirisfal Glades,45.03,30.99,60,0
@@ -3601,6 +3645,7 @@ step
     .unitscan Gregor Agamand
     .isOnQuest 354
 step
+    #optional
     #requires MillsOverun
     #completewith MaggotEye
     .goto Tirisfal Glades,54.32,31.56,15,0
@@ -3611,6 +3656,7 @@ step
     >>|cRXP_WARN_Be careful. Don't take too much fall damage. Follow the waypoint for safety|r
     .isQuestComplete 354
 step
+    #optional
     #requires MillsOverun
     #completewith next
     >>Kill |cRXP_ENEMY_Gnolls|r and |cRXP_ENEMY_Mongrels|r. Loot them for their |cRXP_LOOT_Ichor|r
@@ -3620,6 +3666,7 @@ step
     .mob Rot Hide Mongrel
     .isOnQuest 358
 step
+    #optional
     #requires MillsOverun
     #label MaggotEye
     .goto Tirisfal Glades,58.66,30.77
@@ -3642,6 +3689,7 @@ step
     .mob Vile Fin Minor Oracle
     .mob Vile Fin Muckdweller
 step
+    #optional
     #completewith RotHideGnolls
     >>Kill any |cRXP_ENEMY_Duskbat|r that you see. Loot them for their |cRXP_LOOT_Pelts|r
     .complete 375,1 --Duskbat Pelt (5)
@@ -3649,6 +3697,7 @@ step
     .mob Vampiric Duskbat
     .isOnQuest 375
 step
+    #optional
     #label RotHideGnolls
     .goto Tirisfal Glades,56.31,39.67,40,0
     .goto Tirisfal Glades,54.71,41.19,40,0
@@ -3664,12 +3713,14 @@ step
     .mob Rot Hide Graverobber
     .isOnQuest 358
 step
+    #optional
     .goto Tirisfal Glades,58.19,51.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r
     .turnin 426 >>Turn in The Mills Overrun
     .target Deathguard Dillinger
     .isQuestComplete 426
 step
+    #optional
     .goto Tirisfal Glades,59.45,52.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r
     .turnin 368 >>Turn in A New Plague
@@ -3677,12 +3728,14 @@ step
     .target Apothecary Johaan
     .isQuestComplete 368
 step
+    #optional
     .goto Tirisfal Glades,59.45,52.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r
     .accept 369 >>Accept A New Plague
     .target Apothecary Johaan
     .isQuestTurnedIn 368
 step
+    #optional
     .goto Tirisfal Glades,60.58,51.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zygand|r
     .turnin 398 >>Turn in Wanted: Maggot Eye
@@ -3691,18 +3744,21 @@ step
     .target Executor Zygand
     .isQuestComplete 370
 step
+    #optional
     .goto Tirisfal Glades,60.58,51.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zygand|r
     .turnin 398 >>Turn in Wanted: Maggot Eye
     .target Executor Zygand
     .isQuestComplete 398
 step
+    #optional
     .goto Tirisfal Glades,60.58,51.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zygand|r
     .accept 371 >>Accept At War With The Scarlet Crusade
     .target Executor Zygand
     .isQuestTurnedIn 370
 step
+    #optional
     .goto Tirisfal Glades,61.26,50.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r, |cRXP_FRIENDLY_Johaan|r, |cRXP_FRIENDLY_Zygand|r and |cRXP_FRIENDLY_Sevren|r
     .turnin 358 >>Turn in Graverobbers
@@ -3710,6 +3766,7 @@ step
     .target Magistrate Sevren
     .isQuestComplete 358
 step
+    #optional
     .goto Tirisfal Glades,61.26,50.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r, |cRXP_FRIENDLY_Johaan|r, |cRXP_FRIENDLY_Zygand|r and |cRXP_FRIENDLY_Sevren|r
     .accept 359 >>Accept Forsaken Duties
@@ -3719,6 +3776,7 @@ step
     #completewith HorrorsandSpirits
     +|cRXP_WARN_Bind your|r |T133849:0|t[Slumber Sand]|cRXP_WARN_. Save it for emergency situations|r
 step
+    #optional
     .goto Tirisfal Glades,61.03,52.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Abigail|r
     >>|cRXP_BUY_Buy a|r |T132891:0|t[Coarse Thread] |cRXP_BUY_from|r |cRXP_FRIENDLY_her|r
@@ -3727,6 +3785,7 @@ step
     .itemcount 2876,5
     .isOnQuest 375
 step
+    #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yvette|r, |cRXP_FRIENDLY_Coleman|r and |cRXP_FRIENDLY_Gretchen|r inside the inn
     >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_is on the second floor|r
     .turnin 361 >>Turn in A Letter Undelivered
@@ -3746,6 +3805,7 @@ step
     .isOnQuest 361
     .group
 step
+    #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman|r and |cRXP_FRIENDLY_Gretchen|r inside the inn
     >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_is on the second floor|r
     .turnin 354 >>Turn in Deaths in the Family
@@ -3761,6 +3821,7 @@ step
     .isQuestComplete 375
     .group
 step
+    #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yvette|r and |cRXP_FRIENDLY_Coleman|r inside the inn
     >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_is on the second floor|r
     .turnin 361 >>Turn in A Letter Undelivered
@@ -3776,6 +3837,7 @@ step
     .isOnQuest 361
     .group
 step
+    #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman|r inside the inn
     .turnin 354 >>Turn in Deaths in the Family
     .turnin 362 >>Turn in The Haunted Mills
@@ -3787,6 +3849,7 @@ step
     .group
     .isQuestComplete 354
 step
+    #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yvette|r, |cRXP_FRIENDLY_Coleman|r and |cRXP_FRIENDLY_Gretchen|r inside the inn
     >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_is on the second floor|r
     .turnin 361 >>Turn in A Letter Undelivered
@@ -3804,6 +3867,7 @@ step
     .isQuestComplete 375
     .isOnQuest 361
 step
+    #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman|r and |cRXP_FRIENDLY_Gretchen|r inside the inn
     >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_is on the second floor|r
     .turnin 354 >>Turn in Deaths in the Family
@@ -3817,6 +3881,7 @@ step
     .target Gretchen Dedmar
     .isQuestComplete 375
 step
+    #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yvette|r and |cRXP_FRIENDLY_Coleman|r inside the inn
     >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_is on the second floor|r
     .turnin 361 >>Turn in A Letter Undelivered
@@ -3830,6 +3895,7 @@ step
     .target Coleman Farthing
     .isOnQuest 361
 step
+    #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman|r inside the inn
     .turnin 354 >>Turn in Deaths in the Family
     .turnin 362 >>Turn in The Haunted Mills
@@ -3887,6 +3953,7 @@ step
     .money <0.075 << Warlock/Hunter
     .target Innkeeper Renee
 step
+    #optional
     .goto Tirisfal Glades,65.49,60.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Linnea|r
     .turnin 359 >>Turn in Forsaken Duties
@@ -3896,12 +3963,14 @@ step
     .isQuestTurnedIn 358
     .maxlevel 13
 step
+    #optional
     .goto Tirisfal Glades,65.49,60.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Linnea|r
     .accept 356 >>Accept Rear Guard Patrol
     .target Deathguard Linnea
     .maxlevel 13
 step
+    #optional
     #completewith HorrorsandSpirits
     >>Kill any |cRXP_ENEMY_Duskbat|r that you see. Loot them for their |cRXP_LOOT_Pelts|r
     .complete 375,1 --Duskbat Pelt (5)
@@ -3909,6 +3978,7 @@ step
     .mob Vampiric Duskbat
     .isOnQuest 375
 step << Mage
+#optional
     #completewith next
     >>Kill |cRXP_ENEMY_Bleeding Horrors|r and |cRXP_ENEMY_Wandering Spirits|r
     .complete 356,1 --Bleeding Horror (8)
@@ -3921,6 +3991,7 @@ step << Mage
     >>Loot any of the plants on the ground for a |cRXP_PICK_Balnir Snapdragon|r
     .complete 1882,1 --Balnir Snapdragons (1)
 step
+    #optional
     #label HorrorsandSpirits
     .loop 25,Tirisfal Glades,74.31,60.98,74.45,59.64,75.08,58.56,76.45,58.67,77.41,58.66,78.55,60.43,77.45,61.46,76.79,62.60,74.99,61.98,74.31,60.98
     >>Kill |cRXP_ENEMY_Bleeding Horrors|r and |cRXP_ENEMY_Wandering Spirits|r
@@ -3930,17 +4001,21 @@ step
     .mob Wandering Spirit
     .isOnQuest 356
 step << Priest/Warlock
+    #optional
     #completewith Scarletrings
     >>|cRXP_WARN_Collect 3 stacks of|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for your Lesser Magic Wand. This is the last chance to get enough before Silverpine Forest|r
     .collect 2589,60,435,1 --Linen Cloth (60)
     .mob Scarlet Friar
     .mob Scarlet Zealot
+    .isOnQuest 371
 step
+    #optional
     #completewith next
     >>Collect |cRXP_LOOT_Scarlet Insignia Rings|r
     .complete 374,1 --Scarlet Insignia Ring (10)
     .isOnQuest 374
 step
+    #optional
     .goto Tirisfal Glades,78.82,56.14,20,0
     .goto Tirisfal Glades,80.95,57.21,40,0
     .goto Tirisfal Glades,81.62,54.84,40,0
@@ -3959,6 +4034,7 @@ step
     .mob Scarlet Friar
     .isOnQuest 371
 step
+    #optional
     #label ScarletRings
     .goto Tirisfal Glades,80.95,57.21,40,0
     .goto Tirisfal Glades,81.62,54.84,40,0
@@ -3989,6 +4065,7 @@ step << Priest/Warlock
     .mob Scarlet Friar
     .mob Scarlet Zealot
 step
+    #optional
     #completewith next
     >>Kill any |cRXP_ENEMY_Duskbat|r that you see. Loot them for their |cRXP_LOOT_Pelts|r
     .complete 375,1 --Duskbat Pelt (5)
@@ -3996,15 +4073,19 @@ step
     .mob Vampiric Duskbat
     .isOnQuest 375
 step
+    #optional
     .loop 25,Tirisfal Glades,83.50,55.56,85.03,54.72,86.56,54.51,88.06,54.99,88.94,53.56,89.70,51.88,90.92,50.56,90.87,48.33,89.87,46.65,85.04,46.68,84.52,49.29,83.46,52.09
     >>Kill |cRXP_ENEMY_Vicious Night Web Spiders|r. Loot them for their |cRXP_LOOT_Venom|r
     .complete 369,1 --Vicious Night Web Spider Venom (4)
     .mob Vicious Night Web Spider
     .isOnQuest 369
 step
+    #optional
     #completewith LinneaTurnin
     .goto Tirisfal Glades,65.49,60.25,60 >> Travel back to Linnea
+    .isQuestComplete 356
 step
+    #optional
     #completewith next
     >>Finish killing |cRXP_ENEMY_Duskbats|r. Loot them for their |cRXP_LOOT_Pelts|r
     >>|cRXP_WARN_You can skip this quest if your rng has been bad|r
@@ -4013,6 +4094,7 @@ step
     .mob Vampiric Duskbat
     .isOnQuest 375
 step
+    #optional
     #label LinneaTurnin
     .goto Tirisfal Glades,65.49,60.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Linnea|r
@@ -4020,6 +4102,7 @@ step
     .target Deathguard Linnea
     .isQuestComplete 356
 step
+    #optional
     .goto Tirisfal Glades,61.03,52.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Abigail|r
     >>|cRXP_BUY_Buy a|r |T132891:0|t[Coarse Thread] |cRXP_BUY_from|r |cRXP_FRIENDLY_her|r
@@ -4028,6 +4111,7 @@ step
     .itemcount 2876,5
     .isOnQuest 375
 step
+    #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Burgess|r, |cRXP_FRIENDLY_Zygand|r, |cRXP_FRIENDLY_Sevren|r and |cRXP_FRIENDLY_Johaan|r
     .turnin 374 >>Turn in Proof of Demise
     .goto Tirisfal Glades,60.93,52.01
@@ -4049,6 +4133,7 @@ step
     .isQuestComplete 374
     .group
 step
+    #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Burgess|r, |cRXP_FRIENDLY_Zygand|r, |cRXP_FRIENDLY_Sevren|r and |cRXP_FRIENDLY_Johaan|r
     .turnin 374 >>Turn in Proof of Demise
     .goto Tirisfal Glades,60.93,52.01
@@ -4068,6 +4153,7 @@ step
     .isQuestComplete 371
     .isQuestComplete 374
 step
+    #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sevren|r and |cRXP_FRIENDLY_Johaan|r
     .turnin 360 >>Turn in Return to the Magistrate
     .turnin 355 >>Turn in Speak with Sevren
@@ -4083,6 +4169,7 @@ step
     .isQuestComplete 369
     .group
 step
+    #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sevren|r and |cRXP_FRIENDLY_Johaan|r
     .turnin 360 >>Turn in Return to the Magistrate
     .turnin 355 >>Turn in Speak with Sevren
@@ -4103,6 +4190,7 @@ step
     .accept 445 >>Accept Delivery to Silverpine Forest
     .target Apothecary Johaan
 step
+    #optional
     .goto Tirisfal Glades,61.89,52.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gretchen|r upstairs
     .turnin 375 >>Turn in The Chill of Death
@@ -4359,13 +4447,6 @@ step << !Undead
     .fp Undercity >> Get the Undercity flight path
     >>|cRXP_WARN_Skip this step if you already took the flight path!|r
     .target Michael Garrett
-step << Undead Rogue
-    .goto Undercity,83.52,69.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mennet|r
-    .turnin 1885 >>Turn in Mennet Carkad
-    .accept 1886 >>Accept The Deathstalkers
-    .target Mennet Carkad
-    .isOnQuest 1885
 step << Rogue
     #label Swordtraining2
     .goto Undercity,57.29,32.72
@@ -4406,7 +4487,7 @@ step << Undead Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
 step << Troll Warrior/Undead Warrior/Tauren Shaman/Troll Shaman/Orc Shaman
-    .goto Orgrimmar,81.17,18.69
+    .goto Undercity,58.82,32.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Benijah|r|cRXP_BUY_. Buy a|r |T135154:0|t[Quarter Staff] |cRXP_BUY_from him|r
     .collect 854,1,435,1 --Collect Quarter Staff (1)
     .money <0.3022
