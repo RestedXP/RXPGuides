@@ -7,6 +7,10 @@ local fmt, tinsert, ipairs = string.format, table.insert, ipairs
 local GetItemInfoInstant, GetInventoryItemLink, IsEquippedItem =
     _G.GetItemInfoInstant, _G.GetInventoryItemLink, _G.IsEquippedItem
 local GetItemStats = _G.GetItemStats
+local UnitLevel = _G.UnitLevel
+
+local ItemArmorSubclass, ItemWeaponSubclass = Enum.ItemArmorSubclass,
+                                              Enum.ItemWeaponSubclass
 
 addon.itemUpgrades = addon:NewModule("ItemUpgrades", "AceEvent-3.0")
 
@@ -20,43 +24,208 @@ local session = {
     -- Item stats cache
     itemCache = {},
 
+    -- Track compatible
+    equippableSlots = {},
+    equippableArmor = {},
+    equippableWeapons = {},
+
     -- TODO handle thread-safe?
     comparisonTip = nil
 }
 
-local SLOT_MAP = {
-    ["INVTYPE_HEAD"] = _G.INVSLOT_HEAD,
-    ["INVTYPE_NECK"] = _G.INVSLOT_NECK,
-    ["INVTYPE_SHOULDER"] = _G.INVSLOT_SHOULDER,
-    ["INVTYPE_BODY"] = _G.INVSLOT_BODY,
-    ["INVTYPE_CHEST"] = _G.INVSLOT_CHEST,
-    ["INVTYPE_ROBE"] = _G.INVSLOT_CHEST,
-    ["INVTYPE_WAIST"] = _G.INVSLOT_WAIST,
-    ["INVTYPE_LEGS"] = _G.INVSLOT_LEGS,
-    ["INVTYPE_FEET"] = _G.INVSLOT_FEET,
-    ["INVTYPE_WRIST"] = _G.INVSLOT_WRIST,
-    ["INVTYPE_HAND"] = _G.INVSLOT_HAND,
-    ["INVTYPE_FINGER"] = {
-        [_G.INVSLOT_FINGER1] = true,
-        [_G.INVSLOT_FINGER2] = true
+local CLASS_MAP = {
+    ["All"] = {
+        ["Slot"] = {
+            ["INVTYPE_HEAD"] = _G.INVSLOT_HEAD,
+            ["INVTYPE_NECK"] = _G.INVSLOT_NECK,
+            ["INVTYPE_SHOULDER"] = _G.INVSLOT_SHOULDER,
+            ["INVTYPE_BODY"] = _G.INVSLOT_BODY,
+            ["INVTYPE_CHEST"] = _G.INVSLOT_CHEST,
+            ["INVTYPE_ROBE"] = _G.INVSLOT_CHEST,
+            ["INVTYPE_WAIST"] = _G.INVSLOT_WAIST,
+            ["INVTYPE_LEGS"] = _G.INVSLOT_LEGS,
+            ["INVTYPE_FEET"] = _G.INVSLOT_FEET,
+            ["INVTYPE_WRIST"] = _G.INVSLOT_WRIST,
+            ["INVTYPE_HAND"] = _G.INVSLOT_HAND,
+            ["INVTYPE_FINGER"] = {
+                [_G.INVSLOT_FINGER1] = true,
+                [_G.INVSLOT_FINGER2] = true
+            },
+            ["INVTYPE_TRINKET"] = {
+                [_G.INVSLOT_TRINKET1] = true,
+                [_G.INVSLOT_TRINKET2] = true
+            },
+            ["INVTYPE_CLOAK"] = _G.INVSLOT_BACK,
+            ["INVTYPE_HOLDABLE"] = _G.INVSLOT_OFFHAND,
+            ["INVTYPE_WEAPONMAINHAND"] = _G.INVSLOT_MAINHAND
+        },
+        ["ArmorType"] = {
+            [ItemArmorSubclass.Generic] = true, -- Trinkets, rings, necks
+            [ItemArmorSubclass.Cloth] = true -- Cloaks plus cloth armor
+        },
+        ["WeaponType"] = {[ItemWeaponSubclass.Generic] = true}
     },
-    ["INVTYPE_TRINKET"] = {
-        [_G.INVSLOT_TRINKET1] = true,
-        [_G.INVSLOT_TRINKET2] = true
+    ["DRUID"] = {
+        ["Slot"] = {},
+        ["ArmorType"] = {[ItemArmorSubclass.Leather] = true},
+        ["WeaponType"] = {
+            [ItemWeaponSubclass.Mace1H] = true,
+            [ItemWeaponSubclass.Mace2H] = true,
+            [ItemWeaponSubclass.Staff] = true,
+            [ItemWeaponSubclass.Unarmed] = true,
+            [ItemWeaponSubclass.Dagger] = true
+        }
     },
-    ["INVTYPE_CLOAK"] = _G.INVSLOT_BACK,
-    ["INVTYPE_WEAPON"] = {
-        [_G.INVSLOT_MAINHAND] = true,
-        [_G.INVSLOT_OFFHAND] = true
+    ["HUNTER"] = {
+        ["Slot"] = {
+            ["INVTYPE_THROWN"] = _G.INVSLOT_RANGED,
+            ["INVTYPE_RANGEDRIGHT"] = _G.INVSLOT_RANGED,
+            ["INVTYPE_RANGED"] = _G.INVSLOT_RANGED,
+            ["INVTYPE_WEAPONOFFHAND"] = _G.INVSLOT_OFFHAND
+        },
+        ["ArmorType"] = {
+            [ItemArmorSubclass.Leather] = true,
+            [ItemArmorSubclass.Mail] = function()
+                return UnitLevel("player") >= 40
+            end
+        },
+        ["WeaponType"] = {
+            [ItemWeaponSubclass.Axe1H] = true,
+            [ItemWeaponSubclass.Axe2H] = true,
+            [ItemWeaponSubclass.Bows] = true,
+            [ItemWeaponSubclass.Guns] = true,
+            [ItemWeaponSubclass.Polearm] = function()
+                return UnitLevel("player") >= 20
+            end,
+            [ItemWeaponSubclass.Sword1H] = true,
+            [ItemWeaponSubclass.Sword2H] = true,
+            [ItemWeaponSubclass.Staff] = true,
+            [ItemWeaponSubclass.Unarmed] = true,
+            [ItemWeaponSubclass.Dagger] = true,
+            [ItemWeaponSubclass.Crossbow] = true
+        }
     },
-    ["INVTYPE_SHIELD"] = _G.INVSLOT_OFFHAND,
-    ["INVTYPE_2HWEAPON"] = _G.INVSLOT_MAINHAND,
-    ["INVTYPE_WEAPONMAINHAND"] = _G.INVSLOT_MAINHAND,
-    ["INVTYPE_WEAPONOFFHAND"] = _G.INVSLOT_OFFHAND,
-    ["INVTYPE_HOLDABLE"] = _G.INVSLOT_OFFHAND,
-    ["INVTYPE_RANGED"] = _G.INVSLOT_RANGED,
-    ["INVTYPE_THROWN"] = _G.INVSLOT_RANGED,
-    ["INVTYPE_RANGEDRIGHT"] = _G.INVSLOT_RANGED
+    ["MAGE"] = {
+        ["Slot"] = {["INVTYPE_RANGEDRIGHT"] = _G.INVSLOT_RANGED},
+        ["ArmorType"] = {},
+        ["WeaponType"] = {
+            [ItemWeaponSubclass.Sword1H] = true,
+            [ItemWeaponSubclass.Dagger] = true,
+            [ItemWeaponSubclass.Staff] = true,
+            [ItemWeaponSubclass.Wand] = true
+        }
+    },
+    ["PALADIN"] = {
+        ["Slot"] = {["INVTYPE_SHIELD"] = _G.INVSLOT_OFFHAND},
+        ["ArmorType"] = {
+            [ItemArmorSubclass.Leather] = true,
+            [ItemArmorSubclass.Mail] = true,
+            [ItemArmorSubclass.Plate] = function()
+                return UnitLevel("player") >= 40
+            end
+        },
+        ["WeaponType"] = {
+            [ItemWeaponSubclass.Axe1H] = true,
+            [ItemWeaponSubclass.Axe2H] = true,
+            [ItemWeaponSubclass.Mace1H] = true,
+            [ItemWeaponSubclass.Mace2H] = true,
+            [ItemWeaponSubclass.Polearm] = function()
+                return UnitLevel("player") >= 20
+            end,
+            [ItemWeaponSubclass.Sword1H] = true,
+            [ItemWeaponSubclass.Sword2H] = true
+        }
+    },
+    ["PRIEST"] = {
+        ["Slot"] = {["INVTYPE_RANGEDRIGHT"] = _G.INVSLOT_RANGED},
+        ["ArmorType"] = {},
+        ["WeaponType"] = {
+            [ItemWeaponSubclass.Mace1H] = true,
+            [ItemWeaponSubclass.Dagger] = true,
+            [ItemWeaponSubclass.Staff] = true,
+            [ItemWeaponSubclass.Wand] = true
+        }
+    },
+    ["ROGUE"] = {
+        ["Slot"] = {
+            ["INVTYPE_THROWN"] = _G.INVSLOT_RANGED,
+            ["INVTYPE_RANGEDRIGHT"] = _G.INVSLOT_RANGED,
+            ["INVTYPE_RANGED"] = _G.INVSLOT_RANGED,
+            ["INVTYPE_WEAPONOFFHAND"] = _G.INVSLOT_OFFHAND
+        },
+        ["ArmorType"] = {[ItemArmorSubclass.Leather] = true},
+        ["WeaponType"] = {
+            [ItemWeaponSubclass.Bows] = true,
+            [ItemWeaponSubclass.Guns] = true,
+            [ItemWeaponSubclass.Mace1H] = true,
+            [ItemWeaponSubclass.Sword1H] = true,
+            [ItemWeaponSubclass.Unarmed] = true,
+            [ItemWeaponSubclass.Dagger] = true,
+            [ItemWeaponSubclass.Thrown] = true,
+            [ItemWeaponSubclass.Crossbow] = true
+        }
+    },
+    ["SHAMAN"] = {
+        ["Slot"] = {{["INVTYPE_SHIELD"] = _G.INVSLOT_OFFHAND}},
+        ["ArmorType"] = {
+            [ItemArmorSubclass.Leather] = true,
+            [ItemArmorSubclass.Mail] = function()
+                return UnitLevel("player") >= 40
+            end
+        },
+        ["WeaponType"] = {
+            [ItemWeaponSubclass.Axe1H] = true,
+            [ItemWeaponSubclass.Axe2H] = true,
+            [ItemWeaponSubclass.Mace1H] = true,
+            [ItemWeaponSubclass.Mace2H] = true,
+            [ItemWeaponSubclass.Staff] = true,
+            [ItemWeaponSubclass.Unarmed] = true,
+            [ItemWeaponSubclass.Dagger] = true
+        }
+    },
+    ["WARLOCK"] = {
+        ["Slot"] = {["INVTYPE_RANGEDRIGHT"] = _G.INVSLOT_RANGED},
+        ["ArmorType"] = {},
+        ["WeaponType"] = {
+            [ItemWeaponSubclass.Sword1H] = true,
+            [ItemWeaponSubclass.Dagger] = true,
+            [ItemWeaponSubclass.Staff] = true,
+            [ItemWeaponSubclass.Wand] = true
+        }
+    },
+    ["WARRIOR"] = {
+        ["Slot"] = {
+            ["INVTYPE_THROWN"] = _G.INVSLOT_RANGED,
+            ["INVTYPE_RANGEDRIGHT"] = _G.INVSLOT_RANGED,
+            ["INVTYPE_SHIELD"] = _G.INVSLOT_OFFHAND,
+            ["INVTYPE_WEAPONOFFHAND"] = _G.INVSLOT_OFFHAND
+        },
+        ["ArmorType"] = {
+            [ItemArmorSubclass.Leather] = true,
+            [ItemArmorSubclass.Mail] = true,
+            [ItemArmorSubclass.Plate] = function()
+                return UnitLevel("player") >= 40
+            end
+        },
+        ["WeaponType"] = {
+            [ItemWeaponSubclass.Axe1H] = true,
+            [ItemWeaponSubclass.Axe2H] = true,
+            [ItemWeaponSubclass.Bows] = true,
+            [ItemWeaponSubclass.Guns] = true,
+            [ItemWeaponSubclass.Mace1H] = true,
+            [ItemWeaponSubclass.Mace2H] = true,
+            [ItemWeaponSubclass.Polearm] = function()
+                return UnitLevel("player") >= 20
+            end,
+            [ItemWeaponSubclass.Sword1H] = true,
+            [ItemWeaponSubclass.Sword2H] = true,
+            [ItemWeaponSubclass.Staff] = true,
+            [ItemWeaponSubclass.Unarmed] = true,
+            [ItemWeaponSubclass.Thrown] = true,
+            [ItemWeaponSubclass.Dagger] = true,
+            [ItemWeaponSubclass.Crossbow] = true
+        }
+    }
 }
 
 -- Map quasi-friendly key from GSheet/StatWeights to regex-friendly value
@@ -113,8 +282,30 @@ local function KeyToRegex(keyString)
     return regex
 end
 
+function addon.itemUpgrades:UpdateSlotMap()
+
+    session.equippableSlots = CLASS_MAP["All"]["Slot"]
+    for k, v in pairs(CLASS_MAP[addon.player.class]["Slot"]) do
+        if type(v) == "function" then v = v() end
+        session.equippableSlots[k] = v
+    end
+
+    session.equippableArmor = CLASS_MAP["All"]["ArmorType"]
+    for k, v in pairs(CLASS_MAP[addon.player.class]["ArmorType"]) do
+        if type(v) == "function" then v = v() end
+        session.equippableArmor[k] = v
+    end
+
+    session.equippableWeapons = CLASS_MAP["All"]["WeaponType"]
+    for k, v in pairs(CLASS_MAP[addon.player.class]["WeaponType"]) do
+        if type(v) == "function" then v = v() end
+        session.equippableWeapons[k] = v
+    end
+end
+
 function addon.itemUpgrades:Setup()
     self:LoadStatWeights()
+    self:UpdateSlotMap()
 
     self:RegisterEvent("PLAYER_LEVEL_UP")
     self:RegisterEvent("TRAINER_SHOW")
@@ -136,11 +327,13 @@ end
 -- Reset cache on levelup
 function addon.itemUpgrades:PLAYER_LEVEL_UP()
     wipe(session.itemCache)
+    self:UpdateSlotMap()
 end
 
 -- Reset cache on trainer
 function addon.itemUpgrades:TRAINER_SHOW()
     wipe(session.itemCache)
+    self:UpdateSlotMap()
 end
 
 function addon.itemUpgrades:LoadStatWeights()
@@ -192,6 +385,41 @@ local function GetComparisonTip()
     return session.comparisonTip
 end
 
+local function IsWeaponSlot(itemEquipLoc)
+    return
+        itemEquipLoc == 'INVTYPE_WEAPON' or itemEquipLoc == 'INVTYPE_RANGED' or
+            itemEquipLoc == 'INVTYPE_2HWEAPON' or itemEquipLoc ==
+            'INVTYPE_WEAPONMAINHAND' or itemEquipLoc == 'INVTYPE_WEAPONOFFHAND' or
+            itemEquipLoc == 'INVTYPE_THROWN' or itemEquipLoc ==
+            'INVTYPE_RANGEDRIGHT'
+end
+
+local function IsUsableForClass(itemSubTypeID, itemEquipLoc)
+    -- TODO need itemType for category because of enumes
+    if type(itemSubTypeID) ~= "number" then
+        addon.error("IsUsableForClass, itemSubTypeID number required")
+        return
+    end
+
+    if type(itemEquipLoc) ~= "string" then
+        addon.error("IsUsableForClass, itemEquipLoc string required")
+        return
+    end
+
+    -- Slot not equippable
+    -- TODO re-enable short-circuit after updating weapon handling GSheet
+    -- if not session.equippableSlots[itemEquipLoc] then return end
+
+    -- Type not usable by class
+    if IsWeaponSlot(itemEquipLoc) then
+        if not session.equippableWeapons[itemSubTypeID] then return end
+    else
+        if not session.equippableArmor[itemSubTypeID] then return end
+    end
+
+    return true
+end
+
 function addon.itemUpgrades:GetItemData(itemLink, tooltip)
     if type(itemLink) ~= "string" then
         addon.error("addon.itemUpgrades:GetItemData, itemLink string required")
@@ -203,12 +431,11 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
         return session.itemCache[itemLink]
     end
 
-    -- TODO can class use item - IsEquippableItem doesn't really work
-
-    local itemID, _, itemSubType, inventorySlotId = GetItemInfoInstant(itemLink)
+    local itemID, _, _, itemEquipLoc, _, _, itemSubTypeID = GetItemInfoInstant(
+                                                                itemLink)
 
     -- Not an equippable item
-    if not inventorySlotId or inventorySlotId == "" then return end
+    if not itemEquipLoc or itemEquipLoc == "" then return end
 
     local stats = GetItemStats(itemLink)
 
@@ -218,8 +445,8 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
     local itemData = {
         itemLink = itemLink,
         itemID = itemID,
-        itemSubType = itemSubType,
-        InventorySlotId = inventorySlotId
+        itemSubTypeID = itemSubTypeID,
+        itemEquipLoc = itemEquipLoc
     }
 
     local totalWeight = 0
@@ -287,7 +514,7 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
     -- After parsing API data and tooltip text, add up stat weights
     for key, value in pairs(stats) do
 
-        -- Only calculate values eexplicitly configured
+        -- Only calculate values explicitly configured
         if session.statWeights[key] then
             -- print("Weighting stat", key, "value")
             statWeight = value * session.statWeights[key]
@@ -316,13 +543,15 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
     end
 
     -- Not an equippable item
-    if not comparedData.InventorySlotId or
-        not SLOT_MAP[comparedData.InventorySlotId] then return end
+    if not comparedData.itemEquipLoc then return end
+
+    if not IsUsableForClass(comparedData.itemSubTypeID,
+                            comparedData.itemEquipLoc) then return end
 
     -- TODO handle slot map array and multiple matches
     local equippedItemLink = GetInventoryItemLink("player",
-                                                  SLOT_MAP[comparedData.InventorySlotId])
-    -- print("GetInventoryItemLink", comparedStats.InventorySlotId, GetInventoryItemLink("player", comparedStats.InventorySlotId))
+                                                  session.equippableSlots[comparedData.itemEquipLoc])
+    -- print("GetInventoryItemLink", comparedStats.itemEquipLoc, GetInventoryItemLink("player", comparedStats.itemEquipLoc))
 
     -- No equipped item, so anything is an upgrade from no item
     if not equippedItemLink or equippedItemLink == "" then
@@ -340,7 +569,7 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
         return
     end
 
-    -- print(comparedData.InventorySlotId, "weights", comparedData.totalWeight, equippedData.totalWeight)
+    -- print(comparedData.itemEquipLoc, "weights", comparedData.totalWeight, equippedData.totalWeight)
 
     if equippedData.totalWeight == 0 or equippedData.totalWeight == 0 then
         -- Prevent division by 0
@@ -367,8 +596,7 @@ local function TooltipSetItem(tooltip, ...)
     -- Exclude addon text for an equipped item
     if IsEquippedItem(itemLink) then return end
 
-    local ratio = addon.itemUpgrades:CompareItemWeight(itemLink,
-                                                                tooltip)
+    local ratio = addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
     -- print("percentageDiff", percentageDiff)
     -- Incomplete data
     if not ratio then return end
@@ -388,7 +616,7 @@ ItemRefTooltip:HookScript("OnTooltipSetItem", TooltipSetItem)
 function addon.itemUpgrades.Test()
     local itemData
     for _, itemID in pairs({19857, 19347, 19861, 19319}) do
-        -- print(itemID)
+        print('----- ' .. itemID)
         itemData =
             addon.itemUpgrades:GetItemData("item:" .. itemID, GameTooltip)
 
@@ -396,6 +624,7 @@ function addon.itemUpgrades.Test()
             for key, value in pairs(itemData) do
                 print('  ', key, value)
             end
+            print('  stats:')
             for key, value in pairs(itemData.stats) do
                 print('  - ', key, value)
             end
