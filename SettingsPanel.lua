@@ -2682,6 +2682,11 @@ function addon.settings:CreateAceOptionsPanel()
         helpBatch = helpBatch + 1
     end
 
+    addon.settings.routingOptions = {}
+    for entry in pairs(optionsTable.args.guideRoutingSettings.args) do
+        table.insert(addon.settings.routingOptions,entry)
+    end
+
     AceConfig:RegisterOptionsTable(addon.title, optionsTable)
 
     optionsTable.args.profiles = LibStub("AceDBOptions-3.0"):GetOptionsTable(

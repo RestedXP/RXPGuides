@@ -509,7 +509,21 @@ function addon.comms.OpenBugReport(stepNumber)
                           af.element and af.element.x or 0
                           ) or 'N/A'
 
-    local addonErrors = ""
+    local addonErrors = "\n"
+    for _,entry in pairs(addon.settings.routingOptions) do
+        local value = addon.settings.profile[entry]
+        local str = tostring(value)
+        if type(value) == "table" then
+            for k,v in pairs(value) do
+                local substr = tostring(v)
+                if substr then
+                    addonErrors = addonErrors .. k .. ":" .. substr .. ", "
+                end
+            end
+        elseif value ~= nil and str then
+            addonErrors = addonErrors .. entry .. ":" .. str .. ", "
+        end
+    end
     if next(addon.errors) then
         addonErrors = "\nAddon Errors:\n"
     end
