@@ -269,12 +269,9 @@ step << Druid
     .xp 16 >> Grind crabs in Westfall to level 16
 step << Dwarf !Paladin/Gnome
     #label end
-    #completewith next
     .hs >> Hearth to Thelsamar
-
 step << Dwarf !Paladin/Gnome
     #hardcore
-    #completewith next
     .goto Loch Modan,33.94,50.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
     .fly Ironforge >> Fly to Ironforge

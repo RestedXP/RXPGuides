@@ -351,7 +351,7 @@ step << Priest
 	.trainer >> Train your class spells
 step << Rogue
     .goto Teldrassil,55.508,57.145
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aldia|r up stiars
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aldia|r up stairs
     .vendor >> |cRXP_BUY_Buy and equip a|r |T135426:0|t[Small Throwing Knife]
     .target Aldia
 step
