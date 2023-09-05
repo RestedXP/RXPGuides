@@ -1951,6 +1951,12 @@ function addon.functions.deathskip(self, ...)
     end
 end
 
+function addon.functions.addquestitem(self, text, id, questId)
+    if type(self) == "string" then -- on parse
+        addon.questItemList[tonumber(id) or ""] = tonumber(questId)
+    end
+end
+
 addon.questItemList = {}
 function addon.functions.collect(self, ...)
     if type(self) == "string" then -- on parse
