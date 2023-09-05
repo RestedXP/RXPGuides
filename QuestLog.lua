@@ -228,17 +228,23 @@ local function SetItemTooltip(tooltip, tooltipInfo)
     local guideList = questId and addon.turnInList[questId]
 
     if guideList and #guideList > 0 then
+        local activeGuides = {}
         local prefix = L"Item used in guide:\n"
         for _, entry in ipairs(guideList) do
             local step = entry.step
-            if addon.IsGuideActive(entry.guide) and
+            local guide = entry.guide
+            if addon.IsGuideActive(guide) and not guide.lowPrio and
                 addon.IsStepShown(step,"GroupCheck") then
                     local groupText = ""
                     if step.group then
                         groupText = L" (Group)"
                     end
-                tooltip:AddLine(prefix .. addon.icons.turnin .. entry.name .. groupText)
-                prefix = ""
+                local guideName = prefix .. addon.icons.turnin .. entry.name .. groupText
+                if not activeGuides[guideName] then
+                    activeGuides[guideName] = true
+                    tooltip:AddLine(guideName)
+                    prefix = ""
+                end
             end
         end
     end
