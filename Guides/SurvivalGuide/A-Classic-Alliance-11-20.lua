@@ -1424,7 +1424,7 @@ step
     .mob Reef Crawler
 step
     .goto Darkshore,50.74,34.68
-	.xp 17-2750 >>Grind until you are 2750 xp away from level 18
+	.xp 18-2750 >>Grind until you are 2750 xp away from level 18
     >>Kill |cRXP_ENEMY_Blackwood Warriors|r and |cRXP_ENEMY_Blackwood Totemics|r.
     .mob Blackwood Warrior
     .mob Blackwood Totemic
