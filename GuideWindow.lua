@@ -182,7 +182,7 @@ local IsFrameShown = function(frame,step)
         return true
     elseif step.hidewindow or step.hidetip then
         return false
-    elseif step.optional and (not frame or frame.number) then
+    elseif step.optional and (frame and frame.bottom) then
         return false
     end
     return true
@@ -1583,6 +1583,7 @@ function addon:LoadGuide(guide, OnLoad)
         end
 
         if not frame.number then
+            frame.bottom = true
             frame.number = CreateFrame("Frame", "$parent_number", frame,
                                        nil)
             frame.number:SetPoint("BOTTOMRIGHT", frame)
