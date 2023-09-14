@@ -603,7 +603,7 @@ step
     .mob Zhevra Runner
 step
     .group
-    .goto The Barrens,62.26,19.38
+    .goto The Barrens,62.34,20.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ak'Zeloth|r
     .turnin 924 >>Turn in The Demon Seed
     .target Ak'Zeloth
@@ -2789,7 +2789,7 @@ step
 step
     .goto Stonetalon Mountains,60.16,90.92,30,0
     .goto Stonetalon Mountains,58.44,89.90
-    >>Atack the |cRXP_PICK_Resonite Crystals|r and walk far enough into the cave to investigate the area
+    >>Attack the |cRXP_PICK_Resonite Crystals|r and walk far enough into the cave to investigate the area
     >>|cRXP_WARN_Be careful! These mobs are tougher than they look and are easily double pulled.|r |cRXP_ENEMY_Gogger Rock Keepers|r |cRXP_WARN_cast|r |T136026:0|t[Earth Shock] |cRXP_WARN_which deals a high amount of damage!|r
     .complete 6421,1 --Investigate Cave in Boulderslide Ravine
     .complete 6421,2 --Resonity Crystal (x10)

@@ -614,8 +614,9 @@ step << Warrior/Rogue
 step << Warrior/Rogue
     .goto Durotar,52.05,40.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dwukk|r
-    .train 2018 >> Train |T136241:0|t[Blacksmithing]
+    .train 2020 >> Train |T136241:0|t[Blacksmithing]
     .target Dwukk
+    .skill blacksmithing,1,1
 step
     #completewith next
     .hs >>Hearth to the Valley of Trials
@@ -681,14 +682,14 @@ step << Hunter
 step << Warrior
     .goto Durotar,42.89,69.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frang|r
-    .train 3127 >>Train |T132269:0|t[Parry]
+    .train 3126 >>Train |T132269:0|t[Parry]
     .train 6343 >>Train |T136105:0|t[Thunder Clap]
     .target Frang
     .money <0.02
 step << Warrior
     .goto Durotar,42.89,69.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frang|r
-    .train 3127 >>Train |T132269:0|t[Parry]
+    .train 3126 >>Train |T132269:0|t[Parry]
     .target Frang
 step << Rogue
     #completewith Rwag2
@@ -1313,8 +1314,9 @@ step << Warrior/Rogue
 step << Warrior/Rogue
     .goto Durotar,52.05,40.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dwukk|r
-    .train 2018,1 >> Train |T136241:0|t[Blacksmithing]
+    .train 2020 >> Train |T136241:0|t[Blacksmithing]
     .target Dwukk
+    .skill blacksmithing,1,1
 step << Shaman
     .goto Durotar,52.02,40.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uhgar|r

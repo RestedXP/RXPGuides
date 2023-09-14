@@ -653,14 +653,14 @@ step << Mage
 step << Warrior
     .goto Tirisfal Glades,61.85,52.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austil|r
-    .train 3127 >>Train |T132269:0|t[Parry]
+    .train 3126 >>Train |T132269:0|t[Parry]
     .target Austil de Mon
     .money <0.01
 step << Rogue
     .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r on the second floor
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marion|r on the second floor
     .train 1757 >> Train |T136189:0|t[Sinister Strike]
-    .target Rwag
+    .target Marion Call
     .money <0.01
 step << Warlock
     .goto Tirisfal Glades,61.56,52.61
@@ -909,8 +909,9 @@ step
 step << Warrior/Rogue
     .goto Durotar,52.05,40.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dwukk|r
-    .train 2018 >> Train |T136241:0|t[Blacksmithing]
+    .train 2020 >> Train |T136241:0|t[Blacksmithing]
     .target Dwukk
+    .skill blacksmithing,1,1
 step << Warrior/Rogue
     .goto Durotar,51.81,40.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krunn|r
@@ -1376,8 +1377,9 @@ step << Warrior/Rogue
 step << Warrior/Rogue
     .goto Durotar,52.05,40.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dwukk|r
-    .train 2018 >> Train |T136241:0|t[Blacksmithing]
+    .train 2020 >> Train |T136241:0|t[Blacksmithing]
     .target Dwukk
+    .skill blacksmithing,1,1
 step << Rogue
     .goto Durotar,52.02,40.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uhgar|r
@@ -2690,9 +2692,9 @@ step << Warrior
     .xp <12,1
 step << Rogue
     .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r on the second floor
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marion|r on the second floor
     .train 1766 >> Train |T132219:0|t[Kick]
-    .target Rwag
+    .target Marion Call
     .xp <12,1
 step << Warlock
     .goto Tirisfal Glades,61.59,52.39
@@ -2896,9 +2898,9 @@ step << Warrior
     .xp <12,1
 step << Rogue
     .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r on the second floor
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marion|r on the second floor
     .train 1766 >> Train |T132219:0|t[Kick]
-    .target Rwag
+    .target Marion Call
     .xp <12,1
 step << Warlock
     .goto Tirisfal Glades,61.59,52.39
@@ -3047,16 +3049,16 @@ step << Warrior
     .xp <14,1
 step << Rogue
     .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r on the second floor
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marion|r on the second floor
     .train 1766,1 >> Train |T132219:0|t[Kick]
-    .target Rwag
+    .target Marion Call
     .xp <12,1
     .xp >14,1
 step << Rogue
     .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r on the second floor
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marion|r on the second floor
     .train 1758 >> Train your class spells
-    .target Rwag
+    .target Marion Call
     .xp <14,1
 step << Warlock
     .goto Tirisfal Glades,61.59,52.39
