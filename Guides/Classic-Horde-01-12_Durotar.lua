@@ -1362,6 +1362,7 @@ step << Warrior/Rogue
     .goto Durotar,52.0,40.7
     .money <0.0020
     .train 2020 >> Train Blacksmithing. Blacksmithing allows you to make Sharpening stones (+2 weapon damage for 1 hour). You can skip Blacksmithing and Mining if you wish
+    .skill blacksmithing,1,1
 step << Warrior/Rogue
     .goto Durotar,51.8,40.9
     .money <0.0010
@@ -1508,6 +1509,7 @@ step << Warrior/Rogue
     .goto Durotar,52.0,40.7
     .money <0.0020
     .train 2020 >> Train Blacksmithing. Blacksmithing allows you to make Sharpening stones (+2 weapon damage for 1 hour). You can skip Blacksmithing and Mining if you wish
+    .skill blacksmithing,1,1
 step << Warrior/Rogue
     .goto Durotar,51.8,40.9
     .money <0.0010

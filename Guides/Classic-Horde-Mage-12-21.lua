@@ -393,7 +393,7 @@ step
 step
     .goto Orgrimmar,38.79,85.68
     .trainer >> Train your class spells
-step
+step << Troll Mage
     .goto Orgrimmar,54.2,68.6
 >>Talk to |cFF00FF25Innkeeper Gryshka|r
     .turnin 6384 >>Turn in Ride to Orgrimmar
@@ -404,9 +404,9 @@ step
     .goto Orgrimmar,45.120,63.889
     .fp Orgrimmar >> Get the Orgrimmar flight path << Undead
 >>Talk to |cFF00FF25Doras|r
-    .turnin 6385 >>Turn in Doras the Wind Rider Master
+    .turnin 6385 >>Turn in Doras the Wind Rider Master << Troll Mage
 .target Doras
-    .accept 6386 >>Accept Return to the Crossroads.
+    .accept 6386 >>Accept Return to the Crossroads << Troll Mage
 step
     >>Run to Grommash Hold
     .goto Orgrimmar,39.1,38.1
@@ -416,7 +416,7 @@ step
 step
     #completewith next
     .hs >>Hearth to Crossroads
-step
+step << Troll Mage
     .goto The Barrens,52.6,29.9
 .target Zargh
 >>Talk to |cFF00FF25Zargh|r
