@@ -64,15 +64,6 @@ step << Paladin/Priest
     #completewith next
     .goto StormwindClassic,42.51,33.51,20 >> Travel to the Stormwind Cathedral
 step << Paladin
-    .goto StormwindClassic,39.80,29.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
-    .turnin 1641 >> Turn in The Tome of Divinity
-    .collect 6775,1,1642 --Tome of Divinity (1)
-    .accept 1642 >> Accept The Tome of Divinity
-    .turnin 1642 >> Turn in The Tome of Divinity
-    .target Duthorian Rall
-    .accept 1643 >> Accept The Tome of Divinity
-step << Paladin
     .goto StormwindClassic,38.82,31.27,10,0
     .goto StormwindClassic,38.67,32.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r
@@ -125,15 +116,6 @@ step << !Hunter !Priest
     .train 1180 >> Train Daggers << Mage/Druid
     .train 202 >> Train 2h Swords << Warrior/Paladin
     .target Woo Ping
-step << Paladin
-    .goto StormwindClassic,57.08,61.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stephanie Turner|r
-    >>|cRXP_WARN_You will need 10|r |T132889:0|t[Linen Cloth]
-    .turnin 1643 >> Turn in The Tome of Divinity
-    .target Stephanie Turner
-    .accept 1644 >> Accept The Tome of Divinity
-    .turnin 1644 >> Turn in The Tome of Divinity
---  .accept 1780 >> Accept The Tome of Divinity
 step << Rogue
     .goto StormwindClassic,57.38,56.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
