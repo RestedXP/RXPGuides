@@ -251,7 +251,8 @@ local KEY_TO_TEXT = {
     ['ITEM_MOD_RANGED_ATTACK_POWER_SHORT'] = _G.ITEM_MOD_RANGED_ATTACK_POWER,
     ['ITEM_MOD_DEFENSE_SKILL_RATING_SHORT'] = _G.ITEM_MOD_DEFENSE_SKILL_RATING,
     ['ITEM_MOD_DODGE_RATING_SHORT'] = _G.ITEM_MOD_DODGE_RATING,
-    ['ITEM_MOD_PARRY_RATING_SHORT'] = _G.ITEM_MOD_PARRY_RATING
+    ['ITEM_MOD_PARRY_RATING_SHORT'] = _G.ITEM_MOD_PARRY_RATING,
+    ['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] = _G.DPS_TEMPLATE
 }
 
 local function regexify(input)
@@ -312,6 +313,7 @@ function addon.itemUpgrades:Setup()
 
     local lookup
     -- Only load stats coming from GSheet
+    -- TODO Also handle DPS variants
     for key, _ in pairs(session.statWeights) do
         -- print("Checking", key)
         lookup = KeyToRegex(key)
@@ -344,6 +346,7 @@ function addon.itemUpgrades:LoadStatWeights()
 
     for _, data in pairs(addon.statWeights) do
         -- TODO spec support
+        -- TODO tackle DPS differences all being the same key
         if strupper(data.Class) == addon.player.class and strupper(data.Kind) ==
             activeKind then
             session.statWeights = data
