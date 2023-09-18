@@ -269,12 +269,9 @@ step << Druid
     .xp 16 >> Grind crabs in Westfall to level 16
 step << Dwarf !Paladin/Gnome
     #label end
-    #completewith next
     .hs >> Hearth to Thelsamar
-
 step << Dwarf !Paladin/Gnome
     #hardcore
-    #completewith next
     .goto Loch Modan,33.94,50.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
     .fly Ironforge >> Fly to Ironforge
@@ -1427,7 +1424,7 @@ step
     .mob Reef Crawler
 step
     .goto Darkshore,50.74,34.68
-	.xp 17-2750 >>Grind until you are 2750 xp away from level 18
+	.xp 18-2750 >>Grind until you are 2750 xp away from level 18
     >>Kill |cRXP_ENEMY_Blackwood Warriors|r and |cRXP_ENEMY_Blackwood Totemics|r.
     .mob Blackwood Warrior
     .mob Blackwood Totemic

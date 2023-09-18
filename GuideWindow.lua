@@ -176,6 +176,18 @@ RXPFrame:SetClampedToScreen(true)
 RXPFrame:SetResizable(true)
 addon.SetResizeBounds(RXPFrame, 220, 20)
 
+local IsFrameShown = function(frame,step)
+    step = step or (frame and frame.step)
+    if not step then
+        return true
+    elseif step.hidewindow or step.hidetip then
+        return false
+    elseif step.optional and (frame and frame.bottom) then
+        return false
+    end
+    return true
+end
+
 local function SetStepFrameAnchor()
     local frame = CurrentStepFrame
     local scale = RXPFrame:GetScale()
@@ -254,7 +266,8 @@ local stepPos = {}
 local lastScrollValue
 function BottomFrame:StepScroll(n)
     local value
-    if not addon.currentGuide.steps[n] or addon.currentGuide.steps[n].hidewindow then
+    local step = addon.currentGuide.steps[n]
+    if not step or not IsFrameShown(nil,step) then
          return
     end
     --[[for i, v in ipairs(BottomFrame.stepList) do
@@ -1043,7 +1056,7 @@ function CurrentStepFrame.UpdateText()
                 elementFrame:Show()
 
                 local spacing = 0
-                if step.hidewindow or step.hidetip then
+                if not IsFrameShown(elementFrame,step) then
                     elementFrame:SetAlpha(0)
                     elementFrame.button:Hide()
                     elementFrame:SetHeight(1)
@@ -1114,7 +1127,7 @@ function CurrentStepFrame.UpdateText()
 
         end
 
-        if step.hidewindow or step.hidetip then
+        if not IsFrameShown(stepframe,step) then
             stepframe:SetAlpha(0)
             frameHeight = 1
             stepframe:EnableMouse(false)
@@ -1519,6 +1532,10 @@ function addon:LoadGuide(guide, OnLoad)
             anchor = ScrollChild
             frame:SetPoint("TOPLEFT", anchor, "TOPLEFT", 2, -3)
             frame:SetPoint("TOPRIGHT", anchor, "TOPRIGHT", 2, -3)
+        elseif not IsFrameShown(nil,step) then
+            anchor = ScrollChild.framePool[n - 1]
+            frame:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, 1)
+            frame:SetPoint("TOPRIGHT", anchor, "BOTTOMRIGHT", 0, 1)
         else
             anchor = ScrollChild.framePool[n - 1]
             frame:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, -3)
@@ -1530,7 +1547,7 @@ function addon:LoadGuide(guide, OnLoad)
 
         frame:SetScript("OnEnter", function(self)
             self.currentAlpha = self:GetAlpha()
-            if not (self.step and self.step.hidewindow) then
+            if IsFrameShown(frame,self.step) then
                 self:SetAlpha(1)
                 self:SetBackdropColor(unpack(addon.colors.bottomFrameHighlight))
             end
@@ -1544,7 +1561,7 @@ function addon:LoadGuide(guide, OnLoad)
         frame.guide = guide
         frame:SetScript("OnMouseDown", function(self, button)
             if (button == "RightButton" or GetTime() - self.timer <= 0.5) and
-                not (self.step and self.step.hidewindow) then
+                IsFrameShown(frame,self.step) then
                 self.timer = 0
                 local n = self.step.index
                 local bottomMenu = RXPFrame.bottomMenu
@@ -1566,6 +1583,7 @@ function addon:LoadGuide(guide, OnLoad)
         end
 
         if not frame.number then
+            frame.bottom = true
             frame.number = CreateFrame("Frame", "$parent_number", frame,
                                        nil)
             frame.number:SetPoint("BOTTOMRIGHT", frame)
@@ -1628,7 +1646,7 @@ end
 
 function BottomFrame.UpdateFrame(self, stepn)
     local level = UnitLevel("player")
-    if stepPos[0] and ((not self and stepn) or (self and self.step)) then
+    if stepPos[0] and ((not self and stepn) or (self and self.step)) and IsFrameShown(self,self and self.step) then
         local stepNumber = stepn or self.step.index
         local frame = ScrollChild.framePool[stepNumber]
         local step = addon.currentGuide.steps[stepNumber]
@@ -1642,7 +1660,7 @@ function BottomFrame.UpdateFrame(self, stepn)
         if not (frame and step) then return end
 
         local fheight
-        local hideStep = step.level > level or step.hidewindow
+        local hideStep = step.level > level or (not IsFrameShown(frame,step))
 
         local text
         for _, element in ipairs(frame.step.elements or {}) do
@@ -1706,7 +1724,7 @@ function BottomFrame.UpdateFrame(self, stepn)
             --frame.step = addon.currentGuide.steps[BottomFrame.stepList[n]]
             frame.step = addon.currentGuide.steps[n]
             local step = frame.step
-            local hideStep = step.level > level or step.hidewindow
+            local hideStep = step.level > level or not IsFrameShown(frame,step)
             local fheight
             for _, element in ipairs(frame.step.elements or {}) do
                 if not self then
@@ -1755,14 +1773,21 @@ function BottomFrame.UpdateFrame(self, stepn)
             if hideStep then
                 --hiddenFrames = hiddenFrames + 1
                 frame.text:SetText(text)
-                fheight = 1
+                fheight = 1.00
                 frame:SetAlpha(0)
             else
                 frame.text:SetText(text)
                 fheight = math.ceil(frame.text:GetStringHeight() + 8)
             end
             step.text = text
-            frame:SetHeight(fheight)
+
+            if fheight == 1 and not IsFrameShown(frame,step) then
+                frame:SetHeight(1)
+                fheight = -3
+            else
+                frame:SetHeight(fheight)
+            end
+
             totalHeight = totalHeight + fheight + 2
             stepPos[n] = totalHeight - 5
         end

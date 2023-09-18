@@ -653,14 +653,14 @@ step << Mage
 step << Warrior
     .goto Tirisfal Glades,61.85,52.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austil|r
-    .train 3127 >>Train |T132269:0|t[Parry]
+    .train 3126 >>Train |T132269:0|t[Parry]
     .target Austil de Mon
     .money <0.01
 step << Rogue
     .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r on the second floor
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marion|r on the second floor
     .train 1757 >> Train |T136189:0|t[Sinister Strike]
-    .target Rwag
+    .target Marion Call
     .money <0.01
 step << Warlock
     .goto Tirisfal Glades,61.56,52.61
@@ -909,8 +909,9 @@ step
 step << Warrior/Rogue
     .goto Durotar,52.05,40.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dwukk|r
-    .train 2018 >> Train |T136241:0|t[Blacksmithing]
+    .train 2020 >> Train |T136241:0|t[Blacksmithing]
     .target Dwukk
+    .skill blacksmithing,1,1
 step << Warrior/Rogue
     .goto Durotar,51.81,40.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krunn|r
@@ -1376,8 +1377,9 @@ step << Warrior/Rogue
 step << Warrior/Rogue
     .goto Durotar,52.05,40.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dwukk|r
-    .train 2018 >> Train |T136241:0|t[Blacksmithing]
+    .train 2020 >> Train |T136241:0|t[Blacksmithing]
     .target Dwukk
+    .skill blacksmithing,1,1
 step << Rogue
     .goto Durotar,52.02,40.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uhgar|r
@@ -2138,6 +2140,7 @@ step
     #completewith next
     .goto Tirisfal Glades,61.52,53.20,80 >> Travel to Brill
 step
+    #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman|r and |cRXP_FRIENDLY_Gretchen|r inside the inn
     >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_is on the second floor|r
     .accept 354 >>Accept Deaths in the Family
@@ -2246,12 +2249,14 @@ step << Priest
     .turnin 5658 >> Turn in Touch of Weakness
     .target Aelthalyste
 step << Rogue
+    #optional
     #completewith Swordtraining1
     .goto Tirisfal Glades,61.80,65.06,20 >> Enter Undercity
     .zoneskip Undercity
     .zoneskip Undercity
     .money <0.3023
 step << Rogue
+    #optional
     #completewith Swordtraining1
     .goto Undercity,66.09,20.06,20,0
     .goto Undercity,64.37,23.94,20,0
@@ -2261,6 +2266,7 @@ step << Rogue
     .goto Undercity,65.53,43.62,15 >> Take the lift down to the Undercity
     .money <0.3023
 step << Undead Rogue
+    #optional
     .goto Undercity,83.52,69.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mennet|r
     .turnin 1885 >>Turn in Mennet Carkad
@@ -2268,6 +2274,7 @@ step << Undead Rogue
     .target Mennet Carkad
     .money <0.3023
 step << Rogue
+    #optional
     #label Swordtraining1
     .goto Undercity,57.29,32.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Archibald|r in the War Quarter
@@ -2275,6 +2282,7 @@ step << Rogue
     .target Archibald
     .money <0.3023
 step << Rogue
+    #optional
     .goto Undercity,77.08,49.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Charles|r |cRXP_BUY_ in the Rogue's Quarter. Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
     .collect 851,1,435,1 --Collect Cutlass (1)
@@ -2283,6 +2291,7 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
     .target Charles Seaton
 step << Rogue
+    #optional
     #completewith ScarletCrusade1
     +Equip the |T135346:0|t[Cutlass]
     .use 851
@@ -2290,6 +2299,7 @@ step << Rogue
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Undead Rogue
+    #optional
     #sticky
     #completewith UnluckyRogue
     >>|cRXP_WARN_If you see|r |cRXP_FRIENDLY_Astor|r|cRXP_WARN_, talk to him and kill him. Loot him for the letter. He patrols the road between Brill and The Sepulcher|r
@@ -2477,6 +2487,7 @@ step
     .mob Rot Hide Mongrel
     .mob Rot Hide Graverobber
 step
+    #optional
     .goto Tirisfal Glades,57.68,34.37,30,0
     .goto Tirisfal Glades,57.45,35.96,30,0
     .goto Tirisfal Glades,56.79,37.79,30,0
@@ -2508,6 +2519,7 @@ step
     .mob Rot Hide Mongrel
     .mob Rot Hide Graverobber
 step
+    #optional
     .goto Tirisfal Glades,59.26,46.73,30,0
     .goto Tirisfal Glades,58.29,49.80,30,0
     .goto Tirisfal Glades,57.71,48.96,30,0
@@ -2545,6 +2557,7 @@ step
     .target Abigail Shiel
     .itemcount 2876,5
 step
+    #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yvette|r, |cRXP_FRIENDLY_Coleman|r and |cRXP_FRIENDLY_Gretchen|r inside the inn
     >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_is on the second floor|r
     .turnin 361 >>Turn in A Letter Undelivered
@@ -2564,6 +2577,7 @@ step
     .isOnQuest 361
     .group
 step
+    #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman|r and |cRXP_FRIENDLY_Gretchen|r inside the inn
     >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_is on the second floor|r
     .turnin 354 >>Turn in Deaths in the Family
@@ -2579,6 +2593,7 @@ step
     .isQuestComplete 375
     .group
 step
+    #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yvette|r and |cRXP_FRIENDLY_Coleman|r inside the inn
     >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_is on the second floor|r
     .turnin 361 >>Turn in A Letter Undelivered
@@ -2604,6 +2619,7 @@ step
     .target Coleman Farthing
     .group
 step
+    #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yvette|r, |cRXP_FRIENDLY_Coleman|r and |cRXP_FRIENDLY_Gretchen|r inside the inn
     >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_is on the second floor|r
     .turnin 361 >>Turn in A Letter Undelivered
@@ -2621,6 +2637,7 @@ step
     .isQuestComplete 375
     .isOnQuest 361
 step
+    #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman|r and |cRXP_FRIENDLY_Gretchen|r inside the inn
     >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_is on the second floor|r
     .turnin 354 >>Turn in Deaths in the Family
@@ -2634,6 +2651,7 @@ step
     .target Gretchen Dedmar
     .isQuestComplete 375
 step
+    #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yvette|r and |cRXP_FRIENDLY_Coleman|r inside the inn
     >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_is on the second floor|r
     .turnin 361 >>Turn in A Letter Undelivered
@@ -2674,9 +2692,9 @@ step << Warrior
     .xp <12,1
 step << Rogue
     .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r on the second floor
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marion|r on the second floor
     .train 1766 >> Train |T132219:0|t[Kick]
-    .target Rwag
+    .target Marion Call
     .xp <12,1
 step << Warlock
     .goto Tirisfal Glades,61.59,52.39
@@ -2880,9 +2898,9 @@ step << Warrior
     .xp <12,1
 step << Rogue
     .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r on the second floor
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marion|r on the second floor
     .train 1766 >> Train |T132219:0|t[Kick]
-    .target Rwag
+    .target Marion Call
     .xp <12,1
 step << Warlock
     .goto Tirisfal Glades,61.59,52.39
@@ -3031,16 +3049,16 @@ step << Warrior
     .xp <14,1
 step << Rogue
     .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r on the second floor
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marion|r on the second floor
     .train 1766,1 >> Train |T132219:0|t[Kick]
-    .target Rwag
+    .target Marion Call
     .xp <12,1
     .xp >14,1
 step << Rogue
     .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r on the second floor
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marion|r on the second floor
     .train 1758 >> Train your class spells
-    .target Rwag
+    .target Marion Call
     .xp <14,1
 step << Warlock
     .goto Tirisfal Glades,61.59,52.39
@@ -3153,7 +3171,7 @@ step << Undead Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
 step << Troll Warrior/Undead Warrior/Tauren Shaman/Troll Shaman/Orc Shaman
-    .goto Orgrimmar,81.17,18.69
+    .goto Undercity,58.82,32.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Benijah|r|cRXP_BUY_. Buy a|r |T135154:0|t[Quarter Staff] |cRXP_BUY_from him|r
     .collect 854,1,435,1 --Collect Quarter Staff (1)
     .money <0.3022
@@ -3175,10 +3193,10 @@ step << Priest/Warlock
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
 step << Priest/Warlock
-    .goto Undercity,70.77,30.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josef|r
+    .goto Undercity,70.06,29.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Victor|r
     .train 3908 >> Train |T136249:0|t[Tailoring]
-    .target Josef Gregorian
+    .target Victor Ward
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
 step << Priest/Warlock
@@ -3188,10 +3206,10 @@ step << Priest/Warlock
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
 step << Priest/Warlock
-    .goto Undercity,70.76,30.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josef|r
+    .goto Undercity,70.06,29.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Victor|r
     .train 7623 >> Train |T132662:0|t[Brown Linen Robe]
-    .target Josef Gregorian
+    .target Victor Ward
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
 step << Priest/Warlock

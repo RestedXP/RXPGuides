@@ -220,6 +220,7 @@ step
     #completewith next
     .loop 35,Elwynn Forest,53.68,47.29,52.82,48.78,54.43,48.10,54.52,49.58,53.85,50.68,54.52,49.58,54.43,48.10,53.68,47.29
     >>Loot the |cFFDB2EEFBuckets of Grapes|r on the ground
+    >>|cFFFCDC00This has a 5 second cast time|r
     .complete 3904,1 --Collect Milly's Harvest (x8)
 step
     .goto Elwynn Forest,57.52,48.25
@@ -230,6 +231,7 @@ step
     #label Harvest
     .loop 35,Elwynn Forest,53.68,47.29,52.82,48.78,54.43,48.10,54.52,49.58,53.85,50.68,54.52,49.58,54.43,48.10,53.68,47.29
     >>Loot the |cFFDB2EEFBuckets of Grapes|r on the ground
+    >>|cFFFCDC00This has a 5 second cast time|r
     .complete 3904,1 --Collect Milly's Harvest (x8)
 step
     .loop 35,Elwynn Forest,53.68,47.29,52.82,48.78,54.43,48.10,54.52,49.58,53.85,50.68,54.52,49.58,54.43,48.10,53.68,47.29
@@ -540,6 +542,7 @@ step
 step
     #completewith next
     >>Loot the |cFFDB2EEFBundles Of Wood|r at the base of the trees
+    >>|cFFFCDC00This has a 5 second cast time|r
     .complete 5545,1 --Collect Bundle of Wood (x8)
 step
     .goto Elwynn Forest,79.79,55.51,45 >> Travel toward |cFFDB2EEFRolf's Corpse|r
@@ -556,6 +559,7 @@ step
 step
     .loop 35,Elwynn Forest,80.48,55.18,80.88,53.88,79.68,52.31,80.86,52.17,80.88,53.88,80.48,55.18,79.76,56.70,80.15,60.03,80.24,61.46,81.27,61.59,81.58,62.64,82.79,60.12,83.25,61.12,83.48,59.19,81.77,59.17,80.48,55.18
     >>Loot the |cFFDB2EEFBundles Of Wood|r at the base of the trees
+    >>|cFFFCDC00This has a 5 second cast time|r
     .complete 5545,1 --Collect Bundle of Wood (x8)
 step
     .goto Elwynn Forest,81.382,66.112
@@ -1579,7 +1583,6 @@ step
     .isQuestAvailable 312
 step
     #completewith Golorn
-    #requires Tannok
     .goto Dun Morogh,47.38,52.52
     >>Talk to |cFF00FF25Belm|r
     .home >> Set your Hearthstone to Thunderbrew Distillery
@@ -1640,6 +1643,7 @@ step
     >>Talk to |cFF00FF25Belm|r
     >>|cFF0E8312Buy 20|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from him|r
     .collect 159,20,312,1 --Refreshing Spring Water (20)
+    .itemcount 1179,<1
     .target Innkeeper Belm
     .money <0.0182
 step
@@ -1648,6 +1652,7 @@ step
     >>Talk to |cFF00FF25Belm|r
     >>|cFF0E8312Buy 15|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from him|r
     .collect 159,15,312,1 --Refreshing Spring Water (15)
+    .itemcount 1179,<1
     .target Innkeeper Belm
     .money <0.0157
 step
@@ -1656,6 +1661,7 @@ step
     >>Talk to |cFF00FF25Belm|r
     >>|cFF0E8312Buy 10|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from him|r
     .collect 159,10,312,1 --Refreshing Spring Water (10)
+    .itemcount 1179,<1
     .target Innkeeper Belm
     .money <0.0132
 step
@@ -1664,6 +1670,7 @@ step
     >>Talk to |cFF00FF25Belm|r
     >>|cFF0E8312Buy 5|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from him|r
     .collect 159,5,312,1 --Refreshing Spring Water (5)
+    .itemcount 1179,<1
     .target Innkeeper Belm
     .money <0.0107
 step
@@ -1694,7 +1701,7 @@ step
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.2
 step
     #requires Golorn
-    .loop 30,Dun Morogh,42.57,54.80,41.89,54.51,42.13,52.68,42.46,51.96,41.91,51.43,42.46,51.96,42.13,52.68,42.57,54.80
+    .loop 10,Dun Morogh,42.57,54.80,41.89,54.51,42.13,52.68,42.46,51.96,41.91,51.43,42.46,51.96,42.13,52.68,42.57,54.80
     >>Kill |cFFFF5722Young Wendigos|r and |cFFFF5722Wendigos|r. Loot them for their |cFF00BCD4Wendigo Manes|r
     >>|cFFFCDC00Be careful as they cast|r |T135848:0|t[Frost Breath] |cFFFCDC00(Melee Cast: Deals 6-10 Frost damage) and have increased|r |T135849:0|t[Frost Resistance]
     .complete 313,1 --Collect Wendigo Mane (x8)
@@ -1833,7 +1840,7 @@ step
     #completewith CaveLS
     .goto Dun Morogh,33.51,47.50,50,0
     .goto Dun Morogh,36.85,45.48,50,0
-    >>Kill |cFFFF5722Ice Claw Bears|r, |cFFFF5722Elder Crag Boars|r, and |cFFFF5722Snow Leopards|r en route to the Cave. Loot the |cFFFF5722Elder Crag Boars|r for |cFF00BCD4Crag Boar Ribs|r
+    >>Kill |cFFFF5722Ice Claw Bears|r, |cFFFF5722Elder Crag Boars|r, and |cFFFF5722Snow Leopards|r en route to the Cave
     >>|cFFFCDC00Focus on the|r |cFFFF5722Snow Leopards|r
     >>|cFFFCDC00Be careful as |cFFFF5722Ice Claw Bears|r cast|r |T135853:0|t[Ice Claw] |cFFFCDC00(Melee Instant: Deals an additional 4 melee damage), and |cFFFF5722Elder Crag Boars|r cast|r |T132337:0|t[Charge] |cFFFCDC00(Self Instant: Increases movespeed for 3 seconds, dealing 25-70 melee damage on hit. Only castable at range)|r
     .complete 319,1 --Kill Ice Claw Bear (x6)
@@ -1955,6 +1962,7 @@ step
     .goto Dun Morogh,41.84,35.63
     >>Kill |cFFFF5722Frostmane Seers|r. Loot them for their |cFF00BCD4Shimmerweed|r
     >>Open the |cFFDB2EEFShimmerweed Baskets|r on the ground. Loot them for their |cFF00BCD4Shimmerweed|r
+    >>|cFFFCDC00This has a 5 second cast time|r
     >>|cFFFCDC00Be careful as they cast|r |T136048:0|t[Lightning Bolt] |cFFFCDC00(Ranged Cast: Deals 15-30 Nature damage)|r
     .complete 315,1 --Collect Shimmerweed (x6)
     .mob Frostmane Seer
@@ -1983,6 +1991,7 @@ step
     .goto Dun Morogh,38.51,53.93
     >>|cFFFCDC00If |cFFFF5722Old Icebeard|r is in the cave, kite him up the side of the cave, then all the way above it. Wait for him to get close, then jump back down then go toward the back of the cave|r
     >>Open |cFFDB2EEFMacGrann's Meat Locker|r on the ground. Loot it for |cFF00BCD4Macgrann's Dried Meats|r
+    >>|cFFFCDC00This has a 5 second cast time|r
     .link https://youtu.be/Zg4FNWw-P5k?t=3120 >>|cFFFCDC00CLICK HERE If you're struggling|r
     .complete 312,1 --Collect MacGrann's Dried Meats (x1)
     .mob Old Icebeard
@@ -3084,6 +3093,562 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Mage
+#name 10-12 LAUNCH ADV Darkshore 1 Mage AoE
+#version 2
+#group RestedXP ADV AoE Alliance Mage
+#defaultfor none
+#next 12-14 ADV Loch Modan Mage AoE
+
+--VV Make this an alternative route that must be manually selected
+step
+    #completewith next
+    +|cFFFCDC00NOTE: The Launch route contains quests that are VERY difficult to do solo. This is specifically for either heavily crowded servers where you can group up for the harder quests, OR players who have mob taggers|r
+step
+    #completewith next
+    .goto Dun Morogh,53.48,37.50,30,0
+    .goto Dun Morogh,54.04,38.60,30,0
+    .goto Dun Morogh,59.43,42.85,150 >> Travel to the skip spot. Hug the left side of the mountain en route
+step
+    .goto Dun Morogh,60.18,43.01,12,0
+    .goto Dun Morogh,60.42,43.75,12,0
+    .goto Dun Morogh,60.71,44.18,4,0
+    .goto Dun Morogh,60.95,44.16,6,0
+    .goto Dun Morogh,61.45,41.68,10,0
+    .goto Dun Morogh,61.76,41.50,4,0
+    .goto Dun Morogh,61.84,41.63,4,0
+    .goto Dun Morogh,62.01,41.30,8,0
+    .goto Dun Morogh,61.79,39.71,15,0
+    .goto Dun Morogh,61.48,36.85,12,0
+    .goto Dun Morogh,61.46,32.76,15,0
+    .goto Dun Morogh,61.38,28.92,30,0
+    .goto Dun Morogh,60.91,22.82,30,0
+    .goto Dun Morogh,60.51,16.20,5,0
+    .goto Dun Morogh,60.52,15.81,5,0
+    .goto Dun Morogh,60.74,15.16,15,0
+    .goto Dun Morogh,60.41,14.35,8,0
+    .goto Dun Morogh,60.64,13.89,6,0
+    .goto Dun Morogh,61.40,13.27,10,0
+    .goto Dun Morogh,61.52,12.58,8,0
+    >>|cFFFCDC00Do the Deathless Dun Morogh -> Wetlands skip|r
+    >>|cFFFCDC00Eat to full after each fall if you don't feel confident|r
+    .link https://youtu.be/QcEUvwu49KI?t=73 >> |cFFFCDC00CLICK HERE for reference (it is HEAVILY advised you do so)|r
+    .goto Dun Morogh,60.65,11.38,20 >>Carefully drop down the mountain side
+    .isQuestAvailable 983
+step
+    .goto Dun Morogh,60.80,10.33,10,0
+    .goto Dun Morogh,60.61,9.73,8,0
+    .goto Wetlands,18.79,72.53,12,0
+    .goto Wetlands,18.70,70.97,12,0
+    .goto Wetlands,18.50,69.39,12,0
+    .goto Wetlands,17.62,68.35,15,0
+    .goto Wetlands,17.00,67.68,12,0
+    .goto Wetlands,15.96,67.15,12,0
+    .goto Wetlands,15.07,66.41,20,0
+    .goto Wetlands,15.31,65.47,20,0
+    .goto Wetlands,15.10,63.72,12,0
+    >>|cFFFCDC00Do the Deathless Dun Morogh -> Wetlands skip|r
+    >>|cFFFCDC00Be careful of |cFFFF5722Sludginn|r (rare) before you drop down toward the coast (if he's up)|r
+    >>|cFFFCDC00Be careful of the |cFFFF5722Bluegill Raiders|r to the west when you reach the sea|r
+    >>|cFFFCDC00Avoid the |cFFFF5722Young Wetlands Crocolisks|r when crossing the sea. Wait for them to patrol away|r
+    .link https://youtu.be/QcEUvwu49KI?t=336 >> |cFFFCDC00CLICK HERE for reference (it is HEAVILY advised you do so)|r
+    .goto Wetlands,12.69,60.97,15 >> Travel to Menethil Harbor
+    .mob Young Wetlands Crocolisk
+    .mob Bluegill Raider
+    .unitscan Sludginn
+    .isQuestAvailable 983
+--VV Custom Video
+step
+    #completewith next
+    .goto Wetlands,10.80,59.80,10,0
+    .goto Wetlands,10.63,60.10,10 >>Go inside the Inn
+step
+    .goto Wetlands,10.50,60.20
+    >>Jump onto the Chandelier downstairs
+    >>Talk to |cFF00FF25Samor|r through the wall
+    >>|cFFFCDC00NOTE: To do this, bind "Interact with Target" under Gameplay -> Controls in the Options menu|r
+    >>|cFFFCDC00If the Boat has just arrived, skip this step|r
+    .vendor 1457 >> |cFF0E8312Buy|r |T134831:0|t[Healing Potions] |cFF0E8312from him (if they're up)|r
+    .target Samor Festivus
+    .money <0.03
+step
+    .goto Wetlands,9.49,59.69
+    >>Talk to |cFF00FF25Shellei|r
+    .fp Menethil Harbor >> Get the Menethil Harbor flight path
+    .target Shellei Brondir
+step
+    #completewith DarkshoreBoat
+    .goto Wetlands,7.89,56.22
+    >>|cFFFCDC00If the Boat has just arrived, skip this step|r
+    +|cFFFCDC00Cook any|r |T133970:0|t[Chunks of Boar Meat] |cFFFCDC00you have from outside (there's a campfire inside)|r
+    .itemcount 769,1
+step
+    .goto Wetlands,7.89,56.22
+    >>Talk to |cFF00FF25Dewin|r through the wall
+    >>|cFFFCDC00If the Boat has just arrived, skip this step|r
+    .vendor 1453 >> |cFF0E8312Buy|r |T134831:0|t[Healing Potions] |cFF0E8312from him (if they're up)|r
+    .target Dewin Shimmerdawn
+    .money <0.03
+step
+    #completewith Darkshore
+    #label DarkshoreBoat
+    .goto Wetlands,6.09,58.45,20,0
+    .goto Wetlands,4.50,57.02,20 >>Travel toward the Darkshore Boat
+step
+    #completewith next
+    #requires DarkshoreBoat
+    +|cFFFCDC00Start spam casting|r |T132794:0|t[Conjure Water r2] |cFFFCDC00to conjure as much water as possible|r
+step
+    #label Darkshore
+    .goto Wetlands,4.25,57.21
+    .zone Darkshore >> Take the boat to Darkshore
+step
+    #label Darkshoreshore
+    #completewith Wizbang
+    .goto Darkshore,35.73,45.23,60 >>Jump off the boat when you're closest to the shore
+step
+    #requires Darkshoreshore
+    #completewith Wizbang
+    +|cFFFCDC00Kite 2-3 |cFFFF5722Pygmy Tide Crawlers|r toward |cFF00FF25Wizbang|r (Remember to use|r |T135848:0|t[Frost Nova]|cFFFCDC00) Kill them when you accept the quest|r
+    .mob Pygmy Tide Crawler
+step
+    #requires Darkshoreshore
+    #completewith next
+    .goto Darkshore,36.77,44.28,0,0
+    >>Talk to |cFF00FF25Laird|r
+    >>|cFF0E8312Buy up to 20|r |T133918:0|t[Longjaw Mud Snappers] |cFF0E8312from him|r
+    .vendor >> Vendor Trash
+    .collect 4592,20,983,1 --Longjaw Mud Snapper (20)
+    .isQuestAvailable 983
+step
+    #requires Darkshoreshore
+    #completewith next
+    .goto Darkshore,36.72,44.52,20,0
+    .goto Darkshore,36.84,44.18,10,0
+    .goto Darkshore,36.71,43.87,10,0
+    >>Go upstairs to the top floor
+    .goto Darkshore,36.98,44.14,8 >>Travel toward |cFF00FF25Wizbang|r
+step
+    #label Wizbang
+    .goto Darkshore,36.98,44.14
+    >>Talk to |cFF00FF25Wizbang|r
+    .accept 983 >>Accept Buzzbox 827
+    .target Wizbang Cranktoggle
+step
+    #completewith DalmondBags
+    >>Kill the |cFFFF5722Pygmy Tide Crawlers|r you kited. Loot them for their |cFF00BCD4Crawler Legs|r
+    .complete 983,1 --Crawler Leg (6)
+    .mob Pygmy Tide Crawler
+step
+    .goto Darkshore,36.77,44.28
+    >>Talk to |cFF00FF25Laird|r
+    >>|cFF0E8312Buy up to 20|r |T133918:0|t[Longjaw Mud Snappers] |cFF0E8312from him|r
+    .vendor >> Vendor Trash
+    .collect 4592,20,983,1 --Longjaw Mud Snapper (20)
+    .isQuestAvailable 983
+    .itemcount 4592,<20
+step << skip
+    #requires DalmondBags
+    #completewith next
+    .goto Darkshore,37.85,41.39,20,0
+    .goto Darkshore,38.58,42.61,20,0
+    .goto Darkshore,39.05,43.23,20,0
+    .goto Darkshore,39.37,43.49,12 >>Travel toward |cFF00FF25Terenthis|r
+step
+    >>Talk to |cFF00FF25Terenthis|r and |cFF00FF25Tharnariun|r
+    .accept 984 >>Accept How Big a Threat?
+    .goto Darkshore,39.37,43.49,-1
+    .accept 2118 >>Accept Plagued Lands
+    .goto Darkshore,38.84,43.41,-1
+    .target Terenthis
+    .target Tharnariun Treetender
+step << skip
+    #completewith next
+    .goto Darkshore,37.44,43.12,20,0
+    .goto Darkshore,37.73,41.40,20,0
+    .goto Darkshore,37.39,40.13,10 >>Travel toward |cFF00FF25Thundris|r
+step
+    #sticky
+    #label DalmondBags
+    .goto Darkshore,37.45,40.50
+    >>Talk to |cFF00FF25Dalmond|r
+    .vendor 4182 >> |cFF0E8312Buy as many|r |T133634:0|t[Small Brown Pouches] |cFF0E8312as you need/can|r
+    .target Dalmond
+    .money <0.0500
+    .isQuestAvailable 954
+step
+    .goto Darkshore,37.39,40.13
+    >>Talk to |cFF00FF25Thundris|r
+    .accept 954 >>Accept Bashal'Aran
+    .accept 958 >>Accept Tools of the Highborne
+    .target Thundris Windweaver
+	.skill cooking,10,1
+step
+    >>Talk to |cFF00FF25Thundris|r and |cFF00FF25Alanndarian|r
+    .accept 954 >>Accept Bashal'Aran
+    .accept 958 >>Accept Tools of the Highborne
+    .goto Darkshore,37.39,40.13,-1
+    .accept 2178 >>Accept Easy Strider Living
+    .goto Darkshore,37.69,40.66,-1
+    .target Thundris Windweaver
+    .target Alanndarian Nightsong
+	.skill cooking,<10,1
+step
+    .goto Darkshore,46.71,34.64
+    >>|cFFFCDC00If you find a |cFFFF5722Rabid Thistle Bear|r, use|r |T134335:0|t[Tharnariun's Hope] |cFFFCDC00then aggro it|r
+    >>|cFFFCDC00Be careful as they cast|r |T135914:0|t[Rabies] |cFFFCDC00(Instant Melee: Reduces ALL health regen by 50% for 10 Minutes)|r
+    .complete 2118,1 --Rabid Thistle Bear Captured (1)
+    .use 7586
+    .unitscan Rabid Thistle Bear
+step
+    #completewith next
+    +|cFFFCDC00Kite 2-3 |cFFFF5722Vile Sprites|r toward |cFF00FF25Asterion|r (Remember to use|r |T135848:0|t[Frost Nova]|cFFFCDC00) Kill them when you accept the quest|r
+    .mob Vile Sprite
+step
+    #label Bash1
+    .goto Darkshore,44.17,36.29
+    >>Talk to |cFF00FF25Asterion|r
+    .turnin 954 >> Turn in Bashal'Aran
+    .accept 955 >> Accept Bashal'Aran
+    .target Asterion
+step
+    #completewith BashalF
+    +|cFFFCDC00Be careful as |cFFFF5722Licillin|r (rare) may be up|r
+    >>|cFFFCDC00He casts|r |T136197:0|t[Shadow Bolt] |cFFFCDC00(Ranged Cast: Deals 55-70 Shadow damage)|r
+    .unitscan Licillin
+step
+    .loop 35,Darkshore,44.57,36.57,44.47,38.11,44.02,38.55,45.01,39.62,45.61,38.81,45.18,37.51,45.86,36.96,46.91,37.11,45.47,36.01,44.57,36.57
+    >>Kill |cFFFF5722Vile Sprites|r and |cFFFF5722Wild Grells|r. Loot them for their |cFF00BCD4Grell Earrings|r
+    >>|cFFFCDC00Be careful as the |cFFFF5722Vile Sprites|r cast|r |T136016:0|t[Poison] |cFFFCDC00(Melee Instant: Deals 3 damage every 3 seconds for 15 seconds) and |cFFFF5722Wild Grells|r cast|r |T136215:0|t[Crazed] |cFFFCDC00(Self Instant: Increases attack speed by 20% at <20% health)|r
+    .complete 955,1 --Grell Earring (8)
+    .mob Vile Sprite
+    .mob Wild Grell
+step
+    .goto Darkshore,44.17,36.29
+    >>Talk to |cFF00FF25Asterion|r
+    .turnin 955 >> Turn in Bashal'Aran
+    .accept 956 >> Accept Bashal'Aran
+    .target Asterion
+step
+    .goto Darkshore,45.50,36.50,45,0
+    .goto Darkshore,45.93,37.78,45,0
+    .goto Darkshore,45.94,38.04,45,0
+    .goto Darkshore,45.43,39.66,45,0
+    .goto Darkshore,46.67,39.09,45,0
+    .goto Darkshore,47.36,37.63,45,0
+    .goto Darkshore,47.77,37.20,45,0
+    .goto Darkshore,47.44,36.76,45,0
+    .goto Darkshore,45.50,36.50,45,0
+    .goto Darkshore,45.93,37.78,45,0
+    .goto Darkshore,45.94,38.04,45,0
+    .goto Darkshore,45.43,39.66,45,0
+    .goto Darkshore,46.67,39.09,45,0
+    .goto Darkshore,47.36,37.63,45,0
+    .goto Darkshore,47.77,37.20,45,0
+    .goto Darkshore,47.44,36.76
+    >>Kill |cFFFF5722Deth'ryll Satyrs|r. Loot them for the |cFF00BCD4Ancient Moonstone Seal|r
+    >>|cFFFCDC00Be careful as they cast|r |T132222:0|t[Shoot] |cFFFCDC00(Ranged Cast: Deals 15-25 damage)|r
+    .complete 956,1 --Ancient Moonstone Seal (1)
+    .mob Deth'ryll Satyr
+step
+    #label BashalF
+    .goto Darkshore,44.17,36.29
+    >>Talk to |cFF00FF25Asterion|r
+    .turnin 956 >> Turn in Bashal'Aran
+    .accept 957 >> Accept Bashal'Aran
+    .target Asterion
+step
+    .goto Darkshore,38.84,43.41
+    .xp 10+6625 >> Grind to 6625+/7600xp en route back to |cFF00FF25Tharnariun|r
+step
+    .goto Darkshore,38.84,43.41
+    >>Talk to |cFF00FF25Tharnariun|r
+    .turnin 2118 >> Turn in Plagued Lands
+    .accept 2138 >> Accept Cleansing of the Infected
+    .target Tharnariun Treetender
+step
+    .goto Darkshore,36.68,44.05,12,0
+    .goto Darkshore,35.74,43.70
+    >>Talk to |cFF00FF25Cerellean|r
+    .accept 963 >>Accept For Love Eternal
+    .target Cerellean Whiteclaw
+step
+    #completewith next
+    >>Kill |cFFFF5722Pygmy Tide Crawlers|r. Loot them for their |cFF00BCD4Crawler Legs|r
+    .complete 983,1 --Crawler Leg (6)
+    .mob Pygmy Tide Crawler
+step
+    #sticky
+    #label Gwennyth
+    .goto Darkshore,36.62,45.59
+    >>Talk to |cFF00FF25Gwennyth|r
+    .accept 3524 >>Accept Washed Ashore
+    .target Gwennyth Bly'Leggonde
+step
+    .goto Darkshore,36.34,45.58
+    >>Talk to |cFF00FF25Caylais|r
+    .fp Auberdine >> Get the Auberdine flight path
+    .target Caylais Moonfeather
+step
+    #requires Gwennyth
+    #completewith Bones
+    .goto Darkshore,36.22,44.89,50,0
+    .goto Darkshore,35.81,45.78,50,0
+    .goto Darkshore,35.86,47.35,50,0
+    .goto Darkshore,35.74,48.20,50,0
+    .goto Darkshore,36.25,49.90,50,0
+    >>Kill |cFFFF5722Pygmy Tide Crawlers|r and |cFFFF5722Young Reef Crawlers|r. Loot them for their |cFF00BCD4Crawler Legs|r
+    .complete 983,1 --Crawler Leg (6)
+    .mob Pygmy Tide Crawler
+    .mob Young Reef Crawler
+step
+    #requires Gwennyth
+    #completewith next
+    >>|cFFFCDC00Save the|r |T133884:0|t[Murloc Eyes] |cFFFCDC00you loot from the |cFFFF5722Greymist Coastrunners|r and|r |cFFFF5722Greymist Raiders|r
+    .collect 730,3,38,1 --Murloc Eyes (3)
+    .mob Greymist Coastrunner
+    .mob Greymist Raider
+step
+    #requires Gwennyth
+    #label Bones
+    .goto Darkshore,36.38,50.88
+    >>Loot the |cFF00BCD4Beached Sea Creature|r
+    >>|cFFFCDC00Be careful as the nearby |cFFFF5722Greymist Coastrunners|r have|r |T132307:0|t[Increased Movespeed]
+    >>|cFFFCDC00This has a 5 second cast time|r
+    .complete 3524,1 --Sea Creature Bones (1)
+step
+    .goto Darkshore,36.22,44.89
+    >>Kill |cFFFF5722Pygmy Tide Crawlers|r and |cFFFF5722Young Reef Crawlers|r. Loot them for their |cFF00BCD4Crawler Legs|r
+    .complete 983,1 --Crawler Leg (6)
+    .mob Pygmy Tide Crawler
+    .mob Young Reef Crawler
+step
+    #requires Gwennyth
+    .goto Darkshore,38.90,53.59
+    >>Run toward the Furbolg Camp
+    >>|cFFFCDC00Do not attempt to fight the|r |cFFFF5722Blackwood Windtalker|r
+    .complete 984,1 --Find a corrupt furbolg camp (1)
+step
+    .goto Darkshore,40.30,59.73
+    >>Talk to |cFF00FF25Tysha|r
+    .accept 953 >>Accept The Fall of Ameth'Aran
+    .target Sentinel Tysha Moonblade
+step
+    #completewith Anaya
+    +|cFFFCDC00Avoid pulling |cFFFF5722Lady Moongazer|r (rare) if she's up|r
+    .unitscan Lady Moongazer
+ step
+    #completewith Relics
+    .goto Darkshore,42.45,60.66,0
+    >>Kill |cFFFF5722Anaya Dawnrunner|r. Loot her for |cFF00BCD4Anaya's Pendant|r
+    .complete 963,1 --Anaya's Pendant (1)
+    .unitscan Anaya Dawnrunner
+step
+    #completewith Fall
+    >>Kill |cFFFF5722Cursed Highbornes|r and |cFFFF5722Writhing Highbornes|r. Loot them for |cFF00BCD4Highborne Relics|r
+    >>|cFFFCDC00Kill |cFFFF5722Wailing Highbornes|r only if they're in your way|r
+    .complete 958,1 --Highborne Relic (7)
+    .mob Cursed Highborne
+    .mob Writhing Highborne
+step
+    .goto Darkshore,42.37,61.82
+    >>Click the |cFFDB2EEFAncient Flame|r
+    >>|cFFFCDC00This has a 5 second cast time|r
+    .complete 957,1 --Destroy the seal at the ancient flame (1)
+step
+    .goto Darkshore,42.65,63.15
+    >>Click |cFFDB2EEFThe Fall of Ameth'Aran|r on the ground
+    >>|cFFFCDC00This has a 5 second cast time|r
+    .complete 953,2 --Read the Fall of Ameth'Aran (1)
+step
+    .goto Darkshore,43.30,58.70
+    >>Click |cFFDB2EEFThe Lay of Ameth'Aran|r on the ground
+    >>|cFFFCDC00This has a 5 second cast time|r
+    .complete 953,1 --Read the Lay of Ameth'Aran (1)
+step
+    #label Fall
+    .goto Darkshore,40.30,59.73
+    >>Talk to |cFF00FF25Tysha|r
+    .turnin 953 >>Turn in The Fall of Ameth'Aran
+    .target Sentinel Tysha Moonblade
+step
+    #label Relics
+    .goto Darkshore,41.76,57.96,50,0
+    .goto Darkshore,43.11,57.55,50,0
+    .goto Darkshore,43.82,58.29,50,0
+    .goto Darkshore,43.58,59.99,50,0
+    .goto Darkshore,43.49,62.92,50,0
+    .goto Darkshore,42.38,63.40,50,0
+    .goto Darkshore,41.21,61.64,50,0
+    .goto Darkshore,41.76,57.96
+    >>Kill |cFFFF5722Cursed Highbornes|r and |cFFFF5722Writhing Highbornes|r
+    >>|cFFFCDC00Kill |cFFFF5722Wailing Highbornes|r only if they're in your way|r
+    .complete 958,1 --Highborne Relic (7)
+    .mob Cursed Highborne
+    .mob Writhing Highborne
+step
+    #label Anaya
+    .goto Darkshore,42.45,60.66
+    >>Kill |cFFFF5722Anaya Dawnrunner|r. Loot her for |cFF00BCD4Anaya's Pendant|r
+    .complete 963,1 --Anaya's Pendant (1)
+    .unitscan Anaya Dawnrunner
+step
+    #completewith next
+    .goto Darkshore,45.25,53.44,30 >>Go inside the cave
+    >>|cFFFCDC00Avoid |cFFFF5722Thistle Bears|r, |cFFFF5722Moonkins|r, and |cFFFF5722Raging Moonkins|r en route (if possible)|r
+    .isOnQuest 958
+step
+    .goto Darkshore,45.75,53.08
+    .goto Darkshore,41.70,36.51,30 >>|cFFFCDC00Kill the |cFFFF5722Moonkin Oracle|r inside the cave, then drink Logout Skip by logging out on top of the Mushroom at the back of the cave|r
+    >>|cFFFCDC00Be careful as it casts|r |T136006:0|t[Wrath] |cFFFCDC00(Ranged Cast: Deals 30-45 Nature damage),|r |T136096:0|t[Moonfire] |cFFFCDC00(Ranged Instant: Deals 20-30 Nature damage, then 44 Nature damage over 12 seconds), and|r |T136085:0|t[Regrowth] |cFFFCDC00(Self Cast: Heals for about 150 damage. Rare, but run if this happens)|r
+    >>|cFFFCDC00You can LoS his|r |T136006:0|t[Wrath] |cFFFCDC00behind the rocks inside the mouth of the cave|r
+    .mob Moonkin Oracle
+    .isOnQuest 958
+step
+    .goto Darkshore,44.18,36.29
+    >>Talk to |cFF00FF25Asterion|r
+    .turnin 957,3 >>Turn in Bashal'Aran
+    .target Asterion
+step
+    #sticky
+    #label DalmondBags1
+    .goto Darkshore,37.45,40.50,0,0
+    >>Talk to |cFF00FF25Dalmond|r
+    .vendor >> Vendor Trash
+    .target Dalmond
+    .isQuestAvailable 3524
+step
+    .goto Darkshore,37.40,40.13
+    >>Talk to |cFF00FF25Thundris|r
+    .turnin 958 >>Turn in Tools of the Highborne
+    .target Thundris Windweaver
+step
+    #requires DalmondBags1
+    .goto Darkshore,37.69,40.66
+    >>Talk to |cFF00FF25Alanndarian|r
+    .turnin 2178 >>Turn in Easy Strider Living
+    .target Alanndarian Nightsong
+    .itemcount 5469,5
+    .skill cooking,<10,1
+step
+    .goto Darkshore,39.37,43.49
+    >>Talk to |cFF00FF25Terenthis|r
+    .turnin 984 >> Turn in How Big a Threat?
+    .accept 985 >> Accept How Big a Threat?
+    .accept 4761 >> Accept Thundris Windweaver
+    .target Terenthis
+step
+    .goto Darkshore,36.64,46.26
+    >>Click |cFFDB2EEFBuzzbox 827|r
+    .turnin 983 >>Turn in Buzzbox 827
+    .accept 1001 >>Accept Buzzbox 411
+step
+    .goto Darkshore,36.72,45.07,12,0
+    .goto Darkshore,36.62,45.59
+    >>Talk to |cFF00FF25Gwennyth|r
+    .turnin 3524 >>Turn in Washed Ashore
+    .accept 4681 >>Accept Washed Ashore
+    .target Gwennyth Bly'Leggonde
+ step
+    .goto Darkshore,36.77,44.28
+    >>Talk to |cFF00FF25Laird|r
+    >>|cFF0E8312Buy up to 40|r |T133918:0|t[Longjaw Mud Snappers] |cFF0E8312from him|r
+    .collect 4592,40,4681,1 --Longjaw Mud Snapper (40)
+    .target Laird
+step
+    .goto Darkshore,36.68,44.05,12,0
+    .goto Darkshore,35.74,43.70
+    >>Talk to |cFF00FF25Cerellean|r
+    .turnin 963 >>Turn in For Love Eternal
+    .target Cerellean Whiteclaw
+step
+    #completewith Gwen
+    >>Kill |cFFFF5722Darkshore Threshers|r
+    >>|cFFFCDC00Do NOT go out of your way for these|r
+    .complete 1001,1 --Thresher Eye (3)
+    .mob Darkshore Thresher
+step
+    #completewith next
+    .goto Darkshore,32.91,42.24,15,0
+    .goto Darkshore,32.41,43.82,25 >> Run along the dock toward the |cFF00BCD4Sea Turtle Remains|r
+step
+    .goto Darkshore,31.86,46.33
+    >>Swim underwater
+    >>Loot the |cFF00BCD4Sea Turtle Remains|r
+    .complete 4681,1 --Sea Turtle Remains (1)
+step
+    .goto Darkshore,36.12,44.70,50,0
+    .goto Darkshore,35.80,45.88,50,0
+    .goto Darkshore,36.04,48.63,50,0
+    .goto Darkshore,36.13,50.13,50,0
+    .goto Darkshore,36.58,53.20,50,0
+    .goto Darkshore,35.23,53.81,50,0
+    .goto Darkshore,35.22,55.37,50,0
+    .goto Darkshore,36.70,57.09,50,0
+    .goto Darkshore,36.12,44.70,50,0
+    .goto Darkshore,35.80,45.88,50,0
+    .goto Darkshore,36.04,48.63,50,0
+    .goto Darkshore,36.13,50.13,50,0
+    .goto Darkshore,36.58,53.20,50,0
+    .goto Darkshore,35.23,53.81,50,0
+    .goto Darkshore,35.22,55.37,50,0
+    .goto Darkshore,36.70,57.09
+    .xp 11+7825 >> Grind to 7825+/8800xp
+    .mob Pygmy Tide Crawler
+    .mob Young Reef Crawler
+step
+    #label Gwen
+    .goto Darkshore,36.67,45.08,12,0
+    .goto Darkshore,36.62,45.59
+    >>Talk to |cFF00FF25Gwennyth|r
+    .turnin 4681,1 >> Turn in Washed Ashore
+    .target Gwennyth Bly'Leggonde
+step << skip
+    #completewith next
+    +Equip your new creps (Equip the |T132537:0|t[Sandcomber Boots])
+    .use 15398
+    .itemcount 15398,1
+    .itemStat 8,LEVEL,<14
+step
+    .goto Darkshore,37.04,44.13
+    >>|cFFFCDC00===PAY ATTENTION===|r
+    >>|cFFFCDC00Talk to|r |cFF00FF25Shaussiy|r
+    >>|cFFFCDC00If this is your first time doing a Hearthstone Batch, watch the guide for it below|r
+    >>|cFFFCDC00Open the "Set Hearthstone" menu, then cast|r |T134414:0|t[Hearthstone]
+    .hs >> |cFFFCDC00Hearthstone BATCH from Auberdine to Ironforge|r
+    .link https://www.youtube.com/watch?v=Is-h2TJpL3M >> |cFFFCDC00CLICK HERE (it is HEAVILY advised you do so). Make sure you've set and tested your Batching Window Size prior to reduce risk of failure|r
+    .target Innkeeper Shaussiy
+    .zoneskip Ironforge
+step
+    .goto Ironforge,27.17,8.58
+    >>Talk to |cFF00FF25Dink|r
+    .trainer >> Train your class spells (Fireball r3, Dampen Magic)
+    >>Total Cost: 12s
+    >>Remember you may want money for a |T133024:0|t[Bronze Tube] (8s each) and Thelsamar flying (1s 10c)
+    .target Dink
+step
+    .goto Ironforge,27.22,8.58,-1
+    .goto Ironforge,67.83,42.47,-1
+    .vendor 5175 >> Logout skip on the pillar above |cFF00FF25Dink|r to check |cFF00FF25Cogspinner|r for a |T133024:0|t[Bronze Tube] if you wish
+    .itemcount 4371,<1
+    .isQuestAvailable 418
+step
+    #completewith next
+    +|cFFFCDC00Start spam casting|r |T132794:0|t[Conjure Water r2] |cFFFCDC00to conjure as much water as possible before taking the flight|r
+step << Gnome
+    .goto Ironforge,55.50,47.74
+    >>Talk to |cFF00FF25Gryth|r
+    .accept 6392 >>Accept Return to Brock
+    .target Gryth Thurden
+step
+    .goto Ironforge,55.50,47.74
+    >>Talk to |cFF00FF25Gryth|r
+    .fly Thelsamar >> Fly to Thelsamar
+    .target Gryth Thurden
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Mage
 #name 12-14 ADV Loch Modan Mage AoE
 #version 2
 #group RestedXP ADV AoE Alliance Mage
@@ -3760,6 +4325,7 @@ RXPGuides.RegisterGuide([[
 #defaultfor Human Mage/Gnome Mage
 #next 16-18 ADV Westfall Mage AoE
 
+
 step
     #completewith DeepO
     +|cFFFCDC00Save any |T132917:0|t[Light Feathers] you get for later|r
@@ -3835,7 +4401,7 @@ step
    .accept 4723 >> Accept Beached Sea Creature
 step
    .goto Darkshore,41.96,28.61
-   >>Click the |cFFDB2EEFBuzzbox 411|r
+   >>Click |cFFDB2EEFBuzzbox 411|r
    .turnin 1001 >> Turn in Buzzbox 411
    .accept 1002 >> Accept Buzzbox 323
 step
@@ -4160,18 +4726,18 @@ step
     .goto Darkshore,51.51,38.22
     >>Kill |cFFFF5722Den Mother|r
     >>|cFFFCDC00Be careful as |cFFFF5722Den Mother|r and her |cFFFF5722Thistle Cubs|r cast|r |T132141:0|t[Ravage] |cFFFCDC00(2 second stun)|r
-    >>|cFFFCDC00Split Pull |cFFFF5722Den Mother|r with your|r |T133714:0|t[Rough Dynamite]
     .complete 2139,1 --Den Mother (1)
     .mob Den Mother
-    .itemcount 4358,1
+    .itemcount 4358,<1
 step
     #label DenM
     .goto Darkshore,51.51,38.22
     >>Kill |cFFFF5722Den Mother|r
     >>|cFFFCDC00Be careful as |cFFFF5722Den Mother|r and her |cFFFF5722Thistle Cubs|r cast|r |T132141:0|t[Ravage] |cFFFCDC00(2 second stun)|r
+    >>|cFFFCDC00Split Pull |cFFFF5722Den Mother|r with your|r |T133714:0|t[Rough Dynamite]
     .complete 2139,1 --Den Mother (1)
     .mob Den Mother
-    .itemcount 4358,<1
+    .itemcount 4358,1
 step
     #completewith Talisman
     >>Kill |cFFFF5722Moonstalkers|r. Loot them for their |cFF00BCD4Moonstalker Fangs|r
@@ -4193,6 +4759,7 @@ step
     #completewith next
     .goto Darkshore,52.51,33.11
     .cast 16072 >>Use the |T134712:0|t[Filled Cleansing Bowl] near the campfire to summon |cFFFF5722Xabraxxis|r
+    >>|cFFFCDC00This has a 5 second cast time|r
     .timer 20,The Blackwood Corrupted RP
     .use 12347
 step
@@ -5222,8 +5789,8 @@ step
     #completewith next
     .goto Darkshore,38.65,87.34
     >>Place the |T134715:0|t[Phial of Scrying] on the ground
-    >>Click the |cFFDB2EEFPhial of Scrying|r on the ground
     >>|cFFFCDC00This has a 5 second cast time|r
+    >>Click the |cFFDB2EEFPhial of Scrying|r on the ground
     .turnin 944 >> Turn in The Master's Glaive
     .accept 949 >> Accept The Twilight Camp
     .use 13536
@@ -5247,8 +5814,8 @@ step
 step
    .goto Darkshore,38.55,86.03
    >>Place the |T134715:0|t[Phial of Scrying] on the ground
-   >>Click the |cFFDB2EEFPhial of Scrying|r on the ground
    >>|cFFFCDC00This has a 5 second cast time|r
+   >>Click the |cFFDB2EEFPhial of Scrying|r on the ground
    .turnin 944 >> Turn in The Master's Glaive
    .accept 949 >> Accept The Twilight Camp
    .use 13536
@@ -5302,7 +5869,7 @@ step
     .goto Darkshore,35.72,83.69,40,0
     .goto Darkshore,31.28,87.39
     >>Escort |cFF00FF25Remtravel|r
-    >>When the |cFFFF5722Gravelflint Bonesnapper|r and |cFFFF5722Gravelflint Geomancer|r spawn, let the Gravelflint Bonesnapper cast |T135812:0|t[Fireball] on |cFF00FF25Remtravel|r, then cast |T136071:0|t[Polymorph] on it. Kill the |cFFFF5722Gravelflint Bonesnapper|r and then the |cFFFF5722Gravelflint Geomancer|r
+    >>When the |cFFFF5722Gravelflint Bonesnapper|r and |cFFFF5722Gravelflint Geomancer|r spawn, let the |cFFFF5722Gravelflint Geomancer|r cast |T135812:0|t[Fireball] on |cFF00FF25Remtravel|r, then cast |T136071:0|t[Polymorph] on it. Kill the |cFFFF5722Gravelflint Bonesnapper|r and then the |cFFFF5722Gravelflint Geomancer|r
     .complete 731,1 --Escort Prospector Remtravel (1)
     .target Prospector Remtravel
     .mob Gravelflint Geomancer
@@ -5525,7 +6092,7 @@ step
     .goto Darkshore,35.72,83.69,40,0
     .goto Darkshore,38.65,87.34
     >>Escort |cFF00FF25Remtravel|r
-    >>When the |cFFFF5722Gravelflint Bonesnapper|r and |cFFFF5722Gravelflint Geomancer|r spawn, let the Gravelflint Bonesnapper cast |T135812:0|t[Fireball] on |cFF00FF25Remtravel|r, then cast |T136071:0|t[Polymorph] on it. Kill the |cFFFF5722Gravelflint Bonesnapper|r and then the |cFFFF5722Gravelflint Geomancer|r
+    >>When the |cFFFF5722Gravelflint Bonesnapper|r and |cFFFF5722Gravelflint Geomancer|r spawn, let the |cFFFF5722Gravelflint Geomancer|r cast |T135812:0|t[Fireball] on |cFF00FF25Remtravel|r, then cast |T136071:0|t[Polymorph] on it. Kill the |cFFFF5722Gravelflint Bonesnapper|r and then the |cFFFF5722Gravelflint Geomancer|r
     .complete 731,1 --Escort Prospector Remtravel (1)
     .target Prospector Remtravel
     .mob Gravelflint Geomancer
@@ -5559,8 +6126,8 @@ step
     #completewith next
     .goto Darkshore,38.65,87.34
     >>Place the |T134715:0|t[Phial of Scrying] on the ground
-    >>Click the |cFFDB2EEFPhial of Scrying|r on the ground
     >>|cFFFCDC00This has a 5 second cast time|r
+    >>Click the |cFFDB2EEFPhial of Scrying|r on the ground
     .turnin 944 >> Turn in The Master's Glaive
     .accept 949 >> Accept The Twilight Camp
     .use 5251
@@ -5578,8 +6145,8 @@ step
 step
     .goto Darkshore,38.55,86.03
     >>Place the |T134715:0|t[Phial of Scrying] on the ground
-    >>Click the |cFFDB2EEFPhial of Scrying|r on the ground
     >>|cFFFCDC00This has a 5 second cast time|r
+    >>Click the |cFFDB2EEFPhial of Scrying|r on the ground
     .turnin 944 >> Turn in The Master's Glaive
     .accept 949 >> Accept The Twilight Camp
     .use 5251
@@ -5631,6 +6198,7 @@ step
 step
     .goto Darkshore,44.39,76.30
     >>Open |cFFDB2EEFKerlonian's Chest|r. Loot it for the |cFF00BCD4Horn of Awakening|r
+    >>|cFFFCDC00This has a 5 second cast time|r
     .complete 5321,1 --Horn of Awakening (1)
     .isOnQuest 5321
 step
@@ -5748,6 +6316,38 @@ step
     .goto Darkshore,38.32,43.04
     .target Terenthis
     .target Gershala Nightwhisper
+step
+    .goto Darkshore,38.11,41.16
+    >>Talk to |cFF00FF25Gorbold|r
+    >>|cFF0E8312Buy 20|r |T134059:0|t[Mild Spices] |cFF0E8312from him|r
+    .collect 2678,20,90,1 --Mild Spices (20)
+    .target Gorbold Steelhand
+    .itemcount 6889,20
+    .skill cooking,50,1
+step
+    .goto Darkshore,38.11,41.16
+    >>Talk to |cFF00FF25Gorbold|r
+    >>|cFF0E8312Buy 15|r |T134059:0|t[Mild Spices] |cFF0E8312from him|r
+    .collect 2678,15,90,1 --Mild Spices (15)
+    .target Gorbold Steelhand
+    .itemcount 6889,15
+    .skill cooking,50,1
+step
+    .goto Darkshore,38.11,41.16
+    >>Talk to |cFF00FF25Gorbold|r
+    >>|cFF0E8312Buy 10|r |T134059:0|t[Mild Spices] |cFF0E8312from him|r
+    .collect 2678,10,90,1 --Mild Spices (10)
+    .target Gorbold Steelhand
+    .itemcount 6889,10
+    .skill cooking,50,1
+step
+    .goto Darkshore,38.11,41.16
+    >>Talk to |cFF00FF25Gorbold|r
+    >>|cFF0E8312Buy 5|r |T134059:0|t[Mild Spices] |cFF0E8312from him|r
+    .collect 2678,5,90,1 --Mild Spices (5)
+    .target Gorbold Steelhand
+    .itemcount 6889,5
+    .skill cooking,50,1
 step
     .goto Darkshore,37.45,40.50
     >>Talk to |cFF00FF25Dalmond|r
@@ -6414,7 +7014,7 @@ step
     .vendor >> Vendor Trash
     .target Dorin Songblade
     .isOnQuest 89
-step
+step << skip
     #completewith next
     .goto Redridge Mountains,29.24,45.40,10,0
     .goto Redridge Mountains,28.89,44.87,8 >>Go inside the Town Hall
@@ -6436,12 +7036,12 @@ step
     >>AoE |cFFFF5722Blackrock Outrunners|r, |cFFFF5722Blackrock Renegades|r and |cFFFF5722Blackrock Grunts|r. Loot them for their |cFF00BCD4Battleworn Axes|r
     >>AoE |cFFFF5722Murloc Tidecallers|r and |cFFFF5722Murloc Scouts|r. Loot them for their |cFF00BCD4Spotted Sunfish|r and |cFF00BCD4Murloc Fins|r
     >>AoE |cFFFF5722Dire Condors|r. Loot them for their |cFF00BCD4Tough Condor Meat|r
-    >>AoE |cFFFF5722Greater Tarantulas|r. Loot them for their |cFF00BCD4Tough Condor Meat|r
+    >>AoE |cFFFF5722Greater Tarantulas|r. Loot them for their |cFF00BCD4Crisp Spider Meat|r
     >>AoE |cFFFF5722Great Goretusks|r. Loot them for |cFF00BCD4Great Goretusk Snouts|r
     >>AoE |cFFFF5722Redridge Mystics|r and |cFFFF5722Redridge Brutes|r Loot them for their |cFF00BCD4Iron Pikes|r and |cFF00BCD4Iron Rivets|r
     >>|cFFFCDC00Be careful as |cFFFF5722Blackrock Outrunners|r cast|r |T132149:0|t[Net]|cFFFCDC00, |cFFFF5722Dire Condors|r cast|r |T132154:0|t[Knockdown]
     .complete 20,1 --Blackrock Axe (10)
-    .loop 50,Redridge Mountains,37.16,45.20,38.36,41.34,40.09,40.64,42.89,39.26,59.36,44.56,59.79,42.05,62.58,41.46,62.57,45.48,59.36,44.56
+    .loop 30,Redridge Mountains,37.16,45.20,38.36,41.34,40.09,40.64,42.89,39.26,59.36,44.56,59.79,42.05,62.58,41.46,62.57,45.48,59.36,44.56
     .complete 127,1 --Spotted Sunfish (10)
     .collect 1468,8,150,1 --Murloc Fin (8)
     .goto Redridge Mountains,58.06,52.01,40,0
@@ -6449,9 +7049,9 @@ step
     .goto Redridge Mountains,56.12,53.55,40,0
     .goto Redridge Mountains,58.06,52.01
     .collect 1080,5,92,1 --Tough Condor Meat (5)
-    .loop 50,Redridge Mountains,43.25,34.03,47.37,34.77,47.37,34.77,49.97,33.60,51.90,39.75,54.81,40.66,54.70,44.93,57.63,46.48
+    .loop 30,Redridge Mountains,43.25,34.03,47.37,34.77,47.37,34.77,49.97,33.60,51.90,39.75,54.81,40.66,54.70,44.93,57.63,46.48
     .collect 1081,5,92,1 --Crisp Spider Meat (5)
-    .loop 50,Redridge Mountains,52.26,36.56,54.08,38.28,54.98,40.31,56.79,41.36,57.26,47.60,54.76,45.58,52.67,42.73,50.50,41.55,52.26,36.56
+    .loop 30,Redridge Mountains,52.26,36.56,54.08,38.28,54.98,40.31,56.79,41.36,57.26,47.60,54.76,45.58,52.67,42.73,50.50,41.55,52.26,36.56
     .collect 2296,5,92,1 --Great Goretusk Snout (5)
     .disablecheckbox
     .complete 89,1 --Iron Pike (5)
@@ -6541,7 +7141,7 @@ step
     .goto Redridge Mountains,20.58,28.29,40 >>Travel to the Rethban Caverns
     .isOnQuest 347
 step
-    .loop 40,Redridge Mountains,18.95,24.50,21.62,23.72,21.89,15.06,20.21,13.25,18.82,15.03,16.06,17.08,17.48,19.55,16.05,21.04,18.95,24.50
+    .loop 20,Redridge Mountains,18.95,24.50,21.62,23.72,21.89,15.06,20.21,13.25,18.82,15.03,16.06,17.08,17.48,19.55,16.05,21.04,18.95,24.50
     >>AoE |cFFFF5722Redridge Drudgers|r. Loot them for their |cFF00BCD4Rethban Ore|r, |cFF00BCD4Iron Pikes|r, and |cFF00BCD4Iron Rivets|r
     >>AoE |cFFFF5722Redridge Bashers|r. Loot them for their |cFF00BCD4Iron Pikes|r and |cFF00BCD4Iron Rivets|r
     >>Mine the |cFFDB2EEFCopper Veins|r in the cave. Loot them for the |cFF00BCD4Rethban Ore|r
@@ -6551,11 +7151,11 @@ step
     .mob Redridge Drudger
     .mob Redridge Basher
 step
-    .loop 40,Redridge Mountains,18.95,24.50,21.62,23.72,21.89,15.06,20.21,13.25,18.82,15.03,16.06,17.08,17.48,19.55,16.05,21.04,18.95,24.50
+    .loop 20,Redridge Mountains,18.95,24.50,21.62,23.72,21.89,15.06,20.21,13.25,18.82,15.03,16.06,17.08,17.48,19.55,16.05,21.04,18.95,24.50
     .xp 21+14365 >> Grind to 14365+/25200xp
     .isQuestAvailable 92
 step
-    .loop 40,Redridge Mountains,18.95,24.50,21.62,23.72,21.89,15.06,20.21,13.25,18.82,15.03,16.06,17.08,17.48,19.55,16.05,21.04,18.95,24.50
+    .loop 20,Redridge Mountains,18.95,24.50,21.62,23.72,21.89,15.06,20.21,13.25,18.82,15.03,16.06,17.08,17.48,19.55,16.05,21.04,18.95,24.50
     .xp 21+15715 >> Grind to 15715+/25200xp
     .isQuestTurnedIn 92
 step
@@ -6637,9 +7237,10 @@ step
     .cast 3561 >> Cast |T135763:0|t[Teleport: Stormwind]
     .zoneskip Stormwind City
 step
-    #completewith next
+    #completewith CharysEnd
     >>|cFFFCDC00===PAY ATTENTION===|r
     +|cFFFCDC00Respec to the Frost AoE spec|r
+    .xp <22,1
 step
     .goto Stormwind City,38.23,81.86
     >>Talk to |cFF00FF25Dumas|r
@@ -6768,7 +7369,7 @@ step
     .train 3562 >> Train |T135763:0|t[Teleport: Ironforge]
     .target Milstaff Stormeye
 step
-    #completewith next
+    #completewith FlyMene
     >>|cFFFCDC00===PAY ATTENTION===|r
     +|cFFFCDC00Respec to the Frost AoE spec|r
 step
@@ -6781,6 +7382,7 @@ step
     +|cFFFCDC00Start spam casting|r |T132816:0|t[Conjure Water r3] |cFFFCDC00to conjure as much water as possible before taking the flight|r
 step
     #completewith next
+    #label FlyMene
     .goto Ironforge,55.50,47.74
     >>Talk to |cFF00FF25Gryth|r
     .fly Menethil >> Fly to Menethil Harbor

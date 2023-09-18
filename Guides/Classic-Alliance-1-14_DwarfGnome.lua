@@ -2100,6 +2100,7 @@ step << Warlock
     .complete 1689,1 --Kill Summoned Voidwalker (x1)
     .mob Summoned Voidwalker
 step << Warlock
+    #softcore
     #completewith next
     +Start casting |T136126:0|t[Life Tap] on your way back up to |cRXP_FRIENDLY_Gakin the Darkbinder|r as you will do a deathskip momentarily
 step << Warlock

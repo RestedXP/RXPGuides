@@ -31,5 +31,8 @@
 <Script file="Guides/Retail-Allied-Races/Retail-Horde-Nightborne.lua"/>
 <Script file="Guides/Retail-Allied-Races/Retail-Horde-Vulpera.lua"/>
 <Script file="Guides/Retail-Allied-Races/Retail-Horde-ZandalariTroll.lua"/>
+
+<Script file="Guides/Retail-BfA-War-Campaign/Retail-Alliance_Battle for Azeroth War Campaign.lua"/>
+<Script file="Guides/Retail-BfA-War-Campaign/Retail-Horde_Battle for Azeroth War Campaign.lua"/>
   
 </Ui>

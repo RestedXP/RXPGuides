@@ -839,7 +839,7 @@ step << Hunter
 step << Warrior
     .goto Durotar,42.89,69.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Frang|r
-    .train 3127 >>Train |T132269:0|t[Parry]
+    .train 3126 >>Train |T132269:0|t[Parry]
     .train 6343 >>Train |T136105:0|t[Thunder Clap]
     .train 34428 >>Train |T132342:0|t[Victory Rush] << wotlk
     .target Frang
@@ -848,7 +848,7 @@ step << Warrior
 step << Warrior
     .goto Durotar,42.89,69.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Frang|r
-    .train 3127 >>Train |T132269:0|t[Parry]
+    .train 3126 >>Train |T132269:0|t[Parry]
     .train 34428 >>Train |T132342:0|t[Victory Rush] << wotlk
     .target Frang
     .money <0.0190 << wotlk
@@ -1231,7 +1231,8 @@ step << Warrior/Rogue
     #xprate <1.5
     .goto Durotar,52.0,40.7
     .money <0.0020
-    .train 2018 >> Train Blacksmithing. Blacksmithing allows you to make Sharpening stones (+2 weapon damage for 1 hour). You can skip Blacksmithing and Mining if you wish
+    .train 2020 >> Train Blacksmithing. Blacksmithing allows you to make Sharpening stones (+2 weapon damage for 1 hour). You can skip Blacksmithing and Mining if you wish
+    .skill blacksmithing,1,1
 step << Warrior/Rogue
     #xprate <1.5
 .goto Durotar,51.8,40.9
@@ -1799,7 +1800,8 @@ step << Undead Warrior
 step << Undead Warrior
     .goto Durotar,52.0,40.7
     .money <0.0020
-    .train 2018 >> Train Blacksmithing. Blacksmithing allows you to make Sharpening stones (+2 weapon damage for 1 hour). You can skip Blacksmithing and Mining if you wish
+    .train 2020 >> Train Blacksmithing. Blacksmithing allows you to make Sharpening stones (+2 weapon damage for 1 hour). You can skip Blacksmithing and Mining if you wish
+    .skill blacksmithing,1,1
 step << Undead Warrior
     .goto Durotar,51.8,40.9
     .money <0.0010

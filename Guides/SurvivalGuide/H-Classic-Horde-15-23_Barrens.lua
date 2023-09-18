@@ -603,7 +603,7 @@ step
     .mob Zhevra Runner
 step
     .group
-    .goto The Barrens,62.26,19.38
+    .goto The Barrens,62.34,20.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ak'Zeloth|r
     .turnin 924 >>Turn in The Demon Seed
     .target Ak'Zeloth
@@ -697,30 +697,16 @@ step << Rogue
     .collect 2027,1,895,1 --Collect Scimitar (1)
     .money <0.3815
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
     .target Ironzar
-step << Rogue
-    #completewith BarenLongshore
-    +Equip the |T135343:0|t[Scimitar]
-    .use 2027
-    .itemcount 2027,1
-    .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
 step << Rogue
     .goto The Barrens,62.24,37.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Buy a second|r |T135343:0|t[Scimitar] |cRXP_BUY_from him for your off-hand|r
     .collect 2027,2,895,1 --Collect Scimitar(1)
     .money <0.3815
     .itemStat 17,QUALITY,<7
-    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
     .target Ironzar
-step << Rogue
-    #completewith BarenLongshore
-    +Equip the second |T135343:0|t[Scimitar] in your off-hand
-    .use 2027
-    .itemcount 2027,1
-    .itemStat 17,QUALITY,<7
-    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
 step
     .goto The Barrens,62.27,38.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drohn|r
@@ -869,31 +855,16 @@ step << Rogue
     .collect 923,1,850,1 --Collect Scimitar (1)
     .money <0.3815
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
     .target Ironzar
-step << Rogue
-    #completewith FlyToXroads1
-    +Equip the |T135343:0|t[Scimitar]
-    .use 923
-    .itemcount 923,1
-    .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
 step << Rogue
     .goto The Barrens,62.24,37.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Buy a second|r |T135343:0|t[Scimitar] |cRXP_BUY_from him for your off-hand.|r
     .collect 923,1,850,1 --Collect Scimitar (1)
     .money <0.3815
     .itemStat 17,QUALITY,<7
-    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
     .target Ironzar
-step << Rogue
-    #completewith FlyToXroads1
-    +Equip the |T135343:0|t[Scimitar]
-    .use 923
-    .itemcount 923,1
-    .itemStat 17,QUALITY,<7
-    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
-    --Enter completewith label
 step
     .goto The Barrens,63.89,35.93,50,0
     .goto The Barrens,64.28,35.60,50,0
@@ -1202,7 +1173,7 @@ step
 step << Rogue
     .goto Orgrimmar,43.05,53.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shenthul|r
-    .train 1804 >> Train |T136058:0|t[Pick Lock]
+    .train 6480 >> Train |T136058:0|t[Pick Lock]
     .train 921 >> Train |T133644:0|t[Pick Pocket]
     .accept 2379 >> Accept Zando'Zan
     .target Shenthul
@@ -2455,7 +2426,7 @@ step << Mage
 step << Priest
     .goto Orgrimmar,35.59,87.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
-    .train 970/ >> Train your class spells
+    .train 970 >> Train your class spells
     .target Ur'kyo
     .xp <18,1
     .xp >20,1
@@ -2569,6 +2540,7 @@ step
     .accept 5052 >>Accept Blood Shards of Agamaggan
     .turnin 5052 >>Turn in Blood Shards of Agamaggan
     .target Mangletooth
+    .addquestitem 4075,5052
 step
     #completewith Thunderhawk
     +|cRXP_WARN_Use your|r |T134128:0|t[|cFF00BCD4Blood Shards|r] |cRXP_WARN_to get buffs. Save at least 4 of them for later|r
@@ -2690,7 +2662,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .accept 4021 >>Accept Counterattack!
     .target Regthar Deathgate
-    .timer 205 >>|cRXP_ENEMY_Warlord Krom'zar|r spawn
     .isQuestTurnedIn 852
     .group
 step
@@ -2818,7 +2789,7 @@ step
 step
     .goto Stonetalon Mountains,60.16,90.92,30,0
     .goto Stonetalon Mountains,58.44,89.90
-    >>Atack the |cRXP_PICK_Resonite Crystals|r and walk far enough into the cave to investigate the area
+    >>Attack the |cRXP_PICK_Resonite Crystals|r and walk far enough into the cave to investigate the area
     >>|cRXP_WARN_Be careful! These mobs are tougher than they look and are easily double pulled.|r |cRXP_ENEMY_Gogger Rock Keepers|r |cRXP_WARN_cast|r |T136026:0|t[Earth Shock] |cRXP_WARN_which deals a high amount of damage!|r
     .complete 6421,1 --Investigate Cave in Boulderslide Ravine
     .complete 6421,2 --Resonity Crystal (x10)
@@ -3943,11 +3914,6 @@ step << !Rogue/Druid
     .zone The Barrens >> Enter The Barrens through the Western Exit
     .zoneskip The Barrens
     .isOnQuest 3924
-step << !Rogue/Druid
-    #completewith SamophlangePages
-    .goto Kalimdor,56.82,45.48,40,0
-    .goto The Barrens,63.58,4.67,50,0
-    .goto The Barrens,61.94,4.93,50 >> Go up the hill towards the Boulder Lode Mine
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Venture Co. Enforcers|r and |cRXP_ENEMY_Venture Co. Overseers|r. Loot them for |cRXP_LOOT_Samophlange Manual Pages|r
