@@ -2426,7 +2426,7 @@ step << Mage
 step << Priest
     .goto Orgrimmar,35.59,87.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
-    .train 970/ >> Train your class spells
+    .train 970 >> Train your class spells
     .target Ur'kyo
     .xp <18,1
     .xp >20,1
