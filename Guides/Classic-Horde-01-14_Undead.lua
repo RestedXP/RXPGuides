@@ -123,7 +123,7 @@ step << Warrior
 step << Warlock
     #requires Piercing
     .goto Tirisfal Glades,31.35,66.21,10,0
-    .loop 40,Tirisfal Glades,31.82,61.48,31.11,60.71,32.07,60.17,32.26,59.21,33.28,59.53,33.66,60.76,33.94,61.81,34.21,63.05,33.01,63.01,31.82,61.48
+    .loop 25,Tirisfal Glades,31.82,61.48,31.11,60.71,32.07,60.17,32.26,59.21,33.28,59.53,33.66,60.76,33.94,61.81,34.21,63.05,33.01,63.01,31.82,61.48
     >>Kill |cFFFF5722Rattlecage Skeletons|r. Loot them for their |cFF00BCD4Rattlecage Skulls|r
     .complete 1470,1 --Rattlecage Skull (3)
     .mob Rattlecage Skeleton
@@ -154,7 +154,7 @@ step
     #label Zombies
     #requires Piercing << Warlock/Mage
     .goto Tirisfal Glades,31.35,66.21,10,0
-    .loop 40,Tirisfal Glades,31.72,63.98,30.69,63.88,30.90,62.20,30.73,61.66,31.14,61.41,31.80,61.83,32.85,63.02,32.90,63.54,33.41,63.06,33.75,62.86,33.51,63.82,33.55,64.57,33.29,64.96,31.72,63.98
+    .loop 25,Tirisfal Glades,31.72,63.98,30.69,63.88,30.90,62.20,30.73,61.66,31.14,61.41,31.80,61.83,32.85,63.02,32.90,63.54,33.41,63.06,33.75,62.86,33.51,63.82,33.55,64.57,33.29,64.96,31.72,63.98
     >>Kill |cFFFF5722Mindless Zombies|r and |cFFFF5722Wretched Zombies|r
     .complete 364,1 --Kill Mindless Zombie (x8)
     .complete 364,2 --Kill Wretched Zombie (x8)
@@ -255,20 +255,20 @@ step
     .mob Duskbat
     .mob Mangy Duskbat
 step
-    .loop 40,Tirisfal Glades,31.82,61.48,31.11,60.71,32.07,60.17,32.26,59.21,33.28,59.53,33.66,60.76,33.94,61.81,34.21,63.05,33.01,63.01,31.82,61.48
+    .loop 25,Tirisfal Glades,31.82,61.48,31.11,60.71,32.07,60.17,32.26,59.21,33.28,59.53,33.66,60.76,33.94,61.81,34.21,63.05,33.01,63.01,31.82,61.48
     >>Kill |cFFFF5722Rattlecage Skeletons|r
     .complete 3901,1 --Kill Rattlecage Skeleton (12)
     .mob Rattlecage Skeleton
 step
     #som
-    .loop 40,Tirisfal Glades,31.72,63.98,30.69,63.88,30.90,62.20,30.73,61.66,31.14,61.41,31.80,61.83,32.85,32.38,63.02,32.90,63.54,33.41,63.06,33.75,62.86,33.51,63.82,33.55,64.57,33.29,64.96,31.72,63.98
+    .loop 25,Tirisfal Glades,31.72,63.98,30.69,63.88,30.90,62.20,30.73,61.66,31.14,61.41,31.80,61.83,32.85,32.38,63.02,32.90,63.54,33.41,63.06,33.75,62.86,33.51,63.82,33.55,64.57,33.29,64.96,31.72,63.98
     .xp 3+480 >>Grind to 480+/1400xp << Warrior/Rogue
     .xp 3+560 >>Grind to 560+/1400xp << !Warrior !Rogue
     .mob Mindless Zombie
     .mob Wretched Zombie
 step
     #era
-    .loop 40,Tirisfal Glades,31.72,63.98,30.69,63.88,30.90,62.20,30.73,61.66,31.14,61.41,31.80,61.83,32.85,32.38,63.02,32.90,63.54,33.41,63.06,33.75,62.86,33.51,63.82,33.55,64.57,33.29,64.96,31.72,63.98
+    .loop 25,Tirisfal Glades,31.72,63.98,30.69,63.88,30.90,62.20,30.73,61.66,31.14,61.41,31.80,61.83,32.85,32.38,63.02,32.90,63.54,33.41,63.06,33.75,62.86,33.51,63.82,33.55,64.57,33.29,64.96,31.72,63.98
     .xp 3+940 >>Grind to 940+/1400xp << Warrior/Rogue
     .xp 3+980 >>Grind to 980+/1400xp << !Warrior !Rogue
     .mob Mindless Zombie
@@ -383,13 +383,13 @@ step
 step
     .goto Tirisfal Glades,29.29,59.38,50,0
     .goto Tirisfal Glades,29.94,57.33,50,0
-    .loop 40,Tirisfal Glades,29.94,57.33,29.82,56.03,29.25,55.77,28.40,56.51,27.68,57.10,28.29,58.31,28.25,59.41,28.80,59.53,29.29,59.40,29.67,58.53,29.94,57.33
+    .loop 25,Tirisfal Glades,29.94,57.33,29.82,56.03,29.25,55.77,28.40,56.51,27.68,57.10,28.29,58.31,28.25,59.41,28.80,59.53,29.29,59.40,29.67,58.53,29.94,57.33
     >>Kill |cFFFF5722Young Night Web Spiders|r
     .complete 380,1,6 --Kill Young Night Web Spider (10)
     .mob Young Night Web Spider
 step
     .goto Tirisfal Glades,27.86,58.98,40,0
-    .loop 40,Tirisfal Glades,28.25,58.27,28.42,59.07,27.86,60.57,27.17,59.18,27.30,57.97,26.94,56.42,27.51,56.00,28.25,58.27
+    .loop 25,Tirisfal Glades,28.25,58.27,28.42,59.07,27.86,60.57,27.17,59.18,27.30,57.97,26.94,56.42,27.51,56.00,28.25,58.27
     >>Kill |cFFFF5722Young Night Web Spiders|r close to the cave entrance
     .complete 380,1 --Kill Young Night Web Spider (10)
     .mob Young Night Web Spider
@@ -463,7 +463,7 @@ step << Warlock/Mage/Priest
     .itemcount 159,<15
 step
     #requires NightWebH
-    .loop 40,Tirisfal Glades,36.13,68.74,36.46,69.49,36.85,70.02,37.42,69.58,38.05,69.79,37.91,69.22,38.03,68.77,38.49,68.28,38.72,67.07,38.59,66.25,38.65,65.07,37.62,65.36,36.93,65.38,36.51,65.42,36.85,66.59,37.45,67.95,36.93,68.16,36.13,68.74
+    .loop 25,Tirisfal Glades,36.13,68.74,36.46,69.49,36.85,70.02,37.42,69.58,38.05,69.79,37.91,69.22,38.03,68.77,38.49,68.28,38.72,67.07,38.59,66.25,38.65,65.07,37.62,65.36,36.93,65.38,36.51,65.42,36.85,66.59,37.45,67.95,36.93,68.16,36.13,68.74
     >>Kill |cFFFF5722Scarlet Initiates|r and |cFFFF5722Scarlet Converts|r. Loot them for their |cFF00BCD4Scarlet Armbands|r
     >>|cFFFCDC00Don't kill |cFFFF5722Meven Korgal|r yet|r
     >>|cFFFCDC00Try to avoid |cFFFF5722Scarlet Initiates|r if you can as they have|r |T135843:0|t[Frost Armor] |cFFFCDC00(slows your attack speed)|r << Warrior/Rogue
@@ -529,7 +529,7 @@ step
     .goto Tirisfal Glades,36.83,56.85,40,0
     .goto Tirisfal Glades,37.76,59.38,40,0
     .goto Tirisfal Glades,37.51,62.99,40,0
-    .loop 40,Tirisfal Glades,36.13,68.74,36.46,69.49,36.85,70.02,37.42,69.58,38.05,69.79,37.91,69.22,38.03,68.77,38.49,68.28,38.72,67.07,38.59,66.25,38.65,65.07,37.62,65.36,36.93,65.38,36.51,65.42,36.85,66.59,37.45,67.95,36.93,68.16,36.13,68.74
+    .loop 25,Tirisfal Glades,36.13,68.74,36.46,69.49,36.85,70.02,37.42,69.58,38.05,69.79,37.91,69.22,38.03,68.77,38.49,68.28,38.72,67.07,38.59,66.25,38.65,65.07,37.62,65.36,36.93,65.38,36.51,65.42,36.85,66.59,37.45,67.95,36.93,68.16,36.13,68.74
     .xp 5+2350 >>Grind to 2350+/2800xp
 step
     .goto Tirisfal Glades,38.24,56.77
