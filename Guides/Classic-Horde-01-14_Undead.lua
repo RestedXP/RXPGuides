@@ -1898,6 +1898,7 @@ step << Rogue
     .target Varimathras
     .isQuestTurnedIn 1886
 step << Rogue
+    #optional
     .goto Undercity,55.22,90.88
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Perform a Logout Skip by positioning your character on the highest part of the lowest staircase until it looks like they're floating, then logging out and back in|r
 	.link https://www.youtube.com/watch?v=jj85AXyF1XE >> |cRXP_WARN_CLICK HERE for an example|r
@@ -2877,6 +2878,7 @@ step << Undead Rogue
     .abandon 1886 >> Abandon The Deathstalkers
     .isOnQuest 1886
 step << Undead Rogue
+    #optional
     .goto Undercity,55.22,90.88
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Perform a Logout Skip by positioning your character on the highest part of the lowest staircase until it looks like they're floating, then logging out and back in|r
 	.link https://www.youtube.com/watch?v=jj85AXyF1XE >> |cRXP_WARN_CLICK HERE for an example|r
