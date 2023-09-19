@@ -2802,6 +2802,11 @@ step
     .use 14338 >>|cFFFCDC00Use the|r |T134865:0|t[Empty Water Tube] |cFFFCDC00at the|r |cFFDB2EEFAuberdine Moonwell|r
     .complete 4812,1
 step
+    .goto Darkshore,37.78,44.06
+    .use 12346 >>|cFFFCDC00Use the|r |T133748:0|t[Empty Cleansing Bowl] |cFFFCDC00at the|r |cFFDB2EEFAuberdine Moonwell|r
+    .collect 12347,1,4763,1 -- Filled Cleansing Bowl (1)
+    .isOnQuest 4763
+step
 #map Darkshore
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tharnariun Treetender|r
 	.target Tharnariun Treetender
@@ -4235,7 +4240,7 @@ step << Warrior
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25General Marcus Jonathan|r
 	.target General Marcus Jonathan
-    .goto StormwindClassic,36.97,75.32
+    .goto StormwindClassic,63.982,75.338
     .turnin 120 >> Turn in Messenger to Stormwind
     .accept 121 >> Accept Messenger to Stormwind
 step
