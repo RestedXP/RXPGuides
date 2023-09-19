@@ -19,8 +19,6 @@ step
     #completewith Zombies
 	.destroy 6948 >> Destroy the |T134414:0|t[Hearthstone] in your bags, as it's no longer needed
 step
-    +Test version 123
-step
     #completewith next
     .goto Tirisfal Glades,30.04,72.78,8,0
     .goto Tirisfal Glades,30.27,72.78,8,0

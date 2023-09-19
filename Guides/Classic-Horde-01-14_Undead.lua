@@ -18,6 +18,9 @@ step
 	.destroy 6948 >> Destroy the |T134414:0|t[Hearthstone] in your bags, as it's no longer needed
 step
     #completewith next
+    +Test version 123
+step
+    #completewith next
     .goto Tirisfal Glades,30.04,72.78,8,0
     .goto Tirisfal Glades,30.27,72.78,8,0
     .goto Tirisfal Glades,30.22,71.65,10 >> Run up out of the crypt toward |cFF00FF25Mordo|r
