@@ -124,6 +124,21 @@ step << Rogue
     .collect 923,1 --Longsword
     .collect 2209,1 --Kris
     .target Marda Weller
+step
+    #ah
+    .goto Stormwind City,53.612,59.764
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
+    >>Buy the following items for faster turn ins at Redridge Mountains shortly
+    >>This will save you time as you won't need to run around looking for mobs to kill. Skip this step if you wish to not buy any
+    >>|T134172:0|t[Great Goretusk Snout]
+    >>|T134028:0|t[Tough Condor Meat]
+    >>|T134321:0|t[Crisp Spider Meat]
+    >>|T134572:0|t[Rethban Ore]  
+    .collect 2296,5,92,1 -- Great Goretusk Snout (5)
+    .collect 1080,5,92,1 -- Tough Condor Meat (5)
+    .collect 1081,5,92,1 -- Crisp Spider Meat (5)
+    .collect 2798,5,347,1 -- Rethban Ore (5)
+    .target Auctioneer Jaxon
 step << !NightElf
     .goto StormwindClassic,66.27,62.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
