@@ -634,7 +634,7 @@ local function DrawTalentLevel(talentIndex, upcomingLevel)
                                      _G["PlayerTalentFrameTalent" .. talentIndex],
                                      BackdropTemplate)
 
-        ht.levelHeader:SetPoint("TOPLEFT", ht, 2, 0)
+        ht.levelHeader:SetPoint("TOPLEFT", ht, 0, 0)
         ht.levelHeader.text = ht.levelHeader:CreateFontString(nil, "OVERLAY")
 
         ht.levelHeader.text:ClearAllPoints()
@@ -658,9 +658,17 @@ local function DrawTalentLevel(talentIndex, upcomingLevel)
             c = tonumber(currentNumber)
 
             -- Don't preserve old numbers
+            -- TODO remove older level after learning
             if c ~= upcomingLevel then
                 tinsert(numbers, c)
             end
+        end
+
+        -- If 5 levels of preview, overlaps with nearby
+        if #numbers == 5 then
+            ht.levelHeader.text:SetFont(addon.font, 8, "")
+        else
+            ht.levelHeader.text:SetFont(addon.font, 10, "")
         end
     end
 
@@ -720,7 +728,6 @@ function addon.talents:DrawTalents()
     local playerLevel = UnitLevel("player")
     local advancedWarning = playerLevel +
                                 addon.settings.profile.upcomingTalentCount
-    -- 44 - 30 - 10
     wipe(talentTooltips.data)
 
     for upcomingTalent = (playerLevel + 1 - remainingPoints), advancedWarning do
