@@ -405,11 +405,15 @@ local function learnClassicTalent(payload)
     if addon.gameVersion > 20000 then return end
 
     local tab, talentIndex, name = unpack(payload)
-    if LearnTalent(tab, talentIndex) then
+    local result = LearnTalent(tab, talentIndex)
+
+    if result then
         addon.comms.PrettyPrint("%s - %s", _G.TRADE_SKILLS_LEARNED_TAB, name)
         -- else
         -- addon.error(fmt("%s - %s", _G.ERR_TALENT_FAILED_UNKNOWN, name))
     end
+
+    return result
 end
 
 function addon.talents.functions.talent(element, validate)
@@ -469,6 +473,8 @@ function addon.talents.functions.talent(element, validate)
                 addon.comms:ConfirmChoice("RXPTalentPrompt", prompt,
                                           learnClassicTalent, d)
 
+                -- Stop as soon as first learning prompt, not a blocking dialog
+                return -1
             elseif addon.settings.profile.previewTalents then
                 local before = GetGroupPreviewTalentPointsSpent()
                 AddPreviewTalentPoints(talentData.tab, talentIndex, 1)
@@ -883,7 +889,7 @@ function addon.talents:ProcessTalents(validate)
                 -- Exit processing if error found
                 -- Rely on in-tag-function error output for user communication
                 -- Explicitly require false, accept nil as truthy
-                if result == false then
+                if result == false or result == -1 then
                     -- print("Aborting step processing", result)
                     return
                 end
