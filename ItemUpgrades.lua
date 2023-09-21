@@ -252,8 +252,24 @@ local KEY_TO_TEXT = {
     ['ITEM_MOD_DEFENSE_SKILL_RATING_SHORT'] = _G.ITEM_MOD_DEFENSE_SKILL_RATING,
     ['ITEM_MOD_DODGE_RATING_SHORT'] = _G.ITEM_MOD_DODGE_RATING,
     ['ITEM_MOD_PARRY_RATING_SHORT'] = _G.ITEM_MOD_PARRY_RATING,
-    ['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] = _G.DPS_TEMPLATE
+
+
+    -- Parse text/value for all weapon DPS
+    ['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] = _G.DPS_TEMPLATE,
+
+    -- Handle weapon types, faked/overloaded keys from GSheet
+    -- 'ITEM_MOD_DAMAGE_PER_SECOND_SHORT' .. '_' .. 'TYPE'
+    ['ITEM_MOD_DAMAGE_PER_SECOND_SHORT_1H'] = _G.DPS_TEMPLATE,
+    ['ITEM_MOD_DAMAGE_PER_SECOND_SHORT_2H_FAST'] = _G.DPS_TEMPLATE -- 2.1s
 }
+
+local WEAPON_MAP = {
+
+}
+
+local function MapWeaponDPS()
+
+end
 
 local function regexify(input)
     -- Replace '%s' with '(%d+)' to match numbers
