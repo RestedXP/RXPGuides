@@ -407,7 +407,7 @@ local function learnClassicTalent(payload)
     local tab, talentIndex, name = unpack(payload)
     if LearnTalent(tab, talentIndex) then
         addon.comms.PrettyPrint("%s - %s", _G.TRADE_SKILLS_LEARNED_TAB, name)
-    -- else
+        -- else
         -- addon.error(fmt("%s - %s", _G.ERR_TALENT_FAILED_UNKNOWN, name))
     end
 end
@@ -702,17 +702,24 @@ function addon.talents:DrawTalents()
     end
 
     local currentTab = PanelTemplates_GetSelectedTab(PlayerTalentFrame)
+    local remainingPoints, levelStep, talentIndex
+
+    if GetUnspentTalentPoints then
+        remainingPoints = GetUnspentTalentPoints() -
+                              GetGroupPreviewTalentPointsSpent()
+    else
+        remainingPoints = UnitCharacterPoints("player")
+    end
 
     local playerLevel = UnitLevel("player")
     local advancedWarning = playerLevel +
                                 addon.settings.profile.upcomingTalentCount
-    local levelStep, talentIndex
-
+    -- 44 - 30 - 10
     wipe(talentTooltips.data)
 
-    for upcomingLevel = playerLevel + 1, advancedWarning do
+    for upcomingTalent = (playerLevel + 1 - remainingPoints), advancedWarning do
 
-        levelStep = guide.steps[upcomingLevel - guide.minLevel + 1]
+        levelStep = guide.steps[upcomingTalent - guide.minLevel + 1]
 
         if not levelStep then return end
 
@@ -732,15 +739,15 @@ function addon.talents:DrawTalents()
                                                            addon.colors.tooltip,
                                                            _G.TRADE_SKILLS_LEARNED_TAB,
                                                            _G.LEVEL,
-                                                           upcomingLevel)
+                                                           upcomingTalent)
 
                     -- TODO Pre-seed tooltip to prevent delay
 
                     if talentTooltips.highlights[talentIndex] then
                         setHighlightColor(talentIndex,
-                                          upcomingLevel - playerLevel)
+                                          upcomingTalent - playerLevel)
 
-                        DrawTalentLevel(talentIndex, playerLevel, upcomingLevel)
+                        DrawTalentLevel(talentIndex, playerLevel, upcomingTalent)
                         talentTooltips.highlights[talentIndex]:Show()
                     else
                         local ht =
@@ -755,8 +762,8 @@ function addon.talents:DrawTalents()
                         talentTooltips.highlights[talentIndex] = ht
 
                         setHighlightColor(talentIndex,
-                                          upcomingLevel - playerLevel)
-                        DrawTalentLevel(talentIndex, playerLevel, upcomingLevel)
+                                          upcomingTalent - playerLevel)
+                        DrawTalentLevel(talentIndex, playerLevel, upcomingTalent)
                     end
                 else
                     -- Reset highlights on non-active tabs
@@ -958,6 +965,4 @@ function addon.talents:ProcessPetTalents(validate)
 
 end
 
-_G.RXPGuides.talents = {
-    RegisterGuide = addon.talents.RegisterGuide
-}
+_G.RXPGuides.talents = {RegisterGuide = addon.talents.RegisterGuide}
