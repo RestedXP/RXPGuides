@@ -667,8 +667,10 @@ local function DrawTalentLevel(talentIndex, upcomingLevel)
         -- If 5 levels of preview, overlaps with nearby
         if #numbers == 5 then
             ht.levelHeader.text:SetFont(addon.font, 8, "")
+            ht.levelHeader:SetPoint("TOPLEFT", ht, -3, 0)
         else
             ht.levelHeader.text:SetFont(addon.font, 10, "")
+            ht.levelHeader:SetPoint("TOPLEFT", ht, 0, 0)
         end
     end
 
