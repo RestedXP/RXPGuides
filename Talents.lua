@@ -624,7 +624,7 @@ talentTooltips.updateFunc = function(self)
     GameTooltip:Show()
 end
 
-local function DrawTalentLevel(talentIndex, playerLevel, upcomingLevel)
+local function DrawTalentLevel(talentIndex, upcomingLevel)
     local ht = talentTooltips.highlights[talentIndex]
 
     if not ht then return end
@@ -658,7 +658,7 @@ local function DrawTalentLevel(talentIndex, playerLevel, upcomingLevel)
             c = tonumber(currentNumber)
 
             -- Don't preserve old numbers
-            if c > playerLevel and c ~= upcomingLevel then
+            if c ~= upcomingLevel then
                 tinsert(numbers, c)
             end
         end
@@ -753,7 +753,7 @@ function addon.talents:DrawTalents()
                         setHighlightColor(talentIndex,
                                           upcomingTalent - playerLevel)
 
-                        DrawTalentLevel(talentIndex, playerLevel, upcomingTalent)
+                        DrawTalentLevel(talentIndex, upcomingTalent)
                         talentTooltips.highlights[talentIndex]:Show()
                     else
                         local ht =
@@ -769,7 +769,7 @@ function addon.talents:DrawTalents()
 
                         setHighlightColor(talentIndex,
                                           upcomingTalent - playerLevel)
-                        DrawTalentLevel(talentIndex, playerLevel, upcomingTalent)
+                        DrawTalentLevel(talentIndex, upcomingTalent)
                     end
                 else
                     -- Reset highlights on non-active tabs
