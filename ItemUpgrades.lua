@@ -550,6 +550,9 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
     if not IsUsableForClass(comparedData.itemSubTypeID,
                             comparedData.itemEquipLoc) then return end
 
+    if type(session.equippableSlots[comparedData.itemEquipLoc]) == "table" then
+        print("is multi-slot", comparedData.itemEquipLoc)
+    end
     -- TODO handle slot map array and multiple matches
     local equippedItemLink = GetInventoryItemLink("player",
                                                   session.equippableSlots[comparedData.itemEquipLoc])
