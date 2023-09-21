@@ -3358,14 +3358,6 @@ step
     .turnin 367 >>Turn in A New Plague
     .accept 368 >>Accept A New Plague
     .target Apothecary Johaan
-step
-    #optional
-    .goto Tirisfal Glades,61.97,51.29
-    >>|cRXP_WARN_Enter the room behind the innkeeper, then go downstairs|r
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captured Scarlet Zealot|r
-    .turnin 407 >>Turn in Fields of Grief
-    .target Captured Scarlet Zealot
-    .isOnQuest 407
 step << Warlock/Mage
     #completewith UCflightpath1
     .goto Tirisfal Glades,61.80,65.06,20,0
@@ -4076,7 +4068,19 @@ step
     .isOnQuest 375
 step
     #optional
-    .loop 25,Tirisfal Glades,83.50,55.56,85.03,54.72,86.56,54.51,88.06,54.99,88.94,53.56,89.70,51.88,90.92,50.56,90.87,48.33,89.87,46.65,85.04,46.68,84.52,49.29,83.46,52.09
+    #loop
+    .goto Tirisfal Glades,83.50,55.56,30,0
+    .goto Tirisfal Glades,85.03,54.72,30,0
+    .goto Tirisfal Glades,86.56,54.51,30,0
+    .goto Tirisfal Glades,88.06,54.99,30,0
+    .goto Tirisfal Glades,88.94,53.56,30,0
+    .goto Tirisfal Glades,89.70,51.88,30,0
+    .goto Tirisfal Glades,90.92,50.56,30,0
+    .goto Tirisfal Glades,90.87,48.33,30,0
+    .goto Tirisfal Glades,89.87,46.65,30,0
+    .goto Tirisfal Glades,85.04,46.68,30,0
+    .goto Tirisfal Glades,84.52,49.29,30,0
+    .goto Tirisfal Glades,83.46,52.09,30,0
     >>Kill |cRXP_ENEMY_Vicious Night Web Spiders|r. Loot them for their |cRXP_LOOT_Venom|r
     .complete 369,1 --Vicious Night Web Spider Venom (4)
     .mob Vicious Night Web Spider
@@ -4323,6 +4327,13 @@ step << Warrior
     .target Coleman Farthing
     .isQuestTurnedIn 1821
     .group
+step
+    #optional
+    .goto Tirisfal Glades,61.97,51.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captured Scarlet Zealot|r downstairs in the back of the inn
+    .turnin 407 >>Turn in Fields of Grief
+    .target Captured Scarlet Zealot
+    .isOnQuest 407
 step
     .goto Tirisfal Glades,61.94,51.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Captured Mountaineer|r downstairs in the back of the inn

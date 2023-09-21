@@ -51,10 +51,10 @@ level -- Ignite (Rank 5)
 
 addon.talents.RegisterGuide([[
 #name Hardcore AoE Mage 22-60
-#minLevel 23
+#minLevel 10
 #maxLevel 60
 #hardcore
-
+#reset
 
 level -- Elemental Precision (Rank 1)
 	.talent 3,1,3,1
@@ -583,8 +583,9 @@ level -- Ignite (Rank 5)
 
 addon.talents.RegisterGuide([[
 #name Softcore AoE Mage 22-60
-#minLevel 23
+#minLevel 10
 #maxLevel 60
+#reset
 
 level -- Elemental Precision (Rank 1)
 	.talent 3,1,3,1

@@ -122,8 +122,17 @@ step << Warrior
     .target Dannal Stern
 step << Warlock
     #requires Piercing
-    .goto Tirisfal Glades,31.35,66.21,10,0
-    .loop 25,Tirisfal Glades,31.82,61.48,31.11,60.71,32.07,60.17,32.26,59.21,33.28,59.53,33.66,60.76,33.94,61.81,34.21,63.05,33.01,63.01,31.82,61.48
+    #loop
+    .goto Tirisfal Glades,31.82,61.48,30,0
+    .goto Tirisfal Glades,31.11,60.71,30,0
+    .goto Tirisfal Glades,32.07,60.17,30,0
+    .goto Tirisfal Glades,32.26,59.21,30,0
+    .goto Tirisfal Glades,33.28,59.53,30,0
+    .goto Tirisfal Glades,33.66,60.76,30,0
+    .goto Tirisfal Glades,33.94,61.81,30,0
+    .goto Tirisfal Glades,34.21,63.05,30,0
+    .goto Tirisfal Glades,33.01,63.01,30,0
+    .goto Tirisfal Glades,31.82,61.48,30,0
     >>Kill |cFFFF5722Rattlecage Skeletons|r. Loot them for their |cFF00BCD4Rattlecage Skulls|r
     .complete 1470,1 --Rattlecage Skull (3)
     .mob Rattlecage Skeleton
@@ -255,20 +264,50 @@ step
     .mob Duskbat
     .mob Mangy Duskbat
 step
-    .loop 25,Tirisfal Glades,31.82,61.48,31.11,60.71,32.07,60.17,32.26,59.21,33.28,59.53,33.66,60.76,33.94,61.81,34.21,63.05,33.01,63.01,31.82,61.48
+    #loop
+    .goto Tirisfal Glades,31.82,61.48,30,0
+    .goto Tirisfal Glades,31.11,60.71,30,0
+    .goto Tirisfal Glades,32.07,60.17,30,0
+    .goto Tirisfal Glades,32.26,59.21,30,0
+    .goto Tirisfal Glades,33.28,59.53,30,0
+    .goto Tirisfal Glades,33.66,60.76,30,0
+    .goto Tirisfal Glades,33.94,61.81,30,0
+    .goto Tirisfal Glades,34.21,63.05,30,0
+    .goto Tirisfal Glades,33.01,63.01,30,0
+    .goto Tirisfal Glades,31.82,61.48,30,0
     >>Kill |cFFFF5722Rattlecage Skeletons|r
     .complete 3901,1 --Kill Rattlecage Skeleton (12)
     .mob Rattlecage Skeleton
 step
     #som
-    .loop 25,Tirisfal Glades,31.72,63.98,30.69,63.88,30.90,62.20,30.73,61.66,31.14,61.41,31.80,61.83,32.85,32.38,63.02,32.90,63.54,33.41,63.06,33.75,62.86,33.51,63.82,33.55,64.57,33.29,64.96,31.72,63.98
+    #loop
+    .goto Tirisfal Glades,31.82,61.48,30,0
+    .goto Tirisfal Glades,31.11,60.71,30,0
+    .goto Tirisfal Glades,32.07,60.17,30,0
+    .goto Tirisfal Glades,32.26,59.21,30,0
+    .goto Tirisfal Glades,33.28,59.53,30,0
+    .goto Tirisfal Glades,33.66,60.76,30,0
+    .goto Tirisfal Glades,33.94,61.81,30,0
+    .goto Tirisfal Glades,34.21,63.05,30,0
+    .goto Tirisfal Glades,33.01,63.01,30,0
+    .goto Tirisfal Glades,31.82,61.48,30,0
     .xp 3+480 >>Grind to 480+/1400xp << Warrior/Rogue
     .xp 3+560 >>Grind to 560+/1400xp << !Warrior !Rogue
     .mob Mindless Zombie
     .mob Wretched Zombie
 step
     #era
-    .loop 25,Tirisfal Glades,31.72,63.98,30.69,63.88,30.90,62.20,30.73,61.66,31.14,61.41,31.80,61.83,32.85,32.38,63.02,32.90,63.54,33.41,63.06,33.75,62.86,33.51,63.82,33.55,64.57,33.29,64.96,31.72,63.98
+    #loop
+    .goto Tirisfal Glades,31.82,61.48,30,0
+    .goto Tirisfal Glades,31.11,60.71,30,0
+    .goto Tirisfal Glades,32.07,60.17,30,0
+    .goto Tirisfal Glades,32.26,59.21,30,0
+    .goto Tirisfal Glades,33.28,59.53,30,0
+    .goto Tirisfal Glades,33.66,60.76,30,0
+    .goto Tirisfal Glades,33.94,61.81,30,0
+    .goto Tirisfal Glades,34.21,63.05,30,0
+    .goto Tirisfal Glades,33.01,63.01,30,0
+    .goto Tirisfal Glades,31.82,61.48,30,0
     .xp 3+940 >>Grind to 940+/1400xp << Warrior/Rogue
     .xp 3+980 >>Grind to 980+/1400xp << !Warrior !Rogue
     .mob Mindless Zombie
@@ -850,14 +889,41 @@ step
     .target Executor Zygand
     .target Apothecary Johaan
 step
-    .goto Tirisfal Glades,58.29,49.80,30,0
-    .goto Tirisfal Glades,57.71,48.96,30,0
-    .goto Tirisfal Glades,59.26,46.73,30,0
-    .goto Tirisfal Glades,57.71,48.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Holland|r, he patrols around the graveyard.
-    .turnin 5481 >>Turn in Gordo's Task
-    .accept 5482 >>Accept Doom Weed
-    .target Junior Apothecary Holland
+    .goto Tirisfal Glades,61.89,52.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gretchen|r
+    >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_is on the second floor of the inn|r
+    .accept 375 >>Accept The Chill of Death
+    .target Gretchen Dedmar
+step << Priest
+    .goto Tirisfal Glades,61.57,52.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beryl|r on the second floor
+	.train 139 >> Train your class spells
+    .target Dark Cleric Beryl
+    .xp <8,1
+step << Mage
+    .goto Tirisfal Glades,61.97,52.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cain|r on the second floor
+    .train 205 >> Train your class spells
+    .target Cain Firesong
+    .xp <8,1
+step << Warrior
+    .goto Tirisfal Glades,61.85,52.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austil|r
+    .train 284 >> Train your class spells
+    .target Austil de Mon
+    .xp <8,1
+step << Rogue
+    .goto Tirisfal Glades,61.75,52.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marion|r on the second floor
+    .train 6760 >> Train your class spells
+    .target Marion Call
+    .xp <8,1
+step << Warlock
+    .goto Tirisfal Glades,61.59,52.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rupert|r
+    .train 980 >> Train your class spells
+    .target Rupert Boch
+    .xp <8,1
 step << Rogue
     .goto Tirisfal Glades,60.12,53.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oliver|r
@@ -901,58 +967,17 @@ step << Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.7
 step
-    .goto Tirisfal Glades,61.97,51.29
-    >>|cRXP_WARN_Enter the room behind the innkeeper, then go downstairs|r
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captured Scarlet Zealot|r
-    .turnin 407 >>Turn in Fields of Grief
-    .target Captured Scarlet Zealot
-step << Priest
-    .goto Tirisfal Glades,61.57,52.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beryl|r on the second floor
-	.train 139 >> Train your class spells
-    .target Dark Cleric Beryl
-    .xp <8,1
-step << Mage
-    .goto Tirisfal Glades,61.97,52.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cain|r on the second floor
-    .train 205 >> Train your class spells
-    .target Cain Firesong
-    .xp <8,1
-step << Warrior
-    .goto Tirisfal Glades,61.85,52.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austil|r
-    .train 284 >> Train your class spells
-    .target Austil de Mon
-    .xp <8,1
-step << Rogue
-    .goto Tirisfal Glades,61.75,52.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marion|r on the second floor
-    .train 6760 >> Train your class spells
-    .target Marion Call
-    .xp <8,1
-step << Warlock
-    .goto Tirisfal Glades,61.59,52.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rupert|r
-    .train 980 >> Train your class spells
-    .target Rupert Boch
-    .xp <8,1
+    #hardcore
+    .goto Tirisfal Glades,58.29,49.80,30,0
+    .goto Tirisfal Glades,57.71,48.96,30,0
+    .goto Tirisfal Glades,59.26,46.73,30,0
+    .goto Tirisfal Glades,57.71,48.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Holland|r, he patrols around the graveyard.
+    .turnin 5481 >>Turn in Gordo's Task
+    .accept 5482 >>Accept Doom Weed
+    .target Junior Apothecary Holland
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Darkhounds|r. Loot them for their |cRXP_LOOT_Blood|r
-    .complete 367,1 --Darkhound Blood (5)
-    .mob Decrepit Darkhound
-    .mob Cursed Darkhound
-step
-    .goto Tirisfal Glades,58.20,58.15,50,0
-    .goto Tirisfal Glades,57.98,61.66,50,0
-    .goto Tirisfal Glades,56.45,62.62,50,0
-    .goto Tirisfal Glades,54.73,64.28,50,0
-    .goto Tirisfal Glades,52.84,62.26,50,0
-    .goto Tirisfal Glades,50.52,61.21,50,0
-    .goto Tirisfal Glades,47.88,60.87,50,0
-    .goto Tirisfal Glades,46.09,59.70,50,0
-    .goto Tirisfal Glades,43.49,61.81,50,0
-    .goto Tirisfal Glades,56.45,62.62
     >>Kill |cRXP_ENEMY_Duskbats|r. Loot them for their |cRXP_LOOT_Pelts|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
@@ -972,6 +997,12 @@ step
     .complete 367,1 --Darkhound Blood (5)
     .mob Decrepit Darkhound
 step << Rogue/Warrior
+    #completewith WarRogueDing8
+    >>Kill |cRXP_ENEMY_Duskbats|r. Loot them for their |cRXP_LOOT_Pelts|r
+    .complete 375,1 --Duskbat Pelt (5)
+    .mob Greater Duskbat
+    .mob Vampiric Duskbat
+step << Rogue/Warrior
     #era/som
     .goto Tirisfal Glades,58.20,58.15,50,0
     .goto Tirisfal Glades,57.98,61.66,50,0
@@ -986,6 +1017,7 @@ step << Rogue/Warrior
     .xp 7+3800 >> Grind to 3260+/4500
     .isQuestComplete 367
 step << Rogue/Warrior
+    #label WarRogueDing8
     #era/som
     .goto Tirisfal Glades,58.20,58.15,50,0
     .goto Tirisfal Glades,57.98,61.66,50,0
@@ -1022,9 +1054,10 @@ step
 step
     #label ChillyDeath
     .goto Tirisfal Glades,61.89,52.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman|r and |cRXP_FRIENDLY_Gretchen|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gretchen|r
     .turnin 375 >>Turn in The Chill of Death
     .target Gretchen Dedmar
+    .isQuestComplete 375
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beryl|r on the second floor
@@ -1097,6 +1130,12 @@ step << Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.7
 step
+    #completewith MurlocVins
+    >>Kill |cRXP_ENEMY_Duskbats|r. Loot them for their |cRXP_LOOT_Pelts|r
+    .complete 375,1 --Duskbat Pelt (5)
+    .mob Greater Duskbat
+    .mob Vampiric Duskbat
+step
     #completewith next
     >>Kill |cRXP_ENEMY_Mongrels|r and |cRXP_ENEMY_Graverobbers|r. Loot them for their |cRXP_LOOT_Ichor|r
     .complete 358,2 --Rot Hide Mongrel (5)
@@ -1141,6 +1180,7 @@ step
     .complete 398,1 --Maggot Eye's Paw (1)
     .mob Maggot Eye
 step
+    #label MurlocVins
     .goto Tirisfal Glades,59.38,29.05,50,0
     .goto Tirisfal Glades,59.54,27.86,50,0
     .goto Tirisfal Glades,60.64,28.66,50,0
@@ -1195,9 +1235,10 @@ step
     .target Abigail Shiel
 step
     .goto Tirisfal Glades,61.89,52.73
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman|r and |cRXP_FRIENDLY_Gretchen|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gretchen|r
     .turnin 375 >>Turn in The Chill of Death
     .target Gretchen Dedmar
+    .isQuestComplete 375
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beryl|r on the second floor
@@ -1290,6 +1331,12 @@ step
     .money <0.025 << Warrior/Rogue
     .money <0.0375 << Mage/Priest/Warlock
     .target Innkeeper Renee
+step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Duskbats|r. Loot them for their |cRXP_LOOT_Pelts|r
+    .complete 375,1 --Duskbat Pelt (5)
+    .mob Greater Duskbat
+    .mob Vampiric Duskbat
 step
     .goto Tirisfal Glades,47.60,44.03,150 >> Travel northwest toward Agamand Mills
     .isOnQuest 362
@@ -1391,6 +1438,12 @@ step
     .accept 355 >>Accept Speak with Sevren
     .goto Tirisfal Glades,61.72,52.29
     .target Coleman Farthing
+step
+    .goto Tirisfal Glades,61.89,52.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gretchen|r
+    .turnin 375 >>Turn in The Chill of Death
+    .target Gretchen Dedmar
+    .isQuestComplete 375
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beryl|r on the second floor
@@ -1742,7 +1795,19 @@ step
     .mob Captain Vachon
     .mob Scarlet Friar
 step
-    .loop 25,Tirisfal Glades,83.50,55.56,85.03,54.72,86.56,54.51,88.06,54.99,88.94,53.56,89.70,51.88,90.92,50.56,90.87,48.33,89.87,46.65,85.04,46.68,84.52,49.29,83.46,52.09
+    #loop
+    .goto Tirisfal Glades,83.50,55.56,30,0
+    .goto Tirisfal Glades,85.03,54.72,30,0
+    .goto Tirisfal Glades,86.56,54.51,30,0
+    .goto Tirisfal Glades,88.06,54.99,30,0
+    .goto Tirisfal Glades,88.94,53.56,30,0
+    .goto Tirisfal Glades,89.70,51.88,30,0
+    .goto Tirisfal Glades,90.92,50.56,30,0
+    .goto Tirisfal Glades,90.87,48.33,30,0
+    .goto Tirisfal Glades,89.87,46.65,30,0
+    .goto Tirisfal Glades,85.04,46.68,30,0
+    .goto Tirisfal Glades,84.52,49.29,30,0
+    .goto Tirisfal Glades,83.46,52.09,30,0
     >>Kill |cRXP_ENEMY_Vicious Night Web Spiders|r. Loot them for their |cRXP_LOOT_Venom|r
     .complete 369,1 --Vicious Night Web Spider Venom (4)
     .mob Vicious Night Web Spider
@@ -1807,6 +1872,11 @@ step
 	.vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
     .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
     .target Innkeeper Renee
+step
+    .goto Tirisfal Glades,61.97,51.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captured Scarlet Zealot|r downstairs in the back of the inn
+    .turnin 407 >>Turn in Fields of Grief
+    .target Captured Scarlet Zealot
 step
     #label ANewPlagueFinal
     .goto Tirisfal Glades,61.94,51.40
@@ -1952,10 +2022,22 @@ step
 step << Priest
     >>|cRXP_WARN_Collect 3 stacks of|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for your Lesser Magic Wand. This is the last chance to get enough before Silverpine Forest|r
     .collect 2589,60,435,1 --Linen Cloth (60)
-step << Mage/Warrior
+step
+    .goto Tirisfal Glades,73.78,32.71,50,0
+    .goto Tirisfal Glades,72.15,33.17,50,0
+    .goto Tirisfal Glades,70.13,34.46,50,0
+    .goto Tirisfal Glades,67.29,34.92,50,0
+    .goto Tirisfal Glades,66.71,37.87,50,0
+    .goto Tirisfal Glades,73.78,32.71,50,0
+    .goto Tirisfal Glades,72.15,33.17
+    >>Finish killing |cRXP_ENEMY_Duskbats|r. Loot them for their |cRXP_LOOT_Pelts|r
+    .complete 375,1 --Duskbat Pelt (5)
+    .mob Greater Duskbat
+    .mob Vampiric Duskbat
+step
     .isOnQuest 374
     .xp 11+5300 >> Grind to 5300+/8800xp
-step << Mage/Warrior
+step
     .isQuestTurnedIn 374
     .xp 11+5925 >> Grind to 5925+/8800xp
 step
@@ -1974,10 +2056,10 @@ step
     .turnin 410 >> Turn in The Dormant Shade
     .complete 409,1 --Lillith Nefara (1)
     .target Lillith Nefara
-step << Mage/Warrior
+step
     .isOnQuest 374
     .xp 11+5900 >> Grind to 5900+/8800xp
-step << Mage/Warrior
+step
     .isQuestTurnedIn 374
     .xp 11+6525 >> Grind to 6525+/8800xp
 step
@@ -2007,39 +2089,97 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Burgess|r
     .turnin 374 >>Turn in Proof of Demise
     .target Deathguard Burgess
+step
+    .goto Tirisfal Glades,61.89,52.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gretchen|r
+    .turnin 375 >>Turn in The Chill of Death
+    .target Gretchen Dedmar
+step << Priest
+    .goto Tirisfal Glades,61.57,52.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beryl|r on the second floor
+	.train 588 >>Train |T135926:0|t[Inner Fire]
+    .target Dark Cleric Beryl
+    .xp <12,1
+step << Mage
+    .goto Tirisfal Glades,61.97,52.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cain|r on the second floor
+    .train 145 >> Train |T135812:0|t[Fireball Rank 3]
+    .target Cain Firesong
+    .xp <12,1
+step << Warrior
+    .goto Tirisfal Glades,61.85,52.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austil|r
+    .train 7384 >>Train |T132223:0|t[Overpower]
+    .target Austil de Mon
+    .xp <12,1
 step << Rogue
-    #completewith next
+    .goto Tirisfal Glades,61.75,52.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marion|r on the second floor
+    .train 1766 >> Train |T132219:0|t[Kick]
+    .target Marion Call
+    .xp <12,1
+step << Warlock
+    .goto Tirisfal Glades,61.59,52.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rupert|r
+    .train 755 >> Train |T136168:0|t[Health Funnel]
+    .target Rupert Boch
+    .xp <12,1
+step << Rogue
+    #completewith Entersilverpine
     >>|cRXP_WARN_If you see|r |cRXP_FRIENDLY_Astor|r|cRXP_WARN_, talk to him and kill him. Loot him for the letter. He patrols the road between Brill and The Sepulcher|r
     .complete 1886,1 --Astor's Letter of Introduction (1)
     .unitscan Astor Hadren
-step
-    #completewith ProdigalLich
+step << Priest
+    #completewith TouchofWeakness
     .goto Tirisfal Glades,61.80,65.06,20 >> Enter Undercity
     .zoneskip Undercity
-    .zoneskip Undercity
-step
-    #completewith ProdigalLich
+step << Priest
+    #completewith TouchofWeakness
     .goto Undercity,66.09,20.06,35,0
     .goto Undercity,64.37,23.94,35,0
     .goto Undercity,65.93,26.71,10,0
     .goto Undercity,65.89,34.03,10,0
     .goto Undercity,64.22,39.77,10,0
     .goto Undercity,65.53,43.62,15 >> Take the lift down to the Undercity
-step << Rogue/Warrior
-    .goto Undercity,84.06,17.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bethor|r
-    .turnin 411 >>Turn in The Prodigal Lich Returns
-    .target Bethor Iceshard
-    .isQuestComplete 1886 << Rogue
 step << Rogue
-    .goto Undercity,77.08,49.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Charles|r |cRXP_BUY_ in the Rogue's Quarter. Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
+    #optional
+    #completewith RogueCutlass
+    .goto Tirisfal Glades,61.80,65.06,20 >> Enter Undercity
+    .zoneskip Undercity
+step << Rogue
+    #optional
+    #completewith RogueCutlass
+    .goto Undercity,66.09,20.06,35,0
+    .goto Undercity,64.37,23.94,35,0
+    .goto Undercity,65.93,26.71,10,0
+    .goto Undercity,65.89,34.03,10,0
+    .goto Undercity,64.22,39.77,10,0
+    .goto Undercity,65.53,43.62,15 >> Take the lift down to the Undercity
+step << Warrior
+    #completewith WarriorClaymore
+    .goto Tirisfal Glades,61.80,65.06,20 >> Enter Undercity
+    .zoneskip Undercity
+step << Warrior
+    #optional
+    #completewith WarriorClaymore
+    .goto Undercity,66.09,20.06,35,0
+    .goto Undercity,64.37,23.94,35,0
+    .goto Undercity,65.93,26.71,10,0
+    .goto Undercity,65.89,34.03,10,0
+    .goto Undercity,64.22,39.77,10,0
+    .goto Undercity,65.53,43.62,15 >> Take the lift down to the Undercity
+step << Rogue
+    #optional
+    #label RogueCutlass
+    .goto Undercity,61.15,40.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Louis|r |cRXP_BUY_ in the Rogue's Quarter. Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
     .collect 851,1,435,1 --Collect Cutlass (1)
     .money <0.2200
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
-    .target Charles Seaton
+    .target Louis Warren
 step << Rogue
+    #optional
     #completewith Entersilverpine
     +Equip the |T135346:0|t[Cutlass]
     .use 851
@@ -2047,62 +2187,27 @@ step << Rogue
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step << Warrior
-    .goto Undercity,77.08,49.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Charles|r |cRXP_BUY_ in the Rogue's Quarter. Buy a|r |T135350:0|t[Claymore] |cRXP_BUY_from him|r
+    #optional
+    #label WarriorClaymore
+    .goto Undercity,61.15,40.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Louis|r |cRXP_BUY_ in the Rogue's Quarter. Buy a|r |T135350:0|t[Claymore] |cRXP_BUY_from him|r
     .collect 1198,1,435,1 --Collect Claymore (1)
     .money <0.2950
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
-    .target Charles Seaton
+    .target Louis Warren
 step << Warrior
+    #optional
     #completewith Entersilverpine
     +Equip the |T135350:0|t[Claymore]
     .use 1198
     .itemcount 1198,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
-step << Warrior
-    .goto Undercity,48.32,15.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Angela|r
-    .train 7384 >> Train your class spells
-    .target Angela Curthas
-    .xp <12,1
-step << Warrior
-    #som
-    #phase 3-6
-    .goto Undercity,84.86,20.34
-    .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Perform a Logout Skip by positioning your character on the highest part of the lowest staircase until it looks like they're floating, then logging out and back in|r
-    .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_CLICK HERE for an example|r
-    >>|cRXP_WARN_If you can't do this, just run out of Undercity normally|r
-step << Warrior
-    #som
-    #phase 3-6
-    #completewith Entersilverpine
-    .goto Tirisfal Glades,61.92,64.85
-    .zone Tirisfal Glades >> Exit Undercity
-    .zoneskip Tirisfal Glades
-step << Rogue
-    .goto Undercity,83.52,69.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mennet|r
-    .turnin 1886 >>Turn in The Deathstalkers
-    .target Mennet Carkad
-    .isQuestComplete 1886
-step << Rogue
-    .goto Undercity,83.52,69.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mennet|r
-    .accept 1898 >>Accept The Deathstalkers
-    .target Mennet Carkad
-    .isQuestTurnedIn 1886
-step << Rogue
-    .goto Undercity,83.86,72.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carolyn|r
-    .train 1766 >> Train your class spells
-    .target Carolyn Ward
-    .xp <12,1
 step << Priest
+    #label TouchofWeakness
     .goto Undercity,48.98,18.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aelthalyste|r
-    .trainer >> Train your class spells
     .accept 5658 >> Accept Touch of Weakness
     .turnin 5658 >> Turn in Touch of Weakness
     .target Aelthalyste
@@ -2113,20 +2218,20 @@ step << Priest
     .target Lavinia Crowe
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
-step << Priest/Warlock
+step << Priest
     .goto Undercity,70.06,29.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Victor|r
     .train 3908 >> Train |T136249:0|t[Tailoring]
     .target Victor Ward
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
-step << Priest/Warlock
+step << Priest
     .goto Undercity,70.76,30.67
     >>|cRXP_WARN_Turn all your|r |T132889:0|t[Linen Cloth] |cRXP_WARN_into|r |T132890:0|t[Bolt of linen Linen Cloth]
     .collect 2996,30,435,1 --Bolt of Linen Cloth (30)
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
-step << Priest/Warlock
+step << Priest
     .goto Undercity,70.06,29.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Victor|r
     .train 7623 >> Train |T132662:0|t[Brown Linen Robe]
@@ -2176,7 +2281,30 @@ step << Priest
     .itemcount 11287,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
+step << Rogue/Warrior/Priest
+    #optional
+    .goto Undercity,84.06,17.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bethor|r
+    .turnin 411 >>Turn in The Prodigal Lich Returns
+    .target Bethor Iceshard
+    .zoneskip Undercity,1
 step << Rogue
+    #optional
+    .goto Undercity,83.52,69.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mennet|r
+    .turnin 1886 >>Turn in The Deathstalkers
+    .target Mennet Carkad
+    .isQuestComplete 1886
+    .zoneskip Undercity,1
+step << Rogue
+    #optional
+    .goto Undercity,83.52,69.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mennet|r
+    .accept 1898 >>Accept The Deathstalkers
+    .target Mennet Carkad
+    .isQuestTurnedIn 1886
+step << Rogue
+    #optional
     .goto Undercity,54.84,76.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andron|r
     .turnin 1898 >>Turn in The Deathstalkers
@@ -2184,11 +2312,13 @@ step << Rogue
     .target Andron Gant
     .isQuestTurnedIn 1886
 step << Rogue
+    #optional
     .goto Undercity,55.43,76.87
     >>Loot |cRXP_PICK_Andron's Bookshelf|r behind |cRXP_FRIENDLY_Andron|r
     .complete 1899,1 --Andron's Ledger (1)
     .isQuestTurnedIn 1886
 step << Rogue
+    #optional
     .goto Undercity,83.53,69.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mennet|r
     .turnin 1899 >>Turn in The Deathstalkers
@@ -2196,6 +2326,7 @@ step << Rogue
     .target Mennet Carkad
     .isQuestTurnedIn 1886
 step << Rogue
+    #optional
     .goto Tirisfal Glades,58.86,78.76,40,0
     .goto Tirisfal Glades,59.75,84.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Varimathras|r
@@ -2203,35 +2334,22 @@ step << Rogue
     .target Varimathras
     .isQuestTurnedIn 1886
 step << Rogue
+    #optional
     .goto Undercity,55.22,90.88
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Perform a Logout Skip by positioning your character on the highest part of the lowest staircase until it looks like they're floating, then logging out and back in|r
 	.link https://www.youtube.com/watch?v=jj85AXyF1XE >> |cRXP_WARN_CLICK HERE for an example|r
     >>|cRXP_WARN_If you can't do this, just run out of Undercity normally|r
     .isQuestTurnedIn 1886
+    .zoneskip Undercity,1
 step << Rogue
+    #optional
     #completewith Entersilverpine
     .goto Tirisfal Glades,61.92,64.85
     .zone Tirisfal Glades >> Exit Undercity
     .zoneskip Tirisfal Glades
-step
-    #label ProdigalLich
-    .goto Undercity,84.06,17.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bethor|r
-    .turnin 411 >>Turn in The Prodigal Lich Returns
-    .target Bethor Iceshard
-step << Mage
-    .goto Undercity,85.14,10.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anastasia|r
-    .train 145 >> Train your class spells
-    .target Anastasia Hartwell
-    .xp <12,1
-step << Warlock
-    .goto Undercity,88.93,15.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Richard|r
-    .train 705 >> Train your class spells
-    .target Richard Kerwin
-    .xp <12,1
-step
+    .isQuestTurnedIn 1886
+step << Rogue/Warrior/Priest
+    #optional
     #era
     .goto Undercity,47.25,39.12,50,0
     .goto Undercity,46.35,43.86,10,0
@@ -2244,6 +2362,7 @@ step
     .goto Tirisfal Glades,51.10,71.53,50,0
     .zone Tirisfal Glades >> Leave Undercity through the Sewers
     .zoneskip Tirisfal Glades
+    --VV Musn't appear for rogues who just did the rogue chain since they logout skip from Vari room
 step
     #era
     #label Entersilverpine
@@ -2252,9 +2371,15 @@ step
 
 
 
-    --SOM route >> Skipping Silverpine
+    --SOM route >> Skipping Silverpine.
 
-
+step
+    #som
+    #phase 3-6
+    .goto Undercity,84.06,17.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bethor|r
+    .turnin 411 >>Turn in The Prodigal Lich Returns
+    .target Bethor Iceshard
 step
     #som
     #phase 3-6
@@ -2338,6 +2463,7 @@ step
     >>Kill |cRXP_ENEMY_Worgs|r as you travel toward |cRXP_FRIENDLY_Erland|r. Loot them for their |cRXP_LOOT_Hearts|r
     .collect 3164,6 --Collect Discolored Worg Heart (x6)
     .mob Worg
+    .mob Mottled Worg
     .unitscan Gorefang
 step
     .goto Silverpine Forest,56.18,9.18
@@ -2724,10 +2850,10 @@ step
     .fp Sepulcher >> Get the Sepulcher flight path << !Undead
     .fly Undercity >> Fly to the Undercity << !Undead
     .target Karos Razok
-step << !Undead
+step << Undead
     .hs >> Hearth to the Undercity
     .use 6948
-    .zoneskip Durotar
+    .zoneskip Undercity
 step << Undead
     .goto Undercity,61.48,41.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gordon|r

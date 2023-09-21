@@ -162,9 +162,10 @@ level -- Elemental Devastation (Rank 3)
 
 addon.talents.RegisterGuide([[
 #name Hardcore Shaman 40-60
-#minLevel 41
+#minLevel 10
 #maxLevel 60
 #hardcore
+#reset
 
 level -- Concussion (Rank 1)
 	.talent 1,1,3,1
@@ -477,8 +478,9 @@ level -- Elemental Devastation (Rank 3)
 
 addon.talents.RegisterGuide([[
 #name Softcore Shaman 40-60
-#minLevel 41
+#minLevel 10
 #maxLevel 60
+#reset
 
 level -- Concussion (Rank 1)
 	.talent 1,1,3,1

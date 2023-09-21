@@ -121,8 +121,17 @@ step << Warrior
     .target Dannal Stern
 step << Warlock
     #requires Piercing
-    .goto Tirisfal Glades,31.35,66.21,10,0
-    .loop 25,Tirisfal Glades,31.82,61.48,31.11,60.71,32.07,60.17,32.26,59.21,33.28,59.53,33.66,60.76,33.94,61.81,34.21,63.05,33.01,63.01,31.82,61.48
+    #loop
+    .goto Tirisfal Glades,31.82,61.48,30,0
+    .goto Tirisfal Glades,31.11,60.71,30,0
+    .goto Tirisfal Glades,32.07,60.17,30,0
+    .goto Tirisfal Glades,32.26,59.21,30,0
+    .goto Tirisfal Glades,33.28,59.53,30,0
+    .goto Tirisfal Glades,33.66,60.76,30,0
+    .goto Tirisfal Glades,33.94,61.81,30,0
+    .goto Tirisfal Glades,34.21,63.05,30,0
+    .goto Tirisfal Glades,33.01,63.01,30,0
+    .goto Tirisfal Glades,31.82,61.48,30,0
     >>Kill |cRXP_ENEMY_Rattlecage Skeletons|r. Loot them for their |cRXP_LOOT_Rattlecage Skulls|r
     .complete 1470,1 --Rattlecage Skull (3)
     .mob Rattlecage Skeleton
@@ -254,20 +263,50 @@ step
     .mob Duskbat
     .mob Mangy Duskbat
 step
-    .loop 25,Tirisfal Glades,31.82,61.48,31.11,60.71,32.07,60.17,32.26,59.21,33.28,59.53,33.66,60.76,33.94,61.81,34.21,63.05,33.01,63.01,31.82,61.48
+    #loop
+    .goto Tirisfal Glades,31.82,61.48,30,0
+    .goto Tirisfal Glades,31.11,60.71,30,0
+    .goto Tirisfal Glades,32.07,60.17,30,0
+    .goto Tirisfal Glades,32.26,59.21,30,0
+    .goto Tirisfal Glades,33.28,59.53,30,0
+    .goto Tirisfal Glades,33.66,60.76,30,0
+    .goto Tirisfal Glades,33.94,61.81,30,0
+    .goto Tirisfal Glades,34.21,63.05,30,0
+    .goto Tirisfal Glades,33.01,63.01,30,0
+    .goto Tirisfal Glades,31.82,61.48,30,0
     >>Kill |cRXP_ENEMY_Rattlecage Skeletons|r
     .complete 3901,1 --Kill Rattlecage Skeleton (12)
     .mob Rattlecage Skeleton
 step
     #som
-    .loop 25,Tirisfal Glades,31.72,63.98,30.69,63.88,30.90,62.20,30.73,61.66,31.14,61.41,31.80,61.83,32.85,32.38,63.02,32.90,63.54,33.41,63.06,33.75,62.86,33.51,63.8,33.55,64.57,33.29,64.96,31.72,63.98
+    #loop
+    .goto Tirisfal Glades,31.82,61.48,30,0
+    .goto Tirisfal Glades,31.11,60.71,30,0
+    .goto Tirisfal Glades,32.07,60.17,30,0
+    .goto Tirisfal Glades,32.26,59.21,30,0
+    .goto Tirisfal Glades,33.28,59.53,30,0
+    .goto Tirisfal Glades,33.66,60.76,30,0
+    .goto Tirisfal Glades,33.94,61.81,30,0
+    .goto Tirisfal Glades,34.21,63.05,30,0
+    .goto Tirisfal Glades,33.01,63.01,30,0
+    .goto Tirisfal Glades,31.82,61.48,30,0
     .xp 3+480 >>Grind to 480+/1400xp << Warrior/Rogue
     .xp 3+560 >>Grind to 560+/1400xp << !Warrior !Rogue
     .mob Mindless Zombie
     .mob Wretched Zombie
 step
     #era
-    .loop 25,Tirisfal Glades,31.72,63.98,30.69,63.88,30.90,62.20,30.73,61.66,31.14,61.41,31.80,61.83,32.85,32.38,63.02,32.90,63.54,33.41,63.06,33.75,62.86,33.51,63.8,33.55,64.57,33.29,64.96,31.72,63.98
+    #loop
+    .goto Tirisfal Glades,31.82,61.48,30,0
+    .goto Tirisfal Glades,31.11,60.71,30,0
+    .goto Tirisfal Glades,32.07,60.17,30,0
+    .goto Tirisfal Glades,32.26,59.21,30,0
+    .goto Tirisfal Glades,33.28,59.53,30,0
+    .goto Tirisfal Glades,33.66,60.76,30,0
+    .goto Tirisfal Glades,33.94,61.81,30,0
+    .goto Tirisfal Glades,34.21,63.05,30,0
+    .goto Tirisfal Glades,33.01,63.01,30,0
+    .goto Tirisfal Glades,31.82,61.48,30,0
     .xp 3+940 >>Grind to 940+/1400xp << Warrior/Rogue
     .xp 3+980 >>Grind to 980+/1400xp << !Warrior !Rogue
     .mob Mindless Zombie
@@ -863,12 +902,6 @@ step << Warrior
     .itemcount 2488,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.7
-step
-    .goto Tirisfal Glades,61.97,51.29
-    >>|cRXP_WARN_Enter the room behind the innkeeper, then go downstairs|r
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captured Scarlet Zealot|r
-    .turnin 407 >>Turn in Fields of Grief
-    .target Captured Scarlet Zealot
 step
     .goto Tirisfal Glades,61.71,52.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Renee|r
@@ -2820,7 +2853,19 @@ step
     .mob Greater Duskbat
     .mob Vampiric Duskbat
 step
-    .loop 25,Tirisfal Glades,83.50,55.56,85.03,54.72,86.56,54.51,88.06,54.99,88.94,53.56,89.70,51.88,90.92,50.56,90.87,48.33,89.87,46.65,85.04,46.68,84.52,49.29,83.46,52.09
+    #loop
+    .goto Tirisfal Glades,83.50,55.56,30,0
+    .goto Tirisfal Glades,85.03,54.72,30,0
+    .goto Tirisfal Glades,86.56,54.51,30,0
+    .goto Tirisfal Glades,88.06,54.99,30,0
+    .goto Tirisfal Glades,88.94,53.56,30,0
+    .goto Tirisfal Glades,89.70,51.88,30,0
+    .goto Tirisfal Glades,90.92,50.56,30,0
+    .goto Tirisfal Glades,90.87,48.33,30,0
+    .goto Tirisfal Glades,89.87,46.65,30,0
+    .goto Tirisfal Glades,85.04,46.68,30,0
+    .goto Tirisfal Glades,84.52,49.29,30,0
+    .goto Tirisfal Glades,83.46,52.09,30,0
     >>Kill |cRXP_ENEMY_Vicious Night Web Spiders|r. Loot them for their |cRXP_LOOT_Venom|r
     .complete 369,1 --Vicious Night Web Spider Venom (4)
     .mob Vicious Night Web Spider
@@ -3008,6 +3053,11 @@ step << Warrior
     .target Coleman Farthing
     .isQuestTurnedIn 1821
     .group
+step
+    .goto Tirisfal Glades,61.97,51.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captured Scarlet Zealot|r downstairs in the back of the inn
+    .turnin 407 >>Turn in Fields of Grief
+    .target Captured Scarlet Zealot
 step
     .goto Tirisfal Glades,61.94,51.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Captured Mountaineer|r downstairs in the back of the inn
