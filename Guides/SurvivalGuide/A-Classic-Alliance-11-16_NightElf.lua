@@ -117,6 +117,14 @@ step
     .accept 984 >> Accept How Big a Threat?
     .target Terenthis
 step
+    #optional
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
+    .goto Darkshore,36.096,44.931
+    .accept 1141 >> Accept The Family and the Fishing Pole
+    .turnin 1141 >> Turn in The Family and the Fishing Pole
+    .itemcount 12238,6 -- Darkshore Grouper (6)
+    .target Gubber Blump
+step
     #completewith RabidThistle
     .goto Darkshore,35.88,47.01,0
     .goto Darkshore,36.50,53.30,0
@@ -651,7 +659,23 @@ step << Warrior
     .turnin 1680 >> Turn in Tormus Deepforge
     .target Tormus Deepforge
 step
-    #completewith next
+    #ah
+    .goto Ironforge,25.800,75.500,-1
+    .goto Ironforge,24.200,74.600,-1
+    .goto Ironforge,23.800,71.800,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to an |cRXP_FRIENDLY_Ironforge Auctioneer|r
+    >>Buy the following items for a faster turn in at Loch Modan shortly
+    >>This will save you time as you won't need to run around looking for mobs to kill. Skip this step if you wish to not buy any
+    >>|T134342:0|t[Boar Intestines]
+    >>|T134027:0|t[Bear Meat]
+    >>|T134437:0|t[Spider Ichor]
+    .collect 3172,3,418,1 -- Boar Intestines (3)
+    .collect 3173,3,418,1 -- Bear Meat (3)
+    .collect 3174,3,418,1 -- Spider Ichor (3)
+    .target Auctioneer Lympkin
+    .target Auctioneer Redmuse
+    .target Auctioneer Buckler
+step
     .goto Dun Morogh,53.305,35.112,10,0
     .zone Dun Morogh >> Exit Ironforge
 step
@@ -1139,9 +1163,44 @@ step << Druid
     .target Sheldras Moontree
 step << Druid
     #ah
-    .goto StormwindClassic,53.2,60.6
-    >>Visit the Auction House and try to buy 5 |T134187:0|t[Earthroot] for a future quest
-    .collect 2449,5,6123,1
+    .goto Stormwind City,53.612,59.764
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
+    >>If you don't plan to take |T136065:0|t[Herbalism] as a primary profession, buy 5 |T134187:0|t[Earthroot] for a future quest
+    >>Buy the following items for faster turn ins at Westfall shortly
+    >>This will save you time as you won't need to run around looking for mobs to kill. Skip this step if you wish to not buy any
+    >>|T133972:0|t[Stringy Vulture Meat]
+    >>|T133884:0|t[Murloc Eye]
+    >>|T135997:0|t[Goretusk Snout]
+    >>|T134185:0|t[Okra]
+    >>|T134341:0|t[Goretusk Liver]
+    >>|T132794:0|t[Flask of Oil]
+    .collect 2449,5,6123,1 -- Earthroot (5)
+    .collect 729,3,38,1 -- Stringy Vulture Meat (3)
+    .collect 730,3,38,1 -- Murloc Eye (3)
+    .collect 731,3,38,1 -- Goretusk Snout (3)
+    .collect 732,3,38,1 -- Okra (3)
+    .collect 723,8,22,1 -- Goretusk Liver (8)
+    .collect 814,5,103,1 -- Flask of Oil (5)
+    .target Auctioneer Jaxon
+step << !Druid
+    #ah
+    .goto Stormwind City,53.612,59.764
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
+    >>Buy the following items for faster turn ins at Westfall shortly
+    >>This will save you time as you won't need to run around looking for mobs to kill. Skip this step if you wish to not buy any
+    >>|T133972:0|t[Stringy Vulture Meat]
+    >>|T133884:0|t[Murloc Eye]
+    >>|T135997:0|t[Goretusk Snout]
+    >>|T134185:0|t[Okra]
+    >>|T134341:0|t[Goretusk Liver]
+    >>|T132794:0|t[Flask of Oil]
+    .collect 729,3,38,1 -- Stringy Vulture Meat (3)
+    .collect 730,3,38,1 -- Murloc Eye (3)
+    .collect 731,3,38,1 -- Goretusk Snout (3)
+    .collect 732,3,38,1 -- Okra (3)
+    .collect 723,8,22,1 -- Goretusk Liver (8)
+    .collect 814,5,103,1 -- Flask of Oil (5)
+    .target Auctioneer Jaxon
 step
     .goto StormwindClassic,55.724,65.401
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keldric Boucher|r

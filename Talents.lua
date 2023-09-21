@@ -407,8 +407,8 @@ local function learnClassicTalent(payload)
     local tab, talentIndex, name = unpack(payload)
     if LearnTalent(tab, talentIndex) then
         addon.comms.PrettyPrint("%s - %s", _G.TRADE_SKILLS_LEARNED_TAB, name)
-    else
-        addon.error(fmt("%s - %s", _G.ERR_TALENT_FAILED_UNKNOWN, name))
+    -- else
+        -- addon.error(fmt("%s - %s", _G.ERR_TALENT_FAILED_UNKNOWN, name))
     end
 end
 

@@ -2051,6 +2051,11 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pephredo|r
     .train 122 >> Train your class spells
     .target Pephredo
+step << Undead
+    .goto Orgrimmar,45.13,63.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doras|r
+    .fp Orgrimmar >> Get the Orgrimmar flight path
+    .target Doras
 step
     #label Admiralorders1
     .goto Orgrimmar,32.29,35.81

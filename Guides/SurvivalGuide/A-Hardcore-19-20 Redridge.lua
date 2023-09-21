@@ -124,6 +124,21 @@ step << Rogue
     .collect 923,1 --Longsword
     .collect 2209,1 --Kris
     .target Marda Weller
+step
+    #ah
+    .goto Stormwind City,53.612,59.764
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
+    >>Buy the following items for faster turn ins at Redridge Mountains shortly
+    >>This will save you time as you won't need to run around looking for mobs to kill. Skip this step if you wish to not buy any
+    >>|T134172:0|t[Great Goretusk Snout]
+    >>|T134028:0|t[Tough Condor Meat]
+    >>|T134321:0|t[Crisp Spider Meat]
+    >>|T134572:0|t[Rethban Ore]  
+    .collect 2296,5,92,1 -- Great Goretusk Snout (5)
+    .collect 1080,5,92,1 -- Tough Condor Meat (5)
+    .collect 1081,5,92,1 -- Crisp Spider Meat (5)
+    .collect 2798,5,347,1 -- Rethban Ore (5)
+    .target Auctioneer Jaxon
 step << !NightElf
     .goto StormwindClassic,66.27,62.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
@@ -428,8 +443,8 @@ step
     .complete 2040,1 -- Gnoam Sprecklesprocket (1)
 step
 .dungeon DM
-    >>Kill |cRXP_ENEMY_Edwin VanCleef|r. Loot him for his |cRXP_LOOT_Head|r and |T133712:0|t[|cRXP_LOOT_An Unsent Letter|r]
-    >>|cRXP_WARN_Use |T133712:0|t[|cRXP_LOOT_An Unsent Letter|r] to start the quest|r
+    >>Kill |cRXP_ENEMY_Edwin VanCleef|r. Loot him for his |cRXP_LOOT_Head|r and |T133471:0|t[|cRXP_LOOT_An Unsent Letter|r]
+    >>|cRXP_WARN_Use |T133471:0|t[|cRXP_LOOT_An Unsent Letter|r] to start the quest|r
     .collect 2874,1,373 -- An Unsent Letter (1)
     .complete 166,1 -- Head of VanCleef (1)
     .accept 373 >> Accept The Unsent Letter
@@ -457,14 +472,18 @@ step
     .target Thor
 step
 .dungeon DM
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r and |cRXP_FRIENDLY_Shoni the Shilent|r
-    .turnin 167 >> Turn in Oh Brother. . .
-    .turnin 168 >> Turn in Collecting Memories
-    .goto StormwindClassic,65.438,21.175
-    .turnin 2040 >> Turn in Underground Assault
-    .goto StormwindClassic,55.510,12.504
-    .target Wilder Thistlenettle
-    .target Shoni the Shilent
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argos Nightwhisper|r
+	.target Argos Nightwhisper
+    .goto StormwindClassic,21.40,55.80
+    .accept 3765 >> Accept The Corruption Abroad
+step
+.dungeon DM
+    .goto StormwindClassic,45.694,38.416
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Kristoff|r
+    >>Skip this step if you aren't level 20 yet
+    .accept 343 >> Accept Speaking of Fortitude
+    .target Brother Kristoff
+    .xp <20,1
 step
 .dungeon DM
     .goto StormwindClassic,48.079,30.913,10,0
@@ -473,6 +492,40 @@ step
     .turnin 373 >> Turn in The Unsent Letter
     .accept 389 >> Accept Bazil Thredd
     .target Baros Alexston
+step
+.dungeon DM
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r and |cRXP_FRIENDLY_Shoni the Shilent|r
+    .turnin 167 >> Turn in Oh Brother. . .
+    .turnin 168 >> Turn in Collecting Memories
+    .goto StormwindClassic,65.438,21.175
+    .turnin 2040 >> Turn in Underground Assault
+    .goto StormwindClassic,55.510,12.504
+    .target Wilder Thistlenettle
+    .target Shoni the Shilent
+step -- adding again 2nd time incase hitting 20 after turning in triple DM quests
+.dungeon DM
+    .goto StormwindClassic,45.694,38.416
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Kristoff|r
+    >>Skip this step if you aren't level 20 yet
+    .accept 343 >> Accept Speaking of Fortitude
+    .target Brother Kristoff
+    .xp <20,1
+step
+.dungeon DM
+    #completewith next
+    .goto StormwindClassic,70.439,27.097,15,0
+    .goto StormwindClassic,72.003,21.525,15,0
+    .goto StormwindClassic,70.713,10.717,15 >> Travel toward |cRXP_FRIENDLY_Milton Sheaf|r in the Stormwind Library
+    .xp <20,1
+step
+.dungeon DM
+    .goto StormwindClassic,74.182,7.465
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milton Sheaf|r
+    >>Skip this step if you aren't level 20 yet
+    .turnin 343 >> Turn in Speaking of Fortitude
+    .accept 344 >> Accept Brother Paxton
+    .target Milton Sheaf
+    .xp <20,1
 step
 .dungeon DM
     .goto StormwindClassic,42.435,59.236,10,0
@@ -484,29 +537,80 @@ step
 step
     .goto Westfall,56.55,52.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
+    >>Fly to Redridge if you are still in Westfall
     .fly Redridge >> Fly to Redridge
     .target Thor
     .zoneskip Westfall,1
 step
+.dungeon DM
+    .isQuestTurnedIn 343
+    #completewith next
+    .goto Elwynn Forest,32.240,49.723,60 >> Exit Stormwind. Travel to Goldshire
+    .xp <20,1
+step
+.dungeon DM
+    .isQuestTurnedIn 343
+    .goto Elwynn Forest,41.71,65.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smith Argus|r
+	.target Smith Argus
+    .turnin 118 >> Turn in The Price of Shoes
+    .accept 119 >> Accept Return to Verner
+    .xp <20,1
+step
+.dungeon DM
+    .isQuestTurnedIn 343
+    #completewith next
+    .goto Elwynn Forest,45.81,47.73,20,0
+    .goto Elwynn Forest,48.61,41.80,15 >> Travel to the Northshire Abbey
+    .xp <20,1
+step
+.dungeon DM
+    .isQuestTurnedIn 343
+    .goto Elwynn Forest,49.60,40.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
+    .turnin 344 >> Turn in Brother Paxton
+    .accept 345 >> Accept Ink Supplies
+    .target Brother Paxton
+    .xp <20,1
+step
+.dungeon DM
+    .isQuestTurnedIn 343
+    #completewith next
+    .goto Elwynn Forest,57.518,51.595,25,0
+    .goto Elwynn Forest,58.14,52.50,20,0
+    .goto Elwynn Forest,65.20,69.80,50 >> Travel to the Tower of Azora. Ascend the tower. Follow the arrow for a shortcut through the mountains
+    .xp <20,1
+step
+.dungeon DM
+    .isQuestTurnedIn 343
+    .goto Elwynn Forest,65.22,69.71
+    .target Theocritus
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theocritus|r at the top
+    .accept 94 >> Accept A Watchful Eye
+    .xp <20,1
+step
+.dungeon DM
+    .isQuestTurnedIn 343
+    .goto Elwynn Forest,64.880,69.192
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dawn Brightstar|r
+    .vendor >> |cRXP_FRIENDLY_Dawn Brightstar|r |cRXP_BUY_has has limited supply items such as|r |T134938:0|t|T134937:0|t|T134943:0|t[Scrolls] |cRXP_BUY_and|r |T134850:0|t|T134830:0|t[Potions] |cRXP_BUY_as well, which you should buy if available|r << !Warrior !Rogue
+    .vendor >> |cRXP_FRIENDLY_Dawn Brightstar|r |cRXP_BUY_has has limited supply items such as|r |T134938:0|t|T134937:0|t|T134943:0|t[Scrolls] |cRXP_BUY_and|r |T134830:0|t[Potions] |cRXP_BUY_as well, which you should buy if available|r << Warrior/Rogue
+    .target Dawn Brightstar
+    .subzoneskip 91,1
+step
+.dungeon DM
+    .isQuestTurnedIn 343
+    #completewith FlyR
+	.goto Redridge Mountains,6.7,72.4
+    .zone Redridge Mountains >> Travel to Redridge Mountains
+    .zoneskip Elwynn Forest,1
+step
     .goto StormwindClassic,66.27,62.12,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
+    >>Fly to Redridge if you are in Stormwind
     .fly Redridge >> Fly to Redridge
     .target Dungar Longdrink
     .zoneskip Stormwind City,1
-step
-    #era
-    #completewith MongrelPoacher
-    >>Kill |cRXP_ENEMY_Great Goretusks|r. Loot them for their |cRXP_LOOT_Great Goretusk Snouts|r
-    >>Kill |cRXP_ENEMY_Tarantulas|r. Loot them for their |cRXP_LOOT_Crisp Spider Meat|r
-    >>Kill |cRXP_ENEMY_Dire Condors|r. Loot them for their |cRXP_LOOT_Tough Condor Meat|r
-    >>|cRXP_WARN_Do NOT sell any of these items until you turn the Redridge Goulash quest|r
-    >>|cRXP_WARN_Save any|r |T133970:0|t[Chunks of Boar Meat] |cRXP_WARN_you loot as well as you can use them to level|r |T133971:0|t[Cooking] |cRXP_WARN_to 50 which is required for Duskwood later|r
-    .collect 2296,5,92,1
-    .collect 1080,5,92,1
-    .collect 1081,5,92,1
-    .mob Great Goretusk
-    .mob Tarantula
-    .mob Dire Condor
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Parker|r
 	.target Guard Parker
@@ -525,17 +629,44 @@ step
     .turnin 244 >> Turn in Encroaching Gnolls
     .accept 246 >> Accept Assessing the Threat
 step
+    .isQuestTurnedIn 343
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
+    .goto Redridge Mountains,32.13,48.63
+    .turnin 345 >> Turn in Ink Supplies
+    .target Foreman Oslow
+step
+    .isQuestTurnedIn 118
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
+	.target Verner Osgood
+    .goto Redridge Mountains,30.97,47.27
+    .turnin 119 >> Turn in Return to Verner
+    .accept 124 >> Accept A Baying of Gnolls
+    .accept 122 >> Accept Underbelly Scales
+step
     #era/som
-    .goto Redridge Mountains,21.22,67.77,45,0
-    .goto Redridge Mountains,17.70,73.39,45,0
-    .goto Redridge Mountains,11.20,76.31,45,0
-    .goto Redridge Mountains,13.37,81.48,45,0
-    .goto Redridge Mountains,18.86,73.63
+    #completewith MongrelPoacher
+    >>Kill |cRXP_ENEMY_Great Goretusks|r. Loot them for their |cRXP_LOOT_Great Goretusk Snouts|r
     >>Kill |cRXP_ENEMY_Tarantulas|r. Loot them for their |cRXP_LOOT_Crisp Spider Meat|r
+    >>Kill |cRXP_ENEMY_Dire Condors|r. Loot them for their |cRXP_LOOT_Tough Condor Meat|r
+    >>|cRXP_WARN_Do NOT sell any of these items until you turn the Redridge Goulash quest|r
+    >>|cRXP_WARN_Save any|r |T133970:0|t[Chunks of Boar Meat] |cRXP_WARN_you loot as well as you can use them to level|r |T133971:0|t[Cooking] |cRXP_WARN_to 50 which is required for Duskwood later|r
+    .collect 2296,5,92,1
+    .collect 1080,5,92,1
     .collect 1081,5,92,1
+    .mob Great Goretusk
     .mob Tarantula
+    .mob Dire Condor
+step
+    .isOnQuest 122
+    #completewith Toolbox
+    >>Kill |cRXP_ENEMY_Black Dragon Whelps|r. Loot them for their |cRXP_LOOT_Scales|r
+    >>You don't have to complete this quest now
+    .complete 122,1 --Underbelly Whelp Scale (6)
+    .mob Black Dragon Whelp
 step
     #label MongrelPoacher
+    .goto Redridge Mountains,15.91,62.76,0
+    .goto Redridge Mountains,43.44,70.61,0
     .goto Redridge Mountains,29.49,82.80,45,0
     .goto Redridge Mountains,32.52,81.78,45,0
     .goto Redridge Mountains,43.18,72.22,45,0
@@ -546,7 +677,7 @@ step
     .mob Redridge Mongrel
 	.mob Redridge Poacher
 step
-    #era
+    #era/som
     #completewith next
     >>Kill |cRXP_ENEMY_Great Goretusks|r. Loot them for their |cRXP_LOOT_Great Goretusk Snouts|r
     >>Kill |cRXP_ENEMY_Dire Condors|r. Loot them for their |cRXP_LOOT_Tough Condor Meat|r
@@ -557,41 +688,92 @@ step
     .mob Great Goretusk
     .mob Dire Condor
 step
+    #era/som
+    .goto Redridge Mountains,21.22,67.77,45,0
+    .goto Redridge Mountains,17.70,73.39,45,0
+    .goto Redridge Mountains,11.20,76.31,45,0
+    .goto Redridge Mountains,13.37,81.48,45,0
+    .goto Redridge Mountains,18.86,73.63
+    >>Kill |cRXP_ENEMY_Tarantulas|r. Loot them for their |cRXP_LOOT_Crisp Spider Meat|r
+    .collect 1081,5,92,1
+    .mob Tarantula
+step
+    #era/som
+    >>Kill |cRXP_ENEMY_Great Goretusks|r. Loot them for their |cRXP_LOOT_Great Goretusk Snouts|r
+    >>Kill |cRXP_ENEMY_Dire Condors|r. Loot them for their |cRXP_LOOT_Tough Condor Meat|r
+    >>|cRXP_WARN_Do NOT sell any of these items until you turn the Redridge Goulash quest|r
+    >>|cRXP_WARN_Save any|r |T133970:0|t[Chunks of Boar Meat] |cRXP_WARN_you loot as well as you can use them to level|r |T133971:0|t[Cooking] |cRXP_WARN_to 50 which is required for Duskwood later|r
+    .collect 1080,5,92,1
     .goto Redridge Mountains,66.4,76.6,60,0
     .goto Redridge Mountains,35.6,69.6,60,0
     .goto Redridge Mountains,45.4,76.6
     .goto Redridge Mountains,35.6,69.6,0
-    >>Kill |cRXP_ENEMY_Dire Condors|r. Loot them for their |cRXP_LOOT_Tough Condor Meat|r
-    .collect 1080,5,92,1
+    .collect 2296,5,92,1
+    .goto Redridge Mountains,15.73,52.83,60,0
+    .goto Redridge Mountains,32.25,70.20,60,0
+    .goto Redridge Mountains,31.02,72.14,60,0
+    .goto Redridge Mountains,15.73,52.83
+    .mob Great Goretusk
     .mob Dire Condor
 step
-    #era
-    #completewith FlySW
-    >>Kill |cRXP_ENEMY_Great Goretusks|r. Loot them for their |cRXP_LOOT_Great Goretusk Snouts|r
-    >>|cRXP_WARN_Do NOT sell these until you turn the Redridge Goulash quest|r
-    >>|cRXP_WARN_Save any|r |T133970:0|t[Chunks of Boar Meat] |cRXP_WARN_you loot as well as you can use them to level|r |T133971:0|t[Cooking] |cRXP_WARN_to 50 which is required for Duskwood later|r
-    .collect 1080,5,92,1
-    .mob Great Goretusk
-step
-    >>|cRXP_WARN_Jump into the Lake. Be aware of the patrolling Elite |cRXP_ENEMY_Lake Thresers|r in the water|r 
+    #label Toolbox
+    >>|cRXP_WARN_Jump into the Lake. Be aware of the patrolling Elite |cRXP_ENEMY_Lake Thresher|r in the water|r 
     >>Open the |cRXP_PICK_Sunken Chest|r. Loot it for |cRXP_LOOT_Oslow's Toolbox|r
     .goto Redridge Mountains,41.52,54.68
     .complete 125,1 --Oslow's Toolbox (1)
 step
     .goto Redridge Mountains,49.0,70.0
-    .xp 20-6300 >> Grind until you are 6300 xp away from level 20
+    .xp 20-3000 >> Grind until you are 3000 xp away from level 20
 step
     #completewith next
     .goto Redridge Mountains,30.73,59.99,150 >> Travel to Lakeshire
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
+	.target Foreman Oslow
+    .goto Redridge Mountains,32.13,48.63
+    .turnin 125 >> Turn in The Lost Tools
+    .accept 89 >> Accept The Everstill Bridge
+step
+    #era
+    .isQuestComplete 122
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
+    >>Skip this step if you have not completed Underbelly Scales yet, you will do it later
+	.target Verner Osgood
+    .goto Redridge Mountains,31.00,47.30
+    .turnin 122 >> Turn in Underbelly Scales
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Soloman|r
+	.target Magistrate Solomon
+    .goto Redridge Mountains,29.31,45.33,15,0
+    .goto Redridge Mountains,29.98,44.45
+    .turnin 121 >> Turn in Messenger to Stormwind
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Martie Jainrose|r
+	.target Martie Jainrose
+    .goto Redridge Mountains,21.86,46.33
+    .turnin 130 >> Turn in Visit the Herbalist
+    .accept 131 >> Accept Delivering Daffodils
+step
+    #era/som
+    .isQuestComplete 92
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Breanna|r
+	.target Chef Breanna
+    .goto Redridge Mountains,22.67,43.83
+    .turnin 92 >> Turn in Redridge Goulash
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darcy|r
+    >>|cRXP_FRIENDLY_Darcy|r |cRXP_WARN_walks around inside the Inn|r
+	.target Darcy
+    .goto Redridge Mountains,26.80,44.30
+    .turnin 131 >> Turn in Delivering Daffodils
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r
 	.target Deputy Feldon
     .goto Redridge Mountains,30.73,59.99
     .turnin 246 >> Turn in Assessing the Threat
 step
-    .xp 20 >> If you are not yet level 20, turn in all your Redridge quests, you should have enough from turn ins
+    .xp 20 >> Ensure you are level 20 before flying to Stormwind
 step
-    #label FlySW
     .goto Redridge Mountains,30.59,59.42
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
 	.target Ariena Stormfeather
@@ -750,17 +932,7 @@ step << Warrior
     .target Ilsa Corbin
 step
     #completewith next
-    .goto Elwynn Forest,45.81,47.73,20,0
-    .goto Elwynn Forest,48.61,41.80,15 >> Exit Stormwind. Travel to the Northshire Abbey
-step
-    .goto Elwynn Forest,49.60,40.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
-    .turnin 344 >> Turn in Brother Paxton
-    .accept 345 >> Accept Ink Supplies
-    .target Brother Paxton
-step
-    #completewith next
-    .goto Elwynn Forest,41.80,65.60,60 >> Travel to Goldshire
+    .goto Elwynn Forest,32.240,49.723,60 >> Exit Stormwind. Travel to Goldshire
 step
     .goto Elwynn Forest,41.71,65.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smith Argus|r
@@ -769,7 +941,19 @@ step
     .accept 119 >> Accept Return to Verner
 step
     #completewith next
-    .goto Elwynn Forest,65.20,69.80,50 >> Travel to the Tower of Azora. Ascend the tower
+    .goto Elwynn Forest,45.81,47.73,20,0
+    .goto Elwynn Forest,48.61,41.80,15 >> Travel to the Northshire Abbey
+step
+    .goto Elwynn Forest,49.60,40.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
+    .turnin 344 >> Turn in Brother Paxton
+    .accept 345 >> Accept Ink Supplies
+    .target Brother Paxton
+step
+    #completewith next
+    .goto Elwynn Forest,57.518,51.595,25,0
+    .goto Elwynn Forest,58.14,52.50,20,0
+    .goto Elwynn Forest,65.20,69.80,50 >> Travel to the Tower of Azora. Ascend the tower. Follow the arrow for a shortcut through the mountains
 step
     .goto Elwynn Forest,65.22,69.71
     .target Theocritus
@@ -783,15 +967,21 @@ step
     .target Dawn Brightstar
     .subzoneskip 91,1
 step
-    #completewith FlyR
+    #completewith TravelRM
 	.goto Redridge Mountains,6.7,72.4
     .zone Redridge Mountains >> Travel to Redridge Mountains
+    .zoneskip Elwynn Forest,1
+step
+    .goto StormwindClassic,66.27,62.12,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
+    >>Fly to Redridge if you are in Stormwind
+    .fly Redridge >> Fly to Redridge
+    .target Dungar Longdrink
+    .zoneskip Stormwind City,1
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
 	.target Foreman Oslow
     .goto Redridge Mountains,32.13,48.63
-    .turnin 125 >> Turn in The Lost Tools
-    .accept 89 >> Accept The Everstill Bridge
     .turnin 345 >> Turn in Ink Supplies
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
@@ -805,13 +995,6 @@ step
 	.target Verner Osgood
     .goto Redridge Mountains,30.97,47.27
     .accept 122 >> Accept Underbelly Scales
-step
-    #label FlyR
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Soloman|r
-	.target Magistrate Solomon
-    .goto Redridge Mountains,29.31,45.33,15,0
-    .goto Redridge Mountains,29.98,44.45
-    .turnin 121 >> Turn in Messenger to Stormwind
 step << Rogue
     .goto Redridge Mountains,28.07,52.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lucius|r
@@ -819,53 +1002,13 @@ step << Rogue
     .target Lucius
     .accept 2282 >> Accept Alther's Mill
 step
-    #era/som
-    .isQuestComplete 92
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Breanna|r
-	.target Chef Breanna
-    .goto Redridge Mountains,22.67,43.83
-    .turnin 92 >> Turn in Redridge Goulash
-step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Martie Jainrose|r
-	.target Martie Jainrose
-    .goto Redridge Mountains,21.86,46.33
-    .turnin 130 >> Turn in Visit the Herbalist
-    .accept 131 >> Accept Delivering Daffodils
-step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darcy|r
-    >>|cRXP_FRIENDLY_Darcy|r |cRXP_WARN_walks around inside the Inn|r
-	.target Darcy
-    .goto Redridge Mountains,26.80,44.30
-    .turnin 131 >> Turn in Delivering Daffodils
-step
     #era
 	#completewith next
 	>>Kill |cRXP_ENEMY_Black Dragon Whelps|r. Loot them for their |cRXP_LOOT_Scales|r
     .complete 122,1 --Underbelly Whelp Scale (6)
     .mob Black Dragon Whelp
 step
-    #era/som
-    >>Kill |cRXP_ENEMY_Great Goretusks|r. Loot them for their |cRXP_LOOT_Great Goretusk Snouts|r
-    >>|cRXP_WARN_Save any|r |T133970:0|t[Chunks of Boar Meat] |cRXP_WARN_you loot as well as you can use them to level|r |T133971:0|t[Cooking] |cRXP_WARN_to 50 which is required for Duskwood later|r
-    .goto Redridge Mountains,15.73,52.83,60,0
-    .goto Redridge Mountains,32.25,70.20,60,0
-    .goto Redridge Mountains,31.02,72.14,60,0
-    .goto Redridge Mountains,15.73,52.83
-    .collect 2296,5,92,1
-    .mob Great Goretusk
-step
-    #era/som
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Breanna|r
-	.target Chef Breanna
-    .goto Redridge Mountains,22.67,43.83
-    .turnin 92 >> Turn in Redridge Goulash
-step
-    #era
-	#completewith next
-	>>Kill |cRXP_ENEMY_Black Dragon Whelps|r. Loot them for their |cRXP_LOOT_Scales|r
-    .complete 122,1 --Underbelly Whelp Scale (6)
-    .mob Black Dragon Whelp
-step
+    #label TravelRM
     .goto Redridge Mountains,21.23,36.17,60,0
     .goto Redridge Mountains,34.20,39.70,60,0
     .goto Redridge Mountains,39.61,31.46,60,0
