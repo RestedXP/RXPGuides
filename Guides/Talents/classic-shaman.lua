@@ -82,7 +82,7 @@ level -- Elemental Weapons (Rank 3)
 
 level -- Improved Weapon Totems (Rank 1)
 	.talent 2,5,1,1
-	
+
 level -- Weapon Mastery (Rank 1)
 	.talent 2,6,3,1
 
@@ -162,7 +162,7 @@ level -- Elemental Devastation (Rank 3)
 
 addon.talents.RegisterGuide([[
 #name Hardcore Shaman 40-60
-#minLevel 40
+#minLevel 41
 #maxLevel 60
 #hardcore
 
@@ -397,7 +397,7 @@ level -- Elemental Weapons (Rank 3)
 
 level -- Improved Weapon Totems (Rank 1)
 	.talent 2,5,1,1
-	
+
 level -- Weapon Mastery (Rank 1)
 	.talent 2,6,3,1
 
@@ -477,7 +477,7 @@ level -- Elemental Devastation (Rank 3)
 
 addon.talents.RegisterGuide([[
 #name Softcore Shaman 40-60
-#minLevel 40
+#minLevel 41
 #maxLevel 60
 
 level -- Concussion (Rank 1)

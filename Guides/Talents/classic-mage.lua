@@ -25,25 +25,25 @@ level -- Improved Fireball (Rank 5)
 
 level -- Elemental Precision (Rank 1)
 	.talent 3,1,3,1
-	
+
 level -- Elemental Precision (Rank 2)
 	.talent 3,1,3,1
-	
+
 level -- Flame Throwing (Rank 1)
 	.talent 2,2,2,1
-	
+
 level -- Ignite (Rank 1)
 	.talent 2,2,1,1
-	
+
 level -- Ignite (Rank 2)
 	.talent 2,2,1,2
-	
+
 level -- Ignite (Rank 3)
 	.talent 2,2,1,3
-	
+
 level -- Ignite (Rank 4)
 	.talent 2,2,1,4
-	
+
 level -- Ignite (Rank 5)
 	.talent 2,2,1,5
 
@@ -51,7 +51,7 @@ level -- Ignite (Rank 5)
 
 addon.talents.RegisterGuide([[
 #name Hardcore AoE Mage 22-60
-#minLevel 22
+#minLevel 23
 #maxLevel 60
 #hardcore
 
@@ -112,10 +112,10 @@ level -- Frost Channeling (Rank 3)
 
 level -- Arctic Reach (Rank 1)
 	.talent 3,4,1,1
-	
+
 level -- Arctic Reach (Rank 2)
 	.talent 3,4,1,2
-	
+
 level -- Ice Block
 	.talent 3,5,2,1
 
@@ -148,7 +148,7 @@ level -- Shatter (Rank 5)
 
 level -- Ice Barrier
 	.talent 3,7,2,1
-	
+
 level -- Arcane Focus (Rank 1)
 	.talent 1,1,2,1
 
@@ -160,10 +160,10 @@ level -- Arcane Focus (Rank 3)
 
 level -- Arcane Subtlety (Rank 1)
 	.talent 1,1,1,1
-	
+
 level -- Arcane Subtlety (Rank 2)
 	.talent 1,1,1,2
-	
+
 level -- Arcane Concentration (Rank 1)
 	.talent 1,2,3,1
 
@@ -181,7 +181,7 @@ level -- Arcane Concentration (Rank 5)
 
 level -- Arcane Resilience
 	.talent 1,3,3,1
-	
+
 level -- Improved Arcane Explosion (Rank 1)
 	.talent 1,3,2,1
 
@@ -190,10 +190,10 @@ level -- Improved Arcane Explosion (Rank 2)
 
 level -- Improved Arcane Explosion (Rank 3)
 	.talent 1,3,2,3
-	
+
 level -- Magic Absorption (Rank 1)
 	.talent 1,2,2,1
-	
+
 level -- Arcane Meditation (Rank 1)
 	.talent 1,4,4,1
 
@@ -205,7 +205,7 @@ level -- Arcane Meditation (Rank 3)
 
 level -- Piercing Ice (Rank 3)
 	.talent 3,3,1,3
-	
+
 level -- Ice Shards (Rank 1)
 	.talent 3,2,1,1
 
@@ -346,10 +346,10 @@ level -- Arcane Focus (Rank 3)
 
 level -- Arcane Subtlety (Rank 1)
 	.talent 1,1,1,1
-	
+
 level -- Arcane Subtlety (Rank 2)
 	.talent 1,1,1,2
-	
+
 level -- Arcane Concentration (Rank 1)
 	.talent 1,2,3,1
 
@@ -367,7 +367,7 @@ level -- Arcane Concentration (Rank 5)
 
 level -- Arcane Resilience
 	.talent 1,3,3,1
-	
+
 level -- Improved Arcane Explosion (Rank 1)
 	.talent 1,3,2,1
 
@@ -475,10 +475,10 @@ level -- Ice Barrier
 
 level -- Arcane Subtlety (Rank 1)
 	.talent 1,1,1,1
-	
+
 level -- Arcane Subtlety (Rank 2)
 	.talent 1,1,1,2
-	
+
 level -- Arcane Focus (Rank 1)
 	.talent 1,1,2,1
 
@@ -557,25 +557,25 @@ level -- Improved Fireball (Rank 5)
 
 level -- Elemental Precision (Rank 1)
 	.talent 3,1,3,1
-	
+
 level -- Elemental Precision (Rank 2)
 	.talent 3,1,3,1
-	
+
 level -- Flame Throwing (Rank 1)
 	.talent 2,2,2,1
-	
+
 level -- Ignite (Rank 1)
 	.talent 2,2,1,1
-	
+
 level -- Ignite (Rank 2)
 	.talent 2,2,1,2
-	
+
 level -- Ignite (Rank 3)
 	.talent 2,2,1,3
-	
+
 level -- Ignite (Rank 4)
 	.talent 2,2,1,4
-	
+
 level -- Ignite (Rank 5)
 	.talent 2,2,1,5
 
@@ -583,7 +583,7 @@ level -- Ignite (Rank 5)
 
 addon.talents.RegisterGuide([[
 #name Softcore AoE Mage 22-60
-#minLevel 22
+#minLevel 23
 #maxLevel 60
 
 level -- Elemental Precision (Rank 1)
@@ -642,10 +642,10 @@ level -- Frost Channeling (Rank 3)
 
 level -- Arctic Reach (Rank 1)
 	.talent 3,4,1,1
-	
+
 level -- Arctic Reach (Rank 2)
 	.talent 3,4,1,2
-	
+
 level -- Ice Block
 	.talent 3,5,2,1
 
@@ -678,7 +678,7 @@ level -- Shatter (Rank 5)
 
 level -- Ice Barrier
 	.talent 3,7,2,1
-	
+
 level -- Arcane Focus (Rank 1)
 	.talent 1,1,2,1
 
@@ -690,10 +690,10 @@ level -- Arcane Focus (Rank 3)
 
 level -- Arcane Subtlety (Rank 1)
 	.talent 1,1,1,1
-	
+
 level -- Arcane Subtlety (Rank 2)
 	.talent 1,1,1,2
-	
+
 level -- Arcane Concentration (Rank 1)
 	.talent 1,2,3,1
 
@@ -711,7 +711,7 @@ level -- Arcane Concentration (Rank 5)
 
 level -- Arcane Resilience
 	.talent 1,3,3,1
-	
+
 level -- Improved Arcane Explosion (Rank 1)
 	.talent 1,3,2,1
 
@@ -720,10 +720,10 @@ level -- Improved Arcane Explosion (Rank 2)
 
 level -- Improved Arcane Explosion (Rank 3)
 	.talent 1,3,2,3
-	
+
 level -- Magic Absorption (Rank 1)
 	.talent 1,2,2,1
-	
+
 level -- Arcane Meditation (Rank 1)
 	.talent 1,4,4,1
 
@@ -735,7 +735,7 @@ level -- Arcane Meditation (Rank 3)
 
 level -- Piercing Ice (Rank 3)
 	.talent 3,3,1,3
-	
+
 level -- Ice Shards (Rank 1)
 	.talent 3,2,1,1
 
@@ -874,10 +874,10 @@ level -- Arcane Focus (Rank 3)
 
 level -- Arcane Subtlety (Rank 1)
 	.talent 1,1,1,1
-	
+
 level -- Arcane Subtlety (Rank 2)
 	.talent 1,1,1,2
-	
+
 level -- Arcane Concentration (Rank 1)
 	.talent 1,2,3,1
 
@@ -895,7 +895,7 @@ level -- Arcane Concentration (Rank 5)
 
 level -- Arcane Resilience
 	.talent 1,3,3,1
-	
+
 level -- Improved Arcane Explosion (Rank 1)
 	.talent 1,3,2,1
 
@@ -1001,10 +1001,10 @@ level -- Ice Barrier
 
 level -- Arcane Subtlety (Rank 1)
 	.talent 1,1,1,1
-	
+
 level -- Arcane Subtlety (Rank 2)
 	.talent 1,1,1,2
-	
+
 level -- Arcane Focus (Rank 1)
 	.talent 1,1,2,1
 
