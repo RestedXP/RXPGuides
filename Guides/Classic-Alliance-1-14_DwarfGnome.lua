@@ -253,13 +253,6 @@ step << Gnome Mage
     .turnin 3114 >> Turn in Glyphic Memorandum
     .trainer >> Train your class spells
 step << Warlock
-    #hardcore
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alamar Grimm|r
-    .target Alamar Grimm
-    .goto Dun Morogh,28.650,66.145
-    .trainer >> Train your Corruption
-step << Warlock
-    #softcore
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alamar Grimm|r
     .target Alamar Grimm
     .goto Dun Morogh,28.650,66.145
