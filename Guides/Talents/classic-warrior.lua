@@ -79,9 +79,10 @@ level -- Two-Handed Weapon Specialization Rank 1
 addon.talents.RegisterGuide([[
 #name Hardcore Warrior 30-55
 #next Hardcore Warrior 55-60
-#minLevel 31
+#minLevel 10
 #maxLevel 55
 #hardcore
+#reset
 
 level -- Improved Rend Rank 1
 	.talent 1,1,3,1
@@ -226,9 +227,10 @@ level -- Blood Craze Rank 2
 
 addon.talents.RegisterGuide([[
 #name Hardcore Warrior 55-60
-#minLevel 56
+#minLevel 10
 #maxLevel 60
 #hardcore
+#reset
 
 level -- Cruelty Rank 1
 	.talent 2,1,3,1
@@ -459,8 +461,9 @@ level -- Two-Handed Weapon Specialization Rank 1
 addon.talents.RegisterGuide([[
 #name Softcore Warrior 30-55
 #next Softcore Warrior 55-60
-#minLevel 31
+#minLevel 10
 #maxLevel 55
+#reset
 
 level -- Improved Rend Rank 1
 	.talent 1,1,3,1
@@ -604,8 +607,9 @@ level -- Blood Craze Rank 3
 
 addon.talents.RegisterGuide([[
 #name Softcore Warrior 55-60
-#minLevel 56
+#minLevel 10
 #maxLevel 60
+#reset
 
 level -- Cruelty Rank 1
 	.talent 2,1,3,1
