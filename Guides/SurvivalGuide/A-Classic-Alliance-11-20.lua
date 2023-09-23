@@ -114,6 +114,8 @@ step
     .complete 12,1 -- Defias Trapper slain (15)
     .complete 12,2 -- Defias Smuggler slain (15)
     .complete 153,1 -- Red Leather Bandana (15)
+    .mob Defias Trapper
+    .mob Defias Smuggler
 step
 	#label bennytime
     .goto Westfall,49.34,19.27
