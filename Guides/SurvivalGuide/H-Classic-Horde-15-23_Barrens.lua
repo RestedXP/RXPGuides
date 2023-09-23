@@ -3818,6 +3818,8 @@ step << Rogue
 step << Rogue
     .goto Orgrimmar,42.10,49.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Rekkul|r|cRXP_BUY_. Buy |r |T134387:0|t[Flash Powder] |cRXP_BUY_from him|r
+    .collect 2928,20,2479,1 --Collect Dust of Decay (20)
+    .collect 3371,20,2479,1 --Collect Empty Vial (20)
     .collect 5140,20,2479,1 --Collect Flash Powder (20)
     .target Rekkul
 step
