@@ -535,7 +535,6 @@ function addon.targeting.CheckTargetProximity()
             addon.targeting.activeTargetFrame:Hide()
         end
 
-        addon.comms.PrettyPrint("All matches expired")
         -- Full reset, so don't handle per-mob checks below
         return
     end

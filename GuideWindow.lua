@@ -377,9 +377,12 @@ function addon.RegisterGeneratedSteps()
     end
     end
 
-    addon.targeting:UpdateEnemyList(stepUnitscan, stepMobs, true)
-    addon.targeting:UpdateTargetList(stepTargets, true)
-    addon.targeting:CheckNameplates()
+    -- Don't process new targets if targeting disabled
+    if addon.settings.profile.enableTargetAutomation then
+        addon.targeting:UpdateEnemyList(stepUnitscan, stepMobs, true)
+        addon.targeting:UpdateTargetList(stepTargets, true)
+        addon.targeting:CheckNameplates()
+    end
 
     for j = i,#hiddenFramePool do
         local container = hiddenFramePool[j]
@@ -970,11 +973,14 @@ function addon.SetStep(n, n2, loopback)
             stepframe:Hide()
         end
     end
-    addon.targeting:UpdateEnemyList(stepUnitscan, stepMobs, false)
 
-    addon.targeting:UpdateTargetList(stepTargets, false)
+    -- Don't process new targets if targeting disabled
+    if addon.settings.profile.enableTargetAutomation then
+        addon.targeting:UpdateEnemyList(stepUnitscan, stepMobs, false)
+        addon.targeting:UpdateTargetList(stepTargets, false)
+        addon.targeting:CheckNameplates()
+    end
 
-    addon.targeting:CheckNameplates()
     addon:QueueMessage("RXP_TARGET_LIST_UPDATE",stepUnitscan,stepMobs,stepTargets)
 
     for index in pairs(RXPCData.completedWaypoints) do
