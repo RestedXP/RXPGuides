@@ -33,7 +33,7 @@ local session = {
     comparisonTip = nil
 }
 
-local CLASS_MAP = {
+local CLASS_MAP = { -- TODO 2H weapon difference?
     ["All"] = {
         ["Slot"] = {
             ["INVTYPE_HEAD"] = _G.INVSLOT_HEAD,
@@ -253,23 +253,53 @@ local KEY_TO_TEXT = {
     ['ITEM_MOD_DODGE_RATING_SHORT'] = _G.ITEM_MOD_DODGE_RATING,
     ['ITEM_MOD_PARRY_RATING_SHORT'] = _G.ITEM_MOD_PARRY_RATING,
 
-
     -- Parse text/value for all weapon DPS
-    ['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] = _G.DPS_TEMPLATE,
+    ['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] = _G.DPS_TEMPLATE
 
     -- Handle weapon types, faked/overloaded keys from GSheet
+    -- MapWeaponDPS()
     -- 'ITEM_MOD_DAMAGE_PER_SECOND_SHORT' .. '_' .. 'TYPE'
-    ['ITEM_MOD_DAMAGE_PER_SECOND_SHORT_1H'] = _G.DPS_TEMPLATE,
-    ['ITEM_MOD_DAMAGE_PER_SECOND_SHORT_2H_FAST'] = _G.DPS_TEMPLATE -- 2.1s
 }
 
 local WEAPON_MAP = {
-
+    ['1H'] = {
+        ['Slot'] = {
+            ["INVTYPE_WEAPON"] = { -- 1H can go into MH or OH, compare to both
+                [INVSLOT_MAINHAND] = true,
+                [INVSLOT_OFFHAND] = true
+            },
+            ["INVTYPE_WEAPONMAINHAND"] = _G.INVSLOT_MAINHAND,
+            ["INVTYPE_WEAPONOFFHAND"] = _G.INVSLOT_MAINHAND
+        }
+    },
+    ['2H_FAST'] = { -- Weapon speed (0.1s) 2h - 2.1 fastest
+        ['Speed'] = 2.1,
+        ['Slot'] = {["INVTYPE_2HWEAPON"] = _G.INVSLOT_MAINHAND}
+    },
+    ['MH_FAST'] = { -- Weapon speed (0.1s) mh - 1.3 fastest
+        ['Speed'] = 1.3,
+        ['Slot'] = {["INVTYPE_WEAPONMAINHAND"] = _G.INVSLOT_MAINHAND}
+    },
+    ['OH_FAST'] = { -- Weapon speed (0.1s) oh - 1.3 fastest
+        ['Speed'] = 1.3,
+        ['Slot'] = {["INVTYPE_WEAPONOFFHAND"] = _G.INVSLOT_OFFHAND}
+    },
+    ['RANGED_FAST'] = { -- Ranged weapon speed (0.1s) - fastest 1.3
+        ['Speed'] = 1.3,
+        ["Slot"] = {
+            ["INVTYPE_THROWN"] = _G.INVSLOT_RANGED,
+            ["INVTYPE_RANGED"] = _G.INVSLOT_RANGED,
+            ["INVTYPE_RANGEDRIGHT"] = _G.INVSLOT_RANGED
+        }
+    },
+    ['RANGED'] = {
+        ["Slot"] = {
+            ["INVTYPE_THROWN"] = _G.INVSLOT_RANGED,
+            ["INVTYPE_RANGED"] = _G.INVSLOT_RANGED,
+            ["INVTYPE_RANGEDRIGHT"] = _G.INVSLOT_RANGED
+        }
+    }
 }
-
-local function MapWeaponDPS()
-
-end
 
 local function regexify(input)
     -- Replace '%s' with '(%d+)' to match numbers
@@ -318,18 +348,25 @@ function addon.itemUpgrades:UpdateSlotMap()
         if type(v) == "function" then v = v() end
         session.equippableWeapons[k] = v
     end
+
+    -- Load DPS columns from GSheet
+    -- 'ITEM_MOD_DAMAGE_PER_SECOND_SHORT' .. '_' .. type
+    local DPS_TEMPLATE = _G.DPS_TEMPLATE
+
+    for k, _ in pairs(WEAPON_MAP) do
+        KEY_TO_TEXT['ITEM_MOD_DAMAGE_PER_SECOND_SHORT_' .. k] = DPS_TEMPLATE
+    end
 end
 
 function addon.itemUpgrades:Setup()
-    self:LoadStatWeights()
     self:UpdateSlotMap()
+    self:LoadStatWeights()
 
     self:RegisterEvent("PLAYER_LEVEL_UP")
     self:RegisterEvent("TRAINER_SHOW")
 
     local lookup
     -- Only load stats coming from GSheet
-    -- TODO Also handle DPS variants
     for key, _ in pairs(session.statWeights) do
         -- print("Checking", key)
         lookup = KeyToRegex(key)
@@ -362,7 +399,6 @@ function addon.itemUpgrades:LoadStatWeights()
 
     for _, data in pairs(addon.statWeights) do
         -- TODO spec support
-        -- TODO tackle DPS differences all being the same key
         if strupper(data.Class) == addon.player.class and strupper(data.Kind) ==
             activeKind then
             session.statWeights = data
@@ -436,6 +472,24 @@ local function IsUsableForClass(itemSubTypeID, itemEquipLoc)
     end
 
     return true
+end
+
+local function CalculateDPSWeight(stats)
+    -- ITEM_MOD_DAMAGE_PER_SECOND_SHORT is the stats key everything comes back as
+
+    -- Will return many length float, round at the end
+    local weaponDPS = stats['ITEM_MOD_DAMAGE_PER_SECOND_SHORT']
+    --statWeight = value * session.statWeights[key]
+
+    -- TODO
+    -- Look through WEAPON_MAP for all objects that match slot type
+    -- - which then gives the WEAPON_MAP key for weight lookup
+    -- We don't care or already know the weapon is usable by class
+    if stats.itemEquipLoc == '' then end
+
+    print("weaponDPS", addon.Round(weaponDPS, 3))
+    -- if all else fails treat value as zero because something went wrong
+    return 0 -- addon.Round(0, 4)
 end
 
 function addon.itemUpgrades:GetItemData(itemLink, tooltip)
@@ -531,10 +585,14 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
 
     -- After parsing API data and tooltip text, add up stat weights
     for key, value in pairs(stats) do
+        -- print("Weighting stat", key, "value")
 
-        -- Only calculate values explicitly configured
-        if session.statWeights[key] then
-            -- print("Weighting stat", key, "value")
+        -- Weapon DPS only comes back as a single stat/key
+        if key == 'ITEM_MOD_DAMAGE_PER_SECOND_SHORT' then
+            statWeight = CalculateDPSWeight(stats)
+            totalWeight = totalWeight + statWeight
+        elseif session.statWeights[key] then -- Only calculate values explicitly configured
+
             statWeight = value * session.statWeights[key]
             totalWeight = totalWeight + statWeight
 
