@@ -1320,7 +1320,13 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Automatically scan nearby targets"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.1
+                        order = 2.1,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            if addon.targeting.activeTargetFrame and not InCombatLockdown() then
+                                addon.targeting.activeTargetFrame:Hide()
+                            end
+                        end,
                     },
                     showTargetingOnProximity = {
                         name = L("Only show when in range"), -- TODO locale
