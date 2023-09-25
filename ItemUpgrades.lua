@@ -244,54 +244,48 @@ local KEY_TO_TEXT = {
     ['ITEM_MOD_SPELL_DAMAGE_DONE_SHORT'] = {
         _G.ITEM_MOD_SPELL_POWER, _G.ITEM_MOD_SPELL_DAMAGE_DONE
     },
-    ['ITEM_MOD_SPELL_HEALING_DONE_SHORT'] = _G.ITEM_MOD_SPELL_HEALING_DONE,
-    ['ITEM_MOD_HIT_SPELL_RATING_SHORT'] = _G.ITEM_MOD_HIT_SPELL_RATING,
-    ['ITEM_MOD_CRIT_SPELL_RATING_SHORT'] = _G.ITEM_MOD_CRIT_SPELL_RATING,
-    ['ITEM_MOD_ATTACK_POWER_SHORT'] = _G.ITEM_MOD_ATTACK_POWER,
-    ['ITEM_MOD_HIT_RATING_SHORT'] = _G.ITEM_MOD_HIT_RATING,
-    ['ITEM_MOD_CRIT_RATING_SHORT'] = _G.ITEM_MOD_CRIT_RATING,
-    ['ITEM_MOD_RANGED_ATTACK_POWER_SHORT'] = _G.ITEM_MOD_RANGED_ATTACK_POWER,
-    ['ITEM_MOD_DEFENSE_SKILL_RATING_SHORT'] = _G.ITEM_MOD_DEFENSE_SKILL_RATING,
-    ['ITEM_MOD_DODGE_RATING_SHORT'] = _G.ITEM_MOD_DODGE_RATING,
-    ['ITEM_MOD_PARRY_RATING_SHORT'] = _G.ITEM_MOD_PARRY_RATING,
+     ['ITEM_MOD_SPELL_HEALING_DONE_SHORT'] = _G.ITEM_MOD_SPELL_HEALING_DONE,
+     ['ITEM_MOD_HIT_SPELL_RATING_SHORT'] = _G.ITEM_MOD_HIT_SPELL_RATING,
+     ['ITEM_MOD_CRIT_SPELL_RATING_SHORT'] = _G.ITEM_MOD_CRIT_SPELL_RATING,
+     ['ITEM_MOD_ATTACK_POWER_SHORT'] = _G.ITEM_MOD_ATTACK_POWER,
+     ['ITEM_MOD_HIT_RATING_SHORT'] = _G.ITEM_MOD_HIT_RATING,
+     ['ITEM_MOD_CRIT_RATING_SHORT'] = _G.ITEM_MOD_CRIT_RATING,
+     ['ITEM_MOD_RANGED_ATTACK_POWER_SHORT'] = _G.ITEM_MOD_RANGED_ATTACK_POWER,
+     ['ITEM_MOD_DEFENSE_SKILL_RATING_SHORT'] = _G.ITEM_MOD_DEFENSE_SKILL_RATING,
+     ['ITEM_MOD_DODGE_RATING_SHORT'] = _G.ITEM_MOD_DODGE_RATING,
+     ['ITEM_MOD_PARRY_RATING_SHORT'] = _G.ITEM_MOD_PARRY_RATING,
 
-    -- Parse text/value for all weapon DPS
-    ['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] = _G.DPS_TEMPLATE,
+    -- Weapon DPS comes from API call
+    -- ['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] = _G.DPS_TEMPLATE,
 
     -- Handle weapon types, faked/overloaded keys from GSheet
     -- WEAPON_MAP + UpdateSlotMap()
     -- 'ITEM_MOD_DAMAGE_PER_SECOND_SHORT' .. '_' .. 'TYPE'
-
-    -- Hack in weapon speed parsing
-    -- TODO may not be calculated later
-    ['STAT_SPEED'] = _G.STAT_SPEED .. "%f"
 }
 
+-- Keys only obtained from tooltip text parsing
+-- Explicitly set regex
+local OUT_OF_BAND_KEYS = {
+    -- Hack in weapon speed parsing
+    -- TODO locale
+    ['STAT_SPEED'] = _G.STAT_SPEED .. " (%d+%.%d+)"
+}
+
+-- TODO remove FAST vs SLOW columns
 local WEAPON_MAP = {
-    ['1H'] = {
-        ['Slot'] = {
-            ["INVTYPE_WEAPON"] = { -- 1H can go into MH or OH, compare to both
-                [INVSLOT_MAINHAND] = true,
-                [INVSLOT_OFFHAND] = true
-            },
-            ["INVTYPE_WEAPONMAINHAND"] = _G.INVSLOT_MAINHAND,
-            ["INVTYPE_WEAPONOFFHAND"] = _G.INVSLOT_MAINHAND
-        }
-    },
-    ['2H_FAST'] = { -- Weapon speed (0.1s) 2h - 2.1 fastest
-        ['Speed'] = 2.1,
+    ['2H_FAST'] = { -- Don't compare 2H to MH+OH
         ['Slot'] = {["INVTYPE_2HWEAPON"] = _G.INVSLOT_MAINHAND}
     },
-    ['MH_FAST'] = { -- Weapon speed (0.1s) mh - 1.3 fastest
-        ['Speed'] = 1.3,
-        ['Slot'] = {["INVTYPE_WEAPONMAINHAND"] = _G.INVSLOT_MAINHAND}
+    ['MH_FAST'] = {
+        ['Slot'] = {
+            ["INVTYPE_WEAPON"] = _G.INVSLOT_MAINHAND,
+            ["INVTYPE_WEAPONMAINHAND"] = _G.INVSLOT_MAINHAND
+        }
     },
-    ['OH_FAST'] = { -- Weapon speed (0.1s) oh - 1.3 fastest
-        ['Speed'] = 1.3,
+    ['OH_FAST'] = {
         ['Slot'] = {["INVTYPE_WEAPONOFFHAND"] = _G.INVSLOT_OFFHAND}
     },
-    ['RANGED_FAST'] = { -- Ranged weapon speed (0.1s) - fastest 1.3
-        ['Speed'] = 1.3,
+    ['RANGED_FAST'] = { -- TODO remove
         ["Slot"] = {
             ["INVTYPE_THROWN"] = _G.INVSLOT_RANGED,
             ["INVTYPE_RANGED"] = _G.INVSLOT_RANGED,
@@ -372,14 +366,12 @@ function addon.itemUpgrades:UpdateSlotMap()
         session.equippableWeapons[k] = v
     end
 
-    -- Load DPS columns from GSheet
-    -- 'ITEM_MOD_DAMAGE_PER_SECOND_SHORT' .. '_' .. type
-    local DPS_TEMPLATE = _G.DPS_TEMPLATE
-
-    for k, _ in pairs(WEAPON_MAP) do
-        -- TODO stat comes from GetItemStats, avoid potentially text parsing
-        KEY_TO_TEXT['ITEM_MOD_DAMAGE_PER_SECOND_SHORT_' .. k] = DPS_TEMPLATE
-    end
+    -- TODO? Add DPS columns from GSheet to valid keys checks
+    -- 'ITEM_MOD_DAMAGE_PER_SECOND_SHORT' already comes from stats call
+    -- TODO exclude from wasteful text parsing
+    -- for k, _ in pairs(WEAPON_MAP) do
+    --    KEY_TO_TEXT['ITEM_MOD_DAMAGE_PER_SECOND_SHORT_' .. k] = true
+    -- end
 end
 
 function addon.itemUpgrades:Setup()
@@ -399,6 +391,11 @@ function addon.itemUpgrades:Setup()
             session.statsRegexes[key] = lookup
         end
 
+    end
+
+    -- Add out-of-band (aka hackery) stat parsing
+    for key, regex in pairs(OUT_OF_BAND_KEYS) do
+        session.statsRegexes[key] = regex
     end
 
 end
@@ -506,15 +503,19 @@ local function CalculateDPSWeight(itemData, stats)
     --    ...
     -- }
 
+    if not stats or not stats['STAT_SPEED'] then
+        addon.error("itemUpgrades CalculateDPSWeight, Speed property required")
+        return 0, nil
+    end
+
     local weaponDPS = stats['ITEM_MOD_DAMAGE_PER_SECOND_SHORT']
     local dpsWeights = {}
-    local statWeightKey
-
-
+    local statWeightKey, overallWeaponWeight
+    local highestDPSWeight, dpsWeight, speedKindWeight = 0, 0, 0
 
     -- Look through WEAPON_MAP for all kinds associated with itemEquipLoc
     -- - which then gives the WEAPON_MAP key for weight lookup
-    -- session.weaponKindToKey['INVTYPE_RANGED'] -> {RANGED, RANGED_FAST}
+    -- session.weaponKindToKey['INVTYPE_RANGED'] -> {'RANGED', 'RANGED_FAST'}
     for _, keySuffix in ipairs(session.weaponKindToKey[itemData.itemEquipLoc] or
                                    {}) do
 
@@ -523,23 +524,28 @@ local function CalculateDPSWeight(itemData, stats)
         -- Check weaponKind keys for class statWeights
         if session.statWeights[statWeightKey] then
             -- print("session.statWeights[statWeightKey]", session.statWeights[statWeightKey])
-            -- TODO check weapon speed to tell if normal or fast
             -- TODO add weapon speed weights
-            tinsert(dpsWeights, {
-                ['Weight'] = weaponDPS * session.statWeights[statWeightKey],
-                ['Key'] = statWeightKey
-            })
+            -- TODO add weapon speeds back in
+            -- (2.38 * 14) + (2.1 * 50)
+            -- (DPS * 1DPSWeight) + (SPEED * WEAPON_WEIGHTS)
+            dpsWeight = weaponDPS * session.statWeights['ITEM_MOD_DAMAGE_PER_SECOND_SHORT_BASE']
+            print("stats['STAT_SPEED']", stats['STAT_SPEED'])
+            speedKindWeight = stats['STAT_SPEED'] * session.statWeights[statWeightKey]
+
+            overallWeaponWeight = dpsWeight + speedKindWeight
+
+            print("speedKindWeight", speedKindWeight)
+
+            if dpsWeight > highestDPSWeight then
+                highestDPSWeight = overallWeaponWeight
+            end
+
+            tinsert(dpsWeights,
+                    {['Weight'] = overallWeaponWeight, ['Key'] = statWeightKey})
         end
     end
 
-    -- Get GSheet keys that weapon slot results in
-    -- TODO return highest weighted value
-    if dpsWeights[1] and dpsWeights[1].Weight then
-        return dpsWeights[1].Weight, dpsWeights
-    else
-        -- if all else fails treat value as zero because something went wrong
-        return 0, nil
-    end
+    return highestDPSWeight, dpsWeights
 end
 
 function addon.itemUpgrades:GetItemData(itemLink, tooltip)
@@ -606,26 +612,26 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
 
             -- Check all tooltip lines for regex matches
             for i, line in ipairs(tooltipTextLines) do
-                -- print("Checking", i, line)
+                -- print("Checking tooltip line", i, line)
 
                 if type(regex) == "table" then
                     for _, r in ipairs(regex) do
-                        -- print("Parsing", i, line)
+                        -- print("Parsing table", i, line, "for", r)
                         match1, match2 = string.match(line, r)
 
                         -- Only expect one number per line, so ignore if double match
                         if match1 and not match2 then
-                            -- print("Extracted", tonumber(match1), "from", line)
+                            print("Extracted", tonumber(match1), "from", line)
                             stats[key] = tonumber(match1)
                         end
                     end
                 else
-                    -- print("Parsing", i, line, "for", regex)
+                    -- print("Parsing not-table", i, line, "for", regex)
                     match1, match2 = string.match(line, regex)
 
                     -- Only expect one number per line, so ignore if double match
                     if match1 and not match2 then
-                        -- print("Extracted", tonumber(match1), "from", line)
+                        print("Extracted", tonumber(match1), "from", line)
                         stats[key] = tonumber(match1)
                     end
                 end
@@ -639,6 +645,7 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
 
         -- Weapon DPS only comes back as a single stat/key
         if key == 'ITEM_MOD_DAMAGE_PER_SECOND_SHORT' then
+            -- CalculateDPSWeight requires speed pulled from text
             statWeight = CalculateDPSWeight(itemData, stats)
             -- print("Key", key, "Value", value, "weighted at", statWeight)
 
