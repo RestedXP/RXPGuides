@@ -872,7 +872,7 @@ step
     .goto Darkshore,54.99,32.04,30,0
     .goto Winterspring,5.49,36.64,35 >> Travel to the Cliffspring River Cave
 step << Druid
-    >>|cFFFCDC00Use the|r |T134776:0|t[Empty Cliffspring Falls Sampler] |cFFFCDC00in the water at the enterance of the Cliffspring River Cave|r
+    >>|cFFFCDC00Use the|r |T134776:0|t[Empty Cliffspring Falls Sampler] |cFFFCDC00in the water at the entrance of the Cliffspring River Cave|r
     .goto Darkshore,54.80,33.16
     .complete 6122,1 --Filled Cliffspring Falls Sampler (1)
 step
