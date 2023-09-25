@@ -244,23 +244,19 @@ local KEY_TO_TEXT = {
     ['ITEM_MOD_SPELL_DAMAGE_DONE_SHORT'] = {
         _G.ITEM_MOD_SPELL_POWER, _G.ITEM_MOD_SPELL_DAMAGE_DONE
     },
-     ['ITEM_MOD_SPELL_HEALING_DONE_SHORT'] = _G.ITEM_MOD_SPELL_HEALING_DONE,
-     ['ITEM_MOD_HIT_SPELL_RATING_SHORT'] = _G.ITEM_MOD_HIT_SPELL_RATING,
-     ['ITEM_MOD_CRIT_SPELL_RATING_SHORT'] = _G.ITEM_MOD_CRIT_SPELL_RATING,
-     ['ITEM_MOD_ATTACK_POWER_SHORT'] = _G.ITEM_MOD_ATTACK_POWER,
-     ['ITEM_MOD_HIT_RATING_SHORT'] = _G.ITEM_MOD_HIT_RATING,
-     ['ITEM_MOD_CRIT_RATING_SHORT'] = _G.ITEM_MOD_CRIT_RATING,
-     ['ITEM_MOD_RANGED_ATTACK_POWER_SHORT'] = _G.ITEM_MOD_RANGED_ATTACK_POWER,
-     ['ITEM_MOD_DEFENSE_SKILL_RATING_SHORT'] = _G.ITEM_MOD_DEFENSE_SKILL_RATING,
-     ['ITEM_MOD_DODGE_RATING_SHORT'] = _G.ITEM_MOD_DODGE_RATING,
-     ['ITEM_MOD_PARRY_RATING_SHORT'] = _G.ITEM_MOD_PARRY_RATING,
+    ['ITEM_MOD_SPELL_HEALING_DONE_SHORT'] = _G.ITEM_MOD_SPELL_HEALING_DONE,
+    ['ITEM_MOD_HIT_SPELL_RATING_SHORT'] = _G.ITEM_MOD_HIT_SPELL_RATING,
+    ['ITEM_MOD_CRIT_SPELL_RATING_SHORT'] = _G.ITEM_MOD_CRIT_SPELL_RATING,
+    ['ITEM_MOD_ATTACK_POWER_SHORT'] = _G.ITEM_MOD_ATTACK_POWER,
+    ['ITEM_MOD_HIT_RATING_SHORT'] = _G.ITEM_MOD_HIT_RATING,
+    ['ITEM_MOD_CRIT_RATING_SHORT'] = _G.ITEM_MOD_CRIT_RATING,
+    ['ITEM_MOD_RANGED_ATTACK_POWER_SHORT'] = _G.ITEM_MOD_RANGED_ATTACK_POWER,
+    ['ITEM_MOD_DEFENSE_SKILL_RATING_SHORT'] = _G.ITEM_MOD_DEFENSE_SKILL_RATING,
+    ['ITEM_MOD_DODGE_RATING_SHORT'] = _G.ITEM_MOD_DODGE_RATING,
+    ['ITEM_MOD_PARRY_RATING_SHORT'] = _G.ITEM_MOD_PARRY_RATING
 
     -- Weapon DPS comes from API call
     -- ['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] = _G.DPS_TEMPLATE,
-
-    -- Handle weapon types, faked/overloaded keys from GSheet
-    -- WEAPON_MAP + UpdateSlotMap()
-    -- 'ITEM_MOD_DAMAGE_PER_SECOND_SHORT' .. '_' .. 'TYPE'
 }
 
 -- Keys only obtained from tooltip text parsing
@@ -268,28 +264,23 @@ local KEY_TO_TEXT = {
 local OUT_OF_BAND_KEYS = {
     -- Hack in weapon speed parsing
     -- TODO locale
-    ['STAT_SPEED'] = _G.STAT_SPEED .. " (%d+%.%d+)"
+    ['ITEM_MOD_CR_SPEED_SHORT'] = _G.ITEM_MOD_CR_SPEED_SHORT .. " (%d+%.%d+)"
 }
 
--- TODO remove FAST vs SLOW columns
-local WEAPON_MAP = {
-    ['2H_FAST'] = { -- Don't compare 2H to MH+OH
+local WEAPON_SLOT_MAP = {
+    ['2H'] = { -- TODO don't compare 2H to MH+OH
         ['Slot'] = {["INVTYPE_2HWEAPON"] = _G.INVSLOT_MAINHAND}
     },
-    ['MH_FAST'] = {
+    ['MH'] = {
         ['Slot'] = {
             ["INVTYPE_WEAPON"] = _G.INVSLOT_MAINHAND,
             ["INVTYPE_WEAPONMAINHAND"] = _G.INVSLOT_MAINHAND
         }
     },
-    ['OH_FAST'] = {
-        ['Slot'] = {["INVTYPE_WEAPONOFFHAND"] = _G.INVSLOT_OFFHAND}
-    },
-    ['RANGED_FAST'] = { -- TODO remove
-        ["Slot"] = {
-            ["INVTYPE_THROWN"] = _G.INVSLOT_RANGED,
-            ["INVTYPE_RANGED"] = _G.INVSLOT_RANGED,
-            ["INVTYPE_RANGEDRIGHT"] = _G.INVSLOT_RANGED
+    ['OH'] = {
+        ['Slot'] = {
+            ["INVTYPE_WEAPON"] = _G.INVSLOT_OFFHAND,
+            ["INVTYPE_WEAPONOFFHAND"] = _G.INVSLOT_OFFHAND
         }
     },
     ['RANGED'] = {
@@ -302,9 +293,9 @@ local WEAPON_MAP = {
 }
 
 -- Setup reverse lookup in session.weaponKindToKey
-for weaponKey, d in pairs(WEAPON_MAP) do
+for weaponKey, d in pairs(WEAPON_SLOT_MAP) do
     if not d.Slot then
-        addon.error("Incomplete WEAPON_MAP slot data")
+        addon.error("Incomplete WEAPON_SLOT_MAP slot data")
         return
     end
 
@@ -313,7 +304,7 @@ for weaponKey, d in pairs(WEAPON_MAP) do
             session.weaponKindToKey[itemEquipLoc] = {}
         end
 
-        -- ['INVTYPE_THROWN'] = { "RANGED_FAST", "RANGED"}
+        -- ['INVTYPE_WEAPON'] = { "MH", "OH" }
         tinsert(session.weaponKindToKey[itemEquipLoc], weaponKey)
     end
 end
@@ -365,13 +356,6 @@ function addon.itemUpgrades:UpdateSlotMap()
         if type(v) == "function" then v = v() end
         session.equippableWeapons[k] = v
     end
-
-    -- TODO? Add DPS columns from GSheet to valid keys checks
-    -- 'ITEM_MOD_DAMAGE_PER_SECOND_SHORT' already comes from stats call
-    -- TODO exclude from wasteful text parsing
-    -- for k, _ in pairs(WEAPON_MAP) do
-    --    KEY_TO_TEXT['ITEM_MOD_DAMAGE_PER_SECOND_SHORT_' .. k] = true
-    -- end
 end
 
 function addon.itemUpgrades:Setup()
@@ -503,45 +487,54 @@ local function CalculateDPSWeight(itemData, stats)
     --    ...
     -- }
 
-    if not stats or not stats['STAT_SPEED'] then
-        addon.error("itemUpgrades CalculateDPSWeight, Speed property required")
-        return 0, nil
+    -- TODO doesn't work on hidden/background tooltip parsing
+    if not stats or not stats['ITEM_MOD_CR_SPEED_SHORT'] then
+        if addon.settings.profile.debug then
+            addon.comms.PrettyPrint("itemUpgrades CalculateDPSWeight, Speed property required")
+        end
+        return nil
     end
 
-    local weaponDPS = stats['ITEM_MOD_DAMAGE_PER_SECOND_SHORT']
     local dpsWeights = {}
-    local statWeightKey, overallWeaponWeight
+    local speedWeightKey, overallWeaponWeight
     local highestDPSWeight, dpsWeight, speedKindWeight = 0, 0, 0
+    local itemEquipLoc = itemData.itemEquipLoc
 
-    -- Look through WEAPON_MAP for all kinds associated with itemEquipLoc
-    -- - which then gives the WEAPON_MAP key for weight lookup
-    -- session.weaponKindToKey['INVTYPE_RANGED'] -> {'RANGED', 'RANGED_FAST'}
-    for _, keySuffix in ipairs(session.weaponKindToKey[itemData.itemEquipLoc] or
-                                   {}) do
+    -- Look through weaponKindToKey for all kinds associated with itemEquipLoc
+    -- - which then gives the WEAPON_SLOT_MAP key for weight lookup
+    -- weaponKindToKey['INVTYPE_WEAPON'] = { "MH", "OH" }
+    for _, keySuffix in ipairs(session.weaponKindToKey[itemEquipLoc] or {}) do
 
-        statWeightKey = 'ITEM_MOD_DAMAGE_PER_SECOND_SHORT_' .. keySuffix
+        speedWeightKey = 'ITEM_MOD_CR_SPEED_SHORT_' .. keySuffix
 
         -- Check weaponKind keys for class statWeights
-        if session.statWeights[statWeightKey] then
-            -- print("session.statWeights[statWeightKey]", session.statWeights[statWeightKey])
-            -- TODO add weapon speed weights
-            -- TODO add weapon speeds back in
+        if session.statWeights[speedWeightKey] then
+            -- print("session.statWeights[speedWeightKey]", session.statWeights[speedWeightKey])
+
             -- (2.38 * 14) + (2.1 * 50)
-            -- (DPS * 1DPSWeight) + (SPEED * WEAPON_WEIGHTS)
-            dpsWeight = weaponDPS * session.statWeights['ITEM_MOD_DAMAGE_PER_SECOND_SHORT_BASE']
-            print("stats['STAT_SPEED']", stats['STAT_SPEED'])
-            speedKindWeight = stats['STAT_SPEED'] * session.statWeights[statWeightKey]
+            -- (DPS * 1_DPS_WEIGHT) + (SPEED * WEAPON_WEIGHT)
+
+            if itemEquipLoc == 'INVTYPE_RANGED' or itemEquipLoc ==
+                'INVTYPE_THROWN' or itemEquipLoc == 'INVTYPE_RANGEDRIGHT' then
+
+                dpsWeight = stats['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] *
+                                session.statWeights['ITEM_MOD_DAMAGE_PER_SECOND_SHORT_RANGED']
+            else
+                dpsWeight = stats['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] *
+                                session.statWeights['ITEM_MOD_DAMAGE_PER_SECOND_SHORT']
+            end
+
+            speedKindWeight = stats['ITEM_MOD_CR_SPEED_SHORT'] *
+                                  session.statWeights[speedWeightKey]
 
             overallWeaponWeight = dpsWeight + speedKindWeight
 
-            print("speedKindWeight", speedKindWeight)
-
-            if dpsWeight > highestDPSWeight then
+            if overallWeaponWeight > highestDPSWeight then
                 highestDPSWeight = overallWeaponWeight
             end
 
             tinsert(dpsWeights,
-                    {['Weight'] = overallWeaponWeight, ['Key'] = statWeightKey})
+                    {['Weight'] = overallWeaponWeight, ['Key'] = keySuffix})
         end
     end
 
@@ -631,7 +624,7 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
 
                     -- Only expect one number per line, so ignore if double match
                     if match1 and not match2 then
-                        print("Extracted", tonumber(match1), "from", line)
+                        -- print("Extracted", tonumber(match1), "from", line)
                         stats[key] = tonumber(match1)
                     end
                 end
@@ -648,6 +641,9 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
             -- CalculateDPSWeight requires speed pulled from text
             statWeight = CalculateDPSWeight(itemData, stats)
             -- print("Key", key, "Value", value, "weighted at", statWeight)
+
+            -- If weapon DPS fails to parse, return nil
+            if not statWeight then return end
 
             totalWeight = totalWeight + statWeight
         elseif session.statWeights[key] then -- Only calculate values explicitly configured
@@ -707,6 +703,7 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
         return
     end
 
+    -- TODO don't compare 2H vs MH or MH+OH
     -- print(comparedData.itemEquipLoc, "weights", comparedData.totalWeight, equippedData.totalWeight)
 
     if equippedData.totalWeight == 0 or equippedData.totalWeight == 0 then
