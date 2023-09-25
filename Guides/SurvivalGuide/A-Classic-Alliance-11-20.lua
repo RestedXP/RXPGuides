@@ -2109,7 +2109,7 @@ step
     .goto The Barrens,46.95,35.44,20,0
     .goto The Barrens,47.01,34.67,15,0
     .goto 1414,51.92,55.27,45,0
-    .goto 1414,51.82,55.56,20 >> Travel to The Wailing Caverns. Ascend the mountain then drop down into the hidden cave above the enterance of The Wailing Caverns. Follow the Arrow to get to |cRXP_FRIENDLY_Nalpak|r and |cRXP_FRIENDLY_Ebru|r
+    .goto 1414,51.82,55.56,20 >> Travel to The Wailing Caverns. Ascend the mountain then drop down into the hidden cave above the entrance of The Wailing Caverns. Follow the Arrow to get to |cRXP_FRIENDLY_Nalpak|r and |cRXP_FRIENDLY_Ebru|r
 step
 .dungeon WC
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nalpak|r and |cRXP_FRIENDLY_Ebru|r
@@ -2232,7 +2232,7 @@ step
 .dungeon WC
     #completewith NalpakEbru
     .goto 1414,51.92,55.27,45,0
-    .goto 1414,51.82,55.56,20 >> Drop down into the hidden cave above the enterance of The Wailing Caverns. Follow the Arrow to get to |cRXP_FRIENDLY_Nalpak|r and |cRXP_FRIENDLY_Ebru|r
+    .goto 1414,51.82,55.56,20 >> Drop down into the hidden cave above the entrance of The Wailing Caverns. Follow the Arrow to get to |cRXP_FRIENDLY_Nalpak|r and |cRXP_FRIENDLY_Ebru|r
 step
 .dungeon WC
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nalpak|r and |cRXP_FRIENDLY_Ebru|r
