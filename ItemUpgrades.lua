@@ -29,7 +29,7 @@ local session = {
     equippableArmor = {},
     equippableWeapons = {},
 
-    weaponKindToKey = {},
+    weaponSlotToWeightKey = {},
 
     -- TODO handle thread-safe?
     comparisonTip = nil
@@ -292,20 +292,20 @@ local WEAPON_SLOT_MAP = {
     }
 }
 
--- Setup reverse lookup in session.weaponKindToKey
+-- Setup reverse lookup in session.weaponSlotToWeightKey
 for weaponKey, d in pairs(WEAPON_SLOT_MAP) do
     if not d.Slot then
-        addon.error("Incomplete WEAPON_SLOT_MAP slot data")
+        addon.error("Incomplete WEAPON_SLOT_MAP slot data for", weaponKey)
         return
     end
 
     for itemEquipLoc, _ in pairs(d.Slot) do
-        if not session.weaponKindToKey[itemEquipLoc] then
-            session.weaponKindToKey[itemEquipLoc] = {}
+        if not session.weaponSlotToWeightKey[itemEquipLoc] then
+            session.weaponSlotToWeightKey[itemEquipLoc] = {}
         end
 
         -- ['INVTYPE_WEAPON'] = { "MH", "OH" }
-        tinsert(session.weaponKindToKey[itemEquipLoc], weaponKey)
+        tinsert(session.weaponSlotToWeightKey[itemEquipLoc], weaponKey)
     end
 end
 
@@ -465,10 +465,6 @@ local function IsUsableForClass(itemSubTypeID, itemEquipLoc)
         return
     end
 
-    -- Slot not equippable
-    -- TODO re-enable short-circuit after updating weapon handling GSheet
-    -- if not session.equippableSlots[itemEquipLoc] then return end
-
     -- Type not usable by class
     if IsWeaponSlot(itemEquipLoc) then
         if not session.equippableWeapons[itemSubTypeID] then return end
@@ -481,11 +477,15 @@ end
 
 local function CalculateDPSWeight(itemData, stats)
     -- Example:
-    -- stats = {
-    --    ['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] = 12.3456789,
+    -- itemData = {
     --    ['itemEquipLoc'] = 'INVTYPE_RANGED',
     --    ...
     -- }
+    -- stats = {
+    --    ['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] = 12.3456789,
+    --    ...
+    -- }
+
 
     -- TODO doesn't work on hidden/background tooltip parsing
     if not stats or not stats['ITEM_MOD_CR_SPEED_SHORT'] then
@@ -496,23 +496,20 @@ local function CalculateDPSWeight(itemData, stats)
     end
 
     local dpsWeights = {}
-    local speedWeightKey, overallWeaponWeight
-    local highestDPSWeight, dpsWeight, speedKindWeight = 0, 0, 0
+    local highestDPSWeight = -1
     local itemEquipLoc = itemData.itemEquipLoc
+    local speedWeightKey, overallWeaponWeight, dpsWeight, speedKindWeight
 
-    -- Look through weaponKindToKey for all kinds associated with itemEquipLoc
+    -- Look through weaponSlotToWeightKey for all kinds associated with itemEquipLoc
     -- - which then gives the WEAPON_SLOT_MAP key for weight lookup
-    -- weaponKindToKey['INVTYPE_WEAPON'] = { "MH", "OH" }
-    for _, keySuffix in ipairs(session.weaponKindToKey[itemEquipLoc] or {}) do
+    -- weaponSlotToWeightKey['INVTYPE_WEAPON'] = { "MH", "OH" }
+    for _, keySuffix in ipairs(session.weaponSlotToWeightKey[itemEquipLoc] or {}) do
 
+        -- Lookup speed weight key with kind suffix (MH, OH, RANGED, 2H)
         speedWeightKey = 'ITEM_MOD_CR_SPEED_SHORT_' .. keySuffix
 
         -- Check weaponKind keys for class statWeights
         if session.statWeights[speedWeightKey] then
-            -- print("session.statWeights[speedWeightKey]", session.statWeights[speedWeightKey])
-
-            -- (2.38 * 14) + (2.1 * 50)
-            -- (DPS * 1_DPS_WEIGHT) + (SPEED * WEAPON_WEIGHT)
 
             if itemEquipLoc == 'INVTYPE_RANGED' or itemEquipLoc ==
                 'INVTYPE_THROWN' or itemEquipLoc == 'INVTYPE_RANGEDRIGHT' then
@@ -527,6 +524,7 @@ local function CalculateDPSWeight(itemData, stats)
             speedKindWeight = stats['ITEM_MOD_CR_SPEED_SHORT'] *
                                   session.statWeights[speedWeightKey]
 
+            -- (DPS * 1_DPS_WEIGHT) + (SPEED * WEAPON_WEIGHT)
             overallWeaponWeight = dpsWeight + speedKindWeight
 
             if overallWeaponWeight > highestDPSWeight then
@@ -556,7 +554,7 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
                                                                 itemLink)
 
     -- Not an equippable item
-    if not itemEquipLoc or itemEquipLoc == "" then return end
+    if not itemEquipLoc or itemEquipLoc == "" or itemEquipLoc == "INVTYPE_AMMO" then return end
 
     local stats = GetItemStats(itemLink)
 
@@ -675,6 +673,7 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
 
     -- Not an equippable item
     if not comparedData.itemEquipLoc then return end
+    print("comparedData.itemEquipLoc", comparedData.itemEquipLoc)
 
     if not IsUsableForClass(comparedData.itemSubTypeID,
                             comparedData.itemEquipLoc) then return end
@@ -682,10 +681,12 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
     if type(session.equippableSlots[comparedData.itemEquipLoc]) == "table" then
         print("is multi-slot", comparedData.itemEquipLoc)
     end
+
     -- TODO handle slot map array and multiple matches
+    -- TODO make sure MH compares to 1H and vice versa, not currently
+
     local equippedItemLink = GetInventoryItemLink("player",
                                                   session.equippableSlots[comparedData.itemEquipLoc])
-    -- print("GetInventoryItemLink", comparedStats.itemEquipLoc, GetInventoryItemLink("player", comparedStats.itemEquipLoc))
 
     -- No equipped item, so anything is an upgrade from no item
     if not equippedItemLink or equippedItemLink == "" then
@@ -703,8 +704,10 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
         return
     end
 
+    print("equippedData.itemEquipLoc", equippedData.itemEquipLoc)
+
     -- TODO don't compare 2H vs MH or MH+OH
-    -- print(comparedData.itemEquipLoc, "weights", comparedData.totalWeight, equippedData.totalWeight)
+    print(comparedData.itemEquipLoc, "weights", comparedData.totalWeight, equippedData.totalWeight)
 
     if equippedData.totalWeight == 0 or equippedData.totalWeight == 0 then
         -- Prevent division by 0
