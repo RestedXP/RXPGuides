@@ -35,7 +35,7 @@ local session = {
     comparisonTip = nil
 }
 
-local CLASS_MAP = { -- TODO 2H weapon difference?
+local CLASS_MAP = {
     ["All"] = {
         ["Slot"] = {
             ["INVTYPE_HEAD"] = _G.INVSLOT_HEAD,
@@ -59,7 +59,9 @@ local CLASS_MAP = { -- TODO 2H weapon difference?
             },
             ["INVTYPE_CLOAK"] = _G.INVSLOT_BACK,
             ["INVTYPE_HOLDABLE"] = _G.INVSLOT_OFFHAND,
-            ["INVTYPE_WEAPONMAINHAND"] = _G.INVSLOT_MAINHAND
+            ["INVTYPE_WEAPONMAINHAND"] = _G.INVSLOT_MAINHAND,
+            ["INVTYPE_WEAPON"] = _G.INVSLOT_MAINHAND,
+            ["INVTYPE_2HWEAPON"] = _G.INVSLOT_MAINHAND
         },
         ["ArmorType"] = {
             [ItemArmorSubclass.Generic] = true, -- Trinkets, rings, necks
@@ -268,7 +270,7 @@ local OUT_OF_BAND_KEYS = {
 }
 
 local WEAPON_SLOT_MAP = {
-    ['2H'] = { -- TODO don't compare 2H to MH+OH
+    ['2H'] = {
         ['Slot'] = {["INVTYPE_2HWEAPON"] = _G.INVSLOT_MAINHAND}
     },
     ['MH'] = {
@@ -486,11 +488,11 @@ local function CalculateDPSWeight(itemData, stats)
     --    ...
     -- }
 
-
     -- TODO doesn't work on hidden/background tooltip parsing
     if not stats or not stats['ITEM_MOD_CR_SPEED_SHORT'] then
         if addon.settings.profile.debug then
-            addon.comms.PrettyPrint("itemUpgrades CalculateDPSWeight, Speed property required")
+            addon.comms.PrettyPrint(
+                "itemUpgrades CalculateDPSWeight, Speed property required")
         end
         return nil
     end
@@ -503,7 +505,8 @@ local function CalculateDPSWeight(itemData, stats)
     -- Look through weaponSlotToWeightKey for all kinds associated with itemEquipLoc
     -- - which then gives the WEAPON_SLOT_MAP key for weight lookup
     -- weaponSlotToWeightKey['INVTYPE_WEAPON'] = { "MH", "OH" }
-    for _, keySuffix in ipairs(session.weaponSlotToWeightKey[itemEquipLoc] or {}) do
+    for _, keySuffix in
+        ipairs(session.weaponSlotToWeightKey[itemEquipLoc] or {}) do
 
         -- Lookup speed weight key with kind suffix (MH, OH, RANGED, 2H)
         speedWeightKey = 'ITEM_MOD_CR_SPEED_SHORT_' .. keySuffix
@@ -554,7 +557,8 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
                                                                 itemLink)
 
     -- Not an equippable item
-    if not itemEquipLoc or itemEquipLoc == "" or itemEquipLoc == "INVTYPE_AMMO" then return end
+    if not itemEquipLoc or itemEquipLoc == "" or itemEquipLoc == "INVTYPE_AMMO" or
+        itemEquipLoc == "INVTYPE_BAG" then return end
 
     local stats = GetItemStats(itemLink)
 
@@ -673,7 +677,7 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
 
     -- Not an equippable item
     if not comparedData.itemEquipLoc then return end
-    print("comparedData.itemEquipLoc", comparedData.itemEquipLoc)
+    -- print("comparedData.itemEquipLoc", comparedData.itemEquipLoc)
 
     if not IsUsableForClass(comparedData.itemSubTypeID,
                             comparedData.itemEquipLoc) then return end
@@ -683,8 +687,6 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
     end
 
     -- TODO handle slot map array and multiple matches
-    -- TODO make sure MH compares to 1H and vice versa, not currently
-
     local equippedItemLink = GetInventoryItemLink("player",
                                                   session.equippableSlots[comparedData.itemEquipLoc])
 
@@ -700,14 +702,18 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
 
     if not equippedData then
         -- Failed to load stats, wait for the next refresh
-        print("not equippedStats", equippedItemLink)
+        -- print("not equippedStats", equippedItemLink)
         return
     end
 
-    print("equippedData.itemEquipLoc", equippedData.itemEquipLoc)
+    -- Only compare 2H against another 2H
+    if (comparedData.itemEquipLoc == 'INVTYPE_2HWEAPON' and
+        equippedData.itemEquipLoc ~= 'INVTYPE_2HWEAPON') or
+        (equippedData.itemEquipLoc == 'INVTYPE_2HWEAPON' and
+            comparedData.itemEquipLoc ~= 'INVTYPE_2HWEAPON') then
 
-    -- TODO don't compare 2H vs MH or MH+OH
-    print(comparedData.itemEquipLoc, "weights", comparedData.totalWeight, equippedData.totalWeight)
+        return
+    end
 
     if equippedData.totalWeight == 0 or equippedData.totalWeight == 0 then
         -- Prevent division by 0
