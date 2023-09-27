@@ -2,7 +2,8 @@ local _, addon = ...
 
 if addon.gameVersion > 40000 then return end
 
-local fmt, tinsert, ipairs = string.format, table.insert, ipairs
+local fmt, tinsert, ipairs, pairs, next = string.format, table.insert, ipairs,
+                                          pairs, next
 
 local GetItemInfoInstant, GetInventoryItemLink, IsEquippedItem =
     _G.GetItemInfoInstant, _G.GetInventoryItemLink, _G.IsEquippedItem
@@ -85,7 +86,9 @@ local CLASS_MAP = {
             ["INVTYPE_THROWN"] = _G.INVSLOT_RANGED,
             ["INVTYPE_RANGEDRIGHT"] = _G.INVSLOT_RANGED,
             ["INVTYPE_RANGED"] = _G.INVSLOT_RANGED,
-            ["INVTYPE_WEAPONOFFHAND"] = _G.INVSLOT_OFFHAND
+            ["INVTYPE_WEAPONOFFHAND"] = function() -- TODO support
+                return UnitLevel("player") >= 20 and _G.INVSLOT_OFFHAND or nil
+            end
         },
         ["ArmorType"] = {
             [ItemArmorSubclass.Leather] = true,
@@ -155,7 +158,9 @@ local CLASS_MAP = {
             ["INVTYPE_THROWN"] = _G.INVSLOT_RANGED,
             ["INVTYPE_RANGEDRIGHT"] = _G.INVSLOT_RANGED,
             ["INVTYPE_RANGED"] = _G.INVSLOT_RANGED,
-            ["INVTYPE_WEAPONOFFHAND"] = _G.INVSLOT_OFFHAND
+            ["INVTYPE_WEAPONOFFHAND"] = function() -- TODO support
+                return UnitLevel("player") >= 20 and _G.INVSLOT_OFFHAND or nil
+            end
         },
         ["ArmorType"] = {[ItemArmorSubclass.Leather] = true},
         ["WeaponType"] = {
@@ -202,7 +207,9 @@ local CLASS_MAP = {
             ["INVTYPE_THROWN"] = _G.INVSLOT_RANGED,
             ["INVTYPE_RANGEDRIGHT"] = _G.INVSLOT_RANGED,
             ["INVTYPE_SHIELD"] = _G.INVSLOT_OFFHAND,
-            ["INVTYPE_WEAPONOFFHAND"] = _G.INVSLOT_OFFHAND
+            ["INVTYPE_WEAPONOFFHAND"] = function() -- TODO support
+                return UnitLevel("player") >= 20 and _G.INVSLOT_OFFHAND or nil
+            end
         },
         ["ArmorType"] = {
             [ItemArmorSubclass.Leather] = true,
@@ -270,9 +277,7 @@ local OUT_OF_BAND_KEYS = {
 }
 
 local WEAPON_SLOT_MAP = {
-    ['2H'] = {
-        ['Slot'] = {["INVTYPE_2HWEAPON"] = _G.INVSLOT_MAINHAND}
-    },
+    ['2H'] = {['Slot'] = {["INVTYPE_2HWEAPON"] = _G.INVSLOT_MAINHAND}},
     ['MH'] = {
         ['Slot'] = {
             ["INVTYPE_WEAPON"] = _G.INVSLOT_MAINHAND,
@@ -682,54 +687,89 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
     if not IsUsableForClass(comparedData.itemSubTypeID,
                             comparedData.itemEquipLoc) then return end
 
+    local slotsToCompare = {}
+
     if type(session.equippableSlots[comparedData.itemEquipLoc]) == "table" then
         print("is multi-slot", comparedData.itemEquipLoc)
-    end
-
-    -- TODO handle slot map array and multiple matches
-    local equippedItemLink = GetInventoryItemLink("player",
-                                                  session.equippableSlots[comparedData.itemEquipLoc])
-
-    -- No equipped item, so anything is an upgrade from no item
-    if not equippedItemLink or equippedItemLink == "" then
-        return 1
-    elseif comparedData.itemLink == equippedItemLink then
-        return
-    end
-
-    -- Load equipped item into hidden tooltip for parsing
-    local equippedData = self:GetItemData(equippedItemLink, nil)
-
-    if not equippedData then
-        -- Failed to load stats, wait for the next refresh
-        -- print("not equippedStats", equippedItemLink)
-        return
-    end
-
-    -- Only compare 2H against another 2H
-    if (comparedData.itemEquipLoc == 'INVTYPE_2HWEAPON' and
-        equippedData.itemEquipLoc ~= 'INVTYPE_2HWEAPON') or
-        (equippedData.itemEquipLoc == 'INVTYPE_2HWEAPON' and
-            comparedData.itemEquipLoc ~= 'INVTYPE_2HWEAPON') then
-
-        return
-    end
-
-    if equippedData.totalWeight == 0 or equippedData.totalWeight == 0 then
-        -- Prevent division by 0
-        return
-    elseif comparedData.totalWeight > equippedData.totalWeight then
-        return addon.Round(comparedData.totalWeight / equippedData.totalWeight,
-                           2)
-    elseif comparedData.totalWeight < equippedData.totalWeight then
-        return -1 *
-                   addon.Round(
-                       comparedData.totalWeight / equippedData.totalWeight, 2)
-    elseif comparedData.totalWeight == equippedData.totalWeight then
-        return 0
+        slotsToCompare = session.equippableSlots[comparedData.itemEquipLoc]
     else
-        return
+        slotsToCompare[comparedData.itemEquipLoc] =
+            session.equippableSlots[comparedData.itemEquipLoc]
     end
+
+    -- if 1H weapon, check OH if INVTYPE_WEAPONOFFHAND, add to slot comparisons
+    if comparedData.itemEquipLoc == 'INVTYPE_WEAPON' and
+        session.equippableSlots['INVTYPE_WEAPONOFFHAND'] then
+        -- TODO make sure isn't already in slots
+        print("Adding OH")
+        slotsToCompare['INVTYPE_WEAPONOFFHAND'] =
+            session.equippableSlots[comparedData.itemEquipLoc]
+    end
+
+    local comparisons = {
+        -- { ['Ratio'] = 1.23, ['ItemLink'] = 'item:1234', ['itemEquipLoc'] = itemEquipLoc },
+    }
+    local equippedItemLink, ratio, equippedData
+
+    -- Check applicable slots
+    -- Will be 1 for most, 1-2 for weapons, 1-2 for rings
+    for itemEquipLoc, slotId in pairs(slotsToCompare) do
+        equippedItemLink = GetInventoryItemLink("player", slotId)
+
+        -- No equipped item, so anything is an upgrade from no item
+        if not equippedItemLink or equippedItemLink == "" then
+            ratio = 1
+        elseif comparedData.itemLink == equippedItemLink then
+            ratio = nil
+        end
+
+        -- Load equipped item into hidden tooltip for parsing
+        equippedData = self:GetItemData(equippedItemLink, nil)
+
+        if equippedData then
+            -- Only compare 2H against another 2H
+            if (comparedData.itemEquipLoc == 'INVTYPE_2HWEAPON' and
+                equippedData.itemEquipLoc ~= 'INVTYPE_2HWEAPON') or
+                (equippedData.itemEquipLoc == 'INVTYPE_2HWEAPON' and
+                    comparedData.itemEquipLoc ~= 'INVTYPE_2HWEAPON') then
+
+                ratio = nil
+            else
+                if equippedData.totalWeight == 0 or equippedData.totalWeight ==
+                    0 then
+                    -- Prevent division by 0
+                    ratio = nil
+                elseif comparedData.totalWeight > equippedData.totalWeight then
+                    ratio = addon.Round(comparedData.totalWeight /
+                                            equippedData.totalWeight, 2)
+                elseif comparedData.totalWeight < equippedData.totalWeight then
+                    ratio = -1 *
+                                addon.Round(
+                                    comparedData.totalWeight /
+                                        equippedData.totalWeight, 2)
+                elseif comparedData.totalWeight == equippedData.totalWeight then
+                    ratio = 0
+                else
+                    ratio = nil
+                end
+            end
+
+        else
+            -- Failed to load stats, wait for the next refresh
+            -- print("not equippedStats", equippedItemLink)
+            ratio = nil
+        end
+
+        if ratio then
+            tinsert(comparisons, {
+                ['Ratio'] = ratio,
+                ['ItemLink'] = equippedItemLink,
+                ['itemEquipLoc'] = itemEquipLoc
+            })
+        end
+    end
+
+    return comparisons
 end
 
 local function TooltipSetItem(tooltip, ...)
@@ -737,17 +777,29 @@ local function TooltipSetItem(tooltip, ...)
     if not itemLink then return end
     -- print("TooltipSetItem", tooltip:GetName(), itemLink)
 
-    -- Exclude addon text for an equipped item
+    -- Exclude addon text when looking at an equipped item
     if IsEquippedItem(itemLink) then return end
 
-    local ratio = addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
-    -- print("percentageDiff", percentageDiff)
-    -- Incomplete data
-    if not ratio then return end
+    local comparisons = addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
 
-    tooltip:AddLine(addon.title)
+    if not comparisons or next(comparisons) == nil then return end
 
-    tooltip:AddLine(fmt("%s %s%%", _G.ITEM_UPGRADE, ratio * 100))
+    tooltip:AddLine(fmt("%s - %s", addon.title, _G.ITEM_UPGRADE))
+
+    local ratioText
+    for _, data in ipairs(comparisons) do
+        -- Remove base 100 from percentage
+        -- A 140% upgrade ratio is only a 40% upgrade
+        if data['Ratio'] > 0 then
+            ratioText = (data['Ratio'] * 100) - 100
+        elseif data['Ratio'] == 0 then
+            ratioText = '0'
+        else
+            ratioText = data['Ratio'] * 100
+        end
+
+        tooltip:AddLine(fmt("  %s: %s%%", data['ItemLink'], ratioText))
+    end
 
     tooltip:Show()
 end
