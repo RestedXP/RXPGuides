@@ -156,6 +156,7 @@ function addon.settings:InitializeSettings()
             upcomingTalentCount = 5,
 
             enableTips = true,
+            enableItemUpgrades = true,
             enableDrowningWarning = true,
             enableDrowningWarningSound = true,
             drowningThreshold = 0.2,
@@ -1795,6 +1796,22 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = true -- TODO Zarant
                     },
+                    enableItemUpgrades = {
+                        name = fmt("%s %s", _G.ENABLE, _G.ITEM_UPGRADE),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 1.3,
+                        hidden = function()
+                            return not addon.itemUpgrades
+                        end,
+                        disabled = function()
+                            return not self.profile.enableTips
+                        end,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.itemUpgrades:Setup()
+                        end,
+                    },
                     drowningHeader = {
                         name = _G.STRING_ENVIRONMENTAL_DAMAGE_DROWNING,
                         type = "header",
@@ -1949,7 +1966,7 @@ function addon.settings:CreateAceOptionsPanel()
                                 --not addon.settings.profile.enableBetaFeatures or
                                     not addon.dangerousMobs
                         end
-                    }
+                    },
                 }
             },
             helpPanel = {

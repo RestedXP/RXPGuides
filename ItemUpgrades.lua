@@ -19,6 +19,7 @@ local ItemArmorSubclass, ItemWeaponSubclass = Enum.ItemArmorSubclass,
 addon.itemUpgrades = addon:NewModule("ItemUpgrades", "AceEvent-3.0")
 
 local session = {
+    isInitialized = false,
     -- Loaded stat weights for class
     statWeights = {},
 
@@ -244,7 +245,7 @@ local CLASS_MAP = {
 
 -- Map quasi-friendly key from GSheet/StatWeights to regex-friendly value
 -- GSheet or pretty name = Regex formatting
-local KEY_TO_TEXT = {
+local KEY_TO_TEXT = { -- TODO comment out reliably returning values
     ['STAT_ARMOR'] = _G.ARMOR_TEMPLATE,
     ['ITEM_MOD_STRENGTH_SHORT'] = _G.ITEM_MOD_STRENGTH,
     ['ITEM_MOD_AGILITY_SHORT'] = _G.ITEM_MOD_AGILITY,
@@ -347,6 +348,45 @@ local function KeyToRegex(keyString)
     return regex
 end
 
+local function TooltipSetItem(tooltip, ...)
+    if not addon.settings.profile.enableItemUpgrades or
+        not addon.settings.profile.enableTips then return end
+
+    local _, itemLink = tooltip:GetItem()
+    if not itemLink then return end
+    -- print("TooltipSetItem", tooltip:GetName(), itemLink)
+
+    -- Exclude addon text when looking at an equipped item
+    if IsEquippedItem(itemLink) then return end
+
+    local comparisons = addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
+
+    if not comparisons or next(comparisons) == nil then return end
+
+    tooltip:AddLine(fmt("%s - %s", addon.title, _G.ITEM_UPGRADE))
+
+    local ratioText
+    for _, data in ipairs(comparisons) do
+        -- Remove base 100 from percentage
+        -- A 140% upgrade ratio is only a 40% upgrade
+        if data['Ratio'] == 1 then
+            ratioText = '100'
+        elseif data['Ratio'] > 0 then
+            ratioText = (data['Ratio'] * 100) - 100
+        elseif data['Ratio'] == 0 then
+            ratioText = '0'
+        else -- < 0
+            ratioText = data['Ratio'] * 100
+        end
+
+        -- TODO better handling of error than "Unknown: x%"
+        tooltip:AddLine(fmt("  %s: %s%%", data['ItemLink'] or _G.UNKNOWN,
+                            ratioText))
+    end
+
+    tooltip:Show()
+end
+
 function addon.itemUpgrades:UpdateSlotMap()
 
     session.equippableSlots = CLASS_MAP["All"]["Slot"]
@@ -369,8 +409,17 @@ function addon.itemUpgrades:UpdateSlotMap()
 end
 
 function addon.itemUpgrades:Setup()
+    -- Toggle functionality off
+    if not addon.settings.profile.enableItemUpgrades or
+        not addon.settings.profile.enableTips then return end
+
     self:UpdateSlotMap()
     self:LoadStatWeights()
+
+    -- Only register events and hookScript once
+    if session.isInitialized then
+        return
+    end
 
     self:RegisterEvent("PLAYER_LEVEL_UP")
     self:RegisterEvent("TRAINER_SHOW")
@@ -392,16 +441,26 @@ function addon.itemUpgrades:Setup()
         session.statsRegexes[key] = regex
     end
 
+    GameTooltip:HookScript("OnTooltipSetItem", TooltipSetItem)
+    -- ShoppingTooltip1:HookScript("OnTooltipSetItem", TooltipSetItem)
+    -- ShoppingTooltip2:HookScript("OnTooltipSetItem", TooltipSetItem)
+    ItemRefTooltip:HookScript("OnTooltipSetItem", TooltipSetItem)
+
+    session.isInitialized = true
 end
 
 -- Reset cache on levelup
 function addon.itemUpgrades:PLAYER_LEVEL_UP()
+    if not addon.settings.profile.enableItemUpgrades then return end
+
     wipe(session.itemCache)
     self:UpdateSlotMap()
 end
 
 -- Reset cache on trainer
 function addon.itemUpgrades:TRAINER_SHOW()
+    if not addon.settings.profile.enableItemUpgrades then return end
+
     wipe(session.itemCache)
     self:UpdateSlotMap()
 end
@@ -773,47 +832,6 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
 
     return comparisons
 end
-
-local function TooltipSetItem(tooltip, ...)
-    local _, itemLink = tooltip:GetItem()
-    if not itemLink then return end
-    -- print("TooltipSetItem", tooltip:GetName(), itemLink)
-
-    -- Exclude addon text when looking at an equipped item
-    if IsEquippedItem(itemLink) then return end
-
-    local comparisons = addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
-
-    if not comparisons or next(comparisons) == nil then return end
-
-    tooltip:AddLine(fmt("%s - %s", addon.title, _G.ITEM_UPGRADE))
-
-    local ratioText
-    for _, data in ipairs(comparisons) do
-        -- Remove base 100 from percentage
-        -- A 140% upgrade ratio is only a 40% upgrade
-        if data['Ratio'] == 1 then
-            ratioText = '100'
-        elseif data['Ratio'] > 0 then
-            ratioText = (data['Ratio'] * 100) - 100
-        elseif data['Ratio'] == 0 then
-            ratioText = '0'
-        else -- < 0
-            ratioText = data['Ratio'] * 100
-        end
-
-        -- TODO better handling of error than "Unknown: x%"
-        tooltip:AddLine(fmt("  %s: %s%%", data['ItemLink'] or _G.UNKNOWN,
-                            ratioText))
-    end
-
-    tooltip:Show()
-end
-
-GameTooltip:HookScript("OnTooltipSetItem", TooltipSetItem)
--- ShoppingTooltip1:HookScript("OnTooltipSetItem", TooltipSetItem)
--- ShoppingTooltip2:HookScript("OnTooltipSetItem", TooltipSetItem)
-ItemRefTooltip:HookScript("OnTooltipSetItem", TooltipSetItem)
 
 function addon.itemUpgrades.Test()
     local itemData
