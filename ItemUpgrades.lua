@@ -86,7 +86,7 @@ local CLASS_MAP = {
             ["INVTYPE_THROWN"] = _G.INVSLOT_RANGED,
             ["INVTYPE_RANGEDRIGHT"] = _G.INVSLOT_RANGED,
             ["INVTYPE_RANGED"] = _G.INVSLOT_RANGED,
-            ["INVTYPE_WEAPONOFFHAND"] = function() -- TODO support
+            ["INVTYPE_WEAPONOFFHAND"] = function()
                 return UnitLevel("player") >= 20 and _G.INVSLOT_OFFHAND or nil
             end
         },
@@ -158,7 +158,7 @@ local CLASS_MAP = {
             ["INVTYPE_THROWN"] = _G.INVSLOT_RANGED,
             ["INVTYPE_RANGEDRIGHT"] = _G.INVSLOT_RANGED,
             ["INVTYPE_RANGED"] = _G.INVSLOT_RANGED,
-            ["INVTYPE_WEAPONOFFHAND"] = function() -- TODO support
+            ["INVTYPE_WEAPONOFFHAND"] = function()
                 return UnitLevel("player") >= 20 and _G.INVSLOT_OFFHAND or nil
             end
         },
@@ -207,7 +207,7 @@ local CLASS_MAP = {
             ["INVTYPE_THROWN"] = _G.INVSLOT_RANGED,
             ["INVTYPE_RANGEDRIGHT"] = _G.INVSLOT_RANGED,
             ["INVTYPE_SHIELD"] = _G.INVSLOT_OFFHAND,
-            ["INVTYPE_WEAPONOFFHAND"] = function() -- TODO support
+            ["INVTYPE_WEAPONOFFHAND"] = function()
                 return UnitLevel("player") >= 20 and _G.INVSLOT_OFFHAND or nil
             end
         },
@@ -679,11 +679,8 @@ function addon.itemUpgrades:GetEquippedComparisonRatio(equippedItemLink,
 
     if not equippedData then return end
 
-    -- Only compare 2H against another 2H
-    if (comparedData.itemEquipLoc == 'INVTYPE_2HWEAPON' and
-        equippedData.itemEquipLoc ~= 'INVTYPE_2HWEAPON') or
-        (equippedData.itemEquipLoc == 'INVTYPE_2HWEAPON' and
-            comparedData.itemEquipLoc ~= 'INVTYPE_2HWEAPON') then return end
+    -- nvm, actually do compare but only to MH
+    -- if (comparedData.itemEquipLoc == 'INVTYPE_2HWEAPON' and equippedData.itemEquipLoc ~= 'INVTYPE_2HWEAPON') or (equippedData.itemEquipLoc == 'INVTYPE_2HWEAPON' and comparedData.itemEquipLoc ~= 'INVTYPE_2HWEAPON') then return end
 
     if equippedData.totalWeight == 0 or equippedData.totalWeight == 0 then
         -- Prevent division by 0
@@ -692,9 +689,9 @@ function addon.itemUpgrades:GetEquippedComparisonRatio(equippedItemLink,
         return addon.Round(comparedData.totalWeight / equippedData.totalWeight,
                            2)
     elseif comparedData.totalWeight < equippedData.totalWeight then
-        return -1 *
-                   addon.Round(
-                       comparedData.totalWeight / equippedData.totalWeight, 2)
+        -- Item upgrade being negative is confusing and difficult to represent accurately, ignore
+        -- return -1 * addon.Round(comparedData.totalWeight / equippedData.totalWeight, 2)
+        return
     elseif comparedData.totalWeight == equippedData.totalWeight then
         return 0
     end
