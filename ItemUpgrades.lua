@@ -669,6 +669,39 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
     return itemData
 end
 
+-- Moved to make nested loops less egregious without break/continue
+function addon.itemUpgrades:GetEquippedComparisonRatio(equippedItemLink,
+                                                       comparedData)
+    if not comparedData or not equippedItemLink then return end
+
+    -- Load equipped item into hidden tooltip for parsing
+    local equippedData = self:GetItemData(equippedItemLink, nil)
+
+    if not equippedData then return end
+
+    -- Only compare 2H against another 2H
+    if (comparedData.itemEquipLoc == 'INVTYPE_2HWEAPON' and
+        equippedData.itemEquipLoc ~= 'INVTYPE_2HWEAPON') or
+        (equippedData.itemEquipLoc == 'INVTYPE_2HWEAPON' and
+            comparedData.itemEquipLoc ~= 'INVTYPE_2HWEAPON') then return end
+
+    if equippedData.totalWeight == 0 or equippedData.totalWeight == 0 then
+        -- Prevent division by 0
+        return
+    elseif comparedData.totalWeight > equippedData.totalWeight then
+        return addon.Round(comparedData.totalWeight / equippedData.totalWeight,
+                           2)
+    elseif comparedData.totalWeight < equippedData.totalWeight then
+        return -1 *
+                   addon.Round(
+                       comparedData.totalWeight / equippedData.totalWeight, 2)
+    elseif comparedData.totalWeight == equippedData.totalWeight then
+        return 0
+    end
+
+    return nil
+end
+
 -- nil if same item
 -- % change otherwise
 function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
@@ -709,7 +742,7 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
     local comparisons = {
         -- { ['Ratio'] = 1.23, ['ItemLink'] = 'item:1234', ['itemEquipLoc'] = itemEquipLoc },
     }
-    local equippedItemLink, ratio, equippedData
+    local equippedItemLink, ratio
 
     -- Check applicable slots
     -- Will be 1 for most, 1-2 for weapons, 1-2 for rings
@@ -717,47 +750,15 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
         equippedItemLink = GetInventoryItemLink("player", slotId)
 
         -- No equipped item, so anything is an upgrade from no item
+        -- 100% looks wrong for a infinitely better upgrade, return nil
         if not equippedItemLink or equippedItemLink == "" then
-            ratio = 1
+            ratio = nil
         elseif comparedData.itemLink == equippedItemLink then
+            -- Same item, so not an upgrade
             ratio = nil
-        end
-
-        -- Load equipped item into hidden tooltip for parsing
-        equippedData = self:GetItemData(equippedItemLink, nil)
-
-        if equippedData then
-            -- Only compare 2H against another 2H
-            if (comparedData.itemEquipLoc == 'INVTYPE_2HWEAPON' and
-                equippedData.itemEquipLoc ~= 'INVTYPE_2HWEAPON') or
-                (equippedData.itemEquipLoc == 'INVTYPE_2HWEAPON' and
-                    comparedData.itemEquipLoc ~= 'INVTYPE_2HWEAPON') then
-
-                ratio = nil
-            else
-                if equippedData.totalWeight == 0 or equippedData.totalWeight ==
-                    0 then
-                    -- Prevent division by 0
-                    ratio = nil
-                elseif comparedData.totalWeight > equippedData.totalWeight then
-                    ratio = addon.Round(comparedData.totalWeight /
-                                            equippedData.totalWeight, 2)
-                elseif comparedData.totalWeight < equippedData.totalWeight then
-                    ratio = -1 *
-                                addon.Round(
-                                    comparedData.totalWeight /
-                                        equippedData.totalWeight, 2)
-                elseif comparedData.totalWeight == equippedData.totalWeight then
-                    ratio = 0
-                else
-                    ratio = nil
-                end
-            end
-
         else
-            -- Failed to load stats, wait for the next refresh
-            -- print("not equippedStats", equippedItemLink)
-            ratio = nil
+            ratio = self:GetEquippedComparisonRatio(equippedItemLink,
+                                                    comparedData)
         end
 
         if ratio then
@@ -767,6 +768,7 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
                 ['itemEquipLoc'] = itemEquipLoc
             })
         end
+
     end
 
     return comparisons
@@ -790,15 +792,18 @@ local function TooltipSetItem(tooltip, ...)
     for _, data in ipairs(comparisons) do
         -- Remove base 100 from percentage
         -- A 140% upgrade ratio is only a 40% upgrade
-        if data['Ratio'] > 0 then
+        if data['Ratio'] == 1 then
+            ratioText = '100'
+        elseif data['Ratio'] > 0 then
             ratioText = (data['Ratio'] * 100) - 100
         elseif data['Ratio'] == 0 then
             ratioText = '0'
-        else
+        else -- < 0
             ratioText = data['Ratio'] * 100
         end
 
-        tooltip:AddLine(fmt("  %s: %s%%", data['ItemLink'], ratioText))
+        -- TODO better handling of error than "Unknown: x%"
+        tooltip:AddLine(fmt("  %s: %s%%", data['ItemLink'] or _G.UNKNOWN, ratioText))
     end
 
     tooltip:Show()
