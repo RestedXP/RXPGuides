@@ -16,7 +16,13 @@ local fmt, sgmatch, strsplittable, strjoin = string.format, string.gmatch,
                                              strsplittable, string.join
 local tonumber = tonumber
 local tinsert, tsort = tinsert, table.sort
-local UnitLevel = UnitLevel
+local UnitLevel = function(unit)
+    if addon.levelOverride then
+        return addon.levelOverride
+    else
+        return _G.UnitLevel(unit)
+    end
+end
 local GetPetTalentTree, GetUnspentTalentPoints,
       GetGroupPreviewTalentPointsSpent, AddPreviewTalentPoints,
       UnitCharacterPoints = _G.GetPetTalentTree, _G.GetUnspentTalentPoints,
