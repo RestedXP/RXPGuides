@@ -2,8 +2,11 @@ local _, addon = ...
 
 if addon.gameVersion > 40000 then return end
 
-local fmt, tinsert, ipairs, pairs, next = string.format, table.insert, ipairs,
-                                          pairs, next
+local fmt, tinsert, ipairs, pairs, next, type, wipe, tonumber = string.format,
+                                                                table.insert,
+                                                                ipairs, pairs,
+                                                                next, type,
+                                                                wipe, tonumber
 
 local GetItemInfoInstant, GetInventoryItemLink, IsEquippedItem =
     _G.GetItemInfoInstant, _G.GetInventoryItemLink, _G.IsEquippedItem
@@ -548,7 +551,7 @@ local function CalculateDPSWeight(itemData, stats)
 end
 
 function addon.itemUpgrades:GetItemData(itemLink, tooltip)
-    if type(itemLink) ~= "string" then
+    if not itemLink or type(itemLink) ~= "string" then
         addon.error("addon.itemUpgrades:GetItemData, itemLink string required")
         return
     end
@@ -611,7 +614,7 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
         if not stats[key] then
 
             -- Check all tooltip lines for regex matches
-            for i, line in ipairs(tooltipTextLines) do
+            for _, line in ipairs(tooltipTextLines) do
                 -- print("Checking tooltip line", i, line)
 
                 if type(regex) == "table" then
@@ -800,7 +803,8 @@ local function TooltipSetItem(tooltip, ...)
         end
 
         -- TODO better handling of error than "Unknown: x%"
-        tooltip:AddLine(fmt("  %s: %s%%", data['ItemLink'] or _G.UNKNOWN, ratioText))
+        tooltip:AddLine(fmt("  %s: %s%%", data['ItemLink'] or _G.UNKNOWN,
+                            ratioText))
     end
 
     tooltip:Show()
