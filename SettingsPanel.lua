@@ -1228,6 +1228,7 @@ function addon.settings:CreateAceOptionsPanel()
                                            .faction])
                         end
                     },
+                    --[[
                     questCleanupHeader = {
                         name = L("Quest Cleanup"),
                         type = "header",
@@ -1277,6 +1278,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         width = optionsWidth
                     }
+                    ]]
                 }
             },
             targeting = {
