@@ -162,7 +162,7 @@ local CLASS_MAP = {
             ["INVTYPE_RANGEDRIGHT"] = _G.INVSLOT_RANGED,
             ["INVTYPE_RANGED"] = _G.INVSLOT_RANGED,
             ["INVTYPE_WEAPONOFFHAND"] = function()
-                return UnitLevel("player") >= 20 and _G.INVSLOT_OFFHAND or nil
+                return UnitLevel("player") >= 10 and _G.INVSLOT_OFFHAND or nil
             end
         },
         ["ArmorType"] = {[ItemArmorSubclass.Leather] = true},
