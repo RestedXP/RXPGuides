@@ -555,7 +555,7 @@ local function CalculateDPSWeight(itemData, stats)
     --    ...
     -- }
 
-    -- TODO doesn't work on hidden/background tooltip parsing
+    -- TODO doesn't work on hidden/background tooltip parsing sometimes?
     if not stats or not stats['ITEM_MOD_CR_SPEED_SHORT'] then
         if addon.settings.profile.debug then
             addon.comms.PrettyPrint(
@@ -792,10 +792,8 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
     -- if 1H weapon, check OH if INVTYPE_WEAPONOFFHAND, add to slot comparisons
     if comparedData.itemEquipLoc == 'INVTYPE_WEAPON' and
         session.equippableSlots['INVTYPE_WEAPONOFFHAND'] then
-        -- TODO make sure isn't already in slots
-        print("Adding OH")
         slotsToCompare['INVTYPE_WEAPONOFFHAND'] =
-            session.equippableSlots[comparedData.itemEquipLoc]
+            session.equippableSlots['INVTYPE_WEAPONOFFHAND']
     end
 
     local comparisons = {
