@@ -55,12 +55,12 @@ local CLASS_MAP = {
             ["INVTYPE_WRIST"] = _G.INVSLOT_WRIST,
             ["INVTYPE_HAND"] = _G.INVSLOT_HAND,
             ["INVTYPE_FINGER"] = {
-                [_G.INVSLOT_FINGER1] = true,
-                [_G.INVSLOT_FINGER2] = true
+                [_G.INVSLOT_FINGER1] = _G.INVSLOT_FINGER1,
+                [_G.INVSLOT_FINGER2] = _G.INVSLOT_FINGER2
             },
             ["INVTYPE_TRINKET"] = {
-                [_G.INVSLOT_TRINKET1] = true,
-                [_G.INVSLOT_TRINKET2] = true
+                [_G.INVSLOT_TRINKET1] = _G.INVSLOT_TRINKET1,
+                [_G.INVSLOT_TRINKET2] = _G.INVSLOT_TRINKET2
             },
             ["INVTYPE_CLOAK"] = _G.INVSLOT_BACK,
             ["INVTYPE_HOLDABLE"] = _G.INVSLOT_OFFHAND,
@@ -369,18 +369,19 @@ local function TooltipSetItem(tooltip, ...)
     for _, data in ipairs(comparisons) do
         -- Remove base 100 from percentage
         -- A 140% upgrade ratio is only a 40% upgrade
-        if data['Ratio'] == 1 then
-            ratioText = '100'
+        if data['debug'] then
+            ratioText = "(debug) " .. data['debug']
+        elseif data['Ratio'] == 1 then
+            ratioText = '100%'
         elseif data['Ratio'] > 0 then
-            ratioText = (data['Ratio'] * 100) - 100
+            ratioText = ((data['Ratio'] * 100) - 100) .. '%'
         elseif data['Ratio'] == 0 then
-            ratioText = '0'
+            ratioText = '0%'
         else -- < 0
-            ratioText = data['Ratio'] * 100
+            ratioText = (data['Ratio'] * 100) .. '%'
         end
 
-        -- TODO better handling of error than "Unknown: x%"
-        tooltip:AddLine(fmt("  %s: %s%%", data['ItemLink'] or _G.UNKNOWN,
+        tooltip:AddLine(fmt("  %s: %s", data['ItemLink'] or _G.UNKNOWN,
                             ratioText))
     end
 
@@ -417,9 +418,7 @@ function addon.itemUpgrades:Setup()
     self:LoadStatWeights()
 
     -- Only register events and hookScript once
-    if session.isInitialized then
-        return
-    end
+    if session.isInitialized then return end
 
     self:RegisterEvent("PLAYER_LEVEL_UP")
     self:RegisterEvent("TRAINER_SHOW")
@@ -441,10 +440,15 @@ function addon.itemUpgrades:Setup()
         session.statsRegexes[key] = regex
     end
 
+    -- Inventory
     GameTooltip:HookScript("OnTooltipSetItem", TooltipSetItem)
-    -- ShoppingTooltip1:HookScript("OnTooltipSetItem", TooltipSetItem)
-    -- ShoppingTooltip2:HookScript("OnTooltipSetItem", TooltipSetItem)
+
+    -- Vendor?
     ItemRefTooltip:HookScript("OnTooltipSetItem", TooltipSetItem)
+
+    -- Enable AH
+    ShoppingTooltip1:HookScript("OnTooltipSetItem", TooltipSetItem)
+    -- ShoppingTooltip2:HookScript("OnTooltipSetItem", TooltipSetItem)
 
     session.isInitialized = true
 end
@@ -559,7 +563,8 @@ local function CalculateDPSWeight(itemData, stats)
     if not stats or not stats['ITEM_MOD_CR_SPEED_SHORT'] then
         if addon.settings.profile.debug then
             addon.comms.PrettyPrint(
-                "itemUpgrades CalculateDPSWeight, Speed property required")
+                "itemUpgrades CalculateDPSWeight, Speed property required %s",
+                stats and stats['itemLink'])
         end
         return nil
     end
@@ -611,7 +616,8 @@ end
 
 function addon.itemUpgrades:GetItemData(itemLink, tooltip)
     if not itemLink or type(itemLink) ~= "string" then
-        addon.error("addon.itemUpgrades:GetItemData, itemLink string required")
+        print("addon.itemUpgrades:GetItemData, itemLink string required",
+              itemLink)
         return
     end
 
@@ -630,7 +636,10 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
     local stats = GetItemStats(itemLink)
 
     -- Failed to query stats, wait for next run
-    if stats == nil then return end
+    if stats == nil then
+        print("failed to retrieve stats", itemEquipLoc)
+        return
+    end
 
     local itemData = {
         itemLink = itemLink,
@@ -657,7 +666,10 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
     else -- If not tooltip, set hidden comparison tooltip
         tooltip = GetComparisonTip()
 
-        if not tooltip then return end
+        if not tooltip then
+            print("Comparisontip failure")
+            return
+        end
 
         tooltip:SetHyperlink(itemLink)
 
@@ -712,7 +724,10 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
             -- print("Key", key, "Value", value, "weighted at", statWeight)
 
             -- If weapon DPS fails to parse, return nil
-            if not statWeight then return end
+            if not statWeight then
+                print("CalculateDPSWeight return nil", itemData.itemLink)
+                return
+            end
 
             totalWeight = totalWeight + statWeight
         elseif session.statWeights[key] then -- Only calculate values explicitly configured
@@ -734,30 +749,40 @@ end
 -- Moved to make nested loops less egregious without break/continue
 function addon.itemUpgrades:GetEquippedComparisonRatio(equippedItemLink,
                                                        comparedData)
-    if not comparedData or not equippedItemLink then return end
+    if not comparedData or not equippedItemLink then
+        print(
+            "GetEquippedComparisonRatio: not comparedData or not equippedItemLink ")
+        return
+    end
 
     -- Load equipped item into hidden tooltip for parsing
     local equippedData = self:GetItemData(equippedItemLink, nil)
 
-    if not equippedData then return end
+    if not equippedData then
+        print("GetEquippedComparisonRatio: not equippedData")
+        return
+    end
 
     -- nvm, actually do compare but only to MH
     -- if (comparedData.itemEquipLoc == 'INVTYPE_2HWEAPON' and equippedData.itemEquipLoc ~= 'INVTYPE_2HWEAPON') or (equippedData.itemEquipLoc == 'INVTYPE_2HWEAPON' and comparedData.itemEquipLoc ~= 'INVTYPE_2HWEAPON') then return end
 
     if equippedData.totalWeight == 0 or equippedData.totalWeight == 0 then
         -- Prevent division by 0
-        return
+        -- One of these has no stats, so treat same as empty slot (nil)
+        return nil, _G.NONE
     elseif comparedData.totalWeight > equippedData.totalWeight then
         return addon.Round(comparedData.totalWeight / equippedData.totalWeight,
                            2)
     elseif comparedData.totalWeight < equippedData.totalWeight then
         -- Item upgrade being negative is confusing and difficult to represent accurately, ignore
         -- return -1 * addon.Round(comparedData.totalWeight / equippedData.totalWeight, 2)
-        return
+        -- Display 'downgrade' when debugging
+        return nil, 'downgrade'
     elseif comparedData.totalWeight == equippedData.totalWeight then
-        return 0
+        return 0, 'equal'
     end
 
+    print("GetEquippedComparisonRatio nil")
     return nil
 end
 
@@ -768,21 +793,27 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
 
     -- Failed to load, wait for next try
     if not comparedData then
-        -- print("Failed to query comparedStats", itemLink)
+        print("CompareItemWeight: Failed to query comparedStats", itemLink)
         return
     end
 
     -- Not an equippable item
-    if not comparedData.itemEquipLoc then return end
+    if not comparedData.itemEquipLoc then
+        print("CompareItemWeight: not comparedData.itemEquipLoc")
+        return
+    end
     -- print("comparedData.itemEquipLoc", comparedData.itemEquipLoc)
 
     if not IsUsableForClass(comparedData.itemSubTypeID,
-                            comparedData.itemEquipLoc) then return end
+                            comparedData.itemEquipLoc) then
+        print("CompareItemWeight: not usable by class")
+        return
+    end
 
     local slotsToCompare = {}
 
     if type(session.equippableSlots[comparedData.itemEquipLoc]) == "table" then
-        print("is multi-slot", comparedData.itemEquipLoc)
+        -- print("is multi-slot", comparedData.itemEquipLoc)
         slotsToCompare = session.equippableSlots[comparedData.itemEquipLoc]
     else
         slotsToCompare[comparedData.itemEquipLoc] =
@@ -799,7 +830,7 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
     local comparisons = {
         -- { ['Ratio'] = 1.23, ['ItemLink'] = 'item:1234', ['itemEquipLoc'] = itemEquipLoc },
     }
-    local equippedItemLink, ratio
+    local equippedItemLink, ratio, debug
 
     -- Check applicable slots
     -- Will be 1 for most, 1-2 for weapons, 1-2 for rings
@@ -810,19 +841,22 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
         -- 100% looks wrong for a infinitely better upgrade, return nil
         if not equippedItemLink or equippedItemLink == "" then
             ratio = nil
+            debug = _G.EMPTY
         elseif comparedData.itemLink == equippedItemLink then
             -- Same item, so not an upgrade
             ratio = nil
+            debug = 'same'
         else
-            ratio = self:GetEquippedComparisonRatio(equippedItemLink,
+            ratio, debug = self:GetEquippedComparisonRatio(equippedItemLink,
                                                     comparedData)
         end
 
-        if ratio then
+        if ratio or addon.settings.profile.debug then
             tinsert(comparisons, {
                 ['Ratio'] = ratio,
-                ['ItemLink'] = equippedItemLink,
-                ['itemEquipLoc'] = itemEquipLoc
+                ['ItemLink'] = equippedItemLink or _G.UNKNOWN, -- Pass "Unknown" for debugging
+                ['itemEquipLoc'] = itemEquipLoc, -- Is actually slotID for rings/trinkets
+                ['debug'] = debug,
             })
         end
 
