@@ -243,41 +243,64 @@ local CLASS_MAP = {
     }
 }
 
+local ITEM_SUFFIX_TEMPLATE = _G.ITEM_SUFFIX_TEMPLATE
+local ITEM_SPELL_TRIGGER_ONEQUIP = _G.ITEM_SPELL_TRIGGER_ONEQUIP
+
+local function equip(string)
+    return {
+        string, fmt(ITEM_SUFFIX_TEMPLATE, ITEM_SPELL_TRIGGER_ONEQUIP, string)
+    }
+end
+
 -- Map quasi-friendly key from GSheet/StatWeights to regex-friendly value
 -- GSheet or pretty name = Regex formatting
-local KEY_TO_TEXT = { -- TODO comment out reliably returning values
+-- TODO comment out reliably returning values
+-- TODO remove equip parsing for reliable returning values
+local KEY_TO_TEXT = {
     ['STAT_ARMOR'] = _G.ARMOR_TEMPLATE,
     ['ITEM_MOD_STRENGTH_SHORT'] = _G.ITEM_MOD_STRENGTH,
     ['ITEM_MOD_AGILITY_SHORT'] = _G.ITEM_MOD_AGILITY,
     ['ITEM_MOD_INTELLECT_SHORT'] = _G.ITEM_MOD_INTELLECT,
     ['ITEM_MOD_STAMINA_SHORT'] = _G.ITEM_MOD_STAMINA,
     ['ITEM_MOD_SPIRIT_SHORT'] = _G.ITEM_MOD_SPIRIT,
-    ['ITEM_MOD_HEALTH_REGEN_SHORT'] = _G.ITEM_MOD_HEALTH_REGEN,
-    ['ITEM_MOD_POWER_REGEN0_SHORT'] = _G.ITEM_MOD_MANA_REGENERATION,
+    ['ITEM_MOD_HEALTH_REGEN_SHORT'] = equip(_G.ITEM_MOD_HEALTH_REGEN),
+    ['ITEM_MOD_POWER_REGEN0_SHORT'] = equip(_G.ITEM_MOD_MANA_REGENERATION),
     ['ITEM_MOD_SPELL_DAMAGE_DONE_SHORT'] = {
         _G.ITEM_MOD_SPELL_POWER, _G.ITEM_MOD_SPELL_DAMAGE_DONE
     },
-    ['ITEM_MOD_SPELL_HEALING_DONE_SHORT'] = _G.ITEM_MOD_SPELL_HEALING_DONE,
-    ['ITEM_MOD_HIT_SPELL_RATING_SHORT'] = _G.ITEM_MOD_HIT_SPELL_RATING,
-    ['ITEM_MOD_CRIT_SPELL_RATING_SHORT'] = _G.ITEM_MOD_CRIT_SPELL_RATING,
-    ['ITEM_MOD_ATTACK_POWER_SHORT'] = _G.ITEM_MOD_ATTACK_POWER,
-    ['ITEM_MOD_HIT_RATING_SHORT'] = _G.ITEM_MOD_HIT_RATING,
-    ['ITEM_MOD_CRIT_RATING_SHORT'] = _G.ITEM_MOD_CRIT_RATING,
-    ['ITEM_MOD_RANGED_ATTACK_POWER_SHORT'] = _G.ITEM_MOD_RANGED_ATTACK_POWER,
-    ['ITEM_MOD_DEFENSE_SKILL_RATING_SHORT'] = _G.ITEM_MOD_DEFENSE_SKILL_RATING,
-    ['ITEM_MOD_DODGE_RATING_SHORT'] = _G.ITEM_MOD_DODGE_RATING,
-    ['ITEM_MOD_PARRY_RATING_SHORT'] = _G.ITEM_MOD_PARRY_RATING
+    ['ITEM_MOD_SPELL_HEALING_DONE_SHORT'] = equip(_G.ITEM_MOD_SPELL_HEALING_DONE),
+    ['ITEM_MOD_HIT_SPELL_RATING_SHORT'] = equip(_G.ITEM_MOD_HIT_SPELL_RATING),
+    ['ITEM_MOD_CRIT_SPELL_RATING_SHORT'] = equip(_G.ITEM_MOD_CRIT_SPELL_RATING),
+    ['ITEM_MOD_ATTACK_POWER_SHORT'] = equip(_G.ITEM_MOD_ATTACK_POWER),
+    ['ITEM_MOD_RANGED_ATTACK_POWER_SHORT'] = equip(
+        _G.ITEM_MOD_RANGED_ATTACK_POWER),
+    ['ITEM_MOD_DEFENSE_SKILL_RATING_SHORT'] = equip(
+        _G.ITEM_MOD_DEFENSE_SKILL_RATING)
 
     -- Weapon DPS comes from API call
     -- ['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] = _G.DPS_TEMPLATE,
+
+    -- Wrong global variable for text, unable to find corresponding easily
+    -- ['ITEM_MOD_HIT_RATING_SHORT'] = equip(_G.ITEM_MOD_HIT_RATING),
+    -- ['ITEM_MOD_CRIT_RATING_SHORT'] = equip(_G.ITEM_MOD_CRIT_RATING),
+    -- ['ITEM_MOD_DODGE_RATING_SHORT'] = equip(_G.ITEM_MOD_DODGE_RATING),
+    -- ['ITEM_MOD_PARRY_RATING_SHORT'] = equip(_G.ITEM_MOD_PARRY_RATING)
 }
 
 -- Keys only obtained from tooltip text parsing
 -- Explicitly set regex
 local OUT_OF_BAND_KEYS = {
     -- Hack in weapon speed parsing
-    -- TODO locale
-    ['ITEM_MOD_CR_SPEED_SHORT'] = _G.ITEM_MOD_CR_SPEED_SHORT .. " (%d+%.%d+)"
+    -- TODO locale, ideally use GlobalStrings.lua, but hard to find for Classic
+    ['ITEM_MOD_CR_SPEED_SHORT'] = _G.ITEM_MOD_CR_SPEED_SHORT .. " (%d+%.%d+)",
+    ['ITEM_MOD_CRIT_RATING_SHORT'] = ITEM_SPELL_TRIGGER_ONEQUIP ..
+        " Improves your chance to get a critical strike by (%d+)%%.",
+    ['ITEM_MOD_HIT_RATING_SHORT'] = ITEM_SPELL_TRIGGER_ONEQUIP ..
+        " Improves your chance to hit by (%d+)%%.",
+    ['ITEM_MOD_DODGE_RATING_SHORT'] = ITEM_SPELL_TRIGGER_ONEQUIP ..
+        " Increases your chance to dodge an attack by (%d+)%%.",
+    ['ITEM_MOD_PARRY_RATING_SHORT'] = ITEM_SPELL_TRIGGER_ONEQUIP ..
+        " Increases your chance to parry an attack by (%d+)%%."
 }
 
 local WEAPON_SLOT_MAP = {
@@ -564,7 +587,7 @@ local function CalculateDPSWeight(itemData, stats)
         if addon.settings.profile.debug then
             addon.comms.PrettyPrint(
                 "itemUpgrades CalculateDPSWeight, Speed property required %s",
-                stats and stats['itemLink'])
+                itemData and itemData['itemLink'])
         end
         return nil
     end
@@ -637,7 +660,7 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
 
     -- Failed to query stats, wait for next run
     if stats == nil then
-        print("failed to retrieve stats", itemEquipLoc)
+        -- print("failed to retrieve stats", itemEquipLoc)
         return
     end
 
@@ -695,7 +718,7 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
 
                         -- Only expect one number per line, so ignore if double match
                         if match1 and not match2 then
-                            print("Extracted", tonumber(match1), "from", line)
+                            -- print("Extracted multi-match", tonumber(match1), "from", line)
                             stats[key] = tonumber(match1)
                         end
                     end
@@ -725,10 +748,14 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
 
             -- If weapon DPS fails to parse, return nil
             if not statWeight then
-                print("CalculateDPSWeight return nil", itemData.itemLink)
+                -- print("CalculateDPSWeight return nil", itemData.itemLink)
                 return
             end
 
+            totalWeight = totalWeight + statWeight
+        elseif key == 'ITEM_MOD_SPELL_DAMAGE_DONE_SHORT' then
+            -- TODO handle fire/arcane/etc similar to CalculateDPSWeight
+            statWeight = value * session.statWeights[key]
             totalWeight = totalWeight + statWeight
         elseif session.statWeights[key] then -- Only calculate values explicitly configured
 
@@ -791,9 +818,9 @@ end
 function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
     local comparedData = self:GetItemData(itemLink, tooltip)
 
-    -- Failed to load, wait for next try
+    -- Failed to load (wait for next try) or not equippable
     if not comparedData then
-        print("CompareItemWeight: Failed to query comparedStats", itemLink)
+        -- print("CompareItemWeight: Failed to query comparedStats", itemLink)
         return
     end
 
@@ -806,7 +833,7 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
 
     if not IsUsableForClass(comparedData.itemSubTypeID,
                             comparedData.itemEquipLoc) then
-        print("CompareItemWeight: not usable by class")
+        -- print("CompareItemWeight: not usable by class")
         return
     end
 
@@ -848,7 +875,7 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
             debug = 'same'
         else
             ratio, debug = self:GetEquippedComparisonRatio(equippedItemLink,
-                                                    comparedData)
+                                                           comparedData)
         end
 
         if ratio or addon.settings.profile.debug then
@@ -856,7 +883,7 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
                 ['Ratio'] = ratio,
                 ['ItemLink'] = equippedItemLink or _G.UNKNOWN, -- Pass "Unknown" for debugging
                 ['itemEquipLoc'] = itemEquipLoc, -- Is actually slotID for rings/trinkets
-                ['debug'] = debug,
+                ['debug'] = debug
             })
         end
 
@@ -867,10 +894,10 @@ end
 
 function addon.itemUpgrades.Test()
     local itemData
-    for _, itemID in pairs({19857, 19347, 19861, 19319}) do
+    local testData = {16886, 2816, 7719, 9379, 9479, 12927, 12929, 12963, 18298}
+    for _, itemID in pairs(testData) do
         print('----- ' .. itemID)
-        itemData =
-            addon.itemUpgrades:GetItemData("item:" .. itemID, GameTooltip)
+        itemData = addon.itemUpgrades:GetItemData("item:" .. itemID)
 
         if itemData then
             for key, value in pairs(itemData) do
