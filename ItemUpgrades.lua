@@ -437,6 +437,8 @@ function addon.itemUpgrades:Setup()
     if not addon.settings.profile.enableItemUpgrades or
         not addon.settings.profile.enableTips then return end
 
+    if UnitLevel("player") == GetMaxPlayerLevel() then return end
+
     self:UpdateSlotMap()
     self:LoadStatWeights()
 
