@@ -1,5 +1,5 @@
 ## Interface: 30402
-## Interface-Mainline: 100105
+## Interface-Mainline: 100107
 ## Interface-Wrath: 30402
 ## Interface-Classic: 11404
 ## Title: RestedXP Guides
