@@ -2,11 +2,9 @@ local _, addon = ...
 
 if addon.gameVersion > 40000 then return end
 
-local fmt, tinsert, ipairs, pairs, next, type, wipe, tonumber = string.format,
-                                                                table.insert,
-                                                                ipairs, pairs,
-                                                                next, type,
-                                                                wipe, tonumber
+local fmt, tinsert, ipairs, pairs, next, type, wipe, tonumber, strlower =
+    string.format, table.insert, ipairs, pairs, next, type, wipe, tonumber,
+    strlower
 
 local GetItemInfoInstant, GetInventoryItemLink, IsEquippedItem =
     _G.GetItemInfoInstant, _G.GetInventoryItemLink, _G.IsEquippedItem
@@ -265,10 +263,7 @@ local KEY_TO_TEXT = {
     ['ITEM_MOD_SPIRIT_SHORT'] = _G.ITEM_MOD_SPIRIT,
     ['ITEM_MOD_HEALTH_REGEN_SHORT'] = equip(_G.ITEM_MOD_HEALTH_REGEN),
     ['ITEM_MOD_POWER_REGEN0_SHORT'] = equip(_G.ITEM_MOD_MANA_REGENERATION),
-    ['ITEM_MOD_SPELL_DAMAGE_DONE_SHORT'] = {
-        _G.ITEM_MOD_SPELL_POWER, _G.ITEM_MOD_SPELL_DAMAGE_DONE
-    },
-    ['ITEM_MOD_SPELL_HEALING_DONE_SHORT'] = equip(_G.ITEM_MOD_SPELL_HEALING_DONE),
+    ['ITEM_MOD_SPELL_HEALING_DONE'] = equip(_G.ITEM_MOD_SPELL_HEALING_DONE), -- TODO remove short?
     ['ITEM_MOD_HIT_SPELL_RATING_SHORT'] = equip(_G.ITEM_MOD_HIT_SPELL_RATING),
     ['ITEM_MOD_CRIT_SPELL_RATING_SHORT'] = equip(_G.ITEM_MOD_CRIT_SPELL_RATING),
     ['ITEM_MOD_ATTACK_POWER_SHORT'] = equip(_G.ITEM_MOD_ATTACK_POWER),
@@ -277,8 +272,11 @@ local KEY_TO_TEXT = {
     ['ITEM_MOD_DEFENSE_SKILL_RATING_SHORT'] = equip(
         _G.ITEM_MOD_DEFENSE_SKILL_RATING)
 
-    -- Weapon DPS comes from API call
+    -- Data in GetItemStats
     -- ['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] = _G.DPS_TEMPLATE,
+    -- ['ITEM_MOD_SPELL_DAMAGE_DONE'] = { -- ITEM_MOD_SPELL_DAMAGE_DONE_SHORT
+    --   _G.ITEM_MOD_SPELL_POWER, _G.ITEM_MOD_SPELL_DAMAGE_DONE
+    -- },
 
     -- Wrong global variable for text, unable to find corresponding easily
     -- ['ITEM_MOD_HIT_RATING_SHORT'] = equip(_G.ITEM_MOD_HIT_RATING),
@@ -325,6 +323,18 @@ local WEAPON_SLOT_MAP = {
         }
     }
 }
+
+-- Turn GSheet suffix
+local SPELL_KIND_MAP = {
+    -- SPELL_SCHOOL1_NAME = "ITEM_MOD_SPELL_DAMAGE_DONE_HOLY",
+    [SPELL_SCHOOL2_NAME] = "ITEM_MOD_SPELL_DAMAGE_DONE_FIRE",
+    [SPELL_SCHOOL3_NAME] = "ITEM_MOD_SPELL_DAMAGE_DONE_NATURE",
+    [SPELL_SCHOOL4_NAME] = "ITEM_MOD_SPELL_DAMAGE_DONE_FROST",
+    [SPELL_SCHOOL5_NAME] = "ITEM_MOD_SPELL_DAMAGE_DONE_SHADOW",
+    [SPELL_SCHOOL6_NAME] = "ITEM_MOD_SPELL_DAMAGE_DONE_ARCANE"
+}
+local SPELL_KIND_MATCH = _G.ITEM_SPELL_TRIGGER_ONEQUIP ..
+                             " Increases damage done by (%a+) spells and effects by up to (%d+)."
 
 -- Setup reverse lookup in session.weaponSlotToWeightKey
 for weaponKey, d in pairs(WEAPON_SLOT_MAP) do
@@ -500,6 +510,7 @@ function addon.itemUpgrades:LoadStatWeights()
     local activeKind = addon.settings.profile.hardcore and "HARDCORE" or
                            "SPEEDRUN"
 
+    -- TODO only if > 0, for optimization
     for _, data in pairs(addon.statWeights) do
         -- TODO spec support
         if strupper(data.Class) == addon.player.class and strupper(data.Kind) ==
@@ -583,6 +594,7 @@ local function CalculateDPSWeight(itemData, stats)
     --    ['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] = 12.3456789,
     --    ...
     -- }
+    -- TODO fix beasts/undead/etc matching on DPS stat
 
     -- TODO doesn't work on hidden/background tooltip parsing sometimes?
     if not stats or not stats['ITEM_MOD_CR_SPEED_SHORT'] then
@@ -637,6 +649,57 @@ local function CalculateDPSWeight(itemData, stats)
     end
 
     return highestDPSWeight, dpsWeights
+end
+
+local function CalculateSpellWeight(stats, tooltipTextLines)
+    -- Example:
+    -- itemData = {
+    --    ['itemEquipLoc'] = 'INVTYPE_HEAD',
+    --    ...
+    -- }
+    -- stats = {
+    --    ['ITEM_MOD_SPELL_DAMAGE_DONE'] = 12, -- Always 1 lower than tooltip shows
+    --    ...
+    -- }
+
+    local spellDamageStat = stats['ITEM_MOD_SPELL_DAMAGE_DONE']
+    local schoolStatWeight, totalStatWeight = 0, 0
+    local schoolKey, schoolName, spellPower
+
+    -- Check all tooltip lines for regex matches
+    for _, line in ipairs(tooltipTextLines) do
+        -- print("Checking tooltip line", _, line)
+
+        print("Parsing spell tooltip", _, line, "for", SPELL_KIND_MATCH)
+        schoolName, spellPower = string.match(line, SPELL_KIND_MATCH)
+
+        if schoolName then
+            schoolKey = SPELL_KIND_MAP[strlower(schoolName)]
+
+            print("Matched schoolName", strlower(schoolName), schoolKey, spellPower)
+            if session.statWeights[schoolKey] and session.statWeights[schoolKey] >
+                0 then
+
+                -- ITEM_MOD_SPELL_DAMAGE_DONE cannot be trusted, byRef add parsed stats
+                stats[schoolKey] = spellPower
+                schoolStatWeight = spellPower *
+                                       session.statWeights[schoolKey]
+
+                totalStatWeight = totalStatWeight + schoolStatWeight
+            end
+        end
+    end
+
+    -- Not a magic school, return default weighting
+    -- TODO also include base spellpower
+    -- Base spellpower CANNOT BE TRUSTED, 40 Shadow + 40 Frost == 78 ITEM_MOD_SPELL_DAMAGE_DONE
+    if totalStatWeight == 0 then
+        print("Not a magic school")
+        return spellDamageStat *
+                   session.statWeights['ITEM_MOD_SPELL_DAMAGE_DONE']
+    end
+
+    return totalStatWeight
 end
 
 function addon.itemUpgrades:GetItemData(itemLink, tooltip)
@@ -755,9 +818,18 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
             end
 
             totalWeight = totalWeight + statWeight
-        elseif key == 'ITEM_MOD_SPELL_DAMAGE_DONE_SHORT' then
-            -- TODO handle fire/arcane/etc similar to CalculateDPSWeight
-            statWeight = value * session.statWeights[key]
+        elseif key == 'ITEM_MOD_SPELL_DAMAGE_DONE' then
+            -- All school spellpower is returned as single unschooled value
+            -- Returns modified stats table
+            statWeight = CalculateSpellWeight(stats, tooltipTextLines)
+            -- print("Key", key, "Value", value, "weighted at", statWeight)
+
+            -- If fails to parse, return nil instead of misallocating to all spellpower
+            if not statWeight then
+                print("CalculateSpellWeight return nil", itemData.itemLink)
+                return
+            end
+
             totalWeight = totalWeight + statWeight
         elseif session.statWeights[key] then -- Only calculate values explicitly configured
 
@@ -896,11 +968,11 @@ end
 
 function addon.itemUpgrades.Test()
     local itemData
-    local testData = {16886, 2816, 7719, 9379, 9479, 12927, 12929, 12963, 18298}
+    --local testData = {14136, 2816}
+    local testData = {14136}
     for _, itemID in pairs(testData) do
         print('----- ' .. itemID)
         itemData = addon.itemUpgrades:GetItemData("item:" .. itemID)
-
         if itemData then
             for key, value in pairs(itemData) do
                 print('  ', key, value)
