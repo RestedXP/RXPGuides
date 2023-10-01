@@ -41,6 +41,8 @@ addon.talents.petGuides = {
 
 local compatible = true
 local indexLookup = {}
+local activeIndices = {}
+local levelsForIndex = {}
 local talentTooltips = {
     hooked = false,
     data = {},
@@ -624,7 +626,7 @@ talentTooltips.updateFunc = function(self)
     GameTooltip:Show()
 end
 
-local function DrawTalentLevel(talentIndex, upcomingLevel)
+local function DrawTalentLevels(talentIndex, numbers)
     local ht = talentTooltips.highlights[talentIndex]
 
     if not ht then return end
@@ -647,40 +649,20 @@ local function DrawTalentLevel(talentIndex, upcomingLevel)
         ht.levelHeader.text:SetFont(addon.font, 10, "")
     end
 
-    -- Handle multiple-levels
-    local numbers = {upcomingLevel}
-
-    local numberText = ht.levelHeader.text:GetText()
-
-    if numberText then
-        local c
-        for _, currentNumber in ipairs(strsplittable(",", numberText)) do
-            c = tonumber(currentNumber)
-
-            -- Don't preserve old numbers
-            -- TODO remove older level after learning
-            if c ~= upcomingLevel then
-                tinsert(numbers, c)
-            end
-        end
-
-        -- If 5 levels of preview, overlaps with nearby
-        if #numbers == 5 then
-            ht.levelHeader.text:SetFont(addon.font, 8, "")
-            ht.levelHeader:SetPoint("TOPLEFT", ht, -3, 0)
-        else
-            ht.levelHeader.text:SetFont(addon.font, 10, "")
-            ht.levelHeader:SetPoint("TOPLEFT", ht, 0, 0)
-        end
+    -- If 5 levels of preview, overlaps with nearby
+    if #numbers == 5 then
+        ht.levelHeader.text:SetFont(addon.font, 8, "")
+        ht.levelHeader:SetPoint("TOPLEFT", ht, -3, 0)
+    else
+        ht.levelHeader.text:SetFont(addon.font, 10, "")
+        ht.levelHeader:SetPoint("TOPLEFT", ht, 0, 0)
     end
 
-    tsort(numbers)
-    local newText = strjoin(',', unpack(numbers))
-
-    if not ht.levelHeader:IsShown() then ht.levelHeader:Show() end
+    -- Ensure single number ends up as a string
+    local newText = '' .. strjoin(',', unpack(numbers))
 
     -- No changes, prevent uneeded UI calls
-    if numberText == newText then return end
+    if ht.levelHeader.text:GetText() == newText then return end
 
     ht.levelHeader.text:SetText(newText)
     ht.levelHeader:SetSize(ht.levelHeader.text:GetStringWidth() + 10, 17)
@@ -733,69 +715,92 @@ function addon.talents:DrawTalents()
                                 addon.settings.profile.upcomingTalentCount
     wipe(talentTooltips.data)
 
+    -- Track state better than with Blizz frame re-use
+    wipe(activeIndices)
+    wipe(levelsForIndex)
+
+    -- Create highlight frames and set data objects for later processing
     for upcomingTalent = (playerLevel + 1 - remainingPoints), advancedWarning do
 
         levelStep = guide.steps[upcomingTalent - guide.minLevel + 1]
 
-        if not levelStep then return end
+        if levelStep then
 
-        for _, element in ipairs(levelStep.elements) do
-            for _, talentData in ipairs(element.talent) do
-                talentIndex =
-                    indexLookup['player'][talentData.tab][talentData.tier][talentData.column]
+            for _, element in ipairs(levelStep.elements) do
+                for _, talentData in ipairs(element.talent) do
 
-                if currentTab == talentData.tab then
-                    talentTooltips.data[talentIndex] =
-                        talentTooltips.data[talentIndex] or
-                            fmt("%s - %s", addon.title, guide.name)
+                    talentIndex =
+                        indexLookup['player'][talentData.tab][talentData.tier][talentData.column]
 
-                    talentTooltips.data[talentIndex] = fmt(
-                                                           "\n%s\n%s%s: %s %d|r",
-                                                           talentTooltips.data[talentIndex],
-                                                           addon.colors.tooltip,
-                                                           _G.TRADE_SKILLS_LEARNED_TAB,
-                                                           _G.LEVEL,
-                                                           upcomingTalent)
+                    if currentTab == talentData.tab then
+                        activeIndices[talentIndex] = talentData.tab
 
-                    -- TODO Pre-seed tooltip to prevent delay
+                        talentTooltips.data[talentIndex] =
+                            talentTooltips.data[talentIndex] or
+                                fmt("\n%s - %s", addon.title, guide.name)
 
-                    if talentTooltips.highlights[talentIndex] then
-                        setHighlightColor(talentIndex,
-                                          upcomingTalent - playerLevel)
+                        talentTooltips.data[talentIndex] = fmt(
+                                                               "%s\n%s%s: %s %d|r",
+                                                               talentTooltips.data[talentIndex],
+                                                               addon.colors
+                                                                   .tooltip,
+                                                               _G.TRADE_SKILLS_LEARNED_TAB,
+                                                               _G.LEVEL,
+                                                               upcomingTalent)
 
-                        DrawTalentLevel(talentIndex, upcomingTalent)
-                        talentTooltips.highlights[talentIndex]:Show()
-                    else
-                        local ht =
-                            _G["PlayerTalentFrameTalent" .. talentIndex]:CreateTexture(
-                                "$parent_LevelPreview", "BORDER")
+                        -- TODO Pre-seed tooltip to prevent delay
 
-                        ht:SetTexture("Interface/Buttons/ButtonHilight-Square")
-                        ht:SetBlendMode("ADD")
-                        ht:SetAllPoints(_G["PlayerTalentFrameTalent" ..
-                                            talentIndex .. "Slot"])
+                        if not talentTooltips.highlights[talentIndex] then
+                            local ht = _G["PlayerTalentFrameTalent" ..
+                                           talentIndex]:CreateTexture(
+                                           "$parent_LevelPreview", "BORDER")
 
-                        talentTooltips.highlights[talentIndex] = ht
+                            ht:SetTexture(
+                                "Interface/Buttons/ButtonHilight-Square")
+                            ht:SetBlendMode("ADD")
+                            ht:SetAllPoints(
+                                _G["PlayerTalentFrameTalent" .. talentIndex ..
+                                    "Slot"])
 
-                        setHighlightColor(talentIndex,
-                                          upcomingTalent - playerLevel)
-                        DrawTalentLevel(talentIndex, upcomingTalent)
-                    end
-                else
-                    -- Reset highlights on non-active tabs
-                    if talentTooltips.highlights[talentIndex] then
-                        local ht = talentTooltips.highlights[talentIndex]
-                        if ht:IsShown() then ht:Hide() end
-
-                        if ht.levelHeader and ht.levelHeader:IsShown() then
-                            ht.levelHeader:Hide()
-                            ht.levelHeader.text:SetText(nil)
+                            talentTooltips.highlights[talentIndex] = ht
                         end
+
+                        setHighlightColor(talentIndex,
+                                          upcomingTalent - playerLevel)
+
+                        if levelsForIndex[talentIndex] then
+                            tinsert(levelsForIndex[talentIndex],
+                                    upcomingTalent)
+                        else
+                            levelsForIndex[talentIndex] = {
+                                upcomingTalent
+                            }
+                        end
+
                     end
-                end
-            end
-        end
+
+                end -- ipairs(element.talent)
+            end -- ipairs(levelStep.elements)
+
+        end -- if levelStep
     end
+
+    -- Ensure all highlights and levelHeaders are shown/hidden as applicable
+    for index, ht in pairs(talentTooltips.highlights) do
+
+        if activeIndices[index] and activeIndices[index] == currentTab then
+            -- Set levelHeader data from array data
+            DrawTalentLevels(index, levelsForIndex[index])
+
+            if not ht:IsShown() then ht:Show() end
+            if not ht.levelHeader:IsShown() then ht.levelHeader:Show() end
+        else
+            if ht:IsShown() then ht:Hide() end
+            if ht.levelHeader:IsShown() then ht.levelHeader:Hide() end
+        end
+
+    end
+
 end
 
 function addon.talents:BuildIndexLookup()
