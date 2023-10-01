@@ -274,7 +274,7 @@ local KEY_TO_TEXT = {
 
     -- Data in GetItemStats
     -- ['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] = _G.DPS_TEMPLATE,
-    -- ['ITEM_MOD_SPELL_DAMAGE_DONE'] = { -- ITEM_MOD_SPELL_DAMAGE_DONE_SHORT
+    -- ['ITEM_MOD_SPELL_DAMAGE_DONE'] = { -- CANNOT BE TRUSTED, replaced by parsing STAT_SPELLDAMAGE
     --   _G.ITEM_MOD_SPELL_POWER, _G.ITEM_MOD_SPELL_DAMAGE_DONE
     -- },
 
@@ -298,7 +298,13 @@ local OUT_OF_BAND_KEYS = {
     ['ITEM_MOD_DODGE_RATING_SHORT'] = ITEM_SPELL_TRIGGER_ONEQUIP ..
         " Increases your chance to dodge an attack by (%d+)%%.",
     ['ITEM_MOD_PARRY_RATING_SHORT'] = ITEM_SPELL_TRIGGER_ONEQUIP ..
-        " Increases your chance to parry an attack by (%d+)%%."
+        " Increases your chance to parry an attack by (%d+)%%.",
+
+    -- Stats cannot be trusted, explicitly parse
+    -- Overrides ITEM_MOD_SPELL_DAMAGE_DONE built-in
+    ['STAT_SPELLDAMAGE'] = {
+        _G.ITEM_MOD_SPELL_POWER, _G.ITEM_MOD_SPELL_DAMAGE_DONE
+    }
 }
 
 local WEAPON_SLOT_MAP = {
@@ -326,13 +332,15 @@ local WEAPON_SLOT_MAP = {
 
 -- Turn GSheet suffix
 local SPELL_KIND_MAP = {
-    -- SPELL_SCHOOL1_NAME = "ITEM_MOD_SPELL_DAMAGE_DONE_HOLY",
-    [SPELL_SCHOOL2_NAME] = "ITEM_MOD_SPELL_DAMAGE_DONE_FIRE",
-    [SPELL_SCHOOL3_NAME] = "ITEM_MOD_SPELL_DAMAGE_DONE_NATURE",
-    [SPELL_SCHOOL4_NAME] = "ITEM_MOD_SPELL_DAMAGE_DONE_FROST",
-    [SPELL_SCHOOL5_NAME] = "ITEM_MOD_SPELL_DAMAGE_DONE_SHADOW",
-    [SPELL_SCHOOL6_NAME] = "ITEM_MOD_SPELL_DAMAGE_DONE_ARCANE"
+    -- SPELL_SCHOOL1_NAME = "STAT_SPELLDAMAGE_HOLY",
+    [SPELL_SCHOOL2_NAME] = "STAT_SPELLDAMAGE_FIRE",
+    [SPELL_SCHOOL3_NAME] = "STAT_SPELLDAMAGE_NATURE",
+    [SPELL_SCHOOL4_NAME] = "STAT_SPELLDAMAGE_FROST",
+    [SPELL_SCHOOL5_NAME] = "STAT_SPELLDAMAGE_SHADOW",
+    [SPELL_SCHOOL6_NAME] = "STAT_SPELLDAMAGE_ARCANE"
 }
+
+-- TODO locale
 local SPELL_KIND_MATCH = _G.ITEM_SPELL_TRIGGER_ONEQUIP ..
                              " Increases damage done by (%a+) spells and effects by up to (%d+)."
 
@@ -662,28 +670,24 @@ local function CalculateSpellWeight(stats, tooltipTextLines)
     --    ...
     -- }
 
-    local spellDamageStat = stats['ITEM_MOD_SPELL_DAMAGE_DONE']
     local schoolStatWeight, totalStatWeight = 0, 0
     local schoolKey, schoolName, spellPower
 
     -- Check all tooltip lines for regex matches
     for _, line in ipairs(tooltipTextLines) do
-        -- print("Checking tooltip line", _, line)
-
-        print("Parsing spell tooltip", _, line, "for", SPELL_KIND_MATCH)
+        -- print("CalculateSpellWeight (", line, ")")
         schoolName, spellPower = string.match(line, SPELL_KIND_MATCH)
 
         if schoolName then
             schoolKey = SPELL_KIND_MAP[strlower(schoolName)]
 
-            print("Matched schoolName", strlower(schoolName), schoolKey, spellPower)
+            -- print("Matched schoolName", strlower(schoolName), schoolKey, spellPower)
             if session.statWeights[schoolKey] and session.statWeights[schoolKey] >
                 0 then
 
                 -- ITEM_MOD_SPELL_DAMAGE_DONE cannot be trusted, byRef add parsed stats
                 stats[schoolKey] = spellPower
-                schoolStatWeight = spellPower *
-                                       session.statWeights[schoolKey]
+                schoolStatWeight = spellPower * session.statWeights[schoolKey]
 
                 totalStatWeight = totalStatWeight + schoolStatWeight
             end
@@ -694,9 +698,13 @@ local function CalculateSpellWeight(stats, tooltipTextLines)
     -- TODO also include base spellpower
     -- Base spellpower CANNOT BE TRUSTED, 40 Shadow + 40 Frost == 78 ITEM_MOD_SPELL_DAMAGE_DONE
     if totalStatWeight == 0 then
-        print("Not a magic school")
-        return spellDamageStat *
-                   session.statWeights['ITEM_MOD_SPELL_DAMAGE_DONE']
+        --  print("Not a magic school")
+        -- ITEM_MOD_SPELL_DAMAGE_DONE cannot be trusted without validation
+        -- Set spellPower stat to built-in stat after verifying no school
+        stats['STAT_SPELLDAMAGE'] = stats['ITEM_MOD_SPELL_DAMAGE_DONE'] + 1
+
+        return stats['STAT_SPELLDAMAGE'] *
+                   session.statWeights['STAT_SPELLDAMAGE']
     end
 
     return totalStatWeight
@@ -819,8 +827,7 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
 
             totalWeight = totalWeight + statWeight
         elseif key == 'ITEM_MOD_SPELL_DAMAGE_DONE' then
-            -- All school spellpower is returned as single unschooled value
-            -- Returns modified stats table
+            -- ITEM_MOD_SPELL_DAMAGE_DONE is terrible, but it's built-in so key off that to parse spell damage
             statWeight = CalculateSpellWeight(stats, tooltipTextLines)
             -- print("Key", key, "Value", value, "weighted at", statWeight)
 
@@ -968,8 +975,7 @@ end
 
 function addon.itemUpgrades.Test()
     local itemData
-    --local testData = {14136, 2816}
-    local testData = {14136}
+    local testData = {14136, 2816}
     for _, itemID in pairs(testData) do
         print('----- ' .. itemID)
         itemData = addon.itemUpgrades:GetItemData("item:" .. itemID)
