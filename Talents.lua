@@ -711,6 +711,7 @@ function addon.talents:DrawTalents()
 
             if ht.levelHeader and ht.levelHeader:IsShown() then
                 ht.levelHeader:Hide()
+                ht.levelHeader.text:SetText(nil)
             end
         end
 
@@ -788,6 +789,7 @@ function addon.talents:DrawTalents()
 
                         if ht.levelHeader and ht.levelHeader:IsShown() then
                             ht.levelHeader:Hide()
+                            ht.levelHeader.text:SetText(nil)
                         end
                     end
                 end
