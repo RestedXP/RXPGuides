@@ -2004,7 +2004,7 @@ step
 >>Talk to |cFF00FF25High Executor Hadrec|r
     .turnin 439 >>Turn in Rot Hide Clues
 .target High Executor Hadrec
-    .accept 440 >>Accept The Engraved Ring << Undead
+--    .accept 440 >>Accept The Engraved Ring << Undead
 --   .accept 443 >>Accept Rot Hide Ichor
 -- Engraved ring q line worth it depending on class?
 step << Undead
@@ -2109,12 +2109,6 @@ step << !Undead Rogue
     .hs >> Hearth to Crossroads
 step << Undead
     .goto Tirisfal Glades,61.85,66.59,60 >> Exit Undercity
-step << Undead
-    .goto Tirisfal Glades,61.26,50.84
->>Talk to |cFF00FF25Magistrate Sevren|r
-    .turnin 440 >>Turn in The Engraved Ring
-.target Magistrate Sevren
-    .accept 441 >>Accept Raleigh and the Undercity
 step << Undead
     #sticky
     #completewith next

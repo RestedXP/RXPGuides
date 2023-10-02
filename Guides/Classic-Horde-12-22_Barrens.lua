@@ -725,7 +725,7 @@ step << Druid
 .target Tajarri
 >>Talk to |cFF00FF25Tajarri|r
     .turnin 28 >> Turn in Trial of the Lake
---    .accept 30 >> Accept Trial of the Sea Lion
+    .accept 30 >> Accept Trial of the Sea Lion
 step
     #completewith next
     .hs >>Hearth to Crossroads
@@ -1828,7 +1828,6 @@ step << Hunter
 step << Hunter
     .goto Ashenvale,73.13,61.54
     .fly Orgrimmar >>Fly to Orgrimmar
-	.maxlevel 24
 step << Shaman
     .goto The Barrens,51.5,30.4
     .fly Ratchet >>Fly to Ratchet
@@ -1885,12 +1884,263 @@ step << !Hunter !Mage !Shaman !Rogue !Warlock
     .goto The Barrens,51.5,30.3 << !Shaman
     .goto The Barrens,44.5,59.1 << Shaman
     .fly Orgrimmar >>Fly to Orgrimmar
-	.maxlevel 24
 step << Shaman/Rogue/Warlock
     .goto The Barrens,51.5,30.3
     .fly Orgrimmar >>Fly to Orgrimmar
 step << Mage
 	#som
 	.zone Orgrimmar >> Teleport or Fly to Orgrimmar
-	.maxlevel 24
+step << Warlock
+    .goto Orgrimmar,48.25,45.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gan'rul|r
+    .trainer >> Train your class spells
+    .turnin 1512 >>Turn in Love's Gift
+    .accept 1513 >>Accept The Binding
+    .target Gan'rul Bloodeye
+step << Warlock
+    #completewith next
+    .cast 9224 >>Use |T133290:0|t[Dogran's Pendant] at the Summoning Circle
+    .use 6626
+step << Warlock
+    .goto Orgrimmar,49.66,50.15
+    >>Kill the |cRXP_ENEMY_Summoned Succubus|r
+    .complete 1513,1 --Kill Summoned Succubus (1)
+    .mob Summoned Succubus
+    .use 6626
+step << Warlock
+    .goto Orgrimmar,48.25,45.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gan'rul|r
+    .turnin 1513 >>Turn in The Binding
+    .target Gan'rul Bloodeye
+step << Rogue
+    #completewith next
+    .goto Orgrimmar,45.64,55.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kareth|r|cRXP_BUY_. Buy a|r |T135640:0|t[Jambiya] |cRXP_BUY_from him if you do not have a dagger|r
+    .collect 2207,1 --Collect Jambiya (1)
+    .target Kareth
+step << Rogue
+    .goto Orgrimmar,43.05,53.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shenthul|r
+    .train 8676 >> Train |T132282:0|t[Ambush]
+    .train 1943 >> Train |T132302:0|t[Rupture]
+    .train 1856 >> Train |T132331:0|t[Vanish]
+    .train 1725 >> Train |T132289:0|t[Distract]
+    .train 1785 >> Train |T132320:0|t[Stealth Rank 2]
+    .accept 2460 >>Accept The Shattered Salute
+    .target Shenthul
+step << Rogue
+    .goto Orgrimmar,43.05,53.73
+    >>After |cRXP_FRIENDLY_Shenthul|r does his salute, type /Salute while targeting him
+    .complete 2460,1 --Shattered Salute Performed (1)
+    .target Shenthul
+step << Rogue
+    .goto Orgrimmar,43.05,53.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shenthul|r
+    .turnin 2460 >>Turn in The Shattered Salute
+    .accept 2458 >>Accept Deep Cover
+    .target Shenthul
+step << Rogue
+    .goto Orgrimmar,42.10,49.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Rekkul|r|cRXP_BUY_. Buy |r |T134387:0|t[Flash Powder] |cRXP_BUY_from him|r
+    .collect 2928,20,2479,1 --Collect Dust of Decay (20)
+    .collect 3371,20,2479,1 --Collect Empty Vial (20)
+    .collect 5140,20,2479,1 --Collect Flash Powder (20)
+    .target Rekkul
+step << Priest/Warlock
+    .goto Orgrimmar,44.16,48.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Katis|r|cRXP_BUY_. Buy a|r |T135139:0|t[Burning Wand] |cRXP_BUY_from her|r
+    .collect 5210,1,1507,1 --Collect Burning Wand (1)
+    .money <0.5808
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<17.4
+    .target Katis
+step << Mage
+    .goto Orgrimmar,38.36,85.54
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo|r
+    .train 2138 >> Train your class spells
+    .target Pephredo
+    .xp <22,1
+    .xp >24,1
+step << Mage
+    .goto Orgrimmar,38.36,85.54
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo|r
+    .train 2121 >> Train your class spells
+    .target Pephredo
+    .xp <24,1
+step << Mage
+    .goto Orgrimmar,38.70,85.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo|r at the top of the hut
+    .train 3567 >> Train |T135759:0|t[Teleport: Orgrimmar]
+    .target Thuul
+step << Troll Priest
+    .goto Orgrimmar,35.59,87.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
+    .turnin 5642 >> Turn in Shadowguard
+    .trainer >> Train your class spells
+    .target Ur'kyo
+step << Undead Priest
+    .goto Orgrimmar,35.59,87.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
+    .train 8103 >> Train your class spells
+    .target Ur'kyo
+    .xp <22,1
+    .xp >24,1
+step << Undead Priest
+    .goto Orgrimmar,35.59,87.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
+    .train 3747 >> Train your class spells
+    .target Ur'kyo
+    .xp <24,1
+step << Rogue/Druid
+    #completewith MissionProbable
+    .goto Orgrimmar,26.22,61.58,80,0
+    .goto Orgrimmar,15.66,63.33,30,0
+    .goto Orgrimmar,18.03,60.51,30,0
+    .zone The Barrens >> Enter The Barrens through the Western Exit
+    .zoneskip The Barrens
+step << Rogue/Druid
+    #completewith MissionProbable
+    .goto The Barrens,57.63,7.48,120 >> Travel toward the Sludge Ven
+step << Druid
+    .goto The Barrens,56.67,8.32
+    >>Loot the |cRXP_PICK_Strange Lockbox|r in the water for the |T133443:0|t[Half Pendant of Aquatic Agility]
+    .collect 15883,1 --Half Pendant of Aquatic Agility (1)
+step << Rogue
+    #completewith next
+    .goto The Barrens,55.70,5.89
+	.use 8051 >>Target |cRXP_FRIENDLY_Taskmaster Fizzule|r, then use your |T134536:0|t[Flare Gun] TWICE and type /Salute
+    >>|cRXP_WARN_Be careful! Do NOT approach him until he becomes friendly or he will attack you!|r
+    .target Taskmaster Fizzule
+step << Rogue
+    #label MissionProbable
+    .goto The Barrens,55.44,5.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Taskmaster Fizzule|r
+    .turnin 2458 >>Turn in Deep Cover
+    .accept 2478 >>Accept Mission: Possible But Not Probable
+    .target Taskmaster Fizzule
+step << Rogue
+    .goto The Barrens,54.80,5.97
+    >>Use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Foreman Silixiz|r for his |cRXP_LOOT_Tower Key|r
+    .complete 2478,5 --Silixiz's Tower Key (1)
+    .mob Foreman Silixiz
+step << Rogue
+    #completewith roguetowerq
+    +|cRXP_WARN_Each mob here will take increased damage to certain abilities|r
+    >>Use |T132282:0|t[Ambush] on the |cRXP_ENEMY_Mutated Venture Co. Drones|r
+    >>Use |T132302:0|t[Rupture] on the |cRXP_ENEMY_Venture Co. Patrollers|r
+    >>Use |T132292:0|t[Eviscerate] on the |cRXP_ENEMY_Venture Co. Lookouts|r once (1 combo point)
+step << Rogue
+    #label roguetowerq
+    .goto The Barrens,54.72,5.74
+    >>Run into the Rogue Tower and kill |cRXP_ENEMY_Drones|r, |cRXP_ENEMY_Patrollers|r and |cRXP_ENEMY_Lookouts|r
+    .complete 2478,1 --Mutated Venture Co. Drone (2)
+    .complete 2478,3 --Venture Co. Patroller (2)
+    .complete 2478,2 --Venture Co. Lookout (2)
+    .mob Mutated Venture Co. Drone
+    .mob Venture Co. Patroller
+    .mob Venture Co. Lookout
+step << Rogue
+    .goto The Barrens,54.77,5.57
+    >>At the top of the tower you'll find |cRXP_ENEMY_Gallywix|r. Loot him for his |cRXP_LOOT_Head|r
+    >>|cRXP_WARN_Use|r |T132282:0|t[Ambush] |cRXP_WARN_to reduce his HP to half. Use|r |T132155:0|t[Gouge] |cRXP_WARN_to restore energy and use|r |T136205:0|t[Evasion]
+	>>|cRXP_WARN_Remember to use a Potion and|r |T132819:0|t[Thistle Tea] |cRXP_WARN_if needed|r
+    .complete 2478,4 --Gallywix's Head (1)
+    .mob Grand Foreman Puzik Gallywix
+    --VV Video?
+step << Rogue
+    .goto The Barrens,54.77,5.57
+    >>Use your lock picking to open |cRXP_PICK_Gallywix's Lockbox|r & loot the |cRXP_LOOT_Mixture|r.
+    .complete 2478,6 --Cache of Zanzil's Altered Mixture (1)
+step << Rogue/Druid
+    #completewith next
+    .goto The Barrens,61.33,4.21,120 >>Travel toward the Boulder Lode Mine
+step
+    .goto The Barrens,60.00,4.09
+    .goto Orgrimmar,40.05,68.05,30 >>|cRXP_WARN_Jump onto the tent. Perform a Logout Skip by logging out and back in. Run back to Orgrimmar if you don't succeed|r
+    .link https://www.youtube.com/watch?v=cOxspH4RcI8&ab >> |cRXP_WARN_CLICK HERE for an example|r
+step << Rogue
+    .goto Orgrimmar,43.05,53.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shenthul|r
+    .turnin 2478 >>Turn in Mission: Possible But Not Probable
+    .accept 2479 >>Accept Hinott's Assistance
+    .target Shenthul
+step << Rogue
+    .goto Orgrimmar,42.10,49.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Rekkul|r|cRXP_BUY_. Buy |r |T133849:0|t[Dust of Decay] |cRXP_BUY_and|r |T132793:0|t[Empty Vials] |cRXP_BUY_from him|r
+    .collect 2928,20,2479,1 --Collect Dust of Decay (20)
+    .collect 3371,20,2479,1 --Collect Empty Vial (20)
+    .target Rekkul
+step << Shaman
+    .goto Orgrimmar,38.82,36.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
+    .train 8498 >> Train your class spells
+    .target Kardris Dreamseeker
+    .xp <22,1
+    .xp >24,1
+step << Shaman
+    .goto Orgrimmar,38.82,36.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
+    .train 905 >> Train your class spells
+    .target Kardris Dreamseeker
+    .xp <24,1
+step << Troll Warrior/Undead Warrior/Tauren Warrior
+    .goto Orgrimmar,81.52,19.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
+    .train 197 >>Train Two-Handed Axes
+    .target Hanashi
+step << Warrior
+    .goto Orgrimmar,79.91,31.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grezz|r
+    .train 6192 >> Train your class spells
+    .target Grezz Ragefist
+    .xp <22,1
+    .xp >24,1
+step << Warrior
+    .goto Orgrimmar,79.91,31.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grezz|r
+    .train 5308 >> Train your class spells
+    .target Grezz Ragefist
+    .xp <24,1
+step << Hunter
+    .goto Orgrimmar,66.05,18.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormak|r
+    .train 14323 >> Train your class spells
+    .target Ormak Grimshot
+    .xp <22,1
+    .xp >24,1
+step << Hunter
+    .goto Orgrimmar,66.05,18.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormak|r
+    .train 14262 >> Train your class spells
+    .target Ormak Grimshot
+    .xp <24,1
+step << Hunter
+    .goto Orgrimmar,66.34,14.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xao'tsu|r
+    .train 24558 >> Train your pet spells
+    .target Xao'tsu
+    .xp <24,1
+step << Rogue
+    .goto Orgrimmar,48.12,80.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trak'gen|r|cRXP_BUY_. Buy |r |T135423:0|t[Deadly Throwing Axe] |cRXP_BUY_from him|r
+    .collect 3137,200,6544,1 --Deadly Throwing Axe (200)
+    .target K'waii
+step
+    .abandon 6421 >> Abandon Boulderslide Ravine
+    .isOnQuest 6421
+step
+    .abandon 4021 >> Abandon Counterattack!
+    .isOnQuest 4021
+step
+    .abandon 6481 >> Abandon Earthen Arise
+    .isOnQuest 6481
+step
+    .abandon 6284 >> Abandon Arachnophobia
+    .isOnQuest 6284
+step
+    .abandon 6641 >> Abandon Vorsha the Lasher
+    .isOnQuest 6641
+step
+    .abandon 6563 >> Abandon The Essence of Aku'Mai
+    .isOnQuest 6563
 ]])
