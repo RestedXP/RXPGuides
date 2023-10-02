@@ -112,7 +112,7 @@ level -- Contagion Rank 3
 
 level -- Contagion Rank 4
     .talent 1,7,2,4
-    
+
 level -- Malediction Rank 1
     .talent 1,8,3,1
 
@@ -307,7 +307,7 @@ level -- Contagion Rank 4
 
 level -- Contagion Rank 5
     .talent 1,7,2,5
-    
+
 level -- Malediction Rank 1
     .talent 1,8,3,1
 
@@ -413,12 +413,4 @@ level -- Death's Embrace Rank 2
 level -- Death's Embrace Rank 3
     .talent 1,9,1,3
 
-
-
-
-
-
-
-
-
-
+]])

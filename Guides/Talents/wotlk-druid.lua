@@ -105,7 +105,7 @@ level -- Primal Precision Rank 2
 level -- Feral Charge Rank 1
     .talent 2,5,3,1
 
-level -- Survival Instincts 
+level -- Survival Instincts
     .talent 2,3,2,1
 
 level -- Feral Aggression Rank 1
@@ -201,7 +201,7 @@ level -- Primal Precision Rank 2
 level -- Feral Charge Rank 1
     .talent 2,5,3,1
 
-level -- Survival Instincts 
+level -- Survival Instincts
     .talent 2,3,2,1
 
 level -- Primal Fury Rank 1
@@ -344,7 +344,9 @@ level -- Improved Mangle Rank 2
 
 level -- Improved Mangle Rank 3
     .talent 2,9,3,3
-    
+
 level -- Feral Aggression Rank 5
     .talent 2,1,3,5
 
+
+]])

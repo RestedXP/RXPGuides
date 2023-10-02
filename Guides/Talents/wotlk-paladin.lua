@@ -1,6 +1,6 @@
 local _, addon = ...
 
-if addon.player.class ~= "PALADIN then return end
+if addon.player.class ~= "PALADIN" then return end
 
 addon.talents.RegisterGuide([[
 #name Paladin 10-80
@@ -220,14 +220,4 @@ level -- Swift Retribution Rank 3
 level -- Deflection Rank 1
     .talent 3,1,2,1
 
-
-
-
-
-
-
-
-
-
-
-
+]])
