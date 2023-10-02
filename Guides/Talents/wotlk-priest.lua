@@ -219,10 +219,4 @@ level -- Improved Inner Fire Rank 1
 
 level -- Improved Inner Fire Rank 2
     .talent 1,2,2,2
-
-
-
-
-
-
-
+]])
