@@ -225,6 +225,9 @@ level -- Heart of the Wild Rank 3
 level -- Heart of the Wild Rank 4
     .talent 2,6,2,4
 
+level -- Heart of the Wild Rank 5
+    .talent 2,6,2,4
+
 level -- Leader of the Pack
     .talent 2,7,2,1
 

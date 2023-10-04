@@ -39,13 +39,13 @@ level -- Improved Curse of Agony Rank 1
     .talent 1,1,1,1
 
 level -- Fel Concentration Rank 1
-    .talent 1,2,1,1
+    .talent 1,3,2,1
 
 level -- Fel Concentration Rank 2
-    .talent 1,2,1,2
+    .talent 1,3,2,2
 
 level -- Fel Concentration Rank 3
-    .talent 1,2,1,3
+    .talent 1,3,2,3
 
 level -- Improved Curse of Agony Rank 2
     .talent 1,1,1,2
@@ -234,13 +234,13 @@ level -- Soul Siphon Rank 2
     .talent 1,2,4,2
 
 level -- Fel Concentration Rank 1
-    .talent 1,2,1,1
+    .talent 1,3,2,1
 
 level -- Fel Concentration Rank 2
-    .talent 1,2,1,2
+    .talent 1,3,2,2
 
 level -- Fel Concentration Rank 3
-    .talent 1,2,1,3
+    .talent 1,3,2,3
 
 level -- Amplify Curse
     .talent 1,3,3,1

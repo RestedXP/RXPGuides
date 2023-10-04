@@ -103,6 +103,9 @@ level -- Dual Wield
 level -- Stormstrike
     .talent 2,7,3,1
 
+level -- Weapon Mastery Rank 3
+    .talent 2,6,3,3
+
 level -- Dual Wield Specialization Rank 1
     .talent 2,7,1,1
 
@@ -216,8 +219,4 @@ level -- Static Shock Rank 2
 
 level -- Static Shock Rank 3
     .talent 2,8,1,3
-
-level -- Weapon Mastery Rank 3
-    .talent 2,6,3,3
-
 ]])
