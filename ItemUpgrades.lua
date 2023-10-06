@@ -699,8 +699,7 @@ end
 
 function addon.itemUpgrades:GetItemData(itemLink, tooltip)
     if not itemLink or type(itemLink) ~= "string" then
-        print("addon.itemUpgrades:GetItemData, itemLink string required",
-              itemLink)
+        -- print("addon.itemUpgrades:GetItemData, itemLink string required", itemLink)
         return
     end
 
@@ -750,7 +749,7 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
         tooltip = GetComparisonTip()
 
         if not tooltip then
-            print("Comparisontip failure")
+            -- print("Comparisontip failure")
             return
         end
 
@@ -820,7 +819,7 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
 
             -- If fails to parse, return nil instead of misallocating to all spellpower
             if not statWeight then
-                print("CalculateSpellWeight return nil", itemData.itemLink)
+                -- print("CalculateSpellWeight return nil", itemData.itemLink)
                 return
             end
 
@@ -846,8 +845,7 @@ end
 function addon.itemUpgrades:GetEquippedComparisonRatio(equippedItemLink,
                                                        comparedData)
     if not comparedData or not equippedItemLink then
-        print(
-            "GetEquippedComparisonRatio: not comparedData or not equippedItemLink ")
+        -- print("GetEquippedComparisonRatio: not comparedData or not equippedItemLink ")
         return nil, "invalid parameters"
     end
 
@@ -855,7 +853,7 @@ function addon.itemUpgrades:GetEquippedComparisonRatio(equippedItemLink,
     local equippedData = self:GetItemData(equippedItemLink, nil)
 
     if not equippedData then
-        print("GetEquippedComparisonRatio: not equippedData")
+        -- print("GetEquippedComparisonRatio: not equippedData")
         return nil, "not equippedData"
     end
 
@@ -878,7 +876,7 @@ function addon.itemUpgrades:GetEquippedComparisonRatio(equippedItemLink,
         return 0, 'equal'
     end
 
-    print("GetEquippedComparisonRatio nil")
+    -- print("GetEquippedComparisonRatio nil")
     return nil, _G.UNKNOWN
 end
 
@@ -895,7 +893,7 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
 
     -- Not an equippable item
     if not comparedData.itemEquipLoc then
-        print("CompareItemWeight: not comparedData.itemEquipLoc")
+        -- print("CompareItemWeight: not comparedData.itemEquipLoc")
         return nil, "not itemEquipLoc"
     end
     -- print("comparedData.itemEquipLoc", comparedData.itemEquipLoc)
