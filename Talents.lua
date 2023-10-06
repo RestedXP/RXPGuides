@@ -646,15 +646,15 @@ local function DrawTalentLevels(talentIndex, numbers)
 
         -- TODO specific text color setting?
         ht.levelHeader.text:SetTextColor(unpack(addon.activeTheme.textColor))
-        ht.levelHeader.text:SetFont(addon.font, 10, "")
+        ht.levelHeader.text:SetFont(addon.font, 10, "OUTLINE")
     end
 
     -- If 5 levels of preview, overlaps with nearby
     if #numbers == 5 then
-        ht.levelHeader.text:SetFont(addon.font, 8, "")
+        ht.levelHeader.text:SetFont(addon.font, 8, "OUTLINE")
         ht.levelHeader:SetPoint("TOPLEFT", ht, -3, 0)
     else
-        ht.levelHeader.text:SetFont(addon.font, 10, "")
+        ht.levelHeader.text:SetFont(addon.font, 10, "OUTLINE")
         ht.levelHeader:SetPoint("TOPLEFT", ht, 0, 0)
     end
 
