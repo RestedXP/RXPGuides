@@ -266,7 +266,7 @@ local KEY_TO_TEXT = {
     ['ITEM_MOD_SPELL_HEALING_DONE'] = equip(_G.ITEM_MOD_SPELL_HEALING_DONE), -- TODO remove short?
     ['ITEM_MOD_HIT_SPELL_RATING_SHORT'] = equip(_G.ITEM_MOD_HIT_SPELL_RATING),
     ['ITEM_MOD_CRIT_SPELL_RATING_SHORT'] = equip(_G.ITEM_MOD_CRIT_SPELL_RATING),
-    ['ITEM_MOD_ATTACK_POWER_SHORT'] = equip(_G.ITEM_MOD_ATTACK_POWER),
+
     ['ITEM_MOD_RANGED_ATTACK_POWER_SHORT'] = equip(
         _G.ITEM_MOD_RANGED_ATTACK_POWER),
     ['ITEM_MOD_DEFENSE_SKILL_RATING_SHORT'] = equip(
@@ -283,6 +283,7 @@ local KEY_TO_TEXT = {
     -- ['ITEM_MOD_CRIT_RATING_SHORT'] = equip(_G.ITEM_MOD_CRIT_RATING),
     -- ['ITEM_MOD_DODGE_RATING_SHORT'] = equip(_G.ITEM_MOD_DODGE_RATING),
     -- ['ITEM_MOD_PARRY_RATING_SHORT'] = equip(_G.ITEM_MOD_PARRY_RATING)
+    -- ['ITEM_MOD_ATTACK_POWER_SHORT'] = equip(_G.ITEM_MOD_ATTACK_POWER),
 }
 
 -- Keys only obtained from tooltip text parsing
@@ -290,15 +291,17 @@ local KEY_TO_TEXT = {
 local OUT_OF_BAND_KEYS = {
     -- Hack in weapon speed parsing
     -- TODO locale, ideally use GlobalStrings.lua, but hard to find for Classic
-    ['ITEM_MOD_CR_SPEED_SHORT'] = _G.ITEM_MOD_CR_SPEED_SHORT .. " (%d+%.%d+)",
+    ['ITEM_MOD_CR_SPEED_SHORT'] = _G.ITEM_MOD_CR_SPEED_SHORT .. "%s+(%d+%.%d+)",
     ['ITEM_MOD_CRIT_RATING_SHORT'] = ITEM_SPELL_TRIGGER_ONEQUIP ..
-        " Improves your chance to get a critical strike by (%d+)%%.",
+        "%s+Improves your chance to get a critical strike by (%d+)%%.",
     ['ITEM_MOD_HIT_RATING_SHORT'] = ITEM_SPELL_TRIGGER_ONEQUIP ..
-        " Improves your chance to hit by (%d+)%%.",
+        "%s+Improves your chance to hit by (%d+)%%.",
     ['ITEM_MOD_DODGE_RATING_SHORT'] = ITEM_SPELL_TRIGGER_ONEQUIP ..
-        " Increases your chance to dodge an attack by (%d+)%%.",
+        "%s+Increases your chance to dodge an attack by (%d+)%%.",
     ['ITEM_MOD_PARRY_RATING_SHORT'] = ITEM_SPELL_TRIGGER_ONEQUIP ..
-        " Increases your chance to parry an attack by (%d+)%%.",
+        "%s+Increases your chance to parry an attack by (%d+)%%.",
+    ['ITEM_MOD_ATTACK_POWER_SHORT'] = ITEM_SPELL_TRIGGER_ONEQUIP ..
+        "%s+%+(%d+)%s+" .. ITEM_MOD_ATTACK_POWER_SHORT,
 
     -- Stats cannot be trusted, explicitly parse
     -- Overrides ITEM_MOD_SPELL_DAMAGE_DONE built-in
@@ -972,7 +975,7 @@ end
 
 function addon.itemUpgrades.Test()
     local itemData
-    local testData = {14136, 2816}
+    local testData = {11907, 13052, 20703}
     for _, itemID in pairs(testData) do
         print('----- ' .. itemID)
         itemData = addon.itemUpgrades:GetItemData("item:" .. itemID)
