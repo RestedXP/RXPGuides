@@ -410,8 +410,8 @@ local function TooltipSetItem(tooltip, ...)
     for _, data in ipairs(comparisons) do
         -- Remove base 100 from percentage
         -- A 140% upgrade ratio is only a 40% upgrade
-        if data['debug'] then
-            ratioText = "(debug) " .. data['debug']
+        if data['debug'] or not data['Ratio'] then
+            ratioText = "(debug) " .. data['debug'] or _G.SPELL_FAILED_ERROR
         elseif data['Ratio'] == 1 then
             ratioText = '100%'
         elseif data['Ratio'] > 0 then
@@ -661,10 +661,6 @@ end
 
 local function CalculateSpellWeight(stats, tooltipTextLines)
     -- Example:
-    -- itemData = {
-    --    ['itemEquipLoc'] = 'INVTYPE_HEAD',
-    --    ...
-    -- }
     -- stats = {
     --    ['ITEM_MOD_SPELL_DAMAGE_DONE'] = 12, -- Always 1 lower than tooltip shows
     --    ...
@@ -855,12 +851,13 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
 end
 
 -- Moved to make nested loops less egregious without break/continue
+-- return ratio, debugMsg
 function addon.itemUpgrades:GetEquippedComparisonRatio(equippedItemLink,
                                                        comparedData)
     if not comparedData or not equippedItemLink then
         print(
             "GetEquippedComparisonRatio: not comparedData or not equippedItemLink ")
-        return
+        return nil, "invalid parameters"
     end
 
     -- Load equipped item into hidden tooltip for parsing
@@ -868,7 +865,7 @@ function addon.itemUpgrades:GetEquippedComparisonRatio(equippedItemLink,
 
     if not equippedData then
         print("GetEquippedComparisonRatio: not equippedData")
-        return
+        return nil, "not equippedData"
     end
 
     -- nvm, actually do compare but only to MH
@@ -891,7 +888,7 @@ function addon.itemUpgrades:GetEquippedComparisonRatio(equippedItemLink,
     end
 
     print("GetEquippedComparisonRatio nil")
-    return nil
+    return nil, _G.UNKNOWN
 end
 
 -- nil if same item
@@ -902,20 +899,20 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
     -- Failed to load (wait for next try) or not equippable
     if not comparedData then
         -- print("CompareItemWeight: Failed to query comparedStats", itemLink)
-        return
+        return nil, "query failed"
     end
 
     -- Not an equippable item
     if not comparedData.itemEquipLoc then
         print("CompareItemWeight: not comparedData.itemEquipLoc")
-        return
+        return nil, "not itemEquipLoc"
     end
     -- print("comparedData.itemEquipLoc", comparedData.itemEquipLoc)
 
     if not IsUsableForClass(comparedData.itemSubTypeID,
                             comparedData.itemEquipLoc) then
         -- print("CompareItemWeight: not usable by class")
-        return
+        return nil, "unusable"
     end
 
     local slotsToCompare = {}
