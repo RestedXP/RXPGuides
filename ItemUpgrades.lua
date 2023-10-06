@@ -327,7 +327,8 @@ local SPELL_KIND_MAP = {
 }
 
 -- TODO locale
-local SPELL_KIND_MATCH = "Increases damage done by (%a+) spells and effects by up to (%d+)."
+local SPELL_KIND_MATCH =
+    "Increases damage done by (%a+) spells and effects by up to (%d+)."
 
 -- Setup reverse lookup in session.weaponSlotToWeightKey
 for weaponKey, d in pairs(WEAPON_SLOT_MAP) do
@@ -957,7 +958,10 @@ end
 
 function addon.itemUpgrades.Test()
     local itemData
-    local testData = {11907, 13052, 20703}
+    local testData = {
+        14136, 16886, 2816, 7719, 9379, 9479, 12927, 12929, 12963, 18298, 11907,
+        13052, 20703
+    }
     for _, itemID in pairs(testData) do
         print('----- ' .. itemID)
         itemData = addon.itemUpgrades:GetItemData("item:" .. itemID)
