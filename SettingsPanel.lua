@@ -1798,22 +1798,6 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = true -- TODO Zarant
                     },
-                    enableItemUpgrades = {
-                        name = fmt("%s %s", _G.ENABLE, _G.ITEM_UPGRADE),
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 1.3,
-                        hidden = function()
-                            return not addon.itemUpgrades
-                        end,
-                        disabled = function()
-                            return not self.profile.enableTips or UnitLevel("player") == GetMaxPlayerLevel()
-                        end,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            addon.itemUpgrades:Setup()
-                        end,
-                    },
                     drowningHeader = {
                         name = _G.STRING_ENVIRONMENTAL_DAMAGE_DROWNING,
                         type = "header",
@@ -1968,6 +1952,32 @@ function addon.settings:CreateAceOptionsPanel()
                                 --not addon.settings.profile.enableBetaFeatures or
                                     not addon.dangerousMobs
                         end
+                    },
+                    itemUpgradesHeader = {
+                        name = _G.ITEM_UPGRADE,
+                        type = "header",
+                        width = "full",
+                        order = 5.0,
+                        hidden = function()
+                            return not addon.itemUpgrades
+                        end,
+                    },
+                    enableItemUpgrades = {
+                        name = fmt("%s %s", _G.ENABLE, _G.ITEM_UPGRADE),
+                        desc = L("Calculates item upgrades with Tactics' effective power weights"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 5.1,
+                        hidden = function()
+                            return not addon.itemUpgrades
+                        end,
+                        disabled = function()
+                            return not self.profile.enableTips or UnitLevel("player") == GetMaxPlayerLevel()
+                        end,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.itemUpgrades:Setup()
+                        end,
                     },
                 }
             },
