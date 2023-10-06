@@ -5,7 +5,7 @@ if addon.gameVersion > 30000 then return end
 local locale = GetLocale()
 
 -- TOOD add frFR and zhTW
-if locale == "enUS" or locale == "enGB" then return end
+if not (locale == "enUS" or locale == "enGB") then return end
 
 local fmt, tinsert, ipairs, pairs, next, type, wipe, tonumber, strlower =
     string.format, table.insert, ipairs, pairs, next, type, wipe, tonumber,
