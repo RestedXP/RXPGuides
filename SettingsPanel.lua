@@ -1979,6 +1979,30 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.itemUpgrades:Setup()
                         end,
                     },
+                    itemUpgradeSpec = {
+                        name = _G.TALENTS,
+                        --desc = L("Choose active theme"),
+                        type = "select",
+                        width = optionsWidth,
+                        order = 5.2,
+                        get = function()
+                            return addon.player.localeClass
+                                -- self.profile.itemUpgradeSpec == "Default" and "" or self.profile.activeTheme
+                        end,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.itemUpgrades:Setup()
+                        end,
+                        values = function()
+                            return {[addon.player.localeClass] = addon.player.localeClass}
+                        end,
+                        hidden = function()
+                            return not addon.itemUpgrades
+                        end,
+                        disabled = function()
+                            return not self.profile.enableTips or UnitLevel("player") == GetMaxPlayerLevel()
+                        end,
+                    },
                 }
             },
             helpPanel = {
