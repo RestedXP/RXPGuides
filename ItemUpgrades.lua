@@ -241,19 +241,8 @@ local CLASS_MAP = {
     }
 }
 
-local ITEM_SUFFIX_TEMPLATE = _G.ITEM_SUFFIX_TEMPLATE
-local ITEM_SPELL_TRIGGER_ONEQUIP = _G.ITEM_SPELL_TRIGGER_ONEQUIP
-
-local function equip(string)
-    return {
-        string, fmt(ITEM_SUFFIX_TEMPLATE, ITEM_SPELL_TRIGGER_ONEQUIP, string)
-    }
-end
-
 -- Map quasi-friendly key from GSheet/StatWeights to regex-friendly value
 -- GSheet or pretty name = Regex formatting
--- TODO comment out reliably returning values
--- TODO remove equip parsing for reliable returning values
 local KEY_TO_TEXT = {
     ['STAT_ARMOR'] = _G.ARMOR_TEMPLATE,
     ['ITEM_MOD_STRENGTH_SHORT'] = _G.ITEM_MOD_STRENGTH,
@@ -261,16 +250,14 @@ local KEY_TO_TEXT = {
     ['ITEM_MOD_INTELLECT_SHORT'] = _G.ITEM_MOD_INTELLECT,
     ['ITEM_MOD_STAMINA_SHORT'] = _G.ITEM_MOD_STAMINA,
     ['ITEM_MOD_SPIRIT_SHORT'] = _G.ITEM_MOD_SPIRIT,
-    ['ITEM_MOD_HEALTH_REGEN_SHORT'] = equip(_G.ITEM_MOD_HEALTH_REGEN),
-    ['ITEM_MOD_POWER_REGEN0_SHORT'] = equip(_G.ITEM_MOD_MANA_REGENERATION),
-    ['ITEM_MOD_SPELL_HEALING_DONE'] = equip(_G.ITEM_MOD_SPELL_HEALING_DONE), -- TODO remove short?
-    ['ITEM_MOD_HIT_SPELL_RATING_SHORT'] = equip(_G.ITEM_MOD_HIT_SPELL_RATING),
-    ['ITEM_MOD_CRIT_SPELL_RATING_SHORT'] = equip(_G.ITEM_MOD_CRIT_SPELL_RATING),
+    ['ITEM_MOD_HEALTH_REGEN_SHORT'] = _G.ITEM_MOD_HEALTH_REGEN,
+    ['ITEM_MOD_POWER_REGEN0_SHORT'] = _G.ITEM_MOD_MANA_REGENERATION,
+    ['ITEM_MOD_SPELL_HEALING_DONE'] = _G.ITEM_MOD_SPELL_HEALING_DONE,
+    ['ITEM_MOD_HIT_SPELL_RATING_SHORT'] = _G.ITEM_MOD_HIT_SPELL_RATING,
+    ['ITEM_MOD_CRIT_SPELL_RATING_SHORT'] = _G.ITEM_MOD_CRIT_SPELL_RATING,
 
-    ['ITEM_MOD_RANGED_ATTACK_POWER_SHORT'] = equip(
-        _G.ITEM_MOD_RANGED_ATTACK_POWER),
-    ['ITEM_MOD_DEFENSE_SKILL_RATING_SHORT'] = equip(
-        _G.ITEM_MOD_DEFENSE_SKILL_RATING)
+    ['ITEM_MOD_RANGED_ATTACK_POWER_SHORT'] = _G.ITEM_MOD_RANGED_ATTACK_POWER,
+    ['ITEM_MOD_DEFENSE_SKILL_RATING_SHORT'] = _G.ITEM_MOD_DEFENSE_SKILL_RATING
 
     -- Data in GetItemStats
     -- ['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] = _G.DPS_TEMPLATE,
@@ -279,11 +266,11 @@ local KEY_TO_TEXT = {
     -- },
 
     -- Wrong global variable for text, unable to find corresponding easily
-    -- ['ITEM_MOD_HIT_RATING_SHORT'] = equip(_G.ITEM_MOD_HIT_RATING),
-    -- ['ITEM_MOD_CRIT_RATING_SHORT'] = equip(_G.ITEM_MOD_CRIT_RATING),
-    -- ['ITEM_MOD_DODGE_RATING_SHORT'] = equip(_G.ITEM_MOD_DODGE_RATING),
-    -- ['ITEM_MOD_PARRY_RATING_SHORT'] = equip(_G.ITEM_MOD_PARRY_RATING)
-    -- ['ITEM_MOD_ATTACK_POWER_SHORT'] = equip(_G.ITEM_MOD_ATTACK_POWER),
+    -- ['ITEM_MOD_HIT_RATING_SHORT'] = _G.ITEM_MOD_HIT_RATING,
+    -- ['ITEM_MOD_CRIT_RATING_SHORT'] = _G.ITEM_MOD_CRIT_RATING,
+    -- ['ITEM_MOD_DODGE_RATING_SHORT'] = _G.ITEM_MOD_DODGE_RATING,
+    -- ['ITEM_MOD_PARRY_RATING_SHORT'] = _G.ITEM_MOD_PARRY_RATING
+    -- ['ITEM_MOD_ATTACK_POWER_SHORT'] = _G.ITEM_MOD_ATTACK_POWER,
 }
 
 -- Keys only obtained from tooltip text parsing
@@ -292,16 +279,12 @@ local OUT_OF_BAND_KEYS = {
     -- Hack in weapon speed parsing
     -- TODO locale, ideally use GlobalStrings.lua, but hard to find for Classic
     ['ITEM_MOD_CR_SPEED_SHORT'] = _G.ITEM_MOD_CR_SPEED_SHORT .. "%s+(%d+%.%d+)",
-    ['ITEM_MOD_CRIT_RATING_SHORT'] = ITEM_SPELL_TRIGGER_ONEQUIP ..
-        "%s+Improves your chance to get a critical strike by (%d+)%%.",
-    ['ITEM_MOD_HIT_RATING_SHORT'] = ITEM_SPELL_TRIGGER_ONEQUIP ..
-        "%s+Improves your chance to hit by (%d+)%%.",
-    ['ITEM_MOD_DODGE_RATING_SHORT'] = ITEM_SPELL_TRIGGER_ONEQUIP ..
-        "%s+Increases your chance to dodge an attack by (%d+)%%.",
-    ['ITEM_MOD_PARRY_RATING_SHORT'] = ITEM_SPELL_TRIGGER_ONEQUIP ..
-        "%s+Increases your chance to parry an attack by (%d+)%%.",
-    ['ITEM_MOD_ATTACK_POWER_SHORT'] = ITEM_SPELL_TRIGGER_ONEQUIP ..
-        "%s+%+(%d+)%s+" .. ITEM_MOD_ATTACK_POWER_SHORT,
+    ['ITEM_MOD_CRIT_RATING_SHORT'] = "%s+Improves your chance to get a critical strike by (%d+)%%.",
+    ['ITEM_MOD_HIT_RATING_SHORT'] = "%s+Improves your chance to hit by (%d+)%%.",
+    ['ITEM_MOD_DODGE_RATING_SHORT'] = "%s+Increases your chance to dodge an attack by (%d+)%%.",
+    ['ITEM_MOD_PARRY_RATING_SHORT'] = "%s+Increases your chance to parry an attack by (%d+)%%.",
+    ['ITEM_MOD_ATTACK_POWER_SHORT'] = "%s+%+(%d+)%s+" ..
+        ITEM_MOD_ATTACK_POWER_SHORT,
 
     -- Stats cannot be trusted, explicitly parse
     -- Overrides ITEM_MOD_SPELL_DAMAGE_DONE built-in
@@ -344,8 +327,7 @@ local SPELL_KIND_MAP = {
 }
 
 -- TODO locale
-local SPELL_KIND_MATCH = _G.ITEM_SPELL_TRIGGER_ONEQUIP ..
-                             " Increases damage done by (%a+) spells and effects by up to (%d+)."
+local SPELL_KIND_MATCH = "Increases damage done by (%a+) spells and effects by up to (%d+)."
 
 -- Setup reverse lookup in session.weaponSlotToWeightKey
 for weaponKey, d in pairs(WEAPON_SLOT_MAP) do
