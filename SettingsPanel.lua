@@ -156,6 +156,7 @@ function addon.settings:InitializeSettings()
             upcomingTalentCount = 5,
 
             enableTips = true,
+            enableItemUpgrades = true,
             enableDrowningWarning = true,
             enableDrowningWarningSound = true,
             drowningThreshold = 0.2,
@@ -1951,7 +1952,56 @@ function addon.settings:CreateAceOptionsPanel()
                                 --not addon.settings.profile.enableBetaFeatures or
                                     not addon.dangerousMobs
                         end
-                    }
+                    },
+                    itemUpgradesHeader = {
+                        name = _G.ITEM_UPGRADE,
+                        type = "header",
+                        width = "full",
+                        order = 5.0,
+                        hidden = function()
+                            return not addon.itemUpgrades
+                        end,
+                    },
+                    enableItemUpgrades = {
+                        name = fmt("%s %s", _G.ENABLE, _G.ITEM_UPGRADE),
+                        desc = L("Calculates item upgrades with Tactics' effective power weights"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 5.1,
+                        hidden = function()
+                            return not addon.itemUpgrades
+                        end,
+                        disabled = function()
+                            return not self.profile.enableTips or UnitLevel("player") == GetMaxPlayerLevel()
+                        end,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.itemUpgrades:Setup()
+                        end,
+                    },
+                    itemUpgradeSpec = {
+                        name = _G.TALENTS,
+                        --desc = L("Choose active theme"),
+                        type = "select",
+                        width = optionsWidth,
+                        order = 5.2,
+                        get = function()
+                            return self.profile.itemUpgradeSpec or addon.player.localeClass
+                        end,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.itemUpgrades:Setup()
+                        end,
+                        values = function()
+                            return addon.itemUpgrades:GetSpecWeights()
+                        end,
+                        hidden = function()
+                            return not addon.itemUpgrades
+                        end,
+                        disabled = function()
+                            return not self.profile.enableTips or UnitLevel("player") == GetMaxPlayerLevel()
+                        end,
+                    },
                 }
             },
             helpPanel = {

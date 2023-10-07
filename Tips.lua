@@ -35,7 +35,7 @@ local session = {
     emergencySpells = {},
     highlights = {},
     actionBarMap = {},
-    dangerousMobs = {}
+    dangerousMobs = {},
 }
 
 function addon.tips:Setup()

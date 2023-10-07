@@ -676,6 +676,9 @@ function addon:OnInitialize()
     end
     if addon.tips then addon.tips:Setup() end
     if addon.VendorTreasures then addon.VendorTreasures:Setup() end
+    if addon.itemUpgrades then
+        addon.itemUpgrades:Setup()
+    end
 
     addon.LoadCachedGuides()
     addon.LoadEmbeddedGuides()
