@@ -1986,15 +1986,14 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 5.2,
                         get = function()
-                            return addon.player.localeClass
-                                -- self.profile.itemUpgradeSpec == "Default" and "" or self.profile.activeTheme
+                            return self.profile.itemUpgradeSpec or addon.player.localeClass
                         end,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.itemUpgrades:Setup()
                         end,
                         values = function()
-                            return {[addon.player.localeClass] = addon.player.localeClass}
+                            return addon.itemUpgrades:GetSpecWeights()
                         end,
                         hidden = function()
                             return not addon.itemUpgrades

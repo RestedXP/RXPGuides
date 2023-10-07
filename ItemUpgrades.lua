@@ -23,8 +23,13 @@ addon.itemUpgrades = addon:NewModule("ItemUpgrades", "AceEvent-3.0")
 
 local session = {
     isInitialized = false,
+
     -- Loaded stat weights for class
-    statWeights = {},
+    -- Available spec weights, e.g. ele/enh or mageAoe/mageSingle
+    specWeights = {},
+
+    -- Active loaded stat weights
+    activeStatWeights = {},
 
     -- Capturable regexes for tooltip parsing
     statsRegexes = {},
@@ -450,6 +455,8 @@ function addon.itemUpgrades:Setup()
 
     self:UpdateSlotMap()
     self:LoadStatWeights()
+    self:ActivateSpecWeights()
+    session.itemCache = {}
 
     -- Only register events and hookScript once
     if session.isInitialized then return end
@@ -459,7 +466,7 @@ function addon.itemUpgrades:Setup()
 
     local lookup
     -- Only load stats coming from GSheet
-    for key, _ in pairs(session.statWeights) do
+    for key, _ in pairs(session.activeStatWeights) do
         -- print("Checking", key)
         lookup = KeyToRegex(key)
         if lookup then
@@ -491,35 +498,68 @@ end
 function addon.itemUpgrades:PLAYER_LEVEL_UP()
     if not addon.settings.profile.enableItemUpgrades then return end
 
-    wipe(session.itemCache)
-    self:UpdateSlotMap()
+    addon.itemUpgrades:Setup()
 end
 
 -- Reset cache on trainer
 function addon.itemUpgrades:TRAINER_SHOW()
     if not addon.settings.profile.enableItemUpgrades then return end
 
-    wipe(session.itemCache)
-    self:UpdateSlotMap()
+    addon.itemUpgrades:Setup()
 end
 
 function addon.itemUpgrades:LoadStatWeights()
     if not addon.statWeights then return end
 
-    local activeKind = addon.settings.profile.hardcore and "HARDCORE" or
-                           "SPEEDRUN"
+    local newWeights = {}
 
-    -- TODO only if > 0, for optimization
+    local guideMode = addon.settings.profile.hardcore and "HARDCORE" or
+                          "SPEEDRUN"
+
     for _, data in pairs(addon.statWeights) do
-        -- TODO spec support
         if strupper(data.Class) == addon.player.class and strupper(data.Kind) ==
-            activeKind then
-            session.statWeights = data
-            -- print("Loaded statWeights", session.statWeights.Title)
-            return
+            guideMode then
+            newWeights[data.Spec or addon.player.localeClass] = data
+            -- print("Loaded statWeights", newWeights.Title)
         end
     end
 
+    for spec, data in pairs(newWeights) do
+        for kind, value in pairs(data) do
+            -- Optimization: remove all 0 stats
+
+            if tonumber(value) and value == 0 then
+                -- print("Removed", spec .. ':' .. kind)
+                data[kind] = nil
+            end
+        end
+    end
+
+    session.specWeights = newWeights
+end
+
+-- Always run after LoadStatWeights
+function addon.itemUpgrades:ActivateSpecWeights()
+    -- TODO check active talent guide
+    -- TODO check talent count per tab
+    local spec = addon.settings.profile.itemUpgradeSpec or
+                     addon.player.localeClass
+
+    -- If only multi-spec (Enhancement / Elemental) arbitrarily pick the first one
+    if not session.specWeights[spec] then
+        spec = next(session.specWeights)
+
+        addon.settings.profile.itemUpgradeSpec = spec
+    end
+
+    session.activeStatWeights = session.specWeights[spec]
+end
+
+function addon.itemUpgrades:GetSpecWeights()
+    local options = {}
+    for k, _ in pairs(session.specWeights) do options[k] = k end
+
+    return options
 end
 
 local function GetTooltipLines(tooltip)
@@ -620,20 +660,20 @@ local function CalculateDPSWeight(itemData, stats)
         speedWeightKey = 'ITEM_MOD_CR_SPEED_SHORT_' .. keySuffix
 
         -- Check weaponKind keys for class statWeights
-        if session.statWeights[speedWeightKey] then
+        if session.activeStatWeights[speedWeightKey] then
 
             if itemEquipLoc == 'INVTYPE_RANGED' or itemEquipLoc ==
                 'INVTYPE_THROWN' or itemEquipLoc == 'INVTYPE_RANGEDRIGHT' then
 
                 dpsWeight = stats['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] *
-                                session.statWeights['ITEM_MOD_DAMAGE_PER_SECOND_SHORT_RANGED']
+                                session.activeStatWeights['ITEM_MOD_DAMAGE_PER_SECOND_SHORT_RANGED']
             else
                 dpsWeight = stats['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] *
-                                session.statWeights['ITEM_MOD_DAMAGE_PER_SECOND_SHORT']
+                                session.activeStatWeights['ITEM_MOD_DAMAGE_PER_SECOND_SHORT']
             end
 
             speedKindWeight = stats['ITEM_MOD_CR_SPEED_SHORT'] *
-                                  session.statWeights[speedWeightKey]
+                                  session.activeStatWeights[speedWeightKey]
 
             -- (DPS * 1_DPS_WEIGHT) + (SPEED * WEAPON_WEIGHT)
             overallWeaponWeight = dpsWeight + speedKindWeight
@@ -669,12 +709,13 @@ local function CalculateSpellWeight(stats, tooltipTextLines)
             schoolKey = SPELL_KIND_MAP[strlower(schoolName)]
 
             -- print("Matched schoolName", strlower(schoolName), schoolKey, spellPower)
-            if session.statWeights[schoolKey] and session.statWeights[schoolKey] >
-                0 then
+            if session.activeStatWeights[schoolKey] and
+                session.activeStatWeights[schoolKey] > 0 then
 
                 -- ITEM_MOD_SPELL_DAMAGE_DONE cannot be trusted, byRef add parsed stats
                 stats[schoolKey] = spellPower
-                schoolStatWeight = spellPower * session.statWeights[schoolKey]
+                schoolStatWeight = spellPower *
+                                       session.activeStatWeights[schoolKey]
 
                 totalStatWeight = totalStatWeight + schoolStatWeight
             end
@@ -691,7 +732,7 @@ local function CalculateSpellWeight(stats, tooltipTextLines)
         stats['STAT_SPELLDAMAGE'] = stats['ITEM_MOD_SPELL_DAMAGE_DONE'] + 1
 
         return stats['STAT_SPELLDAMAGE'] *
-                   session.statWeights['STAT_SPELLDAMAGE']
+                   session.activeStatWeights['STAT_SPELLDAMAGE']
     end
 
     return totalStatWeight
@@ -715,6 +756,7 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
     if not itemEquipLoc or itemEquipLoc == "" or itemEquipLoc == "INVTYPE_AMMO" or
         itemEquipLoc == "INVTYPE_BAG" then return end
 
+    -- Parse API stats first before processing tooltip text
     local stats = GetItemStats(itemLink)
 
     -- Failed to query stats, wait for next run
@@ -732,15 +774,6 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
 
     local totalWeight = 0
     local statWeight, tooltipTextLines
-
-    -- Some stats don't show up
-    -- Parse API stats first before processing tooltips
-    for key, value in pairs(stats) do
-        -- print("Checking built-in calls")
-        if session.statWeights[key] and session.statWeights[key] ~= 0 then
-            stats[key] = value
-        end
-    end
 
     -- Parse tooltip for all additional stats
     if tooltip then
@@ -824,9 +857,9 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
             end
 
             totalWeight = totalWeight + statWeight
-        elseif session.statWeights[key] then -- Only calculate values explicitly configured
+        elseif session.activeStatWeights[key] then -- Only calculate values explicitly configured
 
-            statWeight = value * session.statWeights[key]
+            statWeight = value * session.activeStatWeights[key]
             totalWeight = totalWeight + statWeight
 
             -- print("Key", key, "Value", value, "weighted at", statWeight)
@@ -835,9 +868,13 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
 
     itemData.totalWeight = addon.Round(totalWeight, 2)
     itemData.stats = stats
-    session.itemCache[itemLink] = itemData
 
-    return itemData
+    -- Only cache/return >0 items, 0 was likely an edge case failure
+    if itemData.totalWeight > 0 then
+        session.itemCache[itemLink] = itemData
+
+        return itemData
+    end
 end
 
 -- Moved to make nested loops less egregious without break/continue
@@ -857,10 +894,7 @@ function addon.itemUpgrades:GetEquippedComparisonRatio(equippedItemLink,
         return nil, "not equippedData"
     end
 
-    -- nvm, actually do compare but only to MH
-    -- if (comparedData.itemEquipLoc == 'INVTYPE_2HWEAPON' and equippedData.itemEquipLoc ~= 'INVTYPE_2HWEAPON') or (equippedData.itemEquipLoc == 'INVTYPE_2HWEAPON' and comparedData.itemEquipLoc ~= 'INVTYPE_2HWEAPON') then return end
-
-    if equippedData.totalWeight == 0 or equippedData.totalWeight == 0 then
+    if equippedData.totalWeight == 0 or comparedData.totalWeight == 0 then
         -- Prevent division by 0
         -- One of these has no stats, so treat same as empty slot (nil)
         return nil, _G.NONE
