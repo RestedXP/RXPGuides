@@ -564,7 +564,10 @@ end
 
 local function GetTooltipLines(tooltip)
     local textLines = {}
-    -- print("GetTooltipLines, tooltip", tooltip:GetName())
+    -- print("GetTooltipLines, tooltip", tooltip:GetName(), tooltip:NumLines())
+
+    -- Something went wrong
+    if tooltip:NumLines() == 0 then return end
 
     local regions = {tooltip:GetRegions()}
     for _, r in ipairs(regions) do
@@ -633,7 +636,6 @@ local function CalculateDPSWeight(itemData, stats)
     --    ['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] = 12.3456789,
     --    ...
     -- }
-    -- TODO fix beasts/undead/etc matching on DPS stat
 
     -- TODO doesn't work on hidden/background tooltip parsing sometimes?
     if not stats or not stats['ITEM_MOD_CR_SPEED_SHORT'] then
@@ -786,9 +788,19 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
             return
         end
 
+        -- Note: Calling this function with the same link which is currently shown, will close the Tooltip.
         tooltip:SetHyperlink(itemLink)
+        -- print("RXPItemUpgradesComparison:SetHyperlink", itemLink)
 
         tooltipTextLines = GetTooltipLines(tooltip)
+
+        if not tooltipTextLines then
+            -- print("Comparisontip lines empty")
+            return
+        end
+
+        -- Would bug out if cache is reset or invalidated
+        tooltip:ClearLines()
     end
 
     local match1, match2
