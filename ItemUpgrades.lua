@@ -454,8 +454,8 @@ function addon.itemUpgrades:Setup()
     if UnitLevel("player") == GetMaxPlayerLevel() then return end
 
     self:UpdateSlotMap()
-    self:LoadStatWeights()
-    self:ActivateSpecWeights()
+    if not self:LoadStatWeights() then return end
+    if not self:ActivateSpecWeights() then return end
     session.itemCache = {}
 
     -- Only register events and hookScript once
@@ -519,8 +519,8 @@ function addon.itemUpgrades:LoadStatWeights()
     for _, data in pairs(addon.statWeights) do
         if strupper(data.Class) == addon.player.class and strupper(data.Kind) ==
             guideMode then
-            newWeights[data.Spec or addon.player.localeClass] = data
-            -- print("Loaded statWeights", newWeights.Title)
+            newWeights[data.Spec or data.Class] = data
+            -- print("Loaded statWeights", data.Title)
         end
     end
 
@@ -536,10 +536,14 @@ function addon.itemUpgrades:LoadStatWeights()
     end
 
     session.specWeights = newWeights
+
+    return session.specWeights ~= nil
 end
 
 -- Always run after LoadStatWeights
 function addon.itemUpgrades:ActivateSpecWeights()
+    if not session.specWeights then return end
+
     -- TODO check active talent guide
     -- TODO check talent count per tab
     local spec = addon.settings.profile.itemUpgradeSpec or
@@ -553,6 +557,8 @@ function addon.itemUpgrades:ActivateSpecWeights()
     end
 
     session.activeStatWeights = session.specWeights[spec]
+
+    return session.activeStatWeights ~= nil
 end
 
 function addon.itemUpgrades:GetSpecWeights()
