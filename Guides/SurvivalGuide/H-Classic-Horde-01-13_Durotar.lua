@@ -3789,13 +3789,11 @@ step
     .target Deathguard Dillinger
     .isQuestComplete 426
 step
-    #optional
     .goto Tirisfal Glades,59.45,52.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r
     .turnin 368 >>Turn in A New Plague
     .accept 369 >>Accept A New Plague
     .target Apothecary Johaan
-    .isQuestComplete 368
 step
     #optional
     .goto Tirisfal Glades,59.45,52.40

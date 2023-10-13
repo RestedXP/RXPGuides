@@ -3621,10 +3621,17 @@ step
     .zoneskip Ashenvale
 step
 	#completewith next
+    .goto Ashenvale,39.45,55.29,50,0
+    .goto Ashenvale,36.47,57.15,50,0
+    .goto Ashenvale,34.56,54.13,30,0
+    .goto Ashenvale,32.14,52.12,60,0
+    .goto Ashenvale,28.64,48.10,50,0
+    .goto Ashenvale,26.34,45.44,50,0
+    .goto Ashenvale,25.40,39.00,70,0
     .goto Ashenvale,11.96,34.28,80 >>Travel toward the Zoram'gar Outpost
-    >>|cRXP_WARN_Make sure to avoid Astranaar guards en route|r
+    >>|cRXP_WARN_Make sure to avoid Astranaar guards en route. Follow the waypoint for safety|r
+    .unitscan Astranaar Sentinel
 step
-     #completewith next
     .goto Ashenvale,12.20,33.80
     .fp Zoram'gar Outpost >> Get the Zoram'gar Outpost flight path
 step
