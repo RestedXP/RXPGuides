@@ -55,16 +55,7 @@ function addon.tips:Setup()
     self:CatalogActionBars()
     self:RegisterEvent("ACTIONBAR_SLOT_CHANGED")
 
-    -- Prioritize minimap button, as main frame can be easily hidden
-    if addon.settings.profile.enableMinimapButton then
-        addon.settings.minimapFrame:HookScript("OnUpdate", self.CheckEvents)
-    elseif not addon.settings.profile.hideGuideWindow then
-        addon.RXPFrame:HookScript("OnUpdate", self.CheckEvents)
-        -- elseif addon.tips.frame then
-    else
-        addon.comms.PrettyPrint(
-            L("No enabled RXP frames for tips functionality")) -- TODO locale
-    end
+    WorldFrame:HookScript("OnUpdate", self.CheckEvents)
 
     if addon.dangerousMobs then
         self:LoadDangerousMobs()
@@ -85,8 +76,9 @@ function addon.tips:CreateTipsFrame()
 end
 
 function addon.tips:MIRROR_TIMER_START(_, timerName, value, maxValue, rate)
-    if timerName ~= "BREATH" or
-        not addon.settings.profile.enableDrowningWarning then return end
+    if timerName ~= "BREATH" or not addon.settings.profile.enableDrowningWarning then
+        return
+    end
 
     -- Recovering breath
     if rate > 0 then
@@ -99,8 +91,9 @@ function addon.tips:MIRROR_TIMER_START(_, timerName, value, maxValue, rate)
 end
 
 function addon.tips:MIRROR_TIMER_STOP(_, timerName)
-    if timerName ~= "BREATH" or
-        not addon.settings.profile.enableDrowningWarning then return end
+    if timerName ~= "BREATH" or not addon.settings.profile.enableDrowningWarning then
+        return
+    end
 
     session.breath = nil
 end
@@ -292,9 +285,9 @@ function addon.tips:HighlightEmergencyItem()
 
     for _, item in ipairs(session.emergencyItems) do
         bagBorder = item.bag and item.bagSlotFrameId and
-                      addon.tips:GetHighlight(
-                        fmt('ContainerFrame%sItem%s', item.bag + 1,
-                            item.bagSlotFrameId))
+                        addon.tips:GetHighlight(
+                            fmt('ContainerFrame%sItem%s', item.bag + 1,
+                                item.bagSlotFrameId))
 
         if bagBorder then
             if _G.IsBagOpen(item.bag) then
@@ -448,36 +441,36 @@ function addon.tips:EnableDangerWarning(loops)
     end
 end
 
-
 local function IsStepActive(self)
     local levelBuffer = 1000
     if (not addon.settings.profile.showDangerousMobsMap and self.mapTooltip) or
-       (self.isUnitscan and not addon.settings.profile.showDangerousUnitscan) then
-        --DevTools_Dump(self.elements[1].unitscan)
-        --DevTools_Dump(self.elements[1].targets)
+        (self.isUnitscan and not addon.settings.profile.showDangerousUnitscan) then
+        -- DevTools_Dump(self.elements[1].unitscan)
+        -- DevTools_Dump(self.elements[1].targets)
         return false
     elseif not addon.settings.profile.debug and self.levelBuffer then
         levelBuffer = self.levelBuffer or 0
     end
-    if not self.MaxLevel or
-           self.MaxLevel >= UnitLevel("player") - levelBuffer then
+    if not self.MaxLevel or self.MaxLevel >= UnitLevel("player") - levelBuffer then
         return true
     end
 end
 
 function addon.tips:LoadDangerousMobs(reloadData)
     if not (addon.dangerousMobs) then return end
-    --if not (addon.dangerousMobs and addon.settings.profile.enableBetaFeatures) then return end
+    -- if not (addon.dangerousMobs and addon.settings.profile.enableBetaFeatures) then return end
 
     local mapId = C_Map.GetBestMapForUnit("player") or 0
-    local zone = addon.mapIdToName and addon.mapIdToName[mapId] or GetRealZoneText()
+    local zone = addon.mapIdToName and addon.mapIdToName[mapId] or
+                     GetRealZoneText()
     local zoneList
     addon.UpdateMap()
     if addon.settings.profile.debug then
         print("== LoadDangerousMobs: " .. (zone or 'Unknown'))
-        zoneList = addon.dangerousMobs --Loads all the pins for debug purposes
+        zoneList = addon.dangerousMobs -- Loads all the pins for debug purposes
     end
-    if not zone or not addon.dangerousMobs[zone] and not addon.settings.profile.debug then
+    if not zone or not addon.dangerousMobs[zone] and
+        not addon.settings.profile.debug then
         addon.tips.dangerousMobs = nil
         addon.generatedSteps["dangerousMobs"] = nil
         return
@@ -490,41 +483,49 @@ function addon.tips:LoadDangerousMobs(reloadData)
     if not dangerousMobs.processed or reloadData == true then
         addon.currentGuideName = "Addon Tips"
         local steps = {}
-        for _,zoneData in pairs(zoneList) do
+        for _, zoneData in pairs(zoneList) do
             for name, list in pairs(zoneData) do
                 for _, mobData in ipairs(list) do
-                    --added a semicolon separator in case the database entry has multiple coords
+                    -- added a semicolon separator in case the database entry has multiple coords
                     for line in mobData.Location:gmatch("[^\r\n;]+") do
-                        line:gsub("^%s+","")
-                        line:gsub("%s+$","")
+                        line:gsub("^%s+", "")
+                        line:gsub("%s+$", "")
                         local element = addon.ParseLine(line)
                         local skip
                         if element then
                             local step = {}
                             element.step = step
-                            --element.drawCenterPoint = true--Adds an icon at the center of the lines
+                            -- element.drawCenterPoint = true--Adds an icon at the center of the lines
                             step.isActive = IsStepActive
-                            step.levelBuffer = mobData.Classification == "Normal" and 1 or 3
+                            step.levelBuffer =
+                                mobData.Classification == "Normal" and 1 or 3
                             if element.wx or element.segments then
-                                --step.linethickness = 2
-                                step.showTooltip = true--Shows tooltip when hovering over a line
-                                step.icon = "|TInterface/GossipFrame/BattleMasterGossipIcon:0|t"--texture used for the icon
-                                step.mapTooltip = fmt("%s %s (%d)", _G.VOICEMACRO_1_Sc_0,
-                                                    name, mobData.MaxLevel) --Tooltip title
+                                -- step.linethickness = 2
+                                step.showTooltip = true -- Shows tooltip when hovering over a line
+                                step.icon =
+                                    "|TInterface/GossipFrame/BattleMasterGossipIcon:0|t" -- texture used for the icon
+                                step.mapTooltip = fmt("%s %s (%d)",
+                                                      _G.VOICEMACRO_1_Sc_0,
+                                                      name, mobData.MaxLevel) -- Tooltip title
 
-                                --Tooltip description:
+                                -- Tooltip description:
                                 element.mapTooltip = fmt("%s - %s\n%s",
-                                    mobData.Classification or "",mobData.Movement or "",mobData.Notes or "")
-                            elseif element.targets or element.unitscan or element.mobs then
-                                if not addon.settings.profile.showDangerousUnitscan then
+                                                         mobData.Classification or
+                                                             "",
+                                                         mobData.Movement or "",
+                                                         mobData.Notes or "")
+                            elseif element.targets or element.unitscan or
+                                element.mobs then
+                                if not addon.settings.profile
+                                    .showDangerousUnitscan then
                                     skip = true
-                                    --DevTools_Dump(self.elements[1].mobs)
+                                    -- DevTools_Dump(self.elements[1].mobs)
                                 end
                                 step.isUnitscan = true
                             end
                             if not skip then
                                 step.elements = {element}
-                                tinsert(steps,step)
+                                tinsert(steps, step)
                             end
                         end
                     end

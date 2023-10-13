@@ -3450,7 +3450,7 @@ local dangerousMobs = {
         Classification = "Normal",
         Movement = "Idle",
         Notes = "Invisible patrol, sees through stealth",
-        Location = ".pin Eastern Plaguelands,81.8,45.8;.pin Eastern Plaguelands,86.2,40.8;.pin Eastern Plaguelands,41.8,54.1;.pin Eastern Plaguelands,41.7,48.8;.pin Eastern Plaguelands,38.1,50.5;.pin Eastern Plaguelands,34.6,61.2;.pin Eastern Plaguelands,69.9,30.5;.pin Eastern Plaguelands,72.4,31.4;.pin Eastern Plaguelands,74.0,34.0.mob Unseen Servant"
+        Location = ".pin Eastern Plaguelands,81.8,45.8;.pin Eastern Plaguelands,86.2,40.8;.pin Eastern Plaguelands,41.8,54.1;.pin Eastern Plaguelands,41.7,48.8;.pin Eastern Plaguelands,38.1,50.5;.pin Eastern Plaguelands,34.6,61.2;.pin Eastern Plaguelands,69.9,30.5;.pin Eastern Plaguelands,72.4,31.4;.pin Eastern Plaguelands,74.0,34.0;.mob Unseen Servant"
         },
       },
       ["Mossflayer Scout"] = {

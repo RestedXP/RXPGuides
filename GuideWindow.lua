@@ -1529,6 +1529,7 @@ function addon:LoadGuide(guide, OnLoad)
                                                    "$parent_frame_" .. n,
                                                    ScrollChild, BackdropTemplate)
         local frame = ScrollChild.framePool[n]
+        frame.bottom = true
         frame:Show()
         frame.step = step
         frame:SetAlpha(0.66)
@@ -1538,7 +1539,7 @@ function addon:LoadGuide(guide, OnLoad)
             anchor = ScrollChild
             frame:SetPoint("TOPLEFT", anchor, "TOPLEFT", 2, -3)
             frame:SetPoint("TOPRIGHT", anchor, "TOPRIGHT", 2, -3)
-        elseif not IsFrameShown(nil,step) then
+        elseif not IsFrameShown(frame,step) then
             anchor = ScrollChild.framePool[n - 1]
             frame:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, 1)
             frame:SetPoint("TOPRIGHT", anchor, "BOTTOMRIGHT", 0, 1)
@@ -1589,7 +1590,6 @@ function addon:LoadGuide(guide, OnLoad)
         end
 
         if not frame.number then
-            frame.bottom = true
             frame.number = CreateFrame("Frame", "$parent_number", frame,
                                        nil)
             frame.number:SetPoint("BOTTOMRIGHT", frame)

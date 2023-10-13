@@ -98,21 +98,11 @@ function addon.targeting:Setup()
     self:RegisterEvent("QUEST_COMPLETE")
 
     if addon.settings.profile.showTargetingOnProximity then
-        if addon.settings.profile.hideGuideWindow then
-            addon.arrowFrame:HookScript("OnUpdate", self.CheckTargetProximity)
-        elseif addon.settings.profile.hideArrow then
-            addon.RXPFrame:HookScript("OnUpdate", self.CheckTargetProximity)
-        elseif addon.settings.profile.enableMinimapButton then
-            addon.settings.minimapFrame:HookScript("OnUpdate",
-                                                   self.CheckTargetProximity)
-        else
-            addon.comms.PrettyPrint(L(
-                                        "No enabled RXP frames for targeting functionality"))
-        end
+        WorldFrame:HookScript("OnUpdate", self.CheckTargetProximity)
 
         self:RegisterEvent("ADDON_ACTION_FORBIDDEN")
 
-        -- Prevent forbidden UI popup
+        -- Prevent default forbidden UI popup
         UIParent:UnregisterEvent("ADDON_ACTION_FORBIDDEN")
     end
 
@@ -123,12 +113,11 @@ function addon.targeting:Setup()
 end
 
 local function shouldTargetCheck()
-    return
-        not addon.isHidden and addon.settings.profile.enableTargetAutomation and
-            not IsInRaid() and not UnitOnTaxi("player") and
-            (next(unitscanList) ~= nil or next(mobList) ~= nil or
-                next(targetList) ~= nil or next(rareTargets) ~= nil or
-                next(proxmityPolling.scannedTargets) ~= nil)
+    return addon.settings.profile.enableTargetAutomation and not IsInRaid() and
+               not UnitOnTaxi("player") and
+               (next(unitscanList) ~= nil or next(mobList) ~= nil or
+                   next(targetList) ~= nil or next(rareTargets) ~= nil or
+                   next(proxmityPolling.scannedTargets) ~= nil)
 
 end
 
@@ -1123,7 +1112,9 @@ function addon.targeting:LoadRares()
 
     -- Reset found rares
     for name, data in pairs(proxmityPolling.scannedTargets) do
-        if data.kind == 'rare' then proxmityPolling.scannedTargets[name] = nil end
+        if data.kind == 'rare' then
+            proxmityPolling.scannedTargets[name] = nil
+        end
     end
 
     local zone = GetRealZoneText()
