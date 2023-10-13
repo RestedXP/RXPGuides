@@ -33,6 +33,7 @@ addon.tracker._commPrefix = "RXPLTComms"
 addon.tracker.fonts = {["splits"] = "Fonts\\ARIALN.ttf"}
 
 local playerName = _G.UnitName("player")
+
 -- Silence our /played yellow text
 local ReportPlayedTimeToChat = false
 local hookedChatFrame_DisplayTimePlayed = ChatFrame_DisplayTimePlayed
@@ -42,11 +43,14 @@ local function RequestTimePlayed()
     return _G.RequestTimePlayed()
 end
 
+-- Overwrite default handler
 ChatFrame_DisplayTimePlayed = function(...)
     if ReportPlayedTimeToChat then
         return hookedChatFrame_DisplayTimePlayed(...)
     end
-    ReportPlayedTimeToChat = true
+
+    -- Delay clearing /played output to account for other addons queueing
+    C_Timer.After(3, function() ReportPlayedTimeToChat = true end)
 end
 
 function addon.tracker:SetupTracker()
@@ -72,9 +76,7 @@ function addon.tracker:SetupTracker()
     self.reportKey = fmt("%s|%s|%s", playerName, addon.player.class,
                          _G.GetRealmName())
 
-    if addon.settings.profile.enablelevelSplits then
-        self:CreateLevelSplits()
-    end
+    if addon.settings.profile.enablelevelSplits then self:CreateLevelSplits() end
 end
 
 function addon.tracker:SetupInspections()
@@ -1600,9 +1602,7 @@ function addon.tracker:OnCommReceived(prefix, data, distribution, sender)
 end
 
 function addon.tracker:INSPECT_READY(_, inspecteeGUID)
-    if not addon.settings.profile.enableLevelingReportInspections then
-        return
-    end
+    if not addon.settings.profile.enableLevelingReportInspections then return end
 
     if UnitInBattleground("player") ~= nil or
         not self.state.inspectionRequests[inspecteeGUID] then return end
