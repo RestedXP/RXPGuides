@@ -733,7 +733,7 @@ local function CalculateSpellWeight(stats, tooltipTextLines)
     -- Not a magic school, return default weighting
     -- TODO also include base spellpower
     -- Base spellpower CANNOT BE TRUSTED, 40 Shadow + 40 Frost == 78 ITEM_MOD_SPELL_DAMAGE_DONE
-    if totalStatWeight == 0 then
+    if totalStatWeight == 0 and stats['STAT_SPELLDAMAGE'] then
         --  print("Not a magic school")
         -- ITEM_MOD_SPELL_DAMAGE_DONE cannot be trusted without validation
         -- Set spellPower stat to built-in stat after verifying no school
