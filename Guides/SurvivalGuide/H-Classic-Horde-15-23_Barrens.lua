@@ -398,12 +398,21 @@ step
     .complete 5723,2 --Ragefire Shaman (8)
     .mob Ragefire Trogg
     .mob Ragefire Shaman
+    .isOnQuest 5723
     .dungeon RFC
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur|r
     .turnin 5722 >> Turn in Searching for the Lost Satchel
     .accept 5724 >> Accept Returning the Lost Satchel
     .target Maur Grimtotem
+    .isOnQuest 5722
+    .dungeon RFC
+step
+    #optional
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur|r
+    .accept 5724 >> Accept Returning the Lost Satchel
+    .target Maur Grimtotem
+    .isQuestTurnedIn 5722
     .dungeon RFC
 step
     #label TroggsShamans
@@ -412,6 +421,7 @@ step
     .complete 5723,2 --Ragefire Shaman (8)
     .mob Ragefire Trogg
     .mob Ragefire Shaman
+    .isOnQuest 5723
     .dungeon RFC
 step
     #requires TroggsShamans
@@ -421,11 +431,13 @@ step
     .complete 5725,2 --	Incantations from the Nether (1)
     .mob Searing Blade Cultist
     .mob Searing Blade Warlock
+    .isOnQuest 5725
     .dungeon RFC
 step
     >>Kill |cFFFF5722Taragaman the Hungerer|r. Loot him for his |cFF00BCD4Heart|r
     .complete 5761,1 -- Taragaman the Hungerer's Heart
     .mob Taragaman the Hungerer
+    .isOnQuest 5761
     .dungeon RFC
 step
     #label BazzalanandJergosh
@@ -434,6 +446,7 @@ step
     .complete 5728,2 --Jergosh the Invoker (1)
     .mob Bazzalan
     .mob Jergosh the Invoker
+    .isOnQuest 5728
     .dungeon RFC
 step
     >>Kill |cFFFF5722Searing Blade Cultists|r and |cFFFF5722Searing Blade Warlocks|r. Loot them for the |cFF00BCD4Spells of Shadow|r and |cFF00BCD4Incantations from the Nether|r
@@ -441,6 +454,7 @@ step
     .complete 5725,2 --	Incantations from the Nether (1)
     .mob Searing Blade Cultist
     .mob Searing Blade Warlock
+    .isOnQuest 5725
     .dungeon RFC
 step
     .goto Orgrimmar,49.6,50.4
@@ -507,6 +521,7 @@ step
     .use 6948
     .dungeon RFC
 step
+    #completewith FinalRFCTurnin
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fly Thunder Bluff >> Fly to Thunder Bluff
@@ -516,10 +531,27 @@ step
 step
     .goto Thunder Bluff,70.4,29.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
-    .turnin 5724 >> Turn in Searching for the Lost Satchel
+    .turnin 5724 >> Turn in Returning the Lost Satchel
     .turnin 5723 >> Turn in Testing an Enemy's Strength
     .target Rahauro
     .dungeon RFC
+    .isOnQuest 5724
+    .isQuestComplete 5723
+step
+    .goto Thunder Bluff,70.4,29.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
+    .turnin 5724 >> Turn in Returning the Lost Satchel
+    .target Rahauro
+    .dungeon RFC
+    .isOnQuest 5724
+step
+    #label FinalRFCTurnin
+    .goto Thunder Bluff,70.4,29.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
+    .turnin 5723 >> Turn in Testing an Enemy's Strength
+    .target Rahauro
+    .dungeon RFC
+    .isQuestComplete 5723
 step
     #completewith KreenigSnarlsnout
     .hs >> Hearth to The Crossroads

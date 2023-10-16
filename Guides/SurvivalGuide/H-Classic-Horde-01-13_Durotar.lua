@@ -3287,7 +3287,7 @@ step
     >>|cRXP_WARN_You will receive|r |T133849:0|t[Slumber Sand] |cRXP_WARN_from the follow-up of this quest|r
     .complete 367,1 --Darkhound Blood (5)
     .mob Decrepit Darkhound
-    .mob Cursed Darkhound`
+    .mob Cursed Darkhound
 step
     #completewith Brillturnins2
     .goto Tirisfal Glades,58.20,51.43,120 >> Travel back to Brill
