@@ -2308,6 +2308,12 @@ step << Rogue/Hunter/Warrior/Shaman/Druid
     .target Vexspindle
     .money <0.3515
     .itemStat 9,ITEM_MOD_ARMOR_SHORT,<37
+step
+    .goto The Barrens,62.05,39.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Wiley|r
+    .home >>Set your Hearthstone to Ratchet
+    .target Innkeeper Wiley
+    .dungeon WC
 step << Warrior
     #completewith FlytoXroads
     +Equip the |T134583:0|t[Mighty Chain Pants]
@@ -2588,17 +2594,45 @@ step
     .zone 291 >> Enter the Deadmines Instance portal. Zone in
     .dungeon DM
 step
-    .hs >> Hearth to the Crossroads after having completed Deadmines
-    .goto The Barrens,51.99,29.89,30 >> Arrive in the Crossroads
+    .hs >> Hearth to The Barrens after having completed Deadmines
+    .zone The Barrens >> Arrive in The Barrens
+    .use 6948
+    .dungeon DM
+step
+    #optional
+    .goto The Barrens,62.05,39.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Wiley|r
+	.vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
+    .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
+    .target Innkeeper Wiley
+    .subzoneskip 392,1
+    .dungeon WC
+step
+    #optional
+    .goto The Barrens,51.99,29.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
+	.vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
+    .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
+    .target Innkeeper Boorand Plainswind
+    .subzoneskip 380,1
     .dungeon DM
 step << Warlock
-    #completewith next
+    #completewith TurninDogran
+    .goto The Barrens,63.09,37.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
+    .fly Crossroads >> Fly to The Crossroads
+    .target Bragok
+    .subzoneskip 392,1
+    .dungeon WC
+step << Warlock
+    #completewith TurninDogran
     .goto Orgrimmar,45.13,63.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doras|r
 	.fly Crossroads >> Fly to The Crossroads
-    .zoneskip The Barrens
+    .zoneskip Orgrimmar,1
     .target Doras
 step << Warlock
+    #label TurninDogran
     .goto The Barrens,51.93,30.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazrog|r
     .turnin 1509 >>Turn in News of Dogran
@@ -2610,14 +2644,16 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doras|r
     .fly Ratchet >> Fly to Ratchet
     .target Doras
-    .zoneskip The Barrens
+    .zoneskip Orgrimmar,1
 step << Shaman
-    #completewith next
-    .goto The Barrens,51.50,30.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
+    #optional
+    #completewith CallofWater01
+    .goto The Barrens,63.09,37.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
     .fly Ratchet >> Fly to Ratchet
-    .target Devrak
-    .subzoneskip 380,1
+    .target Bragok
+    .subzoneskip 392,1
+    .dungeon DM
 step << Shaman
     #label CallofWater01
     .goto The Barrens,65.83,43.78
@@ -2625,6 +2661,14 @@ step << Shaman
     .turnin 1528 >>Turn in Call of Water
     .accept 1530 >>Accept Call of Water
     .target Islen Waterseer
+step << !Warlock !Shaman
+    #completewith TribesTurnin
+    .goto The Barrens,63.09,37.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
+    .fly Camp Taurajo >> Fly to Camp Taurajo
+    .target Bragok
+    .subzoneskip 392,1
+    .dungeon WC
 step << Shaman
     #completewith TribesTurnin
     .goto The Barrens,63.09,37.16
@@ -2637,6 +2681,7 @@ step << !Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fly Camp Taurajo >> Fly to Camp Taurajo
     .target Devrak
+    .subzoneskip 380,1
 step
     .goto The Barrens,44.55,59.27
     >>Kill |cRXP_ENEMY_Bristleback Quillboars|r. Loot them for a |T134128:0|t[|cFF00BCD4Blood Shard|r
@@ -3275,18 +3320,23 @@ step
 step
     #completewith EnterWC
     >>Loot the |cFF00BCD4Serpentbloom|r on the ground
+    >>|cRXP_WARN_It is recommended that maximum 3 players attempt to complete this quest if you're doing only 1 run. There aren't enough|r |cFF00BCD4Serpentbloom|r |cRXP_WARN_for everybody|r
     .complete 962,1 --Serpentbloom (10)
+    .isOnQuest 962
     .dungeon WC
 step
     #completewith EnterWC
     >>Kill all the |cFFFF5722Deviate Beasts|r you see. Loot them for their |cFF00BCD4Hides|r
+    >>|cRXP_WARN_It is recommended that maximum 3 players attempt to complete this quest if you're doing only 1 run. There aren't enough|r |cFF00BCD4Hides|r |cRXP_WARN_for everybody|r
     .complete 1486,1 --Deviate Hide (20)
     .dungeon WC
+    .isOnQuest 1486
     --Too many .mobs, would clutter target box
 step
     #completewith EnterWC
     >>Kill |cFFFF5722Ectoplasms|r. Loot them for their |cFF00BCD4Essence|r
     .complete 1491,1 --Wailing Essence (6)
+    .isOnQuest 1491
     .dungeon WC
 step
     .goto Kalimdor,51.90,55.43,30,0
@@ -3297,6 +3347,7 @@ step
     >>Kill |cFFFF5722Mad Magglish|r. Loot him for the |cFF00BCD499-Year-Old Port|r
     .complete 959,1 --99-Year-Old Port (1)
     .mob Mad Magglish
+    .isOnQuest 959
     .dungeon WC
 step
     #label EnterWC
@@ -3309,12 +3360,16 @@ step
 step
     #completewith GlowingShard
     >>Loot the |cFF00BCD4Serpentbloom|r on the ground
+    >>|cRXP_WARN_It is recommended that maximum 3 players attempt to complete this quest if you're doing only 1 run. There aren't enough|r |cFF00BCD4Serpentbloom|r |cRXP_WARN_for everybody|r
     .complete 962,1 --Serpentbloom (10)
+    .isOnQuest 962
     .dungeon WC
 step
     #completewith GlowingShard
     >>Kill |cFFFF5722Ectoplasms|r. Loot them for their |cFF00BCD4Essence|r
+    >>|cRXP_WARN_It is recommended that maximum 3 players attempt to complete this quest if you're doing only 1 run. There aren't enough|r |cFF00BCD4Hides|r |cRXP_WARN_for everybody|r
     .complete 1491,1 --Wailing Essence (6)
+    .isOnQuest 1491
     .dungeon WC
 step
     #completewith GlowingShard
@@ -3328,6 +3383,7 @@ step
     .mob Deviate Viper
     .mob Deviate Shambler
     .mob Deviate Dreadfang
+    .isOnQuest 1487
     .dungeon WC
 step
     #label Gems
@@ -3340,6 +3396,7 @@ step
     .mob Lady Anacondra
     .mob Lord Pythas
     .mob Lord Serpentis
+    .isOnQuest 914
     .dungeon WC
 step
     #requires Gems
@@ -3361,11 +3418,13 @@ step
     #completewith DeviateRaptors
     >>Kill |cFFFF5722Ectoplasms|r. Loot them for their |cFF00BCD4Essence|r
     .complete 1491,1 --Wailing Essence (6)
+    .isOnQuest 1491
     .dungeon WC
 step
     #completewith next
     >>Loot the |cFF00BCD4Serpentbloom|r on the ground
     .complete 962,1 --Serpentbloom (10)
+    .isOnQuest 962
     .dungeon WC
 step
     #label DeviateRaptors
@@ -3379,11 +3438,37 @@ step
     .mob Deviate Viper
     .mob Deviate Shambler
     .mob Deviate Dreadfang
+    .isOnQuest 1487
+    .isOnQuest 1486
+    .dungeon WC
+ step
+    #label DeviateRaptors
+    >>Kill |cFFFF5722Deviate Ravagers|r, |cFFFF5722Vipers|r, |cFFFF5722Shamblers|r and |cFFFF5722Dreadfangs|r
+    .complete 1487,1 --Deviate Ravager (7)
+    .complete 1487,2 --Deviate Viper (7)
+    .complete 1487,3 --Deviate Shambler (7)
+    .complete 1487,4 --Deviate Dreadfang (7)
+    .mob Deviate Ravager
+    .mob Deviate Viper
+    .mob Deviate Shambler
+    .mob Deviate Dreadfang
+    .isOnQuest 1487
+    .dungeon WC
+step
+    #label DeviateRaptors
+    >>Kill |cFFFF5722Deviate Raptors|r
+    .complete 1486,1 --Deviate Hide (20)
+    .mob Deviate Ravager
+    .mob Deviate Viper
+    .mob Deviate Shambler
+    .mob Deviate Dreadfang
+    .isOnQuest 1486
     .dungeon WC
 step
     #completewith next
     >>Loot the |cFF00BCD4Serpentbloom|r on the ground
     .complete 962,1 --Serpentbloom (10)
+    .isOnQuest 962
     .dungeon WC
 step
     >>Kill |cFFFF5722Ectoplasms|r. Loot them for their |cFF00BCD4Essence|r
@@ -3391,34 +3476,17 @@ step
     .mob Devouring Ectoplasm
     .mob Evolving Ectoplasm
     .mob Nightmare Ectoplasm
+    .isOnQuest 1491
     .dungeon WC
 step
     >>Loot the |cFF00BCD4Serpentbloom|r on the ground
     .complete 962,1 --Serpentbloom (10)
+    .isOnQuest 962
     .dungeon WC
 step
     #completewith next
-    .hs >> Hearth to Thunder Bluff
+    .hs >> Hearth to Ratchet
     .use 6948
-    .dungeon WC
-step
-    .goto Thunder Bluff,75.65,31.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nara|r
-    .turnin 914 >>Turn in Leaders of the Fang
-    .target Nara Wildmane
-    .dungeon WC
-step
-    .goto Thunder Bluff,23.0,21.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Zamah|r
-    .turnin 962 >>Turn in Serpentbloom
-    .target Apothecary Zamah
-    .isQuestComplete 962
-    .dungeon WC
-step
-    .goto Thunder Bluff,47.00,49.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
-    .fly Ratchet >>Fly to Ratchet
-    .target Tal
     .dungeon WC
 step
     .goto The Barrens,62.99,37.22
@@ -3426,18 +3494,21 @@ step
     .complete 6981,1 --Speak with someone in Ratchet about the Glowing Shard
     .skipgossip
     .target Sputtervale
+    .isOnQuest 6981
     .dungeon WC
 step
     .goto The Barrens,63.09,37.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bigglefuzz|r
     .turnin 959 >> Turn in Trouble at the Docks
     .target Crane Operator Bigglefuzz
+    .isQuestComplete 959
     .dungeon WC
 step
     .goto The Barrens,62.37,37.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mebok|r
     .turnin 1491 >>Turn in Smart Drinks
     .target Mebok Mizzyrix
+    .isQuestComplete 1491
     .dungeon WC
 step
     .goto The Barrens,63.09,37.16
@@ -3457,7 +3528,16 @@ step
     .goto The Barrens,48.18,32.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falla|r
     .turnin 6981 >> Turn in The Glowing Shard
+    .accept 3369 >> Accept In Nightmares
     .target Falla
+    .isOnQuest 6981
+    .dungeon WC
+step
+    .goto The Barrens,48.18,32.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falla|r
+    .accept 3369 >> Accept In Nightmares
+    .target Falla
+    .isQuestTurnedIn 6981
     .dungeon WC
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nalpak|r and |cRXP_FRIENDLY_Ebru|r
@@ -3468,13 +3548,61 @@ step
     .goto Kalimdor,51.92,55.44
     .target Nalpak
     .target Ebru
+    .isQuestComplete 1487
+    .isQuestComplete 1486
     .dungeon WC
 step
-    .goto The Barrens,51.50,30.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
-    .fly Sun Rock Retreat >> Fly to Sun Rock Retreat
-    .zoneskip Stonetalon Mountains
-    .target Devrak
+    .goto Kalimdor,51.92,55.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ebru|r
+    >>|cFFFCDC00He is located above the the Wailing Caverns cave entrance|r
+    .turnin 1487 >> Turn in Deviate Eradication
+    .target Ebru
+    .isQuestComplete 1487
+    .dungeon WC
+step
+    .goto Kalimdor,51.91,55.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nalpak|
+    >>|cFFFCDC00He is located above the the Wailing Caverns cave entrance|r
+    .turnin 1486 >> Turn in Deviate Hides
+    .target Nalpak
+    .isQuestComplete 1486
+    .dungeon WC
+step
+    #completewith next
+    .goto The Barrens,44.45,59.16,100 >> Travel south to Camp Taurajo
+    .dungeon WC
+step
+    .goto The Barrens,44.45,59.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Omusa|r
+    .fly Thunder Bluff >>Fly to Thunder Bluff
+    .target Omusa Thunderhorn
+    .dungeon WC
+step
+    .goto Thunder Bluff,75.65,31.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nara|r
+    .turnin 914 >>Turn in Leaders of the Fang
+    .target Nara Wildmane
+    .isQuestComplete 914
+    .dungeon WC
+step
+    .goto Thunder Bluff,78.61,28.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamuul|r
+    .turnin 3369 >> Turn in In Nightmares
+    .target Arch Druid Hamuul Runetotem
+    .isOnQuest 3369
+    .dungeon WC
+step
+    .goto Thunder Bluff,23.0,21.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Apothecary Zamah|r
+    .turnin 962 >>Turn in Serpentbloom
+    .target Apothecary Zamah
+    .isQuestComplete 962
+    .dungeon WC
+step
+    .goto Thunder Bluff,45.83,64.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Pala|r
+    .home >>Set your Hearthstone to Thunder Bluff
+    .target Innkeeper Pala
     .dungeon WC
 step << Warlock
     #completewith KayaLives
@@ -3484,7 +3612,7 @@ step << Warlock
     .target Omusa Thunderhorn
     .zoneskip Stonetalon Mountains
     .dungeon !WC
-step << !Warlock
+step
     #completewith KayaLives
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
