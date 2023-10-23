@@ -1386,6 +1386,18 @@ step << Warrior
 	.collect 851,1
     .target Ariyell Skyshadow
 step
+    #ah
+    .goto Darnassus,56.245,54.039,-1
+    .goto Darnassus,56.374,51.820,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to a |cRXP_FRIENDLY_Darnassus Auctioneer|r
+    >>Buy the following items for a instant turn ins at Darkshore shortly. Skip this step if you wish to not buy any
+    >>|T133972:0|t[Strider Meat]
+    >>|T133912:0|t[Darkshore Grouper]
+    .collect 5469,5,2178,1 -- Strider Meat (5)
+    .collect 12238,6,1141,1 -- Darkshore Grouper (6)
+    .target Auctioneer Tolon
+    .target Auctioneer Golothas
+step
     #completewith next
     .goto Darnassus,30.00,41.43,10 >> Travel through the purple portal to Rut'theran Village
 step

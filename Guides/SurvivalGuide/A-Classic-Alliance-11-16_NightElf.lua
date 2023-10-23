@@ -520,7 +520,7 @@ step
     .goto Ironforge,17.089,83.373,-1
     .zone Ironforge >>Use the character unstuck self service feature to skip to Ironforge. You will have to log off at the spot and navigate to the help menu on another character, then scroll down to self service. Click on your character and move. If you can't unstuck then tick this step and swim along the mountains to Westfall
     .link https://www.youtube.com/watch?v=oVoxsr4zcg4 >> Click here for video reference
-    *Please note that the unstuck feature doesn't work on the PTR
+    --*Please note that the unstuck feature doesn't work on the PTR
     .subzoneskip 809--IF Gates
     .subzoneskip 2257--Deeprun Tram
     .zoneskip Elwynn Forest

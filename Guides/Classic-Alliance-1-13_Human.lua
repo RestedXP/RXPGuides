@@ -1647,6 +1647,23 @@ step << Warrior
     .vendor >>|cRXP_WARN_Buy a|r |T135641:0|t[Balanced Throwing Dagger] and equip it|r
     .target Brenwyn Wintersteel
 step
+    #ah
+    .goto Ironforge,25.800,75.500,-1
+    .goto Ironforge,24.200,74.600,-1
+    .goto Ironforge,23.800,71.800,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to an |cRXP_FRIENDLY_Ironforge Auctioneer|r
+    >>Buy the following items for a faster turn in at Loch Modan shortly
+    >>This will save you time as you won't need to run around looking for mobs to kill. Skip this step if you wish to not buy any
+    >>|T134342:0|t[Boar Intestines]
+    >>|T134027:0|t[Bear Meat]
+    >>|T134437:0|t[Spider Ichor]
+    .collect 3172,3,418,1 -- Boar Intestines (3)
+    .collect 3173,3,418,1 -- Bear Meat (3)
+    .collect 3174,3,418,1 -- Spider Ichor (3)
+    .target Auctioneer Lympkin
+    .target Auctioneer Redmuse
+    .target Auctioneer Buckler
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
     .target Rudra Amberstill
     .goto Dun Morogh,60.1,52.6,50,0
@@ -1769,223 +1786,268 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .goto Loch Modan,24.1,18.2
-    .vendor >>Vendor and repair
+    .goto Loch Modan,24.134,18.208
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gothor Brumn|r
+    .vendor >>|cRXP_WARN_Vendor and repair if needed|r
+    .target Gothor Brumn
 step
     .goto Loch Modan,24.764,18.397
->>Talk to |cFF00FF25Mountaineer Stormpike|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r
+    >>|cRXP_WARN_Do not accept Stormpike's Order yet|r
     .turnin 353 >> Turn in Stormpike's Delivery
-.target Mountaineer Stormpike
     .accept 307 >> Accept Filthy Paws
+    .target Mountaineer Stormpike
 step
-    #sticky
+    #completewith ThelsamarFirst
+    >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
+    >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
+    >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
+    >>|cRXP_WARN_Save any|r |T133970:0|t[Chunks of Boar Meat] |cRXP_WARN_to use for leveling |T133971:0|t[Cooking] |cRXP_WARN_later|r
+    .mob Elder Black Bear
+    .mob Mountain Boar
+    .mob Forest Lurker
+step
     #completewith next
-    >>Kill Spiders in the zone for Spider Ichor
-    .collect 3174,3 --Collect Spider Ichor (x3)
-    >>Kill Bears in the zone for Bear Meat
-    .collect 3173,3 --Collect Bear Meat (x3)
-    >>Kill Boars in the zone for Boar Intestines. Save all of the Chunks of Boar Meat you get too
-    .collect 3172,3 --Collect Boar Intestines (x3)
+    .goto Loch Modan,34.828,49.283,130 >> Travel to Thelsamar
 step
-    .goto Loch Modan,35.1,47.8,130 >>Grind mobs en route for cooking quest later
-step
+    #label ThelsamarFirst
     .goto Loch Modan,34.828,49.283
-.target Vidra Hearthstove
->>Talk to |cFF00FF25Vidra Hearthstove|r
+    .target Vidra Hearthstove
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r
     .accept 418 >> Accept Thelsamar Blood Sausages
 step
-    #sticky
-    #label StormpikeO
-    .abandon 1338 >> Abandon Stormpike's Order. This is to unlock Mountaineer Stormpike's Task
-step
-    .goto Loch Modan,34.8,48.6
-    .vendor >>Buy 1-2 6 slot bags
-step
-    .goto Loch Modan,35.5,48.4
-    .vendor >> Buy food/water (try to have 40 level 5 drink, 20 level 5 food) << Priest/Mage/Warlock/Paladin
-    .vendor >> Buy food, try to have about 40 level 5 food << Rogue/Warrior
-step
-    #requires StormpikeO
-    .goto Loch Modan,32.6,49.9,80.0,0
-    .goto Loch Modan,37.2,46.1,80.0,0
-    .goto Loch Modan,36.7,41.6
-    >>Find Kadrell. He patrols along the Thelsamar road
-.target Mountaineer Kadrell
->>Talk to |cFF00FF25Mountaineer Kadrell|r
-    .accept 416 >> Accept Rat Catching
-    .accept 1339 >> Accept Mountaineer Stormpike's Task
-step
-    #sticky
-    #completewith Thelsamar1
-    >>Kill Spiders in the zone for Thelsamar Blood Sausages
-    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
-step
-    #sticky
-    #completewith Thelsamar1
-    >>Kill Bears in the zone for Thelsamar Blood Sausages
-    .collect 3173,3,418,1 --Collect Bear Meat (x3)
-step
-    #sticky
-    #completewith Thelsamar1
-    >>Kill Boars in the zone for Thelsamar Blood Sausages
-    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
-step
-    #label Thelsamar1
-    .goto Loch Modan,39.3,27.0,130 >>Grind some mobs for Boar Intestines, Bear Meat and Spider Ichor en route
-step
-    .goto Loch Modan,35.5,18.2,45 >>Go to the entrance of the cave whilst killing rats
-step
-    .goto Loch Modan,36.3,24.7
-    >>Collect the crates you find in the cave. Be careful because this is difficult at level 11
-    >>Be careful as the Geomancers cast Flame Ward (Fire immunity) after a few seconds << Mage/Warlock
-    >>You can backtrack after looting one further in the cave, as the crates can respawn behind you
-    .complete 307,1 --Collect Miners' Gear (x4)
-step << Paladin/Warrior
-    #sticky
-    #label Mace
-    .goto Loch Modan,42.9,9.9
-    .vendor >> Check the vendor for the green 2h mace he can sell. If it's up and you have enough money, buy it. Otherwise, grind money from kobolds here until you have enough << Paladin/Warrior
-    >>If the weapon isn't there by the time you have 80 silver, skip this step
-step
-    >> Kill Kobolds. Loot them for their Ears
-    >> Make sure to save 10 Linen Cloth for later. do NOT vendor it << Paladin
-    .complete 416,1 --Collect Tunnel Rat Ear (x12)
-    .collect 2589,10 << Paladin
-step << Paladin/Warrior
-    #requires Mace
-step
-    #sticky
-    #completewith Thelsamar2
-    >>Kill Spiders in the zone for Thelsamar Blood Sausages
-    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
-step
-    #sticky
-    #completewith Thelsamar2
-    >>Kill Bears in the zone for Thelsamar Blood Sausages
-    .collect 3173,3,418,1 --Collect Bear Meat (x3)
-step
-    #sticky
-    #completewith Thelsamar2
-    >>Kill Boars in the zone for Thelsamar Blood Sausages
-    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
-step
-    #label Thelsamar2
-    .goto Loch Modan,23.3,17.9,45 >>Run back to the bunker, grinding en route
-step
-    #completewith next
-    .goto Loch Modan,24.1,18.2
-    .vendor >>vendor and repair
-step
-    .goto Loch Modan,24.7,18.3
->>Talk to |cFF00FF25Mountaineer Stormpike|r
-    .turnin 307 >> Turn in Filthy Paws
-.target Mountaineer Stormpike
-    .accept 1338 >> Accept Stormpike's Order
-    .turnin 1339 >> Turn in Mountaineer Stormpike's Task
-step
-    #sticky
-    #label Meat9
-    .goto Loch Modan,26.9,10.7,100,0
-    .goto Loch Modan,30.9,10.6,100,0
-    .goto Loch Modan,28.6,15.4,100,0
-    .goto Loch Modan,30.5,26.6,100,0
-    .goto Loch Modan,33.4,30.3,100,0
-    .goto Loch Modan,39.4,33.3,100,0
-    .goto Loch Modan,26.9,10.7,100,0
-    .goto Loch Modan,30.9,10.6,100,0
-    .goto Loch Modan,28.6,15.4,100,0
-    .goto Loch Modan,30.5,26.6,100,0
-    .goto Loch Modan,33.4,30.3,100,0
-    .goto Loch Modan,39.4,33.3,100,0
-    .goto Loch Modan,26.9,10.7
-    >>Kill Bears. Loot them for Meat
-    .collect 3173,3,418,1 --Collect Bear Meat (x3)
-step
-    #sticky
-    #label Ichor9
-    .goto Loch Modan,31.9,16.4,100,0
-    .goto Loch Modan,28.0,20.6,100,0
-    .goto Loch Modan,33.8,40.5,100,0
-    .goto Loch Modan,36.2,30.9,100,0
-    .goto Loch Modan,39.0,32.1,100,0
-    .goto Loch Modan,31.9,16.4,100,0
-    .goto Loch Modan,28.0,20.6,100,0
-    .goto Loch Modan,33.8,40.5,100,0
-    .goto Loch Modan,36.2,30.9,100,0
-    .goto Loch Modan,39.0,32.1,100,0
-    .goto Loch Modan,31.9,16.4
-    >>Kill Spiders. Loot them for Ichor
-    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
-step
-    .goto Loch Modan,38.0,34.9,100,0
-    .goto Loch Modan,37.1,39.8,100,0
-    .goto Loch Modan,29.8,35.9,100,0
-    .goto Loch Modan,27.7,25.3,100,0
-    .goto Loch Modan,28.6,22.6,100,0
-    .goto Loch Modan,38.0,34.9,100,0
-    .goto Loch Modan,37.1,39.8,100,0
-    .goto Loch Modan,29.8,35.9,100,0
-    .goto Loch Modan,27.7,25.3,100,0
-    .goto Loch Modan,28.6,22.6,100,0
-    .goto Loch Modan,38.0,34.9
-    >>Kill Boars. Loot them for Intestines
-    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
-step
-    #hidewindow
-    #requires Meat9
-step
-    #label RatCatching
-    #requires Ichor9
-    .goto Loch Modan,32.6,49.9,80.0,0
-    .goto Loch Modan,37.2,46.1,80.0,0
-    .goto Loch Modan,36.7,41.6
-    >>Find Kadrell. He patrols along the Thelsamar road
-.target Mountaineer Kadrell
->>Talk to |cFF00FF25Mountaineer Kadrell|r
-    .turnin 416 >> Turn in Rat Catching
-step
+    #optional
+    .isQuestComplete 418
     .goto Loch Modan,34.828,49.283
-.target Vidra Hearthstove
->>Talk to |cFF00FF25Vidra Hearthstove|r
+    .target Vidra Hearthstove
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r
     .turnin 418 >> Turn in Thelsamar Blood Sausages
 step
-    .goto Loch Modan,34.8,48.6
-    .vendor >> Buy 1 Flint and Tinder, and 1 Simple Wood. Buy more 6 slots if needed
-    .collect 4470,1 --Simple Wood (1)
+    #competewith StormpikeO
+    .abandon 1338 >> Abandon Stormpike's Order. This is to unlock Mountaineer Stormpike's Task which will give a free 550xp turn in
+step
+    #completewith next
+    .goto Loch Modan,34.757,48.618
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yanni Stoutheart|r
+    .vendor >> |cRXP_WARN_Buy 1 or 2|r |T133634:0|t[Small Brown Pouches] |cRXP_WARN_if needed|r
+    .target Yanni Stoutheart
+step
+    #label StormpikeO
+    .goto Loch Modan,35.534,48.404
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Hearthstove|r
+    .vendor 6734 >> |cRXP_BUY_Buy|r |T133968:0|t[Freshly Baked Bread]|cRXP_BUY_. Aim to have about 20|r << Warrior/Rogue
+    .vendor 6734 >> |cRXP_BUY_Buy|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_and|r |T132815:0|t[Ice Cold Milk]|cRXP_BUY_. Aim to have about 10|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_and 20|r |T132815:0|t[Ice Cold Milk] << !Warrior !Rogue
+    .target Innkeeper Hearthstove
+step
+    .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
+    .goto Loch Modan,36.72,41.97,15,0
+    .goto Loch Modan,37.24,43.19,15,0
+    .goto Loch Modan,37.33,45.63,15,0
+    .goto Loch Modan,36.77,46.20,15,0
+    .goto Loch Modan,35.19,46.88,15,0
+    .goto Loch Modan,32.67,49.71,20,0
+    .goto Loch Modan,36.77,46.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Kadrell|r
+    >>|cRXP_FRIENDLY_Mountaineer Kadrell|r |cRXP_WARN_patrols the road through Thelsamar|r
+    .accept 416 >> Accept Rat Catching
+    .accept 1339 >> Accept Mountaineer Stormpike's Task
+    .target Mountaineer Kadrell
+step
+    #completewith StormpikeDelivery
+    >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
+    >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
+    >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
+    .mob Elder Black Bear
+    .mob Mountain Boar
+    .mob Forest Lurker
+step
+    #completewith MinerGear
+    .goto Loch Modan,35.50,18.97,20 >> Enter the Silver Stream Mine
+step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Tunnel Rats|r. Loot them for their |cRXP_LOOT_Ears|r
+    .complete 416,1 --Collect Tunnel Rat Ear (x12)
+    .mob Tunnel Rat Scout
+    .mob Tunnel Rat Vermin
+    .mob Tunnel Rat Forager
+    .mob Tunnel Rat Geomancer
+    .mob Tunnel Rat Digger
+    .mob Tunnel Rat Surveyor
+step
+    #label MinerGear
+    .goto Loch Modan,35.93,22.55
+    >>Open the |cRXP_PICK_Miners' League Crates|r. Loot them for the |cRXP_LOOT_Miners' Gear|r
+    >>|cRXP_WARN_The |cRXP_PICK_Miners' League Crates|r can be found all throughout the Mine|r
+    >>|cRXP_WARN_You will be able to do this quest at a higher level if you wish to skip it for now|r
+    .complete 307,1 -- Miners' Gear (4)
+step << Paladin/Warrior
+    .goto Loch Modan,42.867,9.885
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nillen Andemar|r
+    .vendor >>|cRXP_FRIENDLY_Nillen Andemar|r |cRXP_WARN_sells|r |T133476:0|t[|cRXP_FRIENDLY_Heavy Spiked Mace|r] |cRXP_WARN_which is a limited supply item|r
+    >>|cRXP_WARN_Check to see if it's available and buy it if you can. If you can't afford it, then grind money from the nearby |cRXP_ENEMY_Tunnel Rats|r until you have enough|r
+    >>|cRXP_WARN_Do this quickly as another player may purchase it before you do|r
+    .target Nillen Andemar
+step
+    .goto Loch Modan,25.05,30.19,0
+    .goto Loch Modan,26.06,43.44,0
+    .goto Loch Modan,37.71,16.84,0
+    .goto Loch Modan,37.71,16.84,50,0
+    .goto Loch Modan,35.48,16.82,50,0
+    .goto Loch Modan,25.05,30.19,50,0
+    .goto Loch Modan,26.06,43.44,50,0
+    .goto Loch Modan,37.71,16.84,50,0
+    .goto Loch Modan,35.48,16.82
+    >>Kill |cRXP_ENEMY_Tunnel Rats|r. Loot them for their |cRXP_LOOT_Ears|r
+    >>|cRXP_WARN_Ensure you have 10|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for your upcoming Paladin class quest|r << Paladin
+    >>|cRXP_ENEMY_Tunnel Rats|r |cRXP_WARN_can spawn throughout Loch Modan. Check your World Map for their locations|r
+    .complete 416,1 --Collect Tunnel Rat Ear (x12)
+    .collect 2589,10,1644,1,1 << Paladin -- Linen Cloth (10)
+    .mob Tunnel Rat Scout
+    .mob Tunnel Rat Vermin
+    .mob Tunnel Rat Forager
+    .mob Tunnel Rat Geomancer
+    .mob Tunnel Rat Digger
+    .mob Tunnel Rat Surveyor
+step
+    #completewith StormpikeDelivery
+    #label StormpikeStop
+    .goto Loch Modan,24.134,18.208
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gothor Brumn|r
+    .vendor >>|cRXP_WARN_Vendor and repair if needed|r
+    .target Gothor Brumn
+step
+    .goto Loch Modan,24.77,18.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r
+    .turnin 307 >> Turn in Filthy Paws
+    .target Mountaineer Stormpike
+step
+    #label StormpikeDelivery
+    .goto Loch Modan,24.77,18.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r
+    .turnin 1339 >> Turn in Mountaineer Stormpike's Task
+    .accept 1338 >> Accept Stormpike's Order
+    .target Mountaineer Stormpike
+step
+    >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
+    >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
+    >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
+    .collect 3173,3,418,1 --Bear Meat (3)
+    .goto Loch Modan,26.9,10.7,90,0
+    .goto Loch Modan,30.9,10.6,90,0
+    .goto Loch Modan,28.6,15.4,90,0
+    .goto Loch Modan,30.5,26.6,90,0
+    .goto Loch Modan,33.4,30.3,90,0
+    .goto Loch Modan,39.4,33.3,90,0
+    .goto Loch Modan,26.9,10.7,90,0
+    .goto Loch Modan,30.9,10.6,90,0
+    .goto Loch Modan,28.6,15.4,90,0
+    .goto Loch Modan,30.5,26.6,90,0
+    .goto Loch Modan,33.4,30.3,90,0
+    .goto Loch Modan,39.4,33.3,90,0
+    .goto Loch Modan,26.9,10.7
+    .collect 3172,3,418,1 --Boar Intestines (3)
+    .goto Loch Modan,38.0,34.9,90,0
+    .goto Loch Modan,37.1,39.8,90,0
+    .goto Loch Modan,29.8,35.9,90,0
+    .goto Loch Modan,27.7,25.3,90,0
+    .goto Loch Modan,28.6,22.6,90,0
+    .goto Loch Modan,38.0,34.9,90,0
+    .goto Loch Modan,37.1,39.8,90,0
+    .goto Loch Modan,29.8,35.9,90,0
+    .goto Loch Modan,27.7,25.3,90,0
+    .goto Loch Modan,28.6,22.6,90,0
+    .goto Loch Modan,38.0,34.9
+    .collect 3174,3,418,1 --Spider Ichor (3)
+    .goto Loch Modan,31.9,16.4,90,0
+    .goto Loch Modan,28.0,20.6,90,0
+    .goto Loch Modan,33.8,40.5,90,0
+    .goto Loch Modan,36.2,30.9,90,0
+    .goto Loch Modan,39.0,32.1,90,0
+    .goto Loch Modan,31.9,16.4,90,0
+    .goto Loch Modan,28.0,20.6,90,0
+    .goto Loch Modan,33.8,40.5,90,0
+    .goto Loch Modan,36.2,30.9,90,0
+    .goto Loch Modan,39.0,32.1,90,0
+    .goto Loch Modan,31.9,16.4
+    .mob Elder Black Bear
+    .mob Mountain Boar
+    .mob Forest Lurker
+step
+    .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
+    .goto Loch Modan,36.72,41.97,15,0
+    .goto Loch Modan,37.24,43.19,15,0
+    .goto Loch Modan,37.33,45.63,15,0
+    .goto Loch Modan,36.77,46.20,15,0
+    .goto Loch Modan,35.19,46.88,15,0
+    .goto Loch Modan,32.67,49.71,20,0
+    .goto Loch Modan,36.77,46.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Kadrell|r
+    >>|cRXP_FRIENDLY_Mountaineer Kadrell|r |cRXP_WARN_patrols the road through Thelsamar|r
+    .target Mountaineer Kadrell
+    .turnin 416 >> Turn in Rat Catching
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r
+    .target Vidra Hearthstove
+    .goto Loch Modan,34.828,49.283
+    .turnin 418 >> Turn in Thelsamar Blood Sausages
+step
+    .goto Loch Modan,34.757,48.618
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yanni Stoutheart|r
+    >>|cRXP_WARN_Buy a|r |T135237:0|t[Flint and Tinder] |cRXP_WARN_along with 2|r |T135435:0|t[Simple Wood]|cRXP_WARN_. Buy any|r|T133634:0|t[Small Brown Pouches] |cRXP_WARN_if needed|r
+    .collect 4470,1 --Simple Wood (2)
     .collect 4471,1 --Flint and Tinder (1)
+    .target Yanni Stoutheart
 step
     .goto Loch Modan,33.938,50.954
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
     .fp Thelsamar >> Get the Thelsamar flight path
+    .target Thorgrum Borrelson
 step
     .goto Loch Modan,22.071,73.127
-.target Mountaineer Cobbleflint
->>Talk to |cFF00FF25Mountaineer Cobbleflint|r
+    .target Mountaineer Cobbleflint
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Cobbleflint|r
     .accept 224 >> Accept In Defense of the King's Lands
 step
     .goto Loch Modan,23.233,73.675
-    >>Go into the bunker from behind
-.target Captain Rugelfuss
->>Talk to |cFF00FF25Captain Rugelfuss|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r in the bunker
+    .target Captain Rugelfuss
     .accept 267 >> Accept The Trogg Threat
 step
-    .goto Loch Modan,29.9,68.2,45 >> Run to the Troggs Entrance
+    #completewith next
+    .goto Loch Modan,29.9,68.2,45,0
+    .goto Loch Modan,30.76,69.97,20 >> Travel to Stonesplinter Valley
 step
-    .goto Loch Modan,30.0,72.4,100,0
-    .goto Loch Modan,34.7,71.6,100,0
-    .goto Loch Modan,30.9,81.1,100,0
-    .goto Loch Modan,30.0,72.4,100,0
-    .goto Loch Modan,34.7,71.6,100,0
-    .goto Loch Modan,30.9,81.1,100,0
-    >>Kill Stonesplinter Troggs. Loot them for their Teeth
+    .goto Loch Modan,27.01,48.74,0
+    .goto Loch Modan,27.68,56.83,0
+    .goto Loch Modan,33.35,71.59,0
+    .goto Loch Modan,31.54,74.96,0
+    .goto Loch Modan,33.35,71.59,50,0
+    .goto Loch Modan,31.54,74.96,45,0
+    .goto Loch Modan,33.88,76.58,45,0
+    .goto Loch Modan,27.01,48.74,40,0
+    .goto Loch Modan,27.68,56.83,40,0
+    .goto Loch Modan,33.35,71.59,50,0
+    .goto Loch Modan,31.54,74.96,45,0
+    .goto Loch Modan,33.88,76.58
+    >>Kill |cRXP_ENEMY_Stonesplinter Troggs|r and |cRXP_ENEMY_Stonesplinter Scouts|r. Loot them for their |cRXP_LOOT_Teeth|r
+    >>|cRXP_WARN_Ensure you have 10|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for your upcoming Paladin class quest|r << Paladin
     .complete 224,1 --Kill Stonesplinter Trogg (x10)
     .complete 224,2 --Kill Stonesplinter Scout (x10)
     .complete 267,1 --Collect Trogg Stone Tooth (x8)
+    .collect 2589,10,1644,1,1 << Paladin -- Linen Cloth (10)
+    .mob Stonesplinter Trogg
+    .mob Stonesplinter Scout
 step << Warlock
-    #sticky
     #completewith TroggT
     .money >0.7579
     .goto Loch Modan,32.7,76.5,0
-    +Grind here until you have 75s 79c of vendorables+money, then turnin
+    +Grind |cRXP_ENEMY_Troggs|r until you have 75s 79c worth of vendor trash/money
 step << Warlock
     #era
     .goto Loch Modan,32.7,76.5,0
@@ -1994,103 +2056,155 @@ step << Warlock
     #som
     .xp 14-2520 >> Grind until you are 8880xp into level 13
 step
-    .goto Loch Modan,22.2,73.3
-.target Mountaineer Cobbleflint
->>Talk to |cFF00FF25Mountaineer Cobbleflint|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Cobbleflint|r
+    .target Mountaineer Cobbleflint
+    .goto Loch Modan,22.071,73.127
     .turnin 224 >> Turn in In Defense of the King's Lands
 step
     #label TroggT
     .goto Loch Modan,23.233,73.675
-.target Captain Rugelfuss
->>Talk to |cFF00FF25Captain Rugelfuss|r
+    .target Captain Rugelfuss
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r
     .turnin 267 >> Turn in The Trogg Threat
 step << Warlock
     .xp 14 >> Grind to 14
 step
+    #completewith next
     .hs >> Hearth to Stormwind City
-    .vendor >> vendor trash << !Paladin
-    .vendor >> vendor trash. Make sure to save 10 Linen << Paladin
 step << Warlock/Priest
-    #softcore
-    #label Wand1
-    #completewith Wand2
-     >>Alternatively, buy a Greater Magic Wand from the AH if it costs <33s 40c
-    .goto StormwindClassic,53.60,59.77
-    .collect 11288,1 --Greater Magic Wand (1)
-step << Warlock/Priest
-    #softcore
-    #label Wand2
-    #completewith Wand1
-     >>Go in the building. Buy a Smoldering Wand
+    #ssf
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ardwyn Cailen|r
+    >>|cRXP_BUY_Buy a|r |T135468:0|t[Smoldering Wand]|cRXP_BUY_. Equip it when you are 15|r
     .goto StormwindClassic,42.65,67.16,14,0
-    .goto StormwindClassic,42.84,65.14
+    .goto StormwindClassic,42.88,65.11
     .collect 5208,1 --Smoldering Wand (1)
+    .target Ardwyn Cailen
 step << Warlock/Priest
-    #hardcore
-     >>Go in the building. Buy a Smoldering Wand
+    #ah
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ardwyn Cailen|r
+    >>|cRXP_BUY_Buy a|r |T135468:0|t[Smoldering Wand]|cRXP_BUY_. Equip it when you are 15 or check the Auction House for a|r |T135144:0|t[Greater Magic Wand]
     .goto StormwindClassic,42.65,67.16,14,0
-    .goto StormwindClassic,42.84,65.14
+    .goto StormwindClassic,42.88,65.11
     .collect 5208,1 --Smoldering Wand (1)
+    .target Ardwyn Cailen
 step << Warlock
-    #sticky
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
-    .goto StormwindClassic,27.2,78.1,15 >> Go into The Slaughtered Lamb and go downstairs
+    .goto StormwindClassic,27.2,78.1,15 >> Travel to The Slaughtered Lamb and go downstairs
 step << Warlock
-    .goto StormwindClassic,26.11,77.20
+    .goto StormwindClassic,26.117,77.225
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursula Deline|r
     .trainer >> Train your class spells
-    .goto StormwindClassic,25.65,77.63
-    .vendor >> Buy Consume Shadows r1 then Sacrifice r1 books (if you have money)
+    .target Ursula Deline
+step << Warlock
+    .goto StormwindClassic,25.665,77.649
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spackle Thornberry|r
+    .vendor >> |cRXP_BUY_Buy|r |T133738:0|t[Grimoire of Consume Shadows (Rank 1)] |cRXP_BUY_and|r |T133738:0|t[Grimoire of Sacrifice (Rank 1)] |cRXP_BUY_if you can afford it|r
+    .target Spackle Thornberry
 step << Mage
-    .goto StormwindClassic,37.69,82.09,10 >> Go up the tower, then through the portal
+    #completewith next
+    .goto StormwindClassic,37.69,82.09,10 >> Travel to the Mage Tower
+step << Mage
+    .goto StormwindClassic,36.87,81.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elsharin|r
     .trainer >> Train your class spells
+    .target Elsharin
+step << Priest/Paladin
+    #completewith next
+    .goto StormwindClassic,42.51,33.51,20 >> Travel to the Stormwind Cathedral
 step << Paladin
-    >>Do the quests for Duthorian Rall
     .goto StormwindClassic,39.80,29.77
->>Talk to |cFF00FF25Duthorian Rall|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
+    .accept 1641 >> Accept The Tome of Divinity
     .turnin 1641 >> Turn in The Tome of Divinity
-    .collect 6775,1,1642 --Tome of Divinity (1)
-    .accept 1642 >> Accept The Tome of Divinity
-    .turnin 1642 >> Turn in The Tome of Divinity
-.target Duthorian Rall
-    .accept 1643 >> Accept The Tome of Divinity
+    .target Duthorian Rall
 step << Paladin
-    .goto StormwindClassic,38.68,32.85
+    .goto StormwindClassic,39.80,29.77
+    .use 6775>>|cRXP_WARN_Use the |T133464:0|t[|cRXP_LOOT_The Tome of Divinity|r] to start the quest|r
+    .accept 1642 >>Accept The Tome of Divinity
+step << Paladin
+    .goto StormwindClassic,39.80,29.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
+    .turnin 1642 >>Turn in The Tome of Divinity
+    .accept 1643 >>Accept The Tome of Divinity
+    .target Duthorian Rall
+step << Paladin
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r
+    .goto StormwindClassic,38.82,31.27,10,0
+    .goto StormwindClassic,38.67,32.82
     .trainer >> Train your class spells
+    .target Arthur the Faithful
 step << Priest
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Joshua|r
     .goto StormwindClassic,38.54,26.86
     .trainer >> Train your class spells
-step
-    .goto StormwindClassic,58.08,16.52
-.target Furen Longbeard
->>Talk to |cFF00FF25Furen Longbeard|r
+    .target Brother Joshua
+step    
+    .goto StormwindClassic,58.091,16.552
+    .target Furen Longbeard
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furen Longbeard|r
     .turnin 1338 >> Turn in Stormpike's Order
 step << Rogue
-   .goto StormwindClassic,74.65,52.83
+    .goto StormwindClassic,74.65,52.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r
     .trainer >> Train your class spells
+    .target Osborne the Night Man
 step << Warrior
-    #completewith next
-    .goto StormwindClassic,74.91,51.55,20 >> Enter the Command Center
-step << Warrior
-    .goto StormwindClassic,78.67,45.80
-    .trainer >> Go upstairs. Train your class spells
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wu|r or |cRXP_FRIENDLY_Ilsa|r
+    .goto StormwindClassic,76.08,50.14,15,0
+    .goto StormwindClassic,80.22,45.37,15,0
+	.goto StormwindClassic,78.68,45.79
+    .trainer >> Train your class spells
+    .target Wu Shen
+    .target Ilsa Corbin
 step << Paladin
     .goto StormwindClassic,57.08,61.74
->>Talk to |cFF00FF25Stephanie Turner|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stephanie Turner|r
     .turnin 1643 >> Turn in The Tome of Divinity
-.target Stephanie Turner
+    .target Stephanie Turner
     .accept 1644 >> Accept The Tome of Divinity
     .turnin 1644 >> Turn in The Tome of Divinity
     --.accept 1780 >> Accept The Tome of Divinity
 step
     .goto StormwindClassic,66.28,62.13
->>Talk to |cFF00FF25Dungar Longdrink|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
     .turnin 6261 >> Turn in Dungar Longdrink
-.target Dungar Longdrink
+    .target Dungar Longdrink
     .accept 6285 >> Accept Return to Lewis
 step
-    .goto StormwindClassic,66.28,62.13
+    #ah
+    .goto Stormwind City,53.612,59.764
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
+    >>Buy the following items for faster turn ins at Westfall shortly
+    >>This will save you time as you won't need to run around looking for mobs to kill. Skip this step if you wish to not buy any
+    >>|T133972:0|t[Stringy Vulture Meat]
+    >>|T133884:0|t[Murloc Eye]
+    >>|T135997:0|t[Goretusk Snout]
+    >>|T134185:0|t[Okra]
+    >>|T134341:0|t[Goretusk Liver]
+    >>|T132794:0|t[Flask of Oil]
+    .collect 729,3,38,1 -- Stringy Vulture Meat (3)
+    .collect 730,3,38,1 -- Murloc Eye (3)
+    .collect 731,3,38,1 -- Goretusk Snout (3)
+    .collect 732,3,38,1 -- Okra (3)
+    .collect 723,8,22,1 -- Goretusk Liver (8)
+    .collect 814,5,103,1 -- Flask of Oil (5)
+    .target Auctioneer Jaxon
+step
+    #ah
+    .goto Stormwind City,53.612,59.764
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
+    >>Buy the following items for instant turn ins at Darkshore shortly. Skip this step if you wish to not buy any
+    >>|T133972:0|t[Strider Meat]
+    >>|T133912:0|t[Darkshore Grouper]
+    .collect 5469,5,2178,1 -- Strider Meat (5)
+    .collect 12238,6,1141,1 -- Darkshore Grouper (6)
+    .target Auctioneer Jaxon
+step
+    .goto StormwindClassic,66.277,62.137
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
     .fly Westfall >> Fly to Westfall
+    .target Dungar Longdrink
 ]])
 
 RXPGuides.RegisterGuide([[

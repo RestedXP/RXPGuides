@@ -2137,6 +2137,380 @@ step
     .turnin 986 >> Turn in A Lost Master
     .target Terenthis
     .accept 993 >> Accept A Lost Master
+step << Hunter
+.dungeon DM
+    #completewith next
+    .goto Darkshore,32.75,42.21,35 >> Travel to the Auberdine Docks. Wait for the Menethil Harbor boat
+step << Hunter
+.dungeon DM
+    .goto Darkshore,32.44,43.71
+    .zone Wetlands >> Take the boat to Menethil Harbor. You will be heading to Deadmines now
+    .zoneskip Loch Modan
+    .zoneskip Dun Morogh
+    .zoneskip Ironforge
+step << Hunter
+.dungeon DM
+    .goto Wetlands,9.490,59.694
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei Brondir|r
+    .fp Menethil Harbor >> Get the Menethil Harbor flight path
+    .target Shellei Brondir
+step << Hunter
+.dungeon DM
+    #completewith next
+    .goto Wetlands,5.485,64.156,40 >> Jump off the end of the dock and swim to the waypoint
+step << Hunter
+.dungeon DM
+    .goto Wetlands,2.433,78.689,-1
+    .goto Ironforge,17.089,83.373,-1
+    .zone Ironforge >>Use the character unstuck self service feature to skip to Ironforge. You will have to log off at the spot and navigate to the help menu on another character, then scroll down to self service. Click on your character and move. If you can't unstuck then tick this step and swim along the mountains to Westfall
+    .link https://www.youtube.com/watch?v=oVoxsr4zcg4 >> Click here for video reference
+    .subzoneskip 809--IF Gates
+    .subzoneskip 2257--Deeprun Tram
+    .zoneskip Elwynn Forest
+    .zoneskip Stormwind City
+    .zoneskip Ironforge
+    .zoneskip Westfall
+step << Hunter
+.dungeon DM
+    .goto Ironforge,55.491,47.751
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
+    .fp Ironforge >> Get the Ironforge flight path
+    .target Gryth Thurden
+    .zoneskip Elwynn Forest
+    .zoneskip Stormwind City
+    .zoneskip Westfall
+    .zoneskip Wetlands
+step << Hunter
+.dungeon DM
+    .goto Ironforge,78.00,52.00,5,0
+    .zone Stormwind City >> Enter the Deeprun Tram. Take the tram to Stormwind
+    .zoneskip Elwynn Forest
+    .zoneskip Stormwind City
+    .zoneskip Westfall
+    .zoneskip Wetlands
+step << Hunter
+.dungeon DM
+    .goto 1415,44.720,49.200,60,0 -- Wetlands to Westfall Swim
+    .goto 1415,43.162,49.946,60,0
+    .goto 1415,42.564,50.884,20,0
+    .goto 1415,42.363,50.812,20,0
+    .goto 1415,41.682,50.232,20,0
+    .goto 1415,40.959,50.142,20,0
+    .goto 1415,39.818,51.078,20,0
+    .goto 1415,39.778,51.615,30,0
+    .goto 1415,39.505,52.636,30,0
+    .goto 1415,40.160,54.451,20,0
+    .goto 1415,40.505,54.507,20,0
+    .goto 1415,41.370,57.126,40,0
+    .goto 1415,41.988,59.434,30,0
+    .goto 1415,41.342,61.214,30,0
+    .goto 1415,41.309,61.938,20,0
+    .goto 1415,40.545,64.111,30,0
+    .goto 1415,41.066,65.878,20,0
+    .goto 1415,41.349,66.265,30,0
+    .goto 1415,41.363,66.995,30,0
+    .goto 1415,41.625,67.689,30,0
+    .goto StormwindClassic,4.493,29.157,20,0
+    .goto StormwindClassic,10.336,40.166,10,0
+    .goto StormwindClassic,7,45.471,10,0
+    .goto StormwindClassic,5.560,50.125,10,0
+    .goto StormwindClassic,13.669,74.499,20,0
+    .goto Westfall,42.024,70.980
+    .zone Westfall >> If the website unstuck is not available, swim to Westfall
+    .zoneskip Ironforge
+    .subzoneskip 809--IF Gates
+    .subzoneskip 2257--Deeprun Tram
+    .zoneskip Stormwind City
+step << Hunter
+.dungeon DM
+    #completewith next
+    .goto Westfall,54.28,9.26,100,0
+    .goto Westfall,56.55,52.64,100 >> Run up the shore and make your way to Sentinel Hill
+    .zoneskip Ironforge
+    .subzoneskip 809
+    .subzoneskip 2257
+    .zoneskip Stormwind City
+step << Hunter
+.dungeon DM
+    .goto Westfall,56.55,52.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
+    .fp Sentinel Hill >> Get the Sentinel Hill flight path
+    .target Thor
+    .zoneskip Ironforge
+    .subzoneskip 809
+    .subzoneskip 2257
+    .zoneskip Stormwind City
+step << Hunter
+.dungeon DM
+    .goto Westfall,56.33,47.52
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+	.target Gryan Stoutmantle
+    .accept 65 >> Accept The Defias Brotherhood
+    .zoneskip Westfall,1
+step << Hunter
+.dungeon DM
+    .goto Elwynn Forest,36.809,72.429,100,0
+    .goto StormwindClassic,69.961,86.583
+    .zone Stormwind City >> Run to Stormwind
+    .zoneskip Ironforge
+    .subzoneskip 809
+    .subzoneskip 2257
+step << Hunter
+.dungeon DM
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r and |cRXP_FRIENDLY_Wilder Thistlenettle|r 
+    .accept 2040 >> Accept Underground Assault
+    .goto StormwindClassic,55.510,12.504
+    .accept 167 >> Accept Oh Brother. . .
+    .accept 168 >> Accept Collecting Memories
+    .goto StormwindClassic,65.438,21.175
+    .target Wilder Thistlenettle
+    .target Shoni the Shilent
+step << Hunter
+.dungeon DM
+    .goto StormwindClassic,57.816,58.331,30,0
+    .goto StormwindClassic,63.301,62.103,30,0
+    .goto StormwindClassic,63.047,65.744,15,0
+    .goto StormwindClassic,66.276,62.135
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
+    .fp Stormwind >> Get the Stormwind City flight path
+    .target Dungar Longdrink
+    .zoneskip Ironforge
+    .subzoneskip 809
+    .subzoneskip 2257
+step << Hunter
+.dungeon DM
+    #completewith next
+    .zone Westfall >> Travel to Westfall
+step << Hunter
+.dungeon DM
+    .goto Westfall,56.33,47.52
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+	.target Gryan Stoutmantle
+    .accept 65 >> Accept The Defias Brotherhood
+step << Hunter
+.dungeon DM
+    .goto Westfall,56.55,52.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
+    .fp Sentinel Hill >> Get the Sentinel Hill flight path
+    .target Thor
+    .zoneskip Westfall,1
+step << Hunter
+.dungeon DM
+    #completewith next
+    .goto Redridge Mountains,15.27,71.45
+    .zone Redridge Mountains >> Run to Redridge Mountains
+step << Hunter
+.dungeon DM
+    .goto Redridge Mountains,27.35,44.07,8,0
+    .goto Redridge Mountains,26.48,45.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wiley the Black|r up stairs
+    .turnin 65 >> Turn in The Defias Brotherhood
+    .accept 132 >> Accept The Defias Brotherhood
+	.target Wiley the Black
+step << Hunter
+.dungeon DM
+    #completewith next
+    .goto Redridge Mountains,30.59,59.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ariena Stormfeather|r
+    .fly Westfall >> Fly to Westfall
+    .target Ariena Stormfeather
+step << Hunter
+.dungeon DM
+    .goto Westfall,56.325,47.519
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gryan Stoutmantle|r
+    .turnin 132 >> Turn in The Defias Brotherhood
+    .accept 135 >> Accept The Defias Brotherhood
+    .target Gryan Stoutmantle
+step << Hunter
+.dungeon DM
+    #completewith next
+    .goto Westfall,56.55,52.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Thor|r
+    .fly Stormwind >> Fly to Stormwind
+    .target Thor
+step << Hunter
+.dungeon DM
+    .goto Stormwind City,75.78,59.84
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Mathias Shaw|r
+    .turnin 135 >> Turn in The Defias Brotherhood
+    .accept 141 >> Accept The Defias Brotherhood
+    .target Master Mathias Shaw
+step << Hunter
+.dungeon DM
+    .goto StormwindClassic,66.277,62.137
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Dungar Longdrink|r
+    .fly Westfall >> Fly to Westfall
+    .target Dungar Longdrink
+step << Hunter
+.dungeon DM
+    .goto Westfall,56.325,47.519
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .turnin 141 >> Turn in The Defias Brotherhood
+    .accept 142 >> Accept The Defias Brotherhood
+    .target Gryan Stoutmantle
+step << Hunter
+.dungeon DM
+    #completewith next
+    .goto Westfall,44.50,69.62,55 >> Travel to Moonbrook
+step << Hunter
+.dungeon DM
+    .goto Westfall,44.50,69.62
+    .line Westfall,44.50,69.62,44.50,69.62,45.08,69.40,45.21,69.35,45.63,68.69,45.85,67.73,45.62,66.99,45.52,65.71,45.61,64.95,44.28,63.88,44.26,62.80,43.60,59.89,43.37,58.42,43.26,57.01,43.12,54.24,42.15,52.74,41.74,51.42,41.48,49.89,40.91,48.71,38.93,46.05,38.51,45.46,37.85,45.54,36.60,44.21,36.06,43.86,35.12,43.49,33.92,43.21,32.56,43.05,31.34,44.54,32.56,43.05,33.92,43.21,35.12,43.49,36.06,43.86,36.26,43.77,36.87,42.87,36.95,40.85,37.04,39.79,37.91,36.98,39.06,35.58,40.48,34.31,41.27,32.87,41.76,31.27,42.26,30.26,43.20,28.99,44.29,28.19,44.64,26.85,44.57,24.94,44.64,26.85,44.29,28.19,43.20,28.99,42.26,30.26,41.76,31.27,41.27,32.87,40.48,34.31,39.06,35.58,37.91,36.98,37.04,39.79,36.95,40.85,36.87,42.87,36.26,43.77,36.06,43.86,35.12,43.49,33.92,43.21,32.56,43.05,31.34,44.54,32.56,43.05,33.92,43.21,35.12,43.49,36.06,43.86,36.60,44.21,37.85,45.54,38.51,45.46,38.93,46.05,40.91,48.71,41.48,49.89,41.74,51.42,42.15,52.74,43.12,54.24,43.26,57.01,43.37,58.42,43.60,59.89,44.26,62.80,44.28,63.88,45.61,64.95,45.52,65.71,45.62,66.99,45.85,67.73,45.63,68.69,45.21,69.35,45.08,69.40,44.50,69.62
+    >>Kill the |cRXP_ENEMY_Defias Messenger|r. Loot him for his |cRXP_LOOT_Mysterious Message|r
+    >>|cRXP_WARN_The |cRXP_ENEMY_Defias Messenger|r spawns in Moonbrook. He walks along the road north of Moonbrook, to the Gold Coast Quarry and Jangolode Mine. If you don't see him along the road, wait for him to spawn in Moonbrook|r
+    >>|cRXP_WARN_He has a 4-5 minute respawn timer|r
+    .complete 142,1 -- A Mysterious Message (1)
+    .unitscan Defias Messenger
+step << Hunter
+.dungeon DM
+    .goto Westfall,56.33,47.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .turnin 142 >> Turn in The Defias Brotherhood
+    .target Gryan Stoutmantle
+step << Hunter
+.dungeon DM
+    .goto Westfall,55.68,47.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Defias Traitor|r
+    >>|cRXP_WARN_You may need to wait for |cRXP_FRIENDLY_The Defias Traitor|r to spawn if he's not there|r
+    .accept 155 >> Accept The Defias Brotherhood
+    .target The Defias Traitor
+step << Hunter
+.dungeon DM
+    .goto Westfall,42.56,71.71
+    >>Escort the |cRXP_FRIENDLY_The Defias Traitor|r to The Deadmines
+    >>|cRXP_WARN_Stay beside |cRXP_FRIENDLY_The Defias Traitor|r at all times! Be ready to fight |cRXP_ENEMY_The Defias|r upon reaching Moonbrook|r
+    .complete 155,1 -- Escort The Defias Traitor to discover where VanCleef is hiding (1)
+    .target The Defias Traitor
+step << Hunter
+.dungeon DM
+    .goto Westfall,56.33,47.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .turnin 155 >> Turn in The Defias Brotherhood
+    .accept 166 >> Accept The Defias Brotherhood
+    .target Gryan Stoutmantle
+step << Hunter
+.dungeon DM
+    .goto Westfall,60.4,72.2
+    .goto Westfall,40.4,71.6
+    .subzone 1581 >> Now you should be looking for a group to The Deadmines
+    >>Grind gnolls while assembling a Deadmines group
+step << Hunter
+.dungeon DM
+    .goto Westfall,42.55,71.69
+    .subzone 1581 >> Travel to The Deadmines
+step << Hunter
+.dungeon DM
+    #completewith EnterDM
+    >>Kill the |cRXP_ENEMY_Defias|r. Loot them for their |cRXP_LOOT_Bandanas|r
+    >>|cRXP_WARN_You may complete this after you enter the Dungeon|r
+    .complete 214,1 -- Red Silk Bandana (10)
+    .isOnQuest 214
+step << Hunter
+.dungeon DM
+    #completewith next 
+    >>Kill |cRXP_ENEMY_Skeletal Miners|r, |cRXP_ENEMY_Undead Dynamiters|r and |cRXP_ENEMY_Undead Excavators|r. Loot them for their |cRXP_LOOT_Cards|r
+    >>|cRXP_WARN_This is completed OUTSIDE of the Dungeon|r
+    .complete 168,1 -- Miners' Union Card (4)
+    .mob Skeletal Miner
+    .mob Undead Dynamiter
+    .mob Undead Excavator
+step << Hunter
+.dungeon DM
+    .goto 1415,41.18,79.80,25,0
+    .goto 1415,41.03,79.96,25,0
+    .goto 1415,40.92,80.05,25,0
+    .goto 1415,41.08,80.11
+    >>Kill |cRXP_ENEMY_Foreman Thistlenettle|r. Loot him for his |cRXP_LOOT_Badge|r
+    >>|cRXP_WARN_This is completed OUTSIDE of the Dungeon|r
+    .complete 167,1 -- Thistlenettle's Badge (1)
+    .unitscan Foreman Thistlenettle
+step << Hunter
+.dungeon DM
+    .goto 1415,41.18,79.80,25,0
+    .goto 1415,41.03,79.96,25,0
+    .goto 1415,40.92,80.05,25,0
+    .goto 1415,41.08,80.11
+    >>Kill |cRXP_ENEMY_Skeletal Miners|r, |cRXP_ENEMY_Undead Dynamiters|r and |cRXP_ENEMY_Undead Excavators|r. Loot them for their |cRXP_LOOT_Cards|r
+    >>|cRXP_WARN_This is completed OUTSIDE of the Dungeon|r
+    .complete 168,1 -- Miners' Union Card (4)
+    .mob Skeletal Miner
+    .mob Undead Dynamiter
+    .mob Undead Excavator
+step << Hunter
+.dungeon DM
+    #label EnterDM
+    .goto 1415,40.94,79.76,25,0
+    .goto 1415,40.86,79.62,20,0
+    .goto 1415,40.678,79.578
+    .subzone 1581,2 >> Enter The Deadmines Dungeon
+step << Hunter
+.dungeon DM
+    #completewith DMend
+    >>Kill the |cRXP_ENEMY_Defias|r inside The Deadmines. Loot them for their |cRXP_LOOT_Bandanas|r
+    .complete 214,1 -- Red Silk Bandana (10)
+    .isOnQuest 214
+step << Hunter
+.dungeon DM
+    >>Kill |cRXP_ENEMY_Sneed|r. Loot him for the |cRXP_LOOT_Gnoam Sprecklesprocket|r
+    .complete 2040,1 -- Gnoam Sprecklesprocket (1)
+step << Hunter
+.dungeon DM
+    >>Kill |cRXP_ENEMY_Edwin VanCleef|r. Loot him for his |cRXP_LOOT_Head|r and |T133471:0|t[|cRXP_LOOT_An Unsent Letter|r]
+    >>|cRXP_WARN_Use |T133471:0|t[|cRXP_LOOT_An Unsent Letter|r] to start the quest|r
+    .collect 2874,1,373 -- An Unsent Letter (1)
+    .complete 166,1 -- Head of VanCleef (1)
+    .accept 373 >> Accept The Unsent Letter
+    .use 2874 -- An Unsent Letter
+step << Hunter
+.dungeon DM
+    #label DMend
+    #completewith next
+    .goto Westfall,56.33,47.52,100 >> Travel to Sentinel Hill
+step << Hunter
+.dungeon DM
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r and |cRXP_FRIENDLY_Scout Riell|r atop the Tower
+    .turnin 166 >> Turn in The Defias Brotherhood
+    .goto Westfall,56.33,47.52
+    .turnin -214 >> Turn in Red Silk Bandanas
+    .goto Westfall,56.67,47.35
+    .target Gryan Stoutmantle
+    .target Scout Riell
+step << Hunter
+.dungeon DM
+    #completewith next
+    .goto Westfall,56.55,52.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
+    .fly Stormwind >> Fly to Stormwind
+    .target Thor
+step << Hunter
+.dungeon DM
+    .goto StormwindClassic,48.079,30.913,10,0
+    .goto StormwindClassic,49.193,30.285
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r
+    .turnin 373 >> Turn in The Unsent Letter
+    .accept 389 >> Accept Bazil Thredd
+    .target Baros Alexston
+step << Hunter
+.dungeon DM
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r and |cRXP_FRIENDLY_Shoni the Shilent|r
+    .turnin 167 >> Turn in Oh Brother. . .
+    .turnin 168 >> Turn in Collecting Memories
+    .goto StormwindClassic,65.438,21.175
+    .turnin 2040 >> Turn in Underground Assault
+    .goto StormwindClassic,55.510,12.504
+    .target Wilder Thistlenettle
+    .target Shoni the Shilent
+step << Hunter
+.dungeon DM
+    .goto StormwindClassic,42.435,59.236,10,0
+    .goto StormwindClassic,41.102,58.091
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warden Thelwater|r
+    .turnin 389 >> Turn in Bazil Thredd
+--  .accept 391 >> Accept The Stockade Riots -- Accept later when going to do Stockades
+    .target Warden Thelwater
+step << Hunter
+.dungeon DM
+    .hs >> Hearth to Darkshore
 step << !Hunter
     #completewith next
     .goto Darkshore,32.75,42.21,35 >> Travel to the Auberdine Docks. Wait for the Menethil Harbor boat
@@ -3682,6 +4056,16 @@ step
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube
     .target Billibub Cogspinner
+step
+.dungeon DM
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r and |cRXP_FRIENDLY_Wilder Thistlenettle|r 
+    .accept 2040 >> Accept Underground Assault
+    .goto StormwindClassic,55.510,12.504
+    .accept 167 >> Accept Oh Brother. . .
+    .accept 168 >> Accept Collecting Memories
+    .goto StormwindClassic,65.438,21.175
+    .target Wilder Thistlenettle
+    .target Shoni the Shilent
 step << !NightElf
 	.isOnQuest 1338
     .goto StormwindClassic,58.08,16.52
@@ -3773,6 +4157,22 @@ step << Rogue
     .collect 923,1 --Longsword
     .collect 2209,1 --Kris
     .target Marda Weller
+step
+.dungeon !DM
+    #ah
+    .goto Stormwind City,53.612,59.764
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
+    >>Buy the following items for faster turn ins at Redridge Mountains shortly
+    >>This will save you time as you won't need to run around looking for mobs to kill. Skip this step if you wish to not buy any
+    >>|T134172:0|t[Great Goretusk Snout]
+    >>|T134028:0|t[Tough Condor Meat]
+    >>|T134321:0|t[Crisp Spider Meat]
+    >>|T134572:0|t[Rethban Ore]  
+    .collect 2296,5,92,1 -- Great Goretusk Snout (5)
+    .collect 1080,5,92,1 -- Tough Condor Meat (5)
+    .collect 1081,5,92,1 -- Crisp Spider Meat (5)
+    .collect 2798,5,347,1 -- Rethban Ore (5)
+    .target Auctioneer Jaxon
 step << !Human !Warlock
     #som
     #phase 3-6
@@ -3791,6 +4191,51 @@ step << !Human
 step << NightElf
     .goto StormwindClassic,73.2,92.1
     .zone Elwynn Forest >> Exit Stormwind
+step << !NightElf
+.dungeon DM
+    #completewith next
+    .goto StormwindClassic,66.27,62.12
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Dungar Longdrink|r
+    .fly Westfall >> Fly to Westfall
+    .target Dungar Longdrink
+    .zoneskip Westfall
+step << !NightElf
+.dungeon DM
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .accept 166 >> Accept The Defias Brotherhood
+    .goto Westfall,56.33,47.52
+    .target Gryan Stoutmantle
+step << !NightElf
+.dungeon DM
+    .goto StormwindClassic,66.27,62.12
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Dungar Longdrink|r
+    .fly Redridge >> Fly to Redridge Mountains
+    .target Dungar Longdrink
+    .zoneskip Stormwind City,1
+step << !NightElf
+.dungeon DM
+    .goto Westfall,56.55,52.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
+    .fly Redridge >> Fly to Redridge Mountains
+    .target Thor
+    .zoneskip Westfall,1
+step << NightElf
+.dungeon DM
+    #completewith WestEntry
+    .goto Westfall,59.95,19.35
+    .zone Westfall >> Travel to Westfall
+step << NightElf
+.dungeon DM
+    .goto Westfall,56.55,52.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
+    .fp Sentinel Hill >> Get the Sentinel Hill flight path
+    .target Thor
+step << NightElf
+.dungeon DM
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .accept 166 >> Accept The Defias Brotherhood
+    .goto Westfall,56.33,47.52
+    .target Gryan Stoutmantle
 step << NightElf Warrior/NightElf Rogue/NightElf Priest
     #completewith next
     .goto Elwynn Forest,41.08,65.76,25 >> Travel to Goldshire << Warrior
@@ -3837,6 +4282,7 @@ step << Human/Warlock
     .fly Redridge >>Fly to Redridge Mountains
     .target Dungar Longdrink
 step << !NightElf
+.dungeon !DM
     #era/som
     #completewith next
     .goto StormwindClassic,66.27,62.13
@@ -3856,6 +4302,244 @@ step << !Human
     #label start
     .goto Redridge Mountains,15.27,71.45
     .zone Redridge Mountains >> Travel to Redridge Mountains
+step
+.dungeon DM
+    .goto Redridge Mountains,27.35,44.07,8,0
+    .goto Redridge Mountains,26.48,45.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wiley the Black|r up stairs
+    .turnin 65 >> Turn in The Defias Brotherhood
+    .accept 132 >> Accept The Defias Brotherhood
+	.target Wiley the Black
+step
+.dungeon DM
+    #completewith next
+    .goto Redridge Mountains,30.59,59.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ariena Stormfeather|r
+    .fly Westfall >> Fly to Westfall
+    .target Ariena Stormfeather
+step
+.dungeon DM
+    .goto Westfall,56.325,47.519
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gryan Stoutmantle|r
+    .turnin 132 >> Turn in The Defias Brotherhood
+    .accept 135 >> Accept The Defias Brotherhood
+    .target Gryan Stoutmantle
+step
+.dungeon DM
+    #completewith next
+    .goto Westfall,56.55,52.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Thor|r
+    .fly Stormwind >> Fly to Stormwind
+    .target Thor
+step
+.dungeon DM
+    .goto Stormwind City,75.78,59.84
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Mathias Shaw|r
+    .turnin 135 >> Turn in The Defias Brotherhood
+    .accept 141 >> Accept The Defias Brotherhood
+    .target Master Mathias Shaw
+step
+.dungeon DM
+    .goto StormwindClassic,66.277,62.137
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Dungar Longdrink|r
+    .fly Westfall >> Fly to Westfall
+    .target Dungar Longdrink
+step
+.dungeon DM
+    .goto Westfall,56.325,47.519
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .turnin 141 >> Turn in The Defias Brotherhood
+    .accept 142 >> Accept The Defias Brotherhood
+    .target Gryan Stoutmantle
+step
+.dungeon DM
+    #completewith next
+    .goto Westfall,44.50,69.62,55 >> Travel to Moonbrook
+step
+.dungeon DM
+    .goto Westfall,44.50,69.62
+    .line Westfall,44.50,69.62,44.50,69.62,45.08,69.40,45.21,69.35,45.63,68.69,45.85,67.73,45.62,66.99,45.52,65.71,45.61,64.95,44.28,63.88,44.26,62.80,43.60,59.89,43.37,58.42,43.26,57.01,43.12,54.24,42.15,52.74,41.74,51.42,41.48,49.89,40.91,48.71,38.93,46.05,38.51,45.46,37.85,45.54,36.60,44.21,36.06,43.86,35.12,43.49,33.92,43.21,32.56,43.05,31.34,44.54,32.56,43.05,33.92,43.21,35.12,43.49,36.06,43.86,36.26,43.77,36.87,42.87,36.95,40.85,37.04,39.79,37.91,36.98,39.06,35.58,40.48,34.31,41.27,32.87,41.76,31.27,42.26,30.26,43.20,28.99,44.29,28.19,44.64,26.85,44.57,24.94,44.64,26.85,44.29,28.19,43.20,28.99,42.26,30.26,41.76,31.27,41.27,32.87,40.48,34.31,39.06,35.58,37.91,36.98,37.04,39.79,36.95,40.85,36.87,42.87,36.26,43.77,36.06,43.86,35.12,43.49,33.92,43.21,32.56,43.05,31.34,44.54,32.56,43.05,33.92,43.21,35.12,43.49,36.06,43.86,36.60,44.21,37.85,45.54,38.51,45.46,38.93,46.05,40.91,48.71,41.48,49.89,41.74,51.42,42.15,52.74,43.12,54.24,43.26,57.01,43.37,58.42,43.60,59.89,44.26,62.80,44.28,63.88,45.61,64.95,45.52,65.71,45.62,66.99,45.85,67.73,45.63,68.69,45.21,69.35,45.08,69.40,44.50,69.62
+    >>Kill the |cRXP_ENEMY_Defias Messenger|r. Loot him for his |cRXP_LOOT_Mysterious Message|r
+    >>|cRXP_WARN_The |cRXP_ENEMY_Defias Messenger|r spawns in Moonbrook. He walks along the road north of Moonbrook, to the Gold Coast Quarry and Jangolode Mine. If you don't see him along the road, wait for him to spawn in Moonbrook|r
+    >>|cRXP_WARN_He has a 4-5 minute respawn timer|r
+    .complete 142,1 -- A Mysterious Message (1)
+    .unitscan Defias Messenger
+step
+.dungeon DM
+    .goto Westfall,56.33,47.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .turnin 142 >> Turn in The Defias Brotherhood
+    .target Gryan Stoutmantle
+step
+.dungeon DM
+    .goto Westfall,55.68,47.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Defias Traitor|r
+    >>|cRXP_WARN_You may need to wait for |cRXP_FRIENDLY_The Defias Traitor|r to spawn if he's not there|r
+    .accept 155 >> Accept The Defias Brotherhood
+    .target The Defias Traitor
+step
+.dungeon DM
+    .goto Westfall,42.56,71.71
+    >>Escort the |cRXP_FRIENDLY_The Defias Traitor|r to The Deadmines
+    >>|cRXP_WARN_Stay beside |cRXP_FRIENDLY_The Defias Traitor|r at all times! Be ready to fight |cRXP_ENEMY_The Defias|r upon reaching Moonbrook|r
+    .complete 155,1 -- Escort The Defias Traitor to discover where VanCleef is hiding (1)
+    .target The Defias Traitor
+step
+.dungeon DM
+    .goto Westfall,56.33,47.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .turnin 155 >> Turn in The Defias Brotherhood
+    .accept 166 >> Accept The Defias Brotherhood
+    .target Gryan Stoutmantle
+step << !NightElf
+.dungeon DM
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scout Riell|r atop the Tower
+    .accept 214 >> Accept Red Silk Bandanas
+    .goto Westfall,56.67,47.35
+    .target Scout Riell
+step
+.dungeon DM
+    .goto Westfall,60.4,72.2
+    .goto Westfall,40.4,71.6
+    .subzone 1581 >> Now you should be looking for a group to The Deadmines
+    >>Grind gnolls while assembling a Deadmines group
+step
+.dungeon DM
+    .goto Westfall,42.55,71.69
+    .subzone 1581 >> Travel to The Deadmines
+step
+.dungeon DM
+    #completewith EnterDM
+    >>Kill the |cRXP_ENEMY_Defias|r. Loot them for their |cRXP_LOOT_Bandanas|r
+    >>|cRXP_WARN_You may complete this after you enter the Dungeon|r
+    .complete 214,1 -- Red Silk Bandana (10)
+    .isOnQuest 214
+step
+.dungeon DM
+    #completewith next 
+    >>Kill |cRXP_ENEMY_Skeletal Miners|r, |cRXP_ENEMY_Undead Dynamiters|r and |cRXP_ENEMY_Undead Excavators|r. Loot them for their |cRXP_LOOT_Cards|r
+    >>|cRXP_WARN_This is completed OUTSIDE of the Dungeon|r
+    .complete 168,1 -- Miners' Union Card (4)
+    .mob Skeletal Miner
+    .mob Undead Dynamiter
+    .mob Undead Excavator
+step
+.dungeon DM
+    .goto 1415,41.18,79.80,25,0
+    .goto 1415,41.03,79.96,25,0
+    .goto 1415,40.92,80.05,25,0
+    .goto 1415,41.08,80.11
+    >>Kill |cRXP_ENEMY_Foreman Thistlenettle|r. Loot him for his |cRXP_LOOT_Badge|r
+    >>|cRXP_WARN_This is completed OUTSIDE of the Dungeon|r
+    .complete 167,1 -- Thistlenettle's Badge (1)
+    .unitscan Foreman Thistlenettle
+step
+.dungeon DM
+    .goto 1415,41.18,79.80,25,0
+    .goto 1415,41.03,79.96,25,0
+    .goto 1415,40.92,80.05,25,0
+    .goto 1415,41.08,80.11
+    >>Kill |cRXP_ENEMY_Skeletal Miners|r, |cRXP_ENEMY_Undead Dynamiters|r and |cRXP_ENEMY_Undead Excavators|r. Loot them for their |cRXP_LOOT_Cards|r
+    >>|cRXP_WARN_This is completed OUTSIDE of the Dungeon|r
+    .complete 168,1 -- Miners' Union Card (4)
+    .mob Skeletal Miner
+    .mob Undead Dynamiter
+    .mob Undead Excavator
+step
+.dungeon DM
+    #label EnterDM
+    .goto 1415,40.94,79.76,25,0
+    .goto 1415,40.86,79.62,20,0
+    .goto 1415,40.678,79.578
+    .subzone 1581,2 >> Enter The Deadmines Dungeon
+step
+.dungeon DM
+    #completewith DMend
+    >>Kill the |cRXP_ENEMY_Defias|r inside The Deadmines. Loot them for their |cRXP_LOOT_Bandanas|r
+    .complete 214,1 -- Red Silk Bandana (10)
+    .isOnQuest 214
+step
+.dungeon DM
+    >>Kill |cRXP_ENEMY_Sneed|r. Loot him for the |cRXP_LOOT_Gnoam Sprecklesprocket|r
+    .complete 2040,1 -- Gnoam Sprecklesprocket (1)
+step
+.dungeon DM
+    >>Kill |cRXP_ENEMY_Edwin VanCleef|r. Loot him for his |cRXP_LOOT_Head|r and |T133471:0|t[|cRXP_LOOT_An Unsent Letter|r]
+    >>|cRXP_WARN_Use |T133471:0|t[|cRXP_LOOT_An Unsent Letter|r] to start the quest|r
+    .collect 2874,1,373 -- An Unsent Letter (1)
+    .complete 166,1 -- Head of VanCleef (1)
+    .accept 373 >> Accept The Unsent Letter
+    .use 2874 -- An Unsent Letter
+step
+.dungeon DM
+    #label DMend
+    #completewith next
+    .goto Westfall,56.33,47.52,100 >> Travel to Sentinel Hill
+step
+.dungeon DM
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r and |cRXP_FRIENDLY_Scout Riell|r atop the Tower
+    .turnin 166 >> Turn in The Defias Brotherhood
+    .goto Westfall,56.33,47.52
+    .turnin -214 >> Turn in Red Silk Bandanas
+    .goto Westfall,56.67,47.35
+    .target Gryan Stoutmantle
+    .target Scout Riell
+step
+.dungeon DM
+    #completewith next
+    .goto Westfall,56.55,52.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
+    .fly Stormwind >> Fly to Stormwind
+    .target Thor
+step
+.dungeon DM
+    .goto StormwindClassic,48.079,30.913,10,0
+    .goto StormwindClassic,49.193,30.285
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r
+    .turnin 373 >> Turn in The Unsent Letter
+    .accept 389 >> Accept Bazil Thredd
+    .target Baros Alexston
+step
+.dungeon DM
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r and |cRXP_FRIENDLY_Shoni the Shilent|r
+    .turnin 167 >> Turn in Oh Brother. . .
+    .turnin 168 >> Turn in Collecting Memories
+    .goto StormwindClassic,65.438,21.175
+    .turnin 2040 >> Turn in Underground Assault
+    .goto StormwindClassic,55.510,12.504
+    .target Wilder Thistlenettle
+    .target Shoni the Shilent
+step
+.dungeon DM
+    .goto StormwindClassic,42.435,59.236,10,0
+    .goto StormwindClassic,41.102,58.091
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warden Thelwater|r
+    .turnin 389 >> Turn in Bazil Thredd
+--  .accept 391 >> Accept The Stockade Riots -- Accept later when going to do Stockades
+    .target Warden Thelwater
+step
+.dungeon DM
+    #ah
+    .goto Stormwind City,53.612,59.764
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
+    >>Buy the following items for faster turn ins at Redridge Mountains shortly
+    >>This will save you time as you won't need to run around looking for mobs to kill. Skip this step if you wish to not buy any
+    >>|T134172:0|t[Great Goretusk Snout]
+    >>|T134028:0|t[Tough Condor Meat]
+    >>|T134321:0|t[Crisp Spider Meat]
+    >>|T134572:0|t[Rethban Ore]  
+    .collect 2296,5,92,1 -- Great Goretusk Snout (5)
+    .collect 1080,5,92,1 -- Tough Condor Meat (5)
+    .collect 1081,5,92,1 -- Crisp Spider Meat (5)
+    .collect 2798,5,347,1 -- Rethban Ore (5)
+    .target Auctioneer Jaxon
+step
+.dungeon DM
+    .goto StormwindClassic,66.27,62.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Dungar Longdrink|r
+    .fly Redridge >>Fly to Redridge Mountains
+    .target Dungar Longdrink
+    .zoneskip Redridge Mountains
 step << NightElf
     #era/som
     #label GParker
