@@ -1,4 +1,4 @@
-## Interface: 30402
+## Interface: 30403
 ## Title: RestedXP Guides
 ## Notes: In-game leveling guides
 ## Notes-zhCN: TODO
