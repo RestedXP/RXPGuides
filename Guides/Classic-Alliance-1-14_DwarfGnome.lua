@@ -1847,7 +1847,6 @@ step
     .target Marshal Dughan
     .goto Elwynn Forest,42.105,65.927
     .turnin 123 >> Turn in The Collector
-    .accept 147 >> Accept Manhunt
     .isOnQuest 123
 step << Warlock
     .isQuestTurnedIn 123

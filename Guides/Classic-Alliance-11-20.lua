@@ -3338,16 +3338,19 @@ step
     .turnin 966 >> Turn in The Tower of Althalaxx
     .accept 967 >> Accept The Tower of Althalaxx
 step << !Warrior !Paladin !Rogue !Druid
+    .solo
 #map Darkshore
     #completewith next
     .goto Winterspring,6.37,16.66,50 >> Travel to Mist's Edge
 step << !Warrior !Paladin !Rogue !Druid
+    .solo
 #map Darkshore
     .goto Winterspring,6.37,16.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gelkak Gyromast|r
     .accept 2098 >> Accept Gyromast's Retrieval
     .target Gelkak Gyromast
 step << !Warrior !Paladin !Rogue !Druid
+    .solo
     #completewith next
     .goto Darkshore,56.10,16.88,0
     >>Kill |cFFFF5722Raging Reef Crawlers|r and |cFFFF5722Encrusted Tide Crawlers|r. Loot them for the |cFF00BCD4Bottom of Gelkak's Key|r
@@ -3356,6 +3359,7 @@ step << !Warrior !Paladin !Rogue !Druid
     .mob Raging Reef Crawler
     .mob Encrusted Tide Crawler
 step << !Warrior !Paladin !Rogue !Druid
+    .solo
     .goto Darkshore,54.93,12.19
     >>Kill |cFFFF5722Greymist Oracles|r and |cFFFF5722Greymist Tidehunter|r. Loot them for the |cFF00BCD4Middle of Gelkak's Key|r
     >>|cFFFCDC00Be aware of |cFFFF5722Greymist Oracles|r |T136048:0|t[Lightning Bolt] damage and they can also heal with |T136052:0|t[Healing Wave]|r
@@ -3363,6 +3367,7 @@ step << !Warrior !Paladin !Rogue !Druid
     .mob Greymist Oracle
     .mob Greymist Tidehunter
 step << !Warrior !Paladin !Rogue !Druid
+    .solo
     .goto Darkshore,55.59,16.98,45,0
     .goto Darkshore,53.76,18.96,45,0
     .goto Darkshore,51.34,22.00,45,0
@@ -3373,6 +3378,59 @@ step << !Warrior !Paladin !Rogue !Druid
     .mob Raging Reef Crawler
     .mob Encrusted Tide Crawler
 step << !Warrior !Paladin !Rogue !Druid
+    .solo
+    #sticky
+    #label foreststriders
+    .goto Darkshore,59.29,13.22,55,0
+    .goto Darkshore,61.40,9.40,50,0
+    .goto Darkshore,61.51,12.66,50,0
+    .goto Darkshore,61.24,15.38,50,0
+    .goto Darkshore,61.40,9.40
+    >>Kill |cFFFF5722Giant Foreststriders|r. Loot them for the |cFF00BCD4Top of Gelkak's Key|r
+    .complete 2098,1 -- Top of Gelkak's Key (1)
+    .mob Giant Foreststrider
+step
+    .group
+#map Darkshore
+    #completewith next
+    .goto Winterspring,6.37,16.66,50 >> Travel to Mist's Edge
+step
+    .group
+#map Darkshore
+    .goto Winterspring,6.37,16.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gelkak Gyromast|r
+    .accept 2098 >> Accept Gyromast's Retrieval
+    .target Gelkak Gyromast
+step
+    .group
+    #completewith next
+    .goto Darkshore,56.10,16.88,0
+    >>Kill |cFFFF5722Raging Reef Crawlers|r and |cFFFF5722Encrusted Tide Crawlers|r. Loot them for the |cFF00BCD4Bottom of Gelkak's Key|r
+    >>|cFFFCDC00Be aware of |cFFFF5722Raging Reef Crawlers|r |T132152:0|t[Thrash] ability. You can take 200 damage instantly from their melee hits|r
+    .complete 2098,3 -- Bottom of Gelkak's Key
+    .mob Raging Reef Crawler
+    .mob Encrusted Tide Crawler
+step
+    .group
+    .goto Darkshore,54.93,12.19
+    >>Kill |cFFFF5722Greymist Oracles|r and |cFFFF5722Greymist Tidehunter|r. Loot them for the |cFF00BCD4Middle of Gelkak's Key|r
+    >>|cFFFCDC00Be aware of |cFFFF5722Greymist Oracles|r |T136048:0|t[Lightning Bolt] damage and they can also heal with |T136052:0|t[Healing Wave]|r
+    .complete 2098,2 -- Middle of Gelkak's Key (1)
+    .mob Greymist Oracle
+    .mob Greymist Tidehunter
+step
+    .group
+    .goto Darkshore,55.59,16.98,45,0
+    .goto Darkshore,53.76,18.96,45,0
+    .goto Darkshore,51.34,22.00,45,0
+    .goto Darkshore,56.63,12.08
+    >>Kill |cFFFF5722Raging Reef Crawlers|r and |cFFFF5722Encrusted Tide Crawlers|r. Loot them for the |cFF00BCD4Bottom of Gelkak's Key|r
+    >>|cFFFCDC00Be aware of |cFFFF5722Raging Reef Crawlers|r |T132152:0|t[Thrash] ability. You can take 200 damage instantly from their melee hits|r
+    .complete 2098,3 -- Bottom of Gelkak's Key
+    .mob Raging Reef Crawler
+    .mob Encrusted Tide Crawler
+step
+    .group
     #sticky
     #label foreststriders
     .goto Darkshore,59.29,13.22,55,0
@@ -3396,6 +3454,7 @@ step
     .mob Moonstalker Runt
     .isOnQuest 986,1002
 step << !Warrior !Paladin !Rogue !Druid
+    .solo
 #map Darkshore
     #requires foreststriders
     .goto Winterspring,6.37,16.66
@@ -3404,6 +3463,7 @@ step << !Warrior !Paladin !Rogue !Druid
     .accept 2078 >> Accept Gyromast's Revenge
     .target Gelkak Gyromast
 step << !Warrior !Paladin !Rogue !Druid
+    .solo
 #map Darkshore
     #completewith next
     .goto Winterspring,5.59,21.09
@@ -3412,6 +3472,7 @@ step << !Warrior !Paladin !Rogue !Druid
     .skipgossip
     .target The Threshwackonator 4100
 step << !Warrior !Paladin !Rogue !Druid
+    .solo
 #map Darkshore
     .goto Winterspring,6.37,16.66
     >>Escort |cFF00FF25The Threshwackonator 4100|r to |cFF00FF25Gelkak Gyromast|r
@@ -3421,6 +3482,7 @@ step << !Warrior !Paladin !Rogue !Druid
     .link https://clips.twitch.tv/VainAmorphousMacaroniPRChase-iGvhTnz0ked6LO0A >> |cFFFCDC00Click here for a video guide|r
     .mob The Threshwackonator 4100
 step << !Warrior !Paladin !Rogue !Druid
+    .solo
 #map Darkshore
     .goto Winterspring,6.37,16.66
     .target Gelkak Gyromast
@@ -3428,6 +3490,47 @@ step << !Warrior !Paladin !Rogue !Druid
     .turnin 2078 >> Turn in Gyromast's Revenge
     .isQuestComplete 2078
 step << !Warrior !Paladin !Rogue !Druid
+    .solo
+    #sticky
+    .destroy 7442 >> Delete Gyromast's Key from your inventory
+step
+    .group
+#map Darkshore
+    #requires foreststriders
+    .goto Winterspring,6.37,16.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gelkak Gyromast|r
+    .turnin 2098 >> Turn in Gyromast's Retrieval
+    .accept 2078 >> Accept Gyromast's Revenge
+    .target Gelkak Gyromast
+step
+    .group
+#map Darkshore
+    #completewith next
+    .goto Winterspring,5.59,21.09
+    .gossipoption 87696 >> Talk to |cFF00FF25The Threshwackonator 4100|r to start the escort
+    >>|cFFFCDC00This quest is VERY difficult|r
+    .skipgossip
+    .target The Threshwackonator 4100
+step
+    .group
+#map Darkshore
+    .goto Winterspring,6.37,16.66
+    >>Escort |cFF00FF25The Threshwackonator 4100|r to |cFF00FF25Gelkak Gyromast|r
+    >>Kill |cFFFF5722The Threshwackonator 4100|r once it turns hostile
+    >>|cFFFCDC00This quest is VERY difficult|r
+    .complete 2078,1
+    .link https://clips.twitch.tv/VainAmorphousMacaroniPRChase-iGvhTnz0ked6LO0A >> |cFFFCDC00Click here for a video guide|r
+    .mob The Threshwackonator 4100
+step
+    .group
+#map Darkshore
+    .goto Winterspring,6.37,16.66
+    .target Gelkak Gyromast
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gelkak Gyromast|r
+    .turnin 2078 >> Turn in Gyromast's Revenge
+    .isQuestComplete 2078
+step
+    .group
     #sticky
     .destroy 7442 >> Delete Gyromast's Key from your inventory
 step
