@@ -3827,6 +3827,41 @@ step
     .unitscan XT:4
 step
     #completewith next
+    .subzone 2160 >> Enter the Windshear Mine
+    .group
+step
+    .goto Stonetalon Mountains,71.87,60.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Piznik|r
+    .accept 1090 >> Accept Gerenzo's Orders
+    .target Piznik
+    .group
+step
+    .goto Stonetalon Mountains,71.77,60.19
+    >>Protect |cRXP_FRIENDLY_Piznik|r from incoming |cRXP_FRIENDLY_Windshear Vermin|r
+    .complete 1090,1 --Keep Piznik safe while he mines the mysterious ore
+    .mob Windshear Vermin
+    .group 3
+step
+    .goto Stonetalon Mountains,71.87,60.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Piznik|r
+    .turnin 1090 >> Turnin Gerenzo's Orders
+    .accept 1092 >> Accept Gerenzo's Orders
+    .target Piznik
+    .group
+step
+    .goto Stonetalon Mountains,71.83,60.34
+    .goto Stonetalon Mountains,57.57,61.99,30 >>|cRXP_WARN_Jump onto the wooden wheel. Perform a Logout Skip by logging out and back in|r
+    .link https://www.youtube.com/watch?v=8s1SRza7qFg&ab_channel=RestedXP >> |cRXP_WARN_CLICK HERE for an example|r
+    .group
+step
+    .goto Stonetalon Mountains,58.99,62.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz|r
+    .turnin 1092 >> Turnin Gerenzo's Orders
+    .target Ziz Fizziks
+    .isQuestTurnedIn 1090
+    .group
+step
+    #completewith next
     .goto Stonetalon Mountains,78.29,42.51,30 >> Enter the Talondeep Path
 step
     .goto Stonetalon Mountains,78.89,41.24
