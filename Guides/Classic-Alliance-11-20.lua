@@ -5641,6 +5641,7 @@ step
     .mob Grizzled Thistle Bear
 step
     #era/som
+    .goto Darkshore,41.389,80.565
     >>Click the |cFFDB2EEFBuzzbox 525|r on the ground
     .turnin 1003 >> Turn in Buzzbox 525
     .isOnQuest 1003
