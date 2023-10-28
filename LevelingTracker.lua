@@ -54,9 +54,49 @@ ChatFrame_DisplayTimePlayed = function(...)
 end
 
 function addon.tracker:SetupTracker()
-    local trackerDefaults = {profile = {levels = {}}}
+    local trackerDefaults = {profile = {levels = {}, levelsArchive = {}}}
     self.db = LibStub("AceDB-3.0"):New("RXPCTrackingData", trackerDefaults)
     self.maxLevel = GetMaxPlayerLevel()
+
+    self.reportKey = fmt("%s|%s|%s", playerName, addon.player.class,
+                         _G.GetRealmName())
+
+    if not self.db.profile.trackedGuid then
+        self.db.profile.trackedGuid = addon.player.guid
+    end
+
+    if self.db.profile.trackedGuid ~= addon.player.guid then
+        if addon.settings.profile.debug then
+            addon.comms.PrettyPrint(
+                "GUID changed, saving %s and resetting for %s",
+                addon.player.name, addon.player.guid)
+        end
+
+        local _, _, guid = strsplit('-', addon.player.guid)
+
+        -- Not displayed nor consumed, but a safety net for data
+        -- TODO add archives to splits for same-name speed splits
+        if not self.db.profile["levelsArchive"] then
+            self.db.profile["levelsArchive"] = {}
+        end
+        self.db.profile["levelsArchive"][guid] = self.db.profile["levels"]
+
+        -- Reset splits
+        if addon.db.profile.reports.splits[self.reportKey] then
+            local profileAlias = fmt("%s|%s|%s", playerName .. guid,
+                                     addon.player.class, _G.GetRealmName())
+
+            -- Copy existing data to new key with GUID
+            addon.db.profile.reports.splits[profileAlias] = addon.db.profile
+                                                                .reports.splits[self.reportKey]
+
+            -- Delete data for old toon name
+            addon.db.profile.reports.splits[self.reportKey] = nil
+        end
+
+        -- Now that data's been reset, update trackedGuid
+        self.db.profile.trackedGuid = addon.player.guid
+    end
 
     self:RegisterEvent("CHAT_MSG_COMBAT_XP_GAIN")
     self:RegisterEvent("TIME_PLAYED_MSG")
@@ -73,8 +113,6 @@ function addon.tracker:SetupTracker()
     self:CompileData()
 
     self:CreateGui(_G.CharacterFrame, playerName)
-    self.reportKey = fmt("%s|%s|%s", playerName, addon.player.class,
-                         _G.GetRealmName())
 
     if addon.settings.profile.enablelevelSplits then self:CreateLevelSplits() end
 end
@@ -752,13 +790,13 @@ function addon.tracker:CompileLevelData(level, d)
 end
 
 function addon.tracker:CompileData()
-    addon.tracker.reportData = {}
+    self.reportData = {}
 
-    for level, data in pairs(addon.tracker.db.profile["levels"]) do
-        addon.tracker.reportData[level] = self:CompileLevelData(level, data)
+    for level, data in pairs(self.db.profile["levels"]) do
+        self.reportData[level] = self:CompileLevelData(level, data)
     end
 
-    return addon.tracker.reportData
+    return self.reportData
 end
 
 function addon.tracker:UpdateReport(selectedLevel, target, attachment)
