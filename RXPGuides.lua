@@ -742,6 +742,7 @@ function addon:OnEnable()
 
     self:RegisterEvent("PLAYER_ENTERING_WORLD")
     self:RegisterEvent("PLAYER_LEAVING_WORLD")
+    self:RegisterEvent("PLAYER_LOGOUT")
 
     self:RegisterEvent("CALENDAR_UPDATE_EVENT_LIST")
     self:RegisterEvent("ZONE_CHANGED")
@@ -831,6 +832,24 @@ function addon:PLAYER_ENTERING_WORLD(_, isInitialLogin)
 end
 --addon:LoadGuideTable(addon.defaultGroupHC, addon.defaultGuideHC)
 function addon:PLAYER_LEAVING_WORLD() addon.isHidden = true end
+
+-- Sent when the player logs out or the UI is reloaded, just before SavedVariables are saved
+-- Note, this is only for profile sharing, frames are preserved normally with layout.xml
+function addon:PLAYER_LOGOUT()
+    if not addon.settings.profile.framePositions then
+        addon.settings.profile.framePositions = {}
+    end
+
+    local point, relativePoint, offsetX, offsetY
+    -- Dump enabled frame locations
+    for frameName, frame in pairs(addon.enabledFrames) do
+        -- if frame.IsFeatureEnabled() then
+        point, _, relativePoint, offsetX, offsetY = frame:GetPoint()
+
+        addon.settings.profile.framePositions[frameName] = {point, relativePoint, offsetX, offsetY}
+    end
+
+end
 
 function addon:CALENDAR_UPDATE_EVENT_LIST()
     -- Required by .dmf
