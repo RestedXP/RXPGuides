@@ -2946,6 +2946,20 @@ function addon.settings:RefreshProfile()
     addon.UpdateMap()
     addon.RXPFrame.GenerateMenuTable()
     addon.RXPFrame.SetStepFrameAnchor()
+
+    -- Restore frame positions on profile change
+    local point, relativeTo, relativePoint, offsetX, offsetY
+    for frameName, frame in pairs(addon.enabledFrames) do
+        if frame.IsFeatureEnabled() then
+            -- Restore saved positions if applicable
+            if addon.settings.profile.framePositions[frameName] then
+                point, relativeTo, relativePoint, offsetX, offsetY = unpack(addon.settings.profile.framePositions[frameName])
+
+                frame:SetPoint(point, relativeTo, relativePoint, offsetX, offsetY)
+            end
+            frame:SetShown(addon.settings.profile.showEnabled)
+        end
+    end
 end
 
 function addon.settings:CheckAddonCompatibility()

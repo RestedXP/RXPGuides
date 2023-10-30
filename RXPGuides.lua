@@ -773,11 +773,10 @@ function addon:OnEnable()
     for frameName, frame in pairs(addon.enabledFrames) do
         if frame.IsFeatureEnabled() then
             -- Restore saved positions if applicable
-            -- TODO optimize for only profile changes?
             if addon.settings.profile.framePositions[frameName] then
                 point, relativeTo, relativePoint, offsetX, offsetY = unpack(addon.settings.profile.framePositions[frameName])
 
-                frame:SetPoint(point, relativeTo, relativePoint ,offsetX, offsetY)
+                frame:SetPoint(point, relativeTo, relativePoint, offsetX, offsetY)
             end
             frame:SetShown(addon.settings.profile.showEnabled)
         end
