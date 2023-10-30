@@ -166,7 +166,9 @@ function addon.settings:InitializeSettings()
             emergencyThreshold = 0.2,
             enableEmergencyIconAnimations = true,
 
-            dungeons = {}
+            dungeons = {},
+
+            framePositions = {},
         }
     }
 

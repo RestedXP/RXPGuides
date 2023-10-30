@@ -769,8 +769,16 @@ function addon:OnEnable()
         self:RegisterEvent("QUEST_DATA_LOAD_RESULT")
     end
 
-    for _, frame in pairs(addon.enabledFrames) do
+    local point, relativeTo, relativePoint, offsetX, offsetY
+    for frameName, frame in pairs(addon.enabledFrames) do
         if frame.IsFeatureEnabled() then
+            -- Restore saved positions if applicable
+            -- TODO optimize for only profile changes?
+            if addon.settings.profile.framePositions[frameName] then
+                point, relativeTo, relativePoint, offsetX, offsetY = unpack(addon.settings.profile.framePositions[frameName])
+
+                frame:SetPoint(point, relativeTo, relativePoint ,offsetX, offsetY)
+            end
             frame:SetShown(addon.settings.profile.showEnabled)
         end
     end
@@ -840,13 +848,13 @@ function addon:PLAYER_LOGOUT()
         addon.settings.profile.framePositions = {}
     end
 
-    local point, relativePoint, offsetX, offsetY
+    local point, relativeTo, relativePoint, offsetX, offsetY
     -- Dump enabled frame locations
     for frameName, frame in pairs(addon.enabledFrames) do
         -- if frame.IsFeatureEnabled() then
-        point, _, relativePoint, offsetX, offsetY = frame:GetPoint()
+        point, relativeTo, relativePoint, offsetX, offsetY = frame:GetPoint()
 
-        addon.settings.profile.framePositions[frameName] = {point, relativePoint, offsetX, offsetY}
+        addon.settings.profile.framePositions[frameName] = {point, relativeTo, relativePoint, offsetX, offsetY}
     end
 
 end
