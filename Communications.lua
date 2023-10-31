@@ -25,6 +25,8 @@ addon.comms.state = {
 }
 
 local function announceLevelUp(message)
+    if not message then return end
+
     if GetNumGroupMembers() > 0 then
         if addon.settings.profile.enableLevelUpAnnounceGroup then
             SendChatMessage(message, "PARTY", nil)
@@ -87,9 +89,13 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
 
             if not s then return end
 
+            local prettyTime = addon.comms:PrettyPrintTime(s)
+
+            if not prettyTime then return end
+
             msg = self.BuildNotification(
                       L("I just leveled from %d to %d in %s"), level - 1, level,
-                      addon.comms:PrettyPrintTime(s))
+                      prettyTime)
             announceLevelUp(msg)
         else
             -- Leave enough time for TIME_PLAYED to return, ish
@@ -395,8 +401,7 @@ end
 
 function addon.comms.PrettyPrint(msg, ...)
     print(fmt("%s%s: %s", addon.title,
-              addon.settings.profile.debug and ' (Debug)' or '',
-              fmt(msg, ...)))
+              addon.settings.profile.debug and ' (Debug)' or '', fmt(msg, ...)))
 end
 
 function addon.comms.OpenBugReport(stepNumber)
@@ -418,10 +423,9 @@ function addon.comms.OpenBugReport(stepNumber)
     local guide = "Inactive"
 
     if addon.currentGuide and addon.currentGuide.key then
-        guide = fmt("%s v%d (%s)",
-                      addon.currentGuide.key,
-                      tonumber(addon.currentGuide.version) or 0,
-                        (addon.currentGuide.guideId) or 'N/A')
+        guide = fmt("%s v%d (%s)", addon.currentGuide.key,
+                    tonumber(addon.currentGuide.version) or 0,
+                    (addon.currentGuide.guideId) or 'N/A')
     end
 
     stepNumber = stepNumber or RXPCData.currentStep
@@ -430,7 +434,7 @@ function addon.comms.OpenBugReport(stepNumber)
         local step = addon.currentGuide.steps[stepNumber]
         if type(step) == "table" then
             local stepId = step.stepId or 0
-            stepData = fmt("%s\nStep ID: %.0f\n",stepData,stepId)
+            stepData = fmt("%s\nStep ID: %.0f\n", stepData, stepId)
             if step.elements then
                 for s, e in pairs(step.elements) do
                     stepData = fmt("%s\nStep %d:%d", stepData, stepNumber, s)
@@ -452,9 +456,8 @@ function addon.comms.OpenBugReport(stepNumber)
                     end
 
                     if e.questIds and type(e.questIds) == "table" then
-                        for _,id in pairs(e.questIds) do
-                            stepData =
-                                fmt("%s\n  questId = %s", stepData, id)
+                        for _, id in pairs(e.questIds) do
+                            stepData = fmt("%s\n  questId = %s", stepData, id)
                         end
                     end
 
@@ -506,15 +509,14 @@ function addon.comms.OpenBugReport(stepNumber)
                           af.element and af.element.wy or 0,
                           af.element and af.element.wx or 0,
                           af.element and af.element.y or 0,
-                          af.element and af.element.x or 0
-                          ) or 'N/A'
+                          af.element and af.element.x or 0) or 'N/A'
 
     local addonErrors = "\n"
-    for _,entry in pairs(addon.settings.routingOptions) do
+    for _, entry in pairs(addon.settings.routingOptions) do
         local value = addon.settings.profile[entry]
         local str = tostring(value)
         if type(value) == "table" then
-            for k,v in pairs(value) do
+            for k, v in pairs(value) do
                 local substr = tostring(v)
                 if substr then
                     addonErrors = addonErrors .. k .. ":" .. substr .. ", "
@@ -524,14 +526,12 @@ function addon.comms.OpenBugReport(stepNumber)
             addonErrors = addonErrors .. entry .. ":" .. str .. ", "
         end
     end
-    if next(addon.errors) then
-        addonErrors = "\nAddon Errors:\n"
-    end
+    if next(addon.errors) then addonErrors = "\nAddon Errors:\n" end
 
-    for tag,list in pairs(addon.errors) do
+    for tag, list in pairs(addon.errors) do
         addonErrors = addonErrors .. tostring(tag) .. ':\n'
-        for error,count in pairs(list) do
-            addonErrors = fmt("%s(%d) %s\n",addonErrors,count,error)
+        for error, count in pairs(list) do
+            addonErrors = fmt("%s(%d) %s\n", addonErrors, count, error)
         end
     end
     local errorFlags = ""
@@ -565,7 +565,8 @@ Arrow data
                         addon.release, addon.settings.profile.xprate,
                         GetLocale(), select(1, GetBuildInfo()), select(2,
                                                                        BNGetInfo()) ~=
-                            nil and "Online" or "Offline", stepData, arrowData, addonErrors, errorFlags)
+                            nil and "Online" or "Offline", stepData, arrowData,
+                        addonErrors, errorFlags)
 
     local f = AceGUI:Create("Frame")
 
