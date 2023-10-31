@@ -769,18 +769,7 @@ function addon:OnEnable()
         self:RegisterEvent("QUEST_DATA_LOAD_RESULT")
     end
 
-    local point, relativePoint, offsetX, offsetY
-    for frameName, frame in pairs(addon.enabledFrames) do
-        if frame.IsFeatureEnabled() then
-            -- Restore saved positions if applicable
-            if addon.settings.profile.framePositions[frameName] then
-                point, _, relativePoint, offsetX, offsetY = unpack(addon.settings.profile.framePositions[frameName])
-
-                frame:SetPoint(point, nil, relativePoint, offsetX, offsetY)
-            end
-            frame:SetShown(addon.settings.profile.showEnabled)
-        end
-    end
+    addon.settings:LoadFramePositions()
 
     if addon.settings.profile.hideInRaid then
         self:RegisterEvent("GROUP_JOINED", addon.HideInRaid)
@@ -842,21 +831,7 @@ function addon:PLAYER_LEAVING_WORLD() addon.isHidden = true end
 
 -- Sent when the player logs out or the UI is reloaded, just before SavedVariables are saved
 -- Note, this is only for profile sharing, frames are preserved normally with layout.xml
-function addon:PLAYER_LOGOUT()
-    if not addon.settings.profile.framePositions then
-        addon.settings.profile.framePositions = {}
-    end
-
-    local point, relativePoint, offsetX, offsetY
-    -- Dump enabled frame locations
-    for frameName, frame in pairs(addon.enabledFrames) do
-        -- if frame.IsFeatureEnabled() then
-        point, _, relativePoint, offsetX, offsetY = frame:GetPoint()
-
-        addon.settings.profile.framePositions[frameName] = {point, nil, relativePoint, offsetX, offsetY}
-    end
-
-end
+function addon:PLAYER_LOGOUT() addon.settings:SaveFramePositions() end
 
 function addon:CALENDAR_UPDATE_EVENT_LIST()
     -- Required by .dmf

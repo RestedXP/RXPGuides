@@ -168,7 +168,7 @@ function addon.settings:InitializeSettings()
 
             dungeons = {},
 
-            framePositions = {},
+            framePositions = {}
         }
     }
 
@@ -347,17 +347,18 @@ end
 -- Pre 4.5.10 , settings were in RXPCSettings per character
 -- Leave RXPCSettings alone for downgrade options
 function addon.settings:MigrateProfile()
-     -- Fresh install
+    -- Fresh install
     if not _G.RXPCSettings or not _G.RXPCSettings.profiles then return end
 
-    local p =_G.RXPSettings.profiles
+    local p = _G.RXPSettings.profiles
 
     -- Lazy copy all character profiles to account
     for profileKey, _ in pairs(_G.RXPCSettings.profileKeys or {}) do
         -- Already migrated a character with current profile name
         if p[profileKey] and p[profileKey].migrated then
             if self.profile.debug then
-                addon.comms.PrettyPrint("Character profile (%s) already migrated", profileKey)
+                addon.comms.PrettyPrint(
+                    "Character profile (%s) already migrated", profileKey)
             end
         else
             p[profileKey] = _G.RXPCSettings.profiles[profileKey]
@@ -1230,7 +1231,7 @@ function addon.settings:CreateAceOptionsPanel()
                                        RXPData.guideMetaData.enabledDungeons[addon.player
                                            .faction])
                         end
-                    },
+                    }
                     --[[
                     questCleanupHeader = {
                         name = L("Quest Cleanup"),
@@ -1328,10 +1329,11 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 2.1,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            if addon.targeting.activeTargetFrame and not InCombatLockdown() then
+                            if addon.targeting.activeTargetFrame and
+                                not InCombatLockdown() then
                                 addon.targeting.activeTargetFrame:Hide()
                             end
-                        end,
+                        end
                     },
                     showTargetingOnProximity = {
                         name = L("Only show when in range"), -- TODO locale
@@ -1601,7 +1603,10 @@ function addon.settings:CreateAceOptionsPanel()
                                 addon.tracker:CreateLevelSplits()
                                 addon.tracker.levelSplits:Show()
                             else
-                                addon.tracker.levelSplits:Hide()
+                                if addon.tracker.levelSplits and
+                                    addon.tracker.levelSplits:IsShown() then
+                                    addon.tracker.levelSplits:Hide()
+                                end
                             end
                         end,
                         disabled = function()
@@ -1908,9 +1913,8 @@ function addon.settings:CreateAceOptionsPanel()
                         width = "full",
                         order = 4.0,
                         hidden = function()
-                            return
-                                --not addon.settings.profile.enableBetaFeatures or
-                                    not addon.dangerousMobs
+                            return -- not addon.settings.profile.enableBetaFeatures or
+                            not addon.dangerousMobs
                         end
                     },
                     showDangerousMobsMap = {
@@ -1929,9 +1933,8 @@ function addon.settings:CreateAceOptionsPanel()
                             return not self.profile.enableTips
                         end,
                         hidden = function()
-                            return
-                                --not addon.settings.profile.enableBetaFeatures or
-                                    not addon.dangerousMobs
+                            return -- not addon.settings.profile.enableBetaFeatures or
+                            not addon.dangerousMobs
                         end
                     },
                     showDangerousUnitscan = {
@@ -1950,9 +1953,8 @@ function addon.settings:CreateAceOptionsPanel()
                             return not self.profile.enableTips
                         end,
                         hidden = function()
-                            return
-                                --not addon.settings.profile.enableBetaFeatures or
-                                    not addon.dangerousMobs
+                            return -- not addon.settings.profile.enableBetaFeatures or
+                            not addon.dangerousMobs
                         end
                     },
                     itemUpgradesHeader = {
@@ -1962,11 +1964,12 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 5.0,
                         hidden = function()
                             return not addon.itemUpgrades
-                        end,
+                        end
                     },
                     enableItemUpgrades = {
                         name = fmt("%s %s", _G.ENABLE, _G.ITEM_UPGRADE),
-                        desc = L("Calculates item upgrades with Tactics' effective power weights"),
+                        desc = L(
+                            "Calculates item upgrades with Tactics' effective power weights"),
                         type = "toggle",
                         width = optionsWidth,
                         order = 5.1,
@@ -1974,21 +1977,24 @@ function addon.settings:CreateAceOptionsPanel()
                             return not addon.itemUpgrades
                         end,
                         disabled = function()
-                            return not self.profile.enableTips or UnitLevel("player") == GetMaxPlayerLevel()
+                            return not self.profile.enableTips or
+                                       UnitLevel("player") ==
+                                       GetMaxPlayerLevel()
                         end,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.itemUpgrades:Setup()
-                        end,
+                        end
                     },
                     itemUpgradeSpec = {
                         name = _G.TALENTS,
-                        --desc = L("Choose active theme"),
+                        -- desc = L("Choose active theme"),
                         type = "select",
                         width = optionsWidth,
                         order = 5.2,
                         get = function()
-                            return self.profile.itemUpgradeSpec or addon.player.localeClass
+                            return self.profile.itemUpgradeSpec or
+                                       addon.player.localeClass
                         end,
                         set = function(info, value)
                             SetProfileOption(info, value)
@@ -2001,9 +2007,11 @@ function addon.settings:CreateAceOptionsPanel()
                             return not addon.itemUpgrades
                         end,
                         disabled = function()
-                            return not self.profile.enableTips or UnitLevel("player") == GetMaxPlayerLevel()
-                        end,
-                    },
+                            return not self.profile.enableTips or
+                                       UnitLevel("player") ==
+                                       GetMaxPlayerLevel()
+                        end
+                    }
                 }
             },
             helpPanel = {
@@ -2744,7 +2752,7 @@ function addon.settings:CreateAceOptionsPanel()
 
     addon.settings.routingOptions = {}
     for entry in pairs(optionsTable.args.guideRoutingSettings.args) do
-        table.insert(addon.settings.routingOptions,entry)
+        table.insert(addon.settings.routingOptions, entry)
     end
 
     AceConfig:RegisterOptionsTable(addon.title, optionsTable)
@@ -2931,6 +2939,9 @@ function addon.settings:DetectXPRate()
 end
 
 function addon.settings:RefreshProfile()
+    -- Save Frame positions to previous profile before swapping to new
+    addon.settings:SaveFramePositions()
+
     self.profile = settingsDB.profile
 
     if loadedProfileKey ~= settingsDB.keys.profile then
@@ -2948,18 +2959,7 @@ function addon.settings:RefreshProfile()
     addon.RXPFrame.SetStepFrameAnchor()
 
     -- Restore frame positions on profile change
-    local point, relativePoint, offsetX, offsetY
-    for frameName, frame in pairs(addon.enabledFrames) do
-        if frame.IsFeatureEnabled() then
-            -- Restore saved positions if applicable
-            if addon.settings.profile.framePositions[frameName] then
-                point, _, relativePoint, offsetX, offsetY = unpack(addon.settings.profile.framePositions[frameName])
-
-                frame:SetPoint(point, nil, relativePoint, offsetX, offsetY)
-            end
-            frame:SetShown(addon.settings.profile.showEnabled)
-        end
-    end
+    addon.settings:LoadFramePositions()
 end
 
 function addon.settings:CheckAddonCompatibility()
@@ -3179,4 +3179,48 @@ function addon.settings:SetupMapButton()
                  self.worldMapButton, 0, 0, "MENU")
     end)
 
+end
+
+function addon.settings:SaveFramePositions()
+    if not addon.settings.profile.framePositions then
+        addon.settings.profile.framePositions = {}
+    end
+
+    local point, relativeTo, relativePoint, offsetX, offsetY
+
+    for frameName, frame in pairs(addon.enabledFrames) do
+        point, relativeTo, relativePoint, offsetX, offsetY = frame:GetPoint()
+
+        addon.settings.profile.framePositions[frameName] = {
+            point, relativeTo and relativeTo:GetName() or nil, relativePoint,
+            offsetX, offsetY
+        }
+    end
+
+end
+
+function addon.settings:LoadFramePositions()
+    local point, relativeToName, relativePoint, offsetX, offsetYOrNil
+
+    for frameName, frame in pairs(addon.enabledFrames) do
+        if self.profile.debug then
+            addon.comms
+                .PrettyPrint("LoadFramePositions:frameName %s", frameName)
+        end
+
+        if addon.settings.profile.framePositions[frameName] then
+            point, relativeToName, relativePoint, offsetX, offsetYOrNil =
+                unpack(addon.settings.profile.framePositions[frameName])
+
+            -- Some frames only return 4 values for GetPoint, so shuffle one
+            if offsetYOrNil then
+                frame:SetPoint(point, relativeToName, relativePoint, offsetX,
+                               offsetYOrNil)
+            else
+                -- point, nil, relativePoint, offsetX, offsetY
+                frame:SetPoint(point, nil, relativeToName, relativePoint,
+                               offsetX)
+            end
+        end
+    end
 end
