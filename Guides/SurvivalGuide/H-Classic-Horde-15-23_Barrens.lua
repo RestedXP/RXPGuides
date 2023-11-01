@@ -26,6 +26,7 @@ step << Priest
     .xp <14,1
     .xp >16,1
 step << Priest
+    #optional
     .goto Durotar,54.26,42.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tai'jin|r
 	.train 8102 >> Train your class spells
@@ -39,6 +40,7 @@ step << Orc Warrior/Troll Warrior
     .xp <14,1
     .xp >16,1
 step << Orc Warrior/Troll Warrior
+    #optional
     .goto Durotar,54.18,42.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw|r
     .train 285 >> Train your class spells
@@ -51,7 +53,8 @@ step << Rogue
     .target Kaplak
     .xp <14,1
     .xp >16,1
- step << Rogue
+step << Rogue
+    #optional
     .goto Durotar,51.98,43.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaplak|r
     .train 6761 >> Train your class spells
@@ -71,6 +74,7 @@ step << Warlock
     .target Kitha
     .xp <16,1
 step << Warlock
+    #optional
     .goto Durotar,54.37,41.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dhugru|r
     .train 1455 >> Train your class spells
@@ -83,6 +87,7 @@ step << !Tauren !Hunter !Shaman
     .target Takrin Pathseeker
     .isQuestAvailable 840
 step
+    #optional
     .abandon 480 >> Abandon The Weaver to avoid quest log issues. You'll pick it up again later
     .isOnQuest 480
 step
@@ -568,18 +573,22 @@ step
     .zoneskip The Barrens
     .dungeon RFC
 step
+    #optional
     .abandon 5723 >> Abandon Testing an Enemy's Strength
     .isOnQuest 5723
     .dungeon RFC
 step
+    #optional
     .abandon 5725 >> Abandon Turn in The Power to Destroy...
     .isOnQuest 5725
     .dungeon RFC
 step
+    #optional
     .abandon 5728 >> Abandon Hidden Enemies
     .isOnQuest 5728
     .dungeon RFC
 step
+    #optional
     .abandon 5761 >> Abandon Slaying the Beast
     .isOnQuest 5761
     .dungeon RFC
@@ -1072,6 +1081,7 @@ step << Druid
     .cast 18960 >>Cast |T135758:0|t[Teleport: Moonglade]
     .zoneskip Moonglade
 step << Druid
+    #optional
     .goto Moonglade,52.53,40.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
     .train 5211 >> Train your class spells
@@ -1192,6 +1202,7 @@ step << Shaman
     .xp <16,1
     .xp >18,1
 step << Shaman
+    #optional
     .goto Orgrimmar,38.82,36.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
     .train 913 >> Train your class spells
@@ -1257,6 +1268,7 @@ step << Warlock
     .xp <16,1
     .xp >18,1
 step << Warlock
+    #optional
     .goto Orgrimmar,48.62,46.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mirket|r
     .train 1014 >> Train your class spells
@@ -1283,6 +1295,7 @@ step << Warrior
     .xp <16,1
     .xp >18,1
 step << Warrior
+    #optional
     .goto Orgrimmar,79.91,31.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grezz|r
     .train 8198 >> Train your class spells
@@ -1296,6 +1309,7 @@ step << Hunter
     .xp <16,1
     .xp >18,1
 step << Hunter
+    #optional
     .goto Orgrimmar,66.05,18.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormak|r
     .train 2643 >> Train your class spells
@@ -1319,6 +1333,7 @@ step << Priest
     .xp <16,1
     .xp >18,1
 step << Priest
+    #optional
     .goto Orgrimmar,35.59,87.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 970 >> Train your class spells
@@ -1332,6 +1347,7 @@ step << Mage
     .xp <16,1
     .xp >18,1
 step << Mage
+    #optional
     .goto Orgrimmar,38.36,85.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo|r
     .train 3140 >> Train your class spells
@@ -1891,6 +1907,7 @@ RXPGuides.RegisterGuide([[
 #next 23-25 Hillsbrad
 
 step
+    #optional
     #completewith next
     >>Abandon Report to Kadrak to avoid quest log issues. You'll pick it up again later
     .abandon 6541 >> Abandon Report to Kadrak
@@ -2133,6 +2150,7 @@ step << Druid
     .cast 18960 >>Cast |T135758:0|t[Teleport: Moonglade]
     .zoneskip Moonglade
 step << Druid
+    #optional
     .goto Moonglade,52.53,40.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
     .train 1430 >> Train your class spells
@@ -2426,6 +2444,7 @@ step << Shaman
     .xp >20,1
     .dungeon DM
 step << Shaman
+    #optional
     .goto Orgrimmar,38.82,36.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
     .train 2645 >> Train your class spells
@@ -2441,6 +2460,7 @@ step << Hunter
     .xp >20,1
     .dungeon DM
 step << Hunter
+    #optional
     .goto Orgrimmar,66.05,18.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormak|r
 	.train 14290 >>Train your class spells
@@ -2463,6 +2483,7 @@ step << Warrior
     .xp >20,1
     .dungeon DM
 step << Warrior
+    #optional
     .goto Orgrimmar,79.91,31.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grezz|r
     .train 845 >> Train your class spells
@@ -2485,6 +2506,7 @@ step << Warlock
     .xp >20,1
     .dungeon DM
 step << Warlock
+    #optional
     .goto Undercity,48.47,45.42
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Zevrost|r
     .train 706 >> Train your class spells
@@ -2500,6 +2522,7 @@ step << Mage
     .xp >20,1
     .dungeon DM
 step << Mage
+    #optional
     .goto Orgrimmar,38.36,85.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo|r
     .train 1953 >> Train your class spells
@@ -2515,6 +2538,7 @@ step << Priest
     .xp >20,1
     .dungeon DM
 step << Priest
+    #optional
     .goto Orgrimmar,35.59,87.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 14914 >> Train your class spells
@@ -2577,6 +2601,7 @@ step
     .target Captain Grayson
     .dungeon DM
 step
+    #optional
     .abandon 103 >> Abandon Keeper of the Flame
     .dungeon DM
 step
@@ -2844,6 +2869,7 @@ step
     .isQuestComplete 855
     .group
 step
+    #optional
     >>Abandon Centaur Bracers if you haven't completed it at this point
     .abandon 855 >> Abandon Centaur Bracers
     .isOnQuest 855
@@ -3153,6 +3179,7 @@ step << Shaman
     .train 2645 >> Train your class spells
     .target Tigor Skychaser
 step << Shaman
+    #optional
     .goto Thunder Bluff,23.64,18.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tigor|r
     .train 8498 >> Train your class spells
@@ -3621,26 +3648,32 @@ step
     .target Tal
     .zoneskip Thunder Bluff,1
 step
+    #optional
     .abandon 1486 >> Abandon Deviate Hides
     .isOnQuest 1486
     .dungeon WC
 step
+    #optional
     .abandon 1487 >> Abandon Deviate Eradication
     .isOnQuest 1487
     .dungeon WC
 step
+    #optional
     .abandon 1491 >> Abandon Smart Drinks
     .isOnQuest 1491
     .dungeon WC
 step
+    #optional
     .abandon 959 >> Abandon Trouble at the Docks
     .isOnQuest 959
     .dungeon WC
 step
+    #optional
     .abandon 914 >> Abandon Leaders of the Fang
     .isOnQuest 914
     .dungeon WC
 step
+    #optional
     .abandon 962 >> Abandon Serpentbloom
     .isOnQuest 962
     .dungeon WC
@@ -4100,6 +4133,7 @@ step << Mage
     .xp <22,1
     .xp >24,1
 step << Mage
+    #optional
     .goto Orgrimmar,38.36,85.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo|r
     .train 2121 >> Train your class spells
@@ -4124,6 +4158,7 @@ step << Undead Priest
     .xp <22,1
     .xp >24,1
 step << Undead Priest
+    #optional
     .goto Orgrimmar,35.59,87.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 3747 >> Train your class spells
@@ -4258,6 +4293,7 @@ step << Shaman
     .xp <22,1
     .xp >24,1
 step << Shaman
+    #optional
     .goto Orgrimmar,38.82,36.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
     .train 905 >> Train your class spells
@@ -4281,6 +4317,7 @@ step << Warrior
     .xp <22,1
     .xp >24,1
 step << Warrior
+    #optional
     .goto Orgrimmar,79.91,31.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grezz|r
     .train 5308 >> Train your class spells
@@ -4294,6 +4331,7 @@ step << Hunter
     .xp <22,1
     .xp >24,1
 step << Hunter
+    #optional
     .goto Orgrimmar,66.05,18.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormak|r
     .train 14262 >> Train your class spells
@@ -4311,21 +4349,27 @@ step << Rogue
     .collect 3137,200,6544,1 --Deadly Throwing Axe (200)
     .target K'waii
 step
+    #optional
     .abandon 6421 >> Abandon Boulderslide Ravine
     .isOnQuest 6421
 step
+    #optional
     .abandon 4021 >> Abandon Counterattack!
     .isOnQuest 4021
 step
+    #optional
     .abandon 6481 >> Abandon Earthen Arise
     .isOnQuest 6481
 step
+    #optional
     .abandon 6284 >> Abandon Arachnophobia
     .isOnQuest 6284
 step
+    #optional
     .abandon 6641 >> Abandon Vorsha the Lasher
     .isOnQuest 6641
 step
+    #optional
     .abandon 6563 >> Abandon The Essence of Aku'Mai
     .isOnQuest 6563
 step

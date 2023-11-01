@@ -1508,6 +1508,7 @@ step << !Shaman
     .zone Durotar >> Travel to Durotar
     .zoneskip Durotar
 step
+    #optional
     .abandon 764 >>Abandon The Venture Co.
     .abandon 765 >>Abandon Supervisor Fizsprocket
 step
@@ -2784,12 +2785,15 @@ step
     .target Auctioneer Rhyker
     .zoneskip Undercity,1
 step
+    #optional
     .abandon 806 >> Abandon Dark Storms
     .isOnQuest 806
 step
+    #optional
     .abandon 408 >> Abandon The Family Crypt
     .isOnQuest 408
 step << Warrior
+    #optional
     .abandon 1821 >> Abandon Agamand Heirlooms
     .isOnQuest 1821
 step

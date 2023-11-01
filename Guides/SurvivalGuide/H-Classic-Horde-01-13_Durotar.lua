@@ -2529,6 +2529,7 @@ step << Troll Priest
     .target Ur'kyo
     .isOnQuest 5654
 step << Troll Priest
+    #optional
     .goto Orgrimmar,35.59,87.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
     .turnin 5652 >> Turn in Hex of Weakness
@@ -4699,12 +4700,15 @@ step << Priest/Warlock
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
 step
+    #optional
     .abandon 806 >> Abandon Dark Storms
     .isOnQuest 806
 step
+    #optional
     .abandon 408 >> Abandon The Family Crypt
     .isOnQuest 408
 step << Warrior
+    #optional
     .abandon 1821 >> Abandon Agamand Heirlooms
     .isOnQuest 1821
 step

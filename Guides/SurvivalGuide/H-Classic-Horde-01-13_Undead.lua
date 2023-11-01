@@ -3391,12 +3391,15 @@ step << Priest/Warlock
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
 step
+    #optional
     .abandon 806 >> Abandon Dark Storms
     .isOnQuest 806
 step
+    #optional
     .abandon 408 >> Abandon The Family Crypt
     .isOnQuest 408
 step << Warrior
+    #optional
     .abandon 1821 >> Abandon Agamand Heirlooms
     .isOnQuest 1821
 step
