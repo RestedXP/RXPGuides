@@ -466,7 +466,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brog Hamfist|r
     .target Brog Hamfist
     .goto Elwynn Forest,43.96,65.92
-    .vendor 151 >> >>|cRXP_WARN_Buy a|r |T135641:0|t[Balanced Throwing Dagger] and equip it|r
+    .vendor 151 >>|cRXP_WARN_Buy a|r |T135641:0|t[Balanced Throwing Dagger] and equip it|r
 step << Warlock
     #completewith next
     .goto Elwynn Forest,44.1,66.0,10 >> Travel downstairs
@@ -480,9 +480,6 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cylina Darkheart|r
     .vendor >> |cRXP_WARN_Buy the|r |T133738:0|t[Grimoire of Blood Pact (Rank 1)] |cRXP_WARN_if you can afford it. If not you will buy it later|r
     .target Cylina Darkheart
-
-
-
 step << Mage/Rogue/Priest
     #completewith next
     .goto Elwynn Forest,43.877,66.546,9 >> Travel upstairs in the Inn
@@ -1709,6 +1706,7 @@ step << Warrior/Paladin/Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dank Drizzlecut|r
     .goto Dun Morogh,69.324,55.456
     .train 2575 >>Train |T134708:0|t[Mining]
+    .target Dank Drizzlecut
 step << Warrior/Paladin/Rogue
     .cast 2580 >> |cRXP_WARN_Cast|r |T136025:0|t[Find Minerals]
 step
@@ -2166,12 +2164,6 @@ step << Paladin
     .turnin 1644 >> Turn in The Tome of Divinity
     --.accept 1780 >> Accept The Tome of Divinity
 step
-    .goto StormwindClassic,66.28,62.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
-    .turnin 6261 >> Turn in Dungar Longdrink
-    .target Dungar Longdrink
-    .accept 6285 >> Accept Return to Lewis
-step
     #ah
     .goto Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
@@ -2200,6 +2192,12 @@ step
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
     .target Auctioneer Jaxon
+step
+    .goto StormwindClassic,66.28,62.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
+    .turnin 6261 >> Turn in Dungar Longdrink
+    .target Dungar Longdrink
+    .accept 6285 >> Accept Return to Lewis
 step
     .goto StormwindClassic,66.277,62.137
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
