@@ -3243,4 +3243,24 @@ function addon.settings:LoadFramePositions()
             end
         end
     end
+
+    addon.settings:LoadScales()
+end
+
+function addon.settings:LoadScales()
+    addon.RXPFrame:SetScale(self.profile.windowScale)
+
+    if addon.arrowFrame then
+        addon.arrowFrame:SetSize(32 * self.profile.arrowScale,
+                                 32 * self.profile.arrowScale)
+    end
+
+    if addon.activeItemFrame then
+        addon.activeItemFrame:SetScale(self.profile.activeItemsScale)
+    end
+
+    if addon.targeting and addon.targeting.activeTargetFrame then
+        addon.targeting.activeTargetFrame:SetScale(self.profile
+                                                       .activeTargetScale)
+    end
 end
