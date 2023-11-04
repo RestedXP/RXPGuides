@@ -176,7 +176,7 @@ function addon.settings:InitializeSettings()
 
     settingsDB.RegisterCallback(self, "OnProfileChanged", "RefreshProfile")
     settingsDB.RegisterCallback(self, "OnProfileCopied", "RefreshProfile")
-    settingsDB.RegisterCallback(self, "OnProfileReset", "RefreshProfile")
+    settingsDB.RegisterCallback(self, "OnProfileReset", "ResetProfile")
     self.profile = settingsDB.profile
     loadedProfileKey = settingsDB.keys.profile
 
@@ -2962,6 +2962,14 @@ function addon.settings:RefreshProfile()
     addon.settings:LoadFramePositions()
 end
 
+function addon.settings:ResetProfile()
+    settingsDB.isResetting = true
+    addon.comms.PrettyPrint(L(
+                                "Profile changed, Reload UI for settings to take effect"))
+
+    settingsDB:ResetProfile(false, true)
+end
+
 function addon.settings:CheckAddonCompatibility()
     if not addon.compatibility or
         not self.profile.enableAddonIncompatibilityCheck then return end
@@ -3182,18 +3190,22 @@ function addon.settings:SetupMapButton()
 end
 
 function addon.settings:SaveFramePositions()
+    -- If resetting DB, don't save frames on reload
+    if settingsDB and settingsDB.isResetting then return end
+
     if not addon.settings.profile.framePositions then
         addon.settings.profile.framePositions = {}
     end
 
-    local point, relativeTo, relativePoint, offsetX, offsetY
+    local point, relativeTo, relativePoint, offsetX, offsetYOrNil
 
     for frameName, frame in pairs(addon.enabledFrames) do
-        point, relativeTo, relativePoint, offsetX, offsetY = frame:GetPoint()
+        point, relativeTo, relativePoint, offsetX, offsetYOrNil =
+            frame:GetPoint()
 
         addon.settings.profile.framePositions[frameName] = {
             point, relativeTo and relativeTo:GetName() or nil, relativePoint,
-            offsetX, offsetY
+            offsetX, offsetYOrNil
         }
     end
 
@@ -3201,6 +3213,7 @@ end
 
 function addon.settings:LoadFramePositions()
     local point, relativeToName, relativePoint, offsetX, offsetYOrNil
+    local result, reason
 
     for frameName, frame in pairs(addon.enabledFrames) do
         if self.profile.debug then
@@ -3214,12 +3227,19 @@ function addon.settings:LoadFramePositions()
 
             -- Some frames only return 4 values for GetPoint, so shuffle one
             if offsetYOrNil then
-                frame:SetPoint(point, relativeToName, relativePoint, offsetX,
-                               offsetYOrNil)
+                result, reason = pcall(frame.SetPoint, frame, point,
+                                       relativeToName, relativePoint, offsetX,
+                                       offsetYOrNil)
             else
                 -- point, nil, relativePoint, offsetX, offsetY
-                frame:SetPoint(point, nil, relativeToName, relativePoint,
-                               offsetX)
+                result, reason = pcall(frame.SetPoint, frame, point, nil,
+                                       relativeToName, relativePoint, offsetX)
+            end
+
+            if self.profile.debug then
+                addon.comms.PrettyPrint("LoadFramePositions:pcall %s %s",
+                                        result and "true" or "false",
+                                        reason or '')
             end
         end
     end
