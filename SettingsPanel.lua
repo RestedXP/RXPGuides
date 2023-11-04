@@ -82,6 +82,7 @@ function addon.settings:InitializeSettings()
             levelSplitsHistory = 10,
             levelSplitsFontSize = 11,
             levelSplitsOpacity = 0.9,
+            compareTotalTimeSplit = true,
             enableMinimapButton = true,
             enableWorldMapButton = true,
             minimap = {minimapPos = 146},
