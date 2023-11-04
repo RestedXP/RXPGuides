@@ -1440,10 +1440,11 @@ function addon.tracker:UpdateLevelSplits(kind)
     else
         if compareTo and compareTo.history.levels[self.playerLevel + 1] and
             addon.settings.profile.compareNextLevelSplit then
+            local splitsTime = self:PrintSplitsTime(
+                                   compareTo.history.levels[self.playerLevel + 1]
+                                       .duration)
             local cTime = self:BuildSplitsLevelLine(self.playerLevel + 1,
-                                                    self:PrintSplitsTime(
-                                                        compareTo.history.levels[self.playerLevel +
-                                                            1].duration))
+                                                    splitsTime)
 
             f.current:SetText(fmt("%s %s\n\n%s", cTime, printDelta(
                                       reportSplitsData.current.duration,
@@ -1460,7 +1461,7 @@ function addon.tracker:UpdateLevelSplits(kind)
         local oldestLevel = self.playerLevel -
                                 addon.settings.profile.levelSplitsHistory
         local highestLevel = self.playerLevel - 1
-        local data, splitsString, cData
+        local data, splitsString, cData, deltaString
 
         for l = oldestLevel, highestLevel do
             data = reportSplitsData.history.levels[l]
@@ -1469,17 +1470,32 @@ function addon.tracker:UpdateLevelSplits(kind)
             if data then
                 if splitsString then
                     if compareTo then
+                        if addon.settings.profile.compareTotalTimeSplit then
+                            deltaString =
+                                printDelta(data.totalDuration,
+                                           cData and cData.totalDuration or nil)
+                        else
+                            deltaString =
+                                printDelta(data.duration,
+                                           cData and cData.duration or nil)
+                        end
                         splitsString = fmt("%s\n%s %s", splitsString, data.text,
-                                           printDelta(data.duration, cData and
-                                                          cData.duration or nil))
+                                           deltaString)
                     else
                         splitsString = fmt("%s\n%s", splitsString, data.text)
                     end
                 else
                     if compareTo then
-                        splitsString = fmt("%s %s", data.text, printDelta(
-                                               data.duration,
-                                               cData and cData.duration or nil))
+                        if addon.settings.profile.compareTotalTimeSplit then
+                            deltaString =
+                                printDelta(data.totalDuration,
+                                           cData and cData.totalDuration or nil)
+                        else
+                            deltaString =
+                                printDelta(data.duration,
+                                           cData and cData.duration or nil)
+                        end
+                        splitsString = fmt("%s %s", data.text, deltaString)
                     else
                         splitsString = data.text
                     end
