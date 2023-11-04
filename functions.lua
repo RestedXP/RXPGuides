@@ -975,111 +975,111 @@ function addon.functions.turnin(self, ...)
         addon.InsertQuestGuide(id,addon.turnInList)
 
         return element
-    else
-        local element = self.element
-        local step = element.step
-        local event, questId = ...
-        local id = element.questId
-        local isComplete = IsQuestTurnedIn(id)
+    end
 
-        if step.active or element.retrieveText then
-            addon.questTurnIn[id] = element
-            -- addon.questAccept[id] = addon.questAccept[id] or element
-            local quest = addon.GetQuestName(id)
-            if quest then
-                element.title = quest
-                addon.questTurnIn[quest] = element
-                -- addon.questAccept[quest] = addon.questAccept[quest] or element
-                element.text = element.text:gsub("%*quest%*", quest)
-                if element.requestFromServer then
-                    element.requestFromServer = nil
-                    addon.UpdateStepText(self)
-                end
-            else
-                element.title = ""
-                element.requestFromServer = true
-            end
-        end
+    local element = self.element
+    local step = element.step
+    local event, questId = ...
+    local id = element.questId
+    local isComplete = IsQuestTurnedIn(id)
 
-        local icon = addon.icons[element.tag]
-        -- local skip
-        if step.active and db and type(db.QueryQuest) == "function" and
-            addon.pickUpList[id] and not addon.questAccept[id] and
-            not addon.skipPreReq[id] and not element.multiple and not isComplete then
-            local quest = db:GetQuest(id)
-            if not IsOnQuest(id) and quest and not quest.IsRepeatable then
-                local requiredQuests
-                local doable = db:IsDoable(id)
-
-                if not doable then
-                    requiredQuests = GetRequiredQuests(quest)
-                    tinsert(requiredQuests, id)
-                else
-                    requiredQuests = {id}
-                end
-
-                local tooltip = addon.colors.tooltip ..
-                                    L("Missing pre-requisites") .. ":|r\n"
-                for i, qid in ipairs(requiredQuests) do
-                    if i < #requiredQuests then
-                        tooltip = format("%s\n%s%s (%d)", tooltip,
-                                         addon.icons.turnin,
-                                         db:GetQuest(qid).name, qid)
-                    else
-                        tooltip = format("%s\n%s%s (%d)", tooltip,
-                                         addon.icons.accept,
-                                         db:GetQuest(qid).name, qid)
-                    end
-                end
-                element.tooltip = tooltip
-                element.icon = addon.icons.error
-                -- skip = RXPData.skipMissingPreReqs
-            elseif element.icon then
-                element.icon = icon
-                element.tooltip = nil
+    if step.active or element.retrieveText then
+        addon.questTurnIn[id] = element
+        -- addon.questAccept[id] = addon.questAccept[id] or element
+        local quest = addon.GetQuestName(id)
+        if quest then
+            element.title = quest
+            addon.questTurnIn[quest] = element
+            -- addon.questAccept[quest] = addon.questAccept[quest] or element
+            element.text = element.text:gsub("%*quest%*", quest)
+            if element.requestFromServer then
+                element.requestFromServer = nil
+                addon.UpdateStepText(self)
             end
         else
+            element.title = ""
+            element.requestFromServer = true
+        end
+    end
+
+    local icon = addon.icons[element.tag]
+    -- local skip
+    if step.active and db and type(db.QueryQuest) == "function" and
+        addon.pickUpList[id] and not addon.questAccept[id] and
+        not addon.skipPreReq[id] and not element.multiple and not isComplete then
+        local quest = db:GetQuest(id)
+        if not IsOnQuest(id) and quest and not quest.IsRepeatable then
+            local requiredQuests
+            local doable = db:IsDoable(id)
+
+            if not doable then
+                requiredQuests = GetRequiredQuests(quest)
+                tinsert(requiredQuests, id)
+            else
+                requiredQuests = {id}
+            end
+
+            local tooltip = addon.colors.tooltip ..
+                                L("Missing pre-requisites") .. ":|r\n"
+            for i, qid in ipairs(requiredQuests) do
+                if i < #requiredQuests then
+                    tooltip = format("%s\n%s%s (%d)", tooltip,
+                                        addon.icons.turnin,
+                                        db:GetQuest(qid).name, qid)
+                else
+                    tooltip = format("%s\n%s%s (%d)", tooltip,
+                                        addon.icons.accept,
+                                        db:GetQuest(qid).name, qid)
+                end
+            end
+            element.tooltip = tooltip
+            element.icon = addon.icons.error
+            -- skip = RXPData.skipMissingPreReqs
+        elseif element.icon then
             element.icon = icon
             element.tooltip = nil
         end
-
-        --element.tooltipText = element.icon .. element.text
-        addon.UpdateStepText(self)
-        local completed = element.completed
-
-        if questId == id then -- repeatable quests
-            if element.timer then
-                addon.StartTimer(element.timer,element.timerText)
-            end
-
-            --Scryer/Aldor quests
-            if id == 10551 or id == 10552 then
-                return addon.ReloadGuide()
-            end
-            addon.SetElementComplete(self)
-            addon.recentTurnIn[id] = GetTime()
-        elseif isComplete then
-            addon.SetElementComplete(self, true)
-            addon.recentTurnIn[id] = GetTime()
-        end
-
-        if step.active then
-            if (element.skipIfMissing and not IsOnQuest(id)) or (element.skipIfIncomplete and not IsQuestComplete(id)) then
-                addon.SetElementComplete(self, true)
-                ProcessItems(false, step, id, true)
-                addon.UpdateItemFrame()
-            elseif not event then
-                ProcessItems(true, step, id, true)
-                if C_SuperTrack and not step.track and not element.completed then
-                    C_SuperTrack.SetSuperTrackedQuestID(id)
-                end
-            elseif completed ~= element.completed then
-                ProcessItems(not element.completed, step, id, true)
-                addon.UpdateItemFrame()
-            end
-        end
-
+    else
+        element.icon = icon
+        element.tooltip = nil
     end
+
+    --element.tooltipText = element.icon .. element.text
+    addon.UpdateStepText(self)
+    local completed = element.completed
+
+    if questId == id then -- repeatable quests
+        if element.timer then
+            addon.StartTimer(element.timer,element.timerText)
+        end
+
+        --Scryer/Aldor quests
+        if id == 10551 or id == 10552 then
+            return addon.ReloadGuide()
+        end
+        addon.SetElementComplete(self)
+        addon.recentTurnIn[id] = GetTime()
+    elseif isComplete then
+        addon.SetElementComplete(self, true)
+        addon.recentTurnIn[id] = GetTime()
+    end
+
+    if step.active then
+        if (element.skipIfMissing and not IsOnQuest(id)) or (element.skipIfIncomplete and not IsQuestComplete(id)) then
+            addon.SetElementComplete(self, true)
+            ProcessItems(false, step, id, true)
+            addon.UpdateItemFrame()
+        elseif not event then
+            ProcessItems(true, step, id, true)
+            if C_SuperTrack and not step.track and not element.completed then
+                C_SuperTrack.SetSuperTrackedQuestID(id)
+            end
+        elseif completed ~= element.completed then
+            ProcessItems(not element.completed, step, id, true)
+            addon.UpdateItemFrame()
+        end
+    end
+
     addon.IsOnTurnInGuide(self)
 end
 
