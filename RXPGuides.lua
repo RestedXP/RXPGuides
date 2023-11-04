@@ -181,16 +181,16 @@ function addon.QuestAutoAccept(title)
 end
 
 function addon.QuestAutoTurnIn(title)
-    if title then
-        local element
-        for k, v in pairs(addon.questTurnIn) do
-            if k == title or addon.GetQuestName(k) == title then
-                element = v
-            end
+    if not title then return end
+
+    local element
+    for k, v in pairs(addon.questTurnIn) do
+        if k == title or addon.GetQuestName(k) == title then
+            element = v
         end
-        return addon.settings.profile.enableQuestRewardAutomation and element and
-                element.step.active and element.reward >= 0 and element.reward or 0
     end
+    return addon.settings.profile.enableQuestRewardAutomation and element and
+            element.step.active and element.reward >= 0 and element.reward or 0
 end
 
 local currrentSkillLevel = {}
