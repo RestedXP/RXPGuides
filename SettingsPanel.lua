@@ -82,6 +82,7 @@ function addon.settings:InitializeSettings()
             levelSplitsHistory = 10,
             levelSplitsFontSize = 11,
             levelSplitsOpacity = 0.9,
+            compareTotalTimeSplit = true,
             enableMinimapButton = true,
             enableWorldMapButton = true,
             minimap = {minimapPos = 146},
@@ -1610,7 +1611,7 @@ function addon.settings:CreateAceOptionsPanel()
                             end
                         end,
                         disabled = function()
-                            return not addon.settings.profile.enableTracker
+                            return not self.profile.enableTracker
                         end
                     },
                     compareNextLevelSplit = {
@@ -1624,7 +1625,23 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.tracker:UpdateLevelSplits("full")
                         end,
                         disabled = function()
-                            return not addon.settings.profile.enableTracker
+                            return not self.profile.enableTracker or
+                                       not self.profile.enablelevelSplits
+                        end
+                    },
+                    compareTotalTimeSplit = {
+                        name = L("Show Total Time Split"),
+                        desc = L("When comparing, show total time difference"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.3,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.tracker:UpdateLevelSplits("full")
+                        end,
+                        disabled = function()
+                            return not addon.settings.profile.enableTracker or
+                                       not self.profile.enablelevelSplits
                         end
                     },
                     hideSplitsBackground = {
@@ -1632,13 +1649,14 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Make background transparent"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.3,
+                        order = 2.4,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.tracker:RenderSplitsBackground()
                         end,
                         disabled = function()
-                            return not addon.settings.profile.enableTracker
+                            return not self.profile.enableTracker or
+                                       not self.profile.enablelevelSplits
                         end
                     },
                     levelSplitsHistory = {
@@ -1646,7 +1664,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Historical levels to show"),
                         type = "range",
                         width = optionsWidth,
-                        order = 2.4,
+                        order = 2.5,
                         min = 1,
                         max = GetMaxPlayerLevel(),
                         step = 1,
@@ -1655,14 +1673,15 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.tracker:UpdateLevelSplits("full")
                         end,
                         disabled = function()
-                            return not addon.settings.profile.enablelevelSplits
+                            return not self.profile.enableTracker or
+                                       not self.profile.enablelevelSplits
                         end
                     },
                     levelSplitsFontSize = {
                         name = L("Level Splits Font Size"),
                         type = "range",
                         width = optionsWidth,
-                        order = 2.5,
+                        order = 2.6,
                         min = 9,
                         max = 17, -- Formatting gets wonky >=18
                         step = 1,
@@ -1671,7 +1690,8 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.tracker:UpdateLevelSplits("full")
                         end,
                         disabled = function()
-                            return not addon.settings.profile.enablelevelSplits
+                            return not self.profile.enableTracker or
+                                       not self.profile.enablelevelSplits
                         end
                     },
                     levelSplitsOpacity = {
@@ -1680,7 +1700,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "Lower number to make Level Splits more transparent"),
                         type = "range",
                         width = optionsWidth,
-                        order = 2.6,
+                        order = 2.7,
                         min = 0.1,
                         max = 1,
                         step = 0.1,
@@ -1689,7 +1709,8 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.tracker:UpdateLevelSplits("full")
                         end,
                         disabled = function()
-                            return not addon.settings.profile.enablelevelSplits
+                            return not self.profile.enableTracker or
+                                       not self.profile.enablelevelSplits
                         end
                     }
                 }
