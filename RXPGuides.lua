@@ -180,17 +180,20 @@ function addon.QuestAutoAccept(title)
     end
 end
 
-function addon.QuestAutoTurnIn(title)
-    if not title then return end
+function addon.GetStepQuestReward(titleOrId)
+    print("GetStepQuestReward(titleOrId)", titleOrId)
+    if not addon.settings.profile.enableQuestRewardAutomation then return end
+    if not titleOrId then return end
+    if not addon.questTurnIn[titleOrId] then return end
 
-    local element
-    for k, v in pairs(addon.questTurnIn) do
-        if k == title or addon.GetQuestName(k) == title then
-            element = v
-        end
-    end
-    return addon.settings.profile.enableQuestRewardAutomation and element and
-            element.step.active and element.reward >= 0 and element.reward or 0
+    -- questTurnIn contains quest and title lookups
+    -- addon.questTurnIn[747] == addon.questTurnIn["The Hunt Begins"]
+
+    local element = addon.questTurnIn[titleOrId]
+
+    print("GetStepQuestReward:reward", element.reward)
+
+    return element.reward >= 0 and element.reward or 0
 end
 
 local currrentSkillLevel = {}
@@ -478,6 +481,40 @@ local GossipSelectActiveQuest = C_GossipInfo.SelectActiveQuest or
 local GossipGetAvailableQuests = C_GossipInfo.GetAvailableQuests or
                                      _G.GetGossipAvailableQuests
 
+local function handleQuestComplete()
+    local id = GetQuestID()
+    if not id or id < 0 then return end
+
+    -- TODO query item data earlier to avoid cache issues
+    local choices = GetNumQuestChoices()
+
+    -- Automatically complete quests with no user choice
+    if choices <= 1 then
+        GetQuestReward(1)
+        addon:SendEvent("RXP_QUEST_TURNIN", id, choices, 1)
+        return
+    end
+
+    -- If auto rewards disabled, abort because not doing anything further
+    if not addon.settings.profile.enableQuestRewardAutomation then return end
+
+    local hardCodedReward = addon.GetStepQuestReward(id)
+
+    -- If explicitly hard-coded .turnin reward choice, use that and exit
+    if hardCodedReward and hardCodedReward > 0 then -- Quest has an explicit reward ID for .turnin step
+        print("GetQuestReward(hardCodedReward)")
+        addon:SendEvent("RXP_QUEST_TURNIN", id, choices, hardCodedReward)
+        return
+    end
+
+    -- No item upgrades for client/locale
+    if not addon.itemUpgrades then return end
+
+    -- If > 1 choice and not ".turnin QUEST_ID,REWARD_ID" then check for itemUpgrades
+    -- local itemName, itemID = GetQuestItemInfo("choice", reward)
+end
+
+
 function addon:QuestAutomation(event, arg1, arg2, arg3)
     if not addon.settings.profile.enableQuestAutomation or IsControlKeyDown() then
         return
@@ -506,17 +543,7 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
     if event == "QUEST_ACCEPT_CONFIRM" and addon.QuestAutoAccept(arg2) then
         ConfirmAcceptQuest()
     elseif event == "QUEST_COMPLETE" then
-        local id = GetQuestID()
-        local reward = addon.QuestAutoTurnIn(id)
-        local choices = GetNumQuestChoices()
-        if reward and id and id > 0 then
-            addon:SendEvent("RXP_QUEST_TURNIN",id,choices,reward)
-            if choices <= 1 then
-                GetQuestReward(1)
-            elseif reward and reward > 0 then
-                GetQuestReward(reward)
-            end
-        end
+        handleQuestComplete()
 
     elseif event == "QUEST_PROGRESS" and IsQuestCompletable() then
         CompleteQuest()
@@ -533,9 +560,10 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
         local nActive = GetNumActiveQuests()
         local nAvailable = GetNumAvailableQuests()
 
+        local title, isComplete
         for i = 1, nActive do
-            local title, isComplete = GetActiveTitle(i)
-            if addon.QuestAutoTurnIn(title) and isComplete then
+            title, isComplete = GetActiveTitle(i)
+            if addon.GetStepQuestReward(title) and isComplete then
                 return SelectActiveQuest(i)
             end
         end
@@ -544,7 +572,7 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
             SelectAvailableQuest(1)
         else
             for i = 1, nAvailable do
-                local title, isComplete = GetAvailableTitle(i)
+                title, isComplete = GetAvailableTitle(i)
                 if addon.QuestAutoAccept(title) then
                     return SelectAvailableQuest(i)
                 end
@@ -565,7 +593,7 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
                 title = quests[i].questID
                 isComplete = quests[i].isComplete
                 if not (isComplete or missingTurnIn) and
-                    addon.QuestAutoTurnIn(title) then
+                    addon.GetStepQuestReward(title) then
                     local objectives = addon.GetQuestObjectives(title)
                     missingTurnIn = objectives and objectives[1].generated and
                                         (selectActiveByQuestID and title or i)
@@ -575,7 +603,7 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
                                                  GossipGetActiveQuests())
             end
 
-            if isComplete and addon.QuestAutoTurnIn(title) then
+            if isComplete and addon.GetStepQuestReward(title) then
                 return GossipSelectActiveQuest(
                            selectActiveByQuestID and title or i)
             end
