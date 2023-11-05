@@ -481,11 +481,14 @@ local GossipSelectActiveQuest = C_GossipInfo.SelectActiveQuest or
 local GossipGetAvailableQuests = C_GossipInfo.GetAvailableQuests or
                                      _G.GetGossipAvailableQuests
 
+-- TODO leverage QUEST_FINISHED to hide logo/bag icons
+local questRewardChoiceIcons = {}
 local function handleQuestComplete()
     local id = GetQuestID()
     if not id or id < 0 then return end
 
     -- TODO query item data earlier to avoid cache issues
+    -- GetQuestLogChoiceInfo
     local choices = GetNumQuestChoices()
 
     -- Automatically complete quests with no user choice
@@ -495,13 +498,12 @@ local function handleQuestComplete()
         return
     end
 
-    -- If auto rewards disabled, abort because not doing anything further
-    if not addon.settings.profile.enableQuestRewardAutomation then return end
-
     local hardCodedReward = addon.GetStepQuestReward(id)
 
     -- If explicitly hard-coded .turnin reward choice, use that and exit
-    if hardCodedReward and hardCodedReward > 0 then -- Quest has an explicit reward ID for .turnin step
+    if addon.settings.profile.enableQuestRewardAutomation 
+        and hardCodedReward and hardCodedReward > 0 then -- Quest has an explicit reward ID for .turnin step
+
         print("GetQuestReward(hardCodedReward)")
         addon:SendEvent("RXP_QUEST_TURNIN", id, choices, hardCodedReward)
         return
@@ -510,10 +512,89 @@ local function handleQuestComplete()
     -- No item upgrades for client/locale
     if not addon.itemUpgrades then return end
 
-    -- If > 1 choice and not ".turnin QUEST_ID,REWARD_ID" then check for itemUpgrades
-    -- local itemName, itemID = GetQuestItemInfo("choice", reward)
-end
+    -- TODO add setting for logo/sell calculations
 
+    -- If > 1 choice and not ".turnin QUEST_ID,REWARD_ID" then check for itemUpgrades
+    local options = {}
+    local itemName, itemLink, isUsable, itemData
+
+    -- Load choices data
+    -- TODO retry or handle query failures
+    for i = 1, choices do
+        -- Patch 9.0.2 (2020-11-17): Added itemID return
+        itemName, _, _, _, isUsable = GetQuestItemInfo("choice", i)
+        itemLink = GetQuestItemLink("choice", i)
+
+        itemData = addon.itemUpgrades:GetItemData(itemLink)
+        itemData.comparisons = addon.itemUpgrades:CompareItemWeight(itemLink)
+        itemData.isUsable = isUsable
+
+        options[i] = itemData
+        -- print("handleQuestComplete", i, itemName, itemLink, itemData.totalWeight, "isUsable", isUsable)
+    end
+
+    -- TODO use comparison diff weight vs equipped
+    local bestSellOption, bestSellValue = -1, -1
+    local bestWeightOption, bestWeightValue = -1, -1
+    for choice, data in ipairs(options) do
+         -- Slot is empty, so is the best upgrade by weight
+        if data.debug == _G.EMPTY then
+            bestWeightValue = 9999
+            bestWeightOption = choice
+        end
+
+        -- Only weight currently usable items
+        -- Assumes guide gets required training prior
+        if data.isUsable and data.totalWeight > bestWeightValue then
+            bestWeightValue = data.totalWeight
+            bestWeightOption = choice
+        end
+
+        if data.sellPrice > bestSellValue then
+            bestSellValue = data.sellPrice
+            bestSellOption = choice
+        end
+    end
+
+    -- print("bestSellValue", bestSellValue, "bestSellOption", bestSellOption)
+    -- print("bestWeightValue", bestWeightValue, "bestWeightOption", bestWeightOption)
+
+    if not questRewardChoiceIcons["weight"] then
+        questRewardChoiceIcons["weight"] = _G.QuestInfoRewardsFrame:CreateTexture()
+        questRewardChoiceIcons["weight"]:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64")
+        questRewardChoiceIcons["weight"]:SetSize(20, 20)
+    end
+
+    if not questRewardChoiceIcons["value"] then
+        questRewardChoiceIcons["value"] = _G.QuestInfoRewardsFrame:CreateTexture()
+        questRewardChoiceIcons["value"]:SetTexture("Interface/GossipFrame/VendorGossipIcon.blp")
+        questRewardChoiceIcons["value"]:SetSize(20, 20)
+    end
+
+    if bestWeightOption > 0 then
+        -- TODO hide after quest dialog closes
+        questRewardChoiceIcons["weight"]:SetPoint("TOPRIGHT", 'QuestInfoRewardsFrameQuestInfoItem' .. bestWeightOption , -1, 1)
+        questRewardChoiceIcons["weight"]:Show()
+    end
+
+    if bestSellOption > 0 then
+        -- TODO hide after quest dialog closes
+        questRewardChoiceIcons["value"]:SetPoint("BOTTOMRIGHT", 'QuestInfoRewardsFrameQuestInfoItem' .. bestSellOption , -1, 1)
+        questRewardChoiceIcons["value"]:Show()
+    end
+
+    -- If auto rewards disabled, abort because not doing anything further
+    if not addon.settings.profile.enableQuestRewardAutomation then return end
+
+    -- upgrade is more useful than selling
+    if bestWeightOption > 0 then
+        print("GetQuestReward(bestWeightOption)", bestWeightOption)
+        addon:SendEvent("RXP_QUEST_TURNIN", id, choices, bestWeightOption)
+    elseif bestSellOption > 0 then
+        print("GetQuestReward(bestSellOption)", bestSellOption)
+        addon:SendEvent("RXP_QUEST_TURNIN", id, choices, bestSellOption)
+    end
+end
 
 function addon:QuestAutomation(event, arg1, arg2, arg3)
     if not addon.settings.profile.enableQuestAutomation or IsControlKeyDown() then
