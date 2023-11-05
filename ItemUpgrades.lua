@@ -757,8 +757,8 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
         return session.itemCache[itemLink]
     end
 
-    local itemID, _, _, itemEquipLoc, _, _, itemSubTypeID = GetItemInfoInstant(
-                                                                itemLink)
+    local _, _, _, _, itemMinLevel, _, _, _, itemEquipLoc, _, sellPrice, _,
+          itemSubTypeID = GetItemInfo(itemLink)
 
     -- Not an equippable item
     if not itemEquipLoc or itemEquipLoc == "" or itemEquipLoc == "INVTYPE_AMMO" or
@@ -775,9 +775,10 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
 
     local itemData = {
         itemLink = itemLink,
-        itemID = itemID,
         itemSubTypeID = itemSubTypeID,
-        itemEquipLoc = itemEquipLoc
+        itemEquipLoc = itemEquipLoc,
+        sellPrice = sellPrice,
+        itemMinLevel = itemMinLevel
     }
 
     local totalWeight = 0
