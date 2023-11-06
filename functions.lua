@@ -258,7 +258,7 @@ function addon.ClearQuestCache()
     local questNameCache = RXPCData.questNameCache
     local guideQuests = {}
     for i,step in pairs(addon.currentGuide.steps) do
-        for j,element in pairs(step.elements) do
+        for j,element in pairs(step.elements or {}) do
             if element.tag == "complete" then
                 local id = element.questId
                 guideQuests[id] = bit.bor(guideQuests[id] or 0,0x1)
