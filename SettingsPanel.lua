@@ -3256,6 +3256,14 @@ function addon.settings:LoadFramePositions()
                 .PrettyPrint("LoadFramePositions:frameName %s", frameName)
         end
 
+        -- Wipe alpha frame data
+        -- Alpha frame restoration only tracked one point, to [1] would be "TOPLEFT" or similar
+        if addon.settings.profile.framePositions[frameName] and
+            addon.settings.profile.framePositions[frameName][1] and
+            type(addon.settings.profile.framePositions[frameName][1]) ~= "table" then
+            addon.settings.profile.framePositions[frameName] = nil
+        end
+
         if addon.settings.profile.framePositions[frameName] then
             for i = 1, frame:GetNumPoints() or 0 do
                 point, relativeToName, relativePoint, offsetX, offsetYOrNil =
