@@ -2257,7 +2257,7 @@ step << Hunter
     .subzoneskip 2257
 step << Hunter
 .dungeon DM
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r and |cRXP_FRIENDLY_Wilder Thistlenettle|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r and |cRXP_FRIENDLY_Wilder Thistlenettle|r
     .accept 2040 >> Accept Underground Assault
     .goto StormwindClassic,55.510,12.504
     .accept 167 >> Accept Oh Brother. . .
@@ -2407,7 +2407,7 @@ step << Hunter
     .isOnQuest 214
 step << Hunter
 .dungeon DM
-    #completewith next 
+    #completewith next
     >>Kill |cRXP_ENEMY_Skeletal Miners|r, |cRXP_ENEMY_Undead Dynamiters|r and |cRXP_ENEMY_Undead Excavators|r. Loot them for their |cRXP_LOOT_Cards|r
     >>|cRXP_WARN_This is completed OUTSIDE of the Dungeon|r
     .complete 168,1 -- Miners' Union Card (4)
@@ -3234,7 +3234,8 @@ step << Paladin
     .goto Darkshore,50.74,34.68,0
 	>>Kill |cFFFF5722Blackwood Warriors|r and |cFFFF5722Blackwood Totemics|r. Loot them for their |T132889:0|t[Linen Cloth]
     >>|cFFFCDC00You need to save 10|r |T132889:0|t[Linen Cloth] |cFFFCDC00for your|r |T626003:0|t|cFFF48CBAPaladin|r |cFFFCDC00class quest later|r
-	.collect 2589,10,1,1644 --Linen Cloth (10)
+    .collect 2589,10,1,1644 << Human --Linen Cloth (10)
+    .collect 2589,10,1,1648 << Dwarf --Linen Cloth (10)
     .mob Blackwood Warrior
     .mob Blackwood Totemic
 step
@@ -3255,7 +3256,8 @@ step << Paladin
     .goto Darkshore,50.74,34.68,0
 	>>Kill |cFFFF5722Blackwood Warriors|r and |cFFFF5722Blackwood Totemics|r. Loot them for their |T132889:0|t[Linen Cloth]
     >>|cFFFCDC00You need to save 10|r |T132889:0|t[Linen Cloth] |cFFFCDC00for your|r |T626003:0|t|cFFF48CBAPaladin|r |cFFFCDC00class quest later|r
-	.collect 2589,10,1,1644 --Linen Cloth (10)
+    .collect 2589,10,1,1644 << Human --Linen Cloth (10)
+    .collect 2589,10,1,1648 << Dwarf --Linen Cloth (10)
     .mob Blackwood Warrior
     .mob Blackwood Totemic
 step
@@ -3328,7 +3330,8 @@ step << Paladin
     >>Kill |cFFFF5722Dark Strand Fanatics|r. Loot them for their |cFF00BCD4Parchments|r and |T132889:0|t[Linen Cloth]
     >>|cFFFCDC00You need to save 10|r |T132889:0|t[Linen Cloth] |cFFFCDC00for your|r |T626003:0|t|cFFF48CBAPaladin|r |cFFFCDC00class quest later|r
     .complete 966,1 --Worn Parchment (4)
-    .collect 2589,10,1,1644 --Linen Cloth (10)
+    .collect 2589,10,1,1644 << Human --Linen Cloth (10)
+    .collect 2589,10,1,1648 << Dwarf --Linen Cloth (10)
     .mob Dark Strand Fanatic
 step
 #map Darkshore
@@ -4163,7 +4166,7 @@ step
     .target Billibub Cogspinner
 step
 .dungeon DM
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r and |cRXP_FRIENDLY_Wilder Thistlenettle|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r and |cRXP_FRIENDLY_Wilder Thistlenettle|r
     .accept 2040 >> Accept Underground Assault
     .goto StormwindClassic,55.510,12.504
     .accept 167 >> Accept Oh Brother. . .
@@ -4292,7 +4295,7 @@ step
     >>|T134172:0|t[Great Goretusk Snout]
     >>|T134028:0|t[Tough Condor Meat]
     >>|T134321:0|t[Crisp Spider Meat]
-    >>|T134572:0|t[Rethban Ore]  
+    >>|T134572:0|t[Rethban Ore]
     .collect 2296,5,92,1 -- Great Goretusk Snout (5)
     .collect 1080,5,92,1 -- Tough Condor Meat (5)
     .collect 1081,5,92,1 -- Crisp Spider Meat (5)
@@ -4553,7 +4556,7 @@ step
     .isOnQuest 214
 step
 .dungeon DM
-    #completewith next 
+    #completewith next
     >>Kill |cRXP_ENEMY_Skeletal Miners|r, |cRXP_ENEMY_Undead Dynamiters|r and |cRXP_ENEMY_Undead Excavators|r. Loot them for their |cRXP_LOOT_Cards|r
     >>|cRXP_WARN_This is completed OUTSIDE of the Dungeon|r
     .complete 168,1 -- Miners' Union Card (4)
@@ -4709,7 +4712,7 @@ step
     >>|T134172:0|t[Great Goretusk Snout]
     >>|T134028:0|t[Tough Condor Meat]
     >>|T134321:0|t[Crisp Spider Meat]
-    >>|T134572:0|t[Rethban Ore]  
+    >>|T134572:0|t[Rethban Ore]
     .collect 2296,5,92,1 -- Great Goretusk Snout (5)
     .collect 1080,5,92,1 -- Tough Condor Meat (5)
     .collect 1081,5,92,1 -- Crisp Spider Meat (5)
