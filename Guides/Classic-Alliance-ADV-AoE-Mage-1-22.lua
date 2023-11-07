@@ -4148,6 +4148,7 @@ step
     .goto Stormwind City,39.17,76.58,12,0
     >>|cFFFCDC00Jump up onto the torch, then drop down to get under Stormwind|r
     >>|cFFFCDC00With Shadows on "Fair" or "Low", get in the middle of Derek the Dinosaur's feet (the lighter part of the dirt) just before the blue void, then walk straight forward|r
+    .link https://clips.twitch.tv/WonderfulObservantPigeonTwitchRPG-VGEqzHObhqqsv8Ae >> CLICK HERE for a guide
     .goto Stormwind City,38.61,79.39,10 >>Travel toward |cFF00FF25Jennea|r
 step
     .goto Stormwind City,38.61,79.39
@@ -4984,6 +4985,7 @@ step
     .goto Stormwind City,39.17,76.58,12,0
     >>|cFFFCDC00Jump up onto the torch, then drop down to get under Stormwind|r
     >>|cFFFCDC00With Shadows on "Fair" or "Low", get in the middle of Derek the Dinosaur's feet (the lighter part of the dirt) just before the blue void, then walk straight forward|r
+    .link https://clips.twitch.tv/WonderfulObservantPigeonTwitchRPG-VGEqzHObhqqsv8Ae >> CLICK HERE for a guide
     .goto Stormwind City,38.61,79.39,10 >>Travel toward |cFF00FF25Jennea|r
 step
     #requires Bank2
@@ -5526,6 +5528,7 @@ step
     .goto Stormwind City,39.17,76.58,12,0
     >>|cFFFCDC00Jump up onto the torch, then drop down to get under Stormwind|r
     >>|cFFFCDC00With Shadows on "Fair" or "Low", get in the middle of Derek the Dinosaur's feet (the lighter part of the dirt) just before the blue void, then walk straight forward|r
+    .link https://clips.twitch.tv/WonderfulObservantPigeonTwitchRPG-VGEqzHObhqqsv8Ae >> CLICK HERE for a guide
     .goto Stormwind City,38.61,79.39,10 >>Travel toward |cFF00FF25Jennea|r
 step
     .goto Stormwind City,38.61,79.39
@@ -6485,6 +6488,7 @@ step
     .goto Stormwind City,39.17,76.58,12,0
     >>|cFFFCDC00Jump up onto the torch, then drop down to get under Stormwind|r
     >>|cFFFCDC00With Shadows on "Fair" or "Low", get in the middle of Derek the Dinosaur's feet (the lighter part of the dirt) just before the blue void, then walk straight forward|r
+    .link https://clips.twitch.tv/WonderfulObservantPigeonTwitchRPG-VGEqzHObhqqsv8Ae >> CLICK HERE for a guide
     .goto Stormwind City,38.61,79.39,10 >>Travel toward |cFF00FF25Larimaine|r
 step
     #requires Bank1
