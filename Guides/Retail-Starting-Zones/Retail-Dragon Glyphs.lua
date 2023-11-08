@@ -146,7 +146,7 @@ RXPGuides.RegisterGuide([[
 #name B1 Ohn'ahran Plains Dragon Glyphs
 #displayname Ohn'ahran Plains Dragon Glyphs
 #version 1
-#group Dragon Glyphs
+#group RestedXP Dragon Glyphs
 #next C1 Azure Span Dragon Glyphs
 
 step
@@ -252,7 +252,7 @@ RXPGuides.RegisterGuide([[
 #name C1 Azure Span Dragon Glyphs
 #displayname Azure Span Dragon Glyphs
 #version 1
-#group Dragon Glyphs
+#group RestedXP Dragon Glyphs
 #next D1 Thaldraszus Dragon Glyphs
 
 step
@@ -380,7 +380,7 @@ RXPGuides.RegisterGuide([[
 #name D1 Thaldraszus Dragon Glyphs
 #displayname Thaldraszus Dragon Glyphs
 #version 1
-#group Dragon Glyphs
+#group RestedXP Dragon Glyphs
 #next E1 Forbidden Reach Dragon Glyphs
 
 step
@@ -491,7 +491,7 @@ RXPGuides.RegisterGuide([[
 #displayname Forbidden Reach Dragon Glyphs
 #next F1 Zaralek Cavern Dragon Glyphs
 #version 1
-#group Dragon Glyphs
+#group RestedXP Dragon Glyphs
 
 step
     #completewith next
@@ -604,7 +604,7 @@ RXPGuides.RegisterGuide([[
 #name F1 Zaralek Cavern Dragon Glyphs
 #displayname Zaralek Cavern Dragon Glyphs
 #version 1
-#group Dragon Glyphs
+#group RestedXP Dragon Glyphs
 
 
 step
