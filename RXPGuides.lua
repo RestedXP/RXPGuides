@@ -165,18 +165,19 @@ local questFrame = CreateFrame("Frame");
 
 local startTime = GetTime()
 
-function addon.QuestAutoAccept(title)
-    if title then
-        local element
-        for k, v in pairs(addon.questAccept) do
-            if k == title or addon.GetQuestName(k) == title then
-                element = v
-            end
-        end
-        if element and element.step.active then
-            addon:SendEvent("RXP_QUEST_ACCEPT",element.questId)
-            return true
-        end
+function addon.QuestAutoAccept(titleOrId)
+    if not titleOrId then return end
+
+    -- questTurnIn contains quest and title lookups
+    -- addon.questTurnIn[747] == addon.questTurnIn["The Hunt Begins"]
+
+    local element = addon.questAccept[titleOrId]
+
+    if not element then return end
+
+    if element.step.active then
+        addon:SendEvent("RXP_QUEST_ACCEPT",element.questId)
+        return true
     end
 end
 
@@ -185,12 +186,13 @@ function addon.GetStepQuestReward(titleOrId)
     -- enableQuestRewardAutomation is setting for hard-coded .turnin step data
     if not addon.settings.profile.enableQuestRewardAutomation then return end
     if not titleOrId then return end
-    if not addon.questTurnIn[titleOrId] then return end
 
     -- questTurnIn contains quest and title lookups
     -- addon.questTurnIn[747] == addon.questTurnIn["The Hunt Begins"]
 
     local element = addon.questTurnIn[titleOrId]
+
+    if not element then return end
 
     print("GetStepQuestReward:reward", element.reward)
 
