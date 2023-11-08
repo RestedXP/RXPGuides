@@ -182,6 +182,7 @@ end
 
 function addon.GetStepQuestReward(titleOrId)
     print("GetStepQuestReward(titleOrId)", titleOrId)
+    -- enableQuestRewardAutomation is setting for hard-coded .turnin step data
     if not addon.settings.profile.enableQuestRewardAutomation then return end
     if not titleOrId then return end
     if not addon.questTurnIn[titleOrId] then return end
@@ -501,7 +502,7 @@ local function handleQuestComplete()
     local hardCodedReward = addon.GetStepQuestReward(id)
 
     -- If explicitly hard-coded .turnin reward choice, use that and exit
-    if addon.settings.profile.enableQuestRewardAutomation 
+    if addon.settings.profile.enableQuestRewardAutomation
         and hardCodedReward and hardCodedReward > 0 then -- Quest has an explicit reward ID for .turnin step
 
         print("GetQuestReward(hardCodedReward)")
@@ -511,8 +512,6 @@ local function handleQuestComplete()
 
     -- No item upgrades for client/locale
     if not addon.itemUpgrades then return end
-
-    -- TODO add setting for logo/sell calculations
 
     -- If > 1 choice and not ".turnin QUEST_ID,REWARD_ID" then check for itemUpgrades
     local options = {}
@@ -559,32 +558,36 @@ local function handleQuestComplete()
     -- print("bestSellValue", bestSellValue, "bestSellOption", bestSellOption)
     -- print("bestWeightValue", bestWeightValue, "bestWeightOption", bestWeightOption)
 
-    if not questRewardChoiceIcons["weight"] then
-        questRewardChoiceIcons["weight"] = _G.QuestInfoRewardsFrame:CreateTexture()
-        questRewardChoiceIcons["weight"]:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64")
-        questRewardChoiceIcons["weight"]:SetSize(20, 20)
+    if addon.settings.profile.enableQuestChoiceRecommendation then
+        if not questRewardChoiceIcons["weight"] then
+            questRewardChoiceIcons["weight"] = _G.QuestInfoRewardsFrame:CreateTexture()
+            questRewardChoiceIcons["weight"]:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64")
+            questRewardChoiceIcons["weight"]:SetSize(20, 20)
+        end
+
+        if bestWeightOption > 0 then
+            -- TODO hide after quest dialog closes
+            questRewardChoiceIcons["weight"]:SetPoint("TOPRIGHT", 'QuestInfoRewardsFrameQuestInfoItem' .. bestWeightOption , -1, 1)
+            questRewardChoiceIcons["weight"]:Show()
+        end
     end
 
-    if not questRewardChoiceIcons["value"] then
-        questRewardChoiceIcons["value"] = _G.QuestInfoRewardsFrame:CreateTexture()
-        questRewardChoiceIcons["value"]:SetTexture("Interface/GossipFrame/VendorGossipIcon.blp")
-        questRewardChoiceIcons["value"]:SetSize(20, 20)
-    end
+    if addon.settings.profile.enableQuestChoiceGoldRecommendation then
+        if not questRewardChoiceIcons["value"] then
+            questRewardChoiceIcons["value"] = _G.QuestInfoRewardsFrame:CreateTexture()
+            questRewardChoiceIcons["value"]:SetTexture("Interface/GossipFrame/VendorGossipIcon.blp")
+            questRewardChoiceIcons["value"]:SetSize(20, 20)
+        end
 
-    if bestWeightOption > 0 then
-        -- TODO hide after quest dialog closes
-        questRewardChoiceIcons["weight"]:SetPoint("TOPRIGHT", 'QuestInfoRewardsFrameQuestInfoItem' .. bestWeightOption , -1, 1)
-        questRewardChoiceIcons["weight"]:Show()
-    end
-
-    if bestSellOption > 0 then
-        -- TODO hide after quest dialog closes
-        questRewardChoiceIcons["value"]:SetPoint("BOTTOMRIGHT", 'QuestInfoRewardsFrameQuestInfoItem' .. bestSellOption , -1, 1)
-        questRewardChoiceIcons["value"]:Show()
+        if bestSellOption > 0 then
+            -- TODO hide after quest dialog closes
+            questRewardChoiceIcons["value"]:SetPoint("BOTTOMRIGHT", 'QuestInfoRewardsFrameQuestInfoItem' .. bestSellOption , -1, 1)
+            questRewardChoiceIcons["value"]:Show()
+        end
     end
 
     -- If auto rewards disabled, abort because not doing anything further
-    if not addon.settings.profile.enableQuestRewardAutomation then return end
+    if not addon.settings.profile.enableQuestChoiceAutomation then return end
 
     -- upgrade is more useful than selling
     if bestWeightOption > 0 then
