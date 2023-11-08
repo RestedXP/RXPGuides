@@ -4295,11 +4295,9 @@ step
     >>|T134172:0|t[Great Goretusk Snout]
     >>|T134028:0|t[Tough Condor Meat]
     >>|T134321:0|t[Crisp Spider Meat]
-    >>|T134572:0|t[Rethban Ore]
     .collect 2296,5,92,1 -- Great Goretusk Snout (5)
     .collect 1080,5,92,1 -- Tough Condor Meat (5)
     .collect 1081,5,92,1 -- Crisp Spider Meat (5)
-    .collect 2798,5,347,1 -- Rethban Ore (5)
     .target Auctioneer Jaxon
 step << !Human !Warlock
     #som
@@ -4646,14 +4644,6 @@ step
     .accept 3765 >> Accept The Corruption Abroad
 step
 .dungeon DM
-    .goto StormwindClassic,45.694,38.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Kristoff|r
-    >>Skip this step if you aren't level 20 yet
-    .accept 343 >> Accept Speaking of Fortitude
-    .target Brother Kristoff
-    .xp <20,1
-step
-.dungeon DM
     .goto StormwindClassic,48.079,30.913,10,0
     .goto StormwindClassic,49.193,30.285
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r
@@ -4670,30 +4660,6 @@ step
     .goto StormwindClassic,55.510,12.504
     .target Wilder Thistlenettle
     .target Shoni the Shilent
-step -- adding again 2nd time incase hitting 20 after turning in triple DM quests
-.dungeon DM
-    .goto StormwindClassic,45.694,38.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Kristoff|r
-    >>Skip this step if you aren't level 20 yet
-    .accept 343 >> Accept Speaking of Fortitude
-    .target Brother Kristoff
-    .xp <20,1
-step
-.dungeon DM
-    #completewith next
-    .goto StormwindClassic,70.439,27.097,15,0
-    .goto StormwindClassic,72.003,21.525,15,0
-    .goto StormwindClassic,70.713,10.717,15 >> Travel toward |cRXP_FRIENDLY_Milton Sheaf|r in the Stormwind Library
-    .xp <20,1
-step
-.dungeon DM
-    .goto StormwindClassic,74.182,7.465
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milton Sheaf|r
-    >>Skip this step if you aren't level 20 yet
-    .turnin 343 >> Turn in Speaking of Fortitude
-    .accept 344 >> Accept Brother Paxton
-    .target Milton Sheaf
-    .xp <20,1
 step
 .dungeon DM
     .goto StormwindClassic,42.435,59.236,10,0
@@ -4712,54 +4678,40 @@ step
     >>|T134172:0|t[Great Goretusk Snout]
     >>|T134028:0|t[Tough Condor Meat]
     >>|T134321:0|t[Crisp Spider Meat]
-    >>|T134572:0|t[Rethban Ore]
     .collect 2296,5,92,1 -- Great Goretusk Snout (5)
     .collect 1080,5,92,1 -- Tough Condor Meat (5)
     .collect 1081,5,92,1 -- Crisp Spider Meat (5)
-    .collect 2798,5,347,1 -- Rethban Ore (5)
     .target Auctioneer Jaxon
 step
 .dungeon DM
-    .isQuestTurnedIn 343
     #completewith next
     .goto Elwynn Forest,32.240,49.723,60 >> Exit Stormwind. Travel to Goldshire
+    .isOnQuest 118
     .xp <20,1
 step
 .dungeon DM
-    .isQuestTurnedIn 343
     .goto Elwynn Forest,41.71,65.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smith Argus|r
 	.target Smith Argus
     .turnin 118 >> Turn in The Price of Shoes
     .accept 119 >> Accept Return to Verner
+    .isOnQuest 118
     .xp <20,1
 step
 .dungeon DM
-    .isQuestTurnedIn 343
+    .isQuestTurnedIn 118
+    .goto Elwynn Forest,41.71,65.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smith Argus|r
+	.target Smith Argus
+    .accept 119 >> Accept Return to Verner
+    .xp <20,1
+step
+.dungeon DM
     #completewith next
-    .goto Elwynn Forest,45.81,47.73,20,0
-    .goto Elwynn Forest,48.61,41.80,15 >> Travel to the Northshire Abbey
+    .subzone 91 >> Travel to the Tower of Azora. Ascend the tower
     .xp <20,1
 step
 .dungeon DM
-    .isQuestTurnedIn 343
-    .goto Elwynn Forest,49.60,40.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
-    .turnin 344 >> Turn in Brother Paxton
-    .accept 345 >> Accept Ink Supplies
-    .target Brother Paxton
-    .xp <20,1
-step
-.dungeon DM
-    .isQuestTurnedIn 343
-    #completewith next
-    .goto Elwynn Forest,57.518,51.595,25,0
-    .goto Elwynn Forest,58.14,52.50,20,0
-    .goto Elwynn Forest,65.20,69.80,50 >> Travel to the Tower of Azora. Ascend the tower. Follow the arrow for a shortcut through the mountains
-    .xp <20,1
-step
-.dungeon DM
-    .isQuestTurnedIn 343
     .goto Elwynn Forest,65.22,69.71
     .target Theocritus
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theocritus|r at the top
@@ -4767,7 +4719,6 @@ step
     .xp <20,1
 step
 .dungeon DM
-    .isQuestTurnedIn 343
     .goto Elwynn Forest,64.880,69.192
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dawn Brightstar|r
     .vendor >> |cRXP_FRIENDLY_Dawn Brightstar|r |cRXP_BUY_has has limited supply items such as|r |T134938:0|t|T134937:0|t|T134943:0|t[Scrolls] |cRXP_BUY_and|r |T134850:0|t|T134830:0|t[Potions] |cRXP_BUY_as well, which you should buy if available|r << !Warrior !Rogue
@@ -4776,7 +4727,6 @@ step
     .subzoneskip 91,1
 step
 .dungeon DM
-    .isQuestTurnedIn 343
     #completewith FlyR
 	.goto Redridge Mountains,6.7,72.4
     .zone Redridge Mountains >> Travel to Redridge Mountains
@@ -4816,12 +4766,6 @@ step
     .goto Redridge Mountains,33.50,48.97
     .accept 20 >> Accept Blackrock Menace
     .target Marshal Marris
-step
-    .isQuestTurnedIn 343
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
-    .goto Redridge Mountains,32.13,48.63
-    .turnin 345 >> Turn in Ink Supplies
-    .target Foreman Oslow
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Foreman Oslow|r
     .goto Redridge Mountains,32.13,48.63
