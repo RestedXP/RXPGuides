@@ -3234,8 +3234,8 @@ step << Paladin
     .goto Darkshore,50.74,34.68,0
 	>>Kill |cFFFF5722Blackwood Warriors|r and |cFFFF5722Blackwood Totemics|r. Loot them for their |T132889:0|t[Linen Cloth]
     >>|cFFFCDC00You need to save 10|r |T132889:0|t[Linen Cloth] |cFFFCDC00for your|r |T626003:0|t|cFFF48CBAPaladin|r |cFFFCDC00class quest later|r
-    .collect 2589,10,1,1644 << Human --Linen Cloth (10)
-    .collect 2589,10,1,1648 << Dwarf --Linen Cloth (10)
+    .collect 2589,10,1644,1 << Human --Linen Cloth (10)
+    .collect 2589,10,1648,1 << Dwarf --Linen Cloth (10)
     .mob Blackwood Warrior
     .mob Blackwood Totemic
 step
@@ -3256,8 +3256,8 @@ step << Paladin
     .goto Darkshore,50.74,34.68,0
 	>>Kill |cFFFF5722Blackwood Warriors|r and |cFFFF5722Blackwood Totemics|r. Loot them for their |T132889:0|t[Linen Cloth]
     >>|cFFFCDC00You need to save 10|r |T132889:0|t[Linen Cloth] |cFFFCDC00for your|r |T626003:0|t|cFFF48CBAPaladin|r |cFFFCDC00class quest later|r
-    .collect 2589,10,1,1644 << Human --Linen Cloth (10)
-    .collect 2589,10,1,1648 << Dwarf --Linen Cloth (10)
+    .collect 2589,10,1644,1 << Human --Linen Cloth (10)
+    .collect 2589,10,1648,1 << Dwarf --Linen Cloth (10)
     .mob Blackwood Warrior
     .mob Blackwood Totemic
 step
@@ -3322,6 +3322,8 @@ step << !Paladin
     .complete 966,1 --Worn Parchment (4)
     .mob Dark Strand Fanatic
 step << Paladin
+    .isQuestAvailable 1644 << Human
+    .isQuestAvailable 1648 << Dwarf
     .goto Darkshore,55.27,27.74,40,0
     .goto Darkshore,56.92,27.27,40,0
     .goto Darkshore,57.54,25.99,40,0
@@ -3330,8 +3332,19 @@ step << Paladin
     >>Kill |cFFFF5722Dark Strand Fanatics|r. Loot them for their |cFF00BCD4Parchments|r and |T132889:0|t[Linen Cloth]
     >>|cFFFCDC00You need to save 10|r |T132889:0|t[Linen Cloth] |cFFFCDC00for your|r |T626003:0|t|cFFF48CBAPaladin|r |cFFFCDC00class quest later|r
     .complete 966,1 --Worn Parchment (4)
-    .collect 2589,10,1,1644 << Human --Linen Cloth (10)
-    .collect 2589,10,1,1648 << Dwarf --Linen Cloth (10)
+    .collect 2589,10,1644,1 << Human --Linen Cloth (10)
+    .collect 2589,10,1648,1 << Dwarf --Linen Cloth (10)
+    .mob Dark Strand Fanatic
+step << Paladin
+    .isQuestTurnedIn 1644 << Human
+    .isQuestTurnedIn 1648 << Dwarf
+    .goto Darkshore,55.27,27.74,40,0
+    .goto Darkshore,56.92,27.27,40,0
+    .goto Darkshore,57.54,25.99,40,0
+    .goto Darkshore,56.92,27.27,40,0
+    .goto Darkshore,55.27,27.74
+    >>Kill |cFFFF5722Dark Strand Fanatics|r. Loot them for their |cFF00BCD4Parchments|r
+    .complete 966,1 --Worn Parchment (4)
     .mob Dark Strand Fanatic
 step
 #map Darkshore
@@ -5686,11 +5699,13 @@ step
     .turnin 944 >> Turn in The Master's Glaive
     .accept 949 >> Accept The Twilight Camp
 step
+#map Darkshore
     .goto Ashenvale,22.24,2.52
     >>Click the |cFFDB2EEFTwilight Tome|r
     .turnin 949 >> Turn in The Twilight Camp
     .accept 950 >> Accept Return to Onu
 step
+#map Darkshore
     .goto Ashenvale,22.36,3.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Therylune|r. This will start an escort
     >>|cFFFCDC00Skip this step if she is not there|r
