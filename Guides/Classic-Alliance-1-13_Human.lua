@@ -1661,21 +1661,31 @@ step
     .target Auctioneer Redmuse
     .target Auctioneer Buckler
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
-    .target Rudra Amberstill
-    .goto Dun Morogh,60.1,52.6,50,0
-    .goto Dun Morogh,63.082,49.851
-    .accept 314 >> Accept Protecting the Herd
+    #completewith Rudra
+    #label Dirt
+    .goto Dun Morogh,59.84,49.56,40,0
+    .goto Dun Morogh,61.36,47.07,40 >>Go up the dirt path
+    .isQuestAvailable 314
 step
     #completewith next
-    .goto Dun Morogh,62.3,50.3,14,0
-    .goto Dun Morogh,62.2,49.4,10 >>Run up this part of the mountain
+    #requires Dirt
+    +|cFFFCDC00Kite |cFFFF5722Vagash|r down to|r |cFF00FF25Rudra|r
+    .link https://youtu.be/Zg4FNWw-P5k?t=3815 >>|cFFFCDC00CLICK HERE If you're struggling|r << Mage
+    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r << !Mage
+    .mob Vagash
+step
+    #label Rudra
+    .goto Dun Morogh,63.082,49.851
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
+    .accept 314 >> Accept Protecting the Herd
+    .target Rudra Amberstill
 step
     .goto Dun Morogh,62.6,46.1
     >>Kill |cRXP_ENEMY_Vagash|r. Loot him for his |cRXP_LOOT_Fang|r
     >>|cRXP_WARN_Kite him to the guard south of the ranch. Make sure you do 51%+ damage to him|r
     >>|cRXP_WARN_Watch the video below before you attempt to kill |cRXP_ENEMY_Vagash|r. It can be solo'd on any class|r
-    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r
+    .link https://youtu.be/Zg4FNWw-P5k?t=3815 >> |cRXP_WARN_Click here for video reference|r << Mage
+    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r << !Mage
     .complete 314,1 --Collect Fang of Vagash (1)
     .mob Vagash
 step
@@ -2007,32 +2017,21 @@ step
     .fp Thelsamar >> Get the Thelsamar flight path
     .target Thorgrum Borrelson
 step
-    .goto Loch Modan,22.071,73.127
-    .target Mountaineer Cobbleflint
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Cobbleflint|r
-    .accept 224 >> Accept In Defense of the King's Lands
+    #completewith next
+    .goto Loch Modan,24.78,70.17,10,0
+    .goto Loch Modan,23.73,75.52,15 >> Run up the dirt path then drop down into the bunker
 step
     .goto Loch Modan,23.233,73.675
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r in the bunker
     .target Captain Rugelfuss
     .accept 267 >> Accept The Trogg Threat
 step
-    #completewith next
-    .goto Loch Modan,29.9,68.2,45,0
-    .goto Loch Modan,30.76,69.97,20 >> Travel to Stonesplinter Valley
+    .goto Loch Modan,22.071,73.127
+    .target Mountaineer Cobbleflint
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Cobbleflint|r
+    .accept 224 >> Accept In Defense of the King's Lands
 step
-    .goto Loch Modan,27.01,48.74,0
-    .goto Loch Modan,27.68,56.83,0
-    .goto Loch Modan,33.35,71.59,0
-    .goto Loch Modan,31.54,74.96,0
-    .goto Loch Modan,33.35,71.59,50,0
-    .goto Loch Modan,31.54,74.96,45,0
-    .goto Loch Modan,33.88,76.58,45,0
-    .goto Loch Modan,27.01,48.74,40,0
-    .goto Loch Modan,27.68,56.83,40,0
-    .goto Loch Modan,33.35,71.59,50,0
-    .goto Loch Modan,31.54,74.96,45,0
-    .goto Loch Modan,33.88,76.58
+    .goto Loch Modan,27.33,56.70
     >>Kill |cRXP_ENEMY_Stonesplinter Troggs|r and |cRXP_ENEMY_Stonesplinter Scouts|r. Loot them for their |cRXP_LOOT_Teeth|r
     >>|cRXP_WARN_Ensure you have 10|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for your upcoming Paladin class quest|r << Paladin
     .complete 224,1 --Kill Stonesplinter Trogg (x10)
@@ -2044,26 +2043,34 @@ step
 step << Warlock
     #completewith TroggT
     .money >0.7579
-    .goto Loch Modan,32.7,76.5,0
+    .goto Loch Modan,27.33,56.70,0
     +Grind |cRXP_ENEMY_Troggs|r until you have 75s 79c worth of vendor trash/money
 step << Warlock
     #era
-    .goto Loch Modan,32.7,76.5,0
+    .goto Loch Modan,27.33,56.70,0
     .xp 13+9600 >>Grind until 9600+/11400xp
 step << Warlock
     #som
     .xp 14-2520 >> Grind until you are 8880xp into level 13
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Cobbleflint|r
-    .target Mountaineer Cobbleflint
-    .goto Loch Modan,22.071,73.127
-    .turnin 224 >> Turn in In Defense of the King's Lands
+    .goto Loch Modan,27.33,56.70
+    +Continue grinding |cRXP_ENEMY_Troggs|r until <1m on your Hearth
+    .cooldown item,6948,<60
 step
-    #label TroggT
+    #completewith next
+    .goto Loch Modan,24.78,70.17,10,0
+    .goto Loch Modan,23.73,75.52,15 >> Run up the dirt path then drop down into the bunker
+step
     .goto Loch Modan,23.233,73.675
     .target Captain Rugelfuss
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r
     .turnin 267 >> Turn in The Trogg Threat
+step
+    #label TroggT
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Cobbleflint|r
+    .target Mountaineer Cobbleflint
+    .goto Loch Modan,22.071,73.127
+    .turnin 224 >> Turn in In Defense of the King's Lands
 step << Warlock
     .xp 14 >> Grind to 14
 step

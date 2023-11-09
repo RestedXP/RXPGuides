@@ -1311,26 +1311,35 @@ step << Warrior
     .goto Dun Morogh,52.90,35.62
     .zone Dun Morogh >> Exit Ironforge
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
-    .target Rudra Amberstill
-    .goto Dun Morogh,60.1,52.6,50,0
-    .goto Dun Morogh,63.082,49.851
-    .accept 314 >> Accept Protecting the Herd
+    #completewith Rudra
+    #label Dirt
+    .goto Dun Morogh,59.84,49.56,40,0
+    .goto Dun Morogh,61.36,47.07,40 >>Go up the dirt path
+    .isQuestAvailable 314
 step
     #completewith next
-    .goto Dun Morogh,62.3,50.3,14,0
-    .goto Dun Morogh,62.2,49.4,10 >>Run up this part of the mountain
+    #requires Dirt
+    +|cFFFCDC00Kite |cFFFF5722Vagash|r down to|r |cFF00FF25Rudra|r
+    .link https://youtu.be/Zg4FNWw-P5k?t=3815 >>|cFFFCDC00CLICK HERE If you're struggling|r << Mage
+    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r << !Mage
+    .mob Vagash
+step
+    #label Rudra
+    .goto Dun Morogh,63.082,49.851
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
+    .accept 314 >> Accept Protecting the Herd
+    .target Rudra Amberstill
 step
     .goto Dun Morogh,62.6,46.1
     >>Kill |cRXP_ENEMY_Vagash|r. Loot him for his |cRXP_LOOT_Fang|r
-    >>|cRXP_WARN_This quest is difficult. Find a group for him if needed. Skip this step if you're unable to find a group or solo him|r
+    >>|cRXP_WARN_Kite him to the guard south of the ranch. Make sure you do 51%+ damage to him|r
     >>|cRXP_WARN_Watch the video below before you attempt to kill |cRXP_ENEMY_Vagash|r. It can be solo'd on any class|r
-    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r
+    .link https://youtu.be/Zg4FNWw-P5k?t=3815 >> |cRXP_WARN_Click here for video reference|r << Mage
+    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r << !Mage
     .complete 314,1 --Collect Fang of Vagash (1)
     .mob Vagash
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
-    >>|cRXP_WARN_Choose|r |T133052:0|t[|cRXP_FRIENDLY_Coldridge Hammer|r] |cRXP_WARN_as your reward. Don't worry if you can't equip it yet, you will train 2H Maces very soon!|r << Warrior
     .target Rudra Amberstill
     .goto Dun Morogh,63.082,49.851
     .turnin 314 >> Turn in Protecting the Herd
@@ -2922,16 +2931,12 @@ step << !Paladin !Warrior !Rogue
     .mob Crag Boar
     .mob Large Crag Boar
     .mob Young Black Bear
-
-
 step
     #completewith BoarRibs2
     >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Large Crag Boars|r. Loot them for their |cRXP_LOOT_Crag Boar Ribs|r
     .collect 2886,6,384,1 --Collect Crag Boar Rib (x6)
     .mob Crag Boar
     .mob Large Crag Boar
-
-
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Bellowfiz|r
     .target Pilot Bellowfiz
@@ -3106,31 +3111,38 @@ step
     .mob Elder Crag Boar
     .mob Snow Leopard
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
-    .target Rudra Amberstill
-    .goto Dun Morogh,60.1,52.6,50,0
-    .goto Dun Morogh,63.082,49.851
-    .accept 314 >> Accept Protecting the Herd
+    #completewith Rudra
+    #label Dirt
+    .goto Dun Morogh,59.84,49.56,40,0
+    .goto Dun Morogh,61.36,47.07,40 >>Go up the dirt path
+    .isQuestAvailable 314
 step
     #completewith next
-    .goto Dun Morogh,62.3,50.3,14,0
-    .goto Dun Morogh,62.2,49.4,10 >>Run up this part of the mountain
+    #requires Dirt
+    +|cFFFCDC00Kite |cFFFF5722Vagash|r down to|r |cFF00FF25Rudra|r
+    .link https://youtu.be/Zg4FNWw-P5k?t=3815 >>|cFFFCDC00CLICK HERE If you're struggling|r << Mage
+    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r << !Mage
+    .mob Vagash
+step
+    #label Rudra
+    .goto Dun Morogh,63.082,49.851
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
+    .accept 314 >> Accept Protecting the Herd
+    .target Rudra Amberstill
 step
     .goto Dun Morogh,62.6,46.1
     >>Kill |cRXP_ENEMY_Vagash|r. Loot him for his |cRXP_LOOT_Fang|r
-    >>|cRXP_WARN_This quest is difficult. Find a group for him if needed. Skip this step if you're unable to find a group or solo him|r
-    >>|cRXP_WARN_Try to kite him to the parked guard|r
+    >>|cRXP_WARN_Kite him to the guard south of the ranch. Make sure you do 51%+ damage to him|r
     >>|cRXP_WARN_Watch the video below before you attempt to kill |cRXP_ENEMY_Vagash|r. It can be solo'd on any class|r
-    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r
+    .link https://youtu.be/Zg4FNWw-P5k?t=3815 >> |cRXP_WARN_Click here for video reference|r << Mage
+    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r << !Mage
     .complete 314,1 --Collect Fang of Vagash (1)
     .mob Vagash
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
-    >>|cRXP_WARN_Choose|r |T133052:0|t[|cRXP_FRIENDLY_Coldridge Hammer|r] |cRXP_WARN_as your reward. Don't worry if you can't equip it yet, you will train 2H Maces very soon!|r << Warrior
     .target Rudra Amberstill
     .goto Dun Morogh,63.082,49.851
     .turnin 314 >> Turn in Protecting the Herd
-    .isQuestComplete 314
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Hammerfoot|r
     .target Pilot Hammerfoot
