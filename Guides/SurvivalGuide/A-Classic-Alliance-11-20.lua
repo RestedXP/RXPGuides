@@ -1595,7 +1595,7 @@ step << Druid
     .goto Darnassus,35.375,8.405
     .target Mathrengyl Bearwalker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r up stairs
-    .turnin 6125 >> Power over Poison
+    .turnin 6125 >> Turn in Power over Poison
 step << Druid
     .goto Darnassus,30.7,41.3 >> Take the purple portal back to Rut'theran
     .zoneskip Darkshore

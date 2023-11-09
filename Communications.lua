@@ -400,6 +400,8 @@ function addon.comms.BuildNotification(msg, ...)
 end
 
 function addon.comms.PrettyPrint(msg, ...)
+    if not msg then return end
+
     print(fmt("%s%s: %s", addon.title,
               addon.settings.profile.debug and ' (Debug)' or '', fmt(msg, ...)))
 end

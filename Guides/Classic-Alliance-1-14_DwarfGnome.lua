@@ -5349,7 +5349,8 @@ RXPGuides.RegisterGuide([[
 step << Paladin
     #completewith TroggT
     >>Keep 10 Linen Cloth in your bags for your paladin quest later
-    .collect 2589,10 --Linen Cloth (10)
+    .collect 2589,10,1644,1 << Human --Linen Cloth (10)
+    .collect 2589,10,1648,1 << Dwarf --Linen Cloth (10)
 step
     #completewith EndLoch
     >>Grind boars for 8 Boar Meat for a quest later
@@ -5370,7 +5371,8 @@ step
 step << Paladin
     .goto Loch Modan,27.4,48.4
     >>Grind Troggs to get 10 Linen Cloth in your bags for your paladin quest later
-    .collect 2589,10 --Linen Cloth (10)
+    .collect 2589,10,1644,1 << Human --Linen Cloth (10)
+    .collect 2589,10,1648,1 << Dwarf --Linen Cloth (10)
 step
     .goto Loch Modan,32.6,49.9,80.0,0
     .goto Loch Modan,37.2,46.1,80.0,0

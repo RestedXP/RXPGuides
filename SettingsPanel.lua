@@ -82,6 +82,7 @@ function addon.settings:InitializeSettings()
             levelSplitsHistory = 10,
             levelSplitsFontSize = 11,
             levelSplitsOpacity = 0.9,
+            compareTotalTimeSplit = true,
             enableMinimapButton = true,
             enableWorldMapButton = true,
             minimap = {minimapPos = 146},
@@ -175,8 +176,8 @@ function addon.settings:InitializeSettings()
     settingsDB = LibStub("AceDB-3.0"):New("RXPSettings", settingsDBDefaults)
 
     settingsDB.RegisterCallback(self, "OnProfileChanged", "RefreshProfile")
-    settingsDB.RegisterCallback(self, "OnProfileCopied", "RefreshProfile")
-    settingsDB.RegisterCallback(self, "OnProfileReset", "RefreshProfile")
+    settingsDB.RegisterCallback(self, "OnProfileCopied", "CopyProfile")
+    settingsDB.RegisterCallback(self, "OnProfileReset", "ResetProfile")
     self.profile = settingsDB.profile
     loadedProfileKey = settingsDB.keys.profile
 
@@ -1610,7 +1611,7 @@ function addon.settings:CreateAceOptionsPanel()
                             end
                         end,
                         disabled = function()
-                            return not addon.settings.profile.enableTracker
+                            return not self.profile.enableTracker
                         end
                     },
                     compareNextLevelSplit = {
@@ -1624,7 +1625,23 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.tracker:UpdateLevelSplits("full")
                         end,
                         disabled = function()
-                            return not addon.settings.profile.enableTracker
+                            return not self.profile.enableTracker or
+                                       not self.profile.enablelevelSplits
+                        end
+                    },
+                    compareTotalTimeSplit = {
+                        name = L("Show Total Time Split"),
+                        desc = L("When comparing, show total time difference"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.3,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.tracker:UpdateLevelSplits("full")
+                        end,
+                        disabled = function()
+                            return not addon.settings.profile.enableTracker or
+                                       not self.profile.enablelevelSplits
                         end
                     },
                     hideSplitsBackground = {
@@ -1632,13 +1649,14 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Make background transparent"),
                         type = "toggle",
                         width = optionsWidth,
-                        order = 2.3,
+                        order = 2.4,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.tracker:RenderSplitsBackground()
                         end,
                         disabled = function()
-                            return not addon.settings.profile.enableTracker
+                            return not self.profile.enableTracker or
+                                       not self.profile.enablelevelSplits
                         end
                     },
                     levelSplitsHistory = {
@@ -1646,7 +1664,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Historical levels to show"),
                         type = "range",
                         width = optionsWidth,
-                        order = 2.4,
+                        order = 2.5,
                         min = 1,
                         max = GetMaxPlayerLevel(),
                         step = 1,
@@ -1655,14 +1673,15 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.tracker:UpdateLevelSplits("full")
                         end,
                         disabled = function()
-                            return not addon.settings.profile.enablelevelSplits
+                            return not self.profile.enableTracker or
+                                       not self.profile.enablelevelSplits
                         end
                     },
                     levelSplitsFontSize = {
                         name = L("Level Splits Font Size"),
                         type = "range",
                         width = optionsWidth,
-                        order = 2.5,
+                        order = 2.6,
                         min = 9,
                         max = 17, -- Formatting gets wonky >=18
                         step = 1,
@@ -1671,7 +1690,8 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.tracker:UpdateLevelSplits("full")
                         end,
                         disabled = function()
-                            return not addon.settings.profile.enablelevelSplits
+                            return not self.profile.enableTracker or
+                                       not self.profile.enablelevelSplits
                         end
                     },
                     levelSplitsOpacity = {
@@ -1680,7 +1700,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "Lower number to make Level Splits more transparent"),
                         type = "range",
                         width = optionsWidth,
-                        order = 2.6,
+                        order = 2.7,
                         min = 0.1,
                         max = 1,
                         step = 0.1,
@@ -1689,7 +1709,8 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.tracker:UpdateLevelSplits("full")
                         end,
                         disabled = function()
-                            return not addon.settings.profile.enablelevelSplits
+                            return not self.profile.enableTracker or
+                                       not self.profile.enablelevelSplits
                         end
                     }
                 }
@@ -2962,6 +2983,31 @@ function addon.settings:RefreshProfile()
     addon.settings:LoadFramePositions()
 end
 
+function addon.settings:CopyProfile()
+    addon.comms.PrettyPrint(L(
+                                "Profile changed, Reload UI for settings to take effect"))
+
+    if addon.currentGuide and addon.currentGuide.name then
+        addon:LoadGuide(addon.currentGuide)
+    else
+        addon.ReloadGuide()
+    end
+    addon.UpdateMap()
+    addon.RXPFrame.GenerateMenuTable()
+    addon.RXPFrame.SetStepFrameAnchor()
+
+    -- Restore frame positions on profile change
+    addon.settings:LoadFramePositions()
+end
+
+function addon.settings:ResetProfile()
+    settingsDB.isResetting = true
+    addon.comms.PrettyPrint(L(
+                                "Profile changed, Reload UI for settings to take effect"))
+
+    settingsDB:ResetProfile(false, true)
+end
+
 function addon.settings:CheckAddonCompatibility()
     if not addon.compatibility or
         not self.profile.enableAddonIncompatibilityCheck then return end
@@ -3182,25 +3228,44 @@ function addon.settings:SetupMapButton()
 end
 
 function addon.settings:SaveFramePositions()
+    -- If resetting DB, don't save frames on reload
+    if settingsDB and settingsDB.isResetting then return end
+
     if not addon.settings.profile.framePositions then
         addon.settings.profile.framePositions = {}
     end
 
-    local point, relativeTo, relativePoint, offsetX, offsetY
+    local point, relativeToFrameOrPoint, relativePointOrX, offsetXOrY,
+          offsetYOrNil
 
     for frameName, frame in pairs(addon.enabledFrames) do
-        point, relativeTo, relativePoint, offsetX, offsetY = frame:GetPoint()
+        if self.profile.debug then
+            addon.comms
+                .PrettyPrint("SaveFramePositions:frameName %s", frameName)
+        end
 
-        addon.settings.profile.framePositions[frameName] = {
-            point, relativeTo and relativeTo:GetName() or nil, relativePoint,
-            offsetX, offsetY
-        }
+        addon.settings.profile.framePositions[frameName] = {}
+
+        for i = 1, frame:GetNumPoints() or 0 do
+            point, relativeToFrameOrPoint, relativePointOrX, offsetXOrY, offsetYOrNil =
+                frame:GetPoint(i)
+
+            if type(relativeToFrameOrPoint) == "table" then
+                relativeToFrameOrPoint = relativeToFrameOrPoint:GetName()
+            end
+
+            addon.settings.profile.framePositions[frameName][i] = {
+                point, relativeToFrameOrPoint, relativePointOrX, offsetXOrY,
+                offsetYOrNil
+            }
+        end
     end
 
 end
 
 function addon.settings:LoadFramePositions()
     local point, relativeToName, relativePoint, offsetX, offsetYOrNil
+    local result, reason
 
     for frameName, frame in pairs(addon.enabledFrames) do
         if self.profile.debug then
@@ -3208,19 +3273,50 @@ function addon.settings:LoadFramePositions()
                 .PrettyPrint("LoadFramePositions:frameName %s", frameName)
         end
 
-        if addon.settings.profile.framePositions[frameName] then
-            point, relativeToName, relativePoint, offsetX, offsetYOrNil =
-                unpack(addon.settings.profile.framePositions[frameName])
+        -- Wipe alpha frame data
+        -- Alpha frame restoration only tracked one point, to [1] would be "TOPLEFT" or similar
+        if addon.settings.profile.framePositions[frameName] and
+            addon.settings.profile.framePositions[frameName][1] and
+            type(addon.settings.profile.framePositions[frameName][1]) ~= "table" then
+            addon.settings.profile.framePositions[frameName] = nil
+        end
 
-            -- Some frames only return 4 values for GetPoint, so shuffle one
-            if offsetYOrNil then
-                frame:SetPoint(point, relativeToName, relativePoint, offsetX,
-                               offsetYOrNil)
-            else
-                -- point, nil, relativePoint, offsetX, offsetY
-                frame:SetPoint(point, nil, relativeToName, relativePoint,
-                               offsetX)
+        if addon.settings.profile.framePositions[frameName] then
+            for i = 1, frame:GetNumPoints() or 0 do
+                point, relativeToName, relativePoint, offsetX, offsetYOrNil =
+                    unpack(addon.settings.profile.framePositions[frameName][i])
+
+                frame:ClearAllPoints()
+                result, reason = pcall(frame.SetPoint, frame, point,
+                                       relativeToName, relativePoint, offsetX,
+                                       offsetYOrNil)
+
+                if self.profile.debug then
+                    addon.comms.PrettyPrint("LoadFramePositions:pcall %s %s",
+                                            result and "true" or "false",
+                                            reason or '')
+                end
             end
         end
+    end
+
+    addon.settings:LoadScales()
+end
+
+function addon.settings:LoadScales()
+    addon.RXPFrame:SetScale(self.profile.windowScale)
+
+    if addon.arrowFrame then
+        addon.arrowFrame:SetSize(32 * self.profile.arrowScale,
+                                 32 * self.profile.arrowScale)
+    end
+
+    if addon.activeItemFrame then
+        addon.activeItemFrame:SetScale(self.profile.activeItemsScale)
+    end
+
+    if addon.targeting and addon.targeting.activeTargetFrame then
+        addon.targeting.activeTargetFrame:SetScale(self.profile
+                                                       .activeTargetScale)
     end
 end
