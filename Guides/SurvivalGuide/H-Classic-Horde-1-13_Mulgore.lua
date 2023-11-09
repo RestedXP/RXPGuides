@@ -1366,6 +1366,34 @@ step << Druid/Hunter
     .turnin 6363 >>Turn in Tal the Wind Rider Master
     .accept 6364 >>Accept Return to Jahan
     .target Tal
+step << Druid/Hunter
+    #ah
+    .goto Thunder Bluff,44.43,43.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mooranta|r
+    >>|cRXP_WARN_This will unlock an easy quest. If you already have 2 professions, skip this step|r
+    .train 8613 >>Train |T134366:0|t[Skinning]
+    .target Mooranta
+step << Druid/Hunter
+    #ah
+    .goto Thunder Bluff,44.39,44.72
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veren|r
+    .accept 768 >> Accept Gathering Leather
+    .target Veren Tallstrider
+    .skill skinning,1,1
+step << Druid/Hunter
+    #ah
+    .goto Thunder Bluff,40.39,51.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Stampi|r
+    .collect 2318,12,768,1 >>|cRXP_BUY_Buy Twelve|r |T134252:0|t[Light Leather] |cRXP_BUY_from the Auction House|r
+    .target Auctioneer Stampi
+    .skill skinning,1,1
+step << Druid/Hunter
+    #ah
+    .goto Thunder Bluff,44.39,44.72
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veren|r
+    .turnin 768 >> Turn in Gathering Leather
+    .target Veren Tallstrider
+    .skill skinning,1,1
 step << Hunter
     #completewith ReturntoJahan
     .goto Thunder Bluff,47.00,49.82
