@@ -153,14 +153,17 @@ step << !Priest !Mage !Warlock !Rogue
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Janos|r
     .goto Elwynn Forest,47.240,41.900
-    .vendor >>|cRXP_BUY_Buy a|r |T135650:0|t[Dirk]
+    >>|cRXP_BUY_Buy a|r |T135650:0|t[Dirk]
+    .collect 2139,1 -- Dirk (1)
     .target Janos Hammerknuckle
+    .money <0.0057
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.2
 step << Rogue
     #completewith next
     +|cRXP_WARN_Equip the|r |T135650:0|t[Dirk]
     .use 2139
     .itemcount 2139,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.3
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.19
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r
     .target Marshal McBride
@@ -421,6 +424,13 @@ step << Warrior
     .money <0.0536
     .goto Elwynn Forest,41.529,65.900
     .collect 2488,1 --Collect Gladius (1)
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
+step << Warrior
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
+    .use 2488
+    .itemcount 2488,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
     >>|cRXP_WARN_Buy and equip a|r |T135641:0|t[Stiletto]
@@ -428,6 +438,13 @@ step << Rogue
     .money <0.0400
     .goto Elwynn Forest,41.529,65.900
     .collect 2494,1 --Collect Stiletto (1)
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
+step << Rogue
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
+    .use 2494
+    .itemcount 2494,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.32
 step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
     >>|cRXP_WARN_Buy and equip a|r |T133053:0|t[Wooden Mallet]
@@ -435,6 +452,13 @@ step << Paladin
     .money <0.0631
     .goto Elwynn Forest,41.529,65.900
     .collect 2493,1 --Collect Wooden Mallet (1)
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.00
+step << Paladin
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T133053:0|t[Wooden Mallet]
+    .use 2493
+    .itemcount 2493,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.99
 step << Mage/Priest/Warlock
     #completewith next
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andrew Krighton|r
@@ -480,6 +504,7 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cylina Darkheart|r
     .vendor >> |cRXP_WARN_Buy the|r |T133738:0|t[Grimoire of Blood Pact (Rank 1)] |cRXP_WARN_if you can afford it. If not you will buy it later|r
     .target Cylina Darkheart
+    .money <0.0100
 step << Mage/Rogue/Priest
     #completewith next
     .goto Elwynn Forest,43.877,66.546,9 >> Travel upstairs in the Inn
@@ -725,6 +750,13 @@ step << Warrior
     .money <0.0536
     .goto Elwynn Forest,41.529,65.900
     .collect 2488,1 --Collect Gladius (1)
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
+step << Warrior
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
+    .use 2488
+    .itemcount 2488,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
     >>|cRXP_WARN_Buy and equip a|r |T135641:0|t[Stiletto]
@@ -732,6 +764,13 @@ step << Rogue
     .money <0.0400
     .goto Elwynn Forest,41.529,65.900
     .collect 2494,1 --Collect Stiletto (1)
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
+step << Rogue
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
+    .use 2494
+    .itemcount 2494,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.32
 step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
     >>|cRXP_WARN_Buy and equip a|r |T133053:0|t[Wooden Mallet]
@@ -739,6 +778,13 @@ step << Paladin
     .money <0.0631
     .goto Elwynn Forest,41.529,65.900
     .collect 2493,1 --Collect Wooden Mallet (1)
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.00
+step << Paladin
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T133053:0|t[Wooden Mallet]
+    .use 2493
+    .itemcount 2493,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.99
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
     .target William Pestle
@@ -772,6 +818,7 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cylina Darkheart|r
     .vendor >> |cRXP_WARN_Buy the|r |T133738:0|t[Grimoire of Firebolt (Rank 2)] |cRXP_WARN_if you can afford it. If not you will buy it later|r
     .target Cylina Darkheart
+    .money <0.100
 step << Mage/Priest/Rogue/Warrior/Paladin
     #completewith next
     .goto Elwynn Forest,43.877,66.546,9 >> Travel upstairs in the Inn
@@ -1159,6 +1206,13 @@ step << Rogue
     .money >0.3152
     .goto Elwynn Forest,41.529,65.900
     .collect 2494,1 --Collect Stiletto (1)
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
+step << Rogue
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
+    .use 2494
+    .itemcount 2494,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.32
 step
     #completewith next
     .goto Elwynn Forest,43.154,89.625,50 >> Travel to The Maclure Vineyards
@@ -1408,8 +1462,17 @@ step
 step << Rogue
     .goto StormwindClassic,57.547,57.076
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
+    >> |cRXP_WARN_Buy a|r |T135346:0|t[Cutlass] |cRXP_WARN_and equip it in your Main-Hand|r
+    .collect 851,1 -- Cutlass (1)
     .target Gunther Weller
-    .vendor >> |cRXP_WARN_Buy a|r |T135346:0|t[Cutlass] |cRXP_WARN_and equip it in your Main-Hand|r
+    .money <0.2023
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.80 
+step << Rogue
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135346:0|t[Cutlass]
+    .use 851
+    .itemcount 851,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.79
 step
     .goto StormwindClassic,52.623,65.701
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Allison|r
@@ -2084,6 +2147,7 @@ step << Warlock/Priest
     .goto StormwindClassic,42.88,65.11
     .collect 5208,1 --Smoldering Wand (1)
     .target Ardwyn Cailen
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<13.4
 step << Warlock/Priest
     #ah
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ardwyn Cailen|r
@@ -2092,6 +2156,16 @@ step << Warlock/Priest
     .goto StormwindClassic,42.88,65.11
     .collect 5208,1 --Smoldering Wand (1)
     .target Ardwyn Cailen
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<13.4
+    --not adding .money tag to this step. user could have less silver than vendor wand but cheaper ones may exist on the AH
+step << Warlock/Priest
+    #optional
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135468:0|t[Smoldering Wand]
+    .use 5208
+    .itemcount 5208,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<13.39
+    .xp <15,1
 step << Warlock
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
@@ -2152,6 +2226,8 @@ step
 step << Rogue
     .goto StormwindClassic,74.65,52.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r
+    >>|cRXP_WARN_Only train|r |T132269:0|t[Parry]
+    >>|cRXP_WARN_Don't train|r |T132219:0|t[Kick] |cRXP_WARN_as it isn't needed yet and you need your silver for purchasing weapons|r
     .trainer >> Train your class spells
     .target Osborne the Night Man
 step << Warrior
@@ -2170,6 +2246,34 @@ step << Paladin
     .accept 1644 >> Accept The Tome of Divinity
     .turnin 1644 >> Turn in The Tome of Divinity
     --.accept 1780 >> Accept The Tome of Divinity
+step << Rogue
+    #ah
+    .goto StormwindClassic,57.38,56.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Marda Weller|r
+    >>|cRXP_BUY_Buy 2|r |T135343:0|t[Scimitars] |cRXP_BUY_if you can afford it or something better from the Auction House|r
+    >>|cRXP_WARN_Equip them both once you're level 14|r
+    .collect 2027,2 --Kris
+    .target Marda Weller
+    .money <0.3815
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+step << Rogue
+    #ssf
+    .goto StormwindClassic,57.38,56.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Marda Weller|r
+    >>|cRXP_BUY_Buy 2|r |T135343:0|t[Scimitars] |cRXP_BUY_if you can afford it|r
+    >>|cRXP_WARN_Equip them both once you're level 14|r
+    .collect 2027,2 --Kris
+    .money <0.3815
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+    .target Marda Weller
+step << Rogue
+    #optional
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135343:0|t[Scimitar]
+    .use 2027
+    .itemcount 2027,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.69
+    .xp <14,1
 step
     #ah
     .goto Stormwind City,53.612,59.764

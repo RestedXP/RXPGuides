@@ -992,6 +992,13 @@ step << Druid
     >>|cFFFCDC00Buy and equip a|r |T135147:0|t[Gnarled Staff]
     .collect 2030,1
     .money <0.56
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
+step << Druid
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135147:0|t[Gnarled Staff]
+    .use 2030
+    .itemcount 2030,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.89
 step << Druid
     .goto Teldrassil,23.70,64.51
     .target Chief Archaeologist Greywhisker
@@ -1461,12 +1468,29 @@ step << NightElf Hunter
     .target Jocaste
 step << NightElf Hunter
     #completewith start
+    #label RecruveReinforced
     .goto Darnassus,63.27,66.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Landria|r
     >>|cFFFCDC00Buy a|r |T135489:0|t[Heavy Recurve Bow] |cFFFCDC00if you can afford it. If not then buy a|r |T135490:0|t[Reinforced Bow]
     >>|cFFFCDC00Stock up on|r |T132382:0|t[Sharp Arrows]
     .collect 3027,1
     .target Landria
+    .money <0.3812
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.50
+step << Hunter
+    #requires RecruveReinforced
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135489:0|t[Heavy Recurve Bow]
+    .use 3027
+    .itemcount 3027,1
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.19
+step << Hunter
+    #requires RecruveReinforced
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135490:0|t[Reinforced Bow]
+    .use 3026
+    .itemcount 3026,1
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.49
 step << NightElf !Druid
     .goto Teldrassil,23.70,64.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Chief Archaeologist Greywhisker|r
@@ -2069,13 +2093,20 @@ step << Dwarf Hunter
     .train 227 >> Train Staves
     .target Ilyenia Moonfire
 step << Dwarf Hunter
-    #completewith next
     .goto Darnassus,63.27,66.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Landria|r
     >>|cFFFCDC00Buy a|r |T135489:0|t[Heavy Recurve Bow] |cFFFCDC00and a|r |T134410:0|t[Medium Quiver]
     .collect 3027,1 -- Heavy Recurve Bow
     .collect 11362,1 -- Medium Quiver
     .target Landria
+    .money <0.7349
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.20
+step << Hunter
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135489:0|t[Heavy Recurve Bow]
+    .use 3027
+    .itemcount 3027,1
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.19
 step << Dwarf Hunter
     .goto Teldrassil,23.70,64.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Chief Archaeologist Greywhisker|r
@@ -4301,6 +4332,8 @@ step << Rogue
     >>|cRXP_WARN_Equip it once you're level 19|r
     .collect 2209,1 --Kris
     .target Marda Weller
+    .money <0.7115
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.9
 step << Rogue
     #ssf
     .goto StormwindClassic,57.38,56.77
@@ -4308,7 +4341,17 @@ step << Rogue
     >>|cRXP_BUY_Buy a|r |T135342:0|t[Kris]
     >>|cRXP_WARN_Equip it once you're level 19|r
     .collect 2209,1 --Kris
+    .money <0.7115
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.9
     .target Marda Weller
+step << Rogue
+    #optional
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135342:0|t[Kris]
+    .use 2209
+    .itemcount 2209,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.89
+    .xp <19,1
 step
 .dungeon !DM
     #ah
@@ -5096,39 +5139,59 @@ step
     .fp Redridge Mountains >> Get the Redridge Mountains flight path << !Human !Warlock
     .fly Stormwind >> Fly to Stormwind City
 step << Rogue
-    #softcore
+    #ah
     .goto StormwindClassic,57.38,56.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Marda Weller|r
     >>|cFFFCDC00Buy a|r |T135324:0|t[Longsword] |cFFFCDC00and equip it at 21|r
     >>|cFFFCDC00Buy something from the Auction House if there's something cheaper/better|r
-    >>|cFFFCDC00Skip this step if you have something better|r
     .collect 923,1 --Longsword (1)
     .target Marda Weller
+    .money <0.8743
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.2
 step << Rogue
-    #hardcore
+    #ssf
     .goto StormwindClassic,57.38,56.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Marda Weller|r
     >>|cFFFCDC00Buy a|r |T135324:0|t[Longsword] |cFFFCDC00and equip it at 21|r
-    >>|cFFFCDC00Skip this step if you have something better|r
     .collect 923,1 --Longsword (1)
     .target Marda Weller
+    .money <0.8743
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.2
+step << Rogue
+    #optional
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135324:0|t[Longsword]
+    .use 923
+    .itemcount 923,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.19
+    .xp <21,1
 step << Warrior/Paladin
-    #softcore
+    #ah
     .goto StormwindClassic,57.54,57.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gunther Weller|r
     >>|cFFFCDC00Buy a|r |T135280:0|t[Dacian Falx] |cFFFCDC00if you have enough money. Equip it at 21|r
     >>|cFFFCDC00Buy something from the Auction House if there's something cheaper/better|r
-    >>|cFFFCDC00Skip this step if you have something better|r
     .collect 922,1 --Dacian Falx (1)
     .target Gunther Weller
+    .money <1.2038
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<16.0
 step << Warrior/Paladin
-    #hardcore
+    #ssf
     .goto StormwindClassic,57.54,57.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gunther Weller|r
     >>|cFFFCDC00Buy a|r |T135280:0|t[Dacian Falx] |cFFFCDC00if you have enough money. Equip it at 21|r
-    >>|cFFFCDC00Skip this step if you have something better|r
     .collect 922,1 --Dacian Falx (1)
     .target Gunther Weller
+    .money <1.2038
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<16.0
+step << Warrior/Paladin
+    #optional
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135280:0|t[Dacian Falx]
+    .use 922
+    .itemcount 922,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.99
+    .xp <21,1
 step << Warlock
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
