@@ -550,10 +550,6 @@ local function handleQuestComplete()
             bestSellOption = choice
         end
 
-        -- Only weight currently usable items
-        -- TODO remove? Maybe we want a comparison to all
-        -- if data.isUsable then
-
         -- Check for best compared upgrade
         for _, compareData in ipairs(data.comparisons) do
             if not compareData.Ratio then
@@ -567,7 +563,6 @@ local function handleQuestComplete()
                 bestRatioOption = choice
             end
         end
-        -- end
     end
 
     -- print("bestSellValue", bestSellValue, "bestSellOption", bestSellOption)
@@ -612,8 +607,12 @@ local function handleQuestComplete()
 
     -- upgrade is more useful than selling
     if bestRatioOption > 0 then
-        print("GetQuestReward(bestRatioOption)", bestRatioOption)
-        addon:SendEvent("RXP_QUEST_TURNIN", id, choices, bestRatioOption)
+        -- if isUsable, then automatically pick
+        -- If not usable but recommended leave the window open for user decision
+        if options[bestRatioOption].isUsable then
+            print("GetQuestReward(bestRatioOption)", bestRatioOption)
+            addon:SendEvent("RXP_QUEST_TURNIN", id, choices, bestRatioOption)
+        end
     elseif bestSellOption > 0 then
         print("GetQuestReward(bestSellOption)", bestSellOption)
         addon:SendEvent("RXP_QUEST_TURNIN", id, choices, bestSellOption)
