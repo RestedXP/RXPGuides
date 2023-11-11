@@ -537,9 +537,6 @@ local function createLogRewardChoiceIcons()
     if not questLogRewardChoiceIcons["ratio"].isHooked then
         _G.QuestLogDetailScrollFrame:HookScript("OnHide", hideRewardChoiceIcons)
 
-        -- TODO use instead?
-        -- 	hooksecurefunc("SelectQuestLogEntry", function(questListID)
-		--	end)
         hooksecurefunc("SelectQuestLogEntry", function(questLogIndex)
             hideRewardChoiceIcons()
             addon.DisplayQuestLogRewards(questLogIndex)
@@ -559,7 +556,7 @@ local function evaluateQuestChoices(questID, numChoices, GetQuestItemInfo, GetQu
     if addon.settings.profile.enableQuestRewardAutomation
         and hardCodedReward and hardCodedReward > 0 then -- Quest has an explicit reward ID for .turnin step
 
-        print("hardCodedReward", hardCodedReward)
+        -- print("hardCodedReward", hardCodedReward)
         return -1, hardCodedReward, {}
     end
 
@@ -574,7 +571,7 @@ local function evaluateQuestChoices(questID, numChoices, GetQuestItemInfo, GetQu
 
     -- Load choices data
     -- TODO retry or handle query failures
-    -- TOOD leverage QuestLog.lua helpers
+    -- TODO leverage QuestLog.lua helpers
     for i = 1, numChoices do
         if GetQuestItemInfo then
             itemName, _, _, _, isUsable = GetQuestItemInfo("choice", i)
@@ -619,8 +616,8 @@ local function evaluateQuestChoices(questID, numChoices, GetQuestItemInfo, GetQu
         end
     end
 
-    print("bestSellValue", bestSellValue, "bestSellOption", bestSellOption)
-    print("bestRatioValue", bestRatioValue, "bestRatioOption", bestRatioOption)
+    -- print("bestSellValue", bestSellValue, "bestSellOption", bestSellOption)
+    -- print("bestRatioValue", bestRatioValue, "bestRatioOption", bestRatioOption)
 
     return bestSellOption, bestRatioOption, options
 end
@@ -644,6 +641,7 @@ local function handleQuestComplete()
     if addon.settings.profile.enableQuestChoiceRecommendation then
         if bestRatioOption > 0 then
             questRewardChoiceIcons["ratio"]:SetPoint("TOPRIGHT", 'QuestInfoRewardsFrameQuestInfoItem' .. bestRatioOption , -1, 1)
+            questRewardChoiceIcons["ratio"]:SetParent(_G['QuestInfoRewardsFrameQuestInfoItem' .. bestRatioOption])
             questRewardChoiceIcons["ratio"]:Show()
         end
     end
@@ -651,12 +649,14 @@ local function handleQuestComplete()
     if addon.settings.profile.enableQuestChoiceGoldRecommendation then
         if bestSellOption > 0 then
             questRewardChoiceIcons["value"]:SetPoint("BOTTOMRIGHT", 'QuestInfoRewardsFrameQuestInfoItem' .. bestSellOption , -1, 1)
+            questRewardChoiceIcons["value"]:SetParent(_G['QuestInfoRewardsFrameQuestInfoItem' .. bestSellOption])
             questRewardChoiceIcons["value"]:Show()
         end
 
          -- No calculated best upgrade, so add recommendation to value as well
         if bestRatioOption < 1 then
             questRewardChoiceIcons["ratio"]:SetPoint("TOPRIGHT", 'QuestInfoRewardsFrameQuestInfoItem' .. bestSellOption , -1, 1)
+            questRewardChoiceIcons["ratio"]:SetParent(_G['QuestInfoRewardsFrameQuestInfoItem' .. bestSellOption])
             questRewardChoiceIcons["ratio"]:Show()
         end
     end
@@ -678,15 +678,17 @@ local function handleQuestComplete()
     end
 end
 
+local GetQuestLogSelection = _G.GetQuestLogSelection
 local GetNumQuestLogChoices = _G.GetNumQuestLogChoices -- C_QuestLog.GetLogIndexForQuestID
 local GetQuestLogChoiceInfo = _G.GetQuestLogChoiceInfo
 local GetQuestLogItemLink = _G.GetQuestLogItemLink
 local GetQuestLogTitle = _G.GetQuestLogTitle -- C_QuestLog.GetInfo
 
 function addon.DisplayQuestLogRewards(questLogIndex)
-    if not questLogIndex or questLogIndex < 1 then return end
-
-    local title, _, _, _, _, _, _, questID = GetQuestLogTitle(questLogIndex)
+    if not questLogIndex or type(questLogIndex) == "table" then
+        questLogIndex = GetQuestLogSelection()
+    end
+    if questLogIndex < 1 then return end
 
     local numChoices = GetNumQuestLogChoices()
 
@@ -694,13 +696,15 @@ function addon.DisplayQuestLogRewards(questLogIndex)
         return
     end
 
+    local title, _, _, _, _, _, _, questID = GetQuestLogTitle(questLogIndex)
+
     -- options third return only used for handleQuestComplete
     local bestSellOption, bestRatioOption, _ = evaluateQuestChoices(questID, numChoices, nil, GetQuestLogItemLink, GetQuestLogChoiceInfo)
 
-    -- TODO fix scrolling unaware icon anchors
     if addon.settings.profile.enableQuestChoiceRecommendation then
         if bestRatioOption > 0 then
             questLogRewardChoiceIcons["ratio"]:SetPoint("TOPRIGHT", 'QuestLogItem' .. bestRatioOption , -1, 1)
+            questLogRewardChoiceIcons["ratio"]:SetParent(_G['QuestLogItem' .. bestRatioOption])
             questLogRewardChoiceIcons["ratio"]:Show()
         end
     end
@@ -708,12 +712,14 @@ function addon.DisplayQuestLogRewards(questLogIndex)
     if addon.settings.profile.enableQuestChoiceGoldRecommendation then
         if bestSellOption > 0 then
             questLogRewardChoiceIcons["value"]:SetPoint("BOTTOMRIGHT", 'QuestLogItem' .. bestSellOption , -1, 1)
+            questLogRewardChoiceIcons["value"]:SetParent(_G['QuestLogItem' .. bestSellOption])
             questLogRewardChoiceIcons["value"]:Show()
         end
 
          -- No calculated best upgrade, so add recommendation to value as well
         if bestRatioOption < 1 then
             questLogRewardChoiceIcons["ratio"]:SetPoint("TOPRIGHT", 'QuestLogItem' .. bestSellOption , -1, 1)
+            questLogRewardChoiceIcons["ratio"]:SetParent(_G['QuestLogItem' .. bestSellOption])
             questLogRewardChoiceIcons["ratio"]:Show()
         end
     end
