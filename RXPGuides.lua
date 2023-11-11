@@ -481,9 +481,34 @@ local GossipSelectActiveQuest = C_GossipInfo.SelectActiveQuest or
 local GossipGetAvailableQuests = C_GossipInfo.GetAvailableQuests or
                                      _G.GetGossipAvailableQuests
 
--- TODO leverage QUEST_FINISHED to hide logo/bag icons
 -- TODO also show in quest log choices
 local questRewardChoiceIcons = {}
+local function hideRewardChoiceIcons()
+    for _, f in pairs(questRewardChoiceIcons) do
+        if not f:IsForbidden() then f:Hide() end
+    end
+end
+
+local function createRewardChoiceIcons()
+    if not _G.QuestInfoRewardsFrame then return end
+
+    if not questRewardChoiceIcons["ratio"] then
+        questRewardChoiceIcons["ratio"] = _G.QuestInfoRewardsFrame:CreateTexture()
+        questRewardChoiceIcons["ratio"]:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64")
+        questRewardChoiceIcons["ratio"]:SetSize(20, 20)
+    end
+
+    if not questRewardChoiceIcons["value"] then
+        questRewardChoiceIcons["value"] = _G.QuestInfoRewardsFrame:CreateTexture()
+        questRewardChoiceIcons["value"]:SetTexture("Interface/GossipFrame/VendorGossipIcon.blp")
+        questRewardChoiceIcons["value"]:SetSize(20, 20)
+    end
+
+    _G.QuestInfoRewardsFrame:HookScript("OnHide", hideRewardChoiceIcons)
+end
+
+createRewardChoiceIcons()
+
 local function handleQuestComplete()
     local id = GetQuestID()
     if not id or id < 0 then return end
@@ -569,12 +594,6 @@ local function handleQuestComplete()
     -- print("bestRatioValue", bestRatioValue, "bestRatioOption", bestRatioOption)
 
     if addon.settings.profile.enableQuestChoiceRecommendation then
-        if not questRewardChoiceIcons["ratio"] then
-            questRewardChoiceIcons["ratio"] = _G.QuestInfoRewardsFrame:CreateTexture()
-            questRewardChoiceIcons["ratio"]:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64")
-            questRewardChoiceIcons["ratio"]:SetSize(20, 20)
-        end
-
         if bestRatioOption > 0 then
             -- TODO hide after quest dialog closes
             questRewardChoiceIcons["ratio"]:SetPoint("TOPRIGHT", 'QuestInfoRewardsFrameQuestInfoItem' .. bestRatioOption , -1, 1)
@@ -583,12 +602,6 @@ local function handleQuestComplete()
     end
 
     if addon.settings.profile.enableQuestChoiceGoldRecommendation then
-        if not questRewardChoiceIcons["value"] then
-            questRewardChoiceIcons["value"] = _G.QuestInfoRewardsFrame:CreateTexture()
-            questRewardChoiceIcons["value"]:SetTexture("Interface/GossipFrame/VendorGossipIcon.blp")
-            questRewardChoiceIcons["value"]:SetSize(20, 20)
-        end
-
         if bestSellOption > 0 then
             -- TODO hide after quest dialog closes
             questRewardChoiceIcons["value"]:SetPoint("BOTTOMRIGHT", 'QuestInfoRewardsFrameQuestInfoItem' .. bestSellOption , -1, 1)
@@ -608,7 +621,7 @@ local function handleQuestComplete()
     -- upgrade is more useful than selling
     if bestRatioOption > 0 then
         -- if isUsable, then automatically pick
-        -- If not usable but recommended leave the window open for user decision
+        -- If not usable but recommended then leave the window open for user decision
         if options[bestRatioOption].isUsable then
             print("GetQuestReward(bestRatioOption)", bestRatioOption)
             addon:SendEvent("RXP_QUEST_TURNIN", id, choices, bestRatioOption)
