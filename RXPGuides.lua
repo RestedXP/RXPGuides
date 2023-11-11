@@ -482,6 +482,7 @@ local GossipGetAvailableQuests = C_GossipInfo.GetAvailableQuests or
                                      _G.GetGossipAvailableQuests
 
 -- TODO move some/all parts to QuestLog
+-- TODO disable if Pawn?
 local questRewardChoiceIcons = {}
 local questLogRewardChoiceIcons = {}
 local function hideRewardChoiceIcons()
@@ -519,28 +520,30 @@ local function createRewardChoiceIcons()
 end
 
 local function createLogRewardChoiceIcons()
-    if not _G.QuestLogFrame then return end
+    if not _G.QuestLogDetailScrollFrame then return end
 
     if not questLogRewardChoiceIcons["ratio"] then
-        questLogRewardChoiceIcons["ratio"] = _G.QuestLogFrame:CreateTexture()
+        questLogRewardChoiceIcons["ratio"] = _G.QuestLogDetailScrollFrame:CreateTexture()
         questLogRewardChoiceIcons["ratio"]:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64")
         questLogRewardChoiceIcons["ratio"]:SetSize(20, 20)
     end
 
     if not questLogRewardChoiceIcons["value"] then
-        questLogRewardChoiceIcons["value"] = _G.QuestLogFrame:CreateTexture()
+        questLogRewardChoiceIcons["value"] = _G.QuestLogDetailScrollFrame:CreateTexture()
         questLogRewardChoiceIcons["value"]:SetTexture("Interface/GossipFrame/VendorGossipIcon.blp")
         questLogRewardChoiceIcons["value"]:SetSize(20, 20)
     end
 
     if not questLogRewardChoiceIcons["ratio"].isHooked then
-        _G.QuestLogFrame:HookScript("OnHide", hideRewardChoiceIcons)
+        _G.QuestLogDetailScrollFrame:HookScript("OnHide", hideRewardChoiceIcons)
 
-        if _G.QuestLog_SetSelection then
-            hooksecurefunc("QuestLog_SetSelection", addon.DisplayQuestLogRewards)
-        else
-            _G.QuestLogFrame:HookScript("OnShow", addon.DisplayQuestLogRewards)
-        end
+        -- TODO use instead?
+        -- 	hooksecurefunc("SelectQuestLogEntry", function(questListID)
+		--	end)
+        hooksecurefunc("SelectQuestLogEntry", function(questLogIndex)
+            hideRewardChoiceIcons()
+            addon.DisplayQuestLogRewards(questLogIndex)
+        end)
 
         questLogRewardChoiceIcons["ratio"].isHooked = true
     end
@@ -590,7 +593,7 @@ local function evaluateQuestChoices(questID, numChoices, GetQuestItemInfo, GetQu
 
             options[i] = itemData
         end
-        print("evaluateQuestChoices", i, itemName, itemLink, itemData.totalWeight, "isUsable", isUsable)
+        -- print("evaluateQuestChoices", i, itemName, itemLink, itemData.totalWeight, "isUsable", isUsable)
     end
 
     local bestSellOption, bestSellValue = -1, -1
@@ -675,17 +678,15 @@ local function handleQuestComplete()
     end
 end
 
-local GetQuestLogSelection = _G.GetQuestLogSelection -- C_QuestLog.GetSelectedQuest
 local GetNumQuestLogChoices = _G.GetNumQuestLogChoices -- C_QuestLog.GetLogIndexForQuestID
 local GetQuestLogChoiceInfo = _G.GetQuestLogChoiceInfo
 local GetQuestLogItemLink = _G.GetQuestLogItemLink
 local GetQuestLogTitle = _G.GetQuestLogTitle -- C_QuestLog.GetInfo
 
-function addon.DisplayQuestLogRewards()
-    local selectedQuestIndex = GetQuestLogSelection()
-    if not selectedQuestIndex or selectedQuestIndex < 1 then return end
+function addon.DisplayQuestLogRewards(questLogIndex)
+    if not questLogIndex or questLogIndex < 1 then return end
 
-    local title, _, _, _, _, _, _, questID = GetQuestLogTitle(selectedQuestIndex)
+    local title, _, _, _, _, _, _, questID = GetQuestLogTitle(questLogIndex)
 
     local numChoices = GetNumQuestLogChoices()
 
