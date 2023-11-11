@@ -2034,7 +2034,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end
                     },
                     enableQuestChoiceRecommendation = {
-                        name = L("Enable Quest Reward Recommendation"), -- TODO locale
+                        name = L("Quest Reward Recommendation"), -- TODO locale
                         desc = L("Displays the best calculated item upgrade"),
                         type = "toggle",
                         width = optionsWidth,
@@ -2047,7 +2047,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end
                     },
                     enableQuestChoiceGoldRecommendation = {
-                        name = L("Enable Quest Sellable Recommendation"), -- TODO locale
+                        name = L("Quest Sellable Recommendation"), -- TODO locale
                         desc = L("Displays the best sellable quest reward"),
                         type = "toggle",
                         width = optionsWidth,

@@ -168,8 +168,8 @@ local startTime = GetTime()
 function addon.QuestAutoAccept(titleOrId)
     if not titleOrId then return end
 
-    -- questTurnIn contains quest and title lookups
-    -- addon.questTurnIn[747] == addon.questTurnIn["The Hunt Begins"]
+    -- questAccept contains quest and title lookups
+    -- addon.questAccept[747] == addon.questAccept["The Hunt Begins"]
 
     local element = addon.questAccept[titleOrId]
 
@@ -182,7 +182,6 @@ function addon.QuestAutoAccept(titleOrId)
 end
 
 function addon.GetStepQuestReward(titleOrId)
-    print("GetStepQuestReward(titleOrId)", titleOrId)
     -- enableQuestRewardAutomation is setting for hard-coded .turnin step data
     if not addon.settings.profile.enableQuestRewardAutomation then return end
     if not titleOrId then return end
@@ -193,8 +192,6 @@ function addon.GetStepQuestReward(titleOrId)
     local element = addon.questTurnIn[titleOrId]
 
     if not element then return end
-
-    print("GetStepQuestReward:reward", element.reward)
 
     return element.reward >= 0 and element.reward or 0
 end
@@ -485,6 +482,7 @@ local GossipGetAvailableQuests = C_GossipInfo.GetAvailableQuests or
                                      _G.GetGossipAvailableQuests
 
 -- TODO leverage QUEST_FINISHED to hide logo/bag icons
+-- TODO also show in quest log choices
 local questRewardChoiceIcons = {}
 local function handleQuestComplete()
     local id = GetQuestID()
@@ -513,7 +511,13 @@ local function handleQuestComplete()
     end
 
     -- No item upgrades for client/locale
-    if not addon.itemUpgrades then return end
+    if not addon.itemUpgrades then
+        print("ItemUpgrades not supported on client")
+        return
+    end
+
+    -- TODO calculate best vendor early
+    -- local _, _, _, _, itemMinLevel, _, _, _, itemEquipLoc, _, sellPrice, _, itemSubTypeID = GetItemInfo(itemLink)
 
     -- If > 1 choice and not ".turnin QUEST_ID,REWARD_ID" then check for itemUpgrades
     local options = {}
@@ -527,50 +531,59 @@ local function handleQuestComplete()
         itemLink = GetQuestItemLink("choice", i)
 
         itemData = addon.itemUpgrades:GetItemData(itemLink)
-        itemData.comparisons = addon.itemUpgrades:CompareItemWeight(itemLink)
-        itemData.isUsable = isUsable
 
-        options[i] = itemData
+        if itemData then
+            -- Returns nil if item not applicable
+            itemData.comparisons = addon.itemUpgrades:CompareItemWeight(itemLink) or {}
+            itemData.isUsable = isUsable
+
+            options[i] = itemData
+        end
         -- print("handleQuestComplete", i, itemName, itemLink, itemData.totalWeight, "isUsable", isUsable)
     end
 
-    -- TODO use comparison diff weight vs equipped
     local bestSellOption, bestSellValue = -1, -1
-    local bestWeightOption, bestWeightValue = -1, -1
+    local bestRatioOption, bestRatioValue = -1, -1
     for choice, data in ipairs(options) do
-         -- Slot is empty, so is the best upgrade by weight
-        if data.debug == _G.EMPTY then
-            bestWeightValue = 9999
-            bestWeightOption = choice
-        end
-
-        -- Only weight currently usable items
-        -- Assumes guide gets required training prior
-        if data.isUsable and data.totalWeight > bestWeightValue then
-            bestWeightValue = data.totalWeight
-            bestWeightOption = choice
-        end
-
         if data.sellPrice > bestSellValue then
             bestSellValue = data.sellPrice
             bestSellOption = choice
         end
+
+        -- Only weight currently usable items
+        -- TODO remove? Maybe we want a comparison to all
+        -- if data.isUsable then
+
+        -- Check for best compared upgrade
+        for _, compareData in ipairs(data.comparisons) do
+            if not compareData.Ratio then
+                if compareData.debug == _G.EMPTY then
+                     -- An item needs to be 10x better to beat an empty slot fill
+                    bestRatioValue = 10.0
+                    bestRatioOption = choice
+                end
+            elseif compareData.Ratio > bestRatioValue then
+                bestRatioValue = compareData.Ratio
+                bestRatioOption = choice
+            end
+        end
+        -- end
     end
 
     -- print("bestSellValue", bestSellValue, "bestSellOption", bestSellOption)
-    -- print("bestWeightValue", bestWeightValue, "bestWeightOption", bestWeightOption)
+    -- print("bestRatioValue", bestRatioValue, "bestRatioOption", bestRatioOption)
 
     if addon.settings.profile.enableQuestChoiceRecommendation then
-        if not questRewardChoiceIcons["weight"] then
-            questRewardChoiceIcons["weight"] = _G.QuestInfoRewardsFrame:CreateTexture()
-            questRewardChoiceIcons["weight"]:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64")
-            questRewardChoiceIcons["weight"]:SetSize(20, 20)
+        if not questRewardChoiceIcons["ratio"] then
+            questRewardChoiceIcons["ratio"] = _G.QuestInfoRewardsFrame:CreateTexture()
+            questRewardChoiceIcons["ratio"]:SetTexture("Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64")
+            questRewardChoiceIcons["ratio"]:SetSize(20, 20)
         end
 
-        if bestWeightOption > 0 then
+        if bestRatioOption > 0 then
             -- TODO hide after quest dialog closes
-            questRewardChoiceIcons["weight"]:SetPoint("TOPRIGHT", 'QuestInfoRewardsFrameQuestInfoItem' .. bestWeightOption , -1, 1)
-            questRewardChoiceIcons["weight"]:Show()
+            questRewardChoiceIcons["ratio"]:SetPoint("TOPRIGHT", 'QuestInfoRewardsFrameQuestInfoItem' .. bestRatioOption , -1, 1)
+            questRewardChoiceIcons["ratio"]:Show()
         end
     end
 
@@ -586,15 +599,21 @@ local function handleQuestComplete()
             questRewardChoiceIcons["value"]:SetPoint("BOTTOMRIGHT", 'QuestInfoRewardsFrameQuestInfoItem' .. bestSellOption , -1, 1)
             questRewardChoiceIcons["value"]:Show()
         end
+
+         -- No calculated best upgrade, so add recommendation to value as well
+        if bestRatioOption < 1 and false then -- TODO remove false
+            questRewardChoiceIcons["ratio"]:SetPoint("TOPRIGHT", 'QuestInfoRewardsFrameQuestInfoItem' .. bestSellOption , -1, 1)
+            questRewardChoiceIcons["ratio"]:Show()
+        end
     end
 
     -- If auto rewards disabled, abort because not doing anything further
     if not addon.settings.profile.enableQuestChoiceAutomation then return end
 
     -- upgrade is more useful than selling
-    if bestWeightOption > 0 then
-        print("GetQuestReward(bestWeightOption)", bestWeightOption)
-        addon:SendEvent("RXP_QUEST_TURNIN", id, choices, bestWeightOption)
+    if bestRatioOption > 0 then
+        print("GetQuestReward(bestRatioOption)", bestRatioOption)
+        addon:SendEvent("RXP_QUEST_TURNIN", id, choices, bestRatioOption)
     elseif bestSellOption > 0 then
         print("GetQuestReward(bestSellOption)", bestSellOption)
         addon:SendEvent("RXP_QUEST_TURNIN", id, choices, bestSellOption)
