@@ -518,6 +518,7 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dannie Fizzwizzle|r
     .vendor >> |cRXP_BUY_Buy the|r |T133738:0|t[Grimoire of Blood Pact (Rank 1)] |cRXP_BUY_if you can afford it. If not you will buy it later|r
     .target Dannie Fizzwizzle
+    .money <0.0100
 step << !Priest
     .goto Dun Morogh,48.3,57.0
     .xp 6 >> Grind to 6
@@ -595,6 +596,13 @@ step << Gnome Warrior
     .money <0.0536
     .goto Dun Morogh,45.290,52.190
     .collect 2488,1 --Collect Gladius (1)
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
+step << Gnome Warrior
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
+    .use 2488
+    .itemcount 2488,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
 step << Dwarf Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy and equip a|r |T132401:0|t[Large Axe]
@@ -602,6 +610,13 @@ step << Dwarf Warrior
     .money <0.0460
     .goto Dun Morogh,45.290,52.190
     .collect 2491,1 --Collect Large Axe (1)
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.29
+step << Dwarf Warrior
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T132401:0|t[Large Axe]
+    .use 2491
+    .itemcount 2491,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.28
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy and equip a|r |T135641:0|t[Stiletto]
@@ -609,6 +624,13 @@ step << Rogue
     .money <0.0400
     .goto Dun Morogh,45.290,52.190
     .collect 2494,1 --Collect Stiletto (1)
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
+step << Rogue
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
+    .use 2494
+    .itemcount 2494,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.32
 step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy and equip a|r |T133053:0|t[Wooden Mallet]
@@ -616,6 +638,13 @@ step << Paladin
     .money <0.0631
     .goto Dun Morogh,45.290,52.190
     .collect 2493,1 --Collect Wooden Mallet (1)
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.00
+step << Paladin
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T133053:0|t[Wooden Mallet]
+    .use 2493
+    .itemcount 2493,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.99
 step << Warrior/Rogue/Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tognus Flintfire|r
     .target Tognus Flintfire
@@ -820,6 +849,13 @@ step << Gnome Warrior
     .money <0.0536
     .goto Dun Morogh,45.290,52.190
     .collect 2488,1 --Collect Gladius (1)
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
+step << Gnome Warrior
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
+    .use 2488
+    .itemcount 2488,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
 step << Dwarf Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy and equip a|r |T132401:0|t[Large Axe]
@@ -827,6 +863,13 @@ step << Dwarf Warrior
     .money <0.0460
     .goto Dun Morogh,45.290,52.190
     .collect 2491,1 --Collect Large Axe (1)
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.29
+step << Dwarf Warrior
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T132401:0|t[Large Axe]
+    .use 2491
+    .itemcount 2491,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.28
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy and equip a|r |T135641:0|t[Stiletto]
@@ -834,6 +877,13 @@ step << Rogue
     .money <0.0400
     .goto Dun Morogh,45.290,52.190
     .collect 2494,1 --Collect Stiletto (1)
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
+step << Rogue
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
+    .use 2494
+    .itemcount 2494,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.32
 step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy and equip a|r |T133053:0|t[Wooden Mallet]
@@ -841,6 +891,13 @@ step << Paladin
     .money <0.0631
     .goto Dun Morogh,45.290,52.190
     .collect 2493,1 --Collect Wooden Mallet (1)
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.00
+step << Paladin
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T133053:0|t[Wooden Mallet]
+    .use 2493
+    .itemcount 2493,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.99
 step << Warrior/Rogue/Paladin
     #completewith next
     .goto Dun Morogh,47.377,52.523
@@ -1053,6 +1110,7 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gimrizz Shadowcog|r
     .vendor >> |cRXP_BUY_Buy the|r |T133738:0|t[Grimoire of Firebolt (Rank 2)] |cRXP_BUY_if you can afford it. If not you will buy it later|r
     .target Gimrizz Shadowcog
+    .money <0.100
 step << Rogue
     .xp <8,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hogral Bakkan|r
@@ -1097,6 +1155,13 @@ step << Gnome Warrior
     .money <0.0536
     .goto Dun Morogh,45.290,52.190
     .collect 2488,1 --Collect Gladius (1)
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
+step << Gnome Warrior
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
+    .use 2488
+    .itemcount 2488,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
 step << Dwarf Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy and equip a|r |T132401:0|t[Large Axe]
@@ -1104,6 +1169,13 @@ step << Dwarf Warrior
     .money <0.0460
     .goto Dun Morogh,45.290,52.190
     .collect 2491,1 --Collect Large Axe (1)
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.29
+step << Dwarf Warrior
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T132401:0|t[Large Axe]
+    .use 2491
+    .itemcount 2491,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.28
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy and equip a|r |T135641:0|t[Stiletto]
@@ -1111,6 +1183,13 @@ step << Rogue
     .money <0.0400
     .goto Dun Morogh,45.290,52.190
     .collect 2494,1 --Collect Stiletto (1)
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
+step << Rogue
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
+    .use 2494
+    .itemcount 2494,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.32
 step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy and equip a|r |T133053:0|t[Wooden Mallet]
@@ -1118,6 +1197,13 @@ step << Paladin
     .money <0.0631
     .goto Dun Morogh,45.290,52.190
     .collect 2493,1 --Collect Wooden Mallet (1)
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.00
+step << Paladin
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T133053:0|t[Wooden Mallet]
+    .use 2493
+    .itemcount 2493,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.99
 step << Warrior/Rogue/Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r
     .goto Dun Morogh,47.377,52.523
@@ -1311,26 +1397,35 @@ step << Warrior
     .goto Dun Morogh,52.90,35.62
     .zone Dun Morogh >> Exit Ironforge
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
-    .target Rudra Amberstill
-    .goto Dun Morogh,60.1,52.6,50,0
-    .goto Dun Morogh,63.082,49.851
-    .accept 314 >> Accept Protecting the Herd
+    #completewith Rudra
+    #label Dirt
+    .goto Dun Morogh,59.84,49.56,40,0
+    .goto Dun Morogh,61.36,47.07,40 >>Go up the dirt path
+    .isQuestAvailable 314
 step
     #completewith next
-    .goto Dun Morogh,62.3,50.3,14,0
-    .goto Dun Morogh,62.2,49.4,10 >>Run up this part of the mountain
+    #requires Dirt
+    +|cFFFCDC00Kite |cFFFF5722Vagash|r down to|r |cFF00FF25Rudra|r
+    .link https://youtu.be/Zg4FNWw-P5k?t=3815 >>|cFFFCDC00CLICK HERE If you're struggling|r << Mage
+    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r << !Mage
+    .mob Vagash
+step
+    #label Rudra
+    .goto Dun Morogh,63.082,49.851
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
+    .accept 314 >> Accept Protecting the Herd
+    .target Rudra Amberstill
 step
     .goto Dun Morogh,62.6,46.1
     >>Kill |cRXP_ENEMY_Vagash|r. Loot him for his |cRXP_LOOT_Fang|r
-    >>|cRXP_WARN_This quest is difficult. Find a group for him if needed. Skip this step if you're unable to find a group or solo him|r
+    >>|cRXP_WARN_Kite him to the guard south of the ranch. Make sure you do 51%+ damage to him|r
     >>|cRXP_WARN_Watch the video below before you attempt to kill |cRXP_ENEMY_Vagash|r. It can be solo'd on any class|r
-    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r
+    .link https://youtu.be/Zg4FNWw-P5k?t=3815 >> |cRXP_WARN_Click here for video reference|r << Mage
+    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r << !Mage
     .complete 314,1 --Collect Fang of Vagash (1)
     .mob Vagash
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
-    >>|cRXP_WARN_Choose|r |T133052:0|t[|cRXP_FRIENDLY_Coldridge Hammer|r] |cRXP_WARN_as your reward. Don't worry if you can't equip it yet, you will train 2H Maces very soon!|r << Warrior
     .target Rudra Amberstill
     .goto Dun Morogh,63.082,49.851
     .turnin 314 >> Turn in Protecting the Herd
@@ -1671,6 +1766,20 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
     .target Gunther Weller
     .vendor >> |cRXP_WARN_Buy a|r |T135346:0|t[Cutlass] |cRXP_WARN_and equip it in your Main-Hand. Equip the|r |T135641:0|t[|cRXP_FRIENDLY_Craftsman's Dagger|r] |cRXP_WARN_from earlier in your Off-Hand|r
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.80
+step << Rogue
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135346:0|t[Cutlass]
+    .use 851
+    .itemcount 851,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.79
+step << Rogue skip
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135346:0|t[Craftsman's Dagger]
+    .use 2218
+    .itemcount 2218,1
+    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.75
+    --step skipped. cant equip into OH slot
 step << Rogue
     .goto StormwindClassic,57.32,62.08,20,0
     .goto StormwindClassic,58.362,61.678
@@ -2568,6 +2677,14 @@ step << Mage/Priest/Warlock
     .target Auctioneer Lympkin
     .target Auctioneer Redmuse
     .target Auctioneer Buckler
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<17.5
+step << Mage/Priest/Warlock
+    #ah
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135144:0|t[Greater Magic Wand]
+    .use 11288
+    .itemcount 11288,1
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<17.49
 step << Mage/Priest/Warlock
     .goto Ironforge,22.837,17.094,8,0
     .goto Ironforge,21.131,17.276,5,0
@@ -2922,16 +3039,12 @@ step << !Paladin !Warrior !Rogue
     .mob Crag Boar
     .mob Large Crag Boar
     .mob Young Black Bear
-
-
 step
     #completewith BoarRibs2
     >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Large Crag Boars|r. Loot them for their |cRXP_LOOT_Crag Boar Ribs|r
     .collect 2886,6,384,1 --Collect Crag Boar Rib (x6)
     .mob Crag Boar
     .mob Large Crag Boar
-
-
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Bellowfiz|r
     .target Pilot Bellowfiz
@@ -2963,6 +3076,13 @@ step << Hunter
     .collect 2509,1 -- Ornate Blunderbuss (1)
     .money <0.0414
     .target Hegnar Rumbleshot
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.95
+step << Hunter
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135611:0|t[Ornate Blunderbuss]
+    .use 2509
+    .itemcount 2509,1
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.94
 step
     .goto Dun Morogh,42.25,53.68,40,0
     .goto Dun Morogh,41.07,49.04,50,0
@@ -3106,31 +3226,38 @@ step
     .mob Elder Crag Boar
     .mob Snow Leopard
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
-    .target Rudra Amberstill
-    .goto Dun Morogh,60.1,52.6,50,0
-    .goto Dun Morogh,63.082,49.851
-    .accept 314 >> Accept Protecting the Herd
+    #completewith Rudra
+    #label Dirt
+    .goto Dun Morogh,59.84,49.56,40,0
+    .goto Dun Morogh,61.36,47.07,40 >>Go up the dirt path
+    .isQuestAvailable 314
 step
     #completewith next
-    .goto Dun Morogh,62.3,50.3,14,0
-    .goto Dun Morogh,62.2,49.4,10 >>Run up this part of the mountain
+    #requires Dirt
+    +|cFFFCDC00Kite |cFFFF5722Vagash|r down to|r |cFF00FF25Rudra|r
+    .link https://youtu.be/Zg4FNWw-P5k?t=3815 >>|cFFFCDC00CLICK HERE If you're struggling|r << Mage
+    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r << !Mage
+    .mob Vagash
+step
+    #label Rudra
+    .goto Dun Morogh,63.082,49.851
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
+    .accept 314 >> Accept Protecting the Herd
+    .target Rudra Amberstill
 step
     .goto Dun Morogh,62.6,46.1
     >>Kill |cRXP_ENEMY_Vagash|r. Loot him for his |cRXP_LOOT_Fang|r
-    >>|cRXP_WARN_This quest is difficult. Find a group for him if needed. Skip this step if you're unable to find a group or solo him|r
-    >>|cRXP_WARN_Try to kite him to the parked guard|r
+    >>|cRXP_WARN_Kite him to the guard south of the ranch. Make sure you do 51%+ damage to him|r
     >>|cRXP_WARN_Watch the video below before you attempt to kill |cRXP_ENEMY_Vagash|r. It can be solo'd on any class|r
-    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r
+    .link https://youtu.be/Zg4FNWw-P5k?t=3815 >> |cRXP_WARN_Click here for video reference|r << Mage
+    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r << !Mage
     .complete 314,1 --Collect Fang of Vagash (1)
     .mob Vagash
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
-    >>|cRXP_WARN_Choose|r |T133052:0|t[|cRXP_FRIENDLY_Coldridge Hammer|r] |cRXP_WARN_as your reward. Don't worry if you can't equip it yet, you will train 2H Maces very soon!|r << Warrior
     .target Rudra Amberstill
     .goto Dun Morogh,63.082,49.851
     .turnin 314 >> Turn in Protecting the Herd
-    .isQuestComplete 314
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Hammerfoot|r
     .target Pilot Hammerfoot
@@ -3505,6 +3632,13 @@ step << Hunter
     .collect 2511,1
     .money <0.1300
     .target Vrok Blunderblast
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.00
+step << Hunter
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135613:0|t[Hunter's Boomstick]
+    .use 2511
+    .itemcount 2511,1
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.99
 step
     #completewith BraveSoul
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
@@ -5349,8 +5483,8 @@ RXPGuides.RegisterGuide([[
 step << Paladin
     #completewith TroggT
     >>Keep 10 Linen Cloth in your bags for your paladin quest later
-    .collect 2589,10,1,1644 << Human --Linen Cloth (10)
-    .collect 2589,10,1,1648 << Dwarf --Linen Cloth (10)
+    .collect 2589,10,1644,1 << Human --Linen Cloth (10)
+    .collect 2589,10,1648,1 << Dwarf --Linen Cloth (10)
 step
     #completewith EndLoch
     >>Grind boars for 8 Boar Meat for a quest later
@@ -5371,8 +5505,8 @@ step
 step << Paladin
     .goto Loch Modan,27.4,48.4
     >>Grind Troggs to get 10 Linen Cloth in your bags for your paladin quest later
-    .collect 2589,10,1,1644 << Human --Linen Cloth (10)
-    .collect 2589,10,1,1648 << Dwarf --Linen Cloth (10)
+    .collect 2589,10,1644,1 << Human --Linen Cloth (10)
+    .collect 2589,10,1648,1 << Dwarf --Linen Cloth (10)
 step
     .goto Loch Modan,32.6,49.9,80.0,0
     .goto Loch Modan,37.2,46.1,80.0,0

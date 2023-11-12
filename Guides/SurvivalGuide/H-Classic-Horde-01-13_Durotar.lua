@@ -1868,6 +1868,7 @@ step << Hunter
     .collect 117,5,828,1 --Tough Jerky (5)
     .target Grimtak
 step
+    #optional
     .goto Durotar,50.8,43.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Takrin|r
     .accept 840 >>Accept Conscript of the Horde

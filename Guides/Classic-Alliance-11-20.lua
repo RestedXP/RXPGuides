@@ -992,6 +992,13 @@ step << Druid
     >>|cFFFCDC00Buy and equip a|r |T135147:0|t[Gnarled Staff]
     .collect 2030,1
     .money <0.56
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
+step << Druid
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135147:0|t[Gnarled Staff]
+    .use 2030
+    .itemcount 2030,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.89
 step << Druid
     .goto Teldrassil,23.70,64.51
     .target Chief Archaeologist Greywhisker
@@ -1461,12 +1468,29 @@ step << NightElf Hunter
     .target Jocaste
 step << NightElf Hunter
     #completewith start
+    #label RecruveReinforced
     .goto Darnassus,63.27,66.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Landria|r
     >>|cFFFCDC00Buy a|r |T135489:0|t[Heavy Recurve Bow] |cFFFCDC00if you can afford it. If not then buy a|r |T135490:0|t[Reinforced Bow]
     >>|cFFFCDC00Stock up on|r |T132382:0|t[Sharp Arrows]
     .collect 3027,1
     .target Landria
+    .money <0.3812
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.50
+step << Hunter
+    #requires RecruveReinforced
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135489:0|t[Heavy Recurve Bow]
+    .use 3027
+    .itemcount 3027,1
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.19
+step << Hunter
+    #requires RecruveReinforced
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135490:0|t[Reinforced Bow]
+    .use 3026
+    .itemcount 3026,1
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.49
 step << NightElf !Druid
     .goto Teldrassil,23.70,64.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Chief Archaeologist Greywhisker|r
@@ -2069,13 +2093,20 @@ step << Dwarf Hunter
     .train 227 >> Train Staves
     .target Ilyenia Moonfire
 step << Dwarf Hunter
-    #completewith next
     .goto Darnassus,63.27,66.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Landria|r
     >>|cFFFCDC00Buy a|r |T135489:0|t[Heavy Recurve Bow] |cFFFCDC00and a|r |T134410:0|t[Medium Quiver]
     .collect 3027,1 -- Heavy Recurve Bow
     .collect 11362,1 -- Medium Quiver
     .target Landria
+    .money <0.7349
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.20
+step << Hunter
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135489:0|t[Heavy Recurve Bow]
+    .use 3027
+    .itemcount 3027,1
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.19
 step << Dwarf Hunter
     .goto Teldrassil,23.70,64.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Chief Archaeologist Greywhisker|r
@@ -3234,8 +3265,8 @@ step << Paladin
     .goto Darkshore,50.74,34.68,0
 	>>Kill |cFFFF5722Blackwood Warriors|r and |cFFFF5722Blackwood Totemics|r. Loot them for their |T132889:0|t[Linen Cloth]
     >>|cFFFCDC00You need to save 10|r |T132889:0|t[Linen Cloth] |cFFFCDC00for your|r |T626003:0|t|cFFF48CBAPaladin|r |cFFFCDC00class quest later|r
-    .collect 2589,10,1,1644 << Human --Linen Cloth (10)
-    .collect 2589,10,1,1648 << Dwarf --Linen Cloth (10)
+    .collect 2589,10,1644,1 << Human --Linen Cloth (10)
+    .collect 2589,10,1648,1 << Dwarf --Linen Cloth (10)
     .mob Blackwood Warrior
     .mob Blackwood Totemic
 step
@@ -3256,8 +3287,8 @@ step << Paladin
     .goto Darkshore,50.74,34.68,0
 	>>Kill |cFFFF5722Blackwood Warriors|r and |cFFFF5722Blackwood Totemics|r. Loot them for their |T132889:0|t[Linen Cloth]
     >>|cFFFCDC00You need to save 10|r |T132889:0|t[Linen Cloth] |cFFFCDC00for your|r |T626003:0|t|cFFF48CBAPaladin|r |cFFFCDC00class quest later|r
-    .collect 2589,10,1,1644 << Human --Linen Cloth (10)
-    .collect 2589,10,1,1648 << Dwarf --Linen Cloth (10)
+    .collect 2589,10,1644,1 << Human --Linen Cloth (10)
+    .collect 2589,10,1648,1 << Dwarf --Linen Cloth (10)
     .mob Blackwood Warrior
     .mob Blackwood Totemic
 step
@@ -3322,6 +3353,8 @@ step << !Paladin
     .complete 966,1 --Worn Parchment (4)
     .mob Dark Strand Fanatic
 step << Paladin
+    .isQuestAvailable 1644 << Human
+    .isQuestAvailable 1648 << Dwarf
     .goto Darkshore,55.27,27.74,40,0
     .goto Darkshore,56.92,27.27,40,0
     .goto Darkshore,57.54,25.99,40,0
@@ -3330,8 +3363,19 @@ step << Paladin
     >>Kill |cFFFF5722Dark Strand Fanatics|r. Loot them for their |cFF00BCD4Parchments|r and |T132889:0|t[Linen Cloth]
     >>|cFFFCDC00You need to save 10|r |T132889:0|t[Linen Cloth] |cFFFCDC00for your|r |T626003:0|t|cFFF48CBAPaladin|r |cFFFCDC00class quest later|r
     .complete 966,1 --Worn Parchment (4)
-    .collect 2589,10,1,1644 << Human --Linen Cloth (10)
-    .collect 2589,10,1,1648 << Dwarf --Linen Cloth (10)
+    .collect 2589,10,1644,1 << Human --Linen Cloth (10)
+    .collect 2589,10,1648,1 << Dwarf --Linen Cloth (10)
+    .mob Dark Strand Fanatic
+step << Paladin
+    .isQuestTurnedIn 1644 << Human
+    .isQuestTurnedIn 1648 << Dwarf
+    .goto Darkshore,55.27,27.74,40,0
+    .goto Darkshore,56.92,27.27,40,0
+    .goto Darkshore,57.54,25.99,40,0
+    .goto Darkshore,56.92,27.27,40,0
+    .goto Darkshore,55.27,27.74
+    >>Kill |cFFFF5722Dark Strand Fanatics|r. Loot them for their |cFF00BCD4Parchments|r
+    .complete 966,1 --Worn Parchment (4)
     .mob Dark Strand Fanatic
 step
 #map Darkshore
@@ -4018,6 +4062,17 @@ step
     .timer 22,The Ancient Statuette RP
     .accept 1009 >> Accept Ruuzel
 step
+    .goto Ashenvale,6.528,13.361
+    >>Kill |cRXP_ENEMY_Ruuzel|r. Loot her for the |cRXP_LOOT_Ring of Zoram|r
+    >>|cRXP_ENEMY_Ruuzel|r |cRXP_WARN_patrols the island with a |cRXP_ENEMY_Wrathtail Myrmidon|r and |cRXP_ENEMY_Wrathtail Sea Witch|r. Kill one of them and then reset them if needed|r
+    >>|cRXP_WARN_If you have any|r |T133717:0|t[Bombs]|cRXP_WARN_/|r[Grenades] |cRXP_WARN_you can also use them to split pull|r |cRXP_ENEMY_Ruuzel|r
+    >>|cRXP_ENEMY_Lady Vespia|r |cRXP_WARN_is a rarespawn that can also drop the |cRXP_LOOT_Ring of Zoram|r if you see her|r
+    .link https://www.youtube.com/watch?v=H-IwZ6P-ldY >> |cRXP_WARN_Click here for video reference on "Split pulling"|r
+	.unitscan Lady Vespia
+	.mob Ruuzel
+    .complete 1009,1
+    .skill engineering,<1,1
+step
     #label nagas
     .goto Ashenvale,6.528,13.361
     >>Kill |cRXP_ENEMY_Ruuzel|r. Loot her for the |cRXP_LOOT_Ring of Zoram|r
@@ -4277,6 +4332,8 @@ step << Rogue
     >>|cRXP_WARN_Equip it once you're level 19|r
     .collect 2209,1 --Kris
     .target Marda Weller
+    .money <0.7115
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.9
 step << Rogue
     #ssf
     .goto StormwindClassic,57.38,56.77
@@ -4284,7 +4341,17 @@ step << Rogue
     >>|cRXP_BUY_Buy a|r |T135342:0|t[Kris]
     >>|cRXP_WARN_Equip it once you're level 19|r
     .collect 2209,1 --Kris
+    .money <0.7115
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.9
     .target Marda Weller
+step << Rogue
+    #optional
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135342:0|t[Kris]
+    .use 2209
+    .itemcount 2209,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.89
+    .xp <19,1
 step
 .dungeon !DM
     #ah
@@ -4295,11 +4362,9 @@ step
     >>|T134172:0|t[Great Goretusk Snout]
     >>|T134028:0|t[Tough Condor Meat]
     >>|T134321:0|t[Crisp Spider Meat]
-    >>|T134572:0|t[Rethban Ore]
     .collect 2296,5,92,1 -- Great Goretusk Snout (5)
     .collect 1080,5,92,1 -- Tough Condor Meat (5)
     .collect 1081,5,92,1 -- Crisp Spider Meat (5)
-    .collect 2798,5,347,1 -- Rethban Ore (5)
     .target Auctioneer Jaxon
 step << !Human !Warlock
     #som
@@ -4646,14 +4711,6 @@ step
     .accept 3765 >> Accept The Corruption Abroad
 step
 .dungeon DM
-    .goto StormwindClassic,45.694,38.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Kristoff|r
-    >>Skip this step if you aren't level 20 yet
-    .accept 343 >> Accept Speaking of Fortitude
-    .target Brother Kristoff
-    .xp <20,1
-step
-.dungeon DM
     .goto StormwindClassic,48.079,30.913,10,0
     .goto StormwindClassic,49.193,30.285
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r
@@ -4670,30 +4727,6 @@ step
     .goto StormwindClassic,55.510,12.504
     .target Wilder Thistlenettle
     .target Shoni the Shilent
-step -- adding again 2nd time incase hitting 20 after turning in triple DM quests
-.dungeon DM
-    .goto StormwindClassic,45.694,38.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Kristoff|r
-    >>Skip this step if you aren't level 20 yet
-    .accept 343 >> Accept Speaking of Fortitude
-    .target Brother Kristoff
-    .xp <20,1
-step
-.dungeon DM
-    #completewith next
-    .goto StormwindClassic,70.439,27.097,15,0
-    .goto StormwindClassic,72.003,21.525,15,0
-    .goto StormwindClassic,70.713,10.717,15 >> Travel toward |cRXP_FRIENDLY_Milton Sheaf|r in the Stormwind Library
-    .xp <20,1
-step
-.dungeon DM
-    .goto StormwindClassic,74.182,7.465
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milton Sheaf|r
-    >>Skip this step if you aren't level 20 yet
-    .turnin 343 >> Turn in Speaking of Fortitude
-    .accept 344 >> Accept Brother Paxton
-    .target Milton Sheaf
-    .xp <20,1
 step
 .dungeon DM
     .goto StormwindClassic,42.435,59.236,10,0
@@ -4712,54 +4745,40 @@ step
     >>|T134172:0|t[Great Goretusk Snout]
     >>|T134028:0|t[Tough Condor Meat]
     >>|T134321:0|t[Crisp Spider Meat]
-    >>|T134572:0|t[Rethban Ore]
     .collect 2296,5,92,1 -- Great Goretusk Snout (5)
     .collect 1080,5,92,1 -- Tough Condor Meat (5)
     .collect 1081,5,92,1 -- Crisp Spider Meat (5)
-    .collect 2798,5,347,1 -- Rethban Ore (5)
     .target Auctioneer Jaxon
 step
 .dungeon DM
-    .isQuestTurnedIn 343
     #completewith next
     .goto Elwynn Forest,32.240,49.723,60 >> Exit Stormwind. Travel to Goldshire
+    .isOnQuest 118
     .xp <20,1
 step
 .dungeon DM
-    .isQuestTurnedIn 343
     .goto Elwynn Forest,41.71,65.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smith Argus|r
 	.target Smith Argus
     .turnin 118 >> Turn in The Price of Shoes
     .accept 119 >> Accept Return to Verner
+    .isOnQuest 118
     .xp <20,1
 step
 .dungeon DM
-    .isQuestTurnedIn 343
+    .isQuestTurnedIn 118
+    .goto Elwynn Forest,41.71,65.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smith Argus|r
+	.target Smith Argus
+    .accept 119 >> Accept Return to Verner
+    .xp <20,1
+step
+.dungeon DM
     #completewith next
-    .goto Elwynn Forest,45.81,47.73,20,0
-    .goto Elwynn Forest,48.61,41.80,15 >> Travel to the Northshire Abbey
+    .subzone 91 >> Travel to the Tower of Azora. Ascend the tower
     .xp <20,1
 step
 .dungeon DM
-    .isQuestTurnedIn 343
-    .goto Elwynn Forest,49.60,40.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
-    .turnin 344 >> Turn in Brother Paxton
-    .accept 345 >> Accept Ink Supplies
-    .target Brother Paxton
-    .xp <20,1
-step
-.dungeon DM
-    .isQuestTurnedIn 343
-    #completewith next
-    .goto Elwynn Forest,57.518,51.595,25,0
-    .goto Elwynn Forest,58.14,52.50,20,0
-    .goto Elwynn Forest,65.20,69.80,50 >> Travel to the Tower of Azora. Ascend the tower. Follow the arrow for a shortcut through the mountains
-    .xp <20,1
-step
-.dungeon DM
-    .isQuestTurnedIn 343
     .goto Elwynn Forest,65.22,69.71
     .target Theocritus
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theocritus|r at the top
@@ -4767,7 +4786,6 @@ step
     .xp <20,1
 step
 .dungeon DM
-    .isQuestTurnedIn 343
     .goto Elwynn Forest,64.880,69.192
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dawn Brightstar|r
     .vendor >> |cRXP_FRIENDLY_Dawn Brightstar|r |cRXP_BUY_has has limited supply items such as|r |T134938:0|t|T134937:0|t|T134943:0|t[Scrolls] |cRXP_BUY_and|r |T134850:0|t|T134830:0|t[Potions] |cRXP_BUY_as well, which you should buy if available|r << !Warrior !Rogue
@@ -4776,7 +4794,6 @@ step
     .subzoneskip 91,1
 step
 .dungeon DM
-    .isQuestTurnedIn 343
     #completewith FlyR
 	.goto Redridge Mountains,6.7,72.4
     .zone Redridge Mountains >> Travel to Redridge Mountains
@@ -4816,12 +4833,6 @@ step
     .goto Redridge Mountains,33.50,48.97
     .accept 20 >> Accept Blackrock Menace
     .target Marshal Marris
-step
-    .isQuestTurnedIn 343
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
-    .goto Redridge Mountains,32.13,48.63
-    .turnin 345 >> Turn in Ink Supplies
-    .target Foreman Oslow
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Foreman Oslow|r
     .goto Redridge Mountains,32.13,48.63
@@ -5128,39 +5139,59 @@ step
     .fp Redridge Mountains >> Get the Redridge Mountains flight path << !Human !Warlock
     .fly Stormwind >> Fly to Stormwind City
 step << Rogue
-    #softcore
+    #ah
     .goto StormwindClassic,57.38,56.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Marda Weller|r
     >>|cFFFCDC00Buy a|r |T135324:0|t[Longsword] |cFFFCDC00and equip it at 21|r
     >>|cFFFCDC00Buy something from the Auction House if there's something cheaper/better|r
-    >>|cFFFCDC00Skip this step if you have something better|r
     .collect 923,1 --Longsword (1)
     .target Marda Weller
+    .money <0.8743
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.2
 step << Rogue
-    #hardcore
+    #ssf
     .goto StormwindClassic,57.38,56.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Marda Weller|r
     >>|cFFFCDC00Buy a|r |T135324:0|t[Longsword] |cFFFCDC00and equip it at 21|r
-    >>|cFFFCDC00Skip this step if you have something better|r
     .collect 923,1 --Longsword (1)
     .target Marda Weller
+    .money <0.8743
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.2
+step << Rogue
+    #optional
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135324:0|t[Longsword]
+    .use 923
+    .itemcount 923,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.19
+    .xp <21,1
 step << Warrior/Paladin
-    #softcore
+    #ah
     .goto StormwindClassic,57.54,57.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gunther Weller|r
     >>|cFFFCDC00Buy a|r |T135280:0|t[Dacian Falx] |cFFFCDC00if you have enough money. Equip it at 21|r
     >>|cFFFCDC00Buy something from the Auction House if there's something cheaper/better|r
-    >>|cFFFCDC00Skip this step if you have something better|r
     .collect 922,1 --Dacian Falx (1)
     .target Gunther Weller
+    .money <1.2038
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<16.0
 step << Warrior/Paladin
-    #hardcore
+    #ssf
     .goto StormwindClassic,57.54,57.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gunther Weller|r
     >>|cFFFCDC00Buy a|r |T135280:0|t[Dacian Falx] |cFFFCDC00if you have enough money. Equip it at 21|r
-    >>|cFFFCDC00Skip this step if you have something better|r
     .collect 922,1 --Dacian Falx (1)
     .target Gunther Weller
+    .money <1.2038
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<16.0
+step << Warrior/Paladin
+    #optional
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135280:0|t[Dacian Falx]
+    .use 922
+    .itemcount 922,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.99
+    .xp <21,1
 step << Warlock
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
@@ -5742,11 +5773,13 @@ step
     .turnin 944 >> Turn in The Master's Glaive
     .accept 949 >> Accept The Twilight Camp
 step
+#map Darkshore
     .goto Ashenvale,22.24,2.52
     >>Click the |cFFDB2EEFTwilight Tome|r
     .turnin 949 >> Turn in The Twilight Camp
     .accept 950 >> Accept Return to Onu
 step
+#map Darkshore
     .goto Ashenvale,22.36,3.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Therylune|r. This will start an escort
     >>|cFFFCDC00Skip this step if she is not there|r

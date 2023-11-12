@@ -3931,7 +3931,23 @@ step
     .target Karang Amakkar
     .target Mitsuwa
     .target Marukai
+    .xp <21,1
     .group
+step
+    #optional
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu|r, |cRXP_FRIENDLY_Mitsuwa|r and |cRXP_FRIENDLY_Marukai|r
+    .turnin 6562 >> Turn in Trouble in the Deeps
+    .accept 6563 >>Accept The Essence of Aku'Mai
+    .goto Ashenvale,11.56,34.29
+    .accept 6462 >> Accept Troll Charm
+    .goto Ashenvale,11.65,34.85
+    .accept 6442 >> Accept Naga at the Zoram Strand
+    .goto Ashenvale,11.69,34.90
+    .target Je'neu Sancrea
+    .target Mitsuwa
+    .target Marukai
+    .group
+    .xp >21,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu|r, |cRXP_FRIENDLY_Karang|r, |cRXP_FRIENDLY_Mitsuwa|r and |cRXP_FRIENDLY_Marukai|r
     .turnin 6562 >> Turn in Trouble in the Deeps
@@ -3946,6 +3962,20 @@ step
     .target Karang Amakkar
     .target Mitsuwa
     .target Marukai
+    .xp <21,1
+step
+    #optional
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu|r, |cRXP_FRIENDLY_Mitsuwa|r and |cRXP_FRIENDLY_Marukai|r
+    .turnin 6562 >> Turn in Trouble in the Deeps
+    .goto Ashenvale,11.56,34.29
+    .accept 6462 >> Accept Troll Charm
+    .goto Ashenvale,11.65,34.85
+    .accept 6442 >> Accept Naga at the Zoram Strand
+    .goto Ashenvale,11.69,34.90
+    .target Je'neu Sancrea
+    .target Mitsuwa
+    .target Marukai
+    .xp >21,1
 step
     .goto Ashenvale,12.06,34.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muglash|r
@@ -4049,6 +4079,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marukai|r
     .turnin 6442 >> Turn in Naga at the Zoram Strand
     .target Marukai
+step
+    .goto Ashenvale,11.90,34.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karang|r
+    .accept 216 >> Accept Between a Rock and a Thistlefur
+    .target Karang Amakkar
 step
     .goto Ashenvale,12.24,33.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andruk|r
