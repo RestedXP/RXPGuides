@@ -162,6 +162,8 @@ function addon.settings:InitializeSettings()
             enableDrowningWarningSound = true,
             drowningThreshold = 0.2,
             enableDrowningScreenFlash = true,
+            enableQuestChoiceRecommendation = true,
+            enableQuestChoiceGoldRecommendation = true,
 
             enableEmergencyActions = true,
             emergencyThreshold = 0.2,
@@ -894,7 +896,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 4.1
                     },
-                    enableQuestRewardAutomation = {
+                    enableQuestRewardAutomation = { -- Hard-coded .turnin reward choices
                         name = L("Quest auto rewards"), -- TODO locale
                         desc = L(
                             "Allows guides to choose quest rewards automatically"),
@@ -1826,6 +1828,14 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = true -- TODO Zarant
                     },
+                    enableQuestChoiceGoldRecommendation = {
+                        name = L("Quest Sellable Recommendation"), -- TODO locale
+                        desc = L("Displays the best sellable quest reward"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 1.3,
+                        hidden = addon.version > 40000,
+                    },
                     drowningHeader = {
                         name = _G.STRING_ENVIRONMENTAL_DAMAGE_DROWNING,
                         type = "header",
@@ -1998,9 +2008,7 @@ function addon.settings:CreateAceOptionsPanel()
                             return not addon.itemUpgrades
                         end,
                         disabled = function()
-                            return not self.profile.enableTips or
-                                       UnitLevel("player") ==
-                                       GetMaxPlayerLevel()
+                            return UnitLevel("player") == GetMaxPlayerLevel()
                         end,
                         set = function(info, value)
                             SetProfileOption(info, value)
@@ -2028,9 +2036,38 @@ function addon.settings:CreateAceOptionsPanel()
                             return not addon.itemUpgrades
                         end,
                         disabled = function()
-                            return not self.profile.enableTips or
+                            return not self.profile.enableItemUpgrades or
                                        UnitLevel("player") ==
                                        GetMaxPlayerLevel()
+                        end
+                    },
+                    enableQuestChoiceRecommendation = {
+                        name = L("Quest Reward Recommendation"), -- TODO locale
+                        desc = L("Displays the best calculated item upgrade"),
+                        type = "toggle",
+                        width = optionsWidth * 1.5,
+                        order = 5.3,
+                        hidden = function()
+                            return not addon.itemUpgrades
+                        end,
+                        disabled = function()
+                            return not self.profile.enableItemUpgrades
+                        end
+                    },
+                    enableQuestChoiceAutomation = {
+                        name = L("Quest Reward Automation"), -- TODO locale
+                        desc = L(
+                            "Automatically chooses the best calculated quest reward"),
+                        type = "toggle",
+                        width = optionsWidth * 1.5,
+                        order = 5.5,
+                        hidden = function()
+                            return not addon.itemUpgrades
+                        end,
+                        disabled = function()
+                            return not (self.profile.enableItemUpgrades and
+                                       self.profile
+                                           .enableQuestChoiceRecommendation)
                         end
                     }
                 }

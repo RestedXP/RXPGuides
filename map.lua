@@ -901,7 +901,7 @@ local function updateArrow()
     end
 
     if UnitIsGhost("player") and --Meet at the grave and the follow-up quest:
-        not (addon.QuestAutoTurnIn(3912) or addon.QuestAutoAccept(3913)) then
+        not (addon.GetStepQuestReward(3912) or addon.QuestAutoAccept(3913)) then
         local skip
         for i,element in pairs(addon.activeWaypoints) do
             skip = skip or (element.step and element.step.ignorecorpse) or (not element.textOnly and addon.currentGuide.name == "41-43 Badlands")
