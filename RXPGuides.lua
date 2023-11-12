@@ -7,7 +7,7 @@ local fmt = string.format
 addon = LibStub("AceAddon-3.0"):NewAddon(addon, addonName, "AceEvent-3.0")
 
 local RegisterMessage_OLD = addon.RegisterMessage
-local rand, tinsert = math.random, table.insert
+local rand, tinsert, select = math.random, table.insert, _G.select
 
 local messageList = {}
 
@@ -558,6 +558,12 @@ if addon.version < 40000 then
     createLogRewardChoiceIcons()
 end
 
+local GetItemInfo = _G.GetItemInfo
+local GetQuestLogSelection, GetNumQuestLogChoices = _G.GetQuestLogSelection,
+                                                    _G.GetNumQuestLogChoices
+local GetQuestLogChoiceInfo, GetQuestLogItemLink, GetQuestLogTitle =
+    _G.GetQuestLogChoiceInfo, _G.GetQuestLogItemLink, _G.GetQuestLogTitle
+
 -- bestSellOption, bestRatioOption, options
 local function evaluateQuestChoices(questID, numChoices, GetQuestItemInfo, GetQuestItemLink, GetQuestLogChoiceInfo)
     local hardCodedReward = addon.GetStepQuestReward(questID)
@@ -566,7 +572,6 @@ local function evaluateQuestChoices(questID, numChoices, GetQuestItemInfo, GetQu
     if addon.settings.profile.enableQuestRewardAutomation
         and hardCodedReward and hardCodedReward > 0 then -- Quest has an explicit reward ID for .turnin step
 
-        -- print("hardCodedReward", hardCodedReward)
         return -1, hardCodedReward, {}
     end
 
@@ -574,16 +579,15 @@ local function evaluateQuestChoices(questID, numChoices, GetQuestItemInfo, GetQu
     if addon.version > 40000 then return -1, -1, {} end
 
     local options = {}
-    local itemName, itemLink, isUsable, itemData
+    local itemLink, isUsable, itemData
 
     -- Load choices data
     -- TODO retry or handle query failures
-    local GetItemInfo = _G.GetItemInfo
     for i = 1, numChoices do
         if GetQuestItemInfo then
-            itemName, _, _, _, isUsable = GetQuestItemInfo("choice", i)
+            isUsable = select(5, GetQuestItemInfo("choice", i))
         else
-            itemName, _, _, _, isUsable = GetQuestLogChoiceInfo(i)
+            isUsable = select(5, GetQuestLogChoiceInfo(i))
         end
 
         itemLink = GetQuestItemLink("choice", i)
@@ -613,8 +617,6 @@ local function evaluateQuestChoices(questID, numChoices, GetQuestItemInfo, GetQu
                 isUsable = isUsable
             }
         end
-
-        -- print("evaluateQuestChoices", i, itemName, itemLink, options[i].totalWeight, "isUsable", isUsable)
     end
 
     local bestSellOption, bestSellValue = -1, -1
@@ -639,9 +641,6 @@ local function evaluateQuestChoices(questID, numChoices, GetQuestItemInfo, GetQu
             end
         end
     end
-
-    -- print("bestSellValue", bestSellValue, "bestSellOption", bestSellOption)
-    -- print("bestRatioValue", bestRatioValue, "bestRatioOption", bestRatioOption)
 
     return bestSellOption, bestRatioOption, options
 end
@@ -700,20 +699,14 @@ local function handleQuestComplete()
         -- if isUsable, then automatically pick
         -- If not usable but recommended then leave the window open for user decision
         if options and options[bestRatioOption].isUsable then
-            print("GetQuestReward(bestRatioOption)", bestRatioOption)
+            GetQuestReward(bestRatioOption)
             addon:SendEvent("RXP_QUEST_TURNIN", id, numChoices, bestRatioOption)
         end
     elseif bestSellOption > 0 then
-        print("GetQuestReward(bestSellOption)", bestSellOption)
+        GetQuestReward(bestSellOption)
         addon:SendEvent("RXP_QUEST_TURNIN", id, numChoices, bestSellOption)
     end
 end
-
-local GetQuestLogSelection = _G.GetQuestLogSelection
-local GetNumQuestLogChoices = _G.GetNumQuestLogChoices -- C_QuestLog.GetLogIndexForQuestID
-local GetQuestLogChoiceInfo = _G.GetQuestLogChoiceInfo
-local GetQuestLogItemLink = _G.GetQuestLogItemLink
-local GetQuestLogTitle = _G.GetQuestLogTitle -- C_QuestLog.GetInfo
 
 -- Not hooked by createLogRewardChoiceIcons so never called on Retail
 function addon.DisplayQuestLogRewards(questLogIndex)
@@ -728,12 +721,13 @@ function addon.DisplayQuestLogRewards(questLogIndex)
         return
     end
 
-    local title, _, _, _, _, _, _, questID = GetQuestLogTitle(questLogIndex)
+    local questID = select(8, GetQuestLogTitle(questLogIndex))
 
     -- options third return only used for handleQuestComplete
     local bestSellOption, bestRatioOption, _ = evaluateQuestChoices(questID, numChoices, nil, GetQuestLogItemLink, GetQuestLogChoiceInfo)
 
     if addon.settings.profile.enableQuestChoiceRecommendation then
+        -- Classic is QuestLogItem, Wrath+ is QuestInfoRewardsFrameQuestInfoItem
         local bestRatioFrame = _G['QuestLogItem' .. bestRatioOption] or
             QuestInfo_GetRewardButton(QuestInfoFrame.rewardsFrame, bestRatioOption)
 
