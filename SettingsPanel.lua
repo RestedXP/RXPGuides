@@ -2045,7 +2045,7 @@ function addon.settings:CreateAceOptionsPanel()
                         name = L("Quest Reward Recommendation"), -- TODO locale
                         desc = L("Displays the best calculated item upgrade"),
                         type = "toggle",
-                        width = optionsWidth,
+                        width = optionsWidth * 1.5,
                         order = 5.3,
                         hidden = function()
                             return not addon.itemUpgrades
@@ -2055,11 +2055,11 @@ function addon.settings:CreateAceOptionsPanel()
                         end
                     },
                     enableQuestChoiceAutomation = {
-                        name = L("Quest auto rewards"), -- TODO locale
+                        name = L("Quest Reward Automation"), -- TODO locale
                         desc = L(
                             "Automatically chooses the best calculated quest reward"),
                         type = "toggle",
-                        width = optionsWidth,
+                        width = optionsWidth * 1.5,
                         order = 5.5,
                         hidden = function()
                             return not addon.itemUpgrades
@@ -2067,9 +2067,7 @@ function addon.settings:CreateAceOptionsPanel()
                         disabled = function()
                             return not (self.profile.enableItemUpgrades and
                                        self.profile
-                                           .enableQuestChoiceRecommendation and
-                                       self.profile
-                                           .enableQuestChoiceGoldRecommendation)
+                                           .enableQuestChoiceRecommendation)
                         end
                     }
                 }
