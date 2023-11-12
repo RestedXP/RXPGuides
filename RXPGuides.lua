@@ -481,8 +481,7 @@ local GossipSelectActiveQuest = C_GossipInfo.SelectActiveQuest or
 local GossipGetAvailableQuests = C_GossipInfo.GetAvailableQuests or
                                      _G.GetGossipAvailableQuests
 
--- TODO move some/all parts to QuestLog
--- TODO disable if Pawn?
+-- TODO handle Pawn compatibility
 local questRewardChoiceIcons = {}
 local questLogRewardChoiceIcons = {}
 local function hideRewardChoiceIcons()
@@ -504,19 +503,19 @@ local function createRewardChoiceIcons()
         questRewardChoiceIcons["ratio"]:SetSize(20, 20)
     end
 
+    if questRewardChoiceIcons["ratio"].isHooked then return end
+
     if not questRewardChoiceIcons["value"] then
         questRewardChoiceIcons["value"] = _G.QuestInfoRewardsFrame:CreateTexture()
         questRewardChoiceIcons["value"]:SetTexture("Interface/GossipFrame/VendorGossipIcon.blp")
         questRewardChoiceIcons["value"]:SetSize(20, 20)
     end
 
-    if not questRewardChoiceIcons["ratio"].isHooked then
-        _G.QuestInfoRewardsFrame:HookScript("OnHide", hideRewardChoiceIcons)
+    _G.QuestInfoRewardsFrame:HookScript("OnHide", hideRewardChoiceIcons)
 
-        -- "OnShow" equivalent is handled by QuestAutomation function
+    -- "OnShow" equivalent is handled by QuestAutomation function
 
-        questRewardChoiceIcons["ratio"].isHooked = true
-    end
+    questRewardChoiceIcons["ratio"].isHooked = true
 end
 
 local function createLogRewardChoiceIcons()
@@ -528,28 +527,39 @@ local function createLogRewardChoiceIcons()
         questLogRewardChoiceIcons["ratio"]:SetSize(20, 20)
     end
 
+    if questLogRewardChoiceIcons["ratio"].isHooked then return end
+
     if not questLogRewardChoiceIcons["value"] then
         questLogRewardChoiceIcons["value"] = _G.QuestLogDetailScrollFrame:CreateTexture()
         questLogRewardChoiceIcons["value"]:SetTexture("Interface/GossipFrame/VendorGossipIcon.blp")
         questLogRewardChoiceIcons["value"]:SetSize(20, 20)
     end
 
-    if not questLogRewardChoiceIcons["ratio"].isHooked then
-        _G.QuestLogDetailScrollFrame:HookScript("OnHide", hideRewardChoiceIcons)
+    _G.QuestLogDetailScrollFrame:HookScript("OnHide", hideRewardChoiceIcons)
 
-        hooksecurefunc("SelectQuestLogEntry", function(questLogIndex)
-            hideRewardChoiceIcons()
-            addon.DisplayQuestLogRewards(questLogIndex)
-        end)
+    -- Triggers on open and selection in Classic
+    -- Only triggers on selection in Wrath
+    hooksecurefunc("SelectQuestLogEntry", function(questLogIndex)
+        hideRewardChoiceIcons()
+        addon.DisplayQuestLogRewards(questLogIndex)
+    end)
 
-        questLogRewardChoiceIcons["ratio"].isHooked = true
+    -- Double call on show to ensure reward frames have been created
+    if addon.gameVersion > 30000 then
+        _G.QuestLogDetailScrollFrame:HookScript("OnShow", addon.DisplayQuestLogRewards)
     end
+
+    questLogRewardChoiceIcons["ratio"].isHooked = true
+end
+
+-- Retail has enough helpers and massive UI differences
+if addon.version < 40000 then
+    createRewardChoiceIcons()
+    createLogRewardChoiceIcons()
 end
 
 -- bestSellOption, bestRatioOption, options
 local function evaluateQuestChoices(questID, numChoices, GetQuestItemInfo, GetQuestItemLink, GetQuestLogChoiceInfo)
-    print("evaluateQuestChoices", questID, numChoices)
-    -- TODO calculate sell early
     local hardCodedReward = addon.GetStepQuestReward(questID)
 
     -- If explicitly hard-coded .turnin reward choice, use that and exit
@@ -560,18 +570,15 @@ local function evaluateQuestChoices(questID, numChoices, GetQuestItemInfo, GetQu
         return -1, hardCodedReward, {}
     end
 
-    -- No item upgrades for client/locale
-    if not addon.itemUpgrades then
-        print("ItemUpgrades not supported on client")
-        return -1, -1, {}
-    end
+    -- Only support hard-coded turnin values on Retail
+    if addon.version > 40000 then return -1, -1, {} end
 
     local options = {}
     local itemName, itemLink, isUsable, itemData
 
     -- Load choices data
     -- TODO retry or handle query failures
-    -- TODO leverage QuestLog.lua helpers
+    local GetItemInfo = _G.GetItemInfo
     for i = 1, numChoices do
         if GetQuestItemInfo then
             itemName, _, _, _, isUsable = GetQuestItemInfo("choice", i)
@@ -581,16 +588,33 @@ local function evaluateQuestChoices(questID, numChoices, GetQuestItemInfo, GetQu
 
         itemLink = GetQuestItemLink("choice", i)
 
-        itemData = addon.itemUpgrades:GetItemData(itemLink)
+        if addon.itemUpgrades then
+            itemData = addon.itemUpgrades:GetItemData(itemLink)
 
-        if itemData then
-            -- Returns nil if item not applicable
-            itemData.comparisons = addon.itemUpgrades:CompareItemWeight(itemLink) or {}
-            itemData.isUsable = isUsable
+            if itemData then
+                -- Returns nil if item not applicable
+                itemData.comparisons = addon.itemUpgrades:CompareItemWeight(itemLink) or {}
+                itemData.isUsable = isUsable
 
-            options[i] = itemData
+                options[i] = itemData
+            end
+        else
+            local _, _, _, _, itemMinLevel, _, _, _, itemEquipLoc, _, sellPrice, _,
+                itemSubTypeID = GetItemInfo(itemLink)
+
+            -- Build ItemUpgrades object without comparisons
+            options[i] = {
+                itemLink = itemLink,
+                itemSubTypeID = itemSubTypeID,
+                itemEquipLoc = itemEquipLoc,
+                sellPrice = sellPrice,
+                itemMinLevel = itemMinLevel,
+                comparisons = {},
+                isUsable = isUsable
+            }
         end
-        -- print("evaluateQuestChoices", i, itemName, itemLink, itemData.totalWeight, "isUsable", isUsable)
+
+        -- print("evaluateQuestChoices", i, itemName, itemLink, options[i].totalWeight, "isUsable", isUsable)
     end
 
     local bestSellOption, bestSellValue = -1, -1
@@ -626,7 +650,6 @@ local function handleQuestComplete()
     local id = GetQuestID()
     if not id or id < 0 then return end
 
-    -- TODO query item data earlier to avoid cache issues
     local numChoices = GetNumQuestChoices()
 
     -- Automatically complete quests with no user choice
@@ -638,26 +661,34 @@ local function handleQuestComplete()
 
     local bestSellOption, bestRatioOption, options = evaluateQuestChoices(id, numChoices, GetQuestItemInfo, GetQuestItemLink)
 
-    if addon.settings.profile.enableQuestChoiceRecommendation then
+    if addon.version < 40000 and addon.settings.profile.enableQuestChoiceRecommendation then
         if bestRatioOption > 0 then
-            questRewardChoiceIcons["ratio"]:SetPoint("TOPRIGHT", 'QuestInfoRewardsFrameQuestInfoItem' .. bestRatioOption , -1, 1)
-            questRewardChoiceIcons["ratio"]:SetParent(_G['QuestInfoRewardsFrameQuestInfoItem' .. bestRatioOption])
-            questRewardChoiceIcons["ratio"]:Show()
+            local bestRatioFrame = QuestInfo_GetRewardButton(QuestInfoFrame.rewardsFrame, bestRatioOption)
+
+            if bestRatioFrame then
+                questRewardChoiceIcons["ratio"]:SetPoint("TOPRIGHT", bestRatioFrame , -1, 1)
+                questRewardChoiceIcons["ratio"]:SetParent(bestRatioFrame)
+                questRewardChoiceIcons["ratio"]:Show()
+            end
         end
     end
 
-    if addon.settings.profile.enableQuestChoiceGoldRecommendation then
-        if bestSellOption > 0 then
-            questRewardChoiceIcons["value"]:SetPoint("BOTTOMRIGHT", 'QuestInfoRewardsFrameQuestInfoItem' .. bestSellOption , -1, 1)
-            questRewardChoiceIcons["value"]:SetParent(_G['QuestInfoRewardsFrameQuestInfoItem' .. bestSellOption])
-            questRewardChoiceIcons["value"]:Show()
-        end
+    if addon.version < 40000 and addon.settings.profile.enableQuestChoiceGoldRecommendation then
+        local bestSellFrame = QuestInfo_GetRewardButton(QuestInfoFrame.rewardsFrame, bestSellOption)
 
-         -- No calculated best upgrade, so add recommendation to value as well
-        if bestRatioOption < 1 then
-            questRewardChoiceIcons["ratio"]:SetPoint("TOPRIGHT", 'QuestInfoRewardsFrameQuestInfoItem' .. bestSellOption , -1, 1)
-            questRewardChoiceIcons["ratio"]:SetParent(_G['QuestInfoRewardsFrameQuestInfoItem' .. bestSellOption])
-            questRewardChoiceIcons["ratio"]:Show()
+        if bestSellFrame then
+            if bestSellOption > 0 then
+                questRewardChoiceIcons["value"]:SetPoint("BOTTOMRIGHT", bestSellFrame , -1, 1)
+                questRewardChoiceIcons["value"]:SetParent(bestSellFrame)
+                questRewardChoiceIcons["value"]:Show()
+            end
+
+            -- No calculated best upgrade, so add recommendation to value as well, only if weights added
+            if addon.itemUpgrades and bestRatioOption < 1 then
+                questRewardChoiceIcons["ratio"]:SetPoint("TOPRIGHT", bestSellFrame , -1, 1)
+                questRewardChoiceIcons["ratio"]:SetParent(bestSellFrame)
+                questRewardChoiceIcons["ratio"]:Show()
+            end
         end
     end
 
@@ -684,6 +715,7 @@ local GetQuestLogChoiceInfo = _G.GetQuestLogChoiceInfo
 local GetQuestLogItemLink = _G.GetQuestLogItemLink
 local GetQuestLogTitle = _G.GetQuestLogTitle -- C_QuestLog.GetInfo
 
+-- Not hooked by createLogRewardChoiceIcons so never called on Retail
 function addon.DisplayQuestLogRewards(questLogIndex)
     if not questLogIndex or type(questLogIndex) == "table" then
         questLogIndex = GetQuestLogSelection()
@@ -702,31 +734,34 @@ function addon.DisplayQuestLogRewards(questLogIndex)
     local bestSellOption, bestRatioOption, _ = evaluateQuestChoices(questID, numChoices, nil, GetQuestLogItemLink, GetQuestLogChoiceInfo)
 
     if addon.settings.profile.enableQuestChoiceRecommendation then
-        if bestRatioOption > 0 then
-            questLogRewardChoiceIcons["ratio"]:SetPoint("TOPRIGHT", 'QuestLogItem' .. bestRatioOption , -1, 1)
-            questLogRewardChoiceIcons["ratio"]:SetParent(_G['QuestLogItem' .. bestRatioOption])
+        local bestRatioFrame = _G['QuestLogItem' .. bestRatioOption] or
+            QuestInfo_GetRewardButton(QuestInfoFrame.rewardsFrame, bestRatioOption)
+
+        if bestRatioFrame then
+            questLogRewardChoiceIcons["ratio"]:SetPoint("TOPRIGHT", bestRatioFrame , -1, 1)
+            questLogRewardChoiceIcons["ratio"]:SetParent(bestRatioFrame)
             questLogRewardChoiceIcons["ratio"]:Show()
         end
     end
 
     if addon.settings.profile.enableQuestChoiceGoldRecommendation then
-        if bestSellOption > 0 then
-            questLogRewardChoiceIcons["value"]:SetPoint("BOTTOMRIGHT", 'QuestLogItem' .. bestSellOption , -1, 1)
-            questLogRewardChoiceIcons["value"]:SetParent(_G['QuestLogItem' .. bestSellOption])
-            questLogRewardChoiceIcons["value"]:Show()
-        end
+        local bestSellFrame = _G['QuestLogItem' .. bestRatioOption] or
+            QuestInfo_GetRewardButton(QuestInfoFrame.rewardsFrame, bestSellOption)
 
-         -- No calculated best upgrade, so add recommendation to value as well
-        if bestRatioOption < 1 then
-            questLogRewardChoiceIcons["ratio"]:SetPoint("TOPRIGHT", 'QuestLogItem' .. bestSellOption , -1, 1)
-            questLogRewardChoiceIcons["ratio"]:SetParent(_G['QuestLogItem' .. bestSellOption])
-            questLogRewardChoiceIcons["ratio"]:Show()
+        if bestSellFrame then
+            questLogRewardChoiceIcons["value"]:SetPoint("BOTTOMRIGHT", bestSellFrame , -1, 1)
+            questLogRewardChoiceIcons["value"]:SetParent(bestSellFrame)
+            questLogRewardChoiceIcons["value"]:Show()
+
+            -- No calculated best upgrade, so add recommendation to value as well, only if weights added
+            if addon.itemUpgrades and bestRatioOption < 1 then
+                questLogRewardChoiceIcons["ratio"]:SetParent(bestSellFrame)
+                questLogRewardChoiceIcons["ratio"]:SetPoint("TOPRIGHT", bestSellFrame , -1, 1)
+                questLogRewardChoiceIcons["ratio"]:Show()
+            end
         end
     end
 end
-
-createRewardChoiceIcons()
-createLogRewardChoiceIcons()
 
 function addon:QuestAutomation(event, arg1, arg2, arg3)
     if not addon.settings.profile.enableQuestAutomation or IsControlKeyDown() then
