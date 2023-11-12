@@ -1828,6 +1828,13 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = true -- TODO Zarant
                     },
+                    enableQuestChoiceGoldRecommendation = {
+                        name = L("Quest Sellable Recommendation"), -- TODO locale
+                        desc = L("Displays the best sellable quest reward"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 1.3,
+                    },
                     drowningHeader = {
                         name = _G.STRING_ENVIRONMENTAL_DAMAGE_DROWNING,
                         type = "header",
@@ -2039,19 +2046,6 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 5.3,
-                        hidden = function()
-                            return not addon.itemUpgrades
-                        end,
-                        disabled = function()
-                            return not self.profile.enableItemUpgrades
-                        end
-                    },
-                    enableQuestChoiceGoldRecommendation = {
-                        name = L("Quest Sellable Recommendation"), -- TODO locale
-                        desc = L("Displays the best sellable quest reward"),
-                        type = "toggle",
-                        width = optionsWidth,
-                        order = 5.4,
                         hidden = function()
                             return not addon.itemUpgrades
                         end,
