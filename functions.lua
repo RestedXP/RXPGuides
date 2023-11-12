@@ -258,7 +258,7 @@ function addon.ClearQuestCache()
     local questNameCache = RXPCData.questNameCache
     local guideQuests = {}
     for i,step in pairs(addon.currentGuide.steps) do
-        for j,element in pairs(step.elements or {}) do
+        for j,element in pairs(step.elements) do
             if element.tag == "complete" then
                 local id = element.questId
                 guideQuests[id] = bit.bor(guideQuests[id] or 0,0x1)
@@ -602,7 +602,7 @@ function addon.SetElementComplete(self, disable)
 end
 
 function addon.SetElementIncomplete(self)
-    if self.element.completed and not self.element.textOnly then
+    if self.element.completed then
         self.element.completed = false
         addon.UpdateMap()
     end
@@ -975,111 +975,111 @@ function addon.functions.turnin(self, ...)
         addon.InsertQuestGuide(id,addon.turnInList)
 
         return element
-    end
+    else
+        local element = self.element
+        local step = element.step
+        local event, questId = ...
+        local id = element.questId
+        local isComplete = IsQuestTurnedIn(id)
 
-    local element = self.element
-    local step = element.step
-    local event, questId = ...
-    local id = element.questId
-    local isComplete = IsQuestTurnedIn(id)
+        if step.active or element.retrieveText then
+            addon.questTurnIn[id] = element
+            -- addon.questAccept[id] = addon.questAccept[id] or element
+            local quest = addon.GetQuestName(id)
+            if quest then
+                element.title = quest
+                addon.questTurnIn[quest] = element
+                -- addon.questAccept[quest] = addon.questAccept[quest] or element
+                element.text = element.text:gsub("%*quest%*", quest)
+                if element.requestFromServer then
+                    element.requestFromServer = nil
+                    addon.UpdateStepText(self)
+                end
+            else
+                element.title = ""
+                element.requestFromServer = true
+            end
+        end
 
-    if step.active or element.retrieveText then
-        addon.questTurnIn[id] = element
-        -- addon.questAccept[id] = addon.questAccept[id] or element
-        local quest = addon.GetQuestName(id)
-        if quest then
-            element.title = quest
-            addon.questTurnIn[quest] = element
-            -- addon.questAccept[quest] = addon.questAccept[quest] or element
-            element.text = element.text:gsub("%*quest%*", quest)
-            if element.requestFromServer then
-                element.requestFromServer = nil
-                addon.UpdateStepText(self)
+        local icon = addon.icons[element.tag]
+        -- local skip
+        if step.active and db and type(db.QueryQuest) == "function" and
+            addon.pickUpList[id] and not addon.questAccept[id] and
+            not addon.skipPreReq[id] and not element.multiple and not isComplete then
+            local quest = db:GetQuest(id)
+            if not IsOnQuest(id) and quest and not quest.IsRepeatable then
+                local requiredQuests
+                local doable = db:IsDoable(id)
+
+                if not doable then
+                    requiredQuests = GetRequiredQuests(quest)
+                    tinsert(requiredQuests, id)
+                else
+                    requiredQuests = {id}
+                end
+
+                local tooltip = addon.colors.tooltip ..
+                                    L("Missing pre-requisites") .. ":|r\n"
+                for i, qid in ipairs(requiredQuests) do
+                    if i < #requiredQuests then
+                        tooltip = format("%s\n%s%s (%d)", tooltip,
+                                         addon.icons.turnin,
+                                         db:GetQuest(qid).name, qid)
+                    else
+                        tooltip = format("%s\n%s%s (%d)", tooltip,
+                                         addon.icons.accept,
+                                         db:GetQuest(qid).name, qid)
+                    end
+                end
+                element.tooltip = tooltip
+                element.icon = addon.icons.error
+                -- skip = RXPData.skipMissingPreReqs
+            elseif element.icon then
+                element.icon = icon
+                element.tooltip = nil
             end
         else
-            element.title = ""
-            element.requestFromServer = true
-        end
-    end
-
-    local icon = addon.icons[element.tag]
-    -- local skip
-    if step.active and db and type(db.QueryQuest) == "function" and
-        addon.pickUpList[id] and not addon.questAccept[id] and
-        not addon.skipPreReq[id] and not element.multiple and not isComplete then
-        local quest = db:GetQuest(id)
-        if not IsOnQuest(id) and quest and not quest.IsRepeatable then
-            local requiredQuests
-            local doable = db:IsDoable(id)
-
-            if not doable then
-                requiredQuests = GetRequiredQuests(quest)
-                tinsert(requiredQuests, id)
-            else
-                requiredQuests = {id}
-            end
-
-            local tooltip = addon.colors.tooltip ..
-                                L("Missing pre-requisites") .. ":|r\n"
-            for i, qid in ipairs(requiredQuests) do
-                if i < #requiredQuests then
-                    tooltip = format("%s\n%s%s (%d)", tooltip,
-                                        addon.icons.turnin,
-                                        db:GetQuest(qid).name, qid)
-                else
-                    tooltip = format("%s\n%s%s (%d)", tooltip,
-                                        addon.icons.accept,
-                                        db:GetQuest(qid).name, qid)
-                end
-            end
-            element.tooltip = tooltip
-            element.icon = addon.icons.error
-            -- skip = RXPData.skipMissingPreReqs
-        elseif element.icon then
             element.icon = icon
             element.tooltip = nil
         end
-    else
-        element.icon = icon
-        element.tooltip = nil
-    end
 
-    --element.tooltipText = element.icon .. element.text
-    addon.UpdateStepText(self)
-    local completed = element.completed
+        --element.tooltipText = element.icon .. element.text
+        addon.UpdateStepText(self)
+        local completed = element.completed
 
-    if questId == id then -- repeatable quests
-        if element.timer then
-            addon.StartTimer(element.timer,element.timerText)
-        end
-
-        --Scryer/Aldor quests
-        if id == 10551 or id == 10552 then
-            return addon.ReloadGuide()
-        end
-        addon.SetElementComplete(self)
-        addon.recentTurnIn[id] = GetTime()
-    elseif isComplete then
-        addon.SetElementComplete(self, true)
-        addon.recentTurnIn[id] = GetTime()
-    end
-
-    if step.active then
-        if (element.skipIfMissing and not IsOnQuest(id)) or (element.skipIfIncomplete and not IsQuestComplete(id)) then
-            addon.SetElementComplete(self, true)
-            ProcessItems(false, step, id, true)
-            addon.UpdateItemFrame()
-        elseif not event then
-            ProcessItems(true, step, id, true)
-            if C_SuperTrack and not step.track and not element.completed then
-                C_SuperTrack.SetSuperTrackedQuestID(id)
+        if questId == id then -- repeatable quests
+            if element.timer then
+                addon.StartTimer(element.timer,element.timerText)
             end
-        elseif completed ~= element.completed then
-            ProcessItems(not element.completed, step, id, true)
-            addon.UpdateItemFrame()
-        end
-    end
 
+            --Scryer/Aldor quests
+            if id == 10551 or id == 10552 then
+                return addon.ReloadGuide()
+            end
+            addon.SetElementComplete(self)
+            addon.recentTurnIn[id] = GetTime()
+        elseif isComplete then
+            addon.SetElementComplete(self, true)
+            addon.recentTurnIn[id] = GetTime()
+        end
+
+        if step.active then
+            if (element.skipIfMissing and not IsOnQuest(id)) or (element.skipIfIncomplete and not IsQuestComplete(id)) then
+                addon.SetElementComplete(self, true)
+                ProcessItems(false, step, id, true)
+                addon.UpdateItemFrame()
+            elseif not event then
+                ProcessItems(true, step, id, true)
+                if C_SuperTrack and not step.track and not element.completed then
+                    C_SuperTrack.SetSuperTrackedQuestID(id)
+                end
+            elseif completed ~= element.completed then
+                ProcessItems(not element.completed, step, id, true)
+                addon.UpdateItemFrame()
+            end
+        end
+
+    end
     addon.IsOnTurnInGuide(self)
 end
 
@@ -1277,15 +1277,14 @@ function addon.UpdateQuestCompletionData(self)
 
     completed = completed or isQuestComplete
 
-    if element.flags % 2 == 0 then
-        element.tooltipText = icon .. objtext:gsub("\n", "\n   " .. icon)
-        element.text = objtext
-    end
+    element.tooltipText = icon .. objtext:gsub("\n", "\n   " .. icon)
+    local text = objtext
+    element.text = text
 
     addon.UpdateStepText(self)
 
     if completed then
-        if not element.completed and step.active == true and element.flags % 2 == 0 then
+        if not element.completed and step.active == true then
             addon.comms:AnnounceStepEvent('.complete', {
                 title = element.title,
                 completionText = element.text,
@@ -1297,13 +1296,6 @@ function addon.UpdateQuestCompletionData(self)
             end
         end
 
-        if element.flags % 2 == 1 and step.active then
-            addon.updateSteps = true
-            step.completed = true
-            if element.textOnly == true then
-                element.tooltipText = L"Step skipped: This step requires a quest available that is already complete"
-            end
-        end
         addon.SetElementComplete(self, true)
         -- elseif skip then
         --    addon.SetElementComplete(self)
@@ -1316,9 +1308,7 @@ end
 function addon.functions.complete(self, ...)
     if type(self) == "string" then -- on parse
 
-        local text, id, obj, objMax, flags = ...
-
-        flags = tonumber(flags) or 0
+        local text, id, obj, objMax = ...
         id = tonumber(id)
         obj = tonumber(obj)
         if not (id and obj) then
@@ -1326,21 +1316,17 @@ function addon.functions.complete(self, ...)
                             ": Invalid objective or quest ID\n" .. self)
             return
         end
-        objMax = tonumber(objMax)
-        if objMax and objMax <= 0 then
-            objMax = nil
-        end
+
         id = id and questConversion[id] or id
         local element = {questId = id, dynamicText = true, obj = obj,
-                         objMax = objMax, requestFromServer = true,
-                         text = "", flags = flags, textOnly = (flags % 2) == 1
+                         objMax = tonumber(objMax), requestFromServer = true,
+                         text = ""
                         }
         if id and id < 0 then
             id = math.abs(id)
             element.skipIfMissing = true
             element.questId = id
         end
-
         -- element.title = addon.GetQuestName(id)
         -- local objectives = addon.GetQuestObjectives(id)--queries the server for items/creature names associated with the quest
         return element
@@ -1609,16 +1595,12 @@ function addon.functions.loop(self, text, range, zone, ...)
         element.segments = segments
         if range then
             local prefix = range:sub(1,1)
-            element.pointCount = 0
             if prefix == "+" then
                 element.drawCenterPoint = true
                 element.thickness = 1
                 range = range:sub(2,-1)
             elseif prefix == "*" then
                 element.lineAlpha = 0
-                range = range:sub(2,-1)
-            elseif prefix == "@" then
-                element.pointCount = nil
                 range = range:sub(2,-1)
             end
             --print('ok2')
@@ -1687,8 +1669,8 @@ end
 local homeText = strupper(_G.HOME or "%")
 function addon.SelectGossipType(gossipType,noOp)
     if C_GossipInfo.GetOptions then
-        local options = GossipGetOptions()
-        for i,option in ipairs(options) do
+
+        for i,option in ipairs(GossipGetOptions()) do
             --print(option.type,option.icon)
             if option.type == gossipType then
                 noOp = noOp or GossipSelectOption(i)
@@ -1697,14 +1679,12 @@ function addon.SelectGossipType(gossipType,noOp)
                 if gossipType == "binder" then
                     local text = strupper(option.name or "")
                     --print(option.name,option.icon)
-                    if (option.icon == 132052 or option.icon == 136458) and text:find(homeText) then
+                    if option.icon == 132052 and text:find(homeText) then
                         noOp = noOp or GossipSelectOption(i)
                         return i,option.name
                     end
                 elseif gossipType == "taxi" and option.icon == 132057 or
-                gossipType == "trainer" and option.icon == 132058 or
-                gossipType == "healer" and UnitIsDeadOrGhost('player') and option.icon == 132054 and #options == 1
-                 then
+                gossipType == "trainer" and option.icon == 132058  then
                     noOp = noOp or GossipSelectOption(i)
                     return i,option.name
                 end
@@ -1922,6 +1902,7 @@ function addon.functions.deathskip(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
         local text = ...
+        element.tag = "deathskip"
         if text and text ~= "" then
             element.text = text
         else
@@ -1935,25 +1916,15 @@ function addon.functions.deathskip(self, ...)
     local event = ...
     if event == "CONFIRM_XP_LOSS" then
         addon.SetElementComplete(self)
-        if C_PlayerInteractionManager then
-            self:SetScript("OnUpdate", function()
-                C_PlayerInteractionManager.ConfirmationInteraction(Enum.PlayerInteractionType.SpiritHealer)
-                C_PlayerInteractionManager.ClearInteraction(Enum.PlayerInteractionType.SpiritHealer)
-                self:SetScript("OnUpdate",nil)
-            end)
-        elseif _G.AcceptXPLoss then
+        if _G.AcceptXPLoss then
             _G.AcceptXPLoss()
-            _G.StaticPopup1:Hide()
-            _G.StaticPopup2:Hide()
+        elseif C_PlayerInteractionManager then
+            C_PlayerInteractionManager.ConfirmationInteraction(Enum.PlayerInteractionType.SpiritHealer)
         end
+        _G.StaticPopup1:Hide()
+        _G.StaticPopup2:Hide()
     elseif event == "GOSSIP_SHOW" then
         addon.SelectGossipType("healer")
-    end
-end
-
-function addon.functions.addquestitem(self, text, id, questId)
-    if type(self) == "string" then -- on parse
-        addon.questItemList[tonumber(id) or ""] = tonumber(questId)
     end
 end
 
@@ -2449,15 +2420,6 @@ function addon.functions.reputation(self, ...)
     local step = element.step
     local _, _, standing, bottomValue, topValue, earnedValue =
         GetFactionInfoByID(element.faction)
-    local relativeValue = earnedValue
-    local replength = topValue - bottomValue
-    if relativeValue < 0 then
-        relativeValue = replength + earnedValue
-    else
-        relativeValue = earnedValue - bottomValue
-    end
-    --print('r:',standing,bottomValue,topValue,earnedValue,topValue-bottomValue,relativeValue)
-
     if ((element.repValue < 0 and (standing >= element.standing or
         (standing == element.standing - 1 and earnedValue >= topValue +
             element.repValue))) or
@@ -2466,15 +2428,14 @@ function addon.functions.reputation(self, ...)
                 element.repValue))) or
         (element.repValue >= 0 and element.repValue < 1 and
             ((standing > element.standing) or
-                (element.standing == standing and relativeValue >=
-                    replength * element.repValue)))) ==
+                (element.standing == standing and earnedValue >=
+                    (topValue - bottomValue) * element.repValue)))) ==
         element.operator then
         if not element.skipStep then
             addon.SetElementComplete(self, true)
         elseif step.active and not addon.isHidden then
             addon.updateSteps = true
             step.completed = true
-             self.element.tooltipText = "Step skipped: Reputation condition not met"
         end
     end
 end
@@ -2626,23 +2587,13 @@ function addon.functions.next(skip, guide)
         element.textOnly = true
         return element
     elseif skip and
-        (type(skip) == "number" or (skip.step and (not skip.step.active and not skip.step.completed))) then
+        (type(skip) == "number" or (skip.step and not skip.step.active)) then
         return
     end
-
-    local next
-    if type(guide) == "table" then
-        next = guide.next
-    elseif type(guide) == "string" then
-        next = guide
-        guide = addon.currentGuide
-    else
-        guide = addon.currentGuide
-        next = guide.next
-    end
-
-    if next then
+    guide = guide or addon.currentGuide
+    if guide.next then
         local group = guide.group
+        local next = guide.next
         local guideSkip
         --Different guides can be separated by a semicolon when using #next
         for guideName in string.gmatch(guide.next,"%s*([^;]+)%s*") do
@@ -4154,11 +4105,7 @@ function addon.functions.itemcount(self, ...)
         if step.active and not step.completed then
             addon.updateSteps = true
             step.completed = true
-            if operator < 0 then
-                element.tooltipText = "Step skipped: You already have the required item for this step"
-            else
-                element.tooltipText = "Step skipped: You don't have the required item for this step"
-            end
+            element.tooltipText = "Step skipped: You don't have the required item for this step"
         end
     elseif step.active then
         element.tooltipText = nil
@@ -4500,7 +4447,6 @@ function addon.functions.dmf(self, ...)
 
     local element = self.element
     local isDmfInTown = false
-    local step = element.step
 
     local event
     local monthDay = GetCurrentCalendarTime().monthDay
@@ -4508,12 +4454,10 @@ function addon.functions.dmf(self, ...)
     -- Async relies on CALENDAR_UPDATE_EVENT_LIST
     -- Currently results in one false negative if on a DMF step at login
     -- If called during the loading process, (even at PLAYER_ENTERING_WORLD) the query will not return
-    if not _G.IsAddOnLoaded('Blizzard_Calendar') then
-        _G.LoadAddOn("Blizzard_Calendar")
-        addon.calendarLoaded = true
+    if not addon.calendarLoaded then
+        OpenCalendar()
+        return
     end
-
-    if not step.active then return end
 
     for i = 1, GetNumDayEvents(0, monthDay) do
         event = GetDayEvent(0, monthDay, i)
@@ -4523,9 +4467,9 @@ function addon.functions.dmf(self, ...)
             break
         end
     end
-    --print('dmf',isDmfInTown,element.reverse)
-    if (not isDmfInTown == not element.reverse) and not addon.isHidden then
-        step.completed = true
+
+    if element.step.active and not addon.settings.profile.debug and (not isDmfInTown) == not element.reverse and not addon.isHidden then
+        element.step.completed = true
         addon.updateSteps = true
     end
 end
@@ -5118,9 +5062,8 @@ function addon.functions.group(self, ...)
         local text, number = ...
         local generateText
         if not number then generateText = true end
-        number = tonumber(number)
-        text = text or (number and number > 0) and
-            fmt(L"Do NOT attempt this quest unless you are in a group of at least %d",number)
+        text = text or number and
+            fmt(L"Do NOT attempt this quest unless you are in a group of at least %s",number)
 
         addon.step.group = true
         addon.step.solo = false
@@ -5133,10 +5076,9 @@ function addon.functions.group(self, ...)
         for _,e in pairs(element.step.elements) do
             if e.tag == "complete" or e.tag == "collect" then
                 element.text = L"This step is meant to be completed as a group, be careful"
-                element.generateText = nil
-                return
             end
         end
+        element.generateText = nil
     end
 end
 
