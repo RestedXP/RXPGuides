@@ -458,17 +458,13 @@ end
 
 function addon.tips:LoadDangerousMobs(reloadData)
     if not (addon.dangerousMobs) then return end
-    -- if not (addon.dangerousMobs and addon.settings.profile.enableBetaFeatures) then return end
 
     local mapId = C_Map.GetBestMapForUnit("player") or 0
     local zone = addon.mapIdToName and addon.mapIdToName[mapId] or
                      GetRealZoneText()
     local zoneList
     addon.UpdateMap()
-    if addon.settings.profile.debug then
-        print("== LoadDangerousMobs: " .. (zone or 'Unknown'))
-        zoneList = addon.dangerousMobs -- Loads all the pins for debug purposes
-    end
+
     if not zone or not addon.dangerousMobs[zone] and
         not addon.settings.profile.debug then
         addon.tips.dangerousMobs = nil

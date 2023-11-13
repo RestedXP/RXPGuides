@@ -3305,11 +3305,6 @@ function addon.settings:LoadFramePositions()
     local result, reason
 
     for frameName, frame in pairs(addon.enabledFrames) do
-        if self.profile.debug then
-            addon.comms
-                .PrettyPrint("LoadFramePositions:frameName %s", frameName)
-        end
-
         -- Wipe alpha frame data
         -- Alpha frame restoration only tracked one point, to [1] would be "TOPLEFT" or similar
         if addon.settings.profile.framePositions[frameName] and
@@ -3327,12 +3322,6 @@ function addon.settings:LoadFramePositions()
                 result, reason = pcall(frame.SetPoint, frame, point,
                                        relativeToName, relativePoint, offsetX,
                                        offsetYOrNil)
-
-                if self.profile.debug then
-                    addon.comms.PrettyPrint("LoadFramePositions:pcall %s %s",
-                                            result and "true" or "false",
-                                            reason or '')
-                end
             end
         end
     end
