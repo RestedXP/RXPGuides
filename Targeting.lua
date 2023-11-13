@@ -71,9 +71,19 @@ function addon.targeting:Setup()
 
     self:CreateTargetFrame()
 
-    if not addon.settings.profile.enableTargetAutomation then return end
-
     self:RegisterEvent("PLAYER_REGEN_ENABLED")
+
+    -- Remove interacted target
+    self:RegisterEvent("GOSSIP_SHOW")
+    self:RegisterEvent("MERCHANT_SHOW")
+    self:RegisterEvent("QUEST_PROGRESS")
+    self:RegisterEvent("QUEST_GREETING")
+    self:RegisterEvent("QUEST_COMPLETE")
+
+    self:RegisterEvent("PLAYER_TARGET_CHANGED")
+    self:RegisterEvent("UPDATE_MOUSEOVER_UNIT")
+
+    if not addon.settings.profile.enableTargetAutomation then return end
 
     -- TODO toggle without reloads
 
@@ -86,16 +96,6 @@ function addon.targeting:Setup()
     else
         SetCVar("nameplateMaxDistance", "41")
     end
-
-    self:RegisterEvent("PLAYER_TARGET_CHANGED")
-    self:RegisterEvent("UPDATE_MOUSEOVER_UNIT")
-
-    -- Remove interacted target
-    self:RegisterEvent("GOSSIP_SHOW")
-    self:RegisterEvent("MERCHANT_SHOW")
-    self:RegisterEvent("QUEST_PROGRESS")
-    self:RegisterEvent("QUEST_GREETING")
-    self:RegisterEvent("QUEST_COMPLETE")
 
     if addon.settings.profile.showTargetingOnProximity then
         WorldFrame:HookScript("OnUpdate", self.CheckTargetProximity)
@@ -113,8 +113,7 @@ function addon.targeting:Setup()
 end
 
 local function shouldTargetCheck()
-    return addon.settings.profile.enableTargetAutomation and not IsInRaid() and
-               not UnitOnTaxi("player") and
+    return not IsInRaid() and not UnitOnTaxi("player") and
                (next(unitscanList) ~= nil or next(mobList) ~= nil or
                    next(targetList) ~= nil or next(rareTargets) ~= nil or
                    next(proxmityPolling.scannedTargets) ~= nil)
@@ -174,7 +173,6 @@ function addon.targeting:UpdateMacro(queuedTargets)
             -- Prevent multiple spams
             if not (announcedTargets[t] or lowPrioTargets[t]) and
                 addon.settings.profile.notifyOnTargetUpdates then
-                -- Only notify if Active Targets frame is disabled
                 addon.comms.PrettyPrint(L("Targeting macro updated with (%s)"),
                                         t) -- TODO locale
             end
@@ -623,6 +621,10 @@ function addon.targeting:UpdateTargetList(targets, addEntries)
         targetList = targets
     end
 
+    self:UpdateMacro()
+
+    if not addon.settings.profile.enableTargetAutomation then return end
+
     proxmityPolling.match = false
     proxmityPolling.lastMatch = 0
     if addon.settings.profile.showTargetingOnProximity then
@@ -633,9 +635,7 @@ function addon.targeting:UpdateTargetList(targets, addEntries)
         end
     end
 
-    self:UpdateMacro()
     self:UpdateTargetFrame()
-
 end
 
 function addon.targeting:UpdateEnemyList(unitscan, mobs, addEntries)
@@ -679,6 +679,10 @@ function addon.targeting:UpdateEnemyList(unitscan, mobs, addEntries)
         mobList = mobs
     end
 
+    self:UpdateMacro()
+
+    if not addon.settings.profile.enableTargetAutomation then return end
+
     proxmityPolling.match = false
     proxmityPolling.lastMatch = 0
     if addon.settings.profile.showTargetingOnProximity then
@@ -689,9 +693,7 @@ function addon.targeting:UpdateEnemyList(unitscan, mobs, addEntries)
         end
     end
 
-    self:UpdateMacro()
     self:UpdateTargetFrame()
-
 end
 
 function addon.targeting:CanCreateMacro() return GetNumMacros() < 119 end
@@ -708,6 +710,7 @@ local function UpdateIconFrameVisuals(self, updateFrame)
 end
 
 function addon.targeting:CreateTargetFrame()
+    -- Still create frame even if targeting disabled, for frame location preservation
     if self.activeTargetFrame then return end
 
     self.activeTargetFrame = CreateFrame("Frame", "RXPTargetFrame", UIParent,
@@ -889,6 +892,8 @@ local function GetUnitTexture(self, name, unit)
 end
 
 function addon.targeting:UpdateTargetFrame(selector, OnUpdate)
+    if not addon.settings.profile.enableTargetAutomation then return end
+
     local targetFrame = self.activeTargetFrame
 
     if InCombatLockdown() then return end

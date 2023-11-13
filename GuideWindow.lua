@@ -377,10 +377,12 @@ function addon.RegisterGeneratedSteps()
     end
     end
 
+    -- Update targets for macro
+    addon.targeting:UpdateEnemyList(stepUnitscan, stepMobs, true)
+    addon.targeting:UpdateTargetList(stepTargets, true)
+
     -- Don't process new targets if targeting disabled
     if addon.settings.profile.enableTargetAutomation then
-        addon.targeting:UpdateEnemyList(stepUnitscan, stepMobs, true)
-        addon.targeting:UpdateTargetList(stepTargets, true)
         addon.targeting:CheckNameplates()
     end
 
@@ -974,10 +976,12 @@ function addon.SetStep(n, n2, loopback)
         end
     end
 
+    -- Update targets for macro
+    addon.targeting:UpdateEnemyList(stepUnitscan, stepMobs, true)
+    addon.targeting:UpdateTargetList(stepTargets, true)
+
     -- Don't process new targets if targeting disabled
     if addon.settings.profile.enableTargetAutomation then
-        addon.targeting:UpdateEnemyList(stepUnitscan, stepMobs, false)
-        addon.targeting:UpdateTargetList(stepTargets, false)
         addon.targeting:CheckNameplates()
     end
 

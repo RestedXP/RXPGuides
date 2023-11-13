@@ -1314,7 +1314,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 1.2,
                         disabled = not addon.targeting:CanCreateMacro() or
-                            not self.profile.enableTargetAutomation
+                            not self.profile.enableTargetMacro
                     },
                     activeTargetsHeader = {
                         name = L("Active Targets"),
