@@ -955,7 +955,7 @@ function addon:OnInitialize()
     addon.LoadCachedGuides()
     addon.LoadEmbeddedGuides()
     addon.UpdateGuideFontSize()
-    addon.isHidden = addon.settings.profile.hideGuideWindow
+    addon.isHidden = not addon.settings.profile.showEnabled or addon.settings.profile.hideGuideWindow
     addon.RXPFrame:SetShown(not addon.isHidden)
     addon.RXPFrame:SetScale(addon.settings.profile.windowScale)
     addon.arrowFrame:SetSize(32 * addon.settings.profile.arrowScale,
