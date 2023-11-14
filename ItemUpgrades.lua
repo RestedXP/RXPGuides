@@ -418,8 +418,13 @@ local function TooltipSetItem(tooltip, ...)
             ratioText = (data['Ratio'] * 100) .. '%'
         end
 
-        tooltip:AddLine(fmt("  %s: %s", data['ItemLink'] or _G.UNKNOWN,
-                            ratioText))
+        if data.itemEquipLoc and data.itemEquipLoc == 'INVTYPE_WEAPONOFFHAND' then
+            tooltip:AddLine(fmt("  %s: %s (%s)", data['ItemLink'] or _G.UNKNOWN,
+                                ratioText, _G.INVTYPE_WEAPONOFFHAND))
+        else
+            tooltip:AddLine(fmt("  %s: %s", data['ItemLink'] or _G.UNKNOWN,
+                                ratioText))
+        end
     end
 
     tooltip:Show()
