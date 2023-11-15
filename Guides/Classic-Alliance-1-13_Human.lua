@@ -36,7 +36,7 @@ step << Warlock
     >>|cRXP_WARN_Run into the Tent at the Defias Camp|r
     >>Open the |cRXP_PICK_Stolen Books|r. Loot it for the |cRXP_LOOT_Powers of the Void|r
     >>|cRXP_WARN_You can loot the |cRXP_LOOT_Powers of the Void|r safely while inside the Tent! Watch the video on how to do this|r
-    .link https://www.youtube.com/watch?v=0zC2bDBl6C4 >> |cRXP_WARN_Click here for video reference|r
+    .link https://youtu.be/3qQwsJhAZIk >> |cRXP_WARN_Click here for video reference|r
     .complete 1598,1 --Collect Powers of the Void (x1)
 step << Warlock
     #hardcore
@@ -2218,6 +2218,11 @@ step << Priest
     .goto StormwindClassic,38.54,26.86
     .trainer >> Train your class spells
     .target Brother Joshua
+step
+    .goto StormwindClassic,49.194,30.284
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r
+    .accept 399 >> Accept Humble Beginnings
+    .target Baros Alexston
 step    
     .goto StormwindClassic,58.091,16.552
     .target Furen Longbeard
@@ -2285,13 +2290,11 @@ step
     >>|T135997:0|t[Goretusk Snout]
     >>|T134185:0|t[Okra]
     >>|T134341:0|t[Goretusk Liver]
-    >>|T132794:0|t[Flask of Oil]
     .collect 729,3,38,1 -- Stringy Vulture Meat (3)
     .collect 730,3,38,1 -- Murloc Eye (3)
     .collect 731,3,38,1 -- Goretusk Snout (3)
     .collect 732,3,38,1 -- Okra (3)
     .collect 723,8,22,1 -- Goretusk Liver (8)
-    .collect 814,5,103,1 -- Flask of Oil (5)
     .target Auctioneer Jaxon
 step
     #ah

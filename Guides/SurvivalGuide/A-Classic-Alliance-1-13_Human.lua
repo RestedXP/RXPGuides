@@ -35,7 +35,7 @@ step << Warlock
     >>|cRXP_WARN_Run into the Tent at the Defias Camp|r
     >>Open the |cRXP_PICK_Stolen Books|r. Loot it for the |cRXP_LOOT_Powers of the Void|r
     >>|cRXP_WARN_You can loot the |cRXP_LOOT_Powers of the Void|r safely while inside the Tent! Watch the video on how to do this|r
-    .link https://www.youtube.com/watch?v=0zC2bDBl6C4 >> |cRXP_WARN_Click here for video reference|r
+    .link https://youtu.be/3qQwsJhAZIk >> |cRXP_WARN_Click here for video reference|r
     .complete 1598,1 --Collect Powers of the Void (x1)
 step << Warlock
     #completewith next

@@ -1129,6 +1129,20 @@ step
     .mob Young Fleshripper
     .mob Fleshripper
 step
+    #completewith next
+    >>Kill |cFFFF5722Defias Trappers|r and |cFFFF5722Defias Smugglers|r. Loot them for their |cFF00BCD4Red Leather Bandanas|r
+    .complete 12,1 -- Defias Trapper slain (15)
+    .complete 12,2 -- Defias Smuggler slain (15)
+    .complete 153,1 -- Red Leather Bandana (15)
+    .mob Defias Trapper
+    .mob Defias Smuggler
+step
+    .goto Westfall,36.24,54.52
+    >>Open |cRXP_PICK_Alexston's Chest|r. Loot it for |cRXP_LOOT_A Simple Compass|r
+    .complete 399,1 --A Simple Compass (1)
+    .isOnQuest 399
+step
+    #completewith next
     >>Kill |cFFFF5722Defias Trappers|r and |cFFFF5722Defias Smugglers|r. Loot them for their |cFF00BCD4Red Leather Bandanas|r
     .goto Westfall,48.21,46.70,60,0
     .goto Westfall,46.74,52.87,60,0
@@ -3946,7 +3960,7 @@ step
     .isQuestComplete 945
 step
     #completewith end
-    +Save up to 6 |cRXP_LOOT_Gooey Spider Legs|r looted from the |cRXP_LOOT_Spiders|r in the zone for later
+    >>Save up to 6 |cRXP_LOOT_Gooey Spider Legs|r looted from the |cRXP_ENEMY_Spiders|r in the zone for later
     .collect 2251,6,93,1 -- Gooey Spider Legs
 step << Hunter
     .goto Ashenvale,18.010,59.832
@@ -4221,13 +4235,9 @@ step
     .target Billibub Cogspinner
 step
 .dungeon DM
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r and |cRXP_FRIENDLY_Wilder Thistlenettle|r
-    .accept 2040 >> Accept Underground Assault
     .goto StormwindClassic,55.510,12.504
-    .accept 167 >> Accept Oh Brother. . .
-    .accept 168 >> Accept Collecting Memories
-    .goto StormwindClassic,65.438,21.175
-    .target Wilder Thistlenettle
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r
+    .accept 2040 >> Accept Underground Assault
     .target Shoni the Shilent
 step << !NightElf
 	.isOnQuest 1338
@@ -4235,6 +4245,19 @@ step << !NightElf
     .target Furen Longbeard
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Furen Longbeard|r
     .turnin 1338 >> Turn in Stormpike's Order
+step
+.dungeon DM
+    .goto StormwindClassic,65.438,21.175
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r
+    .accept 167 >> Accept Oh Brother. . .
+    .accept 168 >> Accept Collecting Memories
+    .target Wilder Thistlenettle
+step << !NightElf
+    .goto StormwindClassic,49.194,30.284
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r
+    .turnin 399 >> Turn in Humble Beginnings
+    .target Baros Alexston
+    .isOnQuest 399
 step << Mage
     #completewith next
     .goto StormwindClassic,37.69,82.09,10 >> Travel to the Mage Tower
