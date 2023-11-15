@@ -659,7 +659,6 @@ local function CalculateDPSWeight(itemData, stats)
     end
 
     local dpsWeights = {}
-    local highestDPSWeight = -1
     local itemEquipLoc = itemData.itemEquipLoc
     local speedWeightKey, overallWeaponWeight, dpsWeight, speedKindWeight
 
@@ -691,16 +690,14 @@ local function CalculateDPSWeight(itemData, stats)
             -- (DPS * 1_DPS_WEIGHT) + (SPEED * WEAPON_WEIGHT)
             overallWeaponWeight = dpsWeight + speedKindWeight
 
-            if overallWeaponWeight > highestDPSWeight then
-                highestDPSWeight = overallWeaponWeight
-            end
-
-            tinsert(dpsWeights,
-                    {['Weight'] = overallWeaponWeight, ['Key'] = keySuffix})
+            dpsWeights[keySuffix] = {
+                ['overallWeight'] = overallWeaponWeight,
+                ['scaleWeight'] = session.activeStatWeights[speedWeightKey]
+            }
         end
     end
 
-    return highestDPSWeight, dpsWeights
+    return dpsWeights
 end
 
 local function CalculateSpellWeight(stats, tooltipTextLines)
@@ -859,16 +856,18 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
         -- Weapon DPS only comes back as a single stat/key
         if key == 'ITEM_MOD_DAMAGE_PER_SECOND_SHORT' then
             -- CalculateDPSWeight requires speed pulled from text
-            statWeight = CalculateDPSWeight(itemData, stats)
-            -- print("Key", key, "Value", value, "weighted at", statWeight)
 
+            itemData.dpsWeights = CalculateDPSWeight(itemData, stats)
+            -- print("Key", key, "Value", value, "weighted at", statWeight)
             -- If weapon DPS fails to parse, return nil
-            if not statWeight then
+            if not itemData.dpsWeights then
                 -- print("CalculateDPSWeight return nil", itemData.itemLink)
                 return
             end
+            statWeight = nil
 
-            totalWeight = totalWeight + statWeight
+            -- dpsWeights is evaluated later, based on slot comparison wich this level doesn't know about
+            -- totalWeight = totalWeight + statWeight
         elseif key == 'ITEM_MOD_SPELL_DAMAGE_DONE' then
             -- ITEM_MOD_SPELL_DAMAGE_DONE is terrible, but it's built-in so key off that to parse spell damage
             statWeight = CalculateSpellWeight(stats, tooltipTextLines)
@@ -893,18 +892,25 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
     itemData.totalWeight = addon.Round(totalWeight, 2)
     itemData.stats = stats
 
-    -- Only cache/return >0 items, 0 was likely an edge case failure
-    if itemData.totalWeight > 0 then
-        session.itemCache[itemLink] = itemData
+    -- TODO validate edge cases or failures before return
+    session.itemCache[itemLink] = itemData
 
-        return itemData
-    end
+    return itemData
 end
+
+-- Used for dpsWeights post-processing
+local SPEED_SUFFIX_SLOT_MAP = {
+    ['2H'] = _G.INVSLOT_MAINHAND,
+    ['MH'] = _G.INVSLOT_MAINHAND,
+    ['OH'] = _G.INVSLOT_OFFHAND,
+    ['RANGED'] = _G.INVSLOT_RANGED
+}
 
 -- Moved to make nested loops less egregious without break/continue
 -- return ratio, debugMsg
 function addon.itemUpgrades:GetEquippedComparisonRatio(equippedItemLink,
-                                                       comparedData)
+                                                       comparedData,
+                                                       slotComparisonId)
     if not comparedData or not equippedItemLink then
         -- print("GetEquippedComparisonRatio: not comparedData or not equippedItemLink ")
         return nil, "invalid parameters"
@@ -918,19 +924,35 @@ function addon.itemUpgrades:GetEquippedComparisonRatio(equippedItemLink,
         return nil, "not equippedData"
     end
 
-    if equippedData.totalWeight == 0 or comparedData.totalWeight == 0 then
+    local equippedWeight = equippedData.totalWeight
+    local comparedWeight = comparedData.totalWeight
+    -- _G.INVSLOT_RANGED, _G.INVSLOT_OFFHAND, _G.INVSLOT_MAINHAND
+    -- MH / OH have more complex handling, requires DPS calculations here
+
+    for suffix, data in pairs(equippedData.dpsWeights or {}) do
+        if slotComparisonId == SPEED_SUFFIX_SLOT_MAP[suffix] then
+            equippedWeight = equippedWeight + data.overallWeight
+        end
+    end
+
+    for suffix, data in pairs(comparedData.dpsWeights or {}) do
+        if slotComparisonId == SPEED_SUFFIX_SLOT_MAP[suffix] then
+            comparedWeight = comparedWeight + data.overallWeight
+        end
+    end
+
+    if equippedWeight == 0 or comparedWeight == 0 then
         -- Prevent division by 0
         -- One of these has no stats, so treat same as empty slot (nil)
         return nil, _G.NONE
-    elseif comparedData.totalWeight > equippedData.totalWeight then
-        return addon.Round(comparedData.totalWeight / equippedData.totalWeight,
-                           2)
-    elseif comparedData.totalWeight < equippedData.totalWeight then
+    elseif comparedWeight > equippedWeight then
+        return addon.Round(comparedWeight / equippedWeight, 2)
+    elseif comparedWeight < equippedWeight then
         -- Item upgrade being negative is confusing and difficult to represent accurately, ignore
-        -- return -1 * addon.Round(comparedData.totalWeight / equippedData.totalWeight, 2)
+        -- return -1 * addon.Round(comparedWeight / equippedWeight, 2)
         -- Display 'downgrade' when debugging
         return nil, 'downgrade'
-    elseif comparedData.totalWeight == equippedData.totalWeight then
+    elseif comparedWeight == equippedWeight then
         return 0, 'equal'
     end
 
@@ -1000,7 +1022,7 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
             debug = 'same'
         else
             ratio, debug = self:GetEquippedComparisonRatio(equippedItemLink,
-                                                           comparedData)
+                                                           comparedData, slotId)
         end
 
         if ratio or addon.settings.profile.debug then
