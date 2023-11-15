@@ -4,11 +4,13 @@ if faction == "Horde" then return end
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance
-#name 11-16 Darkshore
+#name 14-16 Darkshore
+#displayname 11-16 Darkshore << NightElf
+#displayname 13-16 Darkshore << Dwarf Hunter
+#displayname 15-16 Darkshore << !NightElf !Hunter
 #version 1
 #group RestedXP Alliance 1-20
 #next 16-19 Darkshore
-#defaultfor Hunter/NightElf
 
 step << NightElf
     .goto Teldrassil,56.25,92.44
@@ -385,7 +387,7 @@ step << Druid
     .use 15208 >>|cFFFCDC00Use the|r |T132857:0|t[Cenarion Moondust] |cFFFCDC00at the |cFFDB2EEFMoonkin Stone|r inside the cave to summon |cFFFF5722Lunaclaw|r|r
     >>Kill |cFFFF5722Lunaclaw|r
     .complete 6001,1 --Defeat Lunaclaw (x1)
-step << !Druid
+step << Hunter/NightElf !Druid
 	#era/som
     #completewith next
     .hs >> Hearth to Auberdine
@@ -640,8 +642,7 @@ step
     #label xp15
     #requires ghosts
     .goto Felwood,22.39,29.45
-    .xp 15 >> Grind to level 15 << !Hunter
-    .xp 15.75 >> Grind to level 15 + 75% << Hunter
+    .xp 15.75 >> Grind to level 15 + 75%
 step
 #map Darkshore
     #label xp15
@@ -895,8 +896,8 @@ step << NightElf
     #completewith next
     +Grind until your HS cooldown is <9 minutes. Travel to Auberdine
 step << !NightElf
-    #completewith next
-    .hs >> Hearth to Auberdine
+    #completewith darkshoret1n
+    .subzone 442 >> Head Back to Auberdine
 step << !NightElf
 #map Darkshore
     .goto Felwood,20.04,16.35
@@ -917,6 +918,7 @@ step
     .skill cooking,<10,1 -- step only displays if skill is 10 or higher than x
     .target Alanndarian Nightsong
 step
+#label darkshoret1n
 #map Darkshore
     .goto Felwood,19.98,14.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Thundris Windweaver|r
@@ -1039,7 +1041,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor !NightElf !Hunter
-#next 14-19 Darkshore
+#next 14-16 Darkshore
 
 step
     #sticky
@@ -1445,9 +1447,9 @@ RXPGuides.RegisterGuide([[
 #name 16-19 Darkshore
 #version 1
 #group RestedXP Alliance 1-20
-#defaultfor Hunter/NightElf
 #next 19-20 Redridge << !Hunter
 #next 19-21 Darkshore/Ashenvale << Hunter
+--?
 
 step << NightElf !Druid
     .goto Darkshore,36.71,44.98,5,0
@@ -1583,6 +1585,16 @@ step << Druid
     .goto Darkshore,45.7,50.3,0
     >>Loot |cFF00BCD4Lunar Fungi|r on the ground throughout caves
     .complete 6123,2
+step << !Druid
+#map Darkshore
+    .goto Felwood,19.64,39.52
+    >>Click the |cFFDB2EEFBeached Sea Turtle|r
+    .accept 4722 >> Accept Beached Sea Turtle
+step
+#map Darkshore
+    .goto Felwood,18.41,49.43
+    >>Click the |cFFDB2EEFBeached Sea Creature|r
+    .accept 4728 >> Accept Beached Sea Creature
 step
     .goto Darkshore,38.8,58.8,50,0
     .goto Darkshore,39.99,78.46
@@ -1651,6 +1663,7 @@ step
 step
     #completewith LastBuzz
     >>Kill |cFFFF5722Moonstalker Sires|r. Loot them for their |cFF00BCD4Pelts|r
+    *Don't go out of your way to do this quest, you'll have another chance to finish it later
     .complete 986,1 -- Fine Moonstalker Pelt (5)
     .unitscan Moonstalker Sire
 step
@@ -1741,6 +1754,7 @@ step << Hunter
     .complete 731,1
     .isOnQuest 731
 step << Hunter
+#map Darkshore
     #era/som << Dwarf
     .goto Ashenvale,13.97,4.10
     >>Click the |cFFDB2EEFBeached Sea Creature|r
@@ -1748,33 +1762,31 @@ step << Hunter
     >>|cFFFCDC00This quest can be VERY difficult. Engage the |cFFFF5722Murlocs|r 1 by 1, otherwise you may agro multiple at the same time|r
     .link https://www.twitch.tv/videos/992307825?t=05h48m36s >> |cFFFCDC00Click here for a video guide|r
 step << Hunter
+#map Darkshore
 	#era/som << Dwarf
     .goto Ashenvale,13.93,2.01
     >>Click the |cFFDB2EEFBeached Sea Turtle|r
     .accept 4732 >> Accept Beached Sea Turtle
-step << Hunter
+step << !Hunter
 #map Darkshore
-	#era/som << Dwarf
-    .goto Felwood,13.47,64.01
-    >>Click the |cFFDB2EEFBeached Sea Turtle|r
-    .accept 4731 >> Accept Beached Sea Turtle
-step << Hunter
-#map Darkshore
-	#era/som << Dwarf
     .goto Felwood,14.62,60.72
     >>Click the |cFFDB2EEFBeached Sea Creature|r
     .accept 4730 >> Accept Beached Sea Creature
 step
 #map Darkshore
-    #label south1
-    .goto Felwood,18.41,49.43
-    >>Click the |cFFDB2EEFBeached Sea Creature|r
-    .accept 4728 >> Accept Beached Sea Creature
-step << !Druid
-#map Darkshore
-    .goto Felwood,19.64,39.52
+    #label south1 << !Hunter
+    .goto Felwood,13.47,64.01
     >>Click the |cFFDB2EEFBeached Sea Turtle|r
-    .accept 4722 >> Accept Beached Sea Turtle
+    .accept 4731 >> Accept Beached Sea Turtle
+step << Hunter
+#label south1
+#map Darkshore
+    .goto Felwood,14.62,60.72
+    >>Click the |cFFDB2EEFBeached Sea Creature|r
+    .accept 4730 >> Accept Beached Sea Creature
+step << !NightElf !Hunter !Druid
+    #completewith next
+    .hs >> Hearth to Auberdine
 step << Druid
     #requires earthroot
 	#completewith next
@@ -1792,7 +1804,7 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Sindrayl|r
     .fly Auberdine >> Fly to Darkshore
     .target Sindrayl
-step << !Druid
+step << NightElf !Druid/Dwarf Hunter
 #map Darkshore
     #completewith next
     .goto Felwood,19.10,20.63,100 >> Travel to Auberdine
@@ -1804,16 +1816,16 @@ step
     .turnin 4722 >> Turn in Beached Sea Turtle << !Druid
     .turnin 4728 >> Turn in Beached Sea Creature
     .target Gwennyth Bly'Leggonde
-step << Hunter
+step
 #map Darkshore
-     #era/som << Dwarf
     .goto Darkshore,36.71,44.98,5,0
     .goto Felwood,19.10,20.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gwennyth Bly'Leggonde|r
-    .turnin 4730 >> Turn in Beached Sea Creature
-    .turnin 4731 >> Turn in Beached Sea Turtle
-    .turnin 4732 >> Turn in Beached Sea Turtle
-    .turnin 4733 >> Turn in Beached Sea Creature
+    .turnin -4730 >> Turn in Beached Sea Creature
+    .turnin -4731 >> Turn in Beached Sea Turtle
+    .turnin -4732 >> Turn in Beached Sea Turtle << Hunter
+    .turnin -4733 >> Turn in Beached Sea Creature << Hunter
+    +ij
     .target Gwennyth Bly'Leggonde
 step
 #map Darkshore
@@ -1953,17 +1965,17 @@ step
     .goto Darkshore,60.26,21.75
     >>Loot the |cFF00BCD4Mathystra Relics|r on the ground
     .complete 951,1 -- Mathystra Relics (6)
-step << !Warrior !Paladin !Rogue !Druid
+step
 #map Darkshore
     #completewith next
     .goto Winterspring,6.37,16.66,50 >> Travel to Mist's Edge
-step << !Warrior !Paladin !Rogue !Druid
+step
 #map Darkshore
     .goto Winterspring,6.37,16.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gelkak Gyromast|r
     .accept 2098 >> Accept Gyromast's Retrieval
     .target Gelkak Gyromast
-step << !Warrior !Paladin !Rogue !Druid
+step
     #completewith next
     .goto Darkshore,56.10,16.88,0
     >>Kill |cFFFF5722Raging Reef Crawlers|r and |cFFFF5722Encrusted Tide Crawlers|r. Loot them for the |cFF00BCD4Bottom of Gelkak's Key|r
@@ -1971,14 +1983,14 @@ step << !Warrior !Paladin !Rogue !Druid
     .complete 2098,3 -- Bottom of Gelkak's Key
     .mob Raging Reef Crawler
     .mob Encrusted Tide Crawler
-step << !Warrior !Paladin !Rogue !Druid
+step
     .goto Darkshore,54.93,12.19
     >>Kill |cFFFF5722Greymist Oracles|r and |cFFFF5722Greymist Tidehunter|r. Loot them for the |cFF00BCD4Middle of Gelkak's Key|r
     >>|cFFFCDC00Be aware of |cFFFF5722Greymist Oracles|r |T136048:0|t[Lightning Bolt] damage and they can also heal with |T136052:0|t[Healing Wave]|r
     .complete 2098,2 -- Middle of Gelkak's Key (1)
     .mob Greymist Oracle
     .mob Greymist Tidehunter
-step << !Warrior !Paladin !Rogue !Druid
+step
     .goto Darkshore,55.59,16.98,45,0
     .goto Darkshore,53.76,18.96,45,0
     .goto Darkshore,51.34,22.00,45,0
@@ -1988,7 +2000,7 @@ step << !Warrior !Paladin !Rogue !Druid
     .complete 2098,3 -- Bottom of Gelkak's Key
     .mob Raging Reef Crawler
     .mob Encrusted Tide Crawler
-step << !Warrior !Paladin !Rogue !Druid
+step
     #sticky
     #label foreststriders
     .goto Darkshore,59.29,13.22,55,0
@@ -2008,15 +2020,15 @@ step
     .mob Moonstalker Sire
     .mob Moonstalker Matriarch
     .mob Moonstalker Runt
-step << !Warrior !Paladin !Rogue !Druid
+step
 #map Darkshore
     #requires foreststriders
     .goto Winterspring,6.37,16.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gelkak Gyromast|r
     .turnin 2098 >> Turn in Gyromast's Retrieval
-    .accept 2078 >> Accept Gyromast's Revenge
+    .accept 2078 >> Accept Gyromast's Revenge << !Warrior !Paladin !Rogue
     .target Gelkak Gyromast
-step << !Warrior !Paladin !Rogue !Druid
+step << !Warrior !Paladin !Rogue
 #map Darkshore
     #completewith next
     .goto Winterspring,5.59,21.09
@@ -2024,23 +2036,24 @@ step << !Warrior !Paladin !Rogue !Druid
     >>|cFFFCDC00This quest is VERY difficult|r
     .skipgossip
     .target The Threshwackonator 4100
-step << !Warrior !Paladin !Rogue !Druid
+step << !Warrior !Paladin !Rogue
 #map Darkshore
     .goto Winterspring,6.37,16.66
     >>Escort |cFF00FF25The Threshwackonator 4100|r to |cFF00FF25Gelkak Gyromast|r
     >>Kill |cFFFF5722The Threshwackonator 4100|r once it turns hostile
     >>|cFFFCDC00This quest is VERY difficult|r
+    *Only use ranged attacks while running from it, avoid being at melee range << Druid
     .complete 2078,1
     .link https://clips.twitch.tv/VainAmorphousMacaroniPRChase-iGvhTnz0ked6LO0A >> |cFFFCDC00Click here for a video guide|r
     .mob The Threshwackonator 4100
-step << !Warrior !Paladin !Rogue !Druid
+step << !Warrior !Paladin !Rogue
 #map Darkshore
     .goto Winterspring,6.37,16.66
     .target Gelkak Gyromast
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gelkak Gyromast|r
     .turnin 2078 >> Turn in Gyromast's Revenge
     .isQuestComplete 2078
-step << !Warrior !Paladin !Rogue !Druid
+step << !Warrior !Paladin !Rogue
     #sticky
     .destroy 7442 >> Delete Gyromast's Key from your inventory
 step
@@ -2067,18 +2080,28 @@ step << Dwarf Hunter
     #hardcore
     #completewith next
     +Grind until your HS cooldown is <9 minutes then run back to Auberdine
-step << Dwarf Hunter
+step << !NightElf !Hunter
+    #softcore
+    #completewith next
+    .deathskip >> Die and respawn at the graveyard
+step << !NightElf
 #map Darkshore
     .goto Felwood,19.98,14.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Thundris Windweaver|r
     .turnin 4763 >> Turn in The Blackwood Corrupted
     .target Thundris Windweaver
-step << Dwarf Hunter
+step << !NightElf
 #map Darkshore
     .goto Felwood,21.63,18.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tharnariun Treetender|r
     .turnin 2139 >> Turn in Tharnariun's Hope
     .target Tharnariun Treetender
+step << !NightElf
+    .goto Darkshore,39.37,43.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Terenthis|r
+    .turnin 986 >> Turn in A Lost Master
+    .target Terenthis
+    .accept 993 >> Accept A Lost Master << Hunter
 step << Dwarf Hunter
     .goto Darkshore,33.17,40.17,40,0
     .goto Darkshore,33.17,40.17,0
@@ -2143,7 +2166,7 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Loganaar|r
     .trainer >> Train your class spells
     .target Loganaar
-step
+step << NightElf/Dwarf Hunter
     #completewith next
     .hs >> Hearth to Auberdine
 step
@@ -2159,7 +2182,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gubber Blump|r
     .turnin 1138 >> Turn in Fruit of the Sea
     .target Gubber Blump
-step
+step << NightElf
 #map Darkshore
     .goto Felwood,19.98,14.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Thundris Windweaver|r
@@ -2170,13 +2193,13 @@ step << NightElf Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Dalmond|r
     .vendor >> Stock up on |T132382:0|t[Sharp Arrows]
     .target Dalmond
-step
+step << NightElf
 #map Darkshore
     .goto Felwood,21.63,18.15
     .target Tharnariun Treetender
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tharnariun Treetender|r
     .turnin 2139 >> Turn in Tharnariun's Hope
-step
+step << NightElf
     .goto Darkshore,39.37,43.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Terenthis|r
     .turnin 986 >> Turn in A Lost Master
@@ -2559,6 +2582,7 @@ step << Hunter
 step << !Hunter
     #completewith next
     .goto Darkshore,32.75,42.21,35 >> Travel to the Auberdine Docks. Wait for the Menethil Harbor boat
+    .zoneskip Wetlands
 step << !Hunter
     .goto Darkshore,32.44,43.71
     >>|cFFFCDC00Level your|r |T135966:0|t[First Aid] |cFFFCDC00and|r |T133971:0|t[Cooking] |cFFFCDC00while waiting for the Menethil Harbor boat|r
@@ -2566,70 +2590,70 @@ step << !Hunter
     .zoneskip Loch Modan
     .zoneskip Dun Morogh
     .zoneskip Ironforge
-step << !Hunter
+step << !Hunter NightElf
     .goto Wetlands,9.49,59.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Shellei|r
     .fp Wetlands>> Get the Wetlands flight path
     .target Shellei Brondir
-step << !Hunter
+step << !Hunter NightElf
     #completewith next
     .goto Wetlands,49.91,39.36,50 >> Travel east toward |cFF00FF25Einar Stonegrip|r
-step << !Hunter
+step << !Hunter NightElf
     .goto Wetlands,49.91,39.36
     .target Einar Stonegrip
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Einar Stonegrip|r
     .accept 469 >> Accept Daily Delivery
-step << !Hunter
+step << !Hunter NightElf
     #completewith next
     .goto Wetlands,53.14,70.38,30,0
     .goto Wetlands,48.32,67.07,35,0
     .goto Wetlands,50.14,72.10,30,0
     .goto Loch Modan,25.4,10.6,30 >> Travel to Loch Modan
     .zone Loch Modan >> |cFFFCDC00Stay on the main road to avoid mobs|r
-step << !Hunter
+step << !Hunter NightElf
     .goto Loch Modan,46.05,13.61
     .target Chief Engineer Hinderweir VII
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Chief Engineer Hinderweir VII|r
     .accept 250 >> Accept A Dark Threat Looms
-step << !Hunter
+step << !Hunter NightElf
     .goto Loch Modan,56.05,13.24
     >>Click the |cFFDB2EEFSuspicious Barrel|r
     .turnin 250 >> Turn in A Dark Threat Looms
     .accept 199 >> Accept A Dark Threat Looms
-step << !Hunter
+step << !Hunter NightElf
     .goto Loch Modan,46.05,13.61
     .target Chief Engineer Hinderweir VII
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Chief Engineer Hinderweir VII|r
     .turnin 199 >> Turn in A Dark Threat Looms
-step << !Hunter
+step << !Hunter NightElf
     #softcore
     #completewith next
     .deathskip >> Die and respawn at the |cFF00FF25Spirit Healer|r
-step << !Hunter
+step << !Hunter NightElf
     .goto Loch Modan,33.938,50.954
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Thorgrum|r
     .fp Thelsamar >> Get the Thelsamar flight path
     .target Thorgrum Borrelson
-step << !Hunter
+step << !Hunter NightElf
     .goto Loch Modan,21.30,68.60,40,0
     .goto Loch Modan,19.11,62.11,25,0
     .goto Dun Morogh,86.04,51.05,20 >> Travel to Dun Morogh
     .zoneskip Ironforge
     .zoneskip Dun Morogh
-step << !Hunter
+step << !Hunter NightElf
     #completewith next
     .deathskip >> Die and respawn at the |cFF00FF25Spirit Healer|r
     .zoneskip Ironforge
-step << !Hunter
+step << !Hunter NightElf
     .goto Dun Morogh,47.58,41.58,40,0
     .goto Dun Morogh,50.19,40.79,20,0
     .goto Ironforge,14.90,87.10,40 >> Travel to Ironforge
-step << !Hunter
+step << !Hunter NightElf
     .goto Ironforge,55.51,47.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gryth|r
     .fp Ironforge >> Get the Ironforge flight path
     .target Gryth Thurden
-step << !Hunter
+step << !Hunter NightElf
     #completewith next
     .goto Ironforge,67.84,42.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gearcutter Cogspinner|r
@@ -2638,20 +2662,47 @@ step << !Hunter
 --  >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube
     .target Gearcutter Cogspinner
-step << !Hunter
+step << !Hunter NightElf
     .goto Ironforge,78.00,52.00,5,0
     .zone Stormwind City >> Enter the Deeprun Tram. Take the tram to Stormwind
     >>|cFFFCDC00Level your|r |T135966:0|t[First Aid] |cFFFCDC00and|r |T133971:0|t[Cooking] |cFFFCDC00if needed while waiting for the tram|r
     >>|cFFFCDC00You will need your|r |T135966:0|t[First Aid] |cFFFCDC00to be 80 for a quest at level 24 << Rogue !Dwarf
+step << !NightElf !Hunter
+    .money <0.08
+    .goto Wetlands,10.4,56.0,25,0
+    .goto Wetlands,10.1,56.9,25,0
+    .goto Wetlands,10.6,57.2,25,0
+    .goto Wetlands,10.7,56.8
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Neal Allen|r
+    .vendor >> |cFFFCDC00Buy a|r |T133024:0|t[Bronze Tube]
+    >>|cFFFCDC00This is a limited supply item. Skip this step if |cFF00FF25Neal Allen|r doesn't have one|r
+	.target Neal Allen
+    .bronzetube
+step << !NightElf !Hunter
+    .goto Wetlands,9.49,59.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Shellei|r
+    .fly Ironforge >> Fly to Ironforge
+    .target Shellei Brondir
+step << !NightElf !Hunter
+    #completewith next
+    .goto Ironforge,56.23,46.83,0
+    .goto Ironforge,78.00,52.00,20 >> |cFFFCDC00Perform a Logout skip by jumping on top of one of the Gryphon's heads, and logging out, then back in|r
+    .link https://www.youtube.com/watch?v=PWMJhodh6Bw >> |cFFFCDC00Click here for a video guide|r
+step << !NightElf !Hunter
+    .goto Ironforge,78.00,52.00,5,0
+    .zone Stormwind City >> Enter the Deeprun Tram. Take the tram to Stormwind
+    >>|cFFFCDC00Level your|r |T135966:0|t[First Aid] |cFFFCDC00and|r |T133971:0|t[Cooking] |cFFFCDC00if needed while waiting for the tram|r
+    >>You will need your |T135966:0|t[First Aid] to be 80 for a quest at level 24 << Rogue !Dwarf
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
+--??
 << Alliance !Hunter !NightElf
 #name 14-19 Darkshore
 #version 1
 #group RestedXP Alliance 1-20
-#defaultfor !Hunter !NightElf
+#defaultfor None
 #next 19-20 Redridge
 
 step << NightElf

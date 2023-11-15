@@ -3535,7 +3535,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor Dwarf
-#next 11-16 Darkshore
+#next 14-16 Darkshore
 
 step
     #completewith next
@@ -6627,7 +6627,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor Dwarf
-#next 11-16 Darkshore
+#next 14-16 Darkshore
 
 step
     .goto Loch Modan,22.07,73.12

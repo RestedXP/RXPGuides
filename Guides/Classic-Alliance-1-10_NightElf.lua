@@ -306,7 +306,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor NightElf
-#next 11-16 Darkshore
+#next 14-16 Darkshore
 step
     .goto Teldrassil,60.5,56.3
     .target Zenn Foulhoof
@@ -708,7 +708,7 @@ step
     .turnin 489 >> Turn in Seek Redemption!
 step
     #completewith next
-    .goto Teldrassil,54.68,52.84,20,0 
+    .goto Teldrassil,54.68,52.84,20,0
     .goto Teldrassil,54.42,51.19,15 >> Travel to Fel Rock
 step << Hunter
     #era
@@ -1237,7 +1237,7 @@ step << Rogue
     .goto Darnassus,36.65,85.93
     .target Priestess A'moora
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
-    .accept 2518 >> Accept Tears of the Moon 
+    .accept 2518 >> Accept Tears of the Moon
 step << Hunter
     #sticky
 	.goto Teldrassil,41.2,44.4,0
