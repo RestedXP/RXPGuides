@@ -122,9 +122,8 @@ end
 
 function addon.targeting:UpdateMacro(queuedTargets)
     -- TODO add rare targets
-    if not addon.settings.profile.enableTargetMacro and shouldTargetCheck() then
-        return
-    end
+    if not addon.settings.profile.enableTargetMacro then return end
+    if not shouldTargetCheck() then return end
 
     if InCombatLockdown() then
         macroTargets = queuedTargets or macroTargets
