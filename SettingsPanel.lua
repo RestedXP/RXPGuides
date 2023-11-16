@@ -1834,7 +1834,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 1.3,
-                        hidden = addon.version > 40000,
+                        hidden = addon.version > 40000
                     },
                     drowningHeader = {
                         name = _G.STRING_ENVIRONMENTAL_DAMAGE_DROWNING,
@@ -3261,6 +3261,25 @@ function addon.settings:SetupMapButton()
         EasyMenu(buildWorldMapMenu(), self.worldMapButton.menuFrame,
                  self.worldMapButton, 0, 0, "MENU")
     end)
+
+    local ref = WorldMapFrame.MaximizeMinimizeFrame.MaximizeButton
+
+    local function recalculateMapButton()
+        if WorldMapFrame.isMaximized then
+            self.worldMapButton:SetSize(36, 36)
+            self.worldMapButton:SetPoint("TOPRIGHT", _G.WorldMapFrame,
+                                         "TOPRIGHT", -10, -26)
+        else
+            self.worldMapButton:SetSize(20, 20)
+            self.worldMapButton:SetPoint("TOPRIGHT", ref, "TOPLEFT", 0, -5.5)
+        end
+    end
+
+    -- self.worldMapButton:SetScript("OnShow", recalculateMapButton)
+
+    hooksecurefunc(ref, "Show", recalculateMapButton)
+    hooksecurefunc(WorldMapFrame.MaximizeMinimizeFrame.MinimizeButton, "Show",
+                   recalculateMapButton)
 
 end
 
