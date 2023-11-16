@@ -1825,7 +1825,6 @@ step
     .turnin -4731 >> Turn in Beached Sea Turtle
     .turnin -4732 >> Turn in Beached Sea Turtle << Hunter
     .turnin -4733 >> Turn in Beached Sea Creature << Hunter
-    +ij
     .target Gwennyth Bly'Leggonde
 step
 #map Darkshore

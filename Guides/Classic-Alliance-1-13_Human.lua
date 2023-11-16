@@ -156,7 +156,6 @@ step << Rogue
     >>|cRXP_BUY_Buy a|r |T135650:0|t[Dirk]
     .collect 2139,1 -- Dirk (1)
     .target Janos Hammerknuckle
-    .money <0.0057
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.2
 step << Rogue
     #completewith next
@@ -360,7 +359,7 @@ step
     .goto Elwynn Forest,48.923,41.606
     .turnin 21,1 >> Turn in Skirmish at Echo Ridge << Rogue
     .turnin 21,2 >> Turn in Skirmish at Echo Ridge << Warrior/Paladin
-    .turnin 21,3 >> Turn in Skirmish at Echo Ridge << !Warrior !Paladin
+    .turnin 21,3 >> Turn in Skirmish at Echo Ridge << !Warrior !Paladin !Rogue
     .accept 54 >> Accept Report to Goldshire
 step << Priest/Mage
     #sticky
@@ -438,13 +437,13 @@ step << Rogue
     .money <0.0400
     .goto Elwynn Forest,41.529,65.900
     .collect 2494,1 --Collect Stiletto (1)
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
-    #completewith next
+    #completewith GSHS
     +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
     .use 2494
     .itemcount 2494,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.32
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.29
 step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
     >>|cRXP_WARN_Buy and equip a|r |T133053:0|t[Wooden Mallet]
@@ -478,6 +477,7 @@ step
     .goto Elwynn Forest,43.318,65.705
     .accept 60 >> Accept Kobold Candles
 step
+    #label GSHS
     .goto Elwynn Forest,43.771,65.803
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Farley|r
     .target Innkeeper Farley
