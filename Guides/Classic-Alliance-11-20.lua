@@ -30,18 +30,10 @@ step << NightElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Vesprystus|r
     .fly Auberdine >> Fly to Darkshore
     .target Vesprystus
-step << !NightElf
-#map Darkshore
-    #completewith next
-    .goto Darkshore,36.71,44.98,5,0
-    .goto Felwood,19.10,20.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gwennyth Bly'Leggonde|r
-    .fp Auberdine >> Get the Auberdine flight path
-    .target Gwennyth Bly'Leggonde
-step
+step << NightElf
 #map Darkshore
     #label WashedA
-    .goto Darkshore,36.71,44.98,5,0
+    .goto Darkshore,36.71,44.98,10,0
     .goto Felwood,19.10,20.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gwennyth Bly'Leggonde|r
     .accept 3524 >> Accept Washed Ashore
@@ -52,6 +44,14 @@ step << NightElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Laird|r
     .turnin 6342 >> Turn in Flight to Auberdine
     .target Laird
+step
+    #optional
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
+    .goto Darkshore,36.096,44.931
+    .accept 1141 >> Accept The Family and the Fishing Pole
+    .turnin 1141 >> Turn in The Family and the Fishing Pole
+    .itemcount 12238,6 -- Darkshore Grouper (6)
+    .target Gubber Blump
 step
     #completewith BigThreat
     .goto Darkshore,37.04,44.13
@@ -80,6 +80,22 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Terenthis|r
     .accept 984 >> Accept How Big a Threat?
     .target Terenthis
+step << !NightElf
+#map Darkshore
+    #label WashedA
+    .goto Darkshore,36.71,44.98,5,0
+    .goto Felwood,19.10,20.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gwennyth Bly'Leggonde|r
+    .accept 3524 >> Accept Washed Ashore
+    .target Gwennyth Bly'Leggonde
+step << !NightElf
+#map Darkshore
+    #completewith next
+    .goto Darkshore,36.71,44.98,5,0
+    .goto Felwood,19.10,20.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gwennyth Bly'Leggonde|r
+    .fp Auberdine >> Get the Auberdine flight path
+    .target Gwennyth Bly'Leggonde
 step << Dwarf Hunter
     #sticky
     .goto Darkshore,40.75,70.49,40,0
@@ -239,7 +255,7 @@ step
     .accept 958 >> Accept Tools of the Highborne
     .accept 954 >> Accept Bashal'Aran
     .target Thundris Windweaver
-step
+step << !NightElf
 	#era/som
     #completewith MistVeil
     .goto Darkshore,35.44,35.83,55,0
@@ -695,6 +711,7 @@ step
     .goto Felwood,19.10,20.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gwennyth Bly'Leggonde|r
     .turnin 4722 >> Turn in Beached Sea Turtle
+    .turnin 4723 >> Turn in Beached Sea Creature
     .target Gwennyth Bly'Leggonde
 step
 #map Darkshore
@@ -729,7 +746,7 @@ step
     +|cFFFCDC00Use your|r |T133971:0|t[Cooking] |cFFFCDC00profession to make Herb Baked Eggs. Do this until your|r |T133971:0|t[Cooking] |cFFFCDC00has reached level 10|r
     .skill cooking,10,1 -- step only displays if cooking skill is less than 10
     .target Gorbold Steelhand
-step << NightElf
+step
 #map Darkshore
     .goto Felwood,19.98,14.40
     .target Thundris Windweaver
@@ -776,10 +793,11 @@ step
     .mob Foreststrider
 step
     #era/som
-    #completewith StalkerFangs
+    #completewith end1
     >>Kill |cFFFF5722Moonstalkers|r and |cFFFF5722Moonstalker Runts|r. Loot them for their |cFF00BCD4Fangs|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .unitscan Moonstalker;Moonstalker Runt
+    .isOnQuest 1002
 step << !Druid !Hunter
 #map Darkshore
     .goto Felwood,27.70,10.03
@@ -897,19 +915,14 @@ step << NightElf
     +Grind until your HS cooldown is <9 minutes. Travel to Auberdine
 step << !NightElf
     #completewith darkshoret1n
-    .subzone 442 >> Head Back to Auberdine
+    .subzone 442 >> Head back to Auberdine
 step << !NightElf
 #map Darkshore
-    .goto Felwood,20.04,16.35
-    .target Archaeologist Hollee
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Archaeologist Hollee|r
-    .accept 729 >> Accept The Absent Minded Prospector
-step << !NightElf
-#map Darkshore
-    .goto Felwood,19.98,14.40
-    .target Thundris Windweaver
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Thundris Windweaver|r
-    .turnin 958 >> Turn in Tools of the Highborne
+    .isQuestComplete 2138
+    .goto Felwood,21.63,18.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tharnariun Treetender|r
+    .turnin 2138 >> Turn in Cleansing of the Infected
+    .target Tharnariun Treetender
 step
     .goto Darkshore,37.70,40.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Alanndarian Nightsong|r
@@ -942,6 +955,17 @@ step
     .target Sentinel Glynda Nal'Shea
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Sentinel Glynda Nal'Shea|r
     .turnin 4813 >> Turn in The Fragments Within
+step << !NightElf
+#map Darkshore
+    .goto Felwood,20.04,16.35
+    .target Archaeologist Hollee
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Archaeologist Hollee|r
+    .accept 729 >> Accept The Absent Minded Prospector
+step
+    .goto Darkshore,37.78,44.06
+    .use 12346 >>|cFFFCDC00Use the|r |T133748:0|t[Empty Cleansing Bowl] |cFFFCDC00at the|r |cFFDB2EEFAuberdine Moonwell|r
+    .collect 12347,1,4763,1
+    .isOnQuest 4763
 step
 #map Darkshore
     .goto Felwood,19.90,18.40
@@ -953,11 +977,6 @@ step
     .goto Darkshore,37.21,44.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tClick on |cFF00FF25The Wanted Poster|r
     .accept 4740 >> Accept WANTED: Murkdeep!
-step
-    .goto Darkshore,37.78,44.06
-    .use 12346 >>|cFFFCDC00Use the|r |T133748:0|t[Empty Cleansing Bowl] |cFFFCDC00at the|r |cFFDB2EEFAuberdine Moonwell|r
-    .collect 12347,1,4763,1
-    .isOnQuest 4763
 step << NightElf !Druid
     .goto Felwood,19.27,19.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Laird|r
@@ -969,9 +988,7 @@ step
     .goto Darkshore,36.71,44.98,5,0
     .goto Felwood,19.10,20.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gwennyth Bly'Leggonde|r
-    .turnin 4723 >> Turn in Beached Sea Creature
     .turnin 4725 >> Turn in Beached Sea Turtle
-    .turnin 4722 >> Turn in Beached Sea Turtle << Hunter
     .target Gwennyth Bly'Leggonde
 step << Druid
 #map Darkshore
@@ -1116,7 +1133,7 @@ step
     .vendor >>|T133918:0|t[Longjaw Mud Snapper] |cFFFCDC00is very cheap|r
 	.target Innkeeper Heather
 step
-	#completewith bennytime
+	#completewith GnollPaws
     >>Open the |cFFDB2EEFSacks of Oats|r on the ground. Loot them for the |cFF00BCD4Handful of Oats|r
     >>|cFFFCDC00You can usually find them near Farm Fences or Buildings|r
     .complete 151,1 --Handful of Oats (8)
@@ -1131,7 +1148,7 @@ step
     .mob Young Fleshripper
     .mob Fleshripper
 step
-    #completewith next
+    #completewith bennytime
     >>Kill |cFFFF5722Defias Trappers|r and |cFFFF5722Defias Smugglers|r. Loot them for their |cFF00BCD4Red Leather Bandanas|r
     .complete 12,1 -- Defias Trapper slain (15)
     .complete 12,2 -- Defias Smuggler slain (15)
@@ -1144,7 +1161,13 @@ step
     .complete 399,1 --A Simple Compass (1)
     .isOnQuest 399
 step
-    #completewith next
+	#label bennytime
+    .goto Westfall,49.34,19.27
+    >>Open |cFFDB2EEFFurlbrow's Wardrobe|r. Loot it for |cFF00BCD4Furlbrow's Pocket Watch|r
+    >>|cFFFCDC00You can loot |cFFDB2EEFFurlbrow's Wardrobe|r from outside if you angle your camera correctly|r
+	>>|cFFFCDC00Be aware of |cFFFF5722Benny Blanco|r. He hits hard|r
+    .complete 64,1 --Furlbrow's Pocket Watch
+step
     >>Kill |cFFFF5722Defias Trappers|r and |cFFFF5722Defias Smugglers|r. Loot them for their |cFF00BCD4Red Leather Bandanas|r
     .goto Westfall,48.21,46.70,60,0
     .goto Westfall,46.74,52.87,60,0
@@ -1153,35 +1176,15 @@ step
     .goto Westfall,41.21,40.75,60,0
     .goto Westfall,44.57,26.09,60,0
     .goto Westfall,48.21,46.70
-    .goto Westfall,41.21,40.75
+    .goto Westfall,41.21,40.75,0
     .complete 12,1 -- Defias Trapper slain (15)
     .complete 12,2 -- Defias Smuggler slain (15)
     .complete 153,1 -- Red Leather Bandana (15)
     .mob Defias Trapper
     .mob Defias Smuggler
 step
-	#label bennytime
-    .goto Westfall,49.34,19.27
-    >>Open |cFFDB2EEFFurlbrow's Wardrobe|r. Loot it for |cFF00BCD4Furlbrow's Pocket Watch|r
-    >>|cFFFCDC00You can loot |cFFDB2EEFFurlbrow's Wardrobe|r from outside if you angle your camera correctly|r
-	>>|cFFFCDC00Be aware of |cFFFF5722Benny Blanco|r. He hits hard|r
-    .complete 64,1 --Furlbrow's Pocket Watch
-step
-	#completewith next
-    >>Open the |cFFDB2EEFSacks of Oats|r on the ground. Loot them for the |cFF00BCD4Handful of Oats|r
-	>>|cFFFCDC00You can usually find them near Farm Fences or Buildings|r
-	.complete 151,1 --Handful of Oats (8)
-step
     #era
-    .goto Westfall,56.40,13.50,60,0
-    .goto Westfall,42.82,14.70,60,0
-    .goto Westfall,45.83,13.75,60,0
-    .goto Westfall,52.36,14.82,60,0
-    .goto Westfall,56.86,13.53,60,0
-    .goto Westfall,56.86,13.53,60,0
-    .goto Westfall,42.82,14.70,60,0
-    .goto Westfall,52.36,14.82,60,0
-    .goto Westfall,45.83,13.75
+    #completewith next
     >>Kill |cFFFF5722Riverpaw Gnolls|r and |cFFFF5722Riverpaw Scouts|r. Loot them for their |cFF00BCD4Gnoll Paws|r
     .complete 102,1 --Gnoll Paw (8)
     .mob Riverpaw Gnoll
@@ -1192,10 +1195,30 @@ step
     .goto Westfall,56.40,9.40,60,0
     .goto Westfall,52.13,10.36,60,0
     .goto Westfall,56.40,9.40
+    .goto Westfall,52.13,10.36,0
     >>Kill |cFFFF5722Murloc Raiders|r and |cFFFF5722Murloc Coastrunners|r. Loot them for their |cFF00BCD4Eyes|r
     .collect 730,3,38,1 --Murloc Eye (3)
     .mob Murloc Raider
     .mob Murloc Coastrunner
+step
+    #era
+    #label GnollPaws
+    .goto Westfall,56.40,13.50,60,0
+    .goto Westfall,42.82,14.70,60,0
+    .goto Westfall,45.83,13.75,60,0
+    .goto Westfall,52.36,14.82,60,0
+    .goto Westfall,56.86,13.53,60,0
+    .goto Westfall,56.86,13.53,60,0
+    .goto Westfall,42.82,14.70,60,0
+    .goto Westfall,52.36,14.82,60,0
+    .goto Westfall,45.83,13.75
+    .goto Westfall,42.82,14.70,0
+    .goto Westfall,52.36,14.82,0
+    .goto Westfall,56.81,13.30,0
+    >>Kill |cFFFF5722Riverpaw Gnolls|r and |cFFFF5722Riverpaw Scouts|r. Loot them for their |cFF00BCD4Gnoll Paws|r
+    .complete 102,1 --Gnoll Paw (8)
+    .mob Riverpaw Gnoll
+    .mob Riverpaw Scout
 step
     .goto Westfall,57.48,13.58,60,0
     .goto Westfall,57.23,19.78,60,0
@@ -1237,6 +1260,23 @@ step
     >>|cFFFCDC00Do NOT sell |T133884:0|t[Murloc Eyes], |T135997:0|t[Goretusk Snouts], |T134341:0|t[Goretusk Livers] or |T133972:0|t[Stringy Vulture Meat]|r
 	.target Farmer Saldean
 step
+    .isQuestAvailable 38
+    .goto Westfall,53.84,32.00,60,0
+    .goto Westfall,50.80,21.76,80,0
+    .goto Westfall,44.47,35.35,80,0
+    .goto Westfall,53.84,32.00,80,0
+    .goto Westfall,50.80,21.76,80,0
+    .goto Westfall,44.47,35.35,80,0
+    .goto Westfall,53.84,32.00,60,0
+    .goto Westfall,44.47,35.35,60,0
+    .goto Westfall,50.80,21.76
+    >>Kill |cRXP_ENEMY_Harvest Watchers|r. Loot them for their |cRXP_LOOT_Okra|r and |cRXP_LOOT_Flasks of Oil|r
+    .complete 9,1 --Harvest Watcher (20)
+    .collect 732,3,38,1 --Okra (3)
+    .collect 814,5,103,1 --Flask of Oil (5)
+    .mob Harvest Watcher
+step
+    .isQuestTurnedIn 38
     #label HarvestW
     .goto Westfall,53.84,32.00,60,0
     .goto Westfall,50.80,21.76,80,0
@@ -1247,9 +1287,9 @@ step
     .goto Westfall,53.84,32.00,60,0
     .goto Westfall,44.47,35.35,60,0
     .goto Westfall,50.80,21.76
-    >>Kill |cFFFF5722Harvest Watchers|r. Loot them for their |cFF00BCD4Okra|r
+    >>Kill |cRXP_ENEMY_Harvest Watchers|r. Loot them for their |cRXP_LOOT_Flasks of Oil|r
     .complete 9,1 --Harvest Watcher (20)
-    .collect 732,3,38,1 --Okra (3)
+    .collect 814,5,103,1 --Flask of Oil (5)
     .mob Harvest Watcher
 step
     .goto Westfall,52.49,42.11,75,0
@@ -1325,11 +1365,61 @@ step << Human/Dwarf Paladin
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Thor|r
     .fly Ironforge >> Fly to Ironforge
     .target Thor
+step << Human Mage/Human Rogue/Human Warrior/Human Warlock/Human Paladin/Human Priest
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bilban Tosslespanner|r << Human Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fenthwick|r << Human Rogue
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Toldren Deepiron|r << Human Priest
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Juli Stormkettle|r << Human Mage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brandur Ironhammer|r << Human Paladin
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Briarthorn|r << Human Warlock
+    .goto Ironforge,51.1,8.7,15,0 << Human Warlock
+    .goto Ironforge,50.343,5.657 << Human Warlock
+    .goto Ironforge,65.905,88.405 << Human Warrior
+    .goto Ironforge,51.495,15.330 << Human Rogue
+    .goto Ironforge,25.207,10.756 << Human Priest
+    .goto Ironforge,26.295,6.752 << Human Mage
+    .goto Ironforge,23.141,6.149 << Human Paladin
+    .trainer >> Train your class spells
+    .target Bilban Tosslespanner << Human Warrior
+    .target Fenthwick << Human Rogue
+    .target Toldren Deepiron << Human Priest
+    .target Juli Stormkettle << Human Mage
+    .target Brandur Ironhammer << Human Paladin
+    .target Briarthorn << Human Warlock
 step << Human Warrior
     .goto Ironforge,62.0,89.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Bixi Wobblebonk|r
     .train 176 >>Train Thrown
     .target Bixi Wobblebonk
+step << Human Rogue
+    #ah
+    .goto Ironforge,62.375,88.679
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r down stairs
+    +|cRXP_BUY_Buy and equip a|r |T135343:0|t[Scimitar] |cRXP_BUY_in your off-hand if you can afford it or buy something better from the Auction House|r
+    .target Brenwyn Wintersteel
+    .money <0.3815
+    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+step << Human Rogue
+    #ssf
+    .goto Ironforge,62.375,88.679
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r down stairs
+    +|cRXP_BUY_Buy and equip a|r |T135343:0|t[Scimitar] |cRXP_BUY_in your off-hand if you can afford it|r
+    .money <0.3815
+    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+    .target Brenwyn Wintersteel
+step << Human Rogue
+    .goto Ironforge,62.375,88.679
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r down stairs
+    >>|cRXP_BUY_Buy a|r |T135425:0|t[Keen Throwing Dagger]
+    .collect 3107,100 -- Keen Throwing Dagger
+    .target Brenwyn Wintersteel
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.30
+step << Human Rogue
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135425:0|t[Keen Throwing Dagger]
+    .use 3107
+    .itemcount 3107,1
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.29
 step << Dwarf Paladin
     .goto Ironforge,24.55,4.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Beldruk Doombrow|r
@@ -1563,11 +1653,24 @@ step
     .accept 1138 >> Accept Fruit of the Sea
     .target Gubber Blump
 step
+#map Darkshore
+    #optional
+    .goto Felwood,18.50,19.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gubber Blump|r
+    .turnin 1138 >> Turn in Fruit of the Sea
+    .isQuestComplete 1138
+    .target Gubber Blump
+step
     #era/som
-    #completewith xxxxx
+    #completewith CompleteFangs
     >>Kill |cFFFF5722Moonstalkers|r and |cFFFF5722Moonstalker Runts|r. Loot them for their |cFF00BCD4Fangs|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .unitscan Moonstalker;Moonstalker Runt
+step
+    #completewith CompleteThistleBears
+    >>Kill |cFFFF5722Rabid Thistle Bears|r in southern Darkshore
+    .complete 2138,1 -- Rabid Thistle Bear slain (20)
+    .mob Rabid Thistle Bear
 step << Druid
     #sticky
     #label earthroot
@@ -1592,15 +1695,10 @@ step << !Druid
     .accept 4722 >> Accept Beached Sea Turtle
 step
 #map Darkshore
+    #label CompleteThistleBears
     .goto Felwood,18.41,49.43
     >>Click the |cFFDB2EEFBeached Sea Creature|r
     .accept 4728 >> Accept Beached Sea Creature
-step
-    .goto Darkshore,38.8,58.8,50,0
-    .goto Darkshore,39.99,78.46
-    >>Kill |cFFFF5722Rabid Thistle Bears|r in southern Darkshore
-    .complete 2138,1 -- Rabid Thistle Bear slain (20)
-    .mob Rabid Thistle Bear
 step
     #completewith MasterG
     >>Kill |cFFFF5722Moonstalker Sires|r. Loot them for their |cFF00BCD4Pelts|r
@@ -1615,6 +1713,13 @@ step
     .isOnQuest 1003
     .mob Grizzled Thistle Bear
 step
+    .goto Darkshore,39.03,67.32,70,0
+    .goto Darkshore,42.54,67.76,70,0
+    .goto Darkshore,39.99,78.46
+    >>Kill |cFFFF5722Rabid Thistle Bears|r in southern Darkshore
+    .complete 2138,1 -- Rabid Thistle Bear slain (20)
+    .mob Rabid Thistle Bear
+step
 #map Darkshore
     #completewith OnuGrove
     .goto Felwood,27.00,55.59,80 >> Travel to the Grove of the Ancients
@@ -1627,6 +1732,14 @@ step
     .turnin 948 >> Turn in Onu
     .accept 944 >> Accept The Master's Glaive
     .target Onu
+step
+#map Darkshore
+    #era/som
+    #optional
+    .isQuestComplete 1003
+    .goto Felwood,24.53,60.46
+    >>Click the |cFFDB2EEFBuzzbox 525|r on the ground
+    .turnin 1003 >> Turn in Buzzbox 525
 step
     #completewith next
     #label MasterG
@@ -1661,6 +1774,11 @@ step
     .complete 945,1 -- Escort Therylune
     .isOnQuest 945
 step
+    #optional
+    #sticky
+    .isQuestTurnedIn 949
+    .destroy 5251 >> Destroy the |T134715:0|t[Phial of Scrying] you no longer need it
+step
     #completewith LastBuzz
     >>Kill |cFFFF5722Moonstalker Sires|r. Loot them for their |cFF00BCD4Pelts|r
     *Don't go out of your way to do this quest, you'll have another chance to finish it later
@@ -1685,7 +1803,7 @@ step
     .goto Felwood,24.53,60.46
     >>Click the |cFFDB2EEFBuzzbox 525|r on the ground
     .turnin 1003 >> Turn in Buzzbox 525
-    .isOnQuest 1003
+    .isQuestComplete 1003
 step
     #completewith Murk
     #completewith prospector << Hunter
@@ -1810,17 +1928,10 @@ step << NightElf !Druid/Dwarf Hunter
     .goto Felwood,19.10,20.63,100 >> Travel to Auberdine
 step
 #map Darkshore
-    .goto Darkshore,36.71,44.98,5,0 << !Druid
-    .goto Felwood,19.10,20.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gwennyth Bly'Leggonde|r
-    .turnin 4722 >> Turn in Beached Sea Turtle << !Druid
-    .turnin 4728 >> Turn in Beached Sea Creature
-    .target Gwennyth Bly'Leggonde
-step
-#map Darkshore
     .goto Darkshore,36.71,44.98,5,0
     .goto Felwood,19.10,20.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gwennyth Bly'Leggonde|r
+    .turnin 4728 >> Turn in Beached Sea Creature
     .turnin -4730 >> Turn in Beached Sea Creature
     .turnin -4731 >> Turn in Beached Sea Turtle
     .turnin -4732 >> Turn in Beached Sea Turtle << Hunter
@@ -1915,9 +2026,11 @@ step
     .complete 4763,1 -- Talisman of Corruption (1)
     .mob Xabraxxis
 step << !Hunter
+    #label CompleteFangs
     .goto Darkshore,52.6,33.6
     .xp 18 >> Grind to level 18
 step << Hunter
+    #label CompleteFangs
     .goto Darkshore,52.6,33.6
     .xp 18.75 >> Grind to 18 + 75%
     >>Make sure your HS cooldown is <10 min
@@ -4577,6 +4690,7 @@ step
     .accept 132 >> Accept The Defias Brotherhood
 	.target Wiley the Black
 step
+.dungeon DM
     .goto Redridge Mountains,29.31,45.33,15,0
     .goto Redridge Mountains,29.98,44.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Magistrate Solomon|r
@@ -4940,21 +5054,20 @@ step
 	.target Wiley the Black
     .turnin 65 >> Turn in The Defias Brotherhood
     .isOnQuest 65
-step << Rogue
-    .goto Redridge Mountains,25.093,41.139
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gerald Crawley|r
-    >>|cRXP_BUY_Buy|r |T134065:0|t[Thieves' Tools]
-    >>|cRXP_WARN_Buy this now as you will level up your|r |T136058:0|t[Lockpicking] |cRXP_WARN_skill shortly which is required for your Rogue poisons quest|r
-    .collect 5060,1,2359,1 -- Thieves' Tools (1)
-    .target Gerald Crawley
-    .itemcount 5060,<1 -- Thieves' Tools (1)
 step
     #era/som
     .goto Redridge Mountains,22.67,43.83
-    >>Exit the Inn
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Chef Breanna|r
-	.target Chef Breanna
     .accept 92 >> Accept Redridge Goulash
+    .target Chef Breanna
+step
+    #era/som
+    #optional
+    .isQuestComplete 92
+    .goto Redridge Mountains,22.67,43.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Chef Breanna|r
+    .turnin 92 >> Turn in Redridge Goulash
+    .target Chef Breanna
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Martie Jainrose|r
 	.target Martie Jainrose
@@ -5005,7 +5118,6 @@ step << Druid
     .turnin 3741 >> Turn in Hilary's Necklace
 step
     #softcore
-    >>|cFFFCDC00Jump into the Lake|r
     >>Open the |cFFDB2EEFSunken Chest|r. Loot it for |cFF00BCD4Oslow's Toolbox|r
     .goto Redridge Mountains,41.52,54.68
     .complete 125,1 --Oslow's Toolbox (1)
