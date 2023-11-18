@@ -977,8 +977,8 @@ function addon.SetStep(n, n2, loopback)
     end
 
     -- Update targets for macro
-    addon.targeting:UpdateEnemyList(stepUnitscan, stepMobs, true)
-    addon.targeting:UpdateTargetList(stepTargets, true)
+    addon.targeting:UpdateEnemyList(stepUnitscan, stepMobs)
+    addon.targeting:UpdateTargetList(stepTargets)
 
     -- Don't process new targets if targeting disabled
     if addon.settings.profile.enableTargetAutomation then

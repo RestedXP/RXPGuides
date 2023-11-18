@@ -306,7 +306,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor NightElf
-#next 11-16 Darkshore
+#next 14-16 Darkshore
 step
     .goto Teldrassil,60.5,56.3
     .target Zenn Foulhoof
@@ -405,13 +405,13 @@ step << Warrior
     .collect 2488,1 --Collect Gladius
     .target Shalomon
     .money <0.0536
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
 step << Warrior
     #completewith next
     +|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
     .use 2488
     .itemcount 2488,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.79
 step << Rogue
     .goto Teldrassil,56.308,59.488
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shalomon|r
@@ -419,13 +419,13 @@ step << Rogue
     .collect 2494,1 --Stiletto (1)
     .target Shalomon
     .money <0.0401
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     #completewith next
     +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
     .use 2494
     .itemcount 2494,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.32
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.29
 step << Druid
     .goto Teldrassil,56.308,59.488
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shalomon|r
@@ -621,13 +621,13 @@ step << Warrior
     .collect 2488,1 --Collect Gladius
     .target Shalomon
     .money <0.0536
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
 step << Warrior
     #completewith next
     +|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
     .use 2488
     .itemcount 2488,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.79
 step << Rogue
     .goto Teldrassil,56.308,59.488
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shalomon|r
@@ -635,13 +635,13 @@ step << Rogue
     .collect 2494,1 --Stiletto (1)
     .target Shalomon
     .money <0.0401
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     #completewith next
     +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
     .use 2494
     .itemcount 2494,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.32
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.29
 step << Druid
     .goto Teldrassil,56.308,59.488
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shalomon|r
@@ -708,7 +708,7 @@ step
     .turnin 489 >> Turn in Seek Redemption!
 step
     #completewith next
-    .goto Teldrassil,54.68,52.84,20,0 
+    .goto Teldrassil,54.68,52.84,20,0
     .goto Teldrassil,54.42,51.19,15 >> Travel to Fel Rock
 step << Hunter
     #era
@@ -1237,7 +1237,7 @@ step << Rogue
     .goto Darnassus,36.65,85.93
     .target Priestess A'moora
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
-    .accept 2518 >> Accept Tears of the Moon 
+    .accept 2518 >> Accept Tears of the Moon
 step << Hunter
     #sticky
 	.goto Teldrassil,41.2,44.4,0

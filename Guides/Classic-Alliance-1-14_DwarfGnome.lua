@@ -596,13 +596,13 @@ step << Gnome Warrior
     .money <0.0536
     .goto Dun Morogh,45.290,52.190
     .collect 2488,1 --Collect Gladius (1)
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
 step << Gnome Warrior
     #completewith next
     +|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
     .use 2488
     .itemcount 2488,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.79
 step << Dwarf Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy and equip a|r |T132401:0|t[Large Axe]
@@ -610,13 +610,13 @@ step << Dwarf Warrior
     .money <0.0460
     .goto Dun Morogh,45.290,52.190
     .collect 2491,1 --Collect Large Axe (1)
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.29
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.30
 step << Dwarf Warrior
     #completewith next
     +|cRXP_WARN_Equip the|r |T132401:0|t[Large Axe]
     .use 2491
     .itemcount 2491,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.28
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.29
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy and equip a|r |T135641:0|t[Stiletto]
@@ -624,13 +624,13 @@ step << Rogue
     .money <0.0400
     .goto Dun Morogh,45.290,52.190
     .collect 2494,1 --Collect Stiletto (1)
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     #completewith next
     +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
     .use 2494
     .itemcount 2494,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.32
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.29
 step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy and equip a|r |T133053:0|t[Wooden Mallet]
@@ -849,13 +849,13 @@ step << Gnome Warrior
     .money <0.0536
     .goto Dun Morogh,45.290,52.190
     .collect 2488,1 --Collect Gladius (1)
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
 step << Gnome Warrior
     #completewith next
     +|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
     .use 2488
     .itemcount 2488,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.79
 step << Dwarf Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy and equip a|r |T132401:0|t[Large Axe]
@@ -863,13 +863,13 @@ step << Dwarf Warrior
     .money <0.0460
     .goto Dun Morogh,45.290,52.190
     .collect 2491,1 --Collect Large Axe (1)
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.29
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.30
 step << Dwarf Warrior
     #completewith next
     +|cRXP_WARN_Equip the|r |T132401:0|t[Large Axe]
     .use 2491
     .itemcount 2491,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.28
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.29
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy and equip a|r |T135641:0|t[Stiletto]
@@ -877,13 +877,13 @@ step << Rogue
     .money <0.0400
     .goto Dun Morogh,45.290,52.190
     .collect 2494,1 --Collect Stiletto (1)
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     #completewith next
     +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
     .use 2494
     .itemcount 2494,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.32
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.29
 step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy and equip a|r |T133053:0|t[Wooden Mallet]
@@ -1155,13 +1155,13 @@ step << Gnome Warrior
     .money <0.0536
     .goto Dun Morogh,45.290,52.190
     .collect 2488,1 --Collect Gladius (1)
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
 step << Gnome Warrior
     #completewith next
     +|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
     .use 2488
     .itemcount 2488,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.79
 step << Dwarf Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy and equip a|r |T132401:0|t[Large Axe]
@@ -1169,13 +1169,13 @@ step << Dwarf Warrior
     .money <0.0460
     .goto Dun Morogh,45.290,52.190
     .collect 2491,1 --Collect Large Axe (1)
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.29
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.30
 step << Dwarf Warrior
     #completewith next
     +|cRXP_WARN_Equip the|r |T132401:0|t[Large Axe]
     .use 2491
     .itemcount 2491,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.28
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.29
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy and equip a|r |T135641:0|t[Stiletto]
@@ -1183,13 +1183,13 @@ step << Rogue
     .money <0.0400
     .goto Dun Morogh,45.290,52.190
     .collect 2494,1 --Collect Stiletto (1)
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     #completewith next
     +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
     .use 2494
     .itemcount 2494,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.32
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.29
 step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy and equip a|r |T133053:0|t[Wooden Mallet]
@@ -2729,6 +2729,11 @@ step << !Paladin
     >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_if needed while waiting for the tram|r
     >>|cRXP_WARN_You will need your|r |T135966:0|t[First Aid] |cRXP_WARN_to be 80 for a quest at level 24|r << Rogue !Dwarf
 step
+    .goto StormwindClassic,49.194,30.284
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r
+    .accept 399 >> Accept Humble Beginnings
+    .target Baros Alexston
+step
     #ah
     .goto Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
@@ -2739,13 +2744,11 @@ step
     >>|T135997:0|t[Goretusk Snout]
     >>|T134185:0|t[Okra]
     >>|T134341:0|t[Goretusk Liver]
-    >>|T132794:0|t[Flask of Oil]
     .collect 729,3,38,1 -- Stringy Vulture Meat (3)
     .collect 730,3,38,1 -- Murloc Eye (3)
     .collect 731,3,38,1 -- Goretusk Snout (3)
     .collect 732,3,38,1 -- Okra (3)
     .collect 723,8,22,1 -- Goretusk Liver (8)
-    .collect 814,5,103,1 -- Flask of Oil (5)
     .target Auctioneer Jaxon
 step
     .goto StormwindClassic,66.277,62.137
@@ -3532,7 +3535,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor Dwarf
-#next 11-16 Darkshore
+#next 14-16 Darkshore
 
 step
     #completewith next
@@ -6624,7 +6627,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor Dwarf
-#next 11-16 Darkshore
+#next 14-16 Darkshore
 
 step
     .goto Loch Modan,22.07,73.12

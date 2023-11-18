@@ -36,7 +36,7 @@ step << Warlock
     >>|cRXP_WARN_Run into the Tent at the Defias Camp|r
     >>Open the |cRXP_PICK_Stolen Books|r. Loot it for the |cRXP_LOOT_Powers of the Void|r
     >>|cRXP_WARN_You can loot the |cRXP_LOOT_Powers of the Void|r safely while inside the Tent! Watch the video on how to do this|r
-    .link https://www.youtube.com/watch?v=0zC2bDBl6C4 >> |cRXP_WARN_Click here for video reference|r
+    .link https://youtu.be/3qQwsJhAZIk >> |cRXP_WARN_Click here for video reference|r
     .complete 1598,1 --Collect Powers of the Void (x1)
 step << Warlock
     #hardcore
@@ -156,7 +156,6 @@ step << Rogue
     >>|cRXP_BUY_Buy a|r |T135650:0|t[Dirk]
     .collect 2139,1 -- Dirk (1)
     .target Janos Hammerknuckle
-    .money <0.0057
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<1.2
 step << Rogue
     #completewith next
@@ -360,7 +359,7 @@ step
     .goto Elwynn Forest,48.923,41.606
     .turnin 21,1 >> Turn in Skirmish at Echo Ridge << Rogue
     .turnin 21,2 >> Turn in Skirmish at Echo Ridge << Warrior/Paladin
-    .turnin 21,3 >> Turn in Skirmish at Echo Ridge << !Warrior !Paladin
+    .turnin 21,3 >> Turn in Skirmish at Echo Ridge << !Warrior !Paladin !Rogue
     .accept 54 >> Accept Report to Goldshire
 step << Priest/Mage
     #sticky
@@ -424,13 +423,13 @@ step << Warrior
     .money <0.0536
     .goto Elwynn Forest,41.529,65.900
     .collect 2488,1 --Collect Gladius (1)
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
 step << Warrior
     #completewith next
     +|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
     .use 2488
     .itemcount 2488,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.79
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
     >>|cRXP_WARN_Buy and equip a|r |T135641:0|t[Stiletto]
@@ -438,13 +437,13 @@ step << Rogue
     .money <0.0400
     .goto Elwynn Forest,41.529,65.900
     .collect 2494,1 --Collect Stiletto (1)
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
-    #completewith next
+    #completewith GSHS
     +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
     .use 2494
     .itemcount 2494,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.32
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.29
 step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
     >>|cRXP_WARN_Buy and equip a|r |T133053:0|t[Wooden Mallet]
@@ -478,6 +477,7 @@ step
     .goto Elwynn Forest,43.318,65.705
     .accept 60 >> Accept Kobold Candles
 step
+    #label GSHS
     .goto Elwynn Forest,43.771,65.803
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Farley|r
     .target Innkeeper Farley
@@ -750,13 +750,13 @@ step << Warrior
     .money <0.0536
     .goto Elwynn Forest,41.529,65.900
     .collect 2488,1 --Collect Gladius (1)
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
 step << Warrior
     #completewith next
     +|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
     .use 2488
     .itemcount 2488,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.79
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
     >>|cRXP_WARN_Buy and equip a|r |T135641:0|t[Stiletto]
@@ -764,13 +764,13 @@ step << Rogue
     .money <0.0400
     .goto Elwynn Forest,41.529,65.900
     .collect 2494,1 --Collect Stiletto (1)
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     #completewith next
     +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
     .use 2494
     .itemcount 2494,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.32
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.29
 step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
     >>|cRXP_WARN_Buy and equip a|r |T133053:0|t[Wooden Mallet]
@@ -1206,13 +1206,13 @@ step << Rogue
     .money >0.3152
     .goto Elwynn Forest,41.529,65.900
     .collect 2494,1 --Collect Stiletto (1)
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     #completewith next
     +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
     .use 2494
     .itemcount 2494,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.32
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.29
 step
     #completewith next
     .goto Elwynn Forest,43.154,89.625,50 >> Travel to The Maclure Vineyards
@@ -1725,6 +1725,10 @@ step
     .target Auctioneer Buckler
 step
     #completewith Rudra
+    .goto Dun Morogh,53.26,35.17
+    .zone Dun Morogh >> Exit Ironforge
+step
+    #completewith Rudra
     #label Dirt
     .goto Dun Morogh,59.84,49.56,40,0
     .goto Dun Morogh,61.36,47.07,40 >>Go up the dirt path
@@ -2218,6 +2222,11 @@ step << Priest
     .goto StormwindClassic,38.54,26.86
     .trainer >> Train your class spells
     .target Brother Joshua
+step
+    .goto StormwindClassic,49.194,30.284
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r
+    .accept 399 >> Accept Humble Beginnings
+    .target Baros Alexston
 step    
     .goto StormwindClassic,58.091,16.552
     .target Furen Longbeard
@@ -2226,8 +2235,6 @@ step
 step << Rogue
     .goto StormwindClassic,74.65,52.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r
-    >>|cRXP_WARN_Only train|r |T132269:0|t[Parry]
-    >>|cRXP_WARN_Don't train|r |T132219:0|t[Kick] |cRXP_WARN_as it isn't needed yet and you need your silver for purchasing weapons|r
     .trainer >> Train your class spells
     .target Osborne the Night Man
 step << Warrior
@@ -2252,7 +2259,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Marda Weller|r
     >>|cRXP_BUY_Buy 2|r |T135343:0|t[Scimitars] |cRXP_BUY_if you can afford it or something better from the Auction House|r
     >>|cRXP_WARN_Equip them both once you're level 14|r
-    .collect 2027,2 --Kris
+    .collect 2027,2 --Scimitar
     .target Marda Weller
     .money <0.3815
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
@@ -2262,7 +2269,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Marda Weller|r
     >>|cRXP_BUY_Buy 2|r |T135343:0|t[Scimitars] |cRXP_BUY_if you can afford it|r
     >>|cRXP_WARN_Equip them both once you're level 14|r
-    .collect 2027,2 --Kris
+    .collect 2027,2 --Scimitar
     .money <0.3815
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
     .target Marda Weller
@@ -2278,28 +2285,20 @@ step
     #ah
     .goto Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
-    >>Buy the following items for faster turn ins at Westfall shortly
+    >>Buy the following items for faster turn ins at Westfall and Darkshore shortly
     >>This will save you time as you won't need to run around looking for mobs to kill. Skip this step if you wish to not buy any
     >>|T133972:0|t[Stringy Vulture Meat]
     >>|T133884:0|t[Murloc Eye]
     >>|T135997:0|t[Goretusk Snout]
     >>|T134185:0|t[Okra]
     >>|T134341:0|t[Goretusk Liver]
-    >>|T132794:0|t[Flask of Oil]
+    >>|T133972:0|t[Strider Meat]
+    >>|T133912:0|t[Darkshore Grouper]
     .collect 729,3,38,1 -- Stringy Vulture Meat (3)
     .collect 730,3,38,1 -- Murloc Eye (3)
     .collect 731,3,38,1 -- Goretusk Snout (3)
     .collect 732,3,38,1 -- Okra (3)
     .collect 723,8,22,1 -- Goretusk Liver (8)
-    .collect 814,5,103,1 -- Flask of Oil (5)
-    .target Auctioneer Jaxon
-step
-    #ah
-    .goto Stormwind City,53.612,59.764
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
-    >>Buy the following items for instant turn ins at Darkshore shortly. Skip this step if you wish to not buy any
-    >>|T133972:0|t[Strider Meat]
-    >>|T133912:0|t[Darkshore Grouper]
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
     .target Auctioneer Jaxon
