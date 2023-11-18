@@ -188,8 +188,8 @@ L["Flying to %s ETA %s"] = "飛往 %s ETA %s"
 L["Describe your issue:"] = "描述你的問題："
 L["Do not edit below this line"] = "請勿在此行下方編輯"
 L["RestedXP Feedback Form"] = "RestedXP 反饋表"
-L["Join our support discord at discord.gg/RestedXP and copy paste this form into #addon-feedback"] =
-    "在 discord.gg/RestedXP 加入我們的支持不和諧並將此表格複製粘貼到#addon-feedback"
+L["Join our support discord at discord.gg/RestedXP and copy paste this form into #bug-report"] =
+    "在 discord.gg/RestedXP 加入我們的支持不和諧並將此表格複製粘貼到#bug-report"
 L["Objective Complete"] = "目標完成"
 L["Error parsing guide"] = "錯誤解析指南"
 L["Missing pre-requisites"] = "缺少先決條件"
