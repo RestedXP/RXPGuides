@@ -2727,6 +2727,7 @@ step
     #completewith Thunderhawk
     +|cRXP_WARN_Use your|r |T134128:0|t[|cFF00BCD4Blood Shards|r] |cRXP_WARN_to get buffs. Save at least 4 of them for later|r
     +|cRXP_WARN_Make sure to turn off any autocomplete functions from addons such as Questie or Leatrix Plus for this!|r
+    .disablecheckbox
 step
     #label IshamuhaleTurnin
     .goto The Barrens,44.85,59.14
@@ -3867,7 +3868,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Piznik|r
     .accept 1090 >> Accept Gerenzo's Orders
     .target Piznik
-    .group
+    .group 3
 step
     .goto Stonetalon Mountains,71.77,60.19
     >>Protect |cRXP_FRIENDLY_Piznik|r from incoming |cRXP_FRIENDLY_Windshear Vermin|r
