@@ -535,8 +535,6 @@ local function createLogRewardChoiceIcons()
         questLogRewardChoiceIcons["value"]:SetSize(20, 20)
     end
 
-    _G.QuestLogDetailScrollFrame:HookScript("OnHide", hideRewardChoiceIcons)
-
     -- Triggers on open and selection in Classic
     -- Only triggers on selection in Wrath
     hooksecurefunc("SelectQuestLogEntry", function(questLogIndex)
@@ -545,9 +543,10 @@ local function createLogRewardChoiceIcons()
     end)
 
     -- Double call on show to ensure reward frames have been created
-    if addon.gameVersion > 30000 then
-        _G.QuestLogDetailScrollFrame:HookScript("OnShow", addon.DisplayQuestLogRewards)
-    end
+    -- if addon.gameVersion < 30000 then
+        -- _G.QuestLogDetailScrollFrame:HookScript("OnHide", hideRewardChoiceIcons)
+        -- _G.QuestLogDetailScrollFrame:HookScript("OnShow", addon.DisplayQuestLogRewards)
+    -- end
 
     questLogRewardChoiceIcons["ratio"].isHooked = true
 end
