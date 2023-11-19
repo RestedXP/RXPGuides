@@ -1849,7 +1849,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 1.3,
-                        hidden = addon.version > 40000
+                        hidden = addon.gameVersion > 40000
                     },
                     drowningHeader = {
                         name = _G.STRING_ENVIRONMENTAL_DAMAGE_DROWNING,
