@@ -553,7 +553,7 @@ local function createLogRewardChoiceIcons()
 end
 
 -- Retail has enough helpers and massive UI differences
-if addon.version < 40000 then
+if addon.gameVersion < 40000 then
     createRewardChoiceIcons()
     createLogRewardChoiceIcons()
 end
@@ -576,7 +576,7 @@ local function evaluateQuestChoices(questID, numChoices, GetQuestItemInfo, GetQu
     end
 
     -- Only support hard-coded turnin values on Retail
-    if addon.version > 40000 then return -1, -1, {} end
+    if addon.gameVersion > 40000 then return -1, -1, {} end
 
     local options = {}
     local itemLink, isUsable, itemData
@@ -660,7 +660,7 @@ local function handleQuestComplete()
 
     local bestSellOption, bestRatioOption, options = evaluateQuestChoices(id, numChoices, GetQuestItemInfo, GetQuestItemLink)
 
-    if addon.version < 40000 and addon.settings.profile.enableQuestChoiceRecommendation then
+    if addon.gameVersion < 40000 and addon.settings.profile.enableQuestChoiceRecommendation then
         if bestRatioOption > 0 then
             local bestRatioFrame = QuestInfo_GetRewardButton(QuestInfoFrame.rewardsFrame, bestRatioOption)
 
@@ -672,7 +672,7 @@ local function handleQuestComplete()
         end
     end
 
-    if addon.version < 40000 and addon.settings.profile.enableQuestChoiceGoldRecommendation then
+    if addon.gameVersion < 40000 and addon.settings.profile.enableQuestChoiceGoldRecommendation then
         local bestSellFrame = QuestInfo_GetRewardButton(QuestInfoFrame.rewardsFrame, bestSellOption)
 
         if bestSellFrame then
