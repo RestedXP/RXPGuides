@@ -1619,7 +1619,7 @@ step << !Warlock
     .goto Undercity,67.74,37.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Norman|r
     .home >> Set your Hearthstone to Undercity
-    .taget Innkeeper Norman
+    .target Innkeeper Norman
 step << Rogue
     .goto Undercity,83.52,69.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mennet|r
