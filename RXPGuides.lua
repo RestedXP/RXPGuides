@@ -542,11 +542,15 @@ local function createLogRewardChoiceIcons()
         addon.DisplayQuestLogRewards(questLogIndex)
     end)
 
-    -- Double call on show to ensure reward frames have been created
-    -- if addon.gameVersion < 30000 then
-        -- _G.QuestLogDetailScrollFrame:HookScript("OnHide", hideRewardChoiceIcons)
-        -- _G.QuestLogDetailScrollFrame:HookScript("OnShow", addon.DisplayQuestLogRewards)
-    -- end
+    -- Hide icons on quest log close to avoid mislabeled rewards
+    _G.QuestLogDetailScrollFrame:HookScript("OnHide", hideRewardChoiceIcons)
+
+    if addon.gameVersion > 20000 then
+        -- Inefficient, but bypasses load order issues between helper functions
+        _G.QuestLogDetailScrollFrame:HookScript("OnShow", function ()
+            addon.DisplayQuestLogRewards()
+        end)
+    end
 
     questLogRewardChoiceIcons["ratio"].isHooked = true
 end
