@@ -375,7 +375,7 @@ addon.statWeights = {
     },
     ['Rogue Speedrun'] = {
         ['Title'] = "Rogue Speedrun",
-        ['Class'] = "Paladin",
+        ['Class'] = "Rogue",
         ['Kind'] = "Speedrun",
         ['ITEM_MOD_STRENGTH_SHORT'] = 1.00,
         ['ITEM_MOD_AGILITY_SHORT'] = 1.97,
