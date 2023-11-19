@@ -183,15 +183,15 @@ end
 
 function addon.GetStepQuestReward(titleOrId)
     -- enableQuestRewardAutomation is setting for hard-coded .turnin step data
-    if not addon.settings.profile.enableQuestRewardAutomation then return end
-    if not titleOrId then return end
+    if not addon.settings.profile.enableQuestRewardAutomation then return 0 end
+    if not titleOrId then return 0 end
 
     -- questTurnIn contains quest and title lookups
     -- addon.questTurnIn[747] == addon.questTurnIn["The Hunt Begins"]
 
     local element = addon.questTurnIn[titleOrId]
 
-    if not element then return end
+    if not element then return 0 end
 
     return element.reward >= 0 and element.reward or 0
 end
