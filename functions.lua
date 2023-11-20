@@ -800,6 +800,7 @@ function addon.functions.accept(self, ...)
                 element.title = quest
                 if autoAccept then
                     addon.questAccept[id] = element
+                    addon.questAccept[quest] = addon.questAccept[id]
                 end
                 element.text = element.text:gsub("%*quest%*", quest)
                 if element.requestFromServer then
