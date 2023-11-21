@@ -840,7 +840,7 @@ s["ROGUE"] = {
     [10] = {
         2983, -- sprint
         6452, -- Anti-venom(FA)
-        674 -- dual wield
+        1424 -- dual wield
     },
     [12] = {
         1766, -- kick

@@ -33,17 +33,10 @@ step << NightElf
 step << NightElf
 #map Darkshore
     #label WashedA
-    .goto Darkshore,36.71,44.98,10,0
     .goto Felwood,19.10,20.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gwennyth Bly'Leggonde|r
     .accept 3524 >> Accept Washed Ashore
     .target Gwennyth Bly'Leggonde
-step << NightElf
-#map Darkshore
-    .goto Felwood,19.27,19.14
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Laird|r
-    .turnin 6342 >> Turn in Flight to Auberdine
-    .target Laird
 step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
@@ -52,6 +45,12 @@ step
     .turnin 1141 >> Turn in The Family and the Fishing Pole
     .itemcount 12238,6 -- Darkshore Grouper (6)
     .target Gubber Blump
+step << NightElf
+#map Darkshore
+    .goto Felwood,19.27,19.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Laird|r
+    .turnin 6342 >> Turn in Flight to Auberdine
+    .target Laird
 step
     #completewith BigThreat
     .goto Darkshore,37.04,44.13
@@ -233,12 +232,40 @@ step
     .accept 985 >> Accept How Big a Threat?
     .accept 4761 >> Accept Thundris Windweaver
     .target Terenthis
+step << NightElf Warrior/NightElf Rogue
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kurdram Stonehammer|r and |cRXP_FRIENDLY_Delfrum Flintbeard|r
+    .train 2575 >> Train |T134708:0|t[Mining]
+    .goto Darkshore,38.249,41.008
+    .train 2018 >> Train |T136241:0|t[Blacksmithing]
+    .goto Darkshore,38.191,40.935
+    >>|cRXP_WARN_This will allow you to make |T135248:0|t[Rough Sharpening Stones] which increase melee hits by +2 Damage. This is very significant early on|r
+    .target Kurdram Stonehammer
+    .target Delfrum Flintbeard
+step << NightElf Warrior/NightElf Rogue
+    .goto Darkshore,38.142,41.108
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elisa Steelhand|r
+    >>|cRXP_BUY_Buy a|r |T134708:0|t[Mining Pick]
+    .target Elisa Steelhand
+    .collect 2901,1 -- Mining Pick (1)
+    .skill mining,<1,1
+step << NightElf Warrior/NightElf Rogue
+    .cast 2580 >> |cRXP_WARN_Cast|r |T136025:0|t[Find Minerals]
+    .skill mining,<1,1
 step << Dwarf/Gnome/Human
 #map Darkshore
     .goto Felwood,20.80,15.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gorbold Steelhand|r
     .accept 982 >> Accept Deep Ocean, Vast Sea
     .target Gorbold Steelhand
+step
+    #optional
+    .goto Darkshore,37.70,40.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Alanndarian Nightsong|r
+    .accept 2178 >> Accept Easy Strider Living
+    .turnin 2178 >> Turn in Easy Strider Living
+    .skill cooking,<10,1 -- step only displays if skill is 10 or higher than x
+    .itemcount 5469,5 -- Strider Meat (5)
+    .target Alanndarian Nightsong
 step
     #completewith next
     .goto Darkshore,37.45,40.50
@@ -367,6 +394,7 @@ step
     .goto Darkshore,45.07,36.76
     >>Kill |cFFFF5722Deth'ryll Satyr|r. Loot them for the |cFF00BCD4Moonstone Seal|r
     .complete 956,1
+    .mob Deth'ryll Satyr
 step
 #map Darkshore
     .goto Felwood,27.70,10.03
@@ -407,12 +435,19 @@ step << Hunter/NightElf !Druid
 	#era/som
     #completewith next
     .hs >> Hearth to Auberdine
-    .cooldown item,6948,>0
+    .cooldown item,6948,>0,1
 step
 #map Darkshore
     #label MeatFangEgg1Druid
     #completewith next
-    .goto Felwood,20.34,18.12,100 >> Travel to Auberdine
+    .subzone 442 >> Travel to Auberdine
+step << NightElf !Hunter
+    #completewith next
+    .goto Darkshore,36.77,44.28
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Laird|r
+    >>|cFF0E8312Buy up to 40|r |T133918:0|t[Longjaw Mud Snappers]
+    .collect 4592,40 --Longjaw Mud Snapper (40)
+    .target Laird
 step
 #map Darkshore
     .goto Felwood,20.34,18.12
@@ -457,7 +492,7 @@ step << Hunter/Druid
 step << Hunter/Druid
 #map Darkshore
     .goto Felwood,31.29,24.14
-    >>Click the |cFFDB2EEFThe Red Crystal|r
+    >>Click the |cFFDB2EEFMysterious Red Crystal|r
     .turnin 4812 >> Turn in As Water Cascades
     .accept 4813 >> Accept The Fragments Within
 step << Hunter/Druid
@@ -543,6 +578,11 @@ step
     .complete 985,2 -- Blackwood Windtalker
     .mob Blackwood Pathfinder
     .mob Blackwood Windtalker
+step
+    #completewith Tysha
+    >>Kill |cFFFF5722Rabid Thistle Bears|r
+    .complete 2138,1 -- Rabid Thistle Bear slain (20)
+    .mob Rabid Thistle Bear
 step
 #map Darkshore
     .goto Felwood,19.64,39.52
@@ -639,6 +679,11 @@ step
     .mob Foreststrider Fledgling
     .mob Foreststrider
 step
+    #completewith next
+    >>Kill |cFFFF5722Rabid Thistle Bears|r
+    .complete 2138,1 -- Rabid Thistle Bear slain (20)
+    .mob Rabid Thistle Bear
+step
     .goto Darkshore,45.34,49.70,60,0
     .goto Darkshore,45.48,45.24,60,0
     .goto Darkshore,42.73,45.67,60,0
@@ -653,18 +698,33 @@ step
     .mob Moonkin Oracle
     .mob Moonkin
 step
+    #completewith next
+    >>Kill |cFFFF5722Rabid Thistle Bears|r
+    >>|cRXP_WARN_Prioritize grinding the hyperspawn |cRXP_ENEMY_Furbolgs|r for better xp/hr rather than running around and looking for |cRXP_ENEMY_Bears|r. You will kill them later|r
+    .complete 2138,1 -- Rabid Thistle Bear slain (20)
+    .mob Rabid Thistle Bear
+step
 #map Darkshore
     #era
     #label xp15
     #requires ghosts
     .goto Felwood,22.39,29.45
     .xp 15.75 >> Grind to level 15 + 75%
+    .mob Blackwood Pathfinder
+    .mob Blackwood Windtalker
 step
 #map Darkshore
     #label xp15
     #som
     .goto Felwood,22.39,29.45
     .xp 15-3245 >> Grind until you are 3245xp away from level 15
+    .mob Blackwood Pathfinder
+    .mob Blackwood Windtalker
+step
+    #completewith ALostMaster
+    >>Kill |cFFFF5722Rabid Thistle Bears|r
+    .complete 2138,1 -- Rabid Thistle Bear slain (20)
+    .mob Rabid Thistle Bear
 step << !Hunter !Druid
 #map Darkshore
     #completewith next
@@ -672,14 +732,30 @@ step << !Hunter !Druid
 step << !Hunter !Druid
 #map Darkshore
     .goto Felwood,31.29,24.14
-    >>Click the |cFFDB2EEFThe Red Crystal|r
+    >>Click the |cFFDB2EEFMysterious Red Crystal|r
     .turnin 4812 >> Turn in As Water Cascades
     .accept 4813 >> Accept The Fragments Within
 step
-#map Darkshore
     #label ALostMaster
-    #completewith next
-    .goto Felwood,22.24,18.22,125 >> Travel to Auberdine
+    #completewith TOTH
+    .subzone 442 >> Travel to Auberdine
+step
+#map Darkshore
+    #optional
+    .isQuestComplete 2138
+    .goto Felwood,21.63,18.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tharnariun Treetender|r
+    .turnin 2138 >> Turn in Cleansing of the Infected
+    .accept 2139 >> Accept Tharnariun's Hope
+    .target Tharnariun Treetender
+step
+#map Darkshore
+    #optional
+    .isQuestTurnedIn 2138
+    .goto Felwood,21.63,18.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tharnariun Treetender|r
+    .accept 2139 >> Accept Tharnariun's Hope
+    .target Tharnariun Treetender
 step
 #map Darkshore
     .goto Felwood,22.24,18.22
@@ -701,6 +777,7 @@ step << !Druid !Hunter
     .target Sentinel Glynda Nal'Shea
 step
 #map Darkshore
+    .isQuestComplete 963
     .goto Felwood,18.10,18.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Cerellean Whiteclaw|r
     .turnin 963 >> Turn in For Love Eternal
@@ -742,12 +819,22 @@ step
     .skill cooking,10,1 -- step only displays if cooking skill is less than 10
     .target Gorbold Steelhand
 step
-    #completewith next
+    .goto Darkshore,37.514,41.671
     +|cFFFCDC00Use your|r |T133971:0|t[Cooking] |cFFFCDC00profession to make Herb Baked Eggs. Do this until your|r |T133971:0|t[Cooking] |cFFFCDC00has reached level 10|r
     .skill cooking,10,1 -- step only displays if cooking skill is less than 10
     .target Gorbold Steelhand
 step
+    #optional
+    .goto Darkshore,37.70,40.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Alanndarian Nightsong|r
+    .accept 2178 >> Accept Easy Strider Living
+    .turnin 2178 >> Turn in Easy Strider Living
+    .skill cooking,<10,1 -- step only displays if skill is 10 or higher than x
+    .itemcount 5469,5 -- Strider Meat (5)
+    .target Alanndarian Nightsong
+step
 #map Darkshore
+    #label TOTH
     .goto Felwood,19.98,14.40
     .target Thundris Windweaver
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Thundris Windweaver|r
@@ -904,18 +991,24 @@ step
 step << NightElf !Druid
     #softcore
     #completewith next
-    .deathskip >> Grind until your HS cooldown is <6 minutes. Die and respawn at the |cFF00FF25Spirit Healer|r
+    +Grind until your HS cooldown is <6 minutes
+    .cooldown item,6948,<360
+step << NightElf !Druid
+    #completewith next
+    .deathskip >> Die and respawn at the |cFF00FF25Spirit Healer|r
 step << Druid
     #softcore
     #completewith next
-    +Grind until your HS cooldown is <9 minutes. Travel to Auberdine
+    +Grind until your HS cooldown is <9 minutes
+    .cooldown item,6948,<540
 step << NightElf
     #hardcore
     #completewith next
-    +Grind until your HS cooldown is <9 minutes. Travel to Auberdine
-step << !NightElf
+    +Grind until your HS cooldown is <9 minutes
+    .cooldown item,6948,<540
+step
     #completewith darkshoret1n
-    .subzone 442 >> Head back to Auberdine
+    .subzone 442 >> Travel to Auberdine
 step << !NightElf
 #map Darkshore
     .isQuestComplete 2138
@@ -3123,6 +3216,7 @@ step
     .goto Darkshore,45.07,36.76
     >>Kill |cFFFF5722Deth'ryll Satyr|r. Loot them for the |cFF00BCD4Moonstone Seal|r
     .complete 956,1
+    .mob Deth'ryll Satyr
 step
 #map Darkshore
     .goto Felwood,27.70,10.03
@@ -3348,7 +3442,7 @@ step
     .skill cooking,10,1 -- step only displays if cooking skill is less than 10
     .target Gorbold Steelhand
 step
-    #completewith ezstrider
+    .goto Darkshore,37.514,41.671
     +|cFFFCDC00Use your|r |T133971:0|t[Cooking] |cFFFCDC00profession to make Herb Baked Eggs. Do this until your|r |T133971:0|t[Cooking] |cFFFCDC00has reached level 10|r
     .skill cooking,10,1 -- step only displays if cooking skill is less than 10
     .target Gorbold Steelhand
@@ -3359,7 +3453,6 @@ step
     .goto Felwood,20.80,15.58
     .turnin 982 >> Turn in Deep Ocean, Vast Sea
 step
-    #label ezstrider
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Alanndarian Nightsong|r
 	.target Alanndarian Nightsong
     .goto Darkshore,37.70,40.70
@@ -3424,7 +3517,7 @@ step
 step
 #map Darkshore
     .goto Felwood,31.29,24.14
-    >>Click the |cFFDB2EEFThe Red Crystal|r
+    >>Click the |cFFDB2EEFMysterious Red Crystal|r
     .turnin 4812 >> Turn in As Water Cascades
     .accept 4813 >> Accept The Fragments Within
 step
