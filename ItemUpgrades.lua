@@ -5,7 +5,7 @@ if addon.gameVersion > 30000 then return end
 local locale = GetLocale()
 
 -- TOOD add frFR and zhTW
-if not (locale == "enUS" or locale == "enGB") then return end
+if not (locale == "enUS" or locale == "enGB" or locale == "frFR") then return end
 
 local fmt, tinsert, ipairs, pairs, next, type, wipe, tonumber, strlower =
     string.format, table.insert, ipairs, pairs, next, type, wipe, tonumber,
@@ -286,8 +286,6 @@ local KEY_TO_TEXT = {
 -- Keys only obtained from tooltip text parsing
 -- Explicitly set regex
 local OUT_OF_BAND_KEYS = {
-    -- Hack in weapon speed parsing
-    -- TODO locale, ideally use GlobalStrings.lua, but hard to find for Classic
     ['ITEM_MOD_CR_SPEED_SHORT'] = _G.ITEM_MOD_CR_SPEED_SHORT .. "%s+(%d+%.%d+)",
     ['ITEM_MOD_CRIT_RATING_SHORT'] = "%s+Improves your chance to get a critical strike by (%d+)%%.",
     ['ITEM_MOD_HIT_RATING_SHORT'] = "%s+Improves your chance to hit by (%d+)%%.",
@@ -339,6 +337,24 @@ local SPELL_KIND_MAP = {
 -- TODO locale
 local SPELL_KIND_MATCH =
     "Increases damage done by (%a+) spells and effects by up to (%d+)."
+
+if locale == 'frFR' then
+    SPELL_KIND_MATCH =
+        "Augmente les dégâts infligés par les sorts et effets d?e?'? ?(%a+) de (%d+) au maximum."
+
+    -- Comma decimal delimiter
+    OUT_OF_BAND_KEYS['ITEM_MOD_CR_SPEED_SHORT'] =
+        _G.ITEM_MOD_CR_SPEED_SHORT .. "%s+(%d+,%d+)"
+
+    OUT_OF_BAND_KEYS['ITEM_MOD_CRIT_RATING_SHORT'] =
+        "%s+Augmente vos chances d'infliger un coup critique de (%d+)%%."
+    OUT_OF_BAND_KEYS['ITEM_MOD_HIT_RATING_SHORT'] =
+        "%s+Augmente vos chances de toucher de (%d+)%%."
+    OUT_OF_BAND_KEYS['ITEM_MOD_DODGE_RATING_SHORT'] =
+        "%s+Augmente vos chances d'esquiver une attaque de (%d+)%%."
+    OUT_OF_BAND_KEYS['ITEM_MOD_PARRY_RATING_SHORT'] =
+        "%s+Augmente vos chances de parer une attaque de (%d+)%%."
+end
 
 -- Setup reverse lookup in session.weaponSlotToWeightKey
 for weaponKey, d in pairs(WEAPON_SLOT_MAP) do
@@ -832,7 +848,10 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
                         -- Only expect one number per line, so ignore if double match
                         if match1 and not match2 then
                             -- print("Extracted multi-match", tonumber(match1), "from", line)
-                            stats[key] = tonumber(match1)
+                            -- If no match, try EU , -> . for numbers
+                            stats[key] = tonumber(match1) or
+                                             tonumber(
+                                                 (match1:gsub(",", "%.", 1)))
                         end
                     end
                 else
@@ -842,7 +861,9 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
                     -- Only expect one number per line, so ignore if double match
                     if match1 and not match2 then
                         -- print("Extracted", tonumber(match1), "from", line)
-                        stats[key] = tonumber(match1)
+                        -- If no match, try EU , -> . for numbers
+                        stats[key] = tonumber(match1) or
+                                         tonumber((match1:gsub(",", "%.", 1)))
                     end
                 end
             end
