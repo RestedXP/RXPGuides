@@ -107,6 +107,7 @@ function addon.settings:InitializeSettings()
             windowScale = 1,
             numMapPins = 7,
             worldMapPinScale = 1,
+            vendorTreasurePinScale = 0.8,
             distanceBetweenPins = 1,
             worldMapPinBackgroundOpacity = 0.35,
             batchSize = 6,
@@ -876,7 +877,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end
                     },
                     enableVendorTreasure = {
-                        name = L("Enable Vendor Treasures"),
+                        name = fmt('%s %s', _G.ENABLE, L("Vendor Treasures")),
                         desc = L(
                             "Enable embedded Cpt. Stadics' Vendor Treasures"),
                         type = "toggle",
@@ -2687,13 +2688,33 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.UpdateMap()
                         end
                     },
+                    vendorTreasurePinScale = {
+                        name = fmt('%s %s', L("Vendor Treasures"),
+                                   L("Map Pin Scale")),
+                        desc = L("Adjusts the size of the world map pins"),
+                        type = "range",
+                        width = optionsWidth,
+                        order = 5.6,
+                        min = 0.05,
+                        max = 1,
+                        step = 0.05,
+                        isPercent = true,
+                        hidden = addon.game ~= "CLASSIC",
+                        disabled = function()
+                            return not self.profile.enableVendorTreasure
+                        end,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.UpdateMap()
+                        end
+                    },
                     distanceBetweenPins = {
                         name = L("Distance Between Pins"),
                         desc = L(
                             "If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group."),
                         type = "range",
                         width = optionsWidth,
-                        order = 5.6,
+                        order = 5.7,
                         min = 0.05,
                         max = 2,
                         step = 0.05,
@@ -2708,7 +2729,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "The opacity of the black circles on the map and mini map"),
                         type = "range",
                         width = optionsWidth,
-                        order = 5.7,
+                        order = 5.8,
                         min = 0,
                         max = 1,
                         step = 0.05,
@@ -3226,7 +3247,7 @@ local function buildWorldMapMenu()
 
     if addon.VendorTreasures then
         tinsert(menu, {
-            text = L("Enable Vendor Treasures"),
+            text = fmt('%s %s', _G.ENABLE, L("Vendor Treasures")),
             tooltipTitle = L("Enable embedded Cpt. Stadics' Vendor Treasures"),
             icon = "Interface/GossipFrame/VendorGossipIcon.blp",
             arg1 = "toggle",
