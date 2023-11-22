@@ -4,7 +4,6 @@ if addon.gameVersion > 30000 then return end
 
 local locale = GetLocale()
 
--- TOOD add frFR and zhTW
 if not (locale == "enUS" or locale == "enGB" or locale == "frFR") then return end
 
 local fmt, tinsert, ipairs, pairs, next, type, wipe, tonumber, strlower =
@@ -46,6 +45,22 @@ local session = {
 
     -- TODO handle thread-safe?
     comparisonTip = nil
+}
+
+-- TODO support spec awareness
+-- Ignoring for now since overrides are rare and specific
+local ITEM_WEIGHT_ADDITIONS = {
+    ["DRUID"] = {},
+    ["HUNTER"] = {},
+    ["MAGE"] = {},
+    ["PALADIN"] = {},
+    ["PRIEST"] = {},
+    ["ROGUE"] = {},
+    ["SHAMAN"] = {
+        -- [4908] = 12 -- Additional 12 EP for testing
+    },
+    ["WARLOCK"] = {},
+    ["WARRIOR"] = {}
 }
 
 local CLASS_MAP = {
@@ -334,7 +349,6 @@ local SPELL_KIND_MAP = {
     [SPELL_SCHOOL6_NAME] = "STAT_SPELLDAMAGE_ARCANE"
 }
 
--- TODO locale
 local SPELL_KIND_MATCH =
     "Increases damage done by (%a+) spells and effects by up to (%d+)."
 
@@ -579,6 +593,9 @@ function addon.itemUpgrades:ActivateSpecWeights()
 
     session.activeStatWeights = session.specWeights[spec]
 
+    session.activeStatWeights.extraWeight =
+        ITEM_WEIGHT_ADDITIONS[addon.player.class]
+
     return session.activeStatWeights ~= nil
 end
 
@@ -791,16 +808,24 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
         return
     end
 
+    local totalWeight = 0
+    local statWeight, tooltipTextLines
+
+    -- Need itemID for easier code lookups
+    local itemID = GetItemInfoInstant(itemLink)
+
+    if session.activeStatWeights.extraWeight[itemID] then
+        totalWeight = session.activeStatWeights.extraWeight[itemID]
+    end
+
     local itemData = {
+        itemID = itemID,
         itemLink = itemLink,
         itemSubTypeID = itemSubTypeID,
         itemEquipLoc = itemEquipLoc,
         sellPrice = sellPrice,
         itemMinLevel = itemMinLevel
     }
-
-    local totalWeight = 0
-    local statWeight, tooltipTextLines
 
     -- Parse tooltip for all additional stats
     if tooltip then
