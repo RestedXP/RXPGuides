@@ -1722,6 +1722,7 @@ function addon.settings:CreateAceOptionsPanel()
                         min = 0.1,
                         max = 1,
                         step = 0.1,
+                        isPercent = true,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.tracker:UpdateLevelSplits("full")
@@ -2464,6 +2465,7 @@ function addon.settings:CreateAceOptionsPanel()
                         min = 0.2,
                         max = 2,
                         step = 0.05,
+                        isPercent = true,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame:SetScale(value)
@@ -2614,6 +2616,7 @@ function addon.settings:CreateAceOptionsPanel()
                         min = 0.8,
                         max = 3,
                         step = 0.05,
+                        isPercent = true,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.activeItemFrame:SetScale(value)
@@ -2683,6 +2686,7 @@ function addon.settings:CreateAceOptionsPanel()
                         min = 0.05,
                         max = 1,
                         step = 0.05,
+                        isPercent = true,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.UpdateMap()
@@ -2733,6 +2737,7 @@ function addon.settings:CreateAceOptionsPanel()
                         min = 0,
                         max = 1,
                         step = 0.05,
+                        isPercent = true,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.UpdateMap()
