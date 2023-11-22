@@ -1123,6 +1123,7 @@ step << Rogue
     .goto Teldrassil,56.381,60.139
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannok Breezesong|r
 	.trainer >> Train your class spells
+    .train 5171 >> Train |T132306:0|t[Slice and Dice]
     .train 921 >> Train |T133644:0|t[Pick Pocket] as well which is needed for your level 10 Rogue quest
     .target Jannok Breezesong
 step << Hunter
@@ -1405,7 +1406,7 @@ step << Rogue
 step << Rogue
     .goto Darnassus,62.68,65.58
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rellian Greenspyre|r on the second floor
-    >>|cRXP_BUY_Buy a|r |T135641:0|t[Balanced Throwing Dagger]|cRXP_BUY_. Equip it when you're level 11|r
+    >>|cRXP_BUY_Buy a|r |T135641:0|t[Balanced Throwing Dagger]
     .collect 2946,1 -- Balanced Throwing Dagger
     .target Turian
 step
