@@ -249,6 +249,7 @@ step << NightElf Warrior/NightElf Rogue
     .collect 2901,1 -- Mining Pick (1)
     .skill mining,<1,1
 step << NightElf Warrior/NightElf Rogue
+    #completewith Bashal1
     .cast 2580 >> |cRXP_WARN_Cast|r |T136025:0|t[Find Minerals]
     .skill mining,<1,1
 step << Dwarf/Gnome/Human
@@ -273,6 +274,16 @@ step
     .vendor >> |cFFFCDC00Buy as many|r |T133634:0|t[Small Brown Pouches] |cFFFCDC00as you need|r
     >>|cFFFCDC00Buy|r |T132382:0|t[Sharp Arrows] |cFFFCDC00or|r |T132384:0|t[Heavy Shots]|cFFFCDC00. You have a long grinding session ahead|r << Hunter
     .target Dalmond
+
+step << NightElf Rogue
+    .goto Darkshore,37.574,40.344
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Naram Longclaw|r
+    >>|cRXP_BUY_Buy a|r |T135640:0|t[Jambiya]
+    .collect 2207,1 -- Jambiya (1)
+    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.10
+    .money <0.2390
+    .target Naram Longclaw
+
 step
 #map Darkshore
     .goto Felwood,19.98,14.40
@@ -522,7 +533,6 @@ step << Druid
     .goto Felwood,22.39,29.45
     .xp 14-2645 >> Grind until you are 2645xp away from level 14
 step << Druid
-    .goto Darkshore,36.71,44.98,5,0
     .goto Darkshore,36.34,45.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Caylais Moonfeather|r
     .fly Teldrassil >> Fly to Teldrassil
@@ -1009,12 +1019,20 @@ step << NightElf
 step
     #completewith darkshoret1n
     .subzone 442 >> Travel to Auberdine
-step << !NightElf
+step
 #map Darkshore
     .isQuestComplete 2138
     .goto Felwood,21.63,18.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tharnariun Treetender|r
     .turnin 2138 >> Turn in Cleansing of the Infected
+    .accept 2139 >> Accept Tharnariun's Hope
+    .target Tharnariun Treetender
+step
+#map Darkshore
+    .isQuestTurnedIn 2138
+    .goto Felwood,21.63,18.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tharnariun Treetender|r
+    .accept 2139 >> Accept Tharnariun's Hope
     .target Tharnariun Treetender
 step
     .goto Darkshore,37.70,40.70
@@ -1032,7 +1050,7 @@ step
     .target Thundris Windweaver
     .accept 4763 >> Accept The Blackwood Corrupted
 step << Druid
-    .goto Darkshore,37.7,40.7
+    .goto Darkshore,37.70,40.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Alanndarian Nightsong|r
     .turnin 6122 >> Turn in The Principal Source
     .target Alanndarian Nightsong
@@ -1088,7 +1106,6 @@ step << Druid
     .goto Felwood,22.39,29.45
     .xp 16 >> Grind to level 16
 step << Druid
-    .goto Darkshore,36.71,44.98,5,0
     .goto Darkshore,36.34,45.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Caylais Moonfeather|r
     .fly Teldrassil >> Fly to Teldrassil
@@ -1635,7 +1652,6 @@ RXPGuides.RegisterGuide([[
 --?
 
 step << NightElf !Druid
-    .goto Darkshore,36.71,44.98,5,0
     .goto Darkshore,36.34,45.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Caylais Moonfeather|r
     .fly Teldrassil >> Fly to Teldrassil
@@ -1703,7 +1719,7 @@ step << NightElf Priest
 step << NightElf Rogue
     >>Enter the Cenarion Enclave
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Syurna|r
-    .goto Darnassus,31.84,16.69,30,0
+    .goto Darnassus,31.84,16.69,15,0
     .goto Darnassus,37.00,21.92
     .trainer >> Train your class spells
     .target Syurna
@@ -1716,10 +1732,11 @@ step
     .accept 4740 >> Accept WANTED: Murkdeep!
 step << NightElf
 #map Darkshore
-    #completewith next
+    .isOnQuest 730
     .goto Felwood,20.04,16.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Archaeologist Hollee|r
     .turnin 730 >> Turn in Trouble In Darkshore?
+    .accept 729 >> Accept The Absent Minded Prospector
     .target Archaeologist Hollee
 step
 #map Darkshore
@@ -2066,7 +2083,7 @@ step << Hunter
     .accept 741 >> Accept The Absent Minded Prospector
     .isQuestTurnedIn 731
 step << Druid
-    .goto Darkshore,37.7,40.7
+    .goto Darkshore,37.70,40.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Alanndarian Nightsong|r
     .turnin 6123 >> Turn in Gathering the Cure
     .accept 6124 >> Accept Curing the Sick
