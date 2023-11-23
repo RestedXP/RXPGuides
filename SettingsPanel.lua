@@ -159,6 +159,7 @@ function addon.settings:InitializeSettings()
 
             enableTips = true,
             enableItemUpgrades = true,
+            enableItemUpgradesAH = true,
             enableDrowningWarning = true,
             enableDrowningWarningSound = true,
             drowningThreshold = 0.2,
@@ -2086,6 +2087,28 @@ function addon.settings:CreateAceOptionsPanel()
                                        self.profile
                                            .enableQuestChoiceRecommendation)
                         end
+                    },
+                    enableItemUpgradesAH = {
+                        name = fmt("%s %s (Beta)", _G.ENABLE,
+                                   _G.MINIMAP_TRACKING_AUCTIONEER),
+                        desc = fmt("%s %s", _G.AUCTION_ITEM, _G.SEARCH),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 5.6,
+                        hidden = function()
+                            return not addon.itemUpgrades or
+                                       not self.profile.enableBetaFeatures
+                        end,
+                        disabled = function()
+                            return not self.profile.enableItemUpgrades or
+                                       UnitLevel("player") ==
+                                       GetMaxPlayerLevel() or
+                                       self.profile.soloSelfFound
+                        end,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.itemUpgrades.AH:Setup()
+                        end
                     }
                 }
             },
@@ -2799,8 +2822,9 @@ function addon.settings:CreateAceOptionsPanel()
                                     p.alwaysSendBranded or p.checkVersions or
                                     p.enableLevelingReportInspections or
                                     p.enableVendorTreasure or
-                                    p.enableItemUpgrades or p.hideCompletedSteps or
-                                    p.showUnusedGuides) or
+                                    p.enableItemUpgrades or
+                                    p.enableItemUpgradesAH or
+                                    p.hideCompletedSteps or p.showUnusedGuides) or
                                     addon.RXPFrame.BottomFrame:GetHeight() < 35
                         end,
                         set = function(_, value)
@@ -2819,6 +2843,7 @@ function addon.settings:CreateAceOptionsPanel()
                             p.enableLevelingReportInspections = value
                             p.enableVendorTreasure = value
                             p.enableItemUpgrades = value
+                            p.enableItemUpgradesAH = value
                             p.hideCompletedSteps = value
                             p.showUnusedGuides = value
 
