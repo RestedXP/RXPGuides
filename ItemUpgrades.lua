@@ -527,6 +527,8 @@ function addon.itemUpgrades:Setup()
     -- ShoppingTooltip2:HookScript("OnTooltipSetItem", TooltipSetItem)
 
     session.isInitialized = true
+
+    self.AH:Setup()
 end
 
 -- Reset cache on levelup
@@ -1105,3 +1107,255 @@ function addon.itemUpgrades.Test()
         end
     end
 end
+
+local CanSendAuctionQuery, QueryAuctionItems = _G.CanSendAuctionQuery,
+                                               _G.QueryAuctionItems
+local GetNumAuctionItems, GetAuctionItemLink, GetAuctionItemInfo =
+    _G.GetNumAuctionItems, _G.GetAuctionItemLink, _G.GetAuctionItemInfo
+local ahSession = {
+    isInitialized = false,
+    -- TODO move to general
+    infoItemsReceived = {}, -- takes itemID, not itemLinks
+
+    scanData = {},
+
+    windowOpen = false,
+    processing = false,
+    scanPage = 0,
+    scanType = 2 -- armor
+}
+addon.itemUpgrades.AH = addon:NewModule("ItemUpgradesAH", "AceEvent-3.0")
+
+function addon.itemUpgrades.AH:Setup()
+    if not addon.settings.profile.enableItemUpgradesAH then return end
+    if not addon.settings.profile.enableBetaFeatures then return end
+    if addon.settings.profile.soloSelfFound then return end
+
+    if ahSession.isInitialized then return end
+
+    self:RegisterEvent("AUCTION_HOUSE_SHOW")
+    self:RegisterEvent("AUCTION_HOUSE_CLOSED")
+
+    self:RegisterEvent("GET_ITEM_INFO_RECEIVED")
+    self:RegisterEvent("AUCTION_ITEM_LIST_UPDATE")
+
+    ahSession.isInitialized = true
+end
+
+function addon.itemUpgrades.AH:AUCTION_HOUSE_SHOW()
+    ahSession.windowOpen = true
+    C_Timer.After(0.35, function() addon.itemUpgrades.AH:Scan() end)
+end
+
+function addon.itemUpgrades.AH:AUCTION_HOUSE_CLOSED()
+
+    -- Reset session
+    ahSession.windowOpen = false
+    ahSession.sentQuery = false
+    ahSession.scanPage = 0
+    ahSession.scanType = 2 -- armor
+end
+
+-- Fired when GetItemInfo queries the server for an uncached item and the reponse has arrived.
+-- TODO move to addon.itemUpgrades
+function addon.itemUpgrades.AH:GET_ITEM_INFO_RECEIVED(_, itemID, success)
+    if not success then return end
+
+    if ahSession.infoItemsReceived[itemID] then return end
+    print("GET_ITEM_INFO_RECEIVED", itemID)
+    -- If item queried, it's probably applicable to ItemUpgrades, so build and cache
+    -- TODO ensure no infinite loop
+    addon.itemUpgrades:GetItemData("item:" .. itemID)
+    ahSession.infoItemsReceived[itemID] = true
+end
+
+-- Triggers each time the scroll panel is updated
+-- Scrolling, initial population
+-- Blizzard's standard auction house view overcomes this problem by reacting to AUCTION_ITEM_LIST_UPDATE and re-querying the items.
+function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
+    if not ahSession.sentQuery then return end
+
+    local resultCount, totalAuctions = GetNumAuctionItems("list")
+    print("AUCTION_ITEM_LIST_UPDATE", resultCount, totalAuctions)
+
+    if resultCount == 0 or totalAuctions == 0 then
+        ahSession.sentQuery = false
+        ahSession.scanPage = 0
+
+        if ahSession.scanType == 2 then
+            ahSession.scanType = 1 -- weapons
+            -- self:Scan() -- TODO enable after handling weapon post-processing
+            self:Analyze()
+        else
+            self:Analyze()
+        end
+
+        return
+    end
+
+    local itemLink
+    local name, quality, canUse, level, buyoutPrice, saleStatus, itemID,
+          hasAllInfo
+
+    for i = 1, resultCount do
+        itemLink = GetAuctionItemLink("list", i)
+
+        -- name, texture, count, quality, canUse, level, levelColHeader, minBid, minIncrement, buyoutPrice, bidAmount, highBidder, bidderFullName, owner, ownerFullName, saleStatus, itemId, hasAllInfo = GetAuctionItemInfo(type, index)
+        name, _, _, quality, _, level, _, _, _, buyoutPrice, _, _, _, _, _, _, itemID, hasAllInfo =
+            GetAuctionItemInfo("list", i)
+
+        -- TODO if not hasAllInfo
+        if ahSession.scanData[itemLink] then
+            if buyoutPrice < ahSession.scanData[itemLink].lowestPrice then
+                ahSession.scanData[itemLink].lowestPrice = buyoutPrice
+            end
+        else
+            ahSession.scanData[itemLink] = {
+                lowestPrice = buyoutPrice,
+                itemID = itemID
+            }
+        end
+
+        -- print("scan", itemID, hasAllInfo, buyoutPrice)
+    end
+
+    ahSession.sentQuery = false
+
+    ahSession.scanPage = ahSession.scanPage + 1
+    self:Scan()
+end
+
+function addon.itemUpgrades.AH:Scan()
+    -- Prevent double calls
+    if ahSession.sentQuery then return end
+
+    -- TODO use better queueing
+    if not CanSendAuctionQuery() then
+        -- print("addon.itemUpgrades.AH:Scan() - queued", ahSession.scanPage, ahSession.scanType)
+
+        C_Timer.After(0.35, function() self:Scan() end)
+        return
+    end
+    print("addon.itemUpgrades.AH:Scan()", ahSession.scanPage, ahSession.scanType)
+
+    local maxLevel = UnitLevel("player")
+
+    ahSession.sentQuery = true
+
+    -- text, minLevel, maxLevel, page, usable, rarity, getAll, exactMatch, filterData
+    QueryAuctionItems("", maxLevel - 5, maxLevel, ahSession.scanPage, true,
+                      Enum.ItemQuality.Uncommon, false, false,
+                      AuctionCategories[ahSession.scanType].filters)
+end
+
+local function calculate(itemLink, scanData)
+    if scanData.lowestPrice <= 0 then return end
+    local itemData = addon.itemUpgrades:GetItemData("item:" .. scanData.itemID)
+
+    -- Should only have queried usable items, so not intentionally nil
+    if not itemData then
+        print("itemData nil", itemLink)
+        tinsert(ahSession.retryQuery, itemLink)
+        return
+    end
+
+    -- TODO handle DPS post-processing slot calculations
+    scanData.totalWeight = itemData.totalWeight
+    scanData.weightPerCopper = scanData.totalWeight / scanData.lowestPrice
+    scanData.itemEquipLoc = itemData.itemEquipLoc
+    scanData.comparisons = addon.itemUpgrades:CompareItemWeight(itemLink) or {}
+
+    for _, compareData in ipairs(scanData.comparisons) do
+        if compareData.Ratio then
+            -- To avoid complicated comparison, use ratio as a multiplier
+            scanData.relativeWeightPerCopper =
+                scanData.weightPerCopper * compareData.Ratio
+        else
+            if compareData.debug == _G.EMPTY then
+                -- An item needs to be 10x better to beat an empty slot fill
+                scanData.relativeWeightPerCopper =
+                    scanData.weightPerCopper * 10.0
+                -- else -- nil for a reason unimportant
+            end
+        end
+    end
+end
+
+function addon.itemUpgrades.AH:Analyze()
+    print("Analyze")
+
+    -- TODO handle retry loop
+    ahSession.retryQuery = {}
+
+    ahSession.bestAnalysis = {}
+
+    -- We already know all of this is usable, so just care about slots
+    for invEquipType, slotId in pairs(session.equippableSlots) do
+        if type(slotId) == "table" then
+            for j, _ in pairs(slotId) do
+                ahSession.bestAnalysis[j] = {
+                    slotName = _G[invEquipType],
+                    weightPerCopper = {weight = 0, itemLink = nil},
+                    relativeWeightPerCopper = {weight = 0, itemLink = nil}
+                }
+            end
+        else
+            ahSession.bestAnalysis[slotId] = {
+                slotName = _G[invEquipType],
+                weightPerCopper = {weight = 0, itemLink = nil},
+                relativeWeightPerCopper = {weight = 0, itemLink = nil}
+            }
+        end
+
+    end
+
+    local bAS, slotId
+
+    for itemLink, scanData in pairs(ahSession.scanData) do
+        calculate(itemLink, scanData)
+
+        if scanData.relativeWeightPerCopper then
+            -- print("Analyze", itemLink, "weightPerCopper", scanData.weightPerCopper, "relativeWPC", scanData.relativeWeightPerCopper)
+
+            slotId = session.equippableSlots[scanData.itemEquipLoc]
+            bAS = ahSession.bestAnalysis[slotId]
+
+            if scanData.weightPerCopper > bAS.weightPerCopper.weight then
+                bAS.weightPerCopper.weight = scanData.weightPerCopper
+                bAS.weightPerCopper.itemLink = itemLink
+            end
+
+            if scanData.relativeWeightPerCopper >
+                bAS.relativeWeightPerCopper.weight then
+                bAS.relativeWeightPerCopper.weight =
+                    scanData.relativeWeightPerCopper
+                bAS.relativeWeightPerCopper.itemLink = itemLink
+            end
+        end
+        -- else -- downgrade, incompatible, or similar
+    end
+
+    for _, data in pairs(ahSession.bestAnalysis) do
+
+        if data.weightPerCopper.itemLink or
+            data.relativeWeightPerCopper.itemLink then
+            print("Analyse:", data.slotName)
+        else
+            print("Analyse:", data.slotName, "no upgrades found")
+        end
+
+        if data.weightPerCopper.itemLink then
+            print("  - Best", data.weightPerCopper.itemLink)
+        end
+        if data.relativeWeightPerCopper.itemLink then
+            print("  - Budget", data.relativeWeightPerCopper.itemLink)
+        end
+
+    end
+
+end
+
+--    local name = GetAuctionSellItemInfo()
+--    BrowseName:SetText('"' .. name .. '"')
+--    AuctionFrameBrowse_Search()
+--    AuctionFrameTab1:Click()
