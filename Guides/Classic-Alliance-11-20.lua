@@ -1929,7 +1929,7 @@ step
     .accept 951 >> Accept Mathystra Relics
     .target Onu
 step
-    #completewith south1
+    #completewith Southcrabs
 --  .goto Darkshore,33.85,80.92,45,0
 --  .goto Darkshore,32.17,82.92,45,0
 --  .goto Darkshore,35.41,78.96,45,0
@@ -2002,20 +2002,21 @@ step << !Hunter
     .accept 4730 >> Accept Beached Sea Creature
 step
 #map Darkshore
-    #label south1 << !Hunter
     .goto Felwood,13.47,64.01
     >>Click the |cFFDB2EEFBeached Sea Turtle|r
     .accept 4731 >> Accept Beached Sea Turtle
 step << Hunter
-#label south1
 #map Darkshore
+    #label Southcrabs
     .goto Felwood,14.62,60.72
     >>Click the |cFFDB2EEFBeached Sea Creature|r
     .accept 4730 >> Accept Beached Sea Creature
 step << !NightElf !Hunter !Druid
+    #label Southcrabs
     #completewith next
     .hs >> Hearth to Auberdine
 step << Druid
+    #label Southcrabs
     #requires earthroot
 	#completewith next
 	.cast 18960 >> Cast Teleport: Moonglade
@@ -2034,8 +2035,9 @@ step << Druid
     .target Sindrayl
 step << NightElf !Druid/Dwarf Hunter
 #map Darkshore
-    #completewith next
-    .goto Felwood,19.10,20.63,100 >> Travel to Auberdine
+    #label Southcrabs
+    #completewith CleansingTharnariun
+    .subzone 442 >> Travel to Auberdine
 step
 #map Darkshore
     .goto Darkshore,36.71,44.98,5,0
@@ -2049,7 +2051,6 @@ step
     .target Gwennyth Bly'Leggonde
 step
 #map Darkshore
-    #label south2
     .goto Felwood,18.50,19.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gubber Blump|r
     .turnin 1138 >> Turn in Fruit of the Sea
@@ -2063,6 +2064,7 @@ step
     .target Sentinel Glynda Nal'Shea
 step
 #map Darkshore
+    #label CleansingTharnariun
     .goto Felwood,21.63,18.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tharnariun Treetender|r
     .turnin 2138 >> Turn in Cleansing of the Infected
@@ -4725,26 +4727,23 @@ step << NightElf
     .accept 166 >> Accept The Defias Brotherhood
     .goto Westfall,56.33,47.52
     .target Gryan Stoutmantle
-step << NightElf Warrior/NightElf Rogue/NightElf Priest
+step << NightElf Warrior/NightElf Priest
     #completewith next
     .goto Elwynn Forest,41.08,65.76,25 >> Travel to Goldshire << Warrior
-    .goto Elwynn Forest,43.17,65.70,15 >> Travel to Goldshire << Priest/Rogue
+    .goto Elwynn Forest,43.17,65.70,15 >> Travel to Goldshire << Priest
 step << NightElf Warrior
     .goto Elwynn Forest,41.08,65.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Lyria|r
     .trainer >> Train your class spells
     .target Lyria Du Lac
-step << NightElf Rogue/NightElf Priest
+step << NightElf Priest
     >>Travel to the Inn. Go upstairs
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Josetta|r << Priest
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Keryn|r << Rogue
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Josetta|r
     .goto Elwynn Forest,43.17,65.70,12,0
     .goto Elwynn Forest,43.80,66.47,8,0
-    .goto Elwynn Forest,43.28,65.72 << Priest
-    .goto Elwynn Forest,43.87,65.94 << Rogue
+    .goto Elwynn Forest,43.28,65.72
     .trainer >> Train your class spells
-    .target Priestess Josetta << Priest
-    .target Keryn Sylvius << Rogue
+    .target Priestess Josetta
 step << !Human !Warlock
     #som
     #phase 3-6
