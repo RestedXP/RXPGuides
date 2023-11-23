@@ -114,7 +114,8 @@ step << Warlock
     .hs >> Hearth to Coldridge Valley
 step << Warlock
     #softcore
-    .goto Dun Morogh,29.5,69.8,100 >> Die and respawn at the Spirit Healer
+    #completewith next
+    .deathskip >> Die and respawn at the Spirit Healer
     .target Spirit Healer
 step << Warlock
     #hardcore
@@ -357,7 +358,8 @@ step
     .mob Grik'nir the Cold
 step << !Paladin !Mage !Warlock
     #softcore
-    .goto Dun Morogh,29.5,69.8,100 >> Die and respawn at Spirit Healer
+    #completewith next
+    .deathskip >> Die and respawn at Spirit Healer
     .target Spirit Healer
 step << !Paladin !Mage !Warlock
     #hardcore
@@ -902,8 +904,8 @@ step << Warrior/Rogue/Paladin
     #completewith next
     .goto Dun Morogh,47.377,52.523
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r
-    .vendor >> |cRXP_BUY_Buy up to 20|r |T133968:0|t[Freshly Baked Bread] << Warrior/Rogue
-    .vendor >> |cRXP_BUY_Buy up to 10|r |T133968:0|t[Freshly Baked Bread] << Paladin
+    .vendor 1247 >> |cRXP_BUY_Buy up to 20|r |T133968:0|t[Freshly Baked Bread] << Warrior/Rogue
+    .vendor 1247 >> |cRXP_BUY_Buy up to 10|r |T133968:0|t[Freshly Baked Bread] << Paladin
     .target Innkeeper Belm
 step << Paladin/Warrior/Rogue
     #completewith next
