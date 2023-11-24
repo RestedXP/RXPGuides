@@ -843,6 +843,7 @@ step
     .goto Darkshore,45.07,36.76
     >>Kill |cRXP_ENEMY_Deth'ryll Satyr|r. Loot them for the |cRXP_LOOT_Moonstone Seal|r
     .complete 956,1
+    .mob Deth'ryll Satyr
 step
 #map Darkshore
     .goto Felwood,27.70,10.03

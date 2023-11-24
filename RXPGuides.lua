@@ -183,15 +183,15 @@ end
 
 function addon.GetStepQuestReward(titleOrId)
     -- enableQuestRewardAutomation is setting for hard-coded .turnin step data
-    if not addon.settings.profile.enableQuestRewardAutomation then return end
-    if not titleOrId then return end
+    if not addon.settings.profile.enableQuestRewardAutomation then return 0 end
+    if not titleOrId then return 0 end
 
     -- questTurnIn contains quest and title lookups
     -- addon.questTurnIn[747] == addon.questTurnIn["The Hunt Begins"]
 
     local element = addon.questTurnIn[titleOrId]
 
-    if not element then return end
+    if not element then return 0 end
 
     return element.reward >= 0 and element.reward or 0
 end
@@ -535,8 +535,6 @@ local function createLogRewardChoiceIcons()
         questLogRewardChoiceIcons["value"]:SetSize(20, 20)
     end
 
-    _G.QuestLogDetailScrollFrame:HookScript("OnHide", hideRewardChoiceIcons)
-
     -- Triggers on open and selection in Classic
     -- Only triggers on selection in Wrath
     hooksecurefunc("SelectQuestLogEntry", function(questLogIndex)
@@ -544,16 +542,21 @@ local function createLogRewardChoiceIcons()
         addon.DisplayQuestLogRewards(questLogIndex)
     end)
 
-    -- Double call on show to ensure reward frames have been created
-    if addon.gameVersion > 30000 then
-        _G.QuestLogDetailScrollFrame:HookScript("OnShow", addon.DisplayQuestLogRewards)
+    -- Hide icons on quest log close to avoid mislabeled rewards
+    _G.QuestLogDetailScrollFrame:HookScript("OnHide", hideRewardChoiceIcons)
+
+    if addon.gameVersion > 20000 then
+        -- Inefficient, but bypasses load order issues between helper functions
+        _G.QuestLogDetailScrollFrame:HookScript("OnShow", function ()
+            addon.DisplayQuestLogRewards()
+        end)
     end
 
     questLogRewardChoiceIcons["ratio"].isHooked = true
 end
 
 -- Retail has enough helpers and massive UI differences
-if addon.version < 40000 then
+if addon.gameVersion < 40000 then
     createRewardChoiceIcons()
     createLogRewardChoiceIcons()
 end
@@ -576,7 +579,7 @@ local function evaluateQuestChoices(questID, numChoices, GetQuestItemInfo, GetQu
     end
 
     -- Only support hard-coded turnin values on Retail
-    if addon.version > 40000 then return -1, -1, {} end
+    if addon.gameVersion > 40000 then return -1, -1, {} end
 
     local options = {}
     local itemLink, isUsable, itemData
@@ -620,7 +623,7 @@ local function evaluateQuestChoices(questID, numChoices, GetQuestItemInfo, GetQu
     end
 
     local bestSellOption, bestSellValue = -1, -1
-    local bestRatioOption, bestRatioValue = -1, -1
+    local bestRatioOption, bestRatioValue = -1, 0
     for choice, data in ipairs(options) do
         if data.sellPrice > bestSellValue then
             bestSellValue = data.sellPrice
@@ -630,7 +633,7 @@ local function evaluateQuestChoices(questID, numChoices, GetQuestItemInfo, GetQu
         -- Check for best compared upgrade
         for _, compareData in ipairs(data.comparisons) do
             if not compareData.Ratio then
-                if compareData.debug == _G.EMPTY then
+                if compareData.ItemLink == _G.EMPTY then
                      -- An item needs to be 10x better to beat an empty slot fill
                     bestRatioValue = 10.0
                     bestRatioOption = choice
@@ -660,7 +663,7 @@ local function handleQuestComplete()
 
     local bestSellOption, bestRatioOption, options = evaluateQuestChoices(id, numChoices, GetQuestItemInfo, GetQuestItemLink)
 
-    if addon.version < 40000 and addon.settings.profile.enableQuestChoiceRecommendation then
+    if addon.gameVersion < 40000 and addon.settings.profile.enableQuestChoiceRecommendation then
         if bestRatioOption > 0 then
             local bestRatioFrame = QuestInfo_GetRewardButton(QuestInfoFrame.rewardsFrame, bestRatioOption)
 
@@ -672,7 +675,7 @@ local function handleQuestComplete()
         end
     end
 
-    if addon.version < 40000 and addon.settings.profile.enableQuestChoiceGoldRecommendation then
+    if addon.gameVersion < 40000 and addon.settings.profile.enableQuestChoiceGoldRecommendation then
         local bestSellFrame = QuestInfo_GetRewardButton(QuestInfoFrame.rewardsFrame, bestSellOption)
 
         if bestSellFrame then

@@ -697,7 +697,7 @@ function Frame:UpdateWorldMapPins()
         npcPin:SetPoint("CENTER", pinX, pinY)
         npcPin:SetWidth(WORLD_MAP_PIN_SIZE)
         npcPin:SetHeight(WORLD_MAP_PIN_SIZE)
-        npcPin:SetScale(addon.settings.profile.worldMapPinScale)
+        npcPin:SetScale(addon.settings.profile.vendorTreasurePinScale)
     end
 
 end

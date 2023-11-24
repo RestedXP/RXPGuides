@@ -587,7 +587,7 @@ Arrow data
 
     local editbox = AceGUI:Create("MultiLineEditBox")
     editbox:SetLabel(L(
-                         "Join our support discord at discord.gg/RestedXP and copy paste this form into #addon-feedback"))
+                         "Join our support discord at discord.gg/RestedXP and copy paste this form into #bug-report"))
     editbox:SetFullWidth(true)
     editbox:SetFullHeight(true)
     editbox:SetText(content)

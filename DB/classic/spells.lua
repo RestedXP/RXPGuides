@@ -831,29 +831,29 @@ s["ROGUE"] = {
     },
     [6] = {
         1776, -- gouge
-        1757, -- sinister strike r2
-        3127 -- parry
+        1757 -- sinister strike r2
     },
     [8] = {
         5277, -- evasion
         6760 -- eviscerate r2
     },
     [10] = {
-        921, -- pick pocket
         2983, -- sprint
         6452, -- Anti-venom(FA)
-        674 -- dual wield
+        1424 -- dual wield
     },
     [12] = {
         1766, -- kick
         6770, -- sap
-        5171 -- slice and dice
+        5171, -- slice and dice
+        3128 -- parry
     },
     [14] = {
         703, -- garrote
         1758 -- sinister strike r3
     },
     [16] = {
+        5167, -- pick pocket
         6761, -- eviscerate r3
         1804 -- Pick Lock
     },

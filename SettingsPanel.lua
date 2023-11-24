@@ -107,6 +107,7 @@ function addon.settings:InitializeSettings()
             windowScale = 1,
             numMapPins = 7,
             worldMapPinScale = 1,
+            vendorTreasurePinScale = 0.8,
             distanceBetweenPins = 1,
             worldMapPinBackgroundOpacity = 0.35,
             batchSize = 6,
@@ -696,6 +697,21 @@ function addon.settings:CreateAceOptionsPanel()
         return L("This requires a reload to take effect, continue?")
     end
 
+    local function showStepList(value)
+        if addon.currentGuide and addon.currentGuide.hidewindow then
+            return
+        end
+
+        if value then
+            addon.RXPFrame:SetHeight(addon.height)
+            addon.settings.profile.frameHeight = addon.height
+        else
+            addon.RXPFrame:SetHeight(10)
+            addon.settings.profile.frameHeight = 10
+        end
+        addon.updateBottomFrame = true
+    end
+
     local optionsWidth = 1.08
     local settingsCache = {orphans = {}}
 
@@ -861,7 +877,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end
                     },
                     enableVendorTreasure = {
-                        name = L("Enable Vendor Treasures"),
+                        name = fmt('%s %s', _G.ENABLE, L("Vendor Treasures")),
                         desc = L(
                             "Enable embedded Cpt. Stadics' Vendor Treasures"),
                         type = "toggle",
@@ -1706,6 +1722,7 @@ function addon.settings:CreateAceOptionsPanel()
                         min = 0.1,
                         max = 1,
                         step = 0.1,
+                        isPercent = true,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.tracker:UpdateLevelSplits("full")
@@ -1834,7 +1851,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 1.3,
-                        hidden = addon.version > 40000,
+                        hidden = addon.gameVersion > 40000
                     },
                     drowningHeader = {
                         name = _G.STRING_ENVIRONMENTAL_DAMAGE_DROWNING,
@@ -2448,6 +2465,7 @@ function addon.settings:CreateAceOptionsPanel()
                         min = 0.2,
                         max = 2,
                         step = 0.05,
+                        isPercent = true,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame:SetScale(value)
@@ -2492,21 +2510,8 @@ function addon.settings:CreateAceOptionsPanel()
                         get = function()
                             return addon.RXPFrame.BottomFrame:GetHeight() >= 35
                         end,
-                        set = function(info, value)
-                            if addon.currentGuide and
-                                addon.currentGuide.hidewindow then
-                                return
-                            end
-
-                            if value then
-                                addon.RXPFrame:SetHeight(addon.height)
-                                addon.settings.profile.frameHeight =
-                                    addon.height
-                            else
-                                addon.RXPFrame:SetHeight(10)
-                                addon.settings.profile.frameHeight = 10
-                            end
-                            addon.updateBottomFrame = true
+                        set = function(_, value)
+                            showStepList(value)
                         end
                     },
                     hideCompletedSteps = {
@@ -2611,6 +2616,7 @@ function addon.settings:CreateAceOptionsPanel()
                         min = 0.8,
                         max = 3,
                         step = 0.05,
+                        isPercent = true,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.activeItemFrame:SetScale(value)
@@ -2680,6 +2686,27 @@ function addon.settings:CreateAceOptionsPanel()
                         min = 0.05,
                         max = 1,
                         step = 0.05,
+                        isPercent = true,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.UpdateMap()
+                        end
+                    },
+                    vendorTreasurePinScale = {
+                        name = fmt('%s %s', L("Vendor Treasures"),
+                                   L("Map Pin Scale")),
+                        desc = L("Adjusts the size of the world map pins"),
+                        type = "range",
+                        width = optionsWidth,
+                        order = 5.6,
+                        min = 0.05,
+                        max = 1,
+                        step = 0.05,
+                        isPercent = true,
+                        hidden = addon.game ~= "CLASSIC",
+                        disabled = function()
+                            return not self.profile.enableVendorTreasure
+                        end,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.UpdateMap()
@@ -2691,7 +2718,7 @@ function addon.settings:CreateAceOptionsPanel()
                             "If two or more steps are very close together, this addon will group them into a single pin on the map. Adjust this range to determine how close together two steps must be to form a group."),
                         type = "range",
                         width = optionsWidth,
-                        order = 5.6,
+                        order = 5.7,
                         min = 0.05,
                         max = 2,
                         step = 0.05,
@@ -2706,10 +2733,11 @@ function addon.settings:CreateAceOptionsPanel()
                             "The opacity of the black circles on the map and mini map"),
                         type = "range",
                         width = optionsWidth,
-                        order = 5.7,
+                        order = 5.8,
                         min = 0,
                         max = 1,
                         step = 0.05,
+                        isPercent = true,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.UpdateMap()
@@ -2752,6 +2780,55 @@ function addon.settings:CreateAceOptionsPanel()
                         max = 100,
                         step = 1,
                         hidden = addon.gameVersion > 40000
+                    },
+                    optimizePerformance = {
+                        name = fmt("%s %s %s", _G.LOW, _G.QUALITY, _G.SETTINGS),
+                        desc = _G.OPTION_TOOLTIP_COMBAT_TARGET_MODE_NEW,
+                        order = 1.3,
+                        type = "toggle", -- type = "execute",
+                        width = optionsWidth,
+                        confirm = requiresReload,
+                        get = function()
+                            local p = self.profile
+                            return
+                                not (p.enableTargetAutomation or p.enableTips or
+                                    p.enableTracker or p.checkVersions or
+                                    p.enableLevelUpAnnounceSolo or
+                                    p.enableLevelUpAnnounceGroup or
+                                    p.enableFlyStepAnnouncements or
+                                    p.alwaysSendBranded or p.checkVersions or
+                                    p.enableLevelingReportInspections or
+                                    p.enableVendorTreasure or
+                                    p.enableItemUpgrades or p.hideCompletedSteps or
+                                    p.showUnusedGuides) or
+                                    addon.RXPFrame.BottomFrame:GetHeight() < 35
+                        end,
+                        set = function(_, value)
+                            -- Disable all supplemental
+                            -- Support re-enabling with (most) defaults
+                            local p = self.profile
+                            p.enableTargetAutomation = value
+                            p.enableTips = value
+                            p.enableTracker = value
+                            p.checkVersions = value
+                            p.enableLevelUpAnnounceSolo = value
+                            p.enableLevelUpAnnounceGroup = value
+                            p.enableFlyStepAnnouncements = value
+                            p.alwaysSendBranded = value
+                            p.checkVersions = value
+                            p.enableLevelingReportInspections = value
+                            p.enableVendorTreasure = value
+                            p.enableItemUpgrades = value
+                            p.hideCompletedSteps = value
+                            p.showUnusedGuides = value
+
+                            -- Only impact step list if disabling
+                            if not value then
+                                showStepList(false)
+                            end
+
+                            _G.ReloadUI()
+                        end
                     },
                     skipMissingPreReqs = {
                         name = L("Skip quests with missing pre-requisites"),
@@ -3175,7 +3252,7 @@ local function buildWorldMapMenu()
 
     if addon.VendorTreasures then
         tinsert(menu, {
-            text = L("Enable Vendor Treasures"),
+            text = fmt('%s %s', _G.ENABLE, L("Vendor Treasures")),
             tooltipTitle = L("Enable embedded Cpt. Stadics' Vendor Treasures"),
             icon = "Interface/GossipFrame/VendorGossipIcon.blp",
             arg1 = "toggle",
@@ -3261,6 +3338,25 @@ function addon.settings:SetupMapButton()
         EasyMenu(buildWorldMapMenu(), self.worldMapButton.menuFrame,
                  self.worldMapButton, 0, 0, "MENU")
     end)
+
+    local ref = WorldMapFrame.MaximizeMinimizeFrame.MaximizeButton
+
+    local function recalculateMapButton()
+        if WorldMapFrame.isMaximized then
+            self.worldMapButton:SetSize(36, 36)
+            self.worldMapButton:SetPoint("TOPRIGHT", _G.WorldMapFrame,
+                                         "TOPRIGHT", -10, -26)
+        else
+            self.worldMapButton:SetSize(20, 20)
+            self.worldMapButton:SetPoint("TOPRIGHT", ref, "TOPLEFT", 0, -5.5)
+        end
+    end
+
+    -- self.worldMapButton:SetScript("OnShow", recalculateMapButton)
+
+    hooksecurefunc(ref, "Show", recalculateMapButton)
+    hooksecurefunc(WorldMapFrame.MaximizeMinimizeFrame.MinimizeButton, "Show",
+                   recalculateMapButton)
 
 end
 

@@ -4,8 +4,7 @@ if addon.gameVersion > 30000 then return end
 
 local locale = GetLocale()
 
--- TOOD add frFR and zhTW
-if not (locale == "enUS" or locale == "enGB") then return end
+if not (locale == "enUS" or locale == "enGB" or locale == "frFR") then return end
 
 local fmt, tinsert, ipairs, pairs, next, type, wipe, tonumber, strlower =
     string.format, table.insert, ipairs, pairs, next, type, wipe, tonumber,
@@ -46,6 +45,22 @@ local session = {
 
     -- TODO handle thread-safe?
     comparisonTip = nil
+}
+
+-- TODO support spec awareness
+-- Ignoring for now since overrides are rare and specific
+local ITEM_WEIGHT_ADDITIONS = {
+    ["DRUID"] = {},
+    ["HUNTER"] = {},
+    ["MAGE"] = {},
+    ["PALADIN"] = {},
+    ["PRIEST"] = {},
+    ["ROGUE"] = {},
+    ["SHAMAN"] = {
+        -- [4908] = 12 -- Additional 12 EP for testing
+    },
+    ["WARLOCK"] = {},
+    ["WARRIOR"] = {}
 }
 
 local CLASS_MAP = {
@@ -286,8 +301,6 @@ local KEY_TO_TEXT = {
 -- Keys only obtained from tooltip text parsing
 -- Explicitly set regex
 local OUT_OF_BAND_KEYS = {
-    -- Hack in weapon speed parsing
-    -- TODO locale, ideally use GlobalStrings.lua, but hard to find for Classic
     ['ITEM_MOD_CR_SPEED_SHORT'] = _G.ITEM_MOD_CR_SPEED_SHORT .. "%s+(%d+%.%d+)",
     ['ITEM_MOD_CRIT_RATING_SHORT'] = "%s+Improves your chance to get a critical strike by (%d+)%%.",
     ['ITEM_MOD_HIT_RATING_SHORT'] = "%s+Improves your chance to hit by (%d+)%%.",
@@ -336,9 +349,26 @@ local SPELL_KIND_MAP = {
     [SPELL_SCHOOL6_NAME] = "STAT_SPELLDAMAGE_ARCANE"
 }
 
--- TODO locale
 local SPELL_KIND_MATCH =
     "Increases damage done by (%a+) spells and effects by up to (%d+)."
+
+if locale == 'frFR' then
+    SPELL_KIND_MATCH =
+        "Augmente les dégâts infligés par les sorts et effets d?e?'? ?(%a+) de (%d+) au maximum."
+
+    -- Comma decimal delimiter
+    OUT_OF_BAND_KEYS['ITEM_MOD_CR_SPEED_SHORT'] =
+        _G.ITEM_MOD_CR_SPEED_SHORT .. "%s+(%d+,%d+)"
+
+    OUT_OF_BAND_KEYS['ITEM_MOD_CRIT_RATING_SHORT'] =
+        "%s+Augmente vos chances d'infliger un coup critique de (%d+)%%."
+    OUT_OF_BAND_KEYS['ITEM_MOD_HIT_RATING_SHORT'] =
+        "%s+Augmente vos chances de toucher de (%d+)%%."
+    OUT_OF_BAND_KEYS['ITEM_MOD_DODGE_RATING_SHORT'] =
+        "%s+Augmente vos chances d'esquiver une attaque de (%d+)%%."
+    OUT_OF_BAND_KEYS['ITEM_MOD_PARRY_RATING_SHORT'] =
+        "%s+Augmente vos chances de parer une attaque de (%d+)%%."
+end
 
 -- Setup reverse lookup in session.weaponSlotToWeightKey
 for weaponKey, d in pairs(WEAPON_SLOT_MAP) do
@@ -399,15 +429,14 @@ local function TooltipSetItem(tooltip, ...)
     local comparisons = addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
 
     if not comparisons or next(comparisons) == nil then return end
-
-    tooltip:AddLine(fmt("%s - %s", addon.title, _G.ITEM_UPGRADE))
+    local lines = {}
 
     local ratioText
     for _, data in ipairs(comparisons) do
         -- Remove base 100 from percentage
         -- A 140% upgrade ratio is only a 40% upgrade
         if data['debug'] or not data['Ratio'] then
-            ratioText = "(debug) " .. data['debug'] or _G.SPELL_FAILED_ERROR
+            ratioText = "(debug) " .. (data['debug'] or _G.SPELL_FAILED_ERROR)
         elseif data['Ratio'] == 1 then
             ratioText = '100%'
         elseif data['Ratio'] > 0 then
@@ -419,12 +448,19 @@ local function TooltipSetItem(tooltip, ...)
         end
 
         if data.itemEquipLoc and data.itemEquipLoc == 'INVTYPE_WEAPONOFFHAND' then
-            tooltip:AddLine(fmt("  %s: %s (%s)", data['ItemLink'] or _G.UNKNOWN,
-                                ratioText, _G.INVTYPE_WEAPONOFFHAND))
-        else
-            tooltip:AddLine(fmt("  %s: %s", data['ItemLink'] or _G.UNKNOWN,
-                                ratioText))
+            tinsert(lines,
+                    fmt("  %s: %s (%s)", data['ItemLink'] or _G.UNKNOWN,
+                        ratioText, _G.INVTYPE_WEAPONOFFHAND))
+        elseif data.ItemLink ~= _G.EMPTY then
+            tinsert(lines,
+                    fmt("  %s: %s", data['ItemLink'] or _G.UNKNOWN, ratioText))
         end
+    end
+
+    if #lines > 0 then
+        tooltip:AddLine(fmt("%s - %s", addon.title, _G.ITEM_UPGRADE))
+
+        for _, line in ipairs(lines) do tooltip:AddLine(line) end
     end
 
     tooltip:Show()
@@ -562,6 +598,9 @@ function addon.itemUpgrades:ActivateSpecWeights()
     end
 
     session.activeStatWeights = session.specWeights[spec]
+
+    session.activeStatWeights.extraWeight =
+        ITEM_WEIGHT_ADDITIONS[addon.player.class]
 
     return session.activeStatWeights ~= nil
 end
@@ -775,16 +814,24 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
         return
     end
 
+    local totalWeight = 0
+    local statWeight, tooltipTextLines
+
+    -- Need itemID for easier code lookups
+    local itemID = GetItemInfoInstant(itemLink)
+
+    if session.activeStatWeights.extraWeight[itemID] then
+        totalWeight = session.activeStatWeights.extraWeight[itemID]
+    end
+
     local itemData = {
+        itemID = itemID,
         itemLink = itemLink,
         itemSubTypeID = itemSubTypeID,
         itemEquipLoc = itemEquipLoc,
         sellPrice = sellPrice,
         itemMinLevel = itemMinLevel
     }
-
-    local totalWeight = 0
-    local statWeight, tooltipTextLines
 
     -- Parse tooltip for all additional stats
     if tooltip then
@@ -832,7 +879,10 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
                         -- Only expect one number per line, so ignore if double match
                         if match1 and not match2 then
                             -- print("Extracted multi-match", tonumber(match1), "from", line)
-                            stats[key] = tonumber(match1)
+                            -- If no match, try EU , -> . for numbers
+                            stats[key] = tonumber(match1) or
+                                             tonumber(
+                                                 (match1:gsub(",", "%.", 1)))
                         end
                     end
                 else
@@ -842,7 +892,9 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
                     -- Only expect one number per line, so ignore if double match
                     if match1 and not match2 then
                         -- print("Extracted", tonumber(match1), "from", line)
-                        stats[key] = tonumber(match1)
+                        -- If no match, try EU , -> . for numbers
+                        stats[key] = tonumber(match1) or
+                                         tonumber((match1:gsub(",", "%.", 1)))
                     end
                 end
             end
@@ -1016,6 +1068,7 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
         if not equippedItemLink or equippedItemLink == "" then
             ratio = nil
             debug = _G.EMPTY
+            equippedItemLink = _G.EMPTY
         elseif comparedData.itemLink == equippedItemLink then
             -- Same item, so not an upgrade
             ratio = nil
@@ -1025,14 +1078,13 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
                                                            comparedData, slotId)
         end
 
-        if ratio or addon.settings.profile.debug then
-            tinsert(comparisons, {
-                ['Ratio'] = ratio,
-                ['ItemLink'] = equippedItemLink or _G.UNKNOWN, -- Pass "Unknown" for debugging
-                ['itemEquipLoc'] = itemEquipLoc, -- Is actually slotID for rings/trinkets
-                ['debug'] = debug
-            })
-        end
+        -- Even if ratio nil, add to comparisons for upstream handling based on debug value
+        tinsert(comparisons, {
+            ['Ratio'] = ratio,
+            ['ItemLink'] = equippedItemLink or _G.UNKNOWN, -- Pass "Unknown" for debugging
+            ['itemEquipLoc'] = itemEquipLoc, -- Is actually slotID for rings/trinkets
+            ['debug'] = addon.settings.profile.debug and debug
+        })
 
     end
 

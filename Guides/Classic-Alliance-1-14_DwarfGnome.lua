@@ -114,7 +114,8 @@ step << Warlock
     .hs >> Hearth to Coldridge Valley
 step << Warlock
     #softcore
-    .goto Dun Morogh,29.5,69.8,100 >> Die and respawn at the Spirit Healer
+    #completewith next
+    .deathskip >> Die and respawn at the Spirit Healer
     .target Spirit Healer
 step << Warlock
     #hardcore
@@ -357,7 +358,8 @@ step
     .mob Grik'nir the Cold
 step << !Paladin !Mage !Warlock
     #softcore
-    .goto Dun Morogh,29.5,69.8,100 >> Die and respawn at Spirit Healer
+    #completewith next
+    .deathskip >> Die and respawn at Spirit Healer
     .target Spirit Healer
 step << !Paladin !Mage !Warlock
     #hardcore
@@ -596,13 +598,13 @@ step << Gnome Warrior
     .money <0.0536
     .goto Dun Morogh,45.290,52.190
     .collect 2488,1 --Collect Gladius (1)
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
 step << Gnome Warrior
     #completewith next
     +|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
     .use 2488
     .itemcount 2488,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.79
 step << Dwarf Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy and equip a|r |T132401:0|t[Large Axe]
@@ -610,13 +612,13 @@ step << Dwarf Warrior
     .money <0.0460
     .goto Dun Morogh,45.290,52.190
     .collect 2491,1 --Collect Large Axe (1)
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.29
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.30
 step << Dwarf Warrior
     #completewith next
     +|cRXP_WARN_Equip the|r |T132401:0|t[Large Axe]
     .use 2491
     .itemcount 2491,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.28
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.29
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy and equip a|r |T135641:0|t[Stiletto]
@@ -624,13 +626,13 @@ step << Rogue
     .money <0.0400
     .goto Dun Morogh,45.290,52.190
     .collect 2494,1 --Collect Stiletto (1)
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     #completewith next
     +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
     .use 2494
     .itemcount 2494,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.32
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.29
 step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy and equip a|r |T133053:0|t[Wooden Mallet]
@@ -849,13 +851,13 @@ step << Gnome Warrior
     .money <0.0536
     .goto Dun Morogh,45.290,52.190
     .collect 2488,1 --Collect Gladius (1)
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
 step << Gnome Warrior
     #completewith next
     +|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
     .use 2488
     .itemcount 2488,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.79
 step << Dwarf Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy and equip a|r |T132401:0|t[Large Axe]
@@ -863,13 +865,13 @@ step << Dwarf Warrior
     .money <0.0460
     .goto Dun Morogh,45.290,52.190
     .collect 2491,1 --Collect Large Axe (1)
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.29
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.30
 step << Dwarf Warrior
     #completewith next
     +|cRXP_WARN_Equip the|r |T132401:0|t[Large Axe]
     .use 2491
     .itemcount 2491,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.28
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.29
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy and equip a|r |T135641:0|t[Stiletto]
@@ -877,13 +879,13 @@ step << Rogue
     .money <0.0400
     .goto Dun Morogh,45.290,52.190
     .collect 2494,1 --Collect Stiletto (1)
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     #completewith next
     +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
     .use 2494
     .itemcount 2494,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.32
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.29
 step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy and equip a|r |T133053:0|t[Wooden Mallet]
@@ -902,8 +904,8 @@ step << Warrior/Rogue/Paladin
     #completewith next
     .goto Dun Morogh,47.377,52.523
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r
-    .vendor >> |cRXP_BUY_Buy up to 20|r |T133968:0|t[Freshly Baked Bread] << Warrior/Rogue
-    .vendor >> |cRXP_BUY_Buy up to 10|r |T133968:0|t[Freshly Baked Bread] << Paladin
+    .vendor 1247 >> |cRXP_BUY_Buy up to 20|r |T133968:0|t[Freshly Baked Bread] << Warrior/Rogue
+    .vendor 1247 >> |cRXP_BUY_Buy up to 10|r |T133968:0|t[Freshly Baked Bread] << Paladin
     .target Innkeeper Belm
 step << Paladin/Warrior/Rogue
     #completewith next
@@ -1155,13 +1157,13 @@ step << Gnome Warrior
     .money <0.0536
     .goto Dun Morogh,45.290,52.190
     .collect 2488,1 --Collect Gladius (1)
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.81
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
 step << Gnome Warrior
     #completewith next
     +|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
     .use 2488
     .itemcount 2488,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.79
 step << Dwarf Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy and equip a|r |T132401:0|t[Large Axe]
@@ -1169,13 +1171,13 @@ step << Dwarf Warrior
     .money <0.0460
     .goto Dun Morogh,45.290,52.190
     .collect 2491,1 --Collect Large Axe (1)
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.29
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.30
 step << Dwarf Warrior
     #completewith next
     +|cRXP_WARN_Equip the|r |T132401:0|t[Large Axe]
     .use 2491
     .itemcount 2491,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.28
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.29
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy and equip a|r |T135641:0|t[Stiletto]
@@ -1183,13 +1185,13 @@ step << Rogue
     .money <0.0400
     .goto Dun Morogh,45.290,52.190
     .collect 2494,1 --Collect Stiletto (1)
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.33
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     #completewith next
     +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
     .use 2494
     .itemcount 2494,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.32
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.29
 step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grawn Thromwyn|r
     >>|cRXP_BUY_Buy and equip a|r |T133053:0|t[Wooden Mallet]

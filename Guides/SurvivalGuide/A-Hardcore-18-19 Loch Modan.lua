@@ -48,15 +48,13 @@ step << !Druid
     .target Shellei Brondir
     .zoneskip Wetlands,1
     .xp <18,1
-step << !Druid
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regnus Thundergranite|r << Hunter
+step << !Druid !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bilban Tosslespanner|r << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Briarthorn|r << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fenthwick|r << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Toldren Deepiron|r << Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Juli Stormkettle|r << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brandur Ironhammer|r << Paladin
-    .goto Ironforge,69.872,82.890 << Hunter
     .goto Ironforge,65.905,88.405 << Warrior
     .goto Ironforge,51.1,8.7,15,0 << Warlock
     .goto Ironforge,50.343,5.657 << Warlock
@@ -65,7 +63,6 @@ step << !Druid
     .goto Ironforge,26.295,6.752 << Mage
     .goto Ironforge,23.141,6.149 << Paladin
     .trainer >> Train your class spells
-    .target Regnus Thundergranite << Hunter
     .target Bilban Tosslespanner << Warrior
     .target Briarthorn << Warlock
     .target Fenthwick << Rogue
@@ -73,7 +70,7 @@ step << !Druid
     .target Juli Stormkettle << Mage
     .target Brandur Ironhammer << Paladin
     .xp <18,1
-step << !Druid
+step << !Druid !Hunter
     .goto Ironforge,55.501,47.742
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
     .fly Loch Modan >> Fly to Loch Modan
