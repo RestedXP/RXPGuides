@@ -1228,6 +1228,10 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
     ahSession.sentQuery = false
 
     ahSession.scanPage = ahSession.scanPage + 1
+
+    -- TODO consume scanTime for caching
+    ahSession.scanData.scanTime = _G.GetServerTime()
+    RXPCData.itemUpgradesScanData = ahSession.scanData
     self:Scan()
 end
 
@@ -1272,17 +1276,12 @@ local function calculate(itemLink, scanData)
     scanData.comparisons = addon.itemUpgrades:CompareItemWeight(itemLink) or {}
 
     for _, compareData in ipairs(scanData.comparisons) do
-        if compareData.Ratio then
-            -- To avoid complicated comparison, use ratio as a multiplier
+        -- To avoid complicated comparison, use ratio as a multiplier
+        -- An item needs to be 10x better to beat an empty slot fill
+        -- TODO handle empty
+        if compareData.ratio and compareData.ratio > 0 then
             scanData.relativeWeightPerCopper =
-                scanData.weightPerCopper * compareData.Ratio
-        else
-            if compareData.debug == _G.EMPTY then
-                -- An item needs to be 10x better to beat an empty slot fill
-                scanData.relativeWeightPerCopper =
-                    scanData.weightPerCopper * 10.0
-                -- else -- nil for a reason unimportant
-            end
+                scanData.weightPerCopper * (compareData.Ratio or 10.0)
         end
     end
 end
@@ -1317,7 +1316,7 @@ function addon.itemUpgrades.AH:Analyze()
 
     local bAS, slotId
 
-    for itemLink, scanData in pairs(ahSession.scanData) do
+    for itemLink, scanData in pairs(RXPCData.itemUpgradesScanData) do
         calculate(itemLink, scanData)
 
         if scanData.relativeWeightPerCopper then
@@ -1351,10 +1350,13 @@ function addon.itemUpgrades.AH:Analyze()
         end
 
         if data.weightPerCopper.itemLink then
-            print("  - Best", data.weightPerCopper.itemLink)
+            print("  - Highest EP / copper", data.weightPerCopper.itemLink,
+                  data.weightPerCopper.weight)
         end
         if data.relativeWeightPerCopper.itemLink then
-            print("  - Budget", data.relativeWeightPerCopper.itemLink)
+            print("  - Relative EP / copper",
+                  data.relativeWeightPerCopper.itemLink,
+                  data.relativeWeightPerCopper.weight)
         end
 
     end
