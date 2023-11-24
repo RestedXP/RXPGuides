@@ -1120,6 +1120,9 @@ local CanSendAuctionQuery, QueryAuctionItems = _G.CanSendAuctionQuery,
                                                _G.QueryAuctionItems
 local GetNumAuctionItems, GetAuctionItemLink, GetAuctionItemInfo =
     _G.GetNumAuctionItems, _G.GetAuctionItemLink, _G.GetAuctionItemInfo
+
+local AuctionFilterButtons = {["Weapon"] = 1, ["Armor"] = 2}
+
 local ahSession = {
     isInitialized = false,
     -- TODO move to general
@@ -1130,8 +1133,9 @@ local ahSession = {
     windowOpen = false,
     processing = false,
     scanPage = 0,
-    scanType = 2 -- armor
+    scanType = AuctionFilterButtons["Armor"]
 }
+
 addon.itemUpgrades.AH = addon:NewModule("ItemUpgradesAH", "AceEvent-3.0")
 
 function addon.itemUpgrades.AH:Setup()
@@ -1161,7 +1165,7 @@ function addon.itemUpgrades.AH:AUCTION_HOUSE_CLOSED()
     ahSession.windowOpen = false
     ahSession.sentQuery = false
     ahSession.scanPage = 0
-    ahSession.scanType = 2 -- armor
+    ahSession.scanType = AuctionFilterButtons["Armor"]
 end
 
 -- Fired when GetItemInfo queries the server for an uncached item and the reponse has arrived.
@@ -1190,8 +1194,8 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
         ahSession.sentQuery = false
         ahSession.scanPage = 0
 
-        if ahSession.scanType == 2 then
-            ahSession.scanType = 1 -- weapons
+        if ahSession.scanType == AuctionFilterButtons["Armor"] then
+            ahSession.scanType = AuctionFilterButtons["Weapons"] -- weapons
             -- self:Scan() -- TODO enable after handling weapon post-processing
             self:Analyze()
         else
@@ -1232,7 +1236,7 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
     ahSession.scanPage = ahSession.scanPage + 1
 
     -- TODO consume scanTime for caching
-    ahSession.scanData.scanTime = _G.GetServerTime()
+    ahSession.scanTime = _G.GetServerTime()
     RXPCData.itemUpgradesScanData = ahSession.scanData
     self:Scan()
 end
