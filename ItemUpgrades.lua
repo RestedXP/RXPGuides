@@ -1125,7 +1125,6 @@ local AuctionFilterButtons = {["Weapon"] = 1, ["Armor"] = 2}
 
 local ahSession = {
     isInitialized = false,
-    -- TODO move to general
     infoItemsReceived = {}, -- takes itemID, not itemLinks
 
     scanData = {},
@@ -1169,12 +1168,11 @@ function addon.itemUpgrades.AH:AUCTION_HOUSE_CLOSED()
 end
 
 -- Fired when GetItemInfo queries the server for an uncached item and the reponse has arrived.
--- TODO move to addon.itemUpgrades
 function addon.itemUpgrades.AH:GET_ITEM_INFO_RECEIVED(_, itemID, success)
     if not success then return end
 
     if ahSession.infoItemsReceived[itemID] then return end
-    print("GET_ITEM_INFO_RECEIVED", itemID)
+
     -- If item queried, it's probably applicable to ItemUpgrades, so build and cache
     -- TODO ensure no infinite loop
     addon.itemUpgrades:GetItemData("item:" .. itemID)
@@ -1284,11 +1282,9 @@ local function calculate(itemLink, scanData)
     for _, compareData in ipairs(scanData.comparisons) do
         -- To avoid complicated comparison, use ratio as a multiplier
         -- An item needs to be 10x better to beat an empty slot fill
-        -- TODO handle empty
-        if compareData.ratio and compareData.ratio > 0 then
-            scanData.relativeWeightPerCopper =
-                scanData.weightPerCopper * (compareData.Ratio or 10.0)
-        end
+        scanData.relativeWeightPerCopper =
+            (scanData.totalWeight * (compareData.Ratio or 10.0)) /
+                scanData.lowestPrice
     end
 end
 
