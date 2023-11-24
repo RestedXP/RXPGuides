@@ -595,8 +595,7 @@ local function evaluateQuestChoices(questID, numChoices, GetQuestItemInfo, GetQu
 
         itemLink = GetQuestItemLink("choice", i)
 
-        if addon.itemUpgrades and addon.settings.profile.enableTips and
-            addon.settings.profile.enableItemUpgrades then
+        if addon.itemUpgrades and addon.settings:IsEnabled('enableTips', 'enableItemUpgrades') then
             itemData = addon.itemUpgrades:GetItemData(itemLink)
 
             if itemData then
