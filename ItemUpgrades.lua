@@ -822,7 +822,8 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
     -- Need itemID for easier code lookups
     local itemID = GetItemInfoInstant(itemLink)
 
-    if session.activeStatWeights.extraWeight[itemID] then
+    if session.activeStatWeights and session.activeStatWeights.extraWeight and
+        session.activeStatWeights.extraWeight[itemID] then
         totalWeight = session.activeStatWeights.extraWeight[itemID]
     end
 

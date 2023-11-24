@@ -3467,3 +3467,11 @@ function addon.settings:LoadScales()
                                                        .activeTargetScale)
     end
 end
+
+function addon.settings:IsEnabled(...)
+    for _, settingName in ipairs({...}) do
+        if not self.profile[settingName] then return false end
+    end
+
+    return true
+end
