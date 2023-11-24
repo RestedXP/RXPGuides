@@ -40,8 +40,8 @@
 -- end
 -- @class file
 -- @name AceDB-3.0.lua
--- @release $Id: AceDB-3.0.lua 1217 2019-07-11 03:06:18Z funkydude $
-local ACEDB_MAJOR, ACEDB_MINOR = "AceDB-3.0", 27
+-- @release $Id: AceDB-3.0.lua 1306 2023-06-23 14:55:09Z nevcairiel $
+local ACEDB_MAJOR, ACEDB_MINOR = "AceDB-3.0", 28
 local AceDB = LibStub:NewLibrary(ACEDB_MAJOR, ACEDB_MINOR)
 
 if not AceDB then return end -- No upgrade needed
@@ -52,10 +52,6 @@ local setmetatable, rawset, rawget = setmetatable, rawset, rawget
 
 -- WoW APIs
 local _G = _G
-
--- Global vars/functions that we don't upvalue since they might get hooked, or upgraded
--- List them here for Mikk's FindGlobals script
--- GLOBALS: LibStub
 
 AceDB.db_registry = AceDB.db_registry or {}
 AceDB.frame = AceDB.frame or CreateFrame("Frame")
@@ -98,11 +94,11 @@ local function copyDefaults(dest, src)
 				-- This is a metatable used for table defaults
 				local mt = {
 					-- This handles the lookup and creation of new subtables
-					__index = function(t,k)
-							if k == nil then return nil end
+					__index = function(t,k2)
+							if k2 == nil then return nil end
 							local tbl = {}
 							copyDefaults(tbl, v)
-							rawset(t, k, tbl)
+							rawset(t, k2, tbl)
 							return tbl
 						end,
 				}
@@ -115,7 +111,7 @@ local function copyDefaults(dest, src)
 				end
 			else
 				-- Values are not tables, so this is just a simple return
-				local mt = {__index = function(t,k) return k~=nil and v or nil end}
+				local mt = {__index = function(t,k2) return k2~=nil and v or nil end}
 				setmetatable(dest, mt)
 			end
 		elseif type(v) == "table" then
@@ -264,7 +260,7 @@ local factionrealmKey = factionKey .. " - " .. realmKey
 local localeKey = GetLocale():lower()
 
 local regionTable = { "US", "KR", "EU", "TW", "CN" }
-local regionKey = regionTable[GetCurrentRegion()]
+local regionKey = regionTable[GetCurrentRegion()] or GetCurrentRegionName() or "TR"
 local factionrealmregionKey = factionrealmKey .. " - " .. regionKey
 
 -- Actual database initialization function

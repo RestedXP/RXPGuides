@@ -30,7 +30,6 @@ step
 	.daily 13046 >> Accept Feeding Arngrim
 	.goto TheStormPeaks,67.61,59.95
 	.reputation 1119,revered,<0,1 -- if you're 0 into revered it will display this step
-	.isQuestTurnedIn 13001
 step
 	>>Talk to Fjorn's Anvil, Hodir's Horn, Hodir's Helm and Frostworg Denmother
     .daily 12981 >>Accept Hot and Cold
@@ -42,7 +41,6 @@ step
 	.daily 12994 >> Accept Spy Hunter
 	.goto TheStormPeaks,63.49,59.73
 	.reputation 1119,honored,<0,1 -- if you're 0 into honored it will display this step
-	.isQuestTurnedIn 13001
 step
 	>>Talk to Fjorn's Anvil, Hodir's Horn and Hodir's Helm
     .daily 12981 >>Accept Hot and Cold
@@ -52,7 +50,6 @@ step
 	.daily 13006 >> Accept A Viscous Cleaning
 	.goto TheStormPeaks,64.24,59.23
 	.reputation 1119,friendly,<0,1 -- if you're 0 into friendly it will display this step
-	.isQuestTurnedIn 13001
 step
 	.goto TheStormPeaks,70.00,58.00,60,0
     .goto TheStormPeaks,70.14,61.16
@@ -406,6 +403,17 @@ step
     .goto IcecrownGlacier,54.0,46.3
 	.isOnQuest 13323 << Alliance
 	.isOnQuest 13353 << Horde
+step << Alliance
+    .goto IcecrownGlacier,46.2,52.1,70,0
+    .goto IcecrownGlacier,42.4,59.4,0,0
+	.use 44222 >>Use the Dart Gun in your bags on the Orgrim's Hammer Scouts (you can use it while on your flying mount). Loot their corpses for the Dispatches
+    .complete 13333,1 --Orgrim's Hammer Dispatch (6)
+	.isOnQuest 13333
+step << Horde
+	.goto IcecrownGlacier,48.85,40.44
+	.use 44212 >>Use the SGM-3 in your bags on the Skybreaker Recon Fighters in the air
+	.complete 13331,1 --Skybreaker Recon Fighters shot down (6)
+	.isOnQuest 13331
 step
     .goto IcecrownGlacier,49.7,34.4
 	.use 44307 >>Use the Diluted Cult Tonic in your bags to gain the "Dark Discernment" Buff. This allows you to loot the Tainted Essences from all the humanoids you kill in the area
@@ -439,17 +447,6 @@ step
 	.isOnQuest 13344 << Alliance
 	.isOnQuest 13365 << Horde
 step << Alliance
-    .goto IcecrownGlacier,46.2,52.1,70,0
-    .goto IcecrownGlacier,42.4,59.4,0,0
-	.use 44222 >>Use the Dart Gun in your bags on the Orgrim's Hammer Scouts (you can use it while on your flying mount). Loot their corpses for the Dispatches
-    .complete 13333,1 --Orgrim's Hammer Dispatch (6)
-	.isOnQuest 13333
-step << Horde
-	.goto IcecrownGlacier,48.85,40.44
-	.use 44212 >>Use the SGM-3 in your bags on the Skybreaker Recon Fighters in the air
-	.complete 13331,1 --Skybreaker Recon Fighters shot down (6)
-	.isOnQuest 13331
-step << Alliance
     .goto IcecrownGlacier,65.1,57.2,0
     .goto IcecrownGlacier,64.7,52.4,0
     .goto IcecrownGlacier,62.1,45.9,0
@@ -465,12 +462,12 @@ step << Alliance
 step << Horde
 	.goto IcecrownGlacier,67.00,38.00
 	>>Return to Orgrim's Hammer. Talk to Warbringer Davos Rioht, Brother Keltan, Sky-Reaver Korm Blackscar, Chief Engineer Copperclaw and Koltira Deathweaver
-    .turnin -13330 >>Accept Blood of the Chosen
-    .turnin -13302 >>Accept Slaves to Saronite
-    .turnin -13357 >>Accept Retest Now
-    .turnin -13353 >>Accept Drag and Drop
-	.turnin -13365 >>Accept Not a Bug
-    .turnin -13331 >>Accept Keeping the Alliance Blind
+    .turnin -13330 >>Turn in Blood of the Chosen
+    .turnin -13302 >>Turn in Slaves to Saronite
+    .turnin -13357 >>Turn in Retest Now
+    .turnin -13353 >>Turn in Drag and Drop
+	.turnin -13365 >>Turn in Not a Bug
+    .turnin -13331 >>Turn in Keeping the Alliance Blind
 
 --6 Quest section from Knights of the Ebon Blade. 3 come from The Shadow Vault, other 3 from Death's Rise
 
@@ -572,7 +569,7 @@ step
 	.isOnQuest 12813
 step
 	>>Kill Onslaught mobs, then loot them for their keys. Use them to open chests all around the Onslaught Harbor for the Documents
-	>>The chests do not have a 100% droprate for the documents
+	>>|cff00ecffNOTE: Only open chests that are sparkling for the Documents. Chest which are not sparkling DO NOT contain Documents.|r
     .goto IcecrownGlacier,10.7,45.6,40,0
     .goto IcecrownGlacier,10.3,46.4,40,0
     .goto IcecrownGlacier,8.8,46.7,40,0

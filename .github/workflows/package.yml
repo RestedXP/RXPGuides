@@ -54,6 +54,9 @@ jobs:
             fi
           done
 
+          zip=$(ls RXPGuides-*wrath.zip)
+          cp "${zip}" "./ftp/RXPGuides.zip"
+
           cd ..
 
       - name: Upload files

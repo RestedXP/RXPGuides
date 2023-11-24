@@ -25,17 +25,19 @@ addon.comms.state = {
 }
 
 local function announceLevelUp(message)
+    if not message then return end
+
     if GetNumGroupMembers() > 0 then
-        if addon.settings.db.profile.enableLevelUpAnnounceGroup then
+        if addon.settings.profile.enableLevelUpAnnounceGroup then
             SendChatMessage(message, "PARTY", nil)
         end
     else
-        if addon.settings.db.profile.enableLevelUpAnnounceSolo then
+        if addon.settings.profile.enableLevelUpAnnounceSolo then
             SendChatMessage(message, "EMOTE", nil)
         end
     end
 
-    if addon.settings.db.profile.enableLevelUpAnnounceGuild and IsInGuild() then
+    if addon.settings.profile.enableLevelUpAnnounceGuild and IsInGuild() then
         SendChatMessage(message, "GUILD", nil)
     end
 end
@@ -78,16 +80,22 @@ end
 function addon.comms:PLAYER_LEVEL_UP(_, level)
     local msg, s
 
-    if addon.settings.db.profile.enableTracker then
+    if addon.settings.profile.enableTracker then
         local levelData = addon.tracker.reportData[level - 1]
 
         if levelData and levelData.timestamp and levelData.timestamp.started and
             levelData.timestamp.finished then
             s = levelData.timestamp.finished - levelData.timestamp.started
 
+            if not s then return end
+
+            local prettyTime = addon.comms:PrettyPrintTime(s)
+
+            if not prettyTime then return end
+
             msg = self.BuildNotification(
                       L("I just leveled from %d to %d in %s"), level - 1, level,
-                      addon.tracker:PrettyPrintTime(s))
+                      prettyTime)
             announceLevelUp(msg)
         else
             -- Leave enough time for TIME_PLAYED to return, ish
@@ -103,9 +111,9 @@ function addon.comms:PLAYER_LEVEL_UP(_, level)
                     msg = self.BuildNotification(L(
                                                      "I just leveled from %d to %d in %s"),
                                                  level - 1, level,
-                                                 addon.tracker:PrettyPrintTime(s))
+                                                 addon.comms:PrettyPrintTime(s))
                     announceLevelUp(msg)
-                elseif addon.settings.db.profile.debug then
+                elseif addon.settings.profile.debug then
                     self.PrettyPrint("Invalid .started or .finished %d", level)
                 end
             end)
@@ -185,7 +193,7 @@ function addon.comms:AnnounceSelf(command)
         command = command,
         player = {
             name = playerName,
-            class = select(2, UnitClass("player")),
+            class = addon.player.class,
             level = UnitLevel("player"),
             xpPercentage = floor(100 * UnitXP("player") / UnitXPMax("player"))
         },
@@ -230,7 +238,7 @@ function addon.comms:IsNewRelease(theirRelease, name)
     if theirRelease == 'Development' then
         return false
     elseif addon.release == 'Development' then
-        if addon.settings.db.profile.debug then
+        if addon.settings.profile.debug then
             self.PrettyPrint("%s:theirRelease = %s", name, theirRelease)
         end
         return false
@@ -271,7 +279,7 @@ function addon.comms:HandleAnnounce(data)
     self.players[data.player.name].isRxp = true
     self.players[data.player.name].lastSeen = GetTime()
 
-    if addon.settings.db.profile.checkVersions then
+    if addon.settings.profile.checkVersions then
         if not self.state.updateFound.addon and
             self:IsNewRelease(data.addon.release, data.player.name) then
 
@@ -306,7 +314,7 @@ end
 function addon.comms:AnnounceStepEvent(event, data)
     -- Only send branded messages if in an RXP party
     if not self.state.rxpGroupDetected and
-        not addon.settings.db.profile.alwaysSendBranded then return end
+        not addon.settings.profile.alwaysSendBranded then return end
 
     -- Probably step replay, shush
     -- currentStep == 1 is probably spam from rapid replay
@@ -326,7 +334,7 @@ function addon.comms:AnnounceStepEvent(event, data)
 
     if event == '.complete' then
         -- Don't handle announcements if Questie loaded
-        if _G.Questie and not addon.settings.db.profile.ignoreQuestieConflicts then
+        if _G.Questie and not addon.settings.profile.ignoreQuestieConflicts then
             return
         end
 
@@ -336,10 +344,10 @@ function addon.comms:AnnounceStepEvent(event, data)
         local msg = self.BuildNotification(L("Completed step %d - %s"),
                                            data.step, data.title)
 
-        if addon.settings.db.profile.enableCompleteStepAnnouncements and
+        if addon.settings.profile.enableCompleteStepAnnouncements and
             GetNumGroupMembers() > 0 then
             SendChatMessage(msg, "PARTY", nil)
-        elseif addon.settings.db.profile.debug then
+        elseif addon.settings.profile.debug then
             self.PrettyPrint(msg)
         end
 
@@ -347,7 +355,7 @@ function addon.comms:AnnounceStepEvent(event, data)
 
     elseif event == '.collect' then
         -- Don't handle announcements if Questie loaded
-        if _G.Questie and not addon.settings.db.profile.ignoreQuestieConflicts then
+        if _G.Questie and not addon.settings.profile.ignoreQuestieConflicts then
             return
         end
 
@@ -357,26 +365,28 @@ function addon.comms:AnnounceStepEvent(event, data)
         local msg = self.BuildNotification(L("Collected step %d - %s"),
                                            data.step, data.title)
 
-        if addon.settings.db.profile.enableCollectAnnouncements and
+        if addon.settings.profile.enableCollectAnnouncements and
             GetNumGroupMembers() > 0 then
             SendChatMessage(msg, "PARTY", nil)
-        elseif addon.settings.db.profile.debug then
+        elseif addon.settings.profile.debug then
             self.PrettyPrint(msg)
         end
 
         guideAnnouncements.collect[data.title] = UnitLevel("Player")
 
     elseif event == '.fly' then
+        if not data.duration or data.duration <= 0 then return end
+
         -- Questie doesn't announce flight-time, so okay to send this out
         local msg = self.BuildNotification(L("Flying to %s ETA %s"),
                                            data.destination,
-                                           addon.tracker:PrettyPrintTime(
+                                           addon.comms:PrettyPrintTime(
                                                data.duration))
 
-        if addon.settings.db.profile.enableFlyStepAnnouncements and
+        if addon.settings.profile.enableFlyStepAnnouncements and
             GetNumGroupMembers() > 0 then
             SendChatMessage(msg, "PARTY", nil)
-        elseif addon.settings.db.profile.debug then
+        elseif addon.settings.profile.debug then
             self.PrettyPrint(msg)
         end
     else
@@ -390,9 +400,10 @@ function addon.comms.BuildNotification(msg, ...)
 end
 
 function addon.comms.PrettyPrint(msg, ...)
+    if not msg then return end
+
     print(fmt("%s%s: %s", addon.title,
-              addon.settings.db.profile.debug and ' (Debug)' or '',
-              fmt(msg, ...)))
+              addon.settings.profile.debug and ' (Debug)' or '', fmt(msg, ...)))
 end
 
 function addon.comms.OpenBugReport(stepNumber)
@@ -402,7 +413,7 @@ function addon.comms.OpenBugReport(stepNumber)
     end
 
     local character = fmt("%s / %s / level %d (%.2f%%)", UnitRace("player"),
-                          select(1, UnitClass("player")), UnitLevel("player"),
+                          addon.player.class, UnitLevel("player"),
                           UnitXP("player") / UnitXPMax("player") * 100)
 
     local position = C_Map.GetPlayerMapPosition(
@@ -411,16 +422,21 @@ function addon.comms.OpenBugReport(stepNumber)
                      position and position.x * 100 or -1,
                      position and position.y * 100 or -1)
 
-    local guide = fmt("%s (%s)",
-                      addon.currentGuide and addon.currentGuide.key or
-                          'Inactive', addon.currentGuide.name and
-                          addon.currentGuide.version or 'N/A')
+    local guide = "Inactive"
+
+    if addon.currentGuide and addon.currentGuide.key then
+        guide = fmt("%s v%d (%s)", addon.currentGuide.key,
+                    tonumber(addon.currentGuide.version) or 0,
+                    (addon.currentGuide.guideId) or 'N/A')
+    end
 
     stepNumber = stepNumber or RXPCData.currentStep
     local stepData = ""
     if addon.currentGuide and addon.currentGuide.steps and stepNumber then
         local step = addon.currentGuide.steps[stepNumber]
         if type(step) == "table" then
+            local stepId = step.stepId or 0
+            stepData = fmt("%s\nStep ID: %.0f\n", stepData, stepId)
             if step.elements then
                 for s, e in pairs(step.elements) do
                     stepData = fmt("%s\nStep %d:%d", stepData, stepNumber, s)
@@ -441,6 +457,12 @@ function addon.comms.OpenBugReport(stepNumber)
                             fmt("%s\n  questId = %s", stepData, e.questId)
                     end
 
+                    if e.questIds and type(e.questIds) == "table" then
+                        for _, id in pairs(e.questIds) do
+                            stepData = fmt("%s\n  questId = %s", stepData, id)
+                        end
+                    end
+
                     if e.x and e.y then
                         stepData = fmt("%s\n  goto = %.2f / %.2f", stepData,
                                        e.x, e.y)
@@ -449,6 +471,15 @@ function addon.comms.OpenBugReport(stepNumber)
                     if e.targets then
                         stepData = fmt("%s\n  targets = %s", stepData,
                                        strjoin(', ', unpack(e.targets)))
+                    end
+
+                    if e.unitscan then
+                        stepData = fmt("%s\n  unitscan = %s", stepData,
+                                       strjoin(', ', unpack(e.unitscan)))
+                    end
+
+                    if e.completed then
+                        stepData = fmt("%s\n  completed = True", stepData)
                     end
                 end
             else
@@ -472,14 +503,43 @@ function addon.comms.OpenBugReport(stepNumber)
     end
 
     local arrowData = af and fmt(
-                          "  Shown: %s\n  Hidden by step: %s\n  Disabled: %s\n  Distance: %s\n  Same Continent: %s\n  Zone: %s\n  Coordinates: wy (%.02f) wx (%.02f)\n",
+                          "  Shown: %s\n  Hidden by step: %s\n  Disabled: %s\n  Distance: %s\n  Same Continent: %s\n  Zone: %s\n  Coordinates (w): wy (%.02f) wx (%.02f); zy (%.03f) zx (%.03f)",
                           tostr(af:IsShown()), tostr(addon.hideArrow),
-                          tostr(addon.settings.db.profile.disableArrow),
+                          tostr(addon.settings.profile.disableArrow),
                           af.distance or -1, sameContinent,
                           af.element and af.element.zone or 'N/A',
                           af.element and af.element.wy or 0,
-                          af.element and af.element.wx or 0) or 'N/A'
+                          af.element and af.element.wx or 0,
+                          af.element and af.element.y or 0,
+                          af.element and af.element.x or 0) or 'N/A'
 
+    local addonErrors = "\n"
+    for _, entry in pairs(addon.settings.routingOptions) do
+        local value = addon.settings.profile[entry]
+        local str = tostring(value)
+        if type(value) == "table" then
+            for k, v in pairs(value) do
+                local substr = tostring(v)
+                if substr then
+                    addonErrors = addonErrors .. k .. ":" .. substr .. ", "
+                end
+            end
+        elseif value ~= nil and str then
+            addonErrors = addonErrors .. entry .. ":" .. str .. ", "
+        end
+    end
+    if next(addon.errors) then addonErrors = "\nAddon Errors:\n" end
+
+    for tag, list in pairs(addon.errors) do
+        addonErrors = addonErrors .. tostring(tag) .. ':\n'
+        for error, count in pairs(list) do
+            addonErrors = fmt("%s(%d) %s\n", addonErrors, count, error)
+        end
+    end
+    local errorFlags = ""
+    if addon.lastEvent then
+        errorFlags = "\nError Flags: " .. addon.lastCall .. addon.lastEvent
+    end
     local content = fmt([[%s
 
 
@@ -500,13 +560,15 @@ Current Step data
 
 Arrow data
 %s
+%s%s
 ```
 ]], L("Describe your issue:"), L("Do not edit below this line"),
                         character or "Error", zone or "Error", guide or "Error",
-                        addon.release, addon.settings.db.profile.xprate,
+                        addon.release, addon.settings.profile.xprate,
                         GetLocale(), select(1, GetBuildInfo()), select(2,
                                                                        BNGetInfo()) ~=
-                            nil and "Online" or "Offline", stepData, arrowData)
+                            nil and "Online" or "Offline", stepData, arrowData,
+                        addonErrors, errorFlags)
 
     local f = AceGUI:Create("Frame")
 
@@ -520,12 +582,12 @@ Arrow data
     f.scrollContainer:SetFullHeight(true)
     f:AddChild(f.scrollContainer)
 
-    f.frame:SetBackdrop(addon.RXPFrame.backdropEdge)
+    f.frame:SetBackdrop(addon.RXPFrame.backdrop.edge)
     f.frame:SetBackdropColor(unpack(addon.colors.background))
 
     local editbox = AceGUI:Create("MultiLineEditBox")
     editbox:SetLabel(L(
-                         "Join our support discord at discord.gg/RestedXP and copy paste this form into #addon-feedback"))
+                         "Join our support discord at discord.gg/RestedXP and copy paste this form into #bug-report"))
     editbox:SetFullWidth(true)
     editbox:SetFullHeight(true)
     editbox:SetText(content)
@@ -549,7 +611,7 @@ function addon.comms.OpenBrandedExport(title, description, content, width,
     f.statustext:GetParent():Hide()
     f:SetTitle("RestedXP: " .. title)
 
-    f.frame:SetBackdrop(addon.RXPFrame.backdropEdge)
+    f.frame:SetBackdrop(addon.RXPFrame.backdrop.edge)
     f.frame:SetBackdropColor(unpack(addon.colors.background))
 
     local editbox = AceGUI:Create("MultiLineEditBox")
@@ -593,4 +655,56 @@ function addon.comms.OpenBrandedExport(title, description, content, width,
 
     f:DoLayout()
     f:Show()
+end
+
+function addon.comms:PrettyPrintTime(s)
+    if not s or s <= 0 then return end
+
+    local days = floor(s / 24 / 60 / 60)
+    s = mod(s, 24 * 60 * 60)
+
+    local hours = floor(s / 60 / 60)
+    s = mod(s, 60 * 60)
+
+    local minutes = floor(s / 60)
+    s = mod(s, 60)
+
+    local formattedString
+    if days > 0 then
+        formattedString = fmt("%d %s %d %s %d %s %d %s", days,
+                              days == 1 and L('day') or L('days'), hours,
+                              hours == 1 and L('hour') or L('hours'), minutes,
+                              minutes == 1 and L('minute') or L('minutes'), s,
+                              s == 1 and L('second') or L('seconds'))
+    elseif hours > 0 then
+        formattedString = fmt("%d %s %d %s %d %s", hours,
+                              hours == 1 and L('hour') or L('hours'), minutes,
+                              minutes == 1 and L('minute') or L('minutes'), s,
+                              s == 1 and L('second') or L('seconds'))
+    elseif minutes > 0 then
+        formattedString = fmt("%d %s %d %s", minutes,
+                              minutes == 1 and L('minute') or L('minutes'), s,
+                              s == 1 and L('second') or L('seconds'))
+    else
+        formattedString =
+            fmt("%d %s", s, s == 1 and L('second') or L('seconds')) -- Big gratz for leveling in under a minute
+    end
+
+    return formattedString
+end
+
+function addon.comms:ConfirmChoice(lookup, prompt, confirmCallback, payload)
+
+    StaticPopupDialogs[lookup] = {
+        text = prompt,
+        button1 = _G.YES,
+        button2 = _G.NO,
+        OnAccept = function() confirmCallback(payload) end,
+        timeout = 0,
+        whileDead = 1,
+        hideOnEscape = 1,
+        showAlert = 1
+    }
+
+    _G.StaticPopup_Show(lookup)
 end

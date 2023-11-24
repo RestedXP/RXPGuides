@@ -11,7 +11,6 @@ addon.skipPreReq = {
 }
 
 addon.questConversion = {
-    [9684] = 63866 -- blood elf rez quest
 }
 
 -- Items required to complete the quest
@@ -21,9 +20,9 @@ addon.questCompleteItems = {
     [934] = 5623, -- Crown of the Earth // Amethyst Phial
     [9294] = 22955, -- Healing the Lake // Neutralizing Agent
     [2561] = 8149, -- Druid of the Claw // Voodoo Charm
-    [933] = 5645, -- Crown of the Earth // Tourmaline Phial
+    [933] = 5621, -- Crown of the Earth // Tourmaline Phial
     [1520] = 6635, -- Call of Earth // Earth Sapta
-    [929] = 5639, -- Crown of the Earth // Jade Phial
+    [929] = 5619, -- Crown of the Earth // Jade Phial
     [11408] = 33306, -- Bark for T'chali's Voodoo Brewery! // Ram Racing Reins
     [760] = 5416, -- Wildmane Cleansing // Wildmane Cleansing Totem
     [11731] = 34862, -- Torch Tossing // Practice Torches
@@ -356,6 +355,7 @@ addon.questCompleteItems = {
     [9805] = 24467,
     [9824] = 24474,
     [10594] = 30701,
+    [2459] = 8049, -- Ferocitas the Dream Eater // Gnarlpine Necklace
     -- Horde Items:
     [9774] = 25539,
     [10720] = 31141,
@@ -458,5 +458,7 @@ addon.questAcceptItems = {
     [3461] = 10444, -- Return to Tymor // Standard Issue Flare Gun
     [2204] = 7667, -- Restoring the Necklace // Talvash's Phial of Scrying
     [949] = 5251, -- The Twilight Camp // Phial of Scrying
-    [2478] = 8051 -- Mission: Possible But Not Probable // Flare Gun
+    [2478] = 8051, -- Mission: Possible But Not Probable // Flare Gun
+    --
+    [11941] = 35684, -- Scintillating Fragment quest
 }

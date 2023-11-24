@@ -60,9 +60,6 @@ L["Only shows current and future steps on the step list window"] =
 L["Highlight active map pins"] = "突出显示活动地图图钉"
 L["Show a targeting circle around active map pins"] =
     "在活动地图图钉周围显示一个目标圈"
-L["Unitscan integration"] = "Unitscan 集成"
-L["Automatically adds important npcs to your unitscan list"] =
-    "自动将重要的 npc 添加到您的 unitscan 列表中"
 L["Hardcore mode"] = "硬核模式"
 L["Adjust the leveling routes to the deathless ruleset"] =
     "将升级路线调整为不死规则集"
@@ -192,8 +189,8 @@ L["Flying to %s ETA %s"] = "飞往 %s ETA %s"
 L["Describe your issue:"] = "描述你的问题："
 L["Do not edit below this line"] = "请勿在此行下方编辑"
 L["RestedXP Feedback Form"] = "RestedXP 反馈表"
-L["Join our support discord at discord.gg/RestedXP and copy paste this form into #addon-feedback"] =
-    "在 discord.gg/RestedXP 加入我们的支持不和谐并将此表格复制粘贴到#addon-feedback"
+L["Join our support discord at discord.gg/RestedXP and copy paste this form into #bug-report"] =
+    "在 discord.gg/RestedXP 加入我们的支持不和谐并将此表格复制粘贴到#bug-report"
 L["Objective Complete"] = "目标完成"
 L["Error parsing guide"] = "错误解析指南"
 L["Missing pre-requisites"] = "缺少先决条件"

@@ -1,29 +1,6 @@
 
 local _,addon = ...
 
-
-addon.professionID = {
-    alchemy = {2259, 3101, 3464, 11611, 28596, 51304},
-    blacksmithing = {2018, 3100, 3538, 9785, 29844, 51300},
-    enchanting = {13920, 7411, 7412, 7413, 28029, 51313},
-    engineering = {4036, 4037, 4038, 12656, 30350, 51306},
-    herbalism = {2383},
-    inscription = {45357, 45358, 45359, 45360, 45361, 45363},
-    jewelcrafting = {25229, 25230, 28894, 28895, 28897, 51311},
-    leatherworking = {2108, 3104, 3811, 10662, 32549, 51302},
-    mining = {2656},
-    skinning = {8613, 8617, 8618, 10768, 32678, 50305},
-    tailoring = {3908, 3909, 3910, 12180, 26790, 51309},
-    cooking = {2550, 3102, 3413, 18260, 33359, 51296},
-    firstaid = {3273, 3274, 7924, 10846, 27028, 45542},
-    fishing = {7620, 7731, 7732, 18248, 33095, 51294}
-}
-
-C_Spell.RequestLoadSpellData(2575) -- mining
-C_Spell.RequestLoadSpellData(9134) -- herbalism
-C_Spell.RequestLoadSpellData(33388) -- riding
-
-
 local s = {}
 addon.defaultSpellList = s
 

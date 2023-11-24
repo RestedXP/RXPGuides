@@ -1,3 +1,6 @@
+local faction = UnitFactionGroup("player")
+if faction == "Horde" then return end
+
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
@@ -35,7 +38,9 @@ step << Paladin wotlk
     .goto StormwindClassic,40.1,30.0
     >>Speak to Duthorian Rall and right click on the Tome of Valor provided
     .accept 1649 >>Accept The Tome of Valor
+>>Talk to |cFF00FF25Duthorian Rall|r
     .turnin 1649 >>Turn in The Tome of Valor
+.target Duthorian Rall
     .accept 1650 >>Accept The Tome of Valor
 step << Warlock wotlk
     .goto StormwindClassic,25.3,78.7
@@ -43,7 +48,9 @@ step << Warlock wotlk
 step << Warlock wotlk
     .isOnQuest 1738
     .goto StormwindClassic,25.3,78.7
+>>Talk to |cFF00FF25Gakin the Darkbinder|r
     .turnin 1738 >>Turn in Heartswood
+.target Gakin the Darkbinder
     .accept 1739 >>Accept The Binding
 step << Warlock wotlk
     .isOnQuest 1739
@@ -53,6 +60,8 @@ step << Warlock wotlk
 step << Warlock wotlk
     .isQuestComplete 1739
     .goto StormwindClassic,25.4,78.7
+.target Gakin the Darkbinder
+>>Talk to |cFF00FF25Gakin the Darkbinder|r
     .turnin 1739 >>Turn in The Binding
 step << Mage wotlk
     .goto StormwindClassic,39.6,79.6
@@ -74,7 +83,11 @@ step << Rogue tbc
     #sticky
     .goto StormwindClassic,75.8,60.1
     >> Make sure to train Lockpicking and Pick Pocket
+.target Renzik "The Shiv"
+>>Talk to |cFF00FF25Renzik "The Shiv"|r
     .accept 2281 >> Accept Redridge Rendezvous
+.target Master Mathias Shaw
+>>Talk to |cFF00FF25Master Mathias Shaw|r
     .accept 2360 >> Accept Mathias and the Defias
 step << Rogue
 	.goto StormwindClassic,78.3,57.0
@@ -84,6 +97,8 @@ step << Rogue tbc
     .home >> Set your Hearthstone to Stormwind City
 step << Draenei wotlk
     .goto StormwindClassic,78.4,18.3
+.target Emissary Taluun
+>>Talk to |cFF00FF25Emissary Taluun|r
     .accept 9429 >> Accept Travel to Darkshire
 step << Hunter wotlk
 	.goto StormwindClassic,61.7,15.4
@@ -108,7 +123,7 @@ step << wotlk
     .collect 4371,1,175,1,1
 	.bronzetube
 step << !Dwarf wotlk !Gnome wotlk--Not needed, including just in case someone forgets to set HS to SW
-    .goto Ironforge,55.5,47.7
+    .goto Ironforge,55.501,47.742
     .fp Ironforge>> Get the Ironforge Flight Path
 step << Hunter/Warrior/Paladin/Shaman/Rogue
 	.goto Ironforge,61.34,89.25
@@ -165,19 +180,25 @@ step << Gnome !Warlock wotlk
 	.skill riding,75 >> Head to Dun Morogh, train riding and purchase your mount.
 step << Gnome wotlk/Dwarf wotlk
     #completewith next
-    .goto Ironforge,55.5,47.7
+    .goto Ironforge,55.501,47.742
     .fly Wetlands >> Fly to Wetlands
 step << Mage wotlk
     .goto Wetlands,10.7,60.9
     .home >> Set your Hearthstone to Deepwater Tavern
 step
-    .goto Wetlands,8.3,58.5
+    .goto Wetlands,8.310,58.533
+.target Karl Boran
+>>Talk to |cFF00FF25Karl Boran|r
     .accept 279 >> Accept Claws from the Deep
 step
     .goto Wetlands,8.6,55.8
+.target James Halloran
+>>Talk to |cFF00FF25James Halloran|r
     .accept 484 >> Accept Young Crocolisk Skins
 step
     .goto Wetlands,10.8,59.6
+.target First Mate Fitzsimmons
+>>Talk to |cFF00FF25First Mate Fitzsimmons|r
     .accept 288 >> Accept The Third Fleet
     .accept 463 >> Accept The Greenwarden
 step
@@ -187,17 +208,23 @@ step
 step
     .goto Wetlands,10.84,60.43
 	>>Go upstairs and talk to Archaeologist Flagongut
+>>Talk to |cFF00FF25Archaeologist Flagongut|r
 	.turnin 942 >>Turn in The Absent Minded Prospector
+.target Archaeologist Flagongut
 	.accept 943 >>Accept The Absent Minded Prospector
     .isQuestTurnedIn 741
 step
     .goto Wetlands,10.8,59.7
+.target First Mate Fitzsimmons
+>>Talk to |cFF00FF25First Mate Fitzsimmons|r
     .turnin 288 >> Turn in The Third Fleet
 step << Hunter
     .goto Wetlands,11.1,58.3
     .vendor >> Repair and restock on arrows
 step
     .goto Wetlands,11.7,58.0
+.target Sida
+>>Talk to |cFF00FF25Sida|r
     .accept 470 >> Accept Digging Through the Ooze
 step
     #sticky
@@ -209,9 +236,13 @@ step
 step
     .goto Wetlands,9.9,57.4
 	>>Go upstairs inside the keep
+.target Captain Stoutfist
+>>Talk to |cFF00FF25Captain Stoutfist|r
     .accept 464 >> Accept War Banners
 step
-    .goto Wetlands,11.5,52.1
+    .goto Wetlands,11.503,52.134
+.target Tarrel Rockweaver
+>>Talk to |cFF00FF25Tarrel Rockweaver|r
     .accept 305 >> Accept In Search of The Excavation Team
 step
 	#sticky
@@ -239,11 +270,15 @@ step
 step
     #xprate <1.5
 	.goto Wetlands,34.3,41.2,60,0
-    .goto Wetlands,38.2,50.9
+    .goto Wetlands,38.179,50.889
+.target Ormer Ironbraid
+>>Talk to |cFF00FF25Ormer Ironbraid|r
     .accept 294 >> Accept Ormer's Revenge
 step
     .goto Wetlands,38.8,52.3
+>>Talk to |cFF00FF25Merrin Rockweaver|r
     .turnin 305 >> Turn in In Search of The Excavation Team
+.target Merrin Rockweaver
     .accept 306 >> Accept In Search of The Excavation Team
 step << Hunter/Warlock
     .goto Wetlands,24.7,48.6
@@ -252,8 +287,10 @@ step << Hunter/Warlock
     .complete 294,2 --Kill Mottled Screecher (x10)
 step << Hunter/Warlock
 	.goto Wetlands,34.3,41.4,80,0
-    .goto Wetlands,38.2,50.9
+    .goto Wetlands,38.179,50.889
+>>Talk to |cFF00FF25Ormer Ironbraid|r
     .turnin 294 >> Turn in Ormer's Revenge
+.target Ormer Ironbraid
     .accept 295 >> Accept Ormer's Revenge
 step << Hunter/Warlock
 	.goto Wetlands,34.3,41.4,80,0
@@ -262,8 +299,10 @@ step << Hunter/Warlock
     .complete 295,1 --Kill Mottled Scytheclaw (x10)
     .complete 295,2 --Kill Mottled Razormaw (x10)
 step << Hunter/Warlock
-    .goto Wetlands,38.2,50.9
+    .goto Wetlands,38.179,50.889
+>>Talk to |cFF00FF25Ormer Ironbraid|r
     .turnin 295 >> Turn in Ormer's Revenge
+.target Ormer Ironbraid
     .accept 296 >> Accept Ormer's Revenge
 step << Hunter/Warlock
     .goto Wetlands,31.5,48.9,50,0
@@ -272,7 +311,9 @@ step << Hunter/Warlock
     *Note: He can very very rarely be found patroling the quarry below.
     .complete 296,1 --Collect Sarltooth's Talon (x1)
 step << Hunter/Warlock
-    .goto Wetlands,38.2,50.9
+    .goto Wetlands,38.179,50.889
+.target Ormer Ironbraid
+>>Talk to |cFF00FF25Ormer Ironbraid|r
     .turnin 296 >> Turn in Ormer's Revenge
 step
 	.goto Wetlands,34.3,41.2,60,0
@@ -280,7 +321,9 @@ step
 	>>Kill Dragonmaw Orcs
     .complete 464,1 --Collect Dragonmaw War Banner (x8)
 step
-    .goto Wetlands,49.9,39.4
+    .goto Wetlands,49.915,39.367
+.target Einar Stonegrip
+>>Talk to |cFF00FF25Einar Stonegrip|r
     .accept 469 >> Accept Daily Delivery
 step << Warrior
     #sticky
@@ -291,10 +334,14 @@ step << Warrior
     #xprate <1.5
 step
     #requires crocs
-    .goto Wetlands,56.4,40.4
+    .goto Wetlands,56.371,40.401
+.target Rethiel the Greenwarden
+>>Talk to |cFF00FF25Rethiel the Greenwarden|r
     .turnin 463 >> Turn in The Greenwarden
 step
-    .goto Wetlands,56.4,40.4
+    .goto Wetlands,56.371,40.401
+.target Rethiel the Greenwarden
+>>Talk to |cFF00FF25Rethiel the Greenwarden|r
     .accept 276 >> Accept Tramping Paws
     .maxlevel 23
 step
@@ -309,11 +356,15 @@ step
 step
     #requires crocs
     .goto Wetlands,56.4,40.3
+.target Rethiel the Greenwarden
+>>Talk to |cFF00FF25Rethiel the Greenwarden|r
     .turnin 276 >> Turn in Tramping Paws
     .isQuestComplete 276
 step
     #label endofcrocc
     .goto Wetlands,56.4,40.3
+.target Rethiel the Greenwarden
+>>Talk to |cFF00FF25Rethiel the Greenwarden|r
     .accept 277 >> Accept Fire Taboo
     .isQuestTurnedIn 276
 step << NightElf/Draenei/Human wotlk
@@ -324,6 +375,8 @@ step << NightElf/Draenei/Human wotlk
     .zone Loch Modan >> Cross the tunnel into Loch Modan
 step << NightElf/Draenei/Human wotlk
     .goto Loch Modan,46.0,13.3
+.target Chief Engineer Hinderweir VII
+>>Talk to |cFF00FF25Chief Engineer Hinderweir VII|r
     .accept 250 >> Accept A Dark Threat Looms
     .maxlevel 23
 step << NightElf/Draenei/Human wotlk
@@ -334,15 +387,13 @@ step << NightElf/Draenei/Human wotlk
     .maxlevel 23
 step << NightElf/Draenei/Human wotlk
     .goto Loch Modan,46.0,13.3
+.target Chief Engineer Hinderweir VII
+>>Talk to |cFF00FF25Chief Engineer Hinderweir VII|r
     .turnin 199 >> Turn in A Dark Threat Looms
     .isOnQuest 199
 step << NightElf/Draenei/Human wotlk
-    .goto Loch Modan,33.9,50.9
+    .goto Loch Modan,33.938,50.954
     .fp Thelsamar >> Get the Thelsamar flight path
-step << Draenei tbc/NightElf tbc
-    .zone Stormwind City >> Use the website unstuck feature to teleport to Stormwind. This feature has a 8hr cooldown. Skip this step if you can't get it to work
-    .link https://us.battle.net/support/en/help/product/wow/197/834/solution >> Click here and copy paste the link into your browser for more info
-    .zoneskip Elwynn Forest
 step << wotlk
     #label wettylandy
     >> Skip this step and head back to Menethil Harbor if your hearth is on CD
@@ -357,20 +408,28 @@ step << wotlk
 step
     .zoneskip Wetlands,1
     .goto Wetlands,8.4,58.5
+>>Talk to |cFF00FF25Karl Boran|r
     .turnin 279 >> Turn in Claws from the Deep
+.target Karl Boran
     .accept 281 >> Accept Reclaiming Goods
 step
     .zoneskip Wetlands,1
     .goto Wetlands,8.6,55.8
+.target James Halloran
+>>Talk to |cFF00FF25James Halloran|r
     .turnin 469 >> Turn in Daily Delivery
     .isOnQuest 469
 step
     .goto Wetlands,8.6,55.8
+.target James Halloran
+>>Talk to |cFF00FF25James Halloran|r
     .turnin 484 >> Turn in Young Crocolisk Skins
     .isOnQuest 484
     .zoneskip Wetlands,1
 step
     .goto Wetlands,8.6,55.8
+.target James Halloran
+>>Talk to |cFF00FF25James Halloran|r
     .accept 471 >> Accept Apprentice's Duties
     .isQuestTurnedIn 484
     .zoneskip Wetlands,1
@@ -409,7 +468,9 @@ step << Paladin
     .goto StormwindClassic,40.1,30.0
     >>Speak to Duthorian Rall and right click on the Tome of Valor provided
     .accept 1649 >>Accept The Tome of Valor
+>>Talk to |cFF00FF25Duthorian Rall|r
     .turnin 1649 >>Turn in The Tome of Valor
+.target Duthorian Rall
     .accept 1650 >>Accept The Tome of Valor
 step << Warlock
     .goto StormwindClassic,25.3,78.7
@@ -417,7 +478,9 @@ step << Warlock
 step << Warlock
     .isOnQuest 1738
     .goto StormwindClassic,25.3,78.7
+>>Talk to |cFF00FF25Gakin the Darkbinder|r
     .turnin 1738 >>Turn in Heartswood
+.target Gakin the Darkbinder
     .accept 1739 >>Accept The Binding
 step << Warlock
     .isOnQuest 1739
@@ -427,6 +490,8 @@ step << Warlock
 step << Warlock
     .isQuestComplete 1739
     .goto StormwindClassic,25.4,78.7
+.target Gakin the Darkbinder
+>>Talk to |cFF00FF25Gakin the Darkbinder|r
     .turnin 1739 >>Turn in The Binding
 step << Mage
     .goto StormwindClassic,39.6,79.6
@@ -442,7 +507,11 @@ step << Warrior
 step << Rogue tbc
     #sticky
     .goto StormwindClassic,75.8,60.1
+.target Renzik "The Shiv"
+>>Talk to |cFF00FF25Renzik "The Shiv"|r
     .accept 2281 >> Accept Redridge Rendezvous
+.target Master Mathias Shaw
+>>Talk to |cFF00FF25Master Mathias Shaw|r
     .accept 2360 >> Accept Mathias and the Defias
 step << Rogue tbc
 	.goto StormwindClassic,78.3,57.0
@@ -452,6 +521,8 @@ step << Rogue tbc
     .home >> Set your Hearthstone to Stormwind City
 step << Draenei
     .goto StormwindClassic,78.4,18.3
+.target Emissary Taluun
+>>Talk to |cFF00FF25Emissary Taluun|r
     .accept 9429 >> Accept Travel to Darkshire
 step << Hunter
 	.goto StormwindClassic,61.7,15.4
@@ -472,8 +543,10 @@ step << Shaman
 step << Human !Warlock wotlk !Paladin wotlk
     .goto Elwynn Forest,65.2,69.8
 	>>Head to the top of the Tower of Azora in Elwynn Forest
+.target Theocritus
+>>Talk to |cFF00FF25Theocritus|r
     .accept 94 >> Accept A Watchful Eye
-step << Human !Warlock wotlk/Human !Paladin wotlk
+step << Human !Warlock !Paladin wotlk
 	.goto Elwynn Forest,84.3,64.9
 	.train 33388 >> Head to Eastvale Logging Camp in Elwynn Forest and train/purchase your mount
 	.money <5.0
@@ -486,11 +559,15 @@ step << Human Paladin/Human Warlock
 step << !Human
     .goto Elwynn Forest,65.2,69.8
 	>>Head to the top of the Tower of Azora. You do NOT need to get the Stormwind Flight Path. We will get it later.
+.target Theocritus
+>>Talk to |cFF00FF25Theocritus|r
     .accept 94 >> Accept A Watchful Eye
 step
     #label exit
     .goto Redridge Mountains,17.4,69.6
 	>>Talk to Guard Parker in Redridge Mountains
+.target Guard Parker
+>>Talk to |cFF00FF25Guard Parker|r
     .accept 244 >> Accept Encroaching Gnolls
 step
 	#sticky
@@ -499,25 +576,35 @@ step
     .fp Redridge >> Get the Redridge Mountains flight path
 step
     .goto Redridge Mountains,30.8,60.1,-1
+.target Deputy Feldon
+>>Talk to |cFF00FF25Deputy Feldon|r
     .turnin 244 >> Turn in Encroaching Gnolls
 step
 	#requires LakeshireFP
     .goto Redridge Mountains,33.4,49.1
+.target Marshal Marris
+>>Talk to |cFF00FF25Marshal Marris|r
     .accept 20 >> Accept Blackrock Menace
 step << !Warlock
     >> Head into the town hall
     .goto Redridge Mountains,29.6,44.3
+.target Bailiff Conacher
+>>Talk to |cFF00FF25Bailiff Conacher|r
     .accept 91 >> Accept Solomon's Law
 step << Hunter
 	.goto Redridge Mountains,28.8,47.3
 	.vendor >> Restock on arrows, note you will get level 25 arrows soon.
 step
-    .goto Redridge Mountains,27.7,47.3
+    .goto Redridge Mountains,27.723,47.381
+.target Dockmaster Baren
+>>Talk to |cFF00FF25Dockmaster Baren|r
     .accept 127 >> Accept Selling Fish
     .accept 150 >> Accept Murloc Poachers
 step << Rogue tbc
-    .goto Redridge Mountains,28.1,52.1
+    .goto Redridge Mountains,28.062,52.037
+>>Talk to |cFF00FF25Lucius|r
     .turnin 2281 >> Turn in Redridge Rendezvous
+.target Lucius
     .accept 2282 >> Accept Alther's Mill
 step
     #sticky
@@ -529,7 +616,7 @@ step
     .goto Redridge Mountains,57.3,52.4
 	>> Kill murlocs. Loot them for their Sunfish and Fins
     .complete 127,1 --Collect Spotted Sunfish (x10)
-    .complete 150,1 --Collect Murloc Fin (x8)
+    .collect 1468,8,150,1 --Collect Murloc Fin (x8)
 step << Rogue tbc
 	#completewith next
     +Open the chests to train lockpicking, you will need 75 skill points for a quest later. Do NOT open the brown chest until you've done this
@@ -539,13 +626,19 @@ step << Rogue tbc
 step
     #requires orcs1
     .goto Redridge Mountains,33.6,48.7
+.target Marshal Marris
+>>Talk to |cFF00FF25Marshal Marris|r
     .turnin 20 >> Turn in Blackrock Menace
 step
     .goto Redridge Mountains,27.8,47.4
+.target Dockmaster Baren
+>>Talk to |cFF00FF25Dockmaster Baren|r
     .turnin 127 >> Turn in Selling Fish
     .turnin 150 >> Turn in Murloc Poachers
 step << Rogue tbc
-    .goto Redridge Mountains,28.1,52.1
+    .goto Redridge Mountains,28.062,52.037
+.target Lucius
+>>Talk to |cFF00FF25Lucius|r
     .turnin 2282 >> Turn in Alther's Mill
 step << Rogue tbc
     #completewith next
@@ -555,7 +648,9 @@ step
 	>>Click on the wanted poster outside the inn
     .accept 180 >> Accept Wanted: Lieutenant Fangore
 step
-    .goto Redridge Mountains,21.9,46.4
+    .goto Redridge Mountains,21.858,46.329
+.target Martie Jainrose
+>>Talk to |cFF00FF25Martie Jainrose|r
     .accept 34 >> Accept An Unwelcome Guest
 step
     .goto Redridge Mountains,15.7,49.4
@@ -563,10 +658,14 @@ step
     .complete 34,1 --Collect Bellygrub's Tusk (x1)
 step
     .goto Redridge Mountains,21.8,46.4
+.target Martie Jainrose
+>>Talk to |cFF00FF25Martie Jainrose|r
     .turnin 34 >> Turn in An Unwelcome Guest
 step
     >>Run to Duskwood
 	.goto Duskwood,75.7,45.3
+.target Madame Eva
+>>Talk to |cFF00FF25Madame Eva|r
     .accept 66 >> Accept The Legend of Stalvan
     .accept 101 >> Accept The Totem of Infliction
 step << Rogue wotlk/!Rogue
@@ -574,21 +673,31 @@ step << Rogue wotlk/!Rogue
     .home >> Set your Hearthstone to Darkshire
 step
     .goto Duskwood,73.6,46.8
+.target Commander Althea Ebonlocke
+>>Talk to |cFF00FF25Commander Althea Ebonlocke|r
     .accept 56 >> Accept The Night Watch
 step
     .goto Duskwood,72.6,46.9
+>>Talk to |cFF00FF25Clerk Daltry|r
     .turnin 66 >> Turn in The Legend of Stalvan
+.target Clerk Daltry
     .accept 67 >> Accept The Legend of Stalvan
 step << Draenei
-    .goto Duskwood,71.8,46.4
+    .goto Duskwood,71.816,46.369
+.target Anchorite Delan
+>>Talk to |cFF00FF25Anchorite Delan|r
     .turnin 9429 >> Turn in Travel to Darkshire
 step
     .goto Duskwood,75.3,48.6
+.target Elaine Carevin
+>>Talk to |cFF00FF25Elaine Carevin|r
     .accept 163 >> Accept Raven Hill
     .accept 164 >> Accept Deliveries to Sven
     .accept 165 >> Accept The Hermit
 step
     .goto Duskwood,75.4,48.0
+.target Calor
+>>Talk to |cFF00FF25Calor|r
     .accept 173 >> Accept Worgen in the Woods
 step
     .goto Duskwood,77.8,48.2
@@ -596,14 +705,18 @@ step
     .bronzetube
 step
     .goto Duskwood,79.8,47.9
+.target Viktori Prism'Antras
+>>Talk to |cFF00FF25Viktori Prism'Antras|r
     .accept 174 >> Accept Look To The Stars
     .turnin 174 >> Turn in Look To The Stars
-    .itemcount 4371,1 >> Bronze Tube
+    .itemcount 4371,<1
 step << Rogue
     .goto Duskwood,77.5,44.4
     .fp Duskwood >> Get the Duskwood flight point
 step
     .goto Duskwood,79.8,47.9
+.target Viktori Prism'Antras
+>>Talk to |cFF00FF25Viktori Prism'Antras|r
     .accept 175 >> Accept Look To The Stars
     .isQuestTurnedIn 174
 step
@@ -614,7 +727,9 @@ step
 	.accept 337 >> Accept An Old History Book
 step
     .goto Duskwood,82.0,59.0
+>>Talk to |cFF00FF25Blind Mary|r
     .turnin 175 >> Turn in Look To The Stars
+.target Blind Mary
     .accept 177 >> Accept Look To The Stars
     .isQuestTurnedIn 174
 step
@@ -630,24 +745,32 @@ step
     .complete 56,2 --Kill Skeletal Mage (x6)
 step
     .goto Duskwood,18.4,56.6
+>>Talk to |cFF00FF25Jitters|r
     .turnin 163 >> Turn in Raven Hill
+.target Jitters
     .accept 5 >> Accept Jitters' Growling Gut
 step
-    .goto Duskwood,7.8,34.1
+    .goto Duskwood,7.781,34.069
+>>Talk to |cFF00FF25Sven Yorgen|r
     .turnin 164 >> Turn in Deliveries to Sven
+.target Sven Yorgen
     .accept 95 >> Accept Sven's Revenge
 step
     .goto Duskwood,7.7,33.3
+.target Lars
+>>Talk to |cFF00FF25Lars|r
     .accept 226 >> Accept Wolves at Our Heels
     .maxlevel 26
 step
     .goto Duskwood,28.0,31.5
+>>Talk to |cFF00FF25Abercrombie|r
     .turnin 165 >> Turn in The Hermit
+.target Abercrombie
     .accept 148 >> Accept Supplies from Darkshire
 step
     .isOnQuest 226
     >>Run up the coast killing wolves
-    .xp <25,1
+    .xp 25,1
     .goto Duskwood,17.6,24.6
     .complete 226,1 --Kill Starving Dire Wolf (x12)
     .complete 226,2 --Kill Rabid Dire Wolf (x8)
@@ -655,15 +778,19 @@ step << Rogue/Druid
     #label HistoryB
 	.goto Duskwood,17.7,29.1
     .accept 225 >> Accept The Weathered Grave
+    .xp <25,1
 step << !Rogue !Druid
 	.goto Duskwood,17.7,29.1
     .accept 225 >> Accept The Weathered Grave
+    .xp <25,1
 step << Rogue/Druid
     .goto Westfall,56.6,52.6
     .fp Sentinel >> Get the Sentinel Hill flight path
 step << Rogue tbc
     .goto Westfall,68.5,70.0
+>>Talk to |cFF00FF25Agent Kearnen|r
     .turnin 2360 >> Turn in Mathias and the Defias
+.target Agent Kearnen
     .accept 2359 >> Accept Klaven's Tower
 step << Rogue tbc
     .goto Westfall,70.6,72.8
@@ -687,9 +814,11 @@ step << Druid tbc
     >>Combine the 2 pendants at the Shrine of Remulos
     .complete 272,1 --Collect Pendant of the Sea Lion (x1)
 step << Druid tbc
-    .goto Moonglade,56.2,30.6
+    .goto Moonglade,56.209,30.636
     >>Teleport back to Nighthaven
+>>Talk to |cFF00FF25Dendrite Starblaze|r
     .turnin 272 >> Turn in Trial of the Sea Lion
+.target Dendrite Starblaze
     .accept 5061 >> Accept Aquatic Form
 step << Druid tbc
     #sticky
@@ -697,7 +826,9 @@ step << Druid tbc
     .goto Moonglade,44.1,45.2
     .fly Teldrassil>> Fly to Teldrassil
 step << Druid tbc
-    .goto Darnassus,35.4,8.3
+    .goto Darnassus,35.375,8.405
+.target Mathrengyl Bearwalker
+>>Talk to |cFF00FF25Mathrengyl Bearwalker|r
     .turnin 5061 >> Turn in Aquatic Form
 step << Rogue/Druid
     #sticky
@@ -705,12 +836,16 @@ step << Rogue/Druid
     .hs >> Hearth back to town
 step << Rogue tbc
     .goto StormwindClassic,75.9,59.9
+>>Talk to |cFF00FF25Master Mathias Shaw|r
     .turnin 2359 >> Turn in Klaven's Tower
+.target Master Mathias Shaw
     .accept 2607 >> Accept The Touch of Zanzil
 step << Rogue tbc
     .goto StormwindClassic,78.1,59.0
     >>Head to the basement
+>>Talk to |cFF00FF25Doc Mixilpixil|r
     .turnin 2607 >> Turn in The Touch of Zanzil
+.target Doc Mixilpixil
     .accept 2608 >> Accept The Touch of Zanzil
 step << Rogue tbc
     .goto StormwindClassic,78.1,59.0
@@ -718,7 +853,9 @@ step << Rogue tbc
     .complete 2608,1 --Diagnosis Complete
 step << Rogue tbc
     .goto StormwindClassic,78.0,58.8
+>>Talk to |cFF00FF25Doc Mixilpixil|r
     .turnin 2608 >> Turn in The Touch of Zanzil
+.target Doc Mixilpixil
     .accept 2609 >> Accept The Touch of Zanzil
 step << Rogue tbc
     .goto StormwindClassic,78.2,59.0
@@ -741,6 +878,8 @@ step << Rogue tbc
     >>If you can't find a bronze tube, you will have to skip this quest, train First Aid to 80, farm a small venom sac from spiders in Duskwood, craft an Anti-Venom and remove the Zanzil poison.
 step << Rogue tbc
     .goto StormwindClassic,78.0,58.9
+.target Doc Mixilpixil
+>>Talk to |cFF00FF25Doc Mixilpixil|r
     .turnin 2609 >> Turn in The Touch of Zanzil
 step << Rogue tbc
     .goto StormwindClassic,78.2,59.0
@@ -759,37 +898,57 @@ step << !Rogue !Druid !Priest !Warlock
     .complete 173,1 --Kill Nightbane Shadow Weaver (x6)
 step
     .goto Duskwood,73.8,43.3
+>>Talk to |cFF00FF25Chef Grual|r
     .turnin 5 >> Turn in Jitters' Growling Gut
+.target Chef Grual
     .accept 93 >> Accept Dusky Crab Cakes
 step
     .goto Duskwood,73.6,46.8
+>>Talk to |cFF00FF25Commander Althea Ebonlocke|r
     .turnin 56 >> Turn in The Night Watch
+.target Commander Althea Ebonlocke
     .accept 57 >> Accept The Night Watch
 step
-    .goto Duskwood,72.6,47.6
+    .goto Duskwood,72.642,47.613
+.target Sirra Von'Indi
+>>Talk to |cFF00FF25Sirra Von'Indi|r
     .turnin 225 >> Turn in The Weathered Grave
-    .accept 227 >> Accept Morgan Ladimore
+    .isOnQuest 225
 step
-    .goto Duskwood,73.5,46.9
+.target Sirra Von'Indi
+>>Talk to |cFF00FF25Sirra Von'Indi|r
+    .accept 227 >> Accept Morgan Ladimore
+    .goto Duskwood,72.642,47.613
+>>Talk to |cFF00FF25Commander Althea Ebonlocke|r
     .turnin 227 >> Turn in Morgan Ladimore
+    .goto Duskwood,73.5,46.9
+.target Commander Althea Ebonlocke
     .accept 228 >> Accept Mor'Ladim
+    .goto Duskwood,73.5,46.9
+    .isQuestTurnedIn 225
 step
 	#sticky
 	#completewith next
 	.destroy 2154 >> You can delete "The Story of Morgan Ladimore" from your inventory, as it's not needed
 step
     .goto Duskwood,75.7,45.3
+>>Talk to |cFF00FF25Madame Eva|r
     .turnin 148 >> Turn in Supplies from Darkshire
+.target Madame Eva
     .accept 149 >> Accept Ghost Hair Thread
 step
     .goto Duskwood,75.3,47.9
+>>Talk to |cFF00FF25Calor|r
     .turnin 173 >> Turn in Worgen in the Woods
+.target Calor
     .accept 221 >> Accept Worgen in the Woods
     .isQuestComplete 173
 step
     #label HistoryB
 	.goto Duskwood,79.8,47.8
+>>Talk to |cFF00FF25Viktori Prism'Antras|r
     .turnin 177 >> Turn in Look To The Stars
+.target Viktori Prism'Antras
     .accept 181 >> Accept Look To The Stars
     .isQuestTurnedIn 174
 step
@@ -800,11 +959,15 @@ step
 	.accept 337 >> Accept An Old History Book
 step
     .goto Duskwood,81.9,59.1
+>>Talk to |cFF00FF25Blind Mary|r
     .turnin 149 >> Turn in Ghost Hair Thread
+.target Blind Mary
     .accept 154 >> Accept Return the Comb
 step
     .goto Duskwood,75.7,45.3
+>>Talk to |cFF00FF25Madame Eva|r
     .turnin 154 >> Turn in Return the Comb
+.target Madame Eva
     .accept 157 >> Accept Deliver the Thread
 step
     .goto Duskwood,49.9,77.8
@@ -818,8 +981,13 @@ step
     .complete 93,1 --Collect Gooey Spider Leg (x6)
 	.maxlevel 27
 step
+	.goto Duskwood,17.7,29.1
+    .accept 225 >> Accept The Weathered Grave
+step
     .goto Duskwood,28.0,31.5
+>>Talk to |cFF00FF25Abercrombie|r
     .turnin 157 >> Turn in Deliver the Thread
+.target Abercrombie
     .accept 158 >> Accept Zombie Juice
 step
     .goto Duskwood,17.6,24.6
@@ -831,13 +999,18 @@ step << Hunter/Paladin
     >>Kill the level 30 elite roaming the cemetery. Kite him around the big trees in the area.
     >> Run away and heal when he enrages, use the big trees to make space. Don't try to tank him during the enrage << Paladin
     .complete 228,1 --Collect Mor'Ladim's Skull (x1)
+    .isOnQuest 228
 step
-    .goto Duskwood,7.8,34.0
+    .goto Duskwood,7.781,34.069
+>>Talk to |cFF00FF25Sven Yorgen|r
     .turnin 230 >> Turn in Sven's Camp
+.target Sven Yorgen
     .accept 262 >> Accept The Shadowy Figure
 step
     #label HistoryB2
 	.goto Duskwood,7.7,33.3
+.target Lars
+>>Talk to |cFF00FF25Lars|r
     .turnin 226 >> Turn in Wolves at Our Heels
     .isOnQuest 226
 step << !Rogue !Druid
@@ -850,12 +1023,16 @@ step << !Rogue !Druid
     .accept 68 >> Accept The Legend of Stalvan
 step << Paladin
     .goto Westfall,42.5,88.6
+>>Talk to |cFF00FF25Daphne Stilwell|r
     .turnin 1650 >>Turn in The Tome of Valor
+.target Daphne Stilwell
     .accept 1651 >>Accept The Tome of Valor
 step << Paladin
     .goto Westfall,42.5,88.6
     .complete 1651,1 --Protect Daphne Stilwell (1)
+>>Talk to |cFF00FF25Daphne Stilwell|r
     .turnin 1651 >>Turn in The Tome of Valor
+.target Daphne Stilwell
     .accept 1652 >>Accept The Tome of Valor
 step << !Rogue !Druid
     #sticky
@@ -868,38 +1045,70 @@ step << Rogue/Druid
     .complete 173,1 --Kill Nightbane Shadow Weaver (x6)
 step
     .goto Duskwood,75.7,45.3
+>>Talk to |cFF00FF25Madame Eva|r
     .turnin 262 >> Turn in The Shadowy Figure
+.target Madame Eva
     .accept 265 >> Accept The Shadowy Search Continues
 step
     .goto Duskwood,72.6,46.9
+>>Talk to |cFF00FF25Clerk Daltry|r
     .turnin 265 >> Turn in The Shadowy Search Continues
+.target Clerk Daltry
     .accept 266 >> Accept Inquire at the Inn
     .turnin 68 >> Turn in The Legend of Stalvan
     .accept 69 >> Accept The Legend of Stalvan
+step
+    .goto Duskwood,72.642,47.613
+.target Sirra Von'Indi
+>>Talk to |cFF00FF25Sirra Von'Indi|r
+    .turnin 225 >> Turn in The Weathered Grave
+    .isOnQuest 225
+step
+.target Sirra Von'Indi
+>>Talk to |cFF00FF25Sirra Von'Indi|r
+    .accept 227 >> Accept Morgan Ladimore
+    .goto Duskwood,72.642,47.613
+>>Talk to |cFF00FF25Commander Althea Ebonlocke|r
+    .turnin 227 >> Turn in Morgan Ladimore
+    .goto Duskwood,73.5,46.9
+.target Commander Althea Ebonlocke
+    .accept 228 >> Accept Mor'Ladim
+    .goto Duskwood,73.5,46.9
+    .isQuestTurnedIn 225
 step
 	#completewith next
 	.vendor >> Remember to buy level 25 food and water
 step
     .goto Duskwood,73.9,44.4
+>>Talk to |cFF00FF25Tavernkeep Smitts|r
     .turnin 158 >> Turn in Zombie Juice
+.target Tavernkeep Smitts
     .accept 156 >> Accept Gather Rot Blossoms
     .turnin 266 >> Turn in Inquire at the Inn
     .accept 453 >> Accept Finding the Shadowy Figure
 step
     .goto Duskwood,73.9,43.9
+.target Chef Grual
+>>Talk to |cFF00FF25Chef Grual|r
     .turnin 93 >> Turn in Dusky Crab Cakes
     .isQuestComplete 93
 step
     .goto Duskwood,73.9,43.9
+.target Chef Grual
+>>Talk to |cFF00FF25Chef Grual|r
     .accept 240 >> Accept Return to Jitters
     .isQuestTurnedIn 93
 step << Hunter/Paladin
 	.goto Duskwood,73.7,46.8
+>>Talk to |cFF00FF25Commander Althea Ebonlocke|r
     .turnin 228 >> Turn in Mor'Ladim
+.target Commander Althea Ebonlocke
     .accept 229 >> Accept The Daughter Who Lived
 step << Hunter/Paladin
-    .goto Duskwood,74.5,46.1
+    .goto Duskwood,74.543,46.085
+>>Talk to |cFF00FF25Watcher Ladimore|r
     .turnin 229 >> Turn in The Daughter Who Lived
+.target Watcher Ladimore
     .accept 231 >> Accept A Daughter's Love
 step << !Rogue !Druid
     .isOnQuest 173
@@ -908,7 +1117,9 @@ step << !Rogue !Druid
     .complete 173,1 --Kill Nightbane Shadow Weaver (x6)
 step
     .goto Duskwood,75.3,47.9
+>>Talk to |cFF00FF25Calor|r
     .turnin 173 >> Turn in Worgen in the Woods
+.target Calor
     .accept 221 >> Accept Worgen in the Woods
     .isQuestComplete 173
 step
@@ -917,11 +1128,15 @@ step
  .fly Redridge >> Fly to Redridge
 step
     #xprate <1.2
-    .goto Redridge Mountains,31.6,57.9
+    .goto Redridge Mountains,31.537,57.852
+.target Guard Howe
+>>Talk to |cFF00FF25Guard Howe|r
     .accept 128 >> Accept Blackrock Bounty
     .maxlevel 26 << Paladin/Hunter
 step
     .goto Redridge Mountains,33.5,49.2
+.target Marshal Marris
+>>Talk to |cFF00FF25Marshal Marris|r
     .accept 19 >> Accept Tharil'zun
     .accept 115 >> Accept Shadow Magic
 step
@@ -960,20 +1175,30 @@ step
     .complete 128,1 --Kill Blackrock Champion (x15)
     .isOnQuest 128
 step
-    .goto Redridge Mountains,33.5,48.9
+    .goto Redridge Mountains,33.504,48.969
+.target Marshal Marris
+>>Talk to |cFF00FF25Marshal Marris|r
     .turnin 19 >> Turn in Tharil'zun
 	.isQuestComplete 19
 step
-	.goto Redridge Mountains,33.5,48.9
+	.goto Redridge Mountains,33.504,48.969
+.target Marshal Marris
+>>Talk to |cFF00FF25Marshal Marris|r
     .turnin 115 >> Turn in Shadow Magic
 step << !Warlock
     .goto Redridge Mountains,29.6,44.3
+.target Bailiff Conacher
+>>Talk to |cFF00FF25Bailiff Conacher|r
     .turnin 91 >> Turn in Solomon's Law
 step
     .goto Redridge Mountains,29.8,44.5
+.target Magistrate Solomon
+>>Talk to |cFF00FF25Magistrate Solomon|r
     .turnin 180 >> Turn in Wanted: Lieutenant Fangore
 step
     .goto Redridge Mountains,31.6,58.0
+.target Guard Howe
+>>Talk to |cFF00FF25Guard Howe|r
     .turnin 128 >> Turn in Blackrock Bounty
     .isQuestComplete 128
 step
@@ -989,15 +1214,21 @@ step
 step
     #completewith fpwfend
     .goto Duskwood,18.4,56.5
+>>Talk to |cFF00FF25Jitters|r
     .turnin 453 >> Turn in Finding the Shadowy Figure
+.target Jitters
     .accept 268 >> Accept Return to Sven
 step
     .goto Duskwood,18.4,56.5
+.target Jitters
+>>Talk to |cFF00FF25Jitters|r
     .turnin 240 >> Turn in Return to Jitters
     .isOnQuest 240
 step
     .goto Duskwood,7.7,34.1
+>>Talk to |cFF00FF25Sven Yorgen|r
     .turnin 268 >> Turn in Return to Sven
+.target Sven Yorgen
     .accept 323 >> Accept Proving Your Worth
 step
     #sticky
@@ -1034,7 +1265,7 @@ step
 step
 	 .goto Duskwood,23.8,35.0
 	.xp 27+12000 >> Grind to 12000+/32200xp
-step << !Hunter !Paladin
+step
     .goto Duskwood,19.7,39.7
     >>Kill the level 30 elite roaming the cemetery. Skip this step if you cannot solo her or find a group.
     >> Run away when he enrages, use the big trees to kite and make space. Don't try to tank him during the enrage
@@ -1043,12 +1274,16 @@ step << !Hunter !Paladin
 step
     #label HistoryB3
 	.goto Duskwood,7.9,34.1
+>>Talk to |cFF00FF25Sven Yorgen|r
     .turnin 323 >> Turn in Proving Your Worth
+.target Sven Yorgen
     .accept 269 >> Accept Seeking Wisdom
 step
     >> Run to Goldshire
     .goto Elwynn Forest,43.7,65.9
+>>Talk to |cFF00FF25Innkeeper Farley|r
     .turnin 69 >> Turn in The Legend of Stalvan
+.target Innkeeper Farley
     .accept 70 >> Accept The Legend of Stalvan
 step
     >>Go upstairs in the room behind the rogue trainer. Loot the chest
@@ -1058,12 +1293,8 @@ step << Shaman
 	.goto StormwindClassic,61.9,84.0
 	.trainer >> Train your class spells
 step << Warrior
-    .goto Elwynn Forest,41.1,65.8
+    .goto Elwynn Forest,41.087,65.768
     .trainer >> Train your class spells
-step << Warlock
-    >>Go into the inn basement
-    .goto Elwynn Forest,44.4,66.2
-	.trainer >> Train your class spells
 step << Mage
     .goto StormwindClassic,39.6,79.6
 	>> Teleport to stormwind
@@ -1071,10 +1302,17 @@ step << Mage
 step
     #xprate <1.5
     .goto StormwindClassic,26.4,78.4
+.target Zardeth of the Black Claw
+>>Talk to |cFF00FF25Zardeth of the Black Claw|r
     .accept 335 >> Accept A Noble Brew
+step << Warlock
+    .goto StormwindClassic,26.4,78.4
+	.trainer >> Train your class spells
 step
     .goto StormwindClassic,29.8,61.8
+>>Talk to |cFF00FF25Caretaker Folsom|r
     .turnin 70 >> Turn in The Legend of Stalvan
+.target Caretaker Folsom
     .accept 72 >> Accept The Legend of Stalvan
 step
     .goto StormwindClassic,29.6,61.7
@@ -1082,20 +1320,28 @@ step
     .accept 74 >> Accept The Legend of Stalvan
 step <<!Mage
     .goto StormwindClassic,40.8,30.8
+.target Brother Sarno
+>>Talk to |cFF00FF25Brother Sarno|r
     .accept 2923 >> Accept Tinkmaster Overspark
 step << Paladin
     .goto StormwindClassic,40.0,29.9
+>>Talk to |cFF00FF25Duthorian Rall|r
     .turnin 1652 >>Turn in The Tome of Valor
+.target Duthorian Rall
     .accept 1653 >>Accept The Test of Righteousness
 step
     .goto StormwindClassic,39.3,28.0
+>>Talk to |cFF00FF25Bishop Farthing|r
     .turnin 269 >> Turn in Seeking Wisdom
+.target Bishop Farthing
     .accept 270 >> Accept The Doomed Fleet
 step
     #xprate >1.3
     .xp <28,1
     .goto StormwindClassic,41.5,31.7
 	>>Talk to the patrolling kid
+.target Thomas
+>>Talk to |cFF00FF25Thomas|r
     .accept 1274 >> Accept The Missing Diplomat
 step << Paladin
 #xprate <1.5
@@ -1130,6 +1376,8 @@ step
     .zone Ironforge >> Take the tram to Ironforge
 step <<!Mage
     .goto Ironforge,69.8,50.1
+.target Tinkmaster Overspark
+>>Talk to |cFF00FF25Tinkmaster Overspark|r
     .turnin 2923 >> Turn in Tinkmaster Overspark
 step << Rogue
     #sticky
@@ -1160,6 +1408,8 @@ step << Hunter tbc
 step << Paladin
     .goto Dun Morogh,52.5,36.8
     >> Head to the gates of Ironforge
+.target Jordan Stilwell
+>>Talk to |cFF00FF25Jordan Stilwell|r
     .turnin 1653 >>Turn in The Test of Righteousness
 step << Dwarf !Paladin wotlk
 	#sticky
@@ -1179,26 +1429,38 @@ step
     .fly Wetlands>> Fly to Wetlands
 step
     .goto Wetlands,8.4,58.5
+>>Talk to |cFF00FF25Karl Boran|r
     .turnin 279 >> Turn in Claws from the Deep
+.target Karl Boran
     .accept 281 >> Accept Reclaiming Goods
 step
     .goto Wetlands,8.6,55.8
+.target James Halloran
+>>Talk to |cFF00FF25James Halloran|r
     .turnin 469 >> Turn in Daily Delivery
     .isOnQuest 469
 step
     .goto Wetlands,8.6,55.8
+.target James Halloran
+>>Talk to |cFF00FF25James Halloran|r
     .turnin 484 >> Turn in Young Crocolisk Skins
     .isOnQuest 484
 step
     .goto Wetlands,8.6,55.8
+.target James Halloran
+>>Talk to |cFF00FF25James Halloran|r
     .accept 471 >> Accept Apprentice's Duties
     .isQuestTurnedIn 484
 step
     .goto Wetlands,10.8,59.6
+.target First Mate Fitzsimmons
+>>Talk to |cFF00FF25First Mate Fitzsimmons|r
     .accept 289 >> Accept The Cursed Crew
 step
     .goto Wetlands,10.6,60.5
+>>Talk to |cFF00FF25Glorin Steelbrow|r
     .turnin 270 >> Turn in The Doomed Fleet
+.target Glorin Steelbrow
     .accept 321 >> Accept Lightforge Iron
 step
       .goto Wetlands,10.7,60.9
@@ -1206,16 +1468,24 @@ step
 .home >> Set your Hearthstone to Deepwater Tavern
 step
     .goto Wetlands,10.9,55.9
+.target Harlo Barnaby
+>>Talk to |cFF00FF25Harlo Barnaby|r
     .accept 472 >> Accept Fall of Dun Modr
 step
     .goto Wetlands,9.9,57.4
+>>Talk to |cFF00FF25Captain Stoutfist|r
     .turnin 464 >> Turn in War Banners
+.target Captain Stoutfist
     .accept 465 >> Accept Nek'rosh's Gambit
 step
     .goto Wetlands,11.7,58.0
+.target Sida
+>>Talk to |cFF00FF25Sida|r
     .accept 470 >> Accept Digging Through the Ooze
 step
-    .goto Wetlands,11.5,52.2
+    .goto Wetlands,11.500,52.174
+.target Tarrel Rockweaver
+>>Talk to |cFF00FF25Tarrel Rockweaver|r
     .turnin 306 >> Turn in In Search of The Excavation Team
 step
     .goto Wetlands,13.5,41.5
@@ -1242,7 +1512,9 @@ step
     .complete 471,1 --Collect Giant Crocolisk Skin (x6)
     .isQuestTurnedIn 484
 step
-    .goto Wetlands,38.2,50.9
+    .goto Wetlands,38.179,50.889
+.target Ormer Ironbraid
+>>Talk to |cFF00FF25Ormer Ironbraid|r
     .accept 294 >> Accept Ormer's Revenge
 step
 	#label fossil
@@ -1256,15 +1528,20 @@ step
     .complete 294,1 --Kill Mottled Raptor (x10)
     .complete 294,2 --Kill Mottled Screecher (x10)
 step
-    .goto Wetlands,38.2,50.9
+    .goto Wetlands,38.179,50.889
+>>Talk to |cFF00FF25Ormer Ironbraid|r
     .turnin 294 >> Turn in Ormer's Revenge
+.target Ormer Ironbraid
     .accept 295 >> Accept Ormer's Revenge
 step
     .goto Wetlands,38.8,52.3
+>>Talk to |cFF00FF25Merrin Rockweaver|r
     .turnin 305 >> Turn in In Search of The Excavation Team
-    .accept 306 >> Accept In Search of The Excavation Team
+.target Merrin Rockweaver
 step
 	.goto Wetlands,38.81,52.39
+.target Prospector Whelgar
+>>Talk to |cFF00FF25Prospector Whelgar|r
 	.accept 299 >>Accept Uncovering the Past
 step
 	#label relics
@@ -1280,8 +1557,10 @@ step
     .complete 295,1 --Kill Mottled Scytheclaw (x10)
     .complete 295,2 --Kill Mottled Razormaw (x10)
 step
-    .goto Wetlands,38.2,50.9
+    .goto Wetlands,38.179,50.889
+>>Talk to |cFF00FF25Ormer Ironbraid|r
     .turnin 295 >> Turn in Ormer's Revenge
+.target Ormer Ironbraid
     .accept 296 >> Accept Ormer's Revenge
 step
     .goto Wetlands,31.5,48.9,50,0
@@ -1290,11 +1569,15 @@ step
     .complete 296,1 --Collect Sarltooth's Talon (x1)
 step
 	#requires relics
-    .goto Wetlands,38.2,50.9
+    .goto Wetlands,38.179,50.889
+.target Ormer Ironbraid
+>>Talk to |cFF00FF25Ormer Ironbraid|r
     .turnin 296 >> Turn in Ormer's Revenge
 step
 	#requires relics
 	.goto Wetlands,38.81,52.39
+.target Prospector Whelgar
+>>Talk to |cFF00FF25Prospector Whelgar|r
 	.turnin 299 >>Turn in Uncovering the Past
 step
 	#label Relu1
@@ -1318,7 +1601,9 @@ step
     .isQuestTurnedIn 276
 step
     .goto Wetlands,56.3,40.5
+>>Talk to |cFF00FF25Rethiel the Greenwarden|r
     .turnin 277 >> Turn in Fire Taboo
+.target Rethiel the Greenwarden
     .accept 275 >> Accept Blisters on The Land
     .isQuestTurnedIn 276
 step
@@ -1345,22 +1630,32 @@ step
     .hs >> Hearth to Menethil Harbor
 step
     .goto Wetlands,10.8,59.6
+>>Talk to |cFF00FF25First Mate Fitzsimmons|r
     .turnin 289 >> Turn in The Cursed Crew
+.target First Mate Fitzsimmons
     .accept 290 >> Accept Lifting the Curse
 step
-    .goto Wetlands,10.8,60.4
+    .goto Wetlands,10.828,60.398
 	>>Go upstairs and talk to Archaeologist Flagongut
+.target Archaeologist Flagongut
+>>Talk to |cFF00FF25Archaeologist Flagongut|r
 	.turnin 943 >>Turn in The Absent Minded Prospector
     .isOnQuest 943
 step
     .goto Wetlands,11.7,58.1
+.target Sida
+>>Talk to |cFF00FF25Sida|r
     .turnin 470 >> Turn in Digging Through the Ooze
     .isQuestComplete 470
 step
-    .goto Wetlands,8.3,58.5
+    .goto Wetlands,8.310,58.533
+.target Karl Boran
+>>Talk to |cFF00FF25Karl Boran|r
     .turnin 286 >> Turn in Return the Statuette
 step
     .goto Wetlands,8.6,55.8
+.target James Halloran
+>>Talk to |cFF00FF25James Halloran|r
     .turnin 471 >> Turn in Apprentice's Duties
     .isQuestTurnedIn 484
 step
@@ -1401,13 +1696,21 @@ step
     .complete 275,1 --Kill Fen Creeper (x8)
 step
     .goto Wetlands,56.4,40.5
+.target Rethiel the Greenwarden
+>>Talk to |cFF00FF25Rethiel the Greenwarden|r
     .turnin 275 >> Turn in Blisters on The Land
     .isOnQuest 275
 step
     .goto Wetlands,49.9,18.3
     .turnin -472 >> Turn in Fall of Dun Modr
+.target Rhag Garmason
+>>Talk to |cFF00FF25Rhag Garmason|r
     .accept 631 >> Accept The Thandol Span
+.target Longbraid the Grim
+>>Talk to |cFF00FF25Longbraid the Grim|r
     .accept 304 >> Accept A Grim Task
+.target Motley Garmason
+>>Talk to |cFF00FF25Motley Garmason|r
     .accept 303 >> Accept The Dark Iron War
 step
 	#sticky
@@ -1428,7 +1731,11 @@ step--?
 step
     #requires balgaras
     .goto Wetlands,49.7,18.3
+.target Motley Garmason
+>>Talk to |cFF00FF25Motley Garmason|r
     .turnin 303 >> Turn in The Dark Iron War
+.target Longbraid the Grim
+>>Talk to |cFF00FF25Longbraid the Grim|r
     .turnin 304 >> Turn in A Grim Task
 step
     .goto Wetlands,51.2,8.0
@@ -1437,10 +1744,14 @@ step
     .accept 632 >> Accept The Thandol Span
 step
     .goto Wetlands,49.9,18.3
+>>Talk to |cFF00FF25Rhag Garmason|r
     .turnin 632 >> Turn in The Thandol Span
+.target Rhag Garmason
     .accept 633 >> Accept The Thandol Span
 step
     .goto Arathi Highlands,43.3,92.6
+.target Foggy MacKreel
+>>Talk to |cFF00FF25Foggy MacKreel|r
     .accept 647 >> Accept MacKreel's Moonshine
     >>You can still get this quest if you don't have any kind of speed increase or slow fall
     .link https://www.twitch.tv/videos/646111384 >>Click here for reference
@@ -1457,14 +1768,20 @@ step
     .complete 633,1 --Collect Cache of Explosives Destroyed (x1)
 step
     .goto Wetlands,49.9,18.3
+>>Talk to |cFF00FF25Rhag Garmason|r
     .turnin 633 >> Turn in The Thandol Span
+.target Rhag Garmason
     .accept 634 >> Accept Plea To The Alliance
 step
     .goto Arathi Highlands,45.9,47.5
+.target Captain Nials
+>>Talk to |cFF00FF25Captain Nials|r
     .turnin 634 >> Turn in Plea To The Alliance
 step
     #xprate >1.3
     .goto Arathi Highlands,46.6,47.0
+.target Skuerto
+>>Talk to |cFF00FF25Skuerto|r
     .turnin 690 >> Turn in Malin's Request
     .isOnQuest 690
 step
@@ -1475,21 +1792,25 @@ step
 >>Run to Southshore and go downstairs in the inn. Turn in before the timer is up. Watch out for the courier on the road.
 	.unitscan Forsaken Bodyguard
 .goto Hillsbrad Foothills,52.2,58.6
+.target Brewmeister Bilger
+>>Talk to |cFF00FF25Brewmeister Bilger|r
     .turnin 647 >> Turn in MacKreel's Moonshine
 step
 	.goto Hillsbrad Foothills,50.5,57.2
+.target Loremaster Dibbs
+>>Talk to |cFF00FF25Loremaster Dibbs|r
     .turnin 538 >> Turn in Southshore
 	.isOnQuest 538
-step << !Warlock
-#xprate <1.5
-    .goto Hillsbrad Foothills,51.9,58.7
-    .accept 555 >> Accept Soothing Turtle Bisque
 step
     .xp <30,1
     .goto Hillsbrad Foothills,51.4,58.5
+.target Lieutenant Farren Orinelle
+>>Talk to |cFF00FF25Lieutenant Farren Orinelle|r
     .accept 536 >> Accept Down the Coast
 step
     .goto Hillsbrad Foothills,50.9,58.8
+.target Huraan
+>>Talk to |cFF00FF25Huraan|r
     .accept 9435 >> Accept Missing Crystals
 step <<  Hunter tbc
      #completewith next
@@ -1509,7 +1830,9 @@ step
 step
     .xp <30,1
     .goto Hillsbrad Foothills,51.4,58.5
+>>Talk to |cFF00FF25Lieutenant Farren Orinelle|r
     .turnin 536 >> Turn in Down the Coast
+.target Lieutenant Farren Orinelle
     .accept 559 >> Accept Farren's Proof
 step
     .xp <30,1
@@ -1519,17 +1842,23 @@ step
 step
     .xp <30,1
     .goto Hillsbrad Foothills,51.4,58.5
+>>Talk to |cFF00FF25Lieutenant Farren Orinelle|r
     .turnin 559 >> Turn in Farren's Proof
+.target Lieutenant Farren Orinelle
     .accept 560 >> Accept Farren's Proof
 step
     .xp <30,1
     .goto Hillsbrad Foothills,49.5,58.8
+>>Talk to |cFF00FF25Marshal Redpath|r
     .turnin 560 >> Turn in Farren's Proof
+.target Marshal Redpath
     .accept 561 >> Accept Farren's Proof
 step
     .xp <30,1
     .goto Hillsbrad Foothills,51.4,58.4
+>>Talk to |cFF00FF25Lieutenant Farren Orinelle|r
     .turnin 561 >> Turn in Farren's Proof
+.target Lieutenant Farren Orinelle
     .accept 562 >> Accept Stormwind Ho!
 step
     .xp <30,1
@@ -1540,7 +1869,9 @@ step
 step
     .xp <30,1
     .goto Hillsbrad Foothills,51.4,58.5
+>>Talk to |cFF00FF25Lieutenant Farren Orinelle|r
     .turnin 562 >> Turn in Stormwind Ho!
+.target Lieutenant Farren Orinelle
     .accept 563 >> Accept Reassignment
 step
     .goto Hillsbrad Foothills,49.3,52.3
@@ -1555,7 +1886,9 @@ step
     .fly Wetlands>> Fly to Wetlands
 step
     .goto Wetlands,10.6,60.5
+>>Talk to |cFF00FF25Glorin Steelbrow|r
     .turnin 292 >> Turn in The Eye of Paleth
+.target Glorin Steelbrow
     .accept 293 >> Accept Cleansing the Eye
 step
     .goto Wetlands,12.1,64.1
@@ -1567,10 +1900,14 @@ step
     .complete 324,1 --Collect Lightforge Ingot (x5)
 step
     .goto Wetlands,10.6,60.4
+>>Talk to |cFF00FF25Glorin Steelbrow|r
     .turnin 324 >> Turn in The Lost Ingots
+.target Glorin Steelbrow
     .accept 322 >> Accept Blessed Arm
 step
     .goto Wetlands,9.9,57.4
+.target Captain Stoutfist
+>>Talk to |cFF00FF25Captain Stoutfist|r
     .turnin 474 >> Turn in Defeat Nek'rosh
 step << !Mage
 	.goto Wetlands,9.3,59.4
@@ -1579,15 +1916,21 @@ step << Mage
     .zone Ironforge >> Teleport to Ironforge
 step
     .goto Ironforge,63.8,67.8
+>>Talk to |cFF00FF25Sara Balloo|r
     .turnin 637 >> Turn in Sully Balloo's Letter
+.target Sara Balloo
     .accept 683 >> Accept Sara Balloo's Plea
 step
     .goto Ironforge,39.3,55.9
+>>Talk to |cFF00FF25King Magni Bronzebeard|r
     .turnin 683 >> Turn in Sara Balloo's Plea
+.target King Magni Bronzebeard
     .accept 686 >> Accept A King's Tribute
 step
     .goto Ironforge,38.7,87.2
+>>Talk to |cFF00FF25Grand Mason Marblesten|r
     .turnin 686 >> Turn in A King's Tribute
+.target Grand Mason Marblesten
     .accept 689 >> Accept A King's Tribute
 ]])
 
@@ -1626,7 +1969,9 @@ step << Human Paladin
     .collect 2589,10,1644
 step << Paladin
     .goto StormwindClassic,40.0,29.9
+>>Talk to |cFF00FF25Duthorian Rall|r
     .turnin 1652 >>Turn in The Tome of Valor
+.target Duthorian Rall
     .accept 1653 >>Accept The Test of Righteousness
 step << Paladin
 	.goto StormwindClassic,38.6,32.8
@@ -1635,13 +1980,11 @@ step << Priest
 	.goto StormwindClassic,38.5,26.8
 	.trainer >> Train your class spells
 step
-    .goto StormwindClassic,39.3,28.0
-    .turnin 269 >> Turn in Seeking Wisdom
-    .accept 270 >> Accept The Doomed Fleet
-step
     .isOnQuest 322
     .goto StormwindClassic,51.7,12.3
+>>Talk to |cFF00FF25Grimand Elmore|r
     .turnin 322 >> Turn in Blessed Arm
+.target Grimand Elmore
     .accept 325 >> Accept Armed and Ready
 step
 	#sticky
@@ -1650,6 +1993,8 @@ step
     .xp <28,1
     .goto StormwindClassic,41.5,31.7
 	>>Talk to Thomas, the patrolling kid
+.target Thomas
+>>Talk to |cFF00FF25Thomas|r
     .accept 1274 >> Accept The Missing Diplomat
 step
     .goto StormwindClassic,39.7,27.6
@@ -1662,7 +2007,9 @@ step << Human Paladin
     .goto StormwindClassic,39.8,30.1
     >>Speak to Duthorian Rall and click on the Tome of Divinity provided
     .accept 1642 >>Accept The Tome of Divinity
+>>Talk to |cFF00FF25Duthorian Rall|r
     .turnin 1642 >>Turn in The Tome of Divinity
+.target Duthorian Rall
     .accept 1643 >>Accept The Tome of Divinity
 step << Warlock
     .goto StormwindClassic,25.3,78.7
@@ -1672,31 +2019,45 @@ step
     >> Head into Stormwind Keep
 	.goto StormwindClassic,74.1,7.6
     .accept 337 >> Accept An Old History Book
+.target Milton Sheaf
+>>Talk to |cFF00FF25Milton Sheaf|r
     .turnin 337 >> Turn in An Old History Book
 step
     .isQuestTurnedIn 337
     .goto StormwindClassic,74.1,7.6
+.target Milton Sheaf
+>>Talk to |cFF00FF25Milton Sheaf|r
     .accept 538 >> Accept Southshore
 step
     .isOnQuest 1274
     .goto StormwindClassic,78.1,25.1
+>>Talk to |cFF00FF25Bishop DeLavey|r
     .turnin 1274 >> Turn in The Missing Diplomat
+.target Bishop DeLavey
     .accept 1241 >> Accept The Missing Diplomat
 step << Hunter
     .goto StormwindClassic,72.8,16.1
+.target Major Samuelson
+>>Talk to |cFF00FF25Major Samuelson|r
     .turnin 563 >> Turn in Reassignment
     .isOnQuest 563
 step << Human Paladin
     .goto StormwindClassic,56.9,61.9
+>>Talk to |cFF00FF25Stephanie Turner|r
     .turnin 1643 >>Turn in The Tome of Divinity
+.target Stephanie Turner
     .accept 1644 >>Accept The Tome of Divinity
 step << Human Paladin
     .goto StormwindClassic,56.9,61.9
     .complete 1644,1
+>>Talk to |cFF00FF25Stephanie Turner|r
     .turnin 1644 >>Turn in The Tome of Divinity
+.target Stephanie Turner
     .accept 1780 >>Accept The Tome of Divinity
 step << Shaman
     .goto StormwindClassic,61.9,83.9
+.target Farseer Umbrua
+>>Talk to |cFF00FF25Farseer Umbrua|r
     .accept 10491 >> Accept Call of Air
 	.trainer >> Train your class spells
 step << Warrior
@@ -1708,20 +2069,28 @@ step << Rogue
 step
     .isOnQuest 1241
     .goto StormwindClassic,73.1,78.3
+>>Talk to |cFF00FF25Jorgen|r
     .turnin 1241 >> Turn in The Missing Diplomat
+.target Jorgen
     .accept 1242 >> Accept The Missing Diplomat
 step
     .isOnQuest 1242
     .goto StormwindClassic,60.1,64.4
+>>Talk to |cFF00FF25Elling Trias|r
     .turnin 1242 >> Turn in The Missing Diplomat
+.target Elling Trias
     .accept 1243 >> Accept The Missing Diplomat
 step << Human Paladin
     .goto StormwindClassic,40.1,29.9
+>>Talk to |cFF00FF25Duthorian Rall|r
     .turnin 1780 >>Turn in The Tome of Divinity
+.target Duthorian Rall
     .accept 1781 >>Accept The Tome of Divinity
 step << Human Paladin
     .goto StormwindClassic,38.7,26.6
+>>Talk to |cFF00FF25Gazin Tenorm|r
     .turnin 1781 >>Turn in The Tome of Divinity
+.target Gazin Tenorm
     .accept 1786 >>Accept The Tome of Divinity
 step
 	#label exit
@@ -1730,16 +2099,22 @@ step
 step
 	#completewith notubeandy
     .goto Duskwood,79.8,47.9
-    .itemcount 4371,1
+    .itemcount 4371,<1
+.target Viktori Prism'Antras
+>>Talk to |cFF00FF25Viktori Prism'Antras|r
     .accept 174 >> Accept Look To The Stars
     .turnin 174 >> Turn in Look To The Stars
 step
     .goto Duskwood,79.8,47.9
+.target Viktori Prism'Antras
+>>Talk to |cFF00FF25Viktori Prism'Antras|r
     .accept 175 >> Accept Look To The Stars
     .isQuestTurnedIn 174
 step
     .goto Duskwood,82.0,59.0
+>>Talk to |cFF00FF25Blind Mary|r
     .turnin 175 >> Turn in Look To The Stars
+.target Blind Mary
     .accept 177 >> Accept Look To The Stars
     .isQuestTurnedIn 174
 step
@@ -1750,38 +2125,52 @@ step
 	.unitscan Insane Ghoul
 step
     .goto Duskwood,79.8,47.8
+>>Talk to |cFF00FF25Viktori Prism'Antras|r
     .turnin 177 >> Turn in Look To The Stars
+.target Viktori Prism'Antras
     .accept 181 >> Accept Look To The Stars
     .isQuestTurnedIn 174
 step
 	#label notubeandy
-    .goto Duskwood,73.8,44.5
+    .goto Duskwood,73.778,44.485
+>>Talk to |cFF00FF25Tavernkeep Smitts|r
     .turnin 156 >> Turn in Gather Rot Blossoms
+.target Tavernkeep Smitts
     .accept 159 >> Accept Juice Delivery
 step
     .home >> Set your Hearthstone to Darkshire
-step << !Hunter !Paladin
+step
     .goto Duskwood,73.7,46.8
+>>Talk to |cFF00FF25Commander Althea Ebonlocke|r
     .turnin 57 >> Turn in The Night Watch
+.target Commander Althea Ebonlocke
     .accept 58 >> Accept The Night Watch
     .turnin 228 >> Turn in Mor'Ladim
     .accept 229 >> Accept The Daughter Who Lived
 step << Paladin/Hunter
     .goto Duskwood,73.7,46.8
+>>Talk to |cFF00FF25Commander Althea Ebonlocke|r
     .turnin 57 >> Turn in The Night Watch
+.target Commander Althea Ebonlocke
     .accept 58 >> Accept The Night Watch
-step << !Hunter !Paladin
+step
 	.goto Duskwood,73.7,46.8
+>>Talk to |cFF00FF25Commander Althea Ebonlocke|r
     .turnin 228 >> Turn in Mor'Ladim
+.target Commander Althea Ebonlocke
     .accept 229 >> Accept The Daughter Who Lived
 step << !Hunter !Paladin
-    .goto Duskwood,74.5,46.1
+    .goto Duskwood,74.543,46.085
+>>Talk to |cFF00FF25Watcher Ladimore|r
     .turnin 229 >> Turn in The Daughter Who Lived
+.target Watcher Ladimore
     .accept 231 >> Accept A Daughter's Love
 step
     .isOnQuest 1243
     .goto Duskwood,72.6,33.9
+>>Talk to |cFF00FF25Watcher Backus|r
     .turnin 1243 >> Turn in The Missing Diplomat
+.target Watcher Backus
     .accept 1244 >> Accept The Missing Diplomat
 step
     .goto Duskwood,60.8,29.7
@@ -1789,7 +2178,9 @@ step
 step
     .goto Elwynn Forest,84.6,69.5
 	>> Run north to Eastvale Logging Camp in Elwynn Forest
+>>Talk to |cFF00FF25Marshal Haggard|r
     .turnin 74 >> Turn in The Legend of Stalvan
+.target Marshal Haggard
     .accept 75 >> Accept The Legend of Stalvan
 step
     .goto Elwynn Forest,85.6,69.6
@@ -1797,31 +2188,42 @@ step
     .complete 75,1 --Collect A Faded Journal Page (x1)
 step
     .goto Elwynn Forest,84.7,69.4
+>>Talk to |cFF00FF25Marshal Haggard|r
     .turnin 75 >> Turn in The Legend of Stalvan
+.target Marshal Haggard
     .accept 78 >> Accept The Legend of Stalvan
 step << Human !Paladin !Warlock tbc
-	#level 30
+	.xp <30,1
 	.goto Elwynn Forest,84.2,65.2
 	.train 148 >> Train riding and purchase your mount.
 	.money <35.00
+    .skill riding,1,1
 step << Shaman
     #completewith next
     .hs >> Hearth to Darkshire
 step << Shaman
     .goto Duskwood,73.9,44.5
+>>Talk to |cFF00FF25Tavernkeep Smitts|r
     .turnin 78 >> Turn in The Legend of Stalvan
+.target Tavernkeep Smitts
     .accept 79 >> Accept The Legend of Stalvan
 step << Shaman
     .goto Duskwood,73.6,46.7
+>>Talk to |cFF00FF25Commander Althea Ebonlocke|r
     .turnin 79 >> Turn in The Legend of Stalvan
+.target Commander Althea Ebonlocke
     .accept 80 >> Accept The Legend of Stalvan
 step << Shaman
     .goto Duskwood,72.6,46.9
+>>Talk to |cFF00FF25Clerk Daltry|r
     .turnin 80 >> Turn in The Legend of Stalvan
+.target Clerk Daltry
     .accept 97 >> Accept The Legend of Stalvan
 step << Shaman
-    .goto Duskwood,73.5,46.8
+    .goto Duskwood,73.540,46.824
+>>Talk to |cFF00FF25Commander Althea Ebonlocke|r
     .turnin 97 >> Turn in The Legend of Stalvan
+.target Commander Althea Ebonlocke
     .accept 98 >> Accept The Legend of Stalvan
 step << Shaman
     #sticky
@@ -1837,6 +2239,8 @@ step << Shaman
 step << Shaman
     #requires TearT
 	.goto Duskwood,75.7,45.3
+.target Madame Eva
+>>Talk to |cFF00FF25Madame Eva|r
     .turnin 98 >> Turn in The Legend of Stalvan
 step << Shaman
     #completewith next
@@ -1845,8 +2249,11 @@ step << Shaman
 step << Human Paladin
     .goto Elwynn Forest,72.7,51.5
     >>Use the Symbol of Life on Henze Faulk
+>>Talk to |cFF00FF25Henze Faulk|r
     .turnin 1786 >>Turn in The Tome of Divinity
+.target Henze Faulk
     .accept 1787 >>Accept The Tome of Divinity
+    .use 6866
 step << Human Paladin
     .goto Elwynn Forest,73.5,51.3
     >>Kill Defias Wizards around the island
@@ -1854,7 +2261,9 @@ step << Human Paladin
 step
     .goto Duskwood,28.0,31.6
 	>> Head back to Duskwood
+>>Talk to |cFF00FF25Abercrombie|r
     .turnin 159 >> Turn in Juice Delivery
+.target Abercrombie
     .accept 133 >> Accept Ghoulish Effigy
 step
 	#sticky
@@ -1870,7 +2279,9 @@ step
     .complete 101,1 --Collect Ghoul Fang (x10)
 step
     .goto Duskwood,28.0,31.5
+>>Talk to |cFF00FF25Abercrombie|r
     .turnin 133 >> Turn in Ghoulish Effigy
+.target Abercrombie
     .accept 134 >> Accept Ogre Thieves
 step
     .goto Duskwood,23.9,72.0
@@ -1884,23 +2295,27 @@ step
     .goto Duskwood,36.8,83.8
     .isOnQuest 181
     >>Kill Zzarc' Vul and loot him for his monocle
-	.unitscan Zzarc'Vul
+	.unitscan Zzarc' Vul
     .complete 181,1 --Collect Ogre's Monocle (x1)
 step
     .goto Duskwood,31.6,45.4
 	>> Kill spiders and loot them for their venom
     .complete 101,2 --Collect Vial of Spider Venom (x5)
 step
-    .goto Duskwood,28.1,31.5
+    .goto Duskwood,28.109,31.463
+>>Talk to |cFF00FF25Abercrombie|r
     .turnin 134 >> Turn in Ogre Thieves
+.target Abercrombie
     .accept 160 >> Accept Note to the Mayor
 step << !Hunter !Paladin
     .goto Duskwood,17.7,29.2
     >> Click on the gravestone
     .turnin 231 >> Turn in A Daughter's Love
 step << !Dwarf/!Paladin
-    .goto Duskwood,7.8,34.1
+    .goto Duskwood,7.781,34.069
+>>Talk to |cFF00FF25Sven Yorgen|r
     .turnin 325 >> Turn in Armed and Ready
+.target Sven Yorgen
     .accept 55 >> Accept Morbent Fel
 step << !Dwarf/!Paladin
     .goto Duskwood,17.2,33.4
@@ -1908,6 +2323,8 @@ step << !Dwarf/!Paladin
     .complete 55,1 --Kill Weakened Morbent Fel (x1)
 step << !Dwarf/!Paladin
     .goto Duskwood,7.8,34.3
+.target Sven Yorgen
+>>Talk to |cFF00FF25Sven Yorgen|r
     .turnin 55 >> Turn in Morbent Fel
 step << Shaman/Dwarf Paladin/wotlk
     #sticky
@@ -1921,54 +2338,76 @@ step << !Shaman !Paladin/!Dwarf Paladin
 step
     .goto Duskwood,79.8,47.9
     .isOnQuest 181
+.target Viktori Prism'Antras
+>>Talk to |cFF00FF25Viktori Prism'Antras|r
     .turnin 181 >> Turn in Look To The Stars
 step
     .goto Duskwood,75.3,47.9
+>>Talk to |cFF00FF25Calor|r
     .turnin 173 >> Turn in Worgen in the Woods
+.target Calor
     .accept 221 >> Accept Worgen in the Woods
 step
     #label ds1
     .goto Duskwood,75.7,45.3
+.target Madame Eva
+>>Talk to |cFF00FF25Madame Eva|r
     .turnin 101 >> Turn in The Totem of Infliction
 step << !Shaman
     .goto Duskwood,73.9,44.5
+>>Talk to |cFF00FF25Tavernkeep Smitts|r
     .turnin 78 >> Turn in The Legend of Stalvan
+.target Tavernkeep Smitts
     .accept 79 >> Accept The Legend of Stalvan
 step
     .goto Duskwood,73.6,46.7
+>>Talk to |cFF00FF25Commander Althea Ebonlocke|r
     .turnin 58 >> Turn in The Night Watch
     .turnin 79 >> Turn in The Legend of Stalvan << !Shaman
+.target Commander Althea Ebonlocke
     .accept 80 >> Accept The Legend of Stalvan << !Shaman
 step << !Shaman
     .goto Duskwood,72.6,46.9
+>>Talk to |cFF00FF25Clerk Daltry|r
     .turnin 80 >> Turn in The Legend of Stalvan
+.target Clerk Daltry
     .accept 97 >> Accept The Legend of Stalvan
 step
     .goto Duskwood,71.9,46.6
+>>Talk to |cFF00FF25Lord Ello Ebonlocke|r
     .turnin 160 >> Turn in Note to the Mayor
+.target Lord Ello Ebonlocke
     .accept 251 >> Accept Translate Abercrombie's Note
 step
-    .goto Duskwood,72.6,47.7
+    .goto Duskwood,72.617,47.624
+>>Talk to |cFF00FF25Sirra Von'Indi|r
     .turnin 251 >> Turn in Translate Abercrombie's Note
+.target Sirra Von'Indi
     .accept 401 >> Accept Wait for Sirra to Finish
     .turnin 401 >> Turn in Wait for Sirra to Finish
     .accept 252 >> Accept Translation to Ello
 step
     .goto Duskwood,71.9,46.6
+>>Talk to |cFF00FF25Lord Ello Ebonlocke|r
     .turnin 252 >> Turn in Translation to Ello
+.target Lord Ello Ebonlocke
     .accept 253 >> Accept Bride of the Embalmer
 step
 	#sticky
 	#completewith next
 	.destroy 3248 >> You can delete "Translated Letter From The Embalmer" from your bags, as it's no longer needed
 step << !Shaman
-    .goto Duskwood,73.5,46.8
+    .goto Duskwood,73.540,46.824
+>>Talk to |cFF00FF25Commander Althea Ebonlocke|r
     .turnin 97 >> Turn in The Legend of Stalvan
+.target Commander Althea Ebonlocke
     .accept 98 >> Accept The Legend of Stalvan
 step
     .isOnQuest 1244
     .goto Duskwood,72.6,33.9
+>>Talk to |cFF00FF25Watcher Backus|r
     .turnin 1244 >> Turn in The Missing Diplomat
+.target Watcher Backus
     .accept 1245 >> Accept The Missing Diplomat
 step << !Shaman
     .goto Duskwood,77.4,36.1
@@ -1981,13 +2420,17 @@ step << !Shaman
     .isOnQuest 335
 step << !Shaman
     .goto Duskwood,75.7,45.3
+.target Madame Eva
+>>Talk to |cFF00FF25Madame Eva|r
     .turnin 98 >> Turn in The Legend of Stalvan
 step
     .goto Duskwood,64.7,49.7
     .complete 221,1 --Kill Nightbane Dark Runner (x12)
 step
     .goto Duskwood,75.3,48.1
+>>Talk to |cFF00FF25Calor|r
     .turnin 221 >> Turn in Worgen in the Woods
+.target Calor
     .accept 222 >> Accept Worgen in the Woods
 step
     #label HistoryB4
@@ -1999,23 +2442,39 @@ step
     .fp Rebel >> Get the Rebel Camp flight path
 step
     .goto Stranglethorn Vale,37.8,3.3
+.target Corporal Kaleb
+>>Talk to |cFF00FF25Corporal Kaleb|r
     .accept 210 >> Accept Krazek's Cookery
 step
 	#sticky
 	#completewith thorsen
 	    .goto Stranglethorn Vale,40.4,8.4,0
 	>>Look out for Private Thorsen's roleplay event while you quest, he patrols down the road every ~30 minutes. Wait for the two guards to attack him, if you rescue him you'll get the quest.
+.target Private Thorsen
+>>Talk to |cFF00FF25Private Thorsen|r
 	.accept 215 >> Accept Jungle Secrets
 step
     .goto Stranglethorn Vale,35.6,10.5
+.target Barnil Stonepot
+>>Talk to |cFF00FF25Barnil Stonepot|r
     .accept 583 >> Accept Welcome to the Jungle
 step
     .goto Stranglethorn Vale,35.7,10.8
+.target Hemet Nesingwary Jr.
+>>Talk to |cFF00FF25Hemet Nesingwary Jr.|r
     .turnin 583 >> Turn in Welcome to the Jungle
+.target Ajeck Rouack
+>>Talk to |cFF00FF25Ajeck Rouack|r
     .accept 185 >> Accept Tiger Mastery
+.target Sir S. J. Erlgadin
+>>Talk to |cFF00FF25Sir S. J. Erlgadin|r
     .accept 190 >> Accept Panther Mastery
 step
 	#label tigers
+    .goto Stranglethorn Vale,37.6,11.6,20,0
+    .goto Stranglethorn Vale,35.616,10.619,20,0
+    .goto Stranglethorn Vale,36.4,13.6,20,0
+    .goto Stranglethorn Vale,37.6,11.6
     >> Kill young tigers around the hunting camp
     .complete 185,1 --Kill Young Stranglethorn Tiger (x10)
 step
@@ -2025,11 +2484,20 @@ step
 step
 	#requires tigers
 	#label thorsen
-    .goto Stranglethorn Vale,35.6,10.6
+    .goto Stranglethorn Vale,35.616,10.619
+>>Talk to |cFF00FF25Ajeck Rouack|r
     .turnin 185 >> Turn in Tiger Mastery
+>>Talk to |cFF00FF25Sir S. J. Erlgadin|r
     .turnin 190 >> Turn in Panther Mastery
+.target Ajeck Rouack
     .accept 186 >> Accept Tiger Mastery
-    .accept 191 >> Accept Panther Mastery 
+.target Sir S. J. Erlgadin
+    .accept 191 >> Accept Panther Mastery
+step
+    .isOnQuest 215
+    .goto Stranglethorn Vale,38.0,3.0
+    .turnin 215 >> Turn in Jungle Secrets
+    >>Skip this quest if you haven't managed to get it earlier
 step
     .goto Duskwood,28.8,30.9
     >>Run back to Duskwood, click on the dirt mound to summon Eliza
@@ -2043,8 +2511,10 @@ step << !Dwarf/!Paladin
     #completewith next
     .hs >> Hearth to Darkshire
 step << Dwarf Paladin
-    .goto Duskwood,7.8,34.1
+    .goto Duskwood,7.781,34.069
+>>Talk to |cFF00FF25Sven Yorgen|r
     .turnin 325 >> Turn in Armed and Ready
+.target Sven Yorgen
     .accept 55 >> Accept Morbent Fel
 step << Dwarf Paladin
     .goto Duskwood,17.2,33.4
@@ -2052,19 +2522,27 @@ step << Dwarf Paladin
     .complete 55,1 --Kill Weakened Morbent Fel (x1)
 step << Dwarf Paladin
     .goto Duskwood,7.8,34.3
+.target Sven Yorgen
+>>Talk to |cFF00FF25Sven Yorgen|r
     .turnin 55 >> Turn in Morbent Fel
 step << Dwarf Paladin
     .goto Westfall,56.5,52.6,12
     .fly Darkshire>> Fly to Darkshire
 step
     .goto Duskwood,72.0,46.6
+.target Lord Ello Ebonlocke
+>>Talk to |cFF00FF25Lord Ello Ebonlocke|r
     .turnin 253 >> Turn in Bride of the Embalmer
 step
-    .goto Duskwood,75.7,47.6
+    .goto Duskwood,75.752,47.569
+>>Talk to |cFF00FF25Calor|r
     .turnin 222 >> Turn in Worgen in the Woods
+.target Calor
     .accept 223 >> Accept Worgen in the Woods
 step
     .goto Duskwood,75.3,48.9
+.target Jonathan Carevin
+>>Talk to |cFF00FF25Jonathan Carevin|r
     .turnin 223 >> Turn in Worgen in the Woods
 step << !Mage
 	.goto Duskwood,77.5,44.2
@@ -2081,7 +2559,9 @@ step << Dwarf Paladin
 step
     .isOnQuest 1245
     .goto StormwindClassic,60.1,64.4
+>>Talk to |cFF00FF25Elling Trias|r
     .turnin 1245 >> Turn in The Missing Diplomat
+.target Elling Trias
     .accept 1246 >> Accept The Missing Diplomat
 step << Paladin
 	.goto StormwindClassic,38.6,32.8
@@ -2099,6 +2579,18 @@ step << Warrior
     #xprate <1.5
 step << Warrior
     .goto StormwindClassic,78.8,45.3
+.target Darnath Bladesinger
+.target Wu Shen
+.target Kelv Sternhammer
+.target Baltus Fowler
+.target Sorek
+.target Torm Ragetotem
+>>Talk to |cFF00FF25Torm Ragetotem|r
+-->>Talk to |cFF00FF25Sorek|r
+-->>Talk to |cFF00FF25Baltus Fowler|r
+-->>Talk to |cFF00FF25Kelv Sternhammer|r
+-->>Talk to |cFF00FF25Wu Shen|r
+-->>Talk to |cFF00FF25Darnath Bladesinger|r
     .accept 1718 >> Accept The Islander
 	.trainer >> Train class spells
 step << Shaman
@@ -2111,20 +2603,28 @@ step
     .isOnQuest 1246
     .goto StormwindClassic,70.3,44.8
     >>Beat Dashel Stonefist
+.target Dashel Stonefist
+>>Talk to |cFF00FF25Dashel Stonefist|r
     .turnin 1246 >> Turn in The Missing Diplomat
 step
     .isQuestTurnedIn 1246
     .goto StormwindClassic,70.3,44.8
+.target Dashel Stonefist
+>>Talk to |cFF00FF25Dashel Stonefist|r
     .accept 1447 >> Accept The Missing Diplomat
     .turnin 1447 >> Turn in The Missing Diplomat
 step
     .isQuestTurnedIn 1447
     .goto StormwindClassic,70.3,44.8
+.target Dashel Stonefist
+>>Talk to |cFF00FF25Dashel Stonefist|r
     .accept 1247 >> Accept The Missing Diplomat
 step
     .isOnQuest 1247
     .goto StormwindClassic,60.1,63.9
+>>Talk to |cFF00FF25Elling Trias|r
     .turnin 1247 >> Turn in The Missing Diplomat
+.target Elling Trias
     .accept 1248 >> Accept The Missing Diplomat
 step << Shaman wotlk
     .goto StormwindClassic,52.61,65.71
@@ -2135,24 +2635,38 @@ step
 	.goto StormwindClassic,55.4,68.3,20 >> Bank here if you need to
 step
     .goto StormwindClassic,39.9,81.3
+.target Archmage Malin
+>>Talk to |cFF00FF25Archmage Malin|r
     .accept 690 >> Accept Malin's Request
 step
     .goto StormwindClassic,40.6,91.7
+.target Connor Rivers
+>>Talk to |cFF00FF25Connor Rivers|r
     .accept 1301 >> Accept James Hyal
 step
     .goto StormwindClassic,26.4,78.3
+.target Zardeth of the Black Claw
+>>Talk to |cFF00FF25Zardeth of the Black Claw|r
     .turnin 335 >> Turn in A Noble Brew
     .isQuestComplete 335
 step
     .goto StormwindClassic,26.4,78.3
+.target Zardeth of the Black Claw
+>>Talk to |cFF00FF25Zardeth of the Black Claw|r
     .accept 336 >> Accept A Noble Brew
     .isQuestTurnedIn 335
 step << Warlock
     .goto StormwindClassic,25.3,78.5
+.target Demisette Cloyce
+>>Talk to |cFF00FF25Demisette Cloyce|r
     .accept 4738 >>Accept In Search of Menara Voidrender
     .xp <31,1
 step << Warlock
     .goto StormwindClassic,25.3,78.5
+.target Gakin the Darkbinder
+.target Lago Blackwrench
+>>Talk to |cFF00FF25Lago Blackwrench|r
+-->>Talk to |cFF00FF25Gakin the Darkbinder|r
     .accept 1798 >>Accept Seeking Strahad
 	.trainer >> Train your class spells
 
@@ -2169,14 +2683,18 @@ step << Shaman wotlk
 	.goto The Exodar,81.5,52.5,40,0
 step << Shaman wotlk
     .goto The Exodar,29.9,33.0
+>>Talk to |cFF00FF25Farseer Nobundo|r
     .turnin 10491 >> Turn in Call of Air
+.target Farseer Nobundo
     .accept 9552 >> Accept Call of Air
 step << Shaman wotlk
     #completewith next
     .fly Bloodmyst Isle>> Fly to Bloodmyst Isle
 step << Shaman wotlk
-    .goto Bloodmyst Isle,32.3,16.2
+    .goto Bloodmyst Isle,32.300,16.132
+>>Talk to |cFF00FF25Aqueous|r
     .turnin 9504 >> Turn in Call of Water
+.target Aqueous
     .accept 9508 >> Accept Call of Water
 step << Shaman wotlk
     .goto Bloodmyst Isle,26.0,40.9
@@ -2184,7 +2702,9 @@ step << Shaman wotlk
     .complete 9508,1 --Collect Head of Tel'athion (x1)
 step << Shaman wotlk
     .goto Bloodmyst Isle,32.2,16.1
+>>Talk to |cFF00FF25Aqueous|r
     .turnin 9508 >> Turn in Call of Water
+.target Aqueous
     .accept 9509 >> Accept Call of Water
 step << Shaman wotlk
 	#sticky
@@ -2203,12 +2723,16 @@ step << Shaman wotlk
     .goto Azuremyst Isle,26.8,27.3,42
     >>Exit The Exodar from the main entrance and travel along the mountain to your left until you get to the Wildwind Path
 step << Shaman wotlk
-    .goto Azuremyst Isle,24.9,35.9
+    .goto Azuremyst Isle,24.897,35.918
+>>Talk to |cFF00FF25Velaada|r
     .turnin 9552 >> Turn in Call of Air
+.target Velaada
     .accept 9553 >> Accept Call of Air
 step << Shaman wotlk
-    .goto Azuremyst Isle,22.3,32.5
+    .goto Azuremyst Isle,22.312,32.547
+>>Talk to |cFF00FF25Susurrus|r
     .turnin 9553 >> Turn in Call of Air
+.target Susurrus
     .accept 9554 >> Accept Call of Air
 step << Shaman wotlk
     #sticky
@@ -2216,9 +2740,13 @@ step << Shaman wotlk
     .zone The Exodar>>Speak with Susurrus again so he can send you back flying to The Exodar
 step << Shaman wotlk
     .goto The Exodar,30.0,33.1
+.target Farseer Nobundo
+>>Talk to |cFF00FF25Farseer Nobundo|r
     .turnin 9509 >> Turn in Call of Water
 step << Shaman wotlk
     .goto The Exodar,29.6,33.4
+.target Farseer Nobundo
+>>Talk to |cFF00FF25Farseer Nobundo|r
     .turnin 9554 >> Turn in Call of Air
 	>>This will give you a 1 hour-long buff giving 40% movespeed and 30% attack speed. Be careful to not AFK with it
 step << Shaman wotlk
@@ -2226,22 +2754,32 @@ step << Shaman wotlk
 
 step << Human Paladin
     .goto StormwindClassic,38.6,26.7
+>>Talk to |cFF00FF25Gazin Tenorm|r
     .turnin 1787 >>Turn in The Tome of Divinity
+.target Gazin Tenorm
     .accept 1788 >>Accept The Tome of Divinity
 step << Human Paladin
     .goto StormwindClassic,39.9,29.8
+.target Duthorian Rall
+>>Talk to |cFF00FF25Duthorian Rall|r
     .turnin 1788 >>Turn in The Tome of Divinity
 step
     .goto StormwindClassic,74.3,30.3
+.target Count Remington Ridgewell
+>>Talk to |cFF00FF25Count Remington Ridgewell|r
     .accept 543 >> Accept The Perenolde Tiara
 step
     .goto StormwindClassic,75.1,31.4
+.target Lord Baurles K. Wishock
+>>Talk to |cFF00FF25Lord Baurles K. Wishock|r
     .turnin 336 >> Turn in A Noble Brew
     .isOnQuest 336
 step
     .goto StormwindClassic,74.1,7.6
     .accept 337 >> Accept An Old History Book
+>>Talk to |cFF00FF25Milton Sheaf|r
     .turnin 337 >> Turn in An Old History Book
+.target Milton Sheaf
     .accept 538 >> Accept Southshore
 step << Dwarf Paladin/Mage
     #sticky
@@ -2251,12 +2789,16 @@ step << Dwarf Paladin
     .goto Ironforge,18.5,51.6
     .home >>Set your HS to Ironforge
 step << Dwarf Paladin
-    .goto Ironforge,23.3,6.1
+    .goto Ironforge,23.131,6.143
+.target Brandur Ironhammer
+>>Talk to |cFF00FF25Brandur Ironhammer|r
     .accept 2999 >>Accept Tome of Divinity
 step << Dwarf Paladin
     .goto Ironforge,27.4,12.1
     >>Go upstairs and speak to Tiza Battleforge
+>>Talk to |cFF00FF25Tiza Battleforge|r
     .turnin 2999 >>Turn in Tome of Divinity
+.target Tiza Battleforge
     .accept 1645 >>Accept The Tome of Divinity
     .turnin 1645 >>Turn in The Tome of Divinity
     .accept 1646 >>Accept The Tome of Divinity
@@ -2264,28 +2806,36 @@ step << Dwarf Paladin
     .accept 1647 >>Accept The Tome of Divinity
 step << Dwarf Paladin
     >>Speak to John Turner, he walks around the outer ring of the city
+>>Talk to |cFF00FF25John Turner|r
     .turnin 1647 >>Turn in The Tome of Divinity
+.target John Turner
     .accept 1648 >>Accept The Tome of Divinity
     .turnin 1648 >>Turn in The Tome of Divinity
     .accept 1778 >>Accept The Tome of Divinity
 step << Dwarf Paladin
-    .goto Ironforge,27.7,12.3
+    .goto Ironforge,27.628,12.183
     >>Return to Tiza Battleforge
+>>Talk to |cFF00FF25Tiza Battleforge|r
     .turnin 1778 >>Turn in The Tome of Divinity
+.target Tiza Battleforge
     .accept 1779 >>Accept The Tome of Divinity
 step << Dwarf Paladin
     .goto Ironforge,23.6,8.6
     >>Speak to Muiredon Battleforge
+>>Talk to |cFF00FF25Muiredon Battleforge|r
     .turnin 1779 >>Turn in The Tome of Divinity
+.target Muiredon Battleforge
     .accept 1783 >>Accept The Tome of Divinity
 step << Dwarf Paladin
     #completewith next
     .goto Dun Morogh,53.2,35.3
     .zone Dun Morogh >> Head outside to Dun Morogh
 step << Dwarf Paladin
-    .goto Dun Morogh,78.3,58.1
+    .goto Dun Morogh,78.321,58.088
     >>Use the Symbol of Life on Narm Faulk
+>>Talk to |cFF00FF25Narm Faulk|r
     .turnin 1783 >>Turn in The Tome of Divinity
+.target Narm Faulk
     .accept 1784 >>Accept The Tome of Divinity
 step << Dwarf Paladin
     .goto Dun Morogh,77.3,60.5
@@ -2295,12 +2845,16 @@ step << Dwarf Paladin
     #completewith next
     .hs >> Hearth to Ironforge
 step << Dwarf Paladin
-    .goto Ironforge,23.6,8.5
+    .goto Ironforge,23.539,8.300
     >>Speak to Muiredon upstairs
+>>Talk to |cFF00FF25Muiredon Battleforge|r
     .turnin 1784 >>Turn in The Tome of Divinity
+.target Muiredon Battleforge
     .accept 1785 >>Accept The Tome of Divinity
 step << Dwarf Paladin
     .goto Ironforge,27.4,11.9
+.target Tiza Battleforge
+>>Talk to |cFF00FF25Tiza Battleforge|r
     .turnin 1785 >>Turn in The Tome of Divinity
 step << Dwarf !Paladin tbc
 	.skill riding,75,1
@@ -2340,7 +2894,9 @@ step
 step
     .isOnQuest 1248
     .goto Wetlands,10.6,60.7
+>>Talk to |cFF00FF25Mikhail|r
     .turnin 1248 >> Turn in The Missing Diplomat
+.target Mikhail
     .accept 1249 >> Accept The Missing Diplomat
 step
     >>Once you accept the quest, you have to engage Tapoke Jhan while he tries to escape the inn. He's by the door.
@@ -2348,19 +2904,27 @@ step
 step
     .isOnQuest 1249
     .goto Wetlands,10.6,60.7
+.target Mikhail
+>>Talk to |cFF00FF25Mikhail|r
     .turnin 1249 >> Turn in The Missing Diplomat
 step
     .isOnQuest 1250
     .goto Wetlands,10.6,60.3
+.target Tapoke "Slim" Jahn
+>>Talk to |cFF00FF25Tapoke "Slim" Jahn|r
     .accept 1250 >> Accept The Missing Diplomat
 step
     .isOnQuest 1250
     .goto Wetlands,10.6,60.7
+>>Talk to |cFF00FF25Mikhail|r
     .turnin 1250 >> Turn in The Missing Diplomat
+.target Mikhail
     .accept 1264 >> Accept The Missing Diplomat
 step
     .goto Wetlands,8.4,61.6
+>>Talk to |cFF00FF25Vincent Hyal|r
     .turnin 1301 >> Turn in James Hyal
+.target Vincent Hyal
     .accept 1302 >> Accept James Hyal
 step << Draenei !Shaman tbc
 	.goto Wetlands,4.8,57.3,50,0
@@ -2386,14 +2950,18 @@ step << Shaman tbc
 	.goto The Exodar,81.5,52.5,40,0
 step << Shaman tbc
     .goto The Exodar,29.9,33.0
+>>Talk to |cFF00FF25Farseer Nobundo|r
     .turnin 10491 >> Turn in Call of Air
+.target Farseer Nobundo
     .accept 9552 >> Accept Call of Air
 step << Shaman tbc
     #completewith next
     .fly Bloodmyst Isle>> Fly to Bloodmyst Isle
 step << Shaman tbc
-    .goto Bloodmyst Isle,32.3,16.2
+    .goto Bloodmyst Isle,32.300,16.132
+>>Talk to |cFF00FF25Aqueous|r
     .turnin 9504 >> Turn in Call of Water
+.target Aqueous
     .accept 9508 >> Accept Call of Water
 step << Shaman tbc
     .goto Bloodmyst Isle,26.0,40.9
@@ -2401,7 +2969,9 @@ step << Shaman tbc
     .complete 9508,1 --Collect Head of Tel'athion (x1)
 step << Shaman tbc
     .goto Bloodmyst Isle,32.2,16.1
+>>Talk to |cFF00FF25Aqueous|r
     .turnin 9508 >> Turn in Call of Water
+.target Aqueous
     .accept 9509 >> Accept Call of Water
 step << Shaman tbc
 	#sticky
@@ -2420,12 +2990,16 @@ step << Shaman tbc
     .goto Azuremyst Isle,26.8,27.3,42
     >>Exit The Exodar from the main entrance and travel along the mountain to your left until you get to the Wildwind Path
 step << Shaman tbc
-    .goto Azuremyst Isle,24.9,35.9
+    .goto Azuremyst Isle,24.897,35.918
+>>Talk to |cFF00FF25Velaada|r
     .turnin 9552 >> Turn in Call of Air
+.target Velaada
     .accept 9553 >> Accept Call of Air
 step << Shaman tbc
-    .goto Azuremyst Isle,22.3,32.5
+    .goto Azuremyst Isle,22.312,32.547
+>>Talk to |cFF00FF25Susurrus|r
     .turnin 9553 >> Turn in Call of Air
+.target Susurrus
     .accept 9554 >> Accept Call of Air
 step << Shaman tbc
     #sticky
@@ -2433,9 +3007,13 @@ step << Shaman tbc
     .zone The Exodar>>Speak with Susurrus again so he can send you back flying to The Exodar
 step << Shaman tbc
     .goto The Exodar,30.0,33.1
+.target Farseer Nobundo
+>>Talk to |cFF00FF25Farseer Nobundo|r
     .turnin 9509 >> Turn in Call of Water
 step << Shaman tbc
     .goto The Exodar,29.6,33.4
+.target Farseer Nobundo
+>>Talk to |cFF00FF25Farseer Nobundo|r
     .turnin 9554 >> Turn in Call of Air
 	>>This will give you a 1 hour-long buff giving 40% movespeed and 30% attack speed. Be careful to not AFK with it
 step << Shaman tbc
@@ -2462,7 +3040,9 @@ step
 	.bronzetube
 step << Paladin
     .goto StormwindClassic,40.0,29.9
+>>Talk to |cFF00FF25Duthorian Rall|r
     .turnin 1652 >>Turn in The Tome of Valor
+.target Duthorian Rall
     .accept 1653 >>Accept The Test of Righteousness
 step << Paladin
 	.goto StormwindClassic,38.6,32.8
@@ -2472,12 +3052,16 @@ step << Priest
 	.trainer >> Train your class spells
 step
     .goto StormwindClassic,39.3,28.0
+>>Talk to |cFF00FF25Bishop Farthing|r
     .turnin 269 >> Turn in Seeking Wisdom
+.target Bishop Farthing
     .accept 270 >> Accept The Doomed Fleet
 step
     .isOnQuest 322
     .goto StormwindClassic,51.7,12.3
+>>Talk to |cFF00FF25Grimand Elmore|r
     .turnin 322 >> Turn in Blessed Arm
+.target Grimand Elmore
     .accept 325 >> Accept Armed and Ready
 step
 	#sticky
@@ -2486,6 +3070,8 @@ step
     .xp <28,1
     .goto StormwindClassic,41.5,31.7
 	>>Talk to the patrolling kid
+.target Thomas
+>>Talk to |cFF00FF25Thomas|r
     .accept 1274 >> Accept The Missing Diplomat
 step
     .goto StormwindClassic,39.7,27.6
@@ -2498,7 +3084,9 @@ step << Human Paladin
     .goto StormwindClassic,39.8,30.1
     >>Speak to Duthorian Rall and click on the Tome of Divinity provided
     .accept 1642 >>Accept The Tome of Divinity
+>>Talk to |cFF00FF25Duthorian Rall|r
     .turnin 1642 >>Turn in The Tome of Divinity
+.target Duthorian Rall
     .accept 1643 >>Accept The Tome of Divinity
 step << Warlock
     .goto StormwindClassic,25.3,78.7
@@ -2507,15 +3095,21 @@ step
    .isOnQuest 337
 	.goto StormwindClassic,74.1,7.6
     .accept 337 >> Accept An Old History Book
+>>Talk to |cFF00FF25Milton Sheaf|r
     .turnin 337 >> Turn in An Old History Book
+.target Milton Sheaf
     .accept 538 >> Accept Southshore
 step
     .isOnQuest 1274
     .goto StormwindClassic,78.1,25.1
+>>Talk to |cFF00FF25Bishop DeLavey|r
     .turnin 1274 >> Turn in The Missing Diplomat
+.target Bishop DeLavey
     .accept 1241 >> Accept The Missing Diplomat
 step << Hunter
     .goto StormwindClassic,72.8,16.1
+.target Major Samuelson
+>>Talk to |cFF00FF25Major Samuelson|r
     .turnin 563 >> Turn in Reassignment
     .isOnQuest 563
 step << Human Paladin
@@ -2524,13 +3118,17 @@ step << Human Paladin
     .collect 2589,10,1644,1
 step << Human Paladin
     .goto StormwindClassic,56.9,61.9
+>>Talk to |cFF00FF25Stephanie Turner|r
     .turnin 1643 >>Turn in The Tome of Divinity
+.target Stephanie Turner
     .accept 1644 >>Accept The Tome of Divinity
 step << Human Paladin
     #label linen
     .goto StormwindClassic,56.9,61.9
     .complete 1644,1
+>>Talk to |cFF00FF25Stephanie Turner|r
     .turnin 1644 >>Turn in The Tome of Divinity
+.target Stephanie Turner
     .accept 1780 >>Accept The Tome of Divinity
 step << Warrior
 	.goto StormwindClassic,78.6,45.8
@@ -2541,20 +3139,28 @@ step << Rogue
 step
     .isOnQuest 1241
     .goto StormwindClassic,73.1,78.3
+>>Talk to |cFF00FF25Jorgen|r
     .turnin 1241 >> Turn in The Missing Diplomat
+.target Jorgen
     .accept 1242 >> Accept The Missing Diplomat
 step
     .isOnQuest 1242
     .goto StormwindClassic,60.1,64.4
+>>Talk to |cFF00FF25Elling Trias|r
     .turnin 1242 >> Turn in The Missing Diplomat
+.target Elling Trias
     .accept 1243 >> Accept The Missing Diplomat
 step << Human Paladin
     .goto StormwindClassic,40.1,29.9
+>>Talk to |cFF00FF25Duthorian Rall|r
     .turnin 1780 >>Turn in The Tome of Divinity
+.target Duthorian Rall
     .accept 1781 >>Accept The Tome of Divinity
 step << Human Paladin
     .goto StormwindClassic,38.7,26.6
+>>Talk to |cFF00FF25Gazin Tenorm|r
     .turnin 1781 >>Turn in The Tome of Divinity
+.target Gazin Tenorm
     .accept 1786 >>Accept The Tome of Divinity
 step
 	#label exit
@@ -2567,16 +3173,22 @@ step
 step
 	#completewith notubeandy
     .goto Duskwood,79.8,47.9
-    .itemcount 4371,1
+    .itemcount 4371,<1
+.target Viktori Prism'Antras
+>>Talk to |cFF00FF25Viktori Prism'Antras|r
     .accept 174 >> Accept Look To The Stars
     .turnin 174 >> Turn in Look To The Stars
 step
     .goto Duskwood,79.8,47.9
+.target Viktori Prism'Antras
+>>Talk to |cFF00FF25Viktori Prism'Antras|r
     .accept 175 >> Accept Look To The Stars
     .isQuestTurnedIn 174
 step
     .goto Duskwood,82.0,59.0
+>>Talk to |cFF00FF25Blind Mary|r
     .turnin 175 >> Turn in Look To The Stars
+.target Blind Mary
     .accept 177 >> Accept Look To The Stars
     .isQuestTurnedIn 174
 step
@@ -2587,40 +3199,54 @@ step
 	.unitscan Insane Ghoul
 step
     .goto Duskwood,79.8,47.8
+>>Talk to |cFF00FF25Viktori Prism'Antras|r
     .turnin 177 >> Turn in Look To The Stars
+.target Viktori Prism'Antras
     .accept 181 >> Accept Look To The Stars
     .isQuestTurnedIn 174
 step
 	#label notubeandy
-    .goto Duskwood,73.8,44.5
+    .goto Duskwood,73.778,44.485
+>>Talk to |cFF00FF25Tavernkeep Smitts|r
     .turnin 156 >> Turn in Gather Rot Blossoms
+.target Tavernkeep Smitts
     .accept 159 >> Accept Juice Delivery
 step << !NightElf !Draenei
     .home >> Set your Hearthstone to Darkshire
 step << Shaman
     .home >> Set your Hearthstone to Darkshire
-step << !Hunter !Paladin
+step
     .goto Duskwood,73.7,46.8
+>>Talk to |cFF00FF25Commander Althea Ebonlocke|r
     .turnin 57 >> Turn in The Night Watch
+.target Commander Althea Ebonlocke
     .accept 58 >> Accept The Night Watch
     .turnin 228 >> Turn in Mor'Ladim
     .accept 229 >> Accept The Daughter Who Lived
 step << Paladin/Hunter
     .goto Duskwood,73.7,46.8
+>>Talk to |cFF00FF25Commander Althea Ebonlocke|r
     .turnin 57 >> Turn in The Night Watch
+.target Commander Althea Ebonlocke
     .accept 58 >> Accept The Night Watch
-step << !Hunter !Paladin
+step
 	.goto Duskwood,73.7,46.8
+>>Talk to |cFF00FF25Commander Althea Ebonlocke|r
     .turnin 228 >> Turn in Mor'Ladim
+.target Commander Althea Ebonlocke
     .accept 229 >> Accept The Daughter Who Lived
 step << !Hunter !Paladin
-    .goto Duskwood,74.5,46.1
+    .goto Duskwood,74.543,46.085
+>>Talk to |cFF00FF25Watcher Ladimore|r
     .turnin 229 >> Turn in The Daughter Who Lived
+.target Watcher Ladimore
     .accept 231 >> Accept A Daughter's Love
 step
     .isOnQuest 1243
     .goto Duskwood,72.6,33.9
+>>Talk to |cFF00FF25Watcher Backus|r
     .turnin 1243 >> Turn in The Missing Diplomat
+.target Watcher Backus
     .accept 1244 >> Accept The Missing Diplomat
 step
     .goto Duskwood,60.8,29.7
@@ -2628,7 +3254,9 @@ step
 step
     .goto Elwynn Forest,84.6,69.5
 	>> Run north to Eastvale Logging Camp in Elwynn Forest
+>>Talk to |cFF00FF25Marshal Haggard|r
     .turnin 74 >> Turn in The Legend of Stalvan
+.target Marshal Haggard
     .accept 75 >> Accept The Legend of Stalvan
 step
     .goto Elwynn Forest,85.6,69.6
@@ -2636,13 +3264,16 @@ step
     .complete 75,1 --Collect A Faded Journal Page (x1)
 step
     .goto Elwynn Forest,84.7,69.4
+>>Talk to |cFF00FF25Marshal Haggard|r
     .turnin 75 >> Turn in The Legend of Stalvan
+.target Marshal Haggard
     .accept 78 >> Accept The Legend of Stalvan
 step << Human !Paladin !Warlock tbc
-	#level 30
+	.xp <30,1
 	.goto Elwynn Forest,84.2,65.2
 	.train 148 >> Train riding and purchase your mount.
 	.money <35.00
+    .skill riding,1,1
 step << Human !Paladin !Warlock wotlk
 	.goto Elwynn Forest,84.2,65.2
 	.train 148 >> Train riding and purchase your mount.
@@ -2652,19 +3283,27 @@ step << Shaman
     .hs >> Hearth to Darkshire
 step << Shaman
     .goto Duskwood,73.9,44.5
+>>Talk to |cFF00FF25Tavernkeep Smitts|r
     .turnin 78 >> Turn in The Legend of Stalvan
+.target Tavernkeep Smitts
     .accept 79 >> Accept The Legend of Stalvan
 step << Shaman
     .goto Duskwood,73.6,46.7
+>>Talk to |cFF00FF25Commander Althea Ebonlocke|r
     .turnin 79 >> Turn in The Legend of Stalvan
+.target Commander Althea Ebonlocke
     .accept 80 >> Accept The Legend of Stalvan
 step << Shaman
     .goto Duskwood,72.6,46.9
+>>Talk to |cFF00FF25Clerk Daltry|r
     .turnin 80 >> Turn in The Legend of Stalvan
+.target Clerk Daltry
     .accept 97 >> Accept The Legend of Stalvan
 step << Shaman
-    .goto Duskwood,73.5,46.8
+    .goto Duskwood,73.540,46.824
+>>Talk to |cFF00FF25Commander Althea Ebonlocke|r
     .turnin 97 >> Turn in The Legend of Stalvan
+.target Commander Althea Ebonlocke
     .accept 98 >> Accept The Legend of Stalvan
 step << Shaman
     #sticky
@@ -2680,6 +3319,8 @@ step << Shaman
 step << Shaman
     #requires TearT
 	.goto Duskwood,75.7,45.3
+.target Madame Eva
+>>Talk to |cFF00FF25Madame Eva|r
     .turnin 98 >> Turn in The Legend of Stalvan
 step << Shaman
     #completewith next
@@ -2688,8 +3329,11 @@ step << Shaman
 step << Human Paladin
     .goto Elwynn Forest,72.7,51.5
     >>Use the Symbol of Life on Henze Faulk
+>>Talk to |cFF00FF25Henze Faulk|r
     .turnin 1786 >>Turn in The Tome of Divinity
+.target Henze Faulk
     .accept 1787 >>Accept The Tome of Divinity
+    .use 6866
 step << Human Paladin
     .goto Elwynn Forest,73.5,51.3
     >>Kill Defias Wizards around the island
@@ -2697,7 +3341,9 @@ step << Human Paladin
 step
     .goto Duskwood,28.0,31.6
 	>> Head back to Duskwood
+>>Talk to |cFF00FF25Abercrombie|r
     .turnin 159 >> Turn in Juice Delivery
+.target Abercrombie
     .accept 133 >> Accept Ghoulish Effigy
 step
 	#sticky
@@ -2713,7 +3359,9 @@ step
     .complete 101,1 --Collect Ghoul Fang (x10)
 step
     .goto Duskwood,28.0,31.5
+>>Talk to |cFF00FF25Abercrombie|r
     .turnin 133 >> Turn in Ghoulish Effigy
+.target Abercrombie
     .accept 134 >> Accept Ogre Thieves
 step
     .goto Duskwood,23.9,72.0
@@ -2726,7 +3374,7 @@ step
 step
     .goto Duskwood,36.8,83.8
     >>Kill Zzarc' Vul and loot him for his monocle
-	.unitscan Zzarc'Vul
+	.unitscan Zzarc' Vul
     .isOnQuest 181
     .complete 181,1 --Collect Ogre's Monocle (x1)
 step
@@ -2736,11 +3384,19 @@ step
     .fp Rebel >> Get the Rebel Camp flight path
 step
     .goto Stranglethorn Vale,35.6,10.5
+.target Barnil Stonepot
+>>Talk to |cFF00FF25Barnil Stonepot|r
     .accept 583 >> Accept Welcome to the Jungle
 step
     .goto Stranglethorn Vale,35.7,10.8
+.target Hemet Nesingwary Jr.
+>>Talk to |cFF00FF25Hemet Nesingwary Jr.|r
     .turnin 583 >> Turn in Welcome to the Jungle
+.target Ajeck Rouack
+>>Talk to |cFF00FF25Ajeck Rouack|r
     .accept 185 >> Accept Tiger Mastery
+.target Sir S. J. Erlgadin
+>>Talk to |cFF00FF25Sir S. J. Erlgadin|r
     .accept 190 >> Accept Panther Mastery
 step
 	#sticky
@@ -2753,18 +3409,24 @@ step
 step
 	#requires tigers
 	#label thorsen
-    .goto Stranglethorn Vale,35.6,10.6
+    .goto Stranglethorn Vale,35.616,10.619
+>>Talk to |cFF00FF25Ajeck Rouack|r
     .turnin 185 >> Turn in Tiger Mastery
+.target Ajeck Rouack
     .accept 186 >> Accept Tiger Mastery
+>>Talk to |cFF00FF25Sir S. J. Erlgadin|r
     .turnin 190 >> Turn in Panther Mastery
+.target Sir S. J. Erlgadin
     .accept 191 >> Accept Panther Mastery
 step
     .goto Duskwood,31.6,45.4
 	>> Kill spiders and loot them for their venom
     .complete 101,2 --Collect Vial of Spider Venom (x5)
 step
-    .goto Duskwood,28.1,31.5
+    .goto Duskwood,28.109,31.463
+>>Talk to |cFF00FF25Abercrombie|r
     .turnin 134 >> Turn in Ogre Thieves
+.target Abercrombie
     .accept 160 >> Accept Note to the Mayor
 step << !Hunter !Paladin
     .goto Duskwood,17.7,29.2
@@ -2783,55 +3445,82 @@ step
 step
     .goto Duskwood,79.8,47.9
     .isOnQuest 181
+.target Viktori Prism'Antras
+>>Talk to |cFF00FF25Viktori Prism'Antras|r
     .turnin 181 >> Turn in Look To The Stars
 step
     .goto Duskwood,75.3,47.9
+>>Talk to |cFF00FF25Calor|r
     .turnin 173 >> Turn in Worgen in the Woods
+.target Calor
     .accept 221 >> Accept Worgen in the Woods
 step
     #label ds2
     .goto Duskwood,75.7,45.3
+.target Madame Eva
+>>Talk to |cFF00FF25Madame Eva|r
     .turnin 101 >> Turn in The Totem of Infliction
 step << !Shaman
     .goto Duskwood,73.9,44.5
+>>Talk to |cFF00FF25Tavernkeep Smitts|r
     .turnin 78 >> Turn in The Legend of Stalvan
+.target Tavernkeep Smitts
     .accept 79 >> Accept The Legend of Stalvan
 step
     .goto Duskwood,73.6,46.7
+>>Talk to |cFF00FF25Commander Althea Ebonlocke|r
     .turnin 58 >> Turn in The Night Watch
     .turnin 79 >> Turn in The Legend of Stalvan << !Shaman
+.target Commander Althea Ebonlocke
     .accept 80 >> Accept The Legend of Stalvan << !Shaman
 step << !Shaman
     .goto Duskwood,72.6,46.9
+>>Talk to |cFF00FF25Clerk Daltry|r
     .turnin 80 >> Turn in The Legend of Stalvan
+.target Clerk Daltry
     .accept 97 >> Accept The Legend of Stalvan
 step
     .goto Duskwood,71.9,46.6
+>>Talk to |cFF00FF25Lord Ello Ebonlocke|r
     .turnin 160 >> Turn in Note to the Mayor
+.target Lord Ello Ebonlocke
     .accept 251 >> Accept Translate Abercrombie's Note
 step
-    .goto Duskwood,72.6,47.7
+    .goto Duskwood,72.617,47.624
+>>Talk to |cFF00FF25Sirra Von'Indi|r
     .turnin 251 >> Turn in Translate Abercrombie's Note
+.target Sirra Von'Indi
     .accept 401 >> Accept Wait for Sirra to Finish
     .turnin 401 >> Turn in Wait for Sirra to Finish
     .accept 252 >> Accept Translation to Ello
 step
     .goto Duskwood,71.9,46.6
+.target Lord Ello Ebonlocke
+>>Talk to |cFF00FF25Lord Ello Ebonlocke|r
     .turnin 252 >> Turn in Translation to Ello
+step
+#xprate <1.7
+    .goto Duskwood,71.9,46.6
+.target Lord Ello Ebonlocke
+>>Talk to |cFF00FF25Lord Ello Ebonlocke|r
     .accept 253 >> Accept Bride of the Embalmer
 step
 	#sticky
 	#completewith next
 	.destroy 3248 >> You can delete "Translated Letter From The Embalmer" from your bags, as it's no longer needed
 step << !Shaman
-    .goto Duskwood,73.5,46.8
+    .goto Duskwood,73.540,46.824
+>>Talk to |cFF00FF25Commander Althea Ebonlocke|r
     .turnin 97 >> Turn in The Legend of Stalvan
+.target Commander Althea Ebonlocke
     .accept 98 >> Accept The Legend of Stalvan
 step
     .isOnQuest 1244
     .goto Duskwood,72.6,33.9
     >> He patrols along the north road
+>>Talk to |cFF00FF25Watcher Backus|r
     .turnin 1244 >> Turn in The Missing Diplomat
+.target Watcher Backus
     .accept 1245 >> Accept The Missing Diplomat
 step << !Shaman
     .goto Duskwood,77.4,36.1
@@ -2844,6 +3533,8 @@ step << !Shaman
     .complete 335,1 --Collect Tear of Tilloa (x1)
 step << !Shaman
     .goto Duskwood,75.7,45.3
+.target Madame Eva
+>>Talk to |cFF00FF25Madame Eva|r
     .turnin 98 >> Turn in The Legend of Stalvan
 step
     .goto Duskwood,64.7,49.7
@@ -2851,7 +3542,9 @@ step
     .complete 221,1 --Kill Nightbane Dark Runner (x12)
 step
     .goto Duskwood,75.3,48.1
+>>Talk to |cFF00FF25Calor|r
     .turnin 221 >> Turn in Worgen in the Woods
+.target Calor
     .accept 222 >> Accept Worgen in the Woods
 step
     #label HistoryB4
@@ -2863,11 +3556,15 @@ step
     .xp 30-10575 << !Shaman
     .xp 30-7460 << Shaman
 step
-    .goto Duskwood,75.7,47.6
+    .goto Duskwood,75.752,47.569
+>>Talk to |cFF00FF25Calor|r
     .turnin 222 >> Turn in Worgen in the Woods
+.target Calor
     .accept 223 >> Accept Worgen in the Woods
 step
     .goto Duskwood,75.3,48.9
+.target Jonathan Carevin
+>>Talk to |cFF00FF25Jonathan Carevin|r
     .turnin 223 >> Turn in Worgen in the Woods
 step << Shaman
     .xp 30
@@ -2876,6 +3573,8 @@ step << !Mage
     .fly Stormwind>> Fly to Stormwind
 step << Shaman
     .goto StormwindClassic,61.9,83.9
+.target Farseer Umbrua
+>>Talk to |cFF00FF25Farseer Umbrua|r
     .accept 10491 >> Accept Call of Air
     .trainer >> Train your class spells
     .xp <30,1
@@ -2891,7 +3590,9 @@ step << Dwarf Paladin
 step
     .isOnQuest 1245
     .goto StormwindClassic,60.1,64.4
+>>Talk to |cFF00FF25Elling Trias|r
     .turnin 1245 >> Turn in The Missing Diplomat
+.target Elling Trias
     .accept 1246 >> Accept The Missing Diplomat
 step << Paladin
 	.goto StormwindClassic,38.6,32.8
@@ -2909,6 +3610,18 @@ step << Warrior
     #xprate <1.5
 step << Warrior
     .goto StormwindClassic,78.8,45.3
+.target Darnath Bladesinger
+.target Wu Shen
+.target Kelv Sternhammer
+.target Baltus Fowler
+.target Sorek
+.target Torm Ragetotem
+>>Talk to |cFF00FF25Torm Ragetotem|r
+-->>Talk to |cFF00FF25Sorek|r
+-->>Talk to |cFF00FF25Baltus Fowler|r
+-->>Talk to |cFF00FF25Kelv Sternhammer|r
+-->>Talk to |cFF00FF25Wu Shen|r
+-->>Talk to |cFF00FF25Darnath Bladesinger|r
     .accept 1718 >> Accept The Islander
 	.trainer >> Train class spells
     .xp <30,1
@@ -2919,14 +3632,18 @@ step
     .isOnQuest 1246
     .goto StormwindClassic,70.3,44.8
     >>Beat Dashel Stonefist
+>>Talk to |cFF00FF25Dashel Stonefist|r
     .turnin 1246 >> Turn in The Missing Diplomat
+.target Dashel Stonefist
     .accept 1447 >> Accept The Missing Diplomat
     .turnin 1447 >> Turn in The Missing Diplomat
     .accept 1247 >> Accept The Missing Diplomat
 step
     .isOnQuest 1247
     .goto StormwindClassic,60.1,63.9
+>>Talk to |cFF00FF25Elling Trias|r
     .turnin 1247 >> Turn in The Missing Diplomat
+.target Elling Trias
     .accept 1248 >> Accept The Missing Diplomat
 step << NightElf/Draenei
     #sticky
@@ -2934,16 +3651,26 @@ step << NightElf/Draenei
     .home >> Set your hearthstone in Stormwind
 step
     .goto StormwindClassic,39.9,81.3
+.target Archmage Malin
+>>Talk to |cFF00FF25Archmage Malin|r
     .accept 690 >> Accept Malin's Request
 step
     .goto StormwindClassic,40.6,91.7
+.target Connor Rivers
+>>Talk to |cFF00FF25Connor Rivers|r
     .accept 1301 >> Accept James Hyal
 step << Warlock
     .goto StormwindClassic,25.3,78.5
+.target Demisette Cloyce
+>>Talk to |cFF00FF25Demisette Cloyce|r
     .accept 4738 >>Accept In Search of Menara Voidrender
     .xp <31,1
 step << Warlock
     .goto StormwindClassic,25.3,78.5
+.target Gakin the Darkbinder
+.target Lago Blackwrench
+>>Talk to |cFF00FF25Lago Blackwrench|r
+-->>Talk to |cFF00FF25Gakin the Darkbinder|r
     .accept 1798 >>Accept Seeking Strahad
 	.trainer >> Train your class spells
 
@@ -2960,14 +3687,18 @@ step << Shaman wotlk
 	.goto The Exodar,81.5,52.5,40,0
 step << Shaman wotlk
     .goto The Exodar,29.9,33.0
+>>Talk to |cFF00FF25Farseer Nobundo|r
     .turnin 10491 >> Turn in Call of Air
+.target Farseer Nobundo
     .accept 9552 >> Accept Call of Air
 step << Shaman wotlk
     #completewith next
     .fly Bloodmyst Isle>> Fly to Bloodmyst Isle
 step << Shaman wotlk
-    .goto Bloodmyst Isle,32.3,16.2
+    .goto Bloodmyst Isle,32.300,16.132
+>>Talk to |cFF00FF25Aqueous|r
     .turnin 9504 >> Turn in Call of Water
+.target Aqueous
     .accept 9508 >> Accept Call of Water
 step << Shaman wotlk
     .goto Bloodmyst Isle,26.0,40.9
@@ -2975,7 +3706,9 @@ step << Shaman wotlk
     .complete 9508,1 --Collect Head of Tel'athion (x1)
 step << Shaman wotlk
     .goto Bloodmyst Isle,32.2,16.1
+>>Talk to |cFF00FF25Aqueous|r
     .turnin 9508 >> Turn in Call of Water
+.target Aqueous
     .accept 9509 >> Accept Call of Water
 step << Shaman wotlk
 	#sticky
@@ -2994,12 +3727,16 @@ step << Shaman wotlk
     .goto Azuremyst Isle,26.8,27.3,42
     >>Exit The Exodar from the main entrance and travel along the mountain to your left until you get to the Wildwind Path
 step << Shaman wotlk
-    .goto Azuremyst Isle,24.9,35.9
+    .goto Azuremyst Isle,24.897,35.918
+>>Talk to |cFF00FF25Velaada|r
     .turnin 9552 >> Turn in Call of Air
+.target Velaada
     .accept 9553 >> Accept Call of Air
 step << Shaman wotlk
-    .goto Azuremyst Isle,22.3,32.5
+    .goto Azuremyst Isle,22.312,32.547
+>>Talk to |cFF00FF25Susurrus|r
     .turnin 9553 >> Turn in Call of Air
+.target Susurrus
     .accept 9554 >> Accept Call of Air
 step << Shaman wotlk
     #sticky
@@ -3007,9 +3744,13 @@ step << Shaman wotlk
     .zone The Exodar>>Speak with Susurrus again so he can send you back flying to The Exodar
 step << Shaman wotlk
     .goto The Exodar,30.0,33.1
+.target Farseer Nobundo
+>>Talk to |cFF00FF25Farseer Nobundo|r
     .turnin 9509 >> Turn in Call of Water
 step << Shaman wotlk
     .goto The Exodar,29.6,33.4
+.target Farseer Nobundo
+>>Talk to |cFF00FF25Farseer Nobundo|r
     .turnin 9554 >> Turn in Call of Air
 	>>This will give you a 1 hour-long buff giving 40% movespeed and 30% attack speed. Be careful to not AFK with it
 step << Shaman wotlk
@@ -3017,19 +3758,27 @@ step << Shaman wotlk
 
 step << Human Paladin
     .goto StormwindClassic,38.6,26.7
+>>Talk to |cFF00FF25Gazin Tenorm|r
     .turnin 1787 >>Turn in The Tome of Divinity
+.target Gazin Tenorm
     .accept 1788 >>Accept The Tome of Divinity
 step << Human Paladin
     .goto StormwindClassic,39.9,29.8
+.target Duthorian Rall
+>>Talk to |cFF00FF25Duthorian Rall|r
     .turnin 1788 >>Turn in The Tome of Divinity
 step
     .goto StormwindClassic,74.1,7.6
     >>Click on the Old History Book in your bags, skip this step if you havent found it
     .accept 337 >> Accept An Old History Book
+.target Milton Sheaf
+>>Talk to |cFF00FF25Milton Sheaf|r
     .turnin 337 >> Turn in An Old History Book
     .use 2794
 step
     .goto StormwindClassic,74.1,7.6
+.target Milton Sheaf
+>>Talk to |cFF00FF25Milton Sheaf|r
     .accept 538 >> Accept Southshore
     .isQuestTurnedIn 337
 step << NightElf wotlk
@@ -3057,6 +3806,8 @@ step
     .zoneskip Wetlands
 step
     .goto Ironforge,69.8,50.1
+.target Tinkmaster Overspark
+>>Talk to |cFF00FF25Tinkmaster Overspark|r
     .turnin 2923 >> Turn in Tinkmaster Overspark
     .isOnQuest 2923
     .zoneskip Wetlands
@@ -3085,18 +3836,22 @@ step << Hunter tbc
 	>>Go inside the building, head downstairs and buy a level 30 quiver from Thalgus Thunderfist
 	.collect 7371,1
 step << !Dwarf !Gnome wotlk
-    .goto Ironforge,55.5,47.7
+    .goto Ironforge,55.501,47.742
     .fp Ironforge>> Get the Ironforge Flight Path
 step
     .goto Ironforge,18.5,51.6
     .home >>Set your hearthstone to Ironforge
 step << Dwarf Paladin
-    .goto Ironforge,23.3,6.1
+    .goto Ironforge,23.131,6.143
+.target Brandur Ironhammer
+>>Talk to |cFF00FF25Brandur Ironhammer|r
     .accept 2999 >>Accept Tome of Divinity
 step << Dwarf Paladin
     .goto Ironforge,27.4,12.1
     >>Go upstairs and speak to Tiza Battleforge
+>>Talk to |cFF00FF25Tiza Battleforge|r
     .turnin 2999 >>Turn in Tome of Divinity
+.target Tiza Battleforge
     .accept 1645 >>Accept The Tome of Divinity
     .turnin 1645 >>Turn in The Tome of Divinity
     .accept 1646 >>Accept The Tome of Divinity
@@ -3104,19 +3859,25 @@ step << Dwarf Paladin
     .accept 1647 >>Accept The Tome of Divinity
 step << Dwarf Paladin
     >>Speak to John Turner, he walks around the outer ring of the city
+>>Talk to |cFF00FF25John Turner|r
     .turnin 1647 >>Turn in The Tome of Divinity
+.target John Turner
     .accept 1648 >>Accept The Tome of Divinity
     .turnin 1648 >>Turn in The Tome of Divinity
     .accept 1778 >>Accept The Tome of Divinity
 step << Dwarf Paladin
-    .goto Ironforge,27.7,12.3
+    .goto Ironforge,27.628,12.183
     >>Return to Tiza Battleforge
+>>Talk to |cFF00FF25Tiza Battleforge|r
     .turnin 1778 >>Turn in The Tome of Divinity
+.target Tiza Battleforge
     .accept 1779 >>Accept The Tome of Divinity
 step << Dwarf Paladin
     .goto Ironforge,23.6,8.6
     >>Speak to Muiredon Battleforge
+>>Talk to |cFF00FF25Muiredon Battleforge|r
     .turnin 1779 >>Turn in The Tome of Divinity
+.target Muiredon Battleforge
     .accept 1783 >>Accept The Tome of Divinity
 step << Dwarf Paladin
     #completewith next
@@ -3125,11 +3886,15 @@ step << Dwarf Paladin
 step << Paladin
     .goto Dun Morogh,52.5,36.8
     >> Head to the gates of Ironforge << !Dwarf
+.target Jordan Stilwell
+>>Talk to |cFF00FF25Jordan Stilwell|r
     .turnin 1653 >>Turn in The Test of Righteousness
 step << Dwarf Paladin
-    .goto Dun Morogh,78.3,58.1
+    .goto Dun Morogh,78.321,58.088
     >>Use the Symbol of Life on Narm Faulk
+>>Talk to |cFF00FF25Narm Faulk|r
     .turnin 1783 >>Turn in The Tome of Divinity
+.target Narm Faulk
     .accept 1784 >>Accept The Tome of Divinity
 step << Dwarf Paladin
     .goto Dun Morogh,77.3,60.5
@@ -3139,12 +3904,16 @@ step << Dwarf Paladin
     #completewith next
     .hs >> Hearth to Ironforge
 step << Dwarf Paladin
-    .goto Ironforge,23.6,8.5
+    .goto Ironforge,23.539,8.300
     >>Speak to Muiredon upstairs
+>>Talk to |cFF00FF25Muiredon Battleforge|r
     .turnin 1784 >>Turn in The Tome of Divinity
+.target Muiredon Battleforge
     .accept 1785 >>Accept The Tome of Divinity
 step << Dwarf Paladin
     .goto Ironforge,27.4,11.9
+.target Tiza Battleforge
+>>Talk to |cFF00FF25Tiza Battleforge|r
     .turnin 1785 >>Turn in The Tome of Divinity
 step << Dwarf !Paladin tbc
 	.money <35.0
@@ -3158,7 +3927,7 @@ step << Mage
     .goto Ironforge,25.5,7.1
     .train 3562>>Train Teleport: Ironforge
 step << Gnome/Dwarf/tbc
-    .goto Ironforge,55.5,47.7
+    .goto Ironforge,55.501,47.742
     .fly Wetlands>> Fly to wetlands
 step << wotlk !Dwarf !Gnome
     #sticky
@@ -3219,10 +3988,14 @@ RXPGuides.RegisterGuide([[
 
 step
     .goto Wetlands,10.8,59.6
+.target First Mate Fitzsimmons
+>>Talk to |cFF00FF25First Mate Fitzsimmons|r
     .accept 288 >> Accept The Third Fleet
 step
     .goto Wetlands,10.6,60.5
+>>Talk to |cFF00FF25Glorin Steelbrow|r
     .turnin 270 >> Turn in The Doomed Fleet
+.target Glorin Steelbrow
     .accept 321 >> Accept Lightforge Iron
 step
     #label mead
@@ -3233,6 +4006,8 @@ step
 step
     .goto Wetlands,10.84,60.43
     >>Go upstairs and talk to Archaeologist Flagongut
+.target Archaeologist Flagongut
+>>Talk to |cFF00FF25Archaeologist Flagongut|r
     .turnin 942 >>Turn in The Absent Minded Prospector
     .isOnQuest 942
 step << wotlk
@@ -3242,7 +4017,9 @@ step
     #requires mead
     .isOnQuest 1248
     .goto Wetlands,10.6,60.7
+>>Talk to |cFF00FF25Mikhail|r
     .turnin 1248 >> Turn in The Missing Diplomat
+.target Mikhail
     .accept 1249 >> Accept The Missing Diplomat
 step
     >>Once you accept the quest, you have to engage Tapoke Jhan while he tries to escape the inn. Two level 34 enemies will attack you. You may need to skip this step and do it later if you cannot kill them.
@@ -3250,20 +4027,30 @@ step
 step
     .isOnQuest 1249
     .goto Wetlands,10.6,60.7
+.target Mikhail
+>>Talk to |cFF00FF25Mikhail|r
     .turnin 1249 >> Turn in The Missing Diplomat
+.target Tapoke "Slim" Jahn
+>>Talk to |cFF00FF25Tapoke "Slim" Jahn|r
     .accept 1250 >> Accept The Missing Diplomat
 step
     .isOnQuest 1250
     .goto Wetlands,10.6,60.7
+>>Talk to |cFF00FF25Mikhail|r
     .turnin 1250 >> Turn in The Missing Diplomat
+.target Mikhail
     .accept 1264 >> Accept The Missing Diplomat
 step
     .goto Wetlands,10.8,59.7
+>>Talk to |cFF00FF25First Mate Fitzsimmons|r
     .turnin 288 >> Turn in The Third Fleet
+.target First Mate Fitzsimmons
     .accept 289 >> Accept The Cursed Crew
 step
     .goto Wetlands,8.4,61.6
+>>Talk to |cFF00FF25Vincent Hyal|r
     .turnin 1301 >> Turn in James Hyal
+.target Vincent Hyal
     .accept 1302 >> Accept James Hyal
 step << Draenei !Shaman tbc
 	.goto Wetlands,4.8,57.3,50,0
@@ -3288,14 +4075,18 @@ step << Shaman tbc
 	.goto The Exodar,81.5,52.5,40,0
 step << Shaman tbc
     .goto The Exodar,29.9,33.0
+>>Talk to |cFF00FF25Farseer Nobundo|r
     .turnin 10491 >> Turn in Call of Air
+.target Farseer Nobundo
     .accept 9552 >> Accept Call of Air
 step << Shaman tbc
 .isQuestTurnedIn 9508
     .fly Bloodmyst Isle>> Fly to Bloodmyst Isle
 step << Shaman tbc
-    .goto Bloodmyst Isle,32.3,16.2
+    .goto Bloodmyst Isle,32.300,16.132
+>>Talk to |cFF00FF25Aqueous|r
     .turnin 9504 >> Turn in Call of Water
+.target Aqueous
     .accept 9508 >> Accept Call of Water
 step << Shaman tbc
     .goto Bloodmyst Isle,26.0,40.9
@@ -3303,7 +4094,9 @@ step << Shaman tbc
     .complete 9508,1 --Collect Head of Tel'athion (x1)
 step << Shaman tbc
     .goto Bloodmyst Isle,32.2,16.1
+>>Talk to |cFF00FF25Aqueous|r
     .turnin 9508 >> Turn in Call of Water
+.target Aqueous
     .accept 9509 >> Accept Call of Water
 step << Shaman tbc
 	#sticky
@@ -3322,12 +4115,16 @@ step << Shaman tbc
     .goto Azuremyst Isle,26.8,27.3,42
     >>Exit The Exodar from the main entrance and travel along the mountain to your left until you get to the Wildwind Path
 step << Shaman tbc
-    .goto Azuremyst Isle,24.9,35.9
+    .goto Azuremyst Isle,24.897,35.918
+>>Talk to |cFF00FF25Velaada|r
     .turnin 9552 >> Turn in Call of Air
+.target Velaada
     .accept 9553 >> Accept Call of Air
 step << Shaman tbc
-    .goto Azuremyst Isle,22.3,32.5
+    .goto Azuremyst Isle,22.312,32.547
+>>Talk to |cFF00FF25Susurrus|r
     .turnin 9553 >> Turn in Call of Air
+.target Susurrus
     .accept 9554 >> Accept Call of Air
 step << Shaman tbc
     #sticky
@@ -3335,9 +4132,13 @@ step << Shaman tbc
     .zone The Exodar>>Speak with Susurrus again so he can send you back flying to The Exodar
 step << Shaman tbc
     .goto The Exodar,30.0,33.1
+.target Farseer Nobundo
+>>Talk to |cFF00FF25Farseer Nobundo|r
     .turnin 9509 >> Turn in Call of Water
 step << Shaman tbc
     .goto The Exodar,29.6,33.4
+.target Farseer Nobundo
+>>Talk to |cFF00FF25Farseer Nobundo|r
     .turnin 9554 >> Turn in Call of Air
 	>>This will give you a 1 hour-long buff giving 40% movespeed and 30% attack speed. Be careful to not AFK with it
 step << Shaman tbc
@@ -3352,14 +4153,20 @@ step
     .complete 324,1 --Collect Lightforge Ingot (x5)
 step
     .goto Wetlands,10.6,60.4
+>>Talk to |cFF00FF25Glorin Steelbrow|r
     .turnin 324 >> Turn in The Lost Ingots
+.target Glorin Steelbrow
     .accept 322 >> Accept Blessed Arm
 step
     .goto Wetlands,10.9,55.9
+.target Harlo Barnaby
+>>Talk to |cFF00FF25Harlo Barnaby|r
     .accept 472 >> Accept Fall of Dun Modr
 step
     .isOnQuest 464
     .goto Wetlands,9.9,57.4
+.target Captain Stoutfist
+>>Talk to |cFF00FF25Captain Stoutfist|r
     .turnin 464 >> Turn in War Banners
 step
     .isOnQuest 281
@@ -3391,11 +4198,19 @@ step
     step
     #completewith next
     .goto Wetlands,49.9,18.3
+.target Longbraid the Grim
+>>Talk to |cFF00FF25Longbraid the Grim|r
     .turnin 472 >> Turn in Fall of Dun Modr
 step
     .goto Wetlands,49.9,18.3
+.target Rhag Garmason
+>>Talk to |cFF00FF25Rhag Garmason|r
     .accept 631 >> Accept The Thandol Span
+.target Longbraid the Grim
+>>Talk to |cFF00FF25Longbraid the Grim|r
     .accept 304 >> Accept A Grim Task
+.target Motley Garmason
+>>Talk to |cFF00FF25Motley Garmason|r
     .accept 303 >> Accept The Dark Iron War
 step
 	#sticky
@@ -3416,7 +4231,11 @@ step--?
 step
     #requires balgaras
     .goto Wetlands,49.7,18.3
+.target Motley Garmason
+>>Talk to |cFF00FF25Motley Garmason|r
     .turnin 303 >> Turn in The Dark Iron War
+.target Longbraid the Grim
+>>Talk to |cFF00FF25Longbraid the Grim|r
     .turnin 304 >> Turn in A Grim Task
 step
     .goto Wetlands,51.2,8.0
@@ -3426,10 +4245,14 @@ step
 step
     .goto Wetlands,49.9,18.3
     >> Run back outside and turn in the quest
+>>Talk to |cFF00FF25Rhag Garmason|r
     .turnin 632 >> Turn in The Thandol Span
+.target Rhag Garmason
     .accept 633 >> Accept The Thandol Span
 step
     .goto Arathi Highlands,43.3,92.6
+.target Foggy MacKreel
+>>Talk to |cFF00FF25Foggy MacKreel|r
     .accept 647 >> Accept MacKreel's Moonshine
     >>You can still get this quest if you don't have any kind of speed increase or slow fall
     .link https://www.twitch.tv/videos/646111384 >>Click here for reference
@@ -3438,6 +4261,7 @@ step
     .goto Arathi Highlands,44.3,93.0
 	>>Jump down and loot the letter from the corpse underwater
     .accept 637 >> Accept Sully Balloo's Letter
+	.use 4433 >>Jump down and loot the letter from the corpse underwater
 step
     #completewith next
     .goto Arathi Highlands,52.5,90.4,30 >> Swim east toward the ramp here
@@ -3446,14 +4270,20 @@ step
     .complete 633,1 --Collect Cache of Explosives Destroyed (x1)
 step
     .goto Wetlands,49.9,18.3
+>>Talk to |cFF00FF25Rhag Garmason|r
     .turnin 633 >> Turn in The Thandol Span
+.target Rhag Garmason
     .accept 634 >> Accept Plea To The Alliance
 step
     .goto Arathi Highlands,45.9,47.5
+.target Captain Nials
+>>Talk to |cFF00FF25Captain Nials|r
     .turnin 634 >> Turn in Plea To The Alliance
 step
     #xprate >1.3
     .goto Arathi Highlands,46.6,47.0
+.target Skuerto
+>>Talk to |cFF00FF25Skuerto|r
     .turnin 690 >> Turn in Malin's Request
     .isOnQuest 690
 step
@@ -3464,17 +4294,19 @@ step
 >>Run to Southshore and go downstairs in the inn. Turn in before the timer is up. Watch out for the courier on the road.
 	.unitscan Forsaken Bodyguard
 .goto Hillsbrad Foothills,52.2,58.6
+.target Brewmeister Bilger
+>>Talk to |cFF00FF25Brewmeister Bilger|r
     .turnin 647 >> Turn in MacKreel's Moonshine
-step
-#xprate <1.5
-    .goto Hillsbrad Foothills,51.9,58.7
-    .accept 555 >> Accept Soothing Turtle Bisque
 step
     .xp <30,1
     .goto Hillsbrad Foothills,51.4,58.5
+.target Lieutenant Farren Orinelle
+>>Talk to |cFF00FF25Lieutenant Farren Orinelle|r
     .accept 536 >> Accept Down the Coast
 step
     .goto Hillsbrad Foothills,50.9,58.8
+.target Huraan
+>>Talk to |cFF00FF25Huraan|r
     .accept 9435 >> Accept Missing Crystals
 step <<  Hunter tbc
      #completewith next
@@ -3487,6 +4319,8 @@ step << Hunter tbc
 	.unitscan Elder Moss Creeper
 step
 	.goto Hillsbrad Foothills,50.5,57.2
+.target Loremaster Dibbs
+>>Talk to |cFF00FF25Loremaster Dibbs|r
     .turnin 538 >> Turn in Southshore
 	.isOnQuest 538
 step
@@ -3498,7 +4332,9 @@ step
 step
     .xp <30,1
     .goto Hillsbrad Foothills,51.4,58.5
+>>Talk to |cFF00FF25Lieutenant Farren Orinelle|r
     .turnin 536 >> Turn in Down the Coast
+.target Lieutenant Farren Orinelle
     .accept 559 >> Accept Farren's Proof
 step
     .xp <30,1
@@ -3508,17 +4344,23 @@ step
 step
     .xp <30,1
     .goto Hillsbrad Foothills,51.4,58.5
+>>Talk to |cFF00FF25Lieutenant Farren Orinelle|r
     .turnin 559 >> Turn in Farren's Proof
+.target Lieutenant Farren Orinelle
     .accept 560 >> Accept Farren's Proof
 step
     .xp <30,1
     .goto Hillsbrad Foothills,49.5,58.8
+>>Talk to |cFF00FF25Marshal Redpath|r
     .turnin 560 >> Turn in Farren's Proof
+.target Marshal Redpath
     .accept 561 >> Accept Farren's Proof
 step
     .xp <30,1
     .goto Hillsbrad Foothills,51.4,58.4
+>>Talk to |cFF00FF25Lieutenant Farren Orinelle|r
     .turnin 561 >> Turn in Farren's Proof
+.target Lieutenant Farren Orinelle
     .accept 562 >> Accept Stormwind Ho!
 step
     .xp <30,1
@@ -3529,10 +4371,14 @@ step
 step
     .xp <30,1
     .goto Hillsbrad Foothills,51.4,58.5
+>>Talk to |cFF00FF25Lieutenant Farren Orinelle|r
     .turnin 562 >> Turn in Stormwind Ho!
+.target Lieutenant Farren Orinelle
     .accept 563 >> Accept Reassignment
 step
     .goto Hillsbrad Foothills,50.9,58.8
+.target Huraan
+>>Talk to |cFF00FF25Huraan|r
     .accept 9435 >> Accept Missing Crystals
 step
     .goto Hillsbrad Foothills,49.3,52.3
@@ -3556,47 +4402,65 @@ step
     .fly Southshore>> Fly to Southshore
 step
     .goto Hillsbrad Foothills,50.5,57.1
+>>Talk to |cFF00FF25Loremaster Dibbs|r
     .turnin 511 >> Turn in Encrypted Letter
+.target Loremaster Dibbs
     .accept 514 >> Accept Letter to Stormpike
 step
     .goto Hillsbrad Foothills,48.2,59.3
+.target Magistrate Henry Maleb
+>>Talk to |cFF00FF25Magistrate Henry Maleb|r
     .turnin 510 >> Turn in Foreboding Plans
 step
     .goto Hillsbrad Foothills,50.9,58.8
+.target Huraan
+>>Talk to |cFF00FF25Huraan|r
     .turnin 9435 >> Turn in Missing Crystals
 step
     #completewith next
     .hs >> Hearth to Ironforge
 step
     .goto Ironforge,63.79,67.78
+.target Sara Balloo
+>>Talk to |cFF00FF25Sara Balloo|r
     .turnin 637 >>Turn in Sully Balloo's Letter
 step
     .goto Ironforge,74.64,11.74
+.target Prospector Stormpike
+>>Talk to |cFF00FF25Prospector Stormpike|r
     .turnin 514 >>Turn in Letter to Stormpike
 step
     .goto Ironforge,63.79,67.78
+.target Sara Balloo
+>>Talk to |cFF00FF25Sara Balloo|r
     .accept 683 >>Accept Sara Balloo's Plea
 step
     .goto Ironforge,39.10,56.19
+>>Talk to |cFF00FF25King Magni Bronzebeard|r
     .turnin 683 >>Turn in Sara Balloo's Plea
+.target King Magni Bronzebeard
     .accept 686 >>Accept A King's Tribute
 step
     .goto Ironforge,38.75,87.04
+.target Grand Mason Marblesten
+>>Talk to |cFF00FF25Grand Mason Marblesten|r
     .turnin 686 >>Turn in A King's Tribute
 step
-	.goto Ironforge,69.8,83.0 << Hunter
+	.goto Ironforge,69.875,82.895 << Hunter
 	.goto Ironforge,66.4,88.7 << Warrior
 	.goto Ironforge,24.7,8.8 << Priest
 	.goto Ironforge,24.6,9.2 << Paladin
-	.goto Ironforge,50.3,5.8 << Warlock
+	.goto Ironforge,50.350,5.656 << Warlock
 	.goto Ironforge,51.6,15.2 << Rogue
 	.goto Ironforge,55.4,29.1 << Shaman
     .goto Ironforge,28.6,7.2 << Mage
 	.trainer >> Train your spells
 step
-    .goto Ironforge,55.5,47.7
+    .goto Ironforge,55.501,47.742
     .fly Wetlands>> Fly to Wetlands
 step
     .goto Wetlands,10.8,59.6
+.target First Mate Fitzsimmons
+>>Talk to |cFF00FF25First Mate Fitzsimmons|r
     .turnin 289 >> Turn in The Cursed Crew
 ]])

@@ -1,3 +1,6 @@
+local faction = UnitFactionGroup("player")
+if faction == "Horde" then return end
+
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
@@ -15,13 +18,17 @@ step << !NightElf !Draenei wotlk
     .zone Darkshore >> Head to the Stormwind Harbor and take the boat to Darkshore
 step
     >> Speak to Gwennyth ontop of the platform
-    .goto Darkshore,36.6,45.6
+    .goto Darkshore,36.621,45.594
+.target Gwennyth Bly'Leggonde
+>>Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
     .accept 3524 >> Accept Washed Ashore
 step << !NightElf
 	.goto Darkshore,36.3,45.6
     .fp Auberdine >> Get the Auberdine Flight Path
 step << NightElf
     .goto Darkshore,36.8,44.3
+.target Laird
+>>Talk to |cFF00FF25Laird|r
     .turnin 6342 >> Turn in Flight to Auberdine
 step << !Warlock/!Rogue
 	.goto Darkshore,37.0,44.1
@@ -29,11 +36,17 @@ step << !Warlock/!Rogue
 step
     >> Head upstairs
     .goto Darkshore,37.0,44.1
+.target Wizbang Cranktoggle
+>>Talk to |cFF00FF25Wizbang Cranktoggle|r
     .accept 983 >> Accept Buzzbox 827
 step
     >> Accept quests around Auberdine
+.target Tharnariun Treetender
+>>Talk to |cFF00FF25Tharnariun Treetender|r
     .accept 2118 >> Accept Plagued Lands
     .goto Darkshore,38.8,43.4
+.target Terenthis
+>>Talk to |cFF00FF25Terenthis|r
     .accept 984 >> Accept How Big a Threat?
     .goto Darkshore,39.3,43.4
 step << Dwarf Hunter tbc
@@ -53,7 +66,6 @@ step
 	>> Kill crabs along the coast and loot them for their legs
     .complete 983,1 --Collect Crawler Leg (x6)
 step
-    .isOnQuest 3524
     .goto Darkshore,36.4,50.8
 	>> Loot the Beached Sea Creature
     .complete 3524,1 --Collect Sea Creature Bones (x1)
@@ -78,89 +90,119 @@ step
     >> Click on the machine on the hill
     .turnin 983 >> Turn in Buzzbox 827
 step
-    .isOnQuest 3524
-    .goto Darkshore,36.6,45.6
+    .goto Darkshore,36.621,45.594
     >> Head back to Gwennyth on the platform
+.target Gwennyth Bly'Leggonde
+>>Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
     .turnin 3524 >> Turn in Washed Ashore
+step
+#xprate <1.7
+    .goto Darkshore,36.621,45.594
+.target Gwennyth Bly'Leggonde
+>>Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
     .accept 4681 >> Accept Washed Ashore
+    .maxlevel 13
 step
     #xprate <1.5
     .maxlevel 13
     .goto Darkshore,35.8,43.7
+.target Cerellean Whiteclaw
+>>Talk to |cFF00FF25Cerellean Whiteclaw|r
     .accept 963 >> Accept For Love Eternal
 step
+#xprate <1.7
     .isOnQuest 4681
     .goto Darkshore,31.9,46.4
 	>> Loot the sea turtle bones underwater
     * You can run along the docks to get there faster than just swimming!
     .complete 4681,1 --Collect Sea Turtle Remains (x1)
 step
+#xprate <1.7
     .isOnQuest 4681
     >> Head back to Gwennyth
-    .goto Darkshore,36.6,45.6
-    .turnin 4681,2 >> Turn in Washed Ashore << Druid/Paladin/Hunter
-    .turnin 4681 >> Turn in Washed Ashore << !Druid !Paladin !Hunter
+    .goto Darkshore,36.621,45.594
+.target Gwennyth Bly'Leggonde
+>>Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
+    .turnin 4681 >> Turn in Washed Ashore
 step << !Dwarf/!Hunter
     .xp 12 >> Grind to level 12
 step << !Dwarf/!Hunter
     >> Talk to Sentinel Glynda and Tharnariun
+.target Sentinel Glynda Nal'Shea
+>>Talk to |cFF00FF25Sentinel Glynda Nal'Shea|r
     .accept 4811 >> Accept The Red Crystal
-    .goto Darkshore,37.7,43.4
+    .goto Darkshore,37.706,43.390
     .turnin -2118 >> Turn in Plagued Lands
     .goto Darkshore,38.8,43.4
 step
 #xprate <1.5
     .maxlevel 13
     .goto Darkshore,38.8,43.4
+.target Tharnariun Treetender
+>>Talk to |cFF00FF25Tharnariun Treetender|r
     .accept 2138 >> Accept Cleansing of the Infected
 step
     #xprate <1.5
     >> Talk to Terenthis inside the building
     .goto Darkshore,39.3,43.5
+>>Talk to |cFF00FF25Terenthis|r
     .turnin 984 >> Turn in How Big a Threat?
+.target Terenthis
     .accept 985 >> Accept How Big a Threat?
     .accept 4761 >> Accept Thundris Windweaver
 step
     #xprate >1.499
     >> Talk to Terenthis inside the building
     .goto Darkshore,39.3,43.5
+>>Talk to |cFF00FF25Terenthis|r
     .turnin 984 >> Turn in How Big a Threat?
+.target Terenthis
     .accept 4761 >> Accept Thundris Windweaver
 step << Druid
     .goto Darkshore,43.5,45.9
     .use 15208 >>Use the Cenarion Moondust inside the cave, defeat Lunaclaw and speak with his spirit after
     .complete 6001,1 --Defeat Lunaclaw (x1)
 step << !Dwarf/!Hunter
+#xprate <1.7
     .goto Darkshore,47.2,48.6
     >> Careful, the Moonkin in the area enrage and call for help, very deadly!
     .complete 4811,1 --Locate the large, red crystal on Darkshore's eastern mountain range
-step << wotlk !Dwarf/!Hunter
-    .deathskip >> Die to the Owl Beasts nearby and spawn in Auberdine
 step << !Dwarf/!Hunter
-    .goto Darkshore,37.7,43.4
+#xprate <1.7
+    .goto Darkshore,37.706,43.390
+>>Talk to |cFF00FF25Sentinel Glynda Nal'Shea|r
     .turnin 4811 >> Turn in The Red Crystal
+.target Sentinel Glynda Nal'Shea
     .accept 4812 >> Accept As Water Cascades
 step << !Dwarf/!Hunter
+#xprate <1.7
     .goto Darkshore,37.8,44.0
 	>>Fill the water tube at the moonwell
     .complete 4812,1 --Collect Moonwell Water Tube (x1)
 step
     .goto Darkshore,37.4,40.2
     >> Talk to Thundris in the town hall building
+>>Talk to |cFF00FF25Thundris Windweaver|r
     .turnin 4761 >> Turn in Thundris Windweaver
+.target Thundris Windweaver
     .accept 4762 >> Accept The Cliffspring River << !Warlock/!Rogue
     .accept 954 >> Accept Bashal'Aran
 step
     #xprate <1.5
     .maxlevel 13
     .goto Darkshore,37.4,40.2
+.target Thundris Windweaver
+>>Talk to |cFF00FF25Thundris Windweaver|r
     .accept 958 >> Accept Tools of the Highborne
 step
     .goto Darkshore,44.1,36.3
     >> Head to the ruins east of town
+>>Talk to |cFF00FF25Asterion|r
     .turnin 954 >> Turn in Bashal'Aran
+.target Asterion
     .accept 955 >> Accept Bashal'Aran
 step << !Dwarf !Warlock/!Hunter !Warlock
+#xprate <1.7
     .goto Darkshore,47.3,48.6
     >> Grind Grell as you head southeast to turn in the quest. We're coming back after.
     .turnin 4812 >> Turn in As Water Cascades
@@ -172,7 +214,9 @@ step
 step
     .goto Darkshore,44.2,36.3
     >> Return to the shrine
+>>Talk to |cFF00FF25Asterion|r
     .turnin 955 >> Turn in Bashal'Aran
+.target Asterion
     .accept 956 >> Accept Bashal'Aran
 step
     .goto Darkshore,45.6,36.9
@@ -181,13 +225,18 @@ step
 step
     .goto Darkshore,44.2,36.3
     >> Return to the shrine
+.target Asterion
+>>Talk to |cFF00FF25Asterion|r
     .turnin 956 >> Turn in Bashal'Aran
 step
 #xprate <1.5
     .maxlevel 14
     .goto Darkshore,44.2,36.3
+.target Asterion
+>>Talk to |cFF00FF25Asterion|r
     .accept 957 >> Accept Bashal'Aran
 step << Warlock
+#xprate <1.7
     .goto Darkshore,47.3,48.6
     .turnin 4812 >> Turn in As Water Cascades
     .accept 4813 >> Accept The Fragments Within
@@ -201,11 +250,11 @@ step
 	>>Kill Rabid Thistle Bears as you quest
     .complete 2138,1 --Kill Rabid Thistle Bear (x20)
 step << !Warlock/!Rogue
-    #xprate >1.499
+    #xprate 1.49-1.69
     .goto Darkshore,41.94,31.47
     .accept 4723 >> Accept Beached Sea Creature
 step << !Warlock/!Rogue
-    #xprate >1.499
+    #xprate 1.49-1.69
     .goto Darkshore,44.18,20.60
     .accept 4725 >> Accept Beached Sea Turtle
 step << !Warlock/!Rogue
@@ -221,7 +270,9 @@ step << Druid
     >>Teleport to Moonglade
     .fly Teldrassil>> Fly to Teldrassil
 step << Druid
-    .goto Darnassus,35.4,8.4
+    .goto Darnassus,35.375,8.405
+.target Mathrengyl Bearwalker
+>>Talk to |cFF00FF25Mathrengyl Bearwalker|r
     .turnin 6001 >> Turn in Body and Heart
 step << !Warlock/!Rogue
     #sticky
@@ -229,12 +280,16 @@ step << !Warlock/!Rogue
     .hs >> Hearth to Auberdine
 step << !Dwarf/!Hunter
     >> Talk to Sentinel Glynda
-    .goto Darkshore,37.7,43.4
+    .goto Darkshore,37.706,43.390
+.target Sentinel Glynda Nal'Shea
+>>Talk to |cFF00FF25Sentinel Glynda Nal'Shea|r
     .turnin 4813 >> Turn in The Fragments Within
 step << Dwarf Hunter
 #xprate <1.5
     .maxlevel 14
-    .goto Darkshore,37.7,43.4
+    .goto Darkshore,37.706,43.390
+.target Sentinel Glynda Nal'Shea
+>>Talk to |cFF00FF25Sentinel Glynda Nal'Shea|r
     .accept 4811 >> Accept The Red Crystal
 step << Dwarf Hunter
 #xprate <1.5
@@ -249,7 +304,9 @@ step << !Dwarf/!Hunter
     .complete 985,2 --Kill Blackwood Windtalker (x5)
 step
     .maxlevel 14
-    .goto Darkshore,40.3,59.7
+    .goto Darkshore,40.301,59.732
+.target Sentinel Tysha Moonblade
+>>Talk to |cFF00FF25Sentinel Tysha Moonblade|r
     .accept 953 >> Accept The Fall of Ameth'Aran
     #xprate <1.5
 step
@@ -290,7 +347,9 @@ step
 #xprate <1.5
     #requires anaya
     .isOnQuest 953
-    .goto Darkshore,40.3,59.7
+    .goto Darkshore,40.301,59.732
+.target Sentinel Tysha Moonblade
+>>Talk to |cFF00FF25Sentinel Tysha Moonblade|r
     .turnin 953 >> Turn in The Fall of Ameth'Aran
 step << Dwarf Hunter
     #requires relics1
@@ -311,43 +370,52 @@ step
     #requires relics1
     .isOnQuest 957
     .goto Darkshore,44.2,36.3
+.target Asterion
+>>Talk to |cFF00FF25Asterion|r
     .turnin 957 >> Turn in Bashal'Aran
 step
 #xprate <1.5
     .isOnQuest 958
-    .goto Darkshore,37.4,40.1
+    .goto Darkshore,37.395,40.130
+.target Thundris Windweaver
+>>Talk to |cFF00FF25Thundris Windweaver|r
     .turnin 958 >> Turn in Tools of the Highborne
 step << !Warlock/!Rogue
     >> Head back to town
     .turnin -4762 >> Turn in The Cliffspring River
-    .goto Darkshore,37.4,40.1,-1
+    .goto Darkshore,37.395,40.130,-1
     .turnin -985 >> Turn in How Big a Threat?
     .goto Darkshore,39.3,43.5,-1
 step << !Warlock/!Rogue
-    #xprate >1.499
+    #xprate 1.49-1.69
     .goto Darkshore,36.6,45.5
-    .turnin 4725 >> Turn in Beached Sea Turtle
-    .turnin 4727 >> Turn in Beached Sea Turtle
+    .turnin -4725 >> Turn in Beached Sea Turtle
+    .turnin -4727 >> Turn in Beached Sea Turtle
     .turnin -4723 >> Turn in Beached Sea Creature
 step
 #xprate <1.5
     .goto Darkshore,38.8,43.4
+.target Tharnariun Treetender
+>>Talk to |cFF00FF25Tharnariun Treetender|r
     .turnin 2138 >> Turn in Cleansing of the Infected
     .isQuestComplete 2138
 step << Dwarf Hunter
-    .goto Darkshore,37.7,43.4
+    .goto Darkshore,37.706,43.390
+.target Sentinel Glynda Nal'Shea
+>>Talk to |cFF00FF25Sentinel Glynda Nal'Shea|r
     .turnin 4811 >> Turn in The Red Crystal
     .isQuestComplete 4811
 step
 #xprate <1.5
-    .isOnQuest 4722
-    .goto Darkshore,36.6,45.6
-    .turnin 4722 >> Turn in Beached Sea Turtle
+    .goto Darkshore,36.621,45.594
+    .turnin -4722 >> Turn in Beached Sea Turtle
     .turnin -4723 >> Turn in Beached Sea Creature
 step
 #xprate <1.5
     .isQuestComplete 963
     .goto Darkshore,35.7,43.7
+.target Cerellean Whiteclaw
+>>Talk to |cFF00FF25Cerellean Whiteclaw|r
     .turnin 963 >> Turn in For Love Eternal
 step << Druid tbc
     #completewith next
@@ -361,12 +429,12 @@ step << Warlock wotlk/Rogue wotlk
     .xp 14 >> Grind to level 14
 step << Warlock wotlk/wotlk Gnome Rogue/wotlk Human Rogue/wotlk Dwarf Rogue
     .hs >> Hearth to Stormwind
-step << wotlk Night Elf Rogue
+step << wotlk NightElf Rogue
     .hs >> Hearth to Darnassus
-step << wotlk Night Elf Rogue
+step << wotlk NightElf Rogue
     .goto Teldrassil,56.4,60.1
 	.trainer >> Go and train your spells
-step << wotlk Night Elf Rogue
+step << wotlk NightElf Rogue
     .zone Darkshore >> Head to the Harbor and take the two boars to get to Azuremyst Isle.
     .zoneskip Azuremyst Isle
 step << Warlock wotlk
@@ -405,13 +473,12 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor !Draenei
-#next RestedXP Alliance 20-32\20-21 Darkshore << !Warlock
-#next RestedXP Alliance 20-32\20-23 Darkshore/Ashenvale << Warlock
+#next RestedXP Alliance 20-32\20-23 Darkshore/Ashenvale;RestedXP Alliance 20-32\20-21 Darkshore
 step << Druid
     .goto Azuremyst Isle,24.45,54.56
     .trainer >> Train your class spells
 step
-    .goto The Exodar,68.3,63.5
+    .goto The Exodar,68.336,63.490
     .fp Exodar >> Get the The Exodar flight path
 step << Shaman
 	.goto The Exodar,49.5,36.9,70,0
@@ -429,7 +496,7 @@ step << Hunter
 step << Warrior
 	.goto The Exodar,42,71.4,60,0
 	.goto The Exodar,54.5,85.6,60,0
-	.goto The Exodar,55.6,82.3
+	.goto The Exodar,55.579,82.269
 	.trainer >> Train spells in The Exodar
 step << Hunter/Warrior tbc/Paladin
 	>>Go into The Exodar and talk to the weapon master at the top floor of the Trader's Tier
@@ -447,8 +514,12 @@ step
 	.collect 23984,10 -- Collect Irradiated Crystal Shard (x10)
 step
     >> Talk to the Draenei at the ranch
+.target Aonar
+>>Talk to |cFF00FF25Aonar|r
     .accept 9624 >> Accept A Favorite Treat
     .goto Bloodmyst Isle,63.5,88.8
+.target Vorkhan the Elekk Herder
+>>Talk to |cFF00FF25Vorkhan the Elekk Herder|r
     .accept 9634 >> Accept Alien Predators
     .goto Bloodmyst Isle,63.1,88.0
     .maxlevel 14
@@ -470,18 +541,24 @@ step
     #requires pears
     >> Return to the ranch
     .goto Bloodmyst Isle,63.4,88.7
+.target Aonar
+>>Talk to |cFF00FF25Aonar|r
     .turnin 9624,3 >> Turn in A Favorite Treat << Warrior/Paladin
     .turnin 9624 >> Turn in A Favorite Treat << !Warrior !Paladin
     .isQuestComplete 9624
 step
     .goto Bloodmyst Isle,63.1,87.9
+.target Vorkhan the Elekk Herder
+>>Talk to |cFF00FF25Vorkhan the Elekk Herder|r
     .turnin 9634,1 >> Turn in Alien Predators << Paladin
     .turnin 9634 >> Turn in Alien Predators << !Paladin
     .isQuestComplete 9634
 step
     #label kesselstart
     >> Talk to Kessel
-    .goto Bloodmyst Isle,63.0,87.5
+    .goto Bloodmyst Isle,62.990,87.512
+.target Kessel
+>>Talk to |cFF00FF25Kessel|r
     .accept 9663 >> Accept The Kessel Run
 step
     #sticky
@@ -490,6 +567,8 @@ step
     .abandon 9663 >> Abandon The Kessel Run once you lose the mount buff
 step
     .goto Bloodmyst Isle,53.3,57.7
+.target Morae
+>>Talk to |cFF00FF25Morae|r
     .accept 9629 >> Accept Catch and Release
 step
     #sticky
@@ -501,47 +580,65 @@ step
     >> Talk to the Wanted Poster and Vindicator Aalesia
     .accept 9646 >> Accept WANTED: Deathclaw
     .goto Bloodmyst Isle,55.2,59.2
+.target Vindicator Aalesia
+>>Talk to |cFF00FF25Vindicator Aalesia|r
     .accept 9567 >> Accept Know Thine Enemy
     .goto Bloodmyst Isle,55.0,58.0
     >> Speak with the Tracker and Maatparm
+.target Tracker Lyceon
+>>Talk to |cFF00FF25Tracker Lyceon|r
     .accept 9580 >> Accept The Bear Necessities
     .goto Bloodmyst Isle,55.9,56.9
     .accept 9643 >> Accept Constrictor Vines
-    .goto Bloodmyst Isle,56.4,56.8
+    .goto Bloodmyst Isle,56.421,56.788
+.target Jessera of Mac'Aree
+>>Talk to |cFF00FF25Jessera of Mac'Aree|r
     .accept 9648 >> Accept Maatparm Mushroom Menagerie
-    .goto Bloodmyst Isle,56.4,56.8
+    .goto Bloodmyst Isle,56.421,56.788
 step << Paladin
 	.goto Bloodmyst Isle,55.6,55.4
 	.trainer >>Train class spells at Vindicator Aesom
 step
     >> Talk to Vindicator Boros
     .goto Bloodmyst Isle,55.4,55.4
+.target Vindicator Boros
+>>Talk to |cFF00FF25Vindicator Boros|r
     .accept 9641 >> Accept Irradiated Crystal Shards
 step
 	.goto Bloodmyst Isle,55.4,55.4
 	.itemcount 23984,10
+.target Vindicator Boros
+>>Talk to |cFF00FF25Vindicator Boros|r
 	.turnin 9641,3 >> Turn in Irradiated Crystal Shards << Warrior/Paladin/Hunter/Rogue/Shaman
     .turnin 9641,2 >> Turn in Irradiated Crystal Shards << Mage/Priest/Warlock
     .turnin 9641 >> Turn in Irradiated Crystal Shards << Druid
 step << Human Warrior/Human Paladin/Human Rogue
     .goto Bloodmyst Isle,56.2,54.2
-    .train 2580 >> Talk to the dwarf by the forge. Train Mining, cast Find Minerals
+    .train 2580 >> Talk to the dwarf by the forge. Train Mining, cast Find Minerals. Purchase a Mining Pick if you don't have one
 step
     >> Speak to the Draenei in the building on the hill
     .goto Bloodmyst Isle,52.7,53.3
+.target Exarch Admetius
+>>Talk to |cFF00FF25Exarch Admetius|r
     .accept 9693 >> Accept What Argus Means to Me
+.target Harbinger Mikolaas
+>>Talk to |cFF00FF25Harbinger Mikolaas|r
     .accept 9581 >> Accept Learning from the Crystals
 step << Dwarf Hunter
     .goto Bloodmyst Isle,55.4,55.4
+>>Talk to |cFF00FF25Vindicator Boros|r
     .turnin 9693 >> Turn in What Argus Means to Me
+.target Vindicator Boros
     .accept 9694 >> Accept Blood Watch
 step << Dwarf Hunter
     >> Kill blood elves in the area
     .goto Bloodmyst Isle,48.5,46.8
     .complete 9694,1 --Kill Sunhawk Spy (x10)
 step << Dwarf Hunter
-    .goto Bloodmyst Isle,55.4,55.2
+    .goto Bloodmyst Isle,55.421,55.232
+>>Talk to |cFF00FF25Vindicator Boros|r
     .turnin 9694 >> Turn in Blood Watch
+.target Vindicator Boros
     .accept 9779 >> Accept Intercepting the Message
 step
 	#sticky
@@ -607,9 +704,11 @@ step
 step
     .goto Bloodmyst Isle,53.3,57.9
 	>>Grind mobs en route
+>>Talk to |cFF00FF25Morae|r
     .turnin 9576 >> Turn in Cruelfin's Necklace
     .turnin 9629,1 >> Turn in Catch and Release << Warrior/Paladin
     .turnin 9629 >> Turn in Catch and Release << !Warrior !Paladin
+.target Morae
     .accept 9574 >> Accept Victims of Corruption
 step
     #completewith next
@@ -626,32 +725,44 @@ step
     #requires bloodmushroom
     >> Return to town
     .goto Bloodmyst Isle,53.3,57.8
+>>Talk to |cFF00FF25Morae|r
     .turnin 9574 >> Turn in Victims of Corruption
+.target Morae
     .accept 9578 >> Accept Searching for Galaen
 step
     >> Talk to Vindicator Aalesia
     .goto Bloodmyst Isle,55.0,58.1
+.target Vindicator Aalesia
+>>Talk to |cFF00FF25Vindicator Aalesia|r
     .turnin 9594 >> Turn in Signs of the Legion
 	.isQuestComplete 9594
 step
     .goto Bloodmyst Isle,54.9,58.0
+.target Vindicator Aalesia
+>>Talk to |cFF00FF25Vindicator Aalesia|r
     .turnin 9567 >> Turn in Know Thine Enemy
 step << !Dwarf/!Hunter
     >> Speak to Vindicator Boros
     .goto Bloodmyst Isle,55.4,55.4
+>>Talk to |cFF00FF25Vindicator Boros|r
     .turnin 9693 >> Turn in What Argus Means to Me
+.target Vindicator Boros
     .accept 9694 >> Accept Blood Watch
 step
 	.goto Bloodmyst Isle,55.4,55.4
 	.itemcount 23984,10
+.target Vindicator Boros
+>>Talk to |cFF00FF25Vindicator Boros|r
 	.turnin 9641,3 >> Turn in Irradiated Crystal Shards << Warrior/Paladin/Hunter/Rogue/Shaman
     .turnin 9641,2 >> Turn in Irradiated Crystal Shards << Mage/Priest/Warlock
     .turnin 9641 >> Turn in Irradiated Crystal Shards << Druid
 step
     >> Head into the building on the hill
     .goto Bloodmyst Isle,52.6,53.3
+>>Talk to |cFF00FF25Harbinger Mikolaas|r
     .turnin 9581,2 >> Turn in Learning from the Crystals << Warrior/Paladin
     .turnin 9581 >> Turn in Learning from the Crystals << !Warrior !Paladin
+.target Harbinger Mikolaas
     .accept 9620 >> Accept The Missing Survey Team
 step << !Dwarf/!Hunter
     >> Kill blood elves in the area. Try to end on the south side, we're going back to town after.
@@ -659,9 +770,11 @@ step << !Dwarf/!Hunter
     .complete 9694,1 --Kill Sunhawk Spy (x10)
 step << !Dwarf/!Hunter
     >> Talk to Vindicator Boros
-    .goto Bloodmyst Isle,55.4,55.2
+    .goto Bloodmyst Isle,55.421,55.232
+>>Talk to |cFF00FF25Vindicator Boros|r
     .turnin 9694,3 >> Turn in Blood Watch << Hunter
     .turnin 9694 >> Turn in Blood Watch << !Hunter
+.target Vindicator Boros
     .accept 9779 >> Accept Intercepting the Message
 step
     .goto Bloodmyst Isle,47.7,46.6
@@ -670,7 +783,9 @@ step
 step
     >> Head east and talk to the corpse in the naga ruins
     .goto Bloodmyst Isle,61.3,48.6
+>>Talk to |cFF00FF25Draenei Cartographer|r
     .turnin 9620 >> Turn in The Missing Survey Team
+.target Draenei Cartographer
     .accept 9628 >> Accept Salvaging the Data
 step
 	#sticky
@@ -686,39 +801,53 @@ step
     #requires bluemushroom
     >> Cross the ocean to the island
     .goto Bloodmyst Isle,74.3,33.4
+.target Prince Toreth
+>>Talk to |cFF00FF25Prince Toreth|r
     .accept 9687 >> Accept Restoring Sanctity
-step
+step << !Rogue !Warlock
 	#sticky
 	#completewith next
 	.deathskip >> Die and respawn at Blood Watch
 step
     >> Talk to Maatparm
-    .goto Bloodmyst Isle,56.4,56.8
+    .goto Bloodmyst Isle,56.421,56.788
+>>Talk to |cFF00FF25Jessera of Mac'Aree|r
     .turnin 9648,3 >> Turn in Maatparm Mushroom Menagerie << Warrior/Paladin
     .turnin 9648 >> Turn in Maatparm Mushroom Menagerie << !Warrior !Paladin
+.target Jessera of Mac'Aree
     .accept 9649 >> Accept Ysera's Tears
 step
     .goto Bloodmyst Isle,55.4,55.4
     >> Talk to Vindicator Boros
+>>Talk to |cFF00FF25Vindicator Boros|r
     .turnin 9779 >> Turn in Intercepting the Message
+.target Vindicator Boros
     .accept 9696 >> Accept Translations...
 step << !Rogue !Warlock
     >> Speak with Elysia by the cage
     .goto Bloodmyst Isle,54.5,54.5
+>>Talk to |cFF00FF25Interrogator Elysia|r
     .turnin 9696 >> Turn in Translations...
+.target Interrogator Elysia
     .accept 9698 >> Accept Audience with the Prophet
 step << Rogue/Warlock
     >> Speak with Elysia by the cage
     .goto Bloodmyst Isle,54.5,54.5
+.target Interrogator Elysia
+>>Talk to |cFF00FF25Interrogator Elysia|r
     .turnin 9696 >> Turn in Translations...
 step
     >> Into the house up the hill
     .goto Bloodmyst Isle,52.6,53.3
+>>Talk to |cFF00FF25Harbinger Mikolaas|r
     .turnin 9628 >> Turn in Salvaging the Data
+.target Harbinger Mikolaas
     .accept 9584 >> Accept The Second Sample
 step
     >> Talk to the dwarf by the tree
     .goto Bloodmyst Isle,56.3,54.3
+.target Prospector Nachlan
+>>Talk to |cFF00FF25Prospector Nachlan|r
     .accept 10063 >> Accept Explorers' League, Is That Something for Gnomes?
 step << !Rogue !Warlock
 	.goto Bloodmyst Isle,57.9,53.5
@@ -727,7 +856,7 @@ step << !Rogue !Warlock
     #completewith audience
 	.goto The Exodar,75.0,54.8,80,0
 	.goto The Exodar,64.4,42.4,80,0
-    .goto The Exodar,56.9,50.2,100 >> Head into the Exodar
+    .goto The Exodar,57.008,50.065,100 >> Head into the Exodar
 step << Mage/Priest
     #completewith hs1
     .goto The Exodar,46.6,61.2
@@ -751,7 +880,7 @@ step << Hunter
 step << Warrior
 	.goto The Exodar,42,71.4,60,0
 	.goto The Exodar,54.5,85.6,60,0
-	.goto The Exodar,55.6,82.3
+	.goto The Exodar,55.579,82.269
 	.trainer >> Train spells in The Exodar
 step << Priest
     >> Enter The Exodar and train your spells
@@ -759,9 +888,11 @@ step << Priest
     .goto The Exodar,39.2,51.3
 step << !Rogue !Warlock
     #label audience
-    .goto The Exodar,32.8,54.4
+    .goto The Exodar,32.858,54.484
     >> Speak with Velen
+>>Talk to |cFF00FF25Prophet Velen|r
     .turnin 9698 >> Turn in Audience with the Prophet
+.target Prophet Velen
     .accept 9699 >> Accept Truth or Fiction
 step << Druid
     >>Teleport to Moonglade
@@ -773,15 +904,23 @@ step << !Warlock !Rogue
     .zoneskip Bloodmyst Isle
 step
     >> Talk to Vindicator Aalesia
+.target Vindicator Aalesia
+>>Talk to |cFF00FF25Vindicator Aalesia|r
     .accept 9569 >> Accept Containing the Threat
     .goto Bloodmyst Isle,55.0,58.0
+step << !Rogue !Warlock
     >> Talk to Boros
-    .turnin -9699 >> Turn in Truth or Fiction
+>>Talk to |cFF00FF25Vindicator Boros|r
+    .turnin 9699 >> Turn in Truth or Fiction
     .goto Bloodmyst Isle,55.4,55.4
+.target Vindicator Boros
     .accept 9700 >> Accept I Shoot Magic Into the Darkness
+    .isOnQuest 9699
 step
     .itemcount 23984,10
-    .goto Bloodmyst Isle,55.4,55.2
+    .goto Bloodmyst Isle,55.421,55.232
+.target Vindicator Boros
+>>Talk to |cFF00FF25Vindicator Boros|r
     .turnin 9642,3 >> Turn in More Irradiated Crystal Shards << Warrior/Paladin/Hunter/Rogue/Shaman
     .turnin 9642,2 >> Turn in More Irradiated Crystal Shards << Warlock/Priest/Mage
     .turnin 9642 >> Turn in More Irradiated Crystal Shards << Druid
@@ -804,7 +943,9 @@ step
     #label gnomeyboi
     .goto Bloodmyst Isle,42.0,21.2
     >> Talk to the gnome in the turtle shell
+>>Talk to |cFF00FF25Clopper Wizbang|r
     .turnin 10063 >> Turn in Explorers' League, Is That Something for Gnomes?
+.target Clopper Wizbang
     .accept 9548 >> Accept Pilfered Equipment
     .accept 9549 >> Accept Artifacts of the Blacksilt
 step
@@ -832,11 +973,13 @@ step
 step
     #requires crate
 	#label bloodmyst1
-    .goto Bloodmyst Isle,42.1,21.2
+    .goto Bloodmyst Isle,42.142,21.174
+.target Clopper Wizbang
+>>Talk to |cFF00FF25Clopper Wizbang|r
     .turnin 9548 >> Turn in Pilfered Equipment
     .turnin 9549 >> Turn in Artifacts of the Blacksilt
 step
-    .goto Bloodmyst Isle,42.1,21.2
+    .goto Bloodmyst Isle,42.142,21.174
 	>> Buy a Bronze Tube from Clopper Wizbang (limited supply), skip this step if he doesn't have it or if you already have one
 	.collect 4371,1,175,1,1
 	.bronzetube
@@ -861,11 +1004,13 @@ step
     .goto Bloodmyst Isle,53.1,20.3
 	>>Get close to the spaceship like building
 	.complete 9700,1 --Sun Portal Site Confirmed (1)
+    .isOnQuest 9700
 step
     #label gnome
     .goto Bloodmyst Isle,52.5,25.2
 	>>Kill the Void Anomalies in the area
     .complete 9700,2 --Kill Void Anomaly (x5)
+    .isOnQuest 9700
 step
     #requires SunPortalSite
     #label vinesdoneboss
@@ -892,28 +1037,42 @@ step
     >> Talk to the book in the ruins
     .turnin 9550 >> Turn in A Map to Where?
     .accept 9557 >> Accept Deciphering the Book
-step
+step << wotlk
+    #completewith next
     .hs >> Hearth or run back into town and talk to Anchorite Paetheus. Don't wait for his roleplay sequence.
+step
     .goto Bloodmyst Isle,54.7,54.1
+.target Anchorite Paetheus
+>>Talk to |cFF00FF25Anchorite Paetheus|r
     .turnin 9557 >> Turn in Deciphering the Book
 step
     >> Head into the building up the hill
     .goto Bloodmyst Isle,52.6,53.3
+>>Talk to |cFF00FF25Harbinger Mikolaas|r
     .turnin 9584 >> Turn in The Second Sample
+.target Harbinger Mikolaas
     .accept 9585 >> Accept The Final Sample
     .accept 10064 >> Accept Talk to the Hand
 step
     >> Return to the Anchorite
     .goto Bloodmyst Isle,54.7,54.0
+.target Anchorite Paetheus
+>>Talk to |cFF00FF25Anchorite Paetheus|r
     .accept 9561 >> Accept Nolkai's Words
-step
-    .goto Bloodmyst Isle,55.4,55.2
+step << !Rogue !Warlock
+    .goto Bloodmyst Isle,55.421,55.232
+.target Vindicator Boros
+>>Talk to |cFF00FF25Vindicator Boros|r
     .turnin 9700,3 >> Turn in I Shoot Magic Into the Darkness << Warrior/Paladin
     .turnin 9700 >> Turn in I Shoot Magic Into the Darkness << !Warrior !Paladin
+.target Vindicator Kuros
+>>Talk to |cFF00FF25Vindicator Kuros|r
     .accept 9703 >> Accept The Cryo-Core
 step
     .itemcount 23984,10
-    .goto Bloodmyst Isle,55.4,55.2
+    .goto Bloodmyst Isle,55.421,55.232
+.target Vindicator Boros
+>>Talk to |cFF00FF25Vindicator Boros|r
     .turnin 9642,3 >> Turn in More Irradiated Crystal Shards << Warrior/Paladin/Hunter/Rogue/Shaman
     .turnin 9642,2 >> Turn in More Irradiated Crystal Shards << Warlock/Priest/Mage
     .turnin 9642 >> Turn in More Irradiated Crystal Shards << Druid
@@ -921,11 +1080,15 @@ step
 	#label flutterers
     >> Speak to Tracker Lyceon
     .goto Bloodmyst Isle,55.9,56.9
+>>Talk to |cFF00FF25Tracker Lyceon|r
     .turnin 9643 >> Turn in Constrictor Vines
+.target Tracker Lyceon
     .accept 9647 >> Accept Culling the Flutterers
 step
 	.goto Bloodmyst Isle,55.9,56.9
 	.isQuestComplete 9580
+.target Tracker Lyceon
+>>Talk to |cFF00FF25Tracker Lyceon|r
 	.turnin 9580 >> Turn in The Bear Neccessities
 step
 	#requires flutterers
@@ -936,10 +1099,12 @@ step
 step
     .goto Bloodmyst Isle,37.5,61.3
     >> Prioritize turning in the quest, don't grind elves yet.
+>>Talk to |cFF00FF25Galaen's Corpse|r
     .turnin 9578 >> Turn in Searching for Galaen
+.target Galaen's Corpse
     .accept 9579 >> Accept Galaen's Fate
     .accept 9706 >> Accept Galaen's Journal - The Fate of Vindicator Saruan
-step
+step << !Rogue !Warlock
     .goto Bloodmyst Isle,37.8,58.9
 	>>Kill and loot blood elves around this area
     .complete 9579,1 --Collect Galaen's Amulet (x1)
@@ -948,10 +1113,14 @@ step
     .isQuestComplete 9579
     >> Return to town
     .goto Bloodmyst Isle,53.3,57.7
+.target Morae
+>>Talk to |cFF00FF25Morae|r
     .turnin 9579 >> Turn in Galaen's Fate
 step
     >> Talk to Achelus
     .goto Bloodmyst Isle,53.3,57.2
+.target Achelus
+>>Talk to |cFF00FF25Achelus|r
     .accept 9669 >> Accept The Missing Expedition
 step
     #completewith next
@@ -960,11 +1129,15 @@ step
 step
     >> Talk to Vindicator Kuros
     .goto Bloodmyst Isle,55.6,55.1
-    .turnin 9703,1 >> Turn in The Cryo-Core << Paladin
-    .turnin 9703 >> Turn in The Cryo-Core << !Paladin
+>>Talk to |cFF00FF25Vindicator Kuros|r
+    .turnin 9703,1 >> Turn in The Cryo-Core << Paladin !Rogue !Warlock
+    .turnin 9703 >> Turn in The Cryo-Core << !Paladin !Rogue !Warlock
     .turnin 9706 >> Turn in Galaen's Journal - The Fate of Vindicator Saruan
+.target Vindicator Kuros
     .accept 9711 >> Accept Matis the Cruel
-    .accept 9748 >> Accept Don't Drink the Water
+.target Vindicator Aesom
+>>Talk to |cFF00FF25Vindicator Aesom|r
+    .accept 9748 >> Accept Don't Drink the Water << !Rogue !Warlock
 step
 	#sticky
 	#completewith bearend
@@ -997,13 +1170,25 @@ step
 step
     .goto Bloodmyst Isle,30.3,45.8
     >> Talk to the Scouts at Vindicator's Rest
+>>Talk to |cFF00FF25Scout Jorli|r
     .turnin 10064 >> Turn in Talk to the Hand
+.target Scout Jorli
     .accept 10065 >> Accept Cutting a Path
+.target Scout Loryi
+>>Talk to |cFF00FF25Scout Loryi|r
     .accept 9741 >> Accept Critters of the Void
 step
     >> Talk to Vindicator Corin
     .goto Bloodmyst Isle,30.8,46.8
+.target Defender Sorli
+.target Defender Adrielle
+.target Vindicator Corin
+>>Talk to |cFF00FF25Vindicator Corin|r
+-->>Talk to |cFF00FF25Defender Adrielle|r
+-->>Talk to |cFF00FF25Defender Sorli|r
     .accept 10066 >> Accept Oh, the Tangled Webs They Weave
+--
+--
     .accept 10067 >> Accept Fouled Water Spirits
 step
     #sticky
@@ -1027,8 +1212,12 @@ step
     #requires ravager4
 	#label bloodmyst2
     >> Return to Vindicator's Rest
+.target Vindicator Corin
+>>Talk to |cFF00FF25Vindicator Corin|r
     .turnin 10066 >> Turn in Oh, the Tangled Webs They Weave
     .goto Bloodmyst Isle,30.7,46.9
+.target Scout Jorli
+>>Talk to |cFF00FF25Scout Jorli|r
     .turnin 10065 >> Turn in Cutting a Path
     .goto Bloodmyst Isle,30.3,46.0
 step
@@ -1041,12 +1230,16 @@ step
 	>>Kill the Fouled Water Spirits in the area
     .complete 10067,1 --Kill Fouled Water Spirit (x6)
 step
-    .goto Bloodmyst Isle,30.7,46.8
+    .goto Bloodmyst Isle,30.746,46.808
     >> Quickly go back and turn in the quest
+.target Vindicator Corin
+>>Talk to |cFF00FF25Vindicator Corin|r
     .turnin 10067 >> Turn in Fouled Water Spirits
 step
-    .goto Bloodmyst Isle,24.9,34.3
+    .goto Bloodmyst Isle,24.872,34.310
     >> Head back north past the water elementals and talk to Researcher Cornelius
+.target Researcher Cornelius
+>>Talk to |cFF00FF25Researcher Cornelius|r
     .accept 9670 >> Accept They're Alive! Maybe...
 step
 	#sticky
@@ -1067,6 +1260,8 @@ step
 	#label AliveM
     >> Return to the Researcher
     .goto Bloodmyst Isle,24.9,34.4
+.target Researcher Cornelius
+>>Talk to |cFF00FF25Researcher Cornelius|r
     .turnin 9670 >> Turn in They're Alive! Maybe...
 step
     .goto Bloodmyst Isle,43.9,43.7,70,0
@@ -1082,7 +1277,7 @@ step
 	*Once you find him, use the flare in your bags to summon a Draenei NPC to assist you
 	*The flare gun only have 1 charge, if you fail this quest, you will have to abandon it
 	.unitscan Matis the Cruel
-step
+step << !Rogue !Warlock
     .goto Bloodmyst Isle,34.3,33.6
 	.use 24318 >>Use the Sampling Vial in your bags at the base of the waterfall
     .complete 9748,1 --Collect Bloodmyst Water Sample (x1)
@@ -1097,13 +1292,17 @@ step << Druid
     >>Teleport to Moonglade
     .fly Teldrassil>> Fly to Teldrassil
 step << Druid
-    .goto Darnassus,35.3,8.5
+    .goto Darnassus,35.375,8.405
+.target Mathrengyl Bearwalker
+>>Talk to |cFF00FF25Mathrengyl Bearwalker|r
     .accept 26 >> Accept A Lesson to Learn << tbc
     .accept 6121 >> Accept Lessons Anew
 step << Druid
     .goto Moonglade,56.1,30.7
     >>Teleport to Moonglade
+>>Talk to |cFF00FF25Dendrite Starblaze|r
     .turnin 6121 >> Turn in Lessons Anew
+.target Dendrite Starblaze
     .accept 6122 >> Accept The Principal Source
     .turnin 26 >> Turn in A Lesson to Learn << tbc
     .accept 29 >> Accept Trial of the Lake << tbc
@@ -1112,8 +1311,10 @@ step << Druid tbc
     >>Dive into the lake and look for a Shrine Bauble, it looks like a small red jar
     .complete 29,1 --Complete the Trial of the Lake.
 step << Druid tbc
-    .goto Moonglade,36.5,40.1
+    .goto Moonglade,36.517,40.104
+>>Talk to |cFF00FF25Tajarri|r
     .turnin 29 >> Turn in Trial of the Lake
+.target Tajarri
     .accept 272 >> Accept Trial of the Sea Lion
 step
 	#completewith next
@@ -1121,12 +1322,16 @@ step
 step
     .goto Bloodmyst Isle,55.0,58.1
     >> Talk to Vindicator Aalesia
+.target Vindicator Aalesia
+>>Talk to |cFF00FF25Vindicator Aalesia|r
     .turnin 9569,1 >> Turn in Containing the Threat << Hunter
     .turnin 9569,2 >> Turn in Containing the Threat << Warlock/Mage/Priest
     .turnin 9569 >> Turn in Containing the Threat << !Warlock !Hunter !Mage !Priest
 step
     >> Talk to Achelus
     .goto Bloodmyst Isle,53.4,57.1
+.target Achelus
+>>Talk to |cFF00FF25Achelus|r
     .turnin 9669 >> Turn in The Missing Expedition
 step
     #completewith next
@@ -1134,23 +1339,33 @@ step
 step
     >> Go into the building up the hill
     .goto Bloodmyst Isle,52.7,53.3
+.target Harbinger Mikolaas
+>>Talk to |cFF00FF25Harbinger Mikolaas|r
     .turnin 9585 >> Turn in The Final Sample
     .turnin 9646 >> Turn in WANTED: Deathclaw
 step
     >> Talk to Anchorite Paetheus
     .goto Bloodmyst Isle,54.7,54.1
+.target Anchorite Paetheus
+>>Talk to |cFF00FF25Anchorite Paetheus|r
     .accept 9632 >> Accept Newfound Allies
 step
 	>> Talk to the Vindicators
     .goto Bloodmyst Isle,55.6,55.3
+.target Vindicator Aesom
+>>Talk to |cFF00FF25Vindicator Aesom|r
     .turnin 9741 >> Turn in Critters of the Void
-    .turnin 9748 >> Turn in Don't Drink the Water
+    .turnin 9748 >> Turn in Don't Drink the Water << !Rogue !Warlock
+.target Vindicator Kuros
+>>Talk to |cFF00FF25Vindicator Kuros|r
     .turnin 9711,3 >> Turn in Matis the Cruel << Warrior/Paladin
     .turnin 9711 >> Turn in Matis the Cruel << !Warrior !Paladin
 	.trainer >>Train class spells at Vindicator Aesom. << Paladin
 step
     .itemcount 23984,10
-    .goto Bloodmyst Isle,55.4,55.2
+    .goto Bloodmyst Isle,55.421,55.232
+.target Vindicator Boros
+>>Talk to |cFF00FF25Vindicator Boros|r
     .turnin 9642,3 >> Turn in More Irradiated Crystal Shards << Warrior/Paladin/Hunter/Rogue/Shaman
     .turnin 9642,2 >> Turn in More Irradiated Crystal Shards << Warlock/Priest/Mage
     .turnin 9642 >> Turn in More Irradiated Crystal Shards << Druid
@@ -1158,6 +1373,8 @@ step
 	#label bearend
     >> Talk to Tracker Lyceon
     .goto Bloodmyst Isle,55.9,56.9
+.target Tracker Lyceon
+>>Talk to |cFF00FF25Tracker Lyceon|r
     .turnin 9647,3 >> Turn in Culling the Flutterers << Warrior/Paladin
     .turnin 9647 >> Turn in Culling the Flutterers << !Warrior !Paladin
     .turnin 9580 >> Turn in The Bear Necessities
@@ -1172,7 +1389,9 @@ step
 step
     >> Swim to the island
     .goto Bloodmyst Isle,74.6,33.6
+>>Talk to |cFF00FF25Prince Toreth|r
     .turnin 9687 >> Turn in Restoring Sanctity
+.target Prince Toreth
     .accept 9688 >> Accept Into the Dream
 step
 	#sticky
@@ -1187,7 +1406,9 @@ step
 step
     >> Return to the Prince
     .goto Bloodmyst Isle,74.3,33.4
+>>Talk to |cFF00FF25Prince Toreth|r
     .turnin 9688 >> Turn in Into the Dream
+.target Prince Toreth
     .accept 9689 >> Accept Razormaw
 step
     .goto Bloodmyst Isle,73.0,21.0
@@ -1198,6 +1419,8 @@ step
 step
     >> Return to the Prince
     .goto Bloodmyst Isle,74.3,33.4
+.target Prince Toreth
+>>Talk to |cFF00FF25Prince Toreth|r
     .turnin 9689,2 >> Turn in Razormaw << Warrior/Paladin
     .turnin 9689,3 >> Turn in Razormaw << Rogue/Hunter
     .turnin 9689,1 >> Turn in Razormaw << Mage/Warlock/Priest
@@ -1217,10 +1440,14 @@ step
     .deathskip >> Die and respawn at Blood Watch
 step
     .goto Bloodmyst Isle,56.4,56.7
+.target Jessera of Mac'Aree
+>>Talk to |cFF00FF25Jessera of Mac'Aree|r
     .turnin 9649 >> Turn in Ysera's Tears
 step
     .itemcount 23984,10
-    .goto Bloodmyst Isle,55.4,55.2
+    .goto Bloodmyst Isle,55.421,55.232
+.target Vindicator Boros
+>>Talk to |cFF00FF25Vindicator Boros|r
     .turnin 9642,3 >> Turn in More Irradiated Crystal Shards << Warrior/Paladin/Hunter/Rogue/Shaman
     .turnin 9642,2 >> Turn in More Irradiated Crystal Shards << Warlock/Priest/Mage
     .turnin 9642 >> Turn in More Irradiated Crystal Shards << Druid
@@ -1256,7 +1483,7 @@ step << Hunter
 step << Warrior
 	.goto The Exodar,42,71.4,60,0
 	.goto The Exodar,54.5,85.6,60,0
-	.goto The Exodar,55.6,82.3
+	.goto The Exodar,55.579,82.269
 	.trainer >> Train spells in The Exodar
 step << Priest
     >> Enter The Exodar and buy a Burning Wand from the vendor
@@ -1265,9 +1492,11 @@ step << Priest
     .trainer >> Train your class spells
     .goto The Exodar,39.2,51.3
 step
-    .goto Azuremyst Isle,24.2,54.3
+    .goto Azuremyst Isle,24.182,54.346
 	>>Talk to the Night Elf just outside of The Exodar back entrance
+>>Talk to |cFF00FF25Huntress Kella Nightbow|r
     .turnin 9632 >> Turn in Newfound Allies
+.target Huntress Kella Nightbow
     .accept 9633 >> Accept The Way to Auberdine
 step << Druid
     .goto Azuremyst Isle,24.45,54.56
@@ -1282,7 +1511,7 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
-<< Alliance !Warlock
+<< Alliance !Warlock/Alliance wotlk
 #name 20-21 Darkshore
 #version 1
 #group RestedXP Alliance 20-32
@@ -1298,10 +1527,33 @@ step << NightElf wotlk
     .goto Teldrassil,58.4,98.02
     .fly Auberdine >> Fly to Auberdine
     .zoneskip Darnassus,1
+step << wotlk Warlock
+    #completewith next
+    .goto Darkshore,32.4,43.8
+    .zone Stormwind City >>Take the boat to Stormwind
+step << Warlock wotlk
+    .goto StormwindNew,36.35,67.49
+.target Argos Nightwhisper
+>>Talk to |cFF00FF25Argos Nightwhisper|r
+    .accept 3765>>Accept The Corruption Abroad
+step << Warlock wotlk
+    .goto StormwindClassic,25.3,78.7
+	.trainer >> Train your class spells
+step << Warlock wotlk
+    .goto StormwindClassic,25.2,78.5
+.target Gakin the Darkbinder
+>>Talk to |cFF00FF25Gakin the Darkbinder|r
+    .accept 1716 >> Accept Devourer of Souls
+step << wotlk Warlock
+    .goto StormwindNew,21.8,56.2,20,0
+    .goto StormwindNew,21.8,56.2,0
+    .zone Darkshore >> Head to the Stormwind Harbor and take the boat to Darkshore
 step
 #xprate <1.5
     .maxlevel 21
-    .goto Darkshore,36.1,44.9
+    .goto Darkshore,36.096,44.931
+.target Gubber Blump
+>>Talk to |cFF00FF25Gubber Blump|r
     .accept 1138 >> Accept Fruit of the Sea
 step
     #xprate <1.2
@@ -1312,48 +1564,70 @@ step
 #xprate <1.5 << !Druid
     .maxlevel 21
     .goto Darkshore,37.3,43.7
+.target Barithras Moonshade
+>>Talk to |cFF00FF25Barithras Moonshade|r
     .accept 947 >> Accept Cave Mushrooms
 step
     #xprate <1.2
     >> Talk to the dwarf by the town hall
     .goto Darkshore,37.5,41.8
+.target Archaeologist Hollee
+>>Talk to |cFF00FF25Archaeologist Hollee|r
     .accept 729 >> Accept The Absent Minded Prospector
 step
 #xprate <1.5
     .maxlevel 21
     .isQuestComplete 4762
-    .goto Darkshore,37.4,40.1
+    .goto Darkshore,37.395,40.130
+.target Thundris Windweaver
+>>Talk to |cFF00FF25Thundris Windweaver|r
     .accept 4763 >> Accept The Blackwood Corrupted
 step
 #xprate >1.5
     .isOnQuest 9633
     .goto Darkshore,37.4,40.2
+>>Talk to |cFF00FF25Thundris Windweaver|r
     .turnin 9633 >> Turn in The Way to Auberdine
+.target Thundris Windweaver
     .accept 10752 >> Accept Onward to Ashenvale
 step
 #xprate <1.5
     .maxlevel 21
     .goto Darkshore,38.1,41.2
+.target Gorbold Steelhand
+>>Talk to |cFF00FF25Gorbold Steelhand|r
     .accept 982 >> Accept Deep Ocean, Vast Sea
+step
+    #completewith next
+    .goto Darkshore,38.37,43.05
+    .turnin -3765>>Turn in The Corruption Abroad
 step
     >> Talk to Gershala in the shrine
     .goto Darkshore,38.37,43.05
+.target Gershala Nightwhisper
+>>Talk to |cFF00FF25Gershala Nightwhisper|r
     .accept 1275 >> Accept Researching the Corruption
 step
 #xprate <1.5
     .maxlevel 21
     .goto Darkshore,38.8,43.5
+.target Tharnariun Treetender
+>>Talk to |cFF00FF25Tharnariun Treetender|r
     .accept 2139 >> Accept Tharnariun's Hope
 	.isQuestTurnedIn 2138
 step
 #xprate <1.5
     .goto Darkshore,39.3,43.5
+.target Terenthis
+>>Talk to |cFF00FF25Terenthis|r
     .accept 986 >> Accept A Lost Master
     .isQuestTurnedIn 985
 step
 #xprate <1.5 << !Druid
     .maxlevel 21
     .goto Darkshore,39.1,43.5
+.target Sentinel Elissa Starbreeze
+>>Talk to |cFF00FF25Sentinel Elissa Starbreeze|r
     .accept 965 >> Accept The Tower of Althalaxx
 step
 #xprate <1.5
@@ -1364,7 +1638,9 @@ step
 step
     .isOnQuest 9633
     .goto Darkshore,37.4,40.2
+>>Talk to |cFF00FF25Thundris Windweaver|r
 	.turnin 9633 >> Turn in The Way to Auberdine
+.target Thundris Windweaver
     .accept 10752 >> Accept Onward to Ashenvale
 step
 #xprate <1.5
@@ -1405,6 +1681,8 @@ step
 #xprate <1.5
 	>>Start heading north while grinding crabs along the coast
     .goto Darkshore,56.7,13.5
+.target Gelkak Gyromast
+>>Talk to |cFF00FF25Gelkak Gyromast|r
     .accept 2098 >> Accept Gyromast's Retrieval
 step
 #xprate <1.5
@@ -1441,7 +1719,9 @@ step
     #requires bottomkeyman
     .isOnQuest 2098
     .goto Darkshore,56.7,13.5
+>>Talk to |cFF00FF25Gelkak Gyromast|r
     .turnin 2098 >> Turn in Gyromast's Retrieval
+.target Gelkak Gyromast
     .accept 2078 >> Accept Gyromast's Revenge
 step
     #requires crabraveboys
@@ -1456,6 +1736,8 @@ step
 #xprate <1.5
     .isOnQuest 2078
     .goto Darkshore,56.7,13.5
+.target Gelkak Gyromast
+>>Talk to |cFF00FF25Gelkak Gyromast|r
     .turnin 2078 >> Turn in Gyromast's Revenge
 step << !Druid
 #xprate <1.5
@@ -1467,7 +1749,9 @@ step
 #xprate <1.5 << !Druid
     .isOnQuest 965
     .goto Darkshore,55.0,24.9
+>>Talk to |cFF00FF25Balthule Shadowstrike|r
     .turnin 965 >> Turn in The Tower of Althalaxx
+.target Balthule Shadowstrike
     .accept 966 >> Accept The Tower of Althalaxx
 step
 #xprate <1.5 << !Druid
@@ -1479,7 +1763,9 @@ step
 #xprate <1.5 << !Druid
     .isOnQuest 966
     .goto Darkshore,55.0,24.9
+>>Talk to |cFF00FF25Balthule Shadowstrike|r
     .turnin 966 >> Turn in The Tower of Althalaxx
+.target Balthule Shadowstrike
     .accept 967 >> Accept The Tower of Althalaxx
 step << Druid
     .goto Darkshore,55.0,33.4
@@ -1522,50 +1808,70 @@ step << Dwarf Hunter/Rogue
 	.deathskip >> Death skip to Auberdine
 step
 #xprate <1.5
-    .goto Darkshore,37.4,40.1
+    .goto Darkshore,37.395,40.130
+.target Thundris Windweaver
+>>Talk to |cFF00FF25Thundris Windweaver|r
     .turnin 4763 >> Turn in The Blackwood Corrupted
     .isOnQuest 4763
 step << Druid
     .goto Darkshore,37.7,40.7
+.target Alanndarian Nightsong
+>>Talk to |cFF00FF25Alanndarian Nightsong|r
     .turnin 6122 >> Turn in The Principal Source
 step
     .goto Darkshore,38.1,41.3
+.target Gorbold Steelhand
+>>Talk to |cFF00FF25Gorbold Steelhand|r
     .turnin 982 >> Turn in Deep Ocean, Vast Sea
     .isQuestComplete 982
 step
     .goto Darkshore,37.5,41.9
+.target Archaeologist Hollee
+>>Talk to |cFF00FF25Archaeologist Hollee|r
     .accept 729 >> Accept The Absent Minded Prospector
 step
 #xprate <1.5
     .goto Darkshore,38.8,43.4
+.target Tharnariun Treetender
+>>Talk to |cFF00FF25Tharnariun Treetender|r
     .turnin 2139 >> Turn in Tharnariun's Hope
     .isQuestComplete 2139
 step
 #xprate <1.5
     .goto Darkshore,39.3,43.4
+.target Terenthis
+>>Talk to |cFF00FF25Terenthis|r
     .turnin 986 >> Turn in A Lost Master
     .isQuestComplete 986
 step
 #xprate <1.5
 .goto Darkshore,39.3,43.4
+.target Terenthis
+>>Talk to |cFF00FF25Terenthis|r
     .accept 993 >> Accept A Lost Master
     .isQuestTurnedIn 986
 step
 #xprate <1.5 << !Druid
     .isOnQuest 947
     .goto Darkshore,37.4,43.7
+>>Talk to |cFF00FF25Barithras Moonshade|r
     .turnin 947 >> Turn in Cave Mushrooms
+.target Barithras Moonshade
     .accept 948 >> Accept Onu
 step
 #xprate <1.5 << !Druid
     .goto Darkshore,36.6,45.5
+.target Gwennyth Bly'Leggonde
+>>Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
     .turnin 4725 >> Turn in Beached Sea Turtle
     .turnin 4727 >> Turn in Beached Sea Turtle
     .isQuestTurnedIn 4681
 step
 #xprate <1.5
     .isQuestComplete 1138
-    .goto Darkshore,36.1,44.9
+    .goto Darkshore,36.096,44.931
+.target Gubber Blump
+>>Talk to |cFF00FF25Gubber Blump|r
     .turnin 1138 >> Turn in Fruit of the Sea
 step << Dwarf Hunter/!NightElf Rogue
     .goto Darkshore,33.1,39.9
@@ -1595,19 +1901,22 @@ step << Rogue
     .trainer >> Train your level 20 spells
 step << Dwarf Hunter/!NightElf Rogue
     .goto Darnassus,31.0,41.5,30,0
-    .goto Teldrassil,58.4,94.0
+    .goto Teldrassil,58.399,94.016
     >> Exit Darnassus through the purple portal
     .fp Rut'theran >> Get the Rut'theran Village flight path
 step << Dwarf Hunter/Rogue
-    .goto Teldrassil,58.4,94.0
+    .goto Teldrassil,58.399,94.016
     .fly Auberdine >>Fly back to Auberdine
 step
 #xprate <1.5 << !Druid
     .isOnQuest 948
     .goto Darkshore,43.5,76.2
+>>Talk to |cFF00FF25Onu|r
     .turnin 948 >> Turn in Onu
+.target Onu
     .accept 944 >> Accept The Master's Glaive
 step
+#xprate <1.2
     .isOnQuest 4740
    >>Clear the camp, but be careful as going next to the campfire will start an event spawning 3 waves of mobs. Be sure to run away from the campfire so you don't keep aggroing them and can eat/drink after each wave. Murkdeep nets so be careful
 	.goto Darkshore,36.6,76.6
@@ -1615,13 +1924,19 @@ step
 step
     .isOnQuest 729
     .goto Darkshore,35.7,83.7
+.target Prospector Remtravel
+>>Talk to |cFF00FF25Prospector Remtravel|r
     .turnin 729 >> Turn in The Absent Minded Prospector
 step
+#xprate <1.7
     .isQuestTurnedIn 729
     .goto Darkshore,35.7,83.7
     >>Start the escort quest
+.target Prospector Remtravel
+>>Talk to |cFF00FF25Prospector Remtravel|r
     .accept 731,1 >> Accept The Absent Minded Prospector
 step
+#xprate <1.7
     .isOnQuest 731
     .complete 731,1 --Escort Prospector Remtravel
 step
@@ -1641,8 +1956,11 @@ step
     #xprate <1.2
     .goto Darkshore,38.7,87.3
 	>>Talk to the dryad at the back of the camp. If she's not here someone else may be escorting here, skip this step if she's not around.
+.target Therylune
+>>Talk to |cFF00FF25Therylune|r
     .accept 945 >> Accept Therylune's Escape
 step
+#xprate <1.2
     #sticky
     #label escort
     .complete 945,1 --Escort Therylune
@@ -1654,15 +1972,22 @@ step
     >>Click on the tome on top of the pedestal
     .turnin 949 >> Turn in The Twilight Camp
 step
+#xprate <1.5
     #requires escort
     .isOnQuest 993
-    .goto Darkshore,45.0,85.3
+    .goto Darkshore,45.008,85.303
+.target Volcor
+>>Talk to |cFF00FF25Volcor|r
     .turnin 993 >> Turn in A Lost Master
 step
-    .goto Darkshore,45.0,85.3
+#xprate <1.5
+    .goto Darkshore,45.008,85.303
+.target Volcor
+>>Talk to |cFF00FF25Volcor|r
     .accept 994,1 >> Accept Escape Through Force
     .isQuestTurnedIn 986
 step
+#xprate <1.5
 	#label end
     >> Lead Volcor to the road
     .complete 994,1 --Escort Volcor
@@ -1672,7 +1997,7 @@ step
 RXPGuides.RegisterGuide([[
 #tbc
 #wotlk
-<< Alliance !Warlock
+<< Alliance !Warlock/Alliance wotlk
 #name 21-23 Ashenvale
 #version 1
 #group RestedXP Alliance 20-32
@@ -1681,16 +2006,22 @@ RXPGuides.RegisterGuide([[
 step
 #xprate <1.5 << !Druid
     .goto Ashenvale,26.2,38.6
+.target Delgren the Purifier
+>>Talk to |cFF00FF25Delgren the Purifier|r
     .turnin 967 >> Turn in The Tower of Althalaxx
     .isOnQuest 967
 step
 #xprate <1.5
     .isQuestTurnedIn 967
     .goto Ashenvale,26.2,38.6
+.target Delgren the Purifier
+>>Talk to |cFF00FF25Delgren the Purifier|r
     .accept 970 >> Accept The Tower of Althalaxx
     .maxlevel 21
 step
     .goto Ashenvale,26.4,38.6
+.target Orendil Broadleaf
+>>Talk to |cFF00FF25Orendil Broadleaf|r
     .accept 1010 >> Accept Bathran's Hair
 step
     .goto Ashenvale,31.3,23.2
@@ -1705,38 +2036,55 @@ step
     .maxlevel 21
 step
     .goto Ashenvale,26.4,38.6
+>>Talk to |cFF00FF25Orendil Broadleaf|r
     .turnin 1010 >> Turn in Bathran's Hair
+.target Orendil Broadleaf
     .accept 1020 >> Accept Orendil's Cure
 step
 #xprate <1.5
     .isQuestComplete 970
     .goto Ashenvale,26.2,38.6
+.target Delgren the Purifier
+>>Talk to |cFF00FF25Delgren the Purifier|r
     .turnin 970 >> Turn in The Tower of Althalaxx
 step
     #xprate <1.5
     .isQuestTurnedIn 970
     .goto Ashenvale,26.2,38.6
+.target Delgren the Purifier
+>>Talk to |cFF00FF25Delgren the Purifier|r
     .accept 973 >> Accept The Tower of Althalaxx
 step
     .goto Ashenvale,34.40,48.00
     .fp Astranaar>> Get the Astranaar Flight Path
 step
     .goto Ashenvale,34.7,48.8
+.target Shindrell Swiftfire
+>>Talk to |cFF00FF25Shindrell Swiftfire|r
     .accept 1008 >> Accept The Zoram Strand
 step
-    .goto Ashenvale,36.6,49.6
+    .goto Ashenvale,36.618,49.581
+.target Raene Wolfrunner
+>>Talk to |cFF00FF25Raene Wolfrunner|r
     .accept 1054 >> Accept Culling the Threat
     .turnin 10752 >> Turn in Onward to Ashenvale
-    .accept 991 >> Accept Raene's Cleansing
 step
+#xprate <1.7
+    .goto Ashenvale,36.618,49.581
+.target Raene Wolfrunner
+>>Talk to |cFF00FF25Raene Wolfrunner|r
+    .accept 991 >> Accept Raene's Cleansing
+step << wotlk
     .goto Ashenvale,37.0,49.3
     .home >> Set your Hearthstone to Astranaar
 step
     #timer Orendil's Cure roleplay
     .goto Ashenvale,37.3,51.8
     >> Wait for the roleplay, it takes 26 seconds.
+>>Talk to |cFF00FF25Pelturas Whitemoon|r
     .turnin 1020 >> Turn in Orendil's Cure
     .timer 26,Orendil's Cure roleplay
+.target Pelturas Whitemoon
     .accept 1033 >> Accept Elune's Tear
 step
     .goto Ashenvale,46.2,45.9
@@ -1748,13 +2096,17 @@ step
 	.unitscan Dal Bloodclaw
     .complete 1054,1 --Collect Dal Bloodclaw's Skull (x1)
 step
-    .goto Ashenvale,36.6,49.6
+    .goto Ashenvale,36.618,49.581
+.target Raene Wolfrunner
+>>Talk to |cFF00FF25Raene Wolfrunner|r
     .turnin 1054 >> Turn in Culling the Threat
 step
     .goto Ashenvale,37.3,51.8
     >> Wait for the roleplay, it takes 10 seconds
+>>Talk to |cFF00FF25Pelturas Whitemoon|r
     .turnin 1033 >> Turn in Elune's Tear
     .timer 10,Elune's tear roleplay
+.target Pelturas Whitemoon
     .accept 1034 >> Accept The Ruins of Stardust
 step
     .goto Ashenvale,33.3,67.4
@@ -1769,6 +2121,8 @@ step
 step
     .goto Ashenvale,22.7,51.9
     >> Run up and over the mountains then turn in Therylune's Escape
+.target Therysil
+>>Talk to |cFF00FF25Therysil|r
     .turnin 945 >> Turn in Therylune's Escape
     .isQuestComplete 945
 step
@@ -1777,18 +2131,26 @@ step
 step
 #xprate <1.5
     .isOnQuest 973
-    .goto Ashenvale,26.2,38.7
+    .goto Ashenvale,26.196,38.698
+.target Delgren the Purifier
+>>Talk to |cFF00FF25Delgren the Purifier|r
     .turnin 973 >> Turn in The Tower of Althalaxx
-step <<  NightElf Hunter wotlk/NightElf Rogue wotlk
+step
+#xprate <1.7
     .goto Ashenvale,20.3,42.4
+>>Talk to |cFF00FF25Teronis' Corpse|r
     .turnin 991 >> Turn in Raene's Cleansing
+.target Teronis' Corpse
     .accept 1023 >> Accept Raene's Cleansing
-step << Hunter wotlk/NightElf Rogue wotlk
+step
+#xprate <1.7
     .goto Ashenvale,20.3,42.4
 	>> Kill murlocs for the gem, the drop rate can be very low.
     .complete 1023,1 --Collect Glowing Gem (x1)
 step
     .goto Ashenvale,14.7,31.3
+.target Talen
+>>Talk to |cFF00FF25Talen|r
     .accept 1007 >> Accept The Ancient Statuette
 step
     #label nagas
@@ -1801,10 +2163,12 @@ step
 	>> Head to the Ancient Statuette and loot it off the ground. Kill naga en route but don't go out of your way for them, you have plenty of chances for heads.
     .complete 1007,1 --Collect Ancient Statuette (x1)
 step
-    .goto Ashenvale,14.8,31.3
+    .goto Ashenvale,14.790,31.294
 	>> Kill naga en route but don't go out of your way for them.
+>>Talk to |cFF00FF25Talen|r
     .turnin 1007 >> Turn in The Ancient Statuette
     .timer 25,The Ancient Statuette RP
+.target Talen
     .accept 1009 >> Accept Ruuzel
 step
     .goto Ashenvale,7.0,13.4
@@ -1822,41 +2186,40 @@ step
     .complete 1275,1
 step
     #requires nagas
-    .goto Ashenvale,14.8,31.3
+    .goto Ashenvale,14.790,31.294
+.target Talen
+>>Talk to |cFF00FF25Talen|r
     .turnin 1009 >> Turn in Ruuzel
 step << Druid
     #completewith next
     >>Teleport to Moonglade
     .goto Moonglade,52.4,40.6
     .trainer >> Train your spells
-step << wotlk Hunter/wotlk NightElf Rogue
-    .goto Ashenvale,36.6,49.6
-    .hs >> Hearth to Astranaar
-step << !Hunter !NightElf !Rogue tbc
-    .goto Ashenvale,20.3,42.4
-    .turnin 991 >> Turn in Raene's Cleansing
-    .accept 1023 >> Accept Raene's Cleansing
-step << !Hunter !NightElf !Rogue tbc
-    .goto Ashenvale,20.3,42.4
-	>> Kill murlocs for the gem, the drop rate is very low.
-    .complete 1023,1 --Collect Glowing Gem (x1)
-step << !Hunter !NightElf !Rogue tbc
-    #sticky
-    #completewith next
-    .deathskip >>Head to the east side of the lake, die on purpose and respawn at Astranaar
 step
+    .goto Ashenvale,36.618,49.581
+    .hs >> Hearth to Astranaar
+step
+#xprate <1.7
     .isOnQuest 1023
-    .goto Ashenvale,36.6,49.6
+    .goto Ashenvale,36.618,49.581
+.target Raene Wolfrunner
+>>Talk to |cFF00FF25Raene Wolfrunner|r
     .turnin 1023 >> Turn in Raene's Cleansing
 step
 #xprate <1.2
-    .goto Ashenvale,36.6,49.6
+    .goto Ashenvale,36.618,49.581
+.target Raene Wolfrunner
+>>Talk to |cFF00FF25Raene Wolfrunner|r
     .accept 1025 >> Accept An Aggressive Defense
 step
     .goto Ashenvale,37.3,51.8
+.target Pelturas Whitemoon
+>>Talk to |cFF00FF25Pelturas Whitemoon|r
     .turnin 1034 >> Turn in The Ruins of Stardust
 step
     .goto Ashenvale,34.7,48.9
+.target Shindrell Swiftfire
+>>Talk to |cFF00FF25Shindrell Swiftfire|r
     .turnin 1008 >> Turn in The Zoram Strand
 step
 #xprate <1.2
@@ -1870,7 +2233,9 @@ step
     .complete 1025,4 --Kill Foulweald Warrior (x12)
 step
 #xprate <1.2
-    .goto Ashenvale,49.8,67.2
+    .goto Ashenvale,49.796,67.211
+.target Sentinel Velene Starstrike
+>>Talk to |cFF00FF25Sentinel Velene Starstrike|r
     .accept 1016 >> Accept Elemental Bracers
 step
 #xprate <1.2
@@ -1879,35 +2244,44 @@ step
     .complete 1016,1 --Collect Divined Scroll (x1)
 step
 #xprate <1.2
-    .goto Ashenvale,49.8,67.2
+    .goto Ashenvale,49.796,67.211
+.target Sentinel Velene Starstrike
+>>Talk to |cFF00FF25Sentinel Velene Starstrike|r
     .turnin 1016 >> Turn in Elemental Bracers
 step
 #xprate <1.2
-    .goto Ashenvale,36.6,49.6
+    .goto Ashenvale,36.618,49.581
+.target Raene Wolfrunner
+>>Talk to |cFF00FF25Raene Wolfrunner|r
     .turnin 1025 >> Turn in An Aggressive Defense
     .isQuestComplete 1025
 step
-    .goto Ashenvale,34.7,48.9
-    .turnin 1008 >> Turn in The Zoram Strand
-step
     .goto Ashenvale,34.40,48.00
-    .fp Astranaar>> Get the Astranaar Flight Path
     .fly Auberdine>> Fly to Auberdine
 step
-    .isOnQuest 4740
-    .goto Darkshore,37.7,43.4
+    .isQuestComplete 4740
+    .goto Darkshore,37.706,43.390
+.target Sentinel Glynda Nal'Shea
+>>Talk to |cFF00FF25Sentinel Glynda Nal'Shea|r
     .turnin 4740 >> Turn in WANTED: Murkdeep!
 step
     .goto Darkshore,38.36,43.07
+.target Gershala Nightwhisper
+>>Talk to |cFF00FF25Gershala Nightwhisper|r
     .turnin 1275 >> Turn in Researching the Corruption
+    .isQuestComplete 1275
 step
     .isOnQuest 994
     .goto Darkshore,39.3,43.4
+.target Terenthis
+>>Talk to |cFF00FF25Terenthis|r
     .turnin 994 >> Turn in Escape Through Force
 step
     .isOnQuest 731
     .goto Darkshore,37.5,41.9
+>>Talk to |cFF00FF25Archaeologist Hollee|r
     .turnin 731 >> Turn in The Absent Minded Prospector
+.target Archaeologist Hollee
 	.accept 741 >> Accept The Absent Minded Prospector << !Hunter !NightElf !Rogue/NightElf wotlk
 step << !Hunter !NightElf !Rogue
     .goto Darkshore,33.1,39.9
@@ -1918,9 +2292,11 @@ step << NightElf wotlk
     .goto Darkshore,36.3,45.6
     .fly Teldrassil >> Fly to Teldrassil
 step << !Hunter !NightElf !Rogue/NightElf wotlk
-	.goto Teldrassil,23.7,64.5
+	.goto Teldrassil,23.703,64.511
     .isOnQuest 741
+>>Talk to |cFF00FF25Chief Archaeologist Greywhisker|r
 	.turnin 741 >> Turn in The Absent Minded Prospector
+.target Chief Archaeologist Greywhisker
 	.accept 942 >> Accept The Absent Minded Prospector
 step << NightElf wotlk
     .goto Darnassus,38.6,15.6
@@ -1930,6 +2306,7 @@ step << NightElf wotlk
 step << Priest
     .goto Teldrassil,37.89,82.73
     .trainer >> Train your class spells
+    .isOnQuest 942
 step << Warrior tbc/Mage/Priest/Warlock
     .isOnQuest 942
 	.goto Teldrassil,29.2,56.7
@@ -1937,12 +2314,12 @@ step << Warrior tbc/Mage/Priest/Warlock
 step << !Hunter !NightElf !Rogue
     .isOnQuest 942
     .goto Darnassus,31.0,41.5,30,0
-    .goto Teldrassil,58.4,94.0
+    .goto Teldrassil,58.399,94.016
     >> Exit Darnassus through the purple portal
     .fp Rut'theran >> Get the Rut'theran Village flight path
 step << !Hunter !NightElf !Rogue
     .isOnQuest 942
-    .goto Teldrassil,58.4,94.0
+    .goto Teldrassil,58.399,94.016
     .fly Auberdine >>Fly back to Auberdine
 step << Draenei !Paladin wotlk
     .goto Darkshore,30.8,41.0,40,0
@@ -1976,7 +2353,7 @@ step << Draenei tbc/NightElf tbc
    .zoneskip Stormwind City
 step << NightElf tbc/Draenei tbc
 #xprate >1.499
-    .goto Loch Modan,33.9,50.9
+    .goto Loch Modan,33.938,50.954
     .fp Thelsamar >> Get the Thelsamar flight path
     .zoneskip Elwynn Forest
     .zoneskip Stormwind City
@@ -2004,13 +2381,12 @@ step << wotlk
 
 RXPGuides.RegisterGuide([[
 #tbc
-#wotlk
 << Alliance Warlock
 #name 20-23 Darkshore/Ashenvale
 #version 1
 #group RestedXP Alliance 20-32
 #next 23-24 Wetlands;24-27 Redridge/Duskwood
-step
+step << tbc
     .goto Darkshore,37.0,44.1
     .home >> Set your Hearthstone to Auberdine
 step << wotlk
@@ -2027,15 +2403,24 @@ step << tbc
     .fly Stormwind>> Fly to Stormwind
 step << Warlock wotlk
     .goto StormwindNew,36.35,67.49
+.target Argos Nightwhisper
+>>Talk to |cFF00FF25Argos Nightwhisper|r
     .accept 3765>>Accept The Corruption Abroad
 step << Warlock
     .goto StormwindClassic,25.3,78.7
 	.trainer >> Train your class spells
 step << Warlock
     .goto StormwindClassic,25.2,78.5
+.target Gakin the Darkbinder
+>>Talk to |cFF00FF25Gakin the Darkbinder|r
     .accept 1716 >> Accept Devourer of Souls
+step << wotlk
+    .goto StormwindClassic,52.6,65.6
+    .home >> Set your Hearthstone to Stormwind City
 step << Warlock tbc
     .goto StormwindNew,36.35,67.49
+.target Argos Nightwhisper
+>>Talk to |cFF00FF25Argos Nightwhisper|r
     .accept 3765>>Accept The Corruption Abroad
 step << tbc
     #label exit
@@ -2048,10 +2433,13 @@ step << wotlk
     .goto StormwindNew,21.8,56.2,0
     .zone Darkshore >> Head to the Stormwind Harbor and take the boat to Darkshore
 step
+#xprate <1.5
     .goto Darkshore,37.2,44.2
     .accept 4740 >> Accept WANTED: Murkdeep!
 step
     .goto Darkshore,37.5,41.8
+.target Archaeologist Hollee
+>>Talk to |cFF00FF25Archaeologist Hollee|r
     .accept 729 >> Accept The Absent Minded Prospector
 step
     #completewith next
@@ -2059,33 +2447,57 @@ step
     .turnin -3765>>Turn in The Corruption Abroad
 step
     .goto Darkshore,38.37,43.05
+.target Gershala Nightwhisper
+>>Talk to |cFF00FF25Gershala Nightwhisper|r
     .accept 1275 >> Accept Researching the Corruption
 step
     .goto Darkshore,37.4,40.2
+>>Talk to |cFF00FF25Thundris Windweaver|r
     .turnin 9633 >> Turn in The Way to Auberdine
+.target Thundris Windweaver
     .accept 10752 >> Accept Onward to Ashenvale
 step
+#xprate <1.5
     .goto Darkshore,36.6,76.6
     >>Clear the camp, but be careful as going next to the campfire will start an event spawning 3 waves of mobs. Be sure to run away from the campfire so you don't keep aggroing them and can eat/drink after each wave. Murkdeep nets so be careful
     .complete 4740,1 --Kill Murkdeep (x1)
 step
     .goto Darkshore,35.7,83.7
+.target Prospector Remtravel
+>>Talk to |cFF00FF25Prospector Remtravel|r
     .turnin 729 >> Turn in The Absent Minded Prospector
+    .isOnQuest 729
 step
+#xprate <1.7
     .goto Darkshore,35.7,83.7
-    .accept 731 >> Accept The Absent Minded Prospector
+.target Prospector Remtravel
+>>Talk to |cFF00FF25Prospector Remtravel|r
+    .accept 731,1 >> Accept The Absent Minded Prospector
+    .isQuestTurnedIn 729
 step
+#xprate <1.7
     >>Be careful as golems can respawn on top of you, and be sure to prioritize the geomancer at the final wave at the end
-.complete 731,1 --Escort Prospector Remtravel
+    .complete 731,1 --Escort Prospector Remtravel
+    .isOnQuest 731
 step
+#xprate <1.7
     .goto Darkshore,38.7,87.3
 	>> If she's not there just grind mobs in the area in the meantime.
+.target Therylune
+>>Talk to |cFF00FF25Therylune|r
     .accept 945 >> Accept Therylune's Escape
 step
+#xprate <1.7
     .complete 945,1 --Escort Therylune
+    .isOnQuest 945
+step
+    .goto Ashenvale,28.5,16.5
+    .zone Ashenvale >> Head south to Ashenvale
 step
     .goto Ashenvale,26.4,38.6
     >>Head southeast to Ashenvale
+.target Orendil Broadleaf
+>>Talk to |cFF00FF25Orendil Broadleaf|r
     .accept 1010 >> Accept Bathran's Hair
 step
     >>Look out for the hair. They look like little hay clumps on the ground. Turn down your ground clutter in your graphical settings as it may help (some are half-stuck in the ground).
@@ -2093,27 +2505,32 @@ step
     .complete 1010,1 --Collect Bathran's Hair (x5)
 step
     .goto Ashenvale,26.4,38.6
+>>Talk to |cFF00FF25Orendil Broadleaf|r
     .turnin 1010 >> Turn in Bathran's Hair
+.target Orendil Broadleaf
     .accept 1020 >> Accept Orendil's Cure
 step
     .goto Ashenvale,34.40,48.00
     .fp Astranaar>> Get the Astranaar Flight Path
 step
     .goto Ashenvale,34.7,48.8
+.target Shindrell Swiftfire
+>>Talk to |cFF00FF25Shindrell Swiftfire|r
     .accept 1008 >> Accept The Zoram Strand
 step
-    .goto Ashenvale,36.6,49.6
+    .goto Ashenvale,36.618,49.581
+.target Raene Wolfrunner
+>>Talk to |cFF00FF25Raene Wolfrunner|r
     .accept 1054 >> Accept Culling the Threat
     .turnin 10752 >> Turn in Onward to Ashenvale
     .accept 991 >> Accept Raene's Cleansing
 step
-    .goto Ashenvale,37.0,49.3
-    .home >> Set your Hearthstone to Astranaar
-step
     #timer Orendil's Cure RP
     .goto Ashenvale,37.3,51.8
+>>Talk to |cFF00FF25Pelturas Whitemoon|r
     .turnin 1020 >> Turn in Orendil's Cure
     .timer 26,Orendil's Cure RP
+.target Pelturas Whitemoon
     .accept 1033 >> Accept Elune's Tear
 step
     .goto Ashenvale,46.2,45.9
@@ -2122,8 +2539,10 @@ step
 step
     #timer Elune's tear roleplay
     .goto Ashenvale,37.3,51.8
+>>Talk to |cFF00FF25Pelturas Whitemoon|r
     .turnin 1033 >> Turn in Elune's Tear
     .timer 10,Elune's tear roleplay
+.target Pelturas Whitemoon
     .accept 1034 >> Accept The Ruins of Stardust
 step
     .goto Ashenvale,33.3,67.4
@@ -2131,10 +2550,14 @@ step
 step
     .isOnQuest 945
     .goto Ashenvale,22.7,51.9
+.target Therysil
+>>Talk to |cFF00FF25Therysil|r
     .turnin 945 >> Turn in Therylune's Escape
 step
     .goto Ashenvale,20.3,42.4
+>>Talk to |cFF00FF25Teronis' Corpse|r
     .turnin 991 >> Turn in Raene's Cleansing
+.target Teronis' Corpse
     .accept 1023 >> Accept Raene's Cleansing
 step
     >>Be careful of the nearby oracles, as they both heal and have a big-damage shock ability
@@ -2142,6 +2565,8 @@ step
     .complete 1023,1 --Collect Glowing Gem (x1)
 step
     .goto Ashenvale,14.7,31.3
+.target Talen
+>>Talk to |cFF00FF25Talen|r
     .accept 1007 >> Accept The Ancient Statuette
 step
     #sticky
@@ -2153,15 +2578,23 @@ step
     .goto Ashenvale,14.2,20.6
     .complete 1007,1 --Collect Ancient Statuette (x1)
 step
-    .goto Ashenvale,14.8,31.3
+    .goto Ashenvale,14.790,31.294
+.target Talen
+>>Talk to |cFF00FF25Talen|r
     .turnin 1007 >> Turn in The Ancient Statuette
     .timer 25,The Ancient Statuette RP
+step
+    .goto Ashenvale,14.790,31.294
+.target Talen
+>>Talk to |cFF00FF25Talen|r
     .accept 1009 >> Accept Ruuzel
+    .maxlevel 23
 step
 	>>Head to the island north and kill Ruuzel
 	>> This fight can be hard, focus down one or two of her adds then reset if needed.
     .goto Ashenvale,7.0,13.4
     .complete 1009,1 --Collect Ring of Zoram (x1)
+    .isOnQuest 1009
 step
     .goto 1414,43.97,35.31,20,0
     .goto 1414,43.80,35.18,20,0
@@ -2173,9 +2606,12 @@ step
     .complete 1275,1
 step
     #requires nagas
-    .goto Ashenvale,14.8,31.3
+    .goto Ashenvale,14.790,31.294
+.target Talen
+>>Talk to |cFF00FF25Talen|r
     .turnin 1009 >> Turn in Ruuzel
-step
+    .isQuestComplete 1009
+step << wotlk
     .hs >> Hearth to Astranaar
 step << wotlk
     .goto Ashenvale,39.0,35.9
@@ -2184,21 +2620,31 @@ step << wotlk
 	.unitscan Dal Bloodclaw
     .complete 1054,1 --Collect Dal Bloodclaw's Skull (x1)
 step
-    .goto Ashenvale,36.6,49.6
+    .goto Ashenvale,36.618,49.581
+.target Raene Wolfrunner
+>>Talk to |cFF00FF25Raene Wolfrunner|r
     .turnin 1023 >> Turn in Raene's Cleansing
 step
 #xprate <1.5
-    .goto Ashenvale,36.6,49.6
+    .goto Ashenvale,36.618,49.581
+.target Raene Wolfrunner
+>>Talk to |cFF00FF25Raene Wolfrunner|r
     .accept 1025 >> Accept An Aggressive Defense
 step
 #xprate <1.5 << tbc
-    .goto Ashenvale,36.6,49.6
+    .goto Ashenvale,36.618,49.581
+.target Raene Wolfrunner
+>>Talk to |cFF00FF25Raene Wolfrunner|r
     .accept 1025 >> Accept An Aggressive Defense
 step
     .goto Ashenvale,37.3,51.8
+.target Pelturas Whitemoon
+>>Talk to |cFF00FF25Pelturas Whitemoon|r
     .turnin 1034 >> Turn in The Ruins of Stardust
 step
     .goto Ashenvale,34.7,48.9
+.target Shindrell Swiftfire
+>>Talk to |cFF00FF25Shindrell Swiftfire|r
     .turnin 1008 >> Turn in The Zoram Strand
 step
 #xprate <1.5 << tbc
@@ -2211,7 +2657,9 @@ step
     .complete 1025,4 --Kill Foulweald Warrior (x12)
 step
 #xprate <1.5 << tbc
-    .goto Ashenvale,49.8,67.2
+    .goto Ashenvale,49.796,67.211
+.target Sentinel Velene Starstrike
+>>Talk to |cFF00FF25Sentinel Velene Starstrike|r
     .accept 1016 >> Accept Elemental Bracers
 step
 #xprate <1.5 << tbc
@@ -2220,15 +2668,21 @@ step
     .complete 1016,1 --Collect Divined Scroll (x1)
 step
 #xprate <1.5 << tbc
-    .goto Ashenvale,49.8,67.2
+    .goto Ashenvale,49.796,67.211
+.target Sentinel Velene Starstrike
+>>Talk to |cFF00FF25Sentinel Velene Starstrike|r
     .turnin 1016 >> Turn in Elemental Bracers
 step
 #xprate <1.5 << tbc
-    .goto Ashenvale,36.6,49.6
+    .goto Ashenvale,36.618,49.581
+.target Raene Wolfrunner
+>>Talk to |cFF00FF25Raene Wolfrunner|r
     .turnin 1025 >> Turn in An Aggressive Defense
         .isQuestComplete 1025
 step
     .goto Ashenvale,34.7,48.9
+.target Shindrell Swiftfire
+>>Talk to |cFF00FF25Shindrell Swiftfire|r
     .turnin 1008 >> Turn in The Zoram Strand
 step
 #xprate <1.5
@@ -2241,7 +2695,9 @@ step
     .complete 1025,4 --Kill Foulweald Warrior (x12)
 step
 #xprate <1.5
-    .goto Ashenvale,49.8,67.2
+    .goto Ashenvale,49.796,67.211
+.target Sentinel Velene Starstrike
+>>Talk to |cFF00FF25Sentinel Velene Starstrike|r
     .accept 1016 >> Accept Elemental Bracers
 step
 #xprate <1.5
@@ -2250,8 +2706,10 @@ step
     .complete 1016,1 --Collect Divined Scroll (x1)
 step
 #xprate <1.5
-    .goto Ashenvale,49.8,67.2
+    .goto Ashenvale,49.796,67.211
+>>Talk to |cFF00FF25Sentinel Velene Starstrike|r
     .turnin 1016 >> Turn in Elemental Bracers
+.target Sentinel Velene Starstrike
     .accept 1017 >> Accept Mage Summoner << tbc
 step << tbc
     .goto The Barrens,49.0,5.3,80,0
@@ -2267,8 +2725,10 @@ step << tbc
     .goto The Barrens,50.8,32.6,0
     .deathskip >>Die and respawn at the Spirit Healer
 step << tbc
-    .goto The Barrens,49.3,57.1
+    .goto The Barrens,49.307,57.096
+>>Talk to |cFF00FF25Takar the Seer|r
     .turnin 1716 >> Turn in Devourer of Souls
+.target Takar the Seer
     .accept 1738 >> Accept Heartswood
 step << tbc
     >>Run to Ratchet
@@ -2290,7 +2750,9 @@ step << tbc
     .deathskip >>Head towards the murloc lake and die next to the base of the mountain, east side of the lake then respawn at the Spirit Healer
 step << tbc
 #xprate <1.5
-    .goto Ashenvale,49.8,67.2
+    .goto Ashenvale,49.796,67.211
+.target Sentinel Velene Starstrike
+>>Talk to |cFF00FF25Sentinel Velene Starstrike|r
     .turnin 1017 >> Turn in Mage Summoner
 step
 #xprate <1.5 << tbc
@@ -2298,29 +2760,42 @@ step
     .deathskip >>Die and respawn at the Spirit Healer in Astranaar
 step << wotlk !Paladin !Warlock
     #completewith next
-    *If you have money on this server, mail yourself 5g, we'll be buying our mounts soon
+    +If you have money on this server, mail yourself 5g, we'll be buying our mounts soon
 step
-    .goto Ashenvale,36.6,49.6
+    .goto Ashenvale,36.618,49.581
+.target Raene Wolfrunner
+>>Talk to |cFF00FF25Raene Wolfrunner|r
     .turnin 1054 >> Turn in Culling the Threat
     .isQuestComplete 1054
 step
-    .goto Ashenvale,36.6,49.6
+    .goto Ashenvale,36.618,49.581
+.target Raene Wolfrunner
+>>Talk to |cFF00FF25Raene Wolfrunner|r
     .turnin 1025 >> Turn in An Aggressive Defense
     .isQuestComplete 1025
 step
     .goto Ashenvale,34.40,48.00
     .fly Auberdine>> Fly to Auberdine
 step
-    .goto Darkshore,37.7,43.4
+#xprate <1.5
+    .goto Darkshore,37.706,43.390
+.target Sentinel Glynda Nal'Shea
+>>Talk to |cFF00FF25Sentinel Glynda Nal'Shea|r
     .turnin 4740 >> Turn in WANTED: Murkdeep!
+    .isQuestComplete 4740
 step
     .goto Darkshore,38.36,43.07
+.target Gershala Nightwhisper
+>>Talk to |cFF00FF25Gershala Nightwhisper|r
     .turnin 1275 >> Turn in Researching the Corruption
     .isQuestComplete 1275
 step
     .goto Darkshore,37.5,41.9
+>>Talk to |cFF00FF25Archaeologist Hollee|r
     .turnin 731 >> Turn in The Absent Minded Prospector
+.target Archaeologist Hollee
     .accept 741 >> Accept The Absent Minded Prospector
+    .isOnQuest 731
 step
     #completewith next
     .goto Darkshore,33.2,40.2,25,0
@@ -2330,81 +2805,24 @@ step
     #completewith next
     .goto Teldrassil,55.9,89.8
     .zone Darnassus >> Take the purple portal to Darnassus
-step << NightElf wotlk
-	.goto Darnassus,38.7,15.8
-    .money <4.6
-	.skill riding,75 >> Train riding and buy your mount
-step << Warrior/Rogue
-    .goto Darnassus,64.6,53.0
-    .collect 29009,1 >> Purchase a Heavy Throwing Dagger from Ellandrieth
 step
-    .goto Darnassus,31.2,84.5
+    .goto Darnassus,31.245,84.508
+>>Talk to |cFF00FF25Chief Archaeologist Greywhisker|r
     .turnin 741 >> Turn in The Absent Minded Prospector
+.target Chief Archaeologist Greywhisker
     .accept 942 >> Accept The Absent Minded Prospector
+    .isQuestTurnedIn 731
 step
     .goto Darnassus,31.0,41.5,30,0
-    .goto Teldrassil,58.4,94.0
+    .goto Teldrassil,58.399,94.016
     >> Exit Darnassus through the purple portal
     .fp Rut'theran >> Get the Rut'theran Village flight path
     .fly Auberdine>> Fly to Auberdine
-step << Draenei !Paladin wotlk
-    .goto Darkshore,30.8,41.0,40,0
-	.goto The Exodar,81.18,52.56
-    .money <4.60
-    >> Take the western most boat to Azuremyst Isle
-    .skill riding,75 >>Head to Exodar, buy and train your mount
 step << tbc
     .goto Darkshore,32.4,43.8,30,0
     .goto Darkshore,32.4,43.8,0
     .zone Wetlands >>Take the boat to Wetlands
-step << Draenei tbc/NightElf tbc
-#xprate >1.499
-    .goto Wetlands,9.5,59.7
-    .fp Menethil >> Get the Menethil Harbor flight path
-step << Draenei tbc/NightElf tbc
-#xprate >1.499
-    .zone Stormwind City >> Use the website unstuck feature to teleport to Stormwind. This feature has a 8hr cooldown. Skip this step if you can't get it to work
-    .link https://us.battle.net/support/en/help/product/wow/197/834/solution >> Click here and copy paste the link into your browser for more info
-    .zoneskip Elwynn Forest
-
-
-step << Draenei tbc/NightElf tbc
-#xprate >1.499
-   #completewith next
-   .goto Wetlands,63.9,78.6
-   .zone Loch Modan >> Logout on top of the mushrooms at the back of the cave. When you log back in, this will teleport you to Thelsamar.
-   >>Make sure to logout as close as possible to the back of the cave. This trick won't work if you log out next to the edge of the mushroom closer to the mouth of the cave.
-   .link https://www.youtube.com/watch?v=21CuGto26Mk >> CLICK HERE for a reference
-   .zoneskip Elwynn Forest
-   .zoneskip Stormwind City
-step << NightElf tbc/Draenei tbc
-#xprate >1.499
-    .goto Loch Modan,33.9,50.9
-    .fp Thelsamar >> Get the Thelsamar flight path
-    .zoneskip Elwynn Forest
-    .zoneskip Stormwind City
-step << NightElf tbc/Draenei tbc
-#xprate >1.499
-    #completewith next
-    .goto Loch Modan,21.30,68.60,40,0
-    .zone Dun Morogh>> Run to Dun Morogh
-step << NightElf tbc/Draenei tbc
-#xprate >1.499
-	>>Go inside the South-eastern Trogg cave. Perform a logout skip
-    .goto Dun Morogh,70.63,56.70,60,0
-    .goto Dun Morogh,70.60,54.86
-	.link https://www.youtube.com/watch?v=yQBW3KyguCM >> CLICK HERE
-	.zone Ironforge >> Logout Skip or travel to Ironforge
-step << NightElf tbc/Draenei tbc
-#xprate >1.499
-    .goto Ironforge,76.03,50.98,30,0
-    .zone Stormwind City >> Take the tram to Stormwind
 step << wotlk
-    .zoneskip Darnassus,1
-    .goto Teldrassil,58.4,94.0
-    >>Exit Darnassus through the purple portal
-step << wotlk
-    .goto Darkshore,32.4,43.8,30,0
-    .goto Darkshore,32.4,43.8,0
-    .zone Stormwind City >>Take the boat to Stormwind
+    .hs >> Hearth to Stormwind
+
 ]])
