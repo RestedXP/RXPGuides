@@ -960,7 +960,27 @@ local SPEED_SUFFIX_SLOT_MAP = {
     ['RANGED'] = _G.INVSLOT_RANGED
 }
 
--- Moved to make nested loops less egregious without break/continue
+-- returns equippedWeight, comparedWeight
+local function calculateWeaponDPSWeight(equippedData, comparedData,
+                                        slotComparisonId)
+    local equippedWeight = equippedData.totalWeight
+    local comparedWeight = comparedData.totalWeight
+
+    for suffix, data in pairs(equippedData.dpsWeights or {}) do
+        if slotComparisonId == SPEED_SUFFIX_SLOT_MAP[suffix] then
+            equippedWeight = equippedWeight + data.overallWeight
+        end
+    end
+
+    for suffix, data in pairs(comparedData.dpsWeights or {}) do
+        if slotComparisonId == SPEED_SUFFIX_SLOT_MAP[suffix] then
+            comparedWeight = comparedWeight + data.overallWeight
+        end
+    end
+
+    return equippedWeight, comparedWeight
+end
+
 -- return ratio, debugMsg
 function addon.itemUpgrades:GetEquippedComparisonRatio(equippedItemLink,
                                                        comparedData,
@@ -978,22 +998,10 @@ function addon.itemUpgrades:GetEquippedComparisonRatio(equippedItemLink,
         return nil, "not equippedData"
     end
 
-    local equippedWeight = equippedData.totalWeight
-    local comparedWeight = comparedData.totalWeight
     -- _G.INVSLOT_RANGED, _G.INVSLOT_OFFHAND, _G.INVSLOT_MAINHAND
     -- MH / OH have more complex handling, requires DPS calculations here
-
-    for suffix, data in pairs(equippedData.dpsWeights or {}) do
-        if slotComparisonId == SPEED_SUFFIX_SLOT_MAP[suffix] then
-            equippedWeight = equippedWeight + data.overallWeight
-        end
-    end
-
-    for suffix, data in pairs(comparedData.dpsWeights or {}) do
-        if slotComparisonId == SPEED_SUFFIX_SLOT_MAP[suffix] then
-            comparedWeight = comparedWeight + data.overallWeight
-        end
-    end
+    local equippedWeight, comparedWeight =
+        calculateWeaponDPSWeight(equippedData, comparedData, slotComparisonId)
 
     if equippedWeight == 0 or comparedWeight == 0 then
         -- Prevent division by 0
@@ -1262,7 +1270,7 @@ function addon.itemUpgrades.AH:Scan()
                       AuctionCategories[ahSession.scanType].filters)
 end
 
-local function calculate(itemLink, scanData)
+local function calculate(itemLink, scanData, slotId)
     if scanData.lowestPrice <= 0 then return end
     local itemData = addon.itemUpgrades:GetItemData("item:" .. scanData.itemID)
 
@@ -1273,10 +1281,11 @@ local function calculate(itemLink, scanData)
         return
     end
 
-    -- TODO handle DPS post-processing slot calculations
     scanData.totalWeight = itemData.totalWeight
     scanData.weightPerCopper = scanData.totalWeight / scanData.lowestPrice
     scanData.itemEquipLoc = itemData.itemEquipLoc
+
+    -- TODO handle DPS post-processing slot calculations
     scanData.comparisons = addon.itemUpgrades:CompareItemWeight(itemLink) or {}
 
     for _, compareData in ipairs(scanData.comparisons) do
@@ -1319,12 +1328,11 @@ function addon.itemUpgrades.AH:Analyze()
     local bAS, slotId
 
     for itemLink, scanData in pairs(RXPCData.itemUpgradesScanData) do
-        calculate(itemLink, scanData)
+        slotId = session.equippableSlots[scanData.itemEquipLoc]
+        calculate(itemLink, scanData, slotId)
 
         if scanData.relativeWeightPerCopper then
             -- print("Analyze", itemLink, "weightPerCopper", scanData.weightPerCopper, "relativeWPC", scanData.relativeWeightPerCopper)
-
-            slotId = session.equippableSlots[scanData.itemEquipLoc]
             bAS = ahSession.bestAnalysis[slotId]
 
             if scanData.weightPerCopper > bAS.weightPerCopper.weight then
