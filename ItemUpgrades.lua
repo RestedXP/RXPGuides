@@ -600,7 +600,7 @@ function addon.itemUpgrades:ActivateSpecWeights()
     session.activeStatWeights = session.specWeights[spec]
 
     session.activeStatWeights.extraWeight =
-        ITEM_WEIGHT_ADDITIONS[addon.player.class]
+        ITEM_WEIGHT_ADDITIONS[addon.player.class] or {}
 
     return session.activeStatWeights ~= nil
 end
