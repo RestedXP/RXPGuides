@@ -471,7 +471,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor Dwarf/Gnome
-#next 10-11 Elwynn (Dwarf/Gnome)
+#next 11-12 Elwynn (Dwarf/Gnome)
 step
     #completewith BoarMeat44 << !Paladin !Warrior !Rogue
     #completewith BearFur << Paladin/Warrior/Rogue
@@ -1517,6 +1517,38 @@ step
     .target Captain Rugelfuss
     .accept 267 >> Accept The Trogg Threat
 step
+    #completewith HonorStudents
+    .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Kadrell|r
+    >>|cRXP_FRIENDLY_Mountaineer Kadrell|r |cRXP_WARN_patrols the road through Thelsamar|r
+    .turnin 414 >> Turn in Stout to Kadrell
+    .accept 416 >> Accept Rat Catching
+    .accept 1339 >> Accept Mountaineer Stormpike's Task
+    .target Mountaineer Kadrell
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r
+    .target Vidra Hearthstove
+    .goto Loch Modan,34.828,49.283
+    .accept 418 >> Accept Thelsamar Blood Sausages
+step << !Rogue
+    #completewith next
+    .goto Loch Modan,34.757,48.618
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yanni Stoutheart|r
+    .vendor >> |cRXP_BUY_Buy a|r |T133634:0|t[Small Brown Pouch] |cRXP_BUY_if needed|r
+    .target Yanni Stoutheart
+step << !Paladin
+    .goto Loch Modan,35.534,48.404
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Hearthstove|r
+    .home >> Set your Hearthstone to Thelsamar
+    .target Innkeeper Hearthstove
+step
+    #label HonorStudents
+    .goto Loch Modan,37.17,47.94,8,0
+    .goto Loch Modan,37.019,47.806
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brock Stoneseeker|r
+    .accept 6387 >> Accept Honor Students
+    .target Brock Stoneseeker
+step
     .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
     .goto Loch Modan,36.72,41.97,15,0
     .goto Loch Modan,37.24,43.19,15,0
@@ -1531,28 +1563,6 @@ step
     .accept 416 >> Accept Rat Catching
     .accept 1339 >> Accept Mountaineer Stormpike's Task
     .target Mountaineer Kadrell
-step
-    .goto Loch Modan,37.17,47.94,8,0
-    .goto Loch Modan,37.019,47.806
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brock Stoneseeker|r
-    .accept 6387 >> Accept Honor Students
-    .target Brock Stoneseeker
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r
-    .target Vidra Hearthstove
-    .goto Loch Modan,34.828,49.283
-    .accept 418 >> Accept Thelsamar Blood Sausages
-step
-    #completewith next
-    .goto Loch Modan,34.757,48.618
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yanni Stoutheart|r
-    .vendor >> |cRXP_BUY_Buy a|r |T133634:0|t[Small Brown Pouch] |cRXP_BUY_if needed|r
-    .target Yanni Stoutheart
-step << !Paladin
-    .goto Loch Modan,35.534,48.404
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Hearthstove|r
-    .home >> Set your Hearthstone to Thelsamar
-    .target Innkeeper Hearthstove
 step << skip
     #sticky
     #completewith next
@@ -1583,7 +1593,7 @@ step
     .target Mountaineer Stormpike
 step
     #softcore
-    #completewith next
+    #completewith flyIF
     .deathskip >> Die and respawn at the Spirit Healer
     .target Spirit Healer
 step
@@ -1600,6 +1610,7 @@ step
     .turnin 6387 >> Turn in Honor Students
     .accept 6391 >> Accept Ride to Ironforge
 step
+    #label flyIF
     .goto Loch Modan,33.938,50.954
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
     .fly Ironforge >> Fly to Ironforge
@@ -1642,9 +1653,9 @@ step
     #completewith next
     +Perform a Logout skip by jumping on top of one of the Gryphon's heads, and logging out, then back in
     .link https://www.youtube.com/watch?v=PWMJhodh6Bw >> CLICK HERE
+    .zoneskip Ironforge,1
 step
-    .goto Ironforge,74.40,51.10,30,0
-    .goto Ironforge,74.40,51.10,0
+    .goto Ironforge,78.00,52.00,5,0
     >>|cRXP_WARN_Enter the Deeprun Tram|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monty|r on the middle platform
     .target Monty
@@ -1763,18 +1774,35 @@ step << Dwarf Paladin
     .home >> Set your Hearthstone to Stormwind
     .target Innkeeper Allison
 step << Rogue
-    .money <0.2000
+    #ah
+    .money <0.2023
     .goto StormwindClassic,57.547,57.076
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
     .target Gunther Weller
-    .vendor >> |cRXP_WARN_Buy a|r |T135346:0|t[Cutlass] |cRXP_WARN_and equip it in your Main-Hand. Equip the|r |T135641:0|t[|cRXP_FRIENDLY_Craftsman's Dagger|r] |cRXP_WARN_from earlier in your Off-Hand|r
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.80
+    .vendor >> |cRXP_WARN_Buy a|r |T135346:0|t[Cutlass] |cRXP_WARN_and equip it in your Main-Hand. Equip the|r |T135641:0|t[|cRXP_FRIENDLY_Craftsman's Dagger|r] |cRXP_WARN_from earlier in your Off-Hand shortly or check the Auction House for something better|r
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.81
 step << Rogue
+    #ah
     #completewith next
     +|cRXP_WARN_Equip the|r |T135346:0|t[Cutlass]
     .use 851
     .itemcount 851,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.79
+    .itemStat 16,QUALITY,2
+step << Rogue
+    #ssf
+    .money <0.2023
+    .goto StormwindClassic,57.547,57.076
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
+    .target Gunther Weller
+    .vendor >> |cRXP_WARN_Buy a|r |T135346:0|t[Cutlass] |cRXP_WARN_and equip it in your Main-Hand. Equip the|r |T135641:0|t[|cRXP_FRIENDLY_Craftsman's Dagger|r] |cRXP_WARN_from earlier in your Off-Hand shortly|r
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.81
+step << Rogue
+    #ssf
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135346:0|t[Cutlass]
+    .use 851
+    .itemcount 851,1
+    .itemStat 16,QUALITY,2
 step << Rogue skip
     #completewith next
     +|cRXP_WARN_Equip the|r |T135346:0|t[Craftsman's Dagger]
@@ -1786,7 +1814,7 @@ step << Rogue
     .goto StormwindClassic,57.32,62.08,20,0
     .goto StormwindClassic,58.362,61.678
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thurman Mullby|r
-    .vendor >> |cRXP_BUY_Buy a|r |T135425:0|t[Keen Throwing Knife]|cRXP_BUY_. Equip it when you're level 11|r
+    .vendor 1285 >> |cRXP_BUY_Buy a|r |T135425:0|t[Keen Throwing Knife]|cRXP_BUY_. Equip it when you're level 11|r
     .target Thurman Mullby
 ]])
 
@@ -1794,11 +1822,11 @@ RXPGuides.RegisterGuide([[
 #era/som
 #classic
 << Alliance !Hunter
-#name 10-11 Elwynn (Dwarf/Gnome)
+#name 11-12 Elwynn (Dwarf/Gnome)
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor Gnome/Dwarf
-#next 11-14 Loch Modan (Dwarf/Gnome)
+#next 12-14 Loch Modan (Dwarf/Gnome)
 --#era << !Warlock
 
 step << Warlock
@@ -1817,7 +1845,6 @@ step << Warlock
     .deathskip >> Respawn at the Spirit Healer
     .target Spirit Healer
 step
-    #hardcore
     #completewith next
     .subzone 87 >> Travel to Goldshire
 step
@@ -1840,6 +1867,7 @@ step << Mage
     .trainer >> Train your class spells
 step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keryn Sylvius|r
+    >>|cRXP_WARN_Prioritize training|r |T132147:0|t[Dual Wield]
     .target Keryn Sylvius
     .goto Elwynn Forest,43.872,65.937
     .trainer >> Train your class spells
@@ -1854,7 +1882,7 @@ step << Warlock
     .accept 176 >> Accept Wanted: "Hogger"
     .goto Elwynn Forest,24.548,74.672
     .target Deputy Rainer
-step
+step << Warlock
     #completewith next
     >>|cRXP_WARN_The|r |T134939:0|t[|cRXP_LOOT_Gold Pickup Schedule|r] |cRXP_WARN_is a very rare drop. Ignore this step if you don't get it|r
     >>|cRXP_ENEMY_Gruff Swiftbite|r |cRXP_WARN_a rare spawn, does have a 100% drop chance|r
@@ -1905,6 +1933,7 @@ step
     .mob Kobold Tunneler
     .mob Kobold Miner
 step
+    .goto Elwynn Forest,38.677,81.778,50,0
     .goto Elwynn Forest,40.5,82.3
     >>|cRXP_WARN_Enter and explore Fargodeep Mine|r
     .complete 62,1 --Scout Through the Fargodeep Mine
@@ -1980,12 +2009,12 @@ step
     .turnin 47 >> Turn in Gold Dust Exchange
 step
     #completewith next
-    +Travel east to |cRXP_FRIENDLY_Guard Thomas|r
+    .goto Elwynn Forest,73.973,72.179,30 >> Travel east to |cRXP_FRIENDLY_Guard Thomas|r
 step
-    >>Talk to |cFF00FF25Guard Thomas|r
-    .target Guard Thomas
-    .goto Elwynn Forest,73.90,72.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
+    .goto Elwynn Forest,73.973,72.179
     .turnin 35 >> Turn in Further Concerns
+    .target Guard Thomas
 step
     #era
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
@@ -2136,7 +2165,7 @@ step
     #softcore
     #sticky
     #completewith next
-    .goto Elwynn Forest,83.6,69.7,120 >>Die and respawn at the Spirit Healer if you're low health, otherwise just run back and handin
+    .deathskip >>Die and respawn at the Spirit Healer if you're low health, otherwise just run back and handin
     .target Spirit Healer
 step
     #era
@@ -2179,12 +2208,15 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
     >>Buy the following items for a faster turn in at Loch Modan shortly
     >>This will save you time as you won't need to run around looking for mobs to kill. Skip this step if you wish to not buy any
+    >>Buying extra |T134437:0|t[Chunk of Boar Meat] can be useful as well for leveling |T133971:0|t[Cooking] to 50 for later
     >>|T134342:0|t[Boar Intestines]
     >>|T134027:0|t[Bear Meat]
     >>|T134437:0|t[Spider Ichor]
+    >>|T134437:0|t[Chunk of Boar Meat]
     .collect 3172,3,418,1 -- Boar Intestines (3)
     .collect 3173,3,418,1 -- Bear Meat (3)
     .collect 3174,3,418,1 -- Spider Ichor (3)
+    .collect 769,4,86,1 -- Chunk of Boar Meat (4)
     .target Auctioneer Jaxon
 step << Warlock
     #completewith next
@@ -2375,7 +2407,7 @@ RXPGuides.RegisterGuide([[
 #era/som
 #classic
 << Alliance !Hunter
-#name 11-14 Loch Modan (Dwarf/Gnome)
+#name 12-14 Loch Modan (Dwarf/Gnome)
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor Gnome/Dwarf
@@ -2440,19 +2472,27 @@ step << Paladin
     .target Gryth Thurden
     .zoneskip Ironforge,1
 step
-    #completewith next
+    #optional
+    .isQuestComplete 418
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r
+    .target Vidra Hearthstove
+    .goto Loch Modan,34.828,49.283
+    .turnin 418 >> Turn in Thelsamar Blood Sausages
+step
+    #completewith RTB
     .goto Loch Modan,34.757,48.618
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yanni Stoutheart|r
-    .vendor >> |cRXP_BUY_Buy|r |T133634:0|t[Small Brown Pouches] |cRXP_BUY_if needed|r
+    .vendor 1682 >> |cRXP_BUY_Buy|r |T133634:0|t[Small Brown Pouches] |cRXP_BUY_if needed|r
     .target Yanni Stoutheart
 step
-    #completewith next
+    #completewith RTB
     .goto Loch Modan,35.534,48.404
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Hearthstove|r
-    .vendor >> |cRXP_BUY_Buy some|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_if needed|r << Warrior/Rogue
-    .vendor >> |cRXP_BUY_Buy some|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_and|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_if needed|r << !Warrior !Rogue
+    .vendor 6734 >> |cRXP_BUY_Buy some|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_if needed|r << Warrior/Rogue
+    .vendor 6734 >> |cRXP_BUY_Buy some|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_and|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_if needed|r << !Warrior !Rogue
     .target Innkeeper Hearthstove
 step
+    #label RTB
     .goto Loch Modan,37.17,47.94,8,0
     .goto Loch Modan,37.019,47.806
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brock Stoneseeker|r
@@ -2485,6 +2525,17 @@ step
     >>|cRXP_WARN_Do this quickly as another player may purchase it before you do|r
     .target Nillen Andemar
 step
+    #completewith PawsDelivery
+    >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
+    >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
+    >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
+    .collect 3173,3,418,1 --Bear Meat (3)
+    .collect 3172,3,418,1 --Boar Intestines (3)
+    .collect 3174,3,418,1 --Spider Ichor (3)
+    .mob Elder Black Bear
+    .mob Mountain Boar
+    .mob Forest Lurker
+step
     .goto Loch Modan,25.05,30.19,0
     .goto Loch Modan,26.06,43.44,0
     .goto Loch Modan,37.71,16.84,0
@@ -2504,11 +2555,13 @@ step
     .mob Tunnel Rat Digger
     .mob Tunnel Rat Surveyor
 step
+    #completewith next
     .goto Loch Modan,24.134,18.208
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gothor Brumn|r
     .vendor >>|cRXP_WARN_Vendor and repair if needed|r
     .target Gothor Brumn
 step
+    #label PawsDelivery
     .goto Loch Modan,24.77,18.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r
     .turnin 307 >> Turn in Filthy Paws
@@ -2609,15 +2662,19 @@ step
     .goto Loch Modan,27.4,48.4
     .xp 14-2300 >> Grind until you are 2300xp away from level 14 (9100/11400)
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Cobbleflint|r
-    .target Mountaineer Cobbleflint
-    .goto Loch Modan,22.071,73.127
-    .turnin 224 >> Turn in In Defense of the King's Lands
+    #completewith next
+    .goto Loch Modan,24.78,70.17,10,0
+    .goto Loch Modan,23.73,75.52,15 >> Run up the dirt path then drop down into the bunker
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r
     .target Captain Rugelfuss
     .goto Loch Modan,23.233,73.675
     .turnin 267 >> Turn in The Trogg Threat
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Cobbleflint|r
+    .target Mountaineer Cobbleflint
+    .goto Loch Modan,22.071,73.127
+    .turnin 224 >> Turn in In Defense of the King's Lands
 step << !Dwarf/!Paladin
     .goto Loch Modan,33.938,50.954
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
@@ -2708,13 +2765,16 @@ step << Warlock
     .vendor >> |cRXP_BUY_Buy|r |T133738:0|t[Grimoire of Consume Shadows (Rank 1)] |cRXP_BUY_and|r |T133738:0|t[Grimoire of Sacrifice (Rank 1)] |cRXP_BUY_if you can afford it|r
     .target Jubahl Corpseseeker
 step << Rogue
-    .goto Ironforge,51.919,14.490,10,0
-    .goto Ironforge,50.727,16.380,8,0
+    #optional
     .goto Ironforge,51.958,14.838
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hulfdan Blackbeard|r downstairs
     .turnin -2218 >> Turn in Road to Salvation
-    .trainer >> Train your class spells
     .target Hulfdan Blackbeard
+step << Rogue
+    .goto Ironforge,51.495,15.330
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fenthwick|r
+    .trainer >> Train your class spells
+    .target Fenthwick
 step << Priest
     .goto Ironforge,25.207,10.756
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Toldren Deepiron|r
@@ -2731,28 +2791,68 @@ step << !Paladin
     >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_if needed while waiting for the tram|r
     >>|cRXP_WARN_You will need your|r |T135966:0|t[First Aid] |cRXP_WARN_to be 80 for a quest at level 24|r << Rogue !Dwarf
 step
+    #completewith Fly2WF
+    .goto StormwindClassic,55.21,7.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Billibub Cogspinner|r
+    .vendor >> |cFFFCDC00Buy a|r |T133024:0|t[Bronze Tube]
+    >>|cFFFCDC00This is a limited supply item. Skip this step if |cFF00FF25Billibub Cogspinner|r doesn't have one|r
+--    >>You will need 2 bronze tubes for a quest later << Rogue
+    .bronzetube
+    .target Billibub Cogspinner
+step
     .goto StormwindClassic,49.194,30.284
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r
     .accept 399 >> Accept Humble Beginnings
     .target Baros Alexston
+step << Rogue
+    #ah
+    .goto StormwindClassic,57.38,56.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Marda Weller|r
+    >>|cRXP_BUY_Buy 1 or 2|r |T135343:0|t[Scimitars] |cRXP_BUY_if you can afford it or something better from the Auction House|r
+    .collect 2027,2 --Scimitar
+    .target Marda Weller
+    .money <0.3815
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+step << Rogue
+    #ssf
+    .goto StormwindClassic,57.38,56.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Marda Weller|r
+    >>|cRXP_BUY_Buy 1 or 2|r |T135343:0|t[Scimitars] |cRXP_BUY_if you can afford it|r
+    .collect 2027,2 --Scimitar
+    .money <0.3815
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+    .target Marda Weller
+step << Rogue
+    #optional
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135343:0|t[Scimitar]
+    .use 2027
+    .itemcount 2027,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.69
+    .xp <14,1
 step
     #ah
     .goto Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
-    >>Buy the following items for faster turn ins at Westfall shortly
+    >>Buy the following items for faster turn ins at Westfall and Darkshore shortly
     >>This will save you time as you won't need to run around looking for mobs to kill. Skip this step if you wish to not buy any
     >>|T133972:0|t[Stringy Vulture Meat]
     >>|T133884:0|t[Murloc Eye]
     >>|T135997:0|t[Goretusk Snout]
     >>|T134185:0|t[Okra]
     >>|T134341:0|t[Goretusk Liver]
+    >>|T133972:0|t[Strider Meat]
+    >>|T133912:0|t[Darkshore Grouper]
     .collect 729,3,38,1 -- Stringy Vulture Meat (3)
     .collect 730,3,38,1 -- Murloc Eye (3)
     .collect 731,3,38,1 -- Goretusk Snout (3)
     .collect 732,3,38,1 -- Okra (3)
     .collect 723,8,22,1 -- Goretusk Liver (8)
+    .collect 5469,5,2178,1 -- Strider Meat (5)
+    .collect 12238,6,1141,1 -- Darkshore Grouper (6)
     .target Auctioneer Jaxon
 step
+    #label Fly2WF
     .goto StormwindClassic,66.277,62.137
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
     .fly Westfall >> Fly to Westfall

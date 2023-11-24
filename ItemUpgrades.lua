@@ -1081,12 +1081,14 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
         end
 
         -- Even if ratio nil, add to comparisons for upstream handling based on debug value
-        tinsert(comparisons, {
-            ['Ratio'] = ratio,
-            ['ItemLink'] = equippedItemLink or _G.UNKNOWN, -- Pass "Unknown" for debugging
-            ['itemEquipLoc'] = itemEquipLoc, -- Is actually slotID for rings/trinkets
-            ['debug'] = addon.settings.profile.debug and debug
-        })
+        if ratio or equippedItemLink == _G.EMPTY then
+            tinsert(comparisons, {
+                ['Ratio'] = ratio,
+                ['ItemLink'] = equippedItemLink or _G.UNKNOWN, -- Pass "Unknown" for debugging
+                ['itemEquipLoc'] = itemEquipLoc, -- Is actually slotID for rings/trinkets
+                ['debug'] = addon.settings.profile.debug and debug
+            })
+        end
 
     end
 

@@ -2,24 +2,45 @@ local addonName, addon = ...
 local L = addon.locale.Get
 local default_x = 420
 local default_y = -60
+local finalizeSettings
 
 local intro_animations = true
+local HCmode = false
+
+local dungeon_configuration_frame = nil
+local dungeon_selection_frame = nil
+
 addon.introUI = {}
+--local dungeonIcons = {}
 
 addon.dungeonScore = {}
+addon.dungeonScoreSC = {}
 for tag,dungeon in pairs(addon.dungeonStats[addon.player.faction]) do
     local score = (dungeon.travel or 0) * 0.7 + (dungeon.quest or 0) * 1.2 + (dungeon[addon.player.class] or 0) * 1.4
     addon.dungeonScore[tag] = score
     --print(tag,addon.dungeonScore[tag])
 end
 
+for tag,dungeon in pairs(addon.dungeonStatsSC[addon.player.faction]) do
+    local score = (dungeon.travel or 0) * 0.7 + (dungeon.quest or 0) * 1.2 + (dungeon[addon.player.class] or 0) * 1.4
+    addon.dungeonScoreSC[tag] = score
+    --print(tag,addon.dungeonScore[tag])
+end
+
 if addon.player.faction == "Alliance" then
     local class = addon.player.class
     addon.dungeonScore["STOCKS"] = 9
+    addon.dungeonScoreSC["STOCKS"] = 9
+    addon.dungeonScore["ULDA"] = 9
+    addon.dungeonScoreSC["ULDA"] = 9
     if class == "PALADIN" or class == "WARRIOR" then
         addon.dungeonScore["SM"] = 9
+        addon.dungeonScoreSC["SM"] = 9
     end
 end
+
+local dungeonScore = addon.dungeonScore
+local dungeonStats = addon.dungeonStats
 
 ----------- Settings
 -- Note: upon finishing the splash screen setup, RXPCData will be updated
@@ -82,7 +103,7 @@ local function createHardcoreUIFrame(
 	level
 )
 	local ratio = frame_height / frame_width
-	local frame = CreateFrame("frame")
+	local frame = CreateFrame("frame","RXP_INTRO")
 
 	parent:HookScript("OnHide", function()
 		frame:Hide()
@@ -356,12 +377,13 @@ local function createHardcoreUIFrame(
 	return frame
 end
 
+local optionIndex = 0
 local function addHardcoreOptionButton(frame, title_text, description_text, tex_id, y_off, functor)
 	local height = 50
 	local width = 275
 	local _ratio = height / width
-
-	local hardcore_option_button_frame = CreateFrame("frame", nil, frame, "BackdropTemplate")
+    optionIndex = optionIndex + 1
+	local hardcore_option_button_frame = CreateFrame("frame", "$parent_option" .. optionIndex, frame, "BackdropTemplate")
 	hardcore_option_button_frame:SetPoint("TOP", frame, "TOP", 10, y_off)
 	hardcore_option_button_frame:SetSize(width, height)
 	hardcore_option_button_frame:EnableMouse(true)
@@ -501,15 +523,16 @@ local function addHardcoreOptionButton(frame, title_text, description_text, tex_
     return hardcore_option_button_frame:GetHeight(), hardcore_option_button_frame
 end
 
+local dungeon_count = 0
 local function addHardcoreDungeonOptionButton(frame, title_text, level_range, tex_id, x_off, y_off, zone, tex_coord)
-	if not RXPData.guideMetaData.enabledDungeons[addon.player.faction][title_text] then
+	if not dungeonStats[addon.player.faction][title_text] then
         return
     end
     local height = 50
 	local width = 275
 	local _ratio = height / width
-
-	local hardcore_option_button_frame = CreateFrame("frame", nil, frame, "BackdropTemplate")
+    dungeon_count = dungeon_count + 1
+	local hardcore_option_button_frame = CreateFrame("frame", "$parent_dungeon" .. optionIndex, frame, "BackdropTemplate")
 	hardcore_option_button_frame:SetPoint("TOP", frame, "TOP", x_off, y_off)
 	hardcore_option_button_frame:SetSize(width, height)
 	hardcore_option_button_frame:EnableMouse(true)
@@ -634,10 +657,14 @@ local function addHardcoreDungeonOptionButton(frame, title_text, level_range, te
     hardcore_option_button_frame:SetScript("OnLeave", tpOnLeave)
 
 	local x_off = -90
-	local dungeon = addon.dungeonStats[addon.player.faction][title_text]
+	--local dungeon = dungeonStats[addon.player.faction][title_text]
     local function process_icon(icon,v)
         if icon then
+            local label = title_text .. icon
             local logo_tex = hardcore_option_button_frame:CreateTexture(nil, "OVERLAY")
+            --print(title_text,'ok')
+            --dungeonIcons[label] = logo_tex
+            --logo_tex:ClearAllPoints()
             logo_tex:SetDrawLayer("OVERLAY", 3)
             logo_tex:SetHeight(circle_frame_tex:GetHeight() * 0.46)
             logo_tex:SetPoint("CENTER", hardcore_option_button_frame, "CENTER", x_off, -8)
@@ -647,8 +674,11 @@ local function addHardcoreDungeonOptionButton(frame, title_text, level_range, te
             if v <= 1 then
                 logo_tex:SetDesaturated(1)
             end
+            label = label .. 's'
             if v == 3 then
                 local star_logo = hardcore_option_button_frame:CreateTexture(nil, "OVERLAY")
+                --icon.star = star_logo
+                --star_logo:ClearAllPoints()
                 star_logo:SetDrawLayer("OVERLAY", 4)
                 star_logo:SetHeight(circle_frame_tex:GetHeight() * 0.26)
                 star_logo:SetPoint("CENTER", hardcore_option_button_frame, "CENTER", x_off + 9, 0)
@@ -661,26 +691,27 @@ local function addHardcoreDungeonOptionButton(frame, title_text, level_range, te
         end
     end
 
-    local tooltip = L"Location: " .. C_Map.GetAreaInfo(zone) .. "\n"
-    for k,v in pairs(dungeon) do
-        local icon = addon.dungeonIcons[k]
-        icon = icon or k == addon.player.class and addon.dungeonIcons.loot
-        process_icon(icon,v)
-        if icon then
-            tooltip = tooltip .. "\n|T" .. icon .. ":0|t " .. format(addon.dungeonTooltip[k],addon.dungeonWeights[v])
-        end
-    end
-    local profession = addon.dungeonProfessions[title_text]
-    if profession then
-        tooltip = tooltip .. L"\n\nProfessions that benefit:"
-        for k,v in pairs(profession) do
-            local icon = addon.dungeonIcons[k]
-            process_icon(icon,v)
-            tooltip = tooltip .. "\n|T" .. icon .. ":0|t " .. L(k)
-        end
-    end
 
-    hardcore_option_button_frame.tooltip = tooltip
+        local dungeon = dungeonStats[addon.player.faction][title_text]
+        local tooltip = L"Location: " .. C_Map.GetAreaInfo(zone) .. "\n"
+        for k,v in pairs(dungeon) do
+            local icon = addon.dungeonIcons[k]
+            icon = icon or k == addon.player.class and addon.dungeonIcons.loot
+            process_icon(icon,v)
+            if icon then
+                tooltip = tooltip .. "\n|T" .. icon .. ":0|t " .. format(addon.dungeonTooltip[k],addon.dungeonWeights[v])
+            end
+        end
+        local profession = addon.dungeonProfessions[title_text]
+        if profession then
+            tooltip = tooltip .. L"\n\nProfessions that benefit:"
+            for k,v in pairs(profession) do
+                local icon = addon.dungeonIcons[k]
+                process_icon(icon,v)
+                tooltip = tooltip .. "\n|T" .. icon .. ":0|t " .. L(k)
+            end
+        end
+        hardcore_option_button_frame.tooltip = tooltip
 
 
 	hardcore_option_button_frame.select = function(self,state)
@@ -755,6 +786,9 @@ local function RXP_loadUltimateHardcoreSurvivalGuideFrame(survival_guide_functor
 			if survival_guide_functor then
 				survival_guide_functor()
 			end
+            HCmode = true
+            dungeonScore = addon.dungeonScore
+            dungeonStats = addon.dungeonStats
 			frame:Hide()
 		end)
 
@@ -994,6 +1028,9 @@ local function RXP_loadSpeedRunGuideSelector(parent_frame, background_cen_x, bac
 		button:SetPushedTexture(ptex)
 
 		button:SetScript("OnClick", function()
+            HCmode = false
+            dungeonScore = addon.dungeonScoreSC
+            dungeonStats = addon.dungeonStatsSC
 			if callback then
 				callback()
 			end
@@ -1228,7 +1265,8 @@ local function RXP_dungeonConfiguration(selectAllFunctor, submitFunctor, backFun
 		button:SetPushedTexture(ptex)
 
 		button:SetScript("OnClick", function()
-			submitFunctor()
+			--updateIcons()
+            submitFunctor()
 			frame:Hide()
 		end)
 		return button
@@ -1459,7 +1497,7 @@ local function RXP_dungeonSelection(parent)
         button.lock = true
 		for i = 1, #dungeon_buttons do
             local dungeon_button = dungeon_buttons[i]
-            if (addon.dungeonScore[dungeon_button.title] or 0) > 7 and state then
+            if (dungeonScore[dungeon_button.title] or 0) > 7 and state then
                 dungeon_button:select(state)
             else
                 dungeon_button:select(false)
@@ -1486,6 +1524,28 @@ function addon.startHardcoreIntroUI(saved_var_settings)
 
 	local welcome_adventurer_frame = nil
 	local function toggleSurivalGuideFunctor()
+        --survival_guide_functor
+        	local function selectAllDungeonsFunctor(self)
+		if dungeon_selection_frame then
+			dungeon_selection_frame:selectAll()
+		end
+	end
+
+    local function selectRecDungeonsFunctor(self)
+		if dungeon_selection_frame then
+			dungeon_selection_frame:selectRec()
+		end
+	end
+
+	dungeon_configuration_frame = RXP_dungeonConfiguration(
+		selectAllDungeonsFunctor,
+        finalizeSettings,
+		toggleSurivalGuideFunctor,
+        selectRecDungeonsFunctor
+	)
+	dungeon_configuration_frame:Hide()
+    dungeon_selection_frame = RXP_dungeonSelection(dungeon_configuration_frame)
+	dungeon_selection_frame:Hide()
 		if welcome_adventurer_frame == nil then
 			return
 		end
@@ -1499,7 +1559,7 @@ function addon.startHardcoreIntroUI(saved_var_settings)
 	end
 
     -- Run when hardcore mode is selected; finalizes settings.  saved_var_settings is probably RXPCData
-    local function finalizeSettings()
+    function finalizeSettings()
         saved_var_settings['hardcore_guide'] = {}
         saved_var_settings['hardcore_guide']['enabled'] = 1
         saved_var_settings['hardcore_guide']['dungeons_enabled'] = dungeons_enabled
@@ -1522,8 +1582,11 @@ function addon.startHardcoreIntroUI(saved_var_settings)
         for k,_ in pairs(dungeons) do
             saved_var_settings['hardcore_guide']['dungeons'][k] = 1
         end
-        addon:LoadGuideTable(addon.defaultGroupHC, addon.defaultGuideHC)
-
+        if HCmode then
+            addon:LoadGuideTable(addon.defaultGroupHC, addon.defaultGuideHC)
+        else
+            addon:LoadGuideTable(addon.defaultGroup, addon.defaultGuide)
+        end
         --Resets internal variables in case the splash screen is opened again
         dungeons_enabled = false
         dungeons_enabled = false
@@ -1532,9 +1595,8 @@ function addon.startHardcoreIntroUI(saved_var_settings)
         group_quests = false
         dungeons = {}
     end
-
-	local dungeon_configuration_frame = nil
-	local dungeon_selection_frame = nil
+    dungeon_configuration_frame = nil
+    dungeon_selection_frame = nil
 	local function welcomeAdventurerSubmitFunctor()
         if dungeons_enabled then
             if dungeon_configuration_frame == nil then
@@ -1558,38 +1620,22 @@ function addon.startHardcoreIntroUI(saved_var_settings)
         end
 	end
 
-	local function selectAllDungeonsFunctor(self)
-		if dungeon_selection_frame then
-			dungeon_selection_frame:selectAll()
-		end
-	end
-
-    local function selectRecDungeonsFunctor(self)
-		if dungeon_selection_frame then
-			dungeon_selection_frame:selectRec()
-		end
-	end
-
     local function selectSpeedrunMode()
+        --selectSpeedrunFunctor
         saved_var_settings['hardcore_guide'] = {['enabled'] = 0}
         addon:LoadGuideTable(addon.defaultGroup, addon.defaultGuide)
     end
 
+
+
+
 	ultimate_hardcore_survival_guide_frame = RXP_loadUltimateHardcoreSurvivalGuideFrame(toggleSurivalGuideFunctor)
-	local speedrun_guide_selector = RXP_loadSpeedRunGuideSelector(ultimate_hardcore_survival_guide_frame, 0, 0, 0.4, selectSpeedrunMode)
+	local speedrun_guide_selector = RXP_loadSpeedRunGuideSelector(ultimate_hardcore_survival_guide_frame, 0, 0, 0.4, toggleSurivalGuideFunctor)
 	welcome_adventurer_frame =
 		RXP_loadWelcomeAdventurerFrame(toggleUltimateSurvivalGuideFrame, welcomeAdventurerSubmitFunctor, finalizeSettings)
-	dungeon_configuration_frame = RXP_dungeonConfiguration(
-		selectAllDungeonsFunctor,
-        finalizeSettings,
-		toggleSurivalGuideFunctor,
-        selectRecDungeonsFunctor
-	)
-	dungeon_selection_frame = RXP_dungeonSelection(dungeon_configuration_frame)
+
 	ultimate_hardcore_survival_guide_frame:Show()
 	welcome_adventurer_frame:Hide()
-	dungeon_configuration_frame:Hide()
-	dungeon_selection_frame:Hide()
 
     addon.introUI.dungeon_configuration_frame = dungeon_configuration_frame
     addon.introUI.dungeon_selection_frame = dungeon_selection_frame

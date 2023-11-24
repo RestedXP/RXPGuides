@@ -1556,3 +1556,13 @@ addon.dungeonStats = {
         },
     }
 }
+
+addon.dungeonStatsSC = CopyTable(addon.dungeonStats)
+if addon.player.class == "HUNTER" then
+    addon.dungeonStatsSC["Alliance"]["DM"]["travel"] = 0
+    addon.dungeonStatsSC["Alliance"]["DM"]["HUNTER"] = 2
+end
+addon.dungeonStatsSC["Horde"]["DM"] = nil
+addon.dungeonStatsSC["Alliance"]["SFK"] = nil
+addon.dungeonStatsSC["Alliance"]["WC"] = nil
+addon.dungeonStatsSC["Alliance"]["ULDA"].travel = 1
