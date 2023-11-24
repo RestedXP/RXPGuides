@@ -595,7 +595,7 @@ local function evaluateQuestChoices(questID, numChoices, GetQuestItemInfo, GetQu
 
         itemLink = GetQuestItemLink("choice", i)
 
-        if addon.itemUpgrades then
+        if addon.itemUpgrades and addon.settings.profile.enableItemUpgrades then
             itemData = addon.itemUpgrades:GetItemData(itemLink)
 
             if itemData then
@@ -660,6 +660,8 @@ local function handleQuestComplete()
         addon:SendEvent("RXP_QUEST_TURNIN", id, numChoices, 1)
         return
     end
+
+    if not addon.settings.profile.enableTips or not addon.settings.profile.enableItemUpgrades then return end
 
     local bestSellOption, bestRatioOption, options = evaluateQuestChoices(id, numChoices, GetQuestItemInfo, GetQuestItemLink)
 
