@@ -3,7 +3,8 @@ RXPGuides.RegisterGuide([[
 #group +Profession leveling
 #subgroup Mining
 << Horde
-#name 1-375 Horde
+#name 1-375 Horde_a1
+#displayname 1-375 Horde
 
 step << Mage
     #completewith Makaru
@@ -66,7 +67,7 @@ step
     .skill mining,125,1
 step
     #completewith next
-    .goto Orgrimmar,45.1,63.9
+    .goto Orgrimmar,45.120,63.889
     .fly Crossroads >> Fly to The Crossroads
     .zoneskip The Barrens
 step
@@ -123,7 +124,7 @@ step << !Mage
 step
     #completewith next
     .goto Undercity,65.9,44.1,50,0
-    .goto Undercity,63.3,48.6
+    .goto Undercity,63.254,48.559
     .fly Hammerfall >> Fly to Hammerfall
     .skill mining,175,1
     .zoneskip Arathi Highlands
@@ -170,7 +171,7 @@ step << Mage
     .reputation 989,revered,<0,1
 step
     #completewith next
-    .goto Orgrimmar,45.1,63.9
+    .goto Orgrimmar,45.120,63.889
     .fly Gadgetzan >> Fly to Gadgetzan
     .skill mining,245,1
     .zoneskip Tanaris
@@ -274,7 +275,8 @@ RXPGuides.RegisterGuide([[
 #group +Profession leveling
 #subgroup Mining
 << Alliance
-#name 1-375 Alliance
+#name 1-375 Alliance_a2
+#displayname 1-375 Alliance
 
 step << Mage
     #completewith Gelman
@@ -340,7 +342,7 @@ step
 step
     #completewith next
     .goto Stormwind City,68.2,72.9,20,0
-    .goto Stormwind City,71.0,72.5
+    .goto Stormwind City,70.954,72.512
     .fly Lakeshire >> Fly to Lakeshire
     .skill mining,125,1
     .zoneskip Redridge Mountains
@@ -375,7 +377,7 @@ step
 step
     #completewith next
     .goto Stormwind City,68.2,72.9,20,0
-    .goto Stormwind City,71.0,72.5
+    .goto Stormwind City,70.954,72.512
     .fly Refuge Pointe >> Fly to Refuge Pointe
     .skill mining,175,1
     .zoneskip Arathi Highlands
@@ -429,7 +431,7 @@ step << Mage
     .zoneskip Tanaris
 step << !Mage
     #completewith next
-    .goto Ironforge,55.5,47.7
+    .goto Ironforge,55.501,47.742
     .fly Wetlands >> Fly to Menethil Harbor
     .skill mining,245,1
     .zoneskip Tanaris

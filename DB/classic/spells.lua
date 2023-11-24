@@ -1,20 +1,5 @@
 local _, addon = ...
 
-addon.professionID = {
-    alchemy = {2259, 3101, 3464, 11611},
-    blacksmithing = {2018, 3100, 3538, 9785},
-    enchanting = {13920, 7411, 7412, 7413},
-    engineering = {4036, 4037, 4038, 12656},
-    herbalism = {2383},
-    leatherworking = {2108, 3104, 3811, 10662},
-    mining = {2656},
-    skinning = {8613, 8617, 8618, 10768},
-    tailoring = {3908, 3909, 3910, 12180},
-    cooking = {2550, 3102, 3413, 18260},
-    firstaid = {3273, 3274, 7924, 10846},
-    fishing = {7620, 7731, 7732, 18248}
-}
-
 C_Spell.RequestLoadSpellData(2575) -- mining
 C_Spell.RequestLoadSpellData(2368) -- herbalism
 
@@ -244,16 +229,17 @@ s["DRUID"] = {
 
 s["PALADIN"] = {
     [1] = {
-        465 -- Devotion Aura
+        465, -- Devotion Aura
+        2018 -- Blacksmithing
     },
     [4] = {
         20271, -- Judgement
         19740 -- Blessing of might
     },
     [6] = {
-        498, -- Divine protection
         639, -- Holy Light R2
-        3127 -- parry
+        3127, -- parry
+        498 -- Divine protection
     },
     [8] = {
         853, -- Hammer of Justice
@@ -404,19 +390,19 @@ s["SHAMAN"] = {
         8042 -- earth shock
     },
     [6] = {
-        2484, -- earthbind totem
+--      2484, -- earthbind totem
         332 -- healing wave r2
     },
     [8] = {
+        8018, -- rockbiter weapon r2
         8044, -- earth shock r2
         324, -- lightning shield
-        5730, -- stoneclaw totem
-        8018 -- rockbiter weapon r2
+        529, -- Lightning Bolt r2
+        5730 -- stoneclaw totem
     },
     [10] = {
         850, -- flame shock
         8075, -- strength of earth totem
-        529, -- Lightning Bolt r2 (10 instead of 8 to save money)
         8024 -- Flametongue Weapon
     },
     [12] = {
@@ -603,6 +589,7 @@ s["HUNTER"] = {
         24549 -- natural armor r2
     },
     [14] = {
+        14281, -- arcane shot 2
         6197, -- eagle eye
         1513 -- scare beast
     },
@@ -611,14 +598,13 @@ s["HUNTER"] = {
         5118 -- aspect of the cheetah - high prio, can only be trained at 20
     },
     [18] = {
-        14281, -- arcane shot 2
         14318, -- aspect of the hawk r2
         13550, -- serpent sting r3
         3111, -- mend pet r2
-        781 -- disengage r1
+        15147, -- growl r3
     },
     [20] = {
-        15147, -- growl r3
+        781, -- disengage r1
         4187, -- great stamina r3
         24550, -- natural armor r3
         24494, -- nature res
@@ -845,29 +831,29 @@ s["ROGUE"] = {
     },
     [6] = {
         1776, -- gouge
-        1757, -- sinister strike r2
-        3127 -- parry
+        1757 -- sinister strike r2
     },
     [8] = {
         5277, -- evasion
         6760 -- eviscerate r2
     },
     [10] = {
-        921, -- pick pocket
         2983, -- sprint
         6452, -- Anti-venom(FA)
-        674 -- dual wield
+        1424 -- dual wield
     },
     [12] = {
         1766, -- kick
         6770, -- sap
-        5171 -- slice and dice
+        5171, -- slice and dice
+        3128 -- parry
     },
     [14] = {
         703, -- garrote
         1758 -- sinister strike r3
     },
     [16] = {
+        5167, -- pick pocket
         6761, -- eviscerate r3
         1804 -- Pick Lock
     },
@@ -1138,8 +1124,10 @@ s["WARLOCK"] = {
 }
 
 s["MAGE"] = {
-    [4] = {
+    [1] = {
         1459, -- Arcane Intellect
+    },
+    [4] = {
         116 -- frostbolt
     },
     [6] = {
@@ -1217,7 +1205,7 @@ s["MAGE"] = {
         8438, -- arcane explosion r3
         6127, -- conjure water r4
         8412, -- fire blast r4
-        8101, -- fireball r6
+        8401, -- fireball r6
         7302, -- ice armor
         3565, -- darnassus
         3566 -- thunder bluff

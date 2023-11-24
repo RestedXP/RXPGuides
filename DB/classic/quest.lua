@@ -18,13 +18,13 @@ addon.questCompleteItems = {
     [1517] = 6635, -- Call of Earth // Earth Sapta
     [934] = 5623, -- Crown of the Earth // Amethyst Phial
     [2561] = 8149, -- Druid of the Claw // Voodoo Charm
-    [933] = 5645, -- Crown of the Earth // Tourmaline Phial
+    [933] = 5621, -- Crown of the Earth // Tourmaline Phial
     [1520] = 6635, -- Call of Earth // Earth Sapta
-    [929] = 5639, -- Crown of the Earth // Jade Phial
+    [929] = 5619, -- Crown of the Earth // Jade Phial
     [760] = 5416, -- Wildmane Cleansing // Wildmane Cleansing Totem
     [758] = 5415, -- Thunderhorn Cleansing // Thunderhorn Cleansing Totem
     [921] = 5185, -- Crown of the Earth // Crystal Phial
-    [7383] = 18151, -- Crown of the Earth // Amethyst Phial
+    [7383] = 18152, -- Crown of the Earth // Amethyst Phial
     [754] = 5411, -- Winterhoof Cleansing // Winterhoof Cleansing Totem
     [2520] = 8155, -- Sathrah's Sacrifice // Sathrah's Sacrifice
     [6543] = 16783, -- The Warsong Reports // Bundle of Reports
@@ -162,6 +162,7 @@ addon.questCompleteItems = {
     [8507] = 21143, -- Field Duty // Unsigned Field Duty Papers
     [8731] = 21143, -- Field Duty // Unsigned Field Duty Papers
     [8606] = 21042, -- Decoy! // Narain's Special Kit
+    [2459] = 8049, -- Ferocitas the Dream Eater // Gnarlpine Necklace
     -- Horde/Neutral items:
     [2987] = 9466,
     [6381] = 16208,
@@ -208,7 +209,7 @@ addon.questCompleteItems = {
     [55] = 7297,
     [3461] = 10445,
     [325] = 7297,
-    [611] = 4027
+    [611] = 4027,
 }
 
 -- Items required to turn in the quest
@@ -224,5 +225,6 @@ addon.questAcceptItems = {
     [3461] = 10444, -- Return to Tymor // Standard Issue Flare Gun
     [2204] = 7667, -- Restoring the Necklace // Talvash's Phial of Scrying
     [949] = 5251, -- The Twilight Camp // Phial of Scrying
-    [2478] = 8051 -- Mission: Possible But Not Probable // Flare Gun
+    [2478] = 8051, -- Mission: Possible But Not Probable // Flare Gun
+    [830] = 4881, -- The Admiral's Orders // Aged Envelope
 }

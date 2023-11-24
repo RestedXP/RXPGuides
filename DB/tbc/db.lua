@@ -10,9 +10,25 @@ addon.skipPreReq = {
     [10008] = 1
 }
 
-addon.questConversion = {
-    [9684] = 63866 -- blood elf rez quest
+local _,class = UnitClass("player")
+
+addon.defaultGuideList = {
+    ["Elwynn Forest"] = "RestedXP Alliance 1-20\\1-11 Elwynn Forest",
+    ["Teldrassil"] = "RestedXP Alliance 1-20\\01-06 Shadowglen",
+    ["Dun Morogh"] = "RestedXP Alliance 1-20\\01-06 Coldridge Valley",
+    ["Azuremyst Isle"] = "RestedXP Alliance 1-20\\01-12 Azuremyst Isle",
+    ["Durotar"] = "RestedXP Horde 1-30\\01-10 Durotar",
+    ["Mulgore"] = "RestedXP Horde 1-30\\01-10 Mulgore",
+    ["Tirisfal Glades"] = "RestedXP Horde 1-30\\01-06 Tirisfal Glades",
+    ["Eversong Woods"] = "RestedXP Horde 1-30\\01-06 Eversong Woods",
 }
+
+if class == "WARLOCK" then
+    addon.defaultGuideList["Dun Morogh"] = "RestedXP Alliance 1-20\\1-12 Dun Morogh"
+elseif class == "HUNTER" then
+    addon.defaultGuideList["Dun Morogh"] = "RestedXP Alliance 1-20\\1-11 Dun Morogh"
+end
+
 addon.mapId = {
 	["Durotar"] = 1411,
 	["Mulgore"] = 1412,
@@ -81,6 +97,63 @@ addon.mapId = {
 	["Outland"] = 1945 --987?
 }
 
+addon.FPbyZone = {
+    ["Horde"] = {
+        [1448] = 48,
+        [1418] = 21,
+        [1450] = 69,
+        [1451] = 72,
+        [1452] = 53,
+        [1454] = 23,
+        [1425] = 76,
+        [1458] = 11,
+        [1428] = 70,
+        [1456] = 22,
+        [1444] = 42,
+        [1442] = 29,
+        [1435] = 56,
+        [1421] = 10,
+        [1449] = 79,
+        [1423] = 68,
+        [1427] = 75,
+        [1441] = 30,
+        [1411] = 23,
+        [1443] = 38,
+        [1445] = 55,
+        [1446] = 40,
+        [1447] = 44,
+        [1412] = 22,
+    },
+    ["Alliance"] = {
+        [1448] = 65,
+        [1449] = 79,
+        [1450] = 49,
+        [1451] = 73,
+        [1452] = 52,
+        [1422] = 66,
+        [1423] = 67,
+        [1455] = 6,
+        [1425] = 43,
+        [1426] = 6,
+        [1427] = 74,
+        [1428] = 71,
+        [1431] = 12,
+        [1432] = 8,
+        [1436] = 4,
+        [1437] = 7,
+        [1438] = 27,
+        [1439] = 26,
+        [1440] = 28,
+        [1442] = 33,
+        [1443] = 37,
+        [1413] = 80,
+        [1445] = 32,
+        [1446] = 39,
+        [1447] = 64,
+        [1419] = 45,
+        [1453] = 2,
+    },
+}
 
 addon.professionID = {
     alchemy = {2259, 3101, 3464, 11611, 28596, 51304},
@@ -96,12 +169,14 @@ addon.professionID = {
     tailoring = {3908, 3909, 3910, 12180, 26790, 51309},
     cooking = {2550, 3102, 3413, 18260, 33359, 51296},
     firstaid = {3273, 3274, 7924, 10846, 27028, 45542},
-    fishing = {7620, 7731, 7732, 18248, 33095, 51294}
+    fishing = {7620, 7731, 7732, 18248, 33095, 51294},
+    lockpicking = {1804},
 }
 
 C_Spell.RequestLoadSpellData(2575) -- mining
 C_Spell.RequestLoadSpellData(9134) -- herbalism
 C_Spell.RequestLoadSpellData(33388) -- riding
+C_Spell.RequestLoadSpellData(1809) -- lockpicking
 
 addon.base = {66,78,71,101,116,73,110,102,111}
 
@@ -435,8 +510,8 @@ function addon.CalculateTotalXP(flags)
     local output = bit.band(flags,0x2) == 0x2
     local ignorePreReqs
     if bit.band(flags,0x1) == 0x1 then
-        local aldor = addon.AldorScryerCheck("Aldor") and 932
-        local scryer = addon.AldorScryerCheck("Scryer") and 934
+        local aldor = addon.stepLogic.AldorScryerCheck("Aldor") and 932
+        local scryer = addon.stepLogic.AldorScryerCheck("Scryer") and 934
         ignorePreReqs = aldor or scryer or 932
     else
         addon.questsDone = {}
@@ -517,7 +592,7 @@ function addon.ShowMissingQuests(output)
         end
     end
     if output then
-        print(t)
+        print(t)--ok
     end
     return t
 end

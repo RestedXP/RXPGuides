@@ -1,4 +1,5 @@
 local addonName, addon = ...
+local faction = UnitFactionGroup("player")
 
 addon.skipPreReq = {
     [9573] = 1,
@@ -10,9 +11,30 @@ addon.skipPreReq = {
     [10008] = 1
 }
 
-addon.questConversion = {
-    [9684] = 63866 -- blood elf rez quest
+local _,class = UnitClass("player")
+
+addon.defaultGuideList = {
+    ["Elwynn Forest"] = "RestedXP Alliance 1-20\\01-11 Elwynn Forest",
+    ["Teldrassil"] = "RestedXP Alliance 1-20\\01-06 Shadowglen",
+    ["Dun Morogh"] = "RestedXP Alliance 1-20\\01-06 Coldridge Valley",
+    ["Azuremyst Isle"] = "RestedXP Alliance 1-20\\01-12 Azuremyst Isle",
+    ["Durotar"] = "RestedXP Horde 1-30\\01-10 Durotar",
+    ["Mulgore"] = "RestedXP Horde 1-30\\01-10 Mulgore",
+    ["Tirisfal Glades"] = "RestedXP Horde 1-30\\01-06 Tirisfal Glades",
+    ["Eversong Woods"] = "RestedXP Horde 1-30\\01-06 Eversong Woods",
 }
+
+if faction == "Horde" then
+    addon.defaultGroup = "RestedXP Horde 1-30"
+elseif faction == "Alliance" then
+    addon.defaultGroup = "RestedXP Alliance 1-20"
+end
+
+if class == "WARLOCK" then
+    addon.defaultGuideList["Dun Morogh"] = "RestedXP Alliance 1-20\\1-12 Dun Morogh"
+elseif class == "HUNTER" then
+    addon.defaultGuideList["Dun Morogh"] = "RestedXP Alliance 1-20\\1-11 Dun Morogh"
+end
 
 addon.mapId = {
     ["Dire Maul"] = 234,
@@ -190,6 +212,63 @@ addon.mapId = {
     ["Outland"] = 1945, --987?
 }
 
+addon.FPbyZone = {
+    ["Horde"] = {
+        [1448] = 48,
+        [1418] = 21,
+        [1450] = 69,
+        [1451] = 72,
+        [1452] = 53,
+        [1454] = 23,
+        [1425] = 76,
+        [1458] = 11,
+        [1428] = 70,
+        [1456] = 22,
+        [1444] = 42,
+        [1442] = 29,
+        [1435] = 56,
+        [1421] = 10,
+        [1449] = 79,
+        [1423] = 68,
+        [1427] = 75,
+        [1441] = 30,
+        [1411] = 23,
+        [1443] = 38,
+        [1445] = 55,
+        [1446] = 40,
+        [1447] = 44,
+        [1412] = 22,
+    },
+    ["Alliance"] = {
+        [1448] = 65,
+        [1449] = 79,
+        [1450] = 49,
+        [1451] = 73,
+        [1452] = 52,
+        [1422] = 66,
+        [1423] = 67,
+        [1455] = 6,
+        [1425] = 43,
+        [1426] = 6,
+        [1427] = 74,
+        [1428] = 71,
+        [1431] = 12,
+        [1432] = 8,
+        [1436] = 4,
+        [1437] = 7,
+        [1438] = 27,
+        [1439] = 26,
+        [1440] = 28,
+        [1442] = 33,
+        [1443] = 37,
+        [1413] = 80,
+        [1445] = 32,
+        [1446] = 39,
+        [1447] = 64,
+        [1419] = 45,
+        [1453] = 2,
+    },
+}
 
 addon.mapId["ScarletEnclave"] = 124
 addon.mapId["IcecrownGlacier"] = addon.mapId["Icecrown"]
@@ -217,12 +296,14 @@ addon.professionID = {
     tailoring = {3908, 3909, 3910, 12180, 26790, 51309},
     cooking = {2550, 3102, 3413, 18260, 33359, 51296},
     firstaid = {3273, 3274, 7924, 10846, 27028, 45542},
-    fishing = {7620, 7731, 7732, 18248, 33095, 51294}
+    fishing = {7620, 7731, 7732, 18248, 33095, 51294},
+    lockpicking = {1804},
 }
 
 C_Spell.RequestLoadSpellData(2575) -- mining
 C_Spell.RequestLoadSpellData(9134) -- herbalism
 C_Spell.RequestLoadSpellData(33388) -- riding
+C_Spell.RequestLoadSpellData(1809) -- lockpicking
 
 addon.base = {66,78,71,101,116,73,110,102,111}
 
@@ -556,8 +637,8 @@ function addon.CalculateTotalXP(flags)
     local output = bit.band(flags,0x2) == 0x2
     local ignorePreReqs
     if bit.band(flags,0x1) == 0x1 then
-        local aldor = addon.AldorScryerCheck("Aldor") and 932
-        local scryer = addon.AldorScryerCheck("Scryer") and 934
+        local aldor = addon.stepLogic.AldorScryerCheck("Aldor") and 932
+        local scryer = addon.stepLogic.AldorScryerCheck("Scryer") and 934
         ignorePreReqs = aldor or scryer or 932
     else
         addon.questsDone = {}
@@ -1984,4 +2065,336 @@ addon.QuestDB = {
 		["xp"] = 8600,
 		["itemId"] = 24245,
 	},
+}
+
+addon.mountIDs = {
+	[75] = {
+		67466, --Argent Warhorse
+		58983, --Big Blizzard Bear
+		35022, --Black Hawkstrider
+		6896, --Black Ram
+		64977, --Black Skeletal Horse
+		470, --Black Stallion
+		578, --Black Wolf
+		64658, --Black Wolf
+		35020, --Blue Hawkstrider
+		10969, --Blue Mechanostrider
+		33630, --Blue Mechanostrider
+		17463, --Blue Skeletal Horse
+		50869, --Brewfest Kodo
+		43899, --Brewfest Ram
+		50870, --Brewfest Ram
+		17464, --Brown Skeletal Horse
+		6654, --Brown Wolf
+		34406, --Brown Elekk
+		458, --Brown Horse
+		18990, --Brown Kodo
+		6899, --Brown Ram
+		75614, --Celestial Steed
+		6648, --Chestnut Mare
+		6653, --Dire Wolf
+		8395, --Emerald Raptor
+		394209, --Festering Emerald Drake
+		35710, --Gray Elekk
+		18989, --Gray Kodo
+		6777, --Gray Ram
+		15780, --Green Mechanostrider
+		17453, --Green Mechanostrider
+		48025, --Headless Horseman's Mount
+		72286, --Invincible
+		10795, --Ivory Raptor
+		372677, --Kalu'ak Whalebone Glider
+		472, --Pinto
+		35711, --Purple Elekk
+		35018, --Purple Hawkstrider
+		348459, --Reawakened Phase-Hunter
+		34795, --Red Hawkstrider
+		10873, --Red Mechanostrider
+		17462, --Red Skeletal Horse
+		579, --Red Wolf
+		16080, --Red Wolf
+		42776, --Spectral Tiger
+		10789, --Spotted Frostsaber
+		66847, --Striped Dawnsaber
+		8394, --Striped Frostsaber
+		10793, --Striped Nightsaber
+		580, --Timber Wolf
+		10796, --Turquoise Raptor
+		17454, --Unpainted Mechanostrider
+		10799, --Violet Raptor
+		64657, --White Kodo
+		6898, --White Ram
+		468, --White Stallion
+		581, --Winter Wolf
+		74856, --Blazing Hippogryph
+		387320, --Blazing Hippogryph
+		54729, --Winged Steed of the Ebon Blade
+		71342, --X-45 Heartbreaker
+		75973, --X-53 Touring Rocket
+        5784, --Felsteed
+        13819, --Warhorse
+	},
+
+	[150] = {
+		43688, --Amani War Bear
+		16056, --Ancient Frostsaber
+		66906, --Argent Charger
+		60114, --Armored Brown Bear
+		60116, --Armored Brown Bear
+		51412, --Big Battle Bear
+		387319, --Big Battle Bear
+		58983, --Big Blizzard Bear
+		22719, --Black Battlestrider
+		16055, --Black Nightsaber
+		26656, --Black Qiraji Battle Tank
+		17461, --Black Ram
+		60118, --Black War Bear
+		60119, --Black War Bear
+		48027, --Black War Elekk
+		22718, --Black War Kodo
+		59785, --Black War Mammoth
+		59788, --Black War Mammoth
+		22720, --Black War Ram
+		22721, --Black War Raptor
+		22717, --Black War Steed
+		22723, --Black War Tiger
+		22724, --Black War Wolf
+		25953, --Blue Qiraji Battle Tank
+		64656, --Blue Skeletal Warhorse
+		75614, --Celestial Steed
+		39315, --Cobalt Riding Talbuk
+		34896, --Cobalt War Talbuk
+		73313, --Crimson Deathcharger
+		68188, --Crusader's Black Warhorse
+		68187, --Crusader's White Warhorse
+		39316, --Dark Riding Talbuk
+		34790, --Dark War Talbuk
+		63635, --Darkspear Raptor
+		63637, --Darnassian Nightsaber
+		63639, --Exodar Elekk
+		394209, --Festering Emerald Drake
+		36702, --Fiery Warhorse
+		63643, --Forsaken Warhorse
+		17460, --Frost Ram
+		23509, --Frostwolf Howler
+		63638, --Gnomeregan Mechanostrider
+		61465, --Grand Black War Mammoth
+		61467, --Grand Black War Mammoth
+		59802, --Grand Ice Mammoth
+		59804, --Grand Ice Mammoth
+		61469, --Grand Ice Mammoth
+		61470, --Grand Ice Mammoth
+		35713, --Great Blue Elekk
+		49379, --Great Brewfest Kodo
+		23249, --Great Brown Kodo
+		65641, --Great Golden Kodo
+		23248, --Great Gray Kodo
+		35712, --Great Green Elekk
+		35714, --Great Purple Elekk
+		65637, --Great Red Elekk
+		23247, --Great White Kodo
+		18991, --Green Kodo
+		26056, --Green Qiraji Battle Tank
+		17465, --Green Skeletal Warhorse
+		48025, --Headless Horseman's Mount
+		59797, --Ice Mammoth
+		59799, --Ice Mammoth
+		17459, --Icy Blue Mechanostrider Mod A
+		72286, --Invincible
+		63636, --Ironforge Ram
+		17450, --Ivory Raptor
+		372677, --Kalu'ak Whalebone Glider
+		65917, --Magic Rooster
+		387308, --Magic Rooster
+		55531, --Mechano-hog
+		60424, --Mekgineer's Chopper
+		16084, --Mottled Red Raptor
+		66846, --Ochre Skeletal Warhorse
+		63640, --Orgrimmar Wolf
+		16082, --Palomino
+		23246, --Purple Skeletal Warhorse
+		66090, --Quel'dorei Steed
+		41252, --Raven Lord
+		26054, --Red Qiraji Battle Tank
+		22722, --Red Skeletal Warhorse
+		17481, --Rivendare's Deathcharger
+		39317, --Silver Riding Talbuk
+		34898, --Silver War Talbuk
+		63642, --Silvermoon Hawkstrider
+		23510, --Stormpike Battle Charger
+		63232, --Stormwind Steed
+		66091, --Sunreaver Hawkstrider
+		68057, --Swift Alliance Steed
+		23241, --Swift Blue Raptor
+		43900, --Swift Brewfest Ram
+		23238, --Swift Brown Ram
+		23229, --Swift Brown Steed
+		23250, --Swift Brown Wolf
+		65646, --Swift Burgundy Wolf
+		23221, --Swift Frostsaber
+		23239, --Swift Gray Ram
+		65640, --Swift Gray Steed
+		23252, --Swift Gray Wolf
+		35025, --Swift Green Hawkstrider
+		23225, --Swift Green Mechanostrider
+		68056, --Swift Horde Wolf
+		23219, --Swift Mistsaber
+		65638, --Swift Moonsaber
+		23242, --Swift Olive Raptor
+		23243, --Swift Orange Raptor
+		23227, --Swift Palomino
+		33660, --Swift Pink Hawkstrider
+		35027, --Swift Purple Hawkstrider
+		65644, --Swift Purple Raptor
+		42777, --Swift Spectral Tiger
+		23338, --Swift Stormsaber
+		23251, --Swift Timber Wolf
+		65643, --Swift Violet Ram
+		35028, --Swift Warstrider
+		46628, --Swift White Hawkstrider
+		23223, --Swift White Mechanostrider
+		23240, --Swift White Ram
+		23228, --Swift White Steed
+		23222, --Swift Yellow Mechanostrider
+		48954, --Swift Zhevra
+		49322, --Swift Zhevra
+		24252, --Swift Zulian Tiger
+		39318, --Tan Riding Talbuk
+		34899, --Tan War Talbuk
+		18992, --Teal Kodo
+		63641, --Thunder Bluff Kodo
+		61425, --Traveler's Tundra Mammoth
+		61447, --Traveler's Tundra Mammoth
+		65642, --Turbostrider
+		42781, --Upper Deck - Spectral Tiger Mount
+		64659, --Venomhide Ravasaur
+		15779, --White Mechanostrider Mod B
+		54753, --White Polar Bear
+		39319, --White Riding Talbuk
+		65645, --White Skeletal Warhorse
+		16083, --White Stallion
+		34897, --White War Talbuk
+		16081, --Winter Wolf
+		17229, --Winterspring Frostsaber
+		59791, --Wooly Mammoth
+		59793, --Wooly Mammoth
+		74918, --Wooly White Rhino
+		387321, --Wooly White Rhino
+		26055, --Yellow Qiraji Battle Tank
+		74856, --Blazing Hippogryph
+		387320, --Blazing Hippogryph
+		54729, --Winged Steed of the Ebon Blade
+		71342, --X-45 Heartbreaker
+		75973, --X-53 Touring Rocket
+        23161, --Dreadsteed
+        23214, --Charger
+	},
+
+	[225] = {
+		74856, --Blazing Hippogryph
+		387320, --Blazing Hippogryph
+		32244, --Blue Wind Rider
+		75614, --Celestial Steed
+		32239, --Ebon Gryphon
+		394209, --Festering Emerald Drake
+		61451, --Flying Carpet
+		44153, --Flying Machine
+		32235, --Golden Gryphon
+		32245, --Green Wind Rider
+		48025, --Headless Horseman's Mount
+		72286, --Invincible
+		372677, --Kalu'ak Whalebone Glider
+		61309, --Magnificent Flying Carpet
+		32240, --Snowy Gryphon
+		32243, --Tawny Wind Rider
+		54729, --Winged Steed of the Ebon Blade
+		71342, --X-45 Heartbreaker
+		46197, --X-51 Nether-Rocket
+		387323, --X-51 Nether-Rocket
+		75973, --X-53 Touring Rocket
+	},
+
+	[300] = {
+		60025, --Albino Drake
+		63844, --Argent Hippogryph
+		61230, --Armored Blue Wind Rider
+		61229, --Armored Snowy Gryphon
+		59567, --Azure Drake
+		41514, --Azure Netherwing Drake
+		59650, --Black Drake
+		59976, --Black Proto-Drake
+		74856, --Blazing Hippogryph
+		387320, --Blazing Hippogryph
+		61996, --Blue Dragonhawk
+		59568, --Blue Drake
+		59996, --Blue Proto-Drake
+		39803, --Blue Riding Nether Ray
+		59569, --Bronze Drake
+		75614, --Celestial Steed
+		43927, --Cenarion War Hippogryph
+		41515, --Cobalt Netherwing Drake
+		394209, --Festering Emerald Drake
+		75596, --Frosty Flying Carpet
+		61294, --Green Proto Drake
+		39798, --Green Riding Nether Ray
+		48025, --Headless Horseman's Mount
+		72286, --Invincible
+		372677, --Kalu'ak Whalebone Glider
+		41513, --Onyx Netherwing Drake
+		41516, --Purple Netherwing Drake
+		39801, --Purple Riding Nether Ray
+		61997, --Red Dragonhawk
+		59570, --Red Drake
+		59961, --Red Proto-Drake
+		39800, --Red Riding Nether Ray
+		66087, --Silver Covenant Hippogryph
+		39802, --Silver Riding Nether Ray
+		66088, --Sunreaver Dragonhawk
+		32242, --Swift Blue Gryphon
+		32290, --Swift Green Gryphon
+		32295, --Swift Green Wind Rider
+		32292, --Swift Purple Gryphon
+		32297, --Swift Purple Wind Rider
+		32296, --Swift Yellow Wind Rider
+		60002, --Time-Lost Proto-Drake
+		44151, --Turbo-Charged Flying Machine
+		59571, --Twilight Drake
+		41517, --Veridian Netherwing Drake
+		41518, --Violet Netherwing Drake
+		54729, --Winged Steed of the Ebon Blade
+		71342, --X-45 Heartbreaker
+		46199, --X-51 Nether-Rocket X-TREME
+		387311, --X-51 Nether-Rocket X-TREME
+		75973, --X-53 Touring Rocket
+	},
+
+
+	[375] = {
+		40192, --Ashes of Al'ar
+		72808, --Bloodbathed Frostbrood Vanquisher
+		58615, --Brutal Nether Drake
+		75614, --Celestial Steed
+		64927, --Deadly Gladiator's Frost Wyrm
+		65439, --Furious Gladiator's Frost Wyrm
+		72807, --Icebound Frostbrood Vanquisher
+		48025, --Headless Horseman's Mount
+		72286, --Invincible
+		63956, --Ironbound Proto-Drake
+		44317, --Merciless Nether Drake
+		44744, --Merciless Nether Drake
+		63796, --Mimiron's Head
+		69395, --Onyxian Drake
+		32345, --Peep the Phoenix Mount
+		60021, --Plagued Proto Drake
+		67336, --Relentless Gladiator's Frost Wyrm
+		63963, --Rusted Proto Drake
+		37015, --Swift Nether Drake
+		49193, --Vengeful Nether Drake
+		60024, --Violet Proto-Drake
+		54729, --Winged Steed of the Ebon Blade
+		71810, --Wrathful Gladiator's Frost Wyrm
+		71342, --X-45 Heartbreaker
+		75973, --X-53 Touring Rocket
+	},
+
 }

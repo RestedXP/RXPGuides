@@ -3,9 +3,11 @@ local RXPFrame = addon.RXPFrame
 local candy = LibStub("LibCandyBar-3.0")
 
 local BarContainer = CreateFrame("Frame","$parentBarContainer",RXPFrame)
+
 BarContainer.height = 16
 
 RXPFrame.BarContainer = BarContainer
+BarContainer.bars = {}
 BarContainer.barTexture = "Interface\\CHARACTERFRAME\\BarFill"
 BarContainer.barIcon = "Interface\\ICONS\\INV_Misc_PocketWatch_02"
 
@@ -13,21 +15,104 @@ BarContainer:ClearAllPoints()
 BarContainer:SetPoint("TOPLEFT",RXPFrame.Footer,"TOPLEFT",4,0)
 BarContainer:SetPoint("BOTTOMRIGHT",RXPFrame.Footer,"BOTTOMRIGHT",0,1)
 
+local function OnHide(self)
+    BarContainer.bars[self:GetLabel()] = nil
+    addon:SortTimers()
+    if not next(BarContainer.bars) then
+        RXPFrame.Footer.icon:SetAlpha(1)
+        RXPFrame.Footer.text:SetAlpha(1)
+        RXPFrame.Footer.cog:SetAlpha(1)
+    end
+end
 
+function addon:SortTimers()
+
+    local lastBar = false
+    local bars = {}
+    local reverse
+
+    for l,bar in pairs(BarContainer.bars) do
+        table.insert(bars,bar)
+    end
+
+    if RXPFrame.CurrentStepFrame.anchor == "BOTTOM" and #bars > 1 then
+        BarContainer:ClearAllPoints()
+        BarContainer:SetPoint("BOTTOMLEFT",RXPFrame.GuideName,"TOPLEFT",4,0)
+        BarContainer:SetPoint("BOTTOMRIGHT",RXPFrame.GuideName,"TOPRIGHT",0,1)
+        BarContainer:SetHeight(BarContainer.height*#bars)
+        reverse = true
+    else
+        BarContainer:ClearAllPoints()
+        BarContainer:SetPoint("TOPLEFT",RXPFrame.Footer,"TOPLEFT",4,0)
+        BarContainer:SetPoint("BOTTOMRIGHT",RXPFrame.Footer,"BOTTOMRIGHT",0,1)
+    end
+
+    table.sort(bars,function(b1,b2)
+        return b1.exp > b2.exp
+    end)
+
+    for _,bar in ipairs(bars) do
+        bar:ClearAllPoints()
+        if lastBar then
+            if reverse then
+                bar:SetPoint("BOTTOMLEFT",lastBar,"TOPLEFT")
+                bar:SetPoint("BOTTOMRIGHT",lastBar,"TOPRIGHT")
+            else
+                bar:SetPoint("TOPLEFT",lastBar,"BOTTOMLEFT")
+                bar:SetPoint("TOPRIGHT",lastBar,"BOTTOMRIGHT")
+            end
+        else
+            if reverse then
+                bar:SetPoint("BOTTOMLEFT",BarContainer,"BOTTOMLEFT")
+                bar:SetPoint("BOTTOMRIGHT",BarContainer,"BOTTOMRIGHT")
+            else
+                bar:SetPoint("TOPLEFT",BarContainer,"TOPLEFT")
+                bar:SetPoint("TOPRIGHT",BarContainer,"TOPRIGHT")
+            end
+        end
+        lastBar = bar
+        bar:SetHeight(BarContainer.height)
+    end
+end
+
+local barPool = {}
 local function CreateBar(label)
-    local bar = candy:New(BarContainer.barTexture, 100, 16)
-    bar:SetDuration(60)
-    bar:SetPoint("TOPLEFT",BarContainer,"TOPLEFT")
-    bar:SetPoint("TOPRIGHT",BarContainer,"TOPRIGHT")
-    bar:SetIcon(BarContainer.barIcon)
-    bar:SetColor(unpack(addon.colors.mapPins))
+    local bar
+    for i,v in pairs(barPool) do
+        if not v:IsShown() then
+            bar = v
+            break
+        end
+    end
+    if not bar then
+        bar = candy:New(BarContainer.barTexture, 100, 16)
+        table.insert(barPool,bar)
+        bar:SetDuration(60)
+        bar:SetScript("OnHide",OnHide)
+    end
     bar:SetLabel(label)
+    --print(bar:GetScript("OnHide"))
     return bar
 end
---RXP = addon
+
+function addon.HideTimers()
+    for _,bar in pairs(barPool) do
+        if bar:IsShown() then
+            bar:Hide()
+        end
+    end
+    RXPFrame.Footer.icon:SetAlpha(1)
+    RXPFrame.Footer.text:SetAlpha(1)
+    RXPFrame.Footer.cog:SetAlpha(1)
+end
+
 function addon.StartTimer(duration,label,options)
     if type(duration) ~= "number" or duration <= 0 or not RXPFrame:IsShown() then return end
-    local bar = CreateBar(label or "")
+    label = label or ""
+    local bar = BarContainer.bars[label] or CreateBar(label)
+    BarContainer.bars[label] = bar
+    --bar:ClearAllPoints()
+
     bar:SetDuration(duration)
     if options then
         if options.colors then
@@ -40,21 +125,33 @@ function addon.StartTimer(duration,label,options)
             bar:SetIcon(options.icon)
         end
     end
+    bar:SetIcon(BarContainer.barIcon)
+    bar:SetColor(unpack(addon.colors.mapPins))
+    bar:SetHeight(BarContainer.height)
     bar:Start()
     RXPFrame.Footer.icon:SetAlpha(0)
     RXPFrame.Footer.text:SetAlpha(0)
     RXPFrame.Footer.cog:SetAlpha(0)
+
+    addon:SortTimers()
     return bar
 end
 
-local faction = UnitFactionGroup("player")
+
 local flightInfo = {}
 addon.flightInfo = flightInfo
-flightInfo.nodeHash = {}
+local nodeHash = {}
+flightInfo.nodeHash = nodeHash
+local flightUpdate = 0
 
 function addon:TAXIMAP_OPENED()
     local mapID = C_Map.GetBestMapForUnit("player")
-    if flightInfo.MapID ~= mapID then
+    local cTime = GetTime()
+    if mapID and cTime - flightUpdate > 1 then
+        flightUpdate = cTime
+        table.wipe(nodeHash)
+        table.wipe(flightInfo)
+        flightInfo.nodeHash = nodeHash
         local FPList = C_TaxiMap.GetAllTaxiNodes(mapID)
         for _, v in pairs(FPList) do
             local id = v.nodeID
@@ -76,10 +173,16 @@ end
 
 function addon:PLAYER_CONTROL_LOST()
     -- Don't display flight timer if addon hidden
-    if not addon.settings.db.profile.showEnabled then return end
 
     if GetTime() - flightInfo.startFlight < 1.5 then
-        flightInfo.flightBar = addon.StartTimer(flightInfo.timer,flightInfo.dest)
+        if addon.RXPFrame and addon.RXPFrame:IsShown() and
+         flightInfo.timer and addon.settings.profile.showFlightTimers then
+            flightInfo.flightBar = addon.StartTimer(
+                flightInfo.timer,
+                RXPCData.flightPaths[flightInfo.dest]
+            )
+        end
+        addon:SendEvent("RXP_FLIGHT_START",flightInfo.currentFP,flightInfo.dest,flightInfo.timer)
     end
 end
 
@@ -102,15 +205,20 @@ function addon.GetFlightHash(index,level)
 end
 
 local function GetFlightTime(index)
+    local faction = addon.player.faction
     local dest = flightInfo.nodeHash[addon.GetFlightHash(index)]
     local src = flightInfo.currentFP
-    local FPDB = addon.FPDB[faction]
+    flightInfo.dest = dest
+    flightInfo.activeIndex = index
+    local FPDB = addon.FPDB and addon.FPDB[faction]
+    if not FPDB then
+        flightInfo.timer = nil
+        return
+    end
     --uses the flight timer from destination to source if the timer is not found
     local time = FPDB[src] and FPDB[src][dest] or FPDB[dest] and FPDB[dest][src]
     if time then
         flightInfo.timer = time
-        flightInfo.dest = RXPCData.flightPaths[dest]
-        flightInfo.activeIndex = index
         return time
     else
         local totalTime = 0
@@ -129,11 +237,10 @@ local function GetFlightTime(index)
         end
         if totalTime > 0 then
             flightInfo.timer = totalTime
-            flightInfo.activeIndex = index
-            flightInfo.dest = RXPCData.flightPaths[dest]
             return totalTime
         end
     end
+    flightInfo.timer = nil
 end
 
  -- add flight path times to taxi map tooltips:

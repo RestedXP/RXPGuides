@@ -5,28 +5,52 @@ local _, addon = ...
 local HSframe = CreateFrame("Frame");
 local currentFPS = GetCVar("maxfps")
 local HSstart = 0
-local batchingWindow = 0.005
+local batchingWindow = 0.006
+local bindConfirmation = string.gsub(CONFIRM_BINDER,"%%s",".-")
+
+local ConfirmBinder
+if C_PlayerInteractionManager and C_PlayerInteractionManager.ConfirmationInteraction and Enum and Enum.PlayerInteractionType and Enum.PlayerInteractionType.Binder then
+    ConfirmBinder = function()
+        return C_PlayerInteractionManager.ConfirmationInteraction(Enum.PlayerInteractionType.Binder)
+    end
+else
+    ConfirmBinder = _G.ConfirmBinder
+end
 
 local function SwitchBindLocation()
     if GetTime() - HSstart > 10 - batchingWindow then
-        if ConfirmBinder then
-            ConfirmBinder()
-        elseif C_PlayerInteractionManager then
-            C_PlayerInteractionManager.ConfirmationInteraction(Enum.PlayerInteractionType.Binder)
-        end
+        ConfirmBinder()
         HSframe:SetScript("OnUpdate", nil)
         SetCVar("maxfps", currentFPS)
         HSstart = 0
+        --print('bind-ok')
     end
 end
+--[[
+hooksecurefunc("SetCVar",function(n,v)
+    if n == "maxfps" then
+        print(n,v)
+        C_Timer.After(1,function()
+            print(GetCVar("maxfps"))
+        end)
+    end
+end)
+]]
 
 local function StartHSTimer()
     if HSstart == 0 then
-        batchingWindow = addon.settings.db.profile.batchSize / 1e3
+        --print('start-hs')
+        local size = addon.settings.profile.batchSize or 6
+        batchingWindow = size / 1e3
         currentFPS = GetCVar("maxfps")
-        SetCVar("maxfps", 0)
         HSstart = GetTime()
         HSframe:SetScript("OnUpdate", SwitchBindLocation)
+        local bind = _G.StaticPopup1 and _G.StaticPopup1.text and
+                            _G.StaticPopup1.text:GetText() or ""
+        if bind:find(bindConfirmation) then
+            SetCVar("maxfps", "250")
+            addon.StartTimer(10-batchingWindow,"Hearthstone")
+        end
     end
 end
 
@@ -38,12 +62,14 @@ if _G.C_Container and _G.C_Container.UseContainerItem then -- DF+
     end)
 else
     hooksecurefunc("UseContainerItem", function(...)
-        if GetContainerItemID(...) == 6948 then StartHSTimer() end
+        if _G.GetContainerItemID(...) == 6948 then StartHSTimer() end
     end)
 end
 
 hooksecurefunc("UseAction", function(...)
     local event, id = GetActionInfo(...)
-    if event == "item" and id == 6948 or event == "macro" and
-        IsCurrentSpell(8690) then StartHSTimer() end
+    --print(event,id,IsCurrentSpell(id))
+    if event == "item" and id == 6948 or
+        event == "macro" and (IsCurrentSpell(8690) or IsCurrentSpell(556)) or
+        event == "spell" and id == 556 then StartHSTimer() end
 end)
