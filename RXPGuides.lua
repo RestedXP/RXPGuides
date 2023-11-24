@@ -623,7 +623,7 @@ local function evaluateQuestChoices(questID, numChoices, GetQuestItemInfo, GetQu
     end
 
     local bestSellOption, bestSellValue = -1, -1
-    local bestRatioOption, bestRatioValue = -1, -1
+    local bestRatioOption, bestRatioValue = -1, 0
     for choice, data in ipairs(options) do
         if data.sellPrice > bestSellValue then
             bestSellValue = data.sellPrice
@@ -633,7 +633,7 @@ local function evaluateQuestChoices(questID, numChoices, GetQuestItemInfo, GetQu
         -- Check for best compared upgrade
         for _, compareData in ipairs(data.comparisons) do
             if not compareData.Ratio then
-                if compareData.debug == _G.EMPTY then
+                if compareData.ItemLink == _G.EMPTY then
                      -- An item needs to be 10x better to beat an empty slot fill
                     bestRatioValue = 10.0
                     bestRatioOption = choice

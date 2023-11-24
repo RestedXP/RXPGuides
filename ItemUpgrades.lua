@@ -429,15 +429,14 @@ local function TooltipSetItem(tooltip, ...)
     local comparisons = addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
 
     if not comparisons or next(comparisons) == nil then return end
-
-    tooltip:AddLine(fmt("%s - %s", addon.title, _G.ITEM_UPGRADE))
+    local lines = {}
 
     local ratioText
     for _, data in ipairs(comparisons) do
         -- Remove base 100 from percentage
         -- A 140% upgrade ratio is only a 40% upgrade
         if data['debug'] or not data['Ratio'] then
-            ratioText = "(debug) " .. data['debug'] or _G.SPELL_FAILED_ERROR
+            ratioText = "(debug) " .. (data['debug'] or _G.SPELL_FAILED_ERROR)
         elseif data['Ratio'] == 1 then
             ratioText = '100%'
         elseif data['Ratio'] > 0 then
@@ -449,12 +448,19 @@ local function TooltipSetItem(tooltip, ...)
         end
 
         if data.itemEquipLoc and data.itemEquipLoc == 'INVTYPE_WEAPONOFFHAND' then
-            tooltip:AddLine(fmt("  %s: %s (%s)", data['ItemLink'] or _G.UNKNOWN,
-                                ratioText, _G.INVTYPE_WEAPONOFFHAND))
-        else
-            tooltip:AddLine(fmt("  %s: %s", data['ItemLink'] or _G.UNKNOWN,
-                                ratioText))
+            tinsert(lines,
+                    fmt("  %s: %s (%s)", data['ItemLink'] or _G.UNKNOWN,
+                        ratioText, _G.INVTYPE_WEAPONOFFHAND))
+        elseif data.ItemLink ~= _G.EMPTY then
+            tinsert(lines,
+                    fmt("  %s: %s", data['ItemLink'] or _G.UNKNOWN, ratioText))
         end
+    end
+
+    if #lines > 0 then
+        tooltip:AddLine(fmt("%s - %s", addon.title, _G.ITEM_UPGRADE))
+
+        for _, line in ipairs(lines) do tooltip:AddLine(line) end
     end
 
     tooltip:Show()
@@ -1064,6 +1070,7 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
         if not equippedItemLink or equippedItemLink == "" then
             ratio = nil
             debug = _G.EMPTY
+            equippedItemLink = _G.EMPTY
         elseif comparedData.itemLink == equippedItemLink then
             -- Same item, so not an upgrade
             ratio = nil
@@ -1073,14 +1080,13 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
                                                            comparedData, slotId)
         end
 
-        if ratio or addon.settings.profile.debug then
-            tinsert(comparisons, {
-                ['Ratio'] = ratio,
-                ['ItemLink'] = equippedItemLink or _G.UNKNOWN, -- Pass "Unknown" for debugging
-                ['itemEquipLoc'] = itemEquipLoc, -- Is actually slotID for rings/trinkets
-                ['debug'] = debug
-            })
-        end
+        -- Even if ratio nil, add to comparisons for upstream handling based on debug value
+        tinsert(comparisons, {
+            ['Ratio'] = ratio,
+            ['ItemLink'] = equippedItemLink or _G.UNKNOWN, -- Pass "Unknown" for debugging
+            ['itemEquipLoc'] = itemEquipLoc, -- Is actually slotID for rings/trinkets
+            ['debug'] = addon.settings.profile.debug and debug
+        })
 
     end
 
