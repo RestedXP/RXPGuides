@@ -1130,16 +1130,16 @@ local CanSendAuctionQuery, QueryAuctionItems = _G.CanSendAuctionQuery,
 local GetNumAuctionItems, GetAuctionItemLink, GetAuctionItemInfo =
     _G.GetNumAuctionItems, _G.GetAuctionItemLink, _G.GetAuctionItemInfo
 
-local AuctionFilterButtons = {["Weapon"] = 1, ["Armor"] = 2}
+local AuctionFilterButtons = {["Weapons"] = 1, ["Armor"] = 2}
 
 local ahSession = {
     isInitialized = false,
     infoItemsReceived = {}, -- takes itemID, not itemLinks
 
+    -- Cannot cache to RXPCData, because comparisons are mutable and embedded in weighting
     scanData = {},
 
     windowOpen = false,
-    processing = false,
     scanPage = 0,
     scanType = AuctionFilterButtons["Armor"]
 }
@@ -1203,8 +1203,7 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
 
         if ahSession.scanType == AuctionFilterButtons["Armor"] then
             ahSession.scanType = AuctionFilterButtons["Weapons"] -- weapons
-            -- self:Scan() -- TODO enable after handling weapon post-processing
-            self:Analyze()
+            self:Scan()
         else
             self:Analyze()
         end
@@ -1242,9 +1241,6 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
 
     ahSession.scanPage = ahSession.scanPage + 1
 
-    -- TODO consume scanTime for caching
-    ahSession.scanTime = _G.GetServerTime()
-    RXPCData.itemUpgradesScanData = ahSession.scanData
     self:Scan()
 end
 
@@ -1259,7 +1255,7 @@ function addon.itemUpgrades.AH:Scan()
         C_Timer.After(0.35, function() self:Scan() end)
         return
     end
-    print("addon.itemUpgrades.AH:Scan()", ahSession.scanPage, ahSession.scanType)
+    print("addon.itemUpgrades.AH:Scan()", ahSession.scanType, ahSession.scanPage)
 
     local maxLevel = UnitLevel("player")
 
@@ -1271,7 +1267,7 @@ function addon.itemUpgrades.AH:Scan()
                       AuctionCategories[ahSession.scanType].filters)
 end
 
-local function calculate(itemLink, scanData, slotId)
+local function calculate(itemLink, scanData)
     if scanData.lowestPrice <= 0 then return end
     local itemData = addon.itemUpgrades:GetItemData("item:" .. scanData.itemID)
 
@@ -1286,15 +1282,16 @@ local function calculate(itemLink, scanData, slotId)
     scanData.weightPerCopper = scanData.totalWeight / scanData.lowestPrice
     scanData.itemEquipLoc = itemData.itemEquipLoc
 
-    -- TODO handle DPS post-processing slot calculations
     scanData.comparisons = addon.itemUpgrades:CompareItemWeight(itemLink) or {}
 
     for _, compareData in ipairs(scanData.comparisons) do
         -- To avoid complicated comparison, use ratio as a multiplier
-        -- An item needs to be 10x better to beat an empty slot fill
-        scanData.relativeWeightPerCopper =
-            (scanData.totalWeight * (compareData.Ratio or 10.0)) /
-                scanData.lowestPrice
+        -- Ignore relative if slot is empty
+        if compareData.Ratio then
+            scanData.relativeWeightPerCopper =
+                (scanData.totalWeight * compareData.Ratio) /
+                    scanData.lowestPrice
+        end
     end
 end
 
@@ -1328,12 +1325,13 @@ function addon.itemUpgrades.AH:Analyze()
 
     local bAS, slotId
 
-    for itemLink, scanData in pairs(RXPCData.itemUpgradesScanData) do
-        slotId = session.equippableSlots[scanData.itemEquipLoc]
-        calculate(itemLink, scanData, slotId)
+    for itemLink, scanData in pairs(ahSession.scanData) do
+        calculate(itemLink, scanData)
 
+        -- Only run calculations if deeper code was not nil and ratio > 0
         if scanData.relativeWeightPerCopper then
             -- print("Analyze", itemLink, "weightPerCopper", scanData.weightPerCopper, "relativeWPC", scanData.relativeWeightPerCopper)
+            slotId = session.equippableSlots[scanData.itemEquipLoc]
             bAS = ahSession.bestAnalysis[slotId]
 
             if scanData.weightPerCopper > bAS.weightPerCopper.weight then
@@ -1347,6 +1345,8 @@ function addon.itemUpgrades.AH:Analyze()
                     scanData.relativeWeightPerCopper
                 bAS.relativeWeightPerCopper.itemLink = itemLink
             end
+        else
+            print("not rWPC", itemLink)
         end
         -- else -- downgrade, incompatible, or similar
     end
