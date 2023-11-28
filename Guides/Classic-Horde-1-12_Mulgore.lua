@@ -1513,7 +1513,6 @@ step
     .mob Windfury Matriarch
     .mob Windfury Sorceress
 step
-	#era/som
     .goto Mulgore,42.5,13.8
     >>|cRXP_WARN_Use the|r |T135139:0|t[Wildmane Cleansing Totem] |cRXP_WARN_at the Well|r
     >>Use the Wildmane Cleansing Totem at the Well
@@ -1549,8 +1548,7 @@ step
 step
     .goto Thunder Bluff,60.0,51.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cairne|r
-    .turnin 775 >>Turn in Journey into Thunder Bluff
-    .accept 776 >>Accept Rites of the Earthmother
+    .turnin 776 >>Turn in Rites of the Earthmother
     .target Cairne Bloodhoof
 step
     #label RFCPickups1
@@ -1581,12 +1579,10 @@ step
     .target Skorn Whitecloud
     .isOnQuest 770
 step
-	#era/som
     #label WildManeTurnIn
     .goto Mulgore,48.53,60.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mull|r
-    .turnin 759 >>Turn in Wildmane Totem
-    .accept 760 >>Accept Wildmane Cleansing
+    .turnin 760 >>Turn in Wildmane Cleansing
     .target Mull Thunderhorn
 step
     #completewith Fizsprocket

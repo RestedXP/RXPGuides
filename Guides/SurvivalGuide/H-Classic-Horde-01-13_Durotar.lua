@@ -24,8 +24,8 @@ step << Warrior/Shaman/Warlock
     #completewith next
     +|cRXP_WARN_Kill |cRXP_ENEMY_Mottled Boars|r. Loot them until you have 35 copper worth of vendor items (including your armor)|r << Warlock
     +|cRXP_WARN_Kill |cRXP_ENEMY_Mottled Boars|r. Loot them until you have 10 copper worth of vendor items (including your armor)|r << Warrior/Shaman
-    .goto Durotar,43.85,71.73,50,0 << Warlock
-    .goto Durotar,44.19,65.34,50,0 << Warrior/Shaman
+    .goto Durotar,43.85,71.73,30,0 << Warlock
+    .goto Durotar,44.19,65.34,30,0 << Warrior/Shaman
     .mob Mottled Boar
     .money >0.01
 step << Warlock
@@ -34,8 +34,7 @@ step << Warlock
     .accept 1485 >>Accept Vile Familiars
     .target Ruzan
 step << Warrior/Shaman
-    .goto Durotar,43.49,67.35,30,0
-    .goto Durotar,42.59,67.34
+    .goto Durotar,42.59,67.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duokna|r
     .vendor >> Vendor Trash
     .target Duokna
@@ -1559,7 +1558,7 @@ step
     #completewith TaillasherEggs
     .goto Durotar,67.10,69.29,100 >> Swim to the Island
 step
-    #completewith Fur
+    #completewith MinshinasSkull
     >>Kill |cRXP_ENEMY_Tigers|r. Loot them for their |cRXP_LOOT_Fur|r. This does not need to be finished now
     .complete 817,1 --Durotar Tiger Fur (4)
     .mob Durotar Tiger
@@ -2082,7 +2081,7 @@ step << Hunter
     .zone Orgrimmar >> Enter Orgrimmar
     .zoneskip Orgrimmar
 step << Hunter
-    .goto Orgrimmar,34.34,36.33
+    .goto Orgrimmar,32.28,35.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nazgrel|r
     .turnin 831 >>Turn in The Admiral's Orders
     .target Nazgrel

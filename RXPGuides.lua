@@ -573,7 +573,7 @@ local function evaluateQuestChoices(questID, numChoices, GetQuestItemInfo, GetQu
 
     -- If explicitly hard-coded .turnin reward choice, use that and exit
     if addon.settings.profile.enableQuestRewardAutomation
-        and hardCodedReward and hardCodedReward > 0 then -- Quest has an explicit reward ID for .turnin step
+        and hardCodedReward > 0 then -- Quest has an explicit reward ID for .turnin step
 
         return -1, hardCodedReward, {}
     end
@@ -658,6 +658,21 @@ local function handleQuestComplete()
     if numChoices <= 1 then
         GetQuestReward(1)
         addon:SendEvent("RXP_QUEST_TURNIN", id, numChoices, 1)
+        return
+    end
+
+    -- Pull quest handling out for .turnin legacy/hard-coded choices
+    local hardCodedReward = addon.GetStepQuestReward(id)
+
+    -- If explicitly hard-coded .turnin reward choice, use that and exit
+    -- Preserve simplest path for existing functionality
+    if hardCodedReward > 0 and
+        addon.settings.profile.enableQuestRewardAutomation then
+
+        GetQuestReward(hardCodedReward)
+        addon:SendEvent("RXP_QUEST_TURNIN", id, numChoices, hardCodedReward)
+
+        -- Hard-coded, so exit early to keep recommendations and QuestLog portions simpler
         return
     end
 
