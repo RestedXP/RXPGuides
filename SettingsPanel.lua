@@ -6,6 +6,7 @@ local AceConfig = LibStub("AceConfig-3.0")
 local LibDBIcon = LibStub("LibDBIcon-1.0")
 local LibDataBroker = LibStub("LibDataBroker-1.1")
 local AceConfigRegistry = LibStub("AceConfigRegistry-3.0")
+local AceConfigDialog = LibStub("AceConfigDialog-3.0")
 
 local fmt, tostr, next, GetTime = string.format, tostring, next, GetTime
 
@@ -33,23 +34,49 @@ if not addon.settings.gui then
     addon.settings.gui = {selectedDeleteGuide = "", importStatusHistory = {}}
 end
 
-function addon.settings.ChatCommand(input)
-    if not input then
+function addon.settings.OpenSettings(panelName)
+    if not (_G.Settings and _G.Settings.GetCategory) then
+        -- Not used by Era (1.15.0), Wrath (2.5.3), nor Retail (10.1.7)
+        -- Support legacy generic fall through to base settings though
         _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
         _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
+        return
     end
+
+    -- panelName only provided for Import currently
+    if panelName then
+        local optionsName = fmt("%s/%s", addon.RXPOptions.name, panelName)
+
+        -- If sub category, open dedicated standalone window
+        AceConfigDialog:Open(optionsName)
+
+        local acdFrame = AceConfigDialog.OpenFrames and
+                             AceConfigDialog.OpenFrames[optionsName]
+
+        if acdFrame and acdFrame:IsShown() then
+            if not acdFrame.isHooked then
+                addon.settings.textboxHook()
+                acdFrame.isHooked = true
+            end
+
+            -- Successfully opened sub menu
+            return
+        end -- else, fall through to generic handling
+    end
+
+    local category = _G.Settings.GetCategory(addon.RXPOptions.name)
+
+    if category:HasSubcategories() then category.expanded = true end
+
+    _G.Settings.OpenToCategory(category.ID)
+end
+
+function addon.settings.ChatCommand(input)
+    if not input then addon.settings.OpenSettings() end
 
     input = input:trim()
     if input == "import" then
-        -- addon.RXPOptions.expanded = true
-        if _G.Settings and _G.Settings.GetCategory then
-            _G.Settings.GetCategory(addon.RXPOptions.name).expanded = true;
-            _G.Settings.OpenToCategory(addon.RXPOptions.name);
-            -- Settings.OpenToCategory(addon.settings.gui.import); -- causes UI taint on 10.0
-        else
-            _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
-            _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.import)
-        end
+        addon.settings.OpenSettings('Import')
     elseif input == "debug" then
         addon.settings.profile.debug = not addon.settings.profile.debug
     elseif input == "splits" then
@@ -62,8 +89,7 @@ function addon.settings.ChatCommand(input)
         addon.comms.PrettyPrint(_G.HELP .. "\n" ..
                                     addon.help["What are command the line options?"])
     else
-        _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
-        _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
+        addon.settings.OpenSettings()
     end
 end
 
@@ -599,10 +625,12 @@ function addon.settings:CreateImportOptionsPanel()
         }
     }
 
-    AceConfig:RegisterOptionsTable(addon.title .. "/Import", importOptionsTable)
+    AceConfig:RegisterOptionsTable(addon.RXPOptions.name .. "/Import",
+                                   importOptionsTable)
 
-    self.gui.import = LibStub("AceConfigDialog-3.0"):AddToBlizOptions(
-                          addon.title .. "/Import", L("Import"), addon.title)
+    self.gui.import = AceConfigDialog:AddToBlizOptions(
+                          addon.RXPOptions.name .. "/Import", L("Import"),
+                          addon.RXPOptions.name)
 
     -- Ace3 ConfigDialog doesn't support embedding icons in header
     -- Directly references Ace3 built frame object
@@ -663,7 +691,7 @@ function addon.settings:CreateImportOptionsPanel()
         tinsert(importCache.bufferData, char)
     end
 
-    self.gui.import.obj.frame:HookScript("OnShow", function()
+    local function textboxHook()
         -- Prevent hooking multiple times on show
         if importCache.widget then return end
 
@@ -687,8 +715,12 @@ function addon.settings:CreateImportOptionsPanel()
             end
             n = n + 1
         end
-    end)
+    end
 
+    self.textboxHook = textboxHook
+
+    -- Hook embedded settings
+    self.gui.import.obj.frame:HookScript("OnShow", textboxHook)
 end
 
 function addon.settings:CreateAceOptionsPanel()
@@ -2908,8 +2940,7 @@ function addon.settings:CreateAceOptionsPanel()
         end
     }
 
-    addon.RXPOptions = LibStub("AceConfigDialog-3.0"):AddToBlizOptions(
-                           addon.title)
+    addon.RXPOptions = AceConfigDialog:AddToBlizOptions(addon.title)
 
     -- Ace3 ConfigDialog doesn't support embedding icons in header
     -- Directly references Ace3 built frame object
@@ -3279,10 +3310,7 @@ local function buildWorldMapMenu()
     tinsert(menu, {
         text = _G.GAMEOPTIONS_MENU .. "...",
         notCheckable = 1,
-        func = function()
-            _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
-            _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
-        end
+        func = function() addon.settings.OpenSettings() end
     })
 
     tinsert(menu, {

@@ -1035,10 +1035,7 @@ function addon.tracker:UpdateSplitsMenu(menuFrame, button)
             text = _G.GAMEOPTIONS_MENU,
             tooltipOnButton = true,
             notCheckable = 1,
-            func = function()
-                _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
-                _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
-            end
+            func = function() addon.settings.OpenSettings() end
         }, {
             text = _G.HIDE,
             tooltipTitle = L("Temporarily hide, use '/rxp splits' to show again"),

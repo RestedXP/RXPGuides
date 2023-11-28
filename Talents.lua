@@ -143,10 +143,7 @@ local function buildTalentGuidesMenu()
     tinsert(menu, {
         text = _G.GAMEOPTIONS_MENU,
         notCheckable = 1,
-        func = function()
-            _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
-            _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
-        end
+        func = function() addon.settings.OpenSettings() end
     })
 
     tinsert(menu, {
@@ -769,12 +766,9 @@ function addon.talents:DrawTalents()
                                           upcomingTalent - playerLevel)
 
                         if levelsForIndex[talentIndex] then
-                            tinsert(levelsForIndex[talentIndex],
-                                    upcomingTalent)
+                            tinsert(levelsForIndex[talentIndex], upcomingTalent)
                         else
-                            levelsForIndex[talentIndex] = {
-                                upcomingTalent
-                            }
+                            levelsForIndex[talentIndex] = {upcomingTalent}
                         end
 
                     end
@@ -793,7 +787,9 @@ function addon.talents:DrawTalents()
             DrawTalentLevels(index, levelsForIndex[index])
 
             if not ht:IsShown() then ht:Show() end
-            if not ht.levelHeader:IsShown() then ht.levelHeader:Show() end
+            if not ht.levelHeader:IsShown() then
+                ht.levelHeader:Show()
+            end
         else
             if ht:IsShown() then ht:Hide() end
             if ht.levelHeader:IsShown() then ht.levelHeader:Hide() end
