@@ -2003,7 +2003,7 @@ step
 step
     .goto Stonetalon Mountains,45.13,59.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharm|r
-    .fp Sun Rock Retreat >> Get the Run Rock Retreat flight path
+    .fp Sun Rock Retreat >> Get the Sun Rock Retreat flight path
     .target Tharm
 step
     #completewith next
@@ -3903,7 +3903,7 @@ step
     .link https://www.youtube.com/watch?v=h2s4ZjFBLtg&ab >> |cRXP_WARN_CLICK HERE for an example|r
     .zoneskip Ashenvale
 step
-	#completewith next
+	#completewith ZoramFP
     .goto Ashenvale,39.45,55.29,50,0
     .goto Ashenvale,36.47,57.15,50,0
     .goto Ashenvale,34.56,54.13,30,0
@@ -3915,12 +3915,17 @@ step
     >>|cRXP_WARN_Make sure to avoid Astranaar guards en route. Follow the waypoint for safety|r
     .unitscan Astranaar Sentinel
 step
+    #optional
+    .loop 25,Ashenvale,10.86,26.99,11.23,25.73,11.83,25.75,12.51,24.09,14.18,24.03,14.85,23.08,14.13,20.77,14.73,19.56,14.59,17.90,13.38,16.39,13.62,14.48,14.15,15.31,15.88,15.42,15.40,16.96,15.22,18.81,15.33,20.78,15.33,22.51,15.32,24.90,14.76,25.52,14.62,26.49,14.52,28.25,13.55,29.36,12.41,29.15,11.22,31.04,10.38,29.60,11.01,28.57
+    .xp 21 >> Grind to level 21
+step
+    #label ZoramFP
     .goto Ashenvale,12.20,33.80
     .fp Zoram'gar Outpost >> Get the Zoram'gar Outpost flight path
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu|r, |cRXP_FRIENDLY_Karang|r, |cRXP_FRIENDLY_Mitsuwa|r and |cRXP_FRIENDLY_Marukai|r
     .turnin 6562 >> Turn in Trouble in the Deeps
-    .accept 6563 >>Accept The Essence of Aku'Mai
+    .accept 6563 >> Accept The Essence of Aku'Mai
     .goto Ashenvale,11.56,34.29
     .accept 216 >> Accept Between a Rock and a Thistlefur
     .goto Ashenvale,11.90,34.53
@@ -3932,23 +3937,7 @@ step
     .target Karang Amakkar
     .target Mitsuwa
     .target Marukai
-    .xp <21,1
     .group
-step
-    #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu|r, |cRXP_FRIENDLY_Mitsuwa|r and |cRXP_FRIENDLY_Marukai|r
-    .turnin 6562 >> Turn in Trouble in the Deeps
-    .accept 6563 >>Accept The Essence of Aku'Mai
-    .goto Ashenvale,11.56,34.29
-    .accept 6462 >> Accept Troll Charm
-    .goto Ashenvale,11.65,34.85
-    .accept 6442 >> Accept Naga at the Zoram Strand
-    .goto Ashenvale,11.69,34.90
-    .target Je'neu Sancrea
-    .target Mitsuwa
-    .target Marukai
-    .group
-    .xp >21,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu|r, |cRXP_FRIENDLY_Karang|r, |cRXP_FRIENDLY_Mitsuwa|r and |cRXP_FRIENDLY_Marukai|r
     .turnin 6562 >> Turn in Trouble in the Deeps
@@ -3963,20 +3952,6 @@ step
     .target Karang Amakkar
     .target Mitsuwa
     .target Marukai
-    .xp <21,1
-step
-    #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu|r, |cRXP_FRIENDLY_Mitsuwa|r and |cRXP_FRIENDLY_Marukai|r
-    .turnin 6562 >> Turn in Trouble in the Deeps
-    .goto Ashenvale,11.56,34.29
-    .accept 6462 >> Accept Troll Charm
-    .goto Ashenvale,11.65,34.85
-    .accept 6442 >> Accept Naga at the Zoram Strand
-    .goto Ashenvale,11.69,34.90
-    .target Je'neu Sancrea
-    .target Mitsuwa
-    .target Marukai
-    .xp >21,1
 step
     .goto Ashenvale,12.06,34.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muglash|r

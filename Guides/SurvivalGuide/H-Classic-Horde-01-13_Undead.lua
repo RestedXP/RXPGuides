@@ -2100,7 +2100,6 @@ step
     #completewith Admiralorders1
     .goto Orgrimmar,48.97,92.84,50 >> Enter Orgrimmar
     .zoneskip Orgrimmar
-    .zoneskip Orgrimmar
 step << Rogue
     .goto Orgrimmar,48.12,80.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trak'gen|r|cRXP_BUY_. Buy |r |T135419:0|t[Sharp Throwing Axe] |cRXP_BUY_from him|r

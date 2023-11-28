@@ -22,8 +22,8 @@ step << Warrior/Shaman/Warlock
     #completewith next
     +|cFFFCDC00Kill |cFFFF5722Mottled Boars|r. Loot them until you have 35 copper worth of vendor items (including your armor)|r << Warlock
     +|cFFFCDC00Kill |cFFFF5722Mottled Boars|r. Loot them until you have 10 copper worth of vendor items (including your armor)|r << Warrior/Shaman
-    .goto Durotar,43.85,71.73,50,0 << Warlock
-    .goto Durotar,44.19,65.34,50,0 << Warrior/Shaman
+    .goto Durotar,43.85,71.73,30,0 << Warlock
+    .goto Durotar,44.19,65.34,30,0 << Warrior/Shaman
     .mob Mottled Boar
     .money >0.01
 step << Warlock
@@ -32,8 +32,7 @@ step << Warlock
     .accept 1485 >>Accept Vile Familiars
     .target Ruzan
 step << Warrior/Shaman
-    .goto Durotar,43.49,67.35,30,0
-    .goto Durotar,42.59,67.34
+    .goto Durotar,42.59,67.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duokna|r
     .vendor >> Vendor Trash
     .target Duokna
@@ -102,7 +101,7 @@ step << !Warrior !Rogue
     #softcore
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duokna|r
-    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from her|r << !Hunter
+    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from her|r << !Hunter <<!Shaman
     >>|cFF0E8312Buy|r |T132382:0|t[Rough Arrows] |cFF0E8312from her|r << Hunter
     .collect 159,30,6394,1 << !Hunter !Shaman --Refreshing Spring Water (30)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
@@ -295,14 +294,14 @@ step
     #era
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duokna|r
-    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from her|r << !Rogue !Warrior !Hunter
+    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from her|r << !Rogue !Warrior !Hunter !Shaman
     >>|cFF0E8312Buy|r |T132382:0|t[Rough Arrows] |cFF0E8312from her|r << Hunter
-    .collect 159,15,6394,1 << !Rogue !Warrior !Hunter --Refreshing Spring Water (15)
+    .collect 159,15,6394,1 << !Rogue !Warrior !Hunter !Shaman --Refreshing Spring Water (15)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .vendor >> Vendor Trash
     .target Duokna
     .money >0.1 << Rogue/Warrior
-    .itemcount 159,<15 << !Rogue !Warrior !Hunter
+    .itemcount 159,<15 << !Rogue !Warrior !Hunter !Shaman
 step
     #som
     .goto Durotar,42.59,67.34
@@ -467,14 +466,14 @@ step
 step
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duokna|r
-    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from her|r << !Rogue !Warrior !Hunter
+    >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from her|r << !Rogue !Warrior !Hunter !Shaman
     >>|cFF0E8312Buy|r |T132382:0|t[Rough Arrows] |cFF0E8312from her|r << Hunter
-    .collect 159,5,6394,1 << !Rogue !Warrior !Hunter --Refreshing Spring Water (5)
+    .collect 159,5,6394,1 << !Rogue !Warrior !Hunter !Shaman --Refreshing Spring Water (5)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .vendor >> Vendor Trash
     .target Duokna
     .money >0.1 << Rogue/Warrior
-    .itemcount 159,<5 << !Rogue !Warrior !Hunter
+    .itemcount 159,<5 << !Rogue !Warrior !Hunter !Shaman
     .itemcount 2512,<600 << Hunter
 step
     #label Sting
@@ -659,8 +658,8 @@ step
 step
     #label Betrayers
     .goto Durotar,51.95,43.50
-    >>|cFFFCDC00You can talk to him from outside or on top of the bunker|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gar'thok|r
+    >>|cFFFCDC00You can talk to him from outside or on top of the bunker|r
     .accept 784 >>Accept Vanquish the Betrayers
     .target Gar'thok
 step
@@ -1732,7 +1731,7 @@ step
     #completewith TaillasherEggs
     .goto Durotar,67.10,69.29,100 >> Swim to the Island
 step
-    #completewith Fur
+    #completewith MinshinasSkull
     >>Kill |cRXP_ENEMY_Tigers|r. Loot them for their |cRXP_LOOT_Fur|r. This does not need to be finished now
     .complete 817,1 --Durotar Tiger Fur (4)
     .mob Durotar Tiger
@@ -2099,13 +2098,13 @@ step << Warrior/Shaman/Hunter
     .zone Orgrimmar >> Enter Orgrimmar
     .zoneskip Orgrimmar
 step << Warrior/Shaman/Hunter
-    .goto Orgrimmar,34.34,36.33
+    .goto Orgrimmar,32.28,35.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nazgrel|r
     .turnin 831 >>Turn in The Admiral's Orders
     .target Nazgrel
 step << Warrior/Shaman/Hunter
     #era/som
-    .goto Orgrimmar,31.9,37.7
+    .goto Orgrimmar,32.28,35.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .accept 5726 >>Accept Hidden Enemies
     .target Nazgrel
@@ -2356,12 +2355,16 @@ step << Warrior/Shaman
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
     .turnin 848 >> Turn in Fungal Spores
+    .accept 853 >> Accept Apothecary Zamah
     .target Apothecary Helbrim
+step << Warrior/Shaman
+    #sticky
+    #completewith ZamahTurnin2
+    +|cRXP_WARN_You are on a timed quest, don't go afk. It will get turned in around 30 minutes after pick-up|r
 step << Warrior/Shaman
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga|r
     .turnin 870 >> Turn in The Forgotten Pools
-    .accept 877 >> Accept The Stagnant Oasis
     .target Tonga Runetotem
 step << Warrior/Shaman
     #completewith next
@@ -2410,12 +2413,6 @@ step << Warrior/Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ruul|r
     .accept 743 >>Accept Dangers of the Windfury
     .target Ruul Eagletalon
-step << Warrior/Shaman
-	#era/som
-    .goto Mulgore,46.75,60.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skorn|r
-    .accept 861 >>Accept The Hunter's Way
-    .target Skorn Whitecloud
 step << Warrior/Shaman
 	#era/som
     .goto Mulgore,47.8,57.6
@@ -2494,51 +2491,11 @@ step << Warrior/Shaman
     .fp Thunder Bluff >> Get the Thunder Bluff flight path << !Tauren
     .target Tal
 step << Warrior/Shaman
-    #ah
-    .goto Thunder Bluff,44.43,43.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mooranta|r
-    >>|cRXP_WARN_This will unlock an easy quest. If you already have 2 professions, skip this step|r
-    .train 8613 >>Train |T134366:0|t[Skinning]
-    .target Mooranta
-step << Warrior/Shaman
-    #ah
-    .goto Thunder Bluff,44.39,44.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veren|r
-    .accept 768 >> Accept Gathering Leather
-    .target Veren Tallstrider
-    .skill skinning,1,1
-step << Warrior/Shaman
-    #ah
-    .goto Thunder Bluff,40.39,51.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Stampi|r
-    .collect 2318,12,768,1 >>|cRXP_BUY_Buy Twelve|r |T134252:0|t[Light Leather] |cRXP_BUY_from the Auction House|r
-    .target Auctioneer Stampi
-    .skill skinning,1,1
-step << Warrior/Shaman
-    #ah
-    .goto Thunder Bluff,44.39,44.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veren|r
-    .turnin 768 >> Turn in Gathering Leather
-    .target Veren Tallstrider
-    .skill skinning,1,1
-step << Warrior/Shaman
-    .goto Thunder Bluff,70.4,29.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
-    .accept 5722 >> Accept Searching for the Lost Satchel
-    .accept 5723 >> Accept Testing an Enemy's Strength
-    .target Rahauro
-    .dungeon RFC
-step << Warrior/Shaman
-    .goto Thunder Bluff,37.8,59.4
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eyahn|r
-    .turnin 744 >>Turn in Preparation for Ceremony
-    .target Eyahn Eagletalon
-step << Warrior/Shaman
     #completewith next
     .goto Thunder Bluff,28.14,32.97,40,0
     .goto Thunder Bluff,28.51,28.95,10 >> Travel to the Spirit Rise and enter the pools of vision
 step << Warrior/Shaman
-    #label ZamahTurnin
+    #label ZamahTurnin2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
     .turnin 853 >> Turn in Apothecary Zamah
     .goto Thunder Bluff,22.82,20.88
@@ -2560,8 +2517,8 @@ step << Warrior/Shaman
     .goto Mulgore,32.72,36.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wiserunner|r
     >>|cRXP_WARN_He is located in the cave south/west of Thunder Bluff|r
-    .accept 773 >>Accept Rite of Wisdom
     .turnin 772 >>Turn in Rite of Vision
+    .accept 773 >>Accept Rite of Wisdom
     .target Seer Wiserunner
 step << Warrior/Shaman
 	#era/som
@@ -3022,7 +2979,7 @@ step << Warrior
     .target Grezz Ragefist
 step
     #label Admiralorders1
-    .goto Orgrimmar,32.29,35.81
+    .goto Orgrimmar,32.28,35.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nazgrel|r
     .turnin 831 >>Turn in The Admiral's Orders
     .target Nazgrel
@@ -3031,7 +2988,7 @@ step << Warrior/Shaman/Hunter
     .goto Orgrimmar,31.9,37.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5726 >>Turn in Hidden Enemies
-    .target Nazgrel
+    .target Thrall
     .isQuestComplete 5726
 step << Rogue
     .goto Orgrimmar,42.75,53.53
@@ -3121,7 +3078,7 @@ step << Warrior/Shaman/Hunter
     #Label FarWatchPost
     .goto The Barrens,62.26,19.38,40 >> Travel to Far Watch Post
     .zoneskip The Barrens
-step << Warrior/Shaman/Hunter
+step << Hunter
     .goto The Barrens,62.27,19.38   
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kargal|r
     .turnin 840 >>Turn in Conscript of the Horde

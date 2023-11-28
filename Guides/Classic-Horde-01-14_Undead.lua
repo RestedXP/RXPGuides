@@ -1043,6 +1043,16 @@ step
     .accept 368 >>Accept A New Plague
     .target Apothecary Johaan
 step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Burgess|r, |cRXP_FRIENDLY_Wanted Poster|r and |cRXP_FRIENDLY_Sevren|r inside the building
+    .accept 374 >>Accept Proof of Demise
+    .goto Tirisfal Glades,60.93,52.01
+    .accept 398 >>Accept Wanted: Maggot Eye
+    .goto Tirisfal Glades,60.74,51.52
+    .accept 358 >>Accept Graverobbers
+    .goto Tirisfal Glades,61.26,50.84
+    .target Magistrate Sevren
+    .target Deathguard Burgess
+step
     .goto Tirisfal Glades,61.03,52.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Abigail|r
     >>|cRXP_BUY_Buy a|r |T132891:0|t[Coarse Thread] |cRXP_BUY_from|r |cRXP_FRIENDLY_her|r
@@ -1230,6 +1240,12 @@ step
     >>|cRXP_BUY_Buy a|r |T132891:0|t[Coarse Thread] |cRXP_BUY_from|r |cRXP_FRIENDLY_her|r
     .complete 375,2 --Coarse Thread (1)
     .target Abigail Shiel
+step
+    .goto Tirisfal Glades,61.72,52.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman|r
+    .accept 354 >>Accept Deaths in the Family
+    .accept 362 >>Accept The Haunted Mills
+    .target Coleman Farthing
 step
     .goto Tirisfal Glades,61.89,52.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gretchen|r
@@ -1683,10 +1699,10 @@ step << Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
 step << Warrior/Rogue
-    .goto Undercity,61.31,30.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_James|r
+    .goto Undercity,60.17,29.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Basil Frye|r
     .train 2020 >> Train |T136241:0|t[Blacksmithing]
-    .target James Van Brunt
+    .target Basil Frye
     .skill blacksmithing,1,1
 step << Warrior/Rogue
     .goto Undercity,56.06,37.44
@@ -2885,40 +2901,6 @@ step << Rogue
     .itemcount 2027,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faranell|r and |cRXP_FRIENDLY_Zinge|r in The Apothecarium
-    .turnin 447 >>Turn in A Recipe For Death
-    .goto Undercity,48.84,69.25
-    .turnin 1359 >> Turn in Zinge's Delivery
-    .goto Undercity,50.16,67.97
-    .accept 1358 >> Accept Sample for Helbrim
-    .target Master Apothecary Faranell
-    .target Apothecary Zinge
-step << Mage
-    .goto Undercity,85.14,10.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anastasia|r
-    .train 2137 >> Train your class spells
-    .target Anastasia Hartwell
-    .xp <14,1
-    .xp >16,1
-step << Mage
-    .goto Undercity,85.14,10.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anastasia|r
-    .train 2120 >> Train your class spells
-    .target Anastasia Hartwell
-    .xp <16,1
-step
-    .goto Undercity,73.19,55.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Mary|r
-    .train 3276 >> Train |T133688:0|t[Heavy Linen Bandage]
-    .target Mary Edras
-    .skill firstaid,<40,1
-step
-    .goto Undercity,73.19,55.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Mary|r
-    .train 3274 >> Train Journeyman First Aid
-    .target Mary Edras
-    .skill firstaid,<50,1
 step << Rogue
     .goto Undercity,83.86,72.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carolyn|r
@@ -2932,28 +2914,7 @@ step << Rogue
     .train 6761 >> Train your class spells
     .target Carolyn Ward
     .xp <16,1
-step << Warlock
-    .goto Undercity,88.93,15.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Richard|r
-    .train 6222 >> Train your class spells
-    .target Richard Kerwin
-    .xp <14,1
-    .xp >16,1
-step << Warlock
-    .goto Undercity,88.93,15.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Richard|r
-    .train 1455 >> Train your class spells
-    .target Richard Kerwin
-    .xp <16,1
-step << Priest/Mage/Warlock
-    .goto Undercity,69.54,26.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Zane|r|cRXP_BUY_. Buy a|r |T133718:0|t[Smoldering Wand] |cRXP_BUY_from him|r
-    .collect 5754,1 --Smoldering Wand (1)
-    .money <0.3515
-    .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<13.4
-	.target Zane Bradford
- step << Undead Rogue
+step << Undead Rogue
     .goto Undercity,83.52,69.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mennet|r
     .turnin 1886 >>Turn in The Deathstalkers
@@ -2977,6 +2938,15 @@ step << Undead Rogue
     >>Loot |cRXP_PICK_Andron's Bookshelf|r behind |cRXP_FRIENDLY_Andron|r
     .complete 1899,1 --Andron's Ledger (1)
     .isQuestTurnedIn 1886
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faranell|r and |cRXP_FRIENDLY_Zinge|r in The Apothecarium
+    .turnin 447 >>Turn in A Recipe For Death
+    .goto Undercity,48.84,69.25
+    .turnin 1359 >> Turn in Zinge's Delivery
+    .goto Undercity,50.16,67.97
+    .accept 1358 >> Accept Sample for Helbrim
+    .target Master Apothecary Faranell
+    .target Apothecary Zinge
 step << Undead Rogue
     .goto Undercity,83.53,69.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mennet|r
@@ -2984,6 +2954,57 @@ step << Undead Rogue
     .accept 1978 >>Accept The Deathstalkers
     .target Mennet Carkad
     .isQuestTurnedIn 1886
+step
+    .goto Undercity,73.19,55.17
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Mary|r
+    .train 3276 >> Train |T133688:0|t[Heavy Linen Bandage]
+    .target Mary Edras
+    .skill firstaid,<40,1
+step
+    .goto Undercity,84.06,17.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bethor|r
+    .turnin 411 >>Turn in The Prodigal Lich Returns
+    .target Bethor Iceshard
+step << Mage
+    .goto Undercity,85.14,10.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anastasia|r
+    .train 2137 >> Train your class spells
+    .target Anastasia Hartwell
+    .xp <14,1
+    .xp >16,1
+step << Mage
+    .goto Undercity,85.14,10.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anastasia|r
+    .train 2120 >> Train your class spells
+    .target Anastasia Hartwell
+    .xp <16,1
+step
+    .goto Undercity,73.19,55.17
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Mary|r
+    .train 3274 >> Train Journeyman First Aid
+    .target Mary Edras
+    .skill firstaid,<50,1
+step << Warlock
+    .goto Undercity,88.93,15.86
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Richard|r
+    .train 6222 >> Train your class spells
+    .target Richard Kerwin
+    .xp <14,1
+    .xp >16,1
+step << Warlock
+    .goto Undercity,88.93,15.86
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Richard|r
+    .train 1455 >> Train your class spells
+    .target Richard Kerwin
+    .xp <16,1
+step << Priest/Mage/Warlock
+    .goto Undercity,69.54,26.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Zane|r|cRXP_BUY_. Buy a|r |T133718:0|t[Smoldering Wand] |cRXP_BUY_from him|r
+    .collect 5754,1 --Smoldering Wand (1)
+    .money <0.3515
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<13.4
+	.target Zane Bradford
 step << Undead Rogue
     .goto Tirisfal Glades,58.86,78.76,40,0
     .goto Tirisfal Glades,59.75,84.64
