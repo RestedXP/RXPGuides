@@ -64,7 +64,7 @@ step
     .target Greatmother Hawkwind
 step
     .goto Mulgore,50.22,81.37
-    >>|cRXP_WARN_Loot the Water Pitcher on the well behind|r |cRXP_FRIENDLY_Hawkwind|r
+    >>Loot the |cRXP_LOOT_Water Pitcher|r on the well behind |cRXP_FRIENDLY_Hawkwind|r
     .complete 753,1 --Water Pitcher (1)
 step
     .goto Mulgore,50.23,79.38,50,0
@@ -85,7 +85,7 @@ step
     .turnin 747,1 >>Turn in The Hunt Begins << Druid
     .turnin 747 >>Turn in The Hunt Begins << !Druid
     .accept 3091 >>Accept Simple Note << Warrior
-    .accept 3092 >>Accept Etched Note << Hunterd
+    .accept 3092 >>Accept Etched Note << Hunter
     .accept 3093 >>Accept Rune-Inscribed Note << Shaman
     .accept 3094 >>Accept Verdant Note << Druid
     .accept 750 >>Accept The Hunt Continues
@@ -932,14 +932,17 @@ step
     .mob Windfury Harpy
 step
     #completewith next
-    .goto Mulgore,33.37,36.52,50 >> Enter the cave to the north of the Windfury Harpies
+    .goto Mulgore,33.37,36.52,50 >> Enter the cave just north of the Windfury Harpies
 step
 	#label Burial
     .goto Mulgore,32.72,36.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wiserunner|r
-    .accept 773 >>Accept Rite of Wisdom
     .turnin 772 >>Turn in Rite of Vision
+    .accept 773 >>Accept Rite of Wisdom
     .target Seer Wiserunner
+step
+    #completewith SacredBurial
+    .destroy 4823 >>Destroy|T134712:0|t[Water of the Seers] as you won't need it
 step
     #completewith SacredBurial
     >>|cRXP_WARN_Finish getting the items for Mazzranache|r
@@ -1019,6 +1022,7 @@ step
     .xp 9+4400 >> Grind to 3700+/6500xp
     .isQuestComplete 766
 step
+    #optional
     .loop 25,Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
     .xp 9+4400 >> Grind to 4400+/6500xp
 step << !Druid
@@ -1065,7 +1069,6 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kennah|r
     >>|cRXP_BUY_Buy|r |T132384:0|t[Heavy Shots] |cRXP_BUY_from him|r << Hunter
     .collect 2519,1000,6061,1 << Hunter --Heavy Shot (1000)
-    .vendor >> Vendor trash
     .target Kennah Hawkseye
 step
     .goto Mulgore,46.97,57.07
@@ -1142,8 +1145,8 @@ step << Hunter
     .goto Mulgore,47.81,55.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yaw|r
     .turnin 6088 >>Turn in Taming the Beast
-    .target Yaw Sharpmane
     .accept 6089 >>Accept Training the Beast
+    .target Yaw Sharpmane
 step
     .goto Mulgore,47.63,61.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jhwana|r
@@ -1222,6 +1225,9 @@ step
     .turnin 765 >>Turn in Supervisor Fizsprocket
 	.unitscan Morin Cloudstalker
     .group
+step << Hunter
+    #completewith next
+    +Tame a |cRXP_ENEMY_Prairie Wolf Alpha|r
 step
     #completewith next
     .goto Mulgore,69.6,60.4,100,0
@@ -1237,8 +1243,6 @@ step << Tauren
     .accept 854 >>Accept Journey to the Crossroads
     .target Kirge Sternhorn
 step
-    .goto The Barrens,47.34,57.55,40,0
-    .goto The Barrens,51.04,49.07,40,0
     .goto The Barrens,52.07,31.96,120 >>Travel north toward The Crossroads
     >>|cRXP_WARN_Make sure you stay on the road. Otherwise you may agro high level mobs|r
  step

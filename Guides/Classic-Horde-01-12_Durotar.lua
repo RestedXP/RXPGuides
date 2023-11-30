@@ -2199,6 +2199,12 @@ step << Shaman
     .train 8050 >> Train your class spells
     .accept 2983 >>Accept Call of Fire
     .target Swart
+    .isNotOnQuest 1522
+step << Shaman
+    .goto Durotar,54.42,42.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Swart|r
+    .train 8050 >> Train your class spells
+    .target Swart
 step << Warlock
     .goto Durotar,54.37,41.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dhugru|r
@@ -2327,7 +2333,7 @@ step << Warrior/Shaman
     #completewith
 step << Warrior/Shaman
     #completewith next
-    >>Collect |cRXP_PICK_Laden Mushrooms|r around The Forgotten Pools
+    >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Forgotten Pools
     .complete 848,1 --Collect Fungal Spores (x4)
 step << Warrior/Shaman
     .goto The Barrens,45.06,22.54
@@ -2339,7 +2345,7 @@ step << Warrior/Shaman
     .goto The Barrens,44.6,22.5,40,0
     .goto The Barrens,43.9,24.4,40,0
     .goto The Barrens,45.2,23.3
-    >>Collect |cRXP_PICK_Laden Mushrooms|r around The Forgotten Pools
+    >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Forgotten Pools
     .complete 848,1 --Collect Fungal Spores (x4)
 step << Warrior/Shaman
     #hardcore
@@ -2354,9 +2360,17 @@ step << Warrior/Shaman
     #label FungalSporesComplete
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
+    >>|cRXP_WARN_Wait for the RP to finish. This starts a timed quest!|r
     .turnin 848 >> Turn in Fungal Spores
     .accept 853 >> Accept Apothecary Zamah
     .target Apothecary Helbrim
+step << Warrior/Shaman
+    .goto The Barrens,51.67,29.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barg|r
+    >>|cRXP_BUY_Buy one or more|r |T133634:0|t[Small Brown Pouches] |cRXP_BUY_from|r |cRXP_FRIENDLY_him|r
+    .collect 4496,1,853,1 --Small Brown Pouch (1)
+    .target Jark
+    .money <0.05
 step << Warrior/Shaman
     #sticky
     #completewith ZamahTurnin2
@@ -2428,16 +2442,16 @@ step << Warrior/Shaman
     .target Maur Raincaller
 step << Warrior/Shaman
 	#era/som
-    #sticky
-    #completewith SacredBurialTurnIn
-    >>|cRXP_WARN_Get the items for Mazzranache as you quest throughout the zone|r
+    #completewith EnterTB
+    >>Kill |cRXP_ENEMY_Wolves|r, |cRXP_ENEMY_Cougars|r, |cRXP_ENEMY_Plainstriders|r and |cRXP_ENEMY_Swoops|r as you quest throughout the zone
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
     .complete 766,4 --Swoop Gizzard (1)
+    .complete 761,1 --Swoop Gizard (1)
 step << Warrior/Shaman
 	#era/som
-	#completewith CaravanR
+	#completewith EnterTB
     >>Keep an eye out for |cRXP_ENEMY_Ghost Howl|r. Loot him for his |T134358:0|t[|cFF00BCD4Demon Scarred Cloak|r]. Use it to start the quest 
     .collect 4854,1,770 --Collect Demon Scarred Cloak
     .accept 770 >>Accept The Demon Scarred Cloak
@@ -2469,9 +2483,10 @@ step << Warrior/Shaman
     .accept 772 >>Accept Rite of Vision
     .target Zarlman Two-Moons
 step << Warrior/Shaman
-    #completewith  ZamahTurnin
+    #label EnterTB
+    #completewith ZamahTurnin2
     .goto Thunder Bluff,32.0,66.9,60,0
-    .zone 1638 >> Travel to Thunder Bluff
+    .zone Thunder Bluff >> Travel to Thunder Bluff
 step << Warrior
     .goto Thunder Bluff,40.93,62.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ansekhwa|r
@@ -2507,10 +2522,27 @@ step << Warrior/Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.1
 step << Warrior/Shaman
 	#era/som
-    #completewith next
+    #completewith RiteofWisdomTurnin
     .goto Thunder Bluff,29.04,37.68,55,0
-    .goto Mulgore,33.48,36.68,40,0 >> Run out of the cave, then leave Thunder Bluff by jumping down somewhere under the bridge
+    .goto Mulgore,33.48,36.68,40 >> Run out of the cave, then leave Thunder Bluff by jumping down somewhere under the bridge
     .zoneskip Mulgore
+step << Warrior/Shaman
+	#era/som
+    #completewith SacredBurialTurnIn
+    >>Kill |cRXP_ENEMY_Wolves|r, |cRXP_ENEMY_Cougars|r, |cRXP_ENEMY_Plainstriders|r and |cRXP_ENEMY_Swoops|r as you quest throughout the zone
+    .complete 766,1 --Prairie Wolf Heart (1)
+    .complete 766,2 --Flatland Cougar Femur (1)
+    .complete 766,3 --Plainstrider Scale (1)
+    .complete 766,4 --Swoop Gizzard (1)
+    .complete 761,1 --Swoop Gizard (1)
+step << Warrior/Shaman
+	#era/som
+	#completewith SacredBurialTurnIn
+    >>Keep an eye out for |cRXP_ENEMY_Ghost Howl|r. Loot him for his |T134358:0|t[|cFF00BCD4Demon Scarred Cloak|r]. Use it to start the quest 
+    .collect 4854,1,770 --Collect Demon Scarred Cloak
+    .accept 770 >>Accept The Demon Scarred Cloak
+    .use 4854
+    .unitscan Ghost Howl
 step << Warrior/Shaman
     #label RiteofWisdomTurnin
     #era/som
@@ -2520,6 +2552,9 @@ step << Warrior/Shaman
     .turnin 772 >>Turn in Rite of Vision
     .accept 773 >>Accept Rite of Wisdom
     .target Seer Wiserunner
+step << Warrior/Shaman
+    #completewith next
+    .destroy 4823 >>Destroy|T134712:0|t[Water of the Seers] as you won't need it
 step << Warrior/Shaman
 	#era/som
     .loop 25,Mulgore,34.08,43.71,32.98,42.96,31.72,43.08,31.08,42.09,31.12,40.87,31.74,40.31,32.44,41.17,33.57,41.30,33.82,40.26,34.48,41.21,34.50,42.29
@@ -2568,12 +2603,14 @@ step << Warrior/Shaman
     .target Lorekeeper Raintotem
 step << Warrior/Shaman
     #era/som
-    .loop 25,Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
-    >>|cRXP_WARN_Finish getting the items for Mazzranache|r
+    #completewith next
+    >>Kill |cRXP_ENEMY_Wolves|r, |cRXP_ENEMY_Cougars|r, |cRXP_ENEMY_Plainstriders|r and |cRXP_ENEMY_Swoops|r
+    >>|cRXP_WARN_Skip these quests if you're not close to done at this point|r
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
     .complete 766,4 --Swoop Gizzard (1)
+    .complete 761,1 --Swoop Gizard (1)
 step << Warrior/Shaman
     #era/som
     .goto Mulgore,53.74,48.17
@@ -2586,6 +2623,7 @@ step << Warrior/Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur|r
     .turnin 766 >>Turn in Mazzranache
     .target Maur Raincaller
+    .isQuestComplete 766
 step << Warrior/Shaman
     #era/som
     .goto Mulgore,46.75,60.24
@@ -2612,6 +2650,19 @@ step << Warrior/Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harken|r
     .turnin 761 >>Turn in Swoop Hunting
     .target Harken Windtotem
+    .isQuestComplete 761
+step << Shaman
+    .goto Mulgore,48.38,59.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Narm|r
+    .train 547 >> Train your class spells
+    .target Narm Skychaser
+    .xp <12,1
+step << Warrior
+    .goto Mulgore,49.52,60.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krang|r
+    .train 7384 >> Train your class spells
+    .target Krang Stonehoof
+    .xp <12,1
 step << Warrior/Shaman
 	#era/som
     .goto Mulgore,51.50,59.23,50,0
@@ -2700,7 +2751,7 @@ step << Shaman
     .goto Durotar,38.05,57.79,8,0
     .goto Durotar,38.93,57.54,8,0
     .goto Durotar,39.19,57.90,8,0
-    .goto Durotar,39.16,58.56,10 >> Travel the path up the mountain to |cRXP_FRIENDLY_Telf|r
+    .goto Durotar,39.16,58.56,10 >> Travel the path up the mountain toward |cRXP_FRIENDLY_Telf|r
     >>|cRXP_WARN_Be careful to not fall of the mountain, the path is very narrow. You could die if you fall|r
 step << Shaman
     #label CallofFire3
@@ -2732,8 +2783,6 @@ step << Shaman
     .mob Burning Blade Cultist
 step
     #completewith next
-    .goto Durotar,55.40,36.73,80,0
-    .goto Durotar,56.07,30.05,80,0
     .goto Durotar,56.41,20.04,50 >> Travel to |cRXP_FRIENDLY_Margoz|r
     .isQuestTurnedIn 806
 step
@@ -2897,6 +2946,7 @@ step
     #softcore
     #completewith SecuringLinesTurnIn
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .isQuestComplete 813
 step
     #hardcore
     #completewith next
@@ -2936,6 +2986,11 @@ step << Shaman/Warrior
     .turnin 6385 >> Turn in Doras the Wind Rider Master
     .accept 6386 >> Accept Return to the Crossroads
     .target Doras
+step << Shaman
+    .goto Orgrimmar,38.82,36.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
+    .train 8050 >> Train your class spells
+    .target Kardris Dreamseeker
 step << Rogue
     .goto Orgrimmar,48.12,80.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trak'gen|r|cRXP_BUY_. Buy |r |T135419:0|t[Sharp Throwing Axe] |cRXP_BUY_from him|r
@@ -2988,8 +3043,18 @@ step << Warrior/Shaman/Hunter
     .goto Orgrimmar,31.9,37.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5726 >>Turn in Hidden Enemies
+    .accept 5727 >>Accept Hidden Enemies
     .target Thrall
     .isQuestComplete 5726
+    .dungeon RFC
+step << Warrior/Shaman/Hunter
+    #era/som
+    .goto Orgrimmar,31.9,37.7
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
+    .turnin 5726 >>Turn in Hidden Enemies
+    .target Thrall
+    .isQuestComplete 5726
+    .dungeon !RFC
 step << Rogue
     .goto Orgrimmar,42.75,53.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therzok|r
@@ -3646,9 +3711,6 @@ step << Warlock
     .complete 1473,1 --Egalin's Grimoire (1)
 step << Warlock
     #completewith next
-    .goto Tirisfal Glades,51.07,71.51,50,0
-    .zone Undercity >> Travel back into the Undercity through the sewers
-step << Warlock
     .goto Undercity,16.51,42.76,35,0
     .goto Undercity,22.98,39.76,35,0
     .goto Undercity,24.93,32.54,35,0
@@ -3657,6 +3719,8 @@ step << Warlock
     .goto Undercity,41.35,38.40,10,0
     .goto Undercity,45.25,39.20,10,0
     .goto Undercity,45.67,43.60,10,0
+    .zone Undercity >> Travel back into the Undercity through the sewers
+step << Warlock
     .goto Undercity,85.07,25.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin|r in the Magic Quarter
     .turnin 1473 >> Turn in Creature of the Void
