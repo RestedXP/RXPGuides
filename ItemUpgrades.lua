@@ -1131,6 +1131,7 @@ local GetNumAuctionItems, GetAuctionItemLink, GetAuctionItemInfo =
     _G.GetNumAuctionItems, _G.GetAuctionItemLink, _G.GetAuctionItemInfo
 
 local AuctionFilterButtons = {["Weapons"] = 1, ["Armor"] = 2}
+local AceGUI = LibStub("AceGUI-3.0")
 
 local ahSession = {
     isInitialized = false,
@@ -1141,6 +1142,7 @@ local ahSession = {
 
     windowOpen = false,
     scanPage = 0,
+    scanResults = 0,
     scanType = AuctionFilterButtons["Armor"]
 }
 
@@ -1164,7 +1166,11 @@ end
 
 function addon.itemUpgrades.AH:AUCTION_HOUSE_SHOW()
     ahSession.windowOpen = true
-    C_Timer.After(0.35, function() addon.itemUpgrades.AH:Scan() end)
+    -- C_Timer.After(0.35, function() addon.itemUpgrades.AH:Scan() end)
+
+    self:CreateGui()
+
+    ahSession.displayFrame:Show()
 end
 
 function addon.itemUpgrades.AH:AUCTION_HOUSE_CLOSED()
@@ -1173,6 +1179,7 @@ function addon.itemUpgrades.AH:AUCTION_HOUSE_CLOSED()
     ahSession.windowOpen = false
     ahSession.sentQuery = false
     ahSession.scanPage = 0
+    ahSession.scanResults = 0
     ahSession.scanType = AuctionFilterButtons["Armor"]
 end
 
@@ -1195,7 +1202,9 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
     if not ahSession.sentQuery then return end
 
     local resultCount, totalAuctions = GetNumAuctionItems("list")
-    print("AUCTION_ITEM_LIST_UPDATE", resultCount, totalAuctions)
+    -- print("AUCTION_ITEM_LIST_UPDATE", resultCount, totalAuctions)
+
+    ahSession.displayFrame.scanButton:SetText(_G.SEARCHING)
 
     if resultCount == 0 or totalAuctions == 0 then
         ahSession.sentQuery = false
@@ -1206,20 +1215,21 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
             self:Scan()
         else
             self:Analyze()
+            ahSession.displayFrame.scanButton:SetText(_G.SEARCH)
+            self:DisplayResults()
         end
 
         return
     end
 
     local itemLink
-    local name, quality, canUse, level, buyoutPrice, saleStatus, itemID,
-          hasAllInfo
+    local name, buyoutPrice, itemID, hasAllInfo
 
     for i = 1, resultCount do
         itemLink = GetAuctionItemLink("list", i)
 
         -- name, texture, count, quality, canUse, level, levelColHeader, minBid, minIncrement, buyoutPrice, bidAmount, highBidder, bidderFullName, owner, ownerFullName, saleStatus, itemId, hasAllInfo = GetAuctionItemInfo(type, index)
-        name, _, _, quality, _, level, _, _, _, buyoutPrice, _, _, _, _, _, _, itemID, hasAllInfo =
+        name, _, _, _, _, _, _, _, _, buyoutPrice, _, _, _, _, _, _, itemID, hasAllInfo =
             GetAuctionItemInfo("list", i)
 
         -- TODO if not hasAllInfo
@@ -1234,12 +1244,14 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
             }
         end
 
-        -- print("scan", itemID, hasAllInfo, buyoutPrice)
+        -- print("scan", itemLink, itemID, hasAllInfo, buyoutPrice)
     end
 
     ahSession.sentQuery = false
 
     ahSession.scanPage = ahSession.scanPage + 1
+
+    ahSession.scanResults = ahSession.scanResults + resultCount
 
     self:Scan()
 end
@@ -1279,20 +1291,26 @@ local function calculate(itemLink, scanData)
     end
 
     scanData.totalWeight = itemData.totalWeight
-    scanData.weightPerCopper = scanData.totalWeight / scanData.lowestPrice
+    scanData.weightPerCopper = itemData.totalWeight / scanData.lowestPrice
     scanData.itemEquipLoc = itemData.itemEquipLoc
 
     scanData.comparisons = addon.itemUpgrades:CompareItemWeight(itemLink) or {}
 
+    local rwpc
+    local highestRWPC = -1
+    -- TODO account for multi-slot comparisons, show both
     for _, compareData in ipairs(scanData.comparisons) do
         -- To avoid complicated comparison, use ratio as a multiplier
         -- Ignore relative if slot is empty
         if compareData.Ratio then
-            scanData.relativeWeightPerCopper =
-                (scanData.totalWeight * compareData.Ratio) /
-                    scanData.lowestPrice
+            rwpc = (scanData.totalWeight * compareData.Ratio) /
+                       scanData.lowestPrice
+
+            if rwpc > highestRWPC then highestRWPC = rwpc end
         end
     end
+
+    scanData.relativeWeightPerCopper = highestRWPC
 end
 
 function addon.itemUpgrades.AH:Analyze()
@@ -1309,15 +1327,17 @@ function addon.itemUpgrades.AH:Analyze()
             for j, _ in pairs(slotId) do
                 ahSession.bestAnalysis[j] = {
                     slotName = _G[invEquipType],
-                    weightPerCopper = {weight = 0, itemLink = nil},
-                    relativeWeightPerCopper = {weight = 0, itemLink = nil}
+                    total = {weight = 0, itemLink = nil},
+                    budget = {weight = 0, itemLink = nil},
+                    relative = {weight = 0, itemLink = nil}
                 }
             end
         else
             ahSession.bestAnalysis[slotId] = {
                 slotName = _G[invEquipType],
-                weightPerCopper = {weight = 0, itemLink = nil},
-                relativeWeightPerCopper = {weight = 0, itemLink = nil}
+                total = {weight = 0, itemLink = nil},
+                budget = {weight = 0, itemLink = nil},
+                relative = {weight = 0, itemLink = nil}
             }
         end
 
@@ -1334,47 +1354,180 @@ function addon.itemUpgrades.AH:Analyze()
             slotId = session.equippableSlots[scanData.itemEquipLoc]
             bAS = ahSession.bestAnalysis[slotId]
 
-            if scanData.weightPerCopper > bAS.weightPerCopper.weight then
-                bAS.weightPerCopper.weight = scanData.weightPerCopper
-                bAS.weightPerCopper.itemLink = itemLink
+            if scanData.totalWeight > bAS.total.weight then
+                bAS.total.weight = scanData.weightPerCopper
+                bAS.total.itemLink = itemLink
             end
 
-            if scanData.relativeWeightPerCopper >
-                bAS.relativeWeightPerCopper.weight then
-                bAS.relativeWeightPerCopper.weight =
-                    scanData.relativeWeightPerCopper
-                bAS.relativeWeightPerCopper.itemLink = itemLink
+            if scanData.weightPerCopper > bAS.budget.weight then
+                bAS.budget.weight = scanData.weightPerCopper
+                bAS.budget.itemLink = itemLink
             end
-        else
-            print("not rWPC", itemLink)
-        end
-        -- else -- downgrade, incompatible, or similar
-    end
 
-    for _, data in pairs(ahSession.bestAnalysis) do
-
-        if data.weightPerCopper.itemLink or
-            data.relativeWeightPerCopper.itemLink then
-            print("Analyse:", data.slotName)
-        else
-            print("Analyse:", data.slotName, "no upgrades found")
-        end
-
-        if data.weightPerCopper.itemLink then
-            print("  - Highest EP / copper", data.weightPerCopper.itemLink,
-                  data.weightPerCopper.weight)
-        end
-        if data.relativeWeightPerCopper.itemLink then
-            print("  - Relative EP / copper",
-                  data.relativeWeightPerCopper.itemLink,
-                  data.relativeWeightPerCopper.weight)
+            if scanData.relativeWeightPerCopper > bAS.relative.weight then
+                bAS.relative.weight = scanData.relativeWeightPerCopper
+                bAS.relative.itemLink = itemLink
+            end
+            -- else -- downgrade, incompatible, or similar
         end
 
     end
-
 end
 
---    local name = GetAuctionSellItemInfo()
---    BrowseName:SetText('"' .. name .. '"')
---    AuctionFrameBrowse_Search()
---    AuctionFrameTab1:Click()
+local function searchFor(name)
+    --    local name = GetAuctionSellItemInfo()
+    BrowseName:SetText('"' .. name .. '"')
+    AuctionFrameBrowse_Search()
+    AuctionFrameTab1:Click()
+end
+
+local function buildSpacer(height)
+    local spacer = AceGUI:Create("SimpleGroup")
+    spacer:SetLayout("Fill")
+    spacer:SetHeight(height)
+    spacer:SetWidth(30)
+    spacer:SetFullWidth(true)
+
+    return spacer
+end
+
+local function createBlock(slotName)
+    local f = AceGUI:Create("SimpleGroup")
+    f:SetLayout("List")
+    f:SetFullWidth(true)
+
+    f.label = AceGUI:Create("Heading")
+    f.label:SetText(slotName)
+    f.label:SetFullWidth(true)
+    f:AddChild(f.label)
+    f:AddChild(buildSpacer(4))
+
+    f.data = AceGUI:Create("Label")
+    f.data:SetText("")
+    f.data:SetFont(addon.font, 12, "")
+    f.data:SetFullWidth(true)
+    f:AddChild(f.data)
+
+    return f
+end
+
+function addon.itemUpgrades.AH:CreateGui()
+    if ahSession.displayFrame then return end
+
+    local attachment = _G.AuctionFrame
+
+    local f = AceGUI:Create("Frame")
+
+    f:SetLayout("Fill")
+    f:Hide()
+    f:EnableResize(true)
+
+    f.statustext:GetParent():Hide() -- Hide the statustext bar
+    f:SetTitle(fmt("%s - %s", addon.title, _G.MINIMAP_TRACKING_AUCTIONEER))
+    f.frame:ClearAllPoints()
+    f.frame:SetPoint("TOPLEFT", attachment, "TOPRIGHT", 0, -32)
+
+    f:SetWidth(attachment:GetWidth() * 0.4)
+    f:SetHeight(attachment:GetHeight() - 36)
+    -- attachment:HookScript("OnHide", function() f:Hide() end)
+
+    f.scrollContainer = AceGUI:Create("ScrollFrame")
+    f.scrollContainer:SetLayout("Flow")
+    f:AddChild(f.scrollContainer)
+
+    f.frame:SetBackdrop(addon.RXPFrame.backdrop.edge)
+    f.frame:SetBackdropColor(unpack(addon.colors.background))
+
+    -- Make sure the window can be closed by pressing the escape button
+    _G["RESTEDXP_AH_ANALYSIS"] = f.frame
+    tinsert(_G.UISpecialFrames, "RESTEDXP_AH_ANALYSIS")
+
+    local topContainer = AceGUI:Create("SimpleGroup")
+    topContainer:SetLayout('Flow')
+
+    f.scanButton = AceGUI:Create("Button")
+    f.scanButton:SetRelativeWidth(0.45)
+
+    -- SEARCHING
+    f.scanButton:SetText(_G.SEARCH)
+
+    f.scanButtonMenuFrame = CreateFrame("Frame", "$parent_ScanButton",
+                                        f.scanButton.frame,
+                                        "UIDropDownMenuTemplate")
+
+    f.scanButton:SetCallback("OnClick",
+                             function() addon.itemUpgrades.AH:Scan() end)
+
+    topContainer:AddChild(f.scanButton)
+
+    f.resultsHeader = AceGUI:Create("Label")
+
+    f.resultsHeader:SetText(_G.SETTINGS_SEARCH_RESULTS)
+    f.resultsHeader:SetJustifyH("CENTER")
+    f.resultsHeader:SetRelativeWidth(0.55)
+
+    topContainer:AddChild(f.resultsHeader)
+
+    f.scrollContainer:AddChild(topContainer)
+
+    f.scrollContainer.slotFrames = {}
+
+    ahSession.displayFrame = f
+end
+
+function addon.itemUpgrades.AH:DisplayResults()
+    self:CreateGui()
+
+    local f = ahSession.displayFrame
+    local slotFrames = f.scrollContainer.slotFrames
+    local sFrame, sFrameData
+
+    f.resultsHeader:SetText(fmt(_G.EVENTTRACE_RESULTS, ahSession.scanResults))
+
+    for slotId, data in pairs(ahSession.bestAnalysis) do
+        sFrame = slotFrames[slotId]
+        sFrameData = ""
+
+        if not sFrame then
+            sFrame = createBlock(data.slotName)
+            ahSession.displayFrame.scrollContainer:AddChild(sFrame)
+            slotFrames[slotId] = sFrame
+        end
+
+        if data.total.itemLink or data.budget.itemLink or data.relative.itemLink then
+            -- print("DisplayResults:", data.slotName)
+        else
+            -- print("DisplayResults:", data.slotName, "no upgrades found")
+            sFrameData = "No upgrades found\n"
+        end
+
+        if data.total.itemLink then
+            sFrameData = sFrameData ..
+                             fmt("EP %s %s\n", data.total.itemLink,
+                                 data.total.weight)
+            -- print("  - Highest EP", data.total.itemLink, data.total.weight)
+        end
+
+        if data.budget.itemLink then
+            sFrameData = sFrameData ..
+                             fmt("EP / copper %s %s\n", data.budget.itemLink,
+                                 data.budget.weight)
+            -- print("  - Highest EP / copper", data.budget.itemLink, data.budget.weight)
+        end
+
+        if data.relative.itemLink then
+            sFrameData = sFrameData ..
+                             fmt("Relative EP / copper %s %s\n",
+                                 data.relative.itemLink, data.relative.weight)
+            -- print("  - Relative EP / copper", data.relative.itemLink, data.relative.weight)
+        end
+
+        sFrame.data:SetText(sFrameData)
+        sFrame.frame:SetScript("OnHyperlinkClick", _G.ChatFrame_OnHyperlinkShow);
+        -- print(sFrameData)
+
+    end
+
+    f:Show()
+end
+
