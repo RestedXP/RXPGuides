@@ -151,15 +151,16 @@ step << NightElf
     .xp 12-1500 >> Grind until you are 1500xp off level 12
 step
 #map Darkshore
+    #era/som
     .goto Felwood,19.13,21.39
     >>Click the |cFFDB2EEFBuzzbox 827|r on the ground
     .turnin 983 >> Turn in Buzzbox 827
+    .accept 1001 >> Accept Buzzbox 411
 step
 #map Darkshore
-    #era/som
 	.goto Felwood,19.13,21.39
     >>Click the |cFFDB2EEFBuzzbox 827|r on the ground
-    .accept 1001 >> Accept Buzzbox 411
+    .turnin 983 >> Turn in Buzzbox 827
 step
 #map Darkshore
     .goto Darkshore,36.71,44.98,5,0

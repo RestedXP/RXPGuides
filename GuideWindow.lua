@@ -1336,8 +1336,7 @@ RXPFrame.bottomMenu = {
         text = "Options...",
         notCheckable = 1,
         func = function()
-            _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
-            _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
+            addon.settings.OpenSettings()
         end
     }, { -- Give Feedback for step, updated by addon.comms:Setup()
         notCheckable = 1,
@@ -2073,8 +2072,7 @@ function RXPFrame:GenerateMenuTable(menu)
         text = _G.GAMEOPTIONS_MENU .. "...",
         notCheckable = 1,
         func = function()
-            _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
-            _G.InterfaceOptionsFrame_OpenToCategory(addon.RXPOptions)
+            addon.settings.OpenSettings()
         end
     })
 
@@ -2082,16 +2080,7 @@ function RXPFrame:GenerateMenuTable(menu)
         text = L("Import guide"),
         notCheckable = 1,
         func = function()
-            if _G.Settings and _G.Settings.GetCategory then
-                _G.Settings.GetCategory(addon.RXPOptions.name).expanded = true;
-                _G.Settings.OpenToCategory(addon.RXPOptions.name);
-                -- Settings.OpenToCategory(addon.settings.gui.import); -- causes UI taint on 10.0
-            else
-                _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui
-                                                            .import)
-                _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui
-                                                            .import)
-            end
+            addon.settings.OpenSettings('Import')
         end
     })
 
