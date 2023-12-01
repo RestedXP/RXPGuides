@@ -2976,11 +2976,12 @@ step
     .train 3276 >> Train |T133688:0|t[Heavy Linen Bandage]
     .target Mary Edras
     .skill firstaid,<40,1
-step
+step << Undead
     .goto Undercity,84.06,17.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bethor|r
     .turnin 411 >>Turn in The Prodigal Lich Returns
     .target Bethor Iceshard
+    .isQuestComplete 411
 step << Mage
     .goto Undercity,85.14,10.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anastasia|r
@@ -3144,10 +3145,11 @@ step
     .dungeon RFC
 step
     #completewith TroggsShamans
-    +|cRXP_WARN_If possible, have party members share the following quests|r
+    >>|cRXP_WARN_If possible, have party members share the following quests|r
     .accept 5722 >> Accept Searching for the Lost Satchel
     .accept 5723 >> Accept Testing an Enemy's Strength
     .disablecheckbox
+    .dungeon RFC
 step
     #completewith next
     >>Kill |cFFFF5722Ragefire Troggs|r and |cFFFF5722Ragefire Shamans|r
