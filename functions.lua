@@ -5168,11 +5168,15 @@ function addon.functions.aura(self, ...)
         id = tonumber(id)
         local element = {text = text, textOnly = not text, unit = target or "player"}
 
-        local operator, elapsed = duration:match("(<?)%s*(%d+)")
-        if operator == "<" then
-            element.reverse = true
+        if duration then
+            local operator, elapsed = duration:match("(<?)%s*(%d+)")
+            if operator == "<" then
+                element.reverse = true
+            end
+            element.duration = tonumber(elapsed) or 0
+        else
+            element.duration = 0
         end
-        element.duration = tonumber(elapsed) or 0
 
         if id < 0 then
             id = -id
@@ -5184,14 +5188,15 @@ function addon.functions.aura(self, ...)
     local element = self.element
     local step = element.step
     local event, target = ...
-
-    if target == "player" and step.active then
-        local buffFound
+    if (target == "player" or event ~= "UNIT_AURA") and step.active then
+        local buffFound = false
         for i = 1, 32 do
             local name, icon, count, _, duration, expirationTime, _, _, _, spellId = UnitAura(element.unit, i)
             if spellId == element.id then
                 local remaining = expirationTime - GetTime()
+                print(remaining)
                 if remaining > element.duration then
+                    element.icon = "|T" .. icon .. ":0|t"
                     buffFound = true
                     break
                 end
@@ -5205,6 +5210,7 @@ function addon.functions.aura(self, ...)
                 addon.updateSteps = true
             end
         elseif not element.textOnly then
+            print('ok1',buffFound)
             addon.SetElementIncomplete(self)
         end
     end
