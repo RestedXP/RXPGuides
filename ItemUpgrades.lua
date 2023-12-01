@@ -1330,13 +1330,7 @@ function addon.itemUpgrades.AH:Analyze()
     -- TODO handle retry loop
     ahSession.retryQuery = {}
 
-    ahSession.bestAnalysis = {
-        -- [slotId] = {
-        --    slotName = _G[invEquipType],
-        --    relative = {ratio = 0, lowestCost = 0,  itemLink = nil}, -- Biggest upgrade ratio
-        --    budget = {rwpc = 0, lowestCost = 0,  itemLink = nil}, -- Biggest upgrade ratio / copper
-        -- }
-    }
+    ahSession.bestAnalysis = {}
 
     -- We already know all of this is usable, so just care about slots
     for invEquipType, slotId in pairs(session.equippableSlots) do
@@ -1344,15 +1338,15 @@ function addon.itemUpgrades.AH:Analyze()
             for j, _ in pairs(slotId) do
                 ahSession.bestAnalysis[j] = {
                     slotName = _G[invEquipType],
-                    relative = {ratio = 0, lowestCost = 0, itemLink = nil}, -- Biggest upgrade ratio
-                    budget = {rwpc = 0, lowestCost = 0, itemLink = nil} -- Biggest upgrade ratio / copper
+                    relative = {ratio = 0, lowestPrice = 0, itemLink = nil}, -- Biggest upgrade ratio
+                    budget = {rwpc = 0, lowestPrice = 0, itemLink = nil} -- Biggest upgrade ratio / copper
                 }
             end
         else
             ahSession.bestAnalysis[slotId] = {
                 slotName = _G[invEquipType],
-                relative = {ratio = 0, lowestCost = 0, itemLink = nil}, -- Biggest upgrade ratio
-                budget = {rwpc = 0, lowestCost = 0, itemLink = nil} -- Biggest upgrade ratio / copper
+                relative = {ratio = 0, lowestPrice = 0, itemLink = nil}, -- Biggest upgrade ratio
+                budget = {rwpc = 0, lowestPrice = 0, itemLink = nil} -- Biggest upgrade ratio / copper
             }
         end
 
@@ -1372,11 +1366,17 @@ function addon.itemUpgrades.AH:Analyze()
             if scanData.ratio and scanData.ratio > bAS.relative.ratio then
                 bAS.relative.ratio = scanData.ratio
                 bAS.relative.itemLink = itemLink
+
+                bAS.relative.lowestPrice =
+                    ahSession.scanData[itemLink].lowestPrice
             end
 
             if scanData.relativeWeightPerCopper > bAS.budget.rwpc then
                 bAS.budget.rwpc = scanData.relativeWeightPerCopper
                 bAS.budget.itemLink = itemLink
+
+                bAS.budget.lowestPrice =
+                    ahSession.scanData[itemLink].lowestPrice
             end
             -- else -- downgrade, incompatible, or similar
         end
@@ -1490,7 +1490,7 @@ function addon.itemUpgrades.AH:DisplayResults()
 
     local f = ahSession.displayFrame
     local slotFrames = f.scrollContainer.slotFrames
-    local sFrame, sFrameData
+    local sFrame, sFrameData, epPerCopper
 
     f.resultsHeader:SetText(fmt(_G.EVENTTRACE_RESULTS, ahSession.scanResults))
 
@@ -1513,16 +1513,22 @@ function addon.itemUpgrades.AH:DisplayResults()
 
         if data.relative.itemLink then
             sFrameData = sFrameData ..
-                             fmt("Best %s %s\n", data.relative.itemLink,
-                                 prettyPrintRatio(data.relative.ratio))
+                             fmt("Best %s %s %sc\n", data.relative.itemLink,
+                                 prettyPrintRatio(data.relative.ratio),
+                                 data.relative.lowestPrice)
             -- print("  - Relative EP / copper", data.relative.itemLink, data.relative.weight)
         end
 
         if data.budget.itemLink then
+            epPerCopper = addon.Round(data.budget.rwpc, 2)
+
+            if epPerCopper == 0 then
+                epPerCopper = addon.Round(data.budget.rwpc, 4)
+            end
             sFrameData = sFrameData ..
-                             fmt("Budget %s %s EP/copper\n",
-                                 data.budget.itemLink,
-                                 addon.Round(data.budget.rwpc, 2))
+                             fmt("Budget %s %s (EP/c) %sc\n",
+                                 data.budget.itemLink, epPerCopper,
+                                 data.budget.lowestPrice)
             -- print("  - Highest EP / copper", data.budget.itemLink, data.budget.weight)
         end
 
@@ -1532,6 +1538,7 @@ function addon.itemUpgrades.AH:DisplayResults()
 
     end
 
+    -- TODO recalculate width
     f:Show()
 end
 
