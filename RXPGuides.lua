@@ -129,6 +129,7 @@ addon.player = {
     faction = select(1,UnitFactionGroup("player")),
     guid = UnitGUID("player"),
     name = UnitName("player"),
+    season = C_Seasons and C_Seasons.HasActiveSeason() and C_Seasons.GetActiveSeason(),
 }
 addon.player.neutral = addon.player.faction == "Neutral"
 
@@ -1565,11 +1566,31 @@ function addon.stepLogic.AHCheck(step)
 end
 
 function addon.stepLogic.SeasonCheck(step)
-    if addon.settings.profile.SoM and step.era or step.som and
-        not addon.settings.profile.SoM or addon.settings.profile.SoM and
+    local currentSeason = addon.settings.profile.season or 0
+    local SoM = currentSeason == 1
+    --local SoD = currentSeason == 2
+    if SoM and step.era or step.som and not SoM or SoM and
         addon.settings.profile.phase > 2 and step["era/som"] then
         return false
     end
+
+    if step.season then
+        local pmin, pmax
+        pmin, pmax = step.season:match("(%d+)%-(%d+)")
+        if pmax then
+            pmin = tonumber(pmin)
+            pmax = tonumber(pmax)
+        else
+            pmin = tonumber(step.season)
+            pmax = 0xffff
+        end
+        if pmin and currentSeason >= pmin and currentSeason <= pmax then
+            return true
+        else
+            return false
+        end
+    end
+
     return true
 end
 

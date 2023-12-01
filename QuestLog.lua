@@ -146,10 +146,7 @@ function addon.GetQuestLog(QL, LT)
     addon.next = group.next
     local stop
     local lastQuestAccepted
-    if (addon.settings.profile.SoM and guide.era or
-        not addon.settings.profile.SoM and guide.som or
-        addon.settings.profile.SoM and addon.settings.profile.phase > 2 and
-        guide["era/som"]) or not guide then return end
+    if (addon.stepLogic.SeasonCheck(guide)) or not guide then return end
     for ns, step in ipairs(guide.steps) do
         local remove = tonumber(step.qremove)
         if remove then

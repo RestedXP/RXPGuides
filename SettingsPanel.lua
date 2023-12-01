@@ -93,7 +93,7 @@ function addon.settings:InitializeSettings()
             enableBindAutomation = true,
             enableGossipAutomation = true,
             showUnusedGuides = true,
-            SoM = 1,
+            --SoM = 1,
             anchorOrientation = "top",
             chromieTime = "auto",
             enableXpStepSkipping = true,
@@ -1205,21 +1205,21 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = addon.game ~= "CLASSIC"
                     },
-                    SoM = {
-                        name = L("Season of Mastery"),
+                    season = {
+                        hidden = addon.game ~= "CLASSIC",
+                        --[[disabled = function()
+                            return addon.settings.profile.enableAutomaticXpRate
+                        end,]]
+                        name = L("Season"),
                         desc = L(
-                            "Adjust the leveling routes to the Season of Mastery changes (40/100% quest xp)"),
-                        type = "toggle",
+                            "Adjust the leveling routes to the current season"),
+                        type = "select",
+                        values = {[false] = "None", [1] = "Season of Mastery", [2] = "Season of Discovery"},
+                        --sorting = {0, 1, 2},
                         width = optionsWidth,
                         order = 2.5,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.RXPFrame.GenerateMenuTable()
-                            addon.ReloadGuide()
-                        end,
-                        hidden = addon.game ~= "CLASSIC",
-                        disabled = function()
-                            return addon.settings.profile.enableAutomaticXpRate
                         end
                     },
                     dungeons = {
@@ -2998,11 +2998,12 @@ function addon.settings:DetectXPRate()
     end
 
     if addon.gameVersion < 20000 then
-        local isSoM = CheckBuff(362859)
+        local season = addon.player.season or CheckBuff(362859) and 1
 
-        if isSoM == addon.settings.profile.SoM then return end
+        if season == addon.settings.profile.season then return end
 
-        addon.settings.profile.SoM = isSoM
+
+        addon.settings.profile.season = season
 
         if addon.currentGuide and addon.currentGuide.name then
             addon:LoadGuide(addon.currentGuide, 'onLoad')

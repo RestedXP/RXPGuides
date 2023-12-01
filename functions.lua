@@ -2674,7 +2674,7 @@ function addon.functions.next(skip, guide)
             local era = "(Era)"
             local som = "(SoM)"
 
-            if addon.settings.profile.SoM then
+            if addon.settings.profile.season == 1 then
                 next = next:gsub(era, som)
             else
                 next = next:gsub(som, era)
@@ -2684,9 +2684,7 @@ function addon.functions.next(skip, guide)
         nextGuide = addon.GetGuideTable(group, next)
 
         if nextGuide then
-            if (nextGuide.era and addon.settings.profile.SoM or nextGuide.som and
-                not addon.settings.profile.SoM or addon.settings.profile.SoM and addon.settings.profile.phase > 2 and
-                nextGuide["era/som"]) or
+            if (addon.stepLogic.SeasonCheck(nextGuide)) or
                 (nextGuide.hardcore and not (addon.settings.profile.hardcore) or
                     nextGuide.softcore and addon.settings.profile.hardcore) then
                 return addon.functions.next(nil, nextGuide)
@@ -5161,6 +5159,55 @@ function addon.functions.disablecheckbox(self, text)
         if element.step.active then
             addon.SetElementComplete(element.parent)
             addon.RXPFrame.CurrentStepFrame.UpdateText()
+        end
+    end
+end
+
+events.aura = "UNIT_AURA"
+function addon.functions.aura(self, ...)
+    if type(self) == "string" then
+        local text, id, duration, target = ...
+        id = tonumber(id)
+        local element = {text = text, textOnly = not text, unit = target or "player"}
+
+        local operator, elapsed = duration:match("(<?)%s*(%d+)")
+        if operator == "<" then
+            element.reverse = true
+        end
+        element.duration = tonumber(elapsed) or 0
+
+        if id < 0 then
+            id = -id
+            element.reverse = not element.reverse
+        end
+        element.id = id
+        return element
+    end
+    local element = self.element
+    local step = element.step
+    local event, target = ...
+
+    if target == "player" and step.active then
+        local buffFound
+        for i = 1, 32 do
+            local name, icon, count, _, duration, expirationTime, _, _, _, spellId = UnitAura(element.unit, i)
+            if spellId == element.id then
+                local remaining = expirationTime - GetTime()
+                if remaining > element.duration then
+                    buffFound = true
+                    break
+                end
+            end
+        end
+        if buffFound == not element.reverse then
+            if element.text then
+                addon.SetElementComplete(self)
+            else
+                step.completed = true
+                addon.updateSteps = true
+            end
+        elseif not element.textOnly then
+            addon.SetElementIncomplete(self)
         end
     end
 end
