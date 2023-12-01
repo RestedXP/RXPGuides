@@ -1307,7 +1307,7 @@ ScrollFrame:SetScrollChild(ScrollChild)
 
 function addon.GetGuideName(guide)
     if not guide then guide = addon.currentGuide end
-    local som = addon.settings.profile.SoM
+    local som = addon.settings.profile.season == 1
     if som and guide.somname then
         return guide.somname
     elseif not som and guide.eraname then
@@ -1414,7 +1414,7 @@ function addon:LoadGuide(guide, OnLoad)
             addon.settings.profile.hardcore = true
             addon.RenderFrame(true,true)
         end
-        addon.settings.profile.SoM = false
+        --addon.settings.profile.season = 0
     elseif guide.softcore and addon.settings.profile.hardcore then
             addon.settings.profile.hardcore = false
             addon.RenderFrame(true,true)

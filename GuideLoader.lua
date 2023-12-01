@@ -53,6 +53,8 @@ local function applies(textEntry,customClass)
                     elseif uppercase == "MALE" and UnitSex("player") == 2 or
                         uppercase == "FEMALE" and UnitSex("player") == 3 then
                         gendercheck = true
+                    elseif uppercase == "SOD" and addon.player.season == 2 then
+                        entry = faction
                     elseif faction == "Neutral" and (entry == "Alliance" or entry == "Horde") then
                         entry = faction
                     end

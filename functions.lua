@@ -2340,7 +2340,7 @@ function addon.functions.skill(self, text, skillName, str, skipstep, useMaxValue
         local function MountCheck(range)
             --print('g',range)
             for _,id in pairs(addon.mountIDs[range]) do
-                if IsPlayerSpell(id) or IsSpellKnown(id, true) or IsSpellKnown(id) then
+                if addon.IsPlayerSpell(id) then
                     element.mountTrained = true
                     return true
                 end
@@ -2674,7 +2674,7 @@ function addon.functions.next(skip, guide)
             local era = "(Era)"
             local som = "(SoM)"
 
-            if addon.settings.profile.SoM then
+            if addon.settings.profile.season == 1 then
                 next = next:gsub(era, som)
             else
                 next = next:gsub(som, era)
@@ -2684,9 +2684,7 @@ function addon.functions.next(skip, guide)
         nextGuide = addon.GetGuideTable(group, next)
 
         if nextGuide then
-            if (nextGuide.era and addon.settings.profile.SoM or nextGuide.som and
-                not addon.settings.profile.SoM or addon.settings.profile.SoM and addon.settings.profile.phase > 2 and
-                nextGuide["era/som"]) or
+            if (addon.stepLogic.SeasonCheck(nextGuide)) or
                 (nextGuide.hardcore and not (addon.settings.profile.hardcore) or
                     nextGuide.softcore and addon.settings.profile.hardcore) then
                 return addon.functions.next(nil, nextGuide)
@@ -2745,8 +2743,7 @@ function addon.functions.train(self, ...)
     end
     if not element.title then element.title = GetSpellInfo(element.id) end
 
-    if step.active and ((IsPlayerSpell(element.id) or IsSpellKnown(element.id, true) or
-        IsSpellKnown(element.id)) ~= element.reverse) then
+    if step.active and (addon.IsPlayerSpell(element.id) ~= element.reverse) then
         if element.textOnly then
             self.element.step.completed = true
             addon.updateSteps = true
@@ -2784,8 +2781,7 @@ function addon.functions.istrained(self, text, ...)
     end
     if addon.isHidden then return end
     for _, id in pairs(self.element.id) do
-        if IsPlayerSpell(id) or IsSpellKnown(id, true) or
-        IsSpellKnown(id) then
+        if addon.IsPlayerSpell(id) then
             self.element.step.completed = true
             addon.updateSteps = true
             return
@@ -3045,7 +3041,7 @@ function addon.functions.spellmissing(self, text, id)
     end
     local element = self.element
     local step = element.step
-    if not IsPlayerSpell(element.id) and step.active and not addon.isHidden then
+    if not addon.IsPlayerSpell(element.id) and step.active and not addon.isHidden then
         addon.SetElementComplete(self)
         step.completed = true
         addon.updateSteps = true
@@ -5161,6 +5157,61 @@ function addon.functions.disablecheckbox(self, text)
         if element.step.active then
             addon.SetElementComplete(element.parent)
             addon.RXPFrame.CurrentStepFrame.UpdateText()
+        end
+    end
+end
+
+events.aura = "UNIT_AURA"
+function addon.functions.aura(self, ...)
+    if type(self) == "string" then
+        local text, id, duration, target = ...
+        id = tonumber(id)
+        local element = {text = text, textOnly = not text, unit = target or "player"}
+
+        if duration then
+            local operator, elapsed = duration:match("(<?)%s*(%d+)")
+            if operator == "<" then
+                element.reverse = true
+            end
+            element.duration = tonumber(elapsed) or 0
+        else
+            element.duration = 0
+        end
+
+        if id < 0 then
+            id = -id
+            element.reverse = not element.reverse
+        end
+        element.id = id
+        return element
+    end
+    local element = self.element
+    local step = element.step
+    local event, target = ...
+    if (target == "player" or event ~= "UNIT_AURA") and step.active then
+        local buffFound = false
+        for i = 1, 32 do
+            local name, icon, count, _, duration, expirationTime, _, _, _, spellId = UnitAura(element.unit, i)
+            if spellId == element.id then
+                local remaining = expirationTime - GetTime()
+                print(remaining)
+                if remaining > element.duration then
+                    element.icon = "|T" .. icon .. ":0|t"
+                    buffFound = true
+                    break
+                end
+            end
+        end
+        if buffFound == not element.reverse then
+            if element.text then
+                addon.SetElementComplete(self)
+            else
+                step.completed = true
+                addon.updateSteps = true
+            end
+        elseif not element.textOnly then
+            print('ok1',buffFound)
+            addon.SetElementIncomplete(self)
         end
     end
 end
