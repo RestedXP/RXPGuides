@@ -209,7 +209,7 @@ function addon.IsPlayerSpell(id)
             for _,rune in pairs(runes) do
                 if rune.skillLineAbilityID == id then
                     return true
-                else
+                elseif type(learnedAbilitySpellIDs) == "table" then
                     for _,spell in pairs(rune.learnedAbilitySpellIDs) do
                         if spell == id then
                             return true
