@@ -198,7 +198,7 @@ function addon.GetStepQuestReward(titleOrId)
 end
 
 function addon.IsPlayerSpell(id)
-    if addon.IsPlayerSpell(id) or IsSpellKnown(id, true) or IsSpellKnown(id) then
+    if IsPlayerSpell(id) or IsSpellKnown(id, true) or IsSpellKnown(id) then
         return true
     end
 
@@ -209,7 +209,7 @@ function addon.IsPlayerSpell(id)
             for _,rune in pairs(runes) do
                 if rune.skillLineAbilityID == id then
                     return true
-                elseif type(learnedAbilitySpellIDs) == "table" then
+                elseif type(rune.learnedAbilitySpellIDs) == "table" then
                     for _,spell in pairs(rune.learnedAbilitySpellIDs) do
                         if spell == id then
                             return true
