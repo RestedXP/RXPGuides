@@ -1214,12 +1214,14 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L(
                             "Adjust the leveling routes to the current season"),
                         type = "select",
-                        values = {[false] = "None", [1] = "Season of Mastery", [2] = "Season of Discovery"},
+                        values = {[false] = L"None", [1] = L"Season of Mastery", [2] = L"Season of Discovery"},
                         --sorting = {0, 1, 2},
                         width = optionsWidth,
                         order = 2.5,
                         set = function(info, value)
                             SetProfileOption(info, value)
+                            addon.ReloadGuide()
+                            addon.RXPFrame.GenerateMenuTable()
                         end
                     },
                     dungeons = {

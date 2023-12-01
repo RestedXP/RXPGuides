@@ -1599,20 +1599,12 @@ function addon.stepLogic.SeasonCheck(step)
     end
 
     if step.season then
-        local pmin, pmax
-        pmin, pmax = step.season:match("(%d+)%-(%d+)")
-        if pmax then
-            pmin = tonumber(pmin)
-            pmax = tonumber(pmax)
-        else
-            pmin = tonumber(step.season)
-            pmax = pmin
+        for season in step.season:gmatch("[^,;%s]+") do
+            if currentSeason == tonumber(season) then
+                return true
+            end
         end
-        if pmin and currentSeason >= pmin and currentSeason <= pmax then
-            return true
-        else
-            return false
-        end
+        return false
     end
 
     return true
