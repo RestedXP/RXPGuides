@@ -415,6 +415,18 @@ local function KeyToRegex(keyString)
     return regex
 end
 
+local function prettyPrintRatio(ratio)
+    if ratio == 1 then
+        return '100%'
+    elseif ratio > 0 then
+        return (((ratio * 100) - 100) .. '%')
+    elseif ratio == 0 then
+        return '0%'
+    end
+    -- < 0
+    return ((ratio * 100) .. '%')
+end
+
 local function TooltipSetItem(tooltip, ...)
     if not addon.settings.profile.enableItemUpgrades or
         not addon.settings.profile.enableTips then return end
@@ -437,14 +449,8 @@ local function TooltipSetItem(tooltip, ...)
         -- A 140% upgrade ratio is only a 40% upgrade
         if data['debug'] or not data['Ratio'] then
             ratioText = "(debug) " .. (data['debug'] or _G.SPELL_FAILED_ERROR)
-        elseif data['Ratio'] == 1 then
-            ratioText = '100%'
-        elseif data['Ratio'] > 0 then
-            ratioText = ((data['Ratio'] * 100) - 100) .. '%'
-        elseif data['Ratio'] == 0 then
-            ratioText = '0%'
-        else -- < 0
-            ratioText = (data['Ratio'] * 100) .. '%'
+        else
+            ratioText = prettyPrintRatio(data['Ratio'])
         end
 
         if data.itemEquipLoc and data.itemEquipLoc == 'INVTYPE_WEAPONOFFHAND' then
@@ -1293,11 +1299,11 @@ local function calculate(itemLink, scanData)
     scanData.totalWeight = itemData.totalWeight
     scanData.weightPerCopper = itemData.totalWeight / scanData.lowestPrice
     scanData.itemEquipLoc = itemData.itemEquipLoc
-
+    scanData.ratio = 10.0 -- Empty slot value
     scanData.comparisons = addon.itemUpgrades:CompareItemWeight(itemLink) or {}
 
-    local rwpc
-    local highestRWPC = -1
+    local rwpc, ratio
+    local highestRWPC, highestRatio = -1, 0
     -- TODO account for multi-slot comparisons, show both
     for _, compareData in ipairs(scanData.comparisons) do
         -- To avoid complicated comparison, use ratio as a multiplier
@@ -1307,10 +1313,15 @@ local function calculate(itemLink, scanData)
                        scanData.lowestPrice
 
             if rwpc > highestRWPC then highestRWPC = rwpc end
+
+            if compareData.Ratio > highestRatio then
+                highestRatio = compareData.Ratio
+            end
         end
     end
 
     scanData.relativeWeightPerCopper = highestRWPC
+    scanData.ratio = highestRatio
 end
 
 function addon.itemUpgrades.AH:Analyze()
@@ -1319,7 +1330,13 @@ function addon.itemUpgrades.AH:Analyze()
     -- TODO handle retry loop
     ahSession.retryQuery = {}
 
-    ahSession.bestAnalysis = {}
+    ahSession.bestAnalysis = {
+        -- [slotId] = {
+        --    slotName = _G[invEquipType],
+        --    relative = {ratio = 0, lowestCost = 0,  itemLink = nil}, -- Biggest upgrade ratio
+        --    budget = {rwpc = 0, lowestCost = 0,  itemLink = nil}, -- Biggest upgrade ratio / copper
+        -- }
+    }
 
     -- We already know all of this is usable, so just care about slots
     for invEquipType, slotId in pairs(session.equippableSlots) do
@@ -1327,17 +1344,15 @@ function addon.itemUpgrades.AH:Analyze()
             for j, _ in pairs(slotId) do
                 ahSession.bestAnalysis[j] = {
                     slotName = _G[invEquipType],
-                    total = {weight = 0, itemLink = nil},
-                    budget = {weight = 0, itemLink = nil},
-                    relative = {weight = 0, itemLink = nil}
+                    relative = {ratio = 0, lowestCost = 0, itemLink = nil}, -- Biggest upgrade ratio
+                    budget = {rwpc = 0, lowestCost = 0, itemLink = nil} -- Biggest upgrade ratio / copper
                 }
             end
         else
             ahSession.bestAnalysis[slotId] = {
                 slotName = _G[invEquipType],
-                total = {weight = 0, itemLink = nil},
-                budget = {weight = 0, itemLink = nil},
-                relative = {weight = 0, itemLink = nil}
+                relative = {ratio = 0, lowestCost = 0, itemLink = nil}, -- Biggest upgrade ratio
+                budget = {rwpc = 0, lowestCost = 0, itemLink = nil} -- Biggest upgrade ratio / copper
             }
         end
 
@@ -1354,19 +1369,14 @@ function addon.itemUpgrades.AH:Analyze()
             slotId = session.equippableSlots[scanData.itemEquipLoc]
             bAS = ahSession.bestAnalysis[slotId]
 
-            if scanData.totalWeight > bAS.total.weight then
-                bAS.total.weight = scanData.weightPerCopper
-                bAS.total.itemLink = itemLink
-            end
-
-            if scanData.weightPerCopper > bAS.budget.weight then
-                bAS.budget.weight = scanData.weightPerCopper
-                bAS.budget.itemLink = itemLink
-            end
-
-            if scanData.relativeWeightPerCopper > bAS.relative.weight then
-                bAS.relative.weight = scanData.relativeWeightPerCopper
+            if scanData.ratio and scanData.ratio > bAS.relative.ratio then
+                bAS.relative.ratio = scanData.ratio
                 bAS.relative.itemLink = itemLink
+            end
+
+            if scanData.relativeWeightPerCopper > bAS.budget.rwpc then
+                bAS.budget.rwpc = scanData.relativeWeightPerCopper
+                bAS.budget.itemLink = itemLink
             end
             -- else -- downgrade, incompatible, or similar
         end
@@ -1494,36 +1504,30 @@ function addon.itemUpgrades.AH:DisplayResults()
             slotFrames[slotId] = sFrame
         end
 
-        if data.total.itemLink or data.budget.itemLink or data.relative.itemLink then
+        if data.budget.itemLink or data.relative.itemLink then
             -- print("DisplayResults:", data.slotName)
         else
             -- print("DisplayResults:", data.slotName, "no upgrades found")
             sFrameData = "No upgrades found\n"
         end
 
-        if data.total.itemLink then
+        if data.relative.itemLink then
             sFrameData = sFrameData ..
-                             fmt("EP %s %s\n", data.total.itemLink,
-                                 data.total.weight)
-            -- print("  - Highest EP", data.total.itemLink, data.total.weight)
+                             fmt("Best %s %s\n", data.relative.itemLink,
+                                 prettyPrintRatio(data.relative.ratio))
+            -- print("  - Relative EP / copper", data.relative.itemLink, data.relative.weight)
         end
 
         if data.budget.itemLink then
             sFrameData = sFrameData ..
-                             fmt("EP / copper %s %s\n", data.budget.itemLink,
-                                 data.budget.weight)
+                             fmt("Budget %s %s EP/copper\n",
+                                 data.budget.itemLink,
+                                 addon.Round(data.budget.rwpc, 2))
             -- print("  - Highest EP / copper", data.budget.itemLink, data.budget.weight)
         end
 
-        if data.relative.itemLink then
-            sFrameData = sFrameData ..
-                             fmt("Relative EP / copper %s %s\n",
-                                 data.relative.itemLink, data.relative.weight)
-            -- print("  - Relative EP / copper", data.relative.itemLink, data.relative.weight)
-        end
-
         sFrame.data:SetText(sFrameData)
-        sFrame.frame:SetScript("OnHyperlinkClick", _G.ChatFrame_OnHyperlinkShow);
+        -- sFrame.frame:SetScript("OnHyperlinkClick", _G.ChatFrame_OnHyperlinkShow);
         -- print(sFrameData)
 
     end
