@@ -458,10 +458,13 @@ step << Druid
 step << Druid
     .goto Moonglade,52.6,51.6
     >>Swim into Lake Elune'Ara
-    >>Open a |cRXP_PICK_Bauble Container|r. Loot it for the |cRXP_LOOT_Shrine Bauble|r
-    >>|cRXP_WARN_It may spawn in different locations underwater|r
+    >>Open a |cFFDB2EEFBauble Container|r. Loot it for a |T134125:0|t[Shrine Bauble]
+    >>|cFFFCDC00It may spawn in different locations underwater|r
+    .collect 15877,1,29,1 -- Shrine Bauble (1)
+step << Druid
+    .goto Moonglade,36.026,41.374
+    .use 15877 >>|cRXP_WARN_Use the|r |T134125:0|t[Shrine Bauble] |cRXP_WARN_at the Shrine of Remulos tree|r
     .complete 29,1 --Complete the Trial of the Lake.
--- needs testing properly etc
 step << Druid
     .goto Moonglade,36.517,40.104
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tajarri|r
