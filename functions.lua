@@ -2340,7 +2340,7 @@ function addon.functions.skill(self, text, skillName, str, skipstep, useMaxValue
         local function MountCheck(range)
             --print('g',range)
             for _,id in pairs(addon.mountIDs[range]) do
-                if IsPlayerSpell(id) or IsSpellKnown(id, true) or IsSpellKnown(id) then
+                if addon.IsPlayerSpell(id) then
                     element.mountTrained = true
                     return true
                 end
@@ -2743,8 +2743,7 @@ function addon.functions.train(self, ...)
     end
     if not element.title then element.title = GetSpellInfo(element.id) end
 
-    if step.active and ((IsPlayerSpell(element.id) or IsSpellKnown(element.id, true) or
-        IsSpellKnown(element.id)) ~= element.reverse) then
+    if step.active and (addon.IsPlayerSpell(element.id) ~= element.reverse) then
         if element.textOnly then
             self.element.step.completed = true
             addon.updateSteps = true
@@ -2782,8 +2781,7 @@ function addon.functions.istrained(self, text, ...)
     end
     if addon.isHidden then return end
     for _, id in pairs(self.element.id) do
-        if IsPlayerSpell(id) or IsSpellKnown(id, true) or
-        IsSpellKnown(id) then
+        if addon.IsPlayerSpell(id) then
             self.element.step.completed = true
             addon.updateSteps = true
             return
@@ -3043,7 +3041,7 @@ function addon.functions.spellmissing(self, text, id)
     end
     local element = self.element
     local step = element.step
-    if not IsPlayerSpell(element.id) and step.active and not addon.isHidden then
+    if not addon.IsPlayerSpell(element.id) and step.active and not addon.isHidden then
         addon.SetElementComplete(self)
         step.completed = true
         addon.updateSteps = true

@@ -197,6 +197,30 @@ function addon.GetStepQuestReward(titleOrId)
     return element.reward >= 0 and element.reward or 0
 end
 
+function addon.IsPlayerSpell(id)
+    if addon.IsPlayerSpell(id) or IsSpellKnown(id, true) or IsSpellKnown(id) then
+        return true
+    end
+
+    if addon.player.season == 2 then
+        for _,slot in pairs (C_Engraving.GetRuneCategories(false,true)) do
+
+            local runes = C_Engraving.GetRunesForCategory(slot,true)
+            for _,rune in pairs(runes) do
+                if rune.skillLineAbilityID == id then
+                    return true
+                else
+                    for _,spell in pairs(rune.learnedAbilitySpellIDs) do
+                        if spell == id then
+                            return true
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+
 local currrentSkillLevel = {}
 local maxSkillLevel = {}
 local professionNames
