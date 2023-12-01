@@ -1606,7 +1606,7 @@ function addon.stepLogic.SeasonCheck(step)
             pmax = tonumber(pmax)
         else
             pmin = tonumber(step.season)
-            pmax = 0xffff
+            pmax = pmin
         end
         if pmin and currentSeason >= pmin and currentSeason <= pmax then
             return true
