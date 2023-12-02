@@ -5001,6 +5001,7 @@ function addon.functions.itemStat(self, ...)
                 return
             elseif type(stat) == "number" then
                 stat = addon.Round(stat,1)
+                print(stat)
                 element.total = tonumber(element.total) or 0
                 --print('+',stat,element.total, element.operator)
                 if (element.operator == ">" and element.total < stat) or (element.operator == "<" and element.total > stat) then
@@ -5194,7 +5195,7 @@ function addon.functions.aura(self, ...)
             local name, icon, count, _, duration, expirationTime, _, _, _, spellId = UnitAura(element.unit, i)
             if spellId == element.id then
                 local remaining = expirationTime - GetTime()
-                print(remaining)
+                --print(remaining)
                 if remaining > element.duration then
                     element.icon = "|T" .. icon .. ":0|t"
                     buffFound = true
@@ -5203,6 +5204,42 @@ function addon.functions.aura(self, ...)
             end
         end
         if buffFound == not element.reverse then
+            if element.text then
+                addon.SetElementComplete(self)
+            else
+                step.completed = true
+                addon.updateSteps = true
+            end
+        elseif not element.textOnly then
+            addon.SetElementIncomplete(self)
+        end
+    end
+end
+
+events.equip = "PLAYER_EQUIPMENT_CHANGED"
+function addon.functions.equip(self, ...)
+    if type(self) == "string" then
+        local text, slot, id = ...
+        slot = tonumber(slot)
+        local element = {text = text, textOnly = not text }
+
+        if slot < 0 then
+            slot = -slot
+            element.reverse = not element.reverse
+        end
+        element.id = tonumber(id)
+        element.slot = slot
+        return element
+    end
+    local element = self.element
+    local step = element.step
+    local event, target = ...
+    if (target == element.slot or event ~= "PLAYER_EQUIPMENT_CHANGED") and step.active then
+
+        local currentItem = GetInventoryItemID('player', element.slot) or false
+        local isEquipped = currentItem and (not element.id or element.id == currentItem)
+        --print(element.slot,element.id,isEquipped)
+        if isEquipped == not element.reverse then
             if element.text then
                 addon.SetElementComplete(self)
             else
