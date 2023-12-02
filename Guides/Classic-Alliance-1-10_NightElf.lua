@@ -217,6 +217,21 @@ step
     .goto Teldrassil,57.95,38.20
     >>Loot the |cRXP_LOOT_Moonpetal Lilies|r on the ground
     .complete 3521,2 --Collect Moonpetal Lily (x4)
+step << Hunter
+    #sticky
+    #season 2
+    #label hunterRuneChimera
+    .goto Teldrassil,56.68,26.12
+    >>Kill |cRXP_ENEMY_Githyiss the Vile|r. Loot Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Chimera|r]
+    .collect 206168,1,77568,1 -- Rune of the Chimera (1)
+    .mob Githyiss the Vile
+    .engrave 10--skips if it's already engraved
+step << Hunter
+    #season 2
+    #sticky
+    #requires hunterRuneChimera
+    #label hunterEngrave
+    .engrave 10 >> Open your character sheet and engrave your gloves with a rune
 step
     .goto Teldrassil,56.8,31.7
     >>Kill |cRXP_ENEMY_Webwood Spiders|r. Loot them for their |cRXP_LOOT_Ichor|r and |cRXP_LOOT_Venom Sacs|r
@@ -224,6 +239,7 @@ step
     .complete 916,1 --Collect Webwood Venom Sac (x10)
     .mob Webwood Spider
 step
+    #requires hunterRuneChimera << Hunter
     .goto Teldrassil,55.0,43.7
     >>Kill |cRXP_ENEMY_Grell|r and |cRXP_ENEMY_Grellkin|r. Loot them for their |cRXP_LOOT_Mushrooms|r and |cRXP_LOOT_Fel Moss|r
     .complete 3521,1 --Collect Hyacinth Mushroom (x7)
