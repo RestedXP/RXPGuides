@@ -299,7 +299,7 @@ step << !Tauren !Undead
 step
     #sticky
     #completewith EnterRFC
-    .subzone 213 >> Now you should be looking for a group to Ragefire Chasm
+    .subzone 2437 >> Now you should be looking for a group to Ragefire Chasm
     .dungeon RFC
 step
     .goto The Barrens,51.99,29.89
@@ -2215,7 +2215,27 @@ step
     .complete 821,3 --Thunder Lizard Horn (1)
     .mob Stormsnout
 step
-    .loop 25,The Barrens,50.71,54.60,50.74,55.33,50.73,56.78,50.42,57.23,50.50,57.65,50.87,57.50,51.26,57.84,51.74,57.69,51.79,57.10,53.08,54.69,53.65,54.27,53.63,53.53,53.35,52.72,53.00,51.83,52.62,52.19,52.59,52.71,52.41,53.07,52.32,53.71,51.39,54.22
+    #loop
+    .goto The Barrens,50.71,54.60,0
+    .goto The Barrens,50.71,54.60,60,0
+    .goto The Barrens,50.74,55.33,60,0
+    .goto The Barrens,50.73,56.78,60,0
+    .goto The Barrens,50.42,57.23,60,0
+    .goto The Barrens,50.50,57.65,60,0
+    .goto The Barrens,50.87,57.50,60,0
+    .goto The Barrens,51.26,57.84,60,0
+    .goto The Barrens,51.74,57.69,60,0
+    .goto The Barrens,51.79,57.10,60,0
+    .goto The Barrens,53.08,54.69,60,0
+    .goto The Barrens,53.65,54.27,60,0
+    .goto The Barrens,53.63,53.53,60,0
+    .goto The Barrens,53.35,52.72,60,0
+    .goto The Barrens,53.00,51.83,60,0
+    .goto The Barrens,52.62,52.19,60,0
+    .goto The Barrens,52.59,52.71,60,0
+    .goto The Barrens,52.41,53.07,60,0
+    .goto The Barrens,52.32,53.71,60,0
+    .goto The Barrens,51.39,54.22,60,0
     >>Kill a lot of |cRXP_ENEMY_Bristleback Quillboars|r. Loot them for their |cRXP_LOOT_Tusks|r. Save the |T134128:0|t[|cFF00BCD4Blood Shards|r] you get
     .complete 878,1 --Kill Bristleback Water Seeker (x6)
     .complete 878,2 --Kill Bristleback Thornweaver (x12)
@@ -2321,7 +2341,7 @@ step << Warrior
 step << Rogue/Hunter/Warrior/Shaman/Druid
     .goto The Barrens,62.16,38.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vexspindle|r
-    .vendor >> |cRXP_BUY_Buy|r |T132603:0|t[Wolf Bracers] |cRXP_BUY_from him they're it's up|r
+    .vendor >> |cRXP_BUY_Buy|r |T132603:0|t[Wolf Bracers] |cRXP_BUY_from him if they're up|r
     .target Vexspindle
     .money <0.3515
     .itemStat 9,ITEM_MOD_ARMOR_SHORT,<37
@@ -2821,9 +2841,43 @@ step
     .goto The Barrens,45.66,40.34,120 >> Travel to the Lushwater Oasis
     .isQuestTurnedIn 851
 step
-    .loop 25,The Barrens,45.64,38.16,45.84,37.86,45.78,37.41,45.95,37.11,45.93,36.91,46.14,36.85,46.19,36.88,46.28,36.86,46.46,37.17,46.58,37.31,46.66,37.54,46.63,37.93,46.75,38.39,47.27,38.98,47.47,39.27,48.20,39.57,48.40,39.58,48.60,39.51,48.54,39.96,48.58,40.52,48.27,40.82,48.06,40.82,47.86,41.13,47.49,41.33,47.34,41.61,47.22,41.64,46.85,42.05,46.56,41.93,46.27,41.76,46.03,41.15,45.86,41.32,46.09,40.98,46.08,40.68,45.71,40.56,45.64,38.16
+    #loop
+    .goto The Barrens,45.64,38.16,0
+    .goto The Barrens,45.64,38.16,50,0
+    .goto The Barrens,45.84,37.86,50,0
+    .goto The Barrens,45.78,37.41,50,0
+    .goto The Barrens,45.95,37.11,50,0
+    .goto The Barrens,45.93,36.91,50,0
+    .goto The Barrens,46.14,36.85,50,0
+    .goto The Barrens,46.19,36.88,50,0
+    .goto The Barrens,46.28,36.86,50,0
+    .goto The Barrens,46.46,37.17,50,0
+    .goto The Barrens,46.58,37.31,50,0
+    .goto The Barrens,46.63,37.93,50,0
+    .goto The Barrens,46.75,38.39,50,0
+    .goto The Barrens,47.27,38.98,50,0
+    .goto The Barrens,47.47,39.27,50,0
+    .goto The Barrens,48.20,39.57,50,0
+    .goto The Barrens,48.40,39.58,50,0
+    .goto The Barrens,48.60,39.51,50,0
+    .goto The Barrens,48.54,39.96,50,0
+    .goto The Barrens,48.58,40.52,50,0
+    .goto The Barrens,48.27,40.82,50,0
+    .goto The Barrens,48.06,40.82,50,0
+    .goto The Barrens,47.86,41.13,50,0
+    .goto The Barrens,47.49,41.33,50,0
+    .goto The Barrens,47.34,41.61,50,0
+    .goto The Barrens,47.22,41.64,50,0
+    .goto The Barrens,46.85,42.05,50,0
+    .goto The Barrens,46.56,41.93,50,0
+    .goto The Barrens,46.27,41.76,50,0
+    .goto The Barrens,46.03,41.15,50,0
+    .goto The Barrens,45.86,41.32,50,0
+    .goto The Barrens,46.09,40.98,50,0
+    .goto The Barrens,46.08,40.68,50,0
+    .goto The Barrens,45.71,40.56,50,0
+    .goto The Barrens,45.64,38.16,50,0
     >>Find & kill |cRXP_ENEMY_Hezrul Bloodmark|r, he patrols around the lake. Loot him for his |cRXP_LOOT_Head|r
-    >>|cRXP_WARN_Be careful! He has two|r |cRXP_ENEMY_Kolkar Bloodchargers|r |cRXP_WARN_defending him|r
     .complete 852,1 --Hezrul's Head
     .unitscan Hezrul Bloodmark
     .isQuestTurnedIn 851
