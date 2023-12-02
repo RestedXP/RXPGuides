@@ -219,6 +219,7 @@ function addon.IsPlayerSpell(id)
             end
         end
     end
+    return false
 end
 
 local currrentSkillLevel = {}
