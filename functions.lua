@@ -5001,7 +5001,7 @@ function addon.functions.itemStat(self, ...)
                 return
             elseif type(stat) == "number" then
                 stat = addon.Round(stat,1)
-                print(stat)
+                --print(stat)
                 element.total = tonumber(element.total) or 0
                 --print('+',stat,element.total, element.operator)
                 if (element.operator == ">" and element.total < stat) or (element.operator == "<" and element.total > stat) then
