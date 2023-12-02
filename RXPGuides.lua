@@ -129,6 +129,7 @@ addon.player = {
     faction = select(1,UnitFactionGroup("player")),
     guid = UnitGUID("player"),
     name = UnitName("player"),
+    season = C_Seasons and C_Seasons.HasActiveSeason() and C_Seasons.GetActiveSeason(),
 }
 addon.player.neutral = addon.player.faction == "Neutral"
 
@@ -194,6 +195,30 @@ function addon.GetStepQuestReward(titleOrId)
     if not element then return 0 end
 
     return element.reward >= 0 and element.reward or 0
+end
+
+function addon.IsPlayerSpell(id)
+    if IsPlayerSpell(id) or IsSpellKnown(id, true) or IsSpellKnown(id) then
+        return true
+    end
+
+    if addon.player.season == 2 then
+        for _,slot in pairs (C_Engraving.GetRuneCategories(false,true)) do
+
+            local runes = C_Engraving.GetRunesForCategory(slot,true)
+            for _,rune in pairs(runes) do
+                if rune.skillLineAbilityID == id then
+                    return true
+                elseif type(rune.learnedAbilitySpellIDs) == "table" then
+                    for _,spell in pairs(rune.learnedAbilitySpellIDs) do
+                        if spell == id then
+                            return true
+                        end
+                    end
+                end
+            end
+        end
+    end
 end
 
 local currrentSkillLevel = {}
@@ -1582,11 +1607,23 @@ function addon.stepLogic.AHCheck(step)
 end
 
 function addon.stepLogic.SeasonCheck(step)
-    if addon.settings.profile.SoM and step.era or step.som and
-        not addon.settings.profile.SoM or addon.settings.profile.SoM and
+    local currentSeason = addon.settings.profile.season or 0
+    local SoM = currentSeason == 1
+    --local SoD = currentSeason == 2
+    if SoM and step.era or step.som and not SoM or SoM and
         addon.settings.profile.phase > 2 and step["era/som"] then
         return false
     end
+
+    if step.season then
+        for season in step.season:gmatch("[^,;%s]+") do
+            if currentSeason == tonumber(season) then
+                return true
+            end
+        end
+        return false
+    end
+
     return true
 end
 

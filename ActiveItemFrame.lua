@@ -39,7 +39,7 @@ local function GetActiveItemList(ref)
 
     if ref.activeSpells then
         for spellId in pairs(ref.activeSpells) do
-            if IsPlayerSpell(spellId) then
+            if addon.IsPlayerSpell(spellId) then
                 local name, rank, icon = GetSpellInfo(spellId)
                 table.insert(itemList, {
                     name = name,
