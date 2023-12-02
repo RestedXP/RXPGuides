@@ -197,6 +197,47 @@ step << Gnome Mage
     .accept 77667 >> Accept Spell Research
     .trainer >> Train your class spells
     .target Marryk Nurribit
+step << Dwarf Priest
+    #season 2
+    .goto Dun Morogh,26.733,72.552
+    >>Open the |cRXP_PICK_Rockjaw Footlocker|r. Loot it for the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Troubled Acolyte|r]
+    .collect 205951,1,77661,1 -- Memory of a Troubled Acolyte (1)
+step << Dwarf Priest
+    #season 2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branstock Khalder|r
+    .target Branstock Khalder
+    .goto Dun Morogh,28.600,66.385
+    .turnin 3110 >> Turn in Hallowed Rune
+    .accept 77661 >> Accept Meditation on the Light
+    .trainer >> Train your class spells
+step << Dwarf Priest
+    #season 2
+    .isOnQuest 77661
+    .goto Dun Morogh,28.923,66.372
+    .aura 410935 >>|cRXP_WARN_Target the |cRXP_FRIENDLY_Altar of the Light|r to automatically /kneel|r
+    .emote KNEEL,208565 >>|cRXP_WARN_If it does not work, type /kneel in your chatbox with the |cRXP_FRIENDLY_Altar of the Light|r targeted|r
+    >>|cRXP_WARN_You will receive the|r |T135934:0|t[Meditation on the Light] |cRXP_WARN_buff|r
+    .target Altar of the Light
+step << Dwarf Priest
+    #season 2
+    .isOnQuest 77661
+    .use 205951 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Troubled Acolyte|r] |cRXP_WARN_while you have the|r |T135934:0|t[Meditation on the Light] |cRXP_WARN_buff|r
+    .complete 77661,1 -- Learn: Engrave Gloves - Penance
+    .target Altar of the Light
+step << Dwarf Priest
+    #season 2
+    .isQuestComplete 77661
+    .goto Dun Morogh,28.600,66.385
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branstock Khalder|r
+    .turnin 77661 >> Turn in Meditation on the Light
+    .target Branstock Khalder
+step << Dwarf Priest
+    #season 2
+    .equip 10,711 >> |cRXP_WARN_Equip the|r |T132961:0|t[Tattered Cloth Gloves]
+    .use 711
+step << Dwarf Priest
+    #season 2
+    .engrave 10 >> |cRXP_WARN_Open your character sheet and engrave your gloves with the|r |T237545:0|t[Penance] |cRXP_WARN_rune|r
 step
     #era
     #completewith Rockjaw
@@ -298,10 +339,19 @@ step << Paladin/Mage/Warlock
     .accept 3365 >> Accept Bring Back the Mug
     .target Durnan Furcutter
 step << Dwarf Paladin
+    #season 0,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bromos Grummner|r
     .target Bromos Grummner
     .goto Dun Morogh,28.833,68.332
     .turnin 3107 >> Turn in Consecrated Rune
+    .trainer >> Train your class spells
+step << Dwarf Paladin
+    #season 2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bromos Grummner|r
+    .target Bromos Grummner
+    .goto Dun Morogh,28.833,68.332
+    .turnin 3107 >> Turn in Consecrated Rune
+    .accept 77657 >> Accept Relics of the Light
     .trainer >> Train your class spells
 step << Gnome Mage
     #season 0
@@ -384,7 +434,33 @@ step << Dwarf Warrior/Gnome Warrior
     .use 204806 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
     .complete 77655,1 << Dwarf Warrior -- Learn: Engrave Gloves - Victory Rush
     .complete 77656,1 << Gnome Warrior -- Learn: Engrave Gloves - Victory Rush
+step << Dwarf Paladin
+    #season 2
+    #label LoJ
+    #completewith CrusaderStrike
+    .isOnQuest 77657
+    >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r. Loot them for the |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r]
+    .collect 205420,1,77657,1 -- Libram of Judgement (1)
+    .mob Frostmane Troll Whelp
+step << Dwarf Paladin
+    #season 2
+    #label EquipLoJ
+    #requires LoJ
+    #completewith CrusaderStrike
+    .isOnQuest 77657
+    .equip 18,205420 >> |cRXP_WARN_Equip the|r |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r]
+    .use 205420
+    .itemStat 18,QUALITY,<2
+    .itemcount 205420,1
+step << Dwarf Paladin
+    #season 2
+    #requires EquipLoJ
+    #completewith next
+    .isOnQuest 77657
+    .use 205420 >>|cRXP_WARN_Cast|r |T135959:0|t[Judgement] |cRXP_WARN_on your foes 10 times until you have gained the|r |T136116:0|t[Inspired] |cRXP_WARN_buff, then use the|r |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r] |cRXP_WARN_again which you equiped earlier|r
+    .complete 77657,1 -- Learn: Engrave Gloves - Crusader Strike
 step << Paladin/Mage/Warlock
+    #label CrusaderStrike
     .goto Dun Morogh,26.3,79.2,40,0
     .goto Dun Morogh,22.7,79.3,40,0
     .goto Dun Morogh,20.9,75.7,40,0
@@ -405,6 +481,33 @@ step << !Paladin !Mage !Warlock
     >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r
     .complete 182,1 --Kill Frostmane Troll Whelp (x14)
     .mob Frostmane Troll Whelp
+step << Dwarf Paladin
+    #season 2
+    .isOnQuest 77657
+    .goto Dun Morogh,26.3,79.2,40,0
+    .goto Dun Morogh,22.7,79.3,40,0
+    .goto Dun Morogh,20.9,75.7,40,0
+    .goto Dun Morogh,22.7,79.3,40,0
+    .goto Dun Morogh,20.9,75.7
+    >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r. Loot them for the |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r]
+    .collect 205420,1,77657,1 -- Libram of Judgement (1)
+    .mob Frostmane Troll Whelp
+step << Dwarf Paladin
+    #season 2
+    .isOnQuest 77657
+    .equip 18,205420 >> |cRXP_WARN_Equip the|r |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r]
+    .use 205420
+    .itemcount 205420,1
+step << Dwarf Paladin
+    #season 2
+    .isOnQuest 77657
+    .goto Dun Morogh,26.3,79.2,40,0
+    .goto Dun Morogh,22.7,79.3,40,0
+    .goto Dun Morogh,20.9,75.7,40,0
+    .goto Dun Morogh,22.7,79.3,40,0
+    .goto Dun Morogh,20.9,75.7
+    .use 205420 >>|cRXP_WARN_Cast|r |T135959:0|t[Judgement] |cRXP_WARN_on your foes 10 times until you have gained the|r |T136116:0|t[Inspired] |cRXP_WARN_buff, then use the|r |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r] |cRXP_WARN_again which you equiped earlier|r
+    .complete 77657,1 -- Learn: Engrave Gloves - Crusader Strike
 step << Dwarf Warrior/Gnome Warrior
     #season 2
     .isOnQuest 77655 << Dwarf Warrior
@@ -569,6 +672,7 @@ step << Dwarf Rogue/Gnome Rogue
     .turnin 77659 >> Turn in Thrice Stolen << Gnome Rogue
     .target Solm Hargrin
 step << Dwarf Priest
+    #season 0,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branstock Khalder|r
     .target Branstock Khalder
     .goto Dun Morogh,28.600,66.385
@@ -615,6 +719,13 @@ step << !Paladin !Mage !Warlock
     .target Nori Pridedrift
     .goto Dun Morogh,24.980,75.963
     .turnin 3365 >> Turn in Bring Back the Mug
+step << Dwarf Paladin
+    #season 2
+    .isQuestComplete 77657
+    .goto Dun Morogh,28.833,68.332
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bromos Grummner|r
+    .turnin 77657 >> Turn in Relics of the Light
+    .target Bromos Grummner
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Thalos|r
     .target Mountaineer Thalos

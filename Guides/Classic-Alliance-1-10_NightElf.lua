@@ -79,6 +79,81 @@ step
 --	.accept 3118 >> Accept Encrypted Sigil << Rogue
 	.accept 3119 >> Accept Hallowed Sigil << Priest
 	.accept 3120 >> Accept Verdant Sigil << Druid
+step << NightElf Priest
+    #season 2
+    .goto Teldrassil,59.92,41.74,20,0
+    .goto Teldrassil,59.174,40.442
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shanda|r upstairs
+    .turnin 3119 >> Turn in Hallowed Sigil
+    .accept 77574 >> Accept Meditation on Elune
+    .target Shanda
+step << NightElf Priest
+    #season 2
+    #completewith PenanceRune
+    .goto Teldrassil,59.8,34.1
+    >>Kill |cRXP_ENEMY_Mangy Nightsabers|r and |cRXP_ENEMY_Thistle Boars|r
+    .complete 457,1 --Kill Mangy Nightsaber (x7)
+    .complete 457,2 --Kill Thistle Boar (x7)
+    .mob Mangy Nightsaber
+    .mob Thistle Boar
+step << NightElf Priest
+    #season 2
+    #completewith next
+    .isOnQuest 77574
+    .goto Teldrassil,59.940,33.052,10 >> Travel to the moonwell in Shadowglen
+step << NightElf Priest
+    #season 2
+    .isOnQuest 77574
+    .goto Teldrassil,59.940,33.052
+    .aura 419307 >>|cRXP_WARN_Once you are at the moonwell, type /kneel in your chatbox|r
+    >>|cRXP_WARN_You will receive the|r |T136057:0|t[Meditation on Elune] |cRXP_WARN_buff|r
+step << NightElf Priest
+    #season 2
+    #label PenanceRune
+    .isOnQuest 77574
+    .use 205951 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Troubled Acolyte|r] |cRXP_WARN_while you have the|r |T136057:0|t[Meditation on Elune] |cRXP_WARN_buff|r
+    .complete 77574,1 -- Learn: Engrave Gloves - Penance
+    .target Altar of the Light
+step << Rogue
+    #season 2
+	.goto Teldrassil,58.695,44.266
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Conservator Ilthalaine|r
+    .turnin 456 >> Turn in The Balance of Nature
+    .accept 457 >> Accept The Balance of Nature
+	.accept 3118 >> Accept Encrypted Sigil
+    .target Conservator Ilthalaine
+step << NightElf Rogue
+    #season 2
+    .goto Teldrassil,59.638,38.662
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frahun Shadewhisper|r
+    .turnin 3118 >> Turn in Encrypted Sigil
+    .accept 77573 >> Accept Second-Story Work
+    .target Frahun Shadewhisper
+step << NightElf Rogue
+    #season 2
+    .isOnQuest 77573
+    .goto Teldrassil,57.922,40.687,25,0
+    .goto Teldrassil,58.709,38.782,10,0
+    .goto Teldrassil,59.15,40.66,20,0
+    .goto Teldrassil,59.674,42.613
+    >>|cRXP_WARN_Make your way up the ramp on the Aldrassil tree, and jump onto the rooftop|r
+    >>|cRXP_WARN_The |cRXP_PICK_Idol|r is found on top of the roof|r
+    >>Open the |cRXP_PICK_Idol|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    >>|cRXP_WARN_If you are having difficulty jumping onto the roof, attempt to jump over the railing while running down the ramp you are on|r
+    .collect 204795,1,77573,1 -- Rune of Shadowstrike (1)
+step << NightElf Rogue
+    #season 2
+    .isOnQuest 77573
+    .use 204795 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    .complete 77573,1 -- Learn: Engrave Gloves - Shadowstrike
+step << NightElf Rogue
+    #season 2
+    .isQuestComplete 77573
+    .goto Teldrassil,59.638,38.662
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frahun Shadewhisper|r
+    .turnin 77573 >> Turn in Second-Story Work
+    .train 1784 >> Train |T132320:0|t[Stealth]
+    .target Frahun Shadewhisper
 step << Hunter
     #sticky
     #season 2
@@ -100,6 +175,7 @@ step << NightElf Warrior
     #season 2
     .goto Teldrassil,59.637,38.442
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alyissia|r
+    .turnin 3116 >> Turn in Simple Sigil
     .accept 77575 >> Accept Amidst the Shadowed Webs
     .trainer >> Train your class spells
     .target Alyissia
@@ -163,12 +239,12 @@ step << !Hunter !Druid
 	.vendor >> |cRXP_WARN_Vendor trash|r
     .target Keina
 step << Druid
-    #season 0
+    #season 0,1
     .goto Teldrassil,59.602,40.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dellylah|r
     .vendor >> |cRXP_WARN_Vendor trash|r
     >>|cRXP_BUY_Buy 20|r |T132794:0|t[Refreshing Spring Water]
-    .collect 159,20 --Collect Refreshing Spring Water (x15)
+    .collect 159,20 --Collect Refreshing Spring Water (x20)
     .target Dellylah
 step << Druid
     #season 2
@@ -176,7 +252,7 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dellylah|r
     .vendor >> |cRXP_WARN_Vendor trash|r
     >>|cRXP_BUY_Buy 10|r |T132794:0|t[Refreshing Spring Water]
-    .collect 159,20 --Collect Refreshing Spring Water (x15)
+    .collect 159,10 --Collect Refreshing Spring Water (x10)
     .target Dellylah
 step
     .goto Teldrassil,57.807,41.653
@@ -232,13 +308,76 @@ step << Hunter
     #requires hunterRuneChimera
     #label hunterEngrave
     .engrave 10 >> Open your character sheet and engrave your gloves with a rune
+step << NightElf Warrior
+    #season 2
+    #completewith IchorVenomSac
+    #label RoVR
+    .isOnQuest 77575
+    >>Kill |cRXP_ENEMY_Webwood Spiders|r. Loot them for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    .collect 204806,1,77575,1 -- Rune of Victory Rush (1)
+    .mob Webwood Spider
+step << NightElf Warrior
+    #season 2
+    #requires RoVR
+    #completewith next
+    .isOnQuest 77575
+    .use 204806 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    .complete 77575,1 -- Learn: Engrave Gloves - Victory Rush
+step << Druid
+    #season 2
+    #completewith Stormrage
+    #label LunarIdol
+    .isOnQuest 77571
+    >>Kill |cRXP_ENEMY_Grell|r and |cRXP_ENEMY_Grellkin|r. Loot them for the |T134903:0|t[|cRXP_FRIENDLY_Lunar Idol|r]
+    .collect 208414,1,77571,1 -- Lunar Idol (1)
+    .mob Grell
+    .mob Grellkin
+step << Druid
+    #season 2
+    #completewith next
+    #label EquipIdol
+    #requires LunarIdol
+    .isOnQuest 77571
+    .equip 18,208414 >> |cRXP_WARN_Equip the|r |T134903:0|t[|cRXP_FRIENDLY_Lunar Idol|r]
+    .use 208414
+step << Druid
+    #season 2
+    #completewith next
+    #requires EquipIdol
+    .isOnQuest 77571
+    .use 208414 >>|cRXP_WARN_Kill a foe 6 times while they are afflicted with|r |T136096:0|t[Moonfire] |cRXP_WARN_to gain stacks of|r |T237556:0|t[Inspiration]
+    >>|cRXP_WARN_Once you have the|r |T136116:0|t[Inspired] |cRXP_WARN_buff after 6 kills, use the|r |T134903:0|t[|cRXP_FRIENDLY_Lunar Idol|r] |cRXP_WARN_again which you just equiped|r
+    .complete 77571,1 -- Learn: Engrave Chest - Fury of Stormrage
+step << Druid
+    #season 2
+    #label Stormrage
+    .goto Teldrassil,55.0,43.7
+    >>Kill |cRXP_ENEMY_Grell|r and |cRXP_ENEMY_Grellkin|r. Loot them for their |cRXP_LOOT_Mushrooms|r and |cRXP_LOOT_Fel Moss|r
+    .complete 3521,1 --Collect Hyacinth Mushroom (x7)
+    .complete 459,1 --Collect Fel Moss (x8)
+    .mob Grell
+    .mob Grellkin
 step
+    #label IchorVenomSac
     .goto Teldrassil,56.8,31.7
     >>Kill |cRXP_ENEMY_Webwood Spiders|r. Loot them for their |cRXP_LOOT_Ichor|r and |cRXP_LOOT_Venom Sacs|r
     .complete 3521,3 --Collect Webwood Ichor (x1)
     .complete 916,1 --Collect Webwood Venom Sac (x10)
     .mob Webwood Spider
+step << NightElf Warrior
+    #season 2
+    .isOnQuest 77575
+    .goto Teldrassil,56.8,31.7
+    >>Kill |cRXP_ENEMY_Webwood Spiders|r. Loot them for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    .collect 204806,1,77575,1 -- Rune of Victory Rush (1)
+    .mob Webwood Spider
+step << NightElf Warrior
+    #season 2
+    .isOnQuest 77575
+    .use 204806 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    .complete 77575,1 -- Learn: Engrave Gloves - Victory Rush
 step
+    #season 0,1 << Druid
     #requires hunterRuneChimera << Hunter
     .goto Teldrassil,55.0,43.7
     >>Kill |cRXP_ENEMY_Grell|r and |cRXP_ENEMY_Grellkin|r. Loot them for their |cRXP_LOOT_Mushrooms|r and |cRXP_LOOT_Fel Moss|r
@@ -285,6 +424,7 @@ step << Priest
 	.vendor >> |cRXP_WARN_Vendor trash|r
     .target Janna Brightmoon
 step << Priest
+    #season 0,1
 	.goto Teldrassil,59.174,40.442
     .target Shanda
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shanda|r up stairs
@@ -309,7 +449,7 @@ step << Hunter
     .train 1978 >>Train Serpent Sting
     .target Ayanna Everstride
 step << Druid
-    #season 0
+    #season 0,1
     .goto Teldrassil,57.80,40.97,25,0
     .goto Teldrassil,58.626,40.287
     >>Ascend the Aldrassil Tree

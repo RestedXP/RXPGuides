@@ -424,7 +424,7 @@ step << Human Paladin
     #requires EquipLoJ
     #completewith next
     .isOnQuest 77617
-    .use 205420 >>|cRXP_WARN_Cast|r |T135959:0|t[Judgement] |cRXP_WARN_on your foes 10 times until you have gained the|r |T136116:0|t[Inspiration] |cRXP_WARN_buff, then use the|r |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r] |cRXP_WARN_again which you equiped earlier|r
+    .use 205420 >>|cRXP_WARN_Cast|r |T135959:0|t[Judgement] |cRXP_WARN_on your foes 10 times until you have gained the|r |T136116:0|t[Inspired] |cRXP_WARN_buff, then use the|r |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r] |cRXP_WARN_again which you equiped earlier|r
     .complete 77617,1 -- Learn: Engrave Gloves - Crusader Strike
 step
     #season 2
