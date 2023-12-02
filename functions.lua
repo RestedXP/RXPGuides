@@ -80,6 +80,7 @@ addon.icons = {
     dailyturnin = "|TInterface/GossipFrame/DailyActiveQuestIcon:0|t",
     turnin = "|TInterface/GossipFrame/ActiveQuestIcon:0|t",
     collect = "|TInterface/GossipFrame/VendorGossipIcon:0|t",
+    equip = "|TInterface/GossipFrame/VendorGossipIcon:0|t",
     combat = "|TInterface/GossipFrame/BattleMasterGossipIcon:0|t",
     complete = "|TInterface/GossipFrame/HealerGossipIcon:0|t",
     vendor = "|TInterface/GossipFrame/BankerGossipIcon:0|t",
@@ -99,6 +100,7 @@ addon.icons = {
     link = "|TInterface/FriendsFrame/UI-FriendsFrame-Link:0|t",
     error = "|TInterface/Buttons/UI-GroupLoot-Pass-Up:0|t",
     clock = "|TInterface/ICONS/INV_Misc_PocketWatch_02:0|t",
+    engrave = "|T134419:0|t",
 }
 if addon.gameVersion > 40000 then
     addon.icons["goto"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:63:72:0:4|t"
