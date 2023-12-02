@@ -5197,8 +5197,8 @@ function addon.functions.aura(self, ...)
             local name, icon, count, _, duration, expirationTime, _, _, _, spellId = UnitAura(element.unit, i)
             if spellId == element.id then
                 local remaining = expirationTime - GetTime()
-                --print(remaining)
-                if remaining > element.duration then
+                --print(remaining,duration,expirationTime)
+                if remaining > element.duration or (duration == expirationTime and duration == 0) then
                     element.icon = "|T" .. icon .. ":0|t"
                     buffFound = true
                     break
