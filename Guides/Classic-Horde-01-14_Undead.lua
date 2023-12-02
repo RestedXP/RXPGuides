@@ -2557,7 +2557,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar|r
     .accept 421 >>Accept Prove Your Worth
     .target Dalar Dawnweaver
-step << !Mage/Priest
+step << !Mage !Priest
     .goto Silverpine Forest,44.05,39.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwyn|r
     >>|cRXP_BUY_Buy|r |T134532:0|t[Red-speckled Mushrooms] |cRXP_BUY_from her|r
@@ -2775,7 +2775,7 @@ step
     .turnin 437 >> Turn in The Dead Fields
     .accept 438 >> Accept The Decrepit Ferry
     .target High Executor Hadrec
-step << !Mage/Priest
+step << !Mage !Priest
     .goto Silverpine Forest,44.05,39.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwyn|r
     >>|cRXP_BUY_Buy|r |T134532:0|t[Red-speckled Mushrooms] |cRXP_BUY_from her|r

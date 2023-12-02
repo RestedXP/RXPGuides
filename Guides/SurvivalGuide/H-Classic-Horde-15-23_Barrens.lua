@@ -1990,8 +1990,8 @@ step
     >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_from her|r << Priest/Mage
     >>|cRXP_BUY_Buy|r |T133970:0|t[Mutton Chop] |cRXP_BUY_and|r |T132796:0|t[Melon Juice] |cRXP_BUY_from her|r << Warlock/Shaman/Druid/Hunter
     .vendor >> Vendor Trash
-    .collect 3770,20,895,1 << !Priest !Mage --Mutton Chop (20)
-    .collect 1205,20,895,1 << !Rogue !Warrior --Melon Juice (20)
+    .collect 3770,20,1093,1 << !Priest !Mage --Mutton Chop (20)
+    .collect 1205,20,1093,1 << !Rogue !Warrior --Melon Juice (20)
     .target Innkeeper Jayka
 step
     .goto Stonetalon Mountains,47.61,61.58

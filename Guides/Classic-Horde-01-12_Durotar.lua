@@ -144,11 +144,7 @@ step
     .target Hana'zua
 step
     #label Sarkoth
-	.goto Durotar,40.88,66.41,40,0
-	.goto Durotar,40.41,66.64,40,0
-	.goto Durotar,40.43,67.36,40,0
-	.goto Durotar,40.72,67.39,40,0
-	.loop 20,Durotar,40.88,66.41,40.41,66.64,40.43,67.36,40.72,67.39,40.88,66.41
+    .goto Durotar,40.60,66.80
     >>Kill |cFFFF5722Sarkoth|r. Loot him for |cFF00BCD4Sarkoth's Mangled Claw|r
     .complete 790,1 --Sarkoth's Mangled Claw (1)
     .mob Sarkoth
