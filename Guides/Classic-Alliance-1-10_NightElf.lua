@@ -38,10 +38,12 @@ step
     .target Dirania Silvershine
     .target Melithar Staghelm
 step << Hunter
+    #season 0
     #era
     .goto Teldrassil,59.8,34.1
     .xp 4-610 >> Grind until you are 610xp away from level 4 (790/1400)
 step << Hunter
+    #season 0,1
     #som
     .goto Teldrassil,59.8,34.1
     .xp 4-755 >> Grind until you are 755xp away from level 4 (645/1400)
@@ -52,6 +54,10 @@ step << Hunter
     .target Iverron
     .accept 3519 >> Accept A Friend in Need
 step << Hunter
+    #season 2
+    .goto Teldrassil,59.8,34.1
+    .xp 3-300 >> Grind until you are 300xp away from level 3 (600/900)
+step << Hunter
     #completewith next
     .hs >> Hearth to Shadowglen
 step << Hunter
@@ -60,9 +66,6 @@ step << Hunter
     .turnin 458 >> Turn in The Woodland Protector
     .target Tarindrella
     .accept 459 >> Accept The Woodland Protector
-step << Hunter
-    #completewith next
-    .hs >> Hearth to Shadowglen
 step
     #requires balance1
 	.goto Teldrassil,58.695,44.266
@@ -76,6 +79,11 @@ step
 --	.accept 3118 >> Accept Encrypted Sigil << Rogue
 	.accept 3119 >> Accept Hallowed Sigil << Priest
 	.accept 3120 >> Accept Verdant Sigil << Druid
+step << Hunter
+    #sticky
+    #season 2
+    .equip 10 >> Make sure you have an item in your glove slot, you'll need it later for engraving Runes
+    .use 5394
 step << Warrior
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keina|r
@@ -132,12 +140,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilshalan Windwalker|r
     .accept 916 >> Accept Webwood Venom
 step << Hunter
-    #era
+    #season 0;1
     .xp 4-40
 step << Hunter
-    #som
-    .xp 4-50
-step << Hunter
+    #season 0;1
     .goto Teldrassil,57.80,40.97,25,0
     .goto Teldrassil,58.659,40.449
     >>Ascend the Aldrassil Tree
@@ -153,6 +159,21 @@ step
     .goto Teldrassil,57.95,38.20
     >>Loot the |cRXP_LOOT_Moonpetal Lilies|r on the ground
     .complete 3521,2 --Collect Moonpetal Lily (x4)
+step << Hunter
+    #sticky
+    #season 2
+    #label hunterRuneChimera
+    .goto Teldrassil,56.68,26.12
+    >>Kill |cRXP_ENEMY_Githyiss the Vile|r. Loot Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Chimera|r]
+    .collect 206168,1,77568,1 -- Rune of the Chimera (1)
+    .mob Githyiss the Vile
+    .engrave 10--skips if it's already engraved
+step << Hunter
+    #season 2
+    #sticky
+    #requires hunterRuneChimera
+    #label hunterEngrave
+    .engrave 10 >> Open your character sheet and engrave your gloves with a rune
 step
     .goto Teldrassil,56.8,31.7
     >>Kill |cRXP_ENEMY_Webwood Spiders|r. Loot them for their |cRXP_LOOT_Ichor|r and |cRXP_LOOT_Venom Sacs|r
@@ -160,6 +181,7 @@ step
     .complete 916,1 --Collect Webwood Venom Sac (x10)
     .mob Webwood Spider
 step
+    #requires hunterRuneChimera << Hunter
     .goto Teldrassil,55.0,43.7
     >>Kill |cRXP_ENEMY_Grell|r and |cRXP_ENEMY_Grellkin|r. Loot them for their |cRXP_LOOT_Mushrooms|r and |cRXP_LOOT_Fel Moss|r
     .complete 3521,1 --Collect Hyacinth Mushroom (x7)
@@ -207,6 +229,18 @@ step
     .turnin 916 >> Turn in Webwood Venom
     .target Gilshalan Windwalker
     .accept 917 >> Accept Webwood Egg
+step << Hunter
+    #requires hunterEngrave
+    #season 2
+    .goto Teldrassil,57.80,40.97,25,0
+    .goto Teldrassil,58.659,40.449
+    >>Ascend the Aldrassil Tree
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayanna Everstride|r
+    .turnin 3117 >> Turn in Etched Sigil
+    .accept 77568 >> Accept A Hunter's Strength
+    .turnin 77568 >> Turn in A Hunter's Strength
+    .train 1978 >>Train Serpent Sting
+    .target Ayanna Everstride
 step << Druid
     .goto Teldrassil,57.80,40.97,25,0
     .goto Teldrassil,58.626,40.287
