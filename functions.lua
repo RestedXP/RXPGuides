@@ -5210,7 +5210,6 @@ function addon.functions.aura(self, ...)
                 addon.updateSteps = true
             end
         elseif not element.textOnly then
-            print('ok1',buffFound)
             addon.SetElementIncomplete(self)
         end
     end
