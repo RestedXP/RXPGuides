@@ -391,7 +391,7 @@ step << Human Mage
     #label CALEENCI
     #completewith RedBurlapBandana
     .isOnQuest 77620
-    >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for the |T134939:0|t[|cRXP_FRIENDLY_[Spell Notes: CALE ENCI]|r]
+    >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r]
     .collect 203751,1,77620,1 -- Spell Notes: CALE ENCI (1)
     .mob Defias Thug
 step << Human Mage
@@ -399,7 +399,7 @@ step << Human Mage
     #completewith next
     #season 2
     .isOnQuest 77620
-    .use 203751 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_[Spell Notes: CALE ENCI]|r]
+    .use 203751 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r]
     .complete 77620,1 -- Learn: Engrave Gloves - Ice Lance
 step << Human Paladin
     #season 2

@@ -90,16 +90,38 @@ step << Warrior
 	.vendor >> |cRXP_WARN_Vendor trash|r
     .target Keina
 step << Warrior
+    #season 0
 	.goto Teldrassil,59.637,38.442
     .target Alyissia
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alyissia|r
 	.turnin 3116 >> Turn in Simple Sigil
     .trainer >> Train your class spells
+step << NightElf Warrior
+    #season 2
+    .goto Teldrassil,59.637,38.442
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alyissia|r
+    .accept 77575 >> Accept Amidst the Shadowed Webs
+    .trainer >> Train your class spells
+    .target Alyissia
+step << Druid
+    .goto Teldrassil,59.602,40.696
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dellylah|r
+    .vendor >> |cRXP_WARN_Vendor trash|r
+    >>|cRXP_BUY_Buy 15|r |T132794:0|t[Refreshing Spring Water]
+    .collect 159,15 --Collect Refreshing Spring Water (x15)
+    .target Dellylah
 step << !Hunter
     .goto Teldrassil,59.8,34.1
     >>Kill |cRXP_ENEMY_Mangy Nightsabers|r and |cRXP_ENEMY_Thistle Boars|r
     .complete 457,1 --Kill Mangy Nightsaber (x7)
     .complete 457,2 --Kill Thistle Boar (x7)
+    .mob Mangy Nightsaber
+    .mob Thistle Boar
+step << Druid
+    #season 2
+    .goto Teldrassil,59.8,34.1
+    >>Kill a few more |cRXP_ENEMY_Mangy Nightsabers|r and |cRXP_ENEMY_Thistle Boars|r. This will get your first |T136006:0|t[Wrath] buffing rune unlocked quicker which is very strong
+    .xp 3+710 >>Grind to 710+/1400xp
     .mob Mangy Nightsaber
     .mob Thistle Boar
 step << !Hunter
@@ -118,7 +140,7 @@ step << !Hunter
     .target Tarindrella
     .accept 459 >> Accept The Woodland Protector
 step << !Hunter
-    .goto Teldrassil,58.6,44.3
+    .goto Teldrassil,58.695,44.266
     .target Conservator Ilthalaine
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Conservator Ilthalaine|r
     .turnin 457 >> Turn in The Balance of Nature
@@ -134,11 +156,47 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keina|r
 	.vendor >> |cRXP_BUY_Buy 3 stacks of|r |T132382:0|t[Rough Arrows]
     .target Keina
+step << !Hunter !Druid
+    #season 2
+    .goto Teldrassil,59.306,41.091
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keina|r
+	.vendor >> |cRXP_WARN_Vendor trash|r
+    .target Keina
+step << Druid
+    #season 0
+    .goto Teldrassil,59.602,40.696
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dellylah|r
+    .vendor >> |cRXP_WARN_Vendor trash|r
+    >>|cRXP_BUY_Buy 20|r |T132794:0|t[Refreshing Spring Water]
+    .collect 159,20 --Collect Refreshing Spring Water (x15)
+    .target Dellylah
+step << Druid
+    #season 2
+    .goto Teldrassil,59.602,40.696
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dellylah|r
+    .vendor >> |cRXP_WARN_Vendor trash|r
+    >>|cRXP_BUY_Buy 10|r |T132794:0|t[Refreshing Spring Water]
+    .collect 159,20 --Collect Refreshing Spring Water (x15)
+    .target Dellylah
 step
     .goto Teldrassil,57.807,41.653
     .target Gilshalan Windwalker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilshalan Windwalker|r
     .accept 916 >> Accept Webwood Venom
+step << Druid
+    #season 2
+    .xp 4
+step << Druid
+    #season 2
+    .goto Teldrassil,57.80,40.97,25,0
+    .goto Teldrassil,58.626,40.287
+    >>Ascend the Aldrassil Tree
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mardant Strongoak|r
+	.turnin 3120 >> Turn in Verdant Sigil
+    .accept 77571 >> Accept Relics of the Kaldorei
+    .trainer >> Train your class spells. Ensure you learn |T136096:0|t[Moonfire]
+    .target Mardant Strongoak
+    .xp <4,1
 step << Hunter
     #season 0;1
     .xp 4-40
@@ -159,21 +217,6 @@ step
     .goto Teldrassil,57.95,38.20
     >>Loot the |cRXP_LOOT_Moonpetal Lilies|r on the ground
     .complete 3521,2 --Collect Moonpetal Lily (x4)
-step << Hunter
-    #sticky
-    #season 2
-    #label hunterRuneChimera
-    .goto Teldrassil,56.68,26.12
-    >>Kill |cRXP_ENEMY_Githyiss the Vile|r. Loot Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Chimera|r]
-    .collect 206168,1,77568,1 -- Rune of the Chimera (1)
-    .mob Githyiss the Vile
-    .engrave 10--skips if it's already engraved
-step << Hunter
-    #season 2
-    #sticky
-    #requires hunterRuneChimera
-    #label hunterEngrave
-    .engrave 10 >> Open your character sheet and engrave your gloves with a rune
 step
     .goto Teldrassil,56.8,31.7
     >>Kill |cRXP_ENEMY_Webwood Spiders|r. Loot them for their |cRXP_LOOT_Ichor|r and |cRXP_LOOT_Venom Sacs|r
@@ -181,7 +224,6 @@ step
     .complete 916,1 --Collect Webwood Venom Sac (x10)
     .mob Webwood Spider
 step
-    #requires hunterRuneChimera << Hunter
     .goto Teldrassil,55.0,43.7
     >>Kill |cRXP_ENEMY_Grell|r and |cRXP_ENEMY_Grellkin|r. Loot them for their |cRXP_LOOT_Mushrooms|r and |cRXP_LOOT_Fel Moss|r
     .complete 3521,1 --Collect Hyacinth Mushroom (x7)
@@ -207,9 +249,18 @@ step << !Priest
 	.vendor >> |cRXP_BUY_Buy 3 or 4 stacks of|r |T132382:0|t[Rough Arrows] << Hunter
     .target Keina
 step << Warrior
+    #season 0
     .goto Teldrassil,59.637,38.442
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alyissia|r
 	.trainer >> Train your class spells
+    .target Alyissia
+step << NightElf Warrior
+    #season 2
+    .isQuestComplete 77575
+    .goto Teldrassil,59.637,38.442
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alyissia|r
+    .turnin 77575 >> Turn in Amidst the Shadowed Webs
+    .trainer >> Train your class spells
     .target Alyissia
 step << Priest
     #completewith next
@@ -242,13 +293,24 @@ step << Hunter
     .train 1978 >>Train Serpent Sting
     .target Ayanna Everstride
 step << Druid
+    #season 0
     .goto Teldrassil,57.80,40.97,25,0
     .goto Teldrassil,58.626,40.287
     >>Ascend the Aldrassil Tree
     .target Mardant Strongoak
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mardant Strongoak|r
 	.turnin 3120 >> Turn in Verdant Sigil
-	.train 8921 >>Train Moonfire
+	.train 8921 >>Train |T136096:0|t[Moonfire]
+step << Druid
+    #season 2
+    .goto Teldrassil,57.80,40.97,25,0
+    .goto Teldrassil,58.626,40.287
+    >>Ascend the Aldrassil Tree
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mardant Strongoak|r
+	.turnin 3120 >> Turn in Verdant Sigil
+    .accept 77571 >> Accept Relics of the Kaldorei
+    .train 8921 >>Train |T136096:0|t[Moonfire]
+    .target Mardant Strongoak
 step
     .goto Teldrassil,54.593,32.992
     .target Iverron
@@ -306,7 +368,7 @@ step
     .target Spirit Healer
 step << Hunter
     #requires vial1
-    .goto Teldrassil,58.6,44.3
+    .goto Teldrassil,58.695,44.266
     .target Conservator Ilthalaine
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Conservator Ilthalaine|r
     .turnin 457,2 >> Turn in The Balance of Nature
