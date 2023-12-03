@@ -925,6 +925,16 @@ step
     .goto Elwynn Forest,43.131,85.722
     .turnin 84 >> Turn in Back to Billy
     .accept 87 >> Accept Goldtooth
+step << Warrior
+    #season 2
+    #completewith RoD
+    >>Kill |cRXP_ENEMY_Kobold Miners|r and |cRXP_ENEMY_Kobold Tunnelers|r. Loot them for their |T134168:0|t[|cRXP_LOOT_Severed Kobold Head|r]
+    >>|cRXP_WARN_This is one of three items you need to unlock your|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r] |cRXP_WARN_for when you get to Stormwind at level 10|r
+    .collect 204476,1 -- Severed Kobold Head (1)
+    .mob Kobold Tunneler
+    .mob Kobold Miner
+    .mob Goldtooth
+    .train 403475,1
 step
     #completewith KillGoldtooth
     >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Candles|r and |cRXP_LOOT_Dust|r
@@ -941,11 +951,26 @@ step
     >>Explore Fargodeep Mine
     .complete 62,1 --Scout Through the Fargodeep Mine
 step
+    #season 0,1
     #label KillGoldtooth
     >>Kill |cRXP_ENEMY_Goldtooth|r. Loot him for |cRXP_LOOT_Bernice's Necklace|r
     .goto Elwynn Forest,41.7,78.1
     .complete 87,1 --Collect Bernice's Necklace  (x1)
     .unitscan Goldtooth
+step
+    #season 2
+    #label KillGoldtooth
+    >>Kill |cRXP_ENEMY_Goldtooth|r. Loot him for |cRXP_LOOT_Bernice's Necklace|r << !Warrior
+    >>Kill |cRXP_ENEMY_Goldtooth|r. Loot him for |cRXP_LOOT_Bernice's Necklace|r and the |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r] << Warrior
+    .goto Elwynn Forest,41.7,78.1
+    .complete 87,1 --Collect Bernice's Necklace  (x1)
+    .collect 204809,1 << Warrior -- Rune of Furious Thunder (1)
+    .unitscan Goldtooth
+    .train 403476,1 << Warrior
+step << Warrior
+    #season 2
+    .train 403476 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r] |cRXP_WARN_to train|r |T136048:0|t[Furious Thunder]
+    .use 204809
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Candles|r and |cRXP_LOOT_Dust|r
@@ -960,6 +985,7 @@ step
     >>Explore Fargodeep Mine
     .complete 62,1 --Scout Through the Fargodeep Mine
 step
+    #label RoD
     .goto Elwynn Forest,40.5,82.3,25,0
     .goto Elwynn Forest,37.71,83.76,25,0
     .goto Elwynn Forest,40.5,82.3,25,0
@@ -972,6 +998,20 @@ step
     .complete 47,1 --Gold Dust (10)
     .mob Kobold Tunneler
     .mob Kobold Miner
+step << Warrior
+    #season 2
+    .goto Elwynn Forest,40.5,82.3,25,0
+    .goto Elwynn Forest,37.71,83.76,25,0
+    .goto Elwynn Forest,40.5,82.3,25,0
+    .goto Elwynn Forest,37.71,83.76,25,0
+    .goto Elwynn Forest,40.5,82.3
+    >>Kill |cRXP_ENEMY_Kobold Miners|r and |cRXP_ENEMY_Kobold Tunnelers|r. Loot them for their |T134168:0|t[|cRXP_LOOT_Severed Kobold Head|r]
+    >>|cRXP_WARN_This is one of three items you need to unlock your|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r] |cRXP_WARN_for when you get to Stormwind at level 10|r
+    .collect 204476,1 -- Severed Kobold Head (1)
+    .mob Kobold Tunneler
+    .mob Kobold Miner
+    .mob Goldtooth
+    .train 403475,1
 step << Warrior
     #completewith Goldtooth
     +|cRXP_WARN_Try to save a single|r |T134829:0|t[Minor Healing Potion] |cRXP_WARN_from now on as you will need it for Rolf's Corpse later|r
@@ -1134,6 +1174,15 @@ step
     .vendor >> |cRXP_WARN_Buy up to 40|r |T133995:0|t[Dalaran Sharp] << Warrior/Rogue
     .vendor >> |cRXP_WARN_Buy up to 10|r |T133995:0|t[Dalaran Sharp] |cRXP_WARN_and 10|r |T132815:0|t[Ice Cold Milk] << Paladin
     .target Innkeeper Farley
+step << Warrior
+    #season 2
+    #completewith next
+    >>Kill |cRXP_ENEMY_Murlocs|r and |cRXP_ENEMY_Murloc Streamrunners|r. Loot them for their |T134169:0|t[|cRXP_LOOT_Severed Murloc Head|r]
+    >>|cRXP_WARN_This is one of three items you need to unlock your|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r] |cRXP_WARN_for when you get to Stormwind at level 10|r
+    .collect 204477,1 -- Severed Murloc Head (1)
+	.mob Murloc
+	.mob Murloc Streamrunner
+    .train 403475,1
 step
     >>Kill |cRXP_ENEMY_Murlocs|r and |cRXP_ENEMY_Murloc Streamrunners|r. Loot them for |cRXP_LOOT_Kelp Fronds|r
     .goto Elwynn Forest,47.6,63.3,60,0
@@ -1145,6 +1194,20 @@ step
     .complete 112,1 --Collect Crystal Kelp Frond (x4)
 	.mob Murloc
 	.mob Murloc Streamrunner
+step << Warrior
+    #season 2
+    .goto Elwynn Forest,47.6,63.3,60,0
+    .goto Elwynn Forest,51.4,64.6,60,0
+    .goto Elwynn Forest,57.6,62.8,60,0
+    .goto Elwynn Forest,56.4,66.6,60,0
+    .goto Elwynn Forest,53.8,66.8,60,0
+    .goto Elwynn Forest,57.6,62.8
+    >>Kill |cRXP_ENEMY_Murlocs|r and |cRXP_ENEMY_Murloc Streamrunners|r. Loot them for their |T134169:0|t[|cRXP_LOOT_Severed Murloc Head|r]
+    >>|cRXP_WARN_This is one of three items you need to unlock your|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r] |cRXP_WARN_for when you get to Stormwind at level 10|r
+    .collect 204477,1 -- Severed Murloc Head (1)
+	.mob Murloc
+	.mob Murloc Streamrunner
+    .train 403475,1
 step
     #completewith next
     .goto Elwynn Forest,61.654,53.608,15 >> Enter the Jasperlode Mine
@@ -1347,7 +1410,8 @@ step
 step
     #softcore
     #completewith next
-    .goto Elwynn Forest,83.6,69.7,120 >>Die and respawn at the Spirit Healer if you're low health, otherwise just run back and handin
+    .deathskip >> Die and respawn at the Spirit Healer if you're low health, otherwise just run back and handin
+    .target Spirit Healer
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sara Timberlain|r
     .target Sara Timberlain
@@ -1507,7 +1571,43 @@ step
 step
     #completewith next
     .goto Elwynn Forest,24.82,76.25,80 >> Travel to Westbrook Garrison
+step << Warrior
+    #season 2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r
+    .turnin 239 >> Turn in Westbrook Garrison Needs Help!
+    .accept 11 >> Accept Riverpaw Gnoll Bounty
+    .goto Elwynn Forest,24.234,74.450
+    .target Deputy Rainer
+step << Warrior
+    #season 2
+    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto Elwynn Forest,26.1,89.9,70,0
+    .goto Elwynn Forest,25.2,92.7,70,0
+    .goto Elwynn Forest,27.0,93.9,70,0
+    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto Elwynn Forest,26.1,89.9,70,0
+    .goto Elwynn Forest,25.2,92.7,70,0
+    .goto Elwynn Forest,27.0,93.9,70,0
+    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto Elwynn Forest,26.1,89.9,70,0
+    .goto Elwynn Forest,25.2,92.7,70,0
+    .goto Elwynn Forest,27.0,93.9,70,0
+    .goto Elwynn Forest,25.9,93.9
+    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for their |cRXP_LOOT_Armbands|r and a |T134163:0|t[|cRXP_LOOT_Severed Gnoll Head|r]
+    >>|cRXP_WARN_This is one of three items you need to unlock your|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r] |cRXP_WARN_for when you get to Stormwind at level 10|r
+    .complete 11,1 -- Painted Gnoll Armband (8)
+    .collect 204478,1 -- Severed Gnoll Head (1)
+    .mob Riverpaw Runt
+    .mob Riverpaw Outrunner
+    .train 403475,1
+step << Warrior
+    #season 2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r
+    .turnin 11 >> Turn in Riverpaw Gnoll Bounty
+    .goto Elwynn Forest,24.234,74.450
+    .target Deputy Rainer
 step << !Rogue
+    #season 0,1 << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r
     .turnin 239 >> Turn in Westbrook Garrison Needs Help!
     .accept 11 >> Accept Riverpaw Gnoll Bounty << Warlock
@@ -1551,6 +1651,7 @@ step << Warrior
     .goto Elwynn Forest,27.0,93.9,70,0
     .goto Elwynn Forest,25.9,93.9
 step << Warrior
+    #season 0,1
     .money >0.3129
     #era
     >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r
@@ -1701,7 +1802,29 @@ step << Human
     .turnin 6181 >> Turn in A Swift Message
     .accept 6281 >> Accept Continue To Stormwind
     .target Thor
+step << Rogue
+    #season 2
+    #completewith FlySW
+    #label RoSS
+    .goto Westfall,51.540,55.361,30,0
+    .goto Westfall,51.093,54.642
+    >>|T133644:0|t[Pick Pocket] the |cRXP_ENEMY_Defias Scout|r for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Saber Slash|r]
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    >>|cRXP_WARN_There is a very high chance that the|r |T133644:0|t[Pick Pocket] |cRXP_WARN_will fail because your are underleved. If it does, skip this step and fly to Stormwind. You will complete it in Loch Modan shortly|r
+    >>|cRXP_WARN_DO NOT AGRO THE |cRXP_ENEMY_Defias Scout|r OTHERWISE IT WILL|r |T132331:0|t[Vanish] |cRXP_WARN_AND DESPAWN FOR 3-5 MINUTES. ENSURE TO GO IN|r |T132320:0|t[Stealth] |cRXP_WARN_EARLY!|r
+    .collect 208772,1 -- Rune of Saber Slash (1)
+    .mob Defias Scout
+    .train 424785,1
+step << Rogue
+    #season 2
+    #completewith next
+    #requires RoSS
+    .cast 402265 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Saber Slash|r]
+    .use 208772 -- Rune of Saber Slash (1)
+    .itemcount 208772,1
+    .train 424785,1
 step
+    #label FlySW
     .goto Westfall,56.55,52.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
     .fly Stormwind >> Fly to Stormwind
@@ -1754,6 +1877,21 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Allison|r
     .home >> Set your Hearthstone to Stormwind City
     .target Innkeeper Allison
+step << Warrior
+    #season 2
+    .gossipoption 109045 >> Talk to |cRXP_FRIENDLY_Liv Bradford|r inside the Inn at the Park
+    .gossipoption 109047
+    .goto Stormwind City,22.608,64.621
+    .gossipoption 109084 >> Talk to |cRXP_ENEMY_Stuart|r, then beat him up. He will pass out at 0%
+    .goto Stormwind City,21.213,62.781
+    >>If |cRXP_ENEMY_Stuart|r is not there wait for him to respawn
+    .gossipoption 109044 >> Talk to |cRXP_FRIENDLY_Liv Bradford|r again after knocking out |cRXP_ENEMY_Stuart|r to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
+    .goto Stormwind City,22.608,64.621
+    .train 425447,1 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r] |cRXP_WARN_to train|r |T236317:0|t[Frenzied Assault]
+    >>|cRXP_WARN_Note: This can be quite difficult to solo at this level. Look for some help or you'll complete it soon at level 12|r
+    .use 204716
+    .target Liv Bradford
+    .mob Stuart
 step << Warlock
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
@@ -1876,6 +2014,52 @@ step << Warlock
     .target Gakin the Darkbinder
     .goto StormwindClassic,25.25,78.59
     .turnin 1689 >> Turn in The Binding
+step << Warrior
+    #season 2
+    #completewith RoDSW
+    .goto Stormwind City,69.690,51.023
+    .gossipoption 109028 >>Talk to |cRXP_FRIENDLY_Viktoria Woods|r to turn in your |T134168:0|t[|cRXP_LOOT_Severed Kobold Head|r] to receive |T134455:0|t[Monster Hunter's First Rune Fragment]
+    .collect 204688,1 -- Monster Hunter's First Rune Fragment (1)
+    .itemcount 204476,1 -- Severed Kobold Head (1)
+    .target Viktoria Woods
+    .train 403475,1
+step << Warrior
+    #season 2
+    #completewith RoDSW
+    .goto Stormwind City,69.690,51.023
+    .gossipoption 109027 >>Talk to |cRXP_FRIENDLY_Viktoria Woods|r to turn in your |T134169:0|t[|cRXP_LOOT_Severed Murloc Head|r] to receive |T134455:0|t[Monster Hunter's Second Rune Fragment]
+    .collect 204689,1 -- Monster Hunter's Second Rune Fragment (1)
+    .itemcount 204477,1 -- Severed Murloc Head (1)
+    .target Viktoria Woods
+    .train 403475,1
+step << Warrior
+    #season 2
+    #label GnollHead
+    #completewith RoDSW
+    .goto Stormwind City,69.690,51.023
+    .gossipoption 109026 >>Talk to |cRXP_FRIENDLY_Viktoria Woods|r to turn in your |T134163:0|t[|cRXP_LOOT_Severed Gnoll Head|r] to receive |T134455:0|t[Monster Hunter's Third Rune Fragment]
+    .collect 204690,1 -- Monster Hunter's Third Rune Fragment (1)
+    .itemcount 204478,1 -- Severed Gnoll Head (1)
+    .target Viktoria Woods
+    .train 403475,1
+step << Warrior
+    #season 2
+    #label RoDSW
+    #requires GnollHead
+    .cast 406651 >> |cRXP_WARN_Use any of the|r |T134455:0|t[Monster Hunter's Rune Fragments] |cRXP_WARN_to create the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
+    .collect 204703,1 -- Rune of Devastate (1)
+    .use 204690
+    .use 204689
+    .use 204688
+    .itemcount 204688,1
+    .itemcount 204689,1
+    .itemcount 204690,1
+    .train 403475,1
+step << Warrior
+    #season 2
+    .train 403475 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r] |cRXP_WARN_to train|r |T135291:0|t[Devastate]
+    .use 204703
+    .itemcount 204703,1
 step << Human
     .goto StormwindClassic,74.312,47.240
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osric Strang|r
@@ -2206,6 +2390,58 @@ step
     .accept 416 >> Accept Rat Catching
     .accept 1339 >> Accept Mountaineer Stormpike's Task
     .target Mountaineer Kadrell
+step << Rogue
+    #season 2
+    #completewith LochModanDam
+    >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
+    >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
+    >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Ichor|r
+    .collect 3172,3,418,1 --Collect Boar Intestines (x3)
+    .collect 3173,3,418,1 --Collect Bear Meat (x3)
+    .collect 3174,3,418,1 --Collect Spider Ichor (x3)
+    .mob Elder Black Bear
+    .mob Mountain Boar
+    .mob Forest Lurker
+    .subzoneskip 146
+    .train 424785,1
+step << Rogue
+    #season 2
+    #completewith LochModanDam
+    >>Kill |cRXP_ENEMY_Tunnel Rats|r. Loot them for their |cRXP_LOOT_Ears|r
+    .complete 416,1 --Collect Tunnel Rat Ear (x12)
+    .mob Tunnel Rat Scout
+    .mob Tunnel Rat Vermin
+    .mob Tunnel Rat Forager
+    .mob Tunnel Rat Geomancer
+    .mob Tunnel Rat Digger
+    .mob Tunnel Rat Surveyor
+    .subzoneskip 146
+    .train 424785,1
+step << Rogue
+    #season 2
+    #label LochModanDam
+    #completewith next
+    .goto Loch Modan,41.01,12.60,50,0
+    .goto Loch Modan,42.86,10.36,60,0 
+    .goto Loch Modan,46.20,13.15,10 >> |cRXP_WARN_Make your way onto the Loch Modan Dam wall and carefully drop down onto the ledge in the center of the Dam. Follow the arrow|r
+    .train 424785,1
+step << Rogue
+    #season 2
+    .goto Loch Modan,46.373,12.666
+    >>Open the |cRXP_PICK_Stonemason's Toolbox|r on the ledge. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Saber Slash|r]
+    .collect 208772,1 -- Rune of Saber Slash (1)
+    .train 424785,1
+step << Rogue
+    #season 2
+    .cast 402265 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Saber Slash|r]
+    .use 208772 -- Rune of Saber Slash (1)
+    .itemcount 208772,1
+    .train 424785,1
+step << Rogue
+    #season 2
+    .goto Loch Modan,45.823,12.652
+    .cast 6477 >> Click the |cRXP_PICK_Escape Rope|r to return to the top
+    .subzoneskip 146,1
 step
     #completewith StormpikeDelivery
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
@@ -2498,6 +2734,21 @@ step << Priest
     .goto StormwindClassic,38.54,26.86
     .trainer >> Train your class spells
     .target Brother Joshua
+step << Warrior
+    #season 2
+    .gossipoption 109045 >> Talk to |cRXP_FRIENDLY_Liv Bradford|r inside the Inn at the Park
+    .gossipoption 109047
+    .goto Stormwind City,22.608,64.621
+    .gossipoption 109084 >> Talk to |cRXP_ENEMY_Stuart|r, then beat him up. He will pass out at 0%
+    .goto Stormwind City,21.213,62.781
+    >>If |cRXP_ENEMY_Stuart|r is not there wait for him to respawn
+    .gossipoption 109044 >> Talk to |cRXP_FRIENDLY_Liv Bradford|r again after knocking out |cRXP_ENEMY_Stuart|r to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
+    .goto Stormwind City,22.608,64.621
+    .train 425447,1 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r] |cRXP_WARN_to train|r |T236317:0|t[Frenzied Assault]
+    >>|cRXP_WARN_Note: This can be quite difficult to solo. Look for some help if needed|r
+    .use 204716
+    .target Liv Bradford
+    .mob Stuart
 step
     .goto StormwindClassic,49.194,30.284
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r
