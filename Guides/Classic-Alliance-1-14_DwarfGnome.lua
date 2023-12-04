@@ -497,6 +497,11 @@ step << Paladin
     .use 205420
 step << Warrior
     #season 2
+    .goto Dun Morogh,26.3,79.2,40,0
+    .goto Dun Morogh,22.7,79.3,40,0
+    .goto Dun Morogh,20.9,75.7,40,0
+    .goto Dun Morogh,22.7,79.3,40,0
+    .goto Dun Morogh,20.9,75.7
     >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r. Loot them for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
     .collect 204806,1
     .mob Frostmane Troll Whelp
@@ -3292,18 +3297,16 @@ step
     >>Kill |cRXP_ENEMY_Grik'nir the Cold|r. Loot him for his |cRXP_LOOT_Journal|r
     .complete 218,1 --Collect Grelin Whitebeard's Journal (x1)
     .mob Grik'nir the Cold
-step << Dwarf Hunter
+step << Hunter
     #season 2
-    .isOnQuest 77660
     .goto Dun Morogh,30.773,80.063
     >>Open the |cRXP_PICK_Frostmane Loot Cache|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Chimera|r]
-    .collect 206168,1,77660,1 -- Rune of the Chimera (1)
-step << Dwarf Hunter
+    .collect 206168,1 -- Rune of the Chimera (1)
+step << Hunter
     #season 2
     #label RotC
-    .isOnQuest 77660
-    .use 206168 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Chimera|r]
-    .complete 77660,1 -- Learn: Engrave Gloves - Chimera Shot
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Chimera|r]
+    .use 206168
 step
     #season 2
     .goto Dun Morogh,30.6,80.3

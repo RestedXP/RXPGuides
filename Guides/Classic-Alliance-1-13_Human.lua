@@ -210,7 +210,6 @@ step << Priest/Mage
 step << Mage
     #season 0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khelden Bremen|r
-    .target Khelden Bremen
     .goto Elwynn Forest,49.661,39.402
     .turnin 3104 >> Turn in Glyphic Letter
     .trainer >> Train your class spells
@@ -218,7 +217,6 @@ step << Mage
 step << Mage
     #season 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khelden Bremen|r
-    .target Khelden Bremen
     .goto Elwynn Forest,49.661,39.402
     .turnin 3104 >> Turn in Glyphic Letter
     .accept 77620 >> Accept Spell Research << Human Mage
