@@ -80,6 +80,7 @@ addon.icons = {
     dailyturnin = "|TInterface/GossipFrame/DailyActiveQuestIcon:0|t",
     turnin = "|TInterface/GossipFrame/ActiveQuestIcon:0|t",
     collect = "|TInterface/GossipFrame/VendorGossipIcon:0|t",
+    equip = "|TInterface/GossipFrame/VendorGossipIcon:0|t",
     combat = "|TInterface/GossipFrame/BattleMasterGossipIcon:0|t",
     complete = "|TInterface/GossipFrame/HealerGossipIcon:0|t",
     vendor = "|TInterface/GossipFrame/BankerGossipIcon:0|t",
@@ -99,6 +100,7 @@ addon.icons = {
     link = "|TInterface/FriendsFrame/UI-FriendsFrame-Link:0|t",
     error = "|TInterface/Buttons/UI-GroupLoot-Pass-Up:0|t",
     clock = "|TInterface/ICONS/INV_Misc_PocketWatch_02:0|t",
+    engrave = "|T134419:0|t",
 }
 if addon.gameVersion > 40000 then
     addon.icons["goto"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:63:72:0:4|t"
@@ -2684,7 +2686,7 @@ function addon.functions.next(skip, guide)
         nextGuide = addon.GetGuideTable(group, next)
 
         if nextGuide then
-            if (addon.stepLogic.SeasonCheck(nextGuide)) or
+            if (not addon.stepLogic.SeasonCheck(nextGuide)) or
                 (nextGuide.hardcore and not (addon.settings.profile.hardcore) or
                     nextGuide.softcore and addon.settings.profile.hardcore) then
                 return addon.functions.next(nil, nextGuide)
@@ -5001,6 +5003,7 @@ function addon.functions.itemStat(self, ...)
                 return
             elseif type(stat) == "number" then
                 stat = addon.Round(stat,1)
+                --print(stat)
                 element.total = tonumber(element.total) or 0
                 --print('+',stat,element.total, element.operator)
                 if (element.operator == ">" and element.total < stat) or (element.operator == "<" and element.total > stat) then
@@ -5194,8 +5197,8 @@ function addon.functions.aura(self, ...)
             local name, icon, count, _, duration, expirationTime, _, _, _, spellId = UnitAura(element.unit, i)
             if spellId == element.id then
                 local remaining = expirationTime - GetTime()
-                print(remaining)
-                if remaining > element.duration then
+                --print(remaining,duration,expirationTime)
+                if remaining > element.duration or (duration == expirationTime and duration == 0) then
                     element.icon = "|T" .. icon .. ":0|t"
                     buffFound = true
                     break
@@ -5210,7 +5213,94 @@ function addon.functions.aura(self, ...)
                 addon.updateSteps = true
             end
         elseif not element.textOnly then
-            print('ok1',buffFound)
+            addon.SetElementIncomplete(self)
+        end
+    end
+end
+
+events.equip = "PLAYER_EQUIPMENT_CHANGED"
+function addon.functions.equip(self, ...)
+    if type(self) == "string" then
+        local text, slot, id = ...
+        slot = tonumber(slot)
+        local element = {text = text, textOnly = not text }
+
+        if slot < 0 then
+            slot = -slot
+            element.reverse = not element.reverse
+        end
+        element.id = tonumber(id)
+        element.slot = slot
+        return element
+    end
+    local element = self.element
+    local step = element.step
+    local event, target = ...
+    if (target == element.slot or event ~= "PLAYER_EQUIPMENT_CHANGED") and step.active then
+
+        local currentItem = GetInventoryItemID('player', element.slot) or false
+        local isEquipped = currentItem and (not element.id or element.id == currentItem)
+        --print(element.slot,element.id,isEquipped)
+        if isEquipped == not element.reverse then
+            if element.text then
+                addon.SetElementComplete(self,true)
+            else
+                step.completed = true
+                addon.updateSteps = true
+            end
+        elseif not element.textOnly then
+            addon.SetElementIncomplete(self)
+        end
+    end
+end
+
+
+events.engrave = {"PLAYER_EQUIPMENT_CHANGED","RUNE_UPDATED"}
+function addon.functions.engrave(self, ...)
+    if addon.player.season ~= 2 then return end
+    if type(self) == "string" then
+        local text, slot, id = ...
+        slot = tonumber(slot)
+        local element = {text = text, textOnly = not text }
+
+        if slot < 0 then
+            slot = -slot
+            element.reverse = not element.reverse
+        end
+        element.id = tonumber(id)
+        element.slot = slot
+        return element
+    end
+    local element = self.element
+    local step = element.step
+    local event, target = ...
+    if (target == element.slot or event ~= "PLAYER_EQUIPMENT_CHANGED") and step.active then
+
+        local currentItem = C_Engraving and C_Engraving.GetRuneForEquipmentSlot(element.slot)
+        local isEquipped = false
+        if element.id and currentItem then
+            local spells = currentItem and currentItem.learnedAbilitySpellIDs
+            if element.id == currentItem.skillLineAbilityID then
+                isEquipped = true
+            elseif type(spells) == "table" then
+                for _,id in pairs(spells) do
+                    if id == element.id then
+                        isEquipped = true
+                        break
+                    end
+                end
+            end
+        elseif currentItem then
+            isEquipped = true
+        end
+        if isEquipped == not element.reverse then
+            if element.text then
+                addon.SetElementComplete(self,true)
+            else
+                step.completed = true
+                addon.updateSteps = true
+            end
+        elseif not element.textOnly then
             addon.SetElementIncomplete(self)
         end
     end

@@ -238,7 +238,7 @@ s["PALADIN"] = {
     },
     [6] = {
         639, -- Holy Light R2
-        3127, -- parry
+        3128, -- parry
         498 -- Divine protection
     },
     [8] = {
@@ -725,7 +725,7 @@ s["WARRIOR"] = {
     [4] = {
         100, -- charge
         772, -- rend
-        3127 -- parry
+        3128 -- parry
     },
     [8] = {
         1715, -- hamstring
