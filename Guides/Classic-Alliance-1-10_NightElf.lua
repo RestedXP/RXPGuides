@@ -122,16 +122,15 @@ step << Rogue
     .accept 457 >> Accept The Balance of Nature
 	.accept 3118 >> Accept Encrypted Sigil
     .target Conservator Ilthalaine
-step << NightElf Rogue
+step << Rogue
     #season 2
     .goto Teldrassil,59.638,38.662
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frahun Shadewhisper|r
     .turnin 3118 >> Turn in Encrypted Sigil
-    .accept 77573 >> Accept Second-Story Work
+    .accept 77573 >> Accept Second-Story Work << NightElf Rogue
     .target Frahun Shadewhisper
-step << NightElf Rogue
+step << Rogue
     #season 2
-    .isOnQuest 77573
     .goto Teldrassil,57.922,40.687,25,0
     .goto Teldrassil,58.709,38.782,10,0
     .goto Teldrassil,59.15,40.66,20,0
@@ -140,18 +139,18 @@ step << NightElf Rogue
     >>|cRXP_WARN_The |cRXP_PICK_Idol|r is found on top of the roof|r
     >>Open the |cRXP_PICK_Idol|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
     >>|cRXP_WARN_If you are having difficulty jumping onto the roof, attempt to jump over the railing while running down the ramp you are on|r
-    .collect 204795,1,77573,1 -- Rune of Shadowstrike (1)
-step << NightElf Rogue
+    .collect 204795,1 -- Rune of Shadowstrike (1)
+step << Rogue
     #season 2
-    .isOnQuest 77573
-    .use 204795 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
-    .complete 77573,1 -- Learn: Engrave Gloves - Shadowstrike
-step << NightElf Rogue
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    .use 204795
+    .itemcount 204795,1
+step << Rogue
     #season 2
     .isQuestComplete 77573
     .goto Teldrassil,59.638,38.662
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frahun Shadewhisper|r
-    .turnin 77573 >> Turn in Second-Story Work
+    .turnin 77573 >> Turn in Second-Story Work << NightElf Rogue
     .train 1784 >> Train |T132320:0|t[Stealth]
     .target Frahun Shadewhisper
 step << Hunter
@@ -171,12 +170,12 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alyissia|r
 	.turnin 3116 >> Turn in Simple Sigil
     .trainer >> Train your class spells
-step << NightElf Warrior
+step << Warrior
     #season 2
     .goto Teldrassil,59.637,38.442
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alyissia|r
     .turnin 3116 >> Turn in Simple Sigil
-    .accept 77575 >> Accept Amidst the Shadowed Webs
+    .accept 77575 >> Accept Amidst the Shadowed Webs << NightElf Warrior
     .trainer >> Train your class spells
     .target Alyissia
 step << Druid
@@ -308,21 +307,20 @@ step << Hunter
     #requires hunterRuneChimera
     #label hunterEngrave
     .engrave 10 >> Open your character sheet and engrave your gloves with a rune
-step << NightElf Warrior
+step << Warrior
     #season 2
     #completewith IchorVenomSac
     #label RoVR
-    .isOnQuest 77575
     >>Kill |cRXP_ENEMY_Webwood Spiders|r. Loot them for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
-    .collect 204806,1,77575,1 -- Rune of Victory Rush (1)
+    .collect 204806,1 -- Rune of Victory Rush (1)
     .mob Webwood Spider
-step << NightElf Warrior
+step << Warrior
     #season 2
     #requires RoVR
     #completewith next
-    .isOnQuest 77575
-    .use 204806 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
-    .complete 77575,1 -- Learn: Engrave Gloves - Victory Rush
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    .use 204806
+    .itemcount 204806,1
 step << Druid
     #season 2
     #completewith Stormrage
@@ -364,18 +362,17 @@ step
     .complete 3521,3 --Collect Webwood Ichor (x1)
     .complete 916,1 --Collect Webwood Venom Sac (x10)
     .mob Webwood Spider
-step << NightElf Warrior
+step << Warrior
     #season 2
-    .isOnQuest 77575
     .goto Teldrassil,56.8,31.7
     >>Kill |cRXP_ENEMY_Webwood Spiders|r. Loot them for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
-    .collect 204806,1,77575,1 -- Rune of Victory Rush (1)
+    .collect 204806,1 -- Rune of Victory Rush (1)
     .mob Webwood Spider
-step << NightElf Warrior
+step << Warrior
     #season 2
-    .isOnQuest 77575
-    .use 204806 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
-    .complete 77575,1 -- Learn: Engrave Gloves - Victory Rush
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    .use 204806
+    .itemcount 204806,1
 step
     #season 0,1 << Druid
     #requires hunterRuneChimera << Hunter

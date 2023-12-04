@@ -221,7 +221,7 @@ step << Mage
     .target Khelden Bremen
     .goto Elwynn Forest,49.661,39.402
     .turnin 3104 >> Turn in Glyphic Letter
-    .accept 77620 >> Accept Spell Research << Human
+    .accept 77620 >> Accept Spell Research << Human Mage
     .trainer >> Train your class spells
     .target Khelden Bremen
 step << Priest
@@ -240,7 +240,7 @@ step << Priest
     .target Priestess Anetta
     .goto Elwynn Forest,49.808,39.489
     .turnin 3103 >> Turn in Hallowed Letter
-    .accept 77619 >> Accept Meditation on the Light << Human
+    .accept 77619 >> Accept Meditation on the Light << Human Priest
     .trainer >> Train your class spells
 step << Warrior/Paladin
     #completewith next
@@ -274,42 +274,41 @@ step << Paladin
     .target Brother Sammuel
     .goto Elwynn Forest,50.433,42.124
     .turnin 3101 >> Turn in Consecrated Letter
-    .accept 77617 >> Accept Relics of the Light << Human
+    .accept 77617 >> Accept Relics of the Light << Human Paladin
     .trainer >> Train your class spells
-step << Human Priest
+step << Priest
     #season 2
     #completewith next
     >>Kill |cRXP_ENEMY_Kobold Laborers|r
 	.mob Kobold Laborer
     .complete 21,1 --Kill Kobold Laborer (x12)
-step << Human Priest
+step << Priest
     #season 2
-    .isOnQuest 77619
     .goto Elwynn Forest,48.61,27.63
     >>Kill |cRXP_ENEMY_Kobold Laborers|r. Loot them for a |T136222:0|t[|cRXP_FRIENDLY_Memory of a Troubled Acolyte|r]
-    .collect 205951,1,77619,1 -- Memory of a Troubled Acolyte (1)
+    .collect 205951,1 -- Memory of a Troubled Acolyte (1)
     .mob Kobold Laborer
-step << Human Priest
+step << Priest
     #season 2
     .goto Elwynn Forest,48.61,27.63
     >>Kill |cRXP_ENEMY_Kobold Laborers|r
 	.mob Kobold Laborer
     .complete 21,1 --Kill Kobold Laborer (x12)
-step << Human Priest
+step << Priest
     #season 2
     .goto Elwynn Forest,48.923,41.606
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r inside the Abbey
     .turnin 21,3 >> Turn in Skirmish at Echo Ridge
     .accept 54 >> Accept Report to Goldshire
     .target Marshal McBride
-step << Human Priest
+step << Priest
     #season 2
-    .isOnQuest 77619
     .goto Elwynn Forest,49.808,39.489
     >>|cRXP_WARN_Type /kneel in your chatbox while inside of Northshire Abbey|r
     >>|cRXP_WARN_You will receive the|r |T135934:0|t[Meditation on the Light] |cRXP_WARN_buff|r
-    .use 205951 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Troubled Acolyte|r] |cRXP_WARN_while you have the|r |T135934:0|t[Meditation on the Light] |cRXP_WARN_buff|r
-    .complete 77619,1 -- Learn: Engrave Gloves - Penance
+    .cast 410958 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Troubled Acolyte|r] |cRXP_WARN_while you have the|r |T135934:0|t[Meditation on the Light] |cRXP_WARN_buff|r
+    .use 205951
+    .itemcount 205951,1
 step << Human Priest
     #season 2
     .isQuestComplete 77619
@@ -345,47 +344,45 @@ step << Warlock
     .goto Elwynn Forest,49.873,42.649
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drusilla La Salle|r   
     .turnin 3105 >> Turn in Tainted Letter
-    .accept 77621 >> Accept Stolen Power << Human
+    .accept 77621 >> Accept Stolen Power << Human Warlock
     .train 172 >>Train |T136118:0|t[Corruption]
     .target Drusilla La Salle
-step << Human Rogue
+step << Rogue
     #season 2
     .goto Elwynn Forest,50.314,39.916
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorik Kerridan|r
     .turnin 3102 >> Turn in Encrypted Letter
-    .accept 77618 >> Accept Thrice Stolen
+    .accept 77618 >> Accept Thrice Stolen << Human Rogue
     .target Jorik Kerridan
-step << Human Rogue/Human Warlock
+step << Rogue/Warlock
     #season 2
     #completewith RoS << Rogue
     #completewith RoH << Warlock
     >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for their |cRXP_LOOT_Bandanas|r
     .complete 18,1 --Collect Red Burlap Bandana (x12)
     .mob Defias Thug
-step << Human Rogue
+step << Rogue
     #season 2
-    .isOnQuest 77618
     .goto Elwynn Forest,52.544,51.922
     >>Open the |cRXP_PICK_Defias Stashbox|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
-    .collect 204795,1,77618,1 -- Rune of Shadowstrike (1)
-step << Human Rogue
+    .collect 204795,1 -- Rune of Shadowstrike (1)
+step << Rogue
     #season 2
     #label RoS
-    .isOnQuest 77618
-    .use 204795 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
-    .complete 77618,1 -- Learn: Engrave Gloves - Shadowstrike
-step << Human Warlock
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    .use 204795
+    .itemcount 204795,1
+step << Warlock
     #season 2
-    .isOnQuest 77621
     .goto Elwynn Forest,52.544,51.922
     >>Open the |cRXP_PICK_Defias Stashbox|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r]
-    .collect 205230,1,77621,1 -- Rune of Haunting (1)
-step << Human Warlock
+    .collect 205230,1 -- Rune of Haunting (1)
+step << Warlock
     #season 2
     #label RoH
-    .isOnQuest 77621
-    .use 205230 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r]
-    .complete 77621,1 -- Learn: Engrave Gloves - Haunting
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r]
+    .use 205230 
+    .itemcount 205230,1
 step << Human Mage
     #season 2
     #label CALEENCI
@@ -401,31 +398,29 @@ step << Human Mage
     .isOnQuest 77620
     .use 203751 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r]
     .complete 77620,1 -- Learn: Engrave Gloves - Ice Lance
-step << Human Paladin
+step << Paladin
     #season 2
     #label LoJ
     #completewith RedBurlapBandana
-    .isOnQuest 77617
     >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for the |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r]
-    .collect 205420,1,77657,1 -- Libram of Judgement (1)
+    .collect 205420,1 -- Libram of Judgement (1)
     .mob Defias Thug
-step << Human Paladin
+step << Paladin
     #season 2
     #label EquipLoJ
     #requires LoJ
     #completewith next
-    .isOnQuest 77617
     +|cRXP_WARN_Equip the|r |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r]
     .itemcount 205420,1 -- Libram of Judgement (1)
     .use 205420
     .itemStat 18,QUALITY,<2
-step << Human Paladin
+step << Paladin
     #season 2
     #requires EquipLoJ
     #completewith next
-    .isOnQuest 77617
-    .use 205420 >>|cRXP_WARN_Cast|r |T135959:0|t[Judgement] |cRXP_WARN_on your foes 10 times until you have gained the|r |T136116:0|t[Inspired] |cRXP_WARN_buff, then use the|r |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r] |cRXP_WARN_again which you equiped earlier|r
-    .complete 77617,1 -- Learn: Engrave Gloves - Crusader Strike
+    .cast 409920 >>|cRXP_WARN_Cast|r |T135959:0|t[Judgement] |cRXP_WARN_on your foes 10 times until you have gained the|r |T136116:0|t[Inspired] |cRXP_WARN_buff, then use the|r |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r] |cRXP_WARN_again which you equiped earlier|r
+    .use 205420
+    .itemcount 205420,1
 step
     #season 2
     #label RedBurlapBandana
@@ -451,32 +446,30 @@ step << Human Mage
     .isOnQuest 77620
     .use 203751 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_[Spell Notes: CALE ENCI]|r]
     .complete 77620,1 -- Learn: Engrave Gloves - Ice Lance
-step << Human Paladin
+step << Paladin
     #season 2
-    .isOnQuest 77617
     .goto Elwynn Forest,53.9,49.2,50,0
     .goto Elwynn Forest,55.5,42.1,50,0
     .goto Elwynn Forest,53.9,49.2
     .goto Elwynn Forest,54.57,49.03
     >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for the |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r]
-    .collect 205420,1,77657,1 -- Libram of Judgement (1)
+    .collect 205420,1 -- Libram of Judgement (1)
     .mob Defias Thug
-step << Human Paladin
+step << Paladin
     #season 2
-    .isOnQuest 77617
     +|cRXP_WARN_Equip the|r |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r]
     .itemcount 205420,1 -- Libram of Judgement (1)
     .use 205420
     .itemStat 18,QUALITY,<2
-step << Human Paladin
+step << Paladin
     #season 2
     .goto Elwynn Forest,53.9,49.2,50,0
     .goto Elwynn Forest,55.5,42.1,50,0
     .goto Elwynn Forest,53.9,49.2
     .goto Elwynn Forest,54.57,49.03
-    .isOnQuest 77617
-    .use 205420 >>|cRXP_WARN_Cast|r |T135959:0|t[Judgement] |cRXP_WARN_on your foes 10 times until you have gained the|r |T136116:0|t[Inspiration] |cRXP_WARN_buff, then use the|r |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r] |cRXP_WARN_again which you equiped earlier|r
-    .complete 77617,1 -- Learn: Engrave Gloves - Crusader Strike
+    .cast 409920 >>|cRXP_WARN_Cast|r |T135959:0|t[Judgement] |cRXP_WARN_on your foes 10 times until you have gained the|r |T136116:0|t[Inspired] |cRXP_WARN_buff, then use the|r |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r] |cRXP_WARN_again which you equiped earlier|r
+    .use 205420
+    .itemcount 205420,1
 step << Rogue
     .xp 4 >> Grind to 4
 step
@@ -542,24 +535,23 @@ step << skip
 step
     #completewith next
     .goto Elwynn Forest,47.63,32.07,20 >> Enter the Echo Ridge Mine
-step << Human Warrior
+step << Warrior
     #season 2
     #completewith RoVR << Warrior
     >>Kill |cRXP_ENEMY_Kobold Laborers|r
 	.mob Kobold Laborer
     .complete 21,1 --Kill Kobold Laborer (x12)
-step << Human Warrior
+step << Warrior
     #season 2
-    .isOnQuest 77616
     .goto Elwynn Forest,50.640,27.276
     >>Open the |cRXP_PICK_Kobold Stashbox|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
-    .collect 204806,1,77616,1 -- Rune of Victory Rush (1)
-step << Human Warrior
+    .collect 204806,1 -- Rune of Victory Rush (1)
+step << Warrior
     #season 2
     #label RoVR
-    .isOnQuest 77616
-    .use 204806 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
-    .complete 77616,1 -- Learn: Engrave Gloves - Victory Rush
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    .use 204806
+    .itemcount 204806,1
 step
     .goto Elwynn Forest,48.61,27.63
     >>Kill |cRXP_ENEMY_Kobold Laborers|r
@@ -1807,13 +1799,16 @@ step << Rogue
     #completewith FlySW
     #label RoSS
     .goto Westfall,51.540,55.361,30,0
+    .goto Westfall,51.093,54.642,30,0
+    .goto Westfall,50.81,47.15,50,0
     .goto Westfall,51.093,54.642
     >>|T133644:0|t[Pick Pocket] the |cRXP_ENEMY_Defias Scout|r for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Saber Slash|r]
     >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
     >>|cRXP_WARN_There is a very high chance that the|r |T133644:0|t[Pick Pocket] |cRXP_WARN_will fail because your are underleved. If it does, skip this step and fly to Stormwind. You will complete it in Loch Modan shortly|r
     >>|cRXP_WARN_DO NOT AGRO THE |cRXP_ENEMY_Defias Scout|r OTHERWISE IT WILL|r |T132331:0|t[Vanish] |cRXP_WARN_AND DESPAWN FOR 3-5 MINUTES. ENSURE TO GO IN|r |T132320:0|t[Stealth] |cRXP_WARN_EARLY!|r
+    >>|cRXP_WARN_The |cRXP_ENEMY_Defias Scout|r can spawn on hills|r
     .collect 208772,1 -- Rune of Saber Slash (1)
-    .mob Defias Scout
+    .unitscan Defias Scout
     .train 424785,1
 step << Rogue
     #season 2

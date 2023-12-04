@@ -197,32 +197,30 @@ step << Gnome Mage
     .accept 77667 >> Accept Spell Research
     .trainer >> Train your class spells
     .target Marryk Nurribit
-step << Dwarf Priest
+step << Priest
     #season 2
     .goto Dun Morogh,26.733,72.552
     >>Open the |cRXP_PICK_Rockjaw Footlocker|r. Loot it for the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Troubled Acolyte|r]
-    .collect 205951,1,77661,1 -- Memory of a Troubled Acolyte (1)
-step << Dwarf Priest
+    .collect 205951,1 -- Memory of a Troubled Acolyte (1)
+step << Priest
     #season 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branstock Khalder|r
     .target Branstock Khalder
     .goto Dun Morogh,28.600,66.385
-    .turnin 3110 >> Turn in Hallowed Rune
-    .accept 77661 >> Accept Meditation on the Light
+    .turnin 3110 >> Turn in Hallowed Rune << Dwarf Priest
+    .accept 77661 >> Accept Meditation on the Light << Dwarf Priest
     .trainer >> Train your class spells
-step << Dwarf Priest
+step << Priest
     #season 2
-    .isOnQuest 77661
     .goto Dun Morogh,28.923,66.372
     .aura 410935 >>|cRXP_WARN_Target the |cRXP_FRIENDLY_Altar of the Light|r to automatically /kneel|r
     .emote KNEEL,208565 >>|cRXP_WARN_If it does not work, type /kneel in your chatbox with the |cRXP_FRIENDLY_Altar of the Light|r targeted|r
     >>|cRXP_WARN_You will receive the|r |T135934:0|t[Meditation on the Light] |cRXP_WARN_buff|r
     .target Altar of the Light
-step << Dwarf Priest
+step << Priest
     #season 2
-    .isOnQuest 77661
-    .use 205951 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Troubled Acolyte|r] |cRXP_WARN_while you have the|r |T135934:0|t[Meditation on the Light] |cRXP_WARN_buff|r
-    .complete 77661,1 -- Learn: Engrave Gloves - Penance
+    .cast 410958 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Troubled Acolyte|r] |cRXP_WARN_while you have the|r |T135934:0|t[Meditation on the Light] |cRXP_WARN_buff|r
+    .use 205951
     .target Altar of the Light
 step << Dwarf Priest
     #season 2
@@ -257,17 +255,16 @@ step << Gnome Mage
     .isOnQuest 77667
     .use 203751 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r]
     .complete 77667,1 -- Learn: Engrave Gloves - Ice Lance
-step << Gnome Warlock
+step << Warlock
     #season 2
-    .isOnQuest 77666
     .goto Dun Morogh,26.733,72.552
     >>Open the |cRXP_PICK_Rockjaw Footlocker|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r]
-    .collect 205230,1,77666,1 -- Rune of Haunting (1)
-step << Gnome Warlock
+    .collect 205230,1 -- Rune of Haunting (1)
+step << Warlock
     #season 2
-    .isOnQuest 77666
-    .use 205230 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r]
-    .complete 77666,1 -- Learn: Engrave Gloves - Haunting
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r]
+    .use 205230
+    .itemcount 205230,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talin Keeneye|r
     .target Talin Keeneye
@@ -375,12 +372,12 @@ step << Warlock
     .goto Dun Morogh,28.650,66.145
     .turnin 3115 >> Turn in Tainted Memorandum
     .train 172 >>Train |T136118:0|t[Corruption]
-step << Gnome Warlock
+step << Warlock
     #season 2
     .isQuestComplete 77666
     .goto Dun Morogh,28.650,66.145
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alamar Grimm|r
-    .turnin 77666 >> Turn in Stolen Power
+    .turnin 77666 >> Turn in Stolen Power << Gnome Warlock
     .train 172 >>Train |T136118:0|t[Corruption]
     .target Alamar Grimm
 step << Paladin/Mage/Warlock
@@ -409,56 +406,49 @@ step << !Paladin !Mage !Warlock
     #season 2
     #era
     #completewith RockjawTroggs
-    #completewith WarriorVR << Dwarf Warrior/Gnome Warrior
+    #completewith WarriorVR << Warrior
     >>Kill |cRXP_ENEMY_Rockjaw Troggs|r and |cRXP_ENEMY_Burly Rockjaw Troggs|r
     .complete 170,1 --Kill Rockjaw Trogg (x6)
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
     .mob Rockjaw Trogg
     .mob Burly Rockjaw Trogg
-step << Dwarf Warrior/Gnome Warrior
+step << Warrior
     #season 2
     #completewith next
     #label RoVR
-    .isOnQuest 77655 << Dwarf Warrior
-    .isOnQuest 77656 << Gnome Warrior
     >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r. Loot them for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
-    .collect 204806,1,77655,1 << Dwarf Warrior -- Rune of Victory Rush (1)
-    .collect 204806,1,77656,1 << Gnome Warrior -- Rune of Victory Rush (1)
+    .collect 204806,1
     .mob Frostmane Troll Whelp
-step << Dwarf Warrior/Gnome Warrior
+step << Warrior
     #season 2
     #completewith next
     #requires RoVR
-    .isOnQuest 77655 << Dwarf Warrior
-    .isOnQuest 77656 << Gnome Warrior
-    .use 204806 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
-    .complete 77655,1 << Dwarf Warrior -- Learn: Engrave Gloves - Victory Rush
-    .complete 77656,1 << Gnome Warrior -- Learn: Engrave Gloves - Victory Rush
-step << Dwarf Paladin
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    .use 204806
+    .itemcount 204806,1
+step << Paladin
     #season 2
     #label LoJ
     #completewith CrusaderStrike
-    .isOnQuest 77657
     >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r. Loot them for the |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r]
-    .collect 205420,1,77657,1 -- Libram of Judgement (1)
+    .collect 205420,1 -- Libram of Judgement (1)
     .mob Frostmane Troll Whelp
-step << Dwarf Paladin
+step << Paladin
     #season 2
     #label EquipLoJ
     #requires LoJ
     #completewith CrusaderStrike
-    .isOnQuest 77657
     .equip 18,205420 >> |cRXP_WARN_Equip the|r |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r]
     .use 205420
     .itemStat 18,QUALITY,<2
     .itemcount 205420,1
-step << Dwarf Paladin
+step << Paladin
     #season 2
     #requires EquipLoJ
     #completewith next
-    .isOnQuest 77657
-    .use 205420 >>|cRXP_WARN_Cast|r |T135959:0|t[Judgement] |cRXP_WARN_on your foes 10 times until you have gained the|r |T136116:0|t[Inspired] |cRXP_WARN_buff, then use the|r |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r] |cRXP_WARN_again which you equiped earlier|r
-    .complete 77657,1 -- Learn: Engrave Gloves - Crusader Strike
+    .cast 409920 >>|cRXP_WARN_Cast|r |T135959:0|t[Judgement] |cRXP_WARN_on your foes 10 times until you have gained the|r |T136116:0|t[Inspired] |cRXP_WARN_buff, then use the|r |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r] |cRXP_WARN_again which you equiped earlier|r
+    .use 205420
+    .itemcount 205420,1
 step << Paladin/Mage/Warlock
     #label CrusaderStrike
     .goto Dun Morogh,26.3,79.2,40,0
@@ -481,49 +471,41 @@ step << !Paladin !Mage !Warlock
     >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r
     .complete 182,1 --Kill Frostmane Troll Whelp (x14)
     .mob Frostmane Troll Whelp
-step << Dwarf Paladin
+step << Paladin
     #season 2
-    .isOnQuest 77657
     .goto Dun Morogh,26.3,79.2,40,0
     .goto Dun Morogh,22.7,79.3,40,0
     .goto Dun Morogh,20.9,75.7,40,0
     .goto Dun Morogh,22.7,79.3,40,0
     .goto Dun Morogh,20.9,75.7
     >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r. Loot them for the |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r]
-    .collect 205420,1,77657,1 -- Libram of Judgement (1)
+    .collect 205420,1 -- Libram of Judgement (1)
     .mob Frostmane Troll Whelp
-step << Dwarf Paladin
+step << Paladin
     #season 2
-    .isOnQuest 77657
     .equip 18,205420 >> |cRXP_WARN_Equip the|r |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r]
     .use 205420
     .itemcount 205420,1
-step << Dwarf Paladin
+step << Paladin
     #season 2
-    .isOnQuest 77657
     .goto Dun Morogh,26.3,79.2,40,0
     .goto Dun Morogh,22.7,79.3,40,0
     .goto Dun Morogh,20.9,75.7,40,0
     .goto Dun Morogh,22.7,79.3,40,0
     .goto Dun Morogh,20.9,75.7
-    .use 205420 >>|cRXP_WARN_Cast|r |T135959:0|t[Judgement] |cRXP_WARN_on your foes 10 times until you have gained the|r |T136116:0|t[Inspired] |cRXP_WARN_buff, then use the|r |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r] |cRXP_WARN_again which you equiped earlier|r
-    .complete 77657,1 -- Learn: Engrave Gloves - Crusader Strike
-step << Dwarf Warrior/Gnome Warrior
+    .cast 409920 >>|cRXP_WARN_Cast|r |T135959:0|t[Judgement] |cRXP_WARN_on your foes 10 times until you have gained the|r |T136116:0|t[Inspired] |cRXP_WARN_buff, then use the|r |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r] |cRXP_WARN_again which you equiped earlier|r
+    .use 205420
+step << Warrior
     #season 2
-    .isOnQuest 77655 << Dwarf Warrior
-    .isOnQuest 77656 << Gnome Warrior
     >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r. Loot them for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
-    .collect 204806,1,77655,1 << Dwarf Warrior -- Rune of Victory Rush (1)
-    .collect 204806,1,77656,1 << Gnome Warrior -- Rune of Victory Rush (1)
+    .collect 204806,1
     .mob Frostmane Troll Whelp
-step << Dwarf Warrior/Gnome Warrior
+step << Warrior
     #season 2
     #label WarriorVR
-    .isOnQuest 77655 << Dwarf Warrior
-    .isOnQuest 77656 << Gnome Warrior
-    .use 204806 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
-    .complete 77655,1 << Dwarf Warrior -- Learn: Engrave Gloves - Victory Rush
-    .complete 77656,1 << Gnome Warrior -- Learn: Engrave Gloves - Victory Rush
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    .use 204806
+    .itemcount 204806,1
 step << !Paladin !Mage
     #era
     #label TrollTroggs
@@ -584,32 +566,27 @@ step
     .mob Grik'nir the Cold
 step
     #season 2
-    #completewith next << Gnome Rogue/Dwarf Rogue
-    .goto Dun Morogh,30.6,80.3 << Paladin/Warlock/Priest/Mage/Warrior/Human Rogue/NightElf Rogue
+    #completewith next << Rogue
+    .goto Dun Morogh,30.6,80.3 << Paladin/Warlock/Priest/Mage/Warrior
     >>Kill |cRXP_ENEMY_Grik'nir the Cold|r. Loot him for his |cRXP_LOOT_Journal|r
     .complete 218,1 --Collect Grelin Whitebeard's Journal (x1)
     .mob Grik'nir the Cold
-step << Dwarf Rogue/Gnome Rogue
+step << Rogue
     #season 2
-    .isOnQuest 77658 << Dwarf Rogue
-    .isOnQuest 77659 << Gnome Rogue
     .goto Dun Morogh,30.773,80.063
     >>Open the |cRXP_PICK_Frostmane Loot Cache|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
-    .collect 204795,1,77658,1 << Dwarf Rogue -- Rune of Shadowstrike (1)
-    .collect 204795,1,77659,1 << Gnome Rogue -- Rune of Shadowstrike (1)
-step << Dwarf Rogue/Gnome Rogue
+    .collect 204795,1
+step << Rogue
     #season 2
     .goto Dun Morogh,30.6,80.3
     >>Kill |cRXP_ENEMY_Grik'nir the Cold|r. Loot him for his |cRXP_LOOT_Journal|r
     .complete 218,1 --Collect Grelin Whitebeard's Journal (x1)
     .mob Grik'nir the Cold
-step << Dwarf Rogue/Gnome Rogue
+step << Rogue
     #season 2
-    .isOnQuest 77658 << Dwarf Rogue
-    .isOnQuest 77659 << Gnome Rogue
-    .use 204795 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
-    .complete 77658,1 << Dwarf Rogue -- Learn: Engrave Gloves - Shadowstrike
-    .complete 77659,1 << Gnome Rogue -- Learn: Engrave Gloves - Shadowstrike
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    .use 204795 
+    .itemcount 204795,1
 step << !Paladin !Mage !Warlock
     #softcore
     #completewith next
