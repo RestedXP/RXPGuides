@@ -817,6 +817,7 @@ step
     .complete 365,1 --Tirisfal Pumpkin (10)
 step
     #loop
+    .goto Tirisfal Glades,31.78,51.36,0
     .goto Tirisfal Glades,33.73,49.34,50,0
     .goto Tirisfal Glades,33.65,51.07,50,0
     .goto Tirisfal Glades,31.78,51.36,50,0
@@ -2937,6 +2938,7 @@ step
     .mob Vampiric Duskbat
 step
     #loop
+    .goto Tirisfal Glades,85.03,54.72,0
     .goto Tirisfal Glades,83.50,55.56,30,0
     .goto Tirisfal Glades,85.03,54.72,30,0
     .goto Tirisfal Glades,86.56,54.51,30,0

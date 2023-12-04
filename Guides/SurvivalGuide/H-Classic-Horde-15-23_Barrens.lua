@@ -2019,7 +2019,23 @@ step
     .complete 6461,2 --Kill Deepmoss Venomspitter (x7)
     .mob Deepmoss Venomspitter
 step
-    .loop 25,Stonetalon Mountains,59.25,61.55,60.37,60.10,61.34,59.15,61.15,57.85,61.41,56.77,62.21,58.55,63.12,60.02,64.69,60.03,62.76,61.69,62.50,62.92,62.48,64.15,61.85,66.07,60.71,66.12,60.96,63.99,60.25,63.21
+    #loop
+    .goto Stonetalon Mountains,61.41,56.77,0
+    .goto Stonetalon Mountains,59.25,61.55,30,0
+    .goto Stonetalon Mountains,60.37,60.10,30,0
+    .goto Stonetalon Mountains,61.34,59.15,30,0
+    .goto Stonetalon Mountains,61.15,57.85,30,0
+    .goto Stonetalon Mountains,61.41,56.77,30,0
+    .goto Stonetalon Mountains,62.21,58.55,30,0
+    .goto Stonetalon Mountains,63.12,60.02,30,0
+    .goto Stonetalon Mountains,64.69,60.03,30,0
+    .goto Stonetalon Mountains,62.76,61.69,30,0
+    .goto Stonetalon Mountains,62.50,62.92,30,0
+    .goto Stonetalon Mountains,62.48,64.15,30,0
+    .goto Stonetalon Mountains,61.85,66.07,30,0
+    .goto Stonetalon Mountains,60.71,66.12,30,0
+    .goto Stonetalon Mountains,60.96,63.99,30,0
+    .goto Stonetalon Mountains,60.25,63.21,30,0    
     >>Loot the |cRXP_PICK_Spider Eggs|r near the trees
     >>|cRXP_WARN_Be careful! The|r |cRXP_ENEMY_Deepmoss Hatchlings|r |cRXP_WARN_have a chance of summoning a level 22|r |cRXP_ENEMY_Deepmoss Matriarch|r
     .complete 1069,1 --Collect Deepmoss Egg (x15)
@@ -2325,12 +2341,6 @@ step
     .target Sputtervalve
     .target Mebok Mizzyrix
     .target Brewmaster Drohn
-step
-    .goto The Barrens,63.09,37.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bigglefuzz|r
-    .accept 959 >> Accept Trouble at the Docks
-    .target Crane Operator Bigglefuzz
-    .dungeon WC
 step << Warrior
     .goto The Barrens,62.20,38.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grazlix|r
@@ -2363,6 +2373,12 @@ step << Rogue/Hunter/Warrior/Shaman/Druid
     .use 4794
     .itemcount 4794,1
     .itemStat 9,ITEM_MOD_ARMOR_SHORT,<37
+step
+    .goto The Barrens,63.09,37.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bigglefuzz|r
+    .accept 959 >> Accept Trouble at the Docks
+    .target Crane Operator Bigglefuzz
+    .dungeon WC
 step
     #label FlytoXroads
     #completewith XroadsHS2
@@ -3924,7 +3940,7 @@ step
     .group 3
 step
     .goto Stonetalon Mountains,71.77,60.19
-    >>Protect |cRXP_FRIENDLY_Piznik|r from incoming |cRXP_FRIENDLY_Windshear Vermin|r
+    >>Protect |cRXP_FRIENDLY_Piznik|r from incoming |cRXP_ENEMY_Windshear Vermin|r
     .complete 1090,1 --Keep Piznik safe while he mines the mysterious ore
     .mob Windshear Vermin
     .group 3

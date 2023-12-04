@@ -196,6 +196,38 @@ step << Mage/Warlock/Priest
     .money >0.0050
     .itemcount 159,<5
 step
+    #season 2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Sarvis|r and |cFF00FF25Elreth|r << !Warlock !Mage !Priest
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Sarvis|r, |cFF00FF25Elreth|r, and |cFF00FF25Maximillion|r << Warlock
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Sarvis|r, |cFF00FF25Elreth|r, and |cFF00FF25Isabella|r << Mage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Sarvis|r, |cFF00FF25Elreth|r, and |cFF00FF25Duesten|r << Priest
+    .turnin 364 >> Turn in The Mindless Ones
+    .accept 3095 >> Accept Simple Scroll << Warrior
+    .accept 3096 >> Accept Encrypted Scroll << Rogue
+    .accept 3097 >> Accept Hallowed Scroll << Priest
+    .accept 3098 >> Accept Glyphic Scroll << Mage
+    .accept 3099 >> Accept Tainted Scroll << Warlock
+    .accept 3901 >> Accept Rattling the Rattlecages
+    .goto Tirisfal Glades,31.35,66.21,10,0
+    .goto Tirisfal Glades,30.84,66.20
+    .accept 376 >> Accept The Damned
+    .goto Tirisfal Glades,30.86,66.05
+    .turnin 3099 >> Turn in Tainted Scroll << Warlock
+    .accept 77672 >>Accept The Lost Rune << Warlock
+    .goto Tirisfal Glades,30.91,66.34 << Warlock
+    .turnin 3098 >> Turn in Glyphic Scroll << Mage
+    .accept 77671 >>Accept Spell Research << Mage
+    .goto Tirisfal Glades,30.94,66.06 << Mage
+    .turnin 3097 >> Turn in Hallowed Scroll << Priest
+    .accept 77670 >>Accept Meditation on Undeath << Priest
+    .goto Tirisfal Glades,31.11,66.02 << Priest
+    .target Shadow Priest Sarvis
+    .target Novice Elreth
+    .target Maximillion << Warlock
+    .target Isabella << Mage
+    .target Dark Cleric Duesten << Priest
+step
+    #season 0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Sarvis|r and |cFF00FF25Elreth|r << !Warlock !Mage !Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Sarvis|r, |cFF00FF25Elreth|r, and |cFF00FF25Maximillion|r << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Sarvis|r, |cFF00FF25Elreth|r, and |cFF00FF25Isabella|r << Mage
@@ -222,6 +254,18 @@ step
     .target Maximillion << Warlock
     .target Isabella << Mage
     .target Dark Cleric Duesten << Priest
+step << Priest
+    #season 2
+    .goto Tirisfal Glades,31.06,64.80
+    >>Enter the graveyard and type /kneel
+    .use 205951 >>Use |T136222:0|t[|cRXP_FRIENDLY_Memory of a Troubled Acolyte|r] as you gain the |T237569:0|t[Meditation on Undeath] buff
+    .complete 77670,1 >>Learn Spell: Engrave Gloves - Penance
+step << Priest
+    #season 2
+    .goto Tirisfal Glades,31.11,66.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duesten|r
+    .turnin 77670 >>Turn in Meditation on Undeath
+    .target Dark Cleric Duesten
 step << Mage/Warlock/Priest
     .goto Tirisfal Glades,32.23,65.59,8,0
     .goto Tirisfal Glades,32.29,65.44
@@ -384,6 +428,27 @@ step << Rogue/Warrior
     .isOnQuest 3095 << Warrior
     .isOnQuest 3096 << Rogue
 step << Warrior
+    #season 2
+    .goto Tirisfal Glades,32.68,65.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Dannal|r
+    .turnin 3095 >> Turn in Simple Scroll
+    .accept 77668 >> Accept The Lost Rune
+    .train 100 >> Train |T132337:0|t[Charge]
+    .train 772 >> Train |T132155:0|t[Rend]
+    .target Dannal Stern
+    .money <0.02
+ step << Warrior
+    #season 2
+    #label Training2
+    .goto Tirisfal Glades,32.68,65.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Dannal|r
+    .turnin 3095 >> Turn in Simple Scroll
+    .accept 77668 >> Accept The Lost Rune
+    .train 772 >> Train |T132155:0|t[Rend]
+    .target Dannal Stern
+    .money <0.01
+step << Warrior
+    #season 0
     .goto Tirisfal Glades,32.68,65.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Dannal|r
     .turnin 3095 >> Turn in Simple Scroll
@@ -392,6 +457,7 @@ step << Warrior
     .target Dannal Stern
     .money <0.02
  step << Warrior
+    #season 0
     #label Training2
     .goto Tirisfal Glades,32.68,65.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Dannal|r
@@ -400,6 +466,23 @@ step << Warrior
     .target Dannal Stern
     .money <0.01
 step << Rogue
+    #season 2
+    .goto Tirisfal Glades,32.53,65.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25David|r
+    .turnin 3096 >> Turn in Encrypted Scroll
+    .accept 77669 >>Accept The Scarlet Rune
+    .train 53 >> Train |T132090:0|t[Backstab]
+    .money <0.04
+    .target David Trias
+step << Rogue
+    #season 2
+    .goto Tirisfal Glades,32.53,65.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25David|r
+    .turnin 3096 >> Turn in Encrypted Scroll
+    .accept 77669 >>Accept The Scarlet Rune
+    .target David Trias
+step << Rogue
+    #season 0
     .goto Tirisfal Glades,32.53,65.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25David|r
     .turnin 3096 >> Turn in Encrypted Scroll
@@ -407,6 +490,7 @@ step << Rogue
     .money <0.04
     .target David Trias
 step << Rogue
+    #season 0
     #label Training2
     .goto Tirisfal Glades,32.53,65.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25David|r
@@ -433,6 +517,40 @@ step
     #completewith next
     .goto Tirisfal Glades,26.80,59.40,15,0
     .goto Tirisfal Glades,26.31,59.60,30 >>Go inside the cave
+step << Warlock
+    #season 2
+    #completewith RuneofHaunting
+    >>Kill |cFFFF5722Night Web Spiders|r inside the cave
+	.complete 380,2 --Kill Night Web Spider (x8)
+    .mob Night Web Spider
+step << Warlock
+    #season 2
+    .goto Tirisfal Glades,24.60,59.45
+    >>Loot the |cRXP_PICK_Lost Stache|r inside the cave for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r]
+    .collect 205230,1,77672,1 --Rune of Haunting (1)
+step << Warlock
+    #season 2
+    #label RuneofHaunting
+    .use 205230 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r]
+    .complete 77672,1 --Learn Spell: Engrave Gloves - Haunt
+    .isOnQuest 77672
+step << Warrior
+    #season 2
+    #completewith RuneofVictoryRush
+    >>Kill |cFFFF5722Night Web Spiders|r inside the cave
+	.complete 380,2 --Kill Night Web Spider (x8)
+    .mob Night Web Spider
+step << Warrior
+    #season 2
+    .goto Tirisfal Glades,24.60,59.45
+    >>Loot the |cRXP_PICK_Lost Stache|r inside the cave for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    .collect 204806,1,77668,1 --Rune of Victory Rush (1)
+step << Warrior
+    #label RuneofVictoryRush
+    #season 2
+    .use 204806 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    .complete 77668,1 --Learn Spell: Engrave Gloves - Victory Rush
+    .isOnQuest 77668
 step
     .goto Tirisfal Glades,26.31,59.60,30,0
     .goto Tirisfal Glades,25.61,59.55,20,0
@@ -474,6 +592,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Saltain|r
     .turnin 3902 >> Turn in Scavenging Deathknell
     .target Deathguard Saltain
+step << Warlock
+    #season 2
+    .goto Tirisfal Glades,30.91,66.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Maximillion|r
+    .turnin 77672 >>Turn in The Lost Rune
+    .target Maximillion
 step
     #sticky
     #label NightWebH
@@ -497,6 +621,53 @@ step << Warlock/Mage/Priest
     .target Joshua Kien
     .isOnQuest 6395
     .itemcount 159,<15
+step << Warrior
+    #season 2
+    .goto Tirisfal Glades,32.68,65.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Dannal|r
+    .turnin 77668 >>Turn in The Lost Rune
+    .target Dannal Stern
+step << Mage
+    #season 2
+    #completewith RuneofIcelance
+    >>Kill |cFFFF5722Scarlet Initiates|r and |cFFFF5722Scarlet Converts|r. Loot them for their |cFF00BCD4Scarlet Armbands|r
+    >>|cFFFCDC00Don't kill |cFFFF5722Meven Korgal|r yet|r
+    >>|cFFFCDC00Try to avoid |cFFFF5722Scarlet Initiates|r if you can as they have|r |T135843:0|t[Frost Armor] |cFFFCDC00(slows your attack speed)|r << Warrior/Rogue
+    .complete 381,1 --Collect Scarlet Armband (12)
+    .mob Scarlet Initiate
+    .mob Scarlet Convert
+step << Mage
+    #season 2
+    .loop 25,Tirisfal Glades,36.13,68.74,36.46,69.49,36.85,70.02,37.42,69.58,38.05,69.79,37.91,69.22,38.03,68.77,38.49,68.28,38.72,67.07,38.59,66.25,38.65,65.07,37.62,65.36,36.93,65.38,36.51,65.42,36.85,66.59,37.45,67.95,36.93,68.16,36.13,68.74
+    >>Kill |cFFFF5722Scarlet Initiates|r. Loot them for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r]
+    .collect 203751,1,77671,1 --Spell Notes: CALE ENCI (1)
+    .mob Scarlet Initiate
+step << Mage
+    #season 2
+    #label RuneofIcelance
+    .use 203751 >>Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r]
+    .complete 77671,1 --Learn Spell: Engrave Gloves - Icelance
+    .isOnQuest 77671
+step << Rogue
+    #season 2
+    #completewith RuneofShadowstrike
+    >>Kill |cFFFF5722Scarlet Initiates|r and |cFFFF5722Scarlet Converts|r. Loot them for their |cFF00BCD4Scarlet Armbands|r
+    >>|cFFFCDC00Don't kill |cFFFF5722Meven Korgal|r yet|r
+    >>|cFFFCDC00Try to avoid |cFFFF5722Scarlet Initiates|r if you can as they have|r |T135843:0|t[Frost Armor] |cFFFCDC00(slows your attack speed)|r << Warrior/Rogue
+    .complete 381,1 --Collect Scarlet Armband (12)
+    .mob Scarlet Initiate
+    .mob Scarlet Convert
+step << Rogue
+    #season 2
+    .loop 25,Tirisfal Glades,36.13,68.74,36.46,69.49,36.85,70.02,37.42,69.58,38.05,69.79,37.91,69.22,38.03,68.77,38.49,68.28,38.72,67.07,38.59,66.25,38.65,65.07,37.62,65.36,36.93,65.38,36.51,65.42,36.85,66.59,37.45,67.95,36.93,68.16,36.13,68.74
+    >>Kill |cFFFF5722Scarlet Converts|r. Loot them for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    .collect 204795,1,77669,1 --Rune of Shadowstrike (1)
+step << Rogue
+    #season 2
+    #label RuneofShadowstrike
+    .use 204795 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    .complete 77669,1 --Learn Spell: Engrave Gloves - Shadowstrike
+    .isOnQuest 77669
 step
     #requires NightWebH
     .loop 25,Tirisfal Glades,36.13,68.74,36.46,69.49,36.85,70.02,37.42,69.58,38.05,69.79,37.91,69.22,38.03,68.77,38.49,68.28,38.72,67.07,38.59,66.25,38.65,65.07,37.62,65.36,36.93,65.38,36.51,65.42,36.85,66.59,37.45,67.95,36.93,68.16,36.13,68.74
@@ -534,6 +705,12 @@ step
     .goto Tirisfal Glades,31.11,66.02 << Priest
     .target Novice Elreth
     .target Dark Cleric Duesten << Priest
+step << Mage
+    #season 2
+    .goto Tirisfal Glades,30.94,66.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Isabella|r
+    .turnin 77671 >>Turn in Spell Research
+    .target Isabella
 step
     #sticky
     #label ScarletC
@@ -542,6 +719,12 @@ step
     .turnin 381 >> Turn in The Scarlet Crusade
     .accept 382 >> Accept The Red Messenger
     .target Executor Arren
+step << Rogue
+    #season 2
+    .goto Tirisfal Glades,32.53,65.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25David|r
+    .turnin 77669 >>Turn in The Scarlet Rune
+    .target David Trias
 step
     .goto Tirisfal Glades,32.42,65.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Archibald|r
@@ -815,6 +998,7 @@ step
     .complete 365,1 --Tirisfal Pumpkin (10)
 step
     #loop
+    .goto Tirisfal Glades,31.78,51.36,0
     .goto Tirisfal Glades,33.73,49.34,50,0
     .goto Tirisfal Glades,33.65,51.07,50,0
     .goto Tirisfal Glades,31.78,51.36,50,0
@@ -857,13 +1041,6 @@ step
     .turnin 5481 >>Turn in Gordo's Task
     .accept 5482 >>Accept Doom Weed
     .target Junior Apothecary Holland
-step << Priest
-    .goto Tirisfal Glades,61.57,52.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beryl|r on the second floor
-    .turnin 5650 >>Turn in Garments of Darkness
-    .train 591 >>Train |T135924:0|t[Smite]
-    .train 17 >>Train |T135940:0|t[Power Word: Shield]
-    .target Dark Cleric Beryl
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r, |cRXP_FRIENDLY_Johaan|r and |cRXP_FRIENDLY_Zygand|r
     .turnin 404 >>Turn in A Putrid Task
@@ -896,6 +1073,13 @@ step
     .target Deathguard Dillinger
     .target Executor Zygand
     .target Apothecary Johaan
+step << Priest
+    .goto Tirisfal Glades,61.57,52.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beryl|r on the second floor
+    .turnin 5650 >>Turn in Garments of Darkness
+    .train 591 >>Train |T135924:0|t[Smite]
+    .train 17 >>Train |T135940:0|t[Power Word: Shield]
+    .target Dark Cleric Beryl
 step
     .goto Tirisfal Glades,61.89,52.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gretchen|r
@@ -1827,6 +2011,7 @@ step
     .mob Scarlet Friar
 step
     #loop
+    .goto Tirisfal Glades,85.03,54.72,0
     .goto Tirisfal Glades,83.50,55.56,30,0
     .goto Tirisfal Glades,85.03,54.72,30,0
     .goto Tirisfal Glades,86.56,54.51,30,0
@@ -2090,7 +2275,6 @@ step
 step
     .goto Tirisfal Glades,66.64,44.89
     >>Right click on the table in the middle of the island. Kill |cRXP_ENEMY_Nefara|r when she spawns
-    .turnin 410 >> Turn in The Dormant Shade
     .complete 409,1 --Lillith Nefara (1)
     .target Lillith Nefara
 step

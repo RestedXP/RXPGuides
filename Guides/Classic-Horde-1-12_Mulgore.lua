@@ -177,6 +177,25 @@ step
     .accept 3376 >>Accept Break Sharptusk!
     .target Brave Windfeather
 step << Warrior
+    #season 2
+    .goto Mulgore,44.02,76.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harutt|r
+    .turnin 3091 >>Turn in Simple Note
+    .accept 77651 >>Accept Into the Brambles
+    .train 100 >> Train |T132337:0|t[Charge]
+    .train 772 >> Train |T132155:0|t[Rend]
+    .target Harutt Thunderhorn
+    .money <0.02
+step << Warrior
+    #season 2
+    .goto Mulgore,44.02,76.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harutt|r
+    .turnin 3091 >>Turn in Simple Note
+    .accept 77651 >>Accept Into the Brambles
+    .train 772 >> Train |T132155:0|t[Rend]
+    .target Harutt Thunderhorn
+step << Warrior
+    #season 0
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harutt|r
     .turnin 3091 >>Turn in Simple Note
@@ -185,18 +204,37 @@ step << Warrior
     .target Harutt Thunderhorn
     .money <0.02
 step << Warrior
+    #season 0
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harutt|r
     .turnin 3091 >>Turn in Simple Note
     .train 772 >> Train |T132155:0|t[Rend]
     .target Harutt Thunderhorn
 step << Hunter
+    #season 2
+    .goto Mulgore,44.26,75.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lanka|r
+    .turnin 3092 >>Turn in Etched Note
+    .accept 77649 >>Accept A Hunter's Strength
+    .train 1978 >> Train |T132204:0|t[Serpent Sting]
+    .target Lanka Farshot
+step << Hunter
+    #season 0
     .goto Mulgore,44.26,75.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lanka|r
     .turnin 3092 >>Turn in Etched Note
     .train 1978 >> Train |T132204:0|t[Serpent Sting]
     .target Lanka Farshot
 step << Druid
+    #season 2
+    .goto Mulgore,45.09,75.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gart|r
+    .turnin 3094 >>Turn in Verdant Note
+    .accept 77648 >>Accept Relics of the Tauren
+    .train 8921 >> Train |T136096:0|t[Moonfire]
+    .target Gart Mistrunner
+step << Druid
+    #season 0
     .goto Mulgore,45.09,75.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gart|r
     .turnin 3094 >>Turn in Verdant Note
@@ -208,11 +246,49 @@ step << Shaman
     .accept 1519 >>Accept Call of Earth
     .target Seer Ravenfeather
 step << Shaman
+    #season 2
+    .goto Mulgore,45.01,75.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meela|r
+    .turnin 3093 >>Turn in Rune-Inscribed Note
+    .accept 77652 >>Accept Icons of Power
+    .train 8042 >>Train |T136026:0|t[Earth Shock]
+    .target Meela Dawnstrider
+step << Shaman
+    #season 0
     .goto Mulgore,45.01,75.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meela|r
     .turnin 3093 >>Turn in Rune-Inscribed Note
     .train 8042 >>Train |T136026:0|t[Earth Shock]
     .target Meela Dawnstrider
+step << Hunter
+    #season 2
+    #completewith RuneofChimera
+    >>Kill |cRXP_ENEMY_Battleboars|r. Loot them for their |cRXP_LOOT_Flanks|r and |cRXP_LOOT_Snouts|r
+    .complete 780,2 --Battleboar Flank (8)
+    .complete 780,1 --Battleboar Snout (8)
+step << Hunter
+    #season 2
+    .goto Mulgore,52.70,79.32,50,0
+    .goto Mulgore,54.19,79.83,50,0
+    .goto Mulgore,55.73,80.28,50,0
+    .goto Mulgore,56.48,81.67,50,0
+    .goto Mulgore,55.63,83.86,50,0
+    .goto Mulgore,56.03,85.53,50,0
+    .goto Mulgore,55.80,87.71,50,0
+    .goto Mulgore,56.72,89.27,50,0
+    .goto Mulgore,57.92,89.27,50,0
+    .goto Mulgore,57.69,86.77,50,0
+    .goto Mulgore,57.31,85.39,50,0
+    .goto Mulgore,55.99,85.46
+    >>Kill |cRXP_ENEMY_Battleboars|r. Loot them for |T134419:0|t[|cRXP_FRIENDLY_Rune of The Chimera|r]
+    .collect 206168,1,77649,1 --Rune of the Chimera (1)
+    .mob Battleboar
+step << Hunter
+    #label RuneofChimera
+    #season 2
+    .use 206168 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of The Chimera|r]
+    .complete 77649,1 --Learn Spell: Engrave Gloves - Chimera Shot
+    .isOnQuest 77649
 step
     .goto Mulgore,52.70,79.32,50,0
     .goto Mulgore,54.19,79.83,50,0
@@ -243,6 +319,55 @@ step << Shaman
     >>Kill |cRXP_ENEMY_Bristleback Shamans|r. Loot them for their |cRXP_LOOT_Salves|r
     .complete 1519,1 --Ritual Salve (2)
     .mob Bristleback Shaman
+step << Shaman
+    #season 2
+    .goto Mulgore,63.74,81.18,40,0
+    .goto Mulgore,63.86,79.97,40,0
+    .goto Mulgore,65.00,78.60,40,0
+    .goto Mulgore,66.05,77.83,40,0
+    .goto Mulgore,65.93,77.10,40,0
+    .goto Mulgore,63.57,76.25,40,0
+    .goto Mulgore,63.86,80.14
+    >>Kill |cRXP_ENEMY_Bristleback Shamans|r. Loot them for |T134918:0|t[|cRXP_FRIENDLY_Dyadic Icon|r]
+    .collect 206381,1,77652,1 --Dyadic Icon (1)
+    .mob Bristleback Shaman
+step << Shaman
+    #season 2
+    .goto Mulgore,63.74,81.18,40,0
+    .goto Mulgore,63.86,79.97,40,0
+    .goto Mulgore,65.00,78.60,40,0
+    .goto Mulgore,66.05,77.83,40,0
+    .goto Mulgore,65.93,77.10,40,0
+    .goto Mulgore,63.57,76.25,40,0
+    .goto Mulgore,63.86,80.14
+    >>Continue to kill |cRXP_ENEMY_Bristleback Shamans|r and obtain 10 stacks of |T237556:0|t[Building Inspiration] as they deal nature damage to you
+    .use 206381 >>Use the |T134918:0|t[|cRXP_FRIENDLY_Dyadic Icon|r] once you have 10 stacks
+    .complete 77652,1 --Learn Spell: Engrave Chest - Overload
+    .mob Bristleback Shaman
+    --User must be level 3 to be able to use item!
+step << Warrior
+    #season 2
+    .goto Mulgore,60.33,75.10,30,0
+    .goto Mulgore,61.62,76.04
+    >>Loot the |cRXP_PICK_Bristleback Loot Cache|r for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    .collect 204806,1,77651,1 --Rune of Victory Rush (1)
+step << Warrior
+    #season 2
+    .use 204806 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    .complete 77651,1 --Learn Spell: Engrave Gloves - Victory Rush
+    .isOnQuest 77651
+step << Druid
+    #season 2
+    .goto Mulgore,60.33,75.10,30,0
+    .goto Mulgore,61.62,76.04
+    >>Loot the |cRXP_PICK_Bristleback Loot Cache|r for the |T134903:0|t[|cRXP_FRIENDLY_Lunar Idol|r]
+    .collect 208414,1,77648,1 --Lunar Idol (1)
+step << Druid
+    #season 2
+    .use 208414 >>Use the |T134903:0|t[|cRXP_FRIENDLY_Lunar Idol|r]
+    >>|cRXP_WARN_Kill 6 mobs with your Moonfire to unlock the Idol|r
+    .complete 77648,1 --Learn Spell: Engrave Chest - Fury of Stormrage
+    .isOnQuest 77648
 step
     .goto Mulgore,60.54,81.04,35,0
     .goto Mulgore,62.35,81.27,35,0
@@ -343,12 +468,38 @@ step << Shaman
     .turnin 1521 >>Turn in Call of Earth
     .target Seer Ravenfeather
 step << Shaman
+    #season 2
+    .goto Mulgore,45.01,75.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meela|r
+    .turnin 77652 >>Turn in Icons of Power
+    .train 332 >>Train |T136052:0|t[Healing Wave]
+    .target Shikrik
+    .target Meela Dawnstrider
+step << Shaman
+    #season 0
     .goto Mulgore,45.01,75.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meela|r
     .train 332 >>Train |T136052:0|t[Healing Wave]
     .target Shikrik
     .target Meela Dawnstrider
 step << Hunter
+    #season 2
+    .goto Mulgore,44.26,75.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lanka|r
+    .train 1130 >>Train |T132212:0|t[Hunter's Mark]
+    .train 3044 >>Train |T132218:0|t[Arcane Shot]
+    .turnin 77649 >>Turn in A Hunter's Strength
+    .target Lanka Farshot
+    .money <0.02
+step << Hunter
+    #season 2
+    .goto Mulgore,44.26,75.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lanka|r
+    .train 3044 >>Train |T132218:0|t[Arcane Shot]
+    .turnin 77649 >>Turn in A Hunter's Strength
+    .target Lanka Farshot
+step << Hunter
+    #season 0
     .goto Mulgore,44.26,75.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lanka|r
     .train 1130 >>Train |T132212:0|t[Hunter's Mark]
@@ -356,11 +507,29 @@ step << Hunter
     .target Lanka Farshot
     .money <0.02
 step << Hunter
+    #season 0
     .goto Mulgore,44.26,75.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lanka|r
     .train 3044 >>Train |T132218:0|t[Arcane Shot]
     .target Lanka Farshot
 step << Druid
+    #season 2
+    .goto Mulgore,45.09,75.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gart|r
+    .train 467 >>Train |T136104:0|t[Thorns]
+    .train 5177 >>Train |T136006:0|t[Wrath]
+    .turnin 77648 >>Turn in Relics of the Tauren
+    .target Gart Mistrunner
+    .money <0.02
+step << Druid
+    #season 2
+    .goto Mulgore,45.09,75.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gart|r
+    .train 5177 >>Train |T136006:0|t[Wrath]
+    .turnin 77648 >>Turn in Relics of the Tauren
+    .target Gart Mistrunner
+step << Druid
+    #season 0
     .goto Mulgore,45.09,75.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gart|r
     .train 467 >>Train |T136104:0|t[Thorns]
@@ -368,11 +537,29 @@ step << Druid
     .target Gart Mistrunner
     .money <0.02
 step << Druid
+    #season 0
     .goto Mulgore,45.09,75.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gart|r
     .train 5177 >>Train |T136006:0|t[Wrath]
     .target Gart Mistrunner
 step << Warrior
+    #season 2
+    .goto Mulgore,44.02,76.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harutt|r
+    .train 3126 >>Train |T132269:0|t[Parry]
+    .train 6343 >>Train |T136105:0|t[Thunder Clap]
+    .turnin 77651 >>Turn in Into the Brambles
+    .target Harutt Thunderhorn
+    .money <0.02
+step << Warrior
+    #season 2
+    .goto Mulgore,44.02,76.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harutt|r
+    .train 3126 >>Train |T132269:0|t[Parry]
+    .turnin 77651 >>Turn in Into the Brambles
+    .target Harutt Thunderhorn
+step << Warrior
+    #season 0
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harutt|r
     .train 3126 >>Train |T132269:0|t[Parry]
@@ -380,6 +567,7 @@ step << Warrior
     .target Harutt Thunderhorn
     .money <0.02
 step << Warrior
+    #season 0
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harutt|r
     .train 3126 >>Train |T132269:0|t[Parry]
