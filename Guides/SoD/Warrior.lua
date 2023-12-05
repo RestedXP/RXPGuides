@@ -1,6 +1,6 @@
 RXPGuides.RegisterGuide([[
 #classic
-<< Alliance Warrior
+<< Alliance Warrior SoD
 #group RestedXP Rune Guide
 #subgroup Gloves
 #name Victory Rush - 1 (Elwynn Forest)
@@ -22,7 +22,7 @@ step << Warrior
 
 RXPGuides.RegisterGuide([[
 #classic
-<< Alliance Warrior
+<< Alliance Warrior SoD
 #group RestedXP Rune Guide
 #subgroup Gloves
 #name Victory Rush - 3 (Dun Morogh)
@@ -49,7 +49,7 @@ step << Warrior
 
 RXPGuides.RegisterGuide([[
 #classic
-<< Alliance Warrior
+<< Alliance Warrior SoD
 #group RestedXP Rune Guide
 #subgroup Gloves
 #name Victory Rush - 3 (Shadowglen)
