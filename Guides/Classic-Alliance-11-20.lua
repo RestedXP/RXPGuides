@@ -2357,19 +2357,21 @@ step << !Warrior !Paladin !Rogue
     .turnin 2078 >> Turn in Gyromast's Revenge
     .isQuestComplete 2078
 step
+    #completewith Turtle4727
+    >>Kill |cFFFF5722Encrusted Tide Crawlers|r and |cFFFF5722Reef Crawlers|r. Loot them for their |cFF00BCD4Crab Chunks|r
+    .complete 1138,1 -- Fine Crab Chunks (6)
+    .mob Encrusted Tide Crawler
+    .mob Reef Crawler
+step
     #sticky
     #optional
     .destroy 7442 >> Delete Gyromast's Key from your inventory
 step
 #map Darkshore
+    #label Turtle4727
     .goto Winterspring,3.10,20.90
     >>Click the |cFFDB2EEFBeached Sea Turtle|r
     .accept 4727 >> Accept Beached Sea Turtle
-step
-    .goto Darkshore,51.50,22.26,50,0
-    .goto Darkshore,49.66,21.39
-    >>Kill |cFFFF5722Encrusted Tide Crawlers|r and |cFFFF5722Reef Crawlers|r. Loot them for their |cFF00BCD4Crab Chunks|r
-    .complete 1138,1 -- Fine Crab Chunks (6)
 step << Druid
 #requires deers
     .goto Darkshore,48.87,11.32
@@ -2406,6 +2408,13 @@ step << !NightElf
     .turnin 986 >> Turn in A Lost Master
     .target Terenthis
     .accept 993 >> Accept A Lost Master << Hunter
+step << !NightElf
+    #optional
+    .isQuestTurnedIn 986
+    .goto Darkshore,39.37,43.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Terenthis|r
+    .accept 993 >> Accept A Lost Master
+    .target Terenthis
 step << Dwarf Hunter
     .goto Darkshore,33.17,40.17,40,0
     .goto Darkshore,33.17,40.17,0
@@ -2482,6 +2491,7 @@ step
     .target Gwennyth Bly'Leggonde
 step
 #map Darkshore
+    .isQuestComplete 1138
     .goto Felwood,18.50,19.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gubber Blump|r
     .turnin 1138 >> Turn in Fruit of the Sea
@@ -3968,6 +3978,8 @@ step
     #completewith next
     >>Kill |cFFFF5722Encrusted Tide Crawlers|r and |cFFFF5722Reef Crawlers|r. Loot them for their |cFF00BCD4Crab Chunks|r
     .complete 1138,1 -- Fine Crab Chunks (6)
+    .mob Encrusted Tide Crawler
+    .mob Reef Crawler
 step
 #map Darkshore
     #era/som
@@ -3982,6 +3994,8 @@ step
     .goto Darkshore,49.66,21.39
     >>Kill |cFFFF5722Encrusted Tide Crawlers|r and |cFFFF5722Reef Crawlers|r. Loot them for their |cFF00BCD4Crab Chunks|r
     .complete 1138,1 -- Fine Crab Chunks (6)
+    .mob Encrusted Tide Crawler
+    .mob Reef Crawler
 step << NightElf
     #softcore
     #completewith next
@@ -6109,6 +6123,7 @@ step
     .goto Darkshore,37.21,44.22
     .accept 4740 >> Accept WANTED: Murkdeep!
 step
+    .isQuestTurnedIn 986
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Terenthis|r
 	.target Terenthis
     .goto Darkshore,39.37,43.48
@@ -6192,6 +6207,13 @@ step
     .complete 731,1
     .isOnQuest 731
 step
+    #era/som
+    #completewith Murkdeep
+    >>Kill |cFFFF5722Encrusted Tide Crawlers|r and |cFFFF5722Reef Crawlers|r. Loot them for their |cFF00BCD4Crab Chunks|r
+    .complete 1138,1 -- Fine Crab Chunks (6)
+    .mob Encrusted Tide Crawler
+    .mob Reef Crawler
+step
     .goto Ashenvale,13.97,4.10
     >>Click the |cFFDB2EEFBeached Sea Creature|r
     .accept 4733 >> Accept Beached Sea Creature
@@ -6222,6 +6244,16 @@ step
     .mob Greymist Warrior
     .mob Greymist Hunter
     .mob Greymist Coastrunner
+step
+    #era/som
+    .goto Darkshore,34.0,80.8,60,0
+    .goto Darkshore,35.8,77.8,60,0
+    .goto Darkshore,35.6,71.8,60,0
+    .goto Darkshore,35.8,77.8
+    >>Kill |cFFFF5722Encrusted Tide Crawlers|r and |cFFFF5722Reef Crawlers|r. Loot them for their |cFF00BCD4Crab Chunks|r
+    .complete 1138,1 -- Fine Crab Chunks (6)
+    .mob Encrusted Tide Crawler
+    .mob Reef Crawler
 step
 	#era/som
     .goto Darkshore,41.44,86.06,50,0
