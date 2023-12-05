@@ -825,12 +825,15 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gorbold Steelhand|r
     .vendor 6301 >> Buy |T134059:0|t[Mild Spices]
     >>|cFFFCDC00Use the|r |T134059:0|t[Mild Spices] |cFFFCDC00and your|r |T132832:0|t[Small Eggs] |cFFFCDC00to make Herb Baked Eggs. Do this until your Cooking has reached level 10|r
-    .skill cooking,10,1 -- step only displays if cooking skill is less than 10
+    >>|cRXP_WARN_Continue leveling your|r |T133971:0|t[Cooking] |cRXP_WARN_passed 10. There is a quest in Duskwood which requires your|r |T133971:0|t[Cooking] |cRXP_WARN_to be 50. You can also do this while you are on the boat soon|r
+    .skill cooking,50,1 -- step only displays if cooking skill is less than 10
     .target Gorbold Steelhand
+    .itemcount 6889,>4
 step
     .goto Darkshore,37.514,41.671
     +|cFFFCDC00Use your|r |T133971:0|t[Cooking] |cFFFCDC00profession to make Herb Baked Eggs. Do this until your|r |T133971:0|t[Cooking] |cFFFCDC00has reached level 10|r
-    .skill cooking,10,1 -- step only displays if cooking skill is less than 10
+    >>|cRXP_WARN_Continue leveling your|r |T133971:0|t[Cooking] |cRXP_WARN_passed 10. There is a quest in Duskwood which requires your|r |T133971:0|t[Cooking] |cRXP_WARN_to be 50. You can also do this while you are on the boat soon|r
+    .skill cooking,50,1 -- step only displays if cooking skill is less than 10
     .target Gorbold Steelhand
 step
     #optional
@@ -2352,8 +2355,9 @@ step << !Warrior !Paladin !Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gelkak Gyromast|r
     .turnin 2078 >> Turn in Gyromast's Revenge
     .isQuestComplete 2078
-step << !Warrior !Paladin !Rogue
+step
     #sticky
+    #optional
     .destroy 7442 >> Delete Gyromast's Key from your inventory
 step
 #map Darkshore
@@ -3533,12 +3537,15 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gorbold Steelhand|r
     .vendor 6301 >> Buy |T134059:0|t[Mild Spices]
     >>|cFFFCDC00Use the|r |T134059:0|t[Mild Spices] |cFFFCDC00and your|r |T132832:0|t[Small Eggs] |cFFFCDC00to make Herb Baked Eggs. Do this until your Cooking has reached level 10|r
-    .skill cooking,10,1 -- step only displays if cooking skill is less than 10
+    >>|cRXP_WARN_Continue leveling your|r |T133971:0|t[Cooking] |cRXP_WARN_passed 10. There is a quest in Duskwood which requires your|r |T133971:0|t[Cooking] |cRXP_WARN_to be 50. You can also do this while you are on the boat soon|r
+    .skill cooking,50,1 -- step only displays if cooking skill is less than 10
     .target Gorbold Steelhand
+    .itemcount 6889,>4
 step
     .goto Darkshore,37.514,41.671
     +|cFFFCDC00Use your|r |T133971:0|t[Cooking] |cFFFCDC00profession to make Herb Baked Eggs. Do this until your|r |T133971:0|t[Cooking] |cFFFCDC00has reached level 10|r
-    .skill cooking,10,1 -- step only displays if cooking skill is less than 10
+    >>|cRXP_WARN_Continue leveling your|r |T133971:0|t[Cooking] |cRXP_WARN_passed 10. There is a quest in Duskwood which requires your|r |T133971:0|t[Cooking] |cRXP_WARN_to be 50. You can also do this while you are on the boat soon|r
+    .skill cooking,50,1 -- step only displays if cooking skill is less than 10
     .target Gorbold Steelhand
 step
 #map Darkshore
@@ -3904,8 +3911,9 @@ step << !Warrior !Paladin !Rogue !Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gelkak Gyromast|r
     .turnin 2078 >> Turn in Gyromast's Revenge
     .isQuestComplete 2078
-step << !Warrior !Paladin !Rogue !Druid
+step
     .solo
+    #optional
     #sticky
     .destroy 7442 >> Delete Gyromast's Key from your inventory
 step
