@@ -1,6 +1,6 @@
 RXPGuides.RegisterGuide([[
 #classic
-<< Warrior
+<< Warrior sod
 #group RestedXP Rune Guide
 #subgroup Legs
 #name Consumed by Rage - 25 (Wetlands)
