@@ -826,15 +826,16 @@ step
     .vendor 6301 >> Buy |T134059:0|t[Mild Spices]
     >>|cFFFCDC00Use the|r |T134059:0|t[Mild Spices] |cFFFCDC00and your|r |T132832:0|t[Small Eggs] |cFFFCDC00to make Herb Baked Eggs. Do this until your Cooking has reached level 10|r
     >>|cRXP_WARN_Continue leveling your|r |T133971:0|t[Cooking] |cRXP_WARN_passed 10. There is a quest in Duskwood which requires your|r |T133971:0|t[Cooking] |cRXP_WARN_to be 50. You can also do this while you are on the boat soon|r
-    .skill cooking,50,1 -- step only displays if cooking skill is less than 10
+    .skill cooking,50,1
     .target Gorbold Steelhand
-    .itemcount 6889,>4
+    .itemcount 6889,>4 -- Small Egg
 step
     .goto Darkshore,37.514,41.671
     +|cFFFCDC00Use your|r |T133971:0|t[Cooking] |cFFFCDC00profession to make Herb Baked Eggs. Do this until your|r |T133971:0|t[Cooking] |cFFFCDC00has reached level 10|r
     >>|cRXP_WARN_Continue leveling your|r |T133971:0|t[Cooking] |cRXP_WARN_passed 10. There is a quest in Duskwood which requires your|r |T133971:0|t[Cooking] |cRXP_WARN_to be 50. You can also do this while you are on the boat soon|r
-    .skill cooking,50,1 -- step only displays if cooking skill is less than 10
+    .skill cooking,50,1
     .target Gorbold Steelhand
+    .itemcount 6889,>4 -- Small Egg
 step
     #optional
     .goto Darkshore,37.70,40.70
@@ -3538,15 +3539,16 @@ step
     .vendor 6301 >> Buy |T134059:0|t[Mild Spices]
     >>|cFFFCDC00Use the|r |T134059:0|t[Mild Spices] |cFFFCDC00and your|r |T132832:0|t[Small Eggs] |cFFFCDC00to make Herb Baked Eggs. Do this until your Cooking has reached level 10|r
     >>|cRXP_WARN_Continue leveling your|r |T133971:0|t[Cooking] |cRXP_WARN_passed 10. There is a quest in Duskwood which requires your|r |T133971:0|t[Cooking] |cRXP_WARN_to be 50. You can also do this while you are on the boat soon|r
-    .skill cooking,50,1 -- step only displays if cooking skill is less than 10
+    .skill cooking,50,1
     .target Gorbold Steelhand
-    .itemcount 6889,>4
+    .itemcount 6889,>4 -- Small Egg
 step
     .goto Darkshore,37.514,41.671
     +|cFFFCDC00Use your|r |T133971:0|t[Cooking] |cFFFCDC00profession to make Herb Baked Eggs. Do this until your|r |T133971:0|t[Cooking] |cFFFCDC00has reached level 10|r
     >>|cRXP_WARN_Continue leveling your|r |T133971:0|t[Cooking] |cRXP_WARN_passed 10. There is a quest in Duskwood which requires your|r |T133971:0|t[Cooking] |cRXP_WARN_to be 50. You can also do this while you are on the boat soon|r
-    .skill cooking,50,1 -- step only displays if cooking skill is less than 10
+    .skill cooking,50,1
     .target Gorbold Steelhand
+    .itemcount 6889,>4 -- Small Egg
 step
 #map Darkshore
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gorbold Steelhand|r
