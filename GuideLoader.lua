@@ -948,6 +948,7 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
 
     defaultFor = guide.defaultfor or defaultFor
     guide.group = guide.group or groupOrContent
+    groupOrContent = addon.GroupOverride(guide) or groupOrContent
 
     if defaultFor then
         local boost58
@@ -991,6 +992,31 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
     return guide,nil,metadata
 end
 
+
+function addon.GroupOverride(guide)
+    if type(guide) == "table" then
+        if guide.group then
+            local faction = guide.group:match("RestedXP ([AH][lo][lr][id][ea]%w*)")
+            if faction == "Alliance" then
+                guide.subgroup = guide.group:gsub("RestedXP Alliance", "RXP Speedrun Guide")
+                local group = "RestedXP Speedrun Guide (A)"
+                guide.next = guide.next and guide.next:gsub(".*\\","")
+                guide.group = group
+                --print('\n',guide.group,guide.subgroup,faction,guide.name,'\n')
+                return group
+            elseif faction == "Horde" then
+                guide.subgroup = guide.group:gsub("RestedXP Horde", "RXP Speedrun Guide")
+                local group = "RestedXP Speedrun Guide (H)"
+                guide.next = guide.next and guide.next:gsub(".*\\","")
+                guide.group = group
+                --print(group,guide.subgroup,faction,guide.group,guide.name)
+                return group
+            end
+        end
+    else
+        return guide
+    end
+end
 
 if not _G.RXPGuides.RegisterGuide then
     _G.RXPGuides.RegisterGuide = addon.RegisterGuide

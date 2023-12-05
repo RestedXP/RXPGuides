@@ -1920,7 +1920,7 @@ function RXPFrame:GenerateMenuTable(menu)
             table.sort(t.names_)
         end
         local item = {
-            text = group,
+            text = addon.GroupOverride(group),
             notCheckable = 1,
             hasArrow = true,
             menuList = {}

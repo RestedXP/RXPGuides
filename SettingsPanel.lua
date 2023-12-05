@@ -119,12 +119,10 @@ function addon.settings:InitializeSettings()
             enableBindAutomation = true,
             enableGossipAutomation = true,
             showUnusedGuides = true,
-            --SoM = 1,
             anchorOrientation = "top",
             chromieTime = "auto",
             enableXpStepSkipping = true,
             enableAutomaticXpRate = true,
-            autoLoadStartingGuides = true,
             showFlightTimers = true,
 
             -- Sliders
@@ -264,12 +262,6 @@ function addon.settings:MigrateLegacySettings()
         RXPData.hideUnusedGuides = nil
     end
 
-    -- TODO autoLoadGuides -> autoLoadStartingGuides
-    if RXPData.autoLoadGuides ~= nil then
-        n("hideUnusedGuides", RXPData.autoLoadGuides)
-        db.autoLoadStartingGuides = RXPData.autoLoadGuides
-        RXPData.autoLoadGuides = nil
-    end
 
     if RXPCData.disableArrow ~= nil then
         n("disableArrow", RXPCData.disableArrow)
@@ -2571,24 +2563,6 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.RXPFrame.GenerateMenuTable()
-                        end
-                    },
-                    autoLoadStartingGuides = {
-                        name = L("Load starting zone guides"),
-                        desc = L(
-                            "Automatically picks a suitable guide whenever you log in for the first time on a character"),
-                        type = "toggle",
-                        get = function()
-                            return RXPData.autoLoadStartingGuides
-                        end,
-                        width = optionsWidth,
-                        order = 3.7,
-                        hidden = not addon.defaultGuideList,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            RXPData.autoLoadStartingGuides = value
-                            addon.RXPFrame.GenerateMenuTable()
-
                         end
                     },
                     arrowHeader = {

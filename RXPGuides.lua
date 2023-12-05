@@ -85,6 +85,7 @@ end
 local GetAddOnMetadata = C_AddOns and C_AddOns.GetAddOnMetadata or _G.GetAddOnMetadata
 addon.release = GetAddOnMetadata(addonName, "Version")
 addon.title = GetAddOnMetadata(addonName, "Title")
+local cacheVersion = 1
 local L = addon.locale.Get
 
 if string.match(addon.release, 'project') then
@@ -928,7 +929,7 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
 end
 
 function addon:CreateMetaDataTable(wipe)
-    if wipe or addon.release ~= RXPData.release then
+    if wipe or addon.release ~= RXPData.release or RXPData.cacheVersion ~= cacheVersion or not cacheVersion then
         RXPData.guideMetaData = nil
     end
     local guideMetaData = RXPData.guideMetaData or {}
@@ -1018,23 +1019,6 @@ function addon:OnEnable()
     addon.GetProfessionLevel()
     local guide = addon.GetGuideTable(RXPCData.currentGuideGroup,
                                       RXPCData.currentGuideName)
-    if not guide and RXPData.autoLoadStartingGuides then
-        if addon.defaultGuideList then
-            local currentMap = C_Map.GetBestMapForUnit("player")
-            for zone, guideName in pairs(addon.defaultGuideList) do
-                if currentMap and (currentMap == zone or currentMap == addon.mapId[zone]) then
-                    local group, name = string.match(guideName,
-                                                     "([^\\]+)%s*\\%s*([^\\]+)")
-                    guide = addon.GetGuideTable(group, name)
-                end
-            end
-        end
-        guide = guide or addon.defaultGuide
-        if addon.game == "TBC" and
-            (UnitLevel("player") == 58 and not guide.boost58) then
-            guide = nil
-        end
-    end
     addon:LoadGuide(guide, true)
     if not addon.currentGuide then
         addon.RXPFrame:SetHeight(20)
@@ -1116,6 +1100,7 @@ function addon:OnEnable()
     local updateFrame = CreateFrame("Frame")
     updateFrame:SetScript("OnUpdate", addon.UpdateLoop)
     RXPData.release = addon.release
+    RXPData.cacheVersion = cacheVersion
 end
 
 -- Tracks if a player is on a loading screen and pauses the main update loop
