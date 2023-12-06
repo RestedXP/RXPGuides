@@ -172,3 +172,320 @@ step << Druid
     .use 210500
     .itemcount 210500,1
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+#group RestedXP Rune Guide
+#subgroup Chest << Priest/Hunter/Druid/Warrior/Shaman
+#subgroup Legs << Warlock/Paladin
+#subgroup Gloves << Mage/Rogue
+#name Serendipity - 25 (Ratchet) << Priest
+#name Lone Wolf - 25 (Ratchet) << Hunter
+#name Survival of the Fittest - 25 (Ratchet) << Druid
+#name Warbringer - 25 (Ratchet) << Warrior
+#name Dual Wield - 25 (Ratchet) << Shaman
+#name Demonic Pact - 25 (Ratchet) << Warlock
+#name Divine Sacrifice - 25 (Ratchet) << Paladin
+#name Rewind Time - 25 (Ratchet) << Mage
+#name Main Gauche - 25 (Ratchet) << Rogue
+
+<< SoD
+
+step << Horde
+    .train 415995,1 << Priest
+    .train 410010,1 << Paladin
+    .train 401761,1 << Mage
+    .train 410122,1 << Hunter
+    .train 416042,1 << Druid
+    .train 425445,1 << Warrior
+    .train 425476,1 << Warlock
+    .train 424990,1 << Rogue
+    .train 410096,1 << Shaman
+    #completewith next
+    >>OPTIONAL: Buy 24x |T134844:0|t[Fish Oil] and 20x |T133710:0|t[Dark Iron Ordinance]
+    *|cRXP_WARN_Keep in mind that you need at least 5 gold to see the quests|r
+    .collect 17058,24
+    .collect 210138,20
+step << Horde
+    .train 415995,1 << Priest
+    .train 410010,1 << Paladin
+    .train 401761,1 << Mage
+    .train 410122,1 << Hunter
+    .train 416042,1 << Druid
+    .train 425445,1 << Warrior
+    .train 425476,1 << Warlock
+    .train 424990,1 << Rogue
+    .train 410096,1 << Shaman
+    >>Buy at least 30x |T133870:0|t[Shredder Autosalvage Units]
+    *If you have the gold you can also just directly buy the 16 |T133001:0|t[Shredder Turbocharger]
+    .goto Orgrimmar,55.69,62.86
+    .collect 210147,30
+step << Alliance
+    .train 415995,1 << Priest
+    .train 410010,1 << Paladin
+    .train 401761,1 << Mage
+    .train 410122,1 << Hunter
+    .train 416042,1 << Druid
+    .train 425445,1 << Warrior
+    .train 425476,1 << Warlock
+    .train 424990,1 << Rogue
+    .train 410096,1 << Shaman
+    #completewith next
+    >>OPTIONAL: Buy 24x |T134844:0|t[Fish Oil] and 20x |T133710:0|t[Dark Iron Ordinance]
+    *|cRXP_WARN_Keep in mind that you need at least 5 gold to see the quests|r
+    .collect 17058,24
+    .collect 210138,20
+step << Alliance
+    .train 415995,1 << Priest
+    .train 410010,1 << Paladin
+    .train 401761,1 << Mage
+    .train 410122,1 << Hunter
+    .train 416042,1 << Druid
+    .train 425445,1 << Warrior
+    .train 425476,1 << Warlock
+    .train 424990,1 << Rogue
+    .train 410096,1 << Shaman
+    >>Buy about 35x |T133870:0|t[Shredder Autosalvage Units]
+    *If you have the gold you can also just directly buy the 16x |T133001:0|t[Shredder Turbocharger]
+    .goto Ironforge,24.2,74.5,-1
+    .goto Stormwind,61.1,70.7,-1
+    .collect 210147,30
+step << Horde
+    .train 415995,1 << Priest
+    .train 410010,1 << Paladin
+    .train 401761,1 << Mage
+    .train 410122,1 << Hunter
+    .train 416042,1 << Druid
+    .train 425445,1 << Warrior
+    .train 425476,1 << Warlock
+    .train 424990,1 << Rogue
+    .train 410096,1 << Shaman
+    #completewith next
+    .goto Stonetalon Mountains,66.6,55.5
+    .zone Stonetalon Mountains >>Travel to Stonetalon Mountains
+step << Horde
+    .train 415995,1 << Priest
+    .train 410010,1 << Paladin
+    .train 401761,1 << Mage
+    .train 410122,1 << Hunter
+    .train 416042,1 << Druid
+    .train 425445,1 << Warrior
+    .train 425476,1 << Warlock
+    .train 424990,1 << Rogue
+    .train 410096,1 << Shaman
+    >>Kill the |cRXP_ENEMY_Venture Co. Light Shredders|r. Use the |T133870:0|t[Shredder Autosalvage Unit] on the corpse for the |cRXP_LOOT_Turbochargers|r
+    .goto Stonetalon Mountains,66.6,55.5
+    .collect 210146,16
+    .use 210147
+    .mob Venture Co. Light Shredder
+step << Horde
+    .train 415995,1 << Priest
+    .train 410010,1 << Paladin
+    .train 401761,1 << Mage
+    .train 410122,1 << Hunter
+    .train 416042,1 << Druid
+    .train 425445,1 << Warrior
+    .train 425476,1 << Warlock
+    .train 424990,1 << Rogue
+    .train 410096,1 << Shaman
+    #completewith RuneRatchetDarkIronOrdinance
+    .goto Wetlands,49.6,17.4
+    .zone Wetlands >>Take the zeppelin in Orgrimmar to Tirisfal and go to Wetlands. Start looking for a group to farm the |T133710:0|t[Dark Iron Ordinance]
+step << Alliance
+    .train 415995,1 << Priest
+    .train 410010,1 << Paladin
+    .train 401761,1 << Mage
+    .train 410122,1 << Hunter
+    .train 416042,1 << Druid
+    .train 425445,1 << Warrior
+    .train 425476,1 << Warlock
+    .train 424990,1 << Rogue
+    .train 410096,1 << Shaman
+    #completewith RuneRatchetDarkIronOrdinance
+    .goto Wetlands,49.6,17.4
+    .zone Wetlands >>Travel to Wetlands. Start looking for a group to farm the |T133710:0|t[Dark Iron Ordinance]
+step
+    .train 415995,1 << Priest
+    .train 410010,1 << Paladin
+    .train 401761,1 << Mage
+    .train 410122,1 << Hunter
+    .train 416042,1 << Druid
+    .train 425445,1 << Warrior
+    .train 425476,1 << Warlock
+    .train 424990,1 << Rogue
+    .train 410096,1 << Shaman
+    #label RuneRatchetDarkIronOrdinance
+    #loop
+    .goto Wetlands,48.6,16.0,40,0
+    .goto Wetlands,60.6,25.8,40,0
+    >>Kill the elite |cRXP_ENEMY_Dark Iron Dwarves|r. Loot them for the |cRXP_LOOT_Iron Ordinances|r
+    *|cRXP_WARN_They drop for everyone in your group|r
+    .collect 210138,20
+    .mob Dark Iron Dwarf
+    .mob Dark Iron Bombardier
+step
+    .train 415995,1 << Priest
+    .train 410010,1 << Paladin
+    .train 401761,1 << Mage
+    .train 410122,1 << Hunter
+    .train 416042,1 << Druid
+    .train 425445,1 << Warrior
+    .train 425476,1 << Warlock
+    .train 424990,1 << Rogue
+    .train 410096,1 << Shaman
+    >>Kill the |cRXP_ENEMY_Blue Gill Oracles|r. Loot them for the |cRXP_LOOT_Fish Oil|r
+    .goto Wetlands,16.6,32.2
+    .collect 17058,24
+    .mob Blue Gill Oracle
+step << Alliance
+    .train 415995,1 << Priest
+    .train 410010,1 << Paladin
+    .train 401761,1 << Mage
+    .train 410122,1 << Hunter
+    .train 416042,1 << Druid
+    .train 425445,1 << Warrior
+    .train 425476,1 << Warlock
+    .train 424990,1 << Rogue
+    .train 410096,1 << Shaman
+    #completewith next
+    .goto Stonetalon Mountains,66.6,55.5
+    .zone Stonetalon Mountains >>Travel to Stonetalon Mountains (e.g. take the boat to Dustwallow Marsh -> fly to Ratchet or directly to Stonetalon Mountains)
+step << Alliance
+    .train 415995,1 << Priest
+    .train 410010,1 << Paladin
+    .train 401761,1 << Mage
+    .train 410122,1 << Hunter
+    .train 416042,1 << Druid
+    .train 425445,1 << Warrior
+    .train 425476,1 << Warlock
+    .train 424990,1 << Rogue
+    .train 410096,1 << Shaman
+    >>Kill the |cRXP_ENEMY_Venture Co. Light Shredders|r. Use the |T133870:0|t[Shredder Autosalvage Unit] on the corpse for the |cRXP_LOOT_Turbochargers|r
+    .goto Stonetalon Mountains,66.6,55.5
+    .collect 210146,16
+    .use 210147
+    .mob Venture Co. Light Shredder
+step << Horde
+    .train 415995,1 << Priest
+    .train 410010,1 << Paladin
+    .train 401761,1 << Mage
+    .train 410122,1 << Hunter
+    .train 416042,1 << Druid
+    .train 425445,1 << Warrior
+    .train 425476,1 << Warlock
+    .train 424990,1 << Rogue
+    .train 410096,1 << Shaman
+    #completewith RuneRatchetGrizzby
+    .goto The Barrens,61.8,39.4
+    .zone The Barrens >>Travel to The Barrens (e.g. fly to Undercity from Hammerfall (Arathi Highlands) -> take the zeppelin to Orgrimmar)
+step << Alliance
+    .train 415995,1 << Priest
+    .train 410010,1 << Paladin
+    .train 401761,1 << Mage
+    .train 410122,1 << Hunter
+    .train 416042,1 << Druid
+    .train 425445,1 << Warrior
+    .train 425476,1 << Warlock
+    .train 424990,1 << Rogue
+    .train 410096,1 << Shaman
+    #completewith RuneRatchetGrizzby
+    .goto The Barrens,61.8,39.4
+    .zone The Barrens >>Travel to The Barrens
+step
+    .train 415995,1 << Priest
+    .train 410010,1 << Paladin
+    .train 401761,1 << Mage
+    .train 410122,1 << Hunter
+    .train 416042,1 << Druid
+    .train 425445,1 << Warrior
+    .train 425476,1 << Warlock
+    .train 424990,1 << Rogue
+    .train 410096,1 << Shaman
+    #label RuneRatchetGrizzby
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Grizzby|r and wait for the roleplay
+    .goto The Barrens,61.8,39.4
+    .turnin 78625 >>Turn in Fish Oil
+    .turnin 78266 >>Turn in Dark Iron Ordinance
+    .turnin 78267 >>Turn in Shredder Turbochargers
+    .target Grizzby
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Grizzby|r
+    .vendor
+    .use 210822 << Priest
+    .use 210820 << Paladin
+    .use 210654 << Mage
+    .use 210818 << Hunter
+    .use 210817 << Druid
+    .use 210825 << Warrior
+    .use 210824 << Warlock
+    .use 210653 << Rogue
+    .use 210823 << Shaman
+    .train 415995 >>|cRXP_WARN_Buy and use the|r |T135791:0|t[|cRXP_FRIENDLY_Harmonious Epiphany|r] |cRXP_WARN_to train|r |T237549:0|t[Serendipity] << Priest
+    .train 410010 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Sacrifice|r] |cRXP_WARN_to train|r |T253400:0|t[Divine Sacrifice] << Paladin
+    .train 401761 >>|cRXP_WARN_Buy and use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Rewind Time|r] |cRXP_WARN_to train|r |T237538:0|t[Rewind Time] << Mage
+    .train 410122 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Lone Wolf|r] |cRXP_WARN_to train|r |T132266:0|t[Lone Wolf] << Hunter
+    .train 416042 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Survival|r] |cRXP_WARN_to train|r |T132126:0|t[Survival of the Fittest] << Druid
+    .train 425445 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Warbringer|r] |cRXP_WARN_to train|r |T236319:0|t[Warbinger] << Warrior
+    .train 425476 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Pact|r] |cRXP_WARN_to train|r |T237562:0|t[Demonic Pact] << Warlock
+    .train 424990 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Main Gauche|r] |cRXP_WARN_to train|r |T237531:0|t[Main Gauche] << Rogue
+    .train 410096 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Dual Wield Specialization|r] |cRXP_WARN_to train |r |T132147:0|t[Dual Wield Specialization] << Shaman
+    .target Grizzby
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+#group RestedXP Rune Guide
+#subgroup Chest << Shaman/Rogue
+#subgroup Legs << Mage/Warlock/Hunter/Druid/
+#subgroup Gloves << Paladin/Warrior/Priest
+#name Mind Sear - 25 (Reputation) << Priest
+#name Serpent Spread - 25 (Reputation) << Hunter
+#name Skull Bash - 25 (Reputation) << Druid
+#name Single-Minded Fury - 25 (Reputation) << Warrior
+#name Healing Rain - 25 (Reputation) << Shaman
+#name Everlasting Affliction - 25 (Reputation) << Warlock
+#name Beacon of Light - 25 (Reputation) << Paladin
+#name Arcane Surge - 25 (Reputation) << Mage
+#name Just a Flesh Wound - 25 (Reputation) << Rogue
+
+<< SoD
+
+step
+    >>Go out and find |T132765:0|t[Waylaid Supplies]. Then go back into a capital city and deliver them. If you want to get the reputation faster buy the required items in the AH to upgrade them.
+    *|cRXP_WARN_You can farm lower level mobs until you hit Friendly. Afterwards you have to farm high level mobs (>=17).|r Chests in the open world have a 90%+ chance to drop one of those items.
+    .reputation 2587,honored << Horde
+    .reputation 2586,honored << Alliance
+step 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cFF00FF25Supply Officer|r in the nearest city
+    .goto Orgrimmar,51.6,64.6,-1 << Horde
+    .goto Thunder Bluff,39.8,53.4,-1 << Horde
+    .goto Undercity,64.6,38.2,-1 << Horde
+    .goto Stormwind,55.0,61.6,-1 << Alliance
+    .goto Ironforge,24.6,67.2,-1 << Alliance
+    .goto Darnassus,60.0,56.4,-1 << Alliance
+    .vendor
+    .use 211386 << Mage
+    .use 211387 << Paladin
+    .use 211392 << Warlock
+    .use 211391 << Shaman
+    .use 211385 << Hunter
+    .use 211393 << Warrior
+    .use 206002 << Druid
+    .use 211390 << Rogue
+    .use 205950 << Priest
+    .train 415996 >>|cRXP_WARN_Buy and use the|r |T135791:0|t[|cRXP_FRIENDLY_Tenebrous Epiphany|r] |cRXP_WARN_to train|r |T237565:0|t[Mind Sear] << Priest
+    .train 409999 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Beckoning Light|r] |cRXP_WARN_to train|r |T236247:0|t[Beacon of Light] << Paladin
+    .train 425171 >>|cRXP_WARN_Buy and use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Arcane Surge|r] |cRXP_WARN_to train|r |T135734:0|t[Arcane Surge] << Mage
+    .train 425760 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Serpent Spread|r] |cRXP_WARN_to train|r |T132209:0|t[Serpent Spread] << Hunter
+    .train 416046 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Skull Bash|r] |cRXP_WARN_to train|r |T133732:0|t[Skull Bash] << Druid
+    .train 416003 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Single-Minded Fury|r] |cRXP_WARN_to train|r |T134919:0|t[Single-Minded Fury] << Warrior
+    .train 416008 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Everlasting Affliction|r] |cRXP_WARN_to train|r |T236296:0|t[Everlasting Affliction] << Warlock
+    .train 400082 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Teasing|r] |cRXP_WARN_to train|r |T132284:0|t[Just a Flesh Wound] << Rogue
+    .train 416057 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Healing Rain|r] |cRXP_WARN_to train|r |T136107:0|t[Healing Rain] << Shaman
+    .target Elaine Compton << Alliance
+    .target Tamelyn Aldridge << Alliance
+    .target Macry Baker << Alliance
+    .target Jornah << Horde
+    .target Dokimi << Horde
+    .target Gishah << Horde
+]])
