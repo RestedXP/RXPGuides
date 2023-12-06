@@ -557,9 +557,10 @@ function addon.settings:CreateImportOptionsPanel()
                     return L(
                                "This action will remove ALL guides from the database\nAre you sure?")
                 end,
-                disabled = function()
+                --[[disabled = function()
                     return next(addon.db.profile.guides) == nil
-                end,
+                end,]]
+                --Let people purge the data even without any installed guides in case they experience caching issues
                 func = function()
                     addon.db.profile.guides = {}
                     addon:CreateMetaDataTable(true)
