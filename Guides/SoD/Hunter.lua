@@ -64,7 +64,7 @@ step
     .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Explosive Shot|r]
     .use 206169
     .train 410123,1
-    
+
 ]])
 
 
@@ -157,7 +157,7 @@ step << Tauren
 
     ]])
 
-    
+
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Hunter SoD
