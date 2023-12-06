@@ -336,3 +336,39 @@ step
     .itemcount 204912,1
     .train 425477 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Grace|r] |cRXP_WARN_to train|r |T236293:0|t[Demonic Grace]
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Warlock SoD
+#group RestedXP Rune Guide
+-- #subgroup Chest << Mage
+#subgroup Gloves << Warlock
+-- #name Burnout - 8 (Tirisfal Glades) << Mage
+#name Chaos Bolt - 8 (Tirisfal Glades) << Warlock
+--Permok: Dont load it for mages for now
+
+step << Mage
+    >>Buy a (or multiple) |T135933:0|t[Comprehensive Charm] from a Reagent Vendor
+    .collect 211779,1
+step
+    #completewith next
+    .zone Tirisfal Glades >>Travel to Tirisfal Glades
+step
+    .train 403925,1 << Warlock
+    .train 401759,1 << Mage
+    .goto Tirisfal Glades,66.3,40.0
+    >>Free the |cRXP_ENEMY_Frozen Murloc|r |cRXP_WARN_by using fire spells|r. Loot him for |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Burnout|r] << Mage
+    >>Free the |cRXP_ENEMY_Frozen Murloc|r |cRXP_WARN_by using fire spells|r. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Chaos Bolt|r] << Warlock
+    *|cRXP_WARN_At low levels you won't be able to free it alone, search for another Warlock of Mage|r
+    .collect 205228,1 << Warlock
+    .collect 203748,1 << Mage
+    .mob Frozen Murloc
+step
+    .use 205228 << Warlock
+    .use 203748 << Mage
+    .itemcount 205228,1 << Warlock
+    .itemcount 203748,1 << Mage
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a Reagent Vendor to use the item << Mage
+    .train 403925 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Chaos Bolt|r] |cRXP_WARN_to train|r |T236291:0|t[Chaos Bolt]  << Warlock
+    .train 401759 >>Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Burnout|r] |cRXP_WARN_to train|r |T236207:0|t[Burnout] << Mage
+]])
