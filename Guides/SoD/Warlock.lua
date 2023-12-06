@@ -13,7 +13,7 @@ step << Warlock
     #season 2
     #label RoH
     .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r]
-    .use 205230 
+    .use 205230
     .itemcount 205230,1
 ]])
 
@@ -59,7 +59,7 @@ step
     >>Loot the |cRXP_PICK_Waterlogged Stashbox|r for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r] inside the cave
     .collect 205230,1 --Rune of Haunting (1)
     .train 403919,1
-step 
+step
     #season 2
     .cast 402265 >>Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r]
     .use 205230
@@ -73,7 +73,7 @@ step << Orc
 
     ]])
 
-    
+
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
@@ -96,7 +96,7 @@ step
     >>Loot the |cRXP_PICK_Lost Stache|r inside the cave for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r]
     .collect 205230,1 --Rune of Haunting (1)
     .train 403919,1
-step 
+step
     #season 2
     .cast 402265 >>Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r]
     .use 205230
@@ -191,7 +191,7 @@ step
 step
     .train 416009,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tInteract with the |cFF00FF25Dead Acolyte|r. Open |T133625:0|t[Acolyte's Knapsack]
-    .goto Tirisfal Glades,58.6,31.6
+    .goto Tirisfal Glades,76.61,44.87
     .use 205364
     .collect 205181,1
     .collect 205184,1
