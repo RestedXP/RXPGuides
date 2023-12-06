@@ -194,7 +194,7 @@ step
     .goto Tirisfal Glades,76.61,44.87
     .use 205364
     .collect 205181,1
-    .collect 205184,1
+    .collect 208224,1
     .skipgossip 208927,1
     .mob Dead Acolyte
 step
@@ -207,7 +207,7 @@ step
 step
     .train 416009,1
     >>Use the |T133447:0|t[Powerless Artifact] next to the rune stone. |cRXP_WARN_Afterwards you have 10 minutes to get to Undercity (look at your debuff)|r
-    .goto Tirisfal Glades,58.6,31.6
+    .goto Tirisfal Glades,76.61,44.87
     .use 205182
     .collect 205183,1
 step
