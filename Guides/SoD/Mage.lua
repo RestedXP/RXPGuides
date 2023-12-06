@@ -97,7 +97,7 @@ step
     >>Loot the |cRXP_PICK_Waterlogged Stashbox|r for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r] inside the cave
     .collect 203751,1 --Spell Notes: CALE ENCI (1)
     .train 401760,1
-step 
+step
     #season 2
     .cast 402265 >>Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r]
     .use 203751
@@ -111,7 +111,7 @@ step << Troll
 
     ]])
 
-    
+
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Mage SoD
@@ -135,7 +135,7 @@ step
     .collect 203751,1 --Spell Notes: CALE ENCI (1)
     .mob Scarlet Initiate
     .train 401760,1
-step 
+step
     #season 2
     .cast 402265 >>Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r]
     .use 203751
@@ -154,9 +154,9 @@ RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune Guide
 #subgroup Chest << Mage
-#name 14 - Regeneration (Westfall) << Mage
+#name 14 - Regeneration (Westfall)
+<< Alliance Mage SoD
 
--- << Alliance
 
 step
     #loop
@@ -177,7 +177,6 @@ step
 step
     >>Use |T134939:0|t[Spell Notes: TENGI RONEERA] to learn |T132871:0|t[Regeneration.]
     .use 208754
-step
     .engrave 5,401417 >> Open your character sheet and engrave your chest with |T132871:0|t[Regeneration] |cRXP_WARN_highly recommended.|r
 ]])
 
@@ -185,7 +184,8 @@ RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune Guide
 #subgroup Chest << Mage
-#name 12 - Regeneration (Loch Modan) << Mage
+#name 12 - Regeneration (Loch Modan)
+<< Alliance Mage SoD
 
 -- << Alliance
 
@@ -209,9 +209,9 @@ RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune Guide
 #subgroup Chest << Mage
-#name 14 - Regeneration (The Barrens) << Mage
+#name 14 - Regeneration (The Barrens)
 -- #name 20 - Regeneration (The Barrens) << Shaman
-<< Horde
+<< Horde Mage SoD
 
 step << Mage
     #season 2
@@ -243,7 +243,8 @@ RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune Guide
 #subgroup Chest << Mage
-#name 13 - Regeneration (Silverpine Forest) << Mage
+#name 13 - Regeneration (Silverpine Forest)
+<< Horde Mage SoD
 
 -- << Horde
 
@@ -272,13 +273,14 @@ RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune Guide
 #subgroup Chest << Mage
-#name 10 - Fingers of Frost (Elwynn Forest) << Mage
+#name 10 - Fingers of Frost (Elwynn Forest)
+<< Alliance Mage SoD
 
 -- << Alliance
 
 step
     #season 2
-    #loop 
+    #loop
     .goto Elwynn Forest,27.0,88.0,20,0
     .goto Elwynn Forest,27.0,92.8,20,0
     >>Kill |cRXP_ENEMY_Hogger|r loot him for |cRXP_LOOT_|T134939:0|t[Spell Notes: RING SEFF OSTROF.]|r |cRXP_WARN_Additionally Kill and loot every rare you encounter|r
@@ -298,13 +300,14 @@ RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune Guide
 #subgroup Chest << Mage
-#name 10 - Fingers of Frost (Dun Morogh) << Mage
+#name 10 - Fingers of Frost (Dun Morogh)
+<< Mage Alliance SoD
 
 -- << Alliance
 
 step
     #season 2
-    #loop 
+    #loop
     .goto Dun Morogh,62.6,46.2,20,0
     .goto Dun Morogh,62.2,48.0,20,0
     .train 400647,1
@@ -384,10 +387,10 @@ RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune Guide
 #subgroup Chest << Mage
-#subgroup Gloves << Warlock
+--#subgroup Gloves << Warlock
 #name 8 - Burnout (Dun Morogh) << Mage
--- #name 8 - Chaos Bolt << Warlock << Warlock
--- << Alliance 
+--#name 8 - Chaos Bolt (Dun Morogh) << Warlock
+<< SoD Alliance Mage
 
 step
     #season 2
@@ -414,9 +417,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Chest << Mage
 #subgroup Gloves << Warlock
 #name 8 - Burnout (Elwynn Forest) << Mage
--- #name 8 - Chaos Bolt << Warlock
 
--- << Alliance
+<< Alliance SoD Mage
 
 step
     #season 2
@@ -447,7 +449,7 @@ RXPGuides.RegisterGuide([[
 -- #name 8 - Chaos Bolt << Warlock
 -- #name 8 - Molten Blast << Shaman
 
--- << Horde
+<< Horde Mage SoD
 
 step
     #season 2
@@ -462,7 +464,7 @@ step
     .use 203748
 step
     #season 2
-    .engrave 5,412286 >> Open your character sheet and engrave your chest with |T236207:0|t[Burnout] << Mage 
+    .engrave 5,412286 >> Open your character sheet and engrave your chest with |T236207:0|t[Burnout] << Mage
 -- step
 --     .engrave 9,403629 >> Open your character sheet and engrave your gloves with |T236291:0|t[Chaos Bolt] << Warlock
 -- step
@@ -477,7 +479,7 @@ RXPGuides.RegisterGuide([[
 #name 8 - Burnout (Tirisfal Glade) << Mage
 -- #name 8 - Chaos Bolt << Warlock
 
--- << Horde
+<< Horde Mage SoD
 
 step
     #season 2
@@ -502,7 +504,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune Guide
 #subgroup Chest << Mage
 #name 8 - Enlightenment (Elwynn Forest) << Mage
-
+<< Alliance Mage SoD
 step
     #season 2
     #loop
@@ -594,10 +596,10 @@ RXPGuides.RegisterGuide[[
 #group RestedXP Rune Guide
 #subgroup Legs << Mage
 #name 25 - Icy Veins(Azeroth) << Mage
-
+<< Mage SoD
 
 step << Alliance
-    #season 2 
+    #season 2
     .goto 1429,64.41,69.08,10,0
     .goto 1429,64.69,69.58,5,0
     .goto 1429,64.73,70.32,5,0
@@ -610,7 +612,7 @@ step << Alliance
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Library Book|r |cFFfa9602on the shelf in Elwynn Forest|r for |T133744:0|t[Archmage Theocrituss Research Journal.]
     .collect 203755,1
 step << Alliance
-    #season 2 
+    #season 2
     .goto 1436,53.01,53.34,10,0 << Human
     .goto 1436,52.64,53.83 << Human
     .goto 1432,35.2,47.76,10,0 << Gnome
@@ -620,20 +622,20 @@ step << Alliance
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Gnomish Tome|r for |T133744:0|t[Rumi of Gnomeregan the Collected Works] |cFFfa9602on the table in the Loch Modan Inn.|r << Gnome
     .collect 208860,1
 step << Alliance
-    #season 2 
+    #season 2
     .goto 1455,69.76,24.39,10,0
     .goto 1455,70.43,18.37,10,0
     .goto 1455,75.99,10.55
     .train 425121,1
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Library Book|r  for |T133744:0|t[Archmage Antonidas the Unabridged Autobiography] |cFFfa9602on the table in Ironforge, Hall of Explorers.|r
-    .collect 203754,1 
+    .collect 203754,1
 step << Horde
     #season 2
     .goto 1420,59.62,52.05,5,0
     .goto 1420,59.39,52.29
     .train 425121,1
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_The Apothecary's Metaphysical Primer.|r
-    .collect 208185,1 
+    .collect 208185,1
 step << Horde
     #season 2
     .goto 1421,43.12,41.39,5,0
@@ -732,13 +734,13 @@ step
     .goto 1439,59.07,23.07,15,0
     .goto 1439,59.62,22.13
     .train 425121,1
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Narthalas Almanac vol 74.|r for 
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Narthalas Almanac vol 74.|r for
     .collect 209843,1
 step << Alliance
     #season 2
     .train 425121,1
     .goto Stormwind City,37.81,79.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Maginor Dumas|r |cFFfa9602in Stormwind, Mage Tower.|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Maginor Dumas|r |cFFfa9602in Stormwind, Mage Tower.|r
     .turnin 78124 >>Turn in Nar'thalas Almanac
     .turnin 78127 >>Turn in The Dalaran Digest
     .turnin 78142 >>Turn in Bewitchments and Glamours
@@ -783,7 +785,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Legs << Mage
 #name 7 - Living Flame (Elwynn Forest) << Mage
 
--- << Alliance
+<< Alliance Mage SoD
 
 step
     #season 2
@@ -794,7 +796,7 @@ step
     .goto Elwynn Forest,63.6,58.6,20,0
     .train 401556,1
     >>Kill |cRXP_ENEMY_Kobold Geomancer|r loot them for |cRXP_LOOT_|T134939:0|t[Spell Notes: MILEGIN VALF]|r
-    .collect 203746,1 
+    .collect 203746,1
     .mob Kobold Geomancer
 step
     #season 2
@@ -811,7 +813,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Legs << Mage
 #name 7 - Living Flame (Dun Morogh) << Mage
 
--- << Alliance
+<< Alliance Mage SoD
 
 step
     #season 2
@@ -903,10 +905,10 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune Guide
 #subgroup Gloves << Mage
 #name 18 - Arcane Blast (Ashenvale) << Mage
-
+<< Mage SoD
 step
     #season 2
-    >>Kill |cRXP_ENEMY_Wrathtail Sorceress|r and |cRXP_ENEMY_Wrathtail Sea Witch|r and loot them for |cRXP_LOOT_|T133737:0|t[Naga Manuscript]|r |T134939:0|t[Spell Notes: Arcane Blast] 
+    >>Kill |cRXP_ENEMY_Wrathtail Sorceress|r and |cRXP_ENEMY_Wrathtail Sea Witch|r and loot them for |cRXP_LOOT_|T133737:0|t[Naga Manuscript]|r |T134939:0|t[Spell Notes: Arcane Blast]
     .train 400574,1
     .collect 211777,1
 step
@@ -922,7 +924,7 @@ step
     .use 203752
 step
     #season 2
-    .engrave 9,400574 >> Open your character sheet and engrave your gloves with |T135735:0|t[Arcane Blast.] 
+    .engrave 9,400574 >> Open your character sheet and engrave your gloves with |T135735:0|t[Arcane Blast.]
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -930,7 +932,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune Guide
 #subgroup Gloves << Mage
 #name 12 - Living Bomb (Loch Modan) << Mage
-
+<< Alliance Mage SoD
 step
     #season 2
     .goto Loch Modan,29.2,81.2,15,0
