@@ -105,7 +105,7 @@ end
 function addon.AddGuide(guide)
     -- Not applicable (e.g. wrong faction), rely on upstream functions to report parsing errors
     if not guide then return false end
-
+    addon.GroupOverride(guide)
     local loadedGuide
     for _, checkGuide in ipairs(addon.guides) do
         if guide.key == checkGuide.key then
@@ -948,7 +948,7 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
 
     defaultFor = guide.defaultfor or defaultFor
     guide.group = guide.group or groupOrContent
-    groupOrContent = addon.GroupOverride(guide) or groupOrContent
+    --groupOrContent = addon.GroupOverride(guide) or groupOrContent
 
     if defaultFor then
         local boost58
@@ -996,6 +996,7 @@ end
 function addon.GroupOverride(guide)
     if type(guide) == "table" then
         if guide.group then
+        --if true then  return end
             local faction = guide.group:match("RestedXP ([AH][lo][lr][id][ea]%w*)")
             if faction == "Alliance" then
                 guide.subgroup = guide.group:gsub("RestedXP Alliance", "RXP Speedrun Guide")
