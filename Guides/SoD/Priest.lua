@@ -96,3 +96,69 @@ step << NightElf Priest
     .target Shanda
     .train 402862,1
 ]])
+
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Troll Priest SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Penance - 2 (Durotar)
+
+
+    --Rune of Penance
+
+step << Priest
+    #season 2
+    .goto Durotar,42.36,68.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ken'jai|r
+    .accept 77642 >>Accept Wisdom of the Loa
+    .target Ken'jai
+step << Priest
+    #season 2
+    .goto Durotar,55.41,72.84
+    >>Travel to the |cRXP_PICK_Loa Altar|r at Sen'Jin Village and type /kneel
+    .use 205951 >>Talk to |cRXP_FRIENDLY_Serpent Loa|r as he appears, then use |T136222:0|t[|cRXP_FRIENDLY_Memory of a Troubled Acolyte|r]
+    .complete 77642,1 --Learn Spell: Engrave Gloves - Penance
+    .target Serpent Loa
+    .skipgossip
+step << Priest
+    #season 2
+    .goto Durotar,42.36,68.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ken'jai|r
+    .turnin 77642 >>Turn in Wisdom of the Loa
+    .target Ken'jai
+
+    ]])
+
+    
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Undead Priest SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Penance - 2 (Tirisfal)
+
+
+    --Rune of Penance
+
+step << Priest
+    #season 2
+    .goto Tirisfal Glades,31.11,66.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duesten|r
+    .accept 77670 >>Accept Meditation on Undeath
+    .target Dark Cleric Duesten
+step << Priest
+    #season 2
+    .goto Tirisfal Glades,31.06,64.80
+    >>Enter the graveyard and type /kneel
+    .use 205951 >>Use |T136222:0|t[|cRXP_FRIENDLY_Memory of a Troubled Acolyte|r] as you gain the |T237569:0|t[Meditation on Undeath] buff
+    .complete 77670,1 >>Learn Spell: Engrave Gloves - Penance
+step << Priest
+    #season 2
+    .goto Tirisfal Glades,31.11,66.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duesten|r
+    .turnin 77670 >>Turn in Meditation on Undeath
+    .target Dark Cleric Duesten
+
+    ]])

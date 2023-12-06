@@ -517,3 +517,607 @@ step << Warrior
     .skipgossip
     .target Junni Steelpass
 ]])
+
+
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Warrior SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Victory Rush - 2 (Durotar)
+
+
+    --Rune of Victory Rush
+
+step << Orc/Troll
+    #season 2
+    .goto Durotar,42.89,69.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Frang|r
+    .accept 77588 >>Accept A Trial of Fitness << Troll
+    .accept 77582 >>Accept A Trial of Fitness << Orc
+    .target Frang
+step
+    #season 2
+    .goto Durotar,43.27,69.51
+    >>Loot the |cRXP_PICK_Hidden Cache|r for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    >>|cRXP_WARN_Walk around past|r |cFFFF5722Sarkoth|r |cRXP_WARN_and jump down to reach the chest|r
+    .collect 204806,1 --Rune of Victory Rush (1)
+    .train 403470,1
+step
+    #season 2
+    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    .use 204806
+    .train 403470,1
+step << Orc/Troll
+    #season 2
+    .goto Durotar,42.89,69.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Frang|r
+    .turnin 77588 >>Turn in A Trial of Fitness << Troll
+    .turnin 77582 >>Turn in A Trial of Fitness << Orc
+    .target Frang
+
+    ]])
+
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Warrior SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Victory Rush - 2 (Mulgore)
+
+
+    --Rune of Victory Rush
+
+step << Tauren
+    #season 2
+    .goto Mulgore,44.02,76.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harutt|r
+    .accept 77651 >>Accept Into the Brambles
+    .target Harutt Thunderhorn
+step
+    #season 2
+    .goto Mulgore,60.33,75.10,30,0
+    .goto Mulgore,61.62,76.04
+    >>Loot the |cRXP_PICK_Bristleback Loot Cache|r for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    .collect 204806,1 --Rune of Victory Rush (1)
+    .train 403470,1
+step
+    #season 2
+    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    .use 204806
+    .train 403470,1
+step << Tauren
+    #season 2
+    .goto Mulgore,44.02,76.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harutt|r
+    .turnin 77651 >>Turn in Into the Brambles
+    .target Harutt Thunderhorn
+
+    ]])
+
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Warrior SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Victory Rush - 2 (Tirisfal)
+
+
+    --Rune of Victory Rush
+
+step << Undead
+    #season 2
+    .goto Tirisfal Glades,32.68,65.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Dannal|r
+    .accept 77668 >>Accept The Lost Rune
+    .target Dannal Stern
+step
+    #season 2
+    .goto Tirisfal Glades,24.60,59.45
+    >>Loot the |cRXP_PICK_Lost Stache|r inside the cave for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    .collect 204806,1 --Rune of Victory Rush (1)
+    .train 403470,1
+step
+    #season 2
+    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    .use 204806
+    .train 403470,1
+step << Undead
+    #season 2
+    .goto Tirisfal Glades,32.68,65.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Dannal|r
+    .turnin 77668 >>Turn in The Lost Rune
+    .target Dannal Stern
+
+    ]])
+
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Warrior SoD
+#group RestedXP Rune Guide
+#subgroup Legs
+#name Furious Thunder - 2 (Durotar)
+
+
+    --Rune of Furious Thunder
+
+step
+    #season 2
+    .goto Durotar,40.60,66.80
+    >>Kill |cFFFF5722Sarkoth|r. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r]
+    .collect 204809,1 --Rune of Furious Thunder(1)
+    .mob Sarkoth
+    .train 403476,1
+step
+    #season 2
+    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r]
+    .use 204809
+    .train 403476,1
+
+]])
+
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Warrior SoD
+#group RestedXP Rune Guide
+#subgroup Legs
+#name Furious Thunder - 10 (Tirisfal)
+
+
+    --Rune of Furious Thunder
+
+step
+    #season 2
+    .goto Tirisfal Glades,25.79,48.00
+    >>Kill |cRXP_ENEMY_Gillgar|r. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r]
+    >>|cRXP_WARN_This is a level 7 elite|r
+    .collect 204809,1 --Rune of Furious Thunder(1)
+    .mob Gillgar
+    .train 403476,1
+step
+    #season 2
+    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r]
+    .use 204809
+    .train 403476,1
+
+    ]])
+
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Warrior SoD
+#group RestedXP Rune Guide
+#subgroup Legs
+#name Frenzied Assault - 10 (Orgrimmar)
+
+
+    --Rune of Frenzied Assault
+
+step
+    #season 2
+    #completewith next
+    .goto Orgrimmar,57.40,53.93,-1
+    .goto Orgrimmar,58.05,51.40,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamja|r and |cRXP_FRIENDLY_Gru'ark|r
+    +Kill |cRXP_FRIENDLY_Gru'ark|r when he becomes hostile
+    .target Zamja
+    .target Gru'ark
+    .skipgossip
+    --Gossipoption
+step
+    #season 2
+    .goto Orgrimmar,58.52,52.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamja|r
+    >>Receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r] from her
+    .collect 204716,1 --Rune of Frenzied Assault (1)
+    .target Zamja
+    .train 425447,1
+    .skipgossip
+step
+    #season 2
+    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
+    .use 204716
+    .train 425447,1
+
+]])
+
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Warrior SoD
+#group RestedXP Rune Guide
+#subgroup Legs
+#name Frenzied Assault - 10 (Thunder Bluff)
+
+
+    --Rune of Frenzied Assault
+
+step
+    #season 2
+    #completewith next
+    .goto Thunder Bluff,28.73,18.00,-1
+    .goto Thunder Bluff,26.19,18.65,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Netali|r and |cRXP_FRIENDLY_Mooart|r on the Spirit Rise
+    +Kill |cRXP_FRIENDLY_Mooart|r when he becomes hostile
+    .target Netali Proudwind
+    .target Mooart
+    .skipgossip
+    --Gossipoption
+step
+    #season 2
+    .goto Thunder Bluff,28.73,18.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Netali|r
+    >>Receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r] from her
+    .collect 204716,1 --Rune of Frenzied Assault (1)
+    .target Netali
+    .train 425447,1
+    .skipgossip
+step
+    #season 2
+    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
+    .use 204716
+    .train 425447,1
+
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Warrior SoD
+#group RestedXP Rune Guide
+#subgroup Legs
+#name  Frenzied Assault - 10 (Tirisfal)
+
+
+    --Rune of Frenzied Assault
+
+step
+    #season 2
+    #completewith next
+    .goto Tirisfal Glades,61.72,51.91,-1
+    .goto Tirisfal Glades,61.71,51.70,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Penny|r and |cRXP_FRIENDLY_Blueheart|r (downstairs) inside the inn
+    +Kill |cRXP_FRIENDLY_Blueheart|r when he becomes hostile
+    .target Penny Hawkins
+    .target Blueheart
+    .skipgossip
+    --Gossipoption
+step
+    #season 2
+    .goto Tirisfal Glades,61.72,51.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Penny|r
+    >>Receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r] from her
+    .collect 204716,1 --Rune of Frenzied Assault (1)
+    .target Netali
+    .train 425447,1
+    .skipgossip
+step
+    #season 2
+    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
+    .use 204716
+    .train 425447,1
+
+    ]])
+
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Warrior SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Devastate - 8 (Durotar)
+
+
+    --Rune of Devastate
+
+step
+    #season 2
+    .goto Durotar,50.10,79.24,40,0
+    .goto Durotar,47.74,80.35,40,0
+    .goto Durotar,46.54,80.12,40,0
+    .goto Durotar,50.10,79.24
+    >>Kill |cRXP_ENEMY_Kolkar Drudges|r and |cRXP_ENEMY_Kolkar Outrunners|r. Loot them for a |cRXP_LOOT_Severed Centaur Head|r
+    .collect 207062,1 --Severed Centaur Head (1)
+    .mob Kolkar Drudge
+    .mob Kolkar Outrunner
+    .train 403475,1
+step
+    #season 2
+    .goto Durotar,54.02,27.23,40,0
+    .goto Durotar,52.82,24.27,40,0
+    .goto Durotar,51.85,23.95,40,0
+    .goto Durotar,54.01,23.63,40,0
+    .goto Durotar,52.13,20.77,40,0
+    .goto Durotar,51.26,19.19,40,0
+    .goto Durotar,53.98,23.70
+    >>Kill |cRXP_ENEMY_Dustwind Savages|r and |cRXP_ENEMY_Dustwind Storm Witches|r. Loot them for a |cRXP_LOOT_Severed Harpy Head|r
+    .collect 206995,1 ---Severed Harpy Head (1)
+    .mob Dustwind Savage
+    .mob Dustwind Storm Witch
+    .train 403475,1
+step
+    #season 2
+    .goto Durotar,50.21,50.78,30,0
+    .goto Durotar,50.18,49.23,30,0
+    .goto Durotar,49.48,49.14,30,0
+    .goto Durotar,49.32,48.18,30,0
+    .goto Durotar,48.81,49.00,30,0
+    .goto Durotar,48.49,49.29,30,0
+    .goto Durotar,47.58,49.62,30,0
+    .goto Durotar,47.06,49.53,30,0
+    .goto Durotar,46.90,48.11,30,0
+    .goto Durotar,49.22,48.96
+    >>Kill |cRXP_ENEMY_Razormane Quilboars|r. Loot them for a |cRXP_LOOT_Severed Quilboar Head|r
+    .collect 206994,1 ---Severed Quilboar Head (1)
+    .mob Razormane Quilboar
+    .mob Razormane Scout
+    .train 403475,1
+step
+    #season 2
+    .goto Durotar,53.14,43.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vahi|r
+    >>Turn in the |cRXP_LOOT_Heads|r you've collected in exchange for |T134455:0|t[Rune Fragments]
+    .collect 204688,1 --Monster Hunter's First Rune Fragment (1)
+    .collect 204689,1 --Monster Hunter's Second Rune Fragment (1)
+    .collect 204690,1 --Monster Hunter's Third Rune Fragment (1)
+    .target Vahi Bonesplitter
+    .train 403475,1
+step
+    #season 2
+    .use 204688 >>Use the |T134455:0|t[Rune Fragments] to create |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
+    .collect 204703,1 --Rune of Devastate (1)
+    .train 403475,1
+step
+    #season 2
+    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
+    .use 204703
+    .train 403475,1
+
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Warrior SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Devastate - 8 (Mulgore)
+
+
+    --Rune of Devastate
+
+step
+    #season 2
+    .goto Mulgore,53.5,73.0,90,0
+    .goto Mulgore,48.3,72.0,90,0
+    .goto Mulgore,53.5,73.0,90,0
+    .goto Mulgore,48.3,72.0,90,0
+    .goto Mulgore,53.5,73.0,90,0
+    .goto Mulgore,48.3,72.0
+    >>Kill |cRXP_ENEMY_Palemane Gnolls|r. Loot them for a |cRXP_LOOT_Severed Gnoll Head|r
+    .collect 204478,1 --Severed Gnoll Head (1)
+    .unitscan Snagglespear
+    .mob Palemane Tanner
+    .mob Palemane Skinner
+    .mob Palemane Poacher
+    .train 403475,1
+step
+    #season 2
+    .loop 25,Mulgore,34.08,43.71,32.98,42.96,31.72,43.08,31.08,42.09,31.12,40.87,31.74,40.31,32.44,41.17,33.57,41.30,33.82,40.26,34.48,41.21,34.50,42.29
+    >>Kill |cRXP_ENEMY_Windfury Wind Witches|r and |cRXP_ENEMY_Windfury Harpies|r. Loot them for a |cRXP_LOOT_Severed Harpy Head|r
+    .collect 206995,1 ---Severed Harpy Head (1)
+    .mob Windfury Wind Witch
+    .mob Windfury Harpy
+    .train 403475,1
+step
+    #season 2
+    .loop 25,Mulgore,59.85,25.62,61.14,22.93,61.77,22.49,62.18,22.05,62.32,20.89,61.62,19.50,60.44,19.50,60.16,21.06,60.41,21.96,61.12,22.88
+    >>Kill |cRXP_ENEMY_Bristleback Interlopers|r. Loot them for a |cRXP_LOOT_Severed Quilboar Head|r
+    .collect 206994,1 ---Severed Quilboar Head (1)
+    .mob Bristleback Interloper
+    .train 403475,1
+step
+    #season 2
+    .goto Mulgore,46.29,61.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vateya|r in Bloodhoof Village
+    >>Turn in the |cRXP_LOOT_Heads|r you've collected in exchange for |T134455:0|t[Rune Fragments]
+    .collect 204688,1 --Monster Hunter's First Rune Fragment (1)
+    .collect 204689,1 --Monster Hunter's Second Rune Fragment (1)
+    .collect 204690,1 --Monster Hunter's Third Rune Fragment (1)
+    .target Vateya Timberhoof
+    .train 403475
+step
+    #season 2
+    .use 204688 >>Use the |T134455:0|t[Rune Fragments] to create |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
+    .collect 204703,1 --Rune of Devastate (1)
+    .train 403475,1
+step
+    #season 2
+    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
+    .use 204703
+    .train 403475,1
+
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Warrior SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Devastate - 8 (Tirisfal)
+
+
+    --Rune of Devastate
+
+step
+    #season 2
+    .goto Tirisfal Glades,58.20,58.15,50,0
+    .goto Tirisfal Glades,57.98,61.66,50,0
+    .goto Tirisfal Glades,56.45,62.62,50,0
+    .goto Tirisfal Glades,54.73,64.28,50,0
+    .goto Tirisfal Glades,52.84,62.26,50,0
+    .goto Tirisfal Glades,50.52,61.21,50,0
+    .goto Tirisfal Glades,47.88,60.87,50,0
+    .goto Tirisfal Glades,46.09,59.70,50,0
+    .goto Tirisfal Glades,43.49,61.81,50,0
+    .goto Tirisfal Glades,56.45,62.62
+    >>Kill |cRXP_ENEMY_Duskbats|r. Loot them for a |cRXP_LOOT_Severed Bat Head|r
+    .collect 207975,1 --Severed Bat Head (1)
+    .mob Greater Duskbat
+    .mob Vampiric Duskbat
+    .train 403475,1
+step
+    #season 2
+    .goto Tirisfal Glades,56.31,39.67,40,0
+    .goto Tirisfal Glades,54.71,41.19,40,0
+    .goto Tirisfal Glades,53.90,43.93,40,0
+    .goto Tirisfal Glades,55.24,42.54,40,0
+    .goto Tirisfal Glades,56.43,43.92,40,0
+    .goto Tirisfal Glades,55.24,42.54
+    >>Kill |cRXP_ENEMY_Rot Hide Gnolls|r. Loot them for a |cRXP_LOOT_Severed Gnoll Head|r
+    .collect 204478,1 --Severed Gnoll Head (1)
+    .mob Rot Hide Mongrel
+    .mob Rot Hide Graverobber
+    .mob Rot Hide Gnoll
+    .train 403475,1
+step
+    #season 2
+    .goto Tirisfal Glades,59.38,29.05,50,0
+    .goto Tirisfal Glades,59.54,27.86,50,0
+    .goto Tirisfal Glades,60.64,28.66,50,0
+    .goto Tirisfal Glades,61.49,29.40,50,0
+    .goto Tirisfal Glades,62.96,29.46,50,0
+    .goto Tirisfal Glades,65.68,30.22,50,0
+    .goto Tirisfal Glades,67.48,28.97,50,0
+    .goto Tirisfal Glades,68.22,26.46,50,0
+    .goto Tirisfal Glades,59.54,27.86
+    >>Kill |cRXP_ENEMY_Murlocs|r. Loot them for a |cRXP_LOOT_Severed Murloc Head|r
+    .collect 204477,1 --Severed Murloc Head (1)
+    .mob Vile Fin Puddlejumper
+    .mob Vile Fin Minor Oracle
+    .mob Vile Fin Muckdweller
+    .train 403475,1
+step
+    #season 2
+    .goto Undercity,48.03,70.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorac|r in the Undercity
+    >>Turn in the |cRXP_LOOT_Heads|r you've collected in exchange for |T134455:0|t[Rune Fragments]
+    .collect 204688,1 --Monster Hunter's First Rune Fragment (1)
+    .collect 204689,1 --Monster Hunter's Second Rune Fragment (1)
+    .collect 204690,1 --Monster Hunter's Third Rune Fragment (1)
+    .target Dorac Graves
+    .train 403475,1
+step
+    #season 2
+    .use 204688 >>Use the |T134455:0|t[Rune Fragments] to create |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
+    .collect 204703,1 --Rune of Devastate (1)
+    .train 403475,1
+step
+    #season 2
+    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
+    .use 204703
+    .train 403475,1
+
+]])
+
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Warrior SoD
+#group RestedXP Rune Guide
+#subgroup Chest
+#name Blood Frenzy - 8 (Durotar)
+
+
+    --Rune of Blood Frenzy
+
+step
+    #season 2
+    .goto Durotar,56.10,21.61,0
+    .goto Durotar,56.98,24.42,0
+    .goto Durotar,55.42,38.55,0
+    .goto Durotar,40.65,48.24,0
+    .goto Durotar,36.11,47.85,0
+    .goto Durotar,56.10,21.61,100,0
+    .goto Durotar,56.98,24.42,100,0
+    .goto Durotar,55.42,38.55,100,0
+    .goto Durotar,40.65,48.24,100,0
+    .goto Durotar,36.11,47.85,100,0
+    .goto Durotar,56.10,21.61
+    >>Find and duel the |cRXP_FRIENDLY_Wandering Swordsman|r. Loot the |cRXP_PICK_Box|r he drops for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Blood Frenzy|r]
+    >>|cRXP_ENEMY_He patrols all over the zone and is difficult to find. The waypoint guides you past known spawn locations|r
+    .collect 204441,1 --Rune of Blood Frenzy (1)
+    .unitscan Wandering Swordsman
+    .train 403474,1
+step
+    #season 2
+    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Blood Frenzy|r]
+    .use 204441
+    .train 403474,1
+
+]])
+
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Warrior SoD
+#group RestedXP Rune Guide
+#subgroup Chest
+#name Blood Frenzy - 8 (Mulgore)
+
+
+--Rune of Blood Frenzy
+
+step
+    #season 2
+    .goto Mulgore,37.38,56.58,0
+    .goto Mulgore,45.11,37.75,0
+    .goto Mulgore,52.56,43.61,0
+    .goto Mulgore,60.43,68.56,0
+    .goto Mulgore,37.38,56.58,100,0
+    .goto Mulgore,45.11,37.75,100,0
+    .goto Mulgore,52.56,43.61,100,0
+    .goto Mulgore,60.43,68.56,100,0
+    .goto Mulgore,37.38,56.58
+    >>Find and duel the |cRXP_FRIENDLY_Wandering Swordsman|r. Loot the |cRXP_PICK_Box|r he drops for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Blood Frenzy|r]
+    >>|cRXP_ENEMY_He patrols all over the zone and is difficult to find. The waypoint guides you past known spawn locations|r
+    .collect 204441,1 --Rune of Blood Frenzy (1)
+    .unitscan Wandering Swordsman
+    .train 403474,1
+step
+    #season 2
+    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Blood Frenzy|r]
+    .use 204441
+    .train 403474,1
+
+]])
+
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Warrior SoD
+#group RestedXP Rune Guide
+#subgroup Chest
+#name Blood Frenzy - 8 (Tirisfal)
+
+
+    --Rune of Blood Frenzy
+
+step
+    #season 2
+    .goto Tirisfal Glades,79.25,65.02
+    >>Find and duel the |cRXP_FRIENDLY_Wandering Swordsman|r. Loot the |cRXP_PICK_Box|r he drops for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Blood Frenzy|r]
+    >>|cRXP_ENEMY_He spawns just east of the Balnir Farmstead|r
+    .collect 204441,1 --Rune of Blood Frenzy (1)
+    .unitscan Wandering Swordsman
+    .train 403474,1
+step
+    #season 2
+    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Blood Frenzy|r]
+    .use 204441
+    .train 403474,1
+
+]])

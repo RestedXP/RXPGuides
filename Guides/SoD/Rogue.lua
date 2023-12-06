@@ -749,3 +749,177 @@ step << Rogue
     .use 208772 -- Rune of Saber Slash (1)
     .train 424785,1
 ]])
+
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Rogue SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Shadowstrike - 2 (Durotar)
+
+
+    --Rune of Shadowstrike
+
+step << !Undead
+    #season 2
+    .goto Durotar,41.27,68.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Rwag|r
+    .accept 77592 >>Accept Atop the Cliffs << Troll Rogue
+    .accept 77583 >>Accept Atop the Cliffs << Orc Rogue
+    .target Rwag
+step
+    #season 2
+    .goto Durotar,43.27,69.51
+    >>Loot the |cRXP_PICK_Hidden Cache|r for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    >>|cRXP_WARN_Walk around past|r |cFFFF5722Sarkoth|r |cRXP_WARN_and jump down to reach the chest|r
+    .collect 204795,1 --Rune of Shadowstrike (1)
+    .train,1 400105
+step
+    #season 2
+    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    .use 204795
+    .train,1 400105
+step << !Undead
+    #season 2
+    .goto Durotar,41.27,68.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Rwag|r
+    .turnin 77592 >>Turn in Atop the Cliffs << Troll Rogue
+    .turnin 77583 >>Turn in Atop the Cliffs << Orc Rogue
+    .target Rwag
+    ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Rogue SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Shadowstrike - 2 (Tirisfal)
+
+
+    --Rune of Shadowstrike
+
+step << Undead
+    #season 2
+    .goto Tirisfal Glades,32.53,65.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25David|r
+    .accept 77669 >>Accept The Scarlet Rune
+    .target David Trias
+step
+    #season 2
+    .loop 25,Tirisfal Glades,36.13,68.74,36.46,69.49,36.85,70.02,37.42,69.58,38.05,69.79,37.91,69.22,38.03,68.77,38.49,68.28,38.72,67.07,38.59,66.25,38.65,65.07,37.62,65.36,36.93,65.38,36.51,65.42,36.85,66.59,37.45,67.95,36.93,68.16,36.13,68.74
+    >>Kill or pickpocket |cFFFF5722Scarlet Converts|r. Loot them for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    .collect 204795,1 --Rune of Shadowstrike (1)
+    .mob Scarlet Convert
+    .train 400105,1
+step
+    #season 2
+    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    .use 204795
+    .train 400105,1
+step << Undead
+    #season 2
+    .goto Tirisfal Glades,32.53,65.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25David|r
+    .turnin 77669 >>Turn in The Scarlet Rune
+    .target David Trias
+    ]])
+
+    RXPGuides.RegisterGuide([[
+#classic
+<< Horde Rogue SoD
+#group RestedXP Rune Guide
+#subgroup Chest
+#name Deadly Brew - 25 (Silverpine)
+
+
+    --Rune of Deadly Brew
+
+step
+    #season 2
+    .goto Silverpine Forest,53.46,13.45
+    >>Click the |cRXP_PICK_Dead Drop|r in Silverpine Forest
+    .accept 78261 >> Accept The Horn of Xelthos
+step
+    #season 2
+    #completewith next
+    .zone 209 >> Enter Shadowfang Keep
+    >>|cRXP_WARN_You have to do the next part solo! Grouping up will prevent you from obtaining the keys you need|r
+step
+    #season 2
+    .gossipoption 88819,1 >>Stealth past |cRXP_ENEMY_Rethilgore|r, talk to |cRXP_FRIENDLY_Deathstalker Adamant|r and vanish aftwards. He will open the door for you
+    .target Deathstalker Adamant
+    .train 400080,1
+step
+    #season 2
+    #completewith next
+    >>Use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Gemela|r for |T134243:0|t[|cRXP_LOOT_Sister's Half-Key|r]
+    >>|cRXP_WARN_She is located in the dining hall on the bottom floor|r
+    .collect 210213,1 --Sister's Half-Key (1)
+    .mob Gemela
+step
+    #season 2
+    >>Use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Gefell|r for |T134244:0|t[|cRXP_LOOT_Brother's Half-Key|r]
+    >>|cRXP_WARN_He is located above the dining hall on the second floor|r
+    .collect 210212,1 --Brother's Half-Key (1)
+    .mob Gefell
+    .train 400080,1
+step
+    #season 2
+    >>Use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Gemela|r for |T134243:0|t[|cRXP_LOOT_Sister's Half-Key|r]
+    >>|cRXP_WARN_She is located in the dining hall on the bottom floor|r
+    .collect 210213,1 --Sister's Half-Key (1)
+    .mob Gemela
+    .train 400080,1
+step
+    #season 2
+    .use 210212 >>Return to the courtyard outside and enter the Stables. Combine the two keys for the |T237379:0|t[|cRXP_LOOT_Twin Key|r]
+    .collect 210209,1 --Twin Key (1)
+    .train 400080,1
+step
+    #season 2
+    >>Open the |cRXP_PICK_Ornamented Chest|r in the stables for the |cRXP_LOOT_Horn of Xelthos|r
+    .complete 78261,1 --Horn of Xelthos (1)
+step
+    #season 2
+    .goto Silverpine Forest,53.46,13.45
+    >>Click the |cRXP_PICK_Dead Drop|r in Silverpine Forest
+    .turnin 78261 >> Turn in The Horn of Xelthos
+step
+    #season 2
+    #completewith next
+    +|cRXP_WARN_You now need to enter a capital city to receive mail from *C*|r
+step
+    #season 2
+    .goto Silverpine Forest,45.62,42.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karos|r
+    .fly Undercity >> Fly to the Undercity
+    .target Karos Razok
+    .zoneskip Undercity
+    .train 400080,1
+step
+    #season 2
+    #completewith next
+    +|cRXP_WARN_Open your mailbox to read the mail from *C* once it has arrived. Fly back to Silverpine when you're ready|r
+step
+    #season 2
+    .goto Undercity,63.27,48.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Michael|r
+    .fly The Sepulcher>> Fly to The Sepulcher
+    .target Michael Garrett
+    .zoneskip Silverpine Forest
+    .train 400080,1
+step
+    #season 2
+    .goto Silverpine Forest,53.46,13.45
+    >>Click the |cRXP_PICK_Dead Drop|r in Silverpine Forest for |T134419:0|t[|cRXP_FRIENDLY_Rune of Deadly Brew|r]
+    .collect 203994,1 --Rune of Deadly Brew (1)
+    .train 400080,1
+step
+    #season 2
+    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Deadly Brew|r]
+    .use 204795
+    .train 400080,1
+    ]])
+
+    
