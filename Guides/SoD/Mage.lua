@@ -325,55 +325,59 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+<< Horde Mage SoD
 #group RestedXP Rune Guide
-#subgroup Chest << Mage
-#name 7 - Fingers of Frost (Tirisfal Glades) << Mage
-
--- << Horde
+#subgroup Chest
+#name Fingers of Frost - 6 (Tirisfal Glades)
 
 step
-    #season 2
-    #loop 
-    .goto Tirisfal Glades,29.8,46.0,20,0
-    .goto Tirisfal Glades,25.4,47.4,20,0
-    >>Kill |cRXP_ENEMY_Gillgar|r loot him for |cRXP_LOOT_|T134939:0|t[Spell Notes: RING SEFF OSTROF.]|r |cRXP_WARN_Additionally Kill and loot every rare you encounter|r
-    .train 400647,1
+    .train 401765,1
+    >>Buy a (or multiple) |T135933:0|t[Comprehensive Charm] from a Reagent Vendor
+    .collect 211779,1
+step
+    .train 401765,1
+    #completewith next
+    .zone Tirisfal Glades >>Travel to Tirisfal Glades
+step
+    .train 401765,1
+    >>Kill |cRXP_ENEMY_Gillgar|r. Loot him for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r]
+    .goto Tirisfal Glades,25.6,48.2
     .collect 203753,1
     .mob Gillgar
 step
-    #season 2
-    >>Use |T134939:0|t[Spell Notes: RING SEFF OSTROF] to learn |T236227:0|t[Fingers of Frost.]
-    .use 293753
-step
-    #season 2
-    .engrave 5,400647 >> Open your character sheet and engrave your chest with |T236227:0|t[Fingers of Frost.]
+    .use 203753
+    .itemcount 203753,1
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a Reagent Vendor to use the item
+    .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] |cRXP_WARN_to train|r |T236227:0|t[Fingers of Frost]
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
+<< Horde Mage SoD
 #group RestedXP Rune Guide
-#subgroup Chest << Mage
-#name 10 - Fingers of Frost (Durotar) << Mage
-
--- << Horde
+#subgroup Chest
+#name Fingers of Frost - 10 (Durotar)
 
 step
-    #season 2
-    #loop
-    .goto Durotar,67.6,86.8,20,0
-    .goto Durotar,65.0,87.0,20,0
-    .goto Durotar,67.6,86.4,20,0
-    .train 400647,1
+    .train 401765,1
+    >>Buy a (or multiple) |T135933:0|t[Comprehensive Charm] from a Reagent Vendor
+    .collect 211779,1
+step
+    .train 401765,1
+    #completewith next
+    .zone Durotar >>Travel to Durotar
+step
+    --PERMOK: More accurate coordinates
+    .train 401765,1
+    >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r]
+    .goto Durotar,67.0,88.0
     .collect 203753,1
-    >>Kill |cRXP_ENEMY_Zalazane|r loot him for |cRXP_LOOT_|T134939:0|t[Spell Notes: RING SEFF OSTROF.]|r |cRXP_WARN_Additionally Kill and loot every rare you encounter|r
     .mob Zalazane
 step
-    #season 2
-    >>Use |T134939:0|t[Spell Notes: RING SEFF OSTROF] to learn |T236227:0|t[Fingers of Frost.]
-    .use 293753
-step
-    #season 2
-    .engrave 5,400647 >> Open your character sheet and engrave your chest with |T236227:0|t[Fingers of Frost.]
+    .use 203753
+    .itemcount 203753,1
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a Reagent Vendor to use the item
+    .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] |cRXP_WARN_to train|r |T236227:0|t[Fingers of Frost]
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -550,43 +554,39 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+<< Horde Mage SoD
 #group RestedXP Rune Guide
-#subgroup Chest << Mage
-#name 8 - Enlightenment (Tirisfal Glades) << Mage
-
+#subgroup Chest
+#name Enlightenment - 6 (Tirisfal Glades)
 
 step
-    #season 2
-    #loop
-    .goto Tirisfal Glades,49.65,9.2,10,0
-    .goto Tirisfal Glades,50.0,59.8,10,0
-    .goto Tirisfal Glades,50.4,61.8,10,0
-    .goto Tirisfal Glades,53.8,59.8,10,0
-    .goto Tirisfal Glades,54.0,56.4,10,0
-    .goto Tirisfal Glades,51.6,57.2,10,0
-    .goto Tirisfal Glades,59.0,58.0,10,0
-    .goto Tirisfal Glades,50.2,50.8,10,0
-    .goto Tirisfal Glades,47.2,50.6,10,0
-    .goto Tirisfal Glades,49.8,46.4,10,0
-    .goto Tirisfal Glades,36.8,51.0,10,0
-    .goto Tirisfal Glades,33.6,49.6,10,0
-    .goto Tirisfal Glades,35.8,49.0,10,0
-    .train 412324,1
-    >>Upon using the |cRXP_WARN_Polymorph|r ability on the |cRXP_ENEMY_Odd Melons|r, make sure to loot them for the |cRXP_LOOT_|T134332:0|t[Apothecary Notes]|r.
+    .train 415942,1
+    >>Buy a (or multiple) |T135933:0|t[Comprehensive Charm] from a Reagent Vendor
+    .collect 211779,1
+step
+    .train 415942,1
+    #completewith next
+    .zone Tirisfal Glades >>Travel to Tirisfal Glades
+step
+    .train 415942,1
+    >>Polymorph |cRXP_ENEMY_Odd Melons|r. Loot the object on the ground for the |T134332:0|t[|cRXP_FRIENDLY_Apothecary Notes|r]
+    *|cRXP_WARN_You can find them on or around pretty much any field. Multiple fields are marked on your map|r
+    .goto Tirisfal Glades,59.2,35.7
+    .goto Tirisfal Glades,36.4,49.9,0
+    .goto Tirisfal Glades,53.62,57.37,0
+    .goto Tirisfal Glades,75.7,60.9,0
     .collect 208183,6
     .mob Odd Melon
 step
-    #season 2
-    >>Use the 6 |T134332:0|t[Apothecary Notes] to create |T134332:0|t[Spell Notes: Enlightenment]
-    .collect 204864,6
-    .use 204864
+    .train 415942,1
+    >>Use the |T134332:0|t[|cRXP_FRIENDLY_Apothecary Notes|r] to turn them into |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Enlightenment|r]
+    .use 208183
+    .collect 203749,1
 step
-    #season 2
-    >>Use |T134332:0|t[Spell Notes: Enlightenment] to learn |T236207:0|t[Burnout.]
-    .use 204864
-step
-    #season 2
-    .engrave 5,412324 >> Open your character sheet and engrave your chest with |T135740:0|t[Enlightenment]
+    .use 203749
+    .itemcount 203749,1
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a Reagent Vendor to use the item
+    .train 415942 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Enlightenment|r] |cRXP_WARN_to train|r |T135740:0|t[Enlightenment]
 ]])
 
 RXPGuides.RegisterGuide[[
@@ -838,61 +838,64 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+<< Horde Mage SoD
 #group RestedXP Rune Guide
-#subgroup Legs << Mage
-#name 8 - Living Flame (Durotar) << Mage
-
--- << Horde
+#subgroup Legs
+#name Living Flame - 9 (Durotar)
 
 step
-    #season 2
-    #loop
-    .goto Durotar,53.2,27.0,10,0
-    .goto Durotar,52.4,29.8,10,0
-    .goto Durotar,53.6,29.2,10,0
-    .goto Durotar,52.8,28.6,10,0
-    .goto Durotar,41.6,25.4,10,0
-    .goto Durotar,42.6,26.4,10,0
-    .goto Durotar,42.0,26.6,10,0
-    .goto Durotar,42.0,26.6,10,0
-    .train 401556,1
-    >>Kill |cRXP_ENEMY_Burning Blade Fanatic|r, |cRXP_ENEMY_Burning Blade Neophyte|r and |cRXP_ENEMY_Burning Blade Thug|r loot them for |cRXP_LOOT_|T134939:0|t[Spell Notes: MILEGIN VALF]|r
-    .collect 203746,1
-    .mob Burning Blade Fanatic
+    .train 401768,1
+    >>Buy a (or multiple) |T135933:0|t[Comprehensive Charm] from a Reagent Vendor
+    .collect 211779,1
+step
+    .train 401768,1
+    #completewith next
+    .zone Durotar >>Travel to Durotar
+step
+    .train 401768,1
+    >>Kill |cRXP_ENEMY_Burning Blade Orcs|r inside the Skull Rock Cave. Loot them for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF|r]
+    .collect 203752,1
+    .goto Durotar,55.0,9.8
     .mob Burning Blade Neophyte
+    .mob Burning Blade Fanatic
     .mob Burning Blade Thug
+    .mob Burning Blade Apprentice
 step
-    #season 2
-    >>Use |T134939:0|t[Spell Notes: MILEGIN VALF] to learn |T135820:0|t[Living Flame]
     .use 203752
-step
-    #season 2
-    .engrave 7,401556 >> Open your character sheet and engrave your legs with |T135820:0|t[Living Flame.] |cRXP_WARN_highly recommended.|r
+    .itemcount 203752,1
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a Reagent Vendor to use the item
+    .train 401768 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF|r] |cRXP_WARN_to train|r |T135820:0|t[Living Flame]
 ]])
+
 
 RXPGuides.RegisterGuide([[
 #classic
+<< Horde Mage SoD
 #group RestedXP Rune Guide
-#subgroup Legs << Mage
-#name 8 - Living Flame (Tirisfal Glades) << Mage
-
--- << Horde
+#subgroup Legs
+#name Living Flame - 7 (Tirisfal Glades)
 
 step
-    #season 2
-    .train 401556,1
-    >>Kill |cRXP_ENEMY_Scarlet Warriors|r, |cRXP_ENEMY_Scarlet Zealots|r and |cRXP_ENEMY_Scarlet Missionary|r loot them for |cRXP_LOOT_|T134939:0|t[Spell Notes: MILEGIN VALF]|r
-    .collect 203746,1
+    .train 401768,1
+    >>Buy a (or multiple) |T135933:0|t[Comprehensive Charm] from a Reagent Vendor
+    .collect 211779,1
+step
+    .train 401768,1
+    #completewith next
+    .zone Tirisfal Glades >>Travel to the Tirisfal Glades
+step
+    .train 401768,1
+    >>Kill |cRXP_ENEMY_Scarlet Humans|r. Loot them for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF|r]
+    .collect 203752,1
+    .goto Tirisfal Glades,32.6,48.6
     .mob Scarlet Warrior
-    .mob Scarlet Zealot
     .mob Scarlet Missionary
+    .mob Scarlet Zealot
 step
-    #season 2
-    >>Use |T134939:0|t[Spell Notes: MILEGIN VALF] to learn |T135820:0|t[Living Flame]
     .use 203752
-step
-    #season 2
-    .engrave 7,401556 >> Open your character sheet and engrave your legs with |T135820:0|t[Living Flame.] |cRXP_WARN_highly recommended.|r
+    .itemcount 203752,1
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a Reagent Vendor to use the item
+    .train 401768 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF|r] |cRXP_WARN_to train|r |T135820:0|t[Living Flame]
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -953,38 +956,49 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+<< Horde Mage SoD
 #group RestedXP Rune Guide
-#subgroup Gloves << Mage
-#name 16 - Living Bomb (Silverpine Forest) << Mage
-
-<< Horde
+#subgroup Gloves
+#name Living Bomb - 17 (Silverpine Forest)
 
 step
-    #season 2
-    >>Kill |cRXP_ENEMY_Rot Hide Brute|r,|cRXP_ENEMY_Rot Hide Plague Weaver|r, |cRXP_ENEMY_Rot Hide Salvage|r and |cRXP_ENEMY_Raging Rot Hide|r loot them for |cRXP_LOOT_|T134173:0|t[A Talking Head]|r
+    .train 415936,1
+    #completewith next
+    .zone Silverpine Forest >>Travel to Silverpine Forest
+step
+    .train 415936,1
+    >>Kill the |cRXP_ENEMY_Rot Hides|r on Fenris Isle. Loot them for |T134173:0|t[A Takling Head]. Click it in your bags.
+    .goto Silverpine Forest,66.0,24.7
     .collect 3317,1
     .accept 460 >>Accept Resting in Pieces
     .mob Rot Hide Brute
     .mob Rot Hide Plague Weaver
-    .mob Rot Hide Salvage
+    .mob Rot Hide Savage
     .mob Raging Rot Hide
 step
-    #season 2
-    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with the |cRXP_PICK_Grave.|r
-    .turnin 460 >>Turnin Resting in Pieces
-    .accept 461 >>Accept The Hidden Niche
+    .train 415936,1
+    >>Interact with the |cRXP_FRIENDLY_Shallow Grave|r
     .goto Silverpine Forest,67.8,24.8
+    .turnin 460 >>Turn in Resting in Pieces
+    .accept 461 >>Accept The Hidden Niche
+    .target Shallow Grave
 step
-    #season 2
+    .train 415936,1
+    >>Interact with the |cRXP_FRIENDLY_Dusty Shelf|r |cRXP_WARN_inside the castle in the top left tower (go left after the first staris)|r
     .goto Silverpine Forest,65.3,24.8
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Dusty Shelf.|r
-    .turnin 461 >>Turnin The Hidden Niche
-    .accept 491 >>Accept Wand to Bethor
+    .turnin 461 >>Turn in The Hidden Niche
+    .accept 491 >>Accept Want to Bethor
+    .target Dusty Shelf
 step
-    #season 2
-    .goto Undercity,84.6,16.2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bethor Iceshard|r
-    .turnin 491 >>Turnin Wand to Bethor
+    .train 415936,1
+    #completewith next
+    .zone Undercity >>Travel to Undercity (if you have the Undercity FP you could deathskip to The Sepulcher and fly from there)
 step
-    #season 2
-    .engrave 9,400613 >> Open your character sheet and engrave your gloves with |T236220:0|t[Living Bomb.] 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bethor Iceshard|r.
+    .goto Undercity,83.8,16.2
+    .turnin 491 >>Turn in Want to Bethor
+    .accept 78277 >>Accept A Token of Gratitude
+    .turnin 78277 >>Turn in A Token of Gratitude
+    .train 415936 >>|cRXP_WARN_You will automatically train the rune by turning in the quest|r
+    .target Bethor Iceshard
+]])
