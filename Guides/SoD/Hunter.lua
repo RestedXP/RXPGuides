@@ -218,7 +218,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Horde Hunter SoD
 #group RestedXP Rune Guide
-#subgroup Pants
+#subgroup Legs
 #name Flanking - 6 (Mulgore)
 
 
@@ -257,7 +257,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Horde Hunter SoD
 #group RestedXP Rune Guide
-#subgroup Pants
+#subgroup Legs
 #name Flanking - 6 (Durotar)
 
 

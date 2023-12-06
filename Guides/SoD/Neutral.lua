@@ -248,7 +248,7 @@ step << Alliance
     >>Buy about 35x |T133870:0|t[Shredder Autosalvage Units]
     *If you have the gold you can also just directly buy the 16x |T133001:0|t[Shredder Turbocharger]
     .goto Ironforge,24.2,74.5,-1
-    .goto Stormwind,61.1,70.7,-1
+    .goto Stormwind City,61.1,70.7,-1
     .collect 210147,30
 step << Horde
     .train 415995,1 << Priest
@@ -455,12 +455,12 @@ step
     *|cRXP_WARN_You can farm lower level mobs until you hit Friendly. Afterwards you have to farm high level mobs (>=17).|r Chests in the open world have a 90%+ chance to drop one of those items.
     .reputation 2587,honored << Horde
     .reputation 2586,honored << Alliance
-step 
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cFF00FF25Supply Officer|r in the nearest city
     .goto Orgrimmar,51.6,64.6,-1 << Horde
     .goto Thunder Bluff,39.8,53.4,-1 << Horde
     .goto Undercity,64.6,38.2,-1 << Horde
-    .goto Stormwind,55.0,61.6,-1 << Alliance
+    .goto Stormwind City,55.0,61.6,-1 << Alliance
     .goto Ironforge,24.6,67.2,-1 << Alliance
     .goto Darnassus,60.0,56.4,-1 << Alliance
     .vendor
