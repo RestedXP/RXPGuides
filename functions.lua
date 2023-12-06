@@ -5170,13 +5170,18 @@ function addon.functions.aura(self, ...)
         local text, id, duration, target = ...
         id = tonumber(id)
         local element = {text = text, textOnly = not text, unit = target or "player"}
-
         if duration then
-            local operator, elapsed = duration:match("(<?)%s*(%d+)")
-            if operator == "<" then
+            local operator, elapsed, stack = duration:match("(<?)%s*(%d+)([%-%+]?)")
+            if operator == "<" or stack == "-" then
                 element.reverse = true
             end
-            element.duration = tonumber(elapsed) or 0
+
+            if stack == "+" or stack == "-" then
+                element.duration = 0
+                element.stacks = tonumber(elapsed)
+            else
+                element.duration = tonumber(elapsed) or 0
+            end
         else
             element.duration = 0
         end
@@ -5198,7 +5203,7 @@ function addon.functions.aura(self, ...)
             if spellId == element.id then
                 local remaining = expirationTime - GetTime()
                 --print(remaining,duration,expirationTime)
-                if remaining > element.duration or (duration == expirationTime and duration == 0) then
+                if (not element.stacks or count >= element.stacks) and (remaining > element.duration or (duration == expirationTime and duration == 0)) then
                     element.icon = "|T" .. icon .. ":0|t"
                     buffFound = true
                     break

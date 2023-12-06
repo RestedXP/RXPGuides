@@ -872,8 +872,8 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
             if not addon.currentGuideName then
                 error(L("Error parsing guide") .. ": " .. L("Guide has no name"))
             end
-            if currentStep == 0 and (not guide[game] and
-                (guide.classic or guide.tbc or guide.wotlk or guide.df)) then
+            if currentStep == 0 and ((not guide[game] and
+                (guide.classic or guide.tbc or guide.wotlk or guide.df)) or not guide.name or not guide.group) then
                 -- print(game,guide[game],guide.name)
                 skipGuide = "#0"
             end
