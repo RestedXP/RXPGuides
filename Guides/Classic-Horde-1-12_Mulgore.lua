@@ -1690,7 +1690,8 @@ step
     #ah
     .goto Thunder Bluff,40.39,51.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Stampi|r
-    .collect 2318,12,768,1 >>|cRXP_BUY_Buy Twelve|r |T134252:0|t[Light Leather] |cRXP_BUY_from the Auction House|r
+    >>|cRXP_BUY_Buy Twelve|r |T134252:0|t[Light Leather] |cRXP_BUY_from the Auction House|r
+    .collect 2318,12,768,1 --Light Leather (12)
     .target Auctioneer Stampi
     .skill skinning,<1,1
 step
