@@ -948,7 +948,7 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
 
     defaultFor = guide.defaultfor or defaultFor
     guide.group = guide.group or groupOrContent
-    --groupOrContent = addon.GroupOverride(guide) or groupOrContent
+    groupOrContent = addon.GroupOverride(guide) or groupOrContent
 
     if defaultFor then
         local boost58
