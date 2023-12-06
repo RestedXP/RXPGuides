@@ -37,10 +37,10 @@
 	<Script file="Guides/SoD/Paladin.lua"/>
 	<Script file="Guides/SoD/Priest.lua"/>
 	<Script file="Guides/SoD/Warlock.lua"/>
+	<Script file="Guides/SoD/Alliance.lua"/>
 
 <!--
 	<Script file="Guides/SoD/Horde.lua"/>
-	<Script file="Guides/SoD/Alliance.lua"/>
 	<Script file="Guides/SoD/Shaman.lua"/>
 -->
 

@@ -108,3 +108,67 @@ step
     .train 424988,1
 
     ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Druid SoD
+#group RestedXP Rune Guide
+#subgroup Chest
+#name Wild Strikes - 14 (Stonetalon Mountains)
+
+step << Druid
+    .goto Stonetalon Mountains,80.2,90.6,60,0
+    .goto Stonetalon Mountains,83.2,87.0,60,0
+    .goto Stonetalon Mountains,71.6,86.6,60,0
+    .goto Stonetalon Mountains,76.6,91.0,60,0
+    .goto Stonetalon Mountains,80.2,90.6
+    >>Kill |cRXP_ENEMY_Grimtotems|r. Loot them for the |T134233:0|t[|cRXP_FRIENDLY_Idol of the Wild|r]
+    .collect 210534,1 -- Idol of the Wild (1)
+    .mob Grimtotem Mercenary
+    .mob Grimtotem Brute
+    .mob Grimtotem Sorcerer
+    .mob Grimtotem Ruffian
+    .train 410021,1
+step << Druid
+    .train 410021 >> |cRXP_WARN_Use the|r |T134233:0|t[|cRXP_FRIENDLY_Idol of the Wild|r] |cRXP_WARN_to train|r |T132143:0|t[Wild Strikes]
+    .use 210534
+    .itemcount 210534,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Druid SoD
+#group RestedXP Rune Guide
+#subgroup Legs
+#name Starsurge - 25 (Wetlands)
+
+step << Druid
+    #completewith next
+    +|cRXP_WARN_It is possible to do this at level 1 however you will have to die a lot for it|r
+    .train 424718,1
+step << Druid
+    .goto Wetlands,36.941,15.157
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grugimdern|r
+    >>|cRXP_WARN_He will give you a|r |T134052:0|t[|cRXP_LOOT_Marshroom|r]
+    .collect 210499,1 -- Marshroom (1)
+    .skipgossip
+    .target Grugimdern
+    .train 424718,1
+step << Druid
+    #completewith next
+    .goto Wetlands,31.187,18.328
+    .cast 426019 >>|cRXP_WARN_Use the|r |T134052:0|t[|cRXP_LOOT_Marshroom|r] |cRXP_WARN_to eat it|r
+    .use 210499
+    .train 424718,1
+step << Druid
+    .goto Wetlands,31.187,18.328
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vodyanoi|r
+    .collect 210500,1 -- Rune of the Stars (1)
+    .skipgossip
+    .target Vodyanoi
+    .train 424718,1
+step << Druid
+    .train 424718 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Stars|r] |cRXP_WARN_to train|r |T135730:0|t[Starsurge]
+    .use 210500
+    .itemcount 210500,1
+]])
