@@ -614,6 +614,7 @@ step
     .collect 1972,1,184,1 --Collect Westfall Deed (x1)
     .disablecheckbox
 	.mob Defias Bandit
+    .isOnQuest 83
 step
     #label Deed
     >>|cFFFCDC00Use the |T134939:0|t[|cFF00BCD4Westfall Deed|r] to start the quest|r
@@ -630,6 +631,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Sara|r
     .turnin 83 >> Turn in Red Linen Goods
     .target Sara Timberlain
+    .isQuestComplete 83
 step << skip
     .goto Redridge Mountains,9.62,71.36
     .zone Redridge Mountains >> Travel into Redridge Mountains

@@ -929,6 +929,7 @@ step
     >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for their |cRXP_LOOT_Bandanas|r
     .complete 83,1 --Collect Red Linen Bandana (x6)
     .mob Defias Bandit
+    .isOnQuest 83
 step
     .goto Elwynn Forest,69.3,79.0
     >>Kill |cRXP_ENEMY_Princess|r. Loot her for her |cRXP_LOOT_Collar|r
@@ -941,7 +942,7 @@ step
     .complete 88,1
     .mob Princess
 step
-    #completewith next
+    #completewith Level9Grind
     >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for the |T134939:0|t[|cRXP_LOOT_Westfall Deed|r]
     .use 1972>>|cRXP_WARN_Use the |T134939:0|t[|cRXP_LOOT_Westfall Deed|r] to start the quest|r
     >>|cRXP_WARN_The|r |T134939:0|t[|cRXP_LOOT_Westfall Deed|r] |cRXP_WARN_is a very rare drop. Ignore this step if you don't get it|r
@@ -965,7 +966,9 @@ step
     .goto Elwynn Forest,69.3,79.0
     .complete 83,1 --Collect Red Linen Bandana (x6)
     .mob Defias Bandit
+    .isOnQuest 83
 step
+    #label Level9Grind
 	.goto Elwynn Forest,69.53,79.47
     .xp 9+3400 >> Grind to 3400+/6500xp
 step
@@ -973,6 +976,7 @@ step
     .target Sara Timberlain
     .goto Elwynn Forest,79.457,68.789
     .turnin 83 >> Turn in Red Linen Goods
+    .isQuestComplete 83
 step << !Warlock
     .goto Redridge Mountains,8.5,72.0
     .xp 9+4475 >> Grind until 4475+/6500xp

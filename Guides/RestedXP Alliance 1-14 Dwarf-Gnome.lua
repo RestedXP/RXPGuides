@@ -2745,6 +2745,7 @@ step << tbc
     .goto Elwynn Forest,70.8,80.9,40,0
     >>Start circling the farm, killing Defias and looting them for Bandanas
     .complete 83,1 --Collect Red Linen Bandana (x6)
+    .isOnQuest 83
 step
     .goto Elwynn Forest,69.8,79.5
     .abandon 109 >> Abandon Report to Gryan Stoutmantle
@@ -2765,6 +2766,7 @@ step << tbc
 .target Sara Timberlain
 >>Talk to |cFF00FF25Sara Timberlain|r
     .turnin 83 >> Turn in Red Linen Goods
+    .isQuestComplete 83
 step << tbc
 #xprate <1.5
     #sticky
