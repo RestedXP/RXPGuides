@@ -1121,3 +1121,34 @@ step
     .train 403474,1
 
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Warrior SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Quick Strike - 12 (Loch Modan)
+
+step << Warrior
+    .goto Loch Modan,33.2,73.8
+    >>Kill |cRXP_ENEMY_Troggs|r. Loot them for a |cRXP_LOOT_Skull-Shaped Geode|r
+    .collect 208847,1 -- Skull-Shaped Geode (1)
+    .mob Stonesplinter Scout
+    .mob Stonesplinter Trogg
+    .train 425443,1
+step << Warrior
+    .goto Loch Modan,33.2,73.8
+    >>Kill a |cRXP_ENEMY_Stonesplinter Skullthumper|r
+    >>|cRXP_WARN_During combat it'll give you a nice thumpin' which will turn the |cRXP_LOOT_Skull-Shaped Geode|r into a|r |T236489:0|t[|cRXP_LOOT_Cracked Skull-Shaped Geode|r]
+    .collect 208848,1 -- Cracked Skull-Shaped Geode (1)
+    .mob Stonesplinter Skullthumper
+    .train 425443,1
+step << Warrior
+    .use 208848 >>|cRXP_WARN_Use the|r |T236489:0|t[|cRXP_LOOT_Cracked Skull-Shaped Geode|r] |cRXP_WARN_to receive the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Strike|r]
+    .collect 208778,1 -- Rune of Quick Strike (1)
+    .train 425443,1
+step << Warrior
+    .train 425443 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Strike|r] |cRXP_WARN_to train|r |T132394:0|t[Quick Strike]
+    .use 208778
+    .itemcount 208778,1
+]])
