@@ -641,3 +641,92 @@ step << Mage
     .itemcount 211514,1
     .train 415939,1
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warrior SoD
+#group RestedXP Rune Guide
+#subgroup Chest
+#name Raging Blow - 25 (Multiple Zones)
+
+step << Warrior
+    #completewith next
+    .zone Ashenvale >> Travel to Ashenvale
+    .train 425444,1
+step << Warrior
+    .goto Ashenvale,43.513,70.463
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
+    .accept 78132 >> Accept Dragonslayer's Helm
+    .accept 78134 >> Accept Dragonslayer's Lance
+    .accept 78133 >> Accept Dragonslayer's Shield
+    .target Alonso
+    .train 425444,1 
+step << Warrior
+    #completewith next
+    .goto Wetlands,49.40,16.98
+    .subzone 205 >> Travel to Dun Modr in Wetlands
+    .train 425444,1
+step << Warrior
+    .goto Wetlands,46.92,17.53,15,0
+    .goto Wetlands,46.553,18.369
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Dark Iron Entrepreneur|r inside of the building
+    >>|cRXP_WARN_You may need to corpse run a couple times to get to him|r
+    >>|cRXP_BUY_Buy a|r |T135130:0|t[Dragonslayer's Lance] |cRXP_BUY_it costs 75 silver|r
+    .complete 78134,1 -- Dragonslayer's Lance (1)
+    .target Dark Iron Entrepreneur
+    .train 425444,1
+step << Warrior
+    #completewith next
+    .goto Redridge Mountains,69.928,55.814
+    .subzone 2099 >> Travel to Stonewatch Keep in Redridge Mountains
+    .train 425444,1
+step << Warrior
+    .goto Redridge Mountains,69.928,55.814
+    >>Click the |cRXP_PICK_Wall-Mounted Shield|r. Loot it for the |cRXP_LOOT_Dragonslayer's Shield|r
+    >>|cRXP_WARN_This is inside of the main keep upstairs behind |cRXP_ENEMY_Gath'Ilzogg|r who is a level 26 elite|r
+    >>|cRXP_WARN_You will need to kill |cRXP_ENEMY_Gath'Ilzogg|r or have him be engaged by someone else in order to loot it. Ensure you have a party before going in|r
+    .complete 78133,1 -- Dragonslayer's Shield (1)
+    .train 425444,1
+step << Warrior
+    #completewith next
+    .subzone 209,2 >> Find a group and enter Shadowfang Keep
+step << Warrior
+    >>Open the |cRXP_PICK_Discarded Helm|r. Loot it for the |cRXP_LOOT_Dragonslayer's Helm|r
+    >>|cRXP_WARN_This is found on a bench behind|r |cRXP_ENEMY_Commander Springvale|r
+    .complete 78132,1 -- Dragonslayer's Helm (1)
+    .train 425444,1
+step << Warrior
+    #completewith next
+    .zone Ashenvale >> Travel to Ashenvale
+    .train 425444,1
+step << Warrior
+    .goto Ashenvale,43.513,70.463
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
+    .turnin 78132 >> Turn In Dragonslayer's Helm
+    .turnin 78134 >> Turn In Dragonslayer's Lance
+    .turnin 78133 >> Turn In Dragonslayer's Shield
+    .target Alonso
+    .train 425444,1 
+step << Warrior
+    .goto Ashenvale,43.513,70.463
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
+    .accept 78144 >> Accept Alonso the Dragonslayer
+    .target Alonso
+    .train 425444,1 
+step << Warrior
+    .goto Ashenvale,42.029,68.999
+    >>Kill the |cRXP_ENEMY_Green Dragon Whelp|r
+    .complete 78144,1 -- Accompany Alonso to slay the dragon.
+    .target Alonso
+    .mob Green Dragon Whelp
+    .train 425444,1 
+step << Warrior
+    .goto Ashenvale,42.053,69.187
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
+    .turnin 78144 >> Turn in Alonso the Dragonslayer
+    .target Alonso
+    .train 425444,1
+step << Warrior
+    .train 425444 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Raging Blow|r] |cRXP_WARN_to train|r |T132215:0|t[Raging Blow]
+    .use 210569
+]])
