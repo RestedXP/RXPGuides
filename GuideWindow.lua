@@ -1403,8 +1403,7 @@ function addon:LoadGuide(guide, OnLoad)
     end
 
     guide = addon:FetchGuide(guide)
-
-    if not guide.steps then
+    if not guide or not guide.steps then
         return addon:LoadGuide(addon.emptyGuide)
     elseif addon.HideIntroUI and not guide.empty then
         addon.HideIntroUI()
