@@ -648,6 +648,7 @@ step
     #requires Elwynn1
     #label Cave1
     .goto Elwynn Forest,61.59,53.51,15 >>Enter the Jasperlode Mine
+    .xp <8,1
 step
     #label LibramS
     .goto Elwynn Forest,61.46,48.17,8,0
@@ -659,7 +660,7 @@ step
     .goto Elwynn Forest,61.97,47.31,12 >> Travel toward the |cRXP_FRIENDLY_Wounded Adventurer|r on the ground inside the cave
     .target Wounded Adventurer
     .train 425619,1
-    .xp >8,1
+    .xp <8,1
 --XX no completewith next so people don't brick it by casting Purify accidentally
 step
     #completewith next
@@ -667,7 +668,7 @@ step
     .cast 1152 >>|cRXP_WARN_Cast|r |T135949:0|t[Purify] |cRXP_WARN_on the|r |cRXP_FRIENDLY_Wounded Adventurer|r
     .target Wounded Adventurer
     .train 425619,1
-    .xp >8,1
+    .xp <8,1
 step
     .goto Elwynn Forest,61.97,47.31
     >>Talk to the |cRXP_FRIENDLY_Wounded Adventurer|r after casting |T135949:0|t[Purify] on him to be given the |T134419:0|t[Rune of Aegis]
@@ -675,7 +676,7 @@ step
     .target Wounded Adventurer
     .skipgossip
     .train 425619,1
-    .xp >8,1
+    .xp <8,1
 --XX gossipoption 109556
 step
     .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Aegis] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest: Aegis]
@@ -722,14 +723,14 @@ step
     .goto Dun Morogh,25.57,43.37,40 >> Travel toward the |cRXP_FRIENDLY_Wounded Adventurer|r on the ground
     .target Wounded Adventurer
     .train 425619,1
-    .xp >8,1
+    .xp <8,1
 step
     #completewith next
     .goto Dun Morogh,25.57,43.37
     .cast 1152 >>|cRXP_WARN_Cast|r |T135949:0|t[Purify] |cRXP_WARN_on the|r |cRXP_FRIENDLY_Wounded Adventurer|r
     .target Wounded Adventurer
     .train 425619,1
-    .xp >8,1
+    .xp <8,1
 step
     .goto Dun Morogh,25.57,43.37
     >>Talk to the |cRXP_FRIENDLY_Wounded Adventurer|r after casting |T135949:0|t[Purify] on him to be given the |T134419:0|t[Rune of Aegis]
@@ -737,7 +738,7 @@ step
     .target Wounded Adventurer
     .skipgossip
     .train 425619,1
-    .xp >8,1
+    .xp <8,1
 step
     .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Aegis] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest: Aegis]
     .use 208849
