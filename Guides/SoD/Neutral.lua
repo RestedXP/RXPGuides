@@ -177,8 +177,8 @@ RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune Guide
 #subgroup Chest << Priest/Hunter/Druid/Warrior/Shaman
-#subgroup Legs << Warlock/Paladin
-#subgroup Gloves << Mage/Rogue
+#subgroup Legs << Warlock
+#subgroup Gloves << Mage/Rogue/Paladin
 #name Serendipity - 25 (Ratchet) << Priest
 #name Lone Wolf - 25 (Ratchet) << Hunter
 #name Survival of the Fittest - 25 (Ratchet) << Druid
@@ -188,6 +188,7 @@ RXPGuides.RegisterGuide([[
 #name Divine Sacrifice - 25 (Ratchet) << Paladin
 #name Rewind Time - 25 (Ratchet) << Mage
 #name Main Gauche - 25 (Ratchet) << Rogue
+#next Divine Storm - 25 (Darkshore) << Paladin
 
 << SoD
 
@@ -436,7 +437,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune Guide
 #subgroup Chest << Shaman/Rogue
-#subgroup Legs << Mage/Warlock/Hunter/Druid/
+#subgroup Legs << Mage/Warlock/Hunter/Druid
 #subgroup Gloves << Paladin/Warrior/Priest
 #name Mind Sear - 25 (Reputation) << Priest
 #name Serpent Spread - 25 (Reputation) << Hunter
@@ -447,8 +448,11 @@ RXPGuides.RegisterGuide([[
 #name Beacon of Light - 25 (Reputation) << Paladin
 #name Arcane Surge - 25 (Reputation) << Mage
 #name Just a Flesh Wound - 25 (Reputation) << Rogue
+#next Divine Sacrifice - 25 (Ratchet) << Paladin
 
 << SoD
+
+--VV if (Reputation) name formatting removed, change in Paladin guide too
 
 step
     >>Go out and find |T132765:0|t[Waylaid Supplies]. Then go back into a capital city and deliver them. If you want to get the reputation faster buy the required items in the AH to upgrade them.
