@@ -587,3 +587,57 @@ step << Druid
     .use 210137
     .itemcount 210137,1
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warrior SoD/Mage SoD
+#group RestedXP Rune Guide
+#subgroup Chest << Warrior
+#subgroup Legs << Mage
+#name Flagellation - 25 (Duskwood) << Warrior
+#name Mass Regeneration - 25 (Duskwood) << Mage
+
+step << Warrior/Mage
+    #completewith next
+    .goto Duskwood,23.630,34.888,15 >> Enter the north eastern crypt
+    .train 403480,1 << Warrior
+    .train 415939,1 << Mage
+step << Warrior/Mage
+    .goto Duskwood,26.115,30.863
+    >>Open the |cRXP_PICK_Dusty Coffer|r. Loot it for the |T252996:0|t[|cRXP_LOOT_Decrepit Phylactery|r]
+    .collect 210568,1 -- Decrepit Phylactery (1)
+    .train 403480,1 << Warrior
+    .train 415939,1 << Mage
+step << Warrior/Mage
+    #completewith next
+    .goto Duskwood,15.602,38.621,15 >> Exit this crypt and head down into the western crypt
+    .train 403480,1 << Warrior
+    .train 415939,1 << Mage
+step << Warrior/Mage
+    #completewith next
+    .goto Duskwood,18.140,37.940
+    .cast 426182 >> |cRXP_WARN_Use the|r |T252996:0|t[|cRXP_LOOT_Decrepit Phylactery|r] |cRXP_WARN_on the |cRXP_PICK_Slumbering Bones|r on the throne|r
+    .use 210568 >>|cRXP_WARN_This will summon a level 25 elite|r |cRXP_ENEMY_Awakened Lich|r
+    .train 403480,1 << Warrior
+    .train 415939,1 << Mage
+step << Warrior/Mage
+    .goto Duskwood,18.140,37.940
+    >>Kill the |cRXP_ENEMY_Awakened Lich|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Flagellation|r] << Warrior
+    >>Kill the |cRXP_ENEMY_Awakened Lich|r. Loot it for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Mass Regeneration|r] << Mage
+    >>|cRXP_WARN_If someone else is there killing the |cRXP_ENEMY_Awakened Lich|r you can also help them and you will still be able to loot it|r
+    .collect 210569,1 << Warrior -- Rune of Flagellation (1)
+    .collect 211514,1 << Mage -- Spell Notes: Mass Regeneration (1)
+    .mob Awakened Lich
+    .train 403480,1 << Warrior
+    .train 415939,1 << Mage
+step << Warrior
+    .train 416050 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Flagellation|r] |cRXP_WARN_to train|r |T133495:0|t[Flagellation]
+    .use 210569
+    .itemcount 210569,1
+    .train 403480,1
+step << Mage
+    .train 416050 >> |cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Mass Regeneration|r] |cRXP_WARN_to train|r |T132870:0|t[Mass Regeneration]
+    .use 211514
+    .itemcount 211514,1
+    .train 415939,1
+]])
