@@ -242,7 +242,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Alliance Druid SoD
 #group RestedXP Rune Guide
-#subgroup Legs
+#subgroup Gloves
 #name Sunfire - 6 (Teldrassil)
 
 step << Druid
