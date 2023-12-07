@@ -176,8 +176,6 @@ step
     .accept 3104 >> Accept Glyphic Letter << Mage
     .accept 3105 >> Accept Tainted Letter << Warlock
 step
-    .xp 3 >> Grind to 3
-step
     .goto Elwynn Forest,47.2,35.1,40,0
     .goto Elwynn Forest,48.9,32.8,40,0
     .goto Elwynn Forest,51.7,37.7,40,0
@@ -268,12 +266,12 @@ step << Paladin
     .trainer >> Train your class spells
 step << Paladin
     #season 2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Sammuel|r
-    .target Brother Sammuel
     .goto Elwynn Forest,50.433,42.124
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Sammuel|r
     .turnin 3101 >> Turn in Consecrated Letter
     .accept 77617 >> Accept Relics of the Light << Human Paladin
     .trainer >> Train your class spells
+    .target Brother Sammuel
 step << Priest
     #season 2
     #completewith next
