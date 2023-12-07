@@ -270,7 +270,7 @@ step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Sammuel|r
     .turnin 3101 >> Turn in Consecrated Letter
     .accept 77617 >> Accept Relics of the Light << Human Paladin
-    .trainer >> Train your class spells
+    .train 20271 >> Train your class spells
     .target Brother Sammuel
 step << Priest
     #season 2
@@ -396,34 +396,66 @@ step << Human Mage
     .complete 77620,1 -- Learn: Engrave Gloves - Ice Lance
 step << Paladin
     #season 2
-    #label LoJ
-    #completewith RedBurlapBandana
-    >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for the |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r]
+    #loop
+    .goto Elwynn Forest,52.55,48.79,30,0
+    .goto Elwynn Forest,53.89,50.52,30,0
+    .goto Elwynn Forest,55.09,49.00,30,0
+    .goto Elwynn Forest,55.43,45.87,30,0
+    .goto Elwynn Forest,53.86,47.05,30,0
+    >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for the |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r
     .collect 205420,1 -- Libram of Judgement (1)
     .mob Defias Thug
+    .train 410002,1
 step << Paladin
     #season 2
-    #label EquipLoJ
-    #requires LoJ
-    #completewith next
-    +|cRXP_WARN_Equip the|r |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r]
-    .itemcount 205420,1 -- Libram of Judgement (1)
+    .equip 18,205420 >> |cRXP_WARN_Equip the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r
     .use 205420
-    .itemStat 18,QUALITY,<2
+    .itemcount 205420,1 --Libram of Judgement (1)
+    .train 410002,1
 step << Paladin
     #season 2
-    #requires EquipLoJ
-    #completewith next
-    .cast 409920 >>|cRXP_WARN_Cast|r |T135959:0|t[Judgement] |cRXP_WARN_on your foes 10 times until you have gained the|r |T136116:0|t[Inspired] |cRXP_WARN_buff, then use the|r |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r] |cRXP_WARN_again which you equiped earlier|r
+    #completewith RedBurlapBandana
+    #label CSLibram1
+    #loop
+    .goto Elwynn Forest,52.55,48.79,30,0
+    .goto Elwynn Forest,53.89,50.52,30,0
+    .goto Elwynn Forest,55.09,49.00,30,0
+    .goto Elwynn Forest,55.43,45.87,30,0
+    .goto Elwynn Forest,53.86,47.05,30,0
+    .aura 408828 >>|cRXP_WARN_Cast|r |T135959:0|t[Judgement] |cRXP_WARN_10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    .itemStat 18,QUALITY,2
+    .train 410002,1
+step << Paladin
+    #season 2
+    #completewith RedBurlapBandana
+    #requires CSLibram1
+    #label CSLibram2
+    .cast 409920 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves: Crusader Strike]
     .use 205420
-    .itemcount 205420,1
+    .aura 408828
+    .train 410002,1
+step << Paladin
+    #season 2
+    #completewith RedBurlapBandana
+    #requires CSLibram2
+    #label CSLibram3
+    .equip 10 >>|cRXP_WARN_Equip a pair of|r |T132938:0|t|cRXP_LOOT_[Gloves]|r |cRXP_WARN_if you have some or when you loot some|r
+    .train 410002,2
+step << Paladin
+    #season 2
+    #completewith next
+    #requires CSLibram3
+    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132938:0|t|cRXP_LOOT_[Gloves]|r with|r |T133816:0|t[Engrave Gloves: Crusader Strike]
+    .train 410002,2
 step
     #season 2
+    #loop
     #label RedBurlapBandana
-    .goto Elwynn Forest,53.9,49.2,50,0
-    .goto Elwynn Forest,55.5,42.1,50,0
-    .goto Elwynn Forest,53.9,49.2
-    .goto Elwynn Forest,54.57,49.03
+    .goto Elwynn Forest,52.55,48.79,30,0
+    .goto Elwynn Forest,53.89,50.52,30,0
+    .goto Elwynn Forest,55.09,49.00,30,0
+    .goto Elwynn Forest,55.43,45.87,30,0
+    .goto Elwynn Forest,53.86,47.05,30,0
     >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for their |cRXP_LOOT_Bandanas|r
 	.mob Defias Thug
     .complete 18,1 --Collect Red Burlap Bandana (x12)
@@ -444,28 +476,52 @@ step << Human Mage
     .complete 77620,1 -- Learn: Engrave Gloves - Ice Lance
 step << Paladin
     #season 2
-    .goto Elwynn Forest,53.9,49.2,50,0
-    .goto Elwynn Forest,55.5,42.1,50,0
-    .goto Elwynn Forest,53.9,49.2
-    .goto Elwynn Forest,54.57,49.03
-    >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for the |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r]
+    #loop
+    .goto Elwynn Forest,52.55,48.79,30,0
+    .goto Elwynn Forest,53.89,50.52,30,0
+    .goto Elwynn Forest,55.09,49.00,30,0
+    .goto Elwynn Forest,55.43,45.87,30,0
+    .goto Elwynn Forest,53.86,47.05,30,0
+    >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for the |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r
     .collect 205420,1 -- Libram of Judgement (1)
     .mob Defias Thug
-step << Paladin
-    #season 2
-    +|cRXP_WARN_Equip the|r |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r]
-    .itemcount 205420,1 -- Libram of Judgement (1)
-    .use 205420
     .itemStat 18,QUALITY,<2
+    .train 410002,1
 step << Paladin
     #season 2
-    .goto Elwynn Forest,53.9,49.2,50,0
-    .goto Elwynn Forest,55.5,42.1,50,0
-    .goto Elwynn Forest,53.9,49.2
-    .goto Elwynn Forest,54.57,49.03
-    .cast 409920 >>|cRXP_WARN_Cast|r |T135959:0|t[Judgement] |cRXP_WARN_on your foes 10 times until you have gained the|r |T136116:0|t[Inspired] |cRXP_WARN_buff, then use the|r |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r] |cRXP_WARN_again which you equiped earlier|r
+    .equip 18,205420 >> |cRXP_WARN_Equip the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r
     .use 205420
-    .itemcount 205420,1
+    .itemcount 205420,1 --Libram of Judgement (1)
+    .train 410002,1
+step << Paladin
+    #season 2
+    #loop
+    .goto Elwynn Forest,52.55,48.79,30,0
+    .goto Elwynn Forest,53.89,50.52,30,0
+    .goto Elwynn Forest,55.09,49.00,30,0
+    .goto Elwynn Forest,55.43,45.87,30,0
+    .goto Elwynn Forest,53.86,47.05,30,0
+    .aura 408828 >>|cRXP_WARN_Cast|r |T135959:0|t[Judgement] |cRXP_WARN_10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    .itemStat 18,QUALITY,2
+    .train 410002,1
+step << Paladin
+    #season 2
+    .cast 409920 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves: Crusader Strike]
+    .use 205420
+    .aura 408828
+    .train 410002,1
+step << Dwarf Paladin
+    #season 2
+    #completewith RestandR
+    #label CSLibram3
+    .equip 10 >> |cRXP_WARN_Equip a pair of|r |T132938:0|t|cRXP_LOOT_[Gloves]|r |cRXP_WARN_if you have some or when you loot some|r
+    .train 410002,2
+step << Dwarf Paladin
+    #season 2
+    #completewith RestandR
+    #requires CSLibram3
+    .engrave 10 >> |cRXP_WARN_Engrave your|r |T132938:0|t|cRXP_LOOT_[Gloves]|r with|r |T133816:0|t[Engrave Gloves: Crusader Strike]
+    .train 410002,2
 step << Rogue
     .xp 4 >> Grind to 4
 step
@@ -499,7 +555,12 @@ step
     .turnin 18 >> Turn in Brotherhood of Thieves << !Warrior !Priest !Mage !Rogue !Warlock !Paladin
     .accept 3903 >> Accept Milly Osworth
     .accept 6 >> Accept Bounty on Garrick Padfoot
---XX Milly seems to accept first
+step << Paladin
+    #completewith next
+    .equip 16,5579 >> Equip the |T133052:0|t[Militia Warhammer]
+    .use 5579
+    .itemcount 5579,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.6
 step << Human Mage
     #season 2
     #completewith next
@@ -518,12 +579,22 @@ step << Human Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Sammuel|r
     .turnin 77617 >> Turn in Relics of the Light
     .target Brother Sammuel
-step << Paladin
-    #completewith next
-    +Equip the |T133052:0|t[Militia Warhammer]
-    .use 5579
-    .itemcount 5579,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.6
+step << Human Paladin
+    #season 2
+    #completewith RestandR
+    #label CSLibram3
+    .equip 10,2385 >> |cRXP_WARN_Equip the|r |T132938:0|t|cRXP_LOOT_[Tarnished Chain Gloves]|r
+    .use 2385
+    .itemcount 2385,1
+    .train 410002,2
+    .itemStat 10,LEVEL,<5
+step << Human Paladin
+    #season 2
+    #completewith RestandR
+    #requires CSLibram3
+    .engrave 10 >> |cRXP_WARN_Engrave the|r |T132938:0|t|cRXP_LOOT_[Tarnished Chain Gloves]|r with|r |T133816:0|t[Engrave Gloves: Crusader Strike]
+    .train 410002,2
+    .itemStat 10,LEVEL,<5
 step << skip
     >> Talk to |cFF00FF25Godric Rothgar|r
     .target Godric Rothgar
@@ -642,6 +713,7 @@ step << Priest
     .goto Elwynn Forest,49.808,39.489
     .accept 5623 >> Accept In Favor of the Light
 step
+    #label RestandR
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falkhaan Isenstrider|r
     .target Falkhaan Isenstrider
     .goto Elwynn Forest,45.563,47.742
@@ -2145,6 +2217,65 @@ step
     .turnin 6661 >> Turn in Deeprun Rat Roundup
 step
     .zone Ironforge >>Enter Ironforge
+step << Paladin
+    #season 2
+    #completewith next
+    .goto Ironforge,71.54,73.46,10,0
+    .goto Ironforge,72.53,76.94,10 >>Travel toward |cRXP_FRIENDLY_Bruuk Barleybeard|r inside the Inn
+    .train 425621,1
+step << Paladin
+    #season 2
+    .goto Ironforge,72.53,76.94
+    .gossipoption 110791 >>Talk to |cRXP_FRIENDLY_Bruuk Barleybeard|r inside
+    .target Bruuk Barleybeard
+    .skipgossip 5570,1,1
+    .train 425621,1
+--XX 110793 "How's business?"
+--XX 110791 "Sounds like you need someone to bounce him for you."
+step << Paladin
+    #season 2
+    .goto Ironforge,72.40,73.63
+    .gossipoption 109084 >>Talk to |cRXP_FRIENDLY_Bruart|r to start a fight
+    >>Defeat |cRXP_ENEMY_Bruart|r
+    >>|cRXP_WARN_Be careful as he casts|r |T132939:0|t[Backhand] |cRXP_WARN_(stuns you for 2 seconds)|r
+    >>|cRXP_WARN_Remember to pre-cast|r |T135924:0|t[Seal of the Crusader] |cRXP_WARN_on him|r
+    >>|cRXP_WARN_DO NOT accidentally cast|r |T135906:0|t[Blessing of Might] |cRXP_WARN_on him|r
+    >>|cRXP_WARN_Kite him upstairs to the balcony, then drop down outside the inn cast|r |T135920:0|t[Holy Light] |cRXP_WARN_if needed|r
+    .mob Bruart
+    .skipgossip 209004,1
+    .train 425621,1
+--XX 109084 "Seems you've had a few too many"
+--XX Check if another player can skip the "how's business" dialogue for you (paladin, warrior)
+step << Paladin
+    #season 2
+    .goto Ironforge,72.40,73.63,-1
+    .goto Ironforge,72.53,76.94,-1
+    >>Defeat |cRXP_ENEMY_Bruart|r
+    >>|cRXP_WARN_Be careful as he casts|r |T132939:0|t[Backhand] |cRXP_WARN_(stuns you for 2 seconds)|r
+    >>|cRXP_WARN_Remember to pre-cast|r |T135924:0|t[Seal of the Crusader] |cRXP_WARN_on him|r
+    >>|cRXP_WARN_DO NOT accidentally cast|r |T135906:0|t[Blessing of Might] |cRXP_WARN_on him|r
+    >>|cRXP_WARN_Kite him upstairs to the balcony, then drop down outside the inn cast|r |T135920:0|t[Holy Light] |cRXP_WARN_if needed|r
+    >>|cRXP_WARN_After defeating |cRXP_ENEMY_Bruart|r:|r
+    >>Talk to |cRXP_FRIENDLY_Bruuk Barleybeard|r again to receive the |T134419:0|t[Rune of Rebuke]
+    >>|cRXP_WARN_If he doesn't give you the|r |T134419:0|t[Rune of Rebuke]|cRXP_WARN_, you may need to fight |cRXP_ENEMY_Bruart|r again|r
+    .collect 205683,1 --Rune of Rebuke (1)
+    .target Bruuk Barleybeard
+    .skipgossip 5570,2,1
+    .skipgossip 209004,1
+    .train 425621,1
+--XX 109539 "I've taken care of Stuart. He shouldn't be a problem anymore."
+step << Paladin
+    #season 2
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Rebuke] |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants: Rebuke]
+    .use 205683
+    .itemcount 205683,1 --Rune of Rebuke (1)
+    .train 425621,1
+step << Paladin
+    #season 2
+    #completewith Dirt
+    .engrave 7 >>|cRXP_WARN_Engrave your|r |T134596:0|t|cRXP_LOOT_[Pants]|r with|r |T134596:0|t[Engrave Pants: Rebuke]
+    >>|cRXP_WARN_Remember to put|r |T134919:0|t[Rebuke] |cRXP_WARN_onto your action bars|r
+    .train 425621,2
 step
     .goto Ironforge,55.501,47.742
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
@@ -2738,6 +2869,36 @@ step << Paladin
     .goto StormwindClassic,38.67,32.82
     .trainer >> Train your class spells
     .target Arthur the Faithful
+step << Paladin
+    #season 2
+    .goto StormwindClassic,38.10,28.10
+    .gossipoption 109653 >>Talk to |cRXP_FRIENDLY_Brother Romulus|r
+    .target Brother Romulus
+    .skipgossip
+    .train 410015,1
+step << Paladin
+    #season 2
+    #completewith next
+    .goto StormwindClassic,37.39,29.76,5,0
+    .goto StormwindClassic,37.87,29.10,5,0
+    .goto StormwindClassic,36.52,32.67,8,0
+    .goto StormwindClassic,36.55,33.45,8,0
+    .goto StormwindClassic,35.95,34.05,8,0
+    .goto StormwindClassic,35.46,33.03,8,0
+    .goto StormwindClassic,35.95,31.54,8,0
+    .goto StormwindClassic,34.79,29.31,8,0
+    .goto StormwindClassic,33.69,29.69,8,0
+    .goto StormwindClassic,32.57,27.49,8,0
+    .goto StormwindClassic,33.41,25.61,8,0
+    >>Go downstairs into the western side of the Cathedral's Crypt
+    .goto StormwindClassic,32.86,24.77,8 >>Travel toward the |cRXP_LOOT_Charred Note|r in the crypt
+    .train 410015,1
+step << Paladin
+    #season 2
+    .goto StormwindClassic,32.86,24.87
+    >>Loot the |cRXP_LOOT_Charred Note|r next to the candles
+    .collect 205864,1 --Charred Note (1)
+    .train 410015,1
 step << Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Joshua|r
     .goto StormwindClassic,38.54,26.86

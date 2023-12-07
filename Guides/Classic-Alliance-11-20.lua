@@ -967,7 +967,7 @@ step << NightElf Hunter/Druid
     .goto Darkshore,56.92,27.27,40,0
     .goto Darkshore,55.27,27.74
     >>Kill |cFFFF5722Dark Strand Fanatics|r. Loot them for their |cFF00BCD4Parchments|r
-    .complete 966,1
+    .complete 966,1 --Worn Parchment (4)
     .mob Dark Strand Fanatic
 step << NightElf Hunter/Druid
 #map Darkshore
@@ -1249,6 +1249,56 @@ step
     >>|cFF0E8312Buy food/water if needed|r
     .vendor >>|T133918:0|t[Longjaw Mud Snapper] |cFFFCDC00is very cheap|r
 	.target Innkeeper Heather
+step << Paladin
+    #season 2
+    #completewith next
+    #label Island
+    .goto Duskwood,4.33,28.26,50 >>Travel toward |cRXP_FRIENDLY_Ada Gelhardt|r on the island
+    .train 410015,1
+    .itemcount 205864,1 --Charred Note (1)
+step << Paladin
+    #season 2
+    #completewith next
+    .goto Duskwood,4.33,28.26
+    .gossipoption 109610 >>Talk to |cRXP_FRIENDLY_Ada Gelhardt|r to start a fight
+    .target Ada Gelhardt
+    .skipgossip 205153,1
+    .train 410015,1
+    .itemcount 205864,1 --Charred Note (1)
+--XX 109612 "As one candle is snuffed out, another is lit"
+--XX 109611 "I've been sent by brother Romulus. Please, Ada, return with me to the Cathedral of Light"
+--XX 109610 "I see. I'm sorry it has come to this, sister. (Fight Ada)"
+step << Paladin
+    #season 2
+    #requires Island
+    .goto Duskwood,4.33,28.26
+    >>Defeat |cRXP_ENEMY_Ada Gelhardt|r
+    >>|cRXP_WARN_Remember to pre-cast|r |T135924:0|t[Seal of the Crusader] |cRXP_WARN_on her|r
+    >>|cRXP_WARN_Be careful as she casts|r |T136197:0|t[Shadow Shock] |cRXP_WARN_(instantly deals 45 shadow damage. Costs her 75 mana. You should kill her quick enough for her to only cast it 3 times)|r
+    >>|cRXP_WARN_After defeating |cRXP_ENEMY_Ada Gelhardt|r:|r
+    >>Talk to |cRXP_FRIENDLY_Ada Gelhardt|r again to receive the |T134419:0|t[Rune of Martyrdom]
+    .collect 205897,1 --Rune of Martyrdom (1)
+    .target Ada Gelhardt
+    .skipgossip 205153,1
+    .train 410015,1
+    .itemcount 205864,1 --Charred Note (1)
+--XX Must have had the Charred Note to unlock the dialogue
+step << Paladin
+    #season 2
+    #sticky
+    .destroy 205864 >> Delete the |T134939:0|t[Charred Note] from your bags, as it's no longer needed
+step << Paladin
+    #season 2
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Martyrdom] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest: Seal of Martyrdom]
+    .use 205897
+    .itemcount 205897,1 --Rune of Martyrdom (1)
+    .train 410015,1
+step << Paladin
+    #season 2
+    .goto Westfall,36.24,54.52
+    .engrave 5 >>|cRXP_WARN_Engrave your|r |T134596:0|t|cRXP_LOOT_[Chest]|r with|r |T133815:0|t[Engrave Chest: Seal of Martyrdom]
+    >>|cRXP_WARN_Remember to put|r |T135961:0|t[Seal of Martyrdom] |cRXP_WARN_onto your action bars. It is better than both|r |T132325:0|t[Seal of Righteousness] |cRXP_WARN_and|r |T132347:0|t[Seal of Command] |cRXP_WARN_(until you get|r |T133815:0|t[Engrave Chest: Divine Storm]|cRXP_WARN_)|r
+    .train 410015,2
 step
 	#completewith GnollPaws
     >>Open the |cFFDB2EEFSacks of Oats|r on the ground. Loot them for the |cFF00BCD4Handful of Oats|r
@@ -2242,8 +2292,17 @@ step
     .goto Winterspring,4.82,27.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Balthule Shadowstrike|r
     .turnin 965 >> Turn in The Tower of Althalaxx
-    .target Balthule Shadowstrike
     .accept 966 >> Accept The Tower of Althalaxx
+    .target Balthule Shadowstrike
+step << Paladin
+    #season 2
+    #completewith next
+    .goto Darkshore,56.20,26.46
+    >>|cRXP_WARN_Keep an eye out for groups going into the Tower of Althalaxx. If you see anyone, follow behind them slowly inside so you can loot the |cRXP_PICK_Strange Orb|r at the top
+    >>|cRXP_WARN_Be careful as the mobs in this tower are impossible for you to kill (Level 28-31)|r
+    >>Open the |cRXP_PICK_Strange Orb|r on the table atop the Tower of Althalaxx. Loot it for the |cRXP_LOOT_Althalaxx Orb|r
+    .collect 209836,1,78089,1 --Athalaxx Orb (1)
+    .train 410014,1
 step
     .goto Darkshore,55.27,27.74,55,0
     .goto Darkshore,56.92,27.27,55,0
@@ -2251,15 +2310,15 @@ step
     .goto Darkshore,56.92,27.27,55,0
     .goto Darkshore,55.27,27.74
     >>Kill |cFFFF5722Dark Strand Fanatics|r. Loot them for their |cFF00BCD4Parchments|r
-    .complete 966,1
+    .complete 966,1 --Worn Parchment (4)
     .mob Dark Strand Fanatic
 step
-#map Darkshore
+    #map Darkshore
     .goto Winterspring,4.82,27.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Balthule Shadowstrike|r
     .turnin 966 >> Turn in The Tower of Althalaxx
-    .target Balthule Shadowstrike
     .accept 967 >> Accept The Tower of Althalaxx
+    .target Balthule Shadowstrike
 step
     .goto Darkshore,57.13,22.04,55,0
     .goto Darkshore,57.97,20.23,55,0
@@ -6328,6 +6387,27 @@ step
     .goto Ashenvale,27.26,35.58
     .turnin 5321 >> Turn in The Sleeper Has Awakened
     .isQuestComplete 5321
+step << Paladin
+    #season 2
+    .goto Ashenvale,26.19,38.69
+    >>Talk to |cRXP_FRIENDLY_Delgren the Purifier|r
+    .turnin 967 >> Turn in The Tower of Althalaxx
+    .accept 970 >> Accept The Tower of Althalaxx
+    .turnin 78088 >> Turn in A Strange Artifact
+    .accept 78089 >> Accept Advice From Stormwind
+    .target Delgren the Purifier
+    .train 410014,1
+    .itemcount 209836,1 --Athalaxx Orb (1)
+step << Paladin
+    #season 2
+    .goto Ashenvale,26.19,38.69
+    >>Talk to |cRXP_FRIENDLY_Delgren the Purifier|r
+    .turnin 967 >> Turn in The Tower of Althalaxx
+    .accept 970 >> Accept The Tower of Althalaxx
+    .accept 78089 >> Accept Advice From Stormwind
+    .target Delgren the Purifier
+    .train 410014,1
+    .isQuestTurnedIn 78088
 step
     #label tower
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Delgren the Purifier|r

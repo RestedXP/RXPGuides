@@ -423,7 +423,7 @@ step
     .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Justice]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves: Hand of Reckoning]
     .aura 408828
     .use 208851
-    .train 407676,1
+    .train 410001,1
     .xp <8,1
 ]])
 
@@ -836,7 +836,7 @@ step
     .destroy 205864 >> Delete the |T134939:0|t[Charred Note] from your bags, as it's no longer needed
 step
     .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Martyrdom] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest: Seal of Martyrdom]
-    .use 205683
+    .use 205897
     .itemcount 205897,1 --Rune of Martyrdom (1)
     .train 410015,1
 ]])
@@ -882,13 +882,21 @@ step
     .goto Ashenvale,26.19,38.69,10 >>Travel toward |cRXP_FRIENDLY_Delgren the Purifier|r
     .train 410014,1
 step
-    #label Delgren1
     .goto Ashenvale,26.19,38.69
     >>Talk to |cRXP_FRIENDLY_Delgren the Purifier|r
     .turnin 78088 >> Turn in A Strange Artifact
     .accept 78089 >> Accept Advice From Stormwind
     .target Delgren the Purifier
     .train 410014,1
+    .itemcount 209836,1 --Athalaxx Orb (1)
+step
+    #label Delgren1
+    .goto Ashenvale,26.19,38.69
+    >>Talk to |cRXP_FRIENDLY_Delgren the Purifier|r
+    .accept 78089 >> Accept Advice From Stormwind
+    .target Delgren the Purifier
+    .train 410014,1
+    .isQuestTurnedIn 78088
 step
     #completewith Katherine1
     #label StormwindT1
