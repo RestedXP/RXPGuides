@@ -303,7 +303,7 @@ step
     .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Justice]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves: Hand of Reckoning]
     .aura 408828
     .use 208851
-    .train 407676,1
+    .train 410001,1
     .xp <8,1
 ]])
 
@@ -648,6 +648,7 @@ step
     #requires Elwynn1
     #label Cave1
     .goto Elwynn Forest,61.59,53.51,15 >>Enter the Jasperlode Mine
+    .train 425619,1
     .xp <8,1
 step
     #label LibramS
