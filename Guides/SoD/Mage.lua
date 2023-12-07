@@ -66,7 +66,6 @@ step << Gnome Mage
     .train 401760,1
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Mage SoD
@@ -96,7 +95,6 @@ step << Troll
     .turnin 77643 >> Turn in Spell Research
     .target Mai'ah
     ]])
-
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -140,7 +138,20 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 401767,1
-    >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
+    .goto Stormwind,55.8,65.2,-1 
+    .goto Stormwind,32.4,80.0,-1 
+    .goto Stormwind,43.4,26.8,-1 
+    .goto Stormwind,36.0,74.8,-1 
+    .goto Elwynn Forest,64.8,69.2,-1 
+    .goto Ironforge,19.6,56.2,-1  
+    .goto Undercity,69.6,39.2,-1 
+    .goto Darnassus,38.8,60.4,-1 
+    .goto Ashenvale,35.0,48.6,-1 
+    .goto Ironforge,31.2,27.6,-1 
+    .goto Duskwood,76.0,45.2,-1 
+    .goto Darnassus,34.6,9.8,-1 
+    .goto Wetlands,8.4, 56.6,-1 
+    >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent/Arcane Goods Vendor.|r
     .collect 211779,1
 step
     .train 401767,1
@@ -180,6 +191,20 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 401767,1
+    .goto Stormwind,55.8,65.2,-1 
+    .goto Stormwind,32.4,80.0,-1 
+    .goto Stormwind,43.4,26.8,-1 
+    .goto Stormwind,36.0,74.8,-1 
+    .goto Elwynn Forest,64.8,69.2,-1 
+    .goto Ironforge,19.6,56.2,-1  
+    .goto Undercity,69.6,39.2,-1 
+    .goto Darnassus,38.8,60.4,-1 
+    .goto Ashenvale,35.0,48.6,-1 
+    .goto Ironforge,31.2,27.6,-1 
+    .goto Duskwood,76.0,45.2,-1 
+    .goto Darnassus,34.6,9.8,-1 
+    .goto Wetlands,8.4, 56.6,-1 
+    .goto Hillsbrad Foothills,50.8,59.0,-1 
     >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step
@@ -206,8 +231,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Chest
 #name Regeneration - 14 (The Barrens)
 -- #name 20 - Regeneration (The Barrens) << Shaman
-<< Horde Mage SoD
 
+<< Horde Mage SoD
 
 step
     .train 401767,1
@@ -252,6 +277,17 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 401767,1
+    .goto Orgrimmar,45.6,56.8,-1 
+    .goto Orgrimmar,46.2,46.6,-1 
+    .goto Orgrimmar,45.8,40.6,-1 
+    .goto The Barrens,51.4,30.2,-1 
+    .goto Swamp of Sorrows,45.8,53.0,-1 
+    .goto Thunderbluff,42.6,55.4,-1 
+    .goto Dustwallow Marsch,36.4,30.4,-1 
+    .goto Undercity,82.6,16.0,-1 
+    .goto Thunderbuff,41.8,55.0,-1 
+    .goto Thousand Needles,45.2,50.6,-1 
+    .goto Stonetalon Mountains,47.6,61.6,-1 
     >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step
@@ -288,6 +324,19 @@ RXPGuides.RegisterGuide([[
 -- << Alliance
 
 step
+    .goto Stormwind,55.8,65.2,-1 
+    .goto Stormwind,32.4,80.0,-1 
+    .goto Stormwind,43.4,26.8,-1 
+    .goto Stormwind,36.0,74.8,-1 
+    .goto Elwynn Forest,64.8,69.2,-1 
+    .goto Ironforge,19.6,56.2,-1  
+    .goto Undercity,69.6,39.2,-1 
+    .goto Darnassus,38.8,60.4,-1 
+    .goto Ashenvale,35.0,48.6,-1 
+    .goto Ironforge,31.2,27.6,-1 
+    .goto Duskwood,76.0,45.2,-1 
+    .goto Darnassus,34.6,9.8,-1 
+    .goto Wetlands,8.4, 56.6,-1 
     .train 401765,1
     >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
@@ -323,6 +372,19 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 401765,1
+    .goto Stormwind,55.8,65.2,-1 
+    .goto Stormwind,32.4,80.0,-1 
+    .goto Stormwind,43.4,26.8,-1 
+    .goto Stormwind,36.0,74.8,-1 
+    .goto Elwynn Forest,64.8,69.2,-1 
+    .goto Ironforge,19.6,56.2,-1  
+    .goto Undercity,69.6,39.2,-1 
+    .goto Darnassus,38.8,60.4,-1 
+    .goto Ashenvale,35.0,48.6,-1 
+    .goto Ironforge,31.2,27.6,-1 
+    .goto Duskwood,76.0,45.2,-1 
+    .goto Darnassus,34.6,9.8,-1 
+    .goto Wetlands,8.4, 56.6,-1 
     >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step
@@ -358,6 +420,17 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 401765,1
+    .goto Orgrimmar,45.6,56.8,
+    .goto Orgrimmar,46.2,46.6,
+    .goto Orgrimmar,45.8,40.6,
+    .goto The Barrens,51.4,30.2,
+    .goto Swamp of Sorrows,45.8,53.0,
+    .goto Thunderbluff,42.6,55.4,
+    .goto Dustwallow Marsch,36.4,30.4,
+    .goto Undercity,82.6,16.0,
+    .goto Thunderbuff,41.8,55.0,
+    .goto Thousand Needles,45.2,50.6,
+    .goto Stonetalon Mountains,47.6,61.6,
     >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step
@@ -385,6 +458,17 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 401765,1
+    .goto Orgrimmar,45.6,56.8,
+    .goto Orgrimmar,46.2,46.6,
+    .goto Orgrimmar,45.8,40.6,
+    .goto The Barrens,51.4,30.2,
+    .goto Swamp of Sorrows,45.8,53.0,
+    .goto Thunderbluff,42.6,55.4,
+    .goto Dustwallow Marsch,36.4,30.4,
+    .goto Undercity,82.6,16.0,
+    .goto Thunderbuff,41.8,55.0,
+    .goto Thousand Needles,45.2,50.6,
+    .goto Stonetalon Mountains,47.6,61.6,
     >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step
@@ -409,13 +493,26 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune Guide
 #subgroup Chest << Mage
 --#subgroup Gloves << Warlock
-#name Burnout (Dun Morogh) - 8 << Mage
+#name Burnout - 8 (Dun Morogh) << Mage
 --#name 8 - Chaos Bolt (Dun Morogh) << Warlock
 
 << Gnome Mage SoD
 
 step
     .train 401759,1
+    .goto Stormwind,55.8,65.2,-1 
+    .goto Stormwind,32.4,80.0,-1 
+    .goto Stormwind,43.4,26.8,-1 
+    .goto Stormwind,36.0,74.8,-1 
+    .goto Elwynn Forest,64.8,69.2,-1 
+    .goto Ironforge,19.6,56.2,-1  
+    .goto Undercity,69.6,39.2,-1 
+    .goto Darnassus,38.8,60.4,-1 
+    .goto Ashenvale,35.0,48.6,-1 
+    .goto Ironforge,31.2,27.6,-1 
+    .goto Duskwood,76.0,45.2,-1 
+    .goto Darnassus,34.6,9.8,-1 
+    .goto Wetlands,8.4, 56.6,-1 
     >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step
@@ -447,9 +544,21 @@ RXPGuides.RegisterGuide([[
 
 << Human Mage SoD
 
-
 step
     .train 401759,1
+    .goto Stormwind,55.8,65.2,-1 
+    .goto Stormwind,32.4,80.0,-1 
+    .goto Stormwind,43.4,26.8,-1 
+    .goto Stormwind,36.0,74.8,-1 
+    .goto Elwynn Forest,64.8,69.2,-1 
+    .goto Ironforge,19.6,56.2,-1  
+    .goto Undercity,69.6,39.2,-1 
+    .goto Darnassus,38.8,60.4,-1 
+    .goto Ashenvale,35.0,48.6,-1 
+    .goto Ironforge,31.2,27.6,-1 
+    .goto Duskwood,76.0,45.2,-1 
+    .goto Darnassus,34.6,9.8,-1 
+    .goto Wetlands,8.4, 56.6,-1 
     >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step
@@ -485,9 +594,19 @@ RXPGuides.RegisterGuide([[
 
 << Troll Mage SoD
 
-
 step
     .train 401759,1
+    .goto Orgrimmar,45.6,56.8,
+    .goto Orgrimmar,46.2,46.6,
+    .goto Orgrimmar,45.8,40.6,
+    .goto The Barrens,51.4,30.2,
+    .goto Swamp of Sorrows,45.8,53.0,
+    .goto Thunderbluff,42.6,55.4,
+    .goto Dustwallow Marsch,36.4,30.4,
+    .goto Undercity,82.6,16.0,
+    .goto Thunderbuff,41.8,55.0,
+    .goto Thousand Needles,45.2,50.6,
+    .goto Stonetalon Mountains,47.6,61.6,
     >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step
@@ -517,13 +636,24 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune Guide
 #subgroup Chest << Mage
 -- #subgroup Gloves << Warlock
-#name Burnout - 8 (Tirisfal Glade) << Mage
+#name Burnout - 8 (Tirisfal Glades) << Mage
 -- #name 8 - Chaos Bolt << Warlock
 
 << Undead Mage SoD
 
 step
     .train 401759,1
+    .goto Orgrimmar,45.6,56.8,
+    .goto Orgrimmar,46.2,46.6,
+    .goto Orgrimmar,45.8,40.6,
+    .goto The Barrens,51.4,30.2,
+    .goto Swamp of Sorrows,45.8,53.0,
+    .goto Thunderbluff,42.6,55.4,
+    .goto Dustwallow Marsch,36.4,30.4,
+    .goto Undercity,82.6,16.0,
+    .goto Thunderbuff,41.8,55.0,
+    .goto Thousand Needles,45.2,50.6,
+    .goto Stonetalon Mountains,47.6,61.6,
     >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step
@@ -554,9 +684,21 @@ RXPGuides.RegisterGuide([[
 
 << Alliance Mage SoD
 
-
 step
     .train 415942,1
+    .goto Stormwind,55.8,65.2,-1 
+    .goto Stormwind,32.4,80.0,-1 
+    .goto Stormwind,43.4,26.8,-1 
+    .goto Stormwind,36.0,74.8,-1 
+    .goto Elwynn Forest,64.8,69.2,-1 
+    .goto Ironforge,19.6,56.2,-1  
+    .goto Undercity,69.6,39.2,-1 
+    .goto Darnassus,38.8,60.4,-1 
+    .goto Ashenvale,35.0,48.6,-1 
+    .goto Ironforge,31.2,27.6,-1 
+    .goto Duskwood,76.0,45.2,-1 
+    .goto Darnassus,34.6,9.8,-1 
+    .goto Wetlands,8.4, 56.6,-1 
     >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step
@@ -619,6 +761,17 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 415942,1
+    .goto Orgrimmar,45.6,56.8,
+    .goto Orgrimmar,46.2,46.6,
+    .goto Orgrimmar,45.8,40.6,
+    .goto The Barrens,51.4,30.2,
+    .goto Swamp of Sorrows,45.8,53.0,
+    .goto Thunderbluff,42.6,55.4,
+    .goto Dustwallow Marsch,36.4,30.4,
+    .goto Undercity,82.6,16.0,
+    .goto Thunderbuff,41.8,55.0,
+    .goto Thousand Needles,45.2,50.6,
+    .goto Stonetalon Mountains,47.6,61.6,
     >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step
@@ -650,7 +803,7 @@ RXPGuides.RegisterGuide[[
 #classic
 #group RestedXP Rune Guide
 #subgroup Legs 
-#name Icy Veins(Azeroth) - 25 
+#name Icy Veins - 25 (Azeroth) 
 
 << Mage SoD
 
@@ -840,9 +993,21 @@ RXPGuides.RegisterGuide([[
 
 << Human Mage SoD
 
-
 step
     .train 401768,1
+    .goto Stormwind,55.8,65.2,-1 
+    .goto Stormwind,32.4,80.0,-1 
+    .goto Stormwind,43.4,26.8,-1 
+    .goto Stormwind,36.0,74.8,-1 
+    .goto Elwynn Forest,64.8,69.2,-1 
+    .goto Ironforge,19.6,56.2,-1  
+    .goto Undercity,69.6,39.2,-1 
+    .goto Darnassus,38.8,60.4,-1 
+    .goto Ashenvale,35.0,48.6,-1 
+    .goto Ironforge,31.2,27.6,-1 
+    .goto Duskwood,76.0,45.2,-1 
+    .goto Darnassus,34.6,9.8,-1 
+    .goto Wetlands,8.4, 56.6,-1 
     >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step
@@ -877,6 +1042,19 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 401768,1
+    .goto Stormwind,55.8,65.2,-1 
+    .goto Stormwind,32.4,80.0,-1 
+    .goto Stormwind,43.4,26.8,-1 
+    .goto Stormwind,36.0,74.8,-1 
+    .goto Elwynn Forest,64.8,69.2,-1 
+    .goto Ironforge,19.6,56.2,-1  
+    .goto Undercity,69.6,39.2,-1 
+    .goto Darnassus,38.8,60.4,-1 
+    .goto Ashenvale,35.0,48.6,-1 
+    .goto Ironforge,31.2,27.6,-1 
+    .goto Duskwood,76.0,45.2,-1 
+    .goto Darnassus,34.6,9.8,-1 
+    .goto Wetlands,8.4, 56.6,-1 
     >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step
@@ -913,6 +1091,17 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 401768,1
+    .goto Orgrimmar,45.6,56.8,
+    .goto Orgrimmar,46.2,46.6,
+    .goto Orgrimmar,45.8,40.6,
+    .goto The Barrens,51.4,30.2,
+    .goto Swamp of Sorrows,45.8,53.0,
+    .goto Thunderbluff,42.6,55.4,
+    .goto Dustwallow Marsch,36.4,30.4,
+    .goto Undercity,82.6,16.0,
+    .goto Thunderbuff,41.8,55.0,
+    .goto Thousand Needles,45.2,50.6,
+    .goto Stonetalon Mountains,47.6,61.6,
     >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step
@@ -934,7 +1123,6 @@ step
     .use 203752
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Undead Mage SoD
@@ -944,6 +1132,17 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 401768,1
+    .goto Orgrimmar,45.6,56.8,
+    .goto Orgrimmar,46.2,46.6,
+    .goto Orgrimmar,45.8,40.6,
+    .goto The Barrens,51.4,30.2,
+    .goto Swamp of Sorrows,45.8,53.0,
+    .goto Thunderbluff,42.6,55.4,
+    .goto Dustwallow Marsch,36.4,30.4,
+    .goto Undercity,82.6,16.0,
+    .goto Thunderbuff,41.8,55.0,
+    .goto Thousand Needles,45.2,50.6,
+    .goto Stonetalon Mountains,47.6,61.6,
     >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step
@@ -972,9 +1171,35 @@ RXPGuides.RegisterGuide([[
 
 << Mage SoD
 
-
-step
+step << Alliance
     .train 401757,1
+    .goto Stormwind,55.8,65.2,-1 
+    .goto Stormwind,32.4,80.0,-1 
+    .goto Stormwind,43.4,26.8,-1 
+    .goto Stormwind,36.0,74.8,-1 
+    .goto Elwynn Forest,64.8,69.2,-1 
+    .goto Ironforge,19.6,56.2,-1  
+    .goto Undercity,69.6,39.2,-1 
+    .goto Darnassus,38.8,60.4,-1 
+    .goto Ashenvale,35.0,48.6,-1 
+    .goto Ironforge,31.2,27.6,-1 
+    .goto Duskwood,76.0,45.2,-1 
+    .goto Darnassus,34.6,9.8,-1 
+    .goto Wetlands,8.4, 56.6,-1 
+    >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
+    .collect 211779,1
+step << Horde
+    .goto Orgrimmar,45.6,56.8,
+    .goto Orgrimmar,46.2,46.6,
+    .goto Orgrimmar,45.8,40.6,
+    .goto The Barrens,51.4,30.2,
+    .goto Swamp of Sorrows,45.8,53.0,
+    .goto Thunderbluff,42.6,55.4,
+    .goto Dustwallow Marsch,36.4,30.4,
+    .goto Undercity,82.6,16.0,
+    .goto Thunderbuff,41.8,55.0,
+    .goto Thousand Needles,45.2,50.6,
+    .goto Stonetalon Mountains,47.6,61.6,
     >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step
@@ -986,14 +1211,17 @@ step
     .train 401757,1
     .collect 211777,1
 step
-    >>There are 3 nearby |cRXP_WARN_Purple Crystals|r you'll need to use |cRXP_WARN_Arcane Explosion|r on them|cRXP_WARN_, but make sure to do so in a specific order.|r
+    .aura 430139,1 >>Use |T135142:0|t[Arcane Explosion] |cRXP_WARN_near the correct|r |cRXP_WARN_Purple Crystal|r
     .goto Ashenvale,13.06,24.84
-    .aura 430139,1
-    .goto Ashenvale,14.04,19.80
-    .aura 430139,2
-    .goto Ashenvale,13.50,15.75
-    .aura 430139,3
     .train 401757,1
+step
+    .aura 430139,1 >>Use |T135142:0|t[Arcane Explosion] |cRXP_WARN_near the correct|r |cRXP_WARN_Purple Crystal|r
+    .goto Ashenvale,14.04,19.80
+    .train 401757,2
+step
+    .aura 430139,1 >>Use |T135142:0|t[Arcane Explosion] |cRXP_WARN_near the correct|r |cRXP_WARN_Purple Crystal|r
+    .goto Ashenvale,13.50,15.75
+    .train 401757,3
 step
     .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
     .train 401757 >>|cRXP_WARN_Use|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Arcane Blast|r] to learn |T135820:0|t[Arcane Blast]
@@ -1012,6 +1240,19 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 415936,1
+    .goto Stormwind,55.8,65.2,-1 
+    .goto Stormwind,32.4,80.0,-1 
+    .goto Stormwind,43.4,26.8,-1 
+    .goto Stormwind,36.0,74.8,-1 
+    .goto Elwynn Forest,64.8,69.2,-1 
+    .goto Ironforge,19.6,56.2,-1  
+    .goto Undercity,69.6,39.2,-1 
+    .goto Darnassus,38.8,60.4,-1 
+    .goto Ashenvale,35.0,48.6,-1 
+    .goto Ironforge,31.2,27.6,-1 
+    .goto Duskwood,76.0,45.2,-1 
+    .goto Darnassus,34.6,9.8,-1 
+    .goto Wetlands,8.4, 56.6,-1 
     >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step
