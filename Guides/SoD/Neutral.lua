@@ -177,8 +177,8 @@ RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune Guide
 #subgroup Chest << Priest/Hunter/Druid/Warrior/Shaman
-#subgroup Legs << Warlock
-#subgroup Gloves << Mage/Rogue/Paladin
+#subgroup Legs << Warlock/Paladin
+#subgroup Gloves << Mage/Rogue
 #name Serendipity - 25 (Ratchet) << Priest
 #name Lone Wolf - 25 (Ratchet) << Hunter
 #name Survival of the Fittest - 25 (Ratchet) << Druid
