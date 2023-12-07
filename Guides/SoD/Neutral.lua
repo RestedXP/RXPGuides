@@ -493,3 +493,97 @@ step
     .target Dokimi << Horde
     .target Gishah << Horde
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Druid SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Wild Growth - 25 (Multiple Zones)
+
+step << Druid
+    #completewith next
+    .zone Moonglade >> Teleport to Moonglade
+    .train 410028,1
+step << Druid
+    .goto Moonglade,52.53,40.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
+    .accept 78229 >> Accept Trial of The Owls
+    .target Loganaar
+    .train 410028,1
+step << Druid
+    #completewith next
+    .zone Ashenvale >> Travel to Ashenvale
+step << Druid
+    .goto Ashenvale,86.963,43.159
+    >>Click the |cRXP_PICK_Owl Statue|r to begin the event
+    >>|cRXP_WARN_You will need to defeat 3 waves of 2 mobs at a time ranging from levels 23-25|r
+    >>|cRXP_WARN_Ensure the |cRXP_FRIENDLY_Summoned Wisp|r does not die. It is not possible to heal it, however it will heal to full between waves|r
+    >>After defeating all waves, loot the |cRXP_PICK_Gift of the Wisp|r on the ground
+    .complete 78229,1 -- Symbol of the First Owl (1)
+    .train 410028,1
+step << Druid
+    #completewith next
+    .goto Duskwood,46.91,58.76,50,0
+    .goto Duskwood,45.13,58.26,25,0
+    .goto Duskwood,49.520,33.851
+    .subzone 856 >> Travel to the Twilight Grove in Duskwood
+    .train 410028,1
+step << Druid
+    .goto Duskwood,49.520,33.851
+    +Click the |cRXP_PICK_Owl Statue|r to gain the |T132150:0|t[Eyes of the Owl] buff
+    .aura 424310
+    .train 410028,1
+step << Druid
+    .goto Duskwood,45.13,58.26
+    #completewith next
+    +Exit the Twilight Grove
+    .subzoneskip 856,1
+    .train 410028,1
+step << Druid
+    .goto Duskwood,65.2,34.8,65,0
+    .goto Duskwood,60.6,25.8,65,0
+    .goto Duskwood,66.0,23.6,65,0
+    .goto Duskwood,68.0,31.6,65,0
+    .goto Duskwood,65.2,34.8
+    >>Kill |cRXP_ENEMY_Agon|r. Loot it for the |cRXP_LOOT_Symbol of the Second Owl|r
+    >>|cRXP_ENEMY_Agon|r |cRXP_WARN_patrols around slightly|r
+    >>|cRXP_WARN_You must have the|r |T132150:0|t[Eyes of the Owl] |cRXP_WARN_buff to see|r |cRXP_ENEMY_Agon|r
+    .complete 78229,2 -- Symbol of the Second Owl (1)
+    .train 410028,1
+step << Druid
+    #completewith next
+    .zone Hillsbrad Foothills >> Travel to Hillsbrad Foothills
+    .train 410028,1
+step << Druid
+    .goto Hillsbrad Foothills,36.914,76.142
+    .goto Hillsbrad Foothills,54.424,82.016,0
+    +Click the |cRXP_PICK_Twin Owl Statue|r to gain the |T237178:0|t[Twin Owl Aura] buff
+    >>|cRXP_WARN_You have 1 min 40 sec to get to the other small island and click the other|r |cRXP_PICK_Twin Owl Statue|r
+    >>|cRXP_WARN_Ensure you use|r |T132112:0|t[Aquatic Form]
+    >>|cRXP_WARN_The other island is marked on your map|r
+    .aura 424181
+    .aura 424182
+    .train 410028,1
+step << Druid
+    .goto Hillsbrad Foothills,54.424,82.016
+    >>Swim to the other island. Click the |cRXP_PICK_Twin Owl Statue|r within 1 min 40 sec
+    >>|cRXP_WARN_Ensure you use|r |T132112:0|t[Aquatic Form]
+    >>|cRXP_WARN_If you fail and lose the buff, click this |cRXP_PICK_Twin Owl Statue|r and return to the island you just came from|r
+    .complete 78229,3 -- Symbol of the Third Owl (1)
+    .train 410028,1
+step << Druid
+    #completewith next
+    .zone Moonglade >> Teleport to Moonglade
+    .train 410028,1
+step << Druid
+    .goto Moonglade,52.53,40.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
+    .turnin 78229 >> Turn in Trial of The Owls
+    .target Loganaar
+    .train 410028,1
+step << Druid
+    .train 410028 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Wild Growth|r] |cRXP_WARN_to train|r |T236153:0|t[Wild Growth]
+    .use 210137
+    .itemcount 210137,1
+]])
