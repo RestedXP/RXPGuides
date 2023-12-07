@@ -85,7 +85,7 @@ end
 local GetAddOnMetadata = C_AddOns and C_AddOns.GetAddOnMetadata or _G.GetAddOnMetadata
 addon.release = GetAddOnMetadata(addonName, "Version")
 addon.title = GetAddOnMetadata(addonName, "Title")
-local cacheVersion = 2
+local cacheVersion = false
 local L = addon.locale.Get
 
 if string.match(addon.release, 'project') then
