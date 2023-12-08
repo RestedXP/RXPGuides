@@ -730,3 +730,113 @@ step << Warrior
     .train 425444 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Raging Blow|r] |cRXP_WARN_to train|r |T132215:0|t[Raging Blow]
     .use 210569
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Priest SoD
+#group RestedXP Rune Guide
+#subgroup Chest
+#name Strength of Soul - 22 (Ashenvale)
+
+step << Priest
+    .goto Ashenvale,32.0,43.0,65,0
+    .goto Ashenvale,33.6,38.8,65,0
+    .goto Ashenvale,37.6,34.0
+    >>Kill |cRXP_ENEMY_Thistlefur Totemics|r and |cRXP_ENEMY_Thistlefur Shaman|r. Loot them for the |T135736:0|t[Primal Insight]
+    .collect 211534,1 -- Primal Insight (1)
+    .mob Thistlefur Totemic
+    .mob Thistlefur Shaman
+    .train 415997,1
+step << Priest
+    .goto Ashenvale,38.002,29.528,40,0
+    .goto Ashenvale,37.938,27.958,30,0
+    .goto Ashenvale,38.819,27.160,30,0
+    .goto Ashenvale,38.804,26.558
+    >>|cRXP_WARN_Run up the giant tree next to the cave enterance. Follow the arrow carefully|r
+    .use 211534 >>|cRXP_WARN_Use the|r |T135736:0|t[Primal Insight] |cRXP_WARN_when you are next to the two dreamcatchers on the tree to create the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of Seven Visitors]|r
+    .collect 211531,1 -- Prophecy of Seven Visitors (1)
+    .train 415997,1
+step << Priest
+    >>You must now obtain two |T135934:0|t|T136057:0|t[Meditation] buffs << Alliance
+    >>You must now obtain two |T237569:0|t|T136077:0|t[Meditation] buffs << Horde
+    >>You must /kneel inside one of the following places: Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge << Human/Dwarf
+    >>You must /kneel inside one of the following places: A moonwell, such as the one in Stormwind or the one in Darnassus << NightElf
+    >>You must /kneel at any graveyard << Undead
+    >>You must /kneel at any Loa Altar, such as the one in Sen'Jin Village or the one at the Crossroads in The Barrens << Troll
+    >>In order to receive your second |T135934:0|t|T136057:0|t[Meditation] buff this requires you to /kneel infront of a Priest who has a different |T135934:0|t|T136057:0|t[Meditation] to yours, and they must /pray while targeting you << Alliance
+    >>In order to receive your second |T237569:0|t|T136077:0|t[Meditation] buff this requires you to /kneel infront of a Priest who has a different |T135934:0|t|T136057:0|t[Meditation] to yours, and they must /pray while targeting you << Horde
+    .train 415997 >> |cRXP_WARN_Once you have both|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buffs use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of Seven Visitors]|r |cRXP_WARN_to learn|r |T135911:0|t[Strength of Soul] << Alliance
+    .train 415997 >> |cRXP_WARN_Once you have both|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buffs use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of Seven Visitors]|r |cRXP_WARN_to learn|r |T135911:0|t[Strength of Soul] << Horde
+    .use 211531
+    .itemcount 211531,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Priest SoD
+#group RestedXP Rune Guide
+#subgroup Legs
+#name Power Word: Barrier - 22 (Redridge Mountains)
+
+step << Priest
+    #completewith next
+    .zone Redridge Mountains >> Travel to Redridge Mountains
+    .train 425213,1
+step << Priest
+    .goto Redridge Mountains,67.2,53.6
+    .goto Redridge Mountains,68.8,57.4
+    >>Kill |cRXP_ENEMY_Blackrock Shadowcasters|r. Loot them for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a City Enthralled|r]
+    >>|cRXP_ENEMY_Blackrock Shadowcasters|r |cRXP_WARN_are level 22-23 elites. Find a group for this|r
+    .collect 211530,1 -- Prophecy of a City Enthralled (1)
+    .mob Blackrock Shadowcaster
+    .train 425213,1
+step << Priest
+    >>You must now obtain two |T135934:0|t|T136057:0|t[Meditation] buffs << Alliance
+    >>You must now obtain two |T237569:0|t|T136077:0|t[Meditation] buffs << Horde
+    >>You must /kneel inside one of the following places: Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge << Human/Dwarf
+    >>You must /kneel inside one of the following places: A moonwell, such as the one in Stormwind or the one in Darnassus << NightElf
+    >>You must /kneel at any graveyard << Undead
+    >>You must /kneel at any Loa Altar, such as the one in Sen'Jin Village or the one at the Crossroads in The Barrens << Troll
+    >>In order to receive your second |T135934:0|t|T136057:0|t[Meditation] buff this requires you to /kneel infront of a Priest who has a different |T135934:0|t|T136057:0|t[Meditation] to yours, and they must /pray while targeting you << Alliance
+    >>In order to receive your second |T237569:0|t|T136077:0|t[Meditation] buff this requires you to /kneel infront of a Priest who has a different |T135934:0|t|T136057:0|t[Meditation] to yours, and they must /pray while targeting you << Horde
+    .train 425213 >> |cRXP_WARN_Once you have both|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buffs use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a City Enthralled|r] |cRXP_WARN_to learn|r |T253400:0|t[Power Word: Barrier] << Alliance
+    .train 425213 >> |cRXP_WARN_Once you have both|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buffs use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a City Enthralled|r] |cRXP_WARN_to learn|r |T253400:0|t[Power Word: Barrier] << Horde
+    .use 211530
+    .itemcount 211530,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Priest SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Circle of Healing - 25 (Duskwood)
+
+step << Priest
+    .goto Duskwood,50.4,70.8,60,0
+    .goto Duskwood,50.2,76.4
+    >>Kill |cRXP_ENEMY_Defias Night Runners|r, |cRXP_ENEMY_Defias Night Blades|r and |cRXP_ENEMY_Defias Enchanters|r. Loot them for the |T135736:0|t[|cRXP_LOOT_Dark Insight|r] 
+    .collect 211528,1 -- Dark Insight (1)
+    .mob Defias Night Runner
+    .mob Defias Night Blade
+    .mob Defias Night Enchanter
+    .train 402859,1
+step << Priest
+    .goto Duskwood,91.11,30.58
+    .use 211528 >> |cRXP_WARN_Use the|r |T135736:0|t[|cRXP_LOOT_Dark Insight|r] |cRXP_WARN_at the Secluded Grave behind the tower to receive the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Thousand Lights|r]
+    .collect 211490,1 -- Prophecy of a Thousand Lights (1)
+    .train 402859,1
+step << Priest
+    >>You must now obtain two |T135934:0|t|T136057:0|t[Meditation] buffs << Alliance
+    >>You must now obtain two |T237569:0|t|T136077:0|t[Meditation] buffs << Horde
+    >>You must /kneel inside one of the following places: Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge << Human/Dwarf
+    >>You must /kneel inside one of the following places: A moonwell, such as the one in Stormwind or the one in Darnassus << NightElf
+    >>You must /kneel at any graveyard << Undead
+    >>You must /kneel at any Loa Altar, such as the one in Sen'Jin Village or the one at the Crossroads in The Barrens << Troll
+    >>In order to receive your second |T135934:0|t|T136057:0|t[Meditation] buff this requires you to /kneel infront of a Priest who has a different |T135934:0|t|T136057:0|t[Meditation] to yours, and they must /pray while targeting you << Alliance
+    >>In order to receive your second |T237569:0|t|T136077:0|t[Meditation] buff this requires you to /kneel infront of a Priest who has a different |T135934:0|t|T136057:0|t[Meditation] to yours, and they must /pray while targeting you << Horde
+    .train 402859 >> |cRXP_WARN_Once you have both|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buffs use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Thousand Lights]|r |cRXP_WARN_to learn|r |T135887:0|t[Circle of Healing] << Alliance
+    .train 402859 >> |cRXP_WARN_Once you have both|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buffs use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Thousand Lights]|r |cRXP_WARN_to learn|r |T135887:0|t[Circle of Healing] << Horde
+    .use 211490
+    .itemcount 211490,1
+]])
