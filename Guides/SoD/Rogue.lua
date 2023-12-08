@@ -377,29 +377,6 @@ RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
 #group RestedXP Rune Guide
-#subgroup Chest
-#name Slaughter from the Shadows - 8 (Teldrassil)
-
-step << Rogue
-    #season 2
-    #completewith next
-    .goto Teldrassil,44.18,58.19
-    .subzone 262 >> Enter the Ban'ethil Barrow Den
-    .train 424992,1
-step << Rogue
-    #season 2
-    .goto Teldrassil,44.155,61.182
-    >>Open the |cRXP_PICK_Gnarlpine Stash|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Slaughter|r]
-    >>|cRXP_WARN_Note: The |cRXP_PICK_Gnarlpine Stash|r spawns somewhere randomly within the Ban'ethil Barrows|r
-    .collect 203993 -- Rune of Slaughter (1)
-    .train 424992,1 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Slaughter|r] |cRXP_WARN_to train|r |T236280:0|t[Slaughter from the Shadows]
-    .use 203993
-]])
-
-RXPGuides.RegisterGuide([[
-#classic
-<< Alliance Rogue SoD
-#group RestedXP Rune Guide
 #subgroup Legs
 #name Between the Eyes - 8 (Stormwind)
 
@@ -632,34 +609,6 @@ step << Rogue
     >>Talk to |cRXP_FRIENDLY_Blackrat|r to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r]
     .collect 203990,1
     .skipgossip
-    .train 400094,1
-step << Rogue
-    #season 2
-    .cast 402265 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r]
-    .use 203990 -- Rune of Mutilation (1)
-    .train 400094,1
-]])
-
-RXPGuides.RegisterGuide([[
-#classic
-<< Alliance Rogue SoD
-#group RestedXP Rune Guide
-#subgroup Gloves
-#name Mutilate - 8 (Teldrassil)
-
-step << Rogue
-    #season 2
-    #completewith next
-    .goto Teldrassil,54.68,52.84,20,0
-    .goto Teldrassil,54.42,51.19,15 >> Travel to Fel Rock
-    .train 400094,1
-step << Rogue
-    #season 2
-    .goto Teldrassil,51.2,50.6
-    >>Kill |cRXP_ENEMY_Lord Melenas|r. Loot him for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r]
-    >>|cRXP_ENEMY_Lord Melenas|r may be located in many different spawn locations throughout Fel Rock
-    .collect 203990,1
-    .unitscan Lord Melenas
     .train 400094,1
 step << Rogue
     #season 2

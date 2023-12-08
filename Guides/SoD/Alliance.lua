@@ -73,3 +73,79 @@ step << Druid
     .use 206954
     .itemcount 206954,1
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Rogue SoD/Alliance Warrior SoD/Alliance Priest SoD
+#group RestedXP Rune Guide
+#subgroup Chest << Rogue/Priest
+#subgroup Legs << Warrior
+#name Slaughter from the Shadows - 8 (Teldrassil) << Rogue
+#name Furious Thunder - 8 (Teldrassil) << Warrior
+#name Void Plague - 8 (Teldrassil) << Priest
+
+step
+    #completewith next
+    .goto Teldrassil,44.18,58.19
+    .subzone 262 >> Enter the Ban'ethil Barrow Den
+    .train 424992,1 << Rogue
+    .train 403476,1 << Warrior
+    .train 425216,1 << Priest
+step << Rogue
+    .goto Teldrassil,44.155,61.182
+    >>Open the |cRXP_PICK_Gnarlpine Stash|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Slaughter|r]
+    >>|cRXP_WARN_Note: The |cRXP_PICK_Gnarlpine Stash|r spawns somewhere randomly within the Ban'ethil Barrows|r
+    .collect 203993 -- Rune of Slaughter (1)
+    .train 424992 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Slaughter|r] |cRXP_WARN_to train|r |T236280:0|t[Slaughter from the Shadows]
+    .use 203993
+step << Warrior
+    .goto Teldrassil,44.401,60.655
+    >>Open the |cRXP_PICK_Gnarlpine Cache|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r]
+    >>|cRXP_WARN_Note: The |cRXP_PICK_Gnarlpine Cache|r can have multiple spawn locations within the Ban'ethil Barrows|r
+    .collect 204809,1 -- Rune of Furious Thunder (1)
+    .train 403476 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r] |cRXP_WARN_to train|r |T136048:0|t[Furious Thunder]
+    .use 204809
+step << Priest
+    .goto Teldrassil,44.401,60.655
+    >>Open the |cRXP_PICK_Gnarlpine Cache|r. Loot it for a |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpose|r]
+    >>|cRXP_WARN_Note: The |cRXP_PICK_Gnarlpine Cache|r can have multiple spawn locations within the Ban'ethil Barrows|r
+    .collect 205940,1 -- Memory of a Dark Purpose (1)
+    .train 425216 >>|cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpose|r] |cRXP_WARN_to train|r |T237514:0|t[Void Plague]
+    .use 205940
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Rogue SoD/Alliance Priest SoD
+#group RestedXP Rune Guide
+#subgroup Gloves << Rogue
+#subgroup Legs << Priest
+#name Mutilate - 8 (Teldrassil) << Rogue
+#name Shared Pain - 8 (Teldrassil) << Priest
+
+step << Rogue/Priest
+    #completewith next
+    .goto Teldrassil,54.68,52.84,20,0
+    .goto Teldrassil,54.42,51.19,15 >> Travel to Fel Rock
+    .train 400094,1 << Rogue
+    .train 402854,1 << Priest
+step << Rogue/Priest
+    .goto Teldrassil,51.2,50.6
+    >>Kill |cRXP_ENEMY_Lord Melenas|r. Loot him for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r] << Rogue
+    >>Kill |cRXP_ENEMY_Lord Melenas|r. Loot him for the |T136222:0|t[|cRXP_FRIENDLY_Memory of an Imprisoned Savior|r] << Priest
+    >>|cRXP_ENEMY_Lord Melenas|r |cRXP_WARN_may be located in many different spawn locations throughout Fel Rock|r
+    .collect 203990,1 << Rogue
+    .collect 205945,1 << Priest
+    .unitscan Lord Melenas
+    .train 400094,1 << Rogue
+    .train 402854,1 << Priest
+step << Rogue
+    .train 400094 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r] |cRXP_WARN_to train|r |T132304:0|t[Mutilate]
+    .use 203990
+    .itemcount 203990,1
+step << Priest
+    .train 402854 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of an Imprisoned Savior|r] |cRXP_WARN_to train|r |T136160:0|t[Shared Pain]
+    >>|cRXP_WARN_You must have a|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buff by typing /kneel in a holy area such as, a moonwell, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge|r
+    .use 205945
+    .itemcount 205945,1
+]])
