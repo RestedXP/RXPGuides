@@ -741,11 +741,20 @@ step << !Warlock
     .turnin 792 >>Turn in Vile Familiars
     .accept 794 >>Accept Burning Blade Medallion
     .target Zureetha Fargaze
- step << Hunter
+step << Hunter
     #season 2
+    #optional
     .goto Durotar,42.84,69.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jen'shan|r
     .train 1978 >> Train |T132204:0|t[Serpent Sting]
+    .turnin 77590 >>Turn in Rugged Terrain << Troll Hunter
+    .turnin 77584 >>Turn in Hunt for the Rune << Orc Hunter
+    .target Jen'shan
+    .xp <4,1
+step << Hunter
+    #season 2
+    .goto Durotar,42.84,69.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jen'shan|r
     .turnin 77590 >>Turn in Rugged Terrain << Troll Hunter
     .turnin 77584 >>Turn in Hunt for the Rune << Orc Hunter
     .target Jen'shan
@@ -755,6 +764,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jen'shan|r
     .train 1978 >> Train |T132204:0|t[Serpent Sting]
     .target Jen'shan
+    .xp <4,1
 step << Warrior
     #era
     .goto Durotar,42.89,69.44

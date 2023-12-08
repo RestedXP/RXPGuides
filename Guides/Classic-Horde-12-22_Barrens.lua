@@ -4110,7 +4110,7 @@ step
 step
     .goto Stonetalon Mountains,78.89,41.24
     .goto Ashenvale,40.40,53.06,30 >>|cRXP_WARN_Jump onto the white stone on your right. Perform a Logout Skip by logging out and back in|r
-    .link https://www.youtube.com/watch?v=h2s4ZjFBLtg&ab >> |cRXP_WARN_CLICK HERE for an example|r
+    .link https://www.youtube.com/watch?v=h2s4ZjFBLtg&ab_channel=RestedXP >> |cRXP_WARN_CLICK HERE for an example|r
     .zoneskip Ashenvale
 step
 	#completewith ZoramFP
@@ -4426,8 +4426,8 @@ step << Mage
     .target Pephredo
     .xp <24,1
 step << Mage
-    .goto Orgrimmar,38.70,85.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo|r at the top of the hut
+    .goto Orgrimmar,38.66,85.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Thuul|r at the top of the hut
     .train 3567 >> Train |T135759:0|t[Teleport: Orgrimmar]
     .target Thuul
 step << Troll Priest

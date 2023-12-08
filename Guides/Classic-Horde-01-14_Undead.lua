@@ -1532,10 +1532,10 @@ step
     >>|cRXP_BUY_Buy|r |T134532:0|t[Red-speckled Mushrooms] |cRXP_BUY_from her|r <<Warrior/Rogue
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_and|r |T134532:0|t[Red-speckled Mushrooms] |cRXP_BUY_from her|r << Warlock
     .vendor >> Vendor Trash
-    .collect 1179,20,367,1 << Mage/Priest --Ice Cold Milk (20)
-    .collect 4605,20,367,1 << Rogue/Warrior --Red-speckled Mushroom (20)
-    .collect 1179,10,367,1 << Warlock --Ice Cold Milk (10)
-    .collect 4605,10,367,1 << Warlock --Red-speckled Mushroom (10)
+    .collect 1179,20,426,1 << Mage/Priest --Ice Cold Milk (20)
+    .collect 4605,20,426,1 << Rogue/Warrior --Red-speckled Mushroom (20)
+    .collect 1179,10,426,1 << Warlock --Ice Cold Milk (10)
+    .collect 4605,10,426,1 << Warlock --Red-speckled Mushroom (10)
     .money <0.025 << Warrior/Rogue
     .money <0.0375 << Mage/Priest/Warlock
     .target Innkeeper Renee
@@ -1694,10 +1694,10 @@ step
     >>|cRXP_BUY_Buy|r |T134532:0|t[Red-speckled Mushrooms] |cRXP_BUY_from her|r <<Warrior/Rogue
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_and|r |T134532:0|t[Red-speckled Mushrooms] |cRXP_BUY_from her|r << Warlock
     .vendor >> Vendor Trash
-    .collect 1179,20,367,1 << Mage/Priest/Shaman --Ice Cold Milk (20)
-    .collect 4605,20,367,1 << Rogue/Warrior --Red-speckled Mushroom (20)
-    .collect 1179,15,367,1 << Warlock --Ice Cold Milk (15)
-    .collect 4605,15,367,1 << Warlock --Red-speckled Mushroom (15)
+    .collect 1179,20,370,1 << Mage/Priest/Shaman --Ice Cold Milk (20)
+    .collect 4605,20,370,1 << Rogue/Warrior --Red-speckled Mushroom (20)
+    .collect 1179,15,370,1 << Warlock --Ice Cold Milk (15)
+    .collect 4605,15,370,1 << Warlock --Red-speckled Mushroom (15)
     .money <0.075 << Warlock
     .money <0.05 << !Warlock
     .target Innkeeper Renee
