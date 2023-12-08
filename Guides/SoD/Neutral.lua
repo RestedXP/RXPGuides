@@ -188,6 +188,7 @@ RXPGuides.RegisterGuide([[
 #name Divine Sacrifice - 25 (Ratchet) << Paladin
 #name Rewind Time - 25 (Ratchet) << Mage
 #name Main Gauche - 25 (Ratchet) << Rogue
+#next Divine Storm - 25 (Darkshore) << Paladin
 
 << SoD
 
@@ -436,7 +437,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune Guide
 #subgroup Chest << Shaman/Rogue
-#subgroup Legs << Mage/Warlock/Hunter/Druid/
+#subgroup Legs << Mage/Warlock/Hunter/Druid
 #subgroup Gloves << Paladin/Warrior/Priest
 #name Mind Sear - 25 (Reputation) << Priest
 #name Serpent Spread - 25 (Reputation) << Hunter
@@ -447,8 +448,11 @@ RXPGuides.RegisterGuide([[
 #name Beacon of Light - 25 (Reputation) << Paladin
 #name Arcane Surge - 25 (Reputation) << Mage
 #name Just a Flesh Wound - 25 (Reputation) << Rogue
+#next Divine Sacrifice - 25 (Ratchet) << Paladin
 
 << SoD
+
+--VV if (Reputation) name formatting removed, change in Paladin guide too
 
 step
     >>Go out and find |T132765:0|t[Waylaid Supplies]. Then go back into a capital city and deliver them. If you want to get the reputation faster buy the required items in the AH to upgrade them.
@@ -488,4 +492,351 @@ step
     .target Jornah << Horde
     .target Dokimi << Horde
     .target Gishah << Horde
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Druid SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Wild Growth - 25 (Multiple Zones)
+
+step << Druid
+    #completewith next
+    .zone Moonglade >> Teleport to Moonglade
+    .train 410028,1
+step << Druid
+    .goto Moonglade,52.53,40.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
+    .accept 78229 >> Accept Trial of The Owls
+    .target Loganaar
+    .train 410028,1
+step << Druid
+    #completewith next
+    .zone Ashenvale >> Travel to Ashenvale
+step << Druid
+    .goto Ashenvale,86.963,43.159
+    >>Click the |cRXP_PICK_Owl Statue|r to begin the event
+    >>|cRXP_WARN_You will need to defeat 3 waves of 2 mobs at a time ranging from levels 23-25|r
+    >>|cRXP_WARN_Ensure the |cRXP_FRIENDLY_Summoned Wisp|r does not die. It is not possible to heal it, however it will heal to full between waves|r
+    >>After defeating all waves, loot the |cRXP_PICK_Gift of the Wisp|r on the ground
+    .complete 78229,1 -- Symbol of the First Owl (1)
+    .train 410028,1
+step << Druid
+    #completewith next
+    .goto Duskwood,46.91,58.76,50,0
+    .goto Duskwood,45.13,58.26,25,0
+    .goto Duskwood,49.520,33.851
+    .subzone 856 >> Travel to the Twilight Grove in Duskwood
+    .train 410028,1
+step << Druid
+    .goto Duskwood,49.520,33.851
+    +Click the |cRXP_PICK_Owl Statue|r to gain the |T132150:0|t[Eyes of the Owl] buff
+    .aura 424310
+    .train 410028,1
+step << Druid
+    .goto Duskwood,45.13,58.26
+    #completewith next
+    +Exit the Twilight Grove
+    .subzoneskip 856,1
+    .train 410028,1
+step << Druid
+    .goto Duskwood,65.2,34.8,65,0
+    .goto Duskwood,60.6,25.8,65,0
+    .goto Duskwood,66.0,23.6,65,0
+    .goto Duskwood,68.0,31.6,65,0
+    .goto Duskwood,65.2,34.8
+    >>Kill |cRXP_ENEMY_Agon|r. Loot it for the |cRXP_LOOT_Symbol of the Second Owl|r
+    >>|cRXP_ENEMY_Agon|r |cRXP_WARN_patrols around slightly|r
+    >>|cRXP_WARN_You must have the|r |T132150:0|t[Eyes of the Owl] |cRXP_WARN_buff to see|r |cRXP_ENEMY_Agon|r
+    .complete 78229,2 -- Symbol of the Second Owl (1)
+    .train 410028,1
+step << Druid
+    #completewith next
+    .zone Hillsbrad Foothills >> Travel to Hillsbrad Foothills
+    .train 410028,1
+step << Druid
+    .goto Hillsbrad Foothills,36.914,76.142
+    .goto Hillsbrad Foothills,54.424,82.016,0
+    +Click the |cRXP_PICK_Twin Owl Statue|r to gain the |T237178:0|t[Twin Owl Aura] buff
+    >>|cRXP_WARN_You have 1 min 40 sec to get to the other small island and click the other|r |cRXP_PICK_Twin Owl Statue|r
+    >>|cRXP_WARN_Ensure you use|r |T132112:0|t[Aquatic Form]
+    >>|cRXP_WARN_The other island is marked on your map|r
+    .aura 424181
+    .aura 424182
+    .train 410028,1
+step << Druid
+    .goto Hillsbrad Foothills,54.424,82.016
+    >>Swim to the other island. Click the |cRXP_PICK_Twin Owl Statue|r within 1 min 40 sec
+    >>|cRXP_WARN_Ensure you use|r |T132112:0|t[Aquatic Form]
+    >>|cRXP_WARN_If you fail and lose the buff, click this |cRXP_PICK_Twin Owl Statue|r and return to the island you just came from|r
+    .complete 78229,3 -- Symbol of the Third Owl (1)
+    .train 410028,1
+step << Druid
+    #completewith next
+    .zone Moonglade >> Teleport to Moonglade
+    .train 410028,1
+step << Druid
+    .goto Moonglade,52.53,40.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
+    .turnin 78229 >> Turn in Trial of The Owls
+    .target Loganaar
+    .train 410028,1
+step << Druid
+    .train 410028 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Wild Growth|r] |cRXP_WARN_to train|r |T236153:0|t[Wild Growth]
+    .use 210137
+    .itemcount 210137,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warrior SoD/Mage SoD
+#group RestedXP Rune Guide
+#subgroup Chest << Warrior
+#subgroup Legs << Mage
+#name Flagellation - 25 (Duskwood) << Warrior
+#name Mass Regeneration - 25 (Duskwood) << Mage
+
+step << Warrior/Mage
+    #completewith next
+    .goto Duskwood,23.630,34.888,15 >> Enter the north eastern crypt
+    .train 403480,1 << Warrior
+    .train 415939,1 << Mage
+step << Warrior/Mage
+    .goto Duskwood,26.115,30.863
+    >>Open the |cRXP_PICK_Dusty Coffer|r. Loot it for the |T252996:0|t[|cRXP_LOOT_Decrepit Phylactery|r]
+    .collect 210568,1 -- Decrepit Phylactery (1)
+    .train 403480,1 << Warrior
+    .train 415939,1 << Mage
+step << Warrior/Mage
+    #completewith next
+    .goto Duskwood,15.602,38.621,15 >> Exit this crypt and head down into the western crypt
+    .train 403480,1 << Warrior
+    .train 415939,1 << Mage
+step << Warrior/Mage
+    #completewith next
+    .goto Duskwood,18.140,37.940
+    .cast 426182 >> |cRXP_WARN_Use the|r |T252996:0|t[|cRXP_LOOT_Decrepit Phylactery|r] |cRXP_WARN_on the |cRXP_PICK_Slumbering Bones|r on the throne|r
+    .use 210568 >>|cRXP_WARN_This will summon a level 25 elite|r |cRXP_ENEMY_Awakened Lich|r
+    .train 403480,1 << Warrior
+    .train 415939,1 << Mage
+step << Warrior/Mage
+    .goto Duskwood,18.140,37.940
+    >>Kill the |cRXP_ENEMY_Awakened Lich|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Flagellation|r] << Warrior
+    >>Kill the |cRXP_ENEMY_Awakened Lich|r. Loot it for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Mass Regeneration|r] << Mage
+    >>|cRXP_WARN_If someone else is there killing the |cRXP_ENEMY_Awakened Lich|r you can also help them and you will still be able to loot it|r
+    .collect 210569,1 << Warrior -- Rune of Flagellation (1)
+    .collect 211514,1 << Mage -- Spell Notes: Mass Regeneration (1)
+    .mob Awakened Lich
+    .train 403480,1 << Warrior
+    .train 415939,1 << Mage
+step << Warrior
+    .train 416050 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Flagellation|r] |cRXP_WARN_to train|r |T133495:0|t[Flagellation]
+    .use 210569
+    .itemcount 210569,1
+    .train 403480,1
+step << Mage
+    .train 416050 >> |cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Mass Regeneration|r] |cRXP_WARN_to train|r |T132870:0|t[Mass Regeneration]
+    .use 211514
+    .itemcount 211514,1
+    .train 415939,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warrior SoD
+#group RestedXP Rune Guide
+#subgroup Chest
+#name Raging Blow - 25 (Multiple Zones)
+
+step << Warrior
+    #completewith next
+    .zone Ashenvale >> Travel to Ashenvale
+    .train 425444,1
+step << Warrior
+    .goto Ashenvale,43.513,70.463
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
+    .accept 78132 >> Accept Dragonslayer's Helm
+    .accept 78134 >> Accept Dragonslayer's Lance
+    .accept 78133 >> Accept Dragonslayer's Shield
+    .target Alonso
+    .train 425444,1 
+step << Warrior
+    #completewith next
+    .goto Wetlands,49.40,16.98
+    .subzone 205 >> Travel to Dun Modr in Wetlands
+    .train 425444,1
+step << Warrior
+    .goto Wetlands,46.92,17.53,15,0
+    .goto Wetlands,46.553,18.369
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Dark Iron Entrepreneur|r inside of the building
+    >>|cRXP_WARN_You may need to corpse run a couple times to get to him|r
+    >>|cRXP_BUY_Buy a|r |T135130:0|t[Dragonslayer's Lance] |cRXP_BUY_it costs 75 silver|r
+    .complete 78134,1 -- Dragonslayer's Lance (1)
+    .target Dark Iron Entrepreneur
+    .train 425444,1
+step << Warrior
+    #completewith next
+    .goto Redridge Mountains,69.928,55.814
+    .subzone 2099 >> Travel to Stonewatch Keep in Redridge Mountains
+    .train 425444,1
+step << Warrior
+    .goto Redridge Mountains,69.928,55.814
+    >>Click the |cRXP_PICK_Wall-Mounted Shield|r. Loot it for the |cRXP_LOOT_Dragonslayer's Shield|r
+    >>|cRXP_WARN_This is inside of the main keep upstairs behind |cRXP_ENEMY_Gath'Ilzogg|r who is a level 26 elite|r
+    >>|cRXP_WARN_You will need to kill |cRXP_ENEMY_Gath'Ilzogg|r or have him be engaged by someone else in order to loot it. Ensure you have a party before going in|r
+    .complete 78133,1 -- Dragonslayer's Shield (1)
+    .train 425444,1
+step << Warrior
+    #completewith next
+    .subzone 209,2 >> Find a group and enter Shadowfang Keep
+step << Warrior
+    >>Open the |cRXP_PICK_Discarded Helm|r. Loot it for the |cRXP_LOOT_Dragonslayer's Helm|r
+    >>|cRXP_WARN_This is found on a bench behind|r |cRXP_ENEMY_Commander Springvale|r
+    .complete 78132,1 -- Dragonslayer's Helm (1)
+    .train 425444,1
+step << Warrior
+    #completewith next
+    .zone Ashenvale >> Travel to Ashenvale
+    .train 425444,1
+step << Warrior
+    .goto Ashenvale,43.513,70.463
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
+    .turnin 78132 >> Turn In Dragonslayer's Helm
+    .turnin 78134 >> Turn In Dragonslayer's Lance
+    .turnin 78133 >> Turn In Dragonslayer's Shield
+    .target Alonso
+    .train 425444,1 
+step << Warrior
+    .goto Ashenvale,43.513,70.463
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
+    .accept 78144 >> Accept Alonso the Dragonslayer
+    .target Alonso
+    .train 425444,1 
+step << Warrior
+    .goto Ashenvale,42.029,68.999
+    >>Kill the |cRXP_ENEMY_Green Dragon Whelp|r
+    .complete 78144,1 -- Accompany Alonso to slay the dragon.
+    .target Alonso
+    .mob Green Dragon Whelp
+    .train 425444,1 
+step << Warrior
+    .goto Ashenvale,42.053,69.187
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
+    .turnin 78144 >> Turn in Alonso the Dragonslayer
+    .target Alonso
+    .train 425444,1
+step << Warrior
+    .train 425444 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Raging Blow|r] |cRXP_WARN_to train|r |T132215:0|t[Raging Blow]
+    .use 210569
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Priest SoD
+#group RestedXP Rune Guide
+#subgroup Chest
+#name Strength of Soul - 22 (Ashenvale)
+
+step << Priest
+    .goto Ashenvale,32.0,43.0,65,0
+    .goto Ashenvale,33.6,38.8,65,0
+    .goto Ashenvale,37.6,34.0
+    >>Kill |cRXP_ENEMY_Thistlefur Totemics|r and |cRXP_ENEMY_Thistlefur Shaman|r. Loot them for the |T135736:0|t[Primal Insight]
+    .collect 211534,1 -- Primal Insight (1)
+    .mob Thistlefur Totemic
+    .mob Thistlefur Shaman
+    .train 415997,1
+step << Priest
+    .goto Ashenvale,38.002,29.528,40,0
+    .goto Ashenvale,37.938,27.958,30,0
+    .goto Ashenvale,38.819,27.160,30,0
+    .goto Ashenvale,38.804,26.558
+    >>|cRXP_WARN_Run up the giant tree next to the cave enterance. Follow the arrow carefully|r
+    .use 211534 >>|cRXP_WARN_Use the|r |T135736:0|t[Primal Insight] |cRXP_WARN_when you are next to the two dreamcatchers on the tree to create the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of Seven Visitors]|r
+    .collect 211531,1 -- Prophecy of Seven Visitors (1)
+    .train 415997,1
+step << Priest
+    >>You must now obtain two |T135934:0|t|T136057:0|t[Meditation] buffs << Alliance
+    >>You must now obtain two |T237569:0|t|T136077:0|t[Meditation] buffs << Horde
+    >>You must /kneel inside one of the following places: Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge << Human/Dwarf
+    >>You must /kneel inside one of the following places: A moonwell, such as the one in Stormwind or the one in Darnassus << NightElf
+    >>You must /kneel at any graveyard << Undead
+    >>You must /kneel at any Loa Altar, such as the one in Sen'Jin Village or the one at the Crossroads in The Barrens << Troll
+    >>In order to receive your second |T135934:0|t|T136057:0|t[Meditation] buff this requires you to /kneel infront of a Priest who has a different |T135934:0|t|T136057:0|t[Meditation] to yours, and they must /pray while targeting you << Alliance
+    >>In order to receive your second |T237569:0|t|T136077:0|t[Meditation] buff this requires you to /kneel infront of a Priest who has a different |T135934:0|t|T136057:0|t[Meditation] to yours, and they must /pray while targeting you << Horde
+    .train 415997 >> |cRXP_WARN_Once you have both|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buffs use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of Seven Visitors]|r |cRXP_WARN_to learn|r |T135911:0|t[Strength of Soul] << Alliance
+    .train 415997 >> |cRXP_WARN_Once you have both|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buffs use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of Seven Visitors]|r |cRXP_WARN_to learn|r |T135911:0|t[Strength of Soul] << Horde
+    .use 211531
+    .itemcount 211531,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Priest SoD
+#group RestedXP Rune Guide
+#subgroup Legs
+#name Power Word: Barrier - 22 (Redridge Mountains)
+
+step << Priest
+    #completewith next
+    .zone Redridge Mountains >> Travel to Redridge Mountains
+    .train 425213,1
+step << Priest
+    .goto Redridge Mountains,67.2,53.6
+    .goto Redridge Mountains,68.8,57.4
+    >>Kill |cRXP_ENEMY_Blackrock Shadowcasters|r. Loot them for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a City Enthralled|r]
+    >>|cRXP_ENEMY_Blackrock Shadowcasters|r |cRXP_WARN_are level 22-23 elites. Find a group for this|r
+    .collect 211530,1 -- Prophecy of a City Enthralled (1)
+    .mob Blackrock Shadowcaster
+    .train 425213,1
+step << Priest
+    >>You must now obtain two |T135934:0|t|T136057:0|t[Meditation] buffs << Alliance
+    >>You must now obtain two |T237569:0|t|T136077:0|t[Meditation] buffs << Horde
+    >>You must /kneel inside one of the following places: Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge << Human/Dwarf
+    >>You must /kneel inside one of the following places: A moonwell, such as the one in Stormwind or the one in Darnassus << NightElf
+    >>You must /kneel at any graveyard << Undead
+    >>You must /kneel at any Loa Altar, such as the one in Sen'Jin Village or the one at the Crossroads in The Barrens << Troll
+    >>In order to receive your second |T135934:0|t|T136057:0|t[Meditation] buff this requires you to /kneel infront of a Priest who has a different |T135934:0|t|T136057:0|t[Meditation] to yours, and they must /pray while targeting you << Alliance
+    >>In order to receive your second |T237569:0|t|T136077:0|t[Meditation] buff this requires you to /kneel infront of a Priest who has a different |T135934:0|t|T136057:0|t[Meditation] to yours, and they must /pray while targeting you << Horde
+    .train 425213 >> |cRXP_WARN_Once you have both|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buffs use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a City Enthralled|r] |cRXP_WARN_to learn|r |T253400:0|t[Power Word: Barrier] << Alliance
+    .train 425213 >> |cRXP_WARN_Once you have both|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buffs use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a City Enthralled|r] |cRXP_WARN_to learn|r |T253400:0|t[Power Word: Barrier] << Horde
+    .use 211530
+    .itemcount 211530,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Priest SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Circle of Healing - 25 (Duskwood)
+
+step << Priest
+    .goto Duskwood,50.4,70.8,60,0
+    .goto Duskwood,50.2,76.4
+    >>Kill |cRXP_ENEMY_Defias Night Runners|r, |cRXP_ENEMY_Defias Night Blades|r and |cRXP_ENEMY_Defias Enchanters|r. Loot them for the |T135736:0|t[|cRXP_LOOT_Dark Insight|r] 
+    .collect 211528,1 -- Dark Insight (1)
+    .mob Defias Night Runner
+    .mob Defias Night Blade
+    .mob Defias Night Enchanter
+    .train 402859,1
+step << Priest
+    .goto Duskwood,91.11,30.58
+    .use 211528 >> |cRXP_WARN_Use the|r |T135736:0|t[|cRXP_LOOT_Dark Insight|r] |cRXP_WARN_at the Secluded Grave behind the tower to receive the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Thousand Lights|r]
+    .collect 211490,1 -- Prophecy of a Thousand Lights (1)
+    .train 402859,1
+step << Priest
+    >>You must now obtain two |T135934:0|t|T136057:0|t[Meditation] buffs << Alliance
+    >>You must now obtain two |T237569:0|t|T136077:0|t[Meditation] buffs << Horde
+    >>You must /kneel inside one of the following places: Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge << Human/Dwarf
+    >>You must /kneel inside one of the following places: A moonwell, such as the one in Stormwind or the one in Darnassus << NightElf
+    >>You must /kneel at any graveyard << Undead
+    >>You must /kneel at any Loa Altar, such as the one in Sen'Jin Village or the one at the Crossroads in The Barrens << Troll
+    >>In order to receive your second |T135934:0|t|T136057:0|t[Meditation] buff this requires you to /kneel infront of a Priest who has a different |T135934:0|t|T136057:0|t[Meditation] to yours, and they must /pray while targeting you << Alliance
+    >>In order to receive your second |T237569:0|t|T136077:0|t[Meditation] buff this requires you to /kneel infront of a Priest who has a different |T135934:0|t|T136057:0|t[Meditation] to yours, and they must /pray while targeting you << Horde
+    .train 402859 >> |cRXP_WARN_Once you have both|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buffs use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Thousand Lights]|r |cRXP_WARN_to learn|r |T135887:0|t[Circle of Healing] << Alliance
+    .train 402859 >> |cRXP_WARN_Once you have both|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buffs use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Thousand Lights]|r |cRXP_WARN_to learn|r |T135887:0|t[Circle of Healing] << Horde
+    .use 211490
+    .itemcount 211490,1
 ]])

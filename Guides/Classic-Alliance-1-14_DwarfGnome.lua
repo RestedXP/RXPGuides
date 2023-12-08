@@ -2365,6 +2365,13 @@ step
     .turnin 71 >> Turn in Report to Thomas
     .accept 39 >> Accept Deliver Thomas' Report
     .accept 109 >> Accept Report to Gryan Stoutmantle
+step
+    #completewith Deed
+    >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for the |T134939:0|t[|cRXP_LOOT_Westfall Deed|r]
+    .use 1972>>|cRXP_WARN_Use the |T134939:0|t[|cRXP_LOOT_Westfall Deed|r] to start the quest|r
+    >>|cRXP_WARN_The|r |T134939:0|t[|cRXP_LOOT_Westfall Deed|r] |cRXP_WARN_is a very rare drop. Ignore this step if you don't get it|r
+    .collect 1972,1,184 --Collect Westfall Deed (x1)
+    .accept 184 >> Accept Furlbrow's Deed
 step << Warlock
     .isOnQuest 147
     .goto Elwynn Forest,71.10,80.66
@@ -2389,6 +2396,7 @@ step
     >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for their |cRXP_LOOT_Bandanas|r
     .complete 83,1 --Collect Red Linen Bandana (x6)
     .mob Defias Bandit
+    .isOnQuest 83
 step
     .goto Elwynn Forest,69.3,79.0
     >>Kill |cRXP_ENEMY_Princess|r. Loot her for her |cRXP_LOOT_Collar|r
@@ -2396,13 +2404,6 @@ step
     >>|cRXP_ENEMY_Princess|r |cRXP_WARN_will also cast|r |T132368:0|t[Rushing Charge] |cRXP_WARN_which deals heavy damage|r
     .complete 88,1
     .mob Princess
-step
-    #completewith next
-    >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for the |T134939:0|t[|cRXP_LOOT_Westfall Deed|r]
-    .use 1972>>|cRXP_WARN_Use the |T134939:0|t[|cRXP_LOOT_Westfall Deed|r] to start the quest|r
-    >>|cRXP_WARN_The|r |T134939:0|t[|cRXP_LOOT_Westfall Deed|r] |cRXP_WARN_is a very rare drop. Ignore this step if you don't get it|r
-    .collect 1972,1,184 --Collect Westfall Deed (x1)
-    .accept 184 >> Accept Furlbrow's Deed
 step
     #era
     >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for their |cRXP_LOOT_Bandanas|r
@@ -2421,6 +2422,7 @@ step
     .goto Elwynn Forest,69.3,79.0
     .complete 83,1 --Collect Red Linen Bandana (x6)
     .mob Defias Bandit
+    .isOnQuest 83
 step
     #era
     #softcore
@@ -2429,12 +2431,12 @@ step
     .deathskip >>Die and respawn at the Spirit Healer if you're low health, otherwise just run back and handin
     .target Spirit Healer
 step
-    #era
     #label Deed
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sara Timberlain|r
     .target Sara Timberlain
     .goto Elwynn Forest,79.457,68.789
     .turnin 83 >> Turn in Red Linen Goods
+    .isQuestComplete 83
 step
     #completewith next
     .goto Redridge Mountains,17.4,69.6

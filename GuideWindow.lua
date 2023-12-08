@@ -1383,7 +1383,9 @@ function addon:FetchGuide(guide,arg2)
         else
             --print(guide.name,guide.group)
             --GG = guide
-            print(fmt('Error: Tried to load an invalid Guide: %s v%s',key,guide.version or 0))
+            if addon.settings.profile.debug then
+                print(fmt('Error: Tried to load an invalid Guide: %s v%s',key,guide.version or 0))
+            end
             return
         end
     end

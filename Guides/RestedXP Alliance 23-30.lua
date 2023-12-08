@@ -396,7 +396,6 @@ step << NightElf/Draenei/Human wotlk
     .fp Thelsamar >> Get the Thelsamar flight path
 step << wotlk
     #label wettylandy
-    >> Skip this step and head back to Menethil Harbor if your hearth is on CD
     .goto Wetlands,9.5,59.7
     .hs >> Hearth to Stormwind << !Mage
     .hs >> Hearth to Menethil << Mage

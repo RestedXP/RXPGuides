@@ -214,29 +214,6 @@ RXPGuides.RegisterGuide([[
 << Alliance Warrior SoD
 #group RestedXP Rune Guide
 #subgroup Legs
-#name Furious Thunder - 8 (Teldrassil)
-
-step << Warrior
-    #season 2
-    #completewith next
-    .goto Teldrassil,44.18,58.19
-    .subzone 262 >> Enter the Ban'ethil Barrow Den
-    .train 403476,1
-step << Warrior
-    #season 2
-    .goto Teldrassil,44.401,60.655
-    >>Open the |cRXP_PICK_Gnarlpine Cache|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Slaughter|r]
-    >>|cRXP_WARN_Note: The |cRXP_PICK_Gnarlpine Cache|r can have multiple spawn locations within the Ban'ethil Barrows|r
-    .collect 204809,1 -- Rune of Furious Thunder (1)
-    .train 403476,1 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Slaughter|r] |cRXP_WARN_to train|r |T236280:0|t[Slaughter from the Shadows]
-    .use 204809
-]])
-
-RXPGuides.RegisterGuide([[
-#classic
-<< Alliance Warrior SoD
-#group RestedXP Rune Guide
-#subgroup Legs
 #name Frenzied Assault - 10 (Stormwind)
 
 step << Warrior
@@ -1120,4 +1097,35 @@ step
     .use 204441
     .train 403474,1
 
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Warrior SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Quick Strike - 12 (Loch Modan)
+
+step << Warrior
+    .goto Loch Modan,33.2,73.8
+    >>Kill |cRXP_ENEMY_Troggs|r. Loot them for a |cRXP_LOOT_Skull-Shaped Geode|r
+    .collect 208847,1 -- Skull-Shaped Geode (1)
+    .mob Stonesplinter Scout
+    .mob Stonesplinter Trogg
+    .train 425443,1
+step << Warrior
+    .goto Loch Modan,33.2,73.8
+    >>Kill a |cRXP_ENEMY_Stonesplinter Skullthumper|r
+    >>|cRXP_WARN_During combat it'll give you a nice thumpin' which will turn the |cRXP_LOOT_Skull-Shaped Geode|r into a|r |T236489:0|t[|cRXP_LOOT_Cracked Skull-Shaped Geode|r]
+    .collect 208848,1 -- Cracked Skull-Shaped Geode (1)
+    .mob Stonesplinter Skullthumper
+    .train 425443,1
+step << Warrior
+    .use 208848 >>|cRXP_WARN_Use the|r |T236489:0|t[|cRXP_LOOT_Cracked Skull-Shaped Geode|r] |cRXP_WARN_to receive the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Strike|r]
+    .collect 208778,1 -- Rune of Quick Strike (1)
+    .train 425443,1
+step << Warrior
+    .train 425443 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Strike|r] |cRXP_WARN_to train|r |T132394:0|t[Quick Strike]
+    .use 208778
+    .itemcount 208778,1
 ]])

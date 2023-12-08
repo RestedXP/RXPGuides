@@ -878,6 +878,7 @@ step
     >>Start circling the farm, killing Defias and looting them for Bandanas.
     >> Try to get low on health for the last one, we're deathskipping afterwards << tbc
     .complete 83,1 --Collect Red Linen Bandana (x6)
+    .isOnQuest 83
 step << Warrior
     .goto Elwynn Forest,69.4,79.2
     >>Pool Rage, then kill Princess. Use a Lesser Heal Potion from before if needed. Loot her for the Collar
@@ -904,6 +905,7 @@ step
     >>Start circling the farm, killing Defias and looting them for Bandanas.
     >> Try to get low on health for the last one, we're deathskipping afterwards << tbc
     .complete 83,1 --Collect Red Linen Bandana (x6)
+    .isOnQuest 83
 step << tbc
     #completewith next
     .deathskip >>Die and respawn at the Spirit Healer if you're low health, otherwise just run back and handin
@@ -915,6 +917,7 @@ step
 .target Sara Timberlain
 >>Talk to |cFF00FF25Sara Timberlain|r
     .turnin 83 >> Turn in Red Linen Goods
+    .isQuestComplete 83
 step << !Warlock
     .goto Redridge Mountains,8.5,72.0
     .xp 9+4475 >> Grind until 4475+/6500xp

@@ -523,6 +523,7 @@ step
     .goto Elwynn Forest,70.8,80.9,60,0
     >>Start circling the farm, killing Defias and looting them for Bandanas
     .complete 83,1 --Collect Red Linen Bandana (x6)
+    .isOnQuest 83
 step
     #label Princess
     .goto Elwynn Forest,69.4,79.2
@@ -540,6 +541,7 @@ step
 .target Sara Timberlain
 >>Talk to |cFF00FF25Sara Timberlain|r
     .turnin 83 >> Turn in Red Linen Goods
+    .isQuestComplete 83
 step
     .goto Redridge Mountains,7.87,73.85
     .zone Redridge Mountains >>Grind en route to Redridge
