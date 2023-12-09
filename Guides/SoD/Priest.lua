@@ -740,3 +740,278 @@ step << Priest
     .use 205932
     .itemcount 205932,1
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Priest SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Shadow Word: Death - 20 (The Barrens)
+
+step
+    #completewith next
+    .zone The Barrens >> Trave to The Barrens
+step
+    #loop
+    .goto The Barrens,54.8,35.6,40,0
+    .goto The Barrens,58.8,37.6,40,0
+    >>Use |T135894:0|t[Dispel Magic] on the |cRXP_ENEMY_Desert Mirage|r. Loot it for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Demise|r]
+    *|cRXP_WARN_It's a green ghost which patrolls around. Use the RestedXP target macro to target it.|r
+    .collect 205932,1 -- Prophecy of a King's Demise (1)
+    .train 402849,1
+    .mob Desert Mirage
+step << Troll
+    >>You must now obtain two |T237569:0|t|T136077:0|t[Meditation] buffs
+    >>You must |cRXP_WARN_/kneel|r at one of the following places in front of the altar and talk to the spirit afterwards: Sen'jin or Crossroads |cRXP_WARN_(the shrine locations are marked on your map, you can also find any priest with the buff that can copy them to you)|r
+    .emote KNEEL,208309
+    .goto Durotar,55.32,72.66,0
+    .goto The Barrens,51.5,29.5,0
+    >>In order to receive your second |T237569:0|t|T136077:0|t[Meditation] buff this requires you to |cRXP_WARN_/kneel|r infront of a Undead Priest who has |T237569:0|t[Meditation on Undeath], and they must /pray while targeting you
+    .train 402849 >> |cRXP_WARN_Once you have both|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buffs use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Demise]|r |cRXP_WARN_to learn|r |T136149:0|t[Shadow Word: Death]
+    .use 205932
+    .itemcount 205932,1
+step << Undead
+    >>You must now obtain two |T237569:0|t|T136077:0|t[Meditation] buffs
+    >>You must |cRXP_WARN_/kneel|r at one of the following places in front of the altar and talk to the spirit afterwards: Sen'jin or Crossroads
+    .emote KNEEL,208309
+    .goto The Barrens,51.5,29.5,0
+    .goto The Barrens,50.7,32.7,0
+    >>In order to receive your second |T237569:0|t|T136077:0|t[Meditation] buff |cRXP_WARN_/kneel|r at a graveyard to get the |T237569:0|t[Meditation on Undeath] buff |cRXP_WARN_(the shrine and a graveyard are marked on your map, you can also find any priest with the buff that can copy them to you)|r
+    .train 402849 >> |cRXP_WARN_Once you have both|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buffs use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Demise]|r |cRXP_WARN_to learn|r |T136149:0|t[Shadow Word: Death]
+    .use 205932
+    .itemcount 205932,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Priest SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Shadow Word: Death - 24 (Silverpine Forest)
+
+step
+    #completewith next
+    .zone Silverpine Forest >> Trave to the Silverpine Forest
+step
+    .goto Silverpine Forest,65.8,23.6
+    >>Pick up the |cRXP_PICK_Scroll|r behind |cRXP_ENEMY_Thule Ravenclaw|r (lvl 24 elite) for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Demise|r]
+    *|cRXP_WARN_The scroll is one the second floor. It's easier in a group.|r
+    .collect 205932,1 -- Prophecy of a King's Demise (1)
+    .train 402849,1
+step << Troll
+    >>You must now obtain two |T237569:0|t|T136077:0|t[Meditation] buffs
+    >>You must |cRXP_WARN_/kneel|r at one of the following places in front of the altar and talk to the spirit afterwards: Sen'jin or Crossroads |cRXP_WARN_(the shrine locations are marked on your map, you can also find any priest with the buff that can copy them to you)|r
+    .emote KNEEL,208309
+    .goto Durotar,55.32,72.66,0
+    .goto The Barrens,51.5,29.5,0
+    >>In order to receive your second |T237569:0|t|T136077:0|t[Meditation] buff this requires you to |cRXP_WARN_/kneel|r infront of a Undead Priest who has |T237569:0|t[Meditation on Undeath], and they must /pray while targeting you
+    .train 402849 >> |cRXP_WARN_Once you have both|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buffs use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Demise]|r |cRXP_WARN_to learn|r |T136149:0|t[Shadow Word: Death]
+    .use 205932
+    .itemcount 205932,1
+step << Undead
+    >>You must now obtain two |T237569:0|t|T136077:0|t[Meditation] buffs
+    >>You must |cRXP_WARN_/kneel|r at one of the following places in front of the altar and talk to the spirit afterwards: Sen'jin or Crossroads
+    .emote KNEEL,208309
+    .goto Durotar,55.32,72.66,0
+    .goto The Barrens,51.5,29.5,0
+    .goto Silverpine Forest,44.2,42.7,0
+    >>In order to receive your second |T237569:0|t|T136077:0|t[Meditation] buff |cRXP_WARN_/kneel|r at a graveyard to get the |T237569:0|t[Meditation on Undeath] buff |cRXP_WARN_(the shrine and a graveyard are marked on your map, you can also find any priest with the buff that can copy them to you)|r
+    .train 402849 >> |cRXP_WARN_Once you have both|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buffs use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Demise]|r |cRXP_WARN_to learn|r |T136149:0|t[Shadow Word: Death]
+    .use 205932
+    .itemcount 205932,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Priest SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Circle of Healing - 24 (Duskwood)
+
+step
+    #completewith next
+    .zone Duskwood >> Travel to Duskwood (e.g. boat from Ratchet to Booty Bay and then head north)
+step
+    .train 402859,1
+    >>Kill the |cRXP_ENEMY_Defias Humans|r in the area |cRXP_WARN_(second spot marked on the map)|r. Loot them for the |T135736:0|t[Dark Insight]
+    .goto Duskwood,50.2,74.0
+    .goto Duskwood,22.8,65.6,0
+    .collect 211528,1
+    .mob Defias Night Runner
+    .mob Defias Night Blade
+    .mob Defias Enchanter
+step
+    .train 402859,1
+    >>Travel to the |cRXP_PICK_Secluded Grave|r and use the |T135736:0|t[Dark Insight] to get the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Thousand Lights|r]
+    *|cRXP_WARN_Avoid the high level ghouls|r
+    .collect 211490,1
+    .goto Duskwood,90,30
+step << Troll
+    >>You must now obtain two |T237569:0|t|T136077:0|t[Meditation] buffs
+    >>You must |cRXP_WARN_/kneel|r at one of the following places in front of the altar and talk to the spirit afterwards: Sen'jin or Crossroads |cRXP_WARN_(the shrine locations are marked on your map, you can also find any priest with the buff that can copy them to you)|r
+    .emote KNEEL,208309
+    .goto Durotar,55.32,72.66,0
+    .goto The Barrens,51.5,29.5,0
+    >>In order to receive your second |T237569:0|t|T136077:0|t[Meditation] buff this requires you to |cRXP_WARN_/kneel|r infront of a Undead Priest who has |T237569:0|t[Meditation on Undeath], and they must /pray while targeting you
+    .train 402859 >> |cRXP_WARN_Once you have both|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buffs use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Thousand Lights|r] |cRXP_WARN_to learn|r |T135887:0|t[Circle of Healing]
+    .use 211490
+    .itemcount 211490,1
+step << Undead
+    >>You must now obtain two |T237569:0|t|T136077:0|t[Meditation] buffs
+    >>You must |cRXP_WARN_/kneel|r at one of the following places in front of the altar and talk to the spirit afterwards: Sen'jin or Crossroads
+    .emote KNEEL,208309
+    .goto Durotar,55.32,72.66,0
+    .goto The Barrens,51.5,29.5,0
+    .goto Duskwood,75.0,58.9
+    >>In order to receive your second |T237569:0|t|T136077:0|t[Meditation] buff |cRXP_WARN_/kneel|r at a graveyard to get the |T237569:0|t[Meditation on Undeath] buff |cRXP_WARN_(the shrine and a graveyard are marked on your map, you can also find any priest with the buff that can copy them to you)|r
+    .train 402859 >> |cRXP_WARN_Once you have both|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buffs use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Thousand Lights|r] |cRXP_WARN_to learn|r |T135887:0|t[Circle of Healing]
+    .use 211490
+    .itemcount 211490,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Priest SoD
+#group RestedXP Rune Guide
+#subgroup Legs
+#name Power Word: Barrier - 23 (Redrige Mountains)
+
+step
+    #completewith next
+    .zone Redrige Mountains >> Travel to Redrige Mountains (e.g. boat from Ratchet to Booty Bay and then head north)
+step
+    .train 425213,1
+    >>Kill |cRXP_ENEMY_Blackrock Shadowcasters|r (|cRXP_WARN_it's recommended to search for a group|r). Loot them for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a City Enthralled]
+    .goto Redrige Mountains,67.4,56.0
+    .collect 211530,1
+    .mob Blackrock Shadowcaster
+step << Troll
+    >>You must now obtain two |T237569:0|t|T136077:0|t[Meditation] buffs
+    >>You must |cRXP_WARN_/kneel|r at one of the following places in front of the altar and talk to the spirit afterwards: Sen'jin or Crossroads |cRXP_WARN_(the shrine locations are marked on your map, you can also find any priest with the buff that can copy them to you)|r
+    .emote KNEEL,208309
+    .goto Durotar,55.32,72.66,0
+    .goto The Barrens,51.5,29.5,0
+    >>In order to receive your second |T237569:0|t|T136077:0|t[Meditation] buff this requires you to |cRXP_WARN_/kneel|r infront of a Undead Priest who has |T237569:0|t[Meditation on Undeath], and they must /pray while targeting you
+    .train 425213 >> |cRXP_WARN_Once you have both|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buffs use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a City Enthralled] |cRXP_WARN_to learn|r |T253400:0|t[Power Word: Barrier]
+    .use 211530
+    .itemcount 211530,1
+step << Undead
+    >>You must now obtain two |T237569:0|t|T136077:0|t[Meditation] buffs
+    >>You must |cRXP_WARN_/kneel|r at one of the following places in front of the altar and talk to the spirit afterwards: Sen'jin or Crossroads
+    .emote KNEEL,208309
+    .goto Durotar,55.32,72.66,0
+    .goto The Barrens,51.5,29.5,0
+    .goto Redrige Mountains,20.8,56.6
+    >>In order to receive your second |T237569:0|t|T136077:0|t[Meditation] buff |cRXP_WARN_/kneel|r at a graveyard to get the |T237569:0|t[Meditation on Undeath] buff |cRXP_WARN_(the shrine and a graveyard are marked on your map, you can also find any priest with the buff that can copy them to you)|r
+    .train 425213 >> |cRXP_WARN_Once you have both|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buffs use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a City Enthralled] |cRXP_WARN_to learn|r |T253400:0|t[Power Word: Barrier]
+    .use 211530
+    .itemcount 211530,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Priest SoD
+#group RestedXP Rune Guide
+#subgroup Chest
+#name Strength of Soul - 23 (Ashenvale)
+
+step
+    #completewith next
+    .zone Ashenvale >> Travel to Ashenvale
+step
+    .train 415997,1
+    >>Kill |cRXP_ENEMY_Thistlefur Shamans|r and |cRXP_ENEMY_Thistlefur Totemics|r. Loot them for the |T135736:0|t[Primal Insight]
+    .goto Ashenvale,33.6,38.0
+    .collect 211534,1
+    .mob Thistlefur Shaman
+    .mob Thistlefur Totemic
+step
+    .train 415997,1
+    >>Climb up to the |cRXP_PICK_Dreamcatcher|r hanging from a branch. Use the |T135736:0|t[Primal Insight] to get the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of Seven Visitors]
+    .goto Ashenvale,38,26
+    .use 211534
+    .collect 211531,1
+step << Troll
+    >>You must now obtain two |T237569:0|t|T136077:0|t[Meditation] buffs
+    >>You must |cRXP_WARN_/kneel|r at one of the following places in front of the altar and talk to the spirit afterwards: Sen'jin or Crossroads |cRXP_WARN_(the shrine locations are marked on your map, you can also find any priest with the buff that can copy them to you)|r
+    .emote KNEEL,208309
+    .goto Durotar,55.32,72.66,0
+    .goto The Barrens,51.5,29.5,0
+    >>In order to receive your second |T237569:0|t|T136077:0|t[Meditation] buff this requires you to |cRXP_WARN_/kneel|r infront of a Undead Priest who has |T237569:0|t[Meditation on Undeath], and they must /pray while targeting you
+    .train 415997 >> |cRXP_WARN_Once you have both|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buffs use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of Seven Visitors] |cRXP_WARN_to learn|r |T135911:0|t[Strength of Soul]
+    .use 211531
+    .itemcount 211531,1
+step << Undead
+    >>You must now obtain two |T237569:0|t|T136077:0|t[Meditation] buffs
+    >>You must |cRXP_WARN_/kneel|r at one of the following places in front of the altar and talk to the spirit afterwards: Sen'jin or Crossroads
+    .emote KNEEL,208309
+    .goto Durotar,55.32,72.66,0
+    .goto The Barrens,51.5,29.5,0
+    .goto Ashenvale,40.5,52.8,0
+    .goto Ashenvale,80.7,58.6,0
+    >>In order to receive your second |T237569:0|t|T136077:0|t[Meditation] buff |cRXP_WARN_/kneel|r at a graveyard to get the |T237569:0|t[Meditation on Undeath] buff |cRXP_WARN_(the shrine and a graveyard are marked on your map, you can also find any priest with the buff that can copy them to you)|r
+    .train 415997 >> |cRXP_WARN_Once you have both|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buffs use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of Seven Visitors] |cRXP_WARN_to learn|r |T135911:0|t[Strength of Soul]
+    .use 211531
+    .itemcount 211531,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Priest SoD
+#group RestedXP Rune Guide
+#subgroup Chest
+#name Twisted Fate - 10 (Silverpine Forest)
+
+step
+    #completewith next
+    .zone Silverpine Forest >> Travel to the Silverpine Forest
+step
+    .train 425215,1
+    >>Kill the |cRXP_ENEMY_Wailing Spirit|r. Loot it for the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devout Champion]
+    .goto Silverpine Forest,57.9,71.5
+    .collect 205905,1
+    .mob Wailing Spirit
+step
+    .train 425215 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devout Champion] |cRXP_WARN_to train|r |T237566:0|t[Twisted Fate]
+    >>|cRXP_WARN_You must have a|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buff by typing|r /kneel |cRXP_WARN_in front of |cRXP_PICK_Loa Shrine|r (in Durotar or The Barrens) or by kneeling in front of another priest with the buff when they /pray for you|r << Troll
+    >>|cRXP_WARN_You must have a|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buff by typing|r /kneel |cRXP_WARN_at a graveyard or by kneeling in front of another priest with the buff when they /pray for you|r << Undead
+    .goto Durotar,55.32,72.66,0
+    .goto The Barrens,51.5,29.5,0
+    .goto Silverpine Forest,55.6,73.3 << Undead
+    .use 205905
+    .itemcount 205905,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Priest SoD
+#group RestedXP Rune Guide
+#subgroup Chest
+#name Twisted Fate - 10 (The Barrens)
+
+step
+    #completewith next
+    .zone The Barrens >> Travel to The Barrens
+step
+    .train 425215,1
+    >>Kill the |cRXP_ENEMY_Razormanes|r. Loot them for the |T236248:0|t[|cRXP_FRIENDLY_Helping Hand]
+    .goto The Barrens,54.6,25.6
+    .collect 208765,1
+    .mob Razormane Thornweaver
+    .mob Razormane Hunter
+    .mob Razormane Water Seeker
+    .mob Razormane Defender
+step
+    .train 425215,1
+    >>|cRXP_WARN_Find a dead player or pet that you can ressurect (with |T135955:0|t[Ressurection]) to get the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devout Champion]
+    .collect 205905,1
+step
+    .train 425215 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devout Champion] |cRXP_WARN_to train|r |T237566:0|t[Twisted Fate]
+    >>|cRXP_WARN_You must have a|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buff by typing|r /kneel |cRXP_WARN_in front of |cRXP_PICK_Loa Shrine|r (in Durotar or The Barrens) or by kneeling in front of another priest with the buff when they /pray for you|r << Troll
+    >>|cRXP_WARN_You must have a|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buff by typing|r /kneel |cRXP_WARN_at a graveyard or by kneeling in front of another priest with the buff when they /pray for you|r << Undead
+    .goto Durotar,55.32,72.66,0
+    .goto The Barrens,51.5,29.5,0
+    .goto The Barrent,50.7,32.8 << Undead
+    .use 205905
+    .itemcount 205905,1
+]])
