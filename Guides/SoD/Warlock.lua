@@ -372,3 +372,159 @@ step
     .train 403925 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Chaos Bolt|r] |cRXP_WARN_to train|r |T236291:0|t[Chaos Bolt]  << Warlock
     .train 401759 >>Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Burnout|r] |cRXP_WARN_to train|r |T236207:0|t[Burnout] << Mage
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warlock SoD
+#group RestedXP Rune Guide
+#subgroup Chest
+#name Lake of Fire - 25 (Hillsbrad Foothills)
+
+step
+    #completewith next
+    .zone Hillsbrad Foothills >>Travel to Hillsbrad Foothills (e.g. from Undercity through Silverpine Forest) << Horde
+    .zone Hillsbrad Foothills >>Travel to Hillsbrad Foothills (e.g. head North from Wetlands) << Alliance
+step
+    .train 403937,1
+    #loop
+    .goto Hillsbrad Foothills,58.2,19.6,40,0
+    .goto Hillsbrad Foothills,57.5,36.4,50,0
+    .goto Hillsbrad Foothills,51.1,46.4,40,0
+    >>Look for |cRXP_FRIENDLY_Zixil|r. He patrolls between Tarren Mill and Southshore. Buy the |T133709:0|t[Demolition Explosives] from him |cRXP_WARN_for 5 gold|r
+    .collect 211487,1
+    .target Zixil
+step
+    .train 403937,1
+    >>Use the |T133709:0|t[Demolition Explosives] to destroy the |cRXP_PICK_Rubble|r. Loot the |cRXP_PICK_Storage Locker|r on the ground for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Fires Wake|r]
+    .goto Hillsbrad Foothills,79.7,41.0
+    .collect 211476,1
+step
+    .use 211476
+    .itemcount 211476,1
+    .train 403937 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Fires Wake|r] |cRXP_WARN_to train|r |T135826:0|t[Lake of Fire]
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warlock SoD
+#group RestedXP Rune Guide
+#subgroup Legs
+#name Incinerate - 22 (Redrige Mountains)
+
+step
+    #completewith next
+    .zone Redrige Mountains >>Travel to the Redrige Mountains
+step
+    .train 416015,1
+    >>Kill |cRXP_ENEMY_Incinerator Gar'im|r |cRXP_WARN_(lvl 23 elite)|r. Loot him for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Incinerate|r]
+    .collect 211477,1
+    .mob Incinerator Gar'im
+step
+    .use 211477
+    .itemcount 211477,1
+    .train 416015 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Incinerate|r] |cRXP_WARN_to train|r |T135789:0|t[Incinerate]
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Warlock SoD
+#group RestedXP Rune Guide
+#subgroup Chest
+#name Master Channeler - 12 (The Barrens)
+
+step
+    #completewith next
+    .zone The Barrens >>Travel to The Barrens
+step
+    .train 403932,1
+    >>|cRXP_WARN_Go to the Altar of Thorns|r. Cast |T136126:0|t[Life Tap] until you're almost dying. Then cast |T136168:0|t[Health Funnel] on your pet to die and get |T134419:0|t[|cRXP_FRIENDLY_Rune of Channeling|r]
+    *|cRXP_WARN_You will be revived immediately after dying|r
+    .goto The Barrens,58.2,26.7
+    .cast 1454
+    .cast 735
+    .collect 208750,1
+step
+    .use 208750
+    .itemcount 208750,1
+    .train 403932 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Channeling|r] |cRXP_WARN_to train|r |T136168:0|t[Master Channeler]
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Warlock SoD
+#group RestedXP Rune Guide
+#subgroup Chest
+#name Master Channeler - 14 (Silverpine Forest)
+
+step
+    #completewith next
+    .zone Silverpine Forest >>Travel to the Silverpine Forest
+step
+    .train 403932,1
+    >>Enter the cave at the waypoint location. Use the |T136225:0|t[Curse of Recklessness] on the |cRXP_ENEMY_Sadistic Fiend|r. Kill it and loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Channeling|r]
+    .goto Silverpine Forest,56.6,46.4
+    .collect 208750,1
+    .mob Sadistic Fiend
+step
+    .use 208750
+    .itemcount 208750,1
+    .train 403932 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Channeling|r] |cRXP_WARN_to train|r |T136168:0|t[Master Channeler]
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Warlock SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Shadow Bolt Volley - 16 (The Barrens)
+
+step
+    #completewith next
+    .zone The Barrens >>Travel to The Barrens
+step
+    .train 403936,1
+    >>Use |T136163:0|t[Drain Soul] on |cRXP_ENEMY_Supervisor Lugwizzle|r (|cRXP_ENEMY_Overseer Glibby|r may also work) until you get the |T134105:0|t[Soul of Greed]
+    *|cRXP_WARN_You don't need the tag|r
+    .goto The Barrens,56.6,8.2
+    .collect 208743,1
+    .mob Supervisor Lugwizzle
+    .mob Overseer Glibby
+step
+    .train 403936,1
+    >>Click on the |cRXP_PICK_Hungry Idol|r to get the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowbolts|r]
+    .goto The Barrents,57.06,9.65
+    .collect 208744,1
+step
+    .use 208744
+    .itemcount 208744,1
+    .train 403936 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowbolts|r] |cRXP_WARN_to train|r |T136195:0|t[Shadow Bolt Volley]
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Warlock SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Shadow Bolt Volley - 18 (Silverpine Forest)
+
+step
+    #completewith next
+    .zone Silverpine Forest >>Travel to the Silverpine Forest
+step
+    .train 403936,1
+    >>Kill |cRXP_ENEMY_Ravenclaw Drudger|r and |cRXP_ENEMY_Ravenclaw Guardians|r |cRXP_WARN_inside the cave|r. Loot them for the |T236295:0|t[Tortured Soul]
+    .collect 210713,1
+    .mob Ravenclaw Drudger
+    .mob Ravenclaw Guardian
+step
+    .train 403936,1
+    >>Use |T136126:0|t[Life Tap] once and afterwards the |T236295:0|t[Tortured Soul]. Kill the |cRXP_ENEMY_Tortured Soul|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowbolts|r]
+    .collect 208744,1
+    .use 210713
+    .cast 1455
+    .mob Tortured Soul
+step
+    .use 208744
+    .itemcount 208744,1
+    .train 403936 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowbolts|r] |cRXP_WARN_to train|r |T136195:0|t[Shadow Bolt Volley]
+]])
