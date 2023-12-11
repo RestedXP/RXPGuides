@@ -81,7 +81,7 @@ step << Troll
     .accept 77643 >>Accept Spell Research
     .target Mai'ah
 step
-    .goto Durotar,43.27,69.51
+    .goto Durotar,42.99,54.43
     >>Loot the |cRXP_PICK_Waterlogged Stashbox|r for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r] inside the cave
     .collect 203751,1 --Spell Notes: CALE ENCI (1)
     .train 401760,1

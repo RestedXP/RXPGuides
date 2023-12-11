@@ -852,7 +852,7 @@ step
     .complete 6394,1 --Thazz'ril's Pick (1)
 step << Mage/Warlock
     #season 2
-    .goto Durotar,43.27,69.51
+    .goto Durotar,42.99,54.43
     >>Loot the |cRXP_PICK_Waterlogged Stashbox|r for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r] inside the cave << Mage
     >>Loot the |cRXP_PICK_Waterlogged Stashbox|r for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r] inside the cave << Warlock
     .collect 203751,1,77643,1 << Mage --Spell Notes: CALE ENCI (1)
@@ -3099,7 +3099,6 @@ step << Warrior/Shaman/Hunter
 step << Warrior/Shaman/Hunter
     #era/som
     #completewith Gazzuz
-    .goto Durotar,54.73,9.35
     .goto Durotar,54.72,8.78,15,0
     .goto Durotar,54.29,8.89,15,0
     .goto Durotar,53.77,8.87,15,0
@@ -3118,7 +3117,6 @@ step << Warrior/Shaman/Hunter
     #som
     #phase 3-6
     #completewith Gazzuz
-    .goto Durotar,54.73,9.35
     .goto Durotar,54.72,8.78,15,0
     .goto Durotar,54.29,8.89,15,0
     .goto Durotar,53.77,8.87,15,0
@@ -3145,7 +3143,6 @@ step << Warrior/Shaman/Hunter
 step << Warrior/Shaman/Hunter
     #era/som
     #completewith Gazzuz
-    .goto Durotar,54.73,9.35
     .goto Durotar,54.72,8.78,15,0
     .goto Durotar,54.29,8.89,15,0
     .goto Durotar,53.77,8.87,15,0
@@ -3165,7 +3162,6 @@ step << Warrior/Shaman/Hunter
     #som
     #phase 3-6
     #completewith Gazzuz
-    .goto Durotar,54.73,9.35
     .goto Durotar,54.72,8.78,15,0
     .goto Durotar,54.29,8.89,15,0
     .goto Durotar,53.77,8.87,15,0

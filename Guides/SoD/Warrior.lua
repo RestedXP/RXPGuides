@@ -1129,3 +1129,77 @@ step << Warrior
     .use 208778
     .itemcount 208778,1
 ]])
+
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Warrior SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Endless Rage - 15 (The Barrens)
+
+
+    --Rune of Endless Rage
+
+step
+    #season 2
+    .goto The Barrens,52.27,31.08,
+    .aura 420667 >>Click the |cRXP_PICK_Horde Warbanner|r
+    .train 403489,1
+step
+    #season 2
+    #completewith next
+    .goto The Barrens,51.50,30.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
+    .fly Ratchet >> Fly to Ratchet
+    .target Devrak
+step
+    #completewith next
+    .subzone 385 >>Travel to Northwatch Hold
+step
+    #season 2
+    .goto The Barrens,62.55,56.31
+    >>Click the |cRXP_PICK_Alliance Warbanner|r
+    >>Kill |cRXP_ENEMY_Lieutenant Stonebrew|r as he spawns. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Endless Rage|r]
+    .collect 208741,1 --Rune of Endless Rage (1)
+    .mob Lieutenant Stonebrew
+    .train 403489,1
+ step
+    #season 2
+    .train 403489 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Endless Rage|r] |cRXP_WARN_to train|r |T132347:0|t[Endless Rage]
+    .use 208741
+    .itemcount 208741,1
+
+    ]])
+
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Warrior SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Endless Rage - 15 (Silverpine Forest)
+
+
+    --Rune of Endless Rage
+
+step
+    #season 2
+    #completewith next
+    +|cRXP_WARN_Grouping up is recommended as you have to kill a level 17 elite|r
+step
+    #season 2
+    .goto Silverpine Forest,35.03,7.73
+    >>Attack the |cRXP_ENEMY_Webbed Victim|r and kill the |cRXP_ENEMY_Lost Adventurer|r that spawns. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Endless Rage|r]
+    >>|cRXP_WARN_You have to burst the|r |cRXP_ENEMY_Webbed Victim|r |cRXP_WARN_since he regains health every few seconds|r 
+    .collect 208741,1 --Rune of Endless Rage (1)
+    .mob Webbed Victim
+    .mob Lost Adventurer
+    .train 403489,1
+step
+    #season 2
+    .train 403489 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Endless Rage|r] |cRXP_WARN_to train|r |T132347:0|t[Endless Rage]
+    .use 208741
+    .itemcount 208741,1
+
+    ]])

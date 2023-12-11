@@ -1,28 +1,44 @@
 RXPGuides.RegisterGuide([[
 #classic
-<< Warrior SoD
+<< Warrior SoD/Hunter SoD
 #group RestedXP Rune Guide
-#subgroup Legs
-#name Consumed by Rage - 25 (Wetlands)
+#subgroup Legs << Warrior
+#subgroup Chest << Hunter
+#name Consumed by Rage - 25 (Wetlands) << Warrior
+#name Aspect of the Lion - 25 (Wetlands) << Hunter
 
-step << Warrior
+step
+    #season 2
+    #completewith next
+    .zone Wetlands >>Travel to the Wetlands
+step
     #season 2
     #completewith next
     .goto Wetlands,51.914,62.692,30 >> Enter the Thelgen Rock cave
-    .train 425446,1
-step << Warrior
+    .train 425446,1 << Warrior
+    .train 410115,1 < Hunter
+step
     #season 2
-    .goto Wetlands,47.0,64.0
-    >>Kill |cRXP_ENEMY_Carrodin|r. Loot it for the |T136088:0|t[|cRXP_FRIENDLY_Rune of Consuming Rage|r]
-    .collect 210573,1 -- Rune of Consuming Rage (1)
+    .goto Wetlands,47.24,65.34
+    >>Kill |cRXP_ENEMY_Carrodin|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Consuming Rage|r] << Warrior
+    >>Kill |cRXP_ENEMY_Carrodin|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Aspect of the Lion|r] << Hunter
+    .collect 210573,1 << Warrior --Rune of Consuming Rage (1)
+    .collect 211205,1 << Hunter --Rune of Aspect of the Lion (1)
     .mob Carrodin
-    .train 425446,1
+    .train 425446,1 << Warrior
+    .train 410115,1 < Hunter
 step << Warrior
     #season 2
-    .train 425446 >>|cRXP_WARN_Use the|r |T136088:0|t[|cRXP_FRIENDLY_Rune of Consuming Rage|r] |cRXP_WARN_to train|r |T136088:0|t[Consumed by Rage]
+    .train 425446 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Consuming Rage|r] |cRXP_WARN_to train|r |T136088:0|t[Consumed by Rage]
     .use 210573
     .itemcount 210573,1
-]])
+step << Hunter
+    #season 2
+    .train 410115 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Aspect of the Lion|r] |cRXP_WARN_to train|r |T132185:0|t[Aspect of the Lion]
+    .use 211205
+    .itemcount 211205,1
+
+    ]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -52,6 +68,9 @@ step
     .collect 210323,1 --Safe Combination (1)
     .collect 210329,1 --Hillsbrad Treasure Map (1)
     .train 400102,1
+step
+    #completewith next
+    .zone Western Plaguelands >>Travel to Western Plaguelands
 step
     #season 2
     .goto Western Plaguelands,59.4,84.5
@@ -839,4 +858,135 @@ step << Priest
     .train 402859 >> |cRXP_WARN_Once you have both|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buffs use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Thousand Lights]|r |cRXP_WARN_to learn|r |T135887:0|t[Circle of Healing] << Horde
     .use 211490
     .itemcount 211490,1
+]])
+
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Hunter SoD
+#group RestedXP Rune Guide
+#subgroup Chest
+#name Cobra Strikes - 25 (Hillsbrad Foothills)
+
+
+    --Rune of Cobra Strikes
+
+step
+    #season 2
+    #completewith next
+    .zone Hillsbrad Foothills >>Travel to Hillsbrad Foothills (e.g. from Undercity through Silverpine Forest) << Horde
+    .zone Hillsbrad Foothills >>Travel to Hillsbrad Foothills (e.g. head North from Wetlands) << Alliance
+step
+    #season 2
+    #loop
+    .goto Hillsbrad Foothills,58.2,19.6,40,0
+    .goto Hillsbrad Foothills,57.5,36.4,50,0
+    .goto Hillsbrad Foothills,51.1,46.4,40,0
+    >>Look for |cRXP_FRIENDLY_Zixil|r. He patrolls between Tarren Mill and Southshore. Buy the |T134041:0|t[Freshwater Snapper Bait] from him
+    .collect 210410,1 --Freshwater Snapper Bait (1)
+    .target Zixil
+    .train 425759,1
+step
+    #season 2
+    .goto Hillsbrad Foothills,61.05,33.36
+    .use 210410 >>Use the |T134041:0|t[Freshwater Snapper Bait] on the boat in the middle of the pond
+    >>Kill |cRXP_ENEMY_Koartul|r (25 elite) as he spawns. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Cobra Strikes|r]
+    .collect 210596,1 --Rune of Cobra Strikes (1)
+    .mob Koartul
+    .train 425759,1
+step
+    #season 2
+    .train 425759 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Cobra Strikes|r] |cRXP_WARN_to train|r |T236177:0|t[Cobra Strikes]
+    .use 210596
+    .itemcount 210596,1
+
+    ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Hunter SoD
+#group RestedXP Rune Guide
+#subgroup Legs
+#name Kill Command - 25 (Multiple Zones)
+
+step
+    #completewith WyvernWrangling
+    >>|cRXP_BUY_Buy a|r |T135144:0|t[Greater Magic Wand] |cRXP_BUY_from the auction house|r
+    .collect 11288,1 --Greater Magic Wand (1)
+    .train 410111,1
+step
+    #season 2
+    #completewith next
+    +|cRXP_WARN_Start looking for a group for Wailing Caverns|r
+step
+    #season 2
+    #completewith next
+    .goto Kalimdor,51.89,54.77,20,0
+    .goto Kalimdor,51.95,54.56,20,0
+    .goto Kalimdor,52.27,54.65,30,0
+    .goto Kalimdor,52.40,55.18
+    .zone 279 >> Enter Wailing Caverns
+step
+    #season 2
+    >>Kill |cRXP_ENEMY_Mutanus the Devourer|r. Loot him for |T132775:0|t[|cRXP_LOOT_Hypnotic Crystal|r]
+    .collect 209838,1 --Hypnotic Crystal (1)
+    .mob Mutanus the Devourer
+    .train 410111,1
+step
+    #season 2
+    #completewith next
+    .zone Ashenvale >>Travel to Ashenvale
+step
+    #season 2
+    .goto Ashenvale,37.91,34.49,40,0
+    .goto Ashenvale,35.89,36.65,40,0
+    .goto Ashenvale,35.75,32.01,40,0
+    .goto Ashenvale,34.09,38.48,40,0
+    .goto Ashenvale,31.86,39.25,40,0
+    .goto Ashenvale,32.57,42.78,40,0
+    .goto Ashenvale,30.98,44.40,40,0
+    .goto Ashenvale,35.75,32.01
+    >>Kill |cRXP_ENEMY_Thistlefur Shamans|r. Loot them for |T237004:0|t[|cRXP_LOOT_Wild Magic Essence|r]
+    .collect 209841,1 --Wild Magic Essence (1)
+    .mob Thistlefur Shaman
+    .train 410111,1
+step
+    #season 2
+    .use 209841 >>Use the |T237004:0|t[|cRXP_LOOT_Wild Magic Essence|r] to create |T237489:0|t[|cRXP_LOOT_Gnarled Wand of Wild Magic|r]
+    .collect 209840,1 --Gnarled Wand of Wild Magic (1)
+    .train 410111,1
+step
+    #season 2
+    #completewith WyvernWrangling
+    .zone Stonetalon Mountains >>Travel to Stonetalon Mountains
+step
+    #season 2
+    .goto Stonetalon Mountains,60.71,62.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jixo Madrocket|r in Stonetalon Mountains
+    .accept 78114 >>Accept Wild Wyvern Wrangling
+    .target Jixo Madrocket
+    .train 410111,1
+step
+    #season 2
+    #label WyvernWrangling
+    .goto Stonetalon Mountains,60.71,62.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jixo Madrocket|r
+    .turnin 78114 >>Turn in Wild Wyvern Wrangling
+    .accept 78121 >>Accept Wrangling a Wild Wyvern
+    .target Jixo Madrocket
+    .train 410111,1
+step
+    #season 2
+    .goto Stonetalon Mountains,60.19,61.82
+    >>Stay with |cRXP_FRIENDLY_Jixo Madrocket|r and watch him tame a |cRXP_ENEMY_Wyvern|r
+    .turnin 78121 >>Turn in Wrangling a Wild Wyvern
+    .target Jixo Madrocket
+    .train 410111,1
+step
+    #season 2
+    .train 410111 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Kill Command|r] |cRXP_WARN_to train|r |T132176:0|t[Kill Command]
+    .use 209852
+    .itemcount 209852,1
+
+
 ]])

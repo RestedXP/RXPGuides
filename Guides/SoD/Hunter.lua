@@ -395,3 +395,68 @@ step
     .train 425758,1
 
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Hunter SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Beast Mastery - 16 (The Barrens)
+
+
+    --Rune of Beast Mastery
+
+step
+    #season 2
+    #completewith next
+    +|cRXP_WARN_You need to have learned|r |T135813:0|t[Immolation Trap] |cRXP_WARN_or any other trap to be able to obtain this rune|r
+step
+    #season 2
+    .goto The Barrens,44.60,55.51,40,0
+    .goto The Barrens,44.05,56.20,40,0
+    .goto The Barrens,43.12,57.37
+    .line The Barrens,44.60,55.51,44.60,55.51,43.12,57.37
+    >>Use |T135813:0|t[Immolation Trap] on the patrol path of the |cRXP_ENEMY_Patrolling Cheetah|r to remove his buff
+    >>Kill him and loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Beast Mastery|r]
+    .collect 208701,1 --Rune of Beast Mastery (1)
+    .mob Patrolling Cheetah
+    .train 410110,1
+step
+    #season 2
+    .train 410110 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Beast Mastery|r] |cRXP_WARN_to train|r |T132270:0|t[Beast Mastery]
+    .use 208701
+    .itemcount 208701,1
+
+    ]])
+
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Hunter SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Beast Mastery - 16 (Silverpine)
+
+
+    --Rune of Beast Mastery
+
+step
+    #season 2
+    .goto Silverpine Forest,41.37,19.64,50,0
+    .goto Silverpine Forest,41.60,21.65,50,0
+    .goto Silverpine Forest,42.36,23.77,50,0
+    .goto Silverpine Forest,44.67,24.84,50,0
+    .goto Silverpine Forest,46.08,26.62,50,0
+    .goto Silverpine Forest,41.60,21.65
+    >>Kill |cRXP_ENEMY_Ferocious Grizzled Bears|r until a |cRXP_ENEMY_Grizzled Protecter|r (16 elite) spawns
+    >>Kill him and loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Beast Mastery|r] 
+    .collect 208701,1 --Rune of Beast Mastery (1)
+    .mob Ferocious Grizzled Bear
+    .mob Grizzled Protecter
+step
+    #season 2
+    .train 410110 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Beast Mastery|r] |cRXP_WARN_to train|r |T132270:0|t[Beast Mastery]
+    .use 208701
+    .itemcount 208701,1
+
+    ]])

@@ -55,7 +55,7 @@ step << Orc
     .target Nartok
 step
     #season 2
-    .goto Durotar,43.27,69.51
+    .goto Durotar,42.99,54.43
     >>Loot the |cRXP_PICK_Waterlogged Stashbox|r for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r] inside the cave
     .collect 205230,1 --Rune of Haunting (1)
     .train 403919,1
