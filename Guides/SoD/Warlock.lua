@@ -528,3 +528,123 @@ step
     .itemcount 208744,1
     .train 403936 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowbolts|r] |cRXP_WARN_to train|r |T136195:0|t[Shadow Bolt Volley]
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warlock SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Metamorphosis - 25
+
+step
+    #completewith WarlockRuneMetamorphosisA
+    +|cRXP_WARN_It is recommended to do all these steps in a group. Some steps can be completed solo.|r
+step
+    #completewith next
+    .zone Redridge Mountains >>Travel to the Redrige Mountains (e.g. take the boat from Ratchet to Booty Bay, run North) << Horde
+    .zone Redridge Mountains >>Travel to the Redrige Mountains << Alliance
+step
+    #label WarlockRuneMetamorphosisA
+    .train 403938,1
+    >>Loot the |cRXP_PICK_Demonic Reliquary|r at the top of the tower to get the |T134337:0|t[Orb of Des]
+    *|cRXP_WARN_Be careful as it's guarded by an elite. One way would be to get to the second floor, die, ress at the top and loot the chest while your Voidwalker tanks the mobs.|r
+    .collect 210765,1
+    .goto Redridge Mountains,80.2,49.5
+step << Horde
+    .train 403938,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Doan Karhan|r
+    *|cRXP_WARN_Skip this step if you're traveling through The Barrens|r
+    .goto The Barrens,49.2,57.2
+    .accept 1740 >>Accept The Orb of Soran'ruk
+    .target Doan Karhan
+step
+    #completewith next
+    .zone Darkshore >>Travel to Darkshore (take the boat from Menethil Harbor) << Alliance
+    .zone Darkshore >>Travel to Darkshore (walk through Ashenvale) << Horde
+step
+    .train 403938,1
+    >>Loot the |cRXP_PICK_Bough of Altek|r at the top of the tower to get the |T135153:0|t[Bough of Altek]
+    *|cRXP_WARN_Be careful. One way would be to die near it, jump up behind the bookcase, ress, (maybe fear the first caster that would attack you) and loot it.|r
+    .collect 210763,1
+    .goto Darkshore,56.3,26.5
+step
+    #completewith next
+    .zone The Barrens >>Travel to The Barrens
+step
+    .train 403938,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Doan Karhan|r
+    .goto The Barrens,49.2,57.2
+    .accept 1740 >>Accept The Orb of Soran'ruk
+    .target Doan Karhan
+step
+    #completewith next
+    .zone Ashenvale >>Travel to Ashenvale
+step
+    .train 403938,1
+    >>Kill the |cRXP_ENEMY_Twilight Acolytes|r near the BFD raid entrance. Loot them for the |cRXP_LOOT_Soran'ruk Fragments|r
+    *|cRXP_WARN_The |cRXP_WARN_Twilight Acolyte|r inside the raid before the 5th boss drop them as well|r
+    .goto Ashenvale,14.5,14.3
+    .complete 1740,1 --3/3 Soran'ruk Fragment
+    .mob Twilight Acolyte
+step
+    .train 403938,1
+    >>Kill |cRXP_ENEMY_Shadowfang Darksouls|r inside the |cRXP_WARN_Shadowfang Keep dungeon (go right after |cRXP_ENEMY_Baron Silverlaine|r)|r. Loot them for the |cRXP_LOOT_Large Soran'ruk Fragment|r
+    .complete 1740,2 --1/1 Large Soran'ruk Fragment
+    .mob Shadowfang Darksoul
+step
+    #completewith next
+    .zone The Barrens >>Travel to The Barrens
+step
+    .train 403938,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Doan Karhan|r
+    .goto The Barrens,49.2,57.2
+    .turnin 1740 >>Turn in The Orb of Soran'ruk
+    .accept 78680 >>Accept Rumors Abound
+    .turnin 78680 >>Turn in Rumors Abound
+    .accept 78681 >>Accept The Conjuring
+    .target Doan Karhan
+step
+    #completewith next
+    .zone Ashenvale >>Travel to Ashenvale
+step
+    .train 403938,1
+    .goto Ashenvale,83.07,70.56,40,0
+    .goto Ashenvale,84.05,76.96,30,0
+    .goto Ashenvale,81.29,78.14,30,0
+    .goto Ashenvale,79.05,81.11,30,0
+    .goto Ashenvale,84.2,76.4
+    >>Kill the |cRXP_ENEMY_Demons|r in the area. Loot them for the |cRXP_LOOT_Blood of the Legion|r
+    .complete 78681,1 --10/10 Blood of the Legion
+    .mob Mannoroc Lasher
+    .mob Felguard
+    .mob Searing Infernal
+    .mob Legion Hound
+step
+    #completewith WarlockRuneMetamorphosisB
+    +|cRXP_WARN_If you're in a group of warlocks then the first warlock (the one who has a debuff) who turns in the quest has to get the killing blow of the |cRXP_ENEMY_Searing Infernal|r while standing inside the rune|r
+step
+    .train 403938,1
+    >>Interact with the |cRXP_PICK_Dark Ritual Stone|r
+    .goto Ashenvale,78.92,80.29
+    .turnin 78681 >>Turn in The Conjuring
+    .target Dark Ritual Stone
+step
+    .train 403938,1
+    #label WarlockRuneMetamorphosisB
+    >>Kill the spawning |cRXP_ENEMY_Demons|r. |cRXP_WARN_Kill the |cRXP_ENEMY_Searing Infernal|r WHILE CHANNELING|r |T136163:0|t[Drain Soul] |cRXP_WARN_and WHILE STANDING INSIDE THE RUNE|r
+    .goto Ashenvale,79.00,80.38
+    .accept 78684 >>Accept Mysterious Traveler
+    .mob Searing Infernal
+step
+    .train 403938,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Doan Karhan|r to get the |T134419:0|t[|cRXP_FRIENDLYRune of Metamorphosis|r]
+    .goto The Barrens,49.2,57.2
+    .turnin 78684 >>Turn in Mysterious Traveler
+    .turnin 78702 >>Turn in Raszel Ander
+    .collect 210980,1
+    .target Doan Karhan
+step
+    .use 210980
+    .itemcount 210980,1
+    .train 403938 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Metamorphosis|r] |cRXP_WARN_to train|r |T237558:0|t[Metamorphosis]
+]])
