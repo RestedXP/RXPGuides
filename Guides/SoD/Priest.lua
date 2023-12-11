@@ -878,7 +878,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Redrige Mountains >> Travel to Redrige Mountains (e.g. boat from Ratchet to Booty Bay and then head north)
+    .zone Redridge Mountains >> Travel to Redrige Mountains (e.g. boat from Ratchet to Booty Bay and then head north)
 step
     .train 425213,1
     >>Kill |cRXP_ENEMY_Blackrock Shadowcasters|r (|cRXP_WARN_it's recommended to search for a group|r). Loot them for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a City Enthralled]
