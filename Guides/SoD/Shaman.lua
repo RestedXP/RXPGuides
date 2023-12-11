@@ -399,3 +399,104 @@ step
 
 
     ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Shaman SoD
+#group RestedXP Rune Guide
+#subgroup Legs
+#name Shamanistic Rage - 25 (Stonetalon Mountains)
+
+step
+    #completewith next
+    .zone Stonetalon Mountains >>Travel to the Stonetalon Mountains
+step
+    .train 425343,1
+    >>Kill the |cRXP_ENEMY_Primordial Anomaly|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Primordial Fury|r]
+    *|cRXP_WARN_It will only receive normal damage from a specific elemental school. Look at its debuffs to see which elemental school it will take damage from.|r
+    .goto Stonetalon Mountains,32.6,67.6
+    .collect 210811,1
+    .mob Primordial Anomaly
+step
+    .use 210811
+    .itemcount 210811,1
+    .train 425343 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Primordial Fury|r] |cRXP_WARN_to train|r |T136088:0|t[Shamanistic Rage]
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Shaman SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Lava Burst - 25 (Hillsbrad Foothills)
+
+step
+    #completewith next
+    .zone Hillsbrad Foothills >>Travel to the Hillsbrad Foothills
+step
+    >>Kill the |cRXP_ENEMY_Mudsnout Shamans|r. Loot them for the |T134920:0|t[|cRXP_FRIENDLY_Kajanic Icon|r]
+    .goto Hillsbrad Foothills,63.8,59.6
+    .collect 206387,1
+    .mob Mudsnout Shaman
+step
+    .equip 18,206387 >>Equip the |T134920:0|t[|cRXP_FRIENDLY_Kajanic Icon|r]
+step
+    .aura 408828,5+ >>Now you have to take damage from laval 5 times. |cRXP_WARN_An easy way is to go into the Ragefire Chasm dungeon and jump into the lava|r
+step
+    .use 206387
+    .itemcount 206387,1
+    .train 410095 >>|cRXP_WARN_Use the|r |T134920:0|t[|cRXP_FRIENDLY_Kajanic Icon|r] |cRXP_WARN_to train|r |T237582:0|t[Lava Burst]
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Shaman SoD
+#group RestedXP Rune Guide
+#subgroup Legs
+#name Way of Earth - 15 (The Barrens)
+
+step
+    #completewith next
+    .zone The Barrens >>Travel to The Barrens
+step
+    #loop
+    .goto The Barrens,54.8,35.6,40,0
+    .goto The Barrens,58.8,37.6,40,0
+    >>Use |T136075:0|t[Purge] on the |cRXP_ENEMY_Desert Mirage|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Earthen Rune|r]
+    *|cRXP_WARN_It's a green ghost which patrolls around. Use the RestedXP target macro to find it faster.|r
+    .collect 208758,1 -- Earthen Rune (1)
+    .train 410107,1
+    .mob Desert Mirage
+step
+    .use 208758
+    .itemcount 208758,1
+    .train 410107 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Earthen Rune|r] |cRXP_WARN_to train|r |T136025:0|t[Way of Earth]
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Shaman SoD
+#group RestedXP Rune Guide
+#subgroup Legs
+#name Way of Earth - 15 (Silverpine Forest)
+
+step
+    #completewith next
+    .zone Silverpine Forest >>Travel to the Silverpine Forest
+step
+    .train 410107,1
+    >>Kill |cRXP_ENEMY_Rot Hide Mystics|r. Loot them for the |T136008:0|t[|cRXP_FRIENDLY_Rot Totem|r]
+    .goto Silverpine Forest,45.4,20.2
+    .collect 210253,1
+    .mob Rot Hide Mystic
+step
+    .train 410107,1
+    >>Use the |T136008:0|t[|cRXP_FRIENDLY_Rot Totem|r]. |cRXP_WARN_It will summon a level 15 elite|r. Kill the |cRXP_ENEMY_Decayed Elemental|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Earthen Rune|r]
+    .collect 208758,1 -- Earthen Rune (1)
+    .goto Silverpine Forest,45.4,20.2
+    .mob Decayed Elemental
+step
+    .use 208758
+    .itemcount 208758,1
+    .train 410107 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Earthen Rune|r] |cRXP_WARN_to train|r |T136025:0|t[Way of Earth]
+]])
