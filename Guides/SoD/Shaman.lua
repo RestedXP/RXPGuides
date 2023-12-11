@@ -500,3 +500,105 @@ step
     .itemcount 208758,1
     .train 410107 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Earthen Rune|r] |cRXP_WARN_to train|r |T136025:0|t[Way of Earth]
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Shaman SoD
+#group RestedXP Rune Guide
+#subgroup Legs
+#name Earthshield - 25 (Azeroth)
+
+step
+    #completewith next
+    .zone Blackfathom Deeps >>Travel to Blackfathom Deeps
+step
+    .isOnQuest 6922
+    >>Kill |cRXP_ENEMY_Baron Aquanis|r in the Blackfathom Deeps Raid and loot him for the |cRXP_LOOT_|T136222:0|t[Strange Water Globe]|r |cRXP_WARN_this step will require a 10 player raid group.|r
+    .collect 16782,1
+    .mob Baron Aquanis
+step
+    >>Use |T136222:0|t|cRXP_FRIENDLY_[Strange Water Globe]||r to start the quest.
+    .accept 6922 >>Accept Baron Aquanis
+    .use 16782
+step
+    .goto Ashenvale,11.6,34.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
+    .turnin 6922 >>Turnin Baron Aquanis
+    .accept 78506 >>Accept Elemental Distress
+    .target Je'neu Sancrea
+step
+    #loop
+    .goto Ashenvale,47.6,67.4,20,0
+    .goto Ashenvale,46.6,71.6,20,0
+    .goto Ashenvale,51.6,72.6,20,0
+    .goto Ashenvale,52.0,69.4,20,0
+    >>Kill |cRXP_ENEMY_Befouled Water Elementals|r and loot them for |T132844:0|t|cRXP_LOOT_[Mote of Torrential Rage]|r
+    .complete 78506,3
+    .mob Befouled Water Elemental
+step
+    #completewith next
+    .zone Stonetalon Mountains >>Travel to Stonetalon Mountains
+step
+    #loop
+    .goto Stonetalon Mountains,45.6,44.6,20,0
+    .goto Stonetalon Mountains,44.0,39.8,20,0
+    .goto Stonetalon Mountains,37.6,50.2,20,0
+    .goto Stonetalon Mountains,34.6,60.6,20,0
+    >>Kill |cRXP_ENEMY_Rogue Flame Spirits|r and loot them for |T132839:0|t|cRXP_LOOT_[Mote of Infernal Rage]|r
+    .complete 78506,2
+    .mob Rogue Flame Spirit
+step
+    #loop
+    .goto Stonetalon Mountains,29.8,60.6,20,0
+    .goto Stonetalon Mountains,29.2,68.8,20,0
+    .goto Stonetalon Mountains,32.6,68.8,20,0
+    .goto Stonetalon Mountains,36.6,66.6,20,0
+    >>Kill |cRXP_ENEMY_Enraged Stone Spirit|r, |cRXP_ENEMY_Furious Stone Spirit|r and loot them for |T132838:0|t|cRXP_LOOT_[Mote of Seismic Rage]|r |cRXP_WARN_be careful of dangerous enemies in the area.|r
+    .complete 78506,1
+    .mob Enraged Stone Spirit
+    .mob Furious Stone Spirit
+step
+    .isOnQuest 78506
+    >>Purchase |T134717:0|t[Elixir of Wisdom] and |T134797:0|t[Elixir of Water Breathing] from the Auction House or a player, |cRXP_WARN_alternatively craft it yourself if you are an alchemist.|r
+    .collect 3383,1
+    .collect 134797,1
+step
+    #completewith next
+    .zone Ashenvale >>Travel to Ashenvale
+step
+    .goto Ashenvale,11.6,34.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
+    .turnin 78506 >>Turnin Elemental Distress
+    .accept 78537 >>Accept Elixir of Insight
+    .accept 78537 >>Turnin Elixir of Insight
+    .accept 78561 >>Accept Elixir of Insight
+    .target Je'neu Sancrea
+step
+    .goto 1440,11.41,33.08
+    >>Use |T134791:0|t[Elixir of Insight] near the Bonfire to see a vision of a Quilboar
+    .complete 78561,1
+    .use 210712
+step
+    .goto Ashenvale,11.6,34.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
+    .turnin 78561 >>Turnin Elixir of Insight
+    .accept 78575 >>Accept Hirzek
+    .target Je'neu Sancrea
+step
+    #completewith next
+    .zone The Barrens >>Travel to the Barrens
+step
+    .goto The Barrens,43.6, 79.0
+    >>Kill |cRXP_ENEMY_Hirzek|r and loot him for |T135146:0|t|cRXP_LOOT_[Hirzek's Staff]|r |cRXP_WARN_If you have trouble killing it consider grouping up.|r
+    .complete 78575,1 >>Accept Hirzek
+    .mob Hirzek
+    .mob Bound Elemental
+step
+    #completewith next
+    .zone Ashenvale >>Travel to Ashenvale
+step
+    .goto Ashenvale,11.6,34.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
+    .turnin 78575 >>Turnin Hirzek
+    .target Je'neu Sancrea
+]])
