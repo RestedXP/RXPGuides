@@ -242,6 +242,13 @@ step
     .train 401767,1
     #completewith next
     .zone The Barrens >>Travel to |cFFfa9602The Barrens|r
+step
+    #loop
+    .goto The Barrens,48.6,39.2,20,0
+    .goto The Barrens,47.4,41.8,20,0
+    .goto The Barrens,44.6,37.8,20,0
+    >>Kill |cRXP_ENEMY_Kolkar Wrangler|r |cRXP_ENEMY_Kolkar Stormer|r |cRXP_ENEMY_Barak Kodobane|r and loot them for |cRXP_LOOT_|T134237:0|t[Kolkar Booty Key]|r
+    .collect 5020,1
 step << Mage
     #loop
     .goto The Barrens,44.3,37.7,20,0
@@ -249,6 +256,7 @@ step << Mage
     .goto The Barrens,52.7,41.8,20,0
     >>Click on the |cRXP_PICK_Chest|r for |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r]|r
     .train 401767,1
+    .collect 5020,1
     .collect 208754,1
 -- step << Shaman
 --     #loop
@@ -819,7 +827,7 @@ step << Alliance
     .train 425170,1
     >>Click the |cRXP_PICK_Library Book|r |cFFfa9602on the shelf in Elwynn Forest|r for |T133744:0|t[Archmage Theocrituss Research Journal.]
     .collect 203755,1
-    .isQuestTurnedIn 79092
+    .isQuestAvailable 79092
 step << Alliance
     .goto 1436,53.01,53.34,10,0 << Human
     .goto 1436,52.64,53.83 << Human
@@ -829,7 +837,7 @@ step << Alliance
     >>Click the |cRXP_PICK_Gnomish Tome|r for |T133744:0|t[Rumi of Gnomeregan the Collected Works] |cFFfa9602on the table in the Westfall Inn.|r << Human
     >>Click the |cRXP_PICK_Gnomish Tome|r for |T133744:0|t[Rumi of Gnomeregan the Collected Works] |cFFfa9602on the table in the Loch Modan Inn.|r << Gnome
     .collect 208860,1
-    .isQuestTurnedIn 79093
+    .isQuestAvailable 79093
 step << Alliance
     .goto 1455,69.76,24.39,10,0
     .goto 1455,70.43,18.37,10,0
@@ -837,14 +845,14 @@ step << Alliance
     .train 425170,1
     >>Click the |cRXP_PICK_Library Book|r for |T133744:0|t[Archmage Antonidas the Unabridged Autobiography] |cFFfa9602on the table in Ironforge, Hall of Explorers.|r
     .collect 203754,1
-    .isQuestTurnedIn 79091
+    .isQuestAvailable 79091
 step << Horde
     .goto 1420,59.62,52.05,5,0
     .goto 1420,59.39,52.29
     .train 425170,1
     >>Click on the |cRXP_PICK_The Apothecary's Metaphysical Primer.|r
     .collect 208185,1
-    .isQuestTurnedIn 79095
+    .isQuestAvailable 79095
 step << Horde
     .goto 1421,43.12,41.39,5,0
     .goto 1421,42.7,41.37,5,0
@@ -853,26 +861,26 @@ step << Horde
     .train 425170,1
     >>Click on the |cRXP_PICK_Ataeric: On Arcane Curiosities.|r
     .collect 219177,1
-    .isQuestTurnedIn 79096
+    .isQuestAvailable 79096
 step << Horde
     .goto 1454,38.66,78.43
     .train 425170,1
     >>Click on the |cRXP_PICK_The Lessons of Ta'zo.|r
     .collect 207972,1
-    .isQuestTurnedIn 79094
+    .isQuestAvailable 79094
 step
     .goto 1442,74.27,85.72,5,0
     .goto 1442,74.37,85.75
     .train 425170,1
     >>Click the |T133209:0|t[Fury of the Land] |cFFfa9602in Stonetalon Mountain.|r
     .collect 209851,1
-    .isQuestTurnedIn 78149
+    .isQuestAvailable 78149
 step
     .goto 1442,56,8
     .train 425170,1
     >>Click the |cRXP_PICK_Manual|r for |T:134509|t[Arcanic Systems Manual] |cFFfa9602in the Barrens at the top of the Oil Rig.|r
     .collect 209847,1
-    .isQuestTurnedIn 78145
+    .isQuestAvailable 78145
 step
     .goto 1431,15.9,38.74,10,0
     .goto 1431,15.3,38.52,5,0
@@ -883,7 +891,7 @@ step
     .train 425170,1
     >>Click the |cRXP_PICK_Book|r |cFFfa9602on the Alchemy Table in Duskwood|r for |T133738:0|t[Crimes Against Anatomy.]
     .collect 209849,1
-    .isQuestTurnedIn 78147
+    .isQuestAvailable 78147
 step
     .goto 1413,45.98,36.39,15,0
     .goto 1414,51.91,55.42,15,0
@@ -898,7 +906,7 @@ step
     .goto 1414,52.83,54.71
     .train 425170,1
     .collect 209846 >>Click on the |cRXP_PICK_Scroll|r |cFFfa9602near the Barrens near the Wailing Caverns Portal on the ground.|r for |T135142:0|t[Secrets of the Dreamers]
-    .isQuestTurnedIn 78143
+    .isQuestAvailable 78143
 step
     .goto 1421,62.01,64.19,10,0
     .goto 1421,63.08,63.99,5,0
@@ -907,25 +915,25 @@ step
     .train 425170,1
     >>Click the |cRXP_PICK_The Dalaran Digest vol 23.|r
     .collect 209844,1
-    .isQuestTurnedIn 78127
+    .isQuestAvailable 78127
 step
     .train 425170,1
     >>Click the |cRXP_PICK_Goblin Tome|r for |T133744:0|t[Baxtan on Destructive Magics] |cFFfa9602in Ratchet next to |cRXP_FRIENDLY_Gazlove|r.|r
     .collect 208800,1
-    .isQuestTurnedIn 79097
+    .isQuestAvailable 79097
 step
     .goto 1436,45.41,69.93,10,0
     .goto 1436,45.36,70.43
     .train 425170,1
     >>Click the |cRXP_PICK_Spellbook|r for |T133733:0|t[Bewitchments and Glamours] |cFFfa9602on the Alchemy Cabinit in a small house in Westfall, Moonbrook|r
     .collect 209845,1
-    .isQuestTurnedIn 78142
+    .isQuestAvailable 78142
 step
     .goto 1437,33.61,47.82
     .train 425170,1
     >>Click the |cRXP_PICK_Scroll |r for |T237450:0|t[Goaz Scrolls]
     .collect 209848,1
-    .isQuestTurnedIn 78146
+    .isQuestAvailable 78146
 step
     .goto 1432,74.61,19.91,10,0
     .goto 1432,75.46,18.66,5,0
@@ -935,7 +943,7 @@ step
     .train 425170,1
     >>Click the |cRXP_PICK_Scroll|r for |T134938:0|t[Runes of the Sorcerer Kings.]
     .collect 209850,1
-    .isQuestTurnedIn 78148
+    .isQuestAvailable 78148
 step
     .goto 1439,59.51,23.05,10,0
     .goto 1439,58.99,22.49,10,0
@@ -944,7 +952,7 @@ step
     .train 425170,1
     >>Click the |cRXP_PICK_Scroll|r for |T237447:0|t[Narthalas Almanac vol 74]
     .collect 209843,1
-    .isQuestTurnedIn 78124
+    .isQuestAvailable 78124
 step << Alliance
     .train 425170,1
     .goto Stormwind City,37.81,79.98
