@@ -602,3 +602,61 @@ step
     .turnin 78575 >>Turnin Hirzek
     .target Je'neu Sancrea
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Shaman SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Water Shield - 20 (The Barrens)
+
+step
+    #completewith next
+    .zone The Barrens >>Travel to The Barrens
+step
+    >>Kill the |cRXP_ENEMY_Kolkar Wrangler|r and |cRXP_ENEMY_Kolkar Stormer|r. Loot them for a |T134237:0|t[Kolkar Booty Key]
+    .goto The Barrens,44.4,23.6
+    .goto The Barrens,45.8,38.4,0
+    .collect 5020,1
+    .mob Kolkar Wrangler
+    .mob Kolkar Stormer
+step
+    >>Loot one of the |cRXP_PICK_Kolkar's Booty|r for the |T135832:0|t[|cRXP_FRIENDLY_Tempest Icon|r]
+    .collect 206382,1
+    .goto The Barrens,43.0,23.5,-1
+    .goto The Barrens,52.8,41.8,-1
+    .goto The Barrens,44.3,37.7,-1
+step
+    .equip 206382,18 >>Equip the |T135832:0|t[|cRXP_FRIENDLY_Tempest Icon|r]
+step
+    .aura 408828,1+ >>Use |cRXP_WARN_3 spells with a different element, like Lightning Bolt, Frost Shock/Frostbrand Weapon Auto Attack and Flame Shock|r on 10 different enemies.
+step
+    .use 206382
+    .itemcount 206382,1
+    .train 410097 >>|cRXP_WARN_Use the|r |T135832:0|t[|cRXP_FRIENDLY_Tempest Icon|r] |cRXP_WARN_to train|r |T132315:0|t[Water Shield]
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Shaman SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Water Shield - 20 (Silverpine Forest)
+
+step
+    #completewith next
+    .zone Silverpine Forest >>Travel to Silverpine Forest
+step
+    >>Kill |cRXP_ENEMY_Grimson the Pale|r |cRXP_WARN_inside the cave|r. Loot him for the |T135832:0|t[|cRXP_FRIENDLY_Tempest Icon|r]
+    .goto Silverpine Forest,57.4,44.8
+    .collect 206382,1
+    .mob Grimson the Pale
+step
+    .equip 206382,18 >>Equip the |T135832:0|t[|cRXP_FRIENDLY_Tempest Icon|r]
+step
+    .aura 408828,1+ >>Use |cRXP_WARN_3 spells with a different element, like Lightning Bolt, Frost Shock/Frostbrand Weapon Auto Attack and Flame Shock|r on 10 different enemies.
+step
+    .use 206382
+    .itemcount 206382,1
+    .train 410097 >>|cRXP_WARN_Use the|r |T135832:0|t[|cRXP_FRIENDLY_Tempest Icon|r] |cRXP_WARN_to train|r |T132315:0|t[Water Shield]
+]])
