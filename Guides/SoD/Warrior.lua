@@ -280,7 +280,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Warrior SoD
 #group RestedXP Rune Guide
 #subgroup Gloves
-#name Endless Rage - 10 (Westfall)
+#name Endless Rage - 20 (Westfall)
 
 step << Warrior
     #season 2
@@ -307,7 +307,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Warrior SoD
 #group RestedXP Rune Guide
 #subgroup Gloves
-#name Endless Rage - 10 (Darkshore)
+#name Endless Rage - 16 (Darkshore)
 
 step << Warrior
     #season 2
