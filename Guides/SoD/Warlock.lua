@@ -648,3 +648,388 @@ step
     .itemcount 210980,1
     .train 403938 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Metamorphosis|r] |cRXP_WARN_to train|r |T237558:0|t[Metamorphosis]
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Warlock SoD
+#group RestedXP Rune Guide
+#subgroup Chest
+#name Master Channeler - 10 (Loch Modan)
+
+step << Warlock
+    .line Loch Modan,22.87,70.89,24.69,68.20,28.02,65.41,29.47,59.92,31.56,56.66,32.36,50.09,34.94,47.10,32.36,50.09,31.36,47.60,31.54,44.72,32.29,42.34,32.25,41.14,31.08,38.57,30.04,31.45,27.96,25.37,26.73,23.07,26.04,19.16,25.95,15.13,25.53,11.66
+    .goto Loch Modan,22.87,70.89,50,0
+    .goto Loch Modan,24.69,68.20,50,0
+    .goto Loch Modan,28.02,65.41,50,0
+    .goto Loch Modan,29.47,59.92,50,0
+    .goto Loch Modan,31.56,56.66,50,0
+    .goto Loch Modan,32.36,50.09,50,0
+    .goto Loch Modan,34.94,47.10,50,0
+    .goto Loch Modan,32.36,50.09,50,0
+    .goto Loch Modan,31.36,47.60,50,0
+    .goto Loch Modan,31.54,44.72,50,0
+    .goto Loch Modan,32.29,42.34,50,0
+    .goto Loch Modan,32.25,41.14,50,0
+    .goto Loch Modan,31.08,38.57,50,0
+    .goto Loch Modan,30.04,31.45,50,0
+    .goto Loch Modan,27.96,25.37,50,0
+    .goto Loch Modan,26.73,23.07,50,0
+    .goto Loch Modan,26.04,19.16,50,0
+    .goto Loch Modan,25.95,15.13,50,0
+    .goto Loch Modan,25.53,11.66
+    >>|cRXP_WARN_Look for |cRXP_FRIENDLY_Greishan Ironstove|r patroling on the road through Loch Modan. His patrol path is marked on your map|r
+    >>|cRXP_BUY_Buy a|r |T237359:0|t[Malevolent Pie] |cRXP_BUY_from him|r
+    .collect 208833,1
+    .unitscan Greishan Ironstove
+    .train 403932,1
+step << Warlock
+    .use 208833 >>|cRXP_WARN_Use the|r |T237359:0|t[Malevolent Pie] |cRXP_WARN_to eat it. Once the|r |T132108:0|t[Hellish Indigestion] |cRXP_WARN_debuff drops off you, you will receive the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Channeling|r]
+    .collect 208750,1 -- Rune of Channeling (1)
+    .train 403932,1
+step << Warlock
+    .train 403932 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Channeling|r] |cRXP_WARN_to train|r |T136168:0|t[Master Channeler]
+    .use 208750
+    .itemcount 208750,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Warlock SoD
+#group RestedXP Rune Guide
+#subgroup Chest
+#name Master Channeler - 15 (Darkshore)
+
+step << Warlock
+    .goto Darkshore,55.27,27.74,40,0
+    .goto Darkshore,56.92,27.27,40,0
+    .goto Darkshore,57.54,25.99,40,0
+    .goto Darkshore,56.92,27.27,40,0
+    .goto Darkshore,55.27,27.74
+    >>Kill |cRXP_ENEMY_Dark Strand Fanatics|r. Loot them for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Channeling|r]
+    .collect 208750,1 -- Rune of Channeling (1)
+    .mob Dark Strand Fanatic
+    .train 403932,1
+step << Warlock
+    .train 403932 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Channeling|r] |cRXP_WARN_to train|r |T136168:0|t[Master Channeler]
+    .use 208750
+    .itemcount 208750,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Warlock SoD
+#group RestedXP Rune Guide
+#subgroup Chest
+#name Soul Siphon - 10 (Dun Morogh)
+
+step << Warlock
+    #completewith next
+    >>|cRXP_WARN_Cast|r |T136163:0|t[Drain Soul] |cRXP_WARN_on any critter to receive a|r |T134095:0|t[|cRXP_LOOT_Pure Soul Shard|r]
+    .collect 205020,1 -- Pure Soul Shard (1)
+    .train 403920,1
+step << Warlock 
+    .goto Loch Modan,77.894,62.236
+    >>Kill |cRXP_ENEMY_Captain Beld|r downstairs inside the building. Loot him for a |T134085:0|t[|cRXP_LOOT_Tainted Soul Shard|r]
+    >>|cRXP_WARN_Ensure he dies while you also have|r |T136163:0|t[Drain Soul] |cRXP_WARN_on him|r
+    .collect 205019,1 -- Tainted Soul Shard (1)
+    .mob Captain Beld
+    .train 403920,1
+step << Warlock
+    >>|cRXP_WARN_Cast|r |T136163:0|t[Drain Soul] |cRXP_WARN_on any critter to receive a|r |T134095:0|t[|cRXP_LOOT_Pure Soul Shard|r]
+    .collect 205020,1 -- Pure Soul Shard (1)
+    .train 403920,1
+step << Warlock
+    .goto Dun Morogh,47.351,53.550
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gaklik Voidtwist|r to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Soul Siphon|r]
+    .collect 205022,1 -- Rune of Soul Siphon (1)
+    .skipgossip
+    .itemcount 205020,1
+    .itemcount 205019,1
+    .target Gaklik Voidtwist
+step << Warlock
+    .train 403920 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Soul Siphon|r] |cRXP_WARN_to train|r |T136169:0|t[Soul Siphon]
+    .use 208750
+    .itemcount 208750,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Warlock SoD
+#group RestedXP Rune Guide
+#subgroup Chest
+#name Soul Siphon - 10 (Elwynn Forest)
+
+step << Warlock
+    #completewith next
+    >>|cRXP_WARN_Cast|r |T136163:0|t[Drain Soul] |cRXP_WARN_on any critter to receive a|r |T134095:0|t[|cRXP_LOOT_Pure Soul Shard|r]
+    .collect 205020,1 -- Pure Soul Shard (1)
+    .train 403920,1
+step << Warlock 
+    .goto Elwynn Forest,27.0,86.7,80,0
+    .goto Elwynn Forest,26.1,89.9,80,0
+    .goto Elwynn Forest,25.2,92.7,80,0
+    .goto Elwynn Forest,27.0,93.9,80,0
+    .goto Elwynn Forest,27.0,86.7,80,0
+    .goto Elwynn Forest,26.1,89.9,80,0
+    .goto Elwynn Forest,25.2,92.7,80,0
+    .goto Elwynn Forest,27.0,93.9,80,0
+    .goto Elwynn Forest,27.0,86.7,80,0
+    .goto Elwynn Forest,26.1,89.9,80,0
+    .goto Elwynn Forest,25.2,92.7,80,0
+    .goto Elwynn Forest,27.0,93.9,80,0
+    >>Kill |cRXP_ENEMY_Hogger|r. Loot him for a |T134085:0|t[|cRXP_LOOT_Tainted Soul Shard|r]
+    >>|cRXP_WARN_Ensure he dies while you also have|r |T136163:0|t[Drain Soul] |cRXP_WARN_on him|r
+    .collect 205019,1 -- Tainted Soul Shard (1)
+    .mob Hogger
+    .train 403920,1
+step << Warlock
+    >>|cRXP_WARN_Cast|r |T136163:0|t[Drain Soul] |cRXP_WARN_on any critter to receive a|r |T134095:0|t[|cRXP_LOOT_Pure Soul Shard|r]
+    .collect 205020,1 -- Pure Soul Shard (1)
+    .train 403920,1
+step << Warlock
+    .goto Elwynn Forest,44.093,66.315
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Damien Kane|r in the basement of the inn to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Soul Siphon|r]
+    .collect 205022,1 -- Rune of Soul Siphon (1)
+    .skipgossip
+    .itemcount 205020,1
+    .itemcount 205019,1
+    .target Damien Kane
+step << Warlock
+    .train 403920 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Soul Siphon|r] |cRXP_WARN_to train|r |T136169:0|t[Soul Siphon]
+    .use 208750
+    .itemcount 208750,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Warlock SoD
+#group RestedXP Rune Guide
+#subgroup Chest
+#name Demonic Tactics - 1 (Elwynn Forest)
+
+step << Warlock
+    .goto Elwynn Forest,56.743,57.650
+    >>Loot the |cRXP_FRIENDLY_Dead Acolyte|r for the |T133625:0|t[|cRXP_LOOT_Acolyte's Knapsack|r]
+    .collect 205364,1 -- Acolyte's Knapsack (1)
+    .skipgossip
+    .target Dead Acolyte
+    .train 416009,1
+step << Warlock
+    .use 205364 >>|cRXP_WARN_Use the|r |T133625:0|t[|cRXP_LOOT_Acolyte's Knapsack|r] |cRXP_WARN_to receive an|r |T133447:0|t[|cRXP_LOOT_Unidentified Artifact|r]
+    .collect 205181,1 -- Unidentified Artifact (1)
+    .train 416009,1
+step << Warlock
+    .goto Elwynn Forest,44.390,66.242
+    .gossipoption 109291 >>Talk to |cRXP_FRIENDLY_Maximillian Crowe|r in the Goldshire inn basement to receive the |T133447:0|t[|cRXP_LOOT_Powerless Artifact|r]
+    .collect 205182,1 -- Powerless Artifact (1)
+    .skipgossip
+    .target Maximillian Crowe
+    .train 416009,1
+step << Warlock
+    .goto Elwynn Forest,56.743,57.650
+    .cast 408755 >>|cRXP_WARN_Use the|r |T133447:0|t[|cRXP_LOOT_Powerless Artifact|r] |cRXP_WARN_at the |cRXP_FRIENDLY_Dead Acolyte's|r location to receive the|r |T136008:0|t[Blood Offering] |cRXP_WARN_debuff|r
+    .use 205182
+    .aura 408755
+    .target Dead Acolyte
+    .train 416009,1
+step << Warlock
+    #completewith next
+    .zone Stormwind City >> Travel to Stormwind
+    .train 416009,1
+step << Warlock
+    #completewith next
+    .goto StormwindClassic,29.2,74.0,20,0
+    .goto StormwindClassic,27.2,78.1,15 >> Travel to The Slaughtered Lamb and go downstairs
+    .train 416009,1
+step << Warlock
+    .goto StormwindClassic,25.25,78.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gakin the Darkbinder|r to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Tactics|r]
+    .collect 205215,1 -- Rune of Tactics (1)
+    .skipgossip
+    .target Gakin the Darkbinder
+    .train 416009,1
+step << Warlock
+    .train 416009 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Tactics|r] |cRXP_WARN_to train|r |T136150:0|t[Demonic Tactics]
+    .use 205215
+    .itemcount 205215,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Warlock SoD
+#group RestedXP Rune Guide
+#subgroup Legs
+#name Demonic Grace - 10 (Elwynn Forest)
+
+step << Warlock
+    .goto Elwynn Forest,61.6,53.8
+    >>Kill |cRXP_ENEMY_Kobold Geomancers|r. Loot them for a |T133733:0|t[|cRXP_LOOT_Ominous Tome|r]
+    .collect 204905,1 -- Ominous Tome (1)
+    .mob Kobold Geomancer
+    .train 425477,1
+step << Warlock
+    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto Elwynn Forest,26.1,89.9,70,0
+    .goto Elwynn Forest,25.2,92.7,70,0
+    .goto Elwynn Forest,27.0,93.9,70,0
+    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto Elwynn Forest,26.1,89.9,70,0
+    .goto Elwynn Forest,25.2,92.7,70,0
+    .goto Elwynn Forest,27.0,93.9,70,0
+    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto Elwynn Forest,26.1,89.9,70,0
+    .goto Elwynn Forest,25.2,92.7,70,0
+    .goto Elwynn Forest,27.0,93.9,70,0
+    .goto Elwynn Forest,25.9,93.9
+    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for their |cRXP_LOOT_Gnoll Blood|r 
+    .collect 204906,1 -- Gnoll Blood (1)
+    .mob Riverpaw Runt
+    .mob Riverpaw Outrunner
+    .train 425477,1
+step << Warlock
+    .goto Elwynn Forest,35.6,61.0,60,0
+    .goto Elwynn Forest,57.8,59.4
+    >>Kill |cRXP_ENEMY_Mangy Wolves|r, |cRXP_ENEMY_Gray Forest Wolves|r and |cRXP_ENEMY_Prowlers|r. Loot them for a |cRXP_LOOT_Wolf Jawbone|r
+    .collect 204907,1 -- Wolf Jawbone (1)
+    .mob Mangy Wolf
+    .mob Gray Forest Wolf
+    .mob Prowler
+    .train 425477,1
+step << Warlock
+    #completewith next
+    .zone Stormwind City >> Travel to Stormwind
+    .train 425477,1
+step << Warlock
+    #completewith next
+    .goto StormwindClassic,29.2,74.0,20,0
+    .goto StormwindClassic,27.2,78.1,15 >> Travel to The Slaughtered Lamb and go downstairs
+    .train 425477,1
+step << Warlock
+    #completewith next
+    .goto StormwindClassic,25.2,80.7,18,0
+    .goto StormwindClassic,23.2,79.5,18,0
+    .goto StormwindClassic,26.3,79.5,18,0
+    .goto StormwindClassic,25.154,77.406
+    >>|cRXP_WARN_Travel to the bottom of The Slaughtered Lamb|r
+    .cast 418065 >> |cRXP_WARN_Use the|r |T133733:0|t[|cRXP_LOOT_Ominous Tome|r] |cRXP_WARN_to call forth|r |cRXP_ENEMY_Soboz|r
+    .use 204905
+    .train 425477,1
+step << Warlock
+    .goto StormwindClassic,25.154,77.406
+    .use 204905 >> Kill |cRXP_ENEMY_Soboz|r. Loot him for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Grace|r]
+    .collect 204912,1 -- Rune of Grace (1)
+    .mob Soboz
+    .train 425477,1
+step << Warlock
+    .train 425477 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Grace|r] |cRXP_WARN_to train|r |T236293:0|t[Demonic Grace]
+    .use 204912
+    .itemcount 204912,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Warlock SoD
+#group RestedXP Rune Guide
+#subgroup Legs
+#name Demonic Grace - 10 (Dun Morogh)
+
+step << Warlock
+    .goto Dun Morogh,22.8,50.6
+    >>Kill |cRXP_ENEMY_Frostmane Shadowcasters|r. Loot them for a |T133733:0|t[|cRXP_LOOT_Ominous Tome|r]
+    .collect 208139,1 -- Ominous Tome (1)
+    .mob Frostmane Shadowcaster
+    .train 425477,1
+step << Warlock
+    .loop 10,Dun Morogh,42.57,54.80,41.89,54.51,42.13,52.68,42.46,51.96,41.91,51.43,42.46,51.96,42.13,52.68,42.57,54.80
+    >>Kill |cFFFF5722Young Wendigos|r and |cFFFF5722Wendigos|r. Loot them for their |cRXP_LOOT_Wendigo Blood|r
+    .collect 208140,1 -- Wendigo Blood (1)
+    .mob Young Wendigo
+    .mob Wendigo
+    .train 425477,1
+step << Warlock
+    .goto Dun Morogh,45.6,43.2,60,0
+    .goto Dun Morogh,34.6,41.8
+    >>Kill any |cRXP_ENEMY_Wolf|r in Dun Morogh. Loot them for their |cRXP_LOOT_Wolf Jawbone|r
+    .collect 204907,1 -- Wolf Jawbone
+    .mob Starving Winter Wolf
+    .mob Winter Wolf
+    .mob Snow Tracker Wolf
+    .train 425477,1
+step << Warlock
+    .goto Dun Morogh,42.23,35.40
+    .cast 418065 >> |cRXP_WARN_Use the|r |T133733:0|t[|cRXP_LOOT_Ominous Tome|r] |cRXP_WARN_to call forth|r |cRXP_ENEMY_Soboz|r
+    .use 208139
+    .train 425477,1
+step << Warlock
+    .goto Dun Morogh,42.23,35.40
+    .use 204905 >> Kill |cRXP_ENEMY_Soboz|r. Loot him for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Grace|r]
+    .collect 204912,1 -- Rune of Grace (1)
+    .mob Soboz
+    .train 425477,1
+step << Warlock
+    .train 425477 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Grace|r] |cRXP_WARN_to train|r |T236293:0|t[Demonic Grace]
+    .use 204912
+    .itemcount 204912,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Warlock SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Shadow Bolt Volley - 16 (Darkshore)
+
+step << Warlock
+    .goto Darkshore,56.8,27.6,60,0
+    .goto Darkshore,57.6,26.0
+    >>Kill |cRXP_ENEMY_Delmanis the Hated|r. Loot him for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowbolts|r]
+    .collect 208744,1 -- Rune of Shadowbolts (1)
+    .unitscan Delmanis the Hated
+    .train 403936,1
+step << Warlock
+    .train 403936 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowbolts|r] |cRXP_WARN_to train|r |T136195:0|t[Shadow Bolt Volley]
+    .use 208744
+    .itemcount 208744,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Warlock SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Chaos Bolt - 8 (Dun Morogh)
+
+step << Warlock
+    .goto Dun Morogh,69.365,58.302
+    >>Kill the |cRXP_ENEMY_Frozen Trogg|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Chaos Bolt|r]
+    >>|cRXP_WARN_Note: In order to break the iceblock you must attack it with multiple fire spells in very fast succession|r
+    >>|cRXP_WARN_Cast|r |T135817:0|t[Immolate] |cRXP_WARN_and use your Imp to also attack it. You will need the assistance of another Warlock or Mage to help break it|r
+    .collect 205228,1 -- Rune of Chaos Bolt (1)
+    .mob Frozen Trogg
+    .train 403925,1
+step << Warlock
+    .train 403925 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Chaos Bolt|r] |cRXP_WARN_to train|r |T236291:0|t[Chaos Bolt]
+    .use 208744
+    .itemcount 208744,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Warlock SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Chaos Bolt - 8 (Elwynn Forest)
+
+step << Warlock
+    .goto Elwynn Forest,77.010,51.897
+    >>Kill the |cRXP_ENEMY_Frozen Murloc|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Chaos Bolt|r]
+    >>|cRXP_WARN_Note: In order to break the iceblock you must attack it with multiple fire spells in very fast succession|r
+    >>|cRXP_WARN_Cast|r |T135817:0|t[Immolate] |cRXP_WARN_and use your Imp to also attack it. You will need the assistance of another Warlock or Mage to help break it|r
+    .collect 205228,1 -- Rune of Chaos Bolt (1)
+    .mob Frozen Murloc
+    .train 403925,1
+step << Warlock
+    .train 403925 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Chaos Bolt|r] |cRXP_WARN_to train|r |T236291:0|t[Chaos Bolt]
+    .use 208744
+    .itemcount 208744,1
+]])
