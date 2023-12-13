@@ -9,21 +9,18 @@ RXPGuides.RegisterGuide([[
     --Rune of Overload
 
 step << !Tauren
-    #season 2
     .goto Durotar,42.39,69.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Shikrik|r
     .accept 77587 >>Accept Icons of Power << Troll Shaman
     .accept 77585 >>Accept Icons of Power << Orc Shaman
     .target Shikrik
 step
-    #season 2
     .loop 25,Durotar,43.26,58.28,42.81,58.41,41.90,58.35,41.97,59.20,41.36,60.35,40.66,61.27,40.07,61.35,39.42,61.29,39.46,62.17,39.55,63.10,40.13,64.04,40.84,64.06,40.74,65.86,39.93,66.03,40.04,66.99,40.09,67.66,40.13,68.50,40.72,68.55,41.30,67.84,41.37,66.72,41.89,66.05,41.27,65.71,41.36,64.07,41.33,63.12,41.35,61.98,41.49,61.25,41.90,60.24,42.51,59.34,43.08,59.62,43.91,59.33,45.15,59.46,45.81,59.30,45.85,60.34,46.46,61.11,47.09,62.24,47.08,63.15,47.14,64.08,47.58,64.04,47.08,63.15,47.09,62.24,46.90,61.15,46.98,60.18,47.07,59.34,46.47,58.28,45.81,59.30,45.15,59.46,43.91,59.33,43.26,58.28
     >>Kill |cFFFF5722Scorpid Workers|r. Loot them for |T134918:0|t[|cRXP_FRIENDLY_Dyadic Icon|r]
     .collect 206381,1 --Dyadic Icon (1)
     .mob Scorpid Worker
     .train 410094,1
 step 
-    #season 2
     .loop 25,Durotar,43.26,58.28,42.81,58.41,41.90,58.35,41.97,59.20,41.36,60.35,40.66,61.27,40.07,61.35,39.42,61.29,39.46,62.17,39.55,63.10,40.13,64.04,40.84,64.06,40.74,65.86,39.93,66.03,40.04,66.99,40.09,67.66,40.13,68.50,40.72,68.55,41.30,67.84,41.37,66.72,41.89,66.05,41.27,65.71,41.36,64.07,41.33,63.12,41.35,61.98,41.49,61.25,41.90,60.24,42.51,59.34,43.08,59.62,43.91,59.33,45.15,59.46,45.81,59.30,45.85,60.34,46.46,61.11,47.09,62.24,47.08,63.15,47.14,64.08,47.58,64.04,47.08,63.15,47.09,62.24,46.90,61.15,46.98,60.18,47.07,59.34,46.47,58.28,45.81,59.30,45.15,59.46,43.91,59.33,43.26,58.28
     >>Continue to kill |cFFFF5722Scorpid Workers|r and obtain 10 stacks of |T237556:0|t[Building Inspiration] as they deal nature damage to you
     .cast 402265 >>Use the |T134918:0|t[|cRXP_FRIENDLY_Dyadic Icon|r] once you have 10 stacks
@@ -31,7 +28,6 @@ step
     .use 206381
     .train 410094,1
 step << !Tauren
-    #season 2
     .goto Durotar,42.39,69.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Shikrik|r
     .turnin 77587 >>Turn in Icons of Power << Troll Shaman
@@ -53,13 +49,11 @@ RXPGuides.RegisterGuide([[
     --Rune of Overload
 
 step << Tauren
-    #season 2
     .goto Mulgore,45.01,75.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meela|r
     .accept 77652 >>Accept Icons of Power
     .target Meela Dawnstrider
 step
-    #season 2
     .goto Mulgore,63.74,81.18,40,0
     .goto Mulgore,63.86,79.97,40,0
     .goto Mulgore,65.00,78.60,40,0
@@ -72,7 +66,6 @@ step
     .mob Bristleback Shaman
     .train 410094,1
 step
-    #season 2
     .goto Mulgore,63.74,81.18,40,0
     .goto Mulgore,63.86,79.97,40,0
     .goto Mulgore,65.00,78.60,40,0
@@ -86,7 +79,6 @@ step
     .mob Bristleback Shaman
     .train 410094,1
 step << Tauren
-    #season 2
     .goto Mulgore,45.01,75.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meela|r
     .turnin 77652 >>Turn in Icons of Power
@@ -107,7 +99,6 @@ RXPGuides.RegisterGuide([[
     --Rune of Shield Mastery
 
 step
-    #season 2
     .goto Durotar,39.43,50.07,0
     .goto Durotar,50.91,51.61,0
     .goto Durotar,56.50,46.68,0
@@ -120,7 +111,6 @@ step
     .collect 206386,1 --Galvanic Totem (1)
     .train 410098,1
 step
-    #season 2
     >>Kill mobs with |T136048:0|t[Lightning Bolt] and obtain 10 stacks of |T237556:0|t[Building Inspiration]
     .cast 402265 >>Use the |T134918:0|t[|cRXP_FRIENDLY_Galvanic Icon|r] once you have 10 stacks
     .use 206386
@@ -140,16 +130,39 @@ RXPGuides.RegisterGuide([[
     --Rune of Shield Mastery
 
 step
-    #season 2
+    #loop
+    .goto Mulgore,41.99,43.49,0
+    .goto Mulgore,43.87,48.32,0
+    .goto Mulgore,37.50,52.50,0 --XX UNCONFIRMED
+    .goto Mulgore,41.65,55.98,0
+    .goto Mulgore,38.43,72.00,0
+    .goto Mulgore,36.72,68.09,0
     .goto Mulgore,53.81,58.41,0
+    .goto Mulgore,64.06,55.75,0
+    .goto Mulgore,56.23,64.28,0
+    .goto Mulgore,56.60,70.13,0
+    .goto Mulgore,67.23,66.17,0
+    .goto Mulgore,62.30,22.94,0
+    .goto Mulgore,44.94,11.30,0
+    .goto Mulgore,41.99,43.49,20,0
+    .goto Mulgore,43.87,48.32,20,0
+    .goto Mulgore,37.50,52.50,20,0 --XX UNCONFIRMED
+    .goto Mulgore,41.65,55.98,20,0
+    .goto Mulgore,38.43,72.00,20,0
+    .goto Mulgore,36.72,68.09,20,0
     .goto Mulgore,53.81,58.41,20,0
-    .goto Mulgore,64.06,55.75
-    >>Click the |cRXP_PICK_Galvanic Totem|r to obtain |T134918:0|t[|cRXP_FRIENDLY_Galvanic Icon|r]
-    >>|cRXP_WARN_Follow the waypoint arrow for the two known spawn locations|r
-    .collect 206386,1 --Galvanic Totem (1)
+    .goto Mulgore,64.06,55.75,20,0
+    .goto Mulgore,56.23,64.28,20,0
+    .goto Mulgore,56.60,70.13,20,0
+    .goto Mulgore,67.23,66.17,20,0
+    .goto Mulgore,62.30,22.94,20,0
+    .goto Mulgore,44.94,11.30,20,0
+    >>Click the |cRXP_PICK_Galvanic Icon|r Totem. Loot it for the |T134918:0|t|cRXP_LOOT_[Galvanic Icon]|r
+    >>|cRXP_WARN_The |cRXP_PICK_Galvanic Icon|r has at least 13 spawnpoints, with at least 2 up at a time. It despawns after <2 minutes|r
+    >>|cRXP_WARN_It makes a|r |T136051:0|t[Lightning Shield] |cRXP_WARN_sound every 5 minutes if you're within 1000 yards, and shows a Lightning Strike on its location if you're within 300 yards and facing it|r
+    .collect 206386,1 --Galvanic Icon (1)
     .train 410098,1
 step
-    #season 2
     >>Kill mobs with |T136048:0|t[Lightning Bolt] and obtain 10 stacks of |T237556:0|t[Building Inspiration]
     .cast 402265 >>Use the |T134918:0|t[|cRXP_FRIENDLY_Galvanic Icon|r] once you have 10 stacks
     .use 206386
@@ -169,7 +182,6 @@ RXPGuides.RegisterGuide([[
     --Rune of Ancestral Guidance
 
 step
-    #season 2
     .goto Durotar,48.04,79.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adventurer's Spirit|r inside Kolkar Crag
     >>|cRXP_WARN_Another players needs to click the portal. Loot the|r |cRXP_FRIENDLY_Adventurer's Spirit|r |cRXP_WARN_afterwards for|r |T237571:0|t[|cRXP_FRIENDLY_Echo of the Ancestors|r]
@@ -178,7 +190,6 @@ step
     .skipgossip
     .train 410099,1
 step
-    #season 2
     .cast 402265 >>Use the |T237571:0|t[|cRXP_FRIENDLY_Echo of the Ancestors|r]
     .use 210589
     .train 410099,1
@@ -197,20 +208,23 @@ RXPGuides.RegisterGuide([[
     --Rune of Ancestral Guidance
 
 step
-    #season 2
+    #completewith next
+    .goto Mulgore,61.51,47.29,20 >> Travel to The Venture Co. Mine
+step
+    #completewith next
+    .goto Mulgore,60.39,33.54,20 >> Go through the Venture Co. Mine. Travel toward the |cRXP_FRIENDLY_Adventurer's Spirit|r
+step
     .goto Mulgore,60.39,33.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adventurer's Spirit|r outside of the Venture Co. Mine
-    >>|cRXP_WARN_Another players needs to click the portal. Loot the|r |cRXP_FRIENDLY_Adventurer's Spirit|r |cRXP_WARN_afterwards for|r |T237571:0|t[|cRXP_FRIENDLY_Echo of the Ancestors|r]
+    >>|cRXP_WARN_Another player needs to click the portal. Loot the|r |cRXP_FRIENDLY_Adventurer's Spirit|r |cRXP_WARN_afterwards for|r |T237571:0|t[|cRXP_FRIENDLY_Echo of the Ancestors|r]
     .collect 210589,1 --Echo of the Ancestors (1)
     .target Adventurer's Spirit
     .skipgossip
     .train 410099,1
 step
-    #season 2
     .cast 402265 >>Use the |T237571:0|t[|cRXP_FRIENDLY_Echo of the Ancestors|r]
     .use 210589
     .train 410099,1
-
     ]])
     
 
@@ -226,11 +240,9 @@ RXPGuides.RegisterGuide([[
     --Rune of Molten Blast
 
 step
-    #season 2
     #completewith next
     +|cRXP_WARN_Make sure you have trained |T135813:0|t[Flame Shock]!|r
 step
-    #season 2
     .goto Durotar,58.70,45.54
     >>Cast |T135813:0|t[Flame Shock] on the |cRXP_ENEMY_Frozen Makrura|r east of Razor Hill. Loot him for |T134918:0|t[|cRXP_FRIENDLY_Sulfurous Icon|r]
     >>|cRXP_WARN_You need to group up with Shamans/Warlocks/Mages. At least 5 sources of fire damage debuffs need to be applied on the|r |cRXP_ENEMY_Frozen Makrura|r |cRXP_WARN_for the ice to melt!|r
@@ -238,7 +250,6 @@ step
     .mob Frozen Makrura
     .train 425344,1
 step
-    #season 2
     .goto Durotar,57.21,44.01,60,0
     .goto Durotar,55.19,48.96
     >>Kill mobs with |T136026:0|t[Earth Shock] and obtain 10 stacks of |T237556:0|t[Building Inspiration]
@@ -261,7 +272,6 @@ RXPGuides.RegisterGuide([[
     --Rune of Molten Blast
 
 step
-    #season 2
     .goto Mulgore,32.16,48.75,40,0
     .goto Mulgore,31.27,49.21
     >>Kill |cRXP_ENEMY_Bael'dun Diggers|r and |cRXP_ENEMY_Bael'dun Appraisers|r. Loot them for the |T134237:0|t[|cRXP_LOOT_Artifact Storage Key|r]
@@ -270,13 +280,11 @@ step
     .mob Bael'dun Appraiser
     .train 425344,1
 step
-    #season 2
-    .goto Mulgore,31.57,49.54
-    >>Open the |cRXP_PICK_Artifact Storage|r for |T134918:0|t[|cRXP_FRIENDLY_Dyadic Icon|r]
+    .goto Mulgore,31.56,49.54
+    >>Open the |cRXP_PICK_Artifact Storage|r. Loot it for the |T134918:0|t[|cRXP_FRIENDLY_Dyadic Icon|r]
     .collect 206388,1 --Sulfurous Icon (1)
     .train 425344,1
 step
-    #season 2
     .goto Mulgore,32.16,48.75,40,0
     .goto Mulgore,31.27,49.21
     >>Kill mobs with |T136026:0|t[Earth Shock] and obtain 10 stacks of |T237556:0|t[Building Inspiration]
@@ -299,18 +307,15 @@ RXPGuides.RegisterGuide([[
     --Rune of Lava Lash
 
 step
-    #season 2
     .goto Thunder Bluff,39.44,66.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r in Thunder Bluff
     >>|cRXP_WARN_He is stealthed behind the bag vendor|r
     .accept 76156 >>Accept Stalk With The Earthmother
     .target Boarton Shadetotem
 step
-    #season 2
     #completewith next
     .subzone 360 >>Travel to the Venture Co. Mine
 step
-    #season 2
     #loop
     .goto Mulgore,62.51,40.42,0
     .goto Mulgore,63.73,44.00,15,0
@@ -321,14 +326,12 @@ step
     >>Loot the |cRXP_PICK_Blasting Supplies|r for |cRXP_LOOT_Seaforium Mining Charges|r
     .complete 76156,1 --Seaforium Mining Charge (5)
 step
-    #season 2
     .goto Thunder Bluff,39.44,66.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
     .turnin 76156 >>Turn in Stalk With The Earthmother
     .accept 76160 >>Accept Stalk With The Earthmother
     .target Boarton Shadetotem
 step
-    #season 2
     #loop
     .goto Mulgore,37.18,12.34,0
     .goto Mulgore,38.01,10.21,20,0
@@ -339,18 +342,15 @@ step
     .collect 206170,8 --Windfury Cone (8)
     .train 410104,1
 step
-    #season 2
     .use 206176 >>Use |T133748:0|t[Mortar and Pestle] to create |T133213:0|t[|cRXP_LOOT_Pine Salve|r] 
     .complete 76160,1 --Pine Salve (1)
 step
-    #season 2
     .goto Thunder Bluff,39.44,66.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
     .turnin 76160 >>Turn in Stalk With The Earthmother
     .accept 76240 >>Accept Stalk With The Earthmother
     .target Boarton Shadetotem
 step
-    #season 2
     #ah
     .goto Thunder Bluff,40.39,51.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Stampi|r
@@ -359,7 +359,6 @@ step
     .target Auctioneer Stampi
     .train 410104,1
 step
-    #season 2
     #ssf
     .goto Thunder Bluff,56.13,46.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kah Mistrunner|r
@@ -367,7 +366,6 @@ step
     .target Kah Mistrunner
     .train 410104,1
 step
-    #season 2
     #ssf
     .goto Thunder Bluff,55.77,47.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sewa Mistrunner|r
@@ -377,7 +375,6 @@ step
     .target Sewa Mistrunner
     .train 410104,1
 step
-    #season 2
     #ssf
     .goto Thunder Bluff,41.39,57.03
     >>Start fishing until you get a |T133894:0|t[|cRXP_LOOT_Raw Brilliant Smallfish|r] 
@@ -386,12 +383,10 @@ step
     .use 6529
     .train 410104,1
 step
-    #season 2
     .goto Thunder Bluff,39.44,66.38
     .use 206344 >>Use the |T132147:0|t[Knife Set] to create |T134007:0|t[|cRXP_LOOT_Fish Chunks|r] 
     .complete 76240,1 --Fish Chunks (1)
 step
-    #season 2
     .goto Thunder Bluff,39.44,66.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
     .turnin 76240 >>Turn in Stalk With The Earthmother
