@@ -1287,14 +1287,14 @@ step
     >>|cFF0E8312Buy food/water if needed|r
     .vendor >>|T133918:0|t[Longjaw Mud Snapper] |cFFFCDC00is very cheap|r
 	.target Innkeeper Heather
-step << Paladin
+step << Human Paladin
     #season 2
     #completewith next
     #label Island
     .goto Duskwood,4.33,28.26,50 >>Travel toward |cRXP_FRIENDLY_Ada Gelhardt|r on the island
     .train 410015,1
     .itemcount 205864,1 --Charred Note (1)
-step << Paladin
+step << Human Paladin
     #season 2
     #completewith next
     .goto Duskwood,4.33,28.26
@@ -1306,7 +1306,7 @@ step << Paladin
 --XX 109612 "As one candle is snuffed out, another is lit"
 --XX 109611 "I've been sent by brother Romulus. Please, Ada, return with me to the Cathedral of Light"
 --XX 109610 "I see. I'm sorry it has come to this, sister. (Fight Ada)"
-step << Paladin
+step << Human Paladin
     #season 2
     #requires Island
     .goto Duskwood,4.33,28.26
@@ -1321,17 +1321,17 @@ step << Paladin
     .train 410015,1
     .itemcount 205864,1 --Charred Note (1)
 --XX Must have had the Charred Note to unlock the dialogue
-step << Paladin
+step << Human Paladin
     #season 2
     #sticky
     .destroy 205864 >> Delete the |T134939:0|t[Charred Note] from your bags, as it's no longer needed
-step << Paladin
+step << Human Paladin
     #season 2
     .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Martyrdom] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest: Seal of Martyrdom]
     .use 205897
     .itemcount 205897,1 --Rune of Martyrdom (1)
     .train 410015,1
-step << Paladin
+step << Human Paladin
     #season 2
     .goto Westfall,36.24,54.52
     .engrave 5 >>|cRXP_WARN_Engrave your|r |T134596:0|t|cRXP_LOOT_[Chest]|r with|r |T133815:0|t[Engrave Chest: Seal of Martyrdom]

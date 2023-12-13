@@ -2039,6 +2039,31 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
     .fly Ironforge >> Fly to Ironforge
     .target Thorgrum Borrelson
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Golnir Bouldertoe|r
+    .target Golnir Bouldertoe
+    .goto Ironforge,51.521,26.311
+    .turnin 6391 >> Turn in Ride to Ironforge
+    .accept 6388 >> Accept Gryth Thurden
+step << Rogue
+    #season 2
+    .goto Ironforge,51.913,13.383
+    >>Open the |cRXP_PICK_Dusty Chest|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Precision|r]
+    >>|cRXP_WARN_Doing this will spawn two level 10 |cRXP_ENEMY_Cut-throat Muggers|r which will attack you|r
+    .collect 204174,1 -- Rune of Precision (1)
+    .mob Cut-throat Mugger
+    .train 400081,1
+step << Rogue
+    #season 2
+    .train 400081 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Precision|r] |cRXP_WARN_to train|r |T135610:0|t[Between the Eyes]
+    .use 204174
+    .itemcount 204174,1
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Barin Redstone|r
+    .target Senator Barin Redstone
+    .goto Ironforge,43.64,50.63,20,0
+    .goto Ironforge,39.550,57.490
+    .turnin 291 >> Turn in The Reports
 step << Paladin
     #season 2
     #completewith next
@@ -2125,31 +2150,7 @@ step << Warrior
     .use 204716
     .target Bruuk Barleybeard
     .mob Bruart
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Golnir Bouldertoe|r
-    .target Golnir Bouldertoe
-    .goto Ironforge,51.521,26.311
-    .turnin 6391 >> Turn in Ride to Ironforge
-    .accept 6388 >> Accept Gryth Thurden
-step << Rogue
-    #season 2
-    .goto Ironforge,51.913,13.383
-    >>Open the |cRXP_PICK_Dusty Chest|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Precision|r]
-    >>|cRXP_WARN_Doing this will spawn two level 10 |cRXP_ENEMY_Cut-throat Muggers|r which will attack you|r
-    .collect 204174,1 -- Rune of Precision (1)
-    .mob Cut-throat Mugger
-    .train 400081,1
-step << Rogue
-    #season 2
-    .train 400081 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Precision|r] |cRXP_WARN_to train|r |T135610:0|t[Between the Eyes]
-    .use 204174
-    .itemcount 204174,1
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Barin Redstone|r
-    .target Senator Barin Redstone
-    .goto Ironforge,43.64,50.63,20,0
-    .goto Ironforge,39.550,57.490
-    .turnin 291 >> Turn in The Reports
+--XX This #season 2 section needs a logout skip video from the inn where you defeat Bruart
 step
     >>|cRXP_WARN_Do NOT fly anywhere|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
@@ -2201,6 +2202,40 @@ step
     .target Furen Longbeard
     .goto StormwindClassic,58.091,16.552
     .turnin 1338 >> Turn in Stormpike's Order
+step << Paladin
+    #season 2
+    #completewith next
+    .goto StormwindClassic,42.51,33.51,20 >> Travel to the Stormwind Cathedral
+step << Paladin
+    #season 2
+    .goto StormwindClassic,38.10,28.10
+    .gossipoption 109653 >>Talk to |cRXP_FRIENDLY_Brother Romulus|r
+    .target Brother Romulus
+    .skipgossip
+    .train 410015,1
+step << Paladin
+    #season 2
+    #completewith next
+    .goto StormwindClassic,37.39,29.76,5,0
+    .goto StormwindClassic,37.87,29.10,5,0
+    .goto StormwindClassic,36.52,32.67,8,0
+    .goto StormwindClassic,36.55,33.45,8,0
+    .goto StormwindClassic,35.95,34.05,8,0
+    .goto StormwindClassic,35.46,33.03,8,0
+    .goto StormwindClassic,35.95,31.54,8,0
+    .goto StormwindClassic,34.79,29.31,8,0
+    .goto StormwindClassic,33.69,29.69,8,0
+    .goto StormwindClassic,32.57,27.49,8,0
+    .goto StormwindClassic,33.41,25.61,8,0
+    >>Go downstairs into the western side of the Cathedral's Crypt
+    .goto StormwindClassic,32.86,24.77,8 >>Travel toward the |cRXP_LOOT_Charred Note|r in the crypt
+    .train 410015,1
+step << Paladin
+    #season 2
+    .goto StormwindClassic,32.86,24.87
+    >>Loot the |cRXP_LOOT_Charred Note|r next to the candles
+    .collect 205864,1 --Charred Note (1)
+    .train 410015,1
 step << Priest
     #completewith next
     .goto StormwindClassic,42.51,33.51,20 >> Travel to the Stormwind Cathedral
@@ -2391,6 +2426,12 @@ step << Warlock
     .accept 176 >> Accept Wanted: "Hogger"
     .goto Elwynn Forest,24.548,74.672
     .target Deputy Rainer
+step << Paladin
+    #season 2
+    >>Click the |cRXP_PICK_Wanted Poster|r
+    .accept 176 >> Accept Wanted: "Hogger"
+    .goto Elwynn Forest,24.548,74.672
+    .target Deputy Rainer
 step << Warlock
     #completewith next
     >>|cRXP_WARN_The|r |T134939:0|t[|cRXP_LOOT_Gold Pickup Schedule|r] |cRXP_WARN_is a very rare drop. Ignore this step if you don't get it|r
@@ -2419,6 +2460,85 @@ step << Warlock
     >>|cRXP_WARN_This quest is difficult. Find a group for him if needed. Skip this step if you're unable to find a group or solo him|r
     .complete 176,1 --Huge Gnoll Claw (1)
     .unitscan Hogger
+step << Paladin
+    #season 2
+    #completewith next
+    >>|cRXP_WARN_The|r |T134939:0|t[|cRXP_LOOT_Gold Pickup Schedule|r] |cRXP_WARN_is a very rare drop. Ignore this step if you don't get it|r
+    >>|cRXP_ENEMY_Gruff Swiftbite|r |cRXP_WARN_a rare spawn, does have a 100% drop chance|r
+    .use 1307 >>|cRXP_WARN_Use the |T134939:0|t[|cRXP_LOOT_Gold Pickup Schedule|r] to start the quest|r
+    .collect 1307,1,123 --Collect Gold Pickup Schedule (x1)
+    .accept 123 >> Accept The Collector
+    .unitscan Gruff Swiftbite
+step << Paladin
+    #season 2
+    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto Elwynn Forest,26.1,89.9,70,0
+    .goto Elwynn Forest,25.2,92.7,70,0
+    .goto Elwynn Forest,27.0,93.9,70,0
+    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto Elwynn Forest,26.1,89.9,70,0
+    .goto Elwynn Forest,25.2,92.7,70,0
+    .goto Elwynn Forest,27.0,93.9,70,0
+    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto Elwynn Forest,26.1,89.9,70,0
+    .goto Elwynn Forest,25.2,92.7,70,0
+    .goto Elwynn Forest,27.0,93.9,70,0
+    .goto Elwynn Forest,25.9,93.9
+    >>Kill |cRXP_ENEMY_Hogger|r. Loot him for his |cRXP_LOOT_Claw|r
+    >>|cRXP_ENEMY_Hogger|r |cRXP_WARN_can spawn in multiple locations|r
+    >>|cRXP_WARN_This quest is difficult. Find a group for him if needed. Skip this step if you're unable to find a group or solo him|r
+    .complete 176,1 --Huge Gnoll Claw (1)
+    .unitscan Hogger
+step << Paladin
+    #season 2
+    #completewith next
+    #label Island
+    .goto Duskwood,4.33,28.26,50 >>Travel toward |cRXP_FRIENDLY_Ada Gelhardt|r on the island
+    .train 410015,1
+    .itemcount 205864,1 --Charred Note (1)
+step << Paladin
+    #season 2
+    #completewith next
+    .goto Duskwood,4.33,28.26
+    .gossipoption 109610 >>Talk to |cRXP_FRIENDLY_Ada Gelhardt|r to start a fight
+    .target Ada Gelhardt
+    .skipgossip 205153,1
+    .train 410015,1
+    .itemcount 205864,1 --Charred Note (1)
+--XX 109612 "As one candle is snuffed out, another is lit"
+--XX 109611 "I've been sent by brother Romulus. Please, Ada, return with me to the Cathedral of Light"
+--XX 109610 "I see. I'm sorry it has come to this, sister. (Fight Ada)"
+step << Paladin
+    #season 2
+    #requires Island
+    .goto Duskwood,4.33,28.26
+    >>Defeat |cRXP_ENEMY_Ada Gelhardt|r
+    >>|cRXP_WARN_Remember to pre-cast|r |T135924:0|t[Seal of the Crusader] |cRXP_WARN_on her|r
+    >>|cRXP_WARN_Be careful as she casts|r |T136197:0|t[Shadow Shock] |cRXP_WARN_(instantly deals 45 shadow damage. Costs her 75 mana. You should kill her quick enough for her to only cast it 3 times)|r
+    >>|cRXP_WARN_After defeating |cRXP_ENEMY_Ada Gelhardt|r:|r
+    >>Talk to |cRXP_FRIENDLY_Ada Gelhardt|r again to receive the |T134419:0|t[Rune of Martyrdom]
+    .collect 205897,1 --Rune of Martyrdom (1)
+    .target Ada Gelhardt
+    .skipgossip 205153,1
+    .train 410015,1
+    .itemcount 205864,1 --Charred Note (1)
+--XX Must have had the Charred Note to unlock the dialogue
+step << Paladin
+    #season 2
+    #sticky
+    .destroy 205864 >> Delete the |T134939:0|t[Charred Note] from your bags, as it's no longer needed
+step << Paladin
+    #season 2
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Martyrdom] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest: Seal of Martyrdom]
+    .use 205897
+    .itemcount 205897,1 --Rune of Martyrdom (1)
+    .train 410015,1
+step << Paladin
+    #season 2
+    .goto Westfall,36.24,54.52
+    .engrave 5 >>|cRXP_WARN_Engrave your|r |T134596:0|t|cRXP_LOOT_[Chest]|r with|r |T133815:0|t[Engrave Chest: Seal of Martyrdom]
+    >>|cRXP_WARN_Remember to put|r |T135961:0|t[Seal of Martyrdom] |cRXP_WARN_onto your action bars. It is better than both|r |T132325:0|t[Seal of Righteousness] |cRXP_WARN_and|r |T132347:0|t[Seal of Command] |cRXP_WARN_(until you get|r |T133815:0|t[Engrave Chest: Divine Storm]|cRXP_WARN_)|r
+    .train 410015,2
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r and |cRXP_FRIENDLY_"Auntie" Bernice Stonefield|r
     .target Ma Stonefield
@@ -2474,15 +2594,25 @@ step
     .target Remy "Two Times"
     .goto Elwynn Forest,42.140,67.254
     .turnin 47 >> Turn in Gold Dust Exchange
-step
+step << Paladin
+    #season 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .target Marshal Dughan
     .goto Elwynn Forest,42.108,65.928
     .turnin 62 >> Turn in The Fargodeep Mine
     .turnin 40 >> Turn in A Fishy Peril
     .accept 35 >> Accept Further Concerns
-    .turnin 176,3 >> Turn in Wanted: "Hogger" << Warlock
-    .isQuestComplete 176 << Warlock
+    .turnin 176,2 >> Turn in Wanted: "Hogger"
+    .isQuestComplete 176
+step << Warlock
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
+    .target Marshal Dughan
+    .goto Elwynn Forest,42.108,65.928
+    .turnin 62 >> Turn in The Fargodeep Mine
+    .turnin 40 >> Turn in A Fishy Peril
+    .accept 35 >> Accept Further Concerns
+    .turnin 176,3 >> Turn in Wanted: "Hogger"
+    .isQuestComplete 176
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .target Marshal Dughan
