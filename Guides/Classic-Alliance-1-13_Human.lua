@@ -1059,6 +1059,16 @@ step
     .complete 47,1 --Gold Dust (10)
     .mob Kobold Tunneler
     .mob Kobold Miner
+step << Rogue
+    #season 2
+    .goto Elwynn Forest,40.5,82.3,25,0
+    .goto Elwynn Forest,37.71,83.76
+    >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Kobold Miners|r and |cRXP_ENEMY_Kobold Tunnelers|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Right Map Piece]|r
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    .collect 203784,1 -- Top-Right Map Piece (1)
+    .mob Kobold Miner
+    .mob Kobold Tunneler
+    .train 398196,1
 step << Warrior
     #season 2
     .goto Elwynn Forest,40.5,82.3,25,0
@@ -1244,6 +1254,18 @@ step << Warrior
 	.mob Murloc
 	.mob Murloc Streamrunner
     .train 403475,1
+step << Rogue
+    #season 2
+    #completewith next
+    >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Murloc Foragers|r and |cRXP_ENEMY_Murloc Lurkers|r. Loot them for the |T134269:0|t[|cRXP_LOOT_Bottom-Right Map Piece]|r
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    >>|cRXP_WARN_Note: This can also come from any other |cRXP_ENEMY_Murloc|r in Elwynn Forest|r
+    .collect 203786,1 -- Bottom-Right Map Piece (1)
+    .mob Murloc Forager
+    .mob Murloc Lurker
+    .mob Murloc Streamrunner
+    .mob Murloc
+    .train 398196,1
 step
     >>Kill |cRXP_ENEMY_Murlocs|r and |cRXP_ENEMY_Murloc Streamrunners|r. Loot them for |cRXP_LOOT_Kelp Fronds|r
     .goto Elwynn Forest,47.6,63.3,60,0
@@ -1255,6 +1277,22 @@ step
     .complete 112,1 --Collect Crystal Kelp Frond (x4)
 	.mob Murloc
 	.mob Murloc Streamrunner
+step << Rogue
+    #season 2
+    .goto Elwynn Forest,75.4,85.4,60,0
+    .goto Elwynn Forest,77.8,82.2,60,0
+    .goto Elwynn Forest,83.2,87.0,60,0
+    .goto Elwynn Forest,75.4,82.4
+    >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Murloc Foragers|r and |cRXP_ENEMY_Murloc Lurkers|r. Loot them for the |T134269:0|t[|cRXP_LOOT_Bottom-Right Map Piece]|r
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    >>|cRXP_WARN_Note: This can also come from any other |cRXP_ENEMY_Murloc|r in Elwynn Forest|r
+    .collect 203786,1 -- Bottom-Right Map Piece (1)
+    .mob Murloc Forager
+    .mob Murloc Lurker
+    .mob Murloc Streamrunner
+    .mob Murloc
+    .train 398196,1
+
 step << Warrior
     #season 2
     .goto Elwynn Forest,47.6,63.3,60,0
@@ -1277,6 +1315,15 @@ step
     >>|cRXP_WARN_Exit Jasperlode Mine as soon as the objective completes|r
     .goto Elwynn Forest,60.4,50.2
     .complete 76,1 --Scout through the Jasperlode Mine
+step << Rogue
+    #season 2
+    .goto Elwynn Forest,67.6,47.6
+    >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Riverpaw Outrunners|r and |cRXP_ENEMY_Riverpaw Runts|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Bottom-Left Map Piece]|r
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    .collect 203787,1 -- Bottom-Left Map Piece (1)
+    .mob Riverpaw Outrunner
+    .mob Riverpaw Runt
+    .train 398196,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
     .target Guard Thomas
@@ -1425,6 +1472,17 @@ step
     .link https://www.youtube.com/watch?v=GRrXOV-UvD4 >> |cRXP_WARN_Click here for video reference|r << !Warrior
     .complete 88,1 --Collect Brass Collar (x1)
     .mob Princess
+step << Rogue
+    #season 2
+    .goto Elwynn Forest,67.4,78.6,60,0
+    .goto Elwynn Forest,70.8,79.8,60,0
+    .goto Elwynn Forest,89.2,78.8
+    >>|T133644:0|t[Pick Pocket] the |cRXP_ENEMY_Defias|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece]|r
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    >>|cRXP_WARN_Note: This can also come from any other |cRXP_ENEMY_Defias|r member in Elwynn Forest|r
+    .collect 203785,1 -- Top-Left Map Piece (1)
+    .mob Defias Bandit
+    .train 398196,1
 step
     #completewith Level9Grind
     >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for the |T134939:0|t[|cRXP_LOOT_Westfall Deed|r]
@@ -1454,6 +1512,37 @@ step
     #label Level9Grind
 	.goto Elwynn Forest,69.53,79.47
     .xp 9+3400 >> Grind to 3400+/6500xp
+step << Rogue
+    #season 2
+    .cast 401847 >>|cRXP_WARN_Use any of the|r |T134327:0|t[|cRXP_LOOT_Map Pieces]|r |cRXP_WARN_to combine them into the|r |T134269:0|t[|cRXP_LOOT_Elwynn Treasure Map|r]
+    .collect 203750,1
+    .itemcount 203787,1
+    .itemcount 203784,1
+    .itemcount 203785,1
+    .itemcount 203786,1
+    .use 203787
+    .use 203784
+    .use 203785
+    .use 203786
+    .train 398196,1
+step << Rogue
+    #season 2
+    #completewith next
+    .goto Elwynn Forest,80.365,79.134
+    .cast 401617 >>|cRXP_WARN_Use the|r |T134269:0|t[|cRXP_LOOT_Elwynn Treasure Map|r] |cRXP_WARN_at the arrow location. This will cause a |cRXP_PICK_Buried Treasure|r to pop up|r
+    .use 203750
+    .itemcount 203750,1
+    .train 398196,1
+step << Rogue
+    #season 2
+    >>Open the |cRXP_PICK_Buried Treasure|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Draw|r]
+    .collect 203991,1 -- Rune of Quick Draw (1)
+    .train 398196,1
+step << Rogue
+    #season 2
+    .train 400095 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Draw|r] |cRXP_WARN_to train|r |T134536:0|t[Quick Draw]
+    .use 203991
+    .itemcount 203991,1
 step
     #softcore
     #completewith next
@@ -2181,6 +2270,27 @@ step << Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
     .train 13908 >> Train |T135954:0|t[Desperate Prayer]
     .target High Priestess Laurena
+step << Rogue
+    #season 2
+    #completewith next
+    .goto Stormwind City,56.93,29.54,8,0
+    .goto Stormwind City,58.65,27.56,10 >> Enter the Cut-Throat Alley in Stormwind City at the Dwarven District
+    .train 400081,1
+step << Rogue
+    #season 2
+    .goto Stormwind City,63.201,29.491,5,0
+    .goto Stormwind City,61.728,29.190
+    >>|cRXP_WARN_Head upstairs into the house|r
+    >>Open the |cRXP_PICK_Dusty Chest|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Precision|r]
+    >>|cRXP_WARN_Doing this will spawn two level 10 |cRXP_ENEMY_Cut-throat Muggers|r which will attack you|r
+    .collect 204174,1 -- Rune of Precision (1)
+    .mob Cut-throat Mugger
+    .train 400081,1
+step << Rogue
+    #season 2
+    .train 400081 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Precision|r] |cRXP_WARN_to train|r |T135610:0|t[Between the Eyes]
+    .use 204174
+    .itemcount 204174,1
 step
     .goto StormwindClassic,51.757,12.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grimand Elmore|r
@@ -2749,6 +2859,14 @@ step
     .target Mountaineer Cobbleflint
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Cobbleflint|r
     .accept 224 >> Accept In Defense of the King's Lands
+step << Warrior
+    #season 2
+    #completewith next
+    >>Kill |cRXP_ENEMY_Troggs|r. Loot them for a |cRXP_LOOT_Skull-Shaped Geode|r
+    .collect 208847,1 -- Skull-Shaped Geode (1)
+    .mob Stonesplinter Scout
+    .mob Stonesplinter Trogg
+    .train 425443,1
 step
     .goto Loch Modan,27.33,56.70
     >>Kill |cRXP_ENEMY_Stonesplinter Troggs|r and |cRXP_ENEMY_Stonesplinter Scouts|r. Loot them for their |cRXP_LOOT_Teeth|r
@@ -2771,6 +2889,24 @@ step << Warlock
 step << Warlock
     #som
     .xp 14-2520 >> Grind until you are 8880xp into level 13
+step << Warrior
+    #season 2
+    .goto Loch Modan,33.2,73.8
+    >>Kill a |cRXP_ENEMY_Stonesplinter Skullthumper|r
+    >>|cRXP_WARN_During combat it'll give you a nice thumpin' which will turn the |cRXP_LOOT_Skull-Shaped Geode|r into a|r |T236489:0|t[|cRXP_LOOT_Cracked Skull-Shaped Geode|r]
+    .collect 208848,1 -- Cracked Skull-Shaped Geode (1)
+    .mob Stonesplinter Skullthumper
+    .train 425443,1
+step << Warrior
+    #season 2
+    .use 208848 >>|cRXP_WARN_Use the|r |T236489:0|t[|cRXP_LOOT_Cracked Skull-Shaped Geode|r] |cRXP_WARN_to receive the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Strike|r]
+    .collect 208778,1 -- Rune of Quick Strike (1)
+    .train 425443,1
+step << Warrior
+    #season 2
+    .train 425443 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Strike|r] |cRXP_WARN_to train|r |T132394:0|t[Quick Strike]
+    .use 208778
+    .itemcount 208778,1
 step
     .goto Loch Modan,27.33,56.70
     +Continue grinding |cRXP_ENEMY_Troggs|r until <1m on your Hearth

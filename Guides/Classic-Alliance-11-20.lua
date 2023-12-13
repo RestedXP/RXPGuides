@@ -182,6 +182,22 @@ step
 step
     #completewith next
     .goto Darkshore,32.75,42.21,35 >> Travel to the end of the dock then jump into the water
+step << Rogue
+    #season 2
+    #completewith next
+    .goto Darkshore,32.80,37.72,20 >> Swim to the small island with the Lighthouse
+    .train 424785,1
+step << Rogue
+    #season 2
+    .goto Darkshore,32.729,37.093
+    >>Open the |cRXP_PICK_Lighthouse Stash|r inside the tree trunk. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Saber Slash|r]
+    .collect 208772,1 -- Rune of Saber Slash (1)
+    .train 424785,1
+step << Rogue
+    #season 2
+    .cast 402265 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Saber Slash|r]
+    .use 208772 -- Rune of Saber Slash (1)
+    .train 424785,1
 step
     #era/som
     #completewith washed1
@@ -994,6 +1010,15 @@ step << Druid
     >>|cFFFCDC00Use the|r |T134776:0|t[Empty Cliffspring Falls Sampler] |cFFFCDC00in the water at the entrance of the Cliffspring River Cave|r
     .goto Darkshore,54.80,33.16
     .complete 6122,1 --Filled Cliffspring Falls Sampler (1)
+step << Warrior
+    #season 2
+    #completewith next
+    .goto Darkshore,55.40,36.05
+    >>Kill |cRXP_ENEMY_Lady Sedorax|r. Loot her for the |T132347:0|t[|cRXP_FRIENDLY_Rune of Endless Rage|r]
+    >>|cRXP_ENEMY_Lady Sedorax|r |cRXP_WARN_is a level 18 elite which also has other mobs around it. You may instead opt to get it from Westfall which is much easier|r
+    .collect 208741,1 -- Rune of Endless Rage (1)
+    .unitscan Lady Sedorax
+    .train 403489,1
 step
     .goto Darkshore,55.66,34.89
     >>Loot the |cFF00BCD4Scaber Stalks|r and |cFF00BCD4Death Cap|r on the ground
@@ -1001,6 +1026,19 @@ step
     >>|cFFFCDC00Don't face your back to the center! |cFFFF5722Stormscale Wave Rider's|r can knock you back!|r
     .complete 947,1 --Scaber Stalk (5)
     .complete 947,2 --Death Cap (1)
+step << Warrior
+    #season 2
+    .goto Darkshore,55.40,36.05
+    >>Kill |cRXP_ENEMY_Lady Sedorax|r. Loot her for the |T132347:0|t[|cRXP_FRIENDLY_Rune of Endless Rage|r]
+    >>|cRXP_ENEMY_Lady Sedorax|r |cRXP_WARN_is a level 18 elite which also has other mobs around it. You may instead opt to get it from Westfall which is much easier|r
+    .collect 208741,1 -- Rune of Endless Rage (1)
+    .unitscan Lady Sedorax
+    .train 403489,1
+step << Warrior
+    #season 2
+    .train 403489 >>|cRXP_WARN_Use the|r |T132347:0|t[|cRXP_FRIENDLY_Rune of Endless Rage|r] |cRXP_WARN_to train|r |T132347:0|t[Endless Rage]
+    .use 208741
+    .itemcount 208741,1
 step << NightElf !Druid
     #softcore
     #completewith next
@@ -2425,6 +2463,20 @@ step
     #sticky
     #optional
     .destroy 7442 >> Delete Gyromast's Key from your inventory
+step << Warrior
+    #season 2
+    .goto Darkshore,48.2,15.6,70,0
+    .goto Darkshore,50.2,12.6
+    >>Kill |cRXP_ENEMY_Paxnozz|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Strike|r]
+    >>|cRXP_ENEMY_Paxnozz|r |cRXP_WARN_is a level 20 elite found patrolling in the water. Look for help before attemping to kill it|r
+    .collect 208778,1 -- Rune of Quick Strike (1)
+    .unitscan Paxnozz
+    .train 425443,1
+step << Warrior
+    #season 2
+    .train 425443 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Strike|r] |cRXP_WARN_to train|r |T132394:0|t[Quick Strike]
+    .use 208778
+    .itemcount 208778,1
 step
 #map Darkshore
     #label Turtle4727
