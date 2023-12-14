@@ -1187,6 +1187,20 @@ step
     >>Kill |cRXP_ENEMY_Gnarlpine Ambushers|r
     .complete 487,1 --Kill Gnarlpine Ambusher (x6)
     .mob Gnarlpine Ambusher
+step << Hunter
+    #season 2
+    .goto Teldrassil,46.6,46.3
+    >>|cRXP_WARN_Cast|r |T132212:0|t[Hunter's Mark] |cRXP_WARN_on the|r |cRXP_ENEMY_Rustling Bush|r
+    >>Kill the |cRXP_ENEMY_Fallenroot Poacher|r that spawns. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
+    .collect 206155,1 --Rune of Markmanship (1)
+    .mob Rustling Bush
+    .mob Fallenroot Poacher
+    .train 410113,1
+step << Hunter
+    #season 2
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r] |cRXP_WARN_to train|r |T132177:0|t[Master Marksman]
+    .use 206155
+    .train 410113,1
 step << Rogue
     #season 2
     .goto Teldrassil,46.8,54.6,60,0

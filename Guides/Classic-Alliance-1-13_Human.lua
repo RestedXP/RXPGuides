@@ -1292,7 +1292,6 @@ step << Rogue
     .mob Murloc Streamrunner
     .mob Murloc
     .train 398196,1
-
 step << Warrior
     #season 2
     .goto Elwynn Forest,47.6,63.3,60,0
@@ -1310,11 +1309,37 @@ step << Warrior
 step
     #completewith next
     .goto Elwynn Forest,61.654,53.608,15 >> Enter the Jasperlode Mine
+step << Mage
+    #season 2
+    .goto Elwynn Forest,61.0,49.2,50,0
+    .goto Elwynn Forest,61.2,51.6,50,0
+    .goto Elwynn Forest,62.6,54.2,50,0
+    .goto Elwynn Forest,63.6,58.6
+    >>Kill |cRXP_ENEMY_Kobold Geomancers|r. Loot them for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF]|r
+    .collect 203752,1
+    .mob Kobold Geomancer
+    .train 401768,1
 step
     >>|cRXP_WARN_Follow the path through middle to explore Jasperlode Mine|r
     >>|cRXP_WARN_Exit Jasperlode Mine as soon as the objective completes|r
     .goto Elwynn Forest,60.4,50.2
     .complete 76,1 --Scout through the Jasperlode Mine
+step << Mage
+    #season 2
+    .goto Elwynn Forest,61.0,49.2,50,0
+    .goto Elwynn Forest,61.2,51.6,50,0
+    .goto Elwynn Forest,62.6,54.2,50,0
+    .goto Elwynn Forest,63.6,58.6
+    >>Kill |cRXP_ENEMY_Kobold Geomancers|r. Loot them for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF]|r
+    .collect 203752,1
+    .mob Kobold Geomancer
+    .train 401768,1
+step << Mage
+    #season 2
+    #completewith next
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF]|r
+    .train 401768 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF]|r |cRXP_WARN_to train|r |T135820:0|t[Living Flame]
+    .use 203752
 step << Rogue
     #season 2
     .goto Elwynn Forest,67.6,47.6
@@ -2536,11 +2561,23 @@ step
     .goto Dun Morogh,79.672,36.171
     .turnin 419 >> Turn in The Lost Pilot
     .accept 417 >> Accept A Pilot's Revenge
+step << Mage
+    #season 2
+    #completewith next
+    >>Kill |cRXP_ENEMY_Mangeclaw|r. Loot him for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r]
+    .collect 203753,1 -- Spell Notes: RING SEFF OSTROF (1)
+    .train 401765,1
 step
     >>Kill |cRXP_ENEMY_Mangeclaw|r. Loot him for his |cRXP_LOOT_Claw|r
     .goto Dun Morogh,78.97,37.14
     .complete 417,1 --Collect Mangy Claw (x1)
-    .unitscan Mangeclaw
+    .mob Mangeclaw
+step << Mage
+    #season 2
+    #completewith enterloch
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r]
+    .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] |cRXP_WARN_to train|r |T236227:0|t[Fingers of Frost]
+    .use 203753
 step
     #som
     .goto Dun Morogh,83.892,39.188
@@ -2556,6 +2593,7 @@ step
     .goto Dun Morogh,83.892,39.188
     .turnin 417 >> Turn in A Pilot's Revenge
 step
+    #label enterloch
     .goto Dun Morogh,84.4,31.1,25 >>Go through the tunnel to Loch Modan
 ]])
 
@@ -2889,6 +2927,26 @@ step << Warlock
 step << Warlock
     #som
     .xp 14-2520 >> Grind until you are 8880xp into level 13
+step << Mage
+    #season 2
+    .goto Loch Modan,29.2,81.2,50,0
+    .goto Loch Modan,28.8,83.4,50,0
+    .goto Loch Modan,30.0,83.8,50,0
+    .goto Loch Modan,32.2,87.2,50,0
+    .goto Loch Modan,33.8,88.6,50,0
+    .goto Loch Modan,36.0,88.0,50,0
+    .goto Loch Modan,36.6,81.2,50,0
+    .goto Loch Modan,36.6,79.6
+    >>Kill |cRXP_ENEMY_Stonesplinter Seers|r. Loot them for the |T134939:0|t[|cRXP_FRIENDLY_Chewed Spell Notes]|r
+    .collect 208854,1
+    .mob Stonesplinter Seer
+    .train 415936,1
+step << Mage
+    #season 2
+    #completewith HumbleBeginnings
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the |T134939:0|t[|cRXP_FRIENDLY_Chewed Spell Notes]|r
+    .train 415936 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Chewed Spell Notes|r] |cRXP_WARN_to train|r |T236220:0|t[Living Bomb]
+    .use 208854
 step << Warrior
     #season 2
     .goto Loch Modan,33.2,73.8
@@ -3056,6 +3114,7 @@ step << Warrior
     .target Liv Bradford
     .mob Stuart
 step
+    #label HumbleBeginnings
     .goto StormwindClassic,49.194,30.284
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r
     .accept 399 >> Accept Humble Beginnings

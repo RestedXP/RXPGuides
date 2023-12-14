@@ -16,7 +16,7 @@ step
     #completewith next
     .goto Wetlands,51.914,62.692,30 >> Enter the Thelgen Rock cave
     .train 425446,1 << Warrior
-    .train 410115,1 < Hunter
+    .train 410115,1 << Hunter
 step
     #season 2
     .goto Wetlands,47.24,65.34
@@ -26,7 +26,7 @@ step
     .collect 211205,1 << Hunter --Rune of Aspect of the Lion (1)
     .mob Carrodin
     .train 425446,1 << Warrior
-    .train 410115,1 < Hunter
+    .train 410115,1 << Hunter
 step << Warrior
     #season 2
     .train 425446 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Consuming Rage|r] |cRXP_WARN_to train|r |T136088:0|t[Consumed by Rage]

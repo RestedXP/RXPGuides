@@ -593,6 +593,15 @@ step
     >>Kill |cFFFF5722Moonstalkers|r and |cFFFF5722Moonstalker Runts|r. Loot them for their |cFF00BCD4Fangs|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .unitscan Moonstalker;Moonstalker Runt
+step << Druid/Hunter
+    #season 2
+    #completewith next
+    >>Kill |cRXP_ENEMY_Blackwood Pathfinders|r and |cRXP_ENEMY_Blackwood Windtalkers|r. Loot them for their |T237270:0|t[|cRXP_LOOT_Crab Treats|r]
+    .collect 209027,1 -- Crab Treats (1)
+    .mob Blackwood Pathfinder
+    .mob Blackwood Windtalker
+    .train 416049,1 << Druid
+    .train 410110,1 << Hunter
 step
     >>Kill |cFFFF5722Blackwood Pathfinders|r and |cFFFF5722Blackwood Windtalkers|r
     .goto Darkshore,39.84,53.82,50,0
@@ -603,6 +612,24 @@ step
     .complete 985,2 -- Blackwood Windtalker
     .mob Blackwood Pathfinder
     .mob Blackwood Windtalker
+step << Druid/Hunter
+    #season 2
+    .goto Darkshore,35.8,55.6
+    .use 209027 >> |cRXP_WARN_Use the|r |T237270:0|t[|cRXP_LOOT_Crab Treats|r] |cRXP_WARN_on a |cRXP_ENEMY_Young Reef Crawler|r to receive the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Lacerate|r] << Druid
+    .use 209027 >> |cRXP_WARN_Use the|r |T237270:0|t[|cRXP_LOOT_Crab Treats|r] |cRXP_WARN_on a |cRXP_ENEMY_Young Reef Crawler|r to receive the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Beast Mastery|r] << Hunter
+    .collect 208687,1 << Druid -- Rune of Lacerate (1)
+    .collect 208701,1 << Hunter -- Beast Mastery (1)
+    .target Young Reef Crawler
+    .train 416049,1 << Druid
+    .train 410110,1 << Hunter
+step << Druid/Hunter
+    #season 2
+    .train 416049 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Lacerate|r] |cRXP_WARN_to train|r |T132131:0|t[Lacerate] << Druid
+    .use 208687 << Druid
+    .itemcount 208687,1 << Druid
+    .train 410110 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Beast Mastery|r] |cRXP_WARN_to train|r |T132270:0|t[Beast Mastery] << Hunter
+    .use 208701 << Hunter
+    .itemcount 208701,1 << Hunter
 step
     #completewith Tysha
     >>Kill |cFFFF5722Rabid Thistle Bears|r
@@ -1360,11 +1387,33 @@ step
     .complete 153,1 -- Red Leather Bandana (15)
     .mob Defias Trapper
     .mob Defias Smuggler
+step << Mage
+    #season 2
+    #completewith next
+    >>Kill |cRXP_ENEMY_Defias Pillagers|r. Loot them for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r]
+    .collect 208754,1
+    .mob Defias Pillager
+    .train 401767,1
 step
     .goto Westfall,36.24,54.52
     >>Open |cRXP_PICK_Alexston's Chest|r. Loot it for |cRXP_LOOT_A Simple Compass|r
     .complete 399,1 --A Simple Compass (1)
     .isOnQuest 399
+step << Mage
+    #season 2
+    .goto Westfall,36.0,55.4,50,0
+    .goto Westfall,38.0,57.2,50,0
+    .goto Westfall,36.0,55.4
+    >>Kill |cRXP_ENEMY_Defias Pillagers|r. Loot them for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r]
+    .collect 208754,1
+    .mob Defias Pillager
+    .train 401767,1
+step << Mage
+    #season 2
+    #completewith GnollPaws
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r]
+    .train 401767 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r] |cRXP_WARN_to train|r |T132871:0|t[Regeneration]
+    .use 208754
 step
 	#label bennytime
     .goto Westfall,49.34,19.27
@@ -2341,6 +2390,12 @@ step << Paladin
     >>Open the |cRXP_PICK_Strange Orb|r on the table atop the Tower of Althalaxx. Loot it for the |cRXP_LOOT_Althalaxx Orb|r
     .collect 209836,1,78089,1 --Athalaxx Orb (1)
     .train 410014,1
+step << Warlock
+    #season 2
+    >>Kill |cRXP_ENEMY_Dark Strand Fanatics|r. Loot them for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Channeling|r]
+    .collect 208750,1 -- Rune of Channeling (1)
+    .mob Dark Strand Fanatic
+    .train 403932,1
 step
     .goto Darkshore,55.27,27.74,55,0
     .goto Darkshore,56.92,27.27,55,0
@@ -2350,6 +2405,22 @@ step
     >>Kill |cFFFF5722Dark Strand Fanatics|r. Loot them for their |cFF00BCD4Parchments|r
     .complete 966,1 --Worn Parchment (4)
     .mob Dark Strand Fanatic
+step << Warlock
+    #season 2
+    .goto Darkshore,55.27,27.74,40,0
+    .goto Darkshore,56.92,27.27,40,0
+    .goto Darkshore,57.54,25.99,40,0
+    .goto Darkshore,56.92,27.27,40,0
+    .goto Darkshore,55.27,27.74
+    >>Kill |cRXP_ENEMY_Dark Strand Fanatics|r. Loot them for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Channeling|r]
+    .collect 208750,1 -- Rune of Channeling (1)
+    .mob Dark Strand Fanatic
+    .train 403932,1
+step << Warlock
+    #season 2
+    .train 403932 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Channeling|r] |cRXP_WARN_to train|r |T136168:0|t[Master Channeler]
+    .use 208750
+    .itemcount 208750,1
 step
     #map Darkshore
     .goto Winterspring,4.82,27.18

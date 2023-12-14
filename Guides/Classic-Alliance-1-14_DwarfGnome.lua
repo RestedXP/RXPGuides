@@ -1532,6 +1532,7 @@ step
     .goto Dun Morogh,42.1,45.4,20 >> Travel to Shimmer Ridge. Follow the arrow and run up the mountain
 step << Warrior
     #season 2
+    #completewith next
     >>Kill |cRXP_ENEMY_Frostmane Trolls|r. Loot them for their |cRXP_LOOT_Severed Troll Head|r
     .collect 208159,1 -- Severed Troll Head (1)
     .mob Frostmane Headhunter
@@ -1540,7 +1541,7 @@ step << Warrior
     .train 403475,1
 step << Rogue
     #season 2
-    .goto Dun Morogh,25.4,50.8
+    #completewith next
     >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Frostmane Trolls|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Right Map Piece]|r
     >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
     .collect 208213,1 -- Top-Right Map Piece (1)
@@ -1548,6 +1549,13 @@ step << Rogue
     .mob Frostmane Headhunter
     .mob Frostmane Snowstrider
     .train 398196,1
+step << Mage
+    #season 2
+    #completewith next
+    >>Kill |cRXP_ENEMY_Frostmane Seers|r. Loot them for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF]|r
+    .collect 203752,1
+    .mob Frostmane Seer
+    .train 401768,1
 step
     .goto Dun Morogh,40.9,45.3,50,0
     .goto Dun Morogh,41.5,43.6,50,0
@@ -1562,6 +1570,26 @@ step
     >>|cRXP_LOOT_Shimmerweed|r can also be looted from |cRXP_PICK_Shimmerweed Baskets|r on the ground
     .complete 315,1 --Collect Shimmerweed (x6)
     .mob Frostmane Seer
+step << Mage
+    #season 2
+    .goto Dun Morogh,40.9,45.3,50,0
+    .goto Dun Morogh,41.5,43.6,50,0
+    .goto Dun Morogh,39.7,40.0,50,0
+    .goto Dun Morogh,42.1,34.3,50,0
+    .goto Dun Morogh,39.7,40.0,50,0
+    .goto Dun Morogh,41.5,43.6,50,0
+    .goto Dun Morogh,40.9,45.3
+    .goto Dun Morogh,39.5,43.0,0
+    .goto Dun Morogh,41.5,36.0,0
+    >>Kill |cRXP_ENEMY_Frostmane Seers|r. Loot them for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF]|r
+    .collect 203752,1
+    .mob Frostmane Seer
+    .train 401768,1
+step << Mage
+    #season 2
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF]|r
+    .train 401768 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF]|r |cRXP_WARN_to train|r |T135820:0|t[Living Flame]
+    .use 203752
 step << Rogue
     #season 2
     .goto Dun Morogh,25.4,50.8
@@ -1757,6 +1785,15 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
     .accept 314 >> Accept Protecting the Herd
     .target Rudra Amberstill
+step << Warrior/Mage
+    #season 2
+    #completewith next
+    >>Kill |cRXP_ENEMY_Vagash|r. Loot him for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r] << Warrior 
+    >>Kill |cRXP_ENEMY_Vagash|r. Loot him for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] << Mage
+    .collect 204809,1 << Warrior -- Rune of Furious Thunder (1)
+    .collect 203753,1 << Mage -- Spell Notes: RING SEFF OSTROF (1)
+    .train 403476,1 << Warrior
+    .train 401765,1 << Mage
 step
     .goto Dun Morogh,62.6,46.1
     >>Kill |cRXP_ENEMY_Vagash|r. Loot him for his |cRXP_LOOT_Fang|r
@@ -1766,6 +1803,17 @@ step
     .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r << !Mage
     .complete 314,1 --Collect Fang of Vagash (1)
     .mob Vagash
+step << Warrior
+    #season 2
+    .train 403476 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r] |cRXP_WARN_to train|r |T136048:0|t[Furious Thunder]
+    .use 204809
+    .itemcount 204809,1
+step << Mage
+    #season 2
+    #completewith GolBolarQuarry
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r]
+    .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] |cRXP_WARN_to train|r |T236227:0|t[Fingers of Frost]
+    .use 203753
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
     .target Rudra Amberstill
@@ -1786,6 +1834,7 @@ step
     .vendor >> |cRXP_BUY_Buy|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_and|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_if needed|r << !Warrior !Rogue
     .target Kazan Mogosh
 step
+    #label GolBolarQuarry
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r and |cRXP_FRIENDLY_Foreman Stonebrow|r
     .accept 433 >> Accept The Public Servant
     .goto Dun Morogh,68.671,55.969
@@ -1908,11 +1957,31 @@ step
     .goto Dun Morogh,79.672,36.171
     .turnin 419 >> Turn in The Lost Pilot
     .accept 417 >> Accept A Pilot's Revenge
+step << Warrior/Mage
+    #season 2
+    #completewith next
+    >>Kill |cRXP_ENEMY_Mangeclaw|r. Loot him for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r] << Warrior 
+    >>Kill |cRXP_ENEMY_Mangeclaw|r. Loot him for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] << Mage
+    .collect 204809,1 << Warrior -- Rune of Furious Thunder (1)
+    .collect 203753,1 << Mage -- Spell Notes: RING SEFF OSTROF (1)
+    .train 403476,1 << Warrior
+    .train 401765,1 << Mage
 step
     >>Kill |cRXP_ENEMY_Mangeclaw|r. Loot him for his |cRXP_LOOT_Claw|r
     .goto Dun Morogh,78.97,37.14
     .complete 417,1 --Collect Mangy Claw (x1)
     .mob Mangeclaw
+step << Warrior
+    #season 2
+    .train 403476 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r] |cRXP_WARN_to train|r |T136048:0|t[Furious Thunder]
+    .use 204809
+    .itemcount 204809,1
+step << Mage
+    #season 2
+    #completewith lochentry
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r]
+    .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] |cRXP_WARN_to train|r |T236227:0|t[Fingers of Frost]
+    .use 203753
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Hammerfoot|r
     .target Pilot Hammerfoot
@@ -1927,6 +1996,7 @@ step
     .turnin 413 >> Turn in Shimmer Stout
     .accept 414 >> Accept Stout to Kadrell
 step
+    #label lochentry
     #completewith next
     .goto Dun Morogh,86.203,51.260,15,0
     .goto Loch Modan,22.071,73.127,200 >> Travel to Loch Modan
@@ -3302,6 +3372,26 @@ step
     .complete 267,1 --Collect Trogg Stone Tooth (x8)
     .mob Stonesplinter Trogg
     .mob Stonesplinter Scout
+step << Mage
+    #season 2
+    .goto Loch Modan,29.2,81.2,50,0
+    .goto Loch Modan,28.8,83.4,50,0
+    .goto Loch Modan,30.0,83.8,50,0
+    .goto Loch Modan,32.2,87.2,50,0
+    .goto Loch Modan,33.8,88.6,50,0
+    .goto Loch Modan,36.0,88.0,50,0
+    .goto Loch Modan,36.6,81.2,50,0
+    .goto Loch Modan,36.6,79.6
+    >>Kill |cRXP_ENEMY_Stonesplinter Seers|r. Loot them for the |T134939:0|t[|cRXP_FRIENDLY_Chewed Spell Notes]|r
+    .collect 208854,1
+    .mob Stonesplinter Seer
+    .train 415936,1
+step << Mage
+    #season 2
+    #completewith Fly2WF
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the |T134939:0|t[|cRXP_FRIENDLY_Chewed Spell Notes]|r
+    .train 415936 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Chewed Spell Notes|r] |cRXP_WARN_to train|r |T236220:0|t[Living Bomb]
+    .use 208854
 step
     #era
     .goto Loch Modan,27.4,48.4
@@ -4055,6 +4145,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
     .accept 314 >> Accept Protecting the Herd
     .target Rudra Amberstill
+step << Hunter
+    #season 2
+    #completewith next
+    >>Kill |cRXP_ENEMY_Vagash|r. Loot him for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Explosive Shot|r]
+    .collect 206169,1 -- Rune of Explosive Shot (1)
+    .train 410123,1
 step
     .goto Dun Morogh,62.6,46.1
     >>Kill |cRXP_ENEMY_Vagash|r. Loot him for his |cRXP_LOOT_Fang|r
@@ -4064,6 +4160,11 @@ step
     .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r << !Mage
     .complete 314,1 --Collect Fang of Vagash (1)
     .mob Vagash
+step << Hunter
+    #season 2
+    .train 410123 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Explosive Shot|r] |cRXP_WARN_to train|r |T236178:0|t[Explosive Shot]
+    .use 206169
+    .itemcount 206169,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
     .target Rudra Amberstill
@@ -4079,11 +4180,22 @@ step
     .goto Dun Morogh,79.672,36.171
     .turnin 419 >> Turn in The Lost Pilot
     .accept 417 >> Accept A Pilot's Revenge
+step << Hunter
+    #season 2
+    #completewith next
+    >>Kill |cRXP_ENEMY_Mangeclaw|r. Loot him for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Explosive Shot|r]
+    .collect 206169,1 -- Rune of Explosive Shot (1)
+    .train 410123,1
 step
     >>Kill |cRXP_ENEMY_Mangeclaw|r. Loot him for his |cRXP_LOOT_Claw|r
     .goto Dun Morogh,78.97,37.14
     .complete 417,1 --Collect Mangy Claw (x1)
     .mob Mangeclaw
+step << Hunter
+    #season 2
+    .train 410123 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Explosive Shot|r] |cRXP_WARN_to train|r |T236178:0|t[Explosive Shot]
+    .use 206169
+    .itemcount 206169,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Hammerfoot|r
     .target Pilot Hammerfoot
@@ -4123,6 +4235,16 @@ step
     >>|cRXP_LOOT_Shimmerweed|r can also be looted from |cRXP_PICK_Shimmerweed Baskets|r on the ground
     .complete 315,1 --Collect Shimmerweed (x6)
     .mob Frostmane Seer
+step << Hunter
+    #season 2
+    #completewith next
+    .goto Dun Morogh,28.852,49.859
+    >>|cRXP_WARN_Cast|r |T132212:0|t[Hunter's Mark] |cRXP_WARN_on the|r |cRXP_ENEMY_Rustling Bush|r
+    >>Kill the |cRXP_ENEMY_Razormane Poacher|r that spawns. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
+    .collect 206155,1 --Rune of Markmanship (1)
+    .mob Rustling Bush
+    .mob Razormane Poacher
+    .train 410113,1
 step
     .goto Dun Morogh,31.5,38.9,60,0
     .goto Dun Morogh,28.3,39.9,60,0
@@ -4144,6 +4266,20 @@ step
     .mob Ice Claw Bear
     .mob Elder Crag Boar
     .mob Snow Leopard
+step << Hunter
+    #season 2
+    .goto Dun Morogh,28.852,49.859
+    >>|cRXP_WARN_Cast|r |T132212:0|t[Hunter's Mark] |cRXP_WARN_on the|r |cRXP_ENEMY_Rustling Bush|r
+    >>Kill the |cRXP_ENEMY_Razormane Poacher|r that spawns. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
+    .collect 206155,1 --Rune of Markmanship (1)
+    .mob Rustling Bush
+    .mob Razormane Poacher
+    .train 410113,1
+step << Hunter
+    #season 2
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r] |cRXP_WARN_to train|r |T132177:0|t[Master Marksman]
+    .use 206155
+    .train 410113,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rejold Barleybrew|r
     .target Rejold Barleybrew

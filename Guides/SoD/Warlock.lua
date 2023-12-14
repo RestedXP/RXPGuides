@@ -413,12 +413,15 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Redridge Mountains >>Travel to the Redrige Mountains
+    .zone Redridge Mountains >>Travel to the Redridge Mountains
 step
-    .train 416015,1
+    .goto Redridge Mountains,74.0,82.2,60,0
+    .goto Redridge Mountains,77.6,86.6,50,0
+    .goto Redridge Mountains,76.8,82.2
     >>Kill |cRXP_ENEMY_Incinerator Gar'im|r |cRXP_WARN_(lvl 23 elite)|r. Loot him for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Incinerate|r]
     .collect 211477,1
-    .mob Incinerator Gar'im
+    .unitscan Incinerator Gar'im
+    .train 416015,1
 step
     .use 211477
     .itemcount 211477,1
