@@ -144,6 +144,7 @@ step
     .goto Mulgore,67.23,66.17,0
     .goto Mulgore,62.30,22.94,0
     .goto Mulgore,44.94,11.30,0
+    .goto Mulgore,36.33,9.79,0
     .goto Mulgore,30.50,25.98,0
     .goto Mulgore,41.99,43.49,20,0
     .goto Mulgore,43.87,48.32,20,0
@@ -158,9 +159,10 @@ step
     .goto Mulgore,67.23,66.17,20,0
     .goto Mulgore,62.30,22.94,20,0
     .goto Mulgore,44.94,11.30,20,0
+    .goto Mulgore,36.33,9.79,20,0
     .goto Mulgore,30.50,25.98,20,0
     >>Click the |cRXP_PICK_Galvanic Icon|r Totem. Loot it for the |T134918:0|t|cRXP_LOOT_[Galvanic Icon]|r
-    >>|cRXP_WARN_The |cRXP_PICK_Galvanic Icon|r has at least 13 spawnpoints, with at least 2 up at a time. It despawns <2 minutes after being looted|r
+    >>|cRXP_WARN_The |cRXP_PICK_Galvanic Icon|r has at least 15 spawnpoints, with at least 2 up at a time. It despawns <2 minutes after being looted|r
     >>|cRXP_WARN_It makes a|r |T136051:0|t[Lightning Shield] |cRXP_WARN_sound every 5 minutes if you're within 1000 yards, and shows a Lightning Strike on its location if you're within 300 yards and facing it|r
     .collect 206386,1 --Galvanic Icon (1)
     .train 410098,1
@@ -169,7 +171,6 @@ step
     .cast 402265 >>Use the |T134918:0|t[|cRXP_FRIENDLY_Galvanic Icon|r] once you have 10 stacks
     .use 206386
     .train 410098,1
-
     ]])
 
 

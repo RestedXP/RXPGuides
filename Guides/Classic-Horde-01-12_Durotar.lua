@@ -2633,7 +2633,8 @@ step << Warrior/Shaman
     #label FungalSporesComplete
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
-    >>|cRXP_WARN_Wait for the RP to finish. This starts a timed quest!|r
+    >>|cRXP_WARN_Wait for the RP to finish|r 
+    >>|cRXP_WARN_This starts a 45-minute timed quest|r
     .turnin 848 >> Turn in Fungal Spores
     .accept 853 >> Accept Apothecary Zamah
     .target Apothecary Helbrim
