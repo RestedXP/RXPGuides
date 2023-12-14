@@ -71,6 +71,7 @@ step << !Shaman !Warrior/Undead
     .goto The Barrens,52.34,29.27,150 >> Travel to The Crossroads
     .subzoneskip 380
 step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    #hardcore
     .goto The Barrens,52.62,29.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zargh|r
     .accept 6365 >>Accept Meats to Orgrimmar
@@ -99,6 +100,7 @@ step << !Shaman !Warrior/Undead
     .accept 5041 >>Accept Supplies for the Crossroads
     .target Thork
 step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    #hardcore
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     >>|cRXP_WARN_Do NOT fly to Orgrimmar!|r
@@ -171,6 +173,12 @@ step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .home >> Set your Hearthstone to Crossroads
     .target Innkeeper Boorand Plainswind
     .dungeon RFC
+step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    #softcore
+    .goto The Barrens,52.62,29.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zargh|r
+    .accept 6365 >>Accept Meats to Orgrimmar
+    .target Zargh
 step
     #completewith DemonSeed
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Beaks|r
@@ -280,6 +288,13 @@ step
     >>|cRXP_WARN_He is at the top of the tower|r
     .accept 867 >>Accept Harpy Raiders
     .target Darsok Swiftdagger
+step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    #softcore
+    .goto The Barrens,51.50,30.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
+    .turnin 6365 >>Turn in Meats to Orgrimmar
+    .accept 6384 >>Accept Ride to Orgrimmar
+    .target Devrak
 step << !Undead !Tauren
     .goto The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r

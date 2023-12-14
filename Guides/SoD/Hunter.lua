@@ -127,21 +127,17 @@ step << Tauren
     .target Lanka Farshot
 step
     #season 2
-    .goto Mulgore,52.70,79.32,50,0
-    .goto Mulgore,54.19,79.83,50,0
-    .goto Mulgore,55.73,80.28,50,0
-    .goto Mulgore,56.48,81.67,50,0
-    .goto Mulgore,55.63,83.86,50,0
-    .goto Mulgore,56.03,85.53,50,0
-    .goto Mulgore,55.80,87.71,50,0
-    .goto Mulgore,56.72,89.27,50,0
-    .goto Mulgore,57.92,89.27,50,0
-    .goto Mulgore,57.69,86.77,50,0
-    .goto Mulgore,57.31,85.39,50,0
-    .goto Mulgore,55.99,85.46
-    >>Kill |cRXP_ENEMY_Battleboars|r. Loot them for |T134419:0|t[|cRXP_FRIENDLY_Rune of The Chimera|r]
+    .goto Mulgore,63.81,76.65,40,0
+    .goto Mulgore,62.92,76.91,40,0
+    .goto Mulgore,61.31,77.22,40,0
+    .goto Mulgore,61.58,78.89,40,0
+    .goto Mulgore,62.53,79.52,40,0
+    .goto Mulgore,64.20,79.01,40,0
+    .goto Mulgore,65.82,78.13,40,0
+    .goto Mulgore,63.93,78.34
+    >>Kill |cRXP_ENEMY_Bristleback Battleboars|r. Loot them for |T134419:0|t[|cRXP_FRIENDLY_Rune of The Chimera|r]
     .collect 206168,1 --Rune of the Chimera (1)
-    .mob Battleboar
+    .mob Bristleback Battleboar
     .train 410121,1
 step
     #season 2
