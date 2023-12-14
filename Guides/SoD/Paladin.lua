@@ -9,8 +9,8 @@ RXPGuides.RegisterGuide([[
 --VV Not sure if you want to gate CS in Elwynn for humans only/DunM for dwarves only
 
 step
-    #completewith LibramS
     +|cRXP_WARN_You MUST be at least level 4 in order to acquire|r |T133816:0|t[Engrave Gloves: Crusader Strike] |cRXP_WARN_due to it being the level requirement of|r |T135959:0|t[Judgement]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves: Crusader Strike]
     .train 410002,1
     .xp >4,1
 step
@@ -18,7 +18,7 @@ step
     #label Elwynn1
     .zone Elwynn Forest >> Travel to Elwynn Forest
     .train 410002,1
-    .xp >4,1
+    .xp <4,1
 step
     #completewith next
     #requires Elwynn1
@@ -83,8 +83,8 @@ RXPGuides.RegisterGuide([[
 #next Inspiration Exemplar - 6 (Dun Morogh)
 
 step
-    #completewith LibramS
     +|cRXP_WARN_You MUST be at least level 4 in order to acquire|r |T133816:0|t[Engrave Gloves: Crusader Strike] |cRXP_WARN_due to it being the level requirement of|r |T135959:0|t[Judgement]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves: Crusader Strike]
     .train 410002,1
     .xp >4,1
 step
@@ -92,7 +92,7 @@ step
     #label Dun1
     .zone Dun Morogh >> Travel to Dun Morogh
     .train 410002,1
-    .xp >4,1
+    .xp <4,1
 step
     #completewith next
     #requires Dun1
@@ -158,9 +158,16 @@ RXPGuides.RegisterGuide([[
 #name Hand of Reckoning - 14 (Loch Modan)
 #next Inspiration Exemplar - 6 (Elwynn Forest)
 
+
+step
+    +|cRXP_WARN_You should be at least level 14 in order to acquire|r |T133816:0|t[Engrave Gloves: Hand of Reckoning] |cRXP_WARN_in Loch Modan alone|r
+    >>|cRXP_WARN_You MUST be level 8 to equip the|r |T134916:0|t|cRXP_LOOT_[Libram of Justice]|r
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves: Hand of Reckoning]
+    .train 410001,1
+    .xp >8,1
 step
     #completewith Cave1
-    +|cRXP_WARN_You should be at least level 14 in order to acquire|r |T133816:0|t[Engrave Gloves: Hand of Reckoning] |cRXP_WARN_in Loch Modan alone. You MUST be level 8 to equip it|r
+    +|cRXP_WARN_You should be at least level 14 in order to acquire|r |T133816:0|t[Engrave Gloves: Hand of Reckoning] |cRXP_WARN_in Loch Modan alone|r
     .train 410001,1
     .xp >14,1
 step
@@ -315,9 +322,16 @@ RXPGuides.RegisterGuide([[
 #name Hand of Reckoning - 20 (Westfall)
 #next Exorcist - 24 (Duskwood)
 
+
+step
+    +|cRXP_WARN_You should be at least level 20 in order to acquire|r |T133816:0|t[Engrave Gloves: Hand of Reckoning] |cRXP_WARN_in Westfall alone|r
+    >>|cRXP_WARN_You MUST be level 8 to equip the|r |T134916:0|t|cRXP_LOOT_[Libram of Justice]|r
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves: Hand of Reckoning]
+    .train 410001,1
+    .xp >8,1
 step
     #completewith LibramS
-    +|cRXP_WARN_You should be at least level 20 in order to acquire|r |T133816:0|t[Engrave Gloves: Hand of Reckoning] |cRXP_WARN_in Westfall alone. You MUST be level 8 to equip it|r
+    +|cRXP_WARN_You should be at least level 20 in order to acquire|r |T133816:0|t[Engrave Gloves: Hand of Reckoning] |cRXP_WARN_in Westfall alone|r
 -- >>|cRXP_WARN_It is heavily recommended you get it in Loch Modan instead as it is a LOT easier and can be acquired at a lower level|r
     .train 410001,1
     .xp >20,1
@@ -438,8 +452,8 @@ RXPGuides.RegisterGuide([[
 #next Hand of Reckoning - 14 (Loch Modan)
 
 step
-    #completewith Loch1
-    +|cRXP_WARN_You need to be at least level 4 in order to acquire|r |T133815:0|t[Engrave Chest: Horn of Lordaeron] |cRXP_WARN_due to it being the level requirement of|r |T135906:0|t[Blessing of Might]
+    +|cRXP_WARN_You MUST be at least level 4 in order to acquire|r |T133815:0|t[Engrave Chest: Horn of Lordaeron] |cRXP_WARN_due to it being the level requirement of|r |T135906:0|t[Blessing of Might]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest: Horn of Lordaeron]
 --  >>|cRXP_WARN_It is NOT recommended to use|r |T133815:0|t[Engrave Chest: Horn of Lordaeron] |cRXP_WARN_over|r |T133815:0|t[Engrave Chest: Divine Storm] |cRXP_WARN_or|r |T133815:0|t[Engrave Chest: Seal of Martyrdom]
     .train 425618,1
     .xp >4,1
@@ -522,9 +536,17 @@ RXPGuides.RegisterGuide([[
 #name Horn of Lordaeron - 12 (Westfall)
 #next Hand of Reckoning - 20 (Westfall)
 
+
+step
+    +|cRXP_WARN_You should be at least level 12 in order to acquire|r |T133815:0|t[Engrave Chest: Horn of Lordaeron] |cRXP_WARN_in Westfall alone|r
+    ??|cRXP_WARN_You MUST be at least level 4 in order to acquire|r |T133815:0|t[Engrave Chest: Horn of Lordaeron] |cRXP_WARN_due to it being the level requirement of|r |T135906:0|t[Blessing of Might]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest: Horn of Lordaeron]
+--  >>|cRXP_WARN_It is NOT recommended to use|r |T133815:0|t[Engrave Chest: Horn of Lordaeron] |cRXP_WARN_over|r |T133815:0|t[Engrave Chest: Divine Storm] |cRXP_WARN_or|r |T133815:0|t[Engrave Chest: Seal of Martyrdom]
+    .train 425618,1
+    .xp >4,1
 step
     #completewith LibramS
-    +|cRXP_WARN_You should be at least level 12 in order to acquire the|r |T133815:0|t[Engrave Chest: Horn of Lordaeron] |cRXP_WARN_in Westfall alone. You MUST be level 4 to equip it|r
+    +|cRXP_WARN_You should be at least level 12 in order to acquire the|r |T133815:0|t[Engrave Chest: Horn of Lordaeron] |cRXP_WARN_in Westfall alone|r
 --  >>|cRXP_WARN_It is heavily recommended you get it in Loch Modan instead as it is a LOT easier|r
 --  >>|cRXP_WARN_It is NOT recommended to use|r |T133815:0|t[Engrave Chest: Horn of Lordaeron] |cRXP_WARN_over|r |T133815:0|t[Engrave Chest: Divine Storm] |cRXP_WARN_or|r |T133815:0|t[Engrave Chest: Seal of Martyrdom]
     .train 425618,1
@@ -621,8 +643,8 @@ RXPGuides.RegisterGuide([[
 #next Rebuke - 10 (Stormwind)
 
 step
-    #completewith LibramS
-    +|cRXP_WARN_You MUST be at least level 8 in order to acquire the|r |T134419:0|t[Rune of Aegis] |cRXP_WARN_due to it being the level requirement of|r |T135949:0|t[Purify]
+    +|cRXP_WARN_You MUST be at least level 8 in order to acquire|r |T133815:0|t[Engrave Chest: Aegis] |cRXP_WARN_due to it being the level requirement of|r |T135949:0|t[Purify]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest: Aegis]
     .train 425619,1
     .xp >8,1
 step
@@ -698,8 +720,8 @@ RXPGuides.RegisterGuide([[
 #next Rebuke - 10 (Ironforge)
 
 step
-    #completewith LibramS
-    +|cRXP_WARN_You MUST be at least level 8 in order to acquire the|r |T134419:0|t[Rune of Aegis] |cRXP_WARN_due to it being the level requirement of|r |T135949:0|t[Purify]
+    +|cRXP_WARN_You MUST be at least level 8 in order to acquire|r |T133815:0|t[Engrave Chest: Aegis] |cRXP_WARN_due to it being the level requirement of|r |T135949:0|t[Purify]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest: Aegis]
     .train 425619,1
     .xp >8,1
 step
@@ -760,7 +782,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith LibramS
-    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T133815:0|t[Engrave Chest: Seal of Martyrdom] |cRXP_WARN_in Stormwind|r
+    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T133815:0|t[Engrave Chest: Seal of Martyrdom] |cRXP_WARN_in Stormwind alone|r
     .train 410015,1
     .xp >10,1
 step
@@ -1074,7 +1096,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith LibramS
-    +|cRXP_WARN_You should be at least level 6 in order to acquire|r |T134596:0|t[Engrave Pants: Inspiration Exemplar] |cRXP_WARN_in Elwynn Forest|r
+    +|cRXP_WARN_You should be at least level 6 in order to acquire|r |T134596:0|t[Engrave Pants: Inspiration Exemplar] |cRXP_WARN_in Elwynn Forest with another player|r
     .train 410011,1
     .xp >6,1
 step
@@ -1115,7 +1137,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith LibramS
-    +|cRXP_WARN_You should be at least level 6 in order to acquire|r |T134596:0|t[Engrave Pants: Inspiration Exemplar] |cRXP_WARN_in Dun Morogh|r
+    +|cRXP_WARN_You should be at least level 6 in order to acquire|r |T134596:0|t[Engrave Pants: Inspiration Exemplar] |cRXP_WARN_in Dun Morogh with another player|r
     .train 410011,1
     .xp >6,1
 step
@@ -1167,7 +1189,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith LibramS
-    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T134596:0|t[Engrave Pants: Rebuke] |cRXP_WARN_in Ironforge|r
+    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T134596:0|t[Engrave Pants: Rebuke] |cRXP_WARN_in Ironforge alone|r
     .train 425621,1
     .xp >10,1
 step
@@ -1237,7 +1259,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith LibramS
-    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T134596:0|t[Engrave Pants: Rebuke] |cRXP_WARN_in Stormwind|r
+    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T134596:0|t[Engrave Pants: Rebuke] |cRXP_WARN_in Stormwind alone|r
     .train 425621,1
     .xp >10,1
 step
@@ -1308,8 +1330,8 @@ RXPGuides.RegisterGuide([[
 #next Beacon of Light - 25 (Reputation)
 
 step
-    #completewith LibramS
     +|cRXP_WARN_You MUST be at least level 24 in order to acquire|r |T134596:0|t[Engrave Pants: Exorcist] |cRXP_WARN_due to it being the level requirement of|r |T135983:0|t[Turn Undead]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T134596:0|t[Engrave Pants: Exorcist]
     .train 416037,1
     .xp >24,1
 step

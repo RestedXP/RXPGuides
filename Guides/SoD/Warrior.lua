@@ -280,7 +280,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Warrior SoD
 #group RestedXP Rune Guide
 #subgroup Gloves
-#name Endless Rage - 10 (Westfall)
+#name Endless Rage - 20 (Westfall)
 
 step << Warrior
     #season 2
@@ -307,7 +307,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Warrior SoD
 #group RestedXP Rune Guide
 #subgroup Gloves
-#name Endless Rage - 10 (Darkshore)
+#name Endless Rage - 16 (Darkshore)
 
 step << Warrior
     #season 2
@@ -1203,3 +1203,25 @@ step
     .itemcount 208741,1
 
     ]])
+
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Warrior SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Quick Strike - 20 (Darkshore)
+
+step << Warrior
+    .goto Darkshore,48.2,15.6,70,0
+    .goto Darkshore,50.2,12.6
+    >>Kill |cRXP_ENEMY_Paxnozz|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Strike|r]
+    >>|cRXP_ENEMY_Paxnozz|r |cRXP_WARN_is a level 20 elite found patrolling in the water. Look for help before attemping to kill it|r
+    .collect 208778,1 -- Rune of Quick Strike (1)
+    .unitscan Paxnozz
+    .train 425443,1
+step << Warrior
+    .train 425443 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Strike|r] |cRXP_WARN_to train|r |T132394:0|t[Quick Strike]
+    .use 208778
+    .itemcount 208778,1
+]])

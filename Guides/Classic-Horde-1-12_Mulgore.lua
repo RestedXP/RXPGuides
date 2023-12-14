@@ -1144,7 +1144,7 @@ step
     .target Seer Wiserunner
 step
     #completewith SacredBurial
-    .destroy 4823 >>Destroy|T134712:0|t[Water of the Seers] as you won't need it
+    .destroy 4823 >> You can delete |T134712:0|t[Water of the Seers] from your bags, as it's no longer needed
 step
     #completewith SacredBurial
     >>|cRXP_WARN_Finish getting the items for Mazzranache|r
@@ -1152,6 +1152,14 @@ step
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
     .complete 766,4 --Swoop Gizzard (1)
+step
+    #completewith SacredBurial
+    >>Keep an eye out for |cRXP_ENEMY_Ghost Howl|r. Loot him for his |T134358:0|t[|cFF00BCD4Demon Scarred Cloak|r]. Use it to start the quest
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Ghost Howl|r is difficult due to being level 12|r
+    .collect 4854,1,770 --Collect Demon Scarred Cloak
+    .accept 770 >>Accept The Demon Scarred Cloak
+    .use 4854
+    .unitscan Ghost Howl
 step
 	#completewith next
 	>>Kill |cRXP_ENEMY_Swoops|r throughout Mulgore. Loot them for their |cRXP_LOOT_Quills|r
@@ -1245,6 +1253,12 @@ step
     .vendor >> Vendor trash
     .target Innkeeper Kauth
 step
+    .goto Mulgore,46.75,60.24
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skorn|r
+    .turnin 770 >>Turn in The Demon Scarred Cloak
+    .target Skorn Whitecloud
+    .isOnQuest 770
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baine|r, |cRXP_FRIENDLY_Ruul|r, |cRXP_FRIENDLY_Mull|r and |cRXP_FRIENDLY_Harken|r
     .turnin 746 >>Turn in Dwarven Digging
     .goto Mulgore,47.51,60.16
@@ -1273,6 +1287,9 @@ step
     .target Baine Bloodhoof
     .target Ruul Eagletalon
     .target Mull Thunderhorn
+step
+    #completewith AlphaTeeth
+    .destroy 4702 >> You can delete |T134707:0|t[Prospector's Picks] from your bags, as they're no longer needed
 step << Hunter
     .goto Mulgore,45.50,58.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kennah|r
@@ -1383,13 +1400,19 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morin|r
     >>|cRXP_WARN_He patrols along the eastern road|r
     .turnin 751 >> Turn in The Ravaged Caravan
-    .accept 764 >> The Venture Co
-    .accept 765 >> Supervisor Fizsprocket
+    .accept 764 >> Accept The Venture Co
+    .accept 765 >> Accept Supervisor Fizsprocket
 	.unitscan Morin Cloudstalker
+step
+    #completewith AlphaTeeth
+    >>Kill |cRXP_ENEMY_Flatland Prowlers|r. Loot them for their |cRXP_LOOT_Claws|r
+    .complete 861,1 --Flatland Prowler Claw (4)
+    .mob Flatland Prowler
 step << Hunter
     #completewith next
     +Tame a |cRXP_ENEMY_Prairie Wolf Alpha|r
 step
+    #label AlphaTeeth
     .goto Mulgore,67.19,63.78,50,0
     .goto Mulgore,66.34,67.01,50,0
     .goto Mulgore,63.86,66.31,50,0
@@ -1610,6 +1633,19 @@ step
     .accept 6363 >>Accept Tal the Wind Rider Master
     .target Ahanu
 step << Hunter
+    .goto Thunder Bluff,61.3,80.9
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melor|r
+    .turnin 861 >>Turn in The Hunter's Way
+    .accept 860 >>Accept Sergra Darkthorn
+    .target Melor Stonehoof
+    .isQuestComplete 861
+step << Hunter
+    .goto Thunder Bluff,61.3,80.9
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melor|r
+    .accept 860 >>Accept Sergra Darkthorn
+    .target Melor Stonehoof
+    .isQuestTurnedIn 861
+step << Hunter
 	.goto Thunder Bluff,57.4,89.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Holt|r
 	.turnin 6089 >> Turn in Training the Beast
@@ -1782,7 +1818,7 @@ step
     .target Eyahn Eagletalon
 step
     .goto Thunder Bluff,61.3,80.9
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eyahn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melor|r
     .turnin 861 >>Turn in The Hunter's Way
     .accept 860 >>Accept Sergra Darkthorn
     .target Melor Stonehoof

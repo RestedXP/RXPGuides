@@ -560,6 +560,22 @@ step
     .target Zenn Foulhoof
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zenn Foulhoof|r
     .accept 488 >> Accept Zenn's Bidding
+step << Warrior
+    #season 2
+    #completewith zenn
+    >>Kill |cRXP_ENEMY_Nightsabers|r or |cRXP_ENEMY_Nightsaber Stalkers|r. Loot them for their |cRXP_LOOT_Severed Tiger Head|r
+    >>Kill |cRXP_ENEMY_Strigid Owls|r or |cRXP_ENEMY_Strigid Screechers|r. Loot them for their |cRXP_LOOT_Severed Owl Head|r
+    >>Kill |cRXP_ENEMY_Webwood Lurkers|r or |cRXP_ENEMY_Webwood Venomfangs|r. Loot them for their |cRXP_LOOT_Severed Spider Head|r
+    .collect 208611,1 -- Severed Tiger Head (1)
+    .collect 208610,1 -- Severed Owl Head (1)
+    .collect 208612,1 -- Severed Spider Head (1)
+    .mob Nightsaber
+    .mob Nightsaber Stalker
+    .mob Strigid Owl
+    .mob Strigid Screecher
+    .mob Webwood Lurker
+    .mob Webwood Venomfang
+    .train 403475,1
 step
     #sticky
     #completewith zenn
@@ -735,6 +751,15 @@ step
     .target Denalan
     .accept 918 >> Accept Timberling Seeds
     .accept 919 >> Accept Timberling Sprouts
+step << Rogue
+    #season 2
+    #completewith next
+    >>Kill |cRXP_ENEMY_Timberlings|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Right Map Piece]|r
+    .collect 208601,1 -- Top-Right Map Piece (1)
+    .mob Timberling
+    .mob Timberling Bark Ripper
+    .mob Timberling Trampler
+    .train 398196,1
 step
     .goto Teldrassil,61.63,68.89,55,0
     .goto Teldrassil,60.52,70.47,55,0
@@ -748,6 +773,16 @@ step
     .complete 918,1 --Collect Timberling Seed (x8)
     .complete 919,1 --Collect Timberling Sprout (x12)
     .mob Timberling
+step << Rogue
+    #season 2
+    .goto Teldrassil,61.2,67.0
+    >>Kill |cRXP_ENEMY_Timberlings|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Right Map Piece]|r
+    .collect 208601,1 -- Top-Right Map Piece (1)
+    .mob Timberling
+    .mob Timberling Bark Ripper
+    .mob Timberling Trampler
+    .train 398196,1
+
 step
     .goto Teldrassil,60.900,68.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denalan|r
@@ -773,6 +808,22 @@ step
     .goto Teldrassil,63.38,58.10
     >>|cRXP_WARN_Use the|r |T134721:0|t[Jade Phial] |cRXP_WARN_at the Starbreeze Village Moonwell|r
     .complete 929,1 --Collect Filled Jade Phial (x1)
+step << Warrior
+    #season 2
+    #completewith next
+    >>Kill |cRXP_ENEMY_Nightsabers|r or |cRXP_ENEMY_Nightsaber Stalkers|r. Loot them for their |cRXP_LOOT_Severed Tiger Head|r
+    >>Kill |cRXP_ENEMY_Strigid Owls|r or |cRXP_ENEMY_Strigid Screechers|r. Loot them for their |cRXP_LOOT_Severed Owl Head|r
+    >>Kill |cRXP_ENEMY_Webwood Lurkers|r or |cRXP_ENEMY_Webwood Venomfangs|r. Loot them for their |cRXP_LOOT_Severed Spider Head|r
+    .collect 208611,1 -- Severed Tiger Head (1)
+    .collect 208610,1 -- Severed Owl Head (1)
+    .collect 208612,1 -- Severed Spider Head (1)
+    .mob Nightsaber
+    .mob Nightsaber Stalker
+    .mob Strigid Owl
+    .mob Strigid Screecher
+    .mob Webwood Lurker
+    .mob Webwood Venomfang
+    .train 403475,1
 step
     >>Kill |cRXP_ENEMY_Nightsabers|r. Loot them for their |cRXP_LOOT_Fangs|r
     >>Kill |cRXP_ENEMY_Strigid Owls|r. Loot them for their |cRXP_LOOT_Feathers|r
@@ -793,6 +844,24 @@ step
     .mob Nightsaber
     .mob Strigid Owl
     .mob Webwood Lurker
+step << Warrior
+    #season 2
+    >>Kill |cRXP_ENEMY_Nightsabers|r or |cRXP_ENEMY_Nightsaber Stalkers|r. Loot them for their |cRXP_LOOT_Severed Tiger Head|r
+    >>Kill |cRXP_ENEMY_Strigid Owls|r or |cRXP_ENEMY_Strigid Screechers|r. Loot them for their |cRXP_LOOT_Severed Owl Head|r
+    >>Kill |cRXP_ENEMY_Webwood Lurkers|r or |cRXP_ENEMY_Webwood Venomfangs|r. Loot them for their |cRXP_LOOT_Severed Spider Head|r
+    .collect 208611,1 -- Severed Tiger Head (1)
+    .goto Teldrassil,53.6,62.4
+    .collect 208610,1 -- Severed Owl Head (1)
+    .goto Teldrassil,54.6,60.4
+    .collect 208612,1 -- Severed Spider Head (1)
+    .goto Teldrassil,53.0,67.0
+    .mob Nightsaber
+    .mob Nightsaber Stalker
+    .mob Strigid Owl
+    .mob Strigid Screecher
+    .mob Webwood Lurker
+    .mob Webwood Venomfang
+    .train 403475,1
 step
     #era
     .goto Teldrassil,60.7,54.4
@@ -958,6 +1027,15 @@ step
     #completewith next
     .goto Teldrassil,54.68,52.84,20,0
     .goto Teldrassil,54.42,51.19,15 >> Travel to Fel Rock
+step << Rogue
+    #season 2
+    #completewith MutiRune
+    >>Kill |cRXP_ENEMY_Vicious Grell|r, |cRXP_ENEMY_Rascal Sprites|r and |cRXP_ENEMY_Shadow Sprites|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Bottom-Left Map Piece]|r
+    .collect 208604,1 -- Bottom-Left Map Piece (1)
+    .mob Vicious Grell
+    .mob Rascal Sprite
+    .mob Shadow Sprite
+    .train 398196,1
 step << Hunter
     #era
     .goto Teldrassil,51.2,50.6
@@ -965,12 +1043,41 @@ step << Hunter
     >>|cRXP_ENEMY_Lord Melenas|r may be located in many different spawn locations throughout Fel Rock
     .complete 932,1 --Collect Melenas' Head (x1)
     .unitscan Lord Melenas
+step << Rogue
+    #season 2
+    #completewith next
+    >>Kill |cRXP_ENEMY_Lord Melenas|r. Loot him for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r]
+    .collect 203990,1
+    .unitscan Lord Melenas
+    .train 400094,1
 step << !Hunter
     .goto Teldrassil,51.2,50.6
     >>Kill |cRXP_ENEMY_Lord Melenas|r. Loot him for his |cRXP_LOOT_Head|r
     >>|cRXP_ENEMY_Lord Melenas|r may be located in many different spawn locations throughout Fel Rock
     .complete 932,1 --Collect Melenas' Head (x1)
     .unitscan Lord Melenas
+step << Rogue
+    #season 2
+    .goto Teldrassil,51.2,50.6
+    >>Kill |cRXP_ENEMY_Lord Melenas|r. Loot him for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r]
+    .collect 203990,1
+    .unitscan Lord Melenas
+    .train 400094,1
+step << Rogue
+    #season 2
+    #label MutiRune
+    .train 400094 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r] |cRXP_WARN_to train|r |T132304:0|t[Mutilate]
+    .use 203990
+    .itemcount 203990,1
+step << Rogue
+    #season 2
+    .goto Teldrassil,77.86,61.66 
+    >>Kill |cRXP_ENEMY_Vicious Grell|r, |cRXP_ENEMY_Rascal Sprites|r and |cRXP_ENEMY_Shadow Sprites|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Bottom-Left Map Piece]|r
+    .collect 208604,1 -- Bottom-Left Map Piece (1)
+    .mob Vicious Grell
+    .mob Rascal Sprite
+    .mob Shadow Sprite
+    .train 398196,1
 step
     #softcore
     #completewith next
@@ -1064,11 +1171,34 @@ step
     >>|cRXP_FRIENDLY_Moon Priestess Amara|r |cRXP_WARN_patrols the road west of Dolanaar|r
     .accept 487 >> Accept The Road to Darnassus
     .target Moon Priestess Amara
+step << Rogue
+    #season 2
+    #completewith next
+    >>Kill or |T133644:0|t[Pick Pocket] |cRXP_ENEMY_Gnarlpine Furbolgs|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece]|r
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    .collect 208602,1 -- Top-Left Map Piece (1)
+    .mob Gnarlpine Ambusher
+    .mob Gnarlpine Shaman
+    .mob Gnarlpine Defender
+    .mob Gnarlpine Augur
+    .train 398196,1
 step
     .goto Teldrassil,46.6,53.0
     >>Kill |cRXP_ENEMY_Gnarlpine Ambushers|r
     .complete 487,1 --Kill Gnarlpine Ambusher (x6)
     .mob Gnarlpine Ambusher
+step << Rogue
+    #season 2
+    .goto Teldrassil,46.8,54.6,60,0
+    .goto Teldrassil,44.2,59.2
+    >>Kill or |T133644:0|t[Pick Pocket] |cRXP_ENEMY_Gnarlpine Furbolgs|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece]|r
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    .collect 208602,1 -- Top-Left Map Piece (1)
+    .mob Gnarlpine Ambusher
+    .mob Gnarlpine Shaman
+    .mob Gnarlpine Defender
+    .mob Gnarlpine Augur
+    .train 398196,1
 step << Druid
     .goto Teldrassil,55.83,58.31,40,0
     .goto Teldrassil,50.22,53.83
@@ -1091,6 +1221,19 @@ step
     .goto Teldrassil,38.43,34.03
     .use 18152 >>|cRXP_WARN_Use the|r |T134798:0|t[Amethyst Phial] |cRXP_WARN_at The Oracle Glade moonwell|r
     .complete 7383,1 --Collect Filled Amethyst Phial (x1)
+step << Rogue
+    #season 2
+    #completewith xp10
+    >>Kill or |T133644:0|t[Pick Pocket] |cRXP_ENEMY_Bloodfeather Harpies|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece]|r
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    .collect 208603,1 -- Bottom-Right Map Piece (1)
+    .mob Bloodfeather Harpy
+    .mob Bloodfeather Rogue
+    .mob Bloodfeather Sorceress
+    .mob Bloodfeather Fury
+    .mob Bloodfeather Wind Witch
+    .mob Bloodfeather Matriarch
+    .train 398196,1
 step
 	#era/som
     #completewith xp10
@@ -1109,6 +1252,26 @@ step
     .goto Teldrassil,34.61,28.79
     >>Click the |cRXP_PICK_Strange Fronded Plant|r
     .accept 931 >> Accept The Shimmering Frond
+step << Rogue
+    #season 2
+    .goto Teldrassil,38.92,79.93
+    >>Kill or |T133644:0|t[Pick Pocket] |cRXP_ENEMY_Gnarlpine Pathfinders|r and |cRXP_ENEMY_Gnarlpine Avengers|r. Loot them for a |T134241:0|t[|cRXP_LOOT_Gnarlpine Stash Key]|r
+    .collect 208749,1 -- Gnarlpine Stash Key (1)
+    .mob Gnarlpine Pathfinder
+    .mob Gnarlpine Avenger
+    .train 400081,1
+step << Rogue
+    #season 2
+    .goto Teldrassil,37.836,82.588
+    >>Open the |cRXP_PICK_Gnarlpine Stash|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Precision|r]
+    .collect 204174 -- Rune of Precision (1)
+    .itemcount 208749,1
+    .train 400081,1
+step << Rogue
+    #season 2
+    .train 400081 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Precision|r] |cRXP_WARN_to train|r |T135610:0|t[Between the Eyes]
+    .use 204174
+    .itemcount 204174,1
 step << Hunter
 	#era/som
     #completewith xp10
@@ -1174,6 +1337,35 @@ step << !Hunter
 	#label xp10
    .xp 10-930 << Druid
    .xp 10-3880 << !Druid
+step << Rogue
+    #season 2
+    .goto Teldrassil,37.8,43.0,60,0
+    .goto Teldrassil,36.0,34.4,60,0
+    .goto Teldrassil,34.6,28.8,60,0
+    .goto Teldrassil,37.8,43.0
+    >>Kill or |T133644:0|t[Pick Pocket] |cRXP_ENEMY_Bloodfeather Harpies|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece]|r
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    .collect 208603,1 -- Bottom-Right Map Piece (1)
+    .mob Bloodfeather Harpy
+    .mob Bloodfeather Rogue
+    .mob Bloodfeather Sorceress
+    .mob Bloodfeather Fury
+    .mob Bloodfeather Wind Witch
+    .mob Bloodfeather Matriarch
+    .train 398196,1
+step << Rogue
+    #season 2
+    .cast 418600 >>|cRXP_WARN_Use any of the|r |T134327:0|t[|cRXP_LOOT_Map Pieces]|r |cRXP_WARN_to combine them into the|r |T134269:0|t[|cRXP_LOOT_Teldrassil Treasure Map|r]
+    .collect 208605,1
+    .itemcount 208604,1
+    .itemcount 208601,1
+    .itemcount 208602,1
+    .itemcount 208603,1
+    .use 208604
+    .use 208601
+    .use 208602
+    .use 208603
+    .train 398196,1
 step
    #som
    #phase 3-6
@@ -1205,6 +1397,15 @@ step << !Rogue
     #requires xp10
     #completewith next
     .goto Darnassus,82.01,36.70,100 >> Travel to Darnassus
+step << Warrior
+    #season 2
+    .goto Darnassus,63.108,21.858
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delwynna|r upstairs
+    >>|cRXP_WARN_After turning in the three |cRXP_LOOT_Severed Heads|r you will receive the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
+    .train 403475 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r] |cRXP_WARN_to train|r |T135291:0|t[Devastate]
+    .use 204703
+    .skipgossip
+    .target Delwynna
 step << !Rogue
     #requires xp10
     .goto Darnassus,38.18,21.64
@@ -1340,6 +1541,18 @@ step
 	>>Click on |cRXP_LOOT_Denalans Planter|r
 	.turnin 941 >> Turn in Planting the Heart
 	.isQuestTurnedIn 927
+step << Warrior
+    #season 2
+    .goto Teldrassil,55.619,59.787
+    >>Talk to |cRXP_FRIENDLY_Innkeeper Keldamyr|r at Dolanaar
+    >>Talk to |cRXP_ENEMY_Syllart|r upstairs, then beat him up. He will pass out at 0%
+    >>If |cRXP_ENEMY_Syllart|r is not there wait for him to respawn
+    >>Talk to |cRXP_FRIENDLY_Innkeeper Keldamyr|r again after knocking out |cRXP_ENEMY_Syllart|r to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
+    .train 425447,1 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r] |cRXP_WARN_to train|r |T236317:0|t[Frenzied Assault]
+    >>|cRXP_WARN_Note: This can be quite difficult solo depending on your level. Look for some help if needed|r
+    .use 204716
+    .target Innkeeper Keldamyr
+    .mob Syllart
 step << Hunter
 	#era/som
     .goto Teldrassil,62.6,72.2
@@ -1748,9 +1961,28 @@ step
     .target Auctioneer Tolon
     .target Auctioneer Golothas
 step
-    #completewith next
+    #completewith NessaShadowsong
     .goto Darnassus,30.00,41.43,10 >> Travel through the purple portal to Rut'theran Village
+step << Rogue
+    #season 2
+    #completewith next
+    .goto Teldrassil,55.339,90.818
+    .cast 421424 >>|cRXP_WARN_Use the|r |T134269:0|t[|cRXP_LOOT_Teldrassil Treasure Map|r] |cRXP_WARN_inside the tree trunk at Rut'theran Village. This will cause a |cRXP_PICK_Buried Treasure|r to pop up|r
+    .use 208605
+    .itemcount 208605,1
+    .train 398196,1
+step << Rogue
+    #season 2
+    >>Open the |cRXP_PICK_Buried Treasure|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Draw|r]
+    .collect 203991,1 -- Rune of Quick Draw (1)
+    .train 398196,1
+step << Rogue
+    #season 2
+    .train 400095 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Draw|r] |cRXP_WARN_to train|r |T134536:0|t[Quick Draw]
+    .use 203991
+    .itemcount 203991,1
 step
+    #label NessaShadowsong
     .goto Teldrassil,56.25,92.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nessa Shadowsong|r
     .turnin 6344 >> Turn in Nessa Shadowsong

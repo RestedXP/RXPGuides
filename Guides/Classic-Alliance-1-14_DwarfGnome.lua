@@ -1028,6 +1028,14 @@ step << Priest/Mage/Warlock
 step
     #completewith next
     .goto Dun Morogh,42.38,55.28,40 >> Travel to The Grizzled Den
+step << Warrior
+    #season 2
+    #completewith next
+    >>Kill |cRXP_ENEMY_Wendigos|r. Loot them for their |cRXP_LOOT_Severed Wendigo Paw|r
+    .collect 208160,1 -- Severed Wendigo Paw (1)
+    .mob Young Wendigo
+    .mob Wendigo
+    .train 403475,1
 step
     .goto Dun Morogh,42.25,53.68,40,0
     .goto Dun Morogh,41.07,49.04,50,0
@@ -1038,6 +1046,23 @@ step
     .complete 313,1 --Collect Wendigo Mane (x8)
     .mob Wendigo
     .mob Young Wendigo
+step << Warrior
+    #season 2
+    >>Kill |cRXP_ENEMY_Wendigos|r. Loot them for their |cRXP_LOOT_Severed Wendigo Paw|r
+    .collect 208160,1 -- Severed Wendigo Paw (1)
+    .goto Dun Morogh,42.2,52.6
+    .mob Young Wendigo
+    .mob Wendigo
+    .train 403475,1
+step << Warrior
+    #season 2
+    .goto Dun Morogh,46.611,53.335
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Junni Steelpass|r
+    >>|cRXP_WARN_After turning in the three items, you will receive the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
+    .train 403475 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r] |cRXP_WARN_to train|r |T135291:0|t[Devastate]
+    .use 204703
+    .skipgossip
+    .target Junni Steelpass
 step
     .goto Dun Morogh,44.13,56.95
     >>Open the |cRXP_PICK_Ammo Crate|r. Loot it for |cRXP_LOOT_Rumbleshot's Ammo|r
@@ -1505,6 +1530,24 @@ step
     #completewith next
     .goto Dun Morogh,43.1,45.0,20,0
     .goto Dun Morogh,42.1,45.4,20 >> Travel to Shimmer Ridge. Follow the arrow and run up the mountain
+step << Warrior
+    #season 2
+    >>Kill |cRXP_ENEMY_Frostmane Trolls|r. Loot them for their |cRXP_LOOT_Severed Troll Head|r
+    .collect 208159,1 -- Severed Troll Head (1)
+    .mob Frostmane Headhunter
+    .mob Frostmane Snowstrider
+    .mob Frostmane Seer
+    .train 403475,1
+step << Rogue
+    #season 2
+    .goto Dun Morogh,25.4,50.8
+    >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Frostmane Trolls|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Right Map Piece]|r
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    .collect 208213,1 -- Top-Right Map Piece (1)
+    .mob Frostmane Seer
+    .mob Frostmane Headhunter
+    .mob Frostmane Snowstrider
+    .train 398196,1
 step
     .goto Dun Morogh,40.9,45.3,50,0
     .goto Dun Morogh,41.5,43.6,50,0
@@ -1519,6 +1562,26 @@ step
     >>|cRXP_LOOT_Shimmerweed|r can also be looted from |cRXP_PICK_Shimmerweed Baskets|r on the ground
     .complete 315,1 --Collect Shimmerweed (x6)
     .mob Frostmane Seer
+step << Rogue
+    #season 2
+    .goto Dun Morogh,25.4,50.8
+    >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Frostmane Trolls|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Right Map Piece]|r
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    .collect 208213,1 -- Top-Right Map Piece (1)
+    .mob Frostmane Seer
+    .mob Frostmane Headhunter
+    .mob Frostmane Snowstrider
+    .train 398196,1
+step << Warrior
+    #season 2
+    >>Kill |cRXP_ENEMY_Frostmane Trolls|r. Loot them for their |cRXP_LOOT_Severed Troll Head|r
+    .collect 208159,1 -- Severed Troll Head (1)
+    .goto Dun Morogh,41.6,43.8,60,0
+    .goto Dun Morogh,42.2,35.0
+    .mob Frostmane Headhunter
+    .mob Frostmane Snowstrider
+    .mob Frostmane Seer
+    .train 403475,1
 step << !Mage !Warlock
     .goto Dun Morogh,38.517,53.927
     >>Open |cRXP_PICK_MacGrann's Meat Locker|r. Loot it for |cRXP_LOOT_MacGrann's Dried Meats|r
@@ -1559,6 +1622,14 @@ step
     .target Marleth Barleybrew
     .goto Dun Morogh,30.186,45.531
     .turnin 311 >> Turn in Return to Marleth
+step << Rogue
+    #season 2
+    #completewith next
+    >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Leper Gnomes|r. Loot them for the |T134269:0|t[|cRXP_LOOT_Bottom-Right Map Piece]|r
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    .collect 208218,1 -- Bottom-Right Map Piece (1)
+    .mob Leper Gnome
+    .train 398196,1
 step
     #era << Warlock
     .goto Dun Morogh,27.2,43.0,60,0
@@ -1571,6 +1642,14 @@ step
     .complete 412,2 --Collect Gyromechanic Gear (x8)
     .complete 412,1 --Collect Restabilization Cog (x8)
     .mob Leper Gnome
+step << Rogue
+    #season 2
+    .goto Dun Morogh,26.0,41.8
+    >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Leper Gnomes|r. Loot them for the |T134269:0|t[|cRXP_LOOT_Bottom-Right Map Piece]|r
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    .collect 208218,1 -- Bottom-Right Map Piece (1)
+    .mob Leper Gnome
+    .train 398196,1
 step
     #era
     .xp 9 >> Grind to 9
@@ -1714,6 +1793,24 @@ step
     .goto Dun Morogh,69.084,56.330
     .target Senator Mehr Stonehallow
     .target Foreman Stonebrow
+step << Warrior
+    #season 2
+    #completewith next
+    >>Kill |cRXP_ENEMY_Rockjaw Troggs|r. Loot them for their |cRXP_LOOT_Pristine Trogg Heart|r
+    .collect 208158,1 -- Pristine Trogg Heart (1)
+    .mob Rockjaw Ambusher
+    .mob Rockjaw Skullthumper
+    .mob Rockjaw Bonesnapper
+    .train 403475,1
+step << Rogue
+    #season 2
+    #completewith next
+    >>|T133644:0|t[Pick Pocket] the |cRXP_ENEMY_Rockjaw Skullthumpers|r and |cRXP_ENEMY_Rockjaw Bonesnappers|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece]|r
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    .collect 208215,1 -- Top-Left Map Piece (1)
+    .mob Rockjaw Skullthumper
+    .mob Rockjaw Bonesnapper
+    .train 398196,1
 step
     .goto Dun Morogh,70.7,56.4,40,0
     .goto Dun Morogh,70.62,52.39,25,0
@@ -1723,6 +1820,24 @@ step
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
     .mob Rockjaw Skullthumper
     .mob Rockjaw Bonesnapper
+step << Rogue
+    #season 2
+    .goto Dun Morogh,70.8,56.0
+    >>|T133644:0|t[Pick Pocket] the |cRXP_ENEMY_Rockjaw Skullthumpers|r and |cRXP_ENEMY_Rockjaw Bonesnappers|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece]|r
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    .collect 208215,1 -- Top-Left Map Piece (1)
+    .mob Rockjaw Skullthumper
+    .mob Rockjaw Bonesnapper
+    .train 398196,1
+step << Warrior
+    #season 2
+    >>Kill |cRXP_ENEMY_Rockjaw Troggs|r. Loot them for their |cRXP_LOOT_Pristine Trogg Heart|r
+    .collect 208158,1 -- Pristine Trogg Heart (1)
+    .goto Dun Morogh,70.6,56.6
+    .mob Rockjaw Ambusher
+    .mob Rockjaw Skullthumper
+    .mob Rockjaw Bonesnapper
+    .train 403475,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Stonebrow|r and |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
     .turnin 432 >> Turn in Those Blasted Troggs!
@@ -1735,6 +1850,54 @@ step
     #era
     .goto Dun Morogh,67.1,59.7
     .xp 10 >> Grind to 10
+step << Warrior
+    #season 2
+    .goto Dun Morogh,46.611,53.335
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Junni Steelpass|r
+    >>|cRXP_WARN_After turning in the three items, you will receive the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
+    .train 403475 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r] |cRXP_WARN_to train|r |T135291:0|t[Devastate]
+    .use 204703
+    .skipgossip
+    .target Junni Steelpass
+step << Rogue
+    #season 2
+    .goto Dun Morogh,77.86,61.66 
+    >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Dark Iron Spies|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Bottom-Left Map Piece]|r
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    .collect 208219,1 -- Bottom-Left Map Piece (1)
+    .mob Dark Iron Spy
+    .train 398196,1
+step << Rogue
+    #season 2
+    .cast 418600 >>|cRXP_WARN_Use any of the|r |T134327:0|t[|cRXP_LOOT_Map Pieces]|r |cRXP_WARN_to combine them into the|r |T134269:0|t[|cRXP_LOOT_Dun Morogh Treasure Map|r]
+    .collect 208220,1
+    .itemcount 208219,1
+    .itemcount 208213,1
+    .itemcount 208215,1
+    .itemcount 208218,1
+    .use 208219
+    .use 208213
+    .use 208215
+    .use 208218
+    .train 398196,1
+step << Rogue
+    #season 2
+    #completewith next
+    .goto Dun Morogh,46.985,43.632
+    .cast 418599 >>|cRXP_WARN_Use the|r |T134269:0|t[|cRXP_LOOT_Dun Morogh Treasure Map|r] |cRXP_WARN_under the small bridge. This will cause a |cRXP_PICK_Buried Treasure|r to pop up|r
+    .use 208220
+    .itemcount 208220,1
+    .train 398196,1
+step << Rogue
+    #season 2
+    >>Open the |cRXP_PICK_Buried Treasure|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Draw|r]
+    .collect 203991,1 -- Rune of Quick Draw (1)
+    .train 398196,1
+step << Rogue
+    #season 2
+    .train 400095 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Draw|r] |cRXP_WARN_to train|r |T134536:0|t[Quick Draw]
+    .use 203991
+    .itemcount 203991,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Hammerfoot|r
     .target Pilot Hammerfoot
@@ -1876,6 +2039,90 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
     .fly Ironforge >> Fly to Ironforge
     .target Thorgrum Borrelson
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Golnir Bouldertoe|r
+    .target Golnir Bouldertoe
+    .goto Ironforge,51.521,26.311
+    .turnin 6391 >> Turn in Ride to Ironforge
+    .accept 6388 >> Accept Gryth Thurden
+step << Rogue
+    #season 2
+    .goto Ironforge,51.913,13.383
+    >>Open the |cRXP_PICK_Dusty Chest|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Precision|r]
+    >>|cRXP_WARN_Doing this will spawn two level 10 |cRXP_ENEMY_Cut-throat Muggers|r which will attack you|r
+    .collect 204174,1 -- Rune of Precision (1)
+    .mob Cut-throat Mugger
+    .train 400081,1
+step << Rogue
+    #season 2
+    .train 400081 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Precision|r] |cRXP_WARN_to train|r |T135610:0|t[Between the Eyes]
+    .use 204174
+    .itemcount 204174,1
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Barin Redstone|r
+    .target Senator Barin Redstone
+    .goto Ironforge,43.64,50.63,20,0
+    .goto Ironforge,39.550,57.490
+    .turnin 291 >> Turn in The Reports
+step << Paladin
+    #season 2
+    #completewith next
+    .goto Ironforge,71.54,73.46,10,0
+    .goto Ironforge,72.53,76.94,10 >>Travel toward |cRXP_FRIENDLY_Bruuk Barleybeard|r inside the Inn
+    .train 425621,1
+step << Paladin
+    #season 2
+    .goto Ironforge,72.53,76.94
+    .gossipoption 110791 >>Talk to |cRXP_FRIENDLY_Bruuk Barleybeard|r inside
+    .target Bruuk Barleybeard
+    .skipgossip 5570,1,1
+    .train 425621,1
+--XX 110793 "How's business?"
+--XX 110791 "Sounds like you need someone to bounce him for you."
+step << Paladin
+    #season 2
+    .goto Ironforge,72.40,73.63
+    .gossipoption 109084 >>Talk to |cRXP_FRIENDLY_Bruart|r to start a fight
+    >>Defeat |cRXP_ENEMY_Bruart|r
+    >>|cRXP_WARN_Be careful as he casts|r |T132939:0|t[Backhand] |cRXP_WARN_(stuns you for 2 seconds)|r
+    >>|cRXP_WARN_Remember to pre-cast|r |T135924:0|t[Seal of the Crusader] |cRXP_WARN_on him|r
+    >>|cRXP_WARN_DO NOT accidentally cast|r |T135906:0|t[Blessing of Might] |cRXP_WARN_on him|r
+    >>|cRXP_WARN_Kite him upstairs to the balcony, then drop down outside the inn cast|r |T135920:0|t[Holy Light] |cRXP_WARN_if needed|r
+    .mob Bruart
+    .skipgossip 209004,1
+    .train 425621,1
+--XX 109084 "Seems you've had a few too many"
+--XX Check if another player can skip the "how's business" dialogue for you (paladin, warrior)
+step << Paladin
+    #season 2
+    .goto Ironforge,72.40,73.63,-1
+    .goto Ironforge,72.53,76.94,-1
+    >>Defeat |cRXP_ENEMY_Bruart|r
+    >>|cRXP_WARN_Be careful as he casts|r |T132939:0|t[Backhand] |cRXP_WARN_(stuns you for 2 seconds)|r
+    >>|cRXP_WARN_Remember to pre-cast|r |T135924:0|t[Seal of the Crusader] |cRXP_WARN_on him|r
+    >>|cRXP_WARN_DO NOT accidentally cast|r |T135906:0|t[Blessing of Might] |cRXP_WARN_on him|r
+    >>|cRXP_WARN_Kite him upstairs to the balcony, then drop down outside the inn cast|r |T135920:0|t[Holy Light] |cRXP_WARN_if needed|r
+    >>|cRXP_WARN_After defeating |cRXP_ENEMY_Bruart|r:|r
+    >>Talk to |cRXP_FRIENDLY_Bruuk Barleybeard|r again to receive the |T134419:0|t[Rune of Rebuke]
+    >>|cRXP_WARN_If he doesn't give you the|r |T134419:0|t[Rune of Rebuke]|cRXP_WARN_, you may need to fight |cRXP_ENEMY_Bruart|r again|r
+    .collect 205683,1 --Rune of Rebuke (1)
+    .target Bruuk Barleybeard
+    .skipgossip 5570,2,1
+    .skipgossip 209004,1
+    .train 425621,1
+--XX 109539 "I've taken care of Stuart. He shouldn't be a problem anymore."
+step << Paladin
+    #season 2
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Rebuke] |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants: Rebuke]
+    .use 205683
+    .itemcount 205683,1 --Rune of Rebuke (1)
+    .train 425621,1
+step << Paladin
+    #season 2
+    #completewith DRT
+    .engrave 7 >>|cRXP_WARN_Engrave your|r |T134596:0|t|cRXP_LOOT_[Pants]|r with|r |T134596:0|t[Engrave Pants: Rebuke]
+    >>|cRXP_WARN_Remember to put|r |T134919:0|t[Rebuke] |cRXP_WARN_onto your action bars|r
+    .train 425621,2
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Bixi Wobblebonk|r and |cFF00FF25Buliwyf Stonehand|r
     >>Train Thrown and 2h Maces if you didn't earlier
@@ -1891,18 +2138,19 @@ step << Warrior
     >>|cFFFCDC00Buy a|r |T135641:0|t[Balanced Throwing Dagger]
     .collect 2946,1 -- setting it to a count of 1 incase they already have/used some for vagash earlier
     .target Brenwyn Wintersteel
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Golnir Bouldertoe|r
-    .target Golnir Bouldertoe
-    .goto Ironforge,51.521,26.311
-    .turnin 6391 >> Turn in Ride to Ironforge
-    .accept 6388 >> Accept Gryth Thurden
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Barin Redstone|r
-    .target Senator Barin Redstone
-    .goto Ironforge,43.64,50.63,20,0
-    .goto Ironforge,39.550,57.490
-    .turnin 291 >> Turn in The Reports
+step << Warrior
+    #season 2
+    .goto Ironforge,72.512,76.942
+    >>Talk to |cRXP_FRIENDLY_Bruuk Barleybeard|r at the Military Ward
+    >>Talk to |cRXP_ENEMY_Bruart|r by the doorway, then beat him up. He will pass out at 0%
+    >>If |cRXP_ENEMY_Bruart|r is not there wait for him to respawn
+    >>Talk to |cRXP_FRIENDLY_Bruuk Barleybeard|r again after knocking out |cRXP_ENEMY_Bruart|r to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
+    .train 425447,1 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r] |cRXP_WARN_to train|r |T236317:0|t[Frenzied Assault]
+    >>|cRXP_WARN_Note: This can be quite difficult solo depending on your level. Look for some help if needed|r
+    .use 204716
+    .target Bruuk Barleybeard
+    .mob Bruart
+--XX This #season 2 section needs a logout skip video from the inn where you defeat Bruart
 step
     >>|cRXP_WARN_Do NOT fly anywhere|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
@@ -1916,6 +2164,7 @@ step
     .link https://www.youtube.com/watch?v=PWMJhodh6Bw >> CLICK HERE
     .zoneskip Ironforge,1
 step
+    #label DRT
     .goto Ironforge,78.00,52.00,5,0
     >>|cRXP_WARN_Enter the Deeprun Tram|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monty|r on the middle platform
@@ -1953,6 +2202,40 @@ step
     .target Furen Longbeard
     .goto StormwindClassic,58.091,16.552
     .turnin 1338 >> Turn in Stormpike's Order
+step << Paladin
+    #season 2
+    #completewith next
+    .goto StormwindClassic,42.51,33.51,20 >> Travel to the Stormwind Cathedral
+step << Paladin
+    #season 2
+    .goto StormwindClassic,38.10,28.10
+    .gossipoption 109653 >>Talk to |cRXP_FRIENDLY_Brother Romulus|r
+    .target Brother Romulus
+    .skipgossip
+    .train 410015,1
+step << Paladin
+    #season 2
+    #completewith next
+    .goto StormwindClassic,37.39,29.76,5,0
+    .goto StormwindClassic,37.87,29.10,5,0
+    .goto StormwindClassic,36.52,32.67,8,0
+    .goto StormwindClassic,36.55,33.45,8,0
+    .goto StormwindClassic,35.95,34.05,8,0
+    .goto StormwindClassic,35.46,33.03,8,0
+    .goto StormwindClassic,35.95,31.54,8,0
+    .goto StormwindClassic,34.79,29.31,8,0
+    .goto StormwindClassic,33.69,29.69,8,0
+    .goto StormwindClassic,32.57,27.49,8,0
+    .goto StormwindClassic,33.41,25.61,8,0
+    >>Go downstairs into the western side of the Cathedral's Crypt
+    .goto StormwindClassic,32.86,24.77,8 >>Travel toward the |cRXP_LOOT_Charred Note|r in the crypt
+    .train 410015,1
+step << Paladin
+    #season 2
+    .goto StormwindClassic,32.86,24.87
+    >>Loot the |cRXP_LOOT_Charred Note|r next to the candles
+    .collect 205864,1 --Charred Note (1)
+    .train 410015,1
 step << Priest
     #completewith next
     .goto StormwindClassic,42.51,33.51,20 >> Travel to the Stormwind Cathedral
@@ -2143,6 +2426,12 @@ step << Warlock
     .accept 176 >> Accept Wanted: "Hogger"
     .goto Elwynn Forest,24.548,74.672
     .target Deputy Rainer
+step << Paladin
+    #season 2
+    >>Click the |cRXP_PICK_Wanted Poster|r
+    .accept 176 >> Accept Wanted: "Hogger"
+    .goto Elwynn Forest,24.548,74.672
+    .target Deputy Rainer
 step << Warlock
     #completewith next
     >>|cRXP_WARN_The|r |T134939:0|t[|cRXP_LOOT_Gold Pickup Schedule|r] |cRXP_WARN_is a very rare drop. Ignore this step if you don't get it|r
@@ -2171,6 +2460,85 @@ step << Warlock
     >>|cRXP_WARN_This quest is difficult. Find a group for him if needed. Skip this step if you're unable to find a group or solo him|r
     .complete 176,1 --Huge Gnoll Claw (1)
     .unitscan Hogger
+step << Paladin
+    #season 2
+    #completewith next
+    >>|cRXP_WARN_The|r |T134939:0|t[|cRXP_LOOT_Gold Pickup Schedule|r] |cRXP_WARN_is a very rare drop. Ignore this step if you don't get it|r
+    >>|cRXP_ENEMY_Gruff Swiftbite|r |cRXP_WARN_a rare spawn, does have a 100% drop chance|r
+    .use 1307 >>|cRXP_WARN_Use the |T134939:0|t[|cRXP_LOOT_Gold Pickup Schedule|r] to start the quest|r
+    .collect 1307,1,123 --Collect Gold Pickup Schedule (x1)
+    .accept 123 >> Accept The Collector
+    .unitscan Gruff Swiftbite
+step << Paladin
+    #season 2
+    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto Elwynn Forest,26.1,89.9,70,0
+    .goto Elwynn Forest,25.2,92.7,70,0
+    .goto Elwynn Forest,27.0,93.9,70,0
+    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto Elwynn Forest,26.1,89.9,70,0
+    .goto Elwynn Forest,25.2,92.7,70,0
+    .goto Elwynn Forest,27.0,93.9,70,0
+    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto Elwynn Forest,26.1,89.9,70,0
+    .goto Elwynn Forest,25.2,92.7,70,0
+    .goto Elwynn Forest,27.0,93.9,70,0
+    .goto Elwynn Forest,25.9,93.9
+    >>Kill |cRXP_ENEMY_Hogger|r. Loot him for his |cRXP_LOOT_Claw|r
+    >>|cRXP_ENEMY_Hogger|r |cRXP_WARN_can spawn in multiple locations|r
+    >>|cRXP_WARN_This quest is difficult. Find a group for him if needed. Skip this step if you're unable to find a group or solo him|r
+    .complete 176,1 --Huge Gnoll Claw (1)
+    .unitscan Hogger
+step << Paladin
+    #season 2
+    #completewith next
+    #label Island
+    .goto Duskwood,4.33,28.26,50 >>Travel toward |cRXP_FRIENDLY_Ada Gelhardt|r on the island
+    .train 410015,1
+    .itemcount 205864,1 --Charred Note (1)
+step << Paladin
+    #season 2
+    #completewith next
+    .goto Duskwood,4.33,28.26
+    .gossipoption 109610 >>Talk to |cRXP_FRIENDLY_Ada Gelhardt|r to start a fight
+    .target Ada Gelhardt
+    .skipgossip 205153,1
+    .train 410015,1
+    .itemcount 205864,1 --Charred Note (1)
+--XX 109612 "As one candle is snuffed out, another is lit"
+--XX 109611 "I've been sent by brother Romulus. Please, Ada, return with me to the Cathedral of Light"
+--XX 109610 "I see. I'm sorry it has come to this, sister. (Fight Ada)"
+step << Paladin
+    #season 2
+    #requires Island
+    .goto Duskwood,4.33,28.26
+    >>Defeat |cRXP_ENEMY_Ada Gelhardt|r
+    >>|cRXP_WARN_Remember to pre-cast|r |T135924:0|t[Seal of the Crusader] |cRXP_WARN_on her|r
+    >>|cRXP_WARN_Be careful as she casts|r |T136197:0|t[Shadow Shock] |cRXP_WARN_(instantly deals 45 shadow damage. Costs her 75 mana. You should kill her quick enough for her to only cast it 3 times)|r
+    >>|cRXP_WARN_After defeating |cRXP_ENEMY_Ada Gelhardt|r:|r
+    >>Talk to |cRXP_FRIENDLY_Ada Gelhardt|r again to receive the |T134419:0|t[Rune of Martyrdom]
+    .collect 205897,1 --Rune of Martyrdom (1)
+    .target Ada Gelhardt
+    .skipgossip 205153,1
+    .train 410015,1
+    .itemcount 205864,1 --Charred Note (1)
+--XX Must have had the Charred Note to unlock the dialogue
+step << Paladin
+    #season 2
+    #sticky
+    .destroy 205864 >> Delete the |T134939:0|t[Charred Note] from your bags, as it's no longer needed
+step << Paladin
+    #season 2
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Martyrdom] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest: Seal of Martyrdom]
+    .use 205897
+    .itemcount 205897,1 --Rune of Martyrdom (1)
+    .train 410015,1
+step << Paladin
+    #season 2
+    .goto Westfall,36.24,54.52
+    .engrave 5 >>|cRXP_WARN_Engrave your|r |T134596:0|t|cRXP_LOOT_[Chest]|r with|r |T133815:0|t[Engrave Chest: Seal of Martyrdom]
+    >>|cRXP_WARN_Remember to put|r |T135961:0|t[Seal of Martyrdom] |cRXP_WARN_onto your action bars. It is better than both|r |T132325:0|t[Seal of Righteousness] |cRXP_WARN_and|r |T132347:0|t[Seal of Command] |cRXP_WARN_(until you get|r |T133815:0|t[Engrave Chest: Divine Storm]|cRXP_WARN_)|r
+    .train 410015,2
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r and |cRXP_FRIENDLY_"Auntie" Bernice Stonefield|r
     .target Ma Stonefield
@@ -2226,15 +2594,25 @@ step
     .target Remy "Two Times"
     .goto Elwynn Forest,42.140,67.254
     .turnin 47 >> Turn in Gold Dust Exchange
-step
+step << Paladin
+    #season 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .target Marshal Dughan
     .goto Elwynn Forest,42.108,65.928
     .turnin 62 >> Turn in The Fargodeep Mine
     .turnin 40 >> Turn in A Fishy Peril
     .accept 35 >> Accept Further Concerns
-    .turnin 176,3 >> Turn in Wanted: "Hogger" << Warlock
-    .isQuestComplete 176 << Warlock
+    .turnin 176,2 >> Turn in Wanted: "Hogger"
+    .isQuestComplete 176
+step << Warlock
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
+    .target Marshal Dughan
+    .goto Elwynn Forest,42.108,65.928
+    .turnin 62 >> Turn in The Fargodeep Mine
+    .turnin 40 >> Turn in A Fishy Peril
+    .accept 35 >> Accept Further Concerns
+    .turnin 176,3 >> Turn in Wanted: "Hogger"
+    .isQuestComplete 176
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .target Marshal Dughan
@@ -2900,6 +3278,14 @@ step
     .collect 4470,2 --Simple Wood (2)
     .collect 4471,1 --Flint and Tinder (1)
     .target Yanni Stoutheart
+step << Warrior
+    #season 2
+    #completewith next
+    >>Kill |cRXP_ENEMY_Troggs|r. Loot them for a |cRXP_LOOT_Skull-Shaped Geode|r
+    .collect 208847,1 -- Skull-Shaped Geode (1)
+    .mob Stonesplinter Scout
+    .mob Stonesplinter Trogg
+    .train 425443,1
 step
     .goto Loch Modan,27.01,48.74,0
     .goto Loch Modan,27.68,56.83,0
@@ -2924,6 +3310,24 @@ step
     #som
     .goto Loch Modan,27.4,48.4
     .xp 14-2300 >> Grind until you are 2300xp away from level 14 (9100/11400)
+step << Warrior
+    #season 2
+    .goto Loch Modan,33.2,73.8
+    >>Kill a |cRXP_ENEMY_Stonesplinter Skullthumper|r
+    >>|cRXP_WARN_During combat it'll give you a nice thumpin' which will turn the |cRXP_LOOT_Skull-Shaped Geode|r into a|r |T236489:0|t[|cRXP_LOOT_Cracked Skull-Shaped Geode|r]
+    .collect 208848,1 -- Cracked Skull-Shaped Geode (1)
+    .mob Stonesplinter Skullthumper
+    .train 425443,1
+step << Warrior
+    #season 2
+    .use 208848 >>|cRXP_WARN_Use the|r |T236489:0|t[|cRXP_LOOT_Cracked Skull-Shaped Geode|r] |cRXP_WARN_to receive the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Strike|r]
+    .collect 208778,1 -- Rune of Quick Strike (1)
+    .train 425443,1
+step << Warrior
+    #season 2
+    .train 425443 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Strike|r] |cRXP_WARN_to train|r |T132394:0|t[Quick Strike]
+    .use 208778
+    .itemcount 208778,1
 step
     #completewith next
     .goto Loch Modan,24.78,70.17,10,0
