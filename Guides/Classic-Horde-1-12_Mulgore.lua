@@ -1610,7 +1610,8 @@ step
     #label ZamahPickup
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
-    >>|cRXP_WARN_Wait for the RP to finish. This starts a timed quest!|r
+    >>|cRXP_WARN_Wait for the RP to finish|r 
+    >>|cRXP_WARN_This starts a 45-minute timed quest|r
     .turnin 848 >>Turn in Fungal Spores
     .accept 853 >>Accept Apothecary Zamah
     .target Apothecary Helbrim
@@ -1968,6 +1969,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazrog|r
     .accept 869 >>Accept Raptor Thieves
     .target Gazrog
+step << Shaman
+    #completewith next
+    >>Check for Chen's Empty Keg next to |cRXP_FRIENDLY_Kranal|r. Loot it and start the quest, otherwise you'll get it later
+    .collect 4926,1,819 --Collect Chen's Empty Keg
+    .accept 819 >> Accept Chen's Empty Keg
 step << Shaman
     .goto The Barrens,55.86,19.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kranal|r

@@ -739,7 +739,8 @@ local function handleQuestComplete()
     end
 
     -- If auto rewards disabled, abort because not doing anything further
-    if not addon.settings.profile.enableQuestChoiceAutomation then return end
+    -- also disables the auto picker if the quest is not in the guide
+    if not (addon.settings.profile.enableQuestChoiceAutomation and addon.questTurnIn[id]) then return end
 
     -- upgrade is more useful than selling
     if bestRatioOption > 0 then

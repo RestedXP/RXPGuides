@@ -210,7 +210,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #season 2
-    .goto Dun Morogh,29,49
+    .goto Dun Morogh,28.852,49.859
     >>Cast |T132212:0|t[Hunter's Mark] on the |cRXP_ENEMY_Rustling Bush|r
     >>Kill the |cRXP_ENEMY_Razormane Poacher|r that spawns. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
     .collect 206155,1 --Rune of Markmanship (1)
@@ -497,11 +497,11 @@ step
     +|cRXP_WARN_You need to have learned|r |T132164:0|t[Tame Beast] |cRXP_WARN_to be able to obtain this rune|r
 step
     #season 2
-    .goto Teldrassil,46.2 51.2,20,0
-    .goto Teldrassil,46.8 54.6,20,0
-    .goto Teldrassil,48.8 55.4,20,0
+    .goto Teldrassil,46.2,51.2,20,0
+    .goto Teldrassil,46.8,54.6,20,0
+    .goto Teldrassil,48.8,55.4,20,0
     .goto Teldrassil,71.0,58.0,20,0
-    .goto Teldrassil,44.8 61.2,20,0
+    .goto Teldrassil,44.8,61.2
     >>Kill |cRXP_ENEMY_Gnarlpines|r. Loot them for |T134419:0|t[|cRXP_LOOT_Deer Musk|r]
     .collect 208607,1 --Deer Musk (1)
     .train 425758,1

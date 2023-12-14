@@ -138,10 +138,10 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 401767,1
-    .goto Stormwind,55.8,65.2,-1 
-    .goto Stormwind,32.4,80.0,-1 
-    .goto Stormwind,43.4,26.8,-1 
-    .goto Stormwind,36.0,74.8,-1 
+    .goto Stormwind City,55.8,65.2,-1 
+    .goto Stormwind City,32.4,80.0,-1 
+    .goto Stormwind City,43.4,26.8,-1 
+    .goto Stormwind City,36.0,74.8,-1 
     .goto Elwynn Forest,64.8,69.2,-1 
     .goto Ironforge,19.6,56.2,-1  
     .goto Undercity,69.6,39.2,-1 
@@ -191,10 +191,10 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 401767,1
-    .goto Stormwind,55.8,65.2,-1 
-    .goto Stormwind,32.4,80.0,-1 
-    .goto Stormwind,43.4,26.8,-1 
-    .goto Stormwind,36.0,74.8,-1 
+    .goto Stormwind City,55.8,65.2,-1 
+    .goto Stormwind City,32.4,80.0,-1 
+    .goto Stormwind City,43.4,26.8,-1 
+    .goto Stormwind City,36.0,74.8,-1 
     .goto Elwynn Forest,64.8,69.2,-1 
     .goto Ironforge,19.6,56.2,-1  
     .goto Undercity,69.6,39.2,-1 
@@ -353,10 +353,10 @@ RXPGuides.RegisterGuide([[
 -- << Alliance
 
 step
-    .goto Stormwind,55.8,65.2,-1 
-    .goto Stormwind,32.4,80.0,-1 
-    .goto Stormwind,43.4,26.8,-1 
-    .goto Stormwind,36.0,74.8,-1 
+    .goto Stormwind City,55.8,65.2,-1 
+    .goto Stormwind City,32.4,80.0,-1 
+    .goto Stormwind City,43.4,26.8,-1 
+    .goto Stormwind City,36.0,74.8,-1 
     .goto Elwynn Forest,64.8,69.2,-1 
     .goto Ironforge,19.6,56.2,-1  
     .goto Undercity,69.6,39.2,-1 
@@ -401,10 +401,10 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 401765,1
-    .goto Stormwind,55.8,65.2,-1 
-    .goto Stormwind,32.4,80.0,-1 
-    .goto Stormwind,43.4,26.8,-1 
-    .goto Stormwind,36.0,74.8,-1 
+    .goto Stormwind City,55.8,65.2,-1 
+    .goto Stormwind City,32.4,80.0,-1 
+    .goto Stormwind City,43.4,26.8,-1 
+    .goto Stormwind City,36.0,74.8,-1 
     .goto Elwynn Forest,64.8,69.2,-1 
     .goto Ironforge,19.6,56.2,-1  
     .goto Undercity,69.6,39.2,-1 
@@ -529,10 +529,10 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 401759,1
-    .goto Stormwind,55.8,65.2,-1 
-    .goto Stormwind,32.4,80.0,-1 
-    .goto Stormwind,43.4,26.8,-1 
-    .goto Stormwind,36.0,74.8,-1 
+    .goto Stormwind City,55.8,65.2,-1 
+    .goto Stormwind City,32.4,80.0,-1 
+    .goto Stormwind City,43.4,26.8,-1 
+    .goto Stormwind City,36.0,74.8,-1 
     .goto Elwynn Forest,64.8,69.2,-1 
     .goto Ironforge,19.6,56.2,-1  
     .goto Undercity,69.6,39.2,-1 
@@ -575,10 +575,10 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 401759,1
-    .goto Stormwind,55.8,65.2,-1 
-    .goto Stormwind,32.4,80.0,-1 
-    .goto Stormwind,43.4,26.8,-1 
-    .goto Stormwind,36.0,74.8,-1 
+    .goto Stormwind City,55.8,65.2,-1 
+    .goto Stormwind City,32.4,80.0,-1 
+    .goto Stormwind City,43.4,26.8,-1 
+    .goto Stormwind City,36.0,74.8,-1 
     .goto Elwynn Forest,64.8,69.2,-1 
     .goto Ironforge,19.6,56.2,-1  
     .goto Undercity,69.6,39.2,-1 
@@ -717,10 +717,10 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 415942,1
-    .goto Stormwind,55.8,65.2,-1 
-    .goto Stormwind,32.4,80.0,-1 
-    .goto Stormwind,43.4,26.8,-1 
-    .goto Stormwind,36.0,74.8,-1 
+    .goto Stormwind City,55.8,65.2,-1 
+    .goto Stormwind City,32.4,80.0,-1 
+    .goto Stormwind City,43.4,26.8,-1 
+    .goto Stormwind City,36.0,74.8,-1 
     .goto Elwynn Forest,64.8,69.2,-1 
     .goto Ironforge,19.6,56.2,-1  
     .goto Undercity,69.6,39.2,-1 
@@ -1047,7 +1047,7 @@ step
 step << Alliance
     #completewith next
     .train 425170,1
-    .zone Stormwind >>Travel to Stormwind
+    .zone Stormwind City >>Travel to Stormwind
 step << Alliance
     .train 425170,1
     .goto Stormwind City,37.81,79.98
@@ -1102,10 +1102,10 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 401768,1
-    .goto Stormwind,55.8,65.2,-1 
-    .goto Stormwind,32.4,80.0,-1 
-    .goto Stormwind,43.4,26.8,-1 
-    .goto Stormwind,36.0,74.8,-1 
+    .goto Stormwind City,55.8,65.2,-1 
+    .goto Stormwind City,32.4,80.0,-1 
+    .goto Stormwind City,43.4,26.8,-1 
+    .goto Stormwind City,36.0,74.8,-1 
     .goto Elwynn Forest,64.8,69.2,-1 
     .goto Ironforge,19.6,56.2,-1  
     .goto Undercity,69.6,39.2,-1 
@@ -1129,7 +1129,7 @@ step
     .goto Elwynn Forest,63.6,58.6,20,0
     .train 401556,1
     >>Kill |cRXP_ENEMY_Kobold Geomancer|r loot them for |cRXP_LOOT_|T134939:0|t[Spell Notes: MILEGIN VALF]|r
-    .collect 203746,1
+    .collect 203752,1
     .mob Kobold Geomancer
 step
     .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
@@ -1149,10 +1149,10 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 401768,1
-    .goto Stormwind,55.8,65.2,-1 
-    .goto Stormwind,32.4,80.0,-1 
-    .goto Stormwind,43.4,26.8,-1 
-    .goto Stormwind,36.0,74.8,-1 
+    .goto Stormwind City,55.8,65.2,-1 
+    .goto Stormwind City,32.4,80.0,-1 
+    .goto Stormwind City,43.4,26.8,-1 
+    .goto Stormwind City,36.0,74.8,-1 
     .goto Elwynn Forest,64.8,69.2,-1 
     .goto Ironforge,19.6,56.2,-1  
     .goto Undercity,69.6,39.2,-1 
@@ -1292,10 +1292,10 @@ RXPGuides.RegisterGuide([[
 
 step << Alliance
     .train 401757,1
-    .goto Stormwind,55.8,65.2,-1 
-    .goto Stormwind,32.4,80.0,-1 
-    .goto Stormwind,43.4,26.8,-1 
-    .goto Stormwind,36.0,74.8,-1 
+    .goto Stormwind City,55.8,65.2,-1 
+    .goto Stormwind City,32.4,80.0,-1 
+    .goto Stormwind City,43.4,26.8,-1 
+    .goto Stormwind City,36.0,74.8,-1 
     .goto Elwynn Forest,64.8,69.2,-1 
     .goto Ironforge,19.6,56.2,-1  
     .goto Undercity,69.6,39.2,-1 
@@ -1359,10 +1359,10 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 415936,1
-    .goto Stormwind,55.8,65.2,-1 
-    .goto Stormwind,32.4,80.0,-1 
-    .goto Stormwind,43.4,26.8,-1 
-    .goto Stormwind,36.0,74.8,-1 
+    .goto Stormwind City,55.8,65.2,-1 
+    .goto Stormwind City,32.4,80.0,-1 
+    .goto Stormwind City,43.4,26.8,-1 
+    .goto Stormwind City,36.0,74.8,-1 
     .goto Elwynn Forest,64.8,69.2,-1 
     .goto Ironforge,19.6,56.2,-1  
     .goto Undercity,69.6,39.2,-1 
@@ -1393,7 +1393,7 @@ step
     .mob Stonesplinter Seer
 step
     .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
-    .train 415936 >>|T134939:0|t[|cRXP_FRIENDLY_Chewed Spell Notes|r] to learn |T135820:0|t[Living Bomb]
+    .train 415936 >>|T134939:0|t[|cRXP_FRIENDLY_Chewed Spell Notes|r] to learn |T236220:0|t[Living Bomb]
     .use 208854
 -- step
     --.engrave 9,400613 >> Open your character sheet and engrave your gloves with |T236220:0|t[Living Bomb.]
