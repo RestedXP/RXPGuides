@@ -79,9 +79,9 @@ step
     .train 400102,1
 step
     #season 2
-    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Envenom|r]
+    .train 400102 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Envenom|r]
     .use 210322
-    .train 400102,1
+    .itemcount 210322,1
 
     ]])
 
@@ -122,9 +122,9 @@ step
     .train 424988,1
 step
     #season 2
-    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shiving|r]
+    .train 424988 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shiving|r]
     .use 210252
-    .train 424988,1
+    .itemcount 210252,1
 
     ]])
 

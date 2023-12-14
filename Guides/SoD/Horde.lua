@@ -29,14 +29,14 @@ step
     .train 410123,1 << Hunter
 step << Warrior
     #season 2
-    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r]
+    .train 403476 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r]
     .use 204809
-    .train 403476,1 << Warrior
+    .itemcount 204809,1
 step << Hunter
     #season 2
-    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Explosive Shot|r]
+    .train 410123 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Explosive Shot|r]
     .use 206169
-    .train 410123,1 << Hunter
+    .itemcount 206169,1
 
     ]])
 

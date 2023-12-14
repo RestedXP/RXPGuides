@@ -1331,6 +1331,30 @@ step << Warrior
     .itemcount 2488,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.7
+step << Warrior
+    #season 2
+    #completewith next
+    .goto Tirisfal Glades,61.72,51.91,-1
+    .goto Tirisfal Glades,61.71,51.70,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Penny|r and |cRXP_FRIENDLY_Blueheart|r (downstairs) inside the inn
+    +Kill |cRXP_FRIENDLY_Blueheart|r when he becomes hostile
+    .target Penny Hawkins
+    .target Blueheart
+    .skipgossip
+    --Gossipoption
+step << Warrior
+    #season 2
+    .goto Tirisfal Glades,61.72,51.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Penny|r
+    >>Receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r] from her
+    .collect 204716,1 --Rune of Frenzied Assault (1)
+    .target Netali
+    .train 425447,1
+    .skipgossip
+step << Warrior
+    #season 2
+    .train 425447 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
+    .use 204716
 step
     #completewith MurlocVins
     >>Kill |cRXP_ENEMY_Duskbats|r. Loot them for their |cRXP_LOOT_Pelts|r

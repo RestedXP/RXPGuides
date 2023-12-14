@@ -553,8 +553,15 @@ step
     .mob Kolkar Stormer
 step
     #season 2
-    .goto The Barrens,43.02,23.52
+    #loop
+    .goto The Barrens,44.3,37.7,0
+    .goto The Barrens,43,23.5,0
+    .goto The Barrens,52.7,41.8,0
+    .goto The Barrens,44.3,37.7,20,0
+    .goto The Barrens,43,23.5,20,0
+    .goto The Barrens,52.7,41.8,20,0
     >>Open a |cRXP_PICK_Kolkar Booty|r chest for |T132942:0|t[|cRXP_FRIENDLY_Ferocious Idol|r]
+    .collect 5020,1 --Kolkar Booty Key (1)
     .collect 208689,1 --Ferocious Idol (1)
 step
     #season 2

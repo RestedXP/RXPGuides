@@ -726,9 +726,9 @@ step
     .train 400105,1
 step
     #season 2
-    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    .train 400105 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
     .use 204795
-    .train 400105,1
+    .itemcount 204795,1
 step << !Undead
     #season 2
     .goto Durotar,41.27,68.00
@@ -763,9 +763,9 @@ step
     .train 400105,1
 step
     #season 2
-    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    .train 400105 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
     .use 204795
-    .train 400105,1
+    .itemcount 204795,1
 step << Undead
     #season 2
     .goto Tirisfal Glades,32.53,65.65
@@ -890,9 +890,9 @@ step
     .train 400080,1
 step
     #season 2
-    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Deadly Brew|r]
+    .train 400080 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Deadly Brew|r]
     .use 204795
-    .train 400080,1
+    .itemcount 204795,1
     ]])
 
 RXPGuides.RegisterGuide([[
@@ -1201,7 +1201,6 @@ RXPGuides.RegisterGuide([[
 
 
     --Rune of Mutilate
-
 
 step
     #season 2

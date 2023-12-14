@@ -60,9 +60,9 @@ step
     .train 410123,1
 step
     #season 2
-    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Explosive Shot|r]
+    .train 410123 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Explosive Shot|r]
     .use 206169
-    .train 410123,1
+    .itemcount 206169,1
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -91,9 +91,9 @@ step
     .train 410121,1
 step
     #season 2
-    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of The Chimera|r]
+    .train 410121 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of The Chimera|r]
     .use 206168
-    .train 410121,1
+    .itemcount 206168,1
 step << !Tauren
     #season 2
     .goto Durotar,42.84,69.32
@@ -135,9 +135,9 @@ step
     .train 410121,1
 step
     #season 2
-    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of The Chimera|r]
+    .train 410121 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of The Chimera|r]
     .use 206168
-    .train 410121,1
+    .itemcount 206168,1
 step << Tauren
     #season 2
     .goto Mulgore,44.26,75.70
@@ -167,9 +167,9 @@ step
     .train 410113,1
 step
     #season 2
-    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
+    .train 410113 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
     .use 206155
-    .train 410113,1
+    .itemcount 206155,1
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -193,9 +193,9 @@ step
     .train 410113,1
 step
     #season 2
-    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
+    .train 410113 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
     .use 206155
-    .train 410113,1
+    .itemcount 206155,1
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -282,9 +282,9 @@ step
     .train 425762,1
 step
     #season 2
-    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Flanking|r]
+    .train 425762 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Flanking|r]
     .use 205979
-    .train 425762,1
+    .itemcount 205979,1
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -316,9 +316,9 @@ step
     .train 425762,1
 step
     #season 2
-    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Flanking|r]
+    .train 425762 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Flanking|r]
     .use 205979
-    .train 425762,1
+    .itemcount 205979,1
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -369,9 +369,9 @@ step
     .train 425758,1
 step
     #season 2
-    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Carve|r]
+    .train 425758 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Carve|r]
     .use 206032
-    .train 425758,1
+    .itemcount 206032,1
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -420,9 +420,9 @@ step
     .train 425758,1
 step
     #season 2
-    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Carve|r]
+    .train 425758 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Carve|r]
     .use 206032
-    .train 425758,1
+    .itemcount 206032,1
 
 ]])
 
@@ -737,6 +737,7 @@ step
     #season 2
     .train 416091 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Sniper|r] |cRXP_WARN_to train|r |T132212:0|t[Sniper Training]
     .use 208777
+    .itemcount 208777,1
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -778,6 +779,7 @@ step
     #season 2
     .train 425762 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Flanking|r] |cRXP_WARN_to train|r |T132175:0|t[Flanking Strike]
     .use 205979
+    .itemcount 205979,1
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -816,6 +818,7 @@ step
     #season 2
     .train 425762 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Flanking|r] |cRXP_WARN_to train|r |T132175:0|t[Flanking Strike]
     .use 205979
+    .itemcount 205979,1
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -854,6 +857,7 @@ step
     #season 2
     .train 425762 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Flanking|r] |cRXP_WARN_to train|r |T132175:0|t[Flanking Strike]
     .use 205979
+    .itemcount 205979,1
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -893,4 +897,5 @@ step
     #season 2
     .train 425762 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Flanking|r] |cRXP_WARN_to train|r |T132175:0|t[Flanking Strike]
     .use 205979
+    .itemcount 205979,1
 ]])

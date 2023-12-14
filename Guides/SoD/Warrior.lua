@@ -523,9 +523,9 @@ step
     .train 403470,1
 step
     #season 2
-    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    .train 403470 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
     .use 204806
-    .train 403470,1
+    .itemcount 204806,1
 step << Orc/Troll
     #season 2
     .goto Durotar,42.89,69.44
@@ -562,9 +562,9 @@ step
     .train 403470,1
 step
     #season 2
-    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    .train 403470 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
     .use 204806
-    .train 403470,1
+    .itemcount 204806,1
 step << Tauren
     #season 2
     .goto Mulgore,44.02,76.14
@@ -599,9 +599,9 @@ step
     .train 403470,1
 step
     #season 2
-    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    .train 403470 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
     .use 204806
-    .train 403470,1
+    .itemcount 204806,1
 step << Undead
     #season 2
     .goto Tirisfal Glades,32.68,65.56
@@ -631,9 +631,9 @@ step
     .train 403476,1
 step
     #season 2
-    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r]
+    .train 403476 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r]
     .use 204809
-    .train 403476,1
+    .itemcount 204809,1
 
 ]])
 
@@ -658,9 +658,9 @@ step
     .train 403476,1
 step
     #season 2
-    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r]
+    .train 403476 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r]
     .use 204809
-    .train 403476,1
+    .itemcount 204809,1
 
     ]])
 
@@ -697,9 +697,9 @@ step
     .skipgossip
 step
     #season 2
-    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
-    .use 204716
-    .train 425447,1
+    .train 403476 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r]
+    .use 204809
+    .itemcount 204809,1
 
 ]])
 
@@ -736,9 +736,9 @@ step
     .skipgossip
 step
     #season 2
-    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
+    .train 425447 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
     .use 204716
-    .train 425447,1
+    .itemcount 204716,1
 
 ]])
 
@@ -774,9 +774,9 @@ step
     .skipgossip
 step
     #season 2
-    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
+    .train 425447 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
     .use 204716
-    .train 425447,1
+    .itemcount 204716,1
 
     ]])
 
@@ -850,9 +850,9 @@ step
     .train 403475,1
 step
     #season 2
-    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
+    .train 403475 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
     .use 204703
-    .train 403475,1
+    .itemcount 204703,1
 
 ]])
 
@@ -913,9 +913,9 @@ step
     .train 403475,1
 step
     #season 2
-    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
+    .train 403475 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
     .use 204703
-    .train 403475,1
+    .itemcount 204703,1
 
 ]])
 
@@ -994,9 +994,9 @@ step
     .train 403475,1
 step
     #season 2
-    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
+    .train 403475 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
     .use 204703
-    .train 403475,1
+    .itemcount 204703,1
 
 ]])
 
@@ -1031,9 +1031,9 @@ step
     .train 403474,1
 step
     #season 2
-    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Blood Frenzy|r]
+    .train 403474 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Blood Frenzy|r]
     .use 204441
-    .train 403474,1
+    .itemcount 204441,1
 
 ]])
 
@@ -1066,9 +1066,9 @@ step
     .train 403474,1
 step
     #season 2
-    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Blood Frenzy|r]
+    .train 403474 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Blood Frenzy|r]
     .use 204441
-    .train 403474,1
+    .itemcount 204441,1
 
 ]])
 
@@ -1093,9 +1093,9 @@ step
     .train 403474,1
 step
     #season 2
-    .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Blood Frenzy|r]
+    .train 403474 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Blood Frenzy|r]
     .use 204441
-    .train 403474,1
+    .itemcount 204441,1
 
 ]])
 

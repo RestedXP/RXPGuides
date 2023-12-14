@@ -86,9 +86,9 @@ step
     .collect 203751,1 --Spell Notes: CALE ENCI (1)
     .train 401760,1
 step
-    .cast 402265 >>Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r]
+    .train 401760 >>Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r]
     .use 203751
-    .train 401760,1
+    .itemcount 203751,1
 step << Troll
     .goto Durotar,42.51,69.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Mai'ah|r
@@ -118,9 +118,9 @@ step
     .mob Scarlet Initiate
     .train 401760,1
 step
-    .cast 402265 >>Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r]
+    .train 401760 >>Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r]
     .use 203751
-    .train 401760,1
+    .itemcount 203751,1
 step << Undead
     .goto Tirisfal Glades,30.94,66.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Isabella|r
@@ -236,6 +236,17 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 401767,1
+    .goto Orgrimmar,45.6,56.8,
+    .goto Orgrimmar,46.2,46.6,
+    .goto Orgrimmar,45.8,40.6,
+    .goto The Barrens,51.4,30.2,
+    .goto Swamp of Sorrows,45.8,53.0,
+    .goto Thunderbluff,42.6,55.4,
+    .goto Dustwallow Marsch,36.4,30.4,
+    .goto Undercity,82.6,16.0,
+    .goto Thunderbuff,41.8,55.0,
+    .goto Thousand Needles,45.2,50.6,
+    .goto Stonetalon Mountains,47.6,61.6,
     >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step
@@ -243,18 +254,28 @@ step
     #completewith next
     .zone The Barrens >>Travel to |cFFfa9602The Barrens|r
 step
-    #loop
-    .goto The Barrens,48.6,39.2,20,0
-    .goto The Barrens,47.4,41.8,20,0
-    .goto The Barrens,44.6,37.8,20,0
-    >>Kill |cRXP_ENEMY_Kolkar Wrangler|r |cRXP_ENEMY_Kolkar Stormer|r |cRXP_ENEMY_Barak Kodobane|r and loot them for |cRXP_LOOT_|T134237:0|t[Kolkar Booty Key]|r
-    .collect 5020,1
+    .goto The Barrens,43.57,23.48,50,0
+    .goto The Barrens,43.84,21.47,50,0
+    .goto The Barrens,45.04,20.04,50,0
+    .goto The Barrens,46.60,22.98,50,0
+    .goto The Barrens,45.71,25.63,50,0
+    .goto The Barrens,43.55,26.39,50,0
+    .goto The Barrens,42.21,26.92,50,0
+    .goto The Barrens,42.02,24.68,50,0
+    .goto The Barrens,43.57,23.48
+    >>Kill |cRXP_ENEMY_Kolkar Wranglers|r and |cRXP_ENEMY_Kolkar Stormers|r. Loot them for a |T134237:0|t[|cRXP_LOOT_Kolkar Booty Key|r]
+    .collect 5020,1 --Kolkar Booty Key (1)
+    .mob Kolkar Wrangler
+    .mob Kolkar Stormer
 step << Mage
     #loop
+    .goto The Barrens,44.3,37.7,0
+    .goto The Barrens,43,23.5,0
+    .goto The Barrens,52.7,41.8,0
     .goto The Barrens,44.3,37.7,20,0
     .goto The Barrens,43,23.5,20,0
     .goto The Barrens,52.7,41.8,20,0
-    >>Click on the |cRXP_PICK_Chest|r for |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r]|r
+    >>Open a |cRXP_PICK_Kolkar Booty|r chest for |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r]|r
     .train 401767,1
     .collect 5020,1
     .collect 208754,1
@@ -447,8 +468,8 @@ step
     .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
 step
     .train 401765,1
-    >>Kill |cRXP_ENEMY_Gillgar|r. Loot him for the |cRXP_LOOT_|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r]|r
     .goto Tirisfal Glades,25.6,48.2
+    >>Kill |cRXP_ENEMY_Gillgar|r. Loot him for the |cRXP_LOOT_|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r]|r
     .collect 203753,1
     .mob Gillgar
 step
@@ -486,8 +507,8 @@ step
 step
     --PERMOK: More accurate coordinates
     .train 401765,1
+    .goto Durotar,67.4,87.8
     >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for the |cRXP_LOOT_|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r]|r
-    .goto Durotar,67.0,88.0
     .collect 203753,1
     .mob Zalazane
 step
@@ -529,7 +550,7 @@ step
     .zone Dun Morogh >>Travel to |cFFfa9602Dun Morogh|r
 step
     .goto Dun Morogh,69.6,58.2
-    >>Kill |cRXP_ENEMY_Frozen Trogg|r |cRXP_WARN_by using strong fire spells, if you can't get it down consider grouping up|r loot him for |cRXP_LOOT_|cRXP_FRIENDLY_Spell Notes: Burnout.|r|r
+    >>Kill |cRXP_ENEMY_Frozen Trogg|r |cRXP_WARN_by using strong fire spells, if you can't get it down consider grouping up|r loot him for |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Burnout|r]
     .train 401759,1
     .collect 203748,1
     .mob Frozen Trogg
@@ -622,11 +643,12 @@ step
     #completewith next
     .zone Durotar >>Travel to |cFFfa9602Durotar.|r
 step
+    .goto Durotar,58.70,45.54
+    >>Cast |T135812:0|t[Fireball] on the |cRXP_ENEMY_Frozen Makrura|r east of Razor Hill. Loot him for |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Burnout|r]
+    >>|cRXP_WARN_You need to group up with Shamans/Warlocks/Mages. At least 5 sources of fire damage debuffs need to be applied on the|r |cRXP_ENEMY_Frozen Makrura|r |cRXP_WARN_for the ice to melt!|r
+    .collect 206388,1 --Sulfurous Icon (1)
+    .mob Frozen Makrura
     .train 412286,1
-    .goto Durotar,58.8,45.4
-    >>Kill |cRXP_ENEMY_Frozen Makura|r |cRXP_WARN_by using strong fire spells, if you can't get it down consider grouping up|r loot him for |cRXP_LOOT_|cRXP_FRIENDLY_Spell Notes: Burnout.|r|r
-    .collect 203748,1
-    .mob Frozen Makura
 step
     .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
     .train 401759 >>|cRXP_WARN_Use|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Burnout|r] |cRXP_WARN_to learn|r |T236207:0|t[Burnout.]
@@ -670,7 +692,8 @@ step
     .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades.|r
 step
     .goto Tirisfal Glades,66.2,40.2
-    >>Kill |cRXP_ENEMY_Frozen Murloc|r |cRXP_WARN_by using strong fire spells, if you can't get it down consider grouping up|r loot him for |cRXP_LOOT_|cRXP_FRIENDLY_Spell Notes: Burnout.|r|r
+    >>Cast |T135812:0|t[Fireball] on the |cRXP_ENEMY_Frozen Murloc|r. Loot him for |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Burnout|r]
+    >>|cRXP_WARN_You need to group up with Shamans/Warlocks/Mages. At least 5 sources of fire damage debuffs need to be applied on the|r |cRXP_ENEMY_Frozen Makrura|r |cRXP_WARN_for the ice to melt!|r
     .train 412286,1
     .collect 203748,1
     .mob Frozen Murloc
@@ -1235,9 +1258,21 @@ step
     .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
 step
     .train 401768,1
+    #loop
+    .goto Tirisfal Glades,31.78,51.36,0
+    .goto Tirisfal Glades,33.73,49.34,50,0
+    .goto Tirisfal Glades,33.65,51.07,50,0
+    .goto Tirisfal Glades,31.78,51.36,50,0
+    .goto Tirisfal Glades,30.02,50.48,50,0
+    .goto Tirisfal Glades,29.91,49.24,50,0
+    .goto Tirisfal Glades,30.62,47.53,50,0
+    .goto Tirisfal Glades,31.01,46.50,50,0
+    .goto Tirisfal Glades,32.15,44.83,50,0
+    .goto Tirisfal Glades,33.73,45.29,50,0
+    .goto Tirisfal Glades,34.10,47.88,50,0
+    .goto Tirisfal Glades,33.73,49.34,50,0
     >>Kill |cRXP_ENEMY_Scarlet Humans|r. Loot them for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF|r]
     .collect 203752,1
-    .goto Tirisfal Glades,32.6,48.6
     .mob Scarlet Warrior
     .mob Scarlet Missionary
     .mob Scarlet Zealot
@@ -1387,14 +1422,14 @@ step
     .mob Raging Rot Hide
 step
     .train 415936,1
-    >>Interact with the |cRXP_FRIENDLY_Shallow Grave|r
+    >>Interact with the |cRXP_PICK_Shallow Grave|r
     .goto Silverpine Forest,67.8,24.8
     .turnin 460 >>Turn in Resting in Pieces
     .accept 461 >>Accept The Hidden Niche
     .target Shallow Grave
 step
     .train 415936,1
-    >>Interact with the |cRXP_FRIENDLY_Dusty Shelf|r |cRXP_WARN_inside the castle in the top left tower (go left after the first staris)|r
+    >>Interact with the |cRXP_PICK_Dusty Shelf|r |cRXP_WARN_inside the castle in the top left tower (go left after the first staircase)|r
     .goto Silverpine Forest,65.3,24.8
     .turnin 461 >>Turn in The Hidden Niche
     .accept 491 >>Accept Want to Bethor
