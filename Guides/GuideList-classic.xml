@@ -39,9 +39,6 @@
 	<Script file="Guides/SoD/Warlock.lua"/>
 	<Script file="Guides/SoD/Alliance.lua"/>
 	<Script file="Guides/SoD/Shaman.lua"/>
-
-<!--
 	<Script file="Guides/SoD/Horde.lua"/>
--->
 
 </Ui>
