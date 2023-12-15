@@ -476,8 +476,8 @@ RXPGuides.RegisterGuide([[
 step
     >>Go out and find |T132765:0|t[Waylaid Supplies]. Then go back into a capital city and deliver them. If you want to get the reputation faster buy the required items in the AH to upgrade them.
     *|cRXP_WARN_You can farm lower level mobs until you hit Friendly. Afterwards you have to farm high level mobs (>=17).|r Chests in the open world have a 90%+ chance to drop one of those items.
-    .reputation 2587,honored << Horde
-    .reputation 2586,honored << Alliance
+    .reputation 2587,friendly << Horde
+    .reputation 2586,friendly << Alliance
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cFF00FF25Supply Officer|r in the nearest city
     .goto Orgrimmar,51.6,64.6,-1 << Horde
