@@ -6769,7 +6769,7 @@ step << !Mage !Paladin
 -- .accept 6392 >> Accept Return to Brock
 step << Warrior
     .goto Ironforge,62.0,89.6
-    .train 176 >>Train Thrown
+    .train 2567 >>Train Thrown
 step << Mage/Priest/Warlock
     #softcore
     #sticky

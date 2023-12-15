@@ -1847,68 +1847,6 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elanaria|r
     .turnin 1683 >> Turn in Vorlus Vilehoof
 --	.accept 1686 >> Accept The Shade of Elura
-step << Druid
-    .goto Darnassus,35.38,8.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r on the middle level
-    .turnin 5931 >> Turn in Back to Darnassus
-    .target Mathrengyl Bearwalker
-    .accept 6001 >> Accept Body and Heart
-step
-    .goto Darnassus,34.814,9.255
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Fandral Staghelm|r
-    .turnin 935 >> Turn in Crown of the Earth
-    .turnin 940 >> Turn in Teldrassil << Hunter
-    .target Arch Druid Fandral Staghelm
-    .accept 952 >> Accept Grove of the Ancients
-step << Hunter
-    .goto Darnassus,40.377,8.545
-    .target Jocaste
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jocaste|r
-    .turnin 6103 >> Turn in Training the Beast
-step << Rogue
-    .goto Darnassus,31.21,17.72,8,0
-    .goto Darnassus,36.99,21.91
-    .target Syurna
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syurna|r
-    .turnin 2242 >> Turn in Destiny Calls
-step
-    .goto Darnassus,38.184,21.639
-    .target Rellian Greenspyre
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rellian Greenspyre|r
-    .turnin 923 >> Turn in Tumors
-step << Rogue
-    #completewith next
-    .goto Darnassus,62.68,65.58,30 >> Travel toward |cRXP_FRIENDLY_Turian|r
-step << Rogue
-    .goto Darnassus,62.68,65.58
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rellian Greenspyre|r on the second floor
-    >>|cRXP_BUY_Buy a|r |T135641:0|t[Balanced Throwing Dagger]
-    .collect 2946,1 -- Balanced Throwing Dagger
-    .target Turian
-step
-    .goto Darnassus,39.72,92.68,10,0
-    .goto Darnassus,36.65,85.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
-    .turnin 2518 >> Turn in Tears of the Moon
-    .target Priestess A'moora
-    .accept 2520 >> Accept Sathrah's Sacrifice
-step
-    .goto Darnassus,39.7,85.8
-	.use 8155 >>|cRXP_WARN_Use|r |T135652:0|t[Sathrah's Sacrifice] |cRXP_WARN_at the fountain|r
-    .complete 2520,1 --Offer the sacrifice at the fountain
-step
-    #label end
-    .goto Darnassus,39.72,92.68,10,0
-    .goto Darnassus,36.65,85.93
-    .target Priestess A'moora
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
-    .turnin 2520 >> Turn in Sathrah's Sacrifice
-step << Druid
-    .goto Darnassus,47.95,68.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Firodren Mooncaller|r
-    .train 2366 >> Train |T136065:0|t[Herbalism]
-    >>|T136065:0|t[Herbalism] |cRXP_WARN_is required to gather 5|r |T134187:0|t[Earthroot] |cRXP_WARN_for a level 15 quest later. You can unlearn it afterwards|r
-    .target Firodren Mooncaller
 step << Hunter/Warrior/Priest
     .goto Darnassus,57.56,46.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
@@ -1962,6 +1900,12 @@ step << Warrior
     .use 854
     .itemcount 854,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.43
+step << Rogue
+    .goto Darnassus,62.68,65.58
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rellian Greenspyre|r on the second floor
+    >>|cRXP_BUY_Buy a|r |T135641:0|t[Balanced Throwing Dagger]
+    .collect 2946,1 -- Balanced Throwing Dagger
+    .target Turian
 step
     #ah
     .goto Darnassus,56.245,54.039,-1
@@ -1974,6 +1918,59 @@ step
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
     .target Auctioneer Tolon
     .target Auctioneer Golothas
+step << Hunter
+    .goto Darnassus,40.377,8.545
+    .target Jocaste
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jocaste|r
+    .turnin 6103 >> Turn in Training the Beast
+step << Druid
+    .goto Darnassus,35.38,8.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r on the middle level
+    .turnin 5931 >> Turn in Back to Darnassus
+    .target Mathrengyl Bearwalker
+    .accept 6001 >> Accept Body and Heart
+step
+    .goto Darnassus,34.814,9.255
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Fandral Staghelm|r
+    .turnin 935 >> Turn in Crown of the Earth
+    .turnin 940 >> Turn in Teldrassil << Hunter
+    .target Arch Druid Fandral Staghelm
+    .accept 952 >> Accept Grove of the Ancients
+step
+    .goto Darnassus,38.184,21.639
+    .target Rellian Greenspyre
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rellian Greenspyre|r
+    .turnin 923 >> Turn in Tumors
+step << Rogue
+    .goto Darnassus,31.21,17.72,8,0
+    .goto Darnassus,36.99,21.91
+    .target Syurna
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syurna|r
+    .turnin 2242 >> Turn in Destiny Calls
+step
+    .goto Darnassus,39.72,92.68,10,0
+    .goto Darnassus,36.65,85.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
+    .turnin 2518 >> Turn in Tears of the Moon
+    .target Priestess A'moora
+    .accept 2520 >> Accept Sathrah's Sacrifice
+step
+    .goto Darnassus,39.7,85.8
+	.use 8155 >>|cRXP_WARN_Use|r |T135652:0|t[Sathrah's Sacrifice] |cRXP_WARN_at the fountain|r
+    .complete 2520,1 --Offer the sacrifice at the fountain
+step
+    #label end
+    .goto Darnassus,39.72,92.68,10,0
+    .goto Darnassus,36.65,85.93
+    .target Priestess A'moora
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
+    .turnin 2520 >> Turn in Sathrah's Sacrifice
+step << Druid
+    .goto Darnassus,47.95,68.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Firodren Mooncaller|r
+    .train 2366 >> Train |T136065:0|t[Herbalism]
+    >>|T136065:0|t[Herbalism] |cRXP_WARN_is required to gather 5|r |T134187:0|t[Earthroot] |cRXP_WARN_for a level 15 quest later. You can unlearn it afterwards|r
+    .target Firodren Mooncaller
 step
     #completewith NessaShadowsong
     .goto Darnassus,30.00,41.43,10 >> Travel through the purple portal to Rut'theran Village

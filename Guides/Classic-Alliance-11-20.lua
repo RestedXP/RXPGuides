@@ -579,7 +579,7 @@ step << Druid
     .accept 6122 >> Accept The Principal Source
     .target Dendrite Starblaze
 step << Druid
-    #completewith next
+    #completewith Tysha
     .hs >> Hearth to Darkshore
 step
     #completewith Tysha
@@ -1085,6 +1085,22 @@ step << NightElf
     +Grind until your HS cooldown is <9 minutes
     .cooldown item,6948,<540
 step
+    #era/som
+    #completewith CavetoAuber
+    >>Kill |cFFFF5722Moonstalkers|r and |cFFFF5722Moonstalker Runts|r. Loot them for their |cFF00BCD4Fangs|r
+    >>|cRXP_WARN_Don't go out of your way to finish this now. Just kill what you see along the way to Auberdine|r
+    .complete 1002,1 -- Moonstalker Fang (6)
+    .unitscan Moonstalker;Moonstalker Runt
+    .isOnQuest 1002
+step
+    #completewith CavetoAuber
+    >>Kill |cFFFF5722Rabid Thistle Bears|r
+    >>|cRXP_WARN_Don't go out of your way to finish this now. Just kill what you see along the way to Auberdine|r
+    .complete 2138,1 -- Rabid Thistle Bear slain (20)
+    .mob Rabid Thistle Bear
+    .isOnQuest 2138
+step
+    #label CavetoAuber
     #completewith darkshoret1n
     .subzone 442 >> Travel to Auberdine
 step
@@ -1197,12 +1213,16 @@ step << Druid
     .itemcount 2030,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.89
 step << Druid
+    #optional
+    #completewith next
+    .abandon 729 >> Abandon The Absent Minded Prospector to accept the quest Trouble In Darkshore?
+step << Druid
     .goto Teldrassil,23.70,64.51
     .target Chief Archaeologist Greywhisker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Chief Archaeologist Greywhisker|r
     .accept 730 >> Accept Trouble In Darkshore?
 step << Druid
-	#completewith next
+	#completewith TotL
 	.cast 18960 >> Cast Teleport: Moonglade
 	.zoneskip Moonglade
 step << Druid
@@ -1218,10 +1238,15 @@ step << Druid
     >>|cFFFCDC00It may spawn in different locations underwater|r
     .collect 15877,1,29,1 -- Shrine Bauble (1)
 step << Druid
+    #completewith next
+    .cast 18960 >> Cast Teleport: Moonglade
+    >>|cRXP_WARN_It will be faster this way so you don't need to swim for a longer time|r
+step << Druid
     .goto Moonglade,36.026,41.374
     .use 15877 >>|cRXP_WARN_Use the|r |T134125:0|t[Shrine Bauble] |cRXP_WARN_at the Shrine of Remulos tree|r
     .complete 29,1 --Complete the Trial of the Lake.
 step << Druid
+    #label TotL
     .goto Moonglade,36.517,40.104
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Tajarri|r
     .turnin 29 >> Turn in Trial of the Lake
@@ -1714,7 +1739,7 @@ step << Human Mage/Human Rogue/Human Warrior/Human Warlock/Human Paladin/Human P
 step << Human Warrior
     .goto Ironforge,62.0,89.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Bixi Wobblebonk|r
-    .train 176 >>Train Thrown
+    .train 2567 >>Train Thrown
     .target Bixi Wobblebonk
 step << Human Rogue
     #ah
@@ -1889,7 +1914,7 @@ step << NightElf Warrior
 step << NightElf Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ilyenia Moonfire|r
     .goto Darnassus,57.56,46.72
-    .train 176 >> Train Thrown
+    .train 2567 >> Train Thrown
     .target Ilyenia Moonfire
 step << NightElf Hunter
     #completewith start
@@ -1922,6 +1947,10 @@ step << Hunter
     .use 3026
     .itemcount 3026,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.49
+step << NightElf !Druid
+    #optional
+    #completewith next
+    .abandon 729 >> Abandon The Absent Minded Prospector to accept the quest Trouble In Darkshore?
 step << NightElf !Druid
     .goto Teldrassil,23.70,64.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Chief Archaeologist Greywhisker|r
@@ -2234,7 +2263,7 @@ step << !NightElf !Hunter !Druid
 step << Druid
     #label Southcrabs
     #requires earthroot
-	#completewith next
+	#completewith FlyDarkshore
 	.cast 18960 >> Cast Teleport: Moonglade
 	.zoneskip Moonglade
 step << Druid
@@ -2245,6 +2274,7 @@ step << Druid
     .trainer >> Train your class spells
     .target Loganaar
 step << Druid
+    #label FlyDarkshore
     .goto Moonglade,48.11,67.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Sindrayl|r
     .fly Auberdine >> Fly to Darkshore
@@ -4974,7 +5004,7 @@ step << !NightElf
 step << !NightElf
 .dungeon DM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
-    .accept 166 >> Accept The Defias Brotherhood
+    .accept 65 >> Accept The Defias Brotherhood
     .goto Westfall,56.33,47.52
     .target Gryan Stoutmantle
 step << !NightElf

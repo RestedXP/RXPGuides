@@ -41,7 +41,7 @@ step
     .vendor >> |cRXP_BUY_Buy as many|r |T134831:0|t[Healing Potions] |cRXP_BUY_that are available|r
     >>|cRXP_WARN_This is a limited supply item. Skip this step if |cFF00FF25Samor Festivus|r doesn't have any|r
     .target Samor Festivus
-step << !Druid
+step << !Druid !Hunter
     .goto Wetlands,9.49,59.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei|r
     .fly Ironforge >> Fly to Ironforge

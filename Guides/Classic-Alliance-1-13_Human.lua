@@ -2041,7 +2041,7 @@ step
     .target Woo Ping
     .goto StormwindClassic,57.129,57.698
     .trainer >>Train 1h Swords << Rogue
-    .trainer >>Train Staves << Warlock/Mage/Priest
+    .trainer >>Train Staves << Warlock/Priest
     .trainer >>Train 2h Swords << Warrior/Paladin
     >>|cRXP_WARN_Train 2h Swords if you have enough money. You must save 20s for later|r << Warrior
     >>|cRXP_WARN_Train 1h Swords as well if you still have money|r << Mage/Warlock
@@ -2987,7 +2987,7 @@ step
 step << Warlock
     .xp 14 >> Grind to 14
 step
-    #completewith next
+    #completewith HumbleBeginnings
     .hs >> Hearth to Stormwind City
 step << Warlock/Priest
     #ssf

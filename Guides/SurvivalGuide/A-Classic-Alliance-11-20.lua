@@ -293,7 +293,7 @@ step << !NightElf
 step << Human Warrior
     .goto Ironforge,62.0,89.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bixi Wobblebonk|r
-    .train 176 >>Train Thrown
+    .train 2567 >>Train Thrown
     .target Bixi Wobblebonk
 step << Dwarf Paladin
     .goto Ironforge,24.55,4.49
@@ -461,6 +461,10 @@ step << Druid
     >>Open a |cFFDB2EEFBauble Container|r. Loot it for a |T134125:0|t[Shrine Bauble]
     >>|cFFFCDC00It may spawn in different locations underwater|r
     .collect 15877,1,29,1 -- Shrine Bauble (1)
+step << Druid
+    #completewith next
+    .cast 18960 >> Cast Teleport: Moonglade
+    >>|cRXP_WARN_It will be faster this way so you don't need to swim for a longer time|r
 step << Druid
     .goto Moonglade,36.026,41.374
     .use 15877 >>|cRXP_WARN_Use the|r |T134125:0|t[Shrine Bauble] |cRXP_WARN_at the Shrine of Remulos tree|r

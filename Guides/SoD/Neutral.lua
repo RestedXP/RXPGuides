@@ -522,16 +522,6 @@ RXPGuides.RegisterGuide([[
 
 step << Druid
     #completewith next
-    .zone Moonglade >> Teleport to Moonglade
-    .train 410028,1
-step << Druid
-    .goto Moonglade,52.53,40.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
-    .accept 78229 >> Accept Trial of The Owls
-    .target Loganaar
-    .train 410028,1
-step << Druid
-    #completewith next
     .zone Ashenvale >> Travel to Ashenvale
 step << Druid
     .goto Ashenvale,86.963,43.159
@@ -596,8 +586,13 @@ step << Druid
     .zone Moonglade >> Teleport to Moonglade
     .train 410028,1
 step << Druid
+    #completewith next
+    .zone Moonglade >> Teleport to Moonglade
+    .train 410028,1
+step << Druid
     .goto Moonglade,52.53,40.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
+    .accept 78229 >> Accept Trial of The Owls
     .turnin 78229 >> Turn in Trial of The Owls
     .target Loganaar
     .train 410028,1

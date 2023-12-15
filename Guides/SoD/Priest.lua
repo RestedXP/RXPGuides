@@ -718,7 +718,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Priest SoD
 #group RestedXP Rune Guide
 #subgroup Gloves
-#name Shadow Word - Death - 12 (Dun Morogh)
+#name Shadow Word - Death - 12 (Loch Modan)
 
 step << Priest
     #completewith next
@@ -726,7 +726,7 @@ step << Priest
     .subzone 143 >> Travel to the Mo'grosh Stronghold in Loch Modan
 step << Priest
     #season 2
-    .goto Dun Morogh,71.8,27.6
+    .goto Loch Modan,71.8,27.6
     .aura 410935 >>|cRXP_WARN_Target the |cRXP_FRIENDLY_Heretic Idol|r to automatically /kneel|r
     .emote KNEEL,208565 >>|cRXP_WARN_If it does not work, type /kneel in your chatbox with the |cRXP_FRIENDLY_Heretic Idol|r targeted|r
     >>|cRXP_WARN_You will receive the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Demise|r]
