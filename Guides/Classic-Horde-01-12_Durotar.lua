@@ -154,6 +154,16 @@ step
     .collect 206169,1,790,1 --Rune of Explosive Shot (1) << Hunter
     .collect 204809,1,790,1 --Rune of Furious Thunder(1) << Warrior
     .mob Sarkoth
+step << Warrior
+    #season 2
+    .train 403476 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r]
+    .use 204809
+    .itemcount 204809,1
+step << Hunter
+    #season 2
+    .train 410123 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Explosive Shot|r]
+    .use 206169
+    .itemcount 206169,1
 step
     #season 0
     #label Sarkoth
@@ -593,7 +603,7 @@ step << Shaman
     --User must be level 3 to be able to use item!
 step << Hunter
     #season 2
-    #complete ChimeraRune
+    #completewith ChimeraRune
     >>Kill |cFFFF5722Vile Familiars|r
     .complete 792,1 --Vile Familiar (12)
     .mob Vile Familiar
@@ -878,6 +888,11 @@ step << Shaman
     >>Kill |cFFFF5722Felstalkers|r. Loot them for |cFF00BCD4Felstalker Hooves|r
     .complete 1516,1 --Felstalker Hoof (2)
     .mob Felstalker
+step << Hunter
+    #season 2
+    .loop 25,Durotar,42.70,52.99,42.97,51.14,43.56,52.05,43.74,52.65,44.13,52.85,44.82,52.51,44.83,53.40,44.78,54.57,45.14,55.02,45.51,55.23,45.14,55.02,44.51,55.03,44.21,54.12,43.92,54.30,43.87,55.22,43.46,55.56,43.05,55.24,42.38,54.22,42.53,53.48,43.27,53.82,42.70,52.99
+    >>|cRXP_WARN_This will allow you to obtain|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r] |cRXP_WARN_early|r
+    .xp 6 >> Grind to level 6
 step
     #era
     .loop 25,Durotar,42.70,52.99,42.97,51.14,43.56,52.05,43.74,52.65,44.13,52.85,44.82,52.51,44.83,53.40,44.78,54.57,45.14,55.02,45.51,55.23,45.14,55.02,44.51,55.03,44.21,54.12,43.92,54.30,43.87,55.22,43.46,55.56,43.05,55.24,42.38,54.22,42.53,53.48,43.27,53.82,42.70,52.99
@@ -908,6 +923,13 @@ step
     >>|cFFFCDC00You can talk to him from outside or on top of the bunker|r
     .accept 784 >>Accept Vanquish the Betrayers
     .target Gar'thok
+step << Hunter
+    #season 2
+    .goto Durotar,51.85,43.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r
+    >>|cRXP_WARN_This is needed to be able to obtain|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
+    .train 1130 >> Train |T132212:0|t[Hunter's Mark]
+    .target Thotar
 step
     #completewith next
     .goto Durotar,50.22,43.06,12,0
@@ -946,6 +968,20 @@ step << Warrior/Rogue
     .train 2020 >> Train |T136241:0|t[Blacksmithing]
     .target Dwukk
     .skill blacksmithing,1,1
+step << Hunter
+    #season 2
+    .goto Durotar,40.61,52.19
+    >>Cast |T132212:0|t[Hunter's Mark] on the |cRXP_ENEMY_Rustling Bush|r
+    >>Kill the |cRXP_ENEMY_Razormane Poacher|r that spawns. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
+    .collect 206155,1 --Rune of Markmanship (1)
+    .mob Rustling Bush
+    .mob Razormane Poacher
+    .train 410113,1
+step << Hunter
+    #season 2
+    .train 410113 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
+    .use 206155
+    .itemcount 206155,1
 step
     #completewith next
     .hs >>Hearth to the Valley of Trials
@@ -1392,6 +1428,14 @@ step
     #completewith Bonfire
     +|cRXP_WARN_Be careful if|r |cRXP_ENEMY_Kolkanis|r |cRXP_WARN_is up, he is a level 9 rare. You may have to use a |r |T134829:0|t[Minor Healing Potion] |cRXP_WARN_if you have it|r
     .unitscan Warlord Kolkanis
+step << Warrior
+    #season 2
+    #completewith Bonfire
+    >>Kill |cRXP_ENEMY_Kolkar Drudges|r and |cRXP_ENEMY_Kolkar Outrunners|r. Loot them for a |cRXP_LOOT_Severed Centaur Head|r
+    .collect 207062,1 --Severed Centaur Head (1)
+    .mob Kolkar Drudge
+    .mob Kolkar Outrunner
+    .train 403475,1
 step
     #era/som
     >>Burn the |cRXP_PICK_Attack Plan|r inside the tent, on the ground
@@ -1408,6 +1452,17 @@ step
     >>Burn the |cRXP_PICK_Attack Plan|r on the ground
     .goto Durotar,46.3,79.0
     .complete 786,3 --Attack Plan: Orgrimmar destroyed (1)
+step << Warrior
+    #season 2
+    .goto Durotar,50.10,79.24,40,0
+    .goto Durotar,47.74,80.35,40,0
+    .goto Durotar,46.54,80.12,40,0
+    .goto Durotar,50.10,79.24
+    >>Kill |cRXP_ENEMY_Kolkar Drudges|r and |cRXP_ENEMY_Kolkar Outrunners|r. Loot them for a |cRXP_LOOT_Severed Centaur Head|r
+    .collect 207062,1 --Severed Centaur Head (1)
+    .mob Kolkar Drudge
+    .mob Kolkar Outrunner
+    .train 403475,1
 step
 	#era/som
     #softcore
@@ -2151,6 +2206,25 @@ step
 step
     #completewith Stolensupplies
     +|cRXP_WARN_Bind your|r |T133728:0|t[Faintly Glowing Skull] |cRXP_WARN_and|r |T134712:0|t[Really Sticky Glue]|cRXP_WARN_. Save them for emergency situations|r
+step << Warrior
+    #season 2
+    .goto Durotar,50.21,50.78,30,0
+    .goto Durotar,50.18,49.23,30,0
+    .goto Durotar,49.48,49.14,30,0
+    .goto Durotar,49.32,48.18,30,0
+    .goto Durotar,48.81,49.00,30,0
+    .goto Durotar,48.49,49.29,30,0
+    .goto Durotar,47.58,49.62,30,0
+    .goto Durotar,47.06,49.53,30,0
+    .goto Durotar,46.90,48.11,30,0
+    .goto Durotar,49.22,48.96
+    >>Kill |cRXP_ENEMY_Razormane Quilboars|r and |cRXP_ENEMY_Razormane Scouts|r. Loot them for a |cRXP_LOOT_Severed Quilboar Head|r
+    .collect 206994,1 ---Severed Quilboar Head (1)
+    .complete 837,1 --Razormane Quilboar (4)
+    .complete 837,2 --Razormane Scout (4)
+    .mob Razormane Quilboar
+    .mob Razormane Scout
+    .train 403475,1
 step
     .goto Durotar,50.21,50.78,30,0
     .goto Durotar,50.18,49.23,30,0
@@ -2304,6 +2378,16 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rezlak|r
     .accept 834 >>Accept Winds in the Desert
     .target Rezlak
+step << Warrior
+    #season 2
+    #completewith next
+    >>Kill |cRXP_ENEMY_Dustwind Harpies|r. Loot them for a |cRXP_LOOT_Severed Harpy Head|r
+    .collect 206995,1 ---Severed Harpy Head (1)
+    .mob Dustwind Savage
+    .mob Dustwind Storm Witch
+    .mob Dustwind Pillager
+    .mob Dustwind Harpy
+    .train 403475,1
 step
     .goto Durotar,49.70,21.90,40,0
     .goto Durotar,49.70,24.33,40,0
@@ -2319,6 +2403,22 @@ step
     .goto Durotar,49.70,21.90
     >>Loot the |cRXP_PICK_Stolen Supply Sacks|r from the ground
     .complete 834,1 --Sack of Supplies (5)
+step << Warrior
+    #season 2
+    .goto Durotar,54.02,27.23,40,0
+    .goto Durotar,52.82,24.27,40,0
+    .goto Durotar,51.85,23.95,40,0
+    .goto Durotar,54.01,23.63,40,0
+    .goto Durotar,52.13,20.77,40,0
+    .goto Durotar,51.26,19.19,40,0
+    .goto Durotar,53.98,23.70
+    >>Kill |cRXP_ENEMY_Dustwind Harpies|r. Loot them for a |cRXP_LOOT_Severed Harpy Head|r
+    .collect 206995,1 ---Severed Harpy Head (1)
+    .mob Dustwind Savage
+    .mob Dustwind Storm Witch
+    .mob Dustwind Pillager
+    .mob Dustwind Harpy
+    .train 403475,1
 step
     .goto Durotar,46.37,22.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rezlak|r
@@ -2424,6 +2524,31 @@ step << Warrior/Shaman/Hunter
     >>|cRXP_WARN_Abandon Need for a Cure. This will remove the timer on the quest but you will still be able to do it|r
     .abandon 812 >>Abandon Need for a Cure
     .isOnQuest 812
+step << Warrior
+    #season 2
+    #completewith next
+    .goto Orgrimmar,57.40,53.93,-1
+    .goto Orgrimmar,58.05,51.40,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamja|r and |cRXP_FRIENDLY_Gru'ark|r
+    +Kill |cRXP_FRIENDLY_Gru'ark|r when he becomes hostile
+    .target Zamja
+    .target Gru'ark
+    .skipgossip
+    --Gossipoption
+step << Warrior
+    #season 2
+    .goto Orgrimmar,58.52,52.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamja|r
+    >>Receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r] from her
+    .collect 204716,1 --Rune of Frenzied Assault (1)
+    .target Zamja
+    .train 425447,1
+    .skipgossip
+step << Warrior
+    #season 2
+    .train 425447 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
+    .use 204716
+    .itemcount 204716,1
 step
     #completewith RazorTurnins2
     .hs >> Hearth to Razor Hill
@@ -2440,6 +2565,26 @@ step
     .collect 2287,15,818,1 << Rogue/Warrior --Haunch of Meat (15)
     .target Innkeeper Grosk
     .money <0.0375
+step << Warrior
+    #season 2
+    .goto Durotar,53.14,43.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vahi|r
+    >>Turn in the |cRXP_LOOT_Heads|r you've collected in exchange for |T134455:0|t[Rune Fragments]
+    .collect 204688,1 --Monster Hunter's First Rune Fragment (1)
+    .collect 204689,1 --Monster Hunter's Second Rune Fragment (1)
+    .collect 204690,1 --Monster Hunter's Third Rune Fragment (1)
+    .target Vahi Bonesplitter
+    .train 403475,1
+step << Warrior
+    #season 2
+    .use 204688 >>Use the |T134455:0|t[Rune Fragments] to create |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
+    .collect 204703,1 --Rune of Devastate (1)
+    .train 403475,1
+step << Warrior
+    #season 2
+    .train 403475 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
+    .use 204703
+    .itemcount 204703,1
 step << Hunter
     .goto Durotar,51.95,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Orgnil|r
@@ -2633,8 +2778,7 @@ step << Warrior/Shaman
     #label FungalSporesComplete
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
-    >>|cRXP_WARN_Wait for the RP to finish|r 
-    >>|cRXP_WARN_This starts a 45-minute timed quest|r
+    >>|cRXP_WARN_Wait for the RP to finish. This starts a timed quest!|r
     .turnin 848 >> Turn in Fungal Spores
     .accept 853 >> Accept Apothecary Zamah
     .target Apothecary Helbrim

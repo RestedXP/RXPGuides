@@ -1355,6 +1355,7 @@ step << Warrior
     #season 2
     .train 425447 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
     .use 204716
+    .itemcount 204716,1
 step
     #completewith MurlocVins
     >>Kill |cRXP_ENEMY_Duskbats|r. Loot them for their |cRXP_LOOT_Pelts|r
@@ -1387,6 +1388,22 @@ step
     >>Loot the |cRXP_PICK_Doom Weed|r on the ground. They are found near trees in the Gnoll area
     .complete 5482,1 --Doom Weed (10)
     .isOnQuest 5482
+step << Warrior
+    #season 2
+    .goto Tirisfal Glades,56.31,39.67,40,0
+    .goto Tirisfal Glades,54.71,41.19,40,0
+    .goto Tirisfal Glades,53.90,43.93,40,0
+    .goto Tirisfal Glades,55.24,42.54,40,0
+    .goto Tirisfal Glades,56.43,43.92,40,0
+    .goto Tirisfal Glades,55.24,42.54
+    >>Kill |cRXP_ENEMY_Mongrels|r and |cRXP_ENEMY_Graverobbers|r. Loot them for their |cRXP_LOOT_Ichor|r and a |cRXP_LOOT_Severed Gnoll Head|r
+    .complete 358,2 --Rot Hide Mongrel (5)
+    .complete 358,1 --Rot Hide Graverobber (8)
+    .complete 358,3 --Embalming Ichor (8)
+    .collect 204478,1 --Severed Gnoll Head (1)
+    .mob Rot Hide Mongrel
+    .mob Rot Hide Graverobber
+    .train 403475,1
 step
     .goto Tirisfal Glades,56.31,39.67,40,0
     .goto Tirisfal Glades,54.71,41.19,40,0
@@ -1405,6 +1422,24 @@ step
     >>Kill |cRXP_ENEMY_Maggot Eye|r. Loot him for his |cRXP_LOOT_Paw|r
     .complete 398,1 --Maggot Eye's Paw (1)
     .mob Maggot Eye
+step << Warrior
+    #season 2
+    .goto Tirisfal Glades,59.38,29.05,50,0
+    .goto Tirisfal Glades,59.54,27.86,50,0
+    .goto Tirisfal Glades,60.64,28.66,50,0
+    .goto Tirisfal Glades,61.49,29.40,50,0
+    .goto Tirisfal Glades,62.96,29.46,50,0
+    .goto Tirisfal Glades,65.68,30.22,50,0
+    .goto Tirisfal Glades,67.48,28.97,50,0
+    .goto Tirisfal Glades,68.22,26.46,50,0
+    .goto Tirisfal Glades,59.54,27.86
+    >>Kill |cRXP_ENEMY_Murlocs|r. Loot them for their |cRXP_LOOT_Scales|r and a |cRXP_LOOT_Severed Murloc Head|r
+    .complete 368,1 --Vile Fin Scale (5)
+    .collect 204477,1 --Severed Murloc Head (1)
+    .mob Vile Fin Puddlejumper
+    .mob Vile Fin Minor Oracle
+    .mob Vile Fin Muckdweller
+    .train 403475,1
 step
     #label MurlocVins
     .goto Tirisfal Glades,59.38,29.05,50,0
@@ -2268,6 +2303,14 @@ step
 step << Priest
     >>|cRXP_WARN_Collect 3 stacks of|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for your Lesser Magic Wand. This is the last chance to get enough before Silverpine Forest|r
     .collect 2589,60,435,1 --Linen Cloth (60)
+step << Warrior
+    #season 2
+    #completewith next
+    >>Kill |cRXP_ENEMY_Duskbats|r. Loot them for a |cRXP_LOOT_Severed Bat Head|r
+    .collect 207975,1 --Severed Bat Head (1)
+    .mob Greater Duskbat
+    .mob Vampiric Duskbat
+    .train 403475,1
 step
     .goto Tirisfal Glades,73.78,32.71,50,0
     .goto Tirisfal Glades,72.15,33.17,50,0
@@ -2280,6 +2323,20 @@ step
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
+step << Warrior
+    #season 2
+    .goto Tirisfal Glades,73.78,32.71,50,0
+    .goto Tirisfal Glades,72.15,33.17,50,0
+    .goto Tirisfal Glades,70.13,34.46,50,0
+    .goto Tirisfal Glades,67.29,34.92,50,0
+    .goto Tirisfal Glades,66.71,37.87,50,0
+    .goto Tirisfal Glades,73.78,32.71,50,0
+    .goto Tirisfal Glades,72.15,33.17
+    >>Kill |cRXP_ENEMY_Duskbats|r. Loot them for a |cRXP_LOOT_Severed Bat Head|r
+    .collect 207975,1 --Severed Bat Head (1)
+    .mob Greater Duskbat
+    .mob Vampiric Duskbat
+    .train 403475,1
 step
     .isOnQuest 374
     .xp 11+5300 >> Grind to 5300+/8800xp
@@ -2449,6 +2506,29 @@ step << Warrior
     .itemcount 1198,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
+step << Warrior
+    #season 2
+    .goto Undercity,48.03,70.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorac|r in the Undercity
+    >>Turn in the |cRXP_LOOT_Heads|r you've collected in exchange for |T134455:0|t[Rune Fragments]
+    .collect 204688,1 --Monster Hunter's First Rune Fragment (1)
+    .collect 204689,1 --Monster Hunter's Second Rune Fragment (1)
+    .collect 204690,1 --Monster Hunter's Third Rune Fragment (1)
+    .target Dorac Graves
+    .train 403475,1
+    .zoneskip Undercity,1
+step << Warrior
+    #season 2
+    .use 204688 >>Use the |T134455:0|t[Rune Fragments] to create |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
+    .collect 204703,1 --Rune of Devastate (1)
+    .train 403475,1
+    .zoneskip Undercity,1
+step << Warrior
+    #season 2
+    .train 403475 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
+    .use 204703
+    .itemcount 204703,1
+    .zoneskip Undercity,1
 step << Priest
     #label TouchofWeakness
     .goto Undercity,48.98,18.33
@@ -2695,7 +2775,14 @@ RXPGuides.RegisterGuide([[
 #next 12-17 The Barrens
 
 
-
+step << Undead Warrior
+    #season 2
+    #sticky
+    #optional
+    #completewith RuneOfDevastateUndead
+    +Don't delete your |cRXP_LOOT_Severed Heads|r. They will get turned in later for |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
+    .itemcount 204477,1
+    .train 403475,1
 step << Undead Rogue
     #sticky
     #completewith RotHideCluesTurnIn
@@ -3171,6 +3258,27 @@ step
     .accept 1358 >> Accept Sample for Helbrim
     .target Master Apothecary Faranell
     .target Apothecary Zinge
+step << Undead Warrior
+    #season 2
+    #label RuneOfDevastateUndead
+    .goto Undercity,48.03,70.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorac|r in the Undercity
+    >>Turn in the |cRXP_LOOT_Heads|r you've collected in exchange for |T134455:0|t[Rune Fragments]
+    .collect 204688,1 --Monster Hunter's First Rune Fragment (1)
+    .collect 204689,1 --Monster Hunter's Second Rune Fragment (1)
+    .collect 204690,1 --Monster Hunter's Third Rune Fragment (1)
+    .target Dorac Graves
+    .train 403475,1
+step << Undead Warrior
+    #season 2
+    .use 204688 >>Use the |T134455:0|t[Rune Fragments] to create |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
+    .collect 204703,1 --Rune of Devastate (1)
+    .train 403475,1
+step << Undead Warrior
+    #season 2
+    .train 403475 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
+    .use 204703
+    .itemcount 204703,1
 step << Undead Rogue
     .goto Undercity,83.53,69.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mennet|r

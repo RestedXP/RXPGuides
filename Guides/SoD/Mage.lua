@@ -614,14 +614,9 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune Guide
-#subgroup Chest << Mage
--- #subgroup Gloves << Warlock
--- #subgroup Gloves << Shaman
-#name Burnout - 8 (Durotar) << Mage
--- #name 8 - Chaos Bolt << Warlock
--- #name 8 - Molten Blast << Shaman
+#subgroup Chest
+#name Burnout - 8 (Durotar) << Horde Mage
 
-<< Troll Mage SoD
 
 step
     .train 401759,1
@@ -1409,10 +1404,11 @@ step
     .zone Silverpine Forest >>Travel to |cFFfa9602Silverpine Forest|r
 step
     .train 415936,1
-    >>Kill the |cRXP_ENEMY_Rot Hides|r |cFFfa9602on Fenris Isle.|r Loot them for |T134173:0|t[A Takling Head]. |cRXP_WARN_Click it in your bags.|r
+    >>Kill the |cRXP_ENEMY_Rot Hides|r |cFFfa9602on Fenris Isle.|r Loot them for |T134173:0|t[A Talking Head]. |cRXP_WARN_Click it in your bags.|r
     .goto Silverpine Forest,66.0,24.7
     .collect 3317,1
     .accept 460 >>Accept Resting in Pieces
+    .use 3317
     .mob Rot Hide Brute
     .mob Rot Hide Plague Weaver
     .mob Rot Hide Savage

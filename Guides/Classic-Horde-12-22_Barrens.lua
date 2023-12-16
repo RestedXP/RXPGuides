@@ -485,7 +485,6 @@ step
     >>|cRXP_WARN_If possible, have party members share the following quests|r
     .accept 5722 >> Accept Searching for the Lost Satchel
     .accept 5723 >> Accept Testing an Enemy's Strength
-    .disablecheckbox
     .dungeon RFC
 step
     #completewith next
@@ -1745,6 +1744,11 @@ step
     .turnin 881 >>Turn in Echeyakee
     .accept 905 >>Accept The Angry Scytheclaws
     .target Sergra Darkthorn
+step << Warrior
+    #season 2
+    .goto The Barrens,52.27,31.08,
+    .aura 420667 >>Click the |cRXP_PICK_Horde Warbanner|r
+    .train 403489,1
 step
     .goto The Barrens,52.00,31.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mankrik|r
@@ -1800,6 +1804,27 @@ step
     .accept 1069 >>Accept Deepmoss Spider Eggs
     .target Sputtervalve
     .target Mebok Mizzyrix
+step << Warrior
+    #season 2  
+    .goto The Barrens,62.77,38.24
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kilxx|r
+    >>|cRXP_BUY_Buy a|r |T135129:0|t[Fishing Harpoon] |cRXP_BUY_from him|r 
+    .collect 208773,1 --Fishing Harpoon (1)
+    .target Kilxx
+    .train 425443,1 << Warrior
+step << Warrior
+    #season 2  
+    .goto The Barrens,64.51,39.32
+    .use 208773 >>Use the |T135129:0|t[Fishing Harpoon] on |cRXP_ENEMY_Bruuz|r and kill him. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Strike|r] << Warrior
+    >>|cRXP_WARN_He patrols around the sunken boat in the water|r
+    .collect 208778,1 << Warrior --Rune of Quick Strike (1)
+    .unitscan Bruuz
+    .train 425443,1 << Warrior
+step << Warrior
+    #season 2
+    .train 425443 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Strike|r] |cRXP_WARN_to train|r |T132394:0|t[Quick Strike]
+    .use 208778
+    .itemcount 208778,1
 step
     .goto The Barrens,62.05,39.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Wiley|r
@@ -1829,6 +1854,22 @@ step
     .goto The Barrens,62.63,49.64
     >>Loot the |cRXP_PICK_Crate|r on the ground
     .complete 888,1 --Shipment of Boots (1)
+step << Warrior
+    #completewith next
+    .subzone 385 >>Travel to Northwatch Hold
+step << Warrior
+    #season 2
+    .goto The Barrens,62.55,56.31
+    >>Click the |cRXP_PICK_Alliance Warbanner|r
+    >>Kill |cRXP_ENEMY_Lieutenant Stonebrew|r as he spawns. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Endless Rage|r]
+    .collect 208741,1 --Rune of Endless Rage (1)
+    .mob Lieutenant Stonebrew
+    .train 403489,1
+step << Warrior
+    #season 2
+    .train 403489 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Endless Rage|r] |cRXP_WARN_to train|r |T132347:0|t[Endless Rage]
+    .use 208741
+    .itemcount 208741,1
 step
     #completewith TestSeeds
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Kidneys|r
@@ -1888,7 +1929,7 @@ step
     >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Stagnant Oasis
     .complete 848,1 --Collect Fungal Spores (x4)
 step
-    #completewith LizardHorn
+    #completewith LakotaMani
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Kidneys|r
     .complete 821,2 --Plainstrider Kidney (5)
     .mob Greater Plainstrider
@@ -1950,11 +1991,30 @@ step
     .use 5099
     .unitscan Lakota'mani
 step
-    #label LizardHorn
     #completewith SetCampTaurajoHS
     >>Kill |cRXP_ENEMY_Stormsnouts|r. Loot them for a |cRXP_LOOT_Horn|r. This does not have to be completed now
     .complete 821,3 --Thunder Lizard Horn (1)
     .mob Stormsnout
+step << Hunter
+    #season 2
+    #completewith next
+    +|cRXP_WARN_You need to have learned|r |T135813:0|t[Immolation Trap] |cRXP_WARN_or any other trap to be able to obtain this rune|r
+step << Hunter
+    #season 2
+    .goto The Barrens,44.60,55.51,40,0
+    .goto The Barrens,44.05,56.20,40,0
+    .goto The Barrens,43.12,57.37
+    .line The Barrens,44.60,55.51,44.60,55.51,43.12,57.37
+    >>Use |T135813:0|t[Immolation Trap] on the patrol path of the |cRXP_ENEMY_Patrolling Cheetah|r to remove his buff
+    >>Kill him and loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Beast Mastery|r]
+    .collect 208701,1 --Rune of Beast Mastery (1)
+    .mob Patrolling Cheetah
+    .train 410110,1
+step << Hunter
+    #season 2
+    .train 410110 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Beast Mastery|r] |cRXP_WARN_to train|r |T132270:0|t[Beast Mastery]
+    .use 208701
+    .itemcount 208701,1
 step
     #completewith next
     .goto The Barrens,45.23,58.41,120 >> Travel to Camp Taurajo
@@ -2152,7 +2212,6 @@ step
     #completewith CounterattackComplete
     +|cRXP_WARN_This next quest is very hard & grouping up is recommended. You can kite Warlord Krom'zar around using the building where the quest giver is|r
     +|cRXP_WARN_Skip it if you can't do this quest. You will have another opportunity to complete it at higher level|r
-    .disablecheckbox
 step
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
@@ -2622,7 +2681,15 @@ step
     .complete 821,2 --Plainstrider Kidney (5)
     .mob Greater Plainstrider
 step
-    .loop 25,The Barrens,55.59,43.39,55.09,43.00,55.03,42.21,55.47,41.51,55.99,42.00,56.15,42.53,56.01,43.40
+    #loop
+    .goto The Barrens,55.59,43.39,0
+    .goto The Barrens,55.59,43.39,40,0
+    .goto The Barrens,55.09,43.00,40,0
+    .goto The Barrens,55.03,42.21,40,0
+    .goto The Barrens,55.47,41.51,40,0
+    .goto The Barrens,55.99,42.00,40,0
+    .goto The Barrens,56.15,42.53,40,0
+    .goto The Barrens,56.01,43.40,40,0
     >>Kill |cRXP_ENEMY_Oasis Snapjaws|r in and around the lake. Loot them for their |cRXP_LOOT_Shells|r
     .complete 880,1 --Altered Snapjaw Shell (8)
     .mob Oasis Snapjaw
@@ -3105,7 +3172,6 @@ step
     #completewith Thunderhawk
     +|cRXP_WARN_Use your|r |T134128:0|t[|cFF00BCD4Blood Shards|r] |cRXP_WARN_to get buffs. Save at least 4 of them for later|r
     +|cRXP_WARN_Make sure to turn off any autocomplete functions from addons such as Questie or Leatrix Plus for this!|r
-    .disablecheckbox
 step
     #label IshamuhaleTurnin
     .goto The Barrens,44.85,59.14
@@ -3515,6 +3581,14 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urek|r
     .train 5118 >> Train your class spells
     .target Urek Thunderhorn
+    .xp <20,1
+    .xp >22,1
+step << Hunter
+    .goto Thunder Bluff,59.13,86.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urek|r
+    .train 5118 >> Train your class spells
+    .target Urek Thunderhorn
+    .xp <22,1
 step << Hunter
     .goto Thunder Bluff,54.07,84.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hesuwa|r
@@ -3594,11 +3668,21 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shymm|r
     .train 12051 >> Train your class spells
     .target Archmage Shymm
+    .xp <20,1
+    .xp >22,1
+step << Mage
+    .goto Thunder Bluff,22.74,14.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shymm|r
+    .train 2138 >> Train your class spells
+    .target Archmage Shymm
+    .xp <22,1
 step << Shaman
     .goto Thunder Bluff,23.64,18.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tigor|r
     .train 2645 >> Train your class spells
     .target Tigor Skychaser
+    .xp <20,1
+    .xp >22,1
 step << Shaman
     .goto Thunder Bluff,23.64,18.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tigor|r
@@ -4271,7 +4355,6 @@ step
     .goto Ashenvale,11.96,34.28,80 >>Travel toward the Zoram'gar Outpost
     >>|cRXP_WARN_Make sure to avoid Astranaar guards en route. Follow the waypoint for safety|r
     .unitscan Astranaar Sentinel
-    .disablecheckbox
 step
     #optional
     .loop 25,Ashenvale,10.86,26.99,11.23,25.73,11.83,25.75,12.51,24.09,14.18,24.03,14.85,23.08,14.13,20.77,14.73,19.56,14.59,17.90,13.38,16.39,13.62,14.48,14.15,15.31,15.88,15.42,15.40,16.96,15.22,18.81,15.33,20.78,15.33,22.51,15.32,24.90,14.76,25.52,14.62,26.49,14.52,28.25,13.55,29.36,12.41,29.15,11.22,31.04,10.38,29.60,11.01,28.57

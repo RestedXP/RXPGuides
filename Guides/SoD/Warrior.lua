@@ -697,9 +697,9 @@ step
     .skipgossip
 step
     #season 2
-    .train 403476 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r]
-    .use 204809
-    .itemcount 204809,1
+    .train 425447 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
+    .use 204716
+    .itemcount 204716,1
 
 ]])
 
@@ -811,10 +811,12 @@ step
     .goto Durotar,52.13,20.77,40,0
     .goto Durotar,51.26,19.19,40,0
     .goto Durotar,53.98,23.70
-    >>Kill |cRXP_ENEMY_Dustwind Savages|r and |cRXP_ENEMY_Dustwind Storm Witches|r. Loot them for a |cRXP_LOOT_Severed Harpy Head|r
+    >>Kill |cRXP_ENEMY_Dustwind Harpies|r. Loot them for a |cRXP_LOOT_Severed Harpy Head|r
     .collect 206995,1 ---Severed Harpy Head (1)
     .mob Dustwind Savage
     .mob Dustwind Storm Witch
+    .mob Dustwind Pillager
+    .mob Dustwind Harpy
     .train 403475,1
 step
     #season 2
@@ -1164,7 +1166,7 @@ step
     .collect 208741,1 --Rune of Endless Rage (1)
     .mob Lieutenant Stonebrew
     .train 403489,1
- step
+step
     #season 2
     .train 403489 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Endless Rage|r] |cRXP_WARN_to train|r |T132347:0|t[Endless Rage]
     .use 208741
