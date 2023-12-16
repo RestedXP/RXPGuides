@@ -664,12 +664,9 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune Guide
-#subgroup Chest << Mage
--- #subgroup Gloves << Warlock
-#name Burnout - 8 (Tirisfal Glades) << Mage
--- #name 8 - Chaos Bolt << Warlock
+#subgroup Chest
+#name Burnout - 8 (Tirisfal Glades) << Horde Mage
 
-<< Undead Mage SoD
 
 step
     .train 401759,1
