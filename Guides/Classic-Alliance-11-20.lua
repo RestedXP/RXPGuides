@@ -2977,11 +2977,13 @@ step << Hunter
     .target The Defias Traitor
 step << Hunter
 .dungeon DM
-    .goto Westfall,56.33,47.52
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
-    .turnin 155 >> Turn in The Defias Brotherhood
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r and |cRXP_FRIENDLY_Scout Riell|r atop the Tower
     .accept 166 >> Accept The Defias Brotherhood
+    .goto Westfall,56.33,47.52
+    .accept 214 >> Accept Red Silk Bandanas
+    .goto Westfall,56.67,47.35
     .target Gryan Stoutmantle
+    .target Scout Riell
 step << Hunter
 .dungeon DM
     .goto Westfall,60.4,72.2
@@ -5034,10 +5036,13 @@ step << NightElf
     .target Thor
 step << NightElf
 .dungeon DM
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r and |cRXP_FRIENDLY_Scout Riell|r atop the Tower
     .accept 166 >> Accept The Defias Brotherhood
     .goto Westfall,56.33,47.52
+    .accept 214 >> Accept Red Silk Bandanas
+    .goto Westfall,56.67,47.35
     .target Gryan Stoutmantle
+    .target Scout Riell
 step << NightElf Warrior/NightElf Priest
     #completewith next
     .goto Elwynn Forest,41.08,65.76,25 >> Travel to Goldshire << Warrior

@@ -529,7 +529,7 @@ step << Druid
     >>|cRXP_WARN_You will need to defeat 3 waves of 2 mobs at a time ranging from levels 23-25|r
     >>|cRXP_WARN_Ensure the |cRXP_FRIENDLY_Summoned Wisp|r does not die. It is not possible to heal it, however it will heal to full between waves|r
     >>After defeating all waves, loot the |cRXP_PICK_Gift of the Wisp|r on the ground
-    .complete 78229,1 -- Symbol of the First Owl (1)
+    .collect 210044,1 -- Symbol of the First Owl (1)
     .train 410028,1
 step << Druid
     #completewith next
@@ -558,7 +558,7 @@ step << Druid
     >>Kill |cRXP_ENEMY_Agon|r. Loot it for the |cRXP_LOOT_Symbol of the Second Owl|r
     >>|cRXP_ENEMY_Agon|r |cRXP_WARN_patrols around slightly|r
     >>|cRXP_WARN_You must have the|r |T132150:0|t[Eyes of the Owl] |cRXP_WARN_buff to see|r |cRXP_ENEMY_Agon|r
-    .complete 78229,2 -- Symbol of the Second Owl (1)
+    .collect 210043,2 -- Symbol of the Second Owl (1)
     .train 410028,1
 step << Druid
     #completewith next
@@ -579,7 +579,7 @@ step << Druid
     >>Swim to the other island. Click the |cRXP_PICK_Twin Owl Statue|r within 1 min 40 sec
     >>|cRXP_WARN_Ensure you use|r |T132112:0|t[Aquatic Form]
     >>|cRXP_WARN_If you fail and lose the buff, click this |cRXP_PICK_Twin Owl Statue|r and return to the island you just came from|r
-    .complete 78229,3 -- Symbol of the Third Owl (1)
+    .collect 210026,3 -- Symbol of the Third Owl (1)
     .train 410028,1
 step << Druid
     #completewith next
