@@ -422,14 +422,14 @@ step
     .train 424990,1 << Rogue
     .train 410096,1 << Shaman
     #label RuneRatchetGrizzby
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Grizzby|r and wait for the roleplay
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Grizzby|r and wait for the roleplay
     .goto The Barrens,61.8,39.4
     .turnin 78625 >>Turn in Fish Oil
     .turnin 78266 >>Turn in Dark Iron Ordinance
     .turnin 78267 >>Turn in Shredder Turbochargers
     .target Grizzby
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Grizzby|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Grizzby|r
     .vendor
     .use 210822 << Priest
     .use 210820 << Paladin
@@ -479,7 +479,7 @@ step
     .reputation 2587,friendly << Horde
     .reputation 2586,friendly << Alliance
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cFF00FF25Supply Officer|r in the nearest city
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_ Supply Officer|r in the nearest city
     .goto Orgrimmar,51.6,64.6,-1 << Horde
     .goto Thunder Bluff,39.8,53.4,-1 << Horde
     .goto Undercity,64.6,38.2,-1 << Horde
@@ -674,7 +674,7 @@ step << Warrior
     .accept 78134 >> Accept Dragonslayer's Lance
     .accept 78133 >> Accept Dragonslayer's Shield
     .target Alonso
-    .train 425444,1 
+    .train 425444,1
 step << Warrior
     #completewith next
     .goto Wetlands,49.40,16.98
@@ -720,20 +720,20 @@ step << Warrior
     .turnin 78134 >> Turn In Dragonslayer's Lance
     .turnin 78133 >> Turn In Dragonslayer's Shield
     .target Alonso
-    .train 425444,1 
+    .train 425444,1
 step << Warrior
     .goto Ashenvale,43.513,70.463
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
     .accept 78144 >> Accept Alonso the Dragonslayer
     .target Alonso
-    .train 425444,1 
+    .train 425444,1
 step << Warrior
     .goto Ashenvale,42.029,68.999
     >>Kill the |cRXP_ENEMY_Green Dragon Whelp|r
     .complete 78144,1 -- Accompany Alonso to slay the dragon.
     .target Alonso
     .mob Green Dragon Whelp
-    .train 425444,1 
+    .train 425444,1
 step << Warrior
     .goto Ashenvale,42.053,69.187
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
@@ -829,7 +829,7 @@ RXPGuides.RegisterGuide([[
 step << Priest
     .goto Duskwood,50.4,70.8,60,0
     .goto Duskwood,50.2,76.4
-    >>Kill |cRXP_ENEMY_Defias Night Runners|r, |cRXP_ENEMY_Defias Night Blades|r and |cRXP_ENEMY_Defias Enchanters|r. Loot them for the |T135736:0|t[|cRXP_LOOT_Dark Insight|r] 
+    >>Kill |cRXP_ENEMY_Defias Night Runners|r, |cRXP_ENEMY_Defias Night Blades|r and |cRXP_ENEMY_Defias Enchanters|r. Loot them for the |T135736:0|t[|cRXP_LOOT_Dark Insight|r]
     .collect 211528,1 -- Dark Insight (1)
     .mob Defias Night Runner
     .mob Defias Night Blade

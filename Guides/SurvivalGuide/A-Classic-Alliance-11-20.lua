@@ -386,9 +386,9 @@ step << !NightElf
 step << !NightElf
     .goto Wetlands,10.43,61.01,10,0
     .goto Wetlands,10.496,60.201
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Samor Festivus|r upstairs
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Samor Festivus|r upstairs
     .vendor >> |cRXP_BUY_Buy as many|r |T134831:0|t[Healing Potions] |cRXP_BUY_that are available|r
-    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cFF00FF25Samor Festivus|r doesn't have any|r
+    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_ Samor Festivus|r doesn't have any|r
     .target Samor Festivus
 step << !NightElf
     .goto Wetlands,9.49,59.69
@@ -458,8 +458,8 @@ step << Druid
 step << Druid
     .goto Moonglade,52.6,51.6
     >>Swim into Lake Elune'Ara
-    >>Open a |cFFDB2EEFBauble Container|r. Loot it for a |T134125:0|t[Shrine Bauble]
-    >>|cFFFCDC00It may spawn in different locations underwater|r
+    >>Open a |cRXP_PICK_Bauble Container|r. Loot it for a |T134125:0|t[Shrine Bauble]
+    >>|cRXP_WARN_It may spawn in different locations underwater|r
     .collect 15877,1,29,1 -- Shrine Bauble (1)
 step << Druid
     #completewith next
@@ -1083,7 +1083,7 @@ step << !NightElf Priest
     .target Jandria
 step << !NightElf Warrior
     .goto Darnassus,58.945,35.336
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Darnath Bladesinger|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Darnath Bladesinger|r
     .trainer >> Train your class spells
     .target Darnath Bladesinger
 step << !NightElf Rogue

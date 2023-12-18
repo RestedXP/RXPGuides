@@ -398,7 +398,7 @@ step
     .dungeon RFC
 step
     #completewith next
-    >>Kill |cFFFF5722Ragefire Troggs|r and |cFFFF5722Ragefire Shamans|r
+    >>Kill |cRXP_ENEMY_Ragefire Troggs|r and |cRXP_ENEMY_Ragefire Shamans|r
     .complete 5723,1 --Ragefire Trogg (8)
     .complete 5723,2 --Ragefire Shaman (8)
     .mob Ragefire Trogg
@@ -421,7 +421,7 @@ step
     .dungeon RFC
 step
     #label TroggsShamans
-    >>Kill |cFFFF5722Ragefire Troggs|r and |cFFFF5722Ragefire Shamans|r
+    >>Kill |cRXP_ENEMY_Ragefire Troggs|r and |cRXP_ENEMY_Ragefire Shamans|r
     .complete 5723,1 --Ragefire Trogg (8)
     .complete 5723,2 --Ragefire Shaman (8)
     .mob Ragefire Trogg
@@ -431,7 +431,7 @@ step
 step
     #requires TroggsShamans
     #completewith BazzalanandJergosh
-    >>Kill |cFFFF5722Searing Blade Cultists|r and |cFFFF5722Searing Blade Warlocks|r. Loot them for the |cFF00BCD4Spells of Shadow|r and |cFF00BCD4Incantations from the Nether|r
+    >>Kill |cRXP_ENEMY_Searing Blade Cultists|r and |cRXP_ENEMY_Searing Blade Warlocks|r. Loot them for the |cRXP_LOOT_Spells of Shadow|r and |cRXP_LOOT_Incantations from the Nether|r
     .complete 5725,1 --Spells of Shadow (1)
     .complete 5725,2 --	Incantations from the Nether (1)
     .mob Searing Blade Cultist
@@ -439,14 +439,14 @@ step
     .isOnQuest 5725
     .dungeon RFC
 step
-    >>Kill |cFFFF5722Taragaman the Hungerer|r. Loot him for his |cFF00BCD4Heart|r
+    >>Kill |cRXP_ENEMY_Taragaman the Hungerer|r. Loot him for his |cRXP_LOOT_Heart|r
     .complete 5761,1 -- Taragaman the Hungerer's Heart
     .mob Taragaman the Hungerer
     .isOnQuest 5761
     .dungeon RFC
 step
     #label BazzalanandJergosh
-    >>Kill |cFFFF5722Bazzalan|r and |cFFFF5722Jergosh the Invoker|r
+    >>Kill |cRXP_ENEMY_Bazzalan|r and |cRXP_ENEMY_Jergosh the Invoker|r
     .complete 5728,1 --Bazzalan (1)
     .complete 5728,2 --Jergosh the Invoker (1)
     .mob Bazzalan
@@ -454,7 +454,7 @@ step
     .isOnQuest 5728
     .dungeon RFC
 step
-    >>Kill |cFFFF5722Searing Blade Cultists|r and |cFFFF5722Searing Blade Warlocks|r. Loot them for the |cFF00BCD4Spells of Shadow|r and |cFF00BCD4Incantations from the Nether|r
+    >>Kill |cRXP_ENEMY_Searing Blade Cultists|r and |cRXP_ENEMY_Searing Blade Warlocks|r. Loot them for the |cRXP_LOOT_Spells of Shadow|r and |cRXP_LOOT_Incantations from the Nether|r
     .complete 5725,1 --Spells of Shadow (1)
     .complete 5725,2 --	Incantations from the Nether (1)
     .mob Searing Blade Cultist
@@ -1709,13 +1709,13 @@ step
 step
     #label TestSeeds
     .goto The Barrens,55.61,42.75
-    >>Dive underwater in the middle of the lake and click the |cFFDB2EEFBubble Fissure|r
+    >>Dive underwater in the middle of the lake and click the |cRXP_PICK_Bubble Fissure|r
     .complete 877,1 --Test the Dried Seeds (1)
 step
     #completewith next
     .goto The Barrens,52.95,41.75,0
-    >>Kill |cRXP_ENEMY_Verog|r. Loot him for his |cFF00BCD4Head|r
-    >>|cFFFCDC00He has a chance of spawning every time a|r |cRXP_ENEMY_Centaur|r |cFFFCDC00is killed|r
+    >>Kill |cRXP_ENEMY_Verog|r. Loot him for his |cRXP_LOOT_Head|r
+    >>|cRXP_WARN_He has a chance of spawning every time a|r |cRXP_ENEMY_Centaur|r |cRXP_WARN_is killed|r
     .complete 851,1 --Verog's Head (1)
     .mob Verog the Dervish
     .isOnQuest 851
@@ -1748,8 +1748,8 @@ step
     .goto The Barrens,52.99,44.73,50,0
     .goto The Barrens,54.31,46.81,50,0
     .goto The Barrens,55.80,45.78,50,0
-    >>Grind |cRXP_ENEMY_Centaurs|r around the oasis. Once |cRXP_ENEMY_Verog|r spawns, kill him and loot him for his |cFF00BCD4Head|r
-    >>|cRXP_ENEMY_Verog|r |cFFFCDC00has a chance of spawning every time a|r |cRXP_ENEMY_Centaur|r |cFFFCDC00is killed|r
+    >>Grind |cRXP_ENEMY_Centaurs|r around the oasis. Once |cRXP_ENEMY_Verog|r spawns, kill him and loot him for his |cRXP_LOOT_Head|r
+    >>|cRXP_ENEMY_Verog|r |cRXP_WARN_has a chance of spawning every time a|r |cRXP_ENEMY_Centaur|r |cRXP_WARN_is killed|r
     .complete 851,1 --Verog's Head (1)
     .mob Verog the Dervish
 step
@@ -2035,7 +2035,7 @@ step
     .goto Stonetalon Mountains,61.85,66.07,30,0
     .goto Stonetalon Mountains,60.71,66.12,30,0
     .goto Stonetalon Mountains,60.96,63.99,30,0
-    .goto Stonetalon Mountains,60.25,63.21,30,0    
+    .goto Stonetalon Mountains,60.25,63.21,30,0
     >>Loot the |cRXP_PICK_Spider Eggs|r near the trees
     >>|cRXP_WARN_Be careful! The|r |cRXP_ENEMY_Deepmoss Hatchlings|r |cRXP_WARN_have a chance of summoning a level 22|r |cRXP_ENEMY_Deepmoss Matriarch|r
     .complete 1069,1 --Collect Deepmoss Egg (x15)
@@ -2205,7 +2205,7 @@ step
     .mob Stormsnout
 step
     #completewith next
-    >>Kill a lot of |cRXP_ENEMY_Bristleback Quillboars|r. Loot them for their |cRXP_LOOT_Tusks|r. Save the |T134128:0|t[|cFF00BCD4Blood Shards|r] you get
+    >>Kill a lot of |cRXP_ENEMY_Bristleback Quillboars|r. Loot them for their |cRXP_LOOT_Tusks|r. Save the |T134128:0|t[|cRXP_LOOT_Blood Shards|r] you get
 	.complete 878,1 --Kill Bristleback Water Seeker (x6)
     .complete 878,2 --Kill Bristleback Thornweaver (x12)
     .complete 878,3 --Kill Bristleback Geomancer (x12)
@@ -2219,8 +2219,8 @@ step
     .goto The Barrens,45.93,49.08,80,0
     .goto The Barrens,47.43,51.37,80,0
     .goto The Barrens,50.10,53.34
-	>>Find & kill |cRXP_ENEMY_Lakota'mani|r (Gray Kodo) around this area. Loot him for |T132318:0|t[|cFF00BCD4Hoof of Lakota'mani|r]. Use it to start the quest
-    >>|cFFFCDC00Skip this quest if you can't find him|r
+	>>Find & kill |cRXP_ENEMY_Lakota'mani|r (Gray Kodo) around this area. Loot him for |T132318:0|t[|cRXP_LOOT_Hoof of Lakota'mani|r]. Use it to start the quest
+    >>|cRXP_WARN_Skip this quest if you can't find him|r
 	.collect 5099,1,878 --Collect Hoof of Lakota'Mani
 	.accept 883 >>Accept Lakota'Mani
     .use 5099
@@ -2252,7 +2252,7 @@ step
     .goto The Barrens,52.41,53.07,60,0
     .goto The Barrens,52.32,53.71,60,0
     .goto The Barrens,51.39,54.22,60,0
-    >>Kill a lot of |cRXP_ENEMY_Bristleback Quillboars|r. Loot them for their |cRXP_LOOT_Tusks|r. Save the |T134128:0|t[|cFF00BCD4Blood Shards|r] you get
+    >>Kill a lot of |cRXP_ENEMY_Bristleback Quillboars|r. Loot them for their |cRXP_LOOT_Tusks|r. Save the |T134128:0|t[|cRXP_LOOT_Blood Shards|r] you get
     .complete 878,1 --Kill Bristleback Water Seeker (x6)
     .complete 878,2 --Kill Bristleback Thornweaver (x12)
     .complete 878,3 --Kill Bristleback Geomancer (x12)
@@ -2291,7 +2291,7 @@ step
     .goto The Barrens,55.47,41.51,40,0
     .goto The Barrens,55.99,42.00,40,0
     .goto The Barrens,56.15,42.53,40,0
-    .goto The Barrens,56.01,43.40,40,0    
+    .goto The Barrens,56.01,43.40,40,0
     >>Kill |cRXP_ENEMY_Oasis Snapjaws|r in and around the lake. Loot them for their |cRXP_LOOT_Shells|r
     .complete 880,1 --Altered Snapjaw Shell (8)
     .mob Oasis Snapjaw
@@ -2542,7 +2542,7 @@ step << Rogue
     .dungeon DM
 step << Warlock
     .goto Undercity,48.47,45.42
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Zevrost|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Zevrost|r
     .train 1014 >> Train your class spells
 	.target Zevrost
     .xp <18,1
@@ -2551,7 +2551,7 @@ step << Warlock
 step << Warlock
     #optional
     .goto Undercity,48.47,45.42
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Zevrost|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Zevrost|r
     .train 706 >> Train your class spells
 	.target Zevrost
     .xp <20,1
@@ -2609,7 +2609,7 @@ step
     .goto Westfall,41.08,98.55,60,0
     .goto Westfall,37.10,89.16,40,0
     .goto Westfall,30.01,86.02,200 >> Swim directly to the west from Grom'Gol into the Vile Reef and then swim north toward Westfall
-    >>|cFFFCDC00Steer clear from the island. Follow the waypoint for safety!|r
+    >>|cRXP_WARN_Steer clear from the island. Follow the waypoint for safety!|r
     .dungeon DM
 step
     #completewith next
@@ -2624,7 +2624,7 @@ step
     .dungeon DM
 step
     .goto Westfall,30.01,86.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r  
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r
     .turnin 103 >> Turn in Keeper of the Flame
     .itemcount 814,5 -- Flask of Oil (5)
     .target Captain Grayson
@@ -2639,7 +2639,7 @@ step
     .dungeon DM
 step
     .goto Westfall,30.01,86.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r  
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r
     .turnin 104 >> Turn in The Coastal Menace
     .target Captain Grayson
     .dungeon DM
@@ -2752,7 +2752,7 @@ step << !Shaman
     .subzoneskip 380,1
 step
     .goto The Barrens,44.55,59.27
-    >>Kill |cRXP_ENEMY_Bristleback Quillboars|r. Loot them for a |T134128:0|t[|cFF00BCD4Blood Shard|r
+    >>Kill |cRXP_ENEMY_Bristleback Quillboars|r. Loot them for a |T134128:0|t[|cRXP_LOOT_Blood Shard|r
     .collect 5075 --Blood Shard (1)
     .mob Bristleback Water Seeker
     .mob Bristleback Thornweaver
@@ -2768,7 +2768,7 @@ step
     .addquestitem 4075,5052
 step
     #completewith Thunderhawk
-    +|cRXP_WARN_Use your|r |T134128:0|t[|cFF00BCD4Blood Shards|r] |cRXP_WARN_to get buffs. Save at least 4 of them for later|r
+    +|cRXP_WARN_Use your|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r] |cRXP_WARN_to get buffs. Save at least 4 of them for later|r
     +|cRXP_WARN_Make sure to turn off any autocomplete functions from addons such as Questie or Leatrix Plus for this!|r
 step
     #label IshamuhaleTurnin
@@ -3405,7 +3405,7 @@ step
     .goto The Barrens,40.92,45.16,80,0
     .goto The Barrens,45.40,53.96
     .subzone 718 >> Now you should be looking for a group to Wailing Caverns
-    >>Grind |cFFFF5722Quilboars|r while assembling a Wailing Caverns group
+    >>Grind |cRXP_ENEMY_Quilboars|r while assembling a Wailing Caverns group
     .dungeon WC
 step
     .goto The Barrens,46.15,36.93,100 >> Travel to Wailing Caverns
@@ -3413,7 +3413,7 @@ step
     .dungeon WC
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nalpak|r and |cRXP_FRIENDLY_Ebru|r
-    >>|cFFFCDC00They are located above the the Wailing Caverns cave entrance|r
+    >>|cRXP_WARN_They are located above the the Wailing Caverns cave entrance|r
     .accept 1486 >> Accept Deviate Hides
     .goto Kalimdor,51.91,55.42
     .accept 1487 >> Accept Deviate Eradication
@@ -3423,22 +3423,22 @@ step
     .dungeon WC
 step
     #completewith EnterWC
-    >>Loot the |cFF00BCD4Serpentbloom|r on the ground
-    >>|cRXP_WARN_It is recommended that maximum 3 players attempt to complete this quest if you're doing only 1 run. There aren't enough|r |cFF00BCD4Serpentbloom|r |cRXP_WARN_for everybody|r
+    >>Loot the |cRXP_LOOT_Serpentbloom|r on the ground
+    >>|cRXP_WARN_It is recommended that maximum 3 players attempt to complete this quest if you're doing only 1 run. There aren't enough|r |cRXP_LOOT_Serpentbloom|r |cRXP_WARN_for everybody|r
     .complete 962,1 --Serpentbloom (10)
     .isOnQuest 962
     .dungeon WC
 step
     #completewith EnterWC
-    >>Kill all the |cFFFF5722Deviate Beasts|r you see. Loot them for their |cFF00BCD4Hides|r
-    >>|cRXP_WARN_It is recommended that maximum 3 players attempt to complete this quest if you're doing only 1 run. There aren't enough|r |cFF00BCD4Hides|r |cRXP_WARN_for everybody|r
+    >>Kill all the |cRXP_ENEMY_Deviate Beasts|r you see. Loot them for their |cRXP_LOOT_Hides|r
+    >>|cRXP_WARN_It is recommended that maximum 3 players attempt to complete this quest if you're doing only 1 run. There aren't enough|r |cRXP_LOOT_Hides|r |cRXP_WARN_for everybody|r
     .complete 1486,1 --Deviate Hide (20)
     .dungeon WC
     .isOnQuest 1486
     --Too many .mobs, would clutter target box
 step
     #completewith EnterWC
-    >>Kill |cFFFF5722Ectoplasms|r. Loot them for their |cFF00BCD4Essence|r
+    >>Kill |cRXP_ENEMY_Ectoplasms|r. Loot them for their |cRXP_LOOT_Essence|r
     .complete 1491,1 --Wailing Essence (6)
     .isOnQuest 1491
     .dungeon WC
@@ -3448,7 +3448,7 @@ step
     .goto Kalimdor,51.82,54.86,30,0
     .goto Kalimdor,52.01,55.02,30,0
     .goto Kalimdor,52.15,55.15
-    >>Kill |cFFFF5722Mad Magglish|r. Loot him for the |cFF00BCD499-Year-Old Port|r
+    >>Kill |cRXP_ENEMY_Mad Magglish|r. Loot him for the |cRXP_LOOT_99-Year-Old Port|r
     .complete 959,1 --99-Year-Old Port (1)
     .mob Mad Magglish
     .isOnQuest 959
@@ -3463,21 +3463,21 @@ step
     .dungeon WC
 step
     #completewith GlowingShard
-    >>Loot the |cFF00BCD4Serpentbloom|r on the ground
-    >>|cRXP_WARN_It is recommended that maximum 3 players attempt to complete this quest if you're doing only 1 run. There aren't enough|r |cFF00BCD4Serpentbloom|r |cRXP_WARN_for everybody|r
+    >>Loot the |cRXP_LOOT_Serpentbloom|r on the ground
+    >>|cRXP_WARN_It is recommended that maximum 3 players attempt to complete this quest if you're doing only 1 run. There aren't enough|r |cRXP_LOOT_Serpentbloom|r |cRXP_WARN_for everybody|r
     .complete 962,1 --Serpentbloom (10)
     .isOnQuest 962
     .dungeon WC
 step
     #completewith GlowingShard
-    >>Kill |cFFFF5722Ectoplasms|r. Loot them for their |cFF00BCD4Essence|r
-    >>|cRXP_WARN_It is recommended that maximum 3 players attempt to complete this quest if you're doing only 1 run. There aren't enough|r |cFF00BCD4Hides|r |cRXP_WARN_for everybody|r
+    >>Kill |cRXP_ENEMY_Ectoplasms|r. Loot them for their |cRXP_LOOT_Essence|r
+    >>|cRXP_WARN_It is recommended that maximum 3 players attempt to complete this quest if you're doing only 1 run. There aren't enough|r |cRXP_LOOT_Hides|r |cRXP_WARN_for everybody|r
     .complete 1491,1 --Wailing Essence (6)
     .isOnQuest 1491
     .dungeon WC
 step
     #completewith GlowingShard
-    >>Kill |cFFFF5722Deviate Ravagers|r, |cFFFF5722Vipers|r, |cFFFF5722Shamblers|r and |cFFFF5722Dreadfangs|r
+    >>Kill |cRXP_ENEMY_Deviate Ravagers|r, |cRXP_ENEMY_Vipers|r, |cRXP_ENEMY_Shamblers|r and |cRXP_ENEMY_Dreadfangs|r
     .complete 1487,1 --Deviate Ravager (7)
     .complete 1487,2 --Deviate Viper (7)
     .complete 1487,3 --Deviate Shambler (7)
@@ -3491,7 +3491,7 @@ step
     .dungeon WC
 step
     #label Gems
-    >>Kill |cFFFF5722Lord Cobrahn|r, |cFFFF5722Lady Anacondra|r, |cFFFF5722Lord Pythas|r and |cFFFF5722Lord Serpentis|r. Loot them for their |cFF00BCD4Gems|r
+    >>Kill |cRXP_ENEMY_Lord Cobrahn|r, |cRXP_ENEMY_Lady Anacondra|r, |cRXP_ENEMY_Lord Pythas|r and |cRXP_ENEMY_Lord Serpentis|r. Loot them for their |cRXP_LOOT_Gems|r
     .complete 914,1 --Gem of Cobrahn (1)
     .complete 914,2 --Gem of Anacondra (1)
     .complete 914,3 --Gem of Pythas (1)
@@ -3511,8 +3511,8 @@ step
     .dungeon WC
 step
     #label GlowingShard
-    >>Once you have reached |cRXP_FRIENDLY_Naralex|r you will get attack by two waves of enemies and finally by |cFFFF5722Mutanus the Devourer|r
-    >>Kill him and loot him for the |T135229:0|t[|cFF00BCD4Glowing Shard|r] and use it to start the quest
+    >>Once you have reached |cRXP_FRIENDLY_Naralex|r you will get attack by two waves of enemies and finally by |cRXP_ENEMY_Mutanus the Devourer|r
+    >>Kill him and loot him for the |T135229:0|t[|cRXP_LOOT_Glowing Shard|r] and use it to start the quest
     .collect 10441,1 --Collect Glowing Shard (x1)
     .accept 6981 >> Accept The Glowing Shard
     .use 10441
@@ -3520,19 +3520,19 @@ step
     .dungeon WC
 step
     #completewith DeviateRaptors
-    >>Kill |cFFFF5722Ectoplasms|r. Loot them for their |cFF00BCD4Essence|r
+    >>Kill |cRXP_ENEMY_Ectoplasms|r. Loot them for their |cRXP_LOOT_Essence|r
     .complete 1491,1 --Wailing Essence (6)
     .isOnQuest 1491
     .dungeon WC
 step
     #completewith next
-    >>Loot the |cFF00BCD4Serpentbloom|r on the ground
+    >>Loot the |cRXP_LOOT_Serpentbloom|r on the ground
     .complete 962,1 --Serpentbloom (10)
     .isOnQuest 962
     .dungeon WC
 step
     #label DeviateRaptors
-    >>Kill |cFFFF5722Deviate Ravagers|r, |cFFFF5722Vipers|r, |cFFFF5722Shamblers|r and |cFFFF5722Dreadfangs|r
+    >>Kill |cRXP_ENEMY_Deviate Ravagers|r, |cRXP_ENEMY_Vipers|r, |cRXP_ENEMY_Shamblers|r and |cRXP_ENEMY_Dreadfangs|r
     .complete 1487,1 --Deviate Ravager (7)
     .complete 1487,2 --Deviate Viper (7)
     .complete 1487,3 --Deviate Shambler (7)
@@ -3547,7 +3547,7 @@ step
     .dungeon WC
  step
     #label DeviateRaptors
-    >>Kill |cFFFF5722Deviate Ravagers|r, |cFFFF5722Vipers|r, |cFFFF5722Shamblers|r and |cFFFF5722Dreadfangs|r
+    >>Kill |cRXP_ENEMY_Deviate Ravagers|r, |cRXP_ENEMY_Vipers|r, |cRXP_ENEMY_Shamblers|r and |cRXP_ENEMY_Dreadfangs|r
     .complete 1487,1 --Deviate Ravager (7)
     .complete 1487,2 --Deviate Viper (7)
     .complete 1487,3 --Deviate Shambler (7)
@@ -3560,7 +3560,7 @@ step
     .dungeon WC
 step
     #label DeviateRaptors
-    >>Kill |cFFFF5722Deviate Raptors|r
+    >>Kill |cRXP_ENEMY_Deviate Raptors|r
     .complete 1486,1 --Deviate Hide (20)
     .mob Deviate Ravager
     .mob Deviate Viper
@@ -3570,12 +3570,12 @@ step
     .dungeon WC
 step
     #completewith next
-    >>Loot the |cFF00BCD4Serpentbloom|r on the ground
+    >>Loot the |cRXP_LOOT_Serpentbloom|r on the ground
     .complete 962,1 --Serpentbloom (10)
     .isOnQuest 962
     .dungeon WC
 step
-    >>Kill |cFFFF5722Ectoplasms|r. Loot them for their |cFF00BCD4Essence|r
+    >>Kill |cRXP_ENEMY_Ectoplasms|r. Loot them for their |cRXP_LOOT_Essence|r
     .complete 1491,1 --Wailing Essence (6)
     .mob Devouring Ectoplasm
     .mob Evolving Ectoplasm
@@ -3583,7 +3583,7 @@ step
     .isOnQuest 1491
     .dungeon WC
 step
-    >>Loot the |cFF00BCD4Serpentbloom|r on the ground
+    >>Loot the |cRXP_LOOT_Serpentbloom|r on the ground
     .complete 962,1 --Serpentbloom (10)
     .isOnQuest 962
     .dungeon WC
@@ -3645,7 +3645,7 @@ step
     .dungeon WC
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nalpak|r and |cRXP_FRIENDLY_Ebru|r
-    >>|cFFFCDC00They are located above the the Wailing Caverns cave entrance|r
+    >>|cRXP_WARN_They are located above the the Wailing Caverns cave entrance|r
     .turnin 1486 >> Turn in Deviate Hides
     .goto Kalimdor,51.91,55.42
     .turnin 1487 >> Turn in Deviate Eradication
@@ -3658,7 +3658,7 @@ step
 step
     .goto Kalimdor,51.92,55.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ebru|r
-    >>|cFFFCDC00He is located above the the Wailing Caverns cave entrance|r
+    >>|cRXP_WARN_He is located above the the Wailing Caverns cave entrance|r
     .turnin 1487 >> Turn in Deviate Eradication
     .target Ebru
     .isQuestComplete 1487
@@ -3666,7 +3666,7 @@ step
 step
     .goto Kalimdor,51.91,55.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nalpak|
-    >>|cFFFCDC00He is located above the the Wailing Caverns cave entrance|r
+    >>|cRXP_WARN_He is located above the the Wailing Caverns cave entrance|r
     .turnin 1486 >> Turn in Deviate Hides
     .target Nalpak
     .isQuestComplete 1486
@@ -3905,7 +3905,7 @@ step
     .goto Stonetalon Mountains,70.82,55.25,30,0
     .goto Stonetalon Mountains,59.66,52.14
     >>Kill |cRXP_ENEMY_XT:9|r. It patrols the southern side of the river
-    >>|cFFFCDC00This quest does not need to be completed now|r
+    >>|cRXP_WARN_This quest does not need to be completed now|r
     .complete 1068,2 --XT:9 (1)
     .unitscan XT:9
 step
@@ -3932,7 +3932,7 @@ step
     .goto Stonetalon Mountains,71.25,43.45,30,0
     .goto Stonetalon Mountains,64.82,47.23
     >>Kill |cRXP_ENEMY_XT:4|r. It patrols the northern side of the river
-    >>|cFFFCDC00This quest does not need to be completed now|r
+    >>|cRXP_WARN_This quest does not need to be completed now|r
     .complete 1068,1 --XT:4 (1)
     .unitscan XT:4
 step
@@ -4072,7 +4072,7 @@ step
     .goto Kalimdor,44.35,34.97,20,0
     .goto Kalimdor,44.53,34.86,20,0
     .goto Kalimdor,43.94,34.86
-    >>Kill |cFFFF5722Blackfathom Tide Priestesses|r. Loot them for a |T134332:0|t[|cFF00BCD4Damp Note|r] and use it to start the quest
+    >>Kill |cRXP_ENEMY_Blackfathom Tide Priestesses|r. Loot them for a |T134332:0|t[|cRXP_LOOT_Damp Note|r] and use it to start the quest
     .collect 16790,1,6564 --Collect Damp Note (1)
     .accept 6564 >> Accept Allegiance to the Old Gods
     .mob Blackfathom Tide Priestess

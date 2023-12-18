@@ -22,28 +22,28 @@ step << Mage
 step
     .goto The Barrens,52.2,31.8
 .target Tonga Runetotem
->>Talk to |cFF00FF25Tonga Runetotem|r
+>>Talk to |cRXP_FRIENDLY_ Tonga Runetotem|r
     .accept 870 >>Accept The Forgotten Pools
 step
     .goto The Barrens,52.2,31.0
->>Talk to |cFF00FF25Sergra Darkthorn|r
+>>Talk to |cRXP_FRIENDLY_ Sergra Darkthorn|r
     .turnin 842 >>Turn in Crossroads Conscription
 .target Sergra Darkthorn
     .accept 844 >>Accept Plainstrider Menace
 step << Troll Mage
     .goto The Barrens,52.5,29.8
 .target Zargh
->>Talk to |cFF00FF25Zargh|r
+>>Talk to |cRXP_FRIENDLY_ Zargh|r
     .accept 6365 >>Accept Meats to Orgrimmar
 step
     .goto The Barrens,51.9,30.3
 .target Gazrog
->>Talk to |cFF00FF25Gazrog|r
+>>Talk to |cRXP_FRIENDLY_ Gazrog|r
     .accept 869 >>Accept Raptor Thieves
 step
     .goto The Barrens,51.5,30.8
 .target Thork
->>Talk to |cFF00FF25Thork|r
+>>Talk to |cRXP_FRIENDLY_ Thork|r
     .accept 871 >>Accept Disrupt the Attacks
     .accept 5041 >>Accept Supplies for the Crossroads
 step
@@ -52,14 +52,14 @@ step
 step << Troll Mage
     >>do NOT go to Orgrimmar
     .goto The Barrens,51.5,30.3
->>Talk to |cFF00FF25Devrak|r
+>>Talk to |cRXP_FRIENDLY_ Devrak|r
     .turnin 6365 >>Turn in Meats to Orgrimmar
 .target Devrak
     .accept 6384 >>Accept Ride to Orgrimmar
 step
     .goto The Barrens,51.5,30.1
 .target Apothecary Helbrim
->>Talk to |cFF00FF25Apothecary Helbrim|r
+>>Talk to |cRXP_FRIENDLY_ Apothecary Helbrim|r
     .accept 848 >>Accept Fungal Spores
     .accept 1492 >>Accept Wharfmaster Dizzywig
 step
@@ -107,16 +107,16 @@ step
 step
     >>Top of the tower
     .goto The Barrens,51.5,30.9
->>Talk to |cFF00FF25Thork|r
+>>Talk to |cRXP_FRIENDLY_ Thork|r
     .turnin 871 >>Turn in Disrupt the Attacks
 .target Thork
     .accept 872 >>Accept The Disruption Ends
 .target Darsok Swiftdagger
->>Talk to |cFF00FF25Darsok Swiftdagger|r
+>>Talk to |cRXP_FRIENDLY_ Darsok Swiftdagger|r
     .accept 867 >>Accept Harpy Raiders
 step
     .goto The Barrens,52.2,31.0
->>Talk to |cFF00FF25Sergra Darkthorn|r
+>>Talk to |cRXP_FRIENDLY_ Sergra Darkthorn|r
     .turnin 844 >>Turn in Plainstrider Menace
 .target Sergra Darkthorn
     .accept 845 >>Accept The Zhevra
@@ -157,7 +157,7 @@ step << !Undead
 step << !Undead
     .goto The Barrens,62.3,20.1
 .target Ak'Zeloth
->>Talk to |cFF00FF25Ak'Zeloth|r
+>>Talk to |cRXP_FRIENDLY_ Ak'Zeloth|r
     .turnin 924 >>Turn in The Demon Seed
 step
     >>Kill any Zhevras you see. Loot them for Hooves. Make sure you have 4 before entering Ratchet
@@ -168,7 +168,7 @@ step
     >>Top floor of the building
     .goto The Barrens,62.7,36.3
 .target Gazlowe
->>Talk to |cFF00FF25Gazlowe|r
+>>Talk to |cRXP_FRIENDLY_ Gazlowe|r
     .accept 887 >>Accept Southsea Freebooters
 step
     .goto The Barrens,63.1,37.1
@@ -176,7 +176,7 @@ step
 step
     .goto The Barrens,63.0,37.2
 .target Sputtervalve
->>Talk to |cFF00FF25Sputtervalve|r
+>>Talk to |cRXP_FRIENDLY_ Sputtervalve|r
     .accept 894 >>Accept Samophlange
 step
     >>Click the Wanted poster. You can bank here too if you want
@@ -185,11 +185,11 @@ step
 step
     .goto The Barrens,62.4,37.7
 .target Mebok Mizzyrix
->>Talk to |cFF00FF25Mebok Mizzyrix|r
+>>Talk to |cRXP_FRIENDLY_ Mebok Mizzyrix|r
     .accept 865 >>Accept Raptor Horns
 step
     .goto The Barrens,62.3,38.4
->>Talk to |cFF00FF25Brewmaster Drohn|r
+>>Talk to |cRXP_FRIENDLY_ Brewmaster Drohn|r
     .turnin 819 >>Turn in Chen's Empty Keg
 .target Brewmaster Drohn
     .accept 821 >>Accept Chen's Empty Keg
@@ -214,14 +214,14 @@ step
 step
     #requires Southsea
     .goto The Barrens,62.7,36.3
->>Talk to |cFF00FF25Gazlowe|r
+>>Talk to |cRXP_FRIENDLY_ Gazlowe|r
     .turnin 887 >>Turn in Southsea Freebooters
 .target Gazlowe
     .accept 890 >>Accept The Missing Shipment
     .turnin 895 >>Turn in WANTED: Baron Longshore
 step
     .goto The Barrens,63.3,38.4
->>Talk to |cFF00FF25Wharfmaster Dizzywig|r
+>>Talk to |cRXP_FRIENDLY_ Wharfmaster Dizzywig|r
     .turnin 1492 >>Turn in Wharfmaster Dizzywig
     .turnin 890 >>Turn in The Missing Shipment
 .target Wharfmaster Dizzywig
@@ -229,7 +229,7 @@ step
     .accept 896 >>Accept Miner's Fortune
 step
     .goto The Barrens,62.7,36.3
->>Talk to |cFF00FF25Gazlowe|r
+>>Talk to |cRXP_FRIENDLY_ Gazlowe|r
     .turnin 892 >>Turn in The Missing Shipment
 .target Gazlowe
     .accept 888 >>Accept Stolen Booty
@@ -239,12 +239,12 @@ step
 step
     .goto The Barrens,51.5,30.8
 .target Thork
->>Talk to |cFF00FF25Thork|r
+>>Talk to |cRXP_FRIENDLY_ Thork|r
     .turnin 5041 >>Turn in Supplies for the Crossroads
     .turnin 872 >>Turn in The Disruption Ends
 step
     .goto The Barrens,52.2,31.0
->>Talk to |cFF00FF25Sergra Darkthorn|r
+>>Talk to |cRXP_FRIENDLY_ Sergra Darkthorn|r
     .turnin 845 >>Turn in The Zhevra
 .target Sergra Darkthorn
     .accept 903 >>Accept Prowlers of the Barrens
@@ -256,12 +256,12 @@ step
 step
     .goto The Barrens,45.4,28.4
 .target Regthar Deathgate
->>Talk to |cFF00FF25Regthar Deathgate|r
+>>Talk to |cRXP_FRIENDLY_ Regthar Deathgate|r
     .accept 850 >>Accept Kolkar Leaders
 step
     .goto The Barrens,45.4,28.4
 .target Regthar Deathgate
->>Talk to |cFF00FF25Regthar Deathgate|r
+>>Talk to |cRXP_FRIENDLY_ Regthar Deathgate|r
     .accept 855 >> Accept Centaur Bracers
 step
     #completewith next
@@ -275,13 +275,13 @@ step
     .isQuestComplete 855
     .goto The Barrens,45.39,28.44
 .target Regthar Deathgate
->>Talk to |cFF00FF25Regthar Deathgate|r
+>>Talk to |cRXP_FRIENDLY_ Regthar Deathgate|r
     .turnin 850 >> Turn in Kolkar Leaders
     .turnin 855 >> Turn in Centaur Bracers
 step
     .goto The Barrens,45.39,28.44
 .target Regthar Deathgate
->>Talk to |cFF00FF25Regthar Deathgate|r
+>>Talk to |cRXP_FRIENDLY_ Regthar Deathgate|r
     .turnin 850 >> Turn in Kolkar Leaders
 step
     #sticky
@@ -362,7 +362,7 @@ step
     >>Accept Ignition from the Shredder
     .goto The Barrens,56.5,7.5
 .target Wizzlecrank's Shredder
->>Talk to |cFF00FF25Wizzlecrank's Shredder|r
+>>Talk to |cRXP_FRIENDLY_ Wizzlecrank's Shredder|r
     .accept 858 >>Accept Ignition
 step
     >>Grinding to level 16 here is important, due to the next 3 quests being quite hard.
@@ -374,7 +374,7 @@ step
 step
     >>This will begin an escort
     .goto The Barrens,56.5,7.5
->>Talk to |cFF00FF25Wizzlecrank's Shredder|r
+>>Talk to |cRXP_FRIENDLY_ Wizzlecrank's Shredder|r
     .turnin 858 >>Turn in Ignition
 .target Wizzlecrank's Shredder
     .accept 863 >>Accept The Escape
@@ -395,7 +395,7 @@ step
     .trainer >> Train your class spells
 step << Troll Mage
     .goto Orgrimmar,54.2,68.6
->>Talk to |cFF00FF25Innkeeper Gryshka|r
+>>Talk to |cRXP_FRIENDLY_ Innkeeper Gryshka|r
     .turnin 6384 >>Turn in Ride to Orgrimmar
 .target Innkeeper Gryshka
     .accept 6385 >>Accept Doras the Wind Rider Master
@@ -403,7 +403,7 @@ step
     >>Run up to the Flight Master. Do NOT fly anywhere
     .goto Orgrimmar,45.120,63.889
     .fp Orgrimmar >> Get the Orgrimmar flight path << Undead
->>Talk to |cFF00FF25Doras|r
+>>Talk to |cRXP_FRIENDLY_ Doras|r
     .turnin 6385 >>Turn in Doras the Wind Rider Master << Troll Mage
 .target Doras
     .accept 6386 >>Accept Return to the Crossroads << Troll Mage
@@ -411,7 +411,7 @@ step
     >>Run to Grommash Hold
     .goto Orgrimmar,39.1,38.1
 .target Zor Lonetree
->>Talk to |cFF00FF25Zor Lonetree|r
+>>Talk to |cRXP_FRIENDLY_ Zor Lonetree|r
     .accept 1061 >>Accept The Spirits of Stonetalon
 step
     #completewith next
@@ -419,17 +419,17 @@ step
 step << Troll Mage
     .goto The Barrens,52.6,29.9
 .target Zargh
->>Talk to |cFF00FF25Zargh|r
+>>Talk to |cRXP_FRIENDLY_ Zargh|r
     .turnin 6386 >>Turn in Return to the Crossroads.
 step
     .goto The Barrens,51.9,30.3
->>Talk to |cFF00FF25Gazrog|r
+>>Talk to |cRXP_FRIENDLY_ Gazrog|r
     .turnin 869 >>Turn in Raptor Thieves
 .target Gazrog
     .accept 3281 >>Accept Stolen Silver
 step
     .goto The Barrens,52.3,31.0
->>Talk to |cFF00FF25Sergra Darkthorn|r
+>>Talk to |cRXP_FRIENDLY_ Sergra Darkthorn|r
     .turnin 903 >>Turn in Prowlers of the Barrens
 .target Sergra Darkthorn
     .accept 881 >>Accept Echeyakee
@@ -439,40 +439,40 @@ step
     .complete 881,1 --Echeyakee's Hide (1)
 step
     .goto The Barrens,52.2,31.0
->>Talk to |cFF00FF25Sergra Darkthorn|r
+>>Talk to |cRXP_FRIENDLY_ Sergra Darkthorn|r
     .turnin 881 >>Turn in Echeyakee
 .target Sergra Darkthorn
     .accept 905 >>Accept The Angry Scytheclaws
 step
     .goto The Barrens,52.20,31.90
->>Talk to |cFF00FF25Tonga Runetotem|r
+>>Talk to |cRXP_FRIENDLY_ Tonga Runetotem|r
     .turnin 870 >> Turn in The Forgotten Pools
 .target Tonga Runetotem
     .accept 877 >> Accept The Stagnant Oasis
 step
     .goto The Barrens,52.00,31.60
 .target Mankrik
->>Talk to |cFF00FF25Mankrik|r
+>>Talk to |cRXP_FRIENDLY_ Mankrik|r
     .accept 899 >> Accept Consumed by Hatred
     .accept 4921 >> Accept Lost in Battle
 step
     >>Top of the tower
     .goto The Barrens,51.6,30.9
->>Talk to |cFF00FF25Darsok Swiftdagger|r
+>>Talk to |cRXP_FRIENDLY_ Darsok Swiftdagger|r
     .turnin 867 >>Turn in Harpy Raiders
 .target Darsok Swiftdagger
     .accept 875 >>Accept Harpy Lieutenants
 step
     .goto The Barrens,51.50,30.20
 .target Apothecary Helbrim
->>Talk to |cFF00FF25Apothecary Helbrim|r
+>>Talk to |cRXP_FRIENDLY_ Apothecary Helbrim|r
     .turnin 848 >> Turn in Fungal Spores
 step
     .goto The Barrens,51.5,30.3
     .fly Ratchet >>Fly to Ratchet
 step
     .goto The Barrens,63.0,37.2
->>Talk to |cFF00FF25Sputtervalve|r
+>>Talk to |cRXP_FRIENDLY_ Sputtervalve|r
     .turnin 902 >>Turn in Samophlange
     .turnin 863 >> Turn in The Escape
 .target Sputtervalve
@@ -480,12 +480,12 @@ step
 step
     .goto The Barrens,63.30,38.40
 .target Wharfmaster Dizzywig
->>Talk to |cFF00FF25Wharfmaster Dizzywig|r
+>>Talk to |cRXP_FRIENDLY_ Wharfmaster Dizzywig|r
     .turnin 896 >> Turn in Miner's Fortune
 step
     .goto The Barrens,62.40,37.70
 .target Mebok Mizzyrix
->>Talk to |cFF00FF25Mebok Mizzyrix|r
+>>Talk to |cRXP_FRIENDLY_ Mebok Mizzyrix|r
     .accept 1069 >> Accept Deepmoss Spider Eggs
 step
     >>Loot the crate
@@ -552,7 +552,7 @@ step
 step
     .goto The Barrens,44.5,59.2
 .target Mangletooth
->>Talk to |cFF00FF25Mangletooth|r
+>>Talk to |cRXP_FRIENDLY_ Mangletooth|r
     .accept 878 >>Accept Tribes at War
 step
     .goto The Barrens,44.5,59.2
@@ -561,24 +561,24 @@ step
 step
     .goto The Barrens,51.9,30.3
 .target Gazrog
->>Talk to |cFF00FF25Gazrog|r
+>>Talk to |cRXP_FRIENDLY_ Gazrog|r
     .turnin 3281 >>Turn in Stolen Silver
 step
     .goto The Barrens,52.2,31.0
->>Talk to |cFF00FF25Sergra Darkthorn|r
+>>Talk to |cRXP_FRIENDLY_ Sergra Darkthorn|r
     .turnin 905 >>Turn in The Angry Scytheclaws
 .target Sergra Darkthorn
     .accept 3261 >>Accept Jorn Skyseer
 step
     .goto The Barrens,52.2,31.9
->>Talk to |cFF00FF25Tonga Runetotem|r
+>>Talk to |cRXP_FRIENDLY_ Tonga Runetotem|r
     .turnin 877 >>Turn in The Stagnant Oasis
 .target Tonga Runetotem
     .accept 880 >>Accept Altered Beings
 step
     .goto The Barrens,52.0,31.6
 .target Mankrik
->>Talk to |cFF00FF25Mankrik|r
+>>Talk to |cRXP_FRIENDLY_ Mankrik|r
     .turnin 4921 >>Turn in Lost in Battle
 step
     #sticky
@@ -587,19 +587,19 @@ step
     .complete 821,2 --Plainstrider Kidney (5)
 step
     .goto The Barrens,45.39,28.43
->>Talk to |cFF00FF25Regthar Deathgate|r
+>>Talk to |cRXP_FRIENDLY_ Regthar Deathgate|r
     .turnin 851 >>Turn in Verog the Dervish
 .target Regthar Deathgate
     .accept 852 >>Accept Hezrul Bloodmark
 step
     .goto The Barrens,45.39,28.43
 .target Regthar Deathgate
->>Talk to |cFF00FF25Regthar Deathgate|r
+>>Talk to |cRXP_FRIENDLY_ Regthar Deathgate|r
     .turnin 855 >> Turn in Centaur Bracers
     .isQuestComplete 855
 step
     .goto The Barrens,45.39,28.43
->>Talk to |cFF00FF25Regthar Deathgate|r
+>>Talk to |cRXP_FRIENDLY_ Regthar Deathgate|r
     .turnin 851 >>Turn in Verog the Dervish
 .target Regthar Deathgate
     .accept 852 >>Accept Hezrul Bloodmark
@@ -616,13 +616,13 @@ step
 	#requires CeBracers
 	.goto The Barrens,45.37,28.43
 .target Regthar Deathgate
->>Talk to |cFF00FF25Regthar Deathgate|r
+>>Talk to |cRXP_FRIENDLY_ Regthar Deathgate|r
     .turnin 852 >>Turn in Hezrul Bloodmark
     .turnin 855 >> Turn in Centaur Bracers
 step
     .goto The Barrens,45.37,28.43
 .target Regthar Deathgate
->>Talk to |cFF00FF25Regthar Deathgate|r
+>>Talk to |cRXP_FRIENDLY_ Regthar Deathgate|r
     .accept 4021 >>Accept Counterattack!
 step
     >> This quest can be very hard to solo, if you got no one to group with consider grouping up for it or kite it near the building of the quest giver.
@@ -634,7 +634,7 @@ step
     .isQuestComplete 4021
     .goto The Barrens,45.39,28.44
 .target Regthar Deathgate
->>Talk to |cFF00FF25Regthar Deathgate|r
+>>Talk to |cRXP_FRIENDLY_ Regthar Deathgate|r
     .turnin 4021 >>Turn in Counterattack!
 step
     .goto The Barrens,39.8,17.3,80,0
@@ -655,12 +655,12 @@ step
     .complete 821,1 --Savannah Lion Tusk (5)
 step
     .goto The Barrens,35.3,27.9
->>Talk to |cFF00FF25Seereth Stonebreak|r
+>>Talk to |cRXP_FRIENDLY_ Seereth Stonebreak|r
     .turnin 1061 >> Turn in The Spirits of Stonetalon
 .target Seereth Stonebreak
     .accept 1062 >> Accept Goblin Invaders
 .target Makaba Flathoof
->>Talk to |cFF00FF25Makaba Flathoof|r
+>>Talk to |cRXP_FRIENDLY_ Makaba Flathoof|r
     .accept 6548 >> Accept Avenge My Village
 ]])
 
@@ -687,7 +687,7 @@ step
     .complete 6548,1 --Kill Grimtotem Ruffian (x8)
 step
     .goto The Barrens,35.191,27.791
->>Talk to |cFF00FF25Makaba Flathoof|r
+>>Talk to |cRXP_FRIENDLY_ Makaba Flathoof|r
     .turnin 6548 >> Turn in Avenge My Village
 .target Makaba Flathoof
     .accept 6629 >> Accept Kill Grundig Darkcloud
@@ -701,7 +701,7 @@ step
     >>Start the Kaya Escort
     .goto Stonetalon Mountains,73.5,85.8
 .target Kaya Flathoof
->>Talk to |cFF00FF25Kaya Flathoof|r
+>>Talk to |cRXP_FRIENDLY_ Kaya Flathoof|r
     .accept 6523 >> Accept Protect Kaya
 step
      >>Escort Kaya and stay close to her. 3 Grimtotems will spawn at the bonfire. Eat/drink before she gets to the camp
@@ -710,7 +710,7 @@ step
 step
     .goto Stonetalon Mountains,71.4,95.1
 .target Xen'Zilla
->>Talk to |cFF00FF25Xen'Zilla|r
+>>Talk to |cRXP_FRIENDLY_ Xen'Zilla|r
     .accept 6461 >> Accept Blood Feeders
 step
     #sticky
@@ -733,7 +733,7 @@ step
     .complete 6461,2 --Kill Deepmoss Venomspitter (x7)
 step
     .goto Stonetalon Mountains,58.989,62.599
->>Talk to |cFF00FF25Ziz Fizziks|r
+>>Talk to |cRXP_FRIENDLY_ Ziz Fizziks|r
     .turnin 1483 >> Turn in Ziz Fizziks
 .target Ziz Fizziks
     .accept 1093 >> Accept Super Reaper 6000
@@ -766,7 +766,7 @@ step
     .complete 1062,1 --Kill Venture Co. Logger (x15)
 step
     .goto Stonetalon Mountains,58.989,62.599
->>Talk to |cFF00FF25Ziz Fizziks|r
+>>Talk to |cRXP_FRIENDLY_ Ziz Fizziks|r
     .turnin 1093 >> Turn in Super Reaper 6000
 .target Ziz Fizziks
     .accept 1094 >> Accept Further Instructions
@@ -774,7 +774,7 @@ step
     .hs >> Hearth to Camp Taurajo
 step
     .goto The Barrens,44.9,59.1
->>Talk to |cFF00FF25Jorn Skyseer|r
+>>Talk to |cRXP_FRIENDLY_ Jorn Skyseer|r
     .turnin 3261 >>Turn in Jorn Skyseer
 .target Jorn Skyseer
     .accept 882 >>Accept Ishamuhale
@@ -839,31 +839,31 @@ step
 	.goto The Barrens,62.7,36.3
     >>Run back to Ratchet
 .target Gazlowe
->>Talk to |cFF00FF25Gazlowe|r
+>>Talk to |cRXP_FRIENDLY_ Gazlowe|r
     .turnin 888 >>Turn in Stolen Booty
 step
     .goto The Barrens,63.0,37.2
->>Talk to |cFF00FF25Sputtervalve|r
+>>Talk to |cRXP_FRIENDLY_ Sputtervalve|r
     .turnin 1094 >>Turn in Further Instructions
 .target Sputtervalve
     .accept 1095 >>Accept Further Instructions
 step
     .goto The Barrens,62.4,37.6
 .target Mebok Mizzyrix
->>Talk to |cFF00FF25Mebok Mizzyrix|r
+>>Talk to |cRXP_FRIENDLY_ Mebok Mizzyrix|r
     .turnin 865 >>Turn in Raptor Horns
     .turnin 1069 >>Turn in Deepmoss Spider Eggs
 step
     .goto The Barrens,62.3,38.4
 .target Brewmaster Drohn
->>Talk to |cFF00FF25Brewmaster Drohn|r
+>>Talk to |cRXP_FRIENDLY_ Brewmaster Drohn|r
     .turnin 821 >>Turn in Chen's Empty Keg
 step
     .goto The Barrens,63.1,37.1
     .fly Crossroads >>Fly to Crossroads
 step
     .goto The Barrens,52.2,31.9
->>Talk to |cFF00FF25Tonga Runetotem|r
+>>Talk to |cRXP_FRIENDLY_ Tonga Runetotem|r
     .turnin 880 >>Turn in Altered Beings
 .target Tonga Runetotem
     .accept 1489 >>Accept Hamuul Runetotem
@@ -871,19 +871,19 @@ step
 step
     .goto The Barrens,52.0,31.6
 .target Mankrik
->>Talk to |cFF00FF25Mankrik|r
+>>Talk to |cRXP_FRIENDLY_ Mankrik|r
     .turnin 899 >>Turn in Consumed by Hatred
 step
     >>Top of the tower
     .goto The Barrens,51.60,30.90
->>Talk to |cFF00FF25Darsok Swiftdagger|r
+>>Talk to |cRXP_FRIENDLY_ Darsok Swiftdagger|r
     .turnin 875 >> Turn in Harpy Lieutenants
 .target Darsok Swiftdagger
     .accept 876 >> Accept Serena Bloodfeather
 step
     >>This starts a timed quest
     .goto The Barrens,51.4,30.2
->>Talk to |cFF00FF25Apothecary Helbrim|r
+>>Talk to |cRXP_FRIENDLY_ Apothecary Helbrim|r
     .turnin 848 >>Turn in Fungal Spores
 .target Apothecary Helbrim
     .accept 853 >>Accept Apothecary Zamah
@@ -896,7 +896,7 @@ step
     .collect 5075 --Blood Shard (1)
 step
     .goto The Barrens,44.6,59.2
->>Talk to |cFF00FF25Mangletooth|r
+>>Talk to |cRXP_FRIENDLY_ Mangletooth|r
     .turnin 878 >>Turn in Tribes at War
 .target Mangletooth
     .accept 5052 >>Accept Blood Shards of Agamaggan
@@ -904,7 +904,7 @@ step
 --N Different classes needing different buffs, e.g. need speed buff later for Mulgore run for classes that didnt get FP earlier
 step
     .goto The Barrens,44.8,59.1
->>Talk to |cFF00FF25Jorn Skyseer|r
+>>Talk to |cRXP_FRIENDLY_ Jorn Skyseer|r
     .turnin 882 >>Turn in Ishamuhale
 .target Jorn Skyseer
     .accept 907 >>Accept Enraged Thunder Lizards
@@ -913,11 +913,11 @@ step
     .goto The Barrens,44.8,59.1
     .isOnQuest 883
 .target Jorn Skyseer
->>Talk to |cFF00FF25Jorn Skyseer|r
+>>Talk to |cRXP_FRIENDLY_ Jorn Skyseer|r
     .turnin 883 >>Turn in Lakota'mani
 step
     .goto The Barrens,44.8,59.1
->>Talk to |cFF00FF25Jorn Skyseer|r
+>>Talk to |cRXP_FRIENDLY_ Jorn Skyseer|r
     .turnin 882 >>Turn in Ishamuhale
 .target Jorn Skyseer
     .accept 907 >>Accept Enraged Thunder Lizards
@@ -940,19 +940,19 @@ step
     .complete 907,1 --Thunder Lizard Blood (3)
 step
     .goto The Barrens,44.9,59.1
->>Talk to |cFF00FF25Jorn Skyseer|r
+>>Talk to |cRXP_FRIENDLY_ Jorn Skyseer|r
     .turnin 907 >>Turn in Enraged Thunder Lizards
 .target Jorn Skyseer
     .accept 913 >>Accept Cry of the Thunderhawk
 step
     .goto The Barrens,44.9,59.1
 .target Jorn Skyseer
->>Talk to |cFF00FF25Jorn Skyseer|r
+>>Talk to |cRXP_FRIENDLY_ Jorn Skyseer|r
     .turnin 884 >>Turn in Owatanka
     .isOnQuest 884
 step
     .goto The Barrens,44.9,59.1
->>Talk to |cFF00FF25Jorn Skyseer|r
+>>Talk to |cRXP_FRIENDLY_ Jorn Skyseer|r
     .turnin 907 >>Turn in Enraged Thunder Lizards
 .target Jorn Skyseer
     .accept 913 >>Accept Cry of the Thunderhawk
@@ -968,7 +968,7 @@ step
 step
     .goto The Barrens,44.8,59.1
 .target Jorn Skyseer
->>Talk to |cFF00FF25Jorn Skyseer|r
+>>Talk to |cRXP_FRIENDLY_ Jorn Skyseer|r
     .turnin 913 >>Turn in Cry of the Thunderhawk
 --    .accept 874 >>Accept Mahren Skyseer
 step
@@ -976,7 +976,7 @@ step
     .goto The Barrens,44.54,59.27
     >>Turn in your Blood Shards for the Spirit of the Wind buff from Mangletooth. If you accidentally sold any shards, skip this step
 .target Mangletooth
->>Talk to |cFF00FF25Mangletooth|r
+>>Talk to |cRXP_FRIENDLY_ Mangletooth|r
     .turnin 889 >> Turn in Spirit of the Wind
 step
     .goto Thunder Bluff,32.0,66.9,60 >>Run to the lift and take it into Thunder Bluff
@@ -985,7 +985,7 @@ step
     .home >>Set your Hearthstone to Thunder Bluff
 step
     .goto Thunder Bluff,61.538,80.919
->>Talk to |cFF00FF25Melor Stonehoof|r
+>>Talk to |cRXP_FRIENDLY_ Melor Stonehoof|r
     .turnin 1130 >>Turn in Melor Sends Word
 .target Melor Stonehoof
     .accept 1131 >>Accept Steelsnap
@@ -994,7 +994,7 @@ step
 	.goto Thunder Bluff,30.1,30.0,30,0
 	.goto Thunder Bluff,23.00,21.00
 .target Apothecary Zamah
->>Talk to |cFF00FF25Apothecary Zamah|r
+>>Talk to |cRXP_FRIENDLY_ Apothecary Zamah|r
     .turnin 853 >> Turn in Apothecary Zamah
 step
     .goto Thunder Bluff,25.16,20.95
@@ -1003,7 +1003,7 @@ step
 step
     .goto Thunder Bluff,28.4,27.7
 .target Clarice Foster
->>Talk to |cFF00FF25Clarice Foster|r
+>>Talk to |cRXP_FRIENDLY_ Clarice Foster|r
     .accept 264 >>Accept Until Death Do Us Part
 step
 	.goto Thunder Bluff,47.003,49.832
@@ -1015,9 +1015,9 @@ step
     .complete 876,1 --Serena's Head (1)
 step
     .goto The Barrens,35.3,27.9
->>Talk to |cFF00FF25Seereth Stonebreak|r
+>>Talk to |cRXP_FRIENDLY_ Seereth Stonebreak|r
     .turnin 1062 >>Turn in Goblin Invaders
->>Talk to |cFF00FF25Makaba Flathoof|r
+>>Talk to |cRXP_FRIENDLY_ Makaba Flathoof|r
     .turnin 6629 >>Turn in Kill Grundig Darkcloud
     .turnin 6523 >>Turn in Protect Kaya
 .target Makaba Flathoof
@@ -1028,17 +1028,17 @@ step
 step
     .goto Stonetalon Mountains,71.3,95.1
 .target Xen'Zilla
->>Talk to |cFF00FF25Xen'Zilla|r
+>>Talk to |cRXP_FRIENDLY_ Xen'Zilla|r
     .turnin 6461 >>Turn in Blood Feeders
 step
     .goto Stonetalon Mountains,58.989,62.599
 .target Ziz Fizziks
->>Talk to |cFF00FF25Ziz Fizziks|r
+>>Talk to |cRXP_FRIENDLY_ Ziz Fizziks|r
     .turnin 1095 >>Turn in Further Instructions
 step
     .goto Stonetalon Mountains,47.5,58.4
 .target Tammra Windfield
->>Talk to |cFF00FF25Tammra Windfield|r
+>>Talk to |cRXP_FRIENDLY_ Tammra Windfield|r
     .turnin 6401 >>Turn in Kaya's Alive
 step
     .goto Stonetalon Mountains,45.12,59.84
@@ -1048,24 +1048,24 @@ step
     .hs >> Hearth Thunder Bluff
 step
     .goto Thunder Bluff,70.00,30.90
->>Talk to |cFF00FF25Magatha Grimtotem|r
+>>Talk to |cRXP_FRIENDLY_ Magatha Grimtotem|r
     .turnin 1063 >> Turn in The Elder Crone
 .target Magatha Grimtotem
     .accept 1064 >> Accept Forsaken Aid
 step
     .goto Thunder Bluff,78.62,28.56
->>Talk to |cFF00FF25Arch Druid Hamuul Runetotem|r
+>>Talk to |cRXP_FRIENDLY_ Arch Druid Hamuul Runetotem|r
     .turnin 1489 >> Turn in Hamuul Runetotem
 .target Arch Druid Hamuul Runetotem
     .accept 1490 >> Accept Nara Wildmane
 step
     .goto Thunder Bluff,75.65,31.62
 .target Nara Wildmane
->>Talk to |cFF00FF25Nara Wildmane|r
+>>Talk to |cRXP_FRIENDLY_ Nara Wildmane|r
     .turnin 1490 >> Turn in Nara Wildmane
 step
     .goto Thunder Bluff,23.00,21.0
->>Talk to |cFF00FF25Apothecary Zamah|r
+>>Talk to |cRXP_FRIENDLY_ Apothecary Zamah|r
     .turnin 1064 >> Turn in Forsaken Aid
 .target Apothecary Zamah
     .accept 1065 >> Accept Journey to Tarren Mill
@@ -1080,7 +1080,7 @@ step
     .goto The Barrens,51.60,30.90
 	>>Go upstairs
 .target Darsok Swiftdagger
->>Talk to |cFF00FF25Darsok Swiftdagger|r
+>>Talk to |cRXP_FRIENDLY_ Darsok Swiftdagger|r
     .turnin 876 >> Turn in Serena Bloodfeather
 step
     .goto The Barrens,51.50,30.34

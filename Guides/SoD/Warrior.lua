@@ -510,7 +510,7 @@ RXPGuides.RegisterGuide([[
 step << Orc/Troll
     #season 2
     .goto Durotar,42.89,69.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Frang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Frang|r
     .accept 77588 >>Accept A Trial of Fitness << Troll
     .accept 77582 >>Accept A Trial of Fitness << Orc
     .target Frang
@@ -518,7 +518,7 @@ step
     #season 2
     .goto Durotar,43.27,69.51
     >>Loot the |cRXP_PICK_Hidden Cache|r for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
-    >>|cRXP_WARN_Walk around past|r |cFFFF5722Sarkoth|r |cRXP_WARN_and jump down to reach the chest|r
+    >>|cRXP_WARN_Walk around past|r |cRXP_ENEMY_Sarkoth|r |cRXP_WARN_and jump down to reach the chest|r
     .collect 204806,1 --Rune of Victory Rush (1)
     .train 403470,1
 step
@@ -529,7 +529,7 @@ step
 step << Orc/Troll
     #season 2
     .goto Durotar,42.89,69.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Frang|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Frang|r
     .turnin 77588 >>Turn in A Trial of Fitness << Troll
     .turnin 77582 >>Turn in A Trial of Fitness << Orc
     .target Frang
@@ -588,7 +588,7 @@ RXPGuides.RegisterGuide([[
 step << Undead
     #season 2
     .goto Tirisfal Glades,32.68,65.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Dannal|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Dannal|r
     .accept 77668 >>Accept The Lost Rune
     .target Dannal Stern
 step
@@ -605,7 +605,7 @@ step
 step << Undead
     #season 2
     .goto Tirisfal Glades,32.68,65.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Dannal|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Dannal|r
     .turnin 77668 >>Turn in The Lost Rune
     .target Dannal Stern
 
@@ -625,7 +625,7 @@ RXPGuides.RegisterGuide([[
 step
     #season 2
     .goto Durotar,40.60,66.80
-    >>Kill |cFFFF5722Sarkoth|r. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r]
+    >>Kill |cRXP_ENEMY_Sarkoth|r. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r]
     .collect 204809,1 --Rune of Furious Thunder(1)
     .mob Sarkoth
     .train 403476,1
@@ -1193,7 +1193,7 @@ step
     #season 2
     .goto Silverpine Forest,35.03,7.73
     >>Attack the |cRXP_ENEMY_Webbed Victim|r and kill the |cRXP_ENEMY_Lost Adventurer|r that spawns. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Endless Rage|r]
-    >>|cRXP_WARN_You have to burst the|r |cRXP_ENEMY_Webbed Victim|r |cRXP_WARN_since he regains health every few seconds|r 
+    >>|cRXP_WARN_You have to burst the|r |cRXP_ENEMY_Webbed Victim|r |cRXP_WARN_since he regains health every few seconds|r
     .collect 208741,1 --Rune of Endless Rage (1)
     .mob Webbed Victim
     .mob Lost Adventurer
