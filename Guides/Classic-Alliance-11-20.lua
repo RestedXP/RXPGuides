@@ -212,6 +212,21 @@ step
     .goto Felwood,13.63,21.44
     >>Loot the |cFFDB2EEFSkeletal Sea Turtle|r for the |cFF00BCD4Sea Turtle Remains|r
     .complete 4681,1
+step << Priest
+    #season 2
+    .goto Darkshore,30.5,47.5
+    >>Click the |cRXP_PICK_Remnant|r on the small island. Loot it for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Demise|r]
+    .collect 205932,1 -- Prophecy of a King's Demise (1)
+    .train 402849,1
+step << Priest
+    #season 2
+    >>You must now obtain two |T135934:0|t|T136057:0|t[Meditation] buffs
+    >>You must /kneel inside one of the following places: A moonwell, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge
+    >>In order to receive your second |T135934:0|t|T136057:0|t[Meditation] buff this requires you to /kneel infront of a Priest who has a different |T135934:0|t|T136057:0|t[Meditation] to yours, and they must /pray while targeting you
+    .train 402849 >> |cRXP_WARN_Once you have both|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buffs use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Demise]|r |cRXP_WARN_to learn|r |T136149:0|t[Shadow Word: Death]
+    >>|cRXP_WARN_If you are unable to do this now, skip this step and complete it later|r
+    .use 205932
+    .itemcount 205932,1
 step
 #map Darkshore
     #label washed1
@@ -1639,6 +1654,24 @@ step
     .goto Westfall,56.40,30.50
     .turnin 38 >> Turn in Westfall Stew
     .turnin 22 >> Turn in Goretusk Liver Pie
+step << Priest
+    #season 2
+    .goto Westfall,32.6,43.2,60,0
+    .goto Westfall,29.8,46.6,60,0
+    .goto Westfall,45.0,26.0,60,0
+    .goto Westfall,45.6,21.2
+    >>Kill the |cRXP_ENEMY_Undying Laborer|r. Loot it for the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devout Champion|r]
+    >>|cRXP_WARN_You must use a Holy spell in order to finish off the|r |cRXP_ENEMY_Undying Laborer|r
+    >>|cRXP_WARN_The |cRXP_ENEMY_Undying Laborer|r can spawn at the Gold Coast Quarry and Jangolode Mine|r
+    .collect 205905,1 -- Memory of a Devout Champion (1)
+    .unitscan Undying Laborer
+    .train 425215,1
+step << Priest
+    #season 2
+    .train 425215 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devout Champion|r] |cRXP_WARN_to train|r |T237566:0|t[Twisted Faith]
+    >>|cRXP_WARN_You must have a|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buff by typing /kneel in a holy area such as, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge|r
+    .use 205905
+    .itemcount 205905,1
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gryan Stoutmantle|r
 	.target Gryan Stoutmantle
@@ -2458,6 +2491,15 @@ step
     .turnin 966 >> Turn in The Tower of Althalaxx
     .accept 967 >> Accept The Tower of Althalaxx
     .target Balthule Shadowstrike
+step << Priest
+    #season 2
+    #completewith next
+    >>Kill |cRXP_ENEMY_Stormscale Myrmidons|r, |cRXP_ENEMY_Stormscale Warriors|r and |cRXP_ENEMY_Stormscale Sorceresses|r. Loot them for a |T236364:0|t[|cRXP_LOOT_Shatterspear Offering|r]
+    .collect 211482,1 -- Shatterspear Offering (1)
+    .mob Stormscale Myrmidon
+    .mob Stormscale Warrior
+    .mob Stormscale Sorceress
+    .train 425215,1
 step
     .goto Darkshore,57.13,22.04,55,0
     .goto Darkshore,57.97,20.23,55,0
@@ -2466,6 +2508,27 @@ step
     .goto Darkshore,60.26,21.75
     >>Loot the |cFF00BCD4Mathystra Relics|r on the ground
     .complete 951,1 -- Mathystra Relics (6)
+step << Priest
+    .goto Darkshore,59.2,23.4,60,0
+    .goto Darkshore,60.0,15.4
+    >>Kill |cRXP_ENEMY_Stormscale Myrmidons|r, |cRXP_ENEMY_Stormscale Warriors|r and |cRXP_ENEMY_Stormscale Sorceresses|r. Loot them for a |T236364:0|t[|cRXP_LOOT_Shatterspear Offering|r]
+    .collect 211482,1 -- Shatterspear Offering (1)
+    .mob Stormscale Myrmidon
+    .mob Stormscale Warrior
+    .mob Stormscale Sorceress
+    .train 425215,1
+step << Priest
+    #season 2
+    .goto Darkshore,59.2,22.6
+    .use 211482 >> |cRXP_WARN_Use the|r |T236364:0|t[|cRXP_LOOT_Shatterspear Offering|r] |cRXP_WARN_at the Shatterspear Idol underwater to receive the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devout Champion|r]
+    .collect 205905,1 -- Memory of a Devout Champion (1)
+    .train 425215,1
+step << Priest
+    #season 2
+    .train 425215 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devout Champion|r] |cRXP_WARN_to train|r |T237566:0|t[Twisted Faith]
+    >>|cRXP_WARN_You must have a|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buff by typing /kneel in a holy area such as, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge|r
+    .use 205905
+    .itemcount 205905,1
 step
 #map Darkshore
     #completewith next
@@ -6322,9 +6385,71 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Loganaar|r
     .trainer >> Train your class spells
     .target Loganaar
+step << Druid
+    #season 2
+    #completewith next
+    +You will now go to Teldrassil to get the |T132135:0|t[Mangle] rune
+step << Druid
+    #season 2
+    #completewith next
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Silva Fil'naveth|r
+    .goto Moonglade,44.147,45.225
+    .fly Teldrassil>> Fly to Teldrassil
+    .target Silva Fil'naveth
+step << Druid
+    #season 2
+    #completewith next
+    .goto Teldrassil,44.18,58.19
+    .subzone 262 >> Enter the Ban'ethil Barrow Den
+    .train 410025,1
+step << Druid
+    #season 2
+    .goto Teldrassil,45.63,58.13
+    >>Kill |cRXP_ENEMY_Rageclaw|r. Loot him for the |T136061:0|t[|cRXP_FRIENDLY_Idol of Ursine Rage|r]
+    >>|cRXP_ENEMY_Rageclaw|r |cRXP_WARN_patrols throughout Ban'ethil Barrows|r
+    .collect 206954,1 -- Idol of Ursine Rage (1)
+    .train 410025,1
+    .unitscan Rageclaw
+step << Druid
+    #season 2
+    .equip 18,206954 >> |cRXP_WARN_Equip the|r |T136061:0|t[|cRXP_FRIENDLY_Idol of Ursine Rage|r]
+    .use 206954
+    .itemcount 206954,1
+    .train 410025,1
+step << Druid
+    #season 2
+    .train 410025 >>|cRXP_WARN_While in|r |T132276:0|t[Bear Form] |cRXP_WARN_maintain above 50 Rage for 60 seconds, then use the|r |T136061:0|t[|cRXP_FRIENDLY_Idol of Ursine Rage|r] |cRXP_WARN_again to train|r |T132135:0|t[Mangle]
+    .use 206954
+    .itemcount 206954,1
 step
     #completewith TheryluneE
     .hs >> Hearth to Auberdine
+step << Druid
+    #season 2
+    #sticky
+    +|cRXP_WARN_Note: You must be level 20 in order to equip the|r |T132942:0|t[|cRXP_FRIENDLY_Ferocious Idol|r] |cRXP_WARN_which is required to learn|r |T236167:0|t[Savage Roar]
+    .xp 20,1
+    .train 407988,1
+step << Druid
+    #season 2
+    .goto Darkshore,52.60,36.65,45,0
+    .goto Darkshore,51.48,38.26
+    >>Kill |cRXP_ENEMY_Den Mother|r. Loot her for the |T132942:0|t[|cRXP_FRIENDLY_Ferocious Idol|r]
+    >>|cRXP_WARN_Be aware of the |cRXP_ENEMY_Thistle Cubs|r which can stun you for 2 seconds|r
+    .collect 208689,1 -- Ferocious Idol (1)
+    .mob Den Mother
+    .train 407988,1
+step << Druid
+    #season 2
+    .equip 18,208689 >> |cRXP_WARN_Equip the|r |T132942:0|t[|cRXP_FRIENDLY_Ferocious Idol|r]
+    .use 208689
+    .itemcount 208689,1
+    .train 407988,1
+step << Druid
+    #season 2
+    .train 407988 >>|cRXP_WARN_Deal 20 instances of bleeding damage from|r |T132152:0|t[Rip] |cRXP_WARN_or|r |T132122:0|t[Rake] |cRXP_WARN_to humanoids, then use the|r |T132942:0|t[|cRXP_FRIENDLY_Ferocious Idol|r] |cRXP_WARN_again to learn|r |T236167:0|t[Savage Roar]
+    .use 208689
+    .itemcount 208689,1
 step
     .goto Darkshore,37.44,41.83
     .target Archaeologist Hollee

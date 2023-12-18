@@ -697,7 +697,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Priest SoD
 #group RestedXP Rune Guide
 #subgroup Gloves
-#name Shadow Word - Death - 10 (Darkshore)
+#name Shadow Word: Death - 10 (Darkshore)
 
 step << Priest
     .goto Darkshore,30.5,47.5
@@ -880,4 +880,55 @@ step
     .goto The Barrent,50.7,32.8 << Undead
     .use 205905
     .itemcount 205905,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Priest SoD
+#group RestedXP Rune Guide
+#subgroup Chest
+#name Void Plague - 6 (Elwynn Forest)
+
+step << Priest
+    #season 2
+    #completewith next
+    .goto Elwynn Forest,38.34,81.54,20 >> Enter Fargodeep Mine
+    .train 425216,1
+step << Priest
+    #season 2
+    .goto Elwynn Forest,41.7,78.1
+    >>Kill |cRXP_ENEMY_Goldtooth|r. Loot him for the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpose|r]
+    .collect 205940,1 -- Memory of a Dark Purpose (1)
+    .mob Goldtooth
+    .train 425216,1
+step << Priest
+    #season 2
+    .train 425216 >>|cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpose|r] |cRXP_WARN_to train|r |T237514:0|t[Void Plague]
+    .use 205940
+]])
+
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Priest SoD
+#group RestedXP Rune Guide
+#subgroup Chest
+#name Void Plague - 6 (Dun Morogh)
+
+step << Priest
+    #season 2
+    .goto Dun Morogh,27.2,43.0,60,0
+    .goto Dun Morogh,24.8,39.3,60,0
+    .goto Dun Morogh,25.6,43.4,60,0
+    .goto Dun Morogh,24.3,44.0,60,0
+    .goto Dun Morogh,25.4,45.4,60,0
+    .goto Dun Morogh,25.00,43.50
+    >>Kill |cRXP_ENEMY_Leper Gnomes|r. Loot them for the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpose|r]
+    .collect 205940,1 -- Memory of a Dark Purpose (1)
+    .mob Leper Gnome
+    .train 425216,1
+step << Priest
+    #season 2
+    .train 425216 >>|cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpose|r] |cRXP_WARN_to train|r |T237514:0|t[Void Plague]
+    .use 205940
 ]])

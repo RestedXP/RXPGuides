@@ -1011,6 +1011,13 @@ step
     .goto Elwynn Forest,39.92,80.11
     >>Explore Fargodeep Mine
     .complete 62,1 --Scout Through the Fargodeep Mine
+step << Priest
+    #season 2
+    .goto Elwynn Forest,41.7,78.1
+    >>Kill |cRXP_ENEMY_Goldtooth|r. Loot him for the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpose|r]
+    .collect 205940,1 -- Memory of a Dark Purpose (1)
+    .mob Goldtooth
+    .train 425216,1
 step
     #season 0,1
     #label KillGoldtooth
@@ -1018,6 +1025,11 @@ step
     .goto Elwynn Forest,41.7,78.1
     .complete 87,1 --Collect Bernice's Necklace  (x1)
     .unitscan Goldtooth
+step << Priest
+    #season 2
+    .train 425216 >>|cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpose|r] |cRXP_WARN_to train|r |T237514:0|t[Void Plague]
+    >>|cRXP_WARN_You must have a|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buff by typing /kneel in a holy area such as, Northshire Abbey or Stormwind Cathedral|r
+    .use 205940
 step
     #season 2
     #label KillGoldtooth
@@ -1423,6 +1435,19 @@ step << !Paladin
     >>|cRXP_WARN_Pull the 2|r |cRXP_ENEMY_Murlocs|r |cRXP_WARN_in front of the huts, move away and cast|r |T136183:0|t[Fear] |cRXP_WARN_on one of them constantly, and try to keep DoTs on both|r << Warlock
     .turnin 45 >> Turn in Discover Rolf's Fate
     .accept 71 >> Accept Report to Thomas
+step << Priest
+    #season 2
+    .goto Elwynn Forest,74.0,51.8
+    >>Kill |cRXP_ENEMY_Defias Rogue Wizards|r. Loot them for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r]
+    .collect 205947,1 -- Prophecy of a Desecrated Citadel (1)
+    .mob Defias Rogue Wizard
+    .train 402852,1
+step << Priest
+    #season 2
+    .train 402852 >> |cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] |cRXP_WARN_to train|r |T237570:0|t[Homunculi]
+    >>|cRXP_WARN_You must have a|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buff by typing /kneel in a holy area such as, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge|r
+    .use 205947
+    .itemcount 205947,1
 step
     #completewith BundleOT
     >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r

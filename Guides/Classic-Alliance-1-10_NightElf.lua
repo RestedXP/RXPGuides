@@ -760,6 +760,33 @@ step << Rogue
     .mob Timberling Bark Ripper
     .mob Timberling Trampler
     .train 398196,1
+step << Druid
+    #season 2
+    #completewith next
+    >>Kill |cRXP_ENEMY_Timberlings|r. Loot them for their |cRXP_LOOT_Seeds|r
+    >>Loot the |cRXP_LOOT_Timberling Sprouts|r on the ground
+    .complete 918,1 --Collect Timberling Seed (x8)
+    .complete 919,1 --Collect Timberling Sprout (x12)
+    .mob Timberling
+step << Druid
+    #season 2
+    #completewith next
+    .goto Teldrassil,52.831,78.731,100 >> Travel to the giant tree branch
+step << Druid
+    #season 2
+    .goto Teldrassil,52.831,78.731,20,0
+    .goto Teldrassil,52.988,80.086,15,0
+    .goto Teldrassil,52.831,78.731
+    >>|cRXP_WARN_On the massive tree branch you will see 3|r |cRXP_ENEMY_Lunar Stones|r
+    >>|cRXP_WARN_Cast|r |T136096:0|t[Moonfire] |cRXP_WARN_on all 3|r |cRXP_ENEMY_Lunar Stones|r |cRXP_WARN_on the branch, then loot the chest at the arrow location which spawns after|r
+    .collect 206989,1 -- Rune of the Sun (1)
+    .mob Lunar Stone
+    .train 416044,1
+step << Druid
+    #season 2
+    .train 416044 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Sun|r] |cRXP_WARN_to train|r |T236216:0|t[Sunfire]
+    .use 206989
+    .itemcount 206989,1
 step
     .goto Teldrassil,61.63,68.89,55,0
     .goto Teldrassil,60.52,70.47,55,0
@@ -1050,12 +1077,36 @@ step << Rogue
     .collect 203990,1
     .unitscan Lord Melenas
     .train 400094,1
+step << Priest
+    #season 2
+    #completewith next
+    >>Kill |cRXP_ENEMY_Vicious Grells|r, |cRXP_ENEMY_Rascal Sprites|r and |cRXP_ENEMY_Shadow Sprites|r. Loot them for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r]
+    .collect 205947,1 -- Prophecy of a Desecrated Citadel (1)
+    .mob Vicious Grell
+    .mob Rascal Sprite
+    .mob Shadow Sprite
+    .train 402852,1
 step << !Hunter
     .goto Teldrassil,51.2,50.6
     >>Kill |cRXP_ENEMY_Lord Melenas|r. Loot him for his |cRXP_LOOT_Head|r
     >>|cRXP_ENEMY_Lord Melenas|r may be located in many different spawn locations throughout Fel Rock
     .complete 932,1 --Collect Melenas' Head (x1)
     .unitscan Lord Melenas
+step << Priest
+    #season 2
+    .goto Teldrassil,77.86,61.66 
+    >>Kill |cRXP_ENEMY_Vicious Grells|r, |cRXP_ENEMY_Rascal Sprites|r and |cRXP_ENEMY_Shadow Sprites|r. Loot them for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r]
+    .collect 205947,1 -- Prophecy of a Desecrated Citadel (1)
+    .mob Vicious Grell
+    .mob Rascal Sprite
+    .mob Shadow Sprite
+    .train 402852,1
+step << Priest
+    #season 2
+    .train 402852 >> |cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] |cRXP_WARN_to train|r |T237570:0|t[Homunculi]
+    >>|cRXP_WARN_You must have a|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buff by typing /kneel in a holy area such as, a moonwell, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge|r
+    .use 205947
+    .itemcount 205947,1
 step << Rogue
     #season 2
     .goto Teldrassil,51.2,50.6
@@ -1266,6 +1317,21 @@ step
     .goto Teldrassil,34.61,28.79
     >>Click the |cRXP_PICK_Strange Fronded Plant|r
     .accept 931 >> Accept The Shimmering Frond
+step
+    #season 2
+    #completewith next
+    .goto Teldrassil,44.18,58.19
+    .subzone 262 >> Enter the Ban'ethil Barrow Den. This can be difficult without a group. You can also do this a little later to obtain your |T237514:0|t[Void Plague] rune
+    .train 425216,1
+step << Priest
+    #season 2
+    .goto Teldrassil,44.401,60.655
+    >>Open the |cRXP_PICK_Gnarlpine Cache|r. Loot it for a |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpose|r]
+    >>|cRXP_WARN_Note: The |cRXP_PICK_Gnarlpine Cache|r can have multiple spawn locations within the Ban'ethil Barrows|r
+    .collect 205940,1 -- Memory of a Dark Purpose (1)
+    .train 425216 >>|cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpose|r] |cRXP_WARN_to train|r |T237514:0|t[Void Plague]
+    >>|cRXP_WARN_You must have a|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buff by typing /kneel in a holy area such as, a moonwell, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge|r
+    .use 205940
 step << Rogue
     #season 2
     .goto Teldrassil,38.92,79.93

@@ -1556,6 +1556,13 @@ step << Mage
     .collect 203752,1
     .mob Frostmane Seer
     .train 401768,1
+step << Priest
+    #season 2
+    #completewith next
+    >>Kill |cRXP_ENEMY_Frostmane Seers|r. Loot them for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r]
+    .collect 205947,1 -- Prophecy of a Desecrated Citadel (1)
+    .mob Frostmane Seer
+    .train 402852,1
 step
     .goto Dun Morogh,40.9,45.3,50,0
     .goto Dun Morogh,41.5,43.6,50,0
@@ -1570,6 +1577,27 @@ step
     >>|cRXP_LOOT_Shimmerweed|r can also be looted from |cRXP_PICK_Shimmerweed Baskets|r on the ground
     .complete 315,1 --Collect Shimmerweed (x6)
     .mob Frostmane Seer
+step << Priest
+    #season 2
+    .goto Dun Morogh,40.9,45.3,50,0
+    .goto Dun Morogh,41.5,43.6,50,0
+    .goto Dun Morogh,39.7,40.0,50,0
+    .goto Dun Morogh,42.1,34.3,50,0
+    .goto Dun Morogh,39.7,40.0,50,0
+    .goto Dun Morogh,41.5,43.6,50,0
+    .goto Dun Morogh,40.9,45.3
+    .goto Dun Morogh,39.5,43.0,0
+    .goto Dun Morogh,41.5,36.0,0
+    >>Kill |cRXP_ENEMY_Frostmane Seers|r. Loot them for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r]
+    .collect 205947,1 -- Prophecy of a Desecrated Citadel (1)
+    .mob Frostmane Seer
+    .train 402852,1
+step << Priest
+    #season 2
+    .train 402852 >> |cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] |cRXP_WARN_to train|r |T237570:0|t[Homunculi]
+    >>|cRXP_WARN_You must have a|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buff by typing /kneel in a holy area such as, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge|r
+    .use 205947
+    .itemcount 205947,1
 step << Mage
     #season 2
     .goto Dun Morogh,40.9,45.3,50,0
@@ -1658,6 +1686,12 @@ step << Rogue
     .collect 208218,1 -- Bottom-Right Map Piece (1)
     .mob Leper Gnome
     .train 398196,1
+step << Priest
+    #season 2
+    >>Kill |cRXP_ENEMY_Leper Gnomes|r. Loot them for the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpose|r]
+    .collect 205940,1 -- Memory of a Dark Purpose (1)
+    .mob Leper Gnome
+    .train 425216,1
 step
     #era << Warlock
     .goto Dun Morogh,27.2,43.0,60,0
@@ -1670,6 +1704,23 @@ step
     .complete 412,2 --Collect Gyromechanic Gear (x8)
     .complete 412,1 --Collect Restabilization Cog (x8)
     .mob Leper Gnome
+step << Priest
+    #season 2
+    .goto Dun Morogh,27.2,43.0,60,0
+    .goto Dun Morogh,24.8,39.3,60,0
+    .goto Dun Morogh,25.6,43.4,60,0
+    .goto Dun Morogh,24.3,44.0,60,0
+    .goto Dun Morogh,25.4,45.4,60,0
+    .goto Dun Morogh,25.00,43.50
+    >>Kill |cRXP_ENEMY_Leper Gnomes|r. Loot them for the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpose|r]
+    .collect 205940,1 -- Memory of a Dark Purpose (1)
+    .mob Leper Gnome
+    .train 425216,1
+step << Priest
+    #season 2
+    .train 425216 >>|cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpose|r] |cRXP_WARN_to train|r |T237514:0|t[Void Plague]
+    >>|cRXP_WARN_You must have a|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buff by typing /kneel in a holy area such as, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge|r
+    .use 205940
 step << Rogue
     #season 2
     .goto Dun Morogh,26.0,41.8
@@ -3223,12 +3274,40 @@ step
 step
     #completewith next
     .goto Loch Modan,35.50,18.97,20 >> Enter the Silver Stream Mine
+step << Priest
+    #season 2
+    #completewith next
+    >>Kill |cRXP_ENEMY_Tunnel Rats|r. Loot them for an |T237281:0|t[|cRXP_LOOT_Offering Coin|r]
+    .collect 208823,1 -- Offering Coin (1)
+    .mob Tunnel Rat Scout
+    .mob Tunnel Rat Geomancer
+    .train 425215,1
 step
     .goto Loch Modan,35.93,22.55
     >>Open the |cRXP_PICK_Miners' League Crates|r. Loot them for the |cRXP_LOOT_Miners' Gear|r
     >>|cRXP_WARN_The |cRXP_PICK_Miners' League Crates|r can be found all throughout the Mine|r
     .complete 307,1 -- Miners' Gear (4)
- step << Paladin/Warrior
+step << Priest
+    #season 2
+    .goto Loch Modan,35.6,20.6
+    >>Kill |cRXP_ENEMY_Tunnel Rats|r. Loot them for an |T237281:0|t[|cRXP_LOOT_Offering Coin|r]
+    .collect 208823,1 -- Offering Coin (1)
+    .mob Tunnel Rat Scout
+    .mob Tunnel Rat Geomancer
+    .train 425215,1
+step << Priest
+    #season 2
+    .goto Loch Modan,36.689,20.964
+    .use 208823 >> |cRXP_WARN_Use the|r |T237281:0|t[|cRXP_LOOT_Offering Coin|r] |cRXP_WARN_at the well inside of the Silverstream Mine|r |cRXP_WARN_to receive the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devout Champion|r]
+    .collect 205905,1 -- Memory of a Devout Champion (1)
+    .train 425215,1
+step << Priest
+    #season 2
+    .train 425215 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Devout Champion|r] |cRXP_WARN_to train|r |T237566:0|t[Twisted Faith]
+    >>|cRXP_WARN_You must have a|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buff by typing /kneel in a holy area such as, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge|r
+    .use 205905
+    .itemcount 205905,1
+step << Paladin/Warrior
     .goto Loch Modan,42.867,9.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nillen Andemar|r
     .vendor >>|cRXP_FRIENDLY_Nillen Andemar|r |cRXP_WARN_sells|r |T133476:0|t[|cRXP_FRIENDLY_Heavy Spiked Mace|r] |cRXP_WARN_which is a limited supply item|r
