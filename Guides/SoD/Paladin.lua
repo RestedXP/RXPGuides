@@ -38,11 +38,11 @@ step
 step
     #label LibramS
     #loop
-    .goto Elwynn Forest,52.55,48.79,30,0
-    .goto Elwynn Forest,53.89,50.52,30,0
-    .goto Elwynn Forest,55.09,49.00,30,0
-    .goto Elwynn Forest,55.43,45.87,30,0
-    .goto Elwynn Forest,53.86,47.05,30,0
+    .goto Elwynn Forest,52.55,48.79,50,0
+    .goto Elwynn Forest,53.89,50.52,50,0
+    .goto Elwynn Forest,55.09,49.00,50,0
+    .goto Elwynn Forest,55.43,45.87,50,0
+    .goto Elwynn Forest,53.86,47.05,50,0
     >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for the |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r
     .collect 205420,1 -- Libram of Judgement (1)
     .mob Defias Thug
@@ -57,11 +57,11 @@ step
     .xp <4,1
 step
     #loop
-    .goto Elwynn Forest,52.55,48.79,30,0
-    .goto Elwynn Forest,53.89,50.52,30,0
-    .goto Elwynn Forest,55.09,49.00,30,0
-    .goto Elwynn Forest,55.43,45.87,30,0
-    .goto Elwynn Forest,53.86,47.05,30,0
+    .goto Elwynn Forest,52.55,48.79,50,0
+    .goto Elwynn Forest,53.89,50.52,50,0
+    .goto Elwynn Forest,55.09,49.00,50,0
+    .goto Elwynn Forest,55.43,45.87,50,0
+    .goto Elwynn Forest,53.86,47.05,50,0
     .aura 408828 >>|cRXP_WARN_Cast|r |T135959:0|t[Judgement] |cRXP_WARN_10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
     .itemStat 18,QUALITY,2
     .train 410002,1
@@ -112,12 +112,12 @@ step
 step
     #label LibramS
     #loop
-    .goto Dun Morogh,26.59,79.16,40,0
-    .goto Dun Morogh,23.39,80.31,40,0
-    .goto Dun Morogh,22.60,79.50,40,0
-    .goto Dun Morogh,20.74,75.69,40,0
-    .goto Dun Morogh,22.60,79.50,40,0
-    .goto Dun Morogh,23.39,80.31,40,0
+    .goto Dun Morogh,26.59,79.16,50,0
+    .goto Dun Morogh,23.39,80.31,50,0
+    .goto Dun Morogh,22.60,79.50,50,0
+    .goto Dun Morogh,20.74,75.69,50,0
+    .goto Dun Morogh,22.60,79.50,50,0
+    .goto Dun Morogh,23.39,80.31,50,0
     >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r. Loot them for the |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r
     .collect 205420,1 -- Libram of Judgement (1)
     .mob Frostmane Troll Whelp
@@ -132,12 +132,12 @@ step
     .xp <4,1
 step
     #loop
-    .goto Dun Morogh,26.59,79.16,40,0
-    .goto Dun Morogh,23.39,80.31,40,0
-    .goto Dun Morogh,22.60,79.50,40,0
-    .goto Dun Morogh,20.74,75.69,40,0
-    .goto Dun Morogh,22.60,79.50,40,0
-    .goto Dun Morogh,23.39,80.31,40,0
+    .goto Dun Morogh,26.59,79.16,50,0
+    .goto Dun Morogh,23.39,80.31,50,0
+    .goto Dun Morogh,22.60,79.50,50,0
+    .goto Dun Morogh,20.74,75.69,50,0
+    .goto Dun Morogh,22.60,79.50,50,0
+    .goto Dun Morogh,23.39,80.31,50,0
     .aura 408828 >>|cRXP_WARN_Cast|r |T135959:0|t[Judgement] |cRXP_WARN_10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
     .itemStat 18,QUALITY,2
     .train 410002,1
@@ -161,7 +161,7 @@ RXPGuides.RegisterGuide([[
 
 step
     +|cRXP_WARN_You should be at least level 14 in order to acquire|r |T133816:0|t[Engrave Gloves: Hand of Reckoning] |cRXP_WARN_in Loch Modan alone|r
-    >>|cRXP_WARN_You MUST be level 8 to equip the|r |T134916:0|t|cRXP_LOOT_[Libram of Justice]|r
+    >>|cRXP_WARN_You MUST be at least level 8 to equip the|r |T134916:0|t|cRXP_LOOT_[Libram of Justice]|r
     >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves: Hand of Reckoning]
     .train 410001,1
     .xp >8,1
@@ -235,14 +235,14 @@ step
     .xp <8,1
 step
     #loop
-    .goto Loch Modan,31.93,79.12,30,0
-    .goto Loch Modan,31.02,80.64,30,0
-    .goto Loch Modan,31.56,76.89,30,0
-    .goto Loch Modan,30.90,74.35,30,0
-    .goto Loch Modan,29.75,72.57,30,0
-    .goto Loch Modan,33.43,70.60,30,0
-    .goto Loch Modan,35.36,71.21,30,0
-    .goto Loch Modan,32.86,79.70,30,0
+    .goto Loch Modan,31.93,79.12,40,0
+    .goto Loch Modan,31.02,80.64,40,0
+    .goto Loch Modan,31.56,76.89,40,0
+    .goto Loch Modan,30.90,74.35,40,0
+    .goto Loch Modan,29.75,72.57,40,0
+    .goto Loch Modan,33.43,70.60,40,0
+    .goto Loch Modan,35.36,71.21,40,0
+    .goto Loch Modan,32.86,79.70,40,0
     .aura 408828 >>|cRXP_WARN_Attack enemies down to low health. Cast|r |T135963:0|t[Hammer of Justice] |cRXP_WARN_on them, then kill them whilst they're stunned 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
     .mob Stonesplinter Trogg
     .mob Stonesplinter Scout
@@ -252,10 +252,10 @@ step
     .xp <8,1
 step
     #loop
-    .goto Loch Modan,35.66,83.64,20,0
-    .goto Loch Modan,36.86,84.93,20,0
-    .goto Loch Modan,36.50,80.01,20,0
-    .goto Loch Modan,33.96,81.82,20,0
+    .goto Loch Modan,35.66,83.64,30,0
+    .goto Loch Modan,36.86,84.93,30,0
+    .goto Loch Modan,36.50,80.01,30,0
+    .goto Loch Modan,33.96,81.82,30,0
     .aura 408828 >>|cRXP_WARN_Attack enemies down to low health. Cast|r |T135963:0|t[Hammer of Justice] |cRXP_WARN_on them, then kill them whilst they're stunned 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
     .mob Stonesplinter Skullthumper
     .mob Stonesplinter Seer
@@ -265,14 +265,14 @@ step
     .xp <16,1
 step
     #loop
-    .goto Loch Modan,69.61,67.92,30,0
-    .goto Loch Modan,72.12,68.29,30,0
-    .goto Loch Modan,72.59,61.75,30,0
-    .goto Loch Modan,70.33,59.84,30,0
-    .goto Loch Modan,67.37,59.88,30,0
-    .goto Loch Modan,67.77,62.99,30,0
-    .goto Loch Modan,70.41,62.93,30,0
-    .goto Loch Modan,69.69,65.52,30,0
+    .goto Loch Modan,69.61,67.92,40,0
+    .goto Loch Modan,72.12,68.29,40,0
+    .goto Loch Modan,72.59,61.75,40,0
+    .goto Loch Modan,70.33,59.84,40,0
+    .goto Loch Modan,67.37,59.88,40,0
+    .goto Loch Modan,67.77,62.99,40,0
+    .goto Loch Modan,70.41,62.93,40,0
+    .goto Loch Modan,69.69,65.52,40,0
     .aura 408828 >>|cRXP_WARN_Attack enemies down to low health. Cast|r |T135963:0|t[Hammer of Justice] |cRXP_WARN_on them, then kill them whilst they're stunned 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
     .mob Stonesplinter Geomancer
     .mob Stonesplinter Digger
@@ -290,13 +290,13 @@ step
     .xp <22,1
 step
     #loop
-    .goto Wetlands,15.96,47.28,40,0
-    .goto Wetlands,13.69,41.37,40,0
-    .goto Wetlands,13.59,38.04,40,0
-    .goto Wetlands,15.30,38.81,40,0
-    .goto Wetlands,18.45,39.37,40,0
-    .goto Wetlands,19.24,41.29,40,0
-    .goto Wetlands,13.69,41.37,40,0
+    .goto Wetlands,15.96,47.28,50,0
+    .goto Wetlands,13.69,41.37,50,0
+    .goto Wetlands,13.59,38.04,50,0
+    .goto Wetlands,15.30,38.81,50,0
+    .goto Wetlands,18.45,39.37,50,0
+    .goto Wetlands,19.24,41.29,50,0
+    .goto Wetlands,13.69,41.37,50,0
     .aura 408828 >>|cRXP_WARN_Attack enemies down to low health. Cast|r |T135963:0|t[Hammer of Justice] |cRXP_WARN_on them, then kill them whilst they're stunned 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
     .mob Young Wetlands Crocolisk
     .mob Fen Dweller
@@ -379,27 +379,27 @@ step
     .xp <8,1
 step
     #loop
-    .goto Elwynn Forest,24.50,93.99,40,0
-    .goto Elwynn Forest,26.07,91.92,40,0
-    .goto Elwynn Forest,27.85,88.18,40,0
-    .goto Elwynn Forest,27.56,86.21,40,0
-    .goto Elwynn Forest,26.43,86.81,40,0
-    .goto Elwynn Forest,25.18,89.20,40,0
+    .goto Elwynn Forest,24.50,93.99,50,0
+    .goto Elwynn Forest,26.07,91.92,50,0
+    .goto Elwynn Forest,27.85,88.18,50,0
+    .goto Elwynn Forest,27.56,86.21,50,0
+    .goto Elwynn Forest,26.43,86.81,50,0
+    .goto Elwynn Forest,25.18,89.20,50,0
     .aura 408828 >>|cRXP_WARN_Attack enemies down to low health. Cast|r |T135963:0|t[Hammer of Justice] |cRXP_WARN_on them, then kill them whilst they're stunned 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
     .mob Riverpaw Runt
     .mob Riverpaw Outrunner
     .itemStat 18,QUALITY,2
     .train 410001,1
-    .xp >14,1
+    .xp >15,1
     .xp <8,1
 step
     #loop
-    .goto Westfall,69.71,73.41,30,0
-    .goto Westfall,64.54,60.81,30,0
-    .goto Westfall,62.62,58.29,30,0
-    .goto Westfall,60.87,58.71,30,0
-    .goto Westfall,58.71,61.21,30,0
-    .goto Westfall,61.43,62.17,30,0
+    .goto Westfall,69.71,73.41,40,0
+    .goto Westfall,64.54,60.81,40,0
+    .goto Westfall,62.62,58.29,40,0
+    .goto Westfall,60.87,58.71,40,0
+    .goto Westfall,58.71,61.21,40,0
+    .goto Westfall,61.43,62.17,40,0
     .aura 408828 >>|cRXP_WARN_Attack enemies down to low health. Cast|r |T135963:0|t[Hammer of Justice] |cRXP_WARN_on them, then kill them whilst they're stunned 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
     .mob Great Goretusk
     .mob Harvest Reaper
@@ -409,7 +409,7 @@ step
     .itemStat 18,QUALITY,2
     .train 410001,1
     .xp >22,1
-    .xp <14,1
+    .xp <15,1
 step
     .goto Duskwood,15.76,72.72,50,0
     .goto Duskwood,12.65,69.42,50,0
@@ -539,7 +539,7 @@ RXPGuides.RegisterGuide([[
 
 step
     +|cRXP_WARN_You should be at least level 12 in order to acquire|r |T133815:0|t[Engrave Chest: Horn of Lordaeron] |cRXP_WARN_in Westfall alone|r
-    ??|cRXP_WARN_You MUST be at least level 4 in order to acquire|r |T133815:0|t[Engrave Chest: Horn of Lordaeron] |cRXP_WARN_due to it being the level requirement of|r |T135906:0|t[Blessing of Might]
+    >>|cRXP_WARN_You MUST be at least level 4 in order to acquire|r |T133815:0|t[Engrave Chest: Horn of Lordaeron] |cRXP_WARN_due to it being the level requirement of|r |T135906:0|t[Blessing of Might]
     >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest: Horn of Lordaeron]
 --  >>|cRXP_WARN_It is NOT recommended to use|r |T133815:0|t[Engrave Chest: Horn of Lordaeron] |cRXP_WARN_over|r |T133815:0|t[Engrave Chest: Divine Storm] |cRXP_WARN_or|r |T133815:0|t[Engrave Chest: Seal of Martyrdom]
     .train 425618,1
@@ -1112,7 +1112,7 @@ step
 step
     #label LibramS
     .goto Elwynn Forest,52.28,84.56
-    >>|cRXP_WARN_Join a group with another Paladin or Priest standing over the |cRXP_FRIENDLY_Adventurer's Remains|r, or look for help from a Paladin or Priest in General Chat (Type /1 into chat)|r
+    >>|cRXP_WARN_Join a group with another Paladin, Priest, or Druid standing over the |cRXP_FRIENDLY_Adventurer's Remains|r, or look for help from a Paladin, Priest, or Druid in General Chat (Type /1 into chat)|r
     >>|cRXP_WARN_Talk to the |cRXP_FRIENDLY_Adventurer's Remains|r on the ground to begin the ritual, OR click the other player's|r |T136223:0|t[Spirit Ritual] |cRXP_WARN_(whilst in their group)|r
     >>|cRXP_WARN_A |cRXP_FRIENDLY_Adventurer's Spirit|r will spawn and die after completing the ritual. Loot it for the|r |T134419:0|t|cRXP_LOOT_[Rune of Inspiration]|r
     .collect 206264,1 --Rune of Inspiration (1)
@@ -1164,7 +1164,7 @@ step
     .train 410011,1
 step
     .goto Dun Morogh,43.03,49.63
-    >>|cRXP_WARN_Join a group with another Paladin or Priest standing over the |cRXP_FRIENDLY_Adventurer's Remains|r, or look for help from a Paladin or Priest in General Chat (Type /1 into chat)|r
+    >>|cRXP_WARN_Join a group with another Paladin, Priest, or Druid standing over the |cRXP_FRIENDLY_Adventurer's Remains|r, or look for help from a Paladin, Priest, or Druid in General Chat (Type /1 into chat)|r
     >>|cRXP_WARN_Talk to the |cRXP_FRIENDLY_Adventurer's Remains|r on the ground to begin the ritual, OR click the other player's|r |T136223:0|t[Spirit Ritual] |cRXP_WARN_(whilst in their group)|r
     >>|cRXP_WARN_A |cRXP_FRIENDLY_Adventurer's Spirit|r will spawn and die after completing the ritual. Loot it for the|r |T134419:0|t|cRXP_LOOT_[Rune of Inspiration]|r
     .collect 206264,1 --Rune of Inspiration (1)
@@ -1354,11 +1354,11 @@ step
 step
     #label LibramS
     #loop
-    .goto Duskwood,20.84,63.75,40,0
-    .goto Duskwood,20.00,71.10,40,0
-    .goto Duskwood,21.58,72.00,40,0
-    .goto Duskwood,24.26,71.82,40,0
-    .goto Duskwood,22.91,66.62,40,0
+    .goto Duskwood,20.84,63.75,50,0
+    .goto Duskwood,20.00,71.10,50,0
+    .goto Duskwood,21.58,72.00,50,0
+    .goto Duskwood,24.26,71.82,50,0
+    .goto Duskwood,22.91,66.62,50,0
     >>Kill |cRXP_ENEMY_Defias Night Runners|r, |cRXP_ENEMY_Defias Night Blades|r, and |cRXP_ENEMY_Defias Enchanters|r. Loot them for the |T134916:0|t|cRXP_LOOT_[Libram of Banishment]|r
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Defias Night Runners|r and |cRXP_ENEMY_Defias Night Blades|r cast|r |T136093:0|t[Slowing Poison] |cRXP_WARN_(Reduces movespeed by 35% for 25 seconds),|r |T132090:0|t[Backstab] |cRXP_WARN_(deals double damage from behind. |cRXP_ENEMY_Defias Night Runners|r are|r |T132320:0|t[Stealthed]|cRXP_WARN_, and |cRXP_ENEMY_Defias Enchanters|r cast|r |T135812:0|t[Fireball] |cRXP_WARN_(deals about 150 fire damage) and have|r |T135843:0|t[Frost Armor] |cRXP_WARN_(slows attack and movespeed on hit)|r
     .collect 211472,1 -- Libram of Banishment (1)
@@ -1373,11 +1373,11 @@ step
     .xp <24,1
 step
     #loop
-    .goto Duskwood,22.49,47.91,40,0
-    .goto Duskwood,20.41,47.56,40,0
-    .goto Duskwood,14.65,47.37,40,0
-    .goto Duskwood,16.31,44.96,40,0
-    .goto Duskwood,22.95,40.55,40,0
+    .goto Duskwood,22.49,47.91,50,0
+    .goto Duskwood,20.41,47.56,50,0
+    .goto Duskwood,14.65,47.37,50,0
+    .goto Duskwood,16.31,44.96,50,0
+    .goto Duskwood,22.95,40.55,50,0
     .aura 408828 >>|cRXP_WARN_Cast|r |T135983:0|t[Turn Undead] |cRXP_WARN_and then kill them with|r |T135903:0|t[Exorcism] |cRXP_WARN_5 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
     .itemStat 18,QUALITY,2
     .train 416037,1
