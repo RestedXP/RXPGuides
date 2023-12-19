@@ -1940,12 +1940,14 @@ step
     >>Click the |cRXP_PICK_Blue Raptor Nest|r. Kill more |cRXP_ENEMY_Sunscale Scytheclaws|r if you don't have a |T132914:0|t[Sunscale Feather]
     >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r
     .complete 905,1 --Visit Blue Raptor Nest (1)
+    .collect 5165,3,905,7,3
     .mob Sunscale Scytheclaw
 step
     .goto The Barrens,52.45,46.57
     >>Click the |cRXP_PICK_Red Raptor Nest|r. Kill more |cRXP_ENEMY_Sunscale Scytheclaws|r if you don't have a |T132914:0|t[Sunscale Feather]
     >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r
     .complete 905,3 --Visit Red Raptor Nest (1)
+    .collect 5165,3,905,7,3
     .mob Sunscale Scytheclaw
 step
     #label Nest
@@ -1953,6 +1955,7 @@ step
     >>Click the |cRXP_PICK_Yellow Raptor Nest|r. Kill more |cRXP_ENEMY_Sunscale Scytheclaws|r if you don't have a |T132914:0|t[Sunscale Feather]
     >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r
     .complete 905,2 --Visit Yellow Raptor Nest (1)
+    .collect 5165,3,905,7,3
     .mob Sunscale Scytheclaw
 step
     #completewith next
@@ -2582,6 +2585,7 @@ step << Druid
     .target Loganaar
     .xp <20,1
 step
+    #completewith JornSkyseerTurnin
     .hs >> Hearth to Camp Taurajo
     .use 6948
 step
@@ -2595,6 +2599,7 @@ step
     .collect 1205,20,895,1 << !Rogue !Warrior --Melon Juice (40)
     .target Innkeeper Byula
 step
+    #label JornSkyseerTurnin
     .goto The Barrens,44.85,59.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorn Skyseer|r
     .turnin 3261 >>Turn in Jorn Skyseer
@@ -2663,7 +2668,7 @@ step
     .mob Bristleback Geomancer
 step << Warlock/Shaman
     .loop 25,The Barrens,50.71,54.60,50.74,55.33,50.73,56.78,50.42,57.23,50.50,57.65,50.87,57.50,51.26,57.84,51.74,57.69,51.79,57.10,53.08,54.69,53.65,54.27,53.63,53.53,53.35,52.72,53.00,51.83,52.62,52.19,52.59,52.71,52.41,53.07,52.32,53.71,51.39,54.22
-    .xp 19+11570 >> Grind to 11000+/21300 xp
+    .xp 19+11000 >> Grind to 11000+/21300 xp
 step
     .goto The Barrens,50.88,52.96,50,0
     .goto The Barrens,50.06,52.78,50,0
@@ -2687,6 +2692,11 @@ step
     .complete 821,2 --Plainstrider Kidney (5)
     .mob Greater Plainstrider
 step
+    #completewith next
+    >>Kill any |cRXP_ENEMY_Zhevra|r. Loot it for a |cRXP_LOOT_Fresh Zhevra Carcass|r
+	.collect 10338,1 --Collect Fresh Zhevra Carcass
+    .mob Zhevra Charger
+step
     #loop
     .goto The Barrens,55.59,43.39,0
     .goto The Barrens,55.59,43.39,40,0
@@ -2707,6 +2717,7 @@ step
 step
     .goto The Barrens,59.87,30.41
     .use 10338 >>Use the |T134368:0|t[|cRXP_LOOT_Fresh Zhevra Carcass|r] at the dead tree to summon |cRXP_ENEMY_Ishamuhale|r. Kill and loot him for his |cRXP_LOOT_Fang|r
+    >>|cRXP_WARN_The Carcass only has a 30 minute duration!|r
     .complete 882,1 --Ishamuhale's Fang (1)
     .mob Ishamuhale
 step
@@ -3646,6 +3657,11 @@ step
     .goto Thunder Bluff,28.14,32.97,40,0
     .goto Thunder Bluff,28.51,28.95,10 >> Travel to the Spirit Rise and enter the pools of vision
 step
+    .goto Thunder Bluff,28.55,25.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clarice|r
+    .accept 264 >> Until Death Do Us Part
+    .target Clarice Foster
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
     .turnin 853 >> Turn in Apothecary Zamah << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .turnin 1064 >> Turn in Forsaken Aid
@@ -3695,11 +3711,6 @@ step << Shaman
     .train 8498 >> Train your class spells
     .target Tigor Skychaser
     .xp <22,1
-step
-    .goto Thunder Bluff,28.55,25.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clarice|r
-    .accept 264 >> Until Death Do Us Part
-    .target Clarice Foster
 step
     #completewith next
     .skill firstaid,80 >> Create |T133688:0|t[Heavy Linen Bandages] until your skill is 80 or higher
@@ -4390,6 +4401,17 @@ step
    .accept 6641 >> Accept Vorsha the Lasher
    .target Muglash
 step
+    #completewith next
+   >>Kill |cRXP_ENEMY_Wraithtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
+   .complete 6442,1 --Wraithtail Head (20)
+   .mob Wrathtail Razortail
+   .mob Wrathtail Wave Rider
+   .mob Wrathtail Sorceress
+   .mob Wrathtail Sea Witch
+   .mob Wrathtail Priestess
+   .mob Wrathtail Myrmidon
+   .mob Lady Vespia
+step
    .goto Ashenvale,9.63,27.63
    >>Click the |cRXP_PICK_Brazier|r when you get there
    >>|cRXP_WARN_There will be waves of|r |cRXP_ENEMY_Naga|r |cRXP_WARN_that spawn. Be careful once|r |cRXP_ENEMY_Vorsha|r |cRXP_WARN_comes out, he hits very hard|r
@@ -4415,7 +4437,7 @@ step
    .mob Lady Vespia
 step
     .loop 25,Ashenvale,10.86,26.99,11.23,25.73,11.83,25.75,12.51,24.09,14.18,24.03,14.85,23.08,14.13,20.77,14.73,19.56,14.59,17.90,13.38,16.39,13.62,14.48,14.15,15.31,15.88,15.42,15.40,16.96,15.22,18.81,15.33,20.78,15.33,22.51,15.32,24.90,14.76,25.52,14.62,26.49,14.52,28.25,13.55,29.36,12.41,29.15,11.22,31.04,10.38,29.60,11.01,28.57
-    .xp 21+18070 >> Grind to 21450+/25200 xp
+    .xp 21+21450 >> Grind to 21450+/25200 xp
     .dungeon !BFD << Priest
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warsong Runner|r and |cRXP_FRIENDLY_Marukai|r
@@ -4425,7 +4447,6 @@ step
     .goto Ashenvale,11.69,34.90
     .target Warsong Runner
     .target Marukai
-    .isQuestComplete 6641
 step << Priest
     #season 0,1
     .goto Ashenvale,11.56,34.29

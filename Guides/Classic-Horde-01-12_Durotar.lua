@@ -3288,7 +3288,6 @@ step << Warrior/Shaman/Hunter
 	.unitscan Gazz'uz
 step << Warrior/Shaman/Hunter
     #era/som
-    #completewith Gazzuz
     .goto Durotar,54.72,8.78,15,0
     .goto Durotar,54.29,8.89,15,0
     .goto Durotar,53.77,8.87,15,0
@@ -3304,10 +3303,10 @@ step << Warrior/Shaman/Hunter
     .complete 5726,1 --Lieutenant's Insignia (1)
     .mob Burning Blade Fanatic
     .mob Burning Blade Apprentice
+    --VV Add note to skip 5726 if unlucky with drop
 step << Warrior/Shaman/Hunter
     #som
     #phase 3-6
-    #completewith Gazzuz
     .goto Durotar,54.72,8.78,15,0
     .goto Durotar,54.29,8.89,15,0
     .goto Durotar,53.77,8.87,15,0
