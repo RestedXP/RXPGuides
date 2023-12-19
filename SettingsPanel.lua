@@ -119,12 +119,10 @@ function addon.settings:InitializeSettings()
             enableBindAutomation = true,
             enableGossipAutomation = true,
             showUnusedGuides = true,
-            SoM = 1,
             anchorOrientation = "top",
             chromieTime = "auto",
             enableXpStepSkipping = true,
             enableAutomaticXpRate = true,
-            autoLoadStartingGuides = true,
             showFlightTimers = true,
 
             -- Sliders
@@ -265,12 +263,6 @@ function addon.settings:MigrateLegacySettings()
         RXPData.hideUnusedGuides = nil
     end
 
-    -- TODO autoLoadGuides -> autoLoadStartingGuides
-    if RXPData.autoLoadGuides ~= nil then
-        n("hideUnusedGuides", RXPData.autoLoadGuides)
-        db.autoLoadStartingGuides = RXPData.autoLoadGuides
-        RXPData.autoLoadGuides = nil
-    end
 
     if RXPCData.disableArrow ~= nil then
         n("disableArrow", RXPCData.disableArrow)
@@ -566,9 +558,10 @@ function addon.settings:CreateImportOptionsPanel()
                     return L(
                                "This action will remove ALL guides from the database\nAre you sure?")
                 end,
-                disabled = function()
+                --[[disabled = function()
                     return next(addon.db.profile.guides) == nil
-                end,
+                end,]]
+                --Let people purge the data even without any installed guides in case they experience caching issues
                 func = function()
                     addon.db.profile.guides = {}
                     addon:CreateMetaDataTable(true)
@@ -1239,21 +1232,23 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = addon.game ~= "CLASSIC"
                     },
-                    SoM = {
-                        name = L("Season of Mastery"),
+                    season = {
+                        hidden = addon.game ~= "CLASSIC",
+                        --[[disabled = function()
+                            return addon.settings.profile.enableAutomaticXpRate
+                        end,]]
+                        name = L("Season"),
                         desc = L(
-                            "Adjust the leveling routes to the Season of Mastery changes (40/100% quest xp)"),
-                        type = "toggle",
+                            "Adjust the leveling routes to the current season"),
+                        type = "select",
+                        values = {[false] = L"None", [1] = L"Season of Mastery", [2] = L"Season of Discovery"},
+                        --sorting = {0, 1, 2},
                         width = optionsWidth,
                         order = 2.5,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.RXPFrame.GenerateMenuTable()
                             addon.ReloadGuide()
-                        end,
-                        hidden = addon.game ~= "CLASSIC",
-                        disabled = function()
-                            return addon.settings.profile.enableAutomaticXpRate
+                            addon.RXPFrame.GenerateMenuTable()
                         end
                     },
                     dungeons = {
@@ -2594,24 +2589,6 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.RXPFrame.GenerateMenuTable()
                         end
                     },
-                    autoLoadStartingGuides = {
-                        name = L("Load starting zone guides"),
-                        desc = L(
-                            "Automatically picks a suitable guide whenever you log in for the first time on a character"),
-                        type = "toggle",
-                        get = function()
-                            return RXPData.autoLoadStartingGuides
-                        end,
-                        width = optionsWidth,
-                        order = 3.7,
-                        hidden = not addon.defaultGuideList,
-                        set = function(info, value)
-                            SetProfileOption(info, value)
-                            RXPData.autoLoadStartingGuides = value
-                            addon.RXPFrame.GenerateMenuTable()
-
-                        end
-                    },
                     arrowHeader = {
                         name = L("Waypoint Arrow"), -- TODO locale
                         type = "header",
@@ -3055,11 +3032,12 @@ function addon.settings:DetectXPRate()
     end
 
     if addon.gameVersion < 20000 then
-        local isSoM = CheckBuff(362859)
+        local season = addon.player.season or CheckBuff(362859) and 1
 
-        if isSoM == addon.settings.profile.SoM then return end
+        if season == addon.settings.profile.season then return end
 
-        addon.settings.profile.SoM = isSoM
+
+        addon.settings.profile.season = season
 
         if addon.currentGuide and addon.currentGuide.name then
             addon:LoadGuide(addon.currentGuide, 'onLoad')

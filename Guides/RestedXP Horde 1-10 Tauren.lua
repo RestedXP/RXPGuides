@@ -13,17 +13,17 @@ RXPGuides.RegisterGuide([[
 
 step << !Tauren
     #completewith next
-    +|cFFFCDC00You have selected a guide meant for Tauren. We do not recommend doing this zone due to there being race-gated quests for Tauren only. It is recommended you choose the same starter zone that you start in|r
+    +|cRXP_WARN_You have selected a guide meant for Tauren. We do not recommend doing this zone due to there being race-gated quests for Tauren only. It is recommended you choose the same starter zone that you start in|r
 step
     .goto Mulgore,44.875,77.074
 .target Grull Hawkwind
->>Talk to |cFF00FF25Grull Hawkwind|r
+>>Talk to |cRXP_FRIENDLY_ Grull Hawkwind|r
     .accept 747 >>Accept The Hunt Begins
 step
 	>> Head into the hut
     .goto Mulgore,44.2,76.1
 .target Chief Hawkwind
->>Talk to |cFF00FF25Chief Hawkwind|r
+>>Talk to |cRXP_FRIENDLY_ Chief Hawkwind|r
     .accept 752 >>Accept A Humble Task
 step << Warrior/Shaman
     #sticky
@@ -47,7 +47,7 @@ step
     .complete 747,2 --Plainstrider Feather (7)
 step
     .goto Mulgore,50.0,81.1
->>Talk to |cFF00FF25Greatmother Hawkwind|r
+>>Talk to |cRXP_FRIENDLY_ Greatmother Hawkwind|r
     .turnin 752 >>Turn in A Humble Task
 .target Greatmother Hawkwind
     .accept 753 >>Accept A Humble Task
@@ -63,7 +63,7 @@ step
     .complete 747,2 --Plainstrider Feather (7)
 step
     .goto Mulgore,44.8,77.0
->>Talk to |cFF00FF25Grull Hawkwind|r
+>>Talk to |cRXP_FRIENDLY_ Grull Hawkwind|r
     .turnin 747 >>Turn in The Hunt Begins
 .target Grull Hawkwind
     .accept 3091 >>Accept Simple Note << Warrior
@@ -76,19 +76,19 @@ step << Hunter
     .vendor >>Vendor trash. Buy 1000 bullets (5 stacks)
 step
     .goto Mulgore,44.2,76.1
->>Talk to |cFF00FF25Chief Hawkwind|r
+>>Talk to |cRXP_FRIENDLY_ Chief Hawkwind|r
     .turnin 753 >>Turn in A Humble Task
 .target Chief Hawkwind
     .accept 755 >>Accept Rites of the Earthmother
 step << Warrior
     .goto Mulgore,44.008,76.132
 .target Harutt Thunderhorn
->>Talk to |cFF00FF25Harutt Thunderhorn|r
+>>Talk to |cRXP_FRIENDLY_ Harutt Thunderhorn|r
     .turnin 3091 >>Turn in Simple Note
 step << Hunter
     .goto Mulgore,44.3,75.7
 .target Lanka Farshot
->>Talk to |cFF00FF25Lanka Farshot|r
+>>Talk to |cRXP_FRIENDLY_ Lanka Farshot|r
     .turnin 3092 >>Turn in Etched Note
 step << Warrior
     .goto Mulgore,44.7,77.9
@@ -108,7 +108,7 @@ step
 step
     >>Grind mobs en route
     .goto Mulgore,42.573,92.187
->>Talk to |cFF00FF25Seer Graytongue|r
+>>Talk to |cRXP_FRIENDLY_ Seer Graytongue|r
     .turnin 755 >>Turn in Rites of the Earthmother
 .target Seer Graytongue
     .accept 757 >>Accept Rite of Strength
@@ -127,20 +127,20 @@ step << Druid/Shaman
 step << Warrior/Hunter
     >>Make sure you have 1s 90c worth of vendorables. If not, grind more
     .goto Mulgore,44.9,77.0
->>Talk to |cFF00FF25Grull Hawkwind|r
+>>Talk to |cRXP_FRIENDLY_ Grull Hawkwind|r
     .turnin 750 >>Turn in The Hunt Continues
 .target Grull Hawkwind
     .accept 780 >>Accept The Battleboars
 step << Druid
     >>Make sure you have 2s worth of vendorables. If not, grind more
     .goto Mulgore,44.9,77.0
->>Talk to |cFF00FF25Grull Hawkwind|r
+>>Talk to |cRXP_FRIENDLY_ Grull Hawkwind|r
     .turnin 750 >>Turn in The Hunt Continues
 .target Grull Hawkwind
     .accept 780 >>Accept The Battleboars
 step << Shaman
     .goto Mulgore,44.9,77.0
->>Talk to |cFF00FF25Grull Hawkwind|r
+>>Talk to |cRXP_FRIENDLY_ Grull Hawkwind|r
     .turnin 750 >>Turn in The Hunt Continues
 .target Grull Hawkwind
     .accept 780 >>Accept The Battleboars
@@ -150,25 +150,25 @@ step
 step << Druid
     .goto Mulgore,45.090,75.931
 .target Gart Mistrunner
->>Talk to |cFF00FF25Gart Mistrunner|r
+>>Talk to |cRXP_FRIENDLY_ Gart Mistrunner|r
     .turnin 3094 >>Turn in Verdant Note
     .train 8921 >>Train Moonfire
 step << Shaman
     .goto Mulgore,45.015,75.941
 .target Meela Dawnstrider
->>Talk to |cFF00FF25Meela Dawnstrider|r
+>>Talk to |cRXP_FRIENDLY_ Meela Dawnstrider|r
     .turnin 3093 >>Turn in Rune-Inscribed Note
     .trainer >> Train your class spells
 step << Shaman
     .goto Mulgore,44.7,76.2
 .target Seer Ravenfeather
->>Talk to |cFF00FF25Seer Ravenfeather|r
+>>Talk to |cRXP_FRIENDLY_ Seer Ravenfeather|r
     .accept 1519 >>Accept Call of Earth
 step
     >>Talk to Windfeather. She patrols around the camp
     .goto Mulgore,45.0,76.4
 .target Brave Windfeather
->>Talk to |cFF00FF25Brave Windfeather|r
+>>Talk to |cRXP_FRIENDLY_ Brave Windfeather|r
     .accept 3376 >>Accept Break Sharptusk!
 step << Hunter
     .goto Mulgore,44.3,75.7
@@ -223,7 +223,7 @@ step
 step
     .goto Mulgore,44.9,77.0
 .target Grull Hawkwind
->>Talk to |cFF00FF25Grull Hawkwind|r
+>>Talk to |cRXP_FRIENDLY_ Grull Hawkwind|r
     .turnin 780 >>Turn in The Battleboars
 step
     #completewith next
@@ -231,7 +231,7 @@ step
     .vendor >>Vendor trash
 step << Shaman
     .goto Mulgore,44.7,76.2
->>Talk to |cFF00FF25Seer Ravenfeather|r
+>>Talk to |cRXP_FRIENDLY_ Seer Ravenfeather|r
     .turnin 1519 >>Turn in Call of Earth
 .target Seer Ravenfeather
     .accept 1520 >>Accept Call of Earth
@@ -240,24 +240,24 @@ step << Shaman
 step << Shaman
     >>Use the Earth Sapta in your bags
     .goto Mulgore,53.893,80.538
->>Talk to |cFF00FF25Minor Manifestation of Earth|r
+>>Talk to |cRXP_FRIENDLY_ Minor Manifestation of Earth|r
     .turnin 1520 >>Turn in Call of Earth
 .target Minor Manifestation of Earth
     .accept 1521 >>Accept Call of Earth
 step << Shaman
     .goto Mulgore,44.7,76.2
 .target Seer Ravenfeather
->>Talk to |cFF00FF25Seer Ravenfeather|r
+>>Talk to |cRXP_FRIENDLY_ Seer Ravenfeather|r
     .turnin 1521 >>Turn in Call of Earth
 step
     >>Talk to Windfeather. She patrols around the camp
     .goto Mulgore,44.526,76.504
 .target Brave Windfeather
->>Talk to |cFF00FF25Brave Windfeather|r
+>>Talk to |cRXP_FRIENDLY_ Brave Windfeather|r
     .turnin 3376 >>Turn in Break Sharptusk!
 step
     .goto Mulgore,44.2,76.1
->>Talk to |cFF00FF25Chief Hawkwind|r
+>>Talk to |cRXP_FRIENDLY_ Chief Hawkwind|r
     .turnin 24857 >>Turn in Attack on Camp Narache
     .turnin 757 >>Turn in Rite of Strength
 .target Chief Hawkwind
@@ -265,7 +265,7 @@ step
 step
     .goto Mulgore,38.5,81.6
 .target Antur Fallow
->>Talk to |cFF00FF25Antur Fallow|r
+>>Talk to |cRXP_FRIENDLY_ Antur Fallow|r
     .accept 1656 >>Accept A Task Unfinished
 ]])
 
@@ -297,12 +297,12 @@ step
 step << !Hunter
     .goto Mulgore,48.3,53.3
 .target Ahab Wheathoof
->>Talk to |cFF00FF25Ahab Wheathoof|r
+>>Talk to |cRXP_FRIENDLY_ Ahab Wheathoof|r
     .accept 11129 >>Accept Kyle's Gone Missing!
 step << !Hunter
     .goto Mulgore,47.0,57.0
 .target Maur Raincaller
->>Talk to |cFF00FF25Maur Raincaller|r
+>>Talk to |cRXP_FRIENDLY_ Maur Raincaller|r
     .accept 766 >>Accept Mazzranache
 step << Shaman/Druid
     .goto Mulgore,45.7,58.6
@@ -315,7 +315,7 @@ step << Warrior
 step << !Hunter
     .goto Mulgore,46.622,61.094
 .target Innkeeper Kauth
->>Talk to |cFF00FF25Innkeeper Kauth|r
+>>Talk to |cRXP_FRIENDLY_ Innkeeper Kauth|r
     .turnin 1656 >>Turn in A Task Unfinished
 step << !Hunter
 	.goto Mulgore,46.622,61.094
@@ -323,7 +323,7 @@ step << !Hunter
     .home >>Set your Hearthstone to Bloodhoof Village
 step << !Hunter
     .goto Mulgore,47.513,60.164
->>Talk to |cFF00FF25Baine Bloodhoof|r
+>>Talk to |cRXP_FRIENDLY_ Baine Bloodhoof|r
     .turnin 763 >>Turn in Rites of the Earthmother
 .target Baine Bloodhoof
     .accept 745 >>Accept Sharing the Land
@@ -331,7 +331,7 @@ step << !Hunter
     .accept 746 >>Accept Dwarven Digging
 step << !Hunter
     .goto Mulgore,47.8,57.6
->>Talk to |cFF00FF25Zarlman Two-Moons|r
+>>Talk to |cRXP_FRIENDLY_ Zarlman Two-Moons|r
     .turnin 767 >>Turn in Rite of Vision
 .target Zarlman Two-Moons
     .accept 771 >>Accept Rite of Vision
@@ -342,7 +342,7 @@ step << Shaman
 step << !Hunter
     .goto Mulgore,48.715,59.325
 .target Harken Windtotem
->>Talk to |cFF00FF25Harken Windtotem|r
+>>Talk to |cRXP_FRIENDLY_ Harken Windtotem|r
     .accept 761 >>Accept Swoop Hunting
 step << Druid
         #completewith next
@@ -351,7 +351,7 @@ step << Druid
 step << !Hunter
     .goto Mulgore,48.6,60.4
 .target Mull Thunderhorn
->>Talk to |cFF00FF25Mull Thunderhorn|r
+>>Talk to |cRXP_FRIENDLY_ Mull Thunderhorn|r
     .accept 748 >>Accept Poison Water
 step << Warrior
         #completewith next
@@ -360,11 +360,11 @@ step << Warrior
 step
     .goto Mulgore,47.3,62.0
 .target Ruul Eagletalon
->>Talk to |cFF00FF25Ruul Eagletalon|r
+>>Talk to |cRXP_FRIENDLY_ Ruul Eagletalon|r
     .accept 743 >>Accept Dangers of the Windfury
 step << Hunter
     .goto Mulgore,47.513,60.164
->>Talk to |cFF00FF25Baine Bloodhoof|r
+>>Talk to |cRXP_FRIENDLY_ Baine Bloodhoof|r
     .turnin 763 >>Turn in Rites of the Earthmother
 .target Baine Bloodhoof
     .accept 745 >>Accept Sharing the Land
@@ -373,7 +373,7 @@ step << Hunter
 step << Hunter
     .goto Mulgore,46.622,61.094
 .target Innkeeper Kauth
->>Talk to |cFF00FF25Innkeeper Kauth|r
+>>Talk to |cRXP_FRIENDLY_ Innkeeper Kauth|r
     .turnin 1656 >>Turn in A Task Unfinished
 step << Hunter
 	.goto Mulgore,46.622,61.094
@@ -381,16 +381,16 @@ step << Hunter
 step << Hunter
     .goto Mulgore,48.6,60.4
 .target Mull Thunderhorn
->>Talk to |cFF00FF25Mull Thunderhorn|r
+>>Talk to |cRXP_FRIENDLY_ Mull Thunderhorn|r
     .accept 748 >>Accept Poison Water
 step << Hunter
     .goto Mulgore,48.715,59.325
 .target Harken Windtotem
->>Talk to |cFF00FF25Harken Windtotem|r
+>>Talk to |cRXP_FRIENDLY_ Harken Windtotem|r
     .accept 761 >>Accept Swoop Hunting
 step << Hunter
     .goto Mulgore,47.8,57.6
->>Talk to |cFF00FF25Zarlman Two-Moons|r
+>>Talk to |cRXP_FRIENDLY_ Zarlman Two-Moons|r
     .turnin 767 >>Turn in Rite of Vision
 .target Zarlman Two-Moons
     .accept 771 >>Accept Rite of Vision
@@ -401,7 +401,7 @@ step << Hunter
 step << Hunter
     .goto Mulgore,47.0,57.0
 .target Maur Raincaller
->>Talk to |cFF00FF25Maur Raincaller|r
+>>Talk to |cRXP_FRIENDLY_ Maur Raincaller|r
     .accept 766 >>Accept Mazzranache
 step << Hunter
     #completewith next
@@ -411,7 +411,7 @@ step << Hunter
 step << Hunter
     .goto Mulgore,48.3,53.3
 .target Ahab Wheathoof
->>Talk to |cFF00FF25Ahab Wheathoof|r
+>>Talk to |cRXP_FRIENDLY_ Ahab Wheathoof|r
     .accept 11129 >>Accept Kyle's Gone Missing!
 step
     #sticky
@@ -439,7 +439,7 @@ step << Tauren
 	.unitscan Kyle the Frenzied
 step << Tauren
     .goto Mulgore,48.5,60.4
->>Talk to |cFF00FF25Mull Thunderhorn|r
+>>Talk to |cRXP_FRIENDLY_ Mull Thunderhorn|r
     .turnin 748 >>Turn in Poison Water
 .target Mull Thunderhorn
     .accept 754 >>Accept Winterhoof Cleansing
@@ -484,7 +484,7 @@ step
     .vendor >>Vendor trash.
 step << Tauren
     .goto Mulgore,48.5,60.4
->>Talk to |cFF00FF25Mull Thunderhorn|r
+>>Talk to |cRXP_FRIENDLY_ Mull Thunderhorn|r
     .turnin 754 >>Turn in Winterhoof Cleansing
 .target Mull Thunderhorn
     .accept 756 >>Accept Thunderhorn Totem
@@ -503,7 +503,7 @@ step << Druid
 step
     .goto Mulgore,47.513,60.164
 .target Baine Bloodhoof
->>Talk to |cFF00FF25Baine Bloodhoof|r
+>>Talk to |cRXP_FRIENDLY_ Baine Bloodhoof|r
     .turnin 745 >>Turn in Sharing the Land
 step << Warrior
         #completewith next
@@ -527,7 +527,7 @@ step
     #label Vision
     >>Don't follow the wolf that spawns.
     .goto Mulgore,47.8,57.5
->>Talk to |cFF00FF25Zarlman Two-Moons|r
+>>Talk to |cRXP_FRIENDLY_ Zarlman Two-Moons|r
     .turnin 771 >>Turn in Rite of Vision
 .target Zarlman Two-Moons
     .accept 772 >>Accept Rite of Vision
@@ -547,7 +547,7 @@ step << Hunter
 step
     .goto Mulgore,48.2,53.3
 .target Ahab Wheathoof
->>Talk to |cFF00FF25Ahab Wheathoof|r
+>>Talk to |cRXP_FRIENDLY_ Ahab Wheathoof|r
     .turnin 11129 >>Turn in Kyle's Gone Missing!
 step
     >>Look for Morin Cloudstalker. He patrols along the eastern road
@@ -555,7 +555,7 @@ step
     .goto Mulgore,59.7,62.5,50,0
     .goto Mulgore,51.1,58.6
 .target Morin Cloudstalker
->>Talk to |cFF00FF25Morin Cloudstalker|r
+>>Talk to |cRXP_FRIENDLY_ Morin Cloudstalker|r
     .accept 749 >>Accept The Ravaged Caravan
 	.unitscan Morin Cloudstalker
 step
@@ -598,7 +598,7 @@ step
     .isQuestComplete 766
     .goto Mulgore,47.0,57.2
 .target Maur Raincaller
->>Talk to |cFF00FF25Maur Raincaller|r
+>>Talk to |cRXP_FRIENDLY_ Maur Raincaller|r
     .turnin 766 >>Turn in Mazzranache
 step
     #completewith next
@@ -607,7 +607,7 @@ step
 step
 	#label TotemW
     .goto Mulgore,48.5,60.4
->>Talk to |cFF00FF25Mull Thunderhorn|r
+>>Talk to |cRXP_FRIENDLY_ Mull Thunderhorn|r
     .turnin 756 >>Turn in Thunderhorn Totem
 .target Mull Thunderhorn
     .accept 758 >>Accept Thunderhorn Cleansing
@@ -615,7 +615,7 @@ step
 	.isQuestComplete 761
     .goto Mulgore,48.7,59.4
 .target Harken Windtotem
->>Talk to |cFF00FF25Harken Windtotem|r
+>>Talk to |cRXP_FRIENDLY_ Harken Windtotem|r
     .turnin 761 >>Turn in Swoop Hunting
 step << Shaman
         #completewith next
@@ -673,7 +673,7 @@ step
 step
 	#label Burial
     .goto Mulgore,32.714,36.087
->>Talk to |cFF00FF25Seer Wiserunner|r
+>>Talk to |cRXP_FRIENDLY_ Seer Wiserunner|r
     .turnin 772 >>Turn in Rite of Vision
 .target Seer Wiserunner
     .accept 773 >>Accept Rite of Wisdom
@@ -703,7 +703,7 @@ step
     #label DeleteWater
     .goto Mulgore,59.9,25.6
 .target Lorekeeper Raintotem
->>Talk to |cFF00FF25Lorekeeper Raintotem|r
+>>Talk to |cRXP_FRIENDLY_ Lorekeeper Raintotem|r
     .accept 833 >>Accept A Sacred Burial
 step
     >>Kill Bristleback Interlopers in the area
@@ -711,14 +711,14 @@ step
     .complete 833,1 --Bristleback Interloper (8)
 step
     .goto Mulgore,61.5,21.1
->>Talk to |cFF00FF25Ancestral Spirit|r
+>>Talk to |cRXP_FRIENDLY_ Ancestral Spirit|r
     .turnin 773 >>Turn in Rite of Wisdom
 .target Ancestral Spirit
     .accept 775 >>Accept Journey into Thunder Bluff
 step
     .goto Mulgore,59.8,25.6
 .target Lorekeeper Raintotem
->>Talk to |cFF00FF25Lorekeeper Raintotem|r
+>>Talk to |cRXP_FRIENDLY_ Lorekeeper Raintotem|r
     .turnin 833 >>Turn in A Sacred Burial
 step
     .goto Mulgore,61.5,21.9
@@ -733,34 +733,34 @@ step << !Druid
 step << !Hunter
     .goto Mulgore,47.0,57.2
 .target Maur Raincaller
->>Talk to |cFF00FF25Maur Raincaller|r
+>>Talk to |cRXP_FRIENDLY_ Maur Raincaller|r
     .turnin 766 >>Turn in Mazzranache
 step
     .goto Mulgore,48.7,59.4
 .target Harken Windtotem
->>Talk to |cFF00FF25Harken Windtotem|r
+>>Talk to |cRXP_FRIENDLY_ Harken Windtotem|r
     .turnin 761 >>Turn in Swoop Hunting
 step
     .goto Mulgore,48.5,60.4
->>Talk to |cFF00FF25Mull Thunderhorn|r
+>>Talk to |cRXP_FRIENDLY_ Mull Thunderhorn|r
     .turnin 758 >>Turn in Thunderhorn Cleansing
 .target Mull Thunderhorn
     .accept 759 >>Accept Wildmane Totem << !Hunter !Druid
 step << !Hunter
     .goto Mulgore,47.513,60.164
 .target Baine Bloodhoof
->>Talk to |cFF00FF25Baine Bloodhoof|r
+>>Talk to |cRXP_FRIENDLY_ Baine Bloodhoof|r
     .turnin 746 >>Turn in Dwarven Digging
 step << !Hunter !Druid
     .goto Mulgore,46.9,60.2
 .target Skorn Whitecloud
->>Talk to |cFF00FF25Skorn Whitecloud|r
+>>Talk to |cRXP_FRIENDLY_ Skorn Whitecloud|r
     .accept 861 >>Accept The Hunter's Way
 step
     #label hsfailsafe3
     .goto Mulgore,47.4,62.0
 .target Ruul Eagletalon
->>Talk to |cFF00FF25Ruul Eagletalon|r
+>>Talk to |cRXP_FRIENDLY_ Ruul Eagletalon|r
     .turnin 743 >>Turn in Dangers of the Windfury
 step << Druid
     .isOnQuest 759
@@ -770,7 +770,7 @@ step << Shaman
         #completewith next
     .goto Mulgore,48.4,59.2
 .target Narm Skychaser
->>Talk to |cFF00FF25Narm Skychaser|r
+>>Talk to |cRXP_FRIENDLY_ Narm Skychaser|r
     .accept 2984 >>Accept Call of Fire
      .trainer >> Train your class spells
 step << Druid
@@ -780,7 +780,7 @@ step << Druid
 step << Druid
     .goto Mulgore,48.5,59.6
 .target Harene Plainwalker
->>Talk to |cFF00FF25Harene Plainwalker|r
+>>Talk to |cRXP_FRIENDLY_ Harene Plainwalker|r
     .accept 5928 >>Accept Heeding the Call
 step << Warrior
         #completewith next
@@ -788,20 +788,20 @@ step << Warrior
 .target Sorek
 .target Tarshaw Jaggedscar
 .target Krang Stonehoof
->>Talk to |cFF00FF25Krang Stonehoof|r
--->>Talk to |cFF00FF25Tarshaw Jaggedscar|r
--->>Talk to |cFF00FF25Sorek|r
+>>Talk to |cRXP_FRIENDLY_ Krang Stonehoof|r
+-->>Talk to |cRXP_FRIENDLY_ Tarshaw Jaggedscar|r
+-->>Talk to |cRXP_FRIENDLY_ Sorek|r
     .accept 1505 >>Accept Veteran Uzzek
      .trainer >> Train your class spells
 step << Hunter
     .goto Mulgore,47.513,60.164
 .target Baine Bloodhoof
->>Talk to |cFF00FF25Baine Bloodhoof|r
+>>Talk to |cRXP_FRIENDLY_ Baine Bloodhoof|r
     .turnin 746 >>Turn in Dwarven Digging
 step << Hunter
     .goto Mulgore,48.5,60.4
 .target Mull Thunderhorn
->>Talk to |cFF00FF25Mull Thunderhorn|r
+>>Talk to |cRXP_FRIENDLY_ Mull Thunderhorn|r
     .turnin 758 >>Turn in Thunderhorn Cleansing
 step << !Warrior !Shaman
     .goto Mulgore,47.0,57.2
@@ -810,7 +810,7 @@ step << Hunter
     #requires mazzranache2
     .goto Mulgore,47.0,57.2
 .target Maur Raincaller
->>Talk to |cFF00FF25Maur Raincaller|r
+>>Talk to |cRXP_FRIENDLY_ Maur Raincaller|r
     .turnin 766 >>Turn in Mazzranache
 step << Hunter
     #sticky
@@ -821,7 +821,7 @@ step << Hunter
         #completewith next
     .goto Mulgore,47.820,55.688
 .target Yaw Sharpmane
->>Talk to |cFF00FF25Yaw Sharpmane|r
+>>Talk to |cRXP_FRIENDLY_ Yaw Sharpmane|r
     .accept 6061 >>Accept Taming the Beast
      .trainer >> Train your class spells
 step << Hunter
@@ -830,7 +830,7 @@ step << Hunter
     .complete 6061,1 --Tame an Adult Plainstrider (1)
 step << Hunter
     .goto Mulgore,47.820,55.688
->>Talk to |cFF00FF25Yaw Sharpmane|r
+>>Talk to |cRXP_FRIENDLY_ Yaw Sharpmane|r
     .turnin 6061 >>Turn in Taming the Beast
 .target Yaw Sharpmane
     .accept 6087 >>Accept Taming the Beast
@@ -840,7 +840,7 @@ step << Hunter
     .complete 6087,1 --Tame a Prairie Stalker (1)
 step << Hunter
     .goto Mulgore,47.820,55.688
->>Talk to |cFF00FF25Yaw Sharpmane|r
+>>Talk to |cRXP_FRIENDLY_ Yaw Sharpmane|r
     .turnin 6087 >>Turn in Taming the Beast
 .target Yaw Sharpmane
     .accept 6088 >>Accept Taming the Beast
@@ -850,7 +850,7 @@ step << Hunter
     .complete 6088,1 --Tame a Swoop (1)
 step << Hunter
     .goto Mulgore,47.820,55.688
->>Talk to |cFF00FF25Yaw Sharpmane|r
+>>Talk to |cRXP_FRIENDLY_ Yaw Sharpmane|r
     .turnin 6088 >>Turn in Taming the Beast
 .target Yaw Sharpmane
     .accept 6089 >>Accept Training the Beast
@@ -862,7 +862,7 @@ step << Warrior/Shaman
     .goto Mulgore,59.7,62.5,30,0
     .goto Mulgore,51.1,58.6,30,0
     .goto Mulgore,59.7,62.5
->>Talk to |cFF00FF25Morin Cloudstalker|r
+>>Talk to |cRXP_FRIENDLY_ Morin Cloudstalker|r
     .turnin 751 >> Turn in The Ravaged Caravan
 .target Morin Cloudstalker
     .accept 764 >>Accept The Venture Co.
@@ -878,7 +878,7 @@ step << Druid/Hunter
     .goto Mulgore,51.1,58.6,30,0
     .goto Mulgore,59.7,62.5
 .target Morin Cloudstalker
->>Talk to |cFF00FF25Morin Cloudstalker|r
+>>Talk to |cRXP_FRIENDLY_ Morin Cloudstalker|r
     .turnin 751 >> Turn in The Ravaged Caravan
 	.unitscan Morin Cloudstalker
 step << Tauren Warrior/Tauren Shaman
@@ -895,7 +895,7 @@ step << Warrior tbc/Shaman tbc
 step << Tauren Warrior/Tauren Shaman
     >>Run back to Bloodhoof Village << wotlk
     .goto Mulgore,48.5,60.4
->>Talk to |cFF00FF25Mull Thunderhorn|r
+>>Talk to |cRXP_FRIENDLY_ Mull Thunderhorn|r
     .turnin 759 >>Turn in Wildmane Totem
 .target Mull Thunderhorn
     .accept 760 >>Accept Wildmane Cleansing
@@ -921,21 +921,21 @@ step << Druid
 step << Druid
     .goto Thunder Bluff,78.1,28.6
 .target Arch Druid Hamuul Runetotem
->>Talk to |cFF00FF25Arch Druid Hamuul Runetotem|r
+>>Talk to |cRXP_FRIENDLY_ Arch Druid Hamuul Runetotem|r
     .accept 886 >>Accept The Barrens Oases
 step << Druid
     .goto Thunder Bluff,76.7,27.3
 .target Turak Runetotem
->>Talk to |cFF00FF25Turak Runetotem|r
+>>Talk to |cRXP_FRIENDLY_ Turak Runetotem|r
     .turnin 5928 >>Turn in Heeding the Call
 step << Druid
     .goto Thunder Bluff,77.0,27.5
 .target Turak Runetotem
->>Talk to |cFF00FF25Turak Runetotem|r
+>>Talk to |cRXP_FRIENDLY_ Turak Runetotem|r
     .accept 5922 >>Accept Moonglade
 step << Druid
     .cast 18960 >>Use your new spell to teleport to Moonglade
->>Talk to |cFF00FF25Dendrite Starblaze|r
+>>Talk to |cRXP_FRIENDLY_ Dendrite Starblaze|r
     .turnin 5922 >>Turn in Moonglade
     .goto Moonglade,56.209,30.636
 .target Dendrite Starblaze
@@ -946,7 +946,7 @@ step << Druid
     .skipgossip
 step << Druid
     .cast 18960 >> Teleport back to Moonglade
->>Talk to |cFF00FF25Dendrite Starblaze|r
+>>Talk to |cRXP_FRIENDLY_ Dendrite Starblaze|r
     .turnin 5930 >>Turn in Great Bear Spirit
     .goto Moonglade,56.209,30.636
 .target Dendrite Starblaze
@@ -956,7 +956,7 @@ step << Druid
     .hs >>Hearth to Thunder Bluff
 step << Druid
     .goto Thunder Bluff,76.477,27.221
->>Talk to |cFF00FF25Turak Runetotem|r
+>>Talk to |cRXP_FRIENDLY_ Turak Runetotem|r
     .turnin 5932 >>Turn in Back to Thunder Bluff
 .target Turak Runetotem
     .accept 6002 >>Accept Body and Heart
@@ -972,23 +972,23 @@ step << Druid
 step << Tauren
     .goto The Barrens,44.9,58.6
 .target Kirge Sternhorn
->>Talk to |cFF00FF25Kirge Sternhorn|r
+>>Talk to |cRXP_FRIENDLY_ Kirge Sternhorn|r
     .accept 854 >>Accept Journey to the Crossroads
 step << Druid
     .goto The Barrens,52.2,31.9
->>Talk to |cFF00FF25Tonga Runetotem|r
+>>Talk to |cRXP_FRIENDLY_ Tonga Runetotem|r
     .turnin 886 >>Turn in The Barrens Oases
 .target Tonga Runetotem
     .accept 870 >>Accept The Forgotten Pools
 step << !Druid
     .goto The Barrens,52.2,31.9
 .target Tonga Runetotem
->>Talk to |cFF00FF25Tonga Runetotem|r
+>>Talk to |cRXP_FRIENDLY_ Tonga Runetotem|r
     .accept 870 >>Accept The Forgotten Pools
 step << Tauren
     .goto The Barrens,51.5,30.8
 .target Thork
->>Talk to |cFF00FF25Thork|r
+>>Talk to |cRXP_FRIENDLY_ Thork|r
     .turnin 854 >>Turn in Journey to the Crossroads
 step
     .goto The Barrens,51.5,30.4
@@ -996,12 +996,12 @@ step
 step
     .goto The Barrens,51.5,30.1
 .target Apothecary Helbrim
->>Talk to |cFF00FF25Apothecary Helbrim|r
+>>Talk to |cRXP_FRIENDLY_ Apothecary Helbrim|r
     .accept 848 >>Accept Fungal Spores
 step
     .goto The Barrens,51.1,29.0
 .target Jahan Hawkwing
->>Talk to |cFF00FF25Jahan Hawkwing|r
+>>Talk to |cRXP_FRIENDLY_ Jahan Hawkwing|r
     .accept 6361 >>Accept A Bundle of Hides
 step
     #sticky
@@ -1028,7 +1028,7 @@ step << tbc
 step
     .goto The Barrens,52.3,31.9
     >> Head back to The Crossroads
->>Talk to |cFF00FF25Tonga Runetotem|r
+>>Talk to |cRXP_FRIENDLY_ Tonga Runetotem|r
     .turnin 870 >>Turn in The Forgotten Pools
 .target Tonga Runetotem
     .accept 877 >>Accept The Stagnant Oasis
@@ -1038,27 +1038,27 @@ step
 step
     >>This starts a timed quest
     .goto The Barrens,51.4,30.2
->>Talk to |cFF00FF25Apothecary Helbrim|r
+>>Talk to |cRXP_FRIENDLY_ Apothecary Helbrim|r
 .turnin 848 >>Turn in Fungal Spores
 .target Apothecary Helbrim
     .accept 853 >>Accept Apothecary Zamah
 step
     .goto The Barrens,51.5,30.3
->>Talk to |cFF00FF25Devrak|r
+>>Talk to |cRXP_FRIENDLY_ Devrak|r
     .turnin 6361 >>Turn in A Bundle of Hides
 .target Devrak
     .accept 6362 >>Accept Ride to Thunder Bluff
     .fly Thunder Bluff >>Fly to Thunder Bluff
 step
     .goto Thunder Bluff,45.6,55.9
->>Talk to |cFF00FF25Ahanu|r
+>>Talk to |cRXP_FRIENDLY_ Ahanu|r
     .turnin 6362 >>Turn in Ride to Thunder Bluff
 .target Ahanu
     .accept 6363 >>Accept Tal the Wind Rider Master
 step << Warrior/Shaman
     .goto Thunder Bluff,37.8,59.4
 .target Eyahn Eagletalon
->>Talk to |cFF00FF25Eyahn Eagletalon|r
+>>Talk to |cRXP_FRIENDLY_ Eyahn Eagletalon|r
     .accept 744 >>Accept Preparation for Ceremony
 step
     .goto Thunder Bluff,29.6,29.7,25 >>Go into the cave
@@ -1066,28 +1066,28 @@ step << Druid
     >>Equip the Staff you got from the quest.
     .goto Thunder Bluff,23.0,21.0
 .target Apothecary Zamah
->>Talk to |cFF00FF25Apothecary Zamah|r
+>>Talk to |cRXP_FRIENDLY_ Apothecary Zamah|r
     .turnin 853 >>Turn in Apothecary Zamah
 step << !Druid
     >>You'll equip the staff soon. Make sure you keep it
     .goto Thunder Bluff,23.0,21.0
 .target Apothecary Zamah
->>Talk to |cFF00FF25Apothecary Zamah|r
+>>Talk to |cRXP_FRIENDLY_ Apothecary Zamah|r
     .turnin 853 >>Turn in Apothecary Zamah
 step
     .goto Thunder Bluff,46.8,49.7
->>Talk to |cFF00FF25Tal|r
+>>Talk to |cRXP_FRIENDLY_ Tal|r
     .turnin 6363 >>Turn in Tal the Wind Rider Master
 .target Tal
     .accept 6364 >>Accept Return to Jahan
 step << !Warrior !Shaman
     .goto Thunder Bluff,60.0,51.7
 .target Cairne Bloodhoof
->>Talk to |cFF00FF25Cairne Bloodhoof|r
+>>Talk to |cRXP_FRIENDLY_ Cairne Bloodhoof|r
     .turnin 775 >>Turn in Journey into Thunder Bluff
 step << Warrior/Shaman
     .goto Thunder Bluff,60.0,51.7
->>Talk to |cFF00FF25Cairne Bloodhoof|r
+>>Talk to |cRXP_FRIENDLY_ Cairne Bloodhoof|r
     .turnin 775 >>Turn in Journey into Thunder Bluff
 .target Cairne Bloodhoof
     .accept 776 >>Accept Rites of the Earthmother
@@ -1101,7 +1101,7 @@ step << Warrior/Hunter
 step << Druid
     .goto Thunder Bluff,76.477,27.221
 .target Turak Runetotem
->>Talk to |cFF00FF25Turak Runetotem|r
+>>Talk to |cRXP_FRIENDLY_ Turak Runetotem|r
     .turnin 6002 >>Turn in Body and Heart
 step << Druid/Hunter
     #sticky
@@ -1110,7 +1110,7 @@ step << Druid/Hunter
 step << Druid/Hunter
     .goto The Barrens,51.2,29.1
 .target Jahan Hawkwing
->>Talk to |cFF00FF25Jahan Hawkwing|r
+>>Talk to |cRXP_FRIENDLY_ Jahan Hawkwing|r
     .turnin 6364 >>Turn in Return to Jahan
 step << Druid/Hunter
     #sticky
@@ -1182,34 +1182,34 @@ step
     >>Go back into Thunder Bluff
 .goto Thunder Bluff,60.1,51.7
 .target Cairne Bloodhoof
->>Talk to |cFF00FF25Cairne Bloodhoof|r
+>>Talk to |cRXP_FRIENDLY_ Cairne Bloodhoof|r
     .turnin 776 >>Turn in Rites of the Earthmother
 step
     .goto Thunder Bluff,37.9,59.6
 .target Eyahn Eagletalon
->>Talk to |cFF00FF25Eyahn Eagletalon|r
+>>Talk to |cRXP_FRIENDLY_ Eyahn Eagletalon|r
     .turnin 744 >>Turn in Preparation for Ceremony
 step
     .goto Thunder Bluff,61.3,80.9
 .target Melor Stonehoof
->>Talk to |cFF00FF25Melor Stonehoof|r
+>>Talk to |cRXP_FRIENDLY_ Melor Stonehoof|r
     .turnin 861 >>Turn in The Hunter's Way
 step
     .goto Thunder Bluff,61.2,81.2
 .target Melor Stonehoof
->>Talk to |cFF00FF25Melor Stonehoof|r
+>>Talk to |cRXP_FRIENDLY_ Melor Stonehoof|r
     .accept 860 >>Accept Sergra Darkthorn
 step
     .isOnQuest 770
     >>Run to Bloodhoof Village
     .goto Mulgore,46.8,60.2
 .target Skorn Whitecloud
->>Talk to |cFF00FF25Skorn Whitecloud|r
+>>Talk to |cRXP_FRIENDLY_ Skorn Whitecloud|r
     .turnin 770 >>Turn in The Demon Scarred Cloak
 step << Tauren Warrior/Shaman
     .goto Mulgore,48.6,60.4
 .target Mull Thunderhorn
->>Talk to |cFF00FF25Mull Thunderhorn|r
+>>Talk to |cRXP_FRIENDLY_ Mull Thunderhorn|r
     .turnin 760 >>Turn in Wildmane Cleansing
 step
     .goto Mulgore,61.5,47.2,110 >>Run to the mine
@@ -1241,7 +1241,7 @@ step
     .goto Mulgore,51.1,58.6,30,0
     .goto Mulgore,59.7,62.5
 .target Morin Cloudstalker
->>Talk to |cFF00FF25Morin Cloudstalker|r
+>>Talk to |cRXP_FRIENDLY_ Morin Cloudstalker|r
     .turnin 764 >>Turn in The Venture Co.
     .turnin 765 >>Turn in Supervisor Fizsprocket
     .unitscan Morin Cloudstalker
@@ -1259,34 +1259,34 @@ step
 step
     .goto The Barrens,52.0,30.3
 .target Gazrog
->>Talk to |cFF00FF25Gazrog|r
+>>Talk to |cRXP_FRIENDLY_ Gazrog|r
     .accept 869 >>Accept Raptor Thieves
 step
     .goto The Barrens,51.2,29.1
 .target Jahan Hawkwing
->>Talk to |cFF00FF25Jahan Hawkwing|r
+>>Talk to |cRXP_FRIENDLY_ Jahan Hawkwing|r
     .turnin 6364 >>Turn in Return to Jahan
 step
     .goto The Barrens,51.5,30.9
 .target Thork
->>Talk to |cFF00FF25Thork|r
+>>Talk to |cRXP_FRIENDLY_ Thork|r
     .accept 871 >>Accept Disrupt the Attacks
     .accept 5041 >>Accept Supplies for the Crossroads
 step
     .goto The Barrens,51.6,30.9
     >>Run upstairs
 .target Darsok Swiftdagger
->>Talk to |cFF00FF25Darsok Swiftdagger|r
+>>Talk to |cRXP_FRIENDLY_ Darsok Swiftdagger|r
     .accept 867 >>Accept Harpy Raiders
 step
     .goto The Barrens,52.2,31.0
->>Talk to |cFF00FF25Sergra Darkthorn|r
+>>Talk to |cRXP_FRIENDLY_ Sergra Darkthorn|r
     .turnin 860 >>Turn in Sergra Darkthorn
 .target Sergra Darkthorn
     .accept 844 >>Accept Plainstrider Menace
 step << Shaman
     .goto The Barrens,55.9,19.9
->>Talk to |cFF00FF25Kranal Fiss|r
+>>Talk to |cRXP_FRIENDLY_ Kranal Fiss|r
     .turnin 2984 >>Turn in Call of Fire
 .target Kranal Fiss
     .accept 1524 >>Accept Call of Fire
@@ -1294,13 +1294,13 @@ step << Shaman
 .goto Durotar,36.6,58.0,25 >>Run up the mountain path
 step << Shaman
     .goto Durotar,38.5,58.9
->>Talk to |cFF00FF25Telf Joolam|r
+>>Talk to |cRXP_FRIENDLY_ Telf Joolam|r
     .turnin 1524 >>Turn in Call of Fire
 .target Telf Joolam
     .accept 1525 >>Accept Call of Fire
 step << Warrior
     .goto The Barrens,61.4,21.1
->>Talk to |cFF00FF25Uzzek|r
+>>Talk to |cRXP_FRIENDLY_ Uzzek|r
     .turnin 1505 >>Turn in Veteran Uzzek
 .target Uzzek
     .accept 1498 >>Accept Path of Defense
@@ -1318,7 +1318,7 @@ step << Warrior
 .goto Durotar,39.2,32.3,30 >>Leave Thunder Ridge
 step << Warrior
     .goto The Barrens,61.4,21.1
->>Talk to |cFF00FF25Uzzek|r
+>>Talk to |cRXP_FRIENDLY_ Uzzek|r
     .turnin 1498 >>Turn in Path of Defense
 .target Uzzek
     .accept 1502 >>Accept Thun'grim Firegaze
@@ -1327,7 +1327,7 @@ step << Warrior
     .complete 1498,1 --Singed Scale (5)
 step << Warrior
     .goto The Barrens,61.4,21.1
->>Talk to |cFF00FF25Uzzek|r
+>>Talk to |cRXP_FRIENDLY_ Uzzek|r
     .turnin 1498 >>Turn in Path of Defense
 .target Uzzek
     .accept 1502 >>Accept Thun'grim Firegaze

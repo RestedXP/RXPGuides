@@ -71,7 +71,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar|r
     .accept 421 >>Accept Prove Your Worth
     .target Dalar Dawnweaver
-step
+step << !Mage !Priest
     .goto Silverpine Forest,44.05,39.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwyn|r
     >>|cRXP_BUY_Buy|r |T134532:0|t[Red-speckled Mushrooms] |cRXP_BUY_from her|r
@@ -202,7 +202,7 @@ step
     #label Nightlash
     .goto Silverpine Forest,45.44,21.01
     .loop 25,Silverpine Forest,46.26,19.11,46.48,19.77,46.61,21.59,46.01,22.75,44.20,22.52,44.35,21.08,44.49,19.54,45.23,19.36
-    >>Kill |cRXP_ENEMY_Rothide Gnolls|r around The Dead Field until |cRXP_ENEMY_Nightlash spawns|r. Kill and loot her for her |cRXP_LOOT_Essence|r
+    >>Kill |cRXP_ENEMY_Rothide Gnolls|r around The Dead Field until |cRXP_ENEMY_Nightlash|r spawns. Kill and loot her for her |cRXP_LOOT_Essence|r
     >>|cRXP_WARN_They are immune to fear!|r << Priest/Warlock
     .complete 437,1 --Enter the Dead Fields (1)
     .complete 437,2 --Essence of Nightlash (1)
@@ -274,7 +274,7 @@ step
     .turnin 437 >> Turn in The Dead Fields
     .accept 438 >> Accept The Decrepit Ferry
     .target High Executor Hadrec
-step
+step << !Mage !Priest
     .goto Silverpine Forest,44.05,39.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwyn|r
     >>|cRXP_BUY_Buy|r |T134532:0|t[Red-speckled Mushrooms] |cRXP_BUY_from her|r

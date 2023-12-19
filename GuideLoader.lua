@@ -53,6 +53,8 @@ local function applies(textEntry,customClass)
                     elseif uppercase == "MALE" and UnitSex("player") == 2 or
                         uppercase == "FEMALE" and UnitSex("player") == 3 then
                         gendercheck = true
+                    elseif uppercase == "SOD" and addon.player.season == 2 then
+                        entry = faction
                     elseif faction == "Neutral" and (entry == "Alliance" or entry == "Horde") then
                         entry = faction
                     end
@@ -103,7 +105,7 @@ end
 function addon.AddGuide(guide)
     -- Not applicable (e.g. wrong faction), rely on upstream functions to report parsing errors
     if not guide then return false end
-
+    addon.GroupOverride(guide)
     local loadedGuide
     for _, checkGuide in ipairs(addon.guides) do
         if guide.key == checkGuide.key then
@@ -868,10 +870,10 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
         -- print(line)
         if line:sub(1, 4) == "step" then
             if not addon.currentGuideName then
-                error(L("Error parsing guide") .. ": " .. L("Guide has no name"))
+                error(L("Error parsing guide") .. ": " .. L("Guide has no name") .. "\n" .. text)
             end
-            if currentStep == 0 and (not guide[game] and
-                (guide.classic or guide.tbc or guide.wotlk or guide.df)) then
+            if currentStep == 0 and ((not guide[game] and
+                (guide.classic or guide.tbc or guide.wotlk or guide.df)) or not guide.name or not guide.group) then
                 -- print(game,guide[game],guide.name)
                 skipGuide = "#0"
             end
@@ -946,6 +948,7 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
 
     defaultFor = guide.defaultfor or defaultFor
     guide.group = guide.group or groupOrContent
+    groupOrContent = addon.GroupOverride(guide) or groupOrContent
 
     if defaultFor then
         local boost58
@@ -989,6 +992,32 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
     return guide,nil,metadata
 end
 
+
+function addon.GroupOverride(guide)
+    if type(guide) == "table" then
+        if guide.group then
+        --if true then  return end
+            local faction = guide.group:match("RestedXP ([AH][lo][lr][id][ea]%w*)")
+            if faction == "Alliance" then
+                guide.subgroup = guide.group:gsub("RestedXP Alliance", "RXP Speedrun Guide")
+                local group = "RestedXP Speedrun Guide (A)"
+                guide.next = guide.next and guide.next:gsub(".*\\","")
+                guide.group = group
+                --print('\n',guide.group,guide.subgroup,faction,guide.name,'\n')
+                return group
+            elseif faction == "Horde" then
+                guide.subgroup = guide.group:gsub("RestedXP Horde", "RXP Speedrun Guide")
+                local group = "RestedXP Speedrun Guide (H)"
+                guide.next = guide.next and guide.next:gsub(".*\\","")
+                guide.group = group
+                --print(group,guide.subgroup,faction,guide.group,guide.name)
+                return group
+            end
+        end
+    else
+        return guide
+    end
+end
 
 if not _G.RXPGuides.RegisterGuide then
     _G.RXPGuides.RegisterGuide = addon.RegisterGuide

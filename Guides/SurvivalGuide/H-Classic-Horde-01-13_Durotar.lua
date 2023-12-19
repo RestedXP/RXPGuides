@@ -120,11 +120,7 @@ step
     .target Hana'zua
 step
     #label Sarkoth
-	.goto Durotar,40.88,66.41,40,0
-	.goto Durotar,40.41,66.64,40,0
-	.goto Durotar,40.43,67.36,40,0
-	.goto Durotar,40.72,67.39,40,0
-	.loop 20,Durotar,40.88,66.41,40.41,66.64,40.43,67.36,40.72,67.39,40.88,66.41
+    .goto Durotar,40.60,66.80
     >>Kill |cRXP_ENEMY_Sarkoth|r. Loot him for |cRXP_LOOT_Sarkoth's Mangled Claw|r
     .complete 790,1 --Sarkoth's Mangled Claw (1)
     .mob Sarkoth
@@ -1212,7 +1208,7 @@ step
     .goto Durotar,59.94,57.82,5,0
     .goto Durotar,59.94,57.61,5,0
     .goto Durotar,59.27,57.65
-    >>Move upstairs and loot |cRXP_PICK_Benedict's Chest|r for an |T133471:0|t[|cFF00BCD4Aged Envelope|r] and accept the quest from the item
+    >>Move upstairs and loot |cRXP_PICK_Benedict's Chest|r for an |T133471:0|t[|cRXP_LOOT_Aged Envelope|r] and accept the quest from the item
     .collect 4881,1,830 --Collect Aged Envelope (1)
     .accept 830 >>Accept The Admiral's Orders
     .use 4881
@@ -1742,8 +1738,7 @@ step << Shaman/Hunter
     .goto Durotar,51.95,43.50
     .target Cook Torka
     .target Gar'Thok
-    .isQuestComplete 837
-step
+step << !Shaman !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Torka|r and |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 815 >>Turn in Break a Few Eggs
     .goto Durotar,51.12,42.46
@@ -1777,8 +1772,14 @@ step << Warrior
 step << Shaman
     .goto Durotar,54.42,42.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Swart|r
+    .train 8050 >> Train your class spells
     .accept 2983 >>Accept Call of Fire
-    .trainer >> Train your class spells
+    .target Swart
+    .isNotOnQuest 1522
+step << Shaman
+    .goto Durotar,54.42,42.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Swart|r
+    .train 8050 >> Train your class spells
     .target Swart
 step << Warlock
     .goto Durotar,54.37,41.20
@@ -3124,6 +3125,10 @@ step
     .target Gretchen Dedmar
     .maxlevel 12
 step << Warrior
+    #completewith next
+    .abandon 1505 >>Abandon Veteran Uzzek
+    .isOnQuest 1505
+step << Warrior
     .goto Tirisfal Glades,61.85,52.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austil|r
     .accept 1818 >> Accept Speak with Dillinger
@@ -3273,7 +3278,18 @@ step
     .isOnQuest 365
 step
     #optional
-    .loop 25,Tirisfal Glades,33.73,49.34,33.65,51.07,31.78,51.36,30.02,50.48,29.91,49.24,30.62,47.53,31.01,46.50,32.15,44.83,33.73,45.29,34.10,47.88,33.73,49.34
+    .goto Tirisfal Glades,31.78,51.36,0
+    .goto Tirisfal Glades,33.73,49.34,50,0
+    .goto Tirisfal Glades,33.65,51.07,50,0
+    .goto Tirisfal Glades,31.78,51.36,50,0
+    .goto Tirisfal Glades,30.02,50.48,50,0
+    .goto Tirisfal Glades,29.91,49.24,50,0
+    .goto Tirisfal Glades,30.62,47.53,50,0
+    .goto Tirisfal Glades,31.01,46.50,50,0
+    .goto Tirisfal Glades,32.15,44.83,50,0
+    .goto Tirisfal Glades,33.73,45.29,50,0
+    .goto Tirisfal Glades,34.10,47.88,50,0
+    .goto Tirisfal Glades,33.73,49.34,50,0
     >>Kill |cRXP_ENEMY_Scarlet Warriors|r
     .complete 427,1 --Scarlet Warrior (10)
     .mob Scarlet Warrior
@@ -3643,9 +3659,6 @@ step << Warlock
     .complete 1473,1 --Egalin's Grimoire (1)
 step << Warlock
     #completewith next
-    .goto Tirisfal Glades,51.07,71.51,50,0
-    .zone Undercity >> Travel back into the Undercity through the sewers
-step << Warlock
     .goto Undercity,16.51,42.76,35,0
     .goto Undercity,22.98,39.76,35,0
     .goto Undercity,24.93,32.54,35,0
@@ -3654,6 +3667,8 @@ step << Warlock
     .goto Undercity,41.35,38.40,10,0
     .goto Undercity,45.25,39.20,10,0
     .goto Undercity,45.67,43.60,10,0
+    .zone Undercity >> Travel back into the Undercity through the sewers
+step << Warlock
     .goto Undercity,85.07,25.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin|r in the Magic Quarter
     .turnin 1473 >> Turn in Creature of the Void
@@ -3700,7 +3715,7 @@ step
 step
     #optional
     #completewith ThurmanGregor
-    >>|T134939:0|t[|cFF00BCD4Thurman's Letter|r] |cRXP_WARN_may drop from these mobs. Accept the quest if it does|r
+    >>|T134939:0|t[|cRXP_LOOT_Thurman's Letter|r] |cRXP_WARN_may drop from these mobs. Accept the quest if it does|r
     .collect 2839,1,361 --Collect A Letter to Yvette (1)
     .accept 361 >> Accept A Letter Undelivered
     .use 2839
@@ -4175,6 +4190,7 @@ step
 step
     #optional
     #loop
+    .goto Tirisfal Glades,85.03,54.72,0
     .goto Tirisfal Glades,83.50,55.56,30,0
     .goto Tirisfal Glades,85.03,54.72,30,0
     .goto Tirisfal Glades,86.56,54.51,30,0

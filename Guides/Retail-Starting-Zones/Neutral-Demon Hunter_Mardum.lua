@@ -33,7 +33,7 @@ step
 step
     .goto 672,28.67,62.9
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Legion Gateway.|r
-    >>|cFFFCDC00Press "Escape" on your keyboard to skip the cinematic.|r
+    >>|cRXP_WARN_Press "Escape" on your keyboard to skip the cinematic.|r
     .complete 40077,2 --Change the Legion Banner
 step
     .goto 672,28.6,63.07
@@ -102,11 +102,11 @@ step
     .complete 38759,3 --1/1 Cyana Nightglaive freed
 step
     .goto 672,41.74,73.22
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Cage|r and the |cRXP_PICK_Legion Communicator|r 
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Cage|r and the |cRXP_PICK_Legion Communicator|r
     .complete 38759,2 --1/1 Belath Dawnblade freed
 step
     .goto 672,42.63,79.37
-    >>Kill |cff00ecffInquisitor Baleful|r. 
+    >>Kill |cff00ecffInquisitor Baleful|r.
     *|cRXP_WARN_While he is immune, refrain from moving away from him to prevent him from evading.|r
     .complete 39049,1 --1/1 Inquisitor Baleful slain & power taken
     .mob Inquisitor Baleful
@@ -155,7 +155,7 @@ step
 step
     .goto 672,38.75,60.53
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Nether Crucible|r
-    >>|cFFFCDC00Press "Escape" on your keyboard to skip the cinematic.|r
+    >>|cRXP_WARN_Press "Escape" on your keyboard to skip the cinematic.|r
     .complete 39050,1 --1/1 Ritual completed
 step
     .goto 672,38.8,60.64
@@ -413,7 +413,7 @@ step
     .complete 38728,2 --1/1 Find the way downstairs
 step
     .goto 672,69.86,37.9
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kayn Sunfury|r
     >>|cRXP_WARN_Wait for the brief roleplay, which will be completed when the timer runs out.|r
     .turnin 38728 >>Turn in The Keystone
     .timer 7,Roleplay Duration
@@ -473,7 +473,7 @@ step
     .isOnQuest 38690
     .goto 677,74.46,32.53,8 >>Use double jump to ascend the ledge.
 step
-    .goto 677,72.14,32.03   
+    .goto 677,72.14,32.03
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Warden Cell|r
     .complete 38690,1,2 --8/8 Imprisoned Illidari freed
 step
@@ -523,7 +523,7 @@ step
     .target Maiev Shadowsong
 step
     .goto 677,50.1,74.5
-    >>Kill |cff00ecffCrusher & Sledge|r. 
+    >>Kill |cff00ecffCrusher & Sledge|r.
     *|cRXP_WARN_They have shared HP|r
     .complete 38723,2 << Female --1/1 Crusher & Sledge slain & power taken
     .complete 40253,2 << Male --1/1 Crusher & Sledge slain & power taken
@@ -540,7 +540,7 @@ step
     #completewith next
     .goto 677,50.06,37.06,15,0
     .goto 677,42.93,32.10,15,0
-    .goto 677,54.04,29.34,15 >>|cRXP_WARN_Follow the way up|r 
+    .goto 677,54.04,29.34,15 >>|cRXP_WARN_Follow the way up|r
 step
     .goto 677,49.58,30.63
     >>|cRXP_WARN_Last chance to complete this.|r
@@ -573,7 +573,7 @@ step
     .goto 678,46.74,36.41,15,0
     .goto 678,54.76,48.15,15,0
     .goto 678,70.54,49.62
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Mirror|r 
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Mirror|r
     *|cRXP_WARN_Make sure to dodge the discs|r
     .complete 39684,1 --1/1 Mirror rotated
 step
@@ -692,7 +692,7 @@ step << Alliance
     .complete 39691,1 --1/1 Enter |cFFfa9602the Throne Room.|r
 step << Alliance
     .goto 84,84.39,33.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jace Darkweaver|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jace Darkweaver|r
     .turnin 39691 >>Turn in The Call of War
     .accept 44471 >>Accept Second Sight
     .target Jace Darkweaver
@@ -702,7 +702,7 @@ step << Alliance
     .usespell 188501
 step << Alliance
     .goto 84,84.39,33.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jace Darkweaver|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jace Darkweaver|r
     .turnin 44471 >>Turn in Second Sight
     .accept 44463 >>Accept Demons Among Them
     .target Jace Darkweaver
