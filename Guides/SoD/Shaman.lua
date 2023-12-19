@@ -29,22 +29,6 @@ step << skip
 step
     #label IconS
     .loop 25,Durotar,43.26,58.28,42.81,58.41,41.90,58.35,41.97,59.20,41.36,60.35,40.66,61.27,40.07,61.35,39.42,61.29,39.46,62.17,39.55,63.10,40.13,64.04,40.84,64.06,40.74,65.86,39.93,66.03,40.04,66.99,40.09,67.66,40.13,68.50,40.72,68.55,41.30,67.84,41.37,66.72,41.89,66.05,41.27,65.71,41.36,64.07,41.33,63.12,41.35,61.98,41.49,61.25,41.90,60.24,42.51,59.34,43.08,59.62,43.91,59.33,45.15,59.46,45.81,59.30,45.85,60.34,46.46,61.11,47.09,62.24,47.08,63.15,47.14,64.08,47.58,64.04,47.08,63.15,47.09,62.24,46.90,61.15,46.98,60.18,47.07,59.34,46.47,58.28,45.81,59.30,45.15,59.46,43.91,59.33,43.26,58.28
-<<<<<<< HEAD
-    >>Kill |cRXP_ENEMY_Scorpid Workers|r. Loot them for |T134918:0|t[|cRXP_FRIENDLY_Dyadic Icon|r]
-    .collect 206381,1 --Dyadic Icon (1)
-    .mob Scorpid Worker
-    .train 410094,1
-step
-    .equip 18,206381 >>Equip the |T134918:0|t[|cRXP_FRIENDLY_Dyadic Icon|r]
-    .train 410094,1
-step
-    .loop 25,Durotar,43.26,58.28,42.81,58.41,41.90,58.35,41.97,59.20,41.36,60.35,40.66,61.27,40.07,61.35,39.42,61.29,39.46,62.17,39.55,63.10,40.13,64.04,40.84,64.06,40.74,65.86,39.93,66.03,40.04,66.99,40.09,67.66,40.13,68.50,40.72,68.55,41.30,67.84,41.37,66.72,41.89,66.05,41.27,65.71,41.36,64.07,41.33,63.12,41.35,61.98,41.49,61.25,41.90,60.24,42.51,59.34,43.08,59.62,43.91,59.33,45.15,59.46,45.81,59.30,45.85,60.34,46.46,61.11,47.09,62.24,47.08,63.15,47.14,64.08,47.58,64.04,47.08,63.15,47.09,62.24,46.90,61.15,46.98,60.18,47.07,59.34,46.47,58.28,45.81,59.30,45.15,59.46,43.91,59.33,43.26,58.28
-    .aura 408953,10+ >>Continue to kill |cRXP_ENEMY_Scorpid Workers|r and obtain 10 stacks of |T237556:0|t[Building Inspiration] as they deal nature damage to you
-    .mob Scorpid Worker
-    .train 410094,1
-step
-    .train 410094 >>Use the |T134918:0|t[|cRXP_FRIENDLY_Dyadic Icon|r] to train |T136099:0|t[Overload]
-=======
     >>Kill |cRXP_ENEMY_Scorpid Workers|r. Loot them for the |T134918:0|t|cRXP_LOOT_[Dyadic Icon]|r
     .collect 206381,1 --Dyadic Icon (1)
     .mob Scorpid Worker
@@ -64,7 +48,6 @@ step
     .xp <3,1
 step
     .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Dyadic Icon]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest: Overload]
->>>>>>> f37de0e (shaman rune)
     .use 206381
     .train 410094,1
     .xp <3,1
@@ -120,19 +103,6 @@ step
     .train 410094,1
     .xp <3,1
 step
-<<<<<<< HEAD
-    .equip 18,206381 >>Equip the |T134918:0|t[|cRXP_FRIENDLY_Dyadic Icon|r]
-    .train 410094,1
-step
-    .goto Mulgore,63.74,81.18,40,0
-    .goto Mulgore,63.86,79.97,40,0
-    .goto Mulgore,65.00,78.60,40,0
-    .goto Mulgore,66.05,77.83,40,0
-    .goto Mulgore,65.93,77.10,40,0
-    .goto Mulgore,63.57,76.25,40,0
-    .goto Mulgore,63.86,80.14
-    .aura 408953,10+ >>Continue to kill |cRXP_ENEMY_Bristleback Shamans|r and obtain 10 stacks of |T237556:0|t[Building Inspiration] as they deal nature damage to you
-=======
     .equip 18,206381 >> |cRXP_WARN_Equip the|r |T134918:0|t|cRXP_LOOT_[Dyadic Icon]|r
     .use 206381
     .itemcount 206381,1 --Dyadic Icon (1)
@@ -146,16 +116,9 @@ step
     .goto Mulgore,63.57,76.25,50,0
     .goto Mulgore,63.86,80.14
     .aura 408828 >>|cRXP_WARN_Let |cRXP_ENEMY_Bristleback Shamans|r cast|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_on you and take damage from it 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
->>>>>>> f37de0e (shaman rune)
     .mob Bristleback Shaman
     .itemStat 18,QUALITY,2
     .train 410094,1
-<<<<<<< HEAD
-step
-    .train 410094 >>Use the |T134918:0|t[|cRXP_FRIENDLY_Dyadic Icon|r] to train |T136099:0|t[Overload]
-    .use 206381
-step << Tauren
-=======
     .xp <3,1
 --XX Loop needs to be added
 step
@@ -164,7 +127,6 @@ step
     .train 410094,1
     .xp <3,1
 step << skip
->>>>>>> f37de0e (shaman rune)
     .goto Mulgore,45.01,75.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meela|r
     .turnin 77652 >>Turn in Icons of Power
@@ -214,16 +176,6 @@ step
     .itemcount 206386,1 --Galvanic Icon (1)
     .train 410098,1
 step
-<<<<<<< HEAD
-    .equip 18,206386 >>Equip the |T134918:0|t[|cRXP_FRIENDLY_Galvanic Icon|r]
-    .train 410098,1
-step
-    .aura 408953,10+>>Kill mobs with |T136048:0|t[Lightning Bolt] and obtain 10 stacks of |T237556:0|t[Building Inspiration]
-    .train 410098,1
-step
-    .train 410098 >>Use the |T134918:0|t[|cRXP_FRIENDLY_Galvanic Icon|r] to train |T134963:0|t[Shield Mastery]
-    .use 206386
-=======
     #loop
     .goto Durotar,56.87,53.05,50,0
     .goto Durotar,56.82,54.69,50,0
@@ -333,7 +285,6 @@ step
     .train 410098,1
 --XX Cast ID may be wrong, may need to be checked
 ]])
->>>>>>> f37de0e (shaman rune)
 
 
 
@@ -393,17 +344,6 @@ step
     .collect 206386,1 --Galvanic Icon (1)
     .train 410098,1
 step
-<<<<<<< HEAD
-    .equip 18,206386 >>Equip the |T134918:0|t[|cRXP_FRIENDLY_Galvanic Icon|r]
-    .train 410098,1
-step
-    .aura 408953,10+>>Kill mobs with |T136048:0|t[Lightning Bolt] and obtain 10 stacks of |T237556:0|t[Building Inspiration]
-    .train 410098,1
-step
-    .train 410098 >>Use the |T134918:0|t[|cRXP_FRIENDLY_Galvanic Icon|r] to train |T134963:0|t[Shield Mastery]
-    .use 206386
-
-=======
     .equip 18,206386 >> |cRXP_WARN_Equip the|r |T134918:0|t|cRXP_LOOT_[Galvanic Icon]|r
     .use 206386
     .itemcount 206386,1 --Galvanic Icon (1)
@@ -531,7 +471,6 @@ step
     .use 206386
     .train 410098,1
 --XX Cast ID may be wrong, may need to be checked
->>>>>>> f37de0e (shaman rune)
     ]])
 
 
@@ -572,17 +511,10 @@ step
     .skipgossip
     .train 410099,1
 step
-<<<<<<< HEAD
-    .train 410099 >>Use the |T237571:0|t[|cRXP_FRIENDLY_Echo of the Ancestors|r]
-    .use 210589
-    .itemcount 210589,1
-
-=======
     .cast 402265 >>|cRXP_WARN_Use the|r |T237571:0|t|cRXP_LOOT_[Echo of the Ancestors]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants: Ancestral Guidance]
     .use 210589
     .itemcount 210589,1 --Echo of the Ancestors (1)
     .train 410099,1
->>>>>>> f37de0e (shaman rune)
     ]])
 
 
@@ -642,16 +574,10 @@ step
     .skipgossip
     .train 410099,1
 step
-<<<<<<< HEAD
-    .train 410099 >>Use the |T237571:0|t[|cRXP_FRIENDLY_Echo of the Ancestors|r]
-    .use 210589
-    .itemcount 210589,1
-=======
     .cast 402265 >>|cRXP_WARN_Use the|r |T237571:0|t|cRXP_LOOT_[Echo of the Ancestors]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants: Ancestral Guidance]
     .use 210589
     .itemcount 210589,1 --Echo of the Ancestors (1)
     .train 410099,1
->>>>>>> f37de0e (shaman rune)
     ]])
 
 
@@ -702,15 +628,8 @@ step
     .use 206388
     .itemcount 206388,1
     .train 425344,1
-<<<<<<< HEAD
-step
-    .train 425344 >>Use the |T134918:0|t[|cRXP_FRIENDLY_Sulfurous Icon|r] to train |T237583:0|t[Molten Blast]
-    .use 206388
-
-=======
     .xp <10,1
 --XX WIP
->>>>>>> f37de0e (shaman rune)
     ]])
 
 
