@@ -786,7 +786,7 @@ step << Undead
 
 step
     #season 2
-    .goto Silverpine Forest,53.46,13.45
+    .goto Silverpine Forest,47.12,71.01
     >>Click the |cRXP_PICK_Dead Drop|r in Silverpine Forest
     .accept 78261 >> Accept The Horn of Xelthos
 step
@@ -831,7 +831,7 @@ step
     .complete 78261,1 --Horn of Xelthos (1)
 step
     #season 2
-    .goto Silverpine Forest,53.46,13.45
+    .goto Silverpine Forest,47.12,71.01
     >>Click the |cRXP_PICK_Dead Drop|r in Silverpine Forest
     .turnin 78261 >> Turn in The Horn of Xelthos
 step
@@ -884,7 +884,7 @@ step << Alliance
     .train 400080,1
 step
     #season 2
-    .goto Silverpine Forest,53.46,13.45
+    .goto Silverpine Forest,47.12,71.01
     >>Click the |cRXP_PICK_Dead Drop|r in Silverpine Forest for |T134419:0|t[|cRXP_FRIENDLY_Rune of Deadly Brew|r]
     .collect 203994,1 --Rune of Deadly Brew (1)
     .train 400080,1

@@ -3000,8 +3000,8 @@ step
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Spiders|r. Loot them for their |cRXP_LOOT_Blood|r
-    >>|cRXP_WARN_Be careful of the rare spider in the area, as it's impossibly difficult|r << !Mage !Warlock
-    >>|cRXP_WARN_Be careful of the rare in the area, as it's difficult but doable. She has a 130 damage shield on a 15s cooldown, and 110 damage instant shock ability|r << Mage/Warlock
+    >>|cRXP_WARN_Be careful if|r |cRXP_ENEMY_Krethis Shadowspinner|r |cRXP_WARN_is up as it's impossibly difficult to kill her!|r << !Mage !Warlock
+    >>|cRXP_WARN_Be careful if|r |cRXP_ENEMY_Krethis Shadowspinner|r |cRXP_WARN_ as it's difficult but doable. She has a 130 damage shield on a 15s cooldown, and 110 damage instant shock ability|r << Mage/Warlock
     .complete 447,2 --Skittering Blood (6)
     .mob Moss Stalker
     .unitscan Krethis Shadowspinner
@@ -3333,7 +3333,7 @@ step << Warlock
 step << Priest/Mage/Warlock
     .goto Undercity,69.54,26.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Zane|r|cRXP_BUY_. Buy a|r |T133718:0|t[Smoldering Wand] |cRXP_BUY_from him|r
-    .collect 5754,1 --Smoldering Wand (1)
+    .collect 5208,1 --Smoldering Wand (1)
     .money <0.3515
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<13.4

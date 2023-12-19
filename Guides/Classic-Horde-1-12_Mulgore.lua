@@ -1219,9 +1219,7 @@ step
 step << Warrior
     #season 2
     #completewith RiteofWisdom
-    .loop 25,Mulgore,59.85,25.62,61.14,22.93,61.77,22.49,62.18,22.05,62.32,20.89,61.62,19.50,60.44,19.50,60.16,21.06,60.41,21.96,61.12,22.88
     >>Kill |cRXP_ENEMY_Bristleback Interlopers|r. Loot them for a |cRXP_LOOT_Severed Quilboar Head|r
-    .complete 833,1 --Bristleback Interloper (8)
     .collect 206994,1 ---Severed Quilboar Head (1)
     .mob Bristleback Interloper
     .train 403475,1

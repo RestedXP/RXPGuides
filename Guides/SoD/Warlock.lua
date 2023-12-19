@@ -495,7 +495,7 @@ step
 step
     .train 403936,1
     >>Click on the |cRXP_PICK_Hungry Idol|r to get the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowbolts|r]
-    .goto The Barrents,57.06,9.65
+    .goto The Barrens,57.06,9.65
     .collect 208744,1
 step
     .use 208744

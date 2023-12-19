@@ -245,7 +245,7 @@ step
 step
     .train 410099 >>Use the |T237571:0|t[|cRXP_FRIENDLY_Echo of the Ancestors|r]
     .use 210589
-    .itemcount 210589
+    .itemcount 210589,1
     ]])
     
 
@@ -537,7 +537,8 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .zone Blackfathom Deeps >>Travel to Blackfathom Deeps
+    .goto Kalimdor,44.36,34.86
+    .zone 221 >> Enter the BFD Instance portal. Zone in
 step
     .isOnQuest 6922
     >>Kill |cRXP_ENEMY_Baron Aquanis|r in the Blackfathom Deeps Raid and loot him for the |cRXP_LOOT_|T136222:0|t[Strange Water Globe]|r |cRXP_WARN_this step will require a 10 player raid group.|r

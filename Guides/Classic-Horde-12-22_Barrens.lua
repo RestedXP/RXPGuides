@@ -78,14 +78,14 @@ step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .accept 6365 >>Accept Meats to Orgrimmar
     .target Zargh
 step << !Shaman !Warrior/Undead
-    .goto The Barrens,52.23,31.00
+    .goto The Barrens,52.24,31.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r
     .turnin 842 >>Turn in Crossroads Conscription << !Druid
     .accept 844 >>Accept Plainstrider Menace
     .target Sergra Darkthorn
     .isOnQuest 842
 step << !Shaman !Warrior/Undead
-    .goto The Barrens,52.23,31.00
+    .goto The Barrens,52.24,31.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r
     .accept 844 >>Accept Plainstrider Menace
     .target Sergra Darkthorn
@@ -272,7 +272,7 @@ step
     .turnin 842 >>Turn in Crossroads Conscription << Tauren Shaman
     .turnin 844 >>Turn in Plainstrider Menace
     .accept 845 >>Accept The Zhevra
-    .goto The Barrens,52.23,31.00
+    .goto The Barrens,52.24,31.01
     .turnin 871 >>Turn in Disrupt the Attacks
     .accept 872 >>Accept The Disruption Ends
     .goto The Barrens,51.50,30.87
@@ -1020,7 +1020,7 @@ step
     .goto The Barrens,51.50,30.87
     .turnin 845 >>Turn in The Zhevra
     .accept 903 >>Accept Prowlers of the Barrens
-    .goto The Barrens,52.23,31.00
+    .goto The Barrens,52.24,31.01
     .target Sergra Darkthorn
     .target Thork
 step << Troll Hunter/Orc Hunter
@@ -1247,7 +1247,7 @@ step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .target Tonga Runetotem
     .dungeon RFC
 step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    .goto The Barrens,52.23,31.00
+    .goto The Barrens,52.24,31.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r
     .turnin 903 >>Turn in Prowlers of the Barrens
     .accept 881 >>Accept Echeyakee
@@ -1268,7 +1268,7 @@ step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .itemcount 5100,<1 --Echeyakee's Hide (0)
     .dungeon RFC
 step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    .goto The Barrens,52.23,31.00
+    .goto The Barrens,52.24,31.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r
     .accept 881 >>Accept Echeyakee
     .target Sergra Darkthorn
@@ -1702,7 +1702,7 @@ step
     .target Tonga Runetotem
 step
     #label EcheyakeePickup
-    .goto The Barrens,52.23,31.00
+    .goto The Barrens,52.24,31.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r
     .turnin 903 >>Turn in Prowlers of the Barrens
     .accept 881 >>Accept Echeyakee
@@ -1726,7 +1726,7 @@ step
     .abandon 881 >>|cRXP_WARN_If |cRXP_ENEMY_Echeyakee|r didn't spawn after using the|r |T134227:0|t[Horn of Echeyakee]|cRXP_WARN_or you didn't get the tag when it did spawn, abandon Echeyakee, then return to town and accept it again|r
     .itemcount 5100,<1 --Echeyakee's Hide (0)
 step
-    .goto The Barrens,52.23,31.00
+    .goto The Barrens,52.24,31.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r
     .accept 881 >>Accept Echeyakee
     .target Sergra Darkthorn
@@ -1739,7 +1739,7 @@ step
     .mob Echeyakee
     .use 10327
 step
-    .goto The Barrens,52.26,31.93
+    .goto The Barrens,52.24,31.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r
     .turnin 881 >>Turn in Echeyakee
     .accept 905 >>Accept The Angry Scytheclaws
@@ -1966,6 +1966,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Beaten Corpse|r
     .complete 4921,1 --Find Mankrik's Wife (1)
     .target Beaten Corpse
+    .skipgossip
 step
     .goto The Barrens,52.0,46.5,90,0
     .goto The Barrens,57.3,53.7
@@ -2091,6 +2092,11 @@ step
     #completewith Hezrul
     .subzone 387 >> Travel to the Lushwater Oasis
     .isQuestTurnedIn 851
+step
+    #completewith Hezrul
+    >>Kill |cRXP_ENEMY_Oasis Snapjaws|r as you're looking for |cRXP_ENEMY_Hezrul Bloodmark|r. Loot them for their |cRXP_LOOT_Shells|r
+    .complete 880,1 --Altered Snapjaw Shell (8)
+    .mob Oasis Snapjaw
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Kolkar|r around the oasis. Loot them for their |cRXP_LOOT_Bracers|r

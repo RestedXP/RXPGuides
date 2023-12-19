@@ -241,10 +241,10 @@ step
     .goto Orgrimmar,45.8,40.6,
     .goto The Barrens,51.4,30.2,
     .goto Swamp of Sorrows,45.8,53.0,
-    .goto Thunderbluff,42.6,55.4,
-    .goto Dustwallow Marsch,36.4,30.4,
+    .goto Thunder Bluff,42.6,55.4,
+    .goto Dustwallow Marsh,36.4,30.4,
     .goto Undercity,82.6,16.0,
-    .goto Thunderbuff,41.8,55.0,
+    .goto Thunder Bluff,41.8,55.0,
     .goto Thousand Needles,45.2,50.6,
     .goto Stonetalon Mountains,47.6,61.6,
     >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
@@ -311,10 +311,10 @@ step
     .goto Orgrimmar,45.8,40.6,-1 
     .goto The Barrens,51.4,30.2,-1 
     .goto Swamp of Sorrows,45.8,53.0,-1 
-    .goto Thunderbluff,42.6,55.4,-1 
-    .goto Dustwallow Marsch,36.4,30.4,-1 
+    .goto Thunder Bluff,42.6,55.4,-1 
+    .goto Dustwallow Marsh,36.4,30.4,-1 
     .goto Undercity,82.6,16.0,-1 
-    .goto Thunderbuff,41.8,55.0,-1 
+    .goto Thunder Bluff,41.8,55.0,-1 
     .goto Thousand Needles,45.2,50.6,-1 
     .goto Stonetalon Mountains,47.6,61.6,-1 
     >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
@@ -454,10 +454,10 @@ step
     .goto Orgrimmar,45.8,40.6,
     .goto The Barrens,51.4,30.2,
     .goto Swamp of Sorrows,45.8,53.0,
-    .goto Thunderbluff,42.6,55.4,
-    .goto Dustwallow Marsch,36.4,30.4,
+    .goto Thunder Bluff,42.6,55.4,
+    .goto Dustwallow Marsh,36.4,30.4,
     .goto Undercity,82.6,16.0,
-    .goto Thunderbuff,41.8,55.0,
+    .goto Thunder Bluff,41.8,55.0,
     .goto Thousand Needles,45.2,50.6,
     .goto Stonetalon Mountains,47.6,61.6,
     >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
@@ -492,10 +492,10 @@ step
     .goto Orgrimmar,45.8,40.6,
     .goto The Barrens,51.4,30.2,
     .goto Swamp of Sorrows,45.8,53.0,
-    .goto Thunderbluff,42.6,55.4,
-    .goto Dustwallow Marsch,36.4,30.4,
+    .goto Thunder Bluff,42.6,55.4,
+    .goto Dustwallow Marsh,36.4,30.4,
     .goto Undercity,82.6,16.0,
-    .goto Thunderbuff,41.8,55.0,
+    .goto Thunder Bluff,41.8,55.0,
     .goto Thousand Needles,45.2,50.6,
     .goto Stonetalon Mountains,47.6,61.6,
     >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
@@ -625,10 +625,10 @@ step
     .goto Orgrimmar,45.8,40.6,
     .goto The Barrens,51.4,30.2,
     .goto Swamp of Sorrows,45.8,53.0,
-    .goto Thunderbluff,42.6,55.4,
-    .goto Dustwallow Marsch,36.4,30.4,
+    .goto Thunder Bluff,42.6,55.4,
+    .goto Dustwallow Marsh,36.4,30.4,
     .goto Undercity,82.6,16.0,
-    .goto Thunderbuff,41.8,55.0,
+    .goto Thunder Bluff,41.8,55.0,
     .goto Thousand Needles,45.2,50.6,
     .goto Stonetalon Mountains,47.6,61.6,
     >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
@@ -670,10 +670,10 @@ step
     .goto Orgrimmar,45.8,40.6,
     .goto The Barrens,51.4,30.2,
     .goto Swamp of Sorrows,45.8,53.0,
-    .goto Thunderbluff,42.6,55.4,
-    .goto Dustwallow Marsch,36.4,30.4,
+    .goto Thunder Bluff,42.6,55.4,
+    .goto Dustwallow Marsh,36.4,30.4,
     .goto Undercity,82.6,16.0,
-    .goto Thunderbuff,41.8,55.0,
+    .goto Thunder Bluff,41.8,55.0,
     .goto Thousand Needles,45.2,50.6,
     .goto Stonetalon Mountains,47.6,61.6,
     >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
@@ -789,10 +789,10 @@ step
     .goto Orgrimmar,45.8,40.6,
     .goto The Barrens,51.4,30.2,
     .goto Swamp of Sorrows,45.8,53.0,
-    .goto Thunderbluff,42.6,55.4,
-    .goto Dustwallow Marsch,36.4,30.4,
+    .goto Thunder Bluff,42.6,55.4,
+    .goto Dustwallow Marsh,36.4,30.4,
     .goto Undercity,82.6,16.0,
-    .goto Thunderbuff,41.8,55.0,
+    .goto Thunder Bluff,41.8,55.0,
     .goto Thousand Needles,45.2,50.6,
     .goto Stonetalon Mountains,47.6,61.6,
     >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
@@ -1195,10 +1195,10 @@ step
     .goto Orgrimmar,45.8,40.6,
     .goto The Barrens,51.4,30.2,
     .goto Swamp of Sorrows,45.8,53.0,
-    .goto Thunderbluff,42.6,55.4,
-    .goto Dustwallow Marsch,36.4,30.4,
+    .goto Thunder Bluff,42.6,55.4,
+    .goto Dustwallow Marsh,36.4,30.4,
     .goto Undercity,82.6,16.0,
-    .goto Thunderbuff,41.8,55.0,
+    .goto Thunder Bluff,41.8,55.0,
     .goto Thousand Needles,45.2,50.6,
     .goto Stonetalon Mountains,47.6,61.6,
     >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
@@ -1236,10 +1236,10 @@ step
     .goto Orgrimmar,45.8,40.6,
     .goto The Barrens,51.4,30.2,
     .goto Swamp of Sorrows,45.8,53.0,
-    .goto Thunderbluff,42.6,55.4,
-    .goto Dustwallow Marsch,36.4,30.4,
+    .goto Thunder Bluff,42.6,55.4,
+    .goto Dustwallow Marsh,36.4,30.4,
     .goto Undercity,82.6,16.0,
-    .goto Thunderbuff,41.8,55.0,
+    .goto Thunder Bluff,41.8,55.0,
     .goto Thousand Needles,45.2,50.6,
     .goto Stonetalon Mountains,47.6,61.6,
     >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
@@ -1305,10 +1305,10 @@ step << Horde
     .goto Orgrimmar,45.8,40.6,
     .goto The Barrens,51.4,30.2,
     .goto Swamp of Sorrows,45.8,53.0,
-    .goto Thunderbluff,42.6,55.4,
-    .goto Dustwallow Marsch,36.4,30.4,
+    .goto Thunder Bluff,42.6,55.4,
+    .goto Dustwallow Marsh,36.4,30.4,
     .goto Undercity,82.6,16.0,
-    .goto Thunderbuff,41.8,55.0,
+    .goto Thunder Bluff,41.8,55.0,
     .goto Thousand Needles,45.2,50.6,
     .goto Stonetalon Mountains,47.6,61.6,
     >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
