@@ -35,7 +35,7 @@ step << Rogue
 step << Rogue
     #season 2
     .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
-    .use 204795 
+    .use 204795
     .itemcount 204795,1
     .train 400105,1
 ]])
@@ -79,7 +79,7 @@ step << Rogue
     .goto Elwynn Forest,27.0,86.7,70,0
     .goto Elwynn Forest,26.1,89.9,70,0
     .goto Elwynn Forest,25.2,92.7,70,0
-    .goto Elwynn Forest,27.0,93.9  
+    .goto Elwynn Forest,27.0,93.9
     >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Riverpaw Outrunners|r and |cRXP_ENEMY_Riverpaw Runts|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Bottom-Left Map Piece]|r
     >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
     .collect 203787,1 -- Bottom-Left Map Piece (1)
@@ -164,7 +164,7 @@ RXPGuides.RegisterGuide([[
 
 step << Rogue
     #season 2
-    .goto Dun Morogh,77.86,61.66 
+    .goto Dun Morogh,77.86,61.66
     >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Dark Iron Spies|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Bottom-Left Map Piece]|r
     >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
     .collect 208219,1 -- Bottom-Left Map Piece (1)
@@ -245,7 +245,7 @@ step << Rogue
     .train 398196,1
 step << Rogue
     #season 2
-    .goto Teldrassil,77.86,61.66 
+    .goto Teldrassil,77.86,61.66
     >>Kill |cRXP_ENEMY_Vicious Grell|r, |cRXP_ENEMY_Rascal Sprites|r and |cRXP_ENEMY_Shadow Sprites|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Bottom-Left Map Piece]|r
     .collect 208604,1 -- Bottom-Left Map Piece (1)
     .mob Vicious Grell
@@ -356,7 +356,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune Guide
 #subgroup Chest
 #name Slaughter from the Shadows - 1 (Dun Morogh)
-    
+
 step << Rogue
     #season 2
     .goto Dun Morogh,47.658,51.706,5,0
@@ -504,7 +504,7 @@ RXPGuides.RegisterGuide([[
 
 step << Rogue
     #season 2
-    .goto Dun Morogh,77.86,61.66 
+    .goto Dun Morogh,77.86,61.66
     >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Dark Iron Spies|r. Loot them for a |T133875:0|t[|cRXP_LOOT_Dark Iron Lockbox]|r
     >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
     .collect 208838,1 -- Dark Iron Lockbox (1)
@@ -542,7 +542,7 @@ step << Rogue
     >>Kill |cRXP_ENEMY_Stormscale Sirens|r and |cRXP_ENEMY_Stormscale Wave Rider|r. Loot them for a |T134242:0|t[|cRXP_LOOT_Cliffspring Key]|r
     .collect 211471,1 -- Cliffspring Key (1)
     .mob Stormscale Wave Rider
-    .mob Stormscale Siren   
+    .mob Stormscale Siren
     .train 400099,1
 step << Rogue
     .goto Darkshore,56.253,34.877
@@ -653,7 +653,7 @@ step << Rogue
     #season 2
     #completewith next
     .goto Loch Modan,41.01,12.60,50,0
-    .goto Loch Modan,42.86,10.36,60,0 
+    .goto Loch Modan,42.86,10.36,60,0
     .goto Loch Modan,46.20,13.15,10 >> |cRXP_WARN_Make your way onto the Loch Modan dam wall and carefully drop down onto the ledge in the center of the dam. Follow the arrow|r
     .train 424785,1
 step << Rogue
@@ -713,7 +713,7 @@ RXPGuides.RegisterGuide([[
 step << !Undead
     #season 2
     .goto Durotar,41.27,68.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Rwag|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Rwag|r
     .accept 77592 >>Accept Atop the Cliffs << Troll Rogue
     .accept 77583 >>Accept Atop the Cliffs << Orc Rogue
     .target Rwag
@@ -721,7 +721,7 @@ step
     #season 2
     .goto Durotar,43.27,69.51
     >>Loot the |cRXP_PICK_Hidden Cache|r for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
-    >>|cRXP_WARN_Walk around past|r |cFFFF5722Sarkoth|r |cRXP_WARN_and jump down to reach the chest|r
+    >>|cRXP_WARN_Walk around past|r |cRXP_ENEMY_Sarkoth|r |cRXP_WARN_and jump down to reach the chest|r
     .collect 204795,1 --Rune of Shadowstrike (1)
     .train 400105,1
 step
@@ -732,7 +732,7 @@ step
 step << !Undead
     #season 2
     .goto Durotar,41.27,68.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Rwag|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Rwag|r
     .turnin 77592 >>Turn in Atop the Cliffs << Troll Rogue
     .turnin 77583 >>Turn in Atop the Cliffs << Orc Rogue
     .target Rwag
@@ -751,13 +751,13 @@ RXPGuides.RegisterGuide([[
 step << Undead
     #season 2
     .goto Tirisfal Glades,32.53,65.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25David|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ David|r
     .accept 77669 >>Accept The Scarlet Rune
     .target David Trias
 step
     #season 2
     .loop 25,Tirisfal Glades,36.13,68.74,36.46,69.49,36.85,70.02,37.42,69.58,38.05,69.79,37.91,69.22,38.03,68.77,38.49,68.28,38.72,67.07,38.59,66.25,38.65,65.07,37.62,65.36,36.93,65.38,36.51,65.42,36.85,66.59,37.45,67.95,36.93,68.16,36.13,68.74
-    >>Kill or pickpocket |cFFFF5722Scarlet Converts|r. Loot them for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    >>Kill or pickpocket |cRXP_ENEMY_Scarlet Converts|r. Loot them for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
     .collect 204795,1 --Rune of Shadowstrike (1)
     .mob Scarlet Convert
     .train 400105,1
@@ -769,7 +769,7 @@ step
 step << Undead
     #season 2
     .goto Tirisfal Glades,32.53,65.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25David|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ David|r
     .turnin 77669 >>Turn in The Scarlet Rune
     .target David Trias
     ]])
@@ -786,7 +786,11 @@ step << Undead
 
 step
     #season 2
+<<<<<<< HEAD
     .goto Silverpine Forest,47.12,71.01
+=======
+    .goto Silverpine Forest,47.114,70.974
+>>>>>>> 7888a20b4fe5f4b522956222814362d34bec62e0
     >>Click the |cRXP_PICK_Dead Drop|r in Silverpine Forest
     .accept 78261 >> Accept The Horn of Xelthos
 step
@@ -831,7 +835,11 @@ step
     .complete 78261,1 --Horn of Xelthos (1)
 step
     #season 2
+<<<<<<< HEAD
     .goto Silverpine Forest,47.12,71.01
+=======
+    .goto Silverpine Forest,47.114,70.974
+>>>>>>> 7888a20b4fe5f4b522956222814362d34bec62e0
     >>Click the |cRXP_PICK_Dead Drop|r in Silverpine Forest
     .turnin 78261 >> Turn in The Horn of Xelthos
 step
@@ -884,7 +892,11 @@ step << Alliance
     .train 400080,1
 step
     #season 2
+<<<<<<< HEAD
     .goto Silverpine Forest,47.12,71.01
+=======
+    .goto Silverpine Forest,47.114,70.974
+>>>>>>> 7888a20b4fe5f4b522956222814362d34bec62e0
     >>Click the |cRXP_PICK_Dead Drop|r in Silverpine Forest for |T134419:0|t[|cRXP_FRIENDLY_Rune of Deadly Brew|r]
     .collect 203994,1 --Rune of Deadly Brew (1)
     .train 400080,1
@@ -1008,7 +1020,7 @@ step
     .collect 208036,1 --Top-Left Map Piece (1)
     .mob Tirisfal Farmer
     .mob Tirisfal Farmhand
-    .train 400095,1 
+    .train 400095,1
 step
     #season 2
     #loop
@@ -1028,7 +1040,7 @@ step
     >>|cRXP_WARN_Any of the Scarlet Humanoids in Tirisfal can drop the Map Piece|r
     .collect 208035,1 --Top-Right Map Piece (1)
     .mob Scarlet Warrior
-    .train 400095,1 
+    .train 400095,1
 step
     #season 2
     .goto Tirisfal Glades,56.31,39.67,40,0
@@ -1222,7 +1234,7 @@ step
 step
     .goto Tirisfal Glades,60.73,50.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ba'so|r to receive |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r]
-    >>|cRXP_WARN_He is stealthed!|r 
+    >>|cRXP_WARN_He is stealthed!|r
     .collect 210229,1 --Rune of Mutilation (1)
     .target Ba'so
     .skipgossip
@@ -1363,7 +1375,7 @@ step
     .goto Silverpine Forest,45.25,68.06,20,0
     .goto Silverpine Forest,45.26,67.21
     >>Loot the |cRXP_PICK_Rusty Chest|r next to the Shadowfang Keep entrance for |T134419:0|t[|cRXP_FRIENDLY_Rune of Saber Slash|r]
-    >>|cRXP_WARN_Use|r |T132307:0|t[Sprint] |cRXP_WARN_and then jump from the bridge toward the chest|r 
+    >>|cRXP_WARN_Use|r |T132307:0|t[Sprint] |cRXP_WARN_and then jump from the bridge toward the chest|r
     .collect 208772,1 --Rune of Saber Slash (1)
     .train 424984,1
 step
@@ -1373,4 +1385,3 @@ step
     .itemcount 208772,1
     ]])
 
-    

@@ -111,7 +111,7 @@ RXPGuides.RegisterGuide([[
 step << Priest
     #season 2
     .goto Durotar,42.36,68.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ken'jai|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Ken'jai|r
     .accept 77642 >>Accept Wisdom of the Loa
     .target Ken'jai
 step << Priest
@@ -125,13 +125,13 @@ step << Priest
 step << Priest
     #season 2
     .goto Durotar,42.36,68.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Ken'jai|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Ken'jai|r
     .turnin 77642 >>Turn in Wisdom of the Loa
     .target Ken'jai
 
     ]])
 
-    
+
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Undead Priest SoD
@@ -145,7 +145,7 @@ RXPGuides.RegisterGuide([[
 step << Priest
     #season 2
     .goto Tirisfal Glades,31.11,66.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duesten|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Duesten|r
     .accept 77670 >>Accept Meditation on Undeath
     .target Dark Cleric Duesten
 step << Priest
@@ -157,7 +157,7 @@ step << Priest
 step << Priest
     #season 2
     .goto Tirisfal Glades,31.11,66.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duesten|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Duesten|r
     .turnin 77670 >>Turn in Meditation on Undeath
     .target Dark Cleric Duesten
 
@@ -274,7 +274,7 @@ step
     #completewith next
     .zone Durotar >>Travel to Durotar
 step
-    .train 402854,1 
+    .train 402854,1
     >>Kill |cRXP_ENEMY_Makasgar|r or |cRXP_ENEMY_Gazz'uz|r (in the cave), whichever is closest to you (the waypoint leads you to the closest one). Loot them for the |T136222:0|t[|cRXP_FRIENDLY_Memory of an Imprisoned Savior|r]
     .goto Durotar,52.6,8.8,-1
     .goto Durotar,62.0,66.2,-1
@@ -282,7 +282,7 @@ step
     .mob Makasgar
     .mob Gazz'uz
 step
-    .train 402854,1 
+    .train 402854,1
     .goto Durotar,55.32,72.66
     .emote KNEEL,208309
     .aura 417316 >>Kneel before the |cRXP_PICK_Loa Altar|r and talk to the |cRXP_FRIENDLY_Serpent Loa|r to get the |T136077:0|t[Meditation on the Loa] buff
@@ -323,7 +323,7 @@ step << Troll
     .emote KNEEL,208309
     .goto Durotar,55.32,72.66
     .aura 417316 >>Kneel before the |cRXP_PICK_Loa Altar|r and talk to the |cRXP_FRIENDLY_Serpent Loa|r to get the |T136077:0|t[Meditation on the Loa] buff
-    .aura 418459 
+    .aura 418459
     >>|cRXP_WARN_You can also find an Undead Priest with a Loa buff. You have to kneel before him and he has to /pray for you to get the |T237569:0|t[Meditation on Undeath] buff.|r
     .skipgossip 208307,1
 step
@@ -618,7 +618,7 @@ step << Priest
     .goto Teldrassil,54.42,51.19,15 >> Travel to Fel Rock
     .train 402852,1
 step << Priest
-    .goto Teldrassil,77.86,61.66 
+    .goto Teldrassil,77.86,61.66
     >>Kill |cRXP_ENEMY_Vicious Grells|r, |cRXP_ENEMY_Rascal Sprites|r and |cRXP_ENEMY_Shadow Sprites|r. Loot them for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r]
     .collect 205947,1 -- Prophecy of a Desecrated Citadel (1)
     .mob Vicious Grell
@@ -697,7 +697,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Priest SoD
 #group RestedXP Rune Guide
 #subgroup Gloves
-#name Shadow Word - Death - 10 (Darkshore)
+#name Shadow Word: Death - 10 (Darkshore)
 
 step << Priest
     .goto Darkshore,30.5,47.5
@@ -880,4 +880,55 @@ step
     .goto The Barrent,50.7,32.8 << Undead
     .use 205905
     .itemcount 205905,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Priest SoD
+#group RestedXP Rune Guide
+#subgroup Chest
+#name Void Plague - 6 (Elwynn Forest)
+
+step << Priest
+    #season 2
+    #completewith next
+    .goto Elwynn Forest,38.34,81.54,20 >> Enter Fargodeep Mine
+    .train 425216,1
+step << Priest
+    #season 2
+    .goto Elwynn Forest,41.7,78.1
+    >>Kill |cRXP_ENEMY_Goldtooth|r. Loot him for the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpose|r]
+    .collect 205940,1 -- Memory of a Dark Purpose (1)
+    .mob Goldtooth
+    .train 425216,1
+step << Priest
+    #season 2
+    .train 425216 >>|cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpose|r] |cRXP_WARN_to train|r |T237514:0|t[Void Plague]
+    .use 205940
+]])
+
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Priest SoD
+#group RestedXP Rune Guide
+#subgroup Chest
+#name Void Plague - 6 (Dun Morogh)
+
+step << Priest
+    #season 2
+    .goto Dun Morogh,27.2,43.0,60,0
+    .goto Dun Morogh,24.8,39.3,60,0
+    .goto Dun Morogh,25.6,43.4,60,0
+    .goto Dun Morogh,24.3,44.0,60,0
+    .goto Dun Morogh,25.4,45.4,60,0
+    .goto Dun Morogh,25.00,43.50
+    >>Kill |cRXP_ENEMY_Leper Gnomes|r. Loot them for the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpose|r]
+    .collect 205940,1 -- Memory of a Dark Purpose (1)
+    .mob Leper Gnome
+    .train 425216,1
+step << Priest
+    #season 2
+    .train 425216 >>|cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpose|r] |cRXP_WARN_to train|r |T237514:0|t[Void Plague]
+    .use 205940
 ]])

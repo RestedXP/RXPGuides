@@ -50,7 +50,7 @@ RXPGuides.RegisterGuide([[
 step << Orc
     #season 2
     .goto Durotar,40.65,68.52
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Nartok|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Nartok|r
     .accept 77586 >>Accept Stolen Power
     .target Nartok
 step
@@ -67,7 +67,7 @@ step
 step << Orc
     #season 2
     .goto Durotar,42.51,69.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Mai'ah|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Mai'ah|r
     .turnin 77586 >>Turn in Stolen Power
     .target Nartok
 
@@ -87,7 +87,7 @@ RXPGuides.RegisterGuide([[
 step << Undead
     #season 2
     .goto Tirisfal Glades,30.91,66.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Maximillion|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Maximillion|r
     .accept 77672 >>Accept The Lost Rune
     .target Maximillion
 step
@@ -104,7 +104,7 @@ step
 step << Undead
     #season 2
     .goto Tirisfal Glades,30.91,66.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Maximillion|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Maximillion|r
     .turnin 77672 >>Turn in The Lost Rune
     .target Maximillion
 
@@ -134,7 +134,7 @@ step
     .mob Gazz'uz
 step
     .train 403920,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Darmak Bloodhowl|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Darmak Bloodhowl|r
     .goto Durotar,54.6,41.6
     .collect 205022,1
     .skipgossip 208226,1
@@ -167,7 +167,7 @@ step
     .mob Maggot Eye
 step
     .train 403920,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Denton Bleakway|r in Undercity
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Denton Bleakway|r in Undercity
     .goto Undercity,84.2,25.8
     .collect 205022,1
     .skipgossip 208682,1
@@ -190,7 +190,7 @@ step
     .zone Tirisfal Glades >>Travel to the Tirisfal Glades
 step
     .train 416009,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tInteract with the |cFF00FF25Dead Acolyte|r. Open |T133625:0|t[Acolyte's Knapsack]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tInteract with the |cRXP_FRIENDLY_ Dead Acolyte|r. Open |T133625:0|t[Acolyte's Knapsack]
     .goto Tirisfal Glades,76.61,44.87
     .use 205364
     .collect 205181,1
@@ -199,7 +199,7 @@ step
     .mob Dead Acolyte
 step
     .train 416009,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Rupert Boch|r upstairs in the inn.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Rupert Boch|r upstairs in the inn.
     .goto Tirisfal Glades,61.6,52.4
     .collect 205182,1
     .skipgossip 2127,2
@@ -212,7 +212,7 @@ step
     .collect 205183,1
 step
     .train 416009,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Carentin Halgar|r in Undercity
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Carentin Halgar|r in Undercity
     .goto Undercity,85.0,25.6
     .collect 205215,1
     .skipgossip 5675,1
@@ -555,7 +555,7 @@ step
     .goto Redridge Mountains,80.2,49.5
 step << Horde
     .train 403938,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Doan Karhan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Doan Karhan|r
     *|cRXP_WARN_Skip this step if you're traveling through The Barrens|r
     .goto The Barrens,49.2,57.2
     .accept 1740 >>Accept The Orb of Soran'ruk
@@ -575,7 +575,7 @@ step
     .zone The Barrens >>Travel to The Barrens
 step
     .train 403938,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Doan Karhan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Doan Karhan|r
     .goto The Barrens,49.2,57.2
     .accept 1740 >>Accept The Orb of Soran'ruk
     .target Doan Karhan
@@ -599,7 +599,7 @@ step
     .zone The Barrens >>Travel to The Barrens
 step
     .train 403938,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Doan Karhan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Doan Karhan|r
     .goto The Barrens,49.2,57.2
     .turnin 1740 >>Turn in The Orb of Soran'ruk
     .accept 78680 >>Accept Rumors Abound
@@ -640,7 +640,7 @@ step
     .mob Searing Infernal
 step
     .train 403938,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Doan Karhan|r to get the |T134419:0|t[|cRXP_FRIENDLYRune of Metamorphosis|r]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Doan Karhan|r to get the |T134419:0|t[|cRXP_FRIENDLYRune of Metamorphosis|r]
     .goto The Barrens,49.2,57.2
     .turnin 78684 >>Turn in Mysterious Traveler
     .turnin 78702 >>Turn in Raszel Ander
@@ -730,7 +730,7 @@ step << Warlock
     >>|cRXP_WARN_Cast|r |T136163:0|t[Drain Soul] |cRXP_WARN_on any critter to receive a|r |T134095:0|t[|cRXP_LOOT_Pure Soul Shard|r]
     .collect 205020,1 -- Pure Soul Shard (1)
     .train 403920,1
-step << Warlock 
+step << Warlock
     .goto Loch Modan,77.894,62.236
     >>Kill |cRXP_ENEMY_Captain Beld|r downstairs inside the building. Loot him for a |T134085:0|t[|cRXP_LOOT_Tainted Soul Shard|r]
     >>|cRXP_WARN_Ensure he dies while you also have|r |T136163:0|t[Drain Soul] |cRXP_WARN_on him|r
@@ -767,7 +767,7 @@ step << Warlock
     >>|cRXP_WARN_Cast|r |T136163:0|t[Drain Soul] |cRXP_WARN_on any critter to receive a|r |T134095:0|t[|cRXP_LOOT_Pure Soul Shard|r]
     .collect 205020,1 -- Pure Soul Shard (1)
     .train 403920,1
-step << Warlock 
+step << Warlock
     .goto Elwynn Forest,27.0,86.7,80,0
     .goto Elwynn Forest,26.1,89.9,80,0
     .goto Elwynn Forest,25.2,92.7,80,0
@@ -884,7 +884,7 @@ step << Warlock
     .goto Elwynn Forest,25.2,92.7,70,0
     .goto Elwynn Forest,27.0,93.9,70,0
     .goto Elwynn Forest,25.9,93.9
-    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for their |cRXP_LOOT_Gnoll Blood|r 
+    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for their |cRXP_LOOT_Gnoll Blood|r
     .collect 204906,1 -- Gnoll Blood (1)
     .mob Riverpaw Runt
     .mob Riverpaw Outrunner
@@ -944,7 +944,7 @@ step << Warlock
     .train 425477,1
 step << Warlock
     .loop 10,Dun Morogh,42.57,54.80,41.89,54.51,42.13,52.68,42.46,51.96,41.91,51.43,42.46,51.96,42.13,52.68,42.57,54.80
-    >>Kill |cFFFF5722Young Wendigos|r and |cFFFF5722Wendigos|r. Loot them for their |cRXP_LOOT_Wendigo Blood|r
+    >>Kill |cRXP_ENEMY_Young Wendigos|r and |cRXP_ENEMY_Wendigos|r. Loot them for their |cRXP_LOOT_Wendigo Blood|r
     .collect 208140,1 -- Wendigo Blood (1)
     .mob Young Wendigo
     .mob Wendigo

@@ -10,22 +10,22 @@ RXPGuides.RegisterGuide([[
 
 step << !Tauren
     .goto Durotar,42.39,69.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Shikrik|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Shikrik|r
     .accept 77587 >>Accept Icons of Power << Troll Shaman
     .accept 77585 >>Accept Icons of Power << Orc Shaman
     .target Shikrik
 step
     .loop 25,Durotar,43.26,58.28,42.81,58.41,41.90,58.35,41.97,59.20,41.36,60.35,40.66,61.27,40.07,61.35,39.42,61.29,39.46,62.17,39.55,63.10,40.13,64.04,40.84,64.06,40.74,65.86,39.93,66.03,40.04,66.99,40.09,67.66,40.13,68.50,40.72,68.55,41.30,67.84,41.37,66.72,41.89,66.05,41.27,65.71,41.36,64.07,41.33,63.12,41.35,61.98,41.49,61.25,41.90,60.24,42.51,59.34,43.08,59.62,43.91,59.33,45.15,59.46,45.81,59.30,45.85,60.34,46.46,61.11,47.09,62.24,47.08,63.15,47.14,64.08,47.58,64.04,47.08,63.15,47.09,62.24,46.90,61.15,46.98,60.18,47.07,59.34,46.47,58.28,45.81,59.30,45.15,59.46,43.91,59.33,43.26,58.28
-    >>Kill |cFFFF5722Scorpid Workers|r. Loot them for |T134918:0|t[|cRXP_FRIENDLY_Dyadic Icon|r]
+    >>Kill |cRXP_ENEMY_Scorpid Workers|r. Loot them for |T134918:0|t[|cRXP_FRIENDLY_Dyadic Icon|r]
     .collect 206381,1 --Dyadic Icon (1)
     .mob Scorpid Worker
     .train 410094,1
 step
     .equip 18,206381 >>Equip the |T134918:0|t[|cRXP_FRIENDLY_Dyadic Icon|r]
     .train 410094,1
-step 
+step
     .loop 25,Durotar,43.26,58.28,42.81,58.41,41.90,58.35,41.97,59.20,41.36,60.35,40.66,61.27,40.07,61.35,39.42,61.29,39.46,62.17,39.55,63.10,40.13,64.04,40.84,64.06,40.74,65.86,39.93,66.03,40.04,66.99,40.09,67.66,40.13,68.50,40.72,68.55,41.30,67.84,41.37,66.72,41.89,66.05,41.27,65.71,41.36,64.07,41.33,63.12,41.35,61.98,41.49,61.25,41.90,60.24,42.51,59.34,43.08,59.62,43.91,59.33,45.15,59.46,45.81,59.30,45.85,60.34,46.46,61.11,47.09,62.24,47.08,63.15,47.14,64.08,47.58,64.04,47.08,63.15,47.09,62.24,46.90,61.15,46.98,60.18,47.07,59.34,46.47,58.28,45.81,59.30,45.15,59.46,43.91,59.33,43.26,58.28
-    .aura 408953,10+ >>Continue to kill |cFFFF5722Scorpid Workers|r and obtain 10 stacks of |T237556:0|t[Building Inspiration] as they deal nature damage to you
+    .aura 408953,10+ >>Continue to kill |cRXP_ENEMY_Scorpid Workers|r and obtain 10 stacks of |T237556:0|t[Building Inspiration] as they deal nature damage to you
     .mob Scorpid Worker
     .train 410094,1
 step
@@ -34,7 +34,7 @@ step
     .train 410094,1
 step << !Tauren
     .goto Durotar,42.39,69.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Shikrik|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Shikrik|r
     .turnin 77587 >>Turn in Icons of Power << Troll Shaman
     .turnin 77585 >>Turn in Icons of Power << Orc Shaman
     .target Shikrik
@@ -42,7 +42,7 @@ step << !Tauren
 
     ]])
 
-    
+
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
@@ -96,7 +96,7 @@ step << Tauren
 
     ]])
 
-    
+
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
@@ -131,7 +131,7 @@ step
 
     ]])
 
-    
+
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
@@ -247,7 +247,7 @@ step
     .use 210589
     .itemcount 210589,1
     ]])
-    
+
 
 
 RXPGuides.RegisterGuide([[
@@ -286,7 +286,7 @@ step
 
     ]])
 
-    
+
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
@@ -326,7 +326,7 @@ step
 
     ]])
 
-    
+
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
@@ -373,7 +373,7 @@ step
     .collect 206170,8 --Windfury Cone (8)
     .train 410104,1
 step
-    .use 206176 >>Use |T133748:0|t[Mortar and Pestle] to create |T133213:0|t[|cRXP_LOOT_Pine Salve|r] 
+    .use 206176 >>Use |T133748:0|t[Mortar and Pestle] to create |T133213:0|t[|cRXP_LOOT_Pine Salve|r]
     .complete 76160,1 --Pine Salve (1)
 step
     .goto Thunder Bluff,39.44,66.38
@@ -408,14 +408,14 @@ step
 step
     #ssf
     .goto Thunder Bluff,41.39,57.03
-    >>Start fishing until you get a |T133894:0|t[|cRXP_LOOT_Raw Brilliant Smallfish|r] 
+    >>Start fishing until you get a |T133894:0|t[|cRXP_LOOT_Raw Brilliant Smallfish|r]
     .collect 6291,1 --Raw Brilliant Smallfish (1)
     .use 6256
     .use 6529
     .train 410104,1
 step
     .goto Thunder Bluff,39.44,66.38
-    .use 206344 >>Use the |T132147:0|t[Knife Set] to create |T134007:0|t[|cRXP_LOOT_Fish Chunks|r] 
+    .use 206344 >>Use the |T132147:0|t[Knife Set] to create |T134007:0|t[|cRXP_LOOT_Fish Chunks|r]
     .complete 76240,1 --Fish Chunks (1)
 step
     .goto Thunder Bluff,39.44,66.38

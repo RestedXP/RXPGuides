@@ -1322,7 +1322,7 @@ step
     .goto Durotar,59.94,57.82,5,0
     .goto Durotar,59.94,57.61,5,0
     .goto Durotar,59.27,57.65
-    >>Move upstairs and loot |cRXP_PICK_Benedict's Chest|r for an |T133471:0|t[|cFF00BCD4Aged Envelope|r] and accept the quest from the item
+    >>Move upstairs and loot |cRXP_PICK_Benedict's Chest|r for an |T133471:0|t[|cRXP_LOOT_Aged Envelope|r] and accept the quest from the item
     .collect 4881,1,830 --Collect Aged Envelope (1)
     .accept 830 >>Accept The Admiral's Orders
     .use 4881
@@ -2518,7 +2518,7 @@ step
     .isOnQuest 362
 step
     #completewith ThurmanGregor
-    >>|T134939:0|t[|cFF00BCD4Thurman's Letter|r] |cRXP_WARN_may drop from these mobs. Accept the quest if it does|r
+    >>|T134939:0|t[|cRXP_LOOT_Thurman's Letter|r] |cRXP_WARN_may drop from these mobs. Accept the quest if it does|r
     .collect 2839,1,361 --Collect A Letter to Yvette (1)
     .accept 361 >> Accept A Letter Undelivered
     .use 2839

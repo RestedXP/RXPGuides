@@ -54,7 +54,7 @@ RXPGuides.RegisterGuide([[
 step
     #season 2
     .goto Durotar,40.60,66.80
-    >>Kill |cFFFF5722Sarkoth|r. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Explosive Shot|r]
+    >>Kill |cRXP_ENEMY_Sarkoth|r. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Explosive Shot|r]
     .collect 206169,1 --Rune of Explosive Shot (1)
     .mob Sarkoth
     .train 410123,1
@@ -78,14 +78,14 @@ RXPGuides.RegisterGuide([[
 step << !Tauren
     #season 2
     .goto Durotar,42.84,69.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jen'shan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Jen'shan|r
     .accept 77590 >>Accept Rugged Terrain << Troll Hunter
     .accept 77584 >>Accept Hunt for the Rune << Orc Hunter
     .target Jen'shan
 step
     #season 2
     .loop 25,Durotar,43.26,58.28,42.81,58.41,41.90,58.35,41.97,59.20,41.36,60.35,40.66,61.27,40.07,61.35,39.42,61.29,39.46,62.17,39.55,63.10,40.13,64.04,40.84,64.06,40.74,65.86,39.93,66.03,40.04,66.99,40.09,67.66,40.13,68.50,40.72,68.55,41.30,67.84,41.37,66.72,41.89,66.05,41.27,65.71,41.36,64.07,41.33,63.12,41.35,61.98,41.49,61.25,41.90,60.24,42.51,59.34,43.08,59.62,43.91,59.33,45.15,59.46,45.81,59.30,45.85,60.34,46.46,61.11,47.09,62.24,47.08,63.15,47.14,64.08,47.58,64.04,47.08,63.15,47.09,62.24,46.90,61.15,46.98,60.18,47.07,59.34,46.47,58.28,45.81,59.30,45.15,59.46,43.91,59.33,43.26,58.28
-    >>Kill |cFFFF5722Scorpid Workers|r. Loot them for |T134419:0|t[|cRXP_FRIENDLY_Rune of The Chimera|r]
+    >>Kill |cRXP_ENEMY_Scorpid Workers|r. Loot them for |T134419:0|t[|cRXP_FRIENDLY_Rune of The Chimera|r]
     .collect 206168,1 --Rune of the Chimera (1)
     .mob Scorpid Worker
     .train 410121,1
@@ -97,7 +97,7 @@ step
 step << !Tauren
     #season 2
     .goto Durotar,42.84,69.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Jen'shan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Jen'shan|r
     .turnin 77590 >>Turn in Rugged Terrain << Troll Hunter
     .turnin 77584 >>Turn in Hunt for the Rune << Orc Hunter
     .target Jen'shan
@@ -588,7 +588,7 @@ step
     .goto Silverpine Forest,46.08,26.62,50,0
     .goto Silverpine Forest,41.60,21.65
     >>Kill |cRXP_ENEMY_Ferocious Grizzled Bears|r until a |cRXP_ENEMY_Grizzled Protecter|r (16 elite) spawns
-    >>Kill him and loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Beast Mastery|r] 
+    >>Kill him and loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Beast Mastery|r]
     .collect 208701,1 --Rune of Beast Mastery (1)
     .mob Ferocious Grizzled Bear
     .mob Grizzled Protecter

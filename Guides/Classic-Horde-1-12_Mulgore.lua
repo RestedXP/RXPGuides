@@ -1197,7 +1197,7 @@ step
     .complete 766,4 --Swoop Gizzard (1)
 step
     #completewith SacredBurial
-    >>Keep an eye out for |cRXP_ENEMY_Ghost Howl|r. Loot him for his |T134358:0|t[|cFF00BCD4Demon Scarred Cloak|r]. Use it to start the quest
+    >>Keep an eye out for |cRXP_ENEMY_Ghost Howl|r. Loot him for his |T134358:0|t[|cRXP_LOOT_Demon Scarred Cloak|r]. Use it to start the quest
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Ghost Howl|r is difficult due to being level 12|r
     .collect 4854,1,770 --Collect Demon Scarred Cloak
     .accept 770 >>Accept The Demon Scarred Cloak
@@ -1689,7 +1689,7 @@ step
     #label ZamahPickup
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
-    >>|cRXP_WARN_Wait for the RP to finish|r 
+    >>|cRXP_WARN_Wait for the RP to finish|r
     >>|cRXP_WARN_This starts a 45-minute timed quest|r
     .turnin 848 >>Turn in Fungal Spores
     .accept 853 >>Accept Apothecary Zamah
@@ -1758,7 +1758,7 @@ step
     #completewith next
     .goto Thunder Bluff,28.14,32.97,40,0
     .goto Thunder Bluff,28.51,28.95,10 >> Travel to the Spirit Rise and enter the pools of vision
-step 
+step
     #label CauldronStirrer
     .goto Thunder Bluff,22.82,20.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
@@ -1850,7 +1850,7 @@ step << Hunter
 step
     #sticky
     #completewith ThunderBluff
-    >>Keep an eye out for |cRXP_ENEMY_Ghost Howl|r. Loot him for his |T134358:0|t[|cFF00BCD4Demon Scarred Cloak|r]. Use it to start the quest 
+    >>Keep an eye out for |cRXP_ENEMY_Ghost Howl|r. Loot him for his |T134358:0|t[|cRXP_LOOT_Demon Scarred Cloak|r]. Use it to start the quest
     >>Skip this step if you're unable to find him
     .collect 4854,1,770 --Collect Demon Scarred Cloak
     .accept 770 >>Accept The Demon Scarred Cloak
