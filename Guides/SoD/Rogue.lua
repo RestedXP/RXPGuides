@@ -786,11 +786,7 @@ step << Undead
 
 step
     #season 2
-<<<<<<< HEAD
     .goto Silverpine Forest,47.12,71.01
-=======
-    .goto Silverpine Forest,47.114,70.974
->>>>>>> 7888a20b4fe5f4b522956222814362d34bec62e0
     >>Click the |cRXP_PICK_Dead Drop|r in Silverpine Forest
     .accept 78261 >> Accept The Horn of Xelthos
 step
@@ -835,11 +831,7 @@ step
     .complete 78261,1 --Horn of Xelthos (1)
 step
     #season 2
-<<<<<<< HEAD
-    .goto Silverpine Forest,47.12,71.01
-=======
     .goto Silverpine Forest,47.114,70.974
->>>>>>> 7888a20b4fe5f4b522956222814362d34bec62e0
     >>Click the |cRXP_PICK_Dead Drop|r in Silverpine Forest
     .turnin 78261 >> Turn in The Horn of Xelthos
 step
@@ -892,11 +884,7 @@ step << Alliance
     .train 400080,1
 step
     #season 2
-<<<<<<< HEAD
-    .goto Silverpine Forest,47.12,71.01
-=======
     .goto Silverpine Forest,47.114,70.974
->>>>>>> 7888a20b4fe5f4b522956222814362d34bec62e0
     >>Click the |cRXP_PICK_Dead Drop|r in Silverpine Forest for |T134419:0|t[|cRXP_FRIENDLY_Rune of Deadly Brew|r]
     .collect 203994,1 --Rune of Deadly Brew (1)
     .train 400080,1
@@ -926,7 +914,7 @@ step
     .goto Durotar,56.54,54.52,30,0
     .goto Durotar,56.37,58.35,30,0
     .goto Durotar,58.99,58.30
-    >>Pick Pocket or kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r. Loot them for |T134327:0|t[|cRXP_LOOT_Top-Right Map Piece|r]
+    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r. Loot them for |T134327:0|t[|cRXP_LOOT_Top-Right Map Piece|r]
     .collect 207109,1 --Top-Right Map Piece (1)
     .mob Kul Tiras Sailor
     .mob Kul Tiras Marine
@@ -943,7 +931,7 @@ step
     .goto Durotar,47.06,49.53,30,0
     .goto Durotar,46.90,48.11,30,0
     .goto Durotar,49.22,48.96
-    >>Pick Pocket or kill |cRXP_ENEMY_Razormane Quilboars|r and |cRXP_ENEMY_Razormane Scouts|r.  Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Right Map Piece|r]
+    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Razormane Quilboars|r and |cRXP_ENEMY_Razormane Scouts|r.  Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Right Map Piece|r]
     .collect 207107,1 --Bottom-Right Map Piece (1)
     .mob Razormane Quilboar
     .mob Razormane Scout
@@ -951,7 +939,7 @@ step
 step
     #season 2
     .loop 25,Durotar,67.23,88.76,66.52,87.74,65.94,86.72,65.90,84.04,65.88,82.85,67.38,82.61,68.42,82.43,68.50,84.32,68.47,86.77,67.23,88
-    >>Pick Pocket or kill |cRXP_ENEMY_Hexed Trolls|r and |cRXP_ENEMY_Voodoo Trolls|r. Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Left Map Piece|r]
+    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Hexed Trolls|r and |cRXP_ENEMY_Voodoo Trolls|r. Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Left Map Piece|r]
     .collect 207106,1 --Bottom-Left Map Piece (1)
     .mob Hexed Troll
     .mob Voodoo Troll
@@ -971,7 +959,7 @@ step
     .goto Durotar,51.39,8.71,15,0
     .goto Durotar,51.48,9.71,15,0
     .goto Durotar,53.77,8.87
-    >>Pick Pocket or kill |cRXP_ENEMY_Burning Blade Orcs|r. Loot them for |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece|r]
+    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Burning Blade Orcs|r. Loot them for |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece|r]
     .collect 207108,1 --Top-Left Map Piece (1)
     .mob Burning Blade Thug
     .mob Burning Blade Fanatic
@@ -1016,7 +1004,7 @@ step
     .goto Tirisfal Glades,35.30,50.91,50,0
     .goto Tirisfal Glades,34.57,51.58,50,0
     .goto Tirisfal Glades,36.63,50.09
-    >>Pick Pocket or kill |cRXP_ENEMY_Tirisfal Farmers|r and |cRXP_ENEMY_Tirisfal Farmhands|r. Loot them for |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece|r]
+    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Tirisfal Farmers|r and |cRXP_ENEMY_Tirisfal Farmhands|r. Loot them for |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece|r]
     .collect 208036,1 --Top-Left Map Piece (1)
     .mob Tirisfal Farmer
     .mob Tirisfal Farmhand
@@ -1036,7 +1024,7 @@ step
     .goto Tirisfal Glades,33.73,45.29,50,0
     .goto Tirisfal Glades,34.10,47.88,50,0
     .goto Tirisfal Glades,33.73,49.34,50,0
-    >>Pick Pocket or kill |cRXP_ENEMY_Scarlet Warriors|r. Loot them for |T134327:0|t[|cRXP_LOOT_Top-Right Map Piece|r]
+    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Scarlet Warriors|r. Loot them for |T134327:0|t[|cRXP_LOOT_Top-Right Map Piece|r]
     >>|cRXP_WARN_Any of the Scarlet Humanoids in Tirisfal can drop the Map Piece|r
     .collect 208035,1 --Top-Right Map Piece (1)
     .mob Scarlet Warrior
@@ -1049,7 +1037,7 @@ step
     .goto Tirisfal Glades,55.24,42.54,40,0
     .goto Tirisfal Glades,56.43,43.92,40,0
     .goto Tirisfal Glades,55.24,42.54
-    >>Pick Pocket or kill |cRXP_ENEMY_Rot Hide Gnolls|r. Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Left Map Piece|r]
+    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Rot Hide Gnolls|r. Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Left Map Piece|r]
     .collect 208038,1 --Bottom-Left Map Piece (1)
     .mob Rot Hide Mongrel
     .mob Rot Hide Graverobber
@@ -1066,7 +1054,7 @@ step
     .goto Tirisfal Glades,67.48,28.97,50,0
     .goto Tirisfal Glades,68.22,26.46,50,0
     .goto Tirisfal Glades,59.54,27.86
-    >>Pick Pocket or kill |cRXP_ENEMY_Murlocs|r. Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Right Map Piece|r]
+    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Murlocs|r. Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Right Map Piece|r]
     .collect 208037,1 --Bottom-Right Map Piece (1)
     .mob Vile Fin Puddlejumper
     .mob Vile Fin Minor Oracle
@@ -1259,6 +1247,21 @@ RXPGuides.RegisterGuide([[
 
 step
     #season 2
+    .goto Tirisfal Glades,59.38,29.05,50,0
+    .goto Tirisfal Glades,59.54,27.86,50,0
+    .goto Tirisfal Glades,60.64,28.66,50,0
+    .goto Tirisfal Glades,61.49,29.40,50,0
+    .goto Tirisfal Glades,62.96,29.46,50,0
+    .goto Tirisfal Glades,65.68,30.22,50,0
+    .goto Tirisfal Glades,67.48,28.97,50,0
+    .goto Tirisfal Glades,68.22,26.46,50,0
+    .goto Tirisfal Glades,59.54,27.86
+    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Vile Fin Puddlejumpers|r for |T134241:0|t[|cRXP_LOOT_Shipwreck Cache Key|r]
+    .collect 208007,1 --Shipwreck Cache Key (1)
+    .mob Vile Fin Puddlejumper
+    .train 400081,1
+step
+    #season 2
     .goto Tirisfal Glades,66.66,24.41
     >>Loot the |cRXP_PICK_Shipwreck Cache|r for |T134419:0|t[|cRXP_FRIENDLY_Rune of Precision|r]
     .collect 204174,1 --Rune of Precision (1)
@@ -1286,6 +1289,7 @@ step
     #season 2
     .goto Orgrimmar,55.87,44.89
     >>Loot the |cRXP_PICK_Dusty Chest|r for |T134419:0|t[|cRXP_FRIENDLY_Rune of Precision|r]
+    >>|cRXP_WARN_It's located in The Drag on the upper floor|r
     .collect 204174,1 --Rune of Precision (1)
     .train 400081,1
 step

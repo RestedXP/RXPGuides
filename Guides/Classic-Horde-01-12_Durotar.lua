@@ -356,16 +356,10 @@ step
 step
     #som
     .goto Durotar,42.59,67.34
-<<<<<<< HEAD
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duokna|r
     >>|cFF0E8312Buy|r |T132794:0|t[Refreshing Spring Water] |cFF0E8312from her|r << !Rogue !Warrior !Hunter !Shaman
     >>|cFF0E8312Buy|r |T132382:0|t[Rough Arrows] |cFF0E8312from her|r << Hunter
-    >>|cRXP_WARN_Save copper to train|r |T135932:0|t[Arcane Intellect] << Mage
-=======
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Duokna|r
-    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r << !Rogue !Warrior !Hunter !Shaman
-    >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_from her|r << Hunter
->>>>>>> 7888a20b4fe5f4b522956222814362d34bec62e0
+    >>|cRXP_WARN_Save 10 copper to train|r |T135932:0|t[Arcane Intellect] << Mage
     .collect 159,15,6394,1 << !Rogue !Warrior !Hunter !Shaman --Refreshing Spring Water (15)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .vendor >> Vendor Trash
@@ -3510,6 +3504,18 @@ step
     .accept 809 >>Accept Ak'Zeloth
     .target Neeru Fireblade
     .isQuestTurnedIn 827
+step << Rogue
+    #season 2
+    .goto Orgrimmar,55.87,44.89
+    >>Loot the |cRXP_PICK_Dusty Chest|r for |T134419:0|t[|cRXP_FRIENDLY_Rune of Precision|r]
+    >>|cRXP_WARN_It's located in The Drag on the upper floor|r
+    .collect 204174,1 --Rune of Precision (1)
+    .train 400081,1
+step << Rogue
+    #season 2
+    .train 400081 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Precision|r] |cRXP_WARN_to train|r |T135610:0|t[Between the Eyes]
+    .use 204174
+    .itemcount 204174,1
 step << !Warrior !Shaman !Hunter
     #softcore
     #completewith ZeptoUC1
@@ -3721,6 +3727,7 @@ step
     .target Mrs. Winters
     .money <0.05
 step
+    #season 0,1
     .goto Tirisfal Glades,60.59,51.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zygand|r
     .accept 427 >>Accept At War With The Scarlet Crusade
@@ -3728,6 +3735,24 @@ step
     .maxlevel 10 << !Warlock
     .maxlevel 11 << Warlock
 step
+    #season 2
+    .goto Tirisfal Glades,60.59,51.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zygand|r
+    .accept 427 >>Accept At War With The Scarlet Crusade
+    .target Executor Zygand
+    .maxlevel 10 << !Warlock !Rogue
+    .maxlevel 11 << Warlock
+    .train 400095,1 << Rogue
+step << Rogue
+    #season 2
+    #optional
+    .goto Tirisfal Glades,60.59,51.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zygand|r
+    .accept 427 >>Accept At War With The Scarlet Crusade
+    .target Executor Zygand
+    .maxlevel 10
+step
+    #season 0,1
     .goto Tirisfal Glades,60.74,51.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wanted Poster|r
     .accept 398 >>Accept Wanted: Maggot Eye
@@ -3735,6 +3760,23 @@ step
     .maxlevel 12 << Warlock
     .maxlevel 13 << Warrior
 step
+    #season 2
+    .goto Tirisfal Glades,60.74,51.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wanted Poster|r
+    .accept 398 >>Accept Wanted: Maggot Eye
+    .maxlevel 11 << !Warrior !Warlock !Rogue
+    .maxlevel 12 << Warlock
+    .maxlevel 13 << Warrior
+    .train 400095,1 << Rogue
+step << Rogue
+    #season 2
+    #optional
+    .goto Tirisfal Glades,60.74,51.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wanted Poster|r
+    .accept 398 >>Accept Wanted: Maggot Eye
+    .maxlevel 11
+step
+    #season 0,1
     .goto Tirisfal Glades,61.26,50.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sevren|r inside the building
     .accept 358 >>Accept Graverobbers
@@ -3742,6 +3784,24 @@ step
     .maxlevel 11 !Warrior !Warlock
     .maxlevel 12 << Warrior/Warlock
 step
+    #season 2
+    .goto Tirisfal Glades,61.26,50.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sevren|r inside the building
+    .accept 358 >>Accept Graverobbers
+    .target Magistrate Sevren
+    .maxlevel 11 !Warrior !Warlock !Rogue
+    .maxlevel 12 << Warrior/Warlock
+    .train 400095,1 << Rogue
+step << Rogue
+    #season 2
+    #optional
+    .goto Tirisfal Glades,61.26,50.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sevren|r inside the building
+    .accept 358 >>Accept Graverobbers
+    .target Magistrate Sevren
+    .maxlevel 11
+step
+    #season 0,1
     .goto Tirisfal Glades,59.45,52.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r
     .accept 445 >>Accept Delivery to Silverpine Forest
@@ -3750,18 +3810,54 @@ step
     .maxlevel 10 << !Warlock
     .maxlevel 11 << Warlock
 step
+    #season 2
+    .goto Tirisfal Glades,59.45,52.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r
+    .accept 445 >>Accept Delivery to Silverpine Forest
+    .accept 367 >>Accept A New Plague
+    .target Apothecary Johaanstep
+    .maxlevel 10 << !Warlock !Rogue
+    .maxlevel 11 << Warlock
+    .train 400095,1 << Rogue
+step << Rogue
+    #season 2
+    .goto Tirisfal Glades,59.45,52.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r
+    .accept 445 >>Accept Delivery to Silverpine Forest
+    .accept 367 >>Accept A New Plague
+    .target Apothecary Johaanstep
+    .maxlevel 10
+step
     #label DeliverytoSPF
     .goto Tirisfal Glades,59.45,52.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r
     .accept 445 >>Accept Delivery to Silverpine Forest
     .target Apothecary Johaan
 step
+    #season 0,1
     .goto Tirisfal Glades,58.20,51.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r
     .accept 404 >>Accept A Putrid Task
     .target Deathguard Dillinger
     .maxlevel 10 << !Warlock
     .maxlevel 11 << Warlock
+step
+    #season 2
+    .goto Tirisfal Glades,58.20,51.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r
+    .accept 404 >>Accept A Putrid Task
+    .target Deathguard Dillinger
+    .maxlevel 10 << !Warlock !Rogue
+    .maxlevel 11 << Warlock
+    .train 400095,1 << Rogue
+step << Rogue
+    #season 2
+    #optional
+    .goto Tirisfal Glades,58.20,51.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r
+    .accept 404 >>Accept A Putrid Task
+    .target Deathguard Dillinger
+    .maxlevel 10
 step << Warrior
     .goto Tirisfal Glades,58.19,51.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r
@@ -3814,6 +3910,7 @@ step
     .mob Vampiric Duskbat
     .isOnQuest 375
 step
+    #season 0,1
     #optional
     #label Pumpkins
     .goto Tirisfal Glades,40.91,54.17
@@ -3822,6 +3919,33 @@ step
     .target Deathguard Simmer
     .maxlevel 10 << !Warlock
     .maxlevel 11 << Warlock
+step
+    #season 2
+    #optional
+    #label Pumpkins
+    .goto Tirisfal Glades,40.91,54.17
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Simmer|r
+    .accept 365 >>Accept Fields of Grief
+    .target Deathguard Simmer
+    .maxlevel 10 << !Warlock !Rogue
+    .maxlevel 11 << Warlock
+    .train 400095,1 << Rogue
+step << Rogue
+    #season 2
+    #optional
+    .goto Tirisfal Glades,40.91,54.17
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Simmer|r
+    .accept 365 >>Accept Fields of Grief
+    .target Deathguard Simmer
+    .maxlevel 10
+step << Rogue
+    #optional
+    #completewith next
+    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Tirisfal Farmers|r and |cRXP_ENEMY_Tirisfal Farmhands|r. Loot them for |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece|r]
+    .collect 208036,1 --Top-Left Map Piece (1)
+    .mob Tirisfal Farmer
+    .mob Tirisfal Farmhand
+    .train 400095,1
 step
     #optional
     .goto Tirisfal Glades,37.20,52.17,50,0
@@ -3834,6 +3958,28 @@ step
     >>Loot the |cRXP_LOOT_Pumpkins|r found in the field.
     .complete 365,1 --Tirisfal Pumpkin (10)
     .isOnQuest 365
+step << Rogue
+    #season 2
+    .goto Tirisfal Glades,37.20,52.17,50,0
+    .goto Tirisfal Glades,36.64,50.09,50,0
+    .goto Tirisfal Glades,36.10,49.07,50,0
+    .goto Tirisfal Glades,35.08,49.82,50,0
+    .goto Tirisfal Glades,35.30,50.91,50,0
+    .goto Tirisfal Glades,34.57,51.58,50,0
+    .goto Tirisfal Glades,36.63,50.09
+    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Tirisfal Farmers|r and |cRXP_ENEMY_Tirisfal Farmhands|r. Loot them for |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece|r]
+    .collect 208036,1 --Top-Left Map Piece (1)
+    .mob Tirisfal Farmer
+    .mob Tirisfal Farmhand
+    .train 400095,1
+step << Rogue
+    #season 2
+    #optional
+    #completewith next
+    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Scarlet Warriors|r. Loot them for |T134327:0|t[|cRXP_LOOT_Top-Right Map Piece|r]
+    >>|cRXP_WARN_Any of the Scarlet Humanoids in Tirisfal can drop the Map Piece|r
+    .collect 208035,1 --Top-Right Map Piece (1)
+    .train 400095,1
 step
     #optional
     #loop
@@ -3849,10 +3995,30 @@ step
     .goto Tirisfal Glades,33.73,45.29,50,0
     .goto Tirisfal Glades,34.10,47.88,50,0
     .goto Tirisfal Glades,33.73,49.34,50,0
-    >>Kill |cRXP_ENEMY_Scarlet Warriors|r
+    >>Kill |cRXP_ENEMY_Scarlet Warriors|r.
     .complete 427,1 --Scarlet Warrior (10)
     .mob Scarlet Warrior
     .isOnQuest 427
+step << Rogue
+    #season 2
+    #loop
+    .goto Tirisfal Glades,31.78,51.36,0
+    .goto Tirisfal Glades,33.73,49.34,50,0
+    .goto Tirisfal Glades,33.65,51.07,50,0
+    .goto Tirisfal Glades,31.78,51.36,50,0
+    .goto Tirisfal Glades,30.02,50.48,50,0
+    .goto Tirisfal Glades,29.91,49.24,50,0
+    .goto Tirisfal Glades,30.62,47.53,50,0
+    .goto Tirisfal Glades,31.01,46.50,50,0
+    .goto Tirisfal Glades,32.15,44.83,50,0
+    .goto Tirisfal Glades,33.73,45.29,50,0
+    .goto Tirisfal Glades,34.10,47.88,50,0
+    .goto Tirisfal Glades,33.73,49.34,50,0
+    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Scarlet Warriors|r. Loot them for |T134327:0|t[|cRXP_LOOT_Top-Right Map Piece|r]
+    >>|cRXP_WARN_Any of the Scarlet Humanoids in Tirisfal can drop the Map Piece|r
+    .collect 208035,1 --Top-Right Map Piece (1)
+    .mob Scarlet Warrior
+    .train 400095,1
 step
     #optional
     #label Darkhounds1
@@ -4120,6 +4286,14 @@ step
     >>Collect |cRXP_LOOT_Scarlet Insignia Rings|r. You don't have to complete this step now
     .complete 374,1 --Scarlet Insignia Ring (10)
     .isOnQuest 374
+step << Rogue
+    #season 2
+    #optional
+    #completewith ScarletCrusade1
+    >>Use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Captain Perrine|r for a |T133385:0|t[|cRXP_LOOT_Scarlet Lieutenant Signet Ring|r]
+    .collect 208085,1 --Scarlet Lieutenant Signet Ring (1)
+    .mob Captain Perrine
+    .train 400094,1
 step << Warlock
     #optional
     #completewith next
@@ -4138,6 +4312,13 @@ step
     .mob Scarlet Zealot
     .mob Scarlet Missionary
     .isOnQuest 370
+step << Rogue
+    #season 2
+    .goto Tirisfal Glades,51.17,67.81
+    >>Use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Captain Perrine|r for a |T133385:0|t[|cRXP_LOOT_Scarlet Lieutenant Signet Ring|r]
+    .collect 208085,1 --Scarlet Lieutenant Signet Ring (1)
+    .mob Captain Perrine
+    .train 400094,1
 step << Warlock
     .goto Tirisfal Glades,51.06,67.57
     >>Loot |cRXP_PICK_Perrine's Chest|r on the ground for |T133733:0|t[Egalin's Grimoire]
@@ -4275,6 +4456,13 @@ step
     >>Kill |cRXP_ENEMY_Maggot Eye|r. Loot him for his |cRXP_LOOT_Paw|r
     .complete 398,1 --Maggot Eye's Paw (1)
     .mob Maggot Eye
+step << Rogue
+    #season 2
+    #optional
+    #completewith next
+    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Murlocs|r. Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Right Map Piece|r]
+    .collect 208037,1 --Bottom-Right Map Piece (1)
+    .train 400095,1
 step
     #optional
     .goto Tirisfal Glades,59.38,29.05,50,0
@@ -4292,6 +4480,23 @@ step
     .mob Vile Fin Minor Oracle
     .mob Vile Fin Muckdweller
     .isOnQuest 368
+step << Rogue
+    #season 2
+    .goto Tirisfal Glades,59.38,29.05,50,0
+    .goto Tirisfal Glades,59.54,27.86,50,0
+    .goto Tirisfal Glades,60.64,28.66,50,0
+    .goto Tirisfal Glades,61.49,29.40,50,0
+    .goto Tirisfal Glades,62.96,29.46,50,0
+    .goto Tirisfal Glades,65.68,30.22,50,0
+    .goto Tirisfal Glades,67.48,28.97,50,0
+    .goto Tirisfal Glades,68.22,26.46,50,0
+    .goto Tirisfal Glades,59.54,27.86
+    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Murlocs|r. Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Right Map Piece|r]
+    .collect 208037,1 --Bottom-Right Map Piece (1)
+    .mob Vile Fin Puddlejumper
+    .mob Vile Fin Minor Oracle
+    .mob Vile Fin Muckdweller
+    .train 400095,1
 step
     #optional
     #completewith RotHideGnolls
@@ -4300,6 +4505,13 @@ step
     .mob Greater Duskbat
     .mob Vampiric Duskbat
     .isOnQuest 375
+step << Rogue
+    #season 2
+    #optional
+    #completewith next
+    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Rot Hide Gnolls|r. Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Left Map Piece|r]
+    .collect 208038,1 --Bottom-Left Map Piece (1)
+    .train 400095,1
 step
     #optional
     #label RotHideGnolls
@@ -4316,6 +4528,25 @@ step
     .mob Rot Hide Mongrel
     .mob Rot Hide Graverobber
     .isOnQuest 358
+step << Rogue
+    #season 2
+    .goto Tirisfal Glades,56.31,39.67,40,0
+    .goto Tirisfal Glades,54.71,41.19,40,0
+    .goto Tirisfal Glades,53.90,43.93,40,0
+    .goto Tirisfal Glades,55.24,42.54,40,0
+    .goto Tirisfal Glades,56.43,43.92,40,0
+    .goto Tirisfal Glades,55.24,42.54
+    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Rot Hide Gnolls|r. Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Left Map Piece|r]
+    .collect 208038,1 --Bottom-Left Map Piece (1)
+    .mob Rot Hide Mongrel
+    .mob Rot Hide Graverobber
+    .mob Rot Hide Gnoll
+    .train 400095,1
+step << Rogue
+    #season 2
+    .use 208036 >>Use the |T134327:0|t[|cRXP_LOOT_Map Pieces|r] to create |T134269:0|t[|cRXP_LOOT_Tirisfal Treasure Map|r]
+    .collect 208034,1 --Tirisfal Treasure Map (1)
+    .train 400095,1
 step
     #optional
     #softcore
@@ -4326,6 +4557,18 @@ step
     #hardcore
     #completewith MillsTurnin
     .subzone 159 >> Travel to Brill
+step << Rogue
+    #season 2
+    .goto Tirisfal Glades,53.05,53.87
+    .use 208034 >>Use the |T134269:0|t[|cRXP_LOOT_Tirisfal Treasure Map|r] below the bridge
+    >>Loot the |cRXP_PICK_Buried Treasure|r chest that spawns for |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Draw|r]
+    .collect 203991,1 --Rune of Quick Draw (1s)
+    .train 400095,1
+step << Rogue
+    #season 2
+    .train 400095 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Draw|r] |cRXP_WARN_to train|r |T134536:0|t[Quick Draw]
+    .use 203991
+    .itemcount 203991,1
 step
     #optional
     .goto Tirisfal Glades,58.19,51.44
@@ -4357,6 +4600,25 @@ step
     .accept 371 >>Accept At War With The Scarlet Crusade
     .target Executor Zygand
     .isQuestComplete 370
+step << Rogue
+    #season 2
+    .goto Tirisfal Glades,60.73,50.60
+    .use 208085 >>Use the |T133385:0|t[|cRXP_LOOT_Scarlet Lieutenant Signet Ring|r] to create |T134328:0|t[|cRXP_LOOT_Forged Scarlet Memorandum|r]
+    .collect 208086,1 --Forged Scarlet Memorandum (1)
+    .train 400094,1
+step << Rogue
+    #season 2
+    .goto Tirisfal Glades,60.73,50.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jamie Nore|r to receive |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r]
+    .collect 210229,1 --Rune of Mutilation (1)
+    .target Jamie Nore
+    .skipgossip
+    .train 400094,1
+step << Rogue
+    #season 2
+    .train 400094 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r] |cRXP_WARN_to train|r |T132304:0|t[Mutilate]
+    .use 210229
+    .itemcount 210229,1
 step
     #optional
     .goto Tirisfal Glades,60.58,51.77

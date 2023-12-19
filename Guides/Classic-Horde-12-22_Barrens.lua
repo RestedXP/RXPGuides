@@ -4397,6 +4397,7 @@ step
    .complete 6641,1 --Defeat Vorsha the Lasher
    .mob Vorsha the Lasher
 step << Priest
+    #season 0,1
     #sticky
     #completewith EnterBFD
     .subzone 719 >> Find a group now for BFD if you wish to get a big wand upgrade (Gravestone Scepter). You could also wait to do BFD when you are in Ashenvale at level 26-28
@@ -4426,6 +4427,7 @@ step
     .target Marukai
     .isQuestComplete 6641
 step << Priest
+    #season 0,1
     .goto Ashenvale,11.56,34.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
     .accept 6563 >> Accept The Essence of Aku'Mai
@@ -4435,6 +4437,7 @@ step << Priest
     .dungeon BFD
     .isQuestTurnedIn 6564
 step << Priest
+    #season 0,1
     .goto Ashenvale,11.56,34.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
     .accept 6563 >> Accept The Essence of Aku'Mai
@@ -4442,15 +4445,18 @@ step << Priest
     .target Je'neu Sancrea
     .dungeon BFD
 step << Priest
+    #season 0,1
     .goto Kalimdor,43.89,35.23,100 >> Travel to the entrance of Blackfathom Deeps
     .dungeon BFD
 step << Priest
+    #season 0,1
     #completewith next
     >>Loot |cRXP_LOOT_Sapphire of Aku'Mai|r from the wall
     .complete 6563,1 --Sapphire of Aku'Mai (20)
     .dungeon BFD
     .isOnQuest 6563
 step << Priest
+    #season 0,1
     .goto Kalimdor,43.81,35.16,20,0
     .goto Kalimdor,43.94,34.86,20,0
     .goto Kalimdor,43.90,34.59,20,0
@@ -4466,6 +4472,7 @@ step << Priest
     .use 16790
     .dungeon BFD
 step << Priest
+    #season 0,1
     .goto Kalimdor,44.53,34.86,20,0
     .goto Kalimdor,44.35,34.97,20,0
     .goto Kalimdor,44.16,34.85,20,0
@@ -4479,22 +4486,26 @@ step << Priest
     .dungeon BFD
     .isOnQuest 6563
 step << Priest
+    #season 0,1
     #label EnterBFD
     .goto Kalimdor,44.36,34.86
     .zone 221 >> Enter the BFD Instance portal. Zone in
     .dungeon BFD
 step << Priest
+    #season 0,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argent Guard Thaelrid|r
     .accept 6561 >>Accept Blackfathom Villainy
     .target Argent Guard Thaelrid
     .dungeon BFD
 step << Priest
+    #season 0,1
     >>Kill |cRXP_ENEMY_Lorguss Jett |r
     .complete 6565,1 --Lorguss Jett slain (1)
     .mob Lorguss Jett
     .isOnQuest 6565
     .dungeon BFD
 step << Priest
+    #season 0,1
     #completewith next
     >>Loot the |cRXP_PICK_Fathom Stone|r in the water on the ground for the |cRXP_LOOT_Fathom Core|r
     >>|cRXP_WARN_Looting this will spawn|r |cRXP_ENEMY_Baron Aquanis|r
@@ -4502,6 +4513,7 @@ step << Priest
     .isOnQuest 6921
     .dungeon BFD
 step << Priest
+    #season 0,1
     >>Kill |cRXP_ENEMY_Baron Aquanis|r. Loot him for a |T136222:0|t[|cRXP_LOOT_Strange Water Globe|r]. Use it to accept the quest
     .collect 16782,1 --Strange Water Globe (1)
     .accept 6922 >>Accept Baron Aquanis
@@ -4509,22 +4521,26 @@ step << Priest
     .use 16782
     .dungeon BFD
 step << Priest
+    #season 0,1
     >>Loot the |cRXP_PICK_Fathom Stone|r in the water on the ground for the |cRXP_LOOT_Fathom Core|r
     .complete 6921,1 --Fathom Core (1)
     .isOnQuest 6921
     .dungeon BFD
 step << Priest
+    #season 0,1
     >>Kill |cRXP_ENEMY_Twilight Lord Kelris|r. Loot him for his |cRXP_LOOT_Head|r
     .complete 6561,1 --Head of Kelris (1)
     .mob Twilight Lord Kelris
     .isOnQuest 6561
     .dungeon BFD
 step << Priest
+    #season 0,1
     .hs >> Hearth to Thunder Bluff
     .use 6948
     >>|cRXP_WARN_Kill|r |cRXP_ENEMY_Aku'mai|r |cRXP_WARN_first if you wish. This is the last boss of the dungeon|r
     .dungeon BFD
 step << Priest
+    #season 0,1
     .goto Thunder Bluff,71.04,34.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bashana|r
     .turnin 6561 >>Turn in Blackfathom Villainy
@@ -4532,6 +4548,7 @@ step << Priest
     .isQuestComplete 6561
     .dungeon BFD
 step << Priest
+    #season 0,1
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Zoram'gar >> Fly to Zoram'gar Outpost
@@ -4539,6 +4556,7 @@ step << Priest
     .zoneskip Ashenvale
     .dungeon BFD
 step << Priest
+    #season 0,1
     .goto Ashenvale,11.56,34.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
     .turnin 6564 >>Turn in Allegiance to the Old Gods
@@ -4546,6 +4564,7 @@ step << Priest
     .dungeon BFD
     .isOnQuest 6564
 step << Priest
+    #season 0,1
     .goto Ashenvale,11.56,34.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
     .turnin 6565 >>Turn in Allegiance to the Old Gods
@@ -4553,6 +4572,7 @@ step << Priest
     .dungeon BFD
     .isQuestComplete 6565
 step << Priest
+    #season 0,1
     .goto Ashenvale,11.56,34.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
     .turnin 6563 >>Turn in The Essence of Aku'Mai
@@ -4560,6 +4580,7 @@ step << Priest
     .dungeon BFD
     .isQuestComplete 6563
 step << Priest
+    #season 0,1
     .goto Ashenvale,11.56,34.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
     .turnin 6921 >>Turn in Amongst The Ruins
@@ -4567,6 +4588,7 @@ step << Priest
     .dungeon BFD
     .isQuestComplete 6521
 step << Priest
+    #season 0,1
     .goto Ashenvale,11.56,34.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
     .turnin 6922 >>Turn in Baron Aquanis
