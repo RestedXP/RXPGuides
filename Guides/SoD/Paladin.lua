@@ -1362,7 +1362,9 @@ step
     >>Kill |cRXP_ENEMY_Defias Night Runners|r, |cRXP_ENEMY_Defias Night Blades|r, and |cRXP_ENEMY_Defias Enchanters|r. Loot them for the |T134916:0|t|cRXP_LOOT_[Libram of Banishment]|r
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Defias Night Runners|r and |cRXP_ENEMY_Defias Night Blades|r cast|r |T136093:0|t[Slowing Poison] |cRXP_WARN_(Reduces movespeed by 35% for 25 seconds),|r |T132090:0|t[Backstab] |cRXP_WARN_(deals double damage from behind. |cRXP_ENEMY_Defias Night Runners|r are|r |T132320:0|t[Stealthed]|cRXP_WARN_, and |cRXP_ENEMY_Defias Enchanters|r cast|r |T135812:0|t[Fireball] |cRXP_WARN_(deals about 150 fire damage) and have|r |T135843:0|t[Frost Armor] |cRXP_WARN_(slows attack and movespeed on hit)|r
     .collect 211472,1 -- Libram of Banishment (1)
-    .mob Defias Night Runners
+    .mob Defias Night Runner
+    .mob Defias Night Blade
+    .mob Defias Enchanter
     .train 416037,1
     .xp <24,1
 step
@@ -1378,7 +1380,10 @@ step
     .goto Duskwood,14.65,47.37,50,0
     .goto Duskwood,16.31,44.96,50,0
     .goto Duskwood,22.95,40.55,50,0
+    >>Kill |cRXP_ENEMY_Skeletal Fiends|r and |cRXP_ENEMY_Skeletal Horrors|r
     .aura 408828 >>|cRXP_WARN_Cast|r |T135983:0|t[Turn Undead] |cRXP_WARN_and then kill them with|r |T135903:0|t[Exorcism] |cRXP_WARN_5 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    .mob Skeletal Fiend
+    .mob Skeletal Horror
     .itemStat 18,QUALITY,2
     .train 416037,1
     .xp <24,1
