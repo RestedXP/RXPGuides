@@ -1983,6 +1983,8 @@ function addon.functions.collect(self, ...)
         element.itemName = addon.GetItemName(id)
         --[[
 .collect itemId,quantity,questId,objFlags,flags
+.collect itemId,3,905,7,3
+
 flags:
 1   (0x1): Disables the checkBox
 2   (0x2): Subtract from the given quest objective (given by the objective bitmask from objFlags)
@@ -4147,6 +4149,12 @@ function addon.functions.itemcount(self, ...)
     local eq = element.eq
     local total = element.total
     local count = GetItemCount(element.id)
+    for i = 1, _G.INVSLOT_LAST_EQUIPPED do
+        if GetInventoryItemID("player", i) == element.id then
+            count = count + 1
+            break
+        end
+    end
 
     if not ((eq and count == total) or (count * operator > total * operator) or
         (not eq and operator == 0 and count >= total)) then
