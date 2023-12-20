@@ -589,7 +589,19 @@ RXPGuides.RegisterGuide([[
 #next 12-17 The Barrens
 
 
-
+step << Druid
+    #season 2
+    .goto Mulgore,35.72,69.57
+    >>Cast |T136096:0|t[Moonfire] on the three |cRXP_ENEMY_Lunar Stones|r. A chest will appear in between the stones
+    >>Open the |cRXP_PICK_Lunar Chest|r for |T134419:0|t[|cRXP_FRIENDLY_Rune of the Sun|r] 
+    .collect 206989,1 --Rune of the Sun (1)
+    .mob Lunar Stone
+    .train 416044,1
+step << Druid
+    #season 2
+    .train 416044 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Sun|r] |cRXP_WARN_to train|r |T236216:0|t[Sunfire]
+    .use 206989
+    .itemcount 206989,1
 step
 	#completewith BloodhoofHome
 	#softcore
@@ -1856,6 +1868,14 @@ step
     .accept 770 >>Accept The Demon Scarred Cloak
     .use 4854
     .unitscan Ghost Howl
+step << Druid
+    #season 2
+    #completewith ProwlerClaws
+    >>Kill |cRXP_ENEMY_Flatland Prowlers|r and |cRXP_ENEMY_Prairie Wolf Alphas|r. Loot them for |T134903:0|t[|cRXP_FRIENDLY_Idol of Ursine Rage|r] 
+    .collect 206954,1 --Idol of Ursine Rage (1)
+    .mob Flatland Prowler
+    .mob Prairie Wolf Alpha
+    .train 410025,1
 step
     #completewith Arrachea
     >>Kill |cRXP_ENEMY_Flatland Prowlers|r. Loot them for their |cRXP_LOOT_Claws|r
@@ -1920,6 +1940,7 @@ step
     .unitscan Arra'chea
     --VV .line
 step
+    #label ProwlerClaws
     .goto Mulgore,43.78,10.96,90,0
     .goto Mulgore,39.62,13.35,90,0
     .goto Mulgore,37.12,16.84,90,0
@@ -1929,6 +1950,33 @@ step
     >>Kill |cRXP_ENEMY_Flatland Prowlers|r. Loot them for their |cRXP_LOOT_Claws|r
     .complete 861,1 --Flatland Prowler Claw (4)
     .mob Flatland Prowler
+step << Druid
+    #season 2
+    .goto Mulgore,43.78,10.96,90,0
+    .goto Mulgore,39.62,13.35,90,0
+    .goto Mulgore,37.12,16.84,90,0
+    .goto Mulgore,44.57,17.39,90,0
+    .goto Mulgore,48.70,20.85,90,0
+    .goto Mulgore,43.78,10.96
+    >>Kill |cRXP_ENEMY_Flatland Prowlers|r and |cRXP_ENEMY_Prairie Wolf Alphas|r. Loot them for |T134903:0|t[|cRXP_FRIENDLY_Idol of Ursine Rage|r] 
+    .collect 206954,1 --Idol of Ursine Rage (1)
+    .mob Flatland Prowler
+    .mob Prairie Wolf Alpha
+    .train 410025,1
+step << Druid
+    #season 2
+    .equip 18,206954 >> |cRXP_WARN_Equip the|r |T134903:0|t[|cRXP_FRIENDLY_Idol of Ursine Rage|r] 
+    .use 206954
+    .train 410025,1
+step << Druid
+    #season 2
+    #completewith next
+    +|cRXP_WARN_Maintain 50+ rage for at least 60 seconds to be able to learn|r |T132135:0|t[Mangle]
+step << Druid
+    #season 2
+    .train 410025 >> |cRXP_WARN_Use the|r |T134903:0|t[|cRXP_FRIENDLY_Idol of Ursine Rage|r] |cRXP_WARN_to train|r |T132135:0|t[Mangle]
+    .use 206954
+    .itemcount 206954,1
 step
     #completewith next
     .subzone 1638 >> Travel back to Thunder Bluff

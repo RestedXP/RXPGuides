@@ -74,12 +74,12 @@ step
 step
     #season 2
     .goto Western Plaguelands,59.4,84.5
-    >>Open the |cRXP_PICK_Rusty Safe|r in the water for |T134419:0|t[|cRXP_FRIENDLY_Rune of Envenom|r]
-    .collect 210322,1 --Rune of Envenom (1)
+    >>Open the |cRXP_PICK_Rusty Safe|r in the water for |T134419:0|t[|cRXP_FRIENDLY_Rune of Venom|r]
+    .collect 210322,1 --Rune of Venom (1)
     .train 400102,1
 step
     #season 2
-    .train 400102 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Envenom|r]
+    .train 400102 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Venom|r]
     .use 210322
     .itemcount 210322,1
 
@@ -149,8 +149,14 @@ step << Druid
     .mob Grimtotem Ruffian
     .train 410021,1
 step << Druid
-    .train 410021 >> |cRXP_WARN_Use the|r |T134233:0|t[|cRXP_FRIENDLY_Idol of the Wild|r] |cRXP_WARN_to train|r |T132143:0|t[Wild Strikes]
+    .equip 18,210534 >> |cRXP_WARN_Equip the|r |T134233:0|t[|cRXP_FRIENDLY_Idol of the Wild|r]
     .use 210534
+    .itemcount 210534,1
+    .train 410021,1
+step << Druid
+    >>|cRXP_WARN_Cast|r |T136085:0|t[Regrowth] |cRXP_WARN_or|r |T136041:0|t[Healing Touch] |cRXP_WARN_on 10 different friendly Beasts such as Hunter Pets/Druids in Bear Form/Shamans in Ghost Wolf|r << Horde
+    >>|cRXP_WARN_Cast|r |T136085:0|t[Regrowth] |cRXP_WARN_or|r |T136041:0|t[Healing Touch] |cRXP_WARN_on 10 different friendly Beasts such as Hunter Pets or Druids in Bear Form|r << Alliance
+    .train 410021 >> |cRXP_WARN_Use the|r |T134233:0|t[|cRXP_FRIENDLY_Idol of the Wild|r] |cRXP_WARN_to train|r |T132143:0|t[Wild Strikes]
     .itemcount 210534,1
 ]])
 

@@ -1405,12 +1405,6 @@ step << Warrior
     .train 425447 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
     .use 204716
     .itemcount 204716,1
-step
-    #completewith MurlocVins
-    >>Kill |cRXP_ENEMY_Duskbats|r. Loot them for their |cRXP_LOOT_Pelts|r
-    .complete 375,1 --Duskbat Pelt (5)
-    .mob Greater Duskbat
-    .mob Vampiric Duskbat
 step << Rogue
     #season 2
     #completewith MaggotEye
@@ -1503,7 +1497,7 @@ step << Warrior
     .goto Tirisfal Glades,67.48,28.97,50,0
     .goto Tirisfal Glades,68.22,26.46,50,0
     .goto Tirisfal Glades,59.54,27.86
-    >>Kill |cRXP_ENEMY_Murlocs|r. Loot them for their |cRXP_LOOT_Scales|r and a |cRXP_LOOT_Severed Murloc Head|r
+    >>Kill |cRXP_ENEMY_Vile Vin Murlocs|r. Loot them for their |cRXP_LOOT_Scales|r and a |cRXP_LOOT_Severed Murloc Head|r
     .complete 368,1 --Vile Fin Scale (5)
     .collect 204477,1 --Severed Murloc Head (1)
     .mob Vile Fin Puddlejumper
@@ -1513,14 +1507,13 @@ step << Warrior
 step << Rogue
     #season 2
     #completewith MurlocVins
-    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Vile Fin Puddlejumpers|r for |T134241:0|t[|cRXP_LOOT_Shipwreck Cache Key|r]
+    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Vile Fin Murlocs|r for |T134241:0|t[|cRXP_LOOT_Shipwreck Cache Key|r]
     .collect 208007,1 --Shipwreck Cache Key (1)
-    .mob Vile Fin Puddlejumper
     .train 400081,1
 step << Rogue
     #season 2
     #completewith RuneofPrecision
-    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Murlocs|r. Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Right Map Piece|r]
+    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Vile Vin Murlocs|r. Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Right Map Piece|r]
     .collect 208037,1 --Bottom-Right Map Piece (1)
     .train 400095,1
 step
@@ -1534,7 +1527,7 @@ step
     .goto Tirisfal Glades,67.48,28.97,50,0
     .goto Tirisfal Glades,68.22,26.46,50,0
     .goto Tirisfal Glades,59.54,27.86
-    >>Kill |cRXP_ENEMY_Murlocs|r. Loot them for their |cRXP_LOOT_Scales|r
+    >>Kill |cRXP_ENEMY_Vile Vin Murlocs|r. Loot them for their |cRXP_LOOT_Scales|r
     .complete 368,1 --Vile Fin Scale (5)
     .mob Vile Fin Puddlejumper
     .mob Vile Fin Minor Oracle
@@ -1550,9 +1543,11 @@ step << Rogue
     .goto Tirisfal Glades,67.48,28.97,50,0
     .goto Tirisfal Glades,68.22,26.46,50,0
     .goto Tirisfal Glades,59.54,27.86
-    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Vile Fin Puddlejumpers|r for |T134241:0|t[|cRXP_LOOT_Shipwreck Cache Key|r]
+    >>Use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Vile Fin Murlocs|r for |T134241:0|t[|cRXP_LOOT_Shipwreck Cache Key|r]
     .collect 208007,1 --Shipwreck Cache Key (1)
     .mob Vile Fin Puddlejumper
+    .mob Vile Fin Minor Oracle
+    .mob Vile Fin Muckdweller
     .train 400081,1
 step << Rogue
     #season 2
@@ -1608,7 +1603,7 @@ step
     .target Junior Apothecary Holland
 step << Rogue
     #season 2
-    .goto Tirisfal Glades,53.05,53.87
+    .goto Tirisfal Glades,52.89,54.03
     .use 208034 >>Use the |T134269:0|t[|cRXP_LOOT_Tirisfal Treasure Map|r] below the bridge
     >>Loot the |cRXP_PICK_Buried Treasure|r chest that spawns for |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Draw|r]
     .collect 203991,1 --Rune of Quick Draw (1s)
@@ -2868,6 +2863,7 @@ step << Rogue/Warrior/Priest
 step
     #era
     #label Entersilverpine
+    .goto Tirisfal Glades,53.20,75.82
     .zone Silverpine Forest >> Travel to Silverpine Forest
     .zoneskip Silverpine Forest
 

@@ -1657,6 +1657,16 @@ step << Tauren Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
     .train 264 >>Train Bows
     .target Hanashi
+step << Druid
+    #season 2
+    #ah
+    .goto Orgrimmar,55.59,62.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thathung|r
+    >>|cRXP_BUY_Buy a|r |T134237:0|t[Kolkar Booty Key] |cRXP_BUY_from the Auction House if possible|r
+    >>|cRXP_WARN_You will need this to obtain|r |T132942:0|t[|cRXP_FRIENDLY_Ferocious Idol|r] |cRXP_WARN_for|r |T236167:0|t[Savage Roar]
+    .collect 5020,1 --Kolkar Booty Key (1)
+	.target Auctioneer Thathung
+    .train 407988,1
 step
     #completewith FoodandWater2
     .hs >> Hearth to The Crossroads
@@ -1898,9 +1908,17 @@ step
     .goto The Barrens,55.61,42.75
     >>Click the |cRXP_PICK_Bubble Fissure|r underwater
     .complete 877,1 --Test the Dried Seeds (1)
+step << Druid
+    #season 2
+    #completewith Verog
+    >>Kill |cRXP_ENEMY_Kolkar|r. Loot them for a |T134237:0|t[|cRXP_LOOT_Kolkar Booty Key|r]
+    .collect 5020,1 --Kolkar Booty Key (1)
+    .mob Kolkar Wrangler
+    .mob Kolkar Stormer
+    .train 407988,1
 step
-    #loop
     #completewith next
+    #loop
     .goto The Barrens,55.80,45.78,50,0
     .goto The Barrens,56.75,43.41,50,0
     .goto The Barrens,57.01,41.22,50,0
@@ -1924,6 +1942,43 @@ step
     >>|cRXP_WARN_On a highly populated server or fresh launch, your best option is camping his spawnpoint|r
     .complete 851,1 --Verog's Head (1)
     .unitscan Verog the Dervish
+step << Druid
+    #season 2
+    #loop
+    .goto The Barrens,55.80,45.78,50,0
+    .goto The Barrens,56.75,43.41,50,0
+    .goto The Barrens,57.01,41.22,50,0
+    .goto The Barrens,55.45,41.37,50,0
+    .goto The Barrens,54.99,40.84,50,0
+    .goto The Barrens,53.41,40.26,50,0
+    .goto The Barrens,52.99,44.73,50,0
+    .goto The Barrens,54.31,46.81,50,0
+    .goto The Barrens,55.80,45.78,50,0
+    >>Kill |cRXP_ENEMY_Kolkar|r. Loot them for a |T134237:0|t[|cRXP_LOOT_Kolkar Booty Key|r]
+    .collect 5020,1 --Kolkar Booty Key (1)
+    .mob Kolkar Wrangler
+    .mob Kolkar Stormer
+    .train 407988,1
+step << Druid
+    #season 2
+    .goto The Barrens,52.7,41.8
+    >>Open a |cRXP_PICK_Kolkar Booty|r chest for |T132942:0|t[|cRXP_FRIENDLY_Ferocious Idol|r]
+    .collect 5020,1 --Kolkar Booty Key (1)
+    .collect 208689,1 --Ferocious Idol (1)
+    .train 407988,1
+step << Druid
+    #season 2
+    #completewith Nest
+    .equip 18,208689 >> |cRXP_WARN_Equip the|r |T132942:0|t[|cRXP_FRIENDLY_Ferocious Idol|r] |cRXP_WARN_Once you've learned|r |T132115:0|t[Cat Form]
+    .use 208689
+    .itemcount 208689,1
+    .train 407988,1
+step << Druid
+    #completewith Nest
+    #season 2
+    .train 407988 >>|cRXP_WARN_Deal 20 instances of bleeding damage from|r |T132152:0|t[Rip] |cRXP_WARN_or|r |T132122:0|t[Rake] |cRXP_WARN_to humanoids, then use the|r |T132942:0|t[|cRXP_FRIENDLY_Ferocious Idol|r] |cRXP_WARN_again to learn|r |T236167:0|t[Savage Roar]
+    .use 208689
+    .itemcount 208689,1
 step
     .loop 25,The Barrens,55.72,42.14,55.49,41.75,55.09,41.58,55.03,42.24,55.27,43.17,55.78,43.47,56.15,43.28,56.08,42.58,55.72,42.14
     >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Stagnant Oasis
@@ -2302,7 +2357,12 @@ RXPGuides.RegisterGuide([[
 #next RestedXP Horde 22-30\22-24 Hillsbrad
 
 
-
+step << Druid
+    #season 2
+    #completewith next
+    >>Kill |cRXP_ENEMY_Grimtotem Taurens|r. Loot them for the |T134233:0|t[|cRXP_FRIENDLY_Idol of the Wild|r]
+    .collect 210534,1 -- Idol of the Wild (1)
+    .train 410021,1
 step
     .loop 25,Stonetalon Mountains,80.62,89.99,79.79,88.75,81.19,87.56,81.70,86.44,82.26,86.10,82.55,85.22,83.64,85.02,84.20,85.20,83.80,86.38,83.25,87.23,82.33,89.73,82.33,90.43,81.34,90.78
     >>Kill |cRXP_ENEMY_Grimtotem Ruffians|r and |cRXP_ENEMY_Grimtotem Mercenaries|r in the area
@@ -2310,7 +2370,35 @@ step
     .complete 6548,2 --Kill Grimtotem Mercenary (x6)
     .mob Grimtotem Ruffian
     .mob Grimtotem Mercenary
+step << Druid
+    #season 2
+    .goto Stonetalon Mountains,80.2,90.6,60,0
+    .goto Stonetalon Mountains,83.2,87.0,60,0
+    .goto Stonetalon Mountains,71.6,86.6,60,0
+    .goto Stonetalon Mountains,76.6,91.0,60,0
+    .goto Stonetalon Mountains,80.2,90.6
+    >>Kill |cRXP_ENEMY_Grimtotems|r. Loot them for the |T134233:0|t[|cRXP_FRIENDLY_Idol of the Wild|r]
+    .collect 210534,1 -- Idol of the Wild (1)
+    .mob Grimtotem Mercenary
+    .mob Grimtotem Brute
+    .mob Grimtotem Sorcerer
+    .mob Grimtotem Ruffian
+    .train 410021,1
+step << Druid
+    #season 2
+    #completewith AvengeVillageTurnin
+    .equip 18,210534 >> |cRXP_WARN_Equip the|r |T134233:0|t[|cRXP_FRIENDLY_Idol of the Wild|r]
+    .use 210534
+    .itemcount 210534,1
+    .train 410021,1
+step << Druid
+    #season 2
+    #completewith next
+    >>|cRXP_WARN_Cast|r |T136085:0|t[Regrowth] |cRXP_WARN_or|r |T136041:0|t[Healing Touch] |cRXP_WARN_on 10 different friendly Beasts such as Hunter Pets/Druids in Bear Form/Shamans in Ghost Wolf|r
+    .train 410021 >> |cRXP_WARN_Use the|r |T134233:0|t[|cRXP_FRIENDLY_Idol of the Wild|r] |cRXP_WARN_to train|r |T132143:0|t[Wild Strikes]
+    .itemcount 210534,1
 step
+    #label AvengeVillageTurnin
     #map Stonetalon Mountains
     .goto The Barrens,35.19,27.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Makaba|r

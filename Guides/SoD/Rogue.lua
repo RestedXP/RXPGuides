@@ -1067,7 +1067,7 @@ step
     .train 400095,1
 step
     #season 2
-    .goto Tirisfal Glades,53.05,53.87
+    .goto Tirisfal Glades,52.89,54.03
     .use 208034 >>Use the |T134269:0|t[|cRXP_LOOT_Tirisfal Treasure Map|r] below the bridge
     >>Loot the |cRXP_PICK_Buried Treasure|r chest that spawns for |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Draw|r]
     .collect 203991,1 --Rune of Quick Draw (1s)
@@ -1256,9 +1256,11 @@ step
     .goto Tirisfal Glades,67.48,28.97,50,0
     .goto Tirisfal Glades,68.22,26.46,50,0
     .goto Tirisfal Glades,59.54,27.86
-    >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Vile Fin Puddlejumpers|r for |T134241:0|t[|cRXP_LOOT_Shipwreck Cache Key|r]
+    >>Use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Vile Fin Murlocs|r for |T134241:0|t[|cRXP_LOOT_Shipwreck Cache Key|r]
     .collect 208007,1 --Shipwreck Cache Key (1)
     .mob Vile Fin Puddlejumper
+    .mob Vile Fin Minor Oracle
+    .mob Vile Fin Muckdweller
     .train 400081,1
 step
     #season 2

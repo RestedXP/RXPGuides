@@ -5387,6 +5387,7 @@ step
     .zoneskip Tirisfal Glades
 step
     #label Entersilverpine
+    .goto Tirisfal Glades,53.20,75.82
     .zone Silverpine Forest >> Travel to Silverpine Forest
     .zoneskip Silverpine Forest
 ]])
