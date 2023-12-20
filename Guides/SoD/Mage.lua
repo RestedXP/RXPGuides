@@ -828,13 +828,20 @@ RXPGuides.RegisterGuide[[
 #subgroup Legs
 #name Icy Veins - 25 (Azeroth)
 
-<< Mage SoD
+<< Alliance Mage SoD
 
+--x Shiek: The guide is specifically tailored for players who have reached level 25, rather than being intended for use during the leveling process.
+--x Shiek: Although there are a total of 16 books in the game, only 10 are necessary for this particular purpose. The additional books, while not included in the current version of the guide, have been noted and could be referenced later if needed.
+--x Shiek: Furthermore, I have created distinct routes for both Horde and Alliance players. These routes are designed to be generally effective, considering the varying locations and book possessions players might have when they start following this guide.
+step
+    .collect 17031,10 >> Purchase |T134419:0|t[Rune of Teleportations] from a |cRXP_FRIENDLY_Reagent, Arcane Goods, Scrolls & Potion Vendor.|r |cRXP_WARN_This will greatly reduce travel time. manually skip this step if you want to go without.|r
 step
     #completewith next
     .train 425170,1
-    .zone Elwynn Forest >>Travel to Elwynn Forest
-step << Alliance
+    .zone Stormwind >>Travel to |cFFfa9602Stormwind.|r
+    .cast 3561 >>Use |T135763:0|t[Teleport Stormwind]
+    .disablecheckbox
+step
     .goto 1429,64.41,69.08,10,0
     .goto 1429,64.69,69.58,5,0
     .goto 1429,64.73,70.32,5,0
@@ -844,98 +851,49 @@ step << Alliance
     .goto 1429,65.02,70,5,0
     .goto 1429,65.47,70.07
     .train 425170,1
-    >>Click the |cRXP_PICK_Library Book|r |cFFfa9602on the shelf in Elwynn Forest|r for |T133744:0|t[Archmage Theocrituss Research Journal.]
+    >>Click on the |cRXP_PICK_Library Book|r located |cFFfa9602on a shelf in Elwynn Forest|r to obtain |T133744:0|t[Archmage Theocrituss Research Journal.]
     .collect 203755,1
     .isQuestAvailable 79092
-step << Human
+step 
     #completewith next
     .train 425170,1
-    .zone Westfall >>Travel to Westfall
-step << Gnome
-    #completewith next
+    .zone Westfall >>Travel to |cFFfa9602Westfall|r |cRXP_WARN_If you're not in Stormwind, travel on foot; otherwise, use a flight path.|r
+    .fly Westfall
+    .disablecheckbox
+    .isQuestAvailable 79093
+step
     .train 425170,1
-    .zone Loch Modan >>Travel to Loch Modan
-step << Alliance
-    .goto 1436,53.01,53.34,10,0 << Human
-    .goto 1436,52.64,53.83 << Human
-    .goto 1432,35.2,47.76,10,0 << Gnome
-    .goto 1432,35.5,48.98 << Gnome
+    .deathskip >>Die and respawn at the |cFF00FF25Spirit Healer|r
+    .isQuestAvailable 79092
+step 
+    .goto 1436,53.01,53.34,10,0 
+    .goto 1436,52.64,53.83 
     .train 425170,1
-    >>Click the |cRXP_PICK_Gnomish Tome|r for |T133744:0|t[Rumi of Gnomeregan the Collected Works] |cFFfa9602on the table in the Westfall Inn.|r << Human
-    >>Click the |cRXP_PICK_Gnomish Tome|r for |T133744:0|t[Rumi of Gnomeregan the Collected Works] |cFFfa9602on the table in the Loch Modan Inn.|r << Gnome
+    >>Click the |cRXP_PICK_Gnomish Tome|r |cFFfa9602on the table in the Westfall Inn|r to obtain |T133744:0|t[Rumi of Gnomeregan the Collected Works.] 
     .collect 208860,1
     .isQuestAvailable 79093
-step << Alliance
-    #completewith next
-    .train 425170,1
-    .zone Ironforge >>Travel to Ironforge
-step << Alliance
-    .goto 1455,69.76,24.39,10,0
-    .goto 1455,70.43,18.37,10,0
-    .goto 1455,75.99,10.55
-    .train 425170,1
-    >>Click the |cRXP_PICK_Library Book|r for |T133744:0|t[Archmage Antonidas the Unabridged Autobiography] |cFFfa9602on the table in Ironforge, Hall of Explorers.|r
-    .collect 203754,1
-    .isQuestAvailable 79091
-step << Horde
-    #completewith next
-    .train 425170,1
-    .zone Tirisfal Glades >>Travel to Tirisfal Glades
-step << Horde
-    .goto 1420,59.62,52.05,5,0
-    .goto 1420,59.39,52.29
-    .train 425170,1
-    >>Click on the |cRXP_PICK_The Apothecary's Society Primer|r for |T133737:0|t[The Apothecary's Metaphysical Primer] in |cFFfa9602Tirisfal Glades|r
-    .collect 208185,1
-    .isQuestAvailable 79095
-step << Horde
-    #completewith next
-    .train 425170,1
-    .zone Silverpine Forest >>Travel to Silverpine Forest
-step << Horde
-    .goto 1421,43.12,41.39,5,0
-    .goto 1421,42.7,41.37,5,0
-    .goto 1421,42.72,40.85,5,0
-    .goto 1421,43.43,41.29
-    .train 425170,1
-    >>Click on the |cRXP_PICK_Arcane Secrets|r for |T133744:0|t[Ataeric: On Arcane Curiosities] in |cFFfa9602Silverpine Forest.|r
-    .collect 219177,1
-    .isQuestAvailable 79096
-step << Horde
-    #completewith next
-    .train 425170,1
-    .zone Orgrimmar >>Travel to Orgrimmar
-step << Horde
-    .goto 1454,38.66,78.43
-    .train 425170,1
-    >>Click on the |cRXP_PICK_Big stone|r on the wall for |T134938:0|t[The Lessons of Ta'zo] in |cFFfa9602Orgrimmar.|r
-    .collect 207972,1
-    .isQuestAvailable 79094
-step << Horde
-    #completewith next
-    .train 425170,1
-    .zone Stonetalon Mountains >>Travel to Stonetalon Mountains
-step
-    .goto 1442,74.27,85.72,5,0
-    .goto 1442,74.37,85.75
-    .train 425170,1
-    >>Click the |T133209:0|t[Fury of the Land] |cFFfa9602in Stonetalon Mountain.|r
-    .collect 209851,1
-    .isQuestAvailable 78149
-step << Horde
-    #completewith next
-    .train 425170,1
-    .zone The Barrens >>Travel to The Barrens
-step
-    .goto 1442,56,8
-    .train 425170,1
-    >>Click the |cRXP_PICK_Manual|r for |T:134509|t[Arcanic Systems Manual] |cFFfa9602in the Barrens at the top of the Oil Rig.|r
-    .collect 209847,1
-    .isQuestAvailable 78145
+    --x shiek: designed for human, can be picked up as gnome.
 step
     #completewith next
     .train 425170,1
-    .zone The Barrens >>Travel to The Barrens
+    .zone Westfall >>Travel to |cFFfa9602Westfall|r |cRXP_WARN_If you're not in Stormwind, travel on foot; otherwise, use a flight path.|r
+    .isQuestAvailable 78142
+    .fly Westfall
+    .disablecheckbox
+step
+    .goto 1436,45.41,69.93,10,0
+    .goto 1436,45.36,70.43
+    .train 425170,1
+    >>Click the |cRXP_PICK_Spellbook|r located |cFFfa9602on the Alchemy Cabinet in a small house in Moonbrook, Westfall|r to obtain |T133733:0|t[Bewitchments and Glamours]
+    .collect 209845,1
+    .isQuestAvailable 78142
+step
+    #completewith next
+    .train 425170,1
+    .zone Duskwood >>Travel to |cFFfa9602Duskwood|r |cRXP_WARN_If you're not in Stormwind, travel on foot; otherwise, use a flight path.|r
+    .fly westfall
+    .disablecheckbox
+    .isQuestAvailable 78147
 step
     .goto 1431,15.9,38.74,10,0
     .goto 1431,15.3,38.52,5,0
@@ -944,75 +902,45 @@ step
     .goto 1431,16.15,30.75,5,0
     .goto 1431,16.64,28.33
     .train 425170,1
-    >>Click the |cRXP_PICK_Book|r |cFFfa9602on the Alchemy Table in Duskwood|r for |T133738:0|t[Crimes Against Anatomy.]
+    >>Click the |cRXP_PICK_Book|r |cFFfa9602on the Alchemy Table in Duskwood|r to obtain |T133738:0|t[Crimes Against Anatomy].
     .collect 209849,1
     .isQuestAvailable 78147
+step 
+    #completewith next
+    .train 425170,1
+    .zone Ironforge >>Travel |cFFfa9602to Ironforge.|r
+    .cast 3562 >>Use |T135757:0|t[Teleport Ironforge]
+    .disablecheckbox
+step 
+    .goto 1455,69.76,24.39,10,0
+    .goto 1455,70.43,18.37,10,0
+    .goto 1455,75.99,10.55
+    .train 425170,1
+    >>Click the |cRXP_PICK_Library Book|r |cFFfa9602on the table in Ironforge, Hall of Explorers|r to obtain |T133744:0|t[Archmage Antonidas the Unabridged Autobiography.]
+    .collect 203754,1
+    .isQuestAvailable 79091
+step 
+    #completewith next
+    .train 425170,1
+    .zone Loch Modan >>Travel to |cFFfa9602Loch Modan.|r
+    .fly Loch Modan
+    .disablecheckbox
+    .isQuestAvailable 79093
+step 
+    .train 425170,1
+    .goto 1432,35.2,47.76,10,0 
+    .goto 1432,35.5,48.98 
+    >>Click the |cRXP_PICK_Gnomish Tome|r |cFFfa9602on the table in the Loch Modan Inn|r to obtain |T133744:0|t[Rumi of Gnomeregan the Collected Works]. 
+    .collect 208860,1
+    .isQuestAvailable 79093
+    --x shiek: designed for gnome, can be picked up as human.
 step
     #completewith next
     .train 425170,1
-    .zone The Barrens >>Travel to The Barrens
-step
-    .goto 1413,45.98,36.39,15,0
-    .goto 1414,51.91,55.42,15,0
-    .goto 1414,51.98,55.23,15,0
-    .goto 1414,51.95,55.11,15,0
-    .goto 1414,51.89,54.79,15,0
-    .goto 1414,51.94,54.63,15,0
-    .goto 1414,52.01,54.57,15,0
-    .goto 1414,52.26,54.63,15,0
-    .goto 1414,52.48,54.93,15,0
-    .goto 1414,52.62,54.94,15,0
-    .goto 1414,52.83,54.71
-    .train 425170,1
-    .collect 209846 >>Click on the |cRXP_PICK_Scroll|r |cFFfa9602near the Barrens near the Wailing Caverns Portal on the ground|r for |T135142:0|t[Secrets of the Dreamers]
-    .isQuestAvailable 78143
-step
-    #completewith next
-    .train 425170,1
-    .zone The Barrens >>Travel to The Barrens
-step
-    .goto 1421,62.01,64.19,10,0
-    .goto 1421,63.08,63.99,5,0
-    .goto 1421,63.08,63.48,5,0
-    .goto 1421,63.54,63.13
-    .train 425170,1
-    >>Click the |cRXP_PICK_book|r for |T134917:0|t[The Dalaran Digest vol 23.]
-    .collect 209844,1
-    .isQuestAvailable 78127
-step
-    #completewith next
-    .train 425170,1
-    .zone The Barrens >>Travel to The Barrens
-step
-    .train 425170,1
-    >>Click the |cRXP_PICK_Goblin Tome|r for |T133744:0|t[Baxtan on Destructive Magics] |cFFfa9602in Ratchet next to |cRXP_FRIENDLY_Gazlove|r.|r
-    .collect 208800,1
-    .isQuestAvailable 79097
-step
-    #completewith next
-    .train 425170,1
-    .zone Westfall >>Travel to Westfall
-step
-    .goto 1436,45.41,69.93,10,0
-    .goto 1436,45.36,70.43
-    .train 425170,1
-    >>Click the |cRXP_PICK_Spellbook|r for |T133733:0|t[Bewitchments and Glamours] |cFFfa9602on the Alchemy Cabinit in a small house in Westfall, Moonbrook|r
-    .collect 209845,1
-    .isQuestAvailable 78142
-step
-    #completewith next
-    .train 425170,1
-    .zone Wetlands >>Travel to Wetlands
-step
-    .goto 1437,33.61,47.82
-    .train 425170,1
-    >>Click the |cRXP_PICK_Scroll |r for |T237450:0|t[Goaz Scrolls] in |cFFfa9602Wetlands|r
-    .collect 209848,1
-    .isQuestAvailable 78146
-step
-    #completewith next
-    .train 425170,1
-    .zone Loch Modan >>Travel to Loch Modan
+    .zone Loch Modan >>Travel to |cFFfa9602Loch Modan|r
+    .fly Loch Modan
+    .disablecheckbox
+    .isQuestAvailable 78148
 step
     .goto 1432,74.61,19.91,10,0
     .goto 1432,75.46,18.66,5,0
@@ -1020,27 +948,90 @@ step
     .goto 1432,76.42,14.67,5,0
     .goto 1432,77.45,14.15
     .train 425170,1
-    >>Click the |cRXP_PICK_Scroll|r in |cFFfa9602Loch Modan|r for |T134938:0|t[Runes of the Sorcerer Kings.]
+    >>Click the |cRXP_PICK_Scroll|r in |cFFfa9602Loch Modan|r to obtain |T134938:0|t[Runes of the Sorcerer Kings.]
     .collect 209850,1
+    .isQuestAvailable 78148
+step
+    .train 425170,1
+    .deathskip >>Die and respawn at the |cFF00FF25Spirit Healer|r
     .isQuestAvailable 78148
 step
     #completewith next
     .train 425170,1
-    .zone Darkshore >>Travel to Darkshore
+    .zone Wetlands >>Travel to |cFFfa9602Wetlands.|r
+    .fly Menethil Harbor
+    .disablecheckbox
+step
+    .goto 1437,33.61,47.82
+    .train 425170,1
+    >>Click the |cRXP_PICK_Scroll|r in |cFFfa9602Wetlands|r to obtain |T237450:0|t[Goaz Scrolls.]
+    .collect 209848,1
+    .isQuestAvailable 78146
+step
+    .train 425170,1
+    .deathskip >>Die and respawn at the |cFF00FF25Spirit Healer|r
+    .isQuestAvailable 78146
+step
+    #completewith next
+    .train 425170,1
+    .zone Darkshore >>Travel to |cFFfa9602Darkshore|r
+    .isQuestAvailable 78124
 step
     .goto 1439,59.51,23.05,10,0
     .goto 1439,58.99,22.49,10,0
     .goto 1439,59.07,23.07,15,0
     .goto 1439,59.62,22.13
     .train 425170,1
-    >>Click the |cRXP_PICK_Scroll|r in |cFFfa9602Darkshore|r for |T237447:0|t[Narthalas Almanac vol 74.]
+    >>Click the |cRXP_PICK_Scroll|r in |cFFfa9602Darkshore|r to obtain |T237447:0|t[Narthalas Almanac vol 74.]
     .collect 209843,1
     .isQuestAvailable 78124
-step << Alliance
+step
+    .train 425170,1
+    .isQuestAvailable 78146
+    .deathskip >>Die and respawn at the |cFF00FF25Spirit Healer|r
+step
     #completewith next
     .train 425170,1
-    .zone Stormwind City >>Travel to Stormwind
-step << Alliance
+    .isQuestAvailable 78149
+    .zone Stonetalon Mountains >>Travel to |cFFfa9602Stonetalon Mountains|r
+    .fly Stonetalon Mountains 
+    .disablecheckbox
+step
+    .goto 1442,74.27,85.72,5,0
+    .goto 1442,74.37,85.75
+    .train 425170,1
+    >>Click the |cRXP_PICK_Scroll|r |cFFfa9602in Stonetalon Mountain|r to obtain |T133209:0|t[Fury of the Land.] 
+    .collect 209851,1
+    .isQuestAvailable 78149
+step 
+    #completewith next
+    .train 425170,1
+    .zone Ironforge >>Travel |cFFfa9602to Ironforge.|r
+    .cast 3562 >>Use |T135757:0|t[Teleport Ironforge]
+    .disablecheckbox
+step
+    #completewith next
+    .train 425170,1
+    .isQuestAvailable 78127
+    .zone Silverpine Forest >>Travel to |cFFfa9602The Silverpine Forest.|r
+    .fly Hillsbrad
+    .disablecheckbox
+step
+    .goto 1421,62.01,64.19,10,0
+    .goto 1421,63.08,63.99,5,0
+    .goto 1421,63.08,63.48,5,0
+    .goto 1421,63.54,63.13
+    .train 425170,1
+    >>Click on the |cRXP_PICK_Book|r |cFFfa9602inside the Amber Hill Main Castle in Silverpine Forest|r to obtain |T134917:0|t[The Dalaran Digest vol 23.]
+    .collect 209844,1
+    .isQuestAvailable 78127
+step 
+    #completewith next
+    .train 425170,1
+    .zone Stormwind >>Travel to |cFFfa9602Stormwind.|r
+    .cast 3561 >>Use |T135763:0|t[Teleport Stormwind]
+    .disablecheckbox
+step 
     .train 425170,1
     .goto Stormwind City,37.81,79.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Maginor Dumas|r |cFFfa9602in Stormwind, Mage Tower.|r
@@ -1058,11 +1049,164 @@ step << Alliance
     .turnin 79093 >>Turn in Rumi of Gnomeregan: The Collected Works
     .turnin 79097 >>Turn in Ataeric: Baxtan: On Destructive Magics
     .turnin 78150 >>Turn in Friend of the Library
-step << Horde
+]]
+
+RXPGuides.RegisterGuide[[
+#classic
+#group RestedXP Rune Guide
+#subgroup Legs
+#name Icy Veins - 25 (Azeroth)
+
+<< Horde Mage SoD
+
+--x Shiek: The guide is specifically tailored for players who have reached level 25, rather than being intended for use during the leveling process.
+--x Shiek: Although there are a total of 16 books in the game, only 10 are necessary for this particular purpose. The additional books, while not included in the current version of the guide, have been noted and could be referenced later if needed.
+--x Shiek: Furthermore, I have created distinct routes for both Horde and Alliance players. These routes are designed to be generally effective, considering the varying locations and book possessions players might have when they start following this guide.
+
+step
+    .collect 17031,10 >> Purchase |T134419:0|t[Rune of Teleportations] from a |cRXP_FRIENDLY_Reagent, Arcane Goods, Scrolls & Potion Vendor.|r |cRXP_WARN_This will greatly reduce travel time. manually skip this step if you want to go without.|r
+step 
     #completewith next
     .train 425170,1
-    .zone Undercity >>Travel to Undercity
-step << Horde
+    .zone Orgrimmar >>Travel to |cFFfa9602Orgrimmar|r
+    .cast 3567 >>Use |T135759:0|t[Teleport Orgrimmar]
+    .disablecheckbox
+    .isQuestAvailable 79094
+step 
+    .goto 1454,38.66,78.43
+    .train 425170,1
+    >>Click on the |cRXP_PICK_Giant Stone|r |cFFfa9602on the wall in Orgrimmar|r to obtain |T134938:0|t[The Lessons of Ta'zo.]
+    .collect 207972,1
+    .isQuestAvailable 79094
+step
+    #completewith next
+    .train 425170,1
+    .zone The Barrens >>Travel to |cFFfa9602The Barrens.|r
+    .fly Ratchet
+    .disablecheckbox
+    .isQuestAvailable 79097
+step
+    .train 425170,1
+    >>Click on the |cRXP_PICK_Goblin Tome|r |cFFfa9602in Ratchet next to|r |cRXP_FRIENDLY_Gazlove|r to obtain |T133744:0|t[Baxtan on Destructive Magics.]
+    .collect 208800,1
+    .isQuestAvailable 79097
+step
+    #completewith next
+    .train 425170,1
+    .zone The Barrens >>Travel to |cFFfa9602The Barrens|r
+    .fly Crossroads
+    .disablecheckbox
+    .isQuestAvailable 78143
+step
+    .goto 1413,45.98,36.39,15,0
+    .goto 1414,51.91,55.42,15,0
+    .goto 1414,51.98,55.23,15,0
+    .goto 1414,51.95,55.11,15,0
+    .goto 1414,51.89,54.79,15,0
+    .goto 1414,51.94,54.63,15,0
+    .goto 1414,52.01,54.57,15,0
+    .goto 1414,52.26,54.63,15,0
+    .goto 1414,52.48,54.93,15,0
+    .goto 1414,52.62,54.94,15,0
+    .goto 1414,52.83,54.71
+    .train 425170,1
+    >>Click on the |cRXP_PICK_Scroll|r located |cFFfa9602on the ground near the Wailing Caverns Portal in the Barrens|r to obtain |T135142:0|t[Secrets of the Dreamers.]
+    .collect 209846,1
+    .isQuestAvailable 78143
+step
+    .goto 1414,52.83,54.71
+    .deathskip >>Die and respawn at the |cFF00FF25Spirit Healer|r
+    .train 425170,1
+    .isQuestAvailable 78143
+step 
+    #completewith next
+    .train 425170,1
+    .zone The Barrens >>Travel to |cFFfa9602The Barrens|r
+    .isQuestAvailable 78145
+step
+    .goto 1442,56,8
+    .train 425170,1
+    >>Click the |cRXP_PICK_Manual|r |cFFfa9602at the top of the Oil Rig in the Barrens|r to obtain |T134509:0|t[Arcanic Systems Manual.]
+    .collect 209847,1
+    .isQuestAvailable 78145
+step
+    #completewith next
+    .train 425170,1
+    .zone Stonetalon Mountains >>Travel to |cFFfa9602Stonetalon Mountains|r
+    .fly Stonetalon Mountains
+    .disablecheckbox
+    .isQuestAvailable 78149
+step
+    .goto 1442,74.27,85.72,5,0
+    .goto 1442,74.37,85.75
+    .train 425170,1
+    >>Click the |cRXP_PICK_Scroll|r |cFFfa9602in Stonetalon Mountain|r to obtain |T133209:0|t[Fury of the Land.] 
+    .collect 209851,1
+    .isQuestAvailable 78149
+step
+    #completewith next
+    .train 425170,1
+    .zone Darkshore >>Travel to |cFFfa9602Darkshore|r
+    .fly Darkshore
+    .disablecheckbox
+    .isQuestAvailable 78124
+step
+    .goto 1439,59.51,23.05,10,0
+    .goto 1439,58.99,22.49,10,0
+    .goto 1439,59.07,23.07,15,0
+    .goto 1439,59.62,22.13
+    .train 425170,1
+    >>Click the |cRXP_PICK_Scroll|r in |cFFfa9602Darkshore|r to obtain |T237447:0|t[Narthalas Almanac vol 74.]
+    .collect 209843,1
+    .isQuestAvailable 78124
+step 
+    #completewith next
+    .train 425170,1
+    .zone Undercity >>Travel to |cFFfa9602Undercity|r
+    .cast 3563 >>Use |T135766:0|t[Teleport Undercity]
+    .disablecheckbox
+step 
+    .goto 1420,59.62,52.05,5,0
+    .goto 1420,59.39,52.29
+    .train 425170,1
+    >>Click on the |cRXP_PICK_The Apothecary's Society Primer|r |cFFfa9602in Tirisfal Glades, Brill|r to obtain |T133737:0|t[The Apothecary's Metaphysical Primer.]
+    .collect 208185,1
+    .isQuestAvailable 79095
+step 
+    #completewith next
+    .train 425170,1
+    .zone Silverpine Forest >>Travel to |cFFfa9602Silverpine Forest.|r
+    .isQuestAvailable 79096
+step 
+    .goto 1421,43.12,41.39,5,0
+    .goto 1421,42.7,41.37,5,0
+    .goto 1421,42.72,40.85,5,0
+    .goto 1421,43.43,41.29
+    .train 425170,1
+    >>Click on the |cRXP_PICK_Arcane Secrets|r |cFFfa9602in Silverpine Forest|r to obtain |T133744:0|t[Ataeric: On Arcane Curiosities.]
+    .collect 219177,1
+    .isQuestAvailable 79096
+step
+    #completewith next
+    .train 425170,1
+    .zone Silverpine Forest >>Travel to |cFFfa9602The Silverpine Forest.|r
+    .isQuestAvailable 78127
+step
+    .goto 1421,62.01,64.19,10,0
+    .goto 1421,63.08,63.99,5,0
+    .goto 1421,63.08,63.48,5,0
+    .goto 1421,63.54,63.13
+    .train 425170,1
+    >>Click on the |cRXP_PICK_Book|r |cFFfa9602inside the Amber Hill Main Castle in Silverpine Forest|r to obtain |T134917:0|t[The Dalaran Digest vol 23.]
+    .collect 209844,1
+    .isQuestAvailable 78127
+step 
+    #completewith next
+    .train 425170,1
+    .zone Undercity >>Travel to |cFFfa9602Undercity|r
+    .cast 3563 >>Use |T135766:0|t[Teleport Undercity]
+    .disablecheckbox
+step 
     .train 425170,1
     .goto 1458,73.47,33.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Owen Thadd|r |cFFfa9602in Undercity, Magic Quarter.|r
@@ -1080,8 +1224,6 @@ step << Horde
     .turnin 79096 >>Turn in Ataeric: On Arcane Curiosities
     .turnin 79097 >>Turn in Ataeric: Baxtan: On Destructive Magics
     .turnin 78150 >>Turn in Friend of the Library
--- step
-    --.engrave 7,425121 >> Open your character sheet and engrave your legs with |T135838:0|t[Icy Veins.]
 ]]
 
 RXPGuides.RegisterGuide([[
