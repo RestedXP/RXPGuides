@@ -1983,7 +1983,6 @@ function addon.functions.collect(self, ...)
         element.itemName = addon.GetItemName(id)
         --[[
 .collect itemId,quantity,questId,objFlags,flags
-.collect itemId,3,905,7,3
 
 flags:
 1   (0x1): Disables the checkBox
@@ -4113,13 +4112,16 @@ end
 function addon.functions.itemcount(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
-        local text, id, str = ...
+        local text, id, str, flags = ...
         local operator, eq, total
 
         if str then
             str = str:gsub(" ", "")
             operator, eq, total = str:match("([<>]?)(=?)%s*(%d+)")
         end
+        --flags = tonumber(flags) or 0
+        --element.enableBank = bit.band(flags, 0x1) == 0x1
+        element.enableBank = flags
         element.id = tonumber(id)
         element.total = tonumber(total)
         if not (element.total and element.id) then
@@ -4148,7 +4150,7 @@ function addon.functions.itemcount(self, ...)
     local operator = element.operator
     local eq = element.eq
     local total = element.total
-    local count = GetItemCount(element.id)
+    local count = GetItemCount(element.id,element.enableBank)
     for i = 1, _G.INVSLOT_LAST_EQUIPPED do
         if GetInventoryItemID("player", i) == element.id then
             count = count + 1
