@@ -451,7 +451,7 @@ step
 	.isOnQuest 13679 << Alliance
 	.isOnQuest 13680 << Horde
 step
-	>>Jump off the |cRXP_FRIENDLY_ Quel'dorei Steed|r << Alliance
+	>>Jump off the |cRXP_FRIENDLY_Quel'dorei Steed|r << Alliance
 	>>Jump off the |cRXP_FRIENDLY_Stabled Sunreaver Hawkstrider|r << Horde
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arcanist Taelis|r << Alliance
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magister Edien Sunhollow|r << Horde
@@ -5340,7 +5340,7 @@ step
 	.achievement 2816 << Horde
 step
 	>>Enter the Argent Pavilion
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Crusader Adelard|r and |cRXP_FRIENDLY_ Crusader Silverdawn|r.
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Crusader Adelard|r and |cRXP_FRIENDLY_Crusader Silverdawn|r.
 	.daily 14105,14101,14102,14104 >>Accept Deathspeaker Kharos
 	>>|c99ffff99OR|r Drottinn Hrothgar
 	>>|c99ffff99OR|r Mistcaller Yngvar
