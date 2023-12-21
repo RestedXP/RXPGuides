@@ -8,7 +8,7 @@ step
 	#completewith next
 	.goto IcecrownGlacier,69.66,22.86,200 >> Travel to the |T236690:0|tArgent Tournament Grounds in Icecrown
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Justicar Mariel Trueheart|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Justicar Mariel Trueheart|r
 	.goto IcecrownGlacier,69.66,22.86
 	.accept 13667 >> Accept The Argent Tournament << Alliance
 	.accept 13668 >> Accept The Argent Tournament << Horde
@@ -21,8 +21,8 @@ step
 step
 	>>Enter the Alliance Silver Covenant Pavilion << Alliance
 	>>Enter the Horde Sunreaver Pavilion << Horde
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Arcanist Taelis|r << Alliance
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Magister Edien|r Sunhollow << Horde
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arcanist Taelis|r << Alliance
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magister Edien|r Sunhollow << Horde
 	.goto IcecrownGlacier,76.46,19.41 << Alliance
 	.goto IcecrownGlacier,76.27,24.38 << Horde
 	.turnin 13667 >> Turn in The Argent Tournament << Alliance
@@ -30,8 +30,8 @@ step
 	.target Arcanist Taelis << Alliance
 	.target Magister Edien Sunhollow << Horde
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Arcanist Taelis|r, |cRXP_FRIENDLY_ Avareth Swiftstrike|r and |cRXP_FRIENDLY_ Scout Shalyndria|r << Alliance
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Magister Edien Sunhollow|r, |cRXP_FRIENDLY_ Amariel Sunsworn|r and |cRXP_FRIENDLY_ Galathia Brightdawn|r << Horde
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arcanist Taelis|r, |cRXP_FRIENDLY_Avareth Swiftstrike|r and |cRXP_FRIENDLY_Scout Shalyndria|r << Alliance
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magister Edien Sunhollow|r, |cRXP_FRIENDLY_Amariel Sunsworn|r and |cRXP_FRIENDLY_Galathia Brightdawn|r << Horde
 	.accept 13828 >> Accept Mastery Of Melee << Alliance
 	.goto IcecrownGlacier,76.46,19.41 << Alliance
 	.accept 13837 >> Accept Mastery Of The Charge << Alliance
@@ -54,14 +54,14 @@ step
 	#completewith next
 	.goto IcecrownGlacier,75.93,20.37 << Alliance
 	.goto IcecrownGlacier,75.63,23.66 << Horde
-	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the |cRXP_FRIENDLY_ Stabled Quel'dorei Steed|r << Alliance
-	.vehicle >>Equip the |T135128:0|t|c99ffff99Horde Lance|r in your Bags then Mount the |cRXP_FRIENDLY_ Stabled Sunreaver Hawkstrider|r << Horde
+	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the |cRXP_FRIENDLY_Stabled Quel'dorei Steed|r << Alliance
+	.vehicle >>Equip the |T135128:0|t|c99ffff99Horde Lance|r in your Bags then Mount the |cRXP_FRIENDLY_Stabled Sunreaver Hawkstrider|r << Horde
 	.use 46069 << Alliance
 	.use 46070 << Horde
 	.target Stabled Quel'dorei Steed << Alliance
 	.target Stabled Sunreaver Hawkstrider << Horde
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Valis Windchaser|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valis Windchaser|r
 	.goto IcecrownGlacier,76.66,21.13,20,0 << Horde
 	.goto IcecrownGlacier,73.20,19.23
 	.complete 13835,1 << Alliance -- Valis Windchaser's advice
@@ -80,7 +80,7 @@ step
 step
 	.isOnQuest 13837 << Alliance
 	.isOnQuest 13839 << Horde
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Rugan Steelbelly|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rugan Steelbelly|r
 	.goto IcecrownGlacier,72.67,18.87
 	.complete 13837,1 << Alliance -- Rugan Steelbelly's advice
 	.complete 13839,1 << Horde -- Rugan Steelbelly's advice
@@ -98,7 +98,7 @@ step
 step
 	.isOnQuest 13828 << Alliance
 	.isOnQuest 13829 << Horde
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Jeran Lockwood|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeran Lockwood|r
 	.goto IcecrownGlacier,72.46,19.30
 	.complete 13828,1 << Alliance -- Jeran Lockwood's advice
 	.complete 13829,1 << Horde -- Jeran Lockwood's advice
@@ -115,8 +115,8 @@ step
 	.complete 13829,2 << Horde -- Use Thrust on Melee Target (5)
 	.mob Melee Target
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Arcanist Taelis|r, |cRXP_FRIENDLY_ Avareth Swiftstrike|r and |cRXP_FRIENDLY_ Scout Shalyndria|r << Alliance
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Magister Edien Sunhollow|r, |cRXP_FRIENDLY_ Amariel Sunsworn|r and |cRXP_FRIENDLY_ Galathia Brightdawn|r << Horde
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arcanist Taelis|r, |cRXP_FRIENDLY_Avareth Swiftstrike|r and |cRXP_FRIENDLY_Scout Shalyndria|r << Alliance
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magister Edien Sunhollow|r, |cRXP_FRIENDLY_Amariel Sunsworn|r and |cRXP_FRIENDLY_Galathia Brightdawn|r << Horde
 	.turnin 13828 >> Turn in Mastery Of Melee << Alliance
 	.goto IcecrownGlacier,76.46,19.41 << Alliance
 	.turnin 13837 >> Turn in Mastery Of The Charge << Alliance
@@ -136,8 +136,8 @@ step
 	.target Amariel Sunsworn << Horde
 	.target Galathia Brightdawn << Horde
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Arcanist Taelis|r << Alliance
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Magister Edien Sunhollow|r << Horde
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arcanist Taelis|r << Alliance
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magister Edien Sunhollow|r << Horde
 	.accept 13672 >> Accept Up To The Challenge << Alliance
 	.goto IcecrownGlacier,76.46,19.41 << Alliance
 	.accept 13678 >> Accept Up To The Challenge << Horde
@@ -145,14 +145,14 @@ step
 	.target Arcanist Taelis << Alliance
 	.target Magister Edien Sunhollow << Horde
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Arcanist Taelis|r. He has 1 out of 3 daily quests. Accept whichever is available << Alliance
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arcanist Taelis|r. He has 1 out of 3 daily quests. Accept whichever is available << Alliance
 	.daily 13669,13670,13666 >>Accept A Blade Fit For A Champion |c99ffff99OR|r The Edge Of Winter |c99ffff99OR|r A Worthy Weapon << Alliance
 	.goto IcecrownGlacier,76.46,19.41 << Alliance
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Magister Edien Sunhollow|r. He has 1 out of 3 daily quests. Accept whichever is available << Horde
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magister Edien Sunhollow|r. He has 1 out of 3 daily quests. Accept whichever is available << Horde
 	.daily 13674,13675,13673 >>Accept A Blade Fit For A Champion |c99ffff99OR|r The Edge Of Winter |c99ffff99OR|r A Worthy Weapon << Horde
 	.goto IcecrownGlacier,76.27,24.38 << Horde
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Avareth Swiftstrike|r and |cRXP_FRIENDLY_ Scout Shalyndria|r << Alliance
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Amariel Sunsworn|r and |cRXP_FRIENDLY_ Galathia Brightdawn|r << Horde
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avareth Swiftstrike|r and |cRXP_FRIENDLY_Scout Shalyndria|r << Alliance
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amariel Sunsworn|r and |cRXP_FRIENDLY_Galathia Brightdawn|r << Horde
 	.daily 13671 >> Accept Training In The Field << Alliance
 	.goto IcecrownGlacier,76.44,19.35 << Alliance
 	.daily 13676 >> Accept Training In The Field << Horde
@@ -175,8 +175,8 @@ step
 	.isOnQuest 13677 << Horde
 	.goto IcecrownGlacier,75.93,20.37 << Alliance
 	.goto IcecrownGlacier,75.63,23.66 << Horde
-	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the |cRXP_FRIENDLY_ Stabled Quel'dorei Steed|r << Alliance
-	.vehicle >>Equip the |T135128:0|t|c99ffff99Horde Lance|r in your Bags then Mount the |cRXP_FRIENDLY_ Stabled Sunreaver Hawkstrider|r << Horde
+	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the |cRXP_FRIENDLY_Stabled Quel'dorei Steed|r << Alliance
+	.vehicle >>Equip the |T135128:0|t|c99ffff99Horde Lance|r in your Bags then Mount the |cRXP_FRIENDLY_Stabled Sunreaver Hawkstrider|r << Horde
 	.use 46069 << Alliance
 	.use 46070 << Horde
 	.target Stabled Quel'dorei Steed << Alliance
@@ -312,8 +312,8 @@ step
 	.goto IcecrownGlacier,76.27,24.38,300 >> Return to the |T236690:0|tArgent Tournament Grounds in Icecrown << Horde
 	.isOnQuest 13666,13673,13675,13670,13674,13669
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Arcanist Taelis|r, |cRXP_FRIENDLY_ Avareth Swiftstrike|r and |cRXP_FRIENDLY_ Scout Shalyndria|r << Alliance
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Magister Edien Sunhollow|r, |cRXP_FRIENDLY_ Amariel Sunsworn|r and |cRXP_FRIENDLY_ Galathia Brightdawn|r << Horde
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arcanist Taelis|r, |cRXP_FRIENDLY_Avareth Swiftstrike|r and |cRXP_FRIENDLY_Scout Shalyndria|r << Alliance
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magister Edien Sunhollow|r, |cRXP_FRIENDLY_Amariel Sunsworn|r and |cRXP_FRIENDLY_Galathia Brightdawn|r << Horde
 	.turnin 13669 >> Turn in A Worthy Weapon << Alliance
 	.goto IcecrownGlacier,76.46,19.41 << Alliance
 	.turnin 13674 >> Turn in A Worthy Weapon << Horde
@@ -335,8 +335,8 @@ step
 	.isQuestComplete 13669 << Alliance -- A Worthy Weapon
 	.isQuestComplete 13674 << Horde -- A Worthy Weapon
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Arcanist Taelis|r, |cRXP_FRIENDLY_ Avareth Swiftstrike|r and |cRXP_FRIENDLY_ Scout Shalyndria|r << Alliance
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Magister Edien Sunhollow|r, |cRXP_FRIENDLY_ Amariel Sunsworn|r and |cRXP_FRIENDLY_ Galathia Brightdawn|r << Horde
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arcanist Taelis|r, |cRXP_FRIENDLY_Avareth Swiftstrike|r and |cRXP_FRIENDLY_Scout Shalyndria|r << Alliance
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magister Edien Sunhollow|r, |cRXP_FRIENDLY_Amariel Sunsworn|r and |cRXP_FRIENDLY_Galathia Brightdawn|r << Horde
 	.turnin 13670 >> Turn in The Edge Of Winter << Alliance
 	.goto IcecrownGlacier,76.46,19.41 << Alliance
 	.turnin 13675 >> Turn in The Edge Of Winter << Horde
@@ -358,8 +358,8 @@ step
 	.isQuestComplete 13670 << Alliance -- The Edge Of Winter
 	.isQuestComplete 13675 << Horde -- The Edge Of Winter
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Arcanist Taelis|r, |cRXP_FRIENDLY_ Avareth Swiftstrike|r and |cRXP_FRIENDLY_ Scout Shalyndria|r << Alliance
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Magister Edien Sunhollow|r, |cRXP_FRIENDLY_ Amariel Sunsworn|r and |cRXP_FRIENDLY_ Galathia Brightdawn|r << Horde
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arcanist Taelis|r, |cRXP_FRIENDLY_Avareth Swiftstrike|r and |cRXP_FRIENDLY_Scout Shalyndria|r << Alliance
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magister Edien Sunhollow|r, |cRXP_FRIENDLY_Amariel Sunsworn|r and |cRXP_FRIENDLY_Galathia Brightdawn|r << Horde
 	.turnin 13666 >> Turn in A Blade Fit For A Champion << Alliance
 	.goto IcecrownGlacier,76.46,19.41 << Alliance
 	.turnin 13673 >> Turn in A Blade Fit For A Champion << Horde
@@ -381,8 +381,8 @@ step
 	.isQuestComplete 13666 << Alliance -- A Blade Fit For A Champion
 	.isQuestComplete 13673 << Horde -- A Blade Fit For A Champion
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Avareth Swiftstrike|r and |cRXP_FRIENDLY_ Scout Shalyndria|r << Alliance
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Amariel Sunsworn|r and |cRXP_FRIENDLY_ Galathia Brightdawn|r << Horde
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avareth Swiftstrike|r and |cRXP_FRIENDLY_Scout Shalyndria|r << Alliance
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amariel Sunsworn|r and |cRXP_FRIENDLY_Galathia Brightdawn|r << Horde
 	.turnin -13671 >> Turn In Training In The Field << Alliance
 	.goto IcecrownGlacier,76.44,19.35 << Alliance
 	.turnin -13676 >> Turn in Training In The Field << Horde
@@ -399,8 +399,8 @@ step -- Checking if they have 15 Aspirant's Seals after a set of turn ins.
 	>>In order to complete the quest |cFFffff00Up To The Challenge|r and progress through the |T236690:0|tArgent Tournament Grounds you must complete daily quests and acquire |T133443:0|t|c99CCFFFFAspirant's Seals|r
 	>>You need |T133443:0|t|c99CCFFFF15 Aspirant's Seals|r. You will earn 5 per day if you complete the 3 daily quests
 	>>|c99ffff99RELOAD THE GUIDE THE NEXT DAY IF YOU STILL NEED TO COMPLETE THE DAILY QUESTS UNTIL YOU CAN TURN THIS QUEST IN|r.
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Arcanist Taelis|r << Alliance
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Magister Edien Sunhollow|r << Horde
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arcanist Taelis|r << Alliance
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magister Edien Sunhollow|r << Horde
 	.complete 13672,1 << Alliance -- Aspirant's Seal (15)
 	.complete 13678,1 << Horde -- Aspirant's Seal (15)
 	.turnin 13672 >> Turn in Up To The Challenge << Alliance
@@ -410,8 +410,8 @@ step -- Checking if they have 15 Aspirant's Seals after a set of turn ins.
 	.target Arcanist Taelis << Alliance
 	.target Magister Edien Sunhollow << Horde
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Arcanist Taelis|r << Alliance
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Magister Edien Sunhollow|r << Horde
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arcanist Taelis|r << Alliance
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magister Edien Sunhollow|r << Horde
 	.accept 13679 >> Accept The Aspirant's Challenge << Alliance
 	.accept 13680 >> Accept The Aspirant's Challenge << Horde
 	.goto IcecrownGlacier,76.46,19.41 << Alliance
@@ -423,8 +423,8 @@ step
 step
 	#completewith next
 	>>Fly to the Aspirants' Ring on the northern side
-	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the |cRXP_FRIENDLY_ Stabled Quel'dorei Steed|r << Alliance
-	.vehicle >>Equip the |T135128:0|t|c99ffff99Horde Lance|r in your Bags then Mount the |cRXP_FRIENDLY_ Stabled Sunreaver Hawkstrider|r << Horde
+	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the |cRXP_FRIENDLY_Stabled Quel'dorei Steed|r << Alliance
+	.vehicle >>Equip the |T135128:0|t|c99ffff99Horde Lance|r in your Bags then Mount the |cRXP_FRIENDLY_Stabled Sunreaver Hawkstrider|r << Horde
 	>>If you have misplaced your |T135128:0|t|c99ffff99Alliance Lance|r you can pick one up again just inside the Pavilion << Alliance
 	>>If you have misplaced your |T135128:0|t|c99ffff99Horde Lance|r you can pick one up again just inside the Pavilion << Horde
 	.goto IcecrownGlacier,71.84,19.87 << Alliance
@@ -436,7 +436,7 @@ step
 	.isOnQuest 13679 << Alliance
 	.isOnQuest 13680 << Horde
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Squire David|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire David|r
 	>>Remember to use |T132360:0|tDefend (4) and maintain stacks of it during the duel
 	>>Use |T132358:0|tShield-Breaker (2) to remove |T132360:0|tDefend stacks from the |cRXP_ENEMY_Valiant|r constantly
 	>>Once no stacks of |T132360:0|tDefend remain on the |cRXP_ENEMY_Valiant|r, use |T132226:0|tCharge (3) as well as |T135375:0|tThrust (1) while in melee range
@@ -451,10 +451,10 @@ step
 	.isOnQuest 13679 << Alliance
 	.isOnQuest 13680 << Horde
 step
-	>>Jump off the |cRXP_FRIENDLY_  Quel'dorei Steed|r << Alliance
-	>>Jump off the |cRXP_FRIENDLY_ Stabled Sunreaver Hawkstrider|r << Horde
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Arcanist Taelis|r << Alliance
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Magister Edien Sunhollow|r << Horde
+	>>Jump off the |cRXP_FRIENDLY_ Quel'dorei Steed|r << Alliance
+	>>Jump off the |cRXP_FRIENDLY_Stabled Sunreaver Hawkstrider|r << Horde
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arcanist Taelis|r << Alliance
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magister Edien Sunhollow|r << Horde
 	.goto IcecrownGlacier,76.46,19.41 << Alliance
 	.goto IcecrownGlacier,76.27,24.38 << Horde
 	.turnin 13679 >> Turn in The Aspirant's Challenge << Alliance
@@ -472,16 +472,16 @@ step
 	.target Arcanist Taelis << Alliance
 	.target Magister Edien Sunhollow << Horde
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Colosos|r << Draenei
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Lana Stouthammer|r << Dwarf
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Ambrose Boltspark|r << Gnome
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Marshal Jacob Alerius|r << Human
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Jaelyne Evensong|r << NightElf
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Deathstalker Visceri|r << Scourge
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Mokra the Skullcrusher|r << Orc
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Runok Wildmane|r << Tauren
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Zul'tore|r << Troll
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Eressea Dawnsinger|r << BloodElf
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Colosos|r << Draenei
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lana Stouthammer|r << Dwarf
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambrose Boltspark|r << Gnome
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Jacob Alerius|r << Human
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jaelyne Evensong|r << NightElf
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Visceri|r << Scourge
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mokra the Skullcrusher|r << Orc
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Runok Wildmane|r << Tauren
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zul'tore|r << Troll
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eressea Dawnsinger|r << BloodElf
 	.goto IcecrownGlacier,76.10,19.10 << Draenei
 	.goto IcecrownGlacier,76.64,19.49 << Dwarf
 	.goto IcecrownGlacier,76.55,19.82 << Gnome
@@ -524,10 +524,10 @@ step
 	.target Eressea Dawnsinger << BloodElf
 
 step << Human
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Marshal Jacob Alerius|r. He has 1 out of 3 daily quests. Accept whichever is available
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Jacob Alerius|r. He has 1 out of 3 daily quests. Accept whichever is available
 	.daily 13603,13616,13600 >>Accept A Blade Fit For A Champion |c99ffff99OR|r The Edge Of Winter |c99ffff99OR|r A Worthy Weapon
 	.goto IcecrownGlacier,76.60,19.12
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Sir Marcus Barlowe|r and |cRXP_FRIENDLY_ Captain Joseph Holley|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sir Marcus Barlowe|r and |cRXP_FRIENDLY_Captain Joseph Holley|r
 	.daily 13592 >> Accept A Valiant's Field Training
 	.goto IcecrownGlacier,76.53,19.08
 	.daily 13665 >> Accept The Grand Melee
@@ -539,10 +539,10 @@ step << Human
 	.isQuestAvailable 13718
 
 step << Draenei
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Colosos|r. He has 1 out of 3 daily quests. Accept whichever is available
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Colosos|r. He has 1 out of 3 daily quests. Accept whichever is available
 	.daily 13752,13754,13753 >>Accept A Blade Fit For A Champion |c99ffff99OR|r The Edge Of Winter |c99ffff99OR|r A Worthy Weapon
 	.goto IcecrownGlacier,76.10,19.10
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Saandos|r and |cRXP_FRIENDLY_ Ranii|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Saandos|r and |cRXP_FRIENDLY_Ranii|r
 	.daily 13755 >> Accept A Valiant's Field Training
 	.goto IcecrownGlacier,76.08,19.19
 	.daily 13756 >> Accept The Grand Melee
@@ -554,10 +554,10 @@ step << Draenei
 	.isQuestAvailable 13716
 
 step << NightElf
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Jaelyne Evensong|r. She has 1 out of 3 daily quests. Accept whichever is available
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jaelyne Evensong|r. She has 1 out of 3 daily quests. Accept whichever is available
 	.daily 13757,13759,13758 >>Accept A Blade Fit For A Champion |c99ffff99OR|r The Edge Of Winter |c99ffff99OR|r A Worthy Weapon
 	.goto IcecrownGlacier,76.34,19.03
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Illestria Bladesinger|r and |cRXP_FRIENDLY_ Airae Starseeker|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illestria Bladesinger|r and |cRXP_FRIENDLY_Airae Starseeker|r
 	.daily 13760 >> Accept A Valiant's Field Training
 	.goto IcecrownGlacier,76.29,18.99
 	.daily 13761 >> Accept The Grand Melee
@@ -569,10 +569,10 @@ step << NightElf
 	.isQuestAvailable 13717
 
 step << Dwarf
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Lana Stouthammer|r. She has 1 out of 3 daily quests. Accept whichever is available
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lana Stouthammer|r. She has 1 out of 3 daily quests. Accept whichever is available
 	.daily 13741,13743,13742 >>Accept A Blade Fit For A Champion |c99ffff99OR|r The Edge Of Winter |c99ffff99OR|r A Worthy Weapon
 	.goto IcecrownGlacier,76.64,19.49
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Rollo Sureshot|r and |cRXP_FRIENDLY_ Clara Tumblebrew|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rollo Sureshot|r and |cRXP_FRIENDLY_Clara Tumblebrew|r
 	.daily 13744 >> Accept A Valiant's Field Training
 	.goto IcecrownGlacier,76.66,19.41
 	.daily 13745 >> Accept The Grand Melee
@@ -584,10 +584,10 @@ step << Dwarf
 	.isQuestAvailable 13714
 
 step << Gnome
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Ambrose Boltspark|r. He has 1 out of 3 daily quests. Accept whichever is available
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambrose Boltspark|r. He has 1 out of 3 daily quests. Accept whichever is available
 	.daily 13746,13748,13747 >>Accept A Blade Fit For A Champion |c99ffff99OR|r The Edge Of Winter |c99ffff99OR|r A Worthy Weapon
 	.goto IcecrownGlacier,76.55,19.82
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Tickin Gearspanner|r and |cRXP_FRIENDLY_ Flickin Gearspanner|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tickin Gearspanner|r and |cRXP_FRIENDLY_Flickin Gearspanner|r
 	.daily 13749 >> Accept A Valiant's Field Training
 	.goto IcecrownGlacier,76.60,19.79
 	.daily 13750 >> Accept The Grand Melee
@@ -599,10 +599,10 @@ step << Gnome
 	.isQuestAvailable 13715
 
 step << BloodElf
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Eressea Dawnsinger|r. She has 1 out of 3 daily quests. Accept whichever is available
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eressea Dawnsinger|r. She has 1 out of 3 daily quests. Accept whichever is available
 	.daily 13783,13785,13784 >>Accept A Blade Fit For A Champion |c99ffff99OR|r The Edge Of Winter |c99ffff99OR|r A Worthy Weapon
 	.goto IcecrownGlacier,76.45,23.85
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Kethiel Sunlance|r and |cRXP_FRIENDLY_ Aneera Thuron|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kethiel Sunlance|r and |cRXP_FRIENDLY_Aneera Thuron|r
 	.daily 13786 >> Accept A Valiant's Field Training
 	.goto IcecrownGlacier,76.41,23.75
 	.daily 13787 >> Accept The Grand Melee
@@ -614,10 +614,10 @@ step << BloodElf
 	.isQuestAvailable 13722
 
 step << Scourge
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Deathstalker Visceri|r. He has 1 out of 3 daily quests. Accept whichever is available
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Visceri|r. He has 1 out of 3 daily quests. Accept whichever is available
 	.daily 13778,13780,13779 >>Accept A Blade Fit For A Champion |c99ffff99OR|r The Edge Of Winter |c99ffff99OR|r A Worthy Weapon
 	.goto IcecrownGlacier,76.53,24.21
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Sarah Chalke|r and |cRXP_FRIENDLY_ Handler Dretch|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sarah Chalke|r and |cRXP_FRIENDLY_Handler Dretch|r
 	.daily 13781 >> Accept A Valiant's Field Training
 	.goto IcecrownGlacier,76.56,24.11
 	.daily 13782 >> Accept The Grand Melee
@@ -629,10 +629,10 @@ step << Scourge
 	.isQuestAvailable 13721
 
 step << Orc
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Mokra the Skullcrusher|r. He has 1 out of 3 daily quests. Accept whichever is available
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mokra the Skullcrusher|r. He has 1 out of 3 daily quests. Accept whichever is available
 	.daily 13762,13764,13763 >>Accept A Blade Fit For A Champion |c99ffff99OR|r The Edge Of Winter |c99ffff99OR|r A Worthy Weapon
 	.goto IcecrownGlacier,76.46,24.60
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Akinos|r and |cRXP_FRIENDLY_ Morah Worgsister|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Akinos|r and |cRXP_FRIENDLY_Morah Worgsister|r
 	.daily 13765 >> Accept A Valiant's Field Training
 	.goto IcecrownGlacier,76.50,24.48
 	.daily 13767 >> Accept The Grand Melee
@@ -644,10 +644,10 @@ step << Orc
 	.isQuestAvailable 13697
 
 step << Tauren
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Runok Wildmane|r. He has 1 out of 3 daily quests. Accept whichever is available
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Runok Wildmane|r. He has 1 out of 3 daily quests. Accept whichever is available
 	.daily 13773,13775,13774 >>Accept A Blade Fit For A Champion |c99ffff99OR|r The Edge Of Winter |c99ffff99OR|r A Worthy Weapon
 	.goto IcecrownGlacier,76.20,24.63
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Dern Ragetotem|r and |cRXP_FRIENDLY_ Anka Clawhoof|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dern Ragetotem|r and |cRXP_FRIENDLY_Anka Clawhoof|r
 	.daily 13776 >> Accept A Valiant's Field Training
 	.goto IcecrownGlacier,76.26,24.66
 	.daily 13777 >> Accept The Grand Melee
@@ -659,10 +659,10 @@ step << Tauren
 	.isQuestAvailable 13720
 
 step << Troll
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Zul'tore|r. He has 1 out of 3 daily quests. Accept whichever is available
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zul'tore|r. He has 1 out of 3 daily quests. Accept whichever is available
 	.daily 13768,13770,13769 >>Accept A Blade Fit For A Champion |c99ffff99OR|r The Edge Of Winter |c99ffff99OR|r A Worthy Weapon
 	.goto IcecrownGlacier,75.95,24.53
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Shadow Hunter Mezil-kree|r and |cRXP_FRIENDLY_ Gahju|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shadow Hunter Mezil-kree|r and |cRXP_FRIENDLY_Gahju|r
 	.daily 13771 >> Accept A Valiant's Field Training
 	.goto IcecrownGlacier,76.04,24.59
 	.daily 13772 >> Accept The Grand Melee
@@ -791,8 +791,8 @@ step -- A Valiant's Field Training
 
 step -- At The Enemy's Gates
 	#completewith next
-	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the |cRXP_FRIENDLY_ Stabled Campaign Warhorse|r << Alliance
-	.vehicle >>Equip the |T135128:0|t|c99ffff99Horde Lance|r in your Bags then Mount the |cRXP_FRIENDLY_ Stabled Campaign Warhorse|r << Horde
+	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the |cRXP_FRIENDLY_Stabled Campaign Warhorse|r << Alliance
+	.vehicle >>Equip the |T135128:0|t|c99ffff99Horde Lance|r in your Bags then Mount the |cRXP_FRIENDLY_Stabled Campaign Warhorse|r << Horde
 	>>There is a |T135128:0|t|c99ffff99Lance Rack|r just beside the Barricade if you need another
 	.goto IcecrownGlacier,48.87,71.78
 	.use 46069 << Alliance
@@ -815,7 +815,7 @@ step
 	.isOnQuest 13847,13851,13852,13854,13855,13856,13857,13858,13859,13860
 	.mob Boneguard Scout
 step
-	>>Kill |cRXP_ENEMY_Boneguard Footmen|r by using your |cRXP_FRIENDLY_ Warhorse|r to run over and kill them instantly
+	>>Kill |cRXP_ENEMY_Boneguard Footmen|r by using your |cRXP_FRIENDLY_Warhorse|r to run over and kill them instantly
 	>>Kill |cRXP_ENEMY_Boneguard Lieutenants|r. Gain stacks of |T132360:0|tDefend (4) and maintain it. Use |T132358:0|tShield-Breaker (2) to remove their shield then |T132226:0|tCharge (3) and |T135375:0|tThrust (1)
 	.complete 13847,1 << Human -- Boneguard Footman slain (15)
 	.complete 13847,3 << Human -- Boneguard Lieutenant (3)
@@ -974,7 +974,7 @@ step
 	.goto IcecrownGlacier,76.27,24.38,300 >> Return to the |T236690:0|tArgent Tournament Grounds in Icecrown << Horde
 	.isOnQuest 13603,13741,13746,13752,13757,13762,13768,13773,13778,13783,13616,13743,13748,13754,13759,13764,13770,13775,13780,13785,13600,13742,13747,13753,13758,13763,13769,13774,13779,13784
 step << Human
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Marshal Jacob Alerius|r, |cRXP_FRIENDLY_ Sir Marcus Barlowe|r and |cRXP_FRIENDLY_ Captain Joseph Holley|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Jacob Alerius|r, |cRXP_FRIENDLY_Sir Marcus Barlowe|r and |cRXP_FRIENDLY_Captain Joseph Holley|r
 	.turnin 13603 >> Turn in A Blade Fit For A Champion
 	.goto IcecrownGlacier,76.60,19.12
 	.turnin 13592 >> Turn in A Valiant's Field Training
@@ -987,7 +987,7 @@ step << Human
 	.target Captain Joseph Holley
 	.isQuestComplete 13603 -- A Blade Fit For A Champion
 step << Human
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Marshal Jacob Alerius|r, |cRXP_FRIENDLY_ Sir Marcus Barlowe|r and |cRXP_FRIENDLY_ Captain Joseph Holley|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Jacob Alerius|r, |cRXP_FRIENDLY_Sir Marcus Barlowe|r and |cRXP_FRIENDLY_Captain Joseph Holley|r
 	.turnin 13616 >> Turn in The Edge Of Winter
 	.goto IcecrownGlacier,76.60,19.12
 	.turnin 13592 >> Turn in A Valiant's Field Training
@@ -1000,7 +1000,7 @@ step << Human
 	.target Captain Joseph Holley
 	.isQuestComplete 13616 -- The Edge Of Winter
 step << Human
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Marshal Jacob Alerius|r, |cRXP_FRIENDLY_ Sir Marcus Barlowe|r and |cRXP_FRIENDLY_ Captain Joseph Holley|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Jacob Alerius|r, |cRXP_FRIENDLY_Sir Marcus Barlowe|r and |cRXP_FRIENDLY_Captain Joseph Holley|r
 	.turnin 13600 >> Turn in A Worthy Weapon
 	.goto IcecrownGlacier,76.60,19.12
 	.turnin 13592 >> Turn in A Valiant's Field Training
@@ -1013,7 +1013,7 @@ step << Human
 	.target Captain Joseph Holley
 	.isQuestComplete 13600 -- A Worthy Weapon
 step << Human
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Sir Marcus Barlowe|r and |cRXP_FRIENDLY_ Captain Joseph Holley|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sir Marcus Barlowe|r and |cRXP_FRIENDLY_Captain Joseph Holley|r
 	.turnin -13592 >> Turn in A Valiant's Field Training
 	.goto IcecrownGlacier,76.53,19.08
 	.turnin -13665 >> Turn in The Grand Melee
@@ -1023,7 +1023,7 @@ step << Human
 	.target Captain Joseph Holley
 
 step << Draenei
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Colosos|r, |cRXP_FRIENDLY_ Saandos|r and |cRXP_FRIENDLY_ Ranii|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Colosos|r, |cRXP_FRIENDLY_Saandos|r and |cRXP_FRIENDLY_Ranii|r
 	.turnin 13752 >> Turn in A Blade Fit For A Champion
 	.goto IcecrownGlacier,76.10,19.10
 	.turnin 13755 >> Turn in A Valiant's Field Training
@@ -1036,7 +1036,7 @@ step << Draenei
 	.target Ranii
 	.isQuestComplete 13752 -- A Blade Fit For A Champion
 step << Draenei
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Colosos|r, |cRXP_FRIENDLY_ Saandos|r and |cRXP_FRIENDLY_ Ranii|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Colosos|r, |cRXP_FRIENDLY_Saandos|r and |cRXP_FRIENDLY_Ranii|r
 	.turnin 13754 >> Turn in The Edge Of Winter
 	.goto IcecrownGlacier,76.10,19.10
 	.turnin 13755 >> Turn in A Valiant's Field Training
@@ -1049,7 +1049,7 @@ step << Draenei
 	.target Ranii
 	.isQuestComplete 13754 -- The Edge Of Winter
 step << Draenei
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Colosos|r, |cRXP_FRIENDLY_ Saandos|r and |cRXP_FRIENDLY_ Ranii|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Colosos|r, |cRXP_FRIENDLY_Saandos|r and |cRXP_FRIENDLY_Ranii|r
 	.turnin 13753 >> Turn in A Worthy Weapon
 	.goto IcecrownGlacier,76.10,19.10
 	.turnin 13755 >> Turn in A Valiant's Field Training
@@ -1062,7 +1062,7 @@ step << Draenei
 	.target Ranii
 	.isQuestComplete 13753 -- A Worthy Weapon
 step << Draenei
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Saandos|r and |cRXP_FRIENDLY_ Ranii|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Saandos|r and |cRXP_FRIENDLY_Ranii|r
 	.turnin -13755 >> Turn in A Valiant's Field Training
 	.goto IcecrownGlacier,76.08,19.19
 	.turnin -13756 >> Turn in The Grand Melee
@@ -1072,7 +1072,7 @@ step << Draenei
 	.target Ranii
 
 step << NightElf
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Jaelyne Evensong|r, |cRXP_FRIENDLY_ Illestria Bladesinger|r and |cRXP_FRIENDLY_ Airae Starseeker|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jaelyne Evensong|r, |cRXP_FRIENDLY_Illestria Bladesinger|r and |cRXP_FRIENDLY_Airae Starseeker|r
 	.turnin 13757 >> Turn in A Blade Fit For A Champion
 	.goto IcecrownGlacier,76.34,19.03
 	.turnin 13760 >> Turn in A Valiant's Field Training
@@ -1085,7 +1085,7 @@ step << NightElf
 	.target Airae Starseeker
 	.isQuestComplete 13757 -- A Blade Fit For A Champion
 step << NightElf
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Jaelyne Evensong|r, |cRXP_FRIENDLY_ Illestria Bladesinger|r and |cRXP_FRIENDLY_ Airae Starseeker|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jaelyne Evensong|r, |cRXP_FRIENDLY_Illestria Bladesinger|r and |cRXP_FRIENDLY_Airae Starseeker|r
 	.turnin 13759 >> Turn in The Edge Of Winter
 	.goto IcecrownGlacier,76.34,19.03
 	.turnin 13760 >> Turn in A Valiant's Field Training
@@ -1098,7 +1098,7 @@ step << NightElf
 	.target Airae Starseeker
 	.isQuestComplete 13759 -- The Edge Of Winter
 step << NightElf
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Jaelyne Evensong|r, |cRXP_FRIENDLY_ Illestria Bladesinger|r and |cRXP_FRIENDLY_ Airae Starseeker|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jaelyne Evensong|r, |cRXP_FRIENDLY_Illestria Bladesinger|r and |cRXP_FRIENDLY_Airae Starseeker|r
 	.turnin 13758 >> Turn in A Worthy Weapon
 	.goto IcecrownGlacier,76.34,19.03
 	.turnin 13760 >> Turn in A Valiant's Field Training
@@ -1111,7 +1111,7 @@ step << NightElf
 	.target Airae Starseeker
 	.isQuestComplete 13758 -- A Worthy Weapon
 step << NightElf
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Illestria Bladesinger|r and |cRXP_FRIENDLY_ Airae Starseeker|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illestria Bladesinger|r and |cRXP_FRIENDLY_Airae Starseeker|r
 	.turnin -13760 >> Turn in A Valiant's Field Training
 	.goto IcecrownGlacier,76.29,18.99
 	.turnin -13761 >> Turn in The Grand Melee
@@ -1121,7 +1121,7 @@ step << NightElf
 	.target Airae Starseeker
 
 step << Dwarf
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Lana Stouthammer|r, |cRXP_FRIENDLY_ Rollo Sureshot|r and |cRXP_FRIENDLY_ Clara Tumblebrew|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lana Stouthammer|r, |cRXP_FRIENDLY_Rollo Sureshot|r and |cRXP_FRIENDLY_Clara Tumblebrew|r
 	.turnin 13741 >> Turn in A Blade Fit For A Champion
 	.goto IcecrownGlacier,76.64,19.49
 	.turnin 13744 >> Turn in A Valiant's Field Training
@@ -1134,7 +1134,7 @@ step << Dwarf
 	.target Clara Tumblebrew
 	.isQuestComplete 13741 -- A Blade Fit For A Champion
 step << Dwarf
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Lana Stouthammer|r, |cRXP_FRIENDLY_ Rollo Sureshot|r and |cRXP_FRIENDLY_ Clara Tumblebrew|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lana Stouthammer|r, |cRXP_FRIENDLY_Rollo Sureshot|r and |cRXP_FRIENDLY_Clara Tumblebrew|r
 	.turnin 13743 >> Turn in The Edge Of Winter
 	.goto IcecrownGlacier,76.64,19.49
 	.turnin 13744 >> Turn in A Valiant's Field Training
@@ -1147,7 +1147,7 @@ step << Dwarf
 	.target Clara Tumblebrew
 	.isQuestComplete 13743 -- The Edge Of Winter
 step << Dwarf
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Lana Stouthammer|r, |cRXP_FRIENDLY_ Rollo Sureshot|r and |cRXP_FRIENDLY_ Clara Tumblebrew|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lana Stouthammer|r, |cRXP_FRIENDLY_Rollo Sureshot|r and |cRXP_FRIENDLY_Clara Tumblebrew|r
 	.turnin 13742 >> Turn in A Worthy Weapon
 	.goto IcecrownGlacier,76.64,19.49
 	.turnin 13744 >> Turn in A Valiant's Field Training
@@ -1160,7 +1160,7 @@ step << Dwarf
 	.target Clara Tumblebrew
 	.isQuestComplete 13742 -- A Worthy Weapon
 step << Dwarf
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Rollo|r Sureshot and |cRXP_FRIENDLY_ Clara Tumblebrew|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rollo|r Sureshot and |cRXP_FRIENDLY_Clara Tumblebrew|r
 	.turnin -13744 >> Turn in A Valiant's Field Training
 	.goto IcecrownGlacier,76.66,19.41
 	.turnin -13745 >> Turn in The Grand Melee
@@ -1170,7 +1170,7 @@ step << Dwarf
 	.target Clara Tumblebrew
 
 step << Gnome
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Ambrose Boltspark|r, |cRXP_FRIENDLY_ Tickin Gearspanner|r and |cRXP_FRIENDLY_ Flickin Gearspanner|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambrose Boltspark|r, |cRXP_FRIENDLY_Tickin Gearspanner|r and |cRXP_FRIENDLY_Flickin Gearspanner|r
 	.turnin 13746 >> Turn in A Blade Fit For A Champion
 	.goto IcecrownGlacier,76.55,19.82
 	.turnin 13749 >> Turn in A Valiant's Field Training
@@ -1183,7 +1183,7 @@ step << Gnome
 	.target Flickin Gearspanner
 	.isQuestComplete 13746 -- A Blade Fit For A Champion
 step << Gnome
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Ambrose Boltspark|r, |cRXP_FRIENDLY_ Tickin Gearspanner|r and |cRXP_FRIENDLY_ Flickin Gearspanner|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambrose Boltspark|r, |cRXP_FRIENDLY_Tickin Gearspanner|r and |cRXP_FRIENDLY_Flickin Gearspanner|r
 	.turnin 13748 >> Turn in The Edge Of Winter
 	.goto IcecrownGlacier,76.55,19.82
 	.turnin 13749 >> Turn in A Valiant's Field Training
@@ -1196,7 +1196,7 @@ step << Gnome
 	.target Flickin Gearspanner
 	.isQuestComplete 13748 -- The Edge Of Winter
 step << Gnome
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Ambrose Boltspark|r, |cRXP_FRIENDLY_ Tickin Gearspanner|r and |cRXP_FRIENDLY_ Flickin Gearspanner|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambrose Boltspark|r, |cRXP_FRIENDLY_Tickin Gearspanner|r and |cRXP_FRIENDLY_Flickin Gearspanner|r
 	.turnin 13747 >> Turn in A Worthy Weapon
 	.goto IcecrownGlacier,76.55,19.82
 	.turnin 13749 >> Turn in A Valiant's Field Training
@@ -1209,7 +1209,7 @@ step << Gnome
 	.target Flickin Gearspanner
 	.isQuestComplete 13747 -- A Worthy Weapon
 step << Gnome
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Tickin Gearspanner|r and |cRXP_FRIENDLY_ Flickin Gearspanner|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tickin Gearspanner|r and |cRXP_FRIENDLY_Flickin Gearspanner|r
 	.turnin -13749 >> Turn in A Valiant's Field Training
 	.goto IcecrownGlacier,76.60,19.79
 	.turnin -13750 >> Turn in The Grand Melee
@@ -1219,7 +1219,7 @@ step << Gnome
 	.target Flickin Gearspanner
 
 step << Troll
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Zul'tore|r, |cRXP_FRIENDLY_ Shadow Hunter Mezil-kree|r and |cRXP_FRIENDLY_ Gahju|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zul'tore|r, |cRXP_FRIENDLY_Shadow Hunter Mezil-kree|r and |cRXP_FRIENDLY_Gahju|r
 	.turnin 13768 >> Turn in A Blade Fit For A Champion
 	.goto IcecrownGlacier,75.95,24.53
 	.turnin 13771 >> Turn in A Valiant's Field Training
@@ -1232,7 +1232,7 @@ step << Troll
 	.target Gahju
 	.isQuestComplete 13768 -- A Blade Fit For A Champion
 step << Troll
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Zul'tore|r, |cRXP_FRIENDLY_ Shadow Hunter Mezil-kree|r and |cRXP_FRIENDLY_ Gahju|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zul'tore|r, |cRXP_FRIENDLY_Shadow Hunter Mezil-kree|r and |cRXP_FRIENDLY_Gahju|r
 	.turnin 13770 >> Turn in The Edge Of Winter
 	.goto IcecrownGlacier,75.95,24.53
 	.turnin 13771 >> Turn in A Valiant's Field Training
@@ -1245,7 +1245,7 @@ step << Troll
 	.target Gahju
 	.isQuestComplete 13770 -- The Edge Of Winter
 step << Troll
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Zul'tore|r, |cRXP_FRIENDLY_ Shadow Hunter Mezil-kree|r and |cRXP_FRIENDLY_ Gahju|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zul'tore|r, |cRXP_FRIENDLY_Shadow Hunter Mezil-kree|r and |cRXP_FRIENDLY_Gahju|r
 	.turnin 13769 >> Turn in A Worthy Weapon
 	.goto IcecrownGlacier,75.95,24.53
 	.turnin 13771 >> Turn in A Valiant's Field Training
@@ -1258,7 +1258,7 @@ step << Troll
 	.target Gahju
 	.isQuestComplete 13769 -- A Worthy Weapon
 step << Troll
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Shadow Hunter Mezil-kree|r and |cRXP_FRIENDLY_ Gahju|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shadow Hunter Mezil-kree|r and |cRXP_FRIENDLY_Gahju|r
 	.turnin -13771 >> Turn in A Valiant's Field Training
 	.goto IcecrownGlacier,76.04,24.59
 	.turnin -13772 >> Turn in The Grand Melee
@@ -1268,7 +1268,7 @@ step << Troll
 	.target Gahju
 
 step << Tauren
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Runok Wildmane|r, |cRXP_FRIENDLY_ Dern Ragetotem|r and |cRXP_FRIENDLY_ Anka Clawhoof|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Runok Wildmane|r, |cRXP_FRIENDLY_Dern Ragetotem|r and |cRXP_FRIENDLY_Anka Clawhoof|r
 	.turnin 13773 >> Turn in A Blade Fit For A Champion
 	.goto IcecrownGlacier,76.20,24.63
 	.turnin 13776 >> Turn in A Valiant's Field Training
@@ -1281,7 +1281,7 @@ step << Tauren
 	.target Anka Clawhoof
 	.isQuestComplete 13773 -- A Blade Fit For A Champion
 step << Tauren
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Runok Wildmane|r, |cRXP_FRIENDLY_ Dern Ragetotem|r and |cRXP_FRIENDLY_ Anka Clawhoof|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Runok Wildmane|r, |cRXP_FRIENDLY_Dern Ragetotem|r and |cRXP_FRIENDLY_Anka Clawhoof|r
 	.turnin 13775 >> Turn in The Edge Of Winter
 	.goto IcecrownGlacier,76.20,24.63
 	.turnin 13776 >> Turn in A Valiant's Field Training
@@ -1294,7 +1294,7 @@ step << Tauren
 	.target Anka Clawhoof
 	.isQuestComplete 13775 -- The Edge Of Winter
 step << Tauren
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Runok Wildmane|r, |cRXP_FRIENDLY_ Dern Ragetotem|r and |cRXP_FRIENDLY_ Anka Clawhoof|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Runok Wildmane|r, |cRXP_FRIENDLY_Dern Ragetotem|r and |cRXP_FRIENDLY_Anka Clawhoof|r
 	.turnin 13774 >> Turn in A Worthy Weapon
 	.goto IcecrownGlacier,76.20,24.63
 	.turnin 13776 >> Turn in A Valiant's Field Training
@@ -1307,7 +1307,7 @@ step << Tauren
 	.target Anka Clawhoof
 	.isQuestComplete 13774 -- A Worthy Weapon
 step << Tauren
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Dern Ragetotem|r and |cRXP_FRIENDLY_ Anka Clawhoof|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dern Ragetotem|r and |cRXP_FRIENDLY_Anka Clawhoof|r
 	.turnin -13776 >> Turn in A Valiant's Field Training
 	.goto IcecrownGlacier,76.26,24.66
 	.turnin -13777 >> Turn in The Grand Melee
@@ -1317,7 +1317,7 @@ step << Tauren
 	.target Anka Clawhoof
 
 step << Orc
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Mokra the Skullcrusher|r, |cRXP_FRIENDLY_ Akinos|r and |cRXP_FRIENDLY_ Morah Worgsister|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mokra the Skullcrusher|r, |cRXP_FRIENDLY_Akinos|r and |cRXP_FRIENDLY_Morah Worgsister|r
 	.turnin 13762 >> Turn in A Blade Fit For A Champion
 	.goto IcecrownGlacier,76.46,24.60
 	.turnin 13765 >> Turn in A Valiant's Field Training
@@ -1330,7 +1330,7 @@ step << Orc
 	.target Morah Worgsister
 	.isQuestComplete 13762 -- A Blade Fit For A Champion
 step << Orc
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Mokra the Skullcrusher|r, |cRXP_FRIENDLY_ Akinos|r and |cRXP_FRIENDLY_ Morah Worgsister|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mokra the Skullcrusher|r, |cRXP_FRIENDLY_Akinos|r and |cRXP_FRIENDLY_Morah Worgsister|r
 	.turnin 13764 >> Turn in The Edge Of Winter
 	.goto IcecrownGlacier,76.46,24.60
 	.turnin 13765 >> Turn in A Valiant's Field Training
@@ -1343,7 +1343,7 @@ step << Orc
 	.target Morah Worgsister
 	.isQuestComplete 13764 -- The Edge Of Winter
 step << Orc
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Mokra the Skullcrusher|r, |cRXP_FRIENDLY_ Akinos|r and |cRXP_FRIENDLY_ Morah Worgsister|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mokra the Skullcrusher|r, |cRXP_FRIENDLY_Akinos|r and |cRXP_FRIENDLY_Morah Worgsister|r
 	.turnin 13763 >> Turn in A Worthy Weapon
 	.goto IcecrownGlacier,76.46,24.60
 	.turnin 13765 >> Turn in A Valiant's Field Training
@@ -1356,7 +1356,7 @@ step << Orc
 	.target Morah Worgsister
 	.isQuestComplete 13763 -- A Worthy Weapon
 step << Orc
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Akinos|r and |cRXP_FRIENDLY_ Morah Worgsister|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Akinos|r and |cRXP_FRIENDLY_Morah Worgsister|r
 	.turnin -13765 >> Turn in A Valiant's Field Training
 	.goto IcecrownGlacier,76.50,24.48
 	.turnin -13767 >> Turn in The Grand Melee
@@ -1366,7 +1366,7 @@ step << Orc
 	.target Morah Worgsister
 
 step << Scourge
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Deathstalker Visceri|r, |cRXP_FRIENDLY_ Sarah Chalke|r and |cRXP_FRIENDLY_ Handler Dretch|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Visceri|r, |cRXP_FRIENDLY_Sarah Chalke|r and |cRXP_FRIENDLY_Handler Dretch|r
 	.turnin 13778 >> Turn in A Blade Fit For A Champion
 	.goto IcecrownGlacier,76.53,24.21
 	.turnin 13781 >> Turn in A Valiant's Field Training
@@ -1379,7 +1379,7 @@ step << Scourge
 	.target Handler Dretch
 	.isQuestComplete 13778 -- A Blade Fit For A Champion
 step << Scourge
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Deathstalker Visceri|r, |cRXP_FRIENDLY_ Sarah Chalke|r and |cRXP_FRIENDLY_ Handler Dretch|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Visceri|r, |cRXP_FRIENDLY_Sarah Chalke|r and |cRXP_FRIENDLY_Handler Dretch|r
 	.turnin 13780 >> Turn in The Edge Of Winter
 	.goto IcecrownGlacier,76.53,24.21
 	.turnin 13781 >> Turn in A Valiant's Field Training
@@ -1392,7 +1392,7 @@ step << Scourge
 	.target Handler Dretch
 	.isQuestComplete 13780 -- The Edge Of Winter
 step << Scourge
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Deathstalker Visceri|r, |cRXP_FRIENDLY_ Sarah Chalke|r and |cRXP_FRIENDLY_ Handler Dretch|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Visceri|r, |cRXP_FRIENDLY_Sarah Chalke|r and |cRXP_FRIENDLY_Handler Dretch|r
 	.turnin 13779 >> Turn in A Worthy Weapon
 	.goto IcecrownGlacier,76.53,24.21
 	.turnin 13781 >> Turn in A Valiant's Field Training
@@ -1405,7 +1405,7 @@ step << Scourge
 	.target Handler Dretch
 	.isQuestComplete 13779 -- A Worthy Weapon
 step << Scourge
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Sarah Chalke|r and |cRXP_FRIENDLY_ Handler Dretch|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sarah Chalke|r and |cRXP_FRIENDLY_Handler Dretch|r
 	.turnin -13781 >> Turn in A Valiant's Field Training
 	.goto IcecrownGlacier,76.56,24.11
 	.turnin -13782 >> Turn in The Grand Melee
@@ -1415,7 +1415,7 @@ step << Scourge
 	.target Handler Dretch
 
 step << BloodElf
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Eressea Dawnsinger|r, |cRXP_FRIENDLY_ Kethiel Sunlance|r and |cRXP_FRIENDLY_ Aneera Thuron|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eressea Dawnsinger|r, |cRXP_FRIENDLY_Kethiel Sunlance|r and |cRXP_FRIENDLY_Aneera Thuron|r
 	.turnin 13783 >> Turn in A Blade Fit For A Champion
 	.goto IcecrownGlacier,76.45,23.85
 	.turnin 13786 >> Turn in A Valiant's Field Training
@@ -1428,7 +1428,7 @@ step << BloodElf
 	.target Aneera Thuron
 	.isQuestComplete 13783 -- A Blade Fit For A Champion
 step << BloodElf
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Eressea Dawnsinger|r, |cRXP_FRIENDLY_ Kethiel Sunlance|r and |cRXP_FRIENDLY_ Aneera Thuron|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eressea Dawnsinger|r, |cRXP_FRIENDLY_Kethiel Sunlance|r and |cRXP_FRIENDLY_Aneera Thuron|r
 	.turnin 13785 >> Turn in The Edge Of Winter
 	.goto IcecrownGlacier,76.45,23.85
 	.turnin 13786 >> Turn in A Valiant's Field Training
@@ -1441,7 +1441,7 @@ step << BloodElf
 	.target Aneera Thuron
 	.isQuestComplete 13785 -- The Edge Of Winter
 step << BloodElf
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Eressea Dawnsinger|r, |cRXP_FRIENDLY_ Kethiel Sunlance|r and |cRXP_FRIENDLY_ Aneera Thuron|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eressea Dawnsinger|r, |cRXP_FRIENDLY_Kethiel Sunlance|r and |cRXP_FRIENDLY_Aneera Thuron|r
 	.turnin 13784 >> Turn in A Worthy Weapon
 	.goto IcecrownGlacier,76.45,23.85
 	.turnin 13786 >> Turn in A Valiant's Field Training
@@ -1454,7 +1454,7 @@ step << BloodElf
 	.target Aneera Thuron
 	.isQuestComplete 13784 -- A Worthy Weapon
 step << BloodElf
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Kethiel Sunlance|r and |cRXP_FRIENDLY_ Aneera Thuron|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kethiel Sunlance|r and |cRXP_FRIENDLY_Aneera Thuron|r
 	.turnin -13786 >> Turn in A Valiant's Field Training
 	.goto IcecrownGlacier,76.41,23.75
 	.turnin -13787 >> Turn in The Grand Melee
@@ -1467,16 +1467,16 @@ step -- Checking if they have 25 Valiant's Seals after a set of turn ins.
 	>>In order to complete the quest |cFFffff00The Valiant's Charge|r and progress through the |T236690:0|tArgent Tournament Grounds you must complete daily quests and acquire |T133441:0|t|c99CCFFFFValiant's Seal|r
 	>>You need |T133441:0|t|c99CCFFFF25 Valiant's Seal|r. You will earn 5 per day if you complete the 4 daily quests
 	>>|c99ffff99RELOAD THE GUIDE THE NEXT DAY IF YOU STILL NEED TO COMPLETE THE DAILY QUESTS UNTIL YOU CAN TURN THIS QUEST IN|r.
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Colosos|r << Draenei
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Lana Stouthammer|r << Dwarf
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Ambrose Boltspark|r << Gnome
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Marshal Jacob Alerius|r << Human
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Jaelyne Evensong|r << NightElf
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Deathstalker Visceri|r << Scourge
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Mokra the Skullcrusher|r << Orc
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Runok Wildmane|r << Tauren
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Zul'tore|r << Troll
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Eressea Dawnsinger|r << BloodElf
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Colosos|r << Draenei
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lana Stouthammer|r << Dwarf
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambrose Boltspark|r << Gnome
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Jacob Alerius|r << Human
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jaelyne Evensong|r << NightElf
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Visceri|r << Scourge
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mokra the Skullcrusher|r << Orc
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Runok Wildmane|r << Tauren
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zul'tore|r << Troll
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eressea Dawnsinger|r << BloodElf
 	.goto IcecrownGlacier,76.10,19.10 << Draenei
 	.goto IcecrownGlacier,76.64,19.49 << Dwarf
 	.goto IcecrownGlacier,76.55,19.82 << Gnome
@@ -1565,7 +1565,7 @@ step -- The Valiant's Challenge
 	.target Stabled Silvermoon Hawkstrider << BloodElf
 	.isOnQuest 13724,13713,13723,13699,13725,13729,13726,13728,13727,13731
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Squire Danny|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Danny|r
 	>>Remember to use |T132360:0|tDefend (4) and maintain stacks of it during the Duel
 	>>Use |T132358:0|tShield-Breaker (2) to remove |T132360:0|tDefend stacks from the |cRXP_ENEMY_Champion|r constantly
 	>>Once no stacks of |T132360:0|tDefend remain on the |cRXP_ENEMY_Champion|r, use |T132226:0|tCharge (3) as well as |T135375:0|tThrust (1) while in melee range
@@ -1586,16 +1586,16 @@ step
 	.mob Argent Champion
 	.isOnQuest 13724,13713,13723,13699,13725,13729,13726,13728,13727,13731
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Colosos|r << Draenei
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Lana Stouthammer|r << Dwarf
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Ambrose Boltspark|r << Gnome
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Marshal Jacob Alerius|r << Human
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Jaelyne Evensong|r << NightElf
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Deathstalker Visceri|r << Scourge
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Mokra the Skullcrusher|r << Orc
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Runok Wildmane|r << Tauren
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Zul'tore|r << Troll
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Eressea Dawnsinger|r << BloodElf
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Colosos|r << Draenei
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lana Stouthammer|r << Dwarf
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambrose Boltspark|r << Gnome
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Jacob Alerius|r << Human
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jaelyne Evensong|r << NightElf
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Visceri|r << Scourge
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mokra the Skullcrusher|r << Orc
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Runok Wildmane|r << Tauren
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zul'tore|r << Troll
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eressea Dawnsinger|r << BloodElf
 	.goto IcecrownGlacier,76.10,19.10 << Draenei
 	.goto IcecrownGlacier,76.64,19.49 << Dwarf
 	.goto IcecrownGlacier,76.55,19.82 << Gnome
@@ -1627,16 +1627,16 @@ step
 	.target Zul'tore << Troll
 	.target Eressea Dawnsinger << BloodElf
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Colosos|r << Draenei
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Lana Stouthammer|r << Dwarf
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Ambrose Boltspark|r << Gnome
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Marshal Jacob Alerius|r << Human
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Jaelyne Evensong|r << NightElf
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Deathstalker Visceri|r << Scourge
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Mokra the Skullcrusher|r << Orc
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Runok Wildmane|r << Tauren
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Zul'tore|r << Troll
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Eressea Dawnsinger|r << BloodElf
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Colosos|r << Draenei
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lana Stouthammer|r << Dwarf
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambrose Boltspark|r << Gnome
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Jacob Alerius|r << Human
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jaelyne Evensong|r << NightElf
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Visceri|r << Scourge
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mokra the Skullcrusher|r << Orc
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Runok Wildmane|r << Tauren
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zul'tore|r << Troll
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eressea Dawnsinger|r << BloodElf
 	.goto IcecrownGlacier,76.10,19.10 << Draenei
 	.goto IcecrownGlacier,76.64,19.49 << Dwarf
 	.goto IcecrownGlacier,76.55,19.82 << Gnome
@@ -1668,7 +1668,7 @@ step
 	.target Zul'tore << Troll
 	.target Eressea Dawnsinger << BloodElf
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Justicar Mariel Trueheart|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Justicar Mariel Trueheart|r
 	.goto IcecrownGlacier,69.66,22.86
 	.turnin 13734 >> Turn in A Champion Rises << Draenei
 	.turnin	13732 >> Turn in A Champion Rises << Dwarf
@@ -1696,7 +1696,7 @@ step
 	+|cRXP_WARN_You are now a |T255144:0|tChampion of Thunder Bluff!|r << Tauren
 	>>|cRXP_LOOT_You are now finished with this introductory Becoming a Champion Guide!|r
 	>>|cRXP_LOOT_You now have the choice to become a|r |cRXP_WARN_Champion|r |cRXP_LOOT_of another|r |cRXP_WARN_Race|r|cRXP_LOOT_|r
-	>>|cRXP_LOOT_Load the |cRXP_FRIENDLY_ 2.0|r Guide to whichever|r |cRXP_WARN_Race|r |cRXP_LOOT_you choose to pursue next!|r
+	>>|cRXP_LOOT_Load the |cRXP_FRIENDLY_2.0|r Guide to whichever|r |cRXP_WARN_Race|r |cRXP_LOOT_you choose to pursue next!|r
 	>>|cRXP_LOOT_OR
 	>>|cRXP_LOOT_You may start|r |cRXP_ENEMY_3.0|r |cRXP_LOOT_Champion Daily Quests|r
 	.isQuestTurnedIn 13724 << Draenei
@@ -1716,21 +1716,21 @@ RXPGuides.RegisterGuide([[
 #wotlk
 #version 1
 #group +Argent Tournament
-#name |cRXP_FRIENDLY_ 2.0|r Exodar Champion
+#name |cRXP_FRIENDLY_2.0|r Exodar Champion
 << Alliance !Draenei
 
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Colosos|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Colosos|r
 	.goto IcecrownGlacier,76.10,19.10
 	.accept 13705 >> Accept Valiant Of The Exodar
 	.turnin 13705 >> Turn in Valiant Of The Exodar
 	.target Colosos
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Colosos|r. He has 1 out of 3 daily quests. Accept whichever is available
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Colosos|r. He has 1 out of 3 daily quests. Accept whichever is available
 	.accept 13716 >> Accept The Valiant's Charge
 	.daily 13752,13754,13753 >>Accept A Blade Fit For A Champion |c99ffff99OR|r The Edge Of Winter |c99ffff99OR|r A Worthy Weapon
 	.goto IcecrownGlacier,76.10,19.10
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Saandos|r and |cRXP_FRIENDLY_ Ranii|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Saandos|r and |cRXP_FRIENDLY_Ranii|r
 	.daily 13755 >> Accept A Valiant's Field Training
 	.goto IcecrownGlacier,76.08,19.19
 	.daily 13756 >> Accept The Grand Melee
@@ -1794,7 +1794,7 @@ step -- A Valiant's Field Training
 
 step -- At The Enemy's Gates
 	#completewith next
-	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the |cRXP_FRIENDLY_ Stabled Campaign Warhorse|r << Alliance
+	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the |cRXP_FRIENDLY_Stabled Campaign Warhorse|r << Alliance
 	>>There is a |T135128:0|t|c99ffff99Lance Rack|r just beside the Barricade if you need another
 	.goto IcecrownGlacier,48.87,71.78
 	.use 46069 << Alliance
@@ -1808,7 +1808,7 @@ step
 	.isOnQuest 13854
 	.mob Boneguard Scout
 step
-	>>Kill |cRXP_ENEMY_Boneguard Footmen|r by using your |cRXP_FRIENDLY_ Warhorse|r to run over and kill them instantly
+	>>Kill |cRXP_ENEMY_Boneguard Footmen|r by using your |cRXP_FRIENDLY_Warhorse|r to run over and kill them instantly
 	>>Kill |cRXP_ENEMY_Boneguard Lieutenants|r. Gain stacks of |T132360:0|tDefend (4) and maintain it. Use |T132358:0|tShield-Breaker (2) to remove their shield then |T132226:0|tCharge (3) and |T135375:0|tThrust (1)
 	.complete 13854,1 -- Boneguard Footman slain (15)
 	.complete 13854,3 -- Boneguard Lieutenant slain (3)
@@ -1912,7 +1912,7 @@ step
 	.goto IcecrownGlacier,76.46,19.41,300 >> Return to the |T236690:0|tArgent Tournament Grounds in Icecrown
 	.isOnQuest 13752,13754,13753,13755,13756,13854
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Colosos|r, |cRXP_FRIENDLY_ Saandos|r and |cRXP_FRIENDLY_ Ranii|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Colosos|r, |cRXP_FRIENDLY_Saandos|r and |cRXP_FRIENDLY_Ranii|r
 	.turnin 13752 >> Turn in A Blade Fit For A Champion
 	.goto IcecrownGlacier,76.10,19.10
 	.turnin 13755 >> Turn in A Valiant's Field Training
@@ -1925,7 +1925,7 @@ step
 	.target Ranii
 	.isQuestComplete 13752 -- A Blade Fit For A Champion
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Colosos|r, |cRXP_FRIENDLY_ Saandos|r and |cRXP_FRIENDLY_ Ranii|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Colosos|r, |cRXP_FRIENDLY_Saandos|r and |cRXP_FRIENDLY_Ranii|r
 	.turnin 13754 >> Turn in The Edge Of Winter
 	.goto IcecrownGlacier,76.10,19.10
 	.turnin 13755 >> Turn in A Valiant's Field Training
@@ -1938,7 +1938,7 @@ step
 	.target Ranii
 	.isQuestComplete 13754 -- The Edge Of Winter
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Colosos|r, |cRXP_FRIENDLY_ Saandos|r and |cRXP_FRIENDLY_ Ranii|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Colosos|r, |cRXP_FRIENDLY_Saandos|r and |cRXP_FRIENDLY_Ranii|r
 	.turnin 13753 >> Turn in A Worthy Weapon
 	.goto IcecrownGlacier,76.10,19.10
 	.turnin 13755 >> Turn in A Valiant's Field Training
@@ -1951,7 +1951,7 @@ step
 	.target Ranii
 	.isQuestComplete 13753 -- A Worthy Weapon
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Saandos|r and |cRXP_FRIENDLY_ Ranii|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Saandos|r and |cRXP_FRIENDLY_Ranii|r
 	.turnin -13755 >> Turn in A Valiant's Field Training
 	.goto IcecrownGlacier,76.08,19.19
 	.turnin -13756 >> Turn in The Grand Melee
@@ -1963,7 +1963,7 @@ step -- Checking if they have 25 Valiant's Seals after a set of turn ins.
 	>>In order to complete the quest |cFFffff00The Valiant's Charge|r and progress through the |T236690:0|tArgent Tournament Grounds you must complete daily quests and acquire |T133441:0|t|c99CCFFFFValiant's Seal|r
 	>>You need |T133441:0|t|c99CCFFFF25 Valiant's Seal|r. You will earn 5 per day if you complete the 4 daily quests
 	>>|c99ffff99RELOAD THE GUIDE THE NEXT DAY IF YOU STILL NEED TO COMPLETE THE DAILY QUESTS UNTIL YOU CAN TURN THIS QUEST IN|r.
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Colosos|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Colosos|r
 	.goto IcecrownGlacier,76.10,19.10
 	.complete 13716,1 >> Turn in The Valiant's Charge -- Valiant's Seal (25)
 	.turnin 13716 >> Turn in The Valiant's Charge
@@ -1978,7 +1978,7 @@ step -- The Valiant's Challenge
 	.target Stabled Exodar Elekk
 	.isOnQuest 13724
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Squire Danny|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Danny|r
 	>>Remember to use |T132360:0|tDefend (4) and maintain stacks of it during the Duel
 	>>Use |T132358:0|tShield-Breaker (2) to remove |T132360:0|tDefend stacks from the |cRXP_ENEMY_Champion|r constantly
 	>>Once no stacks of |T132360:0|tDefend remain on the |cRXP_ENEMY_Champion|r, use |T132226:0|tCharge (3) as well as |T135375:0|tThrust (1) while in melee range
@@ -1990,7 +1990,7 @@ step
 	.mob Argent Champion
 	.isOnQuest 13724
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Colosos|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Colosos|r
 	.goto IcecrownGlacier,76.10,19.10
 	.turnin 13724 >> Turn in The Valiant's Challenge
 	.target Colosos
@@ -1999,7 +1999,7 @@ step
 	+|cRXP_WARN_You are now a |T255137:0|tChampion of the Exodar!|r
 	>>|cRXP_LOOT_You are now finished with the Exodar Champion Guide!|r
 	>>|cRXP_LOOT_You now have the choice to become a|r |cRXP_WARN_Champion|r |cRXP_LOOT_of another|r |cRXP_WARN_Race|r|cRXP_LOOT_|r
-	>>|cRXP_LOOT_Load the |cRXP_FRIENDLY_ 2.0|r Guide to whichever|r |cRXP_WARN_Race|r |cRXP_LOOT_you choose to pursue next!|r
+	>>|cRXP_LOOT_Load the |cRXP_FRIENDLY_2.0|r Guide to whichever|r |cRXP_WARN_Race|r |cRXP_LOOT_you choose to pursue next!|r
 	>>|cRXP_LOOT_OR
 	>>|cRXP_LOOT_You may start|r |cRXP_ENEMY_3.0|r |cRXP_LOOT_Champion Daily Quests|r
 	.isQuestTurnedIn 13724
@@ -2010,21 +2010,21 @@ RXPGuides.RegisterGuide([[
 #wotlk
 #version 1
 #group +Argent Tournament
-#name |cRXP_FRIENDLY_ 2.0|r Stormwind Champion
+#name |cRXP_FRIENDLY_2.0|r Stormwind Champion
 << Alliance !Human
 
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Marshal Jacob Alerius|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Jacob Alerius|r
 	.goto IcecrownGlacier,76.60,19.12
 	.accept 13593 >> Accept Valiant Of Stormwind
 	.turnin 13593 >> Turn in Valiant Of Stormwind
 	.target Marshal Jacob Alerius
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Marshal Jacob Alerius|r. He has 1 out of 3 daily quests. Accept whichever is available
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Jacob Alerius|r. He has 1 out of 3 daily quests. Accept whichever is available
 	.accept 13718 >> Accept The Valiant's Charge
 	.daily 13603,13616,13600 >>Accept A Blade Fit For A Champion |c99ffff99OR|r The Edge Of Winter |c99ffff99OR|r A Worthy Weapon
 	.goto IcecrownGlacier,76.60,19.12
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Sir Marcus Barlowe|r and |cRXP_FRIENDLY_ Captain Joseph Holley|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sir Marcus Barlowe|r and |cRXP_FRIENDLY_Captain Joseph Holley|r
 	.daily 13592 >> Accept A Valiant's Field Training
 	.goto IcecrownGlacier,76.53,19.08
 	.daily 13665 >> Accept The Grand Melee
@@ -2090,7 +2090,7 @@ step -- A Valiant's Field Training
 
 step -- At The Enemy's Gates
 	#completewith next
-	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the |cRXP_FRIENDLY_ Stabled Campaign Warhorse|r << Alliance
+	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the |cRXP_FRIENDLY_Stabled Campaign Warhorse|r << Alliance
 	>>There is a |T135128:0|t|c99ffff99Lance Rack|r just beside the Barricade if you need another
 	.goto IcecrownGlacier,48.87,71.78
 	.use 46069
@@ -2103,7 +2103,7 @@ step
 	.isOnQuest 13847
 	.mob Boneguard Scout
 step
-	>>Kill |cRXP_ENEMY_Boneguard Footmen|r by using your |cRXP_FRIENDLY_ Warhorse|r to run over and kill them instantly
+	>>Kill |cRXP_ENEMY_Boneguard Footmen|r by using your |cRXP_FRIENDLY_Warhorse|r to run over and kill them instantly
 	>>Kill |cRXP_ENEMY_Boneguard Lieutenants|r. Gain stacks of |T132360:0|tDefend (4) and maintain it. Use |T132358:0|tShield-Breaker (2) to remove their shield then |T132226:0|tCharge (3) and |T135375:0|tThrust (1)
 	.complete 13847,1 -- Boneguard Footman slain (15)
 	.complete 13847,3 -- Boneguard Lieutenant (3)
@@ -2207,7 +2207,7 @@ step
 	.goto IcecrownGlacier,76.46,19.41,300 >> Return to the |T236690:0|tArgent Tournament Grounds in Icecrown
 	.isOnQuest 13603,13616,13600,13592,13665,13847
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Marshal Jacob Alerius|r, |cRXP_FRIENDLY_ Sir Marcus Barlowe|r and |cRXP_FRIENDLY_ Captain Joseph Holley|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Jacob Alerius|r, |cRXP_FRIENDLY_Sir Marcus Barlowe|r and |cRXP_FRIENDLY_Captain Joseph Holley|r
 	.turnin 13603 >> Turn in A Blade Fit For A Champion
 	.goto IcecrownGlacier,76.60,19.12
 	.turnin 13592 >> Turn in A Valiant's Field Training
@@ -2220,7 +2220,7 @@ step
 	.target Captain Joseph Holley
 	.isQuestComplete 13603 -- A Blade Fit For A Champion
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Marshal Jacob Alerius|r, |cRXP_FRIENDLY_ Sir Marcus Barlowe|r and |cRXP_FRIENDLY_ Captain Joseph Holley|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Jacob Alerius|r, |cRXP_FRIENDLY_Sir Marcus Barlowe|r and |cRXP_FRIENDLY_Captain Joseph Holley|r
 	.turnin 13616 >> Turn in The Edge Of Winter
 	.goto IcecrownGlacier,76.60,19.12
 	.turnin 13592 >> Turn in A Valiant's Field Training
@@ -2233,7 +2233,7 @@ step
 	.target Captain Joseph Holley
 	.isQuestComplete 13616 -- The Edge Of Winter
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Marshal Jacob Alerius|r, |cRXP_FRIENDLY_ Sir Marcus Barlowe|r and |cRXP_FRIENDLY_ Captain Joseph Holley|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Jacob Alerius|r, |cRXP_FRIENDLY_Sir Marcus Barlowe|r and |cRXP_FRIENDLY_Captain Joseph Holley|r
 	.turnin 13600 >> Turn in A Worthy Weapon
 	.goto IcecrownGlacier,76.60,19.12
 	.turnin 13592 >> Turn in A Valiant's Field Training
@@ -2246,7 +2246,7 @@ step
 	.target Captain Joseph Holley
 	.isQuestComplete 13600 -- A Worthy Weapon
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Sir Marcus Barlowe|r and |cRXP_FRIENDLY_ Captain Joseph Holley|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sir Marcus Barlowe|r and |cRXP_FRIENDLY_Captain Joseph Holley|r
 	.turnin -13592 >> Turn in A Valiant's Field Training
 	.goto IcecrownGlacier,76.53,19.08
 	.turnin -13665 >> Turn in The Grand Melee
@@ -2258,7 +2258,7 @@ step
 	>>In order to complete the quest |cFFffff00The Valiant's Charge|r and progress through the |T236690:0|tArgent Tournament Grounds you must complete daily quests and acquire |T133441:0|t|c99CCFFFFValiant's Seal|r
 	>>You need |T133441:0|t|c99CCFFFF25 Valiant's Seal|r. You will earn 5 per day if you complete the 4 daily quests
 	>>|c99ffff99RELOAD THE GUIDE THE NEXT DAY IF YOU STILL NEED TO COMPLETE THE DAILY QUESTS UNTIL YOU CAN TURN THIS QUEST IN|r.
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Marshal Jacob Alerius|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Jacob Alerius|r
 	.complete 13718,1 >> Turn in The Valiant's Charge -- Valiant's Seal (25)
 	.turnin 13718 >> Turn in The Valiant's Charge
 	.accept	13699 >> Accept The Valiant's Challenge
@@ -2272,7 +2272,7 @@ step -- The Valiant's Challenge
 	.target Stabled Stormwind Steed
 	.isOnQuest 13699
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Squire Danny|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Danny|r
 	>>Remember to use |T132360:0|tDefend (4) and maintain stacks of it during the Duel
 	>>Use |T132358:0|tShield-Breaker (2) to remove |T132360:0|tDefend stacks from the |cRXP_ENEMY_Champion|r constantly
 	>>Once no stacks of |T132360:0|tDefend remain on the |cRXP_ENEMY_Champion|r, use |T132226:0|tCharge (3) as well as |T135375:0|tThrust (1) while in melee range
@@ -2284,7 +2284,7 @@ step
 	.mob Argent Champion
 	.isOnQuest 13699
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Marshal Jacob Alerius|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Jacob Alerius|r
 	.goto IcecrownGlacier,76.60,19.12
 	.turnin	13699 >> Turn in The Valiant's Challenge
 	.target Marshal Jacob Alerius
@@ -2293,7 +2293,7 @@ step
 	+|cRXP_WARN_You are now a |T255140:0|tChampion of Stormwind!|r
 	>>|cRXP_LOOT_You are now finished with the Stormwind Champion Guide!|r
 	>>|cRXP_LOOT_You now have the choice to become a|r |cRXP_WARN_Champion|r |cRXP_LOOT_of another|r |cRXP_WARN_Race|r|cRXP_LOOT_|r
-	>>|cRXP_LOOT_Load the |cRXP_FRIENDLY_ 2.0|r Guide to whichever|r |cRXP_WARN_Race|r |cRXP_LOOT_you choose to pursue next!|r
+	>>|cRXP_LOOT_Load the |cRXP_FRIENDLY_2.0|r Guide to whichever|r |cRXP_WARN_Race|r |cRXP_LOOT_you choose to pursue next!|r
 	>>|cRXP_LOOT_OR
 	>>|cRXP_LOOT_You may start|r |cRXP_ENEMY_3.0|r |cRXP_LOOT_Champion Daily Quests|r
 	.isQuestTurnedIn 13699
@@ -2304,21 +2304,21 @@ RXPGuides.RegisterGuide([[
 #wotlk
 #version 1
 #group +Argent Tournament
-#name |cRXP_FRIENDLY_ 2.0|r Ironforge Champion
+#name |cRXP_FRIENDLY_2.0|r Ironforge Champion
 << Alliance !Dwarf
 
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Lana Stouthammer|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lana Stouthammer|r
 	.goto IcecrownGlacier,76.64,19.49
 	.accept 13703 >> Accept Valiant Of Ironforge
 	.turnin 13703 >> Turn in Valiant Of Ironforge
 	.target Lana Stouthammer
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Lana Stouthammer|r. She has 1 out of 3 daily quests. Accept whichever is available
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lana Stouthammer|r. She has 1 out of 3 daily quests. Accept whichever is available
 	.accept 13714 >> Accept The Valiant's Charge
 	.daily 13741,13743,13742 >>Accept A Blade Fit For A Champion |c99ffff99OR|r The Edge Of Winter |c99ffff99OR|r A Worthy Weapon
 	.goto IcecrownGlacier,76.64,19.49
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Rollo Sureshot|r and |cRXP_FRIENDLY_ Clara Tumblebrew|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rollo Sureshot|r and |cRXP_FRIENDLY_Clara Tumblebrew|r
 	.daily 13744 >> Accept A Valiant's Field Training
 	.goto IcecrownGlacier,76.66,19.41
 	.daily 13745 >> Accept The Grand Melee
@@ -2385,7 +2385,7 @@ step -- A Valiant's Field Training
 
 step -- At The Enemy's Gates
 	#completewith next
-	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the |cRXP_FRIENDLY_ Stabled Campaign Warhorse|r
+	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the |cRXP_FRIENDLY_Stabled Campaign Warhorse|r
 	>>There is a |T135128:0|t|c99ffff99Lance Rack|r just beside the Barricade if you need another
 	.goto IcecrownGlacier,48.87,71.78
 	.use 46069
@@ -2398,7 +2398,7 @@ step
 	.isOnQuest 13851
 	.mob Boneguard Scout
 step
-	>>Kill |cRXP_ENEMY_Boneguard Footmen|r by using your |cRXP_FRIENDLY_ Warhorse|r to run over and kill them instantly
+	>>Kill |cRXP_ENEMY_Boneguard Footmen|r by using your |cRXP_FRIENDLY_Warhorse|r to run over and kill them instantly
 	>>Kill |cRXP_ENEMY_Boneguard Lieutenants|r. Gain stacks of |T132360:0|tDefend (4) and maintain it. Use |T132358:0|tShield-Breaker (2) to remove their shield then |T132226:0|tCharge (3) and |T135375:0|tThrust (1)
 	.complete 13851,1 -- Boneguard Footman slain (15)
 	.complete 13851,3 -- Boneguard Lieutenant slain (3)
@@ -2503,7 +2503,7 @@ step
 	.goto IcecrownGlacier,76.27,24.38,300 >> Return to the |T236690:0|tArgent Tournament Grounds in Icecrown << Horde
 	.isOnQuest 13741,13743,13742,13744,13745,13851
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Lana Stouthammer|r, |cRXP_FRIENDLY_ Rollo Sureshot|r and |cRXP_FRIENDLY_ Clara Tumblebrew|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lana Stouthammer|r, |cRXP_FRIENDLY_Rollo Sureshot|r and |cRXP_FRIENDLY_Clara Tumblebrew|r
 	.turnin 13741 >> Turn in A Blade Fit For A Champion
 	.goto IcecrownGlacier,76.64,19.49
 	.turnin 13744 >> Turn in A Valiant's Field Training
@@ -2516,7 +2516,7 @@ step
 	.target Clara Tumblebrew
 	.isQuestComplete 13741 -- A Blade Fit For A Champion
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Lana Stouthammer|r, |cRXP_FRIENDLY_ Rollo Sureshot|r and |cRXP_FRIENDLY_ Clara Tumblebrew|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lana Stouthammer|r, |cRXP_FRIENDLY_Rollo Sureshot|r and |cRXP_FRIENDLY_Clara Tumblebrew|r
 	.turnin 13743 >> Turn in The Edge Of Winter
 	.goto IcecrownGlacier,76.64,19.49
 	.turnin 13744 >> Turn in A Valiant's Field Training
@@ -2529,7 +2529,7 @@ step
 	.target Clara Tumblebrew
 	.isQuestComplete 13743 -- The Edge Of Winter
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Lana Stouthammer|r, |cRXP_FRIENDLY_ Rollo Sureshot|r and |cRXP_FRIENDLY_ Clara Tumblebrew|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lana Stouthammer|r, |cRXP_FRIENDLY_Rollo Sureshot|r and |cRXP_FRIENDLY_Clara Tumblebrew|r
 	.turnin 13742 >> Turn in A Worthy Weapon
 	.goto IcecrownGlacier,76.64,19.49
 	.turnin 13744 >> Turn in A Valiant's Field Training
@@ -2542,7 +2542,7 @@ step
 	.target Clara Tumblebrew
 	.isQuestComplete 13742 -- A Worthy Weapon
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Rollo|r Sureshot and |cRXP_FRIENDLY_ Clara Tumblebrew|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rollo|r Sureshot and |cRXP_FRIENDLY_Clara Tumblebrew|r
 	.turnin -13744 >> Turn in A Valiant's Field Training
 	.goto IcecrownGlacier,76.66,19.41
 	.turnin -13745 >> Turn in The Grand Melee
@@ -2554,7 +2554,7 @@ step
 	>>In order to complete the quest |cFFffff00The Valiant's Charge|r and progress through the |T236690:0|tArgent Tournament Grounds you must complete daily quests and acquire |T133441:0|t|c99CCFFFFValiant's Seal|r
 	>>You need |T133441:0|t|c99CCFFFF25 Valiant's Seal|r. You will earn 5 per day if you complete the 4 daily quests
 	>>|c99ffff99RELOAD THE GUIDE THE NEXT DAY IF YOU STILL NEED TO COMPLETE THE DAILY QUESTS UNTIL YOU CAN TURN THIS QUEST IN|r.
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Lana Stouthammer|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lana Stouthammer|r
 	.goto IcecrownGlacier,76.64,19.49
 	.complete 13714,1 >> Turn in The Valiant's Charge -- Valiant's Seal (25)
 	.turnin 13714 >> Turn in The Valiant's Charge
@@ -2569,7 +2569,7 @@ step -- The Valiant's Challenge
 	.target Stabled Ironforge Ram
 	.isOnQuest 13713
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Squire Danny|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Danny|r
 	>>Remember to use |T132360:0|tDefend (4) and maintain stacks of it during the Duel
 	>>Use |T132358:0|tShield-Breaker (2) to remove |T132360:0|tDefend stacks from the |cRXP_ENEMY_Champion|r constantly
 	>>Once no stacks of |T132360:0|tDefend remain on the |cRXP_ENEMY_Champion|r, use |T132226:0|tCharge (3) as well as |T135375:0|tThrust (1) while in melee range
@@ -2581,7 +2581,7 @@ step
 	.mob Argent Champion
 	.isOnQuest 13713
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Lana Stouthammer|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lana Stouthammer|r
 	.goto IcecrownGlacier,76.64,19.49
 	.turnin	13713 >> Turn in The Valiant's Challenge
 	.target Lana Stouthammer
@@ -2590,7 +2590,7 @@ step
 	+|cRXP_WARN_You are now a |T255138:0|tChampion of Ironforge!|r
 	>>|cRXP_LOOT_You are now finished with the Ironforge Champion Guide!|r
 	>>|cRXP_LOOT_You now have the choice to become a|r |cRXP_WARN_Champion|r |cRXP_LOOT_of another|r |cRXP_WARN_Race|r|cRXP_LOOT_|r
-	>>|cRXP_LOOT_Load the |cRXP_FRIENDLY_ 2.0|r Guide to whichever|r |cRXP_WARN_Race|r |cRXP_LOOT_you choose to pursue next!|r
+	>>|cRXP_LOOT_Load the |cRXP_FRIENDLY_2.0|r Guide to whichever|r |cRXP_WARN_Race|r |cRXP_LOOT_you choose to pursue next!|r
 	>>|cRXP_LOOT_OR
 	>>|cRXP_LOOT_You may start|r |cRXP_ENEMY_3.0|r |cRXP_LOOT_Champion Daily Quests|r
 	.isQuestTurnedIn 13713
@@ -2600,21 +2600,21 @@ RXPGuides.RegisterGuide([[
 #wotlk
 #version 1
 #group +Argent Tournament
-#name |cRXP_FRIENDLY_ 2.0|r Gnomeregan Champion
+#name |cRXP_FRIENDLY_2.0|r Gnomeregan Champion
 << Alliance !Gnome
 
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Ambrose Boltspark|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambrose Boltspark|r
 	.goto IcecrownGlacier,76.55,19.82
 	.accept 13704 >> Accept Valiant Of Gnomeregan
 	.turnin 13704 >> Turn in Valiant Of Gnomeregan
 	.target Ambrose Boltspark
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Ambrose Boltspark|r. He has 1 out of 3 daily quests. Accept whichever is available
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambrose Boltspark|r. He has 1 out of 3 daily quests. Accept whichever is available
 	.accept 13715 >> Accept The Valiant's Charge
 	.daily 13746,13748,13747 >>Accept A Blade Fit For A Champion |c99ffff99OR|r The Edge Of Winter |c99ffff99OR|r A Worthy Weapon
 	.goto IcecrownGlacier,76.55,19.82
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Tickin Gearspanner|r and |cRXP_FRIENDLY_ Flickin Gearspanner|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tickin Gearspanner|r and |cRXP_FRIENDLY_Flickin Gearspanner|r
 	.daily 13749 >> Accept A Valiant's Field Training
 	.goto IcecrownGlacier,76.60,19.79
 	.daily 13750 >> Accept The Grand Melee
@@ -2679,7 +2679,7 @@ step -- A Valiant's Field Training
 
 step -- At The Enemy's Gates
 	#completewith next
-	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the |cRXP_FRIENDLY_ Stabled Campaign Warhorse|r
+	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the |cRXP_FRIENDLY_Stabled Campaign Warhorse|r
 	>>There is a |T135128:0|t|c99ffff99Lance Rack|r just beside the Barricade if you need another
 	.goto IcecrownGlacier,48.87,71.78
 	.use 46069
@@ -2692,7 +2692,7 @@ step
 	.isOnQuest 13852
 	.mob Boneguard Scout
 step
-	>>Kill |cRXP_ENEMY_Boneguard Footmen|r by using your |cRXP_FRIENDLY_ Warhorse|r to run over and kill them instantly
+	>>Kill |cRXP_ENEMY_Boneguard Footmen|r by using your |cRXP_FRIENDLY_Warhorse|r to run over and kill them instantly
 	>>Kill |cRXP_ENEMY_Boneguard Lieutenants|r. Gain stacks of |T132360:0|tDefend (4) and maintain it. Use |T132358:0|tShield-Breaker (2) to remove their shield then |T132226:0|tCharge (3) and |T135375:0|tThrust (1)
 	.complete 13852,1 -- Boneguard Footman slain (15)
 	.complete 13852,3 -- Boneguard Lieutenant slain (3)
@@ -2797,7 +2797,7 @@ step
 	.goto IcecrownGlacier,76.46,19.41,300 >> Return to the |T236690:0|tArgent Tournament Grounds in Icecrown
 	.isOnQuest 13746,13748,13747,13749,13750,13852
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Ambrose Boltspark|r, |cRXP_FRIENDLY_ Tickin Gearspanner|r and |cRXP_FRIENDLY_ Flickin Gearspanner|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambrose Boltspark|r, |cRXP_FRIENDLY_Tickin Gearspanner|r and |cRXP_FRIENDLY_Flickin Gearspanner|r
 	.turnin 13746 >> Turn in A Blade Fit For A Champion
 	.goto IcecrownGlacier,76.55,19.82
 	.turnin 13749 >> Turn in A Valiant's Field Training
@@ -2810,7 +2810,7 @@ step
 	.target Flickin Gearspanner
 	.isQuestComplete 13746 -- A Blade Fit For A Champion
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Ambrose Boltspark|r, |cRXP_FRIENDLY_ Tickin Gearspanner|r and |cRXP_FRIENDLY_ Flickin Gearspanner|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambrose Boltspark|r, |cRXP_FRIENDLY_Tickin Gearspanner|r and |cRXP_FRIENDLY_Flickin Gearspanner|r
 	.turnin 13748 >> Turn in The Edge Of Winter
 	.goto IcecrownGlacier,76.55,19.82
 	.turnin 13749 >> Turn in A Valiant's Field Training
@@ -2823,7 +2823,7 @@ step
 	.target Flickin Gearspanner
 	.isQuestComplete 13748 -- The Edge Of Winter
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Ambrose Boltspark|r, |cRXP_FRIENDLY_ Tickin Gearspanner|r and |cRXP_FRIENDLY_ Flickin Gearspanner|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambrose Boltspark|r, |cRXP_FRIENDLY_Tickin Gearspanner|r and |cRXP_FRIENDLY_Flickin Gearspanner|r
 	.turnin 13747 >> Turn in A Worthy Weapon
 	.goto IcecrownGlacier,76.55,19.82
 	.turnin 13749 >> Turn in A Valiant's Field Training
@@ -2836,7 +2836,7 @@ step
 	.target Flickin Gearspanner
 	.isQuestComplete 13747 -- A Worthy Weapon
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Tickin Gearspanner|r and |cRXP_FRIENDLY_ Flickin Gearspanner|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tickin Gearspanner|r and |cRXP_FRIENDLY_Flickin Gearspanner|r
 	.turnin -13749 >> Turn in A Valiant's Field Training
 	.goto IcecrownGlacier,76.60,19.79
 	.turnin -13750 >> Turn in The Grand Melee
@@ -2848,7 +2848,7 @@ step -- Checking if they have 25 Valiant's Seals after a set of turn ins.
 	>>In order to complete the quest |cFFffff00The Valiant's Charge|r and progress through the |T236690:0|tArgent Tournament Grounds you must complete daily quests and acquire |T133441:0|t|c99CCFFFFValiant's Seal|r
 	>>You need |T133441:0|t|c99CCFFFF25 Valiant's Seal|r. You will earn 5 per day if you complete the 4 daily quests
 	>>|c99ffff99RELOAD THE GUIDE THE NEXT DAY IF YOU STILL NEED TO COMPLETE THE DAILY QUESTS UNTIL YOU CAN TURN THIS QUEST IN|r.
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Ambrose Boltspark|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambrose Boltspark|r
 	.goto IcecrownGlacier,76.55,19.82
 	.complete 13715,1 >> Turn in The Valiant's Charge -- Valiant's Seal (25)
 	.turnin 13715 >> Turn in The Valiant's Charge
@@ -2863,7 +2863,7 @@ step -- The Valiant's Challenge
 	.target Stabled Gnomeregan Mechanostrider
 	.isOnQuest 13723
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Squire Danny|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Danny|r
 	>>Remember to use |T132360:0|tDefend (4) and maintain stacks of it during the Duel
 	>>Use |T132358:0|tShield-Breaker (2) to remove |T132360:0|tDefend stacks from the |cRXP_ENEMY_Champion|r constantly
 	>>Once no stacks of |T132360:0|tDefend remain on the |cRXP_ENEMY_Champion|r, use |T132226:0|tCharge (3) as well as |T135375:0|tThrust (1) while in melee range
@@ -2875,7 +2875,7 @@ step
 	.mob Argent Champion
 	.isOnQuest 13723
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Ambrose Boltspark|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ambrose Boltspark|r
 	.goto IcecrownGlacier,76.55,19.82
 	.turnin 13723 >> Turn in The Valiant's Challenge
 	.target Ambrose Boltspark
@@ -2884,7 +2884,7 @@ step
 	+|cRXP_WARN_You are now a |T255139:0|tChampion of Gnomeregan!|r
 	>>|cRXP_LOOT_You are now finished with the Gnomeregan Champion Guide!|r
 	>>|cRXP_LOOT_You now have the choice to become a|r |cRXP_WARN_Champion|r |cRXP_LOOT_of another|r |cRXP_WARN_Race|r|cRXP_LOOT_|r
-	>>|cRXP_LOOT_Load the |cRXP_FRIENDLY_ 2.0|r Guide to whichever|r |cRXP_WARN_Race|r |cRXP_LOOT_you choose to pursue next!|r
+	>>|cRXP_LOOT_Load the |cRXP_FRIENDLY_2.0|r Guide to whichever|r |cRXP_WARN_Race|r |cRXP_LOOT_you choose to pursue next!|r
 	>>|cRXP_LOOT_OR
 	>>|cRXP_LOOT_You may start|r |cRXP_ENEMY_3.0|r |cRXP_LOOT_Champion Daily Quests|r
 	.isQuestTurnedIn 13723
@@ -2894,21 +2894,21 @@ RXPGuides.RegisterGuide([[
 #wotlk
 #version 1
 #group +Argent Tournament
-#name |cRXP_FRIENDLY_ 2.0|r Darnassus Champion
+#name |cRXP_FRIENDLY_2.0|r Darnassus Champion
 << Alliance !NightElf
 
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Jaelyne Evensong|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jaelyne Evensong|r
 	.goto IcecrownGlacier,76.34,19.03
 	.accept 13706 >> Accept Valiant Of Darnassus
 	.turnin 13706 >> Turn in Valiant Of Darnassus
 	.target Jaelyne Evensong
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Jaelyne Evensong|r. She has 1 out of 3 daily quests. Accept whichever is available
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jaelyne Evensong|r. She has 1 out of 3 daily quests. Accept whichever is available
 	.accept 13717 >> Accept The Valiant's Charge
 	.daily 13757,13759,13758 >>Accept A Blade Fit For A Champion |c99ffff99OR|r The Edge Of Winter |c99ffff99OR|r A Worthy Weapon
 	.goto IcecrownGlacier,76.34,19.03
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Illestria Bladesinger|r and |cRXP_FRIENDLY_ Airae Starseeker|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illestria Bladesinger|r and |cRXP_FRIENDLY_Airae Starseeker|r
 	.daily 13760 >> Accept A Valiant's Field Training
 	.goto IcecrownGlacier,76.29,18.99
 	.daily 13761 >> Accept The Grand Melee
@@ -2973,7 +2973,7 @@ step -- A Valiant's Field Training
 
 step -- At The Enemy's Gates
 	#completewith next
-	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the |cRXP_FRIENDLY_ Stabled Campaign Warhorse|r
+	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the |cRXP_FRIENDLY_Stabled Campaign Warhorse|r
 	>>There is a |T135128:0|t|c99ffff99Lance Rack|r just beside the Barricade if you need another
 	.goto IcecrownGlacier,48.87,71.78
 	.use 46069
@@ -2986,7 +2986,7 @@ step
 	.isOnQuest 13855
 	.mob Boneguard Scout
 step
-	>>Kill |cRXP_ENEMY_Boneguard Footmen|r by using your |cRXP_FRIENDLY_ Warhorse|r to run over and kill them instantly
+	>>Kill |cRXP_ENEMY_Boneguard Footmen|r by using your |cRXP_FRIENDLY_Warhorse|r to run over and kill them instantly
 	>>Kill |cRXP_ENEMY_Boneguard Lieutenants|r. Gain stacks of |T132360:0|tDefend (4) and maintain it. Use |T132358:0|tShield-Breaker (2) to remove their shield then |T132226:0|tCharge (3) and |T135375:0|tThrust (1)
 	.complete 13855,1 -- Boneguard Footman slain (15)
 	.complete 13855,3 -- Boneguard Lieutenant slain (3)
@@ -3090,7 +3090,7 @@ step
 	.goto IcecrownGlacier,76.46,19.41,300 >> Return to the |T236690:0|tArgent Tournament Grounds in Icecrown
 	.isOnQuest 13757,13759,13758,13760,13761,13855
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Jaelyne Evensong|r, |cRXP_FRIENDLY_ Illestria Bladesinger|r and |cRXP_FRIENDLY_ Airae Starseeker|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jaelyne Evensong|r, |cRXP_FRIENDLY_Illestria Bladesinger|r and |cRXP_FRIENDLY_Airae Starseeker|r
 	.turnin 13757 >> Turn in A Blade Fit For A Champion
 	.goto IcecrownGlacier,76.34,19.03
 	.turnin 13760 >> Turn in A Valiant's Field Training
@@ -3103,7 +3103,7 @@ step
 	.target Airae Starseeker
 	.isQuestComplete 13757 -- A Blade Fit For A Champion
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Jaelyne Evensong|r, |cRXP_FRIENDLY_ Illestria Bladesinger|r and |cRXP_FRIENDLY_ Airae Starseeker|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jaelyne Evensong|r, |cRXP_FRIENDLY_Illestria Bladesinger|r and |cRXP_FRIENDLY_Airae Starseeker|r
 	.turnin 13759 >> Turn in The Edge Of Winter
 	.goto IcecrownGlacier,76.34,19.03
 	.turnin 13760 >> Turn in A Valiant's Field Training
@@ -3116,7 +3116,7 @@ step
 	.target Airae Starseeker
 	.isQuestComplete 13759 -- The Edge Of Winter
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Jaelyne Evensong|r, |cRXP_FRIENDLY_ Illestria Bladesinger|r and |cRXP_FRIENDLY_ Airae Starseeker|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jaelyne Evensong|r, |cRXP_FRIENDLY_Illestria Bladesinger|r and |cRXP_FRIENDLY_Airae Starseeker|r
 	.turnin 13758 >> Turn in A Worthy Weapon
 	.goto IcecrownGlacier,76.34,19.03
 	.turnin 13760 >> Turn in A Valiant's Field Training
@@ -3129,7 +3129,7 @@ step
 	.target Airae Starseeker
 	.isQuestComplete 13758 -- A Worthy Weapon
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Illestria Bladesinger|r and |cRXP_FRIENDLY_ Airae Starseeker|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illestria Bladesinger|r and |cRXP_FRIENDLY_Airae Starseeker|r
 	.turnin -13760 >> Turn in A Valiant's Field Training
 	.goto IcecrownGlacier,76.29,18.99
 	.turnin -13761 >> Turn in The Grand Melee
@@ -3141,7 +3141,7 @@ step
 	>>In order to complete the quest |cFFffff00The Valiant's Charge|r and progress through the |T236690:0|tArgent Tournament Grounds you must complete daily quests and acquire |T133441:0|t|c99CCFFFFValiant's Seal|r
 	>>You need |T133441:0|t|c99CCFFFF25 Valiant's Seal|r. You will earn 5 per day if you complete the 4 daily quests
 	>>|c99ffff99RELOAD THE GUIDE THE NEXT DAY IF YOU STILL NEED TO COMPLETE THE DAILY QUESTS UNTIL YOU CAN TURN THIS QUEST IN|r.
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Jaelyne Evensong|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jaelyne Evensong|r
 	.goto IcecrownGlacier,76.34,19.03
 	.complete 13717,1 >> Turn in The Valiant's Charge -- Valiant's Seal (25)
 	.turnin 13717 >> Turn in The Valiant's Charge
@@ -3156,7 +3156,7 @@ step -- The Valiant's Challenge
 	.target Stabled Darnassian Nightsaber
 	.isOnQuest 13725
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Squire Danny|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Danny|r
 	>>Remember to use |T132360:0|tDefend (4) and maintain stacks of it during the Duel
 	>>Use |T132358:0|tShield-Breaker (2) to remove |T132360:0|tDefend stacks from the |cRXP_ENEMY_Champion|r constantly
 	>>Once no stacks of |T132360:0|tDefend remain on the |cRXP_ENEMY_Champion|r, use |T132226:0|tCharge (3) as well as |T135375:0|tThrust (1) while in melee range
@@ -3168,7 +3168,7 @@ step
 	.mob Argent Champion
 	.isOnQuest 13725
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Jaelyne Evensong|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jaelyne Evensong|r
 	.goto IcecrownGlacier,76.34,19.03
 	.turnin 13725 >> Turn in The Valiant's Challenge
 	.target Jaelyne Evensong
@@ -3177,7 +3177,7 @@ step
 	+|cRXP_WARN_You are now a |T255141:0|tChampion of Darnassus!|r
 	>>|cRXP_LOOT_You are now finished with the Darnassus Champion Guide!|r
 	>>|cRXP_LOOT_You now have the choice to become a|r |cRXP_WARN_Champion|r |cRXP_LOOT_of another|r |cRXP_WARN_Race|r|cRXP_LOOT_|r
-	>>|cRXP_LOOT_Load the |cRXP_FRIENDLY_ 2.0|r Guide to whichever|r |cRXP_WARN_Race|r |cRXP_LOOT_you choose to pursue next!|r
+	>>|cRXP_LOOT_Load the |cRXP_FRIENDLY_2.0|r Guide to whichever|r |cRXP_WARN_Race|r |cRXP_LOOT_you choose to pursue next!|r
 	>>|cRXP_LOOT_OR
 	>>|cRXP_LOOT_You may start|r |cRXP_ENEMY_3.0|r |cRXP_LOOT_Champion Daily Quests|r
 	.isQuestTurnedIn 13725
@@ -3187,22 +3187,22 @@ RXPGuides.RegisterGuide([[
 #wotlk
 #version 1
 #group +Argent Tournament
-#name |cRXP_FRIENDLY_ 2.0|r Orgrimmar Champion
+#name |cRXP_FRIENDLY_2.0|r Orgrimmar Champion
 << Horde !Orc
 
 
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Mokra the Skullcrusher|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mokra the Skullcrusher|r
 	.goto IcecrownGlacier,76.46,24.60
 	.accept 13707 >> Accept Valiant Of Orgrimmar
 	.turnin 13707 >> Turn in Valiant Of Orgrimmar
 	.target Mokra the Skullcrusher
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Mokra the Skullcrusher|r. He has 1 out of 3 daily quests. Accept whichever is available
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mokra the Skullcrusher|r. He has 1 out of 3 daily quests. Accept whichever is available
 	.accept 13697 >> Accept The Valiant's Charge
 	.daily 13762,13764,13763 >>Accept A Blade Fit For A Champion |c99ffff99OR|r The Edge Of Winter |c99ffff99OR|r A Worthy Weapon
 	.goto IcecrownGlacier,76.46,24.60
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Akinos|r and |cRXP_FRIENDLY_ Morah Worgsister|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Akinos|r and |cRXP_FRIENDLY_Morah Worgsister|r
 	.daily 13765 >> Accept A Valiant's Field Training
 	.goto IcecrownGlacier,76.50,24.48
 	.daily 13767 >> Accept The Grand Melee
@@ -3266,7 +3266,7 @@ step -- A Valiant's Field Training
 
 step -- At The Enemy's Gates
 	#completewith next
-	.vehicle >>Equip the |T135128:0|t|c99ffff99Horde Lance|r in your Bags then Mount the |cRXP_FRIENDLY_ Stabled Campaign Warhorse|r
+	.vehicle >>Equip the |T135128:0|t|c99ffff99Horde Lance|r in your Bags then Mount the |cRXP_FRIENDLY_Stabled Campaign Warhorse|r
 	>>There is a |T135128:0|t|c99ffff99Lance Rack|r just beside the Barricade if you need another
 	.goto IcecrownGlacier,48.87,71.78
 	.use 46070
@@ -3279,7 +3279,7 @@ step
 	.isOnQuest 13856
 	.mob Boneguard Scout
 step
-	>>Kill |cRXP_ENEMY_Boneguard Footmen|r by using your |cRXP_FRIENDLY_ Warhorse|r to run over and kill them instantly
+	>>Kill |cRXP_ENEMY_Boneguard Footmen|r by using your |cRXP_FRIENDLY_Warhorse|r to run over and kill them instantly
 	>>Kill |cRXP_ENEMY_Boneguard Lieutenants|r. Gain stacks of |T132360:0|tDefend (4) and maintain it. Use |T132358:0|tShield-Breaker (2) to remove their shield then |T132226:0|tCharge (3) and |T135375:0|tThrust (1)
 	.complete 13856,1 -- Boneguard Footman slain (15)
 	.complete 13856,3 -- Boneguard Lieutenant slain (3)
@@ -3383,7 +3383,7 @@ step
 	.goto IcecrownGlacier,76.27,24.38,300 >> Return to the |T236690:0|tArgent Tournament Grounds in Icecrown
 	.isOnQuest 13762,13764,13763,13765,13767,13856
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Mokra the Skullcrusher|r, |cRXP_FRIENDLY_ Akinos|r and |cRXP_FRIENDLY_ Morah Worgsister|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mokra the Skullcrusher|r, |cRXP_FRIENDLY_Akinos|r and |cRXP_FRIENDLY_Morah Worgsister|r
 	.turnin 13762 >> Turn in A Blade Fit For A Champion
 	.goto IcecrownGlacier,76.46,24.60
 	.turnin 13765 >> Turn in A Valiant's Field Training
@@ -3396,7 +3396,7 @@ step
 	.target Morah Worgsister
 	.isQuestComplete 13762 -- A Blade Fit For A Champion
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Mokra the Skullcrusher|r, |cRXP_FRIENDLY_ Akinos|r and |cRXP_FRIENDLY_ Morah Worgsister|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mokra the Skullcrusher|r, |cRXP_FRIENDLY_Akinos|r and |cRXP_FRIENDLY_Morah Worgsister|r
 	.turnin 13764 >> Turn in The Edge Of Winter
 	.goto IcecrownGlacier,76.46,24.60
 	.turnin 13765 >> Turn in A Valiant's Field Training
@@ -3409,7 +3409,7 @@ step
 	.target Morah Worgsister
 	.isQuestComplete 13764 -- The Edge Of Winter
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Mokra the Skullcrusher|r, |cRXP_FRIENDLY_ Akinos|r and |cRXP_FRIENDLY_ Morah Worgsister|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mokra the Skullcrusher|r, |cRXP_FRIENDLY_Akinos|r and |cRXP_FRIENDLY_Morah Worgsister|r
 	.turnin 13763 >> Turn in A Worthy Weapon
 	.goto IcecrownGlacier,76.46,24.60
 	.turnin 13765 >> Turn in A Valiant's Field Training
@@ -3422,7 +3422,7 @@ step
 	.target Morah Worgsister
 	.isQuestComplete 13763 -- A Worthy Weapon
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Akinos|r and |cRXP_FRIENDLY_ Morah Worgsister|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Akinos|r and |cRXP_FRIENDLY_Morah Worgsister|r
 	.turnin -13765 >> Turn in A Valiant's Field Training
 	.goto IcecrownGlacier,76.50,24.48
 	.turnin -13767 >> Turn in The Grand Melee
@@ -3434,7 +3434,7 @@ step
 	>>In order to complete the quest |cFFffff00The Valiant's Charge|r and progress through the |T236690:0|tArgent Tournament Grounds you must complete daily quests and acquire |T133441:0|t|c99CCFFFFValiant's Seal|r
 	>>You need |T133441:0|t|c99CCFFFF25 Valiant's Seal|r. You will earn 5 per day if you complete the 4 daily quests
 	>>|c99ffff99RELOAD THE GUIDE THE NEXT DAY IF YOU STILL NEED TO COMPLETE THE DAILY QUESTS UNTIL YOU CAN TURN THIS QUEST IN|r.
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Mokra the Skullcrusher|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mokra the Skullcrusher|r
 	.goto IcecrownGlacier,76.46,24.60
 	.complete 13697,1 >> Turn in The Valiant's Charge -- Valiant's Seal (25)
 	.turnin 13697 >> Turn in The Valiant's Charge
@@ -3448,7 +3448,7 @@ step -- The Valiant's Challenge
 	.target Stabled Orgrimmar Wolf
 	.isOnQuest 13726
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Squire Danny|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Danny|r
 	>>Remember to use |T132360:0|tDefend (4) and maintain stacks of it during the Duel
 	>>Use |T132358:0|tShield-Breaker (2) to remove |T132360:0|tDefend stacks from the |cRXP_ENEMY_Champion|r constantly
 	>>Once no stacks of |T132360:0|tDefend remain on the |cRXP_ENEMY_Champion|r, use |T132226:0|tCharge (3) as well as |T135375:0|tThrust (1) while in melee range
@@ -3460,7 +3460,7 @@ step
 	.mob Argent Champion
 	.isOnQuest 13726
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Mokra the Skullcrusher|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mokra the Skullcrusher|r
 	.goto IcecrownGlacier,76.46,24.60
 	.turnin 13726 >> Turn in The Valiant's Challenge
 	.target Mokra the Skullcrusher
@@ -3469,7 +3469,7 @@ step
 	+|cRXP_WARN_You are now a |T255142:0|tChampion of Orgrimmar!|r
 	>>|cRXP_LOOT_You are now finished with the Orgrimmar Champion Guide!|r
 	>>|cRXP_LOOT_You now have the choice to become a|r |cRXP_WARN_Champion|r |cRXP_LOOT_of another|r |cRXP_WARN_Race|r|cRXP_LOOT_|r
-	>>|cRXP_LOOT_Load the |cRXP_FRIENDLY_ 2.0|r Guide to whichever|r |cRXP_WARN_Race|r |cRXP_LOOT_you choose to pursue next!|r
+	>>|cRXP_LOOT_Load the |cRXP_FRIENDLY_2.0|r Guide to whichever|r |cRXP_WARN_Race|r |cRXP_LOOT_you choose to pursue next!|r
 	>>|cRXP_LOOT_OR
 	>>|cRXP_LOOT_You may start|r |cRXP_ENEMY_3.0|r |cRXP_LOOT_Champion Daily Quests|r
 	.isQuestTurnedIn 13726
@@ -3479,21 +3479,21 @@ RXPGuides.RegisterGuide([[
 #wotlk
 #version 1
 #group +Argent Tournament
-#name |cRXP_FRIENDLY_ 2.0|r Sen'jin Champion
+#name |cRXP_FRIENDLY_2.0|r Sen'jin Champion
 << Horde !Troll
 
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Zul'tore|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zul'tore|r
 	.goto IcecrownGlacier,75.95,24.53
 	.accept 13708 >> Accept Valiant Of Sen'jin
 	.turnin 13708 >> Turn in Valiant Of Sen'jin
 	.target Zul'tore
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Zul'tore|r. He has 1 out of 3 daily quests. Accept whichever is available
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zul'tore|r. He has 1 out of 3 daily quests. Accept whichever is available
 	.accept 13719 >> Accept The Valiant's Charge
 	.daily 13768,13770,13769 >>Accept A Blade Fit For A Champion |c99ffff99OR|r The Edge Of Winter |c99ffff99OR|r A Worthy Weapon
 	.goto IcecrownGlacier,75.95,24.53
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Shadow Hunter Mezil-kree|r and |cRXP_FRIENDLY_ Gahju|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shadow Hunter Mezil-kree|r and |cRXP_FRIENDLY_Gahju|r
 	.daily 13771 >> Accept A Valiant's Field Training
 	.goto IcecrownGlacier,76.04,24.59
 	.daily 13772 >> Accept The Grand Melee
@@ -3558,7 +3558,7 @@ step -- A Valiant's Field Training
 
 step
 	#completewith next
-	.vehicle >>Equip the |T135128:0|t|c99ffff99Horde Lance|r in your Bags then Mount the |cRXP_FRIENDLY_ Stabled Campaign Warhorse|r
+	.vehicle >>Equip the |T135128:0|t|c99ffff99Horde Lance|r in your Bags then Mount the |cRXP_FRIENDLY_Stabled Campaign Warhorse|r
 	>>There is a |T135128:0|t|c99ffff99Lance Rack|r just beside the Barricade if you need another
 	.goto IcecrownGlacier,48.87,71.78
 	.use 46070
@@ -3571,7 +3571,7 @@ step
 	.isOnQuest 13857
 	.mob Boneguard Scout
 step
-	>>Kill |cRXP_ENEMY_Boneguard Footmen|r by using your |cRXP_FRIENDLY_ Warhorse|r to run over and kill them instantly
+	>>Kill |cRXP_ENEMY_Boneguard Footmen|r by using your |cRXP_FRIENDLY_Warhorse|r to run over and kill them instantly
 	>>Kill |cRXP_ENEMY_Boneguard Lieutenants|r. Gain stacks of |T132360:0|tDefend (4) and maintain it. Use |T132358:0|tShield-Breaker (2) to remove their shield then |T132226:0|tCharge (3) and |T135375:0|tThrust (1)
 	.complete 13857,1 -- Boneguard Footman slain (15)
 	.complete 13857,3 -- Boneguard Lieutenant slain (3)
@@ -3676,7 +3676,7 @@ step
 	.goto IcecrownGlacier,76.27,24.38,300 >> Return to the |T236690:0|tArgent Tournament Grounds in Icecrown
 	.isOnQuest 13768,13770,13769,13771,13772,13857
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Zul'tore|r, |cRXP_FRIENDLY_ Shadow Hunter Mezil-kree|r and |cRXP_FRIENDLY_ Gahju|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zul'tore|r, |cRXP_FRIENDLY_Shadow Hunter Mezil-kree|r and |cRXP_FRIENDLY_Gahju|r
 	.turnin 13768 >> Turn in A Blade Fit For A Champion
 	.goto IcecrownGlacier,75.95,24.53
 	.turnin 13771 >> Turn in A Valiant's Field Training
@@ -3689,7 +3689,7 @@ step
 	.target Gahju
 	.isQuestComplete 13768 -- A Blade Fit For A Champion
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Zul'tore|r, |cRXP_FRIENDLY_ Shadow Hunter Mezil-kree|r and |cRXP_FRIENDLY_ Gahju|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zul'tore|r, |cRXP_FRIENDLY_Shadow Hunter Mezil-kree|r and |cRXP_FRIENDLY_Gahju|r
 	.turnin 13770 >> Turn in The Edge Of Winter
 	.goto IcecrownGlacier,75.95,24.53
 	.turnin 13771 >> Turn in A Valiant's Field Training
@@ -3702,7 +3702,7 @@ step
 	.target Gahju
 	.isQuestComplete 13770 -- The Edge Of Winter
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Zul'tore|r, |cRXP_FRIENDLY_ Shadow Hunter Mezil-kree|r and |cRXP_FRIENDLY_ Gahju|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zul'tore|r, |cRXP_FRIENDLY_Shadow Hunter Mezil-kree|r and |cRXP_FRIENDLY_Gahju|r
 	.turnin 13769 >> Turn in A Worthy Weapon
 	.goto IcecrownGlacier,75.95,24.53
 	.turnin 13771 >> Turn in A Valiant's Field Training
@@ -3715,7 +3715,7 @@ step
 	.target Gahju
 	.isQuestComplete 13769 -- A Worthy Weapon
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Shadow Hunter Mezil-kree|r and |cRXP_FRIENDLY_ Gahju|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shadow Hunter Mezil-kree|r and |cRXP_FRIENDLY_Gahju|r
 	.turnin -13771 >> Turn in A Valiant's Field Training
 	.goto IcecrownGlacier,76.04,24.59
 	.turnin -13772 >> Turn in The Grand Melee
@@ -3727,7 +3727,7 @@ step
 	>>In order to complete the quest |cFFffff00The Valiant's Charge|r and progress through the |T236690:0|tArgent Tournament Grounds you must complete daily quests and acquire |T133441:0|t|c99CCFFFFValiant's Seal|r
 	>>You need |T133441:0|t|c99CCFFFF25 Valiant's Seal|r. You will earn 5 per day if you complete the 4 daily quests
 	>>|c99ffff99RELOAD THE GUIDE THE NEXT DAY IF YOU STILL NEED TO COMPLETE THE DAILY QUESTS UNTIL YOU CAN TURN THIS QUEST IN|r.
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Zul'tore|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zul'tore|r
 	.goto IcecrownGlacier,75.95,24.53
 	.complete 13719,1 >> Turn in The Valiant's Charge -- Valiant's Seal (25)
 	.turnin 13719 >> Turn in The Valiant's Charge
@@ -3742,7 +3742,7 @@ step -- The Valiant's Challenge
 	.target Stabled Darkspear Raptor
 	.isOnQuest 13727
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Squire Danny|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Danny|r
 	>>Remember to use |T132360:0|tDefend (4) and maintain stacks of it during the Duel
 	>>Use |T132358:0|tShield-Breaker (2) to remove |T132360:0|tDefend stacks from the |cRXP_ENEMY_Champion|r constantly
 	>>Once no stacks of |T132360:0|tDefend remain on the |cRXP_ENEMY_Champion|r, use |T132226:0|tCharge (3) as well as |T135375:0|tThrust (1) while in melee range
@@ -3754,7 +3754,7 @@ step
 	.mob Argent Champion
 	.isOnQuest 13727
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Zul'tore|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zul'tore|r
 	.goto IcecrownGlacier,75.95,24.53
 	.turnin 13727 >> Turn in The Valiant's Challenge
 	.target Zul'tore
@@ -3763,7 +3763,7 @@ step
 	+|cRXP_WARN_You are now a |T255145:0|tChampion of Sen'jin!|r
 	>>|cRXP_LOOT_You are now finished with the Sen'jin Champion Guide!|r
 	>>|cRXP_LOOT_You now have the choice to become a|r |cRXP_WARN_Champion|r |cRXP_LOOT_of another|r |cRXP_WARN_Race|r|cRXP_LOOT_|r
-	>>|cRXP_LOOT_Load the |cRXP_FRIENDLY_ 2.0|r Guide to whichever|r |cRXP_WARN_Race|r |cRXP_LOOT_you choose to pursue next!|r
+	>>|cRXP_LOOT_Load the |cRXP_FRIENDLY_2.0|r Guide to whichever|r |cRXP_WARN_Race|r |cRXP_LOOT_you choose to pursue next!|r
 	>>|cRXP_LOOT_OR
 	>>|cRXP_LOOT_You may start|r |cRXP_ENEMY_3.0|r |cRXP_LOOT_Champion Daily Quests|r
 	.isQuestTurnedIn 13727
@@ -3773,21 +3773,21 @@ RXPGuides.RegisterGuide([[
 #wotlk
 #version 1
 #group +Argent Tournament
-#name |cRXP_FRIENDLY_ 2.0|r Thunder Bluff Champion
+#name |cRXP_FRIENDLY_2.0|r Thunder Bluff Champion
 << Horde !Tauren
 
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Runok Wildmane|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Runok Wildmane|r
 	.goto IcecrownGlacier,76.20,24.63
 	.accept 13709 >> Accept Valiant Of Thunder Bluff
 	.turnin 13709 >> Turn in Valiant Of Thunder Bluff
 	.target Runok Wildmane
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Runok Wildmane|r. He has 1 out of 3 daily quests. Accept whichever is available
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Runok Wildmane|r. He has 1 out of 3 daily quests. Accept whichever is available
 	.accept 13720 >> Accept The Valiant's Charge
 	.daily 13773,13775,13774 >>Accept A Blade Fit For A Champion |c99ffff99OR|r The Edge Of Winter |c99ffff99OR|r A Worthy Weapon
 	.goto IcecrownGlacier,76.20,24.63
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Dern Ragetotem|r and |cRXP_FRIENDLY_ Anka Clawhoof|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dern Ragetotem|r and |cRXP_FRIENDLY_Anka Clawhoof|r
 	.daily 13776 >> Accept A Valiant's Field Training
 	.goto IcecrownGlacier,76.26,24.66
 	.daily 13777 >> Accept The Grand Melee
@@ -3853,7 +3853,7 @@ step -- A Valiant's Field Training
 
 step -- At The Enemy's Gates
 	#completewith next
-	.vehicle >>Equip the |T135128:0|t|c99ffff99Horde Lance|r in your Bags then Mount the |cRXP_FRIENDLY_ Stabled Campaign Warhorse|r
+	.vehicle >>Equip the |T135128:0|t|c99ffff99Horde Lance|r in your Bags then Mount the |cRXP_FRIENDLY_Stabled Campaign Warhorse|r
 	>>There is a |T135128:0|t|c99ffff99Lance Rack|r just beside the Barricade if you need another
 	.goto IcecrownGlacier,48.87,71.78
 	.use 46070
@@ -3866,7 +3866,7 @@ step
 	.isOnQuest 13858
 	.mob Boneguard Scout
 step
-	>>Kill |cRXP_ENEMY_Boneguard Footmen|r by using your |cRXP_FRIENDLY_ Warhorse|r to run over and kill them instantly
+	>>Kill |cRXP_ENEMY_Boneguard Footmen|r by using your |cRXP_FRIENDLY_Warhorse|r to run over and kill them instantly
 	>>Kill |cRXP_ENEMY_Boneguard Lieutenants|r. Gain stacks of |T132360:0|tDefend (4) and maintain it. Use |T132358:0|tShield-Breaker (2) to remove their shield then |T132226:0|tCharge (3) and |T135375:0|tThrust (1)
 	.complete 13858,1 -- Boneguard Footman slain (15)
 	.complete 13858,3 -- Boneguard Lieutenant slain (3)
@@ -3971,7 +3971,7 @@ step
 	.goto IcecrownGlacier,76.27,24.38,300 >> Return to the |T236690:0|tArgent Tournament Grounds in Icecrown << Horde
 	.isOnQuest 13773,13775,13774,13776,13777,13858
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Runok Wildmane|r, |cRXP_FRIENDLY_ Dern Ragetotem|r and |cRXP_FRIENDLY_ Anka Clawhoof|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Runok Wildmane|r, |cRXP_FRIENDLY_Dern Ragetotem|r and |cRXP_FRIENDLY_Anka Clawhoof|r
 	.turnin 13773 >> Turn in A Blade Fit For A Champion
 	.goto IcecrownGlacier,76.20,24.63
 	.turnin 13776 >> Turn in A Valiant's Field Training
@@ -3984,7 +3984,7 @@ step
 	.target Anka Clawhoof
 	.isQuestComplete 13773 -- A Blade Fit For A Champion
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Runok Wildmane|r, |cRXP_FRIENDLY_ Dern Ragetotem|r and |cRXP_FRIENDLY_ Anka Clawhoof|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Runok Wildmane|r, |cRXP_FRIENDLY_Dern Ragetotem|r and |cRXP_FRIENDLY_Anka Clawhoof|r
 	.turnin 13775 >> Turn in The Edge Of Winter
 	.goto IcecrownGlacier,76.20,24.63
 	.turnin 13776 >> Turn in A Valiant's Field Training
@@ -3997,7 +3997,7 @@ step
 	.target Anka Clawhoof
 	.isQuestComplete 13775 -- The Edge Of Winter
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Runok Wildmane|r, |cRXP_FRIENDLY_ Dern Ragetotem|r and |cRXP_FRIENDLY_ Anka Clawhoof|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Runok Wildmane|r, |cRXP_FRIENDLY_Dern Ragetotem|r and |cRXP_FRIENDLY_Anka Clawhoof|r
 	.turnin 13774 >> Turn in A Worthy Weapon
 	.goto IcecrownGlacier,76.20,24.63
 	.turnin 13776 >> Turn in A Valiant's Field Training
@@ -4010,7 +4010,7 @@ step
 	.target Anka Clawhoof
 	.isQuestComplete 13774 -- A Worthy Weapon
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Dern Ragetotem|r and |cRXP_FRIENDLY_ Anka Clawhoof|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dern Ragetotem|r and |cRXP_FRIENDLY_Anka Clawhoof|r
 	.turnin -13776 >> Turn in A Valiant's Field Training
 	.goto IcecrownGlacier,76.26,24.66
 	.turnin -13777 >> Turn in The Grand Melee
@@ -4022,7 +4022,7 @@ step -- Checking if they have 25 Valiant's Seals after a set of turn ins.
 	>>In order to complete the quest |cFFffff00The Valiant's Charge|r and progress through the |T236690:0|tArgent Tournament Grounds you must complete daily quests and acquire |T133441:0|t|c99CCFFFFValiant's Seal|r
 	>>You need |T133441:0|t|c99CCFFFF25 Valiant's Seal|r. You will earn 5 per day if you complete the 4 daily quests
 	>>|c99ffff99RELOAD THE GUIDE THE NEXT DAY IF YOU STILL NEED TO COMPLETE THE DAILY QUESTS UNTIL YOU CAN TURN THIS QUEST IN|r.
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Runok Wildmane|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Runok Wildmane|r
 	.goto IcecrownGlacier,76.20,24.63
 	.complete 13720,1 >> Turn in The Valiant's Charge -- Valiant's Seal (25)
 	.turnin 13720 >> Turn in The Valiant's Charge
@@ -4037,7 +4037,7 @@ step -- The Valiant's Challenge
 	.target Stabled Thunder Bluff Kodo
 	.isOnQuest 13728
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Squire Danny|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Danny|r
 	>>Remember to use |T132360:0|tDefend (4) and maintain stacks of it during the Duel
 	>>Use |T132358:0|tShield-Breaker (2) to remove |T132360:0|tDefend stacks from the |cRXP_ENEMY_Champion|r constantly
 	>>Once no stacks of |T132360:0|tDefend remain on the |cRXP_ENEMY_Champion|r, use |T132226:0|tCharge (3) as well as |T135375:0|tThrust (1) while in melee range
@@ -4049,7 +4049,7 @@ step
 	.mob Argent Champion
 	.isOnQuest 13728
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Runok Wildmane|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Runok Wildmane|r
 	.goto IcecrownGlacier,76.20,24.63
 	.turnin 13728 >> Turn in The Valiant's Challenge
 	.target Runok Wildmane
@@ -4058,7 +4058,7 @@ step
 	+|cRXP_WARN_You are now a |T255144:0|tChampion of Thunder Bluff!|r
 	>>|cRXP_LOOT_You are now finished with the Thunder Bluff Champion Guide!|r
 	>>|cRXP_LOOT_You now have the choice to become a|r |cRXP_WARN_Champion|r |cRXP_LOOT_of another|r |cRXP_WARN_Race|r|cRXP_LOOT_|r
-	>>|cRXP_LOOT_Load the |cRXP_FRIENDLY_ 2.0|r Guide to whichever|r |cRXP_WARN_Race|r |cRXP_LOOT_you choose to pursue next!|r
+	>>|cRXP_LOOT_Load the |cRXP_FRIENDLY_2.0|r Guide to whichever|r |cRXP_WARN_Race|r |cRXP_LOOT_you choose to pursue next!|r
 	>>|cRXP_LOOT_OR
 	>>|cRXP_LOOT_You may start|r |cRXP_ENEMY_3.0|r |cRXP_LOOT_Champion Daily Quests|r
 	.isQuestTurnedIn 13728
@@ -4068,21 +4068,21 @@ RXPGuides.RegisterGuide([[
 #wotlk
 #version 1
 #group +Argent Tournament
-#name |cRXP_FRIENDLY_ 2.0|r Undercity Champion
+#name |cRXP_FRIENDLY_2.0|r Undercity Champion
 << Horde !Scourge
 
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Deathstalker Visceri|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Visceri|r
 	.goto IcecrownGlacier,76.53,24.21
 	.accept 13710 >> Accept Valiant Of Undercity
 	.turnin 13710 >> Turn in Valiant Of Undercity
 	.target Deathstalker Visceri
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Deathstalker Visceri|r. He has 1 out of 3 daily quests. Accept whichever is available
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Visceri|r. He has 1 out of 3 daily quests. Accept whichever is available
 	.accept 13721 >> Accept The Valiant's Charge
 	.daily 13778,13780,13779 >>Accept A Blade Fit For A Champion |c99ffff99OR|r The Edge Of Winter |c99ffff99OR|r A Worthy Weapon
 	.goto IcecrownGlacier,76.53,24.21
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Sarah Chalke|r and |cRXP_FRIENDLY_ Handler Dretch|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sarah Chalke|r and |cRXP_FRIENDLY_Handler Dretch|r
 	.daily 13781 >> Accept A Valiant's Field Training
 	.goto IcecrownGlacier,76.56,24.11
 	.daily 13782 >> Accept The Grand Melee
@@ -4146,7 +4146,7 @@ step -- A Valiant's Field Training
 
 step -- At The Enemy's Gates
 	#completewith next
-	.vehicle >>Equip the |T135128:0|t|c99ffff99Horde Lance|r in your Bags then Mount the |cRXP_FRIENDLY_ Stabled Campaign Warhorse|r
+	.vehicle >>Equip the |T135128:0|t|c99ffff99Horde Lance|r in your Bags then Mount the |cRXP_FRIENDLY_Stabled Campaign Warhorse|r
 	>>There is a |T135128:0|t|c99ffff99Lance Rack|r just beside the Barricade if you need another
 	.goto IcecrownGlacier,48.87,71.78
 	.use 46070
@@ -4159,7 +4159,7 @@ step
 	.isOnQuest 13860
 	.mob Boneguard Scout
 step
-	>>Kill |cRXP_ENEMY_Boneguard Footmen|r by using your |cRXP_FRIENDLY_ Warhorse|r to run over and kill them instantly
+	>>Kill |cRXP_ENEMY_Boneguard Footmen|r by using your |cRXP_FRIENDLY_Warhorse|r to run over and kill them instantly
 	>>Kill |cRXP_ENEMY_Boneguard Lieutenants|r. Gain stacks of |T132360:0|tDefend (4) and maintain it. Use |T132358:0|tShield-Breaker (2) to remove their shield then |T132226:0|tCharge (3) and |T135375:0|tThrust (1)
 	.complete 13860,1 -- Boneguard Footman slain (15)
 	.complete 13860,3 -- Boneguard Lieutenant slain (3)
@@ -4265,7 +4265,7 @@ step
 	.goto IcecrownGlacier,76.27,24.38,300 >> Return to the |T236690:0|tArgent Tournament Grounds in Icecrown << Horde
 	.isOnQuest 13778,13780,13779,13781,13782,13860
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Deathstalker Visceri|r, |cRXP_FRIENDLY_ Sarah Chalke|r and |cRXP_FRIENDLY_ Handler Dretch|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Visceri|r, |cRXP_FRIENDLY_Sarah Chalke|r and |cRXP_FRIENDLY_Handler Dretch|r
 	.turnin 13778 >> Turn in A Blade Fit For A Champion
 	.goto IcecrownGlacier,76.53,24.21
 	.turnin 13781 >> Turn in A Valiant's Field Training
@@ -4278,7 +4278,7 @@ step
 	.target Handler Dretch
 	.isQuestComplete 13778 -- A Blade Fit For A Champion
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Deathstalker Visceri|r, |cRXP_FRIENDLY_ Sarah Chalke|r and |cRXP_FRIENDLY_ Handler Dretch|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Visceri|r, |cRXP_FRIENDLY_Sarah Chalke|r and |cRXP_FRIENDLY_Handler Dretch|r
 	.turnin 13780 >> Turn in The Edge Of Winter
 	.goto IcecrownGlacier,76.53,24.21
 	.turnin 13781 >> Turn in A Valiant's Field Training
@@ -4291,7 +4291,7 @@ step
 	.target Handler Dretch
 	.isQuestComplete 13780 -- The Edge Of Winter
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Deathstalker Visceri|r, |cRXP_FRIENDLY_ Sarah Chalke|r and |cRXP_FRIENDLY_ Handler Dretch|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Visceri|r, |cRXP_FRIENDLY_Sarah Chalke|r and |cRXP_FRIENDLY_Handler Dretch|r
 	.turnin 13779 >> Turn in A Worthy Weapon
 	.goto IcecrownGlacier,76.53,24.21
 	.turnin 13781 >> Turn in A Valiant's Field Training
@@ -4304,7 +4304,7 @@ step
 	.target Handler Dretch
 	.isQuestComplete 13779 -- A Worthy Weapon
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Sarah Chalke|r and |cRXP_FRIENDLY_ Handler Dretch|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sarah Chalke|r and |cRXP_FRIENDLY_Handler Dretch|r
 	.turnin -13781 >> Turn in A Valiant's Field Training
 	.goto IcecrownGlacier,76.56,24.11
 	.turnin -13782 >> Turn in The Grand Melee
@@ -4316,7 +4316,7 @@ step -- Checking if they have 25 Valiant's Seals after a set of turn ins.
 	>>In order to complete the quest |cFFffff00The Valiant's Charge|r and progress through the |T236690:0|tArgent Tournament Grounds you must complete daily quests and acquire |T133441:0|t|c99CCFFFFValiant's Seal|r
 	>>You need |T133441:0|t|c99CCFFFF25 Valiant's Seal|r. You will earn 5 per day if you complete the 4 daily quests
 	>>|c99ffff99RELOAD THE GUIDE THE NEXT DAY IF YOU STILL NEED TO COMPLETE THE DAILY QUESTS UNTIL YOU CAN TURN THIS QUEST IN|r.
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Deathstalker Visceri|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Visceri|r
 	.goto IcecrownGlacier,76.53,24.21
 	.complete 13721,1 >> Turn in The Valiant's Charge -- Valiant's Seal (25)
 	.turnin 13721 >> Turn in The Valiant's Charge
@@ -4331,7 +4331,7 @@ step -- The Valiant's Challenge
 	.target Stabled Forsaken Warhorse
 	.isOnQuest 13729
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Squire Danny|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Danny|r
 	>>Remember to use |T132360:0|tDefend (4) and maintain stacks of it during the Duel
 	>>Use |T132358:0|tShield-Breaker (2) to remove |T132360:0|tDefend stacks from the |cRXP_ENEMY_Champion|r constantly
 	>>Once no stacks of |T132360:0|tDefend remain on the |cRXP_ENEMY_Champion|r, use |T132226:0|tCharge (3) as well as |T135375:0|tThrust (1) while in melee range
@@ -4343,7 +4343,7 @@ step
 	.mob Argent Champion
 	.isOnQuest 13729
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Deathstalker Visceri|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathstalker Visceri|r
 	.goto IcecrownGlacier,76.53,24.21
 	.turnin	13729 >> Turn in The Valiant's Challenge
 	.target Deathstalker Visceri
@@ -4352,7 +4352,7 @@ step
 	+|cRXP_WARN_You are now a |T255143:0|tChampion of the Undercity!|r
 	>>|cRXP_LOOT_You are now finished with the Undercity Champion Guide!|r
 	>>|cRXP_LOOT_You now have the choice to become a|r |cRXP_WARN_Champion|r |cRXP_LOOT_of another|r |cRXP_WARN_Race|r|cRXP_LOOT_|r
-	>>|cRXP_LOOT_Load the |cRXP_FRIENDLY_ 2.0|r Guide to whichever|r |cRXP_WARN_Race|r |cRXP_LOOT_you choose to pursue next!|r
+	>>|cRXP_LOOT_Load the |cRXP_FRIENDLY_2.0|r Guide to whichever|r |cRXP_WARN_Race|r |cRXP_LOOT_you choose to pursue next!|r
 	>>|cRXP_LOOT_OR
 	>>|cRXP_LOOT_You may start|r |cRXP_ENEMY_3.0|r |cRXP_LOOT_Champion Daily Quests|r
 	.isQuestTurnedIn 13729
@@ -4362,23 +4362,23 @@ RXPGuides.RegisterGuide([[
 #wotlk
 #version 1
 #group +Argent Tournament
-#name |cRXP_FRIENDLY_ 2.0|r Silvermoon Champion
+#name |cRXP_FRIENDLY_2.0|r Silvermoon Champion
 #next Champion Side Quests
 << Horde !BloodElf
 
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Eressea Dawnsinger|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eressea Dawnsinger|r
 	.goto IcecrownGlacier,76.45,23.85
 	.accept 13711 >> Accept Valiant Of Silvermoon
 	.turnin 13711 >> Turn in Valiant Of Silvermoon
 	.target Eressea Dawnsinger
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Mokra the Skullcrusher|r. She has 1 out of 3 daily quests. Accept whichever is available
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mokra the Skullcrusher|r. She has 1 out of 3 daily quests. Accept whichever is available
 	.accept 13722 >> Accept The Valiant's Charge
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Eressea Dawnsinger|r. She has 1 out of 3 daily quests. Accept whichever is available
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eressea Dawnsinger|r. She has 1 out of 3 daily quests. Accept whichever is available
 	.daily 13783,13785,13784 >>Accept A Blade Fit For A Champion |c99ffff99OR|r The Edge Of Winter |c99ffff99OR|r A Worthy Weapon
 	.goto IcecrownGlacier,76.45,23.85
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Kethiel Sunlance|r and |cRXP_FRIENDLY_ Aneera Thuron|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kethiel Sunlance|r and |cRXP_FRIENDLY_Aneera Thuron|r
 	.daily 13786 >> Accept A Valiant's Field Training
 	.goto IcecrownGlacier,76.41,23.75
 	.daily 13787 >> Accept The Grand Melee
@@ -4443,8 +4443,8 @@ step -- A Valiant's Field Training
 
 step -- At The Enemy's Gates
 	#completewith next
-	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the |cRXP_FRIENDLY_ Stabled Campaign Warhorse|r << Alliance
-	.vehicle >>Equip the |T135128:0|t|c99ffff99Horde Lance|r in your Bags then Mount the |cRXP_FRIENDLY_ Stabled Campaign Warhorse|r << Horde
+	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the |cRXP_FRIENDLY_Stabled Campaign Warhorse|r << Alliance
+	.vehicle >>Equip the |T135128:0|t|c99ffff99Horde Lance|r in your Bags then Mount the |cRXP_FRIENDLY_Stabled Campaign Warhorse|r << Horde
 	>>There is a |T135128:0|t|c99ffff99Lance Rack|r just beside the Barricade if you need another
 	.goto IcecrownGlacier,48.87,71.78
 	.use 46070
@@ -4457,7 +4457,7 @@ step
 	.isOnQuest 13859
 	.mob Boneguard Scout
 step
-	>>Kill |cRXP_ENEMY_Boneguard Footmen|r by using your |cRXP_FRIENDLY_ Warhorse|r to run over and kill them instantly
+	>>Kill |cRXP_ENEMY_Boneguard Footmen|r by using your |cRXP_FRIENDLY_Warhorse|r to run over and kill them instantly
 	>>Kill |cRXP_ENEMY_Boneguard Lieutenants|r. Gain stacks of |T132360:0|tDefend (4) and maintain it. Use |T132358:0|tShield-Breaker (2) to remove their shield then |T132226:0|tCharge (3) and |T135375:0|tThrust (1)
 	.complete 13859,1 -- Boneguard Footman slain (15)
 	.complete 13859,3 -- Boneguard Lieutenant slain (3)
@@ -4562,7 +4562,7 @@ step
 	.goto IcecrownGlacier,76.27,24.38,300 >> Return to the |T236690:0|tArgent Tournament Grounds in Icecrown
 	.isOnQuest 13783,13785,13784,13786,13787,13859
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Eressea Dawnsinger|r, |cRXP_FRIENDLY_ Kethiel Sunlance|r and |cRXP_FRIENDLY_ Aneera Thuron|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eressea Dawnsinger|r, |cRXP_FRIENDLY_Kethiel Sunlance|r and |cRXP_FRIENDLY_Aneera Thuron|r
 	.turnin 13783 >> Turn in A Blade Fit For A Champion
 	.goto IcecrownGlacier,76.45,23.85
 	.turnin 13786 >> Turn in A Valiant's Field Training
@@ -4575,7 +4575,7 @@ step
 	.target Aneera Thuron
 	.isQuestComplete 13783 -- A Blade Fit For A Champion
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Eressea Dawnsinger|r, |cRXP_FRIENDLY_ Kethiel Sunlance|r and |cRXP_FRIENDLY_ Aneera Thuron|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eressea Dawnsinger|r, |cRXP_FRIENDLY_Kethiel Sunlance|r and |cRXP_FRIENDLY_Aneera Thuron|r
 	.turnin 13785 >> Turn in The Edge Of Winter
 	.goto IcecrownGlacier,76.45,23.85
 	.turnin 13786 >> Turn in A Valiant's Field Training
@@ -4588,7 +4588,7 @@ step
 	.target Aneera Thuron
 	.isQuestComplete 13785 -- The Edge Of Winter
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Eressea Dawnsinger|r, |cRXP_FRIENDLY_ Kethiel Sunlance|r and |cRXP_FRIENDLY_ Aneera Thuron|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eressea Dawnsinger|r, |cRXP_FRIENDLY_Kethiel Sunlance|r and |cRXP_FRIENDLY_Aneera Thuron|r
 	.turnin 13784 >> Turn in A Worthy Weapon
 	.goto IcecrownGlacier,76.45,23.85
 	.turnin 13786 >> Turn in A Valiant's Field Training
@@ -4601,7 +4601,7 @@ step
 	.target Aneera Thuron
 	.isQuestComplete 13784 -- A Worthy Weapon
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Kethiel Sunlance|r and |cRXP_FRIENDLY_ Aneera Thuron|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kethiel Sunlance|r and |cRXP_FRIENDLY_Aneera Thuron|r
 	.turnin -13786 >> Turn in A Valiant's Field Training
 	.goto IcecrownGlacier,76.41,23.75
 	.turnin -13787 >> Turn in The Grand Melee
@@ -4613,7 +4613,7 @@ step -- Checking if they have 25 Valiant's Seals after a set of turn ins.
 	>>In order to complete the quest |cFFffff00The Valiant's Charge|r and progress through the |T236690:0|tArgent Tournament Grounds you must complete daily quests and acquire |T133441:0|t|c99CCFFFFValiant's Seal|r
 	>>You need |T133441:0|t|c99CCFFFF25 Valiant's Seal|r. You will earn 5 per day if you complete the 4 daily quests
 	>>|c99ffff99RELOAD THE GUIDE THE NEXT DAY IF YOU STILL NEED TO COMPLETE THE DAILY QUESTS UNTIL YOU CAN TURN THIS QUEST IN|r.
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Eressea Dawnsinger|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eressea Dawnsinger|r
 	.goto IcecrownGlacier,76.45,23.85
 	.complete 13722,1 >> Turn in The Valiant's Charge -- Valiant's Seal (25)
 	.turnin 13722 >> Turn in The Valiant's Charge
@@ -4628,7 +4628,7 @@ step -- The Valiant's Challenge
 	.target Stabled Silvermoon Hawkstrider
 	.isOnQuest 13731
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Squire Danny|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Danny|r
 	>>Remember to use |T132360:0|tDefend (4) and maintain stacks of it during the Duel
 	>>Use |T132358:0|tShield-Breaker (2) to remove |T132360:0|tDefend stacks from the |cRXP_ENEMY_Champion|r constantly
 	>>Once no stacks of |T132360:0|tDefend remain on the |cRXP_ENEMY_Champion|r, use |T132226:0|tCharge (3) as well as |T135375:0|tThrust (1) while in melee range
@@ -4640,7 +4640,7 @@ step
 	.mob Argent Champion
 	.isOnQuest 13731
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Eressea Dawnsinger|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eressea Dawnsinger|r
 	.goto IcecrownGlacier,76.45,23.85
 	.turnin 13731 >> Turn in The Valiant's Challenge
 	.target Eressea Dawnsinger
@@ -4649,7 +4649,7 @@ step
 	+|cRXP_WARN_You are now a |T255136:0|tChampion of Silvermoon City!|r
 	>>|cRXP_LOOT_You are now finished with the Silvermoon Champion Guide!|r
 	>>|cRXP_LOOT_You now have the choice to become a|r |cRXP_WARN_Champion|r |cRXP_LOOT_of another|r |cRXP_WARN_Race|r|cRXP_LOOT_|r
-	>>|cRXP_LOOT_Load the |cRXP_FRIENDLY_ 2.0|r Guide to whichever|r |cRXP_WARN_Race|r |cRXP_LOOT_you choose to pursue next!|r
+	>>|cRXP_LOOT_Load the |cRXP_FRIENDLY_2.0|r Guide to whichever|r |cRXP_WARN_Race|r |cRXP_LOOT_you choose to pursue next!|r
 	>>|cRXP_LOOT_OR
 	>>|cRXP_LOOT_You may start|r |cRXP_ENEMY_3.0|r |cRXP_LOOT_Champion Daily Quests|r
 	.isQuestTurnedIn 13731
@@ -4664,7 +4664,7 @@ RXPGuides.RegisterGuide([[
 #name |cRXP_PICK_2.1|r The Black Knight's Quest Story
 
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Crusader Rhydalla|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crusader Rhydalla|r
 	.goto IcecrownGlacier,69.43,23.02
 	.accept 13633 >> Accept The Black Knight of Westfall? << Alliance
 	.accept 13634 >> Accept The Black Knight of Silverpine? << Horde
@@ -4711,7 +4711,7 @@ step
 	.goto IcecrownGlacier,69.43,23.02,500 >> Return to the |T236690:0|tArgent Tournament Grounds in Icecrown
 	.isOnQuest 13633,13634
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Crusader Rhydalla|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crusader Rhydalla|r
 	.goto IcecrownGlacier,69.43,23.02
 	.turnin 13633 >> Turn in The Black Knight of Westfall? << Alliance
 	.turnin 13634 >> Turn in The Black Knight of Silverpine? << Horde
@@ -4740,7 +4740,7 @@ step
 	.goto IcecrownGlacier,69.43,23.02,500 >> Return to the |T236690:0|tArgent Tournament Grounds in Icecrown
 	.isOnQuest 13641
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Crusader Rhydalla|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crusader Rhydalla|r
 	.goto IcecrownGlacier,69.43,23.02
 	.turnin 13641 >> Turn in The Seer's Crystal
 	.accept 13643 >> Accept The Stories Dead Men Tell
@@ -4756,7 +4756,7 @@ step
 	.goto IcecrownGlacier,79.63,23.57
 	.isOnQuest 13643
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Crusader Rhydalla|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crusader Rhydalla|r
 	.goto IcecrownGlacier,69.43,23.02
 	.turnin 13643 >> Turn in The Stories Dead Men Tell
 	.accept 13654 >> Accept There's Something About the Squire
@@ -4793,13 +4793,13 @@ step
 	.goto IcecrownGlacier,69.43,23.02,500 >> Return to the |T236690:0|tArgent Tournament Grounds in Icecrown
 	.isOnQuest 13654
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Crusader Rhydalla|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crusader Rhydalla|r
 	.goto IcecrownGlacier,69.43,23.02
 	.turnin 13654 >> Turn in There's Something About the Squire
 	.accept 13663 >> Accept The Black Knight's Orders
 	.target Crusader Rhydalla
 step
-	.use 45083 >>Use the |T133331:0|t|cFFFFFF99Enchanted Bridle|r in your Bags on the |cRXP_FRIENDLY_ Black Knight's Gryphon|r
+	.use 45083 >>Use the |T133331:0|t|cFFFFFF99Enchanted Bridle|r in your Bags on the |cRXP_FRIENDLY_Black Knight's Gryphon|r
 	>>The Gryphon RP takes roughly 1min40sec
 	.goto IcecrownGlacier,77.77,21.61
 	.cast 63163
@@ -4815,20 +4815,20 @@ step
 	.goto IcecrownGlacier,54.10,8.63
 	.isOnQuest 13663
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Crusader Rhydalla|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crusader Rhydalla|r
 	.goto IcecrownGlacier,69.43,23.02
 	.turnin 13663 >> Turn in The Black Knight's Orders
 	.target Crusader Rhydalla
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Crusader Rhydalla|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crusader Rhydalla|r
 	>>NOTE: Accepting this quest requires you to be a |cRXP_WARN_Champion|r. If you cannot accept this quest you must complete the |cRXP_LOOT_1.0|r Becoming a Champion Guide
 	.goto IcecrownGlacier,69.43,23.02
 	.accept 13664 >> Accept The Black Knight's Fall
 	.target Crusader Rhydalla
 step
 	#completewith next
-	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the |cRXP_FRIENDLY_ Argent Warhorse|r << Alliance
-	.vehicle >>Equip the |T135128:0|t|c99ffff99Horde Lance|r in your Bags then Mount the |cRXP_FRIENDLY_ Argent Warhorse|r << Horde
+	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the |cRXP_FRIENDLY_Argent Warhorse|r << Alliance
+	.vehicle >>Equip the |T135128:0|t|c99ffff99Horde Lance|r in your Bags then Mount the |cRXP_FRIENDLY_Argent Warhorse|r << Horde
 	>>If you have misplayed your |T135128:0|t|c99ffff99Lance|r there are Racks throughout the Stables
 	.use 46069 << Alliance
 	.use 46070 << Horde
@@ -4836,7 +4836,7 @@ step
 	.target Stabled Argent Warhorse
 	.isOnQuest 13664
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Squire Cavin|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Cavin|r
 	>>Remember to use |T132360:0|tDefend (4). Use |T132226:0|tCharge (3) along with |T135375:0|tThrust (1) and |T132358:0|tShield-Breaker (2) if at range
 	>>|cRXP_ENEMY_The Black Knight|r will dismount you once his HP reaches 0
 	>>|cRXP_WARN_Remember to Equip your Weapon!|r
@@ -4849,13 +4849,13 @@ step
 	.mob The Black Knight
 	.isOnQuest 13664
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Crusader Rhydalla|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crusader Rhydalla|r
 	.goto IcecrownGlacier,69.43,23.02
 	.turnin 13664 >> Turn in The Black Knight's Fall
 	.target Crusader Rhydalla
 
 step -- 14016 and 14017 added in 3.2 - Add in Phase 3
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Crusader Rhydalla|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crusader Rhydalla|r
 	.goto IcecrownGlacier,69.43,23.02
 	.accept 14016 >> Accept The Black Knight's Curse
 	.target Crusader Rhydalla
@@ -4867,7 +4867,7 @@ step
 	.isOnQuest 14016
 	.target Cult Assassin
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Crusader Rhydalla|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crusader Rhydalla|r
 	.goto IcecrownGlacier,69.43,23.02
 	.turnin 14016 >> Turn in The Black Knight's Grave
 	.accept 14017 >> Accept The Black Knight's Fate
@@ -4881,7 +4881,7 @@ step
 	.isOnQuest 14017
 	.target Doctor Kolher
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Crusader Rhydalla|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crusader Rhydalla|r
 	.goto IcecrownGlacier,69.43,23.02
 	.turnin 14017 >> Turn in The Black Knight's Grave
 	.target Crusader Rhydalla
@@ -4898,23 +4898,23 @@ RXPGuides.RegisterGuide([[
 step
 	>>To access Champion Daily Quests you must have completed the |cRXP_LOOT_1.0|r Becoming a Champion Guide
 	>>If you cannot accept any quests make sure it has been completed
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Justicar Mariel Trueheart|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Justicar Mariel Trueheart|r
 	.goto IcecrownGlacier,69.66,22.86
 	.accept 13794 >> Accept Eadric the Pure << !DK
 	.accept 13795 >> Accept The Scourgebane << DK
 	.target Justicar Mariel Trueheart
 step << !DK
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Eadric the Pure|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eadric the Pure|r
 	.goto IcecrownGlacier,69.96,23.44
 	.turnin 13794 >> Turn in Eadric the Pure
 	.target Eadric the Pure
 step << DK
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Crok Scourgebane|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crok Scourgebane|r
 	.goto IcecrownGlacier,73.80,20.06
 	.turnin 13795 >> Turn in The Scourgebane
 	.target Crok Scourgebane
 step << !DK
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Eadric the Pure|r, |cRXP_FRIENDLY_ Luuri|r and |cRXP_FRIENDLY_ Cellian Daybreak|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eadric the Pure|r, |cRXP_FRIENDLY_Luuri|r and |cRXP_FRIENDLY_Cellian Daybreak|r
 	.daily 13682 >> Accept Threat From Above << Alliance
 	.daily 13809 >> Accept Threat From Above << Horde
 	.daily 13861 >> Accept Battle Before The Citadel << Alliance
@@ -4931,7 +4931,7 @@ step << !DK
 	.target Luuri
 	.target Cellian Daybreak
 step << !DK
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Eadric the Pure|r, |cRXP_FRIENDLY_ Luuri|r and |cRXP_FRIENDLY_ Cellian Daybreak|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eadric the Pure|r, |cRXP_FRIENDLY_Luuri|r and |cRXP_FRIENDLY_Cellian Daybreak|r
 	.daily 13861 >> Accept Battle Before The Citadel << Alliance
 	.daily 13862 >> Accept Battle Before The Citadel << Horde
 	.goto IcecrownGlacier,69.96,23.44
@@ -4945,7 +4945,7 @@ step << !DK
 	.target Luuri
 	.target Cellian Daybreak
 step << DK
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Crok Scourgebane|r, |cRXP_FRIENDLY_ Illyrie Nightfall|r and |cRXP_FRIENDLY_ Zor'be the Bloodletter|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crok Scourgebane|r, |cRXP_FRIENDLY_Illyrie Nightfall|r and |cRXP_FRIENDLY_Zor'be the Bloodletter|r
 	.daily 13788 >> Accept Threat From Above << Alliance
 	.daily 13812 >> Accept Threat From Above << Horde
 	.daily 13864 >> Accept Battle Before The Citadel << Alliance
@@ -4962,7 +4962,7 @@ step << DK
 	.target Illyrie Nightfall
 	.target Zor'be the Bloodletter
 step << DK
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Crok Scourgebane|r, |cRXP_FRIENDLY_ Illyrie Nightfall|r and |cRXP_FRIENDLY_ Zor'be the Bloodletter|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crok Scourgebane|r, |cRXP_FRIENDLY_Illyrie Nightfall|r and |cRXP_FRIENDLY_Zor'be the Bloodletter|r
 	.daily 13864 >> Accept Battle Before The Citadel << Alliance
 	.daily 13863 >> Accept Battle Before The Citadel << Horde
 	.goto IcecrownGlacier,73.80,20.06
@@ -5228,8 +5228,8 @@ step -- Threat From Above
 	.mob Cultist Bombardier
 step -- Battle Before The Citadel
 	#completewith next
-	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the |cRXP_FRIENDLY_ Stabled Campaign Warhorse|r << Alliance
-	.vehicle >>Equip the |T135128:0|t|c99ffff99Horde Lance|r in your Bags then Mount the |cRXP_FRIENDLY_ Stabled Campaign Warhorse|r << Horde
+	.vehicle >>Equip the |T135128:0|t|c99ffff99Alliance Lance|r in your Bags then Mount the |cRXP_FRIENDLY_Stabled Campaign Warhorse|r << Alliance
+	.vehicle >>Equip the |T135128:0|t|c99ffff99Horde Lance|r in your Bags then Mount the |cRXP_FRIENDLY_Stabled Campaign Warhorse|r << Horde
 	>>There is a |T135128:0|t|c99ffff99Lance Rack|r just beside the Barricade if you need another
 	.goto IcecrownGlacier,48.87,71.78
 	.use 46069 << Alliance
@@ -5239,7 +5239,7 @@ step -- Battle Before The Citadel
 step -- Battle Before The Citadel
 	>>Kill |cRXP_ENEMY_Boneguard Commanders|r
 	>>Gain stacks of |T132360:0|tDefend (4) and maintain it. Use |T132358:0|tShield-Breaker (2) to remove their shield then |T132226:0|tCharge (3) and |T135375:0|tThrust (1)
-	>>You can use your |cRXP_FRIENDLY_ Warhorse|r to run over and kill annoying |cRXP_ENEMY_Footmen|r instantly
+	>>You can use your |cRXP_FRIENDLY_Warhorse|r to run over and kill annoying |cRXP_ENEMY_Footmen|r instantly
 	>>Use |T132358:0|tShield-Breaker (2) on any |cRXP_ENEMY_Boneguard Scouts (flying Gargoyles)|r that agro
 	.goto IcecrownGlacier,50.42,76.30,40,0
 	.goto IcecrownGlacier,50.86,77.73,40,0
@@ -5258,7 +5258,7 @@ step
 	.goto IcecrownGlacier,73.80,20.06,300 >> Return to the |T236690:0|tArgent Tournament Grounds in Icecrown << DK
 	.isOnQuest 13788,13812,13864,13863,13793,13814,13791,13813
 step << !DK
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Eadric the Pure|r, |cRXP_FRIENDLY_ Luuri|r and |cRXP_FRIENDLY_ Cellian Daybreak|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eadric the Pure|r, |cRXP_FRIENDLY_Luuri|r and |cRXP_FRIENDLY_Cellian Daybreak|r
 	.turnin 13682 >> Turn in Threat From Above << Alliance
 	.turnin 13809 >> Turn in Threat From Above << Horde
 	.turnin 13861 >> Turn in Battle Before The Citadel << Alliance
@@ -5276,7 +5276,7 @@ step << !DK
 	.isQuestComplete 13682 << Alliance
 	.isQuestComplete 13809 << Horde
 step << !DK
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Eadric the Pure|r, |cRXP_FRIENDLY_ Luuri|r and |cRXP_FRIENDLY_ Cellian Daybreak|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eadric the Pure|r, |cRXP_FRIENDLY_Luuri|r and |cRXP_FRIENDLY_Cellian Daybreak|r
 	.turnin 13861 >> Turn in Battle Before The Citadel << Alliance
 	.turnin 13862 >> Turn in Battle Before The Citadel << Horde
 	.goto IcecrownGlacier,69.96,23.44
@@ -5290,7 +5290,7 @@ step << !DK
 	.target Luuri
 	.target Cellian Daybreak
 step << DK
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Crok Scourgebane|r, |cRXP_FRIENDLY_ Illyrie Nightfall|r and |cRXP_FRIENDLY_ Zor'be the Bloodletter|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crok Scourgebane|r, |cRXP_FRIENDLY_Illyrie Nightfall|r and |cRXP_FRIENDLY_Zor'be the Bloodletter|r
 	.turnin 13788 >> Turn in Threat From Above << Alliance
 	.turnin 13812 >> Turn in Threat From Above << Horde
 	.turnin 13864 >> Turn in Battle Before The Citadel << Alliance
@@ -5308,7 +5308,7 @@ step << DK
 	.isQuestComplete 13788 << Alliance
 	.isQuestComplete 13812 << Horde
 step << DK
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Crok Scourgebane|r, |cRXP_FRIENDLY_ Illyrie Nightfall|r and |cRXP_FRIENDLY_ Zor'be the Bloodletter|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crok Scourgebane|r, |cRXP_FRIENDLY_Illyrie Nightfall|r and |cRXP_FRIENDLY_Zor'be the Bloodletter|r
 	.turnin 13864 >> Turn in Battle Before The Citadel << Alliance
 	.turnin 13863 >> Turn in Battle Before The Citadel << Horde
 	.goto IcecrownGlacier,73.80,20.06
@@ -5340,7 +5340,7 @@ step
 	.achievement 2816 << Horde
 step
 	>>Enter the Argent Pavilion
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ High Crusader Adelard|r and |cRXP_FRIENDLY_  Crusader Silverdawn|r.
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Crusader Adelard|r and |cRXP_FRIENDLY_ Crusader Silverdawn|r.
 	.daily 14105,14101,14102,14104 >>Accept Deathspeaker Kharos
 	>>|c99ffff99OR|r Drottinn Hrothgar
 	>>|c99ffff99OR|r Mistcaller Yngvar
@@ -5360,7 +5360,7 @@ step
 step
 	#completewith next
 	.isOnQuest 14108
-	.goto Icecrown,69.79,22.21,5 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to a |cRXP_FRIENDLY_ Stabled Argent Hippogryph|r outside the Argent Pavilion.
+	.goto Icecrown,69.79,22.21,5 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to a |cRXP_FRIENDLY_Stabled Argent Hippogryph|r outside the Argent Pavilion.
 	.skipgossip
 step
 	.isOnQuest 14108
@@ -5434,7 +5434,7 @@ step
 	.achievement 3676,1
 step
 	>>Enter the Alliance Silver Covenant Pavilion
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Narasi Snowdawn|r and |cRXP_FRIENDLY_ Savinia Loresong|r.
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Narasi Snowdawn|r and |cRXP_FRIENDLY_Savinia Loresong|r.
 	.daily 14096 >>Accept You've Really Done It This Time, Kul
 	.daily 14074,14152,14080,14077 >>Accept A Leg Up
 	>>|c99ffff99OR|r Rescue at Sea
@@ -5474,7 +5474,7 @@ step
 step
 	.isOnQuest 14077
 	>>Head to Hrothgar's Landing
-	>>Use the |c99ffff99Confessor's Prayer Book|r to perform last rites for |cRXP_FRIENDLY_ Slain Tualiq Villagers|r.
+	>>Use the |c99ffff99Confessor's Prayer Book|r to perform last rites for |cRXP_FRIENDLY_Slain Tualiq Villagers|r.
 	.complete 14077,1
 	.use 46870
 	.goto Hrothgar's Landing,51,30,10,0
@@ -5500,7 +5500,7 @@ step
 step
 	.isOnQuest 14096
 	>>Kill |cRXP_ENEMY_Dark Zealots|r and |cRXP_ENEMY_Dark Ritualists|r for |cRXP_PICK_Black Cage Keys|r.
-	>>Use the keys to free the |cRXP_FRIENDLY_ Captive Aspirants|r from the cages.
+	>>Use the keys to free the |cRXP_FRIENDLY_Captive Aspirants|r from the cages.
 	.collect 46895,5,14096,2,-1
     .complete 14096,2
 	.goto Icecrown,65.17,22.19,15,0
@@ -5513,7 +5513,7 @@ step
 step
 	.isOnQuest 14096
 	>>Kill |cRXP_ENEMY_Dark Zealots|r and |cRXP_ENEMY_Dark Ritualists|r for |cRXP_PICK_Black Cage Keys|r.
-	>>Free |cRXP_FRIENDLY_ Kul the Reckless|r from his cage.
+	>>Free |cRXP_FRIENDLY_Kul the Reckless|r from his cage.
     .complete 14096,1
 	.goto Icecrown,60.82,23.15
 step
@@ -5535,7 +5535,7 @@ step
 	.target Snowblind Follower
 step
 	>>Return to the Alliance Silver Covenant Pavilion
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Narasi Snowdawn|r and |cRXP_FRIENDLY_ Savinia Loresong|r.
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Narasi Snowdawn|r and |cRXP_FRIENDLY_Savinia Loresong|r.
 	.dailyturnin 14096 >>Turn in You've Really Done It This Time, Kul
 	.dailyturnin 14074,14152,14080,14077 >>Turn in A Leg Up
 	>>|c99ffff99OR|r Rescue at Sea
@@ -5565,7 +5565,7 @@ step
 	.achievement 3677,1
 step
 	>>Enter the Sunreaver Pavilion
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Girana the Blooded|r and |cRXP_FRIENDLY_ Tylos Dawnrunner|r.
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Girana the Blooded|r and |cRXP_FRIENDLY_Tylos Dawnrunner|r.
 	.daily 14142 >>Accept You've Really Done It This Time, Kul
 	.daily 14143,14136,14140,14144 >>Accept A Leg Up
 	>>|c99ffff99OR|r Rescue at Sea
@@ -5605,7 +5605,7 @@ step
 step
 	.isOnQuest 14144
 	>>Head to Hrothgar's Landing
-	>>Use the |c99ffff99Confessor's Prayer Book|r to perform last rites for |cRXP_FRIENDLY_ Slain Tualiq Villagers|r.
+	>>Use the |c99ffff99Confessor's Prayer Book|r to perform last rites for |cRXP_FRIENDLY_Slain Tualiq Villagers|r.
 	.complete 14144,1
 	.use 46870
 	.goto Hrothgar's Landing,51,30,10,0
@@ -5631,7 +5631,7 @@ step
 step
 	.isOnQuest 14142
 	>>Kill |cRXP_ENEMY_Dark Zealots|r and |cRXP_ENEMY_Dark Ritualists|r for |cRXP_PICK_Black Cage Keys|r.
-	>>Use the keys to free the |cRXP_FRIENDLY_ Captive Aspirants|r from the cages.
+	>>Use the keys to free the |cRXP_FRIENDLY_Captive Aspirants|r from the cages.
 	.collect 46895,5,14142,2,-1
     .complete 14142,2
 	.goto Icecrown,65.17,22.19,15,0
@@ -5644,7 +5644,7 @@ step
 step
 	.isOnQuest 14142
 	>>Kill |cRXP_ENEMY_Dark Zealots|r and |cRXP_ENEMY_Dark Ritualists|r for |cRXP_PICK_Black Cage Keys|r.
-	>>Free |cRXP_FRIENDLY_ Kul the Reckless|r from his cage.
+	>>Free |cRXP_FRIENDLY_Kul the Reckless|r from his cage.
     .complete 14142,1
 	.goto Icecrown,60.82,23.15
 step
@@ -5666,7 +5666,7 @@ step
 	.target Snowblind Follower
 step
 	>>Return to the Sunreaver Pavilion
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Girana the Blooded|r and |cRXP_FRIENDLY_ Tylos Dawnrunner|r.
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Girana the Blooded|r and |cRXP_FRIENDLY_Tylos Dawnrunner|r.
 	.dailyturnin 14142 >>Turn in You've Really Done It This Time, Kul
 	.dailyturnin 14143,14136,14080,14144 >>Turn in A Leg Up
 	>>|c99ffff99OR|r Rescue at Sea

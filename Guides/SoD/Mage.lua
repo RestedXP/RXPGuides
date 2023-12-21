@@ -77,7 +77,7 @@ RXPGuides.RegisterGuide([[
 
 step << Troll
     .goto Durotar,42.51,69.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Mai'ah|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mai'ah|r
     .accept 77643 >>Accept Spell Research
     .target Mai'ah
 step
@@ -91,7 +91,7 @@ step
     .itemcount 203751,1
 step << Troll
     .goto Durotar,42.51,69.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Mai'ah|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mai'ah|r
     .turnin 77643 >> Turn in Spell Research
     .target Mai'ah
     ]])
@@ -108,7 +108,7 @@ RXPGuides.RegisterGuide([[
 
 step << Undead
     .goto Tirisfal Glades,30.94,66.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Isabella|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Isabella|r
     .accept 77671 >>Accept Spell Research
     .target Isabella
 step
@@ -123,7 +123,7 @@ step
     .itemcount 203751,1
 step << Undead
     .goto Tirisfal Glades,30.94,66.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Isabella|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Isabella|r
     .turnin 77671 >>Turn in Spell Research
     .target Isabella
     ]])
@@ -306,17 +306,17 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 401767,1
-    .goto Orgrimmar,45.6,56.8,-1 
-    .goto Orgrimmar,46.2,46.6,-1 
-    .goto Orgrimmar,45.8,40.6,-1 
-    .goto The Barrens,51.4,30.2,-1 
-    .goto Swamp of Sorrows,45.8,53.0,-1 
-    .goto Thunder Bluff,42.6,55.4,-1 
-    .goto Dustwallow Marsh,36.4,30.4,-1 
-    .goto Undercity,82.6,16.0,-1 
-    .goto Thunder Bluff,41.8,55.0,-1 
-    .goto Thousand Needles,45.2,50.6,-1 
-    .goto Stonetalon Mountains,47.6,61.6,-1 
+    .goto Orgrimmar,45.6,56.8,-1
+    .goto Orgrimmar,46.2,46.6,-1
+    .goto Orgrimmar,45.8,40.6,-1
+    .goto The Barrens,51.4,30.2,-1
+    .goto Swamp of Sorrows,45.8,53.0,-1
+    .goto Thunder Bluff,42.6,55.4,-1
+    .goto Dustwallow Marsh,36.4,30.4,-1
+    .goto Undercity,82.6,16.0,-1
+    .goto Thunder Bluff,41.8,55.0,-1
+    .goto Thousand Needles,45.2,50.6,-1
+    .goto Stonetalon Mountains,47.6,61.6,-1
     >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step
@@ -854,7 +854,7 @@ step
     >>Click on the |cRXP_PICK_Library Book|r located |cFFfa9602on a shelf in Elwynn Forest|r to obtain |T133744:0|t[Archmage Theocrituss Research Journal.]
     .collect 203755,1
     .isQuestAvailable 79092
-step 
+step
     #completewith next
     .train 425170,1
     .zone Westfall >>Travel to |cFFfa9602Westfall|r |cRXP_WARN_If you're not in Stormwind, travel on foot; otherwise, use a flight path.|r
@@ -865,11 +865,11 @@ step
     .train 425170,1
     .deathskip >>Die and respawn at the |cFF00FF25Spirit Healer|r
     .isQuestAvailable 79092
-step 
-    .goto 1436,53.01,53.34,10,0 
-    .goto 1436,52.64,53.83 
+step
+    .goto 1436,53.01,53.34,10,0
+    .goto 1436,52.64,53.83
     .train 425170,1
-    >>Click the |cRXP_PICK_Gnomish Tome|r |cFFfa9602on the table in the Westfall Inn|r to obtain |T133744:0|t[Rumi of Gnomeregan the Collected Works.] 
+    >>Click the |cRXP_PICK_Gnomish Tome|r |cFFfa9602on the table in the Westfall Inn|r to obtain |T133744:0|t[Rumi of Gnomeregan the Collected Works.]
     .collect 208860,1
     .isQuestAvailable 79093
     --x shiek: designed for human, can be picked up as gnome.
@@ -905,13 +905,13 @@ step
     >>Click the |cRXP_PICK_Book|r |cFFfa9602on the Alchemy Table in Duskwood|r to obtain |T133738:0|t[Crimes Against Anatomy].
     .collect 209849,1
     .isQuestAvailable 78147
-step 
+step
     #completewith next
     .train 425170,1
     .zone Ironforge >>Travel |cFFfa9602to Ironforge.|r
     .cast 3562 >>Use |T135757:0|t[Teleport Ironforge]
     .disablecheckbox
-step 
+step
     .goto 1455,69.76,24.39,10,0
     .goto 1455,70.43,18.37,10,0
     .goto 1455,75.99,10.55
@@ -919,18 +919,18 @@ step
     >>Click the |cRXP_PICK_Library Book|r |cFFfa9602on the table in Ironforge, Hall of Explorers|r to obtain |T133744:0|t[Archmage Antonidas the Unabridged Autobiography.]
     .collect 203754,1
     .isQuestAvailable 79091
-step 
+step
     #completewith next
     .train 425170,1
     .zone Loch Modan >>Travel to |cFFfa9602Loch Modan.|r
     .fly Loch Modan
     .disablecheckbox
     .isQuestAvailable 79093
-step 
+step
     .train 425170,1
-    .goto 1432,35.2,47.76,10,0 
-    .goto 1432,35.5,48.98 
-    >>Click the |cRXP_PICK_Gnomish Tome|r |cFFfa9602on the table in the Loch Modan Inn|r to obtain |T133744:0|t[Rumi of Gnomeregan the Collected Works]. 
+    .goto 1432,35.2,47.76,10,0
+    .goto 1432,35.5,48.98
+    >>Click the |cRXP_PICK_Gnomish Tome|r |cFFfa9602on the table in the Loch Modan Inn|r to obtain |T133744:0|t[Rumi of Gnomeregan the Collected Works].
     .collect 208860,1
     .isQuestAvailable 79093
     --x shiek: designed for gnome, can be picked up as human.
@@ -994,16 +994,16 @@ step
     .train 425170,1
     .isQuestAvailable 78149
     .zone Stonetalon Mountains >>Travel to |cFFfa9602Stonetalon Mountains|r
-    .fly Stonetalon Mountains 
+    .fly Stonetalon Mountains
     .disablecheckbox
 step
     .goto 1442,74.27,85.72,5,0
     .goto 1442,74.37,85.75
     .train 425170,1
-    >>Click the |cRXP_PICK_Scroll|r |cFFfa9602in Stonetalon Mountain|r to obtain |T133209:0|t[Fury of the Land.] 
+    >>Click the |cRXP_PICK_Scroll|r |cFFfa9602in Stonetalon Mountain|r to obtain |T133209:0|t[Fury of the Land.]
     .collect 209851,1
     .isQuestAvailable 78149
-step 
+step
     #completewith next
     .train 425170,1
     .zone Ironforge >>Travel |cFFfa9602to Ironforge.|r
@@ -1025,16 +1025,16 @@ step
     >>Click on the |cRXP_PICK_Book|r |cFFfa9602inside the Amber Hill Main Castle in Silverpine Forest|r to obtain |T134917:0|t[The Dalaran Digest vol 23.]
     .collect 209844,1
     .isQuestAvailable 78127
-step 
+step
     #completewith next
     .train 425170,1
     .zone Stormwind >>Travel to |cFFfa9602Stormwind.|r
     .cast 3561 >>Use |T135763:0|t[Teleport Stormwind]
     .disablecheckbox
-step 
+step
     .train 425170,1
     .goto Stormwind City,37.81,79.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Maginor Dumas|r |cFFfa9602in Stormwind, Mage Tower.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maginor Dumas|r |cFFfa9602in Stormwind, Mage Tower.|r
     .turnin 78124 >>Turn in Nar'thalas Almanac
     .turnin 78127 >>Turn in The Dalaran Digest
     .turnin 78142 >>Turn in Bewitchments and Glamours
@@ -1065,14 +1065,14 @@ RXPGuides.RegisterGuide[[
 
 step
     .collect 17031,10 >> Purchase |T134419:0|t[Rune of Teleportations] from a |cRXP_FRIENDLY_Reagent, Arcane Goods, Scrolls & Potion Vendor.|r |cRXP_WARN_This will greatly reduce travel time. manually skip this step if you want to go without.|r
-step 
+step
     #completewith next
     .train 425170,1
     .zone Orgrimmar >>Travel to |cFFfa9602Orgrimmar|r
     .cast 3567 >>Use |T135759:0|t[Teleport Orgrimmar]
     .disablecheckbox
     .isQuestAvailable 79094
-step 
+step
     .goto 1454,38.66,78.43
     .train 425170,1
     >>Click on the |cRXP_PICK_Giant Stone|r |cFFfa9602on the wall in Orgrimmar|r to obtain |T134938:0|t[The Lessons of Ta'zo.]
@@ -1118,7 +1118,7 @@ step
     .deathskip >>Die and respawn at the |cFF00FF25Spirit Healer|r
     .train 425170,1
     .isQuestAvailable 78143
-step 
+step
     #completewith next
     .train 425170,1
     .zone The Barrens >>Travel to |cFFfa9602The Barrens|r
@@ -1140,7 +1140,7 @@ step
     .goto 1442,74.27,85.72,5,0
     .goto 1442,74.37,85.75
     .train 425170,1
-    >>Click the |cRXP_PICK_Scroll|r |cFFfa9602in Stonetalon Mountain|r to obtain |T133209:0|t[Fury of the Land.] 
+    >>Click the |cRXP_PICK_Scroll|r |cFFfa9602in Stonetalon Mountain|r to obtain |T133209:0|t[Fury of the Land.]
     .collect 209851,1
     .isQuestAvailable 78149
 step
@@ -1159,25 +1159,25 @@ step
     >>Click the |cRXP_PICK_Scroll|r in |cFFfa9602Darkshore|r to obtain |T237447:0|t[Narthalas Almanac vol 74.]
     .collect 209843,1
     .isQuestAvailable 78124
-step 
+step
     #completewith next
     .train 425170,1
     .zone Undercity >>Travel to |cFFfa9602Undercity|r
     .cast 3563 >>Use |T135766:0|t[Teleport Undercity]
     .disablecheckbox
-step 
+step
     .goto 1420,59.62,52.05,5,0
     .goto 1420,59.39,52.29
     .train 425170,1
     >>Click on the |cRXP_PICK_The Apothecary's Society Primer|r |cFFfa9602in Tirisfal Glades, Brill|r to obtain |T133737:0|t[The Apothecary's Metaphysical Primer.]
     .collect 208185,1
     .isQuestAvailable 79095
-step 
+step
     #completewith next
     .train 425170,1
     .zone Silverpine Forest >>Travel to |cFFfa9602Silverpine Forest.|r
     .isQuestAvailable 79096
-step 
+step
     .goto 1421,43.12,41.39,5,0
     .goto 1421,42.7,41.37,5,0
     .goto 1421,42.72,40.85,5,0
@@ -1200,16 +1200,16 @@ step
     >>Click on the |cRXP_PICK_Book|r |cFFfa9602inside the Amber Hill Main Castle in Silverpine Forest|r to obtain |T134917:0|t[The Dalaran Digest vol 23.]
     .collect 209844,1
     .isQuestAvailable 78127
-step 
+step
     #completewith next
     .train 425170,1
     .zone Undercity >>Travel to |cFFfa9602Undercity|r
     .cast 3563 >>Use |T135766:0|t[Teleport Undercity]
     .disablecheckbox
-step 
+step
     .train 425170,1
     .goto 1458,73.47,33.54
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Owen Thadd|r |cFFfa9602in Undercity, Magic Quarter.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Owen Thadd|r |cFFfa9602in Undercity, Magic Quarter.|r
     .turnin 78124 >>Turn in Nar'thalas Almanac
     .turnin 78127 >>Turn in The Dalaran Digest
     .turnin 78142 >>Turn in Bewitchments and Glamours
