@@ -433,9 +433,9 @@ step
     .goto Elwynn Forest,39.90,81.46,-1
     .goto Elwynn Forest,40.86,81.24,-1
     .goto Elwynn Forest,40.32,79.31,-1
-    .goto Elwynn Forest,39.30,60.48,30 >>|cRXP_WARN_Perform a Logout Skip inside the cave by jumping on top of a shredder, the floating logs, the crates, or the minecart light inside the cave|r
+    .goto Elwynn Forest,39.30,60.48,30 >>|cRXP_WARN_Perform a Logout Skip inside the cave by jumping on top of a shredder, the floating logs, the crates, or the minecart light inside the cave, then log out and back in|r
     >>|cRXP_WARN_Alternatively, run back to Goldshire|r
-    >>|cRXP_WARN_NOTE: Itemrack currently can cause problems after logout skipping where your ingame UI freezes. Make sure to disable the addon or make a /reload command you can click when/if that happens|r
+    >>|cRXP_WARN_NOTE: Itemrack currently can cause problems after logout skipping where your ingame UI freezes. Make sure to disable the addon or make a /reload macro you can click when/if that happens|r
     .link https://www.youtube.com/watch?v=SWBtPqm5M0Q >>|cRXP_WARN_CLICK HERE to learn how to logout skip|r
 step
     .goto Elwynn Forest,42.14,67.26

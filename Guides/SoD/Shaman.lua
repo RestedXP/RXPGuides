@@ -5,10 +5,10 @@ RXPGuides.RegisterGuide([[
 #subgroup Chest
 #name Overload - 3 (Durotar)
 
-
+--XX Gloves->chest->Legs
     --Rune of Overload
 step
-    +|cRXP_WARN_You MUST be at least level 3 in order to acquire|r |T133815:0|t[Engrave Chest: Overload] |cRXP_WARN_due to it being the level requirement of equipping the|r |T134918:0|t|cRXP_LOOT_[Dyadic Icon]|r
+    +|cRXP_WARN_You MUST be at least level 3 in order to acquire|r |T133815:0|t[Engrave Chest: Overload] |cRXP_WARN_as it is the level requirement of equipping the|r |T134918:0|t|cRXP_LOOT_[Dyadic Icon]|r
     >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest: Overload]
     .train 410094,1
     .xp >3,1
@@ -49,6 +49,7 @@ step
 step
     .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Dyadic Icon]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest: Overload]
     .use 206381
+    .aura 408828
     .train 410094,1
     .xp <3,1
 step << skip
@@ -72,7 +73,7 @@ RXPGuides.RegisterGuide([[
 
     --Rune of Overload
 step
-    +|cRXP_WARN_You MUST be at least level 3 in order to acquire|r |T133815:0|t[Engrave Chest: Overload] |cRXP_WARN_due to it being the level requirement of equipping the|r |T134918:0|t|cRXP_LOOT_[Dyadic Icon]|r
+    +|cRXP_WARN_You MUST be at least level 3 in order to acquire|r |T133815:0|t[Engrave Chest: Overload] |cRXP_WARN_as it is the level requirement of equipping the|r |T134918:0|t|cRXP_LOOT_[Dyadic Icon]|r
     >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest: Overload]
     .train 410094,1
     .xp >3,1
@@ -124,6 +125,7 @@ step
 step
     .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Dyadic Icon]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest: Overload]
     .use 206381
+    .aura 408828
     .train 410094,1
     .xp <3,1
 step << skip
@@ -143,38 +145,48 @@ RXPGuides.RegisterGuide([[
 #subgroup Chest
 #name Shield Mastery - 6 (Durotar)
 
-
 step
-    #completewith IconS
+    +|cRXP_WARN_You should be at least level 6 in order to acquire|r |T133815:0|t[Engrave Chest: Shield Mastery] |cRXP_WARN_in Durotar alone|r
+    >>|cRXP_WARN_You MUST be at least level 3 as it is the level requirement of equipping the|r |T134918:0|t|cRXP_LOOT_[Galvanic Icon]|r
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest: Shield Mastery]
+    .train 410098,1
+    .xp >3,1
+step
     +|cRXP_WARN_You should be at least level 6 in order to acquire|r |T133815:0|t[Engrave Chest: Shield Mastery] |cRXP_WARN_in Durotar alone|r
     .train 410098,1
+    .xp <3,1
     .xp >6,1
 step
     #completewith IconS
     .zone Durotar >> Travel to Durotar
     .train 410098,1
+    .xp <3,1
 step
     #label IconS
     .goto Durotar,52.06,62.49,0
     .goto Durotar,39.43,50.07,0
     .goto Durotar,50.91,51.61,0
     .goto Durotar,56.50,46.68,0
+    .goto Durotar,57.03,46.66,0
     .goto Durotar,52.06,62.49,50,0
     .goto Durotar,39.43,50.07,50,0
     .goto Durotar,50.91,51.61,50,0
     .goto Durotar,56.50,46.68,50,0
+    .goto Durotar,57.03,46.66,50,0
     .goto Durotar,59.00,58.00
     >>Click the |cRXP_PICK_Galvanic Icon|r Totem. Loot it for the |T134918:0|t|cRXP_LOOT_[Galvanic Icon]|r
     >>|cRXP_WARN_The |cRXP_PICK_Galvanic Icon|r has at least 15 spawnpoints, with at least 2 up at a time. It despawns <2 minutes after being looted|r
     >>|cRXP_WARN_It makes a|r |T136051:0|t[Lightning Shield] |cRXP_WARN_sound every 5 minutes if you're within 1000 yards, and shows a Lightning Strike on its location if you're within 300 yards and facing it|r
     .collect 206386,1 --Galvanic Icon (1)
     .train 410098,1
+    .xp <3,1
 --XX Need to check for more locations
 step
     .equip 18,206386 >> |cRXP_WARN_Equip the|r |T134918:0|t|cRXP_LOOT_[Galvanic Icon]|r
     .use 206386
     .itemcount 206386,1 --Galvanic Icon (1)
     .train 410098,1
+    .xp <3,1
 step
     #loop
     .goto Durotar,56.87,53.05,50,0
@@ -184,15 +196,18 @@ step
     .goto Durotar,58.41,58.17,50,0
     .goto Durotar,56.21,58.51,50,0
     .aura 408828 >>|cRXP_WARN_Attack enemies down to low health, then cast|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_on them to kill them. Do this 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
     .mob Kul Tiras Sailor
     .mob Kul Tiras Marine
     .itemStat 18,QUALITY,2
     .train 410098,1
+    .xp <3,1
     .xp >11,1
 step
     #completewith Barrens
     .zone The Barrens >> Travel to The Barrens
     .train 410098,1
+    .xp <3,1
 step
     #loop
     .goto The Barrens,53.94,25.86,50,0
@@ -204,13 +219,14 @@ step
     .goto The Barrens,55.44,27.35,50,0
     .goto The Barrens,54.99,26.79,50,0
     .aura 408828 >>|cRXP_WARN_Attack enemies down to low health, then cast|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_on them to kill them. Do this 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
     .mob Razormane Thornweaver
     .mob Razormane Water Seeker
     .mob Razormane Hunter
     .itemStat 18,QUALITY,2
     .train 410098,1
-    .xp >16,1
     .xp <11,1
+    .xp >16,1
 step
     #loop
     .goto The Barrens,55.97,16.17,50,0
@@ -221,6 +237,7 @@ step
     .goto The Barrens,55.09,15.00,50,0
     .goto The Barrens,55.62,14.86,50,0
     .aura 408828 >>|cRXP_WARN_Attack enemies down to low health, then cast|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_on them to kill them. Do this 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
     .mob Hecklefang Hyena
     .mob Savannah Prowler
     .mob Savannah Huntress
@@ -230,8 +247,8 @@ step
     .mob Zhevra Runner
     .itemStat 18,QUALITY,2
     .train 410098,1
-    .xp >20,1
     .xp <16,1
+    .xp >20,1
 step
     #label Barrens
     #loop
@@ -244,6 +261,7 @@ step
     .goto The Barrens,37.33,16.23,50,0
     .goto The Barrens,38.64,17.49,50,0
     .aura 408828 >>|cRXP_WARN_Attack enemies down to low health, then cast|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_on them to kill them. Do this 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
     .mob Witchwing Slayer
     .mob Witchwing Windcaller
     .mob Witchwing Ambusher
@@ -251,12 +269,13 @@ step
     .mob Serena Bloodfeather
     .itemStat 18,QUALITY,2
     .train 410098,1
-    .xp >22,1
     .xp <20,1
+    .xp >22,1
 step
     #completewith next
     .zone Stonetalon Mountains >> Travel to Stonetalon Mountains
     .train 410098,1
+    .xp <3,1
 step
     #loop
     .goto Stonetalon Mountains,64.17,57.16,50,0
@@ -269,6 +288,7 @@ step
     .goto Stonetalon Mountains,69.89,53.54,50,0
     .goto Stonetalon Mountains,70.84,56.97,50,0
     .aura 408828 >>|cRXP_WARN_Attack enemies down to low health, then cast|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_on them to kill them. Do this 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
     .mob Venture Co. Logger
     .mob Venture Co. Deforester
     .mob Venture Co. Operator
@@ -282,7 +302,9 @@ step
 step
     .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Galvanic Icon]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest: Shield Mastery]
     .use 206386
+    .aura 408828
     .train 410098,1
+    .xp <3,1
 --XX Cast ID may be wrong, may need to be checked
 ]])
 
@@ -297,15 +319,22 @@ RXPGuides.RegisterGuide([[
 
 
     --Rune of Shield Mastery
+ step
+    +|cRXP_WARN_You should be at least level 6 in order to acquire|r |T133815:0|t[Engrave Chest: Shield Mastery] |cRXP_WARN_in Mulgore alone|r
+    >>|cRXP_WARN_You MUST be at least level 3 as it is the level requirement of equipping the|r |T134918:0|t|cRXP_LOOT_[Galvanic Icon]|r
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest: Shield Mastery]
+    .train 410098,1
+    .xp >3,1
 step
-    #completewith IconS
     +|cRXP_WARN_You should be at least level 6 in order to acquire|r |T133815:0|t[Engrave Chest: Shield Mastery] |cRXP_WARN_in Mulgore alone|r
     .train 410098,1
+    .xp <3,1
     .xp >6,1
 step
     #completewith IconS
     .zone Mulgore >> Travel to Mulgore
     .train 410098,1
+    .xp <3,1
 step
     #loop
     .goto Mulgore,41.99,43.49,0
@@ -320,6 +349,7 @@ step
     .goto Mulgore,56.60,70.13,0
     .goto Mulgore,67.23,66.17,0
     .goto Mulgore,62.30,22.94,0
+    .goto Mulgore,56.24,22.06,0
     .goto Mulgore,44.94,11.30,0
     .goto Mulgore,36.33,9.79,0
     .goto Mulgore,30.50,25.98,0
@@ -335,6 +365,7 @@ step
     .goto Mulgore,56.60,70.13,20,0
     .goto Mulgore,67.23,66.17,20,0
     .goto Mulgore,62.30,22.94,20,0
+    .goto Mulgore,56.24,22.06,20,0
     .goto Mulgore,44.94,11.30,20,0
     .goto Mulgore,36.33,9.79,20,0
     .goto Mulgore,30.50,25.98,20,0
@@ -343,11 +374,13 @@ step
     >>|cRXP_WARN_It makes a|r |T136051:0|t[Lightning Shield] |cRXP_WARN_sound every 5 minutes if you're within 1000 yards, and shows a Lightning Strike on its location if you're within 300 yards and facing it|r
     .collect 206386,1 --Galvanic Icon (1)
     .train 410098,1
+    .xp <3,1
 step
     .equip 18,206386 >> |cRXP_WARN_Equip the|r |T134918:0|t|cRXP_LOOT_[Galvanic Icon]|r
     .use 206386
     .itemcount 206386,1 --Galvanic Icon (1)
     .train 410098,1
+    .xp <3,1
 step
     #loop
     .goto Mulgore,54.24,66.98,30,0
@@ -355,10 +388,12 @@ step
     .goto Mulgore,53.40,65.49,30,0
     .goto Mulgore,53.19,66.51,30,0
     .aura 408828 >>|cRXP_WARN_Attack enemies down to low health, then cast|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_on them to kill them. Do this 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
     .mob Venture Co. Hireling
     .mob Venture Co. Laborer
     .itemStat 18,QUALITY,2
     .train 410098,1
+    .xp <3,1
     .xp >11,1
 step
     #loop
@@ -370,16 +405,18 @@ step
     .goto Mulgore,62.85,45.30,30,0
     .goto Mulgore,64.87,43.32,30,0
     .aura 408828 >>|cRXP_WARN_Attack enemies down to low health, then cast|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_on them to kill them. Do this 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
     .mob Venture Co. Worker
     .mob Venture Co. Supervisor
     .itemStat 18,QUALITY,2
     .train 410098,1
-    .xp >14,1
     .xp <11,1
+    .xp >14,1
 step
     #completewith Barrens
     .zone The Barrens >> Travel to The Barrens
     .train 410098,1
+    .xp <3,1
 step
     #loop
     .goto The Barrens,53.94,25.86,50,0
@@ -391,13 +428,14 @@ step
     .goto The Barrens,55.44,27.35,50,0
     .goto The Barrens,54.99,26.79,50,0
     .aura 408828 >>|cRXP_WARN_Attack enemies down to low health, then cast|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_on them to kill them. Do this 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
     .mob Razormane Thornweaver
     .mob Razormane Water Seeker
     .mob Razormane Hunter
     .itemStat 18,QUALITY,2
     .train 410098,1
-    .xp >16,1
     .xp <14,1
+    .xp >16,1
 step
     #loop
     .goto The Barrens,55.97,16.17,50,0
@@ -408,6 +446,7 @@ step
     .goto The Barrens,55.09,15.00,50,0
     .goto The Barrens,55.62,14.86,50,0
     .aura 408828 >>|cRXP_WARN_Attack enemies down to low health, then cast|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_on them to kill them. Do this 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
     .mob Hecklefang Hyena
     .mob Savannah Prowler
     .mob Savannah Huntress
@@ -417,8 +456,8 @@ step
     .mob Zhevra Runner
     .itemStat 18,QUALITY,2
     .train 410098,1
-    .xp >20,1
     .xp <16,1
+    .xp >20,1
 step
     #label Barrens
     #loop
@@ -431,6 +470,7 @@ step
     .goto The Barrens,37.33,16.23,50,0
     .goto The Barrens,38.64,17.49,50,0
     .aura 408828 >>|cRXP_WARN_Attack enemies down to low health, then cast|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_on them to kill them. Do this 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
     .mob Witchwing Slayer
     .mob Witchwing Windcaller
     .mob Witchwing Ambusher
@@ -438,12 +478,13 @@ step
     .mob Serena Bloodfeather
     .itemStat 18,QUALITY,2
     .train 410098,1
-    .xp >22,1
     .xp <20,1
+    .xp >22,1
 step
     #completewith next
     .zone Stonetalon Mountains >> Travel to Stonetalon Mountains
     .train 410098,1
+    .xp <3,1
 step
     #loop
     .goto Stonetalon Mountains,64.17,57.16,50,0
@@ -456,6 +497,7 @@ step
     .goto Stonetalon Mountains,69.89,53.54,50,0
     .goto Stonetalon Mountains,70.84,56.97,50,0
     .aura 408828 >>|cRXP_WARN_Attack enemies down to low health, then cast|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_on them to kill them. Do this 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
     .mob Venture Co. Logger
     .mob Venture Co. Deforester
     .mob Venture Co. Operator
@@ -469,7 +511,9 @@ step
 step
     .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Galvanic Icon]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest: Shield Mastery]
     .use 206386
+    .aura 408828
     .train 410098,1
+    .xp <3,1
 --XX Cast ID may be wrong, may need to be checked
     ]])
 
@@ -484,21 +528,28 @@ RXPGuides.RegisterGuide([[
 
     --Rune of Ancestral Guidance
 step
-    #completewith IconS
+    +|cRXP_WARN_You should be at least level 6 in order to acquire|r |T134596:0|t[Engrave Pants: Ancestral Guidance] |cRXP_WARN_in Durotar with another player|r
+    >>|cRXP_WARN_You MUST be at least level 3 as it is the level requirement of using the|r |T237571:0|t|cRXP_LOOT_[Echo of the Ancestors]|r
+    .train 410099,1
+    .xp <3,1
+step
     +|cRXP_WARN_You should be at least level 6 in order to acquire|r |T134596:0|t[Engrave Pants: Ancestral Guidance] |cRXP_WARN_in Durotar with another player|r
     .train 410099,1
+    .xp <3,1
     .xp >6,1
 step
     #completewith next
     #label Durotar1
     .zone Durotar >> Travel to Durotar
     .train 410099,1
+    .xp <3,1
 step
     #completewith next
     #requires Durotar1
     .goto Durotar,50.84,79.14,40,0
     .goto Durotar,48.02,79.46,40 >>Travel toward the |cRXP_FRIENDLY_Adventurer's Remains|r
     .train 410099,1
+    .xp <3,1
 step
     #label IconS
     .goto Durotar,48.02,79.46
@@ -510,11 +561,13 @@ step
     .target Adventurer's Spirit
     .skipgossip
     .train 410099,1
+    .xp <3,1
 step
     .cast 402265 >>|cRXP_WARN_Use the|r |T237571:0|t|cRXP_LOOT_[Echo of the Ancestors]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants: Ancestral Guidance]
     .use 210589
     .itemcount 210589,1 --Echo of the Ancestors (1)
     .train 410099,1
+    .xp <3,1
     ]])
 
 
@@ -529,21 +582,28 @@ RXPGuides.RegisterGuide([[
     --Rune of Ancestral Guidance
 
 step
-    #completewith IconS
+    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T134596:0|t[Engrave Pants: Ancestral Guidance] |cRXP_WARN_in Mulgore with another player|r
+    >>|cRXP_WARN_You MUST be at least level 3 as it is the level requirement of using the|r |T237571:0|t|cRXP_LOOT_[Echo of the Ancestors]|r
+    .train 410099,1
+    .xp <3,1
+step
     +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T134596:0|t[Engrave Pants: Ancestral Guidance] |cRXP_WARN_in Mulgore with another player|r
     .train 410099,1
+    .xp <3,1
     .xp >10,1
 step
     #completewith next
     #label Mulgore1
     .zone Mulgore >> Travel to Mulgore
     .train 410099,1
+    .xp <3,1
 step
     #completewith next
     #requires Mulgore1
     #label Cave1
     .goto Mulgore,61.46,47.21,20 >>Enter The Venture Co. Mine
     .train 410099,1
+    .xp <3,1
 step
     #completewith next
     #requires Cave1
@@ -556,11 +616,13 @@ step
     .goto Mulgore,62.69,38.01,25,0
     .goto Mulgore,60.05,35.82,20 >>Exit the Venture Co. Mine on the other side
     .train 410099,1
+    .xp <3,1
 step
     #completewith next
     #requires Cave2
     .goto Mulgore,60.39,33.54,40 >>Travel toward the |cRXP_FRIENDLY_Adventurer's Remains|r
     .train 410099,1
+    .xp <3,1
 --XX Might be a faster method via the mountains, but don't want to complicate it
 step
     #label IconS
@@ -573,11 +635,13 @@ step
     .target Adventurer's Spirit
     .skipgossip
     .train 410099,1
+    .xp <3,1
 step
     .cast 402265 >>|cRXP_WARN_Use the|r |T237571:0|t|cRXP_LOOT_[Echo of the Ancestors]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants: Ancestral Guidance]
     .use 210589
     .itemcount 210589,1 --Echo of the Ancestors (1)
     .train 410099,1
+    .xp <3,1
     ]])
 
 
@@ -592,12 +656,13 @@ RXPGuides.RegisterGuide([[
 
     --Rune of Molten Blast
 step
-    +|cRXP_WARN_You MUST be at least level 10 in order to acquire|r |T133816:0|t[Engrave Gloves: Molten Blast] |cRXP_WARN_due to it being the level requirement of|r |T135813:0|t[Flame Shock]
+    +|cRXP_WARN_You MUST be at least level 10 in order to acquire|r |T133816:0|t[Engrave Gloves: Molten Blast] |cRXP_WARN_as it is the level requirement of training|r |T135813:0|t[Flame Shock]
     >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves: Molten Blast]
+    >>|cRXP_WARN_Alternatively, you can get|r |T133816:0|t[Engrave Gloves: Molten Blast] |cRXP_WARN_in Mulgore at level 3+|r
     .train 425344,1
     .xp >10,1
 step
-    #completewith next
+    #completewith IconS
     #label Durotar1
     .zone Durotar >> Travel to Durotar
     .train 425344,1
@@ -605,31 +670,173 @@ step
 step
     #completewith next
     #requires Durotar1
-    .goto Durotar,50.84,79.14,40,0
-    .goto Durotar,48.02,79.46,40 >>Travel toward the |cRXP_ENEMY_Frozen Makrura|r
+    #label Durotar2
+    .goto Durotar,53.28,42.57,20,0
+    .goto Durotar,54.42,42.59,15 >>Travel toward |cRXP_FRIENDLY_Swart|r inside
+    .train 425344,1
+    .xp <10,1
+step
+    .goto Durotar,54.42,42.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Swart|r
+    .train 8050 >> Train |T135813:0|t[Flame Shock]
+    .target Swart
+    .train 425344,1
+    .xp <10,1
+step
+    #completewith next
+    #requires Durotar2
+    .goto Durotar,58.69,45.53,40 >>Travel toward the |cRXP_ENEMY_Frozen Makrura|r
     .train 425344,1
     .xp <10,1
 --XX FIX COORDINATES
 step
-    .goto Durotar,58.70,45.54
-    >>Cast |T135813:0|t[Flame Shock] on the |cRXP_ENEMY_Frozen Makrura|r east of Razor Hill. Loot him for |T134918:0|t[|cRXP_FRIENDLY_Sulfurous Icon|r]
-    >>|cRXP_WARN_You need to group up with Shamans/Warlocks/Mages. At least 5 sources of fire damage debuffs need to be applied on the|r |cRXP_ENEMY_Frozen Makrura|r |cRXP_WARN_for the ice to melt!|r
+    #label IconS
+    .goto Durotar,58.69,45.53
+    >>|cRXP_WARN_Look for other Shamans, Warlocks, or Mages near the |cRXP_ENEMY_Frozen Makrura|r or in General Chat (Type /1 into chat)|r
+    >>|cRXP_WARN_Cast|r |T135813:0|t[Flame Shock] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Makrura|r to apply a stack of|r |T134916:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Makrura|r. Loot it for the|r |T134918:0|t|cRXP_LOOT_[Sulfurous Icon]|r
+    >>|cRXP_WARN_Alternatively, you can get|r |T133816:0|t[Engrave Gloves: Molten Blast] |cRXP_WARN_in Mulgore solo|r
+    >>|cRXP_WARN_NOTE:|r |T135813:0|t[Flametongue Weapon] |cRXP_WARN_does NOT apply any|r |T134916:0|t[Applying Heat] stacks|r
     .collect 206388,1 --Sulfurous Icon (1)
     .mob Frozen Makrura
     .train 425344,1
     .xp <10,1
+    .xp >12,1
 step
-    .equip 18,206388 >>Equip the |T134918:0|t[|cRXP_FRIENDLY_Sulfurous Icon|r]
+    .goto Durotar,58.69,45.53
+    >>|cRXP_WARN_Look for other Shamans, Warlocks, or Mages near the |cRXP_ENEMY_Frozen Makrura|r or in General Chat (Type /1 into chat)|r
+    >>|cRXP_WARN_Cast|r |T135813:0|t[Flame Shock] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Makrura|r to apply a stack of|r |T134916:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Makrura|r. Loot it for the|r |T134918:0|t|cRXP_LOOT_[Sulfurous Icon]|r
+    >>|cRXP_WARN_Alternatively, you can get|r |T133816:0|t[Engrave Gloves: Molten Blast] |cRXP_WARN_in Mulgore solo|r
+    >>|cRXP_WARN_NOTE:|r |T135813:0|t[Flametongue Weapon] |cRXP_WARN_and|r |T135824:0|t[Fire Nova Totem] |cRXP_WARN_do NOT apply any|r |T134916:0|t[Applying Heat] stacks|r
+    .collect 206388,1 --Sulfurous Icon (1)
+    .mob Frozen Makrura
     .train 425344,1
+    .xp <12,1
+--XX Flametongue and Fire Nova doesn't seem to work
 step
-    .goto Durotar,57.21,44.01,60,0
-    .goto Durotar,55.19,48.96
-    .aura 408953,10+ >>Kill mobs with |T136026:0|t[Earth Shock] and obtain 10 stacks of |T237556:0|t[Building Inspiration]
+    .equip 18,206388 >> |cRXP_WARN_Equip the|r |T134918:0|t|cRXP_LOOT_[Sulfurous Icon]|r
     .use 206388
-    .itemcount 206388,1
+    .itemcount 206388,1 --Sulfurous Icon (1)
     .train 425344,1
     .xp <10,1
---XX WIP
+step
+    #loop
+    .goto Durotar,56.87,53.05,50,0
+    .goto Durotar,56.82,54.69,50,0
+    .goto Durotar,58.64,53.86,50,0
+    .goto Durotar,59.40,56.58,50,0
+    .goto Durotar,58.41,58.17,50,0
+    .goto Durotar,56.21,58.51,50,0
+    .aura 408828 >>|cRXP_WARN_Kill enemies having dealt damage using|r |T136026:0|t[Earth Shock] |cRXP_WARN_on them at least once. Do this 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
+    .mob Kul Tiras Sailor
+    .mob Kul Tiras Marine
+    .itemStat 18,QUALITY,2
+    .train 425344,1
+    .xp <10,1
+    .xp >11,1
+step
+    #completewith Barrens
+    .zone The Barrens >> Travel to The Barrens
+    .train 425344,1
+    .xp <10,1
+step
+    #loop
+    .goto The Barrens,53.94,25.86,50,0
+    .goto The Barrens,54.17,25.06,50,0
+    .goto The Barrens,54.86,25.43,50,0
+    .goto The Barrens,55.62,25.71,50,0
+    .goto The Barrens,55.98,26.36,50,0
+    .goto The Barrens,55.71,27.21,50,0
+    .goto The Barrens,55.44,27.35,50,0
+    .goto The Barrens,54.99,26.79,50,0
+    .aura 408828 >>|cRXP_WARN_Kill enemies having dealt damage using|r |T136026:0|t[Earth Shock] |cRXP_WARN_on them at least once. Do this 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
+    .mob Razormane Thornweaver
+    .mob Razormane Water Seeker
+    .mob Razormane Hunter
+    .itemStat 18,QUALITY,2
+    .train 425344,1
+    .xp <11,1
+    .xp >16,1
+step
+    #loop
+    .goto The Barrens,55.97,16.17,50,0
+    .goto The Barrens,55.43,16.15,50,0
+    .goto The Barrens,54.10,15.51,50,0
+    .goto The Barrens,53.10,15.25,50,0
+    .goto The Barrens,53.73,13.77,50,0
+    .goto The Barrens,55.09,15.00,50,0
+    .goto The Barrens,55.62,14.86,50,0
+    .aura 408828 >>|cRXP_WARN_Kill enemies having dealt damage using|r |T136026:0|t[Earth Shock] |cRXP_WARN_on them at least once. Do this 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
+    .mob Hecklefang Hyena
+    .mob Savannah Prowler
+    .mob Savannah Huntress
+    .mob Sunscale Screecher
+    .mob Barrens Giraffe
+    .mob Fleeting Plainstrider
+    .mob Zhevra Runner
+    .itemStat 18,QUALITY,2
+    .train 425344,1
+    .xp <16,1
+    .xp >20,1
+step
+    #label Barrens
+    #loop
+    .goto The Barrens,40.03,15.36,50,0
+    .goto The Barrens,39.39,14.65,50,0
+    .goto The Barrens,39.62,11.77,50,0
+    .goto The Barrens,38.84,11.93,50,0
+    .goto The Barrens,38.44,13.21,50,0
+    .goto The Barrens,38.48,14.85,50,0
+    .goto The Barrens,37.33,16.23,50,0
+    .goto The Barrens,38.64,17.49,50,0
+    .aura 408828 >>|cRXP_WARN_Kill enemies having dealt damage using|r |T136026:0|t[Earth Shock] |cRXP_WARN_on them at least once. Do this 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
+    .mob Witchwing Slayer
+    .mob Witchwing Windcaller
+    .mob Witchwing Ambusher
+    .mob Witchwing Roguefeather
+    .mob Serena Bloodfeather
+    .itemStat 18,QUALITY,2
+    .train 425344,1
+    .xp <20,1
+    .xp >22,1
+step
+    #completewith next
+    .zone Stonetalon Mountains >> Travel to Stonetalon Mountains
+    .train 425344,1
+    .xp <10,1
+step
+    #loop
+    .goto Stonetalon Mountains,64.17,57.16,50,0
+    .goto Stonetalon Mountains,60.55,54.86,50,0
+    .goto Stonetalon Mountains,60.95,51.21,50,0
+    .goto Stonetalon Mountains,64.40,48.64,50,0
+    .goto Stonetalon Mountains,66.18,52.01,50,0
+    .goto Stonetalon Mountains,67.20,51.49,50,0
+    .goto Stonetalon Mountains,66.83,45.34,50,0
+    .goto Stonetalon Mountains,69.89,53.54,50,0
+    .goto Stonetalon Mountains,70.84,56.97,50,0
+    .aura 408828 >>|cRXP_WARN_Kill enemies having dealt damage using|r |T136026:0|t[Earth Shock] |cRXP_WARN_on them at least once. Do this 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
+    .mob Venture Co. Logger
+    .mob Venture Co. Deforester
+    .mob Venture Co. Operator
+    .mob Venture Co. Light Shredder
+    .mob XT:9
+    .mob XT:4
+    .mob Deepmoss Webspinner
+    .itemStat 18,QUALITY,2
+    .train 425344,1
+    .xp <22,1
+step
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Sulfurous Icon]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves: Molten Blast]
+    .use 206388
+    .aura 408828
+    .train 425344,1
+    .xp <10,1
+--XX Cast ID may be wrong, may need to be checked
     ]])
 
 
@@ -642,35 +849,167 @@ RXPGuides.RegisterGuide([[
 
 
     --Rune of Molten Blast
-
 step
-    .goto Mulgore,32.16,48.75,40,0
-    .goto Mulgore,31.27,49.21
-    >>Kill |cRXP_ENEMY_Bael'dun Diggers|r and |cRXP_ENEMY_Bael'dun Appraisers|r. Loot them for the |T134237:0|t[|cRXP_LOOT_Artifact Storage Key|r]
+    +|cRXP_WARN_You should be at least level 8 in order to acquire|r |T133816:0|t[Engrave Gloves: Molten Blast] |cRXP_WARN_in Mulgore alone|r
+    >>|cRXP_WARN_You MUST be at least level 3 to equip the|r |T134918:0|t|cRXP_LOOT_[Sulfurous Icon]|r
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves: Molten Blast]
+    .train 425344,1
+    .xp >3,1
+step
+    +|cRXP_WARN_You should be at least level 8 in order to acquire|r |T133816:0|t[Engrave Gloves: Molten Blast] |cRXP_WARN_in Mulgore alone|r
+    .train 425344,1
+    .xp <3,1
+    .xp >8,1
+step
+    #loop
+    .goto Mulgore,34.33,47.54,40,0
+    .goto Mulgore,33.62,49.61,40,0
+    .goto Mulgore,32.58,48.96,40,0
+    .goto Mulgore,31.88,50.17,40,0
+    .goto Mulgore,31.14,50.08,40,0
+    .goto Mulgore,30.98,48.24,40,0
+    .goto Mulgore,31.59,48.19,40,0
+    .goto Mulgore,33.10,47.69,40,0
+    >>Kill |cRXP_ENEMY_Bael'dun Diggers|r and |cRXP_ENEMY_Bael'dun Appraisers|r. Loot them for the |cRXP_LOOT_Artifact Storage Key|r
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Bael'dun Appraisers|r cast|r |T135929:0|t[Lesser Heal] |cRXP_WARN_(Ranged Cast: Heals themselves or a nearby mob below 50% health for about 75 health)|r
     .collect 206975,1 --Artifact Storage Key (1)
     .mob Bael'dun Digger
     .mob Bael'dun Appraiser
     .train 425344,1
+    .xp <3,1
 --XX WIP to here
 step
     .goto Mulgore,31.56,49.54
-    >>Open the |cRXP_PICK_Artifact Storage|r. Loot it for the |T134918:0|t[|cRXP_FRIENDLY_Dyadic Icon|r]
+    >>Open the |cRXP_PICK_Artifact Storage|r chest. Loot it for the |T134918:0|t|cRXP_LOOT_[Sulfurous Icon]|r
     .collect 206388,1 --Sulfurous Icon (1)
     .train 425344,1
+    .xp <3,1
 step
-    .equip 18,206388 >>Equip the |T134918:0|t[|cRXP_FRIENDLY_Sulfurous Icon|r]
-    .train 425344,1
-step
-    .goto Mulgore,32.16,48.75,40,0
-    .goto Mulgore,31.27,49.21
-    .aura 408953,10+ >>Kill mobs with |T136026:0|t[Earth Shock] and obtain 10 stacks of |T237556:0|t[Building Inspiration]
+    .equip 18,206388 >> |cRXP_WARN_Equip the|r |T134918:0|t|cRXP_LOOT_[Sulfurous Icon]|r
     .use 206388
-    .itemcount 206388,1
+    .itemcount 206388,1 --Sulfurous Icon (1)
     .train 425344,1
+    .xp <3,1
 step
-    .train 425344 >>Use the |T134918:0|t[|cRXP_FRIENDLY_Sulfurous Icon|r] to train |T237583:0|t[Molten Blast]
+    #loop
+    .goto Mulgore,34.33,47.54,40,0
+    .goto Mulgore,33.62,49.61,40,0
+    .goto Mulgore,32.58,48.96,40,0
+    .goto Mulgore,31.88,50.17,40,0
+    .goto Mulgore,31.14,50.08,40,0
+    .goto Mulgore,30.98,48.24,40,0
+    .goto Mulgore,31.59,48.19,40,0
+    .goto Mulgore,33.10,47.69,40,0
+    .aura 408828 >>|cRXP_WARN_Kill enemies having dealt damage using|r |T136026:0|t[Earth Shock] |cRXP_WARN_on them at least once. Do this 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
+    .collect 206975,1 --Artifact Storage Key (1)
+    .mob Bael'dun Digger
+    .mob Bael'dun Appraiser
+    .train 425344,1
+    .xp <3,1
+    .xp >13,1
+step
+    #completewith Barrens
+    .zone The Barrens >> Travel to The Barrens
+    .train 425344,1
+    .xp <13,1
+step
+    #loop
+    .goto The Barrens,53.94,25.86,50,0
+    .goto The Barrens,54.17,25.06,50,0
+    .goto The Barrens,54.86,25.43,50,0
+    .goto The Barrens,55.62,25.71,50,0
+    .goto The Barrens,55.98,26.36,50,0
+    .goto The Barrens,55.71,27.21,50,0
+    .goto The Barrens,55.44,27.35,50,0
+    .goto The Barrens,54.99,26.79,50,0
+    .aura 408828 >>|cRXP_WARN_Kill enemies having dealt damage using|r |T136026:0|t[Earth Shock] |cRXP_WARN_on them at least once. Do this 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
+    .mob Razormane Thornweaver
+    .mob Razormane Water Seeker
+    .mob Razormane Hunter
+    .itemStat 18,QUALITY,2
+    .train 425344,1
+    .xp <13,1
+    .xp >16,1
+step
+    #loop
+    .goto The Barrens,55.97,16.17,50,0
+    .goto The Barrens,55.43,16.15,50,0
+    .goto The Barrens,54.10,15.51,50,0
+    .goto The Barrens,53.10,15.25,50,0
+    .goto The Barrens,53.73,13.77,50,0
+    .goto The Barrens,55.09,15.00,50,0
+    .goto The Barrens,55.62,14.86,50,0
+    .aura 408828 >>|cRXP_WARN_Kill enemies having dealt damage using|r |T136026:0|t[Earth Shock] |cRXP_WARN_on them at least once. Do this 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
+    .mob Hecklefang Hyena
+    .mob Savannah Prowler
+    .mob Savannah Huntress
+    .mob Sunscale Screecher
+    .mob Barrens Giraffe
+    .mob Fleeting Plainstrider
+    .mob Zhevra Runner
+    .itemStat 18,QUALITY,2
+    .train 425344,1
+    .xp <16,1
+    .xp >20,1
+step
+    #label Barrens
+    #loop
+    .goto The Barrens,40.03,15.36,50,0
+    .goto The Barrens,39.39,14.65,50,0
+    .goto The Barrens,39.62,11.77,50,0
+    .goto The Barrens,38.84,11.93,50,0
+    .goto The Barrens,38.44,13.21,50,0
+    .goto The Barrens,38.48,14.85,50,0
+    .goto The Barrens,37.33,16.23,50,0
+    .goto The Barrens,38.64,17.49,50,0
+    .aura 408828 >>|cRXP_WARN_Kill enemies having dealt damage using|r |T136026:0|t[Earth Shock] |cRXP_WARN_on them at least once. Do this 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
+    .mob Witchwing Slayer
+    .mob Witchwing Windcaller
+    .mob Witchwing Ambusher
+    .mob Witchwing Roguefeather
+    .mob Serena Bloodfeather
+    .itemStat 18,QUALITY,2
+    .train 425344,1
+    .xp <20,1
+    .xp >22,1
+step
+    #completewith next
+    .zone Stonetalon Mountains >> Travel to Stonetalon Mountains
+    .train 425344,1
+    .xp <3,1
+step
+    #loop
+    .goto Stonetalon Mountains,64.17,57.16,50,0
+    .goto Stonetalon Mountains,60.55,54.86,50,0
+    .goto Stonetalon Mountains,60.95,51.21,50,0
+    .goto Stonetalon Mountains,64.40,48.64,50,0
+    .goto Stonetalon Mountains,66.18,52.01,50,0
+    .goto Stonetalon Mountains,67.20,51.49,50,0
+    .goto Stonetalon Mountains,66.83,45.34,50,0
+    .goto Stonetalon Mountains,69.89,53.54,50,0
+    .goto Stonetalon Mountains,70.84,56.97,50,0
+    .aura 408828 >>|cRXP_WARN_Kill enemies having dealt damage using|r |T136026:0|t[Earth Shock] |cRXP_WARN_on them at least once. Do this 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
+    .mob Venture Co. Logger
+    .mob Venture Co. Deforester
+    .mob Venture Co. Operator
+    .mob Venture Co. Light Shredder
+    .mob XT:9
+    .mob XT:4
+    .mob Deepmoss Webspinner
+    .itemStat 18,QUALITY,2
+    .train 425344,1
+    .xp <22,1
+step
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Sulfurous Icon]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves: Molten Blast]
     .use 206388
-
+    .aura 408828
+    .train 425344,1
+    .xp <3,1
     ]])
 
 
@@ -683,95 +1022,226 @@ RXPGuides.RegisterGuide([[
 
 
     --Rune of Lava Lash
-
+--XX Worth mentioning "Dual Wield Skill" in the name? Cuts off ingame due to it being 3 lines though
 step
-    .goto Thunder Bluff,39.44,66.38
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r in Thunder Bluff
-    >>|cRXP_WARN_He is stealthed behind the bag vendor|r
-    .accept 76156 >>Accept Stalk With The Earthmother
-    .target Boarton Shadetotem
+    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T133816:0|t[Engrave Gloves: Lava Lash] |cRXP_WARN_and|r |T132147:0|t[Dual Wield] |cRXP_WARN_in Mulgore alone|r
+    >>|cRXP_WARN_You MUST be at least level 4 as it is the level requirement of starting the questline|r
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves: Lava Lash] |cRXP_WARN_and|r |T132147:0|t[Dual Wield]
+    .train 410104,1
+    .xp >4,1
+step
+    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T133816:0|t[Engrave Gloves: Lava Lash] |cRXP_WARN_and|r |T132147:0|t[Dual Wield] |cRXP_WARN_in Mulgore alone|r
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves: Lava Lash] |cRXP_WARN_and|r |T132147:0|t[Dual Wield]
+    .train 410104,1
+    .xp <4,1
+    .xp >10,1
+--XX WIP to here
 step
     #completewith next
-    .subzone 360 >>Travel to the Venture Co. Mine
+    .zone Thunder Bluff >> Travel to Thunder Bluff
+    .train 410104,1
+    .xp <4,1
+step
+    .goto Thunder Bluff,39.45,65.86
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
+    >>|cRXP_WARN_He is|r |T132320:0|t[Stealthed]
+    .accept 76156 >>Accept Stalk With The Earthmother
+    .target Boarton Shadetotem
+    .train 410104,1
+    .xp <4,1
+step
+    #completewith next
+    .goto Mulgore,61.46,47.21,20 >>Enter The Venture Co. Mine
+    >>|cRXP_WARN_NOTE: the|r |T132288:0|t[Venture Co Disguise] |cRXP_WARN_does NOT work|r
+    .train 410104,1
+    .xp <4,1
 step
     #loop
-    .goto Mulgore,62.51,40.42,0
-    .goto Mulgore,63.73,44.00,15,0
-    .goto Mulgore,62.87,42.80,15,0
-    .goto Mulgore,62.51,40.42,15,0
-    .goto Mulgore,60.66,38.85,15,0
-    .goto Mulgore,61.67,37.90,15,0
-    >>Loot the |cRXP_PICK_Blasting Supplies|r for |cRXP_LOOT_Seaforium Mining Charges|r
+    .goto Mulgore,63.77,43.97,15,0
+    .goto Mulgore,62.81,42.81,15,0
+    .goto Mulgore,60.38,42.78,15,0
+    .goto Mulgore,61.64,41.33,15,0
+    .goto Mulgore,63.51,39.29,15,0
+    .goto Mulgore,63.39,40.80,15,0
+--  .goto Mulgore,66.53,39.47,15,0 --Very deep inside the top of the mine, skipping
+    .goto Mulgore,60.99,37.00,15,0
+    .goto Mulgore,59.64,36.05,15,0 --Outside
+    .goto Mulgore,61.72,35.15,15,0 --Outside
+    >>Open the |cRXP_PICK_Blasting Supplies|r inside the mine and outside on the other side. Loot them for the |cRXP_LOOT_Seaforium Mining Charges|r
+    >>|cRXP_WARN_Stay on the upper levels of the cave if possible|r
     .complete 76156,1 --Seaforium Mining Charge (5)
+    .train 410104,1
+    .xp <4,1
+--XX Didn't add the bottom of the mine ones
 step
-    .goto Thunder Bluff,39.44,66.38
+    #completewith next
+    .goto Mulgore,59.99,35.82
+    .subzone 215 >>Exit the Venture Co. Mine on the other side
+    .train 410099,1
+    .xp <4,1
+step
+    #completewith next
+    .goto Mulgore,60.39,33.54,40 >>Travel toward the |cRXP_FRIENDLY_Adventurer's Remains|r
+    .train 410099,1
+    .xp <4,1
+step
+    #label IconS
+    .goto Mulgore,60.39,33.54
+    >>|cRXP_WARN_If you don't have|r |T134596:0|t[Engrave Pants: Ancestral Guidance]|cRXP_WARN_, now is a good time to do it|r
+    >>|cRXP_WARN_If you don't want to get this Rune, skip this step|r
+    >>|cRXP_WARN_Join a group with another Shaman, Priest, or Druid standing over the |cRXP_FRIENDLY_Adventurer's Remains|r, or look for help from a Shaman, Priest, or Druid in General Chat (Type /1 into chat)|r
+    >>|cRXP_WARN_Talk to the |cRXP_FRIENDLY_Adventurer's Remains|r on the ground to begin the ritual, OR click the other player's|r |T136223:0|t[Spirit Ritual] |cRXP_WARN_(whilst in their group)|r
+    >>|cRXP_WARN_A |cRXP_FRIENDLY_Adventurer's Spirit|r will spawn and die after completing the ritual. Loot it for the|r |T237571:0|t|cRXP_LOOT_[Echo of the Ancestors]|r
+    .collect 210589,1 --Echo of the Ancestors (1)
+    .target Adventurer's Remains
+    .target Adventurer's Spirit
+    .skipgossip
+    .train 410099,1
+    .xp <4,1
+step
+    .cast 402265 >>|cRXP_WARN_Use the|r |T237571:0|t|cRXP_LOOT_[Echo of the Ancestors]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants: Ancestral Guidance]
+    .use 210589
+    .itemcount 210589,1 --Echo of the Ancestors (1)
+    .train 410099,1
+    .xp <4,1
+step
+    #completewith next
+    .zone Thunder Bluff >> Travel to Thunder Bluff
+    .train 410104,1
+    .xp <4,1
+--XX Logout skips take you to Bloodhoof, not worth doing
+step
+    .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
+    >>|cRXP_WARN_He is|r |T132320:0|t[Stealthed]
     .turnin 76156 >>Turn in Stalk With The Earthmother
     .accept 76160 >>Accept Stalk With The Earthmother
     .target Boarton Shadetotem
+    .train 410104,1
+    .xp <4,1
+step
+    #completewith next
+    .goto Mulgore,53.91,23.45
+    .zone Mulgore >>Take the northern elevator down to Mulgore
+    .train 410104,1
+    .xp <4,1
 step
     #loop
-    .goto Mulgore,37.18,12.34,0
-    .goto Mulgore,38.01,10.21,20,0
-    .goto Mulgore,37.18,12.34,20,0
-    .goto Mulgore,36.22,11.42,20,0
-    .goto Mulgore,36.65,13.26,20,0
-    >>Loot |T133944:0|t[|cRXP_LOOT_Windfury Cones|r] from the ground
-    .collect 206170,8 --Windfury Cone (8)
+    .goto Mulgore,38.80,16.03,10,0
+    .goto Mulgore,37.79,10.86,10,0
+    .goto Mulgore,38.01,10.21,10,0
+    .goto Mulgore,38.55,8.10,10,0
+    .goto Mulgore,38.06,7.47,10,0
+    .goto Mulgore,37.36,9.99,10,0
+    .goto Mulgore,37.31,10.41,10,0
+    .goto Mulgore,35.80,11.21,10,0
+    .goto Mulgore,36.20,11.41,10,0
+    .goto Mulgore,36.21,12.60,10,0
+    .goto Mulgore,36.55,12.84,10,0
+    .goto Mulgore,36.65,13.26,10,0
+    .goto Mulgore,37.18,12.36,10,0
+    >>Loot |cRXP_LOOT_Windfury Cones|r on the ground
+    .collect 206170,8,76160,1 --Windfury Cone (8)
     .train 410104,1
+    .xp <4,1
 step
-    .use 206176 >>Use |T133748:0|t[Mortar and Pestle] to create |T133213:0|t[|cRXP_LOOT_Pine Salve|r]
+    >>Use the |T133748:0|t[Mortar and Pestle] to create |T133213:0|t[Pine Salve]
     .complete 76160,1 --Pine Salve (1)
+    .use 206176
+    .train 410104,1
+    .xp <4,1
 step
-    .goto Thunder Bluff,39.44,66.38
+    .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
+    >>|cRXP_WARN_He is|r |T132320:0|t[Stealthed]
     .turnin 76160 >>Turn in Stalk With The Earthmother
     .accept 76240 >>Accept Stalk With The Earthmother
     .target Boarton Shadetotem
+    .train 410104,1
+    .xp <4,1
 step
     #ah
-    .goto Thunder Bluff,40.39,51.77
+    .goto Thunder Bluff,45.23,59.40,0
+    .goto Thunder Bluff,40.41,51.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Stampi|r
     >>|cRXP_BUY_Buy a|r |T133894:0|t[Raw Brilliant Smallfish] |cRXP_BUY_from the Auction House|r
-    .collect 6291,1 --Raw Brilliant Smallfish (1)
+    .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
     .target Auctioneer Stampi
     .train 410104,1
+    .xp <4,1
 step
     #ssf
-    .goto Thunder Bluff,56.13,46.38
+    #completewith Sewa
+    .goto Thunder Bluff,46.13,51.59,12,0
+    .goto Thunder Bluff,47.09,50.07,4,0
+    .goto Thunder Bluff,46.49,49.16,4,0
+    .goto Thunder Bluff,46.05,49.74,4,0
+    .goto Thunder Bluff,46.34,50.50,4,0
+    .goto Thunder Bluff,55.78,47.02,15 >>Travel toward |cRXP_FRIENDLY_Sewa Mistrunner|r
+    .train 410104,1
+    .xp <4,1
+step
+    #ssf
+    #sticky
+    #label Kah
+    .goto Thunder Bluff,56.13,46.39,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kah Mistrunner|r
     .train 7734 >>Train |T136245:0|t[Fishing]
     .target Kah Mistrunner
     .train 410104,1
+    .xp <4,1
 step
     #ssf
-    .goto Thunder Bluff,55.77,47.04
+    #label Sewa
+    .goto Thunder Bluff,55.78,47.02,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sewa Mistrunner|r
     >>|cRXP_BUY_Buy a|r |T132932:0|t[Fishing Pole] |cRXP_BUY_and|r |T134335:0|t[Shiny Bauble] |cRXP_BUY_from her|r
     .collect 6256,1 --Fishing Pole (1)
     .collect 6529,1 --Shiny Bauble (1)
     .target Sewa Mistrunner
     .train 410104,1
+    .xp <4,1
 step
     #ssf
-    .goto Thunder Bluff,41.39,57.03
-    >>Start fishing until you get a |T133894:0|t[|cRXP_LOOT_Raw Brilliant Smallfish|r]
-    .collect 6291,1 --Raw Brilliant Smallfish (1)
+    #completewith Fish
+    #requires Kah
+    #label Pole
+    .equip 16,6256 >> Equip the |T132932:0|t[Fishing Pole]
     .use 6256
+    .train 410104,1
+    .xp <4,1
+step
+    #ssf
+    #completewith Fish
+    #requires Pole
+    .aura 8087 >> Attach the |T134335:0|t[Shiny Bauble] to your |T132932:0|t[Fishing Pole]
     .use 6529
     .train 410104,1
+    .xp <4,1
 step
-    .goto Thunder Bluff,39.44,66.38
-    .use 206344 >>Use the |T132147:0|t[Knife Set] to create |T134007:0|t[|cRXP_LOOT_Fish Chunks|r]
+    #ssf
+    #label Fish
+    #requires Kah
+    .goto Thunder Bluff,40.42,58.55
+    >>Fish in the pond until you get a |T133894:0|t[|cRXP_LOOT_Raw Brilliant Smallfish|r]
+    .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
+    .train 410104,1
+    .xp <4,1
+step
+    >>Use the |T132147:0|t[Knife Set] to create |T134007:0|t[Fish Chunks]
     .complete 76240,1 --Fish Chunks (1)
+    .use 206344
+    .train 410104,1
+    .xp <4,1
 step
-    .goto Thunder Bluff,39.44,66.38
+    .goto Thunder Bluff,39.45,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
+    >>|cRXP_WARN_He is|r |T132320:0|t[Stealthed]
     .turnin 76240 >>Turn in Stalk With The Earthmother
-    .train 410104 >>|cRXP_WARN_You will train|r |T236289:0|t[Lava Lash] |cRXP_WARN_and|r |T132147:0|t[Dual Wield] |cRXP_WARN_upon quest turnin|r
+-- .train 410104 >>|cRXP_WARN_You will train|r |T236289:0|t[Lava Lash] |cRXP_WARN_and|r |T132147:0|t[Dual Wield] |cRXP_WARN_upon turnin|r
     .target Boarton Shadetotem
-
-
+    .train 410104,1
+    .xp <4,1
     ]])
 
 RXPGuides.RegisterGuide([[
@@ -795,6 +1265,7 @@ step
     .use 210811
     .itemcount 210811,1
     .train 425343 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Primordial Fury|r] |cRXP_WARN_to train|r |T136088:0|t[Shamanistic Rage]
+--XX WIP to here
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -829,22 +1300,79 @@ RXPGuides.RegisterGuide([[
 #subgroup Legs
 #name Way of Earth - 15 (The Barrens)
 
+
+
+step
+    +|cRXP_WARN_You MUST be at least level 12 in order to acquire|r |T134596:0|t[Engrave Pants: Way of Earth] |cRXP_WARN_as it is the level requirement of training|r |T136075:0|t[Purge]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T134596:0|t[Engrave Pants: Way of Earth]
+    .train 410107,1
+    .xp >12,1
+step
+    .zone Orgrimmar >>Travel to Orgrimmar or Thunder Bluff
+    .zoneskip Thunder Bluff
+    .train 370,1
+    .xp <12,1
+step
+    #completewith next
+    .goto Orgrimmar,40.31,37.01,15,0
+    .goto Orgrimmar,38.81,36.37,15 >>Travel toward |cRXP_FRIENDLY_Kardris|r
+    .zoneskip Thunder Bluff
+    .train 410107,1
+    .xp <12,1
+step
+    .goto Orgrimmar,38.81,36.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
+    .train 370 >> Train |T136075:0|t[Purge]
+    .target Kardris Dreamseeker
+    .zoneskip Thunder Bluff
+    .train 410107,1
+    .xp <12,1
+step
+    #completewith next
+    .goto Thunder Bluff,22.82,21.11,15 >>Travel toward |cRXP_FRIENDLY_Siln|r
+    .zoneskip Orgrimmar
+    .train 410107,1
+    .xp <12,1
+step
+    .goto Thunder Bluff,22.82,21.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Siln|r
+    .train 370 >> Train |T136075:0|t[Purge]
+    .target Siln Skychaser
+    .zoneskip Orgrimmar
+    .train 410107,1
+    .xp <12,1
 step
     #completewith next
     .zone The Barrens >>Travel to The Barrens
+    .train 410107,1
+    .xp <12,1
 step
     #loop
-    .goto The Barrens,54.8,35.6,40,0
-    .goto The Barrens,58.8,37.6,40,0
-    >>Use |T136075:0|t[Purge] on the |cRXP_ENEMY_Desert Mirage|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Earthen Rune|r]
-    *|cRXP_WARN_It's a green ghost which patrolls around. Use the RestedXP target macro to find it faster.|r
-    .collect 208758,1 -- Earthen Rune (1)
+    .goto The Barrens,55.77,34.01,40,0 --Spawn 1
+    .goto The Barrens,55.83,34.21,40,0
+    .goto The Barrens,54.81,35.95,40,0 --Spawn 2
+    .goto The Barrens,54.96,35.72,40,0
+    .goto The Barrens,57.47,36.03,40,0 --Spawn 3
+    .goto The Barrens,57.56,35.78,40,0
+    .goto The Barrens,57.46,35.70,40,0
+    .goto The Barrens,57.59,38.36,40,0 --Spawn 4
+    .goto The Barrens,57.49,38.65,40,0
+    .goto The Barrens,58.82,37.67,40,0 --Spawn 5 (Rough estimate)
+    .goto The Barrens,58.92,37.53,40,0
+    .goto The Barrens,58.94,37.73,40,0
+    >>Cast |T136075:0|t[Purge] on the |cRXP_ENEMY_Desert Mirage|r to kill it. Loot it for the |T134419:0|t|cRXP_LOOT_[Earthen Rune]|r
+    >>|cRXP_WARN_It has 3 spawnpoints|r
+    .collect 208758,1 --Earthen Rune (1)
+    .unitscan Desert Mirage
     .train 410107,1
-    .mob Desert Mirage
+    .xp <12,1
+--XX Respawns after 85s-170s
 step
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Earthen Rune]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants: Way of Earth]
     .use 208758
-    .itemcount 208758,1
-    .train 410107 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Earthen Rune|r] |cRXP_WARN_to train|r |T136025:0|t[Way of Earth]
+    .itemcount 208758,1 --Earthen Rune (1)
+    .train 410107,1
+    .xp <12,1
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -854,6 +1382,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Legs
 #name Way of Earth - 15 (Silverpine Forest)
 
+
+--XX WIP to here
 step
     #completewith next
     .zone Silverpine Forest >>Travel to the Silverpine Forest
@@ -989,7 +1519,7 @@ step
     #completewith next
     .zone The Barrens >>Travel to The Barrens
 step
-    >>Kill the |cRXP_ENEMY_Kolkar Wrangler|r and |cRXP_ENEMY_Kolkar Stormer|r. Loot them for a |T134237:0|t[Kolkar Booty Key]
+    >>Kill |cRXP_ENEMY_Kolkar Wrangler|r and |cRXP_ENEMY_Kolkar Stormer|r. Loot them for a |T134237:0|t[Kolkar Booty Key]
     .goto The Barrens,44.4,23.6
     .goto The Barrens,45.8,38.4,0
     .collect 5020,1

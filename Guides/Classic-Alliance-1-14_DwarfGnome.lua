@@ -2271,7 +2271,7 @@ step << Warrior
     .use 204716
     .target Bruuk Barleybeard
     .mob Bruart
---XX This #season 2 section needs a logout skip video from the inn where you defeat Bruart
+--XX This #season 2 section needs a logout skip video from the inn where you defeat Bruart (turn in Gryth, Rebuke Rune, Logout skip on stairs to tram)
 step
     >>|cRXP_WARN_Do NOT fly anywhere|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
@@ -2281,7 +2281,7 @@ step
     .accept 6392 >> Accept Return to Brock
 step
     #completewith next
-    +Perform a Logout skip by jumping on top of one of the Gryphon's heads, and logging out, then back in
+    +Perform a Logout skip by jumping on top of one of the Gryphon's heads, logging out, then back in
     .link https://www.youtube.com/watch?v=PWMJhodh6Bw >> CLICK HERE
     .zoneskip Ironforge,1
 step
