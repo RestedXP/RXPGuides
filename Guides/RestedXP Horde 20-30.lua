@@ -1718,7 +1718,7 @@ step
     .target Apothecary Renferrel
 step
     .isOnQuest 3301
-    .goto Silverpine Forest,43.0,42.0
+    .goto Silverpine Forest,42.90,41.99
 .target Mura Runetotem
 >>Talk to |cRXP_FRIENDLY_Mura Runetotem|r
     .turnin 3301 >> Turn in Mara Runetotem

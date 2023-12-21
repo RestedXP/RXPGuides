@@ -5,7 +5,6 @@ RXPGuides.RegisterGuide([[
 #subgroup Chest
 #name Overload - 3 (Durotar)
 
---XX Gloves->chest->Legs
     --Rune of Overload
 step
     +|cRXP_WARN_You MUST be at least level 3 in order to acquire|r |T133815:0|t[Engrave Chest: Overload] |cRXP_WARN_as it is the level requirement of equipping the|r |T134918:0|t|cRXP_LOOT_[Dyadic Icon]|r
@@ -38,6 +37,7 @@ step
     .equip 18,206381 >> |cRXP_WARN_Equip the|r |T134918:0|t|cRXP_LOOT_[Dyadic Icon]|r
     .use 206381
     .itemcount 206381,1 --Dyadic Icon (1)
+    .train 410094,1
     .xp <3,1
 step
     .loop 25,Durotar,43.26,58.28,42.81,58.41,41.90,58.35,41.97,59.20,41.36,60.35,40.66,61.27,40.07,61.35,39.42,61.29,39.46,62.17,39.55,63.10,40.13,64.04,40.84,64.06,40.74,65.86,39.93,66.03,40.04,66.99,40.09,67.66,40.13,68.50,40.72,68.55,41.30,67.84,41.37,66.72,41.89,66.05,41.27,65.71,41.36,64.07,41.33,63.12,41.35,61.98,41.49,61.25,41.90,60.24,42.51,59.34,43.08,59.62,43.91,59.33,45.15,59.46,45.81,59.30,45.85,60.34,46.46,61.11,47.09,62.24,47.08,63.15,47.14,64.08,47.58,64.04,47.08,63.15,47.09,62.24,46.90,61.15,46.98,60.18,47.07,59.34,46.47,58.28,45.81,59.30,45.15,59.46,43.91,59.33,43.26,58.28
@@ -50,6 +50,7 @@ step
     .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Dyadic Icon]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest: Overload]
     .use 206381
     .aura 408828
+    .itemStat 18,QUALITY,2
     .train 410094,1
     .xp <3,1
 step << skip
@@ -107,6 +108,7 @@ step
     .equip 18,206381 >> |cRXP_WARN_Equip the|r |T134918:0|t|cRXP_LOOT_[Dyadic Icon]|r
     .use 206381
     .itemcount 206381,1 --Dyadic Icon (1)
+    .train 410094,1
     .xp <3,1
 step
     .goto Mulgore,63.74,81.18,50,0
@@ -126,6 +128,7 @@ step
     .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Dyadic Icon]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest: Overload]
     .use 206381
     .aura 408828
+    .itemStat 18,QUALITY,2
     .train 410094,1
     .xp <3,1
 step << skip
@@ -303,6 +306,7 @@ step
     .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Galvanic Icon]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest: Shield Mastery]
     .use 206386
     .aura 408828
+    .itemStat 18,QUALITY,2
     .train 410098,1
     .xp <3,1
 --XX Cast ID may be wrong, may need to be checked
@@ -512,6 +516,7 @@ step
     .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Galvanic Icon]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest: Shield Mastery]
     .use 206386
     .aura 408828
+    .itemStat 18,QUALITY,2
     .train 410098,1
     .xp <3,1
 --XX Cast ID may be wrong, may need to be checked
@@ -834,6 +839,7 @@ step
     .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Sulfurous Icon]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves: Molten Blast]
     .use 206388
     .aura 408828
+    .itemStat 18,QUALITY,2
     .train 425344,1
     .xp <10,1
 --XX Cast ID may be wrong, may need to be checked
@@ -1008,6 +1014,7 @@ step
     .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Sulfurous Icon]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves: Molten Blast]
     .use 206388
     .aura 408828
+    .itemStat 18,QUALITY,2
     .train 425344,1
     .xp <3,1
     ]])
@@ -1206,7 +1213,7 @@ step
     #completewith Fish
     #requires Kah
     #label Pole
-    .equip 16,6256 >> Equip the |T132932:0|t[Fishing Pole]
+    .equip 16,6256 >> |cRXP_WARN_Equip the|r |T132932:0|t[Fishing Pole]
     .use 6256
     .train 410104,1
     .xp <4,1
@@ -1214,7 +1221,7 @@ step
     #ssf
     #completewith Fish
     #requires Pole
-    .aura 8087 >> Attach the |T134335:0|t[Shiny Bauble] to your |T132932:0|t[Fishing Pole]
+    .aura 8087 >> |cRXP_WARN_Attach the|r |T134335:0|t[Shiny Bauble] |cRXP_WARN_to your|r |T132932:0|t[Fishing Pole]
     .use 6529
     .train 410104,1
     .xp <4,1
@@ -1251,21 +1258,34 @@ RXPGuides.RegisterGuide([[
 #subgroup Legs
 #name Shamanistic Rage - 25 (Stonetalon Mountains)
 
+
+step
+    +|cRXP_WARN_You should be at least level 25 in order to acquire|r |T134596:0|t[Engrave Pants: Shamanistic Rage] |cRXP_WARN_in Stonetalon Mountains alone|r
+    .train 425343,1
+    .xp >25,1
 step
     #completewith next
-    .zone Stonetalon Mountains >>Travel to the Stonetalon Mountains
-step
+    .zone Stonetalon Mountains >>Travel to Stonetalon Mountains
     .train 425343,1
-    >>Kill the |cRXP_ENEMY_Primordial Anomaly|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Primordial Fury|r]
-    *|cRXP_WARN_It will only receive normal damage from a specific elemental school. Look at its debuffs to see which elemental school it will take damage from.|r
-    .goto Stonetalon Mountains,32.6,67.6
-    .collect 210811,1
-    .mob Primordial Anomaly
 step
+    #loop
+    .goto Stonetalon Mountains,28.45,65.00,50,0
+    .goto Stonetalon Mountains,29.08,71.97,50,0
+    .goto Stonetalon Mountains,33.43,68.97,50,0
+    .goto Stonetalon Mountains,33.49,69.40,50,0
+    .goto Stonetalon Mountains,36.85,72.04,50,0
+    >>Kill the |cRXP_ENEMY_Primordial Anomaly|r. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Primordial Fury]|r
+    >>|cRXP_WARN_Make sure to check its form (debuffs). If it's in|r |T136074:0|t[Nature Form]|cRXP_WARN_, deal|r |T135824:0|t[Fire Damage]|cRXP_WARN_. If it's in|r |T135819:0|t[Fire Form]|cRXP_WARN_, deal|r |T135865:0|t[Frost Damage]|cRXP_WARN_. If it's in|r |T135861:0|t[Water Form]|cRXP_WARN_, deal|r |T136085:0|t[Nature Damage]
+    >>|cRXP_WARN_Be careful as it casts |T132939:0|t[Knock Away] |cRXP_WARN_(Melee Instant: Knocks target up in the air and deals 80 damage)|r
+    >>|cRXP_WARN_It has a 5-8 minute respawn time and drops a random BoE green each time|r
+    .collect 210811,1 --Rune of Primordial Fury (1)
+    .mob Primordial Anomaly
+    .train 425343,1
+step
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Primordial Fury]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants: Shamanistic Rage]
     .use 210811
-    .itemcount 210811,1
-    .train 425343 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Primordial Fury|r] |cRXP_WARN_to train|r |T136088:0|t[Shamanistic Rage]
---XX WIP to here
+    .itemcount 210811,1 --Rune of Primordial Fury (1)
+    .train 425343,1
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1275,22 +1295,55 @@ RXPGuides.RegisterGuide([[
 #subgroup Gloves
 #name Lava Burst - 25 (Hillsbrad Foothills)
 
+
+step
+    +|cRXP_WARN_You should be at least level 25 in order to acquire|r |T133816:0|t[Engrave Gloves: Lava Burst] |cRXP_WARN_in Hillsbrad alone|r
+    .train 410095,1
+    .xp >25,1
 step
     #completewith next
-    .zone Hillsbrad Foothills >>Travel to the Hillsbrad Foothills
+    .zone Hillsbrad Foothills >>Travel to Hillsbrad Foothills
+    .train 410095,1
 step
-    >>Kill the |cRXP_ENEMY_Mudsnout Shamans|r. Loot them for the |T134920:0|t[|cRXP_FRIENDLY_Kajanic Icon|r]
-    .goto Hillsbrad Foothills,63.8,59.6
-    .collect 206387,1
+    #loop
+    .goto Hillsbrad Foothills,63.73,59.26,40,0
+    .goto Hillsbrad Foothills,65.49,60.30,40,0
+    .goto Hillsbrad Foothills,66.30,61.11,40,0
+    .goto Hillsbrad Foothills,63.61,62.04,40,0
+    .goto Hillsbrad Foothills,63.21,61.04,40,0
+    .goto Hillsbrad Foothills,62.56,63.55,40,0
+    .goto Hillsbrad Foothills,62.98,63.70,40,0
+    >>Kill |cRXP_ENEMY_Mudsnout Shamans|r. Loot them for the |T134920:0|t|cRXP_LOOT_[Kajaric Icon]|r
+    .collect 206387,1 --Kajaric Icon (1)
     .mob Mudsnout Shaman
+    .train 410095,1
 step
-    .equip 18,206387 >>Equip the |T134920:0|t[|cRXP_FRIENDLY_Kajanic Icon|r]
-step
-    .aura 408828,5+ >>Now you have to take damage from lava 5 times. |cRXP_WARN_An easy way is to go into the Ragefire Chasm dungeon and jump into the lava|r
-step
+    .equip 18,206387 >> |cRXP_WARN_Equip the|r |T134920:0|t|cRXP_LOOT_[Kajaric Icon]|r
     .use 206387
-    .itemcount 206387,1
-    .train 410095 >>|cRXP_WARN_Use the|r |T134920:0|t[|cRXP_FRIENDLY_Kajanic Icon|r] |cRXP_WARN_to train|r |T237582:0|t[Lava Burst]
+    .itemcount 206387,1 --Kajaric Icon (1)
+    .train 410095,1
+step
+    #completewith next
+    .zone Orgrimmar >> Travel to Orgrimmar
+    .train 410095,1
+step
+    .goto Orgrimmar,52.77,48.97
+    .zone 213 >> Enter Ragefire Chasm inside the Cleft of Shadow
+    .itemStat 18,QUALITY,2
+    .train 410095,1
+step
+    >>|cRXP_WARN_Hug the right side of the wall. After going down the ramp (just after the 5th mob), walk into the shallow lava pool on your right|r
+    >>|cRXP_WARN_Damage taken from|r |T135805:0|t[Lava] |cRXP_WARN_is reduced to 91 whilst the|r |T134920:0|t|cRXP_LOOT_[Kajaric Icon]|r |cRXP_WARN_is equipped|r
+    .aura 408828 >>|cRXP_WARN_Take damage from the |T135805:0|t[Lava] |cRXP_WARN_source 5 times|r
+    .itemStat 18,QUALITY,2
+    .train 410095,1
+step
+    >>|cRXP_WARN_Move out of the|r |T135805:0|t[Lava]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134920:0|t|cRXP_LOOT_[Kajaric Icon]|r |cRXP_WARN_to learn|r |T237582:0|t[Lava Burst]
+    .use 206387
+    .aura 408828
+    .itemStat 18,QUALITY,2
+    .train 410095,1
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1298,13 +1351,14 @@ RXPGuides.RegisterGuide([[
 << Horde Shaman SoD
 #group RestedXP Rune Guide
 #subgroup Legs
-#name Way of Earth - 15 (The Barrens)
+#name Way of Earth - 12 (The Barrens)
 
 
 
 step
     +|cRXP_WARN_You MUST be at least level 12 in order to acquire|r |T134596:0|t[Engrave Pants: Way of Earth] |cRXP_WARN_as it is the level requirement of training|r |T136075:0|t[Purge]
     >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T134596:0|t[Engrave Pants: Way of Earth]
+    >>|cRXP_WARN_Alternatively, you can get|r |T134596:0|t[Engrave Pants: Way of Earth] |cRXP_WARN_in Silverpine Forest at level 1+|r
     .train 410107,1
     .xp >12,1
 step
@@ -1357,11 +1411,10 @@ step
     .goto The Barrens,57.46,35.70,40,0
     .goto The Barrens,57.59,38.36,40,0 --Spawn 4
     .goto The Barrens,57.49,38.65,40,0
-    .goto The Barrens,58.82,37.67,40,0 --Spawn 5 (Rough estimate)
+    .goto The Barrens,58.82,37.67,40,0 --Spawn 5
     .goto The Barrens,58.92,37.53,40,0
     .goto The Barrens,58.94,37.73,40,0
     >>Cast |T136075:0|t[Purge] on the |cRXP_ENEMY_Desert Mirage|r to kill it. Loot it for the |T134419:0|t|cRXP_LOOT_[Earthen Rune]|r
-    >>|cRXP_WARN_It has 3 spawnpoints|r
     .collect 208758,1 --Earthen Rune (1)
     .unitscan Desert Mirage
     .train 410107,1
@@ -1380,29 +1433,62 @@ RXPGuides.RegisterGuide([[
 << Horde Shaman SoD
 #group RestedXP Rune Guide
 #subgroup Legs
-#name Way of Earth - 15 (Silverpine Forest)
+#name Way of Earth - 14 (Silverpine Forest)
 
 
---XX WIP to here
+step
+    +|cRXP_WARN_You should be at least level 14 in order to acquire|r |T134596:0|t[Engrave Pants: Way of Earth] |cRXP_WARN_in Silverpine Forest alone|r
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T134596:0|t[Engrave Pants: Way of Earth]
+    .train 410107,1
+    .xp >14,1
 step
     #completewith next
     .zone Silverpine Forest >>Travel to the Silverpine Forest
-step
     .train 410107,1
-    >>Kill |cRXP_ENEMY_Rot Hide Mystics|r. Loot them for the |T136008:0|t[|cRXP_FRIENDLY_Rot Totem|r]
-    .goto Silverpine Forest,45.4,20.2
-    .collect 210253,1
+step
+    #loop
+    .goto Silverpine Forest,45.68,22.63,30,0
+    .goto Silverpine Forest,45.09,23.63,30,0
+    .goto Silverpine Forest,44.16,22.47,30,0
+    .goto Silverpine Forest,44.05,21.66,30,0
+    .goto Silverpine Forest,45.05,20.75,30,0
+    .goto Silverpine Forest,45.07,19.79,30,0
+    .goto Silverpine Forest,45.59,19.29,30,0
+    .goto Silverpine Forest,46.18,19.74,30,0
+    .goto Silverpine Forest,46.62,20.44,30,0
+    .goto Silverpine Forest,46.07,21.92,30,0
+    >>Kill |cRXP_ENEMY_Rot Hide Mystics|r. Loot them for the |T136008:0|t|cRXP_LOOT_[Rot Totem]|r
+    .collect 210253,1 --Rot Hide Totem (1)
     .mob Rot Hide Mystic
-step
+    .itemcount 208758,<1 --Earthen Rune (1)
     .train 410107,1
-    >>Use the |T136008:0|t[|cRXP_FRIENDLY_Rot Totem|r]. |cRXP_WARN_It will summon a level 15 elite|r. Kill the |cRXP_ENEMY_Decayed Elemental|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Earthen Rune|r]
-    .collect 208758,1 -- Earthen Rune (1)
-    .goto Silverpine Forest,45.4,20.2
-    .mob Decayed Elemental
 step
+    #completewith Rune
+    .cast 425285 >> |cRXP_WARN_Use the|r |T136008:0|t|cRXP_LOOT_[Rot Totem]|r |cRXP_WARN_to summon the |cRXP_ENEMY_Decayed Elemental|r
+    .use 210253 --Rot Hide Totem (1)
+    .itemcount 210253,1 --Rot Hide Totem (1)
+    .train 410107,1
+    .xp <14,1
+step
+    #completewith next
+    .cast 425285 >> |cRXP_WARN_Use the|r |T136008:0|t|cRXP_LOOT_[Rot Totem]|r |cRXP_WARN_to summon the |cRXP_ENEMY_Decayed Elemental|r
+    >>|cRXP_WARN_Be careful as it casts|r |T135848:0|t[Frost Nova] |cRXP_WARN_(Ranged Instant: Deals about 50 damage and roots for 8 seconds) and is level 15|r
+    .use 210253 --Rot Hide Totem (1)
+    .itemcount 210253,1 --Rot Hide Totem (1)
+    .train 410107,1
+    .xp >14,1
+step
+    #label Rune
+    >>Kill the |cRXP_ENEMY_Decayed Elemental|r. Loot it for the |T134419:0|t|cRXP_LOOT_[Earthen Rune]|r
+    .collect 208758,1 --Earthen Rune (1)
+    .mob Decayed Elemental
+    .train 410107,1
+--XX Need to test if it can be summoned anywhere, and how much or how scary it is
+step
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Earthen Rune]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants: Way of Earth]
     .use 208758
-    .itemcount 208758,1
-    .train 410107 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Earthen Rune|r] |cRXP_WARN_to train|r |T136025:0|t[Way of Earth]
+    .itemcount 208758,1 --Earthen Rune (1)
+    .train 410107,1
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1410,102 +1496,284 @@ RXPGuides.RegisterGuide([[
 << Horde Shaman SoD
 #group RestedXP Rune Guide
 #subgroup Legs
-#name Earthshield - 25 (Azeroth)
+#name Earth Shield - 25 (Azeroth)
 
+--ZZ WIP
+
+
+step
+    +|cRXP_WARN_You MUST be at least level 25 in order to acquire|r |T134596:0|t[Engrave Pants: Earth Shield] |cRXP_WARN_as it is the level requirement of entering Blackfathom Deeps|r
+    .train 410101,1
+    .xp >25,1
+step
+    .zone Orgrimmar >>Travel to Orgrimmar or Thunder Bluff
+    .zoneskip Thunder Bluff
+    .train 410101,1
+    .xp <25,1
+step
+    .goto Orgrimmar,50.67,70.39,0
+    .goto Orgrimmar,53.74,64.60,15,0
+    .goto Orgrimmar,55.54,64.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Wabang|r
+    >>|cRXP_BUY_Buy a|r |T134797:0|t[Elixir of Water Breathing] |cRXP_BUY_and|r |T134717:0|t[Elixir of Wisdom] |cRXP_BUY_from the Auction House|r
+    >>|cRXP_WARN_Alternatively, buy the materials to craft them yourself: 2|r |T132799:0|t[Blackmouth Oil] |cRXP_WARN_(or 4|r |T134302:0|t[Oily Blackmouth] |cRXP_WARN_to craft the oil), 1|r |T134191:0|t[Stranglekelp]|cRXP_WARN_, 1|r |T133436:0|t[Mageroyal]|cRXP_WARN_, and 2|r |T134412:0|t[Briarthorn]
+    >>|cRXP_WARN_You need this for a quest later. Do NOT use them before then|r
+    .collect 5996,1 --Elixir of Water Breathing (1)
+    .collect 3383,1 --Elixir of Wisdom (1)
+    .target Auctioneer Wabang
+	.skill alchemy,<90,1
+    .zoneskip Orgrimmar,1
+    .train 410101,1
+    .xp <25,1
+step
+    .goto Orgrimmar,50.67,70.39,0
+    .goto Orgrimmar,53.74,64.60,15,0
+    .goto Orgrimmar,55.54,64.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Wabang|r
+    >>|cRXP_BUY_Buy a|r |T134797:0|t[Elixir of Water Breathing] |cRXP_BUY_and|r |T134717:0|t[Elixir of Wisdom] |cRXP_BUY_from the Auction House|r
+    >>|cRXP_WARN_You need this for a quest later. Do NOT use them before then|r
+    .collect 5996,1 --Elixir of Water Breathing (1)
+    .collect 3383,1 --Elixir of Wisdom (1)
+    .target Auctioneer Wabang
+    .zoneskip Orgrimmar,1
+    .train 410101,1
+    .xp <25,1
+step
+    .goto Thunder Bluff,45.23,59.40,0
+    .goto Thunder Bluff,40.41,51.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Stampi|r
+    >>|cRXP_BUY_Buy a|r |T134797:0|t[Elixir of Water Breathing] |cRXP_BUY_and|r |T134717:0|t[Elixir of Wisdom] |cRXP_BUY_from the Auction House|r
+    >>|cRXP_WARN_Alternatively, buy the materials to craft them yourself: 2|r |T132799:0|t[Blackmouth Oil] |cRXP_WARN_(or 4|r |T134302:0|t[Oily Blackmouth] |cRXP_WARN_to craft the oil), 1|r |T134191:0|t[Stranglekelp]|cRXP_WARN_, 1|r |T133436:0|t[Mageroyal]|cRXP_WARN_, and 2|r |T134412:0|t[Briarthorn]
+    >>|cRXP_WARN_You need this for a quest later. Do NOT use them before then|r
+    .collect 5996,1 --Elixir of Water Breathing (1)
+    .collect 3383,1 --Elixir of Wisdom (1)
+    .target Auctioneer Stampi
+	.skill alchemy,<90,1
+    .zoneskip Thunder Bluff,1
+    .train 410101,1
+    .xp <25,1
+step
+    .goto Thunder Bluff,45.23,59.40,0
+    .goto Thunder Bluff,40.41,51.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Stampi|r
+    >>|cRXP_BUY_Buy a|r |T134797:0|t[Elixir of Water Breathing] |cRXP_BUY_and|r |T134717:0|t[Elixir of Wisdom] |cRXP_BUY_from the Auction House|r
+    >>|cRXP_WARN_You need this for a quest later. Do NOT use them before then|r
+    .collect 5996,1 --Elixir of Water Breathing (1)
+    .collect 3383,1 --Elixir of Wisdom (1)
+    .target Auctioneer Stampi
+    .zoneskip Thunder Bluff,1
+    .train 410101,1
+    .xp <25,1
+step
+    #completewith next
+    .zone Ashenvale >> Travel to Ashenvale
+    .train 410101,1
+    .xp <25,1
 step
     #completewith next
     .goto Kalimdor,44.36,34.86
-    .zone 221 >> Enter the BFD Instance portal. Zone in
+    >>|cRXP_WARN_Join or create a fresh (0/7) raid (10-man) group for Blackfathom Deeps|r
+    .zone 221 >> Enter Blackfathom Deeps in Ashenvale
+    .train 410101,1
+    .xp <25,1
 step
-    .isOnQuest 6922
-    >>Kill |cRXP_ENEMY_Baron Aquanis|r in the Blackfathom Deeps Raid and loot him for the |cRXP_LOOT_|T136222:0|t[Strange Water Globe]|r |cRXP_WARN_this step will require a 10 player raid group.|r
-    .collect 16782,1
+    >>Kill |cRXP_ENEMY_Baron Aquanis|r in Blackfathom Deeps. Loot him for the |T136222:0|t|cRXP_LOOT_[Strange Water Globe]|r
+    .collect 211454,1 --Strange Water Globe (SoD) (1)
     .mob Baron Aquanis
+    .train 410101,1
+    .xp <25,1
 step
-    >>Use |T136222:0|t|cRXP_FRIENDLY_[Strange Water Globe]||r to start the quest.
-    .accept 6922 >>Accept Baron Aquanis
-    .use 16782
+    >>Use the |T136222:0|t|cRXP_LOOT_[Strange Water Globe]|r to start the quest
+    .accept 78920 >>Accept Baron Aquanis
+    .use 211454
+    .itemcount 211454,1 --Strange Water Globe (SoD) (1)
+    .train 410101,1
+    .xp <25,1
 step
-    .goto Ashenvale,11.6,34.2
+    #completewith Baron
+    >>|cRXP_WARN_Finish the raid if you want, then leave Blackfathom Deeps|r
+    .zone Ashenvale >> Travel to Ashenvale
+    .zoneskip 221,1
+    .train 410101,1
+    .xp <25,1
+step
+    #completewith next
+    .zone Ashenvale >> Travel to Ashenvale
+    .train 410101,1
+    .xp <25,1
+step
+    #label Baron
+    .goto Ashenvale,11.56,34.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
-    .turnin 6922 >>Turnin Baron Aquanis
+    .turnin 78920 >>Turnin Baron Aquanis
     .accept 78506 >>Accept Elemental Distress
     .target Je'neu Sancrea
+    .train 410101,1
+    .xp <25,1
 step
-    #loop
-    .goto Ashenvale,47.6,67.4,20,0
-    .goto Ashenvale,46.6,71.6,20,0
-    .goto Ashenvale,51.6,72.6,20,0
-    .goto Ashenvale,52.0,69.4,20,0
-    >>Kill |cRXP_ENEMY_Befouled Water Elementals|r and loot them for |T132844:0|t|cRXP_LOOT_[Mote of Torrential Rage]|r
-    .complete 78506,3
+    .loop 50,Ashenvale,48.36,69.74,48.43,70.14,48.93,70.82,49.49,70.76,50.21,70.36,50.47,70.43,50.54,71.08,50.74,71.31,51.42,70.86,52.13,71.14,52.18,71.60,52.08,72.10,45.84,70.67,48.36,69.74
+    >>Kill |cRXP_ENEMY_Befouled Water Elementals|r. Loot them for the |T132844:0|t|cRXP_LOOT_[Mote of Torrential Rage]|r
+    .complete 78506,3 --Mote of Torrential Rage (1)
     .mob Befouled Water Elemental
+    .train 410101,1
+    .xp <25,1
+--XX Needs to be converted to hashtag loop
 step
     #completewith next
     .zone Stonetalon Mountains >>Travel to Stonetalon Mountains
+    .train 410101,1
+    .xp <25,1
 step
     #loop
-    .goto Stonetalon Mountains,45.6,44.6,20,0
-    .goto Stonetalon Mountains,44.0,39.8,20,0
-    .goto Stonetalon Mountains,37.6,50.2,20,0
-    .goto Stonetalon Mountains,34.6,60.6,20,0
-    >>Kill |cRXP_ENEMY_Rogue Flame Spirits|r and loot them for |T132839:0|t|cRXP_LOOT_[Mote of Infernal Rage]|r
-    .complete 78506,2
+    #completewith next
+    .goto Stonetalon Mountains,45.60,44.18,50,0 --NE Rogue Flame Shared Spawn Cluster (NE Spawnpoints)
+    .goto Stonetalon Mountains,44.54,43.43,50,0
+    .goto Stonetalon Mountains,43.96,39.90,50,0
+    .goto Stonetalon Mountains,43.62,41.14,50,0
+--
+    .goto Stonetalon Mountains,37.09,46.62,50,0 --Path Rogue Flame Shared Spawn Cluster (Middle Spawnpoints)
+    .goto Stonetalon Mountains,35.71,47.81,50,0
+    .goto Stonetalon Mountains,37.21,48.30,50,0
+    .goto Stonetalon Mountains,36.50,49.86,50,0
+    .goto Stonetalon Mountains,37.18,51.87,50,0
+    .goto Stonetalon Mountains,35.33,53.88,50,0
+    .goto Stonetalon Mountains,34.59,60.23,50,0
+    .goto Stonetalon Mountains,33.38,62.23,50,0
+--
+    .goto Stonetalon Mountains,35.22,65.79,50,0 --Start of Burning Destroyers and Ravagers
+    .goto Stonetalon Mountains,36.42,71.05,50,0
+    .goto Stonetalon Mountains,35.73,73.27,50,0
+    .goto Stonetalon Mountains,34.50,72.62,50,0
+    .goto Stonetalon Mountains,33.64,71.17,50,0
+    .goto Stonetalon Mountains,33.49,70.48,50,0
+    .goto Stonetalon Mountains,31.67,71.11,50,0
+    .goto Stonetalon Mountains,31.13,73.45,50,0
+    .goto Stonetalon Mountains,30.13,73.32,50,0
+    .goto Stonetalon Mountains,30.97,67.39,50,0
+    .goto Stonetalon Mountains,28.25,65.96,50,0
+    >>Kill |cRXP_ENEMY_Rogue Flame Spirits|r, |cRXP_ENEMY_Burning Destroyers|r, and |cRXP_ENEMY_Burning Ravagers|r. Loot them for the |T132839:0|t|cRXP_LOOT_[Mote of Infernal Rage]|r
+    >>|cRXP_ENEMY_Rogue Flame Spirits|r |cRXP_WARN_share spawns with|r |cRXP_ENEMY_Blackened Basilisks|r
+    .complete 78506,2 --Mote of Infernal Rage (1)
     .mob Rogue Flame Spirit
+    .mob Burning Destroyer
+    .mob Burning Ravager
+    .train 410101,1
+    .xp <25,1
+--XX Did waypoints in WOTLK, may be slightly off but i'd put more money on it being accurate than not
 step
     #loop
-    .goto Stonetalon Mountains,29.8,60.6,20,0
-    .goto Stonetalon Mountains,29.2,68.8,20,0
-    .goto Stonetalon Mountains,32.6,68.8,20,0
-    .goto Stonetalon Mountains,36.6,66.6,20,0
-    >>Kill |cRXP_ENEMY_Enraged Stone Spirit|r, |cRXP_ENEMY_Furious Stone Spirit|r and loot them for |T132838:0|t|cRXP_LOOT_[Mote of Seismic Rage]|r |cRXP_WARN_be careful of dangerous enemies in the area.|r
-    .complete 78506,1
+    .goto Stonetalon Mountains,34.07,65.61,50,0
+    .goto Stonetalon Mountains,36.42,71.05,50,0
+    .goto Stonetalon Mountains,35.88,72.31,50,0
+    .goto Stonetalon Mountains,32.49,73.81,50,0
+    .goto Stonetalon Mountains,32.64,67.42,50,0
+    .goto Stonetalon Mountains,28.99,65.18,50,0
+    >>Kill |cRXP_ENEMY_Enraged Stone Spirits|r and |cRXP_ENEMY_Furious Stone Spirits|r. Loot them for |T132838:0|t|cRXP_LOOT_[Mote of Seismic Rage]|r |cRXP_WARN_be careful of dangerous enemies in the area.|r
+    .complete 78506,1 --Mote of Seismic Rage (1)
     .mob Enraged Stone Spirit
     .mob Furious Stone Spirit
+    .train 410101,1
+    .xp <25,1
+--XX Not totally sure if any of the elementals in the charred vale do/don't share spawns? It's a total clown fiesta
 step
-    .isOnQuest 78506
-    >>Purchase |T134717:0|t[Elixir of Wisdom] and |T134797:0|t[Elixir of Water Breathing] from the Auction House or a player, |cRXP_WARN_alternatively craft it yourself if you are an alchemist.|r
-    .collect 3383,1
-    .collect 134797,1
+    #loop
+    .goto Stonetalon Mountains,45.60,44.18,50,0 
+    .goto Stonetalon Mountains,44.54,43.43,50,0
+    .goto Stonetalon Mountains,43.96,39.90,50,0
+    .goto Stonetalon Mountains,43.62,41.14,50,0
+    .goto Stonetalon Mountains,37.09,46.62,50,0
+    .goto Stonetalon Mountains,35.71,47.81,50,0
+    .goto Stonetalon Mountains,37.21,48.30,50,0
+    .goto Stonetalon Mountains,36.50,49.86,50,0
+    .goto Stonetalon Mountains,37.18,51.87,50,0
+    .goto Stonetalon Mountains,35.33,53.88,50,0
+    .goto Stonetalon Mountains,34.59,60.23,50,0
+    .goto Stonetalon Mountains,33.38,62.23,50,0
+    .goto Stonetalon Mountains,35.22,65.79,50,0
+    .goto Stonetalon Mountains,36.42,71.05,50,0
+    .goto Stonetalon Mountains,35.73,73.27,50,0
+    .goto Stonetalon Mountains,34.50,72.62,50,0
+    .goto Stonetalon Mountains,33.64,71.17,50,0
+    .goto Stonetalon Mountains,33.49,70.48,50,0
+    .goto Stonetalon Mountains,31.67,71.11,50,0
+    .goto Stonetalon Mountains,31.13,73.45,50,0
+    .goto Stonetalon Mountains,30.13,73.32,50,0
+    .goto Stonetalon Mountains,30.97,67.39,50,0
+    .goto Stonetalon Mountains,28.25,65.96,50,0
+    >>Kill |cRXP_ENEMY_Rogue Flame Spirits|r, |cRXP_ENEMY_Burning Destroyers|r, and |cRXP_ENEMY_Burning Ravagers|r. Loot them for the |T132839:0|t|cRXP_LOOT_[Mote of Infernal Rage]|r
+    >>|cRXP_ENEMY_Rogue Flame Spirits|r |cRXP_WARN_share spawns with|r |cRXP_ENEMY_Blackened Basilisks|r
+    .complete 78506,2 --Mote of Infernal Rage (1)
+    .mob Rogue Flame Spirit
+    .mob Burning Destroyer
+    .mob Burning Ravager
+    .train 410101,1
+    .xp <25,1
 step
     #completewith next
     .zone Ashenvale >>Travel to Ashenvale
+    .train 410101,1
+    .xp <25,1
 step
-    .goto Ashenvale,11.6,34.2
+    .goto Ashenvale,11.56,34.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
     .turnin 78506 >>Turnin Elemental Distress
     .accept 78537 >>Accept Elixir of Insight
     .accept 78537 >>Turnin Elixir of Insight
     .accept 78561 >>Accept Elixir of Insight
     .target Je'neu Sancrea
+    .train 410101,1
+    .xp <25,1
 step
-    .goto 1440,11.41,33.08
-    >>Use |T134791:0|t[Elixir of Insight] near the Bonfire to see a vision of a Quilboar
-    .complete 78561,1
+    .goto Ashenvale,11.38,33.08
+    >>Use the |T134791:0|t[Elixir of Insight] near the Bonfire
+    >>|cRXP_WARN_You do NOT need to wait out the RP|r
+    .complete 78561,1 --Vision Witnessed (1)
     .use 210712
+    .train 410101,1
+    .xp <25,1
 step
-    .goto Ashenvale,11.6,34.2
+    .goto Ashenvale,11.56,34.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
     .turnin 78561 >>Turnin Elixir of Insight
     .accept 78575 >>Accept Hirzek
     .target Je'neu Sancrea
+    .train 410101,1
+    .xp <25,1
 step
     #completewith next
-    .zone The Barrens >>Travel to the Barrens
+    .zone The Barrens >>Travel to The Barrens
+    .train 410101,1
+    .xp <25,1
 step
-    .goto The Barrens,43.6, 79.0
-    >>Kill |cRXP_ENEMY_Hirzek|r and loot him for |T135146:0|t|cRXP_LOOT_[Hirzek's Staff]|r |cRXP_WARN_If you have trouble killing it consider grouping up.|r
-    .complete 78575,1 >>Accept Hirzek
+    .goto The Barrens,43.18,78.59
+    >>Kill |cRXP_ENEMY_Hirzek|r. Loot him for |T135146:0|t|cRXP_LOOT_[Hirzek's Staff]|r
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Hirzek|r casts|r |T134916:0|t[Lightning Bolt] |cRXP_WARN_(Ranged Cast: Deals about 110 Nature Damage) and is a level 25 elite. He is soloable, but you may want to find someone to assist you|r
+    >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Bound Elemental|r has an infinite leash if you kill |cRXP_ENEMY_Hirzek|r and leave the |cRXP_ENEMY_Bound Elemental|r alive (it'll follow you until it de-renders or you kill it)|r
+    .complete 78575,1 --Hirzek's Staff (1)
+    .complete 78575,2 --Hirzek (1)
     .mob Hirzek
     .mob Bound Elemental
+    .train 410101,1
+    .xp <25,1
+--XX Objective IDs (,1 and ,2) need testing
 step
     #completewith next
     .zone Ashenvale >>Travel to Ashenvale
+    .train 410101,1
+    .xp <25,1
 step
-    .goto Ashenvale,11.6,34.2
+    .goto Ashenvale,11.56,34.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
     .turnin 78575 >>Turnin Hirzek
     .target Je'neu Sancrea
+    .train 410101,1
+    .xp <25,1
+step
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Earth Shield]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants: Earth Shield]
+    .use 210746
+    .itemcount 210746,1 --Rune of Earth Shield (1)
+    .train 410101,1
+    .xp <25,1
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1515,30 +1783,205 @@ RXPGuides.RegisterGuide([[
 #subgroup Gloves
 #name Water Shield - 20 (The Barrens)
 
+
+step
+    +|cRXP_WARN_You MUST be at least level 20 in order to acquire|r |T133816:0|t[Engrave Gloves: Water Shield] |cRXP_WARN_as it is the level requirement of training|r |T135849:0|t[Frost Shock]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves: Water Shield]
+    .train 410097,1
+    .xp >20,1
+step
+    .zone Orgrimmar >>Travel to Orgrimmar or Thunder Bluff
+    .zoneskip Thunder Bluff
+    .train 8050,1
+    .xp <20,1
+step
+    .zone Orgrimmar >>Travel to Orgrimmar or Thunder Bluff
+    .zoneskip Thunder Bluff
+    .train 8056,1
+    .xp <20,1
+step
+    #completewith OrgTrain
+    .goto Orgrimmar,40.31,37.01,15,0
+    .goto Orgrimmar,38.81,36.37,15 >>Travel toward |cRXP_FRIENDLY_Kardris|r
+    .zoneskip Thunder Bluff
+    .train 410097,1
+    .xp <20,1
+step
+    .goto Orgrimmar,38.81,36.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
+    .train 8050 >> Train |T135813:0|t[Flame Shock]
+    .train 8056 >> Train |T135849:0|t[Frost Shock]
+    .target Kardris Dreamseeker
+    .zoneskip Thunder Bluff
+    .train 8050,1
+    .train 8056,1
+    .xp <20,1
+step
+    .goto Orgrimmar,38.81,36.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
+    .train 8050 >> Train |T135813:0|t[Flame Shock]
+    .target Kardris Dreamseeker
+    .zoneskip Thunder Bluff
+    .train 410097,1
+    .xp <20,1
+step
+    #label OrgTrain
+    .goto Orgrimmar,38.81,36.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
+    .train 8056 >> Train |T135849:0|t[Frost Shock]
+    .target Kardris Dreamseeker
+    .zoneskip Thunder Bluff
+    .train 410097,1
+    .xp <20,1
+step
+    #ah
+    .goto Orgrimmar,50.67,70.39,0
+    .goto Orgrimmar,53.74,64.60,15,0
+    .goto Orgrimmar,55.54,64.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Wabang|r
+    >>|cRXP_BUY_Buy a|r |T134237:0|t[Kolkar Booty Key] |cRXP_BUY_from the Auction House|r
+    >>|cRXP_WARN_This will save you a few minutes later|r
+    .collect 5020,1 --Kolkar Booty Key (1)
+    .target Auctioneer Wabang
+    .zoneskip Orgrimmar,1
+    .train 410097,1
+    .xp <20,1
+step
+    #completewith TBTrain
+    .goto Thunder Bluff,22.82,21.11,15 >>Travel toward |cRXP_FRIENDLY_Siln|r
+    .zoneskip Orgrimmar
+    .train 410097,1
+    .xp <20,1
+step
+    .goto Thunder Bluff,22.82,21.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Siln|r
+    .train 8050 >> Train |T135813:0|t[Flame Shock]
+    .train 8056 >> Train |T135849:0|t[Frost Shock]
+    .target Siln Skychaser
+    .zoneskip Orgrimmar
+    .train 8050,1
+    .train 8056,1
+    .xp <20,1
+step
+    .goto Thunder Bluff,22.82,21.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Siln|r
+    .train 8050 >> Train |T135813:0|t[Flame Shock]
+    .target Siln Skychaser
+    .zoneskip Orgrimmar
+    .train 410097,1
+    .xp <20,1
+step
+    #label TBTrain
+    .goto Thunder Bluff,22.82,21.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Siln|r
+    .train 8056 >> Train |T135849:0|t[Frost Shock]
+    .target Siln Skychaser
+    .zoneskip Orgrimmar
+    .train 410097,1
+    .xp <20,1
+step
+    #ah
+    .goto Thunder Bluff,45.23,59.40,0
+    .goto Thunder Bluff,40.41,51.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Stampi|r
+    >>|cRXP_BUY_Buy a|r |T134237:0|t[Kolkar Booty Key] |cRXP_BUY_from the Auction House|r
+    >>|cRXP_WARN_This will save you a few minutes later|r
+    .collect 5020,1 --Kolkar Booty Key (1)
+    .target Auctioneer Stampi
+    .zoneskip Thunder Bluff,1
+    .train 410097,1
+    .xp <20,1
+--XX easier to farm it IF the user is not already there to train
 step
     #completewith next
     .zone The Barrens >>Travel to The Barrens
+    .train 410097,1
+    .xp <20,1
 step
-    >>Kill |cRXP_ENEMY_Kolkar Wrangler|r and |cRXP_ENEMY_Kolkar Stormer|r. Loot them for a |T134237:0|t[Kolkar Booty Key]
-    .goto The Barrens,44.4,23.6
-    .goto The Barrens,45.8,38.4,0
-    .collect 5020,1
+    #loop
+    .goto The Barrens,45.78,25.52,50,0
+    .goto The Barrens,46.54,22.99,50,0
+    .goto The Barrens,45.03,20.09,50,0
+    .goto The Barrens,43.86,21.38,50,0
+    .goto The Barrens,43.49,23.57,50,0
+    .goto The Barrens,43.56,26.30,50,0
+    >>Kill |cRXP_ENEMY_Kolkar Wranglers|r and |cRXP_ENEMY_Kolkar Stormers|r. Loot them for a |T134237:0|t[Kolkar Booty Key]
+    .collect 5020,1 --Kolkar Booty Key (1)
     .mob Kolkar Wrangler
     .mob Kolkar Stormer
+    .train 410097,1
+    .xp <20,1
 step
-    >>Loot one of the |cRXP_PICK_Kolkar's Booty|r for the |T135832:0|t[|cRXP_FRIENDLY_Tempest Icon|r]
-    .collect 206382,1
-    .goto The Barrens,43.0,23.5,-1
-    .goto The Barrens,52.8,41.8,-1
-    .goto The Barrens,44.3,37.7,-1
+    .goto The Barrens,43.02,23.52,-1
+--  .goto The Barrens,52.73,41.84,-1
+--   .goto The Barrens,44.33,37.66,-1
+    >>Open the |cRXP_PICK_Kolkars' Booty|r. Loot it for the |T135832:0|t|cRXP_LOOT_[Tempest Icon]|r
+    .collect 206382,1 --Tempest Icon (1)
+    .itemcount 5020,1 --Kolkar Booty Key (1)
+    .train 410097,1
+    .xp <20,1
 step
-    .equip 206382,18 >>Equip the |T135832:0|t[|cRXP_FRIENDLY_Tempest Icon|r]
-step
-    .aura 408828,1+ >>Use |cRXP_WARN_3 spells with a different element, like Lightning Bolt, Frost Shock/Frostbrand Weapon Auto Attack and Flame Shock|r on 10 different enemies.
-step
+    .equip 18,206382 >> |cRXP_WARN_Equip the|r |T135832:0|t|cRXP_LOOT_[Tempest Icon]|r
     .use 206382
-    .itemcount 206382,1
-    .train 410097 >>|cRXP_WARN_Use the|r |T135832:0|t[|cRXP_FRIENDLY_Tempest Icon|r] |cRXP_WARN_to train|r |T132315:0|t[Water Shield]
+    .itemcount 206382,1 --Tempest Icon (1)
+    .train 410097,1
+    .xp <20,1
+step
+    #loop
+    .goto The Barrens,40.03,15.36,50,0
+    .goto The Barrens,39.39,14.65,50,0
+    .goto The Barrens,39.62,11.77,50,0
+    .goto The Barrens,38.84,11.93,50,0
+    .goto The Barrens,38.44,13.21,50,0
+    .goto The Barrens,38.48,14.85,50,0
+    .goto The Barrens,37.33,16.23,50,0
+    .goto The Barrens,38.64,17.49,50,0
+    .aura 408828 >>|cRXP_WARN_Kill enemies having dealt damage using a Nature spell (|r|T136026:0|t[Earth Shock]|cRXP_WARN_), a Frost spell (|r|T135849:0|t[Frost Shock]|cRXP_WARN_), and a Fire spell (|r|T135813:0|t[Flame Shock]|cRXP_WARN_) on them at least once. Do this 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
+    .mob Witchwing Slayer
+    .mob Witchwing Windcaller
+    .mob Witchwing Ambusher
+    .mob Witchwing Roguefeather
+    .mob Serena Bloodfeather
+    .itemStat 18,QUALITY,2
+    .train 410097,1
+    .xp <20,1
+    .xp >22,1
+step
+    #completewith next
+    .zone Stonetalon Mountains >> Travel to Stonetalon Mountains
+    .train 410097,1
+    .xp <22,1
+step
+    #loop
+    .goto Stonetalon Mountains,64.17,57.16,50,0
+    .goto Stonetalon Mountains,60.55,54.86,50,0
+    .goto Stonetalon Mountains,60.95,51.21,50,0
+    .goto Stonetalon Mountains,64.40,48.64,50,0
+    .goto Stonetalon Mountains,66.18,52.01,50,0
+    .goto Stonetalon Mountains,67.20,51.49,50,0
+    .goto Stonetalon Mountains,66.83,45.34,50,0
+    .goto Stonetalon Mountains,69.89,53.54,50,0
+    .goto Stonetalon Mountains,70.84,56.97,50,0
+    .aura 408828 >>|cRXP_WARN_Kill enemies having dealt damage using a Nature spell (|r|T136026:0|t[Earth Shock]|cRXP_WARN_), a Frost spell (|r|T135849:0|t[Frost Shock]|cRXP_WARN_), and a Fire spell (|r|T135813:0|t[Flame Shock]|cRXP_WARN_) on them at least once. Do this 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
+    .mob Venture Co. Logger
+    .mob Venture Co. Deforester
+    .mob Venture Co. Operator
+    .mob Venture Co. Light Shredder
+    .mob XT:9
+    .mob XT:4
+    .mob Deepmoss Webspinner
+    .itemStat 18,QUALITY,2
+    .train 410097,1
+    .xp <22,1
+step
+    .cast 402265 >>|cRXP_WARN_Use the|r |T135832:0|t|cRXP_LOOT_[Tempest Icon]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves: Water Shield]
+    .use 206382
+    .aura 408828
+    .itemStat 18,QUALITY,2
+    .train 410097,1
+    .xp <20,1
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1549,19 +1992,142 @@ RXPGuides.RegisterGuide([[
 #name Water Shield - 20 (Silverpine Forest)
 
 step
-    #completewith next
+    +|cRXP_WARN_You MUST be at least level 20 in order to acquire|r |T133816:0|t[Engrave Gloves: Water Shield] |cRXP_WARN_as it is the level requirement of training|r |T135849:0|t[Frost Shock]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves: Water Shield]
+    .train 410097,1
+    .xp >20,1
+step
+    .zone Orgrimmar >>Travel to Orgrimmar or Thunder Bluff
+    .zoneskip Thunder Bluff
+    .train 8050,1
+    .xp <20,1
+step
+    .zone Orgrimmar >>Travel to Orgrimmar or Thunder Bluff
+    .zoneskip Thunder Bluff
+    .train 8056,1
+    .xp <20,1
+step
+    #completewith OrgTrain
+    .goto Orgrimmar,40.31,37.01,15,0
+    .goto Orgrimmar,38.81,36.37,15 >>Travel toward |cRXP_FRIENDLY_Kardris|r
+    .zoneskip Thunder Bluff
+    .train 410097,1
+    .xp <20,1
+step
+    .goto Orgrimmar,38.81,36.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
+    .train 8050 >> Train |T135813:0|t[Flame Shock]
+    .train 8056 >> Train |T135849:0|t[Frost Shock]
+    .target Kardris Dreamseeker
+    .zoneskip Thunder Bluff
+    .train 8050,1
+    .train 8056,1
+    .xp <20,1
+step
+    .goto Orgrimmar,38.81,36.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
+    .train 8050 >> Train |T135813:0|t[Flame Shock]
+    .target Kardris Dreamseeker
+    .zoneskip Thunder Bluff
+    .train 410097,1
+    .xp <20,1
+step
+    #label OrgTrain
+    .goto Orgrimmar,38.81,36.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
+    .train 8056 >> Train |T135849:0|t[Frost Shock]
+    .target Kardris Dreamseeker
+    .zoneskip Thunder Bluff
+    .train 410097,1
+    .xp <20,1
+step
+    #completewith TBTrain
+    .goto Thunder Bluff,22.82,21.11,15 >>Travel toward |cRXP_FRIENDLY_Siln|r
+    .zoneskip Orgrimmar
+    .train 410097,1
+    .xp <20,1
+step
+    .goto Thunder Bluff,22.82,21.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Siln|r
+    .train 8050 >> Train |T135813:0|t[Flame Shock]
+    .train 8056 >> Train |T135849:0|t[Frost Shock]
+    .target Siln Skychaser
+    .zoneskip Orgrimmar
+    .train 8050,1
+    .train 8056,1
+    .xp <20,1
+step
+    .goto Thunder Bluff,22.82,21.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Siln|r
+    .train 8050 >> Train |T135813:0|t[Flame Shock]
+    .target Siln Skychaser
+    .zoneskip Orgrimmar
+    .train 410097,1
+    .xp <20,1
+step
+    #label TBTrain
+    .goto Thunder Bluff,22.82,21.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Siln|r
+    .train 8056 >> Train |T135849:0|t[Frost Shock]
+    .target Siln Skychaser
+    .zoneskip Orgrimmar
+    .train 410097,1
+    .xp <20,1
+step
+    #completewith Grimson
+    #label Grimson1
     .zone Silverpine Forest >>Travel to Silverpine Forest
+    .train 410097,1
+    .xp <20,1
 step
-    >>Kill |cRXP_ENEMY_Grimson the Pale|r |cRXP_WARN_inside the cave|r. Loot him for the |T135832:0|t[|cRXP_FRIENDLY_Tempest Icon|r]
-    .goto Silverpine Forest,57.4,44.8
-    .collect 206382,1
+    #completewith Grimson
+    #requires Grimson1
+    #label Grimson2
+    .goto Silverpine Forest,56.65,45.97,15 >>Enter the Deep Elem Mine
+    .train 410097,1
+    .xp <20,1
+step
+    #completewith Grimson
+    #requires Grimson2
+    .goto Silverpine Forest,57.28,45.42,10,0
+    .goto Silverpine Forest,57.66,44.82,10,0
+    .goto Silverpine Forest,58.59,44.85,30 >>Travel Toward |cRXP_ENEMY_Grimson the Pale|r
+    .train 410097,1
+    .xp <20,1
+step
+    #label Grimson
+    .goto Silverpine Forest,58.59,44.85
+    >>Kill |cRXP_ENEMY_Grimson the Pale|r inside. Loot him for the |T135832:0|t|cRXP_LOOT_[Tempest Icon]|r
+    .collect 206382,1 --Tempest Icon (1)
     .mob Grimson the Pale
+    .train 410097,1
+    .xp <20,1
 step
-    .equip 206382,18 >>Equip the |T135832:0|t[|cRXP_FRIENDLY_Tempest Icon|r]
-step
-    .aura 408828,1+ >>Use |cRXP_WARN_3 spells with a different element, like Lightning Bolt, Frost Shock/Frostbrand Weapon Auto Attack and Flame Shock|r on 10 different enemies.
-step
+    .equip 18,206382 >> |cRXP_WARN_Equip the|r |T135832:0|t|cRXP_LOOT_[Tempest Icon]|r
     .use 206382
-    .itemcount 206382,1
-    .train 410097 >>|cRXP_WARN_Use the|r |T135832:0|t[|cRXP_FRIENDLY_Tempest Icon|r] |cRXP_WARN_to train|r |T132315:0|t[Water Shield]
+    .itemcount 206382,1 --Tempest Icon (1)
+    .train 410097,1
+    .xp <20,1
+step
+    #loop
+    .goto Silverpine Forest,47.68,86.24,50,0
+    .goto Silverpine Forest,45.81,86.37,50,0
+    .goto Silverpine Forest,44.26,84.37,50,0
+    .aura 408828 >>|cRXP_WARN_Kill enemies having dealt damage using a Nature spell (|r|T136026:0|t[Earth Shock]|cRXP_WARN_), a Frost spell (|r|T135849:0|t[Frost Shock]|cRXP_WARN_), and a Fire spell (|r|T135813:0|t[Flame Shock]|cRXP_WARN_) on them at least once. Do this 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
+    .mob Valdred Moray
+    .mob Dalin Forgewright
+    .mob Haggard Refugee
+    .mob Sickly Refugee
+    .itemStat 18,QUALITY,2
+    .train 410097,1
+    .xp <20,1
+    .xp >22,1
+step
+    .cast 402265 >>|cRXP_WARN_Use the|r |T135832:0|t|cRXP_LOOT_[Tempest Icon]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves: Water Shield]
+    .use 206382
+    .aura 408828
+    .itemStat 18,QUALITY,2
+    .train 410097,1
+    .xp <20,1
 ]])
