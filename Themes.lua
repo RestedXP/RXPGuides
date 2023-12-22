@@ -81,6 +81,27 @@ themes['DarkMode'] = {
     author = "Bypass"
 }
 
+themes['RXP Green'] = {
+    background = {6 / 255, 23 / 255, 12 / 255, 1},
+    bottomFrameBG = {9 / 255, 34 / 255, 17 / 255, 1},
+    bottomFrameHighlight = {4 / 255, 113 / 255, 65 / 255, 1},
+    mapPins = {0 / 255, 203 / 255, 66 / 255, 1},
+    tooltip = "|cFFCE7BFF", -- AARRGGBB
+    texturePath = "Interface/AddOns/" .. addonName .. "/Textures/Green/",
+    font = _G.GameFontNormal:GetFont(),
+    textColor = {1, 1, 1},
+    applicable = function() return not RXPCData.GA end,
+    author = "RestedXP",
+    bgTextures = {
+        edge = "Interface/BUTTONS/WHITE8X8",
+        bottom = "Interface/BUTTONS/WHITE8X8",
+    },
+    edges = {
+        edge = "Interface/AddOns/" .. addonName .. "/Textures/Green/rxp-borders",
+        guideName = "Interface/AddOns/" .. addonName .. "/Textures/Green/rxp-borders",
+    },
+}
+
 addon.customThemeBase = CopyTable(themes.Default)
 addon.customThemeBase.name = "Custom"
 addon.customThemeBase.applicable = true
