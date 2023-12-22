@@ -23,10 +23,10 @@ addon.defaultGuideList = {
 }
 
 if faction == "Horde" then
-    addon.defaultGroup = "RestedXP Horde 1-22"
+    addon.defaultGroup = "RestedXP Speedrun Guide (H)"
     addon.defaultGroupHC = "RestedXP Survival Guide (H)"
 elseif faction == "Alliance" then
-    addon.defaultGroup = "RestedXP Alliance 1-20"
+    addon.defaultGroup = "RestedXP Speedrun Guide (A)"
     addon.defaultGroupHC = "RestedXP Survival Guide (A)"
 end
 

@@ -43,7 +43,7 @@ step
 	.target Gwen Armstead
 step
     #completewith next
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Salvaged Supplies.|r 
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Salvaged Supplies.|r
     .complete 14094,1 --4/4 Salvaged Supplies
 step
     #label Area1
@@ -56,7 +56,7 @@ step
     .goto 202,63.19,31.69,15,0
     .goto 202,63.13,34.72,15,0
     .goto 202,55.03,26.53
-	>>Kill |cRXP_ENEMY_Rampaging Worgen|r and |TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Salvaged Supplies.|r 
+	>>Kill |cRXP_ENEMY_Rampaging Worgen|r and |TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Salvaged Supplies.|r
     .complete 14094,1 --4/4 Salvaged Supplies
     .complete 14093,1 --6/6 Rampaging Worgen slain
 	.mob Rampaging Worgen
@@ -93,38 +93,38 @@ step
     .vendor >> Talk to |cRXP_FRIENDLY_Marie Allen|r. |cRXP_WARN_Vendor and buy bags if you need to.|r
 	.target Marie Allen
 step << Hunter
-    .goto 202,71.5,61.3 
+    .goto 202,71.5,61.3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Huntsman Blake.|r
     .turnin 14275 >>Turn in Someone's Keeping Track of You
     .accept 14290 >>Accept Safety in Numbers
 	.target Huntsman Blake
 step << Druid
-    .goto 202,70.18,65.88 
+    .goto 202,70.18,65.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celestine of the Harvest.|r
     .turnin 14280 >> Turn in The Winds Know Your Name
     .accept 14291 >> Accept Safety in Numbers
 	.target Celestine of the Harvest
 step << Warrior
-.goto 202,67.52,64.36 
+.goto 202,67.52,64.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seargent Cleese.|r
-    .turnin 14275 >>Turn in Your Instructur 
-    .accept 14286 >>Accept Safety in Numbers 
+    .turnin 14275 >>Turn in Your Instructur
+    .accept 14286 >>Accept Safety in Numbers
     .accept 14280 >>Turn in the winds know your name
 	.target Seargent Cleese
 step << Rogue
-    .goto 202,71.41,65.74 
+    .goto 202,71.41,65.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loren the Fence.|r
-    .turnin 14269 >>Turn in Someone's Looking for you 
+    .turnin 14269 >>Turn in Someone's Looking for you
     .accept 14285 >>Accept Safety in Numbers
 	.target Loren the Fence
 step << Priest
-    .goto 202,71.41,65.74 
+    .goto 202,71.41,65.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loren the Fence.|r
     .turnin 14269 >>Seek the Sister
     .accept 14285 >>Accept Safety in Numbers
 	.target Loren the Fence
 step << Warlock
-    .goto 202,71.42, 64.41 
+    .goto 202,71.42, 64.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vitus Darkwalker.|r
     .turnin 14273 >>Shady Associatees
     .accept 14287 >>Accept Safety in Numbers
@@ -169,8 +169,8 @@ step
     .goto 202,59.54,63.46,15,0
     .goto 202,61.79,67.46,15,0
     .goto 202,57.43,69.82
-    >>|cRXP_WARN_As a Hunter, use 'Disengage' to land on the small house roof, or alternatively, walk downstairs|r << Hunter 
-    >>|cRXP_WARN_Walk downstairs.|r<< !Hunter 
+    >>|cRXP_WARN_As a Hunter, use 'Disengage' to land on the small house roof, or alternatively, walk downstairs|r << Hunter
+    >>|cRXP_WARN_Walk downstairs.|r<< !Hunter
 	>>Kill |cRXP_ENEMY_Bloodfang Worgen|r
     .complete 24930,1 --5/5 Bloodfang Worgen slain
 	.mob Bloodfang Worgen
@@ -185,16 +185,16 @@ step
     .mob Bloodfang Worgen
 step
     #requires Area99
-    .goto 202,55.22,62.86 
+    .goto 202,55.22,62.86
 	>>|cRXP_WARN_Ascend the spiral staircase.|r
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Darius Crowley.|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Darius Crowley.|r
     .turnin 14154 >>Turn in By the Skin of His Teeth
     .accept 26129 >>Accept Brothers In Arms
 	.target Lord Darius Crowley
 step
     .goto 202,65.8,77.7
-    >>|cRXP_WARN_As a Hunter, use 'Disengage' to land on the small house roof, or alternatively, walk downstairs|r << Hunter 
-    >>|cRXP_WARN_Walk downstairs.|r<< !Hunter 
+    >>|cRXP_WARN_As a Hunter, use 'Disengage' to land on the small house roof, or alternatively, walk downstairs|r << Hunter
+    >>|cRXP_WARN_Walk downstairs.|r<< !Hunter
     .turnin 26129 >>Turn in Brothers In Arms
     .accept 14159 >>Accept The Rebel Lord's Arsenal
 step
@@ -213,7 +213,7 @@ step
 step
     #completewith next
     +|cRXP_WARN_To enable keybinding for quest items, follow these steps:|r
-    *[1] Press the |cRXP_WARN_Escape key.|r 
+    *[1] Press the |cRXP_WARN_Escape key.|r
     *[2] Select |cRXP_WARN_Options.|r
     *[3] Navigate to |cRXP_WARN_Keybindings.|r
     *[4] Within |cRXP_WARN_Keybindings|r, find |cRXP_WARN_RestedXP Guides.|r
@@ -258,7 +258,7 @@ step
 	.target Genn Greymane
 step
     .goto 202,31.1,72.3
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Lord Darius Crowley.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Darius Crowley.|r
     .accept 14212 >>Accept Sacrifices
 	.target Lord Darius Crowley
 step
@@ -267,7 +267,7 @@ step
     .complete 14212,1 --30/30 Bloodfang Stalker rounded up
 	.mob Bloodfang Stalker
 step
-    #completewith next 
+    #completewith next
     >>By starting a new WoW client and relogging, you'll be thrown off the horse and die, saving you time. |cRXP_WARN_Alternatively, you can simply wait until the horse finishes its ride.|r
     .deathskip >> Pull as many Enemies as you can, Die and Respawn at the Graveyard
 step
@@ -337,7 +337,7 @@ step
 	.target Jack "All Trades" Derrington
 step
     #completewith next
-    +|cRXP_WARN_Herbing and Mining Ores gives Experience. Only do this when the herbs/ores are right next to you.|r	
+    +|cRXP_WARN_Herbing and Mining Ores gives Experience. Only do this when the herbs/ores are right next to you.|r
 step
     .goto 179,32.8,66.4
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crate of Mandrake Essence.|r
@@ -460,7 +460,7 @@ step
     .complete 14369,1 --8/8 Forsaken Combatant slain
 	.mob Forsaken Sailor
 	.mob Forsaken Soldier
-step 
+step
     #completewith next
     .deathskip >> Pull as many Enemies as you can, Die and Respawn at the Graveyard
 step
@@ -495,7 +495,7 @@ step
 	.target Lord Godfrey
 step
     .goto 179,29.0,65.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Liam Greymane.|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Liam Greymane.|r
     .turnin 14396 >>Turn in As the Land Shatters
     .accept 14395 >>Accept Gasping for Breath
 	.target Prince Liam Greymane
@@ -584,7 +584,7 @@ step
 	.target Grandma Wahl
 step
     .goto 179,36.89,84.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Sebastian Hayward.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sebastian Hayward.|r
     .turnin 14403 >>Turn in The Hayward Brothers
     .accept 14412 >>Accept Washed Up
     .accept 14404 >>Accept Not Quite Shipshape
@@ -608,7 +608,7 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Planks of Wood|r |cFFfa9602that's on the the ground.|r
     .complete 14404,2 --1/1 Planks of Wood
 step
-    .goto 179,36.9,84.2	
+    .goto 179,36.9,84.2
     >>Kill |cRXP_ENEMY_Forsaken Castaways.|r
     .complete 14412,1 --6/6 Forsaken Castaway slain
 	.target Forsaken Castaway
@@ -743,7 +743,7 @@ step
 step
     .goto 179,63.8,81.3
     >>Kill the |cRXP_ENEMY_Dark Scout|r
-    *|cRXP_ENEMY_Use |T133443:0|t[Belysra's Talisman]|r|cRXP_WARN_when you are frozen.|r 
+    *|cRXP_ENEMY_Use |T133443:0|t[Belysra's Talisman]|r|cRXP_WARN_when you are frozen.|r
     .complete 24616,1 --1/1 Dark Scout slain
     .use 49944
 	.mob Dark Scout
@@ -755,7 +755,7 @@ step
 	.target Belyrsa Starbreeze
 step
     .goto 179,68.7,73.2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Darius Crowley.|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Darius Crowley.|r
     .turnin 24617 >>Turn in Tal'doren, the Wild Home
     .accept 24627 >>Accept At Our Doorstep
 	.target Lord Darius Crowley
@@ -798,7 +798,7 @@ step
     .use 50134
 step
     .goto 179,68.71,73.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Lord Darius Crowley.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Darius Crowley.|r
     .turnin 24646 >>Turn in Take Back What's Ours
     .accept 24593 >>Accept Neither Human Nor Beast
 	.target Lord Darius Crowley
@@ -852,7 +852,7 @@ step
     .use 50218
 step
     .goto 179,78.3,72.1
-    .use 50218 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Genn Greymane.|r 
+    .use 50218 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Genn Greymane.|r
     >>|cRXP_WARN_Use your stealth if you need to.|r
     .turnin 24592 >>Turn in Betrayal at Tempest's Reach
     .accept 24677 >>Accept Flank the Forsaken
@@ -926,7 +926,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley.|r
     .accept 24676 >>Accept Push Them Out
 	.target Lorna Crowley
-step 
+step
     >>Kill |cRXP_FRIENDLY_Forsaken Infantry|r, |cRXP_ENEMY_Cornell|r and |cRXP_ENEMY_Valnov.|r
     .complete 24676,2 --1/1 Executor Cornell slain
 	.goto 179,72.87,28.36
@@ -1076,7 +1076,7 @@ step
     .turnin 14434 >>Turn in Rut'theran Village
 	.target Admiral Nightwind
 step
-    #completewith next    
+    #completewith next
     .goto 57,52.54,89.44,5 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cFFfa9602Exodar Portal|r
     .zoneskip 97
     .nodmf
@@ -1084,7 +1084,7 @@ step
     .goto 103,41.87,72.93,10 >>Enter |cFFfa9602The Exodar|r |cFFfa9602and descend the Spiral Staircase.|r
     .goto 103,48.33,62.94,10 >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Stormwind Portal.|r
     .zoneskip 84
-    .nodmf    
+    .nodmf
 step
     #completewith next
     .goto 84,67.49,80.56,20,0
@@ -1123,14 +1123,14 @@ step
     #completewith next
     .link /run AbandonSkill(186); AbandonSkill(182);>> |cRXP_WARN_Click this text to receive a macro that will unlearn your professions.|r
     .dmf
-step 
+step
     #label DarkMoonFaire
     .goto 89,38.58,49.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage.|r
     .accept 7905 >>Accept The Darkmoon Faire
 	.target Darkmoon Faire Mystic
     .dmf
-step 
+step
     .goto 89,38.58,49.38
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage.|r
     .skipgossip

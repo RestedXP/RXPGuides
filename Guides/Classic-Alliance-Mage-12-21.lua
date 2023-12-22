@@ -18,7 +18,7 @@ step
     >>Go upstairs to the top floor
     .goto Darkshore,36.98,44.14
 .target Wizbang Cranktoggle
->>Talk to |cFF00FF25Wizbang Cranktoggle|r
+>>Talk to |cRXP_FRIENDLY_Wizbang Cranktoggle|r
     .accept 983 >>Accept Buzzbox 827
 step
     >>Jump down to the 1st floor
@@ -27,27 +27,27 @@ step
 step
     .goto Darkshore,37.32,43.64
 .target Barithras Moonshade
->>Talk to |cFF00FF25Barithras Moonshade|r
+>>Talk to |cRXP_FRIENDLY_Barithras Moonshade|r
     .accept 947 >>Accept Cave Mushrooms
 step
     .goto Darkshore,37.68,43.38
 .target Sentinel Glynda Nal'Shea
->>Talk to |cFF00FF25Sentinel Glynda Nal'Shea|r
+>>Talk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .accept 4811 >>Accept The Red Crystal
 step
     .goto Darkshore,38.84,43.41
 .target Tharnariun Treetender
->>Talk to |cFF00FF25Tharnariun Treetender|r
+>>Talk to |cRXP_FRIENDLY_Tharnariun Treetender|r
     .accept 2118 >>Accept Plagued Lands
 step
     .goto Darkshore,39.37,43.49
 .target Terenthis
->>Talk to |cFF00FF25Terenthis|r
+>>Talk to |cRXP_FRIENDLY_Terenthis|r
     .accept 984 >>Accept How Big a Threat?
 step
     .goto Darkshore,36.62,45.59
 .target Gwennyth Bly'Leggonde
->>Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
+>>Talk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .accept 3524 >>Accept Washed Ashore
 step
     .goto Darkshore,36.34,45.58
@@ -90,7 +90,7 @@ step
     .accept 1001 >>Accept Buzzbox 411
 step
     .goto Darkshore,36.62,45.59
->>Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
+>>Talk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .turnin 3524 >>Turn in Washed Ashore
 .target Gwennyth Bly'Leggonde
     .accept 4681 >>Accept Washed Ashore
@@ -99,7 +99,7 @@ step
     >>Run to the Docks
     .goto Darkshore,35.74,43.70
 .target Cerellean Whiteclaw
->>Talk to |cFF00FF25Cerellean Whiteclaw|r
+>>Talk to |cRXP_FRIENDLY_Cerellean Whiteclaw|r
     .accept 963 >>Accept For Love Eternal
 step
     #sticky
@@ -117,17 +117,17 @@ step
     .goto Darkshore,36.62,45.59
     >>Kill Threshers en route back to shore
 .target Gwennyth Bly'Leggonde
->>Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
+>>Talk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .turnin 4681 >> Turn in Washed Ashore
 step
     .goto Darkshore,38.84,43.41
->>Talk to |cFF00FF25Tharnariun Treetender|r
+>>Talk to |cRXP_FRIENDLY_Tharnariun Treetender|r
     .turnin 2118 >> Turn in Plagued Lands
 .target Tharnariun Treetender
     .accept 2138 >> Accept Cleansing of the Infected
 step
     .goto Darkshore,39.37,43.49
->>Talk to |cFF00FF25Terenthis|r
+>>Talk to |cRXP_FRIENDLY_Terenthis|r
     .turnin 984 >> Turn in How Big a Threat?
 .target Terenthis
     .accept 985 >> Accept How Big a Threat?
@@ -140,7 +140,7 @@ step
     .complete 985,2 --Blackwood Windtalker (5)
 step
     .goto Darkshore,39.37,43.48
->>Talk to |cFF00FF25Terenthis|r
+>>Talk to |cRXP_FRIENDLY_Terenthis|r
     .turnin 985 >>Turn in How Big a Threat?
 .target Terenthis
     .accept 986 >>Accept A Lost Master
@@ -148,17 +148,17 @@ step
     >>Go Upstairs
     .goto Darkshore,39.04,43.55
 .target Sentinel Elissa Starbreeze
->>Talk to |cFF00FF25Sentinel Elissa Starbreeze|r
+>>Talk to |cRXP_FRIENDLY_Sentinel Elissa Starbreeze|r
     .accept 965 >>Accept The Tower of Althalaxx
 step
     .goto Darkshore,38.11,41.16
 .target Gorbold Steelhand
->>Talk to |cFF00FF25Gorbold Steelhand|r
+>>Talk to |cRXP_FRIENDLY_Gorbold Steelhand|r
     .accept 982 >> Accept Deep Ocean, Vast Sea
 step
     #label Thundris
     .goto Darkshore,37.39,40.13
->>Talk to |cFF00FF25Thundris Windweaver|r
+>>Talk to |cRXP_FRIENDLY_Thundris Windweaver|r
     .turnin 4761 >> Turn in Thundris Windweaver
 .target Thundris Windweaver
     .accept 4762 >> Accept The Cliffspring River
@@ -189,7 +189,7 @@ step
     .accept 4723 >> Accept Beached Sea Creature
 step
     .goto Felwood,27.70,10.03
->>Talk to |cFF00FF25Asterion|r
+>>Talk to |cRXP_FRIENDLY_Asterion|r
     .turnin 954 >> Turn in Bashal'Aran
 .target Asterion
     .accept 955 >> Accept Bashal'Aran
@@ -199,7 +199,7 @@ step
     .complete 955,1 --Grell Earring (8)
 step
     .goto Felwood,27.70,10.03
->>Talk to |cFF00FF25Asterion|r
+>>Talk to |cRXP_FRIENDLY_Asterion|r
     .turnin 955 >> Turn in Bashal'Aran
 .target Asterion
     .accept 956 >> Accept Bashal'Aran
@@ -209,7 +209,7 @@ step
     .complete 956,1 --Ancient Moonstone Seal (1)
 step
     .goto Felwood,27.70,10.03
->>Talk to |cFF00FF25Asterion|r
+>>Talk to |cRXP_FRIENDLY_Asterion|r
     .turnin 956 >> Turn in Bashal'Aran
 .target Asterion
     .accept 957 >> Accept Bashal'Aran
@@ -240,7 +240,7 @@ step
     #label ReadAndy
     .goto Darkshore,40.30,59.73
 .target Sentinel Tysha Moonblade
->>Talk to |cFF00FF25Sentinel Tysha Moonblade|r
+>>Talk to |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
     .accept 953 >>Accept The Fall of Ameth'Aran
 step
     #sticky
@@ -274,7 +274,7 @@ step
     #requires anaya
     .goto Darkshore,40.30,59.73
 .target Sentinel Tysha Moonblade
->>Talk to |cFF00FF25Sentinel Tysha Moonblade|r
+>>Talk to |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
     .turnin 953 >> Turn in The Fall of Ameth'Aran
 step
     .goto Darkshore,38.83,60.82
@@ -293,26 +293,26 @@ step
     .hs >> Hearth to Auberdine
 step
     .goto Darkshore,38.84,43.42
->>Talk to |cFF00FF25Tharnariun Treetender|r
+>>Talk to |cRXP_FRIENDLY_Tharnariun Treetender|r
     .turnin 2138 >>Turn in Cleansing of the Infected
 .target Tharnariun Treetender
     .accept 2139 >>Accept Tharnariun's Hope
 step
     .goto Darkshore,38.11,41.17
 .target Gorbold Steelhand
->>Talk to |cFF00FF25Gorbold Steelhand|r
+>>Talk to |cRXP_FRIENDLY_Gorbold Steelhand|r
     .turnin 982 >>Turn in Deep Ocean, Vast Sea
     .vendor >> Buy some Mild Spices from Gorbold until you have enough to cook all your eggs
 step
     .goto Darkshore,37.69,40.66
     >>Make sure you have 10 points in cooking or you cant accept/turnin the quest
 .target Alanndarian Nightsong
->>Talk to |cFF00FF25Alanndarian Nightsong|r
+>>Talk to |cRXP_FRIENDLY_Alanndarian Nightsong|r
     .accept 2178 >>Accept Easy Strider Living
     .turnin 2178 >>Turn in Easy Strider Living
 step
     .goto Darkshore,37.40,40.13
->>Talk to |cFF00FF25Thundris Windweaver|r
+>>Talk to |cRXP_FRIENDLY_Thundris Windweaver|r
     .turnin 958 >>Turn in Tools of the Highborne
     .turnin 4762 >>Turn in The Cliffspring River
 .target Thundris Windweaver
@@ -320,11 +320,11 @@ step
 step
     .goto Darkshore,37.44,41.84
 .target Archaeologist Hollee
->>Talk to |cFF00FF25Archaeologist Hollee|r
+>>Talk to |cRXP_FRIENDLY_Archaeologist Hollee|r
     .accept 729 >>Accept The Absent Minded Prospector
 step
     .goto Darkshore,37.71,43.36
->>Talk to |cFF00FF25Sentinel Glynda Nal'Shea|r
+>>Talk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .turnin 4811 >> Turn in The Red Crystal
 .target Sentinel Glynda Nal'Shea
     .accept 4812 >> Accept As Water Cascades
@@ -342,17 +342,17 @@ step
     >>Go back to the dock
     .goto Felwood,18.10,18.48
 .target Cerellean Whiteclaw
->>Talk to |cFF00FF25Cerellean Whiteclaw|r
+>>Talk to |cRXP_FRIENDLY_Cerellean Whiteclaw|r
     .turnin 963 >> Turn in For Love Eternal
 step
     .goto Darkshore,36.09,44.93
 .target Gubber Blump
->>Talk to |cFF00FF25Gubber Blump|r
+>>Talk to |cRXP_FRIENDLY_Gubber Blump|r
     .accept 1138 >> Accept Fruit of the Sea
 step
     .goto Darkshore,36.62,45.59
 .target Gwennyth Bly'Leggonde
->>Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
+>>Talk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .turnin 4722 >>Turn in Beached Sea Turtle
     .turnin 4723 >>Turn in Beached Sea Creature
     .turnin 4728 >>Turn in Beached Sea Creature << Gnome
@@ -370,7 +370,7 @@ step
 step
     .goto Darkshore,44.18,36.29
 .target Asterion
->>Talk to |cFF00FF25Asterion|r
+>>Talk to |cRXP_FRIENDLY_Asterion|r
     .turnin 957 >>Turn in Bashal'Aran
 step
     .goto Darkshore,50.66,34.98
@@ -407,7 +407,7 @@ step
     .complete 947,2 --Death Cap (1)
 step
     .goto Darkshore,54.97,24.89
->>Talk to |cFF00FF25Balthule Shadowstrike|r
+>>Talk to |cRXP_FRIENDLY_Balthule Shadowstrike|r
     .turnin 965 >>Turn in The Tower of Althalaxx
 .target Balthule Shadowstrike
     .accept 966 >>Accept The Tower of Althalaxx
@@ -417,7 +417,7 @@ step
     .complete 966,1 --Worn Parchment (4)
 step
     .goto Darkshore,54.97,24.89
->>Talk to |cFF00FF25Balthule Shadowstrike|r
+>>Talk to |cRXP_FRIENDLY_Balthule Shadowstrike|r
     .turnin 966 >>Turn in The Tower of Althalaxx
 .target Balthule Shadowstrike
     .accept 967 >>Accept The Tower of Althalaxx
@@ -453,21 +453,21 @@ step
     .goto Darkshore,37.40,40.13
     >>Equip your new wand
 .target Thundris Windweaver
->>Talk to |cFF00FF25Thundris Windweaver|r
+>>Talk to |cRXP_FRIENDLY_Thundris Windweaver|r
     .turnin 4763 >> Turn in The Blackwood Corrupted
 step
     .goto Darkshore,38.84,43.42
 .target Tharnariun Treetender
->>Talk to |cFF00FF25Tharnariun Treetender|r
+>>Talk to |cRXP_FRIENDLY_Tharnariun Treetender|r
     .turnin 2139 >>Turn in Tharnariun's Hope
 step
     .goto Darkshore,37.71,43.36
 .target Sentinel Glynda Nal'Shea
->>Talk to |cFF00FF25Sentinel Glynda Nal'Shea|r
+>>Talk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .turnin 4813 >>Turn in The Fragments Within
 step
     .goto Darkshore,37.32,43.64
->>Talk to |cFF00FF25Barithras Moonshade|r
+>>Talk to |cRXP_FRIENDLY_Barithras Moonshade|r
     .turnin 947 >> Turn in Cave Mushrooms
 .target Barithras Moonshade
     .accept 948 >> Accept Onu
@@ -479,14 +479,14 @@ step
     .isQuestComplete 1138
     .goto Darkshore,36.09,44.93
 .target Gubber Blump
->>Talk to |cFF00FF25Gubber Blump|r
+>>Talk to |cRXP_FRIENDLY_Gubber Blump|r
     .turnin 1138 >>Turn in Fruit of the Sea
 step
     #label end
     #requires bowl
     .goto Felwood,19.10,20.63
 .target Gwennyth Bly'Leggonde
->>Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
+>>Talk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .turnin 4727 >> Turn in Beached Sea Creature
     .turnin 4725 >> Turn in Beached Sea Turtle
 step
@@ -501,7 +501,7 @@ step
     .complete 1003,1 --Grizzled Scalp (4)
 step
     .goto Darkshore,43.55,76.29
->>Talk to |cFF00FF25Onu|r
+>>Talk to |cRXP_FRIENDLY_Onu|r
     .turnin 948 >> Turn in Onu
 .target Onu
     .accept 944 >> Accept The Master's Glaive
@@ -544,14 +544,14 @@ step
 step
     .goto Darkshore,35.72,83.69
 .target Prospector Remtravel
->>Talk to |cFF00FF25Prospector Remtravel|r
+>>Talk to |cRXP_FRIENDLY_Prospector Remtravel|r
     .turnin 729 >> Turn in The Absent Minded Prospector
 step
     .goto Darkshore,35.72,83.69
      >>This quest is VERY hard. Do it with another player if you can.
      >> Start the escort quest
 .target Prospector Remtravel
->>Talk to |cFF00FF25Prospector Remtravel|r
+>>Talk to |cRXP_FRIENDLY_Prospector Remtravel|r
     .accept 731,1 >> Accept The Absent Minded Prospector
 step
      >>Escort Prospector Remtravel
@@ -589,7 +589,7 @@ step
     #label TheryluneE
     .goto Darkshore,38.65,87.34
 .target Therylune
->>Talk to |cFF00FF25Therylune|r
+>>Talk to |cRXP_FRIENDLY_Therylune|r
     .accept 945 >> Accept Therylune's Escape
 step
      >> Drop the scrying bowl from your inventory on the ground
@@ -629,7 +629,7 @@ step
     #requires MoonstalkerP
     .goto Darkshore,43.55,76.29
 .target Onu
->>Talk to |cFF00FF25Onu|r
+>>Talk to |cRXP_FRIENDLY_Onu|r
     .turnin 950 >> Turn in Return to Onu
 step
     #completewith next
@@ -639,7 +639,7 @@ step
     >>Accept the Kerlonian escort quest. If he's not there, skip this step
     .goto Darkshore,44.40,76.42
 .target Kerlonian Evershade
->>Talk to |cFF00FF25Kerlonian Evershade|r
+>>Talk to |cRXP_FRIENDLY_Kerlonian Evershade|r
     .accept 5321 >>Accept The Sleeper Has Awakened
 step
     .isOnQuest 5321
@@ -655,12 +655,12 @@ step
     .isOnQuest 5321
     .goto Ashenvale,27.26,35.58
 .target Liladris Moonriver
->>Talk to |cFF00FF25Liladris Moonriver|r
+>>Talk to |cRXP_FRIENDLY_Liladris Moonriver|r
     .turnin 5321 >>Turn in The Sleeper Has Awakened
 step
     .goto Ashenvale,26.19,38.70
 .target Delgren the Purifier
->>Talk to |cFF00FF25Delgren the Purifier|r
+>>Talk to |cRXP_FRIENDLY_Delgren the Purifier|r
     .turnin 967 >>Turn in The Tower of Althalaxx
 step
     #softcore
@@ -668,26 +668,26 @@ step
     -->>Whilst you're doing this, start opening the Website Unstuck tool, and select your character. Do NOT confirm it yet though
     .goto Ashenvale,22.64,51.91
 .target Therysil
->>Talk to |cFF00FF25Therysil|r
+>>Talk to |cRXP_FRIENDLY_Therysil|r
     .turnin 945 >>Turn in Therylune's Escape
 step
     #hardcore
     >>Run up the road south. Head toward The Shrine of Aessina
     .goto Ashenvale,22.64,51.91
 .target Therysil
->>Talk to |cFF00FF25Therysil|r
+>>Talk to |cRXP_FRIENDLY_Therysil|r
     .turnin 945 >>Turn in Therylune's Escape
 step
     .hs >> Hearth to Auberdine
 step
     .goto Darkshore,36.09,44.93
 .target Gubber Blump
->>Talk to |cFF00FF25Gubber Blump|r
+>>Talk to |cRXP_FRIENDLY_Gubber Blump|r
     .turnin 1138 >>Turn in Fruit of the Sea
 step
     .goto Darkshore,36.62,45.60
 .target Gwennyth Bly'Leggonde
->>Talk to |cFF00FF25Gwennyth Bly'Leggonde|r
+>>Talk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .turnin 4730 >>Turn in Beached Sea Creature
     .turnin 4731 >>Turn in Beached Sea Turtle
     .turnin 4732 >>Turn in Beached Sea Turtle
@@ -695,26 +695,26 @@ step
 step
     .goto Darkshore,37.73,43.38
 .target Sentinel Glynda Nal'Shea
->>Talk to |cFF00FF25Sentinel Glynda Nal'Shea|r
+>>Talk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .turnin 4740 >>Turn in WANTED: Murkdeep!
 step
     .isQuestComplete 986
     >>Keep the next part of the quest in your questlog for the +3 stamina cloak. Abandon the quest when you dont need the cloak anymore
     .goto Darkshore,39.37,43.48
->>Talk to |cFF00FF25Terenthis|r
+>>Talk to |cRXP_FRIENDLY_Terenthis|r
     .turnin 986 >>Turn in A Lost Master
 .target Terenthis
     .accept 993 >>Accept A Lost Master
 step
     .goto Darkshore,37.44,41.84
 .target Archaeologist Hollee
->>Talk to |cFF00FF25Archaeologist Hollee|r
+>>Talk to |cRXP_FRIENDLY_Archaeologist Hollee|r
     .turnin 731 >> Turn in The Absent Minded Prospector
     .isQuestComplete 731
 step
     .goto Darkshore,37.44,41.84
 .target Archaeologist Hollee
->>Talk to |cFF00FF25Archaeologist Hollee|r
+>>Talk to |cRXP_FRIENDLY_Archaeologist Hollee|r
     .accept 741 >> Accept The Absent Minded Prospector
     .isQuestTurnedIn 731
 step
@@ -732,7 +732,7 @@ step
 step
     .isOnQuest 741
     .goto Darnassus,31.24,84.49
->>Talk to |cFF00FF25Chief Archaeologist Greywhisker|r
+>>Talk to |cRXP_FRIENDLY_Chief Archaeologist Greywhisker|r
     .turnin 741 >>Turn in The Absent Minded Prospector
 .target Chief Archaeologist Greywhisker
     .accept 942 >>Accept The Absent Minded Prospector
@@ -814,13 +814,13 @@ step
     >>Talk to Guard Parker. He patrols around the crossroads a little
     .goto Elwynn Forest,99.05,72.15
 .target Guard Parker
->>Talk to |cFF00FF25Guard Parker|r
+>>Talk to |cRXP_FRIENDLY_Guard Parker|r
     .accept 244 >>Accept Encroaching Gnolls
 step
     #sticky
     #label Gnolls
     .goto Redridge Mountains,30.74,59.99
->>Talk to |cFF00FF25Deputy Feldon|r
+>>Talk to |cRXP_FRIENDLY_Deputy Feldon|r
     .turnin 244 >>Turn in Encroaching Gnolls
 .target Deputy Feldon
     .accept 246 >>Accept Assessing the Threat
@@ -831,34 +831,34 @@ step
     #requires Gnolls
     .goto Redridge Mountains,33.51,48.96
 .target Marshal Marris
->>Talk to |cFF00FF25Marshal Marris|r
+>>Talk to |cRXP_FRIENDLY_Marshal Marris|r
     .accept 20 >>Accept Blackrock Menace
 step
     .goto Redridge Mountains,32.14,48.64
 .target Foreman Oslow
->>Talk to |cFF00FF25Foreman Oslow|r
+>>Talk to |cRXP_FRIENDLY_Foreman Oslow|r
     .accept 125 >>Accept The Lost Tools
 step
     .goto Redridge Mountains,30.94,47.24
 .target Verner Osgood
->>Talk to |cFF00FF25Verner Osgood|r
+>>Talk to |cRXP_FRIENDLY_Verner Osgood|r
     .accept 118 >>Accept The Price of Shoes
 step
     >>Inside the Town Hall
     .goto Redridge Mountains,29.72,44.26
 .target Bailiff Conacher
->>Talk to |cFF00FF25Bailiff Conacher|r
+>>Talk to |cRXP_FRIENDLY_Bailiff Conacher|r
     .accept 91 >>Accept Solomon's Law
 step
     .goto Redridge Mountains,29.99,44.45
     >>Go inside the building
 .target Magistrate Solomon
->>Talk to |cFF00FF25Magistrate Solomon|r
+>>Talk to |cRXP_FRIENDLY_Magistrate Solomon|r
     .accept 120 >>Accept Messenger to Stormwind
 step
     .goto Redridge Mountains,27.72,47.38
 .target Dockmaster Baren
->>Talk to |cFF00FF25Dockmaster Baren|r
+>>Talk to |cRXP_FRIENDLY_Dockmaster Baren|r
     .accept 127 >>Accept Selling Fish
 step
     .goto Redridge Mountains,26.75,46.42
@@ -867,7 +867,7 @@ step
     >>Inside the Inn
     .goto Redridge Mountains,27.09,45.65
 .target Darcy
->>Talk to |cFF00FF25Darcy|r
+>>Talk to |cRXP_FRIENDLY_Darcy|r
     .accept 129 >>Accept A Free Lunch
 step
     .goto Redridge Mountains,27.01,44.82
@@ -875,7 +875,7 @@ step
 step
     .goto Redridge Mountains,29.32,53.64
 .target Shawn
->>Talk to |cFF00FF25Shawn|r
+>>Talk to |cRXP_FRIENDLY_Shawn|r
     .accept 3741 >>Accept Hilary's Necklace
 step
     >>Look for Hilary's Necklace underwater. It's in a brown patch of dirt
@@ -893,7 +893,7 @@ step
     +AoE the gnolls in the camps
 step
     .goto Redridge Mountains,15.28,71.47
->>Talk to |cFF00FF25Guard Parker|r
+>>Talk to |cRXP_FRIENDLY_Guard Parker|r
     .turnin 129 >>Turn in A Free Lunch
 .target Guard Parker
     .accept 130 >>Accept Visit the Herbalist
@@ -920,14 +920,14 @@ step
     .bronzetube
 step
     .goto StormwindClassic,63.99,75.34
->>Talk to |cFF00FF25General Marcus Jonathan|r
+>>Talk to |cRXP_FRIENDLY_General Marcus Jonathan|r
     .turnin 120 >>Turn in Messenger to Stormwind
 .target General Marcus Jonathan
     .accept 121 >>Accept Messenger to Stormwind
 step
     >>Run to Goldshire
     .goto Elwynn Forest,41.71,65.55
->>Talk to |cFF00FF25Smith Argus|r
+>>Talk to |cRXP_FRIENDLY_Smith Argus|r
     .turnin 118 >>Turn in The Price of Shoes
 .target Smith Argus
     .accept 119 >>Accept Return to Verner
@@ -935,7 +935,7 @@ step
     >>Run to Sentinel Hill
     .goto Westfall,56.33,47.52
 .target Gryan Stoutmantle
->>Talk to |cFF00FF25Gryan Stoutmantle|r
+>>Talk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
     .accept 65 >>Accept The Defias Brotherhood
 step
     #completewith next
@@ -950,7 +950,7 @@ step
 step
     #requires WFFP
     .goto Redridge Mountains,30.97,47.27
->>Talk to |cFF00FF25Verner Osgood|r
+>>Talk to |cRXP_FRIENDLY_Verner Osgood|r
     .turnin 119 >>Turn in Return to Verner
 .target Verner Osgood
     .accept 122 >>Accept Underbelly Scales
@@ -958,24 +958,24 @@ step
 step
     >>Go into the Keep
     .goto Redridge Mountains,29.93,44.46
->>Talk to |cFF00FF25Magistrate Solomon|r
+>>Talk to |cRXP_FRIENDLY_Magistrate Solomon|r
     .turnin 121 >>Turn in Messenger to Stormwind
 .target Magistrate Solomon
     .accept 143 >>Accept Messenger to Westfall
 .target Bailiff Conacher
->>Talk to |cFF00FF25Bailiff Conacher|r
+>>Talk to |cRXP_FRIENDLY_Bailiff Conacher|r
     .accept 91 >>Accept Solomon's Law
 step
     >>Go into the top floor of the Inn
     .goto Redridge Mountains,26.47,45.35
->>Talk to |cFF00FF25Wiley the Black|r
+>>Talk to |cRXP_FRIENDLY_Wiley the Black|r
     .turnin 65 >>Turn in The Defias Brotherhood
 .target Wiley the Black
     .accept 132 >>Accept The Defias Brotherhood
 step
     .goto Redridge Mountains,29.24,53.63
 .target Hilary
->>Talk to |cFF00FF25Hilary|r
+>>Talk to |cRXP_FRIENDLY_Hilary|r
     .turnin 3741 >>Turn in Hilary's Necklace
 step
     #era/som
@@ -1041,29 +1041,29 @@ step
 step
     .goto Redridge Mountains,30.74,60.00
 .target Deputy Feldon
->>Talk to |cFF00FF25Deputy Feldon|r
+>>Talk to |cRXP_FRIENDLY_Deputy Feldon|r
     .turnin 246 >>Turn in Assessing the Threat
 step
     .isQuestComplete 20
     .goto Redridge Mountains,33.50,48.96
 .target Marshal Marris
->>Talk to |cFF00FF25Marshal Marris|r
+>>Talk to |cRXP_FRIENDLY_Marshal Marris|r
     .turnin 20 >>Turn in Blackrock Menace
 step
     .goto Redridge Mountains,32.14,48.63
->>Talk to |cFF00FF25Foreman Oslow|r
+>>Talk to |cRXP_FRIENDLY_Foreman Oslow|r
     .turnin 125 >>Turn in The Lost Tools
 .target Foreman Oslow
     .accept 89 >>Accept The Everstill Bridge
 step
     .goto Redridge Mountains,30.98,47.27
 .target Verner Osgood
->>Talk to |cFF00FF25Verner Osgood|r
+>>Talk to |cRXP_FRIENDLY_Verner Osgood|r
     .turnin 122 >>Turn in Underbelly Scales
 step
     #level 20
     .goto Redridge Mountains,27.72,47.38
->>Talk to |cFF00FF25Dockmaster Baren|r
+>>Talk to |cRXP_FRIENDLY_Dockmaster Baren|r
     .turnin 127 >>Turn in Selling Fish
 .target Dockmaster Baren
     .accept 150 >>Accept Murloc Poachers
@@ -1071,11 +1071,11 @@ step
 step
     .goto Redridge Mountains,27.72,47.38
 .target Dockmaster Baren
->>Talk to |cFF00FF25Dockmaster Baren|r
+>>Talk to |cRXP_FRIENDLY_Dockmaster Baren|r
     .turnin 127 >>Turn in Selling Fish
 step
     .goto Redridge Mountains,21.86,46.33
->>Talk to |cFF00FF25Martie Jainrose|r
+>>Talk to |cRXP_FRIENDLY_Martie Jainrose|r
     .turnin 130 >>Turn in Visit the Herbalist
 .target Martie Jainrose
     .accept 131 >>Accept Delivering Daffodils
@@ -1091,7 +1091,7 @@ step
 step
     .goto Redridge Mountains,21.85,46.32
 .target Martie Jainrose
->>Talk to |cFF00FF25Martie Jainrose|r
+>>Talk to |cRXP_FRIENDLY_Martie Jainrose|r
     .turnin 34 >>Turn in An Unwelcome Guest
 step
     .goto Redridge Mountains,21.23,36.17,60,0
@@ -1132,23 +1132,23 @@ step
 step
     .goto Redridge Mountains,33.50,48.96
 .target Marshal Marris
->>Talk to |cFF00FF25Marshal Marris|r
+>>Talk to |cRXP_FRIENDLY_Marshal Marris|r
     .turnin 20 >>Turn in Blackrock Menace
 step
     .goto Redridge Mountains,32.15,48.64
 .target Foreman Oslow
->>Talk to |cFF00FF25Foreman Oslow|r
+>>Talk to |cRXP_FRIENDLY_Foreman Oslow|r
     .turnin 89 >>Turn in The Everstill Bridge
 step
     .goto Redridge Mountains,30.98,47.28
->>Talk to |cFF00FF25Verner Osgood|r
+>>Talk to |cRXP_FRIENDLY_Verner Osgood|r
     .turnin 124 >>Turn in A Baying of Gnolls
 .target Verner Osgood
     .accept 126 >>Accept Howling in the Hills
 step
     .goto Redridge Mountains,27.09,45.65
 .target Darcy
->>Talk to |cFF00FF25Darcy|r
+>>Talk to |cRXP_FRIENDLY_Darcy|r
     .turnin 131 >>Turn in Delivering Daffodil
 step
     .goto Redridge Mountains,27.01,44.81
@@ -1158,7 +1158,7 @@ step
     .goto Redridge Mountains,22.70,44.00
     >>Exit the Inn. Go west then into the building
 .target Chef Breanna
->>Talk to |cFF00FF25Chef Breanna|r
+>>Talk to |cRXP_FRIENDLY_Chef Breanna|r
     .accept 92 >> Accept Redridge Goulash
     .turnin 92 >> Turn in Redridge Goulash
 step

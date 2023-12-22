@@ -37,11 +37,11 @@ step << Hunter
 step
     .goto Wetlands,10.43,61.01,10,0
     .goto Wetlands,10.496,60.201
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Samor Festivus|r upstairs
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Samor Festivus|r upstairs
     .vendor >> |cRXP_BUY_Buy as many|r |T134831:0|t[Healing Potions] |cRXP_BUY_that are available|r
-    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cFF00FF25Samor Festivus|r doesn't have any|r
+    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Samor Festivus|r doesn't have any|r
     .target Samor Festivus
-step << !Druid
+step << !Druid !Hunter
     .goto Wetlands,9.49,59.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei|r
     .fly Ironforge >> Fly to Ironforge
@@ -175,7 +175,7 @@ step
     .goto Loch Modan,80.09,64.16
     >>Kill |cRXP_ENEMY_Mountain Buzzards|r
     >>|cRXP_WARN_You must complete this quest and return to |cRXP_FRIENDLY_Daryl the Youngling|r within 15 minutes. If you fail the quest, abandon it and pick it up again|r
-    .complete 257,1 -- Mountain Buzzard slain (6)    
+    .complete 257,1 -- Mountain Buzzard slain (6)
     .mob Mountain Buzzard
 step
     #completewith next
@@ -185,7 +185,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryl the Youngling|r
     .goto Loch Modan,83.49,65.40
     .turnin 257 >> Turn in A Hunter's Boast
-    .accept 258 >> Accept A Hunter's Challenge 
+    .accept 258 >> Accept A Hunter's Challenge
     .target Daryl the Youngling
 step
     .goto Loch Modan,74.65,49.60,70,0
@@ -207,7 +207,7 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryl the Youngling|r
     .goto Loch Modan,83.49,65.40
-    .turnin 258 >> Turn in A Hunter's Challenge 
+    .turnin 258 >> Turn in A Hunter's Challenge
     .target Daryl the Youngling
 step
     .group

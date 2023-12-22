@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 #name Z13) Kultiran Questline
 #displayname Final Chapter
 
-<< Alliance 
+<< Alliance
 
 step
     #completewith next
@@ -50,7 +50,7 @@ step
     .goto 84,49.35,86.91,5 >>Travel |cFFfa9602to Mage Tower.|r
     .isOnQuest 54706
 step
-    .goto 84,48.83,86.9,5,0 
+    .goto 84,48.83,86.9,5,0
     .goto 84,49.15,87.77,5, >>Ascend |cFFfa9602the Spiral staircase.|r
     .isOnQuest 54706
 step
@@ -78,7 +78,7 @@ step
 step
     .goto 1161,67.95,22.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Jaina Proudmoore.|r
-    .skipgossip 
+    .skipgossip
     .complete 55039,1 --1/1 Letter from the Lord Admiral
     .target Lady Jaina Proudmoore
 -- step
@@ -416,7 +416,7 @@ step
 step
     .goto 942,71.17,43.99
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Boat.|r
-    >>|cFFFCDC00Press "Escape" on your keyboard to skip the cinematic.|r
+    >>|cRXP_WARN_Press "Escape" on your keyboard to skip the cinematic.|r
     .complete 54851,2 --1/1 Vessel blessed
 step
     .goto 942,71.13,44.03

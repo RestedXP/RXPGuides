@@ -14,7 +14,7 @@ step
     .goto Azuremyst Isle,82.96,43.88 << tbc
     .goto Azuremyst Isle,84.19,43.03 << wotlk
 .target Megelon
->>Talk to |cFF00FF25Megelon|r
+>>Talk to |cRXP_FRIENDLY_Megelon|r
     .accept 9279 >> Accept You Survived!
 step << Shaman
 	#completewith next
@@ -37,14 +37,14 @@ step << Priest/Mage
     .collect 159,10 --Collect Refreshing Spring Water (x10)
 step
     .goto Azuremyst Isle,80.419,45.885
->>Talk to |cFF00FF25Proenitus|r
+>>Talk to |cRXP_FRIENDLY_Proenitus|r
     .turnin 9279 >> Turn in You Survived!
 .target Proenitus
     .accept 9280 >> Accept Replenishing the Healing Crystals
 step
     .goto Azuremyst Isle,79.1,46.5
 .target Botanist Taerix
->>Talk to |cFF00FF25Botanist Taerix|r
+>>Talk to |cRXP_FRIENDLY_Botanist Taerix|r
     .accept 10302 >> Accept Volatile Mutations
 step
 	#sticky
@@ -57,12 +57,12 @@ step
     .complete 10302,1 --Kill Volatile Mutation (x8)
 step
     .goto Azuremyst Isle,79.1,46.4
->>Talk to |cFF00FF25Botanist Taerix|r
+>>Talk to |cRXP_FRIENDLY_Botanist Taerix|r
     .turnin 10302 >> Turn in Volatile Mutations
 .target Botanist Taerix
     .accept 9293 >> Accept What Must Be Done...
 .target Apprentice Vishael
->>Talk to |cFF00FF25Apprentice Vishael|r
+>>Talk to |cRXP_FRIENDLY_Apprentice Vishael|r
     .accept 9799 >> Accept Botanical Legwork
 step
     .goto Azuremyst Isle,74.5,48.5
@@ -75,16 +75,16 @@ step
 step
     #requires mothblood
     .goto Azuremyst Isle,79.1,46.5
->>Talk to |cFF00FF25Botanist Taerix|r
+>>Talk to |cRXP_FRIENDLY_Botanist Taerix|r
     .turnin 9293 >> Turn in What Must Be Done...
 .target Botanist Taerix
     .accept 9294 >> Accept Healing the Lake
 .target Apprentice Vishael
->>Talk to |cFF00FF25Apprentice Vishael|r
+>>Talk to |cRXP_FRIENDLY_Apprentice Vishael|r
     .turnin 9799 >> Turn in Botanical Legwork
 step
     .goto Azuremyst Isle,80.4,45.8
->>Talk to |cFF00FF25Proenitus|r
+>>Talk to |cRXP_FRIENDLY_Proenitus|r
     .turnin 9280 >> Turn in Replenishing the Healing Crystals
 .target Proenitus
     .accept 9409 >> Accept Urgent Delivery!
@@ -96,39 +96,39 @@ step << Mage
 	#completewith next
 	    .goto Azuremyst Isle,79.582,48.762
 .target Valaatu
->>Talk to |cFF00FF25Valaatu|r
+>>Talk to |cRXP_FRIENDLY_Valaatu|r
 	.turnin 9290 >> Turnin Mage Training
 	.trainer >> Train your spells
 step << Paladin
 	#completewith next
 .target Aurelon
->>Talk to |cFF00FF25Aurelon|r
+>>Talk to |cRXP_FRIENDLY_Aurelon|r
 	.turnin 9287 >> Turnin Paladin Training
 	    .goto Azuremyst Isle,79.695,48.236
 	.trainer >> Train your spells
 step
     .goto Azuremyst Isle,79.9,49.2
->>Talk to |cFF00FF25Zalduun|r
+>>Talk to |cRXP_FRIENDLY_Zalduun|r
     .turnin 9409 >> Turn in Urgent Delivery!
 .target Zalduun
     .accept 9283 >> Accept Rescue the Survivors!
 step << Shaman
     .goto Azuremyst Isle,79.277,49.123
 .target Firmanvaar
->>Talk to |cFF00FF25Firmanvaar|r
+>>Talk to |cRXP_FRIENDLY_Firmanvaar|r
     .accept 9449 >> Accept Call of Earth
 	.turnin 9421 >> Turn in Shaman Training
 	.trainer >> Train Earth Shock
 step << Shaman
     .goto Azuremyst Isle,71.315,39.097
->>Talk to |cFF00FF25Spirit of the Vale|r
+>>Talk to |cRXP_FRIENDLY_Spirit of the Vale|r
     .turnin 9449 >> Turn in Call of Earth
 .target Spirit of the Vale
     .accept 9450 >> Accept Call of Earth
 step << Warrior
     .goto Azuremyst Isle,79.587,49.446
 .target Kore
->>Talk to |cFF00FF25Kore|r
+>>Talk to |cRXP_FRIENDLY_Kore|r
 	.turnin 9289 >> Turnin Warrior Training
 	.trainer >> Train your spells
 step
@@ -142,18 +142,18 @@ step << Shaman
 step << Shaman
     .goto Azuremyst Isle,71.315,39.097
 .target Spirit of the Vale
->>Talk to |cFF00FF25Spirit of the Vale|r
+>>Talk to |cRXP_FRIENDLY_Spirit of the Vale|r
     .accept 9451 >> Accept Call of Earth
     .turnin 9450 >> Turn in Call of Earth
 step << Shaman
     .goto Azuremyst Isle,79.277,49.123
 .target Firmanvaar
->>Talk to |cFF00FF25Firmanvaar|r
+>>Talk to |cRXP_FRIENDLY_Firmanvaar|r
     .turnin 9451 >> Turn in Call of Earth
 step << Hunter
 	.goto Azuremyst Isle,79.86,49.67
 .target Keilnei
->>Talk to |cFF00FF25Keilnei|r
+>>Talk to |cRXP_FRIENDLY_Keilnei|r
 	.accept 9288 >> Accept Hunter Training
 	.turnin 9288 >> Turnin Hunter Training
 	.train 1978 >> Train Serpent Sting
@@ -169,12 +169,12 @@ step
 	#label spareparts2
     .goto Azuremyst Isle,79.4,51.3
 .target Technician Zhanaa
->>Talk to |cFF00FF25Technician Zhanaa|r
+>>Talk to |cRXP_FRIENDLY_Technician Zhanaa|r
     .accept 9305 >> Accept Spare Parts
 step
     .goto Azuremyst Isle,79.5,51.7
 .target Vindicator Aldar
->>Talk to |cFF00FF25Vindicator Aldar|r
+>>Talk to |cRXP_FRIENDLY_Vindicator Aldar|r
     .accept 9303 >> Accept Inoculation
 step
     .goto Azuremyst Isle,85.3,66.2
@@ -189,11 +189,11 @@ step
 step
     .goto Azuremyst Isle,79.4,51.3
 .target Technician Zhanaa
->>Talk to |cFF00FF25Technician Zhanaa|r
+>>Talk to |cRXP_FRIENDLY_Technician Zhanaa|r
     .turnin 9305 >> Turn in Spare Parts
 step
     .goto Azuremyst Isle,79.5,51.5
->>Talk to |cFF00FF25Vindicator Aldar|r
+>>Talk to |cRXP_FRIENDLY_Vindicator Aldar|r
     .turnin 9303 >> Turn in Inoculation
 .target Vindicator Aldar
     .accept 9309 >> Accept The Missing Scout
@@ -207,7 +207,7 @@ step
     .complete 9294,1 --Collect Disperse the Neutralizing Agent (x1)
 step
     .goto Azuremyst Isle,71.998,60.856
->>Talk to |cFF00FF25Tolaan|r
+>>Talk to |cRXP_FRIENDLY_Tolaan|r
     .turnin 9309 >> Turn in The Missing Scout
 .target Tolaan
     .accept 10303 >> Accept The Blood Elves
@@ -216,7 +216,7 @@ step
     .complete 10303,1 --Kill Blood Elf Scout (x10)
 step
     .goto Azuremyst Isle,72.0,61.0
->>Talk to |cFF00FF25Tolaan|r
+>>Talk to |cRXP_FRIENDLY_Tolaan|r
     .turnin 10303 >> Turn in The Blood Elves
 .target Tolaan
     .accept 9311 >> Accept Blood Elf Spy
@@ -233,25 +233,25 @@ step
 	.deathskip >>Die and talk to the spirit healer to respawn at the graveyard
     .goto Azuremyst Isle,79.2,46.4
 .target Botanist Taerix
->>Talk to |cFF00FF25Botanist Taerix|r
+>>Talk to |cRXP_FRIENDLY_Botanist Taerix|r
     .turnin 9294 >> Turn in Healing the Lake
 step
     #label survivors2
     #requires survivors
     .goto Azuremyst Isle,80.1,49.0
 .target Zalduun
->>Talk to |cFF00FF25Zalduun|r
+>>Talk to |cRXP_FRIENDLY_Zalduun|r
     .turnin 9283 >> Turn in Rescue the Survivors!
 step
     .goto Azuremyst Isle,79.488,51.622
->>Talk to |cFF00FF25Vindicator Aldar|r
+>>Talk to |cRXP_FRIENDLY_Vindicator Aldar|r
     .turnin 9311 >> Turn in Blood Elf Spy
     .turnin 9798 >> Turn in Blood Elf Plans
 .target Vindicator Aldar
     .accept 9312 >> Accept The Emitter
 step
     .goto Azuremyst Isle,79.422,51.234
->>Talk to |cFF00FF25Technician Zhanaa|r
+>>Talk to |cRXP_FRIENDLY_Technician Zhanaa|r
     .turnin 9312 >> Turn in The Emitter
 .target Technician Zhanaa
     .accept 9313 >> Accept Travel to Azure Watch
@@ -259,18 +259,18 @@ step
     #requires survivors2
     .goto Azuremyst Isle,64.6,54.2
 .target Aeun
->>Talk to |cFF00FF25Aeun|r
+>>Talk to |cRXP_FRIENDLY_Aeun|r
     .accept 9314 >> Accept Word from Azure Watch
 step
     .goto Azuremyst Isle,61.1,54.2
 .target Diktynna
->>Talk to |cFF00FF25Diktynna|r
+>>Talk to |cRXP_FRIENDLY_Diktynna|r
     .accept 9452 >> Accept Red Snapper - Very Tasty!
 step
 	#completewith end
 	>>Keep an eye out for Draenei Younglings. This is a rare encounter. If you find one, use Gift of the Naaru (your racial) on them when they're in combat with a mob. Then, accept the quest
 .target Draenei Youngling
->>Talk to |cFF00FF25Draenei Youngling|r
+>>Talk to |cRXP_FRIENDLY_Draenei Youngling|r
 	.accept 9612 >> Accept A Hearty Thanks!
 	.unitscan Draenei Youngling
 step
@@ -295,7 +295,7 @@ step
 step
     .goto Azuremyst Isle,48.4,51.6
 .target Anchorite Fateema
->>Talk to |cFF00FF25Anchorite Fateema|r
+>>Talk to |cRXP_FRIENDLY_Anchorite Fateema|r
     .accept 9463 >> Accept Medicinal Purpose
 step << Shaman
     #sticky
@@ -304,7 +304,7 @@ step << Shaman
     .collect 2495,1
 step
 	.isOnQuest 9612
->>Talk to |cFF00FF25Exarch Menelaous|r
+>>Talk to |cRXP_FRIENDLY_Exarch Menelaous|r
 	.turnin 9612 >> Turn in A Hearty Thanks!
     .turnin 9455 >> Turn in Strange Findings
 .target Exarch Menelaous
@@ -314,7 +314,7 @@ step << Warrior/Paladin
     .trainer >> Train mining and cast Find Minerals. You're mining for rough stones for later.
 step
     .goto Azuremyst Isle,47.2,50.6
->>Talk to |cFF00FF25Exarch Menelaous|r
+>>Talk to |cRXP_FRIENDLY_Exarch Menelaous|r
     .turnin 9455 >> Turn in Strange Findings
 .target Exarch Menelaous
     .accept 9456 >> Accept Nightstalker Clean Up, Isle 2...
@@ -324,12 +324,12 @@ step << Shaman
 step
     .goto Azuremyst Isle,48.7,50.2
 .target Technician Dyvuun
->>Talk to |cFF00FF25Technician Dyvuun|r
+>>Talk to |cRXP_FRIENDLY_Technician Dyvuun|r
     .turnin 9313 >> Turn in Travel to Azure Watch
 step
     .goto Azuremyst Isle,48.4,49.3
 .target Caregiver Chellan
->>Talk to |cFF00FF25Caregiver Chellan|r
+>>Talk to |cRXP_FRIENDLY_Caregiver Chellan|r
     .turnin 9314 >> Turn in Word from Azure Watch
 step
 	.goto Azuremyst Isle,48.4,49.3
@@ -341,7 +341,7 @@ step << Priest
     .goto Azuremyst Isle,48.603,49.285
 	 .trainer >> Train your spells
 .target Guvan
->>Talk to |cFF00FF25Guvan|r
+>>Talk to |cRXP_FRIENDLY_Guvan|r
     .accept 9586 >> Accept Help Tavara
 step << Mage
     .goto Azuremyst Isle,49.9,50.0
@@ -364,12 +364,12 @@ step << Priest
 step
     .goto Azuremyst Isle,47.0,70.1
 .target Admiral Odesyus
->>Talk to |cFF00FF25Admiral Odesyus|r
+>>Talk to |cRXP_FRIENDLY_Admiral Odesyus|r
     .accept 9506 >> Accept A Small Start
 step
     .goto Azuremyst Isle,46.687,70.629
 .target "Cookie" McWeaksauce
->>Talk to |cFF00FF25"Cookie" McWeaksauce|r
+>>Talk to |cRXP_FRIENDLY_"Cookie" McWeaksauce|r
     .accept 9512 >> Accept Cookie's Jumbo Gumbo
 step
     .goto Azuremyst Isle,46.4,71.2
@@ -392,21 +392,21 @@ step
 step
     .goto Azuremyst Isle,46.7,70.5
 .target "Cookie" McWeaksauce
->>Talk to |cFF00FF25"Cookie" McWeaksauce|r
+>>Talk to |cRXP_FRIENDLY_"Cookie" McWeaksauce|r
     .turnin 9512 >> Turn in Cookie's Jumbo Gumbo
 step
     .goto Azuremyst Isle,47.0,70.3
->>Talk to |cFF00FF25Admiral Odesyus|r
+>>Talk to |cRXP_FRIENDLY_Admiral Odesyus|r
     .turnin 9506 >> Turn in A Small Start
 .target Admiral Odesyus
     .accept 9530 >> Accept I've Got a Plant
 .target Priestess Kyleen Il'dinare
->>Talk to |cFF00FF25Priestess Kyleen Il'dinare|r
+>>Talk to |cRXP_FRIENDLY_Priestess Kyleen Il'dinare|r
     .accept 9513 >> Accept Reclaiming the Ruins
 step
     .goto Azuremyst Isle,47.2,70.1
 .target Archaeologist Adamant Ironheart
->>Talk to |cFF00FF25Archaeologist Adamant Ironheart|r
+>>Talk to |cRXP_FRIENDLY_Archaeologist Adamant Ironheart|r
     .accept 9523 >> Accept Precious and Fragile Things Need Special Handling
 step
     #sticky
@@ -421,7 +421,7 @@ step
 	#label azuremyst1
     .goto Azuremyst Isle,47.1,70.1
 	>>Grind en route
->>Talk to |cFF00FF25Admiral Odesyus|r
+>>Talk to |cRXP_FRIENDLY_Admiral Odesyus|r
     .turnin 9530 >> Turn in I've Got a Plant
 .target Admiral Odesyus
     .accept 9531 >> Accept Tree's Company
@@ -438,27 +438,27 @@ step
 step
 	.goto Azuremyst Isle,49.780,51.938
 .target Acteon
->>Talk to |cFF00FF25Acteon|r
+>>Talk to |cRXP_FRIENDLY_Acteon|r
 	.accept 9454 >> Accept The Great Moongraze Hunt
     .turnin 9454 >> Turn in The Great Moongraze Hunt
     .accept 10324 >> Accept The Great Moongraze Hunt
 step
     .goto Azuremyst Isle,48.390,51.770
 .target Anchorite Fateema
->>Talk to |cFF00FF25Anchorite Fateema|r
+>>Talk to |cRXP_FRIENDLY_Anchorite Fateema|r
     .turnin 9463 >> Turn in Medicinal Purpose
 .target Daedal
->>Talk to |cFF00FF25Daedal|r
+>>Talk to |cRXP_FRIENDLY_Daedal|r
     .accept 9473 >> Accept An Alternative Alternative
 step
     .goto Azuremyst Isle,48.9,51.1
 .target Dulvi
->>Talk to |cFF00FF25Dulvi|r
+>>Talk to |cRXP_FRIENDLY_Dulvi|r
     .accept 10428 >> Accept The Missing Fisherman
 step
     .goto Azuremyst Isle,49.365,51.086
 .target Cryptographer Aurren
->>Talk to |cFF00FF25Cryptographer Aurren|r
+>>Talk to |cRXP_FRIENDLY_Cryptographer Aurren|r
     .accept 9538 >> Accept Learning the Language
 step
 	.goto Azuremyst Isle,49.365,51.086
@@ -466,7 +466,7 @@ step
     .complete 9538,1 --Stillpine Furbolg Language Primer Read
 step
     .goto Azuremyst Isle,49.365,51.086
->>Talk to |cFF00FF25Totem of Akida|r
+>>Talk to |cRXP_FRIENDLY_Totem of Akida|r
     .turnin 9538 >> Turn in Learning the Language
 .target Totem of Akida
     .accept 9539 >> Accept Totem of Coo
@@ -479,7 +479,7 @@ step << Hunter
 step << Priest
     .goto Azuremyst Isle,48.6,49.4
 .target Guvan
->>Talk to |cFF00FF25Guvan|r
+>>Talk to |cRXP_FRIENDLY_Guvan|r
     .turnin 9586 >> Turn in Help Tavara
 	 .trainer >> Train your spells
 step << Paladin
@@ -501,7 +501,7 @@ step
 	>> Grind en route
 	.goto Azuremyst Isle,49.9,45.9,100,0
     .goto Azuremyst Isle,55.2,41.6
->>Talk to |cFF00FF25Totem of Coo|r
+>>Talk to |cRXP_FRIENDLY_Totem of Coo|r
     .turnin 9539 >> Turn in Totem of Coo
 .target Totem of Coo
     .accept 9540 >> Accept Totem of Tikti
@@ -512,7 +512,7 @@ step
     .complete 9473,1 --Collect Azure Snapdragon Bulb (x5)
 step
     .goto Azuremyst Isle,64.4,39.8
->>Talk to |cFF00FF25Totem of Tikti|r
+>>Talk to |cRXP_FRIENDLY_Totem of Tikti|r
     .turnin 9540 >> Turn in Totem of Tikti
 .target Totem of Tikti
     .accept 9541 >> Accept Totem of Yor
@@ -529,14 +529,14 @@ step
 	>>Avoid fighting mobs, you'll lose the swim speed if you do any hostile action
 step
     .goto Azuremyst Isle,61.0,54.2
->>Talk to |cFF00FF25Diktynna|r
+>>Talk to |cRXP_FRIENDLY_Diktynna|r
     .turnin 9452 >> Turn in Red Snapper - Very Tasty!
 .target Diktynna
     .accept 9453 >> Accept Find Acteon!
 step
     .goto Azuremyst Isle,63.2,68.0
     >>Click on the totem underwater
->>Talk to |cFF00FF25Totem of Yor|r
+>>Talk to |cRXP_FRIENDLY_Totem of Yor|r
     .turnin 9541 >> Turn in Totem of Yor
 .target Totem of Yor
     .accept 9542 >> Accept Totem of Vark
@@ -547,7 +547,7 @@ step
     .goto Azuremyst Isle,28.1,62.5,0
     .waypoint Azuremyst Isle,28.1,62.5,-1
     .waypoint Azuremyst Isle,60.68,69.21,-1
->>Talk to |cFF00FF25Totem of Vark|r
+>>Talk to |cRXP_FRIENDLY_Totem of Vark|r
     .turnin 9542 >> Turn in Totem of Vark
 .target Totem of Vark
     .accept 9544 >> Accept The Prophecy of Akida
@@ -587,7 +587,7 @@ step
     .timer 82,Traitor Uncovered
 step
     .goto Azuremyst Isle,16.5,94.4
->>Talk to |cFF00FF25Cowlen|r
+>>Talk to |cRXP_FRIENDLY_Cowlen|r
     .turnin 10428 >> Turn in The Missing Fisherman
 .target Cowlen
     .accept 9527 >> Accept All That Remains
@@ -598,7 +598,7 @@ step
 step
     .goto Azuremyst Isle,16.5,94.3
 .target Cowlen
->>Talk to |cFF00FF25Cowlen|r
+>>Talk to |cRXP_FRIENDLY_Cowlen|r
     .turnin 9527 >> Turn in All That Remains
 step
 	#sticky
@@ -607,12 +607,12 @@ step
 step
     .goto Azuremyst Isle,47.0,70.3
 .target Priestess Kyleen Il'dinare
->>Talk to |cFF00FF25Priestess Kyleen Il'dinare|r
+>>Talk to |cRXP_FRIENDLY_Priestess Kyleen Il'dinare|r
     .turnin 9513 >> Turn in Reclaiming the Ruins
 .target Archaeologist Adamant Ironheart
->>Talk to |cFF00FF25Archaeologist Adamant Ironheart|r
+>>Talk to |cRXP_FRIENDLY_Archaeologist Adamant Ironheart|r
     .turnin 9523 >> Turn in Precious and Fragile Things Need Special Handling
->>Talk to |cFF00FF25Admiral Odesyus|r
+>>Talk to |cRXP_FRIENDLY_Admiral Odesyus|r
     .turnin 9531 >> Turn in Tree's Company
 .target Admiral Odesyus
     .accept 9537 >> Accept Show Gnomercy
@@ -620,7 +620,7 @@ step
 step
     .goto Azuremyst Isle,47.0,70.3
 .target Priestess Kyleen Il'dinare
->>Talk to |cFF00FF25Priestess Kyleen Il'dinare|r
+>>Talk to |cRXP_FRIENDLY_Priestess Kyleen Il'dinare|r
     .turnin 9514 >> Turn in Rune Covered Tablet
 step << Hunter
 	#sticky
@@ -639,18 +639,18 @@ step
 step << Hunter
     .goto Azuremyst Isle,46.7,70.5
 .target "Cookie" McWeaksauce
->>Talk to |cFF00FF25"Cookie" McWeaksauce|r
+>>Talk to |cRXP_FRIENDLY_"Cookie" McWeaksauce|r
     .turnin 9512 >> Turn in Cookie's Jumbo Gumbo
 step
     .goto Azuremyst Isle,47.036,70.212
->>Talk to |cFF00FF25Admiral Odesyus|r
+>>Talk to |cRXP_FRIENDLY_Admiral Odesyus|r
     .turnin 9537 >> Turn in Show Gnomercy
 .target Admiral Odesyus
     .accept 9602 >> Accept Deliver Them From Evil...
 step
     .goto Azuremyst Isle,47.127,70.289
 .target Priestess Kyleen Il'dinare
->>Talk to |cFF00FF25Priestess Kyleen Il'dinare|r
+>>Talk to |cRXP_FRIENDLY_Priestess Kyleen Il'dinare|r
     .accept 9515 >> Warlord Sriss'tiz
     .maxlevel 9
 step << !Hunter
@@ -671,23 +671,23 @@ step
 step
     .goto Azuremyst Isle,49.9,51.9
 .target Acteon
->>Talk to |cFF00FF25Acteon|r
+>>Talk to |cRXP_FRIENDLY_Acteon|r
     .turnin 9453 >> Turn in Find Acteon!
     .turnin 10324 >> Turn in The Great Moongraze Hunt
 step
     .goto Azuremyst Isle,49.5,51.2
->>Talk to |cFF00FF25Arugoo of the Stillpine|r
+>>Talk to |cRXP_FRIENDLY_Arugoo of the Stillpine|r
     .turnin 9544 >> Turn in The Prophecy of Akida
 .target Arugoo of the Stillpine
     .accept 9559 >> Accept Stillpine Hold
 step
     .goto Azuremyst Isle,48.5,51.5
 .target Daedal
->>Talk to |cFF00FF25Daedal|r
+>>Talk to |cRXP_FRIENDLY_Daedal|r
     .turnin 9473 >> Turn in An Alternative Alternative
 step
     .goto Azuremyst Isle,47.2,50.7
->>Talk to |cFF00FF25Exarch Menelaous|r
+>>Talk to |cRXP_FRIENDLY_Exarch Menelaous|r
     .turnin 9456 >> Turn in Nightstalker Clean Up, Isle 2...
     .turnin 9602 >> Turn in Deliver Them From Evil...
 .target Exarch Menelaous
@@ -697,7 +697,7 @@ step
     .isOnQuest 9612
     .goto Azuremyst Isle,47.2,50.7
 .target Exarch Menelaous
->>Talk to |cFF00FF25Exarch Menelaous|r
+>>Talk to |cRXP_FRIENDLY_Exarch Menelaous|r
     .turnin 9612 >> Turn in A Hearty Thanks!
 step << Shaman
     .goto Azuremyst Isle,48.05,50.41
@@ -718,12 +718,12 @@ step << Warrior
     .goto Azuremyst Isle,50.023,50.515
     .trainer >> Train your level 10 spells
 .target Ruada
->>Talk to |cFF00FF25Ruada|r
+>>Talk to |cRXP_FRIENDLY_Ruada|r
     .accept 9582 >> Accept Strength of One
 step << Shaman
     .goto Azuremyst Isle,48.05,50.41
 .target Tuluun
->>Talk to |cFF00FF25Tuluun|r
+>>Talk to |cRXP_FRIENDLY_Tuluun|r
     .accept 9464 >> Accept Call of Fire
 step << Hunter
     .goto Azuremyst Isle,49.7,51.9
@@ -736,19 +736,19 @@ step << Hunter
 .target Jocaste
 .target Ayanna Everstride
 .target Thorgas Grimson
->>Talk to |cFF00FF25Thorgas Grimson|r
--->>Talk to |cFF00FF25Ayanna Everstride|r
--->>Talk to |cFF00FF25Jocaste|r
--->>Talk to |cFF00FF25Dorion|r
--->>Talk to |cFF00FF25Regnus Thundergranite|r
--->>Talk to |cFF00FF25Einris Brightspear|r
--->>Talk to |cFF00FF25Tristane Shadowstone|r
--->>Talk to |cFF00FF25Deremiis|r
--->>Talk to |cFF00FF25Acteon|r
+>>Talk to |cRXP_FRIENDLY_Thorgas Grimson|r
+-->>Talk to |cRXP_FRIENDLY_Ayanna Everstride|r
+-->>Talk to |cRXP_FRIENDLY_Jocaste|r
+-->>Talk to |cRXP_FRIENDLY_Dorion|r
+-->>Talk to |cRXP_FRIENDLY_Regnus Thundergranite|r
+-->>Talk to |cRXP_FRIENDLY_Einris Brightspear|r
+-->>Talk to |cRXP_FRIENDLY_Tristane Shadowstone|r
+-->>Talk to |cRXP_FRIENDLY_Deremiis|r
+-->>Talk to |cRXP_FRIENDLY_Acteon|r
     .accept 9757 >> Accept Seek Huntress Kella Nightbow
 step << Hunter
     .goto Azuremyst Isle,24.182,54.346
->>Talk to |cFF00FF25Huntress Kella Nightbow|r
+>>Talk to |cRXP_FRIENDLY_Huntress Kella Nightbow|r
     .turnin 9757 >> Turn in Seek Huntress Kella Nightbow
 .target Huntress Kella Nightbow
     .accept 9591 >> Accept Taming the Beast
@@ -770,7 +770,7 @@ step << Hunter
     .isOnQuest 9515
 step << Hunter
     .goto Azuremyst Isle,24.182,54.346
->>Talk to |cFF00FF25Huntress Kella Nightbow|r
+>>Talk to |cRXP_FRIENDLY_Huntress Kella Nightbow|r
     .turnin 9591 >> Turn in Taming the Beast
 .target Huntress Kella Nightbow
     .accept 9592 >> Accept Taming the Beast
@@ -786,7 +786,7 @@ step << Hunter
     .complete 9592,1 --Tame a Greater Timberstrider
 step << Hunter
     .goto Azuremyst Isle,24.182,54.346
->>Talk to |cFF00FF25Huntress Kella Nightbow|r
+>>Talk to |cRXP_FRIENDLY_Huntress Kella Nightbow|r
     .turnin 9592 >> Turn in Taming the Beast
 .target Huntress Kella Nightbow
     .accept 9593 >> Accept Taming the Beast
@@ -796,7 +796,7 @@ step << Hunter
     .complete 9593,1 --Tame a Nightstalker
 step << Hunter
     .goto Azuremyst Isle,24.182,54.346
->>Talk to |cFF00FF25Huntress Kella Nightbow|r
+>>Talk to |cRXP_FRIENDLY_Huntress Kella Nightbow|r
     .turnin 9593 >> Turn in Taming the Beast
 .target Huntress Kella Nightbow
     .accept 9675 >> Accept Beast Training
@@ -808,7 +808,7 @@ step << Hunter
 	.goto The Exodar,44.6,72.0,60,0
     .goto The Exodar,44.1,86.6
 .target Ganaar
->>Talk to |cFF00FF25Ganaar|r
+>>Talk to |cRXP_FRIENDLY_Ganaar|r
     .turnin 9675 >> Turn in Beast Training
 	.trainer >> Train your pet spells << tbc
 step << Hunter
@@ -841,17 +841,17 @@ step
     #label murloc1
     .goto Azuremyst Isle,44.7,23.5
 .target Gurf
->>Talk to |cFF00FF25Gurf|r
+>>Talk to |cRXP_FRIENDLY_Gurf|r
     .accept 9562 >> Accept Murlocs... Why Here? Why Now?
 step
     .goto Azuremyst Isle,44.8,23.8
 .target Moordo
->>Talk to |cFF00FF25Moordo|r
+>>Talk to |cRXP_FRIENDLY_Moordo|r
     .accept 9560 >> Accept Beasts of the Apocalypse!
 step
     .goto Azuremyst Isle,46.6,20.7
 .target High Chief Stillpine
->>Talk to |cFF00FF25High Chief Stillpine|r
+>>Talk to |cRXP_FRIENDLY_High Chief Stillpine|r
     .turnin 9559 >> Turn in Stillpine Hold
 step << Shaman
     #sticky
@@ -860,7 +860,7 @@ step << Shaman
     .complete 9560,1 --Collect Ravager Hide (x8)
 step << Shaman
     .goto Azuremyst Isle,59.6,18.0
->>Talk to |cFF00FF25Temper|r
+>>Talk to |cRXP_FRIENDLY_Temper|r
     .turnin 9464 >> Turn in Call of Fire
 .target Temper
     .accept 9465 >> Accept Call of Fire
@@ -881,17 +881,17 @@ step
 	#requires pet1 << Hunter
     .goto Azuremyst Isle,44.8,23.8
 .target Moordo
->>Talk to |cFF00FF25Moordo|r
+>>Talk to |cRXP_FRIENDLY_Moordo|r
     .turnin 9560 >> Turn in Beasts of the Apocalypse!
 step
     .goto Azuremyst Isle,46.8,21.2
 .target Stillpine the Younger
->>Talk to |cFF00FF25Stillpine the Younger|r
+>>Talk to |cRXP_FRIENDLY_Stillpine the Younger|r
     .accept 9573 >> Accept Chieftain Oomooroo
 step
     .goto Azuremyst Isle,46.6,20.6
 .target High Chief Stillpine
->>Talk to |cFF00FF25High Chief Stillpine|r
+>>Talk to |cRXP_FRIENDLY_High Chief Stillpine|r
     .accept 9565 >> Accept Search Stillpine Hold
 step
     >>Start clearing toward the end of the cave. Stay on the upper levels.
@@ -911,12 +911,12 @@ step
 step
     .goto Azuremyst Isle,46.7,20.8
 .target High Chief Stillpine
->>Talk to |cFF00FF25High Chief Stillpine|r
+>>Talk to |cRXP_FRIENDLY_High Chief Stillpine|r
     .turnin 9566 >> Turn in Blood Crystals
 step
     .goto Azuremyst Isle,47.0,22.2
 .target Kurz the Revelator
->>Talk to |cFF00FF25Kurz the Revelator|r
+>>Talk to |cRXP_FRIENDLY_Kurz the Revelator|r
     .accept 9570 >> Accept The Kurken is Lurkin'
 step
 	#completewith next
@@ -925,7 +925,7 @@ step
 step
     .goto Azuremyst Isle,46.8,21.2
 .target Stillpine the Younger
->>Talk to |cFF00FF25Stillpine the Younger|r
+>>Talk to |cRXP_FRIENDLY_Stillpine the Younger|r
     .turnin 9573 >> Turn in Chieftain Oomooroo
 step
     .goto Azuremyst Isle,49.9,12.8
@@ -933,24 +933,24 @@ step
     .complete 9570,1 --Collect The Kurken's Hide (x1)
 step
     .goto Azuremyst Isle,47.0,22.2
->>Talk to |cFF00FF25Kurz the Revelator|r
+>>Talk to |cRXP_FRIENDLY_Kurz the Revelator|r
     .turnin 9570 >> Turn in The Kurken is Lurkin'
 .target Kurz the Revelator
     .accept 9571 >> Accept The Kurken's Hide
 step << Shaman
     .goto Azuremyst Isle,46.7,20.8
 .target High Chief Stillpine
->>Talk to |cFF00FF25High Chief Stillpine|r
+>>Talk to |cRXP_FRIENDLY_High Chief Stillpine|r
     .accept 9622 >> Accept Warn Your People
 step
 	#label end
     .goto Azuremyst Isle,44.8,23.8
 .target Moordo
->>Talk to |cFF00FF25Moordo|r
+>>Talk to |cRXP_FRIENDLY_Moordo|r
     .turnin 9571 >> Turn in The Kurken's Hide
 step << Shaman
     .goto Azuremyst Isle,59.6,17.9
->>Talk to |cFF00FF25Temper|r
+>>Talk to |cRXP_FRIENDLY_Temper|r
     .turnin 9465 >> Turn in Call of Fire
 .target Temper
     .accept 9467 >> Accept Call of Fire
@@ -959,7 +959,7 @@ step << Shaman
 step << Shaman
     .goto Azuremyst Isle,47.112,50.604
 .target Exarch Menelaous
->>Talk to |cFF00FF25Exarch Menelaous|r
+>>Talk to |cRXP_FRIENDLY_Exarch Menelaous|r
     .turnin 9622 >> Turn in Warn Your People
 step << Shaman
     #sticky
@@ -973,7 +973,7 @@ step << Shaman
 step << Shaman
     .goto Azuremyst Isle,59.5,18.0
     .use 24335>>Use the orb in your bag to teleport back to the Emberglade
->>Talk to |cFF00FF25Temper|r
+>>Talk to |cRXP_FRIENDLY_Temper|r
     .turnin 9467 >> Turn in Call of Fire
 .target Temper
     .accept 9468 >> Accept Call of Fire
@@ -1010,18 +1010,18 @@ RXPGuides.RegisterGuide([[
 step
     .goto Bloodmyst Isle,63.5,88.8
 .target Aonar
->>Talk to |cFF00FF25Aonar|r
+>>Talk to |cRXP_FRIENDLY_Aonar|r
     .accept 9624 >> Accept A Favorite Treat
 step
     #completewith next
     .goto Bloodmyst Isle,63.1,88.0
 .target Vorkhan the Elekk Herder
->>Talk to |cFF00FF25Vorkhan the Elekk Herder|r
+>>Talk to |cRXP_FRIENDLY_Vorkhan the Elekk Herder|r
     .turnin 9625 >> Turn in Elekks Are Serious Business
 step
     .goto Bloodmyst Isle,63.1,88.0
 .target Vorkhan the Elekk Herder
->>Talk to |cFF00FF25Vorkhan the Elekk Herder|r
+>>Talk to |cRXP_FRIENDLY_Vorkhan the Elekk Herder|r
     .accept 9634 >> Accept Alien Predators
 step
 	.goto Bloodmyst Isle,59.7,86.8
@@ -1033,7 +1033,7 @@ step
 step
     .goto Bloodmyst Isle,55.7,59.7
 .target Caregiver Topher Loaal
->>Talk to |cFF00FF25Caregiver Topher Loaal|r
+>>Talk to |cRXP_FRIENDLY_Caregiver Topher Loaal|r
     .accept 9603 >> Accept Beds, Bandages, and Beyond
 step
 	#completewith next
@@ -1049,7 +1049,7 @@ step
 step
     .goto Bloodmyst Isle,56.421,56.788
 .target Jessera of Mac'Aree
->>Talk to |cFF00FF25Jessera of Mac'Aree|r
+>>Talk to |cRXP_FRIENDLY_Jessera of Mac'Aree|r
     .accept 9648 >> Accept Maatparm Mushroom Menagerie
 step
 	#completewith next
@@ -1058,20 +1058,20 @@ step
 step
     .goto Bloodmyst Isle,57.6,54.0
 .target Laando
->>Talk to |cFF00FF25Laando|r
+>>Talk to |cRXP_FRIENDLY_Laando|r
     .turnin 9603 >> Turn in Beds, Bandages, and Beyond
     >>Skip the follow up quest
 step
     .goto Bloodmyst Isle,52.7,53.3
 .target Exarch Admetius
->>Talk to |cFF00FF25Exarch Admetius|r
+>>Talk to |cRXP_FRIENDLY_Exarch Admetius|r
     .accept 9693 >> Accept What Argus Means to Me
 .target Harbinger Mikolaas
->>Talk to |cFF00FF25Harbinger Mikolaas|r
+>>Talk to |cRXP_FRIENDLY_Harbinger Mikolaas|r
     .accept 9581 >> Accept Learning from the Crystals
 step
     .goto Bloodmyst Isle,55.421,55.232
->>Talk to |cFF00FF25Vindicator Boros|r
+>>Talk to |cRXP_FRIENDLY_Vindicator Boros|r
     .turnin 9693 >> Turn in What Argus Means to Me
 .target Vindicator Boros
     .accept 9694 >> Accept Blood Watch
@@ -1087,12 +1087,12 @@ step
 step
     .goto Bloodmyst Isle,55.4,55.3
 .target Vindicator Boros
->>Talk to |cFF00FF25Vindicator Boros|r
+>>Talk to |cRXP_FRIENDLY_Vindicator Boros|r
     .turnin 9694 >> Turn in Blood Watch
 step
     .goto Bloodmyst Isle,53.3,57.7
 .target Morae
->>Talk to |cFF00FF25Morae|r
+>>Talk to |cRXP_FRIENDLY_Morae|r
     .accept 9629 >> Accept Catch and Release
 step
 	#sticky
@@ -1140,17 +1140,17 @@ step
 step
     .goto Bloodmyst Isle,63.4,88.7
 .target Aonar
->>Talk to |cFF00FF25Aonar|r
+>>Talk to |cRXP_FRIENDLY_Aonar|r
     .turnin 9624 >> Turn in A Favorite Treat
 step
     .goto Bloodmyst Isle,63.1,87.9
 .target Vorkhan the Elekk Herder
->>Talk to |cFF00FF25Vorkhan the Elekk Herder|r
+>>Talk to |cRXP_FRIENDLY_Vorkhan the Elekk Herder|r
     .turnin 9634 >> Turn in Alien Predators
 step
     .goto Bloodmyst Isle,63.1,87.6
 .target Kessel
->>Talk to |cFF00FF25Kessel|r
+>>Talk to |cRXP_FRIENDLY_Kessel|r
     .accept 9663 >> Accept The Kessel Run
 	>>Be careful as this is a timed quest
 step
@@ -1161,13 +1161,13 @@ step
 step
     .goto Azuremyst Isle,44.7,23.5
 .target Gurf
->>Talk to |cFF00FF25Gurf|r
+>>Talk to |cRXP_FRIENDLY_Gurf|r
     .turnin 9564 >> Turn in Gurf's Dignity
     .turnin 9562 >> Turn in Murlocs... Why Here? Why Now?
 step << Warrior
 	#completewith kesselrun
     .goto Azuremyst Isle,50.0,50.6
->>Talk to |cFF00FF25Ruada|r
+>>Talk to |cRXP_FRIENDLY_Ruada|r
     .turnin 9582 >> Turn in Strength of One
 .target Ruada
     .accept 10350 >> Accept Behomat
@@ -1184,7 +1184,7 @@ step << !Shaman
     .complete 9663,2 --Exarch Menelaous Warned
 step << Shaman
     .goto Azuremyst Isle,48.05,50.41
->>Talk to |cFF00FF25Tuluun|r
+>>Talk to |cRXP_FRIENDLY_Tuluun|r
     .turnin 9468 >> Turn in Call of Fire
 .target Tuluun
     .accept 9461 >> Accept Call of Fire
@@ -1217,7 +1217,7 @@ step
 step
     .goto Azuremyst Isle,46.9,70.3
 .target Priestess Kyleen Il'dinare
->>Talk to |cFF00FF25Priestess Kyleen Il'dinare|r
+>>Talk to |cRXP_FRIENDLY_Priestess Kyleen Il'dinare|r
     .turnin 9515 >> Warlord Sriss'tiz
     .isQuestComplete 9515
 step << Paladin
@@ -1227,7 +1227,7 @@ step << Paladin
 	.goto The Exodar,51.0,46.8,80,0
     .goto The Exodar,38.5,82.5
 .target Jol
->>Talk to |cFF00FF25Jol|r
+>>Talk to |cRXP_FRIENDLY_Jol|r
     .accept 9598 >>Accept Redemption
     .turnin 9598 >>Turn in Redemption
     .accept 9600 >>Accept Redemption
@@ -1240,28 +1240,28 @@ step << Shaman
 	.hs >> Hearth to Blood Watch. If your hearth is still on cooldown, ride to The Exodar and fly to Blood Watch
 step
     .goto Bloodmyst Isle,52.7,53.3
->>Talk to |cFF00FF25Harbinger Mikolaas|r
+>>Talk to |cRXP_FRIENDLY_Harbinger Mikolaas|r
     .turnin 9581 >> Turn in Learning from the Crystals
 .target Harbinger Mikolaas
     .accept 9620 >> Accept The Missing Survey Team
 step
     .goto Bloodmyst Isle,55.081,57.958
 .target Vindicator Aalesia
->>Talk to |cFF00FF25Vindicator Aalesia|r
+>>Talk to |cRXP_FRIENDLY_Vindicator Aalesia|r
     .accept 9567 >> Accept Know Thine Enemy
 step << Warrior/Rogue
     .goto Bloodmyst Isle,55.2,58.2
     .collect 25873,1 >> Purchase a Keen Throwing Knife from Meriaad
 step
     .goto Bloodmyst Isle,63.1,87.7
->>Talk to |cFF00FF25Kessel|r
+>>Talk to |cRXP_FRIENDLY_Kessel|r
     .turnin 9663 >> Turn in The Kessel Run
 .target Kessel
     .accept 9666 >> Accept Declaration of Power
 step
     .goto Bloodmyst Isle,68.2,81.1
 .target Princess Stillpine
->>Talk to |cFF00FF25Princess Stillpine|r
+>>Talk to |cRXP_FRIENDLY_Princess Stillpine|r
     .accept 9667 >> Accept Saving Princess Stillpine
 step << Paladin
     .goto Bloodmyst Isle,65.0,77.5
@@ -1294,7 +1294,7 @@ step
     .complete 9667,1 --Free Saving Princess Stillpine
 step
     .goto Bloodmyst Isle,63.0,87.6
->>Talk to |cFF00FF25Kessel|r
+>>Talk to |cRXP_FRIENDLY_Kessel|r
     .turnin 9666 >> Turn in Declaration of Power
 .target Kessel
     .accept 9668 >> Accept Report to Exarch Admetius
@@ -1355,7 +1355,7 @@ step << Shaman
 step
 	#requires greenmushroom
     .goto Bloodmyst Isle,53.3,57.6
->>Talk to |cFF00FF25Morae|r
+>>Talk to |cRXP_FRIENDLY_Morae|r
     .turnin 9576 >> Turn in Cruelfin's Necklace
     .turnin 9629 >> Turn in Catch and Release
 .target Morae
@@ -1367,7 +1367,7 @@ step
 step
     .goto Bloodmyst Isle,53.3,57.8
 .target Morae
->>Talk to |cFF00FF25Morae|r
+>>Talk to |cRXP_FRIENDLY_Morae|r
     .turnin 9574 >> Turn in Victims of Corruption
 step
 	#completewith next
@@ -1380,30 +1380,30 @@ step
 step
     .goto Bloodmyst Isle,55.0,58.1
 .target Vindicator Aalesia
->>Talk to |cFF00FF25Vindicator Aalesia|r
+>>Talk to |cRXP_FRIENDLY_Vindicator Aalesia|r
     .turnin 9594 >> Turn in Signs of the Legion
     .turnin 9567 >> Turn in Know Thine Enemy
 step
     .goto Bloodmyst Isle,55.2,56.0
 .target Stillpine Ambassador Frasaboo
->>Talk to |cFF00FF25Stillpine Ambassador Frasaboo|r
+>>Talk to |cRXP_FRIENDLY_Stillpine Ambassador Frasaboo|r
     .turnin 9667 >> Turn in Saving Princess Stillpine
 step
     .goto Bloodmyst Isle,56.4,56.7
 .target Jessera of Mac'Aree
->>Talk to |cFF00FF25Jessera of Mac'Aree|r
+>>Talk to |cRXP_FRIENDLY_Jessera of Mac'Aree|r
     .turnin 9648 >> Turn in Maatparm Mushroom Menagerie
 step
     .goto Bloodmyst Isle,55.4,55.3
 .target Vindicator Boros
->>Talk to |cFF00FF25Vindicator Boros|r
+>>Talk to |cRXP_FRIENDLY_Vindicator Boros|r
     .accept 9641 >> Accept Irradiated Crystal Shards
     .accept 9779 >> Accept Intercepting the Message
 step
 	.goto Bloodmyst Isle,55.4,55.4
 	.itemcount 23984,10
 .target Vindicator Boros
->>Talk to |cFF00FF25Vindicator Boros|r
+>>Talk to |cRXP_FRIENDLY_Vindicator Boros|r
 	.turnin 9641,3 >> Turn in Irradiated Crystal Shards << Warrior/Paladin/Hunter/Rogue/Shaman
     .turnin 9641,2 >> Turn in Irradiated Crystal Shards << Mage/Priest/Warlock
     .turnin 9641 >> Turn in Irradiated Crystal Shards << Druid
@@ -1411,13 +1411,13 @@ step
     .itemcount 23984,10
     .goto Bloodmyst Isle,55.421,55.232
 .target Vindicator Boros
->>Talk to |cFF00FF25Vindicator Boros|r
+>>Talk to |cRXP_FRIENDLY_Vindicator Boros|r
     .turnin 9642,3 >> Turn in More Irradiated Crystal Shards << Warrior/Paladin/Hunter/Rogue/Shaman
     .turnin 9642,2 >> Turn in More Irradiated Crystal Shards << Warlock/Priest/Mage
     .turnin 9642 >> Turn in More Irradiated Crystal Shards << Druid
 step
     .goto Bloodmyst Isle,61.1,48.6
->>Talk to |cFF00FF25Draenei Cartographer|r
+>>Talk to |cRXP_FRIENDLY_Draenei Cartographer|r
     .turnin 9620 >> Turn in The Missing Survey Team
 .target Draenei Cartographer
     .accept 9628 >> Accept Salvaging the Data
@@ -1427,12 +1427,12 @@ step
     .complete 9628,1 --Collect Survey Data Crystal (x1)
 step
     .goto Bloodmyst Isle,52.7,53.3
->>Talk to |cFF00FF25Harbinger Mikolaas|r
+>>Talk to |cRXP_FRIENDLY_Harbinger Mikolaas|r
     .turnin 9628 >> Turn in Salvaging the Data
 .target Harbinger Mikolaas
     .accept 9584 >> Accept The Second Sample
 .target Exarch Admetius
->>Talk to |cFF00FF25Exarch Admetius|r
+>>Talk to |cRXP_FRIENDLY_Exarch Admetius|r
     .turnin 9668 >> Turn in Report to Exarch Admetius
 step
     #sticky
@@ -1460,18 +1460,18 @@ step
 	>>Speak to Messenger Hermesius, he patrols around Blood Watch
 	.unitscan Messenger Hermesius
 .target Messenger Hermesius
->>Talk to |cFF00FF25Messenger Hermesius|r
+>>Talk to |cRXP_FRIENDLY_Messenger Hermesius|r
 	.turnin 9671
 step
     #requires Missive
 	.goto Bloodmyst Isle,52.681,53.175
->>Talk to |cFF00FF25Harbinger Mikolaas|r
+>>Talk to |cRXP_FRIENDLY_Harbinger Mikolaas|r
     .turnin 9584 >> Turn in The Second Sample
 .target Harbinger Mikolaas
     .accept 9585 >> Accept The Final Sample
 step
     .goto Bloodmyst Isle,55.3,55.3
->>Talk to |cFF00FF25Vindicator Boros|r
+>>Talk to |cRXP_FRIENDLY_Vindicator Boros|r
     .turnin 9779 >> Turn in Intercepting the Message
 .target Vindicator Boros
     .accept 9696 >> Accept Translations...
@@ -1482,7 +1482,7 @@ step
     .goto Bloodmyst Isle,54.5,54.6
     .turnin -9696 >> Turn in Translations...
 .target Interrogator Elysia
->>Talk to |cFF00FF25Interrogator Elysia|r
+>>Talk to |cRXP_FRIENDLY_Interrogator Elysia|r
     .accept 9698 >> Accept Audience with the Prophet
 step
     .xp 15
@@ -1500,24 +1500,24 @@ step
 step
     .goto Bloodmyst Isle,55.0,57.8
 .target Vindicator Aalesia
->>Talk to |cFF00FF25Vindicator Aalesia|r
+>>Talk to |cRXP_FRIENDLY_Vindicator Aalesia|r
     .accept 9569 >> Accept Containing the Threat
 step
     .goto Bloodmyst Isle,55.8,57.0
 .target Tracker Lyceon
->>Talk to |cFF00FF25Tracker Lyceon|r
+>>Talk to |cRXP_FRIENDLY_Tracker Lyceon|r
     .accept 9580 >> Accept The Bear Necessities
     .accept 9643 >> Accept Constrictor Vines
 step
     .goto Bloodmyst Isle,56.3,56.8
 .target Jessera of Mac'Aree
->>Talk to |cFF00FF25Jessera of Mac'Aree|r
+>>Talk to |cRXP_FRIENDLY_Jessera of Mac'Aree|r
     .accept 9649 >> Accept Ysera's Tears
 step
     .goto Bloodmyst Isle,74.7,33.7
 	>> Grind en route
 .target Prince Toreth
->>Talk to |cFF00FF25Prince Toreth|r
+>>Talk to |cRXP_FRIENDLY_Prince Toreth|r
     .accept 9687 >> Accept Restoring Sanctity
 step
 	#sticky
@@ -1526,7 +1526,7 @@ step
     .complete 9649,1 --Collect Ysera's Tear (x2)
 step
     .goto Bloodmyst Isle,79.1,22.6
->>Talk to |cFF00FF25Captain Edward Hanes|r
+>>Talk to |cRXP_FRIENDLY_Captain Edward Hanes|r
     .turnin 9672 >> Turn in The Bloodcurse Legacy
 .target Captain Edward Hanes
     .accept 9674 >> Accept The Bloodcursed Naga
@@ -1537,12 +1537,12 @@ step
 step
     .goto Bloodmyst Isle,79.1,22.6
 .target Captain Edward Hanes
->>Talk to |cFF00FF25Captain Edward Hanes|r
+>>Talk to |cRXP_FRIENDLY_Captain Edward Hanes|r
     .turnin 9674 >> Turn in The Bloodcursed Naga
 step
     .goto Bloodmyst Isle,79.1,22.6
 .target Captain Edward Hanes
->>Talk to |cFF00FF25Captain Edward Hanes|r
+>>Talk to |cRXP_FRIENDLY_Captain Edward Hanes|r
     .accept 9682 >> Accept The Hopeless Ones...
     .maxlevel 15
 step
@@ -1552,7 +1552,7 @@ step
 step
     .goto Bloodmyst Isle,79.2,22.7
 .target Captain Edward Hanes
->>Talk to |cFF00FF25Captain Edward Hanes|r
+>>Talk to |cRXP_FRIENDLY_Captain Edward Hanes|r
     .turnin 9682 >> Turn in The Hopeless Ones...
     .isOnQuest 9682
 step
@@ -1561,7 +1561,7 @@ step
 step
     .goto Bloodmyst Isle,79.2,22.7
 .target Captain Edward Hanes
->>Talk to |cFF00FF25Captain Edward Hanes|r
+>>Talk to |cRXP_FRIENDLY_Captain Edward Hanes|r
     .accept 9683 >> Accept Ending the Bloodcurse
     .isQuestTurnedIn 9682
 step
@@ -1574,7 +1574,7 @@ step
 step << Shaman/Paladin wotlk/Hunter
     .goto Bloodmyst Isle,79.2,22.7
 .target Captain Edward Hanes
->>Talk to |cFF00FF25Captain Edward Hanes|r
+>>Talk to |cRXP_FRIENDLY_Captain Edward Hanes|r
     .turnin 9683 >> Turn in Ending the Bloodcurse
     .isOnQuest 9683
     .xp 16-2190,1
@@ -1587,12 +1587,12 @@ step
 step
     .goto Bloodmyst Isle,56.4,56.7
 .target Jessera of Mac'Aree
->>Talk to |cFF00FF25Jessera of Mac'Aree|r
+>>Talk to |cRXP_FRIENDLY_Jessera of Mac'Aree|r
     .turnin 9649 >> Turn in Ysera's Tears
 step
     .goto Bloodmyst Isle,57.6,53.9
 .target Laando
->>Talk to |cFF00FF25Laando|r
+>>Talk to |cRXP_FRIENDLY_Laando|r
     .accept 9604 >> Accept On the Wings of a Hippogryph
 step
     .goto Bloodmyst Isle,57.6,53.9
@@ -1601,13 +1601,13 @@ step
 	.goto The Exodar,75.0,54.8,80,0
 	.goto The Exodar,64.4,42.4,80,0
     .goto The Exodar,57.008,50.065
->>Talk to |cFF00FF25Nurguni|r
+>>Talk to |cRXP_FRIENDLY_Nurguni|r
     .turnin 9604 >> Turn in On the Wings of a Hippogryph
 .target Nurguni
     .accept 9605 >> Accept Hippogryph Master Stephanos
 step << Warrior
 .target Behomat
->>Talk to |cFF00FF25Behomat|r
+>>Talk to |cRXP_FRIENDLY_Behomat|r
     .turnin 10350 >> Turn in Behomat
     .goto The Exodar,55.579,82.269
     >>Talk to the weapon master upstairs
@@ -1623,7 +1623,7 @@ step << Paladin
     .train 202 >>Train 2h swords
 step << Shaman
     .goto The Exodar,32.7,54.5
->>Talk to |cFF00FF25Prophet Velen|r
+>>Talk to |cRXP_FRIENDLY_Prophet Velen|r
     .turnin 9461 >> Turn in Call of Fire
 .target Prophet Velen
     .accept 9555 >> Accept Call of Fire
@@ -1632,26 +1632,26 @@ step << Shaman
 step << Paladin
     .goto The Exodar,38.8,82.6
 .target Jol
->>Talk to |cFF00FF25Jol|r
+>>Talk to |cRXP_FRIENDLY_Jol|r
     .turnin 9600 >>Turn in Redemption
 step << !Shaman
     .goto The Exodar,32.858,54.484
     .turnin -9698 >> Turn in Audience with the Prophet
 .target Prophet Velen
->>Talk to |cFF00FF25Prophet Velen|r
+>>Talk to |cRXP_FRIENDLY_Prophet Velen|r
     .accept 9699 >> Accept Truth or Fiction
 step << Shaman
 	#completewith next
     .goto The Exodar,30.0,33.1
 .target Farseer Nobundo
->>Talk to |cFF00FF25Farseer Nobundo|r
+>>Talk to |cRXP_FRIENDLY_Farseer Nobundo|r
     .turnin 9555 >> Turn in Call of Fire
 	.trainer >> Train your level 16 spells
 step
 	.goto The Exodar,52.3,34.7,80,0
     .goto The Exodar,68.336,63.490
     >>Run back to the flight master
->>Talk to |cFF00FF25Stephanos|r
+>>Talk to |cRXP_FRIENDLY_Stephanos|r
     .turnin 9605 >> Turn in Hippogryph Master Stephanos
 .target Stephanos
     .accept 9606 >> Accept Return to Topher Loaal
@@ -1662,19 +1662,19 @@ step
 step
     .goto Bloodmyst Isle,55.844,59.776
 .target Caregiver Topher Loaal
->>Talk to |cFF00FF25Caregiver Topher Loaal|r
+>>Talk to |cRXP_FRIENDLY_Caregiver Topher Loaal|r
     .turnin 9606 >> Turn in Return to Topher Loaal
 step
     #label exit1
     .goto Bloodmyst Isle,55.5,55.4
     .turnin -9699 >> Turn in Truth or Fiction
 .target Vindicator Boros
->>Talk to |cFF00FF25Vindicator Boros|r
+>>Talk to |cRXP_FRIENDLY_Vindicator Boros|r
     .accept 9700 >> Accept I Shoot Magic Into the Darkness
 step
     .goto Bloodmyst Isle,56.2,54.3
 .target Prospector Nachlan
->>Talk to |cFF00FF25Prospector Nachlan|r
+>>Talk to |cRXP_FRIENDLY_Prospector Nachlan|r
     .accept 10063 >> Accept Explorers' League, Is That Something for Gnomes?
 step
 	#sticky
@@ -1701,7 +1701,7 @@ step
 	.complete 9580,1 --Elder Brown Bear Flank (8)
 step
     .goto Bloodmyst Isle,42.0,21.2
->>Talk to |cFF00FF25Clopper Wizbang|r
+>>Talk to |cRXP_FRIENDLY_Clopper Wizbang|r
     .turnin 10063 >> Turn in Explorers' League, Is That Something for Gnomes?
 .target Clopper Wizbang
     .accept 9548 >> Accept Pilfered Equipment
@@ -1732,7 +1732,7 @@ step
 step
     .goto Bloodmyst Isle,42.142,21.174
 .target Clopper Wizbang
->>Talk to |cFF00FF25Clopper Wizbang|r
+>>Talk to |cRXP_FRIENDLY_Clopper Wizbang|r
     .turnin 9548 >> Turn in Pilfered Equipment
     .turnin 9549 >> Turn in Artifacts of the Blacksilt
 step
@@ -1787,40 +1787,40 @@ step
    	#requires constrictors
 	.goto Bloodmyst Isle,54.7,54.1
 .target Anchorite Paetheus
->>Talk to |cFF00FF25Anchorite Paetheus|r
+>>Talk to |cRXP_FRIENDLY_Anchorite Paetheus|r
     .turnin 9557 >> Turn in Deciphering the Book
 step
     .goto Bloodmyst Isle,52.6,53.3
->>Talk to |cFF00FF25Harbinger Mikolaas|r
+>>Talk to |cRXP_FRIENDLY_Harbinger Mikolaas|r
     .turnin 9585 >> Turn in The Final Sample
 .target Harbinger Mikolaas
     .accept 10064 >> Accept Talk to the Hand
 step
     .goto Bloodmyst Isle,54.7,54.0
 .target Anchorite Paetheus
->>Talk to |cFF00FF25Anchorite Paetheus|r
+>>Talk to |cRXP_FRIENDLY_Anchorite Paetheus|r
     .accept 9561 >> Accept Nolkai's Words
 step
 	#completewith next
     .goto Bloodmyst Isle,55.421,55.232
 .target Vindicator Boros
->>Talk to |cFF00FF25Vindicator Boros|r
+>>Talk to |cRXP_FRIENDLY_Vindicator Boros|r
     .turnin 9700 >> Turn in I Shoot Magic Into the Darkness
 .target Vindicator Kuros
->>Talk to |cFF00FF25Vindicator Kuros|r
+>>Talk to |cRXP_FRIENDLY_Vindicator Kuros|r
     .accept 9703 >> Accept The Cryo-Core
 	.trainer >>Train class spells at Vindicator Aesom << Paladin
 step
     .itemcount 23984,10
     .goto Bloodmyst Isle,55.421,55.232
 .target Vindicator Boros
->>Talk to |cFF00FF25Vindicator Boros|r
+>>Talk to |cRXP_FRIENDLY_Vindicator Boros|r
     .turnin 9642,3 >> Turn in More Irradiated Crystal Shards << Warrior/Paladin/Hunter/Rogue/Shaman
     .turnin 9642,2 >> Turn in More Irradiated Crystal Shards << Warlock/Priest/Mage
     .turnin 9642 >> Turn in More Irradiated Crystal Shards << Druid
 step
     .goto Bloodmyst Isle,55.9,56.9
->>Talk to |cFF00FF25Tracker Lyceon|r
+>>Talk to |cRXP_FRIENDLY_Tracker Lyceon|r
     .turnin 9643 >> Turn in Constrictor Vines
 .target Tracker Lyceon
     .accept 9647 >> Accept Culling the Flutterers
@@ -1828,17 +1828,17 @@ step
 	.goto Bloodmyst Isle,55.9,56.9
 	.isQuestComplete 9580
 .target Tracker Lyceon
->>Talk to |cFF00FF25Tracker Lyceon|r
+>>Talk to |cRXP_FRIENDLY_Tracker Lyceon|r
 	.turnin 9580 >> Turn in The Bear Neccessities
 step
     .goto Bloodmyst Isle,55.0,58.1
 .target Vindicator Aalesia
->>Talk to |cFF00FF25Vindicator Aalesia|r
+>>Talk to |cRXP_FRIENDLY_Vindicator Aalesia|r
     .turnin 9569 >> Turn in Containing the Threat
 step
     .goto Bloodmyst Isle,53.242,57.708
 .target Morae
->>Talk to |cFF00FF25Morae|r
+>>Talk to |cRXP_FRIENDLY_Morae|r
     .accept 9578 >> Accept Searching for Galaen
 step
 	#sticky
@@ -1848,7 +1848,7 @@ step
 step
     .goto Bloodmyst Isle,37.5,61.3
 	>> Prioritize turning in the quest, don't grind elves yet.
->>Talk to |cFF00FF25Galaen's Corpse|r
+>>Talk to |cRXP_FRIENDLY_Galaen's Corpse|r
     .turnin 9578 >> Turn in Searching for Galaen
 .target Galaen's Corpse
     .accept 9579 >> Accept Galaen's Fate
@@ -1864,27 +1864,27 @@ step
 	#requires constrictors
     .goto Bloodmyst Isle,53.3,57.7
 .target Morae
->>Talk to |cFF00FF25Morae|r
+>>Talk to |cRXP_FRIENDLY_Morae|r
     .turnin 9579 >> Turn in Galaen's Fate
 step
     .goto Bloodmyst Isle,53.3,57.2
 .target Achelus
->>Talk to |cFF00FF25Achelus|r
+>>Talk to |cRXP_FRIENDLY_Achelus|r
     .accept 9669 >> Accept The Missing Expedition
 step
     .goto Bloodmyst Isle,55.6,55.1
->>Talk to |cFF00FF25Vindicator Kuros|r
+>>Talk to |cRXP_FRIENDLY_Vindicator Kuros|r
     .turnin 9703 >> Turn in The Cryo-Core
     .turnin 9706 >> Turn in Galaen's Journal - The Fate of Vindicator Saruan
 .target Vindicator Kuros
     .accept 9711 >> Accept Matis the Cruel
 .target Vindicator Aesom
->>Talk to |cFF00FF25Vindicator Aesom|r
+>>Talk to |cRXP_FRIENDLY_Vindicator Aesom|r
     .accept 9748 >> Accept Don't Drink the Water
     .accept 9753 >> Accept What We Know...
 step
     .goto Bloodmyst Isle,52.6,53.3
->>Talk to |cFF00FF25Exarch Admetius|r
+>>Talk to |cRXP_FRIENDLY_Exarch Admetius|r
     .turnin 9753 >> Turn in What We Know...
 .target Exarch Admetius
     .accept 9756 >> Acccept What We Don't Know...
@@ -1893,7 +1893,7 @@ step
     .skipgossip
     .complete 9756,1
     .goto Bloodmyst Isle,54.36,54.30
->>Talk to |cFF00FF25Exarch Admetius|r
+>>Talk to |cRXP_FRIENDLY_Exarch Admetius|r
     .turnin 9756 >> Turn in What We Don't Know...
     .goto Bloodmyst Isle,52.6,53.3
 .target Exarch Admetius
@@ -1911,21 +1911,21 @@ step
 	.unitscan Matis the Cruel
 step
     .goto Bloodmyst Isle,30.3,45.8
->>Talk to |cFF00FF25Scout Jorli|r
+>>Talk to |cRXP_FRIENDLY_Scout Jorli|r
     .turnin 10064 >> Turn in Talk to the Hand
 .target Scout Jorli
     .accept 10065 >> Accept Cutting a Path
 .target Scout Loryi
->>Talk to |cFF00FF25Scout Loryi|r
+>>Talk to |cRXP_FRIENDLY_Scout Loryi|r
     .accept 9741 >> Accept Critters of the Void
 step
     .goto Bloodmyst Isle,30.8,46.8
 .target Defender Sorli
 .target Defender Adrielle
 .target Vindicator Corin
->>Talk to |cFF00FF25Vindicator Corin|r
--->>Talk to |cFF00FF25Defender Adrielle|r
--->>Talk to |cFF00FF25Defender Sorli|r
+>>Talk to |cRXP_FRIENDLY_Vindicator Corin|r
+-->>Talk to |cRXP_FRIENDLY_Defender Adrielle|r
+-->>Talk to |cRXP_FRIENDLY_Defender Sorli|r
     .accept 10066 >> Accept Oh, the Tangled Webs They Weave
 --
 --
@@ -1949,11 +1949,11 @@ step
 step
 	#label bloodmyst2
 .target Vindicator Corin
->>Talk to |cFF00FF25Vindicator Corin|r
+>>Talk to |cRXP_FRIENDLY_Vindicator Corin|r
     .turnin 10066 >> Turn in Oh, the Tangled Webs They Weave
     .goto Bloodmyst Isle,30.7,46.9
 .target Scout Jorli
->>Talk to |cFF00FF25Scout Jorli|r
+>>Talk to |cRXP_FRIENDLY_Scout Jorli|r
     .turnin 10065 >> Turn in Cutting a Path
     .goto Bloodmyst Isle,30.3,46.0
 step
@@ -1969,12 +1969,12 @@ step
 step
     .goto Bloodmyst Isle,30.746,46.808
 .target Vindicator Corin
->>Talk to |cFF00FF25Vindicator Corin|r
+>>Talk to |cRXP_FRIENDLY_Vindicator Corin|r
     .turnin 10067 >> Turn in Fouled Water Spirits
 step
     .goto Bloodmyst Isle,24.872,34.310
 .target Researcher Cornelius
->>Talk to |cFF00FF25Researcher Cornelius|r
+>>Talk to |cRXP_FRIENDLY_Researcher Cornelius|r
     .accept 9670 >> Accept They're Alive! Maybe...
 step
 	#sticky
@@ -1995,7 +1995,7 @@ step
 	#label AliveM
     .goto Bloodmyst Isle,24.9,34.4
 .target Researcher Cornelius
->>Talk to |cFF00FF25Researcher Cornelius|r
+>>Talk to |cRXP_FRIENDLY_Researcher Cornelius|r
     .turnin 9670 >> Turn in They're Alive! Maybe...
 step
     .goto Bloodmyst Isle,43.9,43.7,70,0
@@ -2024,7 +2024,7 @@ step << Hunter/Shaman/Mage
     #requires limit1
     .isOnQuest 9746
     .goto Bloodmyst Isle,55.6,55.3
->>Talk to |cFF00FF25Vindicator Aesom|r
+>>Talk to |cRXP_FRIENDLY_Vindicator Aesom|r
     .turnin 9746 >> Turn in Limits of Physical Exhaustion
 .target Vindicator Aesom
     .accept 9740 >> Accept The Sun Gate
@@ -2050,32 +2050,32 @@ step
 step
     .goto Bloodmyst Isle,53.4,57.1
 .target Achelus
->>Talk to |cFF00FF25Achelus|r
+>>Talk to |cRXP_FRIENDLY_Achelus|r
     .turnin 9669 >> Turn in The Missing Expedition
 step
     .goto Bloodmyst Isle,52.7,53.3
 .target Harbinger Mikolaas
->>Talk to |cFF00FF25Harbinger Mikolaas|r
+>>Talk to |cRXP_FRIENDLY_Harbinger Mikolaas|r
     .turnin 9646 >> Turn in WANTED: Deathclaw
 step
     .goto Bloodmyst Isle,54.7,54.1
 .target Anchorite Paetheus
->>Talk to |cFF00FF25Anchorite Paetheus|r
+>>Talk to |cRXP_FRIENDLY_Anchorite Paetheus|r
     .accept 9632 >> Accept Newfound Allies
 step
     .goto Bloodmyst Isle,55.6,55.3
->>Talk to |cFF00FF25Vindicator Aesom|r
+>>Talk to |cRXP_FRIENDLY_Vindicator Aesom|r
     .turnin 9741 >> Turn in Critters of the Void
     .turnin 9748 >> Turn in Don't Drink the Water
 .target Vindicator Kuros
->>Talk to |cFF00FF25Vindicator Kuros|r
+>>Talk to |cRXP_FRIENDLY_Vindicator Kuros|r
     .turnin 9711 >> Turn in Matis the Cruel
 .target Vindicator Aesom
     .accept 9746 >> Accept Limits of Physical Exhaustion << Hunter/Shaman/Mage
 	.isQuestComplete 9711
 step
     .goto Bloodmyst Isle,55.6,55.3
->>Talk to |cFF00FF25Vindicator Aesom|r
+>>Talk to |cRXP_FRIENDLY_Vindicator Aesom|r
     .turnin 9741 >> Turn in Critters of the Void
     .turnin 9748 >> Turn in Don't Drink the Water
 .target Vindicator Aesom
@@ -2087,13 +2087,13 @@ step
 	#requires sungate
 	.goto Bloodmyst Isle,55.6,55.3
 .target Vindicator Aesom
->>Talk to |cFF00FF25Vindicator Aesom|r
+>>Talk to |cRXP_FRIENDLY_Vindicator Aesom|r
 	.turnin 9740 >> Turn in The Sun Gate
 step
 	#label bearend
     .goto Bloodmyst Isle,55.9,56.9
 .target Tracker Lyceon
->>Talk to |cFF00FF25Tracker Lyceon|r
+>>Talk to |cRXP_FRIENDLY_Tracker Lyceon|r
     .turnin 9647 >> Turn in Culling the Flutterers
     .turnin 9580 >> Turn in The Bear Necessities
 step
@@ -2101,7 +2101,7 @@ step
     .turnin 9561 >> Turn in Nolkai's Words
 step
     .goto Bloodmyst Isle,74.6,33.6
->>Talk to |cFF00FF25Prince Toreth|r
+>>Talk to |cRXP_FRIENDLY_Prince Toreth|r
     .turnin 9687 >> Turn in Restoring Sanctity
 .target Prince Toreth
     .accept 9688 >> Accept Into the Dream
@@ -2114,13 +2114,13 @@ step
 step
     .goto Bloodmyst Isle,79.1,22.7
 .target Captain Edward Hanes
->>Talk to |cFF00FF25Captain Edward Hanes|r
+>>Talk to |cRXP_FRIENDLY_Captain Edward Hanes|r
     .turnin 9683 >> Turn in Ending the Bloodcurse
     .isOnQuest 9683
 step
     #requires Veridian
 	.goto Bloodmyst Isle,74.3,33.4
->>Talk to |cFF00FF25Prince Toreth|r
+>>Talk to |cRXP_FRIENDLY_Prince Toreth|r
     .turnin 9688 >> Turn in Into the Dream
 .target Prince Toreth
     .accept 9689 >> Accept Razormaw
@@ -2132,7 +2132,7 @@ step
 step
     .goto Bloodmyst Isle,74.3,33.4
 .target Prince Toreth
->>Talk to |cFF00FF25Prince Toreth|r
+>>Talk to |cRXP_FRIENDLY_Prince Toreth|r
     .turnin 9689 >> Turn in Razormaw
 	.isQuestComplete 9689
 step << Hunter/Shaman/Mage
@@ -2147,7 +2147,7 @@ step
     .goto Bloodmyst Isle,55.421,55.232
     >> Turn in your remaining Irradiated Crystal Shards before leaving Bloodmyst!
 .target Vindicator Boros
->>Talk to |cFF00FF25Vindicator Boros|r
+>>Talk to |cRXP_FRIENDLY_Vindicator Boros|r
     .turnin 9642,3 >> Turn in More Irradiated Crystal Shards << Warrior/Paladin/Hunter/Rogue/Shaman
     .turnin 9642,2 >> Turn in More Irradiated Crystal Shards << Warlock/Priest/Mage
     .turnin 9642 >> Turn in More Irradiated Crystal Shards << Druid
@@ -2164,11 +2164,11 @@ step
 step << Shaman
     .goto The Exodar,32.4,24.0
 .target Farseer Javad
->>Talk to |cFF00FF25Farseer Javad|r
+>>Talk to |cRXP_FRIENDLY_Farseer Javad|r
     .accept 9502 >> Accept Call of Water
 step << Shaman
     .goto The Exodar,31.3,30.7
->>Talk to |cFF00FF25Farseer Nobundo|r
+>>Talk to |cRXP_FRIENDLY_Farseer Nobundo|r
     .turnin 9502 >> Turn in Call of Water
 .target Farseer Nobundo
     .accept 9501 >> Accept Call of Water
@@ -2178,7 +2178,7 @@ step << Shaman
     .fly Blood Watch>> Fly to Blood Watch
 step << Shaman
     .goto Bloodmyst Isle,32.300,16.132
->>Talk to |cFF00FF25Aqueous|r
+>>Talk to |cRXP_FRIENDLY_Aqueous|r
     .turnin 9501 >> Turn in Call of Water
 .target Aqueous
     .accept 9503 >> Accept Call of Water
@@ -2191,7 +2191,7 @@ step << Shaman
     .complete 9503,1 --Collect Foul Essence (x6)
 step << Shaman
     .goto Bloodmyst Isle,32.4,16.2
->>Talk to |cFF00FF25Aqueous|r
+>>Talk to |cRXP_FRIENDLY_Aqueous|r
     .turnin 9503 >> Turn in Call of Water
 .target Aqueous
     .accept 9504 >> Accept Call of Water
@@ -2200,7 +2200,7 @@ step << Shaman
 step << Shaman
     .goto Bloodmyst Isle,55.5,55.4
 .target Vindicator Aesom
->>Talk to |cFF00FF25Vindicator Aesom|r
+>>Talk to |cRXP_FRIENDLY_Vindicator Aesom|r
     .turnin 9746 >> Turn in Limits of Physical Exhaustion
 step << Shaman
     .goto Bloodmyst Isle,57.7,53.9
@@ -2239,7 +2239,7 @@ step
 	.goto The Exodar,33.8,73.7,10,0
     .goto Azuremyst Isle,24.182,54.346
 	>>Talk to the Night Elf just outside of The Exodar back entrance
->>Talk to |cFF00FF25Huntress Kella Nightbow|r
+>>Talk to |cRXP_FRIENDLY_Huntress Kella Nightbow|r
     .turnin 9632 >> Turn in Newfound Allies
 .target Huntress Kella Nightbow
     .accept 9633 >> Accept The Way to Auberdine
@@ -2265,7 +2265,7 @@ step
     #xprate <1.2
     .goto Darkshore,36.096,44.931
 .target Gubber Blump
->>Talk to |cFF00FF25Gubber Blump|r
+>>Talk to |cRXP_FRIENDLY_Gubber Blump|r
     .accept 1138 >> Accept Fruit of the Sea
     .maxlevel 20
 step
@@ -2282,33 +2282,33 @@ step
     #xprate <1.2
     .goto Darkshore,37.4,43.7
 .target Barithras Moonshade
->>Talk to |cFF00FF25Barithras Moonshade|r
+>>Talk to |cRXP_FRIENDLY_Barithras Moonshade|r
     .accept 947 >> Accept Cave Mushrooms
     .maxlevel 20
 step
     .goto Darkshore,38.37,43.05
 .target Gershala Nightwhisper
->>Talk to |cFF00FF25Gershala Nightwhisper|r
+>>Talk to |cRXP_FRIENDLY_Gershala Nightwhisper|r
     .accept 1275 >> Accept Researching the Corruption
 step
     #xprate <1.2
     .goto Darkshore,39.1,43.5
 .target Sentinel Elissa Starbreeze
->>Talk to |cFF00FF25Sentinel Elissa Starbreeze|r
+>>Talk to |cRXP_FRIENDLY_Sentinel Elissa Starbreeze|r
     .accept 965 >> Accept The Tower of Althalaxx
     .maxlevel 20
 step
 #xprate <1.2
     .goto Darkshore,38.1,41.2
 .target Gorbold Steelhand
->>Talk to |cFF00FF25Gorbold Steelhand|r
+>>Talk to |cRXP_FRIENDLY_Gorbold Steelhand|r
     .accept 982 >> Accept Deep Ocean, Vast Sea
     .maxlevel 20
 step
     .goto Darkshore,37.4,40.2
 	.turnin -9633 >> Turn in The Way to Auberdine
 .target Thundris Windweaver
->>Talk to |cFF00FF25Thundris Windweaver|r
+>>Talk to |cRXP_FRIENDLY_Thundris Windweaver|r
     .accept 10752 >> Accept Onward to Ashenvale
 step
 #xprate <1.2
@@ -2333,7 +2333,7 @@ step
 	>>Start heading north while grinding crabs along the coast
     .goto Darkshore,56.7,13.5
 .target Gelkak Gyromast
->>Talk to |cFF00FF25Gelkak Gyromast|r
+>>Talk to |cRXP_FRIENDLY_Gelkak Gyromast|r
     .accept 2098 >> Accept Gyromast's Retrieval
     .isOnQuest 1138
 step
@@ -2361,7 +2361,7 @@ step
     #requires crawlers
     .goto Darkshore,56.7,13.5
 .target Gelkak Gyromast
->>Talk to |cFF00FF25Gelkak Gyromast|r
+>>Talk to |cRXP_FRIENDLY_Gelkak Gyromast|r
     .turnin 2098 >> Turn in Gyromast's Retrieval
     .isOnQuest 2098
 step
@@ -2369,7 +2369,7 @@ step
     .goto Darkshore,56.7,13.5
     #requires crawlers
 .target Gelkak Gyromast
->>Talk to |cFF00FF25Gelkak Gyromast|r
+>>Talk to |cRXP_FRIENDLY_Gelkak Gyromast|r
     .accept 2078 >> Accept Gyromast's Revenge
     .isQuestTurnedIn 2098
 step
@@ -2382,7 +2382,7 @@ step
 #xprate <1.2
     .goto Darkshore,56.7,13.5
 .target Gelkak Gyromast
->>Talk to |cFF00FF25Gelkak Gyromast|r
+>>Talk to |cRXP_FRIENDLY_Gelkak Gyromast|r
     .turnin 2078 >> Turn in Gyromast's Revenge
     .isQuestTurnedIn 2098
 step
@@ -2401,14 +2401,14 @@ step
 #xprate <1.2
     .goto Darkshore,55.0,24.9
 .target Balthule Shadowstrike
->>Talk to |cFF00FF25Balthule Shadowstrike|r
+>>Talk to |cRXP_FRIENDLY_Balthule Shadowstrike|r
     .turnin 965 >> Turn in The Tower of Althalaxx
     .isOnQuest 965
 step
 #xprate <1.2
     .goto Darkshore,55.0,24.9
 .target Balthule Shadowstrike
->>Talk to |cFF00FF25Balthule Shadowstrike|r
+>>Talk to |cRXP_FRIENDLY_Balthule Shadowstrike|r
     .accept 966 >> Accept The Tower of Althalaxx
     .isQuestTurnedIn 965
 step
@@ -2420,7 +2420,7 @@ step
 step
 #xprate <1.2
     .goto Darkshore,55.0,24.9
->>Talk to |cFF00FF25Balthule Shadowstrike|r
+>>Talk to |cRXP_FRIENDLY_Balthule Shadowstrike|r
     .turnin 966 >> Turn in The Tower of Althalaxx
 .target Balthule Shadowstrike
     .accept 967 >> Accept The Tower of Althalaxx
@@ -2446,34 +2446,34 @@ step
 #xprate <1.2
     .goto Darkshore,38.1,41.3
 .target Gorbold Steelhand
->>Talk to |cFF00FF25Gorbold Steelhand|r
+>>Talk to |cRXP_FRIENDLY_Gorbold Steelhand|r
     .turnin 982 >> Turn in Deep Ocean, Vast Sea
     .isQuestComplete 982
 step
 #xprate <1.2
     .goto Darkshore,37.5,41.9
 .target Archaeologist Hollee
->>Talk to |cFF00FF25Archaeologist Hollee|r
+>>Talk to |cRXP_FRIENDLY_Archaeologist Hollee|r
     .accept 729 >> Accept The Absent Minded Prospector
 step
 #xprate <1.2
     .goto Darkshore,37.4,43.7
 .target Barithras Moonshade
->>Talk to |cFF00FF25Barithras Moonshade|r
+>>Talk to |cRXP_FRIENDLY_Barithras Moonshade|r
     .turnin 947 >> Turn in Cave Mushrooms
     .isQuestComplete 947
 step
 #xprate <1.2
     .goto Darkshore,37.4,43.7
 .target Barithras Moonshade
->>Talk to |cFF00FF25Barithras Moonshade|r
+>>Talk to |cRXP_FRIENDLY_Barithras Moonshade|r
     .accept 948 >> Accept Onu
     .isQuestTurnedIn 947
 step
 #xprate <1.2
     .goto Darkshore,36.096,44.931
 .target Gubber Blump
->>Talk to |cFF00FF25Gubber Blump|r
+>>Talk to |cRXP_FRIENDLY_Gubber Blump|r
     .turnin 1138 >> Turn in Fruit of the Sea
     .isQuestComplete 1138
 step << Hunter
@@ -2503,7 +2503,7 @@ step << Hunter
 step
 #xprate <1.2
     .goto Darkshore,43.5,76.2
->>Talk to |cFF00FF25Onu|r
+>>Talk to |cRXP_FRIENDLY_Onu|r
     .turnin 948 >> Turn in Onu
 .target Onu
     .accept 944 >> Accept The Master's Glaive
@@ -2518,14 +2518,14 @@ step
     .isOnQuest 729
     .goto Darkshore,35.7,83.7
 .target Prospector Remtravel
->>Talk to |cFF00FF25Prospector Remtravel|r
+>>Talk to |cRXP_FRIENDLY_Prospector Remtravel|r
     .turnin 729 >> Turn in The Absent Minded Prospector
 step
 #xprate <1.7
     .goto Darkshore,35.7,83.7
     >>Start the escort quest
 .target Prospector Remtravel
->>Talk to |cFF00FF25Prospector Remtravel|r
+>>Talk to |cRXP_FRIENDLY_Prospector Remtravel|r
     .accept 731,1 >> Accept The Absent Minded Prospector
     .isQuestTurnedIn 729
 step
@@ -2555,7 +2555,7 @@ step
 #xprate <1.2
     .goto Darkshore,38.7,87.3
 .target Therylune
->>Talk to |cFF00FF25Therylune|r
+>>Talk to |cRXP_FRIENDLY_Therylune|r
     .accept 945 >> Accept Therylune's Escape. If she's not here someone else is escorting her, grind til she respawns.
     .maxlevel 21
 step
@@ -2578,21 +2578,21 @@ step
 #xprate <1.2
     .goto Ashenvale,26.2,38.6
 .target Delgren the Purifier
->>Talk to |cFF00FF25Delgren the Purifier|r
+>>Talk to |cRXP_FRIENDLY_Delgren the Purifier|r
     .turnin 967 >> Turn in The Tower of Althalaxx
     .isOnQuest 967
 step
 #xprate <1.2
     .goto Ashenvale,26.2,38.6
 .target Delgren the Purifier
->>Talk to |cFF00FF25Delgren the Purifier|r
+>>Talk to |cRXP_FRIENDLY_Delgren the Purifier|r
     .accept 970 >> Accept The Tower of Althalaxx
     .maxlevel 21
 step
     >> This quest leads into a big chain, it's worth doing even if it seems tedious.
     .goto Ashenvale,26.4,38.6
 .target Orendil Broadleaf
->>Talk to |cFF00FF25Orendil Broadleaf|r
+>>Talk to |cRXP_FRIENDLY_Orendil Broadleaf|r
     .accept 1010 >> Accept Bathran's Hair
 step
     .goto Ashenvale,31.3,23.2
@@ -2605,7 +2605,7 @@ step
     .isOnQuest 970
 step
     .goto Ashenvale,26.4,38.6
->>Talk to |cFF00FF25Orendil Broadleaf|r
+>>Talk to |cRXP_FRIENDLY_Orendil Broadleaf|r
     .turnin 1010 >> Turn in Bathran's Hair
 .target Orendil Broadleaf
     .accept 1020 >> Accept Orendil's Cure
@@ -2613,33 +2613,33 @@ step
 #xprate <1.2
     .goto Ashenvale,26.2,38.6
 .target Delgren the Purifier
->>Talk to |cFF00FF25Delgren the Purifier|r
+>>Talk to |cRXP_FRIENDLY_Delgren the Purifier|r
     .turnin 970 >> Turn in The Tower of Althalaxx
     .isOnQuest 970
 step
 #xprate <1.2
     .goto Ashenvale,26.2,38.6
 .target Delgren the Purifier
->>Talk to |cFF00FF25Delgren the Purifier|r
+>>Talk to |cRXP_FRIENDLY_Delgren the Purifier|r
     .accept 973 >> Accept The Tower of Althalaxx
     .maxlevel 21
     .isQuestTurnedIn 970
 step
     .goto Ashenvale,34.7,48.8
 .target Shindrell Swiftfire
->>Talk to |cFF00FF25Shindrell Swiftfire|r
+>>Talk to |cRXP_FRIENDLY_Shindrell Swiftfire|r
     .accept 1008 >> Accept The Zoram Strand
 step
     .goto Ashenvale,36.618,49.581
 .target Raene Wolfrunner
->>Talk to |cFF00FF25Raene Wolfrunner|r
+>>Talk to |cRXP_FRIENDLY_Raene Wolfrunner|r
     .accept 1054 >> Accept Culling the Threat
     .turnin 10752 >> Turn in Onward to Ashenvale
 step
     #xprate <1.7
     .goto Ashenvale,36.618,49.581
 .target Raene Wolfrunner
->>Talk to |cFF00FF25Raene Wolfrunner|r
+>>Talk to |cRXP_FRIENDLY_Raene Wolfrunner|r
     .accept 991 >> Accept Raene's Cleansing
 step
     .goto Ashenvale,37.0,49.2
@@ -2647,7 +2647,7 @@ step
 step
     .goto Ashenvale,37.3,51.8
 .target Pelturas Whitemoon
->>Talk to |cFF00FF25Pelturas Whitemoon|r
+>>Talk to |cRXP_FRIENDLY_Pelturas Whitemoon|r
     .turnin 1020 >> Turn in Orendil's Cure
     .timer 26,Orendil's Cure RP
 step << Warrior tbc/Paladin
@@ -2659,7 +2659,7 @@ step << Warrior tbc/Paladin
 step
 	.goto Ashenvale,37.3,51.8
 .target Pelturas Whitemoon
->>Talk to |cFF00FF25Pelturas Whitemoon|r
+>>Talk to |cRXP_FRIENDLY_Pelturas Whitemoon|r
     .accept 1033 >> Accept Elune's Tear
 step
     .goto Ashenvale,46.2,45.9
@@ -2673,11 +2673,11 @@ step
 step
     .goto Ashenvale,36.618,49.581
 .target Raene Wolfrunner
->>Talk to |cFF00FF25Raene Wolfrunner|r
+>>Talk to |cRXP_FRIENDLY_Raene Wolfrunner|r
     .turnin 1054 >> Turn in Culling the Threat
 step
     .goto Ashenvale,37.3,51.8
->>Talk to |cFF00FF25Pelturas Whitemoon|r
+>>Talk to |cRXP_FRIENDLY_Pelturas Whitemoon|r
     .turnin 1033 >> Turn in Elune's Tear
 .target Pelturas Whitemoon
     .accept 1034 >> Accept The Ruins of Stardust
@@ -2698,20 +2698,20 @@ step
 	.goto Ashenvale,28.1,55.1,80,0
     .goto Ashenvale,22.7,51.9
 .target Therysil
->>Talk to |cFF00FF25Therysil|r
+>>Talk to |cRXP_FRIENDLY_Therysil|r
     .turnin 945 >> Turn in Therylune's Escape
     .isQuestComplete 945
 step
 #xprate <1.2
     .goto Ashenvale,26.196,38.698
 .target Delgren the Purifier
->>Talk to |cFF00FF25Delgren the Purifier|r
+>>Talk to |cRXP_FRIENDLY_Delgren the Purifier|r
     .turnin 973 >> Turn in The Tower of Althalaxx
     .isOnQuest 973
 step
 #xprate <1.7
     .goto Ashenvale,20.3,42.4
->>Talk to |cFF00FF25Teronis' Corpse|r
+>>Talk to |cRXP_FRIENDLY_Teronis' Corpse|r
     .turnin 991 >> Turn in Raene's Cleansing
 .target Teronis' Corpse
     .accept 1023 >> Accept Raene's Cleansing
@@ -2728,7 +2728,7 @@ step
 step
     .goto Ashenvale,14.7,31.3
 .target Talen
->>Talk to |cFF00FF25Talen|r
+>>Talk to |cRXP_FRIENDLY_Talen|r
     .accept 1007 >> Accept The Ancient Statuette
 step
     .goto Ashenvale,14.2,20.6
@@ -2739,7 +2739,7 @@ step
 step
     .goto Ashenvale,14.790,31.294
 	>> Grind naga directly in your path
->>Talk to |cFF00FF25Talen|r
+>>Talk to |cRXP_FRIENDLY_Talen|r
     .turnin 1007 >> Turn in The Ancient Statuette
     .timer 25,The Ancient Statuette RP
 .target Talen
@@ -2768,7 +2768,7 @@ step
 step
     .goto Ashenvale,14.790,31.294
 .target Talen
->>Talk to |cFF00FF25Talen|r
+>>Talk to |cRXP_FRIENDLY_Talen|r
     .turnin 1009 >> Turn in Ruuzel
 step
     #requires naga2
@@ -2778,7 +2778,7 @@ step
     #requires naga2
     .goto Ashenvale,36.618,49.581
 .target Raene Wolfrunner
->>Talk to |cFF00FF25Raene Wolfrunner|r
+>>Talk to |cRXP_FRIENDLY_Raene Wolfrunner|r
     .turnin 1023 >> Turn in Raene's Cleansing
 step
 	#completewith next
@@ -2787,17 +2787,17 @@ step
 #xprate <1.5
     .goto Ashenvale,36.618,49.581
 .target Raene Wolfrunner
->>Talk to |cFF00FF25Raene Wolfrunner|r
+>>Talk to |cRXP_FRIENDLY_Raene Wolfrunner|r
     .accept 1025 >> Accept An Aggressive Defense
 step
     .goto Ashenvale,37.3,51.8
 .target Pelturas Whitemoon
->>Talk to |cFF00FF25Pelturas Whitemoon|r
+>>Talk to |cRXP_FRIENDLY_Pelturas Whitemoon|r
     .turnin 1034 >> Turn in The Ruins of Stardust
 step
     .goto Ashenvale,34.7,48.9
 .target Shindrell Swiftfire
->>Talk to |cFF00FF25Shindrell Swiftfire|r
+>>Talk to |cRXP_FRIENDLY_Shindrell Swiftfire|r
     .turnin 1008 >> Turn in The Zoram Strand
 step
 #xprate <1.5
@@ -2812,7 +2812,7 @@ step
 #xprate <1.5
     .goto Ashenvale,49.796,67.211
 .target Sentinel Velene Starstrike
->>Talk to |cFF00FF25Sentinel Velene Starstrike|r
+>>Talk to |cRXP_FRIENDLY_Sentinel Velene Starstrike|r
     .accept 1016 >> Accept Elemental Bracers
 step
 #xprate <1.5
@@ -2823,13 +2823,13 @@ step
 #xprate <1.5
     .goto Ashenvale,49.796,67.211
 .target Sentinel Velene Starstrike
->>Talk to |cFF00FF25Sentinel Velene Starstrike|r
+>>Talk to |cRXP_FRIENDLY_Sentinel Velene Starstrike|r
     .turnin 1016 >> Turn in Elemental Bracers
 step
 #xprate <1.5
     .goto Ashenvale,36.618,49.581
 .target Raene Wolfrunner
->>Talk to |cFF00FF25Raene Wolfrunner|r
+>>Talk to |cRXP_FRIENDLY_Raene Wolfrunner|r
     .turnin 1025 >> Turn in An Aggressive Defense
     .isQuestComplete 1025
 step
@@ -2838,19 +2838,19 @@ step
 step
     .goto Darkshore,37.706,43.390
 .target Sentinel Glynda Nal'Shea
->>Talk to |cFF00FF25Sentinel Glynda Nal'Shea|r
+>>Talk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .turnin 4740 >> Turn in WANTED: Murkdeep!
     .isQuestComplete 4740
 step
     .goto Darkshore,38.36,43.07
 .target Gershala Nightwhisper
->>Talk to |cFF00FF25Gershala Nightwhisper|r
+>>Talk to |cRXP_FRIENDLY_Gershala Nightwhisper|r
     .turnin 1275 >> Turn in Researching the Corruption
 step
 #xprate <1.7
     .isOnQuest 731
     .goto Darkshore,37.5,41.9
->>Talk to |cFF00FF25Archaeologist Hollee|r
+>>Talk to |cRXP_FRIENDLY_Archaeologist Hollee|r
     .turnin 731 >> Turn in The Absent Minded Prospector
 .target Archaeologist Hollee
 	.accept 741 >> Accept The Absent Minded Prospector << !Hunter
@@ -2869,7 +2869,7 @@ step << !Hunter
 #xprate <1.7
     .isOnQuest 741
 	.goto Teldrassil,23.703,64.511
->>Talk to |cFF00FF25Chief Archaeologist Greywhisker|r
+>>Talk to |cRXP_FRIENDLY_Chief Archaeologist Greywhisker|r
 	.turnin 741 >> Turn in The Absent Minded Prospector
 .target Chief Archaeologist Greywhisker
 	.accept 942 >> Accept The Absent Minded Prospector

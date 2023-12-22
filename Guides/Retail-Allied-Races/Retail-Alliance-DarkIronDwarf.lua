@@ -47,7 +47,7 @@ step
     .target Aysa Cloudsinger
 step
     .goto 84,51.88,14.06
-    .gossipoption 48178 >> Talk to |cFF00FF25Moira Thaurissan.|r
+    .gossipoption 48178 >> Talk to |cRXP_FRIENDLY_Moira Thaurissan.|r
     .target Moira Thaurissan
     .isOnQuest 51813
 step
@@ -62,7 +62,7 @@ step
 step
     .goto 1159,56.65,31.33
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Crate|r |cFFfa9602on The Black Anvil.|r
-    .scenario 3847,1 
+    .scenario 3847,1
     .timer 5, Time until first wave.
     .isOnQuest 51813
 step
@@ -147,12 +147,12 @@ step
     .target Moira Thaurissan
 step
     #completewith Turn in The MOTHERLODE!!: Ironfoe
-    .link /script C_PartyInfo.LeaveParty() >> |cRXP_WARN_Click here to obtain a macro that lets you exit the group by typing it in chat.|r 
+    .link /script C_PartyInfo.LeaveParty() >> |cRXP_WARN_Click here to obtain a macro that lets you exit the group by typing it in chat.|r
     +|cRXP_WARN_You can also leave using other standard methods.|r
     .isOnQuest 53351
 step
     .goto 84,51.89,14.07
-    .gossipoption 48181 >>Talk to |cFF00FF25Moira Thaurissan.|r
+    .gossipoption 48181 >>Talk to |cRXP_FRIENDLY_Moira Thaurissan.|r
     .target Moira Thaurissan
     .isOnQuest 53351
 step
@@ -165,7 +165,7 @@ step
     .isOnQuest 53351
 step
     .goto 84,51.89,14.07
-    .gossipoption 48179 >>Talk to |cFF00FF25Moira Thaurissan.|r
+    .gossipoption 48179 >>Talk to |cRXP_FRIENDLY_Moira Thaurissan.|r
     .target Moira Thaurissan
     .isOnQuest 53342
 step
@@ -195,7 +195,7 @@ step
     .mob Gezzrok the Keeper
 step
     #completewith next
-    .link /script C_PartyInfo.LeaveParty() >> |cRXP_WARN_Click here to obtain a macro that lets you exit the group by typing it in chat.|r 
+    .link /script C_PartyInfo.LeaveParty() >> |cRXP_WARN_Click here to obtain a macro that lets you exit the group by typing it in chat.|r
     +|cRXP_WARN_You can also leave using other standard methods.|r
     .isOnQuest 53342
 step
@@ -206,18 +206,18 @@ step
     .target Moira Thaurissan
 step
     .goto 84,51.89,14.07
-    .gossipoption 48180 >>Talk to |cFF00FF25Moira Thaurissan.|r
+    .gossipoption 48180 >>Talk to |cRXP_FRIENDLY_Moira Thaurissan.|r
     .target Moira Thaurissan
-    .isOnQuest 53352  
+    .isOnQuest 53352
 step
     .goto 1958,49.24,29.7
-    >>|cRXP_WARN_Wait for the brief roleplay then|r then Kill |cRXP_ENEMY_Dark Iron Cultist.|r 
+    >>|cRXP_WARN_Wait for the brief roleplay then|r then Kill |cRXP_ENEMY_Dark Iron Cultist.|r
     .scenario 3982,1
     .mob Dark Iron Cultist
     .isOnQuest 53352
 step
     .goto 1958,49.2,25.47,10 >>|cRXP_WARN_Head to the location indicated by the arrow.|r
-    >>|cFFFCDC00Press "Escape" on your keyboard to skip the cinematic.|r
+    >>|cRXP_WARN_Press "Escape" on your keyboard to skip the cinematic.|r
     .isOnQuest 53352
 step
     .goto 1959,50.82,67.4,5,0
@@ -254,7 +254,7 @@ step
     .isOnQuest 53352
 step
     #completewith next
-    .link /script C_PartyInfo.LeaveParty() >> |cRXP_WARN_Click here to obtain a macro that lets you exit the group by typing it in chat.|r 
+    .link /script C_PartyInfo.LeaveParty() >> |cRXP_WARN_Click here to obtain a macro that lets you exit the group by typing it in chat.|r
     +|cRXP_WARN_You can also leave using other standard methods.|r
     .isOnQuest 53352
 step
@@ -265,7 +265,7 @@ step
     .target Moira Thaurissan
 step
     .goto 84,51.89,14.07
-    .gossipoption 48178 >>Talk to |cFF00FF25Moira Thaurissan.|r
+    .gossipoption 48178 >>Talk to |cRXP_FRIENDLY_Moira Thaurissan.|r
     .target Moira Thaurissan
     .isOnQuest 51474
 step
@@ -280,7 +280,7 @@ step
     .target Moira Thaurissan
 step
     #completewith next
-    .link /script C_PartyInfo.LeaveParty() >> |cRXP_WARN_Click here to obtain a macro that lets you exit the group by typing it in chat.|r 
+    .link /script C_PartyInfo.LeaveParty() >> |cRXP_WARN_Click here to obtain a macro that lets you exit the group by typing it in chat.|r
     +|cRXP_WARN_You can also leave using other standard methods.|r
     .isOnQuest 53566
 step

@@ -293,7 +293,7 @@ step << !NightElf
 step << Human Warrior
     .goto Ironforge,62.0,89.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bixi Wobblebonk|r
-    .train 176 >>Train Thrown
+    .train 2567 >>Train Thrown
     .target Bixi Wobblebonk
 step << Dwarf Paladin
     .goto Ironforge,24.55,4.49
@@ -386,9 +386,9 @@ step << !NightElf
 step << !NightElf
     .goto Wetlands,10.43,61.01,10,0
     .goto Wetlands,10.496,60.201
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Samor Festivus|r upstairs
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Samor Festivus|r upstairs
     .vendor >> |cRXP_BUY_Buy as many|r |T134831:0|t[Healing Potions] |cRXP_BUY_that are available|r
-    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cFF00FF25Samor Festivus|r doesn't have any|r
+    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Samor Festivus|r doesn't have any|r
     .target Samor Festivus
 step << !NightElf
     .goto Wetlands,9.49,59.69
@@ -458,10 +458,17 @@ step << Druid
 step << Druid
     .goto Moonglade,52.6,51.6
     >>Swim into Lake Elune'Ara
-    >>Open a |cRXP_PICK_Bauble Container|r. Loot it for the |cRXP_LOOT_Shrine Bauble|r
+    >>Open a |cRXP_PICK_Bauble Container|r. Loot it for a |T134125:0|t[Shrine Bauble]
     >>|cRXP_WARN_It may spawn in different locations underwater|r
+    .collect 15877,1,29,1 -- Shrine Bauble (1)
+step << Druid
+    #completewith next
+    .cast 18960 >> Cast Teleport: Moonglade
+    >>|cRXP_WARN_It will be faster this way so you don't need to swim for a longer time|r
+step << Druid
+    .goto Moonglade,36.026,41.374
+    .use 15877 >>|cRXP_WARN_Use the|r |T134125:0|t[Shrine Bauble] |cRXP_WARN_at the Shrine of Remulos tree|r
     .complete 29,1 --Complete the Trial of the Lake.
--- needs testing properly etc
 step << Druid
     .goto Moonglade,36.517,40.104
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tajarri|r
@@ -1076,7 +1083,7 @@ step << !NightElf Priest
     .target Jandria
 step << !NightElf Warrior
     .goto Darnassus,58.945,35.336
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Darnath Bladesinger|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darnath Bladesinger|r
     .trainer >> Train your class spells
     .target Darnath Bladesinger
 step << !NightElf Rogue

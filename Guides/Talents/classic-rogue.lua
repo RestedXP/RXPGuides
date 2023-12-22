@@ -186,15 +186,6 @@ level -- Improved Gouge Rank 2
 	
 level -- Improved Gouge Rank 3
 	.talent 2,1,1,3
-	
-level -- Improved Gouge Rank 1
-	.talent 2,1,1,1
-	
-level -- Improved Gouge Rank 2
-	.talent 2,1,1,2
-	
-level -- Improved Gouge Rank 3
-	.talent 2,1,1,3
 
 level -- Deflection Rank 1
 	.talent 2,2,2,1
