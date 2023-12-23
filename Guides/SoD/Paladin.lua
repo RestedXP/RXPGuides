@@ -9,7 +9,7 @@ RXPGuides.RegisterGuide([[
 --VV Not sure if you want to gate CS in Elwynn for humans only/DunM for dwarves only
 
 step
-    +|cRXP_WARN_You MUST be at least level 4 in order to acquire|r |T133816:0|t[Engrave Gloves: Crusader Strike] |cRXP_WARN_due to it being the level requirement of|r |T135959:0|t[Judgement]
+    +|cRXP_WARN_You MUST be at least level 4 in order to acquire|r |T133816:0|t[Engrave Gloves: Crusader Strike] |cRXP_WARN_as it is the level requirement of training|r |T135959:0|t[Judgement]
     >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves: Crusader Strike]
     .train 410002,1
     .xp >4,1
@@ -83,7 +83,7 @@ RXPGuides.RegisterGuide([[
 #next Inspiration Exemplar - 6 (Dun Morogh)
 
 step
-    +|cRXP_WARN_You MUST be at least level 4 in order to acquire|r |T133816:0|t[Engrave Gloves: Crusader Strike] |cRXP_WARN_due to it being the level requirement of|r |T135959:0|t[Judgement]
+    +|cRXP_WARN_You MUST be at least level 4 in order to acquire|r |T133816:0|t[Engrave Gloves: Crusader Strike] |cRXP_WARN_as it is the level requirement of training|r |T135959:0|t[Judgement]
     >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves: Crusader Strike]
     .train 410002,1
     .xp >4,1
@@ -161,14 +161,14 @@ RXPGuides.RegisterGuide([[
 
 step
     +|cRXP_WARN_You should be at least level 14 in order to acquire|r |T133816:0|t[Engrave Gloves: Hand of Reckoning] |cRXP_WARN_in Loch Modan alone|r
-    >>|cRXP_WARN_You MUST be at least level 8 to equip the|r |T134916:0|t|cRXP_LOOT_[Libram of Justice]|r
+    >>|cRXP_WARN_You MUST be at least level 8 as it is the level requirement of equipping the|r |T134916:0|t|cRXP_LOOT_[Libram of Justice]|r
     >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves: Hand of Reckoning]
     .train 410001,1
     .xp >8,1
 step
-    #completewith Cave1
     +|cRXP_WARN_You should be at least level 14 in order to acquire|r |T133816:0|t[Engrave Gloves: Hand of Reckoning] |cRXP_WARN_in Loch Modan alone|r
     .train 410001,1
+    .xp <8,1
     .xp >14,1
 step
     #completewith next
@@ -222,6 +222,7 @@ step
 step
     #completewith next
     .aura 408828 >>|cRXP_WARN_Attack enemies down to low health. Cast|r |T135963:0|t[Hammer of Justice] |cRXP_WARN_on them, then kill them whilst they're stunned 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
     .itemStat 18,QUALITY,2
     .train 410001,1
     .xp <11,1
@@ -244,12 +245,13 @@ step
     .goto Loch Modan,35.36,71.21,40,0
     .goto Loch Modan,32.86,79.70,40,0
     .aura 408828 >>|cRXP_WARN_Attack enemies down to low health. Cast|r |T135963:0|t[Hammer of Justice] |cRXP_WARN_on them, then kill them whilst they're stunned 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
     .mob Stonesplinter Trogg
     .mob Stonesplinter Scout
     .itemStat 18,QUALITY,2
     .train 410001,1
-    .xp >16,1
     .xp <8,1
+    .xp >16,1
 step
     #loop
     .goto Loch Modan,35.66,83.64,30,0
@@ -257,12 +259,13 @@ step
     .goto Loch Modan,36.50,80.01,30,0
     .goto Loch Modan,33.96,81.82,30,0
     .aura 408828 >>|cRXP_WARN_Attack enemies down to low health. Cast|r |T135963:0|t[Hammer of Justice] |cRXP_WARN_on them, then kill them whilst they're stunned 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
     .mob Stonesplinter Skullthumper
     .mob Stonesplinter Seer
     .itemStat 18,QUALITY,2
     .train 410001,1
-    .xp >19,1
     .xp <16,1
+    .xp >19,1
 step
     #loop
     .goto Loch Modan,69.61,67.92,40,0
@@ -274,13 +277,14 @@ step
     .goto Loch Modan,70.41,62.93,40,0
     .goto Loch Modan,69.69,65.52,40,0
     .aura 408828 >>|cRXP_WARN_Attack enemies down to low health. Cast|r |T135963:0|t[Hammer of Justice] |cRXP_WARN_on them, then kill them whilst they're stunned 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
     .mob Stonesplinter Geomancer
     .mob Stonesplinter Digger
     .mob Berserk Trogg
     .itemStat 18,QUALITY,2
     .train 410001,1
-    .xp >22,1
     .xp <20,1
+    .xp >22,1
 step
     #completewith next
     .zone Wetlands >> Travel to the Wetlands
@@ -298,6 +302,7 @@ step
     .goto Wetlands,19.24,41.29,50,0
     .goto Wetlands,13.69,41.37,50,0
     .aura 408828 >>|cRXP_WARN_Attack enemies down to low health. Cast|r |T135963:0|t[Hammer of Justice] |cRXP_WARN_on them, then kill them whilst they're stunned 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
     .mob Young Wetlands Crocolisk
     .mob Fen Dweller
     .mob Bluegill Murloc
@@ -325,15 +330,15 @@ RXPGuides.RegisterGuide([[
 
 step
     +|cRXP_WARN_You should be at least level 20 in order to acquire|r |T133816:0|t[Engrave Gloves: Hand of Reckoning] |cRXP_WARN_in Westfall alone|r
-    >>|cRXP_WARN_You MUST be level 8 to equip the|r |T134916:0|t|cRXP_LOOT_[Libram of Justice]|r
+    >>|cRXP_WARN_You MUST be at least level 8 as it is the level requirement of equipping the|r |T134916:0|t|cRXP_LOOT_[Libram of Justice]|r
     >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves: Hand of Reckoning]
     .train 410001,1
     .xp >8,1
 step
-    #completewith LibramS
     +|cRXP_WARN_You should be at least level 20 in order to acquire|r |T133816:0|t[Engrave Gloves: Hand of Reckoning] |cRXP_WARN_in Westfall alone|r
 -- >>|cRXP_WARN_It is heavily recommended you get it in Loch Modan instead as it is a LOT easier and can be acquired at a lower level|r
     .train 410001,1
+    .xp <8,1
     .xp >20,1
 step << skip
     #completewith LibramS
@@ -390,8 +395,8 @@ step
     .mob Riverpaw Outrunner
     .itemStat 18,QUALITY,2
     .train 410001,1
-    .xp >15,1
     .xp <8,1
+    .xp >15,1
 step
     #loop
     .goto Westfall,69.71,73.41,40,0
@@ -408,8 +413,8 @@ step
     .mob Defias Highwayman
     .itemStat 18,QUALITY,2
     .train 410001,1
-    .xp >22,1
     .xp <15,1
+    .xp >22,1
 step
     .goto Duskwood,15.76,72.72,50,0
     .goto Duskwood,12.65,69.42,50,0
@@ -452,7 +457,7 @@ RXPGuides.RegisterGuide([[
 #next Hand of Reckoning - 14 (Loch Modan)
 
 step
-    +|cRXP_WARN_You MUST be at least level 4 in order to acquire|r |T133815:0|t[Engrave Chest: Horn of Lordaeron] |cRXP_WARN_due to it being the level requirement of|r |T135906:0|t[Blessing of Might]
+    +|cRXP_WARN_You MUST be at least level 4 in order to acquire|r |T133815:0|t[Engrave Chest: Horn of Lordaeron] |cRXP_WARN_as it is the level requirement of training|r |T135906:0|t[Blessing of Might]
     >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest: Horn of Lordaeron]
 --  >>|cRXP_WARN_It is NOT recommended to use|r |T133815:0|t[Engrave Chest: Horn of Lordaeron] |cRXP_WARN_over|r |T133815:0|t[Engrave Chest: Divine Storm] |cRXP_WARN_or|r |T133815:0|t[Engrave Chest: Seal of Martyrdom]
     .train 425618,1
@@ -539,17 +544,17 @@ RXPGuides.RegisterGuide([[
 
 step
     +|cRXP_WARN_You should be at least level 12 in order to acquire|r |T133815:0|t[Engrave Chest: Horn of Lordaeron] |cRXP_WARN_in Westfall alone|r
-    >>|cRXP_WARN_You MUST be at least level 4 in order to acquire|r |T133815:0|t[Engrave Chest: Horn of Lordaeron] |cRXP_WARN_due to it being the level requirement of|r |T135906:0|t[Blessing of Might]
+    >>|cRXP_WARN_You MUST be at least level 4 as it is the level requirement of training|r |T135906:0|t[Blessing of Might]
     >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest: Horn of Lordaeron]
 --  >>|cRXP_WARN_It is NOT recommended to use|r |T133815:0|t[Engrave Chest: Horn of Lordaeron] |cRXP_WARN_over|r |T133815:0|t[Engrave Chest: Divine Storm] |cRXP_WARN_or|r |T133815:0|t[Engrave Chest: Seal of Martyrdom]
     .train 425618,1
     .xp >4,1
 step
-    #completewith LibramS
     +|cRXP_WARN_You should be at least level 12 in order to acquire the|r |T133815:0|t[Engrave Chest: Horn of Lordaeron] |cRXP_WARN_in Westfall alone|r
 --  >>|cRXP_WARN_It is heavily recommended you get it in Loch Modan instead as it is a LOT easier|r
 --  >>|cRXP_WARN_It is NOT recommended to use|r |T133815:0|t[Engrave Chest: Horn of Lordaeron] |cRXP_WARN_over|r |T133815:0|t[Engrave Chest: Divine Storm] |cRXP_WARN_or|r |T133815:0|t[Engrave Chest: Seal of Martyrdom]
     .train 425618,1
+    .xp <4,1
     .xp >12,1
 step
     #completewith next
@@ -624,8 +629,8 @@ step
     .aura 408828 >>|cRXP_WARN_Cast|r |T135906:0|t[Blessing of Might] |cRXP_WARN_on 5 unique friendly players (including yourself) to gain the |r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
     .itemStat 18,QUALITY,2
     .train 425618,1
-    .xp >14,1
     .xp <4,1
+    .xp >14,1
 step
     .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Blessings]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest: Horn of Lordaeron]
     .use 208849
@@ -643,7 +648,7 @@ RXPGuides.RegisterGuide([[
 #next Rebuke - 10 (Stormwind)
 
 step
-    +|cRXP_WARN_You MUST be at least level 8 in order to acquire|r |T133815:0|t[Engrave Chest: Aegis] |cRXP_WARN_due to it being the level requirement of|r |T135949:0|t[Purify]
+    +|cRXP_WARN_You MUST be at least level 8 in order to acquire|r |T133815:0|t[Engrave Chest: Aegis] |cRXP_WARN_as it is the level requirement of training|r |T135949:0|t[Purify]
     >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest: Aegis]
     .train 425619,1
     .xp >8,1
@@ -720,7 +725,7 @@ RXPGuides.RegisterGuide([[
 #next Rebuke - 10 (Ironforge)
 
 step
-    +|cRXP_WARN_You MUST be at least level 8 in order to acquire|r |T133815:0|t[Engrave Chest: Aegis] |cRXP_WARN_due to it being the level requirement of|r |T135949:0|t[Purify]
+    +|cRXP_WARN_You MUST be at least level 8 in order to acquire|r |T133815:0|t[Engrave Chest: Aegis] |cRXP_WARN_as it is the level requirement of training|r |T135949:0|t[Purify]
     >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest: Aegis]
     .train 425619,1
     .xp >8,1
@@ -1330,7 +1335,7 @@ RXPGuides.RegisterGuide([[
 #next Beacon of Light - 25 (Reputation)
 
 step
-    +|cRXP_WARN_You MUST be at least level 24 in order to acquire|r |T134596:0|t[Engrave Pants: Exorcist] |cRXP_WARN_due to it being the level requirement of|r |T135983:0|t[Turn Undead]
+    +|cRXP_WARN_You MUST be at least level 24 in order to acquire|r |T134596:0|t[Engrave Pants: Exorcist] |cRXP_WARN_as it is the level requirement of training|r |T135983:0|t[Turn Undead]
     >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T134596:0|t[Engrave Pants: Exorcist]
     .train 416037,1
     .xp >24,1
@@ -1382,6 +1387,7 @@ step
     .goto Duskwood,22.95,40.55,50,0
     >>Kill |cRXP_ENEMY_Skeletal Fiends|r and |cRXP_ENEMY_Skeletal Horrors|r
     .aura 408828 >>|cRXP_WARN_Cast|r |T135983:0|t[Turn Undead] |cRXP_WARN_and then kill them with|r |T135903:0|t[Exorcism] |cRXP_WARN_5 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
     .mob Skeletal Fiend
     .mob Skeletal Horror
     .itemStat 18,QUALITY,2
@@ -1404,7 +1410,6 @@ RXPGuides.RegisterGuide([[
 #next Inspiration Exemplar - 6 (Elwynn Forest)
 
 step
-    #completewith LibramS
     +|cRXP_WARN_You should be at least level 25 in order to acquire|r |T134596:0|t[Engrave Pants: Avenger's Shield] |cRXP_WARN_in Redridge alone|r
     .train 410008,1
     .xp >25,1

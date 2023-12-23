@@ -386,9 +386,9 @@ step << !NightElf
 step << !NightElf
     .goto Wetlands,10.43,61.01,10,0
     .goto Wetlands,10.496,60.201
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Samor Festivus|r upstairs
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Samor Festivus|r upstairs
     .vendor >> |cRXP_BUY_Buy as many|r |T134831:0|t[Healing Potions] |cRXP_BUY_that are available|r
-    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_ Samor Festivus|r doesn't have any|r
+    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Samor Festivus|r doesn't have any|r
     .target Samor Festivus
 step << !NightElf
     .goto Wetlands,9.49,59.69
@@ -1083,7 +1083,7 @@ step << !NightElf Priest
     .target Jandria
 step << !NightElf Warrior
     .goto Darnassus,58.945,35.336
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Darnath Bladesinger|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darnath Bladesinger|r
     .trainer >> Train your class spells
     .target Darnath Bladesinger
 step << !NightElf Rogue

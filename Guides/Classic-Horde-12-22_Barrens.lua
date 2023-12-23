@@ -3081,7 +3081,7 @@ step << Rogue
     .dungeon DM
 step << Warlock
     .goto Undercity,48.47,45.42
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Zevrost|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zevrost|r
     .train 1014 >> Train your class spells
 	.target Zevrost
     .xp <18,1
@@ -3089,7 +3089,7 @@ step << Warlock
     .dungeon DM
 step << Warlock
     .goto Undercity,48.47,45.42
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Zevrost|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zevrost|r
     .train 706 >> Train your class spells
 	.target Zevrost
     .xp <20,1
@@ -3477,18 +3477,18 @@ step
     .mob Serena Bloodfeather
 step << Hunter
     .goto The Barrens,49.00,11.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Wenikee|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wenikee|r
     .turnin 3921 >> Turn in Wenikee Boltbucket
     .target Wenikee Boltbucket
 step << Hunter
     .goto The Barrens,48.12,5.42
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Torek|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torek|r
     .turnin 6541 >> Turn in Report to Kadrak
     .target Kadrak
 step << Hunter
     .goto Ashenvale,68.34,75.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Torek|r to start the escort
-    >>|cRXP_FRIENDLY_ Torek|r |cRXP_WARN_has a 5 minute respawn time|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torek|r to start the escort
+    >>|cRXP_FRIENDLY_Torek|r |cRXP_WARN_has a 5 minute respawn time|r
     .accept 6544 >> Accept Torek's Assault
     .target Torek
 step << Hunter
@@ -3496,9 +3496,9 @@ step << Hunter
     .goto Ashenvale,65.07,75.36,20,0
     .goto Ashenvale,64.28,75.33,10,0
     .goto Ashenvale,64.81,75.34
-    >>Follow |cRXP_FRIENDLY_ Torek|r
-    >>Let |cRXP_FRIENDLY_ Torek|r and his |cRXP_FRIENDLY_ Splintertree Raiders|r tank the |cRXP_ENEMY_Silverwing Warriors|r and |cRXP_ENEMY_Silverwing Sentinels|r
-    >>When you clear the building, run toward the Balcony. When |cRXP_ENEMY_Duriel Moonfire|r comes, let |cRXP_FRIENDLY_ Torek|r and his |cRXP_FRIENDLY_ Splintertree Raiders|r take aggro before you deal damage
+    >>Follow |cRXP_FRIENDLY_Torek|r
+    >>Let |cRXP_FRIENDLY_Torek|r and his |cRXP_FRIENDLY_Splintertree Raiders|r tank the |cRXP_ENEMY_Silverwing Warriors|r and |cRXP_ENEMY_Silverwing Sentinels|r
+    >>When you clear the building, run toward the Balcony. When |cRXP_ENEMY_Duriel Moonfire|r comes, let |cRXP_FRIENDLY_Torek|r and his |cRXP_FRIENDLY_Splintertree Raiders|r take aggro before you deal damage
     .complete 6544,1 --Take Silverwing Outpost
     .mob Silverwing Warrior
     .mob Silverwing Sentinel
@@ -3511,18 +3511,18 @@ step << Hunter
     .isQuestComplete 6544
 step << Hunter
     .goto Ashenvale,73.78,61.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Senani|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senani|r
     .turnin 6382 >> Turn in The Ashenvale Hunt
     .turnin 6383 >> Turn in The Ashenvale Hunt
     .target Senani Thunderheart
 step << Hunter
     .goto Ashenvale,73.18,61.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Vhulgra|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vhulgra|r
     .fp Splintertree Post >> Get the Splintertree Post flight path
     .target Vhulgra
 step << Hunter
     .goto Ashenvale,73.18,61.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Vhulgra|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vhulgra|r
     .fly Crossroads >> Fly to Crossroads
     .target Vhulgra
     .cooldown item,6948,<0

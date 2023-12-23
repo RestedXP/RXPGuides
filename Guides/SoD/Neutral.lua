@@ -428,14 +428,14 @@ step
     .train 424990,1 << Rogue
     .train 410096,1 << Shaman
     #label RuneRatchetGrizzby
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Grizzby|r and wait for the roleplay
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grizzby|r and wait for the roleplay
     .goto The Barrens,61.8,39.4
     .turnin 78625 >>Turn in Fish Oil
     .turnin 78266 >>Turn in Dark Iron Ordinance
     .turnin 78267 >>Turn in Shredder Turbochargers
     .target Grizzby
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Grizzby|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grizzby|r
     .vendor
     .use 210822 << Priest
     .use 210820 << Paladin
@@ -485,7 +485,7 @@ step
     .reputation 2587,friendly << Horde
     .reputation 2586,friendly << Alliance
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_ Supply Officer|r in the nearest city
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Supply Officer|r in the nearest city
     .goto Orgrimmar,51.6,64.6,-1 << Horde
     .goto Thunder Bluff,39.8,53.4,-1 << Horde
     .goto Undercity,64.6,38.2,-1 << Horde

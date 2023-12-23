@@ -315,17 +315,17 @@ step
 step
     .goto 37,43.10,52.17
     >>|cRXP_WARN_Repeated use of /sit or removing your gear increases the damage you take.|r
-    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_ Spirit Healer|r
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .isOnQuest 37112
 step
     .goto 37,41.71,64.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Bartlett the Brave|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bartlett the Brave|r
     .fp Goldshire >> Get the Goldshire Flight Path
 	.target Bartlett the Brave
     .isOnQuest 37112
 step
     .goto 37,42.11,65.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Marshal Dughan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .turnin 54 >>Turn in Report to Goldshire
     .accept 62 >>Accept The Fargodeep Mine
     .accept 26378 >>Accept Hero's Call: Westfall!
@@ -333,13 +333,13 @@ step
     .isQuestTurnedIn 26390
 step
     .goto 37,41.71,65.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Smith Argus|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smith Argus|r
     .accept 26393 >>Accept A Swift Message << Human
 	.target Smith Argus
     .isQuestTurnedIn 26390
 step
     .goto 37,41.71,64.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Bartlett the Brave|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bartlett the Brave|r
 	.turnin 26393 >>Turn in A Swift Message << Human
     .accept 26394 >>Accept Continue to Stormwind<< Human
 	.target Bartlett the Brave
@@ -348,7 +348,7 @@ step
     .goto 37,43.19,65.74,5,0
     .goto 37,43.26,66.1,5,0
     .goto 37,43.32,65.70
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ William Pestle|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
     .accept 60 >>Accept Kobold Candles
 	.target William Pestle
     .isQuestTurnedIn 26390
@@ -356,7 +356,7 @@ step
     #veteran
     #completewith Cooking
     .goto 37,43.77,65.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Innkeeper Farley|r. Buy |T132789:0|t[Moonberry Juice] from him.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Farley|r. Buy |T132789:0|t[Moonberry Juice] from him.
     .turnin 37112 >>Turn in Rest and Relaxation
     .collect 1645,5,29506,1 --Moonberry Juice (5)
     .home >>Set your Hearthstone to Lion's Pride Inn
@@ -365,7 +365,7 @@ step
     .dmf
 step
     .goto 37,43.77,65.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Innkeeper Farley|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Farley|r
     .turnin 37112 >>Turn in Rest and Relaxation
     .home >>Set your Hearthstone to Lion's Pride Inn
 	.target Innkeeper Farley
@@ -374,14 +374,14 @@ step
     #veteran
     #label Cooking
     .goto 37,44.37,65.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Tomas|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tomas|r
     .train 2550 >> Train Cooking
 	.target Tomas
     .isQuestTurnedIn 26390
     .dmf
 step
     .goto 37,42.14,67.25
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Remy "Two Times"|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r
     .accept 40 >>Accept A Fishy Peril
     .accept 47 >>Accept Gold Dust Exchange
 	.target Remy "Two Times"
@@ -389,7 +389,7 @@ step
 step
     #veteran
     .goto 37,41.95,67.16
-    .train 2259 >> Train |T4620669:0|tAlchemy from |cRXP_FRIENDLY_ Lien Farmer|r
+    .train 2259 >> Train |T4620669:0|tAlchemy from |cRXP_FRIENDLY_Lien Farmer|r
 	.skipgossip 47384,2,1,1
 	.target Lien Farmer
     .isQuestTurnedIn 26390
@@ -397,7 +397,7 @@ step
 step
     #veteran
     .goto 37,41.95,67.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Lien Farmer|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lien Farmer|r
     .train 45357 >> Train |T4620676:0|tInscription
 	.skipgossip 47384,3,6,2
 	.target Lien Farmer
@@ -406,7 +406,7 @@ step
 step
     #veteran
     .goto 37,41.89,67.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Tharynn Bouden|r. Buy the following items from him:
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharynn Bouden|r. Buy the following items from him:
     .collect 2604,1,29520,1 --Red Dye (1)
     .collect 6260,1,29520,1 --Blue Dye (1)
     .collect 2320,1,29520,1 --Coarse Thread (1)
@@ -431,7 +431,7 @@ step
     .goto 407,51.57,24.84,10,0
     .goto 407,55.83,53.02,15,0
     .goto 407,50.44,59.33
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Kae Ti|r and buy a |T133734:0|t[Ride Ticket Book] from her.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kae Ti|r and buy a |T133734:0|t[Ride Ticket Book] from her.
     *|cRXP_WARN_buy the cheaper version |cFFfa9602on the left in the window|r|r
     .collect 92788,1,92794,1 --Ride Ticket Book (1)
 	.target Kae Ti
@@ -469,7 +469,7 @@ step
 step
 	#veteran
     .goto 407,51.91,60.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Professor Paleo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Professor Paleo|r
     .turnin -29464 >>Turn in Tools of Divination
     .turnin -29451 >>Turn in The Master Strategist
     .turnin -29456 >>Turn in A Captured Banner
@@ -482,7 +482,7 @@ step
 step
     #veteran
     .goto 407,47.76,64.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Gelvas Grimegate|r and buy as many |T669449:0|t[Darkmoon Top Hats] from him as you can.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gelvas Grimegate|r and buy as many |T669449:0|t[Darkmoon Top Hats] from him as you can.
     .turnin 7905 >>Turn in The Darkmoon Faire
     .collect 171364,1,29506,1 --Darkmoon Top Hat (1)
 	.target Gelvas Grimegate
@@ -491,14 +491,14 @@ step
 step
     #fresh
     .goto 407,47.76,64.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Gelvas Grimegate|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gelvas Grimegate|r
     .turnin 7905 >>Turn in The Darkmoon Faire
 	.target Gelvas Grimegate
     .zoneskip 407,1
     .dmf
 step
     .goto 407,52.89,67.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Stamp Thunderhorn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stamp Thunderhorn|r
     .accept 29509 >>Accept Putting the Crunch in the Frog
 	.target Stamp Thunderhorn
     .zoneskip 407,1
@@ -515,7 +515,7 @@ step
 	.isOnQuest 29509
 step
     .goto 407,52.88,67.96
-	>>Use the |T237579:0|t[Breaded Frogs] near |cRXP_FRIENDLY_ Stamp Thunderhorn|r
+	>>Use the |T237579:0|t[Breaded Frogs] near |cRXP_FRIENDLY_Stamp Thunderhorn|r
 	.collect 72057,5,29509,1,-1 --Breaded Frog (5)
     .complete 29509,1 --5/5 Crunchy Frog
 	.use 72057 --Breaded Frog
@@ -524,14 +524,14 @@ step
 	.isOnQuest 29509
 step
     .goto 407,52.88,67.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Stamp Thunderhorn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stamp Thunderhorn|r
     .turnin 29509 >>Turn in Putting the Crunch in the Frog
 	.target Stamp Thunderhorn
     .zoneskip 407,1
     .dmf
 step
     .goto 407,50.54,69.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Sylannia|r and buy |T132792:0|t[Fizzy Faire Drinks] from her.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sylannia|r and buy |T132792:0|t[Fizzy Faire Drinks] from her.
     .accept 29506 >>Accept A Fizzy Fusion
     .collect 19299,5,29506,1 --Fizzy Faire Drinks (5)
 	.target Sylannia
@@ -548,14 +548,14 @@ step
     .dmf
 step
     .goto 407,50.53,69.56
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Sylannia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sylannia|r
     .turnin 29506 >>Turn in A Fizzy Fusion
 	.target Sylannia
     .zoneskip 407,1
     .dmf
 step
     .goto 407,53.23,75.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Sayge|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sayge|r
     .turnin 29445 >>Turn in An Intriguing Grimoire
     .accept 29515 >>Accept Writing the Future
 	.target Sayge
@@ -564,7 +564,7 @@ step
 	.isOnQuest 29445
 step
     .goto 407,53.23,75.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Sayge|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sayge|r
     .accept 29515 >>Accept Writing the Future
 	.target Sayge
     .zoneskip 407,1
@@ -588,7 +588,7 @@ step
 	.isOnQuest 29515
 step
     .goto 407,53.23,75.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Sayge|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sayge|r
     .turnin 29515 >>Turn in Writing the Future
 	.target Sayge
     .skipgossip
@@ -597,7 +597,7 @@ step
 step
     #veteran
     .goto 407,51.11,82.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Yebb Neblegear|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yebb Neblegear|r
     .turnin 29444 >>Turn in An Exotic Egg
 	.target Yebb Neblegear
     .zoneskip 407,1
@@ -623,20 +623,20 @@ step
     .dmf
 step
     .goto 37,41.95,67.16
-    .train 2366 >> Train |T4620675:0|tHerbalism from |cRXP_FRIENDLY_ Lien Farmer|r
+    .train 2366 >> Train |T4620675:0|tHerbalism from |cRXP_FRIENDLY_Lien Farmer|r
 	.skipgossip 47384,1,1,1
 	.target Lien Farmer
     .dmf
 step
     .goto 37,41.95,67.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Lien Farmer|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lien Farmer|r
     .train 2575 >> Train |T4620679:0|tMining
 	.skipgossip 47384,2,3,2
 	.target Lien Farmer
     .dmf
 step
 	#veteran
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Julia Stevens|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Julia Stevens|r.
     >>|cRXP_WARN_Skip this step if you don't have level 25 Pet Battle Pets.|r
     .goto 37,41.65,83.67
     .accept 31693 >>Accept Julia Stevens
@@ -651,7 +651,7 @@ step
 step
 	#veteran
     .goto 37,41.66,83.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Julia Stevens|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Julia Stevens|r
     .turnin 31693 >>Turn in Julia Stevens
     .target Julia Stevens
     .isQuestComplete 31693
@@ -698,7 +698,7 @@ step
 	.target Kobold Miner
 step
     .goto 37,34.66,84.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Ma Stonefield|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r
     .accept 88 >>Accept Princess Must Die!
 	.target Ma Stonefield
 step
@@ -718,7 +718,7 @@ step
 	.target Princess
 step
     .goto 37,34.66,84.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Ma Stonefield|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r
     .turnin 88 >>Turn in Princess Must Die!
 	.target Ma Stonefield
 step
@@ -733,7 +733,7 @@ step
 	.unitscan Grizzled Ben
     .isOnQuest 60
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_ Wanted Poster|r and |cRXP_FRIENDLY_ Deputy Rainer|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Wanted Poster|r and |cRXP_FRIENDLY_Deputy Rainer|r
     .accept 176 >>Accept WANTED: "Hogger"
     .goto 37,24.55,74.67
     .accept 11 >>Accept Riverpaw Gnoll Bounty
@@ -756,7 +756,7 @@ step
     .complete 176,1 --1/1 Dealt with "The Hogger Situation"
 step
     .goto 37,24.78,95.26
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_FRIENDLY_ Westfall Deed|r on the ground.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_FRIENDLY_Westfall Deed|r on the ground.
     .accept 184 >>Accept Furlbrow's Deed
 step
 	#label Armbands
@@ -785,13 +785,13 @@ step
 	.unitscan Gruff Swiftbite
 step
     .goto 37,24.23,74.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Deputy Rainer|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r
     .turnin 11 >>Turn in Riverpaw Gnoll Bounty
 	.target Deputy Rainer
 step
 	#veteran
     .goto 52,60.85,18.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Old MacDonald|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Old MacDonald|r.
     >>|cRXP_WARN_Skip this step if you don't have level 25 Pet Battle Pets.|r
     .accept 31780 >>Accept Old MacDonald
 	.target Old MacDonald
@@ -808,21 +808,21 @@ step
 step
 	#veteran
     .goto 52,61.04,18.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Old MacDonald|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Old MacDonald|r
     .turnin 31780 >>Turn in Old MacDonald
 	.target Old MacDonald
     .isQuestComplete 31780
 step
     .goto 52,60.05,19.28,5,0
     .goto 52,60.18,19.37
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Lieutenant Horatio Laine|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lieutenant Horatio Laine|r
     .turnin 184 >>Turn in Furlbrow's Deed
     .turnin 26378 >>Turn in Hero's Call: Westfall!
     .accept 26209 >>Accept Murder Was The Case That They Gave Me
 	.target Lieutenant Horatio Laine
 step
     .loop 25,52,58.56,16.21,59.18,18.16,58.12,19.58,57.31,18.33,58.56,16.21
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_ Homeless Citizens|r, |cRXP_FRIENDLY_ West Plains Drifters|r, and |cRXP_FRIENDLY_ Transients|r for |cRXP_LOOT_Clues|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Homeless Citizens|r, |cRXP_FRIENDLY_West Plains Drifters|r, and |cRXP_FRIENDLY_Transients|r for |cRXP_LOOT_Clues|r.
     >>|cRXP_WARN_Stay mounted and spam talk to them, ignore them if they turn Hostile|r
     .complete 26209,1 --1/1 Clue #1 obtained
     .complete 26209,2 --1/1 Clue #2 obtained
@@ -835,7 +835,7 @@ step
 step
     .goto 52,60.05,19.28,5,0
     .goto 52,60.18,19.37
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Lieutenant Horatio Laine|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lieutenant Horatio Laine|r
     .turnin 26209 >>Turn in Murder Was The Case That They Gave Me
     .accept 26213 >>Accept Hot On the Trail: The Riverpaw Clan
 	.target Lieutenant Horatio Laine
@@ -860,7 +860,7 @@ step
 	#label Horatio
     .goto 52,60.05,19.28,5,0
     .goto 52,60.18,19.37
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Lieutenant Horatio Laine|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lieutenant Horatio Laine|r
     .turnin 26213 >>Turn in Hot On the Trail: The Riverpaw Clan
     .target Lieutenant Horatio Laine
 step
@@ -868,11 +868,11 @@ step
     .hs >>Hearth to Lion's Pride Inn
 step
     .goto 37,43.32,65.70
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ William Pestle|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
     .turnin 60 >>Turn in Kobold Candles
     .target William Pestle
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Remy "Two Times"|r and |cRXP_FRIENDLY_ Marshal Dughan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r and |cRXP_FRIENDLY_Marshal Dughan|r
     .turnin 47 >>Turn in Gold Dust Exchange
     .goto 37,42.14,67.25
     .turnin 62 >>Turn in The Fargodeep Mine
@@ -885,7 +885,7 @@ step
 	.target Marshal Dughan
 	.isOnQuest 40
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Remy "Two Times"|r and |cRXP_FRIENDLY_ Marshal Dughan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r and |cRXP_FRIENDLY_Marshal Dughan|r
     .turnin 47 >>Turn in Gold Dust Exchange
     .goto 37,42.14,67.25
     .turnin 62 >>Turn in The Fargodeep Mine
@@ -897,7 +897,7 @@ step
 	.target Marshal Dughan
 step
     .goto 37,41.69,65.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Andrew Krighton|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andrew Krighton|r
 	.vendor >>Vendor and Repair
     .isOnQuest 35
 	.target Andrew Krighton
@@ -934,9 +934,9 @@ step
     .isOnQuest 35
 step
     .isOnQuest 35
-    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_ Spirit Healer|r
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Guard Thomas|r and the |cRXP_FRIENDLY_ Bounty Board|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r and the |cRXP_FRIENDLY_Bounty Board|r
     .turnin 35 >>Turn in Further Concerns
     .accept 37 >>Accept Find the Lost Guards
     .accept 52 >>Accept Protect the Frontier
@@ -966,17 +966,17 @@ step
 step
     .goto 37,75.71,86.29,30,0
     .goto 37,77.55,85.75
-    .deathskip >> Kill|cRXP_ENEMY_Murlocs|r and loot them for their |cRXP_LOOT_Fins|r |cRXP_WARN_while dying to them|r then respawn at the |cRXP_FRIENDLY_ Spirit Healer|r
+    .deathskip >> Kill|cRXP_ENEMY_Murlocs|r and loot them for their |cRXP_LOOT_Fins|r |cRXP_WARN_while dying to them|r then respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .isOnQuest 46
 step
     .goto 37,83.28,66.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Rallic Finn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rallic Finn|r
     .vendor 1198 >>Vendor and Repair
 	.target Rallic Finn
 	.isOnQuest 52
 step
     .goto 37,79.46,68.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Sara Timberlain|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sara Timberlain|r
     .accept 83 >>Accept Fine Linen Goods
 	.target Sara Timberlain
 step
@@ -988,7 +988,7 @@ step
     .accept 123 >>Accept The Collector
 	.target James Clark
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Supervisor Raelen|r and |cRXP_FRIENDLY_ Marshal Patterson|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Supervisor Raelen|r and |cRXP_FRIENDLY_Marshal Patterson|r
     .accept 5545 >>Accept A Bundle of Trouble
     .goto 37,81.38,66.11
     .turnin 123 >>Turn in The Collector
@@ -1013,7 +1013,7 @@ step
 step
     #label LostGuards
     .goto 37,72.65,60.33
-    >>Interact with the |cRXP_FRIENDLY_ Carcass|r |cFFfa9602on the ground.|r
+    >>Interact with the |cRXP_FRIENDLY_Carcass|r |cFFfa9602on the ground.|r
     .turnin 37 >>Turn in Find the Lost Guards
     .accept 45 >>Accept Discover Rolf's Fate
 step
@@ -1056,7 +1056,7 @@ step
 	.target Young Forest Bear
 step
     .goto 37,79.80,55.51
-    >>Interact with the |cRXP_FRIENDLY_ Carcass|r |cFFfa9602on the ground.|r
+    >>Interact with the |cRXP_FRIENDLY_Carcass|r |cFFfa9602on the ground.|r
     .turnin 45 >>Turn in Discover Rolf's Fate
     .accept 71 >>Accept Report to Thomas
  step
@@ -1075,11 +1075,11 @@ step
 step
     #completewith next
     .goto 37,77.65,57.70
-    .deathskip >>Die and respawn at the |cRXP_FRIENDLY_ Spirit Healer|r.
+    .deathskip >>Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r.
     >>|cRXP_WARN_Skip this if you're not low on health.|r
 step
     .goto 37,73.97,72.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Thomas|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thomas|r
     .turnin 46,1 >>Turn in Bounty on Murlocs
     .turnin 52 >>Turn in Protect the Frontier
     .accept 59 >>Accept Cloth and Leather Armor
@@ -1121,22 +1121,22 @@ step
 step
     .goto 37,75.71,86.29,30,0
     .goto 37,77.55,85.75
-    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_ Spirit Healer|r
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .isOnQuest 83
 step
     .goto 37,83.28,66.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Rallic Finn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rallic Finn|r
     .vendor 1198 >>Vendor and Repair
 	.target Rallic Finn
 	.isOnQuest 59
 step << !DarkIronDwarf !KulTiran !LightforgedDraenei !Mechagnome !VoidElf
     .goto 37,81.81,66.49,0,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Goss the Swift|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Goss the Swift|r
     .fp Eastvale Logging Camp >> Get the Eastvale Logging Camp flight path
 	.target Goss the Swift
     .isOnQuest 147
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Marshal Patterson|r and |cRXP_FRIENDLY_ Supervisor Raelen|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Patterson|r and |cRXP_FRIENDLY_Supervisor Raelen|r
     .turnin 147 >>Turn in Manhunt
     .goto 37,81.86,66.04
     .turnin 5545 >>Turn in A Bundle of Trouble
@@ -1145,7 +1145,7 @@ step
 	.target Supervisor Raelen
 step
     .goto 37,79.46,68.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Sara Timberlain|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sara Timberlain|r
     .turnin 59 >>Turn in Cloth and Leather Armor
     .turnin 83 >>Turn in Fine Linen Goods
 	.target Sara Timberlain

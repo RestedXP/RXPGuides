@@ -50,7 +50,7 @@ RXPGuides.RegisterGuide([[
 step << Orc
     #season 2
     .goto Durotar,40.65,68.52
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Nartok|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
     .accept 77586 >>Accept Stolen Power
     .target Nartok
 step
@@ -67,7 +67,7 @@ step
 step << Orc
     #season 2
     .goto Durotar,42.51,69.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Mai'ah|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mai'ah|r
     .turnin 77586 >>Turn in Stolen Power
     .target Nartok
 
@@ -87,7 +87,7 @@ RXPGuides.RegisterGuide([[
 step << Undead
     #season 2
     .goto Tirisfal Glades,30.91,66.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Maximillion|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maximillion|r
     .accept 77672 >>Accept The Lost Rune
     .target Maximillion
 step
@@ -104,7 +104,7 @@ step
 step << Undead
     #season 2
     .goto Tirisfal Glades,30.91,66.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Maximillion|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maximillion|r
     .turnin 77672 >>Turn in The Lost Rune
     .target Maximillion
 
@@ -134,7 +134,7 @@ step
     .mob Gazz'uz
 step
     .train 403920,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Darmak Bloodhowl|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darmak Bloodhowl|r
     .goto Durotar,54.6,41.6
     .collect 205022,1
     .skipgossip 208226,1
@@ -167,7 +167,7 @@ step
     .mob Maggot Eye
 step
     .train 403920,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Denton Bleakway|r in Undercity
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denton Bleakway|r in Undercity
     .goto Undercity,84.2,25.8
     .collect 205022,1
     .skipgossip 208682,1
@@ -190,7 +190,7 @@ step
     .zone Tirisfal Glades >>Travel to the Tirisfal Glades
 step
     .train 416009,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tInteract with the |cRXP_FRIENDLY_ Dead Acolyte|r. Open |T133625:0|t[Acolyte's Knapsack]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tInteract with the |cRXP_FRIENDLY_Dead Acolyte|r. Open |T133625:0|t[Acolyte's Knapsack]
     .goto Tirisfal Glades,76.61,44.87
     .use 205364
     .collect 205181,1
@@ -199,7 +199,7 @@ step
     .mob Dead Acolyte
 step
     .train 416009,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Rupert Boch|r upstairs in the inn.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rupert Boch|r upstairs in the inn.
     .goto Tirisfal Glades,61.6,52.4
     .collect 205182,1
     .skipgossip 2127,2
@@ -212,7 +212,7 @@ step
     .collect 205183,1
 step
     .train 416009,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Carentin Halgar|r in Undercity
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carentin Halgar|r in Undercity
     .goto Undercity,85.0,25.6
     .collect 205215,1
     .skipgossip 5675,1
@@ -555,7 +555,7 @@ step
     .goto Redridge Mountains,80.2,49.5
 step << Horde
     .train 403938,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Doan Karhan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doan Karhan|r
     *|cRXP_WARN_Skip this step if you're traveling through The Barrens|r
     .goto The Barrens,49.2,57.2
     .accept 1740 >>Accept The Orb of Soran'ruk
@@ -575,7 +575,7 @@ step
     .zone The Barrens >>Travel to The Barrens
 step
     .train 403938,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Doan Karhan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doan Karhan|r
     .goto The Barrens,49.2,57.2
     .accept 1740 >>Accept The Orb of Soran'ruk
     .target Doan Karhan
@@ -599,7 +599,7 @@ step
     .zone The Barrens >>Travel to The Barrens
 step
     .train 403938,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Doan Karhan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doan Karhan|r
     .goto The Barrens,49.2,57.2
     .turnin 1740 >>Turn in The Orb of Soran'ruk
     .accept 78680 >>Accept Rumors Abound
@@ -640,7 +640,7 @@ step
     .mob Searing Infernal
 step
     .train 403938,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Doan Karhan|r to get the |T134419:0|t[|cRXP_FRIENDLYRune of Metamorphosis|r]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doan Karhan|r to get the |T134419:0|t[|cRXP_FRIENDLYRune of Metamorphosis|r]
     .goto The Barrens,49.2,57.2
     .turnin 78684 >>Turn in Mysterious Traveler
     .turnin 78702 >>Turn in Raszel Ander

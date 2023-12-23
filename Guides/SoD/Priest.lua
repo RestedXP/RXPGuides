@@ -111,7 +111,7 @@ RXPGuides.RegisterGuide([[
 step << Priest
     #season 2
     .goto Durotar,42.36,68.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Ken'jai|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken'jai|r
     .accept 77642 >>Accept Wisdom of the Loa
     .target Ken'jai
 step << Priest
@@ -125,7 +125,7 @@ step << Priest
 step << Priest
     #season 2
     .goto Durotar,42.36,68.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Ken'jai|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken'jai|r
     .turnin 77642 >>Turn in Wisdom of the Loa
     .target Ken'jai
 
@@ -145,7 +145,7 @@ RXPGuides.RegisterGuide([[
 step << Priest
     #season 2
     .goto Tirisfal Glades,31.11,66.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Duesten|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duesten|r
     .accept 77670 >>Accept Meditation on Undeath
     .target Dark Cleric Duesten
 step << Priest
@@ -157,7 +157,7 @@ step << Priest
 step << Priest
     #season 2
     .goto Tirisfal Glades,31.11,66.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Duesten|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duesten|r
     .turnin 77670 >>Turn in Meditation on Undeath
     .target Dark Cleric Duesten
 
