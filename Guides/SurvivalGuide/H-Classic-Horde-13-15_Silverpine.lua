@@ -201,7 +201,6 @@ step
 step
     #label Nightlash
     .goto Silverpine Forest,45.44,21.01
-    .loop 25,Silverpine Forest,46.26,19.11,46.48,19.77,46.61,21.59,46.01,22.75,44.20,22.52,44.35,21.08,44.49,19.54,45.23,19.36
     >>Kill |cRXP_ENEMY_Rothide Gnolls|r around The Dead Field until |cRXP_ENEMY_Nightlash|r spawns. Kill and loot her for her |cRXP_LOOT_Essence|r
     >>|cRXP_WARN_They are immune to fear!|r << Priest/Warlock
     .complete 437,1 --Enter the Dead Fields (1)
@@ -279,14 +278,14 @@ step << !Mage !Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwyn|r
     >>|cRXP_BUY_Buy|r |T134532:0|t[Red-speckled Mushrooms] |cRXP_BUY_from her|r
     .vendor >> Vendor trash
-    .collect 4605,20,421,1 --Red-speckled Mushroom (20)
+    .collect 4605,20,423,1 --Red-speckled Mushroom (20)
     .target Gwyn Farrow
 step
     .goto Silverpine Forest,43.98,39.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwyn|r
-    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman/Druid
+    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Warlock/Priest/Shaman/Druid
     .vendor >> |cRXP_BUY_Buy|r |T134830:0|t[Lesser Healing Potions] |cRXP_BUY_from him if they're up|r
-    .collect 1179,20,421,1 << Mage/Warlock/Priest/Shaman/Druid --Ice Cold Milk (20)
+    .collect 1179,20,421,1 << Warlock/Priest/Shaman/Druid --Ice Cold Milk (20)
     .target Edwin Harly
 step << Warlock/Mage/Priest
     .goto Silverpine Forest,44.80,39.24
@@ -320,21 +319,25 @@ step << Warlock/Mage/Priest
     +Equip the |T132491:0|t[Wise Man's Belt]
     .use 4786
     .itemcount 4786,1
+    .xp <15,1
 step << Hunter
     #completewith Shackles
     +Equip the |T135490:0|t[Fine Longbow]
     .use 11304
     .itemcount 11304,1
+    .xp <14,1
 step << Hunter/Rogue
     #completewith Shackles
     +Equip the |T132539:0|t[Agile Boots]
     .use 4788
     .itemcount 4788,1
+    .xp <15,1
 step << Shaman/Warrior/Druid
     #completewith Shackles
     +Equip the |T132539:0|t[Agile Boots]
     .use 4788
     .itemcount 4788,1
+    .xp <15,1
 step << Shaman/Warrior/Druid
     #completewith Shackles
     +Equip the |T132537:0|t[Stable Boots]

@@ -1680,6 +1680,12 @@ step
     .goto Durotar,59.64,58.44,8,0
     .goto Durotar,59.55,57.89,8,0
     .goto Durotar,59.29,57.89,8 >> Move toward the second floor of the keep
+step << Priest
+    #season 2
+    #completewith ScrapsFinished
+    >>Kill |cRXP_ENEMY_Sailors|r and |cRXP_ENEMY_Marines|r. Loot them for the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpose|r]
+    .collect 205940,1 --Memory of a Dark Purpose (1)
+    .train 425216,1
 step
     #completewith AgedEnvelope
     >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r
@@ -1722,6 +1728,7 @@ step
     .mob Kul Tiras Sailor
     .mob Kul Tiras Marine
 step
+    #label ScrapsFinished
     .goto Durotar,57.65,58.52,30,0
     .goto Durotar,57.36,56.59,30,0
     .goto Durotar,58.10,55.52,30,0
@@ -1733,6 +1740,34 @@ step
     .complete 791,1 --Canvas Scraps (8)
     .mob Kul Tiras Sailor
     .mob Kul Tiras Marine
+step << Priest
+    #season 2
+    .goto Durotar,57.65,58.52,30,0
+    .goto Durotar,57.36,56.59,30,0
+    .goto Durotar,58.10,55.52,30,0
+    .goto Durotar,58.54,53.68,30,0
+    .goto Durotar,56.54,54.52,30,0
+    .goto Durotar,56.37,58.35,30,0
+    .goto Durotar,58.99,58.30
+    >>Kill |cRXP_ENEMY_Sailors|r and |cRXP_ENEMY_Marines|r. Loot them for the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpose|r]
+    .collect 205940,1 --Memory of a Dark Purpose (1)
+    .train 425216,1
+    .mob Kul Tiras Sailor
+    .mob Kul Tiras Marine
+step << Priest
+    #season 2
+    #completewith next
+    .goto Durotar,55.32,72.66
+    .emote KNEEL,208309
+    .aura 417316 >>Kneel before the |cRXP_PICK_Loa Altar|r and talk to the |cRXP_FRIENDLY_Serpent Loa|r to get the |T136077:0|t[Meditation on the Loa] buff
+    .skipgossip 208307,1
+    .target Serpent Loa
+    .train 425216,1
+step << Priest
+    #season 2
+    .use 205940
+    .itemcount 205940,1
+    .train 425216 >>|cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of Dark Purpose|r] |cRXP_WARN_to train|r |T237514:0|t[Void Plague]
 step << !Priest !Mage
     #era
     .goto Durotar,59.02,50.24,50,0
@@ -2097,6 +2132,20 @@ step
     .complete 826,2 --Voodoo Troll (8)
     .mob Hexed Troll
     .mob Voodoo Troll
+step << Priest
+    #season 2
+    #completewith Fur
+    >>Kill the |cRXP_ENEMY_Voodoo Trolls|r. Loot them for |T135975:0|t[cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r]
+    .collect 205947,1 --Prophecy of a Desecrated Citadel (1)
+    .mob Voodoo Troll
+    .train 402852,1
+step << Mage
+    #season 2
+    #completewith ZalazaneKill
+    >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for the |cRXP_LOOT_|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r]|r
+    .collect 203753,1
+    .mob Zalazane
+    .train 401765,1
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for his |cRXP_LOOT_Head|r
@@ -2110,12 +2159,25 @@ step
     >>Loot one of the |cRXP_LOOT_Skulls|r on the ground
     .complete 808,1 --Minshina's Skull (1)
 step
+    #label ZalazaneKill
     .goto Durotar,67.4,87.8
     >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for his |cRXP_LOOT_Head|r
     >>|cRXP_WARN_Save your|r |T136026:0|t[Earth Shock] |cRXP_WARN_for when he casts|r |T136052:0|t[Healing Wave] << Shaman
     >>|cRXP_WARN_Save your|r |T132155:0|t[Gouge] |cRXP_WARN_for when he casts|r |T136052:0|t[Healing Wave] << Rogue
     .complete 826,3 --Zalazane's Head (1)
     .mob Zalazane
+step << Mage
+    #season 2
+    .goto Durotar,67.4,87.8
+    >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for the |cRXP_LOOT_|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r]|r
+    .collect 203753,1
+    .mob Zalazane
+    .train 401765,1
+step << Mage
+    #season 2
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item
+    .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] |cRXP_WARN_to learn|r |T236227:0|t[Fingers of Frost]
+    .use 203753
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Tigers|r. Loot them for their |cRXP_LOOT_Fur|r
@@ -2129,6 +2191,13 @@ step
     .complete 826,2 --Voodoo Troll (8)
     .mob Hexed Troll
     .mob Voodoo Troll
+step << Priest
+    #season 2
+    .loop 25,Durotar,67.23,88.76,66.52,87.74,65.94,86.72,65.90,84.04,65.88,82.85,67.38,82.61,68.42,82.43,68.50,84.32,68.47,86.77,67.23,88
+    >>Kill the |cRXP_ENEMY_Voodoo Trolls|r. Loot them for |T135975:0|t[cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r]
+    .collect 205947,1 --Prophecy of a Desecrated Citadel (1)
+    .mob Voodoo Troll
+    .train 402852,1
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Crawlers|r and |cRXP_ENEMY_Makruras|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r
@@ -2204,8 +2273,22 @@ step
     .target Master Gadrin
     .target Master Vornal
     .target Vel'rin Fang
+step << Priest
+    #season 2
+    .emote KNEEL,208309
+    .goto Durotar,55.32,72.66
+    .skipgossip 208307,1
+    .aura 417316 >>Kneel before the |cRXP_PICK_Loa Altar|r and talk to the |cRXP_FRIENDLY_Serpent Loa|r to get the |T136077:0|t[Meditation on the Loa] buff
+    .train 402852,1
+step << Priest
+    #season 2
+    #completewith QuilboarsScouts
+    .aura 418459 >>|cRXP_WARN_Now you have to find an Undead Priest with a Loa buff. You have to kneel before him and he has to /pray for you.|r
+    .use 205947
+    .train 402852 >>|cRXP_WARN_Use the|r |T135975:0|t[cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] |cRXP_WARN_to train|r |T237570:0|t[Homunculi]
+    .itemcount 205947,1
 step
-    #completewith Stolensupplies
+    #completewith QuilboarsScouts
     +|cRXP_WARN_Bind your|r |T133728:0|t[Faintly Glowing Skull] |cRXP_WARN_and|r |T134712:0|t[Really Sticky Glue]|cRXP_WARN_. Save them for emergency situations|r
 step << Warrior
     #season 2
@@ -2227,6 +2310,7 @@ step << Warrior
     .mob Razormane Scout
     .train 403475,1
 step
+    #label QuilboarsScouts
     .goto Durotar,50.21,50.78,30,0
     .goto Durotar,50.18,49.23,30,0
     .goto Durotar,49.48,49.14,30,0
@@ -2258,10 +2342,6 @@ step << Hunter
     .loop 25,Durotar,47.52,48.67,46.12,45.47,43.65,43.91,41.68,44.69,41.00,46.13,42.47,48.50,44.21,49.68,47.17,49.44,47.52,48.67
     .xp 9+3660 >> Grind to 3660+/6500xp
 step << Hunter
-    #phase 3-6
-    .loop 25,Durotar,47.52,48.67,46.12,45.47,43.65,43.91,41.68,44.69,41.00,46.13,42.47,48.50,44.21,49.68,47.17,49.44,47.52,48.67
-    .xp 9+2440 >> Grind to 2440+/6500xp
-step << Hunter
     #softcore
     #completewith RazorTurnins2
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r, or run to Razor Hill
@@ -2279,7 +2359,6 @@ step << Hunter
     .goto Durotar,51.95,43.50
     .target Cook Torka
     .target Gar'Thok
-    .isQuestComplete 837
 step << Hunter
     .goto Durotar,51.85,43.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r
@@ -2289,7 +2368,7 @@ step << Hunter
 step << Hunter
     .goto Durotar,52.97,41.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ghrawt|r
-    .collect 2515,1200,837,1 << Hunter --Sharp Arrow (1200)
+    .collect 2515,1200,6082,1 << Hunter --Sharp Arrow (1200)
     .target Ghrawt
     .itemcount 2515,<600 << Hunter
 step << Hunter
@@ -3218,6 +3297,12 @@ step << !Warrior !Shaman !Hunter
     .goto Durotar,56.11,27.94,50,0
     .goto Durotar,53.18,29.15,50 >> Travel toward Dustwind Cave
     .isQuestTurnedIn 828
+step << Mage
+    #season 2
+    #completewith next
+    >>Kill |cRXP_ENEMY_Burning Blade Orcs|r inside the Skull Rock Cave. Loot them for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF|r]
+    .collect 203752,1 --Spell Notes: MILEGIN VALF (1)
+    .train 401768,1
 step << !Warrior !Shaman !Hunter
     .goto Durotar,53.18,29.15,20,0
     .goto Durotar,52.70,27.97,12,0
@@ -3232,6 +3317,23 @@ step << !Warrior !Shaman !Hunter
     .mob Burning Blade Neophyte
     .mob Burning Blade Cultist
     .isQuestTurnedIn 828
+step << Mage
+    #season 2
+    .goto Durotar,53.18,29.15,20,0
+    .goto Durotar,52.70,27.97,12,0
+    .goto Durotar,53.05,27.87,12,0
+    .goto Durotar,53.14,27.24,12,0
+    .goto Durotar,52.84,26.80,12,0
+    .goto Durotar,52.07,26.85,12,0
+    .goto Durotar,52.70,27.97
+    >>Kill |cRXP_ENEMY_Burning Blade Orcs|r inside the Skull Rock Cave. Loot them for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF|r]
+    .collect 203752,1 --Spell Notes: MILEGIN VALF (1)
+    .train 401768,1
+step
+    #season 2
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
+    .train 401768 >>|cRXP_WARN_Use|r|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF|r] |cRXP_WARN_to learn|r |T135820:0|t[Living Flame]
+    .use 203752
 step << Warrior/Shaman/Hunter
     #era/som
     #completewith Gazzuz

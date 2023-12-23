@@ -627,7 +627,7 @@ step << Tauren
 step
     .goto The Barrens,55.70,27.30,20,0
     .goto The Barrens,55.78,20.00
-    .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. If it's not up you'll get it later
+    .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. Wait for the respawn if it's not up
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Accept Chen's Empty Keg
 step
@@ -648,6 +648,18 @@ step
     >>Kill |cRXP_ENEMY_Kreenig Snarlsnout|r. Loot him for his |cRXP_LOOT_Tusk|r
     .complete 872,3 --Kreenig Snarlsnout's Tusk (1)
     .mob Kreenig Snarlsnout
+step << Warlock
+    .train 403932,1
+    >>|cRXP_WARN_Go to the Altar of Thorns|r. Cast |T136126:0|t[Life Tap] until you're almost dying. Then cast |T136168:0|t[Health Funnel] on your pet to die and get |T134419:0|t[|cRXP_FRIENDLY_Rune of Channeling|r]
+    *|cRXP_WARN_You will be revived immediately after dying|r
+    .goto The Barrens,58.2,26.7
+    .cast 1454
+    .cast 735
+    .collect 208750,1
+step << Warlock
+    .use 208750
+    .itemcount 208750,1
+    .train 403932 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Channeling|r] |cRXP_WARN_to train|r |T136168:0|t[Master Channeler]
 step
     #completewith next
     .goto The Barrens,56.75,24.69,50,0
@@ -1663,10 +1675,11 @@ step << Druid
     .goto Orgrimmar,55.59,62.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thathung|r
     >>|cRXP_BUY_Buy a|r |T134237:0|t[Kolkar Booty Key] |cRXP_BUY_from the Auction House if possible|r
-    >>|cRXP_WARN_You will need this to obtain|r |T132942:0|t[|cRXP_FRIENDLY_Ferocious Idol|r] |cRXP_WARN_for|r |T236167:0|t[Savage Roar]
+    >>|cRXP_WARN_You will need this to obtain|r |T132942:0|t[|cRXP_FRIENDLY_Ferocious Idol|r] |cRXP_WARN_for|r |T236167:0|t[Savage Roar] << Druid
     .collect 5020,1 --Kolkar Booty Key (1)
 	.target Auctioneer Thathung
-    .train 407988,1
+    .itemcount 208689,<1,1 << Druid
+    .train 407988,1 << Druid
 step
     #completewith FoodandWater2
     .hs >> Hearth to The Crossroads
@@ -1958,6 +1971,7 @@ step << Druid
     .collect 5020,1 --Kolkar Booty Key (1)
     .mob Kolkar Wrangler
     .mob Kolkar Stormer
+    .itemcount 208689,<1,1
     .train 407988,1
 step << Druid
     #season 2
@@ -1965,6 +1979,7 @@ step << Druid
     >>Open a |cRXP_PICK_Kolkar Booty|r chest for |T132942:0|t[|cRXP_FRIENDLY_Ferocious Idol|r]
     .collect 5020,1 --Kolkar Booty Key (1)
     .collect 208689,1 --Ferocious Idol (1)
+    .itemcount 208689,<1,1
     .train 407988,1
 step << Druid
     #season 2
@@ -1974,8 +1989,8 @@ step << Druid
     .itemcount 208689,1
     .train 407988,1
 step << Druid
-    #completewith Nest
     #season 2
+    #completewith Nest
     .train 407988 >>|cRXP_WARN_Deal 20 instances of bleeding damage from|r |T132152:0|t[Rip] |cRXP_WARN_or|r |T132122:0|t[Rake] |cRXP_WARN_to humanoids, then use the|r |T132942:0|t[|cRXP_FRIENDLY_Ferocious Idol|r] |cRXP_WARN_again to learn|r |T236167:0|t[Savage Roar]
     .use 208689
     .itemcount 208689,1
@@ -2797,12 +2812,25 @@ step
     >>Kill |cRXP_ENEMY_Oasis Snapjaws|r in and around the lake. Loot them for their |cRXP_LOOT_Shells|r
     .complete 880,1 --Altered Snapjaw Shell (8)
     .mob Oasis Snapjaw
+step << Priest
+    #season 2
+    #loop
+    .goto The Barrens,54.8,35.6,0
+    .goto The Barrens,58.8,37.6,0
+    .goto The Barrens,54.8,35.6,40,0
+    .goto The Barrens,58.8,37.6,40,0
+    >>Use |T135894:0|t[Dispel Magic] on the |cRXP_ENEMY_Desert Mirage|r. Loot it for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Demise|r]
+    *|cRXP_WARN_It's a green ghost which patrolls around. Use the RestedXP target macro to target it.|r
+    .collect 205932,1 -- Prophecy of a King's Demise (1)
+    .train 402849,1
+    .mob Desert Mirage
 step
     #completewith next
     >>Kill any |cRXP_ENEMY_Zhevra|r. Loot it for a |cRXP_LOOT_Fresh Zhevra Carcass|r
 	.collect 10338,1 --Collect Fresh Zhevra Carcass
     .mob Zhevra Charger
 step
+    #label IshamuhalesFang
     .goto The Barrens,59.87,30.41
     .use 10338 >>Use the |T134368:0|t[|cRXP_LOOT_Fresh Zhevra Carcass|r] at the dead tree to summon |cRXP_ENEMY_Ishamuhale|r. Kill and loot him for his |cRXP_LOOT_Fang|r
     >>|cRXP_WARN_The Carcass only has a 30 minute duration!|r

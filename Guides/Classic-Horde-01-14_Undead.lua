@@ -1018,13 +1018,22 @@ step << Rogue
     .mob Tirisfal Farmer
     .mob Tirisfal Farmhand
     .train 400095,1
-step << Rogue
+step << Rogue/Mage/Priest
     #season 2
     #completewith next
-    >>Pick Pocket or kill |cRXP_ENEMY_Scarlet Warriors|r. Loot them for |T134327:0|t[|cRXP_LOOT_Top-Right Map Piece|r]
-    >>|cRXP_WARN_Any of the Scarlet Humanoids in Tirisfal can drop the Map Piece|r
-    .collect 208035,1 --Top-Right Map Piece (1)
-    .train 400095,1
+    >>Pick Pocket or kill |cRXP_ENEMY_Scarlet Warriors|r. Loot them for |T134327:0|t[|cRXP_LOOT_Top-Right Map Piece|r] << Rogue
+    >>Kill |cRXP_ENEMY_Scarlet Warriors|r. Loot them for |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF|r] << Mage
+    >>Kill |cRXP_ENEMY_Scarlet Warriors|r. Loot them for|T135975:0|t[cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] << Priest
+    >>|cRXP_WARN_Any of the Scarlet Humanoids in Tirisfal can drop the Map Piece|r << Rogue
+    >>|cRXP_WARN_Any of the Scarlet Humanoids in Tirisfal can drop the Spell Note|r << Mage
+    >>|cRXP_WARN_Any of the Scarlet Humanoids in Tirisfal can drop the Prophecy|r << Priest
+    .collect 208035,1 << Rogue --Top-Right Map Piece (1)
+    .collect 203752,1 << Mage --Spell Notes: MILEGIN VALF (1)
+    .collect 205947,1 << Priest --Prophecy of a Desecrated Citadel (1)
+    .mob Scarlet Warrior
+    .train 400095,1 << Rogue
+    .train 401768,1 << Mage
+    .train 402852,1 << Priest
 step
     #loop
     .goto Tirisfal Glades,31.78,51.36,0
@@ -1043,7 +1052,7 @@ step
     >>|cRXP_WARN_Kill|r |cRXP_ENEMY_Scarlet Warriors|r |cRXP_WARN_. Be careful as they have 50% increased parry for 8 seconds after they do their defense stance animation|r  << Rogue/Warrior
     .complete 427,1 --Scarlet Warrior (10)
     .mob Scarlet Warrior
-step << Rogue
+step << Rogue/Mage/Priest
     #season 2
     #loop
     .goto Tirisfal Glades,31.78,51.36,0
@@ -1058,11 +1067,40 @@ step << Rogue
     .goto Tirisfal Glades,33.73,45.29,50,0
     .goto Tirisfal Glades,34.10,47.88,50,0
     .goto Tirisfal Glades,33.73,49.34,50,0
-    >>Pick Pocket or kill |cRXP_ENEMY_Scarlet Warriors|r. Loot them for |T134327:0|t[|cRXP_LOOT_Top-Right Map Piece|r]
-    >>|cRXP_WARN_Any of the Scarlet Humanoids in Tirisfal can drop the Map Piece|r
-    .collect 208035,1 --Top-Right Map Piece (1)
+    >>Pick Pocket or kill |cRXP_ENEMY_Scarlet Warriors|r. Loot them for |T134327:0|t[|cRXP_LOOT_Top-Right Map Piece|r] << Rogue
+    >>Kill |cRXP_ENEMY_Scarlet Warriors|r. Loot them for |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF|r] << Mage
+    >>Kill |cRXP_ENEMY_Scarlet Warriors|r. Loot them for|T135975:0|t[cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] << Priest
+    >>|cRXP_WARN_Any of the Scarlet Humanoids in Tirisfal can drop the Map Piece|r << Rogue
+    >>|cRXP_WARN_Any of the Scarlet Humanoids in Tirisfal can drop the Spell Note|r << Mage
+    >>|cRXP_WARN_Any of the Scarlet Humanoids in Tirisfal can drop the Prophecy|r << Priest
+    .collect 208035,1 << Rogue --Top-Right Map Piece (1)
+    .collect 203752,1 << Mage --Spell Notes: MILEGIN VALF (1)
+    .collect 205947,1 << Priest --Prophecy of a Desecrated Citadel (1)
     .mob Scarlet Warrior
-    .train 400095,1
+    .train 400095,1 << Rogue
+    .train 401768,1 << Mage
+    .train 402852,1 << Priest
+step << Mage
+    #season 2
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
+    .train 401768 >>|cRXP_WARN_Use|r|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF|r] |cRXP_WARN_to learn|r |T135820:0|t[Living Flame]
+    .use 203752
+step << Mage/Priest
+    #season 2
+    .goto Tirisfal Glades,25.6,48.2
+    >>Kill |cRXP_ENEMY_Gillgar|r. Loot him for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] << Mage
+    >>Kill |cRXP_ENEMY_Gillgar|r. Loot him for the |T136222:0|t[|cRXP_FRIENDLY_Memory of Dark Purpose|r] << Priest
+    >>|cRXP_WARN_This is a level 7 elite and not easy to kill. Skip him for now if it's too hard|r
+    .collect 203753,1 << Mage --Spell Notes: RING SEFF OSTROF (1)
+    .collect 205940,1 << Priest --Memory of Dark Purpose (1)
+    .mob Gillgar
+    .train 401765,1 << Mage
+    .train 425216,1 << Priest
+step << Mage
+    #season 2
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
+    .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] |cRXP_WARN_to learn|r |T236227:0|t[Fingers of Frost]
+    .use 203753
 step
     #hardcore
     #completewith BrillTurnin1
@@ -1080,6 +1118,23 @@ step
     #softcore
     #completewith BrillTurnin1
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_ Spirit Healer|r
+step << Priest
+    #season 2
+    .goto Tirisfal Glades,56.39,49.39
+    .aura 418459 >>Kneel at the graveyard until you get the buff |T237569:0|t[Meditation on Undeath]
+    .train 425216,1
+step << Priest
+    #season 2
+    .use 205940
+    .itemcount 205940,1
+    .train 425216 >>|cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of Dark Purpose|r] |cRXP_WARN_to train|r |T237514:0|t[Void Plague]
+step << Priest
+    #season 2
+    #completewith BrillTurnin1
+    .use 205947
+    .itemcount 205947,1
+    .aura 417316 >>|cRXP_WARN_Now you have to find a Troll Priest with a Loa buff. You have to kneel before him and he has to /pray for you.|r
+    .train 402852 >>|cRXP_WARN_Use the|r |T135975:0|t[cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] |cRXP_WARN_to train|r |T237570:0|t[Homunculi]
 step
     #softcore
     .goto Tirisfal Glades,58.29,49.80,30,0
@@ -1810,6 +1865,18 @@ step
     .goto Tirisfal Glades,46.80,35.10,60,0
     .goto Tirisfal Glades,46.03,30.25
     .xp 9+4245 >> Grind to 9 4320+/6500xp
+step << Mage
+    #season 2
+    .train 401765,1
+    .goto Tirisfal Glades,25.6,48.2
+    >>Kill |cRXP_ENEMY_Gillgar|r. Loot him for the |cRXP_LOOT_|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r]|r
+    .collect 203753,1
+    .mob Gillgar
+step << Mage
+    #season 2
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item
+    .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] |cRXP_WARN_to learn|r |T236227:0|t[Fingers of Frost.]
+    .use 203753
 step
     #hardcore
     #completewith FoodandWater2
@@ -3154,7 +3221,6 @@ step
 step
     #label Nightlash
     .goto Silverpine Forest,45.44,21.01
-    .loop 25,Silverpine Forest,46.26,19.11,46.48,19.77,46.61,21.59,46.01,22.75,44.20,22.52,44.35,21.08,44.49,19.54,45.23,19.36
     >>Kill |cRXP_ENEMY_Rothide Gnolls|r around The Dead Field until |cRXP_ENEMY_Nightlash|r spawns. Kill and loot her for her |cRXP_LOOT_Essence|r
     >>|cRXP_WARN_They are immune to fear!|r << Priest/Warlock
     .complete 437,1 --Enter the Dead Fields (1)
@@ -3173,8 +3239,8 @@ step
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Spiders|r. Loot them for their |cRXP_LOOT_Blood|r
-    >>|cRXP_WARN_Be careful if|r |cRXP_ENEMY_Krethis Shadowspinner|r |cRXP_WARN_is up as it's impossibly difficult to kill her!|r << !Mage !Warlock
-    >>|cRXP_WARN_Be careful if|r |cRXP_ENEMY_Krethis Shadowspinner|r |cRXP_WARN_ as it's difficult but doable. She has a 130 damage shield on a 15s cooldown, and 110 damage instant shock ability|r << Mage/Warlock
+    >>|cRXP_WARN_Be careful of|r |cRXP_ENEMY_Krethis Shadowspinner|r |cRXP_WARN_as it's impossibly difficult to kill her!|r << !Mage !Warlock
+    >>|cRXP_WARN_Be careful of|r |cRXP_ENEMY_Krethis Shadowspinner|r |cRXP_WARN_as it's difficult but doable. She has a 130 damage shield on a 15s cooldown, and 110 damage instant shock ability|r << Mage/Warlock
     .complete 447,2 --Skittering Blood (6)
     .mob Moss Stalker
     .unitscan Krethis Shadowspinner
@@ -3188,8 +3254,8 @@ step
 step
     .loop 25,Silverpine Forest,37.25,15.99,35.67,16.01,34.96,16.34,33.99,17.24,34.14,15.26,35.06,14.50,35.85,13.83,36.33,14.20
     >>Kill |cRXP_ENEMY_Spiders|r. Loot them for their |cRXP_LOOT_Blood|r
-    >>|cRXP_WARN_Be careful of the rare spider in the area, as it's impossibly difficult|r << !Mage !Warlock
-    >>|cRXP_WARN_Be careful of the rare in the area, as it's difficult but doable. She has a 130 damage shield on a 15s cooldown, and 110 damage instant shock ability|r << Mage/Warlock
+    >>|cRXP_WARN_Be careful of|r |cRXP_ENEMY_Krethis Shadowspinner|r |cRXP_WARN_as it's impossibly difficult to kill her!|r << !Mage !Warlock
+    >>|cRXP_WARN_Be careful of|r |cRXP_ENEMY_Krethis Shadowspinner|r |cRXP_WARN_as it's difficult but doable. She has a 130 damage shield on a 15s cooldown, and 110 damage instant shock ability|r << Mage/Warlock
     .complete 447,2 --Skittering Blood (6)
     .mob Moss Stalker
     .unitscan Krethis Shadowspinner
@@ -3248,14 +3314,14 @@ step << !Mage !Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwyn|r
     >>|cRXP_BUY_Buy|r |T134532:0|t[Red-speckled Mushrooms] |cRXP_BUY_from her|r
     .vendor >> Vendor trash
-    .collect 4605,20,421,1 --Red-speckled Mushroom (20)
+    .collect 4605,20,423,1 --Red-speckled Mushroom (20)
     .target Gwyn Farrow
 step
     .goto Silverpine Forest,43.98,39.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwyn|r
-    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman/Druid
+    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Warlock/Priest/Shaman/Druid
     .vendor >> |cRXP_BUY_Buy|r |T134830:0|t[Lesser Healing Potions] |cRXP_BUY_from him if they're up|r
-    .collect 1179,20,421,1 << Mage/Warlock/Priest/Shaman/Druid --Ice Cold Milk (20)
+    .collect 1179,20,423,1 << Warlock/Priest/Shaman/Druid --Ice Cold Milk (20)
     .target Edwin Harly
 step << Warlock/Mage/Priest
     .goto Silverpine Forest,44.80,39.24
@@ -3274,11 +3340,13 @@ step << Warlock/Mage/Priest
     +Equip the |T132491:0|t[Wise Man's Belt]
     .use 4786
     .itemcount 4786,1
+    .xp <15,1
 step << Rogue
     #completewith Shackles
     +Equip the |T132539:0|t[Agile Boots]
     .use 4788
     .itemcount 4788,1
+    .xp <15,1
 step
     #label DecrepitFerry
     .goto Silverpine Forest,58.39,34.79
@@ -3298,22 +3366,47 @@ step
     .complete 423,2 --Darksoul Shackle (3)
     .mob Moonrage Glutton
     .mob Moonrage Darksoul
+step << Mage
+    #season 2
+    #completewith BorderCrossings
+    >>Kill |cRXP_ENEMY_Dalaran Apprentices|r. Loot them for |cRXP_LOOT_|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r]|r
+    .train 401767,1
+    .collect 208754,1 --Spell Notes: TENGI RONEERA (1)
+    .mob Dalaran Apprentice
 step
     #hardcore
     .goto Silverpine Forest,49.89,60.33
     >>Click the |cRXP_PICK_Crate|r in the camp
-    >>|cRXP_WARN_Be careful! These mobs cast|r |T135846:0|t[Frostbolt]|cRXP_WARN_ and flee at low health. Pull them back and kill them one by one until you can safely click on the crate|r
+    >>|cRXP_WARN_Be careful! These mobs cast|r |T135846:0|t[Frostbolt]|cRXP_WARN_and flee at low health. Pull them back and kill them one by one until you can safely click on the crate|r
     .turnin 477 >>Turn in Border Crossings
     .accept 478 >>Accept Maps and Runes
     .mob Dalaran Apprentice
 step
+    #label BorderCrossings
     #softcore
     .goto Silverpine Forest,49.89,60.33
-    >>Click the |cRXP_PICK_Crate|r in the camp, then die on purpose
+    >>Click the |cRXP_PICK_Crate|r in the camp
     >>|cRXP_WARN_Be careful, these mobs cast|r |T135846:0|t[Frostbolt]|r
     .turnin 477 >>Turn in Border Crossings
     .accept 478 >>Accept Maps and Runes
     .mob Dalaran Apprentice
+step << Mage
+    #season 2
+    #loop
+    .goto Silverpine Forest,49.89,60.33,0
+    .goto Silverpine Forest,52.6,56.6,20,0
+    .goto Silverpine Forest,56.6,62.8,20,0
+    .goto Silverpine Forest,55.6,72.8,20,0
+    .goto Silverpine Forest,51.6,71.0,20,0
+    .goto Silverpine Forest,50.8,61.6,20,0
+    >>Kill |cRXP_ENEMY_Dalaran Apprentices|r. Loot them for |cRXP_LOOT_|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r]|r
+    .train 401767,1
+    .collect 208754,1 --Spell Notes: TENGI RONEERA (1)
+    .mob Dalaran Apprentice
+step << Mage
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
+    .train 401767 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r] |cRXP_WARN_to learn|r |T132871:0|t[Regeneration.]
+    .use 208754
 step << Rogue
     #season 2
     .goto Silverpine Forest,45.25,68.06,20,0
