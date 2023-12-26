@@ -2812,18 +2812,28 @@ step
     >>Kill |cRXP_ENEMY_Oasis Snapjaws|r in and around the lake. Loot them for their |cRXP_LOOT_Shells|r
     .complete 880,1 --Altered Snapjaw Shell (8)
     .mob Oasis Snapjaw
-step << Priest
-    #season 2
+step << Shaman/Priest
     #loop
-    .goto The Barrens,54.8,35.6,0
-    .goto The Barrens,58.8,37.6,0
-    .goto The Barrens,54.8,35.6,40,0
-    .goto The Barrens,58.8,37.6,40,0
-    >>Use |T135894:0|t[Dispel Magic] on the |cRXP_ENEMY_Desert Mirage|r. Loot it for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Demise|r]
-    *|cRXP_WARN_It's a green ghost which patrolls around. Use the RestedXP target macro to target it.|r
-    .collect 205932,1 -- Prophecy of a King's Demise (1)
-    .train 402849,1
-    .mob Desert Mirage
+    .goto The Barrens,55.77,34.01,40,0 --Spawn 1
+    .goto The Barrens,55.83,34.21,40,0
+    .goto The Barrens,54.81,35.95,40,0 --Spawn 2
+    .goto The Barrens,54.96,35.72,40,0
+    .goto The Barrens,57.47,36.03,40,0 --Spawn 3
+    .goto The Barrens,57.56,35.78,40,0
+    .goto The Barrens,57.46,35.70,40,0
+    .goto The Barrens,57.59,38.36,40,0 --Spawn 4
+    .goto The Barrens,57.49,38.65,40,0
+    .goto The Barrens,58.82,37.67,40,0 --Spawn 5
+    .goto The Barrens,58.92,37.53,40,0
+    .goto The Barrens,58.94,37.73,40,0
+    >>Cast |T136075:0|t[Purge] on the |cRXP_ENEMY_Desert Mirage|r to kill it. Loot it for the |T134419:0|t|cRXP_LOOT_[Earthen Rune]|r << Shaman
+    >>Cast |T135894:0|t[Dispel Magic] on the |cRXP_ENEMY_Desert Mirage|r to kill it. Loot it for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Demise|r] << Priest
+    .collect 208758,1 << Shaman --Earthen Rune (1)
+    .collect 205932,1 << Priest-- Prophecy of a King's Demise (1)
+    .unitscan Desert Mirage
+    .train 410107,1 << Shaman
+    .train 402849,1 << Priest
+--XX Respawns after 85s-170s
 step
     #completewith next
     >>Kill any |cRXP_ENEMY_Zhevra|r. Loot it for a |cRXP_LOOT_Fresh Zhevra Carcass|r

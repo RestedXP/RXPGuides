@@ -1865,13 +1865,16 @@ step
     .goto Tirisfal Glades,46.80,35.10,60,0
     .goto Tirisfal Glades,46.03,30.25
     .xp 9+4245 >> Grind to 9 4320+/6500xp
-step << Mage
+step << Mage/Priest
     #season 2
-    .train 401765,1
-    .goto Tirisfal Glades,25.6,48.2
-    >>Kill |cRXP_ENEMY_Gillgar|r. Loot him for the |cRXP_LOOT_|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r]|r
-    .collect 203753,1
+    >>Kill |cRXP_ENEMY_Gillgar|r. Loot him for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] << Mage
+    >>Kill |cRXP_ENEMY_Gillgar|r. Loot him for the |T136222:0|t[|cRXP_FRIENDLY_Memory of Dark Purpose|r] << Priest
+    >>|cRXP_WARN_This is a level 7 elite and not easy to kill. Skip him for now if it's too hard|r
+    .collect 203753,1 << Mage --Spell Notes: RING SEFF OSTROF (1)
+    .collect 205940,1 << Priest --Memory of Dark Purpose (1)
     .mob Gillgar
+    .train 401765,1 << Mage
+    .train 425216,1 << Priest
 step << Mage
     #season 2
     .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item
