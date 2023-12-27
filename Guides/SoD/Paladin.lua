@@ -9,8 +9,8 @@ RXPGuides.RegisterGuide([[
 --VV Not sure if you want to gate CS in Elwynn for humans only/DunM for dwarves only
 
 step
-    +|cRXP_WARN_You MUST be at least level 4 in order to acquire|r |T133816:0|t[Engrave Gloves: Crusader Strike] |cRXP_WARN_as it is the level requirement of training|r |T135959:0|t[Judgement]
-    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves: Crusader Strike]
+    +|cRXP_WARN_You MUST be at least level 4 in order to acquire|r |T133816:0|t[Engrave Gloves - Crusader Strike] |cRXP_WARN_as it is the level requirement of training|r |T135959:0|t[Judgement]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves - Crusader Strike]
     .train 410002,1
     .xp >4,1
 step
@@ -67,7 +67,7 @@ step
     .train 410002,1
     .xp <4,1
 step
-    .cast 409920 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves: Crusader Strike]
+    .cast 409920 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Crusader Strike]
     .use 205420
     .aura 408828
     .train 410002,1
@@ -83,8 +83,8 @@ RXPGuides.RegisterGuide([[
 #next Inspiration Exemplar - 6 (Dun Morogh)
 
 step
-    +|cRXP_WARN_You MUST be at least level 4 in order to acquire|r |T133816:0|t[Engrave Gloves: Crusader Strike] |cRXP_WARN_as it is the level requirement of training|r |T135959:0|t[Judgement]
-    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves: Crusader Strike]
+    +|cRXP_WARN_You MUST be at least level 4 in order to acquire|r |T133816:0|t[Engrave Gloves - Crusader Strike] |cRXP_WARN_as it is the level requirement of training|r |T135959:0|t[Judgement]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves - Crusader Strike]
     .train 410002,1
     .xp >4,1
 step
@@ -127,7 +127,6 @@ step
     .equip 18,205420 >> |cRXP_WARN_Equip the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r
     .use 205420
     .itemcount 205420,1 --Libram of Judgement (1)
---XX  .itemStat 18,QUALITY,<2 would bug it if someone has a Libram in the slot already
     .train 410002,1
     .xp <4,1
 step
@@ -143,7 +142,7 @@ step
     .train 410002,1
     .xp <4,1
 step
-    .cast 409920 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves: Crusader Strike]
+    .cast 409920 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Crusader Strike]
     .use 205420
     .aura 408828
     .train 410002,1
@@ -160,13 +159,13 @@ RXPGuides.RegisterGuide([[
 
 
 step
-    +|cRXP_WARN_You should be at least level 14 in order to acquire|r |T133816:0|t[Engrave Gloves: Hand of Reckoning] |cRXP_WARN_in Loch Modan alone|r
+    +|cRXP_WARN_You should be at least level 14 in order to acquire|r |T133816:0|t[Engrave Gloves - Hand of Reckoning] |cRXP_WARN_in Loch Modan alone|r
     >>|cRXP_WARN_You MUST be at least level 8 as it is the level requirement of equipping the|r |T134916:0|t|cRXP_LOOT_[Libram of Justice]|r
-    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves: Hand of Reckoning]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves - Hand of Reckoning]
     .train 410001,1
     .xp >8,1
 step
-    +|cRXP_WARN_You should be at least level 14 in order to acquire|r |T133816:0|t[Engrave Gloves: Hand of Reckoning] |cRXP_WARN_in Loch Modan alone|r
+    +|cRXP_WARN_You should be at least level 14 in order to acquire|r |T133816:0|t[Engrave Gloves - Hand of Reckoning] |cRXP_WARN_in Loch Modan alone|r
     .train 410001,1
     .xp <8,1
     .xp >14,1
@@ -312,7 +311,7 @@ step
     .train 410001,1
     .xp <22,1
 step
-    .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Justice]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves: Hand of Reckoning]
+    .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Justice]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Hand of Reckoning]
     .aura 408828
     .use 208851
     .train 410001,1
@@ -329,20 +328,20 @@ RXPGuides.RegisterGuide([[
 
 
 step
-    +|cRXP_WARN_You should be at least level 20 in order to acquire|r |T133816:0|t[Engrave Gloves: Hand of Reckoning] |cRXP_WARN_in Westfall alone|r
+    +|cRXP_WARN_You should be at least level 20 in order to acquire|r |T133816:0|t[Engrave Gloves - Hand of Reckoning] |cRXP_WARN_in Westfall alone|r
     >>|cRXP_WARN_You MUST be at least level 8 as it is the level requirement of equipping the|r |T134916:0|t|cRXP_LOOT_[Libram of Justice]|r
-    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves: Hand of Reckoning]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves - Hand of Reckoning]
     .train 410001,1
     .xp >8,1
 step
-    +|cRXP_WARN_You should be at least level 20 in order to acquire|r |T133816:0|t[Engrave Gloves: Hand of Reckoning] |cRXP_WARN_in Westfall alone|r
+    +|cRXP_WARN_You should be at least level 20 in order to acquire|r |T133816:0|t[Engrave Gloves - Hand of Reckoning] |cRXP_WARN_in Westfall alone|r
 -- >>|cRXP_WARN_It is heavily recommended you get it in Loch Modan instead as it is a LOT easier and can be acquired at a lower level|r
     .train 410001,1
     .xp <8,1
     .xp >20,1
 step << skip
     #completewith LibramS
-    +|cRXP_WARN_It is heavily recommended you get |T133816:0|t[Engrave Gloves: Hand of Reckoning] in Loch Modan instead as it is a LOT easier|r
+    +|cRXP_WARN_It is heavily recommended you get |T133816:0|t[Engrave Gloves - Hand of Reckoning] in Loch Modan instead as it is a LOT easier|r
     .train 410001,1
     .xp <20,1
 step
@@ -439,7 +438,7 @@ step
     .train 410001,1
     .xp <22,1
 step
-    .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Justice]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves: Hand of Reckoning]
+    .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Justice]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Hand of Reckoning]
     .aura 408828
     .use 208851
     .train 410001,1
@@ -457,9 +456,9 @@ RXPGuides.RegisterGuide([[
 #next Hand of Reckoning - 14 (Loch Modan)
 
 step
-    +|cRXP_WARN_You MUST be at least level 4 in order to acquire|r |T133815:0|t[Engrave Chest: Horn of Lordaeron] |cRXP_WARN_as it is the level requirement of training|r |T135906:0|t[Blessing of Might]
-    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest: Horn of Lordaeron]
---  >>|cRXP_WARN_It is NOT recommended to use|r |T133815:0|t[Engrave Chest: Horn of Lordaeron] |cRXP_WARN_over|r |T133815:0|t[Engrave Chest: Divine Storm] |cRXP_WARN_or|r |T133815:0|t[Engrave Chest: Seal of Martyrdom]
+    +|cRXP_WARN_You MUST be at least level 4 in order to acquire|r |T133815:0|t[Engrave Chest - Horn of Lordaeron] |cRXP_WARN_as it is the level requirement of training|r |T135906:0|t[Blessing of Might]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest - Horn of Lordaeron]
+--  >>|cRXP_WARN_It is NOT recommended to use|r |T133815:0|t[Engrave Chest - Horn of Lordaeron] |cRXP_WARN_over|r |T133815:0|t[Engrave Chest - Divine Storm] |cRXP_WARN_or|r |T133815:0|t[Engrave Chest - Seal of Martyrdom]
     .train 425618,1
     .xp >4,1
 step
@@ -526,7 +525,7 @@ step
     .xp >14,1
     .xp <4,1
 step
-    .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t[Libram of Blessings] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest: Horn of Lordaeron]
+    .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t[Libram of Blessings] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Horn of Lordaeron]
     .aura 408828
     .use 208849
     .train 425618,1
@@ -543,16 +542,16 @@ RXPGuides.RegisterGuide([[
 
 
 step
-    +|cRXP_WARN_You should be at least level 12 in order to acquire|r |T133815:0|t[Engrave Chest: Horn of Lordaeron] |cRXP_WARN_in Westfall alone|r
+    +|cRXP_WARN_You should be at least level 12 in order to acquire|r |T133815:0|t[Engrave Chest - Horn of Lordaeron] |cRXP_WARN_in Westfall alone|r
     >>|cRXP_WARN_You MUST be at least level 4 as it is the level requirement of training|r |T135906:0|t[Blessing of Might]
-    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest: Horn of Lordaeron]
---  >>|cRXP_WARN_It is NOT recommended to use|r |T133815:0|t[Engrave Chest: Horn of Lordaeron] |cRXP_WARN_over|r |T133815:0|t[Engrave Chest: Divine Storm] |cRXP_WARN_or|r |T133815:0|t[Engrave Chest: Seal of Martyrdom]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest - Horn of Lordaeron]
+--  >>|cRXP_WARN_It is NOT recommended to use|r |T133815:0|t[Engrave Chest - Horn of Lordaeron] |cRXP_WARN_over|r |T133815:0|t[Engrave Chest - Divine Storm] |cRXP_WARN_or|r |T133815:0|t[Engrave Chest - Seal of Martyrdom]
     .train 425618,1
     .xp >4,1
 step
-    +|cRXP_WARN_You should be at least level 12 in order to acquire the|r |T133815:0|t[Engrave Chest: Horn of Lordaeron] |cRXP_WARN_in Westfall alone|r
+    +|cRXP_WARN_You should be at least level 12 in order to acquire the|r |T133815:0|t[Engrave Chest - Horn of Lordaeron] |cRXP_WARN_in Westfall alone|r
 --  >>|cRXP_WARN_It is heavily recommended you get it in Loch Modan instead as it is a LOT easier|r
---  >>|cRXP_WARN_It is NOT recommended to use|r |T133815:0|t[Engrave Chest: Horn of Lordaeron] |cRXP_WARN_over|r |T133815:0|t[Engrave Chest: Divine Storm] |cRXP_WARN_or|r |T133815:0|t[Engrave Chest: Seal of Martyrdom]
+--  >>|cRXP_WARN_It is NOT recommended to use|r |T133815:0|t[Engrave Chest - Horn of Lordaeron] |cRXP_WARN_over|r |T133815:0|t[Engrave Chest - Divine Storm] |cRXP_WARN_or|r |T133815:0|t[Engrave Chest - Seal of Martyrdom]
     .train 425618,1
     .xp <4,1
     .xp >12,1
@@ -632,7 +631,7 @@ step
     .xp <4,1
     .xp >14,1
 step
-    .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Blessings]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest: Horn of Lordaeron]
+    .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Blessings]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Horn of Lordaeron]
     .use 208849
     .aura 408828
     .train 425618,1
@@ -648,8 +647,8 @@ RXPGuides.RegisterGuide([[
 #next Rebuke - 10 (Stormwind)
 
 step
-    +|cRXP_WARN_You MUST be at least level 8 in order to acquire|r |T133815:0|t[Engrave Chest: Aegis] |cRXP_WARN_as it is the level requirement of training|r |T135949:0|t[Purify]
-    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest: Aegis]
+    +|cRXP_WARN_You MUST be at least level 8 in order to acquire|r |T133815:0|t[Engrave Chest - Aegis] |cRXP_WARN_as it is the level requirement of training|r |T135949:0|t[Purify]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest - Aegis]
     .train 425619,1
     .xp >8,1
 step
@@ -707,7 +706,7 @@ step
     .xp <8,1
 --XX gossipoption 109556
 step
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Aegis] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest: Aegis]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Aegis] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Aegis]
     .use 205685
     .itemcount 205685,1 --Rune of Aegis (1)
     .train 425619,1
@@ -725,8 +724,8 @@ RXPGuides.RegisterGuide([[
 #next Rebuke - 10 (Ironforge)
 
 step
-    +|cRXP_WARN_You MUST be at least level 8 in order to acquire|r |T133815:0|t[Engrave Chest: Aegis] |cRXP_WARN_as it is the level requirement of training|r |T135949:0|t[Purify]
-    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest: Aegis]
+    +|cRXP_WARN_You MUST be at least level 8 in order to acquire|r |T133815:0|t[Engrave Chest - Aegis] |cRXP_WARN_as it is the level requirement of training|r |T135949:0|t[Purify]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest - Aegis]
     .train 425619,1
     .xp >8,1
 step
@@ -768,7 +767,7 @@ step
     .train 425619,1
     .xp <8,1
 step
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Aegis] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest: Aegis]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Aegis] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Aegis]
     .use 208849
     .itemcount 205685,1 --Rune of Aegis (1)
     .train 425619,1
@@ -787,7 +786,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith LibramS
-    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T133815:0|t[Engrave Chest: Seal of Martyrdom] |cRXP_WARN_in Stormwind alone|r
+    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T133815:0|t[Engrave Chest - Seal of Martyrdom] |cRXP_WARN_in Stormwind alone|r
     .train 410015,1
     .xp >10,1
 step
@@ -862,7 +861,7 @@ step
     #sticky
     .destroy 205864 >> Delete the |T134939:0|t[Charred Note] from your bags, as it's no longer needed
 step
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Martyrdom] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest: Seal of Martyrdom]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Martyrdom] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Seal of Martyrdom]
     .use 205897
     .itemcount 205897,1 --Rune of Martyrdom (1)
     .train 410015,1
@@ -874,10 +873,11 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune Guide
 #subgroup Chest
 #name Divine Storm - 25 (Darkshore)
+#next Divine Sacrifice - 25 (Ratchet)
 
 step
     #completewith LibramS
-    +|cRXP_WARN_You should be at least level 25 in order to acquire|r |T133815:0|t[Engrave Chest: Divine Storm] |cRXP_WARN_AND you should find at least 2 other level 25 Paladins to do this with comfortably|r
+    +|cRXP_WARN_You should be at least level 25 in order to acquire|r |T133815:0|t[Engrave Chest - Divine Storm] |cRXP_WARN_AND you should find at least 2 other level 25 Paladins to do this with comfortably|r
     .train 410014,1
 --  .xp >25,1
 step
@@ -979,7 +979,7 @@ step
     .goto Redridge Mountains,61.62,43.50,50,0
     .goto Redridge Mountains,76.15,83.00,50,0
     .goto Redridge Mountains,76.88,72.15,50,0
-    >>|cRXP_WARN_If you don't have the|r |T134419:0|t[Rune of the Avenger] |cRXP_WARN_already, it's worth doing now. If you don't want to, skip this step|r
+    >>|cRXP_WARN_If you don't have|r |T134596:0|t[Engrave Pants - Avenger's Shield] |cRXP_WARN_already, it's worth doing now. If you don't want to, skip this step|r
     >>Kill |cRXP_ENEMY_Dro'zem the Blasphemous|r. Loot him for the |T134419:0|t[Rune of the Avenger]|r
     >>|cRXP_WARN_He has 3 spawnpoints outside: South-East (Render's Valley), Middle (Camp outside of Stonewatch Tower), and North (Render's Camp). He respawns quickly despite being a "rare"|r
     >>|cRXP_WARN_Ask in General Chat if anyone has seen him to potentially reduce your search time (Type /1 into chat)|r
@@ -987,7 +987,7 @@ step
     .unitscan Dro'zem the Blasphemous
     .train 410008,1
 step
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of the Avenger] |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants: Avenger's Shield]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of the Avenger] |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants - Avenger's Shield]
     .use 211488
     .itemcount 211488,1 --Rune of the Avenger (1)
     .train 410008,1
@@ -1101,7 +1101,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith LibramS
-    +|cRXP_WARN_You should be at least level 6 in order to acquire|r |T134596:0|t[Engrave Pants: Inspiration Exemplar] |cRXP_WARN_in Elwynn Forest with another player|r
+    +|cRXP_WARN_You should be at least level 6 in order to acquire|r |T134596:0|t[Engrave Pants - Inspiration Exemplar] |cRXP_WARN_in Elwynn Forest with another player|r
     .train 410011,1
     .xp >6,1
 step
@@ -1126,7 +1126,7 @@ step
     .skipgossip
     .train 410011,1
 step
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Inspiration]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants: Inspiration Exemplar]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Inspiration]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants - Inspiration Exemplar]
     .use 206264
     .itemcount 206264,1 --Rune of Inspiration (1)
     .train 410011,1
@@ -1142,7 +1142,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith LibramS
-    +|cRXP_WARN_You should be at least level 6 in order to acquire|r |T134596:0|t[Engrave Pants: Inspiration Exemplar] |cRXP_WARN_in Dun Morogh with another player|r
+    +|cRXP_WARN_You should be at least level 6 in order to acquire|r |T134596:0|t[Engrave Pants - Inspiration Exemplar] |cRXP_WARN_in Dun Morogh with another player|r
     .train 410011,1
     .xp >6,1
 step
@@ -1178,7 +1178,7 @@ step
     .skipgossip
     .train 410011,1
 step
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Inspiration]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants: Inspiration Exemplar]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Inspiration]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants - Inspiration Exemplar]
     .use 206264
     .itemcount 206264,1 --Rune of Inspiration (1)
     .train 410011,1
@@ -1194,7 +1194,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith LibramS
-    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T134596:0|t[Engrave Pants: Rebuke] |cRXP_WARN_in Ironforge alone|r
+    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T134596:0|t[Engrave Pants - Rebuke] |cRXP_WARN_in Ironforge alone|r
     .train 425621,1
     .xp >10,1
 step
@@ -1248,7 +1248,7 @@ step
     .train 425621,1
 --XX 109539 "I've taken care of Stuart. He shouldn't be a problem anymore."
 step
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Rebuke] |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants: Rebuke]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Rebuke] |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants - Rebuke]
     .use 205683
     .itemcount 205683,1 --Rune of Rebuke (1)
     .train 425621,1
@@ -1264,7 +1264,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith LibramS
-    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T134596:0|t[Engrave Pants: Rebuke] |cRXP_WARN_in Stormwind alone|r
+    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T134596:0|t[Engrave Pants - Rebuke] |cRXP_WARN_in Stormwind alone|r
     .train 425621,1
     .xp >10,1
 step
@@ -1320,7 +1320,7 @@ step
 --XX 109539 "I've taken care of Stuart. He shouldn't be a problem anymore."
 --VV SKIPGOSSIP needs testing, if broken change to 1,1
 step
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Rebuke] |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants: Rebuke]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Rebuke] |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants - Rebuke]
     .use 205683
     .itemcount 205683,1 --Rune of Rebuke (1)
     .train 425621,1
@@ -1335,8 +1335,8 @@ RXPGuides.RegisterGuide([[
 #next Beacon of Light - 25 (Reputation)
 
 step
-    +|cRXP_WARN_You MUST be at least level 24 in order to acquire|r |T134596:0|t[Engrave Pants: Exorcist] |cRXP_WARN_as it is the level requirement of training|r |T135983:0|t[Turn Undead]
-    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T134596:0|t[Engrave Pants: Exorcist]
+    +|cRXP_WARN_You MUST be at least level 24 in order to acquire|r |T134596:0|t[Engrave Pants - Exorcist] |cRXP_WARN_as it is the level requirement of training|r |T135983:0|t[Turn Undead]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T134596:0|t[Engrave Pants - Exorcist]
     .train 416037,1
     .xp >24,1
 step
@@ -1394,7 +1394,7 @@ step
     .train 416037,1
     .xp <24,1
 step
-    .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Banishment]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants: Exorcist]
+    .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Banishment]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants - Exorcist]
     .use 211472
     .aura 408828
     .train 416037,1
@@ -1410,7 +1410,7 @@ RXPGuides.RegisterGuide([[
 #next Inspiration Exemplar - 6 (Elwynn Forest)
 
 step
-    +|cRXP_WARN_You should be at least level 25 in order to acquire|r |T134596:0|t[Engrave Pants: Avenger's Shield] |cRXP_WARN_in Redridge alone|r
+    +|cRXP_WARN_You should be at least level 25 in order to acquire|r |T134596:0|t[Engrave Pants - Avenger's Shield] |cRXP_WARN_in Redridge alone|r
     .train 410008,1
     .xp >25,1
 step
@@ -1437,7 +1437,7 @@ step
     .unitscan Dro'zem the Blasphemous
     .train 410008,1
 step
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of the Avenger] |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants: Avenger's Shield]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of the Avenger] |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants - Avenger's Shield]
     .use 211488
     .itemcount 211488,1 --Rune of the Avenger (1)
     .train 410008,1
