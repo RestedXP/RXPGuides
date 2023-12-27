@@ -47,7 +47,7 @@ step
     .target Aysa Cloudsinger
 step
     .goto 84,51.88,14.06
-    .gossipoption 48178 >> Talk to |cRXP_FRIENDLY_ Moira Thaurissan.|r
+    .gossipoption 48178 >> Talk to |cRXP_FRIENDLY_Moira Thaurissan.|r
     .target Moira Thaurissan
     .isOnQuest 51813
 step
@@ -152,7 +152,7 @@ step
     .isOnQuest 53351
 step
     .goto 84,51.89,14.07
-    .gossipoption 48181 >>Talk to |cRXP_FRIENDLY_ Moira Thaurissan.|r
+    .gossipoption 48181 >>Talk to |cRXP_FRIENDLY_Moira Thaurissan.|r
     .target Moira Thaurissan
     .isOnQuest 53351
 step
@@ -165,7 +165,7 @@ step
     .isOnQuest 53351
 step
     .goto 84,51.89,14.07
-    .gossipoption 48179 >>Talk to |cRXP_FRIENDLY_ Moira Thaurissan.|r
+    .gossipoption 48179 >>Talk to |cRXP_FRIENDLY_Moira Thaurissan.|r
     .target Moira Thaurissan
     .isOnQuest 53342
 step
@@ -206,7 +206,7 @@ step
     .target Moira Thaurissan
 step
     .goto 84,51.89,14.07
-    .gossipoption 48180 >>Talk to |cRXP_FRIENDLY_ Moira Thaurissan.|r
+    .gossipoption 48180 >>Talk to |cRXP_FRIENDLY_Moira Thaurissan.|r
     .target Moira Thaurissan
     .isOnQuest 53352
 step
@@ -265,7 +265,7 @@ step
     .target Moira Thaurissan
 step
     .goto 84,51.89,14.07
-    .gossipoption 48178 >>Talk to |cRXP_FRIENDLY_ Moira Thaurissan.|r
+    .gossipoption 48178 >>Talk to |cRXP_FRIENDLY_Moira Thaurissan.|r
     .target Moira Thaurissan
     .isOnQuest 51474
 step

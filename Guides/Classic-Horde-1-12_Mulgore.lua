@@ -589,7 +589,19 @@ RXPGuides.RegisterGuide([[
 #next 12-17 The Barrens
 
 
-
+step << Druid
+    #season 2
+    .goto Mulgore,35.72,69.57
+    >>Cast |T136096:0|t[Moonfire] on the three |cRXP_ENEMY_Lunar Stones|r. A chest will appear in between the stones
+    >>Open the |cRXP_PICK_Lunar Chest|r for |T134419:0|t[|cRXP_FRIENDLY_Rune of the Sun|r] 
+    .collect 206989,1 --Rune of the Sun (1)
+    .mob Lunar Stone
+    .train 416044,1
+step << Druid
+    #season 2
+    .train 416044 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Sun|r] |cRXP_WARN_to train|r |T236216:0|t[Sunfire]
+    .use 206989
+    .itemcount 206989,1
 step
 	#completewith BloodhoofHome
 	#softcore
@@ -1754,6 +1766,15 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eyahn|r
     .accept 744 >>Accept Preparation for Ceremony
     .target Eyahn Eagletalon
+step << Shaman
+    #season 2
+    .goto Thunder Bluff,39.45,65.86
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
+    >>|cRXP_WARN_He is|r |T132320:0|t[Stealthed]
+    .accept 76156 >>Accept Stalk With The Earthmother
+    .target Boarton Shadetotem
+    .train 410104,1
+    .xp <4,1
 step
     #completewith next
     .goto Thunder Bluff,28.14,32.97,40,0
@@ -1847,6 +1868,86 @@ step << Hunter
     >>|cRXP_BUY_Buy|r |T133972:0|t[Tough Jerky] |cRXP_BUY_from her to feed your pet|r
     .collect 117,5,744,1 --Tough Jerky (5)
     .target Kaga Mistrunner
+step << Shaman
+    #season 2
+    #loop
+    #completewith VentureCoKills
+    >>Open the |cRXP_PICK_Blasting Supplies|r inside the mine and outside on the other side. Loot them for the |cRXP_LOOT_Seaforium Mining Charges|r
+    >>|cRXP_WARN_Stay on the upper levels of the cave if possible|r
+    .complete 76156,1 --Seaforium Mining Charge (5)
+    .train 410104,1
+    .xp <4,1
+step << Shaman
+    #season 2
+	#era/som
+    #completewith Fizsprocket1
+    .goto Mulgore,61.51,47.29,20 >> Travel to The Venture Co. Mine
+step << Shaman
+    #season 2
+    #completewith VentureCoKills
+    >>Open the |cRXP_PICK_Blasting Supplies|r inside the mine and outside on the other side. Loot them for the |cRXP_LOOT_Seaforium Mining Charges|r
+    >>|cRXP_WARN_Stay on the upper levels of the cave if possible|r
+    .complete 76156,1 --Seaforium Mining Charge (5)
+    .train 410104,1
+    .xp <4,1
+step << Shaman
+    #season 2
+    #completewith next
+    >>Kill |cRXP_ENEMY_Venture Co. Workers|r and |cRXP_ENEMY_Venture Co. Supervisors|r
+    .complete 764,1 --Venture Co. Worker (14)
+    .complete 764,2 --Venture Co. Supervisor (6)
+    .mob Venture Co. Worker
+    .mob Venture Co. Supervisor
+step << Shaman
+    #season 2
+    #label Fizsprocket1
+    .goto Mulgore,64.95,43.33
+    >>Run into the mine and hug the right/east side. Kill |cRXP_ENEMY_Supervisor Fizsprocket|r. Loot him for his |cRXP_LOOT_Clipboard|r
+    .complete 765,1 --Fizsprocket's Clipboard (1)
+    .mob Supervisor Fizsprocket
+step << Shaman
+    #season 2
+    #label VentureCoKills
+    .loop 25,Mulgore,61.35,47.55,60.10,47.84,59.50,48.21,59.68,48.85,60.14,49.14,62.01,48.74,61.89,47.84,61.35,47.55
+    >>Kill |cRXP_ENEMY_Venture Co. Workers|r and |cRXP_ENEMY_Venture Co. Supervisors|r
+    .complete 764,1 --Venture Co. Worker (14)
+    .complete 764,2 --Venture Co. Supervisor (6)
+    .mob Venture Co. Worker
+    .mob Venture Co. Supervisor
+step << Shaman
+    #season 2
+    #loop
+    .goto Mulgore,63.77,43.97,15,0
+    .goto Mulgore,62.81,42.81,15,0
+    .goto Mulgore,60.38,42.78,15,0
+    .goto Mulgore,61.64,41.33,15,0
+    .goto Mulgore,63.51,39.29,15,0
+    .goto Mulgore,63.39,40.80,15,0
+--  .goto Mulgore,66.53,39.47,15,0 --Very deep inside the top of the mine, skipping
+    .goto Mulgore,60.99,37.00,15,0
+    .goto Mulgore,59.64,36.05,15,0 --Outside
+    .goto Mulgore,61.72,35.15,15,0 --Outside
+    >>Open the |cRXP_PICK_Blasting Supplies|r inside the mine and outside on the other side. Loot them for the |cRXP_LOOT_Seaforium Mining Charges|r
+    >>|cRXP_WARN_Stay on the upper levels of the cave if possible|r
+    .complete 76156,1 --Seaforium Mining Charge (5)
+    .train 410104,1
+    .xp <4,1
+step << Shaman
+    #season 2
+    #completewith next
+    .zone Thunder Bluff >> Travel to Thunder Bluff
+    .train 410104,1
+    .xp <4,1
+step << Shaman
+    #season 2
+    .goto Thunder Bluff,39.45,65.86
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
+    >>|cRXP_WARN_He is|r |T132320:0|t[Stealthed]
+    .turnin 76156 >>Turn in Stalk With The Earthmother
+    .accept 76160 >>Accept Stalk With The Earthmother
+    .target Boarton Shadetotem
+    .train 410104,1
+    .xp <4,1
 step
     #sticky
     #completewith ThunderBluff
@@ -1856,11 +1957,47 @@ step
     .accept 770 >>Accept The Demon Scarred Cloak
     .use 4854
     .unitscan Ghost Howl
+step << Druid
+    #season 2
+    #completewith ProwlerClaws
+    >>Kill |cRXP_ENEMY_Flatland Prowlers|r and |cRXP_ENEMY_Prairie Wolf Alphas|r. Loot them for |T134903:0|t[|cRXP_FRIENDLY_Idol of Ursine Rage|r] 
+    .collect 206954,1 --Idol of Ursine Rage (1)
+    .mob Flatland Prowler
+    .mob Prairie Wolf Alpha
+    .train 410025,1
 step
     #completewith Arrachea
     >>Kill |cRXP_ENEMY_Flatland Prowlers|r. Loot them for their |cRXP_LOOT_Claws|r
     .complete 861,1 --Flatland Prowler Claw (4)
     .mob Flatland Prowler
+step << Shaman
+    #season 2
+    #completewith next
+    >>Kill |cRXP_ENEMY_Windfury Harpies|r. Loot them for their |cRXP_LOOT_Feathers|r
+    .complete 744,1 --Azure Feather (6)
+    .complete 744,2 --Bronze Feather (6)
+    .mob Windfury Matriarch
+    .mob Windfury Sorceress
+    .train 410104,1
+step << Shaman
+    #season 2
+    #loop
+    .goto Mulgore,38.80,16.03,10,0
+    .goto Mulgore,37.79,10.86,10,0
+    .goto Mulgore,38.01,10.21,10,0
+    .goto Mulgore,38.55,8.10,10,0
+    .goto Mulgore,38.06,7.47,10,0
+    .goto Mulgore,37.36,9.99,10,0
+    .goto Mulgore,37.31,10.41,10,0
+    .goto Mulgore,35.80,11.21,10,0
+    .goto Mulgore,36.20,11.41,10,0
+    .goto Mulgore,36.21,12.60,10,0
+    .goto Mulgore,36.55,12.84,10,0
+    .goto Mulgore,36.65,13.26,10,0
+    .goto Mulgore,37.18,12.36,10,0
+    >>Loot |cRXP_LOOT_Windfury Cones|r on the ground
+    .collect 206170,8,76160,1 --Windfury Cone (8)
+    .train 410104,1
 step
     .goto Mulgore,31.7,28.2,90,0
     .goto Mulgore,30.2,19.5,90,0
@@ -1920,6 +2057,7 @@ step
     .unitscan Arra'chea
     --VV .line
 step
+    #label ProwlerClaws
     .goto Mulgore,43.78,10.96,90,0
     .goto Mulgore,39.62,13.35,90,0
     .goto Mulgore,37.12,16.84,90,0
@@ -1929,6 +2067,33 @@ step
     >>Kill |cRXP_ENEMY_Flatland Prowlers|r. Loot them for their |cRXP_LOOT_Claws|r
     .complete 861,1 --Flatland Prowler Claw (4)
     .mob Flatland Prowler
+step << Druid
+    #season 2
+    .goto Mulgore,43.78,10.96,90,0
+    .goto Mulgore,39.62,13.35,90,0
+    .goto Mulgore,37.12,16.84,90,0
+    .goto Mulgore,44.57,17.39,90,0
+    .goto Mulgore,48.70,20.85,90,0
+    .goto Mulgore,43.78,10.96
+    >>Kill |cRXP_ENEMY_Flatland Prowlers|r and |cRXP_ENEMY_Prairie Wolf Alphas|r. Loot them for |T134903:0|t[|cRXP_FRIENDLY_Idol of Ursine Rage|r] 
+    .collect 206954,1 --Idol of Ursine Rage (1)
+    .mob Flatland Prowler
+    .mob Prairie Wolf Alpha
+    .train 410025,1
+step << Druid
+    #season 2
+    .equip 18,206954 >> |cRXP_WARN_Equip the|r |T134903:0|t[|cRXP_FRIENDLY_Idol of Ursine Rage|r] 
+    .use 206954
+    .train 410025,1
+step << Druid
+    #season 2
+    #completewith next
+    +|cRXP_WARN_Maintain 50+ rage for at least 60 seconds to be able to learn|r |T132135:0|t[Mangle]
+step << Druid
+    #season 2
+    .train 410025 >> |cRXP_WARN_Use the|r |T134903:0|t[|cRXP_FRIENDLY_Idol of Ursine Rage|r] |cRXP_WARN_to train|r |T132135:0|t[Mangle]
+    .use 206954
+    .itemcount 206954,1
 step
     #completewith next
     .subzone 1638 >> Travel back to Thunder Bluff
@@ -1952,6 +2117,108 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eyahn|r
     .turnin 744 >>Turn in Preparation for Ceremony
     .target Eyahn Eagletalon
+step << Shaman
+    #season 2
+    .goto Thunder Bluff,39.45,65.86
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
+    >>|cRXP_WARN_He is|r |T132320:0|t[Stealthed]
+    .turnin 76160 >>Turn in Stalk With The Earthmother
+    .accept 76240 >>Accept Stalk With The Earthmother
+    .target Boarton Shadetotem
+    .train 410104,1
+    .xp <4,1
+step << Shaman
+    #season 2
+    #ah
+    .goto Thunder Bluff,45.23,59.40,0
+    .goto Thunder Bluff,40.41,51.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Stampi|r
+    >>|cRXP_BUY_Buy a|r |T133894:0|t[Raw Brilliant Smallfish] |cRXP_BUY_from the Auction House|r
+    .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
+    .target Auctioneer Stampi
+    .train 410104,1
+    .xp <4,1
+step << Shaman
+    #season 2
+    #ssf
+    #completewith Sewa
+    .goto Thunder Bluff,46.13,51.59,12,0
+    .goto Thunder Bluff,47.09,50.07,4,0
+    .goto Thunder Bluff,46.49,49.16,4,0
+    .goto Thunder Bluff,46.05,49.74,4,0
+    .goto Thunder Bluff,46.34,50.50,4,0
+    .goto Thunder Bluff,55.78,47.02,15 >>Travel toward |cRXP_FRIENDLY_Sewa Mistrunner|r
+    .train 410104,1
+    .xp <4,1
+step << Shaman
+    #season 2
+    #ssf
+    #sticky
+    #label Kah
+    .goto Thunder Bluff,56.13,46.39,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kah Mistrunner|r
+    .train 7734 >>Train |T136245:0|t[Fishing]
+    .target Kah Mistrunner
+    .train 410104,1
+    .xp <4,1
+step << Shaman
+    #season 2
+    #ssf
+    #label Sewa
+    .goto Thunder Bluff,55.78,47.02,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sewa Mistrunner|r
+    >>|cRXP_BUY_Buy a|r |T132932:0|t[Fishing Pole] |cRXP_BUY_and|r |T134335:0|t[Shiny Bauble] |cRXP_BUY_from her|r
+    .collect 6256,1 --Fishing Pole (1)
+    .collect 6529,1 --Shiny Bauble (1)
+    .target Sewa Mistrunner
+    .train 410104,1
+    .xp <4,1
+step << Shaman
+    #season 2
+    #ssf
+    #completewith Fish
+    #requires Kah
+    #label Pole
+    .equip 16,6256 >> |cRXP_WARN_Equip the|r |T132932:0|t[Fishing Pole]
+    .use 6256
+    .train 410104,1
+    .xp <4,1
+step << Shaman
+    #season 2
+    #ssf
+    #completewith Fish
+    #requires Pole
+    .aura 8087 >> |cRXP_WARN_Attach the|r |T134335:0|t[Shiny Bauble] |cRXP_WARN_to your|r |T132932:0|t[Fishing Pole]
+    .use 6529
+    .train 410104,1
+    .xp <4,1
+step << Shaman
+    #season 2
+    #ssf
+    #label Fish
+    #requires Kah
+    .goto Thunder Bluff,40.42,58.55
+    >>Fish in the pond until you get a |T133894:0|t[|cRXP_LOOT_Raw Brilliant Smallfish|r]
+    .collect 6291,1,76240,1 --Raw Brilliant Smallfish (1)
+    .train 410104,1
+    .xp <4,1
+step << Shaman
+    #season 2
+    >>Use the |T132147:0|t[Knife Set] to create |T134007:0|t[Fish Chunks]
+    .complete 76240,1 --Fish Chunks (1)
+    .use 206344
+    .train 410104,1
+    .xp <4,1
+step << Shaman
+    #season 2
+    .goto Thunder Bluff,39.45,65.86
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boarton Shadetotem|r
+    >>|cRXP_WARN_He is|r |T132320:0|t[Stealthed]
+    .turnin 76240 >>Turn in Stalk With The Earthmother
+-- .train 410104 >>|cRXP_WARN_You will train|r |T236289:0|t[Lava Lash] |cRXP_WARN_and|r |T132147:0|t[Dual Wield] |cRXP_WARN_upon turnin|r
+    .target Boarton Shadetotem
+    .train 410104,1
+    .xp <4,1
 step
     .goto Thunder Bluff,61.3,80.9
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melor|r

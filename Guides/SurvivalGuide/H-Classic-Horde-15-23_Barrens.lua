@@ -2542,7 +2542,7 @@ step << Rogue
     .dungeon DM
 step << Warlock
     .goto Undercity,48.47,45.42
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Zevrost|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zevrost|r
     .train 1014 >> Train your class spells
 	.target Zevrost
     .xp <18,1
@@ -2551,7 +2551,7 @@ step << Warlock
 step << Warlock
     #optional
     .goto Undercity,48.47,45.42
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Zevrost|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zevrost|r
     .train 706 >> Train your class spells
 	.target Zevrost
     .xp <20,1

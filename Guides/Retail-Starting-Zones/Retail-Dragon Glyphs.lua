@@ -506,19 +506,19 @@ step
     .goto 2112,61.93,32.2
     >>|cRXP_WARN_Alternatively you can just fly to the top of the Valdrakken Tower and skip this step|r
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Kurazidaia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kurazidaia|r
     >>|cRXP_WARN_You can skip the upcoming cutscene with ESC.|r
     .isOnQuest 74381
     .goto 2112,61.03,26.07
     .skipgossip 201398,1
     .complete 74381,1 --1/1 Hear Kurazidaia's report
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Kurazidaia|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kurazidaia|r
     .goto 2112,61.03,26.07
     .turnin 74381 >>Turn in Hidden Legacies
     .accept 73076 >>Accept Return to the Reach
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Flightmaster Aluri|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Flightmaster Aluri|r
     .goto 2112,44.05,67.90
     .skipgossip 2
     .complete 73076,1 --1/1 Speak with Flightmaster Aluri to fly to the Forbidden Reach (Optional)

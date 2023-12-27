@@ -627,7 +627,7 @@ step << Tauren
 step
     .goto The Barrens,55.70,27.30,20,0
     .goto The Barrens,55.78,20.00
-    .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. If it's not up you'll get it later
+    .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. Wait for the respawn if it's not up
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Accept Chen's Empty Keg
 step
@@ -648,6 +648,18 @@ step
     >>Kill |cRXP_ENEMY_Kreenig Snarlsnout|r. Loot him for his |cRXP_LOOT_Tusk|r
     .complete 872,3 --Kreenig Snarlsnout's Tusk (1)
     .mob Kreenig Snarlsnout
+step << Warlock
+    .train 403932,1
+    >>|cRXP_WARN_Go to the Altar of Thorns|r. Cast |T136126:0|t[Life Tap] until you're almost dying. Then cast |T136168:0|t[Health Funnel] on your pet to die and get |T134419:0|t[|cRXP_FRIENDLY_Rune of Channeling|r]
+    *|cRXP_WARN_You will be revived immediately after dying|r
+    .goto The Barrens,58.2,26.7
+    .cast 1454
+    .cast 735
+    .collect 208750,1
+step << Warlock
+    .use 208750
+    .itemcount 208750,1
+    .train 403932 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Channeling|r] |cRXP_WARN_to train|r |T136168:0|t[Master Channeler]
 step
     #completewith next
     .goto The Barrens,56.75,24.69,50,0
@@ -1657,6 +1669,17 @@ step << Tauren Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
     .train 264 >>Train Bows
     .target Hanashi
+step << Druid
+    #season 2
+    #ah
+    .goto Orgrimmar,55.59,62.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thathung|r
+    >>|cRXP_BUY_Buy a|r |T134237:0|t[Kolkar Booty Key] |cRXP_BUY_from the Auction House if possible|r
+    >>|cRXP_WARN_You will need this to obtain|r |T132942:0|t[|cRXP_FRIENDLY_Ferocious Idol|r] |cRXP_WARN_for|r |T236167:0|t[Savage Roar] << Druid
+    .collect 5020,1 --Kolkar Booty Key (1)
+	.target Auctioneer Thathung
+    .itemcount 208689,<1,1 << Druid
+    .train 407988,1 << Druid
 step
     #completewith FoodandWater2
     .hs >> Hearth to The Crossroads
@@ -1898,9 +1921,17 @@ step
     .goto The Barrens,55.61,42.75
     >>Click the |cRXP_PICK_Bubble Fissure|r underwater
     .complete 877,1 --Test the Dried Seeds (1)
+step << Druid
+    #season 2
+    #completewith Verog
+    >>Kill |cRXP_ENEMY_Kolkar|r. Loot them for a |T134237:0|t[|cRXP_LOOT_Kolkar Booty Key|r]
+    .collect 5020,1 --Kolkar Booty Key (1)
+    .mob Kolkar Wrangler
+    .mob Kolkar Stormer
+    .train 407988,1
 step
-    #loop
     #completewith next
+    #loop
     .goto The Barrens,55.80,45.78,50,0
     .goto The Barrens,56.75,43.41,50,0
     .goto The Barrens,57.01,41.22,50,0
@@ -1924,6 +1955,45 @@ step
     >>|cRXP_WARN_On a highly populated server or fresh launch, your best option is camping his spawnpoint|r
     .complete 851,1 --Verog's Head (1)
     .unitscan Verog the Dervish
+step << Druid
+    #season 2
+    #loop
+    .goto The Barrens,55.80,45.78,50,0
+    .goto The Barrens,56.75,43.41,50,0
+    .goto The Barrens,57.01,41.22,50,0
+    .goto The Barrens,55.45,41.37,50,0
+    .goto The Barrens,54.99,40.84,50,0
+    .goto The Barrens,53.41,40.26,50,0
+    .goto The Barrens,52.99,44.73,50,0
+    .goto The Barrens,54.31,46.81,50,0
+    .goto The Barrens,55.80,45.78,50,0
+    >>Kill |cRXP_ENEMY_Kolkar|r. Loot them for a |T134237:0|t[|cRXP_LOOT_Kolkar Booty Key|r]
+    .collect 5020,1 --Kolkar Booty Key (1)
+    .mob Kolkar Wrangler
+    .mob Kolkar Stormer
+    .itemcount 208689,<1,1
+    .train 407988,1
+step << Druid
+    #season 2
+    .goto The Barrens,52.7,41.8
+    >>Open a |cRXP_PICK_Kolkar Booty|r chest for |T132942:0|t[|cRXP_FRIENDLY_Ferocious Idol|r]
+    .collect 5020,1 --Kolkar Booty Key (1)
+    .collect 208689,1 --Ferocious Idol (1)
+    .itemcount 208689,<1,1
+    .train 407988,1
+step << Druid
+    #season 2
+    #completewith Nest
+    .equip 18,208689 >> |cRXP_WARN_Equip the|r |T132942:0|t[|cRXP_FRIENDLY_Ferocious Idol|r] |cRXP_WARN_Once you've learned|r |T132115:0|t[Cat Form]
+    .use 208689
+    .itemcount 208689,1
+    .train 407988,1
+step << Druid
+    #season 2
+    #completewith Nest
+    .train 407988 >>|cRXP_WARN_Deal 20 instances of bleeding damage from|r |T132152:0|t[Rip] |cRXP_WARN_or|r |T132122:0|t[Rake] |cRXP_WARN_to humanoids, then use the|r |T132942:0|t[|cRXP_FRIENDLY_Ferocious Idol|r] |cRXP_WARN_again to learn|r |T236167:0|t[Savage Roar]
+    .use 208689
+    .itemcount 208689,1
 step
     .loop 25,The Barrens,55.72,42.14,55.49,41.75,55.09,41.58,55.03,42.24,55.27,43.17,55.78,43.47,56.15,43.28,56.08,42.58,55.72,42.14
     >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Stagnant Oasis
@@ -1940,12 +2010,14 @@ step
     >>Click the |cRXP_PICK_Blue Raptor Nest|r. Kill more |cRXP_ENEMY_Sunscale Scytheclaws|r if you don't have a |T132914:0|t[Sunscale Feather]
     >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r
     .complete 905,1 --Visit Blue Raptor Nest (1)
+    .collect 5165,3,905,7,3
     .mob Sunscale Scytheclaw
 step
     .goto The Barrens,52.45,46.57
     >>Click the |cRXP_PICK_Red Raptor Nest|r. Kill more |cRXP_ENEMY_Sunscale Scytheclaws|r if you don't have a |T132914:0|t[Sunscale Feather]
     >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r
     .complete 905,3 --Visit Red Raptor Nest (1)
+    .collect 5165,3,905,7,3
     .mob Sunscale Scytheclaw
 step
     #label Nest
@@ -1953,6 +2025,7 @@ step
     >>Click the |cRXP_PICK_Yellow Raptor Nest|r. Kill more |cRXP_ENEMY_Sunscale Scytheclaws|r if you don't have a |T132914:0|t[Sunscale Feather]
     >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r
     .complete 905,2 --Visit Yellow Raptor Nest (1)
+    .collect 5165,3,905,7,3
     .mob Sunscale Scytheclaw
 step
     #completewith next
@@ -2299,7 +2372,12 @@ RXPGuides.RegisterGuide([[
 #next RestedXP Horde 22-30\22-24 Hillsbrad
 
 
-
+step << Druid
+    #season 2
+    #completewith next
+    >>Kill |cRXP_ENEMY_Grimtotem Taurens|r. Loot them for the |T134233:0|t[|cRXP_FRIENDLY_Idol of the Wild|r]
+    .collect 210534,1 -- Idol of the Wild (1)
+    .train 410021,1
 step
     .loop 25,Stonetalon Mountains,80.62,89.99,79.79,88.75,81.19,87.56,81.70,86.44,82.26,86.10,82.55,85.22,83.64,85.02,84.20,85.20,83.80,86.38,83.25,87.23,82.33,89.73,82.33,90.43,81.34,90.78
     >>Kill |cRXP_ENEMY_Grimtotem Ruffians|r and |cRXP_ENEMY_Grimtotem Mercenaries|r in the area
@@ -2307,7 +2385,35 @@ step
     .complete 6548,2 --Kill Grimtotem Mercenary (x6)
     .mob Grimtotem Ruffian
     .mob Grimtotem Mercenary
+step << Druid
+    #season 2
+    .goto Stonetalon Mountains,80.2,90.6,60,0
+    .goto Stonetalon Mountains,83.2,87.0,60,0
+    .goto Stonetalon Mountains,71.6,86.6,60,0
+    .goto Stonetalon Mountains,76.6,91.0,60,0
+    .goto Stonetalon Mountains,80.2,90.6
+    >>Kill |cRXP_ENEMY_Grimtotems|r. Loot them for the |T134233:0|t[|cRXP_FRIENDLY_Idol of the Wild|r]
+    .collect 210534,1 -- Idol of the Wild (1)
+    .mob Grimtotem Mercenary
+    .mob Grimtotem Brute
+    .mob Grimtotem Sorcerer
+    .mob Grimtotem Ruffian
+    .train 410021,1
+step << Druid
+    #season 2
+    #completewith AvengeVillageTurnin
+    .equip 18,210534 >> |cRXP_WARN_Equip the|r |T134233:0|t[|cRXP_FRIENDLY_Idol of the Wild|r]
+    .use 210534
+    .itemcount 210534,1
+    .train 410021,1
+step << Druid
+    #season 2
+    #completewith next
+    >>|cRXP_WARN_Cast|r |T136085:0|t[Regrowth] |cRXP_WARN_or|r |T136041:0|t[Healing Touch] |cRXP_WARN_on 10 different friendly Beasts such as Hunter Pets/Druids in Bear Form/Shamans in Ghost Wolf|r
+    .train 410021 >> |cRXP_WARN_Use the|r |T134233:0|t[|cRXP_FRIENDLY_Idol of the Wild|r] |cRXP_WARN_to train|r |T132143:0|t[Wild Strikes]
+    .itemcount 210534,1
 step
+    #label AvengeVillageTurnin
     #map Stonetalon Mountains
     .goto The Barrens,35.19,27.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Makaba|r
@@ -2582,6 +2688,7 @@ step << Druid
     .target Loganaar
     .xp <20,1
 step
+    #completewith JornSkyseerTurnin
     .hs >> Hearth to Camp Taurajo
     .use 6948
 step
@@ -2595,6 +2702,7 @@ step
     .collect 1205,20,895,1 << !Rogue !Warrior --Melon Juice (40)
     .target Innkeeper Byula
 step
+    #label JornSkyseerTurnin
     .goto The Barrens,44.85,59.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorn Skyseer|r
     .turnin 3261 >>Turn in Jorn Skyseer
@@ -2663,7 +2771,7 @@ step
     .mob Bristleback Geomancer
 step << Warlock/Shaman
     .loop 25,The Barrens,50.71,54.60,50.74,55.33,50.73,56.78,50.42,57.23,50.50,57.65,50.87,57.50,51.26,57.84,51.74,57.69,51.79,57.10,53.08,54.69,53.65,54.27,53.63,53.53,53.35,52.72,53.00,51.83,52.62,52.19,52.59,52.71,52.41,53.07,52.32,53.71,51.39,54.22
-    .xp 19+11570 >> Grind to 11000+/21300 xp
+    .xp 19+11000 >> Grind to 11000+/21300 xp
 step
     .goto The Barrens,50.88,52.96,50,0
     .goto The Barrens,50.06,52.78,50,0
@@ -2687,6 +2795,11 @@ step
     .complete 821,2 --Plainstrider Kidney (5)
     .mob Greater Plainstrider
 step
+    #completewith next
+    >>Kill any |cRXP_ENEMY_Zhevra|r. Loot it for a |cRXP_LOOT_Fresh Zhevra Carcass|r
+	.collect 10338,1 --Collect Fresh Zhevra Carcass
+    .mob Zhevra Charger
+step
     #loop
     .goto The Barrens,55.59,43.39,0
     .goto The Barrens,55.59,43.39,40,0
@@ -2699,14 +2812,38 @@ step
     >>Kill |cRXP_ENEMY_Oasis Snapjaws|r in and around the lake. Loot them for their |cRXP_LOOT_Shells|r
     .complete 880,1 --Altered Snapjaw Shell (8)
     .mob Oasis Snapjaw
+step << Shaman/Priest
+    #loop
+    .goto The Barrens,55.77,34.01,40,0 --Spawn 1
+    .goto The Barrens,55.83,34.21,40,0
+    .goto The Barrens,54.81,35.95,40,0 --Spawn 2
+    .goto The Barrens,54.96,35.72,40,0
+    .goto The Barrens,57.47,36.03,40,0 --Spawn 3
+    .goto The Barrens,57.56,35.78,40,0
+    .goto The Barrens,57.46,35.70,40,0
+    .goto The Barrens,57.59,38.36,40,0 --Spawn 4
+    .goto The Barrens,57.49,38.65,40,0
+    .goto The Barrens,58.82,37.67,40,0 --Spawn 5
+    .goto The Barrens,58.92,37.53,40,0
+    .goto The Barrens,58.94,37.73,40,0
+    >>Cast |T136075:0|t[Purge] on the |cRXP_ENEMY_Desert Mirage|r to kill it. Loot it for the |T134419:0|t|cRXP_LOOT_[Earthen Rune]|r << Shaman
+    >>Cast |T135894:0|t[Dispel Magic] on the |cRXP_ENEMY_Desert Mirage|r to kill it. Loot it for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a King's Demise|r] << Priest
+    .collect 208758,1 << Shaman --Earthen Rune (1)
+    .collect 205932,1 << Priest-- Prophecy of a King's Demise (1)
+    .unitscan Desert Mirage
+    .train 410107,1 << Shaman
+    .train 402849,1 << Priest
+--XX Respawns after 85s-170s
 step
     #completewith next
     >>Kill any |cRXP_ENEMY_Zhevra|r. Loot it for a |cRXP_LOOT_Fresh Zhevra Carcass|r
 	.collect 10338,1 --Collect Fresh Zhevra Carcass
     .mob Zhevra Charger
 step
+    #label IshamuhalesFang
     .goto The Barrens,59.87,30.41
     .use 10338 >>Use the |T134368:0|t[|cRXP_LOOT_Fresh Zhevra Carcass|r] at the dead tree to summon |cRXP_ENEMY_Ishamuhale|r. Kill and loot him for his |cRXP_LOOT_Fang|r
+    >>|cRXP_WARN_The Carcass only has a 30 minute duration!|r
     .complete 882,1 --Ishamuhale's Fang (1)
     .mob Ishamuhale
 step
@@ -2954,7 +3091,7 @@ step << Rogue
     .dungeon DM
 step << Warlock
     .goto Undercity,48.47,45.42
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Zevrost|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zevrost|r
     .train 1014 >> Train your class spells
 	.target Zevrost
     .xp <18,1
@@ -2962,7 +3099,7 @@ step << Warlock
     .dungeon DM
 step << Warlock
     .goto Undercity,48.47,45.42
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Zevrost|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zevrost|r
     .train 706 >> Train your class spells
 	.target Zevrost
     .xp <20,1
@@ -3350,18 +3487,18 @@ step
     .mob Serena Bloodfeather
 step << Hunter
     .goto The Barrens,49.00,11.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Wenikee|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wenikee|r
     .turnin 3921 >> Turn in Wenikee Boltbucket
     .target Wenikee Boltbucket
 step << Hunter
     .goto The Barrens,48.12,5.42
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Torek|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torek|r
     .turnin 6541 >> Turn in Report to Kadrak
     .target Kadrak
 step << Hunter
     .goto Ashenvale,68.34,75.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Torek|r to start the escort
-    >>|cRXP_FRIENDLY_ Torek|r |cRXP_WARN_has a 5 minute respawn time|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torek|r to start the escort
+    >>|cRXP_FRIENDLY_Torek|r |cRXP_WARN_has a 5 minute respawn time|r
     .accept 6544 >> Accept Torek's Assault
     .target Torek
 step << Hunter
@@ -3369,9 +3506,9 @@ step << Hunter
     .goto Ashenvale,65.07,75.36,20,0
     .goto Ashenvale,64.28,75.33,10,0
     .goto Ashenvale,64.81,75.34
-    >>Follow |cRXP_FRIENDLY_ Torek|r
-    >>Let |cRXP_FRIENDLY_ Torek|r and his |cRXP_FRIENDLY_ Splintertree Raiders|r tank the |cRXP_ENEMY_Silverwing Warriors|r and |cRXP_ENEMY_Silverwing Sentinels|r
-    >>When you clear the building, run toward the Balcony. When |cRXP_ENEMY_Duriel Moonfire|r comes, let |cRXP_FRIENDLY_ Torek|r and his |cRXP_FRIENDLY_ Splintertree Raiders|r take aggro before you deal damage
+    >>Follow |cRXP_FRIENDLY_Torek|r
+    >>Let |cRXP_FRIENDLY_Torek|r and his |cRXP_FRIENDLY_Splintertree Raiders|r tank the |cRXP_ENEMY_Silverwing Warriors|r and |cRXP_ENEMY_Silverwing Sentinels|r
+    >>When you clear the building, run toward the Balcony. When |cRXP_ENEMY_Duriel Moonfire|r comes, let |cRXP_FRIENDLY_Torek|r and his |cRXP_FRIENDLY_Splintertree Raiders|r take aggro before you deal damage
     .complete 6544,1 --Take Silverwing Outpost
     .mob Silverwing Warrior
     .mob Silverwing Sentinel
@@ -3384,18 +3521,18 @@ step << Hunter
     .isQuestComplete 6544
 step << Hunter
     .goto Ashenvale,73.78,61.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Senani|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senani|r
     .turnin 6382 >> Turn in The Ashenvale Hunt
     .turnin 6383 >> Turn in The Ashenvale Hunt
     .target Senani Thunderheart
 step << Hunter
     .goto Ashenvale,73.18,61.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Vhulgra|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vhulgra|r
     .fp Splintertree Post >> Get the Splintertree Post flight path
     .target Vhulgra
 step << Hunter
     .goto Ashenvale,73.18,61.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Vhulgra|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vhulgra|r
     .fly Crossroads >> Fly to Crossroads
     .target Vhulgra
     .cooldown item,6948,<0
@@ -3646,6 +3783,11 @@ step
     .goto Thunder Bluff,28.14,32.97,40,0
     .goto Thunder Bluff,28.51,28.95,10 >> Travel to the Spirit Rise and enter the pools of vision
 step
+    .goto Thunder Bluff,28.55,25.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clarice|r
+    .accept 264 >> Until Death Do Us Part
+    .target Clarice Foster
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
     .turnin 853 >> Turn in Apothecary Zamah << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .turnin 1064 >> Turn in Forsaken Aid
@@ -3695,11 +3837,6 @@ step << Shaman
     .train 8498 >> Train your class spells
     .target Tigor Skychaser
     .xp <22,1
-step
-    .goto Thunder Bluff,28.55,25.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clarice|r
-    .accept 264 >> Until Death Do Us Part
-    .target Clarice Foster
 step
     #completewith next
     .skill firstaid,80 >> Create |T133688:0|t[Heavy Linen Bandages] until your skill is 80 or higher
@@ -4390,6 +4527,17 @@ step
    .accept 6641 >> Accept Vorsha the Lasher
    .target Muglash
 step
+    #completewith next
+   >>Kill |cRXP_ENEMY_Wraithtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
+   .complete 6442,1 --Wraithtail Head (20)
+   .mob Wrathtail Razortail
+   .mob Wrathtail Wave Rider
+   .mob Wrathtail Sorceress
+   .mob Wrathtail Sea Witch
+   .mob Wrathtail Priestess
+   .mob Wrathtail Myrmidon
+   .mob Lady Vespia
+step
    .goto Ashenvale,9.63,27.63
    >>Click the |cRXP_PICK_Brazier|r when you get there
    >>|cRXP_WARN_There will be waves of|r |cRXP_ENEMY_Naga|r |cRXP_WARN_that spawn. Be careful once|r |cRXP_ENEMY_Vorsha|r |cRXP_WARN_comes out, he hits very hard|r
@@ -4397,6 +4545,7 @@ step
    .complete 6641,1 --Defeat Vorsha the Lasher
    .mob Vorsha the Lasher
 step << Priest
+    #season 0,1
     #sticky
     #completewith EnterBFD
     .subzone 719 >> Find a group now for BFD if you wish to get a big wand upgrade (Gravestone Scepter). You could also wait to do BFD when you are in Ashenvale at level 26-28
@@ -4414,7 +4563,7 @@ step
    .mob Lady Vespia
 step
     .loop 25,Ashenvale,10.86,26.99,11.23,25.73,11.83,25.75,12.51,24.09,14.18,24.03,14.85,23.08,14.13,20.77,14.73,19.56,14.59,17.90,13.38,16.39,13.62,14.48,14.15,15.31,15.88,15.42,15.40,16.96,15.22,18.81,15.33,20.78,15.33,22.51,15.32,24.90,14.76,25.52,14.62,26.49,14.52,28.25,13.55,29.36,12.41,29.15,11.22,31.04,10.38,29.60,11.01,28.57
-    .xp 21+18070 >> Grind to 21450+/25200 xp
+    .xp 21+21450 >> Grind to 21450+/25200 xp
     .dungeon !BFD << Priest
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warsong Runner|r and |cRXP_FRIENDLY_Marukai|r
@@ -4424,8 +4573,8 @@ step
     .goto Ashenvale,11.69,34.90
     .target Warsong Runner
     .target Marukai
-    .isQuestComplete 6641
 step << Priest
+    #season 0,1
     .goto Ashenvale,11.56,34.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
     .accept 6563 >> Accept The Essence of Aku'Mai
@@ -4435,6 +4584,7 @@ step << Priest
     .dungeon BFD
     .isQuestTurnedIn 6564
 step << Priest
+    #season 0,1
     .goto Ashenvale,11.56,34.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
     .accept 6563 >> Accept The Essence of Aku'Mai
@@ -4442,15 +4592,18 @@ step << Priest
     .target Je'neu Sancrea
     .dungeon BFD
 step << Priest
+    #season 0,1
     .goto Kalimdor,43.89,35.23,100 >> Travel to the entrance of Blackfathom Deeps
     .dungeon BFD
 step << Priest
+    #season 0,1
     #completewith next
     >>Loot |cRXP_LOOT_Sapphire of Aku'Mai|r from the wall
     .complete 6563,1 --Sapphire of Aku'Mai (20)
     .dungeon BFD
     .isOnQuest 6563
 step << Priest
+    #season 0,1
     .goto Kalimdor,43.81,35.16,20,0
     .goto Kalimdor,43.94,34.86,20,0
     .goto Kalimdor,43.90,34.59,20,0
@@ -4466,6 +4619,7 @@ step << Priest
     .use 16790
     .dungeon BFD
 step << Priest
+    #season 0,1
     .goto Kalimdor,44.53,34.86,20,0
     .goto Kalimdor,44.35,34.97,20,0
     .goto Kalimdor,44.16,34.85,20,0
@@ -4479,22 +4633,26 @@ step << Priest
     .dungeon BFD
     .isOnQuest 6563
 step << Priest
+    #season 0,1
     #label EnterBFD
     .goto Kalimdor,44.36,34.86
     .zone 221 >> Enter the BFD Instance portal. Zone in
     .dungeon BFD
 step << Priest
+    #season 0,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argent Guard Thaelrid|r
     .accept 6561 >>Accept Blackfathom Villainy
     .target Argent Guard Thaelrid
     .dungeon BFD
 step << Priest
+    #season 0,1
     >>Kill |cRXP_ENEMY_Lorguss Jett |r
     .complete 6565,1 --Lorguss Jett slain (1)
     .mob Lorguss Jett
     .isOnQuest 6565
     .dungeon BFD
 step << Priest
+    #season 0,1
     #completewith next
     >>Loot the |cRXP_PICK_Fathom Stone|r in the water on the ground for the |cRXP_LOOT_Fathom Core|r
     >>|cRXP_WARN_Looting this will spawn|r |cRXP_ENEMY_Baron Aquanis|r
@@ -4502,6 +4660,7 @@ step << Priest
     .isOnQuest 6921
     .dungeon BFD
 step << Priest
+    #season 0,1
     >>Kill |cRXP_ENEMY_Baron Aquanis|r. Loot him for a |T136222:0|t[|cRXP_LOOT_Strange Water Globe|r]. Use it to accept the quest
     .collect 16782,1 --Strange Water Globe (1)
     .accept 6922 >>Accept Baron Aquanis
@@ -4509,22 +4668,26 @@ step << Priest
     .use 16782
     .dungeon BFD
 step << Priest
+    #season 0,1
     >>Loot the |cRXP_PICK_Fathom Stone|r in the water on the ground for the |cRXP_LOOT_Fathom Core|r
     .complete 6921,1 --Fathom Core (1)
     .isOnQuest 6921
     .dungeon BFD
 step << Priest
+    #season 0,1
     >>Kill |cRXP_ENEMY_Twilight Lord Kelris|r. Loot him for his |cRXP_LOOT_Head|r
     .complete 6561,1 --Head of Kelris (1)
     .mob Twilight Lord Kelris
     .isOnQuest 6561
     .dungeon BFD
 step << Priest
+    #season 0,1
     .hs >> Hearth to Thunder Bluff
     .use 6948
     >>|cRXP_WARN_Kill|r |cRXP_ENEMY_Aku'mai|r |cRXP_WARN_first if you wish. This is the last boss of the dungeon|r
     .dungeon BFD
 step << Priest
+    #season 0,1
     .goto Thunder Bluff,71.04,34.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bashana|r
     .turnin 6561 >>Turn in Blackfathom Villainy
@@ -4532,6 +4695,7 @@ step << Priest
     .isQuestComplete 6561
     .dungeon BFD
 step << Priest
+    #season 0,1
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Zoram'gar >> Fly to Zoram'gar Outpost
@@ -4539,6 +4703,7 @@ step << Priest
     .zoneskip Ashenvale
     .dungeon BFD
 step << Priest
+    #season 0,1
     .goto Ashenvale,11.56,34.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
     .turnin 6564 >>Turn in Allegiance to the Old Gods
@@ -4546,6 +4711,7 @@ step << Priest
     .dungeon BFD
     .isOnQuest 6564
 step << Priest
+    #season 0,1
     .goto Ashenvale,11.56,34.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
     .turnin 6565 >>Turn in Allegiance to the Old Gods
@@ -4553,6 +4719,7 @@ step << Priest
     .dungeon BFD
     .isQuestComplete 6565
 step << Priest
+    #season 0,1
     .goto Ashenvale,11.56,34.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
     .turnin 6563 >>Turn in The Essence of Aku'Mai
@@ -4560,6 +4727,7 @@ step << Priest
     .dungeon BFD
     .isQuestComplete 6563
 step << Priest
+    #season 0,1
     .goto Ashenvale,11.56,34.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
     .turnin 6921 >>Turn in Amongst The Ruins
@@ -4567,6 +4735,7 @@ step << Priest
     .dungeon BFD
     .isQuestComplete 6521
 step << Priest
+    #season 0,1
     .goto Ashenvale,11.56,34.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
     .turnin 6922 >>Turn in Baron Aquanis
