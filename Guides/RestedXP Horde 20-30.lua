@@ -5688,22 +5688,20 @@ step << skip
     .isOnQuest 9626 << BloodElf
     .isOnQuest 9813 << !BloodElf !Shaman !Warrior
 --1.5x, on Darkhan
-step << skip
+step << !Shaman !Warrior skip
     #xprate 1.49-1.58
     .loop 35,Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
     .xp 25+16750 >> Grind to level 25 and 16750+/28900xp
     .isOnQuest 546
     .isQuestAvailable 9167 << !Shaman !Warrior
 --1.5x, on SOD
---VV << !Shaman !Warrior
-step << skip
+step << !Shaman !Warrior skip
     #xprate 1.49-1.58
     .loop 35,Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
     .xp 25+20575 >> Grind to level 25 and 20575+/28900xp
     .isQuestTurnedIn 546
     .isQuestAvailable 9167 << !Shaman !Warrior
 --1.5x on neither
---VV << !Shaman !Warrior
 step << skip
     #xprate 1.59-1.68
     .loop 35,Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
@@ -5722,22 +5720,20 @@ step << skip
     .isOnQuest 9626 << BloodElf
     .isOnQuest 9813 << !BloodElf !Shaman !Warrior
 --1.6x, on Darkhan
-step << skip
+step << !Shaman !Warrior skip
     #xprate 1.59-1.68
     .loop 35,Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
     .xp 25+15940 >> Grind to level 25 and 15940+/28900xp
     .isOnQuest 546
     .isQuestAvailable 9167 << !Shaman !Warrior
 --1.6x, on SOD
---VV << !Shaman !Warrior
-step << skip
+step << !Shaman !Warrior skip
     #xprate 1.59-1.68
     .loop 35,Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
     .xp 25+20020 >> Grind to level 25 and 20020+/28900xp
     .isQuestTurnedIn 546
     .isQuestAvailable 9167 << !Shaman !Warrior
 --1.6x on neither
---VV << !Shaman !Warrior
 step << skip
     #xprate >1.6999
     .loop 35,Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
@@ -5756,22 +5752,20 @@ step << skip
     .isOnQuest 9626 << BloodElf
     .isOnQuest 9813 << !BloodElf !Shaman !Warrior
 --1.7x, on Darkhan
-step << skip
+step << !Shaman !Warrior skip
     #xprate >1.6999
     .loop 35,Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
     .xp 25+15130 >> Grind to level 25 and 15130+/28900xp
     .isOnQuest 546
     .isQuestAvailable 9167 << !Shaman !Warrior
 --1.7x, on SOD
---VV << !Shaman !Warrior
-step << skip
+step << !Shaman !Warrior skip
     #xprate >1.6999
     .loop 35,Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
     .xp 25+19465 >> Grind to level 25 and 19465+/28900xp
     .isQuestTurnedIn 546
     .isQuestAvailable 9167 << !Shaman !Warrior
 --1.7x on neither
---VV << !Shaman !Warrior
 step << !Orc/!Warrior
     #completewith Battle
     .goto Hillsbrad Foothills,47.01,31.20 << wotlk

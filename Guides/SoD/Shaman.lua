@@ -1092,7 +1092,7 @@ step
     .zone Durotar >> Travel to Durotar
     .train 410094,1
     .xp <3,1
-step << skip
+step << !Tauren skip
     .goto Durotar,42.39,69.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shikrik|r
     .accept 77587 >>Accept Icons of Power << Troll Shaman
@@ -1100,7 +1100,6 @@ step << skip
     .target Shikrik
     .train 410094,1
     .xp <3,1
---XX << !Tauren
 step
     #label IconS
     .loop 25,Durotar,43.26,58.28,42.81,58.41,41.90,58.35,41.97,59.20,41.36,60.35,40.66,61.27,40.07,61.35,39.42,61.29,39.46,62.17,39.55,63.10,40.13,64.04,40.84,64.06,40.74,65.86,39.93,66.03,40.04,66.99,40.09,67.66,40.13,68.50,40.72,68.55,41.30,67.84,41.37,66.72,41.89,66.05,41.27,65.71,41.36,64.07,41.33,63.12,41.35,61.98,41.49,61.25,41.90,60.24,42.51,59.34,43.08,59.62,43.91,59.33,45.15,59.46,45.81,59.30,45.85,60.34,46.46,61.11,47.09,62.24,47.08,63.15,47.14,64.08,47.58,64.04,47.08,63.15,47.09,62.24,46.90,61.15,46.98,60.18,47.07,59.34,46.47,58.28,45.81,59.30,45.15,59.46,43.91,59.33,43.26,58.28
@@ -1129,14 +1128,13 @@ step
     .itemStat 18,QUALITY,2
     .train 410094,1
     .xp <3,1
-step << skip
+step << !Tauren skip
     .goto Durotar,42.39,69.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shikrik|r
     .turnin 77587 >>Turn in Icons of Power << Troll Shaman
     .turnin 77585 >>Turn in Icons of Power << Orc Shaman
     .target Shikrik
     .xp <3,1
---XX << !Tauren
     ]])
 
 
@@ -1160,13 +1158,12 @@ step
     .zone Mulgore >> Travel to Mulgore
     .train 410094,1
     .xp <3,1
-step << skip
+step << Tauren skip
     .goto Mulgore,45.01,75.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meela|r
     .accept 77652 >>Accept Icons of Power
     .target Meela Dawnstrider
     .xp <3,1
---XX << Tauren
 step
     #label IconS
     .goto Mulgore,63.74,81.18,50,0
@@ -1208,13 +1205,12 @@ step
     .itemStat 18,QUALITY,2
     .train 410094,1
     .xp <3,1
-step << skip
+step << Tauren skip
     .goto Mulgore,45.01,75.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meela|r
     .turnin 77652 >>Turn in Icons of Power
     .target Meela Dawnstrider
     .xp <3,1
---XX << Tauren
     ]])
 
 
