@@ -1165,13 +1165,66 @@ step << Tauren
     .goto Mulgore,44.49,45.36
     >>|cRXP_WARN_Use the|r |T135139:0|t[Thunderhorn Cleansing Totem] |cRXP_WARN_at the Well|r
     .complete 758,1 --Cleanse the Thunderhorn Water Well (1)
+step << Shaman
+    #season 2
+    #completewith next
+    >>Kill |cRXP_ENEMY_Bael'dun Diggers|r and |cRXP_ENEMY_Bael'dun Appraisers|r. Loot them for the |cRXP_LOOT_Artifact Storage Key|r
+    .collect 206975,1 --Artifact Storage Key (1)
+    .mob Bael'dun Digger
+    .mob Bael'dun Appraiser
+    .train 425344,1
+    .xp <3,1
 step
     .goto Mulgore,31.27,49.87
     >>Kill |cRXP_ENEMY_Bael'dun Diggers|r and |cRXP_ENEMY_Bael'dun Appraisers|r. Loot them for their |cRXP_LOOT_Prospector's Picks|r
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Bael'dun Appraisers|r cast|r |T135929:0|t[Lesser Heal] |cRXP_WARN_(Ranged Cast: Heals themselves or a nearby mob below 50% health for about 75 health)|r
     .use 4702 >> Smash the |T134707:0|t[Picks] at the Forge
     .complete 746,1 --Broken Tools (5)
     .mob Bael'dun Digger
     .mob Bael'dun Appraiser
+step << Shaman
+    #season 2
+    #loop
+    .goto Mulgore,34.33,47.54,40,0
+    .goto Mulgore,33.62,49.61,40,0
+    .goto Mulgore,32.58,48.96,40,0
+    .goto Mulgore,31.88,50.17,40,0
+    .goto Mulgore,31.14,50.08,40,0
+    .goto Mulgore,30.98,48.24,40,0
+    .goto Mulgore,31.59,48.19,40,0
+    .goto Mulgore,33.10,47.69,40,0
+    >>Kill |cRXP_ENEMY_Bael'dun Diggers|r and |cRXP_ENEMY_Bael'dun Appraisers|r. Loot them for the |cRXP_LOOT_Artifact Storage Key|r
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Bael'dun Appraisers|r cast|r |T135929:0|t[Lesser Heal] |cRXP_WARN_(Ranged Cast: Heals themselves or a nearby mob below 50% health for about 75 health)|r
+    .collect 206975,1 --Artifact Storage Key (1)
+    .mob Bael'dun Digger
+    .mob Bael'dun Appraiser
+    .train 425344,1
+    .xp <3,1
+step << Shaman
+    #season 2
+    .goto Mulgore,31.56,49.54
+    >>Open the |cRXP_PICK_Artifact Storage|r chest. Loot it for the |T134918:0|t|cRXP_LOOT_[Sulfurous Icon]|r
+    .collect 206388,1 --Sulfurous Icon (1)
+    .train 425344,1
+    .xp <3,1
+step << Shaman
+    #season 2
+    .equip 18,206388 >> |cRXP_WARN_Equip the|r |T134918:0|t|cRXP_LOOT_[Sulfurous Icon]|r
+    .use 206388
+    .itemcount 206388,1 --Sulfurous Icon (1)
+    .train 425344,1
+    .xp <3,1
+step << Shaman
+    #season 2
+    #label MoltenBlast
+    #completewith Burial
+    .aura 408828 >>|cRXP_WARN_Kill enemies having dealt damage using|r |T136026:0|t[Earth Shock] |cRXP_WARN_on them at least once. Do this 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_NOTE: You must do this on enemies that can provide experience to gain stacks|r
+    .mob Bael'dun Digger
+    .mob Bael'dun Appraiser
+    .train 425344,1
+    .xp <3,1
+    .xp >13,1
 step << Warrior
     #season 2
     .loop 25,Mulgore,34.08,43.71,32.98,42.96,31.72,43.08,31.08,42.09,31.12,40.87,31.74,40.31,32.44,41.17,33.57,41.30,33.82,40.26,34.48,41.21,34.50,42.29
@@ -1197,6 +1250,15 @@ step
     .turnin 772 >>Turn in Rite of Vision
     .accept 773 >>Accept Rite of Wisdom
     .target Seer Wiserunner
+step << Shaman
+    #season 2
+    #requires MoltenBlast
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Sulfurous Icon]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves: Molten Blast]
+    .use 206388
+    .aura 408828
+    .itemStat 18,QUALITY,2
+    .train 425344,1
+    .xp <3,1
 step
     #completewith SacredBurial
     .destroy 4823 >> You can delete |T134712:0|t[Water of the Seers] from your bags, as it's no longer needed

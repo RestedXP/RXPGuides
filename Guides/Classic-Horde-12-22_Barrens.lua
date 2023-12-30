@@ -298,7 +298,7 @@ step << !Undead !Tauren
     .target Innkeeper Boorand Plainswind
 step << Orc Warrior/Troll Warrior/Tauren Warrior
     #sticky
-    #completewith KreenigSnarlsnout
+    #completewith KreenigSnarlsnout1
     .goto The Barrens,52.5,30.7,0
     .vendor >> Check if |cRXP_FRIENDLY_Lizzarik|r is in The Crossroads. If he is, buy potions and a |T133476:0|t[Heavy Spiked Mace] if it's available
 	.unitscan Lizzarik
@@ -318,7 +318,7 @@ step << Tauren
     .accept 819 >> Accept Chen's Empty Keg
     .dungeon RFC
 step << Tauren
-    #completewith KreenigSnarlsnout
+    #completewith KreenigSnarlsnout1
     .goto The Barrens,56.75,24.69,50,0
     .goto The Barrens,59.26,24.67,50,0
     >>Kill |cRXP_ENEMY_Razormane Geomancers|r and |cRXP_ENEMY_Razormane Defenders|r
@@ -333,7 +333,8 @@ step << Tauren
     .complete 5041,1 --Crossroads' Supply Crates (1)
     .dungeon RFC
 step << Tauren
-    #label KreenigSnarlsnout
+    #label KreenigSnarlsnout1
+    .goto The Barrens,58.69,27.08
     >>Kill |cRXP_ENEMY_Kreenig Snarlsnout|r. Loot him for his |cRXP_LOOT_Tusk|r
     .complete 872,3 --Kreenig Snarlsnout's Tusk (1)
     .mob Kreenig Snarlsnout
@@ -645,6 +646,7 @@ step
     .complete 5041,1 --Crossroads' Supply Crates (1)
 step
     #label KreenigSnarlsnout
+    .goto The Barrens,58.69,27.08
     >>Kill |cRXP_ENEMY_Kreenig Snarlsnout|r. Loot him for his |cRXP_LOOT_Tusk|r
     .complete 872,3 --Kreenig Snarlsnout's Tusk (1)
     .mob Kreenig Snarlsnout
@@ -2488,15 +2490,18 @@ step << Warlock/Priest/Mage
     .complete 6284,1 --Collect Besseleth's Fang (x1)
 	.unitscan Besseleth
     .group 2 << Priest/Mage
+step << Warlock/Priest/Mage
+    .goto Stonetalon Mountains,54.99,76.03
+    >>Kill |cRXP_ENEMY_Deepmoss Creepers|r
+    .complete 6461,1 --Kill Deepmoss Creeper (x10)
+    .mob Deepmoss Creeper
+    .group 0 << Priest/Mage
 step << !Warlock
-    #completewith SRRFP
-    .goto Stonetalon Mountains,68.59,88.34,80,0
-    .goto Stonetalon Mountains,64.95,83.88,80,0
-    .goto Stonetalon Mountains,61.47,81.51,80,0
-    .goto Stonetalon Mountains,60.36,76.28,80,0
-    .goto Stonetalon Mountains,59.04,73.01,80,0
-    .goto Stonetalon Mountains,60.83,71.84,80,0
-    >>Kill every |cRXP_ENEMY_Deepmoss Creeper|r you see
+    .goto Stonetalon Mountains,67.38,86.99,80,0
+    .goto Stonetalon Mountains,61.44,81.74,80,0
+    .goto Stonetalon Mountains,58.44,75.90,40,0
+    .goto Stonetalon Mountains,54.99,76.03
+    >>Kill |cRXP_ENEMY_Deepmoss Creepers|r
     .complete 6461,1 --Kill Deepmoss Creeper (x10)
     .mob Deepmoss Creeper
 step
@@ -2813,6 +2818,7 @@ step
     .complete 880,1 --Altered Snapjaw Shell (8)
     .mob Oasis Snapjaw
 step << Shaman/Priest
+    #season 2
     #loop
     .goto The Barrens,55.77,34.01,40,0 --Spawn 1
     .goto The Barrens,55.83,34.21,40,0
@@ -3366,18 +3372,20 @@ step
     .mob Thunderhead
     .mob Stormsnout
 step
+    .goto The Barrens,44.85,59.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorn|r
+    .turnin 907 >>Turn in Enraged Thunder Lizards
+    .accept 913 >>Accept Cry of the Thunderhawk
+    .accept 884 >>Accept Owatanka
+    .turnin 884 >>Turn in Owatanka
+    .target Jorn Skyseer
+    .itemcount 5102,1
+step
     #label Thunderhawk
     .goto The Barrens,44.85,59.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorn|r
     .turnin 907 >>Turn in Enraged Thunder Lizards
     .accept 913 >>Accept Cry of the Thunderhawk
-    .target Jorn Skyseer
-step
-    .goto The Barrens,44.86,59.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorn|r
-    .accept 884 >>Accept Owatanka
-    .turnin 884 >>Turn in Owatanka
-    .itemcount 5102,1
     .target Jorn Skyseer
 step << Shaman
     #completewith CallofWater2
