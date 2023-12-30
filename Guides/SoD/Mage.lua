@@ -279,20 +279,12 @@ step << Mage
     .train 401767,1
     .collect 5020,1
     .collect 208754,1
--- step << Shaman
---     #loop
---     .goto The Barrens,44.3,37.7,20,0
---     .goto The Barrens,43,23.5,20,0
---     .goto The Barrens,52.7,41.8,20,0
---     >>Click on the |cRXP_PICK_Chest|r for |T135832:0|t[Tempest Icon.]
---     .train 401417,1
---     .collect 208754,1
 step
     .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
     .train 401767 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r] |cRXP_WARN_to learn|r |T132871:0|t[Regeneration.]
     .use 208754
--- step
---     --.engrave 5,401417 >> Open your character sheet and engrave your chest with |T132871:0|t[Regeneration] |cRXP_WARN_highly recommended.|r
+step << skip
+    .engrave 5,401417 >> Open your character sheet and engrave your chest with |T132871:0|t[Regeneration] |cRXP_WARN_highly recommended.|r
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -558,10 +550,10 @@ step
     .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
     .train 401759 >>|cRXP_WARN_Use|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Burnout|r] |cRXP_WARN_to learn|r |T236207:0|t[Burnout.]
     .use 203748
--- step
---.engrave 5,412286 >> Open your character sheet and engrave your chest with |T236207:0|t[Burnout.] << Mage
--- step
---     --.engrave 9,403629 >> Open your character sheet and engrave your chest with |T236291:0|t[Chaos Bolt.] << Warlock
+step << skip
+    .engrave 5,412286 >> Open your character sheet and engrave your chest with |T236207:0|t[Burnout.] << Mage
+step << skip
+    .engrave 9,403629 >> Open your character sheet and engrave your chest with |T236291:0|t[Chaos Bolt.] << Warlock
 ]])
 
 RXPGuides.RegisterGuide([[

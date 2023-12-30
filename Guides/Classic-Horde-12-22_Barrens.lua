@@ -64,6 +64,7 @@ step << Warrior !Undead
 step << !Shaman !Warrior/Undead
     #softcore
     #completewith ThievesPickup
+    .goto The Barrens,50.72,32.61
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .subzoneskip 380
 step << !Shaman !Warrior/Undead
@@ -117,8 +118,8 @@ step << Undead
 step << !Shaman !Warrior/Undead !Tauren
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
-    .accept 848 >>Accept Fungal Spores
     .accept 1492 >>Accept Wharfmaster Dizzywig
+    .accept 848 >>Accept Fungal Spores
     .turnin 1358 >>Turn in Sample for Helbrim << Undead/Rogue/Mage/Priest/Warlock
     .target Apothecary Helbrim
 step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
@@ -188,14 +189,20 @@ step
     .mob Fleeting Plainstrider
 step << !Tauren !Undead
     #completewith next
+    #label DemonMountain
     .goto The Barrens,51.09,22.68,40,0
     .goto The Barrens,50.33,21.85,40,0
     .goto The Barrens,49.21,20.42,40,0
-    .goto The Barrens,47.58,19.38,100 >> Travel to the top of the mountain
+    .goto The Barrens,47.65,19.21,100 >> Travel to the top of the mountain
+    .isOnQuest 924
+step << !Tauren !Undead
+    #completewith next
+    #requires DemonMountain
+    .goto The Barrens,47.65,19.21,15 >> Go inside Dreadmist Den
     .isOnQuest 924
 step << !Tauren !Undead
     #label DemonSeed
-    .goto The Barrens,47.98,19.08
+    .goto The Barrens,47.97,19.07
     >>Right click the |cRXP_PICK_Altar|r. Make sure you have a |T134095:0|t[Flawed Power Stone] on you
     .collect 4986,1,924 --Collect Flawed Power Stone
     .complete 924,1 --Destroy the Demon Seed (1)
@@ -296,6 +303,7 @@ step << !Undead !Tauren
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
     .home >> Set your Hearthstone to Crossroads
     .target Innkeeper Boorand Plainswind
+    .isOnQuest 867
 step << Orc Warrior/Troll Warrior/Tauren Warrior
     #sticky
     #completewith KreenigSnarlsnout1
@@ -438,7 +446,7 @@ step << Tauren
     .target Doras
     .dungeon RFC
 step
-    .goto Orgrimmar,31.9,37.7
+    .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .accept 5726 >>Accept Hidden Enemies
     .target Thrall
@@ -449,7 +457,7 @@ step
     .complete 5726,1 --Lieutenant's Insignia (1)
     .dungeon RFC
 step
-    .goto Orgrimmar,31.9,37.7
+    .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5726 >> Turn in Hidden Enemies
     .accept 5727 >> Accept Hidden Enemies
@@ -470,7 +478,7 @@ step
     .dungeon RFC
 step
     #label HiddenEnemiesPickup
-    .goto Orgrimmar,31.9,37.7
+    .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5727 >> Turn in Hidden Enemies
     .accept 5728 >> Accept Hidden Enemies
@@ -559,7 +567,7 @@ step
     .target Neeru Fireblade
     .dungeon RFC
 step
-    .goto Orgrimmar,31.9,37.7
+    .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5728 >> Turn in Hidden Enemies
     .accept 5729 >> Accept Hidden Enemies
@@ -573,7 +581,7 @@ step
     .target Neeru Fireblade
     .dungeon RFC
 step
-    .goto Orgrimmar,31.9,37.7
+    .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5730 >> Turn in Hidden Enemies
     .target Thrall
@@ -689,7 +697,7 @@ step << !Tauren !Undead
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
 step << !Tauren !Undead
-    .goto The Barrens,62.26,19.38
+    .goto The Barrens,62.34,20.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ak'Zeloth|r
     .turnin 924 >>Turn in The Demon Seed
     .target Ak'Zeloth
@@ -771,13 +779,21 @@ step << Shaman
     .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. Wait for the respawn if it's not up
     .collect 4926,1,819 --Collect Chen's Empty Keg
     .accept 819 >> Accept Chen's Empty Keg
+step << skip
+    #completewith RatchetEnter
+    >>Kill |cRXP_ENEMY_Sunscale Screechers|r. Loot them for their |cRXP_LOOT_Heads|r
+    .complete 869,1 --Raptor Head (12)
+    .mob Sunscale Screecher
+--XX Need to add goto about halfway down since they only spawn up north, would be too messy to add it
 step
     #completewith next
-    >>Kill any |cRXP_ENEMY_Zhevra|r you see. Loot them for their |cRXP_LOOT_Hooves|r
+    >>Kill |cRXP_ENEMY_Zhevra Runners|r. Loot them for their |cRXP_LOOT_Hooves|r
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
 step
-    .goto The Barrens,63.08,36.56,120 >> Travel toward Ratchet
+    #label RatchetEnter
+    .subzone 392 >> Travel to Ratchet
+    .isOnQuest 845
 step
     .goto The Barrens,62.68,36.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazlowe|r
@@ -789,7 +805,7 @@ step
     .fp Ratchet >> Get the Ratchet flight path
     .target Bragok
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r and |cRXP_FRIENDLY_Wanted poster|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r and the |cRXP_FRIENDLY_Wanted Poster|r
     .accept 894 >>Accept Samophlange
     .goto The Barrens,62.98,37.22
     .accept 895 >>Accept WANTED: Baron Longshore
@@ -804,7 +820,7 @@ step << Undead Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
 step << Undead Warrior
-    #completewith BarenLongshore
+    #completewith BaronLongshore
     +Equip the |T135353:0|t[Espadon] when you are level 16
     .use 2024
     .itemcount 2024,1
@@ -819,7 +835,7 @@ step << Shaman
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
 step << Shaman
-    #completewith BarenLongshore
+    #completewith BaronLongshore
     +Equip the |T135147:0|t[Gnarled Staff]
     .use 2030
     .itemcount 2030,1
@@ -834,7 +850,7 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
     .target Ironzar
 step << Rogue
-    #completewith BarenLongshore
+    #completewith BaronLongshore
     +Equip the |T135343:0|t[Scimitar]
     .use 2027
     .itemcount 2027,1
@@ -849,7 +865,7 @@ step << Rogue
     .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
     .target Ironzar
 step << Rogue
-    #completewith BarenLongshore
+    #completewith BaronLongshore
     +Equip the second |T135343:0|t[Scimitar] in your off-hand
     .use 2027
     .itemcount 2027,1
@@ -871,11 +887,12 @@ step
     .collect 4592,20,895,1 --Longjaw Mud Snapper (20)
     .collect 1205,10,895,1 << Mage/Warlock/Priest/Shaman/Druid --Melon Juice (10)
     .target Innkeeper Wiley
+    .isOnQuest 887
 step
-    #completewith BarenLongshore
-    .destroy 5088 >> Destroy the |T133735:0|t[Control Console Operating Manual] as you won't need it
+    #completewith BaronLongshore
+    .destroy 5088 >> Delete the |T133735:0|t[Control Console Operating Manual] from your bags, as it's no longer needed
 step
-    #completewith BarenLongshore
+    #completewith BaronLongshore
     >>Kill |cRXP_ENEMY_Southsea Brigands|r and |cRXP_ENEMY_Southsea Cannoneers|r
     .complete 887,1 --Southsea Brigand (12)
     .complete 887,2 --Southsea Cannoneer (6)
@@ -887,7 +904,7 @@ step << Orc Rogue/Troll Rogue
 	.complete 1963,1 --Tazan's Satchel (1)
     .unitscan Tazan
 step
-    #label BarenLongshore
+    #label BaronLongshore
     .goto The Barrens,64.21,47.14,50,0
     .goto The Barrens,63.57,49.14,50,0
     .goto The Barrens,62.64,49.72,50,0
@@ -1017,6 +1034,7 @@ step << !Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
     .fly Crossroads >> Fly to The Crossroads
     .target Bragok
+--XX Level 14 training here?
 step << Orc Warrior/Troll Warrior/Tauren Warrior
     #sticky
     #completewith ZhevraTurnIn
@@ -1051,10 +1069,11 @@ step << Tauren Hunter
 step << Troll Hunter/Orc Hunter
     .goto The Barrens,51.11,29.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uthrok|r
-    .vendor >> |cRXP_BUY_. Buy a|r |T135490:0|t[Fine Longbow] |cRXP_BUY_from him if it's available and stock up on arrows|r
+    .vendor >> |cRXP_BUY_Buy a|r |T135490:0|t[Fine Longbow] |cRXP_BUY_from him if it's available and stock up on arrows|r
     >>|cRXP_WARN_If it's not up, buy a|r |T135490:0|t[Reinforced Bow] |cRXP_WARN_instead|r
     .collect 2515,1200,870,1 << Hunter --Sharp Arrow (1200)
     .target Uthrok
+    .isOnQuest 903
 step << Tauren Hunter
     .goto The Barrens,51.11,29.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uthrok|r|cRXP_BUY_. Buy a|r |T135613:0|t[Hunter's Boomstick] |cRXP_BUY_from him|r
@@ -1089,7 +1108,7 @@ step
     .mob Kolkar Wrangler
     .mob Kolkar Stormer
 step << !Shaman !Warrior/Undead
-    #completewith next
+    #completewith Barak
     >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Forgotten Pools
     >>|cRXP_WARN_This quest does not have to be completed now|r
     .complete 848,1 --Collect Fungal Spores (x4)
@@ -1098,6 +1117,7 @@ step << !Shaman !Warrior/Undead
     >>Dive underwater to the |cRXP_PICK_Bubble Fissure|r
     .complete 870,1 --Explore the waters of the Forgotten Pools
 step
+    #label Barak
     .goto The Barrens,42.82,23.52
     >>Kill |cRXP_ENEMY_Barak Kodobane|r. Loot him for his |cRXP_LOOT_Head|r
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Barak Kodobane|r's melee hits deal a LOT of damage and he is protected by a |cRXP_ENEMY_Kolkar Wrangler|r. They can net you and shoot at you from ranged distance|r
@@ -1278,7 +1298,7 @@ step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .dungeon RFC
 step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .goto The Barrens,52.23,31.00
-    .abandon 881 >>|cRXP_WARN_If |cRXP_ENEMY_Echeyakee|r didn't spawn after using the|r |T134227:0|t[Horn of Echeyakee]|cRXP_WARN_or you didn't get the tag when it did spawn, abandon Echeyakee, then return to town and accept it again|r
+    .abandon 881 >>|cRXP_WARN_If |cRXP_ENEMY_Echeyakee|r didn't spawn after using the|r |T134227:0|t[Horn of Echeyakee]|cRXP_WARN_ or you didn't get the tag when it did spawn, abandon Echeyakee, then return to town and accept it again|r
     .itemcount 5100,<1 --Echeyakee's Hide (0)
     .dungeon RFC
 step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
@@ -1430,7 +1450,7 @@ step
     .complete 821,2 --Plainstrider Kidney (5)
     .mob Greater Plainstrider
     .mob Fleeting Plainstrider
-    .mob Ornery Plainstrideridneys
+    .mob Ornery Plainstrider
 step
     #label CatsEye
     .goto The Barrens,61.46,4.50,40,0
@@ -1775,7 +1795,7 @@ step << Warrior
     .aura 420667 >>Click the |cRXP_PICK_Horde Warbanner|r
     .train 403489,1
 step
-    .goto The Barrens,52.00,31.60
+    .goto The Barrens,51.95,31.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mankrik|r
     .accept 899 >> Accept Consumed by Hatred
     .accept 4921 >> Accept Lost in Battle
@@ -2129,7 +2149,7 @@ step
     #label Xroadsturnins2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mankrik|r, |cRXP_FRIENDLY_Tonga|r, |cRXP_FRIENDLY_Sergra|r and |cRXP_FRIENDLY_Gazrog|r
     .turnin 4921 >>Turn in Lost in Battle
-    .goto The Barrens,52.00,31.60
+    .goto The Barrens,51.95,31.58
     .turnin 877 >>Turn in The Stagnant Oasis
     .accept 880 >>Accept Altered Beings
     .goto The Barrens,52.26,31.93

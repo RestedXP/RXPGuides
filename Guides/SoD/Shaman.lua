@@ -4,17 +4,17 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune Guide
 #subgroup Gloves
 #name Molten Blast - 8 (Mulgore)
+#next Lava Lash - 10 (Mulgore)
 
 
-    --Rune of Molten Blast
 step
-    +|cRXP_WARN_You should be at least level 8 in order to acquire|r |T133816:0|t[Engrave Gloves: Molten Blast] |cRXP_WARN_in Mulgore alone|r
+    +|cRXP_WARN_You should be at least level 8 in order to acquire|r |T133816:0|t[Engrave Gloves - Molten Blast] |cRXP_WARN_in Mulgore alone|r
     >>|cRXP_WARN_You MUST be at least level 3 to equip the|r |T134918:0|t|cRXP_LOOT_[Sulfurous Icon]|r
-    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves: Molten Blast]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves - Molten Blast]
     .train 425344,1
     .xp >3,1
 step
-    +|cRXP_WARN_You should be at least level 8 in order to acquire|r |T133816:0|t[Engrave Gloves: Molten Blast] |cRXP_WARN_in Mulgore alone|r
+    +|cRXP_WARN_You should be at least level 8 in order to acquire|r |T133816:0|t[Engrave Gloves - Molten Blast] |cRXP_WARN_in Mulgore alone|r
     .train 425344,1
     .xp <3,1
     .xp >8,1
@@ -163,7 +163,7 @@ step
     .train 425344,1
     .xp <22,1
 step
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Sulfurous Icon]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves: Molten Blast]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Sulfurous Icon]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Molten Blast]
     .use 206388
     .aura 408828
     .itemStat 18,QUALITY,2
@@ -177,13 +177,14 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune Guide
 #subgroup Gloves
 #name Molten Blast - 10 (Durotar)
+#next Way of Earth - 12 (The Barrens)
         
         
     --Rune of Molten Blast
 step
-    +|cRXP_WARN_You MUST be at least level 10 in order to acquire|r |T133816:0|t[Engrave Gloves: Molten Blast] |cRXP_WARN_as it is the level requirement of training|r |T135813:0|t[Flame Shock]
-    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves: Molten Blast]
-    >>|cRXP_WARN_Alternatively, you can get|r |T133816:0|t[Engrave Gloves: Molten Blast] |cRXP_WARN_in Mulgore at level 3+|r
+    +|cRXP_WARN_You MUST be at least level 10 in order to acquire|r |T133816:0|t[Engrave Gloves - Molten Blast] |cRXP_WARN_as it is the level requirement of training|r |T135813:0|t[Flame Shock]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves - Molten Blast]
+    >>|cRXP_WARN_Alternatively, you can get|r |T133816:0|t[Engrave Gloves - Molten Blast] |cRXP_WARN_in Mulgore at level 3+|r
     .train 425344,1
     .xp >10,1
     step
@@ -218,7 +219,7 @@ step
     .goto Durotar,58.69,45.53
     >>|cRXP_WARN_Look for other Shamans, Warlocks, or Mages near the |cRXP_ENEMY_Frozen Makrura|r or in General Chat (Type /1 into chat)|r
     >>|cRXP_WARN_Cast|r |T135813:0|t[Flame Shock] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Makrura|r to apply a stack of|r |T134916:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Makrura|r. Loot it for the|r |T134918:0|t|cRXP_LOOT_[Sulfurous Icon]|r
-    >>|cRXP_WARN_Alternatively, you can get|r |T133816:0|t[Engrave Gloves: Molten Blast] |cRXP_WARN_in Mulgore solo|r
+    >>|cRXP_WARN_Alternatively, you can get|r |T133816:0|t[Engrave Gloves - Molten Blast] |cRXP_WARN_in Mulgore solo|r
     >>|cRXP_WARN_NOTE:|r |T135813:0|t[Flametongue Weapon] |cRXP_WARN_does NOT apply any|r |T134916:0|t[Applying Heat] stacks|r
     .collect 206388,1 --Sulfurous Icon (1)
     .mob Frozen Makrura
@@ -229,7 +230,7 @@ step
     .goto Durotar,58.69,45.53
     >>|cRXP_WARN_Look for other Shamans, Warlocks, or Mages near the |cRXP_ENEMY_Frozen Makrura|r or in General Chat (Type /1 into chat)|r
     >>|cRXP_WARN_Cast|r |T135813:0|t[Flame Shock] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Makrura|r to apply a stack of|r |T134916:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Makrura|r. Loot it for the|r |T134918:0|t|cRXP_LOOT_[Sulfurous Icon]|r
-    >>|cRXP_WARN_Alternatively, you can get|r |T133816:0|t[Engrave Gloves: Molten Blast] |cRXP_WARN_in Mulgore solo|r
+    >>|cRXP_WARN_Alternatively, you can get|r |T133816:0|t[Engrave Gloves - Molten Blast] |cRXP_WARN_in Mulgore solo|r
     >>|cRXP_WARN_NOTE:|r |T135813:0|t[Flametongue Weapon] |cRXP_WARN_and|r |T135824:0|t[Fire Nova Totem] |cRXP_WARN_do NOT apply any|r |T134916:0|t[Applying Heat] stacks|r
     .collect 206388,1 --Sulfurous Icon (1)
     .mob Frozen Makrura
@@ -355,7 +356,7 @@ step
     .train 425344,1
     .xp <22,1
 step
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Sulfurous Icon]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves: Molten Blast]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Sulfurous Icon]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Molten Blast]
     .use 206388
     .aura 408828
     .itemStat 18,QUALITY,2
@@ -371,19 +372,20 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune Guide
 #subgroup Gloves
 #name Lava Lash - 10 (Mulgore)
+#next Ancestral Guidance - 10 (Mulgore)
 
 
     --Rune of Lava Lash
 --XX Worth mentioning "Dual Wield Skill" in the name? Cuts off ingame due to it being 3 lines though
 step
-    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T133816:0|t[Engrave Gloves: Lava Lash] |cRXP_WARN_and|r |T132147:0|t[Dual Wield] |cRXP_WARN_in Mulgore alone|r
+    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T133816:0|t[Engrave Gloves - Lava Lash] |cRXP_WARN_and|r |T132147:0|t[Dual Wield] |cRXP_WARN_in Mulgore alone|r
     >>|cRXP_WARN_You MUST be at least level 4 as it is the level requirement of starting the questline|r
-    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves: Lava Lash] |cRXP_WARN_and|r |T132147:0|t[Dual Wield]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves - Lava Lash] |cRXP_WARN_and|r |T132147:0|t[Dual Wield]
     .train 410104,1
     .xp >4,1
 step
-    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T133816:0|t[Engrave Gloves: Lava Lash] |cRXP_WARN_and|r |T132147:0|t[Dual Wield] |cRXP_WARN_in Mulgore alone|r
-    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves: Lava Lash] |cRXP_WARN_and|r |T132147:0|t[Dual Wield]
+    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T133816:0|t[Engrave Gloves - Lava Lash] |cRXP_WARN_and|r |T132147:0|t[Dual Wield] |cRXP_WARN_in Mulgore alone|r
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves - Lava Lash] |cRXP_WARN_and|r |T132147:0|t[Dual Wield]
     .train 410104,1
     .xp <4,1
     .xp >10,1
@@ -439,7 +441,7 @@ step
 step
     #label IconS
     .goto Mulgore,60.39,33.54
-    >>|cRXP_WARN_If you don't have|r |T134596:0|t[Engrave Pants: Ancestral Guidance]|cRXP_WARN_, now is a good time to do it|r
+    >>|cRXP_WARN_If you don't have|r |T134596:0|t[Engrave Pants - Ancestral Guidance]|cRXP_WARN_, now is a good time to do it|r
     >>|cRXP_WARN_If you don't want to get this Rune, skip this step|r
     >>|cRXP_WARN_Join a group with another Shaman, Priest, or Druid standing over the |cRXP_FRIENDLY_Adventurer's Remains|r, or look for help from a Shaman, Priest, or Druid in General Chat (Type /1 into chat)|r
     >>|cRXP_WARN_Talk to the |cRXP_FRIENDLY_Adventurer's Remains|r on the ground to begin the ritual, OR click the other player's|r |T136223:0|t[Spirit Ritual] |cRXP_WARN_(whilst in their group)|r
@@ -451,7 +453,7 @@ step
     .train 410099,1
     .xp <4,1
 step
-    .cast 402265 >>|cRXP_WARN_Use the|r |T237571:0|t|cRXP_LOOT_[Echo of the Ancestors]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants: Ancestral Guidance]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T237571:0|t|cRXP_LOOT_[Echo of the Ancestors]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants - Ancestral Guidance]
     .use 210589
     .itemcount 210589,1 --Echo of the Ancestors (1)
     .train 410099,1
@@ -603,11 +605,12 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune Guide
 #subgroup Gloves
 #name Water Shield - 20 (The Barrens)
+#next Shamanistic Rage - 25 (Stonetalon Mountains)
 
 
 step
-    +|cRXP_WARN_You MUST be at least level 20 in order to acquire|r |T133816:0|t[Engrave Gloves: Water Shield] |cRXP_WARN_as it is the level requirement of training|r |T135849:0|t[Frost Shock]
-    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves: Water Shield]
+    +|cRXP_WARN_You MUST be at least level 20 in order to acquire|r |T133816:0|t[Engrave Gloves - Water Shield] |cRXP_WARN_as it is the level requirement of training|r |T135849:0|t[Frost Shock]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves - Water Shield]
     .train 410097,1
     .xp >20,1
 step
@@ -797,7 +800,7 @@ step
     .train 410097,1
     .xp <22,1
 step
-    .cast 402265 >>|cRXP_WARN_Use the|r |T135832:0|t|cRXP_LOOT_[Tempest Icon]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves: Water Shield]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T135832:0|t|cRXP_LOOT_[Tempest Icon]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Water Shield]
     .use 206382
     .aura 408828
     .itemStat 18,QUALITY,2
@@ -811,10 +814,11 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune Guide
 #subgroup Gloves
 #name Water Shield - 20 (Silverpine Forest)
+#next Shamanistic Rage - 25 (Stonetalon Mountains)
 
 step
-    +|cRXP_WARN_You MUST be at least level 20 in order to acquire|r |T133816:0|t[Engrave Gloves: Water Shield] |cRXP_WARN_as it is the level requirement of training|r |T135849:0|t[Frost Shock]
-    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves: Water Shield]
+    +|cRXP_WARN_You MUST be at least level 20 in order to acquire|r |T133816:0|t[Engrave Gloves - Water Shield] |cRXP_WARN_as it is the level requirement of training|r |T135849:0|t[Frost Shock]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves - Water Shield]
     .train 410097,1
     .xp >20,1
 step
@@ -945,12 +949,68 @@ step
     .xp <20,1
     .xp >22,1
 step
-    .cast 402265 >>|cRXP_WARN_Use the|r |T135832:0|t|cRXP_LOOT_[Tempest Icon]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves: Water Shield]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T135832:0|t|cRXP_LOOT_[Tempest Icon]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Water Shield]
     .use 206382
     .aura 408828
     .itemStat 18,QUALITY,2
     .train 410097,1
     .xp <20,1
+step
+    #completewith next
+    >>|cRXP_WARN_If you don't have|r |T133816:0|t[Engrave Gloves - Lava Burst] |cRXP_WARN_already, it's worth doing now. If you don't want to, skip this step|r
+    .train 410095,1
+    .xp <25,1
+step
+    #completewith next
+    .zone Hillsbrad Foothills >>Travel to Hillsbrad Foothills
+    .train 410095,1
+    .xp <25,1
+step
+    #loop
+    .goto Hillsbrad Foothills,63.73,59.26,40,0
+    .goto Hillsbrad Foothills,65.49,60.30,40,0
+    .goto Hillsbrad Foothills,66.30,61.11,40,0
+    .goto Hillsbrad Foothills,63.61,62.04,40,0
+    .goto Hillsbrad Foothills,63.21,61.04,40,0
+    .goto Hillsbrad Foothills,62.56,63.55,40,0
+    .goto Hillsbrad Foothills,62.98,63.70,40,0
+    >>Kill |cRXP_ENEMY_Mudsnout Shamans|r. Loot them for the |T134920:0|t|cRXP_LOOT_[Kajaric Icon]|r
+    .collect 206387,1 --Kajaric Icon (1)
+    .mob Mudsnout Shaman
+    .train 410095,1
+    .xp <25,1
+step
+    .equip 18,206387 >> |cRXP_WARN_Equip the|r |T134920:0|t|cRXP_LOOT_[Kajaric Icon]|r
+    .use 206387
+    .itemcount 206387,1 --Kajaric Icon (1)
+    .train 410095,1
+    .xp <25,1
+step
+    #completewith next
+    .zone Orgrimmar >> Travel to Orgrimmar
+    .train 410095,1
+    .xp <25,1
+step
+    .goto Orgrimmar,52.77,48.97
+    .subzone 2437 >> Enter Ragefire Chasm inside the Cleft of Shadow
+    .itemStat 18,QUALITY,2
+    .train 410095,1
+    .xp <25,1
+step
+    >>|cRXP_WARN_Hug the right side of the wall. After going down the ramp (just after the 5th mob), walk into the shallow lava pool on your right|r
+    >>|cRXP_WARN_Damage taken from|r |T135805:0|t[Lava] |cRXP_WARN_is reduced to 91 whilst the|r |T134920:0|t|cRXP_LOOT_[Kajaric Icon]|r |cRXP_WARN_is equipped|r
+    .aura 408828 >>|cRXP_WARN_Take damage from the |T135805:0|t[Lava] |cRXP_WARN_source 5 times|r
+    .itemStat 18,QUALITY,2
+    .train 410095,1
+    .xp <25,1
+step
+    >>|cRXP_WARN_Move out of the|r |T135805:0|t[Lava]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134920:0|t|cRXP_LOOT_[Kajaric Icon]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Lava Burst]
+    .use 206387
+    .aura 408828
+    .itemStat 18,QUALITY,2
+    .train 410095,1
+    .xp <25,1
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -959,10 +1019,11 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune Guide
 #subgroup Gloves
 #name Lava Burst - 25 (Hillsbrad Foothills)
+#next Earth Shield - 25 (Azeroth)
 
 
 step
-    +|cRXP_WARN_You should be at least level 25 in order to acquire|r |T133816:0|t[Engrave Gloves: Lava Burst] |cRXP_WARN_in Hillsbrad alone|r
+    +|cRXP_WARN_You should be at least level 25 in order to acquire|r |T133816:0|t[Engrave Gloves - Lava Burst] |cRXP_WARN_in Hillsbrad alone|r
     .train 410095,1
     .xp >25,1
 step
@@ -993,7 +1054,7 @@ step
     .train 410095,1
 step
     .goto Orgrimmar,52.77,48.97
-    .zone 213 >> Enter Ragefire Chasm inside the Cleft of Shadow
+    .subzone 2437 >> Enter Ragefire Chasm inside the Cleft of Shadow
     .itemStat 18,QUALITY,2
     .train 410095,1
 step
@@ -1004,7 +1065,7 @@ step
     .train 410095,1
 step
     >>|cRXP_WARN_Move out of the|r |T135805:0|t[Lava]
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134920:0|t|cRXP_LOOT_[Kajaric Icon]|r |cRXP_WARN_to learn|r |T237582:0|t[Lava Burst]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134920:0|t|cRXP_LOOT_[Kajaric Icon]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Lava Burst]
     .use 206387
     .aura 408828
     .itemStat 18,QUALITY,2
@@ -1018,11 +1079,12 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune Guide
 #subgroup Chest
 #name Overload - 3 (Durotar)
+#next Shield Mastery - 6 (Durotar)
 
     --Rune of Overload
 step
-    +|cRXP_WARN_You MUST be at least level 3 in order to acquire|r |T133815:0|t[Engrave Chest: Overload] |cRXP_WARN_as it is the level requirement of equipping the|r |T134918:0|t|cRXP_LOOT_[Dyadic Icon]|r
-    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest: Overload]
+    +|cRXP_WARN_You MUST be at least level 3 in order to acquire|r |T133815:0|t[Engrave Chest - Overload] |cRXP_WARN_as it is the level requirement of equipping the|r |T134918:0|t|cRXP_LOOT_[Dyadic Icon]|r
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest - Overload]
     .train 410094,1
     .xp >3,1
 step
@@ -1030,7 +1092,7 @@ step
     .zone Durotar >> Travel to Durotar
     .train 410094,1
     .xp <3,1
-step << skip
+step << !Tauren skip
     .goto Durotar,42.39,69.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shikrik|r
     .accept 77587 >>Accept Icons of Power << Troll Shaman
@@ -1038,7 +1100,6 @@ step << skip
     .target Shikrik
     .train 410094,1
     .xp <3,1
---XX << !Tauren
 step
     #label IconS
     .loop 25,Durotar,43.26,58.28,42.81,58.41,41.90,58.35,41.97,59.20,41.36,60.35,40.66,61.27,40.07,61.35,39.42,61.29,39.46,62.17,39.55,63.10,40.13,64.04,40.84,64.06,40.74,65.86,39.93,66.03,40.04,66.99,40.09,67.66,40.13,68.50,40.72,68.55,41.30,67.84,41.37,66.72,41.89,66.05,41.27,65.71,41.36,64.07,41.33,63.12,41.35,61.98,41.49,61.25,41.90,60.24,42.51,59.34,43.08,59.62,43.91,59.33,45.15,59.46,45.81,59.30,45.85,60.34,46.46,61.11,47.09,62.24,47.08,63.15,47.14,64.08,47.58,64.04,47.08,63.15,47.09,62.24,46.90,61.15,46.98,60.18,47.07,59.34,46.47,58.28,45.81,59.30,45.15,59.46,43.91,59.33,43.26,58.28
@@ -1061,20 +1122,19 @@ step
     .train 410094,1
     .xp <3,1
 step
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Dyadic Icon]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest: Overload]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Dyadic Icon]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Overload]
     .use 206381
     .aura 408828
     .itemStat 18,QUALITY,2
     .train 410094,1
     .xp <3,1
-step << skip
+step << !Tauren skip
     .goto Durotar,42.39,69.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shikrik|r
     .turnin 77587 >>Turn in Icons of Power << Troll Shaman
     .turnin 77585 >>Turn in Icons of Power << Orc Shaman
     .target Shikrik
     .xp <3,1
---XX << !Tauren
     ]])
 
 
@@ -1084,12 +1144,13 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune Guide
 #subgroup Chest
 #name Overload - 3 (Mulgore)
+#next Shield Mastery - 6 (Mulgore)
 
 
     --Rune of Overload
 step
-    +|cRXP_WARN_You MUST be at least level 3 in order to acquire|r |T133815:0|t[Engrave Chest: Overload] |cRXP_WARN_as it is the level requirement of equipping the|r |T134918:0|t|cRXP_LOOT_[Dyadic Icon]|r
-    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest: Overload]
+    +|cRXP_WARN_You MUST be at least level 3 in order to acquire|r |T133815:0|t[Engrave Chest - Overload] |cRXP_WARN_as it is the level requirement of equipping the|r |T134918:0|t|cRXP_LOOT_[Dyadic Icon]|r
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest - Overload]
     .train 410094,1
     .xp >3,1
 step
@@ -1097,13 +1158,12 @@ step
     .zone Mulgore >> Travel to Mulgore
     .train 410094,1
     .xp <3,1
-step << skip
+step << Tauren skip
     .goto Mulgore,45.01,75.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meela|r
     .accept 77652 >>Accept Icons of Power
     .target Meela Dawnstrider
     .xp <3,1
---XX << Tauren
 step
     #label IconS
     .goto Mulgore,63.74,81.18,50,0
@@ -1139,19 +1199,18 @@ step
     .xp <3,1
 --XX Loop needs to be added
 step
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Dyadic Icon]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest: Overload]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Dyadic Icon]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Overload]
     .use 206381
     .aura 408828
     .itemStat 18,QUALITY,2
     .train 410094,1
     .xp <3,1
-step << skip
+step << Tauren skip
     .goto Mulgore,45.01,75.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meela|r
     .turnin 77652 >>Turn in Icons of Power
     .target Meela Dawnstrider
     .xp <3,1
---XX << Tauren
     ]])
 
 
@@ -1161,15 +1220,16 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune Guide
 #subgroup Chest
 #name Shield Mastery - 6 (Durotar)
+#next Molten Blast - 10 (Durotar)
 
 step
-    +|cRXP_WARN_You should be at least level 6 in order to acquire|r |T133815:0|t[Engrave Chest: Shield Mastery] |cRXP_WARN_in Durotar alone|r
+    +|cRXP_WARN_You should be at least level 6 in order to acquire|r |T133815:0|t[Engrave Chest - Shield Mastery] |cRXP_WARN_in Durotar alone|r
     >>|cRXP_WARN_You MUST be at least level 3 as it is the level requirement of equipping the|r |T134918:0|t|cRXP_LOOT_[Galvanic Icon]|r
-    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest: Shield Mastery]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest - Shield Mastery]
     .train 410098,1
     .xp >3,1
 step
-    +|cRXP_WARN_You should be at least level 6 in order to acquire|r |T133815:0|t[Engrave Chest: Shield Mastery] |cRXP_WARN_in Durotar alone|r
+    +|cRXP_WARN_You should be at least level 6 in order to acquire|r |T133815:0|t[Engrave Chest - Shield Mastery] |cRXP_WARN_in Durotar alone|r
     .train 410098,1
     .xp <3,1
     .xp >6,1
@@ -1317,7 +1377,7 @@ step
     .train 410098,1
     .xp <22,1
 step
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Galvanic Icon]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest: Shield Mastery]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Galvanic Icon]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Shield Mastery]
     .use 206386
     .aura 408828
     .itemStat 18,QUALITY,2
@@ -1334,17 +1394,18 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune Guide
 #subgroup Chest
 #name Shield Mastery - 6 (Mulgore)
+#next Molten Blast - 8 (Mulgore)
 
 
     --Rune of Shield Mastery
  step
-    +|cRXP_WARN_You should be at least level 6 in order to acquire|r |T133815:0|t[Engrave Chest: Shield Mastery] |cRXP_WARN_in Mulgore alone|r
+    +|cRXP_WARN_You should be at least level 6 in order to acquire|r |T133815:0|t[Engrave Chest - Shield Mastery] |cRXP_WARN_in Mulgore alone|r
     >>|cRXP_WARN_You MUST be at least level 3 as it is the level requirement of equipping the|r |T134918:0|t|cRXP_LOOT_[Galvanic Icon]|r
-    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest: Shield Mastery]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest - Shield Mastery]
     .train 410098,1
     .xp >3,1
 step
-    +|cRXP_WARN_You should be at least level 6 in order to acquire|r |T133815:0|t[Engrave Chest: Shield Mastery] |cRXP_WARN_in Mulgore alone|r
+    +|cRXP_WARN_You should be at least level 6 in order to acquire|r |T133815:0|t[Engrave Chest - Shield Mastery] |cRXP_WARN_in Mulgore alone|r
     .train 410098,1
     .xp <3,1
     .xp >6,1
@@ -1527,7 +1588,7 @@ step
     .train 410098,1
     .xp <22,1
 step
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Galvanic Icon]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest: Shield Mastery]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Galvanic Icon]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Shield Mastery]
     .use 206386
     .aura 408828
     .itemStat 18,QUALITY,2
@@ -1543,16 +1604,16 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune Guide
 #subgroup Legs
 #name Ancestral Guidance - 6 (Durotar)
-
+#next Molten Blast - 10 (Durotar)
 
     --Rune of Ancestral Guidance
 step
-    +|cRXP_WARN_You should be at least level 6 in order to acquire|r |T134596:0|t[Engrave Pants: Ancestral Guidance] |cRXP_WARN_in Durotar with another player|r
+    +|cRXP_WARN_You should be at least level 6 in order to acquire|r |T134596:0|t[Engrave Pants - Ancestral Guidance] |cRXP_WARN_in Durotar with another player|r
     >>|cRXP_WARN_You MUST be at least level 3 as it is the level requirement of using the|r |T237571:0|t|cRXP_LOOT_[Echo of the Ancestors]|r
     .train 410099,1
     .xp <3,1
 step
-    +|cRXP_WARN_You should be at least level 6 in order to acquire|r |T134596:0|t[Engrave Pants: Ancestral Guidance] |cRXP_WARN_in Durotar with another player|r
+    +|cRXP_WARN_You should be at least level 6 in order to acquire|r |T134596:0|t[Engrave Pants - Ancestral Guidance] |cRXP_WARN_in Durotar with another player|r
     .train 410099,1
     .xp <3,1
     .xp >6,1
@@ -1582,7 +1643,7 @@ step
     .train 410099,1
     .xp <3,1
 step
-    .cast 402265 >>|cRXP_WARN_Use the|r |T237571:0|t|cRXP_LOOT_[Echo of the Ancestors]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants: Ancestral Guidance]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T237571:0|t|cRXP_LOOT_[Echo of the Ancestors]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants - Ancestral Guidance]
     .use 210589
     .itemcount 210589,1 --Echo of the Ancestors (1)
     .train 410099,1
@@ -1596,17 +1657,18 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune Guide
 #subgroup Legs
 #name Ancestral Guidance - 10 (Mulgore)
+#next Way of Earth - 12 (The Barrens)
 
 
     --Rune of Ancestral Guidance
 
 step
-    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T134596:0|t[Engrave Pants: Ancestral Guidance] |cRXP_WARN_in Mulgore with another player|r
+    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T134596:0|t[Engrave Pants - Ancestral Guidance] |cRXP_WARN_in Mulgore with another player|r
     >>|cRXP_WARN_You MUST be at least level 3 as it is the level requirement of using the|r |T237571:0|t|cRXP_LOOT_[Echo of the Ancestors]|r
     .train 410099,1
     .xp <3,1
 step
-    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T134596:0|t[Engrave Pants: Ancestral Guidance] |cRXP_WARN_in Mulgore with another player|r
+    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T134596:0|t[Engrave Pants - Ancestral Guidance] |cRXP_WARN_in Mulgore with another player|r
     .train 410099,1
     .xp <3,1
     .xp >10,1
@@ -1656,7 +1718,7 @@ step
     .train 410099,1
     .xp <3,1
 step
-    .cast 402265 >>|cRXP_WARN_Use the|r |T237571:0|t|cRXP_LOOT_[Echo of the Ancestors]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants: Ancestral Guidance]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T237571:0|t|cRXP_LOOT_[Echo of the Ancestors]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants - Ancestral Guidance]
     .use 210589
     .itemcount 210589,1 --Echo of the Ancestors (1)
     .train 410099,1
@@ -1670,13 +1732,14 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune Guide
 #subgroup Legs
 #name Way of Earth - 12 (The Barrens)
+#next Water Shield - 20 (The Barrens)
 
 
 
 step
-    +|cRXP_WARN_You MUST be at least level 12 in order to acquire|r |T134596:0|t[Engrave Pants: Way of Earth] |cRXP_WARN_as it is the level requirement of training|r |T136075:0|t[Purge]
-    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T134596:0|t[Engrave Pants: Way of Earth]
-    >>|cRXP_WARN_Alternatively, you can get|r |T134596:0|t[Engrave Pants: Way of Earth] |cRXP_WARN_in Silverpine Forest at level 1+|r
+    +|cRXP_WARN_You MUST be at least level 12 in order to acquire|r |T134596:0|t[Engrave Pants - Way of Earth] |cRXP_WARN_as it is the level requirement of training|r |T136075:0|t[Purge]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T134596:0|t[Engrave Pants - Way of Earth]
+    >>|cRXP_WARN_Alternatively, you can get|r |T134596:0|t[Engrave Pants - Way of Earth] |cRXP_WARN_in Silverpine Forest at level 1+|r
     .train 410107,1
     .xp >12,1
 step
@@ -1739,7 +1802,7 @@ step
     .xp <12,1
 --XX Respawns after 85s-170s
 step
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Earthen Rune]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants: Way of Earth]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Earthen Rune]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants - Way of Earth]
     .use 208758
     .itemcount 208758,1 --Earthen Rune (1)
     .train 410107,1
@@ -1752,11 +1815,11 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune Guide
 #subgroup Legs
 #name Way of Earth - 14 (Silverpine Forest)
-
+#next Water Shield - 20 (Silverpine Forest)
 
 step
-    +|cRXP_WARN_You should be at least level 14 in order to acquire|r |T134596:0|t[Engrave Pants: Way of Earth] |cRXP_WARN_in Silverpine Forest alone|r
-    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T134596:0|t[Engrave Pants: Way of Earth]
+    +|cRXP_WARN_You should be at least level 14 in order to acquire|r |T134596:0|t[Engrave Pants - Way of Earth] |cRXP_WARN_in Silverpine Forest alone|r
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T134596:0|t[Engrave Pants - Way of Earth]
     .train 410107,1
     .xp >14,1
 step
@@ -1803,7 +1866,7 @@ step
     .train 410107,1
 --XX Need to test if it can be summoned anywhere, and how much or how scary it is
 step
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Earthen Rune]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants: Way of Earth]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Earthen Rune]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants - Way of Earth]
     .use 208758
     .itemcount 208758,1 --Earthen Rune (1)
     .train 410107,1
@@ -1815,10 +1878,11 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune Guide
 #subgroup Legs
 #name Shamanistic Rage - 25 (Stonetalon Mountains)
+#next Dual Wield Specialization - 25 (Ratchet)
 
 
 step
-    +|cRXP_WARN_You should be at least level 25 in order to acquire|r |T134596:0|t[Engrave Pants: Shamanistic Rage] |cRXP_WARN_in Stonetalon Mountains alone|r
+    +|cRXP_WARN_You should be at least level 25 in order to acquire|r |T134596:0|t[Engrave Pants - Shamanistic Rage] |cRXP_WARN_in Stonetalon Mountains alone|r
     .train 425343,1
     .xp >25,1
 step
@@ -1840,7 +1904,7 @@ step
     .mob Primordial Anomaly
     .train 425343,1
 step
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Primordial Fury]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants: Shamanistic Rage]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Primordial Fury]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants - Shamanistic Rage]
     .use 210811
     .itemcount 210811,1 --Rune of Primordial Fury (1)
     .train 425343,1
@@ -1852,10 +1916,12 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune Guide
 #subgroup Legs
 #name Earth Shield - 25 (Azeroth)
+#next Overload - 3 (Durotar) << Orc Shaman/Troll Shaman
+#next Overload - 3 (Mulgore) << Tauren Shaman
 
 
 step
-    +|cRXP_WARN_You MUST be at least level 25 in order to acquire|r |T134596:0|t[Engrave Pants: Earth Shield] |cRXP_WARN_as it is the level requirement of entering Blackfathom Deeps|r
+    +|cRXP_WARN_You MUST be at least level 25 in order to acquire|r |T134596:0|t[Engrave Pants - Earth Shield] |cRXP_WARN_as it is the level requirement of entering Blackfathom Deeps|r
     .train 410101,1
     .xp >25,1
 step
@@ -2122,10 +2188,26 @@ step
     .train 410101,1
     .xp <25,1
 step
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Earth Shield]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants: Earth Shield]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Earth Shield]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants - Earth Shield]
     .use 210746
     .itemcount 210746,1 --Rune of Earth Shield (1)
     .train 410101,1
+    .xp <25,1
+    --XX Rune Routing will never be good for this
+step
+    +Congratulations! You have acquired all |T134419:0|t|cRXP_LOOT_[Runes]|r currently available.
+    .train 410094,3 --Overload
+    .train 410095,3 --Lava Burst
+    .train 410096,3 --Dual Wield Specialization
+    .train 410097,3 --Water Shield
+    .train 410098,3 --Shield Mastery
+    .train 410099,3 --Ancestral Guidance
+    .train 410101,3 --Earth Shield
+    .train 410104,3 --Lava Lash
+    .train 410107,3 --Way of Earth
+    .train 416057,3 --Healing Rain
+    .train 425343,3 --Shamanistic Rage
+    .train 425344,3 --Molten Blast
     .xp <25,1
 ]])
 

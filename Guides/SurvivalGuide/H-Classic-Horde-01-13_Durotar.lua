@@ -189,8 +189,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r
     .turnin 788,2 >>Turn in Cutting Teeth << Shaman
     .turnin 788 >>Turn in Cutting Teeth << !Shaman
-    .turnin 804,1 >>Turn in Sarkoth << Shaman
-    .turnin 804 >>Turn in Sarkoth << !Shaman
+    .accept 789 >>Accept Sting of the Scorpid
     .accept 2383 >>Accept Simple Parchment << Orc Warrior
     .accept 3065 >>Accept Simple Tablet << Troll Warrior
     .accept 3082 >>Accept Etched Tablet << Troll Hunter
@@ -202,7 +201,8 @@ step
     .accept 3088 >>Accept Encrypted Parchment << Orc Rogue
     .accept 3089 >>Accept Rune-Inscribed Parchment << Orc Shaman
     .accept 3090 >>Accept Tainted Parchment << Orc Warlock
-    .accept 789 >>Accept Sting of the Scorpid
+    .turnin 804,1 >>Turn in Sarkoth << Shaman
+    .turnin 804 >>Turn in Sarkoth << !Shaman
     .target Gornek
 step << Rogue
     #completewith Rwag
@@ -809,7 +809,7 @@ step
     .target Lar Prowltusk
 step
     #label SenjinPickups
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vel|r, |cRXP_FRIENDLY_Vornal|r and |cRXP_FRIENDLY_Gadrin|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vel'rin|r, |cRXP_FRIENDLY_Vornal|r and |cRXP_FRIENDLY_Gadrin|r
     .accept 817 >>Accept Practical Prey
     .goto Durotar,55.95,73.93
     .accept 818 >>Accept A Solvent Spirit
@@ -1261,7 +1261,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Orgnil|r, |cRXP_FRIENDLY_Gar'Thok|r and |cRXP_FRIENDLY_Torka|r
     .turnin 823 >>Turn in Report to Orgnil
     .accept 806 >>Accept Dark Storms
-    .goto Durotar,52.25,43.18
+    .goto Durotar,52.24,43.15
     .turnin 784 >>Turn in Vanquish the Betrayers
     .turnin 830 >>Turn in The Admiral's Orders
     .accept 825 >>Accept From The Wreckage....
@@ -1277,7 +1277,7 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil|r, |cRXP_FRIENDLY_Gar'Thok|r and |cRXP_FRIENDLY_Torka|r
     .turnin 823 >>Turn in Report to Orgnil
-    .goto Durotar,52.25,43.18
+    .goto Durotar,52.24,43.15
     .turnin 784 >>Turn in Vanquish the Betrayers
     .turnin 830 >>Turn in The Admiral's Orders
     .accept 825 >>Accept From The Wreckage....
@@ -2015,8 +2015,9 @@ step << Shaman
     .zoneskip Durotar
 step << Shaman
     #label NeedforaCureAccept
-    .goto Durotar,41.6,18.7
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rhinag|r
+    .goto Durotar,41.54,18.59
+    >>|cRXP_WARN_This will start a 45 minute timer for the quest. Do NOT go AFK or log out for the next 10 minutes|r
+    >>Talk to |cRXP_FRIENDLY_Rhinag|r
     .accept 812 >>Accept Need for a Cure
     .target Rhinag
 step << Hunter
@@ -2072,8 +2073,9 @@ step << !Hunter
     .accept 835 >>Accept Securing the Lines
     .target Rezlak
 step << Hunter
-    .goto Durotar,41.6,18.7
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rhinag|r
+    .goto Durotar,41.54,18.59
+    >>|cRXP_WARN_This will start a 45 minute timer for the quest. Do NOT go AFK or log out for the next 5 minutes|r
+    >>Talk to |cRXP_FRIENDLY_Rhinag|r
     .accept 812 >>Accept Need for a Cure
     .target Rhinag
 step << Hunter
@@ -2087,7 +2089,7 @@ step << Hunter
     .turnin 831 >>Turn in The Admiral's Orders
     .target Nazgrel
 step << Hunter
-    .goto Orgrimmar,47.24,53.52
+    .goto Orgrimmar,47.24,53.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Kor'ghan|r
     .accept 813 >>Accept Finding the Antidote
     .target Kor'ghan
@@ -2268,7 +2270,7 @@ step << Shaman
     .target Innkeeper Grosk
     .money <0.0375
 step
-    .goto Durotar,51.95,43.50
+    .goto Durotar,52.24,43.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil|r
     .turnin 806 >>Turn in Dark Storms
     .accept 828 >>Accept Margoz
@@ -2276,8 +2278,8 @@ step
     .isQuestComplete 806
     .group
 step
-    .goto Durotar,51.95,43.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil|r again
+    .goto Durotar,52.24,43.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil|r
     .accept 828 >>Accept Margoz
     .target Orgnil Soulscar
     .isQuestTurnedIn 806
@@ -2554,7 +2556,7 @@ step << Rogue
     .trainer >> Train your class spells
     .target Therzok
 step << Shaman
-    .goto Orgrimmar,47.24,53.52
+    .goto Orgrimmar,47.24,53.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Kor'ghan|r
     .accept 813 >>Accept Finding the Antidote
     .target Kor'ghan
@@ -2966,7 +2968,7 @@ step << Hunter
     .target Doras
 step << Shaman/Hunter
     #label FindingAntidoteTurnin
-    .goto Orgrimmar,47.24,53.52
+    .goto Orgrimmar,47.24,53.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Kor'ghan|r
     .turnin 813 >>Turn in Finding the Antidote
     .target Kor'ghan
@@ -3035,7 +3037,7 @@ step << Shaman/Hunter
     .zone Durotar >> Leave Orgrimmar
     .zoneskip Durotar
 step << Shaman/Hunter
-    .goto Durotar,41.6,18.7
+    .goto Durotar,41.54,18.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rhinag|r
     .accept 812 >>Accept Need for a Cure
     .turnin 812 >>Turn in Need for a Cure

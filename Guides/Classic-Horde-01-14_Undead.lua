@@ -3701,7 +3701,7 @@ step << Undead
     .target Doras
     .dungeon RFC
 step
-    .goto Orgrimmar,31.9,37.7
+    .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .accept 5726 >>Accept Hidden Enemies
     .target Thrall
@@ -3712,7 +3712,7 @@ step
     .complete 5726,1 --Lieutenant's Insignia (1)
     .dungeon RFC
 step
-    .goto Orgrimmar,31.9,37.7
+    .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5726 >> Turn in Hidden Enemies
     .accept 5727 >> Accept Hidden Enemies
@@ -3733,7 +3733,7 @@ step
     .dungeon RFC
 step
     #label HiddenEnemiesPickup
-    .goto Orgrimmar,31.9,37.7
+    .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5727 >> Turn in Hidden Enemies
     .accept 5728 >> Accept Hidden Enemies
@@ -3823,7 +3823,7 @@ step
     .target Neeru Fireblade
     .dungeon RFC
 step
-    .goto Orgrimmar,31.9,37.7
+    .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5728 >> Turn in Hidden Enemies
     .accept 5729 >> Accept Hidden Enemies
@@ -3837,7 +3837,7 @@ step
     .target Neeru Fireblade
     .dungeon RFC
 step
-    .goto Orgrimmar,31.9,37.7
+    .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5730 >> Turn in Hidden Enemies
     .target Thrall

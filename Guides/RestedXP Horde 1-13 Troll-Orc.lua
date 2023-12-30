@@ -231,7 +231,7 @@ step
     .goto Durotar,42.06,68.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gornek|r
     .turnin 788 >>Turn in Cutting Teeth
-    .turnin 804 >>Turn in Sarkoth
+    .accept 789 >>Accept Sting of the Scorpid
     .accept 2383 >>Accept Simple Parchment << Orc Warrior
     .accept 3065 >>Accept Simple Tablet << Troll Warrior
     .accept 3082 >>Accept Etched Tablet << Troll Hunter
@@ -243,7 +243,7 @@ step
     .accept 3088 >>Accept Encrypted Parchment << Orc Rogue
     .accept 3089 >>Accept Rune-Inscribed Parchment << Orc Shaman
     .accept 3090 >>Accept Tainted Parchment << Orc Warlock
-    .accept 789 >>Accept Sting of the Scorpid
+    .turnin 804 >>Turn in Sarkoth
     .target Gornek
 step << Rogue
     #completewith Rwag
@@ -1062,11 +1062,12 @@ step
     +If Warlord Kolkanis is up and blocking a plan, kill him when you are level 7. Be sure to use the Cactus Apple Surprise for +2 stam and use the Healing Potion from earlier.
     .unitscan Warlord Kolkanis
 step
-    >>On the ground inside the tent.
-.goto Durotar,49.8,81.2
+    .goto Durotar,49.81,81.29
+    >>Burn the |cRXP_PICK_Attack Plan|r inside the tent on the ground
     .complete 786,1 --Attack Plan: Valley of Trials destroyed (1)
 step
-    .goto Durotar,47.7,77.4
+    >>Burn the |cRXP_PICK_Attack Plan|r on the ground
+    .goto Durotar,47.66,77.34
     .complete 786,2 --Attack Plan: Sen'jin Village destroyed (1)
 step
     #label Bonfire
@@ -1160,19 +1161,19 @@ step
     .accept 837 >>Accept Encroachment
 step
     .isOnQuest 823
-    .goto Durotar,52.2,43.2
+    .goto Durotar,52.24,43.15
 .target Orgnil Soulscar
 >>Talk to |cRXP_FRIENDLY_Orgnil Soulscar|r
     .turnin 823 >> Turn in Report to Orgnil
 step << Shaman/Warrior
-    .goto Durotar,52.2,43.2
+    .goto Durotar,52.24,43.15
 >>Talk to |cRXP_FRIENDLY_Orgnil Soulscar|r
     .turnin 823 >>Turn in Report to Orgnil
 .target Orgnil Soulscar
     .accept 806 >>Accept Dark Storms
 step << !Shaman !Warrior
     #xprate <1.5
-    .goto Durotar,52.2,43.2
+    .goto Durotar,52.24,43.15
 .target Orgnil Soulscar
 >>Talk to |cRXP_FRIENDLY_Orgnil Soulscar|r
     .turnin 823 >>Turn in Report to Orgnil
@@ -1632,7 +1633,7 @@ step << Warlock/Hunter
 >>Talk to |cRXP_FRIENDLY_Vol'jin|r
     .turnin 831 >>Turn in The Admiral's Orders
 step << Warlock
-.goto Orgrimmar,31.609,37.830
+.goto Orgrimmar,31.62,37.82
 .target Thrall
 >>Talk to |cRXP_FRIENDLY_Thrall|r
 .accept 5726 >>Accept Hidden Enemies
@@ -1671,7 +1672,7 @@ step << Warlock
 step << Warlock
 .goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
 step << Warlock
-    .goto Orgrimmar,31.733,37.823
+.goto Orgrimmar,31.62,37.82
 >>Talk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5726 >>Turn in Hidden Enemies
 .target Thrall
@@ -1704,7 +1705,7 @@ step << Warlock
 >>Talk to |cRXP_FRIENDLY_Gan'rul Bloodeye|r
     .turnin 1504 >>Turn in The Binding
 step << Warlock
-    .goto Orgrimmar,31.733,37.823
+.goto Orgrimmar,31.62,37.82
 .target Thrall
 >>Talk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5727 >>Turn in Hidden Enemies
@@ -1890,7 +1891,7 @@ step << Undead Warrior
     .turnin 826 >>Turn in Zalazane
 step << Undead Warrior
     >>Run back to Razor Hill
-.goto Durotar,52.2,43.2
+    .goto Durotar,52.24,43.15
 >>Talk to |cRXP_FRIENDLY_Orgnil Soulscar|r
     .turnin 823 >>Turn in Report to Orgnil
 .target Orgnil Soulscar
@@ -2153,10 +2154,11 @@ step << wotlk
 >>Talk to |cRXP_FRIENDLY_Rhinag|r
     .accept 812 >>Accept Need for a Cure
 step << tbc
-    .goto Durotar,42.5,18.6
-.target Rhinag
->>Talk to |cRXP_FRIENDLY_Rhinag|r
+    .goto Durotar,41.54,18.59
+    >>|cRXP_WARN_This will start a 45 minute timer for the quest. Do NOT go AFK or log out for the next 5 minutes|r
+    >>Talk to |cRXP_FRIENDLY_Rhinag|r
     .accept 812 >>Accept Need for a Cure
+    .target Rhinag
 step
 .goto Orgrimmar,49.0,94.2,20 >>Run into Orgrimmar
 step << Orc/Troll
@@ -2181,7 +2183,7 @@ step << Orc/Troll
 >>Talk to |cRXP_FRIENDLY_Vol'jin|r
     .turnin 831 >>Turn in The Admiral's Orders
 step
-    .goto Orgrimmar,31.9,37.7
+    .goto Orgrimmar,31.62,37.82
 .target Thrall
 >>Talk to |cRXP_FRIENDLY_Thrall|r
     .accept 5726 >>Accept Hidden Enemies
@@ -2189,7 +2191,7 @@ step << Paladin
     .goto Orgrimmar,32.272,35.794
     .trainer >> Go and train your class spells
 step
-    .goto Orgrimmar,47.2,53.4
+    .goto Orgrimmar,47.24,53.58
     >> Head into the Cleft of Shadow
 .target Kor'ghan
 >>Talk to |cRXP_FRIENDLY_Kor'ghan|r
@@ -2197,7 +2199,7 @@ step
 step
     #completewith Fizzle
     .goto Orgrimmar,53.03,48.78
-    .zone 213 >> Zone into Ragefire Chasm
+    .subzone 2437 >> Zone into Ragefire Chasm
 	.xp >11,1
 --/dump C_Map.GetBestMapForUnit("player")
 step
@@ -2256,7 +2258,7 @@ step
     #completewith next
     .deathskip >> Die and respawn at the Spirit Healer, or run back to Razor Hill
 step
-.goto Durotar,52.3,43.1
+.goto Durotar,52.24,43.15
 >>Talk to |cRXP_FRIENDLY_Orgnil Soulscar|r
     .turnin 806 >>Turn in Dark Storms
 .target Orgnil Soulscar
@@ -2369,13 +2371,13 @@ step << Warrior/Rogue
 	.goto Orgrimmar,81.2,19.0
 	.collect 25873,1 >> Purchase a Keen Throwing Knife from Zendo'jian
 step
-    .goto Orgrimmar,31.733,37.823
+.goto Orgrimmar,31.62,37.82
 >>Talk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5726 >>Turn in Hidden Enemies
 .target Thrall
     .accept 5727 >> Accept Hidden Enemies << Shaman
 step
-    .goto Orgrimmar,47.0,53.4
+    .goto Orgrimmar,47.24,53.58
 .target Kor'ghan
 >>Talk to |cRXP_FRIENDLY_Kor'ghan|r
     .turnin 813 >>Turn in Finding the Antidote
@@ -2400,7 +2402,7 @@ step << Shaman
 step
     #completewith LostBut
     .goto Orgrimmar,53.03,48.78
-    .zone 213 >> Zone into Ragefire Chasm
+    .subzone 2437 >> Zone into Ragefire Chasm
 step
     #completewith LostBut
     .deathskip >> Die and respawn at the Spirit Healer

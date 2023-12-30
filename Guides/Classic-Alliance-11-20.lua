@@ -1394,16 +1394,16 @@ step << Human Paladin
     .destroy 205864 >> Delete the |T134939:0|t[Charred Note] from your bags, as it's no longer needed
 step << Human Paladin
     #season 2
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Martyrdom] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest: Seal of Martyrdom]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Martyrdom] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Seal of Martyrdom]
     .use 205897
     .itemcount 205897,1 --Rune of Martyrdom (1)
     .train 410015,1
 step << Human Paladin
     #season 2
     .goto Westfall,36.24,54.52
-    .engrave 5 >>|cRXP_WARN_Engrave your|r |T134596:0|t|cRXP_LOOT_[Chest]|r with|r |T133815:0|t[Engrave Chest: Seal of Martyrdom]
-    >>|cRXP_WARN_Remember to put|r |T135961:0|t[Seal of Martyrdom] |cRXP_WARN_onto your action bars. It is better than both|r |T132325:0|t[Seal of Righteousness] |cRXP_WARN_and|r |T132347:0|t[Seal of Command] |cRXP_WARN_(until you get|r |T133815:0|t[Engrave Chest: Divine Storm]|cRXP_WARN_)|r
-    .train 410015,2
+    .engrave 5 >>|cRXP_WARN_Engrave your|r |T134596:0|t|cRXP_LOOT_[Chest]|r with|r |T133815:0|t[Engrave Chest - Seal of Martyrdom]
+    >>|cRXP_WARN_Remember to put|r |T135961:0|t[Seal of Martyrdom] |cRXP_WARN_onto your action bars. It is better than both|r |T132325:0|t[Seal of Righteousness] |cRXP_WARN_and|r |T132347:0|t[Seal of Command] |cRXP_WARN_(until you get|r |T133815:0|t[Engrave Chest - Divine Storm]|cRXP_WARN_)|r
+    .train 410015,3
 step
 	#completewith GnollPaws
     >>Open the |cRXP_PICK_Sacks of Oats|r on the ground. Loot them for the |cRXP_LOOT_Handful of Oats|r
@@ -3041,6 +3041,7 @@ step << Hunter
 step << Hunter
 .dungeon DM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r and |cRXP_FRIENDLY_Scout Riell|r atop the Tower
+    .turnin 155 >> Turn in The Defias Brotherhood
     .accept 166 >> Accept The Defias Brotherhood
     .goto Westfall,56.33,47.52
     .accept 214 >> Accept Red Silk Bandanas
@@ -5099,13 +5100,10 @@ step << NightElf
     .target Thor
 step << NightElf
 .dungeon DM
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r and |cRXP_FRIENDLY_Scout Riell|r atop the Tower
-    .accept 166 >> Accept The Defias Brotherhood
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .accept 65 >> Accept The Defias Brotherhood
     .goto Westfall,56.33,47.52
-    .accept 214 >> Accept Red Silk Bandanas
-    .goto Westfall,56.67,47.35
     .target Gryan Stoutmantle
-    .target Scout Riell
 step << NightElf Warrior/NightElf Priest
     #completewith next
     .goto Elwynn Forest,41.08,65.76,25 >> Travel to Goldshire << Warrior
@@ -5271,7 +5269,7 @@ step
     .turnin 155 >> Turn in The Defias Brotherhood
     .accept 166 >> Accept The Defias Brotherhood
     .target Gryan Stoutmantle
-step << !NightElf
+step
 .dungeon DM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scout Riell|r atop the Tower
     .accept 214 >> Accept Red Silk Bandanas
@@ -5739,12 +5737,7 @@ step << Rogue
     .skill lockpicking,<80,1
 step
     #completewith next
-    .goto Redridge Mountains,30.73,59.99,150 >> Travel to Lakeshire
-step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r
-	.target Deputy Feldon
-    .goto Redridge Mountains,30.73,59.99
-    .turnin 246 >> Turn in Assessing the Threat
+    .goto Redridge Mountains,33.50,48.97,150 >> Travel to Lakeshire
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
 	.target Marshal Marris
@@ -5791,21 +5784,28 @@ step
 step << Rogue
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lucius|r
 	.target Lucius
-    .goto Redridge Mountains,28.06,52.32
+    .goto Redridge Mountains,28.07,52.02
     .turnin 2282 >> Turn in Alther's Mill
-step << Rogue
-	#completewith next
-	.destroy 7907 >> Destroy the Certificate of Thievery. You don't need it
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hilary|r
 	.target Hilary
     .goto Redridge Mountains,29.24,53.63
     .turnin 3741 >> Turn in Hilary's Necklace
+step << Rogue
+    #optional
+	#completewith FlySW
+	.destroy 7907 >> Destroy the |T134328:0|t[Certificate of Thievery]. You don't need it
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r
+	.target Deputy Feldon
+    .goto Redridge Mountains,30.73,59.99
+    .turnin 246 >> Turn in Assessing the Threat
 step
     #era
     .goto Redridge Mountains,49.0,70.0
     .xp 20 >> Grind until you are level 20
 step
+    #label FlySW
     .goto Redridge Mountains,30.59,59.42
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
 	.target Ariena Stormfeather
@@ -6033,6 +6033,17 @@ step << Rogue
     >>Open the |cRXP_PICK_Duskwood Chest|r. Loot it for |cRXP_LOOT_Klaven Mortwake's Journal|r
     >>|cRXP_WARN_You can|r |T132310:0|t[Sap] |cRXP_ENEMY_Klaven Mortwake|r |cRXP_WARN_and then open the|r |cRXP_PICK_Duskwood Chest|r
     >>|cRXP_WARN_If your|r |T132310:0|t[Sap] |cRXP_WARN_resists or misses, cast|r |T132331:0|t[Vanish] |cRXP_WARN_and try again or otherwise jump down and reset him. Alternatively you can come back later to complete it|r
+    .complete 2359,1 --Collect Klaven Mortwake's Journal (x1)
+    .link https://www.youtube.com/watch?v=t05Ux5Qis9k >>|cRXP_WARN_Click here for a video guide|r
+    .isOnQuest 2359
+    .xp <22,1
+step << Rogue
+    #softcore
+    .goto Westfall,70.41,73.93
+    >>|cRXP_WARN_Travel up to the top of the Tower|r
+    >>Open the |cRXP_PICK_Duskwood Chest|r. Loot it for |cRXP_LOOT_Klaven Mortwake's Journal|r
+    >>|cRXP_WARN_You can|r |T132310:0|t[Sap] |cRXP_ENEMY_Klaven Mortwake|r |cRXP_WARN_and then open the|r |cRXP_PICK_Duskwood Chest|r
+    >>|cRXP_WARN_If your|r |T132310:0|t[Sap] |cRXP_WARN_resists or misses, jump down and reset him. Alternatively you can come back later to complete it|r
     .complete 2359,1 --Collect Klaven Mortwake's Journal (x1)
     .link https://www.youtube.com/watch?v=t05Ux5Qis9k >>|cRXP_WARN_Click here for a video guide|r
     .isOnQuest 2359

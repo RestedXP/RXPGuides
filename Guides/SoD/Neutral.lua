@@ -208,12 +208,14 @@ RXPGuides.RegisterGuide([[
 #name Lone Wolf - 25 (Ratchet) << Hunter
 #name Survival of the Fittest - 25 (Ratchet) << Druid
 #name Warbringer - 25 (Ratchet) << Warrior
-#name Dual Wield - 25 (Ratchet) << Shaman
+#name Dual Wield Specialization - 25 (Ratchet) << Shaman
 #name Demonic Pact - 25 (Ratchet) << Warlock
 #name Divine Sacrifice - 25 (Ratchet) << Paladin
 #name Rewind Time - 25 (Ratchet) << Mage
 #name Main Gauche - 25 (Ratchet) << Rogue
-#next Divine Storm - 25 (Darkshore) << Paladin
+#next Crusader Strike - 4 (Elwynn Forest) << Human Paladin
+#next Crusader Strike - 4 (Dun Morogh) << Dwarf Paladin
+#next Lava Burst - 25 (Hillsbrad Foothills) << Shaman
 
 << SoD
 
@@ -436,7 +438,6 @@ step
     .target Grizzby
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grizzby|r
-    .vendor
     .use 210822 << Priest
     .use 210820 << Paladin
     .use 210654 << Mage
@@ -447,15 +448,30 @@ step
     .use 210653 << Rogue
     .use 210823 << Shaman
     .train 415995 >>|cRXP_WARN_Buy and use the|r |T135791:0|t[|cRXP_FRIENDLY_Harmonious Epiphany|r] |cRXP_WARN_to train|r |T237549:0|t[Serendipity] << Priest
-    .train 410010 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Sacrifice|r] |cRXP_WARN_to train|r |T253400:0|t[Divine Sacrifice] << Paladin
+    .train 410010 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Sacrifice|r] |cRXP_WARN_to train|r |T134596:0|t[Engrave Pants - Divine Sacrifice] << Paladin
     .train 401761 >>|cRXP_WARN_Buy and use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Rewind Time|r] |cRXP_WARN_to train|r |T237538:0|t[Rewind Time] << Mage
     .train 410122 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Lone Wolf|r] |cRXP_WARN_to train|r |T132266:0|t[Lone Wolf] << Hunter
     .train 416042 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Survival|r] |cRXP_WARN_to train|r |T132126:0|t[Survival of the Fittest] << Druid
     .train 425445 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Warbringer|r] |cRXP_WARN_to train|r |T236319:0|t[Warbinger] << Warrior
     .train 425476 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Pact|r] |cRXP_WARN_to train|r |T237562:0|t[Demonic Pact] << Warlock
     .train 424990 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Main Gauche|r] |cRXP_WARN_to train|r |T237531:0|t[Main Gauche] << Rogue
-    .train 410096 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Dual Wield Specialization|r] |cRXP_WARN_to train |r |T132147:0|t[Dual Wield Specialization] << Shaman
+    .train 410096 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Dual Wield Specialization|r] |cRXP_WARN_to train|r |T132686:0|t[Engrave Chest - Dual Wield Specialization] << Shaman
     .target Grizzby
+step << Paladin
+    +Congratulations! You have acquired all |T134419:0|t|cRXP_LOOT_[Runes]|r currently available.
+    .train 409999,3 --Beacon of Light
+    .train 410001,3 --Hand of Reckoning
+    .train 410002,3 --Crusader Strike
+    .train 410008,3 --Avenger's Shield
+    .train 410010,3 --Divine Sacrifice
+    .train 410011,3 --Inspiration Exemplar
+    .train 410014,3 --Divine Storm
+    .train 410015,3 --Seal of Martyrdom
+    .train 416037,3 --Exorcist
+    .train 425618,3 --Horn of Lordaeron
+    .train 425619,3 --Aegis
+    .train 425621,3 --Rebuke
+    .xp <25,1
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -492,7 +508,6 @@ step
     .goto Stormwind City,55.0,61.6,-1 << Alliance
     .goto Ironforge,24.6,67.2,-1 << Alliance
     .goto Darnassus,60.0,56.4,-1 << Alliance
-    .vendor
     .use 211386 << Mage
     .use 211387 << Paladin
     .use 211392 << Warlock

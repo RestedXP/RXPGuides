@@ -349,7 +349,7 @@ step << Dwarf Paladin
     .goto Dun Morogh,28.833,68.332
     .turnin 3107 >> Turn in Consecrated Rune
     .accept 77657 >> Accept Relics of the Light
-    .trainer >> Train your class spells
+    .train 20271 >> Train your class spells
 step << Gnome Mage
     #season 0
     .goto Dun Morogh,28.709,66.366
@@ -428,27 +428,52 @@ step << Warrior
     .itemcount 204806,1
 step << Paladin
     #season 2
-    #label LoJ
+    #label Libram1
     #completewith CrusaderStrike
-    >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r. Loot them for the |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r]
+    >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r. Loot them for the |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r
     .collect 205420,1 -- Libram of Judgement (1)
     .mob Frostmane Troll Whelp
+    .train 410002,1
 step << Paladin
     #season 2
-    #label EquipLoJ
-    #requires LoJ
+    #label Libram2
+    #requires Libram1
     #completewith CrusaderStrike
-    .equip 18,205420 >> |cRXP_WARN_Equip the|r |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r]
+    .equip 18,205420 >> |cRXP_WARN_Equip the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r
     .use 205420
-    .itemStat 18,QUALITY,<2
-    .itemcount 205420,1
+    .itemcount 205420,1 --Libram of Judgement (1)
+--  .itemStat 18,QUALITY,<2
+    .train 410002,1
 step << Paladin
     #season 2
-    #requires EquipLoJ
-    #completewith next
-    .cast 409920 >>|cRXP_WARN_Cast|r |T135959:0|t[Judgement] |cRXP_WARN_on your foes 10 times until you have gained the|r |T136116:0|t[Inspired] |cRXP_WARN_buff, then use the|r |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r] |cRXP_WARN_again which you equiped earlier|r
+    #label Libram3
+    #requires Libram2
+    #completewith CrusaderStrike
+    .aura 408828 >>|cRXP_WARN_Cast|r |T135959:0|t[Judgement] |cRXP_WARN_10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    .itemStat 18,QUALITY,2
+    .train 410002,1
+step << Paladin
+    #season 2
+    #label Libram4
+    #requires Libram3
+    #completewith CrusaderStrike
+    .cast 409920 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Crusader Strike]
     .use 205420
-    .itemcount 205420,1
+    .aura 408828
+    .train 410002,1
+step << Paladin
+    #season 2
+    #label Libram5
+    #requires Libram4
+    #completewith CrusaderStrike
+    .equip 10 >>|cRXP_WARN_Equip a pair of|r |T132938:0|t|cRXP_LOOT_[Gloves]|r |cRXP_WARN_if you have some or when you loot some|r
+    .train 410002,3
+step << Paladin
+    #season 2
+    #requires Libram5
+    #completewith CrusaderStrike
+    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132938:0|t|cRXP_LOOT_[Gloves]|r with|r |T133816:0|t[Engrave Gloves - Crusader Strike]
+    .train 410002,3
 step << Paladin/Mage/Warlock
     #label CrusaderStrike
     .goto Dun Morogh,26.3,79.2,40,0
@@ -473,28 +498,40 @@ step << !Paladin !Mage !Warlock
     .mob Frostmane Troll Whelp
 step << Paladin
     #season 2
-    .goto Dun Morogh,26.3,79.2,40,0
-    .goto Dun Morogh,22.7,79.3,40,0
-    .goto Dun Morogh,20.9,75.7,40,0
-    .goto Dun Morogh,22.7,79.3,40,0
-    .goto Dun Morogh,20.9,75.7
-    >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r. Loot them for the |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r]
+    #loop
+    .goto Dun Morogh,26.59,79.16,50,0
+    .goto Dun Morogh,23.39,80.31,50,0
+    .goto Dun Morogh,22.60,79.50,50,0
+    .goto Dun Morogh,20.74,75.69,50,0
+    .goto Dun Morogh,22.60,79.50,50,0
+    .goto Dun Morogh,23.39,80.31,50,0
+    >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r. Loot them for the |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r
     .collect 205420,1 -- Libram of Judgement (1)
     .mob Frostmane Troll Whelp
+    .train 410002,1
 step << Paladin
     #season 2
-    .equip 18,205420 >> |cRXP_WARN_Equip the|r |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r]
+    .equip 18,205420 >> |cRXP_WARN_Equip the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r
     .use 205420
-    .itemcount 205420,1
+    .itemcount 205420,1 --Libram of Judgement (1)
+    .train 410002,1
 step << Paladin
     #season 2
-    .goto Dun Morogh,26.3,79.2,40,0
-    .goto Dun Morogh,22.7,79.3,40,0
-    .goto Dun Morogh,20.9,75.7,40,0
-    .goto Dun Morogh,22.7,79.3,40,0
-    .goto Dun Morogh,20.9,75.7
-    .cast 409920 >>|cRXP_WARN_Cast|r |T135959:0|t[Judgement] |cRXP_WARN_on your foes 10 times until you have gained the|r |T136116:0|t[Inspired] |cRXP_WARN_buff, then use the|r |T134916:0|t[|cRXP_FRIENDLY_Libram of Judgement|r] |cRXP_WARN_again which you equiped earlier|r
+    .goto Dun Morogh,26.59,79.16,50,0
+    .goto Dun Morogh,23.39,80.31,50,0
+    .goto Dun Morogh,22.60,79.50,50,0
+    .goto Dun Morogh,20.74,75.69,50,0
+    .goto Dun Morogh,22.60,79.50,50,0
+    .goto Dun Morogh,23.39,80.31,50,0
+    .aura 408828 >>|cRXP_WARN_Cast|r |T135959:0|t[Judgement] |cRXP_WARN_10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    .itemStat 18,QUALITY,2
+    .train 410002,1
+step << Paladin
+    #season 2
+    .cast 409920 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Crusader Strike]
     .use 205420
+    .aura 408828
+    .train 410002,1
 step << Warrior
     #season 2
     .goto Dun Morogh,26.3,79.2,40,0
@@ -2234,14 +2271,14 @@ step << Paladin
 --XX 109539 "I've taken care of Stuart. He shouldn't be a problem anymore."
 step << Paladin
     #season 2
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Rebuke] |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants: Rebuke]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Rebuke] |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants - Rebuke]
     .use 205683
     .itemcount 205683,1 --Rune of Rebuke (1)
     .train 425621,1
 step << Paladin
     #season 2
     #completewith DRT
-    .engrave 7 >>|cRXP_WARN_Engrave your|r |T134596:0|t|cRXP_LOOT_[Pants]|r with|r |T134596:0|t[Engrave Pants: Rebuke]
+    .engrave 7 >>|cRXP_WARN_Engrave your|r |T134596:0|t|cRXP_LOOT_[Pants]|r with|r |T134596:0|t[Engrave Pants - Rebuke]
     >>|cRXP_WARN_Remember to put|r |T134919:0|t[Rebuke] |cRXP_WARN_onto your action bars|r
     .train 425621,2
 step << Warrior
@@ -2650,16 +2687,16 @@ step << Paladin
     .destroy 205864 >> Delete the |T134939:0|t[Charred Note] from your bags, as it's no longer needed
 step << Paladin
     #season 2
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Martyrdom] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest: Seal of Martyrdom]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Martyrdom] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Seal of Martyrdom]
     .use 205897
     .itemcount 205897,1 --Rune of Martyrdom (1)
     .train 410015,1
 step << Paladin
     #season 2
     .goto Westfall,36.24,54.52
-    .engrave 5 >>|cRXP_WARN_Engrave your|r |T134596:0|t|cRXP_LOOT_[Chest]|r with|r |T133815:0|t[Engrave Chest: Seal of Martyrdom]
-    >>|cRXP_WARN_Remember to put|r |T135961:0|t[Seal of Martyrdom] |cRXP_WARN_onto your action bars. It is better than both|r |T132325:0|t[Seal of Righteousness] |cRXP_WARN_and|r |T132347:0|t[Seal of Command] |cRXP_WARN_(until you get|r |T133815:0|t[Engrave Chest: Divine Storm]|cRXP_WARN_)|r
-    .train 410015,2
+    .engrave 5 >>|cRXP_WARN_Engrave your|r |T134596:0|t|cRXP_LOOT_[Chest]|r with|r |T133815:0|t[Engrave Chest - Seal of Martyrdom]
+    >>|cRXP_WARN_Remember to put|r |T135961:0|t[Seal of Martyrdom] |cRXP_WARN_onto your action bars. It is better than both|r |T132325:0|t[Seal of Righteousness] |cRXP_WARN_and|r |T132347:0|t[Seal of Command] |cRXP_WARN_(until you get|r |T133815:0|t[Engrave Chest - Divine Storm]|cRXP_WARN_)|r
+    .train 410015,3
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r and |cRXP_FRIENDLY_"Auntie" Bernice Stonefield|r
     .target Ma Stonefield
