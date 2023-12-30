@@ -3758,12 +3758,14 @@ step << Warrior/Shaman/Hunter
 step << Warrior/Shaman/Hunter
     #label Gazzuz
     .goto Durotar,51.8,10.0
-    .use 4903 >>Kill |cRXP_ENEMY_Gazz'uz|r. Loot him for his |T134085:0|t[|cRXP_LOOT_Eye of Burning Shadow|r]. Use it to start the quest
+    >>Kill |cRXP_ENEMY_Gazz'uz|r. Loot him for his |T134085:0|t[|cRXP_LOOT_Eye of Burning Shadow|r]
+    >>|cRXP_WARN_Use the |T134085:0|t[|cRXP_LOOT_Eye of Burning Shadow|r] to start the quest|r
     >>|cRXP_WARN_Use your|r |T134712:0|t[Really Sticky Glue] |cRXP_WARN_on the|r |cRXP_ENEMY_Voidwalker|r |cRXP_WARN_to avoid being hit, and|r |T134829:0|t[Healing Potions] |cRXP_WARN_to restore health. Use LoS (line of sight) to avoid|r |cRXP_ENEMY_Gazz'uz|r |cRXP_WARN_his Shadow Bolts|r
     >>|cRXP_WARN_You can run to bodies of water found within the cave to evade the|r |cRXP_ENEMY_Voidwalker|r |cRXP_WARN_after killing|r |cRXP_ENEMY_Gazz'uz|r
     >>|cRXP_WARN_Be careful as he is VERY difficult. You can skip this quest if you need|r
     .collect 4903,1,832,1 --Collect Eye of Burning Shadow
     .accept 832 >>Accept Burning Shadows
+    .use 4903
 	.unitscan Gazz'uz
 step << Warrior/Shaman/Hunter
     #era/som
