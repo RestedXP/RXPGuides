@@ -1649,7 +1649,7 @@ step
     .target Ukor
 step
     #label SenjinPickups
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vel|r, |cRXP_FRIENDLY_Vornal|r and |cRXP_FRIENDLY_Gadrin|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vel'rin|r, |cRXP_FRIENDLY_Vornal|r and |cRXP_FRIENDLY_Gadrin|r
     .accept 817 >>Accept Practical Prey
     .goto Durotar,55.95,73.93
     .accept 818 >>Accept A Solvent Spirit
@@ -1981,8 +1981,9 @@ step
     .turnin 835 >>Turn in Securing the Lines
     .target Rezlak
 step
-    .goto Durotar,41.6,18.7
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rhinag|r
+    .goto Durotar,41.54,18.59
+    >>|cRXP_WARN_This will start a 45 minute timer for the quest. Do NOT go AFK or log out for the next 15 minutes|r
+    >>Talk to |cRXP_FRIENDLY_Rhinag|r
     .accept 812 >>Accept Need for a Cure
     .target Rhinag
 step
@@ -2048,7 +2049,7 @@ step
     .money <0.05
     .group
 step
-    .goto Durotar,51.95,43.50
+    .goto Durotar,52.24,43.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil|r
     .turnin 806 >>Turn in Dark Storms
     .accept 828 >>Accept Margoz
@@ -2056,8 +2057,8 @@ step
     .isQuestComplete 806
     .group
 step
-    .goto Durotar,51.95,43.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil|r again
+    .goto Durotar,52.24,43.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil|r
     .accept 828 >>Accept Margoz
     .target Orgnil Soulscar
     .isQuestTurnedIn 806
@@ -2202,7 +2203,7 @@ step << Shaman
     .target Kardris Dreamseeker
     .xp <12,1
 step
-    .goto Orgrimmar,47.24,53.52
+    .goto Orgrimmar,47.24,53.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Kor'ghan|r
     .accept 813 >>Accept Finding the Antidote
     .target Kor'ghan
@@ -2602,7 +2603,7 @@ step << Shaman
     .xp <14,1
 step
     #label FindingAntidoteTurnin
-    .goto Orgrimmar,47.24,53.52
+    .goto Orgrimmar,47.24,53.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Kor'ghan|r
     .turnin 813 >>Turn in Finding the Antidote
     .target Kor'ghan

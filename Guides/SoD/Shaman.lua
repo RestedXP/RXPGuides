@@ -992,7 +992,7 @@ step
     .xp <25,1
 step
     .goto Orgrimmar,52.77,48.97
-    .zone 213 >> Enter Ragefire Chasm inside the Cleft of Shadow
+    .subzone 2437 >> Enter Ragefire Chasm inside the Cleft of Shadow
     .itemStat 18,QUALITY,2
     .train 410095,1
     .xp <25,1
@@ -1054,7 +1054,7 @@ step
     .train 410095,1
 step
     .goto Orgrimmar,52.77,48.97
-    .zone 213 >> Enter Ragefire Chasm inside the Cleft of Shadow
+    .subzone 2437 >> Enter Ragefire Chasm inside the Cleft of Shadow
     .itemStat 18,QUALITY,2
     .train 410095,1
 step

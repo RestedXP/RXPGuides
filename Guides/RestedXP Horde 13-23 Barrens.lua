@@ -595,7 +595,7 @@ step << Shaman
 .train 526 >> Train Cure Poison
 .train 8154 >>Train Stoneskin Totem r2
 step << Shaman
-    .goto Orgrimmar,31.733,37.823
+.goto Orgrimmar,31.62,37.82
 .target Thrall
 >>Talk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5727 >>Turn in Hidden Enemies

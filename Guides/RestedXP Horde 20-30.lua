@@ -107,14 +107,15 @@ step << !Shaman !Warrior
     .isOnQuest 9813 << !BloodElf
 step << !Shaman !Warrior
     #label MeetingTW
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r and |cRXP_FRIENDLY_Dawnsinger|r
+--   >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r and |cRXP_FRIENDLY_Dawnsinger|r
+>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 9626 >> Turn in Meeting the Warchief << BloodElf
     .accept 9627 >> Accept Allegiance to the Horde << BloodElf
     .turnin 9813 >> Turn in Meeting the Warchief << !BloodElf
-    .goto Orgrimmar,31.63,37.83
-    .goto Orgrimmar,31.62,38.39 << BloodElf
+    .goto Orgrimmar,31.62,37.82
+--  .goto Orgrimmar,31.62,38.39 << BloodElf
     .target Thrall
-    .target Ambassador Dawnsinger << BloodElf
+--   .target Ambassador Dawnsinger << BloodElf
 step << Paladin
     .goto Orgrimmar,32.29,35.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pyreanor|r
@@ -6257,7 +6258,7 @@ step << !Shaman !Warrior
     .turnin 9626 >> Turn in Meeting the Warchief << BloodElf
     .accept 9627 >> Accept Allegiance to the Horde << BloodElf
     .turnin 9813 >> Turn in Meeting the Warchief << !BloodElf
-    .goto Orgrimmar,31.63,37.83
+    .goto Orgrimmar,31.62,37.82
     .accept 9428 >> Accept Report to Splintertree Post << BloodElf
     .goto Orgrimmar,31.62,38.39 << BloodElf
     .target Thrall
@@ -6268,7 +6269,7 @@ step << BloodElf
     #label MeetingTW
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r and |cRXP_FRIENDLY_Dawnsinger|r
     .accept 9627 >> Accept Allegiance to the Horde << BloodElf
-    .goto Orgrimmar,31.63,37.83
+    .goto Orgrimmar,31.62,37.82
     .accept 9428 >> Accept Report to Splintertree Post << BloodElf
     .goto Orgrimmar,31.62,38.39 << BloodElf
     .target Thrall
