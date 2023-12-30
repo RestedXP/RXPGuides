@@ -1604,7 +1604,7 @@ step
     .goto Loch Modan,36.6,79.6,15,0
     .train 415936,1
     >>Kill |cRXP_ENEMY_Stonesplinter Seer|r and loot them for |cRXP_LOOT_|T134939:0|t[Chewed Spell Notes]|r
-    .collect 208799,1
+    .collect 208854,1
     .mob Stonesplinter Seer
 step
     .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
