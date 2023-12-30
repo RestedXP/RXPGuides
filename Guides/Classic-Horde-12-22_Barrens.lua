@@ -1793,7 +1793,7 @@ step << Warrior
     .aura 420667 >>Click the |cRXP_PICK_Horde Warbanner|r
     .train 403489,1
 step
-    .goto The Barrens,52.00,31.60
+    .goto The Barrens,51.95,31.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mankrik|r
     .accept 899 >> Accept Consumed by Hatred
     .accept 4921 >> Accept Lost in Battle
@@ -2147,7 +2147,7 @@ step
     #label Xroadsturnins2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mankrik|r, |cRXP_FRIENDLY_Tonga|r, |cRXP_FRIENDLY_Sergra|r and |cRXP_FRIENDLY_Gazrog|r
     .turnin 4921 >>Turn in Lost in Battle
-    .goto The Barrens,52.00,31.60
+    .goto The Barrens,51.95,31.58
     .turnin 877 >>Turn in The Stagnant Oasis
     .accept 880 >>Accept Altered Beings
     .goto The Barrens,52.26,31.93
