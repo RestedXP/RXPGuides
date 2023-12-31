@@ -466,6 +466,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
     .turnin 5761 >>Turn in Slaying the Beast
     .target Neeru Fireblade
+    .isQuestComplete 5761
     .dungeon RFC
 step
     .goto Orgrimmar,31.74,37.82
@@ -473,6 +474,14 @@ step
     .turnin 5728 >> Turn in Hidden Enemies
     .accept 5729 >> Accept Hidden Enemies
     .target Thrall
+    .isQuestComplete 5728
+    .dungeon RFC
+step
+    .goto Orgrimmar,31.74,37.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
+    .accept 5729 >> Accept Hidden Enemies
+    .target Thrall
+    .isQuestTurnedIn 5728
     .dungeon RFC
 step
     .goto Orgrimmar,49.6,50.4
@@ -481,11 +490,13 @@ step
     .accept 5730 >> Accept Hidden Enemies
     .target Neeru Fireblade
     .dungeon RFC
+    .isQuestTurnedIn 5728
 step
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5730 >> Turn in Hidden Enemies
     .target Thrall
+    .isQuestTurnedIn 5728
     .dungeon RFC
 step
     #completewith next
@@ -496,6 +507,7 @@ step
     .goto Durotar,50.8,13.8,40 >>Go up the Zeppelin Tower
     .zone Tirisfal Glades >>Take the Zeppelin to Tirisfal Glades
     .zoneskip Tirisfal Glades
+    .isQuestComplete 5725
     .dungeon RFC
 step
     #completewith Varimathras
