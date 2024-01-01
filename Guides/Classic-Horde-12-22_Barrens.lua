@@ -4572,7 +4572,7 @@ step
     .goto Stonetalon Mountains,70.82,55.25,30,0
     .goto Stonetalon Mountains,59.66,52.14
     >>Kill |cRXP_ENEMY_XT:9|r. It patrols the southern side of the river
-    >>|cRXP_WARN_This quest does not need to be completed now|r
+    >>|cRXP_WARN_Skip this step if you can't find it|r
     .complete 1068,2 --XT:9 (1)
     .unitscan XT:9
 step
@@ -4599,22 +4599,26 @@ step
     .goto Stonetalon Mountains,71.25,43.45,30,0
     .goto Stonetalon Mountains,64.82,47.23
     >>Kill |cRXP_ENEMY_XT:4|r. It patrols the northern side of the river
-    >>|cRXP_WARN_This quest does not need to be completed now|r
+    >>|cRXP_WARN_Skip this step if you can't find it|r
     .complete 1068,1 --XT:4 (1)
     .unitscan XT:4
 step
     #completewith next
+    .goto Stonetalon Mountains,73.78,59.52
     .subzone 2160 >> Enter the Windshear Mine
     .group
 step
     .goto Stonetalon Mountains,71.87,60.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Piznik|r
+    >>|cRXP_WARN_This quest takes 5 minutes, and will spawn 3 waves of Kobolds at set times:|r
+    >>|cRXP_WARN_First wave at 15 seconds (3 Kobolds), Second wave at 2 minutes 15 seconds (4 Kobolds, 2 casters 2 melee), and the Third wave at 3 minutes 20 seconds (4 Kobolds). The objective completes at 5 minutes|r
     .accept 1090 >> Accept Gerenzo's Orders
     .target Piznik
     .group 2
 step
     .goto Stonetalon Mountains,71.77,60.19
     >>Protect |cRXP_FRIENDLY_Piznik|r from incoming |cRXP_ENEMY_Windshear Vermin|r
+    >>|cRXP_WARN_First wave at 15 seconds (3 Kobolds), Second wave at 2 minutes 15 seconds (4 Kobolds, 2 casters 2 melee), and the Third wave at 3 minutes 20 seconds (4 Kobolds). The objective completes at 5 minutes|r
     .complete 1090,1 --Keep Piznik safe while he mines the mysterious ore
     .mob Windshear Vermin
     .group 2
@@ -4638,6 +4642,62 @@ step
     .isQuestTurnedIn 1090
     .group
 step
+    .line Stonetalon Mountains,70.82,55.25,70.52,56.22,69.76,56.70,68.52,56.04,67.77,55.97,66.94,56.25,66.41,56.31,65.74,57.20,65.14,57.02,64.37,56.47,63.72,56.80,62.99,56.25,62.32,56.11,61.58,55.10,61.10,54.68,60.98,54.06,59.81,53.51,59.66,52.14,60.33,51.68
+    .goto Stonetalon Mountains,61.03,52.32,30,0
+    .goto Stonetalon Mountains,60.33,51.68,30,0
+    .goto Stonetalon Mountains,59.66,52.14,30,0
+    .goto Stonetalon Mountains,59.81,53.51,30,0
+    .goto Stonetalon Mountains,60.98,54.06,30,0
+    .goto Stonetalon Mountains,61.10,54.68,30,0
+    .goto Stonetalon Mountains,61.58,55.10,30,0
+    .goto Stonetalon Mountains,62.32,56.11,30,0
+    .goto Stonetalon Mountains,62.99,56.25,30,0
+    .goto Stonetalon Mountains,63.72,56.80,30,0
+    .goto Stonetalon Mountains,64.37,56.47,30,0
+    .goto Stonetalon Mountains,65.14,57.02,30,0
+    .goto Stonetalon Mountains,65.74,57.20,30,0
+    .goto Stonetalon Mountains,66.41,56.31,30,0
+    .goto Stonetalon Mountains,66.94,56.25,30,0
+    .goto Stonetalon Mountains,67.77,55.97,30,0
+    .goto Stonetalon Mountains,68.52,56.04,30,0
+    .goto Stonetalon Mountains,69.76,56.70,30,0
+    .goto Stonetalon Mountains,70.52,56.22,30,0
+    .goto Stonetalon Mountains,70.82,55.25,30,0
+    .goto Stonetalon Mountains,59.66,52.14
+    >>Kill |cRXP_ENEMY_XT:9|r. It patrols the southern side of the river
+    >>|cRXP_WARN_Skip this step if you can't find it|r
+    .complete 1068,2 --XT:9 (1)
+    .unitscan XT:9
+    .isQuestTurnedIn 1092
+step
+    .line Stonetalon Mountains,67.18,46.87,66.53,46.95,65.72,45.09,63.73,45.02,63.72,45.92,63.43,46.57,64.43,46.13,64.72,46.63,64.82,47.72,65.11,48.31,65.98,48.67,66.24,49.65,66.65,49.58,66.88,48.95,68.41,49.58,69.45,46.56,70.22,48.62,70.95,48.49,71.41,45.54,71.25,43.45
+    .goto Stonetalon Mountains,67.18,46.87,30,0
+    .goto Stonetalon Mountains,66.53,46.95,30,0
+    .goto Stonetalon Mountains,65.72,45.09,30,0
+    .goto Stonetalon Mountains,63.73,45.02,30,0
+    .goto Stonetalon Mountains,63.72,45.92,30,0
+    .goto Stonetalon Mountains,63.43,46.57,30,0
+    .goto Stonetalon Mountains,64.43,46.13,30,0
+    .goto Stonetalon Mountains,64.72,46.63,30,0
+    .goto Stonetalon Mountains,64.82,47.72,30,0
+    .goto Stonetalon Mountains,65.11,48.31,30,0
+    .goto Stonetalon Mountains,65.98,48.67,30,0
+    .goto Stonetalon Mountains,66.24,49.65,30,0
+    .goto Stonetalon Mountains,66.65,49.58,30,0
+    .goto Stonetalon Mountains,66.88,48.95,30,0
+    .goto Stonetalon Mountains,68.41,49.58,30,0
+    .goto Stonetalon Mountains,69.45,46.56,30,0
+    .goto Stonetalon Mountains,70.22,48.62,30,0
+    .goto Stonetalon Mountains,70.95,48.49,30,0
+    .goto Stonetalon Mountains,71.41,45.54,30,0
+    .goto Stonetalon Mountains,71.25,43.45,30,0
+    .goto Stonetalon Mountains,64.82,47.23
+    >>Kill |cRXP_ENEMY_XT:4|r. It patrols the northern side of the river
+    >>|cRXP_WARN_Skip this step if you can't find it|r
+    .complete 1068,1 --XT:4 (1)
+    .unitscan XT:4
+    .isQuestTurnedIn 1092
+step
     #completewith next
     .goto Stonetalon Mountains,78.29,42.51,30 >> Enter the Talondeep Path
 step
@@ -4646,6 +4706,7 @@ step
     .link https://www.youtube.com/watch?v=h2s4ZjFBLtg&ab_channel=RestedXP >> |cRXP_WARN_CLICK HERE for an example|r
     .zoneskip Ashenvale
 step
+    #season 0
 	#completewith ZoramFP
     .goto Ashenvale,39.45,55.29,50,0
     .goto Ashenvale,36.47,57.15,50,0
@@ -4658,13 +4719,24 @@ step
     >>|cRXP_WARN_Make sure to avoid Astranaar guards en route. Follow the waypoint for safety|r
     .unitscan Astranaar Sentinel
 step
+    #season 2
+	#completewith ZoramFP
+    .goto Ashenvale,34.14,53.61,50,0
+    .goto Ashenvale,18.43,32.94,50,0
+    .goto Ashenvale,11.96,34.28,80 >>Travel toward the Zoram'gar Outpost
+    >>|cRXP_WARN_Make sure to avoid Astranaar guards en route. Follow the waypoint for safety|r
+    .unitscan Astranaar Sentinel
+--XX Get teleported to just in front of Mystral lake in SoD
+step
     #optional
     .loop 25,Ashenvale,10.86,26.99,11.23,25.73,11.83,25.75,12.51,24.09,14.18,24.03,14.85,23.08,14.13,20.77,14.73,19.56,14.59,17.90,13.38,16.39,13.62,14.48,14.15,15.31,15.88,15.42,15.40,16.96,15.22,18.81,15.33,20.78,15.33,22.51,15.32,24.90,14.76,25.52,14.62,26.49,14.52,28.25,13.55,29.36,12.41,29.15,11.22,31.04,10.38,29.60,11.01,28.57
     .xp 21 >> Grind to level 21
 step
     #label ZoramFP
-   .goto Ashenvale,12.20,33.80
+   .goto Ashenvale,12.24,33.80
+   >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andruk|r
    .fp Zoram'gar Outpost >> Get the Zoram'gar Outpost flight path
+   .target Andruk
 step
    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu|r, |cRXP_FRIENDLY_Karang|r, |cRXP_FRIENDLY_Mitsuwa|r and |cRXP_FRIENDLY_Marukai|r
    .turnin 6562 >> Turn in Trouble in the Deeps

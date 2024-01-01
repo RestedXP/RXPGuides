@@ -993,7 +993,7 @@ step
     .train 410111,1
 step
     #season 2
-    .goto Stonetalon Mountains,60.19,61.82
+    .goto Stonetalon Mountains,60.70,62.33
     >>Stay with |cRXP_FRIENDLY_Jixo Madrocket|r and watch him tame a |cRXP_ENEMY_Wyvern|r
     .turnin 78121 >>Turn in Wrangling a Wild Wyvern
     .target Jixo Madrocket
