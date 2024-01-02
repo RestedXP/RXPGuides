@@ -3710,6 +3710,7 @@ step << Mage
     .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
     .train 401768 >>|cRXP_WARN_Use|r|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF|r] |cRXP_WARN_to learn|r |T135820:0|t[Living Flame]
     .use 203752
+    .itemcount 203752,1
 step << Warrior/Shaman/Hunter
     #era/som
     #completewith Gazzuz

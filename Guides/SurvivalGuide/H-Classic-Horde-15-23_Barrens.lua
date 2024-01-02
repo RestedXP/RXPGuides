@@ -394,7 +394,7 @@ step
 step
     #label EnterRFC
     .goto Orgrimmar,52.77,48.97
-    .zone 213 >> Enter the RFC Instance portal. Zone in
+    .subzone 2437 >> Enter the RFC Instance portal. Zone in
     .dungeon RFC
 step
     #completewith next
@@ -3109,24 +3109,22 @@ step
     .accept 1064 >> Accept Forsaken Aid
     .target Magatha Grimtotem
 step
+    .goto Thunder Bluff,78.61,28.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamuul|r and |cRXP_FRIENDLY_Nara|r
     .turnin 1489 >> Turn in Hamuul Runetotem
     .accept 1490 >> Accept Nara Wildmane
-    .goto Thunder Bluff,78.61,28.55
+    .target Arch Druid Hamuul Runetotem
+step
+    .goto Thunder Bluff,75.65,31.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamuul|r and |cRXP_FRIENDLY_Nara|r
     .turnin 1490 >> Turn in Nara Wildmane
     .accept 914 >> Accept Leaders of the Fang
-    .goto Thunder Bluff,75.65,31.57
-    .target Arch Druid Hamuul Runetotem
     .target Nara Wildmane
     .dungeon WC
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamuul|r and |cRXP_FRIENDLY_Nara|r
-    .turnin 1489 >> Turn in Hamuul Runetotem
-    .accept 1490 >> Accept Nara Wildmane
-    .goto Thunder Bluff,78.61,28.55
-    .turnin 1490 >> Turn in Nara Wildmane
     .goto Thunder Bluff,75.65,31.57
-    .target Arch Druid Hamuul Runetotem
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamuul|r and |cRXP_FRIENDLY_Nara|r
+    .turnin 1490 >> Turn in Nara Wildmane
     .target Nara Wildmane
 step << Druid
     .goto Thunder Bluff,76.48,27.25

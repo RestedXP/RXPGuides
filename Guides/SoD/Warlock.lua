@@ -290,8 +290,8 @@ step
 step
     .train 425477,1
     #completewith DemonicGraceTirisfalGladesBlood
-    >>Kill |cRXP_ENEMY_Darkhounds|r. Loot them for the |T133726:0|t[Wolf Jawbone]
-    .collect 204907,1
+    >>Kill |cRXP_ENEMY_Darkhounds|r. Loot them for the |T133726:0|t[Hound Jawbone]
+    .collect 207973,1
     .mob Cursed Darkhound
     .mob Decrepit Darkhound
     .mob Ravenous Darkhound
@@ -318,8 +318,8 @@ step
     .goto Tirisfal Glades,59.4,60.2,50,0
     .goto Tirisfal Glades,44.4,58.4,50,0
     .goto Tirisfal Glades,42.0,43.0,50,0
-    >>Kill |cRXP_ENEMY_Darkhounds|r. Loot them for the |T133726:0|t[Wolf Jawbone]
-    .collect 204907,1
+    >>Kill |cRXP_ENEMY_Darkhounds|r. Loot them for the |T133726:0|t[Hound Jawbone]
+    .collect 207973,1
     .mob Cursed Darkhound
     .mob Decrepit Darkhound
     .mob Ravenous Darkhound
