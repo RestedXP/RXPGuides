@@ -794,10 +794,15 @@ step
     #completewith next
     .zone 209 >> Enter Shadowfang Keep
     >>|cRXP_WARN_You have to do the next part solo! Grouping up will prevent you from obtaining the keys you need|r
-step
+step << Horde
     #season 2
-    .gossipoption 88819,1 >>Stealth past |cRXP_ENEMY_Rethilgore|r, talk to |cRXP_FRIENDLY_Deathstalker Adamant|r and vanish aftwards. He will open the door for you
+    .gossipoption 88819,1 >>Stealth past |cRXP_ENEMY_Rethilgore|r, talk to |cRXP_FRIENDLY_Deathstalker Adamant|r and |T132331:0|t[Vanish] aftwards. He will open the door for you
     .target Deathstalker Adamant
+    .train 400080,1
+step << Alliance
+    #season 2
+    .gossipoption 96494 >>Stealth past |cRXP_ENEMY_Rethilgore|r, talk to |cRXP_FRIENDLY_Sorcerer Ashcrombe|r and |T132331:0|t[Vanish] aftwards. He will open the door for you
+    .target Sorcerer Ashcrombe
     .train 400080,1
 step
     #season 2

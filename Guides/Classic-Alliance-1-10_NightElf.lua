@@ -1317,7 +1317,7 @@ step
     .goto Teldrassil,34.61,28.79
     >>Click the |cRXP_PICK_Strange Fronded Plant|r
     .accept 931 >> Accept The Shimmering Frond
-step
+step << Priest
     #season 2
     #completewith next
     .goto Teldrassil,44.18,58.19

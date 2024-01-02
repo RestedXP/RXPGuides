@@ -1678,7 +1678,7 @@ step
     .goto Westfall,56.33,47.52
     .turnin 12 >> Turn in The People's Militia
 step
-	.xp <15,1
+	.xp <14,1
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
 	.target Gryan Stoutmantle
     .goto Westfall,56.33,47.52
@@ -2076,11 +2076,6 @@ step << Druid
     .goto Darkshore,45.7,50.3,0
     >>Loot |cRXP_LOOT_Lunar Fungi|r on the ground throughout caves
     .complete 6123,2
-step << !Druid
-#map Darkshore
-    .goto Felwood,19.64,39.52
-    >>Click the |cRXP_PICK_Beached Sea Turtle|r
-    .accept 4722 >> Accept Beached Sea Turtle
 step
 #map Darkshore
     #label CompleteThistleBears
@@ -2306,6 +2301,7 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
     .trainer >> Train your class spells
     .target Loganaar
+    .xp <18,1
 step << Druid
     #label FlyDarkshore
     .goto Moonglade,48.11,67.35
@@ -2912,6 +2908,13 @@ step << Hunter
     .zoneskip Ironforge
     .subzoneskip 809
     .subzoneskip 2257
+step << Hunter
+.dungeon DM
+    .goto StormwindClassic,61.609,15.269
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r
+    .trainer >> Train your class spells
+    .target Einris Brightspear
+    .zoneskip Stormwind City,1
 step << Hunter
 .dungeon DM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r and |cRXP_FRIENDLY_Wilder Thistlenettle|r
