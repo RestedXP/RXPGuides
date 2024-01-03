@@ -312,7 +312,7 @@ step << Horde
     .train 425476,1 << Warlock
     .train 424990,1 << Rogue
     .train 410096,1 << Shaman
-    >>Kill the |cRXP_ENEMY_Venture Co. Light Shredders|r. Use the |T133870:0|t[Shredder Autosalvage Unit] on the corpse for the |cRXP_LOOT_Turbochargers|r
+    >>Kill |cRXP_ENEMY_Venture Co. Light Shredders|r, |cRXP_ENEMY_XT:4|r, and |cRXP_ENEMY_XT:9|r. Use the |T133870:0|t[Shredder Autosalvage Unit] on their corpse to loot them for a 66% chance of a |cRXP_LOOT_Shredder Turbocharger|r
     .collect 210146,16
     .use 210147
     .mob Venture Co. Light Shredder
@@ -411,7 +411,7 @@ step << Alliance
     .train 425476,1 << Warlock
     .train 424990,1 << Rogue
     .train 410096,1 << Shaman
-    >>Kill the |cRXP_ENEMY_Venture Co. Light Shredders|r. Use the |T133870:0|t[Shredder Autosalvage Unit] on the corpse for the |cRXP_LOOT_Turbochargers|r
+    >>Kill |cRXP_ENEMY_Venture Co. Light Shredders|r, |cRXP_ENEMY_XT:4|r, and |cRXP_ENEMY_XT:9|r. Use the |T133870:0|t[Shredder Autosalvage Unit] on their corpse to loot them for a 66% chance of a |cRXP_LOOT_Shredder Turbocharger|r
     .collect 210146,16
     .use 210147
     .mob Venture Co. Light Shredder
