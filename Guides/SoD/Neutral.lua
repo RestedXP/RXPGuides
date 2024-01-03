@@ -292,6 +292,17 @@ step << Horde
     .goto Stonetalon Mountains,66.6,55.5
     .zone Stonetalon Mountains >>Travel to Stonetalon Mountains
 step << Horde
+    #loop
+    .goto Stonetalon Mountains,71.04,49.03,50,0
+    .goto Stonetalon Mountains,72.59,53.21,50,0
+    .goto Stonetalon Mountains,70.63,55.47,50,0
+    .goto Stonetalon Mountains,70.04,55.12,50,0
+    .goto Stonetalon Mountains,67.53,57.65,50,0
+    .goto Stonetalon Mountains,59.95,55.51,50,0
+    .goto Stonetalon Mountains,62.35,52.73,50,0
+    .goto Stonetalon Mountains,66.91,47.82,50,0
+    .goto Stonetalon Mountains,67.31,46.39,50,0
+    .goto Stonetalon Mountains,68.76,47.95,50,0
     .train 415995,1 << Priest
     .train 410010,1 << Paladin
     .train 401761,1 << Mage
@@ -302,10 +313,11 @@ step << Horde
     .train 424990,1 << Rogue
     .train 410096,1 << Shaman
     >>Kill the |cRXP_ENEMY_Venture Co. Light Shredders|r. Use the |T133870:0|t[Shredder Autosalvage Unit] on the corpse for the |cRXP_LOOT_Turbochargers|r
-    .goto Stonetalon Mountains,66.6,55.5
     .collect 210146,16
     .use 210147
     .mob Venture Co. Light Shredder
+    .mob XT:4
+    .mob XT:9
 step << Horde
     .train 415995,1 << Priest
     .train 410010,1 << Paladin
@@ -379,6 +391,17 @@ step << Alliance
     .goto Stonetalon Mountains,66.6,55.5
     .zone Stonetalon Mountains >>Travel to Stonetalon Mountains (e.g. take the boat to Dustwallow Marsh -> fly to Ratchet or directly to Stonetalon Mountains)
 step << Alliance
+    #loop
+    .goto Stonetalon Mountains,71.04,49.03,50,0
+    .goto Stonetalon Mountains,72.59,53.21,50,0
+    .goto Stonetalon Mountains,70.63,55.47,50,0
+    .goto Stonetalon Mountains,70.04,55.12,50,0
+    .goto Stonetalon Mountains,67.53,57.65,50,0
+    .goto Stonetalon Mountains,59.95,55.51,50,0
+    .goto Stonetalon Mountains,62.35,52.73,50,0
+    .goto Stonetalon Mountains,66.91,47.82,50,0
+    .goto Stonetalon Mountains,67.31,46.39,50,0
+    .goto Stonetalon Mountains,68.76,47.95,50,0
     .train 415995,1 << Priest
     .train 410010,1 << Paladin
     .train 401761,1 << Mage
@@ -389,10 +412,11 @@ step << Alliance
     .train 424990,1 << Rogue
     .train 410096,1 << Shaman
     >>Kill the |cRXP_ENEMY_Venture Co. Light Shredders|r. Use the |T133870:0|t[Shredder Autosalvage Unit] on the corpse for the |cRXP_LOOT_Turbochargers|r
-    .goto Stonetalon Mountains,66.6,55.5
     .collect 210146,16
     .use 210147
     .mob Venture Co. Light Shredder
+    .mob XT:4
+    .mob XT:9
 step << Horde
     .train 415995,1 << Priest
     .train 410010,1 << Paladin
