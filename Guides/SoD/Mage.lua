@@ -126,7 +126,7 @@ step << Undead
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Isabella|r
     .turnin 77671 >>Turn in Spell Research
     .target Isabella
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -185,6 +185,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune Guide
 #subgroup Chest << Mage
 #name Regeneration -12 (Loch Modan)
+
 << Gnome Mage SoD
 
 -- << Alliance
@@ -279,12 +280,20 @@ step << Mage
     .train 401767,1
     .collect 5020,1
     .collect 208754,1
+-- step << Shaman
+--     #loop
+--     .goto The Barrens,44.3,37.7,20,0
+--     .goto The Barrens,43,23.5,20,0
+--     .goto The Barrens,52.7,41.8,20,0
+--     >>Click on the |cRXP_PICK_Chest|r for |T135832:0|t[Tempest Icon.]
+--     .train 401417,1
+--     .collect 208754,1
 step
     .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
     .train 401767 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r] |cRXP_WARN_to learn|r |T132871:0|t[Regeneration.]
     .use 208754
-step << skip
-    .engrave 5,401417 >> Open your character sheet and engrave your chest with |T132871:0|t[Regeneration] |cRXP_WARN_highly recommended.|r
+-- step
+--     --.engrave 5,401417 >> Open your character sheet and engrave your chest with |T132871:0|t[Regeneration] |cRXP_WARN_highly recommended.|r
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -550,10 +559,10 @@ step
     .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
     .train 401759 >>|cRXP_WARN_Use|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Burnout|r] |cRXP_WARN_to learn|r |T236207:0|t[Burnout.]
     .use 203748
-step << skip
-    .engrave 5,412286 >> Open your character sheet and engrave your chest with |T236207:0|t[Burnout.] << Mage
-step << skip
-    .engrave 9,403629 >> Open your character sheet and engrave your chest with |T236291:0|t[Chaos Bolt.] << Warlock
+-- step
+--.engrave 5,412286 >> Open your character sheet and engrave your chest with |T236207:0|t[Burnout.] << Mage
+-- step
+--     --.engrave 9,403629 >> Open your character sheet and engrave your chest with |T236291:0|t[Chaos Bolt.] << Warlock
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1616,7 +1625,80 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-<< Horde Mage SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Living Bomb - 18 (Westfall)
+
+<< Alliance Mage SoD
+--x shiek: intended for human unsure if we should lock it behind race.
+
+step
+    .train 415936,1
+    .goto Stormwind City,55.8,65.2,-1
+    .goto Stormwind City,32.4,80.0,-1
+    .goto Stormwind City,43.4,26.8,-1
+    .goto Stormwind City,36.0,74.8,-1
+    .goto Elwynn Forest,64.8,69.2,-1
+    .goto Ironforge,19.6,56.2,-1
+    .goto Undercity,69.6,39.2,-1
+    .goto Darnassus,38.8,60.4,-1
+    .goto Ashenvale,35.0,48.6,-1
+    .goto Ironforge,31.2,27.6,-1
+    .goto Duskwood,76.0,45.2,-1
+    .goto Darnassus,34.6,9.8,-1
+    .goto Wetlands,8.4, 56.6,-1
+    >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
+    .collect 211779,1
+step
+    .train 415936,1
+    #completewith next
+    .zone Westfall >>Travel to |cFFfa9602Westfall|r
+step
+    #loop
+    .goto Westfall,55.2,33.6,20,0
+    .goto Westfall,45.0,40.8,20,0
+    .goto Westfall,35.6,52.2,20,0
+    >>Kill |cRXP_ENEMY_Harvest Watcher|r for |cRXP_LOOT_|T132996:0|t[Spare Reaper Parts]|r
+    .train 401417,1
+    .collect 209056,1
+    .mob Harvest Golem 
+    .mob Harvest Repair
+    .mob Harvest Watcher
+    .mob Rusty Harvest Golem
+step
+    #loop
+    .goto Westfall,55.2,33.6,20,0
+    .goto Westfall,45.0,40.8,20,0
+    .goto Westfall,35.6,52.2,20,0
+    >>Kill |cRXP_ENEMY_Dust Devils|r for |cRXP_LOOT_|T132842:0|t[Elemental Core]|r
+    .train 401417,1
+    .collect 209058,1
+    .mob Dust Devil
+step
+    .train 401417,1
+    >>Use |T132996:0|t[Spare Reaper Parts]|r| to create |T133000:0|t[Prototype Engine]
+    .collect 209057,1
+    .use 209058
+    .use 209056
+step
+    .train 401417,1
+    .goto Westfall,55.2,33.6,20,0
+    .goto Westfall,45.0,40.8,20,0
+    .goto Westfall,35.6,52.2,20,0
+    .collect 208851,1 >>Find a |cRXP_FRIENDLY_Harvest Reaper Prototype|r and use the |T133000:0|t[Prototype Engine] on it. Proceed to kill |cRXP_ENEMY_Harvest Reaper Prototype.|r
+    .target Harvest Reaper Prototype
+    .mob Harvest Reaper Prototype
+    .use 209057
+step
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
+    .train 415936 >>|T134939:0|t[|cRXP_FRIENDLY_Chewed Spell Notes|r] to learn |T236220:0|t[Living Bomb]
+    .use 208854
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Undead Mage SoD
+--x shiek: intended for undead unsure if we should lock it behind race
 #group RestedXP Rune Guide
 #subgroup Gloves
 #name Living Bomb - 17 (Silverpine Forest)
@@ -1662,4 +1744,26 @@ step
     .turnin 78277 >>Turn in A Token of Gratitude
     .train 415936 >>|cRXP_WARN_You will automatically train the rune by turning in the quest|r
     .target Bethor Iceshard
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Mage SoD
+--x shiek: Troll unsure to lock it behind class 
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Living Bomb - 20 (The Barrens)
+
+step
+    .train 401767,1
+    #completewith next
+    .zone The Barrens >>Travel to |cFFfa9602The Barrens|r |cRXP_WARN_make sure to have blink learned.|r
+step
+    .train 401767,1
+    .goto The Barrens,45,80
+    .aura 421063,1 >>To receive the |T236168:0|t[Path of no Steps] aura, which allows you to blink without a cooldown, position yourself in the green area near the Stone Tablet.
+step
+    .train 401767,1
+    .goto The Barrens,45,80
+    .train 415936 >>To acquire the Living Bomb ability, initiate the event by blinking against the Stone Tablet. Following this, you must successfully blink into the designated green spots to complete the challenge.
 ]])
