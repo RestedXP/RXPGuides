@@ -2920,10 +2920,10 @@ step << Warrior/Shaman
     .accept 1492 >>Accept Wharfmaster Dizzywig
     .target Apothecary Helbrim
 step << Warrior/Shaman
-    #completewith
-step << Warrior/Shaman
     #completewith next
     >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Forgotten Pools
+    >>|cRXP_WARN_Keep maximum distance from |cRXP_ENEMY_Kolkar|r |cRXP_WARN_as you loot the mushrooms. They are level 12-14|r
+    >>|cRXP_WARN_The follow-up of this quest has the powerful |cRXP_FRIENDLY_Cauldron Stinger|r |cRXP_WARN_as a reward. You can skip this quest for now if you do not intend to use it|r
     .complete 848,1 --Collect Fungal Spores (x4)
 step << Warrior/Shaman
     .goto The Barrens,45.06,22.54
@@ -2934,8 +2934,13 @@ step << Warrior/Shaman
     .goto The Barrens,45.2,22.0,40,0
     .goto The Barrens,44.6,22.5,40,0
     .goto The Barrens,43.9,24.4,40,0
-    .goto The Barrens,45.2,23.3
+    .goto The Barrens,45.2,23.3,40,0
+    .goto The Barrens,45.2,22.0,40,0
+    .goto The Barrens,44.6,22.5,40,0
+    .goto The Barrens,43.9,24.4
     >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Forgotten Pools
+    >>|cRXP_WARN_Keep maximum distance from |cRXP_ENEMY_Kolkar|r |cRXP_WARN_in the area. They are level 12-14|r
+    >>|cRXP_WARN_The follow-up of this quest has the powerful |cRXP_FRIENDLY_Cauldron Stinger|r |cRXP_WARN_as a reward. You can skip this quest for now if you do not intend to use it|r
     .complete 848,1 --Collect Fungal Spores (x4)
 step << Warrior/Shaman
     #hardcore
@@ -2950,7 +2955,8 @@ step << Warrior/Shaman
     #label FungalSporesComplete
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
-    >>|cRXP_WARN_Wait for the RP to finish. This starts a timed quest!|r
+    >>|cRXP_WARN_Wait for the RP to finish|r
+    >>|cRXP_WARN_This starts a 45-minute timed quest|r
     .turnin 848 >> Turn in Fungal Spores
     .accept 853 >> Accept Apothecary Zamah
     .target Apothecary Helbrim
@@ -2965,6 +2971,7 @@ step << Warrior/Shaman
     #sticky
     #completewith ZamahTurnin2
     +|cRXP_WARN_You are on a timed quest, don't go afk. It will get turned in around 30 minutes after pick-up|r
+    .isOnQuest 853
 step << Warrior/Shaman
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga|r
@@ -3114,11 +3121,13 @@ step << Warrior/Shaman
     .turnin 853 >> Turn in Apothecary Zamah
     .goto Thunder Bluff,22.82,20.88
     .target Apothecary Zamah
+    .isOnQuest 853
 step << Warrior/Shaman
     #completewith RiteofWisdomTurnin
     +Equip the |T135145:0|t[Cauldron Stirrer]
     .use 5340
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.1
+    .itemcount 5340,1
 step << Warrior/Shaman
 	#era/som
     #completewith RiteofWisdomTurnin
