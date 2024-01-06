@@ -514,6 +514,9 @@ step
     #completewith next
     .zone Silverpine Forest >>Travel to the Silverpine Forest
 step
+    .goto Silverpine Forest,60.38,74.37,40,0
+    .goto Silverpine Forest,60.29,72.21,40,0
+    .goto Silverpine Forest,59.38,70.54
     .train 403936,1
     >>Kill |cRXP_ENEMY_Ravenclaw Drudger|r and |cRXP_ENEMY_Ravenclaw Guardians|r |cRXP_WARN_inside the cave|r. Loot them for the |T236295:0|t[Tortured Soul]
     .collect 210713,1
