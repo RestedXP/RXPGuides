@@ -1174,9 +1174,10 @@ function addon.itemUpgrades.AH:AUCTION_HOUSE_SHOW()
     ahSession.windowOpen = true
     -- C_Timer.After(0.35, function() addon.itemUpgrades.AH:Scan() end)
 
-    self:CreateGui()
+    -- self:CreateGui()
+    self:CreateEmbeddedGui()
 
-    ahSession.displayFrame:Show()
+    -- ahSession.displayFrame:Show()
 end
 
 function addon.itemUpgrades.AH:AUCTION_HOUSE_CLOSED()
@@ -1222,7 +1223,7 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
         else
             self:Analyze()
             ahSession.displayFrame.scanButton:SetText(_G.SEARCH)
-            self:DisplayResults()
+            -- self:DisplayResults()
         end
 
         return
@@ -1384,13 +1385,6 @@ function addon.itemUpgrades.AH:Analyze()
     end
 end
 
-local function searchFor(name)
-    --    local name = GetAuctionSellItemInfo()
-    BrowseName:SetText('"' .. name .. '"')
-    AuctionFrameBrowse_Search()
-    AuctionFrameTab1:Click()
-end
-
 local function buildSpacer(height)
     local spacer = AceGUI:Create("SimpleGroup")
     spacer:SetLayout("Fill")
@@ -1485,8 +1479,60 @@ function addon.itemUpgrades.AH:CreateGui()
     ahSession.displayFrame = f
 end
 
+local function toggleAHFrame() end
+
+function addon.itemUpgrades.AH:CreateEmbeddedGui()
+    if ahSession.displayFrame then return end
+
+    -- _G["RXP_IU_AH_Scanning"] comes from UI/AH/scanning.xml so abort if not included
+    if not _G["RXP_IU_AH_Scanning"] then return end
+    local attachment = _G.AuctionFrame
+
+    -- Create tab button
+    local index = attachment.numTabs + 1
+    local tab = CreateFrame("Button", "AuctionFrameTab" .. index, attachment,
+                            "AuctionTabTemplate")
+    tab:SetText(addon.name)
+    tab:SetID(index)
+
+    tab:SetPoint("TOPLEFT", "AuctionFrameTab" .. (index - 1), "TOPRIGHT", -8, 0)
+
+    tab:HookScript("OnClick", function()
+        print("OnClick")
+
+        --[[
+            AuctionFrameTopLeft:SetTexture(
+            "Interface\\AuctionFrame\\UI-AuctionFrame-Browse-TopLeft")
+        AuctionFrameTop:SetTexture(
+            "Interface\\AuctionFrame\\UI-AuctionFrame-Browse-Top")
+        AuctionFrameTopRight:SetTexture(
+            "Interface\\AuctionFrame\\UI-AuctionFrame-Browse-TopRight")
+        AuctionFrameBotLeft:SetTexture(
+            "Interface\\AuctionFrame\\UI-AuctionFrame-Browse-BotLeft")
+        AuctionFrameBot:SetTexture(
+            "Interface\\AuctionFrame\\UI-AuctionFrame-Auction-Bot")
+        AuctionFrameBotRight:SetTexture(
+            "Interface\\AuctionFrame\\UI-AuctionFrame-Bid-BotRight")
+        -- AuctionFrameBrowse:Show()
+        --]]
+        -- AuctionFrame.type = nil
+        -- SetAuctionsTabShowing(false)
+    end)
+
+    tab.isRXP = true
+
+    PanelTemplates_SetNumTabs(attachment, index)
+    PanelTemplates_EnableTab(attachment, index)
+
+    local f = _G["RXP_IU_AH_Scanning"]
+
+    ahSession.displayFrame = _G["RXP_IU_AH_Scanning"]
+
+end
+
 function addon.itemUpgrades.AH:DisplayResults()
-    self:CreateGui()
+    -- self:CreateGui()
+    self:CreateEmbeddedGui()
 
     local f = ahSession.displayFrame
     local slotFrames = f.scrollContainer.slotFrames
@@ -1541,4 +1587,3 @@ function addon.itemUpgrades.AH:DisplayResults()
     -- TODO recalculate width
     f:Show()
 end
-
