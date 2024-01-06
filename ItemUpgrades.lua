@@ -1486,6 +1486,7 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
 
     -- _G["RXP_IU_AH_Scanning"] comes from UI/AH/scanning.xml so abort if not included
     if not _G["RXP_IU_AH_Scanning"] then return end
+    local tabFrame = _G["RXP_IU_AH_Scanning"]
     local attachment = _G.AuctionFrame
 
     -- Create tab button
@@ -1497,11 +1498,17 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
 
     tab:SetPoint("TOPLEFT", "AuctionFrameTab" .. (index - 1), "TOPRIGHT", -8, 0)
 
-    tab:HookScript("OnClick", function()
-        print("OnClick")
+    tab:HookScript("OnHide", function() tabFrame:Hide() end)
 
-        --[[
-            AuctionFrameTopLeft:SetTexture(
+    tab.Selected = function(this)
+        -- AuctionFrameAuctions:Hide()
+        -- AuctionFrameBrowse:Hide()
+        -- AuctionFrameBid:Hide()
+
+        PanelTemplates_SetTab(attachment, this)
+
+        AuctionHouseFrame:SetTitle("RXP Auctioneer") -- TODO locale
+        AuctionFrameTopLeft:SetTexture(
             "Interface\\AuctionFrame\\UI-AuctionFrame-Browse-TopLeft")
         AuctionFrameTop:SetTexture(
             "Interface\\AuctionFrame\\UI-AuctionFrame-Browse-Top")
@@ -1513,20 +1520,31 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
             "Interface\\AuctionFrame\\UI-AuctionFrame-Auction-Bot")
         AuctionFrameBotRight:SetTexture(
             "Interface\\AuctionFrame\\UI-AuctionFrame-Bid-BotRight")
-        -- AuctionFrameBrowse:Show()
-        --]]
-        -- AuctionFrame.type = nil
-        -- SetAuctionsTabShowing(false)
-    end)
+
+        tabFrame:Show()
+
+        AuctionFrame.type = nil
+        SetAuctionsTabShowing(false)
+        PanelTemplates_SelectTab(this)
+    end
 
     tab.isRXP = true
+    tab.tabFrame = tabFrame
+
+    hooksecurefunc(_G, "AuctionFrameTab_OnClick", function(tabButton, ...)
+        if not tabButton.isRXP then
+            tab.tabFrame:Hide()
+            return
+        end
+
+        tab.tabFrame:Show()
+    end)
 
     PanelTemplates_SetNumTabs(attachment, index)
     PanelTemplates_EnableTab(attachment, index)
+    -- PanelTemplates_TabResize
 
-    local f = _G["RXP_IU_AH_Scanning"]
-
-    ahSession.displayFrame = _G["RXP_IU_AH_Scanning"]
+    ahSession.displayFrame = tabFrame
 
 end
 
