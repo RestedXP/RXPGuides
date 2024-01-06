@@ -1778,7 +1778,7 @@ step
     .turnin 6361 >>Turn in A Bundle of Hides
     .accept 6362 >>Accept Ride to Thunder Bluff
     .target Devrak
-step << Warrior/Shaman
+step
     #sticky
     #completewith CauldronStirrer
     +|cRXP_WARN_You are on a timed quest, don't go afk. It will get turned in around 5-10 minutes after pick-up|r
