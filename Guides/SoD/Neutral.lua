@@ -208,12 +208,14 @@ RXPGuides.RegisterGuide([[
 #name Lone Wolf - 25 (Ratchet) << Hunter
 #name Survival of the Fittest - 25 (Ratchet) << Druid
 #name Warbringer - 25 (Ratchet) << Warrior
-#name Dual Wield - 25 (Ratchet) << Shaman
+#name Dual Wield Specialization - 25 (Ratchet) << Shaman
 #name Demonic Pact - 25 (Ratchet) << Warlock
 #name Divine Sacrifice - 25 (Ratchet) << Paladin
 #name Rewind Time - 25 (Ratchet) << Mage
 #name Main Gauche - 25 (Ratchet) << Rogue
-#next Divine Storm - 25 (Darkshore) << Paladin
+#next Crusader Strike - 4 (Elwynn Forest) << Human Paladin
+#next Crusader Strike - 4 (Dun Morogh) << Dwarf Paladin
+#next Lava Burst - 25 (Hillsbrad Foothills) << Shaman
 
 << SoD
 
@@ -290,6 +292,17 @@ step << Horde
     .goto Stonetalon Mountains,66.6,55.5
     .zone Stonetalon Mountains >>Travel to Stonetalon Mountains
 step << Horde
+    #loop
+    .goto Stonetalon Mountains,71.04,49.03,50,0
+    .goto Stonetalon Mountains,72.59,53.21,50,0
+    .goto Stonetalon Mountains,70.63,55.47,50,0
+    .goto Stonetalon Mountains,70.04,55.12,50,0
+    .goto Stonetalon Mountains,67.53,57.65,50,0
+    .goto Stonetalon Mountains,59.95,55.51,50,0
+    .goto Stonetalon Mountains,62.35,52.73,50,0
+    .goto Stonetalon Mountains,66.91,47.82,50,0
+    .goto Stonetalon Mountains,67.31,46.39,50,0
+    .goto Stonetalon Mountains,68.76,47.95,50,0
     .train 415995,1 << Priest
     .train 410010,1 << Paladin
     .train 401761,1 << Mage
@@ -299,11 +312,12 @@ step << Horde
     .train 425476,1 << Warlock
     .train 424990,1 << Rogue
     .train 410096,1 << Shaman
-    >>Kill the |cRXP_ENEMY_Venture Co. Light Shredders|r. Use the |T133870:0|t[Shredder Autosalvage Unit] on the corpse for the |cRXP_LOOT_Turbochargers|r
-    .goto Stonetalon Mountains,66.6,55.5
+    >>Kill |cRXP_ENEMY_Venture Co. Light Shredders|r, |cRXP_ENEMY_XT:4|r, and |cRXP_ENEMY_XT:9|r. Use the |T133870:0|t[Shredder Autosalvage Unit] on their corpse to loot them for a 66% chance of a |cRXP_LOOT_Shredder Turbocharger|r
     .collect 210146,16
     .use 210147
     .mob Venture Co. Light Shredder
+    .mob XT:4
+    .mob XT:9
 step << Horde
     .train 415995,1 << Priest
     .train 410010,1 << Paladin
@@ -377,6 +391,17 @@ step << Alliance
     .goto Stonetalon Mountains,66.6,55.5
     .zone Stonetalon Mountains >>Travel to Stonetalon Mountains (e.g. take the boat to Dustwallow Marsh -> fly to Ratchet or directly to Stonetalon Mountains)
 step << Alliance
+    #loop
+    .goto Stonetalon Mountains,71.04,49.03,50,0
+    .goto Stonetalon Mountains,72.59,53.21,50,0
+    .goto Stonetalon Mountains,70.63,55.47,50,0
+    .goto Stonetalon Mountains,70.04,55.12,50,0
+    .goto Stonetalon Mountains,67.53,57.65,50,0
+    .goto Stonetalon Mountains,59.95,55.51,50,0
+    .goto Stonetalon Mountains,62.35,52.73,50,0
+    .goto Stonetalon Mountains,66.91,47.82,50,0
+    .goto Stonetalon Mountains,67.31,46.39,50,0
+    .goto Stonetalon Mountains,68.76,47.95,50,0
     .train 415995,1 << Priest
     .train 410010,1 << Paladin
     .train 401761,1 << Mage
@@ -386,11 +411,12 @@ step << Alliance
     .train 425476,1 << Warlock
     .train 424990,1 << Rogue
     .train 410096,1 << Shaman
-    >>Kill the |cRXP_ENEMY_Venture Co. Light Shredders|r. Use the |T133870:0|t[Shredder Autosalvage Unit] on the corpse for the |cRXP_LOOT_Turbochargers|r
-    .goto Stonetalon Mountains,66.6,55.5
+    >>Kill |cRXP_ENEMY_Venture Co. Light Shredders|r, |cRXP_ENEMY_XT:4|r, and |cRXP_ENEMY_XT:9|r. Use the |T133870:0|t[Shredder Autosalvage Unit] on their corpse to loot them for a 66% chance of a |cRXP_LOOT_Shredder Turbocharger|r
     .collect 210146,16
     .use 210147
     .mob Venture Co. Light Shredder
+    .mob XT:4
+    .mob XT:9
 step << Horde
     .train 415995,1 << Priest
     .train 410010,1 << Paladin
@@ -436,7 +462,6 @@ step
     .target Grizzby
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grizzby|r
-    .vendor
     .use 210822 << Priest
     .use 210820 << Paladin
     .use 210654 << Mage
@@ -447,15 +472,30 @@ step
     .use 210653 << Rogue
     .use 210823 << Shaman
     .train 415995 >>|cRXP_WARN_Buy and use the|r |T135791:0|t[|cRXP_FRIENDLY_Harmonious Epiphany|r] |cRXP_WARN_to train|r |T237549:0|t[Serendipity] << Priest
-    .train 410010 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Sacrifice|r] |cRXP_WARN_to train|r |T253400:0|t[Divine Sacrifice] << Paladin
+    .train 410010 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Sacrifice|r] |cRXP_WARN_to train|r |T134596:0|t[Engrave Pants - Divine Sacrifice] << Paladin
     .train 401761 >>|cRXP_WARN_Buy and use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Rewind Time|r] |cRXP_WARN_to train|r |T237538:0|t[Rewind Time] << Mage
     .train 410122 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Lone Wolf|r] |cRXP_WARN_to train|r |T132266:0|t[Lone Wolf] << Hunter
     .train 416042 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Survival|r] |cRXP_WARN_to train|r |T132126:0|t[Survival of the Fittest] << Druid
     .train 425445 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Warbringer|r] |cRXP_WARN_to train|r |T236319:0|t[Warbinger] << Warrior
     .train 425476 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Pact|r] |cRXP_WARN_to train|r |T237562:0|t[Demonic Pact] << Warlock
     .train 424990 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Main Gauche|r] |cRXP_WARN_to train|r |T237531:0|t[Main Gauche] << Rogue
-    .train 410096 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Dual Wield Specialization|r] |cRXP_WARN_to train |r |T132147:0|t[Dual Wield Specialization] << Shaman
+    .train 410096 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Dual Wield Specialization|r] |cRXP_WARN_to train|r |T132686:0|t[Engrave Chest - Dual Wield Specialization] << Shaman
     .target Grizzby
+step << Paladin
+    +Congratulations! You have acquired all |T134419:0|t|cRXP_LOOT_[Runes]|r currently available.
+    .train 409999,3 --Beacon of Light
+    .train 410001,3 --Hand of Reckoning
+    .train 410002,3 --Crusader Strike
+    .train 410008,3 --Avenger's Shield
+    .train 410010,3 --Divine Sacrifice
+    .train 410011,3 --Inspiration Exemplar
+    .train 410014,3 --Divine Storm
+    .train 410015,3 --Seal of Martyrdom
+    .train 416037,3 --Exorcist
+    .train 425618,3 --Horn of Lordaeron
+    .train 425619,3 --Aegis
+    .train 425621,3 --Rebuke
+    .xp <25,1
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -492,7 +532,6 @@ step
     .goto Stormwind City,55.0,61.6,-1 << Alliance
     .goto Ironforge,24.6,67.2,-1 << Alliance
     .goto Darnassus,60.0,56.4,-1 << Alliance
-    .vendor
     .use 211386 << Mage
     .use 211387 << Paladin
     .use 211392 << Warlock
@@ -978,7 +1017,7 @@ step
     .train 410111,1
 step
     #season 2
-    .goto Stonetalon Mountains,60.19,61.82
+    .goto Stonetalon Mountains,60.70,62.33
     >>Stay with |cRXP_FRIENDLY_Jixo Madrocket|r and watch him tame a |cRXP_ENEMY_Wyvern|r
     .turnin 78121 >>Turn in Wrangling a Wild Wyvern
     .target Jixo Madrocket

@@ -1317,7 +1317,7 @@ step
     .goto Teldrassil,34.61,28.79
     >>Click the |cRXP_PICK_Strange Fronded Plant|r
     .accept 931 >> Accept The Shimmering Frond
-step
+step << Priest
     #season 2
     #completewith next
     .goto Teldrassil,44.18,58.19
@@ -1367,7 +1367,7 @@ step << Hunter
     #label xp10
     .xp 10-2670 >> Grind until you are 2670 xp off level 10 (3830/6500)
     >>|cRXP_WARN_Once you reach this xp breakpoint, skip the harpy/escort quest and go straight to Darnassus. You will have another opportunity to finish those quests later|r
-step << Hunter
+step << Hunter skip
     #era/som
     #sticky
     #label xp10

@@ -758,7 +758,7 @@ step << Horde
     .goto ScarletEnclave,52.1,35.0
 	.zone Durotar >>Take the portal to Orgrimmar
 step << Horde
-    .goto Orgrimmar,31.9,37.8
+    .goto Orgrimmar,31.74,37.82
 .target Thrall
 >>Talk to |cRXP_FRIENDLY_Thrall|r
     .turnin 13189 >>Turn in Warchief's Blessing

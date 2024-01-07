@@ -107,14 +107,15 @@ step << !Shaman !Warrior
     .isOnQuest 9813 << !BloodElf
 step << !Shaman !Warrior
     #label MeetingTW
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r and |cRXP_FRIENDLY_Dawnsinger|r
+--   >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r and |cRXP_FRIENDLY_Dawnsinger|r
+>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 9626 >> Turn in Meeting the Warchief << BloodElf
     .accept 9627 >> Accept Allegiance to the Horde << BloodElf
     .turnin 9813 >> Turn in Meeting the Warchief << !BloodElf
-    .goto Orgrimmar,31.63,37.83
-    .goto Orgrimmar,31.62,38.39 << BloodElf
+    .goto Orgrimmar,31.62,37.82
+--  .goto Orgrimmar,31.62,38.39 << BloodElf
     .target Thrall
-    .target Ambassador Dawnsinger << BloodElf
+--   .target Ambassador Dawnsinger << BloodElf
 step << Paladin
     .goto Orgrimmar,32.29,35.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pyreanor|r
@@ -5688,22 +5689,20 @@ step << skip
     .isOnQuest 9626 << BloodElf
     .isOnQuest 9813 << !BloodElf !Shaman !Warrior
 --1.5x, on Darkhan
-step << skip
+step << !Shaman !Warrior skip
     #xprate 1.49-1.58
     .loop 35,Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
     .xp 25+16750 >> Grind to level 25 and 16750+/28900xp
     .isOnQuest 546
     .isQuestAvailable 9167 << !Shaman !Warrior
 --1.5x, on SOD
---VV << !Shaman !Warrior
-step << skip
+step << !Shaman !Warrior skip
     #xprate 1.49-1.58
     .loop 35,Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
     .xp 25+20575 >> Grind to level 25 and 20575+/28900xp
     .isQuestTurnedIn 546
     .isQuestAvailable 9167 << !Shaman !Warrior
 --1.5x on neither
---VV << !Shaman !Warrior
 step << skip
     #xprate 1.59-1.68
     .loop 35,Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
@@ -5722,22 +5721,20 @@ step << skip
     .isOnQuest 9626 << BloodElf
     .isOnQuest 9813 << !BloodElf !Shaman !Warrior
 --1.6x, on Darkhan
-step << skip
+step << !Shaman !Warrior skip
     #xprate 1.59-1.68
     .loop 35,Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
     .xp 25+15940 >> Grind to level 25 and 15940+/28900xp
     .isOnQuest 546
     .isQuestAvailable 9167 << !Shaman !Warrior
 --1.6x, on SOD
---VV << !Shaman !Warrior
-step << skip
+step << !Shaman !Warrior skip
     #xprate 1.59-1.68
     .loop 35,Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
     .xp 25+20020 >> Grind to level 25 and 20020+/28900xp
     .isQuestTurnedIn 546
     .isQuestAvailable 9167 << !Shaman !Warrior
 --1.6x on neither
---VV << !Shaman !Warrior
 step << skip
     #xprate >1.6999
     .loop 35,Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
@@ -5756,22 +5753,20 @@ step << skip
     .isOnQuest 9626 << BloodElf
     .isOnQuest 9813 << !BloodElf !Shaman !Warrior
 --1.7x, on Darkhan
-step << skip
+step << !Shaman !Warrior skip
     #xprate >1.6999
     .loop 35,Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
     .xp 25+15130 >> Grind to level 25 and 15130+/28900xp
     .isOnQuest 546
     .isQuestAvailable 9167 << !Shaman !Warrior
 --1.7x, on SOD
---VV << !Shaman !Warrior
-step << skip
+step << !Shaman !Warrior skip
     #xprate >1.6999
     .loop 35,Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
     .xp 25+19465 >> Grind to level 25 and 19465+/28900xp
     .isQuestTurnedIn 546
     .isQuestAvailable 9167 << !Shaman !Warrior
 --1.7x on neither
---VV << !Shaman !Warrior
 step << !Orc/!Warrior
     #completewith Battle
     .goto Hillsbrad Foothills,47.01,31.20 << wotlk
@@ -6263,7 +6258,7 @@ step << !Shaman !Warrior
     .turnin 9626 >> Turn in Meeting the Warchief << BloodElf
     .accept 9627 >> Accept Allegiance to the Horde << BloodElf
     .turnin 9813 >> Turn in Meeting the Warchief << !BloodElf
-    .goto Orgrimmar,31.63,37.83
+    .goto Orgrimmar,31.62,37.82
     .accept 9428 >> Accept Report to Splintertree Post << BloodElf
     .goto Orgrimmar,31.62,38.39 << BloodElf
     .target Thrall
@@ -6274,7 +6269,7 @@ step << BloodElf
     #label MeetingTW
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r and |cRXP_FRIENDLY_Dawnsinger|r
     .accept 9627 >> Accept Allegiance to the Horde << BloodElf
-    .goto Orgrimmar,31.63,37.83
+    .goto Orgrimmar,31.62,37.82
     .accept 9428 >> Accept Report to Splintertree Post << BloodElf
     .goto Orgrimmar,31.62,38.39 << BloodElf
     .target Thrall

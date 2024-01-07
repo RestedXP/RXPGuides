@@ -1610,8 +1610,9 @@ function addon.functions.loop(self, text, range, zone, ...)
         local segments = {...}
         for i, v in ipairs(segments) do segments[i] = tonumber(v) end
         element.segments = segments
+        local prefix
         if range then
-            local prefix = range:sub(1,1)
+            prefix = range:sub(1,1)
             element.pointCount = 0
             if prefix == "+" then
                 element.drawCenterPoint = true
@@ -1623,6 +1624,8 @@ function addon.functions.loop(self, text, range, zone, ...)
             elseif prefix == "@" then
                 element.pointCount = nil
                 range = range:sub(2,-1)
+            else
+                prefix = false
             end
             --print('ok2')
         end
@@ -4151,12 +4154,12 @@ function addon.functions.itemcount(self, ...)
     local eq = element.eq
     local total = element.total
     local count = GetItemCount(element.id,element.enableBank)
-    for i = 1, _G.INVSLOT_LAST_EQUIPPED do
+    --[[for i = 1, _G.INVSLOT_LAST_EQUIPPED do
         if GetInventoryItemID("player", i) == element.id then
             count = count + 1
             break
         end
-    end
+    end]]
 
     if not ((eq and count == total) or (count * operator > total * operator) or
         (not eq and operator == 0 and count >= total)) then

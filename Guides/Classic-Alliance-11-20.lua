@@ -881,15 +881,15 @@ step
     #completewith next
     .goto Felwood,20.80,15.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
-    .vendor 6301 >> Buy |T134059:0|t[Mild Spices]
-    >>|cRXP_WARN_Use the|r |T134059:0|t[Mild Spices] |cRXP_WARN_and your|r |T132832:0|t[Small Eggs] |cRXP_WARN_to make Herb Baked Eggs. Do this until your Cooking has reached level 10|r
+    .vendor 6301 >> |cRXP_BUY_Buy|r |T134059:0|t[Mild Spices]
+    >>|cRXP_WARN_Use the|r |T134059:0|t[Mild Spices] |cRXP_WARN_and your|r |T132832:0|t[Small Eggs] |cRXP_WARN_to make|r |T132834:0|t[Herb Baked Eggs]|cRXP_WARN_. Do this until your|r |T133971:0|t[Cooking] |cRXP_WARN_has reached level 10|r
     >>|cRXP_WARN_Continue leveling your|r |T133971:0|t[Cooking] |cRXP_WARN_passed 10. There is a quest in Duskwood which requires your|r |T133971:0|t[Cooking] |cRXP_WARN_to be 50. You can also do this while you are on the boat soon|r
     .skill cooking,50,1
     .target Gorbold Steelhand
     .itemcount 6889,>4 -- Small Egg
 step
     .goto Darkshore,37.514,41.671
-    +|cRXP_WARN_Use your|r |T133971:0|t[Cooking] |cRXP_WARN_profession to make Herb Baked Eggs. Do this until your|r |T133971:0|t[Cooking] |cRXP_WARN_has reached level 10|r
+    +|cRXP_WARN_Use your|r |T133971:0|t[Cooking] |cRXP_WARN_profession to make|r |T132834:0|t[Herb Baked Eggs]|cRXP_WARN_. Do this until your|r |T133971:0|t[Cooking] |cRXP_WARN_has reached level 10|r
     >>|cRXP_WARN_Continue leveling your|r |T133971:0|t[Cooking] |cRXP_WARN_passed 10. There is a quest in Duskwood which requires your|r |T133971:0|t[Cooking] |cRXP_WARN_to be 50. You can also do this while you are on the boat soon|r
     .skill cooking,50,1
     .target Gorbold Steelhand
@@ -1394,16 +1394,16 @@ step << Human Paladin
     .destroy 205864 >> Delete the |T134939:0|t[Charred Note] from your bags, as it's no longer needed
 step << Human Paladin
     #season 2
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Martyrdom] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest: Seal of Martyrdom]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Martyrdom] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Seal of Martyrdom]
     .use 205897
     .itemcount 205897,1 --Rune of Martyrdom (1)
     .train 410015,1
 step << Human Paladin
     #season 2
     .goto Westfall,36.24,54.52
-    .engrave 5 >>|cRXP_WARN_Engrave your|r |T134596:0|t|cRXP_LOOT_[Chest]|r with|r |T133815:0|t[Engrave Chest: Seal of Martyrdom]
-    >>|cRXP_WARN_Remember to put|r |T135961:0|t[Seal of Martyrdom] |cRXP_WARN_onto your action bars. It is better than both|r |T132325:0|t[Seal of Righteousness] |cRXP_WARN_and|r |T132347:0|t[Seal of Command] |cRXP_WARN_(until you get|r |T133815:0|t[Engrave Chest: Divine Storm]|cRXP_WARN_)|r
-    .train 410015,2
+    .engrave 5 >>|cRXP_WARN_Engrave your|r |T134596:0|t|cRXP_LOOT_[Chest]|r with|r |T133815:0|t[Engrave Chest - Seal of Martyrdom]
+    >>|cRXP_WARN_Remember to put|r |T135961:0|t[Seal of Martyrdom] |cRXP_WARN_onto your action bars. It is better than both|r |T132325:0|t[Seal of Righteousness] |cRXP_WARN_and|r |T132347:0|t[Seal of Command] |cRXP_WARN_(until you get|r |T133815:0|t[Engrave Chest - Divine Storm]|cRXP_WARN_)|r
+    .train 410015,3
 step
 	#completewith GnollPaws
     >>Open the |cRXP_PICK_Sacks of Oats|r on the ground. Loot them for the |cRXP_LOOT_Handful of Oats|r
@@ -1678,7 +1678,7 @@ step
     .goto Westfall,56.33,47.52
     .turnin 12 >> Turn in The People's Militia
 step
-	.xp <15,1
+	.xp <14,1
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
 	.target Gryan Stoutmantle
     .goto Westfall,56.33,47.52
@@ -2076,11 +2076,6 @@ step << Druid
     .goto Darkshore,45.7,50.3,0
     >>Loot |cRXP_LOOT_Lunar Fungi|r on the ground throughout caves
     .complete 6123,2
-step << !Druid
-#map Darkshore
-    .goto Felwood,19.64,39.52
-    >>Click the |cRXP_PICK_Beached Sea Turtle|r
-    .accept 4722 >> Accept Beached Sea Turtle
 step
 #map Darkshore
     #label CompleteThistleBears
@@ -2135,6 +2130,8 @@ step
 step
     .goto Darkshore,38.54,86.05
     >>Discover The Master's Glaive
+    >>|cRXP_ENEMY_Twilight Thugs|r |cRXP_WARN_can|r |T132343:0|t[Disarm] |cRXP_WARN_you for 6 seconds|r << Rogue/Paladin/Warrior
+    >>|cRXP_ENEMY_Twilight Disciples|r |cRXP_WARN_cast|r |T135953:0|t[Renew] |cRXP_WARN_and a 3 second|r |T135915:0|t[Heal]
     .complete 944,1
 step
     #completewith next
@@ -2145,20 +2142,30 @@ step
     .use 5251 >> Click the |cRXP_PICK_Scrying Bowl|r
     .turnin 944 >> Turn in The Master's Glaive
     .accept 949 >> Accept The Twilight Camp
+    >>|cRXP_ENEMY_Twilight Thugs|r |cRXP_WARN_can|r |T132343:0|t[Disarm] |cRXP_WARN_you for 6 seconds|r << Rogue/Paladin/Warrior
+    >>|cRXP_ENEMY_Twilight Disciples|r |cRXP_WARN_cast|r |T135953:0|t[Renew] |cRXP_WARN_and a 3 second|r |T135915:0|t[Heal]
 step
+#map Darkshore
     .goto Ashenvale,22.24,2.52
     >>Click the |cRXP_PICK_Twilight Tome|r
     .turnin 949 >> Turn in The Twilight Camp
     .accept 950 >> Accept Return to Onu
+    >>|cRXP_ENEMY_Twilight Thugs|r |cRXP_WARN_can|r |T132343:0|t[Disarm] |cRXP_WARN_you for 6 seconds|r << Rogue/Paladin/Warrior
+    >>|cRXP_ENEMY_Twilight Disciples|r |cRXP_WARN_cast|r |T135953:0|t[Renew] |cRXP_WARN_and a 3 second|r |T135915:0|t[Heal]
 step
+#map Darkshore
     .goto Ashenvale,22.36,3.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therylune|r. This will start an escort
     >>|cRXP_WARN_Skip this step if she is not there|r
+    >>|cRXP_ENEMY_Twilight Thugs|r |cRXP_WARN_can|r |T132343:0|t[Disarm] |cRXP_WARN_you for 6 seconds|r << Rogue/Paladin/Warrior
+    >>|cRXP_ENEMY_Twilight Disciples|r |cRXP_WARN_cast|r |T135953:0|t[Renew] |cRXP_WARN_and a 3 second|r |T135915:0|t[Heal]
     .accept 945 >> Accept Therylune's Escape
     .target Therylune
 step
     .goto Darkshore,40.51,87.09
     >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Therylune|r out of The Masters Glaive|r
+    >>|cRXP_ENEMY_Twilight Thugs|r |cRXP_WARN_can|r |T132343:0|t[Disarm] |cRXP_WARN_you for 6 seconds|r << Rogue/Paladin/Warrior
+    >>|cRXP_ENEMY_Twilight Disciples|r |cRXP_WARN_cast|r |T135953:0|t[Renew] |cRXP_WARN_and a 3 second|r |T135915:0|t[Heal]
     .complete 945,1 -- Escort Therylune
     .isOnQuest 945
 step
@@ -2306,6 +2313,7 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
     .trainer >> Train your class spells
     .target Loganaar
+    .xp <18,1
 step << Druid
     #label FlyDarkshore
     .goto Moonglade,48.11,67.35
@@ -2579,7 +2587,7 @@ step
     .goto Darkshore,61.40,9.40,45,0
     .goto Darkshore,62.42,7.67
     >>Kill |cRXP_ENEMY_Moonstalker Sires|r and |cRXP_ENEMY_Moonstalker Matriarchs|r. Loot them for their |cRXP_LOOT_Pelts|r
-    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Moonstalker Matriarchs|r also attacking with a |cRXP_ENEMY_Moonstalker Runt|r
+    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Moonstalker Matriarchs|r. They always attack with a |cRXP_ENEMY_Moonstalker Runt|r by their side|r
     .complete 986,1 -- Fine Moonstalker Pelt (5)
     .mob Moonstalker Sire
     .mob Moonstalker Matriarch
@@ -2914,6 +2922,13 @@ step << Hunter
     .subzoneskip 2257
 step << Hunter
 .dungeon DM
+    .goto StormwindClassic,61.609,15.269
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r
+    .trainer >> Train your class spells
+    .target Einris Brightspear
+    .zoneskip Stormwind City,1
+step << Hunter
+.dungeon DM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r and |cRXP_FRIENDLY_Wilder Thistlenettle|r
     .accept 2040 >> Accept Underground Assault
     .goto StormwindClassic,55.510,12.504
@@ -3041,6 +3056,7 @@ step << Hunter
 step << Hunter
 .dungeon DM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r and |cRXP_FRIENDLY_Scout Riell|r atop the Tower
+    .turnin 155 >> Turn in The Defias Brotherhood
     .accept 166 >> Accept The Defias Brotherhood
     .goto Westfall,56.33,47.52
     .accept 214 >> Accept Red Silk Bandanas
@@ -3174,6 +3190,27 @@ step << !Hunter
     #completewith next
     .goto Darkshore,32.75,42.21,35 >> Travel to the Auberdine Docks. Wait for the Menethil Harbor boat
     .zoneskip Wetlands
+step << !Hunter NightElf
+    .goto Darkshore,37.45,40.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalmond|r
+    >>|cRXP_BUY_Buy|r |T135237:0|t[Flint and Tinder] |cRXP_BUY_and|r |T135435:0|t[Simple Wood]
+    >>|cRXP_WARN_This is for leveling up your|r |T133971:0|t[Cooking] |cRXP_WARN_while on the boat soon as there is a quest in Duskwood which requires your|r |T133971:0|t[Cooking] |cRXP_WARN_to be 50|r
+    .collect 4470,1 --Simple Wood (1)
+    .collect 4471,1 --Flint and Tinder (1)
+    .itemcount 6889,1 -- Small Egg
+    .skill cooking,50,1
+    .target Dalmond
+step << !Hunter NightElf
+#map Darkshore
+    #completewith next
+    .goto Felwood,20.80,15.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
+    .vendor 6301 >> |cRXP_BUY_Buy|r |T134059:0|t[Mild Spices]
+    >>|cRXP_WARN_Use the|r |T134059:0|t[Mild Spices] |cRXP_WARN_and your|r |T132832:0|t[Small Eggs] |cRXP_WARN_to make|r |T132834:0|t[Herb Baked Eggs]
+    >>|cRXP_WARN_This is for leveling up your|r |T133971:0|t[Cooking] |cRXP_WARN_while on the boat soon as there is a quest in Duskwood which requires your|r |T133971:0|t[Cooking] |cRXP_WARN_to be 50|r
+    .itemcount 6889,1 -- Small Egg
+    .skill cooking,50,1
+    .target Gorbold Steelhand
 step << !Hunter
     .goto Darkshore,32.44,43.71
     >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_while waiting for the Menethil Harbor boat|r
@@ -3823,15 +3860,15 @@ step
     #completewith next
     .goto Felwood,20.80,15.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
-    .vendor 6301 >> Buy |T134059:0|t[Mild Spices]
-    >>|cRXP_WARN_Use the|r |T134059:0|t[Mild Spices] |cRXP_WARN_and your|r |T132832:0|t[Small Eggs] |cRXP_WARN_to make Herb Baked Eggs. Do this until your Cooking has reached level 10|r
+    .vendor 6301 >> |cRXP_BUY_Buy|r |T134059:0|t[Mild Spices]
+    >>|cRXP_WARN_Use the|r |T134059:0|t[Mild Spices] |cRXP_WARN_and your|r |T132832:0|t[Small Eggs] |cRXP_WARN_to make|r |T132834:0|t[Herb Baked Eggs]|cRXP_WARN_. Do this until your|r |T133971:0|t[Cooking] |cRXP_WARN_has reached level 10|r
     >>|cRXP_WARN_Continue leveling your|r |T133971:0|t[Cooking] |cRXP_WARN_passed 10. There is a quest in Duskwood which requires your|r |T133971:0|t[Cooking] |cRXP_WARN_to be 50. You can also do this while you are on the boat soon|r
     .skill cooking,50,1
     .target Gorbold Steelhand
     .itemcount 6889,>4 -- Small Egg
 step
     .goto Darkshore,37.514,41.671
-    +|cRXP_WARN_Use your|r |T133971:0|t[Cooking] |cRXP_WARN_profession to make Herb Baked Eggs. Do this until your|r |T133971:0|t[Cooking] |cRXP_WARN_has reached level 10|r
+    +|cRXP_WARN_Use your|r |T133971:0|t[Cooking] |cRXP_WARN_profession to make|r |T132834:0|t[Herb Baked Eggs]|cRXP_WARN_. Do this until your|r |T133971:0|t[Cooking] |cRXP_WARN_has reached level 10|r
     >>|cRXP_WARN_Continue leveling your|r |T133971:0|t[Cooking] |cRXP_WARN_passed 10. There is a quest in Duskwood which requires your|r |T133971:0|t[Cooking] |cRXP_WARN_to be 50. You can also do this while you are on the boat soon|r
     .skill cooking,50,1
     .target Gorbold Steelhand
@@ -4149,7 +4186,7 @@ step
     .goto Darkshore,61.40,9.40,45,0
     .goto Darkshore,62.42,7.67
     >>Kill |cRXP_ENEMY_Moonstalker Sires|r and |cRXP_ENEMY_Moonstalker Matriarchs|r. Loot them for their |cRXP_LOOT_Pelts|r and |cRXP_LOOT_Fangs|r
-    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Moonstalker Matriarchs|r also attacking with a |cRXP_ENEMY_Moonstalker Runt|r
+    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Moonstalker Matriarchs|r. They always attack with a |cRXP_ENEMY_Moonstalker Runt|r by their side|r
     .complete 986,1 -- Fine Moonstalker Pelt (5)
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob Moonstalker Sire
@@ -4412,6 +4449,8 @@ step
     .goto Ashenvale,22.36,3.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therylune|r. This will start an escort
     >>|cRXP_WARN_Skip this step if she is not there|r
+    >>|cRXP_ENEMY_Twilight Thugs|r |cRXP_WARN_can|r |T132343:0|t[Disarm] |cRXP_WARN_you for 6 seconds|r << Rogue/Paladin/Warrior
+    >>|cRXP_ENEMY_Twilight Disciples|r |cRXP_WARN_cast|r |T135953:0|t[Renew] |cRXP_WARN_and a 3 second|r |T135915:0|t[Heal]
     .accept 945 >> Accept Therylune's Escape
     .target Therylune
 step
@@ -4918,18 +4957,27 @@ step << Mage
     .trainer >> Train your class spells
     .target Elsharin
 step << Paladin/Priest !NightElf
-    #completewith next
+    #completewith next << !Paladin
+    #completewith PalTrainer << Paladin
     .goto StormwindClassic,42.51,33.51,20 >> Travel to the Stormwind Cathedral
 step << Paladin
     .goto StormwindClassic,39.80,29.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
+    .accept 1641 >> Accept The Tome of Divinity
     .turnin 1641 >> Turn in The Tome of Divinity
-    .collect 6775,1,1642 --Tome of Divinity (1)
-    .accept 1642 >> Accept The Tome of Divinity
-    .turnin 1642 >> Turn in The Tome of Divinity
     .target Duthorian Rall
-    .accept 1643 >> Accept The Tome of Divinity
 step << Paladin
+    .goto StormwindClassic,39.80,29.77
+    .use 6775>>|cRXP_WARN_Use the |T133464:0|t[|cRXP_LOOT_The Tome of Divinity|r] to start the quest|r
+    .accept 1642 >>Accept The Tome of Divinity
+step << Paladin
+    .goto StormwindClassic,39.80,29.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
+    .turnin 1642 >>Turn in The Tome of Divinity
+    .accept 1643 >>Accept The Tome of Divinity
+    .target Duthorian Rall
+step << Paladin
+    #label PalTrainer
     .goto StormwindClassic,38.82,31.27,10,0
     .goto StormwindClassic,38.67,32.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r
@@ -5099,13 +5147,10 @@ step << NightElf
     .target Thor
 step << NightElf
 .dungeon DM
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r and |cRXP_FRIENDLY_Scout Riell|r atop the Tower
-    .accept 166 >> Accept The Defias Brotherhood
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .accept 65 >> Accept The Defias Brotherhood
     .goto Westfall,56.33,47.52
-    .accept 214 >> Accept Red Silk Bandanas
-    .goto Westfall,56.67,47.35
     .target Gryan Stoutmantle
-    .target Scout Riell
 step << NightElf Warrior/NightElf Priest
     #completewith next
     .goto Elwynn Forest,41.08,65.76,25 >> Travel to Goldshire << Warrior
@@ -5271,7 +5316,7 @@ step
     .turnin 155 >> Turn in The Defias Brotherhood
     .accept 166 >> Accept The Defias Brotherhood
     .target Gryan Stoutmantle
-step << !NightElf
+step
 .dungeon DM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scout Riell|r atop the Tower
     .accept 214 >> Accept Red Silk Bandanas
@@ -5739,12 +5784,7 @@ step << Rogue
     .skill lockpicking,<80,1
 step
     #completewith next
-    .goto Redridge Mountains,30.73,59.99,150 >> Travel to Lakeshire
-step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r
-	.target Deputy Feldon
-    .goto Redridge Mountains,30.73,59.99
-    .turnin 246 >> Turn in Assessing the Threat
+    .goto Redridge Mountains,33.50,48.97,150 >> Travel to Lakeshire
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
 	.target Marshal Marris
@@ -5791,21 +5831,28 @@ step
 step << Rogue
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lucius|r
 	.target Lucius
-    .goto Redridge Mountains,28.06,52.32
+    .goto Redridge Mountains,28.07,52.02
     .turnin 2282 >> Turn in Alther's Mill
-step << Rogue
-	#completewith next
-	.destroy 7907 >> Destroy the Certificate of Thievery. You don't need it
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hilary|r
 	.target Hilary
     .goto Redridge Mountains,29.24,53.63
     .turnin 3741 >> Turn in Hilary's Necklace
+step << Rogue
+    #optional
+	#completewith FlySW
+	.destroy 7907 >> Destroy the |T134328:0|t[Certificate of Thievery]. You don't need it
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r
+	.target Deputy Feldon
+    .goto Redridge Mountains,30.73,59.99
+    .turnin 246 >> Turn in Assessing the Threat
 step
     #era
     .goto Redridge Mountains,49.0,70.0
     .xp 20 >> Grind until you are level 20
 step
+    #label FlySW
     .goto Redridge Mountains,30.59,59.42
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
 	.target Ariena Stormfeather
@@ -6033,6 +6080,17 @@ step << Rogue
     >>Open the |cRXP_PICK_Duskwood Chest|r. Loot it for |cRXP_LOOT_Klaven Mortwake's Journal|r
     >>|cRXP_WARN_You can|r |T132310:0|t[Sap] |cRXP_ENEMY_Klaven Mortwake|r |cRXP_WARN_and then open the|r |cRXP_PICK_Duskwood Chest|r
     >>|cRXP_WARN_If your|r |T132310:0|t[Sap] |cRXP_WARN_resists or misses, cast|r |T132331:0|t[Vanish] |cRXP_WARN_and try again or otherwise jump down and reset him. Alternatively you can come back later to complete it|r
+    .complete 2359,1 --Collect Klaven Mortwake's Journal (x1)
+    .link https://www.youtube.com/watch?v=t05Ux5Qis9k >>|cRXP_WARN_Click here for a video guide|r
+    .isOnQuest 2359
+    .xp <22,1
+step << Rogue
+    #softcore
+    .goto Westfall,70.41,73.93
+    >>|cRXP_WARN_Travel up to the top of the Tower|r
+    >>Open the |cRXP_PICK_Duskwood Chest|r. Loot it for |cRXP_LOOT_Klaven Mortwake's Journal|r
+    >>|cRXP_WARN_You can|r |T132310:0|t[Sap] |cRXP_ENEMY_Klaven Mortwake|r |cRXP_WARN_and then open the|r |cRXP_PICK_Duskwood Chest|r
+    >>|cRXP_WARN_If your|r |T132310:0|t[Sap] |cRXP_WARN_resists or misses, jump down and reset him. Alternatively you can come back later to complete it|r
     .complete 2359,1 --Collect Klaven Mortwake's Journal (x1)
     .link https://www.youtube.com/watch?v=t05Ux5Qis9k >>|cRXP_WARN_Click here for a video guide|r
     .isOnQuest 2359
@@ -6498,6 +6556,8 @@ step
 step
     .goto Darkshore,38.54,86.05
     >>Discover The Master's Glaive
+    >>|cRXP_ENEMY_Twilight Thugs|r |cRXP_WARN_can|r |T132343:0|t[Disarm] |cRXP_WARN_you for 6 seconds|r << Rogue/Paladin/Warrior
+    >>|cRXP_ENEMY_Twilight Disciples|r |cRXP_WARN_cast|r |T135953:0|t[Renew] |cRXP_WARN_and a 3 second|r |T135915:0|t[Heal]
     .complete 944,1
 step
     #completewith next
@@ -6508,22 +6568,30 @@ step
     .use 5251 >> Click the |cRXP_PICK_Scrying Bowl|r
     .turnin 944 >> Turn in The Master's Glaive
     .accept 949 >> Accept The Twilight Camp
+    >>|cRXP_ENEMY_Twilight Thugs|r |cRXP_WARN_can|r |T132343:0|t[Disarm] |cRXP_WARN_you for 6 seconds|r << Rogue/Paladin/Warrior
+    >>|cRXP_ENEMY_Twilight Disciples|r |cRXP_WARN_cast|r |T135953:0|t[Renew] |cRXP_WARN_and a 3 second|r |T135915:0|t[Heal]
 step
 #map Darkshore
     .goto Ashenvale,22.24,2.52
     >>Click the |cRXP_PICK_Twilight Tome|r
     .turnin 949 >> Turn in The Twilight Camp
     .accept 950 >> Accept Return to Onu
+    >>|cRXP_ENEMY_Twilight Thugs|r |cRXP_WARN_can|r |T132343:0|t[Disarm] |cRXP_WARN_you for 6 seconds|r << Rogue/Paladin/Warrior
+    >>|cRXP_ENEMY_Twilight Disciples|r |cRXP_WARN_cast|r |T135953:0|t[Renew] |cRXP_WARN_and a 3 second|r |T135915:0|t[Heal]
 step
 #map Darkshore
     .goto Ashenvale,22.36,3.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therylune|r. This will start an escort
     >>|cRXP_WARN_Skip this step if she is not there|r
+    >>|cRXP_ENEMY_Twilight Thugs|r |cRXP_WARN_can|r |T132343:0|t[Disarm] |cRXP_WARN_you for 6 seconds|r << Rogue/Paladin/Warrior
+    >>|cRXP_ENEMY_Twilight Disciples|r |cRXP_WARN_cast|r |T135953:0|t[Renew] |cRXP_WARN_and a 3 second|r |T135915:0|t[Heal]
     .accept 945 >> Accept Therylune's Escape
     .target Therylune
 step
     .goto Darkshore,40.51,87.09
     >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Therylune|r out of The Masters Glaive|r
+    >>|cRXP_ENEMY_Twilight Thugs|r |cRXP_WARN_can|r |T132343:0|t[Disarm] |cRXP_WARN_you for 6 seconds|r << Rogue/Paladin/Warrior
+    >>|cRXP_ENEMY_Twilight Disciples|r |cRXP_WARN_cast|r |T135953:0|t[Renew] |cRXP_WARN_and a 3 second|r |T135915:0|t[Heal]
     .complete 945,1 -- Escort Therylune
     .isOnQuest 945
 step

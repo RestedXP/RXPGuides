@@ -907,7 +907,10 @@ local function updateArrow()
             skip = skip or (element.step and element.step.ignorecorpse) or (not element.textOnly and addon.currentGuide.name == "41-43 Badlands")
         end
         local zone = HBD:GetPlayerZone()
-        local corpse = C_DeathInfo.GetCorpseMapPosition(zone)
+        local corpse
+        if type(zone) == "number" then
+            corpse = C_DeathInfo.GetCorpseMapPosition(zone)
+        end
         if not skip and corpse and corpse.x then
             corpseWP.wx, corpseWP.wy, corpseWP.instance =
                              HBD:GetWorldCoordinatesFromZone(corpse.x,corpse.y,zone)

@@ -354,7 +354,7 @@ step
     .target Tal
     .dungeon RFC
 step
-    .goto Orgrimmar,31.9,37.7
+    .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .accept 5726 >>Accept Hidden Enemies
     .target Thrall
@@ -365,7 +365,7 @@ step
     .complete 5726,1 --Lieutenant's Insignia (1)
     .dungeon RFC
 step
-    .goto Orgrimmar,31.9,37.7
+    .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5726 >> Turn in Hidden Enemies
     .accept 5727 >> Accept Hidden Enemies
@@ -385,7 +385,7 @@ step
     .target Neeru Fireblade
     .dungeon RFC
 step
-    .goto Orgrimmar,31.9,37.7
+    .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5727 >> Turn in Hidden Enemies
     .accept 5728 >> Accept Hidden Enemies
@@ -394,7 +394,7 @@ step
 step
     #label EnterRFC
     .goto Orgrimmar,52.77,48.97
-    .zone 213 >> Enter the RFC Instance portal. Zone in
+    .subzone 2437 >> Enter the RFC Instance portal. Zone in
     .dungeon RFC
 step
     #completewith next
@@ -466,13 +466,22 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
     .turnin 5761 >>Turn in Slaying the Beast
     .target Neeru Fireblade
+    .isQuestComplete 5761
     .dungeon RFC
 step
-    .goto Orgrimmar,31.9,37.7
+    .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5728 >> Turn in Hidden Enemies
     .accept 5729 >> Accept Hidden Enemies
     .target Thrall
+    .isQuestComplete 5728
+    .dungeon RFC
+step
+    .goto Orgrimmar,31.74,37.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
+    .accept 5729 >> Accept Hidden Enemies
+    .target Thrall
+    .isQuestTurnedIn 5728
     .dungeon RFC
 step
     .goto Orgrimmar,49.6,50.4
@@ -481,11 +490,13 @@ step
     .accept 5730 >> Accept Hidden Enemies
     .target Neeru Fireblade
     .dungeon RFC
+    .isQuestTurnedIn 5728
 step
-    .goto Orgrimmar,31.9,37.7
+    .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5730 >> Turn in Hidden Enemies
     .target Thrall
+    .isQuestTurnedIn 5728
     .dungeon RFC
 step
     #completewith next
@@ -496,6 +507,7 @@ step
     .goto Durotar,50.8,13.8,40 >>Go up the Zeppelin Tower
     .zone Tirisfal Glades >>Take the Zeppelin to Tirisfal Glades
     .zoneskip Tirisfal Glades
+    .isQuestComplete 5725
     .dungeon RFC
 step
     #completewith Varimathras
@@ -613,6 +625,7 @@ step
     .complete 5041,1 --Crossroads' Supply Crates (1)
 step
     #label KreenigSnarlsnout
+    .goto The Barrens,58.69,27.08
     >>Kill |cRXP_ENEMY_Kreenig Snarlsnout|r. Loot him for his |cRXP_LOOT_Tusk|r
     .complete 872,3 --Kreenig Snarlsnout's Tusk (1)
     .mob Kreenig Snarlsnout
@@ -3096,24 +3109,22 @@ step
     .accept 1064 >> Accept Forsaken Aid
     .target Magatha Grimtotem
 step
+    .goto Thunder Bluff,78.61,28.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamuul|r and |cRXP_FRIENDLY_Nara|r
     .turnin 1489 >> Turn in Hamuul Runetotem
     .accept 1490 >> Accept Nara Wildmane
-    .goto Thunder Bluff,78.61,28.55
+    .target Arch Druid Hamuul Runetotem
+step
+    .goto Thunder Bluff,75.65,31.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamuul|r and |cRXP_FRIENDLY_Nara|r
     .turnin 1490 >> Turn in Nara Wildmane
     .accept 914 >> Accept Leaders of the Fang
-    .goto Thunder Bluff,75.65,31.57
-    .target Arch Druid Hamuul Runetotem
     .target Nara Wildmane
     .dungeon WC
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamuul|r and |cRXP_FRIENDLY_Nara|r
-    .turnin 1489 >> Turn in Hamuul Runetotem
-    .accept 1490 >> Accept Nara Wildmane
-    .goto Thunder Bluff,78.61,28.55
-    .turnin 1490 >> Turn in Nara Wildmane
     .goto Thunder Bluff,75.65,31.57
-    .target Arch Druid Hamuul Runetotem
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamuul|r and |cRXP_FRIENDLY_Nara|r
+    .turnin 1490 >> Turn in Nara Wildmane
     .target Nara Wildmane
 step << Druid
     .goto Thunder Bluff,76.48,27.25

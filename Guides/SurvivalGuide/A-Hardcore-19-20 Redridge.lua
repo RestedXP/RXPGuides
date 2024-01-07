@@ -1074,11 +1074,8 @@ step
 step << Rogue
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lucius|r
 	.target Lucius
-    .goto Redridge Mountains,28.06,52.32
+    .goto Redridge Mountains,28.07,52.02
     .turnin 2282 >> Turn in Alther's Mill
-step << Rogue
-	#completewith next
-	.destroy 7907 >> Destroy the Certificate of Thievery. You don't need it
 step << NightElf Rogue
     #hardcore
     #completewith next
@@ -1212,4 +1209,7 @@ step << Rogue
     .target Doc Mixilpixil
     .turnin 2607 >> Turn in The Touch of Zanzil
     .isQuestTurnedIn 2359
+step << Rogue
+	#optional
+	.destroy 7907 >> Destroy the |T134328:0|t[Certificate of Thievery]. You don't need it
 ]])

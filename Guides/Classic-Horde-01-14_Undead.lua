@@ -1085,6 +1085,7 @@ step << Mage
     .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
     .train 401768 >>|cRXP_WARN_Use|r|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF|r] |cRXP_WARN_to learn|r |T135820:0|t[Living Flame]
     .use 203752
+    .itemcount 203752,1
 step << Mage/Priest
     #season 2
     .goto Tirisfal Glades,25.6,48.2
@@ -3105,7 +3106,7 @@ step << !Mage !Priest
     .money <0.05
 step
     .goto Silverpine Forest,43.98,39.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwyn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Edwin|r
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Mage/Warlock/Priest/Shaman/Druid
     .vendor >> |cRXP_BUY_Buy|r |T134830:0|t[Lesser Healing Potions] |cRXP_BUY_from him if they're up|r
     .collect 1179,20,421,1 << Mage/Warlock/Priest/Shaman/Druid --Ice Cold Milk (20)
@@ -3200,7 +3201,7 @@ step
     .goto Silverpine Forest,51.89,13.82,6,0
     .goto Silverpine Forest,51.54,13.91
     >>Kill |cRXP_ENEMY_Ivar the Foul|r. Loot him for his |cRXP_LOOT_Head|r
-    >>|cRXP_WARN_Ivar is protected by one|r |cRXP_ENEMY_Ravenclaw Slave|r |cRXP_WARN_. Use a health potion if needed|r
+    >>|cRXP_WARN_Ivar is protected by two|r |cRXP_ENEMY_Ravenclaw Slaves|r |cRXP_WARN_inside the barn. You can solopull one of them as he patrols forward|r
     >>|cRXP_WARN_They are immune to fear!|r << Priest/Warlock
     .complete 425,1 --Ivar's Head (1)
     .target Ivar the Foul
@@ -3321,7 +3322,7 @@ step << !Mage !Priest
     .target Gwyn Farrow
 step
     .goto Silverpine Forest,43.98,39.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwyn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Edwin|r
     >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r << Warlock/Priest/Shaman/Druid
     .vendor >> |cRXP_BUY_Buy|r |T134830:0|t[Lesser Healing Potions] |cRXP_BUY_from him if they're up|r
     .collect 1179,20,423,1 << Warlock/Priest/Shaman/Druid --Ice Cold Milk (20)
@@ -3701,7 +3702,7 @@ step << Undead
     .target Doras
     .dungeon RFC
 step
-    .goto Orgrimmar,31.9,37.7
+    .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .accept 5726 >>Accept Hidden Enemies
     .target Thrall
@@ -3712,7 +3713,7 @@ step
     .complete 5726,1 --Lieutenant's Insignia (1)
     .dungeon RFC
 step
-    .goto Orgrimmar,31.9,37.7
+    .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5726 >> Turn in Hidden Enemies
     .accept 5727 >> Accept Hidden Enemies
@@ -3733,7 +3734,7 @@ step
     .dungeon RFC
 step
     #label HiddenEnemiesPickup
-    .goto Orgrimmar,31.9,37.7
+    .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5727 >> Turn in Hidden Enemies
     .accept 5728 >> Accept Hidden Enemies
@@ -3742,7 +3743,7 @@ step
 step
     #label EnterRFC
     .goto Orgrimmar,52.77,48.97
-    .zone 213 >> Enter the RFC Instance portal. Zone in
+    .subzone 2437 >> Enter the RFC Instance portal. Zone in
     .dungeon RFC
 step
     #completewith TroggsShamans
@@ -3821,13 +3822,22 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
     .turnin 5761 >>Turn in Slaying the Beast
     .target Neeru Fireblade
+    .isQuestComplete 5761
     .dungeon RFC
 step
-    .goto Orgrimmar,31.9,37.7
+    .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5728 >> Turn in Hidden Enemies
     .accept 5729 >> Accept Hidden Enemies
     .target Thrall
+    .isQuestComplete 5728
+    .dungeon RFC
+step
+    .goto Orgrimmar,31.74,37.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
+    .accept 5729 >> Accept Hidden Enemies
+    .target Thrall
+    .isQuestTurnedIn 5728
     .dungeon RFC
 step
     .goto Orgrimmar,49.6,50.4
@@ -3836,11 +3846,13 @@ step
     .accept 5730 >> Accept Hidden Enemies
     .target Neeru Fireblade
     .dungeon RFC
+    .isQuestTurnedIn 5728
 step
-    .goto Orgrimmar,31.9,37.7
+    .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5730 >> Turn in Hidden Enemies
     .target Thrall
+    .isQuestTurnedIn 5728
     .dungeon RFC
 step << Undead
     #completewith next

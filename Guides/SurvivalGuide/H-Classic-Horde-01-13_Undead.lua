@@ -1034,7 +1034,7 @@ step
     .target Lar Prowltusk
 step
     #label SenjinPickups
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vel|r, |cRXP_FRIENDLY_Vornal|r and |cRXP_FRIENDLY_Gadrin|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vel'rin|r, |cRXP_FRIENDLY_Vornal|r and |cRXP_FRIENDLY_Gadrin|r
     .accept 817 >>Accept Practical Prey
     .goto Durotar,55.95,73.93
     .accept 818 >>Accept A Solvent Spirit
@@ -1375,7 +1375,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Orgnil|r, |cRXP_FRIENDLY_Gar'Thok|r and |cRXP_FRIENDLY_Torka|r
     .turnin 823 >>Turn in Report to Orgnil
     .accept 806 >>Accept Dark Storms
-    .goto Durotar,52.25,43.18
+    .goto Durotar,52.24,43.15
     .turnin 784 >>Turn in Vanquish the Betrayers
     .turnin 830 >>Turn in The Admiral's Orders
     .accept 825 >>Accept From The Wreckage....
@@ -1391,7 +1391,7 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil|r, |cRXP_FRIENDLY_Gar'Thok|r and |cRXP_FRIENDLY_Torka|r
     .turnin 823 >>Turn in Report to Orgnil
-    .goto Durotar,52.25,43.18
+    .goto Durotar,52.24,43.15
     .turnin 784 >>Turn in Vanquish the Betrayers
     .turnin 830 >>Turn in The Admiral's Orders
     .accept 825 >>Accept From The Wreckage....
@@ -1971,7 +1971,7 @@ step
     .money <0.0375
     .group
 step
-    .goto Durotar,51.95,43.50
+    .goto Durotar,52.24,43.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil|r
     .turnin 806 >>Turn in Dark Storms
     .accept 828 >>Accept Margoz
@@ -1979,8 +1979,8 @@ step
     .isQuestComplete 806
     .group
 step
-    .goto Durotar,51.95,43.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil|r again
+    .goto Durotar,52.24,43.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil|r
     .accept 828 >>Accept Margoz
     .target Orgnil Soulscar
     .isQuestTurnedIn 806

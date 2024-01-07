@@ -397,6 +397,8 @@ step << Human Mage
 step << Paladin
     #season 2
     #loop
+    #label Libram1
+    #completewith RedBurlapBandana
     .goto Elwynn Forest,52.55,48.79,30,0
     .goto Elwynn Forest,53.89,50.52,30,0
     .goto Elwynn Forest,55.09,49.00,30,0
@@ -408,14 +410,18 @@ step << Paladin
     .train 410002,1
 step << Paladin
     #season 2
+    #label Libram2
+    #requires Libram1
+    #completewith RedBurlapBandana
     .equip 18,205420 >> |cRXP_WARN_Equip the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r
     .use 205420
     .itemcount 205420,1 --Libram of Judgement (1)
     .train 410002,1
 step << Paladin
     #season 2
+    #label Libram3
+    #requires Libram2
     #completewith RedBurlapBandana
-    #label CSLibram1
     #loop
     .goto Elwynn Forest,52.55,48.79,30,0
     .goto Elwynn Forest,53.89,50.52,30,0
@@ -427,26 +433,26 @@ step << Paladin
     .train 410002,1
 step << Paladin
     #season 2
+    #label Libram4
+    #requires Libram3
     #completewith RedBurlapBandana
-    #requires CSLibram1
-    #label CSLibram2
-    .cast 409920 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves: Crusader Strike]
+    .cast 409920 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Crusader Strike]
     .use 205420
     .aura 408828
     .train 410002,1
 step << Paladin
     #season 2
+    #label Libram5
+    #requires Libram4
     #completewith RedBurlapBandana
-    #requires CSLibram2
-    #label CSLibram3
     .equip 10 >>|cRXP_WARN_Equip a pair of|r |T132938:0|t|cRXP_LOOT_[Gloves]|r |cRXP_WARN_if you have some or when you loot some|r
-    .train 410002,2
+    .train 410002,3
 step << Paladin
     #season 2
+    #requires Libram5
     #completewith next
-    #requires CSLibram3
-    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132938:0|t|cRXP_LOOT_[Gloves]|r with|r |T133816:0|t[Engrave Gloves: Crusader Strike]
-    .train 410002,2
+    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132938:0|t|cRXP_LOOT_[Gloves]|r with|r |T133816:0|t[Engrave Gloves - Crusader Strike]
+    .train 410002,3
 step
     #season 2
     #loop
@@ -506,7 +512,7 @@ step << Paladin
     .train 410002,1
 step << Paladin
     #season 2
-    .cast 409920 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves: Crusader Strike]
+    .cast 409920 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Crusader Strike]
     .use 205420
     .aura 408828
     .train 410002,1
@@ -515,13 +521,13 @@ step << Dwarf Paladin
     #completewith RestandR
     #label CSLibram3
     .equip 10 >> |cRXP_WARN_Equip a pair of|r |T132938:0|t|cRXP_LOOT_[Gloves]|r |cRXP_WARN_if you have some or when you loot some|r
-    .train 410002,2
+    .train 410002,3
 step << Dwarf Paladin
     #season 2
     #completewith RestandR
     #requires CSLibram3
-    .engrave 10 >> |cRXP_WARN_Engrave your|r |T132938:0|t|cRXP_LOOT_[Gloves]|r with|r |T133816:0|t[Engrave Gloves: Crusader Strike]
-    .train 410002,2
+    .engrave 10 >> |cRXP_WARN_Engrave your|r |T132938:0|t|cRXP_LOOT_[Gloves]|r with|r |T133816:0|t[Engrave Gloves - Crusader Strike]
+    .train 410002,3
 step << Rogue
     .xp 4 >> Grind to 4
 step
@@ -592,7 +598,7 @@ step << Human Paladin
     #season 2
     #completewith RestandR
     #requires CSLibram3
-    .engrave 10 >> |cRXP_WARN_Engrave the|r |T132938:0|t|cRXP_LOOT_[Tarnished Chain Gloves]|r with|r |T133816:0|t[Engrave Gloves: Crusader Strike]
+    .engrave 10 >> |cRXP_WARN_Engrave the|r |T132938:0|t|cRXP_LOOT_[Tarnished Chain Gloves]|r with|r |T133816:0|t[Engrave Gloves - Crusader Strike]
     .train 410002,2
     .itemStat 10,LEVEL,<5
 step << skip
@@ -683,6 +689,7 @@ step
     .turnin 6,2 >> Turn in Bounty on Garrick Padfoot << Warrior/Rogue/Paladin
     .turnin 6,1 >> Turn in Bounty on Garrick Padfoot << !Warrior !Rogue !Paladin
 step
+    #label RestandR
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r inside the Abbey
     .target Marshal McBride
     .goto Elwynn Forest,48.923,41.606
@@ -713,7 +720,6 @@ step << Priest
     .goto Elwynn Forest,49.808,39.489
     .accept 5623 >> Accept In Favor of the Light
 step
-    #label RestandR
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falkhaan Isenstrider|r
     .target Falkhaan Isenstrider
     .goto Elwynn Forest,45.563,47.742
@@ -2426,14 +2432,14 @@ step << Paladin
 --XX 109539 "I've taken care of Stuart. He shouldn't be a problem anymore."
 step << Paladin
     #season 2
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Rebuke] |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants: Rebuke]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Rebuke] |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants - Rebuke]
     .use 205683
     .itemcount 205683,1 --Rune of Rebuke (1)
     .train 425621,1
 step << Paladin
     #season 2
     #completewith Dirt
-    .engrave 7 >>|cRXP_WARN_Engrave your|r |T134596:0|t|cRXP_LOOT_[Pants]|r with|r |T134596:0|t[Engrave Pants: Rebuke]
+    .engrave 7 >>|cRXP_WARN_Engrave your|r |T134596:0|t|cRXP_LOOT_[Pants]|r with|r |T134596:0|t[Engrave Pants - Rebuke]
     >>|cRXP_WARN_Remember to put|r |T134919:0|t[Rebuke] |cRXP_WARN_onto your action bars|r
     .train 425621,2
 step

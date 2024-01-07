@@ -3634,27 +3634,23 @@ step << Rogue
     .cooldown item,6948,<0
     .zoneskip Eversong Woods
     .zoneskip Ghostlands
-step << skip
+step << BloodElf Hunter skip
     .goto Silvermoon City,53.926,71.029
     >>Inside the building
     .turnin 9133 >> Turn in Fly to Silvermoon City
     .accept 9134 >> Accept Skymistress Gloaming
-    --VV << BloodElf Hunter
-step << skip
+step << BloodElf Hunter skip
     .goto Eversong Woods,54.4,50.8
     >>Exit Silvermoon City
     .turnin 9134 >> Turn in Skymistress Gloaming
     .accept 9135 >> Accept Return to Quartermaster Lymel
---VV << BloodElf Hunter
-step << skip
+step << BloodElf Hunter skip
     #completewith next
     .goto Eversong Woods,54.4,50.8
     .fly Tranquillien >> Fly to Tranquillien
-    --VV << BloodElf Hunter
-step << skip
+step << BloodElf Hunter skip
     .goto Ghostlands,47.3,29.1
     .turnin 9135 >> Turn in Return to Quartermaster Lymel
-    --VV << BloodElf Hunter
 step << !Orc !Troll !Tauren !Rogue/!BloodElf Warlock
     #completewith SGrove
     .hs >> Hearth to Falconwing Square
