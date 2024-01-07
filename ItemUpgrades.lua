@@ -1479,35 +1479,38 @@ function addon.itemUpgrades.AH:CreateGui()
     ahSession.displayFrame = f
 end
 
-local function toggleAHFrame() end
-
 function addon.itemUpgrades.AH:CreateEmbeddedGui()
     if ahSession.displayFrame then return end
 
-    -- _G["RXP_IU_AH_Scanning"] comes from UI/AH/scanning.xml so abort if not included
-    if not _G["RXP_IU_AH_Scanning"] then return end
-    local tabFrame = _G["RXP_IU_AH_Scanning"]
     local attachment = _G.AuctionFrame
+    if not attachment then return end
+
+    ahSession.displayFrame = _G["RXP_IU_AH_Scanning"]
+    if not ahSession.displayFrame then return end
+
+    ahSession.displayFrame:SetParent(attachment)
+    ahSession.displayFrame:SetPoint("TOPLEFT", attachment, "TOPLEFT")
+
+    _G.RXP_IU_AH_BrowseTitle:SetText(fmt("%s - %s", addon.title,
+                                         _G.MINIMAP_TRACKING_AUCTIONEER))
 
     -- Create tab button
     local index = attachment.numTabs + 1
-    local tab = CreateFrame("Button", "AuctionFrameTab" .. index, attachment,
-                            "AuctionTabTemplate")
-    tab:SetText(addon.name)
-    tab:SetID(index)
+    local tabButton = CreateFrame("Button", "AuctionFrameTab" .. index,
+                                  attachment, "AuctionTabTemplate")
+    tabButton.isRXP = true
+    tabButton:SetText(addon.name)
+    tabButton:SetID(index)
 
-    tab:SetPoint("TOPLEFT", "AuctionFrameTab" .. (index - 1), "TOPRIGHT", -8, 0)
+    tabButton:SetPoint("TOPLEFT", "AuctionFrameTab" .. (index - 1), "TOPRIGHT",
+                       -8, 0)
 
-    tab:HookScript("OnHide", function() tabFrame:Hide() end)
+    tabButton:HookScript("OnHide", function() ahSession.displayFrame:Hide() end)
 
-    tab.Selected = function(this)
-        -- AuctionFrameAuctions:Hide()
-        -- AuctionFrameBrowse:Hide()
-        -- AuctionFrameBid:Hide()
-
+    tabButton.Selected = function(this)
+        print("tabButton.Selected")
         PanelTemplates_SetTab(attachment, this)
 
-        AuctionHouseFrame:SetTitle("RXP Auctioneer") -- TODO locale
         AuctionFrameTopLeft:SetTexture(
             "Interface\\AuctionFrame\\UI-AuctionFrame-Browse-TopLeft")
         AuctionFrameTop:SetTexture(
@@ -1521,31 +1524,30 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
         AuctionFrameBotRight:SetTexture(
             "Interface\\AuctionFrame\\UI-AuctionFrame-Bid-BotRight")
 
-        tabFrame:Show()
+        ahSession.displayFrame:Show()
 
         AuctionFrame.type = nil
         SetAuctionsTabShowing(false)
         PanelTemplates_SelectTab(this)
     end
 
-    tab.isRXP = true
-    tab.tabFrame = tabFrame
+    tabButton.Deselected = function(this)
+        PanelTemplates_DeselectTab(this)
+        ahSession.displayFrame:Hide()
+    end
 
-    hooksecurefunc(_G, "AuctionFrameTab_OnClick", function(tabButton, ...)
-        if not tabButton.isRXP then
-            tab.tabFrame:Hide()
+    hooksecurefunc(_G, "AuctionFrameTab_OnClick", function(button, ...)
+        if not button.isRXP then
+            tabButton:Deselected()
             return
         end
 
-        tab.tabFrame:Show()
+        tabButton:Selected()
     end)
 
+    PanelTemplates_TabResize(tabButton, 0, nil, 36)
     PanelTemplates_SetNumTabs(attachment, index)
     PanelTemplates_EnableTab(attachment, index)
-    -- PanelTemplates_TabResize
-
-    ahSession.displayFrame = tabFrame
-
 end
 
 function addon.itemUpgrades.AH:DisplayResults()

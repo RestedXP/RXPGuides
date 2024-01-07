@@ -377,12 +377,9 @@
         <Size>
             <AbsDimension x="758" y="447"/>
         </Size>
-        <Anchors>
-            <Anchor point="TOPLEFT"/>
-        </Anchors>
         <Layers>
             <Layer level="BACKGROUND">
-                <FontString name="RXP_IU_AH_BrowseTitle" inherits="GameFontNormal" text="BROWSE_AUCTIONS">
+                <FontString name="RXP_IU_AH_BrowseTitle" inherits="GameFontNormal">
                     <Anchors>
                         <Anchor point="TOP">
                             <Offset>
