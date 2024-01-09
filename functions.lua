@@ -3926,8 +3926,7 @@ function addon.functions.gossipoption(self, ...)
     local element = self.element
 
     if not element or not element.step.active or not element.gossipId or
-        element.completed or addon.isHidden or
-        not addon.settings.profile.enableGossipAutomation or IsShiftKeyDown() then
+        element.completed or addon.isHidden then
              return
     end
 
@@ -3937,7 +3936,9 @@ function addon.functions.gossipoption(self, ...)
 
     for _, v in pairs(options) do
         if v.gossipOptionID == element.gossipId then
-            C_GossipInfo.SelectOption(v.gossipOptionID)
+            if addon.settings.profile.enableGossipAutomation and not IsShiftKeyDown() then
+                C_GossipInfo.SelectOption(v.gossipOptionID)
+            end
             --GossipSelectOption(i)
             addon.SetElementComplete(self)
             matched = true
