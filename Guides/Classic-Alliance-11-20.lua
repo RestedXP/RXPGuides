@@ -851,19 +851,18 @@ step
     .target Cerellean Whiteclaw
 step
 #map Darkshore
+    .goto Felwood,18.50,19.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
+    .accept 1138 >> Accept Fruit of the Sea
+    .target Gubber Blump
+step
+#map Darkshore
     .goto Darkshore,36.71,44.98,5,0
     .goto Felwood,19.10,20.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .turnin 4722 >> Turn in Beached Sea Turtle
     .turnin 4723 >> Turn in Beached Sea Creature
     .target Gwennyth Bly'Leggonde
-step
-#map Darkshore
-    .goto Felwood,18.50,19.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
-    .accept 1138 >> Accept Fruit of the Sea
-    .target Gubber Blump
----?
 step << NightElf
 #map Darkshore
     .goto Felwood,20.80,15.58
@@ -1973,6 +1972,7 @@ step << Hunter
     .use 3027
     .itemcount 3027,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.19
+    .xp <20,1
 step << Hunter
     #requires RecruveReinforced
     #completewith next
@@ -1980,6 +1980,13 @@ step << Hunter
     .use 3026
     .itemcount 3026,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.49
+step << NightElf Rogue
+    >>Enter the Cenarion Enclave
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syurna|r
+    .goto Darnassus,31.84,16.69,15,0
+    .goto Darnassus,37.00,21.92
+    .trainer >> Train your class spells
+    .target Syurna
 step << NightElf !Druid
     #optional
     #completewith next
@@ -1994,13 +2001,6 @@ step << NightElf Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jandria|r
     .trainer >> Train your class spells
     .target Jandria
-step << NightElf Rogue
-    >>Enter the Cenarion Enclave
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syurna|r
-    .goto Darnassus,31.84,16.69,15,0
-    .goto Darnassus,37.00,21.92
-    .trainer >> Train your class spells
-    .target Syurna
 step << NightElf !Druid
     #label start
     .hs >> Hearth to Auberdine
