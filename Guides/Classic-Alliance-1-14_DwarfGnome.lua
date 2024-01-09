@@ -2747,11 +2747,11 @@ step
     .subzone 87 >> Travel to Goldshire
 step
     #hardcore
+    .goto Elwynn Forest,42.140,67.254
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r
     >>|cRXP_WARN_Do NOT vendor the|r |T133581:0|t[Bag of Marbles] |cRXP_WARN_reward. This is an incredibly valuable item all the way through to level 60|r
-    .target Remy "Two Times"
-    .goto Elwynn Forest,42.140,67.254
     .turnin 47 >> Turn in Gold Dust Exchange
+    .target Remy "Two Times"
 step << Paladin
     #season 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r

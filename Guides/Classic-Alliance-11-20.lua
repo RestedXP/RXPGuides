@@ -1463,11 +1463,11 @@ step
     .complete 64,1 --Furlbrow's Pocket Watch
 step
     #completewith FurlbrowFarm
-    .isQuestAvailable 38
     >>Kill |cRXP_ENEMY_Harvest Watchers|r. Loot them for their |cRXP_LOOT_Okra|r and |cRXP_LOOT_Flasks of Oil|r
     .complete 9,1 --Harvest Watcher (20)
     .collect 732,3,38,1 --Okra (3)
     .collect 814,5,103,1 --Flask of Oil (5)
+    .isQuestAvailable 38
     .mob Harvest Watcher
 step
     #completewith FurlbrowFarm
@@ -6523,11 +6523,11 @@ step
     .goto Darkshore,37.21,44.22
     .accept 4740 >> Accept WANTED: Murkdeep!
 step
-    .isQuestTurnedIn 986
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
-	.target Terenthis
     .goto Darkshore,39.37,43.48
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
     .accept 993 >> Accept A Lost Master
+	.target Terenthis
+    .isQuestTurnedIn 986
 step
 	#era/som
     #completewith Murkdeep
