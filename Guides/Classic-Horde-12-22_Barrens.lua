@@ -115,17 +115,19 @@ step << Undead
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .fp The Crossroads >> Get the The Crossroads flight path
     .target Devrak
-step << !Shaman !Warrior/Undead !Tauren
+step
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
     .accept 1492 >>Accept Wharfmaster Dizzywig
     .accept 848 >>Accept Fungal Spores
     .turnin 1358 >>Turn in Sample for Helbrim << Undead/Rogue/Mage/Priest/Warlock
     .target Apothecary Helbrim
-step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    .isQuestAvailable 848
+step
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
     .accept 1492 >>Accept Wharfmaster Dizzywig
+    .turnin 1358 >>Turn in Sample for Helbrim << Undead/Rogue/Mage/Priest/Warlock
     .target Apothecary Helbrim
 step << Orc Hunter/Troll Hunter
     .goto The Barrens,51.11,29.07
@@ -1157,12 +1159,12 @@ step
     .complete 855,1 --Centaur Bracers (15)
     .mob Kolkar Wrangler
     .mob Kolkar Stormer
-step << !Shaman !Warrior/Undead
+step
     #completewith Barak
     >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Forgotten Pools
     >>|cRXP_WARN_This quest does not have to be completed now|r
     .complete 848,1 --Collect Fungal Spores (x4)
-step << !Shaman !Warrior/Undead
+step
     .goto The Barrens,45.06,22.54
     >>Dive underwater to the |cRXP_PICK_Bubble Fissure|r
     .complete 870,1 --Explore the waters of the Forgotten Pools

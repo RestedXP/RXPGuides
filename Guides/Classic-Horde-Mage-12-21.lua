@@ -254,35 +254,50 @@ step
     >>Kill Plainstriders. Loot them for their Kidneys
     .complete 821,2 --Plainstrider Kidney (5)
 step
-    .goto The Barrens,45.4,28.4
-.target Regthar Deathgate
->>Talk to |cRXP_FRIENDLY_Regthar Deathgate|r
+    #label RegtharDeathgate1
+    .goto The Barrens,45.35,28.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .accept 850 >>Accept Kolkar Leaders
-step
-    .goto The Barrens,45.4,28.4
-.target Regthar Deathgate
->>Talk to |cRXP_FRIENDLY_Regthar Deathgate|r
     .accept 855 >> Accept Centaur Bracers
+    .target Regthar Deathgate
 step
-    #completewith next
-    >>Kill Centaurs. Loot them for their bracers. You'll finish this later
+    #completewith KodobaneTurnin
+    >>Kill |cRXP_ENEMY_Kolkar Wranglers|r and |cRXP_ENEMY_Kolkar Stormers|r. Loot them for their |cRXP_LOOT_Bracers|r
+    >>|cRXP_WARN_This quest does not have to be completed now|r
     .complete 855,1 --Centaur Bracers (15)
+    .mob Kolkar Wrangler
+    .mob Kolkar Stormer
 step
-    >>Kill Kodobane. Loot him for his head
-    .goto The Barrens,42.8,23.5
+    #completewith Barak
+    >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Forgotten Pools
+    >>|cRXP_WARN_This quest does not have to be completed now|r
+    .complete 848,1 --Collect Fungal Spores (x4)
+step
+    .goto The Barrens,45.06,22.54
+    >>Dive underwater to the |cRXP_PICK_Bubble Fissure|r
+    .complete 870,1 --Explore the waters of the Forgotten Pools
+step
+    #label Barak
+    .goto The Barrens,42.82,23.52
+    >>Kill |cRXP_ENEMY_Barak Kodobane|r. Loot him for his |cRXP_LOOT_Head|r
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Barak Kodobane|r's melee hits deal a LOT of damage and he is protected by a |cRXP_ENEMY_Kolkar Wrangler|r. They can net you and shoot at you from ranged distance|r
     .complete 850,1 --Kodobane's Head (1)
+    .mob Barak Kodobane
 step
+    .goto The Barrens,45.35,28.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
+    .turnin 850 >>Turn in Kolkar Leaders
+    .accept 851 >>Accept Verog the Dervish
+    .turnin 855 >>Turn in Centaur Bracers
+    .target Regthar Deathgate
     .isQuestComplete 855
-    .goto The Barrens,45.39,28.44
-.target Regthar Deathgate
->>Talk to |cRXP_FRIENDLY_Regthar Deathgate|r
-    .turnin 850 >> Turn in Kolkar Leaders
-    .turnin 855 >> Turn in Centaur Bracers
 step
-    .goto The Barrens,45.39,28.44
-.target Regthar Deathgate
->>Talk to |cRXP_FRIENDLY_Regthar Deathgate|r
-    .turnin 850 >> Turn in Kolkar Leaders
+    #label KodobaneTurnin
+    .goto The Barrens,45.35,28.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
+    .turnin 850 >>Turn in Kolkar Leaders
+    .accept 851 >>Accept Verog the Dervish
+    .target Regthar Deathgate
 step
     #sticky
     #completewith Claws
@@ -506,6 +521,10 @@ step
     .goto The Barrens,58.0,53.9
     .complete 3281,1 --Stolen Silver (1)
 step
+    #completewith Verog
+    >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Stagnant Oasis
+    .complete 848,1 --Collect Fungal Spores (x4)
+step
     >>Click the Bubble Fissure underwater
     .goto The Barrens,55.6,42.7
     .complete 877,1 --Test the Dried Seeds (1)
@@ -515,9 +534,14 @@ step
     >>Kill Centaurs. Loot them for their bracers
     .complete 855,1 --Centaur Bracers (15)
 step
-    >> Grind any Centuar around the lake until they spawn Verog (you'll see a Yell in chat when he spawns)
+    #label Verog
+    >> Grind any Centaur around the lake until they spawn Verog (you'll see a Yell in chat when he spawns)
     .goto The Barrens,52.95,41.77
     .complete 851,1 --Verog's Head (1)
+step
+    .loop 25,The Barrens,55.72,42.14,55.49,41.75,55.09,41.58,55.03,42.24,55.27,43.17,55.78,43.47,56.15,43.28,56.08,42.58,55.72,42.14
+    >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Stagnant Oasis
+    .complete 848,1 --Collect Fungal Spores (x4)
 step
     >>Click the egg. You need the sunscale feathers from the raptors
     .goto The Barrens,52.6,46.2
