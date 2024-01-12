@@ -39,8 +39,8 @@ events.subzone = "ZONE_CHANGED"
 events.subzoneskip = "ZONE_CHANGED"
 events.bankdeposit = {"BANKFRAME_OPENED", "BAG_UPDATE_DELAYED"}
 events.skipgossip = {"GOSSIP_SHOW", "GOSSIP_CLOSED", "GOSSIP_CONFIRM_CANCEL"}
-events.gossipoption = "GOSSIP_SHOW"
-events.skipgossipid = events.gossipoption
+events.gossipoption = events.skipgossip
+events.skipgossipid = "GOSSIP_SHOW"
 events.vehicle = {"UNIT_ENTERING_VEHICLE", "VEHICLE_UPDATE", "UNIT_EXITING_VEHICLE"}
 events.exitvehicle = events.vehicle
 events.skill = {"SKILL_LINES_CHANGED", "LEARNED_SPELL_IN_TAB"}
@@ -3872,15 +3872,15 @@ function addon.functions.skipgossipid(self, text, ...)
     end
 
     local element = self.element
-    if not element or not element.step.active or not element.gossipId or
-        element.completed or addon.isHidden or
+    if not element or not element.step.active or not next(element.args) or
+        addon.isHidden or
         not addon.settings.profile.enableGossipAutomation or IsShiftKeyDown() then
             return
     end
-
-    local args = element.args or {}
+    --print('ok1')
     local event = text
     if event == "GOSSIP_SHOW" then
+        local args = element.args or {}
         local gossipOptions = GossipGetOptions()
         local _,option = next(gossipOptions)
         if type(option) ~= "table" then
@@ -3888,6 +3888,7 @@ function addon.functions.skipgossipid(self, text, ...)
         end
         for _,gossipId in ipairs(args) do
             for _, v in pairs(gossipOptions) do
+                --print(v.gossipOptionID, gossipId)
                 if v.gossipOptionID == gossipId then
                     C_GossipInfo.SelectOption(v.gossipOptionID)
                     return
@@ -3933,11 +3934,12 @@ function addon.functions.gossipoption(self, ...)
     local matched = false
     local options = GossipGetOptions()
     if not options then return end
-
+    --print('1??')
     for _, v in pairs(options) do
         if v.gossipOptionID == element.gossipId then
             if addon.settings.profile.enableGossipAutomation and not IsShiftKeyDown() then
                 C_GossipInfo.SelectOption(v.gossipOptionID)
+                --print('??')
             end
             --GossipSelectOption(i)
             addon.SetElementComplete(self)
