@@ -5656,6 +5656,13 @@ step
     #completewith FlyR
 	.goto Redridge Mountains,6.7,72.4
     .zone Redridge Mountains >> Travel to Redridge Mountains
+step
+.dungeon DM
+    #era/som
+    .goto Redridge Mountains,15.27,71.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Parker|r
+    .accept 244 >> Accept Encroaching Gnolls
+    .target Guard Parker
 step << NightElf
     #era/som
     #label GParker
@@ -5679,6 +5686,14 @@ step
     .turnin 244 >> Turn in Encroaching Gnolls << !Human !Warlock
     .accept 246 >> Accept Assessing the Threat << !Human !Warlock
     .target Deputy Feldon
+step
+.dungeon DM
+    #era/som
+    .goto Redridge Mountains,30.73,59.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r
+    .turnin 244 >> Turn in Encroaching Gnolls
+    .target Deputy Feldon
+    .accept 246 >> Accept Assessing the Threat
 step << NightElf
     #era/som
     .goto Redridge Mountains,30.73,59.99
@@ -5709,7 +5724,16 @@ step
     .goto Redridge Mountains,30.97,47.27
     .turnin 119 >> Turn in Return to Verner
     .accept 124 >> Accept A Baying of Gnolls
+    .accept 122 >> Accept Underbelly Scales
 step
+.dungeon DM
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Marcus Jonathan|r
+	.target General Marcus Jonathan
+    .goto StormwindClassic,63.982,75.338
+    .turnin 120 >> Turn in Messenger to Stormwind
+    .accept 121 >> Accept Messenger to Stormwind
+step
+.dungeon !DM
     .goto Redridge Mountains,29.31,45.33,15,0
     .goto Redridge Mountains,29.98,44.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Solomon|r
@@ -5738,14 +5762,10 @@ step
     .goto Redridge Mountains,22.67,43.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Breanna|r
     .accept 92 >> Accept Redridge Goulash
-    .target Chef Breanna
-step
-    #era/som
-    #optional
-    .isQuestComplete 92
-    .goto Redridge Mountains,22.67,43.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Breanna|r
     .turnin 92 >> Turn in Redridge Goulash
+    .itemcount 2296,5 -- Great Goretusk Snout (5)
+    .itemcount 1080,5 -- Tough Condor Meat (5)
+    .itemcount 1081,5 -- Crisp Spider Meat (5)
     .target Chef Breanna
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Martie Jainrose|r
@@ -5957,11 +5977,14 @@ step
     .turnin 127 >> Turn in Selling Fish
 step
     #era/som
-    .isQuestComplete 92
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Breanna|r
 	.target Chef Breanna
     .goto Redridge Mountains,22.67,43.83
+    .accept 92 >> Accept Redridge Goulash
     .turnin 92 >> Turn in Redridge Goulash
+    .itemcount 2296,5 -- Great Goretusk Snout (5)
+    .itemcount 1080,5 -- Tough Condor Meat (5)
+    .itemcount 1081,5 -- Crisp Spider Meat (5)
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Martie Jainrose|r
 	.target Martie Jainrose
@@ -6492,11 +6515,14 @@ step
     .turnin 150 >> Turn in Murloc Poachers
 step
     #era/som
-    .isQuestComplete 92
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Breanna|r
 	.target Chef Breanna
     .goto Redridge Mountains,22.67,43.83
+    .accept 92 >> Accept Redridge Goulash
     .turnin 92 >> Turn in Redridge Goulash
+    .itemcount 2296,5 -- Great Goretusk Snout (5)
+    .itemcount 1080,5 -- Tough Condor Meat (5)
+    .itemcount 1081,5 -- Crisp Spider Meat (5)
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Martie Jainrose|r
 	.target Martie Jainrose
@@ -6524,7 +6550,11 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Breanna|r
 	.target Chef Breanna
     .goto Redridge Mountains,22.67,43.83
+    .accept 92 >> Accept Redridge Goulash
     .turnin 92 >> Turn in Redridge Goulash
+    .itemcount 2296,5 -- Great Goretusk Snout (5)
+    .itemcount 1080,5 -- Tough Condor Meat (5)
+    .itemcount 1081,5 -- Crisp Spider Meat (5)
 step
     #era
 	#completewith next
