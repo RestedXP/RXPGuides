@@ -2517,6 +2517,7 @@ step
     >>Loot the |cRXP_LOOT_Mathystra Relics|r on the ground
     .complete 951,1 -- Mathystra Relics (6)
 step << Priest
+    #season 2
     .goto Darkshore,59.2,23.4,60,0
     .goto Darkshore,60.0,15.4
     >>Kill |cRXP_ENEMY_Stormscale Myrmidons|r, |cRXP_ENEMY_Stormscale Warriors|r and |cRXP_ENEMY_Stormscale Sorceresses|r. Loot them for a |T236364:0|t[|cRXP_LOOT_Shatterspear Offering|r]
@@ -2740,6 +2741,7 @@ step << Hunter
     .use 3027
     .itemcount 3027,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.19
+    .xp <20,1
 step << Dwarf Hunter
     .goto Teldrassil,23.70,64.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Archaeologist Greywhisker|r
@@ -4957,25 +4959,8 @@ step << Mage
     .trainer >> Train your class spells
     .target Elsharin
 step << Paladin/Priest !NightElf
-    #completewith next << !Paladin
-    #completewith PalTrainer << Paladin
+    #completewith next
     .goto StormwindClassic,42.51,33.51,20 >> Travel to the Stormwind Cathedral
-step << Paladin
-    .goto StormwindClassic,39.80,29.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
-    .accept 1641 >> Accept The Tome of Divinity
-    .turnin 1641 >> Turn in The Tome of Divinity
-    .target Duthorian Rall
-step << Paladin
-    .goto StormwindClassic,39.80,29.77
-    .use 6775>>|cRXP_WARN_Use the |T133464:0|t[|cRXP_LOOT_The Tome of Divinity|r] to start the quest|r
-    .accept 1642 >>Accept The Tome of Divinity
-step << Paladin
-    .goto StormwindClassic,39.80,29.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
-    .turnin 1642 >>Turn in The Tome of Divinity
-    .accept 1643 >>Accept The Tome of Divinity
-    .target Duthorian Rall
 step << Paladin
     #label PalTrainer
     .goto StormwindClassic,38.82,31.27,10,0
