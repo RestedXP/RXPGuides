@@ -17,202 +17,254 @@ step
     +It's highly recommended to |cRXP_WARN_NOT|r level |cFFfa9602in the Human Starting Zone|r and instead choose |cFFfa9602Exile's Reach|r for faster leveling.
     *|cFFfa9602The Human Starting Experience|r requires a lot of experience from Rares and Treasure to be equally efficient.
 step
-    .goto 425,33.5,53.0
+    .goto 425,33.56,53.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r
-    .accept 31139 >>Accept Beating Them Back! << Death Knight/Monk/Druid
-    .accept 28757 >>Accept Beating Them Back! << Mage
-    .accept 28762 >>Accept Beating Them Back! << Paladin
-    .accept 28763 >>Accept Beating Them Back! << Priest
-    .accept 28764 >>Accept Beating Them Back! << Rogue
-    .accept 28765 >>Accept Beating Them Back! << Warlock
-    .accept 28766 >>Accept Beating Them Back! << Warrior
-    .accept 28767 >>Accept Beating Them Back! << Hunter
-    .target Marshal McBride
- step
-    .goto 425,28.60,43.57,30,0
-    .goto 425,24.71,49.27,30,0
-    .goto 425,24.36,38.88,30,0
-    .goto 425,29.91,33.30,30,0
-    >>Kill |cRXP_ENEMY_Wolves.|r
-    .complete 31139,1 << Death Knight/Monk/Druid --6/6 Blackrock Worg slain
-    .complete 28757,1 << Mage --6/6 Blackrock Worg slain
-    .complete 28762,1 << Paladin --6/6 Blackrock Worg slain
-    .complete 28763,1 << Priest --6/6 Blackrock Worg slain
-    .complete 28764,1 << Rogue --6/6 Blackrock Worg slain
-    .complete 28765,1 << Warlock --6/6 Blackrock Worg slain
-    .complete 28766,1 << Warrior --6/6 Blackrock Worg slain
-    .complete 28767,1 << Hunter --6/6 Blackrock Worg slain
-    .target Blackrock Worg
-step
-    .goto 425,33.6,53.1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r
-    .turnin 31139 >>Turn in Beating Them Back! << Death Knight/Monk/Druid
-    .turnin 28757 >>Turn in Beating Them Back! << Mage
-    .turnin 28762 >>Turn in Beating Them Back! << Paladin
-    .turnin 28763 >>Turn in Beating Them Back! << Priest
-    .turnin 28764 >>Turn in Beating Them Back! << Rogue
-    .turnin 28765 >>Turn in Beating Them Back! << Warlock
-    .turnin 28766 >>Turn in Beating Them Back! << Warrior
-    .turnin 28767 >>Turn in Beating Them Back! << Hunter
-    .accept 31140 >> Accept Lions for Lambs << Death Knight/Monk/Druid
-    .accept 28769 >> Accept Lions for Lambs << Mage
-    .accept 28759 >> Accept Lions for Lambs << Hunter
-    .accept 28770 >> Accept Lions for Lambs << Paladin
-    .accept 28771 >> Accept Lions for Lambs << Priest
-    .accept 28772 >> Accept Lions for Lambs << Rogue
-    .accept 28773 >> Accept Lions for Lambs << Warlock
-    .accept 28774 >> Accept Lions for Lambs << Warrior
+    .accept 28757 >>Accept Beating Them Back! << Human Mage/KulTiran Mage
+    .accept 28762 >>Accept Beating Them Back! << Human Paladin
+    .accept 28763 >>Accept Beating Them Back! << Human Priest/KulTiran Priest
+    .accept 28764 >>Accept Beating Them Back! << Human Rogue/KulTiran Rogue
+    .accept 28765 >>Accept Beating Them Back! << Human Warlock/KulTiran Warlock
+    .accept 28766 >>Accept Beating Them Back! << Human Warrior/KulTiran Warrior
+    .accept 28767 >>Accept Beating Them Back! << Human Hunter/KulTiran Hunter
+    .accept 29078 >>Accept Beating Them Back! << !Human !KulTiran
+    .accept 31139 >>Accept Beating Them Back! << Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman
     .target Marshal McBride
 step
-    .goto 425,28.60,43.57,30,0
-    .goto 425,24.71,49.27,30,0
-    .goto 425,24.36,38.88,30,0
-    .goto 425,29.91,33.30,30,0
-    .goto 425,28.60,43.57
-    >>Kill |cRXP_ENEMY_Blackrock Spies.|r
-    .complete 31140,1 << Death Knight/Monk/Druid --8/8 Blackrock Spy slain
-    .complete 28769,1 << Mage --8/8 Blackrock Spy slain
-    .complete 28759,1 << Hunter --8/8 Blackrock Spy slain
-    .complete 28770,1 << Paladin --8/8 Blackrock Spy slain
-    .complete 28771,1 << Priest --8/8 Blackrock Spy slain
-    .complete 28772,1 << Rogue --8/8 Blackrock Spy slain
-    .complete 28773,1 << Warlock --8/8 Blackrock Spy slain
-    .complete 28774,1 << Warrior --8/8 Blackrock Spy slain
-    .target Blackrock Spy
+    #loop
+    .goto 425,29.58,44.71,0
+    .goto 425,31.33,45.67,40,0
+    .goto 425,32.52,43.63,40,0
+    .goto 425,29.25,38.05,40,0
+    .goto 425,26.25,40.59,40,0
+    .goto 425,26.09,53.65,40,0
+    >>Kill |cRXP_ENEMY_Blackrock Worgs|r
+    .complete 28757,1 << Human Mage/KulTiran Mage --6/6 Blackrock Worg slain
+    .complete 28762,1 << Human Paladin --6/6 Blackrock Worg slain
+    .complete 28763,1 << Human Priest/KulTiran Priest --6/6 Blackrock Worg slain
+    .complete 28764,1 << Human Rogue/KulTiran Rogue --6/6 Blackrock Worg slain
+    .complete 28765,1 << Human Warlock/KulTiran Warlock --6/6 Blackrock Worg slain
+    .complete 28766,1 << Human Warrior/KulTiran Warrior --6/6 Blackrock Worg slain
+    .complete 28767,1 << Human Hunter/KulTiran Hunter --6/6 Blackrock Worg slain
+    .complete 29078,1 << !Human !KulTiran --6/6 Blackrock Worg slain
+    .complete 31139,1 << Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman --6/6 Blackrock Worg slain
+    .mob Blackrock Worg
 step
-    .goto 425,33.5,53.0
+    .goto 425,33.56,53.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r
-    .turnin 31140 >>Turn in Lions for Lambs << Death Knight/Monk/Druid
-    .turnin 28769 >>Turn in Lions for Lambs << Mage
-    .turnin 28759 >>Turn in Lions for Lambs << Hunter
-    .turnin 28770 >>Turn in Lions for Lambs << Paladin
-    .turnin 28771 >>Turn in Lions for Lambs << Priest
-    .turnin 28772 >>Turn in Lions for Lambs << Rogue
-    .turnin 28773 >>Turn in Lions for Lambs << Warlock
-    .turnin 28774 >>Turn in Lions for Lambs << Warrior
-    .accept 31143 >>Accept Join the Battle! << Death Knight/Monk/Druid
-    .accept 28780 >>Accept Join the Battle! << Hunter
-    .accept 28784 >>Accept Join the Battle! << Mage
-    .accept 28785 >>Accept Join the Battle! << Paladin
-    .accept 28786 >>Accept Join the Battle! << Priest
-    .accept 28787 >>Accept Join the Battle! << Rogue
-    .accept 28788 >>Accept Join the Battle! << Warlock
-    .accept 28789 >>Accept Join the Battle! << Warrior
+    .turnin 28757 >>Turn in Beating Them Back! << Human Mage/KulTiran Mage
+    .turnin 28762 >>Turn in Beating Them Back! << Human Paladin
+    .turnin 28763 >>Turn in Beating Them Back! << Human Priest/KulTiran Priest
+    .turnin 28764 >>Turn in Beating Them Back! << Human Rogue/KulTiran Rogue
+    .turnin 28765 >>Turn in Beating Them Back! << Human Warlock/KulTiran Warlock
+    .turnin 28766 >>Turn in Beating Them Back! << Human Warrior/KulTiran Warrior
+    .turnin 28767 >>Turn in Beating Them Back! << Human Hunter/KulTiran Hunter
+    .turnin 29078 >>Turn in Beating Them Back! << !Human !KulTiran
+    .turnin 31139 >>Turn in Beating Them Back! << Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman
+    .accept 28759 >> Accept Lions for Lambs << Human Hunter/KulTiran Hunter
+    .accept 28769 >> Accept Lions for Lambs << Human Mage/KulTiran Mage
+    .accept 28770 >> Accept Lions for Lambs << Human Paladin
+    .accept 28771 >> Accept Lions for Lambs << Human Priest/KulTiran Priest
+    .accept 28772 >> Accept Lions for Lambs << Human Rogue/KulTiran Rogue
+    .accept 28773 >> Accept Lions for Lambs << Human Warlock/KulTiran Warlock
+    .accept 28774 >> Accept Lions for Lambs << Human Warrior/KulTiran Warrior
+    .accept 29079 >> Accept Lions for Lambs << !Human !KulTiran
+    .accept 31140 >> Accept Lions for Lambs << Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman
     .target Marshal McBride
 step
-    .goto 425,35.7,39.8
+    #loop
+    .goto 425,27.23,40.41,0
+    .goto 425,31.76,41.17,40,0
+    .goto 425,30.32,38.01,40,0
+    .goto 425,27.23,40.41,40,0
+    .goto 425,27.40,42.45,40,0
+    .goto 425,26.49,44.73,40,0
+    .goto 425,28.86,47.41,40,0
+    .goto 425,24.84,50.52,40,0
+    .goto 425,23.64,51.42,40,0
+    .goto 425,26.60,54.71,40,0
+    >>Kill |cRXP_ENEMY_Blackrock Spies|r
+    >>|cRXP_WARN_They are|r |T132320:0|t[Stealthed] |cRXP_WARN_(but easily visible)|r
+    .complete 28759,1 << Human Hunter/KulTiran Hunter --8/8 Blackrock Spy slain
+    .complete 28769,1 << Human Mage/KulTiran Mage--8/8 Blackrock Spy slain
+    .complete 28770,1 << Human Paladin --8/8 Blackrock Spy slain
+    .complete 28771,1 << Human Priest/KulTiran Priest --8/8 Blackrock Spy slain
+    .complete 28772,1 << Human Rogue/KulTiran Rogue --8/8 Blackrock Spy slain
+    .complete 28773,1 << Human Warlock/KulTiran Warlock --8/8 Blackrock Spy slain
+    .complete 28774,1 << Human Warrior/KulTiran Warrior --8/8 Blackrock Spy slain
+    .complete 29079,1 << !Human !KulTiran --8/8 Blackrock Spy slain
+    .complete 31140,1 << Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman --8/8 Blackrock Spy slain
+    .mob Blackrock Spy
+step
+    .goto 425,33.56,53.04
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r
+    .turnin 28759 >>Turn in Lions for Lambs << Human Hunter/KulTiran Hunter
+    .turnin 28769 >>Turn in Lions for Lambs << Human Mage/KulTiran Mage
+    .turnin 28770 >>Turn in Lions for Lambs << Human Paladin
+    .turnin 28771 >>Turn in Lions for Lambs << Human Priest/KulTiran Priest
+    .turnin 28772 >>Turn in Lions for Lambs << Human Rogue/KulTiran Rogue
+    .turnin 28773 >>Turn in Lions for Lambs << Human Warlock/KulTiran Warlock
+    .turnin 28774 >>Turn in Lions for Lambs << Human Warrior/KulTiran Warrior
+    .turnin 29079 >>Turn in Lions for Lambs << !Human !KulTiran
+    .turnin 31140 >>Turn in Lions for Lambs << Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman
+    .accept 28780 >>Accept Join the Battle! << Human Hunter/KulTiran Hunter
+    .accept 28784 >>Accept Join the Battle! << Human Mage/KulTiran Mage
+    .accept 28785 >>Accept Join the Battle! << Human Paladin
+    .accept 28786 >>Accept Join the Battle! << Human Priest/KulTiran Priest
+    .accept 28787 >>Accept Join the Battle! << Human Rogue/KulTiran Rogue
+    .accept 28788 >>Accept Join the Battle! << Human Warlock/KulTiran Warlock
+    .accept 28789 >>Accept Join the Battle! << Human Warrior/KulTiran Warrior
+    .accept 29080 >>Accept Join the Battle! << !Human !KulTiran
+    .accept 31143 >>Accept Join the Battle! << Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman
+    .target Marshal McBride
+step
+    .goto 425,35.73,39.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Willem|r
-    .turnin 31143 >>Turn in Join the Battle! << Death Knight/Monk/ Druid
-    .turnin 28780 >>Turn in Join the Battle! << Hunter
-    .turnin 28784 >>Turn in Join the Battle! << Mage
-    .turnin 28785 >>Turn in Join the Battle! << Paladin
-    .turnin 28786 >>Turn in Join the Battle! << Priest
-    .turnin 28787 >>Turn in Join the Battle! << Rogue
-    .turnin 28788 >>Turn in Join the Battle! << Warlock
-    .turnin 28789 >>Turn in Join the Battle! << Warrior
-    .accept 28791 >>Accept They Sent Assassins << Hunter
-    .accept 28792 >>Accept They Sent Assassins << Mage
-    .accept 28793 >>Accept They Sent Assassins << Paladin
-    .accept 28794 >>Accept They Sent Assassins << Priest
-    .accept 28795 >>Accept They Sent Assassins << Rogue
-    .accept 28796 >>Accept They Sent Assassins << Warlock
-    .accept 28797 >>Accept They Sent Assassins << Warrior
-    .accept 31144 >>Accept They Sent Assassins << Death Knight/Monk/Druid
+    .turnin 28780 >>Turn in Join the Battle! << Human Hunter/KulTiran Hunter
+    .turnin 28784 >>Turn in Join the Battle! << Human Mage/KulTiran Mage
+    .turnin 28785 >>Turn in Join the Battle! << Human Paladin
+    .turnin 28786 >>Turn in Join the Battle! << Human Priest/KulTiran Priest
+    .turnin 28787 >>Turn in Join the Battle! << Human Rogue/KulTiran Rogue
+    .turnin 28788 >>Turn in Join the Battle! << Human Warlock/KulTiran Warlock
+    .turnin 28789 >>Turn in Join the Battle! << Human Warrior/KulTiran Warrior
+    .turnin 29080 >>Turn in Join the Battle! << !Human !KulTiran
+    .turnin 31143 >>Turn in Join the Battle! << Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman
+    .accept 28791 >>Accept They Sent Assassins << Human Hunter/KulTiran Hunter
+    .accept 28792 >>Accept They Sent Assassins << Human Mage/KulTiran Mage
+    .accept 28793 >>Accept They Sent Assassins << Human Paladin
+    .accept 28794 >>Accept They Sent Assassins << Human Priest/KulTiran Priest
+    .accept 28795 >>Accept They Sent Assassins << Human Rogue/KulTiran Rogue
+    .accept 28796 >>Accept They Sent Assassins << Human Warlock/KulTiran Warlock
+    .accept 28797 >>Accept They Sent Assassins << Human Warrior/KulTiran Warrior
+    .accept 29081 >>Accept They Sent Assassins << !Human !KulTiran
+    .accept 31144 >>Accept They Sent Assassins << Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman
     .target Sergeant Willem
 step
-    .goto 425,34.89,38.38
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r.
-    .accept 63447 >>Accept Fear No Evil << Death Knight/Monk/Druid
-    .accept 28806 >>Accept Fear No Evil << Hunter
-    .accept 28813 >>Accept Fear No Evil << Warrior
-    .accept 28808 >>Accept Fear No Evil << Mage
-    .accept 28809 >>Accept Fear No Evil << Paladin
-    .accept 28810 >>Accept Fear No Evil << Priest
-    .accept 28811 >>Accept Fear No Evil << Rogue
-    .accept 28812 >>Accept Fear No Evil << Warlock
+    #loop
+    .goto 425,34.99,38.24,0
+    .goto 425,34.47,39.42,8,0
+    .goto 425,34.99,38.24,8,0
+    .goto 425,35.55,37.73,8,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
+    .accept 28806 >>Accept Fear No Evil << Human Hunter/KulTiran Hunter
+    .accept 28808 >>Accept Fear No Evil << Human Mage/KulTiran Mage
+    .accept 28809 >>Accept Fear No Evil << Human Paladin
+    .accept 28810 >>Accept Fear No Evil << Human Priest/KulTiran Priest
+    .accept 28811 >>Accept Fear No Evil << Human Rogue/KulTiran Rogue
+    .accept 28812 >>Accept Fear No Evil << Human Warlock/KulTiran Warlock
+    .accept 28813 >>Accept Fear No Evil << Human Warrior/KulTiran Warrior
+    .accept 29082 >>Accept Fear No Evil << !Human !KulTiran
+    .accept 63447 >>Accept Fear No Evil << Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman
     .target Brother Paxton
 step
     #completewith Area1
-    .goto 425,31.6,16.76,25 >> |cRXP_WARN_Old World Enemy Rares and Treasure Chests reward as much as 1 or 2 Quests!|r
-    *Check for |cRXP_ENEMY_Gug Fatcandle(Rare)|r |cFFfa9602near the mine.|r
+    .goto 425,31.59,16.72,40 >> |cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Gug Fatcandle|r. Kill him if he's up|r
+    *|cRXP_WARN_It's important to kill Rares and loot Treasure Chests, as they award a lot of experience|r
 	.unitscan Gug Fatcandle
 step
-    .goto 425,36.55,31.33,30,0
-    .goto 425,31.68,31.4,30,0
-    .goto 425,31.6,16.76,20,0
-    .goto 425,36.55,31.33
-    >>Kill |cRXP_ENEMY_Goblins|r and |TInterface/cursor/crosshair/interact.blp:20|tinteract with |cRXP_FRIENDLY_Injured Soldier.|r
-    .complete 28791,1 << Hunter --8/8 Goblin Assassin slain
-    .complete 28792,1 << Mage --8/8 Goblin Assassin slain
-    .complete 28793,1 << Paladin --8/8 Goblin Assassin slain
-    .complete 28794,1 << Priest --8/8 Goblin Assassin slain
-    .complete 28795,1 << Rogue --8/8 Goblin Assassin slain
-    .complete 28796,1 << Warlock --8/8 Goblin Assassin slain
-    .complete 28797,1 << Warrior --8/8 Goblin Assassin slain
-    .complete 29081,1 << Shaman --8/8 Goblin Assassin slain
-    .complete 31144,1 << Death Knight/Monk/Druid --8/8 Goblin Assassin slain
-    .complete 63447,1 << Death Knight/Monk/Druid --4/4 Injured Soldier revived
-    .complete 28806,1 << Hunter --4/4 Injured Soldier revived
-    .complete 28813,1 << Warrior --4/4 Injured Soldier revived
-    .complete 28808,1 << Mage --4/4 Injured Soldier revived
-    .complete 28809,1 << Paladin --4/4 Injured Soldier revived
-    .complete 28810,1 << Priest --4/4 Injured Soldier revived
-    .complete 28811,1 << Rogue --4/4 Injured Soldier revived
-    .complete 28812,1 << Warlock --4/4 Injured Soldier revived
-    .target Injured Soldier
-    .target Goblin Assassin
+    #sticky
+    #label Soldiers
+    #loop
+    .goto 425,31.99,28.69,0
+    .goto 425,31.00,22.28,15,0
+    .goto 425,29.16,25.64,15,0
+    .goto 425,28.94,30.20,15,0
+    .goto 425,30.49,30.95,15,0
+    .goto 425,32.00,28.75,15,0
+    .goto 425,31.56,25.82,15,0
+    .goto 425,33.45,24.77,15,0
+    .goto 425,36.08,23.69,15,0
+    >>Click the |cRXP_PICK_Injured Stormwind Infantries|r on the ground to revive them
+    .complete 28806,1 << Human Hunter/KulTiran Hunter --4/4 Injured Soldier revived
+    .complete 28808,1 << Human Mage/KulTiran Mage --4/4 Injured Soldier revived
+    .complete 28809,1 << Human Paladin --4/4 Injured Soldier revived
+    .complete 28810,1 << Human Priest/KulTiran Priest --4/4 Injured Soldier revived
+    .complete 28811,1 << Human Rogue/KulTiran Rogue --4/4 Injured Soldier revived
+    .complete 28812,1 << Human Warlock/KulTiran Warlock --4/4 Injured Soldier revived
+    .complete 28813,1 << Human Warrior/KulTiran Warrior --4/4 Injured Soldier revived
+    .complete 29082,1 << !Human !KulTiran --4/4 Injured Soldier revived
+    .complete 63447,1 << Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman --4/4 Injured Soldier revived
+    .target Injured Stormwind Infantry
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r.
-    .goto 425,35.44,37.82
-    .turnin 63447 >>Turn in Fear No Evil << Death Knight/Monk/Druid
-    .turnin 28806 >>Turn in Fear No Evil << Hunter
-    .turnin 28813 >>Turn in Fear No Evil << Shaman
-    .turnin 28808 >>Turn in Fear No Evil << Mage
-    .turnin 28809 >>Turn in Fear No Evil << Paladin
-    .turnin 28810 >>Turn in Fear No Evil << Priest
-    .turnin 28811 >>Turn in Fear No Evil << Rogue
-    .turnin 28812 >>Turn in Fear No Evil << Warlock
-    .turnin 29082 >>Turn in Fear No Evil << Warrior
+    #loop
+    .goto 425,31.99,28.69,0
+    .goto 425,33.00,21.94,45,0
+    .goto 425,35.59,23.73,45,0
+    .goto 425,36.54,27.68,45,0
+    .goto 425,35.12,31.40,45,0
+    .goto 425,33.27,32.25,45,0
+    .goto 425,35.59,23.73,45,0
+    .goto 425,29.65,31.64,45,0
+    .goto 425,28.45,27.49,45,0
+    .goto 425,27.16,18.98,45,0
+    >>Kill |cRXP_ENEMY_Goblin Assassins|r
+    .complete 28791,1 << Human Hunter/KulTiran Hunter --8/8 Goblin Assassin slain
+    .complete 28792,1 << Human Mage/KulTiran Mage --8/8 Goblin Assassin slain
+    .complete 28793,1 << Human Paladin --8/8 Goblin Assassin slain
+    .complete 28794,1 << Human Priest/KulTiran Priest --8/8 Goblin Assassin slain
+    .complete 28795,1 << Human Rogue/KulTiran Rogue --8/8 Goblin Assassin slain
+    .complete 28796,1 << Human Warlock/KulTiran Warlock --8/8 Goblin Assassin slain
+    .complete 28797,1 << Human Warrior/KulTiran Warrior --8/8 Goblin Assassin slain
+    .complete 29081,1 << !Human !KulTiran --8/8 Goblin Assassin slain
+    .complete 31144,1 << Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman --8/8 Goblin Assassin slain
+    .mob Goblin Assassin
+step
+    #requires Soldiers
+    #loop
+    .goto 425,34.99,38.24,0
+    .goto 425,35.55,37.73,8,0
+    .goto 425,34.99,38.24,8,0
+    .goto 425,34.47,39.42,8,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Paxton|r
+    .turnin 28806 >>Turn in Fear No Evil << Human Hunter/KulTiran Hunter
+    .turnin 28808 >>Turn in Fear No Evil << Human Mage/KulTiran Mage
+    .turnin 28809 >>Turn in Fear No Evil << Human Paladin
+    .turnin 28810 >>Turn in Fear No Evil << Human Priest/KulTiran Priest
+    .turnin 28811 >>Turn in Fear No Evil << Human Rogue/KulTiran Rogue
+    .turnin 28812 >>Turn in Fear No Evil << Human Warlock/KulTiran Warlock
+    .turnin 28813 >>Turn in Fear No Evil << Human Warrior/KulTiran Warrior
+    .turnin 29082 >>Turn in Fear No Evil << !Human !KulTiran
+    .turnin 63447 >>Turn in Fear No Evil << Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman
     .target Brother Paxton
 step
-    .goto 425,35.7,39.8
+    .goto 425,35.73,39.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Willem|r
-    .turnin 31144 >>Turn in They Sent Assassins << Death Knight/Monk/Druid
-    .turnin 28791 >>Turn in They Sent Assassins << Hunter
-    .turnin 28792 >>Turn in They Sent Assassins << Mage
-    .turnin 28793 >>Turn in They Sent Assassins << Paladin
-    .turnin 28794 >>Turn in They Sent Assassins << Priest
-    .turnin 28795 >>Turn in They Sent Assassins << Rogue
-    .turnin 28796 >>Turn in They Sent Assassins << Warlock
-    .turnin 28797 >>Turn in They Sent Assassins << Warrior
-    .accept 31145 >>Accept The Rear is Clear << Death Knight/Monk/Druid
-    .accept 28817 >>Accept The Rear is Clear << Hunter
-    .accept 28818 >>Accept The Rear is Clear << Mage
-    .accept 28819 >>Accept The Rear is Clear << Paladin
-    .accept 28820 >>Accept The Rear is Clear << Priest
-    .accept 28821 >>Accept The Rear is Clear << Rogue
-    .accept 28822 >>Accept The Rear is Clear << Warlock
-    .accept 28823 >>Accept The Rear is Clear << Warrior
+    .turnin 28791 >>Turn in They Sent Assassins << Human Hunter/KulTiran Hunter
+    .turnin 28792 >>Turn in They Sent Assassins << Human Mage/KulTiran Mage
+    .turnin 28793 >>Turn in They Sent Assassins << Human Paladin
+    .turnin 28794 >>Turn in They Sent Assassins << Human Priest/KulTiran Priest
+    .turnin 28795 >>Turn in They Sent Assassins << Human Rogue/KulTiran Rogue
+    .turnin 28796 >>Turn in They Sent Assassins << Human Warlock/KulTiran Warlock
+    .turnin 28797 >>Turn in They Sent Assassins << Human Warrior/KulTiran Warrior
+    .turnin 29081 >>Turn in They Sent Assassins << !Human !KulTiran
+    .turnin 31144 >>Turn in They Sent Assassins << Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman
+    .accept 28817 >>Accept The Rear is Clear << Human Hunter/KulTiran Hunter
+    .accept 28818 >>Accept The Rear is Clear << Human Mage/KulTiran Mage
+    .accept 28819 >>Accept The Rear is Clear << Human Paladin
+    .accept 28820 >>Accept The Rear is Clear << Human Priest/KulTiran Priest
+    .accept 28821 >>Accept The Rear is Clear << Human Rogue/KulTiran Rogue
+    .accept 28822 >>Accept The Rear is Clear << Human Warlock/KulTiran Warlock
+    .accept 28823 >>Accept The Rear is Clear << Human Warrior/KulTiran Warrior
+    .accept 29083 >>Accept The Rear is Clear << !Human !KulTiran
+    .accept 31145 >>Accept The Rear is Clear << Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman
     .target Sergeant Willem
- step
-    .goto 425,33.5,53.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r
-    .turnin 31145 >>Turn in The Rear is Clear << Death Knight/Monk/Druid
-    .turnin 28817 >>Turn in The Rear is Clear << Hunter
-    .turnin 28818 >>Turn in The Rear is Clear << Mage
-    .turnin 28819 >>Turn in The Rear is Clear << Paladin
-    .turnin 28820 >>Turn in The Rear is Clear << Priest
-    .turnin 28821 >>Turn in The Rear is Clear << Rogue
-    .turnin 28822 >>Turn in The Rear is Clear << Warlock
-    .turnin 28823 >>Turn in The Rear is Clear << Warrior
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r and |cRXP_FRIENDLY_Milly Osworth|r
+    .turnin 28817 >>Turn in The Rear is Clear << Human Hunter
+    .turnin 28818 >>Turn in The Rear is Clear << Human Mage
+    .turnin 28819 >>Turn in The Rear is Clear << Human Paladin
+    .turnin 28820 >>Turn in The Rear is Clear << Human Priest
+    .turnin 28821 >>Turn in The Rear is Clear << Human Rogue
+    .turnin 28822 >>Turn in The Rear is Clear << Human Warlock
+    .turnin 28823 >>Turn in The Rear is Clear << Human Warrior
+    .turnin 29083 >>Turn in The Rear is Clear << !Human
+    .turnin 31145 >>Turn in The Rear is Clear << Human Death Knight/Human Monk
     .accept 26389 >>Accept Blackrock Invasion
-    .target Marshal McBride
-step
-    .goto 425,33.4,54.7
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milly Osworth|r
+    .goto 425,33.56,53.04
     .accept 26391 >>Accept Extinguishing Hope
+    .goto 425,33.38,54.67
+    .target Marshal McBride
     .target Milly Osworth
-step
+step << skip
     #completewith next
     +|cRXP_WARN_To enable keybinding for quest items, follow these steps:|r
     *[1] Press the |cRXP_WARN_Escape key.|r
@@ -221,58 +273,90 @@ step
     *[4] Within |cRXP_WARN_Keybindings|r, find |cRXP_WARN_RestedXP Guides.|r
     *[5] Select and bind the |cRXP_WARN_Active Buttons.|r
 step
-    .goto 425,48.99,77.06,30,0
-    .goto 425,54.01,82.27,30,0
-    .goto 425,57.57,76.36,30,0
-    .goto 425,53.97,71.43,30,0
-    .goto 425,48.99,77.06
-    >>Use the |T967530:0|t[Fire Extinguisher] near an open Fire
-    >>Kill |cRXP_ENEMY_Orcs|r and loot them for |cRXP_LOOT_Blackrock Orc Weapon|r
-    >>|cRXP_WARN_Try to get low health as you near completing the quest, we're deathskipping after.|r
-    .complete 26389,1 --8/8 Blackrock Orc Weapon
+    #sticky
+    #label Fire
+    .goto 425,57.48,71.22,0
+    .goto 425,49.10,78.42,20,0
+    .goto 425,50.78,75.57,20,0
+    .goto 425,51.22,77.49,20,0
+    .goto 425,51.82,78.93,20,0
+    .goto 425,50.59,80.71,20,0
+    .goto 425,52.81,80.56,20,0
+    .goto 425,52.53,82.55,20,0
+    .goto 425,53.04,84.89,20,0
+    .goto 425,54.33,85.93,20,0
+    .goto 425,54.67,83.87,20,0
+    .goto 425,56.91,82.37,20,0
+    .goto 425,56.39,80.99,20,0
+    .goto 425,56.96,78.82,20,0
+    .goto 425,58.94,75.77,20,0
+    .goto 425,55.12,73.91,20,0
+    .goto 425,55.49,70.94,20,0
+    .goto 425,53.67,68.68,20,0
+    .goto 425,50.63,73.13,20,0
+    >>Use and then channel |T308321:0|t[Milly's Fire Extinguisher] near the |cRXP_PICK_Vineyard Fires|r
     .complete 26391,1 --8/8 Vineyard Fire extinguished
     .use 58362
-    .target Blackrock Invader
 step
+    #loop
+    .goto 425,54.27,77.40,0
+    .goto 425,47.40,70.76,50,0
+    .goto 425,46.82,75.39,50,0
+    .goto 425,50.12,78.58,50,0
+    .goto 425,53.79,84.88,50,0
+    .goto 425,57.63,77.83,50,0
+    .goto 425,57.48,71.22,50,0
+    .goto 425,56.07,62.66,50,0
+    >>Kill |cRXP_ENEMY_Blackrock Invaders|r. Loot them for |cRXP_LOOT_Blackrock Orc Weapons|r
+    .complete 26389,1 --8/8 Blackrock Orc Weapon
+    .mob Blackrock Invader
+step
+    #softcore
+    #requires Fire
     #completewith next
-    >>|cRXP_WARN_Repeated use of /sit or removing your gear increases the damage you take.|r
-    .deathskip >> Pull as many Enemies as you can, Die, Release and Respawn at the Graveyard
+    .goto 425,54.27,77.40,0
+    .goto 425,38.29,58.12,0
+-- .goto 425,38.29,58.12
+    *|cRXP_WARN_Spamming /sit or removing your gear will make you die faster|r
+    .deathskip >> Die and Respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step
-    .goto 425,33.4,54.7
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milly Osworth|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milly Osworth|r and |cRXP_FRIENDLY_Marshal McBride|r
     .turnin 26391 >>Turn in Extinguishing Hope
-    .target Milly Osworth
-step
-    .goto 425,33.57,53.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r
+    .goto 425,33.38,54.67
     .turnin 26389 >>Turn in Blackrock Invasion
     .accept 26390 >>Accept Ending the Invasion!
+    .goto 425,33.56,53.04
+    .target Milly Osworth
     .target Marshal McBride
 step
-    .goto 425,65.04,48.37
-    >>Kill |cRXP_ENEMY_Kurtok.|r
+    .goto 425,64.97,48.38
+    >>Kill |cRXP_ENEMY_Kurtok the Slayer|r
     .complete 26390,1 --1/1 Kurtok the Slayer slain
-    .target Kurtok the Slayer
+    .mob Kurtok the Slayer
 step
+    #softcore
     #completewith next
-    >>|cRXP_WARN_Repeated use of /sit or removing your gear increases the damage you take.|r
-    .deathskip >> Pull as many Enemies as you can, Die and Respawn at the Graveyard|cRXP_WARN_(skip this if no enemies are to be seen)|r
+    .goto 425,54.27,77.40,0
+    .goto 425,38.29,58.12,0
+-- .goto 425,38.29,58.12
+    .deathskip >> Die and Respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step
-    .goto 425,33.5,53.1
+    .goto 425,33.56,53.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r
     .turnin 26390 >>Turn in Ending the Invasion!
-    .target Marshal McBride
-step
-    .goto 425,33.5,53.1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r
     .accept 54 >>Accept Report to Goldshire
     .target Marshal McBride
-step << Human
-    .goto 425,29.12,72.38,8,0
-    .goto 37,45.37,49.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falkhaan|r
+step
+    #completewith next
+    .goto 425,29.17,72.43,15,0
+    .goto 425,28.28,73.45,15,0
+    .goto 425,24.47,74.67,15,0
+    .goto 37,45.37,49.00,15 >> Travel toward |cRXP_FRIENDLY_Falkhaan Isenstrider|r
+step
+    .goto 37,45.37,49.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falkhaan Isenstrider|r
     .accept 37112 >>Accept Rest and Relaxation
-    .target Falkhaan
+    .target Falkhaan Isenstrider
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -313,8 +397,9 @@ step
     +The Darkmoon Faire event is now active, |cRXP_WARN_which guarantees you to gain an additional level for free and a temporary 10% experience boost.|r
     .dmf
 step
-    .goto 37,43.10,52.17
-    >>|cRXP_WARN_Repeated use of /sit or removing your gear increases the damage you take.|r
+    #softcore
+    .goto 37,41.71,52.74,-1
+    .goto 37,39.48,60.53,-1
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .isOnQuest 37112
 step
@@ -331,22 +416,26 @@ step
     .accept 26378 >>Accept Hero's Call: Westfall!
 	.target Marshal Dughan
     .isQuestTurnedIn 26390
-step
+step << Human
     .goto 37,41.71,65.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smith Argus|r
-    .accept 26393 >>Accept A Swift Message << Human
+    .accept 26393 >>Accept A Swift Message
 	.target Smith Argus
     .isQuestTurnedIn 26390
-step
+step << Human
     .goto 37,41.71,64.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bartlett the Brave|r
-	.turnin 26393 >>Turn in A Swift Message << Human
-    .accept 26394 >>Accept Continue to Stormwind<< Human
+	.turnin 26393 >>Turn in A Swift Message
+    .accept 26394 >>Accept Continue to Stormwind
 	.target Bartlett the Brave
     .isQuestTurnedIn 26390
 step
+    #completewith next
     .goto 37,43.19,65.74,5,0
-    .goto 37,43.26,66.1,5,0
+    .goto 37,43.23,65.95,5,0
+    .goto 37,43.32,65.70,4 >>Travel toward |cRXP_FRIENDLY_William Pestle|r
+    .isQuestTurnedIn 26390
+step
     .goto 37,43.32,65.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
     .accept 60 >>Accept Kobold Candles
@@ -380,7 +469,7 @@ step
     .isQuestTurnedIn 26390
     .dmf
 step
-    .goto 37,42.14,67.25
+    .goto 37,42.14,67.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r
     .accept 40 >>Accept A Fishy Peril
     .accept 47 >>Accept Gold Dust Exchange
@@ -657,24 +746,24 @@ step
     .isQuestComplete 31693
 step
     #completewith FargodeepM
-    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r, |cRXP_ENEMY_Miners|r and loot them for their |cRXP_LOOT_Candles|r and |cRXP_LOOT_Gold Dust.|r
+    .goto 37,38.22,83.41,0
+    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r. Loot them for their |cRXP_LOOT_Large Candles|r and |cRXP_LOOT_Gold Dust|r
     .complete 60,1 --8/8 Large Candle
     .complete 47,1 --10/10 Gold Dust
-	.target Kobold Tunneler
-	.target Kobold Miner
+	.mob Kobold Tunneler
 step
-    >>|cRXP_WARN_Rares and Treasures reward a lot of experience! Be sure to keep an eye out for them|r
-    .goto 37,38.06,83.31,40 >>Check for |cRXP_ENEMY_Narg the Taskmaster|r(Rare) |cFFfa9602outside the mine.|r
+    .goto 37,38.22,83.41,40 >> |cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Narg the Taskmaster|r. Kill him if he's up|r
 	.unitscan Narg the Taskmaster
     .isOnQuest 60
 step
 	#completewith next
-    .goto 38,38.93,82.18,15,0
-    .goto 38,44.60,63.38,15  >> |cFFfa9602Go into the upper entrance of the Fargodeep Mine.|r
+    .goto 37,38.94,82.23,12,0
+    .goto 38,42.52,71.63,15 >> Enter the upper level of the Fargodeep Mine
 step
     #label FargodeepM
-    >>Run |cFFfa9602inside the mine.|r
-    .goto 38,54.35,59.63
+    .goto 38,54.31,59.56,-1
+    .goto 39,66.53,66.18,-1
+    >>Enter one of the central rooms inside Fargodeep Mine
     .complete 62,1 --Scout through the Fargodeep Mine
 step
     .goto 37,37.82,86.14,40,0
@@ -691,11 +780,11 @@ step
     .goto 39,78.65,28.65,20,0
     .goto 39,57.67,25.29,20,0
     .goto 38,53.73,72.25
-    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r, |cRXP_ENEMY_Miners|r and loot them for their |cRXP_LOOT_Candles|r and |cRXP_LOOT_Gold Dust.|r
+    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Large Candles|r and |cRXP_LOOT_Gold Dust|r
     .complete 60,1 --8/8 Large Candle
     .complete 47,1 --10/10 Gold Dust
-	.target Kobold Tunneler
-	.target Kobold Miner
+	.mob Kobold Tunneler
+	.mob Kobold Miner
 step
     .goto 37,34.66,84.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r
@@ -713,9 +802,9 @@ step
     .goto 37,32.58,84.26,20,0
     .goto 37,32.04,85.20
 	.line 37,32.48,86.81,33.41,86.16,33.32,84.95,32.58,84.26,32.04,85.20,32.48,86.81
-    >>Kill |cRXP_ENEMY_Princess|r and loot her for her |cRXP_LOOT_Collar.|r
+    >>Kill |cRXP_ENEMY_Princess|r. Loot her for her |cRXP_LOOT_Brass Collar|r
     .complete 88,1 --1/1 Brass Collar
-	.target Princess
+	.mob Princess
 step
     .goto 37,34.66,84.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r

@@ -915,8 +915,6 @@ step
     .goto Elwynn Forest,34.486,84.253
     .accept 88 >> Accept Princess Must Die!
 	.goto Elwynn Forest,34.660,84.482
-
-
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Candles|r and |cRXP_LOOT_Dust|r

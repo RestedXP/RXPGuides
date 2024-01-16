@@ -982,8 +982,8 @@ step << Horde Mage
 step << Mage
     .goto 1409,51.95,49.84
 	>>Loot the |cRXP_PICK_Spell Book|r underwater
-    .complete 59352 << Alliance --1/1 Meredy's Spell Book
-    .complete 59954 << Horde --1/1 Herbert's Spell Book
+    .complete 59352,1 << Alliance --1/1 Meredy's Spell Book
+    .complete 59954,1 << Horde --1/1 Herbert's Spell Book
 step << Alliance Mage
     .goto 1409,52.28,55.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meredy|r
