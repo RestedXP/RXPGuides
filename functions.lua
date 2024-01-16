@@ -1935,6 +1935,7 @@ function addon.functions.deathskip(self, ...)
         end
         element.tooltipText = addon.icons.deathskip .. element.text
         addon.step.softcore = true
+        element.targets = {L"Spirit Healer","Alithea","Anara","Koiter"}
         return element
     end
     if not self.element.step.active then return end
