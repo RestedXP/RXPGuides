@@ -479,8 +479,9 @@ local function elementIsCloseToOtherPins(element, pins, isMiniMapPin)
 end
 
 local lsh = bit.lshift
-local function GetPinHash(x,y,instance,element)
-    return (instance % 256) + lsh(math.floor(x*128),8) +
+local function GetPinHash(x,y,instance,element,step)
+    local n = step and step.index or 0
+    return ((instance + n) % 256) + lsh(math.floor(x*128),8) +
             lsh(math.floor(y*1024),15) + lsh((element % 128),25)
 end
 -- Creates a list of Pin data structures.
@@ -549,7 +550,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
 
             local skipWp = not(element.zone and element.x)
             if not element.wpHash and not skipWp then
-                element.wpHash = GetPinHash(element.x,element.y,element.zone,n)
+                element.wpHash = GetPinHash(element.x,element.y,element.zone,n,step)
                 n = n + 1
             end
             if not isMiniMap and step.active and not skipWp then
@@ -693,7 +694,7 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
                 parent = element.parent,
                 mapTooltip = element.mapTooltip,
             }
-            point.wpHash = GetPinHash(x,y,element.zone,n)
+            point.wpHash = GetPinHash(x,y,element.zone,n,step)
             n = n + 1
             local tableList = {...}
             for _,tbl in pairs(tableList) do
@@ -1015,7 +1016,31 @@ function addon.UpdateGotoSteps()
         af:Hide()
         return
     end
-
+    local function CheckLoop(element,step)
+        --local step = element.step
+        if step.loop and not element.skip and element.radius then
+            local hasValidWPs
+            element.skip = true
+            for _,wp in pairs(step.elements) do
+                if wp.arrow and not wp.skip and wp.textOnly then
+                    hasValidWPs = true
+                    --print(step.index,wp.wpHash)
+                end
+            end
+            --A = step
+            --print('ok1',step.index)
+            if not hasValidWPs then
+                --print('ok2',step.index)
+                for _,wp in pairs(step.elements) do
+                    if wp.arrow and wp.wpHash ~= element.wpHash and wp.textOnly then
+                        wp.skip = false
+                        RXPCData.completedWaypoints[step.index or "tip"][wp.wpHash] = false
+                    end
+                end
+                forceArrowUpdate = true
+            end
+        end
+    end
     local minDist
     --local zone = C_Map.GetBestMapForUnit("player")
     local x, y, instance = HBD:GetPlayerWorldPosition()
@@ -1054,24 +1079,7 @@ function addon.UpdateGotoSteps()
                                 addon.UpdateMap()
                             elseif not (element.textOnly and element.hidePin and
                                          element.wpHash ~= af.element.wpHash and not element.generated) then
-                                if step.loop and not element.skip then
-                                    local hasValidWPs
-                                    element.skip = true
-                                    for _,wp in pairs(step.elements) do
-                                        if wp.arrow and not wp.skip and wp.textOnly then
-                                            hasValidWPs = true
-                                        end
-                                    end
-                                    if not hasValidWPs then
-                                        for _,wp in pairs(step.elements) do
-                                            if wp.arrow and wp.wpHash ~= element.wpHash and wp.textOnly then
-                                                wp.skip = false
-                                                RXPCData.completedWaypoints[step.index or "tip"][wp.wpHash] = false
-                                            end
-                                        end
-                                        forceArrowUpdate = true
-                                    end
-                                end
+                                CheckLoop(element,step)
                                 element.skip = true
                                 addon.UpdateMap()
                                 if not element.textOnly then
