@@ -316,7 +316,7 @@ step
     .train 425762,1
 step
     #season 2
-    .train 425762 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Flanking|r]
+    .train 425762 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Flanking|r] |cRXP_WARN_to train|r |T132175:0|t[Flanking Strike]
     .use 205979
     .itemcount 205979,1
 ]])
@@ -604,7 +604,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Hunter SoD
 #group RestedXP Rune Guide
 #subgroup Legs
-#name Rune of the Sniper - 18 (Darkshore)
+#name Sniper Training - 18 (Darkshore)
 
 
     --Rune of the Sniper
@@ -644,7 +644,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Hunter SoD
 #group RestedXP Rune Guide
 #subgroup Legs
-#name Rune of the Sniper - 16 (Westfall)
+#name Sniper Training - 16 (Westfall)
 
 
     --Rune of the Sniper
@@ -676,7 +676,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Hunter SoD
 #group RestedXP Rune Guide
 #subgroup Legs
-#name Rune of the Sniper - 16 (Loch Modan)
+#name Sniper Training - 16 (Loch Modan)
 
 
     --Rune of the Sniper
@@ -709,7 +709,7 @@ RXPGuides.RegisterGuide([[
 << Horde Hunter SoD
 #group RestedXP Rune Guide
 #subgroup Legs
-#name Rune of the Sniper - 16 (The Barrens)
+#name Sniper Training - 16 (The Barrens)
 
 
     --Rune of the Sniper
@@ -745,7 +745,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Hunter SoD
 #group RestedXP Rune Guide
 #subgroup Legs
-#name Rune of Flanking - 7 (Dun Morogh)
+#name Flanking - 7 (Dun Morogh)
 
 
     --Rune of Flanking
@@ -787,7 +787,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Hunter SoD
 #group RestedXP Rune Guide
 #subgroup Legs
-#name Rune of Flanking - 7 (Teldrassil)
+#name Flanking - 7 (Teldrassil)
 
 
     --Rune of Flanking
@@ -826,46 +826,7 @@ RXPGuides.RegisterGuide([[
 << Horde Hunter SoD
 #group RestedXP Rune Guide
 #subgroup Legs
-#name Rune of Flanking - 7 (Durotar)
-
-
-    --Rune of Flanking
-step
-    #season2
-    #loop
-    .goto Durotar,52.6,48.4,20,0
-    .goto Durotar,59.2,46.2,20,0
-    .goto Durotar,53.6,59.6,20,0
-    .goto Durotar,54.2,68.0,20,0
-    .goto Durotar,55.4,77.4,20,0
-    .train 425762,1
-    >>Kill |cRXP_ENEMY_Boars|r in |cFFfa9602Durotar|r and loot them for |T134026:0|t[Durotar Pig Meat]
-    .collect 207590,1
-    .mob Dire Mottled Boar
-    .mob Corrupted Mottled Boar
-    .mob Elder Mottled Boar
-step
-    #season2
-    .train 425762,1
-    .goto Durotar,68.7,71.4
-    >>Use |T134026:0|t[Durotar Pig Meat] near the corpse to summon |cRXP_ENEMY_Raluk|r
-    >>Kill |cRXP_ENEMY_Mowgh|r and loot him for |T135142:0|t|cRXP_LOOT_[Rune of Flanking]|r
-    .collect 205979,1
-    .use 207590
-    .mob Raluk
-step
-    #season 2
-    .train 425762 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Flanking|r] |cRXP_WARN_to train|r |T132175:0|t[Flanking Strike]
-    .use 205979
-    .itemcount 205979,1
-]])
-
-RXPGuides.RegisterGuide([[
-#classic
-<< Horde Hunter SoD
-#group RestedXP Rune Guide
-#subgroup Legs
-#name Rune of Flanking - 7 (Mulgore)
+#name Flanking - 7 (Mulgore)
 
 
     --Rune of Flanking

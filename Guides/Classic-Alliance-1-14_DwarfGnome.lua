@@ -2280,7 +2280,7 @@ step << Paladin
     #completewith DRT
     .engrave 7 >>|cRXP_WARN_Engrave your|r |T134596:0|t|cRXP_LOOT_[Pants]|r with|r |T134596:0|t[Engrave Pants - Rebuke]
     >>|cRXP_WARN_Remember to put|r |T134919:0|t[Rebuke] |cRXP_WARN_onto your action bars|r
-    .train 425621,2
+    .train 425621,3
 step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bixi Wobblebonk|r and |cRXP_FRIENDLY_Buliwyf Stonehand|r
     >>Train Thrown and 2h Maces if you didn't earlier
@@ -2747,11 +2747,11 @@ step
     .subzone 87 >> Travel to Goldshire
 step
     #hardcore
+    .goto Elwynn Forest,42.140,67.254
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r
     >>|cRXP_WARN_Do NOT vendor the|r |T133581:0|t[Bag of Marbles] |cRXP_WARN_reward. This is an incredibly valuable item all the way through to level 60|r
-    .target Remy "Two Times"
-    .goto Elwynn Forest,42.140,67.254
     .turnin 47 >> Turn in Gold Dust Exchange
+    .target Remy "Two Times"
 step << Paladin
     #season 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r

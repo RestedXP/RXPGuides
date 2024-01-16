@@ -177,14 +177,14 @@ step
     .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
     .train 401767 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r] |cRXP_WARN_to learn|r |T132871:0|t[Regeneration.]
     .use 208754
---     .engrave 5,401417 >> Open your character sheet and engrave your chest with |T132871:0|t[Regeneration] |cRXP_WARN_highly recommended.|r
+--     .engrave 5,401417 >> |cRXP_WARN_Engrave your|r |T133815:0|t|cRXP_LOOT_[Chest] |cRXP_WARN_with|r |T133815:0|t[Engrave Chest - Regeneration]
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune Guide
 #subgroup Chest << Mage
-#name Regeneration -12 (Loch Modan)
+#name Regeneration - 12 (Loch Modan)
 
 << Gnome Mage SoD
 
@@ -1560,11 +1560,11 @@ step
 step
     .aura 430139,1 >>Use |T135142:0|t[Arcane Explosion] |cRXP_WARN_near the correct|r |cRXP_WARN_Purple Crystal|r
     .goto Ashenvale,14.04,19.80
-    .train 401757,2
+    .train 401757,1
 step
     .aura 430139,1 >>Use |T135142:0|t[Arcane Explosion] |cRXP_WARN_near the correct|r |cRXP_WARN_Purple Crystal|r
     .goto Ashenvale,13.50,15.75
-    .train 401757,3
+    .train 401757,1
 step
     .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
     .train 401757 >>|cRXP_WARN_Use|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Arcane Blast|r] to learn |T135820:0|t[Arcane Blast]

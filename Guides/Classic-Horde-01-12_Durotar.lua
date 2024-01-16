@@ -102,7 +102,7 @@ step << !Warrior !Rogue
     #softcore
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duokna|r
-    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r << !Hunter <<!Shaman
+    >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r << !Hunter !Shaman
     >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_from her|r << Hunter
     .collect 159,30,6394,1 << !Hunter !Shaman --Refreshing Spring Water (30)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
@@ -151,8 +151,8 @@ step
     >>Kill |cRXP_ENEMY_Sarkoth|r. Loot him for |cRXP_LOOT_Sarkoth's Mangled Claw|r and for |T134419:0|t[|cRXP_FRIENDLY_Rune of Explosive Shot|r] << Hunter
     >>Kill |cRXP_ENEMY_Sarkoth|r. Loot him for |cRXP_LOOT_Sarkoth's Mangled Claw|r and for |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r] << Warrior
     .complete 790,1 --Sarkoth's Mangled Claw (1)
-    .collect 206169,1,790,1 --Rune of Explosive Shot (1) << Hunter
-    .collect 204809,1,790,1 --Rune of Furious Thunder(1) << Warrior
+    .collect 206169,1,790,1 << Hunter --Rune of Explosive Shot (1)
+    .collect 204809,1,790,1 << Warrior --Rune of Furious Thunder(1)
     .mob Sarkoth
 step << Warrior
     #season 2
@@ -2170,7 +2170,7 @@ step
 step << Priest
     #season 2
     #completewith Fur
-    >>Kill the |cRXP_ENEMY_Voodoo Trolls|r. Loot them for |T135975:0|t[cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r]
+    >>Kill the |cRXP_ENEMY_Voodoo Trolls|r. Loot them for |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r]
     .collect 205947,1 --Prophecy of a Desecrated Citadel (1)
     .mob Voodoo Troll
     .train 402852,1
@@ -2229,7 +2229,7 @@ step
 step << Priest
     #season 2
     .loop 25,Durotar,67.23,88.76,66.52,87.74,65.94,86.72,65.90,84.04,65.88,82.85,67.38,82.61,68.42,82.43,68.50,84.32,68.47,86.77,67.23,88
-    >>Kill the |cRXP_ENEMY_Voodoo Trolls|r. Loot them for |T135975:0|t[cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r]
+    >>Kill the |cRXP_ENEMY_Voodoo Trolls|r. Loot them for |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r]
     .collect 205947,1 --Prophecy of a Desecrated Citadel (1)
     .mob Voodoo Troll
     .train 402852,1
@@ -2327,7 +2327,7 @@ step << Priest
     #completewith QuilboarsScouts
     .aura 418459 >>|cRXP_WARN_Now you have to find an Undead Priest with a Loa buff. You have to kneel before him and he has to /pray for you.|r
     .use 205947
-    .train 402852 >>|cRXP_WARN_Use the|r |T135975:0|t[cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] |cRXP_WARN_to train|r |T237570:0|t[Homunculi]
+    .train 402852 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] |cRXP_WARN_to train|r |T237570:0|t[Homunculi]
     .itemcount 205947,1
 step
     #completewith QuilboarsScouts

@@ -851,19 +851,18 @@ step
     .target Cerellean Whiteclaw
 step
 #map Darkshore
+    .goto Felwood,18.50,19.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
+    .accept 1138 >> Accept Fruit of the Sea
+    .target Gubber Blump
+step
+#map Darkshore
     .goto Darkshore,36.71,44.98,5,0
     .goto Felwood,19.10,20.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .turnin 4722 >> Turn in Beached Sea Turtle
     .turnin 4723 >> Turn in Beached Sea Creature
     .target Gwennyth Bly'Leggonde
-step
-#map Darkshore
-    .goto Felwood,18.50,19.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
-    .accept 1138 >> Accept Fruit of the Sea
-    .target Gubber Blump
----?
 step << NightElf
 #map Darkshore
     .goto Felwood,20.80,15.58
@@ -1463,11 +1462,11 @@ step
     .complete 64,1 --Furlbrow's Pocket Watch
 step
     #completewith FurlbrowFarm
-    .isQuestAvailable 38
     >>Kill |cRXP_ENEMY_Harvest Watchers|r. Loot them for their |cRXP_LOOT_Okra|r and |cRXP_LOOT_Flasks of Oil|r
     .complete 9,1 --Harvest Watcher (20)
     .collect 732,3,38,1 --Okra (3)
     .collect 814,5,103,1 --Flask of Oil (5)
+    .isQuestAvailable 38
     .mob Harvest Watcher
 step
     #completewith FurlbrowFarm
@@ -1973,6 +1972,7 @@ step << Hunter
     .use 3027
     .itemcount 3027,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.19
+    .xp <20,1
 step << Hunter
     #requires RecruveReinforced
     #completewith next
@@ -1980,6 +1980,13 @@ step << Hunter
     .use 3026
     .itemcount 3026,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.49
+step << NightElf Rogue
+    >>Enter the Cenarion Enclave
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syurna|r
+    .goto Darnassus,31.84,16.69,15,0
+    .goto Darnassus,37.00,21.92
+    .trainer >> Train your class spells
+    .target Syurna
 step << NightElf !Druid
     #optional
     #completewith next
@@ -1994,13 +2001,6 @@ step << NightElf Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jandria|r
     .trainer >> Train your class spells
     .target Jandria
-step << NightElf Rogue
-    >>Enter the Cenarion Enclave
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syurna|r
-    .goto Darnassus,31.84,16.69,15,0
-    .goto Darnassus,37.00,21.92
-    .trainer >> Train your class spells
-    .target Syurna
 step << NightElf !Druid
     #label start
     .hs >> Hearth to Auberdine
@@ -2517,6 +2517,7 @@ step
     >>Loot the |cRXP_LOOT_Mathystra Relics|r on the ground
     .complete 951,1 -- Mathystra Relics (6)
 step << Priest
+    #season 2
     .goto Darkshore,59.2,23.4,60,0
     .goto Darkshore,60.0,15.4
     >>Kill |cRXP_ENEMY_Stormscale Myrmidons|r, |cRXP_ENEMY_Stormscale Warriors|r and |cRXP_ENEMY_Stormscale Sorceresses|r. Loot them for a |T236364:0|t[|cRXP_LOOT_Shatterspear Offering|r]
@@ -2740,6 +2741,7 @@ step << Hunter
     .use 3027
     .itemcount 3027,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.19
+    .xp <20,1
 step << Dwarf Hunter
     .goto Teldrassil,23.70,64.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Archaeologist Greywhisker|r
@@ -4957,25 +4959,8 @@ step << Mage
     .trainer >> Train your class spells
     .target Elsharin
 step << Paladin/Priest !NightElf
-    #completewith next << !Paladin
-    #completewith PalTrainer << Paladin
+    #completewith next
     .goto StormwindClassic,42.51,33.51,20 >> Travel to the Stormwind Cathedral
-step << Paladin
-    .goto StormwindClassic,39.80,29.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
-    .accept 1641 >> Accept The Tome of Divinity
-    .turnin 1641 >> Turn in The Tome of Divinity
-    .target Duthorian Rall
-step << Paladin
-    .goto StormwindClassic,39.80,29.77
-    .use 6775>>|cRXP_WARN_Use the |T133464:0|t[|cRXP_LOOT_The Tome of Divinity|r] to start the quest|r
-    .accept 1642 >>Accept The Tome of Divinity
-step << Paladin
-    .goto StormwindClassic,39.80,29.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
-    .turnin 1642 >>Turn in The Tome of Divinity
-    .accept 1643 >>Accept The Tome of Divinity
-    .target Duthorian Rall
 step << Paladin
     #label PalTrainer
     .goto StormwindClassic,38.82,31.27,10,0
@@ -5423,12 +5408,79 @@ step
     .turnin 120 >> Turn in Messenger to Stormwind
     .accept 121 >> Accept Messenger to Stormwind
     .target General Marcus Jonathan
+step << Mage
+.dungeon DM
+    #completewith next
+    .goto StormwindClassic,37.69,82.09,10 >> Travel to the Mage Tower
+step << Mage
+.dungeon DM
+    .goto StormwindClassic,36.87,81.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elsharin|r
+    .trainer >> Train your class spells
+    .target Elsharin
+step << Mage
+.dungeon DM
+    .goto StormwindClassic,39.68,79.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Larimaine|r
+    .train 48464 >> Train |T135763:0|t[Teleport: Stormwind]
+	.xp <20,1
+    .target Larimaine Purdue
+step << Warlock
+.dungeon DM
+    #completewith next
+    .goto StormwindClassic,29.2,74.0,20,0
+    .goto StormwindClassic,27.2,78.1,15 >> Travel to The Slaughtered Lamb and go downstairs
+step << Warlock
+.dungeon DM
+    .goto StormwindClassic,26.11,77.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursula Deline|r
+    .trainer >> Train your class spells
+    .target Ursula Deline
 step
 .dungeon DM
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argos Nightwhisper|r
 	.target Argos Nightwhisper
     .goto StormwindClassic,21.40,55.80
     .accept 3765 >> Accept The Corruption Abroad
+step << Druid
+.dungeon DM
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sheldras Moontree|r
+    .goto StormwindClassic,20.89,55.50
+    .trainer >> Train your class spells
+    .train 768 >> Train |T132115:0|t[Cat Form]
+    .target Sheldras Moontree
+step << Paladin/Priest
+.dungeon DM
+    #completewith next
+    .goto StormwindClassic,42.51,33.51,20 >> Travel to the Stormwind Cathedral
+step << Paladin
+.dungeon DM
+    .goto StormwindClassic,39.80,29.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r. He will give you the |T133739:0|t[|cRXP_LOOT_Tome of Valor|r]
+    use 6776 >>|cRXP_WARN_Use the |T133739:0|t[|cRXP_LOOT_Tome of Valor|r] to start the quest|r
+    .collect 6776,1,1649 --Tome of Valor (1)
+    .accept 1649 >>Accept The Tome of Valor
+    .target Duthorian Rall
+step << Paladin
+.dungeon DM
+    .goto StormwindClassic,39.80,29.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
+    .turnin 1649 >>Turn in The Tome of Valor
+    .accept 1650 >>Accept The Tome of Valor
+    .target Duthorian Rall
+step << Paladin
+.dungeon DM
+    .goto StormwindClassic,38.82,31.27,10,0
+    .goto StormwindClassic,38.67,32.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r
+    .trainer >> Train your class spells
+    .target Arthur the Faithful
+step << Priest
+.dungeon DM
+    .goto StormwindClassic,38.54,26.86
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Joshua|r
+    .trainer >> Train your class spells
+    .target Brother Joshua
 step
 .dungeon DM
     .goto StormwindClassic,48.079,30.913,10,0
@@ -5447,6 +5499,93 @@ step
     .goto StormwindClassic,55.510,12.504
     .target Wilder Thistlenettle
     .target Shoni the Shilent
+step << Rogue
+.dungeon DM
+    .goto StormwindClassic,74.64,52.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r
+    .trainer >> Train your class spells
+    .target Osborne the Night Man
+step << Rogue
+.dungeon DM
+    #completewith next
+    .goto StormwindClassic,74.90,54.00,20,0
+    .goto StormwindClassic,78.43,60.15,20,0
+    .goto StormwindClassic,78.67,60.13,5 >> Enter the SI:7 Headquarters. Travel up stairs toward |cRXP_FRIENDLY_Master Mathias Shaw|r
+step << Rogue
+.dungeon DM
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Mathias Shaw|r
+    .accept 2360 >> Accept Mathias and the Defias
+    .goto StormwindClassic,75.78,59.84
+    .target Master Mathias Shaw
+step << Warrior
+.dungeon DM
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wu|r or |cRXP_FRIENDLY_Ilsa|r
+    .goto StormwindClassic,76.08,50.14,15,0
+    .goto StormwindClassic,80.22,45.37,15,0
+	.goto StormwindClassic,78.68,45.79
+    .trainer >> Train your class spells
+    .target Wu Shen
+    .target Ilsa Corbin
+step << Rogue
+.dungeon DM
+    #ah
+    .goto StormwindClassic,57.38,56.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
+    >>|cRXP_WARN_Buy a|r |T135324:0|t[Longsword] |cRXP_WARN_and equip it at 21|r
+    >>|cRXP_WARN_Buy something from the Auction House if there's something cheaper/better|r
+    .collect 923,1 --Longsword (1)
+    .target Marda Weller
+    .money <0.8743
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.2
+step << Rogue
+.dungeon DM
+    #ssf
+    .goto StormwindClassic,57.38,56.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
+    >>|cRXP_WARN_Buy a|r |T135324:0|t[Longsword] |cRXP_WARN_and equip it at 21|r
+    .collect 923,1 --Longsword (1)
+    .target Marda Weller
+    .money <0.8743
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.2
+step << Rogue
+.dungeon DM
+    #optional
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135324:0|t[Longsword]
+    .use 923
+    .itemcount 923,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.19
+    .xp <21,1
+step << Warrior/Paladin
+.dungeon DM
+    #ah
+    .goto StormwindClassic,57.54,57.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
+    >>|cRXP_WARN_Buy a|r |T135280:0|t[Dacian Falx] |cRXP_WARN_if you have enough money. Equip it at 21|r
+    >>|cRXP_WARN_Buy something from the Auction House if there's something cheaper/better|r
+    .collect 922,1 --Dacian Falx (1)
+    .target Gunther Weller
+    .money <1.2038
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<16.0
+step << Warrior/Paladin
+.dungeon DM
+    #ssf
+    .goto StormwindClassic,57.54,57.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
+    >>|cRXP_WARN_Buy a|r |T135280:0|t[Dacian Falx] |cRXP_WARN_if you have enough money. Equip it at 21|r
+    .collect 922,1 --Dacian Falx (1)
+    .target Gunther Weller
+    .money <1.2038
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<16.0
+step << Warrior/Paladin
+.dungeon DM
+    #optional
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135280:0|t[Dacian Falx]
+    .use 922
+    .itemcount 922,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.99
+    .xp <21,1
 step
 .dungeon DM
     .goto StormwindClassic,42.435,59.236,10,0
@@ -5517,6 +5656,13 @@ step
     #completewith FlyR
 	.goto Redridge Mountains,6.7,72.4
     .zone Redridge Mountains >> Travel to Redridge Mountains
+step
+.dungeon DM
+    #era/som
+    .goto Redridge Mountains,15.27,71.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Parker|r
+    .accept 244 >> Accept Encroaching Gnolls
+    .target Guard Parker
 step << NightElf
     #era/som
     #label GParker
@@ -5540,6 +5686,14 @@ step
     .turnin 244 >> Turn in Encroaching Gnolls << !Human !Warlock
     .accept 246 >> Accept Assessing the Threat << !Human !Warlock
     .target Deputy Feldon
+step
+.dungeon DM
+    #era/som
+    .goto Redridge Mountains,30.73,59.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r
+    .turnin 244 >> Turn in Encroaching Gnolls
+    .target Deputy Feldon
+    .accept 246 >> Accept Assessing the Threat
 step << NightElf
     #era/som
     .goto Redridge Mountains,30.73,59.99
@@ -5564,6 +5718,22 @@ step
     .goto Redridge Mountains,30.97,47.27
     .accept 118 >> Accept The Price of Shoes
 step
+.dungeon DM
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
+	.target Verner Osgood
+    .goto Redridge Mountains,30.97,47.27
+    .turnin 119 >> Turn in Return to Verner
+    .accept 124 >> Accept A Baying of Gnolls
+    .accept 122 >> Accept Underbelly Scales
+step
+.dungeon DM
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Marcus Jonathan|r
+	.target General Marcus Jonathan
+    .goto StormwindClassic,63.982,75.338
+    .turnin 120 >> Turn in Messenger to Stormwind
+    .accept 121 >> Accept Messenger to Stormwind
+step
+.dungeon !DM
     .goto Redridge Mountains,29.31,45.33,15,0
     .goto Redridge Mountains,29.98,44.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Solomon|r
@@ -5592,14 +5762,10 @@ step
     .goto Redridge Mountains,22.67,43.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Breanna|r
     .accept 92 >> Accept Redridge Goulash
-    .target Chef Breanna
-step
-    #era/som
-    #optional
-    .isQuestComplete 92
-    .goto Redridge Mountains,22.67,43.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Breanna|r
     .turnin 92 >> Turn in Redridge Goulash
+    .itemcount 2296,5 -- Great Goretusk Snout (5)
+    .itemcount 1080,5 -- Tough Condor Meat (5)
+    .itemcount 1081,5 -- Crisp Spider Meat (5)
     .target Chef Breanna
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Martie Jainrose|r
@@ -5811,11 +5977,14 @@ step
     .turnin 127 >> Turn in Selling Fish
 step
     #era/som
-    .isQuestComplete 92
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Breanna|r
 	.target Chef Breanna
     .goto Redridge Mountains,22.67,43.83
+    .accept 92 >> Accept Redridge Goulash
     .turnin 92 >> Turn in Redridge Goulash
+    .itemcount 2296,5 -- Great Goretusk Snout (5)
+    .itemcount 1080,5 -- Tough Condor Meat (5)
+    .itemcount 1081,5 -- Crisp Spider Meat (5)
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Martie Jainrose|r
 	.target Martie Jainrose
@@ -5840,7 +6009,7 @@ step
     .turnin 3741 >> Turn in Hilary's Necklace
 step << Rogue
     #optional
-	#completewith FlySW
+	#completewith InRR
 	.destroy 7907 >> Destroy the |T134328:0|t[Certificate of Thievery]. You don't need it
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r
@@ -5851,14 +6020,25 @@ step
     #era
     .goto Redridge Mountains,49.0,70.0
     .xp 20 >> Grind until you are level 20
+step << Rogue
+.dungeon DM
+    #softcore
+    .isOnQuest 2360
+    .goto Redridge Mountains,30.59,59.42
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
+    .fp Redridge Mountains >> Get the Redridge Mountains flight path << !Human
+    .fly Westfall >> Fly to Westfall
+    .target Ariena Stormfeather
 step
-    #label FlySW
+.dungeon !DM << Rogue
+    #completewith InRR
     .goto Redridge Mountains,30.59,59.42
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
 	.target Ariena Stormfeather
     .fp Redridge Mountains >> Get the Redridge Mountains flight path << !Human !Warlock
     .fly Stormwind >> Fly to Stormwind City
 step << Rogue
+.dungeon !DM
     #ah
     .goto StormwindClassic,57.38,56.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
@@ -5869,6 +6049,7 @@ step << Rogue
     .money <0.8743
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.2
 step << Rogue
+.dungeon !DM
     #ssf
     .goto StormwindClassic,57.38,56.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
@@ -5878,6 +6059,7 @@ step << Rogue
     .money <0.8743
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.2
 step << Rogue
+.dungeon !DM
     #optional
     #completewith next
     +|cRXP_WARN_Equip the|r |T135324:0|t[Longsword]
@@ -5886,6 +6068,7 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.19
     .xp <21,1
 step << Warrior/Paladin
+.dungeon !DM
     #ah
     .goto StormwindClassic,57.54,57.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
@@ -5896,6 +6079,7 @@ step << Warrior/Paladin
     .money <1.2038
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<16.0
 step << Warrior/Paladin
+.dungeon !DM
     #ssf
     .goto StormwindClassic,57.54,57.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
@@ -5905,6 +6089,7 @@ step << Warrior/Paladin
     .money <1.2038
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<16.0
 step << Warrior/Paladin
+.dungeon !DM
     #optional
     #completewith next
     +|cRXP_WARN_Equip the|r |T135280:0|t[Dacian Falx]
@@ -5913,44 +6098,53 @@ step << Warrior/Paladin
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.99
     .xp <21,1
 step << Warlock
+.dungeon !DM
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
     .goto StormwindClassic,27.2,78.1,15 >> Travel to The Slaughtered Lamb and go downstairs
 step << Warlock
+.dungeon !DM
     .goto StormwindClassic,25.25,78.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gakin the Darkbinder|r
     .accept 1716 >> Accept Devourer of Souls
     .trainer >> Train your class spells
     .target Gakin the Darkbinder
 step << Mage
+.dungeon !DM
     #completewith next
     .goto StormwindClassic,37.69,82.09,10 >> Travel to the Mage Tower
 step << Mage
+.dungeon !DM
     .goto StormwindClassic,36.87,81.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elsharin|r
     .trainer >> Train your class spells
     .target Elsharin
 step << Mage
+.dungeon !DM
     .goto StormwindClassic,39.68,79.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Larimaine|r
     .train 48464 >> Train |T135763:0|t[Teleport: Stormwind]
 	.xp <20,1
     .target Larimaine Purdue
 step
+.dungeon !DM
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argos Nightwhisper|r
 	.target Argos Nightwhisper
     .goto StormwindClassic,21.40,55.80
     .accept 3765 >> Accept The Corruption Abroad
 step << Druid
+.dungeon !DM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sheldras Moontree|r
     .goto StormwindClassic,20.89,55.50
     .trainer >> Train your class spells
     .train 768 >> Train |T132115:0|t[Cat Form]
     .target Sheldras Moontree
 step << Paladin/Priest
+.dungeon !DM
     #completewith next
     .goto StormwindClassic,42.51,33.51,20 >> Travel to the Stormwind Cathedral
 step << Paladin
+.dungeon !DM
     .goto StormwindClassic,39.80,29.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r. He will give you the |T133739:0|t[|cRXP_LOOT_Tome of Valor|r]
     use 6776 >>|cRXP_WARN_Use the |T133739:0|t[|cRXP_LOOT_Tome of Valor|r] to start the quest|r
@@ -5958,38 +6152,45 @@ step << Paladin
     .accept 1649 >>Accept The Tome of Valor
     .target Duthorian Rall
 step << Paladin
+.dungeon !DM
     .goto StormwindClassic,39.80,29.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
     .turnin 1649 >>Turn in The Tome of Valor
     .accept 1650 >>Accept The Tome of Valor
     .target Duthorian Rall
 step << Paladin
+.dungeon !DM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r
     .goto StormwindClassic,38.82,31.27,10,0
     .goto StormwindClassic,38.67,32.82
     .trainer >> Train your class spells
     .target Arthur the Faithful
 step << Priest
+.dungeon !DM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Joshua|r
     .goto StormwindClassic,38.54,26.86
     .trainer >> Train your class spells
     .target Brother Joshua
 step << Rogue
+.dungeon !DM
     .goto StormwindClassic,74.64,52.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r
     .trainer >> Train your class spells
     .target Osborne the Night Man
 step << Rogue
+.dungeon !DM
     #completewith next
     .goto StormwindClassic,74.90,54.00,20,0
     .goto StormwindClassic,78.43,60.15,20,0
     .goto StormwindClassic,78.67,60.13,5 >> Enter the SI:7 Headquarters. Travel up stairs toward |cRXP_FRIENDLY_Master Mathias Shaw|r
 step << Rogue
+.dungeon !DM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Mathias Shaw|r
     .accept 2360 >> Accept Mathias and the Defias
     .goto StormwindClassic,75.78,59.84
     .target Master Mathias Shaw
 step << Warrior
+.dungeon !DM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wu|r or |cRXP_FRIENDLY_Ilsa|r
     .goto StormwindClassic,76.08,50.14,15,0
     .goto StormwindClassic,80.22,45.37,15,0
@@ -6273,6 +6474,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theocritus|r at the top
     .accept 94 >> Accept A Watchful Eye
 step
+    #label InRR
     #completewith FlyR
     .goto StormwindClassic,66.30,62.30,-1
 	.goto Redridge Mountains,6.7,72.4,-1
@@ -6280,17 +6482,6 @@ step
     .fly Redridge >> Fly to Redridge
     >>|cRXP_WARN_If you're in Goldshire it will be faster to Fly from Stormwind|r
 	>>|cRXP_WARN_If you're at the Tower of Azora simply run to Redridge|r
-step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
-	.target Marshal Marris
-    .goto Redridge Mountains,33.50,48.97
-    .turnin 20 >> Turn in Blackrock Menace
-step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
-	.target Foreman Oslow
-    .goto Redridge Mountains,32.13,48.63
-    .turnin 125 >> Turn in The Lost Tools
-    .accept 89 >> Accept The Everstill Bridge
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
 	.target Verner Osgood
@@ -6324,11 +6515,14 @@ step
     .turnin 150 >> Turn in Murloc Poachers
 step
     #era/som
-    .isQuestComplete 92
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Breanna|r
 	.target Chef Breanna
     .goto Redridge Mountains,22.67,43.83
+    .accept 92 >> Accept Redridge Goulash
     .turnin 92 >> Turn in Redridge Goulash
+    .itemcount 2296,5 -- Great Goretusk Snout (5)
+    .itemcount 1080,5 -- Tough Condor Meat (5)
+    .itemcount 1081,5 -- Crisp Spider Meat (5)
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Martie Jainrose|r
 	.target Martie Jainrose
@@ -6356,7 +6550,11 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Breanna|r
 	.target Chef Breanna
     .goto Redridge Mountains,22.67,43.83
+    .accept 92 >> Accept Redridge Goulash
     .turnin 92 >> Turn in Redridge Goulash
+    .itemcount 2296,5 -- Great Goretusk Snout (5)
+    .itemcount 1080,5 -- Tough Condor Meat (5)
+    .itemcount 1081,5 -- Crisp Spider Meat (5)
 step
     #era
 	#completewith next
@@ -6523,11 +6721,11 @@ step
     .goto Darkshore,37.21,44.22
     .accept 4740 >> Accept WANTED: Murkdeep!
 step
-    .isQuestTurnedIn 986
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
-	.target Terenthis
     .goto Darkshore,39.37,43.48
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
     .accept 993 >> Accept A Lost Master
+	.target Terenthis
+    .isQuestTurnedIn 986
 step
 	#era/som
     #completewith Murkdeep

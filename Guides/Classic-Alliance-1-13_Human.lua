@@ -592,14 +592,14 @@ step << Human Paladin
     .equip 10,2385 >> |cRXP_WARN_Equip the|r |T132938:0|t|cRXP_LOOT_[Tarnished Chain Gloves]|r
     .use 2385
     .itemcount 2385,1
-    .train 410002,2
+    .train 410002,3
     .itemStat 10,LEVEL,<5
 step << Human Paladin
     #season 2
     #completewith RestandR
     #requires CSLibram3
     .engrave 10 >> |cRXP_WARN_Engrave the|r |T132938:0|t|cRXP_LOOT_[Tarnished Chain Gloves]|r with|r |T133816:0|t[Engrave Gloves - Crusader Strike]
-    .train 410002,2
+    .train 410002,3
     .itemStat 10,LEVEL,<5
 step << skip
     >> Talk to |cRXP_FRIENDLY_Godric Rothgar|r
@@ -2439,9 +2439,9 @@ step << Paladin
 step << Paladin
     #season 2
     #completewith Dirt
-    .engrave 7 >>|cRXP_WARN_Engrave your|r |T134596:0|t|cRXP_LOOT_[Pants]|r with|r |T134596:0|t[Engrave Pants - Rebuke]
+    .engrave 7 >>|cRXP_WARN_Engrave your|r |T134596:0|t|cRXP_LOOT_[Pants]|r |cRXP_WARN_with|r |T134596:0|t[Engrave Pants - Rebuke]
     >>|cRXP_WARN_Remember to put|r |T134919:0|t[Rebuke] |cRXP_WARN_onto your action bars|r
-    .train 425621,2
+    .train 425621,3
 step
     .goto Ironforge,55.501,47.742
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r

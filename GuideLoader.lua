@@ -24,6 +24,7 @@ local embeddedGuides = {}
 
 local function applies(textEntry,customClass)
     if textEntry then
+        --if not(textEntry:match("Alliance") or textEntry:match("Horde")) then return true end
         local function parse(text,customClass)
             local isMatch = false
             text = text:gsub("(!?)%(%s*(.-)%s*%)",function(op,m)
@@ -782,6 +783,9 @@ local function parseLine(linetext,step,parsingLogic)
         addon.lastEelement = element
     end
 
+    --[[if RXPData.localeTable and element and element.text then
+        RXPData.localeTable[element.text] = ""
+    end]]
     if not step then
         if element then
             element.parent = nil

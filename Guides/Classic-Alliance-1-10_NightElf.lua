@@ -1246,7 +1246,7 @@ step << Hunter
     .collect 206155,1 --Rune of Markmanship (1)
     .mob Rustling Bush
     .mob Fallenroot Poacher
-    .train 410113,1
+    .train 410113,1 --Master Marksman
 step << Hunter
     #season 2
     .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r] |cRXP_WARN_to train|r |T132177:0|t[Master Marksman]

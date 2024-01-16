@@ -643,7 +643,7 @@ step
     .mob Searing Infernal
 step
     .train 403938,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doan Karhan|r to get the |T134419:0|t[|cRXP_FRIENDLYRune of Metamorphosis|r]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doan Karhan|r to get the |T134419:0|t[|cRXP_FRIENDLY_Rune of Metamorphosis|r]
     .goto The Barrens,49.2,57.2
     .turnin 78684 >>Turn in Mysterious Traveler
     .turnin 78702 >>Turn in Raszel Ander
