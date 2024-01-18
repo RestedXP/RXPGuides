@@ -156,7 +156,7 @@ step
     .accept 63447 >>Accept Fear No Evil << Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman
     .target Brother Paxton
 step
-    #completewith Area1
+    #completewith Rear
     .goto 425,31.59,16.72,40 >> |cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Gug Fatcandle|r. Kill him if he's up|r
     *|cRXP_WARN_It's important to kill Rares and loot Treasure Chests, as they award a lot of experience|r
 	.unitscan Gug Fatcandle
@@ -226,6 +226,7 @@ step
     .turnin 63447 >>Turn in Fear No Evil << Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman
     .target Brother Paxton
 step
+    #label Rear
     .goto 425,35.73,39.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Willem|r
     .turnin 28791 >>Turn in They Sent Assassins << Human Hunter/KulTiran Hunter
@@ -319,6 +320,7 @@ step
 -- .goto 425,38.29,58.12
     *|cRXP_WARN_Spamming /sit or removing your gear will make you die faster|r
     .deathskip >> Die and Respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .skill riding,75,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milly Osworth|r and |cRXP_FRIENDLY_Marshal McBride|r
     .turnin 26391 >>Turn in Extinguishing Hope
@@ -340,6 +342,7 @@ step
     .goto 425,38.29,58.12,0
 -- .goto 425,38.29,58.12
     .deathskip >> Die and Respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .skill riding,75,1
 step
     .goto 425,33.56,53.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r
@@ -402,6 +405,7 @@ step
     .goto 37,39.48,60.53,-1
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .isOnQuest 37112
+    .skill riding,75,1
 step
     .goto 37,41.71,64.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bartlett the Brave|r
@@ -752,13 +756,14 @@ step
     .complete 47,1 --10/10 Gold Dust
 	.mob Kobold Tunneler
 step
-    .goto 37,38.22,83.41,40 >> |cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Narg the Taskmaster|r. Kill him if he's up|r
+    .goto 37,38.22,83.41,40 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Narg the Taskmaster|r. Kill him if he's up|r
 	.unitscan Narg the Taskmaster
     .isOnQuest 60
 step
 	#completewith next
     .goto 37,38.94,82.23,12,0
-    .goto 38,42.52,71.63,15 >> Enter the upper level of the Fargodeep Mine
+    .goto 38,42.52,71.63
+    .subzone 54 >> Enter the upper level of the Fargodeep Mine
 step
     #label FargodeepM
     .goto 38,54.31,59.56,-1
@@ -791,17 +796,17 @@ step
     .accept 88 >>Accept Princess Must Die!
 	.target Ma Stonefield
 step
-    .goto 37,32.48,86.81,20,0
-    .goto 37,33.41,86.16,20,0
-    .goto 37,33.32,84.95,20,0
-    .goto 37,32.58,84.26,20,0
+    .goto 37,33.64,87.76,15 >>|cRXP_WARN_[CHEST]Check for the |cRXP_PICK_Chest|r inside the stables. Loot it if it's up|r
+    .isOnQuest 60
+step
+    #loop
+    .line 37,32.48,86.81,33.41,86.16,33.32,84.95,32.58,84.26,32.04,85.20,32.48,86.81
+    .goto 37,33.32,84.95,0
     .goto 37,32.04,85.20,20,0
-    .goto 37,32.48,86.81,20,0
-    .goto 37,33.41,86.16,20,0
-    .goto 37,33.32,84.95,20,0
     .goto 37,32.58,84.26,20,0
-    .goto 37,32.04,85.20
-	.line 37,32.48,86.81,33.41,86.16,33.32,84.95,32.58,84.26,32.04,85.20,32.48,86.81
+    .goto 37,33.32,84.95,20,0
+    .goto 37,33.41,86.16,20,0
+    .goto 37,32.48,86.81,20,0
     >>Kill |cRXP_ENEMY_Princess|r. Loot her for her |cRXP_LOOT_Brass Collar|r
     .complete 88,1 --1/1 Brass Collar
 	.mob Princess
@@ -811,14 +816,11 @@ step
     .turnin 88 >>Turn in Princess Must Die!
 	.target Ma Stonefield
 step
-    .goto 37,33.64,87.76,15 >>Check for the |cRXP_PICK_Chest|r |cFFfa9602inside and around the Stables.|r
+    .goto 37,30.81,64.65,40 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Morgaine the Sly|r inside. Kill her if she's up|r
+    .unitscan Morgaine the Sly
     .isOnQuest 60
 step
-    .goto 37,30.73,64.85,40 >>Check for |cRXP_ENEMY_Morgaine the Sly|r (Rare) |cFFfa9602inside the house.|r
-	.unitscan Morgaine the Sly
-    .isOnQuest 60
-step
-    .goto 37,27.22,67.51,40 >>Check for the |cRXP_ENEMY_Grizzled Ben|r (Rare).
+    .goto 37,27.22,67.51,40 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Grizzled Ben|r. Kill him if he's up|r
 	.unitscan Grizzled Ben
     .isOnQuest 60
 step
@@ -829,50 +831,63 @@ step
     .goto 37,24.23,74.45
 	.target Deputy Rainer
 step
-	#completewith Armbands
-	+Check for |cRXP_ENEMY_Gruff Swiftbite|r (Rare) and |cRXP_PICK_Chests|r in ALL the camps.
+	#completewith Bounty
+    .goto 37,24.36,93.65,0
+    .goto 37,26.10,91.95,0
+    .goto 37,25.30,88.95,0
+    .goto 37,27.80,88.36,0
+    .goto 37,27.67,86.21,0
+    .goto 37,26.32,86.82,0
+    +|cRXP_WARN_[RARE & CHEST] Keep an eye out for |cRXP_PICK_Chests|r and |cRXP_ENEMY_Gruff Swiftbite|r in the camps. Kill him if he's up|r
 	.unitscan Gruff Swiftbite
 step
-    #completewith next
-    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Outrunners|r and loot them for their |cRXP_LOOT_Armbands.|r
+    #completewith Hogger
+    .goto 37,24.36,93.65,0
+    .goto 37,26.10,91.95,0
+    .goto 37,25.30,88.95,0
+    .goto 37,27.80,88.36,0
+    .goto 37,27.67,86.21,0
+    .goto 37,26.32,86.82,0
+    >>Kill |cRXP_ENEMY_Riverpaw Outrunners|r and |cRXP_ENEMY_Riverpaw Runts|r. Loot them for their |cRXP_LOOT_Painted Gnoll Armbands|r
     .complete 11,1 --8/8 Painted Gnoll Armband
-	.target Riverpaw Runt
-	.target Riverpaw Outrunner
+	.mob Riverpaw Outrunner
+	.mob Riverpaw Runt
 step
-    .goto 37,24.97,95.23
-    >>Kill |cRXP_ENEMY_Hogger|r.
-    >>|cRXP_WARN_DON'T wait out the RP.|r
-    .complete 176,1 --1/1 Dealt with "The Hogger Situation"
-step
+    #sticky
+    #label Deed
     .goto 37,24.78,95.26
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_FRIENDLY_Westfall Deed|r on the ground.
+    >>Click the |cRXP_PICK_Westfall Deed|r on the ground
     .accept 184 >>Accept Furlbrow's Deed
 step
-	#label Armbands
-    .goto 37,24.36,93.65,30,0
-    .goto 37,26.10,91.95,30,0
-    .goto 37,25.30,88.95,30,0
-    .goto 37,27.80,88.36,30,0
-    .goto 37,27.67,86.21,30,0
-    .goto 37,26.32,86.82,30,0
-    .goto 37,24.36,93.65,30,0
-    .goto 37,26.10,91.95,30,0
-    .goto 37,25.30,88.95,30,0
-    .goto 37,27.80,88.36,30,0
-    .goto 37,27.67,86.21,30,0
-    .goto 37,26.32,86.82
-    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Outrunners|r and loot them for their |cRXP_LOOT_Armbands|r
+    #label Hogger
+    .goto 37,24.85,95.14
+    >>Defeat |cRXP_ENEMY_Hogger|r
+    >>|cRXP_WARN_At <50% health he'll run back to the carcasses, summon |cRXP_ENEMY_Minions of Hogger|r and begin to eat, stunning him and restoring his health very slowly. The |cRXP_ENEMY_Minions of Hogger|r restore 10% Health and Mana to you upon death, have 1 health, and deal 1 damage|r
+    >>|cRXP_WARN_DON'T wait out the RP after you defeat him|r
+    .complete 176,1 --1/1 Dealt with "The Hogger Situation"
+    .mob Hogger
+    .mob Minion of Hogger
+step
+    #requires Deed
+    #loop
+    .goto 37,24.36,93.65,0
+    .goto 37,26.10,91.95,0
+    .goto 37,25.30,88.95,0
+    .goto 37,27.80,88.36,0
+    .goto 37,27.67,86.21,0
+    .goto 37,26.32,86.82,0
+    .goto 37,24.36,93.65,40,0
+    .goto 37,26.10,91.95,40,0
+    .goto 37,25.30,88.95,40,0
+    .goto 37,27.80,88.36,40,0
+    .goto 37,27.67,86.21,40,0
+    .goto 37,26.32,86.82,40,0
+    >>Kill |cRXP_ENEMY_Riverpaw Outrunners|r and |cRXP_ENEMY_Riverpaw Runts|r. Loot them for their |cRXP_LOOT_Painted Gnoll Armbands|r
     .complete 11,1 --8/8 Painted Gnoll Armband
+	.mob Riverpaw Outrunner
+	.mob Riverpaw Runt
 step
-	#completewith next
-    .goto 37,24.36,93.65,30,0
-    .goto 37,26.10,91.95,30,0
-    .goto 37,25.30,88.95,30,0
-    .goto 37,27.80,88.36,30,0
-    .goto 37,27.67,86.21,30,0
-    .goto 37,26.32,86.82,40 >>Check for |cRXP_ENEMY_Gruff Swiftbite|r(Rare) and |cRXP_PICK_Chests|r in ALL the camps.
-	.unitscan Gruff Swiftbite
-step
+    #label Bounty
     .goto 37,24.23,74.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r
     .turnin 11 >>Turn in Riverpaw Gnoll Bounty
@@ -910,9 +925,14 @@ step
     .accept 26209 >>Accept Murder Was The Case That They Gave Me
 	.target Lieutenant Horatio Laine
 step
-    .loop 25,52,58.56,16.21,59.18,18.16,58.12,19.58,57.31,18.33,58.56,16.21
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Homeless Citizens|r, |cRXP_FRIENDLY_West Plains Drifters|r, and |cRXP_FRIENDLY_Transients|r for |cRXP_LOOT_Clues|r.
-    >>|cRXP_WARN_Stay mounted and spam talk to them, ignore them if they turn Hostile|r
+    #loop
+    .goto 52,58.23,18.12,0
+    .goto 52,58.56,16.21,20,0
+    .goto 52,59.18,18.16,20,0
+    .goto 52,58.12,19.58,20,0
+    .goto 52,57.31,18.33,20,0
+    .goto 52,58.56,16.21,20,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Homeless Stormwind Citizens|r, |cRXP_FRIENDLY_West Plains Drifters|r, and |cRXP_FRIENDLY_Transients|r. Pay them for their |cRXP_LOOT_Clues|r.
     .complete 26209,1 --1/1 Clue #1 obtained
     .complete 26209,2 --1/1 Clue #2 obtained
     .complete 26209,3 --1/1 Clue #3 obtained
@@ -920,7 +940,31 @@ step
 	.target Homeless Stormwind Citizen
 	.target West Plains Drifter
     .target Transients
-    .skipgossip 1
+    .skipgossip 42383,1 --Transient
+    .skipgossip 42384,1 --Homeless Stormwind Citizen
+    .skipgossip 42386,1 --Homeless Stormwind Citizen
+    .skipgossip 42391,1 --West Plains Drifter
+    .skill riding,75,1
+step
+    #loop
+    #optional
+    .goto 52,58.23,18.12,0
+    .goto 52,58.56,16.21,20,0
+    .goto 52,59.18,18.16,20,0
+    .goto 52,58.12,19.58,20,0
+    .goto 52,57.31,18.33,20,0
+    .goto 52,58.56,16.21,20,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Homeless Stormwind Citizens|r, |cRXP_FRIENDLY_West Plains Drifters|r, and |cRXP_FRIENDLY_Transients|r for their |cRXP_LOOT_Clues|r.
+    >>|cRXP_WARN_Stay mounted and spam talk to them, ignore them if they turn hostile|r
+    .complete 26209,1 --1/1 Clue #1 obtained
+    .complete 26209,2 --1/1 Clue #2 obtained
+    .complete 26209,3 --1/1 Clue #3 obtained
+    .complete 26209,4 --1/1 Clue #4 obtained
+	.target Homeless Stormwind Citizen
+	.target West Plains Drifter
+    .target Transients
+    .skipgossip 2
+    .skill riding,<75,1
 step
     .goto 52,60.05,19.28,5,0
     .goto 52,60.18,19.37
@@ -930,21 +974,19 @@ step
 	.target Lieutenant Horatio Laine
 step
 	#completewith Horatio
-    .goto 52,56.46,13.26,30 >>Check for a |cRXP_PICK_Chest|r |cFFfa9602in the camp.|r
+    .goto 52,56.46,13.26,30 >>|cRXP_WARN_[CHEST] Check for a |cRXP_PICK_Chest|r in the camp|r
 step
+    #loop
+    .goto 52,56.46,13.26,0
     .goto 52,58.16,10.71,40,0
     .goto 52,57.17,15.12,40,0
     .goto 52,51.38,15.89,40,0
     .goto 52,50.68,14.77,40,0
     .goto 52,56.46,13.26,40,0
-    .goto 52,58.16,10.71,40,0
-    .goto 52,57.17,15.12,40,0
-    .goto 52,51.38,15.89,40,0
-    .goto 52,50.68,14.77,40,0
-    .goto 52,56.46,13.26
-    >>Kill |cRXP_ENEMY_Gnolls|r and loot them for the |cRXP_LOOT_Clue.|r
+    >>Kill |cRXP_ENEMY_Riverpaw Scouts|r and |cRXP_ENEMY_Riverpaw Gnolls|r. Loot them for the |cRXP_LOOT_Riverpaw Gnoll Clue|r
     .complete 26213,1 --1/1 Riverpaw Gnoll Clue
-	.target Riverpaw Scout
+	.mob Riverpaw Scout
+	.mob Riverpaw Gnoll
 step
 	#label Horatio
     .goto 52,60.05,19.28,5,0
@@ -1005,14 +1047,16 @@ step
     .goto 37,64.7,56.73,30 >>Check for the |cRXP_PICK_Chest|r |cFFfa9602in the Kobold Camp.|r
     .isOnQuest 35
 step
-    .goto 37,61.70,53.83,20 >> Enter the |cFFfa9602Jasperlode Mine.|r
-    .isOnQuest 35
+    #completewith next
+    .goto 37,61.65,53.93,12,0
+    .goto 40,48.05,87.33
+    .subzone 54 >>Enter the Jasperlode Mine
 step
-    .goto 40,45.11,67.29,20,0
-    .goto 40,38.43,61.58,20,0
-    .goto 40,37.01,50.26
-    >>Keep following |cFFfa9602the middle path inside the mine.|r
-    .complete 76,1 --Scout through the Jasperlode Mine
+    .goto 40,44.22,67.89,12,0
+    .goto 40,38.71,60.84,12,0
+    .goto 40,35.92,52.81
+    >>Follow the middle path inside Jasperlode Mine
+    .complete 76,1 --Scout Through the Jasperlode Mine (1)
 step
 	.goto 40,31.02,37.51,20,0
     .goto 40,37.01,50.26,20,0
@@ -1022,220 +1066,277 @@ step
 	.unitscan Mother Fang
     .isOnQuest 35
 step
+    #completewith next
+    .goto 37,61.58,70.04,0
+    .deathskip >> Die and Respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .isOnQuest 35
-    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .skill riding,75,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r and the |cRXP_FRIENDLY_Bounty Board|r
     .turnin 35 >>Turn in Further Concerns
     .accept 37 >>Accept Find the Lost Guards
     .accept 52 >>Accept Protect the Frontier
-    .goto 37,73.97,72.18
+    .goto 37,73.973,72.177
     .accept 46 >>Accept Bounty on Murlocs
     .accept 26152 >>Accept WANTED: James Clark
-    .goto 37,74.03,72.31
+    .goto 37,74.025,72.310
 	.target Guard Thomas
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r.
-    >>|cRXP_WARN_Prioritize the |cRXP_ENEMY_Bears|r|r
-    .complete 52,1 --8/8 Prowler or Forest Wolf slain
-    .complete 52,2 --5/5 Young Forest Bear slain
-	.target Prowler
-	.target Young Forest Bear
+    >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Gray Forest Wolves|r
+    >>Kill any |cRXP_ENEMY_Young Forest Bears|r you see
+    .complete 52,1 --Kill Prowler or Forest Wolf (8)
+    .complete 52,2 --Kill Young Forest Bear (5)
+    .mob Prowler
+    .mob Gray Forest Wolf
+    .mob Young Forest Bear
 step
     .goto 37,82.95,84.82,40 >> Check for |cRXP_ENEMY_Bushtail|r.
     .isOnQuest 52
 	.unitscan Bushtail
 step
 	#completewith next
-	>>Kill |cRXP_ENEMY_Murlocs|r and loot them for their |cRXP_LOOT_Fins|r
-    .complete 46,1,4 --8/8 Torn Murloc Fin
-	.target Murloc Lurker
-	.target Murloc Forager
+    .goto 37,75.71,86.29,0
+    >>Kill |cRXP_ENEMY_Murloc Foragers|r and |cRXP_ENEMY_Murloc Lurkers|r. Loot them for their |cRXP_LOOT_Torn Murloc Fins|r
+    .complete 46,1,4 --Torn Murloc Fin (4/8)
+    .mob Murloc Forager
+    .mob Murloc Lurker
 step
     .goto 37,75.71,86.29,30,0
     .goto 37,77.55,85.75
-    .deathskip >> Kill|cRXP_ENEMY_Murlocs|r and loot them for their |cRXP_LOOT_Fins|r |cRXP_WARN_while dying to them|r then respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .deathskip >> Kill |cRXP_ENEMY_Murloc Foragers|r and |cRXP_ENEMY_Murloc Lurkers|r. Loot them for their |cRXP_LOOT_Torn Murloc Fins|r |cRXP_WARN_while dying to them|r. Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .isOnQuest 46
+    .skill riding,75,1
 step
-    .goto 37,83.28,66.09
+    .goto 37,83.283,66.089
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rallic Finn|r
-    .vendor 1198 >>Vendor and Repair
+    .vendor 1198 >> Vendor and Repair
 	.target Rallic Finn
 	.isOnQuest 52
 step
-    .goto 37,79.46,68.72
+    .goto 37,79.462,68.715
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sara Timberlain|r
     .accept 83 >>Accept Fine Linen Goods
-	.target Sara Timberlain
+    .target Sara Timberlain
 step
     .goto 37,78.87,67.20,10,0
-    .goto 37,78.61,67.08
-    >>Kill |cRXP_ENEMY_James|r and loot him for his |cRXP_LOOT_Head|r and |cRXP_LOOT_Schedule.|r
-    .complete 26152,1 --1/1 James Clark's Head
-	.collect 1307,1,123,1 --Gold Pickup Schedule (1)
+    .goto 37,78.637,67.157
+    >>Kill |cRXP_FRIENDLY_James Clark|r inside. Loot him for |cRXP_LOOT_James Clark's Head|r and the |T134939:0|t|cRXP_LOOT_[Gold Pickup Schedule]|r
+    .complete 26152,1 --James Clark's Head (1)
+    .collect 1307,1,123,1 --Gold Pickup Schedule (1)
+    >>|cRXP_WARN_Use the |T134939:0|t|cRXP_LOOT_[Gold Pickup Schedule]|r to start the quest|r
     .accept 123 >>Accept The Collector
-	.target James Clark
+    .mob James Clark
+    .use 1307
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Supervisor Raelen|r and |cRXP_FRIENDLY_Marshal Patterson|r
-    .accept 5545 >>Accept A Bundle of Trouble
-    .goto 37,81.38,66.11
+    .goto 37,81.382,66.112
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Supervisor Raelen|r
+    .accept 5545 >> Accept A Bundle of Trouble
+    .target Supervisor Raelen
+step
+    .goto 37,81.860,66.040
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Patterson|r
+    .turnin 26152 >>Turn in WANTED: James Clark
     .turnin 123 >>Turn in The Collector
     .accept 147 >>Accept Manhunt
-    .turnin 26152 >>Turn in WANTED: James Clark
-    .goto 37,81.86,66.04
-	.target Supervisor Raelen
-	.target Marshal Patterson
+    .target Marshal Patterson
 step
-    #completewith Bundles
-    >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r.
-    >>|cRXP_WARN_Prioritize the |cRXP_ENEMY_Bears|r|r
-    .complete 52,1 --8/8 Prowler or Forest Wolf slain
-    .complete 52,2 --5/5 Young Forest Bear slain
-	.target Prowler
-	.target Gray Forest Wolf
-	.target Young Forest Bear
+    #completewith StoneCairn
+    .goto 37,81.72,58.57,0
+    .goto 37,77.99,60.59,0
+    .goto 37,71.58,60.84,0
+    .goto 37,74.75,67.13,0
+    .goto 37,87.15,64.63,0
+    >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Gray Forest Wolves|r
+    >>Kill any |cRXP_ENEMY_Young Forest Bears|r you see
+    .complete 52,1 --Kill Prowler or Forest Wolf (8)
+    .complete 52,2 --Kill Young Forest Bear (5)
+    .mob Prowler
+    .mob Gray Forest Wolf
+    .mob Young Forest Bear
 step
     #completewith next
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Bundles of Wood|r |cFFfa9602on the ground|r and |cFFfa9602around the trees.|r
-    .complete 5545,1 --8/8 Bundle of Wood
+    .goto 37,80.88,53.78,0
+    .goto 37,80.63,62.25,0
+    .goto 37,82.79,60.12,0
+    >>Loot |cRXP_LOOT_Bundles of Wood|r on the ground next to the trees
+    .complete 5545,1 -- Bundle of Wood (8)
 step
     #label LostGuards
-    .goto 37,72.65,60.33
-    >>Interact with the |cRXP_FRIENDLY_Carcass|r |cFFfa9602on the ground.|r
+    .goto 37,72.653,60.323
+    >>Click |cRXP_PICK_A half-eaten body|r on the ground
     .turnin 37 >>Turn in Find the Lost Guards
     .accept 45 >>Accept Discover Rolf's Fate
 step
-	#label Bundles
-    .goto 37,75.92,62.36,40,0
-    .goto 37,77.17,63.04,40,0
-    .goto 37,78.93,61.10,40,0
-    .goto 37,81.27,61.58,40,0
-    .goto 37,85.13,61.12,40,0
-    .goto 37,83.48,59.18,40,0
-    .goto 37,79.77,56.70,40,0
-    .goto 37,80.04,50.42,40,0
-    .goto 37,75.92,62.36,40,0
-    .goto 37,77.17,63.04,40,0
-    .goto 37,78.93,61.10,40,0
-    .goto 37,81.27,61.58,40,0
-    .goto 37,85.13,61.12,40,0
-    .goto 37,83.48,59.18,40,0
-    .goto 37,79.77,56.70,40,0
-    .goto 37,80.04,50.42
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Bundles of Wood|r |cFFfa9602on the ground|r and |cFFfa9602around the trees.|r
-    .complete 5545,1 --8/8 Bundle of Wood
+    #label Bundles
+    #loop
+    .goto 37,80.88,53.78,0
+    .goto 37,80.63,62.25,0
+    .goto 37,82.79,60.12,0
+    .goto 37,76.75,61.76,20,0
+    .goto 37,77.13,63.00,20,0
+    .goto 37,78.38,62.35,20,0
+    .goto 37,79.30,63.34,20,0
+    .goto 37,80.24,61.47,20,0
+    .goto 37,80.63,62.25,20,0
+    .goto 37,81.57,62.64,20,0
+    .goto 37,81.27,61.59,20,0
+    .goto 37,82.00,61.01,20,0
+    .goto 37,83.27,61.12,20,0
+    .goto 37,84.20,61.55,20,0
+    .goto 37,83.85,60.48,20,0
+    .goto 37,82.79,60.12,20,0
+    .goto 37,80.88,53.78,20,0
+    .goto 37,80.48,55.18,20,0
+    .goto 37,79.79,56.71,20,0 --Not Exact
+    .goto 37,79.04,59.56,20,0
+    .goto 37,77.30,59.56,20,0 --Not Exact/Real
+    .goto 37,77.18,60.65,20,0 --Not Exact/Real
+    >>Loot |cRXP_LOOT_Bundles of Wood|r on the ground next to the trees
+    .complete 5545,1 -- Bundle of Wood (8)
 step
-    .goto 37,81.38,58.74,40,0
-    .goto 37,86.59,63.45,40,0
-    .goto 37,86.84,64.92,40,0
-    .goto 37,88.01,65.01,40,0
-    .goto 37,87.16,70.20,40,0
-    .goto 37,81.38,58.74,40,0
-    .goto 37,86.59,63.45,40,0
-    .goto 37,86.84,64.92,40,0
-    .goto 37,88.01,65.01,40,0
-    .goto 37,87.16,70.20
-    >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r.
-    >>|cRXP_WARN_Prioritize the |cRXP_ENEMY_Bears|r|r
-    .complete 52,1 --8/8 Prowler or Forest Wolf slain
-    .complete 52,2 --5/5 Young Forest Bear slain
-	.target Prowler
-	.target Gray Forest Wolf
-	.target Young Forest Bear
-step
-    .goto 37,79.80,55.51
-    >>Interact with the |cRXP_FRIENDLY_Carcass|r |cFFfa9602on the ground.|r
-    .turnin 45 >>Turn in Discover Rolf's Fate
-    .accept 71 >>Accept Report to Thomas
- step
-    .goto 37,79.26,54.05,30,0
-    .goto 37,78.74,55.90,30,0
-    .goto 37,79.31,57.13,30,0
-    .goto 37,77.65,57.70,30,0
-    .goto 37,79.26,54.05,30,0
-    .goto 37,78.74,55.90,30,0
-    .goto 37,79.31,57.13,30,0
-    .goto 37,77.65,57.70
-	>>Kill |cRXP_ENEMY_Murloc Foragers|r and |cRXP_ENEMY_Lurkers|r and loot them for their |cRXP_LOOT_Fins|r
-    .complete 46,1 --8/8 Torn Murloc Fin
-	.target Murloc Lurker
-	.target Murloc Forager
+    #label StoneCairn
+    .goto 37,79.795,55.510
+    .subzone 86 >> Travel toward Stone Cairn Lake
+    .isOnQuest 45
 step
     #completewith next
-    .goto 37,77.65,57.70
-    .deathskip >>Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r.
-    >>|cRXP_WARN_Skip this if you're not low on health.|r
+    .goto 37,78.837,55.770,0
+    >>Kill |cRXP_ENEMY_Murloc Foragers|r and |cRXP_ENEMY_Murloc Lurkers|r. Loot them for their |cRXP_LOOT_Torn Murloc Fins|r
+    .complete 46,1 --Torn Murloc Fin (8)
+    .mob Murloc Forager
+    .mob Murloc Lurker
 step
-    .goto 37,73.97,72.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thomas|r
-    .turnin 46,1 >>Turn in Bounty on Murlocs
-    .turnin 52 >>Turn in Protect the Frontier
-    .accept 59 >>Accept Cloth and Leather Armor
-    .turnin 71 >>Turn in Report to Thomas
-    .target Thomas
+    .goto 37,79.795,55.510
+    >>Click |cRXP_PICK_Rolf's corpse|r on the ground
+    .turnin 45 >>Turn in Discover Rolf's Fate
+    .accept 71 >>Accept Report to Thomas
+step
+    .goto 37,78.837,55.770,0
+    .goto 37,80.004,53.783,40,0
+    .goto 37,79.222,54.041,40,0
+    .goto 37,78.554,55.834,40,0
+    .goto 37,77.474,57.257,40,0
+    .goto 37,77.991,58.108,40,0
+    .goto 37,79.370,57.016,40,0
+    >>Kill |cRXP_ENEMY_Murloc Foragers|r and |cRXP_ENEMY_Murloc Lurkers|r. Loot them for their |cRXP_LOOT_Torn Murloc Fins|r
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Murloc Foragers|r will cast|r |T135915:0|t[Drink Minor Potion] |cRXP_WARN_which heals themselves for 61-68 health|r
+    .complete 46,1 --Torn Murloc Fin (8)
+    .mob Murloc Forager
+    .mob Murloc Lurker
+step << skip
+    #completewith next
+    .goto 37,77.65,57.70
+    >>|cRXP_WARN_Skip this if you're not low at health|r
+    .deathskip >>Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+step
+    #loop
+    .goto 37,81.72,58.57,0
+    .goto 37,77.99,60.59,0
+    .goto 37,71.58,60.84,0
+    .goto 37,74.75,67.13,0
+    .goto 37,87.15,64.63,0
+    .goto 37,81.72,58.57,60,0
+    .goto 37,77.99,60.59,60,0
+    .goto 37,71.58,60.84,60,0
+    .goto 37,74.75,67.13,60,0
+    .goto 37,87.15,64.63,60,0
+    >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Gray Forest Wolves|r
+    >>Kill any |cRXP_ENEMY_Young Forest Bears|r you see
+    .complete 52,1 --Kill Prowler or Forest Wolf (8)
+    .complete 52,2 --Kill Young Forest Bear (5)
+    .mob Prowler
+    .mob Gray Forest Wolf
+    .mob Young Forest Bear
+step
+    .goto 37,73.973,72.177
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
+    .turnin 46 >> Turn in Bounty on Murlocs
+    .turnin 52 >> Turn in Protect the Frontier
+    .turnin 71 >> Turn in Report to Thomas
+    .accept 59 >> Accept Cloth and Leather Armor
+    .target Guard Thomas
 step
     #completewith Morgan
-    >>Kill |cRXP_ENEMY_Bandits|r and loot them for their |cRXP_LOOT_Scraps.|r
-    .complete 83,1 --6/6 Linen Scrap
-	.target Bandit
+    >>Kill |cRXP_ENEMY_Bandits|r, |cRXP_ENEMY_Erlan Drudgemoor|r inside, and |cRXP_ENEMY_Surena Caledon|r inside. Loot them for their |cRXP_LOOT_Linen Scraps|r
+    .complete 83,1 --Collect Linen Scrap (6)
+    .mob Bandit
+    .mob Erlan Drudgemoor
+    .mob Surena Caledon
 step
     .goto 37,69.32,79.31,30 >>Check for |cRXP_ENEMY_Snoot the Rooter|r (Rare).
 	.unitscan Snoot the Rooter
     .isOnQuest 83
-step
-	#label Morgan
-    .goto 37,71.01,80.69
-    >>Kill |cRXP_ENEMY_Morgan the Collector|r |cFFfa9602in the house.|r and loot him for the |cRXP_LOOT_Ring|r.
     >>|cRXP_WARN_Check for a |cRXP_PICK_Chest|r |cFFfa9602in|r and |cFFfa9602around the house.|r|r
-    .complete 147,1 --1/1 The Collector's Ring
-	.target Morgan the Collector
+    >>|cRXP_WARN_Check for a |cRXP_PICK_Chest|r |cFFfa9602in|r and |cFFfa9602around the barn.|r|r 
 step
-    .goto 37,70.96,77.21,10,0
-    .goto 37,71.25,76.82,10,0
-    .goto 37,68.12,77.59,30,0
-    .goto 37,67.96,81.35,30,0
-    .goto 37,68.42,82.69,30,0
-    .goto 37,71.02,80.68,30,0
-    .goto 37,70.80,77.93,30,0
-    .goto 37,68.12,77.59,30,0
-    .goto 37,67.96,81.35,30,0
-    .goto 37,68.42,82.69,30,0
-    .goto 37,71.02,80.68,30,0
-    .goto 37,70.80,77.93
-    >>Kill |cRXP_ENEMY_Bandits|r and loot them for their |cRXP_LOOT_Scraps.|r
-    >>|cRXP_WARN_Check for a |cRXP_PICK_Chest|r |cFFfa9602in|r and |cFFfa9602around the barn.|r|r
-    .complete 83,1 --6/6 Linen Scrap
-	.target Bandit
+    #optional
+    #label Morgan
+    .goto 37,71.02,80.67
+    >>Kill |cRXP_ENEMY_Morgan the Collector|r inside. Loot him for |cRXP_LOOT_The Collector's Ring|r and |cRXP_LOOT_Linen Scraps|r
+    .complete 147,1 --The Collector's Ring (1)
+    .complete 83,1 --Collect Linen Scrap (6)
+    .disablecheckbox
+    .mob Morgan the Collector
+    .itemcount 1019,<6
+    .isOnQuest 83
+step
+    .goto 37,71.02,80.67
+    >>Kill |cRXP_ENEMY_Morgan the Collector|r inside. Loot him for |cRXP_LOOT_The Collector's Ring|r
+    .complete 147,1 --The Collector's Ring (1)
+    .mob Morgan the Collector
+step
+    #loop
+    .goto 37,68.56,82.68,0
+    .goto 37,67.63,78.01,0
+    .goto 37,68.23,76.33,0
+    .goto 37,71.31,76.93,0
+    .goto 37,71.81,78.51,0
+    .goto 37,70.62,80.73,50,0
+    .goto 37,68.56,82.68,50,0
+    .goto 37,67.83,80.86,50,0
+    .goto 37,67.63,78.01,50,0
+    .goto 37,68.55,77.39,50,0
+    .goto 37,68.23,76.33,50,0
+    .goto 37,70.97,77.21,10,0
+    .goto 37,71.31,76.93,10,0
+    .goto 37,70.84,78.22,50,0
+    .goto 37,71.81,78.51,50,0
+    >>Kill |cRXP_ENEMY_Bandits|r. Loot them for their |cRXP_LOOT_Linen Scraps|r
+    .complete 83,1 --Collect Linen Scrap (6)
+    .mob Bandit
 step
     .goto 37,75.71,86.29,30,0
-    .goto 37,77.55,85.75
+    .goto 37,77.55,85.75,-1
+    .goto 37,83.68,69.74,-1
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .isOnQuest 83
 step
-    .goto 37,83.28,66.09
+    .goto 37,83.283,66.089
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rallic Finn|r
     .vendor 1198 >>Vendor and Repair
 	.target Rallic Finn
 	.isOnQuest 59
 step << !DarkIronDwarf !KulTiran !LightforgedDraenei !Mechagnome !VoidElf
-    .goto 37,81.81,66.49,0,0
+    .goto 37,81.829,66.556
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Goss the Swift|r
     .fp Eastvale Logging Camp >> Get the Eastvale Logging Camp flight path
 	.target Goss the Swift
     .isOnQuest 147
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Patterson|r and |cRXP_FRIENDLY_Supervisor Raelen|r
+    .goto 37,81.860,66.040
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Patterson|r
     .turnin 147 >>Turn in Manhunt
-    .goto 37,81.86,66.04
-    .turnin 5545 >>Turn in A Bundle of Trouble
-    .goto 37,81.38,66.11
-	.target Marshal Patterson
-	.target Supervisor Raelen
+    .target Marshal Patterson
 step
-    .goto 37,79.46,68.72
+    .goto 37,81.382,66.112
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Supervisor Raelen|r
+    .turnin 5545 >> Turn in A Bundle of Trouble
+    .target Supervisor Raelen
+step
+    .goto 37,79.462,68.715
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sara Timberlain|r
-    .turnin 59 >>Turn in Cloth and Leather Armor
-    .turnin 83 >>Turn in Fine Linen Goods
-	.target Sara Timberlain
+    .turnin 83 >> Turn in Fine Linen Goods
+    .turnin 59 >> Turn in Cloth and Leather Armor
+    .target Sara Timberlain
 ]])
