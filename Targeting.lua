@@ -137,8 +137,7 @@ function addon.targeting:UpdateMacro(queuedTargets)
         CreateMacro(self.macroName, "Ability_eyeoftheowl", "")
     end
 
-    for t in pairs(lowPrioTargets) do tinsert(targets, t) end
-    for _, t in ipairs(targetList) do
+    for _, t in ipairs(unitscanList) do
         if not lowPrioTargets[t] then tinsert(targets, t) end
     end
 
@@ -146,9 +145,11 @@ function addon.targeting:UpdateMacro(queuedTargets)
         if not lowPrioTargets[t] then tinsert(targets, t) end
     end
 
-    for _, t in ipairs(unitscanList) do
+    for _, t in ipairs(targetList) do
         if not lowPrioTargets[t] then tinsert(targets, t) end
     end
+
+    for t in pairs(lowPrioTargets) do tinsert(targets, t) end
 
     -- Removes duplicate entries:
     local npcNames = {}
@@ -162,7 +163,8 @@ function addon.targeting:UpdateMacro(queuedTargets)
     end
 
     local content
-    for _, t in ipairs(targets) do
+    for n = #targets,1,-1 do
+        local t = targets[n]
         if t then
             if content then
                 content = fmt('%s\n/targetexact %s', content, t)
@@ -648,7 +650,30 @@ function addon.targeting:UpdateUnitList()
     end
 end
 
+local function FilterList(list)
+    local u = {}
+    for i,unit in pairs(list) do
+        if unit:sub(1,1) == "*" then
+            local name = unit:sub(2,-1)
+            u[i] = name
+        end
+    end
+    local size = #list
+    for n = size,1,-1 do
+        if u[n] then
+            table.remove(list,n)
+        end
+    end
+    for n = 1,size do
+        local name = u[n]
+        if name then
+            table.insert(list,name)
+        end
+    end
+end
+
 function addon.targeting:UpdateTargetList(targets, addEntries)
+    FilterList(targets)
     if addEntries then
         local update
         for _, unit in ipairs(targets) do
@@ -691,6 +716,9 @@ function addon.targeting:UpdateTargetList(targets, addEntries)
 end
 
 function addon.targeting:UpdateEnemyList(unitscan, mobs, addEntries)
+    FilterList(unitscan)
+    FilterList(mobs)
+
     if addEntries then
         local update
         for _, unit in ipairs(unitscan) do
