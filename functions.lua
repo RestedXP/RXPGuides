@@ -50,6 +50,9 @@ events.collecttoy = "TOYS_UPDATED"
 events.collectpet = {"COMPANION_LEARNED", "COMPANION_UNLEARNED", "COMPANION_UPDATE", "NEW_PET_ADDED"}
 events.tradeskill = events.train
 events.cooldown = "SPELL_UPDATE_COOLDOWN"
+events.mob = "UNIT_TARGET"
+events.unitscan = "UNIT_TARGET"
+events.target = "UNIT_TARGET"
 
 events.bankwithdraw = events.bankdeposit
 events.abandon = events.complete
@@ -3318,16 +3321,39 @@ function addon.functions.cast(self, ...)
     end
 end
 
+local function UpdateTargets(element,context)
+    if not element.parent then return end
+    if element.parent.completed or element.parent.skip then
+        if element.step.active and element[context] then
+            addon:ScheduleTask(addon.targeting.UpdateUnitList)
+        end
+        element[context] = nil
+    else
+        if element.step.active and not element[context] then
+            addon:ScheduleTask(addon.targeting.UpdateUnitList)
+        end
+        element[context] = element.unitlist
+    end
+end
+
 function addon.functions.unitscan(self, text, ...)
     if type(self) == "string" then
         local element = {}
 
         if text and text ~= "" then element.text = text end
         element.textOnly = true
-        element.unitscan = {...}
+        local t = {...}
+        element.unitscan = t
+        local prefix = t[1]
+        if prefix:sub(1,1) == "+" then
+            t[1] = prefix:sub(2,-1)
+            element.unitlist = t
+            element.parent = true
+        end
         return element
     end
 
+    UpdateTargets(self.element,"unitscan")
 end
 
 function addon.functions.target(self, text, ...)
@@ -3336,9 +3362,18 @@ function addon.functions.target(self, text, ...)
 
         if text and text ~= "" then element.text = text end
         element.textOnly = true
-        element.targets = {...}
+        local t = {...}
+        element.targets = t
+        local prefix = t[1]
+        if prefix:sub(1,1) == "+" then
+            t[1] = prefix:sub(2,-1)
+            element.unitlist = t
+            element.parent = true
+        end
         return element
     end
+
+    UpdateTargets(self.element,"targets")
 end
 
 function addon.functions.mob(self, text, ...)
@@ -3347,9 +3382,18 @@ function addon.functions.mob(self, text, ...)
 
         if text and text ~= "" then element.text = text end
         element.textOnly = true
-        element.mobs = {...}
+        local t = {...}
+        element.mobs = t
+        local prefix = t[1]
+        if prefix:sub(1,1) == "+" then
+            t[1] = prefix:sub(2,-1)
+            element.unitlist = t
+            element.parent = true
+        end
         return element
     end
+
+    UpdateTargets(self.element,"mobs")
 end
 
 local BLquests = {
