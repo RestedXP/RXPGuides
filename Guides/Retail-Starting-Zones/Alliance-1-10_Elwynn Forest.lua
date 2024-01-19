@@ -38,15 +38,15 @@ step
     .goto 425,26.25,40.59,40,0
     .goto 425,26.09,53.65,40,0
     >>Kill |cRXP_ENEMY_Blackrock Worgs|r
-    .complete 28757,1 << Human Mage/KulTiran Mage --6/6 Blackrock Worg slain
-    .complete 28762,1 << Human Paladin --6/6 Blackrock Worg slain
-    .complete 28763,1 << Human Priest/KulTiran Priest --6/6 Blackrock Worg slain
-    .complete 28764,1 << Human Rogue/KulTiran Rogue --6/6 Blackrock Worg slain
-    .complete 28765,1 << Human Warlock/KulTiran Warlock --6/6 Blackrock Worg slain
-    .complete 28766,1 << Human Warrior/KulTiran Warrior --6/6 Blackrock Worg slain
-    .complete 28767,1 << Human Hunter/KulTiran Hunter --6/6 Blackrock Worg slain
-    .complete 29078,1 << !Human !KulTiran --6/6 Blackrock Worg slain
-    .complete 31139,1 << Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman --6/6 Blackrock Worg slain
+    .complete 28757,1 << Human Mage/KulTiran Mage --Blackrock Worgs (6)
+    .complete 28762,1 << Human Paladin --Blackrock Worgs (6)
+    .complete 28763,1 << Human Priest/KulTiran Priest --Blackrock Worgs (6)
+    .complete 28764,1 << Human Rogue/KulTiran Rogue --Blackrock Worgs (6)
+    .complete 28765,1 << Human Warlock/KulTiran Warlock --Blackrock Worgs (6)
+    .complete 28766,1 << Human Warrior/KulTiran Warrior --Blackrock Worgs (6)
+    .complete 28767,1 << Human Hunter/KulTiran Hunter --Blackrock Worgs (6)
+    .complete 29078,1 << !Human !KulTiran --Blackrock Worgs (6)
+    .complete 31139,1 << Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman --Blackrock Worgs (6)
     .mob Blackrock Worg
 step
     .goto 425,33.56,53.04
@@ -84,15 +84,15 @@ step
     .goto 425,26.60,54.71,40,0
     >>Kill |cRXP_ENEMY_Blackrock Spies|r
     >>|cRXP_WARN_They are|r |T132320:0|t[Stealthed] |cRXP_WARN_(but easily visible)|r
-    .complete 28759,1 << Human Hunter/KulTiran Hunter --8/8 Blackrock Spy slain
-    .complete 28769,1 << Human Mage/KulTiran Mage--8/8 Blackrock Spy slain
-    .complete 28770,1 << Human Paladin --8/8 Blackrock Spy slain
-    .complete 28771,1 << Human Priest/KulTiran Priest --8/8 Blackrock Spy slain
-    .complete 28772,1 << Human Rogue/KulTiran Rogue --8/8 Blackrock Spy slain
-    .complete 28773,1 << Human Warlock/KulTiran Warlock --8/8 Blackrock Spy slain
-    .complete 28774,1 << Human Warrior/KulTiran Warrior --8/8 Blackrock Spy slain
-    .complete 29079,1 << !Human !KulTiran --8/8 Blackrock Spy slain
-    .complete 31140,1 << Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman --8/8 Blackrock Spy slain
+    .complete 28759,1 << Human Hunter/KulTiran Hunter --Blackrock Spies (8)
+    .complete 28769,1 << Human Mage/KulTiran Mage--Blackrock Spies (8)
+    .complete 28770,1 << Human Paladin --Blackrock Spies (8)
+    .complete 28771,1 << Human Priest/KulTiran Priest --Blackrock Spies (8)
+    .complete 28772,1 << Human Rogue/KulTiran Rogue --Blackrock Spies (8)
+    .complete 28773,1 << Human Warlock/KulTiran Warlock --Blackrock Spies (8)
+    .complete 28774,1 << Human Warrior/KulTiran Warrior --Blackrock Spies (8)
+    .complete 29079,1 << !Human !KulTiran --Blackrock Spies (8)
+    .complete 31140,1 << Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman --Blackrock Spies (8)
     .mob Blackrock Spy
 step
     .goto 425,33.56,53.04
@@ -174,15 +174,15 @@ step
     .goto 425,33.45,24.77,15,0
     .goto 425,36.08,23.69,15,0
     >>Click the |cRXP_PICK_Injured Stormwind Infantries|r on the ground to revive them
-    .complete 28806,1 << Human Hunter/KulTiran Hunter --4/4 Injured Soldier revived
-    .complete 28808,1 << Human Mage/KulTiran Mage --4/4 Injured Soldier revived
-    .complete 28809,1 << Human Paladin --4/4 Injured Soldier revived
-    .complete 28810,1 << Human Priest/KulTiran Priest --4/4 Injured Soldier revived
-    .complete 28811,1 << Human Rogue/KulTiran Rogue --4/4 Injured Soldier revived
-    .complete 28812,1 << Human Warlock/KulTiran Warlock --4/4 Injured Soldier revived
-    .complete 28813,1 << Human Warrior/KulTiran Warrior --4/4 Injured Soldier revived
-    .complete 29082,1 << !Human !KulTiran --4/4 Injured Soldier revived
-    .complete 63447,1 << Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman --4/4 Injured Soldier revived
+    .complete 28806,1 << Human Hunter/KulTiran Hunter --Revive Injured Soldiers (4)
+    .complete 28808,1 << Human Mage/KulTiran Mage --Revive Injured Soldiers (4)
+    .complete 28809,1 << Human Paladin --Revive Injured Soldiers (4)
+    .complete 28810,1 << Human Priest/KulTiran Priest --Revive Injured Soldiers (4)
+    .complete 28811,1 << Human Rogue/KulTiran Rogue --Revive Injured Soldiers (4)
+    .complete 28812,1 << Human Warlock/KulTiran Warlock --Revive Injured Soldiers (4)
+    .complete 28813,1 << Human Warrior/KulTiran Warrior --Revive Injured Soldiers (4)
+    .complete 29082,1 << !Human !KulTiran --Revive Injured Soldiers (4)
+    .complete 63447,1 << Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman --Revive Injured Soldiers (4)
     .target Injured Stormwind Infantry
 step
     #loop
@@ -197,15 +197,15 @@ step
     .goto 425,28.45,27.49,45,0
     .goto 425,27.16,18.98,45,0
     >>Kill |cRXP_ENEMY_Goblin Assassins|r
-    .complete 28791,1 << Human Hunter/KulTiran Hunter --8/8 Goblin Assassin slain
-    .complete 28792,1 << Human Mage/KulTiran Mage --8/8 Goblin Assassin slain
-    .complete 28793,1 << Human Paladin --8/8 Goblin Assassin slain
-    .complete 28794,1 << Human Priest/KulTiran Priest --8/8 Goblin Assassin slain
-    .complete 28795,1 << Human Rogue/KulTiran Rogue --8/8 Goblin Assassin slain
-    .complete 28796,1 << Human Warlock/KulTiran Warlock --8/8 Goblin Assassin slain
-    .complete 28797,1 << Human Warrior/KulTiran Warrior --8/8 Goblin Assassin slain
-    .complete 29081,1 << !Human !KulTiran --8/8 Goblin Assassin slain
-    .complete 31144,1 << Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman --8/8 Goblin Assassin slain
+    .complete 28791,1 << Human Hunter/KulTiran Hunter --Goblin Assassins (8)
+    .complete 28792,1 << Human Mage/KulTiran Mage --Goblin Assassins (8)
+    .complete 28793,1 << Human Paladin --Goblin Assassins (8)
+    .complete 28794,1 << Human Priest/KulTiran Priest --Goblin Assassins (8)
+    .complete 28795,1 << Human Rogue/KulTiran Rogue --Goblin Assassins (8)
+    .complete 28796,1 << Human Warlock/KulTiran Warlock --Goblin Assassins (8)
+    .complete 28797,1 << Human Warrior/KulTiran Warrior --Goblin Assassins (8)
+    .complete 29081,1 << !Human !KulTiran --Goblin Assassins (8)
+    .complete 31144,1 << Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman --Goblin Assassins (8)
     .mob Goblin Assassin
 step
     #requires Soldiers
@@ -261,10 +261,10 @@ step
     .turnin 31145 >>Turn in The Rear is Clear << Human Death Knight/Human Monk
     .accept 26389 >>Accept Blackrock Invasion
     .goto 425,33.56,53.04
+    .target +Marshal McBride
     .accept 26391 >>Accept Extinguishing Hope
     .goto 425,33.38,54.67
-    .target Marshal McBride
-    .target Milly Osworth
+    .target +Milly Osworth
 step << skip
     #completewith next
     +|cRXP_WARN_To enable keybinding for quest items, follow these steps:|r
@@ -296,7 +296,7 @@ step
     .goto 425,53.67,68.68,20,0
     .goto 425,50.63,73.13,20,0
     >>Use and then channel |T308321:0|t[Milly's Fire Extinguisher] near the |cRXP_PICK_Vineyard Fires|r
-    .complete 26391,1 --8/8 Vineyard Fire extinguished
+    .complete 26391,1 --Vineyard Fire extinguished (8)
     .use 58362
 step
     #loop
@@ -309,7 +309,7 @@ step
     .goto 425,57.48,71.22,50,0
     .goto 425,56.07,62.66,50,0
     >>Kill |cRXP_ENEMY_Blackrock Invaders|r. Loot them for |cRXP_LOOT_Blackrock Orc Weapons|r
-    .complete 26389,1 --8/8 Blackrock Orc Weapon
+    .complete 26389,1 --Blackrock Orc Weapon (8)
     .mob Blackrock Invader
 step
     #softcore
@@ -333,7 +333,7 @@ step
 step
     .goto 425,64.97,48.38
     >>Kill |cRXP_ENEMY_Kurtok the Slayer|r
-    .complete 26390,1 --1/1 Kurtok the Slayer slain
+    .complete 26390,1 --Kill Kurtok the Slayer (1)
     .mob Kurtok the Slayer
 step
     #softcore
@@ -841,17 +841,25 @@ step
     +|cRXP_WARN_[RARE & CHEST] Keep an eye out for |cRXP_PICK_Chests|r and |cRXP_ENEMY_Gruff Swiftbite|r in the camps. Kill him if he's up|r
 	.unitscan Gruff Swiftbite
 step
-    #completewith Hogger
+    #sticky
+    #label Armbands
+    #loop
     .goto 37,24.36,93.65,0
     .goto 37,26.10,91.95,0
     .goto 37,25.30,88.95,0
     .goto 37,27.80,88.36,0
     .goto 37,27.67,86.21,0
     .goto 37,26.32,86.82,0
+    .waypoint 37,24.36,93.65,40,0
+    .waypoint 37,26.10,91.95,40,0
+    .waypoint 37,25.30,88.95,40,0
+    .waypoint 37,27.80,88.36,40,0
+    .waypoint 37,27.67,86.21,40,0
+    .waypoint 37,26.32,86.82,40,0
     >>Kill |cRXP_ENEMY_Riverpaw Outrunners|r and |cRXP_ENEMY_Riverpaw Runts|r. Loot them for their |cRXP_LOOT_Painted Gnoll Armbands|r
     .complete 11,1 --8/8 Painted Gnoll Armband
-	.mob Riverpaw Outrunner
-	.mob Riverpaw Runt
+	.mob *Riverpaw Outrunner
+	.mob *Riverpaw Runt
 step
     #sticky
     #label Deed
@@ -868,26 +876,12 @@ step
     .mob Hogger
     .mob Minion of Hogger
 step
+    #optional
     #requires Deed
-    #loop
-    .goto 37,24.36,93.65,0
-    .goto 37,26.10,91.95,0
-    .goto 37,25.30,88.95,0
-    .goto 37,27.80,88.36,0
-    .goto 37,27.67,86.21,0
-    .goto 37,26.32,86.82,0
-    .goto 37,24.36,93.65,40,0
-    .goto 37,26.10,91.95,40,0
-    .goto 37,25.30,88.95,40,0
-    .goto 37,27.80,88.36,40,0
-    .goto 37,27.67,86.21,40,0
-    .goto 37,26.32,86.82,40,0
-    >>Kill |cRXP_ENEMY_Riverpaw Outrunners|r and |cRXP_ENEMY_Riverpaw Runts|r. Loot them for their |cRXP_LOOT_Painted Gnoll Armbands|r
-    .complete 11,1 --8/8 Painted Gnoll Armband
-	.mob Riverpaw Outrunner
-	.mob Riverpaw Runt
+--XXREQ Placeholder invis step until multiple requires per step
 step
     #label Bounty
+    #requires Armbands
     .goto 37,24.23,74.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r
     .turnin 11 >>Turn in Riverpaw Gnoll Bounty
@@ -1006,26 +1000,26 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r and |cRXP_FRIENDLY_Marshal Dughan|r
     .turnin 47 >>Turn in Gold Dust Exchange
     .goto 37,42.14,67.25
+	.target +Remy "Two Times"
     .turnin 62 >>Turn in The Fargodeep Mine
     .turnin 40 >>Turn in A Fishy Peril
     .accept 35 >>Accept Further Concerns
     .accept 76 >>Accept The Jasperlode Mine
     .turnin 176 >>Turn in WANTED: "Hogger"
     .goto 37,42.11,65.93
-	.target Remy "Two Times"
-	.target Marshal Dughan
+	.target +Marshal Dughan
 	.isOnQuest 40
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r and |cRXP_FRIENDLY_Marshal Dughan|r
     .turnin 47 >>Turn in Gold Dust Exchange
     .goto 37,42.14,67.25
+	.target +Remy "Two Times"
     .turnin 62 >>Turn in The Fargodeep Mine
     .accept 35 >>Accept Further Concerns
     .accept 76 >>Accept The Jasperlode Mine
     .turnin 176 >>Turn in WANTED: "Hogger"
     .goto 37,42.11,65.93
-	.target Remy "Two Times"
-	.target Marshal Dughan
+	.target +Marshal Dughan
 step
     .goto 37,41.69,65.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andrew Krighton|r
@@ -1077,19 +1071,19 @@ step
     .accept 37 >>Accept Find the Lost Guards
     .accept 52 >>Accept Protect the Frontier
     .goto 37,73.973,72.177
+	.target +Guard Thomas
     .accept 46 >>Accept Bounty on Murlocs
     .accept 26152 >>Accept WANTED: James Clark
     .goto 37,74.025,72.310
-	.target Guard Thomas
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Gray Forest Wolves|r
     >>Kill any |cRXP_ENEMY_Young Forest Bears|r you see
     .complete 52,1 --Kill Prowler or Forest Wolf (8)
+    .mob +*Prowler
+    .mob +*Gray Forest Wolf
     .complete 52,2 --Kill Young Forest Bear (5)
-    .mob Prowler
-    .mob Gray Forest Wolf
-    .mob Young Forest Bear
+    .mob +Young Forest Bear
 step
     .goto 37,82.95,84.82,40 >> Check for |cRXP_ENEMY_Bushtail|r.
     .isOnQuest 52
@@ -1150,10 +1144,10 @@ step
     >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Gray Forest Wolves|r
     >>Kill any |cRXP_ENEMY_Young Forest Bears|r you see
     .complete 52,1 --Kill Prowler or Forest Wolf (8)
+    .mob +*Prowler
+    .mob +*Gray Forest Wolf
     .complete 52,2 --Kill Young Forest Bear (5)
-    .mob Prowler
-    .mob Gray Forest Wolf
-    .mob Young Forest Bear
+    .mob +Young Forest Bear
 step
     #completewith next
     .goto 37,80.88,53.78,0
@@ -1200,9 +1194,18 @@ step
     .subzone 86 >> Travel toward Stone Cairn Lake
     .isOnQuest 45
 step
-    #completewith next
+    #sticky
+    #label MurlocFins
+    #loop
     .goto 37,78.837,55.770,0
+    .waypoint 37,80.004,53.783,40,0
+    .waypoint 37,79.222,54.041,40,0
+    .waypoint 37,78.554,55.834,40,0
+    .waypoint 37,77.474,57.257,40,0
+    .waypoint 37,77.991,58.108,40,0
+    .waypoint 37,79.370,57.016,40,0
     >>Kill |cRXP_ENEMY_Murloc Foragers|r and |cRXP_ENEMY_Murloc Lurkers|r. Loot them for their |cRXP_LOOT_Torn Murloc Fins|r
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Murloc Foragers|r will cast|r |T135915:0|t[Drink Minor Potion] |cRXP_WARN_which heals themselves for 61-68 health|r
     .complete 46,1 --Torn Murloc Fin (8)
     .mob Murloc Forager
     .mob Murloc Lurker
@@ -1211,26 +1214,15 @@ step
     >>Click |cRXP_PICK_Rolf's corpse|r on the ground
     .turnin 45 >>Turn in Discover Rolf's Fate
     .accept 71 >>Accept Report to Thomas
-step
-    .goto 37,78.837,55.770,0
-    .goto 37,80.004,53.783,40,0
-    .goto 37,79.222,54.041,40,0
-    .goto 37,78.554,55.834,40,0
-    .goto 37,77.474,57.257,40,0
-    .goto 37,77.991,58.108,40,0
-    .goto 37,79.370,57.016,40,0
-    >>Kill |cRXP_ENEMY_Murloc Foragers|r and |cRXP_ENEMY_Murloc Lurkers|r. Loot them for their |cRXP_LOOT_Torn Murloc Fins|r
-    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Murloc Foragers|r will cast|r |T135915:0|t[Drink Minor Potion] |cRXP_WARN_which heals themselves for 61-68 health|r
-    .complete 46,1 --Torn Murloc Fin (8)
-    .mob Murloc Forager
-    .mob Murloc Lurker
 step << skip
+    #requires MurlocFins
     #completewith next
     .goto 37,77.65,57.70
     >>|cRXP_WARN_Skip this if you're not low at health|r
     .deathskip >>Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step
     #loop
+    #requires MurlocFins
     .goto 37,81.72,58.57,0
     .goto 37,77.99,60.59,0
     .goto 37,71.58,60.84,0
@@ -1244,10 +1236,10 @@ step
     >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Gray Forest Wolves|r
     >>Kill any |cRXP_ENEMY_Young Forest Bears|r you see
     .complete 52,1 --Kill Prowler or Forest Wolf (8)
+    .mob +*Prowler
+    .mob +*Gray Forest Wolf
     .complete 52,2 --Kill Young Forest Bear (5)
-    .mob Prowler
-    .mob Gray Forest Wolf
-    .mob Young Forest Bear
+    .mob +Young Forest Bear
 step
     .goto 37,73.973,72.177
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
@@ -1258,6 +1250,11 @@ step
     .target Guard Thomas
 step
     #completewith Morgan
+    .goto 37,68.56,82.68,0
+    .goto 37,67.63,78.01,0
+    .goto 37,68.23,76.33,0
+    .goto 37,71.31,76.93,0
+    .goto 37,71.81,78.51,0
     >>Kill |cRXP_ENEMY_Bandits|r, |cRXP_ENEMY_Erlan Drudgemoor|r inside, and |cRXP_ENEMY_Surena Caledon|r inside. Loot them for their |cRXP_LOOT_Linen Scraps|r
     .complete 83,1 --Collect Linen Scrap (6)
     .mob Bandit
@@ -1306,17 +1303,19 @@ step
     .complete 83,1 --Collect Linen Scrap (6)
     .mob Bandit
 step
+    #completewith next
     .goto 37,75.71,86.29,30,0
     .goto 37,77.55,85.75,-1
     .goto 37,83.68,69.74,-1
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .isOnQuest 83
+    .skill riding,75
 step
     .goto 37,83.283,66.089
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rallic Finn|r
     .vendor 1198 >>Vendor and Repair
 	.target Rallic Finn
-	.isOnQuest 59
+    .isOnQuest 83
 step << !DarkIronDwarf !KulTiran !LightforgedDraenei !Mechagnome !VoidElf
     .goto 37,81.829,66.556
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Goss the Swift|r
