@@ -218,7 +218,17 @@ addon.IsOnQuest = IsOnQuest
 addon.IsQuestTurnedIn = IsQuestTurnedIn
 addon.IsQuestComplete = IsQuestComplete
 
-local questConversion = addon.questConversion
+local function GetQuestId(src)
+local guide = addon.currentGuide and addon.currentGuide.questConversion
+    if guide and guide[src] then
+        return guide[src]
+    elseif addon.questConversion[src] then
+        return addon.questConversion[src]
+    else
+        return src
+    end
+end
+
 
 local timer = GetTime()
 local nrequests = 0
@@ -371,7 +381,7 @@ end
 function addon.GetQuestName(id)
     local questNameCache = RXPCData.questNameCache
     if type(id) ~= "number" then return end
-    id = questConversion[id] or id
+    id = GetQuestId(id)
     local name
     if db and type(db.QueryQuest) == "function" and type(db.GetQuest) ==
         "function" then
@@ -440,7 +450,7 @@ function addon.GetQuestName(id)
 end
 
 function addon.GetQuestObjectives(id, step)
-    id = questConversion[id] or id
+    id = GetQuestId(id)
     if not id then return end
     local stepdiff = step and math.abs(RXPCData.currentStep - step) or 0
 
@@ -759,7 +769,7 @@ function addon.functions.accept(self, ...)
                 ": Invalid quest ID\n" .. self)
         end
         local element = {title = "", flags = flags}
-        element.questId = questConversion[id] or id
+        element.questId = GetQuestId(id)
         -- element.title = addon.GetQuestName(id)
         if text and text ~= "" then
             element.text = text
@@ -907,7 +917,7 @@ function addon.functions.daily(self, text, ...)
         for i, v in pairs(ids) do
             local questId = tonumber(v)
             if questId then
-                ids[i] = questConversion[questId] or questId
+                ids[i] = GetQuestId(questId)
                 addon.InsertQuestGuide(ids[i],addon.pickUpList)
             else
                 err = true
@@ -956,11 +966,11 @@ function addon.functions.turnin(self, ...)
                            ": Invalid quest ID\n" .. self)
         end
         reward = tonumber(reward) or 0
-        local element = {title = "", questId = questConversion[id] or id}
+        local element = {title = "", questId = GetQuestId(id)}
         if id < 0 then
             id = math.abs(id)
             element.skipIfMissing = true
-            element.questId = questConversion[id] or id
+            element.questId = GetQuestId(id)
             if reward > 0 then
                 element.skipIfIncomplete = true
             end
@@ -1099,7 +1109,7 @@ function addon.functions.dailyturnin(self, text, ...)
         for i, v in pairs(ids) do
             local questId = tonumber(v)
             if questId then
-                ids[i] = questConversion[questId] or questId
+                ids[i] = GetQuestId(questId)
                 addon.InsertQuestGuide(ids[i],addon.pickUpList)
             else
                 err = true
@@ -1336,7 +1346,7 @@ function addon.functions.complete(self, ...)
         if objMax and objMax <= 0 then
             objMax = nil
         end
-        id = id and questConversion[id] or id
+        id = id and GetQuestId(id)
         local element = {questId = id, dynamicText = true, obj = obj,
                          objMax = objMax, requestFromServer = true,
                          text = "", flags = flags, textOnly = (flags % 2) == 1
@@ -5222,6 +5232,22 @@ function addon.functions.disablecheckbox(self, text)
             addon.SetElementComplete(element.parent)
             addon.RXPFrame.CurrentStepFrame.UpdateText()
         end
+    end
+end
+
+function addon.functions.convertquest(self, text, src, dst)
+    if type(self) == "string" then -- on parse
+        src = tonumber(src)
+        dst = tonumber(dst)
+        if not (src and dst) then return end
+        return {text = text, textOnly = true, src = src, dst = dst}
+    end
+    local element = self.element
+    local guide = addon.currentGuide
+    if guide.questConversion then
+        guide.questConversion[element.src] = element.dst
+    else
+        guide.questConversion = {[element.src] = element.dst}
     end
 end
 
