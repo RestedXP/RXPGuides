@@ -290,12 +290,13 @@ step
 step << Warlock/Mage/Priest
     .goto Silverpine Forest,44.80,39.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andrea|r
-    .vendor >> |cRXP_BUY_Buy a|r |T132491:0|t[Wise Man's Belt] |cRXP_BUY_from her if it's up|r
+    .vendor >> Buy |T132491:0|t[|cRXP_FRIENDLY_Wise Man's Belt|r] from her if they're up
     .target Andrea Boynton
     .money <0.1400
 step << Hunter
     .goto Silverpine Forest,45.01,39.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nadia|r|cRXP_BUY_. Buy a|r |T135490:0|t[Fine Longbow] |cRXP_BUY_from her if it's up|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nadia|r
+    >>Buy a |T135490:0|t[|cRXP_FRIENDLY_Fine Longbow|r] from her if it's up
     .collect 11304,1,438,1 --Fine Longbow (1)
     .collect 2515,1200,438,1 << Hunter --Sharp Arrow (1200)
     .target Nadia Vernon
@@ -305,42 +306,42 @@ step << Hunter
 step << Hunter/Rogue
     .goto Silverpine Forest,44.61,39.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alexandre|r
-    .vendor >> |cRXP_BUY_Buy|r |T132539:0|t[Agile Boots] |cRXP_BUY_from him if they're up|r
+    .vendor >> Buy |T132539:0|t[|cRXP_FRIENDLY_Agile Boots|r] from her if they're up
     .target Alexandre Lefevre
     .money <0.2633
 step << Shaman/Warrior/Druid
     .goto Silverpine Forest,44.61,39.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alexandre|r
-    .vendor >> |cRXP_BUY_Buy|r |T132539:0|t[Agile Boots] |cRXP_BUY_or|r |T132537:0|t[Stable Boots] |cRXP_BUY_from him if one of them is up|r
+    .vendor >> Buy |T132539:0|t[|cRXP_FRIENDLY_Agile Boots|r] or |T132537:0|t[|cRXP_FRIENDLY_Stable Boots|r] from her if one of them is up
     .target Alexandre Lefevre
     .money <0.2000
 step << Warlock/Mage/Priest
     #completewith Shackles
-    +Equip the |T132491:0|t[Wise Man's Belt]
+    +Equip the |T132491:0|t[|cRXP_FRIENDLY_Wise Man's Belt|r] 
     .use 4786
     .itemcount 4786,1
     .xp <15,1
 step << Hunter
     #completewith Shackles
-    +Equip the |T135490:0|t[Fine Longbow]
+    +Equip the |T135490:0|t[|cRXP_FRIENDLY_Fine Longbow|r] 
     .use 11304
     .itemcount 11304,1
     .xp <14,1
 step << Hunter/Rogue
     #completewith Shackles
-    +Equip the |T132539:0|t[Agile Boots]
+    +Equip the |T132539:0|t[|cRXP_FRIENDLY_Agile Boots|r]
     .use 4788
     .itemcount 4788,1
     .xp <15,1
 step << Shaman/Warrior/Druid
     #completewith Shackles
-    +Equip the |T132539:0|t[Agile Boots]
+    +Equip the |T132539:0|t[|cRXP_FRIENDLY_Agile Boots|r]
     .use 4788
     .itemcount 4788,1
     .xp <15,1
 step << Shaman/Warrior/Druid
     #completewith Shackles
-    +Equip the |T132537:0|t[Stable Boots]
+    +Equip the |T132537:0|t[|cRXP_FRIENDLY_Stable Boots|r]
     .use 4789
     .itemcount 4789,1
 step
@@ -852,8 +853,8 @@ step
     .group
 step << Hunter
     .goto Silverpine Forest,45.01,39.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nadia|r|cRXP_BUY_. Buy a|r |T135490:0|t[Fine Longbow] |cRXP_BUY_from her if it's available|r
-    >>|cRXP_BUY_If it's not available, buy a|r |T135490:0|t[Reinforced Bow] |cRXP_BUY_from her instead|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nadia|r
+    >>Buy a |T135490:0|t[|cRXP_FRIENDLY_Fine Longbow|r] from her if it's up
     .collect 11304,1,438,1 --Fine Longbow (1)
     .collect 2515,1200,438,1 << Hunter --Sharp Arrow (1200)
     .target Nadia Vernon

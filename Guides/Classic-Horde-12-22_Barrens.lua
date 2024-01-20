@@ -310,7 +310,7 @@ step << Orc Warrior/Troll Warrior/Tauren Warrior
     #sticky
     #completewith KreenigSnarlsnout1
     .goto The Barrens,52.5,30.7,0
-    .vendor >> Check if |cRXP_FRIENDLY_Lizzarik|r is in The Crossroads. If he is, buy potions and a |T133476:0|t[Heavy Spiked Mace] if it's available
+    .vendor >>|cRXP_WARN_Check if|r |cRXP_FRIENDLY_Lizzarik|r |cRXP_WARN_is in the Crossraods. He sells potions and|r |T133476:0|t[|cRXP_FRIENDLY_Heavy Spiked Mace|r] |cRXP_WARN_which is a limited supply item|r
 	.unitscan Lizzarik
 step << !Undead !Tauren
     #completewith HiddenEnemiesPickup
@@ -492,7 +492,6 @@ step
     .subzone 2437 >> Enter the RFC Instance portal. Zone in
     .dungeon RFC
 step
-    #completewith TroggsShamans
     >>|cRXP_WARN_If possible, have party members share the following quests|r
     .accept 5722 >> Accept Searching for the Lost Satchel
     .accept 5723 >> Accept Testing an Enemy's Strength
@@ -840,6 +839,50 @@ step << Undead Warrior
     .itemcount 2024,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
+step << Troll Warrior
+    .goto The Barrens,62.24,37.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Buy a|r |T135147:0|t[Gnarled Staff] |cRXP_BUY_from him|r
+    .collect 2030,1,850,1 --Collect Gnarled Staff (1)
+    .money <0.5544
+    .target Ironzar
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
+step << Troll Warrior
+    #completewith BaronLongshore
+    +Equip the |T135147:0|t[Gnarled Staff]
+    .use 2030
+    .itemcount 2030,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
+step << Orc Warrior
+    .goto The Barrens,62.24,37.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Buy a|r |T132394:0|t[Bearded Axe] |cRXP_BUY_from him|r
+    .collect 2025,1,850,1 --Collect Bearded Axe (1)
+    .money <0.5304
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
+step << Orc Warrior
+    #completewith BaronLongshore
+    +Equip the |T132394:0|t[Bearded Axe]
+    .use 2025
+    .itemcount 2025,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
+step << Tauren Warrior
+    .goto The Barrens,62.24,37.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Buy a|r |T133046:0|t[Rock Hammer] |cRXP_BUY_from him|r
+    .collect 2026,1,850,1 --Collect Rock Hammer (1)
+    .money <0.6286
+    .target Ironzar
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
+step << Tauren Warrior
+    #completewith BaronLongshore
+    +Equip the |T133046:0|t[Rock Hammer] when you are level 16
+    .use 2026
+    .itemcount 2026,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
 step << Shaman
     #season 0
     .goto The Barrens,62.24,37.48
@@ -1002,6 +1045,50 @@ step << Undead Warrior
     .itemcount 2024,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
+step << Troll Warrior
+    .goto The Barrens,62.24,37.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Buy a|r |T135147:0|t[Gnarled Staff] |cRXP_BUY_from him|r
+    .collect 2030,1,850,1 --Collect Gnarled Staff (1)
+    .money <0.5544
+    .target Ironzar
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
+step << Troll Warrior
+    #completewith FlyToXroads1
+    +Equip the |T135147:0|t[Gnarled Staff]
+    .use 2030
+    .itemcount 2030,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
+step << Orc Warrior
+    .goto The Barrens,62.24,37.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Buy a|r |T132394:0|t[Bearded Axe] |cRXP_BUY_from him|r
+    .collect 2025,1,850,1 --Collect Bearded Axe (1)
+    .money <0.5304
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
+step << Orc Warrior
+    #completewith FlyToXroads1
+    +Equip the |T132394:0|t[Bearded Axe]
+    .use 2025
+    .itemcount 2025,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
+step << Tauren Warrior
+    .goto The Barrens,62.24,37.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Buy a|r |T133046:0|t[Rock Hammer] |cRXP_BUY_from him|r
+    .collect 2026,1,850,1 --Collect Rock Hammer (1)
+    .money <0.6286
+    .target Ironzar
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
+step << Tauren Warrior
+    #completewith FlyToXroads1
+    +Equip the |T133046:0|t[Rock Hammer] when you are level 16
+    .use 2026
+    .itemcount 2026,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
 step << Shaman
     #season 0
     .goto The Barrens,62.24,37.48
@@ -1079,7 +1166,7 @@ step
     >>Finish killing |cRXP_ENEMY_Zhevras|r. Loot them for |cRXP_LOOT_Hooves|r
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
-step << !Warrior
+step
     #label FlyToXroads1
     #completewith next
     .goto The Barrens,63.09,37.16
@@ -1087,13 +1174,13 @@ step << !Warrior
     .fly Crossroads >> Fly to The Crossroads
     .target Bragok
 --XX Level 14 training here?
-step << Orc Warrior/Troll Warrior/Tauren Warrior
+step << skip
     #sticky
     #completewith ZhevraTurnIn
     .goto The Barrens,52.5,30.7,0
-    .vendor >> Walk via the road to The Crossroads. Look out for |cRXP_FRIENDLY_Lizzarik|r to buy a |T133476:0|t[Heavy Spiked Mace] if it's available
+    .vendor >> Walk via the road to The Crossroads. Look out for |cRXP_FRIENDLY_Lizzarik|r to buy a |T133476:0|t[|cRXP_FRIENDLY_Heavy Spiked Mace|r]  if it's available
 	.unitscan Lizzarik
-step << Orc Warrior/Troll Warrior/Tauren Warrior
+step << skip
     #completewith ZhevraTurnIn
     .subzone 380 >> Travel to The Crossraods
 step
@@ -1208,6 +1295,14 @@ step
     .complete 903,1 --Prowler Claws (7)
     .complete 821,1 --Savannah Lion Tusk (5)
     .mob Savannah Prowler
+step << Orc Warrior/Troll Warrior/Tauren Warrior
+    #season 0
+    #completewith next
+    .goto The Barrens,43.80,12.22,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vrang|r
+    >>|cRXP_FRIENDLY_Vrang|r |cRXP_WARN_sells|r |T133476:0|t[|cRXP_FRIENDLY_Heavy Spiked Mace|r] |cRXP_WARN_which is a limited supply item|r << Orc Warrior/Troll Warrior/Tauren Warrior
+	.vendor	>> Vendor trash and repair
+    .dungeon RFC
 step
     .goto The Barrens,41.51,19.09,60,0
     .goto The Barrens,40.82,18.23,60,0
@@ -1380,12 +1475,6 @@ step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .mob Fleeting Plainstrider
     .mob Ornery Plainstrider
     .dungeon RFC
-step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    .goto The Barrens,43.80,12.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vrang|r
-    >>Buy a |T133476:0|t[Heavy Spiked Mace] if it's available << Orc Warrior/Troll Warrior/Tauren Warrior
-	.vendor	>> Vendor trash and repair
-    .dungeon RFC
 step
     #completewith Samophlange
     +|cRXP_WARN_Be careful of|r |cRXP_ENEMY_Sunscale Scytheclaws|r |cRXP_WARN_in the area. They are up to level 18 and can|r |T132152:0|t[Thrash]
@@ -1399,9 +1488,9 @@ step
     .mob Ornery Plainstrider
     .dungeon !RFC
 step
-    .goto The Barrens,43.80,12.22
+    .goto The Barrens,43.80,12.22,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vrang|r
-    >>Buy a |T133476:0|t[Heavy Spiked Mace] if it's available << Orc Warrior/Troll Warrior/Tauren Warrior
+    >>|cRXP_FRIENDLY_Vrang|r |cRXP_WARN_sells|r |T133476:0|t[|cRXP_FRIENDLY_Heavy Spiked Mace|r] |cRXP_WARN_which is a limited supply item|r << Orc Warrior/Troll Warrior/Tauren Warrior
 	.vendor	>> Vendor trash and repair
     .dungeon !RFC
 step
@@ -1455,6 +1544,7 @@ step
     .complete 869,1 --Raptor Head (12)
     .mob Sunscale Lashtail
     .mob Sunscale Screecher
+    .mob Sunscale Scytheclaw
 step
     .goto The Barrens,56.5,7.5
     >>Grinding to level 16 here is important, due to the next 3 quests being quite hard
@@ -3019,7 +3109,7 @@ step
 step << Warrior
     .goto The Barrens,62.20,38.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grazlix|r
-    .vendor >>|cRXP_BUY_Buy|r |T134583:0|t[Mighty Chain Pants] |cRXP_BUY_from him if it's up|r
+    .vendor >>Buy |T134583:0|t[|cRXP_FRIENDLY_Mighty Chain Pants|r] from him if it's up
     .target Grazlix
     .money <0.619
     .itemStat 7,ITEM_MOD_ARMOR_SHORT,<155
@@ -3027,21 +3117,21 @@ step << Warrior
 step << Rogue/Hunter/Warrior/Shaman/Druid
     .goto The Barrens,62.16,38.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vexspindle|r
-    .vendor >> |cRXP_BUY_Buy|r |T132603:0|t[Wolf Bracers] |cRXP_BUY_from him if they're up|r
+    .vendor >> Buy |T132603:0|t[|cRXP_FRIENDLY_Wolf Bracers|r] from him if they're up
     .target Vexspindle
     .money <0.3515
     .itemStat 9,ITEM_MOD_ARMOR_SHORT,<37
     .isQuestTurnedIn 865
 step << Warrior
     #completewith FlytoXroads
-    +Equip the |T134583:0|t[Mighty Chain Pants]
+    +Equip the |T134583:0|t[|cRXP_FRIENDLY_Mighty Chain Pants|r] 
     .use 4800
     .itemcount 4800,1
     .itemStat 7,ITEM_MOD_ARMOR_SHORT,<155
     .isQuestTurnedIn 865
 step << Rogue/Hunter/Warrior/Shaman/Druid
     #completewith FlytoXroads
-    +Equip the |T132603:0|t[Wolf Bracers]
+    +Equip the |T132603:0|t[|cRXP_FRIENDLY_Wolf Bracers|r]
     .use 4794
     .itemcount 4794,1
     .itemStat 9,ITEM_MOD_ARMOR_SHORT,<37

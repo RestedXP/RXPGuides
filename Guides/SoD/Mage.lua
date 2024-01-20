@@ -1558,11 +1558,11 @@ step
     .goto Ashenvale,13.06,24.84
     .train 401757,1
 step
-    .aura 430139,1 >>Use |T135142:0|t[Arcane Explosion] |cRXP_WARN_near the correct|r |cRXP_WARN_Purple Crystal|r
+    .aura 430139,+2 >>Use |T135142:0|t[Arcane Explosion] |cRXP_WARN_near the correct|r |cRXP_WARN_Purple Crystal|r
     .goto Ashenvale,14.04,19.80
     .train 401757,1
 step
-    .aura 430139,1 >>Use |T135142:0|t[Arcane Explosion] |cRXP_WARN_near the correct|r |cRXP_WARN_Purple Crystal|r
+    .aura 430139,+3 >>Use |T135142:0|t[Arcane Explosion] |cRXP_WARN_near the correct|r |cRXP_WARN_Purple Crystal|r
     .goto Ashenvale,13.50,15.75
     .train 401757,1
 step
