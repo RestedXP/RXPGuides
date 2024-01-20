@@ -75,6 +75,10 @@ function RXPFrame:UpdateVisuals()
     RXPFrame.UpdateScrollBar()
 end
 
+function addon.ReloadStep()
+    addon.SetStep(RXPCData.currentStep)
+end
+
 function addon.RenderFrame(themeUpdate,isLoading)
     addon:LoadActiveTheme()
 

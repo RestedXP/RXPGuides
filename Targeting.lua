@@ -137,8 +137,7 @@ function addon.targeting:UpdateMacro(queuedTargets)
         CreateMacro(self.macroName, "Ability_eyeoftheowl", "")
     end
 
-    for t in pairs(lowPrioTargets) do tinsert(targets, t) end
-    for _, t in ipairs(targetList) do
+    for _, t in ipairs(unitscanList) do
         if not lowPrioTargets[t] then tinsert(targets, t) end
     end
 
@@ -146,9 +145,11 @@ function addon.targeting:UpdateMacro(queuedTargets)
         if not lowPrioTargets[t] then tinsert(targets, t) end
     end
 
-    for _, t in ipairs(unitscanList) do
+    for _, t in ipairs(targetList) do
         if not lowPrioTargets[t] then tinsert(targets, t) end
     end
+
+    for t in pairs(lowPrioTargets) do tinsert(targets, t) end
 
     -- Removes duplicate entries:
     local npcNames = {}
@@ -162,7 +163,8 @@ function addon.targeting:UpdateMacro(queuedTargets)
     end
 
     local content
-    for _, t in ipairs(targets) do
+    for n = #targets,1,-1 do
+        local t = targets[n]
         if t then
             if content then
                 content = fmt('%s\n/targetexact %s', content, t)
@@ -595,7 +597,83 @@ function addon.targeting:ADDON_ACTION_FORBIDDEN(_, forbiddenAddon, func)
     end
 end
 
+function addon.targeting:UpdateUnitList()
+    local stepUnitscan = {}
+    local stepMobs = {}
+    local stepTargets = {}
+
+    local function AddUnits(element,stepUnitscan,stepMobs,stepTargets)
+        if element.unitscan then
+            for _, t in ipairs(element.unitscan) do
+                tinsert(stepUnitscan, addon.GetCreatureName(t))
+            end
+        end
+        if element.mobs then
+            for _, t in ipairs(element.mobs) do
+                tinsert(stepMobs, addon.GetCreatureName(t))
+            end
+        end
+        if element.targets then
+            for _, t in ipairs(element.targets) do
+                tinsert(stepTargets, addon.GetCreatureName(t))
+            end
+        end
+    end
+
+    for _,step in pairs(addon.RXPFrame.activeSteps) do
+        for _,element in pairs(step.elements) do
+            AddUnits(element,stepUnitscan,stepMobs,stepTargets)
+        end
+    end
+
+    local unitscanGenerated = {}
+    local mobsGenerated = {}
+    local targetsGenerated = {}
+    for _,context in pairs(addon.generatedSteps) do
+        for _,step in ipairs(context) do
+            for _,element in ipairs(step.elements or {}) do
+                AddUnits(element,unitscanGenerated,mobsGenerated,targetsGenerated)
+            end
+        end
+    end
+
+    -- Update targets for macro
+    addon.targeting:UpdateEnemyList(stepUnitscan, stepMobs)
+    addon.targeting:UpdateTargetList(stepTargets)
+
+    addon.targeting:UpdateEnemyList(unitscanGenerated, mobsGenerated, true)
+    addon.targeting:UpdateTargetList(targetsGenerated, true)
+
+    -- Don't process new targets if targeting disabled
+    if addon.settings.profile.enableTargetAutomation then
+        addon.targeting:CheckNameplates()
+    end
+end
+
+local function FilterList(list)
+    local u = {}
+    for i,unit in pairs(list) do
+        if unit:sub(1,1) == "*" then
+            local name = unit:sub(2,-1)
+            u[i] = name
+        end
+    end
+    local size = #list
+    for n = size,1,-1 do
+        if u[n] then
+            table.remove(list,n)
+        end
+    end
+    for n = 1,size do
+        local name = u[n]
+        if name then
+            table.insert(list,name)
+        end
+    end
+end
+
 function addon.targeting:UpdateTargetList(targets, addEntries)
+    FilterList(targets)
     if addEntries then
         local update
         for _, unit in ipairs(targets) do
@@ -638,6 +716,9 @@ function addon.targeting:UpdateTargetList(targets, addEntries)
 end
 
 function addon.targeting:UpdateEnemyList(unitscan, mobs, addEntries)
+    FilterList(unitscan)
+    FilterList(mobs)
+
     if addEntries then
         local update
         for _, unit in ipairs(unitscan) do

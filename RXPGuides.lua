@@ -806,7 +806,7 @@ function addon.DisplayQuestLogRewards(questLogIndex)
 end
 
 function addon:QuestAutomation(event, arg1, arg2, arg3)
-    if not addon.settings.profile.enableQuestAutomation or IsControlKeyDown() then
+    if not addon.settings.profile.enableQuestAutomation or IsControlKeyDown() or addon.isHidden then
         return
     end
 
@@ -926,6 +926,8 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
         if missingTurnIn then
             return GossipSelectActiveQuest(missingTurnIn)
         end
+    elseif event == "QUEST_AUTOCOMPLETE" then
+        ShowQuestComplete(arg1)
     end
 end
 
@@ -1065,6 +1067,7 @@ function addon:OnEnable()
     questFrame:RegisterEvent("GOSSIP_SHOW")
     questFrame:RegisterEvent("QUEST_DETAIL")
     questFrame:RegisterEvent("QUEST_TURNED_IN")
+    questFrame:RegisterEvent("QUEST_AUTOCOMPLETE")
 
     if C_QuestLog.RequestLoadQuestByID then
         self:RegisterEvent("QUEST_DATA_LOAD_RESULT")
