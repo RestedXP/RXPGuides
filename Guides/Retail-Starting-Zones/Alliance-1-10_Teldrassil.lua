@@ -187,7 +187,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Night Elf Starting Zones
 #displayname Chapter 2 - Teldrassil
 #name 3Retail-Alliance-Night Elf_Teldrassil
-#next Alliance 10-60\1A_Elwynn Forest
+#next RestedXP Alliance 10-60\1A_Elwynn Forest
 #defaultfor NightElf
 
 <<Alliance !DemonHunter !DK

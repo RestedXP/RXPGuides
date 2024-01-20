@@ -7,9 +7,9 @@ RXPGuides.RegisterGuide([[
 #name A-Northshire Valley
 #displayname Chapter 1 - Northshire Valley
 #next B-Elwynn Forest
-#defaultfor Human
+#defaultfor Human !DK
 
-<<Alliance !DK
+<< Alliance
 
 step
     #completewith next
@@ -350,6 +350,7 @@ step
     .accept 54 >>Accept Report to Goldshire
     .target Marshal McBride
 step
+    #optional
     #completewith next
     .goto 425,29.17,72.43,15,0
     .goto 425,28.28,73.45,15,0
@@ -370,7 +371,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Allied Race DK << KulTiran DK/DarkIronDwarf DK/LightforgedDraenei DK/Mechagnome DK/VoidElf DK/Pandaren DK
 #displayname Chapter 2 - Elwynn Forest
 #name B-Elwynn Forest
-#next Alliance 10-60\2A_Redridge Mountains
+#next RestedXP Alliance 10-60\2A_Redridge Mountains
 #defaultfor Human/KulTiran DK/DarkIronDwarf DK/LightforgedDraenei DK/Mechagnome DK/VoidElf DK/Pandaren DK
 
 << Alliance
@@ -404,65 +405,73 @@ step
     .goto 37,41.71,52.74,-1
     .goto 37,39.48,60.53,-1
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-    .isOnQuest 37112
+    .isOnQuest 37112 --Rest and Relaxation (Breadcrumb to Goldshire quest)
     .skill riding,75,1
-step
-    .goto 37,41.71,64.64
+step << !Human !KulTiran
+    .goto 37,41.715,64.636
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bartlett the Brave|r
     .fp Goldshire >> Get the Goldshire Flight Path
 	.target Bartlett the Brave
-    .isOnQuest 37112
 step
+    #optional
     .goto 37,42.11,65.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .turnin 54 >>Turn in Report to Goldshire
     .accept 62 >>Accept The Fargodeep Mine
     .accept 26378 >>Accept Hero's Call: Westfall!
 	.target Marshal Dughan
-    .isQuestTurnedIn 26390
-step << Human
-    .goto 37,41.71,65.55
+    .isOnQuest 54
+--  .isQuestTurnedIn 26390 --Ending the Invasion! (Human Starter Zone final quest)
+step
+    .goto 37,42.11,65.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
+    .accept 62 >>Accept The Fargodeep Mine
+    .accept 26378 >>Accept Hero's Call: Westfall!
+	.target Marshal Dughan
+step << Human/KulTiran
+    .goto 37,41.708,65.541
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smith Argus|r
     .accept 26393 >>Accept A Swift Message
 	.target Smith Argus
-    .isQuestTurnedIn 26390
-step << Human
-    .goto 37,41.71,64.64
+step << Human/KulTiran
+    .goto 37,41.715,64.636
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bartlett the Brave|r
 	.turnin 26393 >>Turn in A Swift Message
     .accept 26394 >>Accept Continue to Stormwind
 	.target Bartlett the Brave
-    .isQuestTurnedIn 26390
 step
+    #optional
     #completewith next
     .goto 37,43.19,65.74,5,0
     .goto 37,43.23,65.95,5,0
-    .goto 37,43.32,65.70,4 >>Travel toward |cRXP_FRIENDLY_William Pestle|r
-    .isQuestTurnedIn 26390
+    .goto 37,43.318,65.705,4 >> Travel toward |cRXP_FRIENDLY_William Pestle|r
 step
-    .goto 37,43.32,65.70
+    .goto 37,43.318,65.705
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
     .accept 60 >>Accept Kobold Candles
 	.target William Pestle
-    .isQuestTurnedIn 26390
 step
     #veteran
     #completewith Cooking
     .goto 37,43.77,65.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Farley|r. Buy |T132789:0|t[Moonberry Juice] from him.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Farley|r. 
+    >>|cRXP_BUY_Buy 5|r |T132789:0|t[Moonberry Juice] |cRXP_BUY_from him|r
+    >>|cRXP_WARN_The|r |T132789:0|t[Moonberry Juice] |cRXP_WARN_is for an|r |T4620669:0|t[Alchemy] |cRXP_WARN_Darkmoon Faire quest. If you don't want to train|r |T4620669:0|t[Alchemy]|cRXP_WARN_, skip the objective|r
     .turnin 37112 >>Turn in Rest and Relaxation
     .collect 1645,5,29506,1 --Moonberry Juice (5)
     .home >>Set your Hearthstone to Lion's Pride Inn
 	.target Innkeeper Farley
-    .isQuestTurnedIn 26390
+    .isQuestAvailable 47
     .dmf
 step
+    #veteran
     .goto 37,43.77,65.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Farley|r
     .turnin 37112 >>Turn in Rest and Relaxation
     .home >>Set your Hearthstone to Lion's Pride Inn
 	.target Innkeeper Farley
-    .isQuestTurnedIn 26390
+    .isQuestAvailable 47
+    .nodmf
 step
     #veteran
     #label Cooking
@@ -470,44 +479,72 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tomas|r
     .train 2550 >> Train Cooking
 	.target Tomas
-    .isQuestTurnedIn 26390
     .dmf
+step
+    #fresh
+    .goto 37,43.77,65.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Farley|r
+    .turnin 37112 >>Turn in Rest and Relaxation
+    .home >>Set your Hearthstone to Lion's Pride Inn
+	.target Innkeeper Farley
+    .isQuestAvailable 47
+step
+    #optional
+    #completewith next
+    .goto 37,43.23,65.95,5,0
+    .goto 37,43.13,65.74,5,0
+    .goto 37,42.93,65.71,6,0
+    .goto 37,42.14,67.26,12 >> Travel toward |cRXP_FRIENDLY_Remy "Two Times"|r
 step
     .goto 37,42.14,67.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r
     .accept 40 >>Accept A Fishy Peril
     .accept 47 >>Accept Gold Dust Exchange
 	.target Remy "Two Times"
-    .isQuestTurnedIn 26390
 step
     #veteran
     .goto 37,41.95,67.16
-    .train 2259 >> Train |T4620669:0|tAlchemy from |cRXP_FRIENDLY_Lien Farmer|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lien Farmer|r
+    >>|cRXP_WARN_These professions are used for Darkmoon Faire quests later. If you don't want to do this, skip this step|r
+    .train 2259 >> Train |T4620669:0|t[Alchemy] and |T4620676:0|t[Inscription]
 	.skipgossip 47384,2,1,1
 	.target Lien Farmer
-    .isQuestTurnedIn 26390
     .dmf
 step
     #veteran
     .goto 37,41.95,67.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lien Farmer|r
-    .train 45357 >> Train |T4620676:0|tInscription
+    .train 45357 >> Train |T4620676:0|t[Inscription]
 	.skipgossip 47384,3,6,2
 	.target Lien Farmer
-    .isQuestTurnedIn 26390
     .dmf
+    .train 2259,3 --Only show if you have Alchemy
 step
     #veteran
     .goto 37,41.89,67.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharynn Bouden|r. Buy the following items from him:
-    .collect 2604,1,29520,1 --Red Dye (1)
-    .collect 6260,1,29520,1 --Blue Dye (1)
-    .collect 2320,1,29520,1 --Coarse Thread (1)
+--    .collect 2604,1,29520,1 --Red Dye (1)
+--    .collect 6260,1,29520,1 --Blue Dye (1)
+--  .collect 2320,1,29520,1 --Coarse Thread (1)
     .collect 30817,5,29509,1 --Simple Flour (5)
     .collect 39354,5,29515,1 --Light Parchment (1)
 	.target Tharynn Bouden
-    .isQuestTurnedIn 26390
     .dmf
+    .train 45357,3 --Only show if you have Inscription
+--XX 29520 needs to be added
+--XX DMF section needs a polish at some point. Coords to 3dp, new formatting, #optional on steps
+step
+    #veteran
+    .goto 37,41.89,67.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharynn Bouden|r. Buy the following items from him:
+--    .collect 2604,1,29520,1 --Red Dye (1)
+--    .collect 6260,1,29520,1 --Blue Dye (1)
+--  .collect 2320,1,29520,1 --Coarse Thread (1)
+    .collect 30817,5,29509,1 --Simple Flour (5)
+	.target Tharynn Bouden
+    .dmf
+--XX 29520 needs to be added
+--XX DMF section needs a polish at some point. Coords to 3dp, new formatting, #optional on steps
 step
     .goto 37,43.2,65.99,5,0
     .goto 37,43.2,65.63,5,0
@@ -630,6 +667,7 @@ step
 	.target Sylannia
     .zoneskip 407,1
     .dmf
+    .train 2259,3 --Only show if you have Alchemy
 step
     .goto 407,50.54,69.56
     >>Use the |T132793:0|t[Cocktail Shaker] to make |T463532:0|t[Moonberry Fizz]
@@ -639,6 +677,7 @@ step
     .use 72043 --Cocktail Shaker
     .zoneskip 407,1
     .dmf
+    .isOnQuest 29506
 step
     .goto 407,50.53,69.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sylannia|r
@@ -646,6 +685,7 @@ step
 	.target Sylannia
     .zoneskip 407,1
     .dmf
+    .isOnQuest 29506
 step
     .goto 407,53.23,75.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sayge|r
@@ -655,13 +695,25 @@ step
     .zoneskip 407,1
     .dmf
 	.isOnQuest 29445
+    .train 45357,3 --Only show if you have Inscription
 step
+    #optional
+    .goto 407,53.23,75.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sayge|r
+    .turnin 29445 >>Turn in An Intriguing Grimoire
+	.target Sayge
+    .zoneskip 407,1
+    .dmf
+	.isOnQuest 29445
+step
+    #optional
     .goto 407,53.23,75.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sayge|r
     .accept 29515 >>Accept Writing the Future
 	.target Sayge
     .zoneskip 407,1
     .dmf
+    .train 45357,3 --Only show if you have Inscription
 step
     .goto 407,53.23,75.82
 	>>Use the |T413571:0|t[Bundle of Exotic Herbs] to make |T237061:0|t[Prophetic Ink]
@@ -751,15 +803,17 @@ step
 step
     #completewith FargodeepM
     .goto 37,38.22,83.41,0
-    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r. Loot them for their |cRXP_LOOT_Large Candles|r and |cRXP_LOOT_Gold Dust|r
+    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Large Candles|r and |cRXP_LOOT_Gold Dust|r
     .complete 60,1 --8/8 Large Candle
     .complete 47,1 --10/10 Gold Dust
 	.mob Kobold Tunneler
+	.mob Kobold Miner
 step
     .goto 37,38.22,83.41,40 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Narg the Taskmaster|r. Kill him if he's up|r
 	.unitscan Narg the Taskmaster
     .isOnQuest 60
 step
+    #optional
 	#completewith next
     .goto 37,38.94,82.23,12,0
     .goto 38,42.52,71.63
@@ -796,7 +850,7 @@ step
     .accept 88 >>Accept Princess Must Die!
 	.target Ma Stonefield
 step
-    .goto 37,33.64,87.76,15 >>|cRXP_WARN_[CHEST]Check for the |cRXP_PICK_Chest|r inside the stables. Loot it if it's up|r
+    .goto 37,33.64,87.76,15 >>|cRXP_WARN_[CHEST] Check for the |cRXP_PICK_Chest|r inside the stables. Loot it if it's up|r
     .isOnQuest 60
 step
     #loop
@@ -870,7 +924,6 @@ step
     #label Hogger
     .goto 37,24.85,95.14
     >>Defeat |cRXP_ENEMY_Hogger|r
-    >>|cRXP_WARN_At <50% health he'll run back to the carcasses, summon |cRXP_ENEMY_Minions of Hogger|r and begin to eat, stunning him and restoring his health very slowly. The |cRXP_ENEMY_Minions of Hogger|r restore 10% Health and Mana to you upon death, have 1 health, and deal 1 damage|r
     >>|cRXP_WARN_DON'T wait out the RP after you defeat him|r
     .complete 176,1 --1/1 Dealt with "The Hogger Situation"
     .mob Hogger
@@ -889,7 +942,7 @@ step
 step
 	#veteran
     .goto 52,60.85,18.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Old MacDonald|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Old MacDonald|r
     >>|cRXP_WARN_Skip this step if you don't have level 25 Pet Battle Pets.|r
     .accept 31780 >>Accept Old MacDonald
 	.target Old MacDonald
@@ -897,7 +950,7 @@ step
 step
 	#veteran
     .goto 52,61.04,18.82
-    >>Defeat |cRXP_ENEMY_Old MacDonald|r in a Pet Battle.
+    >>Defeat |cRXP_ENEMY_Old MacDonald|r in a Pet Battle
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to Old MacDonald
     .complete 31780,1 --Defeat Old MacDonald
 	.target Old MacDonald
@@ -1026,19 +1079,20 @@ step
 	.vendor >>Vendor and Repair
     .isOnQuest 35
 	.target Andrew Krighton
+    .train 90267,1 --Azeroth Flying
 step
-    .goto 37,52.25,62.90,40 >>Check for |cRXP_ENEMY_Lamepaw the Whimperer|r(Rare) and kill him.
+    .goto 37,52.25,62.90,40 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Lamepaw the Whimperer|r. Kill him if he's up|r
 	.unitscan Lamepaw the Whimperer
     .isOnQuest 35
 step
-    .goto 37,57.49,64.61,45 >> |cRXP_WARN_Scan the murloc islands with your mouse for a|r |cRXP_PICK_Chest|r. Your mouse will become a |TInterface/cursor/crosshair/interact.blp:20|tgear icon if there's a |cRXP_PICK_Chest|r. If you find one, kill the |cRXP_ENEMY_Murlocs|r protecting it and loot it.
+    .goto 37,57.49,64.61,45 >> |cRXP_WARN_[CHEST] Scan the murloc islands with your mouse for a|r |cRXP_PICK_Chest|r. Your mouse will become a |TInterface/cursor/crosshair/interact.blp:20|tgear icon if there's a |cRXP_PICK_Chest|r. If you find one. Loot it if it's up|r
     .isOnQuest 35
 step
-    .goto 37,66.51,63.83,40 >> Check for |cRXP_ENEMY_Tarantis|r(Rare).
+    .goto 37,66.51,63.83,40 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Tarantis|r. Kill him if he's up|r
 	.unitscan Tarantis
     .isOnQuest 35
 step
-    .goto 37,64.7,56.73,30 >>Check for the |cRXP_PICK_Chest|r |cFFfa9602in the Kobold Camp.|r
+    .goto 37,64.7,56.73,30 >>|cRXP_WARN_[CHEST] Check for the |cRXP_PICK_Chest|r inside the Kobold Camp. Loot it if it's up|r
     .isOnQuest 35
 step
     #completewith next
@@ -1056,7 +1110,7 @@ step
     .goto 40,37.01,50.26,20,0
     .goto 40,47.25,36.66,20,0
     .goto 40,53.93,30.58,20,0
-    .goto 40,45.14,21.76,20 >>Check for |cRXP_ENEMY_Mother Fang|r(Rare) |cFFfa9602at the back of the cave.|r
+    .goto 40,45.14,21.76,20 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Mother Fang|r at the back of Jasperlode Mine. Kill her if she's up|r
 	.unitscan Mother Fang
     .isOnQuest 35
 step
@@ -1085,7 +1139,7 @@ step
     .complete 52,2 --Kill Young Forest Bear (5)
     .mob +Young Forest Bear
 step
-    .goto 37,82.95,84.82,40 >> Check for |cRXP_ENEMY_Bushtail|r.
+    .goto 37,82.95,84.82,40 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Bushtail|r. Kill him if he's up|r
     .isOnQuest 52
 	.unitscan Bushtail
 step
@@ -1098,7 +1152,7 @@ step
 step
     .goto 37,75.71,86.29,30,0
     .goto 37,77.55,85.75
-    .deathskip >> Kill |cRXP_ENEMY_Murloc Foragers|r and |cRXP_ENEMY_Murloc Lurkers|r. Loot them for their |cRXP_LOOT_Torn Murloc Fins|r |cRXP_WARN_while dying to them|r. Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .deathskip >> Whilst killing |cRXP_ENEMY_Murloc Foragers|r and |cRXP_ENEMY_Murloc Lurkers|r, die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .isOnQuest 46
     .skill riding,75,1
 step
@@ -1107,6 +1161,7 @@ step
     .vendor 1198 >> Vendor and Repair
 	.target Rallic Finn
 	.isOnQuest 52
+    .train 90267,1 --Azeroth Flying
 step
     .goto 37,79.462,68.715
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sara Timberlain|r
@@ -1116,9 +1171,9 @@ step
     .goto 37,78.87,67.20,10,0
     .goto 37,78.637,67.157
     >>Kill |cRXP_FRIENDLY_James Clark|r inside. Loot him for |cRXP_LOOT_James Clark's Head|r and the |T134939:0|t|cRXP_LOOT_[Gold Pickup Schedule]|r
+    >>|cRXP_WARN_Use the |T134939:0|t|cRXP_LOOT_[Gold Pickup Schedule]|r to start the quest|r
     .complete 26152,1 --James Clark's Head (1)
     .collect 1307,1,123,1 --Gold Pickup Schedule (1)
-    >>|cRXP_WARN_Use the |T134939:0|t|cRXP_LOOT_[Gold Pickup Schedule]|r to start the quest|r
     .accept 123 >>Accept The Collector
     .mob James Clark
     .use 1307
@@ -1149,7 +1204,7 @@ step
     .complete 52,2 --Kill Young Forest Bear (5)
     .mob +Young Forest Bear
 step
-    #completewith next
+    #completewith MurlocFins
     .goto 37,80.88,53.78,0
     .goto 37,80.63,62.25,0
     .goto 37,82.79,60.12,0
@@ -1161,33 +1216,6 @@ step
     >>Click |cRXP_PICK_A half-eaten body|r on the ground
     .turnin 37 >>Turn in Find the Lost Guards
     .accept 45 >>Accept Discover Rolf's Fate
-step
-    #label Bundles
-    #loop
-    .goto 37,80.88,53.78,0
-    .goto 37,80.63,62.25,0
-    .goto 37,82.79,60.12,0
-    .goto 37,76.75,61.76,20,0
-    .goto 37,77.13,63.00,20,0
-    .goto 37,78.38,62.35,20,0
-    .goto 37,79.30,63.34,20,0
-    .goto 37,80.24,61.47,20,0
-    .goto 37,80.63,62.25,20,0
-    .goto 37,81.57,62.64,20,0
-    .goto 37,81.27,61.59,20,0
-    .goto 37,82.00,61.01,20,0
-    .goto 37,83.27,61.12,20,0
-    .goto 37,84.20,61.55,20,0
-    .goto 37,83.85,60.48,20,0
-    .goto 37,82.79,60.12,20,0
-    .goto 37,80.88,53.78,20,0
-    .goto 37,80.48,55.18,20,0
-    .goto 37,79.79,56.71,20,0 --Not Exact
-    .goto 37,79.04,59.56,20,0
-    .goto 37,77.30,59.56,20,0 --Not Exact/Real
-    .goto 37,77.18,60.65,20,0 --Not Exact/Real
-    >>Loot |cRXP_LOOT_Bundles of Wood|r on the ground next to the trees
-    .complete 5545,1 -- Bundle of Wood (8)
 step
     #label StoneCairn
     .goto 37,79.795,55.510
@@ -1214,25 +1242,21 @@ step
     >>Click |cRXP_PICK_Rolf's corpse|r on the ground
     .turnin 45 >>Turn in Discover Rolf's Fate
     .accept 71 >>Accept Report to Thomas
-step << skip
-    #requires MurlocFins
-    #completewith next
-    .goto 37,77.65,57.70
-    >>|cRXP_WARN_Skip this if you're not low at health|r
-    .deathskip >>Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step
-    #loop
+    #sticky
+    #label PTFrontier
     #requires MurlocFins
+    #loop
     .goto 37,81.72,58.57,0
     .goto 37,77.99,60.59,0
     .goto 37,71.58,60.84,0
     .goto 37,74.75,67.13,0
     .goto 37,87.15,64.63,0
-    .goto 37,81.72,58.57,60,0
-    .goto 37,77.99,60.59,60,0
-    .goto 37,71.58,60.84,60,0
-    .goto 37,74.75,67.13,60,0
-    .goto 37,87.15,64.63,60,0
+    .waypoint 37,81.72,58.57,60,0
+    .waypoint 37,77.99,60.59,60,0
+    .waypoint 37,71.58,60.84,60,0
+    .waypoint 37,74.75,67.13,60,0
+    .waypoint 37,87.15,64.63,60,0
     >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Gray Forest Wolves|r
     >>Kill any |cRXP_ENEMY_Young Forest Bears|r you see
     .complete 52,1 --Kill Prowler or Forest Wolf (8)
@@ -1240,6 +1264,39 @@ step
     .mob +*Gray Forest Wolf
     .complete 52,2 --Kill Young Forest Bear (5)
     .mob +Young Forest Bear
+step
+    #loop
+    #requires MurlocFins
+    .goto 37,80.88,53.78,0
+    .goto 37,80.63,62.25,0
+    .goto 37,82.79,60.12,0
+    .goto 37,80.88,53.78,20,0
+    .goto 37,80.48,55.18,20,0
+    .goto 37,79.79,56.71,20,0 --Not Exact
+    .goto 37,79.04,59.56,20,0
+    .goto 37,77.30,59.56,20,0 --Not Exact/Real
+    .goto 37,77.18,60.65,20,0 --Not Exact/Real
+    .goto 37,76.75,61.76,20,0
+    .goto 37,77.13,63.00,20,0
+    .goto 37,78.38,62.35,20,0
+    .goto 37,79.30,63.34,20,0
+    .goto 37,80.24,61.47,20,0
+    .goto 37,80.63,62.25,20,0
+    .goto 37,81.57,62.64,20,0
+    .goto 37,81.27,61.59,20,0
+    .goto 37,82.00,61.01,20,0
+    .goto 37,83.27,61.12,20,0
+    .goto 37,84.20,61.55,20,0
+    .goto 37,83.85,60.48,20,0
+    .goto 37,82.79,60.12,20,0
+    >>Loot |cRXP_LOOT_Bundles of Wood|r on the ground next to the trees
+    .complete 5545,1 -- Bundle of Wood (8)
+step << skip
+    #requires MurlocFins
+    #completewith next
+    .goto 37,77.65,57.70
+    >>|cRXP_WARN_Skip this if you're not low at health|r
+    .deathskip >>Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step
     .goto 37,73.973,72.177
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
@@ -1261,16 +1318,11 @@ step
     .mob Erlan Drudgemoor
     .mob Surena Caledon
 step
-    .goto 37,69.32,79.31,30 >>Check for |cRXP_ENEMY_Snoot the Rooter|r (Rare).
-	.unitscan Snoot the Rooter
-    .isOnQuest 83
-    >>|cRXP_WARN_Check for a |cRXP_PICK_Chest|r |cFFfa9602in|r and |cFFfa9602around the house.|r|r
-    >>|cRXP_WARN_Check for a |cRXP_PICK_Chest|r |cFFfa9602in|r and |cFFfa9602around the barn.|r|r 
-step
     #optional
     #label Morgan
     .goto 37,71.02,80.67
     >>Kill |cRXP_ENEMY_Morgan the Collector|r inside. Loot him for |cRXP_LOOT_The Collector's Ring|r and |cRXP_LOOT_Linen Scraps|r
+    >>|cRXP_WARN_[CHEST] Check for the |cRXP_PICK_Chest|r in and around the house. Loot it if it's up|r
     .complete 147,1 --The Collector's Ring (1)
     .complete 83,1 --Collect Linen Scrap (6)
     .disablecheckbox
@@ -1280,8 +1332,15 @@ step
 step
     .goto 37,71.02,80.67
     >>Kill |cRXP_ENEMY_Morgan the Collector|r inside. Loot him for |cRXP_LOOT_The Collector's Ring|r
+    >>|cRXP_WARN_[CHEST] Check for the |cRXP_PICK_Chest|r in and around the house. Loot it if it's up|r
     .complete 147,1 --The Collector's Ring (1)
     .mob Morgan the Collector
+step
+    #sticky
+    #label Snoot
+    .goto 37,69.32,79.31,30 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Snoot the Rooter|r. Kill him if he's up|r
+	.unitscan Snoot the Rooter
+    .isOnQuest 83
 step
     #loop
     .goto 37,68.56,82.68,0
@@ -1300,6 +1359,7 @@ step
     .goto 37,70.84,78.22,50,0
     .goto 37,71.81,78.51,50,0
     >>Kill |cRXP_ENEMY_Bandits|r. Loot them for their |cRXP_LOOT_Linen Scraps|r
+    >>|cRXP_WARN_[CHEST] Check for the |cRXP_PICK_Chest|r in and around the barn. Loot it if it's up|r
     .complete 83,1 --Collect Linen Scrap (6)
     .mob Bandit
 step
@@ -1316,12 +1376,12 @@ step
     .vendor 1198 >>Vendor and Repair
 	.target Rallic Finn
     .isOnQuest 83
+    .train 90267,1 --Azeroth Flying
 step << !DarkIronDwarf !KulTiran !LightforgedDraenei !Mechagnome !VoidElf
     .goto 37,81.829,66.556
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Goss the Swift|r
     .fp Eastvale Logging Camp >> Get the Eastvale Logging Camp flight path
 	.target Goss the Swift
-    .isOnQuest 147
 step
     .goto 37,81.860,66.040
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Patterson|r
