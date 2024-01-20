@@ -5240,6 +5240,12 @@ function addon.functions.convertquest(self, text, src, dst)
         src = tonumber(src)
         dst = tonumber(dst)
         if not (src and dst) then return end
+        local guide = addon.guide
+        if guide.questConversion then
+            guide.questConversion[src] = dst
+        else
+            guide.questConversion = {[src] = dst}
+        end
         return {text = text, textOnly = true, src = src, dst = dst}
     end
     local element = self.element
