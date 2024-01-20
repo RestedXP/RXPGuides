@@ -3893,7 +3893,7 @@ function addon.functions.skipgossip(self, text, ...)
                              GossipGetNumActiveQuests() == 0 then
                 GossipSelectOption(id)
             end
-        elseif id == npcId then
+        elseif id == npcId or id == 0 then
             if not element.index then
                 element.index = 2
             else
