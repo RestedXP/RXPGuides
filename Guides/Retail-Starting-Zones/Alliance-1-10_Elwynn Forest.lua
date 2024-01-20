@@ -312,7 +312,6 @@ step
     .complete 26389,1 --Blackrock Orc Weapon (8)
     .mob Blackrock Invader
 step
-    #softcore
     #requires Fire
     #completewith next
     .goto 425,54.27,77.40,0
@@ -336,7 +335,6 @@ step
     .complete 26390,1 --Kill Kurtok the Slayer (1)
     .mob Kurtok the Slayer
 step
-    #softcore
     #completewith next
     .goto 425,54.27,77.40,0
     .goto 425,38.29,58.12,0
@@ -401,7 +399,6 @@ step
     +The Darkmoon Faire event is now active, |cRXP_WARN_which guarantees you to gain an additional level for free and a temporary 10% experience boost.|r
     .dmf
 step
-    #softcore
     .goto 37,41.71,52.74,-1
     .goto 37,39.48,60.53,-1
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
@@ -1364,6 +1361,7 @@ step
     .mob Bandit
 step
     #completewith next
+    #requires Snoot
     .goto 37,75.71,86.29,30,0
     .goto 37,77.55,85.75,-1
     .goto 37,83.68,69.74,-1
@@ -1371,6 +1369,7 @@ step
     .isOnQuest 83
     .skill riding,75
 step
+    #requires Snoot
     .goto 37,83.283,66.089
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rallic Finn|r
     .vendor 1198 >>Vendor and Repair
