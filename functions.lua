@@ -219,10 +219,13 @@ addon.IsQuestTurnedIn = IsQuestTurnedIn
 addon.IsQuestComplete = IsQuestComplete
 
 local function GetQuestId(src)
-local guide = addon.currentGuide and addon.currentGuide.questConversion
+    local guide = addon.currentGuide or addon.guide
+    guide = guide.questConversion
     if guide and guide[src] then
+        --print(1,src,guide[src])
         return guide[src]
     elseif addon.questConversion[src] then
+        --print(1,src,addon.questConversion[src])
         return addon.questConversion[src]
     else
         return src
