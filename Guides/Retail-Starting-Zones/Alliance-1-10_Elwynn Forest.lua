@@ -889,7 +889,7 @@ step
     .goto 37,27.80,88.36,0
     .goto 37,27.67,86.21,0
     .goto 37,26.32,86.82,0
-    +|cRXP_WARN_[RARE & CHEST] Keep an eye out for |cRXP_PICK_Chests|r and |cRXP_ENEMY_Gruff Swiftbite|r in the camps. Kill him if he's up|r
+    +|cRXP_WARN_[RARE & CHEST] Keep an eye out for the |cRXP_PICK_Chest|r and |cRXP_ENEMY_Gruff Swiftbite|r in the camps. Loot the |cRXP_PICK_Chest|r if you find one, and kill |cRXP_ENEMY_Gruff Swiftbite|r if he's up|r
 	.unitscan Gruff Swiftbite
 step
     #sticky
