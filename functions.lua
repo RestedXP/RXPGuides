@@ -132,10 +132,10 @@ local _G = _G
 local GetNumQuests = C_QuestLog.GetNumQuestLogEntries or
                          _G.GetNumQuestLogEntries
 local GetQuestLogTitle = _G.GetQuestLogTitle
-local GetNumDayEvents = _G.C_Calendar.GetNumDayEvents
-local GetDayEvent = _G.C_Calendar.GetDayEvent
+local GetNumDayEvents = _G.C_Calendar and _G.C_Calendar.GetNumDayEvents
+local GetDayEvent = _G.C_Calendar and _G.C_Calendar.GetDayEvent
 local GetCurrentCalendarTime = _G.C_DateAndTime.GetCurrentCalendarTime
-local OpenCalendar = _G.C_Calendar.OpenCalendar
+--local OpenCalendar = _G.C_Calendar and _G.C_Calendar.OpenCalendar
 local GossipSelectOption = _G.SelectGossipOption
 local GossipGetOptions = C_GossipInfo and C_GossipInfo.GetOptions or _G.GetGossipOptions
 local PickupContainerItem = C_Container and C_Container.PickupContainerItem or _G.PickupContainerItem
