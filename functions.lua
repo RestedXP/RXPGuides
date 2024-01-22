@@ -3868,6 +3868,13 @@ function addon.functions.skipgossip(self, text, ...)
     local nArgs = #args
     local event = text
     local id = tonumber(args[1])
+    if (element.step.active and event == nil) then
+        local g = GossipGetOptions()
+        if type(g) == "table" and #g > 0 then
+            event = "GOSSIP_SHOW"
+        end
+    end
+
     if event == "GOSSIP_SHOW" then
         -- print(id,'GS',nArgs)
         local trainerId,name = addon.SelectGossipType("trainer",true)
