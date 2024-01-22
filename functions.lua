@@ -3922,6 +3922,11 @@ function addon.functions.skipgossipid(self, text, ...)
                 L("Error parsing guide") .. " " .. addon.currentGuideName ..
                    ': No gossip ID provided\n' .. self)
         end
+        local prefix = args[1]
+        if prefix:sub(1,1) == "+" then
+            args[1] = prefix:sub(2,-1)
+            element.parent = true
+        end
         for i,v in pairs(args) do
             args[i] = tonumber(v)
         end
