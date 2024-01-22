@@ -1550,6 +1550,9 @@ step
     #completewith next
     .zone Ashenvale >>Travel to |cFFfa9602Ashenvale|r
 step
+    .goto Ashenvale,13.4,29.2,70,0
+    .goto Ashenvale,14.6,16,0,70,0
+    .goto Ashenvale,13.4,29.2
     >>Kill |cRXP_ENEMY_Wrathtail Sorceress|r and |cRXP_ENEMY_Wrathtail Sea Witch|r and loot them for |cRXP_LOOT_|T133737:0|t[Naga Manuscript]|r
     .train 401757,1
     .collect 211777,1
