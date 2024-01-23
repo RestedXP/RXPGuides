@@ -1376,8 +1376,6 @@ step << Gnome
 	.target Captain Tharran
     .isOnQuest 26373
 step
-    .accept 123 >> 123
-step
     #optional << !Gnome
     .goto 27,53.713,52.190
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Tharran|r
