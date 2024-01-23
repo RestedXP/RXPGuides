@@ -1339,11 +1339,59 @@ step
 	.mob Crushcog Sentry Bot
     .use 58203
 step
+    #optional
+    #questguide
     .goto 469,48.744,52.880
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jarvi Shadowstep|r
     .turnin 26342 >>Turn in Paint it Black
+    .accept 26364 >>Accept Down with Crushcog!
+	.target Jarvi Shadowstep
+step
+    .goto 469,48.744,52.880
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jarvi Shadowstep|r
+    .turnin 26342 >>Turn in Paint it Black
+	.target Jarvi Shadowstep
+step
+    #questguide
+    #optional
+    #completewith Razlo
+    #label Mekkatalk
+    .goto 469,57.188,47.535
+    .gossipoption 38798 >> Talk to |cRXP_FRIENDLY_High Tinker Mekkatorque|r
+    .timer 72,Down with Crushcog! RP
+    .target High Tinker Mekkatorque
+    .isOnQuest 26364
+step
+    #questguide
+    #optional
+    #completewith next
+    #requires Mekkatalk
+    >>|cRXP_WARN_Wait out the RP|r
+    +Use the |T308321:0|t[Orbital Targeting Device] on |cRXP_ENEMY_Razlo Crushcog|r and |cRXP_ENEMY_Crushcog's Guardians|r
+    .isOnQuest 26364
+    .use 58253
+step
+    #questguide
+    #label Razlo
+    .goto 469,58.749,42.222
+    >>Defeat |cRXP_ENEMY_Razlo Crushcog|r
+    .complete 26364,2 --Razlo Crushcog defeated (1)
+    .use 58253
+    .mob Razlo Crushcog
+    .mob Crushcog's Guardians
+step
+    #questguide
+    .goto 469,48.744,52.880
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jarvi Shadowstep|r
+    .turnin 26364 >>Turn in Down with Crushcog!
     .accept 26373 >>Accept On to Kharanos
 	.target Jarvi Shadowstep
+step
+    .goto 27,49.906,44.980
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ciara Deepstone|r
+    .accept 26380 >>Accept Bound for Kharanos
+	.target Ciara Deepstone
+--XX Doable by other races but simpler to do for gnomes only
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1360,15 +1408,9 @@ RXPGuides.RegisterGuide([[
 
 << Alliance !DK
 
-step << skip --!Gnome !Dwarf
-    #optional
-    .goto 27,49.906,44.980
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ciara Deepstone|r
-    .accept 26380 >>Accept Bound for Kharanos
-	.target Ciara Deepstone
-    .isQuestAvailable 24469 --Dwarf Starting Q
---XX simplified to avoid issues
 step << Gnome
+    #optional
+    #questguide
     .goto 27,53.713,52.190
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Tharran|r
     .accept 25724 >>Accept Frostmane Aggression
@@ -1376,7 +1418,6 @@ step << Gnome
 	.target Captain Tharran
     .isOnQuest 26373
 step
-    #optional << !Gnome
     .goto 27,53.713,52.190
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Tharran|r
     .accept 25724 >>Accept Frostmane Aggression
@@ -1432,23 +1473,26 @@ step
 	.target Ragnar Thunderbrew
 step
     #optional
+    #label Distillery
     #completewith Belm
     .goto 27,54.083,50.335,8,0
     .goto 27,54.277,50.312,8,0
     .goto 27,54.485,50.847,10 >> Enter the Thunderbrew Distillery. Travel toward |cRXP_FRIENDLY_Innkeeper Belm|r inside
-step << skip -- !Gnome !Dwarf
-    #optional
+step << Gnome
+    #requires Distillery
+    #completewith Belm
     .goto 27,54.485,50.847
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r
-    .turnin 26380,2 >>Turn in Bound for Kharanos 
+    .turnin 26380,2 >>Turn in Bound for Kharanos
 	.target Innkeeper Belm
     .isOnQuest 26380
+--XX not sure how to do this otherwise
 step
     #label Belm
     .goto 27,54.485,50.847
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r
     >>|cRXP_BUY_Buy a|r |T132800:0|t[Rhapsody Malt] |cRXP_BUY_from him|r
-    .collect 2894,1,384,1 --Rhapsody Malt
+    .collect 2894,1,384,1 --Rhapsody Malt (1)
     .home >>Set your Hearthstone to Thunderbrew Distillery
 	.target Innkeeper Belm
     .isOnQuest 384
