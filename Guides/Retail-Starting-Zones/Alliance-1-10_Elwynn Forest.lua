@@ -760,22 +760,44 @@ step
     .isOnQuest 60
 	.dmf
 step
-    >>|cRXP_WARN_Do this once you've unlearned your professions|r
-    .goto 37,41.95,67.16,5 >> |cRXP_WARN_Walk to the Profession Trainer|r
-    .dmf
-step
-    .goto 37,41.95,67.16
-    .train 2366 >> Train |T4620675:0|tHerbalism from |cRXP_FRIENDLY_Lien Farmer|r
-	.skipgossip 47384,1,1,1
-	.target Lien Farmer
-    .dmf
-step
+    #sticky
+    #label Professions1
+    #completewith Professions3
     .goto 37,41.95,67.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lien Farmer|r
-    .train 2575 >> Train |T4620679:0|tMining
-	.skipgossip 47384,2,3,2
-	.target Lien Farmer
-    .dmf
+    >>|cRXP_WARN_Herbing Herbs and Mining Veins provides XP. Only gather resources in your direct path|r
+    >>|cRXP_WARN_If you don't want to do this, skip this step|r
+    .train 2366 >> Train |T4620675:0|t[Herbalism]
+    .train 2575 >> Train |T4620679:0|t[Mining]
+    .target Lien Farmer
+    .skipgossip 47396,1,1,1
+    .train 2366,1 --Herbalism
+    .train 2575,1 --Mining
+step
+    #optional
+    #requires Professions1
+    #label Professions2
+    #completewith Professions3
+    .goto 37,41.95,67.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lien Farmer|r
+    >>|cRXP_WARN_Herbing Herbs provides XP. Only gather resources in your direct path|r
+    >>|cRXP_WARN_If you don't want to do this, skip this step|r
+    .train 2366 >> Train |T4620675:0|t[Herbalism]
+    .target Lien Farmer
+    .skipgossip 47396,1,1,1
+    .train 2575,3 --Mining
+step
+    #optional
+    #requires Professions2
+    #label Professions3
+    .goto 37,41.95,67.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lien Farmer|r
+    >>|cRXP_WARN_Mining Veins provides XP. Only gather resources in your direct path|r
+    >>|cRXP_WARN_If you don't want to do this, skip this step|r
+    .train 2575 >> Train |T4620679:0|t[Mining]
+    .target Lien Farmer
+    .skipgossip 47396,1,2,1
+    .train 2366,3 --Herbalism
 step
 	#veteran
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Julia Stevens|r.
