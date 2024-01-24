@@ -256,14 +256,14 @@ step
     .goto 27,35.650,66.782,15 >> Enter Anvilmar
     .cooldown item,6948,<0 << Dwarf !DK
     .isOnQuest 24474
-    .train 90267,1  --Azeroth Flying
+    .xp >30,1  --Azeroth Flying
 step << Dwarf !DK
     #optional
     #completewith FirstThing
     .hs >> Hearth to Anvilmar
     .cooldown item,6948,>0,1
     .isOnQuest 24474
-    .train 90267,1  --Azeroth Flying
+    .xp >30,1  --Azeroth Flying
 step
     #optional
     #completewith FirstThing
@@ -271,7 +271,7 @@ step
     .goto 27,35.751,67.107,12,0
     .goto 27,35.650,66.782,15 >> Enter Anvilmar
     .isOnQuest 24474
-    .train 90267,3  --Azeroth Flying
+    .xp <30,1  --Azeroth Flying
 step
     #sticky
     #label FirstThing
@@ -397,7 +397,7 @@ step
     .goto 27,35.650,66.782,15 >> Enter Anvilmar
     .cooldown item,6948,<0 << Dwarf !DK
     .isOnQuest 24475
-    .train 90267,1  --Azeroth Flying
+    .xp >30,1  --Azeroth Flying
 step << Dwarf !DK
     #optional
     #requires DunWolves
@@ -405,7 +405,7 @@ step << Dwarf !DK
     .hs >> Hearth to Anvilmar
     .cooldown item,6948,>0,1
     .isOnQuest 24475
-    .train 90267,1  --Azeroth Flying
+    .xp >30,1  --Azeroth Flying
 step
     #optional
     #requires DunWolves
@@ -414,7 +414,7 @@ step
     .goto 27,35.751,67.107,12,0
     .goto 27,35.650,66.782,15 >> Enter Anvilmar
     .isOnQuest 24475
-    .train 90267,3  --Azeroth Flying
+    .xp <30,1  --Azeroth Flying
 step
     #label Sun
     #requires DunWolves
@@ -671,14 +671,14 @@ step
     .goto 27,35.953,66.803,15 >> Enter Anvilmar
     .cooldown item,6948,<0 << Dwarf !DK
     .isOnQuest 24492
-    .train 90267,1  --Azeroth Flying
+    .xp >30,1  --Azeroth Flying
 step << Dwarf !DK
     #optional
     #completewith Pack
     .hs >> Hearth to Anvilmar
     .cooldown item,6948,>0,1
     .isOnQuest 24492
-    .train 90267,1  --Azeroth Flying
+    .xp >30,1  --Azeroth Flying
 step
     #optional
     #completewith Pack
@@ -686,7 +686,7 @@ step
     .goto 27,35.836,67.146,12,0
     .goto 27,35.953,66.803,15 >> Enter Anvilmar
     .isOnQuest 24492
-    .train 90267,3  --Azeroth Flying
+    .xp <30,1  --Azeroth Flying
 step
     #sticky
     #label Forget
@@ -1020,6 +1020,7 @@ step
     #completewith next
     .goto 469,40.603,45.713,45 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Gibblewilt|r. Kill him if he's up|r
     .unitscan Gibblewilt
+    .xp >30,1
 step
     #label Geysers
     #loop
@@ -1095,6 +1096,7 @@ step
     #completewith next
     .goto 469,37.265,67.852,45 >>|cRXP_WARN_[RARE] Check for the |cRXP_ENEMY_Caverndeep Looter|r. Kill him if he's up|r
 	.unitscan Caverndeep Looter
+    .xp >30,1
 --XX I could not find this guy (supposedly pats between Frostmane Hold and the cave entrance), need more accurate coordinates  
 step
     #sticky
@@ -1160,7 +1162,7 @@ step
     .goto 470,45.246,74.390,15,0
     .goto 470,31.866,44.578,45 >>Travel toward |cRXP_ENEMY_Boss Bruggor|r inside
     >>|cRXP_WARN_You won't aggro the sleeping |cRXP_ENEMY_Rockjaw Fungus-Flingers|r unless you attack them|r
-    .train 90267,1 --Azeroth Flying
+    .xp >30,1 --Azeroth Flying
 step
     #completewith Bruggor
     .goto 470,87.857,52.221,15,0
@@ -1170,7 +1172,7 @@ step
     .goto 470,60.714,72.486,15,0
     .goto 470,45.246,74.390,15,0
     .goto 470,31.866,44.578,45 >>Travel toward |cRXP_ENEMY_Boss Bruggor|r inside
-    .train 90267,3 --Azeroth Flying
+    .xp <30,1 --Azeroth Flying
 step
     #sticky
     #label Detonator
@@ -1194,9 +1196,10 @@ step
     .goto 470,83.611,44.352,15,0
     .goto 469,33.781,66.184,20 >>Exit the Frostmane Hold cave
     >>|cRXP_WARN_You won't aggro the sleeping |cRXP_ENEMY_Rockjaw Fungus-Flingers|r unless you attack them|r
-    .train 90267,1 --Azeroth Flying
+    .xp >30,1 --Azeroth Flying
     .subzoneskip 135,1
 step
+    #optional
     #requires Detonator
     #completewith Finishing
     .goto 470,45.246,74.390,15,0
@@ -1205,7 +1208,7 @@ step
     .goto 470,74.752,38.437,15,0
     .goto 470,83.611,44.352,15,0
     .goto 469,33.781,66.184,20 >>Exit the Frostmane Hold cave
-    .train 90267,3 --Azeroth Flying
+    .xp <30,1 --Azeroth Flying
     .subzoneskip 135,1
 step
     #label Finishing
@@ -1286,12 +1289,14 @@ step
     .goto 469,66.023,27.211,45 >>|cRXP_WARN_[RARE] Check for the |cRXP_ENEMY_Weaponized Rabbot|r. Kill it if it's up|r
 	.unitscan Weaponized Rabbot
     .isOnQuest 26331
+    .xp >30,1
 step
     .goto 469,68.698,35.590,45,0
     .goto 469,67.992,35.519,45,0
     .goto 469,67.433,37.129,45 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Timber|r. Kill him if he's up|r
     .unitscan Timber
     .isOnQuest 26331
+    .xp >30,1
 step
     #optional
     #requires CrushcogM
@@ -1482,7 +1487,7 @@ step << Gnome
     #requires Distillery
     #completewith Belm
     .goto 27,54.485,50.847
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
     .turnin 26380,2 >>Turn in Bound for Kharanos
 	.target Innkeeper Belm
     .isOnQuest 26380
@@ -1490,7 +1495,7 @@ step << Gnome
 step
     #label Belm
     .goto 27,54.485,50.847
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
     >>|cRXP_BUY_Buy a|r |T132800:0|t[Rhapsody Malt] |cRXP_BUY_from him|r
     .collect 2894,1,384,1 --Rhapsody Malt (1)
     .home >>Set your Hearthstone to Thunderbrew Distillery
@@ -1506,15 +1511,7 @@ step << Dwarf/Gnome/DarkIronDwarf
     .train 2550 >> Train |T4620671:0|t[Cooking]
 	.target Gremlock Pilsnor
     .train 2550,1 --Cooking
-step << Dwarf/Gnome/DarkIronDwarf
-    .goto 27,54.723,50.607,8,0
-    .goto 27,54.784,50.629,8,0
-    .goto 27,54.733,50.815,8,0
-    .goto 27,54.733,50.815
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gremlock Pilsnor|r inside in the backroom
-    .accept 6387 >>Accept Honor Students
-	.target Gremlock Pilsnor
-    .train 2550,3 --Cooking
+    .dmf
 step << !Dwarf !Gnome !DarkIronDwarf
     .goto 27,54.723,50.607,8,0
     .goto 27,54.784,50.629,8,0
@@ -1523,316 +1520,483 @@ step << !Dwarf !Gnome !DarkIronDwarf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gremlock Pilsnor|r inside in the backroom
     .train 2550 >> Train |T4620671:0|t[Cooking]
 	.target Gremlock Pilsnor
+    .dmf
+step << Dwarf/Gnome/DarkIronDwarf
+    .goto 27,54.723,50.607,8,0
+    .goto 27,54.784,50.629,8,0
+    .goto 27,54.733,50.815,8,0
+    .goto 27,54.733,50.815
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gremlock Pilsnor|r inside in the backroom
+    .accept 6387 >>Accept Honor Students
+	.target Gremlock Pilsnor
 step
     .goto 27,53.124,49.995
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharek Blackstone|r
     .turnin 24493 >>Turn in Don't Forget About Us
 	.target Tharek Blackstone
     .isOnQuest 24493
-step
+    step
     #completewith next
-	>>Kill |cRXP_ENEMY_Crag Boars|r and loot them for their |T133972:0|t|cRXP_LOOT_Tender Boar Ribs.|r
-    .complete 384,1 --4/4 Tender Boar Ribs
+    .goto 27,53.376,44.252,0
+    .goto 27,53.193,42.603,0
+    .goto 27,53.376,44.252,60,0
+    .goto 27,53.193,42.603,60,0
+	>>Kill |cRXP_ENEMY_Crag Boars|r. Loot them for their |cRXP_LOOT_Tender Boar Ribs|r
+    .complete 384,1 --Tender Boar Ribs (4)
 	.mob Crag Boar
 step
-	.isOnQuest 25724
-	.goto 27,51.14,40.51,25 >> Run |cFFfa9602up the ramp.|r
-step
-    #title RARE
-    #completewith Great Father Arctikus
-    .isOnQuest 25724,315
-    .goto 27,49.06,37.13,30 >> Check for |cRXP_FRIENDLY_Great Father Arctikus|r |cFFfa9602in a Hut.|r
-	.unitscan Great Father Arctikus
-step
-    #title PICK-UP / LOOT
+    #optional
     #completewith next
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Shimmerweed Baskets|r and loot |cRXP_ENEMY_Frostmane Seers|r for additional |T134184:0|t|cRXP_LOOT_Shimmerweed.|r
-    .complete 315,1 --7/7 Shimmerweed
+    #label Ramp
+    .goto 27,51.034,40.862,50 >> Travel up the ramp
+    .subzoneskip 802
+    .xp >30,1 --Azeroth Flying
+    .isOnQuest 25724
 step
-    #title KILL
-    .goto 27,48.64,36.81,30,0
-    .goto 27,47.70,39.50,30,0	
-    .goto 27,49.87,39.92,30,0
-    .goto 27,48.5,37.8	
-    >>Kill |cRXP_ENEMY_Frostmane Snowstriders|r and |cRXP_ENEMY_Frostmane Seers.|r
-    .complete 25724,2 --7/7 Frostmane Snowstrider slain
-    .complete 25724,1 --5/5 Frostmane Seer slain
-    .mob Frostmane Snowstrider
+    #requires Ramp
+    #completewith Snowstrider
+    .goto 27,49.056,37.135,45 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Great Father Arctikus|r. Kill him if he's up|r
+	.unitscan Great Father Arctikus
+    .isOnQuest 25724
+    .xp >30,1
+step
+    #sticky
+    #requires Ramp
+    #label Shimmerweed
+    .goto 27,48.955,36.824,0
+    .goto 27,48.330,38.486,0
+    .goto 27,48.092,42.928,0
+    .goto 27,48.773,42.485,0
+    .goto 27,48.949,37.202,0
+    .waypoint 27,48.955,36.824,15,0
+    .waypoint 27,48.331,36.523,15,0
+    .waypoint 27,47.734,37.203,15,0
+    .waypoint 27,47.704,37.755,15,0
+    .waypoint 27,48.330,38.486,15,0
+    .waypoint 27,47.699,39.542,15,0
+    .waypoint 27,48.504,42.035,15,0
+    .waypoint 27,48.371,42.052,15,0
+    .waypoint 27,48.092,42.928,15,0
+    .waypoint 27,48.283,42.796,15,0
+    .waypoint 27,48.316,43.158,15,0
+    .waypoint 27,48.805,42.774,15,0
+    .waypoint 27,48.773,42.485,15,0
+    .waypoint 27,50.247,40.528,15,0
+    .waypoint 27,49.153,41.241,15,0
+    .waypoint 27,49.220,37.873,15,0
+    .waypoint 27,48.949,37.202,15,0
+    >>Kill |cRXP_ENEMY_Frostmane Seers|r. Loot them for their |cRXP_LOOT_Shimmerweed|r
+    >>Open the |cRXP_PICK_Shimmerweed Baskets|r on the ground. Loot them for their |cRXP_LOOT_Shimmerweed|r
+    .complete 315,1 --Shimmerweed (7)
 	.mob Frostmane Seer
 step
-    #title PICK-UP / LOOT
-    .goto 27,48.64,36.81,30,0
-    .goto 27,47.70,39.50,30,0	
-    .goto 27,49.87,39.92,30,0
-    .goto 27,48.5,37.8	
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Shimmerweed Baskets|r and loot |cRXP_ENEMY_Frostmane Seers|r for additional |T134184:0|t|cRXP_LOOT_Shimmerweed.|r
-    .complete 315,1 --7/7 Shimmerweed	
+    #label Snowstrider
+    #requires Ramp
+    >>Kill |cRXP_ENEMY_Frostmane Snowstriders|r and |cRXP_ENEMY_Frostmane Seers|r
+    .complete 25724,2 --Frostmane Snowstrider slain (7)
+    .goto 27,50.507,39.991,0
+    .goto 27,49.270,38.306,0
+    .goto 27,47.506,39.668,0
+    .goto 27,49.717,41.829,0
+    .goto 27,50.507,39.991,50,0
+    .goto 27,50.697,39.331,50,0
+    .goto 27,50.165,38.971,50,0
+    .goto 27,50.533,38.088,50,0
+    .goto 27,49.270,38.306,50,0
+    .goto 27,49.109,37.844,50,0
+    .goto 27,48.866,37.838,50,0
+    .goto 27,48.852,36.950,50,0
+    .goto 27,47.506,39.668,50,0
+    .goto 27,48.468,42.612,50,0
+    .goto 27,49.264,42.981,50,0
+    .goto 27,49.717,41.829,50,0
+    .mob +Frostmane Snowstrider
+    .complete 25724,1 --Frostmane Seer slain (5)
+    .goto 27,49.142,39.986,0
+    .goto 27,48.164,43.105,0
+    .goto 27,49.362,37.687,0
+    .goto 27,49.142,39.986,50,0
+    .goto 27,48.924,39.588,50,0
+    .goto 27,48.191,37.582,50,0
+    .goto 27,48.544,40.678,50,0
+    .goto 27,48.164,43.105,50,0
+    .goto 27,48.539,43.228,50,0
+    .goto 27,49.027,42.624,50,0
+    .goto 27,49.836,37.127,50,0
+    .goto 27,49.362,37.687,50,0
+	.mob +Frostmane Seer
 step
-    #label Great Father Arctikus
-    #title Deathskip
+    #optional
+    #requires Shimmerweed
 	#completewith next
-	.goto 27,50.12,38.68,20 >> Die on the |cFFfa9602Eastern side of the camp.|r
+    .goto 27,50.495,40.006,70 >> Travel toward the eastern side of the camp. Respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .xp >30,1 --Azeroth Flying
 step
+    #requires Shimmerweed
     #completewith next
-    >>|cRXP_WARN_1./sit increases your damage taken.|r
-    >>|cRXP_WARN_2.Unequipping your gear increases your damage taken.|r
-    .deathskip >> Die and respawn |cFFfa9602at Kharanos.|r
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .xp >30,1 --Azeroth Flying
 step << Dwarf/Gnome/DarkIronDwarf
+    #requires Shimmerweed
     .goto 27,53.802,52.762
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brolan Galebeard|r
     .turnin 6387 >>Turn in Honor Students
---  .accept 6391 >>Accept Ride to Ironforge
+    .accept 6391 >>Accept Ride to Ironforge
+    .fp Kharanos >>Get the Kharanos Flight Path
 	.target Brolan Galebeard
---XX re-add 6391 if Airfield added
 step
-    .goto 27,53.7,52.2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Tharran.|r
+    #requires Shimmerweed
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Tharran|r and |cRXP_FRIENDLY_Quartermaster Glynna|r
     .turnin 25724 >>Turn in Frostmane Aggression
     .accept 313 >>Accept Forced to Watch from Afar
     .accept 25667 >>Accept Culling the Wendigos
-	.target Captain Tharran
-step
-    .goto 27,53.70,52.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quartermaster Glynna.|r
+    .goto 27,53.713,52.190
+	.target +Captain Tharran
     .accept 25668 >>Accept Pilfered Supplies
-	.target Quartermaster Glynna
+    .goto 27,53.707,52.095
+	.target +Quartermaster Glynna
 step
-    #title LOOT
-    #completewith Cave Entrance
-    >>Kill |cRXP_ENEMY_Crag Boars|r and loot them for their |T133972:0|t|cRXP_LOOT_Tender Boar Ribs.|r
-    |cRXP_WARN_Completion here is ideal, but there's time to find boars later.|r
-    .complete 384,1 --4/4 Tender Boar Ribs
+    #completewith WendigoCave
+    .goto 27,51.697,54.360,0
+    .goto 27,50.738,54.065,0
+    .goto 27,49.815,53.919,0
+    .goto 27,51.697,54.360,60,0
+    .goto 27,50.738,54.065,60,0
+    .goto 27,49.815,53.919,60,0
+	>>Kill |cRXP_ENEMY_Crag Boars|r. Loot them for their |cRXP_LOOT_Tender Boar Ribs|r
+    .complete 384,1 --Tender Boar Ribs (4)
 	.mob Crag Boar
 step
-    #title KILL
-    #completewith Edan the Howler
-    >>Kill |cRXP_ENEMY_Wendigos|r
-    .complete 25667,1 --10/10 Wendigo slain
+    #sticky
+    #label Pilfered
+    #loop
+    .goto 29,62.330,22.544,0
+    .goto 29,70.564,57.907,0
+    .goto 29,50.663,47.870,0
+    .waypoint 29,62.330,22.544,15,0
+    .waypoint 29,58.260,24.711,15,0
+    .waypoint 29,57.075,45.882,15,0
+    .waypoint 29,70.564,57.907,15,0
+    .waypoint 29,69.021,60.488,15,0
+    .waypoint 29,60.967,56.171,15,0
+    .waypoint 29,56.301,54.391,15,0
+    .waypoint 29,50.663,47.870,15,0
+    >>Loot the |cRXP_LOOT_Pilfered Supplies|r on the ground
+    .complete 25668,1 --Pilfered Supplies (6)
+step
+    #completewith WendigoCave
+    >>Kill |cRXP_ENEMY_Young Wendigos|r and |cRXP_ENEMY_Wendigos|r
+    .complete 25667,1 --Wendigo slain (10)
 	.mob Wendigo
 	.mob Young Wendigo
 step
-    #title PICK-UP
-    #completewith Edan the Howler
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Pilfered Supplies.|r 
-    .complete 25668,1 --6/6 Pilfered Supplies
+    #optional
+    #label WendigoCave
+    .goto 29,61.676,88.466,40 >> Enter the Wendigo Cave
+	.isOnQuest 25668
 step
-    #label Cave Entrance
-    #title Cave Entrance
-	.isOnQuest 25667,25668
-	.goto 27,49.58,52.72,15,0
-	.goto 27,49.32,51.66,20 >> Enter the |cFFfa9602Wendigo Cave.|r
+    #optional
+    #sticky
+    #label Wendigos
+    #loop
+    .goto 29,56.228,15.776,0
+    .goto 29,69.067,56.919,0
+    .goto 29,49.271,52.117,0
+    .waypoint 29,56.228,15.776,40,0
+    .waypoint 29,61.453,19.391,40,0
+    .waypoint 29,65.808,34.242,40,0
+    .waypoint 29,60.523,38.069,40,0
+    .waypoint 29,69.067,56.919,40,0
+    .waypoint 29,51.657,55.467,40,0
+    .waypoint 29,49.271,52.117,40,0
+    >>Kill |cRXP_ENEMY_Wendigos|r inside
+    .complete 25667,1 --Wendigo slain (10)
+	.mob Wendigo
 step
-    #title GOSSIP
-    .goto 29,51.86,48.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Dunstan.|r
-    .skipgossip
-    .complete 313,1 --1/1 Convey orders to Mountaineer Dunstan
+    #optional
+    #completewith next
+    .goto 29,61.083,82.713,20,0
+    .goto 29,58.971,77.810,20,0
+    .goto 29,53.639,70.746,20,0
+    .goto 29,51.947,65.073,20,0
+    .goto 29,51.819,48.382,15 >>Travel toward |cRXP_FRIENDLY_Mountaineer Dunstan|r inside
+    .isOnQuest 313
+step
+    .goto 29,51.819,48.382
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Dunstan|r inside
+    .complete 313,1 --Convey orders to Mountaineer Dunstan (1)
 	.target Mountaineer Dunstan
-step
-    #title GOSSIP
-    .goto 29,60.29,56.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Lewin.|r
     .skipgossip
-    .complete 313,2 --1/1 Convey orders to Mountaineer Lewin
+step
+    .goto 29,60.272,56.211
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Lewin|r inside
+    .complete 313,2 --Convey orders to Mountaineer Lewin (1)
 	.target Mountaineer Lewin
-step
-    #title GOSSIP
-    .goto 29,61.55,22.25
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Valgrum.|r
     .skipgossip
-    .complete 313,3 --1/1 Convey orders to Mountaineer Valgrum
+step
+    .goto 29,61.511,22.248
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Valgrum|r inside
+    .complete 313,3 --Convey orders to Mountaineer Valgrum (1)
 	.target Mountaineer Valgrum
+    .skipgossip
+--XX not doing Edan/Chest check due to deathskip location
 step
-    #title Chest
-    .isOnQuest 25667,25668,313
-    .goto 29,54.14,15.05,15,0
-    .goto 29,34.33,36.68,20 >>Check for the |cRXP_PICK_Dark Iron Treasure Chest|r |cFFfa9602deeper in the Cave.|r
+    #optional
+    #requires Pilfered
+--XXREQ Placeholder invis step until multiple requires per step
 step
-    #label Edan the Howler
-    #title Rare
-    .isOnQuest 25667,25668,313
-    .goto 29,31.92,53.23,30 >>Check for |cRXP_ENEMY_Edan the Howler|r |cFFfa9602at the end of the Cave.|r 
-	.unitscan Edan the Howler
+    #requires Wendigos
+    #completewith Afar
+    >>|cRXP_WARN_Make sure you die in a spot that is east/southeast of where |cRXP_FRIENDLY_Mountaineer Valgrum|r is|r
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .xp >30,1 --Azeroth Flying
+    .isOnQuest 313
 step
-    #title KILL
-    #completewith next
-    >>Kill |cRXP_ENEMY_Wendigos|r
-    .complete 25667,1 --10/10 Wendigo slain
-	.mob Wendigo
-	.mob Young Wendigo
+    #optional
+    #completewith Afar
+    .goto 29,54.653,47.370,20,0
+    .goto 29,51.703,58.351,20,0
+    .goto 29,61.676,88.466,40 >> Exit the Wendigo Cave
+    .xp <30,1 --Azeroth Flying
+    .isOnQuest 313
 step
-    #title PICK-UP
-    .loop 20,29,31.92,53.23,34.33,36.68,61.55,22.25,60.29,56.20
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Pilfered Supplies.|r 
-    .complete 25668,1 --6/6 Pilfered Supplies
-step
-    #title KILL
-    .loop 20,29,31.92,53.23,34.33,36.68,61.55,22.25,60.29,56.20
-    >>Kill |cRXP_ENEMY_Wendigos|r
-    .complete 25667,1 --10/10 Wendigo slain
-	.mob Wendigo
-	.mob Young Wendigo
-step
-    #completewith next
-    >>|cRXP_WARN_1./sit increases your damage taken.|r
-    >>|cRXP_WARN_2.Unequipping your gear increases your damage taken.|r
-    --x shiek review: think of additional things / formatting
-    .deathskip >> Die and respawn |cFFfa9602at Kharanos.|r
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Tharran|r and |cRXP_FRIENDLY_Quartermaster Glynna.|r
+    #requires Wendigos
+    #label Afar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Tharran|r and |cRXP_FRIENDLY_Quartermaster Glynna|r
     .turnin 313 >>Turn in Forced to Watch from Afar
     .turnin 25667 >>Turn in Culling the Wendigos
     .accept 25792 >>Accept Pushing Forward
-    .goto 27,53.7,52.2
+    .goto 27,53.713,52.190
+	.target +Captain Tharran
     .turnin 25668 >>Turn in Pilfered Supplies
-    .goto 27,53.70,52.10
-	.target Captain Tharran
-    .target Quartermaster Glynna
+    .goto 27,53.707,52.095
+	.target +Quartermaster Glynna
 step
-    .goto 27,53.26,51.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Razzle Sprysprocket.|r
+    .goto 27,53.262,51.917
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Razzle Sprysprocket|r
     .accept 412 >>Accept Operation Recombobulation
 	.target Razzle Sprysprocket
 step
-    #title LOOT
-    #completewith Boars
-    >>Kill |cRXP_ENEMY_Crag Boars|r and loot them for their |T133972:0|t|cRXP_LOOT_Tender Boar Ribs.|r
-    >>|cRXP_WARN_You should really finish it soon to avoid wasting time.|r
-    .complete 384,1 --4/4 Tender Boar Ribs
+    #completewith Gears
+    .goto 27,55.315,56.087,0
+    .goto 27,55.156,54.313,60,0
+    .goto 27,55.315,56.087,60,0
+	>>Kill |cRXP_ENEMY_Crag Boars|r. Loot them for their |cRXP_LOOT_Tender Boar Ribs|r
+    .complete 384,1 --Tender Boar Ribs (4)
 	.mob Crag Boar
 step
-    #completewith Chestss
-    >>Kill |cRXP_ENEMY_Frostmane Scavengers|r and loot them for their |T134063:0|t|cRXP_LOOT_Gyromechanic Gears.|r
-    .complete 412,1 --8/8 Gyromechanic Gear
+    #completewith Gears
+    .goto 27,57.252,57.622,40,0
+    .goto 27,60.260,57.034,15 >>|cRXP_WARN_[CHEST] Keep an eye out for the |cRXP_PICK_Chest|r at the Frostmane Front. Loot it if it's up|r
+step
+    #sticky
+    #label Gears
+    .goto 27,61.927,55.860,0
+    .goto 27,60.305,57.134,0
+    .goto 27,56.337,56.955,0
+    .waypoint 27,61.927,55.860,45,0
+    .waypoint 27,61.571,55.817,45,0
+    .waypoint 27,60.806,56.782,45,0
+    .waypoint 27,60.460,56.838,45,0
+    .waypoint 27,60.305,57.134,45,0
+    .waypoint 27,59.977,57.500,45,0
+    .waypoint 27,57.341,57.547,45,0
+    .waypoint 27,56.923,57.456,45,0
+    .waypoint 27,56.337,56.955,45,0
+    >>Kill |cRXP_ENEMY_Frostmane Scavengers|r. Loot them for their |cRXP_LOOT_Gyromechanic Gears|r
+    .complete 412,1 --Gyromechanic Gear (8)
 	.mob Frostmane Scavenger
 step
-    .goto 27,56.7,56.44,10,0
-    .goto 27,57.58,56.64,10,0
-    .goto 27,58.18,57.43,10,0
-    .goto 27,57.73,57.8,10,0
-    .goto 27,57.67,58.83,10,0
-    .goto 27,57.14,59.48,10,0
-    >>Use |T134424:0|t[Rune of Fire] on Constriction Totems.
-    .complete 25792,1 --4/4 Constriction Totems burned
+    #label Totems
+    #loop
+    .goto 27,56.705,56.430,0
+    .goto 27,59.034,57.689,0
+    .goto 27,57.648,58.825,0
+    .goto 27,55.958,61.442,0
+    .goto 27,56.705,56.430,20,0
+    .goto 27,57.576,56.626,20,0
+    .goto 27,58.403,56.723,20,0
+    .goto 27,59.099,57.035,20,0
+    .goto 27,59.034,57.689,20,0
+    .goto 27,58.631,58.074,20,0
+    .goto 27,58.186,57.427,20,0
+    .goto 27,57.724,57.788,20,0
+    .goto 27,57.648,58.825,20,0
+    .goto 27,57.134,59.461,20,0
+    .goto 27,56.937,60.250,20,0
+    .goto 27,56.701,61.013,20,0
+    .goto 27,55.958,61.442,20,0
+    >>Use the |T134424:0|t[Rune of Fire] on |cRXP_ENEMY_Constriction Totems|r
+    .complete 25792,1 --Constriction Totems burned (4)
     .use 56009
+    .mob Constriction Totem
 step
-    #label Chestss
-    .isOnQuest 25792
-    .goto 27,57.39,57.76,15 >> Check for the |cRXP_PICK_Chest|r |cFFfa9602next to the Cannon.|r 
-step
-    #label Boars
-    .loop 15,27,57.3,58.88,56.93,59.97,56.21,59.03,55.92,57.45,56.31,57.12
-    >>Kill |cRXP_ENEMY_Frostmane Scavengers|r and loot them for their |T134063:0|t|cRXP_LOOT_Gyromechanic Gears.|r
-    .complete 412,1 --8/8 Gyromechanic Gear
-	.mob Frostmane Scavenger
-step
-    #title LOOT
-    .loop 15,27,57.3,58.88,56.93,59.97,56.21,59.03,55.92,57.45,56.31,57.12
-    >>Kill |cRXP_ENEMY_Crag Boars|r and loot them for their |T133972:0|t|cRXP_LOOT_Tender Boar Ribs.|r
-    .complete 384,1 --4/4 Tender Boar Ribs
+    #requires Gears
+    .goto 27,55.315,56.087,0
+    .goto 27,54.940,57.752,0
+    .goto 27,53.276,57.839,0
+    .goto 27,55.315,56.087,60,0
+    .goto 27,55.156,54.313,60,0
+    .goto 27,56.204,52.928,60,0
+    .goto 27,54.940,57.752,60,0
+    .goto 27,55.073,58.728,60,0
+    .goto 27,54.442,59.686,60,0
+    .goto 27,53.235,60.000,60,0
+    .goto 27,53.276,57.839,60,0
+	>>Kill |cRXP_ENEMY_Crag Boars|r. Loot them for their |cRXP_LOOT_Tender Boar Ribs|r
+    .complete 384,1 --Tender Boar Ribs (4)
 	.mob Crag Boar
 step
-    .goto 27,53.26,51.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Razzle Sprysprocket.|r
+    #sticky
+    #label Pushing
+    .goto 27,53.713,52.190,0,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Tharran|r
+    .turnin 25792 >>Turn in Pushing Forward
+    .accept 25838 >>Accept Help from Steelgrill's Depot
+	.target Captain Tharran
+--XX not sure if you need to turnin 412 to accept
+step
+    .goto 27,53.262,51.917
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Razzle Sprysprocket|r
     .turnin 412 >>Turn in Operation Recombobulation
 	.target Razzle Sprysprocket
 step
-    .goto 27,53.71,52.2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Tharran.|r
-    .turnin 25792,1,1 >>Turn in Pushing Forward
-    .accept 25838 >>Accept Help from Steelgrill's Depot
-	.target Captain Tharran
-step
-    .goto 27,54.19,51.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rejold Barleybrew.|r
+    #requires Pushing
+    .goto 27,54.196,51.169
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rejold Barleybrew|r
     .turnin 315 >>Turn in The Perfect Stout
 	.target Rejold Barleybrew
 step
-    .goto 27,53.94,50.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ragnar Thunderbrew.|r
+    .goto 27,53.933,50.684
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ragnar Thunderbrew|r
     .turnin 384 >>Turn in Beer Basted Boar Ribs
 	.target Ragnar Thunderbrew
 step
-    .goto 27,53.9,50.12,10,0
-    .goto 27,56.83,47.1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delber Cranktoggle.|r
+    #completewith next
+    .goto 27,53.941,50.053,15,0
+    .goto 27,56.823,47.107,15 >>Travel toward |cRXP_FRIENDLY_Delber Cranktoggle|r
+    .xp >30,1
+step
+    .goto 27,56.823,47.107
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delber Cranktoggle|r
     .turnin 25838 >>Turn in Help from Steelgrill's Depot
     .accept 25839 >>Accept The Ultrasafe Personnel Launcher
 	.target Delber Cranktoggle
 step
+    #completewith next
+    .goto 27,56.725,46.583,-1
+    .goto 27,56.758,46.518,-1
+    .vehicle >>Enter the |cRXP_PICK_Ultrasafe Personnel Launcher|r
+    .timer 18.5,The Ultrasafe Personnel Launcher RP
     .isOnQuest 25839
-    .goto 27,56.73,46.59
-    .vehicle >>Click the |cRXP_PICK_Ultrasafe Personnel Launcher.|r
-    .timer 20, Flight RP
+    .xp >30,1
 step
-    .goto 27,62.5,53.71
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Slamp Wobblecog.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Slamp Wobblecog|r and |cRXP_FRIENDLY_Snevik the Blade|r
     .turnin 25839 >>Turn in The Ultrasafe Personnel Launcher
     .accept 25840 >>Accept Eliminate the Resistance
     .accept 25841 >>Accept Strike From Above
-	.target Slamp Wobblecog
-step
-    .goto 27,62.55,53.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Snevik the Blade.|r
+    .goto 27,62.505,53.708
+	.target +Slamp Wobblecog
     .accept 28868 >>Accept The View from Down Here
-	.target Snevik the Blade
+    .goto 27,62.546,53.807
+	.target +Snevik the Blade
 step
-    #completewith South Camp
-    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with |cRXP_ENEMY_Frostmane Builder.|r
-    .complete 28868,1 --5/5 Frostmane Builders shrunk
-	.target Frostmane Builder
-    .use 67249
+    #sticky
+    #label Builders
+    .goto 27,63.237,57.685,0
+    .goto 27,62.461,55.569,0
+    .goto 27,60.230,56.060,0
+    .goto 27,64.303,54.222,0
+    .goto 27,64.240,56.533,0
+    .waypoint 27,63.237,57.685,20,0
+    .waypoint 27,62.898,57.772,20,0
+    .waypoint 27,62.360,57.619,20,0
+    .waypoint 27,62.169,56.801,20,0
+    .waypoint 27,62.461,55.569,20,0
+    .waypoint 27,62.860,55.116,20,0
+    .waypoint 27,63.454,54.870,20,0
+    .waypoint 27,61.662,54.594,20,0
+    .waypoint 27,60.908,54.935,20,0
+    .waypoint 27,60.693,55.826,20,0
+    .waypoint 27,60.230,56.060,20,0
+    >>Use the |T133015:0|t[Viewpoint Equalizer] on |cRXP_ENEMY_Frostmane Builders|r
+    .complete 28868,1 --Frostmane Builders shrunk (5)
     .mob Frostmane Builder
+    .use 67249
 step
-    #completewith South Camp
-	>>Kill |cRXP_ENEMY_Battok the Berserker|r and |cRXP_ENEMY_Frostmane Warriors.|r
-    .complete 25840,2 --5/5 Frostmane Warrior slain
+    #sticky
+    #label Warriors
+    .goto 27,62.959,56.486,0
+    .goto 27,63.017,54.746,0
+    .goto 27,64.023,56.068,0
+    .waypoint 27,62.959,56.486,50,0
+    .waypoint 27,62.214,56.630,50,0
+    .waypoint 27,62.049,56.284,50,0
+    .waypoint 27,62.154,54.625,50,0
+    .waypoint 27,63.017,54.746,50,0
+    .waypoint 27,63.875,54.960,50,0
+    .waypoint 27,64.243,54.643,50,0
+    .waypoint 27,64.023,56.068,50,0
+	>>Kill |cRXP_ENEMY_Frostmane Warriors|r
+    .complete 25840,2 --Frostmane Warrior slain (5)
 	.mob Frostmane Warrior
 step
+    #sticky
+    #label FrostmaneChest1
+    .goto 27,64.706,54.003,20 >>|cRXP_WARN_[CHEST] Check for the |cRXP_PICK_Chest|r near the stairs to the hut. Loot it if it's up|r
     .isOnQuest 25841
-    .goto 27,64.69,54.01,15 >>Check for a |cRXP_PICK_Chest|r |cFFfa9602near the Tents.|r
 step
-    .goto 27,64.57,54.19
-    >>Use the |T133033:0|t[Signal Flare] in the |cFFfa9602Northern Camp.|r
-    .complete 25841,1 --1/1 Attack on Northern Frostmane Retreat
+    .goto 27,64.487,54.103
+    >>Use the |T133033:0|t[Signal Flare] in the Northern Camp
+    .complete 25841,1 --Attack on Northern Frostmane Retreat (1)
     .use 56048
 step
-    .isOnQuest 25841
-    .goto 27,63.64,56.1,10 >>Check for a |cRXP_PICK_Chest|r |cFFfa9602in Battok's Camp near the drums.|r
-step
-    #label South Camp
-    .goto 27,63.15,57.22
+    #requires FrostmaneChest1
+    .goto 27,63.780,55.735
     >>Kill |cRXP_ENEMY_Battok the Berserker|r
-    >>Use the |T133033:0|t[Signal Flare] in the |cFFfa9602Sourthern Camp.|r
-    .complete 25840,1 --1/1 Battok the Berserker slain
-    .complete 25841,2 --1/1 Attack on Southern Frostmane Retreat
-    .target Battok the Berserker
-    .use 56048
+    .complete 25840,1 --Battok the Berserker slain (1)
+    .mob Battok the Berserker
 step
     #completewith next
-    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with |cRXP_ENEMY_Frostmane Builder.|r
-    .complete 28868,1 --5/5 Frostmane Builders shrunk
-    .use 67249
-    .mob Frostmane Builder
+    .goto 27,63.550,56.118,20 >>|cRXP_WARN_[CHEST] Check for the |cRXP_PICK_Chest|r near the Drum. Loot it if it's up|r
+    .isOnQuest 25841
 step
-    .loop 15,27,62.36,57.2,62.19,55.52,62.98,54.86,63.82,54.45
-	>>Kill |cRXP_ENEMY_Frostmane Warriors.|r
-    .complete 25840,2 --5/5 Frostmane Warrior slain
-	.mob Frostmane Warrior
+    #requires FrostmaneChest2
+    .goto 27,63.191,57.128
+    >>Use the |T133033:0|t[Signal Flare] in the Southern Camp
+    .complete 25841,2 --Attack on Southern Frostmane Retreat (1)
+    .use 56048
 step
-    .loop 15,27,62.36,57.2,62.19,55.52,62.98,54.86,63.82,54.45
-    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with |cRXP_ENEMY_Frostmane Builder.|r
-    .complete 28868,1 --5/5 Frostmane Builders shrunk
-    .use 67249
-    .mob Frostmane Builder
+    #optional
+    #requires Builders
+--XXREQ Placeholder invis step until multiple requires per step
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Snevik the Blade|r and |cRXP_FRIENDLY_Slamp Wobblecog.|r
+    #questguide
+    #optional
+    #requires Warriors
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Snevik the Blade|r and |cRXP_FRIENDLY_Slamp Wobblecog|r
     .turnin 28868 >>Turn in The View from Down Here
-    .goto 27,62.54,53.81
+    .goto 27,62.546,53.807
+	.target +Snevik the Blade
     .turnin 25840 >>Turn in Eliminate the Resistance
     .turnin 25841 >>Turn in Strike From Above
+    .accept 25882 >>Accept A Hand at the Ranch
+    .goto 27,62.505,53.708
+	.target +Slamp Wobblecog
+step
+    #requires Warriors
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Snevik the Blade|r and |cRXP_FRIENDLY_Slamp Wobblecog|r
+    .turnin 28868 >>Turn in The View from Down Here
+    .goto 27,62.546,53.807
+	.target +Snevik the Blade
+    .turnin 25840 >>Turn in Eliminate the Resistance
+    .turnin 25841 >>Turn in Strike From Above
+    .goto 27,62.505,53.708
+	.target +Slamp Wobblecog
+--XX not polished from here onward
 step 
-    .hs >> Hearthstone to |cFFfa9602Thunderbrew Distillery.|r
+    #completewith next
+    .hs >> Hearth to |cFFfa9602Thunderbrew Distillery|r
 step 
     .isQuestTurnedIn 32663
     #completewith next
@@ -1843,7 +2007,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brolan|r |cFFfa9602outside the Inn.|r
     .fly Ironforge >>Fly to Ironforge
 	.target Brolan
-step 
+step << Gnome/Dwarf/DarkIronDwarf
     .goto 87,51.92,29.47,10,0
     .goto 87,49.56,28.05,10,0	
 	.goto 87,51.54,26.30	
@@ -1851,7 +2015,7 @@ step
     .turnin 6391 >>Turn in Ride to Ironforge
     .accept 6388 >>Accept Gryth Thurden
 	.target Golnir Bouldertoe
-step
+step << Gnome/Dwarf/DarkIronDwarf
     .goto 87,55.52,47.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden.|r
     .turnin 6388 >>Turn in Gryth Thurden

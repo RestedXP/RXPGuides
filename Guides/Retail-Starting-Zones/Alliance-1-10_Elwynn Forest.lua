@@ -156,10 +156,12 @@ step
     .accept 63447 >>Accept Fear No Evil << Human Death Knight/Human Monk/KulTiran Death Knight/KulTiran Monk/KulTiran Druid/KulTiran Shaman
     .target Brother Paxton
 step
+    #optional
     #completewith Rear
     .goto 425,31.59,16.72,40 >> |cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Gug Fatcandle|r. Kill him if he's up|r
     *|cRXP_WARN_It's important to kill Rares and loot Treasure Chests, as they award a lot of experience|r
 	.unitscan Gug Fatcandle
+    .xp >30,1
 step
     #sticky
     #label Soldiers
@@ -828,9 +830,11 @@ step
 	.mob Kobold Tunneler
 	.mob Kobold Miner
 step
+    #optional
     .goto 37,38.22,83.41,40 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Narg the Taskmaster|r. Kill him if he's up|r
 	.unitscan Narg the Taskmaster
     .isOnQuest 60
+    .xp >30,1
 step
     #optional
 	#completewith next
@@ -889,13 +893,17 @@ step
     .turnin 88 >>Turn in Princess Must Die!
 	.target Ma Stonefield
 step
+    #optional
     .goto 37,30.81,64.65,40 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Morgaine the Sly|r inside. Kill her if she's up|r
     .unitscan Morgaine the Sly
     .isOnQuest 60
+    .xp >30,1
 step
+    #optional
     .goto 37,27.22,67.51,40 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Grizzled Ben|r. Kill him if he's up|r
 	.unitscan Grizzled Ben
     .isOnQuest 60
+    .xp >30,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Wanted Poster|r and |cRXP_FRIENDLY_Deputy Rainer|r
     .accept 176 >>Accept WANTED: "Hogger"
@@ -904,6 +912,7 @@ step
     .goto 37,24.23,74.45
 	.target Deputy Rainer
 step
+    #optional
 	#completewith Bounty
     .goto 37,24.36,93.65,0
     .goto 37,26.10,91.95,0
@@ -913,6 +922,7 @@ step
     .goto 37,26.32,86.82,0
     +|cRXP_WARN_[RARE & CHEST] Keep an eye out for the |cRXP_PICK_Chest|r and |cRXP_ENEMY_Gruff Swiftbite|r in the camps. Loot the |cRXP_PICK_Chest|r if you find one, and kill |cRXP_ENEMY_Gruff Swiftbite|r if he's up|r
 	.unitscan Gruff Swiftbite
+    .xp >30,1
 step
     #sticky
     #label Armbands
@@ -1098,21 +1108,29 @@ step
 	.vendor >>Vendor and Repair
     .isOnQuest 35
 	.target Andrew Krighton
-    .train 90267,1 --Azeroth Flying
+    .xp >30,1 --Azeroth Flying
 step
+    #optional
     .goto 37,52.25,62.90,40 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Lamepaw the Whimperer|r. Kill him if he's up|r
 	.unitscan Lamepaw the Whimperer
     .isOnQuest 35
+    .xp >30,1
 step
+    #optional
     .goto 37,57.49,64.61,45 >> |cRXP_WARN_[CHEST] Scan the murloc islands with your mouse for a|r |cRXP_PICK_Chest|r. Your mouse will become a |TInterface/cursor/crosshair/interact.blp:20|tgear icon if there's a |cRXP_PICK_Chest|r. If you find one. Loot it if it's up|r
     .isOnQuest 35
+    .xp >30,1
 step
+    #optional
     .goto 37,66.51,63.83,40 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Tarantis|r. Kill him if he's up|r
 	.unitscan Tarantis
     .isOnQuest 35
+    .xp >30,1
 step
+    #optional
     .goto 37,64.7,56.73,30 >>|cRXP_WARN_[CHEST] Check for the |cRXP_PICK_Chest|r inside the Kobold Camp. Loot it if it's up|r
     .isOnQuest 35
+    .xp >30,1
 step
     #completewith next
     .goto 37,61.65,53.93,12,0
@@ -1125,6 +1143,7 @@ step
     >>Follow the middle path inside Jasperlode Mine
     .complete 76,1 --Scout Through the Jasperlode Mine (1)
 step
+    #optional
 	.goto 40,31.02,37.51,20,0
     .goto 40,37.01,50.26,20,0
     .goto 40,47.25,36.66,20,0
@@ -1132,6 +1151,7 @@ step
     .goto 40,45.14,21.76,20 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Mother Fang|r at the back of Jasperlode Mine. Kill her if she's up|r
 	.unitscan Mother Fang
     .isOnQuest 35
+    .xp >30,1
 step
     #completewith next
     .goto 37,61.58,70.04,0
@@ -1158,9 +1178,11 @@ step
     .complete 52,2 --Kill Young Forest Bear (5)
     .mob +Young Forest Bear
 step
+    #optional
     .goto 37,82.95,84.82,40 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Bushtail|r. Kill him if he's up|r
     .isOnQuest 52
 	.unitscan Bushtail
+    .xp >30,1
 step
 	#completewith next
     .goto 37,75.71,86.29,0
@@ -1180,7 +1202,7 @@ step
     .vendor 1198 >> Vendor and Repair
 	.target Rallic Finn
 	.isOnQuest 52
-    .train 90267,1 --Azeroth Flying
+    .xp >30,1 --Azeroth Flying
 step
     .goto 37,79.462,68.715
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sara Timberlain|r
@@ -1355,11 +1377,13 @@ step
     .complete 147,1 --The Collector's Ring (1)
     .mob Morgan the Collector
 step
+    #optional
     #sticky
     #label Snoot
     .goto 37,69.32,79.31,30 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Snoot the Rooter|r. Kill him if he's up|r
 	.unitscan Snoot the Rooter
     .isOnQuest 83
+    .xp >30,1
 step
     #loop
     .goto 37,68.56,82.68,0
@@ -1397,7 +1421,7 @@ step
     .vendor 1198 >>Vendor and Repair
 	.target Rallic Finn
     .isOnQuest 83
-    .train 90267,1 --Azeroth Flying
+    .xp >30,1 --Azeroth Flying
 step << !DarkIronDwarf !KulTiran !LightforgedDraenei !Mechagnome !VoidElf
     .goto 37,81.829,66.556
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Goss the Swift|r
