@@ -1017,6 +1017,7 @@ step
     .complete 26264,1 --Recovered Possession (6)
     .mob *Toxic Sludge
 step
+    #optional
     #completewith next
     .goto 469,40.603,45.713,45 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Gibblewilt|r. Kill him if he's up|r
     .unitscan Gibblewilt
@@ -1093,6 +1094,7 @@ step
     .accept 26285 >>Accept Get Me Explosives Back!
 	.target Kharmarn Palegrip
 step
+    #optional
     #completewith next
     .goto 469,37.265,67.852,45 >>|cRXP_WARN_[RARE] Check for the |cRXP_ENEMY_Caverndeep Looter|r. Kill him if he's up|r
 	.unitscan Caverndeep Looter
@@ -1285,12 +1287,14 @@ step
 	.mob Crushcog Battle Suit
 	.mob Irradiated Technician
 step
+    #optional
     .goto 469,66.100,26.168,45,0
     .goto 469,66.023,27.211,45 >>|cRXP_WARN_[RARE] Check for the |cRXP_ENEMY_Weaponized Rabbot|r. Kill it if it's up|r
 	.unitscan Weaponized Rabbot
     .isOnQuest 26331
     .xp >30,1
 step
+    #optional
     .goto 469,68.698,35.590,45,0
     .goto 469,67.992,35.519,45,0
     .goto 469,67.433,37.129,45 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Timber|r. Kill him if he's up|r
@@ -1553,6 +1557,7 @@ step
     .xp >30,1 --Azeroth Flying
     .isOnQuest 25724
 step
+    #optional
     #requires Ramp
     #completewith Snowstrider
     .goto 27,49.056,37.135,45 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Great Father Arctikus|r. Kill him if he's up|r
@@ -1785,9 +1790,11 @@ step
     .complete 384,1 --Tender Boar Ribs (4)
 	.mob Crag Boar
 step
+    #optional
     #completewith Gears
     .goto 27,57.252,57.622,40,0
     .goto 27,60.260,57.034,15 >>|cRXP_WARN_[CHEST] Keep an eye out for the |cRXP_PICK_Chest|r at the Frostmane Front. Loot it if it's up|r
+    .xp >30,1
 step
     #sticky
     #label Gears
@@ -1941,10 +1948,12 @@ step
     .complete 25840,2 --Frostmane Warrior slain (5)
 	.mob Frostmane Warrior
 step
+    #optional
     #sticky
     #label FrostmaneChest1
     .goto 27,64.706,54.003,20 >>|cRXP_WARN_[CHEST] Check for the |cRXP_PICK_Chest|r near the stairs to the hut. Loot it if it's up|r
     .isOnQuest 25841
+    .xp >30,1
 step
     .goto 27,64.487,54.103
     >>Use the |T133033:0|t[Signal Flare] in the Northern Camp
@@ -1957,9 +1966,11 @@ step
     .complete 25840,1 --Battok the Berserker slain (1)
     .mob Battok the Berserker
 step
+    #optional
     #completewith next
     .goto 27,63.550,56.118,20 >>|cRXP_WARN_[CHEST] Check for the |cRXP_PICK_Chest|r near the Drum. Loot it if it's up|r
     .isOnQuest 25841
+    .xp >30,1
 step
     #requires FrostmaneChest2
     .goto 27,63.191,57.128

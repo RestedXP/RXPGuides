@@ -873,8 +873,10 @@ step
     .accept 88 >>Accept Princess Must Die!
 	.target Ma Stonefield
 step
+    #optional
     .goto 37,33.64,87.76,15 >>|cRXP_WARN_[CHEST] Check for the |cRXP_PICK_Chest|r inside the stables. Loot it if it's up|r
     .isOnQuest 60
+    .xp >30,1
 step
     #loop
     .line 37,32.48,86.81,33.41,86.16,33.32,84.95,32.58,84.26,32.04,85.20,32.48,86.81
@@ -1049,8 +1051,10 @@ step
     .accept 26213 >>Accept Hot On the Trail: The Riverpaw Clan
 	.target Lieutenant Horatio Laine
 step
+    #optional
 	#completewith Horatio
     .goto 52,56.46,13.26,30 >>|cRXP_WARN_[CHEST] Check for a |cRXP_PICK_Chest|r in the camp|r
+    .xp >30,1
 step
     #loop
     .goto 52,56.46,13.26,0
