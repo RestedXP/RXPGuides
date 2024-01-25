@@ -5,139 +5,216 @@ RXPGuides.RegisterGuide([[
 #displayname Worgen Starting Zone
 #name 2Retail-Alliance-Worgen_Gilneas
 #next RestedXP Alliance 10-60\1A_Elwynn Forest
+#defaultfor Worgen !DK
 
-<<Worgen !DK
+<< Worgen !DK
 
 step
     #completewith next
     +Welcome to the |cFFfa9602Worgen Starting Zone|r Guide by RestedXP.
     *Without consumables or heirlooms, this route is approximately 5 minutes slower than |cFFfa9602Exile's Reach.|r For faster leveling, consider recreating your character and selecting |cFFfa9602Exile's Reach|r instead.
-step
-    .goto 202,59.1,23.8
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Liam Greymane.|r
+    step
+    .goto 202,59.130,23.865
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Liam Greymane|r
     .accept 14078 >>Accept Lockdown!
 	.target Prince Liam Greymane
 step
-    .goto 202,56.86,17.89,15,0
-    .goto 202,54.6,16.7
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tInteract with the corpse of |cRXP_FRIENDLY_Lieutenant Walden.|r
+    #optional
+    #completewith next
+    .goto 202,56.879,17.856,15,0
+    .goto 202,54.626,16.717,15 >>Travel toward |cRXP_FRIENDLY_Lieutenant Walden|r's corpse on the ground
+step
+    .goto 202,54.626,16.717
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lieutenant Walden|r's corpse on the ground
     .turnin 14078 >>Turn in Lockdown!
     .accept 14091 >>Accept Something's Amiss
 	.target Lieutenant Walden
 step
-    .goto 202,59.8,22.2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Liam Greymane.|r
+    #optional
+    #completewith next
+    .goto 202,56.872,17.840,15,0
+    .goto 202,58.366,20.712,15,0
+    .goto 202,59.830,22.192,15 >>Return to |cRXP_FRIENDLY_Prince Liam Greymane|r
+step
+    .goto 202,59.830,22.192
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Liam Greymane|r
     .turnin 14091 >>Turn in Something's Amiss
     .accept 14093 >>Accept All Hell Breaks Loose
     .accept 14098 >>Accept Evacuate the Merchant Square
 	.target Prince Liam Greymane
 step
-    #completewith Area1
-    >>Kill |cRXP_ENEMY_Rampaging Worgen.|r
-    .complete 14093,1 --6/6 Rampaging Worgen slain
+    #completewith next
+    .goto 202,57.678,23.371,0
+    .goto 202,65.642,33.161,0
+    .goto 202,57.192,40.351,0
+    >>Kill |cRXP_ENEMY_Rampaging Worgen|r
+    .complete 14093,1 --Rampaging Worgen slain (6)
 	.mob Rampaging Worgen
 step
-    .goto 202,59.7,26.8
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead.|r
+    .goto 202,59.561,26.776
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r
     .accept 14094 >>Accept Salvage the Supplies
 	.target Gwen Armstead
 step
-    #completewith next
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Salvaged Supplies.|r
-    .complete 14094,1 --4/4 Salvaged Supplies
+    #sticky
+    #label Salvaged
+    .goto 202,58.931,25.445,0
+    .goto 202,61.954,36.882,0
+    .goto 202,55.539,33.642,0
+    .waypoint 202,58.931,25.445,12,0
+    .waypoint 202,62.280,26.295,12,0
+    .waypoint 202,59.193,28.776,12,0
+    .waypoint 202,59.012,35.683,12,0
+    .waypoint 202,61.954,36.882,12,0
+    .waypoint 202,59.174,38.938,12,0
+    .waypoint 202,56.253,42.897,12,0
+    .waypoint 202,58.449,36.570,12,0
+    .waypoint 202,55.539,33.642,12,0
+    .waypoint 202,60.040,20.806,12,0
+    >>Open the |cRXP_PICK_Supply Crates|r on the ground. Loot them for |cRXP_LOOT_Salvaged Supplies|r
+    .complete 14094,1 --Salvaged Supplies (4)
 step
-    #label Area1
-    .goto 202,63.19,31.69,15,0
-    .goto 202,63.13,34.72,15,0
-    .goto 202,55.03,26.53
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_doors|r to evacuate the occupants from their homes.
-    .complete 14098,1 --3/3 Market Homes Evacuated
-step
-    .goto 202,63.19,31.69,15,0
-    .goto 202,63.13,34.72,15,0
-    .goto 202,55.03,26.53
-	>>Kill |cRXP_ENEMY_Rampaging Worgen|r and |TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Salvaged Supplies.|r
-    .complete 14094,1 --4/4 Salvaged Supplies
-    .complete 14093,1 --6/6 Rampaging Worgen slain
-	.mob Rampaging Worgen
-step
-    #requires Area1
-    .goto 202,59.6,26.8
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead.|r
+    #sticky
+    #label Gwen
+    #requires Salvaged
+    .goto 202,59.561,26.776,0,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r
     .turnin 14094 >>Turn in Salvage the Supplies
 	.target Gwen Armstead
 step
-    .goto 202,59.8,22.2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Liam Greymane.|r
-    .turnin 14093 >>Turn in All Hell Breaks Loose
-    .turnin 14098 >>Turn in Evacuate the Merchant Square
-	.target Prince Liam Greymane
+    #optional
+    #sticky
+    #label RampWorgen
+    .goto 202,57.678,23.371,0
+    .goto 202,65.642,33.161,0
+    .goto 202,57.192,40.351,0
+    .waypoint 202,57.678,23.371,45,0
+    .waypoint 202,60.799,22.195,45,0
+    .waypoint 202,63.387,19.323,45,0
+    .waypoint 202,64.497,24.603,45,0
+    .waypoint 202,65.642,33.161,45,0
+    .waypoint 202,60.451,34.024,45,0
+    .waypoint 202,59.696,41.857,45,0
+    .waypoint 202,57.192,40.351,45,0
+    >>Kill |cRXP_ENEMY_Rampaging Worgen|r
+    .complete 14093,1 --Rampaging Worgen slain (6)
+	.mob Rampaging Worgen
 step
-    .goto 202,59.9,22.1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Liam Greymane.|r
-    .accept 14099 >>Accept Royal Orders
-	.target Liam Greymane
+    #label Area1
+    #loop
+    .goto 202,63.192,31.620,0
+    .goto 202,55.001,26.559,0
+    .goto 202,58.493,19.345,0
+    .goto 202,63.192,31.620,8,0
+    .goto 202,63.199,34.791,8,0
+    .goto 202,55.001,26.559,8,0
+    .goto 202,55.839,20.215,8,0
+    .goto 202,58.493,19.345,8,0
+    >>Knock on |cRXP_PICK_Merchant Square Doors|r
+    >>|cRXP_WARN_This may spawn hostile|r |cRXP_ENEMY_Rampaging Worgen|r
+    .complete 14098,1 --Market Homes Evacuated (3)
 step
-    .goto 202,70.8,55.1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead.|r
-    .turnin 14099 >>Turn in Royal Orders
-    .accept 14275 >>Accept Someone's Keeping Track of You << Hunter
-    .accept 14265 >>Accept Your Instructur << Warrior
-    .accept 14280 >>Accept The Winds Know Your Name  << Druid
-    .accept 14269 >>Accept Someone's Looking for you << Rogue
-    .accept 14278 >>Accept Seek the Sister << Priest
-    .accept 14273 >>Accept Shady Associates << Warlock
+    #optional
+    #requires RampWorgen
+--XXREQ Placeholder invis step until multiple requires per step
+step
+    #requires Gwen
+    .goto 202,59.561,26.776
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r
+    .turnin 14094 >>Turn in Salvage the Supplies
 	.target Gwen Armstead
 step
+    .goto 202,59.830,22.192
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Liam Greymane|r
+    .turnin 14093 >>Turn in All Hell Breaks Loose
+    .turnin 14098 >>Turn in Evacuate the Merchant Square
+    .accept 14099 >>Accept Royal Orders
+	.target Prince Liam Greymane
+step
     #completewith next
-    .vendor >> Talk to |cRXP_FRIENDLY_Marie Allen|r. |cRXP_WARN_Vendor and buy bags if you need to.|r
+    .goto 202,62.290,31.759,15,0
+    .goto 202,64.098,34.535,15,0
+    .goto 202,68.809,45.472,15,0
+    .goto 202,70.770,55.050,15 >> Travel toward |cRXP_FRIENDLY_Gwen Armstead|r
+step
+    .goto 202,70.770,55.050
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r
+    .turnin 14099 >>Turn in Royal Orders
+    .accept 14265 >>Accept Your Instructor << Warrior
+    .accept 14269 >>Accept Someone's Looking for You << Rogue
+    .accept 14273 >>Accept Shady Associates << Warlock
+    .accept 14275 >>Accept Someone's Keeping Track of You << Hunter
+    .accept 14277 >>Accept Arcane Inquiries << Mage
+    .accept 14278 >>Accept Seek the Sister << Priest
+    .accept 14280 >>Accept The Winds Know Your Name  << Druid
+    .accept 75190 >>Accept Ready and Abel << Monk --Added in DF
+	.target Gwen Armstead
+step << skip
+    #completewith next
+    .goto 202,71.023,55.221
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marie Allen|r
+    .vendor 38853 >>|cRXP_BUY_Buy|r |T133634:0|t[Small Brown Pouches] |cRXP_BUY_from her if needed|r
 	.target Marie Allen
-step << Hunter
-    .goto 202,71.5,61.3
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Huntsman Blake.|r
-    .turnin 14275 >>Turn in Someone's Keeping Track of You
-    .accept 14290 >>Accept Safety in Numbers
-	.target Huntsman Blake
-step << Druid
-    .goto 202,70.18,65.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celestine of the Harvest.|r
-    .turnin 14280 >> Turn in The Winds Know Your Name
-    .accept 14291 >> Accept Safety in Numbers
-	.target Celestine of the Harvest
 step << Warrior
-.goto 202,67.52,64.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seargent Cleese.|r
-    .turnin 14275 >>Turn in Your Instructur
+    .goto 202,67.592,64.281
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seargent Cleese|r
+    .turnin 14265 >>Turn in Your Instructor
     .accept 14286 >>Accept Safety in Numbers
-    .accept 14280 >>Turn in the winds know your name
 	.target Seargent Cleese
 step << Rogue
-    .goto 202,71.41,65.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loren the Fence.|r
-    .turnin 14269 >>Turn in Someone's Looking for you
-    .accept 14285 >>Accept Safety in Numbers
-	.target Loren the Fence
-step << Priest
-    .goto 202,71.41,65.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loren the Fence.|r
-    .turnin 14269 >>Seek the Sister
+    .goto 202,71.406,65.752
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loren the Fence|r
+    >>|cRXP_WARN_She is|r |T132320:0|t[Stealthed]
+    .turnin 14269 >>Turn in Someone's Looking for You
     .accept 14285 >>Accept Safety in Numbers
 	.target Loren the Fence
 step << Warlock
-    .goto 202,71.42, 64.41
+    .goto 202,71.420,64.435
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vitus Darkwalker.|r
-    .turnin 14273 >>Shady Associatees
+    .turnin 14273 >>Shady Associates
     .accept 14287 >>Accept Safety in Numbers
 	.target Vitus Darkwalker
+step << Hunter
+    .goto 202,71.503,61.307
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Huntsman Blake|r
+    .turnin 14275 >>Turn in Someone's Keeping Track of You
+    .accept 14290 >>Accept Safety in Numbers
+	.target Huntsman Blake
+step << Mage
+    .goto 202,68.043,64.695
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Myriam Spellwaker|r
+    .turnin 14277 >>Turn in Arcane Inquiries
+    .accept 14288 >>Accept Safety in Numbers
+	.target Myriam Spellwaker
+step << Priest
+    .goto 202,70.426,65.543
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sister Almyra|r
+    .turnin 14278 >>Turn in Seek the Sister
+    .accept 14289 >>Accept Safety in Numbers
+	.target Sister Almyra
+step << Druid
+    .goto 202,70.18,65.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celestine of the Harvest|r
+    .turnin 14280 >> Turn in The Winds Know Your Name
+    .accept 14291 >> Accept Safety in Numbers
+	.target Celestine of the Harvest
+step << Monk
+    .goto 202,69.977,65.559
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Todd Abel|r
+    .turnin 75190 >>Turn in Ready and Abel
+    .accept 75189 >>Accept Safety in Numbers
+    .target Todd Abel
 step
     .goto 202,65.8,77.7
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Genn Greymane.|r
-    .turnin 14290 >>Turn in Safety in Numbers << Hunter
-    .turnin 14291 >>Turn in Safety in Numbers << Druid
-    .turnin 14288 >>Turn in Safety in Numbers << Mage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Genn Greymane|r
+    .turnin 14285 >>Turn in Safety in Numbers << Rogue
     .turnin 14286 >>Turn in Safety in Numbers << Warrior
     .turnin 14287 >>Turn in Safety in Numbers << Warlock
-    .turnin 14285 >>Turn in Safety in Numbers << Rogue
+    .turnin 14288 >>Turn in Safety in Numbers << Mage
+    .turnin 14289 >>Turn in Safety in Numbers << Priest
+    .turnin 14290 >>Turn in Safety in Numbers << Hunter
+    .turnin 14291 >>Turn in Safety in Numbers << Druid
+    .accept 75189 >>Accept Safety in Numbers << Monk
     .accept 14157 >>Accept Old Divisions
 	.target King Genn Greymane
 step
