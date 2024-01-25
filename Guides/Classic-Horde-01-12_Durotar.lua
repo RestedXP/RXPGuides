@@ -2630,6 +2630,11 @@ step << Warrior/Shaman/Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rhinag|r
     .accept 812 >>Accept Need for a Cure
     .target Rhinag
+step << Warrior/Shaman
+    .goto Durotar,44.16,19.19,60,0
+    .goto Durotar,44.13,17.02,60,0
+    .goto Durotar,43.56,15.08
+    .xp 9+2930 >>Grind to 2930+/6500 into level 9
 step << Warrior/Shaman/Hunter
     #label EnterOrg
     #completewith next
@@ -3652,6 +3657,9 @@ step << Hunter
     +Tame a pet. A |cRXP_ENEMY_Scorpid|r or |cRXP_ENEMY_Raptor|r will have the highest dps
     .mob Venomtail Scorpid
     .mob Bloodtalon Scythemaw
+step << Shaman
+    #completewith next
+    .subzone 817 >>Travel toward Skull Rock
 step << Shaman
     .goto Durotar,53.18,29.15,20,0
     .goto Durotar,52.70,27.97,12,0

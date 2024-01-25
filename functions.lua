@@ -14,7 +14,7 @@ events.destroy = events.collect
 events.buy = events.collect
 events.accept = {"QUEST_ACCEPTED", "QUEST_TURNED_IN", "QUEST_REMOVED"}
 events.turnin = "QUEST_TURNED_IN"
-events.complete = "QUEST_LOG_UPDATE"
+events.complete = {"QUEST_LOG_UPDATE", "CINEMATIC_STOP", "STOP_MOVIE"}
 events.fp = {"UI_INFO_MESSAGE", "UI_ERROR_MESSAGE", "TAXIMAP_OPENED", "GOSSIP_SHOW"}
 events.hs = "UNIT_SPELLCAST_SUCCEEDED"
 events.home = {"HEARTHSTONE_BOUND","CONFIRM_BINDER","GOSSIP_SHOW"}
@@ -50,6 +50,9 @@ events.collecttoy = "TOYS_UPDATED"
 events.collectpet = {"COMPANION_LEARNED", "COMPANION_UNLEARNED", "COMPANION_UPDATE", "NEW_PET_ADDED"}
 events.tradeskill = events.train
 events.cooldown = "SPELL_UPDATE_COOLDOWN"
+events.mob = "UNIT_TARGET"
+events.unitscan = "UNIT_TARGET"
+events.target = "UNIT_TARGET"
 
 events.bankwithdraw = events.bankdeposit
 events.abandon = events.complete
@@ -129,10 +132,10 @@ local _G = _G
 local GetNumQuests = C_QuestLog.GetNumQuestLogEntries or
                          _G.GetNumQuestLogEntries
 local GetQuestLogTitle = _G.GetQuestLogTitle
-local GetNumDayEvents = _G.C_Calendar.GetNumDayEvents
-local GetDayEvent = _G.C_Calendar.GetDayEvent
+local GetNumDayEvents = _G.C_Calendar and _G.C_Calendar.GetNumDayEvents
+local GetDayEvent = _G.C_Calendar and _G.C_Calendar.GetDayEvent
 local GetCurrentCalendarTime = _G.C_DateAndTime.GetCurrentCalendarTime
-local OpenCalendar = _G.C_Calendar.OpenCalendar
+--local OpenCalendar = _G.C_Calendar and _G.C_Calendar.OpenCalendar
 local GossipSelectOption = _G.SelectGossipOption
 local GossipGetOptions = C_GossipInfo and C_GossipInfo.GetOptions or _G.GetGossipOptions
 local PickupContainerItem = C_Container and C_Container.PickupContainerItem or _G.PickupContainerItem
@@ -215,7 +218,20 @@ addon.IsOnQuest = IsOnQuest
 addon.IsQuestTurnedIn = IsQuestTurnedIn
 addon.IsQuestComplete = IsQuestComplete
 
-local questConversion = addon.questConversion
+local function GetQuestId(src)
+    local guide = addon.currentGuide or addon.guide
+    guide = guide.questConversion
+    if guide and guide[src] then
+        --print(1,src,guide[src])
+        return guide[src]
+    elseif addon.questConversion[src] then
+        --print(1,src,addon.questConversion[src])
+        return addon.questConversion[src]
+    else
+        return src
+    end
+end
+
 
 local timer = GetTime()
 local nrequests = 0
@@ -368,7 +384,7 @@ end
 function addon.GetQuestName(id)
     local questNameCache = RXPCData.questNameCache
     if type(id) ~= "number" then return end
-    id = questConversion[id] or id
+    id = GetQuestId(id)
     local name
     if db and type(db.QueryQuest) == "function" and type(db.GetQuest) ==
         "function" then
@@ -437,7 +453,7 @@ function addon.GetQuestName(id)
 end
 
 function addon.GetQuestObjectives(id, step)
-    id = questConversion[id] or id
+    id = GetQuestId(id)
     if not id then return end
     local stepdiff = step and math.abs(RXPCData.currentStep - step) or 0
 
@@ -756,7 +772,7 @@ function addon.functions.accept(self, ...)
                 ": Invalid quest ID\n" .. self)
         end
         local element = {title = "", flags = flags}
-        element.questId = questConversion[id] or id
+        element.questId = GetQuestId(id)
         -- element.title = addon.GetQuestName(id)
         if text and text ~= "" then
             element.text = text
@@ -904,7 +920,7 @@ function addon.functions.daily(self, text, ...)
         for i, v in pairs(ids) do
             local questId = tonumber(v)
             if questId then
-                ids[i] = questConversion[questId] or questId
+                ids[i] = GetQuestId(questId)
                 addon.InsertQuestGuide(ids[i],addon.pickUpList)
             else
                 err = true
@@ -953,11 +969,11 @@ function addon.functions.turnin(self, ...)
                            ": Invalid quest ID\n" .. self)
         end
         reward = tonumber(reward) or 0
-        local element = {title = "", questId = questConversion[id] or id}
+        local element = {title = "", questId = GetQuestId(id)}
         if id < 0 then
             id = math.abs(id)
             element.skipIfMissing = true
-            element.questId = questConversion[id] or id
+            element.questId = GetQuestId(id)
             if reward > 0 then
                 element.skipIfIncomplete = true
             end
@@ -1096,7 +1112,7 @@ function addon.functions.dailyturnin(self, text, ...)
         for i, v in pairs(ids) do
             local questId = tonumber(v)
             if questId then
-                ids[i] = questConversion[questId] or questId
+                ids[i] = GetQuestId(questId)
                 addon.InsertQuestGuide(ids[i],addon.pickUpList)
             else
                 err = true
@@ -1333,7 +1349,7 @@ function addon.functions.complete(self, ...)
         if objMax and objMax <= 0 then
             objMax = nil
         end
-        id = id and questConversion[id] or id
+        id = id and GetQuestId(id)
         local element = {questId = id, dynamicText = true, obj = obj,
                          objMax = objMax, requestFromServer = true,
                          text = "", flags = flags, textOnly = (flags % 2) == 1
@@ -1935,6 +1951,7 @@ function addon.functions.deathskip(self, ...)
         end
         element.tooltipText = addon.icons.deathskip .. element.text
         addon.step.softcore = true
+        element.targets = {L"Spirit Healer","Alithea","Anara","Koiter"}
         return element
     end
     if not self.element.step.active then return end
@@ -3317,16 +3334,39 @@ function addon.functions.cast(self, ...)
     end
 end
 
+local function UpdateTargets(element,context)
+    if not element.parent then return end
+    if element.parent.completed or element.parent.skip then
+        if element.step.active and element[context] then
+            addon:ScheduleTask(addon.targeting.UpdateUnitList)
+        end
+        element[context] = nil
+    else
+        if element.step.active and not element[context] then
+            addon:ScheduleTask(addon.targeting.UpdateUnitList)
+        end
+        element[context] = element.unitlist
+    end
+end
+
 function addon.functions.unitscan(self, text, ...)
     if type(self) == "string" then
         local element = {}
 
         if text and text ~= "" then element.text = text end
         element.textOnly = true
-        element.unitscan = {...}
+        local t = {...}
+        element.unitscan = t
+        local prefix = t[1]
+        if prefix:sub(1,1) == "+" then
+            t[1] = prefix:sub(2,-1)
+            element.unitlist = t
+            element.parent = true
+        end
         return element
     end
 
+    UpdateTargets(self.element,"unitscan")
 end
 
 function addon.functions.target(self, text, ...)
@@ -3335,9 +3375,18 @@ function addon.functions.target(self, text, ...)
 
         if text and text ~= "" then element.text = text end
         element.textOnly = true
-        element.targets = {...}
+        local t = {...}
+        element.targets = t
+        local prefix = t[1]
+        if prefix:sub(1,1) == "+" then
+            t[1] = prefix:sub(2,-1)
+            element.unitlist = t
+            element.parent = true
+        end
         return element
     end
+
+    UpdateTargets(self.element,"targets")
 end
 
 function addon.functions.mob(self, text, ...)
@@ -3346,9 +3395,18 @@ function addon.functions.mob(self, text, ...)
 
         if text and text ~= "" then element.text = text end
         element.textOnly = true
-        element.mobs = {...}
+        local t = {...}
+        element.mobs = t
+        local prefix = t[1]
+        if prefix:sub(1,1) == "+" then
+            t[1] = prefix:sub(2,-1)
+            element.unitlist = t
+            element.parent = true
+        end
         return element
     end
+
+    UpdateTargets(self.element,"mobs")
 end
 
 local BLquests = {
@@ -3810,6 +3868,13 @@ function addon.functions.skipgossip(self, text, ...)
     local nArgs = #args
     local event = text
     local id = tonumber(args[1])
+    if (element.step.active and event == nil) then
+        local g = GossipGetOptions()
+        if type(g) == "table" and #g > 0 then
+            event = "GOSSIP_SHOW"
+        end
+    end
+
     if event == "GOSSIP_SHOW" then
         -- print(id,'GS',nArgs)
         local trainerId,name = addon.SelectGossipType("trainer",true)
@@ -3835,7 +3900,7 @@ function addon.functions.skipgossip(self, text, ...)
                              GossipGetNumActiveQuests() == 0 then
                 GossipSelectOption(id)
             end
-        elseif id == npcId then
+        elseif id == npcId or id == 0 then
             if not element.index then
                 element.index = 2
             else
@@ -3863,6 +3928,11 @@ function addon.functions.skipgossipid(self, text, ...)
             return addon.error(
                 L("Error parsing guide") .. " " .. addon.currentGuideName ..
                    ': No gossip ID provided\n' .. self)
+        end
+        local prefix = args[1]
+        if prefix:sub(1,1) == "+" then
+            args[1] = prefix:sub(2,-1)
+            element.parent = true
         end
         for i,v in pairs(args) do
             args[i] = tonumber(v)
@@ -5177,6 +5247,28 @@ function addon.functions.disablecheckbox(self, text)
             addon.SetElementComplete(element.parent)
             addon.RXPFrame.CurrentStepFrame.UpdateText()
         end
+    end
+end
+
+function addon.functions.convertquest(self, text, src, dst)
+    if type(self) == "string" then -- on parse
+        src = tonumber(src)
+        dst = tonumber(dst)
+        if not (src and dst) then return end
+        local guide = addon.guide
+        if guide.questConversion then
+            guide.questConversion[src] = dst
+        else
+            guide.questConversion = {[src] = dst}
+        end
+        return {text = text, textOnly = true, src = src, dst = dst}
+    end
+    local element = self.element
+    local guide = addon.currentGuide
+    if guide.questConversion then
+        guide.questConversion[element.src] = element.dst
+    else
+        guide.questConversion = {[element.src] = element.dst}
     end
 end
 

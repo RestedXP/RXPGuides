@@ -3330,24 +3330,24 @@ step
 step << Warlock/Mage/Priest
     .goto Silverpine Forest,44.80,39.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andrea|r
-    .vendor >> |cRXP_BUY_Buy a|r |T132491:0|t[Wise Man's Belt] |cRXP_BUY_from her if it's up|r
+    .vendor >> Buy |T132491:0|t[|cRXP_FRIENDLY_Wise Man's Belt|r] from her if they're up
     .target Andrea Boynton
     .money <0.1400
 step << Rogue
     .goto Silverpine Forest,44.61,39.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alexandre|r
-    .vendor >> |cRXP_BUY_Buy|r |T132539:0|t[Agile Boots] |cRXP_BUY_from him if they're up|r
+    .vendor >> Buy |T132539:0|t[|cRXP_FRIENDLY_Agile Boots|r] from her if they're up
     .target Alexandre Lefevre
     .money <0.2633
 step << Warlock/Mage/Priest
     #completewith Shackles
-    +Equip the |T132491:0|t[Wise Man's Belt]
+    +Equip the |T132491:0|t[|cRXP_FRIENDLY_Wise Man's Belt|r]
     .use 4786
     .itemcount 4786,1
     .xp <15,1
 step << Rogue
     #completewith Shackles
-    +Equip the |T132539:0|t[Agile Boots]
+    +Equip the |T132539:0|t[|cRXP_FRIENDLY_Agile Boots|r] 
     .use 4788
     .itemcount 4788,1
     .xp <15,1
@@ -3746,7 +3746,6 @@ step
     .subzone 2437 >> Enter the RFC Instance portal. Zone in
     .dungeon RFC
 step
-    #completewith TroggsShamans
     >>|cRXP_WARN_If possible, have party members share the following quests|r
     .accept 5722 >> Accept Searching for the Lost Satchel
     .accept 5723 >> Accept Testing an Enemy's Strength

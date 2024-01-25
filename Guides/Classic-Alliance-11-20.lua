@@ -100,6 +100,56 @@ step << Dwarf Hunter
     .goto Darkshore,38.21,73.32,40 >>Send your pet to attack a |cRXP_ENEMY_Thistle Bear|r. Once your pet is stunned by the |cRXP_ENEMY_Thistle Bear|r, abandon your pet and start taming it
     .tame 2163 >>|cRXP_WARN_Cast |T132164:0|t[Tame Beast] on a |cRXP_ENEMY_Thistle Bear|r to tame it|r
     .target Thistle Bear
+step << Druid
+    #season 2
+    .goto Darkshore,32.44,43.71
+    .zone Wetlands >> |cRXP_WARN_Take the boat to Menethil Harbor. You will now go and get the|r |T135730:0|t[Starsurge] |cRXP_WARN_rune in Wetlands which is incredibly powerful at this level|r
+    >>|cRXP_WARN_You may die a few times during this process|r
+    .train 424718,1
+step << Druid
+    #season 2
+    .goto Wetlands,36.941,15.157
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grugimdern|r
+    >>|cRXP_WARN_He will give you a|r |T134052:0|t[|cRXP_LOOT_Marshroom|r]
+    .collect 210499,1 -- Marshroom (1)
+    .skipgossip
+    .target Grugimdern
+    .train 424718,1
+step << Druid
+    #season 2
+    #completewith next
+    .goto Wetlands,31.187,18.328
+    .cast 426019 >>|cRXP_WARN_Use the|r |T134052:0|t[|cRXP_LOOT_Marshroom|r] |cRXP_WARN_to eat it|r
+    .use 210499
+    .train 424718,1
+step << Druid
+    #season 2
+    .goto Wetlands,31.187,18.328
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vodyanoi|r
+    .collect 210500,1 -- Rune of the Stars (1)
+    .skipgossip
+    .target Vodyanoi
+    .train 424718,1
+step << Druid
+    #season 2
+    .train 424718 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Stars|r] |cRXP_WARN_to train|r |T135730:0|t[Starsurge]
+    .use 210500
+    .itemcount 210500,1
+step << Druid
+    #season 2
+    .hs >> Hearth to Auberdine
+    .cooldown item,6948,>0,1
+    .zoneskip Darkshore
+step << Druid
+    #season 2
+    #completewith next
+    .goto Wetlands,7.10,57.96,30,0
+    .goto Wetlands,4.61,57.26,15 >> Travel to the Menethil Harbor docks. Wait for the boat to Darkshore
+    .zoneskip Darkshore
+step << Druid
+    #season 2
+    #label DarkshoreBoat
+    .zone Darkshore >> Take the boat to Darkshore
 step
     #completewith RabidThistle
     .goto Darkshore,35.88,47.01,0
@@ -5444,6 +5494,11 @@ step
     .accept 3765 >> Accept The Corruption Abroad
 step << Druid
 .dungeon DM
+    #season 2
+    #completewith next
+    +|cRXP_WARN_You should be preparing to switch to|r |T132276:0|t[Feral] |cRXP_WARN_instead of using|r |T136096:0|t[Balance] |cRXP_WARN_abilities once you acquire the runes for|r |T132135:0|t[Mangle] |cRXP_WARN_and|r |T236167:0|t[Savage Roar]
+step << Druid
+.dungeon DM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sheldras Moontree|r
     .goto StormwindClassic,20.89,55.50
     .trainer >> Train your class spells
@@ -6132,6 +6187,11 @@ step
 	.target Argos Nightwhisper
     .goto StormwindClassic,21.40,55.80
     .accept 3765 >> Accept The Corruption Abroad
+step << Druid
+.dungeon !DM
+    #season 2
+    #completewith next
+    +|cRXP_WARN_You should be preparing to switch to|r |T132276:0|t[Feral] |cRXP_WARN_instead of using|r |T136096:0|t[Balance] |cRXP_WARN_abilities once you acquire the runes for|r |T132135:0|t[Mangle] |cRXP_WARN_and|r |T236167:0|t[Savage Roar]
 step << Druid
 .dungeon !DM
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sheldras Moontree|r
@@ -6991,11 +7051,25 @@ step
     .complete 1010,1
     .isOnQuest 1010
 step
+    .isQuestComplete 1010
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orendil Broadleaf|r
+	.target Orendil Broadleaf
+    .goto Ashenvale,26.43,38.59
+    .turnin 1010 >> Turn in Bathran's Hair
+    .accept 1020 >> Accept Orendil's Cure
+step
+    .isQuestTurnedIn 1010
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orendil Broadleaf|r
+	.target Orendil Broadleaf
+    .goto Ashenvale,26.43,38.59
+    .accept 1020 >> Accept Orendil's Cure
+step
 	#era/som
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
 	.target Delgren the Purifier
     .goto Ashenvale,26.19,38.69
     .turnin 970 >> Turn in The Tower of Althalaxx
+    .accept 973 >> Accept The Tower of Althalaxx
 step
     .goto Ashenvale,31.89,22.53
     .xp 20 >> Grind to level 20
@@ -7019,13 +7093,6 @@ step
     .goto Ashenvale,26.43,38.59
     .turnin 1010 >> Turn in Bathran's Hair
     .accept 1020 >> Accept Orendil's Cure
-step
-	#era/som
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
-	.target Delgren the Purifier
-    .goto Ashenvale,26.19,38.69
-    .turnin 970 >> Turn in The Tower of Althalaxx
-    .accept 973 >> Accept The Tower of Althalaxx
 step
     #requires hair
     #completewith next

@@ -915,8 +915,6 @@ step
     .goto Elwynn Forest,34.486,84.253
     .accept 88 >> Accept Princess Must Die!
 	.goto Elwynn Forest,34.660,84.482
-
-
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Candles|r and |cRXP_LOOT_Dust|r
@@ -1424,7 +1422,7 @@ step << Paladin
     #label Prowlers
     .goto Elwynn Forest,79.80,55.50
     >>Click |cRXP_PICK_Rolf's corpse|r on the ground
-    >>|cRXP_ENEMY_Murloc Foragers|r |cRXP_WARN_will cast|r |T135915:0|t[Drink Minor Potion] |cRXP_WARN_which heals themselves for 61-68|r
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Murloc Foragers|r will cast|r |T135915:0|t[Drink Minor Potion] |cRXP_WARN_which heals themselves for 61-68 health|r
     >>|cRXP_WARN_Pull the 2|r |cRXP_ENEMY_Murlocs|r |cRXP_WARN_in front of the huts, move away and nuke one of them down fast. Use|r |T135954:0|t[Divine Protection] |cRXP_WARN_and your Heals as required. This is a good opportunity to use|r |T133581:0|t[Bag of Marbles]|cRXP_WARN_. Run away and reset once you've killed one|r << Paladin
     >>|cRXP_WARN_Remember during|r |T135954:0|t[Divine Protection] |cRXP_WARN_you are unable to attack|r << Paladin
     .turnin 45 >> Turn in Discover Rolf's Fate
@@ -1433,7 +1431,7 @@ step << !Paladin
     #label Prowlers
     .goto Elwynn Forest,79.80,55.50
     >>Click |cRXP_PICK_Rolf's corpse|r on the ground
-    >>|cRXP_ENEMY_Murloc Foragers|r |cRXP_WARN_will cast|r |T135915:0|t[Drink Minor Potion] |cRXP_WARN_which heals themselves for 61-68|r
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Murloc Foragers|r will cast|r |T135915:0|t[Drink Minor Potion] |cRXP_WARN_which heals themselves for 61-68 health|r
     >>|cRXP_WARN_Cast|r |T135953:0|t[Renew] |cRXP_WARN_and|r |T135940:0|t[Power Word: Shield] |cRXP_WARN_then get full mana. Pull the 2 |cRXP_ENEMY_Murlocs|r in front of the huts, move away, then nuke one. Run away when you kill one, then kill the other|r << Priest
     >>|cRXP_WARN_Pull the 2|r |cRXP_ENEMY_Murlocs|r |cRXP_WARN_in front of the huts, move away and|r |T136071:0|t[Polymorph] |cRXP_WARN_one whilst killing the other. Kill the|r |T136071:0|tPolymorphed |cRXP_WARN_one after|r << Mage
     >>|cRXP_WARN_Pool 100 Rage. Pull the 2|r |cRXP_ENEMY_Murlocs|r |cRXP_WARN_in front of the huts, move away and keep|r |T132316:0|t[Hamstring] |cRXP_WARN_on one whilst killing the other. Also use|r |T133581:0|t[Bag of Marbles] |cRXP_WARN_on the one you're killing. Run away and reset the one being kited with|r |T132316:0|t[Hamstring] |cRXP_WARN_after you've killed one|r << Warrior
@@ -1644,14 +1642,23 @@ step << !Warlock
     .fp Redridge Mountains >> Get the Redridge Mountains flight path
     .target Ariena Stormfeather
 step
-    #completewith next
+    #completewith CollectKelp
     .hs >> Hearth to Goldshire
 step
+    .goto 37,43.318,65.705
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
-    .goto Elwynn Forest,43.318,65.705
     .turnin 112 >> Turn in Collecting Kelp
+    .timer 9,Collecting Kelp RP
     .accept 114 >> Accept The Escape
     .target William Pestle
+step
+    #label CollectKelp
+    .goto 37,43.318,65.705
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
+    >>|cRXP_WARN_Wait out the RP|r
+    .accept 114 >> Accept The Escape
+    .target William Pestle
+    .isQuestTurnedIn 112
 step << Warrior/Rogue
     #completewith next
     .goto Elwynn Forest,43.877,66.546,9 >> Travel upstairs in the Inn

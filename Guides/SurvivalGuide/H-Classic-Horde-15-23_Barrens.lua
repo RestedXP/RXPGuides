@@ -1040,7 +1040,7 @@ step
     .mob Witchwing Roguefeather
 step
     #completewith Samophlange
-    +|cRXP_WARN_Be careful of|r |cRXP_ENEMY_Sunscale Scytheclaws|r |cRXP_WARN_in the area. They are up to level 18 and can|r |T132152:0|t[Thrash]
+    +|cRXP_WARN_Be careful of|r |cRXP_ENEMY_Sunscale Scytheclaws|r |cRXP_WARN_in the area. They are up to level 18 and can|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r
 step
     #sticky
     #completewith Samophlange
@@ -1525,7 +1525,7 @@ step
     .goto The Barrens,44.60,15.04,50,0
     .goto The Barrens,47.81,14.18
     >>Finish killing |cRXP_ENEMY_Raptors|r. Loot them for their |cRXP_LOOT_Heads|r
-    >>|cRXP_WARN_Be careful of|r |cRXP_ENEMY_Sunscale Scytheclaws|r|cRXP_WARN_. They can|r |T132152:0|t[Thrash]
+    >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r    
     .complete 869,1 --Raptor Head (12)
     .mob Sunscale Lashtail
     .mob Sunscale Screecher
@@ -1706,7 +1706,7 @@ step
 step
     #completewith TestSeeds
     >>Kill any |cRXP_ENEMY_Sunscale Scytheclaw|r you see. Loot them for their |cRXP_LOOT_Horns|r and |cRXP_LOOT_Feathers|r
-    >>|cRXP_WARN_Be careful! They have|r |T132152:0|t[Thrash]
+    >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r    
     .complete 865,1 --Intact Raptor Horn (5)
     .collect 5165,3,905,3 --Sunscale Feather (3)
     .mob Sunscale Scytheclaw
@@ -1788,20 +1788,20 @@ step
 step
     .goto The Barrens,52.60,46.10
     >>Click the Blue Raptor Nest. Kill more |cRXP_ENEMY_Sunscale Scytheclaws|r if you don't have a |T132914:0|t[Sunscale Feather]
-    >>|cRXP_WARN_Be careful! They have|r |T132152:0|t[Thrash]
+    >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r  
     .complete 905,1 --Visit Blue Raptor Nest (1)
     .mob Sunscale Scytheclaw
 step
     .goto The Barrens,52.45,46.57
     >>Click the Red Raptor Nest. Kill more |cRXP_ENEMY_Sunscale Scytheclaws|r if you don't have a |T132914:0|t[Sunscale Feather]
-    >>|cRXP_WARN_Be careful! They have|r |T132152:0|t[Thrash]
+    >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r  
     .complete 905,3 --Visit Red Raptor Nest (1)
     .mob Sunscale Scytheclaw
 step
     #label Nest
     .goto The Barrens,52.02,46.47
     >>Click the Yellow Raptor Nest. Kill more |cRXP_ENEMY_Sunscale Scytheclaws|r if you don't have a |T132914:0|t[Sunscale Feather]
-    >>|cRXP_WARN_Be careful! They have|r |T132152:0|t[Thrash]
+    >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r  
     .complete 905,2 --Visit Yellow Raptor Nest (1)
     .mob Sunscale Scytheclaw
 step
@@ -2365,14 +2365,14 @@ step
 step << Warrior
     .goto The Barrens,62.20,38.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grazlix|r
-    .vendor >>|cRXP_BUY_Buy|r |T134583:0|t[Mighty Chain Pants] |cRXP_BUY_from him if it's up|r
+    .vendor >>Buy |T134583:0|t[|cRXP_FRIENDLY_Mighty Chain Pants|r] from him if it's up
     .target Grazlix
     .money <0.619
     .itemStat 7,ITEM_MOD_ARMOR_SHORT,<155
 step << Rogue/Hunter/Warrior/Shaman/Druid
     .goto The Barrens,62.16,38.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vexspindle|r
-    .vendor >> |cRXP_BUY_Buy|r |T132603:0|t[Wolf Bracers] |cRXP_BUY_from him if they're up|r
+    .vendor >> Buy |T132603:0|t[|cRXP_FRIENDLY_Wolf Bracers|r] from him if they're up
     .target Vexspindle
     .money <0.3515
     .itemStat 9,ITEM_MOD_ARMOR_SHORT,<37
@@ -2384,13 +2384,13 @@ step
     .dungeon WC
 step << Warrior
     #completewith FlytoXroads
-    +Equip the |T134583:0|t[Mighty Chain Pants]
+    +Equip the |T134583:0|t[|cRXP_FRIENDLY_Mighty Chain Pants|r]
     .use 4800
     .itemcount 4800,1
     .itemStat 7,ITEM_MOD_ARMOR_SHORT,<155
 step << Rogue/Hunter/Warrior/Shaman/Druid
     #completewith FlytoXroads
-    +Equip the |T132603:0|t[Wolf Bracers]
+    +Equip the |T132603:0|t[|cRXP_FRIENDLY_Wolf Bracers|r]
     .use 4794
     .itemcount 4794,1
     .itemStat 9,ITEM_MOD_ARMOR_SHORT,<37

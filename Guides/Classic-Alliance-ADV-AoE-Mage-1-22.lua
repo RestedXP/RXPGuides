@@ -863,7 +863,7 @@ step
     .use 17117
 step
     >>Talk to |cRXP_FRIENDLY_Monty|r
-    >>|cRXP_WARN_Wait out the RP|r
+--  >>|cRXP_WARN_Wait out the RP|r
     .turnin 6661 >> Turn in Deeprun Rat Roundup
     .target Monty
     .zoneskip Stormwind City
