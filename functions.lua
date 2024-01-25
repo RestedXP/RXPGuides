@@ -870,6 +870,10 @@ function addon.functions.accept(self, ...)
             element.tooltip = nil
         end
 
+        if addon.settings.profile.debug then
+            element.tooltip = element.questId
+        end
+
         element.tooltipText = addon.icons.accept .. element.text
         local completed = element.completed
 
@@ -1000,7 +1004,9 @@ function addon.functions.turnin(self, ...)
         local event, questId = ...
         local id = element.questId
         local isComplete = IsQuestTurnedIn(id)
-
+        if addon.settings.profile.debug then
+            element.tooltip = id
+        end
         if step.active or element.retrieveText then
             addon.questTurnIn[id] = element
             -- addon.questAccept[id] = addon.questAccept[id] or element
@@ -1273,6 +1279,9 @@ function addon.UpdateQuestCompletionData(self)
     else
         element.icon = icon
         element.tooltip = nil
+    end
+    if addon.settings.profile.debug then
+        element.tooltip = id
     end
 
     local quest
