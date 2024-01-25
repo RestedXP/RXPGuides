@@ -3370,7 +3370,7 @@ function addon.functions.unitscan(self, text, ...)
         local t = {...}
         element.unitscan = t
         local prefix = t[1]
-        if prefix:sub(1,1) == "+" then
+        if prefix and prefix:sub(1,1) == "+" then
             t[1] = prefix:sub(2,-1)
             element.unitlist = t
             element.parent = true
@@ -3390,7 +3390,7 @@ function addon.functions.target(self, text, ...)
         local t = {...}
         element.targets = t
         local prefix = t[1]
-        if prefix:sub(1,1) == "+" then
+        if prefix and prefix:sub(1,1) == "+" then
             t[1] = prefix:sub(2,-1)
             element.unitlist = t
             element.parent = true
@@ -3410,7 +3410,7 @@ function addon.functions.mob(self, text, ...)
         local t = {...}
         element.mobs = t
         local prefix = t[1]
-        if prefix:sub(1,1) == "+" then
+        if prefix and prefix:sub(1,1) == "+" then
             t[1] = prefix:sub(2,-1)
             element.unitlist = t
             element.parent = true
@@ -3942,7 +3942,7 @@ function addon.functions.skipgossipid(self, text, ...)
                    ': No gossip ID provided\n' .. self)
         end
         local prefix = args[1]
-        if prefix:sub(1,1) == "+" then
+        if prefix and prefix:sub(1,1) == "+" then
             args[1] = prefix:sub(2,-1)
             element.parent = true
         end
