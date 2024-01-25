@@ -205,8 +205,7 @@ step << Monk
     .accept 75189 >>Accept Safety in Numbers
     .target Todd Abel
 step
-    .goto 202,65.810,77.714
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Genn Greymane|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Genn Greymane|r and |cRXP_FRIENDLY_Lord Godfrey|r
     .turnin 14285 >>Turn in Safety in Numbers << Rogue
     .turnin 14286 >>Turn in Safety in Numbers << Warrior
     .turnin 14287 >>Turn in Safety in Numbers << Warlock
@@ -216,7 +215,12 @@ step
     .turnin 14291 >>Turn in Safety in Numbers << Druid
     .turnin 75189 >>Turn in Safety in Numbers << Monk
     .accept 14157 >>Accept Old Divisions
-	.target King Genn Greymane
+    .goto 202,65.810,77.714
+	.target +King Genn Greymane
+    .accept 24930 >>Accept While You're At It
+    .goto 202,65.279,77.607
+	.target +Lord Godfrey
+--XX Copy paste up to here
 step
     .goto 202,65.3,77.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Godfrey.|r
