@@ -160,7 +160,7 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seargent Cleese|r
     .turnin 14265 >>Turn in Your Instructor
     .accept 14286 >>Accept Safety in Numbers
-	.target Seargent Cleese
+	.target Sergeant Cleese
 step << Rogue
     .goto 202,71.406,65.752
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loren the Fence|r
@@ -170,7 +170,7 @@ step << Rogue
 	.target Loren the Fence
 step << Warlock
     .goto 202,71.420,64.435
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vitus Darkwalker.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vitus Darkwalker|r
     .turnin 14273 >>Shady Associates
     .accept 14287 >>Accept Safety in Numbers
 	.target Vitus Darkwalker
@@ -187,13 +187,13 @@ step << Mage
     .accept 14288 >>Accept Safety in Numbers
 	.target Myriam Spellwaker
 step << Priest
-    .goto 202,70.426,65.543
+    .goto 202,70.421,65.541
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sister Almyra|r
     .turnin 14278 >>Turn in Seek the Sister
     .accept 14289 >>Accept Safety in Numbers
 	.target Sister Almyra
 step << Druid
-    .goto 202,70.18,65.88
+    .goto 202,70.190,65.887
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celestine of the Harvest|r
     .turnin 14280 >> Turn in The Winds Know Your Name
     .accept 14291 >> Accept Safety in Numbers
@@ -205,7 +205,7 @@ step << Monk
     .accept 75189 >>Accept Safety in Numbers
     .target Todd Abel
 step
-    .goto 202,65.8,77.7
+    .goto 202,65.810,77.714
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Genn Greymane|r
     .turnin 14285 >>Turn in Safety in Numbers << Rogue
     .turnin 14286 >>Turn in Safety in Numbers << Warrior

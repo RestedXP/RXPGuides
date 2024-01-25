@@ -1945,7 +1945,7 @@ s["MAGE"] = {
         27125, --Mage Armor
         27072, --Frostbolt
         27124, --Ice Armor
-        38699, --Arcane Missles
+        38699, --Arcane Missiles
     },
     [70] = {
         27127, --Arcane Brilliance
@@ -1960,7 +1960,7 @@ s["MAGE"] = {
         32796, --Frost Ward
         30449, --Spellsteal
         43987, --Ritual of Refreshment
-        38704, --Arcane Missles
+        38704, --Arcane Missiles
     },
     [71] = {
         42894, --Arcane Blast
@@ -1985,7 +1985,7 @@ s["MAGE"] = {
     },
     [75] = {
         42917, --Frost Nova
-        42843, --Arcane Missles
+        42843, --Arcane Missiles
         42841, --Frostbolt
         42955, --Conjure Refreshment
         44614, --Frostfire Bolt
@@ -2013,7 +2013,7 @@ s["MAGE"] = {
         43008, --Ice Armor
         43046, --Molten Armor
         42842, --Frostbolt
-        42846, --Arcane Missles
+        42846, --Arcane Missiles
         43024, --Mage Armor
     },
 }
