@@ -214,7 +214,7 @@ step
     .turnin 14289 >>Turn in Safety in Numbers << Priest
     .turnin 14290 >>Turn in Safety in Numbers << Hunter
     .turnin 14291 >>Turn in Safety in Numbers << Druid
-    .accept 75189 >>Accept Safety in Numbers << Monk
+    .turnin 75189 >>Turn in Safety in Numbers << Monk
     .accept 14157 >>Accept Old Divisions
 	.target King Genn Greymane
 step
