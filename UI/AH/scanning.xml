@@ -390,7 +390,7 @@
                 </FontString>
             </Layer>
             <Layer level="ARTWORK">
-                <FontString name="RXP_IU_AH_BrowseTabText" inherits="GameFontHighlightSmall" text="FILTERS">
+                <FontString name="RXP_IU_AH_BrowseTabText" inherits="GameFontHighlightSmall" text="FILTERS", hidden="true">
                     <Anchors>
                         <Anchor point="TOP" relativePoint="TOPLEFT">
                             <Offset>
@@ -399,7 +399,7 @@
                         </Anchor>
                     </Anchors>
                 </FontString>
-                <FontString name="RXP_IU_AH_BrowseNameText" inherits="GameFontHighlightSmall" text="NAME">
+                <FontString name="RXP_IU_AH_BrowseNameText" inherits="GameFontHighlightSmall" text="NAME", hidden="true">
                     <Anchors>
                         <Anchor point="TOPLEFT">
                             <Offset>
@@ -408,7 +408,7 @@
                         </Anchor>
                     </Anchors>
                 </FontString>
-                <FontString name="RXP_IU_AH_BrowseLevelText" inherits="GameFontHighlightSmall" text="LEVEL_RANGE">
+                <FontString name="RXP_IU_AH_BrowseLevelText" inherits="GameFontHighlightSmall" text="LEVEL_RANGE", hidden="true">
                     <Anchors>
                         <Anchor point="TOPLEFT">
                             <Offset>
@@ -417,7 +417,7 @@
                         </Anchor>
                     </Anchors>
                 </FontString>
-                <FontString name="RXP_IU_AH_BrowseIsUsableText" inherits="GameFontHighlightSmall" text="USABLE_ITEMS">
+                <FontString name="RXP_IU_AH_BrowseIsUsableText" inherits="GameFontHighlightSmall" text="USABLE_ITEMS", hidden="true">
                     <Anchors>
                         <Anchor point="TOPLEFT">
                             <Offset>
@@ -426,7 +426,7 @@
                         </Anchor>
                     </Anchors>
                 </FontString>
-                <FontString name="RXP_IU_AH_BrowseShowOnCharacterText" inherits="GameFontHighlightSmall" text="DISPLAY_ON_CHARACTER">
+                <FontString name="RXP_IU_AH_BrowseShowOnCharacterText" inherits="GameFontHighlightSmall" text="DISPLAY_ON_CHARACTER", hidden="true">
                     <Anchors>
                         <Anchor point="TOPLEFT">
                             <Offset>
