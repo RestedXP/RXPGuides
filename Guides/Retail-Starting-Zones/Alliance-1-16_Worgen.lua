@@ -2,7 +2,8 @@ RXPGuides.RegisterGuide([[
 #df
 #version 2
 #group RestedXP Starting Zones
-#displayname Worgen Starting Zone
+#groupweight 8
+#displayname Gilneas
 #name 2Retail-Alliance-Worgen_Gilneas
 #next RestedXP Alliance 10-60\1A_Elwynn Forest
 #defaultfor Worgen !DK

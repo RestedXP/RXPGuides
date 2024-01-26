@@ -2,13 +2,14 @@ RXPGuides.RegisterGuide([[
 #df
 #version 2
 #group RestedXP Starting Zones
+#groupweight 8
 #subgroup Night Elf Starting Zones
 #name 2Retail-Alliance-Night Elf_Shadowglen
 #displayname Chapter 1 - Shadowglen
 #next 3Retail-Alliance-Night Elf_Teldrassil
-#defaultfor NightElf
+#defaultfor NightElf !DemonHunter !DK 
 
-<<Alliance !DemonHunter !DK 
+<< Alliance
 
 step
     .goto 460,45.61,74.52
@@ -184,13 +185,14 @@ RXPGuides.RegisterGuide([[
 #df
 #version 2
 #group RestedXP Starting Zones
+#groupweight 8
 #subgroup Night Elf Starting Zones
 #displayname Chapter 2 - Teldrassil
 #name 3Retail-Alliance-Night Elf_Teldrassil
 #next RestedXP Alliance 10-60\1A_Elwynn Forest
-#defaultfor NightElf
+#defaultfor NightElf !DemonHunter !DK
 
-<<Alliance !DemonHunter !DK
+<< Alliance
 
 step
     .goto 57,59.56,49.09

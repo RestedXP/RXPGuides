@@ -2,6 +2,7 @@ RXPGuides.RegisterGuide([[
 #df
 #version 2
 #group RestedXP Starting Zones
+#groupweight 8
 #subgroup Dwarf Starting Zones
 #name 2Retail-Alliance-Dwarf_Coldridge Vallley
 #displayname Chapter 1 - Coldridge Vallley
@@ -749,13 +750,14 @@ RXPGuides.RegisterGuide([[
 #df
 #version 2
 #group RestedXP Starting Zones
+#groupweight 8
 #subgroup Gnome Starting Zones
 #name 2Retail-Alliance-Gnome_New Tinkertown
 #displayname Chapter 1 - New Tinkertown
 #next 3Retail-Alliance-Gnome,Dwarf_Dun Morogh
 #defaultfor Gnome !DK
 
-<< Alliance
+<< Gnome
 
 step
     #completewith next
@@ -1407,15 +1409,15 @@ RXPGuides.RegisterGuide([[
 #df
 #version 2
 #group RestedXP Starting Zones
-#subgroup Dwarf Starting Zones << Dwarf
+#groupweight 8
+#subgroup Dwarf Starting Zones << !Gnome
 #subgroup Gnome Starting Zones << Gnome
 #name 3Retail-Alliance-Gnome,Dwarf_Dun Morogh
-#displayname Chapter 2 - Dun Morogh << Gnome
-#displayname Chapter 2 - Dun Morogh << Dwarf
+#displayname Chapter 2 - Dun Morogh
 #next RestedXP Alliance 10-60\1A_Elwynn Forest
-#defaultfor Dwarf/Gnome
+#defaultfor Dwarf !DK/Gnome !DK
 
-<< Alliance !DK
+<< Alliance
 
 step << Gnome
     #optional

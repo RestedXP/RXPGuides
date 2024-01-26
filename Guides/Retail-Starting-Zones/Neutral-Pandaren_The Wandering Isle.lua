@@ -1,15 +1,15 @@
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#groupweight 8
 #group RestedXP Starting Zones
+#groupweight 8
 #name 2Retail-Panda_The Wandering Isle
-#displayname Pandaren Starting Zone
+#displayname The Wandering Isle
 #next RestedXP Alliance 10-60\1A_Elwynn Forest << Alliance
 #next RestedXP Horde 10-60\1 BfA Intro << Horde
 #defaultfor Pandaren
 
-<<!DK Pandaren
+<< Pandaren !DK
 
 step
     #completewith next
@@ -530,7 +530,7 @@ step
     .accept 29678 >>Accept Shu, the Spirit of Water
 	.target Old Man Liang
 step
-	.isOnQuest29678
+	.isOnQuest 29678
     .goto 378,79.66,41.83,4,0
     .goto 378,79.61,38.72
     >>Position yourself |cFFfa9602on the Blue Circle.|r This will allow you to jump |cFFfa9602toward the Pool.|r

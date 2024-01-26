@@ -1,12 +1,13 @@
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group Allied Race Unlocks
-#subgroup Nightborne
+#group RestedXP Allied Race Unlocks
+#groupweight 5
+-- #subgroup Nightborne
 #name 01) Nightborne Unlock Scenario
-#displayname Nightborne Questline
+#displayname Nightborne
 
-<< Horde
+<< Horde !Nightborne
 
 step
     #completewith NightborneStartQuestline

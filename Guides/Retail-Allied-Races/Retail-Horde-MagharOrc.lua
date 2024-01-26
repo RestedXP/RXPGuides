@@ -1,12 +1,13 @@
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group Allied Race Unlocks
-#subgroup Maghar Orc
+#group RestedXP Allied Race Unlocks
+#groupweight 5
+-- #subgroup Maghar Orc
 #name 01) Maghar Orc Questline
-#displayname Maghar Orc Questline
+#displayname Maghar Orc
 
-<< Horde
+<< Horde !MagharOrc
 
 step
     #completewith MagharOrcStartQuestline

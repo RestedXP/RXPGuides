@@ -1,12 +1,13 @@
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group Allied Race Unlocks
-#subgroup Vulpera
+#group RestedXP Allied Race Unlocks
+#groupweight 5
+-- #subgroup Vulpera
 #name 1) Vulpera Questline
-#displayname Vulpera Questline
+#displayname Vulpera
 
-<< Horde
+<< Horde !Vulpera
 
 step
     #completewith VulperaStartQuestline

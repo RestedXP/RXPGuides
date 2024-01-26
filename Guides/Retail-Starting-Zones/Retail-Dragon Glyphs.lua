@@ -3,7 +3,7 @@ RXPGuides.RegisterGuide([[
 #name A1 Waking Shores Dragon Glyphs
 #displayname Waking Shores Dragon Glyphs
 #version 2
-#groupweight 1
+#groupweight 7
 #group RestedXP Dragon Glyphs
 #next B1 Ohn'ahran Plains Dragon Glyphs
 

@@ -2,6 +2,7 @@ RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP BfA War Campaign
+#groupweight 4
 #name 01) Heart of Azeroth
 #displayname Chapter 1 - Heart of Azeroth
 #next 02) War Campaign Tiragarde Foothold

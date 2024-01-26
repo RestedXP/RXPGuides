@@ -2,6 +2,7 @@ RXPGuides.RegisterGuide([[
 #df
 #version 2
 #group RestedXP Starting Zones
+#groupweight 8
 #subgroup Human Starting Zones
 #group weight 9
 #name A-Northshire Valley
@@ -367,7 +368,8 @@ RXPGuides.RegisterGuide([[
 #df
 #version 2
 #group RestedXP Starting Zones
-#subgroup Human Starting Zones << Human
+#groupweight 8
+#subgroup Human Starting Zones << !KulTiran !DK/!DarkIronDwarf !DK/!LightforgedDraenei !DK/!Mechagnome !DK/!VoidElf !DK/!Pandaren !DK
 #subgroup Allied Race DK << KulTiran DK/DarkIronDwarf DK/LightforgedDraenei DK/Mechagnome DK/VoidElf DK/Pandaren DK
 #displayname Chapter 2 - Elwynn Forest
 #name B-Elwynn Forest

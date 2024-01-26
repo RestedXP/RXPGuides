@@ -1,10 +1,13 @@
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group Allied Race Unlocks
-#subgroup Zandalari Trolls
+#group RestedXP Allied Race Unlocks
+#groupweight 5
+-- #subgroup Zandalari Troll
 #name 1) Zandalari Troll Questline
-#displayname Zandalari Troll Questline
+#displayname Zandalari Troll
+
+<< Horde !ZandalariTroll
 
 step
     #completewith ZandalariTrollStartQuestline

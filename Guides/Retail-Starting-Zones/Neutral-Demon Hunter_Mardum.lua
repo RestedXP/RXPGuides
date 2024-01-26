@@ -2,12 +2,13 @@ RXPGuides.RegisterGuide([[
 #df
 #version 2
 #group RestedXP Starting Zones
+#groupweight 8
 #name 1Retail-Demon Hunter_Mardum
 #displayname Demon Hunter Starting Zone
 #next RestedXP Alliance 10-60\1A_Elwynn Forest << Alliance
 #next RestedXP Horde 10-60\1 BfA Intro << Horde
 
-<<DemonHunter
+<< DemonHunter
 
 step
     #completewith DemonHunterIntroduction

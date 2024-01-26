@@ -2,11 +2,12 @@ RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP Allied Race Unlocks
-#subgroup Void Elf
+#groupweight 5
+-- #subgroup Void Elf
 #name 4) Void Elf Scenario Questline
-#displayname Final Chapter
+#displayname Void Elf
 
-<< Alliance
+<< Alliance !VoidElf
 
 step
     #completewith next
