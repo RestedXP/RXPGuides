@@ -4486,7 +4486,7 @@ function addon.functions.scenario(self, ...)
                                      required)
     if element.rawtext ~= "" then element.criteria = "\n" .. element.criteria end
 
-    if completed or quantity >= required or (element.stagePos and currentStage > element.stagePos) then
+    if completed or quantity >= required or (element.stagePos and currentStage and currentStage > element.stagePos) then
         addon.SetElementComplete(self)
     end
 
