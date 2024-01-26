@@ -6995,6 +6995,7 @@ step << !Shaman !Warrior
     #completewith next
     >>Kill the |cRXP_ENEMY_Silithid Harvester|r. Loot it for the |T134321:0|t[|cRXP_LOOT_Harvester's Head|r]
     >>|cRXP_WARN_Use the |T134321:0|t[|cRXP_LOOT_Harvester's Head|r] to start the quest|r
+    >>|cRXP_WARN_Skip this quest if you can't find him|r
     .collect 5138,1,897,1 --Collect Harvester's Head
     .accept 897 >>Accept The Harvester
     .use 5138
@@ -7020,10 +7021,12 @@ step << !Shaman !Warrior
     >>|cRXP_WARN_Try to avoid fighting the nearby |cRXP_ENEMY_Silithid|r as much as possible|r
     .complete 868,1 --Silithid Egg (12)
 step << !Shaman !Warrior
+    #optional
     #completewith JornTravel
     .goto The Barrens,48.79,70.00,60,0
     >>Kill the |cRXP_ENEMY_Silithid Harvester|r. Loot it for the |T134321:0|t[|cRXP_LOOT_Harvester's Head|r]
     >>|cRXP_WARN_Use the |T134321:0|t[|cRXP_LOOT_Harvester's Head|r] to start the quest|r
+    >>|cRXP_WARN_Skip this quest if you can't find him|r
     .collect 5138,1,897,1 --Collect Harvester's Head
     .accept 897 >>Accept The Harvester
     .use 5138
@@ -8127,6 +8130,7 @@ step << skip
     #completewith next
     >>Kill the |cRXP_ENEMY_Silithid Harvester|r. Loot it for the |T134321:0|t[|cRXP_LOOT_Harvester's Head|r]
     >>|cRXP_WARN_Use the |T134321:0|t[|cRXP_LOOT_Harvester's Head|r] to start the quest|r
+    >>|cRXP_WARN_Skip this quest if you can't find him|r
     .collect 5138,1,897,1 --Collect Harvester's Head
     .accept 897 >>Accept The Harvester
     .use 5138
@@ -8156,6 +8160,7 @@ step << skip
     .target Jorn Skyseer
     .isOnQuest 897
 step
+    #optional
     #completewith next
     .goto The Barrens,45.19,69.55,45,0
     .goto The Barrens,42.74,69.72,45,0
@@ -8164,6 +8169,7 @@ step
     .goto The Barrens,48.87,69.96,45,0
     >>Kill the |cRXP_ENEMY_Silithid Harvester|r. Loot it for the |T134321:0|t[|cRXP_LOOT_Harvester's Head|r]
     >>|cRXP_WARN_Use the |T134321:0|t[|cRXP_LOOT_Harvester's Head|r] to start the quest|r
+    >>|cRXP_WARN_Skip this quest if you can't find him|r
     .collect 5138,1,897,1 --Collect Harvester's Head
     .accept 897 >>Accept The Harvester
     .use 5138
