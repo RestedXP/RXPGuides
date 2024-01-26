@@ -14,7 +14,7 @@ events.destroy = events.collect
 events.buy = events.collect
 events.accept = {"QUEST_ACCEPTED", "QUEST_TURNED_IN", "QUEST_REMOVED"}
 events.turnin = "QUEST_TURNED_IN"
-events.complete = "QUEST_LOG_UPDATE"
+events.complete = {"QUEST_LOG_UPDATE", "CINEMATIC_STOP", "STOP_MOVIE"}
 events.fp = {"UI_INFO_MESSAGE", "UI_ERROR_MESSAGE", "TAXIMAP_OPENED", "GOSSIP_SHOW"}
 events.hs = "UNIT_SPELLCAST_SUCCEEDED"
 events.home = {"HEARTHSTONE_BOUND","CONFIRM_BINDER","GOSSIP_SHOW"}
@@ -132,10 +132,10 @@ local _G = _G
 local GetNumQuests = C_QuestLog.GetNumQuestLogEntries or
                          _G.GetNumQuestLogEntries
 local GetQuestLogTitle = _G.GetQuestLogTitle
-local GetNumDayEvents = _G.C_Calendar.GetNumDayEvents
-local GetDayEvent = _G.C_Calendar.GetDayEvent
+local GetNumDayEvents = _G.C_Calendar and _G.C_Calendar.GetNumDayEvents
+local GetDayEvent = _G.C_Calendar and _G.C_Calendar.GetDayEvent
 local GetCurrentCalendarTime = _G.C_DateAndTime.GetCurrentCalendarTime
-local OpenCalendar = _G.C_Calendar.OpenCalendar
+--local OpenCalendar = _G.C_Calendar and _G.C_Calendar.OpenCalendar
 local GossipSelectOption = _G.SelectGossipOption
 local GossipGetOptions = C_GossipInfo and C_GossipInfo.GetOptions or _G.GetGossipOptions
 local PickupContainerItem = C_Container and C_Container.PickupContainerItem or _G.PickupContainerItem
@@ -870,6 +870,10 @@ function addon.functions.accept(self, ...)
             element.tooltip = nil
         end
 
+        if addon.settings.profile.debug then
+            element.tooltip = element.questId
+        end
+
         element.tooltipText = addon.icons.accept .. element.text
         local completed = element.completed
 
@@ -1000,7 +1004,9 @@ function addon.functions.turnin(self, ...)
         local event, questId = ...
         local id = element.questId
         local isComplete = IsQuestTurnedIn(id)
-
+        if addon.settings.profile.debug then
+            element.tooltip = id
+        end
         if step.active or element.retrieveText then
             addon.questTurnIn[id] = element
             -- addon.questAccept[id] = addon.questAccept[id] or element
@@ -1273,6 +1279,9 @@ function addon.UpdateQuestCompletionData(self)
     else
         element.icon = icon
         element.tooltip = nil
+    end
+    if addon.settings.profile.debug then
+        element.tooltip = id
     end
 
     local quest
@@ -2032,6 +2041,9 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
         element.checkObjectives = bit.band(flags, 0x4) == 0x4
         element.includeBank = bit.band(flags, 0x8) == 0x8
         element.ignoreTurnIn = bit.band(flags, 0x10) == 0x10
+        if arg1 and element.subtract and element.multiplier == 1 then
+            element.multiplier = tonumber(arg1) or 1
+        end
         if bit.band(flags, 0x20) == 0x20 then
             element.profession = arg1
             element.multiplier = tonumber(arg2) or 1
@@ -3358,7 +3370,7 @@ function addon.functions.unitscan(self, text, ...)
         local t = {...}
         element.unitscan = t
         local prefix = t[1]
-        if prefix:sub(1,1) == "+" then
+        if prefix and prefix:sub(1,1) == "+" then
             t[1] = prefix:sub(2,-1)
             element.unitlist = t
             element.parent = true
@@ -3378,7 +3390,7 @@ function addon.functions.target(self, text, ...)
         local t = {...}
         element.targets = t
         local prefix = t[1]
-        if prefix:sub(1,1) == "+" then
+        if prefix and prefix:sub(1,1) == "+" then
             t[1] = prefix:sub(2,-1)
             element.unitlist = t
             element.parent = true
@@ -3398,7 +3410,7 @@ function addon.functions.mob(self, text, ...)
         local t = {...}
         element.mobs = t
         local prefix = t[1]
-        if prefix:sub(1,1) == "+" then
+        if prefix and prefix:sub(1,1) == "+" then
             t[1] = prefix:sub(2,-1)
             element.unitlist = t
             element.parent = true
@@ -3868,6 +3880,13 @@ function addon.functions.skipgossip(self, text, ...)
     local nArgs = #args
     local event = text
     local id = tonumber(args[1])
+    if (element.step.active and event == nil) then
+        local g = GossipGetOptions()
+        if type(g) == "table" and #g > 0 then
+            event = "GOSSIP_SHOW"
+        end
+    end
+
     if event == "GOSSIP_SHOW" then
         -- print(id,'GS',nArgs)
         local trainerId,name = addon.SelectGossipType("trainer",true)
@@ -3921,6 +3940,11 @@ function addon.functions.skipgossipid(self, text, ...)
             return addon.error(
                 L("Error parsing guide") .. " " .. addon.currentGuideName ..
                    ': No gossip ID provided\n' .. self)
+        end
+        local prefix = args[1]
+        if prefix and prefix:sub(1,1) == "+" then
+            args[1] = prefix:sub(2,-1)
+            element.parent = true
         end
         for i,v in pairs(args) do
             args[i] = tonumber(v)

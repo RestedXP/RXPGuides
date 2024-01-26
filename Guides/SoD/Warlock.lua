@@ -390,7 +390,7 @@ step
     .goto Hillsbrad Foothills,58.2,19.6,40,0
     .goto Hillsbrad Foothills,57.5,36.4,50,0
     .goto Hillsbrad Foothills,51.1,46.4,40,0
-    >>Look for |cRXP_FRIENDLY_Zixil|r. He patrolls between Tarren Mill and Southshore. Buy the |T133709:0|t[Demolition Explosives] from him |cRXP_WARN_for 5 gold|r
+    >>Look for |cRXP_FRIENDLY_Zixil|r. He patrolls between Tarren Mill and Southshore. Buy the |T133709:0|t[Demolition Explosives] from him |cRXP_WARN_for 1 gold|r
     .collect 211487,1
     .target Zixil
 step

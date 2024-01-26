@@ -268,21 +268,24 @@ step
     .goto Mulgore,36.74,58.53
     >>Kill |cRXP_ENEMY_Plainstriders|r and |cRXP_ENEMY_Swoops|r. Loot them for |T134025:0|t[|cRXP_LOOT_Mulgore Bird Meat|r]
     .collect 205961,1 --Mulgore Bird Meat (1)
-    .mob Wiry Swoop
-    .mob Swoop
+    .mob Elder Plainstrider
     .mob Adult Plainstrider
+    .mob Swoop
+    .mob Wiry Swoop
+    .mob Taloned Swoop
     .train 425762,1
 step
     #season 2
     .goto Mulgore,35.22,57.42
-    .use 205961 >>Use the |T134025:0|t[|cRXP_LOOT_Mulgore Bird Meat|r] at the carcass to summon |cRXP_ENEMY_Mokwa|r
+    >>Use the |T134025:0|t[|cRXP_LOOT_Mulgore Bird Meat|r] at the carcass to summon |cRXP_ENEMY_Mokwa|r
     >>Kill him and loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Flanking|r]
     .collect 205979,1 --Rune of Flanking (1)
     .mob Mokwa
+    .use 205961
     .train 425762,1
 step
     #season 2
-    .train 425762 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Flanking|r]
+    .train 425762 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Flanking|r] |cRXP_WARN_to train|r |T132175:0|t[Flanking Strike]
     .use 205979
     .itemcount 205979,1
 ]])
@@ -814,46 +817,6 @@ step
     .collect 205979,1
     .use 208608
     .mob Mowgh
-step
-    #season 2
-    .train 425762 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Flanking|r] |cRXP_WARN_to train|r |T132175:0|t[Flanking Strike]
-    .use 205979
-    .itemcount 205979,1
-]])
-
-RXPGuides.RegisterGuide([[
-#classic
-<< Horde Hunter SoD
-#group RestedXP Rune Guide
-#subgroup Legs
-#name Flanking - 7 (Mulgore)
-
-
-    --Rune of Flanking
-
-step
-    #season2
-    #loop
-    .goto Mulgore,41.6,71.2,20,0
-    .goto Mulgore,36.6,65.8,20,0
-    .goto Mulgore,36.2,49.6,20,0
-    .goto Mulgore,44.4,50.0,20,0
-    .train 425762,1
-    >>Kill |cRXP_ENEMY_Birds|r in |cFFfa9602Mulgore|r and loot them for |T134025:0|t[Mulgore Bird Meat]
-    .collect 205961,1
-    .mob Adult Plainstrider
-    .mob Swoopy
-    .mob Wiry Swoop
-    .mob Elder Painstrider
-step
-    #season2
-    .train 425762,1
-    .goto Mulgore,36,57
-    >>Use |T134025:0|t[Mulgore Bird Meat] near the corpse to summon |cRXP_ENEMY_Mokwa|r
-    >>Kill |cRXP_ENEMY_Mowgh|r and loot him for |T135142:0|t|cRXP_LOOT_[Rune of Flanking]|r
-    .collect 205979,1
-    .use 205961
-    .mob Mokwa
 step
     #season 2
     .train 425762 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Flanking|r] |cRXP_WARN_to train|r |T132175:0|t[Flanking Strike]
