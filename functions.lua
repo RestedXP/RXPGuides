@@ -3091,7 +3091,7 @@ function addon.GetSubZoneId(zone,x,y)
     local subzone = GetSubZoneText() or 1
     local zoneText = GetZoneText() or 2
     if zone and x and y then
-       zone = RXP.mapId[zone] or zone
+       zone = addon.mapId[zone] or zone
        x = x / 100
        y = y / 100
        subzone = MapUtil.FindBestAreaNameAtMouse(zone,x,y)
@@ -4676,10 +4676,15 @@ function addon.CanPlayerFly(zoneOrContinent)
     if type(region) ~= "number" then
         return
     end
-    local mapInfo = C_Map.GetMapInfo(region)
-    local continentId = mapInfo and mapInfo.parentMapID
 
-    local ridingSkill = RXP.GetSkillLevel("riding")
+    local mapInfo = C_Map.GetMapInfo(region)
+    local continentId = region
+    while mapInfo and mapInfo.parentMapID and mapInfo.flags ~= 0 do
+        continentId = mapInfo.parentMapID
+        mapInfo = C_Map.GetMapInfo(continentId)
+    end
+
+    local ridingSkill = addon.GetSkillLevel("riding")
 
     if not continentId then
         return
@@ -4691,7 +4696,7 @@ function addon.CanPlayerFly(zoneOrContinent)
         --12 = kalimdor, 18 = eastern kingdoms, 101 = outland,113 = northrend, 127 = dalaran(weird), 424 = Pandaria, 572 = Draenor, 588 = ashran, 1165 = dazar alor, 895 = boralus, 876 = kul'tiras
         -- 619 = Broken Isles, Zuldazar 862, Shadowlands = 1550, 1978=dragonflight
         if (ridingSkill > 224 and
-            (continentId == 12 or continentId == 18 or continentId == 101 or continentId == 113  or continentId == 127 or continentId == 424 or continentId == 572 or continentId == 588 or continentId == 619 or continentId == 862) or
+            (continentId == 12 or continentId == 18 or continentId == 13 or continentId == 101 or continentId == 113  or continentId == 127 or continentId == 424 or continentId == 572 or continentId == 588 or continentId == 619 or continentId == 862) or
             (continentId == 876 or continentId == 895 or continentId == 1165) or --bfa
             shFlying and continentId == 1550
          ) or dragonRiding and continentId == 1978 then
@@ -4731,7 +4736,7 @@ function addon.functions.flyable(self, text, zone, skill)
         element.skill = tonumber(skill) or -4
         return element
     end
-    local ridingSkill = RXP.GetSkillLevel("riding") or -4
+    local ridingSkill = addon.GetSkillLevel("riding") or -4
     local element = self.element
     local canPlayerFly = (addon.CanPlayerFly(element.zone) and ridingSkill >= element.skill)
     if element.reverse then
