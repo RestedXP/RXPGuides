@@ -257,14 +257,14 @@ step
     .goto 27,35.650,66.782,15 >> Enter Anvilmar
     .cooldown item,6948,<0 << Dwarf !DK
     .isOnQuest 24474
-    .xp >30,1  --Azeroth Flying
+    .noflyable  --Azeroth Flying
 step << Dwarf !DK
     #optional
     #completewith FirstThing
     .hs >> Hearth to Anvilmar
     .cooldown item,6948,>0,1
     .isOnQuest 24474
-    .xp >30,1  --Azeroth Flying
+    .noflyable  --Azeroth Flying
 step
     #optional
     #completewith FirstThing
@@ -272,7 +272,7 @@ step
     .goto 27,35.751,67.107,12,0
     .goto 27,35.650,66.782,15 >> Enter Anvilmar
     .isOnQuest 24474
-    .xp <30,1  --Azeroth Flying
+    .flyable  --Azeroth Flying
 step
     #sticky
     #label FirstThing
@@ -398,7 +398,7 @@ step
     .goto 27,35.650,66.782,15 >> Enter Anvilmar
     .cooldown item,6948,<0 << Dwarf !DK
     .isOnQuest 24475
-    .xp >30,1  --Azeroth Flying
+    .noflyable  --Azeroth Flying
 step << Dwarf !DK
     #optional
     #requires DunWolves
@@ -406,7 +406,7 @@ step << Dwarf !DK
     .hs >> Hearth to Anvilmar
     .cooldown item,6948,>0,1
     .isOnQuest 24475
-    .xp >30,1  --Azeroth Flying
+    .noflyable  --Azeroth Flying
 step
     #optional
     #requires DunWolves
@@ -415,7 +415,7 @@ step
     .goto 27,35.751,67.107,12,0
     .goto 27,35.650,66.782,15 >> Enter Anvilmar
     .isOnQuest 24475
-    .xp <30,1  --Azeroth Flying
+    .flyable  --Azeroth Flying
 step
     #label Sun
     #requires DunWolves
@@ -672,14 +672,14 @@ step
     .goto 27,35.953,66.803,15 >> Enter Anvilmar
     .cooldown item,6948,<0 << Dwarf !DK
     .isOnQuest 24492
-    .xp >30,1  --Azeroth Flying
+    .noflyable  --Azeroth Flying
 step << Dwarf !DK
     #optional
     #completewith Pack
     .hs >> Hearth to Anvilmar
     .cooldown item,6948,>0,1
     .isOnQuest 24492
-    .xp >30,1  --Azeroth Flying
+    .noflyable  --Azeroth Flying
 step
     #optional
     #completewith Pack
@@ -687,7 +687,7 @@ step
     .goto 27,35.836,67.146,12,0
     .goto 27,35.953,66.803,15 >> Enter Anvilmar
     .isOnQuest 24492
-    .xp <30,1  --Azeroth Flying
+    .flyable  --Azeroth Flying
 step
     #sticky
     #label Forget
@@ -1023,7 +1023,7 @@ step
     #completewith next
     .goto 469,40.603,45.713,45 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Gibblewilt|r. Kill him if he's up|r
     .unitscan Gibblewilt
-    .xp >30,1
+    .noflyable
 step
     #label Geysers
     #loop
@@ -1100,7 +1100,7 @@ step
     #completewith next
     .goto 469,37.265,67.852,45 >>|cRXP_WARN_[RARE] Check for the |cRXP_ENEMY_Caverndeep Looter|r. Kill him if he's up|r
 	.unitscan Caverndeep Looter
-    .xp >30,1
+    .noflyable
 --XX I could not find this guy (supposedly pats between Frostmane Hold and the cave entrance), need more accurate coordinates  
 step
     #sticky
@@ -1166,7 +1166,7 @@ step
     .goto 470,45.246,74.390,15,0
     .goto 470,31.866,44.578,45 >>Travel toward |cRXP_ENEMY_Boss Bruggor|r inside
     >>|cRXP_WARN_You won't aggro the sleeping |cRXP_ENEMY_Rockjaw Fungus-Flingers|r unless you attack them|r
-    .xp >30,1 --Azeroth Flying
+    .noflyable --Azeroth Flying
 step
     #completewith Bruggor
     .goto 470,87.857,52.221,15,0
@@ -1176,7 +1176,7 @@ step
     .goto 470,60.714,72.486,15,0
     .goto 470,45.246,74.390,15,0
     .goto 470,31.866,44.578,45 >>Travel toward |cRXP_ENEMY_Boss Bruggor|r inside
-    .xp <30,1 --Azeroth Flying
+    .flyable --Azeroth Flying
 step
     #sticky
     #label Detonator
@@ -1200,7 +1200,7 @@ step
     .goto 470,83.611,44.352,15,0
     .goto 469,33.781,66.184,20 >>Exit the Frostmane Hold cave
     >>|cRXP_WARN_You won't aggro the sleeping |cRXP_ENEMY_Rockjaw Fungus-Flingers|r unless you attack them|r
-    .xp >30,1 --Azeroth Flying
+    .noflyable --Azeroth Flying
     .subzoneskip 135,1
 step
     #optional
@@ -1212,7 +1212,7 @@ step
     .goto 470,74.752,38.437,15,0
     .goto 470,83.611,44.352,15,0
     .goto 469,33.781,66.184,20 >>Exit the Frostmane Hold cave
-    .xp <30,1 --Azeroth Flying
+    .flyable --Azeroth Flying
     .subzoneskip 135,1
 step
     #label Finishing
@@ -1294,7 +1294,7 @@ step
     .goto 469,66.023,27.211,45 >>|cRXP_WARN_[RARE] Check for the |cRXP_ENEMY_Weaponized Rabbot|r. Kill it if it's up|r
 	.unitscan Weaponized Rabbot
     .isOnQuest 26331
-    .xp >30,1
+    .noflyable
 step
     #optional
     .goto 469,68.698,35.590,45,0
@@ -1302,7 +1302,7 @@ step
     .goto 469,67.433,37.129,45 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Timber|r. Kill him if he's up|r
     .unitscan Timber
     .isOnQuest 26331
-    .xp >30,1
+    .noflyable
 step
     #optional
     #requires CrushcogM
@@ -1458,7 +1458,7 @@ step
     >>|cRXP_WARN_If you don't want to do this, skip this step|r
     .train 2366 >> Train |T4620675:0|t[Herbalism]
     .target Wembil Taskwidget
-    .skipgossip 47396,1,1,1
+    .skipgossip 47396,2,2,2
     .train 2575,3 --Mining
 step
     #optional
@@ -1470,7 +1470,7 @@ step
     >>|cRXP_WARN_If you don't want to do this, skip this step|r
     .train 2575 >> Train |T4620679:0|t[Mining]
     .target Wembil Taskwidget
-    .skipgossip 47396,1,2,1
+    .skipgossip 47396,2,3,2
     .train 2366,3 --Herbalism
 step
     .goto 27,54.196,51.169
@@ -1556,7 +1556,7 @@ step
     #label Ramp
     .goto 27,51.034,40.862,50 >> Travel up the ramp
     .subzoneskip 802
-    .xp >30,1 --Azeroth Flying
+    .noflyable --Azeroth Flying
     .isOnQuest 25724
 step
     #optional
@@ -1565,7 +1565,7 @@ step
     .goto 27,49.056,37.135,45 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Great Father Arctikus|r. Kill him if he's up|r
 	.unitscan Great Father Arctikus
     .isOnQuest 25724
-    .xp >30,1
+    .noflyable
 step
     #sticky
     #requires Ramp
@@ -1637,12 +1637,12 @@ step
     #requires Shimmerweed
 	#completewith next
     .goto 27,50.495,40.006,70 >> Travel toward the eastern side of the camp. Respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-    .xp >30,1 --Azeroth Flying
+    .noflyable --Azeroth Flying
 step
     #requires Shimmerweed
     #completewith next
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-    .xp >30,1 --Azeroth Flying
+    .noflyable --Azeroth Flying
 step << Dwarf/Gnome/DarkIronDwarf
     #requires Shimmerweed
     .goto 27,53.802,52.762
@@ -1756,7 +1756,7 @@ step
     #completewith Afar
     >>|cRXP_WARN_Make sure you die in a spot that is east/southeast of where |cRXP_FRIENDLY_Mountaineer Valgrum|r is|r
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-    .xp >30,1 --Azeroth Flying
+    .noflyable --Azeroth Flying
     .isOnQuest 313
 step
     #optional
@@ -1764,7 +1764,7 @@ step
     .goto 29,54.653,47.370,20,0
     .goto 29,51.703,58.351,20,0
     .goto 29,61.676,88.466,40 >> Exit the Wendigo Cave
-    .xp <30,1 --Azeroth Flying
+    .flyable --Azeroth Flying
     .isOnQuest 313
 step
     #requires Wendigos
@@ -1796,7 +1796,7 @@ step
     #completewith Gears
     .goto 27,57.252,57.622,40,0
     .goto 27,60.260,57.034,15 >>|cRXP_WARN_[CHEST] Keep an eye out for the |cRXP_PICK_Chest|r at the Frostmane Front. Loot it if it's up|r
-    .xp >30,1
+    .noflyable
 step
     #sticky
     #label Gears
@@ -1884,7 +1884,7 @@ step
     #completewith next
     .goto 27,53.941,50.053,15,0
     .goto 27,56.823,47.107,15 >>Travel toward |cRXP_FRIENDLY_Delber Cranktoggle|r
-    .xp >30,1
+    .noflyable
 step
     .goto 27,56.823,47.107
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delber Cranktoggle|r
@@ -1898,7 +1898,7 @@ step
     .vehicle >>Enter the |cRXP_PICK_Ultrasafe Personnel Launcher|r
     .timer 18.5,The Ultrasafe Personnel Launcher RP
     .isOnQuest 25839
-    .xp >30,1
+    .noflyable
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Slamp Wobblecog|r and |cRXP_FRIENDLY_Snevik the Blade|r
     .turnin 25839 >>Turn in The Ultrasafe Personnel Launcher
@@ -1955,7 +1955,7 @@ step
     #label FrostmaneChest1
     .goto 27,64.706,54.003,20 >>|cRXP_WARN_[CHEST] Check for the |cRXP_PICK_Chest|r near the stairs to the hut. Loot it if it's up|r
     .isOnQuest 25841
-    .xp >30,1
+    .noflyable
 step
     .goto 27,64.487,54.103
     >>Use the |T133033:0|t[Signal Flare] in the Northern Camp
@@ -1972,7 +1972,7 @@ step
     #completewith next
     .goto 27,63.550,56.118,20 >>|cRXP_WARN_[CHEST] Check for the |cRXP_PICK_Chest|r near the Drum. Loot it if it's up|r
     .isOnQuest 25841
-    .xp >30,1
+    .noflyable
 step
     #requires FrostmaneChest2
     .goto 27,63.191,57.128

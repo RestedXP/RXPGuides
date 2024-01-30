@@ -38,6 +38,8 @@ step
 step
     #label LibramS
     #loop
+    .goto Elwynn Forest,52.55,48.79,0
+    .goto Elwynn Forest,55.43,45.87,0
     .goto Elwynn Forest,52.55,48.79,50,0
     .goto Elwynn Forest,53.89,50.52,50,0
     .goto Elwynn Forest,55.09,49.00,50,0
@@ -57,6 +59,8 @@ step
     .xp <4,1
 step
     #loop
+    .goto Elwynn Forest,52.55,48.79,0
+    .goto Elwynn Forest,55.43,45.87,0
     .goto Elwynn Forest,52.55,48.79,50,0
     .goto Elwynn Forest,53.89,50.52,50,0
     .goto Elwynn Forest,55.09,49.00,50,0
@@ -188,7 +192,7 @@ step
     .train 410001,1
     .xp <8,1
 step
-    #completewith LibramLoot
+    #completewith LibramS
     #requires Loch1
     #label Cave1
     .goto Loch Modan,28.75,64.63,40,0

@@ -1088,27 +1088,33 @@ step
     .complete 29797,1 --8/8 Alliance Medical Supplies
 	.mob Deepscale Tormentor
 step
+    #optional
 	#completewith next
     .goto 378,40.18,87.69
 	.cast 56685 >>Pick up the |cRXP_FRIENDLY_Injured Sailor|r
 	.isOnQuest 29794
 	.target Injured Sailor
+--XXZ Zarant Function
 step
+    #optional
     .goto 378,42.27,86.80
     >>Carry the |cRXP_FRIENDLY_Injured Sailor|r back to |cRXP_FRIENDLY_Delora|r's Camp
     .complete 29794,1,1 --3/3 Injured Sailors rescued
 step
+    #optional
 	#completewith next
     .goto 378,39.41,87.98
 	.cast 56685 >>Pick up the |cRXP_FRIENDLY_Injured Sailor|r
 	.isOnQuest 29794
 	.target Injured Sailor
 step
+    #optional
 	#label Sailor2
     .goto 378,42.27,86.80
     >>Carry the |cRXP_FRIENDLY_Injured Sailor|r back to |cRXP_FRIENDLY_Delora|r's Camp
     .complete 29794,1,2 --3/3 Injured Sailors rescued
 step
+    #optional
     .goto 378,38.36,87.60,20,0
     .goto 378,37.04,87.93,20,0
     .goto 378,35.77,86.77,20,0

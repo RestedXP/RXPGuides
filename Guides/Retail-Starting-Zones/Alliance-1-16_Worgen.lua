@@ -72,7 +72,7 @@ step
     .waypoint 202,58.449,36.570,12,0
     .waypoint 202,55.539,33.642,12,0
     .waypoint 202,60.040,20.806,12,0
-    >>Open the |cRXP_PICK_Supply Crates|r on the ground. Loot them for |cRXP_LOOT_Salvaged Supplies|r
+    >>Open |cRXP_PICK_Supply Crates|r on the ground. Loot them for |cRXP_LOOT_Salvaged Supplies|r
     .complete 14094,1 --Salvaged Supplies (4)
 step
     #sticky
@@ -132,6 +132,7 @@ step
     .accept 14099 >>Accept Royal Orders
 	.target Prince Liam Greymane
 step
+    #optional
     #completewith next
     .goto 202,62.290,31.759,15,0
     .goto 202,64.098,34.535,15,0
@@ -147,7 +148,7 @@ step
     .accept 14275 >>Accept Someone's Keeping Track of You << Hunter
     .accept 14277 >>Accept Arcane Inquiries << Mage
     .accept 14278 >>Accept Seek the Sister << Priest
-    .accept 14280 >>Accept The Winds Know Your Name  << Druid
+    .accept 14280 >>Accept The Winds Know Your Name... Apparently << Druid
     .accept 75190 >>Accept Ready and Abel << Monk --Added in DF
 	.target Gwen Armstead
 step << skip
@@ -196,7 +197,7 @@ step << Priest
 step << Druid
     .goto 202,70.190,65.887
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celestine of the Harvest|r
-    .turnin 14280 >> Turn in The Winds Know Your Name
+    .turnin 14280 >> Turn in The Winds Know Your Name... Apparently
     .accept 14291 >> Accept Safety in Numbers
 	.target Celestine of the Harvest
 step << Monk
@@ -221,78 +222,121 @@ step
     .accept 24930 >>Accept While You're At It
     .goto 202,65.279,77.607
 	.target +Lord Godfrey
---XX Copy paste up to here
 step
-    .goto 202,65.3,77.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Godfrey.|r
-    .accept 24930 >>Accept While You're At It
-	.target Lord Godfrey
+    #sticky
+    #label Bloodfang
+    #loop
+    .goto 202,57.890,72.582,0
+    .goto 202,59.334,63.772,0
+    .goto 202,61.376,70.799,0
+    .goto 202,67.168,64.124,0
+    .waypoint 202,57.890,72.582,20,0
+    .waypoint 202,55.652,68.601,20,0
+    .waypoint 202,56.961,66.801,20,0
+    .waypoint 202,58.605,63.555,20,0
+    .waypoint 202,59.334,63.772,20,0
+    .waypoint 202,61.343,66.187,20,0
+    .waypoint 202,61.898,66.760,20,0
+    .waypoint 202,59.853,70.005,20,0
+    .waypoint 202,61.376,70.799,20,0
+    .waypoint 202,61.872,71.789,20,0
+    .waypoint 202,64.690,69.474,20,0
+    .waypoint 202,67.168,64.124,20,0
+	>>Kill |cRXP_ENEMY_Bloodfang Worgen|r
+    .complete 24930,1 --Bloodfang Worgen slain (5)
+	.mob *Bloodfang Worgen
 step
+    #optional
     #completewith next
-	>>Kill |cRXP_ENEMY_Bloodfang Worgen.|r
-    .complete 24930,1 --5/5 Bloodfang Worgen slain
-	.mob Bloodfang Worgen
+    .goto 202,59.984,71.904,15,0
+    .goto 202,58.006,72.476,15,0
+    .goto 202,57.736,73.926,15,0
+    .goto 202,57.925,75.584,10 >>Travel toward |cRXP_FRIENDLY_Captain Broderick|r inside
 step
-    .goto 202,58.86,71.20,10,0
-    .goto 202,57.9,75.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Broderick|r |cFFfa9602inside the fort.|r
+    .goto 202,57.925,75.584
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Broderick|r inside
     .turnin 14157 >>Turn in Old Divisions
     .accept 28850 >>Accept The Prison Rooftop
 	.target Captain Broderick
 step
-    .goto 202,55.21,62.88
-    >>|cRXP_WARN_Ascend the spiral staircase.|r
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Darius Crowley.|r
+    #optional
+    #completewith Rooftop
+    #label Staircase1
+    .goto 202,57.001,74.780,5,0
+    .goto 202,55.627,72.484,12 >>Travel up the spiral staircase
+step
+    #optional
+    #completewith Rooftop
+    #requires Staircase1
+    .goto 202,54.046,69.362,12,0
+    .goto 202,53.759,67.454,12,0
+    .goto 202,55.224,62.906,12 >>Travel toward |cRXP_FRIENDLY_Lord Darius Crowley|r
+step
+    #label Rooftop
+    .goto 202,55.224,62.906
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Darius Crowley|r
     .turnin 28850 >>Turn in The Prison Rooftop
     .accept 14154 >>Accept By the Skin of His Teeth
+    .timer 118,By the Skin of His Teeth RP
 	.target Lord Darius Crowley
 step
-    .goto 202,57.43,69.82,15,0
-    .goto 202,59.54,63.46,15,0
-    .goto 202,61.79,67.46,15,0
-    .goto 202,57.43,69.82
-    >>|cRXP_WARN_As a Hunter, use 'Disengage' to land on the small house roof, or alternatively, walk downstairs|r << Hunter
-    >>|cRXP_WARN_Walk downstairs.|r<< !Hunter
-	>>Kill |cRXP_ENEMY_Bloodfang Worgen|r
-    .complete 24930,1 --5/5 Bloodfang Worgen slain
-	.mob Bloodfang Worgen
+    .goto 202,55.224,62.906
+    >>Kill the oncoming waves of |cRXP_ENEMY_Worgen Alphas|r and |cRXP_ENEMY_Bloodfang Runts|r for 2 minutes
+    >>|cRXP_WARN_Stay near |cRXP_FRIENDLY_Lord Darius Crowley|r to gain|r |T236310:0|t[Rebel Valor] |cRXP_WARN_(Passive Aura: Greatly increases haste, health regen, and mana regen)|r
+    .complete 14154,1 --Survive while holding back the worgen for 2 minutes. (1)
+    .mob Worgen Alpha
+    .mob Bloodfang Runt
 step
-    .goto 202,65.3,77.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Godfrey.|r
-    .turnin 24930 >>Turn in While You're At It
-	.target Lord Godfrey
-step
-    >>Kill some of the |cRXP_ENEMY_Enemies|r located |cFFfa9602downstairs,|r then return upstairs before the buff expires.
-    .complete 14154,1
-    .mob Bloodfang Worgen
-step
-    #requires Area99
-    .goto 202,55.22,62.86
-	>>|cRXP_WARN_Ascend the spiral staircase.|r
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Darius Crowley.|r
+    .goto 202,55.224,62.906
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Darius Crowley|r
     .turnin 14154 >>Turn in By the Skin of His Teeth
     .accept 26129 >>Accept Brothers In Arms
 	.target Lord Darius Crowley
 step
-    .goto 202,65.8,77.7
-    >>|cRXP_WARN_As a Hunter, use 'Disengage' to land on the small house roof, or alternatively, walk downstairs|r << Hunter
-    >>|cRXP_WARN_Walk downstairs.|r<< !Hunter
+    #optional
+    #completewith Brothers
+    #label Staircase2
+    .goto 202,53.759,67.454,12,0 
+    .goto 202,54.046,69.362,12 >>Travel toward the spiral staircase
+--XX NOTE: You can longjump up behind Darius to jump down, but I doubt the avg user can do it (evident of Wetlands skip despite it being easier)
+step
+    #optional
+    #completewith Brothers
+    #requires Staircase2
+    .goto 202,55.627,72.484,15,0
+    .goto 202,57.707,74.729,5,0
+    .goto 202,59.984,71.904,20 >>Travel down the spiral staircase. Go outside
+step
+    #label Brothers
+    #requires Bloodfang
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Godfrey|r and |cRXP_FRIENDLY_King Genn Greymane|r
+    .turnin 24930 >>Turn in While You're At It
+    .goto 202,65.279,77.607
+	.target +Lord Godfrey
     .turnin 26129 >>Turn in Brothers In Arms
     .accept 14159 >>Accept The Rebel Lord's Arsenal
+    .goto 202,65.810,77.714
+	.target +King Genn Greymane
 step
-    .goto 202,61.44,82.38,20,0
-    .goto 202,56.11,81.47,5,0
-    .goto 202,56.8,85.5
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Cellar Door|r to enter it.
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josiah Avery|r
+    #optional
+    #completewith Arsenal
+    #requires Cellar1
+    .goto 202,61.383,80.814,15,0
+    .goto 202,56.181,82.790,15,0
+    .goto 202,55.945,81.481,5,0
+    .goto 202,56.805,81.599,6,0
+    .goto 202,56.768,85.448,10 >>Click the |cRXP_PICK_Cellar Door|r to open it, then travel toward |cRXP_FRIENDLY_Josiah Avery|r inside
+--XX no spell for this
+step
+    #label Arsenal
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Josiah Avery|r and |cRXP_FRIENDLY_Lorna Crowley|r inside
     .turnin 14159 >>Turn in The Rebel Lord's Arsenal
-	.target Josiah Avery
-step
-    .goto 202,56.8,81.3
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r
+    .goto 202,56.768,85.448
+	.target +Josiah Avery
     .accept 14204 >>Accept From the Shadows
-	.target Lorna Crowley
-step
+    .goto 202,56.873,81.421
+	.target +Lorna Crowley
+step << skip
     #completewith next
     +|cRXP_WARN_To enable keybinding for quest items, follow these steps:|r
     *[1] Press the |cRXP_WARN_Escape key.|r
@@ -301,125 +345,234 @@ step
     *[4] Within |cRXP_WARN_Keybindings|r, find |cRXP_WARN_RestedXP Guides.|r
     *[5] Select and bind the |cRXP_WARN_Active Buttons.|r
 step
-    .goto 202,54.04,81.06,15,0
-    .goto 202,50.48,76.82,15,0
-    .goto 202,47.40,80.25,15,0
-    .goto 202,51.25,83.82,15,0
-    .goto 202,50.48,76.82
-    >>Kill 6 |cRXP_ENEMY_Bloodfang Lurkers.|r They are stealthily located in the area |cFFfa9602outside of the Cellar.|r
-    .use 48707 >> Should you lose your |T236926:0|t[Gilnean Mastiff], it can be resummoned. If needed, use the Mastiff's |T236186:0|t'Attack Lurker' ability to assist in locating them. This option will appear above your action bars.
-    .complete 14204,1 --6/6 Bloodfang Lurker slain
+    #loop
+    .goto 202,54.026,81.617,0
+    .goto 202,50.457,81.103,0
+    .goto 202,47.100,77.204,0
+    .goto 202,53.263,76.819,0
+    .goto 202,54.026,81.617,20,0
+    .goto 202,55.209,84.131,20,0
+    .goto 202,51.607,83.495,20,0
+    .goto 202,50.679,83.942,20,0
+    .goto 202,50.457,81.103,20,0
+    .goto 202,48.050,84.424,20,0
+    .goto 202,47.075,81.792,20,0
+    .goto 202,46.153,81.533,20,0
+    .goto 202,47.100,77.204,20,0
+    .goto 202,48.918,76.770,20,0
+    .goto 202,51.200,76.089,20,0
+    .goto 202,53.263,76.819,20,0
+    >>Kill |cRXP_ENEMY_Bloodfang Lurkers|r
+    >>|cRXP_WARN_Be careful as they are|r |T132320:0|t[Stealthed]
+    >>|cRXP_WARN_Use your |cRXP_FRIENDLY_Gilnean Mastiff|r's|r |T236186:0|t[Attack Lurker] |cRXP_WARN_spell to help locate |cRXP_ENEMY_Bloodfang Lurkers|r if needed|r
+    >>|cRXP_WARN_If you lose your |cRXP_FRIENDLY_Gilnean Mastiff|r, resummon it using the|r |T236926:0|t[Gilnean Mastiff Collar]
+    .complete 14204,1 --Bloodfang Lurker slain (6)
 	.mob Bloodfang Lurker
+    .use 48707
 step
-    .goto 202,56.9,81.4
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley.|r
+    .goto 202,56.873,81.421
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r inside
     .turnin 14204 >>Turn in From the Shadows
     .accept 14214 >>Accept Message to Greymane
 	.target Lorna Crowley
 step
-    .goto 202,59.2,83.7
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Genn Greymane.|r
+    #optional
+    #completewith next
+    .goto 202,55.818,81.572,6,0
+    .goto 202,56.184,82.795,12,0
+    .goto 202,59.207,83.777,15 >> Travel toward |cRXP_FRIENDLY_King Genn Greymane|r
+step
+    .goto 202,59.207,83.777
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Genn Greymane|r
     .turnin 14214 >>Turn in Message to Greymane
     .accept 14293 >>Accept Save Krennan Aranas
-	.target Genn Greymane
+    .timer 16,Save Krennan Aranas RP
+	.target King Genn Greymane
+step << skip
+    #completewith next
+    .goto 202,58.710,77.289,0
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r AFTER saving |cRXP_FRIENDLY_Krennan Aranas|r
+    .target Spirit Healer
 step
-    .goto 202,66.0,62.2
-    >>Use [Rescue Krennan](1) to save him when the horse comes. After you save him, |cRXP_WARN_get out of the vehicle and let your character die.|r
-    .complete 14293,1 --1/1 Krennan Aranas rescued
+    .goto 202,59.207,83.777,0
+    .goto 202,66.171,61.811
+    >>|cRXP_WARN_Cast|r |T134149:0|t[Rescue Krennan] (1) |cRXP_WARN_to save |cRXP_FRIENDLY_Krennan Aranas|r when you approach him on |cRXP_FRIENDLY_King Greymane's Horse|r|r
+-- >>|cRXP_WARN_After you save him, press dismount |cRXP_FRIENDLY_King Greymane's Horse|r and die to the|r |cRXP_ENEMY_Bloodfang Rippers|r
+    >>|cRXP_WARN_If you fail this, talk to |cRXP_FRIENDLY_King Genn Greymane|r to try again|r
+    .complete 14293,1 --Krennan Aranas rescued (1)
+    .timer 19,Save Krennan Aranas RP 
 	.target Krennan Aranas
+    .target *King Genn Greymane
+    .skipgossip 35550,1
+    .timer 16,Save Krennan Aranas RP
+--XX 19s slower to not deathskip, not gonna risk it
+step << skip
+    #optional
+    #completewith next
+    .goto 202,58.710,77.289
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r AFTER saving |cRXP_FRIENDLY_Krennan Aranas|r
+    .target Spirit Healer
 step
-    .goto 202,55.7,80.8
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Godfrey.|r
+    .goto 202,55.715,80.753
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Godfrey|r
     .turnin 14293 >>Turn in Save Krennan Aranas
     .accept 14294 >>Accept Time to Regroup
 	.target Lord Godfrey
+--XX 14293 didn't complete after turning in quest, worked again after accepting followup (very minor issue)
 step
-    .goto 202,30.4,73.2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Genn Greymane.|r
+    #optional
+    #completewith next
+    .goto 202,53.411,82.729,15,0
+    .goto 202,44.351,82.504,15,0
+    .goto 202,41.103,81.945,15,0
+    .goto 202,30.373,73.142,15 >> Travel toward |cRXP_FRIENDLY_King Genn Greymane|r
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Genn Greymane|r and |cRXP_FRIENDLY_Lord Darius Crowley|r
     .turnin 14294 >>Turn in Time to Regroup
-	.target Genn Greymane
-step
-    .goto 202,31.1,72.3
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Darius Crowley.|r
+    .goto 202,30.373,73.142
+	.target +King Genn Greymane
     .accept 14212 >>Accept Sacrifices
-	.target Lord Darius Crowley
-step
-    .goto 202,25.3,43.9
-    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with |cRXP_FRIENDLY_Crowley's Horse.|r Use |T135433:0|t[Throw Torch] (1) on |cRXP_ENEMY_Bloodfang Stalkers.|r
-    .complete 14212,1 --30/30 Bloodfang Stalker rounded up
-	.mob Bloodfang Stalker
+    .goto 202,31.103,72.365
+	.target +Lord Darius Crowley
 step
     #completewith next
-    >>By starting a new WoW client and relogging, you'll be thrown off the horse and die, saving you time. |cRXP_WARN_Alternatively, you can simply wait until the horse finishes its ride.|r
-    .deathskip >> Pull as many Enemies as you can, Die and Respawn at the Graveyard
+    .goto 202,31.282,72.645
+    .vehicle >> Enter |cRXP_FRIENDLY_Crowley's Horse|r
+    .timer 79,Sacrifices RP
+    .target Crowley's Horse
 step
-    .goto 202,40.5,39.4
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tobias Mistmantle.|r
+    .goto 202,31.282,72.645,-1
+    .goto 202,40.749,39.219,-1
+    >>|cRXP_WARN_Cast|r |T135433:0|t[Throw Torch] (1) |cRXP_WARN_on |cRXP_ENEMY_Bloodfang Stalkers|r whilst on|r |cRXP_FRIENDLY_Crowley's Horse|r
+    .complete 14212,1 --Bloodfang Stalker rounded up (30)
+	.mob Bloodfang Stalker
+--XX 19s slower to not deathskip, not gonna risk it
+step
+    #completewith next
+    >>|cRXP_WARN_Wait out the RP|r
+    .goto 202,40.548,39.446,20 >>Travel on |cRXP_FRIENDLY_Crowley's Horse|r toward |cRXP_FRIENDLY_Tobias Mistmantle|r
+step
+    .goto 202,40.548,39.446
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tobias Mistmantle|r
     .turnin 14212 >>Turn in Sacrifices
     .accept 14218 >>Accept By Blood and Ash
 	.target Tobias Mistmantle
 step
+    #completewith next
+    .goto 202,40.883,36.449,-1
+    .goto 202,40.120,36.463,-1
+    .goto 202,38.786,37.390,-1
+    .goto 202,38.395,38.282,-1
+    .goto 202,37.896,39.535,-1
+    .goto 202,37.955,40.949,-1
+    .vehicle >> Enter a |cRXP_FRIENDLY_Rebel Cannon|r
+    .target Rebel Cannon
+step
     .goto 202,40.13,36.52
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Rebel Cannon.|r
-    >>Use (1) to kill |cRXP_ENEMY_Bloodfang Stalkers|r
-    .complete 14218,1 --80/80 Bloodfang Stalker slain
+    >>|cRXP_WARN_Cast|r |T252185:0|t[Rebel Cannon] (1) |cRXP_WARN_on |cRXP_ENEMY_Bloodfang Stalkers|r whilst in a|r |cRXP_FRIENDLY_Rebel Cannon|r
+    .complete 14218,1 --Bloodfang Stalker slain (80)
     .mob Bloodfang Stalker
 step
-    .goto 202,40.6,39.4
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tobias Mistmantle.|r
+    .goto 202,40.548,39.446
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tobias Mistmantle|r
     .turnin 14218 >>Turn in By Blood and Ash
     .accept 14221 >>Accept Never Surrender, Sometimes Retreat
 	.target Tobias Mistmantle
 step
-    .goto 202,48.9,52.8
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Daruius Crowley|r |cFFfa9602inside the Church.|r
+    #optional
+    #completewith next
+    .goto 202,41.075,40.477,8,0
+    .goto 202,43.584,44.647,12 >>Enter the Cathedral
+step
+    .goto 202,48.936,52.794
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Darius Crowley|r inside
     .turnin 14221 >>Turn in Never Surrender, Sometimes Retreat
     .accept 14222 >>Accept Last Stand
-	.target Lord Daruius Crowley
+	.target Lord Darius Crowley
 step
-    .goto 202,46.9,49.2
-    >>Kill |cRXP_ENEMY_Frenzied Stalkers.|r
-    .complete 14222,1 --8/8 Frenzied Stalker slain
+    #loop
+    .goto 202,42.708,43.201,0
+    .goto 202,46.550,49.292,0
+    .goto 202,47.789,46.937,20,0
+    .goto 202,43.825,45.568,20,0
+    .goto 202,42.708,43.201,20,0
+    .goto 202,45.161,50.530,20,0
+    >>Kill |cRXP_ENEMY_Frenzied Stalkers|r
+    >>|cRXP_WARN_Stay near |cRXP_FRIENDLY_Lord Darius Crowley|r to gain|r |T236310:0|t[Rebel Valor] |cRXP_WARN_(Passive Aura: Greatly increases haste, health regen, and mana regen)|r
+    .complete 14222,1 --Frenzied Stalker slain (8)
 	.mob Frenzied Stalker
 step
-    .goto 202,48.9,52.8
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Daruius Crowley.|r
-    --x(shiek) .timer
+    .goto 202,48.936,52.794
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Darius Crowley|r inside
+	>>|cRXP_WARN_Press "Escape" on your keyboard to skip the cinematic|r
     .turnin 14222 >>Turn in Last Stand
+    .timer 46,Last Stand RP
 	.target Lord Daruius Crowley
 step
-    --x(shiek) , which will be completed when the timer runs out.
-    .goto 179,36.4,61.3
-    >>|cRXP_WARN_Wait for the brief roleplay|r then Talk to |cRXP_FRIENDLY_Genn Greymane.|r
+    .goto 179,36.47,61.39
+    >>|cRXP_WARN_Wait out the RP|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Genn Greymane|r
     .turnin 14375 >>Turn in Last Chance at Humanity
-	.target Genn Greymane
+    .timer 7,Last Chance at Humanity RP
+	.target King Genn Greymane
+--XX 2dp waypoints here on out (gc bug)
 step
-    .goto 179,36.5,62.3
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Godfrey.|r
+    .goto 179,36.51,62.27
+    >>|cRXP_WARN_Wait out the RP|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Godfrey|r
     .accept 14313 >>Accept Among Humans Again
 	.target Lord Godfrey
 step
-    .goto 179,37.4,63.2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krennan Aranas.|r
+    #optional
+    #completewith next
+    .goto 179,37.17,63.58,8,0
+    .goto 179,37.41,63.24,10 >>Enter the house
+step
+    .goto 179,37.41,63.24
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krennan Aranas|r inside
     .turnin 14313 >>Turn in Among Humans Again
     .accept 14320 >>Accept In Need of Ingredients
 	.target Krennan Aranas
 step
-	#completewith next
-    .goto 179,37.36,63.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jack "All Trades" Derrington.|r
-    .train 2366 >> Train |T4620675:0|tHerbalism
-	.skipgossip 50247,1,1,1
-	.target Jack "All Trades" Derrington
+    #sticky
+    #label Professions1
+    #completewith Professions3
+    .goto 179,37.34,63.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jack "All Trades" Derrington|r
+    >>|cRXP_WARN_Herbing Herbs and Mining Veins provides XP. Only gather resources in your direct path|r
+    >>|cRXP_WARN_If you don't want to do this, skip this step|r
+    .train 2366 >> Train |T4620675:0|t[Herbalism]
+    .train 2575 >> Train |T4620679:0|t[Mining]
+    .target Jack "All Trades" Derrington
+    .skipgossip 50247,1,1,1
+    .train 2366,1 --Herbalism
+    .train 2575,1 --Mining
 step
-    .goto 179,37.36,63.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jack "All Trades" Derrington.|r
-    .train 2575 >> Train |T4620679:0|tMining
-	.skipgossip 50247,2,3,2
-	.target Jack "All Trades" Derrington
+    #optional
+    #requires Professions1
+    #label Professions2
+    #completewith Professions3
+    .goto 179,37.34,63.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jack "All Trades" Derrington|r
+    >>|cRXP_WARN_Herbing Herbs provides XP. Only gather resources in your direct path|r
+    >>|cRXP_WARN_If you don't want to do this, skip this step|r
+    .train 2366 >> Train |T4620675:0|t[Herbalism]
+    .target Jack "All Trades" Derrington
+    .skipgossip 50247,2,2,2
+    .train 2575,3 --Mining
 step
-    #completewith next
-    +|cRXP_WARN_Herbing and Mining Ores gives Experience. Only do this when the herbs/ores are right next to you.|r
+    #optional
+    #requires Professions2
+    #label Professions3
+    .goto 179,37.34,63.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jack "All Trades" Derrington|r
+    >>|cRXP_WARN_Mining Veins provides XP. Only gather resources in your direct path|r
+    >>|cRXP_WARN_If you don't want to do this, skip this step|r
+    .train 2575 >> Train |T4620679:0|t[Mining]
+    .target Jack "All Trades" Derrington
+    .skipgossip 50247,2,3,2
+    .train 2366,3 --Herbalism
+--XX Copy paste up to here
 step
     .goto 179,32.8,66.4
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Crate of Mandrake Essence.|r

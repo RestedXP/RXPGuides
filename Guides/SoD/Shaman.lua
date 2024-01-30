@@ -187,7 +187,7 @@ step
     >>|cRXP_WARN_Alternatively, you can get|r |T133816:0|t[Engrave Gloves - Molten Blast] |cRXP_WARN_in Mulgore at level 3+|r
     .train 425344,1
     .xp >10,1
-    step
+step
     #completewith IconS
     #label Durotar1
     .zone Durotar >> Travel to Durotar
@@ -723,6 +723,9 @@ step
     .xp <20,1
 step
     #loop
+    .goto The Barrens,45.78,25.52,0
+    .goto The Barrens,43.86,21.38,0
+    .goto The Barrens,43.56,26.30,0
     .goto The Barrens,45.78,25.52,50,0
     .goto The Barrens,46.54,22.99,50,0
     .goto The Barrens,45.03,20.09,50,0
@@ -738,8 +741,8 @@ step
 step
     .goto The Barrens,43.02,23.52,-1
 --  .goto The Barrens,52.73,41.84,-1
---   .goto The Barrens,44.33,37.66,-1
-    >>Open the |cRXP_PICK_Kolkars' Booty|r. Loot it for the |T135832:0|t|cRXP_LOOT_[Tempest Icon]|r
+--  .goto The Barrens,44.33,37.66,-1
+    >>Open the |cRXP_PICK_Kolkars' Booty|r on the ground. Loot it for the |T135832:0|t|cRXP_LOOT_[Tempest Icon]|r
     .collect 206382,1 --Tempest Icon (1)
     .itemcount 5020,1 --Kolkar Booty Key (1)
     .train 410097,1

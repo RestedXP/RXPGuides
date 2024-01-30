@@ -10,6 +10,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Alliance 1-20
 #defaultfor Dwarf/Gnome
 #next 6-11 Dun Morogh
+
 step << !Gnome !Dwarf
     #sticky
     #completewith next
@@ -18,6 +19,10 @@ step << !Gnome !Dwarf
 step << Mage
     #completewith next
     +Note that you have selected the single target mage guide. Single target is a lot safer than AoE Mage, but a LOT slower
+step << !Gnome Mage
+    #season 2
+    #completewith next
+    +In Season of Discovery, you should NOT start outside of your race's starter zone as a Mage, as you will be unable to get your first rune here (|T133816:0|t[Engrave Gloves - Ice Lance])
 step << !Warlock
     #completewith next
     .destroy 6948
@@ -138,18 +143,31 @@ step << Gnome Warlock
     .accept 77666 >> Accept Stolen Power
     .target Alamar Grimm
 step << Priest/Mage
+    #season 0
     .goto Dun Morogh,30.087,71.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adlin Pridedrift|r
     .vendor >> |cRXP_WARN_Vendor trash|r
     >>|cRXP_BUY_Buy 15|r |T132794:0|t[Refreshing Spring Water]|cRXP_BUY_. Grind extra |cRXP_ENEMY_Ragged Young Wolves|r if you don't have enough money|r
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target Adlin Pridedrift
+    .xp >6,1
+step << Priest/Mage
+    #season 2
+    .goto Dun Morogh,30.087,71.563
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adlin Pridedrift|r
+    .vendor >> |cRXP_WARN_Vendor trash|r
+    >>|cRXP_BUY_Buy 15|r |T132794:0|t[Refreshing Spring Water]|cRXP_BUY_. Grind extra |cRXP_ENEMY_Ragged Young Wolves|r if you don't have enough money|r
+    >>|cRXP_WARN_Make sure you save 10c for later|r
+    .collect 159,15 --Collect Refreshing Spring Water (x15)
+    .target Adlin Pridedrift
+    .xp >6,1
 step << Paladin/Warrior
     #completewith next
     .goto Dun Morogh,30.087,71.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adlin Pridedrift|r
     .vendor >> |cRXP_WARN_Vendor trash|r
     .target Adlin Pridedrift
+    .xp >6,1
 step
     .goto Dun Morogh,29.927,71.201
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sten Stoutarm|r
@@ -170,6 +188,21 @@ step
     .goto Dun Morogh,29.709,71.255
     .accept 170 >> Accept A New Threat
     .target Balir Frosthammer
+step << Priest
+    #season 2
+    .goto Dun Morogh,26.733,72.552
+    >>Open the |cRXP_PICK_Rockjaw Footlocker|r. Loot it for the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Troubled Acolyte|r]
+    .collect 205951,1 -- Memory of a Troubled Acolyte (1)
+step << Dwarf Warrior/Gnome Warrior/Dwarf Rogue/Gnome Rogue/Gnome Mage/Priest
+    #season 2
+    #optional
+    #completewith next
+    .goto 1426,28.910,69.703,15,0
+    .goto 1426,28.835,69.050,10,0
+    .goto 1426,28.835,68.702,10,0 << !Rogue
+    .goto 1426,28.754,68.709,10,0 << Rogue
+    .goto 1426,28.939,68.387,12 >> Enter Anvilmar << !Rogue
+    .goto 1426,28.640,68.364,12 >> Enter Anvilmar << Rogue
 step << Dwarf Warrior/Gnome Warrior
     #season 2
     .goto Dun Morogh,28.832,67.242
@@ -197,11 +230,6 @@ step << Gnome Mage
     .accept 77667 >> Accept Spell Research
     .trainer >> Train your class spells
     .target Marryk Nurribit
-step << Priest
-    #season 2
-    .goto Dun Morogh,26.733,72.552
-    >>Open the |cRXP_PICK_Rockjaw Footlocker|r. Loot it for the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Troubled Acolyte|r]
-    .collect 205951,1 -- Memory of a Troubled Acolyte (1)
 step << Priest
     #season 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branstock Khalder|r
@@ -244,17 +272,18 @@ step
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
     .mob Rockjaw Trogg
     .mob Burly Rockjaw Trogg
-step << Gnome Mage
+step << Mage
     #season 2
-    .isOnQuest 77667
     .goto Dun Morogh,26.733,72.552
-    >>Open the |cRXP_PICK_Rockjaw Footlocker|r. Loot it for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r]
+    >>Open the |cRXP_PICK_Rockjaw Footlocker|r. Loot it for the |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r
+    >>|cRXP_WARN_NOTE: You will be unable to train|r |T133816:0|t[Engrave Gloves - Ice Lance] |cRXP_WARN_here as you can only get a|r |T133736:0|t[Comprehension Primer] |cRXP_WARN_in your race's starting zone|r << !Gnome
     .collect 203751,1,77667,1 -- Spell Notes: CALE ENCI (1)
+    .train 401760,1
 step << Gnome Mage
     #season 2
-    .isOnQuest 77667
-    .use 203751 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r]
-    .complete 77667,1 -- Learn: Engrave Gloves - Ice Lance
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
+    .use 203751
+    .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
 step << Warlock
     #season 2
     .goto Dun Morogh,26.733,72.552
@@ -359,12 +388,12 @@ step << Gnome Mage
     .target Marryk Nurribit
 step << Gnome Mage
     #season 2
-    .isQuestComplete 77667
     .goto Dun Morogh,28.709,66.366
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r
     .turnin 77667 >> Turn in Spell Research
     .trainer >> Train your class spells
     .target Marryk Nurribit
+    .isQuestComplete 77667
 step << Warlock
     #season 0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alamar Grimm|r
@@ -1652,7 +1681,7 @@ step << Mage
     .train 401768,1
 step << Mage
     #season 2
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF]|r
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF]|r
     .train 401768 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF]|r |cRXP_WARN_to train|r |T135820:0|t[Living Flame]
     .use 203752
 step << Rogue

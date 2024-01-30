@@ -14,6 +14,10 @@ RXPGuides.RegisterGuide([[
 step << !Orc !Troll
     #completewith next
     +|cRXP_WARN_You have selected a guide meant for Orcs and Trolls. You should choose the same starter zone that you start in|r
+step << !Troll Mage
+    #season 2
+    #completewith next
+    +In Season of Discovery, you should NOT start outside of your race's starter zone as a Mage, as you will be unable to get your first rune here (|T133816:0|t[Engrave Gloves - Ice Lance])
 step
     .goto Durotar,43.29,68.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaltunk|r
@@ -423,7 +427,7 @@ step << Mage
     .goto Durotar,42.51,69.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mai'ah|r
     .turnin 3086 >>Turn in Glyphic Tablet << Troll
-    .accept 77643 >>Accept Spell Research
+    .accept 77643 >>Accept Spell Research << Troll Mage
     .train 1459 >> Train |T135932:0|t[Arcane Intellect]
     .target Mai'ah
 step << Mage
@@ -863,16 +867,18 @@ step
     .complete 6394,1 --Thazz'ril's Pick (1)
 step << Mage/Warlock
     #season 2
-    .goto Durotar,42.99,54.43
-    >>Loot the |cRXP_PICK_Waterlogged Stashbox|r for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r] inside the cave << Mage
-    >>Loot the |cRXP_PICK_Waterlogged Stashbox|r for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r] inside the cave << Warlock
+    .goto Durotar,43.004,54.456
+    >>Open the |cRXP_PICK_Waterlogged Stashbox|r underwater inside the cave. Loot it for the |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r << Mage
+    >>|cRXP_WARN_NOTE: You will be unable to train|r |T133816:0|t[Engrave Gloves - Ice Lance] |cRXP_WARN_here as you can only get a|r |T133736:0|t[Comprehension Primer] |cRXP_WARN_in your race's starting zone|r << !Troll/Mage
+    >>Open the |cRXP_PICK_Waterlogged Stashbox|r underwater inside the cave. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Haunting]|r << Warlock
     .collect 203751,1,77643,1 << Mage --Spell Notes: CALE ENCI (1)
     .collect 205230,1,77586,1 << Warlock--Rune of Haunting (1)
+    .train 401760,1 << Mage
 step << Mage
     #season 2
-    .use 203751 >>Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r]
-    .complete 77643,1 --Learn Spell: Engrave Gloves - Icelance
-    .isOnQuest 77643
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
+    .use 203751
+    .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
 step << Warlock
     #season 2
     .use 205230 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r]
@@ -1034,6 +1040,7 @@ step << Mage
     .train 2136 >>Train |T135807:0|t[Fire Blast]
     .turnin 77643 >> Turn in Spell Research
     .target Mai'ah
+    .isQuestComplete 77643
 step << Mage
     #season 0
     .goto Durotar,42.51,69.04
@@ -2210,7 +2217,7 @@ step << Mage
     .train 401765,1
 step << Mage
     #season 2
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item
     .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] |cRXP_WARN_to learn|r |T236227:0|t[Fingers of Frost]
     .use 203753
 step
@@ -3724,7 +3731,7 @@ step << Mage
     .train 401768,1
 step << Mage
     #season 2
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
     .train 401768 >>|cRXP_WARN_Use|r|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF|r] |cRXP_WARN_to learn|r |T135820:0|t[Living Flame]
     .use 203752
     .itemcount 203752,1
