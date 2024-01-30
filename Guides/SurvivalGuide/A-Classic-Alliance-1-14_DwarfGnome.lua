@@ -2649,7 +2649,7 @@ step
     .goto Loch Modan,27.4,48.4
     .xp 13+9600 >> Grind until 9600+/11400xp
 step
-    #som
+    #som--xpgate
     .goto Loch Modan,27.4,48.4
     .xp 14-2300 >> Grind until you are 2300xp away from level 14 (9100/11400)
 step

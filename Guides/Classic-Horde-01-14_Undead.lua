@@ -324,7 +324,7 @@ step
     .complete 3901,1 --Kill Rattlecage Skeleton (12)
     .mob Rattlecage Skeleton
 step
-    #som
+    #som--xpgate
     #loop
     .goto Tirisfal Glades,31.82,61.48,30,0
     .goto Tirisfal Glades,31.11,60.71,30,0
@@ -1305,7 +1305,7 @@ step
     .complete 367,1 --Darkhound Blood (5)
     .mob Decrepit Darkhound
 step << Rogue/Warrior
-    #era/som
+    #era/som--xpgate
     .goto Tirisfal Glades,58.20,58.15,50,0
     .goto Tirisfal Glades,57.98,61.66,50,0
     .goto Tirisfal Glades,56.45,62.62,50,0
@@ -1320,7 +1320,7 @@ step << Rogue/Warrior
     .isQuestComplete 375
 step << Rogue/Warrior
     #label WarRogueDing8
-    #era/som
+    #era/som--xpgate
     .goto Tirisfal Glades,58.20,58.15,50,0
     .goto Tirisfal Glades,57.98,61.66,50,0
     .goto Tirisfal Glades,56.45,62.62,50,0
@@ -3352,7 +3352,7 @@ step << Warlock/Mage/Priest
     .xp <15,1
 step << Rogue
     #completewith Shackles
-    +Equip the |T132539:0|t[|cRXP_FRIENDLY_Agile Boots|r] 
+    +Equip the |T132539:0|t[|cRXP_FRIENDLY_Agile Boots|r]
     .use 4788
     .itemcount 4788,1
     .xp <15,1

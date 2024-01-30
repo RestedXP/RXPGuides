@@ -155,6 +155,7 @@ step
 .target Milly Osworth
     .accept 3904 >> Accept Milly's Harvest
 step
+    #som
     #phase 3-6
     .goto Elwynn Forest,50.7,39.2
 .target Milly Osworth
@@ -778,7 +779,7 @@ step
 >>Talk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
     .turnin 433 >> Turn in The Public Servant
 step
-    #era/som
+    #era/som--xpgate
     .xp 11
 step
     .goto Dun Morogh,68.6,54.7

@@ -3016,7 +3016,7 @@ step << Warlock
     .goto Loch Modan,27.33,56.70,0
     .xp 13+9600 >>Grind until 9600+/11400xp
 step << Warlock
-    #som
+    #som--xpgate
     .xp 14-2520 >> Grind until you are 8880xp into level 13
 step << Mage
     #season 2

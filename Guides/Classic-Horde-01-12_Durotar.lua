@@ -187,7 +187,7 @@ step
     .complete 788,1 --Mottled Boar (10)
     .mob Mottled Boar
 step << Warlock/Warrior/Shaman/Hunter
-    #som
+    #som--xpgate
     .loop 25,Durotar,41.30,65.03,41.92,64.74,42.66,64.92,43.31,65.02,43.90,65.96,44.54,65.96,45.16,65.77,45.72,65.93,45.72,65.04,45.21,63.95,45.83,63.01,45.81,62.17,45.78,61.14,45.15,60.20,44.50,59.45,43.86,60.43,43.07,60.24,42.58,60.09,42.02,61.19,42.02,62.15,42.00,62.92,41.99,64.03,41.30,65.03
     .xp 2+870 >> Grind to 870+/900xp << Warlock
     .xp 3+760 >> Grind to 760+/1400xp << Warrior/Shaman/Hunter
@@ -1001,7 +1001,7 @@ step
     .turnin 6394 >>Turn in Thazz'ril's Pick
     .target Foreman Thazz'ril
 step
-    #som
+    #som--xpgate
     .goto Durotar,44.63,68.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thazz'ril|r
     .turnin 6394 >>Turn in Thazz'ril's Pick
@@ -1811,7 +1811,7 @@ step << !Priest !Mage
     .goto Durotar,55.50,48.97
     .xp 7+2180 >> Grind to 2200+/4500xp
 step << !Priest !Mage
-    #som
+    #som--xpgate
     .goto Durotar,59.02,50.24,50,0
     .goto Durotar,57.93,47.71,50,0
     .goto Durotar,59.20,44.30,50,0
@@ -1829,7 +1829,7 @@ step << Priest
     .goto Durotar,55.50,48.97
     .xp 7+1730 >> Grind to 1750+/4500xp
 step << Priest
-    #som
+    #som--xpgate
     .goto Durotar,59.02,50.24,50,0
     .goto Durotar,57.93,47.71,50,0
     .goto Durotar,59.20,44.30,50,0
@@ -2387,7 +2387,7 @@ step << Hunter
     .loop 25,Durotar,47.52,48.67,46.12,45.47,43.65,43.91,41.68,44.69,41.00,46.13,42.47,48.50,44.21,49.68,47.17,49.44,47.52,48.67
     .xp 9+4470 >> Grind to 4470+/6500xp
 step << Hunter
-    #som
+    #som--xpgate
     .loop 25,Durotar,47.52,48.67,46.12,45.47,43.65,43.91,41.68,44.69,41.00,46.13,42.47,48.50,44.21,49.68,47.17,49.44,47.52,48.67
     .xp 9+3660 >> Grind to 3660+/6500xp
 step << Hunter
@@ -3414,7 +3414,7 @@ step << Shaman
     .train 410104,1
     .xp <4,1
 step << Warrior/Shaman
-	#era/som
+	#era/som--xpgate
     .loop 25,Mulgore,61.35,47.55,60.10,47.84,59.50,48.21,59.68,48.85,60.14,49.14,62.01,48.74,61.89,47.84,61.35,47.55
     .xp 11+7150 >> Grind to 7150+/8700xp
  step << Warrior/Shaman

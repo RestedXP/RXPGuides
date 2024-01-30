@@ -609,7 +609,7 @@ step << Druid
     .xp 14-1890 >> Grind until you are 1890xp away from level 14
 step << Druid
 #map Darkshore
-    #som
+    #som--xpgate
     .goto Felwood,22.39,29.45
     .xp 14-2645 >> Grind until you are 2645xp away from level 14
 step << Druid
@@ -832,7 +832,7 @@ step
 step
 #map Darkshore
     #label xp15
-    #som
+    #som--xpgate
     .goto Felwood,22.39,29.45
     .xp 15-3245 >> Grind until you are 3245xp away from level 15
     .mob Blackwood Pathfinder
@@ -5987,7 +5987,7 @@ step
     .xp 20-7425 >> Grind until you are 7425 xp away from level 20 << !Rogue
     .xp 20-8975 >> Grind until you are 8975 xp away from level 20 << Rogue
 step
-    #som
+    #som--xpgate
     .goto Redridge Mountains,49.0,70.0
     .xp 20-8800 >> Grind until you are 8800 xp away from level 20 << !Rogue
     .xp 20-10350 >> Grind until you are 10350 xp away from level 20 << Rogue

@@ -44,7 +44,7 @@ step << Hunter
     .xp 4-610 >> Grind until you are 610xp away from level 4 (790/1400)
 step << Hunter
     #season 0,1
-    #som
+    #som--xpgate
     .goto Teldrassil,59.8,34.1
     .xp 4-755 >> Grind until you are 755xp away from level 4 (645/1400)
 step << Hunter
@@ -894,7 +894,7 @@ step
     .goto Teldrassil,60.7,54.4
 	.xp 7+3500 >> Grind to level 7 +3500xp
 step
-    #som
+    #som--xpgate
     .goto Teldrassil,60.7,54.4
 	.xp 7+2900 >> Grind to level 7 +2900xp
 step
@@ -1094,7 +1094,7 @@ step << !Hunter
     .unitscan Lord Melenas
 step << Priest
     #season 2
-    .goto Teldrassil,77.86,61.66 
+    .goto Teldrassil,77.86,61.66
     >>Kill |cRXP_ENEMY_Vicious Grells|r, |cRXP_ENEMY_Rascal Sprites|r and |cRXP_ENEMY_Shadow Sprites|r. Loot them for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r]
     .collect 205947,1 -- Prophecy of a Desecrated Citadel (1)
     .mob Vicious Grell
@@ -1122,7 +1122,7 @@ step << Rogue
     .itemcount 203990,1
 step << Rogue
     #season 2
-    .goto Teldrassil,77.86,61.66 
+    .goto Teldrassil,77.86,61.66
     >>Kill |cRXP_ENEMY_Vicious Grell|r, |cRXP_ENEMY_Rascal Sprites|r and |cRXP_ENEMY_Shadow Sprites|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Bottom-Left Map Piece]|r
     .collect 208604,1 -- Bottom-Left Map Piece (1)
     .mob Vicious Grell
@@ -1368,7 +1368,7 @@ step << Hunter
     .xp 10-2670 >> Grind until you are 2670 xp off level 10 (3830/6500)
     >>|cRXP_WARN_Once you reach this xp breakpoint, skip the harpy/escort quest and go straight to Darnassus. You will have another opportunity to finish those quests later|r
 step << Hunter skip
-    #era/som
+    #era/som--xpgate
     #sticky
     #label xp10
     .xp 10-3330 >> Grind until you are 3330 xp off level 10 (3170/6500)
@@ -1412,7 +1412,7 @@ step << !Hunter
     .xp 10-750 << Druid
     .xp 10-3110 << !Druid
 step << !Hunter
-	#som
+	#som--xpgate
     #phase 1-2
 	#label xp10
    .xp 10-930 << Druid
@@ -1447,20 +1447,20 @@ step << Rogue
     .use 208603
     .train 398196,1
 step
-   #som
+   #som--xpgate
    #phase 3-6
    .goto Teldrassil,38.6,58.0
    >>Finish off collecting 7 Small Spider Legs
    .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
 step << Druid
-   #som
+   #som--xpgate
    #phase 3-6
    #label xp10
    .xp 10-640
    .goto Teldrassil,38.3,34.4
    >>If you're still behind on xp do the harpy quest north
 step << !Druid
-	#som
+	#som--xpgate
 	#phase 3-6
 	#label xp10
 	.xp 10-3300

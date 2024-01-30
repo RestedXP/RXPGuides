@@ -326,7 +326,7 @@ step << Paladin/Mage/Warlock
     .goto Dun Morogh,23.0,75.0,50,0
     .goto Dun Morogh,24.2,72.5
 step << Paladin/Mage/Warlock
-    #som
+    #som--xpgate
     .xp 3+1022 >> Grind to 1022+/1400xp
     .goto Dun Morogh,23.0,75.0,50,0
     .goto Dun Morogh,24.2,72.5,50,0
@@ -1176,7 +1176,7 @@ step << Warrior/Paladin/Rogue
     #era
     .xp 7 >> Grind to 7
 step << Warrior/Rogue
-    #som
+    #som--xpgate
     .xp 8 >> Grind nearby mobs to 8
 step << Rogue
     .xp <8,1
@@ -3542,7 +3542,7 @@ step
     .goto Loch Modan,27.4,48.4
     .xp 13+9600 >> Grind until 9600+/11400xp
 step
-    #som
+    #som--xpgate
     .goto Loch Modan,27.4,48.4
     .xp 14-2300 >> Grind until you are 2300xp away from level 14 (9100/11400)
 step << Warrior
@@ -4204,7 +4204,7 @@ step << Hunter
     .complete 384,1
     .xp 8-1400 >>Grind until you are 1400 xp away from level 8.
 step << Hunter
-    #som
+    #som--xpgate
     .goto Dun Morogh,46.726,53.826
     .complete 384,1
     .xp 8-1950 >>Grind until you are 1950 xp away from level 8.
@@ -4485,7 +4485,7 @@ step
     #era
     .xp 10-1470 >> Grind until you are 1450xp away from level 10
 step
-    #som
+    #som--xpgate
     .xp 10-2050 >> Grind until you are 2050xp away from level 10
 step
     #softcore
@@ -7578,11 +7578,11 @@ step
     #era
     .xp 10-1470 >> Grind until you are 1450xp away from level 10
 step
-    #som
+    #som--xpgate
 	#phase 1-2
     .xp 10-2050 >> Grind until you are 2050xp away from level 10
 step
-	#som
+	#som--xpgate
 	#phase 3-6
 	.xp 10-2950 >> Grind until you are 2950xp away from level 10
 step
