@@ -1731,12 +1731,6 @@ step << Hunter
     .collect 2495,1 -- Walking Stick (1)
     .target Shalomon
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.20
-step << Hunter
-    #completewith next
-    +|cRXP_WARN_Equip the|r |T135145:0|t[Walking Stick]
-    .use 2495
-    .itemcount 2495,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.19
 step << !Druid
     .goto Teldrassil,55.83,58.31,40,0
     .goto Teldrassil,50.22,53.83
@@ -1919,6 +1913,12 @@ step << Hunter/Warrior/Priest
     .train 227 >>Train Staves
     >>If you have a Staff in your bags, equip it << Hunter
     .target Ilyenia Moonfire
+step << Hunter
+    #completewith end
+    +|cRXP_WARN_Equip the|r |T135145:0|t[Walking Stick]
+    .use 2495
+    .itemcount 2495,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.19
 step << Hunter
     .goto Darnassus,58.76,44.48
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariyell Skyshadow|r

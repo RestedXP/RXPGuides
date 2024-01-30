@@ -1330,6 +1330,12 @@ step << Hunter/Warrior/Priest
     >>If you have a Staff in your bags, equip it << Hunter
     .target Ilyenia Moonfire
 step << Hunter
+    #completewith FlyDS
+    +|cRXP_WARN_Equip the|r |T135145:0|t[Walking Stick]
+    .use 2495
+    .itemcount 2495,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.19
+step << Hunter
     .goto Darnassus,58.76,44.48
 	.money <0.1751
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariyell Skyshadow|r
@@ -1367,6 +1373,7 @@ step
     .target Vesprystus
     .accept 6342 >> Accept Flight to Auberdine
 step
+    #label FlyDS
     .goto Teldrassil,58.399,94.016
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vesprystus|r
     .fly Darkshore >> Fly to Darkshore
