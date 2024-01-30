@@ -1850,7 +1850,7 @@ step
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
-#era/som
+#era/som--h
 << Alliance
 #name 11-13 Loch Modan
 #version 1

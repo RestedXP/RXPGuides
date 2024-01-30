@@ -1322,7 +1322,7 @@ step << Druid
 
 RXPGuides.RegisterGuide([[
 #classic
-#era/som
+#era/som--h
 << Alliance
 #name 13-15 Westfall
 #displayname 14-15 Westfall << Dwarf/Gnome

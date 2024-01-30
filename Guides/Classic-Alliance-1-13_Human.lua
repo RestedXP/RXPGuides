@@ -2690,7 +2690,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#era/som
+#era/som--h
 << Alliance
 #name 11-13 Loch Modan
 #version 1
@@ -3299,7 +3299,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
-#som
+#som--h
 #phase 3-6
 #classic
 << Alliance
@@ -4379,7 +4379,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#som
+#som--h
 #phase 3-6
 << Alliance
 #name 13-14 Loch Modan

@@ -3,7 +3,7 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
-#era/som
+#era/som--h
 << Alliance !Hunter
 #name 1-6 Coldridge Valley
 #version 1
@@ -791,7 +791,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
-#era/som
+#era/som--h
 #classic
 << Alliance !Hunter
 #name 6-11 Dun Morogh
@@ -2550,7 +2550,7 @@ step << Rogue
 ]])
 
 RXPGuides.RegisterGuide([[
-#era/som
+#era/som--h
 #classic
 << Alliance !Hunter
 #name 11-12 Elwynn (Dwarf/Gnome)
@@ -3232,7 +3232,7 @@ step << Dwarf Paladin
 ]])
 
 RXPGuides.RegisterGuide([[
-#era/som
+#era/som--h
 #classic
 << Alliance !Hunter
 #name 12-14 Loch Modan (Dwarf/Gnome)
@@ -3763,7 +3763,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#era/som
+#era/som--h
 << Alliance Hunter
 #name 1-6 Coldridge Valley (Hunter)
 #version 1
@@ -3989,7 +3989,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#era/som
+#era/som--h
 << Alliance Hunter
 #name 6-11 Dun Morogh (Hunter)
 #version 1
@@ -4618,7 +4618,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#era/som
+#era/som--h
 << Alliance Hunter
 #name 11-13 Loch Modan (Hunter)
 #version 1
@@ -5130,7 +5130,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#som
+#som--h
 #phase 3-6
 << Alliance !Hunter
 #name 1-7 Coldridge
@@ -5492,7 +5492,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#som
+#som--h
 #phase 3-6
 << Alliance !Hunter
 #name 6-12 Dun Morogh
@@ -6201,7 +6201,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#som
+#som--h
 #phase 3-6
 << Alliance Warlock
 #name 11-12 Elwynn Warlock
@@ -6563,7 +6563,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#som
+#som--h
 #phase 3-6
 << Alliance !Hunter
 #name 12-14 Loch Modan
@@ -7122,7 +7122,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#som
+#som--h
 #phase 3-6
 << Alliance Hunter
 #name 1-7 Coldridge Valley (Hunter)
@@ -7283,7 +7283,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#som
+#som--h
 #phase 3-6
 << Alliance Hunter
 #name 6-12 Dun Morogh (Hunter)
@@ -7709,7 +7709,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#som
+#som--h
 #phase 3-6
 << Alliance Hunter
 #name 11-14 Loch Modan (Hunter)

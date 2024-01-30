@@ -4,7 +4,7 @@ if faction == "Alliance" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
-#era/som
+#era/som--h
 << Horde
 #name 1-6 Mulgore
 #version 11
@@ -580,7 +580,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#era/som
+#era/som--h
 << Horde
 #name 6-12 Mulgore
 #version 11
@@ -593,7 +593,7 @@ step << Druid
     #season 2
     .goto Mulgore,35.72,69.57
     >>Cast |T136096:0|t[Moonfire] on the three |cRXP_ENEMY_Lunar Stones|r. A chest will appear in between the stones
-    >>Open the |cRXP_PICK_Lunar Chest|r for |T134419:0|t[|cRXP_FRIENDLY_Rune of the Sun|r] 
+    >>Open the |cRXP_PICK_Lunar Chest|r for |T134419:0|t[|cRXP_FRIENDLY_Rune of the Sun|r]
     .collect 206989,1 --Rune of the Sun (1)
     .mob Lunar Stone
     .train 416044,1
@@ -2033,7 +2033,7 @@ step
 step << Druid
     #season 2
     #completewith ProwlerClaws
-    >>Kill |cRXP_ENEMY_Flatland Prowlers|r and |cRXP_ENEMY_Prairie Wolf Alphas|r. Loot them for |T134903:0|t[|cRXP_FRIENDLY_Idol of Ursine Rage|r] 
+    >>Kill |cRXP_ENEMY_Flatland Prowlers|r and |cRXP_ENEMY_Prairie Wolf Alphas|r. Loot them for |T134903:0|t[|cRXP_FRIENDLY_Idol of Ursine Rage|r]
     .collect 206954,1 --Idol of Ursine Rage (1)
     .mob Flatland Prowler
     .mob Prairie Wolf Alpha
@@ -2148,14 +2148,14 @@ step << Druid
     .goto Mulgore,44.57,17.39,90,0
     .goto Mulgore,48.70,20.85,90,0
     .goto Mulgore,43.78,10.96
-    >>Kill |cRXP_ENEMY_Flatland Prowlers|r and |cRXP_ENEMY_Prairie Wolf Alphas|r. Loot them for |T134903:0|t[|cRXP_FRIENDLY_Idol of Ursine Rage|r] 
+    >>Kill |cRXP_ENEMY_Flatland Prowlers|r and |cRXP_ENEMY_Prairie Wolf Alphas|r. Loot them for |T134903:0|t[|cRXP_FRIENDLY_Idol of Ursine Rage|r]
     .collect 206954,1 --Idol of Ursine Rage (1)
     .mob Flatland Prowler
     .mob Prairie Wolf Alpha
     .train 410025,1
 step << Druid
     #season 2
-    .equip 18,206954 >> |cRXP_WARN_Equip the|r |T134903:0|t[|cRXP_FRIENDLY_Idol of Ursine Rage|r] 
+    .equip 18,206954 >> |cRXP_WARN_Equip the|r |T134903:0|t[|cRXP_FRIENDLY_Idol of Ursine Rage|r]
     .use 206954
     .train 410025,1
 step << Druid

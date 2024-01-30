@@ -3019,7 +3019,7 @@ RXPGuides.RegisterGuide([[
 #version 11
 #defaultfor Undead/Troll Rogue/Orc Rogue/Orc Warlock/Troll Mage/Troll Priest
 #classic
-#era/som
+#era/som--h
 #name 11-14 Silverpine Forest
 #next 12-17 The Barrens
 
