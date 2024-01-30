@@ -1216,7 +1216,7 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.ReloadGuide()
                             addon.RXPFrame.GenerateMenuTable()
                         end,
-                        hidden = addon.game ~= "CLASSIC"
+                        hidden = addon.game ~= "CLASSIC" or addon.settings.profile.season == 2
                     },
                     hardcore = {
                         name = L("Hardcore mode"),
