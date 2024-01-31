@@ -220,6 +220,9 @@ addon.IsQuestComplete = IsQuestComplete
 
 local function GetQuestId(src)
     local guide = addon.currentGuide or addon.guide
+    if not (src and guide) then
+        return src
+    end
     guide = guide.questConversion
     if guide and guide[src] then
         --print(1,src,guide[src])
@@ -2941,7 +2944,7 @@ function addon.functions.isQuestComplete(self, ...)
     if type(self) == "string" then
         local element = {}
         local text, id = ...
-        id = tonumber(id)
+        id = GetQuestId(tonumber(id))
         if not id then
             return addon.error(
                         L("Error parsing guide") .. " " .. addon.currentGuideName ..
@@ -2970,7 +2973,7 @@ function addon.functions.isOnQuest(self, text, ...)
         local element = {}
         local ids = {...}
         for i,v in pairs(ids) do
-            ids[i] = tonumber(v)
+            ids[i] = GetQuestId(tonumber(v))
         end
         if not ids[1] then
             return addon.error(
@@ -3014,7 +3017,7 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
     if type(self) == "string" then
         local element = {}
         local ids = {...}
-        for k, v in pairs(ids) do ids[k] = tonumber(v) end
+        for k, v in pairs(ids) do ids[k] = GetQuestId(tonumber(v)) end
         if not ids[1] then
             return addon.error(
                         L("Error parsing guide") .. " " .. addon.currentGuideName ..
