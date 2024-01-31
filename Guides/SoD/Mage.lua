@@ -807,7 +807,7 @@ step
 step
     .goto 1426,69.369,58.311
     >>|cRXP_WARN_Look for other Mages or Warlocks near the |cRXP_ENEMY_Frozen Trogg|r or in General Chat (Type /1 into chat)|r
-    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Trogg|r to apply a stack of|r |T134916:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Trogg|r. Loot it for the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r
+    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Trogg|r to apply a stack of|r |T135805:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Trogg|r. Loot it for the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r
     .collect 203748,1 --Spell Notes: Burnout (1)
     .train 401759,1
     .mob Frozen Trogg
@@ -835,7 +835,7 @@ step
 step
     .goto 1429,77.015,51.901
     >>|cRXP_WARN_Look for other Mages or Warlocks near the |cRXP_ENEMY_Frozen Murloc|r or in General Chat (Type /1 into chat)|r
-    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Murloc|r to apply a stack of|r |T134916:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Murloc|r. Loot it for the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r
+    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Murloc|r to apply a stack of|r |T135805:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Murloc|r. Loot it for the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r
     .collect 203748,1 --Spell Notes: Burnout (1)
     .train 401759,1
     .mob Frozen Murloc
@@ -863,7 +863,7 @@ step
 step
     .goto Durotar,58.69,45.53
     >>|cRXP_WARN_Look for other Mages, Warlocks, or Shamans near the |cRXP_ENEMY_Frozen Makrura|r or in General Chat (Type /1 into chat)|r
-    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Makrura|r to apply a stack of|r |T134916:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Makrura|r. Loot it for the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r
+    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Makrura|r to apply a stack of|r |T135805:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Makrura|r. Loot it for the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r
     .collect 203748,1 --Spell Notes: Burnout (1)
     .mob Frozen Makrura
     .train 401579,1
@@ -892,7 +892,7 @@ step
 step
     .goto 1420,66.337,40.059
     >>|cRXP_WARN_Look for other Mages or Warlocks near the |cRXP_ENEMY_Frozen Murloc|r or in General Chat (Type /1 into chat)|r
-    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Murloc|r to apply a stack of|r |T134916:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Murloc|r. Loot it for the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r
+    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Murloc|r to apply a stack of|r |T135805:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Murloc|r. Loot it for the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r
     .collect 203748,1 --Spell Notes: Burnout (1)
     .train 401759,1
     .mob Frozen Murloc
@@ -911,7 +911,7 @@ RXPGuides.RegisterGuide([[
 
 
 step
-    +|cRXP_WARN_You MUST be at least level 8 in order to acquire|r |T133815:0|t[Engrave Chest - Enlightenment] |cRXP_WARN_as it is the level requirement of training|r |T134916:0|t[Polymorph]
+    +|cRXP_WARN_You MUST be at least level 8 in order to acquire|r |T133815:0|t[Engrave Chest - Enlightenment] |cRXP_WARN_as it is the level requirement of training|r |T136071:0|t[Polymorph]
     >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest - Enlightenment]
     .train 415942,1
     .xp >8,1
@@ -931,7 +931,7 @@ step
 step
     .goto 1429,43.248,66.192
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaldimar Wefhellt|r
-    .train 118 >> Train |T134916:0|t[Polymorph]
+    .train 118 >> Train |T136071:0|t[Polymorph]
     .target Zaldimar Wefhellt
     .train 415942,1
     .xp <8,1
@@ -964,7 +964,7 @@ step
     .goto 1429,58.87,59.97,40,0
     .goto 1429,79.37,78.84,40,0
     .goto 1429,83.67,83.53,40,0
-    >>Cast |T134916:0|t[Polymorph] on the following unusual critters: |cRXP_ENEMY_Gazelles|r, |cRXP_ENEMY_Maggots|r, |cRXP_ENEMY_Parrots|r, |cRXP_ENEMY_Fire Beetles|r, |cRXP_ENEMY_Rams|r, |cRXP_ENEMY_Larvas|r, and |cRXP_ENEMY_Cats|r. Wait out the RP
+    >>Cast |T136071:0|t[Polymorph] on the following unusual critters: |cRXP_ENEMY_Gazelles|r, |cRXP_ENEMY_Maggots|r, |cRXP_ENEMY_Parrots|r, |cRXP_ENEMY_Fire Beetles|r, |cRXP_ENEMY_Rams|r, |cRXP_ENEMY_Larvas|r, and |cRXP_ENEMY_Cats|r. Wait out the RP
     >>Open the |cRXP_PICK_Spell Notes|r on the ground. Loot it for |T134332:0|t|cRXP_LOOT_[Azora Apprentice Notes]|r
     .collect 204864,6 --Azora Apprentice Notes (6)
     .mob Gazelle
@@ -997,7 +997,7 @@ RXPGuides.RegisterGuide([[
 << Horde Mage SoD
 
 step
-    +|cRXP_WARN_You MUST be at least level 8 in order to acquire|r |T133815:0|t[Engrave Chest - Enlightenment] |cRXP_WARN_as it is the level requirement of training|r |T134916:0|t[Polymorph]
+    +|cRXP_WARN_You MUST be at least level 8 in order to acquire|r |T133815:0|t[Engrave Chest - Enlightenment] |cRXP_WARN_as it is the level requirement of training|r |T136071:0|t[Polymorph]
     >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest - Enlightenment]
     .train 415942,1
     .xp >8,1
@@ -1016,7 +1016,7 @@ step
 step
     .goto 1420,61.972,52.476
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cain Firesong|r
-    .train 118 >> Train |T134916:0|t[Polymorph]
+    .train 118 >> Train |T136071:0|t[Polymorph]
     .target Cain Firesong
     .train 415942,1
     .xp <8,1
@@ -1037,7 +1037,7 @@ step
     .goto 1420,50.073,50.644,30,0
     .goto 1420,49.573,46.473,30,0
     .goto 1420,47.292,50.612,30,0
-    >>Cast |T134916:0|t[Polymorph] on |cRXP_ENEMY_Odd Melons|r, then wait out the RP
+    >>Cast |T136071:0|t[Polymorph] on |cRXP_ENEMY_Odd Melons|r, then wait out the RP
     >>Loot the |T134332:0|t|cRXP_LOOT_[Apothecary Notes]|r on the ground
     .collect 208183,6 --Apothecary Notes (6)
     .mob Odd Melon
@@ -1648,7 +1648,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune Guide
 #subgroup Legs
-#name Living Flame - 8 (Durotar)
+#name Living Flame - 6 (Durotar)
 << Horde Mage SoD
 
 
@@ -1668,17 +1668,24 @@ step
     >>Purchase one or more |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step
+    #completewith Flame
     .train 401768,1
-    #completewith next
     .zone Durotar >>Travel to |cFFfa9602Durotar|r
 step
+    .train 401768,1
+    >>Kill |cRXP_ENEMY_Burning Blade Orcs|r inside the Dustwind Cave. Loot them for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF|r]
+    .collect 203752,1
+    .goto Durotar,52.83,29.02
+    .mob Burning Blade Thug
+    .mob Burning Blade Neophyte
+    .xp >10,1
+step
+    #label Flame
     .train 401768,1
     >>Kill |cRXP_ENEMY_Burning Blade Orcs|r inside the Skull Rock Cave. Loot them for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF|r]
     .collect 203752,1
     .goto Durotar,55.0,9.8
-    .mob Burning Blade Neophyte
     .mob Burning Blade Fanatic
-    .mob Burning Blade Thug
     .mob Burning Blade Apprentice
 step
     .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
