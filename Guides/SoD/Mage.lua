@@ -381,14 +381,14 @@ RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune Guide
 #subgroup Chest
-#name Regeneration - 12 (Loch Modan)
+#name Regeneration - 13 (Loch Modan)
 << Alliance Mage SoD
 
 
 step
-    +|cRXP_WARN_You should be at least level 12 in order to acquire|r |T133815:0|t[Engrave Chest - Regeneration] |cRXP_WARN_in Loch Modan alone|r
+    +|cRXP_WARN_You should be at least level 13 in order to acquire|r |T133815:0|t[Engrave Chest - Regeneration] |cRXP_WARN_in Loch Modan alone|r
     .train 401767,1
-    .xp >12,1
+    .xp >13,1
 step
     #optional
     #label Charm

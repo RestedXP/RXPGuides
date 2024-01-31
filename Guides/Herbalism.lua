@@ -1,10 +1,9 @@
 RXPGuides.RegisterGuide([[
 #wotlk
-#group +Profession leveling
-#subgroup Herbalism
+#group +Profession Leveling
 << Horde
-#name 1-375 Horde_m1
-#displayname 1-375 Horde
+#name 1-450 Herbalism (H)
+#displayname 1-450 Herbalism
 
 step << Mage
     #completewith next
@@ -12,13 +11,14 @@ step << Mage
     .skill herbalism,70,1
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >> Hearth to Dalaran
+    .zoneskip Dalaran
     .zoneskip Undercity
     .skill herbalism,70,1
 step << !Mage
     #completewith next
-    .goto Shattrath City,51.6,52.6
-    .zone Undercity >> In Shattrath, take the portal to Undercity
+    .goto Dalaran,55.9,24.1
+    .zone Undercity >> In Dalaran, take the portal to Undercity
     .skill herbalism,70,1
 step
     .goto Undercity,54.0,49.5
@@ -52,13 +52,13 @@ step << !Mage
     .skill herbalism,115,1
     .cooldown item,6948,<0,1
 step << !Mage
-    .hs >> Hearth to Shattrath City
+    .hs >> Hearth to Dalaran
     .zoneskip Undercity
     .skill herbalism,115,1
 step << !Mage
     #completewith next
-    .goto Shattrath City,51.6,52.6
-    .zone Undercity >> In Shattrath, take the portal to Undercity
+    .goto Dalaran,55.9,24.1
+    .zone Undercity >> In Dalaran, take the portal to Undercity
     .skill herbalism,115,1
 step
     .goto Undercity,54.0,49.5
@@ -67,7 +67,7 @@ step
 step
     #completewith next
     .goto Undercity,65.9,44.1,50,0
-    .goto Undercity,63.254,48.559
+    .goto Undercity,63.3,48.6
     .fly Sepulcher >> Fly to The Sepulcher
     .skill herbalism,115,1
     .zoneskip Silverpine Forest
@@ -76,7 +76,7 @@ step
     .loop 60,Silverpine Forest,51.9,42.9,48.9,33.3,45.1,30.3,47.6,24.9,52.0,20.9,55.1,15.7,58.4,12.1,64.3,9.1,65.3,11.3,60.5,14.1,56.2,18.7,55.8,22.5,56.2,29.3,55.4,31.9,52.5,31.2,54.6,35.9,54.4,43.1,52.2,49.8,54.7,58.5,55.8,64.5,61.5,64.3,64.2,76.9,60.1,78.3,55.1,76.3,51.7,77.6,49.5,80.1,46.1,80.8,50.1,74.3,51.4,68.1,51.7,56.4,48.0,52.6,45.5,53.6,44.1,50.4,45.1,47.5,49.0,46.8,51.9,42.9
 step
     #completewith next
-    .goto Silverpine Forest,45.620,42.597,-1
+    .goto Silverpine Forest,45.6,42.6,-1
     .goto Hillsbrad Foothills,21.0,46.2,-1
     >>Travel to Hillsbrad Foothills. If you're close to the border, then ride there - otherwise ride back to The Sepulcher and fly to Tarren Mill
     .fly Tarren Mill >> Fly to Tarren Mill
@@ -119,13 +119,13 @@ step << !Mage
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
-    .skill herbalism,300,1
+    .hs >> Hearth to Dalaran
     .zoneskip Hellfire Peninsula
+    .skill herbalism,300,1
 step << !Mage
     #completewith next
-    .goto Shattrath City,52.2,52.9
-    .zone Orgrimmar >> In Shattrath, take the portal to Orgrimmar
+    .goto Dalaran,55.5,25.5
+    .zone Orgrimmar >> In Dalaran, take the portal to Orgrimmar
     .skill herbalism,300,1
 step
     #completewith next
@@ -166,7 +166,7 @@ step << !Mage
     .goto Blasted Lands,52.0,7.7,60,0
     .goto Blasted Lands,58.8,60.2,50,0
     .goto Hellfire Peninsula,88.9,50.2
-    .zone Hellfire Peninsula >>Go into Blasted Lands. Go through the Dark Portal
+    .zone Hellfire Peninsula >> Go into Blasted Lands. Go through the Dark Portal
     .skill herbalism,325,1
     .cooldown item,6948,<0,1
 step << Mage
@@ -176,9 +176,14 @@ step << Mage
     .zoneskip Hellfire Peninsula
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >> Hearth to Dalaran
+    .zoneskip Shattrath City
     .skill herbalism,325,1
-    .zoneskip Hellfire Peninsula
+step << !Mage
+    #completewith next
+    .goto Dalaran,56.4,22.8
+    .zone Shattrath City >> In Dalaran, take the portal to Shattrath
+    .skill herbalism,325,1
 step
     #completewith Ruak
     .goto Shattrath City,64.1,41.1
@@ -214,9 +219,14 @@ step << !Mage
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >> Hearth to Dalaran
+    .zoneskip Shattrath City
     .skill herbalism,350,1
-    .zoneskip Terokkar Forest
+step << !Mage
+    #completewith next
+    .goto Dalaran,56.4,22.8
+    .zone Shattrath City >> In Dalaran, take the portal to Shattrath
+    .skill herbalism,350,1
 step
     #completewith next
     .goto Terokkar Forest,39.6,24.8
@@ -226,56 +236,100 @@ step
     #label Terokkar
     .skill herbalism,350 >> Level your Herbalism from 325-350 in Terokkar Forest
     .loop 60,Terokkar Forest,20.8,16.4,22.8,7.8,25.5,10.2,35.8,8.6,44.0,18.1,44.9,13.9,50.8,17.5,50.1,25.7,37.8,35.7,40.6,40.5,45.6,33.4,50.5,35.6,55.3,27.7,61.2,24.4,54.9,38.2,60.2,42.9,65.2,30.5,72.9,30.6,67.1,43.7,60.9,45.2,69.0,50.4,64.9,56.0,60.2,49.7,54.9,58.6,56.5,65.5,65.6,69.5,73.5,82.7,73.4,87.4,68.7,86.6,60.5,70.9,56.0,71.6,49.6,82.2,30.8,79.3,29.4,66.2,24.7,65.1,25.6,77.3,18.3,78.0,17.9,66.0,27.5,50.2,32.3,36.4,20.8,16.4
+step << !Mage
+    #completewith next
+    .goto Shattrath City,52.3,52.5,40,0
+    .zone Orgrimmar >> Take portal to Orgrimmar
+    .skill herbalism,375,1
+    .cooldown item,6948,<0,1
+step << !Mage
+    #completewith next
+    .goto Orgrimmar,52.6,85.4,40,0
+    .goto Durotar,41.4,18.0,40,0
+    .skill herbalism,375,1
+    .cooldown item,6948,<0,1
+    .zone Borean Tundra >> Climb the Zeppelin Tower. Take the Zeppelin to Borean Tundra
+step << Mage
+    #completewith next
+    .zone Dalaran >> Teleport to Dalaran
+    .skill herbalism,375,1
+    .zoneskip Borean Tundra
+step << !Mage
+    #completewith next
+    .hs >> Hearth to Dalaran
+    .zoneskip Shattrath City
+    .skill herbalism,375,1
+step << !Mage
+    #completewith next
+    .goto Borean Tundra,42.6,53.2
+    .zone Borean Tundra >> Fly to Borean Tundra on your flying mount
+    .skill herbalism,375,1
+    .skill riding,<300,1
+step << !mage
+    #completewith next
+    .goto Dalaran,71.8,45.6
+    .fly Warsong Hold >> Fly to Borean Tundra (Warsong Hold)
+    .skill herbalism,375,1
+    .skill riding,300,1
+    .zoneskip Borean Tundra
+step
+    #label Tansy
+    .goto Borean Tundra,42.0,53.6
+    .train 50300 >> Learn Grand Master Herbalism (350-450) from Tansy Wildmane in Warsong Hold
+    .skill herbalism,375,1
+step
+    #label BoreanTundra
+    .skill herbalism,375 >> Level your Herbalism from 350-400 in Borean Tundra
+    .loop 20,Borean Tundra,77.0,30.1,77.5,35.8,75.5,41.7,69.0,41.8,64.5,39.8,60.7,42.5,61.6,58.4,57.4,48.8,49.8,69.5,49.2,74.9,46.2,72.2,32.8,63.5,32.5,54.3,44.0,43.9,52.7,49.0,52.7,41.0,58.0,40.4,60.1,32.5,54.9,27.9,48.4,23.2,50.0,20.0,58.1,18.7,61.8,14.3,66.0,16.1,73.4,25.9,70.1,31.0,72.6,34.2,77.0,30.1
 step
     #completewith next
-    .goto Netherstorm,25.2,79.5
-    .zone Netherstorm >> Fly to Netherstorm on your flying mount
-    .skill herbalism,375,1
+    .goto Sholazar Basin,50,50
+    .zone Sholazar Basin >> Fly to Sholazar Basin
+    .skill herbalism,425,1
+step
+    .skill herbalism,425 >> Level your Herbalism from 375-425 in Sholazar Basin
+    .loop 20,Sholazar Basin,70.1,68.4,67.1,70.9,65.7,75.3,58.3,77.7,60.9,84.4,54.4,85.7,48.6,83.5,48.1,71.7,47.8,65.8,49.6,52.4,46.4,51.7,45.1,56.3,42.1,58.0,40.9,64.3,42.2,83.2,33.5,83.1,27.2,80.1,26.6,72.8,34.2,66.3,33.8,59.8,22.2,59.2,23.1,48.1,28.6,52.7,30.1,44.5,35.4,45.0,33.4,35.1,41.4,22.8,58.3,27.8,62.1,35.0,56.1,35.7,57.3,42.3,59.2,47.0,56.7,55.9,54.2,61.5,61.7,67.2,70.1,68.4
+step
+    #completewith next
+    .goto The Storm Peaks,50.0,50.0
+    .zone The Storm Peaks >> Fly to The Storm Peaks on your flying mount
+    .skill herbalism,450,1
     .skill riding,<300,1
 step << Mage
     #completewith next
-    .zone Shattrath City >> Teleport to Shattrath City
-    .skill herbalism,375,1
-    .skill riding,300,1
-    .zoneskip Netherstorm
-    .zoneskip Shattrath City
-step << !Mage
-    #completewith A52
-    .hs >> Hearth to Shattrath City
-    .skill herbalism,375,1
-    .skill riding,300,1
-    .zoneskip Netherstorm
-    .cooldown item,6948,>0,1
+    .zone Dalaran >> Teleport to Dalaran
+    .skill herbalism,450,1
+    .skill riding,300.1
+    .zoneskip Dalaran
+    .zoneskip The Storm Peaks
 step << !Mage
     #completewith next
-    .goto Shattrath City,64.1,41.1
-    .zone Shattrath City >> Fly back to Shattrath
-    .skill herbalism,375,1
+    .hs >> Hearth to Dalaran
     .skill riding,300,1
-    .zoneskip Netherstorm
-step
-    #label A52
-    #completewith Netherstorm
-    .goto Shattrath City,64.1,41.1
-    .fly Area 52 >> Fly to Area 52
-    .skill herbalism,375,1
+    .skill herbalism 450,1
+    .zoneskip The Storm Peaks
+    .cooldown item,6948,<0,1
+step << !Mage
+    #completewith next
+    .goto Sholazar Basin,50.2,61.5
+    .fly K3 >> Fly to Storm Peaks (K3)
     .skill riding,300,1
-    .zoneskip Netherstorm
+    .skill herbalism 450,1
+    .zoneskip The Storm Peaks
 step
-    #label Netherstorm
-    .skill herbalism,375 >> Level your Herbalism from 350-375 in Netherstorm
-    .loop 60,Netherstorm,21.8,76.1,20.6,67.5,26.8,62.6,27.1,53.5,34.0,53.6,30.6,43.1,23.8,42.3,24.7,34.9,36.8,39.0,38.5,40.6,40.0,35.9,42.9,38.8,46.4,38.9,48.4,36.1,44.6,27.4,35.6,25.3,29.2,17.4,29.2,14.6,31.1,13.5,36.4,18.2,39.1,17.8,41.3,21.2,42.8,18.1,45.4,18.3,46.4,9.8,48.1,14.1,49.8,24.3,55.1,19.2,61.5,32.0,65.1,33.6,68.9,35.7,73.0,37.0,70.9,42.8,69.0,45.3,67.5,42.0,65.4,41.0,64.2,44.8,61.9,48.8,61.3,44.6,59.9,38.7,58.1,36.4,54.3,43.0,57.2,47.9,48.5,47.7,43.9,50.8,41.5,51.7,40.6,54.6,45.1,56.6,47.3,60.8,47.3,63.3,51.6,56.3,56.6,58.8,65.9,61.1,66.8,63.2,58.5,63.4,51.7,69.4,53.0,77.2,60.0,80.2,58.9,83.5,59.7,86.4,57.8,88.6,53.3,82.9,48.5,85.2,47.4,82.3,47.6,80.1,44.8,73.4,38.3,62.2,37.0,58.8,34.0,75.2,29.5,70.4,26.9,71.1,24.3,75.1,21.8,76.1
+    #label TheStormPeaks
+    .skill herbalism,450 >> Level your Herbalism from 425-450 in The Storm Peaks
+    .loop 20,The Storm Peaks,56.1,65.5,59.2,59.3,63.5,62.6,72.5,63.3,71.1,55.4,71.9,48.3,67.0,45.9,65.4,41.6,61.1,44.2,58.8,48.7,55.7,50.2,50.5,53.3,49.8,59.8,46.9,62.5,38.0,62.9,38.0,53.9,44.0,52.8,43.1,43.6,37.6,44.5,34.9,40.1,32.3,49.3,28.4,50.3,26.7,56.7,22.6,57.0,25.0,63.1,27.8,61.8,26.7,72.5,31.5,65.8,36.9,66.3,37.4,77.0,30.6,83.4,32.7,89.9,39.0,88.5,39.6,80.7,50.0,74.3,56.1,65.5
 step
-    +Congratulations on reaching 375 Herbalism!
+    +Congratulations on reaching skill level 450 in Herbalism!
 ]])
 
 RXPGuides.RegisterGuide([[
 #wotlk
-#group +Profession leveling
-#subgroup Herbalism
+#group +Profession Leveling
 << Alliance
-#name 1-375 Alliance_m2
-#displayname 1-375 Alliance
+#name 1-450 Herbalism (A)
+#displayname 1-450 Herbalism
 
 
 step << Mage
@@ -284,13 +338,13 @@ step << Mage
     .skill herbalism,70,1
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
-    .zoneskip Stormwind City
+    .hs >> Hearth to Dalaran
+    .zoneskip Dalaran
     .skill herbalism,70,1
 step << !Mage
     #completewith next
-    .goto Shattrath City,55.8,36.6
-    .zone Stormwind City >> In Shattrath, take the portal to Stormwind City
+    .goto Dalaran,39.8,62.5
+    .zone Stormwind City >> In Dalaran, take the portal to Stormwind City
     .skill herbalism,70,1
 step
     .goto Stormwind City,54.3,84.1
@@ -316,13 +370,13 @@ step << !Mage
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >> Hearth to Dalaran
     .zoneskip Stormwind City
     .skill herbalism,150,1
 step << !Mage
     #completewith next
-    .goto Shattrath City,55.8,36.6
-    .zone Stormwind City >> In Shattrath, take the portal to Stormwind City
+    .goto Dalaran,39.8,62.5
+    .zone Stormwind City >> In Dalaran, take the portal to Stormwind City
     .skill herbalism,150,1
 step
     .goto Stormwind City,54.3,84.1
@@ -331,7 +385,7 @@ step
 step
     #completewith next
     .goto Stormwind City,68.2,72.9,20,0
-    .goto Stormwind City,70.954,72.512
+    .goto Stormwind City,71.0,72.5
     .fly Lakeshire >> Fly to Lakeshire
     .zoneskip Redridge Mountains
     .skill herbalism,150,1
@@ -402,7 +456,13 @@ step << Mage
     .zoneskip Hellfire Peninsula
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >> Hearth to Dalaran
+    .skill herbalism,325,1
+    .zoneskip Hellfire Peninsula
+step << !Mage
+    #completewith next
+    .goto Dalaran,37.2,66.2
+    .zone Shattrath City >> Take the portal to Shattrath
     .skill herbalism,325,1
     .zoneskip Hellfire Peninsula
 step
@@ -432,16 +492,6 @@ step << Mage
     .zone Shattrath City >> Teleport to Shattrath City
     .skill herbalism,350,1
     .zoneskip Terokkar Forest
-step << !Mage
-    .goto Terokkar Forest,60.5,24.2
-    .zone Terokkar Forest >> Fly to Terokkar Forest
-    .skill herbalism,350,1
-    .cooldown item,6948,<0,1
-step << !Mage
-    #completewith next
-    .hs >> Hearth to Shattrath City
-    .skill herbalism,350,1
-    .zoneskip Terokkar Forest
 step
     #completewith next
     .goto Terokkar Forest,39.6,24.8
@@ -450,44 +500,74 @@ step
 step
     .skill herbalism,350 >> Level your Herbalism from 325-350 in Terokkar Forest
     .loop 60,Terokkar Forest,20.8,16.4,22.8,7.8,25.5,10.2,35.8,8.6,44.0,18.1,44.9,13.9,50.8,17.5,50.1,25.7,37.8,35.7,40.6,40.5,45.6,33.4,50.5,35.6,55.3,27.7,61.2,24.4,54.9,38.2,60.2,42.9,65.2,30.5,72.9,30.6,67.1,43.7,60.9,45.2,69.0,50.4,64.9,56.0,60.2,49.7,54.9,58.6,56.5,65.5,65.6,69.5,73.5,82.7,73.4,87.4,68.7,86.6,60.5,70.9,56.0,71.6,49.6,82.2,30.8,79.3,29.4,66.2,24.7,65.1,25.6,77.3,18.3,78.0,17.9,66.0,27.5,50.2,32.3,36.4,20.8,16.4
+step << Mage
+    #completewith next
+    .zoneskip Borean Tundra
+    .zone Dalaran >> Teleport to Dalaran
+step << !Mage
+    #completewith next
+    .hs >> Hearth to Dalaran
+    .zoneskip Borean Tundra
+    .skill herbalism,400,1
 step
     #completewith next
-    .goto Netherstorm,25.2,79.5
-    .zone Netherstorm >> Fly to Netherstorm on your flying mount
-    .skill herbalism,375,1
+    .zone Borean Tundra >> Fly to Borean Tundra on your flying mount
+    .skill herbalism,400,1
+    .skill riding,300,1
+step
+    #completewith next
+    .goto Dalaran, 72.2,45.8
+    .fly Valiance Keep >> Fly to Borean Tundra (Valiance Keep)
+    .skill herbalism,400,1
+    .skill riding,<300,1
+step
+    #label Kirea
+    .goto Borean Tundra,57.8,71.8
+    .train 50300 >> Learn Grand Master Herbalism (350-450) from Kirea Moondancer in Valiance Keep
+    .skill herbalism,400,1
+step
+    #label BoreanTundra
+    .skill herbalism,400 >> Level your Herbalism from 350-400 in Borean Tundra
+    .loop 20,Borean Tundra,77.0,30.1,77.5,35.8,75.5,41.7,69.0,41.8,64.5,39.8,60.7,42.5,61.6,58.4,57.4,48.8,49.8,69.5,49.2,74.9,46.2,72.2,32.8,63.5,32.5,54.3,44.0,43.9,52.7,49.0,52.7,41.0,58.0,40.4,60.1,32.5,54.9,27.9,48.4,23.2,50.0,20.0,58.1,18.7,61.8,14.3,66.0,16.1,73.4,25.9,70.1,31.0,72.6,34.2,77.0,30.1
+step
+    #completewith next
+    .goto Sholazar Basin,50,50
+    .zone Sholazar Basin >> Fly to Sholazar Basin
+    .skill herbalism,425,1
+step
+    .skill herbalism,425 >> Level your Herbalism from 375-425 in Sholazar Basin
+    .loop 20,Sholazar Basin,70.1,68.4,67.1,70.9,65.7,75.3,58.3,77.7,60.9,84.4,54.4,85.7,48.6,83.5,48.1,71.7,47.8,65.8,49.6,52.4,46.4,51.7,45.1,56.3,42.1,58.0,40.9,64.3,42.2,83.2,33.5,83.1,27.2,80.1,26.6,72.8,34.2,66.3,33.8,59.8,22.2,59.2,23.1,48.1,28.6,52.7,30.1,44.5,35.4,45.0,33.4,35.1,41.4,22.8,58.3,27.8,62.1,35.0,56.1,35.7,57.3,42.3,59.2,47.0,56.7,55.9,54.2,61.5,61.7,67.2,70.1,68.4
+step
+    #completewith next
+    .goto The Storm Peaks,50.0,50.0
+    .zone The Storm Peaks >> Fly to The Storm Peaks on your flying mount
+    .skill herbalism,450,1
     .skill riding,<300,1
 step << Mage
     #completewith next
-    .zone Shattrath City >> Teleport to Shattrath City
-    .skill herbalism,375,1
-    .skill riding,300,1
-    .zoneskip Netherstorm
-step << !Mage
-    #completewith A52
-    .hs >> Hearth to Shattrath City
-    .skill herbalism,375,1
-    .skill riding,300,1
-    .zoneskip Netherstorm
-    .cooldown item,6948,>0,1
+    .zone Dalaran >> Teleport to Dalaran
+    .skill herbalism,450,1
+    .skill riding,300.1
+    .zoneskip Dalaran
+    .zoneskip The Storm Peaks
 step << !Mage
     #completewith next
-    .goto Shattrath City,64.1,41.1
-    .zone Shattrath City >> Fly back to Shattrath
-    .skill herbalism,375,1
+    .hs >> Hearth to Dalaran
     .skill riding,300,1
-    .zoneskip Netherstorm
-step
-    #label A52
-    #completewith Netherstorm
-    .goto Shattrath City,64.1,41.1
-    .fly Area 52 >> Fly to Area 52
-    .skill herbalism,375,1
+    .skill herbalism 450,1
+    .zoneskip The Storm Peaks
+    .cooldown item,6948,<0,1
+step << !Mage
+    #completewith next
+    .goto Sholazar Basin,50.2,61.5
+    .fly K3 >> Fly to Storm Peaks (K3)
     .skill riding,300,1
-    .zoneskip Netherstorm
+    .skill herbalism 450,1
+    .zoneskip The Storm Peaks
 step
-    #label Netherstorm
-    .skill herbalism,375 >> Level your Herbalism from 350-375 in Netherstorm
-    .loop 60,Netherstorm,21.8,76.1,20.6,67.5,26.8,62.6,27.1,53.5,34.0,53.6,30.6,43.1,23.8,42.3,24.7,34.9,36.8,39.0,38.5,40.6,40.0,35.9,42.9,38.8,46.4,38.9,48.4,36.1,44.6,27.4,35.6,25.3,29.2,17.4,29.2,14.6,31.1,13.5,36.4,18.2,39.1,17.8,41.3,21.2,42.8,18.1,45.4,18.3,46.4,9.8,48.1,14.1,49.8,24.3,55.1,19.2,61.5,32.0,65.1,33.6,68.9,35.7,73.0,37.0,70.9,42.8,69.0,45.3,67.5,42.0,65.4,41.0,64.2,44.8,61.9,48.8,61.3,44.6,59.9,38.7,58.1,36.4,54.3,43.0,57.2,47.9,48.5,47.7,43.9,50.8,41.5,51.7,40.6,54.6,45.1,56.6,47.3,60.8,47.3,63.3,51.6,56.3,56.6,58.8,65.9,61.1,66.8,63.2,58.5,63.4,51.7,69.4,53.0,77.2,60.0,80.2,58.9,83.5,59.7,86.4,57.8,88.6,53.3,82.9,48.5,85.2,47.4,82.3,47.6,80.1,44.8,73.4,38.3,62.2,37.0,58.8,34.0,75.2,29.5,70.4,26.9,71.1,24.3,75.1,21.8,76.1
+    #label TheStormPeaks
+    .skill herbalism,450 >> Level your Herbalism from 425-450 in The Storm Peaks
+    .loop 20,The Storm Peaks,56.1,65.5,59.2,59.3,63.5,62.6,72.5,63.3,71.1,55.4,71.9,48.3,67.0,45.9,65.4,41.6,61.1,44.2,58.8,48.7,55.7,50.2,50.5,53.3,49.8,59.8,46.9,62.5,38.0,62.9,38.0,53.9,44.0,52.8,43.1,43.6,37.6,44.5,34.9,40.1,32.3,49.3,28.4,50.3,26.7,56.7,22.6,57.0,25.0,63.1,27.8,61.8,26.7,72.5,31.5,65.8,36.9,66.3,37.4,77.0,30.6,83.4,32.7,89.9,39.0,88.5,39.6,80.7,50.0,74.3,56.1,65.5
 step
-    +Congratulations on reaching 375 Herbalism!
+    +Congratulations on reaching skill level 450 in Herbalism!
 ]])
