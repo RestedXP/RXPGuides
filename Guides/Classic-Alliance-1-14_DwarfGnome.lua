@@ -993,6 +993,7 @@ step
     .target Pilot Bellowfiz
     .accept 317 >> Accept Stocking Jetsteam
 step
+#xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Stonegear|r
     .target Pilot Stonegear
     .goto Dun Morogh,49.622,48.612
@@ -1103,6 +1104,7 @@ step << Warrior
     .mob Wendigo
     .train 403475,1
 step
+#xprate <1.5
     .goto Dun Morogh,42.25,53.68,40,0
     .goto Dun Morogh,41.07,49.04,50,0
     .goto Dun Morogh,42.25,53.68
@@ -1165,6 +1167,7 @@ step << Warrior/Paladin/Rogue
     .turnin 317 >> Turn in Stocking Jetsteam
     .accept 318 >> Accept Evershine
 step << Warrior/Paladin/Rogue
+#xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Stonegear|r
     .target Pilot Stonegear
     .goto Dun Morogh,49.622,48.612
@@ -1575,6 +1578,7 @@ step
     .goto Dun Morogh,46.726,53.826
     .accept 287 >> Accept Frostmane Hold
 step
+#xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Stonegear|r
     .target Pilot Stonegear
     .goto Dun Morogh,49.622,48.612
@@ -1586,6 +1590,7 @@ step
     >>|cRXP_WARN_Choose the|r |T135637:0|t[Camping Knife] |cRXP_WARN_reward. Save it for later|r << Rogue
     .turnin 320 >> Turn in Return to Bellowfiz
 step
+#xprate <1.5
     #era << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Razzle Sprysprocket|r
     .target Razzle Sprysprocket
@@ -1759,6 +1764,7 @@ step << Priest
     .mob Leper Gnome
     .train 425216,1
 step
+#xprate <1.5
     #era << Warlock
     .goto Dun Morogh,27.2,43.0,60,0
     .goto Dun Morogh,24.8,39.3,60,0
@@ -1853,6 +1859,7 @@ step << !Paladin !Priest
     .train 3273 >> Train |T135966:0|t[First Aid]
     .target Thamner Pol
 step
+#xprate <1.5
     #era << Warlock
     .goto Dun Morogh,46.005,48.637,8,0
     .goto Dun Morogh,45.846,49.365
@@ -2378,6 +2385,7 @@ step
     .turnin 6662 >> Turn in Me Brother, Nipsy
     .target Nipsy
 step
+    #completewith next
     .zone Stormwind City >> Enter Stormwind
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grimand Elmore|r
@@ -4034,6 +4042,7 @@ step
     .target Pilot Bellowfiz
     .accept 317 >> Accept Stocking Jetsteam
 step
+#xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Stonegear|r
     .target Pilot Stonegear
     .goto Dun Morogh,49.622,48.612
@@ -4130,6 +4139,7 @@ step << Hunter
     .itemcount 2509,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.94
 step
+#xprate <1.5
     .goto Dun Morogh,42.25,53.68,40,0
     .goto Dun Morogh,41.07,49.04,50,0
     .goto Dun Morogh,42.25,53.68
@@ -4218,6 +4228,7 @@ step
     #completewith next
     .goto Dun Morogh,49.622,48.612,60 >> Travel to Kharanos
 step
+#xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Stonegear|r
     .target Pilot Stonegear
     .goto Dun Morogh,49.622,48.612
@@ -4355,6 +4366,7 @@ step
     .deathskip >> Die and respawn at the Spirit Healer
     .target Spirit Healer
 step
+#xprate <1.5
     #era
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Razzle Sprysprocket|r
     .target Razzle Sprysprocket
@@ -4466,6 +4478,7 @@ step
     .complete 287,1 --Kill Frostmane Headhunter (x5)
     .mob Frostmane Headhunter
 step
+#xprate <1.5
     #era
     .goto Dun Morogh,27.2,43.0,60,0
     .goto Dun Morogh,24.8,39.3,60,0
@@ -4526,6 +4539,7 @@ step
     .turnin 287 >> Turn in Frostmane Hold
     .accept 291 >> Accept The Reports
 step
+#xprate <1.5
     #era
     .goto Dun Morogh,46.005,48.637,8,0
     .goto Dun Morogh,45.846,49.365
@@ -5716,6 +5730,7 @@ step << Priest/Mage/Warlock
     .goto Dun Morogh,47.4,52.5
     .vendor >> Buy as much level 5 drink as you can afford
 step
+#xprate <1.5
     .goto Dun Morogh,42.25,53.68,40,0
     .goto Dun Morogh,41.07,49.04,50,0
     .goto Dun Morogh,42.25,53.68
@@ -5951,6 +5966,7 @@ step
 >>Talk to |cRXP_FRIENDLY_Pilot Bellowfiz|r
     .turnin 320 >> Turn in Return to Bellowfiz
 step << Warrior
+#xprate <1.5
     >>Inside the building
     .goto Dun Morogh,45.8,49.4
 .target Razzle Sprysprocket
@@ -6006,6 +6022,7 @@ step
 >>Talk to |cRXP_FRIENDLY_Marleth Barleybrew|r
     .turnin 311 >> Turn in Return to Marleth
 step << Warrior
+#xprate <1.5
     .goto Dun Morogh,27.2,43.0,80,0
     .goto Dun Morogh,24.8,39.3,80,0
     .goto Dun Morogh,25.6,43.4,80,0
@@ -6085,6 +6102,7 @@ step << !Paladin !Priest
     .goto Dun Morogh,47.2,52.6
     .train 3273 >> Train First Aid
 step << Warrior
+#xprate <1.5
     >>Inside the building
     .goto Dun Morogh,45.8,49.4
 .target Razzle Sprysprocket
