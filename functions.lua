@@ -466,8 +466,7 @@ function addon.GetQuestObjectives(id, step, useCache)
     local err = false
     if IsOnQuest(id) then
         local questInfo = {}
-        ExpandQuestHeader(0)
-
+        local questFound
         for i = 1, GetNumQuests() do
             local isComplete, questID
             if GetQuestLogTitle then
@@ -481,6 +480,7 @@ function addon.GetQuestObjectives(id, step, useCache)
             end
             local nObj = 0
             if questID == id then
+                questFound = true
                 for j = 1, GetNumQuestLeaderBoards(i) do
                     local description, objectiveType, isCompleted =
                         GetQuestLogLeaderBoard(j, i)
@@ -533,6 +533,21 @@ function addon.GetQuestObjectives(id, step, useCache)
                 else
                     CacheQuest(id,questInfo)
                     return questInfo
+                end
+            end
+        end
+        if not questFound then
+            for i = 1, GetNumQuests() do
+                local isCollapsed
+                if GetQuestLogTitle then
+                    _, _, _, _, isCollapsed = GetQuestLogTitle(i)
+                else
+                    local qInfo = C_QuestLog.GetInfo(i) or {}
+                    isCollapsed = qInfo.isCollapsed
+                end
+                if isCollapsed then
+                    ExpandQuestHeader(0)
+                    break
                 end
             end
         end
