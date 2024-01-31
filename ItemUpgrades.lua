@@ -1485,14 +1485,20 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
     local attachment = _G.AuctionFrame
     if not attachment then return end
 
-    ahSession.displayFrame = _G["RXP_IU_AH_Scanning"]
+    ahSession.displayFrame = _G["RXP_IU_AH_Bid"] -- _G["RXP_IU_AH_Scanning"]
     if not ahSession.displayFrame then return end
+
+    _G.RXP_IU_AH_BidTitle:SetText(fmt("%s - %s", addon.title,
+                                      _G.MINIMAP_TRACKING_AUCTIONEER))
+
+    ahSession.displayFrame.scanButton = _G.RXP_IU_AH_SearchButton
+
+    ahSession.displayFrame.scanButton:SetScript("OnClick", function()
+        addon.itemUpgrades.AH:Scan()
+    end)
 
     ahSession.displayFrame:SetParent(attachment)
     ahSession.displayFrame:SetPoint("TOPLEFT", attachment, "TOPLEFT")
-
-    _G.RXP_IU_AH_BrowseTitle:SetText(fmt("%s - %s", addon.title,
-                                         _G.MINIMAP_TRACKING_AUCTIONEER))
 
     -- Create tab button
     local index = attachment.numTabs + 1
@@ -1512,13 +1518,13 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
         PanelTemplates_SetTab(attachment, this)
 
         AuctionFrameTopLeft:SetTexture(
-            "Interface\\AuctionFrame\\UI-AuctionFrame-Browse-TopLeft")
+            "Interface\\AuctionFrame\\UI-AuctionFrame-Bid-TopLeft")
         AuctionFrameTop:SetTexture(
-            "Interface\\AuctionFrame\\UI-AuctionFrame-Browse-Top")
+            "Interface\\AuctionFrame\\UI-AuctionFrame-Auction-Top")
         AuctionFrameTopRight:SetTexture(
-            "Interface\\AuctionFrame\\UI-AuctionFrame-Browse-TopRight")
+            "Interface\\AuctionFrame\\UI-AuctionFrame-Auction-TopRight")
         AuctionFrameBotLeft:SetTexture(
-            "Interface\\AuctionFrame\\UI-AuctionFrame-Browse-BotLeft")
+            "Interface\\AuctionFrame\\UI-AuctionFrame-Bid-BotLeft")
         AuctionFrameBot:SetTexture(
             "Interface\\AuctionFrame\\UI-AuctionFrame-Auction-Bot")
         AuctionFrameBotRight:SetTexture(
