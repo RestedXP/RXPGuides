@@ -2,20 +2,21 @@ RXPGuides.RegisterGuide([[
 #df
 #version 2
 #group RestedXP Starting Zones
+#groupweight 8
 #subgroup Orc Starting Zones << Orc
 #subgroup Troll Starting Zones << Troll
 #subgroup Durotar Starting Zones << !Orc !Troll
-#name 1Orc Starting Zone << Orc
+#name 1Orc Starting Zone << !Troll --Orc
 #name 2Orc Starting Zone << Troll
-#name Valley of Trials << !Orc !Troll
+-- #name Valley of Trials << !Orc !Troll
 #displayname Chapter 2 - Valley of Trials << Troll
-#displayname Chapter 1 - Orc Starting Zone << Orc
-#displayname Valley of Trials (Orc) << !Orc !Troll
-#next 2Troll Starting Zone << Orc
+#displayname Chapter 1 - Valley of Trials << !Troll --Orc
+-- #displayname Valley of Trials (Orc) << !Orc !Troll
+#next 2Troll Starting Zone << !Troll --Orc
 #next RestedXP Horde 10-60\1 BfA Intro << Troll
-#defaultfor Orc/Troll
+#defaultfor Orc !DK/Troll !DK
     
-<< Horde !DK
+<< Horde
 
 step << Orc
     .zoneskip 1727
@@ -325,20 +326,21 @@ RXPGuides.RegisterGuide([[
 #df
 #version 2
 #group RestedXP Starting Zones
-#name 1Troll Starting Zone << Troll
-#name 2Troll Starting Zone << Orc
-#name Echo Isles << !Troll !Orc
-#displayname Chapter 1 - Echo Isles << Troll
-#displayname Chapter 2 - Echo Isles << Orc
-#displayname Echo Isles (Troll) << !Troll !Orc
-#next 2Orc Starting Zone << Troll
-#next RestedXP Horde 10-60\1 BfA Intro << Orc
+#groupweight 8
 #subgroup Troll Starting Zones << Troll
 #subgroup Orc Starting Zones << Orc
-#subgroup Durotar Starting Zones << !Troll !Orc
-#defaultfor Orc/Troll
+#subgroup Durotar Starting Zones << !Orc !Troll
+#name 1Troll Starting Zone << Troll
+#name 2Troll Starting Zone << !Troll --Orc
+-- #name Echo Isles << !Troll !Orc
+#displayname Chapter 1 - Echo Isles << Troll
+#displayname Chapter 2 - Echo Isles << !Troll --Orc
+-- #displayname Echo Isles (Troll) << !Troll !Orc
+#next 2Orc Starting Zone << Troll
+#next RestedXP Horde 10-60\1 BfA Intro << !Troll --Orc
+#defaultfor Orc !DK/Troll !DK
 
-<< Horde !DK
+<< Horde
 
 step << Orc
     #completewith next
@@ -858,6 +860,7 @@ step
     .target Tegashi
     .target Kijara
 step
+    #loop
 	.line 463,45.93,86.53,46.15,88.00,43.81,88.49,43.46,91.82,44.25,91.93,45.27,89.85,45.95,89.71,46.91,93.18,47.68,92.85,47.84,88.58,48.45,90.12,47.51,88.96,47.42,86.91,46.21,85.10,46.03,83.83,44.17,82.86,42.43,83.12,41.15,85.98,40.87,88.56,42.30,88.10,43.60,85.27,44.56,85.10,45.93,86.53
     .goto 463,45.93,86.53,30,0
     .goto 463,44.56,85.10,30,0
@@ -881,7 +884,6 @@ step
     .goto 463,43.46,91.82,30,0
     .goto 463,43.81,88.49,30,0
     .goto 463,46.15,88.00,30,0
-    .goto 463,45.93,86.53
     >>Use the |T134326:0|t[Bloodtalon Lasso] on |cRXP_FRIENDLY_Swiftclaw|r. He spawns next to you and then runs counter-clockwise around the island
     .complete 24626,1 --1/1 Capture Swiftclaw
 	.unitscan Swiftclaw

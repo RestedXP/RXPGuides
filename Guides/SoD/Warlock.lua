@@ -348,7 +348,7 @@ RXPGuides.RegisterGuide([[
 --Permok: Dont load it for mages for now
 
 step << Mage
-    >>Buy a (or multiple) |T135933:0|t[Comprehensive Charm] from a Reagent Vendor
+    >>Buy a (or multiple) |T135933:0|t[Comprehension Charm] from a Reagent Vendor
     .collect 211779,1
 step
     #completewith next
@@ -368,7 +368,7 @@ step
     .use 203748 << Mage
     .itemcount 205228,1 << Warlock
     .itemcount 203748,1 << Mage
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a Reagent Vendor to use the item << Mage
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a Reagent Vendor to use the item << Mage
     .train 403925 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Chaos Bolt|r] |cRXP_WARN_to train|r |T236291:0|t[Chaos Bolt]  << Warlock
     .train 401759 >>Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Burnout|r] |cRXP_WARN_to train|r |T236207:0|t[Burnout] << Mage
 ]])

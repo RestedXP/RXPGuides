@@ -3,11 +3,12 @@ RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP Allied Race Unlocks
-#subgroup Lightforged Draenei
+#groupweight 5
+-- #subgroup Lightforged Draenei
 #name 5) Lightforged Draenei Scenario Questline
-#displayname Final Chapter
+#displayname Lightforged Draenei
 
-<Alliance
+<< Alliance !LightforgedDraenei
 
 step
     #completewith next
@@ -47,24 +48,30 @@ step
     .accept 49698 >>Accept The Lightforged
     .target Aysa Cloudsinger
 step
+    #completewith next
     .goto 84,52.81,14.57,5,0
-    .goto 84,51.88,14.06
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stormwind Embassy Beacon.|r
-    .complete 49698,1 --1/1 Stormwind Embassy Beacon used
+    .goto 84,54.426,14.433,10 >>Travel toward the |cRXP_PICK_Lightforged Beacon|r
     .isOnQuest 49698
 step
-    .goto 940,43.77,26.70
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Fareeya.|r
-    >>|cRXP_WARN_Press "Escape" on your keyboard to skip the cinematic.|r
+    .goto 84,52.81,14.57,5,0
+    .goto 84,54.426,14.433
+    .zone 940 >>Use the |cRXP_PICK_Lightforged Beacon|r to teleport to the Vindicaar
+    .complete 49698,1 --Stormwind Embassy Beacon used (1)
+    .isOnQuest 49698
+step
+    .goto 940,43.852,27.027
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Fareeya|r
+    >>|cRXP_WARN_Press "Escape" on your keyboard to skip the cinematic|r
     .turnin 49698 >>Turn in The Lightforged
     .accept 49266 >>Accept Forge of Aeons
     .target Captain Fareeya
 step
-    .goto 940,49.99,46.24
-    .cast 253751 >>Click on the |cRXP_PICK_Lightforged Beacon.|r
+    .goto 940,49.945,46.279
+    .zone 933 >>Use the |cRXP_PICK_Lightforged Beacon|r to teleport to the Forge of Aeons
     .isOnQuest 49266
+--XX no zone ID (its a scenario) so .cast must be used
 step
-    .goto 933,88.51,36.44,10 >>|cRXP_WARN_Head to the location indicated by the arrow.|r
+    .goto 933,88.51,36.44,10 >>|cRXP_WARN_Head to the location indicated by the arrow|r
     .timer 27,Duration until continuation.
     -- .scenario 3547,1 >>|cRXP_WARN_Head to the location indicated by the arrow.|r
     .isOnQuest 49266
@@ -212,24 +219,22 @@ step
     +|cRXP_WARN_You can also leave using other standard methods.|r
     .isOnQuest 49266
 step
-    .goto 940,48.35,39.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Fareeya.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Fareeya|r and |cRXP_FRIENDLY_High Exarch Turalyon|r
     .turnin 49266 >>Turn in Forge of Aeons
-    .target Captain Fareeya
-step
-    .goto 940,47.56,40.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Exarch Turalyon.|r
+    .goto 940,48.453,39.556
+    .target +Captain Fareeya
     .accept 50071 >>Accept For the Light!
-    .target High Exarch Turalyon
+    .goto 940,47.468,40.178
+    .target +High Exarch Turalyon
 step
-    .goto 941,45.75,58.15,10,0
-    .goto 941,54.36,60.68,5,0
-    .goto 941,43.17,24.76
-    .zone 84 >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stormwind Portal.|r
+    #completewith next
+    .goto 941,43.180,24.938
+    >>Go downstairs
+    .zone 84 >>Click the |cRXP_PICK_Portal to Stormwind|r
 step
     .goto 84,52.79,14.51,5,0
     .goto 84,52.05,13.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aysa Cloudsinger|r
     .turnin 50071 >>Turn in For the Light!
     .target Aysa Cloudsinger
 ]])

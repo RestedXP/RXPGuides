@@ -1313,6 +1313,10 @@ ScrollFrame:SetScrollChild(ScrollChild)
 function addon.GetGuideName(guide)
     if not guide then guide = addon.currentGuide end
     local som = addon.settings.profile.season == 1
+    --sod p2
+    --[[if addon.settings.profile.season == 2 and UnitLevel("player") < 25 then
+        som = true
+    end]]
     if som and guide.somname then
         return guide.somname
     elseif not som and guide.eraname then

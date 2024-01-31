@@ -187,7 +187,7 @@ step
     >>|cRXP_WARN_Alternatively, you can get|r |T133816:0|t[Engrave Gloves - Molten Blast] |cRXP_WARN_in Mulgore at level 3+|r
     .train 425344,1
     .xp >10,1
-    step
+step
     #completewith IconS
     #label Durotar1
     .zone Durotar >> Travel to Durotar
@@ -218,9 +218,9 @@ step
     #label IconS
     .goto Durotar,58.69,45.53
     >>|cRXP_WARN_Look for other Shamans, Warlocks, or Mages near the |cRXP_ENEMY_Frozen Makrura|r or in General Chat (Type /1 into chat)|r
-    >>|cRXP_WARN_Cast|r |T135813:0|t[Flame Shock] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Makrura|r to apply a stack of|r |T134916:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Makrura|r. Loot it for the|r |T134918:0|t|cRXP_LOOT_[Sulfurous Icon]|r
+    >>|cRXP_WARN_Cast|r |T135813:0|t[Flame Shock] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Makrura|r to apply a stack of|r |T135805:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Makrura|r. Loot it for the|r |T134918:0|t|cRXP_LOOT_[Sulfurous Icon]|r
     >>|cRXP_WARN_Alternatively, you can get|r |T133816:0|t[Engrave Gloves - Molten Blast] |cRXP_WARN_in Mulgore solo|r
-    >>|cRXP_WARN_NOTE:|r |T135813:0|t[Flametongue Weapon] |cRXP_WARN_does NOT apply any|r |T134916:0|t[Applying Heat] stacks|r
+    >>|cRXP_WARN_NOTE:|r |T135813:0|t[Flametongue Weapon] |cRXP_WARN_does NOT apply any|r |T135805:0|t[Applying Heat] stacks|r
     .collect 206388,1 --Sulfurous Icon (1)
     .mob Frozen Makrura
     .train 425344,1
@@ -229,9 +229,9 @@ step
 step
     .goto Durotar,58.69,45.53
     >>|cRXP_WARN_Look for other Shamans, Warlocks, or Mages near the |cRXP_ENEMY_Frozen Makrura|r or in General Chat (Type /1 into chat)|r
-    >>|cRXP_WARN_Cast|r |T135813:0|t[Flame Shock] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Makrura|r to apply a stack of|r |T134916:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Makrura|r. Loot it for the|r |T134918:0|t|cRXP_LOOT_[Sulfurous Icon]|r
+    >>|cRXP_WARN_Cast|r |T135813:0|t[Flame Shock] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Makrura|r to apply a stack of|r |T135805:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Makrura|r. Loot it for the|r |T134918:0|t|cRXP_LOOT_[Sulfurous Icon]|r
     >>|cRXP_WARN_Alternatively, you can get|r |T133816:0|t[Engrave Gloves - Molten Blast] |cRXP_WARN_in Mulgore solo|r
-    >>|cRXP_WARN_NOTE:|r |T135813:0|t[Flametongue Weapon] |cRXP_WARN_and|r |T135824:0|t[Fire Nova Totem] |cRXP_WARN_do NOT apply any|r |T134916:0|t[Applying Heat] stacks|r
+    >>|cRXP_WARN_NOTE:|r |T135813:0|t[Flametongue Weapon] |cRXP_WARN_and|r |T135824:0|t[Fire Nova Totem] |cRXP_WARN_do NOT apply any|r |T135805:0|t[Applying Heat] stacks|r
     .collect 206388,1 --Sulfurous Icon (1)
     .mob Frozen Makrura
     .train 425344,1
@@ -723,6 +723,9 @@ step
     .xp <20,1
 step
     #loop
+    .goto The Barrens,45.78,25.52,0
+    .goto The Barrens,43.86,21.38,0
+    .goto The Barrens,43.56,26.30,0
     .goto The Barrens,45.78,25.52,50,0
     .goto The Barrens,46.54,22.99,50,0
     .goto The Barrens,45.03,20.09,50,0
@@ -738,8 +741,8 @@ step
 step
     .goto The Barrens,43.02,23.52,-1
 --  .goto The Barrens,52.73,41.84,-1
---   .goto The Barrens,44.33,37.66,-1
-    >>Open the |cRXP_PICK_Kolkars' Booty|r. Loot it for the |T135832:0|t|cRXP_LOOT_[Tempest Icon]|r
+--  .goto The Barrens,44.33,37.66,-1
+    >>Open the |cRXP_PICK_Kolkars' Booty|r on the ground. Loot it for the |T135832:0|t|cRXP_LOOT_[Tempest Icon]|r
     .collect 206382,1 --Tempest Icon (1)
     .itemcount 5020,1 --Kolkar Booty Key (1)
     .train 410097,1
@@ -2166,7 +2169,7 @@ step
 step
     .goto The Barrens,43.18,78.59
     >>Kill |cRXP_ENEMY_Hirzek|r. Loot him for |T135146:0|t|cRXP_LOOT_[Hirzek's Staff]|r
-    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Hirzek|r casts|r |T134916:0|t[Lightning Bolt] |cRXP_WARN_(Ranged Cast: Deals about 110 Nature Damage) and is a level 25 elite. He is soloable, but you may want to find someone to assist you|r
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Hirzek|r casts|r |T135805:0|t[Lightning Bolt] |cRXP_WARN_(Ranged Cast: Deals about 110 Nature Damage) and is a level 25 elite. He is soloable, but you may want to find someone to assist you|r
     >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Bound Elemental|r has an infinite leash if you kill |cRXP_ENEMY_Hirzek|r and leave the |cRXP_ENEMY_Bound Elemental|r alive (it'll follow you until it de-renders or you kill it)|r
     .complete 78575,1 --Hirzek's Staff (1)
     .complete 78575,2 --Hirzek (1)

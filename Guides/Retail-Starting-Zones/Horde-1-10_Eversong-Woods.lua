@@ -2,13 +2,14 @@ RXPGuides.RegisterGuide([[
 #df
 #version 2
 #group RestedXP Starting Zones
+#groupweight 8
 #subgroup Blood Elf Starting Zones
 #name 1 Blood Elf Starting Zone
 #displayname Chapter 1 - Sunstrider Isle
 #next 2 Blood Elf Eversong Woods
-#defaultfor BloodElf
+#defaultfor BloodElf !DK
 
-<< Horde !DK
+<< Horde
 
 step
     .zoneskip 1727
@@ -248,13 +249,14 @@ RXPGuides.RegisterGuide([[
 #df
 #version 2
 #group RestedXP Starting Zones
+#groupweight 8
 #name 2 Blood Elf Eversong Woods
 #displayname Chapter 2 - Eversong Woods
 #next RestedXP Horde 10-60\1 BfA Intro
 #subgroup Blood Elf Starting Zones
-#defaultfor BloodElf
+#defaultfor BloodElf !DK
 
-<< Horde !DK
+<< Horde
 
 step << Hunter
     #completewith next

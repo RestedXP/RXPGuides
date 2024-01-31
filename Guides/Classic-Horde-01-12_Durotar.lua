@@ -14,6 +14,10 @@ RXPGuides.RegisterGuide([[
 step << !Orc !Troll
     #completewith next
     +|cRXP_WARN_You have selected a guide meant for Orcs and Trolls. You should choose the same starter zone that you start in|r
+step << !Troll Mage
+    #season 2
+    #completewith next
+    +In Season of Discovery, you should NOT start outside of your race's starter zone as a Mage, as you will be unable to get your first rune here (|T133816:0|t[Engrave Gloves - Ice Lance])
 step
     .goto Durotar,43.29,68.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaltunk|r
@@ -183,7 +187,7 @@ step
     .complete 788,1 --Mottled Boar (10)
     .mob Mottled Boar
 step << Warlock/Warrior/Shaman/Hunter
-    #som
+    #som--xpgate
     .loop 25,Durotar,41.30,65.03,41.92,64.74,42.66,64.92,43.31,65.02,43.90,65.96,44.54,65.96,45.16,65.77,45.72,65.93,45.72,65.04,45.21,63.95,45.83,63.01,45.81,62.17,45.78,61.14,45.15,60.20,44.50,59.45,43.86,60.43,43.07,60.24,42.58,60.09,42.02,61.19,42.02,62.15,42.00,62.92,41.99,64.03,41.30,65.03
     .xp 2+870 >> Grind to 870+/900xp << Warlock
     .xp 3+760 >> Grind to 760+/1400xp << Warrior/Shaman/Hunter
@@ -423,7 +427,7 @@ step << Mage
     .goto Durotar,42.51,69.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mai'ah|r
     .turnin 3086 >>Turn in Glyphic Tablet << Troll
-    .accept 77643 >>Accept Spell Research
+    .accept 77643 >>Accept Spell Research << Troll Mage
     .train 1459 >> Train |T135932:0|t[Arcane Intellect]
     .target Mai'ah
 step << Mage
@@ -863,16 +867,18 @@ step
     .complete 6394,1 --Thazz'ril's Pick (1)
 step << Mage/Warlock
     #season 2
-    .goto Durotar,42.99,54.43
-    >>Loot the |cRXP_PICK_Waterlogged Stashbox|r for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r] inside the cave << Mage
-    >>Loot the |cRXP_PICK_Waterlogged Stashbox|r for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r] inside the cave << Warlock
+    .goto Durotar,43.004,54.456
+    >>Open the |cRXP_PICK_Waterlogged Stashbox|r underwater inside the cave. Loot it for the |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r << Mage
+    >>|cRXP_WARN_NOTE: You will be unable to train|r |T133816:0|t[Engrave Gloves - Ice Lance] |cRXP_WARN_here as you can only get a|r |T133736:0|t[Comprehension Primer] |cRXP_WARN_in your race's starting zone|r << !Troll/Mage
+    >>Open the |cRXP_PICK_Waterlogged Stashbox|r underwater inside the cave. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Haunting]|r << Warlock
     .collect 203751,1,77643,1 << Mage --Spell Notes: CALE ENCI (1)
     .collect 205230,1,77586,1 << Warlock--Rune of Haunting (1)
+    .train 401760,1 << Mage
 step << Mage
     #season 2
-    .use 203751 >>Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r]
-    .complete 77643,1 --Learn Spell: Engrave Gloves - Icelance
-    .isOnQuest 77643
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
+    .use 203751
+    .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
 step << Warlock
     #season 2
     .use 205230 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r]
@@ -995,7 +1001,7 @@ step
     .turnin 6394 >>Turn in Thazz'ril's Pick
     .target Foreman Thazz'ril
 step
-    #som
+    #som--xpgate
     .goto Durotar,44.63,68.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thazz'ril|r
     .turnin 6394 >>Turn in Thazz'ril's Pick
@@ -1034,6 +1040,7 @@ step << Mage
     .train 2136 >>Train |T135807:0|t[Fire Blast]
     .turnin 77643 >> Turn in Spell Research
     .target Mai'ah
+    .isQuestComplete 77643
 step << Mage
     #season 0
     .goto Durotar,42.51,69.04
@@ -1804,7 +1811,7 @@ step << !Priest !Mage
     .goto Durotar,55.50,48.97
     .xp 7+2180 >> Grind to 2200+/4500xp
 step << !Priest !Mage
-    #som
+    #som--xpgate
     .goto Durotar,59.02,50.24,50,0
     .goto Durotar,57.93,47.71,50,0
     .goto Durotar,59.20,44.30,50,0
@@ -1822,7 +1829,7 @@ step << Priest
     .goto Durotar,55.50,48.97
     .xp 7+1730 >> Grind to 1750+/4500xp
 step << Priest
-    #som
+    #som--xpgate
     .goto Durotar,59.02,50.24,50,0
     .goto Durotar,57.93,47.71,50,0
     .goto Durotar,59.20,44.30,50,0
@@ -2210,7 +2217,7 @@ step << Mage
     .train 401765,1
 step << Mage
     #season 2
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item
     .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] |cRXP_WARN_to learn|r |T236227:0|t[Fingers of Frost]
     .use 203753
 step
@@ -2380,7 +2387,7 @@ step << Hunter
     .loop 25,Durotar,47.52,48.67,46.12,45.47,43.65,43.91,41.68,44.69,41.00,46.13,42.47,48.50,44.21,49.68,47.17,49.44,47.52,48.67
     .xp 9+4470 >> Grind to 4470+/6500xp
 step << Hunter
-    #som
+    #som--xpgate
     .loop 25,Durotar,47.52,48.67,46.12,45.47,43.65,43.91,41.68,44.69,41.00,46.13,42.47,48.50,44.21,49.68,47.17,49.44,47.52,48.67
     .xp 9+3660 >> Grind to 3660+/6500xp
 step << Hunter
@@ -3407,7 +3414,7 @@ step << Shaman
     .train 410104,1
     .xp <4,1
 step << Warrior/Shaman
-	#era/som
+	#era/som--xpgate
     .loop 25,Mulgore,61.35,47.55,60.10,47.84,59.50,48.21,59.68,48.85,60.14,49.14,62.01,48.74,61.89,47.84,61.35,47.55
     .xp 11+7150 >> Grind to 7150+/8700xp
  step << Warrior/Shaman
@@ -3724,7 +3731,7 @@ step << Mage
     .train 401768,1
 step << Mage
     #season 2
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
     .train 401768 >>|cRXP_WARN_Use|r|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF|r] |cRXP_WARN_to learn|r |T135820:0|t[Living Flame]
     .use 203752
     .itemcount 203752,1

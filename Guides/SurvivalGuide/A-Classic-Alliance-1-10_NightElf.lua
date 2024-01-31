@@ -44,7 +44,7 @@ step << Hunter
     .goto Teldrassil,59.8,34.1
     .xp 4-610 >> Grind until you are 610xp away from level 4 (790/1400)
 step << Hunter
-    #som
+    #som--xpgate
     .goto Teldrassil,59.8,34.1
     .xp 4-755 >> Grind until you are 755xp away from level 4 (645/1400)
 step << Hunter
@@ -134,7 +134,7 @@ step << Hunter
     #era
     .xp 4-40
 step << Hunter
-    #som
+    #som--xpgate
     .xp 4-50
 step << Hunter
     .goto Teldrassil,57.80,40.97,25,0
@@ -511,7 +511,7 @@ step
     .goto Teldrassil,60.7,54.4
 	.xp 7+3500 >> Grind to level 7 +3500xp
 step
-    #som
+    #som--xpgate
     .goto Teldrassil,60.7,54.4
 	.xp 7+2900 >> Grind to level 7 +2900xp
 step
@@ -637,7 +637,7 @@ step
     .turnin 489 >> Turn in Seek Redemption!
 step
     #completewith next
-    .goto Teldrassil,54.68,52.84,20,0 
+    .goto Teldrassil,54.68,52.84,20,0
     .goto Teldrassil,54.42,51.19,15 >> Travel to Fel Rock
 step << Hunter
     #era
@@ -798,7 +798,7 @@ step << Hunter
     .xp 10-2670 >> Grind until you are 2670 xp off level 10 (3830/6500)
     >>|cRXP_WARN_Once you reach this xp breakpoint, skip the harpy/escort quest and go straight to Darnassus. You will have another opportunity to finish those quests later|r
 step << Hunter
-    #era/som
+    #era/som--xpgate
     #sticky
     #label xp10
     .xp 10-3330 >> Grind until you are 3330 xp off level 10 (3170/6500)
@@ -842,26 +842,26 @@ step << !Hunter
     .xp 10-750 << Druid
     .xp 10-3110 << !Druid
 step << !Hunter
-	#som
+	#som--xpgate
     #phase 1-2
 	#label xp10
    .xp 10-930 << Druid
    .xp 10-3880 << !Druid
 step
-	#som
+	#som--xpgate
     #phase 3-6
 	.goto Teldrassil,38.6,58.0
 	>>Finish off collecting 7 Small Spider Legs
     .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
 step << Druid
-	#som
+	#som--xpgate
 	#phase 3-6
 	#label xp10
 	.xp 10-640
     .goto Teldrassil,38.3,34.4
 	>>If you're still behind on xp do the harpy quest north
 step << !Druid
-	#som
+	#som--xpgate
 	#phase 3-6
 	#label xp10
 	.xp 10-3300
@@ -1128,7 +1128,7 @@ step << Rogue
     .goto Darnassus,36.65,85.93
     .target Priestess A'moora
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
-    .accept 2518 >> Accept Tears of the Moon 
+    .accept 2518 >> Accept Tears of the Moon
 step << Hunter
     #sticky
 	.goto Teldrassil,41.2,44.4,0
@@ -1330,6 +1330,12 @@ step << Hunter/Warrior/Priest
     >>If you have a Staff in your bags, equip it << Hunter
     .target Ilyenia Moonfire
 step << Hunter
+    #completewith FlyDS
+    +|cRXP_WARN_Equip the|r |T135145:0|t[Walking Stick]
+    .use 2495
+    .itemcount 2495,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.19
+step << Hunter
     .goto Darnassus,58.76,44.48
 	.money <0.1751
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariyell Skyshadow|r
@@ -1367,6 +1373,7 @@ step
     .target Vesprystus
     .accept 6342 >> Accept Flight to Auberdine
 step
+    #label FlyDS
     .goto Teldrassil,58.399,94.016
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vesprystus|r
     .fly Darkshore >> Fly to Darkshore

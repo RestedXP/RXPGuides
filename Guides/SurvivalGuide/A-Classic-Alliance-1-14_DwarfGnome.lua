@@ -4,7 +4,7 @@ if faction == "Horde" then return end
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
-#era/som
+#era/som--h
 << Alliance
 #name 1-6 Coldridge Valley
 #version 1
@@ -408,7 +408,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #hardcore
-#era/som
+#era/som--h
 #classic
 << Alliance
 #name 6-10 Dun Morogh
@@ -1690,7 +1690,7 @@ step << Rogue
 
 RXPGuides.RegisterGuide([[
 #hardcore
-#era/som
+#era/som--h
 #classic
 << Alliance
 #name 10-11 Elwynn (Dwarf/Gnome)
@@ -2352,7 +2352,7 @@ step << Dwarf Paladin
 
 RXPGuides.RegisterGuide([[
 #hardcore
-#era/som
+#era/som--h
 #classic
 << Alliance
 #name 11-13 Loch Modan (Dwarf/Gnome)
@@ -2649,7 +2649,7 @@ step
     .goto Loch Modan,27.4,48.4
     .xp 13+9600 >> Grind until 9600+/11400xp
 step
-    #som
+    #som--xpgate
     .goto Loch Modan,27.4,48.4
     .xp 14-2300 >> Grind until you are 2300xp away from level 14 (9100/11400)
 step

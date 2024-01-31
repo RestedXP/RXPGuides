@@ -609,7 +609,7 @@ step << Druid
     .xp 14-1890 >> Grind until you are 1890xp away from level 14
 step << Druid
 #map Darkshore
-    #som
+    #som--xpgate
     .goto Felwood,22.39,29.45
     .xp 14-2645 >> Grind until you are 2645xp away from level 14
 step << Druid
@@ -832,7 +832,7 @@ step
 step
 #map Darkshore
     #label xp15
-    #som
+    #som--xpgate
     .goto Felwood,22.39,29.45
     .xp 15-3245 >> Grind until you are 3245xp away from level 15
     .mob Blackwood Pathfinder
@@ -1322,7 +1322,7 @@ step << Druid
 
 RXPGuides.RegisterGuide([[
 #classic
-#era/som
+#era/som--h
 << Alliance
 #name 13-15 Westfall
 #displayname 14-15 Westfall << Dwarf/Gnome
@@ -1500,7 +1500,7 @@ step << Mage
 step << Mage
     #season 2
     #completewith GnollPaws
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r]
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r]
     .train 401767 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r] |cRXP_WARN_to train|r |T132871:0|t[Regeneration]
     .use 208754
 step
@@ -5987,7 +5987,7 @@ step
     .xp 20-7425 >> Grind until you are 7425 xp away from level 20 << !Rogue
     .xp 20-8975 >> Grind until you are 8975 xp away from level 20 << Rogue
 step
-    #som
+    #som--xpgate
     .goto Redridge Mountains,49.0,70.0
     .xp 20-8800 >> Grind until you are 8800 xp away from level 20 << !Rogue
     .xp 20-10350 >> Grind until you are 10350 xp away from level 20 << Rogue

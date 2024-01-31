@@ -2,8 +2,10 @@ RXPGuides.RegisterGuide([[
 #df
 #version 2
 #group RestedXP Starting Zones
+#groupweight 8
 #subgroup Goblin Starting Zones
 #name Goblin Starting Zone
+#displayname Chapter 1 - Kezan & The Lost Isles
 #next RestedXP Horde 10-60\1 BfA Intro
 
 << Goblin !DK

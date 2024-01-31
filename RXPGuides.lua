@@ -1002,6 +1002,10 @@ function addon:OnInitialize()
         addon.itemUpgrades:Setup()
     end
 
+    if addon.player.season == 2 then
+        addon.settings.profile.phase = 6
+    end
+
     addon.LoadCachedGuides()
     addon.LoadEmbeddedGuides()
     addon.UpdateGuideFontSize()
@@ -1192,12 +1196,17 @@ function addon:TRAINER_CLOSED(...) addon.trainerFrame:SetScript("OnUpdate", nil)
 function addon:PLAYER_LEVEL_UP(_, level)
     if not addon.currentGuide then return end
 
-    level = level
-    local stepn = RXPCData.currentStep
     ProcessSpells()
-    -- addon:LoadGuide(addon.currentGuide)
-    addon.SetStep(1)
-    addon.SetStep(stepn)
+    --sod p2
+    if addon.settings.profile.season == 3 and level == 25 then
+        addon.RXPFrame.GenerateMenuTable()
+        addon.ReloadGuide()
+    else
+        local stepn = RXPCData.currentStep
+        -- addon:LoadGuide(addon.currentGuide)
+        addon.SetStep(1)
+        addon.SetStep(stepn)
+    end
 end
 
 function addon:UNIT_PET(_, unit)
@@ -1599,6 +1608,10 @@ end
 function addon.stepLogic.SeasonCheck(step)
     local currentSeason = addon.settings.profile.season or 0
     local SoM = currentSeason == 1
+    --sod p2
+    --[[if currentSeason == 2 and UnitLevel("player") < 25 then
+        SoM = true
+    end]]
     --local SoD = currentSeason == 2
     if SoM and step.era or step.som and not SoM or SoM and
         addon.settings.profile.phase > 2 and step["era/som"] then

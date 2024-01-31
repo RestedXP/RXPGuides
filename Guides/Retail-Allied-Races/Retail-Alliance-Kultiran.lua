@@ -2,11 +2,12 @@ RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP Allied Race Unlocks
-#subgroup Kultiran
-#name Z13) Kultiran Questline
-#displayname Final Chapter
+#groupweight 5
+-- #subgroup Kul Tiran
+#name Z13) Kul Tiran Questline
+#displayname Kul Tiran
 
-<< Alliance
+<< Alliance !KulTiran
 
 step
     #completewith next

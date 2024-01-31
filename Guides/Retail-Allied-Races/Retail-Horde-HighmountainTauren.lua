@@ -1,12 +1,13 @@
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group Allied Race Unlocks
-#subgroup Highmountain Tauren
+#group RestedXP Allied Race Unlocks
+#groupweight 5
+-- #subgroup Highmountain Tauren
 #name 1) Highmountain Tauren Unlock Questline
-#displayname Highmountain Tauren Questline
+#displayname Highmountain Tauren
 
-<< Horde
+<< Horde !HighmountainTauren
 
 step
     #completewith HighmountainStartQuestline

@@ -3,13 +3,14 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
-#era/som
+#era/som--h
 << Alliance !Hunter
 #name 1-6 Coldridge Valley
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor Dwarf/Gnome
 #next 6-11 Dun Morogh
+
 step << !Gnome !Dwarf
     #sticky
     #completewith next
@@ -18,6 +19,10 @@ step << !Gnome !Dwarf
 step << Mage
     #completewith next
     +Note that you have selected the single target mage guide. Single target is a lot safer than AoE Mage, but a LOT slower
+step << !Gnome Mage
+    #season 2
+    #completewith next
+    +In Season of Discovery, you should NOT start outside of your race's starter zone as a Mage, as you will be unable to get your first rune here (|T133816:0|t[Engrave Gloves - Ice Lance])
 step << !Warlock
     #completewith next
     .destroy 6948
@@ -138,18 +143,31 @@ step << Gnome Warlock
     .accept 77666 >> Accept Stolen Power
     .target Alamar Grimm
 step << Priest/Mage
+    #season 0
     .goto Dun Morogh,30.087,71.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adlin Pridedrift|r
     .vendor >> |cRXP_WARN_Vendor trash|r
     >>|cRXP_BUY_Buy 15|r |T132794:0|t[Refreshing Spring Water]|cRXP_BUY_. Grind extra |cRXP_ENEMY_Ragged Young Wolves|r if you don't have enough money|r
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target Adlin Pridedrift
+    .xp >6,1
+step << Priest/Mage
+    #season 2
+    .goto Dun Morogh,30.087,71.563
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adlin Pridedrift|r
+    .vendor >> |cRXP_WARN_Vendor trash|r
+    >>|cRXP_BUY_Buy 15|r |T132794:0|t[Refreshing Spring Water]|cRXP_BUY_. Grind extra |cRXP_ENEMY_Ragged Young Wolves|r if you don't have enough money|r
+    >>|cRXP_WARN_Make sure you save 10c for later|r
+    .collect 159,15 --Collect Refreshing Spring Water (x15)
+    .target Adlin Pridedrift
+    .xp >6,1
 step << Paladin/Warrior
     #completewith next
     .goto Dun Morogh,30.087,71.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adlin Pridedrift|r
     .vendor >> |cRXP_WARN_Vendor trash|r
     .target Adlin Pridedrift
+    .xp >6,1
 step
     .goto Dun Morogh,29.927,71.201
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sten Stoutarm|r
@@ -170,6 +188,21 @@ step
     .goto Dun Morogh,29.709,71.255
     .accept 170 >> Accept A New Threat
     .target Balir Frosthammer
+step << Priest
+    #season 2
+    .goto Dun Morogh,26.733,72.552
+    >>Open the |cRXP_PICK_Rockjaw Footlocker|r. Loot it for the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Troubled Acolyte|r]
+    .collect 205951,1 -- Memory of a Troubled Acolyte (1)
+step << Dwarf Warrior/Gnome Warrior/Dwarf Rogue/Gnome Rogue/Gnome Mage/Priest
+    #season 2
+    #optional
+    #completewith next
+    .goto 1426,28.910,69.703,15,0
+    .goto 1426,28.835,69.050,10,0
+    .goto 1426,28.835,68.702,10,0 << !Rogue
+    .goto 1426,28.754,68.709,10,0 << Rogue
+    .goto 1426,28.939,68.387,12 >> Enter Anvilmar << !Rogue
+    .goto 1426,28.640,68.364,12 >> Enter Anvilmar << Rogue
 step << Dwarf Warrior/Gnome Warrior
     #season 2
     .goto Dun Morogh,28.832,67.242
@@ -197,11 +230,6 @@ step << Gnome Mage
     .accept 77667 >> Accept Spell Research
     .trainer >> Train your class spells
     .target Marryk Nurribit
-step << Priest
-    #season 2
-    .goto Dun Morogh,26.733,72.552
-    >>Open the |cRXP_PICK_Rockjaw Footlocker|r. Loot it for the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Troubled Acolyte|r]
-    .collect 205951,1 -- Memory of a Troubled Acolyte (1)
 step << Priest
     #season 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branstock Khalder|r
@@ -244,17 +272,18 @@ step
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
     .mob Rockjaw Trogg
     .mob Burly Rockjaw Trogg
-step << Gnome Mage
+step << Mage
     #season 2
-    .isOnQuest 77667
     .goto Dun Morogh,26.733,72.552
-    >>Open the |cRXP_PICK_Rockjaw Footlocker|r. Loot it for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r]
+    >>Open the |cRXP_PICK_Rockjaw Footlocker|r. Loot it for the |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r
+    >>|cRXP_WARN_NOTE: You will be unable to train|r |T133816:0|t[Engrave Gloves - Ice Lance] |cRXP_WARN_here as you can only get a|r |T133736:0|t[Comprehension Primer] |cRXP_WARN_in your race's starting zone|r << !Gnome
     .collect 203751,1,77667,1 -- Spell Notes: CALE ENCI (1)
+    .train 401760,1
 step << Gnome Mage
     #season 2
-    .isOnQuest 77667
-    .use 203751 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r]
-    .complete 77667,1 -- Learn: Engrave Gloves - Ice Lance
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
+    .use 203751
+    .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
 step << Warlock
     #season 2
     .goto Dun Morogh,26.733,72.552
@@ -297,7 +326,7 @@ step << Paladin/Mage/Warlock
     .goto Dun Morogh,23.0,75.0,50,0
     .goto Dun Morogh,24.2,72.5
 step << Paladin/Mage/Warlock
-    #som
+    #som--xpgate
     .xp 3+1022 >> Grind to 1022+/1400xp
     .goto Dun Morogh,23.0,75.0,50,0
     .goto Dun Morogh,24.2,72.5,50,0
@@ -359,12 +388,12 @@ step << Gnome Mage
     .target Marryk Nurribit
 step << Gnome Mage
     #season 2
-    .isQuestComplete 77667
     .goto Dun Morogh,28.709,66.366
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r
     .turnin 77667 >> Turn in Spell Research
     .trainer >> Train your class spells
     .target Marryk Nurribit
+    .isQuestComplete 77667
 step << Warlock
     #season 0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alamar Grimm|r
@@ -762,7 +791,7 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
-#era/som
+#era/som--h
 #classic
 << Alliance !Hunter
 #name 6-11 Dun Morogh
@@ -964,6 +993,7 @@ step
     .target Pilot Bellowfiz
     .accept 317 >> Accept Stocking Jetsteam
 step
+#xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Stonegear|r
     .target Pilot Stonegear
     .goto Dun Morogh,49.622,48.612
@@ -1074,6 +1104,7 @@ step << Warrior
     .mob Wendigo
     .train 403475,1
 step
+#xprate <1.5
     .goto Dun Morogh,42.25,53.68,40,0
     .goto Dun Morogh,41.07,49.04,50,0
     .goto Dun Morogh,42.25,53.68
@@ -1136,6 +1167,7 @@ step << Warrior/Paladin/Rogue
     .turnin 317 >> Turn in Stocking Jetsteam
     .accept 318 >> Accept Evershine
 step << Warrior/Paladin/Rogue
+#xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Stonegear|r
     .target Pilot Stonegear
     .goto Dun Morogh,49.622,48.612
@@ -1147,7 +1179,7 @@ step << Warrior/Paladin/Rogue
     #era
     .xp 7 >> Grind to 7
 step << Warrior/Rogue
-    #som
+    #som--xpgate
     .xp 8 >> Grind nearby mobs to 8
 step << Rogue
     .xp <8,1
@@ -1546,6 +1578,7 @@ step
     .goto Dun Morogh,46.726,53.826
     .accept 287 >> Accept Frostmane Hold
 step
+#xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Stonegear|r
     .target Pilot Stonegear
     .goto Dun Morogh,49.622,48.612
@@ -1557,6 +1590,7 @@ step
     >>|cRXP_WARN_Choose the|r |T135637:0|t[Camping Knife] |cRXP_WARN_reward. Save it for later|r << Rogue
     .turnin 320 >> Turn in Return to Bellowfiz
 step
+#xprate <1.5
     #era << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Razzle Sprysprocket|r
     .target Razzle Sprysprocket
@@ -1652,7 +1686,7 @@ step << Mage
     .train 401768,1
 step << Mage
     #season 2
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF]|r
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF]|r
     .train 401768 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF]|r |cRXP_WARN_to train|r |T135820:0|t[Living Flame]
     .use 203752
 step << Rogue
@@ -1730,6 +1764,7 @@ step << Priest
     .mob Leper Gnome
     .train 425216,1
 step
+#xprate <1.5
     #era << Warlock
     .goto Dun Morogh,27.2,43.0,60,0
     .goto Dun Morogh,24.8,39.3,60,0
@@ -1824,6 +1859,7 @@ step << !Paladin !Priest
     .train 3273 >> Train |T135966:0|t[First Aid]
     .target Thamner Pol
 step
+#xprate <1.5
     #era << Warlock
     .goto Dun Morogh,46.005,48.637,8,0
     .goto Dun Morogh,45.846,49.365
@@ -2349,6 +2385,7 @@ step
     .turnin 6662 >> Turn in Me Brother, Nipsy
     .target Nipsy
 step
+    #completewith next
     .zone Stormwind City >> Enter Stormwind
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grimand Elmore|r
@@ -2521,7 +2558,7 @@ step << Rogue
 ]])
 
 RXPGuides.RegisterGuide([[
-#era/som
+#era/som--h
 #classic
 << Alliance !Hunter
 #name 11-12 Elwynn (Dwarf/Gnome)
@@ -3203,7 +3240,7 @@ step << Dwarf Paladin
 ]])
 
 RXPGuides.RegisterGuide([[
-#era/som
+#era/som--h
 #classic
 << Alliance !Hunter
 #name 12-14 Loch Modan (Dwarf/Gnome)
@@ -3513,7 +3550,7 @@ step
     .goto Loch Modan,27.4,48.4
     .xp 13+9600 >> Grind until 9600+/11400xp
 step
-    #som
+    #som--xpgate
     .goto Loch Modan,27.4,48.4
     .xp 14-2300 >> Grind until you are 2300xp away from level 14 (9100/11400)
 step << Warrior
@@ -3734,7 +3771,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#era/som
+#era/som--h
 << Alliance Hunter
 #name 1-6 Coldridge Valley (Hunter)
 #version 1
@@ -3960,7 +3997,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#era/som
+#era/som--h
 << Alliance Hunter
 #name 6-11 Dun Morogh (Hunter)
 #version 1
@@ -4005,6 +4042,7 @@ step
     .target Pilot Bellowfiz
     .accept 317 >> Accept Stocking Jetsteam
 step
+#xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Stonegear|r
     .target Pilot Stonegear
     .goto Dun Morogh,49.622,48.612
@@ -4101,6 +4139,7 @@ step << Hunter
     .itemcount 2509,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.94
 step
+#xprate <1.5
     .goto Dun Morogh,42.25,53.68,40,0
     .goto Dun Morogh,41.07,49.04,50,0
     .goto Dun Morogh,42.25,53.68
@@ -4175,7 +4214,7 @@ step << Hunter
     .complete 384,1
     .xp 8-1400 >>Grind until you are 1400 xp away from level 8.
 step << Hunter
-    #som
+    #som--xpgate
     .goto Dun Morogh,46.726,53.826
     .complete 384,1
     .xp 8-1950 >>Grind until you are 1950 xp away from level 8.
@@ -4189,6 +4228,7 @@ step
     #completewith next
     .goto Dun Morogh,49.622,48.612,60 >> Travel to Kharanos
 step
+#xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Stonegear|r
     .target Pilot Stonegear
     .goto Dun Morogh,49.622,48.612
@@ -4326,6 +4366,7 @@ step
     .deathskip >> Die and respawn at the Spirit Healer
     .target Spirit Healer
 step
+#xprate <1.5
     #era
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Razzle Sprysprocket|r
     .target Razzle Sprysprocket
@@ -4437,6 +4478,7 @@ step
     .complete 287,1 --Kill Frostmane Headhunter (x5)
     .mob Frostmane Headhunter
 step
+#xprate <1.5
     #era
     .goto Dun Morogh,27.2,43.0,60,0
     .goto Dun Morogh,24.8,39.3,60,0
@@ -4456,7 +4498,7 @@ step
     #era
     .xp 10-1470 >> Grind until you are 1450xp away from level 10
 step
-    #som
+    #som--xpgate
     .xp 10-2050 >> Grind until you are 2050xp away from level 10
 step
     #softcore
@@ -4497,6 +4539,7 @@ step
     .turnin 287 >> Turn in Frostmane Hold
     .accept 291 >> Accept The Reports
 step
+#xprate <1.5
     #era
     .goto Dun Morogh,46.005,48.637,8,0
     .goto Dun Morogh,45.846,49.365
@@ -4589,7 +4632,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#era/som
+#era/som--h
 << Alliance Hunter
 #name 11-13 Loch Modan (Hunter)
 #version 1
@@ -5101,7 +5144,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#som
+#som--h
 #phase 3-6
 << Alliance !Hunter
 #name 1-7 Coldridge
@@ -5463,7 +5506,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#som
+#som--h
 #phase 3-6
 << Alliance !Hunter
 #name 6-12 Dun Morogh
@@ -5687,6 +5730,7 @@ step << Priest/Mage/Warlock
     .goto Dun Morogh,47.4,52.5
     .vendor >> Buy as much level 5 drink as you can afford
 step
+#xprate <1.5
     .goto Dun Morogh,42.25,53.68,40,0
     .goto Dun Morogh,41.07,49.04,50,0
     .goto Dun Morogh,42.25,53.68
@@ -5922,6 +5966,7 @@ step
 >>Talk to |cRXP_FRIENDLY_Pilot Bellowfiz|r
     .turnin 320 >> Turn in Return to Bellowfiz
 step << Warrior
+#xprate <1.5
     >>Inside the building
     .goto Dun Morogh,45.8,49.4
 .target Razzle Sprysprocket
@@ -5977,6 +6022,7 @@ step
 >>Talk to |cRXP_FRIENDLY_Marleth Barleybrew|r
     .turnin 311 >> Turn in Return to Marleth
 step << Warrior
+#xprate <1.5
     .goto Dun Morogh,27.2,43.0,80,0
     .goto Dun Morogh,24.8,39.3,80,0
     .goto Dun Morogh,25.6,43.4,80,0
@@ -6056,6 +6102,7 @@ step << !Paladin !Priest
     .goto Dun Morogh,47.2,52.6
     .train 3273 >> Train First Aid
 step << Warrior
+#xprate <1.5
     >>Inside the building
     .goto Dun Morogh,45.8,49.4
 .target Razzle Sprysprocket
@@ -6172,7 +6219,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#som
+#som--h
 #phase 3-6
 << Alliance Warlock
 #name 11-12 Elwynn Warlock
@@ -6534,7 +6581,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#som
+#som--h
 #phase 3-6
 << Alliance !Hunter
 #name 12-14 Loch Modan
@@ -7093,7 +7140,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#som
+#som--h
 #phase 3-6
 << Alliance Hunter
 #name 1-7 Coldridge Valley (Hunter)
@@ -7254,7 +7301,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#som
+#som--h
 #phase 3-6
 << Alliance Hunter
 #name 6-12 Dun Morogh (Hunter)
@@ -7549,11 +7596,11 @@ step
     #era
     .xp 10-1470 >> Grind until you are 1450xp away from level 10
 step
-    #som
+    #som--xpgate
 	#phase 1-2
     .xp 10-2050 >> Grind until you are 2050xp away from level 10
 step
-	#som
+	#som--xpgate
 	#phase 3-6
 	.xp 10-2950 >> Grind until you are 2950xp away from level 10
 step
@@ -7680,7 +7727,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#som
+#som--h
 #phase 3-6
 << Alliance Hunter
 #name 11-14 Loch Modan (Hunter)

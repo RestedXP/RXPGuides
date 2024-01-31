@@ -1,15 +1,15 @@
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#groupweight 8
 #group RestedXP Starting Zones
+#groupweight 8
 #name 2Retail-Panda_The Wandering Isle
-#displayname Pandaren Starting Zone
+#displayname The Wandering Isle
 #next RestedXP Alliance 10-60\1A_Elwynn Forest << Alliance
 #next RestedXP Horde 10-60\1 BfA Intro << Horde
 #defaultfor Pandaren
 
-<<!DK Pandaren
+<< Pandaren !DK
 
 step
     #completewith next
@@ -530,7 +530,7 @@ step
     .accept 29678 >>Accept Shu, the Spirit of Water
 	.target Old Man Liang
 step
-	.isOnQuest29678
+	.isOnQuest 29678
     .goto 378,79.66,41.83,4,0
     .goto 378,79.61,38.72
     >>Position yourself |cFFfa9602on the Blue Circle.|r This will allow you to jump |cFFfa9602toward the Pool.|r
@@ -1088,27 +1088,33 @@ step
     .complete 29797,1 --8/8 Alliance Medical Supplies
 	.mob Deepscale Tormentor
 step
+    #optional
 	#completewith next
     .goto 378,40.18,87.69
 	.cast 56685 >>Pick up the |cRXP_FRIENDLY_Injured Sailor|r
 	.isOnQuest 29794
 	.target Injured Sailor
+--XXZ Zarant Function
 step
+    #optional
     .goto 378,42.27,86.80
     >>Carry the |cRXP_FRIENDLY_Injured Sailor|r back to |cRXP_FRIENDLY_Delora|r's Camp
     .complete 29794,1,1 --3/3 Injured Sailors rescued
 step
+    #optional
 	#completewith next
     .goto 378,39.41,87.98
 	.cast 56685 >>Pick up the |cRXP_FRIENDLY_Injured Sailor|r
 	.isOnQuest 29794
 	.target Injured Sailor
 step
+    #optional
 	#label Sailor2
     .goto 378,42.27,86.80
     >>Carry the |cRXP_FRIENDLY_Injured Sailor|r back to |cRXP_FRIENDLY_Delora|r's Camp
     .complete 29794,1,2 --3/3 Injured Sailors rescued
 step
+    #optional
     .goto 378,38.36,87.60,20,0
     .goto 378,37.04,87.93,20,0
     .goto 378,35.77,86.77,20,0

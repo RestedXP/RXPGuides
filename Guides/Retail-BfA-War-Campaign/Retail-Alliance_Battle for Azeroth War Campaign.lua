@@ -2,11 +2,12 @@ RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP BfA War Campaign
+#groupweight 4
 #name 1) Heart of Azeroth
 #displayname Chapter 1 - Heart of Azeroth
 #next 2) Vol'dun Foothold
 
-<<Alliance
+<< Alliance
 
 step
     .goto 1161,75.06,14.95
@@ -376,7 +377,7 @@ RXPGuides.RegisterGuide([[
 #displayname Chapter 3 - Nazmir Foothold
 #next 4) Island Expedition
 
-<<Alliance
+<< Alliance
 
 step
     .isQuestAvailable 51571
@@ -774,7 +775,7 @@ RXPGuides.RegisterGuide([[
 #displayname Chapter 5 - Zuldazar Foothold
 #next 6) Uniting Kultiras
 
-<<Alliance
+<< Alliance
 
 step
     .isQuestAvailable 51308
@@ -1145,6 +1146,8 @@ RXPGuides.RegisterGuide([[
 #name 6) Uniting Kultiras
 #displayname Chapter 6 - Uniting Kultiras
 #next 7) Ready for War
+
+<< Alliance
 
 step
     .isOnQuest 51918

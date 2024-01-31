@@ -1,482 +1,738 @@
 RXPGuides.RegisterGuide([[
 #classic
-<< Human Mage SoD
 #group RestedXP Rune Guide
 #subgroup Gloves
 #name Ice Lance - 2 (Elwynn Forest)
+<< Human Mage SoD
 
-step << Human Mage
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khelden Bremen|r
+
+step
+    +|cRXP_WARN_You MUST be at least level 2 in order to acquire|r |T133816:0|t[Engrave Gloves - Ice Lance] |cRXP_WARN_as it is the level requirement of obtaining the|r |T133736:0|t[Comprehension Primer]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves - Ice Lance]
+    .train 401760,1
+    .xp >2,1
+step
+    #completewith next
+    .zone Elwynn Forest >> Travel to Elwynn Forest
+    .train 401760,1
+    .xp <2,1
+step
+    #optional
+    #label IceLance1
+    #completewith Research
+    .goto Elwynn Forest,48.33,41.90,15 >>Enter Northshire Abbey
+    .train 401760,1
+    .xp <2,1
+step
+    #optional
+    #requires IceLance1
+    #completewith Research
+    .goto 1429,48.79,41.58,12,0
+    .goto 1429,48.975,41.146,12,0
+    .goto 1429,49.262,40.633,12,0
+    .goto 1429,49.510,40.095,6,0
+    .goto 1429,49.691,40.230,6,0
+    .goto 1429,49.595,40.673,6,0
+    .goto 1429,49.324,40.492,6,0
+    .goto 1429,49.436,39.881,10,0
+    .goto Elwynn Forest,49.661,39.402,12 >>Travel toward |cRXP_FRIENDLY_Khelden Bremen|r upstairs
+    .train 401760,1
+    .xp <2,1
+step
+    #label Research
     .goto Elwynn Forest,49.661,39.402
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khelden Bremen|r inside
     .accept 77620 >> Accept Spell Research
     .target Khelden Bremen
     .train 401760,1
-step << Human Mage
-    .isOnQuest 77620
-    .goto Elwynn Forest,53.9,49.2,50,0
-    .goto Elwynn Forest,55.5,42.1,50,0
-    .goto Elwynn Forest,53.9,49.2
-    .goto Elwynn Forest,54.57,49.03
-    >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for the |T134939:0|t[|cRXP_FRIENDLY_[Spell Notes: CALE ENCI]|r]
+    .xp <2,1
+step
+    #optional
+    #completewith next
+    .goto 1429,48.303,42.098,15 >>Exit Northshire Abbey
+    .train 401760,1
+    .xp <2,1
+step
+    #loop
+    .goto Elwynn Forest,52.55,48.79,0
+    .goto Elwynn Forest,55.43,45.87,0
+    .goto Elwynn Forest,52.55,48.79,50,0
+    .goto Elwynn Forest,53.89,50.52,50,0
+    .goto Elwynn Forest,55.09,49.00,50,0
+    .goto Elwynn Forest,55.43,45.87,50,0
+    .goto Elwynn Forest,53.86,47.05,50,0
+    >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for the |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r
     .collect 203751,1,77620,1 -- Spell Notes: CALE ENCI (1)
     .mob Defias Thug
     .train 401760,1
-step << Human Mage
+    .xp <2,1
+step
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
+    .use 203751
+    .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
+    .xp <2,1
+step
+    #optional
+    #label IceLance2
+    #completewith Research2
+    .goto Elwynn Forest,48.33,41.90,15 >>Enter Northshire Abbey
     .isOnQuest 77620
-    .use 203751 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_[Spell Notes: CALE ENCI]|r]
-    .complete 77620,1 -- Learn: Engrave Gloves - Ice Lance
-    .train 401760,1
-step << Human Mage
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khelden Bremen|r
+    .xp <2,1
+step
+    #optional
+    #requires IceLance2
+    #completewith Research2
+    .goto 1429,48.79,41.58,12,0
+    .goto 1429,48.975,41.146,12,0
+    .goto 1429,49.262,40.633,12,0
+    .goto 1429,49.510,40.095,6,0
+    .goto 1429,49.691,40.230,6,0
+    .goto 1429,49.595,40.673,6,0
+    .goto 1429,49.324,40.492,6,0
+    .goto 1429,49.436,39.881,10,0
+    .goto Elwynn Forest,49.661,39.402,12 >>Travel toward |cRXP_FRIENDLY_Khelden Bremen|r upstairs
+    .isQuestComplete 77620
+    .xp <2,1
+step
+    #label Research2
     .goto Elwynn Forest,49.661,39.402
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khelden Bremen|r inside
     .turnin 77620 >> Turn in Spell Research
     .target Khelden Bremen
-    .train 401760,1
+    .isQuestComplete 77620
+    .xp <2,1
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
-<< Gnome Mage SoD
 #group RestedXP Rune Guide
 #subgroup Gloves
 #name Ice Lance - 2 (Dun Morogh)
+<< Gnome Mage SoD
 
-step << Gnome Mage
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r
+
+step
+    +|cRXP_WARN_You MUST be at least level 2 in order to acquire|r |T133816:0|t[Engrave Gloves - Ice Lance] |cRXP_WARN_as it is the level requirement of obtaining the|r |T133736:0|t[Comprehension Primer]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves - Ice Lance]
+    .train 401760,1
+    .xp >2,1
+step
+    #completewith next
+    .zone Dun Morogh >> Travel to Dun Morogh
+    .train 401760,1
+    .xp <2,1
+step
+    #optional
+    #completewith next
+    .goto 1426,28.910,69.703,15,0
+    .goto 1426,28.835,69.050,10,0
+    .goto 1426,28.835,68.702,10,0
+    .goto 1426,28.939,68.387,12 >> Enter Anvilmar
+    .train 401760,1
+    .xp <2,1
+step
     .goto Dun Morogh,28.709,66.366
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r inside
     .accept 77667 >> Accept Spell Research
     .target Marryk Nurribit
     .train 401760,1
-step << Gnome Mage
-    .isOnQuest 77667
+    .xp <2,1
+step
+    #optional
+    #completewith next
+    .goto 1426,28.751,69.058,12,0
+    .goto 1426,28.676,69.669,15 >> Exit Anvilmar
+    .train 401760,1
+    .xp <2,1
+step
     .goto Dun Morogh,26.733,72.552
-    >>Open the |cRXP_PICK_Rockjaw Footlocker|r. Loot it for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r]
+    >>Open the |cRXP_PICK_Rockjaw Footlocker|r. Loot it for the |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r
     .collect 203751,1,77667,1 -- Spell Notes: CALE ENCI (1)
     .train 401760,1
-step << Gnome Mage
-    .isOnQuest 77667
-    .use 203751 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r]
-    .complete 77667,1 -- Learn: Engrave Gloves - Ice Lance
-    .train 401760,1
-step << Gnome Mage
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r
+    .xp <2,1
+step
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
+    .use 203751
+    .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
+    .xp <2,1
+step
+    #optional
+    #completewith next
+    .goto 1426,28.676,69.669,15,0
+    .goto 1426,28.751,69.058,10,0
+    .goto 1426,28.758,68.721,10,0
+    .goto 1426,28.645,68.364,12 >> Enter Anvilmar
+    .isQuestComplete 77667
+    .xp <2,1
+step
     .goto Dun Morogh,28.709,66.366
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r
     .turnin 77667 >> Turn in Spell Research
     .target Marryk Nurribit
-    .train 401760,1
+    .isQuestComplete 77667
+    .xp <2,1
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
-<< Horde Mage SoD
 #group RestedXP Rune Guide
 #subgroup Gloves
-#name Icelance - 2 (Durotar)
+#name Ice Lance - 2 (Durotar)
+<< Troll Mage SoD
 
---Rune of Icelance
 
-step << Troll
+step
+    +|cRXP_WARN_You MUST be at least level 2 in order to acquire|r |T133816:0|t[Engrave Gloves - Ice Lance] |cRXP_WARN_as it is the level requirement of obtaining the|r |T133736:0|t[Comprehension Primer]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves - Ice Lance]
+    .train 401760,1
+    .xp >2,1
+step
+    #completewith next
+    .zone Durotar >> Travel to Durotar
+    .train 401760,1
+    .xp <2,1
+step
     .goto Durotar,42.51,69.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Mai'ah|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mai'ah|r
     .accept 77643 >>Accept Spell Research
     .target Mai'ah
+    .xp <2,1
 step
-    .goto Durotar,42.99,54.43
-    >>Loot the |cRXP_PICK_Waterlogged Stashbox|r for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r] inside the cave
+    #optional
+    #label IceLance1
+    #completewith Stashbox
+    .goto 1411,45.363,55.673
+    .subzone 365 >>Enter the Burning Blade Covern
+    .train 401760,1
+    .xp <2,1
+step
+    #optional
+    #requires IceLance1
+    #completewith Stashbox
+    .goto 1411,45.306,55.177,12,0
+    .goto 1411,44.103,55.254,12,0
+    .goto 1411,43.241,55.384,12,0
+    .goto Durotar,43.004,54.456,15 >>Travel toward the |cRXP_PICK_Waterlogged Stashbox|r
+    .train 401760,1
+    .xp <2,1
+step
+    #label Stashbox
+    .goto Durotar,43.004,54.456
+    >>Open the |cRXP_PICK_Waterlogged Stashbox|r underwater inside the cave. Loot it for the |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r
     .collect 203751,1 --Spell Notes: CALE ENCI (1)
     .train 401760,1
+    .xp <2,1
 step
-    .train 401760 >>Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r]
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
     .use 203751
-    .itemcount 203751,1
-step << Troll
+    .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
+    .xp <2,1
+step
+    #optional
+    #completewith next
+    .goto 1411,43.241,55.384,12,0
+    .goto 1411,44.103,55.254,12,0
+    .goto 1411,45.306,55.177,12,0
+    .goto 1411,45.245,56.520,15 >>Exit the Burning Blade Covern
+    .isQuestComplete 77643
+    .subzoneskip 363
+    .train 401760,1
+    .xp <2,1
+step
     .goto Durotar,42.51,69.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Mai'ah|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mai'ah|r
     .turnin 77643 >> Turn in Spell Research
     .target Mai'ah
-    ]])
+    .isQuestComplete 77643
+    .xp <2,1
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
-<< Horde Mage SoD
 #group RestedXP Rune Guide
 #subgroup Gloves
-#name Icelance - 2 (Tirisfal)
+#name Ice Lance - 2 (Tirisfal)
+<< Undead Mage SoD
 
 
-    --Rune of Icelance
-
-step << Undead
-    .goto Tirisfal Glades,30.94,66.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Isabella|r
+step
+    +|cRXP_WARN_You MUST be at least level 2 in order to acquire|r |T133816:0|t[Engrave Gloves - Ice Lance] |cRXP_WARN_as it is the level requirement of obtaining the|r |T133736:0|t[Comprehension Primer]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133816:0|t[Engrave Gloves - Ice Lance]
+    .train 401760,1
+    .xp >2,1
+step
+    #optional
+    #completewith next
+    .zone Tirisfal Glades >> Travel to Tirisfal Glades
+    .train 401760,1
+    .xp <2,1
+step
+    #optional
+    #completewith next
+    .goto 1420,31.324,66.173,15 >>Enter Deathknell's chapel
+    .train 401760,1
+    .xp <2,1
+step
+    .goto 1420,30.931,66.060
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Isabella|r
     .accept 77671 >>Accept Spell Research
     .target Isabella
+    .xp <2,1
 step
     .loop 25,Tirisfal Glades,36.13,68.74,36.46,69.49,36.85,70.02,37.42,69.58,38.05,69.79,37.91,69.22,38.03,68.77,38.49,68.28,38.72,67.07,38.59,66.25,38.65,65.07,37.62,65.36,36.93,65.38,36.51,65.42,36.85,66.59,37.45,67.95,36.93,68.16,36.13,68.74
-    >>Kill |cRXP_ENEMY_Scarlet Initiates|r. Loot them for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r]
-    .collect 203751,1 --Spell Notes: CALE ENCI (1)
+    >>Kill |cRXP_ENEMY_Scarlet Initiates|r. Loot them for the |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r
+    .collect 203751,1,77671,1 --Spell Notes: CALE ENCI (1)
     .mob Scarlet Initiate
     .train 401760,1
+    .xp <2,1
 step
-    .train 401760 >>Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r]
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
     .use 203751
-    .itemcount 203751,1
-step << Undead
-    .goto Tirisfal Glades,30.94,66.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Isabella|r
+    .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
+    .xp <2,1
+step
+    #optional
+    #completewith next
+    .goto 1420,31.324,66.173,15 >>Enter Deathknell's chapel
+    .isQuestComplete 77671
+    .xp <2,1
+step
+    .goto 1420,30.931,66.060
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Isabella|r
     .turnin 77671 >>Turn in Spell Research
     .target Isabella
+    .isQuestComplete 77671
+    .xp <2,1
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune Guide
 #subgroup Chest
-#name Regeneration - 14 (Westfall)
+#name Regeneration - 12 (Westfall)
+<< Alliance Mage SoD
 
-<< Human Mage SoD
 
 step
+    +|cRXP_WARN_You should be at least level 12 in order to acquire|r |T133815:0|t[Engrave Chest - Regeneration] |cRXP_WARN_in Westfall alone|r
     .train 401767,1
-    .goto Stormwind City,55.8,65.2,-1
-    .goto Stormwind City,32.4,80.0,-1
-    .goto Stormwind City,43.4,26.8,-1
-    .goto Stormwind City,36.0,74.8,-1
-    .goto Elwynn Forest,64.8,69.2,-1
-    .goto Ironforge,19.6,56.2,-1
-    .goto Undercity,69.6,39.2,-1
-    .goto Darnassus,38.8,60.4,-1
-    .goto Ashenvale,35.0,48.6,-1
-    .goto Ironforge,31.2,27.6,-1
-    .goto Duskwood,76.0,45.2,-1
-    .goto Darnassus,34.6,9.8,-1
-    .goto Wetlands,8.4, 56.6,-1
-    >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent/Arcane Goods Vendor.|r
-    .collect 211779,1
+    .xp >12,1
 step
+    #optional
+    #label Charm
+    #completewith Comprehension
+    .zone Stormwind City >> Travel to Stormwind City
     .train 401767,1
+step
+    #optional
+    #requires Charm
+    #completewith Comprehension
+    .goto Stormwind City,56.54,64.77,8 >>Enter Pestle's Apothecary
+    .train 401767,1
+step
+    #label Comprehension
+    .goto 1453,56.038,65.401
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kyra Boucher|r inside
+    >>|cRXP_BUY_Buy one or more|r |T135933:0|t[Comprehension Charms] |cRXP_BUY_from her|r
+    .collect 211779,1 --Comprehension Charm (1)
+    .target Kyra Boucher
+    .train 401767,1
+step
     #completewith next
-    .zone Westfall >>Travel to |cFFfa9602Westfall|r
+    .zone Westfall >>Travel to Westfall
+    .train 401767,1
 step
     #loop
-    .goto Westfall,44.6,65.6,20,0
-    .goto Westfall,45.8,71.4,20,0
-    .goto Westfall,43.6,71.0,20,0
-    .goto Westfall,43.6,66.4,20,0
-    .goto Westfall,33.2,58.6,20,0
-    .goto Westfall,36.0,53.0,20,0
-    .goto Westfall,38.6,57.6,20,0
-    .goto Westfall,29.2,51.0,20,0
-    .goto Westfall,31.6,44.0,20,0
-    .goto Westfall,36.0,53.0,20,0
-    >>Kill |cRXP_ENEMY_Defias Pillagers|r for |cRXP_LOOT_|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r]|r
-    .train 401417,1
-    .collect 208754,1
+    .goto 1436,35.043,53.785,0
+    .goto 1436,43.045,67.127,0
+    .goto 1436,43.459,70.800,0
+    .goto 1436,45.458,70.322,0
+    .goto 1436,44.547,65.624,0
+    .goto 1436,35.043,53.785,40,0
+    .goto 1436,35.952,53.085,40,0
+    .goto 1436,36.549,54.105,40,0
+    .goto 1436,36.025,54.822,40,0
+    .goto 1436,38.732,56.872,40,0
+    .goto 1436,43.045,67.127,40,0
+    .goto 1436,42.825,68.290,40,0
+    .goto 1436,42.524,69.212,40,0
+    .goto 1436,42.103,69.530,40,0
+    .goto 1436,42.240,70.517,40,0
+    .goto 1436,43.459,70.800,40,0
+    .goto 1436,43.698,69.251,40,0
+    .goto 1436,43.798,67.692,40,0
+    .goto 1436,44.042,69.247,40,0
+    .goto 1436,44.333,68.588,40,0
+    .goto 1436,45.458,70.322,40,0
+    .goto 1436,45.794,69.292,40,0
+    .goto 1436,44.952,67.095,40,0
+    .goto 1436,44.547,65.624,40,0
+    >>Kill |cRXP_ENEMY_Defias Pillagers|r. Loot them for the |T134939:0|t|cRXP_LOOT_[Spell Notes: TENGI RONEERA]|r
+    .collect 208754,1 --Spell Notes: TENGI RONEERA (1)
     .mob Defias Pillager
+    .train 401767,1
 step
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
-    .train 401767 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r] |cRXP_WARN_to learn|r |T132871:0|t[Regeneration.]
+    .train 401767 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: TENGI RONEERA]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Regeneration]
     .use 208754
---     .engrave 5,401417 >> |cRXP_WARN_Engrave your|r |T133815:0|t|cRXP_LOOT_[Chest] |cRXP_WARN_with|r |T133815:0|t[Engrave Chest - Regeneration]
-]])
-
-RXPGuides.RegisterGuide([[
-#classic
-#group RestedXP Rune Guide
-#subgroup Chest << Mage
-#name Regeneration - 12 (Loch Modan)
-
-<< Gnome Mage SoD
-
--- << Alliance
-
-step
-    .train 401767,1
-    .goto Stormwind City,55.8,65.2,-1
-    .goto Stormwind City,32.4,80.0,-1
-    .goto Stormwind City,43.4,26.8,-1
-    .goto Stormwind City,36.0,74.8,-1
-    .goto Elwynn Forest,64.8,69.2,-1
-    .goto Ironforge,19.6,56.2,-1
-    .goto Undercity,69.6,39.2,-1
-    .goto Darnassus,38.8,60.4,-1
-    .goto Ashenvale,35.0,48.6,-1
-    .goto Ironforge,31.2,27.6,-1
-    .goto Duskwood,76.0,45.2,-1
-    .goto Darnassus,34.6,9.8,-1
-    .goto Wetlands,8.4, 56.6,-1
-    .goto Hillsbrad Foothills,50.8,59.0,-1
-    >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
-    .collect 211779,1
-step
-    .train 401767,1
-    #completewith next
-    .zone Loch Modan >>Travel to |cFFfa9602Loch Modan|r
-step
-    .goto 1432,54.36,26.78,5,0
-    .goto 1432,54.17,27.03
-    .train 401767,1
-    >>Click the |cRXP_PICK_Stack of Books|r for |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r]|r
-    .collect 208754,1
-step
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
-    .train 401767 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r] |cRXP_WARN_to learn|r |T132871:0|t[Regeneration.]
-    .use 208754
--- step
---     .engrave 5,401417 >> Open your character sheet and engrave your chest with |T132871:0|t[Regeneration] |cRXP_WARN_highly recommended.|r
+    .itemcount 208754,1 --Spell Notes: TENGI RONEERA (1)
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune Guide
 #subgroup Chest
-#name Regeneration - 14 (The Barrens)
--- #name 20 - Regeneration (The Barrens) << Shaman
+#name Regeneration - 12 (Loch Modan)
+<< Alliance Mage SoD
 
+
+step
+    +|cRXP_WARN_You should be at least level 12 in order to acquire|r |T133815:0|t[Engrave Chest - Regeneration] |cRXP_WARN_in Loch Modan alone|r
+    .train 401767,1
+    .xp >12,1
+step
+    #optional
+    #label Charm
+    #completewith Comprehension
+    .zone Ironforge >> Travel to Ironforge
+    .train 401767,1
+step
+    #optional
+    #requires Charm
+    #completewith Comprehension
+    .goto Ironforge,31.33,27.80,8,0
+    .goto Ironforge,30.47,26.57,6 >>Enter |cRXP_FRIENDLY_Ginny Longberry|r's house
+    .train 401767,1
+step
+    #label Comprehension
+    .goto Ironforge,31.33,27.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ginny Longberry|r inside
+    >>|cRXP_BUY_Buy one or more|r |T135933:0|t[Comprehension Charms] |cRXP_BUY_from her|r
+    .collect 211779,1 --Comprehension Charm (1)
+    .target Ginny Longberry
+    .train 401767,1
+step
+    #label Loch1
+    #completewith Tengi
+    .zone Loch Modan >>Travel to Loch Modan
+    .train 401767,1
+step
+    #optional
+    #requires Loch1
+    #completewith next
+    .goto 1432,54.33,26.82,5 >> Enter the tent
+    .train 401767,1
+step
+    #label Tengi
+    .goto 1432,54.33,26.82,5,0
+    .goto 1432,54.17,27.03
+    >>Open the |cRXP_PICK_Pile of Stolen Books|r inside. Loot them for the |T134939:0|t|cRXP_LOOT_[Spell Notes: TENGI RONEERA]|r
+    .collect 208754,1 --Spell Notes: TENGI RONEERA (1)
+    .train 401767,1
+step
+    .train 401767 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: TENGI RONEERA]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Regeneration]
+    .use 208754
+    .itemcount 208754,1 --Spell Notes: TENGI RONEERA (1)
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+#group RestedXP Rune Guide
+#subgroup Chest
+#name Regeneration - 12 (The Barrens)
 << Horde Mage SoD
 
+
 step
+    +|cRXP_WARN_You should be at least level 12 in order to acquire|r |T133815:0|t[Engrave Chest - Regeneration] |cRXP_WARN_in The Barrens alone|r
     .train 401767,1
-    .goto Orgrimmar,45.6,56.8,
-    .goto Orgrimmar,46.2,46.6,
-    .goto Orgrimmar,45.8,40.6,
-    .goto The Barrens,51.4,30.2,
-    .goto Swamp of Sorrows,45.8,53.0,
-    .goto Thunder Bluff,42.6,55.4,
-    .goto Dustwallow Marsh,36.4,30.4,
-    .goto Undercity,82.6,16.0,
-    .goto Thunder Bluff,41.8,55.0,
-    .goto Thousand Needles,45.2,50.6,
-    .goto Stonetalon Mountains,47.6,61.6,
-    >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
-    .collect 211779,1
+    .xp >12,1
 step
+    #optional
+    #ah
+    .goto Orgrimmar,50.67,70.39,0
+    .goto Orgrimmar,53.74,64.60,15,0
+    .goto Orgrimmar,55.54,64.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Wabang|r
+    >>|cRXP_BUY_Buy a|r |T134237:0|t[Kolkar Booty Key] |cRXP_BUY_from the Auction House|r
+    >>|cRXP_WARN_This will save you a few minutes later|r
+    .collect 5020,1 --Kolkar Booty Key (1)
+    .target Auctioneer Wabang
+    .zoneskip Orgrimmar,1
     .train 401767,1
-    #completewith next
-    .zone The Barrens >>Travel to |cFFfa9602The Barrens|r
 step
-    .goto The Barrens,43.57,23.48,50,0
-    .goto The Barrens,43.84,21.47,50,0
-    .goto The Barrens,45.04,20.04,50,0
-    .goto The Barrens,46.60,22.98,50,0
-    .goto The Barrens,45.71,25.63,50,0
-    .goto The Barrens,43.55,26.39,50,0
-    .goto The Barrens,42.21,26.92,50,0
-    .goto The Barrens,42.02,24.68,50,0
-    .goto The Barrens,43.57,23.48
-    >>Kill |cRXP_ENEMY_Kolkar Wranglers|r and |cRXP_ENEMY_Kolkar Stormers|r. Loot them for a |T134237:0|t[|cRXP_LOOT_Kolkar Booty Key|r]
+    #optional
+    #ah
+    .goto Thunder Bluff,45.23,59.40,0
+    .goto Thunder Bluff,40.41,51.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Stampi|r
+    >>|cRXP_BUY_Buy a|r |T134237:0|t[Kolkar Booty Key] |cRXP_BUY_from the Auction House|r
+    >>|cRXP_WARN_This will save you a few minutes later|r
+    .collect 5020,1 --Kolkar Booty Key (1)
+    .target Auctioneer Stampi
+    .zoneskip Thunder Bluff,1
+    .train 401767,1
+step
+    #completewith Regeneration
+    .zone The Barrens >>Travel to The Barrens
+    .train 401767,1
+step
+    .goto 1413,51.393,30.203
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hula'mahi|r
+    >>|cRXP_BUY_Buy one or more|r |T135933:0|t[Comprehension Charms] |cRXP_BUY_from him|r
+    .collect 211779,1 --Comprehension Charm (1)
+    .target Hula'mahi
+    .train 401767,1
+step
+    #loop
+    .goto The Barrens,45.78,25.52,0
+    .goto The Barrens,43.86,21.38,0
+    .goto The Barrens,43.56,26.30,0
+    .goto The Barrens,45.78,25.52,50,0
+    .goto The Barrens,46.54,22.99,50,0
+    .goto The Barrens,45.03,20.09,50,0
+    .goto The Barrens,43.86,21.38,50,0
+    .goto The Barrens,43.49,23.57,50,0
+    .goto The Barrens,43.56,26.30,50,0
+    >>Kill |cRXP_ENEMY_Kolkar Wranglers|r and |cRXP_ENEMY_Kolkar Stormers|r. Loot them for a |T134237:0|t[Kolkar Booty Key]
     .collect 5020,1 --Kolkar Booty Key (1)
     .mob Kolkar Wrangler
     .mob Kolkar Stormer
-step << Mage
-    #loop
-    .goto The Barrens,44.3,37.7,0
-    .goto The Barrens,43,23.5,0
-    .goto The Barrens,52.7,41.8,0
-    .goto The Barrens,44.3,37.7,20,0
-    .goto The Barrens,43,23.5,20,0
-    .goto The Barrens,52.7,41.8,20,0
-    >>Open a |cRXP_PICK_Kolkar Booty|r chest for |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r]|r
     .train 401767,1
-    .collect 5020,1
-    .collect 208754,1
--- step << Shaman
---     #loop
---     .goto The Barrens,44.3,37.7,20,0
---     .goto The Barrens,43,23.5,20,0
---     .goto The Barrens,52.7,41.8,20,0
---     >>Click on the |cRXP_PICK_Chest|r for |T135832:0|t[Tempest Icon.]
---     .train 401417,1
---     .collect 208754,1
 step
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
-    .train 401767 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r] |cRXP_WARN_to learn|r |T132871:0|t[Regeneration.]
+    #label Regeneration
+    .goto The Barrens,43.02,23.52,-1
+--  .goto The Barrens,52.73,41.84,-1
+--   .goto The Barrens,44.33,37.66,-1
+    >>Open the |cRXP_PICK_Kolkars' Booty|r on the ground. Loot it for the |T134939:0|t|cRXP_LOOT_[Spell Notes: TENGI RONEERA]|r
+    .collect 208754,1 --Spell Notes: TENGI RONEERA (1)
+    .train 401767,1
+step
+    .train 401767 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: TENGI RONEERA]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Regeneration]
     .use 208754
--- step
---     --.engrave 5,401417 >> Open your character sheet and engrave your chest with |T132871:0|t[Regeneration] |cRXP_WARN_highly recommended.|r
+    .itemcount 208754,1 --Spell Notes: TENGI RONEERA (1)
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune Guide
-#subgroup Chest << Mage
-#name Regeneration - 13 (Silverpine Forest)
+#subgroup Chest
+#name Regeneration - 12 (Silverpine Forest)
 << Horde Mage SoD
 
--- << Horde
 
 step
+    +|cRXP_WARN_You should be at least level 12 in order to acquire|r |T133815:0|t[Engrave Chest - Regeneration] |cRXP_WARN_in Silverpine Forest alone|r
     .train 401767,1
-    .goto Orgrimmar,45.6,56.8,-1 
-    .goto Orgrimmar,46.2,46.6,-1 
-    .goto Orgrimmar,45.8,40.6,-1 
-    .goto The Barrens,51.4,30.2,-1 
-    .goto Swamp of Sorrows,45.8,53.0,-1 
-    .goto Thunder Bluff,42.6,55.4,-1 
-    .goto Dustwallow Marsh,36.4,30.4,-1 
-    .goto Undercity,82.6,16.0,-1 
-    .goto Thunder Bluff,41.8,55.0,-1 
-    .goto Thousand Needles,45.2,50.6,-1 
-    .goto Stonetalon Mountains,47.6,61.6,-1 
-    >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
-    .collect 211779,1
+    .xp >12,1
 step
-    .train 401767,1
+    #optional
+    #label Charm
     #completewith next
-    .zone Silverpine Forest >>Travel to |cFFfa9602Silverpine Forest|r
+    .zone Undercity >> Travel to the Undercity
+    .train 401767,1
+step
+    #label Comprehension
+    .goto 1458,69.700,39.052
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thomas Mordan|r
+    >>|cRXP_BUY_Buy one or more|r |T135933:0|t[Comprehension Charms] |cRXP_BUY_from him|r
+    .collect 211779,1 --Comprehension Charm (1)
+    .target Thomas Mordan
+    .train 401767,1
+step
+    #completewith next
+    .zone Silverpine Forest >>Travel to Silverpine Forest
+    .train 401767,1
 step
     #loop
-    .goto Silverpine Forest,52.6,56.6,20,0
-    .goto Silverpine Forest,56.6,62.8,20,0
-    .goto Silverpine Forest,55.6,72.8,20,0
-    .goto Silverpine Forest,51.6,71.0,20,0
-    .goto Silverpine Forest,50.8,61.6,20,0
-    >>Kill |cRXP_ENEMY_Dalaran Apprentices|r loot them for |cRXP_LOOT_|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r]|r
-    .train 401767,1
-    .collect 208754,1
+    .goto 1421,52.375,56.808,0
+    .goto 1421,49.614,60.886,0
+    .goto 1421,51.556,64.300,0
+    .goto 1421,52.689,71.258,0
+    .goto 1421,52.375,56.808,45,0
+    .goto 1421,51.644,57.939,45,0
+    .goto 1421,50.539,59.184,45,0
+    .goto 1421,50.826,59.697,45,0
+    .goto 1421,50.053,60.021,45,0
+    .goto 1421,49.614,60.886,45,0
+    .goto 1421,50.449,60.894,45,0
+    .goto 1421,50.914,61.289,45,0
+    .goto 1421,51.749,61.612,45,0
+    .goto 1421,50.566,62.991,45,0
+    .goto 1421,51.556,64.300,45,0
+    .goto 1421,52.412,63.834,45,0
+    .goto 1421,51.969,65.028,45,0
+    .goto 1421,52.850,66.113,45,0
+    .goto 1421,51.986,66.138,45,0
+    .goto 1421,52.689,71.258,45,0
+    >>Kill |cRXP_ENEMY_Dalaran Apprentices|r. Loot them for the |T134939:0|t|cRXP_LOOT_[Spell Notes: TENGI RONEERA]|r
+    .collect 208754,1 --Spell Notes: TENGI RONEERA (1)
     .mob Dalaran Apprentice
+    .train 401767,1
 step
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
-    .train 401767 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r] |cRXP_WARN_to learn|r |T132871:0|t[Regeneration.]
+    .train 401767 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: TENGI RONEERA]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Regeneration]
     .use 208754
--- step
---     .engrave 5,401417 >> Open your character sheet and engrave your chest with |T132871:0|t[Regeneration] |cRXP_WARN_highly recommended.|r
+    .itemcount 208754,1 --Spell Notes: TENGI RONEERA (1)
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune Guide
-#subgroup Chest << Mage
+#subgroup Chest
 #name Fingers of Frost - 10 (Elwynn Forest)
+<< Alliance Mage SoD
 
-<< Human Mage SoD
-
--- << Alliance
 
 step
-    .goto Stormwind City,55.8,65.2,-1
-    .goto Stormwind City,32.4,80.0,-1
-    .goto Stormwind City,43.4,26.8,-1
-    .goto Stormwind City,36.0,74.8,-1
-    .goto Elwynn Forest,64.8,69.2,-1
-    .goto Ironforge,19.6,56.2,-1
-    .goto Undercity,69.6,39.2,-1
-    .goto Darnassus,38.8,60.4,-1
-    .goto Ashenvale,35.0,48.6,-1
-    .goto Ironforge,31.2,27.6,-1
-    .goto Duskwood,76.0,45.2,-1
-    .goto Darnassus,34.6,9.8,-1
-    .goto Wetlands,8.4, 56.6,-1
+    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T133815:0|t[Engrave Chest - Fingers of Frost] |cRXP_WARN_in Elwynn Forest alone|r
     .train 401765,1
-    >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
-    .collect 211779,1
+    .xp >10,1
 step
+    #optional
+    #label Charm
+    #completewith Comprehension
+    .zone Stormwind City >> Travel to Stormwind City
     .train 401765,1
+step
+    #optional
+    #requires Charm
+    #completewith Comprehension
+    .goto Stormwind City,56.54,64.77,8 >>Enter Pestle's Apothecary
+    .train 401765,1
+step
+    #label Comprehension
+    .goto 1453,56.038,65.401
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kyra Boucher|r inside
+    >>|cRXP_BUY_Buy one or more|r |T135933:0|t[Comprehension Charms] |cRXP_BUY_from her|r
+    .collect 211779,1 --Comprehension Charm (1)
+    .target Kyra Boucher
+    .train 401765,1
+step
     #completewith next
-    .zone Elwynn Forest >>Travel to |cFFfa9602Elwynn Forest|r
+    .zone Elwynn Forest >>Travel to Elwynn Forest
+    .train 401765,1
 step
     #loop
-    .goto Elwynn Forest,27.0,88.0,20,0
-    .goto Elwynn Forest,27.0,92.8,20,0
-    >>Kill |cRXP_ENEMY_Hogger|r loot him for |cRXP_LOOT_|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF.|r]|r |cRXP_WARN_Additionally Kill and loot every rare you encounter|r
+    .goto Elwynn Forest,27.0,86.7,0
+    .goto Elwynn Forest,26.1,89.9,0
+    .goto Elwynn Forest,25.2,92.7,0
+    .goto Elwynn Forest,27.0,93.9,0
+    .goto Elwynn Forest,27.0,86.7,70,0
+    .goto Elwynn Forest,26.1,89.9,70,0
+    .goto Elwynn Forest,25.2,92.7,70,0
+    .goto Elwynn Forest,27.0,93.9,70,0
+    >>Kill |cRXP_ENEMY_Hogger|r. Loot him for the |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r
+    .collect 203753,1 --Spell Notes: RING SEFF OSTROF (1)
+    .unitscan Hogger
     .train 401765,1
-    .collect 203753,1
-    .mob Hogger
 step
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
-    .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] |cRXP_WARN_to learn|r |T236227:0|t[Fingers of Frost.]
+    .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Fingers of Frost]
     .use 203753
--- step
---     .engrave 5,400647 >> Open your character sheet and engrave your chest with |T236227:0|t[Fingers of Frost]
+    .itemcount 203753,1 --Spell Notes: RING SEFF OSTROF (1)
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune Guide
-#subgroup Chest << Mage
+#subgroup Chest
 #name Fingers of Frost - 10 (Dun Morogh)
+<< Alliance Mage SoD
 
-<< Gnome Mage SoD
-
--- << Alliance
 
 step
+    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T133815:0|t[Engrave Chest - Fingers of Frost] |cRXP_WARN_in Dun Morogh alone|r
     .train 401765,1
-    .goto Stormwind City,55.8,65.2,-1
-    .goto Stormwind City,32.4,80.0,-1
-    .goto Stormwind City,43.4,26.8,-1
-    .goto Stormwind City,36.0,74.8,-1
-    .goto Elwynn Forest,64.8,69.2,-1
-    .goto Ironforge,19.6,56.2,-1
-    .goto Undercity,69.6,39.2,-1
-    .goto Darnassus,38.8,60.4,-1
-    .goto Ashenvale,35.0,48.6,-1
-    .goto Ironforge,31.2,27.6,-1
-    .goto Duskwood,76.0,45.2,-1
-    .goto Darnassus,34.6,9.8,-1
-    .goto Wetlands,8.4, 56.6,-1
-    >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
-    .collect 211779,1
+    .xp >10,1
 step
+    #optional
+    #label Charm
+    #completewith Comprehension
+    .zone Ironforge >> Travel to Ironforge
     .train 401765,1
+step
+    #optional
+    #requires Charm
+    #completewith Comprehension
+    .goto Ironforge,31.33,27.80,8,0
+    .goto Ironforge,30.47,26.57,6 >>Enter |cRXP_FRIENDLY_Ginny Longberry|r's house
+    .train 401765,1
+step
+    #label Comprehension
+    .goto Ironforge,31.33,27.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ginny Longberry|r inside
+    >>|cRXP_BUY_Buy one or more|r |T135933:0|t[Comprehension Charms] |cRXP_BUY_from her|r
+    .collect 211779,1 --Comprehension Charm (1)
+    .target Ginny Longberry
+    .train 401765,1
+step
     #completewith next
-    .zone Dun Morogh >>Travel to |cFFfa9602Dun Morogh|r
+    .zone Dun Morogh >>Travel to Dun Morogh
+    .train 401765,1
 step
     #loop
-    .goto Dun Morogh,62.6,46.2,20,0
-    .goto Dun Morogh,62.2,48.0,20,0
-    .train 401765,1
-    .collect 203753,1
-    >>Kill |cRXP_ENEMY_Vagash|r loot him for |cRXP_LOOT_|T134939:0|t|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF.|r |cRXP_WARN_Additionally Kill and loot every rare you encounter|r
+    .goto 1426,62.538,46.195,0
+    .goto 1426,62.094,47.154,40,0
+    .goto 1426,62.538,46.195,40,0
+    .goto 1426,62.094,47.154,40,0
+    .goto 1426,62.434,48.989,40,0
+    >>Kill |cRXP_ENEMY_Vagash|r. Loot him for the |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r
+    >>|cRXP_WARN_NOTE: The|r |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r |cRXP_WARN_can also drop off every rare mob in Dun Morogh, and |cRXP_ENEMY_Old Icebeard|r, and |cRXP_ENEMY_Mangeclaw|r|r
+    .collect 203753,1 --Spell Notes: RING SEFF OSTROF (1)
     .mob Vagash
-    .mob Old Icebeard
-    .mob Great Father Arcticus
-    .mob Timber
+    .train 401765,1
 step
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
-    .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] |cRXP_WARN_to train|r |T236227:0|t[Fingers of Frost.]
+    .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Fingers of Frost]
     .use 203753
--- step
---     .engrave 5,400647 >> Open your character sheet and engrave your chest with |T236227:0|t[Fingers of Frost]
+    .itemcount 203753,1 --Spell Notes: RING SEFF OSTROF (1)
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune Guide
 #subgroup Chest
-#name Fingers of Frost - 6 (Tirisfal Glades)
-
+#name Fingers of Frost - 8 (Tirisfal Glades)
 << Horde Mage SoD
 
+
 step
+    +|cRXP_WARN_You should be at least level 8 in order to acquire|r |T133815:0|t[Engrave Chest - Fingers of Frost] |cRXP_WARN_in Tirisfal Glades alone|r
     .train 401765,1
-    .goto Orgrimmar,45.6,56.8,
-    .goto Orgrimmar,46.2,46.6,
-    .goto Orgrimmar,45.8,40.6,
-    .goto The Barrens,51.4,30.2,
-    .goto Swamp of Sorrows,45.8,53.0,
-    .goto Thunder Bluff,42.6,55.4,
-    .goto Dustwallow Marsh,36.4,30.4,
-    .goto Undercity,82.6,16.0,
-    .goto Thunder Bluff,41.8,55.0,
-    .goto Thousand Needles,45.2,50.6,
-    .goto Stonetalon Mountains,47.6,61.6,
-    >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
-    .collect 211779,1
+    .xp >8,1
 step
-    .train 401765,1
+    #optional
+    #label Charm
     #completewith next
-    .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
-step
+    .zone Undercity >> Travel to the Undercity
     .train 401765,1
-    .goto Tirisfal Glades,25.6,48.2
-    >>Kill |cRXP_ENEMY_Gillgar|r. Loot him for the |cRXP_LOOT_|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r]|r
-    .collect 203753,1
+step
+    #label Comprehension
+    .goto 1458,69.700,39.052
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thomas Mordan|r
+    >>|cRXP_BUY_Buy one or more|r |T135933:0|t[Comprehension Charms] |cRXP_BUY_from him|r
+    .collect 211779,1 --Comprehension Charm (1)
+    .target Thomas Mordan
+    .train 401765,1
+step
+    #completewith next
+    .zone Tirisfal Glades >>Travel to Tirisfal Glades
+    .train 401765,1
+step
+    #optional
+    #completewith next
+    .goto 1420,28.649,46.992,40,0
+    .goto 1420,27.849,46.734,40,0
+    .goto 1420,27.076,46.855,40,0
+    .goto 1420,26.213,47.473,40,0
+    .goto Tirisfal Glades,25.53,48.39,60 >>Travel toward |cRXP_ENEMY_Gillgar|r
+step
+    .goto Tirisfal Glades,25.53,48.39
+    >>Kill |cRXP_ENEMY_Gillgar|r. Loot him for the |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r
+    .collect 203753,1 --Spell Notes: RING SEFF OSTROF (1)
     .mob Gillgar
+    .train 401765,1
 step
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
-    .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] |cRXP_WARN_to learn|r |T236227:0|t[Fingers of Frost.]
+    .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Fingers of Frost]
     .use 203753
+    .itemcount 203753,1 --Spell Notes: RING SEFF OSTROF (1)
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -484,343 +740,317 @@ RXPGuides.RegisterGuide([[
 << Horde Mage SoD
 #group RestedXP Rune Guide
 #subgroup Chest
-#name Fingers of Frost - 10 (Durotar)
+#name Fingers of Frost - 8 (Durotar)
+
 
 step
+    +|cRXP_WARN_You should be at least level 8 in order to acquire|r |T133815:0|t[Engrave Chest - Fingers of Frost] |cRXP_WARN_in Durotar alone|r
     .train 401765,1
-    .goto Orgrimmar,45.6,56.8,
-    .goto Orgrimmar,46.2,46.6,
-    .goto Orgrimmar,45.8,40.6,
-    .goto The Barrens,51.4,30.2,
-    .goto Swamp of Sorrows,45.8,53.0,
-    .goto Thunder Bluff,42.6,55.4,
-    .goto Dustwallow Marsh,36.4,30.4,
-    .goto Undercity,82.6,16.0,
-    .goto Thunder Bluff,41.8,55.0,
-    .goto Thousand Needles,45.2,50.6,
-    .goto Stonetalon Mountains,47.6,61.6,
-    >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
-    .collect 211779,1
+    .xp >8,1
 step
-    .train 401765,1
+    #optional
     #completewith next
-    .zone Durotar >>Travel to |cFFfa9602Durotar|r
-step
-    --PERMOK: More accurate coordinates
+    .zone Orgrimmar >> Travel to Orgrimmar
     .train 401765,1
-    .goto Durotar,67.4,87.8
-    >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for the |cRXP_LOOT_|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r]|r
-    .collect 203753,1
-    .mob Zalazane
 step
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
-    .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] |cRXP_WARN_to learn|r |T236227:0|t[Fingers of Frost.]
+    #label Comprehension
+    .goto 1454,45.439,56.550
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horthus|r inside
+    >>|cRXP_BUY_Buy one or more|r |T135933:0|t[Comprehension Charms] |cRXP_BUY_from him|r
+    .collect 211779,1 --Comprehension Charm (1)
+    .target Horthus
+    .train 401765,1
+step
+    #completewith next
+    .zone Durotar >>Travel to Durotar
+    .train 401765,1
+step
+    .goto 1411,66.936,87.360,40,0
+    .goto 1411,67.376,86.710,40,0
+    .goto 1411,67.502,87.618
+    >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for the |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r
+    .collect 203753,1 --Spell Notes: RING SEFF OSTROF (1)
+    .mob Zalazane
+    .train 401765,1
+    .xp >12,1
+step
+    .goto 1411,42.123,26.666,40,0
+    .goto 1411,42.654,26.448,40,0
+    .goto 1411,42.123,26.666
+    >>Kill |cRXP_ENEMY_Fizzle Darkstorm|r. Loot him for the |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r
+    .collect 203753,1 --Spell Notes: RING SEFF OSTROF (1)
+    .mob Fizzle Darkstorm
+    .train 401765,1
+    .xp <12,1
+step
+    .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Fingers of Frost]
     .use 203753
+    .itemcount 203753,1 --Spell Notes: RING SEFF OSTROF (1)
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune Guide
-#subgroup Chest << Mage
---#subgroup Gloves << Warlock
-#name Burnout - 8 (Dun Morogh) << Mage
---#name 8 - Chaos Bolt (Dun Morogh) << Warlock
+#subgroup Chest
+#name Burnout - 6 (Dun Morogh)
+<< Alliance Mage SoD
 
-<< Gnome Mage SoD
 
 step
+    +|cRXP_WARN_You should be at least level 6 in order to acquire|r |T132686:0|t[Engrave Chest - Burnout] |cRXP_WARN_in Dun Morogh with another player|r
     .train 401759,1
-    .goto Stormwind City,55.8,65.2,-1
-    .goto Stormwind City,32.4,80.0,-1
-    .goto Stormwind City,43.4,26.8,-1
-    .goto Stormwind City,36.0,74.8,-1
-    .goto Elwynn Forest,64.8,69.2,-1
-    .goto Ironforge,19.6,56.2,-1
-    .goto Undercity,69.6,39.2,-1
-    .goto Darnassus,38.8,60.4,-1
-    .goto Ashenvale,35.0,48.6,-1
-    .goto Ironforge,31.2,27.6,-1
-    .goto Duskwood,76.0,45.2,-1
-    .goto Darnassus,34.6,9.8,-1
-    .goto Wetlands,8.4, 56.6,-1
-    >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
-    .collect 211779,1
+    .xp >6,1
 step
-    .train 401759,1
     #completewith next
-    .zone Dun Morogh >>Travel to |cFFfa9602Dun Morogh|r
-step
-    .goto Dun Morogh,69.6,58.2
-    >>Kill |cRXP_ENEMY_Frozen Trogg|r |cRXP_WARN_by using strong fire spells, if you can't get it down consider grouping up|r loot him for |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Burnout|r]
+    .zone Dun Morogh >>Travel to Dun Morogh
     .train 401759,1
-    .collect 203748,1
+step
+    .goto 1426,69.369,58.311
+    >>|cRXP_WARN_Look for other Mages or Warlocks near the |cRXP_ENEMY_Frozen Trogg|r or in General Chat (Type /1 into chat)|r
+    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Trogg|r to apply a stack of|r |T134916:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Trogg|r. Loot it for the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r
+    .collect 203748,1 --Spell Notes: Burnout (1)
+    .train 401759,1
     .mob Frozen Trogg
 step
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
-    .train 401759 >>|cRXP_WARN_Use|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Burnout|r] |cRXP_WARN_to learn|r |T236207:0|t[Burnout.]
+    .train 401759 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r |cRXP_WARN_to learn|r |T132686:0|t[Engrave Chest - Burnout]
     .use 203748
--- step
---.engrave 5,412286 >> Open your character sheet and engrave your chest with |T236207:0|t[Burnout.] << Mage
--- step
---     --.engrave 9,403629 >> Open your character sheet and engrave your chest with |T236291:0|t[Chaos Bolt.] << Warlock
+    .itemcount 203748,1 --Spell Notes: Burnout (1)
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune Guide
 #subgroup Chest
--- #subgroup Gloves << Warlock
-#name Burnout - 8 (Elwynn Forest) << Mage
-
-<< Human Mage SoD
-
-step
-    .train 401759,1
-    .goto Stormwind City,55.8,65.2,-1
-    .goto Stormwind City,32.4,80.0,-1
-    .goto Stormwind City,43.4,26.8,-1
-    .goto Stormwind City,36.0,74.8,-1
-    .goto Elwynn Forest,64.8,69.2,-1
-    .goto Ironforge,19.6,56.2,-1
-    .goto Undercity,69.6,39.2,-1
-    .goto Darnassus,38.8,60.4,-1
-    .goto Ashenvale,35.0,48.6,-1
-    .goto Ironforge,31.2,27.6,-1
-    .goto Duskwood,76.0,45.2,-1
-    .goto Darnassus,34.6,9.8,-1
-    .goto Wetlands,8.4, 56.6,-1
-    >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
-    .collect 211779,1
-step
-    .train 401759,1
-    #completewith next
-    .zone Elwynn Forest >>Travel to |cFFfa9602Elwynn Forest.|r
-step
-    .goto Elwynn Forest,77.0,51.8
-    >>Kill |cRXP_ENEMY_Frozen Murloc|r |cRXP_WARN_by using strong fire spells, if you can't get it down consider grouping up|r loot him for |cRXP_LOOT_|cRXP_FRIENDLY_Spell Notes: Burnout.|r|r
-    .train 412286,1
-    .collect 203748,1
-    .mob Frozen Murloc
-step
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
-    .train 401759 >>|cRXP_WARN_Use|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Burnout|r] |cRXP_WARN_to learn|r |T236207:0|t[Burnout.]
-    .use 203748
--- step
-    --.engrave 5,412286 >> Open your character sheet and engrave your chest with |T236207:0|t[Burnout.] << Mage
--- step
---
---     --.engrave 9,403629 >> Open your character sheet and engrave your chest with |T236291:0|t[Chaos Bolt.] << Warlock
-]])
-
-RXPGuides.RegisterGuide([[
-#classic
-#group RestedXP Rune Guide
-#subgroup Chest
-#name Burnout - 8 (Durotar) << Horde Mage
-
-
-step
-    .train 401759,1
-    .goto Orgrimmar,45.6,56.8,
-    .goto Orgrimmar,46.2,46.6,
-    .goto Orgrimmar,45.8,40.6,
-    .goto The Barrens,51.4,30.2,
-    .goto Swamp of Sorrows,45.8,53.0,
-    .goto Thunder Bluff,42.6,55.4,
-    .goto Dustwallow Marsh,36.4,30.4,
-    .goto Undercity,82.6,16.0,
-    .goto Thunder Bluff,41.8,55.0,
-    .goto Thousand Needles,45.2,50.6,
-    .goto Stonetalon Mountains,47.6,61.6,
-    >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
-    .collect 211779,1
-step
-    .train 401759,1
-    #completewith next
-    .zone Durotar >>Travel to |cFFfa9602Durotar.|r
-step
-    .goto Durotar,58.70,45.54
-    >>Cast |T135812:0|t[Fireball] on the |cRXP_ENEMY_Frozen Makrura|r east of Razor Hill. Loot him for |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Burnout|r]
-    >>|cRXP_WARN_You need to group up with Shamans/Warlocks/Mages. At least 5 sources of fire damage debuffs need to be applied on the|r |cRXP_ENEMY_Frozen Makrura|r |cRXP_WARN_for the ice to melt!|r
-    .collect 206388,1 --Sulfurous Icon (1)
-    .mob Frozen Makrura
-    .train 412286,1
-step
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
-    .train 401759 >>|cRXP_WARN_Use|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Burnout|r] |cRXP_WARN_to learn|r |T236207:0|t[Burnout.]
-    .use 203748
--- step
--- .engrave 5,412286 >> Open your character sheet and engrave your chest with |T236207:0|t[Burnout] << Mage
--- step
---     --.engrave 9,403629 >> Open your character sheet and engrave your gloves with |T236291:0|t[Chaos Bolt] << Warlock
--- step
---     --.engrave 9,425339 >> Open your character sheet and engrave your gloves with |T237583:0|t[Molten Blast] << Shaman
-]])
-
-RXPGuides.RegisterGuide([[
-#classic
-#group RestedXP Rune Guide
-#subgroup Chest
-#name Burnout - 8 (Tirisfal Glades) << Horde Mage
-
-
-step
-    .train 401759,1
-    .goto Orgrimmar,45.6,56.8,
-    .goto Orgrimmar,46.2,46.6,
-    .goto Orgrimmar,45.8,40.6,
-    .goto The Barrens,51.4,30.2,
-    .goto Swamp of Sorrows,45.8,53.0,
-    .goto Thunder Bluff,42.6,55.4,
-    .goto Dustwallow Marsh,36.4,30.4,
-    .goto Undercity,82.6,16.0,
-    .goto Thunder Bluff,41.8,55.0,
-    .goto Thousand Needles,45.2,50.6,
-    .goto Stonetalon Mountains,47.6,61.6,
-    >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
-    .collect 211779,1
-step
-    .train 401759,1
-    #completewith next
-    .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades.|r
-step
-    .goto Tirisfal Glades,66.2,40.2
-    >>Cast |T135812:0|t[Fireball] on the |cRXP_ENEMY_Frozen Murloc|r. Loot him for |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Burnout|r]
-    >>|cRXP_WARN_You need to group up with Shamans/Warlocks/Mages. At least 5 sources of fire damage debuffs need to be applied on the|r |cRXP_ENEMY_Frozen Makrura|r |cRXP_WARN_for the ice to melt!|r
-    .train 412286,1
-    .collect 203748,1
-    .mob Frozen Murloc
-step
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
-    .train 401759 >>|cRXP_WARN_Use|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Burnout|r] |cRXP_WARN_to learn|r |T236207:0|t[Burnout.]
-    .use 203748
--- step
---.engrave 5,412286 >> Open your character sheet and engrave your chest with |T236207:0|t[Burnout] << Mage
--- step
---     --.engrave 9,403629 >> Open your character sheet and engrave your gloves with |T236291:0|t[Chaos Bolt] << Warlock
-]])
-
-RXPGuides.RegisterGuide([[
-#classic
-#group RestedXP Rune Guide
-#subgroup Chest << Mage
-#name Enlightenment - 8 (Elwynn Forest) << Mage
-
+#name Burnout - 6 (Elwynn Forest)
 << Alliance Mage SoD
 
 step
-    .train 415942,1
-    .goto Stormwind City,55.8,65.2,-1
-    .goto Stormwind City,32.4,80.0,-1
-    .goto Stormwind City,43.4,26.8,-1
-    .goto Stormwind City,36.0,74.8,-1
-    .goto Elwynn Forest,64.8,69.2,-1
-    .goto Ironforge,19.6,56.2,-1
-    .goto Undercity,69.6,39.2,-1
-    .goto Darnassus,38.8,60.4,-1
-    .goto Ashenvale,35.0,48.6,-1
-    .goto Ironforge,31.2,27.6,-1
-    .goto Duskwood,76.0,45.2,-1
-    .goto Darnassus,34.6,9.8,-1
-    .goto Wetlands,8.4, 56.6,-1
-    >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
-    .collect 211779,1
+    +|cRXP_WARN_You should be at least level 6 in order to acquire|r |T132686:0|t[Engrave Chest - Burnout] |cRXP_WARN_in Elwynn Forest with another player|r
+    .train 401759,1
+    .xp >6,1
 step
-    .train 415942,1
     #completewith next
-    .zone Elwynn Forest >>Travel to |cFFfa9602Elwynn Forest.|r
+    .zone Elwynn Forest >>Travel to Elwynn Forest
+    .train 401759,1
 step
-    #loop
-    .goto 1429,49.68,73.74,20,0
-    .goto 1429,49.04,55.23,20,0
-    .goto 1429,58.93,59.8,20,0
-    .goto 1429,62.95,63.3,20,0
-    .goto 1429,70.46,63.41,20,0
-    .goto 1429,79.92,64.51,20,0
-    .goto 1429,85.79,65.94,20,0
-    .goto 1429,82.89,70.69,20,0
-    .goto 1429,79.07,79.02,20,0
-    .goto 1429,82.61,86.35,20,0
-    .goto 1429,83.61,83.86,20,0
-    .goto 1429,87.27,82.16,20,0
-    .goto 1429,90.67,77.25,20,0
-    .goto 1429,86.02,66.26,20,0
-    .goto 1429,80.6,50.21,20,0
-    .goto 1429,77.54,40.05,20,0
-    .goto 1429,73.96,41.08,20,0
-    .goto 1429,65.67,41.75,20,0
-    .goto 1429,58.87,59.97,20,0
-    .goto 1429,79.37,78.84,20,0
-    .goto 1429,83.67,83.53,20,0
-    .train 415942,1
-    >>Use |cRXP_WARN_Polymorph|r on the following unusual creatures; |cRXP_ENEMY_gazelles,maggots,parrot,fire beetles,rams,larvas,cats|r. |cRXP_WARN_After polymorphing these creatures, remember to loot them upon polymorph loot them for |cRXP_LOOT_|T134332:0|t[Azora Apprentice Notes]
-    .link /tar gazelle /tar maggot /tar parrot /tar fire beetle /tar ram /tar larva /tar cat>> CLICK HERE FOR MACRO.
-    .collect 204864,6
-    .mob gazelle
-    .mob maggot
-    .mob parrot
-    .mob fire beetle
-    .mob ram
-    .mob larva
-    .mob cat
+    .goto 1429,77.015,51.901
+    >>|cRXP_WARN_Look for other Mages or Warlocks near the |cRXP_ENEMY_Frozen Murloc|r or in General Chat (Type /1 into chat)|r
+    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Murloc|r to apply a stack of|r |T134916:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Murloc|r. Loot it for the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r
+    .collect 203748,1 --Spell Notes: Burnout (1)
+    .train 401759,1
+    .mob Frozen Murloc
 step
-    >>Use the 6 |T134332:0|t[Azora Apprentice Notes] to create |T134332:0|t[|cRXP_FRIENDLY_Spell Notes: Enlightenment|r]
-    .collect 204864,6
-    .use 204864
-    .train 415942,1
-step
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
-    .train 415942 >>|cRXP_WARN_Use|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Enlightenment|r] |cRXP_WARN_to learn|r |T134939:0|t[Enlightenment]
-    .use 203749
--- step
---.engrave 5,412324 >> Open your character sheet and engrave your chest with |T135740:0|t[Enlightenment]
+    .train 401759 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r |cRXP_WARN_to learn|r |T132686:0|t[Engrave Chest - Burnout]
+    .use 203748
+    .itemcount 203748,1 --Spell Notes: Burnout (1)
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
-<< Horde Mage SoD
 #group RestedXP Rune Guide
 #subgroup Chest
-#name Enlightenment - 6 (Tirisfal Glades)
+#name Burnout - 6 (Durotar) 
+<< Horde Mage SoD
 
 step
-    .train 415942,1
-    .goto Orgrimmar,45.6,56.8,
-    .goto Orgrimmar,46.2,46.6,
-    .goto Orgrimmar,45.8,40.6,
-    .goto The Barrens,51.4,30.2,
-    .goto Swamp of Sorrows,45.8,53.0,
-    .goto Thunder Bluff,42.6,55.4,
-    .goto Dustwallow Marsh,36.4,30.4,
-    .goto Undercity,82.6,16.0,
-    .goto Thunder Bluff,41.8,55.0,
-    .goto Thousand Needles,45.2,50.6,
-    .goto Stonetalon Mountains,47.6,61.6,
-    >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
-    .collect 211779,1
+    +|cRXP_WARN_You should be at least level 6 in order to acquire|r |T132686:0|t[Engrave Chest - Burnout] |cRXP_WARN_in Durotar with another player|r
+    .train 401759,1
+    .xp >6,1
 step
-    .train 415942,1
     #completewith next
-    .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
+    .zone Durotar >>Travel to Durotar
+    .train 401579,1
 step
+    .goto Durotar,58.69,45.53
+    >>|cRXP_WARN_Look for other Mages, Warlocks, or Shamans near the |cRXP_ENEMY_Frozen Makrura|r or in General Chat (Type /1 into chat)|r
+    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Makrura|r to apply a stack of|r |T134916:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Makrura|r. Loot it for the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r
+    .collect 203748,1 --Spell Notes: Burnout (1)
+    .mob Frozen Makrura
+    .train 401579,1
+step
+    .train 401759 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r |cRXP_WARN_to learn|r |T132686:0|t[Engrave Chest - Burnout]
+    .use 203748
+    .itemcount 203748,1 --Spell Notes: Burnout (1)
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+#group RestedXP Rune Guide
+#subgroup Chest
+#name Burnout - 6 (Tirisfal Glades) 
+<< Horde Mage SoD
+
+
+step
+    +|cRXP_WARN_You should be at least level 6 in order to acquire|r |T132686:0|t[Engrave Chest - Burnout] |cRXP_WARN_in Tirisfal Glades with another player|r
+    .train 401759,1
+    .xp >6,1
+step
+    #completewith next
+    .zone Tirisfal Glades >>Travel to Tirisfal Glades
+    .train 401759,1
+step
+    .goto 1420,66.337,40.059
+    >>|cRXP_WARN_Look for other Mages or Warlocks near the |cRXP_ENEMY_Frozen Murloc|r or in General Chat (Type /1 into chat)|r
+    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Murloc|r to apply a stack of|r |T134916:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Murloc|r. Loot it for the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r
+    .collect 203748,1 --Spell Notes: Burnout (1)
+    .train 401759,1
+    .mob Frozen Murloc
+step
+    .train 401759 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r |cRXP_WARN_to learn|r |T132686:0|t[Engrave Chest - Burnout]
+    .use 203748
+    .itemcount 203748,1 --Spell Notes: Burnout (1)
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+#group RestedXP Rune Guide
+#subgroup Chest
+#name Enlightenment - 8 (Elwynn Forest)
+<< Alliance Mage SoD
+
+
+step
+    +|cRXP_WARN_You MUST be at least level 8 in order to acquire|r |T133815:0|t[Engrave Chest - Enlightenment] |cRXP_WARN_as it is the level requirement of training|r |T134916:0|t[Polymorph]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest - Enlightenment]
     .train 415942,1
-    >>Polymorph |cRXP_ENEMY_Odd Melons|r. Loot the object on the ground for the |T134332:0|t[|cRXP_FRIENDLY_Apothecary Notes|r]
-    *|cRXP_WARN_You can find them on or around pretty much any field. Multiple fields are marked on your map|r
-    .goto Tirisfal Glades,59.2,35.7
-    .goto Tirisfal Glades,36.4,49.9,0
-    .goto Tirisfal Glades,53.62,57.37,0
-    .goto Tirisfal Glades,75.7,60.9,0
-    .collect 208183,6
-    .mob Odd Melon
+    .xp >8,1
 step
+    #completewith Enlightenment
+    .zone Elwynn Forest >>Travel to Elwynn Forest
     .train 415942,1
-    >>Use the |T134332:0|t[|cRXP_FRIENDLY_Apothecary Notes|r] to turn them into |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Enlightenment|r]
-    .use 208183
-    .collect 203749,1
+    .xp <8,1
 step
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
-    .train 415942 >>|cRXP_WARN_Use|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Enlightenment|r] |cRXP_WARN_to learn|r |T134939:0|t[Enlightenment]
+    #optional
+    #completewith next
+    .goto 1429,43.133,65.740,8,0
+    .goto 1429,43.226,65.953,8,0
+    .goto 1429,43.824,66.361,8 >>Enter the Goldshire Inn. Go upstairs
+    .train 415942,1
+    .xp <8,1
+step
+    .goto 1429,43.248,66.192
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaldimar Wefhellt|r
+    .train 118 >> Train |T134916:0|t[Polymorph]
+    .target Zaldimar Wefhellt
+    .train 415942,1
+    .xp <8,1
+step
+    #label Enlightenment
+    #loop
+    .goto 1429,49.68,73.74,0
+    .goto 1429,79.92,64.51,0
+    .goto 1429,83.61,83.86,0
+    .goto 1429,77.54,40.05,0
+    .goto 1429,83.67,83.53,0
+    .goto 1429,49.68,73.74,40,0
+    .goto 1429,49.04,55.23,40,0
+    .goto 1429,58.93,59.8,40,0
+    .goto 1429,62.95,63.3,40,0
+    .goto 1429,70.46,63.41,40,0
+    .goto 1429,79.92,64.51,40,0
+    .goto 1429,85.79,65.94,40,0
+    .goto 1429,82.89,70.69,40,0
+    .goto 1429,79.07,79.02,40,0
+    .goto 1429,82.61,86.35,40,0
+    .goto 1429,83.61,83.86,40,0
+    .goto 1429,87.27,82.16,40,0
+    .goto 1429,90.67,77.25,40,0
+    .goto 1429,86.02,66.26,40,0
+    .goto 1429,80.6,50.21,40,0
+    .goto 1429,77.54,40.05,40,0
+    .goto 1429,73.96,41.08,40,0
+    .goto 1429,65.67,41.75,40,0
+    .goto 1429,58.87,59.97,40,0
+    .goto 1429,79.37,78.84,40,0
+    .goto 1429,83.67,83.53,40,0
+    >>Cast |T134916:0|t[Polymorph] on the following unusual critters: |cRXP_ENEMY_Gazelles|r, |cRXP_ENEMY_Maggots|r, |cRXP_ENEMY_Parrots|r, |cRXP_ENEMY_Fire Beetles|r, |cRXP_ENEMY_Rams|r, |cRXP_ENEMY_Larvas|r, and |cRXP_ENEMY_Cats|r. Wait out the RP
+    >>Open the |cRXP_PICK_Spell Notes|r on the ground. Loot it for |T134332:0|t|cRXP_LOOT_[Azora Apprentice Notes]|r
+    .collect 204864,6 --Azora Apprentice Notes (6)
+    .mob Gazelle
+    .mob Maggot
+    .mob Parrot
+    .mob Fire Beetle
+    .mob Ram
+    .mob Larva
+    .mob Cat
+    .train 415942,1
+    .xp <8,1
+step
+    >>Use the |T134332:0|t|cRXP_LOOT_[Azora Apprentice Notes]|r to create |T134332:0|t|cRXP_LOOT_[Spell Notes: Enlightenment]|r
+    .collect 203749,1 --Spell Notes: Enlightenment (1)
+    .use 204864
+    .train 415942,1
+    .xp <8,1
+step
+    .train 415942 >>|cRXP_WARN_Use the|r |T134332:0|t|cRXP_LOOT_[Spell Notes: Enlightenment]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Enlightenment]
     .use 203749
+    .itemcount 203749,1 --Spell Notes: Enlightenment (1)
+    .xp <8,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+#group RestedXP Rune Guide
+#subgroup Chest
+#name Enlightenment - 8 (Tirisfal Glades)
+<< Horde Mage SoD
+
+step
+    +|cRXP_WARN_You MUST be at least level 8 in order to acquire|r |T133815:0|t[Engrave Chest - Enlightenment] |cRXP_WARN_as it is the level requirement of training|r |T134916:0|t[Polymorph]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest - Enlightenment]
+    .train 415942,1
+    .xp >8,1
+step
+    #completewith Enlightenment
+    .zone Tirisfal Glades >>Travel to Tirisfal Glades
+    .train 415942,1
+step
+    #optional
+    #completewith next
+    .goto 1420,61.619,52.856,8,0
+    .goto 1420,61.734,52.720,8,0
+    .goto 1420,61.958,52.066,8 >>Enter the Brill Inn. Go upstairs
+    .train 415942,1
+    .xp <8,1
+step
+    .goto 1420,61.972,52.476
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cain Firesong|r
+    .train 118 >> Train |T134916:0|t[Polymorph]
+    .target Cain Firesong
+    .train 415942,1
+    .xp <8,1
+step
+    #label Enlightenment
+    #loop
+    .goto 1420,58.840,58.321,0
+    .goto 1420,52.861,57.885,0
+    .goto 1420,47.292,50.612,0
+    .goto 1420,58.840,58.321,30,0
+    .goto 1420,54.062,60.058,30,0
+    .goto 1420,53.920,58.332,30,0
+    .goto 1420,54.000,56.767,30,0
+    .goto 1420,52.861,57.885,30,0
+    .goto 1420,51.611,57.241,30,0
+    .goto 1420,50.303,61.941,30,0
+    .goto 1420,49.885,59.576,30,0
+    .goto 1420,50.073,50.644,30,0
+    .goto 1420,49.573,46.473,30,0
+    .goto 1420,47.292,50.612,30,0
+    >>Cast |T134916:0|t[Polymorph] on |cRXP_ENEMY_Odd Melons|r, then wait out the RP
+    >>Loot the |T134332:0|t|cRXP_LOOT_[Apothecary Notes]|r on the ground
+    .collect 208183,6 --Apothecary Notes (6)
+    .mob Odd Melon
+    .train 415942,1
+step
+    >>Use the |T134332:0|t|cRXP_LOOT_[Apothecary Notes]|r to create |T134332:0|t|cRXP_LOOT_[Spell Notes: Enlightenment]|r
+    .collect 203749,1 --Spell Notes: Enlightenment (1)
+    .use 208183 --Apothecary Notes
+    .train 415942,1
+step
+    .train 415942 >>|cRXP_WARN_Use the|r |T134332:0|t|cRXP_LOOT_[Spell Notes: Enlightenment]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Enlightenment]
+    .use 203749
+    .itemcount 203749,1 --Spell Notes: Enlightenment (1)
 ]])
 
 RXPGuides.RegisterGuide[[
@@ -834,6 +1064,7 @@ RXPGuides.RegisterGuide[[
 --x Shiek: The guide is specifically tailored for players who have reached level 25, rather than being intended for use during the leveling process.
 --x Shiek: Although there are a total of 16 books in the game, only 10 are necessary for this particular purpose. The additional books, while not included in the current version of the guide, have been noted and could be referenced later if needed.
 --x Shiek: Furthermore, I have created distinct routes for both Horde and Alliance players. These routes are designed to be generally effective, considering the varying locations and book possessions players might have when they start following this guide.
+--QQQ WIP to here
 
 step
     .train 425170,1
@@ -1138,7 +1369,7 @@ step
     .money <0.20
     .goto Orgrimmar,45.6,56.8
     .collect 17031,10 >> Purchase |T134419:0|t[Rune of Teleportations] from a |cRXP_FRIENDLY_Reagent, Arcane Goods, Scrolls & Potion Vendor.|r |cRXP_WARN_This will greatly reduce travel time.|r
-    |cRXP_WARN_manually skip this step if you want to go without.|r
+    >>|cRXP_WARN_manually skip this step if you want to go without.|r
 step
     .goto Orgrimmar,50.0,68.8
     .bankwithdraw 209850,203755,208860,209845,209849,203754,208860,209848,209843,209851,209844 >> |cRXP_WARN_Check your bank for any books that may have been deposited|r
@@ -1319,10 +1550,10 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune Guide
-#subgroup Legs << Mage
-#name Living Flame - 7 (Elwynn Forest) << Mage
+#subgroup Legs
+#name Living Flame - 6 (Elwynn Forest)
+<< Alliance Mage SoD
 
-<< Human Mage SoD
 
 step
     .train 401768,1
@@ -1338,8 +1569,8 @@ step
     .goto Ironforge,31.2,27.6,-1
     .goto Duskwood,76.0,45.2,-1
     .goto Darnassus,34.6,9.8,-1
-    .goto Wetlands,8.4, 56.6,-1
-    >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
+    .goto Wetlands,8.4,56.6,-1
+    >>Purchase one or more |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step
     .train 401768,1
@@ -1356,7 +1587,7 @@ step
     .collect 203752,1
     .mob Kobold Geomancer
 step
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
     .train 401768 >>|cRXP_WARN_Use|r|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF|r] |cRXP_WARN_to learn|r |T135820:0|t[Living Flame]
     .use 203752
 -- step
@@ -1366,10 +1597,10 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune Guide
-#subgroup Legs << Mage
-#name Living Flame - 7 (Dun Morogh) << Mage
+#subgroup Legs
+#name Living Flame - 7 (Dun Morogh)
+<< Alliance Mage SoD
 
-<< Gnome Mage SoD
 
 step
     .train 401768,1
@@ -1386,7 +1617,7 @@ step
     .goto Duskwood,76.0,45.2,-1
     .goto Darnassus,34.6,9.8,-1
     .goto Wetlands,8.4, 56.6,-1
-    >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
+    >>Purchase one or more |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step
     .train 401768,1
@@ -1406,7 +1637,7 @@ step
     .mob Frostmane Shadowcaster
     .mob Frostmane Seer
 step
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
     .train 401768 >>|cRXP_WARN_Use|r|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF|r] |cRXP_WARN_to learn|r |T135820:0|t[Living Flame]
     .use 203752
 -- step
@@ -1415,10 +1646,11 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-<< Troll Mage SoD
 #group RestedXP Rune Guide
 #subgroup Legs
-#name Living Flame - 9 (Durotar)
+#name Living Flame - 8 (Durotar)
+<< Horde Mage SoD
+
 
 step
     .train 401768,1
@@ -1433,7 +1665,7 @@ step
     .goto Thunder Bluff,41.8,55.0,
     .goto Thousand Needles,45.2,50.6,
     .goto Stonetalon Mountains,47.6,61.6,
-    >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
+    >>Purchase one or more |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step
     .train 401768,1
@@ -1449,17 +1681,18 @@ step
     .mob Burning Blade Thug
     .mob Burning Blade Apprentice
 step
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
     .train 401768 >>|cRXP_WARN_Use|r|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF|r] |cRXP_WARN_to learn|r |T135820:0|t[Living Flame]
     .use 203752
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
-<< Undead Mage SoD
 #group RestedXP Rune Guide
 #subgroup Legs
-#name Living Flame - 7 (Tirisfal Glades)
+#name Living Flame - 6 (Tirisfal Glades)
+<< Horde Mage SoD
+
 
 step
     .train 401768,1
@@ -1474,7 +1707,7 @@ step
     .goto Thunder Bluff,41.8,55.0,
     .goto Thousand Needles,45.2,50.6,
     .goto Stonetalon Mountains,47.6,61.6,
-    >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
+    >>Purchase one or more |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step
     .train 401768,1
@@ -1501,7 +1734,7 @@ step
     .mob Scarlet Missionary
     .mob Scarlet Zealot
 step
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
     .train 401768 >>|cRXP_WARN_Use|r|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF|r] |cRXP_WARN_to learn|r |T135820:0|t[Living Flame]
     .use 203752
 ]])
@@ -1529,7 +1762,7 @@ step << Alliance
     .goto Duskwood,76.0,45.2,-1
     .goto Darnassus,34.6,9.8,-1
     .goto Wetlands,8.4, 56.6,-1
-    >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
+    >>Purchase one or more |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step << Horde
     .goto Orgrimmar,45.6,56.8,
@@ -1543,7 +1776,7 @@ step << Horde
     .goto Thunder Bluff,41.8,55.0,
     .goto Thousand Needles,45.2,50.6,
     .goto Stonetalon Mountains,47.6,61.6,
-    >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
+    >>Purchase one or more |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step
     .train 401757,1
@@ -1569,7 +1802,7 @@ step
     .goto Ashenvale,13.50,15.75
     .train 401757,1
 step
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
     .train 401757 >>|cRXP_WARN_Use|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Arcane Blast|r] to learn |T135820:0|t[Arcane Blast]
     .use 211691
 -- step
@@ -1581,8 +1814,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune Guide
 #subgroup Gloves
 #name Living Bomb - 12 (Loch Modan)
-
 << Alliance Mage SoD
+
 
 step
     .train 415936,1
@@ -1599,7 +1832,7 @@ step
     .goto Duskwood,76.0,45.2,-1
     .goto Darnassus,34.6,9.8,-1
     .goto Wetlands,8.4, 56.6,-1
-    >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
+    >>Purchase one or more |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step
     .train 415936,1
@@ -1619,7 +1852,7 @@ step
     .collect 208854,1
     .mob Stonesplinter Seer
 step
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
     .train 415936 >>|T134939:0|t[|cRXP_FRIENDLY_Chewed Spell Notes|r] to learn |T236220:0|t[Living Bomb]
     .use 208854
 -- step
@@ -1631,9 +1864,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune Guide
 #subgroup Gloves
 #name Living Bomb - 18 (Westfall)
-
 << Alliance Mage SoD
---x shiek: intended for human unsure if we should lock it behind race.
+
 
 step
     .train 415936,1
@@ -1650,7 +1882,7 @@ step
     .goto Duskwood,76.0,45.2,-1
     .goto Darnassus,34.6,9.8,-1
     .goto Wetlands,8.4, 56.6,-1
-    >>Purchase one or more |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
+    >>Purchase one or more |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step
     .train 415936,1
@@ -1693,18 +1925,17 @@ step
     .mob Harvest Reaper Prototype
     .use 209057
 step
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehensive Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
     .train 415936 >>|T134939:0|t[|cRXP_FRIENDLY_Chewed Spell Notes|r] to learn |T236220:0|t[Living Bomb]
     .use 208854
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
-<< Horde Undead Mage SoD
---x shiek: intended for undead unsure if we should lock it behind race
 #group RestedXP Rune Guide
 #subgroup Gloves
 #name Living Bomb - 17 (Silverpine Forest)
+<< Horde Mage SoD
 
 step
     .train 415936,1
@@ -1751,11 +1982,11 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-<< Horde Mage SoD
 --x shiek: Troll unsure to lock it behind class 
 #group RestedXP Rune Guide
 #subgroup Gloves
 #name Living Bomb - 20 (The Barrens)
+<< Horde Mage SoD
 
 step
     .train 401767,1

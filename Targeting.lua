@@ -888,7 +888,7 @@ local fOnLeave = function(self)
 end
 
 function addon.targeting:UpdateMarker(kind, unitId, index)
-    if UnitIsDead(unitId) or UnitIsPlayer(unitId) or UnitIsUnit(unitId, "pet") then
+    if (UnitIsDead(unitId) and kind ~= 'friendly') or UnitIsPlayer(unitId) or UnitIsUnit(unitId, "pet") then
         return
     end
 

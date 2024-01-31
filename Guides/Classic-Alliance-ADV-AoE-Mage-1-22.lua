@@ -10,6 +10,11 @@ RXPGuides.RegisterGuide([[
 #defaultfor Human Mage
 #next 10-11 ADV Dun Morogh Human Mage AoE
 
+
+step << !Human Mage
+    #season 2
+    #completewith next
+    +In Season of Discovery, you should NOT start outside of your race's starter zone as a Mage, as you will be unable to get your first rune here (|T133816:0|t[Engrave Gloves - Ice Lance])
 step
     #completewith next
     +You have selected the Advanced guide. This is the fastest guide for the fastest class in the game (Alliance Mage). As such, there will be a lot of niche mechanics used as well as highly difficult AoE pulls. Stay persistent while you learn! Good Luck!
@@ -150,8 +155,17 @@ step
     >>Jump from the stairs to the rail
     .goto Elwynn Forest,49.66,39.41,10 >>Travel toward |cRXP_FRIENDLY_Khelden|r upstairs
 step
+    #season 0
     .goto Elwynn Forest,49.66,39.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khelden|r
+    .turnin 3104 >> Turn in Glyphic Letter
+    .train 116 >> Train |T135846:0|t[Frostbolt]
+    .target Khelden Bremen
+step
+    #season 2
+    .goto Elwynn Forest,49.66,39.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khelden|r
+    .accept 77620 >> Accept Spell Research << Human
     .turnin 3104 >> Turn in Glyphic Letter
     .train 116 >> Train |T135846:0|t[Frostbolt]
     .target Khelden Bremen
@@ -167,10 +181,60 @@ step
     .accept 18 >> Accept Brotherhood of Thieves
     .target Deputy Willem
 step
+    #season 2
+    #loop
+    #label CALEENCI
+    #completewith RedBurlapBandana
+    .goto Elwynn Forest,52.55,48.79,0
+    .goto Elwynn Forest,55.43,45.87,0
+    >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for the |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r
+    >>|cRXP_WARN_NOTE: You will be unable to train|r |T133816:0|t[Engrave Gloves - Ice Lance] |cRXP_WARN_here as you can only get a|r |T133736:0|t[Comprehension Primer] |cRXP_WARN_in your race's starting zone|r << !Human
+    .collect 203751,1,77620,1 -- Spell Notes: CALE ENCI (1)
+    .mob Defias Thug
+    .train 401760,1
+step << Human
+    #season 2
+    #requires CALEENCI
+    #completewith RedBurlapBandana
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
+    .use 203751
+    .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
+step
+    #loop
+    #label RedBurlapBandana
+    .goto Elwynn Forest,52.55,48.79,0
+    .goto Elwynn Forest,55.43,45.87,0
+    .goto Elwynn Forest,52.55,48.79,30,0
+    .goto Elwynn Forest,53.89,50.52,30,0
+    .goto Elwynn Forest,55.09,49.00,30,0
+    .goto Elwynn Forest,55.43,45.87,30,0
+    .goto Elwynn Forest,53.86,47.05,30,0
     .loop 35,Elwynn Forest,51.14,49.29,52.55,48.75,53.81,48.09,54.58,49.02,55.15,47.86,54.76,45.96,53.81,44.79,,51.14,49.29
     >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for |cRXP_LOOT_Red Burlap Bandanas|r
     .complete 18,1 --Collect Red Burlap Bandana (x12)
 	.mob Defias Thug
+step
+    #optional
+    #season 2
+    #loop
+    .goto Elwynn Forest,52.55,48.79,0
+    .goto Elwynn Forest,55.43,45.87,0
+    .goto Elwynn Forest,52.55,48.79,50,0
+    .goto Elwynn Forest,53.89,50.52,50,0
+    .goto Elwynn Forest,55.09,49.00,50,0
+    .goto Elwynn Forest,55.43,45.87,50,0
+    .goto Elwynn Forest,53.86,47.05,50,0
+    >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for the |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r
+    >>|cRXP_WARN_NOTE: You will be unable to train|r |T133816:0|t[Engrave Gloves - Ice Lance] |cRXP_WARN_here as you can only get a|r |T133736:0|t[Comprehension Primer] |cRXP_WARN_in your race's starting zone|r << !Human
+    .collect 203751,1,77620,1 -- Spell Notes: CALE ENCI (1)
+    .mob Defias Thug
+    .train 401760,1
+step << Human
+    #optional
+    #season 2
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
+    .use 203751
+    .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
 step
     .goto Elwynn Forest,48.171,42.943
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Willem|r
@@ -270,6 +334,27 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neals|r
     .turnin 3905,1 >>Turn in Grape Manifest
     .target Brother Neals
+step << Human
+    #season 2
+    #optional
+    #completewith next
+    .goto 1429,48.79,41.58,12,0
+    .goto 1429,48.975,41.146,12,0
+    .goto 1429,49.262,40.633,12,0
+    .goto 1429,49.510,40.095,6,0
+    .goto 1429,49.691,40.230,6,0
+    .goto 1429,49.595,40.673,6,0
+    .goto 1429,49.324,40.492,6,0
+    .goto 1429,49.436,39.881,10,0
+    .goto Elwynn Forest,49.661,39.402,12 >>Go downstairs, then travel toward |cRXP_FRIENDLY_Khelden Bremen|r
+    .isQuestComplete 77620
+step << Human
+    #season 2
+    .goto Elwynn Forest,49.661,39.402
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khelden Bremen|r inside
+    .turnin 77620 >> Turn in Spell Research
+    .target Khelden Bremen
+    .isQuestComplete 77620
 step
     .goto Elwynn Forest,45.56,47.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falkhaan|r
@@ -1222,6 +1307,11 @@ RXPGuides.RegisterGuide([[
 #defaultfor Gnome Mage
 #next 10-12 ADV Darkshore 1 Mage AoE
 
+
+step << !Gnome Mage
+    #season 2
+    #completewith next
+    +In Season of Discovery, you should NOT start outside of your race's starter zone as a Mage, as you will be unable to get your first rune here (|T133816:0|t[Engrave Gloves - Ice Lance])
 step
     #completewith next
     +You have selected the Advanced guide. This is the fastest guide for the fastest class in the game (Alliance Mage). As such, there will be a lot of niche mechanics used as well as highly difficult AoE pulls. Stay persistent while you learn! Good Luck!
@@ -1239,12 +1329,26 @@ step
     .complete 179,1 --Collect Tough Wolf Meat (x8)
     .mob Ragged Young Wolf
 step
+    #season 0
     #sticky
     #label Adlin
     .goto Dun Morogh,30.09,71.58
     >>|cRXP_WARN_Unequip your|r |T134581:0|t[Apprentice's Pants] |cRXP_WARN_and|r |T132664:0|t[Apprentice's Robe]
     >>Talk to |cRXP_FRIENDLY_Adlin|r
     >>|cRXP_BUY_Buy 15|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
+    .vendor >> Vendor Trash
+    .collect 159,15 --Collect Refreshing Spring Water (x15)
+    .target Adlin Pridedrift
+    .isQuestAvailable 233
+step
+    #season 2
+    #sticky
+    #label Adlin
+    .goto Dun Morogh,30.09,71.58
+    >>|cRXP_WARN_Unequip your|r |T134581:0|t[Apprentice's Pants] |cRXP_WARN_and|r |T132664:0|t[Apprentice's Robe]
+    >>Talk to |cRXP_FRIENDLY_Adlin|r
+    >>|cRXP_BUY_Buy 15|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
+    >>|cRXP_WARN_Make sure you save 10c or more for later|r
     .vendor >> Vendor Trash
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target Adlin Pridedrift
@@ -1260,6 +1364,33 @@ step
     .target Sten Stoutarm
     .target Balir Frosthammer
 step
+    #season 2
+    #optional
+    #requires Adlin
+    #completewith next
+    .goto 1426,28.910,69.703,15,0
+    .goto 1426,28.835,69.050,10,0
+    .goto 1426,28.835,68.702,10,0
+    .goto 1426,28.939,68.387,12 >> Enter Anvilmar
+    .train 401760,1
+step
+    #season 2
+    #requires Adlin
+    .goto Dun Morogh,28.709,66.366
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r inside
+    .accept 77667 >> Accept Spell Research
+    .target Marryk Nurribit
+    .train 401760,1
+    .xp <2,1
+step
+    #season 2
+    #optional
+    #completewith next
+    .goto 1426,28.751,69.058,12,0
+    .goto 1426,28.676,69.669,15 >> Exit Anvilmar
+    .train 401760,1
+    .xp <2,1
+step
     #requires Adlin
     #completewith ColdridgeV
     >>|cRXP_WARN_Kill ALL |cRXP_ENEMY_Rockjaw Troggs|r you see and|r |cRXP_ENEMY_Burly Rockjaw Troggs|r
@@ -1268,6 +1399,19 @@ step
     .mob Rockjaw Trogg
     .mob Burly Rockjaw Trogg
     .isOnQuest 170
+step
+    #season 2
+    .goto Dun Morogh,26.733,72.552
+    >>Open the |cRXP_PICK_Rockjaw Footlocker|r. Loot it for the |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r
+    .collect 203751,1,77667,1 -- Spell Notes: CALE ENCI (1)
+    .train 401760,1
+    .xp <2,1
+step
+    #season 2
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
+    .use 203751
+    .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
+    .xp <2,1
 step
     #requires Adlin
     .goto Dun Morogh,22.601,71.433
@@ -1376,6 +1520,7 @@ step
     .target Rybrad Coldbank
     .isOnQuest 218
 step
+    #season 0
     >>Talk to |cRXP_FRIENDLY_Durnan|r and |cRXP_FRIENDLY_Marryk|r
     .turnin 3364 >> Turn in Scalding Mornbrew Delivery
     .accept 3365 >> Accept Bring Back the Mug
@@ -1386,6 +1531,19 @@ step
     .target Durnan Furcutter
     .target Marryk Nurribit
     .isQuestAvailable 420
+step
+    #season 2
+    >>Talk to |cRXP_FRIENDLY_Durnan|r and |cRXP_FRIENDLY_Marryk|r
+    .turnin 3364 >> Turn in Scalding Mornbrew Delivery
+    .accept 3365 >> Accept Bring Back the Mug
+    .goto Dun Morogh,28.77,66.37
+    .turnin 3114 >> Turn in Glyphic Memorandum
+    .turnin 77667 >> Turn in Spell Research
+    .trainer >> Train your class spells (Arcane Intellect, Frostbolt)
+    .goto Dun Morogh,28.709,66.366
+    .target Durnan Furcutter
+    .target Marryk Nurribit
+    .isQuestComplete 77667 << Gnome
 step
     .goto Dun Morogh,29.71,71.25
     >>Talk to |cRXP_FRIENDLY_Balir|r

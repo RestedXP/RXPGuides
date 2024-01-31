@@ -2,6 +2,7 @@ RXPGuides.RegisterGuide([[
 #df
 #version 2
 #group RestedXP Starting Zones
+#groupweight 8
 #subgroup Human Starting Zones
 #group weight 9
 #name A-Northshire Valley
@@ -161,7 +162,7 @@ step
     .goto 425,31.59,16.72,40 >> |cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Gug Fatcandle|r. Kill him if he's up|r
     *|cRXP_WARN_It's important to kill Rares and loot Treasure Chests, as they award a lot of experience|r
 	.unitscan Gug Fatcandle
-    .xp >30,1
+    .noflyable
 step
     #sticky
     #label Soldiers
@@ -367,7 +368,8 @@ RXPGuides.RegisterGuide([[
 #df
 #version 2
 #group RestedXP Starting Zones
-#subgroup Human Starting Zones << Human
+#groupweight 8
+#subgroup Human Starting Zones << !KulTiran !DK/!DarkIronDwarf !DK/!LightforgedDraenei !DK/!Mechagnome !DK/!VoidElf !DK/!Pandaren !DK
 #subgroup Allied Race DK << KulTiran DK/DarkIronDwarf DK/LightforgedDraenei DK/Mechagnome DK/VoidElf DK/Pandaren DK
 #displayname Chapter 2 - Elwynn Forest
 #name B-Elwynn Forest
@@ -786,7 +788,7 @@ step
     >>|cRXP_WARN_If you don't want to do this, skip this step|r
     .train 2366 >> Train |T4620675:0|t[Herbalism]
     .target Lien Farmer
-    .skipgossip 47396,1,1,1
+    .skipgossip 47396,2,2,2
     .train 2575,3 --Mining
 step
     #optional
@@ -798,7 +800,7 @@ step
     >>|cRXP_WARN_If you don't want to do this, skip this step|r
     .train 2575 >> Train |T4620679:0|t[Mining]
     .target Lien Farmer
-    .skipgossip 47396,1,2,1
+    .skipgossip 47396,2,3,2
     .train 2366,3 --Herbalism
 step
 	#veteran
@@ -834,7 +836,7 @@ step
     .goto 37,38.22,83.41,40 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Narg the Taskmaster|r. Kill him if he's up|r
 	.unitscan Narg the Taskmaster
     .isOnQuest 60
-    .xp >30,1
+    .noflyable
 step
     #optional
 	#completewith next
@@ -876,7 +878,7 @@ step
     #optional
     .goto 37,33.64,87.76,15 >>|cRXP_WARN_[CHEST] Check for the |cRXP_PICK_Chest|r inside the stables. Loot it if it's up|r
     .isOnQuest 60
-    .xp >30,1
+    .noflyable
 step
     #loop
     .line 37,32.48,86.81,33.41,86.16,33.32,84.95,32.58,84.26,32.04,85.20,32.48,86.81
@@ -899,13 +901,13 @@ step
     .goto 37,30.81,64.65,40 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Morgaine the Sly|r inside. Kill her if she's up|r
     .unitscan Morgaine the Sly
     .isOnQuest 60
-    .xp >30,1
+    .noflyable
 step
     #optional
     .goto 37,27.22,67.51,40 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Grizzled Ben|r. Kill him if he's up|r
 	.unitscan Grizzled Ben
     .isOnQuest 60
-    .xp >30,1
+    .noflyable
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Wanted Poster|r and |cRXP_FRIENDLY_Deputy Rainer|r
     .accept 176 >>Accept WANTED: "Hogger"
@@ -924,7 +926,7 @@ step
     .goto 37,26.32,86.82,0
     +|cRXP_WARN_[RARE & CHEST] Keep an eye out for the |cRXP_PICK_Chest|r and |cRXP_ENEMY_Gruff Swiftbite|r in the camps. Loot the |cRXP_PICK_Chest|r if you find one, and kill |cRXP_ENEMY_Gruff Swiftbite|r if he's up|r
 	.unitscan Gruff Swiftbite
-    .xp >30,1
+    .noflyable
 step
     #sticky
     #label Armbands
@@ -1054,7 +1056,7 @@ step
     #optional
 	#completewith Horatio
     .goto 52,56.46,13.26,30 >>|cRXP_WARN_[CHEST] Check for a |cRXP_PICK_Chest|r in the camp|r
-    .xp >30,1
+    .noflyable
 step
     #loop
     .goto 52,56.46,13.26,0
@@ -1112,29 +1114,29 @@ step
 	.vendor >>Vendor and Repair
     .isOnQuest 35
 	.target Andrew Krighton
-    .xp >30,1 --Azeroth Flying
+    .noflyable --Azeroth Flying
 step
     #optional
     .goto 37,52.25,62.90,40 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Lamepaw the Whimperer|r. Kill him if he's up|r
 	.unitscan Lamepaw the Whimperer
     .isOnQuest 35
-    .xp >30,1
+    .noflyable
 step
     #optional
     .goto 37,57.49,64.61,45 >> |cRXP_WARN_[CHEST] Scan the murloc islands with your mouse for a|r |cRXP_PICK_Chest|r. Your mouse will become a |TInterface/cursor/crosshair/interact.blp:20|tgear icon if there's a |cRXP_PICK_Chest|r. If you find one. Loot it if it's up|r
     .isOnQuest 35
-    .xp >30,1
+    .noflyable
 step
     #optional
     .goto 37,66.51,63.83,40 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Tarantis|r. Kill him if he's up|r
 	.unitscan Tarantis
     .isOnQuest 35
-    .xp >30,1
+    .noflyable
 step
     #optional
     .goto 37,64.7,56.73,30 >>|cRXP_WARN_[CHEST] Check for the |cRXP_PICK_Chest|r inside the Kobold Camp. Loot it if it's up|r
     .isOnQuest 35
-    .xp >30,1
+    .noflyable
 step
     #completewith next
     .goto 37,61.65,53.93,12,0
@@ -1155,7 +1157,7 @@ step
     .goto 40,45.14,21.76,20 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Mother Fang|r at the back of Jasperlode Mine. Kill her if she's up|r
 	.unitscan Mother Fang
     .isOnQuest 35
-    .xp >30,1
+    .noflyable
 step
     #completewith next
     .goto 37,61.58,70.04,0
@@ -1186,7 +1188,7 @@ step
     .goto 37,82.95,84.82,40 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Bushtail|r. Kill him if he's up|r
     .isOnQuest 52
 	.unitscan Bushtail
-    .xp >30,1
+    .noflyable
 step
 	#completewith next
     .goto 37,75.71,86.29,0
@@ -1206,7 +1208,7 @@ step
     .vendor 1198 >> Vendor and Repair
 	.target Rallic Finn
 	.isOnQuest 52
-    .xp >30,1 --Azeroth Flying
+    .noflyable --Azeroth Flying
 step
     .goto 37,79.462,68.715
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sara Timberlain|r
@@ -1387,7 +1389,7 @@ step
     .goto 37,69.32,79.31,30 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Snoot the Rooter|r. Kill him if he's up|r
 	.unitscan Snoot the Rooter
     .isOnQuest 83
-    .xp >30,1
+    .noflyable
 step
     #loop
     .goto 37,68.56,82.68,0
@@ -1425,7 +1427,7 @@ step
     .vendor 1198 >>Vendor and Repair
 	.target Rallic Finn
     .isOnQuest 83
-    .xp >30,1 --Azeroth Flying
+    .noflyable --Azeroth Flying
 step << !DarkIronDwarf !KulTiran !LightforgedDraenei !Mechagnome !VoidElf
     .goto 37,81.829,66.556
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Goss the Swift|r

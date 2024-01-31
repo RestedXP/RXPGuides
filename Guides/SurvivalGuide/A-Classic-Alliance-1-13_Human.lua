@@ -1850,7 +1850,7 @@ step
 RXPGuides.RegisterGuide([[
 #hardcore
 #classic
-#era/som
+#era/som--h
 << Alliance
 #name 11-13 Loch Modan
 #version 1
@@ -2159,7 +2159,7 @@ step << Warlock
     .goto Loch Modan,32.7,76.5,0
     .xp 13+9600 >>Grind until 9600+/11400xp
 step << Warlock
-    #som
+    #som--xpgate
     .xp 14-2520 >> Grind until you are 8880xp into level 13
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Cobbleflint|r

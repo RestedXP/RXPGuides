@@ -2,8 +2,10 @@ RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP Starting Zones
+#groupweight 8
 #subgroup Death Knight Starting Zones
-#name 1Retail-Alliance-Death Knight_Plaguelands The Scarlet Enclave
+#name 1Retail-Alliance-Death Knight_Plaguelands The Scarlet Enclave << Alliance
+#name 1Retail-Horde-Death Knight_Plaguelands The Scarlet Enclave << Horde
 #displayname Death Knight Plaguelands
 #next RestedXP Alliance 10-60\1A_Elwynn Forest << Alliance
 #next RestedXP Horde 10-60\1 BfA Intro << Horde

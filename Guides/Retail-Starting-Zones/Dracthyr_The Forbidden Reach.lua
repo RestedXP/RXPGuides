@@ -2,12 +2,13 @@ RXPGuides.RegisterGuide([[
 #df
 #version 2
 #group RestedXP Starting Zones
+#groupweight 9 --9 instead of 8 because they start from 60+
 #subgroup Dracthyr Starting Zones
 #name Retail-Dracthyr_The Forbidden Reach
-#displayname Dracthyr Starting Zone
+#displayname Chapter 1 - The Forbidden Reach
 #next Dragonflight 60-70\1) The Waking Shores Campaign
 
-<<Dracthyr
+<< Dracthyr
 
 step
     .goto 2109,46.73,78.71

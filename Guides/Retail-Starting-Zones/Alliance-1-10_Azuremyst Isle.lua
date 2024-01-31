@@ -2,14 +2,14 @@ RXPGuides.RegisterGuide([[
 #df
 #version 2
 #group RestedXP Starting Zones
-#subgroup Draenei Starting Zones
 #groupweight 8
+#subgroup Draenei Starting Zones
 #name 2Retail-Alliance-Draenei_Ammen Vale
 #displayname Chapter 1 - Ammen Vale
 #next 3Retail-Alliance-Draenei_Azuremyst Isle
-#defaultfor Draenei
+#defaultfor Draenei !DK
 
-<<Alliance !DK
+<< Alliance
 
 step
     #completewith next
@@ -237,13 +237,14 @@ RXPGuides.RegisterGuide([[
 #df
 #version 2
 #group RestedXP Starting Zones
+#groupweight 8
 #subgroup Draenei Starting Zones
 #name 3Retail-Alliance-Draenei_Azuremyst Isle
 #displayname Chapter 2 - Azuremyst Isle
 #next RestedXP Alliance 10-60\1A_Elwynn Forest
-#defaultfor Draenei
+#defaultfor Draenei !DK
 
-<<Alliance !DK
+<< Alliance
 
 step
     .goto 97,64.5,54.04

@@ -870,6 +870,10 @@ function addon.functions.accept(self, ...)
             element.tooltip = nil
         end
 
+        if addon.settings.profile.debug then
+            element.tooltip = element.questId
+        end
+
         element.tooltipText = addon.icons.accept .. element.text
         local completed = element.completed
 
@@ -1000,7 +1004,9 @@ function addon.functions.turnin(self, ...)
         local event, questId = ...
         local id = element.questId
         local isComplete = IsQuestTurnedIn(id)
-
+        if addon.settings.profile.debug then
+            element.tooltip = id
+        end
         if step.active or element.retrieveText then
             addon.questTurnIn[id] = element
             -- addon.questAccept[id] = addon.questAccept[id] or element
@@ -1273,6 +1279,9 @@ function addon.UpdateQuestCompletionData(self)
     else
         element.icon = icon
         element.tooltip = nil
+    end
+    if addon.settings.profile.debug then
+        element.tooltip = id
     end
 
     local quest
@@ -2032,6 +2041,9 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
         element.checkObjectives = bit.band(flags, 0x4) == 0x4
         element.includeBank = bit.band(flags, 0x8) == 0x8
         element.ignoreTurnIn = bit.band(flags, 0x10) == 0x10
+        if arg1 and element.subtract and element.multiplier == 1 then
+            element.multiplier = tonumber(arg1) or 1
+        end
         if bit.band(flags, 0x20) == 0x20 then
             element.profession = arg1
             element.multiplier = tonumber(arg2) or 1
@@ -3079,7 +3091,7 @@ function addon.GetSubZoneId(zone,x,y)
     local subzone = GetSubZoneText() or 1
     local zoneText = GetZoneText() or 2
     if zone and x and y then
-       zone = RXP.mapId[zone] or zone
+       zone = addon.mapId[zone] or zone
        x = x / 100
        y = y / 100
        subzone = MapUtil.FindBestAreaNameAtMouse(zone,x,y)
@@ -3358,7 +3370,7 @@ function addon.functions.unitscan(self, text, ...)
         local t = {...}
         element.unitscan = t
         local prefix = t[1]
-        if prefix:sub(1,1) == "+" then
+        if prefix and prefix:sub(1,1) == "+" then
             t[1] = prefix:sub(2,-1)
             element.unitlist = t
             element.parent = true
@@ -3378,7 +3390,7 @@ function addon.functions.target(self, text, ...)
         local t = {...}
         element.targets = t
         local prefix = t[1]
-        if prefix:sub(1,1) == "+" then
+        if prefix and prefix:sub(1,1) == "+" then
             t[1] = prefix:sub(2,-1)
             element.unitlist = t
             element.parent = true
@@ -3398,7 +3410,7 @@ function addon.functions.mob(self, text, ...)
         local t = {...}
         element.mobs = t
         local prefix = t[1]
-        if prefix:sub(1,1) == "+" then
+        if prefix and prefix:sub(1,1) == "+" then
             t[1] = prefix:sub(2,-1)
             element.unitlist = t
             element.parent = true
@@ -3930,7 +3942,7 @@ function addon.functions.skipgossipid(self, text, ...)
                    ': No gossip ID provided\n' .. self)
         end
         local prefix = args[1]
-        if prefix:sub(1,1) == "+" then
+        if prefix and prefix:sub(1,1) == "+" then
             args[1] = prefix:sub(2,-1)
             element.parent = true
         end
@@ -4474,7 +4486,7 @@ function addon.functions.scenario(self, ...)
                                      required)
     if element.rawtext ~= "" then element.criteria = "\n" .. element.criteria end
 
-    if completed or quantity >= required or (element.stagePos and currentStage > element.stagePos) then
+    if completed or quantity >= required or (element.stagePos and currentStage and currentStage > element.stagePos) then
         addon.SetElementComplete(self)
     end
 
@@ -4664,10 +4676,15 @@ function addon.CanPlayerFly(zoneOrContinent)
     if type(region) ~= "number" then
         return
     end
-    local mapInfo = C_Map.GetMapInfo(region)
-    local continentId = mapInfo and mapInfo.parentMapID
 
-    local ridingSkill = RXP.GetSkillLevel("riding")
+    local mapInfo = C_Map.GetMapInfo(region)
+    local continentId = region
+    while mapInfo and mapInfo.parentMapID and mapInfo.flags ~= 0 do
+        continentId = mapInfo.parentMapID
+        mapInfo = C_Map.GetMapInfo(continentId)
+    end
+
+    local ridingSkill = addon.GetSkillLevel("riding")
 
     if not continentId then
         return
@@ -4679,7 +4696,7 @@ function addon.CanPlayerFly(zoneOrContinent)
         --12 = kalimdor, 18 = eastern kingdoms, 101 = outland,113 = northrend, 127 = dalaran(weird), 424 = Pandaria, 572 = Draenor, 588 = ashran, 1165 = dazar alor, 895 = boralus, 876 = kul'tiras
         -- 619 = Broken Isles, Zuldazar 862, Shadowlands = 1550, 1978=dragonflight
         if (ridingSkill > 224 and
-            (continentId == 12 or continentId == 18 or continentId == 101 or continentId == 113  or continentId == 127 or continentId == 424 or continentId == 572 or continentId == 588 or continentId == 619 or continentId == 862) or
+            (continentId == 12 or continentId == 18 or continentId == 13 or continentId == 101 or continentId == 113  or continentId == 127 or continentId == 424 or continentId == 572 or continentId == 588 or continentId == 619 or continentId == 862) or
             (continentId == 876 or continentId == 895 or continentId == 1165) or --bfa
             shFlying and continentId == 1550
          ) or dragonRiding and continentId == 1978 then
@@ -4719,7 +4736,7 @@ function addon.functions.flyable(self, text, zone, skill)
         element.skill = tonumber(skill) or -4
         return element
     end
-    local ridingSkill = RXP.GetSkillLevel("riding") or -4
+    local ridingSkill = addon.GetSkillLevel("riding") or -4
     local element = self.element
     local canPlayerFly = (addon.CanPlayerFly(element.zone) and ridingSkill >= element.skill)
     if element.reverse then
