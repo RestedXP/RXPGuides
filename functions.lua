@@ -316,16 +316,18 @@ local function CacheQuest(id,data,remove)
         questObjectivesCache[id] = nil
     end
 end
+local REQUEST_TIMER = 1.5
+local N_REQUESTS = 3
 
 local function RequestQuestData(id)
     local questObjectivesCache = RXPCData.questObjectivesCache
     local ctime = GetTime()
-    if ctime - timer > 1.5 then
+    if ctime - timer > REQUEST_TIMER then
         timer = ctime
         nrequests = 0
     end
 
-    if nrequests < 3 or requests[id] == 0 then
+    if nrequests < N_REQUESTS or requests[id] == 0 then
         local isLoaded
 
         --[[if C_QuestLog.RequestLoadQuestByID and not requests[id] then
@@ -413,12 +415,12 @@ function addon.GetQuestName(id)
         end
     else
         local ctime = GetTime()
-        if ctime - timer > 1.5 then
+        if ctime - timer > REQUEST_TIMER then
             timer = ctime
             nrequests = 0
         end
 
-        if nrequests < 3 or requests[id] == 0 then
+        if nrequests < N_REQUESTS or requests[id] == 0 then
             local isLoaded
 
             --[[if C_QuestLog.RequestLoadQuestByID and not requests[id] then
@@ -455,7 +457,7 @@ function addon.GetQuestName(id)
     end
 end
 
-function addon.GetQuestObjectives(id, step)
+function addon.GetQuestObjectives(id, step, useCache)
     id = GetQuestId(id)
     if not id then return end
     local stepdiff = step and math.abs(RXPCData.currentStep - step) or 0
@@ -464,6 +466,8 @@ function addon.GetQuestObjectives(id, step)
     local err = false
     if IsOnQuest(id) then
         local questInfo = {}
+        ExpandQuestHeader(0)
+
         for i = 1, GetNumQuests() do
             local isComplete, questID
             if GetQuestLogTitle then
@@ -532,10 +536,10 @@ function addon.GetQuestObjectives(id, step)
                 end
             end
         end
-    elseif stepdiff > 4 and questObjectivesCache[id] then
+    elseif (stepdiff > 4 or useCache) and questObjectivesCache[id] then
         return questObjectivesCache[id]
     elseif db and type(db.QueryQuest) == "function" and
-            stepdiff > 4 and type(db.GetQuest) == "function" then
+            (stepdiff > 4 or useCache) and type(db.GetQuest) == "function" then
         local qInfo = {}
         local q = db:GetQuest(id)
         -- print(type(q))
@@ -585,7 +589,7 @@ function addon.GetQuestObjectives(id, step)
         end
     end
 
-    if not IsOnQuest(id) or err then
+    if (not IsOnQuest(id) or err) and not useCache then
         return RequestQuestData(id)
     end
 end
@@ -1182,6 +1186,11 @@ function addon.UpdateQuestCompletionData(self)
     -- local skip
     local objectives = addon.GetQuestObjectives(id, element.step.index)
     local isQuestComplete = IsQuestTurnedIn(id) or IsQuestComplete(id)
+    local useCache
+    if not (objectives and #objectives > 0) then
+        objectives = addon.GetQuestObjectives(id, element.step.index, true)
+        useCache = true
+    end
 
     local objtext = " "
     local completed
@@ -1300,7 +1309,7 @@ function addon.UpdateQuestCompletionData(self)
     if objtext and #objtext > 0 then
         prefix = objtext:sub(1, 1)
     end
-    if not quest or prefix == " " or prefix == ":" then
+    if not quest or prefix == " " or prefix == ":" or useCache then
         element.requestFromServer = true
     elseif quest then
         element.requestFromServer = nil
@@ -1422,6 +1431,8 @@ function addon.functions.complete(self, ...)
             else
                 addon.updateActiveQuest[self] = addon.UpdateQuestCompletionData
             end
+        elseif element.requestFromServer and step.active then
+            addon.updateActiveQuest[self] = addon.UpdateQuestCompletionData
         end
     end
     addon.IsOnTurnInGuide(self)
