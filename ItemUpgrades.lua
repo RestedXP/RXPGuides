@@ -1172,12 +1172,8 @@ end
 
 function addon.itemUpgrades.AH:AUCTION_HOUSE_SHOW()
     ahSession.windowOpen = true
-    -- C_Timer.After(0.35, function() addon.itemUpgrades.AH:Scan() end)
 
-    -- self:CreateGui()
     self:CreateEmbeddedGui()
-
-    -- ahSession.displayFrame:Show()
 end
 
 function addon.itemUpgrades.AH:AUCTION_HOUSE_CLOSED()
@@ -1386,100 +1382,6 @@ function addon.itemUpgrades.AH:Analyze()
     end
 end
 
-local function buildSpacer(height)
-    local spacer = AceGUI:Create("SimpleGroup")
-    spacer:SetLayout("Fill")
-    spacer:SetHeight(height)
-    spacer:SetWidth(30)
-    spacer:SetFullWidth(true)
-
-    return spacer
-end
-
-local function createBlock(slotName)
-    local f = AceGUI:Create("SimpleGroup")
-    f:SetLayout("List")
-    f:SetFullWidth(true)
-
-    f.label = AceGUI:Create("Heading")
-    f.label:SetText(slotName)
-    f.label:SetFullWidth(true)
-    f:AddChild(f.label)
-    f:AddChild(buildSpacer(4))
-
-    f.data = AceGUI:Create("Label")
-    f.data:SetText("")
-    f.data:SetFont(addon.font, 12, "")
-    f.data:SetFullWidth(true)
-    f:AddChild(f.data)
-
-    return f
-end
-
-function addon.itemUpgrades.AH:CreateGui()
-    if ahSession.displayFrame then return end
-
-    local attachment = _G.AuctionFrame
-
-    local f = AceGUI:Create("Frame")
-
-    f:SetLayout("Fill")
-    f:Hide()
-    f:EnableResize(true)
-
-    f.statustext:GetParent():Hide() -- Hide the statustext bar
-    f:SetTitle(fmt("%s - %s", addon.title, _G.MINIMAP_TRACKING_AUCTIONEER))
-    f.frame:ClearAllPoints()
-    f.frame:SetPoint("TOPLEFT", attachment, "TOPRIGHT", 0, -32)
-
-    f:SetWidth(attachment:GetWidth() * 0.4)
-    f:SetHeight(attachment:GetHeight() - 36)
-    -- attachment:HookScript("OnHide", function() f:Hide() end)
-
-    f.scrollContainer = AceGUI:Create("ScrollFrame")
-    f.scrollContainer:SetLayout("Flow")
-    f:AddChild(f.scrollContainer)
-
-    f.frame:SetBackdrop(addon.RXPFrame.backdrop.edge)
-    f.frame:SetBackdropColor(unpack(addon.colors.background))
-
-    -- Make sure the window can be closed by pressing the escape button
-    _G["RESTEDXP_AH_ANALYSIS"] = f.frame
-    tinsert(_G.UISpecialFrames, "RESTEDXP_AH_ANALYSIS")
-
-    local topContainer = AceGUI:Create("SimpleGroup")
-    topContainer:SetLayout('Flow')
-
-    f.scanButton = AceGUI:Create("Button")
-    f.scanButton:SetRelativeWidth(0.45)
-
-    -- SEARCHING
-    f.scanButton:SetText(_G.SEARCH)
-
-    f.scanButtonMenuFrame = CreateFrame("Frame", "$parent_ScanButton",
-                                        f.scanButton.frame,
-                                        "UIDropDownMenuTemplate")
-
-    f.scanButton:SetCallback("OnClick",
-                             function() addon.itemUpgrades.AH:Scan() end)
-
-    topContainer:AddChild(f.scanButton)
-
-    f.resultsHeader = AceGUI:Create("Label")
-
-    f.resultsHeader:SetText(_G.SETTINGS_SEARCH_RESULTS)
-    f.resultsHeader:SetJustifyH("CENTER")
-    f.resultsHeader:SetRelativeWidth(0.55)
-
-    topContainer:AddChild(f.resultsHeader)
-
-    f.scrollContainer:AddChild(topContainer)
-
-    f.scrollContainer.slotFrames = {}
-
-    ahSession.displayFrame = f
-end
-
 function addon.itemUpgrades.AH:CreateEmbeddedGui()
     if ahSession.displayFrame then return end
 
@@ -1558,7 +1460,6 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
 end
 
 function addon.itemUpgrades.AH:DisplayResults()
-    -- self:CreateGui()
     self:CreateEmbeddedGui()
 
     local f = ahSession.displayFrame
