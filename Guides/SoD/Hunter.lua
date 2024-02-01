@@ -3,20 +3,43 @@ RXPGuides.RegisterGuide([[
 << Alliance Hunter SoD
 #group RestedXP Rune Guide
 #subgroup Gloves
-#name Chimera Shot - 3 (Dun Morogh)
+#name Chimera Shot - 2 (Dun Morogh)
 
-step << Hunter
-    #season 2
+
+step
+    +|cRXP_WARN_You should be at least level 2 in order to acquire|r |T133816:0|t[Engrave Gloves - Chimera Shot] |cRXP_WARN_in Dun Morogh alone|r
+    .train 410121,1
+    .xp >2,1
+step
+    #completewith Rune
+    #label Dun1
+    .zone Dun Morogh >> Travel to Dun Morogh
+    .train 410121,1
+step
+    #optional
+    #requires Dun1
+    #label FrostMCave1
+    #completewith Rune
+    .goto 1426,27.098,80.707,20 >> Enter the Frostmane Cave
+    .train 410121,1
+step
+    #optional
+    #requires FrostMCave1
+    #completewith Rune
+    .goto 1426,28.298,79.836,15,0
+    .goto 1426,29.252,79.043,15,0
+    .goto 1426,30.489,80.165,50 >> Travel towards the |cRXP_PICK_Frostmane Loot Cache|r inside
+    .train 410121,1
+step
+    #label Rune
     .goto Dun Morogh,30.773,80.063
-    >>Open the |cRXP_PICK_Frostmane Loot Cache|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Chimera|r]
+    >>Open the |cRXP_PICK_Frostmane Loot Cache|r on the ground inside. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of the Chimera]|r
     .collect 206168,1 -- Rune of the Chimera (1)
     .train 410121,1
-step << Hunter
-    #season 2
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Chimera|r]
+step
+    .train 410121 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of the Chimera]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Chimera Shot]
     .use 206168
     .itemcount 206168,1
-    .train 410121,1
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -24,21 +47,98 @@ RXPGuides.RegisterGuide([[
 << Alliance Hunter SoD
 #group RestedXP Rune Guide
 #subgroup Gloves
-#name Chimera Shot - 3 (Shadowglen)
+#name Chimera Shot - 3 (Teldrassil)
 
-step << Hunter
-    #season 2
+step
+    +|cRXP_WARN_You should be at least level 3 in order to acquire|r |T133816:0|t[Engrave Gloves - Chimera Shot] |cRXP_WARN_in Teldrassil alone|r
+    .train 410121,1
+    .xp >3,1
+step
+    #completewith Rune
+    #label Teld1
+    .zone Teldrassil >> Travel to Teldrassil
+    .train 410121,1
+step
+    #optional
+    #requires Teld1
+    #label ShadowCave1
+    #completewith Rune
+    .goto 1438,56.694,31.485
+    .subzone 25 >> Enter the Shadowthread Cave
+    .train 410121,1
+step
+    #optional
+    #requires ShadowCave1
+    #completewith Rune
+    .goto 1438,56.137,24.971,15,0
+    .goto 1438,55.785,25.341,15,0
+    .goto 1438,56.137,24.971,15,0
+    .goto 1438,56.358,25.242,20,0
+    .goto 1438,56.654,26.430,50,0
+    .goto 1438,56.874,26.323,10 >> Travel towards |cRXP_ENEMY_Githyiss the Vile|r inside
+    .train 410121,1
+step
+    #label Rune
     .goto Teldrassil,56.68,26.12
-    >>Kill |cRXP_ENEMY_Githyiss the Vile|r. Loot Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Chimera|r]
+    >>Kill |cRXP_ENEMY_Githyiss the Vile|r. Loot her for the |T134419:0|t|cRXP_LOOT_[Rune of the Chimera]|r
     .collect 206168,1 -- Rune of the Chimera (1)
     .mob Githyiss the Vile
     .train 410121,1
-step << Hunter
-    #season 2
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Chimera|r]
+step
+    .train 410121 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of the Chimera]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Chimera Shot]
     .use 206168
     .itemcount 206168,1
-    .train 410121,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Hunter SoD
+#group RestedXP Rune Guide
+#subgroup Gloves
+#name Explosive Shot - 5 (Dun Morogh)
+
+
+step
+    +|cRXP_WARN_You should be at least level 5 in order to acquire|r |T133816:0|t[Engrave Gloves - Explosive Shot] |cRXP_WARN_in Dun Morogh alone|r
+    .train 410123,1
+    .xp >5,1
+step
+    #completewith Rune
+    .zone Dun Morogh >>Travel to Dun Morogh
+    .train 410123,1
+step
+    #loop
+    .goto 1426,31.87,38.45,0
+    .goto 1426,30.42,39.84,0
+    .goto 1426,30.02,39.08,0
+    .goto 1426,33.82,37.26,0
+    .goto 1426,31.87,38.45,50,0
+    .goto 1426,30.42,39.84,50,0
+    .goto 1426,30.02,39.08,50,0
+    .goto 1426,33.82,37.26,50,0
+    >>Kill |cRXP_ENEMY_Fyodi|r. Loot him for the |T134419:0|t|cRXP_LOOT_[Rune of Explosive Shot]|r
+    >>|cRXP_WARN_Even though |cRXP_ENEMY_Fyodi|r shows as an elite, his health, damage, and armor values are that of a standard mob|r
+    >>|cRXP_WARN_Be careful as he casts|r |T132337:0|t[Charge] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 35-80 melee damage on hit. Only castable at range)|r
+    >>|cRXP_WARN_NOTE: The|r |T134419:0|t|cRXP_LOOT_[Rune of Explosive Shot]|r |cRXP_WARN_can also drop off every rare mob in Dun Morogh, as well as |cRXP_ENEMY_Vagash|r, |cRXP_ENEMY_Mangeclaw|r, and|r |cRXP_ENEMY_Old Icebeard|r
+    .collect 206169,1 --Rune of Explosive Shot (1)
+    .mob Fyodi
+    .train 410123,1
+    .xp >10,1
+step
+    #label Rune
+    .goto 1426,62.094,47.154,40,0
+    .goto 1426,62.434,48.989,40,0
+    .goto 1426,62.538,46.195
+    >>Kill |cRXP_ENEMY_Vagash|r. Loot him for the |T134419:0|t|cRXP_LOOT_[Rune of Explosive Shot]|r
+    >>|cRXP_WARN_NOTE: The|r |T134419:0|t|cRXP_LOOT_[Rune of Explosive Shot]|r |cRXP_WARN_can also drop off every rare mob in Dun Morogh, as well as |cRXP_ENEMY_Fyodi|r, |cRXP_ENEMY_Mangeclaw|r, and|r |cRXP_ENEMY_Old Icebeard|r
+    .collect 206169,1 --Rune of Explosive Shot (1)
+    .mob Vagash
+    .train 410123,1
+    .xp <10,1
+step
+    .train 410123 >> |cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Explosive Shot]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Explosive Shot]
+    .use 206169
+    .itemcount 206169,1
 ]])
 
 RXPGuides.RegisterGuide([[

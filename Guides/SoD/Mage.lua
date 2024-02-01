@@ -634,14 +634,14 @@ RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune Guide
 #subgroup Chest
-#name Fingers of Frost - 10 (Dun Morogh)
+#name Fingers of Frost - 5 (Dun Morogh)
 << Alliance Mage SoD
 
 
 step
-    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T133815:0|t[Engrave Chest - Fingers of Frost] |cRXP_WARN_in Dun Morogh alone|r
+    +|cRXP_WARN_You should be at least level 5 in order to acquire|r |T133815:0|t[Engrave Chest - Fingers of Frost] |cRXP_WARN_in Dun Morogh alone|r
     .train 401765,1
-    .xp >10,1
+    .xp >5,1
 step
     #optional
     #label Charm
@@ -669,16 +669,32 @@ step
     .train 401765,1
 step
     #loop
-    .goto 1426,62.538,46.195,0
-    .goto 1426,62.094,47.154,40,0
-    .goto 1426,62.538,46.195,40,0
+    .goto 1426,31.87,38.45,0
+    .goto 1426,30.42,39.84,0
+    .goto 1426,30.02,39.08,0
+    .goto 1426,33.82,37.26,0
+    .goto 1426,31.87,38.45,50,0
+    .goto 1426,30.42,39.84,50,0
+    .goto 1426,30.02,39.08,50,0
+    .goto 1426,33.82,37.26,50,0
+    >>Kill |cRXP_ENEMY_Fyodi|r. Loot him for the |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r
+    >>|cRXP_WARN_Even though |cRXP_ENEMY_Fyodi|r shows as an elite, his health, damage, and armor values are that of a standard mob|r
+    >>|cRXP_WARN_Be careful as he casts|r |T132337:0|t[Charge] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 35-80 melee damage on hit. Only castable at range)|r
+    >>|cRXP_WARN_NOTE: The|r |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r |cRXP_WARN_can also drop off every rare mob in Dun Morogh, as well as |cRXP_ENEMY_Vagash|r, |cRXP_ENEMY_Mangeclaw|r, and|r |cRXP_ENEMY_Old Icebeard|r
+    .collect 203753,1 --Spell Notes: RING SEFF OSTROF (1)
+    .mob Fyodi
+    .train 401765,1
+    .xp >10,1
+step
     .goto 1426,62.094,47.154,40,0
     .goto 1426,62.434,48.989,40,0
+    .goto 1426,62.538,46.195
     >>Kill |cRXP_ENEMY_Vagash|r. Loot him for the |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r
-    >>|cRXP_WARN_NOTE: The|r |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r |cRXP_WARN_can also drop off every rare mob in Dun Morogh, and |cRXP_ENEMY_Old Icebeard|r, and |cRXP_ENEMY_Mangeclaw|r|r
+    >>|cRXP_WARN_NOTE: The|r |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r |cRXP_WARN_can also drop off every rare mob in Dun Morogh, as well as |cRXP_ENEMY_Fyodi|r, |cRXP_ENEMY_Mangeclaw|r, and|r |cRXP_ENEMY_Old Icebeard|r
     .collect 203753,1 --Spell Notes: RING SEFF OSTROF (1)
     .mob Vagash
     .train 401765,1
+    .xp <10,1
 step
     .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Fingers of Frost]
     .use 203753

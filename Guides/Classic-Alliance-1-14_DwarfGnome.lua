@@ -107,10 +107,9 @@ step
     .goto 1426,27.562,74.331,60,0
     .goto 1426,27.793,73.123,60,0
     .goto 1426,28.557,72.487,60,0
-    >>Kill |cRXP_ENEMY_Ragged Young Wolves|r and |cRXP_ENEMY_Ragged Timber Wolves|r. Loot them for their |cRXP_LOOT_Tough Wolf Meat|r
+    >>Kill |cRXP_ENEMY_Ragged Young Wolves|r. Loot them for their |cRXP_LOOT_Tough Wolf Meat|r
     .complete 179,1 --Collect Tough Wolf Meat (x8)
     .mob Ragged Young Wolf
-    .mob Ragged Timber Wolf
 step
     #optional
     .goto 1426,29.529,73.286,0
@@ -125,7 +124,6 @@ step
     .goto 1426,28.557,72.487,60,0
     .xp 2 >> Grind to level 2
     .mob Ragged Young Wolf
-    .mob Ragged Timber Wolf
 step << Priest/Mage/Warlock
     #season 0,1
     .goto Dun Morogh,30.087,71.563
@@ -179,6 +177,15 @@ step << Priest/Mage/Warlock
     #season 2
     #xprate <1.1
     #completewith EnterAnvilmar
+    .goto 1426,27.096,72.545,0
+    .goto 1426,26.620,73.548,0
+    .goto 1426,25.722,72.261,0
+    .goto 1426,24.878,72.329,0
+    .goto 1426,24.100,73.749,0
+    .goto 1426,24.920,74.697,0
+    .goto 1426,21.813,72.584,0
+    .goto 1426,19.578,72.086,0
+    .goto 1426,20.627,70.415,0
     >>Kill |cRXP_ENEMY_Rockjaw Troggs|r and |cRXP_ENEMY_Burly Rockjaw Troggs|r
     .complete 170,1 --Kill Rockjaw Trogg (x6)
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
@@ -1037,16 +1044,14 @@ step << Dwarf Paladin
     .abandon 77657 >> Abandon Relics of the Light as you already have a pair of |T132938:0|t[Gloves] equipped
 step
     #label Observations
-    .goto Dun Morogh,33.484,71.841
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Thalos|r
+    >>Talk to |cRXP_FRIENDLY_Mountaineer Thalos|r and |cRXP_FRIENDLY_Hands Springsprocket|r
     .turnin 282 >> Turn in Senir's Observations
     .accept 420 >> Accept Senir's Observations
-    .target Mountaineer Thalos
-step
-    .goto Dun Morogh,33.847,72.236
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hands Springsprocket|r
+    .goto Dun Morogh,33.484,71.841
+    .target +Mountaineer Thalos
     .accept 2160 >> Accept Supplies to Tannok
-    .target Hands Springsprocket
+    .goto Dun Morogh,33.85,72.24
+    .target +Hands Springsprocket
 step
     .goto Dun Morogh,34.32,70.95,15,0
     .goto Dun Morogh,35.65,65.79,15 >> Travel through Coldridge Pass
@@ -2202,7 +2207,9 @@ step << Warrior/Mage
     .train 403476,1 << Warrior
     .train 401765,1 << Mage
 step
-    .goto Dun Morogh,62.6,46.1
+    .goto 1426,62.094,47.154,40,0
+    .goto 1426,62.434,48.989,40,0
+    .goto 1426,62.538,46.195
     >>Kill |cRXP_ENEMY_Vagash|r. Loot him for his |cRXP_LOOT_Fang|r
     >>|cRXP_WARN_Kite him to the guard south of the ranch. Make sure you do 51%+ damage to him|r
     >>|cRXP_WARN_Watch the video below before you attempt to kill |cRXP_ENEMY_Vagash|r. It can be solo'd on any class|r
@@ -4061,24 +4068,30 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Alliance 1-20
 #defaultfor Dwarf
 #next 6-11 Dun Morogh (Hunter)
+
 step << NightElf Hunter
-    #sticky
     #completewith next
-    .goto Dun Morogh,29.927,71.201
     +You have selected a guide meant for Dwarf Hunters. You should choose the same starter zone that you start in
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sten Stoutarm|r
     .goto Dun Morogh,29.927,71.201
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sten Stoutarm|r
     .accept 179 >> Accept Dwarven Outfitters
     .target Sten Stoutarm
 step
-    .goto Dun Morogh,30.79,74.48,50,0
-    .goto Dun Morogh,29.02,76.38,50,0
-    .goto Dun Morogh,26.68,75.57
-    >>Kill |cRXP_ENEMY_Ragged Young Wolves|r and |cRXP_ENEMY_Ragged Timber Wolves|r. Loot them for their |cRXP_LOOT_Tough Wolf Meat|r
+    #loop
+    .goto 1426,29.529,73.286,0
+    .goto 1426,28.117,75.088,0
+    .goto 1426,28.557,72.487,0
+    .goto 1426,29.529,73.286,60,0
+    .goto 1426,29.054,74.608,60,0
+    .goto 1426,28.558,75.781,60,0
+    .goto 1426,28.117,75.088,60,0
+    .goto 1426,27.562,74.331,60,0
+    .goto 1426,27.793,73.123,60,0
+    .goto 1426,28.557,72.487,60,0
+    >>Kill |cRXP_ENEMY_Ragged Young Wolves|r. Loot them for their |cRXP_LOOT_Tough Wolf Meat|r
     .complete 179,1 --Collect Tough Wolf Meat (x8)
     .mob Ragged Young Wolf
-    .mob Ragged Timber Wolf
 step
     .goto Dun Morogh,29.927,71.201
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sten Stoutarm|r
@@ -4592,11 +4605,13 @@ step
 step << Hunter
     #season 2
     #completewith next
-    >>Kill |cRXP_ENEMY_Vagash|r. Loot him for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Explosive Shot|r]
-    .collect 206169,1 -- Rune of Explosive Shot (1)
+    >>Kill |cRXP_ENEMY_Vagash|r. Loot him for the |T134419:0|t|cRXP_LOOT_[Rune of Explosive Shot]|r
+    .collect 206169,1 --Rune of Explosive Shot (1)
     .train 410123,1
 step
-    .goto Dun Morogh,62.6,46.1
+    .goto 1426,62.094,47.154,40,0
+    .goto 1426,62.434,48.989,40,0
+    .goto 1426,62.538,46.195
     >>Kill |cRXP_ENEMY_Vagash|r. Loot him for his |cRXP_LOOT_Fang|r
     >>|cRXP_WARN_Kite him to the guard south of the ranch. Make sure you do 51%+ damage to him|r
     >>|cRXP_WARN_Watch the video below before you attempt to kill |cRXP_ENEMY_Vagash|r. It can be solo'd on any class|r
@@ -4606,7 +4621,7 @@ step
     .mob Vagash
 step << Hunter
     #season 2
-    .train 410123 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Explosive Shot|r] |cRXP_WARN_to train|r |T236178:0|t[Explosive Shot]
+    .train 410123 >> |cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Explosive Shot]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Explosive Shot]
     .use 206169
     .itemcount 206169,1
 step

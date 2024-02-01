@@ -6,13 +6,11 @@ RXPGuides.RegisterGuide([[
 #name Shadowstrike - 3 (Elwynn Forest)
 
 step << Rogue
-    #season 2
     .goto Elwynn Forest,52.544,51.922
-    >>Open the |cRXP_PICK_Defias Stashbox|r. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r
+    >>Open the |cRXP_PICK_Defias Stashbox|r on the ground. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r
     .collect 204795,1 -- Rune of Shadowstrike (1)
     .train 400105,1
 step << Rogue
-    #season 2
     .train 400105 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Shadowstrike]
     .use 204795
     .itemcount 204795,1 --Rune of Shadowstrike (1)
@@ -25,14 +23,24 @@ RXPGuides.RegisterGuide([[
 #subgroup Gloves
 #name Shadowstrike - 3 (Dun Morogh)
 
-step << Rogue
-    #season 2
+step
+    #optional
+    #label FrostMCave1
+    #completewith Rune
+    .goto 1426,27.098,80.707,20 >> Enter the Frostmane Cave
+step
+    #optional
+    #requires FrostMCave1
+    #completewith Rune
+    .goto 1426,28.298,79.836,15,0
+    .goto 1426,29.252,79.043,15,0
+    .goto 1426,30.489,80.165,50 >> Travel towards the |cRXP_PICK_Frostmane Loot Cache|r inside
+step
     .goto Dun Morogh,30.773,80.063
-    >>Open the |cRXP_PICK_Frostmane Loot Cache|r inside. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r
+    >>Open the |cRXP_PICK_Frostmane Loot Cache|r on the ground inside. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r
     .collect 204795,1 --Rune of Shadowstrike (1)
     .train 400105,1
-step << Rogue
-    #season 2
+step
     .train 400105 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Shadowstrike]
     .use 204795
     .itemcount 204795,1 --Rune of Shadowstrike (1)

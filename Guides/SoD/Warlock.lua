@@ -410,7 +410,7 @@ RXPGuides.RegisterGuide([[
 << Warlock SoD
 #group RestedXP Rune Guide
 #subgroup Legs
-#name Incinerate - 22 (Redrige Mountains)
+#name Incinerate - 22 (Redridge Mountains)
 
 step
     #completewith next
@@ -548,8 +548,8 @@ step
     +|cRXP_WARN_It is recommended to do all these steps in a group. Some steps can be completed solo.|r
 step
     #completewith next
-    .zone Redridge Mountains >>Travel to the Redrige Mountains (e.g. take the boat from Ratchet to Booty Bay, run North) << Horde
-    .zone Redridge Mountains >>Travel to the Redrige Mountains << Alliance
+    .zone Redridge Mountains >>Travel to the Redridge Mountains (e.g. take the boat from Ratchet to Booty Bay, run North) << Horde
+    .zone Redridge Mountains >>Travel to the Redridge Mountains << Alliance
 step
     #label WarlockRuneMetamorphosisA
     .train 403938,1
