@@ -1019,7 +1019,9 @@ function CurrentStepFrame.EventHandler(self, event, ...)
         addon.Call(self.element.tag,self.callback,self, event, ...)
         --self.callback(self, event, ...)
     else
-        print('!!!') -- ok
+        if addon.settings.profile.debug then
+            print('!!!') -- ok
+        end
         self.callback = nil
         self:UnregisterEvent(event)
     end
