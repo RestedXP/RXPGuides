@@ -2099,8 +2099,8 @@ step << Warrior/Hunter
     >>Look around for |cRXP_ENEMY_Arra'Chea|r (Big black kodo). He walks clockwise. Kill and Loot him for his |cRXP_LOOT_Horn|r and |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r] << Warrior
     >>Look around for |cRXP_ENEMY_Arra'Chea|r (Big black kodo). He walks clockwise. Kill and Loot him for his |cRXP_LOOT_Horn|r and |T134419:0|t[|cRXP_FRIENDLY_Rune of Explosive Shot|r] << Hunter
     .complete 776,1 --Horn of Arra'chea (1)
-    .collect 204809,1 --Rune of Furious Thunder(1) << Warrior
-    .collect 206169,1 --Rune of Explosive Shot (1) << Hunter
+    .collect 204809,1 << Warrior --Rune of Furious Thunder(1)
+    .collect 206169,1 << Hunter --Rune of Explosive Shot (1)
     .unitscan Arra'chea
     .train 403476,1 << Warrior
     .train 410123,1 << Hunter

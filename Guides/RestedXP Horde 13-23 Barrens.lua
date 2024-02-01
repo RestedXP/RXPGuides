@@ -116,7 +116,7 @@ step << Warrior
     #completewith next
     #requires Steel
     >>Kill some Plainstriders en route. Loot them for Beaks << !Tauren
-    .complete 844,1 --Plainstrider Beak (7) << !Tauren
+    .complete 844,1 << !Tauren --Plainstrider Beak (7)
     .goto The Barrens,54.7,28.0,20 >>Run up the mountain here
 step << Warrior
     #requires Steel

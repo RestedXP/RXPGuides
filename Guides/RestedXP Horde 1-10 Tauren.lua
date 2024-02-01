@@ -195,7 +195,7 @@ step
     >>Kill Bristleback Shaman and loot them for their Salves. << Shaman
     .complete 757,1 --Bristleback Belt (12)
     .unitscan Bristleback Shaman << Shaman
-    .complete 1519,1 --Ritual Salve(2) << Shaman
+    .complete 1519,1 << Shaman --Ritual Salve(2)
 step
     #label Sharptusk
     >>Kill Sharptusk in the big hut
@@ -209,7 +209,7 @@ step
     .goto Mulgore,63.0,77.8
     .complete 757,1 --Bristleback Belt (12)
     .unitscan Bristleback Shaman << Shaman
-    .complete 1519,1 --Ritual Salve (2) << Shaman
+    .complete 1519,1 << Shaman --Ritual Salve (2)
 step
     #requires Belt
     >>Go into the cave. Loot the Attack Plans in the center, and accept the quest.

@@ -9987,7 +9987,7 @@ step << Orc !Warlock
     .itemcount 1132,<1 --Horn of the Timber Wolf
     .itemcount 5665,<1 --Horn of the Dire Wolf
     .itemcount 5668,<1 --Horn of the Brown Wolf
-    .itemcount 46099,<1 --Horn of the Black Wolf << wotlk
+    .itemcount 46099,<1 << wotlk --Horn of the Black Wolf
     .money <0.9 << wotlk
     .money <9.0000 << tbc
     .skill riding,<75,1
