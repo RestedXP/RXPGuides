@@ -1221,6 +1221,7 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
             ahSession.scanType = AuctionFilterButtons["Weapons"] -- weapons
             self:Scan()
         else
+            ahSession.scanType = AuctionFilterButtons["Armor"]
             self:Analyze()
             ahSession.displayFrame.scanButton:SetText(_G.SEARCH)
             -- self:DisplayResults()
