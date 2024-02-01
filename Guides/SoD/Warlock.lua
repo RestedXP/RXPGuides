@@ -27,13 +27,14 @@ RXPGuides.RegisterGuide([[
 step << Warlock
     #season 2
     .goto Dun Morogh,26.733,72.552
-    >>Open the |cRXP_PICK_Rockjaw Footlocker|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r]
+    >>Open the |cRXP_PICK_Rockjaw Footlocker|r on the ground. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Haunting]|r
     .collect 205230,1 -- Rune of Haunting (1)
+    .train 403919,1
 step << Warlock
     #season 2
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r]
+    .train 403919 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Haunting]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Haunt]
     .use 205230
-    .itemcount 205230,1
+    .itemcount 205230,1 -- Rune of Haunting (1)
 ]])
 
 

@@ -551,13 +551,13 @@ step << Paladin
     .use 205420
     .aura 408828
     .train 410002,1
-step << Dwarf Paladin
+step << Human Paladin
     #season 2
     #completewith RestandR
     #label CSLibram3
     .equip 10 >> |cRXP_WARN_Equip a pair of|r |T132938:0|t|cRXP_LOOT_[Gloves]|r |cRXP_WARN_if you have some or when you loot some|r
     .train 410002,3
-step << Dwarf Paladin
+step << Human Paladin
     #season 2
     #completewith RestandR
     #requires CSLibram3

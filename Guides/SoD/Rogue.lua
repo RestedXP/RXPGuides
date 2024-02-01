@@ -8,15 +8,14 @@ RXPGuides.RegisterGuide([[
 step << Rogue
     #season 2
     .goto Elwynn Forest,52.544,51.922
-    >>Open the |cRXP_PICK_Defias Stashbox|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    >>Open the |cRXP_PICK_Defias Stashbox|r. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r
     .collect 204795,1 -- Rune of Shadowstrike (1)
     .train 400105,1
 step << Rogue
     #season 2
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    .train 400105 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Shadowstrike]
     .use 204795
-    .itemcount 204795,1
-    .train 400105,1
+    .itemcount 204795,1 --Rune of Shadowstrike (1)
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -29,15 +28,14 @@ RXPGuides.RegisterGuide([[
 step << Rogue
     #season 2
     .goto Dun Morogh,30.773,80.063
-    >>Open the |cRXP_PICK_Frostmane Loot Cache|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
-    .collect 204795,1
+    >>Open the |cRXP_PICK_Frostmane Loot Cache|r inside. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r
+    .collect 204795,1 --Rune of Shadowstrike (1)
     .train 400105,1
 step << Rogue
     #season 2
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    .train 400105 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Shadowstrike]
     .use 204795
-    .itemcount 204795,1
-    .train 400105,1
+    .itemcount 204795,1 --Rune of Shadowstrike (1)
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -55,16 +53,15 @@ step << Rogue
     .goto Teldrassil,59.674,42.613
     >>|cRXP_WARN_Make your way up the ramp on the Aldrassil tree, and jump onto the rooftop|r
     >>|cRXP_WARN_The |cRXP_PICK_Idol|r is found on top of the roof|r
-    >>Open the |cRXP_PICK_Idol|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    >>Open the |cRXP_PICK_Idol|r. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r
     >>|cRXP_WARN_If you are having difficulty jumping onto the roof, attempt to jump over the railing while running down the ramp you are on|r
     .collect 204795,1 -- Rune of Shadowstrike (1)
     .train 400105,1
 step << Rogue
     #season 2
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    .train 400105 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Shadowstrike]
     .use 204795
-    .itemcount 204795,1
-    .train 400105,1
+    .itemcount 204795,1 --Rune of Shadowstrike (1)
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -500,7 +497,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Rogue SoD
 #group RestedXP Rune Guide
 #subgroup Legs
-#name Blade Dance - 8 (Dun Morogh)
+#name Blade Dance - 16 (Dun Morogh)
 
 step << Rogue
     #season 2
@@ -710,31 +707,31 @@ RXPGuides.RegisterGuide([[
 
     --Rune of Shadowstrike
 
-step << !Undead
+step << Troll/Orc
     #season 2
     .goto Durotar,41.27,68.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
-    .accept 77592 >>Accept Atop the Cliffs << Troll Rogue
-    .accept 77583 >>Accept Atop the Cliffs << Orc Rogue
+    .accept 77592 >>Accept Atop the Cliffs << Troll
+    .accept 77583 >>Accept Atop the Cliffs << Orc
     .target Rwag
 step
     #season 2
     .goto Durotar,43.27,69.51
-    >>Loot the |cRXP_PICK_Hidden Cache|r for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    >>Open the |cRXP_PICK_Hidden Cache|r. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r
     >>|cRXP_WARN_Walk around past|r |cRXP_ENEMY_Sarkoth|r |cRXP_WARN_and jump down to reach the chest|r
     .collect 204795,1 --Rune of Shadowstrike (1)
     .train 400105,1
 step
     #season 2
-    .train 400105 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    .train 400105 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Shadowstrike]
     .use 204795
-    .itemcount 204795,1
-step << !Undead
+    .itemcount 204795,1 --Rune of Shadowstrike (1)
+step << Troll/Orc
     #season 2
     .goto Durotar,41.27,68.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
-    .turnin 77592 >>Turn in Atop the Cliffs << Troll Rogue
-    .turnin 77583 >>Turn in Atop the Cliffs << Orc Rogue
+    .turnin 77592 >>Turn in Atop the Cliffs << Troll
+    .turnin 77583 >>Turn in Atop the Cliffs << Orc
     .target Rwag
     ]])
 
@@ -757,15 +754,15 @@ step << Undead
 step
     #season 2
     .loop 25,Tirisfal Glades,36.13,68.74,36.46,69.49,36.85,70.02,37.42,69.58,38.05,69.79,37.91,69.22,38.03,68.77,38.49,68.28,38.72,67.07,38.59,66.25,38.65,65.07,37.62,65.36,36.93,65.38,36.51,65.42,36.85,66.59,37.45,67.95,36.93,68.16,36.13,68.74
-    >>Kill or pickpocket |cRXP_ENEMY_Scarlet Converts|r. Loot them for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    >>Kill or pickpocket |cRXP_ENEMY_Scarlet Converts|r. Loot them for the |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r
     .collect 204795,1 --Rune of Shadowstrike (1)
     .mob Scarlet Convert
     .train 400105,1
 step
     #season 2
-    .train 400105 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    .train 400105 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Shadowstrike]
     .use 204795
-    .itemcount 204795,1
+    .itemcount 204795,1 --Rune of Shadowstrike (1)
 step << Undead
     #season 2
     .goto Tirisfal Glades,32.53,65.65

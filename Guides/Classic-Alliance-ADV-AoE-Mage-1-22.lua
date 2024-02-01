@@ -1316,8 +1316,8 @@ step
     #completewith next
     +You have selected the Advanced guide. This is the fastest guide for the fastest class in the game (Alliance Mage). As such, there will be a lot of niche mechanics used as well as highly difficult AoE pulls. Stay persistent while you learn! Good Luck!
 step
-    #completewith next
-    .destroy 6948 >>|cRXP_WARN_Delete your|r |T134414:0|t[Hearthstone]
+    #completewith Adlin
+	.destroy 6948 >> Delete the |T134414:0|t[Hearthstone] from your bags, as it's no longer needed
 step
     .goto Dun Morogh,29.927,71.201
     >>Talk to |cRXP_FRIENDLY_Sten|r
