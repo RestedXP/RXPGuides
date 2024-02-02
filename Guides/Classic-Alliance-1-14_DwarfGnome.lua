@@ -463,7 +463,7 @@ step
     .complete 170,1 --Kill Rockjaw Trogg (x6)
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
     .mob Rockjaw Trogg
-    .mob Burly Rockjaw Trogg  
+    .mob Burly Rockjaw Trogg
 step
     #label Talin
     .goto Dun Morogh,22.601,71.433
@@ -4200,11 +4200,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r
     >>|cRXP_WARN_This will start a 5 minute timer for the quest. Do NOT go AFK or log out for the next 5 minutes|r
     .accept 3364 >> Accept Scalding Mornbrew Delivery
-    .target Nori Pridedrift
-step
-    #completewith ScaldingM
-    #label AnvilmarHS
-    .hs >> Hearth to Anvilmar
 step
     #optional
     #requires AnvilmarHS
@@ -4507,7 +4502,7 @@ step
     .accept 318 >> Accept Evershine
 step
     .xp 6
-step << Hunter
+step
     .goto Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grif Wildheart|r
     .trainer >> Train your class spells
@@ -4523,7 +4518,7 @@ step
     .goto Dun Morogh,40.6,62.6,50,0
     .goto Dun Morogh,40.682,65.130
     .turnin 5541 >> Turn in Ammo for Rumbleshot
-step << Hunter
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hegnar Rumbleshot|r
     .goto Dun Morogh,40.682,65.130
     >>|cRXP_BUY_Buy and equip a|r |T135611:0|t[Ornate Blunderbuss]|cRXP_BUY_. Skip this step if you can't afford it|r
@@ -4531,7 +4526,7 @@ step << Hunter
     .money <0.0414
     .target Hegnar Rumbleshot
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.95
-step << Hunter
+step
     #completewith next
     +|cRXP_WARN_Equip the|r |T135611:0|t[Ornate Blunderbuss]
     .use 2509
@@ -4607,21 +4602,49 @@ step
     .mob Ice Claw Bear
     .mob Elder Crag Boar
     .mob Snow Leopard
-step << Hunter
-    #era
+step
+    #xprate <1.5
     .goto Dun Morogh,46.726,53.826
+    >>Finish grinding Boar Ribs
     .complete 384,1
     .xp 8-1400 >>Grind until you are 1400 xp away from level 8.
-step << Hunter
-    #som--xpgate
+step
+    #xprate >1.49
     .goto Dun Morogh,46.726,53.826
+    >>Finish grinding Boar Ribs
     .complete 384,1
-    .xp 8-1950 >>Grind until you are 1950 xp away from level 8.
+    .xp 8-2100 >>Grind until you are 2100 xp away from level 8.
+step
+    #softcore
+    .goto Dun Morogh,30.3,37.5,60 >> Run to here and follow the arrow closely in the upcoming steps to deathskip to Wetlands
+step
+    #softcore
+    .goto Dun Morogh,30.9,33.1,15 >>Run up the mountain north
+step
+    #softcore
+    .goto Dun Morogh,32.4,29.1,15 >>Follow it up to here
+step
+    #softcore
+    .goto Dun Morogh,33.0,27.2,15,0
+    .goto Dun Morogh,33.0,25.2,15,0
+    .goto Wetlands,11.6,43.4,60,0
+    .goto Wetlands,11.6,43.4,0
+    .deathskip >>Keep running straight north, jump down and die once the General Chat changes to Wetlands, then respawn at Menethil Harbor
+    .target Spirit Healer
 step
     #softcore
     #completewith next
-    .deathskip >> Die and respawn at the Spirit Healer
-    .target Spirit Healer
+    .goto Wetlands,12.7,46.7,30 >> Swim to shore
+step
+    #softcore
+    .goto Wetlands,9.490,59.693
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei Brondir|r
+    .fp Wetlands >> Get the Wetlands flight path
+    .target Shellei Brondir
+step
+    #softcore
+	#completewith next
+    .hs >> Hearth to Kharanos
 step
     #hardcore
     #completewith next
@@ -4673,6 +4696,7 @@ step << Hunter
     .train 5116>> Train Concussive Shot
     .target Grif Wildheart
 step
+#optional
     #completewith FinishShimmerweed
     >>Kill |cRXP_ENEMY_Ice Claw Bears|r, |cRXP_ENEMY_Elder Crag Boars|r and |cRXP_ENEMY_Snow Leopards|r
     .complete 319,1 --Kill Ice Claw Bear (x6)
@@ -4728,6 +4752,25 @@ step
     .goto Dun Morogh,63.082,49.851
     .turnin 314 >> Turn in Protecting the Herd
 step
+    .goto Dun Morogh,68.671,55.969
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
+    .accept 433 >> Accept The Public Servant
+    .target Senator Mehr Stonehallow
+step
+#loop
+    .goto Dun Morogh,67.5,59.4,40,0
+    .goto Dun Morogh,70.2,57.6,40,0
+    .goto Dun Morogh,67.5,59.4,0
+    .goto Dun Morogh,70.2,57.6,0
+    >>Kill |cRXP_ENEMY_Rockjaw Skullthumpers|r
+    .complete 432,1 --Kill Rockjaw Skullthumper (x6)
+    .mob Rockjaw Skullthumper
+step
+    .goto Dun Morogh,68.671,55.969
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
+    .turnin 433 >> Turn in The Public Servant
+    .target Senator Mehr Stonehallow
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Hammerfoot|r
     .target Pilot Hammerfoot
     .goto Dun Morogh,83.892,39.188
@@ -4748,16 +4791,16 @@ step
     .goto Dun Morogh,78.97,37.14
     .complete 417,1 --Collect Mangy Claw (x1)
     .mob Mangeclaw
-step << Hunter
-    #season 2
-    .train 410123 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Explosive Shot|r] |cRXP_WARN_to train|r |T236178:0|t[Explosive Shot]
-    .use 206169
-    .itemcount 206169,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Hammerfoot|r
     .target Pilot Hammerfoot
     .goto Dun Morogh,83.892,39.188
     .turnin 417 >> Turn in A Pilot's Revenge
+step << Hunter
+    #season 2
+    .train 410123 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Explosive Shot|r] |cRXP_WARN_to train|r |T236178:0|t[Explosive Shot]
+    .use 206169
+    .itemcount 206169,1
 step
     #hardcore
     .hs >> Hearth to Kharanos
@@ -4767,8 +4810,55 @@ step
     .deathskip >> Die and respawn at the Spirit Healer
     .target Spirit Healer
 step
+    #xprate >1.49
+    .xp 10
+step << Hunter
+#xprate >1.49
+    .goto Dun Morogh,45.810,53.039
+    .target Grif Wildheart
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grif Wildheart|r
+    .accept 6064 >>Accept Taming the Beast
+step << Hunter
+#xprate >1.49
+    .goto Dun Morogh,48.3,56.9
+    >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Large Crag Boar|r
+    .complete 6064,1 --Tame a Large Crag Boar (1)
+    .mob Large Crag Boar
+step << Hunter
+#xprate >1.49
+    .goto Dun Morogh,45.810,53.039
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grif Wildheart|r
+    .turnin 6064 >>Turn in Taming the Beast
+    .target Grif Wildheart
+    .accept 6084 >>Accept Taming the Beast
+step << Hunter
+#xprate >1.49
+    .goto Dun Morogh,49.4,59.4
+    >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Snow Leopard|r
+    .complete 6084,1 --Tame a Snow Leopard (1)
+    .mob Snow Leopard
+step << Hunter
+#xprate >1.49
+    .goto Dun Morogh,45.810,53.039
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grif Wildheart|r
+    .turnin 6084 >>Turn in Taming the Beast
+    .target Grif Wildheart
+    .accept 6085 >>Accept Taming the Beast
+step << Hunter
+#xprate >1.49
+    .goto Dun Morogh,50.4,59.7
+    >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Ice Claw Bear|r
+    .complete 6085,1 --Tame an Ice Claw Bear (1)
+    .mob Ice Claw Bear
+step << Hunter
+#xprate >1.49
+    .goto Dun Morogh,45.810,53.039
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grif Wildheart|r
+    .turnin 6085 >>Turn in Taming the Beast
+    .target Grif Wildheart
+    .accept 6086 >>Accept Training the Beast
+step
 #xprate <1.5
-    #era
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Razzle Sprysprocket|r
     .target Razzle Sprysprocket
     .goto Dun Morogh,46.005,48.637,10,0
@@ -4794,6 +4884,7 @@ step
     .complete 315,1 --Collect Shimmerweed (x6)
     .mob Frostmane Seer
 step << Hunter
+#optional
     #season 2
     #completewith next
     .goto Dun Morogh,28.852,49.859
@@ -4859,12 +4950,8 @@ step
     #completewith next
     .goto Dun Morogh,24.509,50.831,20 >> Enter Frostmane Hold
 step
-    #completewith next
-    >>Kill |cRXP_ENEMY_Frostmane Headhunters|r
-    .complete 287,1 --Kill Frostmane Headhunter (x5)
-    .mob Frostmane Headhunter
-step
-    #hardcore
+#sticky
+#label explore
     >>|cRXP_WARN_Drop down to this location to explore Frostmane Hold. If there are mobs below, clear around normally and do NOT drop down|r
     .goto Dun Morogh,22.86,52.16
     .complete 287,2 --Fully explore Frostmane Hold
@@ -4879,8 +4966,8 @@ step
     .complete 287,1 --Kill Frostmane Headhunter (x5)
     .mob Frostmane Headhunter
 step
+#requires explore
 #xprate <1.5
-    #era
     .goto Dun Morogh,27.2,43.0,60,0
     .goto Dun Morogh,24.8,39.3,60,0
     .goto Dun Morogh,25.6,43.4,60,0
@@ -4892,47 +4979,20 @@ step
     .complete 412,1 --Collect Restabilization Cog (x8)
     .mob Leper Gnome
 step
+    #xprate <1.5
+    .xp 10-1470 >> Grind until you are 1450xp away from level 10
+step
+#requires explore
     #hardcore
     #completewith KharanosTurnins
     .goto Dun Morogh,46.7,53.7,200 >> Travel to Kharanos. Grind en-route
 step
-    #era
-    .xp 10-1470 >> Grind until you are 1450xp away from level 10
-step
-    #som--xpgate
-    .xp 10-2050 >> Grind until you are 2050xp away from level 10
-step
-    #softcore
-    .goto Dun Morogh,30.3,37.5,60 >> Run to here and follow the arrow closely in the upcoming steps to deathskip to Wetlands
-step
-    #softcore
-    .goto Dun Morogh,30.9,33.1,15 >>Run up the mountain north
-step
-    #softcore
-    .goto Dun Morogh,32.4,29.1,15 >>Follow it up to here
-step
-    #softcore
-    .goto Dun Morogh,33.0,27.2,15,0
-    .goto Dun Morogh,33.0,25.2,15,0
-    .goto Wetlands,11.6,43.4,60,0
-    .goto Wetlands,11.6,43.4,0
-    .deathskip >>Keep running straight north, jump down and die once the General Chat changes to Wetlands, then respawn at Menethil Harbor
-    .target Spirit Healer
-step
-    #softcore
+#requires explore
     #completewith next
-    .goto Wetlands,12.7,46.7,30 >> Swim to shore
-step
     #softcore
-    .goto Wetlands,9.490,59.693
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei Brondir|r
-    .fp Wetlands >> Get the Wetlands flight path
-    .target Shellei Brondir
+    .deathskip >> Die and respawn at Kharanos
 step
-    #softcore
-	#completewith next
-    .hs >> Hearth to Kharanos
-step
+#requires explore
     #label KharanosTurnins
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senir Whitebeard|r
     .target Senir Whitebeard
@@ -4941,7 +5001,6 @@ step
     .accept 291 >> Accept The Reports
 step
 #xprate <1.5
-    #era
     .goto Dun Morogh,46.005,48.637,8,0
     .goto Dun Morogh,45.846,49.365
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Razzle Sprysprocket|r
@@ -4953,38 +5012,45 @@ step
     .goto Dun Morogh,49.426,48.410
     .turnin 320 >> Turn in Return to Bellowfiz
 step << Hunter
+#xprate <1.5
     .goto Dun Morogh,45.810,53.039
     .target Grif Wildheart
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grif Wildheart|r
     .accept 6064 >>Accept Taming the Beast
 step << Hunter
+#xprate <1.5
     .goto Dun Morogh,48.3,56.9
     >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Large Crag Boar|r
     .complete 6064,1 --Tame a Large Crag Boar (1)
     .mob Large Crag Boar
 step << Hunter
+#xprate <1.5
     .goto Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grif Wildheart|r
     .turnin 6064 >>Turn in Taming the Beast
     .target Grif Wildheart
     .accept 6084 >>Accept Taming the Beast
 step << Hunter
+#xprate <1.5
     .goto Dun Morogh,49.4,59.4
     >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Snow Leopard|r
     .complete 6084,1 --Tame a Snow Leopard (1)
     .mob Snow Leopard
 step << Hunter
+#xprate <1.5
     .goto Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grif Wildheart|r
     .turnin 6084 >>Turn in Taming the Beast
     .target Grif Wildheart
     .accept 6085 >>Accept Taming the Beast
 step << Hunter
+#xprate <1.5
     .goto Dun Morogh,50.4,59.7
     >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Ice Claw Bear|r
     .complete 6085,1 --Tame an Ice Claw Bear (1)
     .mob Ice Claw Bear
 step << Hunter
+#xprate <1.5
     .goto Dun Morogh,45.810,53.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grif Wildheart|r
     .turnin 6085 >>Turn in Taming the Beast
@@ -4994,12 +5060,14 @@ step
     #completewith next
     .goto Dun Morogh,68.5,54.6,60 >> Travel to Gol'Bolar Quarry
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r and |cRXP_FRIENDLY_Foreman Stonebrow|r
-    .accept 433 >> Accept The Public Servant
     .goto Dun Morogh,68.671,55.969
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
+    .accept 433 >> Accept The Public Servant
+    .target Senator Mehr Stonehallow
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Stonebrow|r
     .accept 432 >> Accept Those Blasted Troggs!
     .goto Dun Morogh,69.084,56.330
-    .target Senator Mehr Stonehallow
     .target Foreman Stonebrow
 step
     .goto Dun Morogh,70.7,56.4,40,0
@@ -5044,7 +5112,8 @@ RXPGuides.RegisterGuide([[
 step
     #completewith next
     .goto Dun Morogh,86.203,51.260,15,0
-    .goto Loch Modan,22.071,73.127,200 >> Travel to Loch Modan
+    .goto Loch Modan,22.071,73.127,20 >> Travel to Loch Modan
+    .zoneskip Loch Modan
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Cobbleflint|r
     .target Mountaineer Cobbleflint
@@ -5110,6 +5179,7 @@ step
     .goto Ironforge,43.64,50.63,20,0
     .goto Ironforge,39.550,57.490
     .turnin 291 >> Turn in The Reports
+    .isOnQuest 291
 step << Hunter
     .goto Ironforge,70.86,85.83
     .target Belia Thundergranite
@@ -5304,23 +5374,28 @@ step
     .goto Loch Modan,23.233,73.675
     .turnin 267 >> Turn in The Trogg Threat
 step
+#xprate <1.5
     #completewith next
     .goto Loch Modan,64.89,66.66,80 >> Travel to Ironband's Excavation Site
 step
+#xprate <1.5
     .goto Loch Modan,65.934,65.622
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Ironband|r
     .accept 298 >> Accept Excavation Progress Report
     .target Prospector Ironband
 step
+#xprate <1.5
     #completewith next
     .goto Loch Modan,82.92,59.37,80,0
     .goto Loch Modan,83.28,62.97,25 >> Travel to The Farstrider Lodge
 step
+#xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryl the Youngling|r
     .accept 257 >> Accept A Hunter's Boast
     .goto Loch Modan,83.49,65.40
     .target Daryl the Youngling
 step
+#xprate <1.5
     .goto Loch Modan,80.09,64.16,60,0
     .goto Loch Modan,77.16,75.57,60,0
     .goto Loch Modan,70.78,72.91,60,0
@@ -5337,11 +5412,13 @@ step
     .complete 257,1 -- Mountain Buzzard slain (6)
     .mob Mountain Buzzard
 step
+#xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryl the Youngling|r
     .goto Loch Modan,83.49,65.40
     .turnin 257 >> Turn in A Hunter's Boast
     .target Daryl the Youngling
 step
+#xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xandar Goodbeard|r
     .goto Loch Modan,82.496,63.369
     .vendor >>|cRXP_WARN_Buy a|r |T135237:0|t[Flint and Tinder] |cRXP_WARN_and|r |T135435:0|t[Simple Wood]
@@ -5349,14 +5426,17 @@ step
     .collect 4471,1 --Flint and Tinder (1)
     .target Xandar Goodbeard
 step
+#xprate <1.5
     #hardcore
     .hs >> Hearth to Thelsamar
 step
+#xprate <1.5
     #softcore
     #completewith next
     .deathskip >> Die and respawn at the Spirit Healer
     .target Spirit Healer
 step
+#xprate <1.5
     .goto Loch Modan,37.17,47.94,8,0
     .goto Loch Modan,37.24,47.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jern Hornhelm|r
@@ -5374,6 +5454,7 @@ step
     .target Daryl Riknussun
     .train 2550 >> Train |T133971:0|t[Cooking]
 step
+#xprate <1.5
     .goto Ironforge,74.645,11.742
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Stormpike|r
     .turnin 301 >> Turn in Report to Ironforge
