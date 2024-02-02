@@ -498,6 +498,24 @@ step
     .turnin 183 >> Turn in The Boar Hunter
     .target Talin Keeneye
 step << Paladin/Warlock
+    #xprate <1.1
+    .goto 1426,27.858,76.482,0
+    .goto 1426,30.727,76.831,0
+    .goto 1426,29.280,75.500,0
+    .goto 1426,27.858,76.482,50,0
+    .goto 1426,28.946,77.153,50,0
+    .goto 1426,29.716,77.605,50,0
+    .goto 1426,30.727,76.831,50,0
+    .goto 1426,32.814,75.221,50,0
+    .goto 1426,31.138,74.048,50,0
+    .goto 1426,30.077,74.479,50,0
+    .goto 1426,29.280,75.500,50,0
+    >>Kill |cRXP_ENEMY_Rockjaw Troggs|r and |cRXP_ENEMY_Burly Rockjaw Troggs|r
+    .complete 170,1 --Kill Rockjaw Trogg (x6)
+    .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
+    .mob Rockjaw Trogg
+    .mob Burly Rockjaw Trogg
+step << Paladin/Warlock
     #xprate <1.5
     #loop
     .goto 1426,23.595,72.462,0
@@ -525,24 +543,6 @@ step << Paladin/Warlock
     .goto 1426,26.832,74.649,50,0
     .goto 1426,26.884,72.733,50,0
     .xp 3+995 >> Grind to 995+/1400xp
-step << Paladin/Warlock
-    #xprate <1.1
-    .goto 1426,27.858,76.482,0
-    .goto 1426,30.727,76.831,0
-    .goto 1426,29.280,75.500,0
-    .goto 1426,27.858,76.482,50,0
-    .goto 1426,28.946,77.153,50,0
-    .goto 1426,29.716,77.605,50,0
-    .goto 1426,30.727,76.831,50,0
-    .goto 1426,32.814,75.221,50,0
-    .goto 1426,31.138,74.048,50,0
-    .goto 1426,30.077,74.479,50,0
-    .goto 1426,29.280,75.500,50,0
-    >>Kill |cRXP_ENEMY_Rockjaw Troggs|r and |cRXP_ENEMY_Burly Rockjaw Troggs|r
-    .complete 170,1 --Kill Rockjaw Trogg (x6)
-    .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
-    .mob Rockjaw Trogg
-    .mob Burly Rockjaw Trogg
 step
     #label Rockjaw
     .goto 1426,25.077,75.711
@@ -804,14 +804,14 @@ step
     #sticky << Rogue
     #label Grelin
     .goto 1426,30.489,80.165,0,0
-    >>Kill |cRXP_ENEMY_Grik'nir the Cold|r. Loot him for |cRXP_LOOT_Grelin Whitebeard's Journal|r
+    >>Kill |cRXP_ENEMY_Grik'nir the Cold|r inside. Loot him for |cRXP_LOOT_Grelin Whitebeard's Journal|r
     .complete 218,1 --Collect Grelin Whitebeard's Journal (x1)
     .mob Grik'nir the Cold
 --XXSOD xpgate for early 6 training?
 step << Rogue
     #season 2
     .goto Dun Morogh,30.773,80.063
-    >>Open the |cRXP_PICK_Frostmane Loot Cache|r inside. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r
+    >>Open the |cRXP_PICK_Frostmane Loot Cache|r on the ground inside. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r
     .collect 204795,1 --Rune of Shadowstrike (1)
     .train 400105,1
 step << Rogue
@@ -837,25 +837,30 @@ step << Rogue
     .train 400105,3
 step << !Paladin !Warlock
     #softcore
+    #requires Grelin << Rogue
     #completewith next
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .target Spirit Healer
 step
     #hardcore << !Paladin !Warlock
     #optional
+    #requires Grelin << Rogue
     #completewith Stolen
     .goto 1426,29.252,79.043,15,0
     .goto 1426,28.298,79.836,15,0
     .goto 1426,27.098,80.707,20 >> Exit the Frostmane Cave
+    .subzoneskip 132
 --XX HC only unless you're a Paladin or Warlock
 step << !Paladin !Warlock
     #hardcore
+    #requires Grelin << Rogue
     .goto Dun Morogh,24.980,75.963
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r
     .accept 3364 >> Accept Scalding Mornbrew Delivery
     .target Nori Pridedrift
 step
     #hardcore << !Paladin !Warlock
+    #requires Grelin << Rogue
     #label Stolen
     .goto Dun Morogh,25.075,75.715
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grelin Whitebeard|r
@@ -864,6 +869,7 @@ step
     .target Grelin Whitebeard
 step << !Paladin !Warlock
     #softcore
+    #requires Grelin << Rogue
     .goto Dun Morogh,28.769,66.377
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Durnan Furcutter|r
     >>|cRXP_WARN_If you failed the quest, skip this step|r
@@ -4097,111 +4103,147 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sten Stoutarm|r
     .turnin 179 >> Turn in Dwarven Outfitters
     .accept 233 >> Accept Coldridge Valley Mail Delivery
-    .accept 3108 >>Accept Etched Rune
+    .accept 3108 >> Accept Etched Rune << Dwarf
     .target Sten Stoutarm
 step
     #xprate <1.1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balir Frosthammer|r
     .goto Dun Morogh,29.709,71.255
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balir Frosthammer|r
     .accept 170 >> Accept A New Threat
     .target Balir Frosthammer
 step
     #xprate <1.1
-    #completewith Rockjaw
-    .goto Dun Morogh,29.20,76.08,0
-    .goto Dun Morogh,26.38,73.07,0
+    #sticky
+    #label TroggEnd
+    .goto 1426,24.193,77.305,0
+    .goto 1426,22.529,74.512,0
+    .goto 1426,24.288,73.154,0
+    .goto 1426,29.303,77.337,0
+    .waypoint 1426,24.193,77.305,55,0
+    .waypoint 1426,23.497,76.707,55,0
+    .waypoint 1426,22.828,76.017,55,0
+    .waypoint 1426,22.529,74.512,55,0
+    .waypoint 1426,22.735,73.285,55,0
+    .waypoint 1426,23.616,72.634,55,0
+    .waypoint 1426,24.288,73.154,55,0
+    .waypoint 1426,24.619,74.280,55,0
+    .waypoint 1426,25.920,74.571,55,0
+    .waypoint 1426,28.812,76.397,55,0
+    .waypoint 1426,29.303,77.337,55,0
     >>Kill |cRXP_ENEMY_Rockjaw Troggs|r and |cRXP_ENEMY_Burly Rockjaw Troggs|r
     .complete 170,1 --Kill Rockjaw Trogg (x6)
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
     .mob Rockjaw Trogg
     .mob Burly Rockjaw Trogg
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talin Keeneye|r
-    .target Talin Keeneye
     .goto Dun Morogh,22.601,71.433
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talin Keeneye|r
     .turnin 233 >> Turn in Coldridge Valley Mail Delivery
     .accept 183 >> Accept The Boar Hunter
     .accept 234 >> Accept Coldridge Valley Mail Delivery
+    .target Talin Keeneye
 step
-    .goto Dun Morogh,22.2,72.5,40,0
-    .goto Dun Morogh,20.5,71.4,40,0
-    .goto Dun Morogh,21.1,69.0,40,0
-    .goto Dun Morogh,22.8,69.6,40,0
-    .goto Dun Morogh,22.2,72.5,40,0
-    .goto Dun Morogh,20.5,71.4,40,0
-    .goto Dun Morogh,21.79,71.60
+    #loop
+    .goto 1426,22.276,72.549,0
+    .goto 1426,20.924,70.393,0
+    .goto 1426,22.662,69.331,0
+    .goto 1426,24.358,72.591,0
+    .goto 1426,22.276,72.549,45,0
+    .goto 1426,21.209,72.266,45,0
+    .goto 1426,20.880,71.470,45,0
+    .goto 1426,20.924,70.393,45,0
+    .goto 1426,21.330,69.261,45,0
+    .goto 1426,22.035,69.231,45,0
+    .goto 1426,22.662,69.331,45,0
+    .goto 1426,24.317,68.026,45,0
+    .goto 1426,24.754,69.257,45,0
+    .goto 1426,24.878,71.191,45,0
+    .goto 1426,24.358,72.591,45,0
     >>Kill |cRXP_ENEMY_Small Crag Boars|r
     .complete 183,1 --Kill Small Crag Boar (x12)
     .mob Small Crag Boar
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talin Keeneye|r
-    .target Talin Keeneye
     .goto Dun Morogh,22.601,71.433
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talin Keeneye|r
     .turnin 183 >> Turn in The Boar Hunter
+    .target Talin Keeneye
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grelin Whitebeard|r
-    .target Grelin Whitebeard
     .goto Dun Morogh,25.076,75.713
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grelin Whitebeard|r
     .turnin 234 >> Turn in Coldridge Valley Mail Delivery
     .accept 182 >> Accept The Troll Cave
+    .target Grelin Whitebeard
 step
     #completewith next
-    .goto Dun Morogh,26.3,79.2,40,0
-    .goto Dun Morogh,22.7,79.3,40,0
-    .goto Dun Morogh,20.9,75.7,40,0
-    .goto Dun Morogh,22.7,79.3,40,0
-    .goto Dun Morogh,20.9,75.7
+    .goto 1426,25.861,78.197,0
+    .goto 1426,23.716,80.257,0
+    .goto 1426,20.671,75.838,0
+    .goto 1426,25.861,78.197,45,0
+    .goto 1426,26.382,78.409,45,0
+    .goto 1426,26.031,79.854,45,0
+    .goto 1426,23.716,80.257,45,0
+    .goto 1426,22.836,79.962,45,0
+    .goto 1426,22.684,78.888,45,0
+    .goto 1426,21.029,76.459,45,0
+    .goto 1426,20.671,75.838,45,0
     >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r
     .complete 182,1 --Kill Frostmane Troll Whelp (x14)
     .mob Frostmane Troll Whelp
 step
-    #label Rockjaw
-    .xp 4 >> Grind to 4
+    .goto 1426,25.861,78.197,0
+    .goto 1426,23.716,80.257,0
+    .goto 1426,20.671,75.838,0
+    .xp 4 >> Grind to level 4
 step
-    #xprate <1.1
-    .goto Dun Morogh,29.20,76.08,70,0
-    .goto Dun Morogh,26.38,73.07
-    >>Kill |cRXP_ENEMY_Rockjaw Troggs|r and |cRXP_ENEMY_Burly Rockjaw Troggs|r
-    .complete 170,1 --Kill Rockjaw Trogg (x6)
-    .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
-    .mob Rockjaw Trogg
-    .mob Burly Rockjaw Trogg
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r
-    .target Nori Pridedrift
+    #requires TroggEnd
     .goto Dun Morogh,24.980,75.963
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r
+    >>|cRXP_WARN_This will start a 5 minute timer for the quest. Do NOT go AFK or log out for the next 5 minutes|r
     .accept 3364 >> Accept Scalding Mornbrew Delivery
+    .target Nori Pridedrift
 step
     #completewith ScaldingM
+    #label AnvilmarHS
     .hs >> Hearth to Anvilmar
 step
-    #xprate <1.1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balir Frosthammer|r
-    .target Balir Frosthammer
-    .goto Dun Morogh,29.709,71.255
-    .turnin 170 >> Turn in A New Threat
+    #optional
+    #requires AnvilmarHS
+    #completewith ScaldingM
+	.destroy 6948 >> Delete the |T134414:0|t[Hearthstone] from your bags, as it's no longer needed
 step
-    #completewith next
+    #completewith ScaldingM
     .goto Dun Morogh,30.087,71.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adlin Pridedrift|r
     .vendor >> |cRXP_WARN_Vendor trash|r
     >>|cRXP_WARN_Buy 2 stacks of|r |T132384:0|t[Light Shots]
     .collect 2516,400 -- Light Shot (400)
     .target Adlin Pridedrift
+    .xp >6,1
 step
-    #season 0
+    #xprate <1.1
+    .goto Dun Morogh,29.709,71.255
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balir Frosthammer|r
+    .turnin 170 >> Turn in A New Threat
+    .target Balir Frosthammer
+step
+    #optional
+    #completewith next
+    .goto 1426,28.792,68.804,12,0
+    .goto 1426,28.939,68.387,12 >> Enter Anvilmar
+step
+    #season 0,1
     .goto Dun Morogh,29.175,67.455
     .target Thorgas Grimson
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgas Grimson|r
-    .turnin 3108 >>Turn in Etched Rune
-    .train 1978 >> Train |T132204:0|t[Serpent Sting]
+    .turnin 3108 >>Turn in Etched Rune << Dwarf
+    .train 1978 >>Train |T132204:0|t[Serpent Sting]
 step
     #season 2
     .goto Dun Morogh,29.175,67.455
     .target Thorgas Grimson
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgas Grimson|r
-    .turnin 3108 >>Turn in Etched Rune
-    .accept 77660 >> Accept Trek Through the Caves
+    .turnin 3108 >>Turn in Etched Rune << Dwarf
+    .accept 77660 >> Accept Trek Through the Caves << Dwarf
     .train 1978 >> Train |T132204:0|t[Serpent Sting]
 step
     #label ScaldingM
@@ -4211,89 +4253,145 @@ step
     .accept 3365 >> Accept Bring Back the Mug
     .target Durnan Furcutter
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r
-    .target Nori Pridedrift
-    .goto Dun Morogh,24.980,75.963
-    .turnin 3365 >> Turn in Bring Back the Mug
+    #optional
+    #completewith next
+    .goto 1426,28.792,68.804,12 >> Exit Anvilmar
+    .subzoneskip 77,1
 step
-    .goto Dun Morogh,26.3,79.2,40,0
-    .goto Dun Morogh,22.7,79.3,40,0
-    .goto Dun Morogh,20.9,75.7,40,0
-    .goto Dun Morogh,22.7,79.3,40,0
-    .goto Dun Morogh,20.9,75.7
+    .goto Dun Morogh,24.980,75.963
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r
+    .turnin 3365 >> Turn in Bring Back the Mug
+    .target Nori Pridedrift
+step
+    .goto 1426,25.861,78.197,0
+    .goto 1426,23.716,80.257,0
+    .goto 1426,20.671,75.838,0
+    .goto 1426,25.861,78.197,45,0
+    .goto 1426,26.382,78.409,45,0
+    .goto 1426,26.031,79.854,45,0
+    .goto 1426,23.716,80.257,45,0
+    .goto 1426,22.836,79.962,45,0
+    .goto 1426,22.684,78.888,45,0
+    .goto 1426,21.029,76.459,45,0
+    .goto 1426,20.671,75.838,45,0
     >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r
     .complete 182,1 --Kill Frostmane Troll Whelp (x14)
     .mob Frostmane Troll Whelp
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grelin Whitebeard|r
-    .target Grelin Whitebeard
     .goto Dun Morogh,25.076,75.713
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grelin Whitebeard|r
     .turnin 182 >> Turn in The Troll Cave
     .accept 218 >> Accept The Stolen Journal
-step
-    #completewith next
-    .goto Dun Morogh,27.28,81.09,20 >> Enter the Frostmane Cave
-step
-    #season 0
-    .goto Dun Morogh,26.8,79.9,30,0
-    .goto Dun Morogh,29.0,79.0,15,0
-    .goto Dun Morogh,30.6,80.3
-    >>Kill |cRXP_ENEMY_Grik'nir the Cold|r. Loot him for his |cRXP_LOOT_Journal|r
-    .complete 218,1 --Collect Grelin Whitebeard's Journal (x1)
-    .mob Grik'nir the Cold
-step
-    #season 2
-    #completewith RotC
-    >>Kill |cRXP_ENEMY_Grik'nir the Cold|r. Loot him for his |cRXP_LOOT_Journal|r
-    .complete 218,1 --Collect Grelin Whitebeard's Journal (x1)
-    .mob Grik'nir the Cold
-step << Hunter
-    #season 2
-    .goto Dun Morogh,30.773,80.063
-    >>Open the |cRXP_PICK_Frostmane Loot Cache|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Chimera|r]
-    .collect 206168,1 -- Rune of the Chimera (1)
-step << Hunter
-    #season 2
-    #label RotC
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Chimera|r]
-    .use 206168
-step
-    #season 2
-    .goto Dun Morogh,30.6,80.3
-    >>Kill |cRXP_ENEMY_Grik'nir the Cold|r. Loot him for his |cRXP_LOOT_Journal|r
-    .complete 218,1 --Collect Grelin Whitebeard's Journal (x1)
-    .mob Grik'nir the Cold
-step
-    #completewith next
-    .goto Dun Morogh,28.4,79.7,35,0
-    .goto Dun Morogh,26.8,79.6,25 >>Run back out the cave
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grelin Whitebeard|r
     .target Grelin Whitebeard
+step
+    #optional
+    #label FrostMCave1
+    #completewith Grelin
+    .goto 1426,27.098,80.707,20 >> Enter the Frostmane Cave
+step
+    #season 0,1
+    #optional
+    #requires FrostMCave1
+    #completewith Grelin
+    .goto 1426,28.298,79.836,15,0
+    .goto 1426,29.252,79.043,15,0
+    .goto 1426,30.489,80.165,50 >> Travel towards |cRXP_ENEMY_Grik'nir the Cold|r inside
+step
+    #season 2
+    #optional
+    #requires FrostMCave1
+    #completewith Rune
+    .goto 1426,28.298,79.836,15,0
+    .goto 1426,29.252,79.043,15,0
+    .goto 1426,30.489,80.165,50 >> Travel towards the |cRXP_PICK_Frostmane Loot Cache|r inside
+    .train 410121,1
+step
+    #sticky
+    #label Grelin
+    .goto 1426,30.489,80.165,0,0
+    >>Kill |cRXP_ENEMY_Grik'nir the Cold|r inside. Loot him for |cRXP_LOOT_Grelin Whitebeard's Journal|r
+    .complete 218,1 --Collect Grelin Whitebeard's Journal (x1)
+    .mob Grik'nir the Cold
+step
+    #season 2
+    #label Rune
+    .goto Dun Morogh,30.773,80.063
+    >>Open the |cRXP_PICK_Frostmane Loot Cache|r on the ground inside. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of the Chimera]|r
+    .collect 206168,1 -- Rune of the Chimera (1)
+    .train 410121,1
+step
+    #season 2
+    .train 410121 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of the Chimera]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Chimera Shot]
+    .use 206168
+    .itemcount 206168,1
+step
+    #season 2
+    #completewith Observations
+    #label Chimera1
+    .equip 10 >>|cRXP_WARN_Equip a pair of|r |T132952:0|t|cRXP_LOOT_[Gloves]|r |cRXP_WARN_if you have a pair or you loot a pair|r
+    .train 410121,1
+step
+    #season 2
+    #completewith Observations
+    #requires Chimera1
+    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132952:0|t|cRXP_LOOT_[Gloves]|r with|r |T133816:0|t[Engrave Gloves - Chimera Shot]
+    .train 410121,1
+step
+    #optional
+    #requires Grelin
+    #completewith Stolen
+    .goto 1426,29.252,79.043,15,0
+    .goto 1426,28.298,79.836,15,0
+    .goto 1426,27.098,80.707,20 >> Exit the Frostmane Cave
+    .subzoneskip 132
+step
+    #requires Grelin
     .goto Dun Morogh,25.075,75.715
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grelin Whitebeard|r
     .turnin 218 >> Turn in The Stolen Journal
     .accept 282 >> Accept Senir's Observations
-step << Dwarf Hunter
+    .target Grelin Whitebeard
+step << Dwarf
     #season 2
-    .isQuestComplete 77660
+    #optional
+    #completewith next
+    .goto 1426,28.792,68.804,12,0
+    .goto 1426,28.939,68.387,12 >> Enter Anvilmar
+step << Dwarf
+    #season 2
+    #optional
     .goto Dun Morogh,29.175,67.455
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgas Grimson|r
     .turnin 77660 >> Turn in Trek Through the Caves
     .target Thorgas Grimson
+    .isQuestComplete 77660
+    .equip 10 --Show step if you don't have gloves
+step << Dwarf
+    #season 2
+    #optional
+    #completewith next
+    .abandon 77657 >> Abandon Trek Through the Caves as you already have a pair of |T132952:0|t[Gloves] equipped
+step << Dwarf
+    #season 2
+    #optional
+    #completewith next
+    .goto 1426,28.792,68.804,12 >> Exit Anvilmar
+    .subzoneskip 77,1
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Thalos|r
-    .target Mountaineer Thalos
-    .goto Dun Morogh,33.484,71.841
+    #label Observations
+    >>Talk to |cRXP_FRIENDLY_Mountaineer Thalos|r and |cRXP_FRIENDLY_Hands Springsprocket|r
     .turnin 282 >> Turn in Senir's Observations
     .accept 420 >> Accept Senir's Observations
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hands Springsprocket|r
-    .target Hands Springsprocket
-    .goto Dun Morogh,33.847,72.236
+    .goto Dun Morogh,33.484,71.841
+    .target +Mountaineer Thalos
     .accept 2160 >> Accept Supplies to Tannok
+    .goto Dun Morogh,33.85,72.24
+    .target +Hands Springsprocket
 step
     .goto Dun Morogh,34.32,70.95,15,0
     .goto Dun Morogh,35.65,65.79,15 >> Travel through Coldridge Pass
+    .subzoneskip 800,1
+    .isOnQuest 2160
 ]])
 
 RXPGuides.RegisterGuide([[
