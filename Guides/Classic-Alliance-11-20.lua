@@ -113,7 +113,6 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grugimdern|r
     >>|cRXP_WARN_He will give you a|r |T134052:0|t[|cRXP_LOOT_Marshroom|r]
     .collect 210499,1 -- Marshroom (1)
-    .skipgossip
     .target Grugimdern
     .train 424718,1
 step << Druid

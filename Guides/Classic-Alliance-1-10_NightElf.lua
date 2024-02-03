@@ -776,6 +776,11 @@ step << Druid
     .train 416044 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Sun|r] |cRXP_WARN_to train|r |T236216:0|t[Sunfire]
     .use 206989
     .itemcount 206989,1
+step << Druid
+    #completewith next
+    #season 2
+    #softcore
+    .deathskip >>Die and respawn at Dolanaar
 step
     .goto Teldrassil,61.63,68.89,55,0
     .goto Teldrassil,60.52,70.47,55,0
@@ -879,17 +884,17 @@ step << Warrior
     .mob Webwood Venomfang
     .train 403475,1
 step
-    #xprate < 1.5
-    .goto Teldrassil,60.7,54.4
-	.xp 7+3500 >> Grind to level 7 +3500xp
-step
-    #xprate >1.49
-    .xp 7+2335 >> Grind to level 7 +2335xp
-step
     .goto Teldrassil,60.5,56.3
     .target Zenn Foulhoof
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zenn Foulhoof|r
     .turnin 488 >> Turn in Zenn's Bidding
+step
+    #xprate < 1.5
+    .goto Teldrassil,60.7,54.4
+	.xp 7+3520 >> Grind to level 7 +3520xp
+step
+    #xprate >1.49
+    .xp 7+2350 >> Grind to level 7 +2350xp
 step
 	.goto Teldrassil,56.078,57.723
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syral Bladeleaf|r
@@ -1382,11 +1387,20 @@ step << !Hunter
     .target Sentinel Arynia Cloudsbreak
     .accept 940 >> Accept Teldrassil
     .turnin 938 >> Turn in Mist
-step << !Hunter
+step << Druid
+    #xprate <1.5
+    #label xp10
+    #season 2
+    .xp 10
+step << Druid
+    #xprate <1.5
+    #season 0,1
+    #label xp10
+    .xp 10-750
+step << !Hunter !Druid
 	#xprate <1.5
     #label xp10
-    .xp 10-750 << Druid
-    .xp 10-3110 << !Druid
+    .xp 10-3110
 step << Rogue
 	#xprate <1.5
     #season 2
@@ -1444,6 +1458,14 @@ step << !Rogue
     #requires xp10
     #completewith next
     .goto Darnassus,82.01,36.70,100 >> Travel to Darnassus
+step << Druid
+    #optional
+    #season 2
+    .xp <10,1
+    .goto Darnassus,70.679,45.379
+    .target Mydrannul
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mydrannul|r
+    .accept 6344 >> Accept Nessa Shadowsong
 step << Warrior
     #season 2
     #requires xp10
@@ -1481,8 +1503,103 @@ step << !Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
     .accept 2518 >> Accept Tears of the Moon
 step << Druid
+    #season 2
+    #softcore
+    .goto Darnassus,70.679,45.379
+    .target Mydrannul
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mydrannul|r
+    .accept 6344 >> Accept Nessa Shadowsong
+step << Druid
+    #season 2
+    #softcore
+    #completewith next
+    .goto Darnassus,28.52,39.89
+    .zone Teldrassil >> Travel through the purple portal to Rut'theran Village
+    .zoneskip Darkshore
+    .subzoneskip 702
+step << Druid
+    #season 2
+    #softcore
+    .goto Teldrassil,56.25,92.44
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nessa Shadowsong|r
+    .turnin 6344 >> Turn in Nessa Shadowsong
+    .accept 6341 >> Accept The Bounty of Teldrassil
+    .target Nessa Shadowsong
+step << Druid
+    #season 2
+    #softcore
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vesprystus|r
+	.goto Teldrassil,58.39,94.01
+    .turnin 6341 >> Turn in The Bounty of Teldrassil
+    .accept 6342 >> Accept Flight to Auberdine
+    .target Vesprystus
+step << Druid
+    #season 2
+    #softcore
+    #completewith next
+    .goto Teldrassil,58.39,94.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vesprystus|r
+    .fly Auberdine >> Fly to Darkshore
+    .target Vesprystus
+step << Druid
+    #season 2
+    #softcore
+#map Darkshore
+    .goto Felwood,19.27,19.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laird|r
+    .turnin 6342 >> Turn in Flight to Auberdine
+    .accept 6343 >> Accept Return to Nessa
+    .target Laird
+step << Druid
+    #season 2
+    #softcore
+    .goto Darkshore,32.44,43.71
+    .zone Wetlands >> |cRXP_WARN_Take the boat to Menethil Harbor. You will now go and get the|r |T135730:0|t[Starsurge] |cRXP_WARN_rune in Wetlands which is incredibly powerful at this level|r
+    >>|cRXP_WARN_You may die a few times during this process|r
+    .train 424718,1
+step << Druid
+    #season 2
+    #softcore
+    .goto Wetlands,36.941,15.157
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grugimdern|r
+    >>|cRXP_WARN_He will give you a|r |T134052:0|t[|cRXP_LOOT_Marshroom|r]
+    .collect 210499,1 -- Marshroom (1)
+    .target Grugimdern
+    .train 424718,1
+    .link https://youtu.be/fWVaDR-NnKU >> |cRXP_WARN_Click here for video reference|r
+step << Druid
+    #season 2
+    #softcore
+    .goto Wetlands,31.187,18.328,15 >> Head to the tree stump protruding from the lake surface
+step << Druid
+    #season 2
+    #softcore
+    #completewith next
+    .goto Wetlands,31.187,18.328
+    .cast 426019 >>|cRXP_WARN_Use the|r |T134052:0|t[|cRXP_LOOT_Marshroom|r] |cRXP_WARN_to eat it|r
+    >>|cRXP_WARN_Make sure you're safe before using it, if you die you'll have to get the mushroom again|r
+    .use 210499
+    .train 424718,1
+step << Druid
+    #season 2
+    #softcore
+    .goto Wetlands,31.187,18.328
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vodyanoi|r
+    >>You will only be able to see this NPC if you eat the mushroom first
+    .collect 210500,1 -- Rune of the Stars (1)
+    .skipgossip
+    .target Vodyanoi
+    .train 424718,1
+step << Druid
+    #season 2
+    #softcore
+    .train 424718 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Stars|r] |cRXP_WARN_to train|r |T135730:0|t[Starsurge]
+    .use 210500
+    .itemcount 210500,1
+step << Druid
 	#completewith next
 	.cast 18960 >> Cast Teleport: Moonglade
+    .usespell 18960
     >>|cRXP_WARN_It will be in your spellbook|r
 	.zoneskip Moonglade
 step << Druid
@@ -1857,18 +1974,25 @@ step
     .accept 940 >> Accept Teldrassil
 step
     #softcore
-	#completewith next
+	#completewith darn
     .deathskip >>Die and respawn at the Darnassus graveyard
     .target Spirit Healer
 step
     #hardcore
     #completewith next
-    .goto Darnassus,82.01,36.70,100 >> Travel to Darnassus
+    .goto Darnassus,82.01,36.70
+    .zone Darnassus >> Travel to Darnassus
 step
     .goto Darnassus,70.679,45.379
     .target Mydrannul
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mydrannul|r
     .accept 6344 >> Accept Nessa Shadowsong
+step
+    #softcore
+    #label darn
+    #optional
+    .goto Darnassus,82.01,36.70
+    .zone Darnassus >> Travel to Darnassus
 step
 	.abandon 927 >> Abandon The Moss-twined Heart. You never have an opportunity to turn it in
 step << Warrior
@@ -1902,6 +2026,74 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elanaria|r
     .turnin 1683 >> Turn in Vorlus Vilehoof
 --	.accept 1686 >> Accept The Shade of Elura
+step << Hunter
+    .goto Darnassus,40.377,8.545
+    .target Jocaste
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jocaste|r
+    .turnin 6103 >> Turn in Training the Beast
+step << Druid
+    .goto Darnassus,35.38,8.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r on the middle level
+    .turnin 5931 >> Turn in Back to Darnassus
+    .target Mathrengyl Bearwalker
+    .accept 6001 >> Accept Body and Heart
+step
+    .goto Darnassus,34.814,9.255
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Fandral Staghelm|r
+    .turnin 935 >> Turn in Crown of the Earth
+    .turnin 940 >> Turn in Teldrassil << Hunter
+    .target Arch Druid Fandral Staghelm
+    .accept 952 >> Accept Grove of the Ancients
+step
+    .goto Darnassus,38.184,21.639
+    .target Rellian Greenspyre
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rellian Greenspyre|r
+    .turnin 923 >> Turn in Tumors
+step << Rogue
+    .goto Darnassus,31.21,17.72,8,0
+    .goto Darnassus,36.99,21.91
+    .target Syurna
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syurna|r
+    .turnin 2242 >> Turn in Destiny Calls
+step
+    .goto Darnassus,39.72,92.68,10,0
+    .goto Darnassus,36.65,85.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
+    .turnin 2518 >> Turn in Tears of the Moon
+    .target Priestess A'moora
+    .accept 2520 >> Accept Sathrah's Sacrifice
+step
+    .goto Darnassus,39.7,85.8
+	.use 8155 >>|cRXP_WARN_Use|r |T135652:0|t[Sathrah's Sacrifice] |cRXP_WARN_at the fountain|r
+    .complete 2520,1 --Offer the sacrifice at the fountain
+step
+    #label end
+    .goto Darnassus,39.72,92.68,10,0
+    .goto Darnassus,36.65,85.93
+    .target Priestess A'moora
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
+    .turnin 2520 >> Turn in Sathrah's Sacrifice
+step << Druid
+#ssf
+    .goto Darnassus,47.95,68.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Firodren Mooncaller|r
+    .train 2366 >> Train |T136065:0|t[Herbalism]
+    >>|T136065:0|t[Herbalism] |cRXP_WARN_is required to gather 5|r |T134187:0|t[Earthroot] |cRXP_WARN_for a level 15 quest later. You can unlearn it afterwards|r
+    .target Firodren Mooncaller
+step
+    #ah
+    .goto Darnassus,56.245,54.039,-1
+    .goto Darnassus,56.374,51.820,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to a |cRXP_FRIENDLY_Darnassus Auctioneer|r
+    >>Buy the following items for a instant turn ins at Darkshore shortly. Skip this step if you wish to not buy any
+    >>|T133972:0|t[Strider Meat]
+    >>|T133912:0|t[Darkshore Grouper]
+    >>|T134187:0|t[Earthroot] << Druid
+    .collect 5469,5,2178,1 -- Strider Meat (5)
+    .collect 12238,6,1141,1 -- Darkshore Grouper (6)
+    .collect 2449,5,6123,1 << Druid
+    .target Auctioneer Tolon
+    .target Auctioneer Golothas
 step << Hunter/Warrior/Priest
     .goto Darnassus,57.56,46.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
@@ -1969,76 +2161,11 @@ step << Rogue
     .collect 2946,1 -- Balanced Throwing Dagger
     .target Turian
 step
-    #ah
-    .goto Darnassus,56.245,54.039,-1
-    .goto Darnassus,56.374,51.820,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to a |cRXP_FRIENDLY_Darnassus Auctioneer|r
-    >>Buy the following items for a instant turn ins at Darkshore shortly. Skip this step if you wish to not buy any
-    >>|T133972:0|t[Strider Meat]
-    >>|T133912:0|t[Darkshore Grouper]
-    >>|T134187:0|t[Earthroot] << Druid
-    .collect 5469,5,2178,1 -- Strider Meat (5)
-    .collect 12238,6,1141,1 -- Darkshore Grouper (6)
-    .collect 2449,5,6123,1 << Druid
-    .target Auctioneer Tolon
-    .target Auctioneer Golothas
-step << Hunter
-    .goto Darnassus,40.377,8.545
-    .target Jocaste
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jocaste|r
-    .turnin 6103 >> Turn in Training the Beast
-step << Druid
-    .goto Darnassus,35.38,8.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r on the middle level
-    .turnin 5931 >> Turn in Back to Darnassus
-    .target Mathrengyl Bearwalker
-    .accept 6001 >> Accept Body and Heart
-step
-    .goto Darnassus,34.814,9.255
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Fandral Staghelm|r
-    .turnin 935 >> Turn in Crown of the Earth
-    .turnin 940 >> Turn in Teldrassil << Hunter
-    .target Arch Druid Fandral Staghelm
-    .accept 952 >> Accept Grove of the Ancients
-step
-    .goto Darnassus,38.184,21.639
-    .target Rellian Greenspyre
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rellian Greenspyre|r
-    .turnin 923 >> Turn in Tumors
-step << Rogue
-    .goto Darnassus,31.21,17.72,8,0
-    .goto Darnassus,36.99,21.91
-    .target Syurna
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syurna|r
-    .turnin 2242 >> Turn in Destiny Calls
-step
-    .goto Darnassus,39.72,92.68,10,0
-    .goto Darnassus,36.65,85.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
-    .turnin 2518 >> Turn in Tears of the Moon
-    .target Priestess A'moora
-    .accept 2520 >> Accept Sathrah's Sacrifice
-step
-    .goto Darnassus,39.7,85.8
-	.use 8155 >>|cRXP_WARN_Use|r |T135652:0|t[Sathrah's Sacrifice] |cRXP_WARN_at the fountain|r
-    .complete 2520,1 --Offer the sacrifice at the fountain
-step
-    #label end
-    .goto Darnassus,39.72,92.68,10,0
-    .goto Darnassus,36.65,85.93
-    .target Priestess A'moora
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
-    .turnin 2520 >> Turn in Sathrah's Sacrifice
-step << Druid
-#ssf
-    .goto Darnassus,47.95,68.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Firodren Mooncaller|r
-    .train 2366 >> Train |T136065:0|t[Herbalism]
-    >>|T136065:0|t[Herbalism] |cRXP_WARN_is required to gather 5|r |T134187:0|t[Earthroot] |cRXP_WARN_for a level 15 quest later. You can unlearn it afterwards|r
-    .target Firodren Mooncaller
-step
     #completewith NessaShadowsong
-    .goto Darnassus,30.00,41.43,10 >> Travel through the purple portal to Rut'theran Village
+    .goto Darnassus,28.52,39.89
+    .zone Teldrassil >> Travel through the purple portal to Rut'theran Village
+    .zoneskip Darkshore
+    .subzoneskip 702
 step << Rogue
     #season 2
     #completewith next
@@ -2058,12 +2185,19 @@ step << Rogue
     .use 203991
     .itemcount 203991,1
 step
-    #label NessaShadowsong
     .goto Teldrassil,56.25,92.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nessa Shadowsong|r
     .turnin 6344 >> Turn in Nessa Shadowsong
     .target Nessa Shadowsong
     .accept 6341 >> Accept The Bounty of Teldrassil
+step
+    #label NessaShadowsong
+    #optional
+    .goto Teldrassil,56.25,92.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nessa Shadowsong|r
+    .turnin 6343 >> Turn in Return to Nessa
+    .isOnQuest 6343
+    .target Nessa Shadowsong
 step
     .goto Teldrassil,58.399,94.016
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vesprystus|r
