@@ -1571,6 +1571,7 @@ step << Druid
     #season 2
     #softcore
     .goto Wetlands,31.187,18.328,15 >> Head to the tree stump protruding from the lake surface
+    .train 424718,1
 step << Druid
     #season 2
     #softcore
