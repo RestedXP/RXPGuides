@@ -1240,6 +1240,105 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Archaeologist Greywhisker|r
     .accept 730 >> Accept Trouble In Darkshore?
 step << Druid
+    #season 2
+    #completewith next
+    +You will now go to Teldrassil to get |T133816:0|t[Engrave Gloves - Mangle]
+    .train 410025,1
+step << Druid
+    #season 2
+    .goto 1438,40.411,54.076
+    .subzone 141 >> Travel to Teldrassil
+    .subzoneskip 262
+    .train 410025,1
+step << Druid
+    #season 2
+    #label Banethil1
+    #completewith Rune
+    .goto 1438,40.411,54.076,40,0
+    .goto 1438,42.225,54.161,40,0
+    .goto 1438,44.474,56.354,40,0
+    .goto 1438,44.197,58.040
+    .subzone 262 >> Enter the Ban'ethil Barrow Den
+    .train 410025,1
+step << Druid
+    #season 2
+    #optional
+    #requires Banethil1
+    #label Banethil2
+    #completewith Rune
+    .goto 1438,44.197,58.040
+    .subzone 262 >> Enter the Ban'ethil Barrow Den
+    .train 410025,1
+step << Druid
+    #season 2
+    #optional
+    #requires Banethil2
+    #completewith Rune
+    .goto 1438,44.064,58.196,15,0
+    .goto 1438,43.975,58.537,15,0
+    .goto 1438,44.196,58.597,15,0
+    .goto 1438,44.167,58.204,15,0
+    .goto 1438,43.073,59.123,15,0
+    .goto 1438,43.399,59.885,15,0
+    .goto 1438,43.602,59.799,15,0
+    .goto 1438,44.254,59.083,15,0
+    .goto 1438,44.292,58.555,15,0
+    .goto 1438,43.944,57.918,15,0
+    .goto 1438,43.947,57.297,15,0
+    .goto 1438,44.731,57.355,15,0
+    .goto 1438,45.118,57.701,20 >> Travel towards |cRXP_ENEMY_Rageclaw|r inside
+    .train 410025,1
+step << Druid
+    #season 2
+    #loop
+    .line 1438,45.055,57.739,45.008,58.055,45.091,58.386,45.256,58.538,45.492,58.609,45.668,58.356,45.702,57.980,45.604,57.699,45.370,57.566,45.161,57.638,45.118,57.701
+    .goto 1438,45.055,57.739,12,0
+    .goto 1438,45.008,58.055,12,0
+    .goto 1438,45.091,58.386,12,0
+    .goto 1438,45.256,58.538,12,0
+    .goto 1438,45.492,58.609,12,0
+    .goto 1438,45.668,58.356,12,0
+    .goto 1438,45.702,57.980,12,0
+    .goto 1438,45.604,57.699,12,0
+    .goto 1438,45.370,57.566,12,0
+    .goto 1438,45.161,57.638,12,0
+    .goto 1438,45.118,57.701,12,0
+    >>Kill |cRXP_ENEMY_Rageclaw|r on the bottom floor inside. Loot him for the |T136061:0|t|cRXP_LOOT_[Idol of Ursine Rage]|r
+    .collect 206954,1 -- Idol of Ursine Rage (1)
+    .mob Rageclaw
+    .train 410025,1
+step << Druid
+    #season 2
+    .equip 18,206954 >> |cRXP_WARN_Equip the|r |T136061:0|t|cRXP_LOOT_[Idol of Ursine Rage]|r
+    .use 206954
+    .itemcount 206954,1
+    .train 410025,1
+step << Druid
+    #season 2
+    .goto 1438,44.731,57.355,0
+    .goto 1438,44.254,59.083,0
+    .goto 1438,44.064,58.196,0
+    .goto 1438,44.731,57.355,15,0
+    .goto 1438,43.947,57.297,15,0
+    .goto 1438,43.944,57.918,15,0
+    .goto 1438,44.292,58.555,15,0
+    .goto 1438,44.254,59.083,15,0
+    .goto 1438,43.602,59.799,15,0
+    .goto 1438,43.399,59.885,15,0
+    .goto 1438,43.073,59.123,15,0
+    .goto 1438,44.167,58.204,15,0
+    .goto 1438,44.196,58.597,15,0
+    .goto 1438,43.975,58.537,15,0
+    .goto 1438,44.064,58.196,15,0
+    .aura 414824 >>|cRXP_WARN_While in|r |T132276:0|t[Bear Form]|cRXP_WARN_, maintain 50 or more Rage for 60 seconds|r
+    .itemStat 18,QUALITY,2
+    .train 410025,1
+step << Druid
+    #season 2
+    .train 410025 >>|cRXP_WARN_Use the|r |T136061:0|t|cRXP_LOOT_[Idol of Ursine Rage]|r |cRXP_WARN_to learn|r |T132135:0|t[Mangle]
+    .use 206954
+    .aura 414824
+step << Druid
 	#completewith TotL
 	.cast 18960 >> Cast Teleport: Moonglade
 	.zoneskip Moonglade
@@ -6616,119 +6715,6 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
     .trainer >> Train your class spells
     .target Loganaar
-step << Druid
-    #season 2
-    #completewith next
-    +You will now go to Teldrassil to get |T133816:0|t[Engrave Gloves - Mangle]
-    .train 410025,1
-step << Druid
-    #season 2
-    #completewith next
-    .goto Moonglade,44.147,45.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Silva Fil'naveth|r
-    .fly Rut'theran >> Fly to Rut'theran
-    .target Silva Fil'naveth
-    .subzoneskip 262
-    .train 410025,1
-step << Druid
-    #season 2
-    .goto 1438,55.885,89.350
-    .zone Darnassus >> Go through the purple portal into Darnassus
-    .subzoneskip 262
-    .train 410025,1
-step << Druid
-    #season 2
-    .goto 1438,40.411,54.076
-    .subzone 141 >> Travel to Teldrassil
-    .subzoneskip 262
-step << Druid
-    #season 2
-    #label Banethil1
-    #completewith Rune
-    .goto 1438,40.411,54.076,40,0
-    .goto 1438,42.225,54.161,40,0
-    .goto 1438,44.474,56.354,40,0
-    .goto 1438,44.197,58.040
-    .subzone 262 >> Enter the Ban'ethil Barrow Den
-    .train 410025,1
-step << Druid
-    #season 2
-    #optional
-    #requires Banethil1
-    #label Banethil2
-    #completewith Rune
-    .goto 1438,44.197,58.040
-    .subzone 262 >> Enter the Ban'ethil Barrow Den
-    .train 410025,1
-step << Druid
-    #season 2
-    #optional
-    #requires Banethil2
-    #completewith Rune
-    .goto 1438,44.064,58.196,15,0
-    .goto 1438,43.975,58.537,15,0
-    .goto 1438,44.196,58.597,15,0
-    .goto 1438,44.167,58.204,15,0
-    .goto 1438,43.073,59.123,15,0
-    .goto 1438,43.399,59.885,15,0
-    .goto 1438,43.602,59.799,15,0
-    .goto 1438,44.254,59.083,15,0
-    .goto 1438,44.292,58.555,15,0
-    .goto 1438,43.944,57.918,15,0
-    .goto 1438,43.947,57.297,15,0
-    .goto 1438,44.731,57.355,15,0
-    .goto 1438,45.118,57.701,20 >> Travel towards |cRXP_ENEMY_Rageclaw|r inside
-    .train 410025,1
-step << Druid
-    #season 2
-    #loop
-    .line 1438,45.055,57.739,45.008,58.055,45.091,58.386,45.256,58.538,45.492,58.609,45.668,58.356,45.702,57.980,45.604,57.699,45.370,57.566,45.161,57.638,45.118,57.701
-    .goto 1438,45.055,57.739,12,0
-    .goto 1438,45.008,58.055,12,0
-    .goto 1438,45.091,58.386,12,0
-    .goto 1438,45.256,58.538,12,0
-    .goto 1438,45.492,58.609,12,0
-    .goto 1438,45.668,58.356,12,0
-    .goto 1438,45.702,57.980,12,0
-    .goto 1438,45.604,57.699,12,0
-    .goto 1438,45.370,57.566,12,0
-    .goto 1438,45.161,57.638,12,0
-    .goto 1438,45.118,57.701,12,0
-    >>Kill |cRXP_ENEMY_Rageclaw|r on the bottom floor inside. Loot him for the |T136061:0|t|cRXP_LOOT_[Idol of Ursine Rage]|r
-    .collect 206954,1 -- Idol of Ursine Rage (1)
-    .mob Rageclaw
-    .train 410025,1
-step << Druid
-    #season 2
-    .equip 18,206954 >> |cRXP_WARN_Equip the|r |T136061:0|t|cRXP_LOOT_[Idol of Ursine Rage]|r
-    .use 206954
-    .itemcount 206954,1
-    .train 410025,1
-step << Druid
-    #season 2
-    .goto 1438,44.731,57.355,0
-    .goto 1438,44.254,59.083,0
-    .goto 1438,44.064,58.196,0
-    .goto 1438,44.731,57.355,15,0
-    .goto 1438,43.947,57.297,15,0
-    .goto 1438,43.944,57.918,15,0
-    .goto 1438,44.292,58.555,15,0
-    .goto 1438,44.254,59.083,15,0
-    .goto 1438,43.602,59.799,15,0
-    .goto 1438,43.399,59.885,15,0
-    .goto 1438,43.073,59.123,15,0
-    .goto 1438,44.167,58.204,15,0
-    .goto 1438,44.196,58.597,15,0
-    .goto 1438,43.975,58.537,15,0
-    .goto 1438,44.064,58.196,15,0
-    .aura 414824 >>|cRXP_WARN_While in|r |T132276:0|t[Bear Form]|cRXP_WARN_, maintain 50 or more Rage for 60 seconds|r
-    .itemStat 18,QUALITY,2
-    .train 410025,1
-step << Druid
-    #season 2
-    .train 410025 >>|cRXP_WARN_Use the|r |T136061:0|t|cRXP_LOOT_[Idol of Ursine Rage]|r |cRXP_WARN_to learn|r |T132135:0|t[Mangle]
-    .use 206954
-    .aura 414824
 step
     #completewith TheryluneE
     .hs >> Hearth to Auberdine
