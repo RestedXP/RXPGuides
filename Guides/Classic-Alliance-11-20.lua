@@ -2490,6 +2490,13 @@ step
 step << Druid
     #label deers
     #sticky
+    #loop
+    .goto Darkshore,49.7,33.2,0
+    .goto Darkshore,43.4,25.1,0
+    .goto Darkshore,39.6,34.8,0
+    .waypoint Darkshore,49.7,33.2,40,0
+    .waypoint Darkshore,43.4,25.1,40,0
+    .waypoint Darkshore,39.6,34.8,40,0
     >>|cRXP_WARN_Use the|r |T132801:0|t[Curative Animal Salve] |cRXP_WARN_on|r |cRXP_ENEMY_Sickly Deer|r
     .complete 6124,1 -- Sickly Deer cured (10)
     .mob Sickly Deer
@@ -2547,6 +2554,7 @@ step << Hunter
     >>Make sure your HS cooldown is <10 min
     >>Skip this step if the area is too crowded
 step
+    #requires deers << Druid
 #map Darkshore
     #xprate <1.5
     .goto Winterspring,1.42,26.89
@@ -2554,10 +2562,7 @@ step
     .turnin 1002 >> Turn in Buzzbox 323
     .accept 1003 >> Accept Buzzbox 525
 step
-#map Darkshore
-    #completewith next
-    .goto Winterspring,4.82,27.18,80 >> Travel to the Tower of Althalaxx
-step
+    #requires deers << Druid
 #map Darkshore
     .goto Winterspring,4.82,27.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balthule Shadowstrike|r
