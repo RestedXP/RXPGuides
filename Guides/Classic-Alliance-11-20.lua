@@ -1050,7 +1050,7 @@ step
     #completewith next
     #label end1
     .goto Darkshore,54.99,32.94,30,0
-    .goto Winterspring,5.49,36.64,35 >> Travel to the Cliffspring River Cave
+    .goto Darkshore,54.99,33.41,15 >> Travel to the Cliffspring River Cave
 step << Druid
     >>|cRXP_WARN_Use the|r |T134776:0|t[Empty Cliffspring Falls Sampler] |cRXP_WARN_in the water at the entrance of the Cliffspring River Cave|r
     .goto Darkshore,54.99,33.41
@@ -2227,9 +2227,10 @@ step
     >>Click the |cRXP_PICK_Buzzbox 525|r on the ground
     .turnin 1003 >> Turn in Buzzbox 525
 step
-    #completewith next
     #label MasterG
     .goto Darkshore,38.54,86.05,60 >> Travel to The Master's Glaive
+    .subzoneskip 449
+    .isOnQuest 944
 step
     .goto Darkshore,38.54,86.05
     >>Discover The Master's Glaive
@@ -2497,6 +2498,15 @@ step
     >>Open the |cRXP_PICK_Blackwood Grain Stores|r. Loot it for the |cRXP_LOOT_Blackwood Grain Sample|r
     >>|cRXP_WARN_Looting this will spawn 2 |cRXP_ENEMY_Blackwood Furbolgs|r that will agro and run at you. Be ready to fight them or reset them|r
     .collect 12342,1,4763,1 -- Blackwood Grain Stores (1)
+step << Druid
+    #season 2
+    .goto Darkshore,52.60,36.65,45,0
+    .goto Darkshore,51.48,38.26
+    >>Kill |cRXP_ENEMY_Den Mother|r. Loot her for the |T132942:0|t[|cRXP_FRIENDLY_Ferocious Idol|r]
+    >>|cRXP_WARN_Be aware of the |cRXP_ENEMY_Thistle Cubs|r which can stun you for 2 seconds|r
+    .collect 208689,1 -- Ferocious Idol (1)
+    .mob Den Mother
+    .train 407988,1
 step
     .goto Darkshore,52.60,36.65,45,0
     .goto Darkshore,51.48,38.26
@@ -2504,7 +2514,6 @@ step
     >>|cRXP_WARN_Be aware of the |cRXP_ENEMY_Thistle Cubs|r which can stun you for 2 seconds|r
     .complete 2139,1 --Den Mother (1)
     .mob Den Mother
-    .mob Thistle Cub
 step
     .goto Darkshore,51.83,33.50
     >>Open the |cRXP_PICK_Blackwood Nut Stores|r. Loot it for the |cRXP_LOOT_Blackwood Nut Sample|r
@@ -4078,6 +4087,15 @@ step
     >>Open the |cRXP_PICK_Blackwood Grain Stores|r. Loot it for the |cRXP_LOOT_Blackwood Grain Sample|r
     >>|cRXP_WARN_Looting this will spawn 2 |cRXP_ENEMY_Blackwood Furbolgs|r that will agro and run at you. Be ready to fight them or reset them|r
     .collect 12342,1,4763,1 -- Blackwood Grain Stores (1)
+step << Druid
+    #season 2
+    .goto Darkshore,52.60,36.65,45,0
+    .goto Darkshore,51.48,38.26
+    >>Kill |cRXP_ENEMY_Den Mother|r. Loot her for the |T132942:0|t[|cRXP_FRIENDLY_Ferocious Idol|r]
+    >>|cRXP_WARN_Be aware of the |cRXP_ENEMY_Thistle Cubs|r which can stun you for 2 seconds|r
+    .collect 208689,1 -- Ferocious Idol (1)
+    .mob Den Mother
+    .train 407988,1
 step
     .goto Darkshore,52.60,36.65,45,0
     .goto Darkshore,51.48,38.26
@@ -6741,7 +6759,7 @@ step << Druid
     .train 407988,1
 step << Druid
     #season 2
-    .train 407988 >>|cRXP_WARN_Deal 20 instances of bleeding damage from|r |T132152:0|t[Rip] |cRXP_WARN_or|r |T132122:0|t[Rake] |cRXP_WARN_to humanoids, then use the|r |T132942:0|t[|cRXP_FRIENDLY_Ferocious Idol|r] |cRXP_WARN_again to learn|r |T236167:0|t[Savage Roar]
+    .train 407988 >>|cRXP_WARN_Deal 20 instances of bleeding damage from|r |T132152:0|t[Rip] |T132122:0|t[Rake] |cRXP_WARN_or|r |T132131:0|t[Lacerate] |cRXP_WARN_to humanoids, then use the|r |T132942:0|t[|cRXP_FRIENDLY_Ferocious Idol|r] |cRXP_WARN_again to learn|r |T236167:0|t[Savage Roar]
     .use 208689
     .itemcount 208689,1
 step
