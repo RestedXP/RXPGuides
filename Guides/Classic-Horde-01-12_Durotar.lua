@@ -462,7 +462,7 @@ step << Hunter
     .accept 77584 >>Accept Hunt for the Rune << Orc Hunter
     .target Jen'shan
 step << Hunter
-    #seaon 0
+    #season 0
     .goto Durotar,42.84,69.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jen'shan|r
     .turnin 3082 >>Turn in Etched Tablet << Troll
@@ -3064,8 +3064,8 @@ step << Warrior/Shaman
 	#era/som
 	#completewith EnterTB
     >>Keep an eye out for |cRXP_ENEMY_Ghost Howl|r. Loot him for his |T134358:0|t[|cRXP_LOOT_Demon Scarred Cloak|r]. Use it to start the quest
+    >>|cRXP_WARN_Do not accept the quest yet|r
     .collect 4854,1,770 --Collect Demon Scarred Cloak
-    .accept 770 >>Accept The Demon Scarred Cloak
     .use 4854
     .unitscan Ghost Howl
 step << Warrior/Shaman
@@ -3160,10 +3160,9 @@ step << Warrior/Shaman
 step << Warrior/Shaman
 	#era/som
 	#completewith SacredBurialTurnIn
-    >>Keep an eye out for |cRXP_ENEMY_Ghost Howl|r. Loot him for his |T134358:0|t[|cRXP_LOOT_Demon Scarred Cloak|r]. Use it to start the quest
+    >>Keep an eye out for |cRXP_ENEMY_Ghost Howl|r. Loot him for his |T134358:0|t[|cRXP_LOOT_Demon Scarred Cloak|r]
+    >>|cRXP_WARN_Do not accept the quest yet|r
     .collect 4854,1,770 --Collect Demon Scarred Cloak
-    .accept 770 >>Accept The Demon Scarred Cloak
-    .use 4854
     .unitscan Ghost Howl
 step << Warrior/Shaman
     #label RiteofWisdomTurnin
@@ -3311,10 +3310,12 @@ step << Warrior/Shaman
     #era/som
     .goto Mulgore,46.75,60.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skorn|r
+    .accept 770 >>Accept The Demon Scarred Cloak
     .turnin 770 >>Turn in The Demon Scarred Cloak
     .target Skorn
     .target Skorn Whitecloud
-    .isOnQuest 770
+    .use 4854
+    .itemcount 4854,1
 step << Warrior/Shaman
     #era/som
     .goto Mulgore,47.51,60.16
