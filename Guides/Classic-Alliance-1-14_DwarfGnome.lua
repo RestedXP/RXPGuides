@@ -4242,7 +4242,7 @@ step << Dwarf Paladin
 #xprate >1.49
     .goto Dun Morogh,70.66,56.70,40,0
     .goto Dun Morogh,70.60,54.87
-    >>Perform a logout skip in the trogg cave to teleport back to Ironforge
+    .zone Ironforge >>Perform a logout skip in the trogg cave to teleport back to Ironforge
     .link https://www.youtube.com/watch?v=kbUSo62CfAM >> CLICK HERE for reference
 step << Dwarf Paladin
 #xprate >1.49
@@ -7921,7 +7921,7 @@ step << Dwarf Paladin
 step << Dwarf Paladin
     .goto Dun Morogh,70.66,56.70,40,0
     .goto Dun Morogh,70.60,54.87
-    >>Perform a logout skip in the trogg cave to teleport back to Ironforge
+    .zone Ironforge >>Perform a logout skip in the trogg cave to teleport back to Ironforge
     .link https://www.youtube.com/watch?v=kbUSo62CfAM >> CLICK HERE for reference
 step << Mage
     .hs >> Hearth to Thelsamar
