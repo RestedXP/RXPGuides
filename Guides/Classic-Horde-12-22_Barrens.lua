@@ -1251,6 +1251,12 @@ step
     >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Forgotten Pools
     >>|cRXP_WARN_This quest does not have to be completed now|r
     .complete 848,1 --Collect Fungal Spores (x4)
+step << Druid
+    #season 2
+    .goto The Barrens,44.73,22.18
+    >>Loot the |cRXP_PICK_Abandoned Snapjaw Nest|r on the ground for |T294479:0|t[|cRXP_LOOT_Abandoned Snapjaw Egg|r]
+    .collect 208682,1 --Abandoned Snapjaw Egg (1)
+    .train 416049,1
 step
     .goto The Barrens,45.06,22.54
     >>Dive underwater to the |cRXP_PICK_Bubble Fissure|r
@@ -2433,6 +2439,17 @@ step
     .mob Kolkar Marauder
     .itemcount 5030,5 --Centaur Bracers (5)
     .isOnQuest 855
+step << Druid
+    #season 2
+    .goto The Barrens,48.32,40.25
+    >>Open the |cRXP_PICK_Empty Snapjaw Nest|r on the ground for |T134419:0|t[|cRXP_FRIENDLY_Rune of Lacerate|r]
+    .collect 208687,1 --Unbalanced Idol (1)
+    .train 416049,1
+step << Druid
+    #season 2
+    .train 416049 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Lacerate|r] |cRXP_WARN_to train|r |T132131:0|t[Lacerate]
+    .use 208687 --Rune of Lacerate (1)
+    .itemcount 208687,1
 step
     #completewith CounterattackComplete
     .abandon 855 >> Abandon Centaur Bracers as you have not looted enough previously to make it worthwhile to finish
