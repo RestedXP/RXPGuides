@@ -735,7 +735,7 @@ step << Warlock
     .collect 205020,1 -- Pure Soul Shard (1)
     .train 403920,1
 step << Warlock
-    .goto Loch Modan,77.894,62.236
+    .goto Dun Morogh,77.894,62.236
     >>Kill |cRXP_ENEMY_Captain Beld|r downstairs inside the building. Loot him for a |T134085:0|t[|cRXP_LOOT_Tainted Soul Shard|r]
     >>|cRXP_WARN_Ensure he dies while you also have|r |T136163:0|t[Drain Soul] |cRXP_WARN_on him|r
     .collect 205019,1 -- Tainted Soul Shard (1)

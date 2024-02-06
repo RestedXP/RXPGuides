@@ -865,10 +865,9 @@ step
     #sticky
     .destroy 205864 >> Delete the |T134939:0|t[Charred Note] from your bags, as it's no longer needed
 step
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Martyrdom] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Seal of Martyrdom]
+    .train 410015 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Martyrdom] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Seal of Martyrdom]
     .use 205897
     .itemcount 205897,1 --Rune of Martyrdom (1)
-    .train 410015,1
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1228,7 +1227,7 @@ step
     >>|cRXP_WARN_Be careful as he casts|r |T132939:0|t[Backhand] |cRXP_WARN_(stuns you for 2 seconds)|r
     >>|cRXP_WARN_Remember to pre-cast|r |T135924:0|t[Seal of the Crusader] |cRXP_WARN_on him|r
     >>|cRXP_WARN_DO NOT accidentally cast|r |T135906:0|t[Blessing of Might] |cRXP_WARN_on him|r
-    >>|cRXP_WARN_Kite him upstairs to the balcony, then drop down outside the inn cast|r |T135920:0|t[Holy Light] |cRXP_WARN_if needed|r
+    >>|cRXP_WARN_Kite him upstairs to the balcony, then drop down outside the inn and cast|r |T135920:0|t[Holy Light] |cRXP_WARN_if needed|r
     .mob Bruart
     .skipgossip 209004,1
     .train 425621,1
@@ -1241,7 +1240,7 @@ step
     >>|cRXP_WARN_Be careful as he casts|r |T132939:0|t[Backhand] |cRXP_WARN_(stuns you for 2 seconds)|r
     >>|cRXP_WARN_Remember to pre-cast|r |T135924:0|t[Seal of the Crusader] |cRXP_WARN_on him|r
     >>|cRXP_WARN_DO NOT accidentally cast|r |T135906:0|t[Blessing of Might] |cRXP_WARN_on him|r
-    >>|cRXP_WARN_Kite him upstairs to the balcony, then drop down outside the inn cast|r |T135920:0|t[Holy Light] |cRXP_WARN_if needed|r
+    >>|cRXP_WARN_Kite him upstairs to the balcony, then drop down outside the inn and cast|r |T135920:0|t[Holy Light] |cRXP_WARN_if needed|r
     >>|cRXP_WARN_After defeating |cRXP_ENEMY_Bruart|r:|r
     >>Talk to |cRXP_FRIENDLY_Bruuk Barleybeard|r again to receive the |T134419:0|t[Rune of Rebuke]
     >>|cRXP_WARN_If he doesn't give you the|r |T134419:0|t[Rune of Rebuke]|cRXP_WARN_, you may need to fight |cRXP_ENEMY_Bruart|r again|r

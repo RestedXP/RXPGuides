@@ -64,8 +64,8 @@ step
 #xprate <1.5 << !NightElf/!Hunter
 #map Darkshore
     .goto Felwood,19.51,18.97
-    .accept 983 >> Accept Buzzbox 827
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wizbang Cranktoggle|r
+    .accept 983 >> Accept Buzzbox 827
     .target Wizbang Cranktoggle
 step
 #map Darkshore
@@ -184,24 +184,16 @@ step
     .accept 963 >> Accept For Love Eternal
     .target Cerellean Whiteclaw
 step
-    #completewith next
+    #season 0,1 << Rogue
+    #optional
+    #completewith SeaT1
     .goto Darkshore,32.75,42.21,35 >> Travel to the end of the dock then jump into the water
 step << Rogue
     #season 2
-    #completewith next
-    .goto Darkshore,32.80,37.72,20 >> Swim to the small island with the Lighthouse
-    .train 424785,1
-step << Rogue
-    #season 2
-    .goto Darkshore,32.729,37.093
-    >>Open the |cRXP_PICK_Lighthouse Stash|r inside the tree trunk. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Saber Slash|r]
-    .collect 208772,1 -- Rune of Saber Slash (1)
-    .train 424785,1
-step << Rogue
-    #season 2
-    .cast 402265 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Saber Slash|r]
-    .use 208772 -- Rune of Saber Slash (1)
-    .train 424785,1
+    #optional
+    #completewith SeaT1
+    .goto Darkshore,32.75,42.21,35 >> Travel to the end of the dock then jump into the water
+    .train 424785,3
 step
     #xprate <1.5
     #completewith washed1
@@ -211,8 +203,28 @@ step
     >>Kill |cRXP_ENEMY_Darkshore Threshers|r. Loot them for their |cRXP_LOOT_Eyes|r
     .complete 1001,1
     .mob Darkshore Thresher
+step << Rogue
+    #season 2
+    #optional << !NightElf
+    #completewith next
+    .goto Darkshore,32.80,37.72,20 >> Swim to the small island with the Lighthouse
+    .train 424785,1
+step << Rogue
+    #season 2
+    #optional << !NightElf
+    .goto Darkshore,32.729,37.093
+    >>Open the |cRXP_PICK_Lighthouse Stash|r inside the tree trunk. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Saber Slash|r]
+    .collect 208772,1 -- Rune of Saber Slash (1)
+    .train 424785,1
+step << Rogue
+    #season 2
+    #optional << !NightElf
+    .cast 402265 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Saber Slash|r]
+    .use 208772 -- Rune of Saber Slash (1)
+    .train 424785,1
 step
 #map Darkshore
+    #label SeaT1
     .goto Felwood,13.63,21.44
     >>Loot the |cRXP_PICK_Skeletal Sea Turtle|r for the |cRXP_LOOT_Sea Turtle Remains|r
     .complete 4681,1
