@@ -586,7 +586,7 @@ step << Druid
 step << Druid
     .goto Duskwood,49.520,33.851
     +Click the |cRXP_PICK_Owl Statue|r to gain the |T132150:0|t[Eyes of the Owl] buff
-    .aura 424310
+    .aura -424310
     .train 410028,1
 step << Druid
     .goto Duskwood,45.13,58.26
