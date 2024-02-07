@@ -2024,3 +2024,185 @@ step
     .goto The Barrens,45,80
     .train 415936 >>To acquire the Living Bomb ability, initiate the event by blinking against the Stone Tablet. Following this, you must successfully blink into the designated green spots to complete the challenge.
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+#group RestedXP Rune Guide
+#subgroup Waist
+#name Spellfrost Bolt - 40 (Stranglethorn Vale)
+
+<< Mage SoD
+
+step
+    .train 415948,1
+    .goto Stormwind City,55.8,65.2,-1
+    .goto Stormwind City,32.4,80.0,-1
+    .goto Stormwind City,43.4,26.8,-1
+    .goto Stormwind City,36.0,74.8,-1
+    .goto Elwynn Forest,64.8,69.2,-1
+    .goto Ironforge,19.6,56.2,-1
+    .goto Undercity,69.6,39.2,-1
+    .goto Darnassus,38.8,60.4,-1
+    .goto Ashenvale,35.0,48.6,-1
+    .goto Ironforge,31.2,27.6,-1
+    .goto Duskwood,76.0,45.2,-1
+    .goto Darnassus,34.6,9.8,-1
+    .goto Wetlands,8.4, 56.6,-1
+    >>Purchase one or more |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
+    .collect 211779,1
+step
+    .train 415948,1
+    #completewith next
+    .zone Stranglethorn Vale >>Travel to |cFFfa9602Stranglethorn Vale|r
+step
+    .train 415948,1
+    #loop
+    .goto Stranglethorn Vale,46.6,30.0,30,0
+    .goto Stranglethorn Vale,43.6,33.2,30,0
+    .goto Stranglethorn Vale,46.4,40.6,30,0
+    .goto Stranglethorn Vale,48.6,40.8,30,0
+    >>Kill |cRXP_ENEMY_Skullsplitter Mystic|r and loot them for |cRXP_LOOT_|T134939:0|t[Spell Notes: PELFRB STOLLOTS]|r
+    .collect 213127,1
+    .mob Skullsplitter Mystic
+step
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
+    .train 415948 >>|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: PELFRB STOLLOTS|r] to learn |T236220:0|t[Spellfrost Bolt]
+    .use 213127
+]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- #group RestedXP Rune Guide
+-- #subgroup Waist
+-- #name Missile Barrage
+
+-- << Mage SoD
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- #group RestedXP Rune Guide
+-- #subgroup Waist
+-- #name Hot Streak
+
+-- << Mage SoD
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- #group RestedXP Rune Guide
+-- #subgroup Waist
+-- #name Frostfire Bolt
+
+-- << Mage SoD
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- #group RestedXP Rune Guide
+-- #subgroup Feet
+-- #name Chronostatic Preservation
+
+-- << Mage SoD
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- #group RestedXP Rune Guide
+-- #subgroup Feet
+-- #name Brain Freeze
+
+-- << Mage SoD
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- #group RestedXP Rune Guide
+-- #subgroup Wrist
+-- #name Displacement
+
+-- << Mage SoD
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- #group RestedXP Rune Guide
+-- #subgroup Wrist
+-- #name Displacement
+
+-- << Mage SoD
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- #group RestedXP Rune Guide
+-- #subgroup Helm
+-- #name Temporal Anomaly
+
+-- << Mage SoD
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- #group RestedXP Rune Guide
+-- #subgroup Helm
+-- #name Deep Freeze
+
+-- << Mage SoD
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- #group RestedXP Rune Guide
+-- #subgroup Helm
+-- #name Deep Freeze
+
+-- << Mage SoD
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- #group RestedXP Rune Guide
+-- #subgroup Wrist
+-- #name Molten Armor
+
+-- << Mage SoD
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- #group RestedXP Rune Guide
+-- #subgroup Feet
+-- #name Spell Power
+
+-- << Mage SoD
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- #group RestedXP Rune Guide
+-- #subgroup Books
+-- #name Expanded Intellect
+
+-- << Mage SoD
+
+
+-- ]])
