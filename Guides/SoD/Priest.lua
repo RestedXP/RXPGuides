@@ -323,7 +323,7 @@ step << Troll
     .emote KNEEL,208309
     .goto Durotar,55.32,72.66
     .aura 417316 >>Kneel before the |cRXP_PICK_Loa Altar|r and talk to the |cRXP_FRIENDLY_Serpent Loa|r to get the |T136077:0|t[Meditation on the Loa] buff
-    .aura 418459
+    .aura -418459
     >>|cRXP_WARN_You can also find an Undead Priest with a Loa buff. You have to kneel before him and he has to /pray for you to get the |T237569:0|t[Meditation on Undeath] buff.|r
     .skipgossip 208307,1
 step
