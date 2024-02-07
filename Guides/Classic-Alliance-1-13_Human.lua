@@ -466,7 +466,7 @@ step << Paladin
     #completewith RedBurlapBandana
     .cast 409920 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Crusader Strike]
     .use 205420
-    .aura 408828
+    .aura -408828
     .train 410002,1
 step << Paladin
     #season 2
@@ -553,7 +553,7 @@ step << Paladin
     #season 2
     .cast 409920 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Crusader Strike]
     .use 205420
-    .aura 408828
+    .aura -408828
     .train 410002,1
 step << Human Paladin
     #season 2
