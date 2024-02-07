@@ -1628,8 +1628,8 @@ step << Druid
     .accept 5931 >> Accept Back to Darnassus
 step
     #requires xp10 << Rogue
-    #completewith next << !Rogue
     .hs >> Hearth to Dolanaar
+    .subzoneskip 186
 step << Hunter
     .goto Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeena Featherbow|r
