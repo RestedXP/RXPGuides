@@ -3905,7 +3905,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor Gnome/Dwarf
-#next 13-15 Westfall
+#next 13-15 Westfall;14-16 Darkshore
 
 step
 #xprate >1.49

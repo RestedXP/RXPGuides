@@ -335,7 +335,7 @@ step << NightElf Rogue
     .money <0.2390
     .target Naram Longclaw
 step
-#xprate <1.5 << !NightElf !Hunter
+#xprate <1.5 << !NightElf
 #map Darkshore
     .goto Felwood,19.98,14.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
@@ -344,7 +344,7 @@ step
     .accept 958 >> Accept Tools of the Highborne
     .accept 954 >> Accept Bashal'Aran
     .target Thundris Windweaver
-step << !NightElf !Hunter
+step << !NightElf
 #map Darkshore
 #xprate >1.49
     .goto Felwood,19.98,14.40
@@ -418,7 +418,7 @@ step
     >>Click the |cRXP_PICK_Beached Sea Creature|r
     .accept 4723 >> Accept Beached Sea Creature
 step
-#xprate <1.5 << !NightElf !Hunter
+#xprate <1.5 << !NightElf
 #map Darkshore
     #completewith Bashal1
     .goto Felwood,27.70,10.03,60 >> Travel to Bashal'Aran
@@ -437,7 +437,7 @@ step
     .complete 1002,1 -- Moonstalker Fang (6)
     .unitscan Moonstalker;Moonstalker Runt
 step
-#xprate <1.5 << !NightElf !Hunter
+#xprate <1.5 << !NightElf
 #map Darkshore
     #label Bashal1
     .goto Felwood,27.70,10.03
@@ -447,7 +447,7 @@ step
     .accept 955 >> Accept Bashal'Aran
     .target Asterion
 step
-#xprate <1.5 << !NightElf !Hunter
+#xprate <1.5 << !NightElf
     .goto Darkshore,44.78,37.91,40,0
     .goto Darkshore,45.43,39.15,40,0
     .goto Darkshore,46.30,39.01,40,0
@@ -459,7 +459,7 @@ step
     .mob Wild Grell
     .mob Vile Sprite
 step
-#xprate <1.5 << !NightElf !Hunter
+#xprate <1.5 << !NightElf
 #map Darkshore
     .goto Felwood,27.70,10.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asterion|r
@@ -467,7 +467,7 @@ step
     .accept 956 >> Accept Bashal'Aran
     .target Asterion
 step
-#xprate <1.5 << !NightElf !Hunter
+#xprate <1.5 << !NightElf
     .goto Darkshore,45.88,38.56,40,0
     .goto Darkshore,46.76,39.13,40,0
     .goto Darkshore,47.69,36.73,40,0
@@ -476,7 +476,7 @@ step
     .complete 956,1
     .mob Deth'ryll Satyr
 step
-#xprate <1.5 << !NightElf !Hunter
+#xprate <1.5 << !NightElf
 #map Darkshore
     .goto Felwood,27.70,10.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asterion|r
@@ -731,7 +731,7 @@ step
     >>Click the |cRXP_PICK_The Fall of Ameth'Aran|r
     .complete 953,2 -- The Fall of Ameth'Aran
 step
-#xprate <1.5 << !NightElf !Hunter
+#xprate <1.5 << !NightElf
 #map Darkshore
     .goto Felwood,25.66,39.11
     >>Click the |cRXP_PICK_Ancient Flame|r
