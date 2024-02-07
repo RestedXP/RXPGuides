@@ -3533,7 +3533,7 @@ step << Shaman
     #requires MoltenBlast
     .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Sulfurous Icon]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves: Molten Blast]
     .use 206388
-    .aura 408828
+    .aura -408828
     .itemStat 18,QUALITY,2
     .train 425344,1
     .xp <3,1

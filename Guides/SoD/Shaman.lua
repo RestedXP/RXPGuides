@@ -165,7 +165,7 @@ step
 step
     .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Sulfurous Icon]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Molten Blast]
     .use 206388
-    .aura 408828
+    .aura -408828
     .itemStat 18,QUALITY,2
     .train 425344,1
     .xp <3,1
@@ -358,7 +358,7 @@ step
 step
     .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Sulfurous Icon]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Molten Blast]
     .use 206388
-    .aura 408828
+    .aura -408828
     .itemStat 18,QUALITY,2
     .train 425344,1
     .xp <10,1
@@ -805,7 +805,7 @@ step
 step
     .cast 402265 >>|cRXP_WARN_Use the|r |T135832:0|t|cRXP_LOOT_[Tempest Icon]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Water Shield]
     .use 206382
-    .aura 408828
+    .aura -408828
     .itemStat 18,QUALITY,2
     .train 410097,1
     .xp <20,1
@@ -954,7 +954,7 @@ step
 step
     .cast 402265 >>|cRXP_WARN_Use the|r |T135832:0|t|cRXP_LOOT_[Tempest Icon]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Water Shield]
     .use 206382
-    .aura 408828
+    .aura -408828
     .itemStat 18,QUALITY,2
     .train 410097,1
     .xp <20,1
@@ -1010,7 +1010,7 @@ step
     >>|cRXP_WARN_Move out of the|r |T135805:0|t[Lava]
     .cast 402265 >>|cRXP_WARN_Use the|r |T134920:0|t|cRXP_LOOT_[Kajaric Icon]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Lava Burst]
     .use 206387
-    .aura 408828
+    .aura -408828
     .itemStat 18,QUALITY,2
     .train 410095,1
     .xp <25,1
@@ -1070,7 +1070,7 @@ step
     >>|cRXP_WARN_Move out of the|r |T135805:0|t[Lava]
     .cast 402265 >>|cRXP_WARN_Use the|r |T134920:0|t|cRXP_LOOT_[Kajaric Icon]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Lava Burst]
     .use 206387
-    .aura 408828
+    .aura -408828
     .itemStat 18,QUALITY,2
     .train 410095,1
 ]])
@@ -1127,7 +1127,7 @@ step
 step
     .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Dyadic Icon]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Overload]
     .use 206381
-    .aura 408828
+    .aura -408828
     .itemStat 18,QUALITY,2
     .train 410094,1
     .xp <3,1
@@ -1204,7 +1204,7 @@ step
 step
     .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Dyadic Icon]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Overload]
     .use 206381
-    .aura 408828
+    .aura -408828
     .itemStat 18,QUALITY,2
     .train 410094,1
     .xp <3,1
@@ -1382,7 +1382,7 @@ step
 step
     .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Galvanic Icon]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Shield Mastery]
     .use 206386
-    .aura 408828
+    .aura -408828
     .itemStat 18,QUALITY,2
     .train 410098,1
     .xp <3,1
@@ -1593,7 +1593,7 @@ step
 step
     .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Galvanic Icon]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Shield Mastery]
     .use 206386
-    .aura 408828
+    .aura -408828
     .itemStat 18,QUALITY,2
     .train 410098,1
     .xp <3,1

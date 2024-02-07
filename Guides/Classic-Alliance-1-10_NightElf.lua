@@ -1628,8 +1628,8 @@ step << Druid
     .accept 5931 >> Accept Back to Darnassus
 step
     #requires xp10 << Rogue
-    #completewith next << !Rogue
     .hs >> Hearth to Dolanaar
+    .subzoneskip 186
 step << Hunter
     .goto Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeena Featherbow|r
@@ -2086,10 +2086,11 @@ step
     .goto Darnassus,56.245,54.039,-1
     .goto Darnassus,56.374,51.820,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to a |cRXP_FRIENDLY_Darnassus Auctioneer|r
-    >>Buy the following items for a instant turn ins at Darkshore shortly. Skip this step if you wish to not buy any
-    >>|T133972:0|t[Strider Meat]
-    >>|T133912:0|t[Darkshore Grouper]
+    >>Buy the following items for instant turn ins at Darkshore later:
     >>|T134187:0|t[Earthroot] << Druid
+    >>|T133912:0|t[Darkshore Grouper]
+    >>|T133972:0|t[Strider Meat]
+    *Skip this step if you wish to not buy any
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
     .collect 2449,5,6123,1 << Druid

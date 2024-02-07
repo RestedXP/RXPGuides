@@ -292,7 +292,7 @@ step << Priest
 step << Priest
     #season 2
     .train 402862 >> |cRXP_WARN_Use the|r |T136222:0|t|cRXP_LOOT_[Memory of a Troubled Acolyte]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Penance]
-    .aura 410935
+    .aura -410935
     .use 205951
 step << Dwarf Priest
     #season 2
@@ -703,7 +703,8 @@ step << Warrior/Paladin
     .waypoint 1426,26.382,78.409,45,0
     .waypoint 1426,26.031,79.854,45,0
     .waypoint 1426,23.716,80.257,45,0
-    >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r. Loot them for the |T134419:0|t|cRXP_LOOT_[Rune of Victory Rush]|r
+    >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r. Loot them for the |T134419:0|t|cRXP_LOOT_[Rune of Victory Rush]|r << Warrior
+    >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r. Loot them for the |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r << Paladin
     .collect 204806,1 << Warrior --Rune of Victory Rush (1)
     .collect 205420,1 << Paladin -- Libram of Judgement (1)
     .mob Frostmane Troll Whelp
@@ -770,7 +771,7 @@ step << Paladin
     #requires Libram3
     .cast 409920 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Crusader Strike]
     .use 205420
-    .aura 408828
+    .aura -408828
     .train 410002,1
 step << Paladin
     #season 2
@@ -1119,9 +1120,9 @@ step << Dwarf Hunter
 step << Dwarf Paladin/Dwarf Hunter
     #season 2
     #optional
-    #completewith next
-    .abandon 77660 >> Abandon Relics of the Light as you already have a pair of |T132938:0|t[Gloves] equipped << Paladin
-    .abandon 77657 >> Abandon Trek Through the Caves as you already have a pair of |T132952:0|t[Gloves] equipped << Hunter
+    #completewith ColdridgePass
+    .abandon 77657 >> Abandon Relics of the Light as you already have a pair of |T132938:0|t[Gloves] equipped << Paladin
+    .abandon 77660 >> Abandon Trek Through the Caves as you already have a pair of |T132952:0|t[Gloves] equipped << Hunter
 step
     #label Observations
     >>Talk to |cRXP_FRIENDLY_Mountaineer Thalos|r and |cRXP_FRIENDLY_Hands Springsprocket|r
@@ -1133,6 +1134,7 @@ step
     .goto Dun Morogh,33.85,72.24
     .target +Hands Springsprocket
 step
+    #label ColdridgePass
     .goto Dun Morogh,34.32,70.95,15,0
     .goto Dun Morogh,35.65,65.79,15 >> Travel through Coldridge Pass
     .subzoneskip 800,1
@@ -1643,7 +1645,7 @@ step << Paladin/Warrior/Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tundra MacGrann|r
     .target Tundra MacGrann
     .goto Dun Morogh,43.0,47.4,60,0
-    .goto Dun Morogh,39.6,48.9,60,0
+    .goto Dun Morogh,39.6,48.9,80,0
     .goto Dun Morogh,34.577,51.652
     .accept 312 >> Accept Tundra MacGrann's Stolen Stash
 step << !Paladin !Warrior !Rogue
@@ -2292,6 +2294,7 @@ step
     .goto Dun Morogh,49.426,48.410
     >>|cRXP_WARN_Choose the|r |T135637:0|t[Camping Knife] |cRXP_WARN_reward. Save it for later|r << Rogue
     .turnin 320 >> Turn in Return to Bellowfiz
+    .isOnQuest 320
 step << Warrior
     #sticky
     #completewith next
@@ -2585,7 +2588,9 @@ step << !Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yanni Stoutheart|r
     .vendor >> |cRXP_BUY_Buy a|r |T133634:0|t[Small Brown Pouch] |cRXP_BUY_if needed|r
     .target Yanni Stoutheart
-step << !Paladin
+step
+#xprate <1.5 << !Paladin
+#xprate >1.49 << Paladin
     .goto Loch Modan,35.534,48.404
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Hearthstove|r
     .home >> Set your Hearthstone to Thelsamar
@@ -2764,6 +2769,12 @@ step << Dwarf Paladin
     .target Muiredon Battleforge
     .turnin 1779 >>Turn in The Tome of Divinity
     .accept 1783 >>Accept The Tome of Divinity
+step << Dwarf Paladin
+#xprate >1.49
+    .goto Ironforge,23.131,6.143
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brandur Ironhammer|r
+    .target Brandur Ironhammer
+    .trainer >> Train your class spells
 step << Paladin
     #season 2
     #completewith next
@@ -2913,7 +2924,7 @@ step << Paladin
     .goto StormwindClassic,38.10,28.10
     .gossipoption 109653 >>Talk to |cRXP_FRIENDLY_Brother Romulus|r
     .target Brother Romulus
-    .skipgossip
+    --.skipgossip
     .train 410015,1
 step << Paladin
     #season 2
@@ -3894,8 +3905,14 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor Gnome/Dwarf
-#next 13-15 Westfall
+#next 13-15 Westfall;14-16 Darkshore
 
+step
+#xprate >1.49
+    .goto StormwindClassic,66.277,62.137
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
+    .fp Stormwind >> Get the Stormwind City flight path
+    .target Dungar Longdrink
 step
 #xprate >1.49
     .hs >> Hearth to Loch Modan
@@ -4063,6 +4080,7 @@ step << Priest
     .use 205905
     .itemcount 205905,1
 step << Paladin/Warrior
+#xprate <1.5
     .goto Loch Modan,42.867,9.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nillen Andemar|r
     .vendor >>|cRXP_FRIENDLY_Nillen Andemar|r |cRXP_WARN_sells|r |T133476:0|t[|cRXP_FRIENDLY_Heavy Spiked Mace|r] |cRXP_WARN_which is a limited supply item|r
@@ -4633,6 +4651,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei|r
     .fp Wetlands>> Get the Wetlands flight path
     .target Shellei Brondir
+step
+#xprate >1.49
+    .goto Wetlands,7.95,56.38
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dewin Shimmerdawn|r
+    .vendor >> |cRXP_BUY_Buy as many|r |T134831:0|t[Healing Potions] |cRXP_BUY_that are available|r
+    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Dewin Shimmerdawn|r doesn't have any|r
+    .target Dewin Shimmerdawn
 step
 #xprate >1.49
     #completewith next
@@ -5270,6 +5295,7 @@ step
     .target Pilot Bellowfiz
     .goto Dun Morogh,49.426,48.410
     .turnin 320 >> Turn in Return to Bellowfiz
+    .isOnQuest 320
 step << Hunter
 #xprate <1.5
     .goto Dun Morogh,45.810,53.039
