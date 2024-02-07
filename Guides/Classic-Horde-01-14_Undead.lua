@@ -3506,16 +3506,14 @@ step
     #completewith next
     .goto Silverpine Forest,45.51,41.26,100 >> Travel back to The Sepulcher
 step
-    #era
-    #label ArugalTurnin
+    #xprate <1.5
     .goto Silverpine Forest,44.20,39.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar|r
     .turnin 422 >> Turn in Arugal's Folly
     .accept 423 >> Accept Arugal's Folly
     .target Dalar Dawnweaver
 step
-    #som
-    #phase 3-6
+    #xprate >1.49
     #label ArugalTurnin
     .goto Silverpine Forest,44.20,39.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalar|r
@@ -3578,7 +3576,7 @@ step
     .turnin 438 >>Turn in The Decrepit Ferry
     .accept 439 >>Accept Rot Hide Clues
 step
-    #era
+    #xprate <1.5
     #loop
     .goto Silverpine Forest,56.06,45.75,0
     .goto Silverpine Forest,56.06,45.75,40,0
@@ -3653,11 +3651,23 @@ step
     #completewith
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step
+    #xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allister|r and |cRXP_FRIENDLY_Dalar|r
     .turnin 478 >>Turn in Maps and Runes
     .accept 481 >>Accept Dalar's Analysis
     .goto Silverpine Forest,43.98,40.93
     .turnin 423 >>Turn in Arugal's Folly
+    .turnin 481 >>Turn in Dalar's Analysis
+    .accept 482 >>Accept Dalaran's Intentions
+    .goto Silverpine Forest,44.20,39.73
+    .target Shadow Priest Allister
+    .target Dalar Dawnweaver
+step
+    #xprate >1.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Allister|r and |cRXP_FRIENDLY_Dalar|r
+    .turnin 478 >>Turn in Maps and Runes
+    .accept 481 >>Accept Dalar's Analysis
+    .goto Silverpine Forest,43.98,40.93
     .turnin 481 >>Turn in Dalar's Analysis
     .accept 482 >>Accept Dalaran's Intentions
     .goto Silverpine Forest,44.20,39.73
@@ -3909,7 +3919,7 @@ step << Undead
     >>Make Sharpening Stones/Bandages while you wait << Warrior/Rogue
     >>Conjure Food/water while you wait << Mage
     .zoneskip Durotar
-step
+step << Undead
     #completewith HiddenEnemiesPickup
     .goto Orgrimmar,48.97,92.84,50,0
     .zone Orgrimmar >> Travel to Orgrimmar
@@ -3921,38 +3931,38 @@ step << Undead
     .fp Orgrimmar >> Get the Orgrimmar flight path
     .target Doras
     .dungeon RFC
-step
+step << Undead
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .accept 5726 >>Accept Hidden Enemies
     .target Thrall
     .dungeon RFC
-step
+step << Undead
     .goto Durotar,53.08,9.19,0
     >>Kill |cRXP_ENEMY_Burning Blade|r mobs in Skull Rock until |cRXP_LOOT_Lieutenant's Insignia|r drops
     .complete 5726,1 --Lieutenant's Insignia (1)
     .dungeon RFC
-step
+step << Undead
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5726 >> Turn in Hidden Enemies
     .accept 5727 >> Accept Hidden Enemies
     .target Thrall
     .dungeon RFC
-step
+step << Undead
     .goto Orgrimmar,49.6,50.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
     .accept 5761 >>Accept Slaying the Beast
     .target Neeru Fireblade
     .dungeon RFC
-step
+step << Undead
     .goto Orgrimmar,49.6,50.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
     .complete 5727,1 --Gauge Neeru Fireblade's reaction to you being a member of the Burning Blade
     .skipgossip
     .target Neeru Fireblade
     .dungeon RFC
-step
+step << Undead
     #label HiddenEnemiesPickup
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
@@ -3960,18 +3970,18 @@ step
     .accept 5728 >> Accept Hidden Enemies
     .target Thrall
     .dungeon RFC
-step
+step << Undead
     #label EnterRFC
     .goto Orgrimmar,52.77,48.97
     .subzone 2437 >> Enter the RFC Instance portal. Zone in
     .dungeon RFC
-step
+step << Undead
     >>|cRXP_WARN_If possible, have party members share the following quests|r
     .accept 5722 >> Accept Searching for the Lost Satchel
     .accept 5723 >> Accept Testing an Enemy's Strength
     .disablecheckbox
     .dungeon RFC
-step
+step << Undead
     #completewith next
     >>Kill |cRXP_ENEMY_Ragefire Troggs|r and |cRXP_ENEMY_Ragefire Shamans|r
     .complete 5723,1 --Ragefire Trogg (8)
@@ -3980,21 +3990,21 @@ step
     .mob Ragefire Shaman
     .isOnQuest 5723
     .dungeon RFC
-step
+step << Undead
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur|r
     .turnin 5722 >> Turn in Searching for the Lost Satchel
     .accept 5724 >> Accept Returning the Lost Satchel
     .target Maur Grimtotem
     .isOnQuest 5722
     .dungeon RFC
-step
+step << Undead
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur|r
     .accept 5724 >> Accept Returning the Lost Satchel
     .target Maur Grimtotem
     .isQuestTurnedIn 5722
     .dungeon RFC
-step
+step << Undead
     #label TroggsShamans
     >>Kill |cRXP_ENEMY_Ragefire Troggs|r and |cRXP_ENEMY_Ragefire Shamans|r
     .complete 5723,1 --Ragefire Trogg (8)
@@ -4003,7 +4013,7 @@ step
     .mob Ragefire Shaman
     .isOnQuest 5723
     .dungeon RFC
-step
+step << Undead
     #requires TroggsShamans
     #completewith BazzalanandJergosh
     >>Kill |cRXP_ENEMY_Searing Blade Cultists|r and |cRXP_ENEMY_Searing Blade Warlocks|r. Loot them for the |cRXP_LOOT_Spells of Shadow|r and |cRXP_LOOT_Incantations from the Nether|r
@@ -4013,13 +4023,13 @@ step
     .mob Searing Blade Warlock
     .isOnQuest 5725
     .dungeon RFC
-step
+step << Undead
     >>Kill |cRXP_ENEMY_Taragaman the Hungerer|r. Loot him for his |cRXP_LOOT_Heart|r
     .complete 5761,1 -- Taragaman the Hungerer's Heart
     .mob Taragaman the Hungerer
     .isOnQuest 5761
     .dungeon RFC
-step
+step << Undead
     #label BazzalanandJergosh
     >>Kill |cRXP_ENEMY_Bazzalan|r and |cRXP_ENEMY_Jergosh the Invoker|r
     .complete 5728,1 --Bazzalan (1)
@@ -4028,7 +4038,7 @@ step
     .mob Jergosh the Invoker
     .isOnQuest 5728
     .dungeon RFC
-step
+step << Undead
     >>Kill |cRXP_ENEMY_Searing Blade Cultists|r and |cRXP_ENEMY_Searing Blade Warlocks|r. Loot them for the |cRXP_LOOT_Spells of Shadow|r and |cRXP_LOOT_Incantations from the Nether|r
     .complete 5725,1 --Spells of Shadow (1)
     .complete 5725,2 --	Incantations from the Nether (1)
@@ -4036,14 +4046,14 @@ step
     .mob Searing Blade Warlock
     .isOnQuest 5725
     .dungeon RFC
-step
+step << Undead
     .goto Orgrimmar,49.6,50.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
     .turnin 5761 >>Turn in Slaying the Beast
     .target Neeru Fireblade
     .isQuestComplete 5761
     .dungeon RFC
-step
+step << Undead
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5728 >> Turn in Hidden Enemies
@@ -4051,14 +4061,14 @@ step
     .target Thrall
     .isQuestComplete 5728
     .dungeon RFC
-step
+step << Undead
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .accept 5729 >> Accept Hidden Enemies
     .target Thrall
     .isQuestTurnedIn 5728
     .dungeon RFC
-step
+step << Undead
     .goto Orgrimmar,49.6,50.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neeru Fireblade|r
     .turnin 5729 >> Turn in Hidden Enemies
@@ -4066,7 +4076,7 @@ step
     .target Neeru Fireblade
     .dungeon RFC
     .isQuestTurnedIn 5728
-step
+step << Undead
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .turnin 5730 >> Turn in Hidden Enemies
@@ -4076,6 +4086,15 @@ step
 step << Undead
     #completewith next
     .subzone 362 >> Travel to Razor Hill
+step << !Undead
+    #xprate >1.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Orgnil|r and |cRXP_FRIENDLY_Gar'Thok|r
+    .turnin 806 >>Turn in Dark Storms
+    .goto Durotar,52.24,43.15
+    .turnin 837 >>Turn in Encroachment
+    .goto Durotar,51.95,43.50
+    .target Orgnil Soulscar
+    .target Gar'Thok
 step
     .goto Durotar,50.8,43.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Takrin|r
@@ -4091,6 +4110,7 @@ step
     .accept 842 >>Accept Crossroads Conscription
     .target Kargal Battlescar
 step << !Undead
+    #xprate <1.5
     .goto The Barrens,62.34,20.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ak'Zeloth|r
     .turnin 809 >>Turn in Ak'Zeloth

@@ -681,7 +681,7 @@ step
     .goto Orgrimmar,57.40,53.93,-1
     .goto Orgrimmar,58.05,51.40,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamja|r and |cRXP_FRIENDLY_Gru'ark|r
-    +Kill |cRXP_FRIENDLY_Gru'ark|r when he becomes hostile
+    +Kill |cRXP_ENEMY_Gru'ark|r when he becomes hostile
     .target Zamja
     .target Gru'ark
     .skipgossip

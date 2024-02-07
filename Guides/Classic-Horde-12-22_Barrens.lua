@@ -37,26 +37,31 @@ step << Tauren Shaman
     .accept 842 >>Accept Crossroads Conscription
     .target Kargal Battlescar
 step << Warrior !Undead
+    #xprate <1.5
     #completewith next
     .goto The Barrens,54.53,27.96,30,0
     .goto The Barrens,55.53,28.28,30,0
     .goto The Barrens,56.58,28.61,30 >>Travel to the top of the mountain
 step << Warrior !Undead
+    #xprate <1.5
     .goto The Barrens,57.23,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thun'grim|r
     .turnin 1502 >>Turn in Thun'grim Firegaze
     .accept 1503 >>Accept Forged Steel
     .target Thun'grim Firegaze
 step << Warrior !Undead
+    #xprate <1.5
     .goto The Barrens,55.05,26.65
     >>Loot the |cRXP_PICK_Stolen Iron Chest|r for its |cRXP_LOOT_Forged Steel Bars|r
     .complete 1503,1 --Forged Steel Bars (1)
 step << Warrior !Undead
+    #xprate <1.5
     #completewith next
     .goto The Barrens,54.53,27.96,30,0
     .goto The Barrens,55.53,28.28,30,0
     .goto The Barrens,56.58,28.61,30 >>Travel to the top of the mountain
 step << Warrior !Undead
+    #xprate <1.5
     .goto The Barrens,57.23,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thun'grim|r
     .turnin 1503 >>Turn in Forged Steel
@@ -190,6 +195,7 @@ step
     .mob Greater Plainstrider
     .mob Fleeting Plainstrider
 step << !Tauren !Undead
+    #xprate <1.5 << !Hunter
     #completewith next
     #label DemonMountain
     .goto The Barrens,51.09,22.68,40,0
@@ -198,11 +204,13 @@ step << !Tauren !Undead
     .goto The Barrens,47.65,19.21,100 >> Travel to the top of the mountain
     .isOnQuest 924
 step << !Tauren !Undead
+    #xprate <1.5 << !Hunter
     #completewith next
     #requires DemonMountain
     .goto The Barrens,47.65,19.21,15 >> Go inside Dreadmist Den
     .isOnQuest 924
 step << !Tauren !Undead
+    #xprate <1.5 << !Hunter
     #label DemonSeed
     .goto The Barrens,47.97,19.07
     >>Right click the |cRXP_PICK_Altar|r. Make sure you have a |T134095:0|t[Flawed Power Stone] on you
@@ -210,6 +218,7 @@ step << !Tauren !Undead
     .complete 924,1 --Destroy the Demon Seed (1)
     .isOnQuest 924
 step << skip
+    #xprate <1.5 << !Hunter
     #completewith DisruptTheAttacks
     .goto The Barrens,47.58,19.38,40,0
     .goto The Barrens,49.21,20.42,40,0
@@ -250,6 +259,36 @@ step
     .mob Razormane Water Seeker
     .mob Razormane Thornweaver
     .mob Razormane Hunter
+step << Warrior !Undead
+    #xprate >1.49
+    #completewith next
+    .goto The Barrens,54.53,27.96,30,0
+    .goto The Barrens,55.53,28.28,30,0
+    .goto The Barrens,56.58,28.61,30 >>Travel to the top of the mountain
+step << Warrior !Undead
+    #xprate >1.49
+    .goto The Barrens,57.23,30.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thun'grim|r
+    .turnin 1502 >>Turn in Thun'grim Firegaze
+    .accept 1503 >>Accept Forged Steel
+    .target Thun'grim Firegaze
+step << Warrior !Undead
+    #xprate >1.49
+    .goto The Barrens,55.05,26.65
+    >>Loot the |cRXP_PICK_Stolen Iron Chest|r for its |cRXP_LOOT_Forged Steel Bars|r
+    .complete 1503,1 --Forged Steel Bars (1)
+step << Warrior !Undead
+    #xprate >1.49
+    #completewith next
+    .goto The Barrens,54.53,27.96,30,0
+    .goto The Barrens,55.53,28.28,30,0
+    .goto The Barrens,56.58,28.61,30 >>Travel to the top of the mountain
+step << Warrior !Undead
+    #xprate >1.49
+    .goto The Barrens,57.23,30.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thun'grim|r
+    .turnin 1503 >>Turn in Forged Steel
+    .target Thun'grim Firegaze
 step << !Undead !Tauren
     #sticky
     #completewith EnterRFC
@@ -710,6 +749,7 @@ step << !Tauren !Undead
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
 step << !Tauren !Undead
+    #xprate <1.5 << !Hunter
     .goto The Barrens,62.34,20.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ak'Zeloth|r
     .turnin 924 >>Turn in The Demon Seed
@@ -5430,7 +5470,7 @@ step << Rogue
     .goto Orgrimmar,48.12,80.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trak'gen|r|cRXP_BUY_. Buy |r |T135423:0|t[Deadly Throwing Axe] |cRXP_BUY_from him|r
     .collect 3137,200,6544,1 --Deadly Throwing Axe (200)
-    .target K'waii
+    .target Trak'gen
 step
     #optional
     .abandon 6421 >> Abandon Boulderslide Ravine

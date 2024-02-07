@@ -318,11 +318,13 @@ step << Shaman
     .goto Mulgore,65.93,77.10,40,0
     .goto Mulgore,63.57,76.25,40,0
     .goto Mulgore,63.86,80.14
-    >>Continue to kill |cRXP_ENEMY_Bristleback Shamans|r and obtain 10 stacks of |T237556:0|t[Building Inspiration] as they deal nature damage to you
-    .use 206381 >>Use the |T134918:0|t[|cRXP_FRIENDLY_Dyadic Icon|r] once you have 10 stacks
-    .complete 77652,1 --Learn Spell: Engrave Chest - Overload
+    .aura 408828 >>Continue to kill |cRXP_ENEMY_Bristleback Shamans|r and obtain 10 stacks of |T237556:0|t[Building Inspiration] as they deal nature damage to you
     .mob Bristleback Shaman
     --User must be level 3 to be able to use item!
+step << Shaman
+    #season 2
+    .use 206381 >>Use the |T134918:0|t[|cRXP_FRIENDLY_Dyadic Icon|r]
+    .complete 77652,1 --Learn Spell: Engrave Chest - Overload
 step << Warrior
     #season 2
     .goto Mulgore,60.33,75.10,30,0
@@ -462,7 +464,7 @@ step << Shaman
     .target Minor Manifestation of Earth
 step << Shaman
     .goto Mulgore,44.73,76.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Canaga|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ravenfeather|r
     .turnin 1521 >>Turn in Call of Earth
     .target Seer Ravenfeather
 step << Shaman
@@ -1862,7 +1864,7 @@ step
     +Equip the |T135145:0|t[Cauldron Stirrer]
     .use 5340
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.1
-    .itemcount 5340
+    .itemcount 5340,1
 step << Warrior
     #season 2
     #completewith next
