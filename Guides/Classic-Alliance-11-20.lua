@@ -626,7 +626,12 @@ step
     .unitscan Moonstalker;Moonstalker Runt
 step << Druid/Hunter
     #season 2
-    #completewith next
+    #sticky
+    #label treats1
+    .goto Darkshore,39.84,53.82,50,0
+    .goto Darkshore,40.03,56.24,50,0
+    .goto Darkshore,39.34,56.58,50,0
+    .goto Darkshore,39.84,53.82
     >>Kill |cRXP_ENEMY_Blackwood Pathfinders|r and |cRXP_ENEMY_Blackwood Windtalkers|r. Loot them for their |T237270:0|t[|cRXP_LOOT_Crab Treats|r]
     .collect 209027,1 -- Crab Treats (1)
     .mob Blackwood Pathfinder
@@ -645,6 +650,7 @@ step
     .mob Blackwood Windtalker
 step << Druid/Hunter
     #season 2
+    #requires treats1
     .goto Darkshore,35.8,55.6
     .use 209027 >> |cRXP_WARN_Use the|r |T237270:0|t[|cRXP_LOOT_Crab Treats|r] |cRXP_WARN_on a |cRXP_ENEMY_Young Reef Crawler|r to receive the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Lacerate|r] << Druid
     .use 209027 >> |cRXP_WARN_Use the|r |T237270:0|t[|cRXP_LOOT_Crab Treats|r] |cRXP_WARN_on a |cRXP_ENEMY_Young Reef Crawler|r to receive the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Beast Mastery|r] << Hunter
