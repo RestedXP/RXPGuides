@@ -1090,6 +1090,7 @@ step
     .goto Ashenvale,26.19,38.69
     >>Talk to |cRXP_FRIENDLY_Delgren the Purifier|r
     .turnin 78093 >> Turn in Return to Delgren
+    .train 410014 >> This will teach you |T133815:0|t[Engrave Chest - Divine Storm]
     .target Delgren the Purifier
     .train 410014,1
 ]])
