@@ -740,7 +740,7 @@ step << Hunter
     .goto Mulgore,59.02,54.36
     >>Cast |T132212:0|t[Hunter's Mark] on the |cRXP_ENEMY_Rustling Bush|r
     >>Kill the |cRXP_ENEMY_Venture Co. Poacher|r that spawns. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
-    .collect 206155,1 --Rune of Markmanship (1)
+    .collect 206155,1 --Rune of Marksmanship (1)
     .mob Rustling Bush
     .mob Venture Co. Poacher
     .train 410113,1

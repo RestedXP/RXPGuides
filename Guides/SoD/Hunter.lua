@@ -261,7 +261,7 @@ step
     .goto Durotar,40.61,52.19
     >>Cast |T132212:0|t[Hunter's Mark] on the |cRXP_ENEMY_Rustling Bush|r
     >>Kill the |cRXP_ENEMY_Razormane Poacher|r that spawns. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
-    .collect 206155,1 --Rune of Markmanship (1)
+    .collect 206155,1 --Rune of Marksmanship (1)
     .mob Rustling Bush
     .mob Razormane Poacher
     .train 410113,1
@@ -287,7 +287,7 @@ step
     .goto Mulgore,59.02,54.36
     >>Cast |T132212:0|t[Hunter's Mark] on the |cRXP_ENEMY_Rustling Bush|r
     >>Kill the |cRXP_ENEMY_Venture Co. Poacher|r that spawns. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
-    .collect 206155,1 --Rune of Markmanship (1)
+    .collect 206155,1 --Rune of Marksmanship (1)
     .mob Rustling Bush
     .mob Venture Co. Poacher
     .train 410113,1
@@ -313,7 +313,7 @@ step
     .goto Dun Morogh,28.852,49.859
     >>Cast |T132212:0|t[Hunter's Mark] on the |cRXP_ENEMY_Rustling Bush|r
     >>Kill the |cRXP_ENEMY_Razormane Poacher|r that spawns. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
-    .collect 206155,1 --Rune of Markmanship (1)
+    .collect 206155,1 --Rune of Marksmanship (1)
     .mob Rustling Bush
     .mob Razormane Poacher
     .train 410113,1
@@ -339,7 +339,7 @@ step
     .goto Teldrassil,46.6,46.3
     >>Cast |T132212:0|t[Hunter's Mark] on the |cRXP_ENEMY_Rustling Bush|r
     >>Kill the |cRXP_ENEMY_Fallenroot Poacher|r that spawns. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
-    .collect 206155,1 --Rune of Markmanship (1)
+    .collect 206155,1 --Rune of Marksmanship (1)
     .mob Rustling Bush
     .mob Fallenroot Poacher
     .train 410113,1
@@ -691,7 +691,7 @@ step
     .goto Silverpine Forest,46.08,26.62,50,0
     .goto Silverpine Forest,41.60,21.65
     >>Kill |cRXP_ENEMY_Ferocious Grizzled Bears|r until a |cRXP_ENEMY_Grizzled Protecter|r (16 elite) spawns
-    >>Kill him and loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Beast Mastery|r] 
+    >>Kill him and loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Beast Mastery|r]
     .collect 208701,1 --Rune of Beast Mastery (1)
     .mob Ferocious Grizzled Bear
     .mob Grizzled Protecter
@@ -863,7 +863,7 @@ step
     .goto Dun Morogh,42.6,60.2,20,0
     .goto Dun Morogh,38.2,60.6,20,0
     .train 425762,1
-    >>Kill |cRXP_ENEMY_Boars|r in |cFFfa9602Dun Morogh|r and loot them for |T134026:0|t[Durotar Pig Meat]
+    >>Kill |cRXP_ENEMY_Boars|r in |cFFfa9602Dun Morogh|r and loot them for |T134026:0|t[Dun Morogh Pig Meat]
     .collect 208192,1
     .mob Crag Boar
     .mob Large Crag Boar
@@ -873,7 +873,7 @@ step
     #season2
     .train 425762,1
     .goto Dun Morogh,37.78,42.55
-    >>Use |T134026:0|t[Durotar Pig Meat] near the corpse in the |cFFfa9602Iceflow Cavern|r to summon |cRXP_ENEMY_Jorul|r
+    >>Use |T134026:0|t[Dun Morogh Pig Meat] near the corpse in the |cFFfa9602Iceflow Cavern|r to summon |cRXP_ENEMY_Jorul|r
     >>Kill |cRXP_ENEMY_Jorul|r and loot him for |T135142:0|t|cRXP_LOOT_[Rune of Flanking]|r
     .collect 205979,1
     .use 208192
