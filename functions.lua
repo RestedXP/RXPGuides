@@ -2305,6 +2305,7 @@ function addon.functions.xp(self, ...)
                     element.text = fmt(
                                        L("Grind until you are %d xp away from level %s"),
                                        -1 * element.xp, level)
+                    element.rawtext = element.text
                 elseif element.xp >= 1 then
                     element.text = fmt(
                                        L("Grind until you are %s xp into level %s"),
@@ -2313,6 +2314,7 @@ function addon.functions.xp(self, ...)
                     element.text = fmt(
                                        L("Grind until you are %.0f%% into level %s"),
                                        element.xp * 100, level)
+                    element.rawtext = element.text
                 end
             else
                 element.text = "Grind to level " .. tostring(level)
@@ -2336,15 +2338,36 @@ function addon.functions.xp(self, ...)
     local maxXP = UnitXPMax("player")
     local level = UnitLevel("player")
     local reverseLogic = element.reverseLogic
+    local xp = element.xp
+
+    if element.rawtext then
+        local reqlevel = element.level
+        if xp < 0 then
+            reqlevel = element.level - 1
+        end
+        if level == reqlevel then
+            local minXP = 0
+            if xp < 0 then
+                minXP = maxXP + xp
+            elseif xp >= 1 then
+                minXP = xp
+            else
+                minXP = maxXP * xp
+            end
+            element.text = fmt("%s (%d/%d)",element.rawtext,minXP,maxXP)
+            element.rawtext = nil
+        end
+    end
+
     --print('ok',...)
     if element.skipstep and element.skipstep < 0 then reverseLogic = true end
-    if ((element.xp < 0 and (level >= element.level or
-        (level == element.level - 1 and currentXP >= maxXP + element.xp))) or
-        (element.xp >= 1 and
+    if ((xp < 0 and (level >= element.level or
+        (level == element.level - 1 and currentXP >= maxXP + xp))) or
+        (xp >= 1 and
             ((level > element.level) or
-                (element.level == level and currentXP >= element.xp))) or
-        (element.xp >= 0 and element.xp < 1 and ((level > element.level) or
-            (element.level == level and currentXP >= maxXP * element.xp)))) ==
+                (element.level == level and currentXP >= xp))) or
+        (xp >= 0 and xp < 1 and ((level > element.level) or
+            (element.level == level and currentXP >= maxXP * xp)))) ==
         not reverseLogic then
         if element.skipstep then
             if step.active and not step.completed and not(addon.settings.profile.northrendLM and not reverseLogic) then
