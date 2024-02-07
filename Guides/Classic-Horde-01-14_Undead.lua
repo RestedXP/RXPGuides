@@ -415,13 +415,21 @@ step << Mage
     .train 116 >> Train |T135846:0|t[Frostbolt]
     .target Isabella
 step
+    #xprate <1.5
     .goto Tirisfal Glades,31.35,66.21,10,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Saltain|r and |cRXP_FRIENDLY_Arren|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deathguard Saltain|r and |cRXP_FRIENDLY_Executor Arren|r
     .accept 3902 >> Accept Scavenging Deathknell
     .goto Tirisfal Glades,31.61,65.62
+    .target +Deathguard Saltain
     .accept 380 >> Accept Night Web's Hollow
     .goto Tirisfal Glades,32.15,66.01
-    .target Deathguard Saltain
+    .target +Executor Arren
+step
+    #xprate >1.49
+    .goto Tirisfal Glades,31.35,66.21,10,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Executor Arren|r
+    .accept 380 >> Accept Night Web's Hollow
+    .goto Tirisfal Glades,32.15,66.01
     .target Executor Arren
 step << Rogue/Warrior
     .goto Tirisfal Glades,32.42,65.66
@@ -501,6 +509,7 @@ step << Rogue
     .turnin 3096 >> Turn in Encrypted Scroll
     .target David Trias
 step
+    #xprate <1.5
     >>Open the |cRXP_PICK_Equipment Boxes|r on the ground. Loot them for the |cRXP_LOOT_Scavenged Goods|r
     .loop 12,Tirisfal Glades,32.37,64.37,32.81,64.39,32.89,64.60,33.01,65.38,33.79,64.57,33.13,63.08,32.79,63.11,31.86,61.49,31.75,61.96,31.70,62.53,31.34,62.44,32.37,64.37
     .complete 3902,1 --Collect Scavenged Goods (x6)
@@ -574,8 +583,15 @@ step
 	.complete 380,2 --Kill Night Web Spider (x8)
     .mob Night Web Spider
 step
+    #xprate <1.5
     #softcore
     #completewith Scavenging
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .target Spirit Healer
+step
+    #xprate >1.49
+    #softcore
+    #completewith NightWebH
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .target Spirit Healer
 step << Warlock
@@ -591,6 +607,7 @@ step
     >>|cRXP_WARN_To create a macro, type /macro ingame. Click "New", give it a name, then copy paste "/camp" into the box. Drag the new macro onto your Action Bars|r
     .goto Tirisfal Glades,31.08,64.88,30 >> Return to Deathknell
 step
+    #xprate <1.5
     #label Scavenging
     .goto Tirisfal Glades,31.61,65.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Saltain|r
@@ -1305,7 +1322,8 @@ step
     .complete 367,1 --Darkhound Blood (5)
     .mob Decrepit Darkhound
 step << Rogue/Warrior
-    #era/som--xpgate
+    #xprate <1.5
+    #optional
     .goto Tirisfal Glades,58.20,58.15,50,0
     .goto Tirisfal Glades,57.98,61.66,50,0
     .goto Tirisfal Glades,56.45,62.62,50,0
@@ -1316,11 +1334,14 @@ step << Rogue/Warrior
     .goto Tirisfal Glades,46.09,59.70,50,0
     .goto Tirisfal Glades,43.49,61.81,50,0
     .goto Tirisfal Glades,56.45,62.62
-    .xp 7+3250 >> Grind to 3250+/4500
-    .isQuestComplete 375
+    >>Kill |cRXP_ENEMY_Duskbats|r. Loot them for their |cRXP_LOOT_Pelts|r
+    .complete 375,1 --Duskbat Pelt (5)
+    .mob Greater Duskbat
+    .mob Vampiric Duskbat
+    .xp >7+3960,1
 step << Rogue/Warrior
-    #label WarRogueDing8
-    #era/som--xpgate
+    #xprate <1.5
+    #optional
     .goto Tirisfal Glades,58.20,58.15,50,0
     .goto Tirisfal Glades,57.98,61.66,50,0
     .goto Tirisfal Glades,56.45,62.62,50,0
@@ -1331,7 +1352,40 @@ step << Rogue/Warrior
     .goto Tirisfal Glades,46.09,59.70,50,0
     .goto Tirisfal Glades,43.49,61.81,50,0
     .goto Tirisfal Glades,56.45,62.62
-    .xp 7+3950 >> Grind to 3950+/4500
+    .xp 7+3260 >> Grind to 3260+/4500
+--XX 700 (375)+540 (367)
+step
+    #xprate >1.49
+    #optional
+    .goto Tirisfal Glades,58.20,58.15,50,0
+    .goto Tirisfal Glades,57.98,61.66,50,0
+    .goto Tirisfal Glades,56.45,62.62,50,0
+    .goto Tirisfal Glades,54.73,64.28,50,0
+    .goto Tirisfal Glades,52.84,62.26,50,0
+    .goto Tirisfal Glades,50.52,61.21,50,0
+    .goto Tirisfal Glades,47.88,60.87,50,0
+    .goto Tirisfal Glades,46.09,59.70,50,0
+    .goto Tirisfal Glades,43.49,61.81,50,0
+    .goto Tirisfal Glades,56.45,62.62
+    >>Kill |cRXP_ENEMY_Duskbats|r. Loot them for their |cRXP_LOOT_Pelts|r
+    .complete 375,1 --Duskbat Pelt (5)
+    .mob Greater Duskbat
+    .mob Vampiric Duskbat
+    .xp >7+3690,1
+step
+    #xprate >1.49
+    .goto Tirisfal Glades,58.20,58.15,50,0
+    .goto Tirisfal Glades,57.98,61.66,50,0
+    .goto Tirisfal Glades,56.45,62.62,50,0
+    .goto Tirisfal Glades,54.73,64.28,50,0
+    .goto Tirisfal Glades,52.84,62.26,50,0
+    .goto Tirisfal Glades,50.52,61.21,50,0
+    .goto Tirisfal Glades,47.88,60.87,50,0
+    .goto Tirisfal Glades,46.09,59.70,50,0
+    .goto Tirisfal Glades,43.49,61.81,50,0
+    .goto Tirisfal Glades,56.45,62.62
+    .xp 7+2640 >> Grind to 2640+/4500
+--XX 700 (375)+540 (367)
 step
     #hardcore
     #completewith ChillyDeath
@@ -1853,6 +1907,7 @@ step
     .unitscan Thurman Agamand
     .unitscan Gregor Agamand
 step
+    #xprate <1.5
     .goto Tirisfal Glades,48.15,34.64,60,0
     .goto Tirisfal Glades,47.65,31.65,60,0
     .goto Tirisfal Glades,46.03,30.25,60,0
@@ -1860,9 +1915,19 @@ step
     .goto Tirisfal Glades,44.10,34.67,60,0
     .goto Tirisfal Glades,46.80,35.10,60,0
     .goto Tirisfal Glades,46.03,30.25
-    .xp 9+340 >> Grind to 9 3840+/6500xp
-    .isOnQuest 361
+    >>Kill |cRXP_ENEMY_Soldiers|r and |cRXP_ENEMY_Bonecasters|r. Loot them for |T134939:0|t[|cRXP_LOOT_Thurman's Letter|r]
+    .collect 2839,1,361 --Collect A Letter to Yvette (1)
+    .accept 361 >> Accept A Letter Undelivered
+    .use 2839
+    .mob Rattlecage Soldier
+    .mob Darkeye Bonecaster
+    .mob Cracked Skull Soldier
+    .xp >9+3620,1
+    .isOnQuest 375
+--XX 880(426)+480(361, OPT)+880(354)+420(362)+700(375, OPT)
 step
+    #xprate <1.5
+    #optional
     .goto Tirisfal Glades,48.15,34.64,60,0
     .goto Tirisfal Glades,47.65,31.65,60,0
     .goto Tirisfal Glades,46.03,30.25,60,0
@@ -1870,7 +1935,157 @@ step
     .goto Tirisfal Glades,44.10,34.67,60,0
     .goto Tirisfal Glades,46.80,35.10,60,0
     .goto Tirisfal Glades,46.03,30.25
-    .xp 9+4245 >> Grind to 9 4320+/6500xp
+    >>Kill |cRXP_ENEMY_Soldiers|r and |cRXP_ENEMY_Bonecasters|r. Loot them for |T134939:0|t[|cRXP_LOOT_Thurman's Letter|r]
+    .collect 2839,1,361 --Collect A Letter to Yvette (1)
+    .accept 361 >> Accept A Letter Undelivered
+    .use 2839
+    .mob Rattlecage Soldier
+    .mob Darkeye Bonecaster
+    .mob Cracked Skull Soldier
+    .xp >9+4320,1
+    .isQuestTurnedIn 375
+--XX 880(426)+480(361, OPT)+880(354)+420(362)+700(375, OPT)
+step
+    #xprate >1.49
+    .goto Tirisfal Glades,48.15,34.64,60,0
+    .goto Tirisfal Glades,47.65,31.65,60,0
+    .goto Tirisfal Glades,46.03,30.25,60,0
+    .goto Tirisfal Glades,44.44,30.84,60,0
+    .goto Tirisfal Glades,44.10,34.67,60,0
+    .goto Tirisfal Glades,46.80,35.10,60,0
+    .goto Tirisfal Glades,46.03,30.25
+    >>Kill |cRXP_ENEMY_Soldiers|r and |cRXP_ENEMY_Bonecasters|r. Loot them for |T134939:0|t[|cRXP_LOOT_Thurman's Letter|r]
+    .collect 2839,1,361 --Collect A Letter to Yvette (1)
+    .accept 361 >> Accept A Letter Undelivered
+    .use 2839
+    .mob Rattlecage Soldier
+    .mob Darkeye Bonecaster
+    .mob Cracked Skull Soldier
+    .xp >9+2180,1
+    .isOnQuest 375
+--XX 880(426)+480(361, OPT)+880(354)+420(362)+700(375, OPT)
+step
+    #xprate >1.49
+    #optional
+    .goto Tirisfal Glades,48.15,34.64,60,0
+    .goto Tirisfal Glades,47.65,31.65,60,0
+    .goto Tirisfal Glades,46.03,30.25,60,0
+    .goto Tirisfal Glades,44.44,30.84,60,0
+    .goto Tirisfal Glades,44.10,34.67,60,0
+    .goto Tirisfal Glades,46.80,35.10,60,0
+    .goto Tirisfal Glades,46.03,30.25
+    >>Kill |cRXP_ENEMY_Soldiers|r and |cRXP_ENEMY_Bonecasters|r. Loot them for |T134939:0|t[|cRXP_LOOT_Thurman's Letter|r]
+    .collect 2839,1,361 --Collect A Letter to Yvette (1)
+    .accept 361 >> Accept A Letter Undelivered
+    .use 2839
+    .mob Rattlecage Soldier
+    .mob Darkeye Bonecaster
+    .mob Cracked Skull Soldier
+    .xp >9+3230,1
+    .isQuestTurnedIn 375
+--XX 880(426)+480(361, OPT)+880(354)+420(362)+700(375, OPT)
+step
+    #xprate <1.5
+    .goto Tirisfal Glades,48.15,34.64,60,0
+    .goto Tirisfal Glades,47.65,31.65,60,0
+    .goto Tirisfal Glades,46.03,30.25,60,0
+    .goto Tirisfal Glades,44.44,30.84,60,0
+    .goto Tirisfal Glades,44.10,34.67,60,0
+    .goto Tirisfal Glades,46.80,35.10,60,0
+    .goto Tirisfal Glades,46.03,30.25
+    .xp 9+3620 >> Grind to 3620+/6500xp
+    .itemcount 2839,<1 --A Letter to Yvette (0)
+    .isOnQuest 375
+step
+    #xprate <1.5
+    #optional
+    .goto Tirisfal Glades,48.15,34.64,60,0
+    .goto Tirisfal Glades,47.65,31.65,60,0
+    .goto Tirisfal Glades,46.03,30.25,60,0
+    .goto Tirisfal Glades,44.44,30.84,60,0
+    .goto Tirisfal Glades,44.10,34.67,60,0
+    .goto Tirisfal Glades,46.80,35.10,60,0
+    .goto Tirisfal Glades,46.03,30.25
+    .xp 9+4320 >> Grind to 4320+/6500xp
+    .itemcount 2839,<1 --A Letter to Yvette (0)
+    .isQuestTurnedIn 375
+step
+    #xprate <1.5
+    #optional
+    .goto Tirisfal Glades,48.15,34.64,60,0
+    .goto Tirisfal Glades,47.65,31.65,60,0
+    .goto Tirisfal Glades,46.03,30.25,60,0
+    .goto Tirisfal Glades,44.44,30.84,60,0
+    .goto Tirisfal Glades,44.10,34.67,60,0
+    .goto Tirisfal Glades,46.80,35.10,60,0
+    .goto Tirisfal Glades,46.03,30.25
+    .xp 9+3840 >> Grind to 3840+/6500xp
+    .itemcount 2839,1 --A Letter to Yvette (1)
+    .isQuestTurnedIn 375
+step
+    #xprate <1.5
+    #optional
+    .goto Tirisfal Glades,48.15,34.64,60,0
+    .goto Tirisfal Glades,47.65,31.65,60,0
+    .goto Tirisfal Glades,46.03,30.25,60,0
+    .goto Tirisfal Glades,44.44,30.84,60,0
+    .goto Tirisfal Glades,44.10,34.67,60,0
+    .goto Tirisfal Glades,46.80,35.10,60,0
+    .goto Tirisfal Glades,46.03,30.25
+    .xp 9+3140 >> Grind to 3140+/6500xp
+    .itemcount 2839,1 --A Letter to Yvette (1)
+    .isOnQuest 375
+step
+    #xprate >1.49
+    .goto Tirisfal Glades,48.15,34.64,60,0
+    .goto Tirisfal Glades,47.65,31.65,60,0
+    .goto Tirisfal Glades,46.03,30.25,60,0
+    .goto Tirisfal Glades,44.44,30.84,60,0
+    .goto Tirisfal Glades,44.10,34.67,60,0
+    .goto Tirisfal Glades,46.80,35.10,60,0
+    .goto Tirisfal Glades,46.03,30.25
+    .xp 9+2180 >> Grind to 2180+/6500xp
+    .itemcount 2839,<1 --A Letter to Yvette (0)
+    .isOnQuest 375
+step
+    #xprate >1.49
+    #optional
+    .goto Tirisfal Glades,48.15,34.64,60,0
+    .goto Tirisfal Glades,47.65,31.65,60,0
+    .goto Tirisfal Glades,46.03,30.25,60,0
+    .goto Tirisfal Glades,44.44,30.84,60,0
+    .goto Tirisfal Glades,44.10,34.67,60,0
+    .goto Tirisfal Glades,46.80,35.10,60,0
+    .goto Tirisfal Glades,46.03,30.25
+    .xp 9+3230 >> Grind to 3230+/6500xp
+    .itemcount 2839,<1 --A Letter to Yvette (0)
+    .isQuestTurnedIn 375
+step
+    #xprate >1.49
+    #optional
+    .goto Tirisfal Glades,48.15,34.64,60,0
+    .goto Tirisfal Glades,47.65,31.65,60,0
+    .goto Tirisfal Glades,46.03,30.25,60,0
+    .goto Tirisfal Glades,44.44,30.84,60,0
+    .goto Tirisfal Glades,44.10,34.67,60,0
+    .goto Tirisfal Glades,46.80,35.10,60,0
+    .goto Tirisfal Glades,46.03,30.25
+    .xp 9+2510 >> Grind to 2510+/6500xp
+    .itemcount 2839,1 --A Letter to Yvette (1)
+    .isQuestTurnedIn 375
+step
+    #xprate >1.49
+    #optional
+    .goto Tirisfal Glades,48.15,34.64,60,0
+    .goto Tirisfal Glades,47.65,31.65,60,0
+    .goto Tirisfal Glades,46.03,30.25,60,0
+    .goto Tirisfal Glades,44.44,30.84,60,0
+    .goto Tirisfal Glades,44.10,34.67,60,0
+    .goto Tirisfal Glades,46.80,35.10,60,0
+    .goto Tirisfal Glades,46.03,30.25
+    .xp 9+1460 >> Grind to 1460+/6500xp
+    .itemcount 2839,1 --A Letter to Yvette (1)
+    .isOnQuest 375
 step << Mage/Priest
     #season 2
     >>Kill |cRXP_ENEMY_Gillgar|r. Loot him for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] << Mage

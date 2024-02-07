@@ -1233,13 +1233,29 @@ step
     .mob Sunscale Lashtail
     .mob Sunscale Screecher
 step
-    #label RegtharDeathgate1
+    #xprate <1.5
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .accept 850 >>Accept Kolkar Leaders
     .accept 855 >> Accept Centaur Bracers
     .target Regthar Deathgate
+    .maxlevel 15
 step
+    #xprate <1.5
+    #optional
+    #label RegtharDeathgate1
+    .goto The Barrens,45.35,28.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
+    .accept 850 >>Accept Kolkar Leaders
+    .target Regthar Deathgate
+step
+    #label RegtharDeathgate1
+    .goto The Barrens,45.35,28.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
+    .accept 850 >>Accept Kolkar Leaders
+    .target Regthar Deathgate
+step
+    #xprate <1.5
     #completewith KodobaneTurnin
     >>Kill |cRXP_ENEMY_Kolkar Wranglers|r and |cRXP_ENEMY_Kolkar Stormers|r. Loot them for their |cRXP_LOOT_Bracers|r
     >>|cRXP_WARN_This quest does not have to be completed now|r
@@ -1269,6 +1285,7 @@ step
     .complete 850,1 --Kodobane's Head (1)
     .mob Barak Kodobane
 step
+    #xprate <1.5
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .turnin 850 >>Turn in Kolkar Leaders
@@ -2100,6 +2117,7 @@ step << Druid
     .mob Kolkar Stormer
     .train 407988,1
 step
+    #xprate <1.5
     #completewith next
     #loop
     .goto The Barrens,55.80,45.78,50,0
@@ -2323,6 +2341,7 @@ step << Hunter
     .collect 2515,2200,896,1 --Sharp Arrow (2200)
     .target Uthrok
 step
+    #xprate <1.5
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .turnin 851 >>Turn in Verog the Dervish
@@ -2347,6 +2366,7 @@ step
     .complete 880,1 --Altered Snapjaw Shell (8)
     .mob Oasis Snapjaw
 step
+    #xprate <1.5
     #completewith next
     >>Kill |cRXP_ENEMY_Kolkar|r around the oasis. Loot them for their |cRXP_LOOT_Bracers|r
     .complete 855,1 --Centaur Bracers (15)
@@ -2397,6 +2417,7 @@ step
     .unitscan Hezrul Bloodmark
     .isQuestTurnedIn 851
 step
+    #xprate <1.5
     .goto The Barrens,45.64,38.16,0
     .goto The Barrens,45.64,38.16,50,0
     .goto The Barrens,45.84,37.86,50,0
@@ -2451,10 +2472,12 @@ step << Druid
     .use 208687 --Rune of Lacerate (1)
     .itemcount 208687,1
 step
+    #xprate <1.5
     #completewith CounterattackComplete
     .abandon 855 >> Abandon Centaur Bracers as you have not looted enough previously to make it worthwhile to finish
     .itemcount 5030,<5 --Centaur Bracers (5)
 step
+    #xprate <1.5
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .turnin 852 >>Turn in Hezrul Bloodmark
@@ -2469,6 +2492,7 @@ step
     .target Regthar Deathgate
     .isQuestComplete 852
 step
+    #xprate <1.5
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .turnin 855 >>Turn in Centaur Bracers
@@ -2500,6 +2524,7 @@ step
     .target Regthar Deathgate
     .isQuestComplete 4021
 step
+    #xprate <1.5
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .turnin 855 >>Turn in Centaur Bracers
@@ -2512,6 +2537,7 @@ step
     .target Regthar Deathgate
     .isQuestComplete 4021
 step
+    #xprate <1.5
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .turnin 855 >>Turn in Centaur Bracers
@@ -3752,12 +3778,14 @@ step
     .target Regthar Deathgate
     .isQuestComplete 852
 step
+    #xprate <1.5
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .turnin 855 >>Turn in Centaur Bracers
     .target Regthar Deathgate
     .isQuestComplete 855
 step
+    #xprate <1.5
     #completewith Serena
     .abandon 855 >>Abandon Centaur Bracers
 step
@@ -3785,6 +3813,7 @@ step
     .target Regthar Deathgate
     .isQuestComplete 4021
 step
+    #xprate <1.5
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .turnin 855 >>Turn in Centaur Bracers
