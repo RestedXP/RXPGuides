@@ -2029,11 +2029,11 @@ RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune Guide
 #subgroup Waist
-#name Spellfrost Bolt - 40 (Stranglethorn Vale)
+#name Spellfrost Bolt - 37 (Stranglethorn Vale)
 
 << Mage SoD
 
-step
+step << Alliance
     .train 415948,1
     .goto Stormwind City,55.8,65.2,-1
     .goto Stormwind City,32.4,80.0,-1
@@ -2048,6 +2048,20 @@ step
     .goto Duskwood,76.0,45.2,-1
     .goto Darnassus,34.6,9.8,-1
     .goto Wetlands,8.4, 56.6,-1
+    >>Purchase one or more |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
+    .collect 211779,1
+step << Horde
+    .goto Orgrimmar,45.6,56.8,
+    .goto Orgrimmar,46.2,46.6,
+    .goto Orgrimmar,45.8,40.6,
+    .goto The Barrens,51.4,30.2,
+    .goto Swamp of Sorrows,45.8,53.0,
+    .goto Thunder Bluff,42.6,55.4,
+    .goto Dustwallow Marsh,36.4,30.4,
+    .goto Undercity,82.6,16.0,
+    .goto Thunder Bluff,41.8,55.0,
+    .goto Thousand Needles,45.2,50.6,
+    .goto Stonetalon Mountains,47.6,61.6,
     >>Purchase one or more |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step
@@ -2126,6 +2140,32 @@ step
 -- RXPGuides.RegisterGuide([[
 -- #classic
 -- #group RestedXP Rune Guide
+-- #subgroup Feet
+-- #name Spell Power
+
+-- << Mage SoD
+
+
+-- ]])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- #group RestedXP Rune Guide
 -- #subgroup Wrist
 -- #name Displacement
 
@@ -2137,10 +2177,9 @@ step
 -- #classic
 -- #group RestedXP Rune Guide
 -- #subgroup Wrist
--- #name Displacement
+-- #name Molten Armor
 
 -- << Mage SoD
-
 
 -- ]])
 
@@ -2160,47 +2199,6 @@ step
 -- #group RestedXP Rune Guide
 -- #subgroup Helm
 -- #name Deep Freeze
-
--- << Mage SoD
-
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- #group RestedXP Rune Guide
--- #subgroup Helm
--- #name Deep Freeze
-
--- << Mage SoD
-
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- #group RestedXP Rune Guide
--- #subgroup Wrist
--- #name Molten Armor
-
--- << Mage SoD
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- #group RestedXP Rune Guide
--- #subgroup Feet
--- #name Spell Power
-
--- << Mage SoD
-
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- #group RestedXP Rune Guide
--- #subgroup Books
--- #name Expanded Intellect
 
 -- << Mage SoD
 
