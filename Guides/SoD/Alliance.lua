@@ -137,7 +137,7 @@ step << Druid
 step << Druid
     .train 410025 >>|cRXP_WARN_Use the|r |T136061:0|t|cRXP_LOOT_[Idol of Ursine Rage]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Mangle]
     .use 206954
-    .aura 414824
+    .aura -414824
     .train 410025,1
 ]])
 

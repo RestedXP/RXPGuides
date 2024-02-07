@@ -73,7 +73,7 @@ step
 step
     .cast 409920 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Crusader Strike]
     .use 205420
-    .aura 408828
+    .aura -408828
     .train 410002,1
     .xp <4,1
 ]])
@@ -148,7 +148,7 @@ step
 step
     .cast 409920 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Crusader Strike]
     .use 205420
-    .aura 408828
+    .aura -408828
     .train 410002,1
     .xp <4,1
 ]])
@@ -316,7 +316,7 @@ step
     .xp <22,1
 step
     .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Justice]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Hand of Reckoning]
-    .aura 408828
+    .aura -408828
     .use 208851
     .train 410001,1
     .xp <8,1
@@ -443,7 +443,7 @@ step
     .xp <22,1
 step
     .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Justice]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Hand of Reckoning]
-    .aura 408828
+    .aura -408828
     .use 208851
     .train 410001,1
     .xp <8,1
@@ -530,7 +530,7 @@ step
     .xp <4,1
 step
     .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t[Libram of Blessings] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Horn of Lordaeron]
-    .aura 408828
+    .aura -408828
     .use 208849
     .train 425618,1
     .xp <4,1
@@ -637,7 +637,7 @@ step
 step
     .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Blessings]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Horn of Lordaeron]
     .use 208849
-    .aura 408828
+    .aura -408828
     .train 425618,1
     .xp <4,1
 ]])
@@ -1399,7 +1399,7 @@ step
 step
     .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Banishment]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants - Exorcist]
     .use 211472
-    .aura 408828
+    .aura -408828
     .train 416037,1
     .xp <24,1
 ]])

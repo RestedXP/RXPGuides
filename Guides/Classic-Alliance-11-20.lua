@@ -1355,7 +1355,7 @@ step << Druid
     #season 2
     .train 410025 >>|cRXP_WARN_Use the|r |T136061:0|t|cRXP_LOOT_[Idol of Ursine Rage]|r |cRXP_WARN_to learn|r |T132135:0|t[Mangle]
     .use 206954
-    .aura 414824
+    .aura -414824
 step << Druid
 	#completewith TotL
 	.cast 18960 >> Cast Teleport: Moonglade

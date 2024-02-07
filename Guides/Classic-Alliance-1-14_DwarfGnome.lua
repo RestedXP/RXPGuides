@@ -292,7 +292,7 @@ step << Priest
 step << Priest
     #season 2
     .train 402862 >> |cRXP_WARN_Use the|r |T136222:0|t|cRXP_LOOT_[Memory of a Troubled Acolyte]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Penance]
-    .aura 410935
+    .aura -410935
     .use 205951
 step << Dwarf Priest
     #season 2
