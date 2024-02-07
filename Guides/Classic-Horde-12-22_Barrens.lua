@@ -1477,10 +1477,18 @@ step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .isQuestComplete 848
     .dungeon RFC
 step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    #xprate <1.5
     .goto The Barrens,51.62,30.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r
     .turnin 867 >>Turn in Harpy Raiders
     .accept 875 >>Accept Harpy Lieutenants
+    .target Darsok Swiftdagger
+    .dungeon RFC
+step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    #xprate >1.49
+    .goto The Barrens,51.62,30.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r
+    .turnin 867 >>Turn in Harpy Raiders
     .target Darsok Swiftdagger
     .dungeon RFC
 step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
@@ -1939,10 +1947,17 @@ step
     .target Apothecary Helbrim
     .isQuestComplete 848
 step
+    #xprate <1.5
     .goto The Barrens,51.62,30.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r
     .turnin 867 >>Turn in Harpy Raiders
     .accept 875 >>Accept Harpy Lieutenants
+    .target Darsok Swiftdagger
+step
+    #xprate >1.49
+    .goto The Barrens,51.62,30.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r
+    .turnin 867 >>Turn in Harpy Raiders
     .target Darsok Swiftdagger
 step
     .goto The Barrens,52.26,31.93
@@ -2591,6 +2606,7 @@ step
     .mob Fleeting Plainstrider
     .mob Ornery Plainstrider
 step
+    #xprate <1.5 
     .loop 25,The Barrens,40.28,15.49,39.50,14.68,39.47,13.24,38.94,12.80,38.18,12.56,37.96,13.52,38.62,13.95,38.18,14.62,38.14,15.59,37.29,15.68,37.24,16.26,37.67,16.34,38.35,17.08,38.83,17.71,39.37,17.21,39.87,16.66,40.15,15.98
     >>Kill |cRXP_ENEMY_Witchwing Slayers|r. Loot them for their |cRXP_LOOT_Rings|r
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Witchwing Slayers|r cast|r |T135358:0|t[Execute] |cRXP_WARN_(deals a LOT of damage when you're at <20% health), and |cRXP_ENEMY_Witchwing Ambushers|r are|r |T132320:0|t[Stealthed] |cRXP_WARN_and patrol around|r
@@ -2598,6 +2614,7 @@ step
     .complete 875,1 --Harpy Lieutenant Ring (6)
     .mob Witchwing Slayer
     .mob Witchwing Ambusher
+    .isOnQuest 875
 step
     #label StonetalonPickups
     #completewith next
@@ -3246,12 +3263,22 @@ step << Hunter
     .accept 6541 >>Accept Report to Kadrak
     .target Thork
 step
+    #xprate <1.5
     .goto The Barrens,51.62,30.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r
     >>|cRXP_WARN_He is at the top of the tower|r
     .turnin 875 >>Turn in Harpy Lieutenants
     .accept 876 >>Accept Serena Bloodfeather
     .target Darsok Swiftdagger
+    .isQuestComplete 875
+ step
+    #xprate <1.5
+    .goto The Barrens,51.62,30.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r
+    >>|cRXP_WARN_He is at the top of the tower|r
+    .accept 876 >>Accept Serena Bloodfeather
+    .target Darsok Swiftdagger
+    .isQuestTurnedIn 875
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mankrik|r and |cRXP_FRIENDLY_Tonga|r
     .turnin 899 >>Turn in Consumed by Hatred
@@ -3810,7 +3837,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Omusa|r
     .fly Crossroads >>Fly to The Crossroads
     .target Omusa Thunderhorn
-    .isQuestTurnedIn 852
+    .isQuestTurnedIn 852 << !Hunter
 step
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
@@ -3860,11 +3887,13 @@ step
     .target Regthar Deathgate
     .isQuestComplete 855
 step
+    #xprate <1.5
     #label Serena
     .goto The Barrens,39.16,12.16
     >>Kill |cRXP_ENEMY_Serena Bloodfeather|r. Loot her for her |cRXP_LOOT_Head|r
     .complete 876,1 --Serena's Head (1)
     .mob Serena Bloodfeather
+    .isQuestTurnedIn 875
 step << Hunter
     .goto The Barrens,49.05,11.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wenikee|r
@@ -3916,12 +3945,14 @@ step << Hunter
     .fly Crossroads >> Fly to Crossroads
     .target Vhulgra
     .cooldown item,6948,<0
+    .zoneskip The Barrens
 step
     .hs >> Hearth to The Crossroads
     .use 6948
     .cooldown item,6948,>0
     .isQuestComplete 876
     .dungeon !WC
+    .zoneskip The Barrens
 step << !Hunter
     .goto The Barrens,52.09,30.43,120 >>Travel to The Crossroads. You can also grind untill your |T134414:0|t[Hearthstone] is back up
     .cooldown item,6948,<0
@@ -3941,7 +3972,6 @@ step
     .target Bragok
     .dungeon WC
 step
-    #label ApothecaryPickup
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r, |cRXP_FRIENDLY_Helbrim|r and |cRXP_FRIENDLY_Korran|r << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r and |cRXP_FRIENDLY_Korran|r << Tauren/Orc Warrior/Orc Shaman/Troll Warrior/Troll Shaman
     >>|cRXP_FRIENDLY_Helbrim|r |cRXP_WARN_Starts a 45-minute timed quest|r << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
@@ -3953,6 +3983,18 @@ step
     .accept 868 >> Accept Egg Hunt
     .goto The Barrens,51.10,29.60
     .target Darsok Swiftdagger
+    .target Apothecary Helbrim << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    .target Korran
+    .isQuestComplete 876
+step
+    #label ApothecaryPickup
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r and |cRXP_FRIENDLY_Korran|r << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korran|r << Tauren/Orc Warrior/Orc Shaman/Troll Warrior/Troll Shaman
+    >>|cRXP_FRIENDLY_Helbrim|r |cRXP_WARN_Starts a 45-minute timed quest|r << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    .accept 853 >> Accept Apothecary Zamah << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    .goto The Barrens,51.44,30.15 << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    .accept 868 >> Accept Egg Hunt
+    .goto The Barrens,51.10,29.60
     .target Apothecary Helbrim << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .target Korran
 step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
@@ -3996,6 +4038,12 @@ step
     .goto Stonetalon Mountains,74.54,97.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jin'Zil|r
     .turnin 1060 >> Turn in Letter to Jin'Zil
+    .accept 1058 >> Accept Jin'Zils Forest Magic
+    .target Witch Doctor Jin'Zil
+    .isQuestTurnedIn 876
+step
+    .goto Stonetalon Mountains,74.54,97.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jin'Zil|r
     .accept 1058 >> Accept Jin'Zils Forest Magic
     .target Witch Doctor Jin'Zil
 step
@@ -4801,6 +4849,7 @@ step
     .turnin 1095 >>Turn in Further Instructions
     .target Ziz Fizziks
 step
+    #xprate <1.5
     .line Stonetalon Mountains,70.82,55.25,70.52,56.22,69.76,56.70,68.52,56.04,67.77,55.97,66.94,56.25,66.41,56.31,65.74,57.20,65.14,57.02,64.37,56.47,63.72,56.80,62.99,56.25,62.32,56.11,61.58,55.10,61.10,54.68,60.98,54.06,59.81,53.51,59.66,52.14,60.33,51.68
     .goto Stonetalon Mountains,61.03,52.32,30,0
     .goto Stonetalon Mountains,60.33,51.68,30,0
@@ -4828,6 +4877,7 @@ step
     .complete 1068,2 --XT:9 (1)
     .unitscan XT:9
 step
+    #xprate <1.5
     .line Stonetalon Mountains,67.18,46.87,66.53,46.95,65.72,45.09,63.73,45.02,63.72,45.92,63.43,46.57,64.43,46.13,64.72,46.63,64.82,47.72,65.11,48.31,65.98,48.67,66.24,49.65,66.65,49.58,66.88,48.95,68.41,49.58,69.45,46.56,70.22,48.62,70.95,48.49,71.41,45.54,71.25,43.45
     .goto Stonetalon Mountains,67.18,46.87,30,0
     .goto Stonetalon Mountains,66.53,46.95,30,0
@@ -4855,11 +4905,13 @@ step
     .complete 1068,1 --XT:4 (1)
     .unitscan XT:4
 step
+    #xprate <1.5
     #completewith next
     .goto Stonetalon Mountains,73.78,59.52
     .subzone 2160 >> Enter the Windshear Mine
     .group
 step
+    #xprate <1.5
     .goto Stonetalon Mountains,71.87,60.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Piznik|r
     >>|cRXP_WARN_This quest takes 5 minutes, and will spawn 3 waves of Kobolds at set times:|r
@@ -4868,6 +4920,7 @@ step
     .target Piznik
     .group 2
 step
+    #xprate <1.5
     .goto Stonetalon Mountains,71.77,60.19
     >>Protect |cRXP_FRIENDLY_Piznik|r from incoming |cRXP_ENEMY_Windshear Vermin|r
     >>|cRXP_WARN_First wave at 15 seconds (3 Kobolds), Second wave at 2 minutes 15 seconds (4 Kobolds, 2 casters 2 melee), and the Third wave at 3 minutes 20 seconds (4 Kobolds). The objective completes at 5 minutes|r
@@ -4875,6 +4928,7 @@ step
     .mob Windshear Vermin
     .group 2
 step
+    #xprate <1.5
     .goto Stonetalon Mountains,71.87,60.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Piznik|r
     .turnin 1090 >> Turnin Gerenzo's Orders
@@ -4882,11 +4936,13 @@ step
     .target Piznik
     .group
 step
+    #xprate <1.5
     .goto Stonetalon Mountains,71.83,60.34
     .goto Stonetalon Mountains,57.57,61.99,30 >>|cRXP_WARN_Jump onto the wooden wheel. Perform a Logout Skip by logging out and back in|r
     .link https://www.youtube.com/watch?v=8s1SRza7qFg&ab_channel=RestedXP >> |cRXP_WARN_CLICK HERE for an example|r
     .group
 step
+    #xprate <1.5
     .goto Stonetalon Mountains,58.99,62.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz|r
     .turnin 1092 >> Turnin Gerenzo's Orders
@@ -4894,6 +4950,7 @@ step
     .isQuestTurnedIn 1090
     .group
 step
+    #xprate <1.5
     .line Stonetalon Mountains,70.82,55.25,70.52,56.22,69.76,56.70,68.52,56.04,67.77,55.97,66.94,56.25,66.41,56.31,65.74,57.20,65.14,57.02,64.37,56.47,63.72,56.80,62.99,56.25,62.32,56.11,61.58,55.10,61.10,54.68,60.98,54.06,59.81,53.51,59.66,52.14,60.33,51.68
     .goto Stonetalon Mountains,61.03,52.32,30,0
     .goto Stonetalon Mountains,60.33,51.68,30,0
@@ -4921,7 +4978,9 @@ step
     .complete 1068,2 --XT:9 (1)
     .unitscan XT:9
     .isQuestTurnedIn 1092
+    .group 0
 step
+    #xprate <1.5
     .line Stonetalon Mountains,67.18,46.87,66.53,46.95,65.72,45.09,63.73,45.02,63.72,45.92,63.43,46.57,64.43,46.13,64.72,46.63,64.82,47.72,65.11,48.31,65.98,48.67,66.24,49.65,66.65,49.58,66.88,48.95,68.41,49.58,69.45,46.56,70.22,48.62,70.95,48.49,71.41,45.54,71.25,43.45
     .goto Stonetalon Mountains,67.18,46.87,30,0
     .goto Stonetalon Mountains,66.53,46.95,30,0
@@ -4949,15 +5008,19 @@ step
     .complete 1068,1 --XT:4 (1)
     .unitscan XT:4
     .isQuestTurnedIn 1092
+    .group 0
 step
+    #xprate <1.5
     #completewith next
     .goto Stonetalon Mountains,78.29,42.51,30 >> Enter the Talondeep Path
 step
+    #xprate <1.5
     .goto Stonetalon Mountains,78.89,41.24
     .goto Ashenvale,40.40,53.06,30 >>|cRXP_WARN_Jump onto the white stone on your right. Perform a Logout Skip by logging out and back in|r
     .link https://www.youtube.com/watch?v=h2s4ZjFBLtg&ab_channel=RestedXP >> |cRXP_WARN_CLICK HERE for an example|r
     .zoneskip Ashenvale
 step
+    #xprate <1.5
     #season 0
 	#completewith ZoramFP
     .goto Ashenvale,39.45,55.29,50,0
@@ -4971,6 +5034,7 @@ step
     >>|cRXP_WARN_Make sure to avoid Astranaar guards en route. Follow the waypoint for safety|r
     .unitscan Astranaar Sentinel
 step
+    #xprate <1.5
     #season 2
 	#completewith ZoramFP
     .goto Ashenvale,34.14,53.61,50,0
@@ -4980,16 +5044,19 @@ step
     .unitscan Astranaar Sentinel
 --XX Get teleported to just in front of Mystral lake in SoD
 step
+    #xprate <1.5
     #optional
     .loop 25,Ashenvale,10.86,26.99,11.23,25.73,11.83,25.75,12.51,24.09,14.18,24.03,14.85,23.08,14.13,20.77,14.73,19.56,14.59,17.90,13.38,16.39,13.62,14.48,14.15,15.31,15.88,15.42,15.40,16.96,15.22,18.81,15.33,20.78,15.33,22.51,15.32,24.90,14.76,25.52,14.62,26.49,14.52,28.25,13.55,29.36,12.41,29.15,11.22,31.04,10.38,29.60,11.01,28.57
     .xp 21 >> Grind to level 21
 step
+    #xprate <1.5
     #label ZoramFP
    .goto Ashenvale,12.24,33.80
    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andruk|r
    .fp Zoram'gar Outpost >> Get the Zoram'gar Outpost flight path
    .target Andruk
 step
+    #xprate <1.5
    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu|r, |cRXP_FRIENDLY_Karang|r, |cRXP_FRIENDLY_Mitsuwa|r and |cRXP_FRIENDLY_Marukai|r
    .turnin 6562 >> Turn in Trouble in the Deeps
    .goto Ashenvale,11.56,34.29
@@ -5004,12 +5071,14 @@ step
    .target Mitsuwa
    .target Marukai
 step
+    #xprate <1.5
    .goto Ashenvale,12.06,34.63
    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muglash|r
    >>|cRXP_WARN_This will start an escort quest. Be careful as it's difficult|r
    .accept 6641 >> Accept Vorsha the Lasher
    .target Muglash
 step
+    #xprate <1.5
     #completewith next
    >>Kill |cRXP_ENEMY_Wraithtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
    .complete 6442,1 --Wraithtail Head (20)
@@ -5021,6 +5090,7 @@ step
    .mob Wrathtail Myrmidon
    .mob Lady Vespia
 step
+    #xprate <1.5
    .goto Ashenvale,9.63,27.63
    >>Click the |cRXP_PICK_Brazier|r when you get there
    >>|cRXP_WARN_There will be waves of|r |cRXP_ENEMY_Naga|r |cRXP_WARN_that spawn. Be careful once|r |cRXP_ENEMY_Vorsha|r |cRXP_WARN_comes out, he hits very hard|r
@@ -5028,12 +5098,14 @@ step
    .complete 6641,1 --Defeat Vorsha the Lasher
    .mob Vorsha the Lasher
 step << Priest
+    #xprate <1.5
     #season 0,1
     #sticky
     #completewith EnterBFD
     .subzone 719 >> Find a group now for BFD if you wish to get a big wand upgrade (Gravestone Scepter). You could also wait to do BFD when you are in Ashenvale at level 26-28
     .dungeon BFD
 step
+    #xprate <1.5
    .loop 25,Ashenvale,10.86,26.99,11.23,25.73,11.83,25.75,12.51,24.09,14.18,24.03,14.85,23.08,14.13,20.77,14.73,19.56,14.59,17.90,13.38,16.39,13.62,14.48,14.15,15.31,15.88,15.42,15.40,16.96,15.22,18.81,15.33,20.78,15.33,22.51,15.32,24.90,14.76,25.52,14.62,26.49,14.52,28.25,13.55,29.36,12.41,29.15,11.22,31.04,10.38,29.60,11.01,28.57
    >>Kill |cRXP_ENEMY_Wraithtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
    .complete 6442,1 --Wraithtail Head (20)
@@ -5045,10 +5117,12 @@ step
    .mob Wrathtail Myrmidon
    .mob Lady Vespia
 step
+    #xprate <1.5
     .loop 25,Ashenvale,10.86,26.99,11.23,25.73,11.83,25.75,12.51,24.09,14.18,24.03,14.85,23.08,14.13,20.77,14.73,19.56,14.59,17.90,13.38,16.39,13.62,14.48,14.15,15.31,15.88,15.42,15.40,16.96,15.22,18.81,15.33,20.78,15.33,22.51,15.32,24.90,14.76,25.52,14.62,26.49,14.52,28.25,13.55,29.36,12.41,29.15,11.22,31.04,10.38,29.60,11.01,28.57
     .xp 21+21450 >> Grind to 21450+/25200 xp
     .dungeon !BFD << Priest
 step
+    #xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warsong Runner|r and |cRXP_FRIENDLY_Marukai|r
     .turnin 6641 >> Turn in Vorsha the Lasher
     .goto Ashenvale,12.22,34.21
@@ -5057,6 +5131,7 @@ step
     .target Warsong Runner
     .target Marukai
 step << Priest
+    #xprate <1.5
     #season 0,1
     .goto Ashenvale,11.56,34.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
@@ -5067,6 +5142,7 @@ step << Priest
     .dungeon BFD
     .isQuestTurnedIn 6564
 step << Priest
+    #xprate <1.5
     #season 0,1
     .goto Ashenvale,11.56,34.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
@@ -5075,10 +5151,12 @@ step << Priest
     .target Je'neu Sancrea
     .dungeon BFD
 step << Priest
+    #xprate <1.5
     #season 0,1
     .goto Kalimdor,43.89,35.23,100 >> Travel to the entrance of Blackfathom Deeps
     .dungeon BFD
 step << Priest
+    #xprate <1.5
     #season 0,1
     #completewith next
     >>Loot |cRXP_LOOT_Sapphire of Aku'Mai|r from the wall
@@ -5086,6 +5164,7 @@ step << Priest
     .dungeon BFD
     .isOnQuest 6563
 step << Priest
+    #xprate <1.5
     #season 0,1
     .goto Kalimdor,43.81,35.16,20,0
     .goto Kalimdor,43.94,34.86,20,0
@@ -5102,6 +5181,7 @@ step << Priest
     .use 16790
     .dungeon BFD
 step << Priest
+    #xprate <1.5
     #season 0,1
     .goto Kalimdor,44.53,34.86,20,0
     .goto Kalimdor,44.35,34.97,20,0
@@ -5116,18 +5196,21 @@ step << Priest
     .dungeon BFD
     .isOnQuest 6563
 step << Priest
+    #xprate <1.5
     #season 0,1
     #label EnterBFD
     .goto Kalimdor,44.36,34.86
     .zone 221 >> Enter the BFD Instance portal. Zone in
     .dungeon BFD
 step << Priest
+    #xprate <1.5
     #season 0,1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argent Guard Thaelrid|r
     .accept 6561 >>Accept Blackfathom Villainy
     .target Argent Guard Thaelrid
     .dungeon BFD
 step << Priest
+    #xprate <1.5
     #season 0,1
     >>Kill |cRXP_ENEMY_Lorguss Jett |r
     .complete 6565,1 --Lorguss Jett slain (1)
@@ -5135,6 +5218,7 @@ step << Priest
     .isOnQuest 6565
     .dungeon BFD
 step << Priest
+    #xprate <1.5
     #season 0,1
     #completewith next
     >>Loot the |cRXP_PICK_Fathom Stone|r in the water on the ground for the |cRXP_LOOT_Fathom Core|r
@@ -5143,6 +5227,7 @@ step << Priest
     .isOnQuest 6921
     .dungeon BFD
 step << Priest
+    #xprate <1.5
     #season 0,1
     >>Kill |cRXP_ENEMY_Baron Aquanis|r. Loot him for a |T136222:0|t[|cRXP_LOOT_Strange Water Globe|r]. Use it to accept the quest
     .collect 16782,1 --Strange Water Globe (1)
@@ -5151,12 +5236,14 @@ step << Priest
     .use 16782
     .dungeon BFD
 step << Priest
+    #xprate <1.5
     #season 0,1
     >>Loot the |cRXP_PICK_Fathom Stone|r in the water on the ground for the |cRXP_LOOT_Fathom Core|r
     .complete 6921,1 --Fathom Core (1)
     .isOnQuest 6921
     .dungeon BFD
 step << Priest
+    #xprate <1.5
     #season 0,1
     >>Kill |cRXP_ENEMY_Twilight Lord Kelris|r. Loot him for his |cRXP_LOOT_Head|r
     .complete 6561,1 --Head of Kelris (1)
@@ -5164,12 +5251,14 @@ step << Priest
     .isOnQuest 6561
     .dungeon BFD
 step << Priest
+    #xprate <1.5
     #season 0,1
     .hs >> Hearth to Thunder Bluff
     .use 6948
     >>|cRXP_WARN_Kill|r |cRXP_ENEMY_Aku'mai|r |cRXP_WARN_first if you wish. This is the last boss of the dungeon|r
     .dungeon BFD
 step << Priest
+    #xprate <1.5
     #season 0,1
     .goto Thunder Bluff,71.04,34.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bashana|r
@@ -5178,6 +5267,7 @@ step << Priest
     .isQuestComplete 6561
     .dungeon BFD
 step << Priest
+    #xprate <1.5
     #season 0,1
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
@@ -5186,6 +5276,7 @@ step << Priest
     .zoneskip Ashenvale
     .dungeon BFD
 step << Priest
+    #xprate <1.5
     #season 0,1
     .goto Ashenvale,11.56,34.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
@@ -5194,6 +5285,7 @@ step << Priest
     .dungeon BFD
     .isOnQuest 6564
 step << Priest
+    #xprate <1.5
     #season 0,1
     .goto Ashenvale,11.56,34.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
@@ -5202,6 +5294,7 @@ step << Priest
     .dungeon BFD
     .isQuestComplete 6565
 step << Priest
+    #xprate <1.5
     #season 0,1
     .goto Ashenvale,11.56,34.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
@@ -5210,6 +5303,7 @@ step << Priest
     .dungeon BFD
     .isQuestComplete 6563
 step << Priest
+    #xprate <1.5
     #season 0,1
     .goto Ashenvale,11.56,34.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
@@ -5218,6 +5312,7 @@ step << Priest
     .dungeon BFD
     .isQuestComplete 6521
 step << Priest
+    #xprate <1.5
     #season 0,1
     .goto Ashenvale,11.56,34.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Je'neu Sancrea|r
@@ -5226,16 +5321,29 @@ step << Priest
     .dungeon BFD
     .isQuestComplete 6922
 step
+    #xprate <1.5
     .goto Ashenvale,11.90,34.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karang|r
     .accept 216 >> Accept Between a Rock and a Thistlefur
     .target Karang Amakkar
 step
+    #xprate >1.49
+    .hs >> Hearth to Thunder Bluff
+    .cooldown item,6948,>0
+    .use 6948
+step
+    #xprate >1.49
+    .goto Thunder Bluff,47.00,49.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
+    .fly Orgrimmar >>Fly to Orgrimmar
+    .target Tal
+    .zoneskip Thunder Bluff,1
+step
     .goto Ashenvale,12.24,33.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andruk|r
     .fly Orgrimmar >> Fly to Orgrimmar
     .target Andruk
-    .zoneskip Orgrimmar
+    .zoneskip Ashenvale,1
 step << Warlock
     .goto Orgrimmar,48.25,45.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gan'rul|r
