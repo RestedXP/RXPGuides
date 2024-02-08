@@ -1473,7 +1473,7 @@ step << Mage
     .use 203752
 step << Rogue
     #season 2
-    .goto Elwynn Forest,67.6,47.6
+    .goto Elwynn Forest,68.09,44.73
     >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Riverpaw Outrunners|r and |cRXP_ENEMY_Riverpaw Runts|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Bottom-Left Map Piece]|r
     >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
     .collect 203787,1 -- Bottom-Left Map Piece (1)
@@ -1886,7 +1886,7 @@ step << Warrior/Rogue
 --XX 1s 10c flight to SW, 10s 2h sword, 10s 2h mace, 10s thrown, 30c/75c level 3/11 thrown, 81c mining pick - Warrior
 --XX 7s from 39, 3.5s from 76, 3.5s from 61, 2.5s from 109, 1.75 from 6281 (warrior)
 step
-    .goto 37,43.318,65.705
+    .goto Elwynn Forest,43.318,65.705
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
     .turnin 112 >> Turn in Collecting Kelp
     .timer 9,Collecting Kelp RP
@@ -1894,7 +1894,7 @@ step
     .target William Pestle
 step
     #label CollectKelp
-    .goto 37,43.318,65.705
+    .goto Elwynn Forest,43.318,65.705
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
     >>|cRXP_WARN_Wait out the RP|r
     .accept 114 >> Accept The Escape
@@ -1908,15 +1908,7 @@ step << Warrior/Rogue
     .goto Elwynn Forest,43.392,65.550
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Michelle Belle|r
     .train 3273 >> Train |T135966:0|t[First Aid]
-    .target Michelle Belle
-step << Rogue
-    #optional
-    .goto Elwynn Forest,43.872,65.937
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keryn Sylvius|r
-    .trainer >> Train your class spells
-    .target Keryn Sylvius
-    .xp <10,1
-    .money <0.6 
+    .target Michelle Belle 
 step << Rogue
     .goto Elwynn Forest,43.872,65.937
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keryn Sylvius|r
@@ -1924,6 +1916,8 @@ step << Rogue
     .train 674 >> Train |T132147:0|t[Dual Wield]
     .train 2983 >> Train |T132307:0|t[Sprint]
     .target Keryn Sylvius
+    .xp <10,1
+    .money <0.6 
 step
     .goto Elwynn Forest,42.105,65.927
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
@@ -2015,7 +2009,7 @@ step << Rogue
     .target Keryn Sylvius
     .xp <10,1
     .money <0.6 
-step << Rogue
+step << Rogue skip
     #optional
     #requires GoldshireVendor
     .goto Elwynn Forest,43.872,65.937
@@ -2053,9 +2047,9 @@ step
     .turnin 88,3 >> Turn in Princess Must Die! << !Rogue !Hunter !Warrior !Paladin
     .goto Elwynn Forest,34.660,84.482
     .target +Ma Stonefield
-    .goto Elwynn Forest,34.486,84.253
     .turnin 87 >> Turn in Goldtooth
     .target +"Auntie" Bernice Stonefield
+    .goto Elwynn Forest,34.486,84.253
 step << !Warrior !Warlock
     #xprate <1.5
     #optional
@@ -2543,7 +2537,7 @@ step << Rogue
     .target Gunther Weller
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
     .train 2983,1 --Sprint not Trained
-    .money <0.06
+    .money <0.2623
 step << Rogue
     #optional
     #ah
@@ -2556,6 +2550,7 @@ step << Rogue
     .target Gunther Weller
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
     .train 2983,3 --Sprint Trained
+    .money <0.2023
 step << Rogue
     #optional
     #completewith Continue
