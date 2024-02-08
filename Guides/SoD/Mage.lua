@@ -2121,18 +2121,45 @@ step
 
 -- ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- #group RestedXP Rune & Books Guide
--- #subgroup Boots
--- #name Chronostatic Preservation
+RXPGuides.RegisterGuide([[
+#classic
+<< Mage SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Chronostatic Preservation
 
 -- Chronostatic Preservation
-
--- << Mage SoD
-
-
--- ]])
+step
+    .train 425189,1
+    #loop
+    .goto Thousand Needles,23.2,25.0,25,0
+    .goto Thousand Needles,20.2,22.0,25,0
+    .goto Thousand Needles,17.6,19.6,25,0
+    .goto Thousand Needles,18.6,24.6,25,0
+    >>Kill |cRXP_ENEMY_Galak Mauler|r and loot them for |T134238:0|t|cRXP_LOOT_Cougar Cage Key|r
+    .collect 214435,1
+step
+    .train 425189,1
+    .goto Thousand Needles,45,8,65,4
+    >>Kill |cRXP_ENEMY_Seared Needles Cougar|r and loot him for |T134943:0|t|cRXP_LOOT_Partial Spell Notes|r
+    .mob Seared Needles Cougar
+    .collect 213634,1
+step
+    .train 425189,1
+    .goto Thousand Needles,45,8,64,4
+    >>Kill |cRXP_ENEMY_Singed Highperch Consort|r |T134943:0|t|cRXP_LOOT_Partial Spell Notes|r
+    .collect 213634,2
+    .mob Singed Highperch Consort
+step
+    .train 425189,1
+    .goto Thousand Needles,45,8,65,4
+    >>Kill |cRXP_ENEMY_Scorched Screeching Roguefeather|r |T134943:0|t|cRXP_LOOT_Partial Spell Notes|r
+    .collect 213634,3
+    .mob Scorched Screeching Roguefeather
+step
+    .train 425189 >>Combine All 3 |T134943:0|t|cRXP_LOOT_Partial Spell Notes|r to receive the rune |T135729:0|t|{Chronostatic Preservation]
+    .use 213634
+]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
