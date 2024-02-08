@@ -934,7 +934,7 @@ RXPGuides.RegisterGuide([[
 step
     .train 415423,1
     #completewith Interrogator Vishas
-    +This skillbook is obtained by killing a the first dungeon boss of Scarlet Monastery: Graveyard |cRXP_WARN_it is highly recommended to group up|r
+    +This skillbook is obtained by killing a the first dungeon boss of Scarlet Monastery: Graveyard |cRXP_WARN_it is highly recommended to have a group of 5 players.|r
 step
     .train 415423,1
     .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
