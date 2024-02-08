@@ -846,8 +846,8 @@ step << Warrior/Rogue/Paladin
     .goto Elwynn Forest,41.706,65.544
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smith Argus|r
     .train 2020 >> Train |T136241:0|t[Blacksmithing]
-    >>|cRXP_WARN_This will allow you to make |T135248:0|t[Rough Sharpening Stones] which increase your melee damage by 2|r << Warrior/Rogue
-    >>|cRXP_WARN_This will allow you to make |T135255:0|t[Rough Weightstones] which increase your melee damage by 2|r << Paladin
+    >>|cRXP_WARN_This will allow you to make|r |T135248:0|t[Rough Sharpening Stones] |cRXP_WARN_which increase your melee damage by 2|r << Warrior/Rogue
+    >>|cRXP_WARN_This will allow you to make|r |T135255:0|t[Rough Weightstones] |cRXP_WARN_which increase your melee damage by 2|r << Paladin
     >>|cRXP_WARN_If you don't want to do this, skip this step|r
     .target Smith Argus
 step << Warrior
@@ -1019,8 +1019,8 @@ step
     .accept 88 >> Accept Princess Must Die!
 	.goto Elwynn Forest,34.660,84.482
     .target +Ma Stonefield
-step
-    #completewith next
+step << Warrior/Paladin/Rogue
+    #completewith NecklaceStart
     >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Candles|r and |cRXP_LOOT_Dust|r
     >>|cRXP_WARN_If you loot any|r |T135232:0|t[Rough Stones] |cRXP_WARN_turn them into|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
     >>|cRXP_WARN_If you loot any|r |T135232:0|t[Rough Stones] |cRXP_WARN_turn them into|r |T135255:0|t[Rough Weightstones] << Paladin
@@ -1028,12 +1028,23 @@ step
     .complete 47,1 --Gold Dust (10)
     .mob Kobold Tunneler
     .mob Kobold Miner
+    .train 2018,3 << Warrior/Paladin/Rogue
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Billy Maclure|r
-    .target Billy Maclure
+    #optional << Warrior/Paladin/Rogue
+    #completewith NecklaceStart
+    >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Candles|r and |cRXP_LOOT_Dust|r
+    .complete 60,1 --Kobold Candle (8)
+    .complete 47,1 --Gold Dust (10)
+    .mob Kobold Tunneler
+    .mob Kobold Miner
+    .train 2018,1 << Warrior/Paladin/Rogue
+step
+    #label NecklaceStart
     .goto Elwynn Forest,43.131,85.722
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Billy Maclure|r
     .turnin 85 >> Turn in Lost Necklace
     .accept 86 >> Accept Pie for Billy
+    .target Billy Maclure
 step
     .goto Elwynn Forest,43.154,89.625
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maybell Maclure|r
@@ -1213,14 +1224,14 @@ step << Warrior/Rogue/Paladin
     >>|cRXP_WARN_Try to save a single|r |T134829:0|t[Minor Healing Potion] |cRXP_WARN_from now on as you will need it for Rolf's Corpse later|r << Warrior
     >>|cRXP_WARN_Remember to make|r |T135255:0|t[Rough Weightstones] |cRXP_WARN_if you picked up any|r |T135232:0|t[Rough Stones] << Paladin
     .xp 7+1800 >>Grind to 1800+/4500xp
-    .train 2020,3 --Blacksmithing
+    .train 2018,3 --Blacksmithing
 step << Warrior/Rogue/Paladin
     #xprate >1.49
     #optional
     >>|cRXP_WARN_Remember to make|r |T135248:0|t[Rough Sharpening Stones] |cRXP_WARN_if you picked up any|r |T135232:0|t[Rough Stones] << Warrior/Rogue
     >>|cRXP_WARN_Remember to make|r |T135255:0|t[Rough Weightstones] |cRXP_WARN_if you picked up any|r |T135232:0|t[Rough Stones] << Paladin
     .xp 7+1770 >>Grind to 1770+/4500xp
-    .train 2020,3 --Blacksmithing
+    .train 2018,3 --Blacksmithing
 step
     #xprate <1.5
     .xp 7+1800 >>Grind to 1800+/4500xp << !Priest
@@ -1627,6 +1638,24 @@ step
     .turnin 71 >> Turn in Report to Thomas
     .accept 39 >> Accept Deliver Thomas' Report
 step
+    #xprate >1.49
+    #completewith Level9Grind << Warlock/Warrior/Rogue
+    #completewith PrincessC << !Warlock !Warrior !Rogue
+    >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for the |T134939:0|t[|cRXP_LOOT_Westfall Deed|r]
+    .use 1972>>|cRXP_WARN_Use the |T134939:0|t[|cRXP_LOOT_Westfall Deed|r] to start the quest|r
+    >>|cRXP_WARN_The|r |T134939:0|t[|cRXP_LOOT_Westfall Deed|r] |cRXP_WARN_is a very rare drop. Ignore this step if you don't get it|r
+    .collect 1972,1,184 --Collect Westfall Deed (x1)
+    .accept 184 >> Accept Furlbrow's Deed
+step
+    #xprate <1.5
+    #completewith Level9Grind << Warlock/Warrior/Rogue
+    #completewith DefiasBandits << !Warlock !Warrior !Rogue
+    >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for the |T134939:0|t[|cRXP_LOOT_Westfall Deed|r]
+    .use 1972>>|cRXP_WARN_Use the |T134939:0|t[|cRXP_LOOT_Westfall Deed|r] to start the quest|r
+    >>|cRXP_WARN_The|r |T134939:0|t[|cRXP_LOOT_Westfall Deed|r] |cRXP_WARN_is a very rare drop. Ignore this step if you don't get it|r
+    .collect 1972,1,184 --Collect Westfall Deed (x1)
+    .accept 184 >> Accept Furlbrow's Deed
+step
     #xprate <1.5 << !Warlock
     #completewith next
     >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for their |cRXP_LOOT_Red Linen Bandanas|r
@@ -1634,6 +1663,7 @@ step
     .mob Defias Bandit
     .isOnQuest 83
 step
+    #label PrincessC
     .goto Elwynn Forest,69.3,79.0
     >>Kill |cRXP_ENEMY_Princess|r. Loot her for her |cRXP_LOOT_Collar|r
     >>|cRXP_ENEMY_Princess|r |cRXP_WARN_will agro with both of her|r |cRXP_ENEMY_Porcine Entourage|r
@@ -1656,15 +1686,9 @@ step << Rogue
     .mob Defias Bandit
     .train 398196,1
 step
-    #completewith Level9Grind
-    >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for the |T134939:0|t[|cRXP_LOOT_Westfall Deed|r]
-    .use 1972>>|cRXP_WARN_Use the |T134939:0|t[|cRXP_LOOT_Westfall Deed|r] to start the quest|r
-    >>|cRXP_WARN_The|r |T134939:0|t[|cRXP_LOOT_Westfall Deed|r] |cRXP_WARN_is a very rare drop. Ignore this step if you don't get it|r
-    .collect 1972,1,184 --Collect Westfall Deed (x1)
-    .accept 184 >> Accept Furlbrow's Deed
-step
     #completewith Level9Grind << Warlock
     #xprate <1.5 << !Warlock
+    #label DefiasBandits
     >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for their |cRXP_LOOT_Red Linen Bandanas|r
     .goto Elwynn Forest,70.5,77.6,60,0
     .goto Elwynn Forest,68.1,77.5,60,0
@@ -2505,6 +2529,7 @@ step << Warlock/Mage
     .trainer >>Train Staves
     .target Woo Ping
 step << Rogue
+    #ssf
     #optional
     .goto StormwindClassic,57.547,57.076
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
@@ -2515,6 +2540,7 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
     .train 2983,1 --Sprint not Trained
 step << Rogue
+    #ssf
     #optional
     .goto StormwindClassic,57.547,57.076
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
@@ -2788,6 +2814,21 @@ step << Rogue
     .train 674 >> Train |T132147:0|t[Dual Wield]
     .train 2983 >> Train |T132307:0|t[Sprint]
     .target Osborne the Night Man
+step << Rogue
+    #optional
+    #label StilettoDW
+    #completewith Continue
+    +|cRXP_WARN_Equip the|r |T135346:0|t[Stiletto] |cRXP_WARN_in your offhand|r
+    .use 2494
+    .itemcount 2494,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,>6.7
+    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
+step << Rogue
+    #optional
+    #requires StilettoDW
+    #completewith Continue
+    +|cRXP_WARN_Don't worry if you're not|r |T132147:0|t[Dual Wielding] |cRXP_WARN_right now, you'll buy a weapon later when necessary|r
+    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.4
 step << Human
     #xprate <1.5
     #label Continue
@@ -3115,7 +3156,7 @@ step << Paladin
     .train 633 >> Train your class spells
     .target Brandur Ironhammer
 --XX Alternative paladin train if they didn't get 10 in Goldshire
-stpe
+step
     #xprate >1.49
     #label IFHS
     .goto 1455,20.419,53.269,10,0 << Mage/Paladin
@@ -3265,6 +3306,35 @@ step
     .vendor >> |cRXP_BUY_Buy|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_if needed|r << Warrior/Rogue
     .vendor >> |cRXP_BUY_Buy|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_and|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_if needed|r << !Warrior !Rogue
     .target Kazan Mogosh
+step << Rogue
+    #completewith QuarryEnd
+    #label RogueWep
+    .goto 1426,68.866,55.958,8,0
+    .goto 1426,69.002,55.896
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frast Dokner|r
+    >>|cRXP_WARN_Buy a|r |T135231:0|t[Gladius] |cRXP_WARN_from him|r
+    .collect 2488,1 --Collect Gladius (1)
+    .target Frast Dokner
+    .money <0.0482
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.4
+--XX Shows if you didn't get a cutlass or better wep earlier
+step << Rogue
+    #optional
+    #completewith QuarryEnd
+    #requires RogueWep
+    #label Gladius
+    +|cRXP_WARN_Equip the|r |T135231:0|t[Gladius] |cRXP_WARN_in your mainhand|r
+    .use 2488
+    .itemcount 2488,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.4
+step << Rogue
+    #optional
+    #completewith QuarryEnd
+    #requires Gladius
+    +|cRXP_WARN_Equip the|r |T135346:0|t[Stiletto] |cRXP_WARN_in your offhand|r
+    .use 2494
+    .itemcount 2494,1
+    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step
     #xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r and |cRXP_FRIENDLY_Foreman Stonebrow|r
@@ -3282,17 +3352,18 @@ step
     .target Foreman Stonebrow
 step << Warrior/Paladin/Rogue
     .goto Dun Morogh,69.324,55.456
+    #requires RogueWep << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dank Drizzlecut|r
     .train 2575 >>Train |T134708:0|t[Mining]
-    >>|cRXP_WARN_This is used in conjunction with |T136241:0|t[Blacksmithing] to make |T135248:0|t[Rough Sharpening Stones] and |T135255:0|t[Rough Weightstones] to increase your weapon damage|r
+    >>|cRXP_WARN_This is used in conjunction with|r |T136241:0|t[Blacksmithing] |cRXP_WARN_to make|r |T135248:0|t[Rough Sharpening Stones] |cRXP_WARN_and|r |T135255:0|t[Rough Weightstones] |cRXP_WARN_to increase your weapon damage|r
     >>|cRXP_WARN_If you don't want to do this, skip this step|r
     .target Dank Drizzlecut
-    .train 2020,3 --Blacksmithing
+    .train 2018,3 --Blacksmithing
 step << Warrior/Paladin/Rogue
     #optional
-    #completewith next
+    #completewith QuarryEnd
     .cast 2580 >> |cRXP_WARN_Cast|r |T136025:0|t[Find Minerals]
-    .train 2575,3
+    .train 2575,3 --Mining
 step
     #xprate <1.5
     .goto Dun Morogh,70.7,56.4,40,0
@@ -3313,6 +3384,7 @@ step
     .mob Rockjaw Skullthumper
 step
     #xprate <1.5
+    #label QuarryEnd
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Stonebrow|r and |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
     .turnin 432 >> Turn in Those Blasted Troggs!
     .goto Dun Morogh,69.084,56.330
@@ -3322,6 +3394,7 @@ step
     .target +Senator Mehr Stonehallow
 step
     #xprate >1.49
+    #label QuarryEnd
     .goto Dun Morogh,69.084,56.330
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Stonebrow|r
     .turnin 432 >> Turn in Those Blasted Troggs!
