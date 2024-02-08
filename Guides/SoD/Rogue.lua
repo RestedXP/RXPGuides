@@ -1189,15 +1189,15 @@ step
     #season 2
     .goto Tirisfal Glades,60.73,50.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jamie Nore|r to receive |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r]
-    .collect 210229,1 --Rune of Mutilation (1)
+    .collect 203990,1 --Rune of Mutilation (1)
     .target Jamie Nore
     .skipgossip
     .train 400094,1
 step
     #season 2
     .train 400094 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r] |cRXP_WARN_to train|r |T132304:0|t[Mutilate]
-    .use 210229
-    .itemcount 210229,1
+    .use 203990
+    .itemcount 203990,1
 
 
     ]])
@@ -1233,15 +1233,15 @@ step
     .goto Tirisfal Glades,60.73,50.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ba'so|r to receive |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r]
     >>|cRXP_WARN_He is stealthed!|r
-    .collect 210229,1 --Rune of Mutilation (1)
+    .collect 203990,1 --Rune of Mutilation (1)
     .target Ba'so
     .skipgossip
     .train 400094,1
 step
     #season 2
     .train 400094 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r] |cRXP_WARN_to train|r |T132304:0|t[Mutilate]
-    .use 210229
-    .itemcount 210229,1
+    .use 203990
+    .itemcount 203990,1
 
     ]])
 

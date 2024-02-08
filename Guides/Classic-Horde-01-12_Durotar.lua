@@ -573,6 +573,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
     .turnin 77592 >>Turn in Atop the Cliffs << Troll Rogue
     .turnin 77583 >>Turn in Atop the Cliffs << Orc Rogue
+    .train 1784 >>Train |T132320:0|t[Stealth]
     .target Rwag
 step << Warrior
     #season 2
@@ -1419,6 +1420,23 @@ step << Warrior/Rogue
     .skill blacksmithing,<1,1
     .skill mining,<1,1
 step
+    #xprate >1.49
+    #completewith next
+    .goto Durotar,58.54,75.89,40,0
+    .goto Durotar,57.73,77.91,40,0
+    .goto Durotar,55.72,79.62,40,0
+    .goto Durotar,54.23,82.26,40,0
+    .goto Durotar,52.20,83.00,40,0 >>Run down the beach. Kill |cRXP_ENEMY_Crawlers|r and |cRXP_ENEMY_Makruras|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r. You do not have to finish this step here.
+    .complete 818,2,4 --Crawler Mucus (8)
+    .mob +Pygmy Surf Crawler
+    .mob +Surf Crawler
+    .complete 818,1,2 --Intact Makrura Eye (4)
+    .mob +Makrura Shellhide
+    .mob +Makrura Clacker
+step
+    #xprate >1.49
+    .goto Durotar,54.17,82.60,75 >> Reach the end of the beach
+step
     #xprate <1.5
     #completewith next
     .goto Durotar,58.54,75.89,40,0
@@ -1427,10 +1445,11 @@ step
     .goto Durotar,54.23,82.26,40,0
     .goto Durotar,52.20,83.00,40,0 >>Run down the beach. Kill |cRXP_ENEMY_Crawlers|r and |cRXP_ENEMY_Makruras|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r. You do not have to finish this step here.
     .complete 818,2 --Crawler Mucus (8)
+    .mob +Pygmy Surf Crawler
+    .mob +Surf Crawler
     .complete 818,1 --Intact Makrura Eye (4)
-    .mob Pygmy Surf Crawler
-    .mob Makrura Shellhide
-    .mob Makrura Clacker
+    .mob +Makrura Shellhide
+    .mob +Makrura Clacker
 step
     #xprate <1.5
     .goto Durotar,52.20,83.00,75 >> Reach the end of the beach
@@ -2135,11 +2154,11 @@ step
     >>Kill |cRXP_ENEMY_Makrura Spellhides|r and |cRXP_ENEMY_Makrura Clackers|r. Loot them for their |cRXP_LOOT_Eyes|r
     -->>This does not need to be finished now
     .complete 818,2 --Crawler Mucus (8)
+    .mob +Pygmy Surf Crawler
+    .mob +Surf Crawler
     .complete 818,1 --Intact Makrura Eye (4)
-    .mob Pygmy Surf Crawler
-    .mob Surf Crawler
-    .mob Makrura Shellhide
-    .mob Makrura Clacker
+    .mob +Makrura Shellhide
+    .mob +Makrura Clacker
 step
     #label Tools
     >>Loot the |cRXP_PICK_Gnomish Toolboxes|r inside and around the boats
@@ -2166,11 +2185,11 @@ step
     >>Kill |cRXP_ENEMY_Makrura Spellhides|r and |cRXP_ENEMY_Makrura Clackers|r. Loot them for their |cRXP_LOOT_Eyes|r
     -->>This does not need to be finished now
     .complete 818,2 --Crawler Mucus (8)
+    .mob +Pygmy Surf Crawler
+    .mob +Surf Crawler
     .complete 818,1 --Intact Makrura Eye (4)
-    .mob Pygmy Surf Crawler
-    .mob Surf Crawler
-    .mob Makrura Shellhide
-    .mob Makrura Clacker
+    .mob +Makrura Shellhide
+    .mob +Makrura Clacker
 step
     #label TaillasherEggs
     .loop 25,Durotar,67.74,69.86,67.04,71.40,67.66,73.86,68.67,74.47,69.76,74.69,70.29,73.31,70.23,70.84,69.69,70.35,69.21,69.69,67.74,69.86
@@ -2181,11 +2200,11 @@ step
     #completewith next
     >>Kill |cRXP_ENEMY_Crawlers|r and |cRXP_ENEMY_Makruras|r. Loot them for their |cRXP_LOOT_Mucus|r and |cRXP_LOOT_Eyes|r
     .complete 818,2 --Crawler Mucus (8)
+    .mob +Pygmy Surf Crawler
+    .mob +Surf Crawler
     .complete 818,1 --Intact Makrura Eye (4)
-    .mob Pygmy Surf Crawler
-    .mob Surf Crawler
-    .mob Makrura Shellhide
-    .mob Makrura Clacker
+    .mob +Makrura Shellhide
+    .mob +Makrura Clacker
 step
     .goto Durotar,66.94,84.41,150 >>Swim to the main island
     .isOnQuest 826
@@ -2268,11 +2287,11 @@ step
     >>Kill |cRXP_ENEMY_Makrura Spellhides|r and |cRXP_ENEMY_Makrura Clackers|r. Loot them for their |cRXP_LOOT_Eyes|r
     -->>This does not need to be finished now
     .complete 818,2 --Crawler Mucus (8)
+    .mob +Pygmy Surf Crawler
+    .mob +Surf Crawler
     .complete 818,1 --Intact Makrura Eye (4)
-    .mob Pygmy Surf Crawler
-    .mob Surf Crawler
-    .mob Makrura Shellhide
-    .mob Makrura Clacker
+    .mob +Makrura Shellhide
+    .mob +Makrura Clacker
 step
     .goto Durotar,65.27,87.86,50,0
     .goto Durotar,64.72,88.53,50,0
@@ -2304,11 +2323,11 @@ step
     >>Kill |cRXP_ENEMY_Makrura Spellhides|r and |cRXP_ENEMY_Makrura Clackers|r. Loot them for their |cRXP_LOOT_Eyes|r
     -->>This does not need to be finished now
     .complete 818,2 --Crawler Mucus (8)
+    .mob +Pygmy Surf Crawler
+    .mob +Surf Crawler
     .complete 818,1 --Intact Makrura Eye (4)
-    .mob Pygmy Surf Crawler
-    .mob Surf Crawler
-    .mob Makrura Shellhide
-    .mob Makrura Clacker
+    .mob +Makrura Shellhide
+    .mob +Makrura Clacker
 step
     #softcore
     #completewith next
@@ -2426,6 +2445,15 @@ step
     #hardcore
     #completewith RazorTurnins015
     .goto Durotar,51.95,43.50,100 >>Run to Razor Hill
+step << Shaman
+    #xprate >1.49
+    .goto Durotar,54.42,42.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Swart|r
+    .train 8050 >> Train your class spells
+    .accept 2983 >>Accept Call of Fire
+    .target Swart
+    .isNotOnQuest 1522
+    .xp <10,1
 step << Hunter
     #xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Torka|r and |cRXP_FRIENDLY_Gar'Thok|r
@@ -2785,6 +2813,27 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rezlak|r
     .turnin 834 >>Turn in Winds in the Desert
     .target Rezlak
+step << Shaman
+    #xprate >1.49
+    #completewith next
+    .goto Durotar,49.42,18.47,40,0
+    .goto Durotar,51.35,16.76,40,0
+    .goto Durotar,54.65,19.02,40,0
+    .goto Durotar,55.86,28.31,40,0
+    .subzone 371 >>Travel toward Dustwind Cave
+    >>|cRXP_WARN_Travel east around the hills to reach the cave. Follow the waypoint arrow|r
+step << Shaman
+    #xprate >1.49
+    .goto Durotar,53.18,29.15,20,0
+    .goto Durotar,52.70,27.97,12,0
+    .goto Durotar,53.05,27.87,12,0
+    .goto Durotar,53.14,27.24,12,0
+    .goto Durotar,52.84,26.80,12,0
+    .goto Durotar,52.07,26.85,12,0
+    .goto Durotar,51.90,25.70
+    >>Kill |cRXP_ENEMY_Burning Blade Cultists|r. Loot them for a |cRXP_LOOT_Reagent Pouch|r
+    .complete 1525,2 --Reagent Pouch (1)
+    .mob Burning Blade Cultist
 step
     #xprate <1.5 << Shaman/Warrior
     #completewith next
@@ -2866,18 +2915,20 @@ step << Warrior/Shaman
     .goto Durotar,43.56,15.08
     .xp 9+2930 >>Grind to 2930+/6500 into level 9
 step << Warrior/Shaman/Hunter
+    #xprate <1.5 << Shaman
     #label EnterOrg
     #completewith next
     .goto Orgrimmar,48.97,92.84,50,0
     .zone Orgrimmar >> Enter Orgrimmar
     .zoneskip Orgrimmar
 step << Warrior/Shaman/Hunter
+    #xprate <1.5 << Shaman
     .goto Orgrimmar,32.28,35.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nazgrel|r
     .turnin 831 >>Turn in The Admiral's Orders
     .target Nazgrel
 step << Warrior/Shaman/Hunter
-    #xprate <1.5 << Shaman/Warrior
+    #xprate <1.5 << Shaman
     .goto Orgrimmar,31.74,37.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
     .accept 5726 >>Accept Hidden Enemies
@@ -3095,22 +3146,7 @@ RXPGuides.RegisterGuide([[
 #next 10-12 Tirisfal << Troll Rogue/Orc Rogue/Orc Warlock/Troll Mage/Troll Priest
 #next 12-17 The Barrens << Troll !Rogue !Mage !Priest/Orc !Rogue !Warlock
 
-step << Shaman
-    #xprate >1.49
-    #completewith next
-    .subzone 817 >>Travel toward Skull Rock
-step << Shaman
-    #xprate >1.49
-    .goto Durotar,53.18,29.15,20,0
-    .goto Durotar,52.70,27.97,12,0
-    .goto Durotar,53.05,27.87,12,0
-    .goto Durotar,53.14,27.24,12,0
-    .goto Durotar,52.84,26.80,12,0
-    .goto Durotar,52.07,26.85,12,0
-    .goto Durotar,51.90,25.70
-    >>Kill |cRXP_ENEMY_Burning Blade Cultists|r. Loot them for a |cRXP_LOOT_Reagent Pouch|r
-    .complete 1525,2 --Reagent Pouch (1)
-    .mob Burning Blade Cultist
+
 step << Warrior/Shaman
     .goto Durotar,50.8,43.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Takrin|r
@@ -3319,7 +3355,7 @@ step << Warrior/Shaman
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
     .complete 766,4 --Swoop Gizzard (1)
-    .complete 761,1 --Trophy Swoop Quill (1)
+    .complete 761,1 --Trophy Swoop Quill (8)
 step << Warrior/Shaman
     #xprate >1.49
     #completewith EnterTB
@@ -3412,13 +3448,22 @@ step << Warrior/Shaman
     .goto Mulgore,33.48,36.68,40 >> Run out of the cave, then leave Thunder Bluff by jumping down somewhere under the bridge
     .zoneskip Mulgore
 step << Warrior/Shaman
+    #xprate <1.5
     #completewith SacredBurialTurnIn
     >>Kill |cRXP_ENEMY_Wolves|r, |cRXP_ENEMY_Cougars|r, |cRXP_ENEMY_Plainstriders|r and |cRXP_ENEMY_Swoops|r as you quest throughout the zone
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
     .complete 766,4 --Swoop Gizzard (1)
-    .complete 761,1 --Swoop Gizard (1)
+    .complete 761,1 --Trophy Swoop Quill (8)
+step << Warrior/Shaman
+    #xprate >1.49
+    #completewith SacredBurialTurnIn
+    >>Kill |cRXP_ENEMY_Wolves|r, |cRXP_ENEMY_Cougars|r, |cRXP_ENEMY_Plainstriders|r and |cRXP_ENEMY_Swoops|r as you quest throughout the zone
+    .complete 766,1 --Prairie Wolf Heart (1)
+    .complete 766,2 --Flatland Cougar Femur (1)
+    .complete 766,3 --Plainstrider Scale (1)
+    .complete 766,4 --Swoop Gizzard (1)
 step << Warrior/Shaman
 	#completewith SacredBurialTurnIn
     >>Keep an eye out for |cRXP_ENEMY_Ghost Howl|r. Loot him for his |T134358:0|t[|cRXP_LOOT_Demon Scarred Cloak|r]
@@ -3499,8 +3544,6 @@ step << Shaman
     .mob Bael'dun Digger
     .mob Bael'dun Appraiser
     .train 425344,1
-    .xp <3,1
-    .xp >13,1
 step << Warrior/Shaman
     #label SacredBurial
     .goto Mulgore,59.85,25.62
@@ -3538,14 +3581,22 @@ step << Shaman
     .train 425344,1
     .xp <3,1
 step << Warrior/Shaman
+    #xprate <1.5
     #completewith next
-    >>Kill |cRXP_ENEMY_Wolves|r, |cRXP_ENEMY_Cougars|r, |cRXP_ENEMY_Plainstriders|r and |cRXP_ENEMY_Swoops|r
-    >>|cRXP_WARN_Skip these quests if you're not close to done at this point|r
+    >>Kill |cRXP_ENEMY_Wolves|r, |cRXP_ENEMY_Cougars|r, |cRXP_ENEMY_Plainstriders|r and |cRXP_ENEMY_Swoops|r as you quest throughout the zone
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
     .complete 766,3 --Plainstrider Scale (1)
     .complete 766,4 --Swoop Gizzard (1)
-    .complete 761,1 --Swoop Gizard (1)
+    .complete 761,1 --Trophy Swoop Quill (8)
+step << Warrior/Shaman
+    #xprate >1.49
+    #completewith next
+    >>Kill |cRXP_ENEMY_Wolves|r, |cRXP_ENEMY_Cougars|r, |cRXP_ENEMY_Plainstriders|r and |cRXP_ENEMY_Swoops|r as you quest throughout the zone
+    .complete 766,1 --Prairie Wolf Heart (1)
+    .complete 766,2 --Flatland Cougar Femur (1)
+    .complete 766,3 --Plainstrider Scale (1)
+    .complete 766,4 --Swoop Gizzard (1)
 step << Warrior/Shaman
     .goto Mulgore,53.74,48.17
     >>Click the |cRXP_PICK_Sealed Supply Crate|r
@@ -3660,10 +3711,12 @@ step << Shaman
     .train 410104,1
     .xp <4,1
 step << Warrior/Shaman
+    #optional
     #xprate <1.5
     .loop 25,Mulgore,61.35,47.55,60.10,47.84,59.50,48.21,59.68,48.85,60.14,49.14,62.01,48.74,61.89,47.84,61.35,47.55
     .xp 11+7150 >> Grind to 7150+/8700xp
 step << Warrior/Shaman
+    #optional
     #xprate >1.49
     .loop 25,Mulgore,61.35,47.55,60.10,47.84,59.50,48.21,59.68,48.85,60.14,49.14,62.01,48.74,61.89,47.84,61.35,47.55
     .xp 11+6375 >> Grind to 6375+/8700xp
@@ -3712,7 +3765,6 @@ step << Shaman
 step << Shaman
     #season 2
     #completewith next
-    .goto Mulgore,53.91,23.45
     .zone Mulgore >>Take the northern elevator down to Mulgore
     .train 410104,1
     .xp <4,1
@@ -3728,19 +3780,11 @@ step << Shaman
 step << Shaman
     #season 2
     #loop
-    .goto Mulgore,38.80,16.03,10,0
-    .goto Mulgore,37.79,10.86,10,0
-    .goto Mulgore,38.01,10.21,10,0
-    .goto Mulgore,38.55,8.10,10,0
-    .goto Mulgore,38.06,7.47,10,0
-    .goto Mulgore,37.36,9.99,10,0
-    .goto Mulgore,37.31,10.41,10,0
-    .goto Mulgore,35.80,11.21,10,0
-    .goto Mulgore,36.20,11.41,10,0
-    .goto Mulgore,36.21,12.60,10,0
-    .goto Mulgore,36.55,12.84,10,0
-    .goto Mulgore,36.65,13.26,10,0
-    .goto Mulgore,37.18,12.36,10,0
+    #loop
+    .goto Mulgore,30.89,22.41,0
+    .goto Mulgore,30.89,22.41,20,0
+    .goto Mulgore,29.57,23.43,20,0
+    .goto Mulgore,29.63,26.32,20,0
     >>Loot |cRXP_LOOT_Windfury Cones|r on the ground
     .collect 206170,8,76160,1 --Windfury Cone (8)
     .train 410104,1
@@ -3873,6 +3917,9 @@ step << Shaman
     .train 410104,1
     .xp <4,1
 step << Warrior/Shaman
+    #optional
+    .abandon 766 >> Abandon Mazzranache
+step << Warrior/Shaman
     #xprate >1.49
     .hs >> Hearth to Crossroads
     .use 6948
@@ -3932,7 +3979,7 @@ step << Hunter
 step << Shaman
     #xprate <1.5
     #completewith next
-    .subzone 817 >>Travel toward Skull Rock
+    .subzone 371 >>Travel toward Dustwind Cave
 step << Shaman
     #xprate <1.5
     .goto Durotar,53.18,29.15,20,0
@@ -4137,7 +4184,7 @@ step << Warrior/Shaman/Hunter
     .mob Venomtail Scorpid
     .itemcount 4904,<1 --Venomtail Antidote
 step
-    #xprate <1.5 << !Hunter
+    #xprate <1.5 << << Shaman/Hunter
     #completewith Admiralorders1 << !Warrior !Shaman !Hunter
     #completewith NeeruFireblade << Warrior/Shaman/Hunter
     .goto Orgrimmar,48.97,92.84,50,0
@@ -4574,43 +4621,16 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wanted Poster|r
     .accept 398 >>Accept Wanted: Maggot Eye
     .maxlevel 11 << !Warrior !Warlock !Rogue
-    .maxlevel 12 << Warlock
+    .maxlevel 12 << Warlock/Rogue
     .maxlevel 13 << Warrior
     .train 400095,1 << Rogue
-step << Rogue
-    #season 2
-    #optional
-    .goto Tirisfal Glades,60.74,51.52
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wanted Poster|r
-    .accept 398 >>Accept Wanted: Maggot Eye
-    .maxlevel 11
 step
-    #season 0,1
     .goto Tirisfal Glades,61.26,50.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sevren|r inside the building
     .accept 358 >>Accept Graverobbers
     .target Magistrate Sevren
-    .maxlevel 11 !Warrior !Warlock
-    .maxlevel 12 << Warrior/Warlock
+    .maxlevel 10
 step
-    #season 2
-    .goto Tirisfal Glades,61.26,50.84
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sevren|r inside the building
-    .accept 358 >>Accept Graverobbers
-    .target Magistrate Sevren
-    .maxlevel 11 !Warrior !Warlock !Rogue
-    .maxlevel 12 << Warrior/Warlock
-    .train 400095,1 << Rogue
-step << Rogue
-    #season 2
-    #optional
-    .goto Tirisfal Glades,61.26,50.84
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sevren|r inside the building
-    .accept 358 >>Accept Graverobbers
-    .target Magistrate Sevren
-    .maxlevel 11
-step
-    #season 0,1
     .goto Tirisfal Glades,59.45,52.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r
     .accept 445 >>Accept Delivery to Silverpine Forest
@@ -4618,24 +4638,6 @@ step
     .target Apothecary Johaanstep
     .maxlevel 10 << !Warlock
     .maxlevel 11 << Warlock
-step
-    #season 2
-    .goto Tirisfal Glades,59.45,52.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r
-    .accept 445 >>Accept Delivery to Silverpine Forest
-    .accept 367 >>Accept A New Plague
-    .target Apothecary Johaanstep
-    .maxlevel 10 << !Warlock !Rogue
-    .maxlevel 11 << Warlock
-    .train 400095,1 << Rogue
-step << Rogue
-    #season 2
-    .goto Tirisfal Glades,59.45,52.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r
-    .accept 445 >>Accept Delivery to Silverpine Forest
-    .accept 367 >>Accept A New Plague
-    .target Apothecary Johaanstep
-    .maxlevel 10
 step
     #label DeliverytoSPF
     .goto Tirisfal Glades,59.45,52.40
@@ -4643,30 +4645,12 @@ step
     .accept 445 >>Accept Delivery to Silverpine Forest
     .target Apothecary Johaan
 step
-    #season 0,1
     .goto Tirisfal Glades,58.20,51.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r
     .accept 404 >>Accept A Putrid Task
     .target Deathguard Dillinger
     .maxlevel 10 << !Warlock
     .maxlevel 11 << Warlock
-step
-    #season 2
-    .goto Tirisfal Glades,58.20,51.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r
-    .accept 404 >>Accept A Putrid Task
-    .target Deathguard Dillinger
-    .maxlevel 10 << !Warlock !Rogue
-    .maxlevel 11 << Warlock
-    .train 400095,1 << Rogue
-step << Rogue
-    #season 2
-    #optional
-    .goto Tirisfal Glades,58.20,51.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r
-    .accept 404 >>Accept A Putrid Task
-    .target Deathguard Dillinger
-    .maxlevel 10
 step << Warrior
     .goto Tirisfal Glades,58.19,51.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dillinger|r
@@ -4719,7 +4703,6 @@ step
     .mob Vampiric Duskbat
     .isOnQuest 375
 step
-    #season 0,1
     #optional
     #label Pumpkins
     .goto Tirisfal Glades,40.91,54.17
@@ -4728,17 +4711,6 @@ step
     .target Deathguard Simmer
     .maxlevel 10 << !Warlock
     .maxlevel 11 << Warlock
-step
-    #season 2
-    #optional
-    #label Pumpkins
-    .goto Tirisfal Glades,40.91,54.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Simmer|r
-    .accept 365 >>Accept Fields of Grief
-    .target Deathguard Simmer
-    .maxlevel 10 << !Warlock !Rogue
-    .maxlevel 11 << Warlock
-    .train 400095,1 << Rogue
 step << Rogue
     #season 2
     #optional
@@ -5368,7 +5340,7 @@ step
     .subzone 159 >> Travel to Brill
 step << Rogue
     #season 2
-    .goto Tirisfal Glades,53.05,53.87
+    .goto Tirisfal Glades,52.89,54.06
     .use 208034 >>Use the |T134269:0|t[|cRXP_LOOT_Tirisfal Treasure Map|r] below the bridge
     >>Loot the |cRXP_PICK_Buried Treasure|r chest that spawns for |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Draw|r]
     .collect 203991,1 --Rune of Quick Draw (1s)
@@ -5419,15 +5391,15 @@ step << Rogue
     #season 2
     .goto Tirisfal Glades,60.73,50.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jamie Nore|r to receive |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r]
-    .collect 210229,1 --Rune of Mutilation (1)
+    .collect 203990,1 --Rune of Mutilation (1)
     .target Jamie Nore
     .skipgossip
     .train 400094,1
 step << Rogue
     #season 2
     .train 400094 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r] |cRXP_WARN_to train|r |T132304:0|t[Mutilate]
-    .use 210229
-    .itemcount 210229,1
+    .use 203990
+    .itemcount 203990,1
 step
     #optional
     .goto Tirisfal Glades,60.58,51.77
@@ -6011,12 +5983,12 @@ step << Rogue
     .goto Undercity,65.53,43.62,15 >> Take the lift down to the Undercity
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
-step << !Undead
+step << !Rogue !Mage
     #completewith UCflightpath3
     .goto Tirisfal Glades,61.80,65.06,20,0
     .zone Undercity >> Enter Undercity
     .zoneskip Undercity
-step << !Undead
+step << !Rogue !Mage
     #completewith UCflightpath3
     .goto Undercity,66.09,20.06,20,0
     .goto Undercity,64.37,23.94,20,0
@@ -6051,6 +6023,7 @@ step << Rogue
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
     .target Charles Seaton
+    .money <0.2023
 step << Rogue
     #completewith Entersilverpine
     +Equip the |T135346:0|t[Cutlass]
@@ -6171,6 +6144,7 @@ step << Priest
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
 step
+    #xprate <1.5
     #optional
     .abandon 806 >> Abandon Dark Storms
     .isOnQuest 806
@@ -6182,6 +6156,10 @@ step << Warrior
     #optional
     .abandon 1821 >> Abandon Agamand Heirlooms
     .isOnQuest 1821
+step 
+    #optional
+    #xprate >1.49
+    .abandon 830 >> Abandon The Admiral's Orders
 step
     #label LeaveUndercity3
     .goto Undercity,47.25,39.12,50,0
