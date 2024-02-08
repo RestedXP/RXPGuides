@@ -598,12 +598,12 @@ step << Druid
 #map Darkshore
     #xprate <1.5
     .goto Felwood,22.39,29.45
-    .xp 14-1890 >> Grind until you are 1890xp away from level 14
+    .xp 14-1890
 step << Druid
 #map Darkshore
     #xprate >1.49
     .goto Felwood,22.39,29.45
-    .xp 14-2830 >> Grind until you are 2830xp away from level 14
+    .xp 14-1260
 step << Druid
     .goto Darkshore,36.336,45.574
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caylais Moonfeather|r
@@ -2238,11 +2238,14 @@ step
     .complete 2138,1 -- Rabid Thistle Bear slain (20)
     .mob Rabid Thistle Bear
 step << Druid
+#xprate <1.5
     #sticky
     #label earthroot
     >>Collect 5 |T134187:0|t[Earthroot] as you quest|r
     .complete 6123,1
+    .isOnQuest 6123
 step << Druid
+#xprate <1.5
     .goto Darkshore,43.4,45.9,90,0
     .goto Darkshore,43.3,49.1,90,0
     .goto Darkshore,42.4,52.6,90,0
@@ -2254,6 +2257,23 @@ step << Druid
     .goto Darkshore,45.7,50.3,0
     >>Loot |cRXP_LOOT_Lunar Fungi|r on the ground throughout caves
     .complete 6123,2
+    .isOnQuest 6123
+step << Druid
+#xprate >1.49
+    .goto Darkshore,43.4,45.9,90,0
+    .goto Darkshore,43.3,49.1,90,0
+    .goto Darkshore,42.4,52.6,90,0
+    .goto Darkshore,45.7,50.3,90,0
+    .goto Darkshore,45.3,53.3
+    .goto Darkshore,43.4,45.9,0
+    .goto Darkshore,43.3,49.1,0
+    .goto Darkshore,42.4,52.6,0
+    .goto Darkshore,45.7,50.3,0
+    >>Loot |cRXP_LOOT_Lunar Fungi|r on the ground throughout caves
+    >>|cRXP_WARN_If you haven't found 5 |cRXP_LOOT_Earthroot|r by this point, just abandon this quest|r
+    .complete 6123,1
+    .complete 6123,2
+    .isOnQuest 6123
 step
 #map Darkshore
     #label CompleteThistleBears
@@ -2559,9 +2579,16 @@ step << Druid
     .goto Darkshore,37.70,40.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alanndarian Nightsong|r
     .turnin 6123 >> Turn in Gathering the Cure
+    .isQuestComplete 6123
+step
+#xprate <1.5
+    .goto Darkshore,37.70,40.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alanndarian Nightsong|r
     .accept 6124 >> Accept Curing the Sick
     .target Alanndarian Nightsong
+    .isQuestTurnedIn 6123
 step << Druid
+#xprate <1.5
     #label deers
     #sticky
     #loop
@@ -2950,6 +2977,7 @@ step << Druid
 	.cast 18960 >> Cast Teleport: Moonglade
 	.zoneskip Moonglade
 step << Druid
+#xprate <1.5
     .goto Moonglade,56.2,30.4
     >>Go to Moonglade
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze|r
