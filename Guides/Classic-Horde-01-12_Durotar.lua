@@ -4184,7 +4184,7 @@ step << Warrior/Shaman/Hunter
     .mob Venomtail Scorpid
     .itemcount 4904,<1 --Venomtail Antidote
 step
-    #xprate <1.5 << Shaman/Hunter
+    #xprate <1.5 << Warrior/Shaman/Hunter
     #completewith Admiralorders1 << !Warrior !Shaman !Hunter
     #completewith NeeruFireblade << Warrior/Shaman/Hunter
     .goto Orgrimmar,48.97,92.84,50,0
