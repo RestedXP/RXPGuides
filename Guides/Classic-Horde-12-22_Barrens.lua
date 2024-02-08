@@ -1277,18 +1277,18 @@ step
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .accept 850 >>Accept Kolkar Leaders
-    .accept 855 >> Accept Centaur Bracers
+    .accept 855 >>Accept Centaur Bracers
     .target Regthar Deathgate
-    .maxlevel 15
 step
-    #xprate <1.5
-    #optional
-    #label RegtharDeathgate1
+    #xprate >1.49
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .accept 850 >>Accept Kolkar Leaders
+    .accept 855 >>Accept Centaur Bracers
     .target Regthar Deathgate
+    .maxlevel 15
 step
+    #optional
     #label RegtharDeathgate1
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
@@ -1302,6 +1302,7 @@ step
     .complete 855,1 --Centaur Bracers (15)
     .mob Kolkar Wrangler
     .mob Kolkar Stormer
+    .isOnQuest 855
 step
     #completewith Barak
     >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Forgotten Pools
