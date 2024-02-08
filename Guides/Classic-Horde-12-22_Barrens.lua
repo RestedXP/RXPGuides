@@ -176,7 +176,7 @@ step << Undead
     .home >> Set your Hearthstone to Crossroads
     .target Innkeeper Boorand Plainswind
     .dungeon !RFC
-step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
+step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .goto The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
     .home >> Set your Hearthstone to Crossroads
@@ -2631,6 +2631,16 @@ step
     .goto The Barrens,35.19,27.79
     .target Seereth Stonebreak
     .target Makaba Flathoof
+    .maxlevel 20 << !Druid
+step
+    #optional
+    #map Stonetalon Mountains
+    #label StonetalonPickups
+    .goto The Barrens,35.26,27.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seereth|r
+    .turnin 1061 >> Turn in The Spirits of Stonetalon
+    .accept 1062 >> Accept Goblin Invaders
+    .target Seereth Stonebreak
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -2655,6 +2665,7 @@ step
     .complete 6548,2 --Kill Grimtotem Mercenary (x6)
     .mob Grimtotem Ruffian
     .mob Grimtotem Mercenary
+    .isOnQuest 6548
 step << Druid
     #season 2
     .goto Stonetalon Mountains,80.2,90.6,60,0
@@ -2683,16 +2694,26 @@ step << Druid
     .train 410021 >> |cRXP_WARN_Use the|r |T134233:0|t[|cRXP_FRIENDLY_Idol of the Wild|r] |cRXP_WARN_to train|r |T132143:0|t[Wild Strikes]
     .itemcount 210534,1
 step
-    #label AvengeVillageTurnin
     #map Stonetalon Mountains
     .goto The Barrens,35.19,27.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Makaba|r
     .turnin 6548 >> Turn in Avenge My Village
     .accept 6629 >> Accept Kill Grundig Darkcloud
     .target Makaba Flathoof
+    .isQuestComplete 6548
+step
+    #optional
+    #label AvengeVillageTurnin
+    #map Stonetalon Mountains
+    .goto The Barrens,35.19,27.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Makaba|r
+    .accept 6629 >> Accept Kill Grundig Darkcloud
+    .target Makaba Flathoof
+    .isQuestTurnedIn 6548
 step
     #completewith next
     .goto Stonetalon Mountains,75.89,87.49,30 >>Travel up the path to the bonfire
+    .isQuestTurnedIn 6548
 step
     .goto Stonetalon Mountains,73.65,86.13
     >>Kill |cRXP_ENEMY_Grundig Darkcloud|r and |cRXP_ENEMY_Grimtotem Brutes|r
@@ -2701,11 +2722,13 @@ step
     .complete 6629,2 --Kill Grimtotem Brute (x6)
     .mob Grundig Darkcloud
     .mob Grimtotem Brute
+    .isQuestTurnedIn 6548
 step
     .goto Stonetalon Mountains,73.48,85.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaya|r
     .accept 6523 >> Accept Protect Kaya
     .target Kaya Flathoof
+    .isQuestTurnedIn 6548
 step
     .goto Stonetalon Mountains,71.82,86.79,40,0
     .goto Stonetalon Mountains,71.83,89.79,40,0
@@ -2714,6 +2737,7 @@ step
     >>|cRXP_WARN_Be careful! Three|r |cRXP_ENEMY_Grimtotems|r |cRXP_WARN_will spawn when you reach the bonfire in Camp Aparaje|r
     .complete 6523,1 --Kaya Escorted to Camp Aparaje
     .target Kaya Flathoof
+    .isQuestTurnedIn 6548
 step
     .goto Stonetalon Mountains,71.25,95.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xen'Zilla|r
@@ -4018,6 +4042,44 @@ step
     .goto The Barrens,35.19,27.79
     .target Seereth Stonebreak
     .target Makaba Flathoof
+    .isQuestComplete 6629
+    .isQuestComplete 6523
+step
+    #optional
+    #map Stonetalon Mountains
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seereth|r and |cRXP_FRIENDLY_Makaba|r
+    .turnin 1062 >>Turn in Goblin Invaders
+    .accept 1063 >>Accept The Elder Crone
+    .accept 1068 >> Accept Shredding Machines
+    .goto The Barrens,35.26,27.88
+    .turnin 6629 >>Turn in Kill Grundig Darkcloud
+    .goto The Barrens,35.19,27.79
+    .target Seereth Stonebreak
+    .target Makaba Flathoof
+    .isQuestComplete 6629
+step
+    #optional
+    #map Stonetalon Mountains
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seereth|r and |cRXP_FRIENDLY_Makaba|r
+    .turnin 1062 >>Turn in Goblin Invaders
+    .accept 1063 >>Accept The Elder Crone
+    .accept 1068 >> Accept Shredding Machines
+    .goto The Barrens,35.26,27.88
+    .turnin 6523 >>Turn in Protect Kaya
+    .accept 6401 >>Accept Kaya's Alive
+    .goto The Barrens,35.19,27.79
+    .target Seereth Stonebreak
+    .target Makaba Flathoof
+    .isQuestComplete 6523
+step
+    #optional
+    #map Stonetalon Mountains
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seereth|r
+    .turnin 1062 >>Turn in Goblin Invaders
+    .accept 1063 >>Accept The Elder Crone
+    .accept 1068 >> Accept Shredding Machines
+    .goto The Barrens,35.26,27.88
+    .target Seereth Stonebreak
 step
     #completewith next
     .goto Stonetalon Mountains,82.57,98.63,60,0
@@ -4799,6 +4861,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tammra|r
     .turnin 6401 >>Turn in Kaya's Alive
     .target Tammra Windfield
+    .isQuestTurnedIn 6523
 step
     .goto Stonetalon Mountains,47.47,62.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Jayka|r
