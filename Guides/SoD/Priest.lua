@@ -1,7 +1,7 @@
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Penance - 3 (Elwynn Forest)
 
@@ -26,7 +26,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Penance - 1 (Dun Morogh)
 
@@ -54,7 +54,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << NightElf Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Penance - 2 (Shadowglen)
 
@@ -101,7 +101,7 @@ step << NightElf Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Troll Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Penance - 2 (Durotar)
 
@@ -135,7 +135,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Undead Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Penance - 2 (Tirisfal)
 
@@ -166,7 +166,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Homunculi - 8 (Durotar)
 
@@ -215,7 +215,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Homunculi - 7 (Tirisfal Glades)
 
@@ -266,7 +266,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Shared Pain - 13 (Durotar)
 
@@ -297,7 +297,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Shared Pain - 6 (Tirisfal Glades)
 
@@ -335,7 +335,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Void Plague - 5 (Durotar)
 
@@ -365,7 +365,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Void Plague - 6 (Tirisfal Glades)
 
@@ -401,7 +401,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Prayer of Mending - 6 (Durotar)
 
@@ -423,7 +423,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Prayer of Mending - 10 (Mulgore)
 
@@ -444,7 +444,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Twisted Faith - 10 (Loch Modan)
 
@@ -474,7 +474,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Twisted Faith - 14 (Westfall)
 
@@ -499,7 +499,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Twisted Faith - 18 (Darkshore)
 
@@ -527,7 +527,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Shared Pain - 10 (Dun Morogh)
 
@@ -547,7 +547,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Shared Pain - 6 (Elwynn Forest)
 
@@ -567,7 +567,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Homunculi - 8 (Dun Morogh)
 
@@ -588,7 +588,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Homunculi - 8 (Elwynn Forest)
 
@@ -608,7 +608,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Homunculi - 8 (Teldrassil)
 
@@ -635,7 +635,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Prayer of Mending - 6 (Elwynn Forest)
 
@@ -655,7 +655,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Prayer of Mending - 8 (Teldrassil)
 
@@ -675,7 +675,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Prayer of Mending - 6 (Dun Morogh)
 
@@ -692,10 +692,20 @@ step << Priest
     .target Adventurer's Spirit
 ]])
 
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Priest SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Legs
+-- #name Shadowfiend
+
+
+-- ]])
+
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadow Word: Death - 10 (Darkshore)
 
@@ -716,7 +726,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadow Word - Death - 12 (Loch Modan)
 
@@ -744,7 +754,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadow Word: Death - 20 (The Barrens)
 
@@ -785,7 +795,7 @@ step << Undead
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadow Word: Death - 24 (Silverpine Forest)
 
@@ -824,7 +834,7 @@ step << Undead
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Twisted Fate - 10 (Silverpine Forest)
 
@@ -851,7 +861,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Twisted Fate - 10 (The Barrens)
 
@@ -885,7 +895,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Void Plague - 6 (Elwynn Forest)
 
@@ -911,7 +921,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Void Plague - 6 (Dun Morogh)
 
@@ -932,3 +942,146 @@ step << Priest
     .train 425216 >>|cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpose|r] |cRXP_WARN_to train|r |T237514:0|t[Void Plague]
     .use 205940
 ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Priest SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Waist
+-- #name Empowered Renew
+
+-- Empowered Renew
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Priest SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Waist
+-- #name Mind Spike
+
+-- Mind Spike
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Priest SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Waist
+-- #name Renewed Hope
+
+-- Renewed Hope
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Priest SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Boots
+-- #name Dispersion
+
+-- Dispersion
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Priest SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Boots
+-- #name Pain Suppression
+
+-- Pain Suppression
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Priest SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Boots
+-- #name Spirit of the Redeemer
+
+-- Spirit of the Redeemer
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Priest SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Bracers
+-- #name Despair
+
+-- Despair
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Priest SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Bracers
+-- #name Surge of Light
+
+-- Surge of Light
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Priest SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Bracers
+-- #name Void Zone
+
+-- Void Zone
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Priest SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helmet
+-- #name Divine Aegis
+
+-- Divine Aegis
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Skill Books
+-- #name Increased Fortitude
+
+-- Increased Fortitude
+
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Skill Books
+-- #name Shadowfiend
+
+-- Shadowfiend
+
+
+
+-- ]])

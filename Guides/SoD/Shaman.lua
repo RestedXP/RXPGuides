@@ -1,7 +1,7 @@
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Molten Blast - 8 (Mulgore)
 #next Lava Lash - 10 (Mulgore)
@@ -174,12 +174,12 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Molten Blast - 10 (Durotar)
 #next Way of Earth - 12 (The Barrens)
-        
-        
+
+
     --Rune of Molten Blast
 step
     +|cRXP_WARN_You MUST be at least level 10 in order to acquire|r |T133816:0|t[Engrave Gloves - Molten Blast] |cRXP_WARN_as it is the level requirement of training|r |T135813:0|t[Flame Shock]
@@ -364,12 +364,11 @@ step
     .xp <10,1
 --XX Cast ID may be wrong, may need to be checked
 ]])
-        
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Lava Lash - 10 (Mulgore)
 #next Ancestral Guidance - 10 (Mulgore)
@@ -598,11 +597,10 @@ step
     .xp <4,1
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Water Shield - 20 (The Barrens)
 #next Shamanistic Rage - 25 (Stonetalon Mountains)
@@ -814,7 +812,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Water Shield - 20 (Silverpine Forest)
 #next Shamanistic Rage - 25 (Stonetalon Mountains)
@@ -1019,7 +1017,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Lava Burst - 25 (Hillsbrad Foothills)
 #next Earth Shield - 25 (Azeroth)
@@ -1075,11 +1073,10 @@ step
     .train 410095,1
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Overload - 3 (Durotar)
 #next Shield Mastery - 6 (Durotar)
@@ -1138,13 +1135,12 @@ step << !Tauren skip
     .turnin 77585 >>Turn in Icons of Power << Orc Shaman
     .target Shikrik
     .xp <3,1
-    ]])
-
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Overload - 3 (Mulgore)
 #next Shield Mastery - 6 (Mulgore)
@@ -1214,13 +1210,12 @@ step << Tauren skip
     .turnin 77652 >>Turn in Icons of Power
     .target Meela Dawnstrider
     .xp <3,1
-    ]])
-
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Shield Mastery - 6 (Durotar)
 #next Molten Blast - 10 (Durotar)
@@ -1389,12 +1384,10 @@ step
 --XX Cast ID may be wrong, may need to be checked
 ]])
 
-
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Shield Mastery - 6 (Mulgore)
 #next Molten Blast - 8 (Mulgore)
@@ -1598,13 +1591,21 @@ step
     .train 410098,1
     .xp <3,1
 --XX Cast ID may be wrong, may need to be checked
-    ]])
+]])
 
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Horde Shaman SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Chest
+-- #name Two-Handed Mastery
+
+-- ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Ancestral Guidance - 6 (Durotar)
 #next Molten Blast - 10 (Durotar)
@@ -1651,13 +1652,12 @@ step
     .itemcount 210589,1 --Echo of the Ancestors (1)
     .train 410099,1
     .xp <3,1
-    ]])
-
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Ancestral Guidance - 10 (Mulgore)
 #next Way of Earth - 12 (The Barrens)
@@ -1726,13 +1726,12 @@ step
     .itemcount 210589,1 --Echo of the Ancestors (1)
     .train 410099,1
     .xp <3,1
-    ]])
-
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Way of Earth - 12 (The Barrens)
 #next Water Shield - 20 (The Barrens)
@@ -1815,7 +1814,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Way of Earth - 14 (Silverpine Forest)
 #next Water Shield - 20 (Silverpine Forest)
@@ -1878,7 +1877,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Shamanistic Rage - 25 (Stonetalon Mountains)
 #next Dual Wield Specialization - 25 (Ratchet)
@@ -1916,7 +1915,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Earth Shield - 25 (Azeroth)
 #next Overload - 3 (Durotar) << Orc Shaman/Troll Shaman
@@ -2099,7 +2098,7 @@ step
 --XX Not totally sure if any of the elementals in the charred vale do/don't share spawns? It's a total clown fiesta
 step
     #loop
-    .goto Stonetalon Mountains,45.60,44.18,50,0 
+    .goto Stonetalon Mountains,45.60,44.18,50,0
     .goto Stonetalon Mountains,44.54,43.43,50,0
     .goto Stonetalon Mountains,43.96,39.90,50,0
     .goto Stonetalon Mountains,43.62,41.14,50,0
@@ -2214,3 +2213,82 @@ step
     .xp <25,1
 ]])
 
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Horde Shaman SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Waist
+-- #name Fire Nova
+
+-- Fire Nova
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Horde Shaman SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Waist
+-- #name Maelstrom Weapon
+
+-- Maelstrom Weapon
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Horde Shaman SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Waist
+-- #name Power Surge
+
+-- Power Surge
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Horde Shaman SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Boots
+-- #name Ancestral Awakening
+
+-- Ancestral Awakening
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Horde Shaman SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Boots
+-- #name Decoy Totem
+
+-- Decoy Totem
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Horde Shaman SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Boots
+-- #name Spirit of the Alpha
+
+-- Spirit of the Alpha
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Horde Shaman SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Skill Books
+-- #name Totemic Projection
+
+-- Totemic Projection
+
+-- ]])

@@ -1,7 +1,7 @@
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Crusader Strike - 4 (Elwynn Forest)
 #next Inspiration Exemplar - 6 (Elwynn Forest)
@@ -81,7 +81,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Crusader Strike - 4 (Dun Morogh)
 #next Inspiration Exemplar - 6 (Dun Morogh)
@@ -156,7 +156,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Hand of Reckoning - 14 (Loch Modan)
 #next Inspiration Exemplar - 6 (Elwynn Forest)
@@ -325,7 +325,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Hand of Reckoning - 20 (Westfall)
 #next Exorcist - 24 (Duskwood)
@@ -454,7 +454,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Horn of Lordaeron - 4 (Loch Modan)
 #next Hand of Reckoning - 14 (Loch Modan)
@@ -539,7 +539,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Horn of Lordaeron - 12 (Westfall)
 #next Hand of Reckoning - 20 (Westfall)
@@ -645,7 +645,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Aegis - 8 (Elwynn Forest)
 #next Rebuke - 10 (Stormwind)
@@ -722,7 +722,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Aegis - 8 (Dun Morogh)
 #next Rebuke - 10 (Ironforge)
@@ -783,7 +783,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Seal of Martyrdom - 10 (Stormwind)
 #next Horn of Lordaeron - 12 (Westfall)
@@ -873,7 +873,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Divine Storm - 25 (Darkshore)
 #next Divine Sacrifice - 25 (Ratchet)
@@ -1098,7 +1098,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Inspiration Exemplar - 6 (Elwynn Forest)
 #next Aegis - 8 (Elwynn Forest)
@@ -1139,7 +1139,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Inspiration Exemplar - 6 (Dun Morogh)
 #next Aegis - 8 (Dun Morogh)
@@ -1191,7 +1191,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Rebuke - 10 (Ironforge)
 #next Seal of Martyrdom - 10 (Stormwind)
@@ -1261,7 +1261,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Rebuke - 10 (Stormwind)
 #next Seal of Martyrdom - 10 (Stormwind)
@@ -1333,7 +1333,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Exorcist - 24 (Duskwood)
 #next Beacon of Light - 25 (Reputation)
@@ -1408,7 +1408,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Avenger's Shield - 25 (Redridge Mountains)
 #next Inspiration Exemplar - 6 (Elwynn Forest)
@@ -1447,3 +1447,145 @@ step
     .train 410008,1
 --VV Overall paladin routing can be improved if Divine Sac turnin has items bought before Divine Storm -> Turned in after Divine Storm (run down after accepting Return to Delgren -> Turn in -> Fly to Astranaar -> DS Turnin)
 ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Paladin SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Waist
+-- #name Enlightened Judgements
+
+-- Enlightened Judgements
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Paladin SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Waist
+-- #name Infusion of Light
+
+-- Infusion of Light
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Paladin SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Waist
+-- #name Sheath of Light
+
+-- Sheath of Light
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Paladin SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Boots
+-- #name Guarded by the Light
+
+-- Guarded by the Light
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Paladin SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Boots
+-- #name Sacred Shield
+
+-- Sacred Shield
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Paladin SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Boots
+-- #name The Art of War
+
+-- The Art of War
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Paladin SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Bracers
+-- #name Improved Hammer of Wrath
+
+-- Improved Hammer of Wrath
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Paladin SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Bracers
+-- #name Purifying Power
+
+-- Purifying Power
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Paladin SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helmet
+-- #name Fanaticism
+
+-- Fanaticism
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Paladin SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helmet
+-- #name Light's Grace
+
+-- Light's Grace
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Paladin SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helmet
+-- #name Wrath
+
+-- Wrath
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Skill Books
+-- #name Enhanced Blessings
+
+-- Enhanced Blessings
+
+-- ]])

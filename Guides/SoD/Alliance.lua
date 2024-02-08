@@ -1,7 +1,7 @@
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Druid SoD/Alliance Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Lacerate - 12 (Darkshore) << Druid
 #name Beast Mastery - 12 (Darkshore) << Hunter
@@ -38,7 +38,7 @@ step << Druid/Hunter
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Druid SoD/Alliance Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Mangle - 8 (Teldrassil) << Druid
 #name Explosive Shot - 8 (Teldrassil) << Hunter
@@ -144,7 +144,7 @@ step << Druid
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD/Alliance Warrior SoD/Alliance Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest << Rogue/Priest
 #subgroup Legs << Warrior
 #name Slaughter from the Shadows - 8 (Teldrassil) << Rogue
@@ -184,7 +184,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD/Alliance Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves << Rogue
 #subgroup Legs << Priest
 #name Mutilate - 8 (Teldrassil) << Rogue
