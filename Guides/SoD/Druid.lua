@@ -1,7 +1,7 @@
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Druid SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Fury of Stormrage - 4 (Nightglen)
 
@@ -48,7 +48,7 @@ step << Druid
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Druid SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Living Seed - 10 (Teldrassil)
 
@@ -59,7 +59,7 @@ step << Druid
     .goto Teldrassil,69.0,55.0,60,0
     .goto Teldrassil,58.0,73.0,60,0
     .goto Teldrassil,61.0,54.0,60,0
-    .goto Teldrassil,66.55,51.52 
+    .goto Teldrassil,66.55,51.52
     >>Loot |T133941:0|t|cRXP_LOOT_Glade Flowers|r on the ground
     >>|cRXP_WARN_These are found all over Teldrassil|r
     .collect 208609,3 -- Glade Flower (3)
@@ -97,7 +97,7 @@ step << Druid
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Druid SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Lifebloom - 8 (Teldrassil)
 
@@ -123,7 +123,7 @@ step << Druid
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Druid SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Savage Roar - 20 (Darkshore)
 
@@ -158,7 +158,7 @@ step << Druid
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Druid SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Savage Roar - 20 (Westfall)
 
@@ -197,7 +197,7 @@ step << Druid
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Druid SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Sunfire - 6 (Teldrassil)
 
@@ -221,7 +221,7 @@ step << Druid
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Druid SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Lacerate - 10 (Loch Modan)
 
@@ -251,7 +251,7 @@ step << Druid
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Druid SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Fury of Stormrage - 4 (Mulgore)
 
@@ -291,11 +291,11 @@ step << Druid
     .target Gart Mistrunner
 
     ]])
-    
+
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Druid SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Mangle - 10 (Mulgore)
 
@@ -310,14 +310,14 @@ step
     .goto Mulgore,44.57,17.39,90,0
     .goto Mulgore,48.70,20.85,90,0
     .goto Mulgore,43.78,10.96
-    >>Kill |cRXP_ENEMY_Flatland Prowlers|r and |cRXP_ENEMY_Prairie Wolf Alphas|r. Loot them for |T134903:0|t[|cRXP_FRIENDLY_Idol of Ursine Rage|r] 
+    >>Kill |cRXP_ENEMY_Flatland Prowlers|r and |cRXP_ENEMY_Prairie Wolf Alphas|r. Loot them for |T134903:0|t[|cRXP_FRIENDLY_Idol of Ursine Rage|r]
     .collect 206954,1 --Idol of Ursine Rage (1)
     .mob Flatland Prowler
     .mob Prairie Wolf Alpha
     .train 410025,1
 step
     #season 2
-    .equip 18,206954 >> |cRXP_WARN_Equip the|r |T134903:0|t[|cRXP_FRIENDLY_Idol of Ursine Rage|r] 
+    .equip 18,206954 >> |cRXP_WARN_Equip the|r |T134903:0|t[|cRXP_FRIENDLY_Idol of Ursine Rage|r]
     .use 206954
     .train 410025,1
 step
@@ -330,11 +330,11 @@ step
     .itemcount 206954,1
 
     ]])
-    
+
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Druid SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Sunfire - 5 (Mulgore)
 
@@ -345,7 +345,7 @@ step
     #season 2
     .goto Mulgore,35.72,69.57
     >>Cast |T136096:0|t[Moonfire] on the three |cRXP_ENEMY_Lunar Stones|r. A chest will appear in between the stones
-    >>Open the |cRXP_PICK_Lunar Chest|r for |T134419:0|t[|cRXP_FRIENDLY_Rune of the Sun|r] 
+    >>Open the |cRXP_PICK_Lunar Chest|r for |T134419:0|t[|cRXP_FRIENDLY_Rune of the Sun|r]
     .collect 206989,1 --Rune of the Sun (1)
     .mob Lunar Stone
     .train 416044,1
@@ -356,11 +356,11 @@ step
     .itemcount 206989,1
 
     ]])
-    
+
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Druid SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Lifebloom - 10 (Mulgore)
 
@@ -383,11 +383,11 @@ step << Druid
     .itemcount 206970,1
 
     ]])
-    
+
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Druid SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Living Seed - 8 (Mulgore)
 
@@ -435,19 +435,19 @@ step
 
 
     ]])
-    
-    
-    
+
+
+
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Druid SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Lacerate - 15 (The Barrens)
 
 
     --Rune of Lacerate
-    
+
 step
     #season 2
     #completewith next
@@ -474,12 +474,12 @@ step
     .use 208687 --Rune of Lacerate (1)
     .itemcount 208687,1
     ]])
-    
-    
+
+
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Druid SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Savage Roar - 15 (The Barrens)
 
@@ -539,14 +539,14 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Druid SoD
-#group RestedXP Rune Guide
-#subgroup Books
+#group RestedXP Rune & Books Guide
+#subgroup Skill Books
 #name Enhanced Restoration/Revive - 27 (Scarlet Monastery Graveyard)
 
 step
     .train 437138,1
     #completewith Interrogator Vishas
-    +This skillbook is obtained by killing a the first dungeon boss of Scarlet Monastery: Graveyard |cRXP_WARN_it is highly recommended to group up|r
+    +The skill books are obtained by killing the first and last dungeon boss of Scarlet Monastery: Graveyard |cRXP_WARN_it is highly recommended to have a group of 5 players.|r
 step
     .train 437138,1
     .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
@@ -569,3 +569,122 @@ step
     .collect 216767
     .mob Bloodmage Thalnos
 ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Druid SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Skill Books
+-- #name Deeper Wilds
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Druid SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Waist
+-- #name Eclipse
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Druid SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Waist
+-- #name Berserk
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Druid SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Waist
+-- #name Nourish
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Druid SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Boots
+-- #name Dreamstate
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Druid SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Boots
+-- #name King of the Jungle
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Druid SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Boots
+-- #name Survival Instincts
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Druid SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Bracers
+-- #name Efflorescence
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Druid SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Bracers
+-- #name Improved Frenzied Regeneration
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Druid SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helmet
+-- #name Gale Winds
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Druid SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helmet
+-- #name Gore
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Druid SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helmet
+-- #name Improved Barkskin
+
+
+-- ]])

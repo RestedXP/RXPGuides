@@ -1,7 +1,7 @@
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD/Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs << Warrior
 #subgroup Chest << Hunter
 #name Consumed by Rage - 25 (Wetlands) << Warrior
@@ -43,7 +43,7 @@ step << Hunter
 RXPGuides.RegisterGuide([[
 #classic
 << Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Envenom - 25 (Hillsbrad)
 
@@ -89,7 +89,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shiv - 25 (Duskwood)
 
@@ -131,7 +131,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Druid SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Wild Strikes - 14 (Stonetalon Mountains)
 
@@ -163,7 +163,7 @@ step << Druid
 RXPGuides.RegisterGuide([[
 #classic
 << Druid SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Starsurge - 25 (Wetlands)
 
@@ -200,7 +200,7 @@ step << Druid
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest << Priest/Hunter/Druid/Warrior/Shaman
 #subgroup Legs << Warlock/Paladin
 #subgroup Gloves << Mage/Rogue
@@ -500,7 +500,7 @@ step << Paladin
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest << Shaman/Rogue
 #subgroup Legs << Mage/Warlock/Hunter/Druid
 #subgroup Gloves << Paladin/Warrior/Priest
@@ -561,7 +561,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Druid SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Wild Growth - 25 (Multiple Zones)
 
@@ -649,7 +649,7 @@ step << Druid
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD/Mage SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest << Warrior
 #subgroup Legs << Mage
 #name Flagellation - 25 (Duskwood) << Warrior
@@ -703,7 +703,7 @@ step << Mage
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Raging Blow - 25 (Multiple Zones)
 
@@ -792,7 +792,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Strength of Soul - 22 (Ashenvale)
 
@@ -832,7 +832,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Power Word: Barrier - 22 (Redridge Mountains)
 
@@ -866,7 +866,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Circle of Healing - 25 (Duskwood)
 
@@ -903,7 +903,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Cobra Strikes - 25 (Hillsbrad Foothills)
 
@@ -944,7 +944,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Kill Command - 25 (Multiple Zones)
 

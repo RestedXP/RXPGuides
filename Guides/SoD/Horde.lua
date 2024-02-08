@@ -1,7 +1,7 @@
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD/Horde Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs << Warrior
 #subgroup Gloves << Hunter
 #name Furious Thunder - 10 (Mulgore) << Warrior
@@ -38,12 +38,12 @@ step << Hunter
     .use 206169
     .itemcount 206169,1
 
-    ]])
+]])
 
-    RXPGuides.RegisterGuide([[
+RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD/Horde Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves << Warrior
 #subgroup Legs << Hunter
 #name Quick Strike - 18 (The Barrens) << Warrior

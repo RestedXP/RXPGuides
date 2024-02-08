@@ -1,7 +1,7 @@
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Haunt - 3 (Elwynn Forest)
 step << Warlock
@@ -20,7 +20,7 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Haunt - 1 (Dun Morogh)
 
@@ -41,7 +41,7 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Haunt - 2 (Durotar)
 
@@ -78,7 +78,7 @@ step << Orc
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Haunt - 2 (Tirisfal)
 
@@ -115,7 +115,7 @@ step << Undead
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Soul Siphon - 13 (Durotar)
 
@@ -149,7 +149,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Soul Siphon - 9 (Tirisfal Glades)
 
@@ -182,7 +182,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Demonic Tactics - 4 (Tirisfal Glades)
 
@@ -227,7 +227,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Demonic Grace - 8 (Durotar)
 
@@ -280,7 +280,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Demonic Grace - 8 (Tirisfal Glades)
 
@@ -341,7 +341,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 -- #subgroup Chest << Mage
 #subgroup Gloves << Warlock
 -- #name Burnout - 8 (Tirisfal Glades) << Mage
@@ -377,7 +377,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Lake of Fire - 25 (Hillsbrad Foothills)
 
@@ -408,7 +408,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Incinerate - 22 (Redridge Mountains)
 
@@ -432,7 +432,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Master Channeler - 12 (The Barrens)
 
@@ -456,7 +456,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Master Channeler - 14 (Silverpine Forest)
 
@@ -478,7 +478,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadow Bolt Volley - 16 (The Barrens)
 
@@ -507,7 +507,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadow Bolt Volley - 18 (Silverpine Forest)
 
@@ -539,7 +539,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Metamorphosis - 25
 
@@ -659,7 +659,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Master Channeler - 10 (Loch Modan)
 
@@ -702,7 +702,7 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Master Channeler - 15 (Darkshore)
 
@@ -725,7 +725,7 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Soul Siphon - 10 (Dun Morogh)
 
@@ -762,7 +762,7 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Soul Siphon - 10 (Elwynn Forest)
 
@@ -810,7 +810,7 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Demonic Tactics - 1 (Elwynn Forest)
 
@@ -864,7 +864,7 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Demonic Grace - 10 (Elwynn Forest)
 
@@ -936,7 +936,7 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Demonic Grace - 10 (Dun Morogh)
 
@@ -982,7 +982,7 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadow Bolt Volley - 16 (Darkshore)
 
@@ -1002,7 +1002,7 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Chaos Bolt - 8 (Dun Morogh)
 
@@ -1023,7 +1023,7 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Chaos Bolt - 8 (Elwynn Forest)
 
@@ -1040,3 +1040,157 @@ step << Warlock
     .use 208744
     .itemcount 208744,1
 ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Warlock SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Belt
+-- #name Grimoire of Synergy
+
+-- Grimoire of Synergy
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Warlock SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Belt
+-- #name Invocation
+
+-- Invocation
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Warlock SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Belt
+-- #name Shadow and Flame
+
+-- Shadow and Flame
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Warlock SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Boots
+-- #name Dance of the Wicked
+
+-- Dance of the Wicked
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Warlock SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Boots
+-- #name Demonic Knowledge
+
+-- Demonic Knowledge
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Warlock SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Boots
+-- #name Shadowflame
+
+-- Shadowflame
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Warlock SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Bracers
+-- #name Immolation Aura
+
+-- Immolation Aura
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Warlock SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Bracers
+-- #name Summon Felguard
+
+-- Summon Felguard
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Warlock SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Bracers
+-- #name Unstable Affliction
+
+-- Unstable Affliction
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Warlock SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helmet
+-- #name Backdraft
+
+-- Backdraft
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Warlock SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helmet
+-- #name Pandemic
+
+-- Pandemic
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Warrior SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Skill Books
+-- #name Portal of Summoning
+
+-- Portal of Summoning
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Warrior SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Skill Books
+-- #name Soul Harvesting
+
+-- Soul Harvesting
+
+-- ]])

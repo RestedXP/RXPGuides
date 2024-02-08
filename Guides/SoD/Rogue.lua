@@ -1,7 +1,7 @@
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadowstrike - 3 (Elwynn Forest)
 
@@ -19,7 +19,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadowstrike - 3 (Dun Morogh)
 
@@ -49,7 +49,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadowstrike - 3 (Shadowglen)
 
@@ -75,7 +75,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Quick Draw - 8 (Elwynn Forest)
 
@@ -163,7 +163,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Quick Draw - 8 (Dun Morogh)
 
@@ -238,7 +238,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Quick Draw - 8 (Teldrassil)
 
@@ -336,7 +336,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Slaughter from the Shadows - 1 (Elwynn Forest)
 
@@ -358,7 +358,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Slaughter from the Shadows - 1 (Dun Morogh)
 
@@ -381,7 +381,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Between the Eyes - 8 (Stormwind)
 
@@ -411,7 +411,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Between the Eyes - 8 (Ironforge)
 
@@ -433,7 +433,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Between the Eyes - 8 (Teldrassil)
 
@@ -462,7 +462,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Blade Dance - 10 (Westfall)
 
@@ -503,7 +503,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Blade Dance - 16 (Dun Morogh)
 
@@ -532,7 +532,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Blade Dance - 16 (Darkshore)
 
@@ -565,7 +565,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Mutilate - 5 (Elwynn Forest)
 
@@ -597,7 +597,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Mutilate - 8 (Dun Morogh)
 
@@ -625,7 +625,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Saber Slash - 12 (Westfall)
 
@@ -650,7 +650,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Saber Slash - 12 (Loch Modan)
 
@@ -682,7 +682,7 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Saber Slash - 1 (Darkshore)
 
@@ -704,11 +704,10 @@ step << Rogue
     .train 424785,1
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadowstrike - 2 (Durotar)
 
@@ -741,12 +740,12 @@ step << Troll/Orc
     .turnin 77592 >>Turn in Atop the Cliffs << Troll
     .turnin 77583 >>Turn in Atop the Cliffs << Orc
     .target Rwag
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadowstrike - 2 (Tirisfal)
 
@@ -777,12 +776,12 @@ step << Undead
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_David|r
     .turnin 77669 >>Turn in The Scarlet Rune
     .target David Trias
-    ]])
+]])
 
-    RXPGuides.RegisterGuide([[
+RXPGuides.RegisterGuide([[
 #classic
 << Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Deadly Brew - 25 (Silverpine Forest)
 
@@ -903,12 +902,12 @@ step
     .train 400080 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Deadly Brew|r]
     .use 204795
     .itemcount 204795,1
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Quick Draw - 10 (Durotar)
 
@@ -993,12 +992,12 @@ step
     .use 203991
     .itemcount 203991,1
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Quick Draw - 10 (Tirisfal)
 
@@ -1088,12 +1087,12 @@ step
     .use 203991
     .itemcount 203991,1
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Slaughter from the Shadows - 10 (Durotar)
 
@@ -1117,12 +1116,12 @@ step
     .use 203993
     .itemcount 203993,1
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Slaughter from the Shadows - 10 (Tirisfal)
 
@@ -1156,12 +1155,12 @@ step
     .use 203993
     .itemcount 203993,1
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Mutilate - 8 (Tirisfal)
 
@@ -1200,12 +1199,12 @@ step
     .itemcount 210229,1
 
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Mutilate - 10 (Durotar)
 
@@ -1243,12 +1242,12 @@ step
     .use 210229
     .itemcount 210229,1
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Between the Eyes - 8 (Tirisfal)
 
@@ -1285,12 +1284,12 @@ step
     .itemcount 204174,1
 
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Between the Eyes - 8 (Orgrimmar)
 
@@ -1311,12 +1310,12 @@ step
     .itemcount 204174,1
 
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Blade Dance - 15 (The Barrens)
 
@@ -1344,12 +1343,12 @@ step
     .use 208771
     .itemcount 208771,1
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Saber Slash - 15 (The Barrens)
 
@@ -1374,12 +1373,12 @@ step
     .use 208772
     .itemcount 208772,1
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Saber Slash - 15 (Silverpine)
 
@@ -1399,5 +1398,117 @@ step
     .train 424984 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Saber Slash|r] |cRXP_WARN_to train|r |T132375:0|t[Saber Slash]
     .use 208772
     .itemcount 208772,1
-    ]])
+]])
 
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Horde Rogue SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Waist
+-- #name Poisoned Knife
+
+-- Poisoned Knife
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Horde Rogue SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Waist
+-- #name Shadowstep
+
+-- Shadowstep
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Horde Rogue SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Waist
+-- #name Shuriken Toss
+
+-- Shuriken Toss
+
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Horde Rogue SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Boots
+-- #name Master of Sublety
+
+-- Master of Sublety
+
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Horde Rogue SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Boots
+-- #name Rolling with the Punches
+
+-- Rolling with the Punches
+
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Horde Rogue SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helmet
+-- #name Combat Potency
+
+-- Combat Potency
+
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Horde Rogue SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helm
+-- #name Focused Attacks
+
+-- Focused Attacks
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Horde Rogue SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helm
+-- #name Honor Among Thieves
+
+-- Honor Among Thieves
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Horde Rogue SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Skill Books
+-- #name Redirect
+
+-- Redirect
+
+
+
+-- ]])

@@ -1,7 +1,7 @@
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Victory Rush - 1 (Elwynn Forest)
 
@@ -23,7 +23,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Victory Rush - 3 (Dun Morogh)
 
@@ -50,7 +50,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Victory Rush - 3 (Shadowglen)
 
@@ -72,7 +72,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Blood Frenzy - 10 (Elwynn Forest)
 
@@ -107,7 +107,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Blood Frenzy - 10 (Dun Morogh)
 
@@ -131,7 +131,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Blood Frenzy - 10 (Teldrassil)
 
@@ -160,7 +160,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Furious Thunder - 6 (Elwynn Forest)
 
@@ -186,7 +186,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Furious Thunder - 9 (Dun Morogh)
 
@@ -212,7 +212,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Frenzied Assault - 10 (Stormwind)
 
@@ -236,7 +236,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Frenzied Assault - 10 (Ironforge)
 
@@ -257,7 +257,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Frenzied Assault - 10 (Teldrassil)
 
@@ -278,7 +278,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Endless Rage - 20 (Westfall)
 
@@ -305,7 +305,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Endless Rage - 16 (Darkshore)
 
@@ -332,7 +332,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Devastate - 8 (Elwynn Forest)
 
@@ -419,7 +419,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Devastate - 6 (Teldrassil)
 
@@ -458,7 +458,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Devastate - 6 (Dun Morogh)
 
@@ -500,7 +500,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Victory Rush - 2 (Durotar)
 
@@ -540,7 +540,7 @@ step << Orc/Troll
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Victory Rush - 2 (Mulgore)
 
@@ -578,7 +578,7 @@ step << Tauren
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Victory Rush - 2 (Tirisfal)
 
@@ -615,7 +615,7 @@ step << Undead
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Furious Thunder - 2 (Durotar)
 
@@ -641,7 +641,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Furious Thunder - 10 (Tirisfal)
 
@@ -668,7 +668,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Frenzied Assault - 10 (Orgrimmar)
 
@@ -707,7 +707,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Frenzied Assault - 10 (Thunder Bluff)
 
@@ -745,7 +745,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name  Frenzied Assault - 10 (Tirisfal)
 
@@ -777,14 +777,22 @@ step
     .train 425447 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
     .use 204716
     .itemcount 204716,1
+]])
 
-    ]])
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Warrior SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Legs
+-- #name Commanding Shout
+
+-- ]])
 
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Devastate - 8 (Durotar)
 
@@ -861,7 +869,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Devastate - 8 (Mulgore)
 
@@ -924,7 +932,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Devastate - 8 (Tirisfal)
 
@@ -1006,7 +1014,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Blood Frenzy - 8 (Durotar)
 
@@ -1043,7 +1051,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Blood Frenzy - 8 (Mulgore)
 
@@ -1078,7 +1086,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Blood Frenzy - 8 (Tirisfal)
 
@@ -1104,7 +1112,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Quick Strike - 12 (Loch Modan)
 
@@ -1136,7 +1144,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Endless Rage - 15 (The Barrens)
 
@@ -1172,13 +1180,13 @@ step
     .use 208741
     .itemcount 208741,1
 
-    ]])
+]])
 
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Endless Rage - 15 (Silverpine Forest)
 
@@ -1210,7 +1218,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Quick Strike - 20 (Darkshore)
 
@@ -1227,3 +1235,148 @@ step << Warrior
     .use 208778
     .itemcount 208778,1
 ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Warrior SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Waist
+-- #name Blood Surge
+
+-- Blood Surge
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Warrior SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Waist
+-- #name Focused Rage
+
+-- Focused Rage
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Warrior SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Waist
+-- #name Precise Timing
+
+-- Precise Timing
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Warrior SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Boots
+-- #name Enraged Regeneration
+
+-- Enraged Regeneration
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Warrior SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Boots
+-- #name Intervene
+
+-- Intervene
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Warrior SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Boots
+-- #name Rallying Cry
+
+-- Rallying Cry
+
+-- ]])
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Warrior SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Bracers
+-- #name Rampage
+
+-- Rampage
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Warrior SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Bracers
+-- #name Sword and Board
+
+-- Sword and Board
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Warrior SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Bracers
+-- #name Wrecking Crew
+
+-- Wrecking Crew
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Warrior SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helmet
+-- #name Shield Mastery
+
+-- Shield Mastery
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Warrior SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helmet
+-- #name Taste for Blood
+
+-- Taste for Blood
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Warrior SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helmet
+-- #name Vigilance
+
+-- Vigilance
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Alliance Warrior SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Spell Books
+-- #name Commanding Shout
+
+-- Commanding Shout
+
+-- ]])

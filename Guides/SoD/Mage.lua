@@ -1,6 +1,6 @@
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Ice Lance - 2 (Elwynn Forest)
 << Human Mage SoD
@@ -105,7 +105,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Ice Lance - 2 (Dun Morogh)
 << Gnome Mage SoD
@@ -175,7 +175,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Ice Lance - 2 (Durotar)
 << Troll Mage SoD
@@ -249,7 +249,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Ice Lance - 2 (Tirisfal)
 << Undead Mage SoD
@@ -307,7 +307,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Regeneration - 12 (Westfall)
 << Alliance Mage SoD
@@ -379,7 +379,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Regeneration - 13 (Loch Modan)
 << Alliance Mage SoD
@@ -436,7 +436,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Regeneration - 12 (The Barrens)
 << Horde Mage SoD
@@ -514,7 +514,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Regeneration - 12 (Silverpine Forest)
 << Horde Mage SoD
@@ -576,7 +576,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Fingers of Frost - 10 (Elwynn Forest)
 << Alliance Mage SoD
@@ -632,7 +632,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Fingers of Frost - 5 (Dun Morogh)
 << Alliance Mage SoD
@@ -703,7 +703,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Fingers of Frost - 8 (Tirisfal Glades)
 << Horde Mage SoD
@@ -754,7 +754,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Mage SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Fingers of Frost - 8 (Durotar)
 
@@ -806,7 +806,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Burnout - 6 (Dun Morogh)
 << Alliance Mage SoD
@@ -835,7 +835,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Burnout - 6 (Elwynn Forest)
 << Alliance Mage SoD
@@ -863,9 +863,9 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
-#name Burnout - 6 (Durotar) 
+#name Burnout - 6 (Durotar)
 << Horde Mage SoD
 
 step
@@ -891,9 +891,9 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
-#name Burnout - 6 (Tirisfal Glades) 
+#name Burnout - 6 (Tirisfal Glades)
 << Horde Mage SoD
 
 
@@ -920,7 +920,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Enlightenment - 8 (Elwynn Forest)
 << Alliance Mage SoD
@@ -1007,7 +1007,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Enlightenment - 8 (Tirisfal Glades)
 << Horde Mage SoD
@@ -1071,7 +1071,7 @@ step
 
 RXPGuides.RegisterGuide[[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Icy Veins - 25 (Azeroth)
 
@@ -1113,25 +1113,25 @@ step
     >>Click on the |cRXP_PICK_Library Book|r located |cFFfa9602on a shelf in Elwynn Forest|r to obtain |T133744:0|t[Archmage Theocrituss Research Journal.]
     .collect 203755,1
     .isQuestAvailable 79092
-step 
+step
     #completewith Rumi of Gnomeregan the Collected Works
     .train 425170,1
     .zone Westfall >>Travel to |cFFfa9602Westfall|r on foot if you are |cRXP_WARN_in|r |cFFfa9602Elwynn Forest.|r|r
-    .fly Westfall >>Take a Flightpath to |cFFfa9602Westfall|r if you are |cRXP_WARN_ not in|r |cFFfa9602Elwynn Forest.|r|r 
+    .fly Westfall >>Take a Flightpath to |cFFfa9602Westfall|r if you are |cRXP_WARN_ not in|r |cFFfa9602Elwynn Forest.|r|r
     .disablecheckbox
     .isQuestAvailable 79093
 -- step
 --     #completewith Rumi of Gnomeregan the Collected Works
 --     .train 425170,1
---     .deathskip >>Die and respawn at the |cFF00FF25Spirit Healer|r |cRXP_WARN_Additionally skip any deathskip by choice if you want to save repair costs!|r 
+--     .deathskip >>Die and respawn at the |cFF00FF25Spirit Healer|r |cRXP_WARN_Additionally skip any deathskip by choice if you want to save repair costs!|r
 --     >>|cRXP_WARN_manually skip this step if you are on a flightpath.|r
 --     .isQuestAvailable 79092
 step
     #label Rumi of Gnomeregan the Collected Works
-    .goto 1436,53.01,53.34,10,0 
-    .goto 1436,52.64,53.83 
+    .goto 1436,53.01,53.34,10,0
+    .goto 1436,52.64,53.83
     .train 425170,1
-    >>Click the |cRXP_PICK_Gnomish Tome|r |cFFfa9602on the table in the Westfall Inn|r to obtain |T133744:0|t[Rumi of Gnomeregan the Collected Works.] 
+    >>Click the |cRXP_PICK_Gnomish Tome|r |cFFfa9602on the table in the Westfall Inn|r to obtain |T133744:0|t[Rumi of Gnomeregan the Collected Works.]
     .collect 208860,1
     .isQuestAvailable 79093
     --x shiek: designed for human, can be picked up as gnome.
@@ -1152,7 +1152,7 @@ step
 step
     #completewith next
     .train 425170,1
-    .zone Duskwood >>Travel to |cFFfa9602Duskwood|r 
+    .zone Duskwood >>Travel to |cFFfa9602Duskwood|r
     .fly Westfall >>Take a flight path to |cFFfa9602Westfall|r |cRXP_WARN_if you have it unlocked and are not there yet.|r
     .disablecheckbox
     .isQuestAvailable 78147
@@ -1185,7 +1185,7 @@ step
     >>Click the |cRXP_PICK_Library Book|r |cFFfa9602on the table in Ironforge, Hall of Explorers|r to obtain |T133744:0|t[Archmage Antonidas the Unabridged Autobiography.]
     .collect 203754,1
     .isQuestAvailable 79091
-step 
+step
     #completewith next
     .goto 1455,55.51,47.78,10,0
     .train 425170,1
@@ -1193,10 +1193,10 @@ step
     .fly Loch Modan >>Use a flight path to |cFFfa9602Loch Modan|r |cRXP_WARN_if you have it unlocked.|r
     .disablecheckbox
     .isQuestAvailable 79093
-step 
+step
     .train 425170,1
-    .goto 1432,35.2,47.76,10,0 
-    .goto 1432,35.5,48.98 
+    .goto 1432,35.2,47.76,10,0
+    .goto 1432,35.5,48.98
     >>Click the |cRXP_PICK_Gnomish Tome|r |cFFfa9602on the table in the Loch Modan Inn|r to obtain |T133744:0|t[Rumi of Gnomeregan the Collected Works.]
     .collect 208860,1
     .isQuestAvailable 79093
@@ -1297,13 +1297,13 @@ step
 -- step --x shiek another deathskip here technically better if you don't have either flightpath
 -- step --x shiek another deathskip here technically better if you don't have either flightpath
 -- step --x shiek another deathskip here technically better if you don't have either flightpath
--- step --x shiek another deathskip here technically better 
+-- step --x shiek another deathskip here technically better
 step
     #label Fury of the Land
     .goto 1442,74.27,85.72,5,0
     .goto 1442,74.37,85.75
     .train 425170,1
-    >>Click the |cRXP_PICK_Scroll|r |cFFfa9602in the tent, located on a barrel in Stonetalon Mountains|r to obtain |T133209:0|t[Fury of the Land.] 
+    >>Click the |cRXP_PICK_Scroll|r |cFFfa9602in the tent, located on a barrel in Stonetalon Mountains|r to obtain |T133209:0|t[Fury of the Land.]
     .collect 209851,1
     .isQuestAvailable 78149
 step
@@ -1331,12 +1331,12 @@ step
     >>Click on the |cRXP_PICK_Book|r |cFFfa9602inside the Amber Hill Main Castle on a book shelf in Silverpine Forest|r to obtain |T134917:0|t[The Dalaran Digest vol 23.]
     .collect 209844,1
     .isQuestAvailable 78127
-step 
+step
     .train 425170,1
     .zone Stormwind City >>Travel to |cFFfa9602Stormwind.|r
     .cast 3561 >>Use [Teleport Stormwind] |cRXP_WARN_If you have|r |T134419:0|t[Rune of Teleportation]
     .disablecheckbox
-step 
+step
     .train 425170,1
     .goto Stormwind City,37.81,79.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garion Wendell|r |cFFfa9602in Stormwind, Mage Tower.|r
@@ -1364,7 +1364,7 @@ step
 
 RXPGuides.RegisterGuide[[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Icy Veins - 25 (Azeroth)
 
@@ -1374,7 +1374,7 @@ RXPGuides.RegisterGuide[[
 --x Shiek: Although there are a total of 16 books in the game, only 10 are necessary for this particular purpose. The additional books, while not included in the current version of the guide, have been noted and could be referenced later if needed.
 --x Shiek: Furthermore, I have created distinct routes for both Horde and Alliance players. These routes are designed to be generally effective, considering the varying locations and book possessions players might have when they start following this guide.
 
-step 
+step
     #completewith next
     .train 425170,1
     .zone Orgrimmar >>Travel to |cFFfa9602Orgrimmar|r
@@ -1393,7 +1393,7 @@ step
     .goto Orgrimmar,55.8,73.0
     .vendor >> |cRXP_WARN_It is highly recommended to repair, as we will be utilizing death skips.|r
     >>|cFFFF0000If you prefer not to utilize death skips, manually skip this step.|r
-step 
+step
     .goto 1454,38.66,78.43
     .train 425170,1
     >>Click on the |cRXP_PICK_Giant Stone|r |cFFfa9602on the wall in Orgrimmar|r to obtain |T134938:0|t[The Lessons of Ta'zo.]
@@ -1441,7 +1441,7 @@ step
     .deathskip >>Die and respawn at the |cFF00FF25Spirit Healer|r
     .train 425170,1
     .isQuestAvailable 78143
-step 
+step
     #completewith Arcanic Systems Manual
     .train 425170,1
     .zone The Barrens >>Travel to |cFFfa9602The Barrens|r
@@ -1466,7 +1466,7 @@ step
     .goto 1442,74.27,85.72,5,0
     .goto 1442,74.37,85.75
     .train 425170,1
-    >>Click the |cRXP_PICK_Scroll|r |cFFfa9602in Stonetalon Mountain|r to obtain |T133209:0|t[Fury of the Land.] 
+    >>Click the |cRXP_PICK_Scroll|r |cFFfa9602in Stonetalon Mountain|r to obtain |T133209:0|t[Fury of the Land.]
     .collect 209851,1
     .isQuestAvailable 78149
 step
@@ -1486,7 +1486,7 @@ step
     >>Click the |cRXP_PICK_Scroll|r in |cFFfa9602Darkshore|r to obtain |T237447:0|t[Narthalas Almanac vol 74.]
     .collect 209843,1
     .isQuestAvailable 78124
-step 
+step
     .train 425170,1
     .zone Undercity >>Travel to |cFFfa9602Undercity|r
     .cast 3563 >>Use [Teleport Undercity] |cRXP_WARN_If you have|r |T134419:0|t[Rune of Teleportation]
@@ -1495,21 +1495,21 @@ step
     .goto Undercity,69.8,27.6
     .vendor >> |cRXP_WARN_It is highly recommended to repair, as we will be utilizing death skips.|r
     >>|cFFFF0000If you prefer not to utilize death skips, manually skip this step.|r
-step 
+step
     .goto 1420,59.62,52.05,5,0
     .goto 1420,59.39,52.29
     .train 425170,1
     >>Click on the |cRXP_PICK_The Apothecary's Society Primer|r |cFFfa9602in Tirisfal Glades, Brill|r to obtain |T133737:0|t[The Apothecary's Metaphysical Primer.]
     .collect 208185,1
     .isQuestAvailable 79095
-step 
+step
     #completewith next
     .train 425170,1
     .zone Silverpine Forest >>Travel to |cFFfa9602Silverpine Forest|r on foot |cRXP_WARN_if you are in|r |cFFfa9602Tirisfal Glades.|r
     .fly Silverpine Forest >>Take a flight path to |cFFfa9602Silverpine Forest|r |cRXP_WARN_if you are in|r |cFFfa9602Undercity.|r
     .disablecheckbox
     .isQuestAvailable 79096
-step 
+step
     .goto 1421,43.12,41.39,5,0
     .goto 1421,42.7,41.37,5,0
     .goto 1421,42.72,40.85,5,0
@@ -1534,13 +1534,13 @@ step
     >>Click on the |cRXP_PICK_Book|r |cFFfa9602inside the Amber Hill Main Castle in Silverpine Forest|r to obtain |T134917:0|t[The Dalaran Digest vol 23.]
     .collect 209844,1
     .isQuestAvailable 78127
-step 
+step
     #completewith next
     .train 425170,1
-    .zone Undercity >>Travel to |cFFfa9602Undercity|r 
+    .zone Undercity >>Travel to |cFFfa9602Undercity|r
     .cast 3563 >>Use |T135766:0|t[Teleport Undercity] |cRXP_WARN_If you have|r |T134419:0|t[Rune of Teleportation]
     .disablecheckbox
-step 
+step
     .train 425170,1
     .goto 1458,73.47,33.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Owen Thadd|r |cFFfa9602in Undercity, Magic Quarter.|r
@@ -1565,7 +1565,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Living Flame - 6 (Elwynn Forest)
 << Alliance Mage SoD
@@ -1612,7 +1612,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Living Flame - 7 (Dun Morogh)
 << Alliance Mage SoD
@@ -1662,7 +1662,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Living Flame - 6 (Durotar)
 << Horde Mage SoD
@@ -1711,7 +1711,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Living Flame - 6 (Tirisfal Glades)
 << Horde Mage SoD
@@ -1764,7 +1764,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Arcane Blast - 18 (Ashenvale)
 
@@ -1834,7 +1834,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Living Bomb - 12 (Loch Modan)
 << Alliance Mage SoD
@@ -1884,7 +1884,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Living Bomb - 18 (Westfall)
 << Alliance Mage SoD
@@ -1919,7 +1919,7 @@ step
     >>Kill |cRXP_ENEMY_Harvest Watcher|r for |cRXP_LOOT_|T132996:0|t[Spare Reaper Parts]|r
     .train 401417,1
     .collect 209056,1
-    .mob Harvest Golem 
+    .mob Harvest Golem
     .mob Harvest Repair
     .mob Harvest Watcher
     .mob Rusty Harvest Golem
@@ -1955,7 +1955,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Living Bomb - 17 (Silverpine Forest)
 << Horde Mage SoD
@@ -2005,8 +2005,8 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
---x shiek: Troll unsure to lock it behind class 
-#group RestedXP Rune Guide
+--x shiek: Troll unsure to lock it behind class
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Living Bomb - 20 (The Barrens)
 << Horde Mage SoD
@@ -2027,7 +2027,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Waist
 #name Spellfrost Bolt - 37 (Stranglethorn Vale)
 
@@ -2086,30 +2086,35 @@ step
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- #group RestedXP Rune Guide
+-- #group RestedXP Rune & Books Guide
 -- #subgroup Waist
 -- #name Missile Barrage
 
+-- Missile Barrage
+
 -- << Mage SoD
 
 -- ]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- #group RestedXP Rune Guide
+-- #group RestedXP Rune & Books Guide
 -- #subgroup Waist
 -- #name Hot Streak
 
+-- Hot Streak
 -- << Mage SoD
 
 -- ]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- #group RestedXP Rune Guide
+-- #group RestedXP Rune & Books Guide
 -- #subgroup Waist
 -- #name Frostfire Bolt
 
+-- Frostfire Bolt
+
 -- << Mage SoD
 
 
@@ -2117,10 +2122,12 @@ step
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- #group RestedXP Rune Guide
--- #subgroup Feet
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Boots
 -- #name Chronostatic Preservation
 
+-- Chronostatic Preservation
+
 -- << Mage SoD
 
 
@@ -2128,10 +2135,12 @@ step
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- #group RestedXP Rune Guide
--- #subgroup Feet
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Boots
 -- #name Brain Freeze
 
+-- Brain Freeze
+
 -- << Mage SoD
 
 
@@ -2139,56 +2148,49 @@ step
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- #group RestedXP Rune Guide
--- #subgroup Feet
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Boots
 -- #name Spell Power
 
+-- Spell Power
+
 -- << Mage SoD
 
 
 -- ]])
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- #group RestedXP Rune Guide
--- #subgroup Wrist
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Bracers
 -- #name Displacement
 
+-- Displacement
+
 -- << Mage SoD
 
 -- ]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- #group RestedXP Rune Guide
--- #subgroup Wrist
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Bracers
 -- #name Molten Armor
 
+-- Molten Armor
+
 -- << Mage SoD
 
 -- ]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- #group RestedXP Rune Guide
--- #subgroup Helm
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helmet
 -- #name Temporal Anomaly
 
+-- Temporal Anomaly
+
 -- << Mage SoD
 
 
@@ -2196,11 +2198,25 @@ step
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- #group RestedXP Rune Guide
--- #subgroup Helm
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helmet
 -- #name Deep Freeze
+
+-- Deep Freeze
 
 -- << Mage SoD
 
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Skill Books
+-- #name Expanded Intellect
+
+-- Expanded Intellect
+
+-- << Mage SoD
 
 -- ]])

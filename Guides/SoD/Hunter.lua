@@ -1,7 +1,7 @@
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Chimera Shot - 2 (Dun Morogh)
 
@@ -45,7 +45,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Chimera Shot - 3 (Teldrassil)
 
@@ -93,7 +93,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Explosive Shot - 5 (Dun Morogh)
 
@@ -144,7 +144,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Explosive Shot - 2 (Durotar)
 
@@ -168,7 +168,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Chimera Shot - 2 (Durotar)
 
@@ -206,7 +206,7 @@ step << !Tauren
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Chimera Shot - 2 (Mulgore)
 
@@ -249,7 +249,7 @@ step << Tauren
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Master Marksman - 6 (Durotar)
 
@@ -275,7 +275,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Master Marksman - 6 (Mulgore)
 
@@ -301,7 +301,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Master Marksman - 6 (Dun Morogh)
 
@@ -327,7 +327,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Master Marksman - 6 (Teldrassil)
 
@@ -353,7 +353,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Flanking - 6 (Mulgore)
 
@@ -393,7 +393,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Flanking - 6 (Durotar)
 
@@ -427,7 +427,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Carve - 10 (Durotar)
 
@@ -480,7 +480,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Carve - 10 (Mulgore)
 
@@ -532,7 +532,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Carve - 10 (Dun Morogh)
 
@@ -587,7 +587,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Carve - 10 (Teldrassil)
 
@@ -644,7 +644,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Beast Mastery - 16 (The Barrens)
 
@@ -676,7 +676,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Beast Mastery - 16 (Silverpine)
 
@@ -705,7 +705,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Sniper Training - 18 (Darkshore)
 
@@ -745,7 +745,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Sniper Training - 16 (Westfall)
 
@@ -777,7 +777,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Sniper Training - 16 (Loch Modan)
 
@@ -810,7 +810,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Sniper Training - 16 (The Barrens)
 
@@ -846,7 +846,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Flanking - 7 (Dun Morogh)
 
@@ -888,7 +888,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Flanking - 7 (Teldrassil)
 
@@ -924,12 +924,110 @@ step
     .itemcount 205979,1
 ]])
 
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Hunter SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Waist
+-- #name Expose Weakness
+
+-- Expose Weakness
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Hunter SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Waist
+-- #name Melee Specialist
+
+-- Melee Specialist
+
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Hunter SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Waist
+-- #name Steady Shot
+
+-- Steady Shot
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Hunter SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Boots
+-- #name Dual Wield Specialization
+
+-- Dual Wield Specialization
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Hunter SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Boots
+-- #name Invigoration
+
+-- Invigoration
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Hunter SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Boots
+-- #name Trap Launcher
+
+-- Trap Launcher
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Hunter SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Bracers
+-- #name Focus Fire
+
+-- Focus Fire
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Hunter SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Bracers
+-- #name T.N.T.
+
+-- T.N.T.
+
+
+-- ]])
+
 RXPGuides.RegisterGuide([[
 #classic
 << Hunter SoD
-#group RestedXP Rune Guide
-#subgroup Books
+#group RestedXP Rune & Books Guide
+#subgroup Skill Books
 #name Treatise on Aspect of the Viper - 27 (Scarlet Monastery Graveyard)
+
+-- Rune of Aspect of the Viper
 
 step
     .train 415423,1
