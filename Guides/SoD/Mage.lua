@@ -2130,6 +2130,9 @@ RXPGuides.RegisterGuide([[
 
 -- Chronostatic Preservation
 step
+    .train 425309,1
+    .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
+step
     .train 425189,1
     #loop
     .goto Thousand Needles,23.2,25.0,25,0
@@ -2141,19 +2144,19 @@ step
 step
     .train 425189,1
     .goto Thousand Needles,45,8,65,4
-    >>Kill |cRXP_ENEMY_Seared Needles Cougar|r and loot him for |T134943:0|t|cRXP_LOOT_Partial Spell Notes|r
+    >>Use the |T134238:0|t|cRXP_LOOT_Cougar Cage Key|r and Kill |cRXP_ENEMY_Seared Needles Cougar|r |cRXP_WARN_with frost spells|r and loot him for |T134943:0|t|cRXP_LOOT_Partial Spell Notes|r |cRXP_WARN_might require additional mages.|r
     .mob Seared Needles Cougar
     .collect 213634,1
 step
     .train 425189,1
     .goto Thousand Needles,45,8,64,4
-    >>Kill |cRXP_ENEMY_Singed Highperch Consort|r |T134943:0|t|cRXP_LOOT_Partial Spell Notes|r
+    >>Kill |cRXP_ENEMY_Singed Highperch Consort|r |cRXP_WARN_with frost spells|r and loot him for |T134943:0|t|cRXP_LOOT_Partial Spell Notes|r |cRXP_WARN_might require additional mages.|r
     .collect 213634,2
     .mob Singed Highperch Consort
 step
     .train 425189,1
     .goto Thousand Needles,45,8,65,4
-    >>Kill |cRXP_ENEMY_Scorched Screeching Roguefeather|r |T134943:0|t|cRXP_LOOT_Partial Spell Notes|r
+    >>Kill |cRXP_ENEMY_Scorched Screeching Roguefeather|r |cRXP_WARN_with frost spells|r and loot him for |T134943:0|t|cRXP_LOOT_Partial Spell Notes|r |cRXP_WARN_might require additional mages.|r
     .collect 213634,3
     .mob Scorched Screeching Roguefeather
 step
