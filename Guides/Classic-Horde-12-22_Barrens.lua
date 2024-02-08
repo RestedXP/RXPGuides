@@ -3986,7 +3986,7 @@ step << Hunter
 step
     .hs >> Hearth to The Crossroads
     .use 6948
-    .cooldown item,6948,>0,1
+    .cooldown item,6948,>0
     .isQuestComplete 876
     .dungeon !WC
     .zoneskip The Barrens
