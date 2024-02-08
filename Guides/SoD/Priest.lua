@@ -714,10 +714,13 @@ step
 step
     .train 401977,1
     #label Interrogator Vishas
-    >>Kill |cRXP_ENEMY_Interrogator Vishas|r and loot him for |cRXP_LOOT_Treatise on Aspect of the Viper|r |cRXP_WARN_This might require multiple kills.|r
+    >>Kill |cRXP_ENEMY_Interrogator Vishas|r, |cRXP_ENEMY_Ironspine|r and loot them for |cRXP_LOOT_Scroll of Shadowfiend|r |cRXP_WARN_This might require multiple kills.|r
     .collect 216745
     .mob Interrogator Vishas
     .mob Ironspine
+step
+    .train 415423 >>|cRXP_WARN_Use the|r |T237162:0|t|cRXP_LOOT_[Scroll of Shadowfiend]|r |cRXP_WARN_to learn|r |T136199:0|t[Shadowfiend]
+    .use 216745
 ]])
 
 

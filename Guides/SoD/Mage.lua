@@ -2027,11 +2027,12 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+<< Mage SoD
 #group RestedXP Rune & Books Guide
 #subgroup Waist
 #name Spellfrost Bolt - 37 (Stranglethorn Vale)
 
-<< Mage SoD
+
 
 step << Alliance
     .train 415948,1
