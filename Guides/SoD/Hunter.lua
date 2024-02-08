@@ -948,17 +948,25 @@ step
 
 -- ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Hunter SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Waist
--- #name Steady Shot
+RXPGuides.RegisterGuide([[
+#classic
+<< Hunter SoD
+#group RestedXP Rune & Books Guide
+#subgroup Waist
+#name Steady Shot
 
 -- Steady Shot
-
-
--- ]])
+step
+    .train 410109,1
+    .zone Arathi Highlands >>Travel to |cFFfa9602Arathi Highlands|r
+step
+    .goto Arathi Highlands,67,6,66,0
+    >>Kill |cRXP_ENEMY_Needletooth|r and loot him for |cRXP_LOOT_Steady Shot|r
+    .mob Needletooth
+step
+    .train 410109 >> Train Steadyshot
+    .use 216764
+]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
