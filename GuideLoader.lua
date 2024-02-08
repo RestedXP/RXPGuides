@@ -973,9 +973,6 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
 
     guide.displayname = addon.settings.ReplaceColors(guide.displayname or guide.name)
     guide.name = guide.name:gsub("^(%d)-(%d%d?)", addon.affix)
-    if guide.next then
-        guide.next = guide.next:gsub("^(%d)-(%d%d?)", addon.affix)
-    end
 
     guide.key = addon.BuildGuideKey(guide)
     guide.version = tonumber(guide.version) or 0
