@@ -1926,14 +1926,17 @@ step
     .isQuestTurnedIn 112
 step << Warrior/Rogue
     #optional
-    #completewith next
+    #completewith next << Warrior
+    #completewith RogueOptTrain << Rogue
     .goto Elwynn Forest,43.877,66.546,9 >> Travel upstairs in the Inn
 step << Warrior/Rogue
     .goto Elwynn Forest,43.392,65.550
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Michelle Belle|r
     .train 3273 >> Train |T135966:0|t[First Aid]
-    .target Michelle Belle 
+    .target Michelle Belle
 step << Rogue
+    #optional
+    #label RogueOptTrain
     .goto Elwynn Forest,43.872,65.937
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keryn Sylvius|r
     >>|cRXP_WARN_Only train|r |T132147:0|t[Dual Wield] |cRXP_WARN_and|r |T132307:0|t[Sprint]|cRXP_WARN_. Do not train other spells to save your money for later|r
@@ -1941,7 +1944,6 @@ step << Rogue
     .train 2983 >> Train |T132307:0|t[Sprint]
     .target Keryn Sylvius
     .xp <10,1
-    .money <0.6 
 step
     .goto Elwynn Forest,42.105,65.927
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
@@ -2002,7 +2004,7 @@ step << Warlock
     .accept 1685 >> Accept Gakin's Summons
     .goto Elwynn Forest,44.485,66.268
     .target +Remen Marcot
-step << Mage/Priest/Rogue
+step << Mage/Priest
     #optional
     #requires GoldshireVendor
     #completewith next
@@ -2024,16 +2026,8 @@ step << Mage
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaldimar Wefhellt|r
     .trainer >> Train your class spells
     .target Zaldimar Wefhellt
-    .xp <10,1
-step << Rogue
-    #requires GoldshireVendor
-    .goto Elwynn Forest,43.872,65.937
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keryn Sylvius|r
-    .trainer >> Train your class spells
-    .target Keryn Sylvius
-    .xp <10,1
-    .money <0.6 
-step << Rogue skip
+    .xp <10,1 
+step << skip --Rogue
     #optional
     #requires GoldshireVendor
     .goto Elwynn Forest,43.872,65.937
@@ -2563,7 +2557,8 @@ step << Rogue
     .target Gunther Weller
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
     .train 2983,1 --Sprint not Trained
-    .money <0.2623
+    .money <0.06
+--XX No money gate factoring cutlass in case something cheaper on AH
 step << Rogue
     #optional
     #ah
@@ -2576,7 +2571,7 @@ step << Rogue
     .target Gunther Weller
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
     .train 2983,3 --Sprint Trained
-    .money <0.2023
+--XX No money gate factoring cutlass in case something cheaper on AH
 step << Rogue
     #optional
     #completewith Continue
