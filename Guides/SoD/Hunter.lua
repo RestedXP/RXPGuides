@@ -923,3 +923,31 @@ step
     .use 205979
     .itemcount 205979,1
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Hunter SoD
+#group RestedXP Rune Guide
+#subgroup Books
+#name Treatise on Aspect of the Viper - 27 (Scarlet Monastery Graveyard)
+
+step
+    .train 415423,1
+    #completewith Interrogator Vishas
+    +This skillbook is obtained by killing a the first dungeon boss of Scarlet Monastery: Graveyard |cRXP_WARN_it is highly recommended to group up|r
+step
+    .train 415423,1
+    .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
+step
+    .train 415423,1
+    .goto 1415,47.44,19.75,10,0
+    .goto 1415,47.45,19.69,5,0
+    .goto 1415,47.62,19.59,10,0
+    .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
+step
+    .train 415423,1
+    #label Interrogator Vishas
+    >>Kill |cRXP_ENEMY_Interrogator Vishas|r and loot him for |cRXP_LOOT_Treatise on Aspect of the Viper|r |cRXP_WARN_This might require multiple kills.|r
+    .collect 216770
+    .mob Interrogator Vishas
+]])
