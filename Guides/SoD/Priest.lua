@@ -1002,7 +1002,7 @@ step
     .goto Desolace,36.4,20.6,25,0
     .goto Desolace,40.0,17.4,25,0
     .goto Desolace,38.6,23.6,25,0
-    .cast 605 >> Use |T136206:0|t[Mind Control] |cRXP_ENEMY_Slitherblade Tide Priestess|r to get the Medidation Buff
+    .cast 605 >> Use |T136206:0|t[Mind Control] |cRXP_ENEMY_Slitherblade Tide Priestess|r to their Medidation Buff.
     .mob Slitherblade Tide Priestess
 step
     .train 425310 >> Use |T136222:0|t|cRXP_FRIENDLY_Unsettling Vision|r to obtain the rune |T135923:0|t[Renewed Hope]
@@ -1021,16 +1021,62 @@ step
 
 -- ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Priest SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Boots
--- #name Pain Suppression
+RXPGuides.RegisterGuide([[
+#classic
+<< Priest SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Pain Suppression
 
 -- Pain Suppression
 
--- ]])
+step
+    .train 402855,1
+    .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
+step
+    .train 402855,1
+    .goto 1415,47.44,19.75,10,0
+    .goto 1415,47.45,19.69,5,0
+    .goto 1415,47.62,19.59,10,0
+    .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
+step
+    >>Pickup the |T136222:0|t[Graveyard Echo] near the Headless Horseman Grave
+    .collect 215426,1
+step
+    .train 402855,1
+    .zone Arathi Highlands >>Travel to |cFFfa9602Arathi Highlands|r
+step
+    .train 402855,1
+    .goto Arathi Highlands,50,5,55.2
+    >>Pickup the |T136222:0|t[Arathi Echo] near Go'sheks Farm
+    .collect 215428,1
+step
+    .train 402855,1
+    .zone Dustwallow Marsh >>Travel to |cFFfa9602Dustwallow Marsh|r
+step
+    .train 402855,1
+    .goto Dustwallow Marsh,63.2,42.3
+    >>Pickup the |T136222:0|t[Theramore Echo] near the alliance graveyard
+    .collect 215427,1
+step
+    .train 402855,1
+    .zone Swamp of Sorrows >>Travel to |cFFfa9602Swamp of Sorrows|r
+step
+    .train 402855,1
+    .goto Swamp of Sorrows,15.3,57.7
+    >>Pickup the |T136222:0|t[Swamp Echo] near the lake
+    .collect 215425,1
+step
+    .train 402855,1
+    .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
+step
+    .train 402855,1
+    .goto 1415,47.44,19.75,10,0
+    .goto 1415,47.45,19.69,5,0
+    .goto 1415,47.62,19.59,10 >> Enter The Scarlet Monastery Dungeon: Library
+step
+    .train 402855 >> Offer the |T136222:0|t[Swamp Echo] to the Warrior Statue, the |T136222:0|t[Arathi Echo] to the Mage Statue, the |T136222:0|t[Theramore Echo] to the Paladin Statue, and finally, the |T136222:0|t[Graveyard Echo] to the Priest Statue in this specific order. If done correctly, a sphere will appear in the center. Clicking this sphere will grant you the |T136222:0|t[Memory of a Leader's Betrayal] use it to learn |T135936:0|t[Pain Suppression]
+]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
