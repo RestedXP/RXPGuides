@@ -965,7 +965,7 @@ step
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Alliance Priest SoD
+-- << Priest SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Waist
 -- #name Mind Spike
@@ -977,7 +977,7 @@ step
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Alliance Priest SoD
+-- << Priest SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Waist
 -- #name Renewed Hope
@@ -989,7 +989,7 @@ step
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Alliance Priest SoD
+-- << Priest SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Boots
 -- #name Dispersion
@@ -1001,7 +1001,7 @@ step
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Alliance Priest SoD
+-- << Priest SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Boots
 -- #name Pain Suppression
@@ -1012,7 +1012,7 @@ step
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Alliance Priest SoD
+-- << Priest SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Boots
 -- #name Spirit of the Redeemer
@@ -1024,7 +1024,7 @@ step
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Alliance Priest SoD
+-- << Priest SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Bracers
 -- #name Despair
@@ -1036,7 +1036,7 @@ step
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Alliance Priest SoD
+-- << Priest SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Bracers
 -- #name Surge of Light
@@ -1048,7 +1048,7 @@ step
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Alliance Priest SoD
+-- << Priest SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Bracers
 -- #name Void Zone
@@ -1060,7 +1060,7 @@ step
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Alliance Priest SoD
+-- << Priest SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Helmet
 -- #name Divine Aegis
@@ -1084,7 +1084,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-<< Alliance Priest SoD
+<< Priest SoD
 #group RestedXP Rune & Books Guide
 #subgroup Skillbooks
 #name Shadowfiend/Increased Fortitudde

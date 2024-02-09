@@ -1402,7 +1402,7 @@ step
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Horde Rogue SoD
+-- << Rogue SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Waist
 -- #name Poisoned Knife
@@ -1414,7 +1414,7 @@ step
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Horde Rogue SoD
+-- << Rogue SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Waist
 -- #name Shadowstep
@@ -1426,7 +1426,7 @@ step
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Horde Rogue SoD
+-- << Rogue SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Waist
 -- #name Shuriken Toss
@@ -1439,7 +1439,7 @@ step
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Horde Rogue SoD
+-- << Rogue SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Boots
 -- #name Master of Sublety
@@ -1465,13 +1465,11 @@ step
 step
     .goto Thousand Needles,45,6,65,3
     >>Click on the |cRXP_PICK_Chest|r until you obtain the rune |T134919:0|t[Rolling with the Punches]
-step
-
 ]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Horde Rogue SoD
+-- << Rogue SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Helmet
 -- #name Combat Potency
@@ -1479,12 +1477,11 @@ step
 -- Combat Potency
 
 
-
 -- ]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Horde Rogue SoD
+-- << Rogue SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Helm
 -- #name Focused Attacks
@@ -1496,7 +1493,7 @@ step
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Horde Rogue SoD
+-- << Rogue SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Helm
 -- #name Honor Among Thieves
@@ -1508,7 +1505,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-<< Horde Rogue SoD
+<< Rogue SoD
 #group RestedXP Rune & Books Guide
 #subgroup Skill Books
 #name Redirect
@@ -1531,7 +1528,7 @@ step
 step
     .train 438040,1
     #label Interrogator Vishas
-    >>Kill |cRXP_ENEMY_Interrogator Vishas|r, |cRXP_ENEMY_Ironspine|r and loot them for |cRXP_LOOT_Scroll of Shadowfiend|r |cRXP_WARN_This might require multiple kills.|r
+    >>Kill |cRXP_ENEMY_Interrogator Vishas|r, |cRXP_ENEMY_Ironspine|r and loot them for |cRXP_LOOT_Manual of Redirect|r |cRXP_WARN_This might require multiple kills.|r
     .collect 216745,1
     .collect 216744,1
     .mob Interrogator Vishas
