@@ -1327,6 +1327,7 @@ step
     .mob Barak Kodobane
 step
     #xprate <1.5
+    #label KodobaneTurnin
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .turnin 850 >>Turn in Kolkar Leaders
@@ -1334,13 +1335,6 @@ step
     .turnin 855 >>Turn in Centaur Bracers
     .target Regthar Deathgate
     .isQuestComplete 855
-step
-    #label KodobaneTurnin
-    .goto The Barrens,45.35,28.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
-    .turnin 850 >>Turn in Kolkar Leaders
-    .accept 851 >>Accept Verog the Dervish
-    .target Regthar Deathgate
 step
     #completewith next
     >>Kill every |cRXP_ENEMY_Raptor|r you see. Loot them for their |cRXP_LOOT_Heads|r
@@ -1560,7 +1554,7 @@ step
     .mob Ornery Plainstrider
     .dungeon !RFC
 step
-    .goto The Barrens,43.80,12.22,0
+    .goto The Barrens,43.80,12.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vrang|r
     >>|cRXP_FRIENDLY_Vrang|r |cRXP_WARN_sells|r |T133476:0|t[|cRXP_FRIENDLY_Heavy Spiked Mace|r] |cRXP_WARN_which is a limited supply item|r << Orc Warrior/Troll Warrior/Tauren Warrior
 	.vendor	>> Vendor trash and repair
@@ -1625,6 +1619,7 @@ step
     #label Ignition
     .goto The Barrens,56.52,7.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Wizzlecrank's Shredder|r in The Sludge Ven
+    >>|cRXP_FRIENDLY_Wizzlecrank's Shredder|r |cRXP_WARN_has a long respawn timer. Consider skipping this quest if there is a lot of competition|r
     .accept 858 >>Accept Ignition
     .target Wizzlecrank's Shredder
 step
@@ -1642,13 +1637,25 @@ step
     >>Kill |cRXP_ENEMY_Supervisor Lugwizzle|r. Loot him for his |cRXP_LOOT_Key|r. He patrols up and down the platform
     .complete 858,1 --Ignition Key (1)
     .mob Supervisor Lugwizzle
+    .isOnQuest 858
 step
     .goto The Barrens,56.52,7.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Wizzlecrank's Shredder|r
+    >>|cRXP_FRIENDLY_Wizzlecrank's Shredder|r |cRXP_WARN_has a long respawn timer. Consider skipping this quest if there is a lot of competition|r
     >>|cRXP_WARN_This will begin an escort. Make sure you're at full health|r
     .turnin 858 >>Turn in Ignition
     .accept 863 >>Accept The Escape
     .target Wizzlecrank's Shredder
+    .isQuestComplete 858
+step
+    #optional
+    .goto The Barrens,56.52,7.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Wizzlecrank's Shredder|r
+    >>|cRXP_FRIENDLY_Wizzlecrank's Shredder|r |cRXP_WARN_has a long respawn timer. Consider skipping this quest if there is a lot of competition|r
+    >>|cRXP_WARN_This will begin an escort. Make sure you're at full health|r
+    .accept 863 >>Accept The Escape
+    .target Wizzlecrank's Shredder
+    .isQuestTurnIn 858
 step
     #label Slugs
     .goto The Barrens,55.80,7.76,30,0
@@ -1658,6 +1665,7 @@ step
     .mob Venture Co. Mercenary
     .mob Venture Co. Drudger
     .mob Overseer Glibby
+    .isOnQuest 863
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Kidneys|r
@@ -2056,11 +2064,32 @@ step
     .target Sputtervalve
     .target Wharfmaster Dizzywig
     .isQuestComplete 896
+    .isQuestComplete 863
 step
-    #label TheEscapeTurnIn
+    #optional
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r and |cRXP_FRIENDLY_Dizzywig|r
+    .turnin 902 >>Turn in Samophlange
+    .accept 3921 >> Accept Wenikee Boltbucket << Hunter
+    .accept 1483 >> Accept Ziz Fizziks
+    .goto The Barrens,62.98,37.22
+    .turnin 896 >> Turn in Miner's Fortune
+    .goto The Barrens,63.35,38.45
+    .target Sputtervalve
+    .target Wharfmaster Dizzywig
+    .isQuestComplete 896
+step
+    #optional
     .goto The Barrens,62.98,37.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r
     .turnin 863 >> Turn in The Escape
+    .accept 1483 >> Accept Ziz Fizziks
+    .target Sputtervalve
+    .isQuestComplete 863
+step
+    #optional
+    #label TheEscapeTurnIn
+    .goto The Barrens,62.98,37.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r
     .accept 1483 >> Accept Ziz Fizziks
     .target Sputtervalve
 step
@@ -2192,6 +2221,7 @@ step
     .mob Kolkar Marauder
     .isOnQuest 851
 step
+    #xprate <1.5
     #label Verog
     .goto The Barrens,52.95,41.75
     >>Kill |cRXP_ENEMY_Verog|r. Loot him for his |cRXP_LOOT_Head|r
@@ -2199,6 +2229,7 @@ step
     >>|cRXP_WARN_On a highly populated server or fresh launch, your best option is camping his spawnpoint|r
     .complete 851,1 --Verog's Head (1)
     .unitscan Verog the Dervish
+    .isOnQuest 851
 step << Druid
     #season 2
     #loop
@@ -2406,6 +2437,7 @@ step
     .target Regthar Deathgate
     .isQuestComplete 855
 step
+    #xprate <1.5
     #label Leaders
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
@@ -2413,10 +2445,18 @@ step
     .accept 852 >>Accept Hezrul Bloodmark
     .target Regthar Deathgate
 step
+    #xprate >1.49
+    .goto The Barrens,45.35,28.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
+    .turnin 850 >>Turn in Kolkar Leaders
+    .target Regthar Deathgate
+step
+    #xprate <1.5
     #completewith Hezrul
     .subzone 387 >> Travel to the Lushwater Oasis
     .isQuestTurnedIn 851
 step
+    #xprate <1.5
     #completewith Hezrul
     >>Kill |cRXP_ENEMY_Oasis Snapjaws|r as you're looking for |cRXP_ENEMY_Hezrul Bloodmark|r. Loot them for their |cRXP_LOOT_Shells|r
     .complete 880,1 --Altered Snapjaw Shell (8)
@@ -2431,6 +2471,7 @@ step
     .mob Kolkar Marauder
     .isOnQuest 855
 step
+    #xprate <1.5
     #loop
     #label Hezrul
     .goto The Barrens,45.64,38.16,0
@@ -2542,6 +2583,7 @@ step
     .isQuestComplete 852
     .isQuestComplete 855
 step
+    #xprate <1.5
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .turnin 852 >>Turn in Hezrul Bloodmark
@@ -2555,10 +2597,13 @@ step
     .target Regthar Deathgate
     .isQuestComplete 855
 step
+    #xprate <1.5
     #completewith CounterattackComplete
     +|cRXP_WARN_This next quest is very hard & grouping up is recommended. You can kite Warlord Krom'zar around using the building where the quest giver is|r
     +|cRXP_WARN_Skip it if you can't do this quest. You will have another opportunity to complete it at higher level|r
+    .isQuestTurnedIn 852
 step
+    #xprate <1.5
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .accept 4021 >>Accept Counterattack!
@@ -2566,6 +2611,7 @@ step
     .timer 183,Warlord Krom'zar Spawn
     .isQuestTurnedIn 852
 step
+    #xprate <1.5
     #label CounterattackComplete
     .goto The Barrens,44.48,28.15
     >>Kill |cRXP_ENEMY_Warlord Krom'zar|r once he appears. Loot the |cRXP_PICK_Banner|r that he drops on the ground
@@ -2574,6 +2620,7 @@ step
     .unitscan Warlord Krom'zar
     .isOnQuest 4021
 step
+    #xprate <1.5
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .turnin 4021 >>Turn in Counterattack!
@@ -2587,6 +2634,7 @@ step
     .target Regthar Deathgate
     .isQuestComplete 855
 step
+    #xprate <1.5
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .turnin 4021 >>Turn in Counterattack!
@@ -2744,7 +2792,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xen'Zilla|r
     .accept 6461 >> Accept Blood Feeders
     .target Xen'Zilla
-step << Warlock
+step << Priest/Mage/Warlock
     #completewith next
     .goto Stonetalon Mountains,68.59,88.34,80,0
     .goto Stonetalon Mountains,64.95,83.88,80,0
@@ -2755,6 +2803,7 @@ step << Warlock
     >>Kill every |cRXP_ENEMY_Deepmoss Creeper|r you see
     .complete 6461,1 --Kill Deepmoss Creeper (x10)
     .mob Deepmoss Creeper
+    .group 0 << Priest/Mage
 step << Warlock/Priest/Mage
     .goto Stonetalon Mountains,59.08,75.70
     >>Click the |cRXP_FRIENDLY_Wanted Poster|r
@@ -3924,6 +3973,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wenikee|r
     .turnin 3921 >> Turn in Wenikee Boltbucket
     .target Wenikee Boltbucket
+    .isOnQuest 3921
 step << Hunter
     .goto The Barrens,48.12,5.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torek|r
