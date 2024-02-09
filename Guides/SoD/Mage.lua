@@ -2194,35 +2194,63 @@ step
     .use 213634
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Mage SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Boots
--- #name Brain Freeze
+RXPGuides.RegisterGuide([[
+#classic
+<< Mage SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Brain Freeze
 
--- -- Brain Freeze
+-- Brain Freeze
 
--- step
---     .train 401752,1
---     .zone Desolace >>Travel to |cFFfa9602Desolace|r
--- step
---     .goto Desolace,47.54,54.6
---     >>Click on the |cRXP_PICK_Extinguished Campfire|r to accept a quest
---     .accept
--- step
---     .goto Desolace,62.5,39.6
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bibbly F'utzbuckle|r to turn it in
---     .turnin
--- step
---     .train 401752,1
---     .zone Booty Bay >>Travel to |cFFfa9602Booty Bay|r
--- step
---     .train 401752,1
---     .zone Booty Bay >>Travel to |cFFfa9602Arathi Highlands|r
--- step
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illari Duskfeather|r
--- ]])
+step
+    .train 401752,1
+    .zone Desolace >>Travel to |cFFfa9602Desolace|r
+step
+    .train 401752,1
+    .goto Desolace,47.54,54.6
+    >>Click on the |cRXP_PICK_Extinguished Campfire|r
+    .accept 79229 --Highway Robbery
+step
+    .train 401752,1
+    .goto Desolace,62.5,39.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bibbly F'utzbuckle|r
+    .turnin 79229 --Highway Robbery
+    .accept 79235 --On the Lam
+    .target Bibbly F'utzbuckle
+step
+    .train 401752,1
+    .zone Booty Bay >>Travel to |cFFfa9602Booty Bay|r
+step
+    .train 401752,1
+    .goto Stranglethorn Vale,27.5,77.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tokal|r
+    .target Tokal
+step
+    .train 401752,1
+    --x quest
+    .goto Stranglethorn Vale,27.0,77.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nixxrax Fillamug|r
+    .buy 4600,1
+    .target Nixxrax Fillamug
+step
+    .train 401752,1
+    .zone Booty Bay >>Travel to |cFFfa9602Arathi Highlands|r
+step
+    .train 401752,1
+    .goto Arathi Highlands,52.3,90.2
+    .vehicle >> Click on the |cRXP_PICK_Rowboat|r
+step
+    .train 401752,1
+    .goto Arathi Highlands,93.3,71.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illari Duskfeather|r. Kill |cRXP_ENEMY_Illari Duskfeather|r and loot her for a bag and open it for |T134236:0|t[Illari's Key]
+    .collect 212347,1
+    .skipgossip
+    .target Illari Duskfeather
+    .mob Illari Duskfeather
+step
+    .train 401752 >> Use the rune to learn |T132345:0|t[Brain Freeze]
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
