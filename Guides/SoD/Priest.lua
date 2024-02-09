@@ -975,17 +975,39 @@ step
 
 -- ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Priest SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Waist
--- #name Renewed Hope
+RXPGuides.RegisterGuide([[
+#classic
+<< Priest SoD
+#group RestedXP Rune & Books Guide
+#subgroup Waist
+#name Renewed Hope
 
 -- Renewed Hope
-
-
--- ]])
+step
+    .train 425310,1
+    #completewith next
+    .zone Desolace >>Travel to |cFFfa9602Stranglethorn Vale|r
+step
+    #loop
+    .goto Desolace,36.0,29.6,25,0
+    .goto Desolace,36.4,20.6,25,0
+    .goto Desolace,40.0,17.4,25,0
+    .goto Desolace,38.6,23.6,25,0
+    .train 425310,1
+    >>Kill |cRXP_ENEMY_Slitherblade Naga|r and loot them for |T136222:0|t|cRXP_LOOT_Unsettling Vision|r
+    .collect 213599,1
+    .mob Slitherblade Naga
+step
+    .goto Desolace,36.0,29.6,25,0
+    .goto Desolace,36.4,20.6,25,0
+    .goto Desolace,40.0,17.4,25,0
+    .goto Desolace,38.6,23.6,25,0
+    .cast 605 >> Use |T136206:0|t[Mind Control] |cRXP_ENEMY_Slitherblade Tide Priestess|r to get the Medidation Buff
+    .mob Slitherblade Tide Priestess
+step
+    .train 425310 >> Use |T136222:0|t|cRXP_FRIENDLY_Unsettling Vision|r to obtain the rune |T135923:0|t[Renewed Hope]
+    .use 213599
+]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
