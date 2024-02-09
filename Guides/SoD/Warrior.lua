@@ -1247,16 +1247,36 @@ step << Warrior
 
 -- ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Alliance Warrior SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Waist
--- #name Focused Rage
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Warrior SoD
+#group RestedXP Rune & Books Guide
+#subgroup Waist
+#name Focused Rage - 35 (Arathi Highlands)
 
 -- Focused Rage
 
--- ]])
+step
+    .train 409163,1
+    #loop
+    .goto Arathi Highlands,71.8,62.8,25,0
+    .goto Arathi Highlands,70.0,71.4,25,0
+    .goto Arathi Highlands,65.0,68.2,25,0
+    .goto Arathi Highlands,69.6,78.0,25,0
+    >>Kill |cRXP_ENEMY_Witherbark Headhunter|r,|cRXP_ENEMY_Witherbark Axe Thrower|r and |cRXP_ENEMY_Witherbark Witchdoctor|r. Loot them for |T133057:0|t|cRXP_LOOT_Witherbark Mallet|r
+    .collect 216483,1
+    .mob Witherbark Witchdoctor
+    .mob Witherbark Axe Thrower
+    .mob Witherbark Headhunter
+step
+    .train 409163,1
+    .goto Arathi Highlands,65.7,74.1,20 >>Enter the Witherbark Cave
+step
+    .train 409163,1
+    .cast 436655 >> Click on the Witherbark Gong to spawn the |cRXP_ENEMY_Witherbark Goliath|r
+step
+    .train 409163 >> Kill the |cRXP_ENEMY_Witherbark Goliath|r. Loot him for the |cRXP_LOOT_Rune of Focused Rage|r. Use it to learn |T132345:0|t[Focused Rage]
+]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
@@ -1269,16 +1289,71 @@ step << Warrior
 
 -- ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Alliance Warrior SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Boots
--- #name Enraged Regeneration
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Warrior SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Enraged Regeneration
 
--- Enraged Regeneration
+--Enraged Regeneration
 
--- ]])
+
+step
+    .train 403467,1
+    .zone Desolace >>Travel to |cFFfa9602Desolace|r
+step
+    .train 403467,1
+    .goto Desolace,47.54,54.6
+    >>Click on the |cRXP_PICK_Extinguished Campfire|r
+    .accept 79229 --Highway Robbery
+step
+    .train 403467,1
+    .goto Desolace,62.5,39.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bibbly F'utzbuckle|r
+    .turnin 79229 --Highway Robbery
+    .accept 79235 --On the Lam
+    .target Bibbly F'utzbuckle
+step
+    .train 403467,1
+    .zone Booty Bay >>Travel to |cFFfa9602Booty Bay|r
+step
+    .train 403467,1
+    .goto Stranglethorn Vale,27.5,77.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tokal|r
+    .turnin 79235 --On the Lam
+    .target Tokal
+step
+    .train 403467,1
+    --x quest
+    .goto Stranglethorn Vale,27.0,77.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nixxrax Fillamug|r
+    .buy 4600,1
+    .target Nixxrax Fillamug
+step
+    .train 403467,1
+    .goto Stranglethorn Vale,27.5,77.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tokal|r and give her the |T132790:0|t[Cherry Grog] accept a follow up quest if you can.
+    .target Tokal
+step
+    .train 403467,1
+    .zone Arathi Highlands >>Travel to |cFFfa9602Arathi Highlands|r
+step
+    .train 403467,1
+    .goto Arathi Highlands,52.3,90.2
+    .vehicle >> Click on the |cRXP_PICK_Rowboat|r
+step
+    .train 403467,1
+    .goto Arathi Highlands,93.3,71.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illari Duskfeather|r. Kill |cRXP_ENEMY_Illari Duskfeather|r and loot her for a bag and open it for |T134236:0|t[Illari's Key]
+    .collect 212347,1
+    .skipgossip
+    .target Illari Duskfeather
+    .mob Illari Duskfeather
+step
+    .train 403467,1 >> Use the rune to learn |T132345:0|t[Brain Freeze]
+]])
+
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
@@ -1369,13 +1444,39 @@ step << Warrior
 
 -- ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Warrior SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Spell Books
--- #name Commanding Shout
+RXPGuides.RegisterGuide([[
+#classic
+<< Warrior SoD
+#group RestedXP Rune & Books Guide
+#subgroup Spell Books
+#title
+#name Commanding Shout - 27-40 (Scarlet Monastery)
 
 -- Commanding Shout
 
--- ]])
+step
+    .train 403215,1
+    #completewith Interrogator Vishas
+    +The Skill Books are obtained by killing the first/last dungeon boss of Scarlet Monastery: Graveyard or the rare |cRXP_ENEMY_Ironspine|r |cRXP_WARN_it is highly recommended to have a group of 5 players.|r
+step
+    .train 403215,1
+    .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
+step
+    .train 403215,1
+    .goto 1415,47.44,19.75,10,0
+    .goto 1415,47.45,19.69,5,0
+    .goto 1415,47.62,19.59,10,0
+    .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
+step
+    .train 403215,1
+    #label Interrogator Vishas
+    >>Kill |cRXP_ENEMY_Interrogator Vishas|r, |cRXP_ENEMY_Ironspine|r and loot them for |cRXP_LOOT_Scroll of Shadowfiend|r |cRXP_WARN_This might require multiple kills.|r
+    .collect 216745,1
+    .collect 216744,1
+    .mob Interrogator Vishas
+    .mob Ironspine
+step
+    .train 403215 >>|cRXP_WARN_Use the|r |T133741:0|t|cRXP_LOOT_[Handbook of Commanding Shout]|r |cRXP_WARN_to learn|r |T132351:0|t[Commanding Shout]
+    .use 216746
+
+]])
