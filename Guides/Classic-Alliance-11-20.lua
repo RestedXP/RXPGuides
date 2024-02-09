@@ -970,14 +970,15 @@ step
     .target Thundris Windweaver
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
     .turnin 958 >> Turn in Tools of the Highborne
-step << NightElf
-    #completewith NEShip
+step
+    #completewith next << !NightElf
+    #completewith NEShip << NightElf
     >>Kill |cRXP_ENEMY_Foreststriders|r and |cRXP_ENEMY_Foreststrider Fledglings|r. Loot them for their |cRXP_LOOT_Strider Meat|r
     .collect 5469,5,2178,1 -- Strider Meat
     .mob Foreststrider Fledgling
     .mob Foreststrider
 step << NightElf
-    #xprate <1.5
+#xprate <1.5
     #completewith NEShip
     >>Kill |cRXP_ENEMY_Moonstalkers|r and |cRXP_ENEMY_Moonstalker Runts|r. Loot them for their |cRXP_LOOT_Fangs|r
     .complete 1002,1 -- Moonstalker Fang (6)
@@ -1032,6 +1033,7 @@ step << !Druid !Hunter
     .target Asterion
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asterion|r
     .turnin 957 >> Turn in Bashal'Aran
+    .isOnQuest 957
 step
     #sticky
     #completewith end1
@@ -1245,6 +1247,11 @@ step << !NightElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Hollee|r
     .accept 729 >> Accept The Absent Minded Prospector
 step
+    .goto Darkshore,37.78,44.06
+    .use 12346 >>|cRXP_WARN_Use the|r |T133748:0|t[Empty Cleansing Bowl] |cRXP_WARN_at the|r |cRXP_PICK_Auberdine Moonwell|r
+    .collect 12347,1,4763,1
+    .isOnQuest 4763
+step
 #map Darkshore
     .goto Felwood,19.90,18.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barithras Moonshade|r
@@ -1255,16 +1262,18 @@ step
     .goto Darkshore,37.21,44.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tClick on |cRXP_FRIENDLY_The Wanted Poster|r
     .accept 4740 >> Accept WANTED: Murkdeep!
-step
-    .goto Darkshore,37.78,44.06
-    .use 12346 >>|cRXP_WARN_Use the|r |T133748:0|t[Empty Cleansing Bowl] |cRXP_WARN_at the|r |cRXP_PICK_Auberdine Moonwell|r
-    .collect 12347,1,4763,1
-    .isOnQuest 4763
 step << NightElf !Druid
     .goto Felwood,19.27,19.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laird|r
     .accept 6343 >> Accept Return to Nessa
     .target Laird
+step
+#map Darkshore
+    .goto Felwood,18.50,19.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
+    .turnin 1138 >> Turn in Fruit of the Sea
+    .isQuestComplete 1138
+    .target Gubber Blump
 step
 #map Darkshore
     #label end
@@ -2217,14 +2226,6 @@ step
     .goto Felwood,18.50,19.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
     .accept 1138 >> Accept Fruit of the Sea
-    .target Gubber Blump
-step
-#map Darkshore
-    #optional
-    .goto Felwood,18.50,19.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
-    .turnin 1138 >> Turn in Fruit of the Sea
-    .isQuestComplete 1138
     .target Gubber Blump
 step
     #xprate <1.5
