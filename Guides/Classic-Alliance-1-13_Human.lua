@@ -2316,6 +2316,27 @@ step
     .goto Westfall,59.95,19.35
     .zone Westfall >> Travel to Westfall
 step
+#xprate >1.49
+    #optional
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Furlbrow|r and |cRXP_FRIENDLY_Verna Furlbrow|r
+    >>|cRXP_WARN_Do not accept the other quests|r
+    .turnin 184 >> Turn in Furlbrow's Deed
+    .goto Westfall,59.95,19.35
+    .target +Farmer Furlbrow
+    .accept 36 >> Accept Westfall Stew
+    .goto Westfall,59.92,19.42
+	.target +Verna Furlbrow
+    .isOnQuest 184
+step
+#xprate >1.49
+    #label WestEntry
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verna Furlbrow|r
+    >>|cRXP_WARN_Do not accept the other quests|r
+    .accept 36 >> Accept Westfall Stew
+    .goto Westfall,59.92,19.42
+	.target +Verna Furlbrow
+step
+#xprate <1.50
     #optional
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Furlbrow|r and |cRXP_FRIENDLY_Verna Furlbrow|r
     .accept 64 >> Accept The Forgotten Heirloom
@@ -2328,6 +2349,7 @@ step
 	.target +Verna Furlbrow
     .isOnQuest 184
 step
+#xprate <1.50
     #label WestEntry
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Furlbrow|r and |cRXP_FRIENDLY_Verna Furlbrow|r
     .accept 64 >> Accept The Forgotten Heirloom
@@ -2344,6 +2366,7 @@ step << Paladin
     #requires Charred
 --XXREQ Placeholder invis step
 step
+#xprate <1.50
     #sticky
     #label Fields
     .goto Westfall,56.04,31.23
@@ -2351,6 +2374,14 @@ step
     .accept 9 >> Accept The Killing Fields
     .target Farmer Saldean
 step
+#xprate >1.49
+    .goto Westfall,56.416,30.519
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Salma Saldean|r inside
+    >>|cRXP_WARN_Do not accept the other quests|r
+    .turnin 36 >> Turn in Westfall Stew
+    .target Salma Saldean
+step
+#xprate <1.50
     .goto Westfall,56.416,30.519
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Salma Saldean|r inside
     .turnin 36 >> Turn in Westfall Stew
@@ -2391,7 +2422,6 @@ step
     .goto Westfall,56.327,47.520
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
     .turnin 109 >> Turn in Report to Gryan Stoutmantle
-    .accept 12 >> Accept The People's Militia
     .target Gryan Stoutmantle
 step << Human
     #optional
