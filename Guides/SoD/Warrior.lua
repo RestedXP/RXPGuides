@@ -781,7 +781,7 @@ step
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Alliance Warrior SoD
+-- << Warrior SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Legs
 -- #name Commanding Shout
@@ -1293,7 +1293,7 @@ step << Warrior
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Alliance Warrior SoD
+-- << Warrior SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Boots
 -- #name Rallying Cry
@@ -1302,11 +1302,10 @@ step << Warrior
 
 -- ]])
 
--- ]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Alliance Warrior SoD
+-- << Warrior SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Bracers
 -- #name Rampage
@@ -1317,7 +1316,7 @@ step << Warrior
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Alliance Warrior SoD
+-- << Warrior SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Bracers
 -- #name Sword and Board
@@ -1328,7 +1327,7 @@ step << Warrior
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Alliance Warrior SoD
+-- << Warrior SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Bracers
 -- #name Wrecking Crew
@@ -1339,7 +1338,7 @@ step << Warrior
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Alliance Warrior SoD
+-- << Warrior SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Helmet
 -- #name Shield Mastery
@@ -1350,7 +1349,7 @@ step << Warrior
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Alliance Warrior SoD
+-- << Warrior SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Helmet
 -- #name Taste for Blood
@@ -1361,7 +1360,7 @@ step << Warrior
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Alliance Warrior SoD
+-- << Warrior SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Helmet
 -- #name Vigilance
@@ -1372,7 +1371,7 @@ step << Warrior
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Alliance Warrior SoD
+-- << Warrior SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Spell Books
 -- #name Commanding Shout

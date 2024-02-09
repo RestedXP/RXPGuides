@@ -349,8 +349,11 @@ step << Orc Warrior/Troll Warrior/Tauren Warrior
     #sticky
     #completewith KreenigSnarlsnout1
     .goto The Barrens,52.5,30.7,0
-    .vendor >>|cRXP_WARN_Check if|r |cRXP_FRIENDLY_Lizzarik|r |cRXP_WARN_is in the Crossraods. He sells potions and|r |T133476:0|t[|cRXP_FRIENDLY_Heavy Spiked Mace|r] |cRXP_WARN_which is a limited supply item|r
+    .vendor >>|cRXP_WARN_Check if|r |cRXP_FRIENDLY_Lizzarik|r |cRXP_WARN_is in the Crossroads. He sells potions and|r |T133476:0|t[|cRXP_FRIENDLY_Heavy Spiked Mace|r] |cRXP_WARN_which is a limited supply item|r
 	.unitscan Lizzarik
+    .subzoneskip 380,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
 step << !Undead !Tauren
     #completewith HiddenEnemiesPickup
     .goto The Barrens,51.50,30.34
@@ -1222,7 +1225,7 @@ step << skip
 	.unitscan Lizzarik
 step << skip
     #completewith ZhevraTurnIn
-    .subzone 380 >> Travel to The Crossraods
+    .subzone 380 >> Travel to The Crossroads
 step
     #label ZhevraTurnIn
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r and |cRXP_FRIENDLY_Sergra|r
@@ -1464,14 +1467,14 @@ step
     .abandon 5761 >> Abandon Slaying the Beast
     .isOnQuest 5761
     .dungeon RFC
-step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
+step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
     .turnin 848 >> Turn in Fungal Spores
     .target Apothecary Helbrim
     .isQuestComplete 848
     .dungeon RFC
-step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
+step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     #xprate <1.5
     .goto The Barrens,51.62,30.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r
@@ -1479,28 +1482,28 @@ step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .accept 875 >>Accept Harpy Lieutenants
     .target Darsok Swiftdagger
     .dungeon RFC
-step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
+step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     #xprate >1.49
     .goto The Barrens,51.62,30.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r
     .turnin 867 >>Turn in Harpy Raiders
     .target Darsok Swiftdagger
     .dungeon RFC
-step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
+step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga|r
     .turnin 870 >> Turn in The Forgotten Pools
     .accept 877 >> Accept The Stagnant Oasis
     .target Tonga Runetotem
     .dungeon RFC
-step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
+step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .goto The Barrens,52.24,31.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r
     .turnin 903 >>Turn in Prowlers of the Barrens
     .accept 881 >>Accept Echeyakee
     .target Sergra Darkthorn
     .dungeon RFC
-step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
+step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .goto The Barrens,55.80,17.03
     >>Use the |T134227:0|t[Horn of Echeyakee] to summon |cRXP_ENEMY_Echeyakee|r
     >>Kill |cRXP_ENEMY_Echeyakee|r. Loot him for |cRXP_LOOT_Echeyakee's Hide|r
@@ -1509,19 +1512,19 @@ step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .mob Echeyakee
     .use 10327
     .dungeon RFC
-step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
+step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .goto The Barrens,52.23,31.00
     .abandon 881 >>|cRXP_WARN_If |cRXP_ENEMY_Echeyakee|r didn't spawn after using the|r |T134227:0|t[Horn of Echeyakee]|cRXP_WARN_ or you didn't get the tag when it did spawn, abandon Echeyakee, then return to town and accept it again|r
     .itemcount 5100,<1 --Echeyakee's Hide (0)
     .dungeon RFC
-step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
+step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .goto The Barrens,52.24,31.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r
     .accept 881 >>Accept Echeyakee
     .target Sergra Darkthorn
     .itemcount 5100,<1 --Echeyakee's Hide (0)
     .dungeon RFC
-step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
+step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .goto The Barrens,55.80,17.03
     >>Use the |T134227:0|t[Horn of Echeyakee] to summon |cRXP_ENEMY_Echeyakee|r
     >>Kill |cRXP_ENEMY_Echeyakee|r. Loot him for |cRXP_LOOT_Echeyakee's Hide|r
@@ -1529,11 +1532,11 @@ step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .mob Echeyakee
     .use 10327
     .dungeon RFC
-step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
+step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     #completewith Samophlange
     +|cRXP_WARN_Be careful of|r |cRXP_ENEMY_Sunscale Scytheclaws|r |cRXP_WARN_in the area. They are up to level 18 and can|r |T132152:0|t[Thrash]
     .dungeon RFC
-step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
+step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     #completewith Samophlange
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Kidneys|r
     .complete 821,2 --Plainstrider Kidney (5)
@@ -3354,6 +3357,7 @@ step
     .target Darsok Swiftdagger
     .isQuestTurnedIn 875
 step
+    #label XroadsHS2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mankrik|r and |cRXP_FRIENDLY_Tonga|r
     .turnin 899 >>Turn in Consumed by Hatred
     .goto The Barrens,51.95,31.58
@@ -3364,7 +3368,6 @@ step
     .target Tonga Runetotem
     .target Mankrik
 step
-    #label XroadsHS2
     .goto The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
     .home >>Set your Hearthstone to Crossroads
@@ -3906,7 +3909,16 @@ step
     .accept 6382 >>Accept The Ashenvale Hunt << Hunter
     .target Jorn Skyseer
 step
+    #xprate <1.5
     #completewith Serena
+    .goto The Barrens,44.45,59.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Omusa|r
+    .fly Crossroads >>Fly to The Crossroads
+    .target Omusa Thunderhorn
+    .isQuestTurnedIn 852 << !Hunter
+step
+    #xprate >1.49
+    #completewith CounterattackTurnin2
     .goto The Barrens,44.45,59.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Omusa|r
     .fly Crossroads >>Fly to The Crossroads
@@ -4029,7 +4041,7 @@ step
     .dungeon !WC
     .zoneskip The Barrens
 step << !Hunter
-    .goto The Barrens,52.09,30.43,120 >>Travel to The Crossroads. You can also grind untill your |T134414:0|t[Hearthstone] is back up
+    .goto The Barrens,52.09,30.43,120 >>Travel to The Crossroads. You can also grind until your |T134414:0|t[Hearthstone] is back up
     .cooldown item,6948,<0
     .isQuestComplete 876
     .dungeon !WC
@@ -4047,32 +4059,47 @@ step
     .target Bragok
     .dungeon WC
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r, |cRXP_FRIENDLY_Helbrim|r and |cRXP_FRIENDLY_Korran|r << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r, |cRXP_FRIENDLY_Helbrim|r and |cRXP_FRIENDLY_Korran|r << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r and |cRXP_FRIENDLY_Korran|r << Tauren/Orc Warrior/Orc Shaman/Troll Warrior/Troll Shaman
-    >>|cRXP_FRIENDLY_Helbrim|r |cRXP_WARN_Starts a 45-minute timed quest|r << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    >>|cRXP_FRIENDLY_Helbrim|r |cRXP_WARN_Starts a 45-minute timed quest|r << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .turnin 876 >> Turn in Serena Bloodfeather
     .accept 1060 >> Accept Letter to Jin'Zil
     .goto The Barrens,51.62,30.90
-    .accept 853 >> Accept Apothecary Zamah << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    .goto The Barrens,51.44,30.15 << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    .accept 853 >> Accept Apothecary Zamah << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    .goto The Barrens,51.44,30.15 << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .accept 868 >> Accept Egg Hunt
     .goto The Barrens,51.10,29.60
     .target Darsok Swiftdagger
-    .target Apothecary Helbrim << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    .target Apothecary Helbrim << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .target Korran
     .isQuestComplete 876
 step
-    #label ApothecaryPickup
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r and |cRXP_FRIENDLY_Korran|r << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korran|r << Tauren/Orc Warrior/Orc Shaman/Troll Warrior/Troll Shaman
-    >>|cRXP_FRIENDLY_Helbrim|r |cRXP_WARN_Starts a 45-minute timed quest|r << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    .accept 853 >> Accept Apothecary Zamah << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    .goto The Barrens,51.44,30.15 << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    #optional
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r, |cRXP_FRIENDLY_Helbrim|r and |cRXP_FRIENDLY_Korran|r << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r and |cRXP_FRIENDLY_Korran|r << Tauren/Orc Warrior/Orc Shaman/Troll Warrior/Troll Shaman
+    >>|cRXP_FRIENDLY_Helbrim|r |cRXP_WARN_Starts a 45-minute timed quest|r << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    .accept 1060 >> Accept Letter to Jin'Zil
+    .goto The Barrens,51.62,30.90
+    .accept 853 >> Accept Apothecary Zamah << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    .goto The Barrens,51.44,30.15 << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .accept 868 >> Accept Egg Hunt
     .goto The Barrens,51.10,29.60
-    .target Apothecary Helbrim << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    .target Darsok Swiftdagger
+    .target Apothecary Helbrim << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .target Korran
-step << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    .isQuestTurnedIn 876
+step
+    #label ApothecaryPickup
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r and |cRXP_FRIENDLY_Korran|r << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korran|r << Tauren/Orc Warrior/Orc Shaman/Troll Warrior/Troll Shaman
+    >>|cRXP_FRIENDLY_Helbrim|r |cRXP_WARN_Starts a 45-minute timed quest|r << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    .accept 853 >> Accept Apothecary Zamah << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    .goto The Barrens,51.44,30.15 << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    .accept 868 >> Accept Egg Hunt
+    .goto The Barrens,51.10,29.60
+    .target Apothecary Helbrim << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    .target Korran
+step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     #sticky
     #completewith ZamahTurnin
     +|cRXP_WARN_You are on a timed quest, don't go afk. It will get turned in 10-15 minutes after pick-up|r
@@ -4325,7 +4352,7 @@ step
     .target Clarice Foster
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
-    .turnin 853 >> Turn in Apothecary Zamah << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    .turnin 853 >> Turn in Apothecary Zamah << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .turnin 1064 >> Turn in Forsaken Aid
     .accept 1065 >> Accept Journey to Tarren Mill
     .accept 962 >> Accept Serpentbloom
@@ -4335,7 +4362,7 @@ step
 step
     #label ZamahTurnin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
-    .turnin 853 >> Turn in Apothecary Zamah << !Tauren/Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    .turnin 853 >> Turn in Apothecary Zamah << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .turnin 1064 >> Turn in Forsaken Aid
     .accept 1065 >> Accept Journey to Tarren Mill
     .goto Thunder Bluff,22.82,20.88

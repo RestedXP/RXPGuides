@@ -692,16 +692,6 @@ step << Priest
     .target Adventurer's Spirit
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Alliance Priest SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Legs
--- #name Shadowfiend
-
-
--- ]])
-
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
@@ -943,21 +933,39 @@ step << Priest
     .use 205940
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Alliance Priest SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Waist
--- #name Empowered Renew
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Priest SoD
+#group RestedXP Rune & Books Guide
+#subgroup Waist
+#name Empowered Renew
 
 -- Empowered Renew
 
-
--- ]])
+step
+    .train 425309,1
+    .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
+step
+    .train 425309,1
+    #loop
+    .goto Thousand Needles,33.0,28.2,25,0
+    .goto Thousand Needles,33.0,35.4,25,0
+    .goto Thousand Needles,35.0,39.2,25,0
+    .goto Thousand Needles,35.6,31.0,25,0
+    >>Kill |cRXP_ENEMY_Grimtotem Geomancers|r, |cRXP_ENEMY_Grimtotem Bandit|r, |cRXP_ENEMY_Grimtotem Reaver|r and |cRXP_ENEMY_Grimtotem Stomper|r and loot them for |cRXP_LOOT_Prophecy of the Quickened Path|r
+    .collect 213140,1
+    .mob Grimtotem Geomancer
+    .mob Grimtotem Bandit
+    .mob Grimtotem Reaver
+    .mob Grimtotem Stomper
+step
+    .train 425309 >>|cRXP_WARN_Use|r |T135975:0|t|cRXP_LOOT_[Prophecy of the Quickened Path]|r |cRXP_WARN_to learn|r |T236254:0|t[Empowered Renew]
+    .use 213140
+]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Alliance Priest SoD
+-- << Priest SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Waist
 -- #name Mind Spike
@@ -969,7 +977,7 @@ step << Priest
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Alliance Priest SoD
+-- << Priest SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Waist
 -- #name Renewed Hope
@@ -981,7 +989,7 @@ step << Priest
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Alliance Priest SoD
+-- << Priest SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Boots
 -- #name Dispersion
@@ -993,7 +1001,7 @@ step << Priest
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Alliance Priest SoD
+-- << Priest SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Boots
 -- #name Pain Suppression
@@ -1004,7 +1012,7 @@ step << Priest
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Alliance Priest SoD
+-- << Priest SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Boots
 -- #name Spirit of the Redeemer
@@ -1016,7 +1024,7 @@ step << Priest
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Alliance Priest SoD
+-- << Priest SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Bracers
 -- #name Despair
@@ -1028,7 +1036,7 @@ step << Priest
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Alliance Priest SoD
+-- << Priest SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Bracers
 -- #name Surge of Light
@@ -1040,7 +1048,7 @@ step << Priest
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Alliance Priest SoD
+-- << Priest SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Bracers
 -- #name Void Zone
@@ -1052,7 +1060,7 @@ step << Priest
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
--- << Alliance Priest SoD
+-- << Priest SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Helmet
 -- #name Divine Aegis
@@ -1068,20 +1076,46 @@ step << Priest
 -- #subgroup Skill Books
 -- #name Increased Fortitude
 
--- Increased Fortitude
+-- -- Increased Fortitude
 
 
 
 -- ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- #group RestedXP Rune & Books Guide
--- #subgroup Skill Books
--- #name Shadowfiend
+RXPGuides.RegisterGuide([[
+#classic
+<< Priest SoD
+#group RestedXP Rune & Books Guide
+#subgroup Skillbooks
+#name Shadowfiend/Increased Fortitudde
 
--- Shadowfiend
-
-
-
--- ]])
+step
+    .train 401977,1
+    .train 436951,1
+    #completewith Interrogator Vishas
+    +The Skill Books are obtained by killing the first/last dungeon boss of Scarlet Monastery: Graveyard or the rare |cRXP_ENEMY_Ironspine|r |cRXP_WARN_it is highly recommended to have a group of 5 players.|r
+step
+    .train 401977,1
+    .train 436951,1
+    .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
+step
+    .train 401977,1
+    .train 436951,1
+    .goto 1415,47.44,19.75,10,0
+    .goto 1415,47.45,19.69,5,0
+    .goto 1415,47.62,19.59,10,0
+    .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
+step
+    .train 401977,1
+    .train 436951,1
+    #label Interrogator Vishas
+    >>Kill |cRXP_ENEMY_Interrogator Vishas|r, |cRXP_ENEMY_Ironspine|r and loot them for |cRXP_LOOT_Scroll of Shadowfiend|r |cRXP_WARN_This might require multiple kills.|r
+    .collect 216745,1
+    .collect 216744,1
+    .mob Interrogator Vishas
+    .mob Ironspine
+step
+    .train 415423 >>|cRXP_WARN_Use the|r |T237162:0|t|cRXP_LOOT_[Scroll of Shadowfiend]|r |cRXP_WARN_to learn|r |T136199:0|t[Shadowfiend]
+    .train 436951 >>|cRXP_WARN_Use the|r |T237162:0|t|cRXP_LOOT_[Scroll of Increased Fortitude]|r |cRXP_WARN_to learn|r |T237543:0|t[Increased Fortitude]
+    .use 216745
+]])

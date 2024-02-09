@@ -948,17 +948,25 @@ step
 
 -- ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Hunter SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Waist
--- #name Steady Shot
+RXPGuides.RegisterGuide([[
+#classic
+<< Hunter SoD
+#group RestedXP Rune & Books Guide
+#subgroup Waist
+#name Steady Shot
 
 -- Steady Shot
-
-
--- ]])
+step
+    .train 410109,1
+    .zone Arathi Highlands >>Travel to |cFFfa9602Arathi Highlands|r
+step
+    .goto Arathi Highlands,67,6,66,0
+    >>Kill |cRXP_ENEMY_Needletooth|r and loot him for |cRXP_LOOT_Steady Shot|r
+    .mob Needletooth
+step
+    .train 410109 >> Train Steadyshot
+    .use 216764
+]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
@@ -1032,7 +1040,7 @@ RXPGuides.RegisterGuide([[
 step
     .train 415423,1
     #completewith Interrogator Vishas
-    +This skillbook is obtained by killing a the first dungeon boss of Scarlet Monastery: Graveyard |cRXP_WARN_it is highly recommended to have a group of 5 players.|r
+    +This skillbook is obtained by killing the first dungeon boss of Scarlet Monastery: Graveyard or the rare |cRXP_ENEMY_Ironspine|r |cRXP_WARN_it is highly recommended to have a group of 5 players.|r
 step
     .train 415423,1
     .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
@@ -1045,7 +1053,11 @@ step
 step
     .train 415423,1
     #label Interrogator Vishas
-    >>Kill |cRXP_ENEMY_Interrogator Vishas|r and loot him for |cRXP_LOOT_Treatise on Aspect of the Viper|r |cRXP_WARN_This might require multiple kills.|r
+    >>Kill |cRXP_ENEMY_Interrogator Vishas|r, |cRXP_ENEMY_Ironspine|r and loot them for |cRXP_LOOT_Treatise on Aspect of the Viper|r |cRXP_WARN_This might require multiple kills.|r
     .collect 216770
     .mob Interrogator Vishas
+    .mob Ironspine
+step
+    .train 415423 >>|cRXP_WARN_Use the|r |T133739:0|t|cRXP_LOOT_[Treatise on Aspect of the Viper]|r |cRXP_WARN_to learn|r |T132160:0|t[Aspect of the Viper]
+    .use 216764
 ]])

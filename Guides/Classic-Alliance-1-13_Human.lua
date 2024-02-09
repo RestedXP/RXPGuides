@@ -3307,7 +3307,7 @@ step << Rogue
     .goto 1426,68.866,55.958,8,0
     .goto 1426,69.002,55.896
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frast Dokner|r
-    >>|cRXP_WARN_Buy a|r |T135231:0|t[Gladius] |cRXP_WARN_from him|r
+    >>|cRXP_WARN_Buy a|r |T135321:0|t[Gladius] |cRXP_WARN_from him|r
     .collect 2488,1 --Collect Gladius (1)
     .target Frast Dokner
     .money <0.0482
@@ -3318,7 +3318,7 @@ step << Rogue
     #completewith QuarryEnd
     #requires RogueWep
     #label Gladius
-    +|cRXP_WARN_Equip the|r |T135231:0|t[Gladius] |cRXP_WARN_in your mainhand|r
+    .equip 16,2488 >> |cRXP_WARN_Equip the|r |T135321:0|t[Gladius] |cRXP_WARN_in your mainhand|r
     .use 2488
     .itemcount 2488,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.4
@@ -3326,7 +3326,7 @@ step << Rogue
     #optional
     #completewith QuarryEnd
     #requires Gladius
-    +|cRXP_WARN_Equip the|r |T135346:0|t[Stiletto] |cRXP_WARN_in your offhand|r
+    .equip 17,2494 >> |cRXP_WARN_Equip the|r |T135641:0|t[Stiletto] |cRXP_WARN_in your offhand|r
     .use 2494
     .itemcount 2494,1
     .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
@@ -3358,6 +3358,7 @@ step << Warrior/Paladin/Rogue
     #optional
     #completewith QuarryEnd
     .cast 2580 >> |cRXP_WARN_Cast|r |T136025:0|t[Find Minerals]
+    .usespell 2580
     .train 2575,3 --Mining
 step
     #xprate <1.5
@@ -3371,9 +3372,9 @@ step
     .mob Rockjaw Bonesnapper
 step
     #xprate >1.49
-    .goto Dun Morogh,70.7,56.4,40,0
-    .goto Dun Morogh,70.62,52.39,25,0
-    .goto Dun Morogh,70.7,56.4
+    .goto Dun Morogh,70.49,58.35,50,0
+    .goto Dun Morogh,68.23,59.37,50,0
+    .goto Dun Morogh,70.49,58.35
     >>Kill |cRXP_ENEMY_Rockjaw Skullthumpers|r
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .mob Rockjaw Skullthumper

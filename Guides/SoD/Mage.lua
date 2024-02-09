@@ -2027,11 +2027,12 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+<< Mage SoD
 #group RestedXP Rune & Books Guide
 #subgroup Waist
 #name Spellfrost Bolt - 37 (Stranglethorn Vale)
 
-<< Mage SoD
+
 
 step << Alliance
     .train 415948,1
@@ -2120,18 +2121,48 @@ step
 
 -- ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- #group RestedXP Rune & Books Guide
--- #subgroup Boots
--- #name Chronostatic Preservation
+RXPGuides.RegisterGuide([[
+#classic
+<< Mage SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Chronostatic Preservation
 
 -- Chronostatic Preservation
-
--- << Mage SoD
-
-
--- ]])
+step
+    .train 425309,1
+    .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
+step
+    .train 425189,1
+    #loop
+    .goto Thousand Needles,23.2,25.0,25,0
+    .goto Thousand Needles,20.2,22.0,25,0
+    .goto Thousand Needles,17.6,19.6,25,0
+    .goto Thousand Needles,18.6,24.6,25,0
+    >>Kill |cRXP_ENEMY_Galak Mauler|r and loot them for |T134238:0|t|cRXP_LOOT_Cougar Cage Key|r
+    .collect 214435,1
+step
+    .train 425189,1
+    .goto Thousand Needles,45,8,65,4
+    >>Use the |T134238:0|t|cRXP_LOOT_Cougar Cage Key|r and Kill |cRXP_ENEMY_Seared Needles Cougar|r |cRXP_WARN_with frost spells|r and loot him for |T134943:0|t|cRXP_LOOT_Partial Spell Notes|r |cRXP_WARN_might require additional mages.|r
+    .mob Seared Needles Cougar
+    .collect 213634,1
+step
+    .train 425189,1
+    .goto Thousand Needles,45,8,64,4
+    >>Kill |cRXP_ENEMY_Singed Highperch Consort|r |cRXP_WARN_with frost spells|r and loot him for |T134943:0|t|cRXP_LOOT_Partial Spell Notes|r |cRXP_WARN_might require additional mages.|r
+    .collect 213634,2
+    .mob Singed Highperch Consort
+step
+    .train 425189,1
+    .goto Thousand Needles,45,8,65,4
+    >>Kill |cRXP_ENEMY_Scorched Screeching Roguefeather|r |cRXP_WARN_with frost spells|r and loot him for |T134943:0|t|cRXP_LOOT_Partial Spell Notes|r |cRXP_WARN_might require additional mages.|r
+    .collect 213634,3
+    .mob Scorched Screeching Roguefeather
+step
+    .train 425189 >>Combine All 3 |T134943:0|t|cRXP_LOOT_Partial Spell Notes|r to receive the rune |T135729:0|t|{Chronostatic Preservation]
+    .use 213634
+]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
@@ -2209,14 +2240,36 @@ step
 
 -- ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- #group RestedXP Rune & Books Guide
--- #subgroup Skill Books
--- #name Expanded Intellect
+RXPGuides.RegisterGuide([[
+#classic
+<< Mage SoD
+#group RestedXP Rune & Books Guide
+#subgroup Skill Books
+#name Expanded Intellect
 
 -- Expanded Intellect
 
--- << Mage SoD
-
--- ]])
+step
+    .train 436949,1
+    #completewith Interrogator Vishas
+    +The Skill Books are obtained by killing the first/last dungeon boss of Scarlet Monastery: Graveyard or the rare |cRXP_ENEMY_Ironspine|r |cRXP_WARN_it is highly recommended to have a group of 5 players.|r
+step
+    .train 436949,1
+    .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
+step
+    .train 436949,1
+    .goto 1415,47.44,19.75,10,0
+    .goto 1415,47.45,19.69,5,0
+    .goto 1415,47.62,19.59,10,0
+    .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
+step
+    .train 436949,1
+    #label Interrogator Vishas
+    >>Kill |cRXP_ENEMY_Interrogator Vishas|r, |cRXP_ENEMY_Ironspine|r and loot them for |cRXP_LOOT_Tome of Expanded Intellect|r |cRXP_WARN_This might require multiple kills.|r
+    .collect 216740,1
+    .mob Interrogator Vishas
+    .mob Ironspine
+step
+    .train 436949 >>|cRXP_WARN_Use the|r |T133736:0|t|cRXP_LOOT_[Tome of Expanded Intellect]|r |cRXP_WARN_to learn|r |T236513:0|t[Expanded Intellect]
+    .use 216740
+]])

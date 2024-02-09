@@ -2258,29 +2258,70 @@ step
 
 -- ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Horde Shaman SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Boots
--- #name Decoy Totem
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Shaman SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Decoy Totem
 
 -- Decoy Totem
 
+step
+    .train 425882,1
+    .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
+step
+    .train 425882,1
+    .goto Thousand Needles,46.0,51.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jandia|r and buy 1 |T132906:0|t[Silken Thread]
+    .buy 4291,1
+step
+    .train 425882,1
+    #loop
+    .goto Thousand Needles,26.6,47.8,20,0
+    .goto Thousand Needles,28.6,51.2,20,0
+    .goto Thousand Needles,44.4,59.4,20,0
+    .goto Thousand Needles,39.0,56.6,20,0
+    .goto Thousand Needles,46.4,59.6,20,0
+    >>Kill |cRXP_ENEMY_Cloud Serpent|r and |cRXP_ENEMY_Screeching Harpy|r loot them for |cRXP_LOOT_Cloud Serpent Fang|r and |cRXP_LOOT_Strong Harpy Feather|r
+    .collect 213709,3
+    .collect 213701,10
+    .mob Cloud Serpent
+    .mob Screeching Harpy
+step
+    .train 425882,1
+    >>Use |T133723:0|t[Cloud Serpent Fang] or |T132927:0|t[Strong Harpy Feather] to create |T133291:0|t[Offering to the Wind Spirit]
+    .collect 213737,1
+    .use 213709
+    .use 213701
+step
+    .goto Thousand Needles,45,6,65.3
+    .train 425882 >>Use the |T133291:0|t[Offering to the Wind Spirit] near the Altar of the Wind Spirit to learn |T134508:0|t[Decoy Totem]
+    .use 213737
+]])
 
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Horde Shaman SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Boots
--- #name Spirit of the Alpha
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Shaman SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Spirit of the Alpha
 
 -- Spirit of the Alpha
 
 
--- ]])
+step
+    .train 410103,1
+    .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
+step
+    .train 410103,1
+    .goto Thousand Needles,46.4,53.5
+    >>Click on the |cRXP_PICK_Weathered Cache|r to loot |T136095:0|t|cRXP_LOOT_Echo of the Alpha|r
+    .collect 206985,1
+step
+    .train 410103 >>|cRXP_WARN_Use the|r |T136095:0|t|cRXP_LOOT_Echo of the Alpha|r |cRXP_WARN_to learn|r |T408696:0|t[Spirit of the Alpha]
+    .use 206985
+]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic

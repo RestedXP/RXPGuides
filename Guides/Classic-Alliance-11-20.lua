@@ -598,12 +598,12 @@ step << Druid
 #map Darkshore
     #xprate <1.5
     .goto Felwood,22.39,29.45
-    .xp 14-1890 >> Grind until you are 1890xp away from level 14
+    .xp 14-1890
 step << Druid
 #map Darkshore
     #xprate >1.49
     .goto Felwood,22.39,29.45
-    .xp 14-2830 >> Grind until you are 2830xp away from level 14
+    .xp 14-1260
 step << Druid
     .goto Darkshore,36.336,45.574
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caylais Moonfeather|r
@@ -2238,11 +2238,14 @@ step
     .complete 2138,1 -- Rabid Thistle Bear slain (20)
     .mob Rabid Thistle Bear
 step << Druid
+#xprate <1.5
     #sticky
     #label earthroot
     >>Collect 5 |T134187:0|t[Earthroot] as you quest|r
     .complete 6123,1
+    .isOnQuest 6123
 step << Druid
+#xprate <1.5
     .goto Darkshore,43.4,45.9,90,0
     .goto Darkshore,43.3,49.1,90,0
     .goto Darkshore,42.4,52.6,90,0
@@ -2254,6 +2257,23 @@ step << Druid
     .goto Darkshore,45.7,50.3,0
     >>Loot |cRXP_LOOT_Lunar Fungi|r on the ground throughout caves
     .complete 6123,2
+    .isOnQuest 6123
+step << Druid
+#xprate >1.49
+    .goto Darkshore,43.4,45.9,90,0
+    .goto Darkshore,43.3,49.1,90,0
+    .goto Darkshore,42.4,52.6,90,0
+    .goto Darkshore,45.7,50.3,90,0
+    .goto Darkshore,45.3,53.3
+    .goto Darkshore,43.4,45.9,0
+    .goto Darkshore,43.3,49.1,0
+    .goto Darkshore,42.4,52.6,0
+    .goto Darkshore,45.7,50.3,0
+    >>Loot |cRXP_LOOT_Lunar Fungi|r on the ground throughout caves
+    >>|cRXP_WARN_If you haven't found 5 |cRXP_LOOT_Earthroot|r by this point, just abandon this quest|r
+    .complete 6123,1
+    .complete 6123,2
+    .isOnQuest 6123
 step
 #map Darkshore
     #label CompleteThistleBears
@@ -2559,9 +2579,16 @@ step << Druid
     .goto Darkshore,37.70,40.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alanndarian Nightsong|r
     .turnin 6123 >> Turn in Gathering the Cure
+    .isQuestComplete 6123
+step
+#xprate <1.5
+    .goto Darkshore,37.70,40.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alanndarian Nightsong|r
     .accept 6124 >> Accept Curing the Sick
     .target Alanndarian Nightsong
+    .isQuestTurnedIn 6123
 step << Druid
+#xprate <1.5
     #label deers
     #sticky
     #loop
@@ -2950,6 +2977,7 @@ step << Druid
 	.cast 18960 >> Cast Teleport: Moonglade
 	.zoneskip Moonglade
 step << Druid
+#xprate <1.5
     .goto Moonglade,56.2,30.4
     >>Go to Moonglade
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze|r
@@ -3420,19 +3448,48 @@ step << !Hunter
     .zoneskip Dun Morogh
     .zoneskip Ironforge
 step << !Hunter NightElf
+    .goto Wetlands,8.509,55.697
+    .target James Halloran
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_James Halloran|r
+    .accept 484 >> Accept Young Crocolisk Skins
+step << !Hunter NightElf
     .goto Wetlands,9.49,59.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei|r
     .fp Wetlands>> Get the Wetlands flight path
     .target Shellei Brondir
 step << !Hunter NightElf
+    #completewith crocs
+    >>Kill |cRXP_ENEMY_Young Wetlands Crocolisks|r. Loot them for their |cRXP_LOOT_Young Crocolisk Skin|r
+    .complete 484,1
+    .mob Young Wetlands Crocolisk
+step << !Hunter NightElf
     #completewith next
     .goto Wetlands,49.91,39.36,50 >> Travel east toward |cRXP_FRIENDLY_Einar Stonegrip|r
 step << !Hunter NightElf
+#label crocs
     .goto Wetlands,49.91,39.36
     .target Einar Stonegrip
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einar Stonegrip|r
     .accept 469 >> Accept Daily Delivery
 step << !Hunter NightElf
+#xprate >1.49
+    .goto Wetlands,53.2,41.3,55,0
+    .goto Wetlands,58.5,50.8,55,0
+    .goto Wetlands,62.1,61.4,55,0
+    .goto Wetlands,64.0,72.2
+    >>Kill |cRXP_ENEMY_Young Wetlands Crocolisks|r. Loot them for their |cRXP_LOOT_Young Crocolisk Skin|r
+    .complete 484,1
+    .mob Young Wetlands Crocolisk
+step << !Hunter NightElf
+#xprate >1.49
+	#completewith next
+	.goto Wetlands,63.9,78.6
+    >>Head to the cave at the base of the dam in eastern Wetlands
+	.zone Loch Modan >> Logout on top of the mushrooms at the back of the cave.
+    >>When you log back in, this will teleport you to Thelsamar
+	.link https://www.youtube.com/watch?v=21CuGto26Mk >> |cRXP_WARN_CLICK HERE for a reference|r
+step << !Hunter NightElf
+#xprate <1.5
     #completewith next
     .goto Wetlands,53.14,70.38,30,0
     .goto Wetlands,48.32,67.07,35,0
@@ -3440,21 +3497,25 @@ step << !Hunter NightElf
     .goto Loch Modan,25.4,10.6,30 >> Travel to Loch Modan
     .zone Loch Modan >> |cRXP_WARN_Stay on the main road to avoid mobs|r
 step << !Hunter NightElf
+#xprate <1.5
     .goto Loch Modan,46.05,13.61
     .target Chief Engineer Hinderweir VII
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Engineer Hinderweir VII|r
     .accept 250 >> Accept A Dark Threat Looms
 step << !Hunter NightElf
+#xprate <1.5
     .goto Loch Modan,56.05,13.24
     >>Click the |cRXP_PICK_Suspicious Barrel|r
     .turnin 250 >> Turn in A Dark Threat Looms
     .accept 199 >> Accept A Dark Threat Looms
 step << !Hunter NightElf
+#xprate <1.5
     .goto Loch Modan,46.05,13.61
     .target Chief Engineer Hinderweir VII
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Engineer Hinderweir VII|r
     .turnin 199 >> Turn in A Dark Threat Looms
 step << !Hunter NightElf
+#xprate <1.5
     #softcore
     #completewith next
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
@@ -3469,14 +3530,12 @@ step << !Hunter NightElf
     .goto Dun Morogh,86.04,51.05,20 >> Travel to Dun Morogh
     .zoneskip Ironforge
     .zoneskip Dun Morogh
-step << !Hunter NightElf
-    #completewith next
-    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-    .zoneskip Ironforge
-step << !Hunter NightElf
-    .goto Dun Morogh,47.58,41.58,40,0
-    .goto Dun Morogh,50.19,40.79,20,0
-    .goto Ironforge,14.90,87.10,40 >> Travel to Ironforge
+step  << !Hunter NightElf
+#xprate >1.49
+    .goto Dun Morogh,70.66,56.70,40,0
+    .goto Dun Morogh,70.60,54.87
+    .zone Ironforge >>Head to the trogg cave west and log out on top of the drilling machine near the entrance to perform a logout skip, that will teleport you to Ironforge
+    .link https://www.youtube.com/watch?v=kbUSo62CfAM >> CLICK HERE for reference
 step << !Hunter NightElf
     .goto Ironforge,55.51,47.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth|r
@@ -6882,23 +6941,31 @@ step << Druid
     .train 407988,1
 step << Druid
     #season 2
+    #sticky
     .train 407988 >>|cRXP_WARN_Deal 20 instances of bleeding damage from|r |T132152:0|t[Rip] |T132122:0|t[Rake] |cRXP_WARN_or|r |T132131:0|t[Lacerate] |cRXP_WARN_to humanoids, then use the|r |T132942:0|t[|cRXP_FRIENDLY_Ferocious Idol|r] |cRXP_WARN_again to learn|r |T236167:0|t[Savage Roar]
     .use 208689
     .itemcount 208689,1
 step
-    .goto Darkshore,37.44,41.83
-    .target Archaeologist Hollee
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Hollee|r
-    .accept 729 >> Accept The Absent Minded Prospector
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tClick on |cRXP_FRIENDLY_The Wanted Poster|r
+    .goto Darkshore,37.21,44.22
+    .accept 4740 >> Accept WANTED: Murkdeep!
 step
     .goto Darkshore,37.32,43.64
     .target Barithras Moonshade
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barithras Moonshade|r
     .accept 948 >> Accept Onu
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tClick on |cRXP_FRIENDLY_The Wanted Poster|r
-    .goto Darkshore,37.21,44.22
-    .accept 4740 >> Accept WANTED: Murkdeep!
+    .goto Darkshore,37.44,41.83
+    .target Archaeologist Hollee
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Hollee|r
+    .accept 729 >> Accept The Absent Minded Prospector
+step
+    #map Darkshore
+    .goto Felwood,21.04,17.72
+    .target Gershala Nightwhisper
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gershala Nightwhisper|r
+    .turnin -3765 >> Turn in The Corruption Abroad
+    .isOnQuest 3765
 step
     .goto Darkshore,39.37,43.48
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
@@ -6918,6 +6985,28 @@ step
     #completewith OnuGrove
     .goto Felwood,27.00,55.59,80 >> Travel to the Grove of the Ancients
 step
+#xprate >1.49
+#map Darkshore
+    .goto Felwood,27.00,55.59
+    .target Onu
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Onu|r
+    .turnin 951 >> Turn in Mathystra Relics
+    .isQuestComplete 951
+step
+#xprate >1.49
+    .goto Darkshore,45.00,85.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Volcor|r
+    .turnin 993 >> Turn in A Lost Master
+    .accept 995 >> Accept Escape Through Stealth
+    .timer 20,Escape Through Stealth RP
+    .target Volcor
+step
+#xprate >1.49
+    .goto Darkshore,44.44,84.69
+    >>|cRXP_WARN_Wait out the RP|r
+    .complete 995,1
+step
+#xprate <1.5
 #map Darkshore
     #label OnuGrove
     .goto Felwood,27.00,55.59
@@ -6927,20 +7016,24 @@ step
     .accept 944 >> Accept The Master's Glaive
     .target Onu
 step
+#xprate <1.5
     #completewith next
     #label MasterG
     .goto Darkshore,38.54,86.05,60 >> Travel to The Master's Glaive
 step
+#xprate <1.5
     .goto Darkshore,38.54,86.05
     >>Discover The Master's Glaive
     >>|cRXP_ENEMY_Twilight Thugs|r |cRXP_WARN_can|r |T132343:0|t[Disarm] |cRXP_WARN_you for 6 seconds|r << Rogue/Paladin/Warrior
     >>|cRXP_ENEMY_Twilight Disciples|r |cRXP_WARN_cast|r |T135953:0|t[Renew] |cRXP_WARN_and a 3 second|r |T135915:0|t[Heal]
     .complete 944,1
 step
+#xprate <1.5
     #completewith next
     .cast 5809 >> |cRXP_WARN_Use the|r |T134715:0|t[Phial of Scrying] |cRXP_WARN_and place it on the ground|r
     .use 5251
 step
+#xprate <1.5
     .goto Darkshore,38.54,86.05
     .use 5251 >> Click the |cRXP_PICK_Scrying Bowl|r
     .turnin 944 >> Turn in The Master's Glaive
@@ -6948,6 +7041,7 @@ step
     >>|cRXP_ENEMY_Twilight Thugs|r |cRXP_WARN_can|r |T132343:0|t[Disarm] |cRXP_WARN_you for 6 seconds|r << Rogue/Paladin/Warrior
     >>|cRXP_ENEMY_Twilight Disciples|r |cRXP_WARN_cast|r |T135953:0|t[Renew] |cRXP_WARN_and a 3 second|r |T135915:0|t[Heal]
 step
+#xprate <1.5
 #map Darkshore
     .goto Ashenvale,22.24,2.52
     >>Click the |cRXP_PICK_Twilight Tome|r
@@ -7021,6 +7115,7 @@ step
     >>Click the |cRXP_PICK_Beached Sea Creature|r
     .accept 4730 >> Accept Beached Sea Creature
 step
+#xprate <1.5
     #label Murkdeep
     .goto Darkshore,36.64,76.53
     >>Kill |cRXP_ENEMY_Greymist Warriors|r and |cRXP_ENEMY_Greymist Hunters|r at the camp
@@ -7060,9 +7155,11 @@ step
     .turnin 1003 >> Turn in Buzzbox 525
     .isOnQuest 1003
 step
+#xprate <1.5
     #completewith next
     .goto Darkshore,45.00,85.30,30 >> Travel toward |cRXP_FRIENDLY_Volcor|r in the Cave
 step
+#xprate <1.5
     .goto Darkshore,45.00,85.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Volcor|r
     .turnin 993 >> Turn in A Lost Master
@@ -7070,10 +7167,12 @@ step
     .timer 20,Escape Through Stealth RP
     .target Volcor
 step
+#xprate <1.5
     .goto Darkshore,44.44,84.69
     >>|cRXP_WARN_Wait out the RP|r
     .complete 995,1
 step
+#xprate <1.5
 #map Darkshore
     .goto Felwood,27.00,55.59
     .target Onu
@@ -7081,12 +7180,14 @@ step
     .turnin 951 >> Turn in Mathystra Relics
     .isQuestComplete 951
 step
+#xprate <1.5
 #map Darkshore
     .goto Felwood,27.00,55.59
     .target Onu
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Onu|r
     .turnin 950 >> Turn in Return to Onu
 step
+#xprate <1.5
 #map Darkshore
     .goto Felwood,27.96,55.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kerlonian Evershade|r to start the escort
@@ -7094,6 +7195,7 @@ step
 	.target Kerlonian Evershade
     .accept 5321 >> Accept The Sleeper Has Awakened
 step
+#xprate <1.5
     .isOnQuest 5321
     .goto Darkshore,44.38,76.30
     >>Open |cRXP_PICK_Kerlonian's Chest|r. Loot it for the |T134229:0|t[|cRXP_LOOT_Horn of Awakening|r]
@@ -7103,6 +7205,7 @@ step
     .zone Ashenvale >> Travel south to Ashenvale
     .goto Ashenvale,29.7,13.6
 step
+#xprate <1.5
     .goto Ashenvale,27.26,35.58
     >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Kerlonian|r to Maestra's Post in Ashenvale|r
     .use 13536 >> |cRXP_WARN_Use the|r |T134229:0|t[|cRXP_LOOT_Horn of Awakening|r] |cRXP_WARN_whenever |cRXP_FRIENDLY_Kerlonian|r falls asleep next to him|r
@@ -7110,6 +7213,7 @@ step
     .complete 5321,2
     .isOnQuest 5321
 step
+#xprate <1.5
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Liadris Moonriver|r
 	.target Liladris Moonriver
     .goto Ashenvale,27.26,35.58
@@ -7120,7 +7224,7 @@ step << Paladin
     .goto Ashenvale,26.19,38.69
     >>Talk to |cRXP_FRIENDLY_Delgren the Purifier|r
     .turnin 967 >> Turn in The Tower of Althalaxx
-    .accept 970 >> Accept The Tower of Althalaxx
+    --.accept 970 >> Accept The Tower of Althalaxx
     .turnin 78088 >> Turn in A Strange Artifact
     .accept 78089 >> Accept Advice From Stormwind
     .target Delgren the Purifier
@@ -7131,7 +7235,7 @@ step << Paladin
     .goto Ashenvale,26.19,38.69
     >>Talk to |cRXP_FRIENDLY_Delgren the Purifier|r
     .turnin 967 >> Turn in The Tower of Althalaxx
-    .accept 970 >> Accept The Tower of Althalaxx
+    --.accept 970 >> Accept The Tower of Althalaxx
     .accept 78089 >> Accept Advice From Stormwind
     .target Delgren the Purifier
     .train 410014,1
@@ -7246,8 +7350,10 @@ step
 	.target Raene Wolfrunner
     .goto Ashenvale,36.61,49.58
     .accept 991 >> Accept Raene's Cleansing
+    .accept 1054 >> Accept Culling the Threat
 step << !Warlock
-    #som
+--TODO: sod p3 change to !Druid !Warlock
+    #xprate >1.49
     .goto Ashenvale,36.99,49.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kimlya|r
     .home >> Set your Hearthstone to Astranaar

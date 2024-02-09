@@ -541,33 +541,57 @@ RXPGuides.RegisterGuide([[
 << Druid SoD
 #group RestedXP Rune & Books Guide
 #subgroup Skill Books
-#name Enhanced Restoration/Revive - 27 (Scarlet Monastery Graveyard)
+#name Enhanced Restoration/Revive/Deeper Wilds - 27 (Scarlet Monastery Graveyard)
 
 step
     .train 437138,1
+    .train 417123,1
+    .train 436956,1
     #completewith Interrogator Vishas
     +The skill books are obtained by killing the first and last dungeon boss of Scarlet Monastery: Graveyard |cRXP_WARN_it is highly recommended to have a group of 5 players.|r
 step
     .train 437138,1
+    .train 417123,1
+    .train 436956,1
     .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
 step
     .train 437138,1
+    .train 417123,1
+    .train 436956,1
     .goto 1415,47.44,19.75,10,0
     .goto 1415,47.45,19.69,5,0
     .goto 1415,47.62,19.59,10,0
     .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
 step
     .train 437138,1
+    .train 417123,1
+    .train 436956,1
     #label Interrogator Vishas
     >>Kill |cRXP_ENEMY_Interrogator Vishas|r and loot him for |cRXP_LOOT_Leaflet of Enhanced Restoration|r |cRXP_WARN_This might require multiple kills.|r
     .collect 216771
     .mob Interrogator Vishas
 step
     .train 437138,1
+    .train 417123,1
+    .train 436956,1
     #label Interrogator Vishas
     >>Kill |cRXP_ENEMY_Bloodmage Thalnos|r and loot him for |cRXP_LOOT_Leaflet of Revive|r |cRXP_WARN_This might require multiple kills.|r
     .collect 216767
     .mob Bloodmage Thalnos
+step
+    .train 437138,1
+    .train 417123,1
+    .train 436956,1
+    >>Kill |cRXP_ENEMY_Bloodmage Thalnos|r and loot him for |cRXP_LOOT_Leaflet of Revive|r |cRXP_WARN_This might require multiple kills.|r
+    .collect 216767
+    .mob Bloodmage Thalnos
+step
+    .train 436956 >>|cRXP_WARN_Use the|r |T134914:0|t|cRXP_LOOT_[Leaflet of Deeper Wilds]|r |cRXP_WARN_to learn|r |T132124:0|t[Deeper Wilds]
+    .train 417123 >>|cRXP_WARN_Use the|r |T134914:0|t|cRXP_LOOT_[Leaflet of Enhanced Restoration]|r |cRXP_WARN_to learn|r |T136073:0|t[Enhanced Restoration]
+    .train 437138 >>|cRXP_WARN_Use the|r |T134914:0|t|cRXP_LOOT_[Leaflet of Revive]|r |cRXP_WARN_to learn|r |T132132:0|t[437138]
+    .use 216764
+    .use 216767
+    .use 216771
 ]])
 
 -- RXPGuides.RegisterGuide([[
@@ -577,6 +601,29 @@ step
 -- #subgroup Skill Books
 -- #name Deeper Wilds
 
+-- -- Leaflet of Deeper Wilds
+-- --x drops from an unknown mob in Graveyard
+-- step
+--     .train 436956,1
+--     #completewith Interrogator Vishas
+--     +This skillbook is obtained by killing a the first dungeon boss of Scarlet Monastery: Graveyard or the rare |cRXP_ENEMY_Ironspine|r |cRXP_WARN_it is highly recommended to have a group of 5 players.|r
+-- step
+--     .train 436956,1
+--     .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
+-- step
+--     .train 436956,1
+--     .goto 1415,47.44,19.75,10,0
+--     .goto 1415,47.45,19.69,5,0
+--     .goto 1415,47.62,19.59,10,0
+--     .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
+-- step
+--     .train 436956,1
+--     #label Interrogator Vishas
+--     >>Kill |cRXP_ENEMY_Interrogator Vishas|r, |cRXP_ENEMY_Ironspine|r and loot them for |cRXP_LOOT_Leaflet of Deeper Wilds|r |cRXP_WARN_This might require multiple kills.|r
+--     .collect 216764
+--     .mob Interrogator Vishas
+-- step
+--     .use 216745
 -- ]])
 
 -- RXPGuides.RegisterGuide([[
@@ -587,17 +634,39 @@ step
 -- #name Eclipse
 
 
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Druid SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Waist
--- #name Berserk
-
 
 -- ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Druid SoD
+#group RestedXP Rune & Books Guide
+#subgroup Waist
+#name Berserk
+
+step
+    .train 417141,1
+    .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
+step
+    .train 417141,1
+    .goto Thousand Needles
+    .aura 435081,1 >>Lookout for a Bear Statue on the ground when nearby you'll receive the buff |T435081:0|t[Beastly Effigy]
+step
+    .train 417141,1
+    .cast 5209 >> Use |T132117:0|t[Challenging Roar] Near the Bear Statue to spawn |cRXP_ENEMY_Zai'enki|r
+step
+    .train 417141,1
+    >>Kill |cRXP_ENEMY_Zai'enki|r and loot him for |cRXP_LOOT_Idol of the Heckler|r
+    .collect 213594,1
+step
+    .train 417141,1
+    .equip 18,213594 >> Equip |T134912:0|t[Idol of the Heckler]
+step
+    .train 417141,1
+    .cast 5209 >> Use |T132117:0|t[Challenging Roar] and taunt 2 enemies simultaneously then kill 1 one of them; repeat this with 5 enemies.
+step
+    .train 417141 >> Use |T134912:0|t[Idol of the Heckler] to learn |T417141:0|t[Berserk]
+]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
