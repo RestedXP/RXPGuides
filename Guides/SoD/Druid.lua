@@ -678,15 +678,33 @@ step
 
 -- ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Druid SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Boots
--- #name Dreamstate
+RXPGuides.RegisterGuide([[
+#classic
+<< Druid SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Dreamstate
 
-
--- ]])
+step
+    .train 410060,1
+    .zone Desolace >>Travel to |cFFfa9602Desolace|r
+step
+    .train 410060,1
+    #loop
+    .goto Desolace,70.6,39.8,25,0
+    .goto Desolace,69.2,46.6,25,0
+    .goto Desolace,68.6,52.6,25,0
+    >>Kill |cRXP_ENEMY_Kolkar Centaur|r and loot them for |T134187:0|t|cRXP_LOOT_Desiccated Seed Pod|r
+    .collect 213574,1
+    .mob Kolkar Centaur
+step
+    .train 410060,1
+    .goto Desolace,70.8,71.8
+    >>Take the |T134187:0|[Desiccated Seed Pod] into the Waters wait until it turns into |T206966:0|t[Satyrweed Bulb]
+step
+    .goto Desolace,75.5,20.7
+    .train 410060 >>Click on the |cRXP_PICK_Sandy Loam|r to plant the seed to get the rune of |T136090:0|t[Dreamstate]
+]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
@@ -698,15 +716,48 @@ step
 
 -- ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Druid SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Boots
--- #name Survival Instincts
+RXPGuides.RegisterGuide([[
+#classic
+<< Druid SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Survival Instincts
 
-
--- ]])
+step
+    .train 410027,1
+    .zone Swamp of Sorrows >>Travel to |cFFfa9602Swamp of Sorrows|r
+step
+    .goto Swamp of Sorrows,25.0,54.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r and buy |T133653:0|t[Entomology Starter Kit] |cRXP_WARN_it will cost 50silver.|r
+    .collect 213565,1
+    .target Amaryllis Webb
+step
+    .train 410027,1
+    .zone Stranglethorn Vale >>Travel to |cFFfa9602Stranglethorn Vale|r and use the |T133653:0|t[Entomology Starter Kit]
+    .use 213565
+step
+    .goto Stranglethorn Vale,44.6,19.8
+    >>Catch the Bug on the Treestump
+step
+    .train 410027,1
+    .zone Arathi Highlands >>Travel to |cFFfa9602Arathi Highlands|r
+step
+    .goto Arathi Highlands,30.7,28.7
+    >>Catch the Bug near Northfold Manor
+step
+    .train 410060,1
+    .zone Desolace >>Travel to |cFFfa9602Desolace|r
+step
+    .goto Desolace,51.2,59.9
+    >>Catch the Bug near the Kodo Graveyard
+step
+    .train 410027,1
+    .zone Swamp of Sorrows >>Travel to |cFFfa9602Swamp of Sorrows|r
+step
+    .goto Swamp of Sorrows,25.0,54.2
+    .train 410027 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r to obtain the rune |T132266:0|t[Survival Instincts]
+    .target Amaryllis Webb
+]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
