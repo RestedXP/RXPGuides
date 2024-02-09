@@ -924,16 +924,52 @@ step
     .itemcount 205979,1
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Hunter SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Waist
--- #name Expose Weakness
+RXPGuides.RegisterGuide([[
+#classic
+<< Hunter SoD
+#group RestedXP Rune & Books Guide
+#subgroup Waist
+#name Expose Weakness
 
 -- Expose Weakness
 
--- ]])
+step
+    .train 410114,1
+    .zone Badlands >>Travel to |cFFfa9602Badlands|r
+step
+    #loop
+    .goto Badlands,28.2,51.4,25,0
+    .goto Badlands,28.0,61.0,25,0
+    .goto Badlands,30.6,61.2,25,0
+    .goto Badlands,34.6,54.8,25,0
+    >>Kill |cRXP_ENEMY_Dustbelcher Ogre|r and loot them for |T237388:0|t|cRXP_LOOT_Primitive Drawing|r
+    .mob Dustbelcher Ogre
+step
+    >>Click on |T237388:0|t[Primitive Drawing] in your bags to accept the quest.
+    .accept 78823 --terror-of-the-desert-skies
+step
+    .train 410114,1
+    .zone Stranglethorn Vale >>Travel to |cFFfa9602Stranglethorn Vale|r
+step
+    .train 410114,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary|r
+    .turnin 78823 --terror-of-the-desert-skies
+    .accept 78830 --terror-of-the-desert-skies
+    .target Hemet Nesingwary
+step
+    .train 410114,1
+    .zone Badlands >>Travel to |cFFfa9602Badlands|r
+step
+    .goto Badlands,22.6,67.4
+    >>Use the |T132599:0|t[Empty Bait Cage] on any critter, use the bait to lure |cRXP_ENEMY_Gharik|r away. Loot him for |cRXP_LOOT_Crimson Trophy Quill.|r
+    .complete 78830 --terror-of-the-desert-skies
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary|r to receive [|cRXP_FRIENDLY_Rune of Expose Weakness|r]
+    .turnin 78830 --terror-of-the-desert-skies
+    .use 211272
+step
+    .train 410114 >> Use [|cRXP_FRIENDLY_Rune of Expose Weakness|r] to learn |T132353:0|t[Expose Weakness]
+]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
