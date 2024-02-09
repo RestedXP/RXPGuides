@@ -637,15 +637,36 @@ step
 
 -- ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Druid SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Waist
--- #name Berserk
+RXPGuides.RegisterGuide([[
+#classic
+<< Druid SoD
+#group RestedXP Rune & Books Guide
+#subgroup Waist
+#name Berserk
 
-
--- ]])
+step
+    .train 417141,1
+    .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
+step
+    .train 417141,1
+    .goto Thousand Needles
+    .aura 435081,1 >>Lookout for a Bear Statue on the ground when nearby you'll receive the buff |T435081:0|t[Beastly Effigy]
+step
+    .train 417141,1
+    .cast 5209 >> Use |T132117:0|t[Challenging Roar] Near the Bear Statue to spawn |cRXP_ENEMY_Zai'enki|r
+step
+    .train 417141,1
+    >>Kill |cRXP_ENEMY_Zai'enki|r and loot him for |cRXP_LOOT_Idol of the Heckler|r
+    .collect 213594,1
+step
+    .train 417141,1
+    .equip 18,213594 >> Equip |T134912:0|t[Idol of the Heckler]
+step
+    .train 417141,1
+    .cast 5209 >> Use |T132117:0|t[Challenging Roar] and taunt 2 enemies simultaneously then kill 1 one of them; repeat this with 5 enemies.
+step
+    .train 417141 >> Use |T134912:0|t[Idol of the Heckler] to learn |T417141:0|t[Berserk]
+]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
