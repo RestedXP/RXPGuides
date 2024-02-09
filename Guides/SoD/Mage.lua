@@ -2193,35 +2193,35 @@ step
     .use 213634
 ]])
 
-RXPGuides.RegisterGuide([[
-#classic
-<< Mage SoD
-#group RestedXP Rune & Books Guide
-#subgroup Boots
-#name Brain Freeze
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Mage SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Boots
+-- #name Brain Freeze
 
--- Brain Freeze
+-- -- Brain Freeze
 
-step
-    .train 401752,1
-    .zone Desolace >>Travel to |cFFfa9602Desolace|r
-step
-    .goto Desolace,47.54,54.6
-    >>Click on the |cRXP_PICK_Extinguished Campfire|r to accept a quest
-    .accept
-step
-    .goto Desolace,62.5,39.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bibbly F'utzbuckle|r to turn it in
-    .turnin
-step
-    .train 401752,1
-    .zone Booty Bay >>Travel to |cFFfa9602Booty Bay|r
-step
-    .train 401752,1
-    .zone Booty Bay >>Travel to |cFFfa9602Arathi Highlands|r
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illari Duskfeather|r
-]])
+-- step
+--     .train 401752,1
+--     .zone Desolace >>Travel to |cFFfa9602Desolace|r
+-- step
+--     .goto Desolace,47.54,54.6
+--     >>Click on the |cRXP_PICK_Extinguished Campfire|r to accept a quest
+--     .accept
+-- step
+--     .goto Desolace,62.5,39.6
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bibbly F'utzbuckle|r to turn it in
+--     .turnin
+-- step
+--     .train 401752,1
+--     .zone Booty Bay >>Travel to |cFFfa9602Booty Bay|r
+-- step
+--     .train 401752,1
+--     .zone Booty Bay >>Travel to |cFFfa9602Arathi Highlands|r
+-- step
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illari Duskfeather|r
+-- ]])
 
 RXPGuides.RegisterGuide([[
 #classic
