@@ -2030,12 +2030,13 @@ RXPGuides.RegisterGuide([[
 << Mage SoD
 #group RestedXP Rune & Books Guide
 #subgroup Waist
-#name Spellfrost Bolt - 37 (Stranglethorn Vale)
+#name Spellfrost Bolt/Frostfire Bolt - 37 (Stranglethorn Vale)
 
 
 
 step << Alliance
     .train 415948,1
+    .train 401762,1
     .goto Stormwind City,55.8,65.2,-1
     .goto Stormwind City,32.4,80.0,-1
     .goto Stormwind City,43.4,26.8,-1
@@ -2052,6 +2053,8 @@ step << Alliance
     >>Purchase one or more |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step << Horde
+    .train 415948,1
+    .train 401762,1
     .goto Orgrimmar,45.6,56.8,
     .goto Orgrimmar,46.2,46.6,
     .goto Orgrimmar,45.8,40.6,
@@ -2067,22 +2070,27 @@ step << Horde
     .collect 211779,1
 step
     .train 415948,1
+    .train 401762,1
     #completewith next
     .zone Stranglethorn Vale >>Travel to |cFFfa9602Stranglethorn Vale|r
 step
     .train 415948,1
+    .train 401762,1
     #loop
     .goto Stranglethorn Vale,46.6,30.0,30,0
     .goto Stranglethorn Vale,43.6,33.2,30,0
     .goto Stranglethorn Vale,46.4,40.6,30,0
     .goto Stranglethorn Vale,48.6,40.8,30,0
-    >>Kill |cRXP_ENEMY_Skullsplitter Mystic|r and loot them for |cRXP_LOOT_|T134939:0|t[Spell Notes: PELFRB STOLLOTS]|r
+    >>Kill |cRXP_ENEMY_Skullsplitter Mystic's|r and loot them for |cRXP_LOOT_|T134939:0|t[Spell Notes: PELFRB STOLLOTS]|r and |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TROFF IRESTBOL|r]
     .collect 213127,1
+    .collect 217161,1
     .mob Skullsplitter Mystic
 step
     .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
     .train 415948 >>|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: PELFRB STOLLOTS|r] to learn |T236220:0|t[Spellfrost Bolt]
+    .train 401762 >>|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TROFF IRESTBOL|r] to learn |T134939:0|t[Frostfire Bolt]
     .use 213127
+    .use 217161
 ]])
 
 -- RXPGuides.RegisterGuide([[
