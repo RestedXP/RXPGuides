@@ -937,7 +937,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Priest SoD
 #group RestedXP Rune & Books Guide
 #subgroup Waist
-#name Empowered Renew
+#name Empowered Renew - 27 (Thousand Needles)
 
 -- Empowered Renew
 
@@ -979,7 +979,7 @@ RXPGuides.RegisterGuide([[
 << Priest SoD
 #group RestedXP Rune & Books Guide
 #subgroup Waist
-#name Renewed Hope
+#name Renewed Hope - 30 (Desolace)
 
 -- Renewed Hope
 step
@@ -1025,7 +1025,7 @@ RXPGuides.RegisterGuide([[
 << Priest SoD
 #group RestedXP Rune & Books Guide
 #subgroup Boots
-#name Pain Suppression
+#name Pain Suppression - 32 (Azeroth)
 
 -- Pain Suppression
 
@@ -1154,7 +1154,8 @@ RXPGuides.RegisterGuide([[
 << Priest SoD
 #group RestedXP Rune & Books Guide
 #subgroup Skillbooks
-#name Shadowfiend/Increased Fortitudde
+#title
+#name Shadowfiend/Increased Fortitude - 27-40 (Scarlet Monastery)
 
 step
     .train 401977,1

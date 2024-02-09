@@ -1189,7 +1189,8 @@ RXPGuides.RegisterGuide([[
 << Warlock SoD
 #group RestedXP Rune & Books Guide
 #subgroup Skill Books
-#name Soul Harvesting/Portal of Summoning
+#title
+#name Soul Harvesting/Portal of Summoning - 27-40 (Scarlet Monastery)
 
 -- Soul Harvesting
 

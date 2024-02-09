@@ -1501,7 +1501,8 @@ RXPGuides.RegisterGuide([[
 << Paladin SoD
 #group RestedXP Rune & Books Guide
 #subgroup Boots
-#name Sacred Shield
+#title
+#name Sacred Shield - 30 (Desolace)
 
 -- Sacred Shield
 
@@ -1597,7 +1598,7 @@ RXPGuides.RegisterGuide([[
 << Paladin SoD
 #group RestedXP Rune & Books Guide
 #subgroup Skill Books
-#name Enhanced Blessings
+#name Enhanced Blessings - 27-40 (Scarlet Monastery)
 
 -- Enhanced Blessings
 

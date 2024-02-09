@@ -1429,7 +1429,8 @@ RXPGuides.RegisterGuide([[
 << Rogue SoD
 #group RestedXP Rune & Books Guide
 #subgroup Waist
-#name Shuriken Toss
+#title
+#name Shuriken Toss - 32 (Swamp of Sorrows)
 
 -- Shuriken Toss
 
@@ -1460,7 +1461,8 @@ RXPGuides.RegisterGuide([[
 << Rogue SoD
 #group RestedXP Rune & Books Guide
 #subgroup Boots
-#name Rolling with the Punches
+#title
+#name Rolling with the Punches - 27 (Thousand Needles)
 
 -- Rolling with the Punches
 
@@ -1468,8 +1470,9 @@ step
     .train 400093,1
     .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
 step
+    .train 400093,1
     .goto Thousand Needles,45,6,65,3
-    >>Click on the |cRXP_PICK_Chest|r until you obtain the rune |T134919:0|t[Rolling with the Punches]
+    +Click on the |cRXP_PICK_Chest|r until you obtain the rune |T134919:0|t[Rolling with the Punches]
 ]])
 
 -- RXPGuides.RegisterGuide([[
@@ -1513,7 +1516,8 @@ RXPGuides.RegisterGuide([[
 << Rogue SoD
 #group RestedXP Rune & Books Guide
 #subgroup Skill Books
-#name Redirect
+#title
+#name Redirect - 27-40 (Scarlet Monastery)
 
 -- Redirect
 

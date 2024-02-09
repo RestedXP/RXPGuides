@@ -2030,6 +2030,7 @@ RXPGuides.RegisterGuide([[
 << Mage SoD
 #group RestedXP Rune & Books Guide
 #subgroup Waist
+#title
 #name Spellfrost Bolt/Frostfire Bolt - 37 (Stranglethorn Vale)
 
 

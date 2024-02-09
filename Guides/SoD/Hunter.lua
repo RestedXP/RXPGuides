@@ -929,7 +929,8 @@ RXPGuides.RegisterGuide([[
 << Hunter SoD
 #group RestedXP Rune & Books Guide
 #subgroup Waist
-#name Expose Weakness
+#title
+#name Expose Weakness - 40 (Azeroth)
 
 -- Expose Weakness
 
@@ -989,7 +990,7 @@ RXPGuides.RegisterGuide([[
 << Hunter SoD
 #group RestedXP Rune & Books Guide
 #subgroup Waist
-#name Steady Shot
+#name Steady Shot - 30 (Arathi Highlands)
 
 -- Steady Shot
 step
@@ -1069,7 +1070,8 @@ RXPGuides.RegisterGuide([[
 << Hunter SoD
 #group RestedXP Rune & Books Guide
 #subgroup Skill Books
-#name Treatise on Aspect of the Viper - 27 (Scarlet Monastery Graveyard)
+#title
+#name Treatise on Aspect of the Viper - 27-40 (Scarlet Monastery)
 
 -- Rune of Aspect of the Viper
 

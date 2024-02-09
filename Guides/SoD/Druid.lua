@@ -541,7 +541,8 @@ RXPGuides.RegisterGuide([[
 << Druid SoD
 #group RestedXP Rune & Books Guide
 #subgroup Skill Books
-#name Enhanced Restoration/Revive/Deeper Wilds - 27 (Scarlet Monastery Graveyard)
+#title
+#name Enhanced Restoration/Revive/Deeper Wilds - 27-40 (Scarlet Monastery)
 
 step
     .train 437138,1
@@ -642,7 +643,7 @@ RXPGuides.RegisterGuide([[
 << Druid SoD
 #group RestedXP Rune & Books Guide
 #subgroup Waist
-#name Berserk
+#name Berserk - 27 (Thousand Needles)
 
 step
     .train 417141,1
@@ -683,7 +684,8 @@ RXPGuides.RegisterGuide([[
 << Druid SoD
 #group RestedXP Rune & Books Guide
 #subgroup Boots
-#name Dreamstate
+#title
+#name Dreamstate - 35 (Desolace)
 
 step
     .train 410060,1
@@ -721,7 +723,7 @@ RXPGuides.RegisterGuide([[
 << Druid SoD
 #group RestedXP Rune & Books Guide
 #subgroup Boots
-#name Survival Instincts
+#name Survival Instincts - 35 (Azeroth)
 
 step
     .train 410027,1
