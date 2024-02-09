@@ -2193,31 +2193,85 @@ step
     .use 213634
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- #group RestedXP Rune & Books Guide
--- #subgroup Boots
--- #name Brain Freeze
+RXPGuides.RegisterGuide([[
+#classic
+<< Mage SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Brain Freeze
 
 -- Brain Freeze
 
--- << Mage SoD
+step
+    .train 401752,1
+    .zone Desolace >>Travel to |cFFfa9602Desolace|r
+step
+    .goto Desolace,46.6,55.1
+    >>Click on the |cRXP_PICK_Extinguished Campfire|r to accept a quest
+    .accept
+step
+    .goto Desolace,62.5,39.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bibbly F'utzbuckle|r to turn it in
+    .turnin
+step
+    .train 401752,1
+    .zone Booty Bay >>Travel to |cFFfa9602Booty Bay|r
+step
+    .train 401752,1
+    .zone Booty Bay >>Travel to |cFFfa9602Arathi Highlands|r
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illari Duskfeather|r
+]])
 
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- #group RestedXP Rune & Books Guide
--- #subgroup Boots
--- #name Spell Power
+RXPGuides.RegisterGuide([[
+#classic
+<< Mage SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Spell Power
 
 -- Spell Power
 
--- << Mage SoD
 
 
--- ]])
+step
+    .train 415934,1
+    .zone Desolace >>Travel to |cFFfa9602Desolace|r
+step
+    .train 415934,1
+    >>Click on the Book |T133733:0|t[Demons and You]
+    .collect 215817,1
+step
+    .train 415934,1
+    .zone Arathi Highlands >>Travel to |cFFfa9602Arathi Highlands|r
+step
+    .train 415934,1
+    >>Click on the Book |T134331:0|t[A Web of Lies: Debunking Myths and Legends]
+    .collect 215816,1
+step
+    .train 415934,1
+    .zone Dustwallow Marsh >>Travel to |cFFfa9602Dustwallow Marsh|r
+step
+    .train 415934,1
+    >>Click on the Book |T133740:0|t[RwlRwlRwlRwl!]
+    .collect 215822,1
+step
+    .train 415934,1
+    .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
+step
+    .train 415934,1
+    >>Click on the Book |T133740:0|t[Geomancy: The Stone-Cold Truth]
+    .collect 215683,1
+step
+    .train 415934,1
+    .zone Alterac Mountains >>Travel to |cFFfa9602Alterac Mountains|r
+step
+    .train 415934,1
+    >>Click on the Book |T133736:0|t[Defensive Magics 101]
+    .collect 215815,1
+step
+    +to be continued
+]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
