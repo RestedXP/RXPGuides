@@ -1499,8 +1499,8 @@ function addon:LoadGuide(guide, OnLoad)
     addon.currentGuideName = guide.name
     RXPCData.currentGuideName = guide.name
     RXPCData.currentGuideGroup = guide.group
-    local guidename = addon.GetGuideName(guide)
-    if guide.subgroup then
+    local guidename = guide.title or addon.GetGuideName(guide)
+    if guide.subgroup and not guide.title then
         GuideName.text:SetText(guidename .. "\n" .. guide.subgroup)
     else
         GuideName.text:SetText(guidename)

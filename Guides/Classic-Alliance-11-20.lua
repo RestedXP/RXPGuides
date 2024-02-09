@@ -7353,11 +7353,9 @@ step
     .accept 991 >> Accept Raene's Cleansing
     .accept 1054 >> Accept Culling the Threat
 step << !Warlock
---TODO: sod p3 change to !Druid !Warlock
-    #xprate >1.49
     .goto Ashenvale,36.99,49.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kimlya|r
-    .home >> Set your Hearthstone to Astranaar
+    .home 415>> Set your Hearthstone to Astranaar
     .target Innkeeper Kimlya
 step
     #timer Orendil's Cure RP
