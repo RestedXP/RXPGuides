@@ -1424,18 +1424,23 @@ step
 
 -- ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Rogue SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Waist
--- #name Shuriken Toss
+RXPGuides.RegisterGuide([[
+#classic
+<< Rogue SoD
+#group RestedXP Rune & Books Guide
+#subgroup Waist
+#name Shuriken Toss
 
 -- Shuriken Toss
 
-
-
--- ]])
+step
+    .train 400096,1
+    .zone Swamp of Sorrows >>Travel to |cFFfa9602Swamp of Sorrows|r
+step
+    .train 400096,1
+    .goto Swamp of Sorrows,41.9,30.2
+    .cast 1842 >> Use |T136162:0|t[Disarm] on the trap on the tree to obtain the rune |T132330:0|t[Shuriken Toss]
+]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic

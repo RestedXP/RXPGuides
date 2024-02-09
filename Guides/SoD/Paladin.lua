@@ -1496,17 +1496,29 @@ step
 
 -- ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Paladin SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Boots
--- #name Sacred Shield
+RXPGuides.RegisterGuide([[
+#classic
+<< Paladin SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Sacred Shield
 
 -- Sacred Shield
 
-
--- ]])
+step
+    .train 416028,1
+    .zone Desolace >>Travel to |cFFfa9602Desolace|r
+step
+    .train 416028,1
+    .goto Desolace,66.5,7.7
+    >>Click on the Book to obtain |cRXP_LOOT_Libram of Deliverance|r
+step
+    .train 416028,1
+    .equip 18,213513 >> Equip |T134916:0|t[Libram of Deliverance]
+    .cast 1044,5 >>Use |T135968:0|t[Blessing of Freedom] on other 5 other players
+step
+    .train 416028 >>Click on |T134916:0|t[Libram of Deliverance] to learn |T236249:0|t[Sacred Shield]
+]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
