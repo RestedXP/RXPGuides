@@ -2097,16 +2097,37 @@ step
 
 -- ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- #group RestedXP Rune & Books Guide
--- #subgroup Waist
--- #name Hot Streak
+RXPGuides.RegisterGuide([[
+#classic
+<< Mage SoD
+#group RestedXP Rune & Books Guide
+#subgroup Waist
+#name Hot Streak
 
 -- Hot Streak
--- << Mage SoD
 
--- ]])
+step
+    .train 401749,1
+    #loop
+    .goto Alterac Mountains,48.8,83.6
+    .goto Alterac Mountains,47.6,83.8
+    >>Kill |cRXP_ENEMY_Syndicate Thieves|r loot him for |T134329:0|t|cRXP_LOOT_Singed Note|r
+    .collect 213421,1
+    .mob Syndicate Thieves
+step
+    .train 401749,1
+    .goto Alterac Mountains,59.7,45.6
+    .cast 2120 >> Use |T135826:0|t[Flamestrike] on the two air pumps to trigger the spawning of the |cRXP_ENEMY_Ancient Fire Elemental.|r
+    .mob Ancient Fire Elemental
+step
+    .train 401749,1
+    >>Kill |cRXP_ENEMY_Ancient Fire Elemental|r and loot him for |cRXP_LOOT_Spell Notes: Hot Streak|r
+    .collect 213113,1
+    .mob Ancient Fire Elemental
+step
+    .train 401749 >>|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Hot Streak|r] to learn |T236218:0|t[Hot Streak]
+    .use 213123
+]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
