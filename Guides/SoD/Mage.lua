@@ -2206,7 +2206,7 @@ step
     .train 401752,1
     .zone Desolace >>Travel to |cFFfa9602Desolace|r
 step
-    .goto Desolace,46.6,55.1
+    .goto Desolace,47.54,54.6
     >>Click on the |cRXP_PICK_Extinguished Campfire|r to accept a quest
     .accept
 step
@@ -2238,6 +2238,7 @@ step
     .train 415934,1
     .zone Desolace >>Travel to |cFFfa9602Desolace|r
 step
+    .goto Desolace,54.7,27.9
     .train 415934,1
     >>Click on the Book |T133733:0|t[Demons and You]
     .collect 215817,1
@@ -2245,6 +2246,7 @@ step
     .train 415934,1
     .zone Arathi Highlands >>Travel to |cFFfa9602Arathi Highlands|r
 step
+    .goto Arathi Highlands,72.8,65.0
     .train 415934,1
     >>Click on the Book |T134331:0|t[A Web of Lies: Debunking Myths and Legends]
     .collect 215816,1
@@ -2252,6 +2254,7 @@ step
     .train 415934,1
     .zone Dustwallow Marsh >>Travel to |cFFfa9602Dustwallow Marsh|r
 step
+    .goto Dustwallow Marsh,56.5,21.5
     .train 415934,1
     >>Click on the Book |T133740:0|t[RwlRwlRwlRwl!]
     .collect 215822,1
@@ -2260,6 +2263,7 @@ step
     .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
 step
     .train 415934,1
+    .goto Thousand Needles,33.7,39.8
     >>Click on the Book |T133740:0|t[Geomancy: The Stone-Cold Truth]
     .collect 215683,1
 step
@@ -2267,6 +2271,7 @@ step
     .zone Alterac Mountains >>Travel to |cFFfa9602Alterac Mountains|r
 step
     .train 415934,1
+    .goto Alterac Mountains,48.2,57.9
     >>Click on the Book |T133736:0|t[Defensive Magics 101]
     .collect 215815,1
 step
