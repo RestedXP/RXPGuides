@@ -682,28 +682,32 @@ RXPGuides.RegisterGuide([[
 << Druid SoD
 #group RestedXP Rune & Books Guide
 #subgroup Boots
-#title
-#name Dreamstate - 35 (Desolace)
+#name Dreamstate - 33 (Desolace)
 
 step
+    #completewith next
     .train 410060,1
-    .zone Desolace >>Travel to |cFFfa9602Desolace|r
+    .zone Desolace >>Travel to Desolace
 step
     .train 410060,1
     #loop
     .goto Desolace,70.6,39.8,25,0
     .goto Desolace,69.2,46.6,25,0
     .goto Desolace,68.6,52.6,25,0
-    >>Kill |cRXP_ENEMY_Kolkar Centaur|r and loot them for |T134187:0|t|cRXP_LOOT_Desiccated Seed Pod|r
+    >>Kill |cRXP_ENEMY_Kolkars|r and loot them for |T134187:0|t[Desiccated Seed Pod]
     .collect 213574,1
     .mob Kolkar Centaur
+    .mob Kolkar Mauler
+    .mob Kolkar Scout
+    .mob Kolkar Windchaser
 step
     .train 410060,1
+    >>Swim in the water and wait until the pod turns into |T134208:0|t[Satyrweed Bulb]
     .goto Desolace,70.8,71.8
-    >>Take the |T134187:0|[Desiccated Seed Pod] into the Waters wait until it turns into |T206966:0|t[Satyrweed Bulb]
+    .collect 206966,1
 step
     .goto Desolace,75.5,20.7
-    .train 410060 >>Click on the |cRXP_PICK_Sandy Loam|r to plant the seed to get the rune of |T136090:0|t[Dreamstate]
+    .train 410060 >>Click on the |cRXP_PICK_Sandy Loam|r to plant the seed to learn |T136090:0|t[Dreamstate]
 ]])
 
 RXPGuides.RegisterGuide([[
