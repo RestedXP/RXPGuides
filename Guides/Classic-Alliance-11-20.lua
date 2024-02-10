@@ -2530,6 +2530,7 @@ step
     .goto Felwood,19.10,20.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .turnin 4728 >> Turn in Beached Sea Creature
+    .target Gwennyth Bly'Leggonde
 step
 #map Darkshore
     .goto Darkshore,36.71,44.98,5,0
