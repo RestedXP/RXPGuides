@@ -1465,18 +1465,6 @@ step
 -- << Paladin SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Waist
--- #name Infusion of Light
-
--- Infusion of Light
-
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Paladin SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Waist
 -- #name Sheath of Light
 
 -- Sheath of Light
@@ -1520,18 +1508,6 @@ step
 step
     .train 416028 >>Click on |T134916:0|t[Libram of Deliverance] to learn |T236249:0|t[Sacred Shield]
 ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Paladin SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Boots
--- #name The Art of War
-
--- The Art of War
-
-
--- ]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
