@@ -2094,18 +2094,6 @@ step
     .use 217161
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- #group RestedXP Rune & Books Guide
--- #subgroup Waist
--- #name Missile Barrage
-
--- Missile Barrage
-
--- << Mage SoD
-
--- ]])
-
 RXPGuides.RegisterGuide([[
 #classic
 << Mage SoD
