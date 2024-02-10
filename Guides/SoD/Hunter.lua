@@ -972,19 +972,6 @@ step
     .train 410114 >> Use [|cRXP_FRIENDLY_Rune of Expose Weakness|r] to learn |T132353:0|t[Expose Weakness]
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Hunter SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Waist
--- #name Melee Specialist
-
--- Melee Specialist
-
-
-
--- ]])
-
 RXPGuides.RegisterGuide([[
 #classic
 << Hunter SoD
@@ -1025,18 +1012,6 @@ step
 -- #name Invigoration
 
 -- Invigoration
-
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Hunter SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Boots
--- #name Trap Launcher
-
--- Trap Launcher
 
 
 -- ]])
