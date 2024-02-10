@@ -992,18 +992,6 @@ step
 --     .use 213140
 -- ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Priest SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Waist
--- #name Mind Spike
-
--- Mind Spike
-
-
--- ]])
-
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
@@ -1106,18 +1094,6 @@ step
 step
     .train 402855 >> Offer the |T136222:0|t[Swamp Echo] to the Warrior Statue, the |T136222:0|t[Arathi Echo] to the Mage Statue, the |T136222:0|t[Theramore Echo] to the Paladin Statue, and finally, the |T136222:0|t[Graveyard Echo] to the Priest Statue in this specific order. If done correctly, a sphere will appear in the center. Clicking this sphere will grant you the |T136222:0|t[Memory of a Leader's Betrayal] use it to learn |T135936:0|t[Pain Suppression]
 ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Priest SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Boots
--- #name Spirit of the Redeemer
-
--- Spirit of the Redeemer
-
-
--- ]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
