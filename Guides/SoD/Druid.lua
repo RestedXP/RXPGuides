@@ -715,41 +715,59 @@ RXPGuides.RegisterGuide([[
 << Druid SoD
 #group RestedXP Rune & Books Guide
 #subgroup Boots
-#name Survival Instincts - 35 (Azeroth)
+#name Survival Instincts - 35 (Swamp of Sorrows)
 
 step
-    .train 410027,1
-    .zone Swamp of Sorrows >>Travel to |cFFfa9602Swamp of Sorrows|r
+    #completewith next
+    .zone Swamp of Sorrows >>Travel to Swamp of Sorrows
 step
+    .train 410027,1
     .goto Swamp of Sorrows,25.0,54.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r and buy |T133653:0|t[Entomology Starter Kit] |cRXP_WARN_it will cost 50silver.|r
     .collect 213565,1
     .target Amaryllis Webb
 step
     .train 410027,1
-    .zone Stranglethorn Vale >>Travel to |cFFfa9602Stranglethorn Vale|r and use the |T133653:0|t[Entomology Starter Kit]
+    >>Open the |T133653:0|t[Entomology Starter Kit]
     .use 213565
+    .collect 213562,1
 step
+    #completewith next
+    .zone Stranglethorn Vale >>Travel to Stranglethorn Vale
+step
+    .train 410027,1
+    >>Use the |T134325:0|t[Bug Catching Net] on the |cRXP_ENEMY_Arbor Tarantula|r on the tree stump
     .goto Stranglethorn Vale,44.6,19.8
-    >>Catch the Bug on the Treestump
+    .use 213562
+    .collect 213566,1
+    .mob Arbor Tarantula
+step
+    #completewith next
+    .zone Arathi Highlands >>Travel to Arathi Highlands
 step
     .train 410027,1
-    .zone Arathi Highlands >>Travel to |cFFfa9602Arathi Highlands|r
-step
+    >>Use the |T134325:0|t[Bug Catching Net] on a |cRXP_ENEMY_Hay Weevil|r
     .goto Arathi Highlands,30.7,28.7
-    >>Catch the Bug near Northfold Manor
+    .use 213562
+    .collect 213568,1
+    .mob Hay Weevil
 step
-    .train 410060,1
-    .zone Desolace >>Travel to |cFFfa9602Desolace|r
-step
-    .goto Desolace,51.2,59.9
-    >>Catch the Bug near the Kodo Graveyard
+    #completewith next
+    .zone Desolace >>Travel to Desolace
 step
     .train 410027,1
-    .zone Swamp of Sorrows >>Travel to |cFFfa9602Swamp of Sorrows|r
+    >>Use the |T134325:0|t[Bug Catching Net] on a |cRXP_ENEMY_Flesh Picker|r
+    .goto Desolace,51.2,59.9
+    .use 213562
+    .collect 213567,1
+    .mob Flesh Picker
+step
+    #completewith next
+    .zone Swamp of Sorrows >>Travel to Swamp of Sorrows
 step
     .goto Swamp of Sorrows,25.0,54.2
     .train 410027 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r to obtain the rune |T132266:0|t[Survival Instincts]
+    .skipgossip 217412,1
     .target Amaryllis Webb
 ]])
 
