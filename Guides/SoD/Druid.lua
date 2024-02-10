@@ -631,31 +631,40 @@ RXPGuides.RegisterGuide([[
 #classic
 << Druid SoD
 #group RestedXP Rune & Books Guide
-#subgroup Waist
-#name Berserk - 27 (Thousand Needles)
+#subgroup Belt
+#name Berserk - 28 (Thousand Needles)
 
 step
-    .train 417141,1
-    .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
+    #completewith next
+    .train 424760,1
+    .zone Thousand Needles >>Travel to Thousand Needles
 step
-    .train 417141,1
-    .goto Thousand Needles
-    .aura 435081,1 >>Lookout for a Bear Statue on the ground when nearby you'll receive the buff |T435081:0|t[Beastly Effigy]
+    .train 424760,1
+    .goto Thousand Needles,68.7,55.2
+    .aura 435081,1 >>Lookout for the Bear Statue. When nearby you'll receive the buff |T134912:0|t[Beastly Effigy]
 step
-    .train 417141,1
-    .cast 5209 >> Use |T132117:0|t[Challenging Roar] Near the Bear Statue to spawn |cRXP_ENEMY_Zai'enki|r
+    #completewith next
+    .train 424760,1
+    .cast 5209 >> Use |T132117:0|t[Challenging Roar] near the Bear Statue to spawn |cRXP_ENEMY_Zai'enki|r
 step
-    .train 417141,1
-    >>Kill |cRXP_ENEMY_Zai'enki|r and loot him for |cRXP_LOOT_Idol of the Heckler|r
+    .train 424760,1
+    .goto Thousand Needles,68.7,55.2
+    >>Kill |cRXP_ENEMY_Zai'enki|r |cRXP_WARN_(lvl 28 elite)|r and loot him for |T134912:0|t[|cRXP_FRIENDLY_Idol of the Heckler|r]
     .collect 213594,1
+    .mob Zai'enki
 step
-    .train 417141,1
-    .equip 18,213594 >> Equip |T134912:0|t[Idol of the Heckler]
+    .train 424760,1
+    .equip 18,213594 >> Equip the |T134912:0|t[|cRXP_FRIENDLY_Idol of the Heckler|r]
 step
-    .train 417141,1
-    .cast 5209 >> Use |T132117:0|t[Challenging Roar] and taunt 2 enemies simultaneously then kill 1 one of them; repeat this with 5 enemies.
+    #title Gain 5x |T237556:0|t[Inspiration]
+    .itemcount 213594,1
+    .train 424760,1
+    .aura 408953,5+ >> Use |T132117:0|t[Challenging Roar] and taunt 2 enemies simultaneously then kill one of them; repeat this 5 times. |cRXP_WARN_You will loose all stacks after dying|r
+    *|cRXP_WARN_The easiest way is to fight one mob until it is mostly dead, pull a second one and then kill the first one while the taunt is active|r.
 step
-    .train 417141 >> Use |T134912:0|t[Idol of the Heckler] to learn |T417141:0|t[Berserk]
+    .itemcount 213594,1
+    .use 213594
+    .train 424760 >> Use |T134912:0|t[|cRXP_FRIENDLY_Idol of the Heckler|r] to learn |T236149:0|t[Berserk]
 ]])
 
 -- RXPGuides.RegisterGuide([[
