@@ -1069,34 +1069,10 @@ step << Warlock
 -- #classic
 -- << Warlock SoD
 -- #group RestedXP Rune & Books Guide
--- #subgroup Belt
--- #name Shadow and Flame
-
--- Shadow and Flame
-
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Warlock SoD
--- #group RestedXP Rune & Books Guide
 -- #subgroup Boots
 -- #name Dance of the Wicked
 
 -- Dance of the Wicked
-
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Warlock SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Boots
--- #name Demonic Knowledge
-
--- Demonic Knowledge
 
 
 -- ]])
