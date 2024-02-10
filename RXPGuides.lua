@@ -1649,10 +1649,8 @@ function addon.stepLogic.XpRateCheck(step)
                 else
                     rate = 1.5
                 end
-            elseif addon.settings.profile.season == 2 and addon.settings.profile.debug then
-                if UnitLevel("player") < 25 then
-                    rate = 1.5
-                end
+            elseif addon.settings.profile.season == 2 then
+                rate = 1.5
             end
         end
         local xpmin, xpmax = 1, 0xfff
