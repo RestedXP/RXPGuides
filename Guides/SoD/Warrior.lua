@@ -1294,7 +1294,7 @@ RXPGuides.RegisterGuide([[
 << Alliance Warrior SoD
 #group RestedXP Rune & Books Guide
 #subgroup Boots
-#name Enraged Regeneration
+#name Enraged Regeneration - 35 (Azeroth)
 
 --Enraged Regeneration
 
@@ -1360,10 +1360,14 @@ step
 -- << Alliance Warrior SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Boots
--- #name Intervene
+-- #name Intervene - 32 (Thousand Needles)
 
--- Intervene
+-- -- Intervene
 
+-- step
+--     .goto Thousand Needles,66.0,88.0
+--     >>|T135358:0|t[Execute], |T136080:0|t[Taunt], |T132357:0|t[Shield Bash]
+--     .mob Combat Dummy
 -- ]])
 
 -- RXPGuides.RegisterGuide([[
@@ -1371,10 +1375,12 @@ step
 -- << Warrior SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Boots
--- #name Rallying Cry
+-- #name Rallying Cry - 40 (Badlands)
 
--- Rallying Cry
-
+-- -- Rallying Cry
+-- step
+--     .train 426491 >>Kill the |cRXP_ENEMY_Wandering Swordsman|r somewhere in Badlands |cRXP_WARN_this a rare|r. Loot him Rune of Rallying Cry
+--     .target Wandering Swordsman
 -- ]])
 
 
@@ -1449,7 +1455,7 @@ RXPGuides.RegisterGuide([[
 << Warrior SoD
 #group RestedXP Rune & Books Guide
 #subgroup Spell Books
-#title
+#title Commanding Shout
 #name Commanding Shout - 27-40 (Scarlet Monastery)
 
 -- Commanding Shout

@@ -2030,7 +2030,7 @@ RXPGuides.RegisterGuide([[
 << Mage SoD
 #group RestedXP Rune & Books Guide
 #subgroup Waist
-#title
+#title Spellfrost Bolt/Frostfire Bolt
 #name Spellfrost Bolt/Frostfire Bolt - 37 (Stranglethorn Vale)
 
 
@@ -2199,7 +2199,7 @@ RXPGuides.RegisterGuide([[
 << Mage SoD
 #group RestedXP Rune & Books Guide
 #subgroup Boots
-#name Brain Freeze
+#name Brain Freeze - 35 (Azeroth)
 
 -- Brain Freeze
 

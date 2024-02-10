@@ -2263,7 +2263,7 @@ RXPGuides.RegisterGuide([[
 << Horde Shaman SoD
 #group RestedXP Rune & Books Guide
 #subgroup Boots
-#title
+#title Decoy Totem
 #name Decoy Totem - 27 (Thousand Needles)
 
 -- Decoy Totem
@@ -2306,7 +2306,7 @@ RXPGuides.RegisterGuide([[
 << Horde Shaman SoD
 #group RestedXP Rune & Books Guide
 #subgroup Boots
-#title
+#title Spirit of the Alpha
 #name Spirit of the Alpha - 27 (Thousand Needles)
 
 -- Spirit of the Alpha

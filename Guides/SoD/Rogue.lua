@@ -1429,7 +1429,7 @@ RXPGuides.RegisterGuide([[
 << Rogue SoD
 #group RestedXP Rune & Books Guide
 #subgroup Waist
-#title
+#title Shuriken Toss
 #name Shuriken Toss - 32 (Swamp of Sorrows)
 
 -- Shuriken Toss
@@ -1461,7 +1461,7 @@ RXPGuides.RegisterGuide([[
 << Rogue SoD
 #group RestedXP Rune & Books Guide
 #subgroup Boots
-#title
+#title Rolling with the Punches
 #name Rolling with the Punches - 27 (Thousand Needles)
 
 -- Rolling with the Punches
@@ -1516,7 +1516,7 @@ RXPGuides.RegisterGuide([[
 << Rogue SoD
 #group RestedXP Rune & Books Guide
 #subgroup Skill Books
-#title
+#title Redirect
 #name Redirect - 27-40 (Scarlet Monastery)
 
 -- Redirect

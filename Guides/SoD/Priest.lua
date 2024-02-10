@@ -1184,7 +1184,7 @@ RXPGuides.RegisterGuide([[
 << Priest SoD
 #group RestedXP Rune & Books Guide
 #subgroup Skillbooks
-#title
+#title Shadowfiend/Increased Fortitude
 #name Shadowfiend/Increased Fortitude - 27-40 (Scarlet Monastery)
 
 step

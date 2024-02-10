@@ -1501,7 +1501,7 @@ RXPGuides.RegisterGuide([[
 << Paladin SoD
 #group RestedXP Rune & Books Guide
 #subgroup Boots
-#title
+#title Sacred Shield
 #name Sacred Shield - 30 (Desolace)
 
 -- Sacred Shield

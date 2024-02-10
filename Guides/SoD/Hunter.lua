@@ -929,7 +929,7 @@ RXPGuides.RegisterGuide([[
 << Hunter SoD
 #group RestedXP Rune & Books Guide
 #subgroup Waist
-#title
+#title Expose Weakness
 #name Expose Weakness - 40 (Azeroth)
 
 -- Expose Weakness
@@ -1070,7 +1070,7 @@ RXPGuides.RegisterGuide([[
 << Hunter SoD
 #group RestedXP Rune & Books Guide
 #subgroup Skill Books
-#title
+#title Treatise on Aspect of the Viper
 #name Treatise on Aspect of the Viper - 27-40 (Scarlet Monastery)
 
 -- Rune of Aspect of the Viper
