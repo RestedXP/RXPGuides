@@ -1593,15 +1593,6 @@ step
 --XX Cast ID may be wrong, may need to be checked
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Horde Shaman SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Chest
--- #name Two-Handed Mastery
-
--- ]])
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
@@ -2243,18 +2234,6 @@ step
 -- #name Power Surge
 
 -- Power Surge
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Horde Shaman SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Boots
--- #name Ancestral Awakening
-
--- Ancestral Awakening
-
 
 -- ]])
 
