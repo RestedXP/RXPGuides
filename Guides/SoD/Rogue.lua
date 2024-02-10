@@ -1405,18 +1405,6 @@ step
 -- << Rogue SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Waist
--- #name Poisoned Knife
-
--- Poisoned Knife
-
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Rogue SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Waist
 -- #name Shadowstep
 
 -- Shadowstep
