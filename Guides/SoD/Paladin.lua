@@ -1464,55 +1464,6 @@ step
 -- #classic
 -- << Paladin SoD
 -- #group RestedXP Rune & Books Guide
--- #subgroup Waist
--- #name Sheath of Light
-
--- Sheath of Light
-
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Paladin SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Boots
--- #name Guarded by the Light
-
--- Guarded by the Light
-
-
--- ]])
-
-RXPGuides.RegisterGuide([[
-#classic
-<< Paladin SoD
-#group RestedXP Rune & Books Guide
-#subgroup Boots
-#title Sacred Shield
-#name Sacred Shield - 30 (Desolace)
-
--- Sacred Shield
-
-step
-    .train 416028,1
-    .zone Desolace >>Travel to |cFFfa9602Desolace|r
-step
-    .train 416028,1
-    .goto Desolace,66.5,7.7
-    >>Click on the Book to obtain |cRXP_LOOT_Libram of Deliverance|r
-step
-    .train 416028,1
-    .equip 18,213513 >> Equip |T134916:0|t[Libram of Deliverance]
-    .cast 1044,5 >>Use |T135968:0|t[Blessing of Freedom] on other 5 other players
-step
-    .train 416028 >>Click on |T134916:0|t[Libram of Deliverance] to learn |T236249:0|t[Sacred Shield]
-]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Paladin SoD
--- #group RestedXP Rune & Books Guide
 -- #subgroup Bracers
 -- #name Improved Hammer of Wrath
 
@@ -1601,4 +1552,178 @@ step
 step
     .train 435984 >>|cRXP_WARN_Use the|r |T133745:0|t|cRXP_LOOT_[Testament of Enhanced Blessings]|r |cRXP_WARN_to learn|r |T236248:0|t[Enhanced Blessings]
     .use 216738
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Paladin SoD
+#group RestedXP Rune & Books Guide
+#subgroup Belt
+#name Sheath of Light - 40
+
+step
+    #completewith next
+    .zone Desolace >>Travel to Desolace
+step
+    .train 426178,1
+    >>|TInterface/cursor/crosshair/interact.blp:20|tPick up the |cRXP_LOOT_Broken Warhammer|r. Click it in your bags
+    .goto Desolace,52.6,84.8
+    .collect 215441,1
+    .accept 79939 >>Accept The Broken Hammer
+step
+    .train 426178,1
+    #loop
+    .goto Desolace,52.6,85.6,40,0
+    .goto Desolace,55.6,70.4,40,0
+    .goto Desolace,47,2,75.2,60,0
+    >>Kill |cRXP_ENEMY_Burning Blade Summoners|r. Loot them for the |T133471:0|t[Torn Letter]
+    .collect 216956,1
+    .mob Burning Blade Summoner
+step
+    #completewith next
+    .zone Stormwind City >>Travel to Stormwind
+step
+    .train 426178,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katherine the Pure|r inside the Cathedral
+    .goto Stormwind City,37.8,31.6
+    .turnin 79939 >>Turn in The Broken Hammer
+    .accept 79940 >>Accept A Lost Brother
+step
+    .train 426178,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katherine the Pure|r again
+    .goto Stormwind City,37.8,31.6
+    .skipgossip 5492,1
+    .complete 79940,1
+    .turnin 79940 >>Turn in A Lost Brother
+step
+    #completewith next
+    .zone Wetlands >>Travel to Menethil Harbor
+step
+    .train 426178,1
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harold Riggs|r
+    *|cRXP_WARN_Afterwards swim along the coast to the waypoint location|r
+    .goto Wetlands,8.2,58.6,0
+    .goto Wetlands,8.2,58.6,5,0
+    .goto Eastern Kingdoms,41.9,59.0
+    .subzoneskip 207
+step
+    .train 426178,1
+    *|cRXP_WARN_Swim to the waypoint location|r. 
+    *|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Slain Scarlet Crusader|r. 
+    >>Kill the |cRXP_ENEMY_Scarlet Crusade Assassin|r. Loot it for the |T133471:0|t[Orders from the Grand Crusade]. Click it in your bags
+    .goto Eastern Kingdoms,41.9,59.0
+    .skipgossip
+    .collect 215468,1
+    .accept 79945 >>Accept Orders from the Grand Crusade
+    .use 215468
+    .target Slain Scarlet Crusader
+    .mob Scarlet Cursade Assassin
+step
+    #completewith next
+    .zone Stormwind City >>Travel to Stormwind
+step
+    .train 426178,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katherine the Pure|r inside the Cathedral
+    .goto Stormwind City,37.8,31.6
+    .turnin 79945 >>Turn in Orders from the Grand Crusade
+    .accept 79946 >>Accept A Brother in Need
+step
+    .train 426178,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katherine the Pure|r again
+    .goto Stormwind City,37.8,31.6
+    .skipgossip 5492,3
+    .complete 79946,1 --Learn more about Aeonas from Katherine
+step
+    .train 426178,1
+    >>|cRXP_WARN_Look for a group for Scarlet Monastery and kill the last boss. 
+    *Afterwards go into the chamber behind the boss and talk to |cRXP_FRIENDLY_Aenoas|r
+    .complete 79946,2 --Find Aeonas in the Scarlet Monastery
+    .turnin 79946 >>Turn in A Brother in Need
+    .accept 79963 >>Accept By THe Light's Grace
+    .target Aeonas
+step
+    .train 426178,1
+    >>Heal up |cRXP_FRIENDLY_Aenoas|r
+    .complete 79963,1 --Heal Aeonas
+    .target Aeonas
+step
+    .train 426178,1
+    >>Now you have to kill the last boss in Scarlet Monastery. Afterwards go into the chmaber behind the boss and talk to |cRXP_FRIENDLY_Aenoas|r
+    .complete 79946,2 --Find Aeonas in the Scarlet Monastery
+    .turnin 79963 >>Turn in By THe Light's Grace
+    .accept 79970 >>Accept Aeonas the Vindicated
+    .target Aeonas
+step
+    #completewith next
+    .zone Stormwind City >>Travel to Stormwind
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aeonas the Vindicated|r inside the Cathedral to learn |T236263:0|t[Sheath of Light]
+    .goto Stormwind City,37.8,31.6
+    .complete 79970,1 --Meet Aeonas at the Cathedral of Light in Stormwind
+    .turnin 79970 >>Turn in Aeonas the Vindicated
+    .target Aeonas the Vindicated
+
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Paladin SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Guarded by the Light - 30 (Alterac Mountains)
+
+step
+    .train 416035,1
+    .train 19752 >>You have to learn |T136106:0|t[Divine Intervention] before you can obtain this rune
+    .collect 17033,1 >>You also need at least 1 |T135259:0|t[Symbol of Divinity] (from any reagent vendor)
+step
+    #completewith next
+    .zone Alterac Mountains >>Travel to the Alterac Mountains
+step
+    .train 416035,1
+    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with the |cRXP_FRIENDLY_Frozen Remains|r
+    *|cRXP_WARN_Make sure to bring another healer who can ressurect you|r.
+    .goto Alterac Mountains,39.8,60.8
+    .collect 213452,1
+step
+    .train 416035,1
+    >>Use |T136106:0|t[Divine Intervention] |cRXP_WARN_on the player that will ressurect you|r
+    .goto Alterac Mountains,39.8,60.8
+    .cast 19752
+step
+    .train 416035,1
+    >>The other player has to remove their |T136106:0|t[Divine Intervention] and ressurect you to get the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Guardian|r]
+    .goto Alterac Mountains,39.8,60.8
+    .collect 213132,1
+step
+    .use 213132
+    .itemcount 213132,1
+    .train 416035 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Guardian|r] to learn |T237537:0|t[Guarded by the Light]
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Paladin SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Sacred Shield - 30 (Desolace)
+
+-- Sacred Shield
+
+step
+    #completewith next
+    .zone Desolace >>Travel to Desolace
+step
+    .train 416028,1
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the glowing book to obtain |T134916:0|t[|cRXP_FRIENDLY_Libram of Deliverance|r]
+    .goto Desolace,66.5,7.7
+    .collect 213513,1
+step
+    .train 416028,1
+    .equip 18,213513 >> Equip |T134916:0|t[Libram of Deliverance]
+    .aura 408828,1+ >> Use |T135968:0|t[Blessing of Freedom] on 5 other players |cRXP_WARN_while they're movement impaired|r
+    *|cRXP_WARN_Good spots are quest areas with mobs that root players (lake in Ashenvale, Swamp of Sorrows)|r
+step
+    .use 213513
+    .train 416028 >>Use the |T134916:0|t[|cRXP_FRIENDLY_Libram of Deliverance|r] to learn |T236249:0|t[Sacred Shield]
 ]])
