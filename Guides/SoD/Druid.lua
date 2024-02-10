@@ -627,17 +627,6 @@ step
 --     .use 216745
 -- ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Druid SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Waist
--- #name Eclipse
-
-
-
--- ]])
-
 RXPGuides.RegisterGuide([[
 #classic
 << Druid SoD
@@ -707,16 +696,6 @@ step
     .goto Desolace,75.5,20.7
     .train 410060 >>Click on the |cRXP_PICK_Sandy Loam|r to plant the seed to get the rune of |T136090:0|t[Dreamstate]
 ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Druid SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Boots
--- #name King of the Jungle
-
-
--- ]])
 
 RXPGuides.RegisterGuide([[
 #classic
