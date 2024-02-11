@@ -1400,17 +1400,132 @@ step
     .itemcount 208772,1
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Rogue SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Waist
--- #name Shadowstep
+RXPGuides.RegisterGuide([[
+#classic
+<< Rogue SoD
+#group RestedXP Rune & Books Guide
+#subgroup Belt
+#title Shadowstep
+#name Shadowstep - 30 (Silverpine Forest)
 
--- Shadowstep
+step
+    #completewith next
+    .zone Silverpine Forest >>Travel to Silverpine Forest
+step
+    .train 400101,1
+    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with the |cRXP_PICK_Dead Drop|r chest on the ground
+    .goto Silverpine Forest,47.114,70.974
+    .accept 78699 >>Accept The Eye of Bhossca
+step
+    #completewith next
+    .zone Tirisfal Glades >>Travel to Tirisfal Glades to the Scarlet Monastery
+step
+    >>Open the |cRXP_PICK_Supply Locker|r |cRXP_WARN_inside the stable|r to get the |T132665:0|t[Scarlet Initiate's Uniform]
+    .goto Tirisfal Glades,81.2,32.12
+    .collect 210955,1
+    .train 400101,1
+step
+    #completewith next
+    .goto Eastern Kingdoms,47.44,19.69,10,0
+    .goto Eastern Kingdoms,47.73,19.39,5 >> Enter the Scarlet Monastery: |cRXP_WARN_Graveyard|r dungeon |cRXP_WARN_ALONE|r
+step
+    >>Use |T133644:0|t[Pick Pocket] on a |cRXP_ENEMY_Scarlet Scryer|r to get |T134241:0|t[Scryer's Key]
+    *|cRXP_WARN_Make use of|r |T132289:0|t[Distract] to avoid being detected
+    .goto Eastern Kingdoms,47.73,19.39
+    .collect 210963,1
+    .mob Scarlet Scryer
+    .train 400101,1
+step
+    #completewith next
+    .goto Eastern Kingdoms,47.79,19.59,5 >> Enter the Scarlet Monastery: |cRXP_WARN_Library|r dungeon |cRXP_WARN_ALONE|r
+step
+    >>|cRXP_WARN_Run to the hallway before the last boss|r, and loot the |cRXP_PICK_Personal Letterbox|r on the left for the |T134331:0|t[Confidential Message]
+    .cast 427592 >>Use the |T132665:0|t[Scarlet Initiate's Uniform] to make the NPCs neutral
+    .goto Eastern Kingdoms,47.79,19.59
+    .collect 210967,1
+    .train 400101,1
+step
+    #completewith next
+    .goto Eastern Kingdoms,47.73,19.39,5 >> Enter the Scarlet Monastery: |cRXP_WARN_Graveyard|r dungeon |cRXP_WARN_ALONE|r
+step
+    >>|cRXP_WARN_Go to the outside area inside the dungeon and look for a bench between two statues on the right and left walls|r
+    *|cRXP_WARN_On both sides|r use /sit (doable while in stealth) on the benches until the emote |cRXP_WARN_"You hear the sound of stone moving"|r appears in chat.
+    *Afterwards go to the Tomb next to |cRXP_WARN_the right wall|r and open the |cRXP_PICK_Stone Coffer|r for the |T134242:0|t[Reliquary Key]
+    .goto Eastern Kingdoms,47.79,19.59
+    .collect 210968,1
+    .train 400101,1
+step
+    #completewith next
+    .goto Eastern Kingdoms,47.79,19.59,5 >> Enter the Scarlet Monastery: |cRXP_WARN_Library|r dungeon |cRXP_WARN_ALONE|r
+step
+    >>|cRXP_WARN_Run to the "Gallery of Treasures"|r, and loot the |cRXP_PICK_Padlocked Reliquary|r in the first room on the left for the |T134331:0|t[Eye of Bhossca]
+    .cast 427592 >>Use the |T132665:0|t[Scarlet Initiate's Uniform] to make the NPCs neutral
+    .goto Eastern Kingdoms,47.79,19.59
+    .complete 78699,1 --1/1 Eye of Bhossca
+    .train 400101,1
+step
+    #completewith next
+    .zone Silverpine Forest >>Travel to Silverpine Forest
+step
+    .train 400101,1
+    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with the |cRXP_PICK_Dead Drop|r chest on the ground
+    .goto Silverpine Forest,47.1,71.1
+    .turnin 78699 >>Turn in The Eye of Bhossca
+step
+    #completewith next
+    +|cRXP_WARN_You now need to enter a capital city to receive mail from *C*|r
+    .train 400101,1
+step << Horde
+    .goto Silverpine Forest,45.62,42.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karos|r
+    .fly Undercity >> Fly to the Undercity
+    .target Karos Razok
+    .zoneskip Undercity
+    .train 400101,1
+step << Alliance
+    >>Run to Southshore
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darla Harris|r
+    .goto Hillsbrad Foothills,49.338,52.272
+    .fly Ironforge >> Fly to Ironforge
+    .target Darla Harris
+    .train 400101,1
+step
+    .goto Undercity,68.290,38.043,5 >> |cRXP_WARN_Enter Undercity. Check your mailbox for the letter from *C* and take it with you|r << Horde
+    .goto Ironforge,71.485,72.280,5 >> |cRXP_WARN_Enter Ironforge. Check your mailbox for the letter from *C* and take it with you. Skip this step if you're doing it in another major city|r << Alliance
+    .train 400101,1
+step
+    #completewith next
+    +|cRXP_WARN_Open your mailbox to read the mail from *C* once it has arrived. Fly back to Silverpine when you're ready|r << Horde
+    +|cRXP_WARN_Open your mailbox to read the mail from *C* once it has arrived. Fly back to Southshore then make your way to Silverpine when you're ready|r << Alliance
+step << Horde
+    .goto Undercity,63.27,48.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Michael|r
+    .fly The Sepulcher>> Fly to The Sepulcher
+    .target Michael Garrett
+    .zoneskip Silverpine Forest
+    .train 400101,1
+step << Alliance
+    .goto Ironforge,55.501,47.742
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
+    .fly Southshore >> Fly to Southshore
+    .target Gryth Thurden
+    .zoneskip Silverpine Forest
+    .train 400101,1
+step << Alliance
+    #completewith next
+    .zone Silverpine Forest >> Travel to Silverpine Forest
+    .train 400101,1
+step
+    .goto Silverpine Forest,47.114,70.974
+    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with the |cRXP_PICK_Dead Drop|r in for |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadwostep|r]
+    .collect 210979,1 --Rune of Shadowstep (1)
+    .train 400101,1
+step
+    .train 400101 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadwostep|r] to learn |T132303:0|t[Shadowstep]
+    .use 210979
+    .itemcount 210979,1
+]])
 
-
--- ]])
 RXPGuides.RegisterGuide([[
 #classic
 << Rogue SoD
