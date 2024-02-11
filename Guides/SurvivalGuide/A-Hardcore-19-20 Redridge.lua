@@ -1052,11 +1052,11 @@ step
 	.mob Redridge Brute
 step << Rogue
     .goto Redridge Mountains,52.10,45.24
-    +Cast |T136058:0|t[Pick Lock] to open the |cRXP_PICK_Practice Lockboxes|r until you reach 80 in |T136058:0|t[Lockpicking]
+    +Open the |cRXP_PICK_Practice Lockboxes|r until you reach 80 in |T136058:0|t[Lockpicking]
     .skill lockpicking,80,1
 step << Rogue
 	.goto Redridge Mountains,52.05,44.69
-    >> Cast |T136058:0|t[Pick Lock] to open |cRXP_PICK_Lucius's Lockbox|r. Loot it for the |cRXP_LOOT_Token of Thievery|r
+    >>Open |cRXP_PICK_Lucius's Lockbox|r. Loot it for the |cRXP_LOOT_Token of Thievery|r
     .complete 2282,1 --Token of Thievery
     .skill lockpicking,<80,1
 step

@@ -458,7 +458,7 @@ step << Druid
     >>Ascend the Aldrassil Tree
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mardant Strongoak|r
 	.turnin 3120 >> Turn in Verdant Sigil
-    .accept 77571 >> Accept Relics of the Kaldorei
+    .turnin -77571 >> Turn in Relics of the Kaldorei
     .train 8921 >>Train |T136096:0|t[Moonfire]
     .target Mardant Strongoak
 step
@@ -994,6 +994,13 @@ step << Druid
     .itemcount 2495,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.19
 step << Druid
+#xprate >1.49
+    .goto Teldrassil,56.142,61.714
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
+    .turnin 929 >> Turn in Crown of the Earth
+    .target Corithras Moonrage
+step << Druid
+#xprate <1.50
     .goto Teldrassil,56.142,61.714
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
     .turnin 929 >> Turn in Crown of the Earth
@@ -2042,7 +2049,7 @@ step
     .goto Darnassus,34.814,9.255
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Fandral Staghelm|r
     .turnin 935 >> Turn in Crown of the Earth
-    .turnin 940 >> Turn in Teldrassil << Hunter
+    .turnin -940 >> Turn in Teldrassil
     .target Arch Druid Fandral Staghelm
     .accept 952 >> Accept Grove of the Ancients
 step

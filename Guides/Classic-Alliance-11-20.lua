@@ -5995,6 +5995,15 @@ step
     .accept 118 >> Accept The Price of Shoes
 step
 .dungeon DM
+#xprate >1.49
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
+	.target Verner Osgood
+    .goto Redridge Mountains,30.97,47.27
+    .turnin 119 >> Turn in Return to Verner
+    .accept 124 >> Accept A Baying of Gnolls
+step
+.dungeon DM
+#xprate <1.5
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
 	.target Verner Osgood
     .goto Redridge Mountains,30.97,47.27
@@ -6044,7 +6053,7 @@ step
     .itemcount 1080,5 -- Tough Condor Meat (5)
     .itemcount 1081,5 -- Crisp Spider Meat (5)
     .target Chef Breanna
-step
+step << Warlock
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Martie Jainrose|r
 	.target Martie Jainrose
     .goto Redridge Mountains,21.85,46.32
@@ -6143,6 +6152,7 @@ step
     .collect 1081,5,92,1
     .mob Tarantula
 step
+    #xprate <1.5
     .goto Redridge Mountains,29.49,82.80,45,0
     .goto Redridge Mountains,32.52,81.78,45,0
     .goto Redridge Mountains,43.18,72.22,45,0
@@ -6192,20 +6202,19 @@ step
     .goto Redridge Mountains,41.52,54.68
     .complete 125,1 --Oslow's Toolbox (1)
 step
---TODO:Test 1.5
     .goto Redridge Mountains,49.0,70.0
-    .xp 20-7425 >> Grind until you are 7425 xp away from level 20 << !Rogue
-    .xp 20-8975 >> Grind until you are 8975 xp away from level 20 << Rogue
+    .xp 20-7687 >> Grind until you are 7687 xp away from level 20 << !Rogue
+    .xp 20-10012 >> Grind until you are 10012 xp away from level 20 << Rogue
 step << Rogue
     #completewith next
     .subzone 97 >> Travel to Alther's Mill
 step << Rogue
     .goto Redridge Mountains,52.10,45.24
-    +Cast |T136058:0|t[Pick Lock] to open the |cRXP_PICK_Practice Lockboxes|r until you reach 80 in |T136058:0|t[Lockpicking]
+    +Open the |cRXP_PICK_Practice Lockboxes|r until you reach 80 in |T136058:0|t[Lockpicking]
     .skill lockpicking,80,1
 step << Rogue
 	.goto Redridge Mountains,52.05,44.69
-    >> Cast |T136058:0|t[Pick Lock] to open |cRXP_PICK_Lucius's Lockbox|r. Loot it for the |cRXP_LOOT_Token of Thievery|r
+    >>Open |cRXP_PICK_Lucius's Lockbox|r. Loot it for the |cRXP_LOOT_Token of Thievery|r
     .complete 2282,1 --Token of Thievery
     .skill lockpicking,<80,1
 step
@@ -6274,6 +6283,7 @@ step << Rogue
 	#completewith InRR
 	.destroy 7907 >> Destroy the |T134328:0|t[Certificate of Thievery]. You don't need it
 step
+    #xprate <1.5
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r
 	.target Deputy Feldon
     .goto Redridge Mountains,30.73,59.99
