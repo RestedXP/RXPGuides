@@ -1095,14 +1095,48 @@ RXPGuides.RegisterGuide([[
 -- Dance of the Wicked
 
 step
+    .train 416017,1
+    #completewith next
+    .zone Desolace >>Travel to Desolace
+step
+    .train 416017,1
     .goto Desolace,74.5,13.4
     >>Kill the |cRXP_ENEMY_Reckless Warlock|r in Desolace |cRXP_WARN_ Please note, this is a rare enemy and there's a chance it may not be present.|r Loot him |T236297:0|t[Brimstone Carving]
     .collect 213583,1
-    .target Reckless Warlock
+    .mob Reckless Warlock
     .unitscan Reckless Warlock
 step
+    .train 416017,1
+    .cast 1949 >> Cast |T135818:0|t[Hellfire] to damage yourself below 70%. Afterwards |T236297:0|t[Brimstone Carving] will turn into the rune.
+step
+    .train 416017 >> Use the |T236295:0|t[Item] to learn |T236295:0|t[Dance of the Wicked]
+]])
 
+RXPGuides.RegisterGuide([[
+#classic
+<< Warlock SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Dance of the Wicked - 35 (Stranglethorn)
 
+-- Dance of the Wicked
+
+step
+    .train 416017,1
+    #completewith next
+    .zone Stranglethorn >>Travel to Stranglethorn
+step
+    .train 416017,1
+    .goto Stranglethorn,31.2,47.4
+    >>Kill the |cRXP_ENEMY_Reckless Warlock|r in Desolace |cRXP_WARN_ Please note, this is a rare enemy and there's a chance it may not be present.|r Loot him |T236297:0|t[Brimstone Carving]
+    .collect 213583,1
+    .unitscan Reckless Warlock
+    .mob Reckless Warlock
+step
+    .train 416017,1
+    .cast 1949 >> Cast |T135818:0|t[Hellfire] to damage yourself below 70%. Afterwards |T236297:0|t[Brimstone Carving] will turn into the rune.
+step
+    .train 416017 >> Use the |T236295:0|t[Item] to learn |T236295:0|t[Dance of the Wicked]
 ]])
 
 -- RXPGuides.RegisterGuide([[
