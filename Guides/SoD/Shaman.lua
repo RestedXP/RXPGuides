@@ -2237,6 +2237,10 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 416054,1
+    #completewith next
+    .zone Arathi Highlands >>Travel to |cFFfa9602Arathi Highlands|r |cRXP_WARN_|cRXP_WARN_It is highly recommended to form a group of atleast 3 players.|r
+step
+    .train 416054,1
     .goto Arathi Highlands,33.8,49.2,20,0
     .goto Arathi Highlands,37.6,46.8,20,0
     .goto Arathi Highlands,33.8,39.8,20,0
@@ -2250,8 +2254,8 @@ step
     .cast 434350 >>Click the |cRXP_PICK_Soft Soil|r to insert the |T134921:0|t|cRXP_LOOT_[Lightning Rod]|r into the ground.
 step
     .train 416054,1
-    .cast 403,10 >> Cast |T136048:0|t[Lightning Bolt] 10 times on |cRXP_ENEMY_Tamkar|r to kill him.
-    .collect 213093,1 >> Loot him for |T134419:0|t[Rune of Power]
+>>
+    .collect 213093,1 >> Cast |T136048:0|t[Lightning Bolt] 10 times on the |cRXP_ENEMY_Lightning Rod|r then Kill |cRXP_ENEMY_Tamkar|r. Loot him for |T134419:0|t[Rune of Power]
     .mob Lightning Rod
     .mob tamkar
 step
