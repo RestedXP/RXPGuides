@@ -1498,15 +1498,36 @@ RXPGuides.RegisterGuide([[
 #title Rolling with the Punches
 #name Rolling with the Punches - 27 (Thousand Needles)
 
--- Rolling with the Punches
-
 step
-    .train 400093,1
+    .train 425103,1
+    .skill lockpicking,45 >>You need 45 lock picking to obtain this rune
+step
+    #completewith next
     .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
 step
     .train 400093,1
-    .goto Thousand Needles,45,6,65,3
-    +Click on the |cRXP_PICK_Chest|r until you obtain the rune |T134919:0|t[Rolling with the Punches]
+    >>Loot the |cRXP_PICK_Sizable Stolen Strongbox|r for the |T132597:0|t[Large Strongbox]
+    .goto Thousand Needles,18.5,20.9
+    .collect 215451,1
+step
+    .train 400093,1
+    >>Use |T136058:0|t[Pick Lock] on the |T132597:0|t[Large Strongbox] and open it to obtain the |T132597:0|t[Medium Strongbox]
+    .goto Thousand Needles,18.5,20.9
+    .collect 215452,1
+step
+    .train 400093,1
+    >>Use |T136058:0|t[Pick Lock] on the |T132597:0|t[Medium Strongbox] and open it to obtain the |T132597:0|t[Small Strongbox]
+    .goto Thousand Needles,18.5,20.9
+    .collect 215453,1
+step
+    .train 400093,1
+    >>Use |T136058:0|t[Pick Lock] on the |T132597:0|t[Small Strongbox] and open it to obtain the rune |T134419:0|t[|cRXP_FRIENDLY_Rune of the Southpaw|r]
+    .goto Thousand Needles,18.5,20.9
+    .collect 213138,1
+step
+    .itemcount 213138,1
+    .use 213138
+    .train 400093 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Southpaw|r] to learn |T134919:0|t[Rolling with the Punches]
 ]])
 
 -- RXPGuides.RegisterGuide([[
