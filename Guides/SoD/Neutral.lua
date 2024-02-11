@@ -1460,3 +1460,147 @@ step
     .train 425102 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Poisoned Blade|r] to learn |T236270:0|t[Poisoned Blade] << Rogue
     .train 425883 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Ancestral Awakening|r] to learn |T237571:0|t[Ancestral Awakening] << Shaman
 ]])
+
+
+RXPGuides.RegisterGuide([[
+#classic
+#group RestedXP Rune & Books Guide
+#subgroup Spell Books
+#name Totemic Projection - 27-40 (Scarlet Monastery) << Shaman
+#title Totemic Projection << Shaman
+#name Expanded Intellect - 27-40 (Scarlet Monastery) << Mage
+#title Expanded Intellect << Mage
+#name Treatise on Aspect of the Viper - 27-40 (Scarlet Monastery) << Hunter
+#title Treatise on Aspect of the Viper << Hunter
+#name Soul Harvesting/Portal of Summoning - 27-40 (Scarlet Monastery) << Warlock
+#title Soul Harvesting/Portal of Summoning << Warlock
+#name Redirect - 27-40 (Scarlet Monastery) << Rogue
+#title Redirect << Rogue
+#name Shadowfiend/Increased Fortitude - 27-40 (Scarlet Monastery) << Priest
+#title Shadowfiend/Increased Fortitude << Priest
+#name Enhanced Blessings - 27-40 (Scarlet Monastery) << Paladin
+#title Enhanced Blessings << Paladin
+#name Enhanced Restoration/Revive/Deeper Wilds - 27-40 (Scarlet Monastery) << Druid
+#title Enhanced Restoration/Revive/Deeper Wilds << Druid
+#name Commanding Shout - 27-40 (Scarlet Monastery) << Warrior
+#title Commanding Shout << Warrior
+
+step
+    .train 438040,1 << Rogue
+    .train 436949,1 << Mage
+    .train 436956,1 << Druid
+    .train 417123,1 << Druid
+    .train 437138,1 << Druid
+    .train 415423,1 << Hunter
+    .train 435984,1 << Paladin
+    .train 401977,1 << Priest
+    .train 436951,1 << Priest
+    .train 437032,1 << Warlock
+    .train 437169,1 << Warlock
+    .train 403215,1 << Warrior
+    .train 437009,1 << Shaman
+    #completewith Interrogator Vishas
+    +The Skill Books can be acquired by mobs within Scarlet Monastery: Graveyard/Library. The following enemies have an increased chance to drop them: the first and last dungeon bosses, or the rare enemy, |cRXP_ENEMY_Ironspine|r. |cRXP_WARN_It is highly recommended to form a group of 5 players.|r
+step
+    .train 438040,1 << Rogue
+    .train 436949,1 << Mage
+    .train 436956,1 << Druid
+    .train 417123,1 << Druid
+    .train 437138,1 << Druid
+    .train 415423,1 << Hunter
+    .train 435984,1 << Paladin
+    .train 401977,1 << Priest
+    .train 436951,1 << Priest
+    .train 437032,1 << Warlock
+    .train 437169,1 << Warlock
+    .train 403215,1 << Warrior
+    .train 437009,1 << Shaman
+    .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
+step
+    .train 438040,1 << Rogue
+    .train 436949,1 << Mage
+    .train 436956,1 << Druid
+    .train 417123,1 << Druid
+    .train 437138,1 << Druid
+    .train 415423,1 << Hunter
+    .train 435984,1 << Paladin
+    .train 401977,1 << Priest
+    .train 436951,1 << Priest
+    .train 437032,1 << Warlock
+    .train 437169,1 << Warlock
+    .train 403215,1 << Warrior
+    .train 437009,1 << Shaman
+    .goto 1415,47.44,19.75,10,0
+    .goto 1415,47.45,19.69,5,0
+    .goto 1415,47.62,19.59,10,0
+    .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
+step
+    .train 438040,1 << Rogue
+    .train 436949,1 << Mage
+    .train 436956,1 << Druid
+    .train 417123,1 << Druid
+    .train 437138,1 << Druid
+    .train 415423,1 << Hunter
+    .train 435984,1 << Paladin
+    .train 401977,1 << Priest
+    .train 436951,1 << Priest
+    .train 437032,1 << Warlock
+    .train 437169,1 << Warlock
+    .train 403215,1 << Warrior
+    .train 437009,1 << Shaman
+    #label Interrogator Vishas
+    >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Manual of Redirect|r |cRXP_WARN_This might require multiple runs.|r << Rogue
+    >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Leaflet of Enhanced Restoration|r, |T134914:0|t|cRXP_LOOT_[Leaflet of Revive]|r and |T134914:0|t|cRXP_LOOT_[Leaflet of Deeper Wilds]|r |cRXP_WARN_This might require multiple runs.|r << Druid
+    >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Treatise on Aspect of the Viper|r |cRXP_WARN_This might require multiple runs.|r << Hunter
+    >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Tome of Expanded Intellect|r |cRXP_WARN_This might require multiple runs.|r << Mage
+    >>Kill Bosses,Rares and monsters.Loot them for |T133745:0|t|cRXP_LOOT_[Testament of Enhanced Blessings]|r |cRXP_WARN_This might require multiple runs.|r << Paladin
+    >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Scroll of Shadowfiend|r, |T237543:0|t[Increased Fortitude] |cRXP_WARN_This might require multiple runs.|r << Priest
+    >>Kill Bosses,Rares and monsters.Loot them for |T133733:0|t|cRXP_LOOT_[Grimoire of Soul Harvesting]|r,|T133733:0|t|cRXP_LOOT_[Grimoire of Portal of Summoning]|r |cRXP_WARN_This might require multiple runs.|r << Warlock
+    >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Rune of the Commander|r |cRXP_WARN_This might require multiple runs.|r << Warrior
+    >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Rune of the Commander|r |cRXP_WARN_This might require multiple runs.|r << Shaman
+    .collect 216738,1 << Rogue -- Manual of Redirect
+    .collect 216740,1 << Mage -- Tome of Expanded Intellect
+    .collect 216744,1 << Priest -- Scroll of Increased Fortitude
+    .collect 216745,1 << Priest -- Scroll of Shadowfiend
+    .collect 216746,1 << Warrior -- Handbook of Commanding Shout
+    .collect 216747,1 << Warlock -- Grimoire of Soul Harvesting
+    .collect 216748,1 << Warlock -- Grimoire of Portal of Summoning
+    .collect 216764,1 << Druid -- Leaflet of Deeper Wilds
+    .collect 216767,1 << Druid -- Leaflet of Revive
+    .collect 216768,1 << Paladin -- Testament of Enhanced Blessings
+    .collect 216769,1 << Shaman -- Revelation of Totemic Projection
+    .collect 216770,1 << Hunter -- Treatise on Aspect of the Viper
+    .collect 216771,1 << Druid -- Leaflet of Enhanced Restoration
+    .mob Interrogator Vishas
+    .mob Bloodmage Thalnos
+    .mob Ironspine
+    .mob Houndmaster Loksey
+    .mob Arcanist Doan
+step
+    .train 438040 >>|cRXP_WARN_Use the|r |T133735:0|t|cRXP_LOOT_[Manual of Redirect]|r |cRXP_WARN_to learn|r |T135425:0|t[Redirect] << Rogue
+    .train 436949 >>|cRXP_WARN_Use the|r |T133736:0|t|cRXP_LOOT_[Tome of Expanded Intellect]|r |cRXP_WARN_to learn|r |T236513:0|t[Expanded Intellect] << Mage
+    .train 436956 >>|cRXP_WARN_Use the|r |T134914:0|t|cRXP_LOOT_[Leaflet of Deeper Wilds]|r |cRXP_WARN_to learn|r |T132124:0|t[Deeper Wilds] << Druid
+    .train 417123 >>|cRXP_WARN_Use the|r |T134914:0|t|cRXP_LOOT_[Leaflet of Enhanced Restoration]|r |cRXP_WARN_to learn|r |T136073:0|t[Enhanced Restoration] << Druid
+    .train 437138 >>|cRXP_WARN_Use the|r |T134914:0|t|cRXP_LOOT_[Leaflet of Revive]|r |cRXP_WARN_to learn|r |T132132:0|t[437138] << Druid
+    .train 415423 >>|cRXP_WARN_Use the|r |T133739:0|t|cRXP_LOOT_[Treatise on Aspect of the Viper]|r |cRXP_WARN_to learn|r |T132160:0|t[Aspect of the Viper] << Hunter
+    .train 435984 >>|cRXP_WARN_Use the|r |T133745:0|t|cRXP_LOOT_[Testament of Enhanced Blessings]|r |cRXP_WARN_to learn|r |T236248:0|t[Enhanced Blessings] << Paladin
+    .train 415423 >>|cRXP_WARN_Use the|r |T237162:0|t|cRXP_LOOT_[Scroll of Shadowfiend]|r |cRXP_WARN_to learn|r |T136199:0|t[Shadowfiend] << Priest
+    .train 436951 >>|cRXP_WARN_Use the|r |T237162:0|t|cRXP_LOOT_[Scroll of Increased Fortitude]|r |cRXP_WARN_to learn|r |T237543:0|t[Increased Fortitude] << Priest
+    .train 437032 >>|cRXP_WARN_Use the|r |T133733:0|t|cRXP_LOOT_[Grimoire of Soul Harvesting]|r |cRXP_WARN_to learn|r |T132851:0|t[Soul Harvesting] << Warlock
+    .train 437169 >>|cRXP_WARN_Use the|r |T133733:0|t|cRXP_LOOT_[Grimoire of Portal of Summoning]|r |cRXP_WARN_to learn|r |T134423:0|t[Portal of Summoning] << Warlock
+    .train 403215 >>|cRXP_WARN_Use the|r |T133741:0|t|cRXP_LOOT_[Handbook of Commanding Shout]|r |cRXP_WARN_to learn|r |T132351:0|t[Commanding Shout] << Warrior
+    .train 437009 >>|cRXP_WARN_Use the|r |T133747:0|t|cRXP_LOOT_[Revelation of Totemic Projection]|r |cRXP_WARN_to learn|r |T310733:0|t[Totemic Projection] << Shaman
+    .use 216738 << Rogue -- Manual of Redirect
+    .use 216740 << Mage -- Tome of Expanded Intellect
+    .use 216744 << Priest -- Scroll of Increased Fortitude
+    .use 216745 << Priest -- Scroll of Shadowfiend
+    .use 216746 << Warrior -- Handbook of Commanding Shout
+    .use 216747 << Warlock -- Grimoire of Soul Harvesting
+    .use 216748 << Warlock -- Grimoire of Portal of Summoning
+    .use 216764 << Druid -- Leaflet of Deeper Wilds
+    .use 216767 << Druid -- Leaflet of Revive
+    .use 216768 << Paladin -- Testament of Enhanced Blessings
+    .use 216769 << Shaman -- Revelation of Totemic Projection
+    .use 216770 << Hunter -- Treatise on Aspect of the Viper
+    .use 216771 << Druid -- Leaflet of Enhanced Restoration
+]])

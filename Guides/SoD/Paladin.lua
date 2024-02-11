@@ -1520,39 +1520,39 @@ step
 
 -- ]])
 
-RXPGuides.RegisterGuide([[
-#classic
-<< Paladin SoD
-#group RestedXP Rune & Books Guide
-#subgroup Skill Books
-#name Enhanced Blessings - 27-40 (Scarlet Monastery)
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Paladin SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Skill Books
+-- #name Enhanced Blessings - 27-40 (Scarlet Monastery)
 
--- Enhanced Blessings
+-- -- Enhanced Blessings
 
-step
-    .train 435984,1
-    #completewith Interrogator Vishas
-    +The Skill Books are obtained by killing the first/last dungeon boss of Scarlet Monastery: Graveyard or the rare |cRXP_ENEMY_Ironspine|r |cRXP_WARN_it is highly recommended to have a group of 5 players.|r
-step
-    .train 435984,1
-    .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
-step
-    .train 435984,1
-    .goto 1415,47.44,19.75,10,0
-    .goto 1415,47.45,19.69,5,0
-    .goto 1415,47.62,19.59,10,0
-    .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
-step
-    .train 435984,1
-    #label Interrogator Vishas
-    >>Kill |cRXP_ENEMY_Interrogator Vishas|r, |cRXP_ENEMY_Ironspine|r and loot them for |cRXP_LOOT_Testament of Enhanced Blessings|r |cRXP_WARN_This might require multiple kills.|r
-    .collect 216768,1
-    .mob Interrogator Vishas
-    .mob Ironspine
-step
-    .train 435984 >>|cRXP_WARN_Use the|r |T133745:0|t|cRXP_LOOT_[Testament of Enhanced Blessings]|r |cRXP_WARN_to learn|r |T236248:0|t[Enhanced Blessings]
-    .use 216738
-]])
+-- step
+--     .train 435984,1
+--     #completewith Interrogator Vishas
+--     +The Skill Books are obtained by killing the first/last dungeon boss of Scarlet Monastery: Graveyard or the rare |cRXP_ENEMY_Ironspine|r |cRXP_WARN_it is highly recommended to have a group of 5 players.|r
+-- step
+--     .train 435984,1
+--     .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
+-- step
+--     .train 435984,1
+--     .goto 1415,47.44,19.75,10,0
+--     .goto 1415,47.45,19.69,5,0
+--     .goto 1415,47.62,19.59,10,0
+--     .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
+-- step
+--     .train 435984,1
+--     #label Interrogator Vishas
+--     >>Kill |cRXP_ENEMY_Interrogator Vishas|r, |cRXP_ENEMY_Ironspine|r and loot them for |cRXP_LOOT_Testament of Enhanced Blessings|r |cRXP_WARN_This might require multiple kills.|r
+--     .collect 216768,1
+--     .mob Interrogator Vishas
+--     .mob Ironspine
+-- step
+--     .train 435984 >>|cRXP_WARN_Use the|r |T133745:0|t|cRXP_LOOT_[Testament of Enhanced Blessings]|r |cRXP_WARN_to learn|r |T236248:0|t[Enhanced Blessings]
+--     .use 216738
+-- ]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -1608,8 +1608,8 @@ step
     .subzoneskip 207
 step
     .train 426178,1
-    *|cRXP_WARN_Swim to the waypoint location|r. 
-    *|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Slain Scarlet Crusader|r. 
+    *|cRXP_WARN_Swim to the waypoint location|r.
+    *|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Slain Scarlet Crusader|r.
     >>Kill the |cRXP_ENEMY_Scarlet Crusade Assassin|r. Loot it for the |T133471:0|t[Orders from the Grand Crusade]. Click it in your bags
     .goto Eastern Kingdoms,41.9,59.0
     .skipgossip
@@ -1635,7 +1635,7 @@ step
     .complete 79946,1 --Learn more about Aeonas from Katherine
 step
     .train 426178,1
-    >>|cRXP_WARN_Look for a group for Scarlet Monastery and kill the last boss. 
+    >>|cRXP_WARN_Look for a group for Scarlet Monastery and kill the last boss.
     *Afterwards go into the chamber behind the boss and talk to |cRXP_FRIENDLY_Aenoas|r
     .complete 79946,2 --Find Aeonas in the Scarlet Monastery
     .turnin 79946 >>Turn in A Brother in Need

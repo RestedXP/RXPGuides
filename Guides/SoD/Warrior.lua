@@ -1403,39 +1403,39 @@ step
 
 -- ]])
 
-RXPGuides.RegisterGuide([[
-#classic
-<< Warrior SoD
-#group RestedXP Rune & Books Guide
-#subgroup Spell Books
-#title Commanding Shout
-#name Commanding Shout - 27-40 (Scarlet Monastery)
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Warrior SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Spell Books
+-- #title Commanding Shout
+-- #name Commanding Shout - 27-40 (Scarlet Monastery)
 
--- Commanding Shout
+-- -- Commanding Shout
 
-step
-    .train 403215,1
-    #completewith Interrogator Vishas
-    +The Skill Books are obtained by killing the first/last dungeon boss of Scarlet Monastery: Graveyard or the rare |cRXP_ENEMY_Ironspine|r |cRXP_WARN_it is highly recommended to have a group of 5 players.|r
-step
-    .train 403215,1
-    .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
-step
-    .train 403215,1
-    .goto 1415,47.44,19.75,10,0
-    .goto 1415,47.45,19.69,5,0
-    .goto 1415,47.62,19.59,10,0
-    .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
-step
-    .train 403215,1
-    #label Interrogator Vishas
-    >>Kill |cRXP_ENEMY_Interrogator Vishas|r, |cRXP_ENEMY_Ironspine|r and loot them for |cRXP_LOOT_Scroll of Shadowfiend|r |cRXP_WARN_This might require multiple kills.|r
-    .collect 216745,1
-    .collect 216744,1
-    .mob Interrogator Vishas
-    .mob Ironspine
-step
-    .train 403215 >>|cRXP_WARN_Use the|r |T133741:0|t|cRXP_LOOT_[Handbook of Commanding Shout]|r |cRXP_WARN_to learn|r |T132351:0|t[Commanding Shout]
-    .use 216746
+-- step
+--     .train 403215,1
+--     #completewith Interrogator Vishas
+--     +The Skill Books are obtained by killing the first/last dungeon boss of Scarlet Monastery: Graveyard or the rare |cRXP_ENEMY_Ironspine|r |cRXP_WARN_it is highly recommended to have a group of 5 players.|r
+-- step
+--     .train 403215,1
+--     .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
+-- step
+--     .train 403215,1
+--     .goto 1415,47.44,19.75,10,0
+--     .goto 1415,47.45,19.69,5,0
+--     .goto 1415,47.62,19.59,10,0
+--     .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
+-- step
+--     .train 403215,1
+--     #label Interrogator Vishas
+--     >>Kill |cRXP_ENEMY_Interrogator Vishas|r, |cRXP_ENEMY_Ironspine|r and loot them for |cRXP_LOOT_Scroll of Shadowfiend|r |cRXP_WARN_This might require multiple kills.|r
+--     .collect 216745,1
+--     .collect 216744,1
+--     .mob Interrogator Vishas
+--     .mob Ironspine
+-- step
+--     .train 403215 >>|cRXP_WARN_Use the|r |T133741:0|t|cRXP_LOOT_[Handbook of Commanding Shout]|r |cRXP_WARN_to learn|r |T132351:0|t[Commanding Shout]
+--     .use 216746
 
-]])
+-- ]])

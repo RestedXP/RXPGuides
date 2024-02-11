@@ -536,64 +536,63 @@ step
 
 ]])
 
-RXPGuides.RegisterGuide([[
-#classic
-<< Druid SoD
-#group RestedXP Rune & Books Guide
-#subgroup Skill Books
-#title
-#name Enhanced Restoration/Revive/Deeper Wilds - 27-40 (Scarlet Monastery)
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Druid SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Skill Books
+-- #name Enhanced Restoration/Revive/Deeper Wilds - 27-40 (Scarlet Monastery)
 
-step
-    .train 437138,1
-    .train 417123,1
-    .train 436956,1
-    #completewith Interrogator Vishas
-    +The skill books are obtained by killing the first and last dungeon boss of Scarlet Monastery: Graveyard |cRXP_WARN_it is highly recommended to have a group of 5 players.|r
-step
-    .train 437138,1
-    .train 417123,1
-    .train 436956,1
-    .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
-step
-    .train 437138,1
-    .train 417123,1
-    .train 436956,1
-    .goto 1415,47.44,19.75,10,0
-    .goto 1415,47.45,19.69,5,0
-    .goto 1415,47.62,19.59,10,0
-    .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
-step
-    .train 437138,1
-    .train 417123,1
-    .train 436956,1
-    #label Interrogator Vishas
-    >>Kill |cRXP_ENEMY_Interrogator Vishas|r and loot him for |cRXP_LOOT_Leaflet of Enhanced Restoration|r |cRXP_WARN_This might require multiple kills.|r
-    .collect 216771
-    .mob Interrogator Vishas
-step
-    .train 437138,1
-    .train 417123,1
-    .train 436956,1
-    #label Interrogator Vishas
-    >>Kill |cRXP_ENEMY_Bloodmage Thalnos|r and loot him for |cRXP_LOOT_Leaflet of Revive|r |cRXP_WARN_This might require multiple kills.|r
-    .collect 216767
-    .mob Bloodmage Thalnos
-step
-    .train 437138,1
-    .train 417123,1
-    .train 436956,1
-    >>Kill |cRXP_ENEMY_Bloodmage Thalnos|r and loot him for |cRXP_LOOT_Leaflet of Revive|r |cRXP_WARN_This might require multiple kills.|r
-    .collect 216767
-    .mob Bloodmage Thalnos
-step
-    .train 436956 >>|cRXP_WARN_Use the|r |T134914:0|t|cRXP_LOOT_[Leaflet of Deeper Wilds]|r |cRXP_WARN_to learn|r |T132124:0|t[Deeper Wilds]
-    .train 417123 >>|cRXP_WARN_Use the|r |T134914:0|t|cRXP_LOOT_[Leaflet of Enhanced Restoration]|r |cRXP_WARN_to learn|r |T136073:0|t[Enhanced Restoration]
-    .train 437138 >>|cRXP_WARN_Use the|r |T134914:0|t|cRXP_LOOT_[Leaflet of Revive]|r |cRXP_WARN_to learn|r |T132132:0|t[437138]
-    .use 216764
-    .use 216767
-    .use 216771
-]])
+-- step
+--     .train 437138,1
+--     .train 417123,1
+--     .train 436956,1
+--     #completewith Interrogator Vishas
+--     +The skill books are obtained by killing the first and last dungeon boss of Scarlet Monastery: Graveyard |cRXP_WARN_it is highly recommended to have a group of 5 players.|r
+-- step
+--     .train 437138,1
+--     .train 417123,1
+--     .train 436956,1
+--     .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
+-- step
+--     .train 437138,1
+--     .train 417123,1
+--     .train 436956,1
+--     .goto 1415,47.44,19.75,10,0
+--     .goto 1415,47.45,19.69,5,0
+--     .goto 1415,47.62,19.59,10,0
+--     .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
+-- step
+--     .train 437138,1
+--     .train 417123,1
+--     .train 436956,1
+--     #label Interrogator Vishas
+--     >>Kill |cRXP_ENEMY_Interrogator Vishas|r and loot him for |cRXP_LOOT_Leaflet of Enhanced Restoration|r |cRXP_WARN_This might require multiple kills.|r
+--     .collect 216771
+--     .mob Interrogator Vishas
+-- step
+--     .train 437138,1
+--     .train 417123,1
+--     .train 436956,1
+--     #label Interrogator Vishas
+--     >>Kill |cRXP_ENEMY_Bloodmage Thalnos|r and loot him for |cRXP_LOOT_Leaflet of Revive|r |cRXP_WARN_This might require multiple kills.|r
+--     .collect 216767
+--     .mob Bloodmage Thalnos
+-- step
+--     .train 437138,1
+--     .train 417123,1
+--     .train 436956,1
+--     >>Kill |cRXP_ENEMY_Bloodmage Thalnos|r and loot him for |cRXP_LOOT_Leaflet of Revive|r |cRXP_WARN_This might require multiple kills.|r
+--     .collect 216767
+--     .mob Bloodmage Thalnos
+-- step
+--     .train 436956 >>|cRXP_WARN_Use the|r |T134914:0|t|cRXP_LOOT_[Leaflet of Deeper Wilds]|r |cRXP_WARN_to learn|r |T132124:0|t[Deeper Wilds]
+--     .train 417123 >>|cRXP_WARN_Use the|r |T134914:0|t|cRXP_LOOT_[Leaflet of Enhanced Restoration]|r |cRXP_WARN_to learn|r |T136073:0|t[Enhanced Restoration]
+--     .train 437138 >>|cRXP_WARN_Use the|r |T134914:0|t|cRXP_LOOT_[Leaflet of Revive]|r |cRXP_WARN_to learn|r |T132132:0|t[437138]
+--     .use 216764
+--     .use 216767
+--     .use 216771
+-- ]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic

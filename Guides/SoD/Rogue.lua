@@ -1602,7 +1602,7 @@ step
     .itemcount 213136,1
     .use 213136
     .train 425103 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Sublety|r] to learn |T132299:0|t[Master of Subtlety]
-    
+
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1681,38 +1681,38 @@ step
 
 -- ]])
 
-RXPGuides.RegisterGuide([[
-#classic
-<< Rogue SoD
-#group RestedXP Rune & Books Guide
-#subgroup Skill Books
-#title Redirect
-#name Redirect - 27-40 (Scarlet Monastery)
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Rogue SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Skill Books
+-- #title Redirect
+-- #name Redirect - 27-40 (Scarlet Monastery)
 
--- Redirect
+-- -- Redirect
 
-step
-    .train 438040,1
-    #completewith Interrogator Vishas
-    +The Skill Books are obtained by killing the first/last dungeon boss of Scarlet Monastery: Graveyard or the rare |cRXP_ENEMY_Ironspine|r |cRXP_WARN_it is highly recommended to have a group of 5 players.|r
-step
-    .train 438040,1
-    .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
-step
-    .train 438040,1
-    .goto 1415,47.44,19.75,10,0
-    .goto 1415,47.45,19.69,5,0
-    .goto 1415,47.62,19.59,10,0
-    .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
-step
-    .train 438040,1
-    #label Interrogator Vishas
-    >>Kill |cRXP_ENEMY_Interrogator Vishas|r, |cRXP_ENEMY_Ironspine|r and loot them for |cRXP_LOOT_Manual of Redirect|r |cRXP_WARN_This might require multiple kills.|r
-    .collect 216745,1
-    .collect 216744,1
-    .mob Interrogator Vishas
-    .mob Ironspine
-step
-    .train 438040 >>|cRXP_WARN_Use the|r |T133735:0|t|cRXP_LOOT_[Manual of Redirect]|r |cRXP_WARN_to learn|r |T135425:0|t[Redirect]
-    .use 216738
-]])
+-- step
+--     .train 438040,1
+--     #completewith Interrogator Vishas
+--     +The Skill Books are obtained by killing the first/last dungeon boss of Scarlet Monastery: Graveyard or the rare |cRXP_ENEMY_Ironspine|r |cRXP_WARN_it is highly recommended to have a group of 5 players.|r
+-- step
+--     .train 438040,1
+--     .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
+-- step
+--     .train 438040,1
+--     .goto 1415,47.44,19.75,10,0
+--     .goto 1415,47.45,19.69,5,0
+--     .goto 1415,47.62,19.59,10,0
+--     .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
+-- step
+--     .train 438040,1
+--     #label Interrogator Vishas
+--     >>Kill |cRXP_ENEMY_Interrogator Vishas|r, |cRXP_ENEMY_Ironspine|r and loot them for |cRXP_LOOT_Manual of Redirect|r |cRXP_WARN_This might require multiple kills.|r
+--     .collect 216745,1
+--     .collect 216744,1
+--     .mob Interrogator Vishas
+--     .mob Ironspine
+-- step
+--     .train 438040 >>|cRXP_WARN_Use the|r |T133735:0|t|cRXP_LOOT_[Manual of Redirect]|r |cRXP_WARN_to learn|r |T135425:0|t[Redirect]
+--     .use 216738
+-- ]])
