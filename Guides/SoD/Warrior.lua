@@ -1327,13 +1327,18 @@ RXPGuides.RegisterGuide([[
 
 -- Rallying Cry
 step
+    .train 426491,1
+    #completewith next
+    .zone Badlands >>Travel to Badlands
+step
     #loop
     .goto Badlands,35.6,59.6,25,0
     .goto Badlands,24.8,58.8,25,0
     .goto Badlands,28.4,67.6,25,0
     >>Kill the |cRXP_ENEMY_Wandering Swordsman|r in Badlands |cRXP_WARN_ Please note, this is a rare enemy and there's a chance it may not be present.|r Loot him |T134419:0|t[Rune of the Commander]
     .train 426491 >> Use |T134419:0|t[Rune of the Commander] to learn |T426490:0|t[Rallying Cry]
-    .target Wandering Swordsman
+    .mob Wandering Swordsman
+    .unitscan Wandering Swordsman
 ]])
 
 
