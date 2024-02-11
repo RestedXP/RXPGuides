@@ -992,17 +992,35 @@ step
     .use 216764
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Hunter SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Boots
--- #name Dual Wield Specialization
+RXPGuides.RegisterGuide([[
+#classic
+<< Hunter SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#title Dual-Wield Specialization
+#name Dual-Wield Specialization - 32 (Stranglethorn Vale)
 
--- Dual Wield Specialization
-
-
--- ]])
+step
+    .train 410116,1
+    .train 1543 >>You have to learn |T135815:0|t[Flare] before you can obtain this rune
+step
+    #completewith next
+    .zone Stranglethorn Vale >>Travel to Stranglethorn Vale
+step
+    .train 410116,1
+    .goto Stranglethorn Vale,31.8,15.7
+    .aura 435548,1+ >>Go to the waypoint and run around until you get the buff |T132118:0|t[Danger!]
+step
+    .train 410116,1
+    >>Use |T135815:0|t[Flare] and kill the appearing |cRXP_ENEMY_Bloodscalp Guerrilla|r. Loot him for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Scrapper|r]
+    .goto Stranglethorn Vale,31.8,15.7
+    .collect 213126,1
+    .mob Bloodscalp Guerrilla
+step
+    .itemcount 213126,1
+    .use 213126
+    .train 410116 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Scrapper|r] to learn |T132147:0|t[Dual-Wield Specialization]
+]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
