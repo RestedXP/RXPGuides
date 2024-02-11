@@ -1056,17 +1056,44 @@ step
     .use 213599
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Priest SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Boots
--- #name Dispersion
+RXPGuides.RegisterGuide([[
+#classic
+<< Priest SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Dispersion 40 (Azeroth)
 
 -- Dispersion
 
-
--- ]])
+step
+    .train 425314,1
+    >>Buy the |T134938:0|t[Deciphered Troll Scroll] from the auction house |cRXP_WARN_It's highly recommended as otherwise you'll need a rogue with the [Master of Sublety Rune] and |T338666:0|t[Jani's Charm] to pickpocket |cRXP_ENEMY_Bloodscalp Scavenger|r for |T237446:0|t[Mysterious Troll Scroll]|r and a mage to decipher it. |cFFFF0000Alternatively you can have a priest share this quest with you.|r
+    .collect 216880,1
+step
+    .train 425314,1
+    >>Click on the |T134938:0|t[Deciphered Troll Scroll] in your bags to accept this quest.
+    .accept 79731 --The Troll Scroll
+step
+    .train 425314,1
+    #completewith next
+    .zone Stranglethorn Vale >>Travel to |cFFfa9602Stranglethorn Vale|r
+step
+    .train 425314,1
+    >>Kill |cRXP_ENEMY_Lord Sakrasis|r. Loot him for |T134712:0|t[Holy Spring Water]
+    .collect 737,1
+    .mob Lord Sakrasis
+step
+    .train 425314,1
+    .goto Stranglethorn Vale,23.2,8.5
+    .cast 3581 >> Use the |T134712:0|t[Holy Spring Water] behind Gan'zulah on a fountain
+    .use 737
+step
+    .train 425314,1
+    >>Click on the object to aquire |T135975:0|t[Prophecy of Imprisoned Malice]
+    .collect 213142,1
+step
+    .train 425314 >> Use|T135975:0|t[Prophecy of Imprisoned Malice] to learn |T237563:0|t[Dispersion]
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
