@@ -1053,29 +1053,57 @@ step << Warlock
 
 -- ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Warlock SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Belt
--- #name Invocation
+RXPGuides.RegisterGuide([[
+#classic
+<< Warlock SoD
+#group RestedXP Rune & Books Guide
+#subgroup Belt
+#name Invocation
 
 -- Invocation
 
+step
+    .train 426443
+    #loop
+    .goto Arathi Highlands,26.2,59.4,25,0
+    .goto Arathi Highlands,26.0,63.6,25,0
+    .goto Arathi Highlands,28.8,65.8,25,0
+    >>Kill |cRXP_ENEMY_Syndicate Conjuror|r. Loot them for |T348282:0|t|cRXP_LOOT_Conjuror's Pendant|r
+    .collect 213573,10
+    .mob Syndicate Conjuror
+step
+    .train 426443
+    .cast 1120 >> Cast |T136163:0|t[Drain Soul] on |cRXP_ENEMY_Voidwalker Minion|r next to |cRXP_ENEMY_Syndicate Conjuror|r
+    .mob Syndicate Conjuror
+    .mob Voidwalker Minion
+step
+    .train 426443
+    >>Kill |cRXP_ENEMY_Void Seeker|r. Loot him for |cRXP_LOOT_|T134419:0|t[Rune of Invocation]|r
+    .collect 213098,1
+    .mob Void Seeker
+step
+    .train 426443 >> Use |T134419:0|t[Rune of Invocation] to learn |T136133:0|t[Invocation]
+]])
 
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Warlock SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Boots
--- #name Dance of the Wicked
+RXPGuides.RegisterGuide([[
+#classic
+<< Warlock SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Dance of the Wicked - 35 (Desolace)
 
 -- Dance of the Wicked
 
+step
+    .goto Desolace,74.5,13.4
+    >>Kill the |cRXP_ENEMY_Reckless Warlock|r in Desolace |cRXP_WARN_ Please note, this is a rare enemy and there's a chance it may not be present.|r Loot him |T236297:0|t[Brimstone Carving]
+    .collect 213583,1
+    .target Reckless Warlock
+    .unitscan Reckless Warlock
+step
 
--- ]])
+
+]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
