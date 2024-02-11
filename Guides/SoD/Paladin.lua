@@ -4,6 +4,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Crusader Strike - 4 (Elwynn Forest)
+#title Crusader Strike
 #next Inspiration Exemplar - 6 (Elwynn Forest)
 
 --VV Not sure if you want to gate CS in Elwynn for humans only/DunM for dwarves only
@@ -84,6 +85,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Crusader Strike - 4 (Dun Morogh)
+#title Crusader Strike
 #next Inspiration Exemplar - 6 (Dun Morogh)
 
 step
@@ -159,6 +161,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Hand of Reckoning - 14 (Loch Modan)
+#title Hand of Reckoning
 #next Inspiration Exemplar - 6 (Elwynn Forest)
 
 
@@ -328,6 +331,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Hand of Reckoning - 20 (Westfall)
+#title Hand of Reckoning
 #next Exorcist - 24 (Duskwood)
 
 
@@ -455,6 +459,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Horn of Lordaeron - 4 (Loch Modan)
+#title Horn of Lordaeron
 #next Hand of Reckoning - 14 (Loch Modan)
 
 step
@@ -540,6 +545,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Horn of Lordaeron - 12 (Westfall)
+#title Horn of Lordaeron
 #next Hand of Reckoning - 20 (Westfall)
 
 
@@ -646,6 +652,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Aegis - 8 (Elwynn Forest)
+#title Aegis
 #next Rebuke - 10 (Stormwind)
 
 step
@@ -723,6 +730,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Aegis - 8 (Dun Morogh)
+#title Aegis
 #next Rebuke - 10 (Ironforge)
 
 step
@@ -784,6 +792,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Seal of Martyrdom - 10 (Stormwind)
+#title Seal of Martyrdom
 #next Horn of Lordaeron - 12 (Westfall)
 
 step
@@ -874,6 +883,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Divine Storm - 25 (Darkshore)
+#title Divine Storm
 #next Divine Sacrifice - 25 (Ratchet)
 
 step
@@ -1099,6 +1109,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Inspiration Exemplar - 6 (Elwynn Forest)
+#title Inspiration Exemplar
 #next Aegis - 8 (Elwynn Forest)
 
 step
@@ -1140,6 +1151,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Inspiration Exemplar - 6 (Dun Morogh)
+#title Inspiration Exemplar
 #next Aegis - 8 (Dun Morogh)
 
 step
@@ -1192,6 +1204,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Rebuke - 10 (Ironforge)
+#title Rebuke
 #next Seal of Martyrdom - 10 (Stormwind)
 
 step
@@ -1262,6 +1275,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Rebuke - 10 (Stormwind)
+#title Rebuke
 #next Seal of Martyrdom - 10 (Stormwind)
 
 step
@@ -1334,6 +1348,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Exorcist - 24 (Duskwood)
+#title Exorcist
 #next Beacon of Light - 25 (Reputation)
 
 step
@@ -1464,6 +1479,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Belt
 #name Sheath of Light - 40
+#title Sheath of Light
 
 step
     #completewith next
@@ -1575,6 +1591,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Boots
 #name Guarded by the Light - 30 (Alterac Mountains)
+#title Guarded by the Light
 
 step
     .train 416035,1
@@ -1611,6 +1628,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Boots
 #name Sacred Shield - 30 (Desolace)
+#title Sacred Shield
 
 -- Sacred Shield
 

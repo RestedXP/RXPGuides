@@ -4,6 +4,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Victory Rush - 1 (Elwynn Forest)
+#title Victory Rush
 
 step << Warrior
     #season 2
@@ -26,6 +27,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Victory Rush - 3 (Dun Morogh)
+#title Victory Rush
 
 step << Warrior
     #season 2
@@ -53,6 +55,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Victory Rush - 3 (Shadowglen)
+#title Victory Rush
 
 step << Warrior
     #season 2
@@ -75,6 +78,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Blood Frenzy - 10 (Elwynn Forest)
+#title Blood Frenzy
 
 step << Warrior
     #season 2
@@ -110,6 +114,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Blood Frenzy - 10 (Dun Morogh)
+#title Blood Frenzy
 
 step << Warrior
     #season 2
@@ -134,6 +139,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Blood Frenzy - 10 (Teldrassil)
+#title Blood Frenzy
 
 step << Warrior
     #season 2
@@ -163,6 +169,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Furious Thunder - 6 (Elwynn Forest)
+#title Furious Thunder
 
 step << Warrior
     #season 2
@@ -189,6 +196,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Furious Thunder - 9 (Dun Morogh)
+#title Furious Thunder
 
 step << Warrior
     #season 2
@@ -215,6 +223,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Frenzied Assault - 10 (Stormwind)
+#title Frenzied Assault
 
 step << Warrior
     #season 2
@@ -239,6 +248,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Frenzied Assault - 10 (Ironforge)
+#title Frenzied Assault
 
 step << Warrior
     #season 2
@@ -260,6 +270,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Frenzied Assault - 10 (Teldrassil)
+#title Frenzied Assault
 
 step << Warrior
     #season 2
@@ -281,6 +292,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Endless Rage - 20 (Westfall)
+#title Endless Rage
 
 step << Warrior
     #season 2
@@ -308,6 +320,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Endless Rage - 16 (Darkshore)
+#title Endless Rage
 
 step << Warrior
     #season 2
@@ -335,6 +348,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Devastate - 8 (Elwynn Forest)
+#title Devastate
 
 step << Warrior
     #season 2
@@ -422,6 +436,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Devastate - 6 (Teldrassil)
+#title Devastate
 
 step << Warrior
     #season 2
@@ -461,6 +476,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Devastate - 6 (Dun Morogh)
+#title Devastate
 
 step << Warrior
     #season 2
@@ -501,6 +517,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Victory Rush - 2 (Durotar)
+#title Victory Rush
 
 
     --Rune of Victory Rush
@@ -540,6 +557,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Victory Rush - 2 (Mulgore)
+#title Victory Rush
 
 
     --Rune of Victory Rush
@@ -577,7 +595,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Victory Rush - 2 (Tirisfal)
-
+#title Victory Rush
 
     --Rune of Victory Rush
 
@@ -613,7 +631,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Furious Thunder - 2 (Durotar)
-
+#title Furious Thunder
 
     --Rune of Furious Thunder
 
@@ -638,6 +656,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Furious Thunder - 10 (Tirisfal)
+#title Furious Thunder
 
 
     --Rune of Furious Thunder
@@ -664,6 +683,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Frenzied Assault - 10 (Orgrimmar)
+#title Frenzied Assault
 
 
     --Rune of Frenzied Assault
@@ -702,6 +722,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Frenzied Assault - 10 (Thunder Bluff)
+#title Frenzied Assault
 
 
     --Rune of Frenzied Assault
@@ -739,7 +760,8 @@ RXPGuides.RegisterGuide([[
 << Horde Warrior SoD
 #group RestedXP Rune & Books Guide
 #subgroup Legs
-#name  Frenzied Assault - 10 (Tirisfal)
+#name Frenzied Assault - 10 (Tirisfal)
+#title Frenzied Assault
 
 
     --Rune of Frenzied Assault
@@ -777,6 +799,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Devastate - 8 (Durotar)
+#title Devastate
 
 
     --Rune of Devastate
@@ -854,6 +877,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Devastate - 8 (Mulgore)
+#title Devastate
 
 
     --Rune of Devastate
@@ -917,6 +941,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Devastate - 8 (Tirisfal)
+#title Devastate
 
 
     --Rune of Devastate
@@ -998,6 +1023,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Blood Frenzy - 8 (Durotar)
+#title Blood Frenzy
 
 
     --Rune of Blood Frenzy
@@ -1034,6 +1060,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Blood Frenzy - 8 (Mulgore)
+#title Blood Frenzy
 
 
 --Rune of Blood Frenzy
@@ -1068,6 +1095,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Blood Frenzy - 8 (Tirisfal)
+#title Blood Frenzy
 
 
     --Rune of Blood Frenzy
@@ -1094,6 +1122,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Quick Strike - 12 (Loch Modan)
+#title Quick Strike
 
 step << Warrior
     .goto Loch Modan,33.2,73.8
@@ -1125,6 +1154,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Endless Rage - 15 (The Barrens)
+#title Endless Rage
 
 
     --Rune of Endless Rage
@@ -1166,6 +1196,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Endless Rage - 15 (Silverpine Forest)
+#title Endless Rage
 
 
     --Rune of Endless Rage
@@ -1197,6 +1228,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Quick Strike - 20 (Darkshore)
+#title Quick Strike
 
 step << Warrior
     .goto Darkshore,48.2,15.6,70,0
@@ -1229,6 +1261,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Waist
 #name Focused Rage - 35 (Arathi Highlands)
+#title Focused Rage
 
 -- Focused Rage
 
@@ -1260,6 +1293,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Boots
 #name Intervene - 32 (Thousand Needles)
+#title Intervene
 
 -- Intervene
 
@@ -1299,6 +1333,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Boots
 #name Rallying Cry - 40 (Badlands)
+#title Rallying Cry
 
 -- Rallying Cry
 step

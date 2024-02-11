@@ -4,6 +4,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Fury of Stormrage - 4 (Nightglen)
+#title Fury of Stormrage
 
 step << Druid
     #season 2
@@ -51,6 +52,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Living Seed - 10 (Teldrassil)
+#title Living Seed
 
 step << Druid
     .goto Teldrassil,64.0,54.0,60,0
@@ -100,6 +102,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Lifebloom - 8 (Teldrassil)
+#title Lifebloom
 
 step << Druid
     #sticky
@@ -126,6 +129,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Savage Roar - 20 (Darkshore)
+#title Savage Roar
 
 step << Druid
     #season 2
@@ -161,6 +165,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Savage Roar - 20 (Westfall)
+#title Savage Roar
 
 step << Druid
     #season 2
@@ -200,6 +205,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Sunfire - 6 (Teldrassil)
+#title Sunfire
 
 step << Druid
     #season 2
@@ -224,6 +230,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Lacerate - 10 (Loch Modan)
+#title Lacerate
 
 step << Druid
     #season 2
@@ -254,6 +261,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Fury of Stormrage - 4 (Mulgore)
+#title Fury of Stormrage
 
 
     --Rune of Fury of Stormrage
@@ -298,6 +306,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Mangle - 10 (Mulgore)
+#title Mangle
 
 
     --Rune of Mangle
@@ -337,6 +346,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Sunfire - 5 (Mulgore)
+#title Sunfire
 
 
     --Rune of Sunfire
@@ -363,7 +373,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Lifebloom - 10 (Mulgore)
-
+#title Lifebloom
 
     --Rune of Lifebloom
 
@@ -390,7 +400,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Living Seed - 8 (Mulgore)
-
+#title Living Seed
 
     --Rune of Living Seed
 
@@ -442,7 +452,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Lacerate - 15 (The Barrens)
-
+#title Lacerate
 
     --Rune of Lacerate
 
@@ -479,7 +489,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Savage Roar - 15 (The Barrens)
-
+#title Savage Roar
 
     --Rune of Savage Roar
 
@@ -539,6 +549,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Belt
 #name Berserk - 28 (Thousand Needles)
+#title Berserk
 
 step
     #completewith next
@@ -579,6 +590,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Boots
 #name Dreamstate - 33 (Desolace)
+#title Dreamstate
 
 step
     #completewith next

@@ -4,6 +4,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Chimera Shot - 2 (Dun Morogh)
+#title Chimera Shot
 
 
 step
@@ -48,6 +49,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Chimera Shot - 3 (Teldrassil)
+#title Chimera Shot
 
 step
     +|cRXP_WARN_You should be at least level 3 in order to acquire|r |T133816:0|t[Engrave Gloves - Chimera Shot] |cRXP_WARN_in Teldrassil alone|r
@@ -96,7 +98,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Explosive Shot - 5 (Dun Morogh)
-
+#title Explosive Shot
 
 step
     +|cRXP_WARN_You should be at least level 5 in order to acquire|r |T133816:0|t[Engrave Gloves - Explosive Shot] |cRXP_WARN_in Dun Morogh alone|r
@@ -147,6 +149,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Explosive Shot - 2 (Durotar)
+#title Explosive Shot
 
 
     --Rune of Explosive Shot
@@ -171,6 +174,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Chimera Shot - 2 (Durotar)
+#title Chimera Shot
 
 
     --Rune of Chimera Shot
@@ -209,6 +213,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Chimera Shot - 2 (Mulgore)
+#title Chimera Shot
 
 
     --Rune of Chimera Shot
@@ -252,6 +257,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Master Marksman - 6 (Durotar)
+#title Master Marksman
 
 
     --Rune of Master Marksman
@@ -278,6 +284,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Master Marksman - 6 (Mulgore)
+#title Master Marksman
 
 
     --Rune of Master Marksman
@@ -304,6 +311,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Master Marksman - 6 (Dun Morogh)
+#title Master Marksman
 
 
     --Rune of Master Marksman
@@ -330,6 +338,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Master Marksman - 6 (Teldrassil)
+#title Master Marksman
 
 
     --Rune of Master Marksman
@@ -356,6 +365,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Flanking - 6 (Mulgore)
+#title Flanking
 
 
     --Rune of Flanking
@@ -396,6 +406,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Flanking - 6 (Durotar)
+#title Flanking
 
 
     --Rune of Flanking
@@ -430,6 +441,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Carve - 10 (Durotar)
+#title Carve
 
 
     --Rune of Carve
@@ -483,6 +495,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Carve - 10 (Mulgore)
+#title Carve
 
 
     --Rune of Carve
@@ -535,6 +548,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Carve - 10 (Dun Morogh)
+#title Carve
 
 
     --Rune of Carve
@@ -590,6 +604,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Carve - 10 (Teldrassil)
+#title Carve
 
 
     --Rune of Carve
@@ -647,7 +662,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Beast Mastery - 16 (The Barrens)
-
+#title Beast Mastery
 
     --Rune of Beast Mastery
 
@@ -679,6 +694,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Beast Mastery - 16 (Silverpine)
+#title Beast Mastery
 
     --Rune of Beast Mastery
 
@@ -708,6 +724,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Sniper Training - 18 (Darkshore)
+#title Sniper Training
 
 
     --Rune of the Sniper
@@ -748,6 +765,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Sniper Training - 16 (Westfall)
+#title Sniper Training
 
 
     --Rune of the Sniper
@@ -780,6 +798,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Sniper Training - 16 (Loch Modan)
+#title Sniper Training
 
 
     --Rune of the Sniper
@@ -813,7 +832,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Sniper Training - 16 (The Barrens)
-
+#title Sniper Training
 
     --Rune of the Sniper
 
@@ -849,6 +868,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Flanking - 7 (Dun Morogh)
+#title Flanking
 
 
     --Rune of Flanking
@@ -891,6 +911,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Flanking - 7 (Teldrassil)
+#title Flanking
 
 
     --Rune of Flanking
@@ -931,6 +952,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Waist
 #title Expose Weakness
 #name Expose Weakness - 40 (Azeroth)
+
 
 -- Expose Weakness
 
@@ -1024,7 +1046,6 @@ step
     .use 213126
     .train 410116 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Scrapper|r] to learn |T132147:0|t[Dual-Wield Specialization]
 ]])
-
 
 -- RXPGuides.RegisterGuide([[
 -- #classic

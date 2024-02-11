@@ -4,6 +4,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Penance - 3 (Elwynn Forest)
+#title Penance
 
 step << Priest
     #season 2
@@ -29,6 +30,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Penance - 1 (Dun Morogh)
+#title Penance
+
 
 step << Priest
     #season 2
@@ -57,6 +60,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Penance - 2 (Shadowglen)
+#title Penance
 
 step << NightElf Priest
     #season 2
@@ -103,6 +107,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Penance - 2 (Durotar)
+#title Penance
 
 
     --Rune of Penance
@@ -135,6 +140,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Penance - 2 (Tirisfal)
+#title Penance
 
 
     --Rune of Penance
@@ -166,6 +172,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Homunculi - 8 (Durotar)
+#title Homunculi
 
 step
     .train 402852,1
@@ -215,6 +222,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Homunculi - 7 (Tirisfal Glades)
+#title Homunculi
 
 step
     .train 402852,1
@@ -266,6 +274,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Shared Pain - 13 (Durotar)
+#title Shared Pain
 
 step
     #completewith next
@@ -297,6 +306,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Shared Pain - 6 (Tirisfal Glades)
+#title Shared Pain
 
 step
     #completewith next
@@ -335,6 +345,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Void Plague - 5 (Durotar)
+#title Void Plague
 
 step
     #completewith next
@@ -365,6 +376,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Void Plague - 6 (Tirisfal Glades)
+#title Void Plague
 
 step
     #completewith next
@@ -400,6 +412,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Prayer of Mending - 6 (Durotar)
+#title Prayer of Mending
 
 step
     .goto Durotar,48.04,79.58
@@ -421,6 +434,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Prayer of Mending - 10 (Mulgore)
+#title Prayer of Mending
 
 step
     .goto Mulgore,60.39,33.54
@@ -442,6 +456,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Twisted Faith - 10 (Loch Modan)
+#title Twisted Faith
 
 step << Priest
     #completewith MinerGear
@@ -472,6 +487,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Twisted Faith - 14 (Westfall)
+#title Twisted Faith
 
 step << Priest
     .goto Westfall,32.6,43.2,60,0
@@ -497,6 +513,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Twisted Faith - 18 (Darkshore)
+#title Twisted Faith
 
 step << Priest
     .goto Darkshore,59.2,23.4,60,0
@@ -525,6 +542,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Shared Pain - 10 (Dun Morogh)
+#title Shared Pain
 
 step << Priest
     .goto Loch Modan,77.894,62.236
@@ -545,6 +563,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Shared Pain - 6 (Elwynn Forest)
+#title Shared Pain
 
 step << Priest
     .goto Elwynn Forest,40.6,81.8
@@ -565,6 +584,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Homunculi - 8 (Dun Morogh)
+#title Homunculi
 
 step << Priest
     .goto Dun Morogh,42.0,44.6,50,0
@@ -586,6 +606,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Homunculi - 8 (Elwynn Forest)
+#title Homunculi
 
 step << Priest
     .goto Elwynn Forest,74.0,51.8
@@ -606,6 +627,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Homunculi - 8 (Teldrassil)
+#title Homunculi
 
 step << Priest
     #completewith next
@@ -633,6 +655,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Prayer of Mending - 6 (Elwynn Forest)
+#title Prayer of Mending
 
 step << Priest
     .goto Elwynn Forest,52.28,84.56
@@ -653,6 +676,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Prayer of Mending - 8 (Teldrassil)
+#title Prayer of Mending
 
 step << Priest
     .goto Teldrassil,33.610,35.732
@@ -673,6 +697,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Prayer of Mending - 6 (Dun Morogh)
+#title Prayer of Mending
 
 step << Priest
     .goto Dun Morogh,43.0,49.6
@@ -693,6 +718,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadow Word: Death - 10 (Darkshore)
+#title Shadow Word: Death
 
 step << Priest
     .goto Darkshore,30.5,47.5
@@ -714,6 +740,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadow Word - Death - 12 (Loch Modan)
+#title Shadow Word: Death
 
 step << Priest
     #completewith next
@@ -742,6 +769,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadow Word: Death - 20 (The Barrens)
+#title Shadow Word: Death
 
 step
     #completewith next
@@ -783,6 +811,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadow Word: Death - 24 (Silverpine Forest)
+#title Shadow Word: Death
 
 step
     #completewith next
@@ -822,6 +851,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Twisted Fate - 10 (Silverpine Forest)
+#title Twisted Fate
 
 step
     #completewith next
@@ -849,6 +879,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Twisted Fate - 10 (The Barrens)
+#title Twisted Fate
 
 step
     #completewith next
@@ -883,6 +914,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Void Plague - 6 (Elwynn Forest)
+#title Void Plague
 
 step << Priest
     #season 2
@@ -908,6 +940,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Void Plague - 6 (Dun Morogh)
+#title Void Plague
 
 
 step << Priest
@@ -934,6 +967,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Waist
 #name Empowered Renew - 27 (Thousand Needles)
+#title Empowered Renew
+
 
 -- Empowered Renew
 
@@ -1039,6 +1074,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Boots
 #name Pain Suppression - 32 (Azeroth)
+#title Pain Suppression
 
 -- Pain Suppression
 
@@ -1096,6 +1132,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Bracers
 -- #name Despair
+-- for phase 3
 
 -- Despair
 
@@ -1108,6 +1145,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Bracers
 -- #name Surge of Light
+-- for phase 3
 
 -- Surge of Light
 

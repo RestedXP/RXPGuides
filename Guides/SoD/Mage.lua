@@ -3,6 +3,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Ice Lance - 2 (Elwynn Forest)
+#title Ice Lance
 << Human Mage SoD
 
 
@@ -108,6 +109,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Ice Lance - 2 (Dun Morogh)
+#title Ice Lance
+
 << Gnome Mage SoD
 
 
@@ -178,6 +181,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Ice Lance - 2 (Durotar)
+#title Ice Lance
+
 << Troll Mage SoD
 
 
@@ -252,6 +257,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Ice Lance - 2 (Tirisfal)
+#title Ice Lance
 << Undead Mage SoD
 
 
@@ -310,6 +316,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Regeneration - 12 (Westfall)
+#title Regeneration
+
 << Alliance Mage SoD
 
 
@@ -382,6 +390,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Regeneration - 13 (Loch Modan)
+#title Regeneration
+
 << Alliance Mage SoD
 
 
@@ -439,6 +449,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Regeneration - 12 (The Barrens)
+#title Regeneration
+
 << Horde Mage SoD
 
 
@@ -517,6 +529,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Regeneration - 12 (Silverpine Forest)
+#title Regeneration
 << Horde Mage SoD
 
 
@@ -579,6 +592,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Fingers of Frost - 10 (Elwynn Forest)
+#title Fingers of Frost
+
 << Alliance Mage SoD
 
 
@@ -635,6 +650,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Fingers of Frost - 5 (Dun Morogh)
+#title Fingers of Frost
 << Alliance Mage SoD
 
 
@@ -706,6 +722,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Fingers of Frost - 8 (Tirisfal Glades)
+#title Fingers of Frost
 << Horde Mage SoD
 
 
@@ -757,6 +774,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Fingers of Frost - 8 (Durotar)
+#title Fingers of Frost
 
 
 step
@@ -809,6 +827,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Burnout - 6 (Dun Morogh)
+#title Burnout
+
 << Alliance Mage SoD
 
 
@@ -838,6 +858,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Burnout - 6 (Elwynn Forest)
+#title Burnout
+
 << Alliance Mage SoD
 
 step
@@ -866,6 +888,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Burnout - 6 (Durotar)
+#title Burnout
+
 << Horde Mage SoD
 
 step
@@ -894,6 +918,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Burnout - 6 (Tirisfal Glades)
+#title Burnout
+
 << Horde Mage SoD
 
 
@@ -923,6 +949,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Enlightenment - 8 (Elwynn Forest)
+#title Enlightenment
+
 << Alliance Mage SoD
 
 
@@ -1010,6 +1038,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Enlightenment - 8 (Tirisfal Glades)
+#title Enlightenment
+
 << Horde Mage SoD
 
 step
@@ -1074,6 +1104,7 @@ RXPGuides.RegisterGuide[[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Icy Veins - 25 (Azeroth)
+#title Icy Veins
 
 << Alliance Mage SoD
 
@@ -1367,6 +1398,7 @@ RXPGuides.RegisterGuide[[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Icy Veins - 25 (Azeroth)
+#title Icy Veins
 
 << Horde Mage SoD
 
@@ -1568,6 +1600,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Living Flame - 6 (Elwynn Forest)
+#title Living Flame
+
 << Alliance Mage SoD
 
 
@@ -1615,6 +1649,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Living Flame - 7 (Dun Morogh)
+#title Living Flame
+
 << Alliance Mage SoD
 
 
@@ -1665,6 +1701,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Living Flame - 6 (Durotar)
+#title Living Flame
+
 << Horde Mage SoD
 
 
@@ -1714,6 +1752,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Living Flame - 6 (Tirisfal Glades)
+#title Living Flame
+
 << Horde Mage SoD
 
 
@@ -1767,6 +1807,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Arcane Blast - 18 (Ashenvale)
+#title Arcane Blast
 
 << Mage SoD
 
@@ -1837,6 +1878,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Living Bomb - 12 (Loch Modan)
+#title Living Bomb
+
 << Alliance Mage SoD
 
 
@@ -1887,6 +1930,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Living Bomb - 18 (Westfall)
+#title Living Bomb
+
 << Alliance Mage SoD
 
 
@@ -1958,6 +2003,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Living Bomb - 17 (Silverpine Forest)
+#title Living Bomb
+
 << Horde Mage SoD
 
 step
@@ -2008,6 +2055,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Living Bomb - 20 (The Barrens)
+#title Living Bomb
+
 << Horde Mage SoD
 
 step
@@ -2031,8 +2080,6 @@ RXPGuides.RegisterGuide([[
 #subgroup Waist
 #title Spellfrost Bolt/Frostfire Bolt
 #name Spellfrost Bolt/Frostfire Bolt - 37 (Stranglethorn Vale)
-
-
 
 step << Alliance
     .train 415948,1
@@ -2098,7 +2145,8 @@ RXPGuides.RegisterGuide([[
 << Mage SoD
 #group RestedXP Rune & Books Guide
 #subgroup Waist
-#name Hot Streak
+#name Hot Streak - 35 (Alterac Mountains)
+#title Hot Streak
 
 -- Hot Streak
 
@@ -2130,7 +2178,7 @@ RXPGuides.RegisterGuide([[
 << Mage SoD
 #group RestedXP Rune & Books Guide
 #subgroup Boots
-#name Chronostatic Preservation
+#name Chronostatic Preservation - 30 (Thousand Needles)
 
 -- Chronostatic Preservation
 step

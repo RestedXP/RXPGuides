@@ -4,6 +4,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Haunt - 3 (Elwynn Forest)
+#title Haunt
+
 step << Warlock
     #season 2
     .goto Elwynn Forest,52.544,51.922
@@ -23,6 +25,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Haunt - 1 (Dun Morogh)
+#title Haunt
 
 step << Warlock
     #season 2
@@ -43,6 +46,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Haunt - 2 (Durotar)
+#title Haunt
 
 
     --Rune of Haunt
@@ -79,6 +83,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Haunt - 2 (Tirisfal)
+#title Haunt
 
 
     --Rune of Haunt
@@ -116,6 +121,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Soul Siphon - 13 (Durotar)
+#title Soul Siphon
 
 step
     #completewith next
@@ -150,6 +156,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Soul Siphon - 9 (Tirisfal Glades)
+#title Soul Siphon
 
 step
     #completewith next
@@ -183,6 +190,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Demonic Tactics - 4 (Tirisfal Glades)
+#title Demonic Tactics
 
 step
     #completewith next
@@ -228,6 +236,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Demonic Grace - 8 (Durotar)
+#title Demonic Grace
 
 step
     #completewith DemonicGraceDurotarTome
@@ -281,6 +290,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Demonic Grace - 8 (Tirisfal Glades)
+#title Demonic Grace
 
 step
     .train 425477,1
@@ -344,6 +354,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Gloves << Warlock
 -- #name Burnout - 8 (Tirisfal Glades) << Mage
 #name Chaos Bolt - 8 (Tirisfal Glades) << Warlock
+#title Chaos Bolt << Warlock
 --Permok: Dont load it for mages for now
 
 step << Mage
@@ -378,6 +389,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Lake of Fire - 25 (Hillsbrad Foothills)
+#title Lake of Fire
 
 step
     #completewith next
@@ -409,6 +421,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Incinerate - 22 (Redridge Mountains)
+#title Incinerate
 
 step
     #completewith next
@@ -433,6 +446,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Master Channeler - 12 (The Barrens)
+#title Master Channeler
 
 step
     #completewith next
@@ -457,6 +471,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Master Channeler - 14 (Silverpine Forest)
+#title Master Channeler
 
 step
     #completewith next
@@ -479,6 +494,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadow Bolt Volley - 16 (The Barrens)
+#title Shadow Bolt Volley
 
 step
     #completewith next
@@ -508,6 +524,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadow Bolt Volley - 18 (Silverpine Forest)
+#title Shadow Bolt Volley
 
 step
     #completewith next
@@ -540,6 +557,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Metamorphosis - 25
+#title Metamorphosis
 
 step
     #completewith WarlockRuneMetamorphosisA
@@ -660,6 +678,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Master Channeler - 10 (Loch Modan)
+#title Master Channeler
 
 step << Warlock
     .line Loch Modan,22.87,70.89,24.69,68.20,28.02,65.41,29.47,59.92,31.56,56.66,32.36,50.09,34.94,47.10,32.36,50.09,31.36,47.60,31.54,44.72,32.29,42.34,32.25,41.14,31.08,38.57,30.04,31.45,27.96,25.37,26.73,23.07,26.04,19.16,25.95,15.13,25.53,11.66
@@ -703,6 +722,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Master Channeler - 15 (Darkshore)
+#title Master Channeler
 
 step << Warlock
     .goto Darkshore,55.27,27.74,40,0
@@ -726,6 +746,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Soul Siphon - 10 (Dun Morogh)
+#title Soul Siphon
 
 step << Warlock
     #completewith next
@@ -763,6 +784,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Soul Siphon - 10 (Elwynn Forest)
+#title Soul Siphon
 
 step << Warlock
     #completewith next
@@ -811,6 +833,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Demonic Tactics - 1 (Elwynn Forest)
+#title Demonic Tactics
 
 step << Warlock
     .goto Elwynn Forest,56.743,57.650
@@ -865,6 +888,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Demonic Grace - 10 (Elwynn Forest)
+#title Demonic Grace
 
 step << Warlock
     .goto Elwynn Forest,61.6,53.8
@@ -937,6 +961,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Demonic Grace - 10 (Dun Morogh)
+#title Demonic Grace
 
 step << Warlock
     .goto Dun Morogh,22.8,50.6
@@ -983,6 +1008,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadow Bolt Volley - 16 (Darkshore)
+#title Shadow Bolt Volley
 
 step << Warlock
     .goto Darkshore,56.8,27.6,60,0
@@ -1003,6 +1029,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Chaos Bolt - 8 (Dun Morogh)
+#title Chaos Bolt
 
 step << Warlock
     .goto Dun Morogh,69.365,58.302
@@ -1024,6 +1051,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Chaos Bolt - 8 (Elwynn Forest)
+#title Chaos Bolt
 
 step << Warlock
     .goto Elwynn Forest,77.010,51.897
@@ -1056,7 +1084,8 @@ RXPGuides.RegisterGuide([[
 << Warlock SoD
 #group RestedXP Rune & Books Guide
 #subgroup Belt
-#name Invocation
+#name Invocation - 35 (Arathi Highlands)
+#title Invocation
 
 -- Invocation
 
@@ -1089,6 +1118,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Boots
 #name Dance of the Wicked - 35 (Desolace)
+#title Dance of the Wicked
 
 -- Dance of the Wicked
 
@@ -1116,6 +1146,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Boots
 #name Dance of the Wicked - 35 (Stranglethorn)
+#title Dance of the Wicked
 
 -- Dance of the Wicked
 
