@@ -2847,6 +2847,7 @@ step << !Warlock
     .goto Stonetalon Mountains,58.44,75.90,40,0
     .goto Stonetalon Mountains,54.99,76.03
     >>Kill |cRXP_ENEMY_Deepmoss Creepers|r
+    >>|cRXP_WARN_Save any|r |T134339:0|t[Small Venom Sacs] |cRXP_WARN_you loot|r << Rogue
     .complete 6461,1 --Kill Deepmoss Creeper (x10)
     .mob Deepmoss Creeper
 step
@@ -2896,6 +2897,7 @@ step
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Deepmoss Venomspitters|r
+    >>|cRXP_WARN_Save any|r |T134339:0|t[Small Venom Sacs] |cRXP_WARN_you loot|r << Rogue
     .complete 6461,2 --Kill Deepmoss Venomspitter (x7)
     .mob Deepmoss Venomspitter
 step
@@ -2906,6 +2908,7 @@ step
 step
     .loop 25,Stonetalon Mountains,59.25,61.55,60.37,60.10,61.34,59.15,61.15,57.85,61.41,56.77,62.21,58.55,63.12,60.02,64.69,60.03,62.76,61.69,62.50,62.92,62.48,64.15,61.85,66.07,60.71,66.12,60.96,63.99,60.25,63.21
     >>Kill |cRXP_ENEMY_Deepmoss Venomspitters|r
+    >>|cRXP_WARN_Save any|r |T134339:0|t[Small Venom Sacs] |cRXP_WARN_you loot|r << Rogue
     .complete 6461,2 --Kill Deepmoss Venomspitter (x7)
     .mob Deepmoss Venomspitter
 step << Troll Warrior/Orc Warrior/Tauren Warrior
@@ -3051,6 +3054,7 @@ step
     .goto Stonetalon Mountains,68.59,88.34,80,0
     .goto Stonetalon Mountains,59.04,73.01
     >>Finish killing |cRXP_ENEMY_Deepmoss Creepers|r
+    >>|cRXP_WARN_Save any|r |T134339:0|t[Small Venom Sacs] |cRXP_WARN_you loot|r << Rogue
     .complete 6461,1 --Kill Deepmoss Creeper (x10)
     .mob Deepmoss Creeper
 step << Druid
@@ -4059,50 +4063,38 @@ step
     .target Bragok
     .dungeon WC
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r, |cRXP_FRIENDLY_Helbrim|r and |cRXP_FRIENDLY_Korran|r << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r and |cRXP_FRIENDLY_Korran|r << Tauren/Orc Warrior/Orc Shaman/Troll Warrior/Troll Shaman
-    >>|cRXP_FRIENDLY_Helbrim|r |cRXP_WARN_Starts a 45-minute timed quest|r << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    #xprate <1.5
+    .goto The Barrens,51.62,30.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r
     .turnin 876 >> Turn in Serena Bloodfeather
     .accept 1060 >> Accept Letter to Jin'Zil
-    .goto The Barrens,51.62,30.90
-    .accept 853 >> Accept Apothecary Zamah << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    .goto The Barrens,51.44,30.15 << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    .accept 868 >> Accept Egg Hunt
-    .goto The Barrens,51.10,29.60
     .target Darsok Swiftdagger
-    .target Apothecary Helbrim << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    .target Korran
     .isQuestComplete 876
 step
+    #xprate <1.5
     #optional
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r, |cRXP_FRIENDLY_Helbrim|r and |cRXP_FRIENDLY_Korran|r << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r and |cRXP_FRIENDLY_Korran|r << Tauren/Orc Warrior/Orc Shaman/Troll Warrior/Troll Shaman
-    >>|cRXP_FRIENDLY_Helbrim|r |cRXP_WARN_Starts a 45-minute timed quest|r << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    .goto The Barrens,51.62,30.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r
     .accept 1060 >> Accept Letter to Jin'Zil
-    .goto The Barrens,51.62,30.90
-    .accept 853 >> Accept Apothecary Zamah << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    .goto The Barrens,51.44,30.15 << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    .accept 868 >> Accept Egg Hunt
-    .goto The Barrens,51.10,29.60
     .target Darsok Swiftdagger
-    .target Apothecary Helbrim << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    .target Korran
     .isQuestTurnedIn 876
 step
-    #label ApothecaryPickup
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r and |cRXP_FRIENDLY_Korran|r << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korran|r << Tauren/Orc Warrior/Orc Shaman/Troll Warrior/Troll Shaman
-    >>|cRXP_FRIENDLY_Helbrim|r |cRXP_WARN_Starts a 45-minute timed quest|r << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    .accept 853 >> Accept Apothecary Zamah << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    .goto The Barrens,51.44,30.15 << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    .accept 868 >> Accept Egg Hunt
+    .goto The Barrens,51.44,30.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
+    >>|cRXP_FRIENDLY_Helbrim|r |cRXP_WARN_Starts a 45-minute timed quest|r
+    .accept 853 >> Accept Apothecary Zamah
+    .target Apothecary Helbrim
+    .isQuestTurnedIn 848
+step
     .goto The Barrens,51.10,29.60
-    .target Apothecary Helbrim << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korran|r
+    .accept 868 >> Accept Egg Hunt
     .target Korran
-step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+step
     #sticky
     #completewith ZamahTurnin
     +|cRXP_WARN_You are on a timed quest, don't go afk. It will get turned in 10-15 minutes after pick-up|r
+    .isOnQuest 853
 step
     #completewith next
     .zone Stonetalon Mountains >> Travel to Stonetalon Mountains
@@ -4198,6 +4190,13 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chesmu|r
     .bankdeposit 5075 >> Deposit your |T134128:0|t[Blood Shards]
     .bankdeposit 5059 >> Deposit your |T132938:0|t[Digging Claw]
+    .target Chesmu
+    .isOnQuest 868
+step << Druid
+    #optional
+    .goto Thunder Bluff,47.12,57.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chesmu|r
+    .bankdeposit 5075 >> Deposit your |T134128:0|t[Blood Shards]
     .target Chesmu
 step << Druid
     .goto Thunder Bluff,45.83,64.74
@@ -4321,6 +4320,13 @@ step << !Druid
     .bankdeposit 5075 >> Deposit your |T134128:0|t[Blood Shards]
     .bankdeposit 5059 >> Deposit your |T132938:0|t[Digging Claw]
     .target Chesmu
+    .isOnQuest 868
+step << !Druid
+    #optional
+    .goto Thunder Bluff,47.12,57.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chesmu|r
+    .bankdeposit 5075 >> Deposit your |T134128:0|t[Blood Shards]
+    .target Chesmu
 step << Undead Warrior
     .goto Thunder Bluff,40.93,62.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ansekhwa|r
@@ -4352,7 +4358,17 @@ step
     .target Clarice Foster
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
-    .turnin 853 >> Turn in Apothecary Zamah << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    .turnin 853 >> Turn in Apothecary Zamah
+    .turnin 1064 >> Turn in Forsaken Aid
+    .accept 1065 >> Accept Journey to Tarren Mill
+    .accept 962 >> Accept Serpentbloom
+    .goto Thunder Bluff,22.82,20.88
+    .target Apothecary Zamah
+    .isOnQuest 853
+    .dungeon WC
+step
+    #optional
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
     .turnin 1064 >> Turn in Forsaken Aid
     .accept 1065 >> Accept Journey to Tarren Mill
     .accept 962 >> Accept Serpentbloom
@@ -4360,9 +4376,17 @@ step
     .target Apothecary Zamah
     .dungeon WC
 step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
+    .turnin 853 >> Turn in Apothecary Zamah
+    .turnin 1064 >> Turn in Forsaken Aid
+    .accept 1065 >> Accept Journey to Tarren Mill
+    .goto Thunder Bluff,22.82,20.88
+    .target Apothecary Zamah
+    .isOnQuest 853
+step
+    #optional
     #label ZamahTurnin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
-    .turnin 853 >> Turn in Apothecary Zamah << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .turnin 1064 >> Turn in Forsaken Aid
     .accept 1065 >> Accept Journey to Tarren Mill
     .goto Thunder Bluff,22.82,20.88
@@ -4408,8 +4432,14 @@ step
     .goto Thunder Bluff,29.68,21.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pand|r
     .train 3277 >> Train |T133684:0|t[Wool Bandage]
+    .train 7934 >> Train |T134437:0|t[Anti-Venom] << Rogue
     .target Pand Stonebinder
     .skill firstaid,<1,1
+step << Rogue
+    >>|cRXP_WARN_Create|r |T134437:0|t[Anti-Venom] |cRXP_WARN_if you found any|r |T134339:0|t[Small Venom Sacs]
+    >>|cRXP_WARN_Save them for later|r
+    .collect 6452,1 --Anti Venom
+    .itemcount 1475,1
 step << Rogue
     .goto Thunder Bluff,53.00,56.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kard|r|cRXP_BUY_. Buy a|r |T135324:0|t[Longsword] |cRXP_BUY_from him.|r
@@ -4896,6 +4926,7 @@ step << Warlock
     .zoneskip Stonetalon Mountains
     .dungeon !WC
 step
+    #xprate <1.5
     #completewith KayaLives
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
@@ -4934,6 +4965,7 @@ step
     .isOnQuest 962
     .dungeon WC
 step
+    #xprate <1.5
     #label KayaLives
     .goto Stonetalon Mountains,47.46,58.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tammra|r
@@ -4941,6 +4973,7 @@ step
     .target Tammra Windfield
     .isQuestTurnedIn 6523
 step
+    #xprate <1.5
     .goto Stonetalon Mountains,47.47,62.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Jayka|r
     >>|cRXP_WARN_Do NOT set your|r |T134414:0|t[Hearthstone]
@@ -4953,6 +4986,7 @@ step
     .target Innkeeper Jayka
     .isOnQuest 1095
 step
+    #xprate <1.5
     .goto Stonetalon Mountains,47.52,62.38,5,0
     .goto Stonetalon Mountains,47.61,61.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Jeeda|r |cRXP_BUY_on the second floor of the inn|r
@@ -4961,22 +4995,26 @@ step
     .target Jeeda
     .isOnQuest 1095
 step
+    #xprate <1.5
     #completewith next
     .goto Stonetalon Mountains,49.38,61.68,30,0
     .goto Stonetalon Mountains,48.92,62.71,30,0
     .goto Stonetalon Mountains,48.11,63.88,30,0
     .goto Stonetalon Mountains,47.21,64.05,30 >> Run up the path to the right
 step
+    #xprate <1.5
     .goto Stonetalon Mountains,47.36,64.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tsunaman|r
     .accept 6562 >>Accept Trouble in the Deeps
     .accept 6393 >>Accept Elemental War
     .target Tsunaman
 step << Hunter
+    #xprate <1.5
     .goto Stonetalon Mountains,59.08,75.70
     >>Click the |cRXP_FRIENDLY_Wanted Poster|r
     .accept 6284 >>Accept Arachnophobia
 step << Hunter
+    #xprate <1.5
     .goto Stonetalon Mountains,51.89,73.81,50,0
     .goto Stonetalon Mountains,52.46,71.67
     >>Kill |cRXP_ENEMY_Besseleth|r. Loot her for for her |cRXP_LOOT_Fang|r
@@ -4985,6 +5023,7 @@ step << Hunter
     .complete 6284,1 --Collect Besseleth's Fang (x1)
 	.unitscan Besseleth
 step
+    #xprate <1.5
     .goto Stonetalon Mountains,58.99,62.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz|r
     .turnin 1095 >>Turn in Further Instructions
@@ -5469,11 +5508,6 @@ step
     .target Karang Amakkar
 step
     #xprate >1.49
-    .hs >> Hearth to Thunder Bluff
-    .cooldown item,6948,>0
-    .use 6948
-step
-    #xprate >1.49
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Orgrimmar >>Fly to Orgrimmar
@@ -5603,8 +5637,9 @@ step << Druid
 step << Rogue
     #completewith next
     .goto The Barrens,55.70,5.89
-	.use 8051 >>Target |cRXP_FRIENDLY_Taskmaster Fizzule|r, then use your |T134536:0|t[Flare Gun] TWICE and type /Salute
+	+Target |cRXP_FRIENDLY_Taskmaster Fizzule|r, then use your |T134536:0|t[Flare Gun] TWICE and type /Salute
     >>|cRXP_WARN_Be careful! Do NOT approach him until he becomes friendly or he will attack you!|r
+    .use 8051
     .target Taskmaster Fizzule
 step << Rogue
     #label MissionProbable
@@ -5647,12 +5682,26 @@ step << Rogue
     >>Use your lock picking to open |cRXP_PICK_Gallywix's Lockbox|r & loot the |cRXP_LOOT_Mixture|r.
     .complete 2478,6 --Cache of Zanzil's Altered Mixture (1)
 step << Rogue/Druid
+    #hardcore
     #completewith next
     .goto The Barrens,61.33,4.21,120 >>Travel toward the Boulder Lode Mine
 step << Rogue/Druid
-    .goto The Barrens,60.00,4.09
-    .goto Orgrimmar,40.05,68.05,30 >>|cRXP_WARN_Jump onto the tent. Perform a Logout Skip by logging out and back in. Run back to Orgrimmar if you don't succeed|r
-    .link https://www.youtube.com/watch?v=cOxspH4RcI8&ab >> |cRXP_WARN_CLICK HERE for an example|r
+    #hardcore
+    .goto The Barrens,60.48,3.76
+    .goto Orgrimmar,40.05,68.05,30 >>|cRXP_WARN_Jump onto the wooden beam. Perform a Logout Skip by logging out and back in. Run back to Orgrimmar if you don't succeed|r
+    .link https://www.youtube.com/watch?v=U7YfoaO-X8E&ab_channel=RestedXP >> |cRXP_WARN_CLICK HERE for an example|r
+    .zoneskip Orgrimmar
+step << Rogue/Druid
+    #softcore
+    #completewith next
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+step << Rogue/Druid
+    #softcore
+    .goto The Barrens,51.50,30.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
+    .fly Orgrimmar >> Fly to Orgrimmar
+    .zoneskip Orgrimmar
+    .target Devrak
 step << Rogue
     .goto Orgrimmar,43.05,53.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shenthul|r
@@ -5720,6 +5769,13 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trak'gen|r|cRXP_BUY_. Buy |r |T135423:0|t[Deadly Throwing Axe] |cRXP_BUY_from him|r
     .collect 3137,200,6544,1 --Deadly Throwing Axe (200)
     .target Trak'gen
+step << Rogue
+    >>|cRXP_WARN_If you have any|r |T134437:0|t[Anti-Venom]|cRXP_WARN_, use one to cure yourself of|r |T136230:0|t[Touch of Zanzil]
+    .itemcount 6452,1
+    .aura 9991
+step << Rogue
+    .destroy 8051 >> Delete the |T134536:0|t[Flare Gun] from your bags, as it's no longer needed
+    .destroy 8066 >> Delete |T134374:0|t[Fizzule's Whistle] from your bags, as it's no longer needed
 step
     #optional
     .abandon 6421 >> Abandon Boulderslide Ravine

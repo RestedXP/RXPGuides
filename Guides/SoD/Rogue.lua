@@ -800,7 +800,7 @@ step
     >>|cRXP_WARN_You have to do the next part solo! Grouping up will prevent you from obtaining the keys you need|r
 step << Horde
     #season 2
-    .gossipoption 88819,1 >>Stealth past |cRXP_ENEMY_Rethilgore|r, talk to |cRXP_FRIENDLY_Deathstalker Adamant|r and |T132331:0|t[Vanish] aftwards. He will open the door for you
+    .gossipoption 96495,1 >>Stealth past |cRXP_ENEMY_Rethilgore|r, talk to |cRXP_FRIENDLY_Deathstalker Adamant|r and |T132331:0|t[Vanish] aftwards. He will open the door for you
     .target Deathstalker Adamant
     .train 400080,1
 step << Alliance
