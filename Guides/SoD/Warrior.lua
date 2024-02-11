@@ -1279,33 +1279,62 @@ step
 ]])
 
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Alliance Warrior SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Boots
--- #name Intervene - 32 (Thousand Needles)
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Warrior SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Intervene - 32 (Thousand Needles)
 
--- -- Intervene
+-- Intervene
 
--- step
---     .goto Thousand Needles,66.0,88.0
---     >>|T135358:0|t[Execute], |T136080:0|t[Taunt], |T132357:0|t[Shield Bash]
---     .mob Combat Dummy
--- ]])
+step
+    .train 403472,1
+    #completewith next
+    >>Before you head out to Thousand Needles, make sure to pack a wearable two-handed sword along with 2 wearable one-handed weapons. Don't worry about their strength.
+step
+    .train 403472,1
+    .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
+step
+    .train 403472,1
+    .goto Thousand Needles,67.8,89.4
+    .equip 16 >> Equip any Two-Handed Weapon.
+    .cast 5308 >> Cast |T135358:0|t[Execute] on the |cRXP_ENEMY_Combat Dummy|r located in front of the male statue while you are wielding a two-handed weapon.
+    .mob Combat Dummy
+step
+    .train 403472,1
+    .goto Thousand Needles,67.7,89.3
+    .equip Equip a pair of one-handed weapons
+    .cast 355 >> Cast |T136080:0|t[Taunt] on the |cRXP_ENEMY_Combat Dummy|r located in front of the dwarf statue while you are dual-wielding.
+    .mob Combat Dummy
+step
+    .train 403472,1
+    .goto Thousand Needles,68.2,89.8
+    .cast 355 >> Cast |T132357:0|t[Shield Bash] on the |cRXP_ENEMY_Combat Dummy|r located in front of the human female statue while you are dual-wielding.
+    .mob Combat Dummy
+step
+    .goto Thousand Needles,67.9,89.5
+    >>Click on the |cRXP_PICK_Warrior's Bounty|r to receive |T134419:0|t[Rune of Intervention]
+    .train 403472 >> Use |T134419:0|t[Rune of Intervention] to learn |T132365:0|t[Intervene]
+]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Warrior SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Boots
--- #name Rallying Cry - 40 (Badlands)
+RXPGuides.RegisterGuide([[
+#classic
+<< Warrior SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Rallying Cry - 40 (Badlands)
 
--- -- Rallying Cry
--- step
---     .train 426491 >>Kill the |cRXP_ENEMY_Wandering Swordsman|r somewhere in Badlands |cRXP_WARN_this a rare|r. Loot him Rune of Rallying Cry
---     .target Wandering Swordsman
--- ]])
+-- Rallying Cry
+step
+    #loop
+    .goto Badlands,35.6,59.6,25,0
+    .goto Badlands,24.8,58.8,25,0
+    .goto Badlands,28.4,67.6,25,0
+    >>Kill the |cRXP_ENEMY_Wandering Swordsman|r in Badlands |cRXP_WARN_ Please note, this is a rare enemy and there's a chance it may not be present.|r Loot him |T134419:0|t[Rune of the Commander]
+    .train 426491 >> Use |T134419:0|t[Rune of the Commander] to learn |T426490:0|t[Rallying Cry]
+    .target Wandering Swordsman
+]])
 
 
 -- RXPGuides.RegisterGuide([[
