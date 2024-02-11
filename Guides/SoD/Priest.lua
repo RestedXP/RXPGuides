@@ -958,35 +958,33 @@ step
     .use 213140
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Alliance Priest SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Waist
--- #name Empowered Renew - 33 (Alterac Mountains)
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Priest SoD
+#group RestedXP Rune & Books Guide
+#subgroup Waist
+#name Empowered Renew - 33 (Alterac Mountains)
+#title Empowered Renew
 
--- -- Empowered Renew
+-- Empowered Renew
 
--- step
---     .train 425309,1
---     .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
--- step
---     .train 425309,1
---     #loop
---     .goto Thousand Needles,33.0,28.2,25,0
---     .goto Thousand Needles,33.0,35.4,25,0
---     .goto Thousand Needles,35.0,39.2,25,0
---     .goto Thousand Needles,35.6,31.0,25,0
---     >>Kill |cRXP_ENEMY_Grimtotem Geomancers|r, |cRXP_ENEMY_Grimtotem Bandit|r, |cRXP_ENEMY_Grimtotem Reaver|r and |cRXP_ENEMY_Grimtotem Stomper|r and loot them for |cRXP_LOOT_Prophecy of the Quickened Path|r
---     .collect 213140,1
---     .mob Grimtotem Geomancer
---     .mob Grimtotem Bandit
---     .mob Grimtotem Reaver
---     .mob Grimtotem Stomper
--- step
---     .train 425309 >>|cRXP_WARN_Use|r |T135975:0|t|cRXP_LOOT_[Prophecy of the Quickened Path]|r |cRXP_WARN_to learn|r |T236254:0|t[Empowered Renew]
---     .use 213140
--- ]])
+step
+    .train 425309,1
+    .zone Alterac Mountains >>Travel to |cFFfa9602Alterac Mountains|r
+step
+    .train 425309,1
+    #loop
+    .goto Alterac Mountains,49.0 61.6,25,0
+    .goto Alterac Mountains,54.6 52.6,25,0
+    .goto Alterac Mountains,52.4 41.6,25,0
+    .goto Alterac Mountains,46.6 35.6,25,0
+    >>Kill |cRXP_ENEMY_Crushridge Ogre|r. Loot them for |cRXP_LOOT_Prophecy of the Quickened Path|r
+    .collect 213140,1
+    .mob Crushridge Ogre
+step
+    .train 425309 >>|cRXP_WARN_Use|r |T135975:0|t|cRXP_LOOT_[Prophecy of the Quickened Path]|r |cRXP_WARN_to learn|r |T236254:0|t[Empowered Renew]
+    .use 213140
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -994,6 +992,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Waist
 #name Renewed Hope - 30 (Desolace)
+#title Renewed Hope
 
 -- Renewed Hope
 step
@@ -1121,6 +1120,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Bracers
 -- #name Void Zone
+-- for phase 3
 
 -- Void Zone
 
@@ -1133,6 +1133,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Helmet
 -- #name Divine Aegis
+-- for phase 3
 
 -- Divine Aegis
 
