@@ -1411,24 +1411,29 @@ step
 
 
 -- ]])
-
 RXPGuides.RegisterGuide([[
 #classic
 << Rogue SoD
 #group RestedXP Rune & Books Guide
-#subgroup Waist
-#title Shuriken Toss
-#name Shuriken Toss - 32 (Swamp of Sorrows)
-
--- Shuriken Toss
+#subgroup Belt
+#name Shuriken Toss - 30 (Swamp of Sorrows)
 
 step
     .train 400096,1
-    .zone Swamp of Sorrows >>Travel to |cFFfa9602Swamp of Sorrows|r
+    .train 1842 >>You have to learn |T136162:0|t[Disarm Trap] before you can obtain this rune
+    .collect 5060,1 >>You also need |T135259:0|t[Thieves' Tools]
+step
+    #completewith next
+    .zone Swamp of Sorrows >>Travel to Swamp of Sorrows
 step
     .train 400096,1
+    >>Use |T136162:0|t[Disarm Trap] on the |cRXP_PICK_Dart Trap|r on the tree. |cRXP_WARN_Loot the chest to obtain the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Assassin|r]|r
     .goto Swamp of Sorrows,41.9,30.2
-    .cast 1842 >> Use |T136162:0|t[Disarm] on the trap on the tree to obtain the rune |T132330:0|t[Shuriken Toss]
+    .collect 213139,1
+step
+    .itemcount 213139,1
+    .use 213139
+    .train 400096 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Assassin|r] to learn |T132330:0|t[Shuriken Toss]
 ]])
 
 -- RXPGuides.RegisterGuide([[
