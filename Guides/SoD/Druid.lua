@@ -290,7 +290,7 @@ step << Druid
     .turnin 77648 >>Turn in Relics of the Tauren
     .target Gart Mistrunner
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -329,7 +329,7 @@ step
     .use 206954
     .itemcount 206954,1
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -355,7 +355,7 @@ step
     .use 206989
     .itemcount 206989,1
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -382,7 +382,7 @@ step << Druid
     .use 206970
     .itemcount 206970,1
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -434,9 +434,7 @@ step
     .itemcount 206963,1
 
 
-    ]])
-
-
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -473,8 +471,7 @@ step
     .train 416049 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Lacerate|r] |cRXP_WARN_to train|r |T132131:0|t[Lacerate]
     .use 208687 --Rune of Lacerate (1)
     .itemcount 208687,1
-    ]])
-
+]])
 
 RXPGuides.RegisterGuide([[
 #classic

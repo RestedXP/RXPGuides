@@ -2005,7 +2005,6 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
---x shiek: Troll unsure to lock it behind class
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Living Bomb - 20 (The Barrens)
@@ -2125,19 +2124,6 @@ step
     .train 401749 >>|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Hot Streak|r] to learn |T236218:0|t[Hot Streak]
     .use 213123
 ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- #group RestedXP Rune & Books Guide
--- #subgroup Waist
--- #name Frostfire Bolt
-
--- Frostfire Bolt
-
--- << Mage SoD
-
-
--- ]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -2279,6 +2265,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Helmet
 -- #name Deep Freeze
+-- for phase 3
 
 -- Deep Freeze
 
@@ -2287,36 +2274,3 @@ step
 
 -- ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Mage SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Skill Books
--- #name Expanded Intellect
-
--- -- Expanded Intellect
-
--- step
---     .train 436949,1
---     #completewith Interrogator Vishas
---     +The Skill Books are obtained by killing the first/last dungeon boss of Scarlet Monastery: Graveyard or the rare |cRXP_ENEMY_Ironspine|r |cRXP_WARN_it is highly recommended to have a group of 5 players.|r
--- step
---     .train 436949,1
---     .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
--- step
---     .train 436949,1
---     .goto 1415,47.44,19.75,10,0
---     .goto 1415,47.45,19.69,5,0
---     .goto 1415,47.62,19.59,10,0
---     .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
--- step
---     .train 436949,1
---     #label Interrogator Vishas
---     >>Kill |cRXP_ENEMY_Interrogator Vishas|r, |cRXP_ENEMY_Ironspine|r and loot them for |cRXP_LOOT_Tome of Expanded Intellect|r |cRXP_WARN_This might require multiple kills.|r
---     .collect 216740,1
---     .mob Interrogator Vishas
---     .mob Ironspine
--- step
---     .train 436949 >>|cRXP_WARN_Use the|r |T133736:0|t|cRXP_LOOT_[Tome of Expanded Intellect]|r |cRXP_WARN_to learn|r |T236513:0|t[Expanded Intellect]
---     .use 216740
--- ]])

@@ -1025,17 +1025,6 @@ step
     .train 410116 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Scrapper|r] to learn |T132147:0|t[Dual-Wield Specialization]
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Hunter SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Boots
--- #name Invigoration
-
--- Invigoration
-
-
--- ]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
@@ -1043,6 +1032,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Bracers
 -- #name Focus Fire
+-- for phase 3
 
 -- Focus Fire
 
