@@ -1436,18 +1436,59 @@ step
     .train 400096 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Assassin|r] to learn |T132330:0|t[Shuriken Toss]
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Rogue SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Boots
--- #name Master of Sublety
+RXPGuides.RegisterGuide([[
+#classic
+<< Rogue SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Master of Sublety - 34 (Stranglethorn Vale)
 
--- Master of Sublety
-
-
-
--- ]])
+step
+    .train 425103,1
+    .skill lockpicking,125 >>You need 125 lock picking to obtain this rune
+step
+    #completewith next
+    .zone Stranglethorn Vale >>Travel to Stranglethorn Vale
+step
+    .train 425103,1
+    >>|T133644:0|t[Pick Pocket] a |cRXP_ENEMY_Kurzen Elite|r in the cave for the |T134238:0|t[Compound Cage Key]
+    .goto Stranglethorn Vale,47.8,7.0
+    .collect 216616,1
+    .mob Kurzen Elite
+step
+    .train 425103,1
+    >>Open the |cRXP_PICK_Kurzen Supply Crate|r for the |T132647:0|t[Kurzen Fighter's Uniform]
+    .goto Stranglethorn Vale,49,7
+    .collect 216617,1
+step
+    .train 425103,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Wendel Mathers|r outside the cave inside the tower to free him
+    *|cRXP_WARN_He has a respawn timer of around 3 minutes|r
+    .goto Stranglethorn Vale,44.2,8.0
+    .skipgossip 218230,1
+    .destroy 216616 >>Give him the key
+    .destroy 216617 >>Give him the uniform
+    .target Wendel Mathers
+step
+    #completewith next
+    .subzone 35 >>Travel to Booty Bay
+step
+    .train 425103,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Captain Aransas|r to get |T133640:0|t[Captain Aransas' Reward]
+    .goto Stranglethorn Vale,27.6,76.6
+    .collect 216618,1
+    .target Captain Aransas
+step
+    .train 425103,1
+    >>Open |T133640:0|t[Captain Aransas' Reward] to get the |T134419:0|t[|cRXP_FRIENDLY_Rune of Sublety|r]
+    .use 216618
+    .collect 213136,1
+step
+    .itemcount 213136,1
+    .use 213136
+    .train 425103 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Sublety|r] to learn |T132299:0|t[Master of Subtlety]
+    
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
