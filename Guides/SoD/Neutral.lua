@@ -1601,3 +1601,87 @@ step
     .use 216770 << Hunter -- Treatise on Aspect of the Viper
     .use 216771 << Druid -- Leaflet of Enhanced Restoration
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Hunter SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots << Hunter
+#subgroup Boots << Druid
+#name Invigoration - 35 (Azeroth)
+#title Invigoration
+
+-- Invigoration
+
+step
+    .train 416089,1 << Hunter
+    .train 410027,1 << Druid
+    #completewith next
+    .zone Swamp of Sorrows >>Travel to Swamp of Sorrows
+step
+    .train 416089,1 << Hunter
+    .train 410027,1 << Druid
+    .goto Swamp of Sorrows,25.0,54.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r and buy |T133653:0|t[Entomology Starter Kit] |cRXP_WARN_it will cost 50silver.|r
+    .collect 213565,1
+    .target Amaryllis Webb
+step
+    .train 416089,1 << Hunter
+    .train 410027,1 << Druid
+    >>Open the |T133653:0|t[Entomology Starter Kit]
+    .use 213565
+    .collect 213562,1
+step
+    .train 416089,1 << Hunter
+    .train 410027,1 << Druid
+    #completewith next
+    .zone Stranglethorn Vale >>Travel to Stranglethorn Vale
+step
+    .train 416089,1 << Hunter
+    .train 410027,1 << Druid
+    >>Use the |T134325:0|t[Bug Catching Net] on the |cRXP_ENEMY_Arbor Tarantula|r on the tree stump.
+    .goto Stranglethorn Vale,44.6,19.8
+    .use 213562
+    .collect 213566,1
+    .mob Arbor Tarantula
+step
+    .train 416089,1 << Hunter
+    .train 410027,1 << Druid
+    #completewith next
+    .zone Arathi Highlands >>Travel to Arathi Highlands
+step
+    .train 416089,1 << Hunter
+    .train 410027,1 << Druid
+    >>Use the |T134325:0|t[Bug Catching Net] on a |cRXP_ENEMY_Hay Weevil|r
+    .goto Arathi Highlands,30.7,28.7
+    .use 213562
+    .collect 213568,1
+    .mob Hay Weevil
+step
+    .train 416089,1 << Hunter
+    .train 410027,1 << Druid
+    #completewith next
+    .zone Desolace >>Travel to Desolace
+step
+    .train 416089,1 << Hunter
+    .train 410027,1 << Druid
+    >>Use the |T134325:0|t[Bug Catching Net] on a |cRXP_ENEMY_Flesh Picker|r
+    .goto Desolace,51.2,59.9
+    .use 213562
+    .collect 213567,1
+    .mob Flesh Picker
+step
+    .train 416089,1 << Hunter
+    .train 410027,1 << Druid
+    #completewith next
+    .zone Swamp of Sorrows >>Travel to Swamp of Sorrows
+step
+    .goto Swamp of Sorrows,25.0,54.2
+    .train 410027 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r to acquire |T132266:0|t[Survival Instincts] << Druid
+    .train 416089 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r to acquire |T437997:0|t[Invigoration] << Hunter
+    .skipgossip 217412,1
+    .target Amaryllis Webb
+step
+    .train 416089 >> Use the |T134419:0|t[Rune of Invigoration] to learn |T437997:0|t[Invigoration] << Hunter
+    .train 410027 >> Use the |T134419:0|t[Rune of Survival] to learn |T132266:0|t[Survival Instincts] << Druid
+]])
