@@ -1045,6 +1045,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Bracers
 -- #name T.N.T.
+-- for phase 3
 
 -- T.N.T.
 
@@ -1058,6 +1059,7 @@ step
 -- #subgroup Skill Books
 -- #title Treatise on Aspect of the Viper
 -- #name Treatise on Aspect of the Viper - 27-40 (Scarlet Monastery)
+-- for phase 3
 
 -- -- Rune of Aspect of the Viper
 

@@ -38,7 +38,7 @@ step << Hunter
     .use 211205
     .itemcount 211205,1
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -83,8 +83,7 @@ step
     .use 210322
     .itemcount 210322,1
 
-    ]])
-
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -126,7 +125,7 @@ step
     .use 210252
     .itemcount 210252,1
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -899,7 +898,6 @@ step << Priest
     .itemcount 211490,1
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Hunter SoD
@@ -939,7 +937,7 @@ step
     .use 210596
     .itemcount 210596,1
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -1460,7 +1458,6 @@ step
     .train 425102 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Poisoned Blade|r] to learn |T236270:0|t[Poisoned Blade] << Rogue
     .train 425883 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Ancestral Awakening|r] to learn |T237571:0|t[Ancestral Awakening] << Shaman
 ]])
-
 
 RXPGuides.RegisterGuide([[
 #classic

@@ -2228,6 +2228,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Bracers
 -- #name Displacement
+-- for phase 3
 
 -- Displacement
 
@@ -2240,6 +2241,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Bracers
 -- #name Molten Armor
+-- for phase 3
 
 -- Molten Armor
 
@@ -2252,6 +2254,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Helmet
 -- #name Temporal Anomaly
+-- for phase 3
 
 -- Temporal Anomaly
 

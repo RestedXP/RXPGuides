@@ -1143,6 +1143,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Boots
 -- #name Shadowflame
+-- for phase 3
 
 -- Shadowflame
 
@@ -1155,6 +1156,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Bracers
 -- #name Immolation Aura
+-- for phase 3
 
 -- Immolation Aura
 
@@ -1167,6 +1169,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Bracers
 -- #name Summon Felguard
+-- for phase 3
 
 -- Summon Felguard
 
@@ -1179,6 +1182,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Bracers
 -- #name Unstable Affliction
+-- for phase 3
 
 -- Unstable Affliction
 
@@ -1191,6 +1195,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Helmet
 -- #name Backdraft
+-- for phase 3
 
 -- Backdraft
 

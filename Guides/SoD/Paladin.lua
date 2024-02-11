@@ -1631,3 +1631,69 @@ step
     .use 213513
     .train 416028 >>Use the |T134916:0|t[|cRXP_FRIENDLY_Libram of Deliverance|r] to learn |T236249:0|t[Sacred Shield]
 ]])
+
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Paladin SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Bracers
+-- #name Improved Hammer of Wrath
+-- for phase 3
+
+-- Improved Hammer of Wrath
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Paladin SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Bracers
+-- #name Purifying Power
+-- for phase 3
+
+-- Purifying Power
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Paladin SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helmet
+-- #name Fanaticism
+-- for phase 3
+
+-- Fanaticism
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Paladin SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helmet
+-- #name Light's Grace
+-- for phase 3
+
+-- Light's Grace
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Paladin SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helmet
+-- #name Wrath
+-- for phase 3
+
+-- Wrath
+
+
+-- ]])

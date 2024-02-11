@@ -533,96 +533,6 @@ step
 
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Druid SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Skill Books
--- #name Enhanced Restoration/Revive/Deeper Wilds - 27-40 (Scarlet Monastery)
-
--- step
---     .train 437138,1
---     .train 417123,1
---     .train 436956,1
---     #completewith Interrogator Vishas
---     +The skill books are obtained by killing the first and last dungeon boss of Scarlet Monastery: Graveyard |cRXP_WARN_it is highly recommended to have a group of 5 players.|r
--- step
---     .train 437138,1
---     .train 417123,1
---     .train 436956,1
---     .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
--- step
---     .train 437138,1
---     .train 417123,1
---     .train 436956,1
---     .goto 1415,47.44,19.75,10,0
---     .goto 1415,47.45,19.69,5,0
---     .goto 1415,47.62,19.59,10,0
---     .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
--- step
---     .train 437138,1
---     .train 417123,1
---     .train 436956,1
---     #label Interrogator Vishas
---     >>Kill |cRXP_ENEMY_Interrogator Vishas|r and loot him for |cRXP_LOOT_Leaflet of Enhanced Restoration|r |cRXP_WARN_This might require multiple kills.|r
---     .collect 216771
---     .mob Interrogator Vishas
--- step
---     .train 437138,1
---     .train 417123,1
---     .train 436956,1
---     #label Interrogator Vishas
---     >>Kill |cRXP_ENEMY_Bloodmage Thalnos|r and loot him for |cRXP_LOOT_Leaflet of Revive|r |cRXP_WARN_This might require multiple kills.|r
---     .collect 216767
---     .mob Bloodmage Thalnos
--- step
---     .train 437138,1
---     .train 417123,1
---     .train 436956,1
---     >>Kill |cRXP_ENEMY_Bloodmage Thalnos|r and loot him for |cRXP_LOOT_Leaflet of Revive|r |cRXP_WARN_This might require multiple kills.|r
---     .collect 216767
---     .mob Bloodmage Thalnos
--- step
---     .train 436956 >>|cRXP_WARN_Use the|r |T134914:0|t|cRXP_LOOT_[Leaflet of Deeper Wilds]|r |cRXP_WARN_to learn|r |T132124:0|t[Deeper Wilds]
---     .train 417123 >>|cRXP_WARN_Use the|r |T134914:0|t|cRXP_LOOT_[Leaflet of Enhanced Restoration]|r |cRXP_WARN_to learn|r |T136073:0|t[Enhanced Restoration]
---     .train 437138 >>|cRXP_WARN_Use the|r |T134914:0|t|cRXP_LOOT_[Leaflet of Revive]|r |cRXP_WARN_to learn|r |T132132:0|t[437138]
---     .use 216764
---     .use 216767
---     .use 216771
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Druid SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Skill Books
--- #name Deeper Wilds
-
--- -- Leaflet of Deeper Wilds
--- --x drops from an unknown mob in Graveyard
--- step
---     .train 436956,1
---     #completewith Interrogator Vishas
---     +This skillbook is obtained by killing a the first dungeon boss of Scarlet Monastery: Graveyard or the rare |cRXP_ENEMY_Ironspine|r |cRXP_WARN_it is highly recommended to have a group of 5 players.|r
--- step
---     .train 436956,1
---     .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
--- step
---     .train 436956,1
---     .goto 1415,47.44,19.75,10,0
---     .goto 1415,47.45,19.69,5,0
---     .goto 1415,47.62,19.59,10,0
---     .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
--- step
---     .train 436956,1
---     #label Interrogator Vishas
---     >>Kill |cRXP_ENEMY_Interrogator Vishas|r, |cRXP_ENEMY_Ironspine|r and loot them for |cRXP_LOOT_Leaflet of Deeper Wilds|r |cRXP_WARN_This might require multiple kills.|r
---     .collect 216764
---     .mob Interrogator Vishas
--- step
---     .use 216745
--- ]])
-
 RXPGuides.RegisterGuide([[
 #classic
 << Druid SoD
@@ -663,16 +573,6 @@ step
     .train 424760 >> Use |T134912:0|t[|cRXP_FRIENDLY_Idol of the Heckler|r] to learn |T236149:0|t[Berserk]
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Druid SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Waist
--- #name Nourish
-
-
--- ]])
-
 RXPGuides.RegisterGuide([[
 #classic
 << Druid SoD
@@ -706,73 +606,12 @@ step
     .train 410060 >>Click on the |cRXP_PICK_Sandy Loam|r to plant the seed to learn |T136090:0|t[Dreamstate]
 ]])
 
-RXPGuides.RegisterGuide([[
-#classic
-<< Druid SoD
-#group RestedXP Rune & Books Guide
-#subgroup Boots
-#name Survival Instincts - 35 (Swamp of Sorrows)
-
-step
-    #completewith next
-    .zone Swamp of Sorrows >>Travel to Swamp of Sorrows
-step
-    .train 410027,1
-    .goto Swamp of Sorrows,25.0,54.2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r and buy |T133653:0|t[Entomology Starter Kit] |cRXP_WARN_it will cost 50silver.|r
-    .collect 213565,1
-    .target Amaryllis Webb
-step
-    .train 410027,1
-    >>Open the |T133653:0|t[Entomology Starter Kit]
-    .use 213565
-    .collect 213562,1
-step
-    #completewith next
-    .zone Stranglethorn Vale >>Travel to Stranglethorn Vale
-step
-    .train 410027,1
-    >>Use the |T134325:0|t[Bug Catching Net] on the |cRXP_ENEMY_Arbor Tarantula|r on the tree stump
-    .goto Stranglethorn Vale,44.6,19.8
-    .use 213562
-    .collect 213566,1
-    .mob Arbor Tarantula
-step
-    #completewith next
-    .zone Arathi Highlands >>Travel to Arathi Highlands
-step
-    .train 410027,1
-    >>Use the |T134325:0|t[Bug Catching Net] on a |cRXP_ENEMY_Hay Weevil|r
-    .goto Arathi Highlands,30.7,28.7
-    .use 213562
-    .collect 213568,1
-    .mob Hay Weevil
-step
-    #completewith next
-    .zone Desolace >>Travel to Desolace
-step
-    .train 410027,1
-    >>Use the |T134325:0|t[Bug Catching Net] on a |cRXP_ENEMY_Flesh Picker|r
-    .goto Desolace,51.2,59.9
-    .use 213562
-    .collect 213567,1
-    .mob Flesh Picker
-step
-    #completewith next
-    .zone Swamp of Sorrows >>Travel to Swamp of Sorrows
-step
-    .goto Swamp of Sorrows,25.0,54.2
-    .train 410027 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r to obtain the rune |T132266:0|t[Survival Instincts]
-    .skipgossip 217412,1
-    .target Amaryllis Webb
-]])
-
 -- RXPGuides.RegisterGuide([[
 -- #classic
 -- << Druid SoD
 -- #group RestedXP Rune & Books Guide
--- #subgroup Bracers
--- #name Efflorescence
+-- #subgroup Waist
+-- #name Nourish
 
 
 -- ]])
@@ -782,7 +621,18 @@ step
 -- << Druid SoD
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Bracers
+-- #name Efflorescence
+-- for phase 3
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Druid SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Bracers
 -- #name Improved Frenzied Regeneration
+-- for phase 3
 
 
 -- ]])
@@ -793,7 +643,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Helmet
 -- #name Gale Winds
-
+-- for phase 3
 
 -- ]])
 
@@ -803,6 +653,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Helmet
 -- #name Gore
+-- for phase 3
 
 
 -- ]])
@@ -813,6 +664,6 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Helmet
 -- #name Improved Barkskin
-
+-- for phase 3
 
 -- ]])

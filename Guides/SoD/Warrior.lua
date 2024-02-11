@@ -1323,6 +1323,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Bracers
 -- #name Rampage
+-- for phase 3
 
 -- Rampage
 
@@ -1334,6 +1335,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Bracers
 -- #name Sword and Board
+-- for phase 3
 
 -- Sword and Board
 
@@ -1345,6 +1347,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Bracers
 -- #name Wrecking Crew
+-- for phase 3
 
 -- Wrecking Crew
 
@@ -1356,6 +1359,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Helmet
 -- #name Shield Mastery
+-- for phase 3
 
 -- Shield Mastery
 
@@ -1367,6 +1371,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Helmet
 -- #name Taste for Blood
+-- for phase 3
 
 -- Taste for Blood
 
