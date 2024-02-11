@@ -37,7 +37,6 @@ step << Warlock
     .itemcount 205230,1 -- Rune of Haunting (1)
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
@@ -72,8 +71,7 @@ step << Orc
     .turnin 77586 >>Turn in Stolen Power
     .target Nartok
 
-    ]])
-
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -110,7 +108,7 @@ step << Undead
     .target Maximillion
 
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -1205,60 +1203,9 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Helmet
 -- #name Pandemic
+-- for phase 3
 
 -- Pandemic
 
 
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Warlock SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Skill Books
--- #name Portal of Summoning
-
--- -- Portal of Summoning
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Warlock SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Skill Books
--- #title Soul Harvesting/Portal of Summoning
--- #name Soul Harvesting/Portal of Summoning - 27-40 (Scarlet Monastery)
-
--- -- Soul Harvesting
-
--- step
---     .train 437032,1
---     .train 437169,1
---     #completewith Interrogator Vishas
---     +The Skill Books are obtained by killing the first/last dungeon boss of Scarlet Monastery: Graveyard or the rare |cRXP_ENEMY_Ironspine|r |cRXP_WARN_it is highly recommended to have a group of 5 players.|r
--- step
---     .train 437032,1
---     .train 437169,1
---     .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
--- step
---     .train 437032,1
---     .train 437169,1
---     .goto 1415,47.44,19.75,10,0
---     .goto 1415,47.45,19.69,5,0
---     .goto 1415,47.62,19.59,10,0
---     .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
--- step
---     .train 437032,1
---     .train 437169,1
---     #label Interrogator Vishas
---     >>Kill |cRXP_ENEMY_Interrogator Vishas|r, |cRXP_ENEMY_Ironspine|r and loot them for |cRXP_LOOT_Grimoire of Soul Harvesting|r |cRXP_WARN_This might require multiple kills.|r
---     .collect 216747,1
---     .mob Interrogator Vishas
---     .mob Ironspine
--- step
---     .train 437032 >>|cRXP_WARN_Use the|r |T133733:0|t|cRXP_LOOT_[Grimoire of Soul Harvesting]|r |cRXP_WARN_to learn|r |T132851:0|t[Soul Harvesting]
---     .train 437169 >> >>|cRXP_WARN_Use the|r |T133733:0|t|cRXP_LOOT_[Grimoire of Portal of Summoning]|r |cRXP_WARN_to learn|r |T134423:0|t[Portal of Summoning]
---     .use 216747
---     .use 216748
 -- ]])

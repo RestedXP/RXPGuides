@@ -2324,14 +2324,3 @@ step
     .train 410103 >>|cRXP_WARN_Use the|r |T136095:0|t|cRXP_LOOT_Echo of the Alpha|r |cRXP_WARN_to learn|r |T408696:0|t[Spirit of the Alpha]
     .use 206985
 ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Horde Shaman SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Skill Books
--- #name Totemic Projection
-
--- Totemic Projection
-
--- ]])

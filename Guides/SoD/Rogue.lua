@@ -1651,6 +1651,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Helmet
 -- #name Combat Potency
+-- for phase 3
 
 -- Combat Potency
 
@@ -1663,6 +1664,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Helm
 -- #name Focused Attacks
+-- for phase 3
 
 -- Focused Attacks
 
@@ -1675,44 +1677,9 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Helm
 -- #name Honor Among Thieves
+-- for phase 3
 
 -- Honor Among Thieves
 
 
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Rogue SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Skill Books
--- #title Redirect
--- #name Redirect - 27-40 (Scarlet Monastery)
-
--- -- Redirect
-
--- step
---     .train 438040,1
---     #completewith Interrogator Vishas
---     +The Skill Books are obtained by killing the first/last dungeon boss of Scarlet Monastery: Graveyard or the rare |cRXP_ENEMY_Ironspine|r |cRXP_WARN_it is highly recommended to have a group of 5 players.|r
--- step
---     .train 438040,1
---     .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
--- step
---     .train 438040,1
---     .goto 1415,47.44,19.75,10,0
---     .goto 1415,47.45,19.69,5,0
---     .goto 1415,47.62,19.59,10,0
---     .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
--- step
---     .train 438040,1
---     #label Interrogator Vishas
---     >>Kill |cRXP_ENEMY_Interrogator Vishas|r, |cRXP_ENEMY_Ironspine|r and loot them for |cRXP_LOOT_Manual of Redirect|r |cRXP_WARN_This might require multiple kills.|r
---     .collect 216745,1
---     .collect 216744,1
---     .mob Interrogator Vishas
---     .mob Ironspine
--- step
---     .train 438040 >>|cRXP_WARN_Use the|r |T133735:0|t|cRXP_LOOT_[Manual of Redirect]|r |cRXP_WARN_to learn|r |T135425:0|t[Redirect]
---     .use 216738
 -- ]])

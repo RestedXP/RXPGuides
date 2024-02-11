@@ -449,8 +449,6 @@ step
     .xp <8,1
 ]])
 
-
-
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
@@ -1458,100 +1456,6 @@ step
 -- Enlightened Judgements
 
 
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Paladin SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Bracers
--- #name Improved Hammer of Wrath
-
--- Improved Hammer of Wrath
-
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Paladin SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Bracers
--- #name Purifying Power
-
--- Purifying Power
-
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Paladin SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Helmet
--- #name Fanaticism
-
--- Fanaticism
-
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Paladin SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Helmet
--- #name Light's Grace
-
--- Light's Grace
-
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Paladin SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Helmet
--- #name Wrath
-
--- Wrath
-
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Paladin SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Skill Books
--- #name Enhanced Blessings - 27-40 (Scarlet Monastery)
-
--- -- Enhanced Blessings
-
--- step
---     .train 435984,1
---     #completewith Interrogator Vishas
---     +The Skill Books are obtained by killing the first/last dungeon boss of Scarlet Monastery: Graveyard or the rare |cRXP_ENEMY_Ironspine|r |cRXP_WARN_it is highly recommended to have a group of 5 players.|r
--- step
---     .train 435984,1
---     .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
--- step
---     .train 435984,1
---     .goto 1415,47.44,19.75,10,0
---     .goto 1415,47.45,19.69,5,0
---     .goto 1415,47.62,19.59,10,0
---     .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
--- step
---     .train 435984,1
---     #label Interrogator Vishas
---     >>Kill |cRXP_ENEMY_Interrogator Vishas|r, |cRXP_ENEMY_Ironspine|r and loot them for |cRXP_LOOT_Testament of Enhanced Blessings|r |cRXP_WARN_This might require multiple kills.|r
---     .collect 216768,1
---     .mob Interrogator Vishas
---     .mob Ironspine
--- step
---     .train 435984 >>|cRXP_WARN_Use the|r |T133745:0|t|cRXP_LOOT_[Testament of Enhanced Blessings]|r |cRXP_WARN_to learn|r |T236248:0|t[Enhanced Blessings]
---     .use 216738
 -- ]])
 
 RXPGuides.RegisterGuide([[

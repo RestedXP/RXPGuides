@@ -97,7 +97,6 @@ step << NightElf Priest
     .train 402862,1
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Troll Priest SoD
@@ -130,7 +129,6 @@ step << Priest
     .target Ken'jai
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Undead Priest SoD
@@ -160,7 +158,7 @@ step << Priest
     .turnin 77670 >>Turn in Meditation on Undeath
     .target Dark Cleric Duesten
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -396,7 +394,6 @@ step
     .train 425216 >>|cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of Dark Purpose|r] |cRXP_WARN_to train|r |T237514:0|t[Void Plague]
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
@@ -417,7 +414,6 @@ step
     .itemcount 205944,1
     .train 402848 >>|cRXP_WARN_Use the|r |T135791:0|t[|cRXP_FRIENDLY_Reciprocal Epiphany|r] |cRXP_WARN_to train|r |T135944:0|t[Prayer of Mending]
 ]])
-
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -906,13 +902,13 @@ step << Priest
     .use 205940
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Void Plague - 6 (Dun Morogh)
+
 
 step << Priest
     #season 2
@@ -1148,6 +1144,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Skill Books
 -- #name Increased Fortitude
+-- for phase 3
 
 -- -- Increased Fortitude
 
@@ -1155,41 +1152,3 @@ step
 
 -- ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Priest SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Skillbooks
--- #title Shadowfiend/Increased Fortitude
--- #name Shadowfiend/Increased Fortitude - 27-40 (Scarlet Monastery)
-
--- step
---     .train 401977,1
---     .train 436951,1
---     #completewith Interrogator Vishas
---     +The Skill Books are obtained by killing the first/last dungeon boss of Scarlet Monastery: Graveyard or the rare |cRXP_ENEMY_Ironspine|r |cRXP_WARN_it is highly recommended to have a group of 5 players.|r
--- step
---     .train 401977,1
---     .train 436951,1
---     .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
--- step
---     .train 401977,1
---     .train 436951,1
---     .goto 1415,47.44,19.75,10,0
---     .goto 1415,47.45,19.69,5,0
---     .goto 1415,47.62,19.59,10,0
---     .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
--- step
---     .train 401977,1
---     .train 436951,1
---     #label Interrogator Vishas
---     >>Kill |cRXP_ENEMY_Interrogator Vishas|r, |cRXP_ENEMY_Ironspine|r and loot them for |cRXP_LOOT_Scroll of Shadowfiend|r |cRXP_WARN_This might require multiple kills.|r
---     .collect 216745,1
---     .collect 216744,1
---     .mob Interrogator Vishas
---     .mob Ironspine
--- step
---     .train 415423 >>|cRXP_WARN_Use the|r |T237162:0|t|cRXP_LOOT_[Scroll of Shadowfiend]|r |cRXP_WARN_to learn|r |T136199:0|t[Shadowfiend]
---     .train 436951 >>|cRXP_WARN_Use the|r |T237162:0|t|cRXP_LOOT_[Scroll of Increased Fortitude]|r |cRXP_WARN_to learn|r |T237543:0|t[Increased Fortitude]
---     .use 216745
--- ]])

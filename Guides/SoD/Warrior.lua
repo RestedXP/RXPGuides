@@ -495,8 +495,6 @@ step << Warrior
     .target Junni Steelpass
 ]])
 
-
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
@@ -534,8 +532,7 @@ step << Orc/Troll
     .turnin 77582 >>Turn in A Trial of Fitness << Orc
     .target Frang
 
-    ]])
-
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -572,8 +569,7 @@ step << Tauren
     .turnin 77651 >>Turn in Into the Brambles
     .target Harutt Thunderhorn
 
-    ]])
-
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -609,8 +605,7 @@ step << Undead
     .turnin 77668 >>Turn in The Lost Rune
     .target Dannal Stern
 
-    ]])
-
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -637,7 +632,6 @@ step
 
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
@@ -662,8 +656,7 @@ step
     .use 204809
     .itemcount 204809,1
 
-    ]])
-
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -702,7 +695,6 @@ step
     .itemcount 204716,1
 
 ]])
-
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -778,16 +770,6 @@ step
     .use 204716
     .itemcount 204716,1
 ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Warrior SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Legs
--- #name Commanding Shout
-
--- ]])
-
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -1010,7 +992,6 @@ step
 
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
@@ -1047,7 +1028,6 @@ step
 
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
@@ -1081,7 +1061,6 @@ step
     .itemcount 204441,1
 
 ]])
-
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -1140,7 +1119,6 @@ step << Warrior
     .itemcount 208778,1
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
@@ -1182,7 +1160,6 @@ step
 
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
@@ -1212,8 +1189,7 @@ step
     .use 208741
     .itemcount 208741,1
 
-    ]])
-
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -1277,7 +1253,6 @@ step
 step
     .train 409163 >> Kill the |cRXP_ENEMY_Witherbark Goliath|r. Loot him for the |cRXP_LOOT_Rune of Focused Rage|r. Use it to learn |T132345:0|t[Focused Rage]
 ]])
-
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -1403,44 +1378,8 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Helmet
 -- #name Vigilance
+-- for phase 3
 
 -- Vigilance
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Warrior SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Spell Books
--- #title Commanding Shout
--- #name Commanding Shout - 27-40 (Scarlet Monastery)
-
--- -- Commanding Shout
-
--- step
---     .train 403215,1
---     #completewith Interrogator Vishas
---     +The Skill Books are obtained by killing the first/last dungeon boss of Scarlet Monastery: Graveyard or the rare |cRXP_ENEMY_Ironspine|r |cRXP_WARN_it is highly recommended to have a group of 5 players.|r
--- step
---     .train 403215,1
---     .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
--- step
---     .train 403215,1
---     .goto 1415,47.44,19.75,10,0
---     .goto 1415,47.45,19.69,5,0
---     .goto 1415,47.62,19.59,10,0
---     .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
--- step
---     .train 403215,1
---     #label Interrogator Vishas
---     >>Kill |cRXP_ENEMY_Interrogator Vishas|r, |cRXP_ENEMY_Ironspine|r and loot them for |cRXP_LOOT_Scroll of Shadowfiend|r |cRXP_WARN_This might require multiple kills.|r
---     .collect 216745,1
---     .collect 216744,1
---     .mob Interrogator Vishas
---     .mob Ironspine
--- step
---     .train 403215 >>|cRXP_WARN_Use the|r |T133741:0|t|cRXP_LOOT_[Handbook of Commanding Shout]|r |cRXP_WARN_to learn|r |T132351:0|t[Commanding Shout]
---     .use 216746
 
 -- ]])
