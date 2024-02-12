@@ -1615,6 +1615,7 @@ step
     .mob Sunscale Screecher
     .mob Sunscale Scytheclaw
 step
+    #optional
     .goto The Barrens,56.5,7.5
     >>Grinding to level 16 here is important, due to the next 3 quests being quite hard
 	.xp 16
@@ -2868,7 +2869,7 @@ step
     .isOnQuest 1483
 step
     .goto Stonetalon Mountains,47.61,61.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Jeeda|r |cRXP_BUY_on the second floor of the inn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeeda|r on the second floor of the inn
     .vendor >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_from her if they're up|r << !Warrior
     .vendor >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_and|r |T134413:0|t[Liferoot] |cRXP_BUY_from her if they're up|r << Warrior
     .target Jeeda
@@ -3168,6 +3169,7 @@ step
 step << Warlock/Shaman
     .loop 25,The Barrens,50.71,54.60,50.74,55.33,50.73,56.78,50.42,57.23,50.50,57.65,50.87,57.50,51.26,57.84,51.74,57.69,51.79,57.10,53.08,54.69,53.65,54.27,53.63,53.53,53.35,52.72,53.00,51.83,52.62,52.19,52.59,52.71,52.41,53.07,52.32,53.71,51.39,54.22
     .xp 19+11000 >> Grind to 11000+/21300 xp
+    --VV 1.5x Add 1.5x grind step
 step
     .goto The Barrens,50.88,52.96,50,0
     .goto The Barrens,50.06,52.78,50,0
@@ -3868,6 +3870,16 @@ step
     .use 5102
     .unitscan Owatanka
 step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Owatanka|r. Loot him for |T133723:0|t[|cRXP_LOOT_Owatanka's Tailspike|r]
+    >>|cRXP_WARN_Use the |T133723:0|t[|cRXP_LOOT_Owatanka's Tailspike|r] to start the quest|r
+    >>|cRXP_WARN_He has 4 spawnpoints (marked on the map)|r
+    >>|cRXP_WARN_Skip this step for now if you can't find him|r
+    .collect 5102,1,884,1 --Collect Owatanka's Tailspike
+    .accept 884 >>Accept Owatanka
+    .use 5102
+    .unitscan Owatanka
+step
     .goto The Barrens,44.83,63.12,60,0
     .goto The Barrens,46.57,61.33,60,0
     .goto The Barrens,48.99,58.69,60,0
@@ -3878,23 +3890,6 @@ step
     .complete 913,1 --Thunderhawk Wings (1)
     .mob Thunderhawk Hatchling
     .mob Thunderhawk Cloudscraper
-step
-    .goto The Barrens,44.63,62.71,0
-    .goto The Barrens,45.78,63.09,0
-    .goto The Barrens,49.57,59.36,0
-    .goto The Barrens,49.21,61.42,0
-    .goto The Barrens,44.63,62.71,80,0
-    .goto The Barrens,45.78,63.09,80,0
-    .goto The Barrens,49.21,61.42,80,0
-    .goto The Barrens,49.57,59.36,80,0
-    >>Kill |cRXP_ENEMY_Owatanka|r. Loot him for |T133723:0|t[|cRXP_LOOT_Owatanka's Tailspike|r]
-    >>|cRXP_WARN_Use the |T133723:0|t[|cRXP_LOOT_Owatanka's Tailspike|r] to start the quest|r
-    >>|cRXP_WARN_He has 4 spawnpoints (marked on the map)|r
-    >>|cRXP_WARN_Skip this step if you can't find him|r
-    .collect 5102,1,884,1 --Collect Owatanka's Tailspike
-    .accept 884 >>Accept Owatanka
-    .use 5102
-    .unitscan Owatanka
 step
     .goto The Barrens,44.85,59.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorn Skyseer|r
@@ -4989,7 +4984,7 @@ step
     #xprate <1.5
     .goto Stonetalon Mountains,47.52,62.38,5,0
     .goto Stonetalon Mountains,47.61,61.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Jeeda|r |cRXP_BUY_on the second floor of the inn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeeda|r on the second floor of the inn
     .vendor 4083 >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_from her if they're up|r << !Warrior
     .vendor 4083 >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_and|r |T134413:0|t[Liferoot] |cRXP_BUY_from her if they're up|r << Warrior
     .target Jeeda
@@ -5031,26 +5026,26 @@ step
 step
     #xprate <1.5
     .line Stonetalon Mountains,70.82,55.25,70.52,56.22,69.76,56.70,68.52,56.04,67.77,55.97,66.94,56.25,66.41,56.31,65.74,57.20,65.14,57.02,64.37,56.47,63.72,56.80,62.99,56.25,62.32,56.11,61.58,55.10,61.10,54.68,60.98,54.06,59.81,53.51,59.66,52.14,60.33,51.68
-    .goto Stonetalon Mountains,61.03,52.32,30,0
-    .goto Stonetalon Mountains,60.33,51.68,30,0
-    .goto Stonetalon Mountains,59.66,52.14,30,0
-    .goto Stonetalon Mountains,59.81,53.51,30,0
-    .goto Stonetalon Mountains,60.98,54.06,30,0
-    .goto Stonetalon Mountains,61.10,54.68,30,0
-    .goto Stonetalon Mountains,61.58,55.10,30,0
-    .goto Stonetalon Mountains,62.32,56.11,30,0
-    .goto Stonetalon Mountains,62.99,56.25,30,0
-    .goto Stonetalon Mountains,63.72,56.80,30,0
-    .goto Stonetalon Mountains,64.37,56.47,30,0
-    .goto Stonetalon Mountains,65.14,57.02,30,0
-    .goto Stonetalon Mountains,65.74,57.20,30,0
-    .goto Stonetalon Mountains,66.41,56.31,30,0
-    .goto Stonetalon Mountains,66.94,56.25,30,0
-    .goto Stonetalon Mountains,67.77,55.97,30,0
-    .goto Stonetalon Mountains,68.52,56.04,30,0
-    .goto Stonetalon Mountains,69.76,56.70,30,0
-    .goto Stonetalon Mountains,70.52,56.22,30,0
-    .goto Stonetalon Mountains,70.82,55.25,30,0
+    .goto Stonetalon Mountains,61.03,52.32,50,0
+    .goto Stonetalon Mountains,60.33,51.68,50,0
+    .goto Stonetalon Mountains,59.66,52.14,50,0
+    .goto Stonetalon Mountains,59.81,53.51,50,0
+    .goto Stonetalon Mountains,60.98,54.06,50,0
+    .goto Stonetalon Mountains,61.10,54.68,50,0
+    .goto Stonetalon Mountains,61.58,55.10,50,0
+    .goto Stonetalon Mountains,62.32,56.11,50,0
+    .goto Stonetalon Mountains,62.99,56.25,50,0
+    .goto Stonetalon Mountains,63.72,56.80,50,0
+    .goto Stonetalon Mountains,64.37,56.47,50,0
+    .goto Stonetalon Mountains,65.14,57.02,50,0
+    .goto Stonetalon Mountains,65.74,57.20,50,0
+    .goto Stonetalon Mountains,66.41,56.31,50,0
+    .goto Stonetalon Mountains,66.94,56.25,50,0
+    .goto Stonetalon Mountains,67.77,55.97,50,0
+    .goto Stonetalon Mountains,68.52,56.04,50,0
+    .goto Stonetalon Mountains,69.76,56.70,50,0
+    .goto Stonetalon Mountains,70.52,56.22,50,0
+    .goto Stonetalon Mountains,70.82,55.25,50,0
     .goto Stonetalon Mountains,59.66,52.14
     >>Kill |cRXP_ENEMY_XT:9|r. It patrols the southern side of the river
     >>|cRXP_WARN_Skip this step if you can't find it|r
@@ -5059,26 +5054,26 @@ step
 step
     #xprate <1.5
     .line Stonetalon Mountains,67.18,46.87,66.53,46.95,65.72,45.09,63.73,45.02,63.72,45.92,63.43,46.57,64.43,46.13,64.72,46.63,64.82,47.72,65.11,48.31,65.98,48.67,66.24,49.65,66.65,49.58,66.88,48.95,68.41,49.58,69.45,46.56,70.22,48.62,70.95,48.49,71.41,45.54,71.25,43.45
-    .goto Stonetalon Mountains,67.18,46.87,30,0
-    .goto Stonetalon Mountains,66.53,46.95,30,0
-    .goto Stonetalon Mountains,65.72,45.09,30,0
-    .goto Stonetalon Mountains,63.73,45.02,30,0
-    .goto Stonetalon Mountains,63.72,45.92,30,0
-    .goto Stonetalon Mountains,63.43,46.57,30,0
-    .goto Stonetalon Mountains,64.43,46.13,30,0
-    .goto Stonetalon Mountains,64.72,46.63,30,0
-    .goto Stonetalon Mountains,64.82,47.72,30,0
-    .goto Stonetalon Mountains,65.11,48.31,30,0
-    .goto Stonetalon Mountains,65.98,48.67,30,0
-    .goto Stonetalon Mountains,66.24,49.65,30,0
-    .goto Stonetalon Mountains,66.65,49.58,30,0
-    .goto Stonetalon Mountains,66.88,48.95,30,0
-    .goto Stonetalon Mountains,68.41,49.58,30,0
-    .goto Stonetalon Mountains,69.45,46.56,30,0
-    .goto Stonetalon Mountains,70.22,48.62,30,0
-    .goto Stonetalon Mountains,70.95,48.49,30,0
-    .goto Stonetalon Mountains,71.41,45.54,30,0
-    .goto Stonetalon Mountains,71.25,43.45,30,0
+    .goto Stonetalon Mountains,67.18,46.87,50,0
+    .goto Stonetalon Mountains,66.53,46.95,50,0
+    .goto Stonetalon Mountains,65.72,45.09,50,0
+    .goto Stonetalon Mountains,63.73,45.02,50,0
+    .goto Stonetalon Mountains,63.72,45.92,50,0
+    .goto Stonetalon Mountains,63.43,46.57,50,0
+    .goto Stonetalon Mountains,64.43,46.13,50,0
+    .goto Stonetalon Mountains,64.72,46.63,50,0
+    .goto Stonetalon Mountains,64.82,47.72,50,0
+    .goto Stonetalon Mountains,65.11,48.31,50,0
+    .goto Stonetalon Mountains,65.98,48.67,50,0
+    .goto Stonetalon Mountains,66.24,49.65,50,0
+    .goto Stonetalon Mountains,66.65,49.58,50,0
+    .goto Stonetalon Mountains,66.88,48.95,50,0
+    .goto Stonetalon Mountains,68.41,49.58,50,0
+    .goto Stonetalon Mountains,69.45,46.56,50,0
+    .goto Stonetalon Mountains,70.22,48.62,50,0
+    .goto Stonetalon Mountains,70.95,48.49,50,0
+    .goto Stonetalon Mountains,71.41,45.54,50,0
+    .goto Stonetalon Mountains,71.25,43.45,50,0
     .goto Stonetalon Mountains,64.82,47.23
     >>Kill |cRXP_ENEMY_XT:4|r. It patrols the northern side of the river
     >>|cRXP_WARN_Skip this step if you can't find it|r
@@ -5571,8 +5566,8 @@ step << Rogue
 step << Rogue
     .goto Orgrimmar,42.10,49.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Rekkul|r|cRXP_BUY_. Buy |r |T134387:0|t[Flash Powder] |cRXP_BUY_from him|r
-    .collect 2928,20,2479,1 --Collect Dust of Decay (20)
-    .collect 3371,20,2479,1 --Collect Empty Vial (20)
+    .collect 2928,40,2479,1 --Collect Dust of Decay (40)
+    .collect 3371,40,2479,1 --Collect Empty Vial (40)
     .collect 5140,20,2479,1 --Collect Flash Powder (20)
     .target Rekkul
 step << Priest/Warlock
@@ -5773,6 +5768,7 @@ step << Rogue
     >>|cRXP_WARN_If you have any|r |T134437:0|t[Anti-Venom]|cRXP_WARN_, use one to cure yourself of|r |T136230:0|t[Touch of Zanzil]
     .itemcount 6452,1
     .aura 9991
+    .aura 9810
 step << Rogue
     .destroy 8051 >> Delete the |T134536:0|t[Flare Gun] from your bags, as it's no longer needed
     .destroy 8066 >> Delete |T134374:0|t[Fizzule's Whistle] from your bags, as it's no longer needed

@@ -2008,7 +2008,7 @@ step
     .target Innkeeper Jayka
 step
     .goto Stonetalon Mountains,47.61,61.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Jeeda|r |cRXP_BUY_on the second floor of the inn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeeda|r on the second floor of the inn
     .vendor >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_from her if they're up|r << !Warrior
     .vendor >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_and|r |T134413:0|t[Liferoot] |cRXP_BUY_from her if they're up|r << Warrior
     .target Jeeda
@@ -3784,7 +3784,7 @@ step
     .target Innkeeper Jayka
 step
     .goto Stonetalon Mountains,47.61,61.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Jeeda|r |cRXP_BUY_on the second floor of the inn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeeda|r on the second floor of the inn
     .vendor >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_from her if they're up|r << !Warrior
     .vendor >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_and|r |T134413:0|t[Liferoot] |cRXP_BUY_from her if they're up|r << Warrior
     .target Jeeda
@@ -3894,53 +3894,53 @@ step
     .target Ziz Fizziks
 step
     .line Stonetalon Mountains,70.82,55.25,70.52,56.22,69.76,56.70,68.52,56.04,67.77,55.97,66.94,56.25,66.41,56.31,65.74,57.20,65.14,57.02,64.37,56.47,63.72,56.80,62.99,56.25,62.32,56.11,61.58,55.10,61.10,54.68,60.98,54.06,59.81,53.51,59.66,52.14,60.33,51.68
-    .goto Stonetalon Mountains,61.03,52.32,30,0
-    .goto Stonetalon Mountains,60.33,51.68,30,0
-    .goto Stonetalon Mountains,59.66,52.14,30,0
-    .goto Stonetalon Mountains,59.81,53.51,30,0
-    .goto Stonetalon Mountains,60.98,54.06,30,0
-    .goto Stonetalon Mountains,61.10,54.68,30,0
-    .goto Stonetalon Mountains,61.58,55.10,30,0
-    .goto Stonetalon Mountains,62.32,56.11,30,0
-    .goto Stonetalon Mountains,62.99,56.25,30,0
-    .goto Stonetalon Mountains,63.72,56.80,30,0
-    .goto Stonetalon Mountains,64.37,56.47,30,0
-    .goto Stonetalon Mountains,65.14,57.02,30,0
-    .goto Stonetalon Mountains,65.74,57.20,30,0
-    .goto Stonetalon Mountains,66.41,56.31,30,0
-    .goto Stonetalon Mountains,66.94,56.25,30,0
-    .goto Stonetalon Mountains,67.77,55.97,30,0
-    .goto Stonetalon Mountains,68.52,56.04,30,0
-    .goto Stonetalon Mountains,69.76,56.70,30,0
-    .goto Stonetalon Mountains,70.52,56.22,30,0
-    .goto Stonetalon Mountains,70.82,55.25,30,0
-    .goto Stonetalon Mountains,59.66,52.14
+    .goto Stonetalon Mountains,67.18,46.87,50,0
+    .goto Stonetalon Mountains,66.53,46.95,50,0
+    .goto Stonetalon Mountains,65.72,45.09,50,0
+    .goto Stonetalon Mountains,63.73,45.02,50,0
+    .goto Stonetalon Mountains,63.72,45.92,50,0
+    .goto Stonetalon Mountains,63.43,46.57,50,0
+    .goto Stonetalon Mountains,64.43,46.13,50,0
+    .goto Stonetalon Mountains,64.72,46.63,50,0
+    .goto Stonetalon Mountains,64.82,47.72,50,0
+    .goto Stonetalon Mountains,65.11,48.31,50,0
+    .goto Stonetalon Mountains,65.98,48.67,50,0
+    .goto Stonetalon Mountains,66.24,49.65,50,0
+    .goto Stonetalon Mountains,66.65,49.58,50,0
+    .goto Stonetalon Mountains,66.88,48.95,50,0
+    .goto Stonetalon Mountains,68.41,49.58,50,0
+    .goto Stonetalon Mountains,69.45,46.56,50,0
+    .goto Stonetalon Mountains,70.22,48.62,50,0
+    .goto Stonetalon Mountains,70.95,48.49,50,0
+    .goto Stonetalon Mountains,71.41,45.54,50,0
+    .goto Stonetalon Mountains,71.25,43.45,50,0
+    .goto Stonetalon Mountains,64.82,47.23
     >>Kill |cRXP_ENEMY_XT:9|r. It patrols the southern side of the river
     >>|cRXP_WARN_This quest does not need to be completed now|r
     .complete 1068,2 --XT:9 (1)
     .unitscan XT:9
 step
     .line Stonetalon Mountains,67.18,46.87,66.53,46.95,65.72,45.09,63.73,45.02,63.72,45.92,63.43,46.57,64.43,46.13,64.72,46.63,64.82,47.72,65.11,48.31,65.98,48.67,66.24,49.65,66.65,49.58,66.88,48.95,68.41,49.58,69.45,46.56,70.22,48.62,70.95,48.49,71.41,45.54,71.25,43.45
-    .goto Stonetalon Mountains,67.18,46.87,30,0
-    .goto Stonetalon Mountains,66.53,46.95,30,0
-    .goto Stonetalon Mountains,65.72,45.09,30,0
-    .goto Stonetalon Mountains,63.73,45.02,30,0
-    .goto Stonetalon Mountains,63.72,45.92,30,0
-    .goto Stonetalon Mountains,63.43,46.57,30,0
-    .goto Stonetalon Mountains,64.43,46.13,30,0
-    .goto Stonetalon Mountains,64.72,46.63,30,0
-    .goto Stonetalon Mountains,64.82,47.72,30,0
-    .goto Stonetalon Mountains,65.11,48.31,30,0
-    .goto Stonetalon Mountains,65.98,48.67,30,0
-    .goto Stonetalon Mountains,66.24,49.65,30,0
-    .goto Stonetalon Mountains,66.65,49.58,30,0
-    .goto Stonetalon Mountains,66.88,48.95,30,0
-    .goto Stonetalon Mountains,68.41,49.58,30,0
-    .goto Stonetalon Mountains,69.45,46.56,30,0
-    .goto Stonetalon Mountains,70.22,48.62,30,0
-    .goto Stonetalon Mountains,70.95,48.49,30,0
-    .goto Stonetalon Mountains,71.41,45.54,30,0
-    .goto Stonetalon Mountains,71.25,43.45,30,0
+    .goto Stonetalon Mountains,67.18,46.87,50,0
+    .goto Stonetalon Mountains,66.53,46.95,50,0
+    .goto Stonetalon Mountains,65.72,45.09,50,0
+    .goto Stonetalon Mountains,63.73,45.02,50,0
+    .goto Stonetalon Mountains,63.72,45.92,50,0
+    .goto Stonetalon Mountains,63.43,46.57,50,0
+    .goto Stonetalon Mountains,64.43,46.13,50,0
+    .goto Stonetalon Mountains,64.72,46.63,50,0
+    .goto Stonetalon Mountains,64.82,47.72,50,0
+    .goto Stonetalon Mountains,65.11,48.31,50,0
+    .goto Stonetalon Mountains,65.98,48.67,50,0
+    .goto Stonetalon Mountains,66.24,49.65,50,0
+    .goto Stonetalon Mountains,66.65,49.58,50,0
+    .goto Stonetalon Mountains,66.88,48.95,50,0
+    .goto Stonetalon Mountains,68.41,49.58,50,0
+    .goto Stonetalon Mountains,69.45,46.56,50,0
+    .goto Stonetalon Mountains,70.22,48.62,50,0
+    .goto Stonetalon Mountains,70.95,48.49,50,0
+    .goto Stonetalon Mountains,71.41,45.54,50,0
+    .goto Stonetalon Mountains,71.25,43.45,50,0
     .goto Stonetalon Mountains,64.82,47.23
     >>Kill |cRXP_ENEMY_XT:4|r. It patrols the northern side of the river
     >>|cRXP_WARN_This quest does not need to be completed now|r
@@ -4279,8 +4279,9 @@ step << Druid
 step << Rogue
     #completewith next
     .goto The Barrens,55.70,5.89
-	.use 8051 >>Target |cRXP_FRIENDLY_Taskmaster Fizzule|r, then use your |T134536:0|t[Flare Gun] TWICE and type /Salute
+    +Target |cRXP_FRIENDLY_Taskmaster Fizzule|r, then use your |T134536:0|t[Flare Gun] TWICE and type /Salute
     >>|cRXP_WARN_Be careful! Do NOT approach him until he becomes friendly or he will attack you!|r
+    .use 8051
     .target Taskmaster Fizzule
 step << Rogue
     #label MissionProbable
