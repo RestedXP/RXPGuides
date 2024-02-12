@@ -957,41 +957,76 @@ RXPGuides.RegisterGuide([[
 -- Expose Weakness
 
 step
-    .train 410114,1
-    .zone Badlands >>Travel to |cFFfa9602Badlands|r
+    #optional
+    #completewith next
+    .zone Badlands >>Travel to Badlands
 step
     #loop
+    .goto Badlands,28.2,51.4,0
+    .goto Badlands,28.0,61.0,0
+    .goto Badlands,30.6,61.2,0
+    .goto Badlands,34.6,54.8,0
     .goto Badlands,28.2,51.4,25,0
     .goto Badlands,28.0,61.0,25,0
     .goto Badlands,30.6,61.2,25,0
     .goto Badlands,34.6,54.8,25,0
-    >>Kill |cRXP_ENEMY_Dustbelcher Ogre|r and loot them for |T237388:0|t|cRXP_LOOT_Primitive Drawing|r
+    >>Kill |cRXP_ENEMY_Dustbelcher Warriors|r, |cRXP_ENEMY_Dustbelcher Brutes|r, and |cRXP_ENEMY_Dustbelcher Ogres|r. Loot them for the |T237388:0|t|cRXP_LOOT_[Primitive Drawing]|r
+    .collect 211269,1 --Primitive Drawing
     .mob Dustbelcher Ogre
-step
-    >>Click on |T237388:0|t[Primitive Drawing] in your bags to accept the quest.
-    .accept 78823 --terror-of-the-desert-skies
-step
     .train 410114,1
-    .zone Stranglethorn Vale >>Travel to |cFFfa9602Stranglethorn Vale|r
 step
+    >>|cRXP_WARN_Use the|r |T237388:0|t|cRXP_LOOT_[Primitive Drawing]|r |cRXP_WARN_to start the quest|r
+    .accept 78823 >> Accept Terror of the Desert Skies
+    .use 211269
+step
+    #optional
+    #completewith next
+    .zone Stranglethorn Vale >>Travel to Stranglethorn Vale
     .train 410114,1
+step
+    .goto Stranglethorn Vale,35.66,10.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary|r
-    .turnin 78823 --terror-of-the-desert-skies
-    .accept 78830 --terror-of-the-desert-skies
+    .turnin 78823 >> Turn in Terror of the Desert Skies
+    .accept 78830 >> Accept Terror of the Desert Skies
     .target Hemet Nesingwary
-step
     .train 410114,1
-    .zone Badlands >>Travel to |cFFfa9602Badlands|r
 step
+    #sticky
+    #label Bait
+    >>Use the |T132599:0|t[Empty Bait Cage] on any critter for a |T132599:0|t[Trapped Critter]
+    .collect 211273,1 --Trapped Critter
+    .mob Rat
+    .mob Chicken
+    .train 410114,1
+step
+    #optional
+    #completewith next
+    .zone Badlands >>Travel to Badlands
+    .train 410114,1
+step
+    #requires Bait
     .goto Badlands,22.6,67.4
-    >>Use the |T132599:0|t[Empty Bait Cage] on any critter, use the bait to lure |cRXP_ENEMY_Gharik|r away. Loot him for |cRXP_LOOT_Crimson Trophy Quill.|r
-    .complete 78830 --terror-of-the-desert-skies
+    >>Use the |T132599:0|t[Trapped Critter] atop the hill to lure |cRXP_ENEMY_Gharik|r
+    >>Kill |cRXP_ENEMY_Gharik|r. Loot him for the |cRXP_LOOT_Crimson Trophy Quill|r
+    .complete 78830,1 --Crimson Trophy Quill (1)
+    .mob Gharik
+    .train 410114,1
+    .use 211273
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary|r to receive [|cRXP_FRIENDLY_Rune of Expose Weakness|r]
-    .turnin 78830 --terror-of-the-desert-skies
-    .use 211272
+    #optional
+    #completewith next
+    .zone Stranglethorn Vale >>Travel to Stranglethorn Vale
+    .train 410114,1
 step
-    .train 410114 >> Use [|cRXP_FRIENDLY_Rune of Expose Weakness|r] to learn |T132353:0|t[Expose Weakness]
+    .goto Stranglethorn Vale,35.66,10.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary|r
+    .turnin 78830 >> Turn in Terror of the Desert Skies
+    .train 410114,1
+step
+    #season 2
+    .train 410114 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Expose Weakness|r] |cRXP_WARN_to learn|r |T132353:0|t[Expose Weakness]
+    .use 211301
+    .itemcount 211301,1
 ]])
 
 RXPGuides.RegisterGuide([[
