@@ -1659,7 +1659,7 @@ step
     >>|cRXP_WARN_This will begin an escort. Make sure you're at full health|r
     .accept 863 >>Accept The Escape
     .target Wizzlecrank's Shredder
-    .isQuestTurnIn 858
+    .isQuestTurnedIn 858
 step
     #label Slugs
     .goto The Barrens,55.80,7.76,30,0
