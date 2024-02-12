@@ -2204,27 +2204,249 @@ step
     .xp <25,1
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Horde Shaman SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Waist
--- #name Fire Nova
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Shaman SoD
+#group RestedXP Rune & Books Guide
+#subgroup Waist
+#name Fire Nova
 
 -- Fire Nova
 
--- ]])
+step
+    #completewith next
+    .zone Desolace >>Travel to |cFFfa9602Desolace|r
+step
+    .goto Desolace,56.6,21.8
+    >>Kill |cRXP_ENEMY_Flameseer Dubelen|r. Loot him for |T136008:0|t|cRXP_LOOT_Corrupted Fire Totem|r
+    .collect 213451,1
+    .mob Flameseer Dubelen
+step
+    #completewith next
+    .zone Orgrimmar >>Travel to |cFFfa9602Orgrimmar|r
+step
+    .goto Orgrimmar,39.0,38.0
+    .gossip 4047 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zor Lonetree|r and select the dialogoption
+    -- .gossipoption --x insert id
+    .target Zor Lonetree
+step
+    #completewith next
+    .zone Desolace >>Travel to |cFFfa9602Desolace|r
+step
+    .goto 1443,38.23,61,25,0
+    .goto 1443,37.13,60.41,25,0
+    .goto 1443,35.38,58.25,25,0
+    .goto 1443,33.03,55.4,25,0
+    .goto 1443,30.87,57.86,25,0
+    .goto 1443,29.85,62.5,25,0
+    .goto 1414,38.38,57.98,25,0
+    .goto 1414,38.42,57.98,25,0
+    .goto 1414,38.35,58.14,25,0
+    .goto 1414,38.28,58.17,25,0
+    .goto 1414,38.24,58.03,25,0
+    .goto 1414,38.31,58.02,25,0
+    .goto 1414,38.47,58.17,25,0
+    .goto 1414,38.6,58.24,25,0
+    .goto 1414,38.73,58.18,25,0
+    .goto 1414,38.83,58.31,25,0
+    .goto 1414,39.01,58.3,25,0
+    .goto 1414,39.17,58.09,25,0
+    .goto 1414,39.01,57.87,25,0
+    .goto 1414,39.26,57.69
+    >>Click on the |cRXP_PICK_Blue Crystal|r amongst the orange crystals to collect |T134088:0|t[Tear of Theradras] |cRXP_WARN_Be careful as enemies in this are elite & stun|r |cFFFF0000you are likely going to die multiple times.|r
+    .collect 213553,1
+step
+    .goto 1414,38.45,57.84,25,0
+    .goto 1414,38.64,57.69,25,0
+    .goto 1414,38.52,57.52,25,0
+    .goto 1414,38.43,57.43,25,0
+    .goto 1443,29.65,57.19,25,0
+    .goto 1443,27.72,57.51
+    >>Click on a |cRXP_PICK_Blue Crystal|r amongst the purple crystals to collect |T134088:0|t[Tear of Theradras] |cRXP_WARN_Be careful as enemies in this are elite & stun|r |cFFFF0000you are likely going to die multiple times.|r
+    .collect 213552,1
+step
+    .goto Orgrimmar,39.0,38.0
+    .gossip 4047 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zor Lonetree|r and select the dialogoption
+    -- .gossipoption --x insert id
+    .target Zor Lonetree
+step
+    #completewith next
+    .zone Thunder Bluff >>Travel to |cFFfa9602Thunder Bluff|r
+step
+    .goto Thunder Bluff,78.6,28.6
+    .gossip 5769 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Hamuul Runetotem|r and select the dialogoption
+    -- .gossipoption --x insert id
+    .target Arch Druid Hamuul Runetotem
+step
+    -- .gossipoption --x insert id
+    .goto Thunderbluff,46.8,50.0
+    .gossip 2995 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r and select the dialogoption to fly to moonglade
+    .target Tal
+step
+    #completewith next
+    .zone Moonglade >>Travel to |cFFfa9602Moonglade|r
+step
+    .goto Moonglade,36.2,41.8
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keeper Remulos|r
+    .collect 213558,1
+    .target Keeper Remulos
+]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Horde Shaman SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Waist
--- #name Maelstrom Weapon
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Shaman SoD
+#group RestedXP Rune & Books Guide
+#subgroup Waist
+#name Maelstrom Weapon - 40 (Azeroth)
 
 -- Maelstrom Weapon
 
--- ]])
+step
+    .train 410100,1
+    #completewith next
+    .zone The Barrens >>Travel to |cFFfa9602The Barrens|r
+step
+    .train 410100,1
+    >>Kill |cRXP_ENEMY_Charlga Razorflank|r. Loot him for |T134944:0|t|cRXP_LOOT_Tattered Note|r |cRXP_WARN_It is highly recommended to form a group of 5 players.|r
+    .collect 212748,1
+step
+    .train 410100,1
+    >>Click on the |T134944:0|t[Tattered Note] in your bags to accept the quest.
+    .accept 79358 --Tattered Note
+step
+    .train 410100,1
+    #completewith next
+    .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
+step
+    .train 410100,1
+    .goto Thousand Needles,46.0,51.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rau Cliffrunner|r
+    .turnin 79358 --Tattered Note
+    .accept 79360 --Elemental Aid
+    .target Rau Cliffrunner
+step
+    .train 410100,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jania|r and buy 1 |T132793:0|t[Crystal Vial]
+    .collect 8925,1
+step
+    .train 410100,1
+    #completewith next
+    .zone Hillsbrad Foothills >>Travel to |cFFfa9602Hillsbrad Foothills|r
+step
+    .train 410100,1
+    .goto Alterac Mountains,80.4,66.8
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Bath'rah the Windwatcher|r
+    .turnin 79360 -- Elemental Aid
+    .accept 79361 -- Power of da Wind
+    .accept 79362 -- Power of da Earth
+    .accept 79363 -- Power of da Water
+    .target Bath'rah the Windwatcher
+step
+    .train 410100,1
+    #completewith next
+    .zone Desolace >>Travel to |cFFfa9602Desolace|r
+step
+    .train 410100,1
+    #loop
+    .goto Desolace,48.0,27.2,25,0
+    .goto Desolace,40.6,37.0,25,0
+    .goto Desolace,50.8,42.0,25,0
+    .goto Desolace,64.4,39.4,25,0
+    .goto Desolace,68.4,48.4,25,0
+    .goto Desolace,69.4,64.6,25,0
+    .goto Desolace,58.8,65.6,25,0
+    >>Kill |cRXP_ENEMY_Whirlwind Ripper|r. Loot them for |T132845:0|t|cRXP_LOOT_Whirling Essence|r
+    .complete  79361 -- Power of da Wind
+    .mob Whirlwind Ripper
+step
+    .train 410100,1
+    #completewith next
+    .zone Dustwallow Marsh >>Travel to |cFFfa9602Dustwallow Marsh|r
+step
+    .train 410100,1
+    #loop
+    .goto Dustwallow Marsch,42.6,30.0,25,0
+    .goto Dustwallow Marsch,35.2,44.6,25,0
+    .goto Dustwallow Marsch,42.6,62.0,25,0
+    .goto Dustwallow Marsch,50.0,54.0,25,0
+    >>Kill |cRXP_ENEMY_Withervine Mire Beast|r. Loot them for |T132846:0|t|cRXP_LOOT_Rumbling Essences|r
+    .complete 79363,1 -- Power of da Water
+    .mob Withervine Mire Beast
+step
+    .train 410100,1
+    #completewith next
+    .zone Badlands >>Travel to |cFFfa9602Badlands|r
+step
+    .train 410100,1
+    #loop
+    .goto Badlands,13.8,38.6,25,0
+    .goto Badlands,18.8,42.8,25,0
+    .goto Badlands,23.0,47.4,25,0
+    >>Kill |cRXP_ENEMY_Lesser Rock Elemental|r and |cRXP_ENEMY_Lesser Rock Elemental|r. Loot them for |T132846:0|t|cRXP_LOOT_Rumbling Essences|r
+    .complete 79362,1 -- Power of da Earth
+    .mob Rock Elemental
+    .mob Lesser Rock Elemental
+step
+    .train 410100,1
+    #completewith next
+    .zone Hillsbrad Foothills >>Travel to |cFFfa9602Hillsbrad Foothills|r
+step
+    .train 410100,1
+    .goto Alterac Mountains,80.4,66.8
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Bath'rah the Windwatcher|r
+    .turnin 79361 -- Power of da Wind
+    .turnin 79362 -- Power of da Earth
+    .turnin 79363 -- Power of da Water
+    .accept 79364 -- A Simple Container
+    .turnin 79364 -- A Simple Container
+    .accept 79365 -- With Wind Beneath Your Wings
+    .target Bath'rah the Windwatcher
+step
+    .train 410100,1
+    #completewith next
+    .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
+step
+    .train 410100,1
+    .goto Thousand Needles,46.0,51.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rau Cliffrunner|r
+    .turnin 79365 -- With Wind Beneath Your Wings
+    .accept 79366 --Calm Before the Storm
+    .target Rau Cliffrunner
+step
+    .train 410100,1
+    .gossip 4317 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyse|r and select the 2nd dialog option
+    .target Nyse
+step
+    .train 410100,1
+    >>Kill the |cRXP_ENEMY_Ravaging Tempest|r |cFFFF0000If you die in the process talk to the |cRXP_FRIENDLY_Spirit Healer|r to teleport you to your corpse|r
+    .collect 212792,1
+    .mob Dreath's Head Necromancer
+    .mob Skeletal Servant
+    .mob Ravaging Tempest
+step
+    .train 410100,1
+    .vehicle >> Interact with the |cRXP_FRIENDLY_Freewind Post Wyvern|r
+    .timer 9, Flight RP
+step
+    .train 410100,1
+    .goto Thousand Needles,46.0,51.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rau Cliffrunner|r
+    .turnin 79366 --Calm Before the Storm
+    .accept 79442 --Catching up
+    .target Rau Cliffrunner
+step
+    .train 410100,1
+    #completewith next
+    .zone Hillsbrad Foothills >>Travel to |cFFfa9602Hillsbrad Foothills|r
+step
+    .train 410100,1
+    .goto Alterac Mountains,80.4,66.8
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Bath'rah the Windwatcher|r
+    .turnin 79442 --Catching up
+    .target Bath'rah the Windwatcher
+step
+    .train 410100 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Storm|r] to learn |T136032:0|t[Maelstrom Weapon]
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
