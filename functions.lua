@@ -39,6 +39,7 @@ events.subzone = "ZONE_CHANGED"
 events.subzoneskip = "ZONE_CHANGED"
 events.bankdeposit = {"BANKFRAME_OPENED", "BAG_UPDATE_DELAYED"}
 events.skipgossip = {"GOSSIP_SHOW", "GOSSIP_CLOSED", "GOSSIP_CONFIRM_CANCEL"}
+events.gossip = events.skipgossip
 events.gossipoption = events.skipgossip
 events.skipgossipid = "GOSSIP_SHOW"
 events.vehicle = {"UNIT_ENTERING_VEHICLE", "VEHICLE_UPDATE", "UNIT_EXITING_VEHICLE"}
@@ -3983,6 +3984,26 @@ function addon.functions.skipgossip(self, text, ...)
         addon.StartTimer(element.timer,element.timerText)
     end
 
+end
+
+function addon.functions.gossip(self, text, npc)
+    if type(self) == "string" then
+        npc = tonumber(npc)
+        if not npc then
+            return addon.error(
+                        L("Error parsing guide") .. " " .. addon.currentGuideName ..
+                           ': No npc ID provided\n' .. self)
+        end
+        local element = {text = text, npc = npc}
+        return element
+    end
+    local event = text
+    local element = self.element
+    if event == "GOSSIP_SHOW" then
+        element.currentNPC = addon.GetNpcId()
+    elseif event == "GOSSIP_CLOSED" and element.currentNPC == element.npc then
+        addon.SetElementComplete(self)
+    end
 end
 
 function addon.functions.skipgossipid(self, text, ...)
