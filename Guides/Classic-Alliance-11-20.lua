@@ -7007,6 +7007,15 @@ step
     .isQuestComplete 951
 step
 #xprate >1.49
+#map Darkshore
+    #optional
+    .goto Felwood,27.00,55.59
+    .target Onu
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Onu|r
+    .turnin 948 >> Turn in Onu
+    .isOnQuest 948
+step
+#xprate >1.49
     .goto Darkshore,45.00,85.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Volcor|r
     .turnin 993 >> Turn in A Lost Master

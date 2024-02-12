@@ -1806,9 +1806,9 @@ step << !Warlock
     #optional
     .goto Redridge Mountains,30.73,59.99
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r
-    .turnin 246 >> Turn in Assessing the Threat
+    .turnin 244 >> Turn in Encroaching Gnolls
     .target Deputy Feldon
-    .isOnQuest 246
+    .isOnQuest 244
     .xp <11,1
 step << !Warlock
     #season 0,1 << Paladin
