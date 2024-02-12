@@ -623,7 +623,7 @@ RXPGuides.RegisterGuide([[
 << Druid SoD
 #group RestedXP Rune & Books Guide
 #subgroup Belt
-#name Nourish - 30 (Azeroth)
+#name Nourish - 35 (Azeroth)
 
 -- Probably needs better waypoints to avoid some dangerous mobs or anything else that could kill you
 
