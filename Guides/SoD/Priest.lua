@@ -1033,7 +1033,7 @@ RXPGuides.RegisterGuide([[
 step
     .train 425310,1
     #completewith next
-    .zone Desolace >>Travel to |cFFfa9602Stranglethorn Vale|r
+    .zone Desolace >>Travel to |cFFfa9602Desolace|r
 step
     #loop
     .goto Desolace,36.0,29.6,25,0
