@@ -1364,6 +1364,11 @@ step
     #completewith next
     .zone Arathi Highlands >>Travel to Arathi Highlands
 step
+    #optional
+    #completewith next
+    .goto Arathi Highlands,58.32,6.91
+--   .goto Arathi Highlands,89.52,77.91
+    .cast 6477 >>Enter the |cRXP_PICK_Rowboat|r in the water
     .train 431663,1 << Priest
     .train 416031,1 << Paladin
     .train 401752,1 << Mage
@@ -1373,24 +1378,25 @@ step
     .train 426452,1 << Warlock
     .train 425102,1 << Rogue
     .train 425883,1 << Shaman
-    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with the |cRXP_LOOT_Rowboat|r
-    .goto Arathi Highlands,53,91
-    .complete 79242,1 --Found Illari Duskfeather
+    .subzoneskip 308
 step
-    .train 431663,1 << Priest
-    .train 416031,1 << Paladin
-    .train 401752,1 << Mage
-    .train 410118,1 << Hunter
-    .train 410029,1 << Druid
-    .train 403467,1 << Warrior
-    .train 426452,1 << Warlock
-    .train 425102,1 << Rogue
-    .train 425883,1 << Shaman
+    .goto Arathi Highlands,93.90,71.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illari Duskfeather|r for |T134236:0|t[Illari's Key] << NightElf
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illari Duskfeather|r, defeat her, |cRXP_WARN_and pick up the bag on the ground for |T134236:0|t[Illari's Key] << !NightElf
-    .goto Stranglethorn Vale,27.0,77.2
-    .skipgossip 215655,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illari Duskfeather|r << !NightElf
+    >>Defeat her, then open the |cRXP_PICK_Dropped Pouch|r on the ground. Loot it for |T134236:0|t[Illari's Key] << !NightElf
+    .skipgossip 215655,1 << !NightElf
+    .skipgossip 215655,1,2,1 << NightElf
+    .complete 79242,1 --Found Illari Duskfeather
     .complete 79242,2 --Illari's Key
+    .train 431663,1 << Priest
+    .train 416031,1 << Paladin
+    .train 401752,1 << Mage
+    .train 410118,1 << Hunter
+    .train 410029,1 << Druid
+    .train 403467,1 << Warrior
+    .train 426452,1 << Warlock
+    .train 425102,1 << Rogue
+    .train 425883,1 << Shaman
 step
     .train 431663,1 << Priest
     .train 416031,1 << Paladin
@@ -1401,8 +1407,8 @@ step
     .train 426452,1 << Warlock
     .train 425102,1 << Rogue
     .train 425883,1 << Shaman
-    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with |cRXP_FRIENDLY_Illari's Loot Cache|r
-    .goto Arathi Highlands,94.1,69.3
+    >>Click |cRXP_PICK_Illari's Loot Cache|r on the ground
+    .goto Arathi Highlands,94.15,69.27
     .turnin 79242 >>Turn in No Honor Among Thieves
 step
     .train 431663,1 << Priest
@@ -1424,25 +1430,8 @@ step
     .collect 212561,1 << Warlock
     .collect 212559,1 << Rogue
     .collect 212560,1 << Shaman
+    .use 212553 --Jewel-Encrusted Box (1)
 step
-    .itemcount 212552,1 << Priest
-    .itemcount 212551,1 << Paladin
-    .itemcount 208853,1 << Mage
-    .itemcount 212549,1 << Hunter
-    .itemcount 212548,1 << Druid
-    .itemcount 212562,1 << Warrior
-    .itemcount 212561,1 << Warlock
-    .itemcount 212559,1 << Rogue
-    .itemcount 212560,1 << Shaman
-    .use 212552 << Priest
-    .use 212551 << Paladin
-    .use 208853 << Mage
-    .use 212549 << Hunter
-    .use 212548 << Druid
-    .use 212562 << Warrior
-    .use 212561 << Warlock
-    .use 212559 << Rogue
-    .use 212560 << Shaman
     .train 431663 >>Use the |T135791:0|t[|cRXP_FRIENDLY_Psychosophic Epiphany|r] to learn |T136181:0|t[Mind Spike] << Priest
     .train 416031 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Warfare|r] to learn |T236246:0|t[The Art of War] << Paladin
     .train 401752 >>Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Brain Freeze|r] to learn |T236206:0|t[Brain Freeze] << Mage
@@ -1452,6 +1441,24 @@ step
     .train 426452 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Burning Darkness|r] to learn |T135823:0|t[Shadow and Flame] << Warlock
     .train 425102 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Poisoned Blade|r] to learn |T236270:0|t[Poisoned Blade] << Rogue
     .train 425883 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Ancestral Awakening|r] to learn |T237571:0|t[Ancestral Awakening] << Shaman
+    .use 212552 << Priest
+    .use 212551 << Paladin
+    .use 208853 << Mage
+    .use 212549 << Hunter
+    .use 212548 << Druid
+    .use 212562 << Warrior
+    .use 212561 << Warlock
+    .use 212559 << Rogue
+    .use 212560 << Shaman
+    .itemcount 212552,1 << Priest
+    .itemcount 212551,1 << Paladin
+    .itemcount 208853,1 << Mage
+    .itemcount 212549,1 << Hunter
+    .itemcount 212548,1 << Druid
+    .itemcount 212562,1 << Warrior
+    .itemcount 212561,1 << Warlock
+    .itemcount 212559,1 << Rogue
+    .itemcount 212560,1 << Shaman
 ]])
 
 RXPGuides.RegisterGuide([[
