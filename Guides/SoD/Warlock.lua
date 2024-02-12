@@ -1194,7 +1194,6 @@ step
     .mob Seductress Ceeyna
 step
     .train 426467 >> Use |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowflames|r] to learn |T236302:0|t[Shadowflame]
-
 ]])
 
 -- RXPGuides.RegisterGuide([[

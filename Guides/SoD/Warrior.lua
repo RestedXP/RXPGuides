@@ -1244,16 +1244,101 @@ step << Warrior
     .itemcount 208778,1
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Alliance Warrior SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Waist
--- #name Blood Surge
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Warrior SoD
+#group RestedXP Rune & Books Guide
+#subgroup Waist
+#name Blood Surge - 30 (Azeroth)
 
 -- Blood Surge
 
--- ]])
+
+step
+    .train 416004,1
+    #completewith next
+    .zone Arathi Highlands >>Travel to Arathi Highlands
+step
+    .train 416004,1
+    #loop
+    .goto Arathi Highlands,19.6,64.8,25,0
+    .goto Arathi Highlands,21.6,66.4,25,0
+    .goto Arathi Highlands,21.4,68.2,25,0
+    .goto Arathi Highlands,22.8,66.4,25,0
+    >>Kill |cRXP_ENEMY_Boulderfist Shaman|r. Loot them for |T237451:0|t[Illegible Recipe]
+    .collect 213422,1
+    .mob Boulderfist Shaman
+step
+    .train 416004,1
+    .goto Arathi Highlands,57.6,74.6
+    >>Click on the |T237451:0|t[Illegible Recipe] in your bags to start the next quest.
+    .accept 79624 --Anyone Can Cook
+    .use 213422
+step
+    .train 416004,1
+    .goto Arathi Highlands,57.6,74.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skonk|r
+    .turnin 79624 --Anyone Can Cook
+    .accept 79677 --A Quick Grocery Run
+    .target Skonk
+step
+    .train 416004,1
+    .goto Arathi Highlands,20.8,82.2
+    >>Enter the Sunken Ship and interact with the |cRXP_PICK_Barrel|r located in the ship's deepest section.
+    .complete 79678,1,2
+step
+    .train 416004,1
+    #completewith next
+    .zone Hillsbrad Foothils >>Travel to Hillsbrad Foothils
+step
+    .train 416004,1
+    #loop
+    .goto Arathi Highlands,86.0,41.0,25,0
+    .goto Arathi Highlands,88.0,38.2,25,0
+    .goto Arathi Highlands,82.0,33.0,25,0
+    .goto Arathi Highlands,80.4,34.0,25,0
+    >>Kill |cRXP_ENEMY_Wild Gryphon|r. Loot them for |cRXP_LOOT_Hybrid Haunch|r
+    .complete 79678,1,1
+step
+    .train 416004,1
+    #completewith next
+    .zone Swamp of Sorrows >>Travel to Swamp of Sorrows
+step
+    .train 416004,1
+    #loop
+    .goto 52.6,57.2,25,0
+    .goto 56.6,53.0,25,0
+    .goto 84.4,82.8,25,0
+    .goto 77.6,90.2,25,0
+    >>Kill |cRXP_ENEMY_Deathstrike Tarantulas|r. Loot them for |cRXP_LOOT_Viscous Venom|r
+    .complete 79678,1,4
+    .mob Deathstrike Tarantula
+step
+    .train 416004,1
+    #completewith next
+    .zone Badlands >>Travel to Badlands
+step
+    .train 416004,1
+    .goto Badlands,41.2,27.8
+    >>Click on the |cRXP_PICK_Barrel|r in the basement of Angor Fortress
+    .complete 79678,1,3
+step
+    .goto Arathi Highlands,57.6,74.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skonk|r
+    .turnin 79677 -- A Quick Grocery Run
+    .accept 79678  -- Taste Testing
+step
+    >>Defeat |cRXP_ENEMY_Skonk|r
+    .complete 79678,1 -- Taste Testing
+    .mob Skonk
+step
+    .goto Arathi Highlands,57.6,74.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skonk|r
+    .turnin 79678  -- Taste Testing
+    .target Skonk
+step
+    .train 416004 >> Use |T134419:0|t[|cRXP_FRIENDLY_Rune of Bloodsurge|r] to learn |T236306:0|t[Blood Surge]
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
