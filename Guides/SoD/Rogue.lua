@@ -4,6 +4,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadowstrike - 3 (Elwynn Forest)
+#title Shadowstrike
 
 step << Rogue
     .goto Elwynn Forest,52.544,51.922
@@ -22,6 +23,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadowstrike - 3 (Dun Morogh)
+#title Shadowstrike
 
 step
     #optional
@@ -52,6 +54,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadowstrike - 3 (Shadowglen)
+#title Shadowstrike
 
 step << Rogue
     #season 2
@@ -78,6 +81,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Quick Draw - 8 (Elwynn Forest)
+#title Quick Draw
 
 step << Rogue
     #season 2
@@ -166,6 +170,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Quick Draw - 8 (Dun Morogh)
+#title Quick Draw
 
 step << Rogue
     #season 2
@@ -241,6 +246,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Quick Draw - 8 (Teldrassil)
+#title Quick Draw
 
 step << Rogue
     #season 2
@@ -339,6 +345,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Slaughter from the Shadows - 1 (Elwynn Forest)
+#title Slaughter from the Shadows
 
 step << Rogue
     #season 2
@@ -361,6 +368,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Slaughter from the Shadows - 1 (Dun Morogh)
+#title Slaughter from the Shadows
 
 step << Rogue
     #season 2
@@ -384,6 +392,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Between the Eyes - 8 (Stormwind)
+#title Between the Eyes
 
 step << Rogue
     #season 2
@@ -414,6 +423,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Between the Eyes - 8 (Ironforge)
+#title Between the Eyes
 
 step << Rogue
     #season 2
@@ -436,6 +446,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Between the Eyes - 8 (Teldrassil)
+#title Between the Eyes
 
 step << Rogue
     #season 2
@@ -465,6 +476,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Blade Dance - 10 (Westfall)
+#title Blade Dance
 
 step << Rogue
     #season 2
@@ -506,6 +518,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Blade Dance - 16 (Dun Morogh)
+#title Blade Dance
 
 step << Rogue
     #season 2
@@ -535,6 +548,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Blade Dance - 16 (Darkshore)
+#title Blade Dance
 
 step << Rogue
     #season 2
@@ -568,6 +582,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Mutilate - 5 (Elwynn Forest)
+#title Mutilate
 
 step << Rogue
     #season 2
@@ -600,6 +615,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Mutilate - 8 (Dun Morogh)
+#title Mutilate
 
 step << Rogue
     #season 2
@@ -628,6 +644,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Saber Slash - 12 (Westfall)
+#title Saber Slash
 
 step << Rogue
     #season 2
@@ -653,6 +670,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Saber Slash - 12 (Loch Modan)
+#title Saber Slash
 
 step << Rogue
     #season 2
@@ -685,6 +703,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Saber Slash - 1 (Darkshore)
+#title Saber Slash
 
 step << Rogue
     #season 2
@@ -710,6 +729,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadowstrike - 2 (Durotar)
+#title Shadowstrike
 
 
     --Rune of Shadowstrike
@@ -748,6 +768,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadowstrike - 2 (Tirisfal)
+#title Shadowstrike
 
 
     --Rune of Shadowstrike
@@ -784,6 +805,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Deadly Brew - 25 (Silverpine Forest)
+#title Deadly Brew
 
 
     --Rune of Deadly Brew
@@ -910,6 +932,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Quick Draw - 10 (Durotar)
+#title Quick Draw
 
 
     --Rune of Quick Draw
@@ -1000,6 +1023,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Quick Draw - 10 (Tirisfal)
+#title Quick Draw
 
 
     --Rune of Quick Draw
@@ -1095,6 +1119,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Slaughter from the Shadows - 10 (Durotar)
+#title Slaughter from the Shadows
 
 
     --Rune of Slaughter from the Shadows
@@ -1124,6 +1149,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Slaughter from the Shadows - 10 (Tirisfal)
+#title Slaughter from the Shadows
 
 
     --Rune of Slaughter from the Shadows
@@ -1163,6 +1189,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Mutilate - 8 (Tirisfal)
+#title Mutilate
 
 
     --Rune of Mutilate
@@ -1207,6 +1234,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Mutilate - 10 (Durotar)
+#title Mutilate
 
 
     --Rune of Mutilate
@@ -1250,6 +1278,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Between the Eyes - 8 (Tirisfal)
+#title Between the Eyes
 
 
     --Rune of Between the Eyes
@@ -1292,6 +1321,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Between the Eyes - 8 (Orgrimmar)
+#title Between the Eyes
 
 
     --Rune of Between the Eyes
@@ -1318,6 +1348,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Blade Dance - 15 (The Barrens)
+#title Blade Dance
 
 
     --Rune of Blade Dance
@@ -1351,6 +1382,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Saber Slash - 15 (The Barrens)
+#title Saber Slash
 
 
     --Rune of Saber Slash
@@ -1381,7 +1413,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Saber Slash - 15 (Silverpine)
-
+#title Saber Slash
 
     --Rune of Saber Slash
 
@@ -1532,6 +1564,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Belt
 #name Shuriken Toss - 30 (Swamp of Sorrows)
+#title Shuriken Toss
 
 step
     .train 400096,1
@@ -1557,6 +1590,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Boots
 #name Master of Sublety - 34 (Stranglethorn Vale)
+#title Master of Sublety
 
 step
     .train 425103,1
@@ -1602,7 +1636,7 @@ step
     .itemcount 213136,1
     .use 213136
     .train 425103 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Sublety|r] to learn |T132299:0|t[Master of Subtlety]
-    
+
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1612,6 +1646,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Boots
 #title Rolling with the Punches
 #name Rolling with the Punches - 27 (Thousand Needles)
+
 
 step
     .train 425103,1
@@ -1651,6 +1686,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Helmet
 -- #name Combat Potency
+-- for phase 3
 
 -- Combat Potency
 
@@ -1663,6 +1699,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Helm
 -- #name Focused Attacks
+-- for phase 3
 
 -- Focused Attacks
 
@@ -1675,44 +1712,9 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Helm
 -- #name Honor Among Thieves
+-- for phase 3
 
 -- Honor Among Thieves
 
 
 -- ]])
-
-RXPGuides.RegisterGuide([[
-#classic
-<< Rogue SoD
-#group RestedXP Rune & Books Guide
-#subgroup Skill Books
-#title Redirect
-#name Redirect - 27-40 (Scarlet Monastery)
-
--- Redirect
-
-step
-    .train 438040,1
-    #completewith Interrogator Vishas
-    +The Skill Books are obtained by killing the first/last dungeon boss of Scarlet Monastery: Graveyard or the rare |cRXP_ENEMY_Ironspine|r |cRXP_WARN_it is highly recommended to have a group of 5 players.|r
-step
-    .train 438040,1
-    .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
-step
-    .train 438040,1
-    .goto 1415,47.44,19.75,10,0
-    .goto 1415,47.45,19.69,5,0
-    .goto 1415,47.62,19.59,10,0
-    .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
-step
-    .train 438040,1
-    #label Interrogator Vishas
-    >>Kill |cRXP_ENEMY_Interrogator Vishas|r, |cRXP_ENEMY_Ironspine|r and loot them for |cRXP_LOOT_Manual of Redirect|r |cRXP_WARN_This might require multiple kills.|r
-    .collect 216745,1
-    .collect 216744,1
-    .mob Interrogator Vishas
-    .mob Ironspine
-step
-    .train 438040 >>|cRXP_WARN_Use the|r |T133735:0|t|cRXP_LOOT_[Manual of Redirect]|r |cRXP_WARN_to learn|r |T135425:0|t[Redirect]
-    .use 216738
-]])

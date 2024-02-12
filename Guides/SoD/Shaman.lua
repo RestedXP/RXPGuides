@@ -2226,16 +2226,41 @@ step
 
 -- ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Horde Shaman SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Waist
--- #name Power Surge
+RXPGuides.RegisterGuide([[
+#classic
+<< Horde Shaman SoD
+#group RestedXP Rune & Books Guide
+#subgroup Waist
+#name Power Surge - 30 (Arathi Highlands)
 
 -- Power Surge
 
--- ]])
+step
+    .train 416054,1
+    #completewith next
+    .zone Arathi Highlands >>Travel to |cFFfa9602Arathi Highlands|r |cRXP_WARN_|cRXP_WARN_It is highly recommended to form a group of atleast 3 players.|r
+step
+    .train 416054,1
+    .goto Arathi Highlands,33.8,49.2,20,0
+    .goto Arathi Highlands,37.6,46.8,20,0
+    .goto Arathi Highlands,33.8,39.8,20,0
+    .goto Arathi Highlands,32.0,41.2,20,0
+    >>Kill |cRXP_ENEMY_Boulderfist Ogre|r. Loot them for |T134921:0|t|cRXP_LOOT_[Ogre Lightning Rod]|r
+    .collect 213426,1
+    .mob Boulderfist Ogre
+step
+    .train 416054,1
+    .goto Arathi Highlands,34.5 43.8
+    .cast 434350 >>Click the |cRXP_PICK_Soft Soil|r to insert the |T134921:0|t|cRXP_LOOT_[Lightning Rod]|r into the ground.
+step
+    .train 416054,1
+>>
+    .collect 213093,1 >> Cast |T136048:0|t[Lightning Bolt] 10 times on the |cRXP_ENEMY_Lightning Rod|r then Kill |cRXP_ENEMY_Tamkar|r. Loot him for |T134419:0|t[Rune of Power]
+    .mob Lightning Rod
+    .mob tamkar
+step
+    .train 416054 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Power] |cRXP_WARN_to learn|r |T134337:0|t[Power Surge]
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -2303,14 +2328,3 @@ step
     .train 410103 >>|cRXP_WARN_Use the|r |T136095:0|t|cRXP_LOOT_Echo of the Alpha|r |cRXP_WARN_to learn|r |T408696:0|t[Spirit of the Alpha]
     .use 206985
 ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Horde Shaman SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Skill Books
--- #name Totemic Projection
-
--- Totemic Projection
-
--- ]])

@@ -4,6 +4,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Penance - 3 (Elwynn Forest)
+#title Penance
 
 step << Priest
     #season 2
@@ -29,6 +30,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Penance - 1 (Dun Morogh)
+#title Penance
+
 
 step << Priest
     #season 2
@@ -57,6 +60,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Penance - 2 (Shadowglen)
+#title Penance
 
 step << NightElf Priest
     #season 2
@@ -97,13 +101,13 @@ step << NightElf Priest
     .train 402862,1
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Troll Priest SoD
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Penance - 2 (Durotar)
+#title Penance
 
 
     --Rune of Penance
@@ -130,13 +134,13 @@ step << Priest
     .target Ken'jai
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Undead Priest SoD
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Penance - 2 (Tirisfal)
+#title Penance
 
 
     --Rune of Penance
@@ -160,7 +164,7 @@ step << Priest
     .turnin 77670 >>Turn in Meditation on Undeath
     .target Dark Cleric Duesten
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -168,6 +172,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Homunculi - 8 (Durotar)
+#title Homunculi
 
 step
     .train 402852,1
@@ -217,6 +222,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Homunculi - 7 (Tirisfal Glades)
+#title Homunculi
 
 step
     .train 402852,1
@@ -268,6 +274,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Shared Pain - 13 (Durotar)
+#title Shared Pain
 
 step
     #completewith next
@@ -299,6 +306,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Shared Pain - 6 (Tirisfal Glades)
+#title Shared Pain
 
 step
     #completewith next
@@ -337,6 +345,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Void Plague - 5 (Durotar)
+#title Void Plague
 
 step
     #completewith next
@@ -367,6 +376,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Void Plague - 6 (Tirisfal Glades)
+#title Void Plague
 
 step
     #completewith next
@@ -396,13 +406,13 @@ step
     .train 425216 >>|cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of Dark Purpose|r] |cRXP_WARN_to train|r |T237514:0|t[Void Plague]
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Prayer of Mending - 6 (Durotar)
+#title Prayer of Mending
 
 step
     .goto Durotar,48.04,79.58
@@ -418,13 +428,13 @@ step
     .train 402848 >>|cRXP_WARN_Use the|r |T135791:0|t[|cRXP_FRIENDLY_Reciprocal Epiphany|r] |cRXP_WARN_to train|r |T135944:0|t[Prayer of Mending]
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Priest SoD
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Prayer of Mending - 10 (Mulgore)
+#title Prayer of Mending
 
 step
     .goto Mulgore,60.39,33.54
@@ -446,6 +456,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Twisted Faith - 10 (Loch Modan)
+#title Twisted Faith
 
 step << Priest
     #completewith MinerGear
@@ -476,6 +487,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Twisted Faith - 14 (Westfall)
+#title Twisted Faith
 
 step << Priest
     .goto Westfall,32.6,43.2,60,0
@@ -501,6 +513,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Twisted Faith - 18 (Darkshore)
+#title Twisted Faith
 
 step << Priest
     .goto Darkshore,59.2,23.4,60,0
@@ -529,6 +542,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Shared Pain - 10 (Dun Morogh)
+#title Shared Pain
 
 step << Priest
     .goto Loch Modan,77.894,62.236
@@ -549,6 +563,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Shared Pain - 6 (Elwynn Forest)
+#title Shared Pain
 
 step << Priest
     .goto Elwynn Forest,40.6,81.8
@@ -569,6 +584,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Homunculi - 8 (Dun Morogh)
+#title Homunculi
 
 step << Priest
     .goto Dun Morogh,42.0,44.6,50,0
@@ -590,6 +606,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Homunculi - 8 (Elwynn Forest)
+#title Homunculi
 
 step << Priest
     .goto Elwynn Forest,74.0,51.8
@@ -610,6 +627,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Homunculi - 8 (Teldrassil)
+#title Homunculi
 
 step << Priest
     #completewith next
@@ -637,6 +655,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Prayer of Mending - 6 (Elwynn Forest)
+#title Prayer of Mending
 
 step << Priest
     .goto Elwynn Forest,52.28,84.56
@@ -657,6 +676,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Prayer of Mending - 8 (Teldrassil)
+#title Prayer of Mending
 
 step << Priest
     .goto Teldrassil,33.610,35.732
@@ -677,6 +697,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Prayer of Mending - 6 (Dun Morogh)
+#title Prayer of Mending
 
 step << Priest
     .goto Dun Morogh,43.0,49.6
@@ -697,6 +718,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadow Word: Death - 10 (Darkshore)
+#title Shadow Word: Death
 
 step << Priest
     .goto Darkshore,30.5,47.5
@@ -718,6 +740,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadow Word - Death - 12 (Loch Modan)
+#title Shadow Word: Death
 
 step << Priest
     #completewith next
@@ -746,6 +769,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadow Word: Death - 20 (The Barrens)
+#title Shadow Word: Death
 
 step
     #completewith next
@@ -787,6 +811,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadow Word: Death - 24 (Silverpine Forest)
+#title Shadow Word: Death
 
 step
     #completewith next
@@ -826,6 +851,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Twisted Fate - 10 (Silverpine Forest)
+#title Twisted Fate
 
 step
     #completewith next
@@ -853,6 +879,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Twisted Fate - 10 (The Barrens)
+#title Twisted Fate
 
 step
     #completewith next
@@ -887,6 +914,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Void Plague - 6 (Elwynn Forest)
+#title Void Plague
 
 step << Priest
     #season 2
@@ -906,13 +934,14 @@ step << Priest
     .use 205940
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Void Plague - 6 (Dun Morogh)
+#title Void Plague
+
 
 step << Priest
     #season 2
@@ -938,6 +967,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Waist
 #name Empowered Renew - 27 (Thousand Needles)
+#title Empowered Renew
+
 
 -- Empowered Renew
 
@@ -962,35 +993,33 @@ step
     .use 213140
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Alliance Priest SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Waist
--- #name Empowered Renew - 33 (Alterac Mountains)
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Priest SoD
+#group RestedXP Rune & Books Guide
+#subgroup Waist
+#name Empowered Renew - 33 (Alterac Mountains)
+#title Empowered Renew
 
--- -- Empowered Renew
+-- Empowered Renew
 
--- step
---     .train 425309,1
---     .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
--- step
---     .train 425309,1
---     #loop
---     .goto Thousand Needles,33.0,28.2,25,0
---     .goto Thousand Needles,33.0,35.4,25,0
---     .goto Thousand Needles,35.0,39.2,25,0
---     .goto Thousand Needles,35.6,31.0,25,0
---     >>Kill |cRXP_ENEMY_Grimtotem Geomancers|r, |cRXP_ENEMY_Grimtotem Bandit|r, |cRXP_ENEMY_Grimtotem Reaver|r and |cRXP_ENEMY_Grimtotem Stomper|r and loot them for |cRXP_LOOT_Prophecy of the Quickened Path|r
---     .collect 213140,1
---     .mob Grimtotem Geomancer
---     .mob Grimtotem Bandit
---     .mob Grimtotem Reaver
---     .mob Grimtotem Stomper
--- step
---     .train 425309 >>|cRXP_WARN_Use|r |T135975:0|t|cRXP_LOOT_[Prophecy of the Quickened Path]|r |cRXP_WARN_to learn|r |T236254:0|t[Empowered Renew]
---     .use 213140
--- ]])
+step
+    .train 425309,1
+    .zone Alterac Mountains >>Travel to |cFFfa9602Alterac Mountains|r
+step
+    .train 425309,1
+    #loop
+    .goto Alterac Mountains,49.0 61.6,25,0
+    .goto Alterac Mountains,54.6 52.6,25,0
+    .goto Alterac Mountains,52.4 41.6,25,0
+    .goto Alterac Mountains,46.6 35.6,25,0
+    >>Kill |cRXP_ENEMY_Crushridge Ogre|r. Loot them for |cRXP_LOOT_Prophecy of the Quickened Path|r
+    .collect 213140,1
+    .mob Crushridge Ogre
+step
+    .train 425309 >>|cRXP_WARN_Use|r |T135975:0|t|cRXP_LOOT_[Prophecy of the Quickened Path]|r |cRXP_WARN_to learn|r |T236254:0|t[Empowered Renew]
+    .use 213140
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -998,6 +1027,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Waist
 #name Renewed Hope - 30 (Desolace)
+#title Renewed Hope
 
 -- Renewed Hope
 step
@@ -1026,17 +1056,44 @@ step
     .use 213599
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Priest SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Boots
--- #name Dispersion
+RXPGuides.RegisterGuide([[
+#classic
+<< Priest SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Dispersion 40 (Azeroth)
 
 -- Dispersion
 
-
--- ]])
+step
+    .train 425314,1
+    >>Buy the |T134938:0|t[Deciphered Troll Scroll] from the auction house |cRXP_WARN_It's highly recommended as otherwise you'll need a rogue with the [Master of Sublety Rune] and |T338666:0|t[Jani's Charm] to pickpocket |cRXP_ENEMY_Bloodscalp Scavenger|r for |T237446:0|t[Mysterious Troll Scroll]|r and a mage to decipher it. |cFFFF0000Alternatively you can have a priest share this quest with you.|r
+    .collect 216880,1
+step
+    .train 425314,1
+    >>Click on the |T134938:0|t[Deciphered Troll Scroll] in your bags to accept this quest.
+    .accept 79731 --The Troll Scroll
+step
+    .train 425314,1
+    #completewith next
+    .zone Stranglethorn Vale >>Travel to |cFFfa9602Stranglethorn Vale|r
+step
+    .train 425314,1
+    >>Kill |cRXP_ENEMY_Lord Sakrasis|r. Loot him for |T134712:0|t[Holy Spring Water]
+    .collect 737,1
+    .mob Lord Sakrasis
+step
+    .train 425314,1
+    .goto Stranglethorn Vale,23.2,8.5
+    .cast 3581 >> Use the |T134712:0|t[Holy Spring Water] behind Gan'zulah on a fountain
+    .use 737
+step
+    .train 425314,1
+    >>Click on the object to aquire |T135975:0|t[Prophecy of Imprisoned Malice]
+    .collect 213142,1
+step
+    .train 425314 >> Use|T135975:0|t[Prophecy of Imprisoned Malice] to learn |T237563:0|t[Dispersion]
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -1044,6 +1101,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Boots
 #name Pain Suppression - 32 (Azeroth)
+#title Pain Suppression
 
 -- Pain Suppression
 
@@ -1101,6 +1159,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Bracers
 -- #name Despair
+-- for phase 3
 
 -- Despair
 
@@ -1113,6 +1172,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Bracers
 -- #name Surge of Light
+-- for phase 3
 
 -- Surge of Light
 
@@ -1125,6 +1185,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Bracers
 -- #name Void Zone
+-- for phase 3
 
 -- Void Zone
 
@@ -1137,6 +1198,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Helmet
 -- #name Divine Aegis
+-- for phase 3
 
 -- Divine Aegis
 
@@ -1148,6 +1210,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Skill Books
 -- #name Increased Fortitude
+-- for phase 3
 
 -- -- Increased Fortitude
 
@@ -1155,41 +1218,3 @@ step
 
 -- ]])
 
-RXPGuides.RegisterGuide([[
-#classic
-<< Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Skillbooks
-#title Shadowfiend/Increased Fortitude
-#name Shadowfiend/Increased Fortitude - 27-40 (Scarlet Monastery)
-
-step
-    .train 401977,1
-    .train 436951,1
-    #completewith Interrogator Vishas
-    +The Skill Books are obtained by killing the first/last dungeon boss of Scarlet Monastery: Graveyard or the rare |cRXP_ENEMY_Ironspine|r |cRXP_WARN_it is highly recommended to have a group of 5 players.|r
-step
-    .train 401977,1
-    .train 436951,1
-    .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
-step
-    .train 401977,1
-    .train 436951,1
-    .goto 1415,47.44,19.75,10,0
-    .goto 1415,47.45,19.69,5,0
-    .goto 1415,47.62,19.59,10,0
-    .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
-step
-    .train 401977,1
-    .train 436951,1
-    #label Interrogator Vishas
-    >>Kill |cRXP_ENEMY_Interrogator Vishas|r, |cRXP_ENEMY_Ironspine|r and loot them for |cRXP_LOOT_Scroll of Shadowfiend|r |cRXP_WARN_This might require multiple kills.|r
-    .collect 216745,1
-    .collect 216744,1
-    .mob Interrogator Vishas
-    .mob Ironspine
-step
-    .train 415423 >>|cRXP_WARN_Use the|r |T237162:0|t|cRXP_LOOT_[Scroll of Shadowfiend]|r |cRXP_WARN_to learn|r |T136199:0|t[Shadowfiend]
-    .train 436951 >>|cRXP_WARN_Use the|r |T237162:0|t|cRXP_LOOT_[Scroll of Increased Fortitude]|r |cRXP_WARN_to learn|r |T237543:0|t[Increased Fortitude]
-    .use 216745
-]])

@@ -4,6 +4,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Victory Rush - 1 (Elwynn Forest)
+#title Victory Rush
 
 step << Warrior
     #season 2
@@ -26,6 +27,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Victory Rush - 3 (Dun Morogh)
+#title Victory Rush
 
 step << Warrior
     #season 2
@@ -53,6 +55,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Victory Rush - 3 (Shadowglen)
+#title Victory Rush
 
 step << Warrior
     #season 2
@@ -75,6 +78,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Blood Frenzy - 10 (Elwynn Forest)
+#title Blood Frenzy
 
 step << Warrior
     #season 2
@@ -110,6 +114,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Blood Frenzy - 10 (Dun Morogh)
+#title Blood Frenzy
 
 step << Warrior
     #season 2
@@ -134,6 +139,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Blood Frenzy - 10 (Teldrassil)
+#title Blood Frenzy
 
 step << Warrior
     #season 2
@@ -163,6 +169,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Furious Thunder - 6 (Elwynn Forest)
+#title Furious Thunder
 
 step << Warrior
     #season 2
@@ -189,6 +196,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Furious Thunder - 9 (Dun Morogh)
+#title Furious Thunder
 
 step << Warrior
     #season 2
@@ -215,6 +223,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Frenzied Assault - 10 (Stormwind)
+#title Frenzied Assault
 
 step << Warrior
     #season 2
@@ -239,6 +248,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Frenzied Assault - 10 (Ironforge)
+#title Frenzied Assault
 
 step << Warrior
     #season 2
@@ -260,6 +270,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Frenzied Assault - 10 (Teldrassil)
+#title Frenzied Assault
 
 step << Warrior
     #season 2
@@ -281,6 +292,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Endless Rage - 20 (Westfall)
+#title Endless Rage
 
 step << Warrior
     #season 2
@@ -308,6 +320,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Endless Rage - 16 (Darkshore)
+#title Endless Rage
 
 step << Warrior
     #season 2
@@ -335,6 +348,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Devastate - 8 (Elwynn Forest)
+#title Devastate
 
 step << Warrior
     #season 2
@@ -422,6 +436,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Devastate - 6 (Teldrassil)
+#title Devastate
 
 step << Warrior
     #season 2
@@ -461,6 +476,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Devastate - 6 (Dun Morogh)
+#title Devastate
 
 step << Warrior
     #season 2
@@ -495,14 +511,13 @@ step << Warrior
     .target Junni Steelpass
 ]])
 
-
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Victory Rush - 2 (Durotar)
+#title Victory Rush
 
 
     --Rune of Victory Rush
@@ -534,8 +549,7 @@ step << Orc/Troll
     .turnin 77582 >>Turn in A Trial of Fitness << Orc
     .target Frang
 
-    ]])
-
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -543,6 +557,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Victory Rush - 2 (Mulgore)
+#title Victory Rush
 
 
     --Rune of Victory Rush
@@ -572,8 +587,7 @@ step << Tauren
     .turnin 77651 >>Turn in Into the Brambles
     .target Harutt Thunderhorn
 
-    ]])
-
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -581,7 +595,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Victory Rush - 2 (Tirisfal)
-
+#title Victory Rush
 
     --Rune of Victory Rush
 
@@ -609,8 +623,7 @@ step << Undead
     .turnin 77668 >>Turn in The Lost Rune
     .target Dannal Stern
 
-    ]])
-
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -618,7 +631,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Furious Thunder - 2 (Durotar)
-
+#title Furious Thunder
 
     --Rune of Furious Thunder
 
@@ -637,13 +650,13 @@ step
 
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Furious Thunder - 10 (Tirisfal)
+#title Furious Thunder
 
 
     --Rune of Furious Thunder
@@ -662,8 +675,7 @@ step
     .use 204809
     .itemcount 204809,1
 
-    ]])
-
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -671,6 +683,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Frenzied Assault - 10 (Orgrimmar)
+#title Frenzied Assault
 
 
     --Rune of Frenzied Assault
@@ -703,13 +716,13 @@ step
 
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Frenzied Assault - 10 (Thunder Bluff)
+#title Frenzied Assault
 
 
     --Rune of Frenzied Assault
@@ -747,7 +760,8 @@ RXPGuides.RegisterGuide([[
 << Horde Warrior SoD
 #group RestedXP Rune & Books Guide
 #subgroup Legs
-#name  Frenzied Assault - 10 (Tirisfal)
+#name Frenzied Assault - 10 (Tirisfal)
+#title Frenzied Assault
 
 
     --Rune of Frenzied Assault
@@ -779,22 +793,13 @@ step
     .itemcount 204716,1
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Warrior SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Legs
--- #name Commanding Shout
-
--- ]])
-
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Devastate - 8 (Durotar)
+#title Devastate
 
 
     --Rune of Devastate
@@ -872,6 +877,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Devastate - 8 (Mulgore)
+#title Devastate
 
 
     --Rune of Devastate
@@ -935,6 +941,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Devastate - 8 (Tirisfal)
+#title Devastate
 
 
     --Rune of Devastate
@@ -1010,13 +1017,13 @@ step
 
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Blood Frenzy - 8 (Durotar)
+#title Blood Frenzy
 
 
     --Rune of Blood Frenzy
@@ -1047,13 +1054,13 @@ step
 
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Blood Frenzy - 8 (Mulgore)
+#title Blood Frenzy
 
 
 --Rune of Blood Frenzy
@@ -1082,13 +1089,13 @@ step
 
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Blood Frenzy - 8 (Tirisfal)
+#title Blood Frenzy
 
 
     --Rune of Blood Frenzy
@@ -1115,6 +1122,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Quick Strike - 12 (Loch Modan)
+#title Quick Strike
 
 step << Warrior
     .goto Loch Modan,33.2,73.8
@@ -1140,13 +1148,13 @@ step << Warrior
     .itemcount 208778,1
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Endless Rage - 15 (The Barrens)
+#title Endless Rage
 
 
     --Rune of Endless Rage
@@ -1182,13 +1190,13 @@ step
 
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warrior SoD
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Endless Rage - 15 (Silverpine Forest)
+#title Endless Rage
 
 
     --Rune of Endless Rage
@@ -1212,8 +1220,7 @@ step
     .use 208741
     .itemcount 208741,1
 
-    ]])
-
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -1221,6 +1228,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Quick Strike - 20 (Darkshore)
+#title Quick Strike
 
 step << Warrior
     .goto Darkshore,48.2,15.6,70,0
@@ -1253,6 +1261,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Waist
 #name Focused Rage - 35 (Arathi Highlands)
+#title Focused Rage
 
 -- Focused Rage
 
@@ -1278,34 +1287,69 @@ step
     .train 409163 >> Kill the |cRXP_ENEMY_Witherbark Goliath|r. Loot him for the |cRXP_LOOT_Rune of Focused Rage|r. Use it to learn |T132345:0|t[Focused Rage]
 ]])
 
+RXPGuides.RegisterGuide([[
+#classic
+<< Alliance Warrior SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Intervene - 32 (Thousand Needles)
+#title Intervene
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Alliance Warrior SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Boots
--- #name Intervene - 32 (Thousand Needles)
+-- Intervene
 
--- -- Intervene
+step
+    .train 403472,1
+    #completewith next
+    >>Before you head out to Thousand Needles, make sure to pack a wearable two-handed sword along with 2 wearable one-handed weapons. Don't worry about their strength.
+step
+    .train 403472,1
+    .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
+step
+    .train 403472,1
+    .goto Thousand Needles,67.8,89.4
+    .equip 16 >> Equip any Two-Handed Weapon.
+    .cast 5308 >> Cast |T135358:0|t[Execute] on the |cRXP_ENEMY_Combat Dummy|r located in front of the male statue while you are wielding a two-handed weapon.
+    .mob Combat Dummy
+step
+    .train 403472,1
+    .goto Thousand Needles,67.7,89.3
+    .equip Equip a pair of one-handed weapons
+    .cast 355 >> Cast |T136080:0|t[Taunt] on the |cRXP_ENEMY_Combat Dummy|r located in front of the dwarf statue while you are dual-wielding.
+    .mob Combat Dummy
+step
+    .train 403472,1
+    .goto Thousand Needles,68.2,89.8
+    .cast 355 >> Cast |T132357:0|t[Shield Bash] on the |cRXP_ENEMY_Combat Dummy|r located in front of the human female statue while you are dual-wielding.
+    .mob Combat Dummy
+step
+    .goto Thousand Needles,67.9,89.5
+    >>Click on the |cRXP_PICK_Warrior's Bounty|r to receive |T134419:0|t[Rune of Intervention]
+    .train 403472 >> Use |T134419:0|t[Rune of Intervention] to learn |T132365:0|t[Intervene]
+]])
 
--- step
---     .goto Thousand Needles,66.0,88.0
---     >>|T135358:0|t[Execute], |T136080:0|t[Taunt], |T132357:0|t[Shield Bash]
---     .mob Combat Dummy
--- ]])
+RXPGuides.RegisterGuide([[
+#classic
+<< Warrior SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Rallying Cry - 40 (Badlands)
+#title Rallying Cry
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Warrior SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Boots
--- #name Rallying Cry - 40 (Badlands)
-
--- -- Rallying Cry
--- step
---     .train 426491 >>Kill the |cRXP_ENEMY_Wandering Swordsman|r somewhere in Badlands |cRXP_WARN_this a rare|r. Loot him Rune of Rallying Cry
---     .target Wandering Swordsman
--- ]])
+-- Rallying Cry
+step
+    .train 426491,1
+    #completewith next
+    .zone Badlands >>Travel to Badlands
+step
+    #loop
+    .goto Badlands,35.6,59.6,25,0
+    .goto Badlands,24.8,58.8,25,0
+    .goto Badlands,28.4,67.6,25,0
+    >>Kill the |cRXP_ENEMY_Wandering Swordsman|r in Badlands |cRXP_WARN_ Please note, this is a rare enemy and there's a chance it may not be present.|r Loot him |T134419:0|t[Rune of the Commander]
+    .train 426491 >> Use |T134419:0|t[Rune of the Commander] to learn |T426490:0|t[Rallying Cry]
+    .mob Wandering Swordsman
+    .unitscan Wandering Swordsman
+]])
 
 
 -- RXPGuides.RegisterGuide([[
@@ -1314,6 +1358,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Bracers
 -- #name Rampage
+-- for phase 3
 
 -- Rampage
 
@@ -1325,6 +1370,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Bracers
 -- #name Sword and Board
+-- for phase 3
 
 -- Sword and Board
 
@@ -1336,6 +1382,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Bracers
 -- #name Wrecking Crew
+-- for phase 3
 
 -- Wrecking Crew
 
@@ -1347,6 +1394,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Helmet
 -- #name Shield Mastery
+-- for phase 3
 
 -- Shield Mastery
 
@@ -1358,6 +1406,7 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Helmet
 -- #name Taste for Blood
+-- for phase 3
 
 -- Taste for Blood
 
@@ -1369,44 +1418,8 @@ step
 -- #group RestedXP Rune & Books Guide
 -- #subgroup Helmet
 -- #name Vigilance
+-- for phase 3
 
 -- Vigilance
 
 -- ]])
-
-RXPGuides.RegisterGuide([[
-#classic
-<< Warrior SoD
-#group RestedXP Rune & Books Guide
-#subgroup Spell Books
-#title Commanding Shout
-#name Commanding Shout - 27-40 (Scarlet Monastery)
-
--- Commanding Shout
-
-step
-    .train 403215,1
-    #completewith Interrogator Vishas
-    +The Skill Books are obtained by killing the first/last dungeon boss of Scarlet Monastery: Graveyard or the rare |cRXP_ENEMY_Ironspine|r |cRXP_WARN_it is highly recommended to have a group of 5 players.|r
-step
-    .train 403215,1
-    .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
-step
-    .train 403215,1
-    .goto 1415,47.44,19.75,10,0
-    .goto 1415,47.45,19.69,5,0
-    .goto 1415,47.62,19.59,10,0
-    .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
-step
-    .train 403215,1
-    #label Interrogator Vishas
-    >>Kill |cRXP_ENEMY_Interrogator Vishas|r, |cRXP_ENEMY_Ironspine|r and loot them for |cRXP_LOOT_Scroll of Shadowfiend|r |cRXP_WARN_This might require multiple kills.|r
-    .collect 216745,1
-    .collect 216744,1
-    .mob Interrogator Vishas
-    .mob Ironspine
-step
-    .train 403215 >>|cRXP_WARN_Use the|r |T133741:0|t|cRXP_LOOT_[Handbook of Commanding Shout]|r |cRXP_WARN_to learn|r |T132351:0|t[Commanding Shout]
-    .use 216746
-
-]])

@@ -4,6 +4,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Crusader Strike - 4 (Elwynn Forest)
+#title Crusader Strike
 #next Inspiration Exemplar - 6 (Elwynn Forest)
 
 --VV Not sure if you want to gate CS in Elwynn for humans only/DunM for dwarves only
@@ -84,6 +85,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Crusader Strike - 4 (Dun Morogh)
+#title Crusader Strike
 #next Inspiration Exemplar - 6 (Dun Morogh)
 
 step
@@ -159,6 +161,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Hand of Reckoning - 14 (Loch Modan)
+#title Hand of Reckoning
 #next Inspiration Exemplar - 6 (Elwynn Forest)
 
 
@@ -328,6 +331,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Hand of Reckoning - 20 (Westfall)
+#title Hand of Reckoning
 #next Exorcist - 24 (Duskwood)
 
 
@@ -449,14 +453,13 @@ step
     .xp <8,1
 ]])
 
-
-
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Horn of Lordaeron - 4 (Loch Modan)
+#title Horn of Lordaeron
 #next Hand of Reckoning - 14 (Loch Modan)
 
 step
@@ -542,6 +545,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Horn of Lordaeron - 12 (Westfall)
+#title Horn of Lordaeron
 #next Hand of Reckoning - 20 (Westfall)
 
 
@@ -648,6 +652,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Aegis - 8 (Elwynn Forest)
+#title Aegis
 #next Rebuke - 10 (Stormwind)
 
 step
@@ -725,6 +730,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Aegis - 8 (Dun Morogh)
+#title Aegis
 #next Rebuke - 10 (Ironforge)
 
 step
@@ -786,6 +792,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Seal of Martyrdom - 10 (Stormwind)
+#title Seal of Martyrdom
 #next Horn of Lordaeron - 12 (Westfall)
 
 step
@@ -876,6 +883,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Divine Storm - 25 (Darkshore)
+#title Divine Storm
 #next Divine Sacrifice - 25 (Ratchet)
 
 step
@@ -1101,6 +1109,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Inspiration Exemplar - 6 (Elwynn Forest)
+#title Inspiration Exemplar
 #next Aegis - 8 (Elwynn Forest)
 
 step
@@ -1142,6 +1151,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Inspiration Exemplar - 6 (Dun Morogh)
+#title Inspiration Exemplar
 #next Aegis - 8 (Dun Morogh)
 
 step
@@ -1194,6 +1204,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Rebuke - 10 (Ironforge)
+#title Rebuke
 #next Seal of Martyrdom - 10 (Stormwind)
 
 step
@@ -1264,6 +1275,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Rebuke - 10 (Stormwind)
+#title Rebuke
 #next Seal of Martyrdom - 10 (Stormwind)
 
 step
@@ -1336,6 +1348,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Exorcist - 24 (Duskwood)
+#title Exorcist
 #next Beacon of Light - 25 (Reputation)
 
 step
@@ -1460,106 +1473,13 @@ step
 
 -- ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Paladin SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Bracers
--- #name Improved Hammer of Wrath
-
--- Improved Hammer of Wrath
-
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Paladin SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Bracers
--- #name Purifying Power
-
--- Purifying Power
-
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Paladin SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Helmet
--- #name Fanaticism
-
--- Fanaticism
-
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Paladin SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Helmet
--- #name Light's Grace
-
--- Light's Grace
-
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Paladin SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Helmet
--- #name Wrath
-
--- Wrath
-
-
--- ]])
-
-RXPGuides.RegisterGuide([[
-#classic
-<< Paladin SoD
-#group RestedXP Rune & Books Guide
-#subgroup Skill Books
-#name Enhanced Blessings - 27-40 (Scarlet Monastery)
-
--- Enhanced Blessings
-
-step
-    .train 435984,1
-    #completewith Interrogator Vishas
-    +The Skill Books are obtained by killing the first/last dungeon boss of Scarlet Monastery: Graveyard or the rare |cRXP_ENEMY_Ironspine|r |cRXP_WARN_it is highly recommended to have a group of 5 players.|r
-step
-    .train 435984,1
-    .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
-step
-    .train 435984,1
-    .goto 1415,47.44,19.75,10,0
-    .goto 1415,47.45,19.69,5,0
-    .goto 1415,47.62,19.59,10,0
-    .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
-step
-    .train 435984,1
-    #label Interrogator Vishas
-    >>Kill |cRXP_ENEMY_Interrogator Vishas|r, |cRXP_ENEMY_Ironspine|r and loot them for |cRXP_LOOT_Testament of Enhanced Blessings|r |cRXP_WARN_This might require multiple kills.|r
-    .collect 216768,1
-    .mob Interrogator Vishas
-    .mob Ironspine
-step
-    .train 435984 >>|cRXP_WARN_Use the|r |T133745:0|t|cRXP_LOOT_[Testament of Enhanced Blessings]|r |cRXP_WARN_to learn|r |T236248:0|t[Enhanced Blessings]
-    .use 216738
-]])
-
 RXPGuides.RegisterGuide([[
 #classic
 << Paladin SoD
 #group RestedXP Rune & Books Guide
 #subgroup Belt
 #name Sheath of Light - 40
+#title Sheath of Light
 
 step
     #completewith next
@@ -1608,8 +1528,8 @@ step
     .subzoneskip 207
 step
     .train 426178,1
-    *|cRXP_WARN_Swim to the waypoint location|r. 
-    *|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Slain Scarlet Crusader|r. 
+    *|cRXP_WARN_Swim to the waypoint location|r.
+    *|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Slain Scarlet Crusader|r.
     >>Kill the |cRXP_ENEMY_Scarlet Crusade Assassin|r. Loot it for the |T133471:0|t[Orders from the Grand Crusade]. Click it in your bags
     .goto Eastern Kingdoms,41.9,59.0
     .skipgossip
@@ -1635,7 +1555,7 @@ step
     .complete 79946,1 --Learn more about Aeonas from Katherine
 step
     .train 426178,1
-    >>|cRXP_WARN_Look for a group for Scarlet Monastery and kill the last boss. 
+    >>|cRXP_WARN_Look for a group for Scarlet Monastery and kill the last boss.
     *Afterwards go into the chamber behind the boss and talk to |cRXP_FRIENDLY_Aenoas|r
     .complete 79946,2 --Find Aeonas in the Scarlet Monastery
     .turnin 79946 >>Turn in A Brother in Need
@@ -1671,6 +1591,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Boots
 #name Guarded by the Light - 30 (Alterac Mountains)
+#title Guarded by the Light
 
 step
     .train 416035,1
@@ -1707,6 +1628,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Boots
 #name Sacred Shield - 30 (Desolace)
+#title Sacred Shield
 
 -- Sacred Shield
 
@@ -1727,3 +1649,69 @@ step
     .use 213513
     .train 416028 >>Use the |T134916:0|t[|cRXP_FRIENDLY_Libram of Deliverance|r] to learn |T236249:0|t[Sacred Shield]
 ]])
+
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Paladin SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Bracers
+-- #name Improved Hammer of Wrath
+-- for phase 3
+
+-- Improved Hammer of Wrath
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Paladin SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Bracers
+-- #name Purifying Power
+-- for phase 3
+
+-- Purifying Power
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Paladin SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helmet
+-- #name Fanaticism
+-- for phase 3
+
+-- Fanaticism
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Paladin SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helmet
+-- #name Light's Grace
+-- for phase 3
+
+-- Light's Grace
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Paladin SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helmet
+-- #name Wrath
+-- for phase 3
+
+-- Wrath
+
+
+-- ]])
