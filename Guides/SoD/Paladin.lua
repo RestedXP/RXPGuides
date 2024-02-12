@@ -1461,17 +1461,59 @@ step
 --VV Overall paladin routing can be improved if Divine Sac turnin has items bought before Divine Storm -> Turned in after Divine Storm (run down after accepting Return to Delgren -> Turn in -> Fly to Astranaar -> DS Turnin)
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Paladin SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Waist
--- #name Enlightened Judgements
+RXPGuides.RegisterGuide([[
+#classic
+<< Paladin SoD
+#group RestedXP Rune & Books Guide
+#subgroup Belt
+#title Enlightened Judgements
+#name Enlightened Judgements - 30 (Arathi Highlands)
 
--- Enlightened Judgements
+-- Needs waypoints to Brother Atticus 
 
+step
+    #completewith next
+    .zone Arathi Highlands >>Travel to the Arathi Highlands
+step
+    >>Kill |cRXP_ENEMY_Syndicate Members|r in the area. Loot them for the prayer beads
+    *|cRXP_WARN_You can also go to the other 2 locations marked on your map as any Humanoid can drop these|r
+    *Make sure to apply |T135906:0|t[Blessing of Might] to passively purify the first bead
+    .goto Arathi Highlands,31.6,28.6
+    .goto Arathi Highlands,68.8,71.8,0
+    .goto Arathi Highlands,35.4,44.8,0
+    .collect 213444,1
+    .collect 213445,1
+    .collect 213446,1
+    .mob Syndicate Mercenary
+    .mob Syndicate Pathstalker
+    .mob Syndicate Highwayman
+step
+    >>Use |T135906:0|t[Blessing of Might] and kill enemies until to get |T135260:0|t[Divine Prayer Bead I]
+    *Use |T135896:0|t[Divine Shield] at 10% HP to get |T135260:0|t[Divine Prayer Bead II]
+    *Use |T135971:0|t[Seal of Justice] and |T135959:0|t[Judgement] on a |cRXP_WARN_fleeing enemy|r to get |T135260:0|t[Divine Prayer Bead III]
+    .goto Arathi Highlands,31.6,28.6
+    .goto Arathi Highlands,68.8,71.8,0
+    .goto Arathi Highlands,35.4,44.8,0
+    .collect 213448,1
+    .collect 213449,1
+    .collect 213450,1
+step
+    >>Use the |T135260:0|t[Divine Prayer Bead I] to combine the beads into the |T133289:0|t[Rosary of the Light]
+    .goto Arathi Highlands,27.2,57.0
+    .use 213448
+    .collect 213447,1
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Atticus|r inside Stormgarde Keep to get the |T134419:0|t[|cRXP_FRIENDLY_Rune of Piety|r]
+    .goto Arathi Highlands,27.2,57.0
+    .skipgossip 217387,1
+    .collect 213128,1
+    .target Brother Atticus
+step
+    .itemcount 213128,1
+    .use 213128
+    .train 426175 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Piety|r] to learn |T236251:0|t[Enlightened Judgements]
+]])
 
--- ]])
 
 RXPGuides.RegisterGuide([[
 #classic
