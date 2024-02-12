@@ -996,6 +996,7 @@ step
     >>Use the |T132599:0|t[Empty Bait Cage] on any critter for a |T132599:0|t[Trapped Critter]
     .collect 211273,1 --Trapped Critter
     .mob Rat
+    .mob Black Rat
     .mob Chicken
     .train 410114,1
 step
