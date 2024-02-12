@@ -1282,12 +1282,6 @@ RXPGuides.RegisterGuide([[
 #name Brain Freeze - 30 (Desolace) << Mage
 #name Poisoned Knife - 30 (Desolace) << Rogue
 
-#classic
-<< Druid SoD
-#group RestedXP Rune & Books Guide
-#subgroup Belt
-#name Eclipse - 30 (Desolace)
-
 step
     #completewith next
     .zone Desolace >>Travel to Desolace
@@ -1392,7 +1386,8 @@ step
     .train 426452,1 << Warlock
     .train 425102,1 << Rogue
     .train 425883,1 << Shaman
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illari Duskfeather|r, defeat her, |cRXP_WARN_and pick up the bag on the ground for |T134236:0|t[Illari's Key]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illari Duskfeather|r for |T134236:0|t[Illari's Key] << NightElf
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illari Duskfeather|r, defeat her, |cRXP_WARN_and pick up the bag on the ground for |T134236:0|t[Illari's Key] << !NightElf
     .goto Stranglethorn Vale,27.0,77.2
     .skipgossip 215655,1
     .complete 79242,2 --Illari's Key
@@ -1678,10 +1673,10 @@ step
 step
     .goto Swamp of Sorrows,25.0,54.2
     .train 410027 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r to acquire |T132266:0|t[Survival Instincts] << Druid
-    .train 416089 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r to acquire |T437997:0|t[Invigoration] << Hunter
+    .train 416089 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r to acquire |T236184:0|t[Invigoration] << Hunter
     .skipgossip 217412,1
     .target Amaryllis Webb
 step
-    .train 416089 >> Use the |T134419:0|t[Rune of Invigoration] to learn |T437997:0|t[Invigoration] << Hunter
+    .train 416089 >> Use the |T134419:0|t[Rune of Invigoration] to learn |T236184:0|t[Invigoration] << Hunter
     .train 410027 >> Use the |T134419:0|t[Rune of Survival] to learn |T132266:0|t[Survival Instincts] << Druid
 ]])
