@@ -2654,6 +2654,7 @@ step
     .complete 4763,1 -- Talisman of Corruption (1)
     .mob Xabraxxis
 step << !Hunter
+#xprate <1.5
     #label CompleteFangs
     .goto Darkshore,52.6,33.6
     .xp 18 >> Grind to level 18
