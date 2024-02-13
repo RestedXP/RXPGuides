@@ -1398,7 +1398,7 @@ step
 step
     .train 403472,1
     .goto Thousand Needles,67.7,89.3
-    .equip Equip a pair of one-handed weapons
+    >>Equip a pair of one-handed weapons
     .cast 355 >> Cast |T136080:0|t[Taunt] on the |cRXP_ENEMY_Combat Dummy|r located in front of the dwarf statue while you are dual-wielding.
     .mob Combat Dummy
 step
