@@ -1009,10 +1009,10 @@ step
 step
     .train 425309,1
     #loop
-    .goto Alterac Mountains,49.0 61.6,25,0
-    .goto Alterac Mountains,54.6 52.6,25,0
-    .goto Alterac Mountains,52.4 41.6,25,0
-    .goto Alterac Mountains,46.6 35.6,25,0
+    .goto Alterac Mountains,49.0,61.6,25,0
+    .goto Alterac Mountains,54.6,52.6,25,0
+    .goto Alterac Mountains,52.4,41.6,25,0
+    .goto Alterac Mountains,46.6,35.6,25,0
     >>Kill |cRXP_ENEMY_Crushridge Ogre|r. Loot them for |cRXP_LOOT_Prophecy of the Quickened Path|r
     .collect 213140,1
     .mob Crushridge Ogre
@@ -1033,7 +1033,7 @@ RXPGuides.RegisterGuide([[
 step
     .train 425310,1
     #completewith next
-    .zone Desolace >>Travel to |cFFfa9602Stranglethorn Vale|r
+    .zone Desolace >>Travel to |cFFfa9602Desolace|r
 step
     #loop
     .goto Desolace,36.0,29.6,25,0
@@ -1122,7 +1122,7 @@ step
     .zone Arathi Highlands >>Travel to |cFFfa9602Arathi Highlands|r
 step
     .train 402855,1
-    .goto Arathi Highlands,50,5,55.2
+    .goto Arathi Highlands,62.18,54.44
     >>Pickup the |T136222:0|t[Arathi Echo] near Go'sheks Farm
     .collect 215428,1
 step

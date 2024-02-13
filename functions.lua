@@ -39,6 +39,7 @@ events.subzone = "ZONE_CHANGED"
 events.subzoneskip = "ZONE_CHANGED"
 events.bankdeposit = {"BANKFRAME_OPENED", "BAG_UPDATE_DELAYED"}
 events.skipgossip = {"GOSSIP_SHOW", "GOSSIP_CLOSED", "GOSSIP_CONFIRM_CANCEL"}
+events.gossip = events.skipgossip
 events.gossipoption = events.skipgossip
 events.skipgossipid = "GOSSIP_SHOW"
 events.vehicle = {"UNIT_ENTERING_VEHICLE", "VEHICLE_UPDATE", "UNIT_EXITING_VEHICLE"}
@@ -125,7 +126,16 @@ addon.icons.acceptmultiple = addon.icons.accept
 addon.icons.turninmultiple = addon.icons.turnin
 addon.icons.xpto60 = addon.icons.xp
 
-function addon.error(msg) print(msg) end
+function addon.error(text,arg1)
+    if type(text) ~= "string" then
+        text = ""
+    end
+    if not arg1 then
+        print(text)
+    else
+        print(fmt(L("Error parsing guide") .. " %s: %s\n%s" ,addon.currentGuideName,arg1,text))
+    end
+end
 
 local _G = _G
 
@@ -1877,14 +1887,16 @@ function addon.functions.fp(self, ...)
     end
     local event, arg1, arg2 = ...
     local element = self.element
+    local fpId = element.fpId
     --print('v',element.fpId,RXPCData.flightPaths[element.fpId])
     if self.element.step.active then
         --print(element.fpId,'-',RXPCData.flightPaths[element.fpId])
-        local fpDiscovered = element.fpId and RXPCData.flightPaths[element.fpId]
-        if element.textOnly and fpDiscovered then
+        local fpDiscovered = fpId and RXPCData.flightPaths[fpId]
+        if element.textOnly and fpDiscovered and not element.text then
             element.step.completed = true
             addon.updateSteps = true
-        elseif fpDiscovered then
+        elseif fpDiscovered or addon.flightInfo.lastFlightSrc == fpId or
+                                  addon.flightInfo.lastFlightDest == fpId then
             addon.SetElementComplete(self)
         elseif event == "UI_INFO_MESSAGE" and arg2 == _G.ERR_NEWTAXIPATH or event == "UI_ERROR_MESSAGE" and arg2 == _G.ERR_TAXINOPATHS then
             local currentMap = C_Map.GetBestMapForUnit("player")
@@ -1898,7 +1910,7 @@ function addon.functions.fp(self, ...)
                         end
                     end
                 end
-                if not validFP or element.fpId and RXPCData.flightPaths[element.fpId] then
+                if not validFP or fpId and RXPCData.flightPaths[fpId] then
                     addon.SetElementComplete(self)
                 end
             else
@@ -3983,6 +3995,26 @@ function addon.functions.skipgossip(self, text, ...)
 
 end
 
+function addon.functions.gossip(self, text, npc)
+    if type(self) == "string" then
+        npc = tonumber(npc)
+        if not npc then
+            return addon.error(
+                        L("Error parsing guide") .. " " .. addon.currentGuideName ..
+                           ': No npc ID provided\n' .. self)
+        end
+        local element = {text = text, npc = npc}
+        return element
+    end
+    local event = text
+    local element = self.element
+    if event == "GOSSIP_SHOW" then
+        element.currentNPC = addon.GetNpcId()
+    elseif event == "GOSSIP_CLOSED" and element.currentNPC == element.npc then
+        addon.SetElementComplete(self)
+    end
+end
+
 function addon.functions.skipgossipid(self, text, ...)
     if not (C_GossipInfo and C_GossipInfo.GetOptions) then
         return
@@ -5324,7 +5356,9 @@ function addon.functions.convertquest(self, text, src, dst)
     if type(self) == "string" then -- on parse
         src = tonumber(src)
         dst = tonumber(dst)
-        if not (src and dst) then return end
+        if not (src and dst) then
+            return addon.error(self,"Invalid IDs")
+        end
         local guide = addon.guide
         if guide.questConversion then
             guide.questConversion[src] = dst
@@ -5347,6 +5381,9 @@ function addon.functions.aura(self, ...)
     if type(self) == "string" then
         local text, id, duration, target = ...
         id = tonumber(id)
+        if not id then
+            return addon.error(self,"Invalid aura ID")
+        end
         local element = {text = text, textOnly = not text, unit = target or "player"}
         if duration then
             local operator, elapsed, stack = duration:match("(<?)%s*(%d+)([%-%+]?)")
@@ -5407,13 +5444,17 @@ function addon.functions.equip(self, ...)
         local text, slot, id = ...
         slot = tonumber(slot)
         local element = {text = text, textOnly = not text }
+        if not slot then
+            return addon.error(self,"Invalid slot Id")
+        end
 
         if slot < 0 then
             slot = -slot
             element.reverse = not element.reverse
         end
-        element.id = tonumber(id)
+        id = tonumber(id)
         element.slot = slot
+        element.id = id
         return element
     end
     local element = self.element
@@ -5444,13 +5485,17 @@ function addon.functions.engrave(self, ...)
     if type(self) == "string" then
         local text, slot, id = ...
         slot = tonumber(slot)
+        id = tonumber(id)
+        if not slot then
+            return addon.error(self,"Invalid slot ID")
+        end
         local element = {text = text, textOnly = not text }
 
         if slot < 0 then
             slot = -slot
             element.reverse = not element.reverse
         end
-        element.id = tonumber(id)
+        element.id = id
         element.slot = slot
         return element
     end

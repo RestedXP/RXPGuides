@@ -175,6 +175,8 @@ function addon:PLAYER_CONTROL_LOST()
     -- Don't display flight timer if addon hidden
 
     if GetTime() - flightInfo.startFlight < 1.5 then
+        flightInfo.lastFlightSrc = flightInfo.currentFP
+        flightInfo.lastFlightDest = flightInfo.dest
         if addon.RXPFrame and addon.RXPFrame:IsShown() and
          flightInfo.timer and addon.settings.profile.showFlightTimers then
             flightInfo.flightBar = addon.StartTimer(

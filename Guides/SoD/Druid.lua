@@ -618,15 +618,193 @@ step
     .train 410060 >>Click on the |cRXP_PICK_Sandy Loam|r to plant the seed to learn |T136090:0|t[Dreamstate]
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Druid SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Waist
--- #name Nourish
+RXPGuides.RegisterGuide([[
+#classic
+<< Druid SoD
+#group RestedXP Rune & Books Guide
+#subgroup Belt
+#name Nourish - 35 (Azeroth)
 
+-- Probably needs better waypoints to avoid some dangerous mobs or anything else that could kill you
 
--- ]])
+step
+    #completewith next
+    .train 410059,1
+    .goto Dustwallow Marsh,30.2,47.3,200,0
+    .zone Dustwallow Marsh >>Travel to Dustwallow Marsh
+step
+    .train 410059,1
+    >>Kill the |cRXP_ENEMY_Rotting Ancient|r. Loot it for the |T134217:0|t[Rotten Seed]. |cRXP_WARN_Click it in your bags|r
+    #loop
+    .goto Dustwallow Marsh,43.6,41.0,40,0
+    .goto Dustwallow Marsh,40.91,43.52,40,0
+    .collect 212693,1
+    .accept 79348 >> Accept The Lost Ancient
+    .mob Rotting Ancient
+step
+    #completewith next
+    .train 410059,1
+    .zone Moonglade >> Use |T135758:0|t[Teleport Moonglade]
+step
+    #completewith next
+    +|cRXP_WARN_You have to strictly follow every upcoming instruction. Dying, getting phased, summoned, using teleportation or getting the "Honorless Target" buff can fail the quest (you loose the buff), so don't use any Flight Point into contested areas.|r
+step
+    .train 410059,1
+    .goto Moonglade,41.48,43.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orokai|r
+    *|cRXP_WARN_Accepting the next quest start a 1 hour timer. Make sure that you can commit the whole hour.|r
+    .turnin 79348 >>Turn in The Lost Ancient
+    .accept 79377 >>Accept The Lost Saplings
+    .timer 3600,Water Duration
+    .target Orokai
+step << Alliance
+    .train 410059,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sindrayl|r
+    .goto Moonglade,48.11,67.37
+    .fly Auberdine >>Fly to Auberdine
+    .target Sindrayl
+step << Alliance
+    .train 410059,1
+    .goto Darkshore,36.90,44.13,10,0
+    .goto Darkshore,32.44,43.71
+    .zone Wetlands >>Take the boat to Menethil Harbor. |cRXP_WARN_LOG OUT AFTER THE BOAT STARTS MOVING. WAIT 40 SECONDS AND THEN LOG BACK IN|r
+step << Alliance
+    #completewith next
+    .zone Arathi Highlands >>Travel to Arathi Highlands. |cRXP_WARN_DON'T USE THE FLIGHT MASTER|r
+step << Alliance
+    .train 410059,1
+    >>Use the |T132852:0|t[Water of Elun'ara] on the |cRXP_FRIENDLY_Ancient Sapling|r
+    .complete 79377,3 --Fall Sapling
+    .use 213036
+    .goto Arathi Highlands,46.98,71.83
+    .target Ancient Sapling
+step << Alliance
+    #completewith next
+    .zone Alterac Mountains >>Travel to Alterac Mountains. |cRXP_WARN_DON'T USE THE FLIGHT MASTER|r
+step << Alliance
+    .train 410059,1
+    >>Use the |T132852:0|t[Water of Elun'ara] on the |cRXP_FRIENDLY_Ancient Sapling|r
+    .complete 79377,4 --Winter Sapling
+    .use 213036
+    .goto Alterac Mountains,58.27,43.57
+    .target Ancient Sapling
+step << Alliance
+    #completewith next
+    .zone Western Plaguelands >>Follow the way to Western Plaguelands
+step << Alliance
+    .train 410059,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bibilfaz Featherwhistle|r
+    .goto Western Plaguelands,42.93,85.07
+    .fly Stormwind >>Fly to Stormwind
+    .target Bibilfaz Featherwhistle
+step << Alliance
+    #completewith AncientSapling3Alliance
+    .goto Deadwind Pass,32.5,35,7,50,0
+    .zone Deadwind Pass >>Travel to the Deadwind Pass
+step << Alliance
+    #completewith AncientSapling3Alliance
+    .zone Swamp of Sorrows >>Follow the way to Swamp of Sorrows
+step << Alliance
+    #label AncientSapling3Alliance
+    .train 410059,1
+    >>Use the |T132852:0|t[Water of Elun'ara] on the |cRXP_FRIENDLY_Ancient Sapling|r
+    .complete 79377,2 --Spring Sapling
+    .use 213036
+    .goto Swamp of Sorrows,17.68,42.41,50,0
+    .goto Swamp of Sorrows,10.98,38.40
+    .target Ancient Sapling
+step << Alliance
+    #completewith next
+    .goto Swamp of Sorrows,3.5,61.3,50,0
+    .goto Deadwind Pass,32.3,36.0,50,0
+    .goto Duskwood,44.6,87.3,50,0
+    .zone Stranglethorn Vale >>Follow the way to Stranglethorn Vale
+step << Alliance
+    .train 410059,1
+    >>Use the |T132852:0|t[Water of Elun'ara] on the |cRXP_FRIENDLY_Ancient Sapling|r
+    .complete 79377,1 --Summer Sapling
+    .use 213036
+    .goto Stranglethorn Vale,32.74,64.82
+    .target Ancient Sapling
+step << Horde
+    .train 410059,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bunthen Plainswind|r
+    .goto Moonglade,44.29,45.86
+    .skipgossip 11798,1
+    .zone Thunder Bluff >>Fly to Thunder Bluff
+    .target Bunthen Plainswind
+step << Horde
+    .train 410059,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
+    .goto Thunder Bluff,47.00,49.82
+    .fly Ratchet >>Fly to Ratchet
+    .target Tal
+step << Horde
+    .goto The Barrens,63.677,38.618
+    .zone Stranglethorn Vale >> Take the boat to Booty Bay. |cRXP_WARN_LOG OUT AFTER THE BOAT STARTS MOVING. WAIT 40 SECONDS AND THEN LOG BACK IN.|r
+step << Horde
+    .train 410059,1
+    >>Use the |T132852:0|t[Water of Elun'ara] on the |cRXP_FRIENDLY_Ancient Sapling|r
+    .complete 79377,1 --Summer Sapling
+    .use 213036
+    .goto Stranglethorn Vale,32.74,64.82
+    .target Ancient Sapling
+step << Horde
+    #completewith next
+    .goto Duskwood,44.0,66.4,100,0
+    .goto Duskwood,89,4,41.2,50,0
+    .goto Deadwind Pass,58.3,42.0,50,0
+    .zone Swamp of Sorrows >>Go North through Duskwood and Deadwind Pass into Swamp of Sorrows. |cRXP_WARN_Avoid Darkshire|r
+step << Horde
+    .train 410059,1
+    >>Use the |T132852:0|t[Water of Elun'ara] on the |cRXP_FRIENDLY_Ancient Sapling|r
+    .complete 79377,2 --Spring Sapling
+    .use 213036
+    .goto Swamp of Sorrows,17.68,42.41,50,0
+    .goto Swamp of Sorrows,10.98,38.40
+    .target Ancient Sapling
+step << Horde
+    .goto Swamp of Sorrows,46.10,54.70
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Breyk|r
+    .fly Undercity >>Fly to Undercity
+	.target Breyk
+step << Horde
+    .goto Tirisfal Glades,61.6,62.2,50,0
+    .goto Tirisfal Glades,54.7,73.0,50,0
+    .goto Silverpine Forest,66.7,8.8,50,0
+    .zone Alterac Mountains >>|cRXP_WARN_Leave Undercity, go to Silverpine Forest and swim through the lake to Alterac Mountains|r
+step << Horde
+    .train 410059,1
+    >>Use the |T132852:0|t[Water of Elun'ara] on the |cRXP_FRIENDLY_Ancient Sapling|r
+    .complete 79377,4 --Winter Sapling
+    .use 213036
+    .goto Alterac Mountains,58.27,43.57
+    .target Ancient Sapling
+    step << Horde
+    #completewith next
+    .zone Arathi Highlands >>Run to Arathi Highlands.
+step << Horde
+    .train 410059,1
+    >>Use the |T132852:0|t[Water of Elun'ara] on the |cRXP_FRIENDLY_Ancient Sapling|r
+    .complete 79377,3 --Fall Sapling
+    .use 213036
+    .goto Arathi Highlands,46.98,71.83
+    .target Ancient Sapling
+step
+    #completewith next
+    .train 410059,1
+    .zone Moonglade >> Use |T135758:0|t[Teleport Moonglade]
+step
+    .train 410059,1
+    .goto Moonglade,41.48,43.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orokai|r
+    .turnin 79377 >>Turn in The Lost Saplings
+    .target Orokai
+step
+    .itemcount 213594,1
+    .use 213594
+    .train 410059 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of Nourishing|r] to learn |T236162:0|t[Nourish]
+]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic

@@ -7007,6 +7007,15 @@ step
     .isQuestComplete 951
 step
 #xprate >1.49
+#map Darkshore
+    #optional
+    .goto Felwood,27.00,55.59
+    .target Onu
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Onu|r
+    .turnin 948 >> Turn in Onu
+    .isOnQuest 948
+step
+#xprate >1.49
     .goto Darkshore,45.00,85.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Volcor|r
     .turnin 993 >> Turn in A Lost Master
@@ -7108,21 +7117,49 @@ step
     .mob Encrusted Tide Crawler
     .mob Reef Crawler
 step
+#xprate >1.49
+#map Darkshore
+    .goto Felwood,14.62,60.72
+    >>Click the |cRXP_PICK_Beached Sea Creature|r
+    .accept 4730 >> Accept Beached Sea Creature
+step
+#xprate >1.49
+#map Darkshore
+    .goto Felwood,13.47,64.01
+    >>Click the |cRXP_PICK_Beached Sea Turtle|r
+    .accept 4731 >> Accept Beached Sea Turtle
+step
+#xprate >1.49
+    .goto Ashenvale,13.93,2.01
+    >>Click the |cRXP_PICK_Beached Sea Turtle|r
+    .accept 4732 >> Accept Beached Sea Turtle
+step
+#xprate >1.49
     .goto Ashenvale,13.97,4.10
     >>Click the |cRXP_PICK_Beached Sea Creature|r
     .accept 4733 >> Accept Beached Sea Creature
     >>|cRXP_WARN_This quest can be VERY difficult. Engage the |cRXP_ENEMY_Murlocs|r 1 by 1, otherwise you may agro multiple at the same time|r
     .link https://www.twitch.tv/videos/992307825?t=05h48m36s >> |cRXP_WARN_Click here for a video guide|r
 step
+#xprate <1.50
+    .goto Ashenvale,13.97,4.10
+    >>Click the |cRXP_PICK_Beached Sea Creature|r
+    .accept 4733 >> Accept Beached Sea Creature
+    >>|cRXP_WARN_This quest can be VERY difficult. Engage the |cRXP_ENEMY_Murlocs|r 1 by 1, otherwise you may agro multiple at the same time|r
+    .link https://www.twitch.tv/videos/992307825?t=05h48m36s >> |cRXP_WARN_Click here for a video guide|r
+step
+#xprate <1.50
     .goto Ashenvale,13.93,2.01
     >>Click the |cRXP_PICK_Beached Sea Turtle|r
     .accept 4732 >> Accept Beached Sea Turtle
 step
+#xprate <1.50
 #map Darkshore
     .goto Felwood,13.47,64.01
     >>Click the |cRXP_PICK_Beached Sea Turtle|r
     .accept 4731 >> Accept Beached Sea Turtle
 step
+#xprate <1.50
 #map Darkshore
     .goto Felwood,14.62,60.72
     >>Click the |cRXP_PICK_Beached Sea Creature|r
@@ -7213,7 +7250,13 @@ step
     .goto Darkshore,44.38,76.30
     >>Open |cRXP_PICK_Kerlonian's Chest|r. Loot it for the |T134229:0|t[|cRXP_LOOT_Horn of Awakening|r]
     .complete 5321,1 -- Horn of Awakening (1)
+step -- adjusted to heading there straight from southern most beached sea creature
+#xprate >1.49
+    #completewith tower
+    .zone Ashenvale >> Travel south to Ashenvale
+    .goto Ashenvale,25.77,14.55
 step
+#xprate <1.50
     #completewith tower
     .zone Ashenvale >> Travel south to Ashenvale
     .goto Ashenvale,29.7,13.6
