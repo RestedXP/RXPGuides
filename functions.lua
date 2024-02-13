@@ -126,7 +126,16 @@ addon.icons.acceptmultiple = addon.icons.accept
 addon.icons.turninmultiple = addon.icons.turnin
 addon.icons.xpto60 = addon.icons.xp
 
-function addon.error(msg) print(msg) end
+function addon.error(text,arg1)
+    if type(text) ~= "string" then
+        text = ""
+    end
+    if not arg1 then
+        print(text)
+    else
+        print(fmt(L("Error parsing guide") .. " %s: %s\n%s" ,addon.currentGuideName,arg1,text))
+    end
+end
 
 local _G = _G
 
@@ -5347,7 +5356,9 @@ function addon.functions.convertquest(self, text, src, dst)
     if type(self) == "string" then -- on parse
         src = tonumber(src)
         dst = tonumber(dst)
-        if not (src and dst) then return end
+        if not (src and dst) then
+            return addon.error(self,"Invalid IDs")
+        end
         local guide = addon.guide
         if guide.questConversion then
             guide.questConversion[src] = dst
@@ -5370,6 +5381,9 @@ function addon.functions.aura(self, ...)
     if type(self) == "string" then
         local text, id, duration, target = ...
         id = tonumber(id)
+        if not id then
+            return addon.error(self,"Invalid aura ID")
+        end
         local element = {text = text, textOnly = not text, unit = target or "player"}
         if duration then
             local operator, elapsed, stack = duration:match("(<?)%s*(%d+)([%-%+]?)")
@@ -5435,8 +5449,12 @@ function addon.functions.equip(self, ...)
             slot = -slot
             element.reverse = not element.reverse
         end
-        element.id = tonumber(id)
+        id = tonumber(id)
+        if not (id and slot) then
+            return addon.error(self,"Invalid id/slot")
+        end
         element.slot = slot
+        element.id = id
         return element
     end
     local element = self.element
@@ -5467,13 +5485,17 @@ function addon.functions.engrave(self, ...)
     if type(self) == "string" then
         local text, slot, id = ...
         slot = tonumber(slot)
+        id = tonumber(id)
+        if not (slot and id) then
+            return addon.error(self,"Invalid IDs")
+        end
         local element = {text = text, textOnly = not text }
 
         if slot < 0 then
             slot = -slot
             element.reverse = not element.reverse
         end
-        element.id = tonumber(id)
+        element.id = id
         element.slot = slot
         return element
     end
