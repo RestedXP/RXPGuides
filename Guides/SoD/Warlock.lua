@@ -1153,10 +1153,10 @@ RXPGuides.RegisterGuide([[
 step
     .train 416017,1
     #completewith next
-    .zone Stranglethorn >>Travel to Stranglethorn
+    .zone Stranglethorn Vale>>Travel to Stranglethorn
 step
     .train 416017,1
-    .goto Stranglethorn,31.2,47.4
+    .goto Stranglethorn Vale,31.2,47.4
     >>Kill the |cRXP_ENEMY_Reckless Warlock|r in Desolace |cRXP_WARN_ Please note, this is a rare enemy and there's a chance it may not be present.|r Loot him |T236297:0|t[Brimstone Carving]
     .collect 213583,1
     .unitscan Reckless Warlock

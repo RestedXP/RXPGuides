@@ -1009,10 +1009,10 @@ step
 step
     .train 425309,1
     #loop
-    .goto Alterac Mountains,49.0 61.6,25,0
-    .goto Alterac Mountains,54.6 52.6,25,0
-    .goto Alterac Mountains,52.4 41.6,25,0
-    .goto Alterac Mountains,46.6 35.6,25,0
+    .goto Alterac Mountains,49.0,61.6,25,0
+    .goto Alterac Mountains,54.6,52.6,25,0
+    .goto Alterac Mountains,52.4,41.6,25,0
+    .goto Alterac Mountains,46.6,35.6,25,0
     >>Kill |cRXP_ENEMY_Crushridge Ogre|r. Loot them for |cRXP_LOOT_Prophecy of the Quickened Path|r
     .collect 213140,1
     .mob Crushridge Ogre
