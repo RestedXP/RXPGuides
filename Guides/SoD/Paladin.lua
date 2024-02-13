@@ -1469,8 +1469,6 @@ RXPGuides.RegisterGuide([[
 #title Enlightened Judgements
 #name Enlightened Judgements - 30 (Arathi Highlands)
 
--- Needs waypoints to Brother Atticus 
-
 step
     #completewith next
     .zone Arathi Highlands >>Travel to the Arathi Highlands
@@ -1499,12 +1497,19 @@ step
     .collect 213450,1
 step
     >>Use the |T135260:0|t[Divine Prayer Bead I] to combine the beads into the |T133289:0|t[Rosary of the Light]
-    .goto Arathi Highlands,27.2,57.0
+    .goto Arathi Highlands,27.01,56.95
     .use 213448
     .collect 213447,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Atticus|r inside Stormgarde Keep to get the |T134419:0|t[|cRXP_FRIENDLY_Rune of Piety|r]
-    .goto Arathi Highlands,27.2,57.0
+    .goto Arathi Highlands,26.06,55.75,15,0
+    .goto Arathi Highlands,25.71,59.92,15,0
+    .goto Arathi Highlands,23.69,60.52,15,0
+    .goto Arathi Highlands,23.75,58.89,15,0
+    .goto Arathi Highlands,27.81,58.99,15,0
+    .goto Arathi Highlands,28.74,58.97,15,0
+    .goto Arathi Highlands,28.71,57.37,15,0
+    .goto Arathi Highlands,27.01,56.95
     .skipgossip 217387,1
     .collect 213128,1
     .target Brother Atticus
