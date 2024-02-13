@@ -1289,7 +1289,7 @@ step
 step
     .train 416004,1
     #completewith next
-    .zone Hillsbrad Foothils >>Travel to Hillsbrad Foothils
+    .zone Hillsbrad Foothills >>Travel to Hillsbrad Foothills
 step
     .train 416004,1
     #loop
