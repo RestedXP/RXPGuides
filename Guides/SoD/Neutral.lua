@@ -1059,6 +1059,7 @@ step
     .train 436368,1 << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Dalaran Agent|r to get |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r]
     *|cRXP_WARN_Recommendation: Getting the rune is faster/easier in a raid.|r
+    .goto Deadwind Pass,52.09,34.12
     .skipgossip 218920,1
     .collect 216941,1
     .target Dalaran Agent
