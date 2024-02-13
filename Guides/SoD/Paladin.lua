@@ -1567,7 +1567,7 @@ step
     .zone Wetlands >>Travel to Menethil Harbor
 step
     .train 426178,1
-    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harold Riggs|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harold Riggs|r
     *|cRXP_WARN_Afterwards swim along the coast to the waypoint location|r
     .goto Wetlands,8.2,58.6,0
     .goto Wetlands,8.2,58.6,5,0
@@ -1602,11 +1602,11 @@ step
     .complete 79946,1 --Learn more about Aeonas from Katherine
 step
     .train 426178,1
-    >>|cRXP_WARN_Look for a group for Scarlet Monastery and kill the last boss.
+    >>|cRXP_WARN_Look for a group for Scarlet Monastery and kill the last boss.|r
     *Afterwards go into the chamber behind the boss and talk to |cRXP_FRIENDLY_Aenoas|r
     .complete 79946,2 --Find Aeonas in the Scarlet Monastery
     .turnin 79946 >>Turn in A Brother in Need
-    .accept 79963 >>Accept By THe Light's Grace
+    .accept 79963 >>Accept By The Light's Grace
     .target Aeonas
 step
     .train 426178,1
@@ -1649,8 +1649,8 @@ step
     .zone Alterac Mountains >>Travel to the Alterac Mountains
 step
     .train 416035,1
-    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with the |cRXP_FRIENDLY_Frozen Remains|r
-    *|cRXP_WARN_Make sure to bring another healer who can ressurect you|r.
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Frozen Remains|r
+    *|cRXP_WARN_Make sure to bring another player who can ressurect you|r.
     .goto Alterac Mountains,39.8,60.8
     .collect 213452,1
 step
