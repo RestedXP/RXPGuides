@@ -1473,31 +1473,87 @@ step
     #completewith next
     .zone Arathi Highlands >>Travel to the Arathi Highlands
 step
-    >>Kill |cRXP_ENEMY_Syndicate Members|r in the area. Loot them for the prayer beads
-    *|cRXP_WARN_You can also go to the other 2 locations marked on your map as any Humanoid can drop these|r
-    *Make sure to apply |T135906:0|t[Blessing of Might] to passively purify the first bead
+    #completewith Rosary
+    #label BeadBoM1
+    >>Kill |cRXP_ENEMY_Syndicate Members|r in the area. Loot them for the |T135261:0|t[Tarnished Prayer Bead I]
     .goto Arathi Highlands,31.6,28.6
     .goto Arathi Highlands,68.8,71.8,0
     .goto Arathi Highlands,35.4,44.8,0
-    .collect 213444,1
-    .collect 213445,1
-    .collect 213446,1
+    .collect 213444,1 --Tarnished Prayer Bead I
     .mob Syndicate Mercenary
     .mob Syndicate Pathstalker
     .mob Syndicate Highwayman
 step
-    >>Use |T135906:0|t[Blessing of Might] and kill enemies until to get |T135260:0|t[Divine Prayer Bead I]
-    *Use |T135896:0|t[Divine Shield] at 10% HP to get |T135260:0|t[Divine Prayer Bead II]
-    *Use |T135971:0|t[Seal of Justice] and |T135959:0|t[Judgement] on a |cRXP_WARN_fleeing enemy|r to get |T135260:0|t[Divine Prayer Bead III]
+    #requires BeadBoM1
+    #label BeadBoM2
+    #completewith Rosary
     .goto Arathi Highlands,31.6,28.6
     .goto Arathi Highlands,68.8,71.8,0
     .goto Arathi Highlands,35.4,44.8,0
-    .collect 213448,1
-    .collect 213449,1
-    .collect 213450,1
+    .aura 19835,1 >>Use |T135906:0|t[Blessing of Might]
 step
+    #requires BeadBoM2
+    #label BeadBoM3
+    #completewith Rosary
+    >>Use |T135906:0|t[Blessing of Might] and kill enemies until you get |T135260:0|t[Divine Prayer Bead I]
+    .goto Arathi Highlands,31.6,28.6
+    .goto Arathi Highlands,68.8,71.8,0
+    .goto Arathi Highlands,35.4,44.8,0
+    .collect 213448,1 --Divine Prayer Bead I
+step
+    #completewith Rosary
+    #label BeadDS1
+    >>Kill |cRXP_ENEMY_Syndicate Members|r in the area. Loot them for the |T135261:0|t[Tarnished Prayer Bead II]
+    .goto Arathi Highlands,31.6,28.6
+    .goto Arathi Highlands,68.8,71.8,0
+    .goto Arathi Highlands,35.4,44.8,0
+    .collect 213445,1 --Tarnished Prayer Bead II
+    .mob Syndicate Mercenary
+    .mob Syndicate Pathstalker
+    .mob Syndicate Highwayman
+step
+    #completewith Rosary
+    #requires BeadDS1
+    #label BeadDS2
+    >>Use |T135896:0|t[Divine Shield] |cRXP_WARN_at 10% HP to get|r |T135260:0|t[Divine Prayer Bead II]
+    .goto Arathi Highlands,31.6,28.6
+    .goto Arathi Highlands,68.8,71.8,0
+    .goto Arathi Highlands,35.4,44.8,0
+    .collect 213449,1 --Divine Prayer Bead II
+step
+    #completewith Rosary
+    #label BeadSoJ1
+    >>Kill |cRXP_ENEMY_Syndicate Members|r in the area. Loot them for the |T135261:0|t[Tarnished Prayer Bead III]
+    *|cRXP_WARN_You can also go to the other 2 locations marked on your map as any Humanoid can drop these|r
+    .goto Arathi Highlands,31.6,28.6
+    .goto Arathi Highlands,68.8,71.8,0
+    .goto Arathi Highlands,35.4,44.8,0
+    .collect 213446,1 --Tarnished Prayer Bead III
+    .mob Syndicate Mercenary
+    .mob Syndicate Pathstalker
+    .mob Syndicate Highwayman
+step
+    #completewith Rosary
+    #requires BeadSoJ1
+    #label BeadSoJ2
+    >>Use |T135971:0|t[Seal of Justice] and |T135959:0|t[Judgement] on a |cRXP_WARN_fleeing enemy|r to get |T135260:0|t[Divine Prayer Bead III]
+    .goto Arathi Highlands,31.6,28.6
+    .goto Arathi Highlands,68.8,71.8,0
+    .goto Arathi Highlands,35.4,44.8,0
+    .collect 213450,1 --Divine Prayer Bead III
+step
+    #optional
+    #requires BeadBoM3
+step
+    #optional
+    #requires BeadDS2
+step
+    #optional
+    #requires BeadSoJ2
+step
+    #label Rosary
     >>Use the |T135260:0|t[Divine Prayer Bead I] to combine the beads into the |T133289:0|t[Rosary of the Light]
-    .goto Arathi Highlands,27.01,56.95
+    .goto Arathi Highlands,27.2,57.0
     .use 213448
     .collect 213447,1
 step
