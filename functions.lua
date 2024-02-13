@@ -5450,8 +5450,8 @@ function addon.functions.equip(self, ...)
             element.reverse = not element.reverse
         end
         id = tonumber(id)
-        if not (id and slot) then
-            return addon.error(self,"Invalid id/slot")
+        if not (id) then
+            return addon.error(self,"Invalid id")
         end
         element.slot = slot
         element.id = id
@@ -5486,7 +5486,7 @@ function addon.functions.engrave(self, ...)
         local text, slot, id = ...
         slot = tonumber(slot)
         id = tonumber(id)
-        if not (slot and id) then
+        if not (id) then
             return addon.error(self,"Invalid IDs")
         end
         local element = {text = text, textOnly = not text }
