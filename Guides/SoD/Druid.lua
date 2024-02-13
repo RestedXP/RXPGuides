@@ -715,22 +715,16 @@ step << Alliance
     .target Ancient Sapling
 step << Alliance
     #completewith next
-    .zone Blasted Lands >>Follow the way to Blasted Lands
-step << Alliance
-    .train 410059,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alexandra Constantine|r
-    .goto Blasted Lands,65.53,24.35
-    .fly Darkshire >>Fly to Darkshire
-    .target Alexandra Constantine
-step << Alliance
-    #completewith next
+    .goto Swamp of Sorrows,3.5,61.3,50,0
+    .goto Deadwind Pass,32.3,36.0,50,0
+    .goto Duskwood,44.6,87.3,50,0
     .zone Stranglethorn Vale >>Follow the way to Stranglethorn Vale
 step << Alliance
     .train 410059,1
     >>Use the |T132852:0|t[Water of Elun'ara] on the |cRXP_FRIENDLY_Ancient Sapling|r
     .complete 79377,1 --Summer Sapling
     .use 213036
-    .goto Stranglethorn Vale,33,65
+    .goto Stranglethorn Vale,32.74,64.82
     .target Ancient Sapling
 step << Horde
     .train 410059,1
@@ -753,7 +747,7 @@ step << Horde
     >>Use the |T132852:0|t[Water of Elun'ara] on the |cRXP_FRIENDLY_Ancient Sapling|r
     .complete 79377,1 --Summer Sapling
     .use 213036
-    .goto Stranglethorn Vale,33,65
+    .goto Stranglethorn Vale,32.74,64.82
     .target Ancient Sapling
 step << Horde
     #completewith next
@@ -809,7 +803,7 @@ step
 step
     .itemcount 213594,1
     .use 213594
-    .train 410059 >>Use |T134912:0|t[|cRXP_FRIENDLY_Rune of Nourishing|r] to learn |T236162:0|t[Nourish]
+    .train 410059 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of Nourishing|r] to learn |T236162:0|t[Nourish]
 ]])
 
 -- RXPGuides.RegisterGuide([[
