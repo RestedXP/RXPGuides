@@ -1122,7 +1122,7 @@ step
     .zone Arathi Highlands >>Travel to |cFFfa9602Arathi Highlands|r
 step
     .train 402855,1
-    .goto Arathi Highlands,50,5,55.2
+    .goto Arathi Highlands,62.18,54.44
     >>Pickup the |T136222:0|t[Arathi Echo] near Go'sheks Farm
     .collect 215428,1
 step
