@@ -1090,38 +1090,55 @@ RXPGuides.RegisterGuide([[
 << Priest SoD
 #group RestedXP Rune & Books Guide
 #subgroup Boots
-#name Dispersion 40 (Azeroth)
+#name Dispersion 40 (Stranglethorn Vale)
 
 -- Dispersion
 
 step
     .train 425314,1
-    >>Buy the |T134938:0|t[Deciphered Troll Scroll] from the auction house |cRXP_WARN_It's highly recommended as otherwise you'll need a rogue with the [Master of Sublety Rune] and |T338666:0|t[Jani's Charm] to pickpocket |cRXP_ENEMY_Bloodscalp Scavenger|r for |T237446:0|t[Mysterious Troll Scroll]|r and a mage to decipher it. |cFFFF0000Alternatively you can have a priest share this quest with you.|r
+    >>|cRXP_WARN_Find a Rogue with the|r |T132299:0|t[Master of Subtlety] |cRXP_WARN_rune and|r |T338666:0|t[Jani's Charm] |cRXP_WARN_trinket to|r |T133644:0|t[Pick Pocket] |cRXP_WARN_any |cRXP_ENEMY_Bloodscalp Troll|r in Stranglethorn Vale for the|r |T237446:0|t[Mysterious Troll Scroll]|cRXP_WARN_. A Mage must then use a|r |T135933:0|t[Comprehension Charm] |cRXP_WARN_to decipher it for it to become a |T134938:0|t[|cRXP_LOOT_Deciphered Troll Scroll|r]|r
+    >>|cRXP_WARN_Alternatively buy a|r |T237446:0|t[Mysterious Troll Scroll]|r |cRXP_WARN_from the Auction House and have a Mage decipher it, or buy the already |T134938:0|t[|cRXP_LOOT_Deciphered Troll Scroll|r]|r
+    .use 216880 >>|cRXP_WARN_Use the |T134938:0|t[|cRXP_LOOT_Deciphered Troll Scroll|r] to start the quest|r
+    >>|cRXP_WARN_You may also look for a Priest to share the quest with you|r
     .collect 216880,1
-step
-    .train 425314,1
-    >>Click on the |T134938:0|t[Deciphered Troll Scroll] in your bags to accept this quest.
-    .accept 79731 --The Troll Scroll
+    .disablecheckbox
+    .accept 79731 >> Accept The Troll Scroll
 step
     .train 425314,1
     #completewith next
     .zone Stranglethorn Vale >>Travel to |cFFfa9602Stranglethorn Vale|r
+    >>|cRXP_WARN_Ensure you have 2 active running|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buffs before heading there|r
 step
     .train 425314,1
-    >>Kill |cRXP_ENEMY_Lord Sakrasis|r. Loot him for |T134712:0|t[Holy Spring Water]
-    .collect 737,1
+    .goto Stranglethorn Vale,28.961,61.931
+    >>Click |cRXP_PICK_The Holy Spring|r. Loot it for the |T134712:0|t[|cRXP_LOOT_Holy Spring Water|r]
+    >>|cRXP_WARN_You may need to kill |cRXP_ENEMY_Lord Sakrasis|r (level 45 Rare) who guards in front of|r |cRXP_PICK_The Holy Spring|r
+    .collect 737,1 --Holy Spring Water
     .mob Lord Sakrasis
 step
-    .train 425314,1
-    .goto Stranglethorn Vale,23.2,8.5
-    .cast 3581 >> Use the |T134712:0|t[Holy Spring Water] behind Gan'zulah on a fountain
-    .use 737
+    #completewith next
+    .subzone 102 >> Travel to the Ruins of Zul'Kunda
 step
     .train 425314,1
-    >>Click on the object to aquire |T135975:0|t[Prophecy of Imprisoned Malice]
+    .goto Stranglethorn Vale,23.569,7.955
+    .cast 3591 >> |cRXP_WARN_Use the|r |T134712:0|t[|cRXP_LOOT_Holy Spring Water|r] |cRXP_WARN_at the small fountain|r
+    >>|cRXP_WARN_You may need to kill |cRXP_ENEMY_Gan'zulah|r (level 41) and a small pack of |cRXP_ENEMY_Trolls|r around him to get to the small fountain|r
+    .use 737
+    .mob Gan'zulah
+step
+    .train 425314,1
+    .goto Stranglethorn Vale,23.569,7.955
+    >>Click the |cRXP_PICK_Fount|r which appears. Loot it for the |T135975:0|t|cRXP_LOOT_[Prophecy of Imprisoned Malice]|r
     .collect 213142,1
 step
-    .train 425314 >> Use|T135975:0|t[Prophecy of Imprisoned Malice] to learn |T237563:0|t[Dispersion]
+    .train 425314 >> |cRXP_WARN_Use the|r |T135975:0|t|cRXP_LOOT_[Prophecy of Imprisoned Malice]|r |cRXP_WARN_to train|r |T237563:0|t[Dispersion]
+    .use 213142
+step
+    .isQuestComplete 79731
+    .goto Stranglethorn Vale,35.658,10.808
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary|r
+    .turnin 79731 >> Turn in The Troll Scroll
+    .target Hemet Nesingwary
 ]])
 
 RXPGuides.RegisterGuide([[
