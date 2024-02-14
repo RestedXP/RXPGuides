@@ -949,7 +949,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Hunter SoD
 #group RestedXP Rune & Books Guide
-#subgroup Waist
+#subgroup Belt
 #title Expose Weakness
 #name Expose Weakness - 40 (Azeroth)
 

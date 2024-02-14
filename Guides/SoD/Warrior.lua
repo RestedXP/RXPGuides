@@ -1248,7 +1248,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
 #group RestedXP Rune & Books Guide
-#subgroup Waist
+#subgroup Belt
 #name Blood Surge - 30 (Azeroth)
 
 -- Blood Surge
@@ -1344,7 +1344,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
 #group RestedXP Rune & Books Guide
-#subgroup Waist
+#subgroup Belt
 #name Focused Rage - 35 (Arathi Highlands)
 #title Focused Rage
 

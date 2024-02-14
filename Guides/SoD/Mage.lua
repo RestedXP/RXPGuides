@@ -2077,7 +2077,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Mage SoD
 #group RestedXP Rune & Books Guide
-#subgroup Waist
+#subgroup Belt
 #title Spellfrost Bolt/Frostfire Bolt
 #name Spellfrost Bolt/Frostfire Bolt - 37 (Stranglethorn Vale)
 
@@ -2144,7 +2144,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Mage SoD
 #group RestedXP Rune & Books Guide
-#subgroup Waist
+#subgroup Belt
 #name Hot Streak - 35 (Alterac Mountains)
 #title Hot Streak
 

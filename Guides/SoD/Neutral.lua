@@ -1297,7 +1297,7 @@ step
     .train 425102,1 << Rogue
     .train 425883,1 << Shaman
     >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with the |cRXP_FRIENDLY_Extinguished Campfire|r
-    .goto Desolace,47.5,54.6
+    .goto Desolace,47.532,54.605
     .accept 79229 >>Accept Highway Robbery
 step
     .train 431663,1 << Priest
@@ -1310,7 +1310,7 @@ step
     .train 425102,1 << Rogue
     .train 425883,1 << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bibbly F'utzbuckle|r
-    .goto Desolace,62.2,38.8
+    .goto Desolace,62.314,38.965
     .turnin 79229 >>Turn in Highway Robbery
     .accept 79235 >>Accept On the Lam
     .target Bibbly F'utzbuckle
@@ -1328,7 +1328,7 @@ step
     .train 425102,1 << Rogue
     .train 425883,1 << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tokal|r in the Booty Bay inn
-    .goto Stranglethorn Vale,27.0,77.2
+    .goto Stranglethorn Vale,26.988,77.284
     .turnin 79235 >>Turn in On the Lam
     .accept 79236 >>Accept Cherry for Your Thoughts?
     .target Tokal
@@ -1343,7 +1343,7 @@ step
     .train 425102,1 << Rogue
     .train 425883,1 << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nixxrax Fillamug|r buy a |T132790:0|t[Cherry Grog]
-    .goto Stranglethorn Vale,27.0,77.2
+    .goto Stranglethorn Vale,27.039,77.168
     .collect 4600,1
     .target Nixxrax Fillamug
 step
@@ -1357,7 +1357,7 @@ step
     .train 425102,1 << Rogue
     .train 425883,1 << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tokal|r
-    .goto Stranglethorn Vale,27.0,77.2
+    .goto Stranglethorn Vale,26.988,77.284
     .turnin 79236 >>Turn in Cherry for Your Thoughts?
     .accept 79242 >>Accept No Honor Among Thieves
     .target Tokal

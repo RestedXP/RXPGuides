@@ -965,7 +965,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
 #group RestedXP Rune & Books Guide
-#subgroup Waist
+#subgroup Belt
 #name Empowered Renew - 27 (Thousand Needles)
 #title Empowered Renew
 
@@ -977,19 +977,20 @@ step
     .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
 step
     .train 425309,1
-    #loop
-    .goto Thousand Needles,33.0,28.2,25,0
-    .goto Thousand Needles,33.0,35.4,25,0
-    .goto Thousand Needles,35.0,39.2,25,0
-    .goto Thousand Needles,35.6,31.0,25,0
-    >>Kill |cRXP_ENEMY_Grimtotem Geomancers|r, |cRXP_ENEMY_Grimtotem Bandit|r, |cRXP_ENEMY_Grimtotem Reaver|r and |cRXP_ENEMY_Grimtotem Stomper|r and loot them for |cRXP_LOOT_Prophecy of the Quickened Path|r
+    .goto Thousand Needles,31.33,37.05,10,0
+    .goto Thousand Needles,33.17,35.38,15,0
+    .goto Thousand Needles,31.96,31.32,15,0
+    .goto Thousand Needles,33.04,27.61,30,0
+    .goto Thousand Needles,35.20,31.09,30,0
+    .goto Thousand Needles,34.17,38.81
+    >>Kill |cRXP_ENEMY_Grimtotem Geomancers|r, |cRXP_ENEMY_Grimtotem Bandits|r, |cRXP_ENEMY_Grimtotem Reavers|r and |cRXP_ENEMY_Grimtotem Stompers|r. Loot them for the |T135975:0|t[|cRXP_LOOT_Prophecy of the Quickened Path|r]
     .collect 213140,1
     .mob Grimtotem Geomancer
     .mob Grimtotem Bandit
     .mob Grimtotem Reaver
     .mob Grimtotem Stomper
 step
-    .train 425309 >>|cRXP_WARN_Use|r |T135975:0|t|cRXP_LOOT_[Prophecy of the Quickened Path]|r |cRXP_WARN_to learn|r |T236254:0|t[Empowered Renew]
+    .train 425309 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_LOOT_Prophecy of the Quickened Path|r] |cRXP_WARN_to train|r |T236254:0|t[Empowered Renew]
     .use 213140
 ]])
 
@@ -997,7 +998,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
 #group RestedXP Rune & Books Guide
-#subgroup Waist
+#subgroup Belt
 #name Empowered Renew - 33 (Alterac Mountains)
 #title Empowered Renew
 
@@ -1009,15 +1010,17 @@ step
 step
     .train 425309,1
     #loop
-    .goto Alterac Mountains,49.0,61.6,25,0
-    .goto Alterac Mountains,54.6,52.6,25,0
-    .goto Alterac Mountains,52.4,41.6,25,0
-    .goto Alterac Mountains,46.6,35.6,25,0
-    >>Kill |cRXP_ENEMY_Crushridge Ogre|r. Loot them for |cRXP_LOOT_Prophecy of the Quickened Path|r
+    .goto Alterac Mountains,47.48,58.94,0
+    .goto Alterac Mountains,51.73,40.23,70,0
+    .goto Alterac Mountains,45.19,33.91,70,0
+    .goto Alterac Mountains,51.46,53.84,70,0
+    .goto Alterac Mountains,48.54,40.72,70,0
+    >>Kill |cRXP_ENEMY_Crushridge Ogres|r and |cRXP_ENEMY_Crushridge Brutes|r. Loot them for the |T135975:0|t[|cRXP_LOOT_Prophecy of the Quickened Path|r]
     .collect 213140,1
     .mob Crushridge Ogre
+    .mob Crushridge Brute
 step
-    .train 425309 >>|cRXP_WARN_Use|r |T135975:0|t|cRXP_LOOT_[Prophecy of the Quickened Path]|r |cRXP_WARN_to learn|r |T236254:0|t[Empowered Renew]
+    .train 425309 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_LOOT_Prophecy of the Quickened Path|r] |cRXP_WARN_to train|r |T236254:0|t[Empowered Renew]
     .use 213140
 ]])
 
@@ -1025,34 +1028,60 @@ RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
 #group RestedXP Rune & Books Guide
-#subgroup Waist
-#name Renewed Hope - 30 (Desolace)
+#subgroup Belt
+#name Renewed Hope - 31 (Desolace)
 #title Renewed Hope
 
 -- Renewed Hope
+
+step
+    #optional
+    .train 425310,1
+    .train 605 >> |cRXP_WARN_You must have|r |T136206:0|t[Mind Control] |cRXP_WARN_trained in order to aquire the|r |T135923:0|t[Renewed Hope] |cRXP_WARN_rune|r
+step
+    #optional
+    .train 425310,1
+    .xp 31
+    >>|cRXP_WARN_You must be at least level 31 in order to cast|r |T136206:0|t[Mind Control] |cRXP_WARN_on a level 33 |cRXP_ENEMY_Slitherblade Tide Priestess|r later|r
 step
     .train 425310,1
     #completewith next
     .zone Desolace >>Travel to |cFFfa9602Desolace|r
 step
     #loop
-    .goto Desolace,36.0,29.6,25,0
-    .goto Desolace,36.4,20.6,25,0
-    .goto Desolace,40.0,17.4,25,0
-    .goto Desolace,38.6,23.6,25,0
+    .goto Desolace,35.4,29.6,60,0
+    .goto Desolace,33.6,15,0,60,0
+    .goto Desolace,40.0,17.4,60,0
+    .goto Desolace,38.6,23.6,60,0
     .train 425310,1
-    >>Kill |cRXP_ENEMY_Slitherblade Naga|r and loot them for |T136222:0|t|cRXP_LOOT_Unsettling Vision|r
+    >>Kill |cRXP_ENEMY_Slitherblade Nagas|r. Loot them for the |T136222:0|t[|cRXP_LOOT_Unsettling Vision|r]
     .collect 213599,1
     .mob Slitherblade Naga
-step
-    .goto Desolace,36.0,29.6,25,0
-    .goto Desolace,36.4,20.6,25,0
-    .goto Desolace,40.0,17.4,25,0
-    .goto Desolace,38.6,23.6,25,0
-    .cast 605 >> Use |T136206:0|t[Mind Control] |cRXP_ENEMY_Slitherblade Tide Priestess|r to their Medidation Buff.
+    .mob Slitherblade Warrior
+    .mob Slitherblade Oracle
+    .mob Slitherblade Myrmidon
+    .mob Slitherblade Sea Witch
     .mob Slitherblade Tide Priestess
+step -- step shows for players that are only level 31
+    #optional
+    #completewith next
+    +|cRXP_WARN_NOTE: You may only cast|r |T136206:0|t[Mind Control] |cRXP_WARN_on a level 33 |cRXP_ENEMY_Slitherblade Tide Priestess|r. The cast will fail on ones that are level 34|r
+    .xp >32,1
+    .xp <31,1
+    .train 425310,1
 step
-    .train 425310 >> Use |T136222:0|t|cRXP_FRIENDLY_Unsettling Vision|r to obtain the rune |T135923:0|t[Renewed Hope]
+    #label MCPriestess
+    #loop
+    .goto Desolace,38.8,24.0,60,0
+    .goto Desolace,34.6,30.0,60,0
+    .goto Desolace,34.6,20.2,60,0
+    .aura 435117 >> |cRXP_WARN_Cast|r |T136206:0|t[Mind Control] |cRXP_WARN_on a|r |cRXP_ENEMY_Slitherblade Tide Priestess|r
+    >>|cRXP_WARN_While it is under the affects of|r |T136206:0|t[Mind Control]|cRXP_WARN_, target YOURSELF and cast|r |T136077:0|t[Meditation on the Abyss] |cRXP_WARN_from the pet action bar|r
+    >>|cRXP_WARN_Press Escape afterwards to cancel the|r |T136206:0|t[Mind Control] |cRXP_WARN_and kill the|r |cRXP_ENEMY_Slitherblade Tide Priestess|r
+    .mob Slitherblade Tide Priestess
+    .train 425310,1
+step
+    .train 425310 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_LOOT_Unsettling Vision|r] |cRXP_WARN_to train|r |T135923:0|t[Renewed Hope]
     .use 213599
 ]])
 
