@@ -1651,8 +1651,9 @@ function addon.stepLogic.XpRateCheck(step)
                 end
             elseif addon.settings.profile.season == 2 then
                 local guide = addon.currentGuide.name
-                local minLevel = tonumber(guide:sub(1,2))
-                if not step.elements or not minLevel or minLevel < 25 then
+                --local minLevel = tonumber(guide:sub(1,2))
+                local maxLevel = tonumber(guide:match("%d+%-(%d+)"))
+                if not step.elements or not maxLevel or maxLevel < 25 then
                     --print(minLevel,step.elements)
                     rate = 1.5
                 end
