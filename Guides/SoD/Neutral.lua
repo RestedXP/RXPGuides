@@ -1555,13 +1555,16 @@ step
     >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Tome of Expanded Intellect|r |cRXP_WARN_This might require multiple runs.|r << Mage
     >>Kill Bosses,Rares and monsters.Loot them for |T133745:0|t|cRXP_LOOT_[Testament of Enhanced Blessings]|r |cRXP_WARN_This might require multiple runs.|r << Paladin
     >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Scroll of Shadowfiend|r, |T237543:0|t[Increased Fortitude] |cRXP_WARN_This might require multiple runs.|r << Priest
+    >>|cRXP_WARN_Additionally, click on the |cRXP_PICK_Tombstone|r near the Headless Horseman's spawn location to collect the |cRXP_LOOT_|T136222:0|t[Graveyard Echo]|r |cFFFF0000This is necessary for the Pain Suppression Rune. If you already have this rune, you can skip it|r. << Priest
     >>Kill Bosses,Rares and monsters.Loot them for |T133733:0|t|cRXP_LOOT_[Grimoire of Soul Harvesting]|r,|T133733:0|t|cRXP_LOOT_[Grimoire of Portal of Summoning]|r |cRXP_WARN_This might require multiple runs.|r << Warlock
     >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Rune of the Commander|r |cRXP_WARN_This might require multiple runs.|r << Warrior
     >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Rune of the Commander|r |cRXP_WARN_This might require multiple runs.|r << Shaman
+    .link https://imgur.com/a/lqRc0i6 >> |cRXP_WARN_Click here for a picture reference for the |T136222:0|t[Graveyard Echo]|r. << Priest
     .collect 216738,1 << Rogue -- Manual of Redirect
     .collect 216740,1 << Mage -- Tome of Expanded Intellect
     .collect 216744,1 << Priest -- Scroll of Increased Fortitude
     .collect 216745,1 << Priest -- Scroll of Shadowfiend
+    .collect 215426,1 << Priest -- Graveyard Echo
     .collect 216746,1 << Warrior -- Handbook of Commanding Shout
     .collect 216747,1 << Warlock -- Grimoire of Soul Harvesting
     .collect 216748,1 << Warlock -- Grimoire of Portal of Summoning
