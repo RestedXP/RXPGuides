@@ -1090,26 +1090,48 @@ RXPGuides.RegisterGuide([[
 -- Invocation
 
 step
-    .train 426443
-    #loop
-    .goto Arathi Highlands,26.2,59.4,25,0
-    .goto Arathi Highlands,26.0,63.6,25,0
-    .goto Arathi Highlands,28.8,65.8,25,0
-    >>Kill |cRXP_ENEMY_Syndicate Conjuror|r. Loot them for |T348282:0|t|cRXP_LOOT_Conjuror's Pendant|r
-    .collect 213573,10
-    .mob Syndicate Conjuror
+    .train 426443,1
+    #completewith SyndicateConjuror
+    +|cRXP_WARN_It is recommended you find additional party members for acquiring the|r |T134419:0|t[|cRXP_LOOT_Rune of Invocation|r] |cRXP_WARN_as it requires killing elites in Stromgarde Keep|r
 step
-    .train 426443
-    .cast 1120 >> Cast |T136163:0|t[Drain Soul] on |cRXP_ENEMY_Voidwalker Minion|r next to |cRXP_ENEMY_Syndicate Conjuror|r
+    .train 426443,1
+    .zone Arathi Highlands >> Travel to Arathi Highlands
+step
+    .train 426443,1
+    #completewith next
+    .subzone 324 >> Travel to Stromgarde Keep 
+step
+    #label SyndicateConjuror
+    .train 426443,1
+    #loop
+    .goto Arathi Highlands,26.04,62.80,40,0
+    .goto Arathi Highlands,29.47,64.14,40,0
+    .goto Arathi Highlands,29.06,60.96,40,0
+    >>Kill |cRXP_ENEMY_Syndicate Conjurors|r. Loot them for their |T348282:0|t[|cRXP_LOOT_Conjuror's Pendants|r]
+    >>Kill a |cRXP_ENEMY_Voidwalker Minion|r while you are channelling |T136163:0|t[Drain Soul] on it to receive a |T132885:0|t[|cRXP_LOOT_Soul of the Void|r]
+    .collect 213573,10
+    .collect 213572,1
     .mob Syndicate Conjuror
     .mob Voidwalker Minion
 step
-    .train 426443
-    >>Kill |cRXP_ENEMY_Void Seeker|r. Loot him for |cRXP_LOOT_|T134419:0|t[Rune of Invocation]|r
+    #completewith next
+    .train 426443,1
+    .goto Arathi Highlands,29.292,62.283,10 >> |cRXP_WARN_Enter the large house on the lower level of Stromgade Keep, and head up to the 2nd floor|r
+step
+    #completewith next
+    .train 426443,1
+    .goto Arathi Highlands,29.077,63.079
+    .cast 434994 >> |cRXP_WARN_Use the|r |T348282:0|t[|cRXP_LOOT_Conjuror's Pendants|r] |cRXP_WARN_up stairs next to the floating|r |cRXP_PICK_Void Prism|r |cRXP_WARN_to summon a level 36 elite |cRXP_ENEMY_Void Seeker|r
+    .use 213573
+step
+    .train 426443,1
+    .goto Arathi Highlands,29.077,63.079
+    >>Kill the |cRXP_ENEMY_Void Seeker|r. Loot it for the |T134419:0|t[|cRXP_LOOT_Rune of Invocation|r]
     .collect 213098,1
     .mob Void Seeker
 step
-    .train 426443 >> Use |T134419:0|t[Rune of Invocation] to learn |T136133:0|t[Invocation]
+    .train 426443 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_LOOT_Rune of Invocation|r] |cRXP_WARN_to train|r |T136133:0|t[Invocation]
+    .use 213098
 ]])
 
 RXPGuides.RegisterGuide([[
