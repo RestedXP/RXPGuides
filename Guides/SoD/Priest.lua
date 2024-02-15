@@ -1161,31 +1161,33 @@ step
     .goto 1415,47.62,19.59,10,0
     .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
 step
-    >>Pickup the |T136222:0|t[Graveyard Echo] near the Headless Horseman Grave
+    >>Click on the |cRXP_PICK_Tombstone|r near the Headless Horseman's spawn location to collect the |cRXP_LOOT_|T136222:0|t[Graveyard Echo]|r |cRXP_WARN_It is highly recommended to form a group of 5 players for this step.|r
+    .link https://imgur.com/a/lqRc0i6 >> |cRXP_WARN_Click here for a picture reference.|r
     .collect 215426,1
 step
+    #optional
     .train 402855,1
-    .zone Arathi Highlands >>Travel to |cFFfa9602Arathi Highlands|r
+    .zone Arathi Highlands >>Travel to Arathi Highlands
 step
     .train 402855,1
-    .goto Arathi Highlands,62.18,54.44
-    >>Pickup the |T136222:0|t[Arathi Echo] near Go'sheks Farm
+    .goto Arathi Highlands,62.1,54.5
+    >>Click on the |cRXP_PICK_Grave|r to collect the |cRXP_LOOT_|T136222:0|t[Arathi Echo]|r on Go'sheks Farm next to the biggest building.
     .collect 215427,1
 step
     .train 402855,1
-    .zone Dustwallow Marsh >>Travel to |cFFfa9602Dustwallow Marsh|r
+    .zone Dustwallow Marsh >>Travel to Dustwallow Marsh
 step
     .train 402855,1
-    .goto Dustwallow Marsh,63.2,42.3
-    >>Pickup the |T136222:0|t[Theramore Echo] near the alliance graveyard
+    .goto Dustwallow Marsh,63.7,42.3
+    >>Click on the |cRXP_PICK_Tombstone|r to collect |cRXP_LOOT_|T136222:0|t[Theramore Echo]|r located near the Alliance graveyard.
     .collect 215428,1
 step
     .train 402855,1
     .zone Swamp of Sorrows >>Travel to |cFFfa9602Swamp of Sorrows|r
 step
     .train 402855,1
-    .goto Swamp of Sorrows,15.3,57.7
-    >>Pickup the |T136222:0|t[Swamp Echo] near the lake
+    .goto Swamp of Sorrows,16.7,53.8
+    >>Click on the |cRXP_PICK_Grave|r to collect |cRXP_LOOT_|T136222:0|t[Swamp Echo]|r located near a lake next to a tree.
     .collect 215425,1
 step
     .train 402855,1
@@ -1194,9 +1196,26 @@ step
     .train 402855,1
     .goto 1415,47.44,19.75,10,0
     .goto 1415,47.45,19.69,5,0
-    .goto 1415,47.62,19.59,10 >> Enter The Scarlet Monastery Dungeon: Library
+    .goto 1415,47.62,19.59,10 >> Enter The Scarlet Monastery Dungeon: Library |cRXP_WARN_It is highly recommended to form a group of 5 players for the next steps.|r
 step
-    .train 402855 >> Offer the |T136222:0|t[Swamp Echo] to the Warrior Statue, the |T136222:0|t[Arathi Echo] to the Mage Statue, the |T136222:0|t[Theramore Echo] to the Paladin Statue, and finally, the |T136222:0|t[Graveyard Echo] to the Priest Statue in this specific order. If done correctly, a sphere will appear in the center. Clicking this sphere will grant you the |T136222:0|t[Memory of a Leader's Betrayal] use it to learn |T135936:0|t[Pain Suppression]
+    .train 402855,1
+    .cast 437054 >>Use the |T136222:0|t[Swamp Echo] infront of the Warrior Statue.
+    .use 215425
+step
+    .train 402855,1
+    .cast 437053 >>Use the |T136222:0|t[Arathi Echo] infront of the Mage Statue.
+    .use 215428
+step
+    .train 402855,1
+    .cast 436952 >>Use the |T136222:0|t[Theramore Echo] infront of the Paladin Statue.
+    .use 215425
+step
+    .train 402855,1
+    .cast 437055 >>Use the |T136222:0|t[Graveyard Echo] infront of the Priest Statue.
+    .use 215426
+step
+    .train 402855 >>Click on the Orange Remnant in the center of the room to receive |T135791:0|t|cRXP_FRIENDLY_[Apocryphal Epiphany]|r, use it to learn |T135936:0|t[Pain Suppression]
+    .use 213143
 ]])
 
 -- RXPGuides.RegisterGuide([[
