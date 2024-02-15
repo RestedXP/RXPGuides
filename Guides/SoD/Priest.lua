@@ -1170,7 +1170,7 @@ step
     .train 402855,1
     .goto Arathi Highlands,62.18,54.44
     >>Pickup the |T136222:0|t[Arathi Echo] near Go'sheks Farm
-    .collect 215428,1
+    .collect 215427,1
 step
     .train 402855,1
     .zone Dustwallow Marsh >>Travel to |cFFfa9602Dustwallow Marsh|r
@@ -1178,7 +1178,7 @@ step
     .train 402855,1
     .goto Dustwallow Marsh,63.2,42.3
     >>Pickup the |T136222:0|t[Theramore Echo] near the alliance graveyard
-    .collect 215427,1
+    .collect 215428,1
 step
     .train 402855,1
     .zone Swamp of Sorrows >>Travel to |cFFfa9602Swamp of Sorrows|r
