@@ -2097,23 +2097,23 @@ step << Alliance
     .goto Duskwood,76.0,45.2,-1
     .goto Darnassus,34.6,9.8,-1
     .goto Wetlands,8.4, 56.6,-1
-    >>Purchase one or more |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
+    >>|cRXP_BUY_Buy one or more|r |T135933:0|t[Comprehension Charm] |cRXP_BUY_from a|r |cRXP_FRIENDLY_Reagent Vendor|r
     .collect 211779,1
 step << Horde
     .train 415948,1
     .train 401762,1
-    .goto Orgrimmar,45.6,56.8,
-    .goto Orgrimmar,46.2,46.6,
-    .goto Orgrimmar,45.8,40.6,
-    .goto The Barrens,51.4,30.2,
-    .goto Swamp of Sorrows,45.8,53.0,
-    .goto Thunder Bluff,42.6,55.4,
-    .goto Dustwallow Marsh,36.4,30.4,
-    .goto Undercity,82.6,16.0,
-    .goto Thunder Bluff,41.8,55.0,
-    .goto Thousand Needles,45.2,50.6,
-    .goto Stonetalon Mountains,47.6,61.6,
-    >>Purchase one or more |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
+    .goto Orgrimmar,45.6,56.8,-1
+    .goto Orgrimmar,46.2,46.6,-1
+    .goto Orgrimmar,45.8,40.6,-1
+    .goto The Barrens,51.4,30.2,-1
+    .goto Swamp of Sorrows,45.8,53.0,-1
+    .goto Thunder Bluff,42.6,55.4,-1
+    .goto Dustwallow Marsh,36.4,30.4,-1
+    .goto Undercity,82.6,16.0,-1
+    .goto Thunder Bluff,41.8,55.0,-1
+    .goto Thousand Needles,45.2,50.6,-1
+    .goto Stonetalon Mountains,47.6,61.6,-1
+    >>|cRXP_BUY_Buy one or more|r |T135933:0|t[Comprehension Charm] |cRXP_BUY_from a|r |cRXP_FRIENDLY_Reagent Vendor|r
     .collect 211779,1
 step
     .train 415948,1
@@ -2124,18 +2124,55 @@ step
     .train 415948,1
     .train 401762,1
     #loop
-    .goto Stranglethorn Vale,46.6,30.0,30,0
-    .goto Stranglethorn Vale,43.6,33.2,30,0
-    .goto Stranglethorn Vale,46.4,40.6,30,0
-    .goto Stranglethorn Vale,48.6,40.8,30,0
-    >>Kill |cRXP_ENEMY_Skullsplitter Mystic's|r and loot them for |cRXP_LOOT_|T134939:0|t[Spell Notes: PELFRB STOLLOTS]|r and |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TROFF IRESTBOL|r]
+    .goto Stranglethorn Vale,46.6,30.0,60,0
+    .goto Stranglethorn Vale,43.6,33.2,60,0
+    .goto Stranglethorn Vale,46.4,40.6,60,0
+    .goto Stranglethorn Vale,48.6,40.8,60,0
+    >>Kill |cRXP_ENEMY_Skullsplitter Mystics|r. Loot them for the |T134939:0|t[|cRXP_LOOT_Spell Notes: PELFRB STOLLOTS]|r and |T134939:0|t[|cRXP_LOOT_Spell Notes: TROFF IRESTBOL|r]
     .collect 213127,1
     .collect 217161,1
     .mob Skullsplitter Mystic
+step << Alliance
+    #optional
+    #completewith next
+    .train 415948,1
+    .train 401762,1
+    .goto Stormwind City,55.8,65.2,-1
+    .goto Stormwind City,32.4,80.0,-1
+    .goto Stormwind City,43.4,26.8,-1
+    .goto Stormwind City,36.0,74.8,-1
+    .goto Elwynn Forest,64.8,69.2,-1
+    .goto Ironforge,19.6,56.2,-1
+    .goto Undercity,69.6,39.2,-1
+    .goto Darnassus,38.8,60.4,-1
+    .goto Ashenvale,35.0,48.6,-1
+    .goto Ironforge,31.2,27.6,-1
+    .goto Duskwood,76.0,45.2,-1
+    .goto Darnassus,34.6,9.8,-1
+    .goto Wetlands,8.4, 56.6,-1
+    >>|cRXP_BUY_Buy one or more|r |T135933:0|t[Comprehension Charm] |cRXP_BUY_from a |cRXP_FRIENDLY_Reagent Vendor|r to decipher the rune|r
+    .collect 211779,1
+step << Horde
+    #optional
+    #completewith next
+    .train 415948,1
+    .train 401762,1
+    .goto Orgrimmar,45.6,56.8,-1
+    .goto Orgrimmar,46.2,46.6,-1
+    .goto Orgrimmar,45.8,40.6,-1
+    .goto The Barrens,51.4,30.2,-1
+    .goto Swamp of Sorrows,45.8,53.0,-1
+    .goto Thunder Bluff,42.6,55.4,-1
+    .goto Dustwallow Marsh,36.4,30.4,-1
+    .goto Undercity,82.6,16.0,-1
+    .goto Thunder Bluff,41.8,55.0,-1
+    .goto Thousand Needles,45.2,50.6,-1
+    .goto Stonetalon Mountains,47.6,61.6,-1
+    >>|cRXP_BUY_Buy one or more|r |T135933:0|t[Comprehension Charm] |cRXP_BUY_from a |cRXP_FRIENDLY_Reagent Vendor|r to decipher the rune|r
+    .collect 211779,1
 step
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
-    .train 415948 >>|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: PELFRB STOLLOTS|r] to learn |T236220:0|t[Spellfrost Bolt]
-    .train 401762 >>|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TROFF IRESTBOL|r] to learn |T134939:0|t[Frostfire Bolt]
+    .train 415948 >> |cRXP_WARN_Use the|r |T134939:0|t[|cRXP_LOOT_Spell Notes: PELFRB STOLLOTS|r] |cRXP_WARN_to train|r |T135780:0|t[Spellfrost Bolt]
+    .train 401762 >> |cRXP_WARN_Use the|r |T134939:0|t[|cRXP_LOOT_Spell Notes: TROFF IRESTBOL|r] |cRXP_WARN_to train|r |T236217:0|t[Frostfire Bolt]
     .use 213127
     .use 217161
 ]])
@@ -2145,32 +2182,63 @@ RXPGuides.RegisterGuide([[
 << Mage SoD
 #group RestedXP Rune & Books Guide
 #subgroup Belt
-#name Hot Streak - 35 (Alterac Mountains)
+#name Hot Streak - 32 (Alterac Mountains)
+#title Hot Streak
+
+-- Hot Streak
+
+step
+    #optional
+    .train 401749,1
+    .train 2121,1 -- flamestrike r2
+    .train 8422,1 -- flamestrike r3
+    .train 8423,1 -- flamestrike r4
+    .train 2120 >> |cRXP_WARN_You must have|r |T135826:0|t[Flamestrike] |cRXP_WARN_trained in order to aquire the|r |T236218:0|t[Hot Streak] |cRXP_WARN_rune|r
+step
+    .train 401749,1
+    .goto Alterac Mountains,60.510,46.286
+    .zone Alterac Mountains >> Travel to the Alterac Mountains
+step
+    .train 401749,1
+    .goto Alterac Mountains,60.510,46.286,-1
+    .goto Alterac Mountains,60.278,44.900,-1
+    >>|cRXP_WARN_Cast|r |T135826:0|t[Flamestrike] |cRXP_WARN_on the two bellows attached to the blacksmith building in Strahnbrad. Once one of the bellows starts glowing red and fiery, cast|r |T135826:0|t[Flamestrike] |cRXP_WARN_again on the second bellow to ignite it as well. This will trigger the |cRXP_ENEMY_Ancient Fire Elemental|r to spawn|r
+    >>Kill the |cRXP_ENEMY_Ancient Fire Elemental|r. Loot it for the |T134939:0|t[|cRXP_LOOT_Spell Notes: Hot Streak|r]
+    .collect 213113,1
+    .mob Ancient Fire Elemental
+step
+    .train 401749 >> |cRXP_WARN_Use the|r |T134939:0|t[|cRXP_LOOT_Spell Notes: Hot Streak|r] |cRXP_WARN_to train|r |T236218:0|t[Hot Streak]
+    .use 213113
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Mage SoD
+#group RestedXP Rune & Books Guide
+#subgroup Belt
+#name Hot Streak - 37 (Arathi Highlands)
 #title Hot Streak
 
 -- Hot Streak
 
 step
     .train 401749,1
-    #loop
-    .goto Alterac Mountains,48.8,83.6
-    .goto Alterac Mountains,47.6,83.8
-    >>Kill |cRXP_ENEMY_Syndicate Thieves|r loot him for |T134329:0|t|cRXP_LOOT_Singed Note|r
-    .collect 213421,1
-    .mob Syndicate Thieves
+    #completewith next
+    .zone Arathi Highlands >> Travel to Arathi Highlands
 step
     .train 401749,1
-    .goto Alterac Mountains,59.7,45.6
-    .cast 2120 >> Use |T135826:0|t[Flamestrike] on the two air pumps to trigger the spawning of the |cRXP_ENEMY_Ancient Fire Elemental.|r
-    .mob Ancient Fire Elemental
-step
-    .train 401749,1
-    >>Kill |cRXP_ENEMY_Ancient Fire Elemental|r and loot him for |cRXP_LOOT_Spell Notes: Hot Streak|r
+    .goto Arathi Highlands,67.46,28.79,40,0
+    .goto Arathi Highlands,65.47,28.77,40,0
+    .goto Arathi Highlands,65.87,31.24,40,0
+    .goto Arathi Highlands,67.47,30.65,40,0
+    .goto Arathi Highlands,66.82,29.77
+    >>Kill |cRXP_ENEMY_Burning Exiles|r. Loot them for the |T134939:0|t[|cRXP_LOOT_Spell Notes: Hot Streak|r]
+    >>|cRXP_WARN_Note: This has been reported to have a relatively low drop rate. You may want to consider getting it from Alterac Mountains instead|r
     .collect 213113,1
-    .mob Ancient Fire Elemental
+    .mob Burning Exile
 step
-    .train 401749 >>|T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Hot Streak|r] to learn |T236218:0|t[Hot Streak]
-    .use 213123
+    .train 401749 >> |cRXP_WARN_Use the|r |T134939:0|t[|cRXP_LOOT_Spell Notes: Hot Streak|r] |cRXP_WARN_to train|r |T236218:0|t[Hot Streak]
+    .use 213113
 ]])
 
 RXPGuides.RegisterGuide([[

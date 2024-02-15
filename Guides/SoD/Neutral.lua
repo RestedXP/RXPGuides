@@ -1363,11 +1363,11 @@ step
     .target Tokal
 step
     #completewith next
-    .zone Arathi Highlands >>Travel to Arathi Highlands
+    .zone Wetlands >>Travel to the Arathi Highlands/Wetlands zone border
 step
     #optional
     #completewith next
-    .goto Arathi Highlands,58.32,6.91
+    .goto Wetlands,58.320,6.927
 --   .goto Arathi Highlands,89.52,77.91
     .cast 6477 >>Enter the |cRXP_PICK_Rowboat|r in the water
     .train 431663,1 << Priest
