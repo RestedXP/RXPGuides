@@ -1044,11 +1044,12 @@ step
 step
     .train 410109,1
     .goto Arathi Highlands,67.8,66.0
-    >>Kill |cRXP_ENEMY_Needletooth|r. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Steady Shot|r]
+    >>Kill |cRXP_ENEMY_Needletooth|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Steady Shot|r]
+    >>|cRXP_ENEMY_Needletooth|r |cRXP_WARN_is a fish that swims in the Witherbark Village lake|r
     .collect 213122,1
     .mob Needletooth
 step
-    .train 410109 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Steady Shot|r] to learn |T132213:0|t[Steady Shot]
+    .train 410109 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Steady Shot|r] |cRXP_WARN_to train|r |T132213:0|t[Steady Shot]
     .use 213122
     .itemcount 213122,1
 ]])

@@ -1352,24 +1352,46 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 409163,1
-    #loop
-    .goto Arathi Highlands,71.8,62.8,25,0
-    .goto Arathi Highlands,70.0,71.4,25,0
-    .goto Arathi Highlands,65.0,68.2,25,0
-    .goto Arathi Highlands,69.6,78.0,25,0
-    >>Kill |cRXP_ENEMY_Witherbark Headhunter|r,|cRXP_ENEMY_Witherbark Axe Thrower|r and |cRXP_ENEMY_Witherbark Witchdoctor|r. Loot them for |T133057:0|t|cRXP_LOOT_Witherbark Mallet|r
+    #completewith WitherbarkCave
+    +|cRXP_WARN_Considering looking for additional party members before trying to acquire the|r |T134419:0|t[|cRXP_LOOT_Rune of Focused Rage|r] |cRXP_WARN_as it requires killing a level 35 elite and 2 mobs at the same time|r
+step
+    .train 409163,1
+    #completewith WitherbarkCave
+    .zone Arathi Highlands >> Travel to Arathi Highlands
+step
+    .train 409163,1
+    .goto Arathi Highlands,72.51,65.67,70,0
+    .goto Arathi Highlands,70.334,69.93,70,0
+    .goto Arathi Highlands,64.06,72.51,70,0
+    .goto Arathi Highlands,61.35,71.72,70,0
+    .goto Arathi Highlands,64.23,67.72,70,0
+    .goto Arathi Highlands,66.56,63.98
+    >>Kill |cRXP_ENEMY_Witherbark Trolls|r. Loot them for the |T133057:0|t[|cRXP_LOOT_Witherbark Mallet|r]
+    >>|cRXP_WARN_You may also buy the|r |T133057:0|t[|cRXP_LOOT_Witherbark Mallet|r] |cRXP_WARN_from the Auction House|r
     .collect 216483,1
-    .mob Witherbark Witchdoctor
+    .mob Witherbark Shadow Hunter
     .mob Witherbark Axe Thrower
     .mob Witherbark Headhunter
+    .mob Witherbark Witch Doctor
 step
     .train 409163,1
-    .goto Arathi Highlands,65.7,74.1,20 >>Enter the Witherbark Cave
+    #label WitherbarkCave
+    .goto Arathi Highlands,68.363,75.806,25 >>Enter the Witherbark Cave
 step
     .train 409163,1
-    .cast 436655 >> Click on the Witherbark Gong to spawn the |cRXP_ENEMY_Witherbark Goliath|r
+    #completewith next
+    .goto Arathi Highlands,69.502,81.924
+    .cast 436278 >> |cRXP_WARN_Use the|r |T133057:0|t[|cRXP_LOOT_Witherbark Mallet|r] |cRXP_WARN_at the |cRXP_PICK_Gong|r inside the cave|r
+    .use 216483 >>|cRXP_WARN_This will spawn a |cRXP_ENEMY_Witherbark Goliath|r (lvl 35 elite) as well as 2 additional mobs|r
 step
-    .train 409163 >> Kill the |cRXP_ENEMY_Witherbark Goliath|r. Loot him for the |cRXP_LOOT_Rune of Focused Rage|r. Use it to learn |T132345:0|t[Focused Rage]
+    .train 409163,1
+    .goto Arathi Highlands,69.61,81.60
+    >>Kill the |cRXP_ENEMY_Witherbark Goliath|r. Loot it for the |T134419:0|t[|cRXP_LOOT_Rune of Focused Rage|r]
+    .collect 213109,1
+    .mob Witherbark Goliath
+step
+    .train 409163 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_LOOT_Rune of Focused Rage|r] |cRXP_WARN_to train|r |T132345:0|t[Focused Rage]
+    .use 213109
 ]])
 
 RXPGuides.RegisterGuide([[
