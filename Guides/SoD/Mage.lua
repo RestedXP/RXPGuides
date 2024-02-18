@@ -1398,7 +1398,7 @@ step
     .deathskip >>Die and respawn at the |cFF00FF25Spirit Healer|r
     .isQuestAvailable 78143
 step
-    .goto 1442,56,8
+    .goto The Barrens,56.3,8.8
     >>Click the |cRXP_PICK_Manual|r |cFFfa9602at the top of the Oil Rig in the Barrens|r to obtain |T134509:0|t[Arcanic Systems Manual.]
     .collect 209847,1
     .isQuestAvailable 78145
@@ -1595,7 +1595,7 @@ step
     .isQuestAvailable 78145
 step
     #label Arcanic Systems Manual
-    .goto 1442,56,8
+    .goto The Barrens,56.3,8.8
     >>Click the |cRXP_PICK_Manual|r |cFFfa9602at the top of the Oil Rig in the Barrens|r to obtain |T134509:0|t[Arcanic Systems Manual.]
     .collect 209847,1
     .isQuestAvailable 78145
