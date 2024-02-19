@@ -2279,7 +2279,7 @@ step
     .target Arch Druid Hamuul Runetotem
 step
     -- .gossipoption --x insert id
-    .goto Thunderbluff,46.8,50.0
+    .goto Thunder Bluff,46.8,50.0
     .gossip 2995 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r and select the dialogoption to fly to moonglade
     .target Tal
 step
