@@ -2472,7 +2472,7 @@ step
     .mob Boulderfist Ogre
 step
     .train 416054,1
-    .goto Arathi Highlands,34.5 43.8
+    .goto Arathi Highlands,34.5,43.8
     .cast 434350 >>Click the |cRXP_PICK_Soft Soil|r to insert the |T134921:0|t|cRXP_LOOT_[Lightning Rod]|r into the ground.
 step
     .train 416054,1
