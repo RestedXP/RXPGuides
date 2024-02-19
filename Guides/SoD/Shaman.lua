@@ -2356,7 +2356,7 @@ step
     .goto Desolace,69.4,64.6,25,0
     .goto Desolace,58.8,65.6,25,0
     >>Kill |cRXP_ENEMY_Whirlwind Ripper|r. Loot them for |T132845:0|t|cRXP_LOOT_Whirling Essence|r
-    .complete  79361 -- Power of da Wind
+    .complete 79361,1 -- Power of da Wind
     .mob Whirlwind Ripper
 step
     .train 410100,1
