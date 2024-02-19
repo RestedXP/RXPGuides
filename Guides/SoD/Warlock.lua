@@ -747,16 +747,16 @@ step
 step >> Alliance
     .goto The Barrens,63.0,37.2
     #completewith Turnin A Soul Vessel
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r.
-    .fly Astranaar >> Fly Astranaar
-    .target Bragok
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baritanas Skyriver|r.
+    .fly Nijel >> Fly Nijel's Point
+    .target Baritanas Skyriver
 step >> Horde
     .train 426445,1
     #completewith Turnin A Soul Vessel
     .goto The Barrens,44.4,59.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY Omusa Thunderhorn|r.
-    .fly Astranaar >> Fly Astranaar
-    .targetOmusa Thunderhorn
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thalon|r.
+    .fly Shadowprey >> Fly Shadowprey Village
+    .target Omusa Thunderhorn
 step
     .train 426445,1
     #label Turnin A Soul Vessel
@@ -1178,18 +1178,6 @@ step << Warlock
     .train 403925 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Chaos Bolt|r] |cRXP_WARN_to train|r |T236291:0|t[Chaos Bolt]
     .use 208744
     .itemcount 208744,1
-]])
-
-RXPGuides.RegisterGuide([[
-#classic
-<< Warlock SoD
-#group RestedXP Rune & Books Guide
-#subgroup Belt
-#name Grimoire of Synergy
-
--- Grimoire of Synergy
-
-
 ]])
 
 RXPGuides.RegisterGuide([[
