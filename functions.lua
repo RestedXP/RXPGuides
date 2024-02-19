@@ -38,7 +38,7 @@ events.zoneskip = "ZONE_CHANGED_NEW_AREA"
 events.subzone = "ZONE_CHANGED"
 events.subzoneskip = "ZONE_CHANGED"
 events.bankdeposit = {"BANKFRAME_OPENED", "BAG_UPDATE_DELAYED"}
-events.skipgossip = {"GOSSIP_SHOW", "GOSSIP_CLOSED", "GOSSIP_CONFIRM_CANCEL"}
+events.skipgossip = {"GOSSIP_SHOW", "GOSSIP_CLOSED", "GOSSIP_CONFIRM_CANCEL", "PLAYER_INTERACTION_MANAGER_FRAME_HIDE"}
 events.gossip = events.skipgossip
 events.gossipoption = events.skipgossip
 events.skipgossipid = "GOSSIP_SHOW"
@@ -3995,7 +3995,7 @@ function addon.functions.skipgossip(self, text, ...)
 
 end
 
-function addon.functions.gossip(self, text, npc)
+function addon.functions.gossip(self, text, npc, length)
     if type(self) == "string" then
         npc = tonumber(npc)
         if not npc then
@@ -4003,15 +4003,30 @@ function addon.functions.gossip(self, text, npc)
                         L("Error parsing guide") .. " " .. addon.currentGuideName ..
                            ': No npc ID provided\n' .. self)
         end
-        local element = {text = text, npc = npc}
+        local element = {text = text, npc = npc, level = -1, length = tonumber(length) or 0}
         return element
     end
     local event = text
     local element = self.element
+    local frame = _G.GossipFrame and _G.GossipFrame.TitleContainer.TitleText
     if event == "GOSSIP_SHOW" then
-        element.currentNPC = addon.GetNpcId()
-    elseif event == "GOSSIP_CLOSED" and element.currentNPC == element.npc then
-        addon.SetElementComplete(self)
+        local name = UnitName('target')
+        if UnitExists('target') and not UnitIsPlayer('target') and not element.name then
+            element.currentNPC = addon.GetNpcId()
+            element.name = name
+            element.level = -1
+        end
+    elseif event == "GOSSIP_CLOSED" and element.currentNPC == element.npc and
+         frame and frame:IsShown() and frame:GetText() == element.name then
+            element.level = element.level + 1
+    elseif event == "PLAYER_INTERACTION_MANAGER_FRAME_HIDE" then
+        element.name = nil
+        element.currentNPC = nil
+        if element.level >= element.length then
+            --print(element.level, element.length)
+            addon.SetElementComplete(self)
+        end
+        element.level = -1
     end
 end
 

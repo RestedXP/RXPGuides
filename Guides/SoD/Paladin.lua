@@ -1581,7 +1581,7 @@ RXPGuides.RegisterGuide([[
 << Paladin SoD
 #group RestedXP Rune & Books Guide
 #subgroup Belt
-#name Sheath of Light - 40
+#name Sheath of Light - 40 (Azeroth)
 #title Sheath of Light
 
 step
@@ -1589,103 +1589,125 @@ step
     .zone Desolace >>Travel to Desolace
 step
     .train 426178,1
-    >>|TInterface/cursor/crosshair/interact.blp:20|tPick up the |cRXP_LOOT_Broken Warhammer|r. Click it in your bags
-    .goto Desolace,52.6,84.8
+    .goto Desolace,52.730,84.761
+    >>Loot the |cRXP_PICK_Broken Warhammer|r on the ground for the |T133041:0|t[|cRXP_LOOT_Broken Hammer|r]
+    .use 215441 >>|cRXP_WARN_Use the |T133041:0|t[|cRXP_LOOT_Broken Hammer|r] to start the quest|r
     .collect 215441,1
     .accept 79939 >>Accept The Broken Hammer
 step
     .train 426178,1
     #loop
+    .goto Desolace,52.6,85.6,0
+    .goto Desolace,55.6,70.4,0
+    .goto Desolace,47,2,75.2,0
     .goto Desolace,52.6,85.6,40,0
     .goto Desolace,55.6,70.4,40,0
     .goto Desolace,47,2,75.2,60,0
-    >>Kill |cRXP_ENEMY_Burning Blade Summoners|r. Loot them for the |T133471:0|t[Torn Letter]
-    .collect 216956,1
+    >>Kill |cRXP_ENEMY_Burning Blade Summoners|r. Loot them for a |T133471:0|t[|cRXP_LOOT_Torn Letter|r]
+    .collect 216956,1,79939,1
     .mob Burning Blade Summoner
 step
-    #completewith next
+    #completewith Katherine
     .zone Stormwind City >>Travel to Stormwind
 step
-    .train 426178,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katherine the Pure|r inside the Cathedral
-    .goto Stormwind City,37.8,31.6
-    .turnin 79939 >>Turn in The Broken Hammer
-    .accept 79940 >>Accept A Lost Brother
+    #completewith Katherine
+    .goto StormwindClassic,42.51,33.51,20 >> Travel to the Stormwind Cathedral
 step
     .train 426178,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katherine the Pure|r again
-    .goto Stormwind City,37.8,31.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katherine the Pure|r
+    .goto Stormwind City,37.222,31.855
+    .turnin 79939 >>Turn in The Broken Hammer
+    .accept 79940 >>Accept A Lost Brother
+    .target Katherine the Pure
+step
+    #label Katherine
+    .train 426178,1
+    .goto Stormwind City,37.222,31.855
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katherine the Pure|r
     .skipgossip 5492,1
     .complete 79940,1
     .turnin 79940 >>Turn in A Lost Brother
+    .target Katherine the Pure
 step
     #completewith next
     .zone Wetlands >>Travel to Menethil Harbor
 step
+    .isQuestTurnedIn 79940
     .train 426178,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harold Riggs|r
-    *|cRXP_WARN_Afterwards swim along the coast to the waypoint location|r
-    .goto Wetlands,8.2,58.6,0
-    .goto Wetlands,8.2,58.6,5,0
-    .goto Eastern Kingdoms,41.9,59.0
-    .subzoneskip 207
-step
-    .train 426178,1
-    *|cRXP_WARN_Swim to the waypoint location|r.
-    *|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Slain Scarlet Crusader|r.
-    >>Kill the |cRXP_ENEMY_Scarlet Crusade Assassin|r. Loot it for the |T133471:0|t[Orders from the Grand Crusade]. Click it in your bags
-    .goto Eastern Kingdoms,41.9,59.0
-    .skipgossip
-    .collect 215468,1
-    .accept 79945 >>Accept Orders from the Grand Crusade
-    .use 215468
-    .target Slain Scarlet Crusader
-    .mob Scarlet Cursade Assassin
+    .goto Wetlands,8.086,58.592
+    .gossip 3179 >> Talk to |cRXP_FRIENDLY_Harold Riggs|r. Ensure to go through all of his gossip dialogues
+    .skipgossip 3179,2
+    .target Harold Riggs
 step
     #completewith next
+    .goto 1415,41.937,58.932,40 >> |cRXP_WARN_Swim down south, all the way around to Dun Morogh. You will have to kill a level 40 elite shortly. Considering bringing a friend for this part!|r
+step
+    .train 426178,1
+    .goto 1415,41.937,58.932
+    .gossip 217957 >> Talk to the |cRXP_FRIENDLY_Slain Scarlet Crusader|r inside the building
+    >>|cRXP_WARN_This will summon a level 40 elite|r |cRXP_ENEMY_Scarlet Crusade Assassin|r
+    .target Slain Scarlet Crusader
+step
+    .train 426178,1
+    .goto 1415,41.937,58.932
+    >>Kill the |cRXP_ENEMY_Scarlet Crusade Assassin|r. Loot it for the |T133471:0|t[|cRXP_LOOT_Orders from the Grand Crusade|r]
+    .use 215468 >>|cRXP_WARN_Use the |T133471:0|t[|cRXP_LOOT_Orders from the Grand Crusade|r] to start the quest|r
+    .collect 215468,1,79945,1
+    .accept 79945 >>Accept Orders from the Grand Crusade
+    .mob Scarlet Cursade Assassin
+step
+    #completewith Katherine2
     .zone Stormwind City >>Travel to Stormwind
 step
+    #completewith Katherine2
+    .goto StormwindClassic,42.51,33.51,20 >> Travel to the Stormwind Cathedral
+step
     .train 426178,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katherine the Pure|r inside the Cathedral
-    .goto Stormwind City,37.8,31.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katherine the Pure|r
+    .goto Stormwind City,37.222,31.855
     .turnin 79945 >>Turn in Orders from the Grand Crusade
     .accept 79946 >>Accept A Brother in Need
+    .target Katherine the Pure
 step
+    #label Katherine2
     .train 426178,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katherine the Pure|r again
-    .goto Stormwind City,37.8,31.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katherine the Pure|r
+    .goto Stormwind City,37.222,31.855
     .skipgossip 5492,3
     .complete 79946,1 --Learn more about Aeonas from Katherine
+    .target Katherine the Pure
 step
     .train 426178,1
-    >>|cRXP_WARN_Look for a group for Scarlet Monastery and kill the last boss.|r
-    *Afterwards go into the chamber behind the boss and talk to |cRXP_FRIENDLY_Aenoas|r
+    >>|cRXP_WARN_You now have to go into Scarlet Monastery and complete a full Cathedral run|r
+    >>After killing |cRXP_ENEMY_Mograine|r and |cRXP_ENEMY_Whitemane|r, talk to |cRXP_FRIENDLY_Aeonas|r in the back room
     .complete 79946,2 --Find Aeonas in the Scarlet Monastery
     .turnin 79946 >>Turn in A Brother in Need
     .accept 79963 >>Accept By The Light's Grace
     .target Aeonas
 step
     .train 426178,1
-    >>Heal up |cRXP_FRIENDLY_Aenoas|r
+    >>Heal |cRXP_FRIENDLY_Aenoas|r to full HP
     .complete 79963,1 --Heal Aeonas
     .target Aeonas
 step
     .train 426178,1
-    >>Now you have to kill the last boss in Scarlet Monastery. Afterwards go into the chmaber behind the boss and talk to |cRXP_FRIENDLY_Aenoas|r
-    .complete 79946,2 --Find Aeonas in the Scarlet Monastery
-    .turnin 79963 >>Turn in By THe Light's Grace
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aeonas|r
+    .turnin 79963 >>Turn in By The Light's Grace
     .accept 79970 >>Accept Aeonas the Vindicated
     .target Aeonas
 step
-    #completewith next
+    #completewith Aeonas
     .zone Stormwind City >>Travel to Stormwind
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aeonas the Vindicated|r inside the Cathedral to learn |T236263:0|t[Sheath of Light]
-    .goto Stormwind City,37.8,31.6
-    .complete 79970,1 --Meet Aeonas at the Cathedral of Light in Stormwind
-    .turnin 79970 >>Turn in Aeonas the Vindicated
+    #completewith Aeonas
+    .goto StormwindClassic,42.51,33.51,20 >> Travel to the Stormwind Cathedral
+step
+    #label Aeonas
+    .goto Stormwind City,37.355,31.708
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aeonas the Vindicated|r
+    .turnin 79970 >> Turn in Aeonas the Vindicated
+    .train 426178 >> Train |T236263:0|t[Sheath of Light]
     .target Aeonas the Vindicated
-
 ]])
 
 RXPGuides.RegisterGuide([[
