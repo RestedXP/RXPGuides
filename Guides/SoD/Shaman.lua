@@ -2218,20 +2218,17 @@ step
     .zone Desolace >>Travel to |cFFfa9602Desolace|r
 step
     .goto Desolace,56.6,21.8
-    >>Kill |cRXP_ENEMY_Flameseer Dubelen|r. Loot him for |T136008:0|t|cRXP_LOOT_Corrupted Fire Totem|r
+    >>Kill |cRXP_ENEMY_Flameseer Dubelen|r. Loot him for the |T136008:0|t|cRXP_LOOT_Corrupted Fire Totem|r
     .collect 213451,1
     .mob Flameseer Dubelen
 step
     #completewith next
     .zone Orgrimmar >>Travel to |cFFfa9602Orgrimmar|r
 step
-    .goto Orgrimmar,39.0,38.0
+    .goto Orgrimmar,38.94,38.39
     .gossip 4047 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zor Lonetree|r and select the dialogoption
     -- .gossipoption --x insert id
     .target Zor Lonetree
-step
-    #completewith next
-    .zone Desolace >>Travel to |cFFfa9602Desolace|r
 step
     .goto 1443,38.23,61,25,0
     .goto 1443,37.13,60.41,25,0
@@ -2253,7 +2250,8 @@ step
     .goto 1414,39.17,58.09,25,0
     .goto 1414,39.01,57.87,25,0
     .goto 1414,39.26,57.69
-    >>Click on the |cRXP_PICK_Blue Crystal|r amongst the orange crystals to collect |T134088:0|t[Tear of Theradras] |cRXP_WARN_Be careful as enemies in this are elite & stun|r |cFFFF0000you are likely going to die multiple times.|r
+    >>Click on the |cRXP_PICK_Blue Crystal|r amongst the orange crystals to collect |T134088:0|t[Tear of Theradras]
+    >>|cRXP_WARN_Be careful as enemies in this area are elite and they can stun.|r |cFFFF0000you are likely going to die multiple times|r
     .collect 213553,1
 step
     .goto 1414,38.45,57.84,25,0
@@ -2262,31 +2260,27 @@ step
     .goto 1414,38.43,57.43,25,0
     .goto 1443,29.65,57.19,25,0
     .goto 1443,27.72,57.51
-    >>Click on a |cRXP_PICK_Blue Crystal|r amongst the purple crystals to collect |T134088:0|t[Tear of Theradras] |cRXP_WARN_Be careful as enemies in this are elite & stun|r |cFFFF0000you are likely going to die multiple times.|r
+    >>Click on a |cRXP_PICK_Blue Crystal|r amongst the purple crystals to collect |T134088:0|t[Tear of Theradras]
+    >>|cRXP_WARN_Be careful as enemies in this area are elite and they can stun.|r |cFFFF0000you are likely going to die multiple times|r
     .collect 213552,1
-step
-    .goto Orgrimmar,39.0,38.0
-    .gossip 4047 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zor Lonetree|r and select the dialogoption
-    -- .gossipoption --x insert id
-    .target Zor Lonetree
 step
     #completewith next
     .zone Thunder Bluff >>Travel to |cFFfa9602Thunder Bluff|r
 step
-    .goto Thunder Bluff,78.6,28.6
+    .goto Thunder Bluff,78.61,28.55
     .gossip 5769 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Hamuul Runetotem|r and select the dialogoption
     -- .gossipoption --x insert id
     .target Arch Druid Hamuul Runetotem
 step
     -- .gossipoption --x insert id
-    .goto Thunderbluff,46.8,50.0
-    .gossip 2995 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r and select the dialogoption to fly to moonglade
+    .goto Thunder Bluff,47.00,49.82
+    .gossip 2995 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r and select the dialogoption to fly to Moonglade
     .target Tal
 step
     #completewith next
     .zone Moonglade >>Travel to |cFFfa9602Moonglade|r
 step
-    .goto Moonglade,36.2,41.8
+    .goto Moonglade,36.178,41.798
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keeper Remulos|r
     .collect 213558,1
     .target Keeper Remulos
@@ -2307,39 +2301,47 @@ step
     .zone The Barrens >>Travel to |cFFfa9602The Barrens|r
 step
     .train 410100,1
-    >>Kill |cRXP_ENEMY_Charlga Razorflank|r. Loot him for |T134944:0|t|cRXP_LOOT_Tattered Note|r |cRXP_WARN_It is highly recommended to form a group of 5 players.|r
-    .collect 212748,1
+    .goto The Barrens,43.46,90.18,0
+    .goto The Barrens,43.46,90.18,40,0
+    .goto 1414,50.877,70.339
+    .subzone 491,2 >> Enter Razorfen Kraul
 step
     .train 410100,1
-    >>Click on the |T134944:0|t[Tattered Note] in your bags to accept the quest.
-    .accept 79358 --Tattered Note
+    >>Kill |cRXP_ENEMY_Charlga Razorflank|r. Loot him for the |T134944:0|t|cRXP_LOOT_Tattered Note|r. Use it to accept the quest
+    >>|cRXP_WARN_It is highly recommended to form a group of 5 players for this|r
+    .collect 212748,1 --Tattered Note (1x)
+    .accept 79358 >>Accept Tattered Note
+    .mob Charlga Razorflank
 step
     .train 410100,1
     #completewith next
     .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
 step
     .train 410100,1
-    .goto Thousand Needles,46.0,51.6
+    .goto Thousand Needles,46.10,51.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rau Cliffrunner|r
-    .turnin 79358 --Tattered Note
-    .accept 79360 --Elemental Aid
+    .turnin 79358 >>Turn in Tattered Note
+    .accept 79360 >>Accept Elemental Aid
     .target Rau Cliffrunner
 step
     .train 410100,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jania|r and buy 1 |T132793:0|t[Crystal Vial]
-    .collect 8925,1
+    .goto Thousand Needles,46.21,51.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jandia|r
+    >>|cRXP_BUY_Buy a|r |T132793:0|t[Crystal Vial] |cRXP_BUY_from her|r
+    .collect 8925,1 --Crystal Vial (1x)
+    .target Jandia
 step
     .train 410100,1
     #completewith next
     .zone Hillsbrad Foothills >>Travel to |cFFfa9602Hillsbrad Foothills|r
 step
     .train 410100,1
-    .goto Alterac Mountains,80.4,66.8
+    .goto Alterac Mountains,80.499,66.923
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Bath'rah the Windwatcher|r
-    .turnin 79360 -- Elemental Aid
-    .accept 79361 -- Power of da Wind
-    .accept 79362 -- Power of da Earth
-    .accept 79363 -- Power of da Water
+    .turnin 79360 --Turn in Elemental Aid
+    .accept 79361 --Accept Power of da Wind
+    .accept 79362 --Accept Power of da Earth
+    .accept 79363 --Accept Power of da Water
     .target Bath'rah the Windwatcher
 step
     .train 410100,1
@@ -2348,16 +2350,25 @@ step
 step
     .train 410100,1
     #loop
-    .goto Desolace,48.0,27.2,25,0
-    .goto Desolace,40.6,37.0,25,0
-    .goto Desolace,50.8,42.0,25,0
-    .goto Desolace,64.4,39.4,25,0
-    .goto Desolace,68.4,48.4,25,0
-    .goto Desolace,69.4,64.6,25,0
-    .goto Desolace,58.8,65.6,25,0
-    >>Kill |cRXP_ENEMY_Whirlwind Ripper|r. Loot them for |T132845:0|t|cRXP_LOOT_Whirling Essence|r
-    .complete  79361 -- Power of da Wind
+    .goto Desolace,48.0,27.2,0
+    .goto Desolace,40.6,37.0,0
+    .goto Desolace,50.8,42.0,0
+    .goto Desolace,64.4,39.4,0
+    .goto Desolace,68.4,48.4,0
+    .goto Desolace,69.4,64.6,0
+    .goto Desolace,58.8,65.6,0
+    .waypoint Desolace,48.0,27.2,25,0
+    .waypoint Desolace,40.6,37.0,25,0
+    .waypoint Desolace,50.8,42.0,25,0
+    .waypoint Desolace,64.4,39.4,25,0
+    .waypoint Desolace,68.4,48.4,25,0
+    .waypoint Desolace,69.4,64.6,25,0
+    .waypoint Desolace,58.8,65.6,25,0
+    >>Kill |cRXP_ENEMY_Whirlwind Elementals|r throughout Desolace. Loot them for their |T132845:0|t|cRXP_LOOT_Whirling Essence|r
+    .complete 79361 -- Power of da Wind
     .mob Whirlwind Ripper
+    .mob Whirlwind Stormwalker
+    .mob Whirlwind Shredder
 step
     .train 410100,1
     #completewith next
@@ -2365,13 +2376,20 @@ step
 step
     .train 410100,1
     #loop
-    .goto Dustwallow Marsch,42.6,30.0,25,0
-    .goto Dustwallow Marsch,35.2,44.6,25,0
-    .goto Dustwallow Marsch,42.6,62.0,25,0
-    .goto Dustwallow Marsch,50.0,54.0,25,0
-    >>Kill |cRXP_ENEMY_Withervine Mire Beast|r. Loot them for |T132846:0|t|cRXP_LOOT_Rumbling Essences|r
+    .goto Dustwallow Marsch,42.6,30.0,0
+    .goto Dustwallow Marsch,35.2,44.6,0
+    .goto Dustwallow Marsch,42.6,62.0,0
+    .goto Dustwallow Marsch,50.0,54.0,0
+    .waypoint Dustwallow Marsch,42.6,30.0,25,0
+    .waypoint Dustwallow Marsch,35.2,44.6,25,0
+    .waypoint Dustwallow Marsch,42.6,62.0,25,0
+    .waypoint Dustwallow Marsch,50.0,54.0,25,0
+    >>Kill |cRXP_ENEMY_Withervine Elementals|r throughout Dustwallow Marsh. Loot them for their |T132846:0|t|cRXP_LOOT_Rushing Essence|r
     .complete 79363,1 -- Power of da Water
     .mob Withervine Mire Beast
+    .mob Withervine Rager
+    .mob Withervine Bark Ripper
+    .mob Withervine Creeper
 step
     .train 410100,1
     #completewith next
@@ -2379,10 +2397,13 @@ step
 step
     .train 410100,1
     #loop
-    .goto Badlands,13.8,38.6,25,0
-    .goto Badlands,18.8,42.8,25,0
-    .goto Badlands,23.0,47.4,25,0
-    >>Kill |cRXP_ENEMY_Lesser Rock Elemental|r and |cRXP_ENEMY_Lesser Rock Elemental|r. Loot them for |T132846:0|t|cRXP_LOOT_Rumbling Essences|r
+    .goto Badlands,18.0,42.8,0
+    .waypoint Badlands,21.2,45.8,50,0
+    .waypoint Badlands,18.0,42.8,50,0
+    .waypoint Badlands,13.8,38.6,50,0
+    .waypoint Badlands,21.2,45.8,50,0
+    .waypoint Badlands,18.0,42.8,50,0
+    >>Kill |cRXP_ENEMY_Lesser Rock Elemental|r and |cRXP_ENEMY_Rock Elementals|r. Loot them for their |T132846:0|t|cRXP_LOOT_Rumbling Essences|r
     .complete 79362,1 -- Power of da Earth
     .mob Rock Elemental
     .mob Lesser Rock Elemental
@@ -2392,14 +2413,14 @@ step
     .zone Hillsbrad Foothills >>Travel to |cFFfa9602Hillsbrad Foothills|r
 step
     .train 410100,1
-    .goto Alterac Mountains,80.4,66.8
+    .goto Alterac Mountains,80.499,66.923
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Bath'rah the Windwatcher|r
-    .turnin 79361 -- Power of da Wind
-    .turnin 79362 -- Power of da Earth
-    .turnin 79363 -- Power of da Water
-    .accept 79364 -- A Simple Container
-    .turnin 79364 -- A Simple Container
-    .accept 79365 -- With Wind Beneath Your Wings
+    .turnin 79361 >>Turn in Power of da Wind
+    .turnin 79362 >>Turn in Power of da Earth
+    .turnin 79363 >>Turn in Power of da Water
+    .accept 79364 >>Accept A Simple Container
+    .turnin 79364 >>Turn in A Simple Container
+    .accept 79365 >>Accept With Wind Beneath Your Wings
     .target Bath'rah the Windwatcher
 step
     .train 410100,1
@@ -2407,19 +2428,20 @@ step
     .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
 step
     .train 410100,1
-    .goto Thousand Needles,46.0,51.6
+    .goto Thousand Needles,46.10,51.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rau Cliffrunner|r
     .turnin 79365 -- With Wind Beneath Your Wings
     .accept 79366 --Calm Before the Storm
     .target Rau Cliffrunner
 step
     .train 410100,1
-    .gossip 4317 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyse|r and select the 2nd dialog option
+    .gossip 4317 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyse|r and select the 2nd dialog option
     .target Nyse
 step
     .train 410100,1
-    >>Kill the |cRXP_ENEMY_Ravaging Tempest|r |cFFFF0000If you die in the process talk to the |cRXP_FRIENDLY_Spirit Healer|r to teleport you to your corpse|r
-    .collect 212792,1
+    >>Kill the |cRXP_ENEMY_Ravaging Tempest|r. Loot it for its |cRXP_LOOT_Eye of the Tempest|r
+    >>|cRXP_WARN_If you die in the process talk to the|r |cRXP_FRIENDLY_Spirit Healer|r |cRXP_WARN_to teleport you to your corpse|r
+    .collect 212792,1 --Eye of the Tempest (1x)
     .mob Dreath's Head Necromancer
     .mob Skeletal Servant
     .mob Ravaging Tempest
@@ -2429,7 +2451,7 @@ step
     .timer 9, Flight RP
 step
     .train 410100,1
-    .goto Thousand Needles,46.0,51.6
+    .goto Thousand Needles,46.10,51.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rau Cliffrunner|r
     .turnin 79366 --Calm Before the Storm
     .accept 79442 --Catching up
@@ -2440,7 +2462,7 @@ step
     .zone Hillsbrad Foothills >>Travel to |cFFfa9602Hillsbrad Foothills|r
 step
     .train 410100,1
-    .goto Alterac Mountains,80.4,66.8
+    .goto Alterac Mountains,80.499,66.923
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Bath'rah the Windwatcher|r
     .turnin 79442 --Catching up
     .target Bath'rah the Windwatcher
@@ -2463,23 +2485,29 @@ step
     .zone Arathi Highlands >>Travel to |cFFfa9602Arathi Highlands|r |cRXP_WARN_|cRXP_WARN_It is highly recommended to form a group of atleast 3 players.|r
 step
     .train 416054,1
-    .goto Arathi Highlands,33.8,49.2,20,0
-    .goto Arathi Highlands,37.6,46.8,20,0
-    .goto Arathi Highlands,33.8,39.8,20,0
-    .goto Arathi Highlands,32.0,41.2,20,0
-    >>Kill |cRXP_ENEMY_Boulderfist Ogre|r. Loot them for |T134921:0|t|cRXP_LOOT_[Ogre Lightning Rod]|r
-    .collect 213426,1
+    .goto Arathi Highlands,31.91,41.15,50,0
+    .goto Arathi Highlands,35.53,40.93,50,0
+    .goto Arathi Highlands,35.51,44.26,50,0
+    .goto Arathi Highlands,34.40,44.25,12,0
+    .goto Arathi Highlands,31.08,43.68,12,0
+    .goto Arathi Highlands,34.40,44.25,12,0
+    .goto Arathi Highlands,35.51,44.26
+    >>Kill |cRXP_ENEMY_Boulderfist Ogres|r and |cRXP_ENEMY_Boulderfist Brutes|r. Loot them for a |T134921:0|t|cRXP_LOOT_[Ogre Lightning Rod]|r
+    .collect 213426,1 --Ogre Lightning Rod (1x)
     .mob Boulderfist Ogre
+    .mob Boulderfist Enforcer
 step
     .train 416054,1
-    .goto Arathi Highlands,34.5 43.8
+    .goto Arathi Highlands,33.45,44.49
     .cast 434350 >>Click the |cRXP_PICK_Soft Soil|r to insert the |T134921:0|t|cRXP_LOOT_[Lightning Rod]|r into the ground.
 step
     .train 416054,1
->>
-    .collect 213093,1 >> Cast |T136048:0|t[Lightning Bolt] 10 times on the |cRXP_ENEMY_Lightning Rod|r then Kill |cRXP_ENEMY_Tamkar|r. Loot him for |T134419:0|t[Rune of Power]
+    >>Cast |T136048:0|t[Lightning Bolt] 10 times on the |cRXP_ENEMY_Lightning Rod|r
+    >>Kill |cRXP_ENEMY_Tamkar|r or kite him as he spawns. Loot him for the |T134419:0|t[Rune of Power]
+    >>|cRXP_WARN_He will die automatically after 30 seconds so you can kite him instead of killing him|r
+    .collect 213093,1 --Rune of Power (1x)
     .mob Lightning Rod
-    .mob tamkar
+    .mob Tamkar
 step
     .train 416054 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Power] |cRXP_WARN_to learn|r |T134337:0|t[Power Surge]
 ]])
@@ -2499,32 +2527,69 @@ step
     .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
 step
     .train 425882,1
-    .goto Thousand Needles,46.0,51.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jandia|r and buy 1 |T132906:0|t[Silken Thread]
-    .buy 4291,1
+    .goto Thousand Needles,46.21,51.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jandia|r
+    >>|cRXP_BUY_Buy a|r |T132906:0|t[Silken Thread] |cRXP_BUY_from her|r
+    .collect 4291,1 --Silken Thread (1)
+    .target Jandia
 step
     .train 425882,1
     #loop
-    .goto Thousand Needles,26.6,47.8,20,0
-    .goto Thousand Needles,28.6,51.2,20,0
-    .goto Thousand Needles,44.4,59.4,20,0
-    .goto Thousand Needles,39.0,56.6,20,0
-    .goto Thousand Needles,46.4,59.6,20,0
-    >>Kill |cRXP_ENEMY_Cloud Serpent|r and |cRXP_ENEMY_Screeching Harpy|r loot them for |cRXP_LOOT_Cloud Serpent Fang|r and |cRXP_LOOT_Strong Harpy Feather|r
-    .collect 213709,3
-    .collect 213701,10
+    .goto Thousand Needles,55.42,51.96,0
+    .waypoint Thousand Needles,55.42,51.96,40,0
+    .waypoint Thousand Needles,56.68,49.88,40,0
+    .waypoint Thousand Needles,55.97,45.97,40,0
+    .waypoint Thousand Needles,54.29,48.10,40,0
+    >>Kill |cRXP_ENEMY_Cloud Serpents|r. Loot them for their |cRXP_LOOT_Cloud Serpent Fangs|r
+    .collect 213709,3 --Cloud Serpent Fang (3x)
     .mob Cloud Serpent
-    .mob Screeching Harpy
+    .mob Venomous Cloud Serpent
+    .mob Elder Cloud Serpent
 step
     .train 425882,1
-    >>Use |T133723:0|t[Cloud Serpent Fang] or |T132927:0|t[Strong Harpy Feather] to create |T133291:0|t[Offering to the Wind Spirit]
-    .collect 213737,1
-    .use 213709
-    .use 213701
+    #loop
+    .goto Thousand Needles,27.65,49.47,0
+    .goto Thousand Needles,26.55,55.77,0
+    .waypoint Thousand Needles,27.65,49.47,40,0
+    .waypoint Thousand Needles,27.16,51.62,15,0
+    .waypoint Thousand Needles,26.29,52.79,15,0
+    .waypoint Thousand Needles,27.23,54.04,15,0
+    .waypoint Thousand Needles,26.55,55.77,15,0
+    >>Kill cRXP_ENEMY_Screeching Harpies|r. Loot them for their |cRXP_LOOT_Strong Harpy Feathers|r
+    .collect 213701,10 --Strong Harpy Feather (10x)
+    .mob Screeching Harpy
+    .mob Screeching Roguefeather
+    .mob Screeching Windcaller
 step
-    .goto Thousand Needles,45,6,65.3
-    .train 425882 >>Use the |T133291:0|t[Offering to the Wind Spirit] near the Altar of the Wind Spirit to learn |T134508:0|t[Decoy Totem]
+    .train 425882,1
+    .use 213709 >>|cRXP_WARN_Use your|r |T133723:0|t[Cloud Serpent Fangs] |cRXP_WARN_to create|r |T133291:0|t[Offering to the Wind Spirit]
+    .collect 213737,1 --Offering to the Wind Spirit (1x)
+step
+    .goto Thousand Needles,31.47,36.71,30 >> Head to Darkcloud Pinnacle
+step
+    #completewith next
+    .goto Thousand Needles,33.08,35.33,20,0
+    .goto Thousand Needles,32.78,32.24,20,0
+    .goto Thousand Needles,32.03,31.36,20,0
+    .goto Thousand Needles,32.37,28.64,20,0
+    .goto Thousand Needles,32.60,27.51,20,0
+    .goto Thousand Needles,34.87,31.76,20,0
+    .goto Thousand Needles,34.15,35.77,20,0
+    .goto Thousand Needles,33.32,36.24,20 >> Travel up Darkcloud Pinnacle
+step
+    .train 425882,1
+    .goto Thousand Needles,39.44,41.98
+    .aura 435218 >>|cRXP_WARN_Use the|r |T133291:0|t[Offering to the Wind Spirit] |cRXP_WARN_near the|r |cRXP_PICK_Altar of the Wind Spirit|r
+    >>|cRXP_WARN_The Altar is located behind the hut on the most Eastern pinnacle|r
     .use 213737
+step
+    .goto Thousand Needles,40.43,43.29
+    >>Jump down to show your faith to the Wind Spirit to receive the |T134419:0|t|cRXP_FRIENDLY_Rune of Decoys|r
+    >>|cRXP_WARN_Make sure your|r |T133291:0|t[Offering to the Wind Spirit] |cRXP_WARN_doesn't wear off. It lasts for 30 seconds|r
+    .collect 213096,1 --Rune of Decoys (1x)
+step
+    .train 425882 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_FRIENDLY_Rune of Decoys|r |cRXP_WARN_to learn|r |T134508:0|t[Decoy Totem]
+    .use 213096
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -2542,11 +2607,16 @@ step
     .train 410103,1
     .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
 step
+    #completewith next
     .train 410103,1
-    .goto Thousand Needles,46.4,53.5
-    >>Click on the |cRXP_PICK_Weathered Cache|r to loot |T136095:0|t|cRXP_LOOT_Echo of the Alpha|r
+    .goto Thousand Needles,46.17,52.95,20 >>Travel to the start of the lower bride just south of Freewind Post
+step
+    .train 410103,1
+    .goto Thousand Needles,46.82,53.52
+    >>|cRXP_WARN_Use|r |T136095:0|t[Ghost Wolf] |cRXP_WARN_to jump down carefully toward the|r |cRXP_PICK_Weathered Cache|r
+    >>Click the |cRXP_PICK_Weathered Cache|r to loot |T136095:0|t|cRXP_FRIENDLY_Echo of the Alpha|r
     .collect 206985,1
 step
-    .train 410103 >>|cRXP_WARN_Use the|r |T136095:0|t|cRXP_LOOT_Echo of the Alpha|r |cRXP_WARN_to learn|r |T408696:0|t[Spirit of the Alpha]
+    .train 410103 >>|cRXP_WARN_Use the|r |T136095:0|t|cRXP_FRIENDLY_Echo of the Alpha|r |cRXP_WARN_to learn|r |T408696:0|t[Spirit of the Alpha]
     .use 206985
 ]])

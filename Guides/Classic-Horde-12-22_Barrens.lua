@@ -848,6 +848,7 @@ step
     .mob Zhevra Runner
 step
     #label RatchetEnter
+    .goto The Barrens,62.68,36.23
     .subzone 392 >> Travel to Ratchet
     .isOnQuest 845
 step
