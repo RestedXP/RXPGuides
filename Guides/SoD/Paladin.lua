@@ -1720,7 +1720,7 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 416035,1
-    .train 19752 >>You have to learn |T136106:0|t[Divine Intervention] before you can obtain this rune
+    .train 19752 >>You have to learn |T136106:0|t[Divine Intervention] before you can obtain the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Guardian|r].
     .collect 17033,1 >>You also need at least 1 |T135259:0|t[Symbol of Divinity] (from any reagent vendor)
 step
     #completewith next

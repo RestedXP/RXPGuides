@@ -1253,7 +1253,7 @@ RXPGuides.RegisterGuide([[
 
 -- Blood Surge
 
-
+--x shiek better coordinates
 step
     .train 416004,1
     #completewith next
@@ -1265,7 +1265,7 @@ step
     .goto Arathi Highlands,21.6,66.4,25,0
     .goto Arathi Highlands,21.4,68.2,25,0
     .goto Arathi Highlands,22.8,66.4,25,0
-    >>Kill |cRXP_ENEMY_Boulderfist Shaman|r. Loot them for |T237451:0|t[Illegible Recipe]
+    >>Kill |cRXP_ENEMY_Boulderfist Shaman|r. Loot them for the |T237451:0|t[Illegible Recipe].
     .collect 213422,1
     .mob Boulderfist Shaman
 step
@@ -1297,7 +1297,7 @@ step
     .goto Arathi Highlands,88.0,38.2,25,0
     .goto Arathi Highlands,82.0,33.0,25,0
     .goto Arathi Highlands,80.4,34.0,25,0
-    >>Kill |cRXP_ENEMY_Wild Gryphon|r. Loot them for |cRXP_LOOT_Hybrid Haunch|r
+    >>Kill |cRXP_ENEMY_Wild Gryphon|r. Loot them for |cRXP_LOOT_Hybrid Haunch|r.
     .complete 79678,1,1
 step
     .train 416004,1
@@ -1310,7 +1310,7 @@ step
     .goto 56.6,53.0,25,0
     .goto 84.4,82.8,25,0
     .goto 77.6,90.2,25,0
-    >>Kill |cRXP_ENEMY_Deathstrike Tarantulas|r. Loot them for |cRXP_LOOT_Viscous Venom|r
+    >>Kill |cRXP_ENEMY_Deathstrike Tarantulas|r. Loot them for |cRXP_LOOT_Viscous Venom|r.
     .complete 79678,1,4
     .mob Deathstrike Tarantula
 step
@@ -1406,8 +1406,14 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 403472,1
+    >>You have to learn the following spells from your class trainer to obtain the |T134419:0|t[Rune of Intervention].
+    .train 355 >> Train |T136080:0|t[Taunt]
+    .train 5308 >> Train |T135358:0|t[Execute]
+    .train 72  >> Train T132357:0|t[Shield Bash]
+step
+    .train 403472,1
     #completewith next
-    >>Before you head out to Thousand Needles, make sure to pack a wearable two-handed sword along with 2 wearable one-handed weapons. Don't worry about their strength.
+    +Before you head out to Thousand Needles, make sure to pack a wearable two-handed sword along with 2 wearable one-handed weapons. Don't worry about their strength.
 step
     .train 403472,1
     .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
@@ -1420,7 +1426,7 @@ step
 step
     .train 403472,1
     .goto Thousand Needles,67.7,89.3
-    >>Equip a pair of one-handed weapons
+    >>|cRXP_WARN_Equip a pair of one-handed weapons.|r
     .cast 355 >> Cast |T136080:0|t[Taunt] on the |cRXP_ENEMY_Combat Dummy|r located in front of the dwarf statue while you are dual-wielding.
     .mob Combat Dummy
 step
@@ -1449,9 +1455,16 @@ step
     .zone Badlands >>Travel to Badlands
 step
     #loop
-    .goto Badlands,35.6,59.6,25,0
-    .goto Badlands,24.8,58.8,25,0
-    .goto Badlands,28.4,67.6,25,0
+    .goto Badlands,15.6,45.8,30,0 << Alliance
+    .goto Badlands,20.0,57.0,30,0 << Alliance
+    .goto Badlands,27.8,67.8,30,0 << Alliance
+    .goto Badlands,33.0,66.2,30,0 << Alliance
+    .goto Badlands,36.6,56.8,30,0 << Alliance
+    .goto Badlands,36.6,56.8,30,0 << Horde
+    .goto Badlands,33.0,66.2,30,0 << Horde
+    .goto Badlands,27.8,67.8,30,0 << Horde
+    .goto Badlands,20.0,57.0,30,0 << Horde
+    .goto Badlands,15.6,45.8,30,0 << Horde
     >>Kill the |cRXP_ENEMY_Wandering Swordsman|r in Badlands |cRXP_WARN_ Please note, this is a rare enemy and there's a chance it may not be present.|r Loot him |T134419:0|t[Rune of the Commander]
     .train 426491 >> Use |T134419:0|t[Rune of the Commander] to learn |T426490:0|t[Rallying Cry]
     .mob Wandering Swordsman

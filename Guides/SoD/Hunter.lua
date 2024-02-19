@@ -1043,7 +1043,10 @@ step
     .zone Arathi Highlands >>Travel to Arathi Highlands
 step
     .train 410109,1
+    #loop
+    .goto Arathi Highlands,69.4 63.2,25,0
     .goto Arathi Highlands,67.8,66.0
+    .goto Arathi Highlands,68.4,68.2,25,0
     >>Kill |cRXP_ENEMY_Needletooth|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Steady Shot|r]
     >>|cRXP_ENEMY_Needletooth|r |cRXP_WARN_is a fish that swims in the Witherbark Village lake|r
     .collect 213122,1
@@ -1064,7 +1067,7 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 410116,1
-    .train 1543 >>You have to learn |T135815:0|t[Flare] before you can obtain this rune
+    .train 1543 >>You have to learn |T135815:0|t[Flare] before you can obtain |T134419:0|t[|cRXP_FRIENDLY_Rune of the Scrapper|r].
 step
     #completewith next
     .zone Stranglethorn Vale >>Travel to Stranglethorn Vale

@@ -2602,7 +2602,6 @@ RXPGuides.RegisterGuide([[
 
 -- Spirit of the Alpha
 
-
 step
     .train 410103,1
     .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r

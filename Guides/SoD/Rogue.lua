@@ -1568,7 +1568,7 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 400096,1
-    .train 1842 >>You have to learn |T136162:0|t[Disarm Trap] before you can obtain this rune
+    .train 1842 >>You have to learn |T136162:0|t[Disarm Trap] before you can obtain |T134419:0|t[|cRXP_FRIENDLY_Rune of the Assassin|r]
     .collect 5060,1 >>You also need |T135259:0|t[Thieves' Tools]
 step
     #completewith next
@@ -1709,7 +1709,7 @@ step
     .train 400093,1
     .cast 1804 >>|cRXP_WARN_Cast|r |T136058:0|t[Pick Lock] |cRXP_WARN_on the|r |T132597:0|t[|cRXP_LOOT_Small Strongbox|r] |cRXP_WARN_to unlock it|r
     .usespell 1804
-    .use 215453 
+    .use 215453
 step
     .train 400093,1
     .use 215453 >> Open the |T132597:0|t[|cRXP_LOOT_Small Strongbox|r]. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Southpaw|r]
