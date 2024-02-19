@@ -1287,9 +1287,7 @@ step
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .accept 850 >>Accept Kolkar Leaders
-    .accept 855 >>Accept Centaur Bracers
     .target Regthar Deathgate
-    .maxlevel 15
 step
     #optional
     #label RegtharDeathgate1

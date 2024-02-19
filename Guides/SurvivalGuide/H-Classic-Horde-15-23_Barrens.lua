@@ -2193,6 +2193,7 @@ step << Druid
     .target Loganaar
     .xp <20,1
 step
+    #completewith next
     .hs >> Hearth to Camp Taurajo
     .use 6948
 step
@@ -2969,11 +2970,13 @@ step
     .complete 876,1 --Serena's Head (1)
     .mob Serena Bloodfeather
 step
+    #completewith ApothecaryPickup
     .hs >> Hearth to The Crossroads
     .use 6948
     .cooldown item,6948,>0
     .isQuestComplete 876
 step
+    #completewith next
     .goto The Barrens,52.09,30.43,120 >>Travel to The Crossroads. You can also grind untill your |T134414:0|t[Hearthstone] is back up
     .cooldown item,6948,<0
     .isQuestComplete 876

@@ -1310,7 +1310,7 @@ step
     .train 425102,1 << Rogue
     .train 425883,1 << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bibbly F'utzbuckle|r
-    .goto Desolace,62.2,38.8
+    .goto Desolace,62.30,39.00
     .turnin 79229 >>Turn in Highway Robbery
     .accept 79235 >>Accept On the Lam
     .target Bibbly F'utzbuckle
