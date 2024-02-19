@@ -38,8 +38,8 @@ events.zoneskip = "ZONE_CHANGED_NEW_AREA"
 events.subzone = "ZONE_CHANGED"
 events.subzoneskip = "ZONE_CHANGED"
 events.bankdeposit = {"BANKFRAME_OPENED", "BAG_UPDATE_DELAYED"}
-events.skipgossip = {"GOSSIP_SHOW", "GOSSIP_CLOSED", "GOSSIP_CONFIRM_CANCEL", "PLAYER_INTERACTION_MANAGER_FRAME_HIDE"}
-events.gossip = events.skipgossip
+events.skipgossip = {"GOSSIP_SHOW", "GOSSIP_CLOSED", "GOSSIP_CONFIRM_CANCEL"}
+events.gossip = {"GOSSIP_SHOW", "PLAYER_INTERACTION_MANAGER_FRAME_HIDE"}
 events.gossipoption = events.skipgossip
 events.skipgossipid = "GOSSIP_SHOW"
 events.vehicle = {"UNIT_ENTERING_VEHICLE", "VEHICLE_UPDATE", "UNIT_EXITING_VEHICLE"}
@@ -4014,16 +4014,16 @@ function addon.functions.gossip(self, text, npc, length)
         if UnitExists('target') and not UnitIsPlayer('target') and not element.name then
             element.currentNPC = addon.GetNpcId()
             element.name = name
-            element.level = -1
-        end
-    elseif event == "GOSSIP_CLOSED" and element.currentNPC == element.npc and
-         frame and frame:IsShown() and frame:GetText() == element.name then
+            element.level = 0
+            --print(name)
+        elseif element.currentNPC == element.npc and frame and frame:IsShown() and frame:GetText() == element.name then
             element.level = element.level + 1
+        end
     elseif event == "PLAYER_INTERACTION_MANAGER_FRAME_HIDE" then
         element.name = nil
         element.currentNPC = nil
+        --print(element.level, element.length)
         if element.level >= element.length then
-            --print(element.level, element.length)
             addon.SetElementComplete(self)
         end
         element.level = -1
