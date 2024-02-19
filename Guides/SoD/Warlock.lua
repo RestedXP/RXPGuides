@@ -556,8 +556,8 @@ RXPGuides.RegisterGuide([[
 << Warlock SoD
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
-#name Metamorphosis - 25
-#title Metamorphosis
+#name Metamorphosis/Grimoire of Synergy - 25 & 40 (Azeroth)
+#title Metamorphosis/Grimoire of Synergy
 
 step
     #completewith WarlockRuneMetamorphosisA
@@ -670,6 +670,119 @@ step
     .use 210980
     .itemcount 210980,1
     .train 403938 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Metamorphosis|r] |cRXP_WARN_to train|r |T237558:0|t[Metamorphosis]
+step
+    .train 426445,1
+    #completewith next
+    .zone The Barrens >>Travel to The Barrens
+step
+    .train 426445,1
+    .xp <30,1
+    .goto The Barrens,49.2 57.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raszel Ander|r.
+    .accept 78994,1 >> Accept A Solid Foundation
+    .target Raszel Ander
+step >> Alliance
+    .train 426445,1
+    .goto The Barrens,63.0,37.2
+    #completewith Invisibility Potion
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r.
+    .fly Astranaar >> Fly Astranaar
+    .target Bragok
+step
+    .train 426445,1
+    #completewith Invisibility Potion
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kimlya|r.
+    .home >> Set your Hearthstone to Astranaar
+    .target Innkeeper Kimlya
+step >> Horde
+    .train 426445,1
+    #completewith Invisibility Potion
+    .goto The Barrens,45.6,59.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Byula|r.
+    .home >> Set your Hearthstone to Camp Taurajo
+    .target Innkeeper Byula
+step >> Horde
+    .train 426445,1
+    #completewith Invisibility Potion
+    .goto The Barrens,44.4,59.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY Omusa Thunderhorn|r.
+    .fly Astranaar >> Fly Astranaar
+    .targetOmusa Thunderhorn
+step
+    .train 426445,1
+    #label Invisibility Potion
+    .goto Ashenvale 90.9,38.6,20,0
+    .goto Ashenvale 91,37
+    >>|cRXP_WARN_By using |T136155:0|t[Eye of Kilrogg] you can scout the area beforehand to unexpected deaths|r
+    >>Use |T236874:0|t[Invisibility Potion] to sneak past level 60 elites
+    .aura 429407,1 >> |cRXP_WARN_Before clicking the |cRXP_PICK_Tree|r remove your equipment and apply |T136121:0|t[Shadow Ward] on yourself.|r |cFFFF0000This is important as you will receive a deadly ticking debuff removing your equipment will reduce the amount of damage you'll receive and use food if you need to.|r
+    .cast 431268 >> Click on the |cRXP_PICK_Tree|r to obtain |T251535:0|t[Bough of Shadows].
+    .collect 211426,1
+    .complete 78994,1
+    .use 217693
+step
+    .train 426445,1
+    #completewith Turnin A Solid Foundation
+    .hs Hearth to Astranaar << Alliance
+    .hs Hearth to Camp Taurajo << Horde
+step
+    .train 426445,1
+    #label Turnin A Solid Foundation
+    .goto The Barrens,49.2 57.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raszel Ander|r.
+    .turnin 78994,1 >> Turnin A Solid Foundation
+    .accept 78914,1 >> Accept A Soul vessel
+    .target Raszel Ander
+step
+    .train 426445,1
+    #completewith next
+    >>If you have decided to buy the materials it's recommended to purchase |T135975:0|t[Shadowgem] and |T134074:0|t[Black Vitriol] from the auction house and |T134337:0|t[Demonic Figurine] from a |cRXP_FRIENDLY_Reagent Vendor.|r
+    >>|cRXP_WARN_Alternatively you can get |T135975:0|t[Shadowgem] from mining and low level monster and for |T134074:0|t[Black Vitriol] you'll need to mine Mithril/Thorium deposits and get lucky.|r
+    .collect 1210,4
+    .collect 9262,1
+    .collect 16583,1
+step
+    .train 426445,1
+    .collect 211427,1 >>It's recommended to buy the |T133254:0|t[Soul Vessel] from the auction house. if it's too expensive you can try buy the materials from the auction house or gather them yourself.Then, ask an Engineer to make the |T133254:0|t[Soul Vessel] for you.
+step >> Alliance
+    .goto The Barrens,63.0,37.2
+    #completewith Turnin A Soul Vessel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r.
+    .fly Astranaar >> Fly Astranaar
+    .target Bragok
+step >> Horde
+    .train 426445,1
+    #completewith Turnin A Soul Vessel
+    .goto The Barrens,44.4,59.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY Omusa Thunderhorn|r.
+    .fly Astranaar >> Fly Astranaar
+    .targetOmusa Thunderhorn
+step
+    .train 426445,1
+    #label Turnin A Soul Vessel
+    .goto Desolace,51.2,82.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raszel Ander|r.
+    .turnin 78914,1 >> Turnin A Soul Vessel
+    .accept 79298,1 >> Accept Tempting Fate
+    .target Raszel Ander
+step
+    .train 426445,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raszel Ander|r and select the gossipoption "Let's Begin the Ritual"
+    .gossip 215850,1
+    .timer 14, Summon RP
+    .skipgossip
+step
+    .train 426445,1
+    >>Click on the |cRXP_PICK_Reconstructed Staff of Des'Altek|r |cRXP_WARN_Make sure you are at 100% life as you will receive damage while channeling and fight a dreadlord after.|r Use |cFFFF0000|T136121:0|t[Shadow Ward] frequently.|r |cFFFF0000If you die you might have to wait for |cRXP_FRIENDLY_Raszel Ander|r to respawn before you can start the channel again.|r
+    .complete 79298,1
+step
+    .train 426445,1
+    .goto Desolace,51.2,82.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raszel Ander|r.
+    .turnin 79298,1 >> Turnin Tempting Fate
+    .target Raszel Ander
+step
+    .train 426445 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Synergy|r] |cRXP_WARN_to train|r |T133738:0|t[Grimoire of Synergy]
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1067,17 +1180,17 @@ step << Warlock
     .itemcount 208744,1
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Warlock SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Belt
--- #name Grimoire of Synergy
+RXPGuides.RegisterGuide([[
+#classic
+<< Warlock SoD
+#group RestedXP Rune & Books Guide
+#subgroup Belt
+#name Grimoire of Synergy
 
 -- Grimoire of Synergy
 
 
--- ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -1099,7 +1212,7 @@ step
 step
     .train 426443,1
     #completewith next
-    .subzone 324 >> Travel to Stromgarde Keep 
+    .subzone 324 >> Travel to Stromgarde Keep
 step
     #label SyndicateConjuror
     .train 426443,1
