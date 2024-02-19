@@ -595,7 +595,7 @@ step << Priest
     .train 402852,1
 step << Priest
     .train 402852 >> |cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] |cRXP_WARN_to train|r |T237570:0|t[Homunculi]
-    >>|cRXP_WARN_You must have a|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buff by typing /kneel in a holy area such as, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge|r
+    >>|cRXP_WARN_You must have 2|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buffs by typing /kneel in a holy area such as, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge|r
     .use 205947
     .itemcount 205947,1
 ]])
@@ -616,7 +616,7 @@ step << Priest
     .train 402852,1
 step << Priest
     .train 402852 >> |cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] |cRXP_WARN_to train|r |T237570:0|t[Homunculi]
-    >>|cRXP_WARN_You must have a|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buff by typing /kneel in a holy area such as, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge|r
+    >>|cRXP_WARN_You must have 2|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buffs by typing /kneel in a holy area such as, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge|r
     .use 205947
     .itemcount 205947,1
 ]])
@@ -644,7 +644,7 @@ step << Priest
     .train 402852,1
 step << Priest
     .train 402852 >> |cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] |cRXP_WARN_to train|r |T237570:0|t[Homunculi]
-    >>|cRXP_WARN_You must have a|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buff by typing /kneel in a holy area such as, a moonwell, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge|r
+    >>|cRXP_WARN_You must have 2|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buffs by typing /kneel in a holy area such as, a moonwell, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge|r
     .use 205947
     .itemcount 205947,1
 ]])
@@ -965,7 +965,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
 #group RestedXP Rune & Books Guide
-#subgroup Waist
+#subgroup Belt
 #name Empowered Renew - 27 (Thousand Needles)
 #title Empowered Renew
 
@@ -977,19 +977,20 @@ step
     .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
 step
     .train 425309,1
-    #loop
-    .goto Thousand Needles,33.0,28.2,25,0
-    .goto Thousand Needles,33.0,35.4,25,0
-    .goto Thousand Needles,35.0,39.2,25,0
-    .goto Thousand Needles,35.6,31.0,25,0
-    >>Kill |cRXP_ENEMY_Grimtotem Geomancers|r, |cRXP_ENEMY_Grimtotem Bandit|r, |cRXP_ENEMY_Grimtotem Reaver|r and |cRXP_ENEMY_Grimtotem Stomper|r and loot them for |cRXP_LOOT_Prophecy of the Quickened Path|r
+    .goto Thousand Needles,31.33,37.05,10,0
+    .goto Thousand Needles,33.17,35.38,15,0
+    .goto Thousand Needles,31.96,31.32,15,0
+    .goto Thousand Needles,33.04,27.61,30,0
+    .goto Thousand Needles,35.20,31.09,30,0
+    .goto Thousand Needles,34.17,38.81
+    >>Kill |cRXP_ENEMY_Grimtotem Geomancers|r, |cRXP_ENEMY_Grimtotem Bandits|r, |cRXP_ENEMY_Grimtotem Reavers|r and |cRXP_ENEMY_Grimtotem Stompers|r. Loot them for the |T135975:0|t[|cRXP_LOOT_Prophecy of the Quickened Path|r]
     .collect 213140,1
     .mob Grimtotem Geomancer
     .mob Grimtotem Bandit
     .mob Grimtotem Reaver
     .mob Grimtotem Stomper
 step
-    .train 425309 >>|cRXP_WARN_Use|r |T135975:0|t|cRXP_LOOT_[Prophecy of the Quickened Path]|r |cRXP_WARN_to learn|r |T236254:0|t[Empowered Renew]
+    .train 425309 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_LOOT_Prophecy of the Quickened Path|r] |cRXP_WARN_to train|r |T236254:0|t[Empowered Renew]
     .use 213140
 ]])
 
@@ -997,7 +998,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Alliance Priest SoD
 #group RestedXP Rune & Books Guide
-#subgroup Waist
+#subgroup Belt
 #name Empowered Renew - 33 (Alterac Mountains)
 #title Empowered Renew
 
@@ -1009,15 +1010,17 @@ step
 step
     .train 425309,1
     #loop
-    .goto Alterac Mountains,49.0,61.6,25,0
-    .goto Alterac Mountains,54.6,52.6,25,0
-    .goto Alterac Mountains,52.4,41.6,25,0
-    .goto Alterac Mountains,46.6,35.6,25,0
-    >>Kill |cRXP_ENEMY_Crushridge Ogre|r. Loot them for |cRXP_LOOT_Prophecy of the Quickened Path|r
+    .goto Alterac Mountains,47.48,58.94,0
+    .goto Alterac Mountains,51.73,40.23,70,0
+    .goto Alterac Mountains,45.19,33.91,70,0
+    .goto Alterac Mountains,51.46,53.84,70,0
+    .goto Alterac Mountains,48.54,40.72,70,0
+    >>Kill |cRXP_ENEMY_Crushridge Ogres|r and |cRXP_ENEMY_Crushridge Brutes|r. Loot them for the |T135975:0|t[|cRXP_LOOT_Prophecy of the Quickened Path|r]
     .collect 213140,1
     .mob Crushridge Ogre
+    .mob Crushridge Brute
 step
-    .train 425309 >>|cRXP_WARN_Use|r |T135975:0|t|cRXP_LOOT_[Prophecy of the Quickened Path]|r |cRXP_WARN_to learn|r |T236254:0|t[Empowered Renew]
+    .train 425309 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_LOOT_Prophecy of the Quickened Path|r] |cRXP_WARN_to train|r |T236254:0|t[Empowered Renew]
     .use 213140
 ]])
 
@@ -1025,34 +1028,60 @@ RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
 #group RestedXP Rune & Books Guide
-#subgroup Waist
-#name Renewed Hope - 30 (Desolace)
+#subgroup Belt
+#name Renewed Hope - 31 (Desolace)
 #title Renewed Hope
 
 -- Renewed Hope
+
+step
+    #optional
+    .train 425310,1
+    .train 605 >> |cRXP_WARN_You must have|r |T136206:0|t[Mind Control] |cRXP_WARN_trained in order to aquire the|r |T135923:0|t[Renewed Hope] |cRXP_WARN_rune|r
+step
+    #optional
+    .train 425310,1
+    .xp 31
+    >>|cRXP_WARN_You must be at least level 31 in order to cast|r |T136206:0|t[Mind Control] |cRXP_WARN_on a level 33 |cRXP_ENEMY_Slitherblade Tide Priestess|r later|r
 step
     .train 425310,1
     #completewith next
     .zone Desolace >>Travel to |cFFfa9602Desolace|r
 step
     #loop
-    .goto Desolace,36.0,29.6,25,0
-    .goto Desolace,36.4,20.6,25,0
-    .goto Desolace,40.0,17.4,25,0
-    .goto Desolace,38.6,23.6,25,0
+    .goto Desolace,35.4,29.6,60,0
+    .goto Desolace,33.6,15,0,60,0
+    .goto Desolace,40.0,17.4,60,0
+    .goto Desolace,38.6,23.6,60,0
     .train 425310,1
-    >>Kill |cRXP_ENEMY_Slitherblade Naga|r and loot them for |T136222:0|t|cRXP_LOOT_Unsettling Vision|r
+    >>Kill |cRXP_ENEMY_Slitherblade Nagas|r. Loot them for the |T136222:0|t[|cRXP_LOOT_Unsettling Vision|r]
     .collect 213599,1
     .mob Slitherblade Naga
-step
-    .goto Desolace,36.0,29.6,25,0
-    .goto Desolace,36.4,20.6,25,0
-    .goto Desolace,40.0,17.4,25,0
-    .goto Desolace,38.6,23.6,25,0
-    .cast 605 >> Use |T136206:0|t[Mind Control] |cRXP_ENEMY_Slitherblade Tide Priestess|r to their Medidation Buff.
+    .mob Slitherblade Warrior
+    .mob Slitherblade Oracle
+    .mob Slitherblade Myrmidon
+    .mob Slitherblade Sea Witch
     .mob Slitherblade Tide Priestess
+step -- step shows for players that are only level 31
+    #optional
+    #completewith next
+    +|cRXP_WARN_NOTE: You may only cast|r |T136206:0|t[Mind Control] |cRXP_WARN_on a level 33 |cRXP_ENEMY_Slitherblade Tide Priestess|r. The cast will fail on ones that are level 34|r
+    .xp >32,1
+    .xp <31,1
+    .train 425310,1
 step
-    .train 425310 >> Use |T136222:0|t|cRXP_FRIENDLY_Unsettling Vision|r to obtain the rune |T135923:0|t[Renewed Hope]
+    #label MCPriestess
+    #loop
+    .goto Desolace,38.8,24.0,60,0
+    .goto Desolace,34.6,30.0,60,0
+    .goto Desolace,34.6,20.2,60,0
+    .aura 435117 >> |cRXP_WARN_Cast|r |T136206:0|t[Mind Control] |cRXP_WARN_on a|r |cRXP_ENEMY_Slitherblade Tide Priestess|r
+    >>|cRXP_WARN_While it is under the affects of|r |T136206:0|t[Mind Control]|cRXP_WARN_, target YOURSELF and cast|r |T136077:0|t[Meditation on the Abyss] |cRXP_WARN_from the pet action bar|r
+    >>|cRXP_WARN_Press Escape afterwards to cancel the|r |T136206:0|t[Mind Control] |cRXP_WARN_and kill the|r |cRXP_ENEMY_Slitherblade Tide Priestess|r
+    .mob Slitherblade Tide Priestess
+    .train 425310,1
+step
+    .train 425310 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_LOOT_Unsettling Vision|r] |cRXP_WARN_to train|r |T135923:0|t[Renewed Hope]
     .use 213599
 ]])
 
@@ -1061,38 +1090,55 @@ RXPGuides.RegisterGuide([[
 << Priest SoD
 #group RestedXP Rune & Books Guide
 #subgroup Boots
-#name Dispersion 40 (Azeroth)
+#name Dispersion 40 (Stranglethorn Vale)
 
 -- Dispersion
 
 step
     .train 425314,1
-    >>Buy the |T134938:0|t[Deciphered Troll Scroll] from the auction house |cRXP_WARN_It's highly recommended as otherwise you'll need a rogue with the [Master of Sublety Rune] and |T338666:0|t[Jani's Charm] to pickpocket |cRXP_ENEMY_Bloodscalp Scavenger|r for |T237446:0|t[Mysterious Troll Scroll]|r and a mage to decipher it. |cFFFF0000Alternatively you can have a priest share this quest with you.|r
+    >>|cRXP_WARN_Find a Rogue with the|r |T132299:0|t[Master of Subtlety] |cRXP_WARN_rune and|r |T338666:0|t[Jani's Charm] |cRXP_WARN_trinket to|r |T133644:0|t[Pick Pocket] |cRXP_WARN_any |cRXP_ENEMY_Bloodscalp Troll|r in Stranglethorn Vale for the|r |T237446:0|t[Mysterious Troll Scroll]|cRXP_WARN_. A Mage must then use a|r |T135933:0|t[Comprehension Charm] |cRXP_WARN_to decipher it for it to become a |T134938:0|t[|cRXP_LOOT_Deciphered Troll Scroll|r]|r
+    >>|cRXP_WARN_Alternatively buy a|r |T237446:0|t[Mysterious Troll Scroll]|r |cRXP_WARN_from the Auction House and have a Mage decipher it, or buy the already |T134938:0|t[|cRXP_LOOT_Deciphered Troll Scroll|r]|r
+    .use 216880 >>|cRXP_WARN_Use the |T134938:0|t[|cRXP_LOOT_Deciphered Troll Scroll|r] to start the quest|r
+    >>|cRXP_WARN_You may also look for a Priest to share the quest with you|r
     .collect 216880,1
-step
-    .train 425314,1
-    >>Click on the |T134938:0|t[Deciphered Troll Scroll] in your bags to accept this quest.
-    .accept 79731 --The Troll Scroll
+    .disablecheckbox
+    .accept 79731 >> Accept The Troll Scroll
 step
     .train 425314,1
     #completewith next
     .zone Stranglethorn Vale >>Travel to |cFFfa9602Stranglethorn Vale|r
+    >>|cRXP_WARN_Ensure you have 2 active running|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buffs before heading there|r
 step
     .train 425314,1
-    >>Kill |cRXP_ENEMY_Lord Sakrasis|r. Loot him for |T134712:0|t[Holy Spring Water]
-    .collect 737,1
+    .goto Stranglethorn Vale,28.961,61.931
+    >>Click |cRXP_PICK_The Holy Spring|r. Loot it for the |T134712:0|t[|cRXP_LOOT_Holy Spring Water|r]
+    >>|cRXP_WARN_You may need to kill |cRXP_ENEMY_Lord Sakrasis|r (level 45 Rare) who guards in front of|r |cRXP_PICK_The Holy Spring|r
+    .collect 737,1 --Holy Spring Water
     .mob Lord Sakrasis
 step
-    .train 425314,1
-    .goto Stranglethorn Vale,23.2,8.5
-    .cast 3581 >> Use the |T134712:0|t[Holy Spring Water] behind Gan'zulah on a fountain
-    .use 737
+    #completewith next
+    .subzone 102 >> Travel to the Ruins of Zul'Kunda
 step
     .train 425314,1
-    >>Click on the object to aquire |T135975:0|t[Prophecy of Imprisoned Malice]
+    .goto Stranglethorn Vale,23.569,7.955
+    .cast 3591 >> |cRXP_WARN_Use the|r |T134712:0|t[|cRXP_LOOT_Holy Spring Water|r] |cRXP_WARN_at the small fountain|r
+    >>|cRXP_WARN_You may need to kill |cRXP_ENEMY_Gan'zulah|r (level 41) and a small pack of |cRXP_ENEMY_Trolls|r around him to get to the small fountain|r
+    .use 737
+    .mob Gan'zulah
+step
+    .train 425314,1
+    .goto Stranglethorn Vale,23.569,7.955
+    >>Click the |cRXP_PICK_Fount|r which appears. Loot it for the |T135975:0|t|cRXP_LOOT_[Prophecy of Imprisoned Malice]|r
     .collect 213142,1
 step
-    .train 425314 >> Use|T135975:0|t[Prophecy of Imprisoned Malice] to learn |T237563:0|t[Dispersion]
+    .train 425314 >> |cRXP_WARN_Use the|r |T135975:0|t|cRXP_LOOT_[Prophecy of Imprisoned Malice]|r |cRXP_WARN_to train|r |T237563:0|t[Dispersion]
+    .use 213142
+step
+    .isQuestComplete 79731
+    .goto Stranglethorn Vale,35.658,10.808
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary|r
+    .turnin 79731 >> Turn in The Troll Scroll
+    .target Hemet Nesingwary
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1115,31 +1161,33 @@ step
     .goto 1415,47.62,19.59,10,0
     .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
 step
-    >>Pickup the |T136222:0|t[Graveyard Echo] near the Headless Horseman Grave
+    >>Click on the |cRXP_PICK_Tombstone|r near the Headless Horseman's spawn location to collect the |cRXP_LOOT_|T136222:0|t[Graveyard Echo]|r |cRXP_WARN_It is highly recommended to form a group of 5 players for this step.|r
+    .link https://imgur.com/a/lqRc0i6 >> |cRXP_WARN_Click here for a picture reference.|r
     .collect 215426,1
 step
+    #optional
     .train 402855,1
-    .zone Arathi Highlands >>Travel to |cFFfa9602Arathi Highlands|r
+    .zone Arathi Highlands >>Travel to Arathi Highlands
 step
     .train 402855,1
-    .goto Arathi Highlands,62.18,54.44
-    >>Pickup the |T136222:0|t[Arathi Echo] near Go'sheks Farm
-    .collect 215428,1
-step
-    .train 402855,1
-    .zone Dustwallow Marsh >>Travel to |cFFfa9602Dustwallow Marsh|r
-step
-    .train 402855,1
-    .goto Dustwallow Marsh,63.2,42.3
-    >>Pickup the |T136222:0|t[Theramore Echo] near the alliance graveyard
+    .goto Arathi Highlands,62.1,54.5
+    >>Click on the |cRXP_PICK_Grave|r to collect the |cRXP_LOOT_|T136222:0|t[Arathi Echo]|r on Go'sheks Farm next to the biggest building.
     .collect 215427,1
+step
+    .train 402855,1
+    .zone Dustwallow Marsh >>Travel to Dustwallow Marsh
+step
+    .train 402855,1
+    .goto Dustwallow Marsh,63.7,42.3
+    >>Click on the |cRXP_PICK_Tombstone|r to collect |cRXP_LOOT_|T136222:0|t[Theramore Echo]|r located near the Alliance graveyard.
+    .collect 215428,1
 step
     .train 402855,1
     .zone Swamp of Sorrows >>Travel to |cFFfa9602Swamp of Sorrows|r
 step
     .train 402855,1
-    .goto Swamp of Sorrows,15.3,57.7
-    >>Pickup the |T136222:0|t[Swamp Echo] near the lake
+    .goto Swamp of Sorrows,16.7,53.8
+    >>Click on the |cRXP_PICK_Grave|r to collect |cRXP_LOOT_|T136222:0|t[Swamp Echo]|r located near a lake next to a tree.
     .collect 215425,1
 step
     .train 402855,1
@@ -1148,9 +1196,26 @@ step
     .train 402855,1
     .goto 1415,47.44,19.75,10,0
     .goto 1415,47.45,19.69,5,0
-    .goto 1415,47.62,19.59,10 >> Enter The Scarlet Monastery Dungeon: Library
+    .goto 1415,47.62,19.59,10 >> Enter The Scarlet Monastery Dungeon: Library |cRXP_WARN_It is highly recommended to form a group of 5 players for the next steps.|r
 step
-    .train 402855 >> Offer the |T136222:0|t[Swamp Echo] to the Warrior Statue, the |T136222:0|t[Arathi Echo] to the Mage Statue, the |T136222:0|t[Theramore Echo] to the Paladin Statue, and finally, the |T136222:0|t[Graveyard Echo] to the Priest Statue in this specific order. If done correctly, a sphere will appear in the center. Clicking this sphere will grant you the |T136222:0|t[Memory of a Leader's Betrayal] use it to learn |T135936:0|t[Pain Suppression]
+    .train 402855,1
+    .cast 437054 >>Use the |T136222:0|t[Swamp Echo] infront of the Warrior Statue.
+    .use 215425
+step
+    .train 402855,1
+    .cast 437053 >>Use the |T136222:0|t[Arathi Echo] infront of the Mage Statue.
+    .use 215428
+step
+    .train 402855,1
+    .cast 436952 >>Use the |T136222:0|t[Theramore Echo] infront of the Paladin Statue.
+    .use 215425
+step
+    .train 402855,1
+    .cast 437055 >>Use the |T136222:0|t[Graveyard Echo] infront of the Priest Statue.
+    .use 215426
+step
+    .train 402855 >>Click on the Orange Remnant in the center of the room to receive |T135791:0|t|cRXP_FRIENDLY_[Apocryphal Epiphany]|r, use it to learn |T135936:0|t[Pain Suppression]
+    .use 213143
 ]])
 
 -- RXPGuides.RegisterGuide([[

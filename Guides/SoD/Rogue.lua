@@ -1589,54 +1589,76 @@ RXPGuides.RegisterGuide([[
 << Rogue SoD
 #group RestedXP Rune & Books Guide
 #subgroup Boots
-#name Master of Sublety - 34 (Stranglethorn Vale)
-#title Master of Sublety
+#name Master of Subtlety - 34 (Stranglethorn Vale)
+#title Master of Subtlety
 
 step
     .train 425103,1
-    .skill lockpicking,125 >>You need 125 lock picking to obtain this rune
+    .skill lockpicking,125 >>|cRXP_WARN_You must level your|r |T136058:0|t[Lockpicking] |cRXP_WARN_to at least 125 to obtain the|r |T132299:0|t[Master of Subtlety] |cRXP_WARN_rune|r
 step
+    .train 425103,1
     #completewith next
     .zone Stranglethorn Vale >>Travel to Stranglethorn Vale
 step
     .train 425103,1
-    >>|T133644:0|t[Pick Pocket] a |cRXP_ENEMY_Kurzen Elite|r in the cave for the |T134238:0|t[Compound Cage Key]
-    .goto Stranglethorn Vale,47.8,7.0
-    .collect 216616,1
-    .mob Kurzen Elite
+    #completewith Uniform
+    .goto Stranglethorn Vale,46.30,7.61,30 >> Enter The Stockpile (Kurzen's Cave)
 step
     .train 425103,1
-    >>Open the |cRXP_PICK_Kurzen Supply Crate|r for the |T132647:0|t[Kurzen Fighter's Uniform]
-    .goto Stranglethorn Vale,49,7
+    #completewith next
+    >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Kurzen Elites|r and |cRXP_ENEMY_Kurzen Subchiefs|r for the |cRXP_LOOT_Compound Cage Key|r
+    .collect 216616,1
+    .mob Kurzen Elite
+    .mob Kurzen Subchief
+step
+    #label Uniform
+    .train 425103,1
+    .goto Stranglethorn Vale,49.616,7.743
+    >>Open the |cRXP_PICK_Kurzen Supply Crate|r. Loot it for the |cRXP_LOOT_Kurzen Fighter's Uniform|r
     .collect 216617,1
 step
     .train 425103,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Wendel Mathers|r outside the cave inside the tower to free him
-    *|cRXP_WARN_He has a respawn timer of around 3 minutes|r
-    .goto Stranglethorn Vale,44.2,8.0
+    .goto Stranglethorn Vale,49.943,3.953,40,0
+    .goto Stranglethorn Vale,49.617,7.562,40,0
+    .goto Stranglethorn Vale,49.25,6.18
+    >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Kurzen Elites|r and |cRXP_ENEMY_Kurzen Subchiefs|r for the |cRXP_LOOT_Compound Cage Key|r
+    .collect 216616,1
+    .mob Kurzen Elite
+    .mob Kurzen Subchief
+step
+    .train 425103,1
+    #completewith next
+    .goto Stranglethorn Vale,44.261,7.908,60 >> Exit the cave. Travel toward |cRXP_FRIENDLY_Wendel Mathers|r in the tower outside
+step
+    .train 425103,1
+    .goto Stranglethorn Vale,44.261,7.908
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wendel Mathers|r in the tower
+    >>|cRXP_WARN_He has a respawn timer of around 3 minutes|r
+    .destroy 216616 >> Hand the |cRXP_LOOT_Compound Cage Key|r to him
+    .destroy 216617 >> Hand the |cRXP_LOOT_Kurzen Fighter's Uniform|r to him
     .skipgossip 218230,1
-    .destroy 216616 >>Give him the key
-    .destroy 216617 >>Give him the uniform
     .target Wendel Mathers
 step
+    .train 425103,1
     #completewith next
     .subzone 35 >>Travel to Booty Bay
 step
     .train 425103,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Captain Aransas|r to get |T133640:0|t[Captain Aransas' Reward]
-    .goto Stranglethorn Vale,27.6,76.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Aransas|r
+    >>She will give you |T133640:0|t[|cRXP_LOOT_Captain Aransas' Reward|r]
+    .goto Stranglethorn Vale,27.681,76.648
+    .skipgossip
     .collect 216618,1
     .target Captain Aransas
 step
     .train 425103,1
-    >>Open |T133640:0|t[Captain Aransas' Reward] to get the |T134419:0|t[|cRXP_FRIENDLY_Rune of Sublety|r]
-    .use 216618
+    .use 216618 >>Open |T133640:0|t[|cRXP_LOOT_Captain Aransas' Reward|r] to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Sublety|r] and |T338666:0|t[|cRXP_FRIENDLY_Jani's Charm|r]
+    >>|cRXP_WARN_Do NOT destroy|r |T338666:0|t[|cRXP_FRIENDLY_Jani's Charm|r] |cRXP_WARN_as it is used for gather future runes|r
     .collect 213136,1
 step
     .itemcount 213136,1
     .use 213136
-    .train 425103 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Sublety|r] to learn |T132299:0|t[Master of Subtlety]
-
+    .train 425103 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Sublety|r] |cRXP_WARN_to train|r |T132299:0|t[Master of Subtlety]
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1649,35 +1671,53 @@ RXPGuides.RegisterGuide([[
 
 
 step
-    .train 425103,1
-    .skill lockpicking,45 >>You need 45 lock picking to obtain this rune
+    #optional
+    .train 400093,1
+    .skill lockpicking,45 >>|cRXP_WARN_You must level your|r |T136058:0|t[Lockpicking] |cRXP_WARN_to at least 45 to obtain the|r |T134919:0|t[Rolling with the Punches] |cRXP_WARN_rune|r
 step
+    .train 400093,1
     #completewith next
     .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
 step
     .train 400093,1
-    >>Loot the |cRXP_PICK_Sizable Stolen Strongbox|r for the |T132597:0|t[Large Strongbox]
-    .goto Thousand Needles,18.5,20.9
+    #completewith next
+    .goto Thousand Needles,18.44,21.58,10 >> Enter the large tent at Camp E'thok
+step
+    .train 400093,1
+    .goto Thousand Needles,18.686,21.126
+    >>Open the |cRXP_PICK_Sizable Stolen Strongbox|r. Loot it for the |T132597:0|t[|cRXP_LOOT_Large Strongbox|r]
     .collect 215451,1
 step
     .train 400093,1
-    >>Use |T136058:0|t[Pick Lock] on the |T132597:0|t[Large Strongbox] and open it to obtain the |T132597:0|t[Medium Strongbox]
-    .goto Thousand Needles,18.5,20.9
+    .cast 1804 >>|cRXP_WARN_Cast|r |T136058:0|t[Pick Lock] |cRXP_WARN_on the|r |T132597:0|t[|cRXP_LOOT_Large Strongbox|r] |cRXP_WARN_to unlock it|r
+    .usespell 1804
+    .use 215451
+step
+    .train 400093,1
+    .use 215451 >> Open the |T132597:0|t[|cRXP_LOOT_Large Strongbox|r]. Loot it for the |T132597:0|t[|cRXP_LOOT_Medium Strongbox|r]
     .collect 215452,1
 step
     .train 400093,1
-    >>Use |T136058:0|t[Pick Lock] on the |T132597:0|t[Medium Strongbox] and open it to obtain the |T132597:0|t[Small Strongbox]
-    .goto Thousand Needles,18.5,20.9
+    .cast 1804 >>|cRXP_WARN_Cast|r |T136058:0|t[Pick Lock] |cRXP_WARN_on the|r |T132597:0|t[|cRXP_LOOT_Medium Strongbox|r] |cRXP_WARN_to unlock it|r
+    .usespell 1804
+    .use 215452
+step
+    .train 400093,1
+    .use 215452 >> Open the |T132597:0|t[|cRXP_LOOT_Medium Strongbox|r]. Loot it for the |T132597:0|t[|cRXP_LOOT_Small Strongbox|r]
     .collect 215453,1
 step
     .train 400093,1
-    >>Use |T136058:0|t[Pick Lock] on the |T132597:0|t[Small Strongbox] and open it to obtain the rune |T134419:0|t[|cRXP_FRIENDLY_Rune of the Southpaw|r]
-    .goto Thousand Needles,18.5,20.9
+    .cast 1804 >>|cRXP_WARN_Cast|r |T136058:0|t[Pick Lock] |cRXP_WARN_on the|r |T132597:0|t[|cRXP_LOOT_Small Strongbox|r] |cRXP_WARN_to unlock it|r
+    .usespell 1804
+    .use 215453 
+step
+    .train 400093,1
+    .use 215453 >> Open the |T132597:0|t[|cRXP_LOOT_Small Strongbox|r]. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Southpaw|r]
     .collect 213138,1
 step
     .itemcount 213138,1
     .use 213138
-    .train 400093 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Southpaw|r] to learn |T134919:0|t[Rolling with the Punches]
+    .train 400093 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Southpaw|r] |cRXP_WARN_to train|r |T134919:0|t[Rolling with the Punches]
 ]])
 
 -- RXPGuides.RegisterGuide([[

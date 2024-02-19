@@ -949,7 +949,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Hunter SoD
 #group RestedXP Rune & Books Guide
-#subgroup Waist
+#subgroup Belt
 #title Expose Weakness
 #name Expose Weakness - 40 (Azeroth)
 
@@ -1044,11 +1044,12 @@ step
 step
     .train 410109,1
     .goto Arathi Highlands,67.8,66.0
-    >>Kill |cRXP_ENEMY_Needletooth|r. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Steady Shot|r]
+    >>Kill |cRXP_ENEMY_Needletooth|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Steady Shot|r]
+    >>|cRXP_ENEMY_Needletooth|r |cRXP_WARN_is a fish that swims in the Witherbark Village lake|r
     .collect 213122,1
     .mob Needletooth
 step
-    .train 410109 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Steady Shot|r] to learn |T132213:0|t[Steady Shot]
+    .train 410109 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Steady Shot|r] |cRXP_WARN_to train|r |T132213:0|t[Steady Shot]
     .use 213122
     .itemcount 213122,1
 ]])
@@ -1107,40 +1108,4 @@ step
 -- T.N.T.
 
 
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Hunter SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Skill Books
--- #title Treatise on Aspect of the Viper
--- #name Treatise on Aspect of the Viper - 27-40 (Scarlet Monastery)
--- for phase 3
-
--- -- Rune of Aspect of the Viper
-
--- step
---     .train 415423,1
---     #completewith Interrogator Vishas
---     +This skillbook is obtained by killing the first dungeon boss of Scarlet Monastery: Graveyard or the rare |cRXP_ENEMY_Ironspine|r |cRXP_WARN_it is highly recommended to have a group of 5 players.|r
--- step
---     .train 415423,1
---     .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
--- step
---     .train 415423,1
---     .goto 1415,47.44,19.75,10,0
---     .goto 1415,47.45,19.69,5,0
---     .goto 1415,47.62,19.59,10,0
---     .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
--- step
---     .train 415423,1
---     #label Interrogator Vishas
---     >>Kill |cRXP_ENEMY_Interrogator Vishas|r, |cRXP_ENEMY_Ironspine|r and loot them for |cRXP_LOOT_Treatise on Aspect of the Viper|r |cRXP_WARN_This might require multiple kills.|r
---     .collect 216770
---     .mob Interrogator Vishas
---     .mob Ironspine
--- step
---     .train 415423 >>|cRXP_WARN_Use the|r |T133739:0|t|cRXP_LOOT_[Treatise on Aspect of the Viper]|r |cRXP_WARN_to learn|r |T132160:0|t[Aspect of the Viper]
---     .use 216764
 -- ]])

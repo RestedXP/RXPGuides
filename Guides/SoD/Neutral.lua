@@ -1297,7 +1297,7 @@ step
     .train 425102,1 << Rogue
     .train 425883,1 << Shaman
     >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with the |cRXP_FRIENDLY_Extinguished Campfire|r
-    .goto Desolace,47.5,54.6
+    .goto Desolace,47.532,54.605
     .accept 79229 >>Accept Highway Robbery
 step
     .train 431663,1 << Priest
@@ -1310,7 +1310,7 @@ step
     .train 425102,1 << Rogue
     .train 425883,1 << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bibbly F'utzbuckle|r
-    .goto Desolace,62.30,39.00
+    .goto Desolace,62.314,38.965
     .turnin 79229 >>Turn in Highway Robbery
     .accept 79235 >>Accept On the Lam
     .target Bibbly F'utzbuckle
@@ -1328,7 +1328,7 @@ step
     .train 425102,1 << Rogue
     .train 425883,1 << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tokal|r in the Booty Bay inn
-    .goto Stranglethorn Vale,27.0,77.2
+    .goto Stranglethorn Vale,26.988,77.284
     .turnin 79235 >>Turn in On the Lam
     .accept 79236 >>Accept Cherry for Your Thoughts?
     .target Tokal
@@ -1343,7 +1343,7 @@ step
     .train 425102,1 << Rogue
     .train 425883,1 << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nixxrax Fillamug|r buy a |T132790:0|t[Cherry Grog]
-    .goto Stranglethorn Vale,27.0,77.2
+    .goto Stranglethorn Vale,27.039,77.168
     .collect 4600,1
     .target Nixxrax Fillamug
 step
@@ -1357,17 +1357,17 @@ step
     .train 425102,1 << Rogue
     .train 425883,1 << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tokal|r
-    .goto Stranglethorn Vale,27.0,77.2
+    .goto Stranglethorn Vale,26.988,77.284
     .turnin 79236 >>Turn in Cherry for Your Thoughts?
     .accept 79242 >>Accept No Honor Among Thieves
     .target Tokal
 step
     #completewith next
-    .zone Arathi Highlands >>Travel to Arathi Highlands
+    .zone Wetlands >>Travel to the Arathi Highlands/Wetlands zone border
 step
     #optional
     #completewith next
-    .goto Arathi Highlands,58.32,6.91
+    .goto Wetlands,58.320,6.927
 --   .goto Arathi Highlands,89.52,77.91
     .cast 6477 >>Enter the |cRXP_PICK_Rowboat|r in the water
     .train 431663,1 << Priest
@@ -1555,13 +1555,16 @@ step
     >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Tome of Expanded Intellect|r |cRXP_WARN_This might require multiple runs.|r << Mage
     >>Kill Bosses,Rares and monsters.Loot them for |T133745:0|t|cRXP_LOOT_[Testament of Enhanced Blessings]|r |cRXP_WARN_This might require multiple runs.|r << Paladin
     >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Scroll of Shadowfiend|r, |T237543:0|t[Increased Fortitude] |cRXP_WARN_This might require multiple runs.|r << Priest
+    >>|cRXP_WARN_Additionally, click on the |cRXP_PICK_Tombstone|r near the Headless Horseman's spawn location to collect the |cRXP_LOOT_|T136222:0|t[Graveyard Echo]|r |cFFFF0000This is necessary for the Pain Suppression Rune. If you already have this rune, you can skip it|r. << Priest
     >>Kill Bosses,Rares and monsters.Loot them for |T133733:0|t|cRXP_LOOT_[Grimoire of Soul Harvesting]|r,|T133733:0|t|cRXP_LOOT_[Grimoire of Portal of Summoning]|r |cRXP_WARN_This might require multiple runs.|r << Warlock
     >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Rune of the Commander|r |cRXP_WARN_This might require multiple runs.|r << Warrior
     >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Rune of the Commander|r |cRXP_WARN_This might require multiple runs.|r << Shaman
+    .link https://imgur.com/a/lqRc0i6 >> |cRXP_WARN_Click here for a picture reference for the |T136222:0|t[Graveyard Echo]|r. << Priest
     .collect 216738,1 << Rogue -- Manual of Redirect
     .collect 216740,1 << Mage -- Tome of Expanded Intellect
     .collect 216744,1 << Priest -- Scroll of Increased Fortitude
     .collect 216745,1 << Priest -- Scroll of Shadowfiend
+    .collect 215426,1 << Priest -- Graveyard Echo
     .collect 216746,1 << Warrior -- Handbook of Commanding Shout
     .collect 216747,1 << Warlock -- Grimoire of Soul Harvesting
     .collect 216748,1 << Warlock -- Grimoire of Portal of Summoning

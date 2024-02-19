@@ -552,36 +552,46 @@ RXPGuides.RegisterGuide([[
 #title Berserk
 
 step
+    #optional
+    +|cRXP_WARN_You must be level at least level 28 to learn|r |T236149:0|t[Berserk]
+    .xp >29,1
+step
+    #optional
+    .train 424760,1
+    .train 5209 >> |cRXP_WARN_You must have|r |T132117:0|t[Challenging Roar] |cRXP_WARN_trained in order to aquire the|r |T236149:0|t[Berserk] |cRXP_WARN_rune|r
+step
     #completewith next
     .train 424760,1
     .zone Thousand Needles >>Travel to Thousand Needles
 step
     .train 424760,1
-    .goto Thousand Needles,68.7,55.2
-    .aura 435081,1 >>Lookout for the Bear Statue. When nearby you'll receive the buff |T134912:0|t[Beastly Effigy]
+    .goto Thousand Needles,68.690,55.155
+    .aura 435081 >> |cRXP_WARN_Stand next to the |cRXP_PICK_Beastly Effigy|r statue to receive the|r |T134912:0|t[Beastly Effigy] |cRXP_WARN_buff|r
 step
     #completewith next
     .train 424760,1
-    .cast 5209 >> Use |T132117:0|t[Challenging Roar] near the Bear Statue to spawn |cRXP_ENEMY_Zai'enki|r
+    .goto Thousand Needles,68.690,55.155
+    .cast 5209 >> |cRXP_WARN_Go into|r |T132276:0|t[Bear Form] |cRXP_WARN_and cast|r |T132117:0|t[Challenging Roar] |cRXP_WARN_to summon|r |cRXP_ENEMY_Zai'enki|r |cRXP_WARN_(lvl 28 elite)|r
 step
     .train 424760,1
-    .goto Thousand Needles,68.7,55.2
-    >>Kill |cRXP_ENEMY_Zai'enki|r |cRXP_WARN_(lvl 28 elite)|r and loot him for |T134912:0|t[|cRXP_FRIENDLY_Idol of the Heckler|r]
+    .goto Thousand Needles,68.690,55.155
+    >>Kill |cRXP_ENEMY_Zai'enki|r. Loot it for the |T134912:0|t[|cRXP_FRIENDLY_Idol of the Heckler|r]
     .collect 213594,1
     .mob Zai'enki
 step
     .train 424760,1
     .equip 18,213594 >> Equip the |T134912:0|t[|cRXP_FRIENDLY_Idol of the Heckler|r]
+    .use 213594
 step
-    #title Gain 5x |T237556:0|t[Inspiration]
+    #title Gain 5x |T237556:0|t[Building Inspiration]
     .itemcount 213594,1
     .train 424760,1
-    .aura 408953,5+ >> Use |T132117:0|t[Challenging Roar] and taunt 2 enemies simultaneously then kill one of them; repeat this 5 times. |cRXP_WARN_You will loose all stacks after dying|r
-    *|cRXP_WARN_The easiest way is to fight one mob until it is mostly dead, pull a second one and then kill the first one while the taunt is active|r.
+    .aura 408828 >> |cRXP_WARN_Cast|r |T132117:0|t[Challenging Roar] |cRXP_WARN_to taunt at least 2 enemies and kill one of them while they have the|r |T132117:0|t[Challenging Roar] |cRXP_WARN_debuff. This will give you a stack of the|r |T237556:0|t[Building Inspiration] |cRXP_WARN_buff. Repeat this 5 times until you gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    *|cRXP_WARN_It's recommened you fight one mob and almost kill it, then pull a 2nd and cast|r |T132117:0|t[Challenging Roar]|cRXP_WARN_, then kill the low health mob. You will lose all stacks of|r |T237556:0|t[Building Inspiration] |cRXP_WARN_if you die|r
 step
     .itemcount 213594,1
     .use 213594
-    .train 424760 >> Use |T134912:0|t[|cRXP_FRIENDLY_Idol of the Heckler|r] to learn |T236149:0|t[Berserk]
+    .train 424760 >> |cRXP_WARN_Use the|r |T134912:0|t[|cRXP_FRIENDLY_Idol of the Heckler|r] |cRXP_WARN_to train|r |T236149:0|t[Berserk]
 ]])
 
 RXPGuides.RegisterGuide([[

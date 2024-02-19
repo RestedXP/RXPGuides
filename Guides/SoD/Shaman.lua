@@ -2208,7 +2208,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
 #group RestedXP Rune & Books Guide
-#subgroup Waist
+#subgroup Belt
 #name Fire Nova
 
 -- Fire Nova
@@ -2296,7 +2296,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
 #group RestedXP Rune & Books Guide
-#subgroup Waist
+#subgroup Belt
 #name Maelstrom Weapon - 40 (Azeroth)
 
 -- Maelstrom Weapon
@@ -2452,7 +2452,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Horde Shaman SoD
 #group RestedXP Rune & Books Guide
-#subgroup Waist
+#subgroup Belt
 #name Power Surge - 30 (Arathi Highlands)
 
 -- Power Surge
