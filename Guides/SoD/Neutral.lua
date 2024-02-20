@@ -1664,12 +1664,13 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-<< Hunter SoD
+<< Hunter SoD/Druid SoD
 #group RestedXP Rune & Books Guide
-#subgroup Boots << Hunter
-#subgroup Boots << Druid
-#name Invigoration - 35 (Azeroth)
-#title Invigoration
+#subgroup Boots
+#name Invigoration - 35 (Azeroth) << Hunter
+#name Survival Instincts - 35 (Azeroth) << Druid
+#title Invigoration << Hunter
+#title Survival Instincts << Druid
 
 -- Invigoration
 
@@ -1682,15 +1683,16 @@ step
     .train 416089,1 << Hunter
     .train 410027,1 << Druid
     .goto Swamp of Sorrows,25.0,54.2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r and buy |T133653:0|t[Entomology Starter Kit] |cRXP_WARN_it will cost 50silver.|r
-    .collect 213565,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r
+    >>|cRXP_WARN_Buy a|r |T133653:0|t[Entomology Starter Kit] |cRXP_WARN_from her|r
+    .collect 213565,1 --Entomology Starter Kit (1x)
     .target Amaryllis Webb
 step
     .train 416089,1 << Hunter
     .train 410027,1 << Druid
     >>Open the |T133653:0|t[Entomology Starter Kit]
     .use 213565
-    .collect 213562,1
+    .collect 213562,1 --Bug Catching Net (1x)
 step
     .train 416089,1 << Hunter
     .train 410027,1 << Druid
@@ -1699,10 +1701,10 @@ step
 step
     .train 416089,1 << Hunter
     .train 410027,1 << Druid
-    >>Use the |T134325:0|t[Bug Catching Net] on the |cRXP_ENEMY_Arbor Tarantula|r on the tree stump.
+    >>Use the |T134325:0|t[Bug Catching Net] on the |cRXP_ENEMY_Arbor Tarantula|r on the tree stump
     .goto Stranglethorn Vale,44.6,19.8
     .use 213562
-    .collect 213566,1
+    .collect 213566,1 --Arbor Tarantula Specimen (1x)
     .mob Arbor Tarantula
 step
     .train 416089,1 << Hunter
@@ -1715,7 +1717,7 @@ step
     >>Use the |T134325:0|t[Bug Catching Net] on a |cRXP_ENEMY_Hay Weevil|r
     .goto Arathi Highlands,30.7,28.7
     .use 213562
-    .collect 213568,1
+    .collect 213568,1 --Hay Weevil Specimen (1x)
     .mob Hay Weevil
 step
     .train 416089,1 << Hunter
@@ -1728,7 +1730,7 @@ step
     >>Use the |T134325:0|t[Bug Catching Net] on a |cRXP_ENEMY_Flesh Picker|r
     .goto Desolace,51.2,59.9
     .use 213562
-    .collect 213567,1
+    .collect 213567,1 --Flesh Picker Specimen (1x)
     .mob Flesh Picker
 step
     .train 416089,1 << Hunter
@@ -1736,12 +1738,19 @@ step
     #completewith next
     .zone Swamp of Sorrows >>Travel to Swamp of Sorrows
 step
+    .train 416089,1 << Hunter
+    .train 410027,1 << Druid
     .goto Swamp of Sorrows,25.0,54.2
-    .train 410027 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r to acquire |T132266:0|t[Survival Instincts] << Druid
-    .train 416089 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r to acquire |T236184:0|t[Invigoration] << Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r 
+    >>Acquire the |T134419:0|t[Rune of Invigoration] from her << Hunter
+    >>Acquire the |T134419:0|t[Rune of Survival] from her << Druid
+    .collect 213125,1 << Hunter --Rune of Invigoration (1x)
+    .collect 210817,1 << Druid --Rune of Survival (1x)
     .skipgossip 217412,1
     .target Amaryllis Webb
 step
     .train 416089 >> Use the |T134419:0|t[Rune of Invigoration] to learn |T236184:0|t[Invigoration] << Hunter
     .train 410027 >> Use the |T134419:0|t[Rune of Survival] to learn |T132266:0|t[Survival Instincts] << Druid
+    .itemcount 210817,1 << Druid
+    .itemcount 213125,1 << Hunter
 ]])

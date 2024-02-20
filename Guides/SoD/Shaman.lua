@@ -2338,10 +2338,10 @@ step
     .train 410100,1
     .goto Alterac Mountains,80.499,66.923
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Bath'rah the Windwatcher|r
-    .turnin 79360 --Turn in Elemental Aid
-    .accept 79361 --Accept Power of da Wind
-    .accept 79362 --Accept Power of da Earth
-    .accept 79363 --Accept Power of da Water
+    .turnin 79360 >>Turn in Elemental Aid
+    .accept 79361 >>Accept Power of da Wind
+    .accept 79362 >>Accept Power of da Earth
+    .accept 79363 >>Accept Power of da Water
     .target Bath'rah the Windwatcher
 step
     .train 410100,1
