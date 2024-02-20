@@ -1635,7 +1635,7 @@ step
     .isQuestTurnedIn 79940
     .train 426178,1
     .goto Wetlands,8.086,58.592
-    .gossip 3179 >> Talk to |cRXP_FRIENDLY_Harold Riggs|r. Ensure to go through all of his gossip dialogues
+    .gossip 3179,4 >> Talk to |cRXP_FRIENDLY_Harold Riggs|r. Ensure to go through all of his gossip dialogues
     .skipgossip 3179,2
     .target Harold Riggs
 step
