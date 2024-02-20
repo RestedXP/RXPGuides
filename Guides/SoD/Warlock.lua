@@ -677,7 +677,7 @@ step
 step
     .train 426445,1
     .xp <30,1
-    .goto The Barrens,49.2 57.2
+    .goto The Barrens,49.2,57.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raszel Ander|r.
     .accept 78994,1 >> Accept A Solid Foundation
     .target Raszel Ander
@@ -711,8 +711,8 @@ step >> Horde
 step
     .train 426445,1
     #label Invisibility Potion
-    .goto Ashenvale 90.9,38.6,20,0
-    .goto Ashenvale 91,37
+    .goto Ashenvale,90.9,38.6,20,0
+    .goto Ashenvale,91,37
     >>|cRXP_WARN_By using |T136155:0|t[Eye of Kilrogg] you can scout the area beforehand to unexpected deaths|r
     >>Use |T236874:0|t[Invisibility Potion] to sneak past level 60 elites
     .aura 429407,1 >> |cRXP_WARN_Before clicking the |cRXP_PICK_Tree|r remove your equipment and apply |T136121:0|t[Shadow Ward] on yourself.|r |cFFFF0000This is important as you will receive a deadly ticking debuff removing your equipment will reduce the amount of damage you'll receive and use food if you need to.|r
@@ -723,12 +723,12 @@ step
 step
     .train 426445,1
     #completewith Turnin A Solid Foundation
-    .hs Hearth to Astranaar << Alliance
-    .hs Hearth to Camp Taurajo << Horde
+    .hs >> Hearth to Astranaar << Alliance
+    .hs >> Hearth to Camp Taurajo << Horde
 step
     .train 426445,1
     #label Turnin A Solid Foundation
-    .goto The Barrens,49.2 57.2
+    .goto The Barrens,49.2,57.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raszel Ander|r.
     .turnin 78994,1 >> Turnin A Solid Foundation
     .accept 78914,1 >> Accept A Soul vessel
