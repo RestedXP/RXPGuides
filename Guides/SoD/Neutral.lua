@@ -1273,15 +1273,15 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Belt << Druid/Priest/Rogue/Warlock
 #subgroup Boots << Mage/Shaman/Hunter/Paladin/Warrior
-#name Mind Spike - 30 (Desolace) << Priest
-#name Trap Launcher - 30 (Desolace) << Hunter
-#name Eclipse - 30 (Desolace) << Druid
-#name Enraged Regeneration - 30 (Desolace) << Warrior
-#name Ancestral Awakening - 30 (Desolace) << Shaman
-#name Shadow and Flame - 30 (Desolace) << Warlock
-#name The Art of War - 30 (Desolace) << Paladin
-#name Brain Freeze - 30 (Desolace) << Mage
-#name Poisoned Knife - 30 (Desolace) << Rogue
+#name Mind Spike - 35 (Azeroth) << Priest
+#name Trap Launcher - 35 (Azeroth) << Hunter
+#name Eclipse - 35 (Azeroth) << Druid
+#name Enraged Regeneration - 35 (Azeroth) << Warrior
+#name Ancestral Awakening - 35 (Azeroth) << Shaman
+#name Shadow and Flame - 35 (Azeroth) << Warlock
+#name The Art of War - 35 (Azeroth) << Paladin
+#name Brain Freeze - 35 (Azeroth) << Mage
+#name Poisoned Knife - 35 (Azeroth) << Rogue
 
 step
     #completewith next
@@ -1296,7 +1296,7 @@ step
     .train 426452,1 << Warlock
     .train 425102,1 << Rogue
     .train 425883,1 << Shaman
-    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with the |cRXP_FRIENDLY_Extinguished Campfire|r
+    >>Click the |cRXP_PICK_Extinguished Campfire|r
     .goto Desolace,47.532,54.605
     .accept 79229 >>Accept Highway Robbery
 step
@@ -1327,7 +1327,7 @@ step
     .train 426452,1 << Warlock
     .train 425102,1 << Rogue
     .train 425883,1 << Shaman
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tokal|r in the Booty Bay inn
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tokal|r
     .goto Stranglethorn Vale,26.988,77.284
     .turnin 79235 >>Turn in On the Lam
     .accept 79236 >>Accept Cherry for Your Thoughts?
@@ -1342,9 +1342,10 @@ step
     .train 426452,1 << Warlock
     .train 425102,1 << Rogue
     .train 425883,1 << Shaman
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nixxrax Fillamug|r buy a |T132790:0|t[Cherry Grog]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nixxrax Fillamug|r
+    >>|cRXP_BUY_Buy a|r |T132790:0|t[Cherry Grog]
     .goto Stranglethorn Vale,27.039,77.168
-    .collect 4600,1
+    .collect 4600,1,79236,1
     .target Nixxrax Fillamug
 step
     .train 431663,1 << Priest
@@ -1365,10 +1366,7 @@ step
     #completewith next
     .zone Wetlands >>Travel to the Arathi Highlands/Wetlands zone border
 step
-    #optional
-    #completewith next
     .goto Wetlands,58.320,6.927
---   .goto Arathi Highlands,89.52,77.91
     .cast 6477 >>Enter the |cRXP_PICK_Rowboat|r in the water
     .train 431663,1 << Priest
     .train 416031,1 << Paladin
@@ -1380,15 +1378,7 @@ step
     .train 425102,1 << Rogue
     .train 425883,1 << Shaman
     .subzoneskip 308
-step
-    .goto Arathi Highlands,93.90,71.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illari Duskfeather|r for |T134236:0|t[Illari's Key] << NightElf
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illari Duskfeather|r << !NightElf
-    >>Defeat her, then open the |cRXP_PICK_Dropped Pouch|r on the ground. Loot it for |T134236:0|t[Illari's Key] << !NightElf
-    .skipgossip 215655,1 << !NightElf
-    .skipgossip 215655,1,2,1 << NightElf
-    .complete 79242,1 --Found Illari Duskfeather
-    .complete 79242,2 --Illari's Key
+step << NightElf
     .train 431663,1 << Priest
     .train 416031,1 << Paladin
     .train 401752,1 << Mage
@@ -1398,6 +1388,58 @@ step
     .train 426452,1 << Warlock
     .train 425102,1 << Rogue
     .train 425883,1 << Shaman
+    .goto Arathi Highlands,93.90,71.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illari Duskfeather|r to receive |cRXP_LOOT_Illari's Key|r
+    .complete 79242,1 --Found Illari Duskfeather
+    .collect 212347,1,79242,1 --Illari's Key
+    .skipgossip 215655,1,1,2
+    .target Illari Duskfeather
+step << !NightElf
+    .train 431663,1 << Priest
+    .train 416031,1 << Paladin
+    .train 401752,1 << Mage
+    .train 410118,1 << Hunter
+    .train 410029,1 << Druid
+    .train 403467,1 << Warrior
+    .train 426452,1 << Warlock
+    .train 425102,1 << Rogue
+    .train 425883,1 << Shaman
+    #completewith next
+    .goto Arathi Highlands,93.90,71.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illari Duskfeather|r. You will have to fight her after
+    .complete 79242,1 --Found Illari Duskfeather
+    .skipgossip 215655,1,1,1
+    .target Illari Duskfeather
+step << !NightElf
+    .train 431663,1 << Priest
+    .train 416031,1 << Paladin
+    .train 401752,1 << Mage
+    .train 410118,1 << Hunter
+    .train 410029,1 << Druid
+    .train 403467,1 << Warrior
+    .train 426452,1 << Warlock
+    .train 425102,1 << Rogue
+    .train 425883,1 << Shaman
+    .goto Arathi Highlands,93.90,71.49
+    >>Kill |cRXP_ENEMY_Illari Duskfeather|r. Open the |cRXP_PICK_Dropped Pouch|r she drops on the ground. Loot it for |cRXP_LOOT_Illari's Key|r
+    .collect 212347,1,79242,1 --Illari's Key
+    .skipgossip 215655,1,1,1
+    .mob Illari Duskfeather 
+step << !NightElf
+    .train 431663,1 << Priest
+    .train 416031,1 << Paladin
+    .train 401752,1 << Mage
+    .train 410118,1 << Hunter
+    .train 410029,1 << Druid
+    .train 403467,1 << Warrior
+    .train 426452,1 << Warlock
+    .train 425102,1 << Rogue
+    .train 425883,1 << Shaman
+    .goto Arathi Highlands,93.90,71.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illari Duskfeather|r
+    .complete 79242,1 --Found Illari Duskfeather
+    .skipgossip
+    .target Illari Duskfeather
 step
     .train 431663,1 << Priest
     .train 416031,1 << Paladin
@@ -1409,7 +1451,7 @@ step
     .train 425102,1 << Rogue
     .train 425883,1 << Shaman
     >>Click |cRXP_PICK_Illari's Loot Cache|r on the ground
-    .goto Arathi Highlands,94.15,69.27
+    .goto Arathi Highlands,94.154,69.266
     .turnin 79242 >>Turn in No Honor Among Thieves
 step
     .train 431663,1 << Priest
@@ -1421,7 +1463,15 @@ step
     .train 426452,1 << Warlock
     .train 425102,1 << Rogue
     .train 425883,1 << Shaman
-    >>Open the |T133876:0|t[Jewel-Encrusted Box] for the rune
+    >>Open the |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Box|r] for the |T135791:0|t[|cRXP_FRIENDLY_Psychosophic Epiphany|r] << Priest
+    >>Open the |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Box|r] for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Warfare|r] << Paladin
+    >>Open the |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Box|r] for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Brain Freeze|r] << Mage
+    >>Open the |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Box|r] for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Trapper|r] << Hunter
+    >>Open the |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Box|r] for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Eclipse|r] << Druid
+    >>Open the |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Box|r] for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Healing Rage|r] << Warrior
+    >>Open the |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Box|r] for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Burning Darkness|r] << Warlock
+    >>Open the |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Box|r] for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Poisoned Blade|r] << Rogue
+    >>Open the |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Box|r] for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Ancestral Awakening|r] << Shaman
     .collect 212552,1 << Priest
     .collect 212551,1 << Paladin
     .collect 208853,1 << Mage
@@ -1433,15 +1483,15 @@ step
     .collect 212560,1 << Shaman
     .use 212553 --Jewel-Encrusted Box (1)
 step
-    .train 431663 >>Use the |T135791:0|t[|cRXP_FRIENDLY_Psychosophic Epiphany|r] to learn |T136181:0|t[Mind Spike] << Priest
-    .train 416031 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Warfare|r] to learn |T236246:0|t[The Art of War] << Paladin
-    .train 401752 >>Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Brain Freeze|r] to learn |T236206:0|t[Brain Freeze] << Mage
-    .train 410118 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Trapper|r] to learn |T133882:0|t[Trap Launcher] << Hunter
-    .train 410029 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Eclipse|r] to learn |T236151:0|t[Eclipse] << Druid
-    .train 403467 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Healing Rage|r] to learn |T132345:0|t[Enraged Regeneration] << Warrior
-    .train 426452 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Burning Darkness|r] to learn |T135823:0|t[Shadow and Flame] << Warlock
-    .train 425102 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Poisoned Blade|r] to learn |T236270:0|t[Poisoned Blade] << Rogue
-    .train 425883 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Ancestral Awakening|r] to learn |T237571:0|t[Ancestral Awakening] << Shaman
+    .train 431663 >>|cRXP_WARN_Use the|r |T135791:0|t[|cRXP_FRIENDLY_Psychosophic Epiphany|r] |cRXP_WARN_to train|r |T136181:0|t[Mind Spike] << Priest
+    .train 416031 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Warfare|r] |cRXP_WARN_to train|r |T236246:0|t[The Art of War] << Paladin
+    .train 401752 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Brain Freeze|r] |cRXP_WARN_to train|r |T236206:0|t[Brain Freeze] << Mage
+    .train 410118 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Trapper|r] |cRXP_WARN_to train|r |T133882:0|t[Trap Launcher] << Hunter
+    .train 410029 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Eclipse|r] |cRXP_WARN_to train|r |T236151:0|t[Eclipse] << Druid
+    .train 403467 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Healing Rage|r] |cRXP_WARN_to train|r |T132345:0|t[Enraged Regeneration] << Warrior
+    .train 426452 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Burning Darkness|r] |cRXP_WARN_to train|r |T135823:0|t[Shadow and Flame] << Warlock
+    .train 425102 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Poisoned Blade|r] |cRXP_WARN_to train|r |T236270:0|t[Poisoned Blade] << Rogue
+    .train 425883 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Ancestral Awakening|r] |cRXP_WARN_to train|r |T237571:0|t[Ancestral Awakening] << Shaman
     .use 212552 << Priest
     .use 212551 << Paladin
     .use 208853 << Mage
@@ -1460,6 +1510,10 @@ step
     .itemcount 212561,1 << Warlock
     .itemcount 212559,1 << Rogue
     .itemcount 212560,1 << Shaman
+step
+    .goto 1417,89.536,78.149
+    .cast 6477 >>Enter the |cRXP_PICK_Rowboat|r in the water to get back to Arathi
+    .subzoneskip 308,1
 ]])
 
 RXPGuides.RegisterGuide([[
