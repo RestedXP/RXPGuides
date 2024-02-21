@@ -1867,6 +1867,9 @@ step
     .target Tonga Runetotem
     .target Sergra Darkthorn
     .target Gazrog
+step
+    .destroy 5165 >>Delete any leftover |T132914:0|t[Sunscale Feathers] you may still have
+    .itemcount 5165,1
 step << Hunter
     .goto The Barrens,51.67,29.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Barg|r
@@ -1999,12 +2002,8 @@ step
     .goto Stonetalon Mountains,47.47,62.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Jayka|r
     >>|cRXP_WARN_Do NOT set your hearthstone!|r
-    >>|cRXP_BUY_Buy|r |T133970:0|t[Mutton Chop] |cRXP_BUY_from her|r << Rogue/Warrior
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_from her|r << Priest/Mage
-    >>|cRXP_BUY_Buy|r |T133970:0|t[Mutton Chop] |cRXP_BUY_and|r |T132796:0|t[Melon Juice] |cRXP_BUY_from her|r << Warlock/Shaman/Druid/Hunter
-    .vendor >> Vendor Trash
-    .collect 3770,20,1093,1 << !Priest !Mage --Mutton Chop (20)
-    .collect 1205,20,1093,1 << !Rogue !Warrior --Melon Juice (20)
+	.vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
+    .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
     .target Innkeeper Jayka
 step
     .goto Stonetalon Mountains,47.61,61.58
@@ -2199,12 +2198,8 @@ step
 step
     .goto The Barrens,45.58,59.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Byula|r
-    >>|cRXP_BUY_Buy|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << Rogue/Warrior
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_from him|r << Priest/Mage
-    >>|cRXP_BUY_Buy|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_and|r |T132796:0|t[Melon Juice] |cRXP_BUY_from him|r << Warlock/Shaman/Druid/Hunter
-    .vendor >> Vendor Trash
-    .collect 4538,20,895,1 << !Priest !Mage --Snapvine Watermelon (40)
-    .collect 1205,20,895,1 << !Rogue !Warrior --Melon Juice (40)
+	.vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
+    .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
     .target Innkeeper Byula
 step
     .goto The Barrens,44.85,59.14
@@ -2418,6 +2413,9 @@ step
     .goto The Barrens,52.26,31.93
     .target Tonga Runetotem
     .target Mankrik
+step
+    .destroy 5085 >>Delete any leftover |T133721:0|t[Bristleback Quilboar Tusks] you may still have
+    .itemcount 5085,1
 step
     #label XroadsHS2
     .goto The Barrens,51.99,29.89
@@ -2781,9 +2779,13 @@ step
     .target Mangletooth
     .addquestitem 4075,5052
 step
+    #optional
     #completewith Thunderhawk
+    .goto The Barrens,44.55,59.27,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
     +|cRXP_WARN_Use your|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r] |cRXP_WARN_to get buffs. Save at least 4 of them for later|r
     +|cRXP_WARN_Make sure to turn off any autocomplete functions from addons such as Questie or Leatrix Plus for this!|r
+    .target Mangletooth
 step
     #label IshamuhaleTurnin
     .goto The Barrens,44.85,59.14
@@ -2934,13 +2936,16 @@ step
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .accept 4021 >>Accept Counterattack!
+    --.timer 183,Warlord Krom'zar Spawn
     .target Regthar Deathgate
     .isQuestTurnedIn 852
     .group
+    --timer is random, generally somewhere between 120-210 seconds
 step
     .goto The Barrens,44.48,28.15
     >>Kill |cRXP_ENEMY_Warlord Krom'zar|r once he appears. Loot the |cRXP_PICK_Banner|r that he drops on the ground
     >>|cRXP_WARN_Be careful! He is a strong elite and is guarded by at least two|r |cRXP_ENEMY_Kolkar|r |cRXP_WARN_mobs|r
+    >>|cRXP_WARN_It can take up to 3 minutes until he spawns|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .group 3
@@ -3011,6 +3016,7 @@ step
     #map Stonetalon Mountains
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seereth|r and |cRXP_FRIENDLY_Makaba|r
     .turnin 1062 >>Turn in Goblin Invaders
+    .timer 4,Goblin Invaders RP
     .accept 1063 >>Accept The Elder Crone
     .accept 1068 >> Accept Shredding Machines
     .goto The Barrens,35.26,27.88
@@ -3084,6 +3090,7 @@ step
     .group
 step
     #completewith ElderCroneTurnin
+    .goto Thunder Bluff,54.18,27.01,20,0
     .goto Thunder Bluff,50.75,37.07,40 >> Take the elevator up to Thunder Bluff
 step << Druid
     .goto Thunder Bluff,47.12,57.88
@@ -3778,12 +3785,8 @@ step
     .goto Stonetalon Mountains,47.47,62.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Jayka|r
     >>|cRXP_WARN_Do NOT set your hearthstone!|r
-    >>|cRXP_BUY_Buy|r |T133970:0|t[Mutton Chop] |cRXP_BUY_from her|r << Rogue/Warrior
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_from her|r << Priest/Mage
-    >>|cRXP_BUY_Buy|r |T133970:0|t[Mutton Chop] |cRXP_BUY_and|r |T132796:0|t[Melon Juice] |cRXP_BUY_from her|r << Warlock/Shaman/Druid/Hunter
-    .vendor >> Vendor Trash
-    .collect 3770,40,895,1 << !Priest !Mage --Mutton Chop (40)
-    .collect 1205,40,895,1 << !Rogue !Warrior --Melon Juice (40)
+	.vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
+    .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
     .target Innkeeper Jayka
 step
     .goto Stonetalon Mountains,47.61,61.58

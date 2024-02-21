@@ -1253,7 +1253,7 @@ step
 #xprate >1.499
     .goto Thunder Bluff,45.814,64.711
     #completewith next
-    >> Walk to Thunderbluff.
+    >> Walk to Thunder Bluff.
     .home >>Set your Hearthstone to Thunder Bluff
 step
 #xprate <1.5

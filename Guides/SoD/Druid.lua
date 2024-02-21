@@ -609,6 +609,7 @@ step
 step
     .train 410060,1
     #loop
+    .goto Desolace,70.6,39.8,0
     .goto Desolace,70.6,39.8,25,0
     .goto Desolace,69.2,46.6,25,0
     .goto Desolace,68.6,52.6,25,0

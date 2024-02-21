@@ -2365,7 +2365,7 @@ step
     .waypoint Desolace,69.4,64.6,25,0
     .waypoint Desolace,58.8,65.6,25,0
     >>Kill |cRXP_ENEMY_Whirlwind Elementals|r throughout Desolace. Loot them for their |T132845:0|t|cRXP_LOOT_Whirling Essence|r
-    .complete 79361 -- Power of da Wind
+    .complete 79361,1 -- Power of da Wind
     .mob Whirlwind Ripper
     .mob Whirlwind Stormwalker
     .mob Whirlwind Shredder
@@ -2376,14 +2376,14 @@ step
 step
     .train 410100,1
     #loop
-    .goto Dustwallow Marsch,42.6,30.0,0
-    .goto Dustwallow Marsch,35.2,44.6,0
-    .goto Dustwallow Marsch,42.6,62.0,0
-    .goto Dustwallow Marsch,50.0,54.0,0
-    .waypoint Dustwallow Marsch,42.6,30.0,25,0
-    .waypoint Dustwallow Marsch,35.2,44.6,25,0
-    .waypoint Dustwallow Marsch,42.6,62.0,25,0
-    .waypoint Dustwallow Marsch,50.0,54.0,25,0
+    .goto Dustwallow Marsh,42.6,30.0,0
+    .goto Dustwallow Marsh,35.2,44.6,0
+    .goto Dustwallow Marsh,42.6,62.0,0
+    .goto Dustwallow Marsh,50.0,54.0,0
+    .waypoint Dustwallow Marsh,42.6,30.0,25,0
+    .waypoint Dustwallow Marsh,35.2,44.6,25,0
+    .waypoint Dustwallow Marsh,42.6,62.0,25,0
+    .waypoint Dustwallow Marsh,50.0,54.0,25,0
     >>Kill |cRXP_ENEMY_Withervine Elementals|r throughout Dustwallow Marsh. Loot them for their |T132846:0|t|cRXP_LOOT_Rushing Essence|r
     .complete 79363,1 -- Power of da Water
     .mob Withervine Mire Beast

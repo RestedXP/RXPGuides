@@ -1594,6 +1594,19 @@ step << Warrior
     .mob Rot Hide Mongrel
     .mob Rot Hide Graverobber
     .train 403475,1
+step << Mage
+    #season 2
+    #optional
+    #completewith next
+    .goto Tirisfal Glades,59.84,33.17,0
+    .goto Tirisfal Glades,58.38,35.28,0
+    .goto Tirisfal Glades,60.09,37.01,0
+    >>Cast |T136071:0|t[Polymorph] on |cRXP_ENEMY_Odd Melons|r
+    >>Loot the |T134332:0|t|cRXP_LOOT_[Apothecary Notes]|r on the ground
+    .collect 208183,6 --Apothecary Notes (6)
+    .mob Odd Melon
+    .train 415942,1
+    .train 118,3
 step
     .goto Tirisfal Glades,56.31,39.67,40,0
     .goto Tirisfal Glades,54.71,41.19,40,0
@@ -2711,6 +2724,15 @@ step
     .mob Greater Duskbat
     .mob Vampiric Duskbat
 step << Mage
+    #season 2
+    #completewith HorrorsandSpirits
+    >>Cast |T136071:0|t[Polymorph] on |cRXP_ENEMY_Odd Melons|r
+    >>Loot the |T134332:0|t|cRXP_LOOT_[Apothecary Notes]|r on the ground
+    .collect 208183,6 --Apothecary Notes (6)
+    .mob Odd Melon
+    .train 415942,1
+    .train 118,3
+step << Mage
     #completewith next
     >>Kill |cRXP_ENEMY_Bleeding Horrors|r and |cRXP_ENEMY_Wandering Spirits|r
     .complete 356,1 --Bleeding Horror (8)
@@ -2735,6 +2757,31 @@ step
     .complete 356,2 --Wandering Spirit (8)
     .mob Bleeding Horror
     .mob Wandering Spirit
+step << Mage
+    #season 2
+    #loop
+    .goto Tirisfal Glades,76.51,61.77,0
+    .goto Tirisfal Glades,75.12,61.49,20,0
+    .goto Tirisfal Glades,76.51,61.77,20,0
+    .goto Tirisfal Glades,76.04,59.31,20,0
+    >>Cast |T136071:0|t[Polymorph] on |cRXP_ENEMY_Odd Melons|r
+    >>Loot the |T134332:0|t|cRXP_LOOT_[Apothecary Notes]|r on the ground
+    .collect 208183,6 --Apothecary Notes (6)
+    .mob Odd Melon
+    .train 415942,1
+    .train 118,3
+step << Mage
+    #season 2
+    >>Use the |T134332:0|t|cRXP_LOOT_[Apothecary Notes]|r to create |T134332:0|t|cRXP_LOOT_[Spell Notes: Enlightenment]|r
+    .collect 203749,1 --Spell Notes: Enlightenment (1)
+    .use 208183 --Apothecary Notes
+    .train 415942,1
+    .itemcount 208183,6
+step << Mage
+    #season 2
+    .train 415942 >>|cRXP_WARN_Use the|r |T134332:0|t|cRXP_LOOT_[Spell Notes: Enlightenment]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Enlightenment]
+    .use 203749
+    .itemcount 203749,1 --Spell Notes: Enlightenment (1)
 step
     #sticky
     #label Friars

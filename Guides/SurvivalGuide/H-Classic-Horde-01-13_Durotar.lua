@@ -3297,6 +3297,13 @@ step
     .mob Scarlet Warrior
     .isOnQuest 427
 step
+    #completewith next
+    >>Kill any |cRXP_ENEMY_Duskbat|r that you see. Loot them for their |cRXP_LOOT_Pelts|r
+    .complete 375,1 --Duskbat Pelt (5)
+    .mob Greater Duskbat
+    .mob Vampiric Duskbat
+    .isOnQuest 375
+step
     #label Darkhounds1
     .goto Tirisfal Glades,45.90,50.95,50,0
     .goto Tirisfal Glades,45.11,48.06,50,0

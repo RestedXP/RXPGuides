@@ -751,6 +751,7 @@ step << !Tauren !Undead
     >>Kill any |cRXP_ENEMY_Zhevra|r you see. Loot them for their |cRXP_LOOT_Hooves|r
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
+    .isQuestComplete 924
 step << !Tauren !Undead
     #xprate <1.5 << !Hunter
     .goto The Barrens,62.34,20.07
@@ -759,13 +760,13 @@ step << !Tauren !Undead
     .target Ak'Zeloth
     .isQuestComplete 924
 step << Shaman
-    #completewith CallofFire3
+    #completewith ShamanDurotar
     >>Kill every |cRXP_ENEMY_Raptor|r you see. Loot them for their |cRXP_LOOT_Heads|r
     .complete 869,1 --Raptor Head (12)
     .mob Sunscale Lashtail
     .mob Sunscale Screecher
 step << Shaman
-    #completewith next
+    #completewith ShamanDurotar
     >>Kill any |cRXP_ENEMY_Zhevra|r you see. Loot them for their |cRXP_LOOT_Hooves|r
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
@@ -1535,6 +1536,7 @@ step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     #completewith Samophlange
     +|cRXP_WARN_Be careful of|r |cRXP_ENEMY_Sunscale Scytheclaws|r |cRXP_WARN_in the area. They are up to level 18 and can|r |T132152:0|t[Thrash]
     .dungeon RFC
+    .xp >17,1
 step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     #completewith Samophlange
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Kidneys|r
@@ -1547,6 +1549,7 @@ step
     #completewith Samophlange
     +|cRXP_WARN_Be careful of|r |cRXP_ENEMY_Sunscale Scytheclaws|r |cRXP_WARN_in the area. They are up to level 18 and can|r |T132152:0|t[Thrash]
     .dungeon !RFC
+    .xp >17,1
 step
     #completewith Samophlange
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Kidneys|r
@@ -1776,6 +1779,12 @@ step << !Tauren !Undead !Shaman !Warrior
     .accept 6386 >> Accept Return to the Crossroads
     .target Doras
     .isOnQuest 6385
+step << !Tauren !Undead !Shaman !Warrior
+    .goto Orgrimmar,45.120,63.889
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Doras|r
+    .accept 6386 >> Accept Return to the Crossroads
+    .target Doras
+    .isQuestTurnedIn 6385
 step << Tauren/Undead
     .goto Orgrimmar,45.13,63.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doras|r
@@ -2424,6 +2433,9 @@ step
     .target Tonga Runetotem
     .target Sergra Darkthorn
     .target Gazrog
+step
+    .destroy 5165 >>Delete any leftover |T132914:0|t[Sunscale Feathers] you may still have
+    .itemcount 5165,1
 step << Hunter
     .goto The Barrens,51.11,29.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uthrok|r|cRXP_BUY_. Buy a|r |T134410:0|t[Medium Quiver] |cRXP_BUY_from him|r
@@ -2611,14 +2623,16 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .accept 4021 >>Accept Counterattack!
     .target Regthar Deathgate
-    .timer 183,Warlord Krom'zar Spawn
+    --.timer 183,Warlord Krom'zar Spawn
     .isQuestTurnedIn 852
+    --timer is random, generally somewhere between 120-210 seconds
 step
     #xprate <1.5
     #label CounterattackComplete
     .goto The Barrens,44.48,28.15
     >>Kill |cRXP_ENEMY_Warlord Krom'zar|r once he appears. Loot the |cRXP_PICK_Banner|r that he drops on the ground
     >>|cRXP_WARN_Be careful! He is a strong elite and is guarded by at least two|r |cRXP_ENEMY_Kolkar|r |cRXP_WARN_mobs|r
+    >>|cRXP_WARN_It can take up to 3 minutes until he spawns|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isOnQuest 4021
@@ -2858,12 +2872,8 @@ step
 step
     .goto Stonetalon Mountains,47.47,62.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Jayka|r
-    >>|cRXP_BUY_Buy|r |T133970:0|t[Mutton Chop] |cRXP_BUY_from her|r << Rogue/Warrior
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_from her|r << Priest/Mage
-    >>|cRXP_BUY_Buy|r |T133970:0|t[Mutton Chop] |cRXP_BUY_and|r |T132796:0|t[Melon Juice] |cRXP_BUY_from her|r << Warlock/Shaman/Druid/Hunter
-    .vendor >> Vendor Trash
-    .collect 3770,20,1093,1 << !Priest !Mage --Mutton Chop (20)
-    .collect 1205,20,1093,1 << !Rogue !Warrior --Melon Juice (20)
+	.vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
+    .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
     .target Innkeeper Jayka
     .isOnQuest 1483
 step
@@ -3082,12 +3092,8 @@ step
 step
     .goto The Barrens,45.58,59.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Byula|r
-    >>|cRXP_BUY_Buy|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << Rogue/Warrior
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_from him|r << Priest/Mage
-    >>|cRXP_BUY_Buy|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_and|r |T132796:0|t[Melon Juice] |cRXP_BUY_from him|r << Warlock/Shaman/Druid/Hunter
-    .vendor >> Vendor Trash
-    .collect 4538,20,3261,1 << !Priest !Mage --Snapvine Watermelon (40)
-    .collect 1205,20,3261,1 << !Rogue !Warrior --Melon Juice (40)
+	.vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
+    .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
     .target Innkeeper Byula
     .isOnQuest 3261
 step
@@ -3372,6 +3378,9 @@ step
     .goto The Barrens,52.26,31.93
     .target Tonga Runetotem
     .target Mankrik
+step
+    .destroy 5085 >>Delete any leftover |T133721:0|t[Bristleback Quilboar Tusks] you may still have
+    .itemcount 5085,1
 step
     .goto The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
@@ -3728,9 +3737,13 @@ step
     .turnin 5052 >>Turn in Blood Shards of Agamaggan
     .target Mangletooth
 step
+    #optional
     #completewith Thunderhawk
+    .goto The Barrens,44.55,59.27,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
     +|cRXP_WARN_Use your|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r] |cRXP_WARN_to get buffs. Save at least 4 of them for later|r
     +|cRXP_WARN_Make sure to turn off any autocomplete functions from addons such as Questie or Leatrix Plus for this!|r
+    .target Mangletooth
 step
     .goto The Barrens,44.85,59.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorn Skyseer|r
@@ -3947,12 +3960,14 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .accept 4021 >>Accept Counterattack!
     .target Regthar Deathgate
-    .timer 205 >>|cRXP_ENEMY_Warlord Krom'zar|r spawn
+    --.timer 183,Warlord Krom'zar Spawn
     .isQuestTurnedIn 852
+    --timer is random, generally somewhere between 120-210 seconds
 step
     .goto The Barrens,44.48,28.15
     >>Kill |cRXP_ENEMY_Warlord Krom'zar|r once he appears. Loot the |cRXP_PICK_Banner|r that he drops on the ground
     >>|cRXP_WARN_Be careful! He is a strong elite and is guarded by at least two|r |cRXP_ENEMY_Kolkar|r |cRXP_WARN_mobs|r
+    >>|cRXP_WARN_It can take up to 3 minutes until he spawns|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .isQuestTurnedIn 852
@@ -4025,6 +4040,7 @@ step << Hunter
     .fp Splintertree Post >> Get the Splintertree Post flight path
     .target Vhulgra
 step << Hunter
+    #completewith EnterSTM2
     .goto Ashenvale,73.18,61.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vhulgra|r
     .fly Crossroads >> Fly to Crossroads
@@ -4032,6 +4048,7 @@ step << Hunter
     .cooldown item,6948,<0
     .zoneskip The Barrens
 step
+    #completewith EnterSTM2
     .hs >> Hearth to The Crossroads
     .use 6948
     .cooldown item,6948,>0
@@ -4039,6 +4056,7 @@ step
     .dungeon !WC
     .zoneskip The Barrens
 step << !Hunter
+    #completewith EnterSTM2
     .goto The Barrens,52.09,30.43,120 >>Travel to The Crossroads. You can also grind until your |T134414:0|t[Hearthstone] is back up
     .cooldown item,6948,<0
     .isQuestComplete 876
@@ -4051,6 +4069,7 @@ step
     .isQuestComplete 876
     .dungeon WC
 step
+    #completewith EnterSTM2
     .goto The Barrens,63.09,37.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
     .fly Crossroads >> Fly to The Crossroads
@@ -4090,13 +4109,15 @@ step
     +|cRXP_WARN_You are on a timed quest, don't go afk. It will get turned in 10-15 minutes after pick-up|r
     .isOnQuest 853
 step
-    #completewith next
+    #label EnterSTM2
+    #completewith STMturnins1
     .zone Stonetalon Mountains >> Travel to Stonetalon Mountains
     .zoneskip Stonetalon Mountains
 step
     #map Stonetalon Mountains
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seereth|r and |cRXP_FRIENDLY_Makaba|r
     .turnin 1062 >>Turn in Goblin Invaders
+    .timer 4,Goblin Invaders RP
     .accept 1063 >>Accept The Elder Crone
     .accept 1068 >> Accept Shredding Machines
     .goto The Barrens,35.26,27.88
@@ -4113,6 +4134,7 @@ step
     #map Stonetalon Mountains
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seereth|r and |cRXP_FRIENDLY_Makaba|r
     .turnin 1062 >>Turn in Goblin Invaders
+    .timer 4,Goblin Invaders RP
     .accept 1063 >>Accept The Elder Crone
     .accept 1068 >> Accept Shredding Machines
     .goto The Barrens,35.26,27.88
@@ -4126,6 +4148,7 @@ step
     #map Stonetalon Mountains
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seereth|r and |cRXP_FRIENDLY_Makaba|r
     .turnin 1062 >>Turn in Goblin Invaders
+    .timer 4,Goblin Invaders RP
     .accept 1063 >>Accept The Elder Crone
     .accept 1068 >> Accept Shredding Machines
     .goto The Barrens,35.26,27.88
@@ -4136,10 +4159,12 @@ step
     .target Makaba Flathoof
     .isQuestComplete 6523
 step
+    #label STMturnins1
     #optional
     #map Stonetalon Mountains
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seereth|r
     .turnin 1062 >>Turn in Goblin Invaders
+    .timer 4,Goblin Invaders RP
     .accept 1063 >>Accept The Elder Crone
     .accept 1068 >> Accept Shredding Machines
     .goto The Barrens,35.26,27.88
@@ -4178,6 +4203,7 @@ step
     .link https://www.youtube.com/watch?v=cp2YI86AO4Y&ab >> |cRXP_WARN_CLICK HERE for an example|r
 step
     #completewith ElderCroneTurnin
+    .goto Thunder Bluff,54.18,27.01,20,0
     .goto Thunder Bluff,50.75,37.07,40 >> Take the elevator up to Thunder Bluff
 step << Druid
     .goto Thunder Bluff,47.12,57.88
@@ -4346,6 +4372,8 @@ step
     .goto Thunder Bluff,28.14,32.97,40,0
     .goto Thunder Bluff,28.51,28.95,10 >> Travel to the Spirit Rise and enter the pools of vision
 step
+    #sticky
+    #completewith DeathDUPpickup
     .goto Thunder Bluff,28.55,25.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clarice|r
     .accept 264 >> Until Death Do Us Part
@@ -4405,6 +4433,9 @@ step << Mage
     .train 2138 >> Train your class spells
     .target Archmage Shymm
     .xp <22,1
+step
+    #optional
+    #label DeathDUPpickup
 step << Shaman
     .goto Thunder Bluff,23.64,18.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tigor|r
@@ -4971,12 +5002,9 @@ step
     .goto Stonetalon Mountains,47.47,62.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Jayka|r
     >>|cRXP_WARN_Do NOT set your|r |T134414:0|t[Hearthstone]
-    >>|cRXP_BUY_Buy|r |T133970:0|t[Mutton Chop] |cRXP_BUY_from her|r << Rogue/Warrior
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_from her|r << Priest/Mage
-    >>|cRXP_BUY_Buy|r |T133970:0|t[Mutton Chop] |cRXP_BUY_and|r |T132796:0|t[Melon Juice] |cRXP_BUY_from her|r << Warlock/Shaman/Druid/Hunter
+	.vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
+    .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
     .vendor >> Vendor Trash
-    .collect 3770,40,6562,1 << !Priest !Mage --Mutton Chop (40)
-    .collect 1205,40,6562,1 << !Rogue !Warrior --Melon Juice (40)
     .target Innkeeper Jayka
     .isOnQuest 1095
 step
