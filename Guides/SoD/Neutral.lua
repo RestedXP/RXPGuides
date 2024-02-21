@@ -1207,6 +1207,7 @@ step
     .train 416014,1 << Warlock
     .train 415926,1 << Rogue
     .train 436368,1 << Shaman
+    .goto Deadwind Pass,52.09,34.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Dalaran Agent|r
     .turnin 80147 >>Turn in Curious Dalaran Relic
     .turnin 80149 >>Turn in Curious Dalaran Relic
@@ -1216,6 +1217,7 @@ step
     .turnin 80150 >>Turn in Curious Dalaran Relic
     .turnin 80151 >>Turn in Curious Dalaran Relic
     .turnin 80120 >>Turn in A Service to Dalaran
+    .target Dalaran Agent
 step
     .train 425312,1 << Priest
     .train 426180,1 << Paladin

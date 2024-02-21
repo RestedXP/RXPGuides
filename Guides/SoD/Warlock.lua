@@ -681,7 +681,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raszel Ander|r.
     .accept 78994,1 >> Accept A Solid Foundation
     .target Raszel Ander
-step >> Alliance
+step << Alliance
     .train 426445,1
     .goto The Barrens,63.0,37.2
     #completewith Invisibility Potion
@@ -694,20 +694,20 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kimlya|r.
     .home >> Set your Hearthstone to Astranaar
     .target Innkeeper Kimlya
-step >> Horde
+step << Horde
     .train 426445,1
     #completewith Invisibility Potion
     .goto The Barrens,45.6,59.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Byula|r.
     .home >> Set your Hearthstone to Camp Taurajo
     .target Innkeeper Byula
-step >> Horde
+step << Horde
     .train 426445,1
     #completewith Invisibility Potion
     .goto The Barrens,44.4,59.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY Omusa Thunderhorn|r.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Omusa Thunderhorn|r.
     .fly Astranaar >> Fly Astranaar
-    .targetOmusa Thunderhorn
+    .target Omusa Thunderhorn
 step
     .train 426445,1
     #label Invisibility Potion
@@ -744,13 +744,13 @@ step
 step
     .train 426445,1
     .collect 211427,1 >>It's recommended to buy the |T133254:0|t[Soul Vessel] from the auction house. if it's too expensive you can try buy the materials from the auction house or gather them yourself.Then, ask an Engineer to make the |T133254:0|t[Soul Vessel] for you.
-step >> Alliance
+step << Alliance
     .goto The Barrens,63.0,37.2
     #completewith Turnin A Soul Vessel
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baritanas Skyriver|r.
     .fly Nijel >> Fly Nijel's Point
     .target Baritanas Skyriver
-step >> Horde
+step << Horde
     .train 426445,1
     #completewith Turnin A Soul Vessel
     .goto The Barrens,44.4,59.0
