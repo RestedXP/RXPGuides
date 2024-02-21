@@ -961,23 +961,31 @@ step
     #completewith next
     .zone Badlands >>Travel to Badlands
 step
-    #loop
-    .goto Badlands,28.2,51.4,0
-    .goto Badlands,28.0,61.0,0
-    .goto Badlands,30.6,61.2,0
-    .goto Badlands,34.6,54.8,0
-    .goto Badlands,28.2,51.4,25,0
-    .goto Badlands,28.0,61.0,25,0
-    .goto Badlands,30.6,61.2,25,0
-    .goto Badlands,34.6,54.8,25,0
-    >>Kill |cRXP_ENEMY_Dustbelcher Warriors|r, |cRXP_ENEMY_Dustbelcher Brutes|r, and |cRXP_ENEMY_Dustbelcher Ogres|r. Loot them for the |T237388:0|t|cRXP_LOOT_[Primitive Drawing]|r
-    .collect 211269,1 --Primitive Drawing
-    .mob Dustbelcher Ogre
-    .train 410114,1
-step
-    >>|cRXP_WARN_Use the|r |T237388:0|t|cRXP_LOOT_[Primitive Drawing]|r |cRXP_WARN_to start the quest|r
+    .goto Badlands,66.6,23.4,0
+    .goto Badlands,51.2,69.4,0
+    .goto Badlands,29.6,56.8,0
+    .goto Badlands,62.6,69.2,0
+    .goto Badlands,9.6,77.6,0
+    .goto Badlands,66.6,23.4,50,0
+    .goto Badlands,51.2,69.4,50,0
+    .goto Badlands,29.6,56.8,50,0
+    .goto Badlands,62.6,69.2,50,0
+    .goto Badlands,9.6,77.6
+    .use 211269 >>Kill any |cRXP_ENEMY_Dustbelcher Ogre|r or |cRXP_ENEMY_Stonevault Trogg|r. Loot them for the |T237388:0|t[|cRXP_LOOT_Primitive Drawing|r]
+    >>|cRXP_WARN_Use the|r |T237388:0|t[|cRXP_LOOT_Primitive Drawing|r] |cRXP_WARN_to start the quest|r
+    >>|cRXP_WARN_Their locations are marked on your map|r
+    .collect 211269,1,78823,1 --Primitive Drawing
     .accept 78823 >> Accept Terror of the Desert Skies
-    .use 211269
+    .mob Dustbelcher Ogre
+    .mob Dustbelcher Brute
+    .mob Dustbelcher Mauler
+    .mob Dustbelcher Mystic
+    .mob Dustbelcher Shaman
+    .mob Dustbelcher Warrior
+    .mob Dustbelcher Wyrmhunter
+    .mob Stonevault Bonesnapper
+    .mob Stonevault Shaman
+    .train 410114,1
 step
     #optional
     #completewith next
@@ -993,7 +1001,7 @@ step
 step
     #sticky
     #label Bait
-    >>Use the |T132599:0|t[Empty Bait Cage] on any critter for a |T132599:0|t[Trapped Critter]
+    .use 211272 >>Use the |T132599:0|t[Empty Bait Cage] on any critter for a |T132599:0|t[Trapped Critter]
     .collect 211273,1 --Trapped Critter
     .mob Rat
     .mob Black Rat
@@ -1045,7 +1053,7 @@ step
     .train 410109,1
     #loop
     .goto Arathi Highlands,67.8,66.0,0
-    .goto Arathi Highlands,69.4 63.2,25,0
+    .goto Arathi Highlands,69.4,63.2,25,0
     .goto Arathi Highlands,67.8,66.0,25,0
     .goto Arathi Highlands,68.4,68.2,25,0
     >>Kill |cRXP_ENEMY_Needletooth|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Steady Shot|r]
