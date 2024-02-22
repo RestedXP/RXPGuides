@@ -1220,7 +1220,7 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
             ahSession.scanType = AuctionFilterButtons["Armor"]
             self:Analyze()
             ahSession.displayFrame.scanButton:SetText(_G.SEARCH)
-            -- self:DisplayResults()
+            self:DisplayEmbeddedResults()
         end
 
         return
@@ -1382,17 +1382,70 @@ function addon.itemUpgrades.AH:Analyze()
     end
 end
 
+local ahRows = {}
+local scrollContainer
+
+local function createRow(kind)
+    if not ahRows[kind] then
+        local r = AceGUI:Create("SimpleGroup")
+        r:SetLayout("Flow")
+
+        r.itemKindHeader = AceGUI:Create("Heading")
+        r.itemKindHeader:SetText("Kind: " .. kind)
+        r.itemKindHeader:SetFullWidth(true)
+        r:AddChild(r.itemKindHeader)
+
+        -- Icon and name
+        -- TODO add InteractiveLabel
+        r.itemInfo = AceGUI:Create("Label")
+        r.itemInfo:SetWidth(195)
+        r.itemInfo:SetHeight(32)
+        r:AddChild(r.itemInfo)
+        -- r:AddChild(buildSpacer(padding))
+
+        r.itemLevel = AceGUI:Create("Label")
+        -- r.data:SetFont(addon.font, 12, "")
+        r.itemLevel:SetWidth(61)
+        r.itemLevel:SetHeight(32)
+        r:AddChild(r.itemLevel)
+
+        r.itemUpgradeStats = AceGUI:Create("Label")
+        -- r.data:SetFont(addon.font, 12, "")
+        r.itemUpgradeStats:SetWidth(79)
+        r.itemUpgradeStats:SetHeight(32)
+        r:AddChild(r.itemUpgradeStats)
+
+        -- inherits="SmallMoneyFrameTemplate"
+        -- SmallMoneyFrame_OnLoad(self);
+        -- MoneyFrame_SetType(self, "AUCTION");
+        r.buyout = AceGUI:Create("Button")
+        r.buyout:SetWidth(166)
+        r.buyout:SetHeight(32)
+        r:AddChild(r.buyout)
+
+        ahRows[kind] = r
+    end
+    local r = ahRows[kind]
+
+    r.itemInfo:SetText("itemInfo")
+    r.itemLevel:SetText("itemLevel")
+    r.itemUpgradeStats:SetText("itemUpgradeStats")
+    r.buyout:SetText("itemUpgradeStats")
+
+    return r
+end
+
 function addon.itemUpgrades.AH:CreateEmbeddedGui()
     if ahSession.displayFrame then return end
 
     local attachment = _G.AuctionFrame
     if not attachment then return end
 
-    ahSession.displayFrame = _G["RXP_IU_AH_Bid"] -- _G["RXP_IU_AH_Scanning"]
+    ahSession.displayFrame = _G["RXP_IU_AH_Frame"]
     if not ahSession.displayFrame then return end
 
-    _G.RXP_IU_AH_BidTitle:SetText(fmt("%s - %s", addon.title,
-                                      _G.MINIMAP_TRACKING_AUCTIONEER))
+    _G.RXP_IU_AH_Title:SetText(fmt("%s - %s", addon.title,
+                                   _G.MINIMAP_TRACKING_AUCTIONEER))
 
     ahSession.displayFrame.scanButton = _G.RXP_IU_AH_SearchButton
 
@@ -1400,8 +1453,30 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
         addon.itemUpgrades.AH:Scan()
     end)
 
+    _G.RXP_IU_AH_BuyoutButton:Disable()
+
     ahSession.displayFrame:SetParent(attachment)
     ahSession.displayFrame:SetPoint("TOPLEFT", attachment, "TOPLEFT")
+
+    -- Wrapper inside AH frame
+    local f = AceGUI:Create("Frame")
+    _G.RXPD = f
+    f:SetLayout("Fill")
+    -- f:SetFullWidth(true)
+    f:SetWidth(775)
+    f:SetHeight(335)
+    f:SetParent(ahSession.displayFrame)
+
+    -- f.frame:ClearAllPoints()
+    -- f.frame:SetPoint("TOPRIGHT", attachment, "TOPRIGHT", 40, -74)
+
+    scrollContainer = AceGUI:Create("ScrollFrame")
+    scrollContainer:SetLayout("Flow")
+    -- scrollContainer.frame:ClearAllPoints()
+    -- scrollContainer.frame:SetPoint("TOPRIGHT", attachment, "TOPRIGHT", 40, -74)
+    scrollContainer:AddChild(createRow(_G.HEADSLOT))
+
+    f:AddChild(scrollContainer)
 
     -- Create tab button
     local index = attachment.numTabs + 1
@@ -1457,6 +1532,12 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
     PanelTemplates_TabResize(tabButton, 0, nil, 36)
     PanelTemplates_SetNumTabs(attachment, index)
     PanelTemplates_EnableTab(attachment, index)
+end
+
+function addon.itemUpgrades.AH:DisplayEmbeddedResults()
+    self:CreateEmbeddedGui()
+    if not _G.AuctionFrame:IsShown() then return end
+
 end
 
 function addon.itemUpgrades.AH:DisplayResults()

@@ -43,7 +43,7 @@
         </ButtonText>
         <NormalFont style="GameFontHighlightSmall"/>
     </Button>
-    <Button name="RXP_IU_AH_BidButtonTemplate" hidden="false" virtual="true">
+    <Button name="RXP_IU_AH_ItemRow" hidden="false" virtual="true">
         <Size>
             <AbsDimension x="793" y="37"/>
         </Size>
@@ -132,7 +132,7 @@
             </Layer>
         </Layers>
         <Frames>
-            <Button name="$parentItem">
+            <Button name="$parentItemIcon">
                 <Size>
                     <AbsDimension x="32" y="32"/>
                 </Size>
@@ -280,24 +280,6 @@
                     -->
                 </Scripts>
             </Frame>
-            <Frame name="$parentCurrentBidMoneyFrame" inherits="SmallMoneyFrameTemplate">
-                <Anchors>
-                    <Anchor point="RIGHT">
-                        <Offset>
-                            <AbsDimension x="6" y="0"/>
-                        </Offset>
-                    </Anchor>
-                </Anchors>
-                <Scripts>
-                    <!--
-                    <OnLoad>
-						SmallMoneyFrame_OnLoad(self);
-						MoneyFrame_SetType(self, "AUCTION");
-
-					</OnLoad>
-                    -->
-                </Scripts>
-            </Frame>
         </Frames>
         <Scripts>
             <!--
@@ -329,7 +311,7 @@
             <TexCoords left="0" right="1.0" top="0" bottom="0.578125"/>
         </HighlightTexture>
     </Button>
-    <Frame name="RXP_IU_AH_Bid" hidden="true">
+    <Frame name="RXP_IU_AH_Frame" hidden="true">
         <Size>
             <AbsDimension x="758" y="447"/>
         </Size>
@@ -338,7 +320,7 @@
         </Anchors>
         <Layers>
             <Layer level="BACKGROUND">
-                <FontString name="RXP_IU_AH_BidTitle" inherits="GameFontNormal" text="MINIMAP_TRACKING_AUCTIONEER">
+                <FontString name="RXP_IU_AH_Title" inherits="GameFontNormal" text="MINIMAP_TRACKING_AUCTIONEER">
                     <Anchors>
                         <Anchor point="TOP">
                             <Offset>
@@ -349,7 +331,7 @@
                 </FontString>
             </Layer>
             <Layer level="ARTWORK">
-                <FontString name="RXP_IU_AH_BidSearchCountText" inherits="GameFontHighlightSmall">
+                <FontString name="RXP_IU_AH_SearchCountText" inherits="GameFontHighlightSmall">
                     <Anchors>
                         <Anchor point="BOTTOM">
                             <Offset>
@@ -361,7 +343,7 @@
             </Layer>
         </Layers>
         <Frames>
-            <Button name="RXP_IU_AH_BidQuality" inherits="RXP_IU_AH_AuctionColumnButtonTemplate" text="RARITY">
+            <Button name="RXP_IU_AH_ItemName" inherits="RXP_IU_AH_AuctionColumnButtonTemplate" text="Item Name">
                 <Size>
                     <AbsDimension x="195" y="19"/>
                 </Size>
@@ -372,98 +354,45 @@
                         </Offset>
                     </Anchor>
                 </Anchors>
-                <Scripts>
-                    <OnClick>
-                        <!--AuctionFrame_OnClickSortColumn("bidder", "quality")-->
-                    </OnClick>
-                </Scripts>
             </Button>
-            <Button name="RXP_IU_AH_BidLevel" inherits="RXP_IU_AH_AuctionColumnButtonTemplate" text="REQ_LEVEL_ABBR">
+            <Button name="RXP_IU_AH_Level" inherits="RXP_IU_AH_AuctionColumnButtonTemplate" text="REQ_LEVEL_ABBR">
                 <Size>
                     <AbsDimension x="61" y="19"/>
                 </Size>
                 <Anchors>
-                    <Anchor point="LEFT" relativeTo="RXP_IU_AH_BidQuality" relativePoint="RIGHT">
+                    <Anchor point="LEFT" relativeTo="RXP_IU_AH_ItemName" relativePoint="RIGHT">
                         <Offset>
                             <AbsDimension x="-2" y="0"/>
                         </Offset>
                     </Anchor>
                 </Anchors>
-                <Scripts>
-                    <OnClick>
-                        <!--AuctionFrame_OnClickSortColumn("bidder", "level")-->
-                    </OnClick>
-                </Scripts>
             </Button>
-            <Button name="RXP_IU_AH_BidDuration" inherits="RXP_IU_AH_AuctionColumnButtonTemplate" text="CLOSES_IN">
+            <Button name="RXP_IU_AH_UpgradeEP" inherits="RXP_IU_AH_AuctionColumnButtonTemplate" text="Upgrade/EP">
                 <Size>
                     <AbsDimension x="79" y="19"/>
                 </Size>
                 <Anchors>
-                    <Anchor point="LEFT" relativeTo="RXP_IU_AH_BidLevel" relativePoint="RIGHT">
+                    <Anchor point="LEFT" relativeTo="RXP_IU_AH_Level" relativePoint="RIGHT">
                         <Offset>
                             <AbsDimension x="-2" y="0"/>
                         </Offset>
                     </Anchor>
                 </Anchors>
-                <Scripts>
-                    <OnClick>
-                        <!--AuctionFrame_OnClickSortColumn("bidder", "duration")-->
-                    </OnClick>
-                </Scripts>
             </Button>
-            <Button name="RXP_IU_AH_BidBuyout" inherits="RXP_IU_AH_AuctionColumnButtonTemplate" text="BUYOUT_PRICE">
+            <Button name="RXP_IU_AH_Buyout" inherits="RXP_IU_AH_AuctionColumnButtonTemplate" text="AUCTION_PRICE">
                 <Size>
                     <AbsDimension x="166" y="19"/>
                 </Size>
                 <Anchors>
-                    <Anchor point="LEFT" relativeTo="RXP_IU_AH_BidDuration" relativePoint="RIGHT">
+                    <Anchor point="LEFT" relativeTo="RXP_IU_AH_UpgradeEP" relativePoint="RIGHT">
                         <Offset>
                             <AbsDimension x="-2" y="0"/>
                         </Offset>
                     </Anchor>
                 </Anchors>
-                <Scripts>
-                    <OnClick>
-                        <!--AuctionFrame_OnClickSortColumn("bidder", "buyout")-->
-                    </OnClick>
-                </Scripts>
             </Button>
-            <Button name="RXP_IU_AH_BidStatus" inherits="RXP_IU_AH_AuctionColumnButtonTemplate" text="BID_STATUS">
-                <Size>
-                    <AbsDimension x="94" y="19"/>
-                </Size>
-                <Anchors>
-                    <Anchor point="LEFT" relativeTo="RXP_IU_AH_BidBuyout" relativePoint="RIGHT">
-                        <Offset>
-                            <AbsDimension x="-2" y="0"/>
-                        </Offset>
-                    </Anchor>
-                </Anchors>
-                <Scripts>
-                    <OnClick>
-                        <!--AuctionFrame_OnClickSortColumn("bidder", "status")-->
-                    </OnClick>
-                </Scripts>
-            </Button>
-            <Button name="RXP_IU_AH_BidBid" inherits="RXP_IU_AH_AuctionColumnButtonTemplate" text="CURRENT_BID">
-                <Size>
-                    <AbsDimension x="169" y="19"/>
-                </Size>
-                <Anchors>
-                    <Anchor point="LEFT" relativeTo="RXP_IU_AH_BidStatus" relativePoint="RIGHT">
-                        <Offset>
-                            <AbsDimension x="-2" y="0"/>
-                        </Offset>
-                    </Anchor>
-                </Anchors>
-                <Scripts>
-                    <OnClick>
-                        <!--AuctionFrame_OnClickSortColumn("bidder", "bid")-->
-                    </OnClick>
-                </Scripts>
-            </Button>
-            <ScrollFrame name="RXP_IU_AH_BidScrollFrame" inherits="FauxScrollFrameTemplate">
+            <!--
+            <ScrollFrame name="RXP_IU_AH_ScrollFrame" inherits="FauxScrollFrameTemplate">
                 <Size>
                     <AbsDimension x="775" y="335"/>
                 </Size>
@@ -506,11 +435,12 @@
                 </Layers>
                 <Scripts>
                     <OnVerticalScroll>
-                        <!--FauxScrollFrame_OnVerticalScroll(self, offset, AUCTIONS_BUTTON_HEIGHT, RXP_IU_AH_Bid_Update)-->
+                        FauxScrollFrame_OnVerticalScroll(self, offset, AUCTIONS_BUTTON_HEIGHT, RXP_IU_AH_Update)
                     </OnVerticalScroll>
                 </Scripts>
             </ScrollFrame>
-            <Button name="RXP_IU_AH_BidButton1" inherits="RXP_IU_AH_BidButtonTemplate" id="1">
+
+            <Button name="RXP_IU_AH_Row1" inherits="RXP_IU_AH_ItemRow" id="1">
                 <Anchors>
                     <Anchor point="TOPLEFT">
                         <Offset>
@@ -519,79 +449,80 @@
                     </Anchor>
                 </Anchors>
             </Button>
-            <Button name="RXP_IU_AH_BidButton2" inherits="RXP_IU_AH_BidButtonTemplate" id="2">
+            <Button name="RXP_IU_AH_Row2" inherits="RXP_IU_AH_ItemRow" id="2">
                 <Anchors>
-                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_BidButton1" relativePoint="BOTTOMLEFT">
+                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_Row1" relativePoint="BOTTOMLEFT">
                         <Offset>
                             <AbsDimension x="0" y="0"/>
                         </Offset>
                     </Anchor>
                 </Anchors>
             </Button>
-            <Button name="RXP_IU_AH_BidButton3" inherits="RXP_IU_AH_BidButtonTemplate" id="3">
+            <Button name="RXP_IU_AH_Row3" inherits="RXP_IU_AH_ItemRow" id="3">
                 <Anchors>
-                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_BidButton2" relativePoint="BOTTOMLEFT">
+                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_Row2" relativePoint="BOTTOMLEFT">
                         <Offset>
                             <AbsDimension x="0" y="0"/>
                         </Offset>
                     </Anchor>
                 </Anchors>
             </Button>
-            <Button name="RXP_IU_AH_BidButton4" inherits="RXP_IU_AH_BidButtonTemplate" id="4">
+            <Button name="RXP_IU_AH_Row4" inherits="RXP_IU_AH_ItemRow" id="4">
                 <Anchors>
-                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_BidButton3" relativePoint="BOTTOMLEFT">
+                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_Row3" relativePoint="BOTTOMLEFT">
                         <Offset>
                             <AbsDimension x="0" y="0"/>
                         </Offset>
                     </Anchor>
                 </Anchors>
             </Button>
-            <Button name="RXP_IU_AH_BidButton5" inherits="RXP_IU_AH_BidButtonTemplate" id="5">
+            <Button name="RXP_IU_AH_Row5" inherits="RXP_IU_AH_ItemRow" id="5">
                 <Anchors>
-                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_BidButton4" relativePoint="BOTTOMLEFT">
+                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_Row4" relativePoint="BOTTOMLEFT">
                         <Offset>
                             <AbsDimension x="0" y="0"/>
                         </Offset>
                     </Anchor>
                 </Anchors>
             </Button>
-            <Button name="RXP_IU_AH_BidButton6" inherits="RXP_IU_AH_BidButtonTemplate" id="6">
+            <Button name="RXP_IU_AH_Row6" inherits="RXP_IU_AH_ItemRow" id="6">
                 <Anchors>
-                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_BidButton5" relativePoint="BOTTOMLEFT">
+                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_Row5" relativePoint="BOTTOMLEFT">
                         <Offset>
                             <AbsDimension x="0" y="0"/>
                         </Offset>
                     </Anchor>
                 </Anchors>
             </Button>
-            <Button name="RXP_IU_AH_BidButton7" inherits="RXP_IU_AH_BidButtonTemplate" id="7">
+            <Button name="RXP_IU_AH_Row7" inherits="RXP_IU_AH_ItemRow" id="7">
                 <Anchors>
-                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_BidButton6" relativePoint="BOTTOMLEFT">
+                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_Row6" relativePoint="BOTTOMLEFT">
                         <Offset>
                             <AbsDimension x="0" y="0"/>
                         </Offset>
                     </Anchor>
                 </Anchors>
             </Button>
-            <Button name="RXP_IU_AH_BidButton8" inherits="RXP_IU_AH_BidButtonTemplate" id="8">
+            <Button name="RXP_IU_AH_Row8" inherits="RXP_IU_AH_ItemRow" id="8">
                 <Anchors>
-                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_BidButton7" relativePoint="BOTTOMLEFT">
+                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_Row7" relativePoint="BOTTOMLEFT">
                         <Offset>
                             <AbsDimension x="0" y="0"/>
                         </Offset>
                     </Anchor>
                 </Anchors>
             </Button>
-            <Button name="RXP_IU_AH_BidButton9" inherits="RXP_IU_AH_BidButtonTemplate" id="9">
+            <Button name="RXP_IU_AH_Row9" inherits="RXP_IU_AH_ItemRow" id="9">
                 <Anchors>
-                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_BidButton8" relativePoint="BOTTOMLEFT">
+                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_Row8" relativePoint="BOTTOMLEFT">
                         <Offset>
                             <AbsDimension x="0" y="0"/>
                         </Offset>
                     </Anchor>
                 </Anchors>
             </Button>
-            <Frame name="RXP_IU_AH_BidBidPrice" inherits="MoneyInputFrameTemplate">
+            -->
+            <Frame name="RXP_IU_AH_BidPrice" inherits="MoneyInputFrameTemplate">
                 <Anchors>
                     <Anchor point="BOTTOM">
                         <Offset>
@@ -601,7 +532,7 @@
                 </Anchors>
                 <Layers>
                     <Layer level="OVERLAY">
-                        <FontString name="RXP_IU_AH_BidBidText" inherits="GameFontHighlightSmall" text="BID" justifyH="RIGHT">
+                        <FontString name="RXP_IU_AH_BidText" inherits="GameFontHighlightSmall" text="BID" justifyH="RIGHT">
                             <Anchors>
                                 <Anchor point="RIGHT" relativeTo="$parent" relativePoint="LEFT">
                                     <Offset>
@@ -613,7 +544,7 @@
                     </Layer>
                 </Layers>
             </Frame>
-            <Button name="RXP_IU_AH_BidCloseButton" inherits="UIPanelButtonTemplate" text="CLOSE">
+            <Button name="RXP_IU_AH_CloseButton" inherits="UIPanelButtonTemplate" text="CLOSE">
                 <Size>
                     <AbsDimension x="80" y="22"/>
                 </Size>
@@ -641,12 +572,12 @@
                     </OnClick>
                 </Scripts>
             </Button>
-            <Button name="RXP_IU_AH_BidBuyoutButton" inherits="UIPanelButtonTemplate" text="BUYOUT">
+            <Button name="RXP_IU_AH_BuyoutButton" inherits="UIPanelButtonTemplate" text="BUYOUT">
                 <Size>
                     <AbsDimension x="80" y="22"/>
                 </Size>
                 <Anchors>
-                    <Anchor point="RIGHT" relativeTo="RXP_IU_AH_BidCloseButton" relativePoint="LEFT">
+                    <Anchor point="RIGHT" relativeTo="RXP_IU_AH_CloseButton" relativePoint="LEFT">
                         <Offset>
                             <AbsDimension x="0" y="0"/>
                         </Offset>
@@ -675,7 +606,7 @@
                     <AbsDimension x="80" y="22"/>
                 </Size>
                 <Anchors>
-                    <Anchor point="RIGHT" relativeTo="RXP_IU_AH_BidBuyoutButton" relativePoint="LEFT">
+                    <Anchor point="RIGHT" relativeTo="RXP_IU_AH_BuyoutButton" relativePoint="LEFT">
                         <Offset>
                             <AbsDimension x="0" y="0"/>
                         </Offset>
@@ -702,9 +633,9 @@
         </Frames>
         <Scripts>
             <!--
-            <OnLoad function="RXP_IU_AH_Bid_OnLoad"/>
-            <OnShow function="RXP_IU_AH_Bid_OnShow"/>
-            <OnEvent function="RXP_IU_AH_Bid_OnEvent"/>
+            <OnLoad function="RXP_IU_AH__OnLoad"/>
+            <OnShow function="RXP_IU_AH__OnShow"/>
+            <OnEvent function="RXP_IU_AH__OnEvent"/>
             -->
         </Scripts>
     </Frame>
