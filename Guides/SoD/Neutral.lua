@@ -1031,6 +1031,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune & Books Guide
+<< SoD
 #subgroup Chest << Shaman
 #subgroup Belt << Warrior/Hunter/Mage/Paladin
 #subgroup Boots << Warlock/Priest/Rogue/Druid
@@ -1272,6 +1273,7 @@ step
 RXPGuides.RegisterGuide([[
 
 #classic
+<< SoD
 #group RestedXP Rune & Books Guide
 #subgroup Belt << Druid/Priest/Rogue/Warlock
 #subgroup Boots << Mage/Shaman/Hunter/Paladin/Warrior
@@ -1520,6 +1522,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+<< SoD
 #group RestedXP Rune & Books Guide
 #subgroup Spell Books
 #name Totemic Projection - 27-40 (Scarlet Monastery) << Shaman
