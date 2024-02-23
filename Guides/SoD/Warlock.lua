@@ -1252,15 +1252,18 @@ step
 step
     .train 416017,1
     .goto Desolace,74.5,13.4
-    >>Kill the |cRXP_ENEMY_Reckless Warlock|r in Desolace |cRXP_WARN_ Please note, this is a rare enemy and there's a chance it may not be present.|r Loot him |T236297:0|t[Brimstone Carving]
+    >>Click the |cRXP_ENEMY_Reckless Warlock|r on the ground. Loot him for |T236297:0|t[Brimstone Carving]
+    >>|cRXP_WARN_This is a rare enemy and there's a chance it may not be present|r
     .collect 213583,1
     .mob Reckless Warlock
     .unitscan Reckless Warlock
 step
     .train 416017,1
-    .cast 1949 >> Cast |T135818:0|t[Hellfire] to damage yourself below 70%. Afterwards |T236297:0|t[Brimstone Carving] will turn into the rune.
+    >>|cRXP_WARN_Cast|r |T135818:0|t[Hellfire] |cRXP_WARN_to damage yourself below 70% health. Afterwards|r |T236297:0|t[Brimstone Carving] |cRXP_WARN_will transform into|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Wickedness|r]
+    .collect 213102,1 --Rune of Wickedness
 step
-    .train 416017 >> Use the |T236295:0|t[Item] to learn |T236295:0|t[Dance of the Wicked]
+    .train 416017 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Wickedness|r] |cRXP_WARN_to learn|r |T236295:0|t[Dance of the Wicked]
+    .use 416017
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1280,15 +1283,18 @@ step
 step
     .train 416017,1
     .goto Stranglethorn Vale,31.2,47.4
-    >>Kill the |cRXP_ENEMY_Reckless Warlock|r in Desolace |cRXP_WARN_ Please note, this is a rare enemy and there's a chance it may not be present.|r Loot him |T236297:0|t[Brimstone Carving]
+    >>Click the |cRXP_ENEMY_Reckless Warlock|r on the ground. Loot him for |T236297:0|t[Brimstone Carving]
+    >>|cRXP_WARN_This is a rare enemy and there's a chance it may not be present|r
     .collect 213583,1
     .unitscan Reckless Warlock
     .mob Reckless Warlock
 step
     .train 416017,1
-    .cast 1949 >> Cast |T135818:0|t[Hellfire] to damage yourself below 70%. Afterwards |T236297:0|t[Brimstone Carving] will turn into the rune.
+    >>|cRXP_WARN_Cast|r |T135818:0|t[Hellfire] |cRXP_WARN_to damage yourself below 70% health. Afterwards|r |T236297:0|t[Brimstone Carving] |cRXP_WARN_will transform into|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Wickedness|r]
+    .collect 213102,1 --Rune of Wickedness
 step
-    .train 416017 >> Use the |T236295:0|t[Item] to learn |T236295:0|t[Dance of the Wicked]
+    .train 416017 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Wickedness|r] |cRXP_WARN_to learn|r |T236295:0|t[Dance of the Wicked]
+    .use 416017
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1307,8 +1313,14 @@ step
     .zone Desolace >>Travel to Desolace |cRXP_WARN_It is highly recommended to form a group of atleast 3 players.|r
 step
     .train 426467,1
+    .train 19028,3 --Soul Link
     .goto Desolace,81.2,79.7
-    .cast 434869 >> |cRXP_WARN_Click on the Altar to summon |cRXP_ENEMY_Seductress Ceeyna|r |cRXP_WARN_but make sure to use |T136121:0|t[Shadow Ward], |T136190:0|t[Sacrifice] and |T136160:0|t[Soul Link]|r beforehand|r |cFFFF0000 as you will receive a lot of damage during the channel and it cannot be healed.|r
+    .cast 434869 >> |cRXP_WARN_Click on the Altar to summon|r |cRXP_ENEMY_Seductress Ceeyna|r |cRXP_WARN_but make sure to use|r |T136121:0|t[Shadow Ward]|cRXP_WARN_,|r |T136190:0|t[Sacrifice] |cRXP_WARN_and|r |T136160:0|t[Soul Link]|r |cRXP_WARN_beforehand|r |cFFFF0000as you will receive a lot of damage during the channel and it cannot be healed|r
+step
+    .train 426467,1
+    .train 19028,1 --Soul Link
+    .goto Desolace,81.2,79.7
+    .cast 434869 >> |cRXP_WARN_Click on the Altar to summon|r |cRXP_ENEMY_Seductress Ceeyna|r |cRXP_WARN_but make sure to use|r |T136121:0|t[Shadow Ward] |cRXP_WARN_and|r |T136190:0|t[Sacrifice] |cRXP_WARN_beforehand|r |cFFFF0000as you will receive a lot of damage during the channel and it cannot be healed|r
 step
     .train 426467,1
     .goto Desolace,81.2,79.7
@@ -1316,7 +1328,8 @@ step
     .collect 213101,1
     .mob Seductress Ceeyna
 step
-    .train 426467 >> Use |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowflames|r] to learn |T236302:0|t[Shadowflame]
+    .train 426467 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowflames|r] |cRXP_WARN_to learn|r |T236302:0|t[Shadowflame]
+    .use 213101
 ]])
 
 -- RXPGuides.RegisterGuide([[
