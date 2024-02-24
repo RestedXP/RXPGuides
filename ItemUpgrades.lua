@@ -1458,26 +1458,6 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
     ahSession.displayFrame:SetParent(attachment)
     ahSession.displayFrame:SetPoint("TOPLEFT", attachment, "TOPLEFT")
 
-    -- Wrapper inside AH frame
-    local f = AceGUI:Create("Frame")
-    _G.RXPD = f
-    f:SetLayout("Fill")
-    -- f:SetFullWidth(true)
-    f:SetWidth(775)
-    f:SetHeight(335)
-    f:SetParent(ahSession.displayFrame)
-
-    -- f.frame:ClearAllPoints()
-    -- f.frame:SetPoint("TOPRIGHT", attachment, "TOPRIGHT", 40, -74)
-
-    scrollContainer = AceGUI:Create("ScrollFrame")
-    scrollContainer:SetLayout("Flow")
-    -- scrollContainer.frame:ClearAllPoints()
-    -- scrollContainer.frame:SetPoint("TOPRIGHT", attachment, "TOPRIGHT", 40, -74)
-    scrollContainer:AddChild(createRow(_G.HEADSLOT))
-
-    f:AddChild(scrollContainer)
-
     -- Create tab button
     local index = attachment.numTabs + 1
     local tabButton = CreateFrame("Button", "AuctionFrameTab" .. index,

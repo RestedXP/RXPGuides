@@ -391,7 +391,6 @@
                     </Anchor>
                 </Anchors>
             </Button>
-            <!--
             <ScrollFrame name="RXP_IU_AH_ScrollFrame" inherits="FauxScrollFrameTemplate">
                 <Size>
                     <AbsDimension x="775" y="335"/>
@@ -439,7 +438,6 @@
                     </OnVerticalScroll>
                 </Scripts>
             </ScrollFrame>
-
             <Button name="RXP_IU_AH_Row1" inherits="RXP_IU_AH_ItemRow" id="1">
                 <Anchors>
                     <Anchor point="TOPLEFT">
@@ -521,7 +519,6 @@
                     </Anchor>
                 </Anchors>
             </Button>
-            -->
             <Frame name="RXP_IU_AH_BidPrice" inherits="MoneyInputFrameTemplate">
                 <Anchors>
                     <Anchor point="BOTTOM">
