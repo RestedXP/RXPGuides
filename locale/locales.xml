@@ -3,5 +3,6 @@
     <Script file="frFR.lua"/>
     <Script file="zhCN.lua"/>
     <Script file="zhTW.lua"/>
+    <Script file="deDE.lua"/>
     <Script file="NPCnames.lua"/>
 </Ui>

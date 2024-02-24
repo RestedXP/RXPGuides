@@ -1,10 +1,9 @@
 RXPGuides.RegisterGuide([[
 #wotlk
-#group +Profession leveling
-#subgroup Mining
+#group +Profession Leveling
 << Horde
-#name 1-375 Horde_a1
-#displayname 1-375 Horde
+#name 1-450 Mining (H)
+#displayname 1-450 Mining
 
 step << Mage
     #completewith Makaru
@@ -12,12 +11,12 @@ step << Mage
     .skill mining,65,1
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >> Hearth to Dalaran
     .zoneskip Orgrimmar
     .skill mining,65,1
 step << !Mage
-    .goto Shattrath City,52.2,52.9
-    .zone Orgrimmar >> In Shattrath, take the portal to Orgrimmar
+    .goto Dalaran,55.5,25.5
+    .zone Orgrimmar >> In Dalaran, take the portal to Orgrimmar
     .skill mining,65,1
 step
     #sticky
@@ -53,13 +52,13 @@ step << !Mage
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >> Hearth to Dalaran
     .zoneskip Orgrimmar
     .skill mining,125,1
 step << !Mage
     #completewith next
-    .goto Shattrath City,52.2,52.9
-    .zone Orgrimmar >> In Shattrath, take the portal to Orgrimmar
+    .goto Dalaran,55.5,25.5
+    .zone Orgrimmar >> In Dalaran, take the portal to Orgrimmar
     .skill mining,125,1
 step
     .goto Orgrimmar,73.1,26.1
@@ -67,7 +66,7 @@ step
     .skill mining,125,1
 step
     #completewith next
-    .goto Orgrimmar,45.120,63.889
+    .goto Orgrimmar,45.1,63.9
     .fly Crossroads >> Fly to The Crossroads
     .zoneskip The Barrens
 step
@@ -88,13 +87,13 @@ step << !Mage
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >> Hearth to Dalaran
     .skill mining,175,1
     .zoneskip Orgrimmar
 step << !Mage
     #completewith next
-    .goto Shattrath City,52.2,52.9
-    .zone Orgrimmar >> In Shattrath, take the portal to Orgrimmar
+    .goto Dalaran,55.5,25.5
+    .zone Orgrimmar >> In Dalaran, take the portal to Orgrimmar
     .skill mining,175,1
 step
     .goto Orgrimmar,73.1,26.1
@@ -124,7 +123,7 @@ step << !Mage
 step
     #completewith next
     .goto Undercity,65.9,44.1,50,0
-    .goto Undercity,63.254,48.559
+    .goto Undercity,63.3,48.6
     .fly Hammerfall >> Fly to Hammerfall
     .skill mining,175,1
     .zoneskip Arathi Highlands
@@ -145,13 +144,13 @@ step << Mage
     .skill mining,245,1
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >> Hearth to Dalaran
     .skill mining,245,1
     .zoneskip Orgrimmar
 step << !Mage
     #completewith next
-    .goto Shattrath City,52.2,52.9
-    .zone Orgrimmar >> In Shattrath, take the portal to Orgrimmar
+    .goto Dalaran,55.5,25.5
+    .zone Orgrimmar >> In Dalaran, take the portal to Orgrimmar
     .skill mining,245,1
 step
     .goto Orgrimmar,73.1,26.1
@@ -171,7 +170,7 @@ step << Mage
     .reputation 989,revered,<0,1
 step
     #completewith next
-    .goto Orgrimmar,45.120,63.889
+    .goto Orgrimmar,45.1,63.9
     .fly Gadgetzan >> Fly to Gadgetzan
     .skill mining,245,1
     .zoneskip Tanaris
@@ -199,9 +198,13 @@ step << Mage
     .zoneskip Hellfire Peninsula
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >> Hearth to Dalaran
     .skill mining,325,1
     .zoneskip Hellfire Peninsula
+step
+    #completewith next
+    .goto Dalaran,55.5,25.5
+    .zone Shattrath City >> In Dalaran, Teleport to Shattrath
 step
     #completewith Krugosh
     .goto Shattrath City,64.1,41.1
@@ -251,12 +254,6 @@ step << Mage
     .zone Shattrath City >> Teleport to Shattrath City
     .skill mining,375,1
     .zoneskip Nagrand
-step << !Mage
-    #completewith next
-    .hs >> Hearth to Shattrath City
-    .skill mining,375,1
-    .zoneskip Nagrand
-    .cooldown item,6948,>0,1
 step
     #completewith next
     .goto Nagrand,77.4,54.6
@@ -266,17 +263,62 @@ step
     #label Nagrand
     .skill mining,375 >> Level your Mining from 350-375 in Nagrand
     .loop 60,Nagrand,70.8,76.0,77.7,59.9,71.6,60.3,70.6,52.1,72.2,43.4,66.1,34.7,68.0,50.3,61.2,55.5,56.9,53.2,56.4,57.9,48.4,50.9,51.5,39.8,50.3,24.7,46.1,20.7,38.9,22.4,45.3,45.8,42.7,49.2,39.5,44.8,37.8,29.6,31.7,28.3,25.6,15.0,27.1,23.6,23.2,29.1,8.0,40.4,9.9,43.7,23.4,48.1,21.0,53.5,28.0,65.1,29.9,71.0,25.4,71.8,28.9,80.8,40.4,83.0,43.1,76.3,43.7,64.1,48.6,79.4,50.7,67.2,57.2,63.3,69.0,81.5,70.8,76.0
+step << Mage
+    #completewith next
+    .zone Dalaran >> Teleport to Dalaran
+    .zoneskip Borean Tundra
+    .skill mining 400,1
+step << !Mage
+    #completewith next
+    .hs >> Hearth to Dalaran
+    .zoneskip Borean Tundra
+    .skill mining 400,1
 step
-    +Congratulations on reaching 375 Mining!
+    #completewith next
+    .zone Borean Tundra >> Fly to Borean Tundra on your flying mount
+    .skill mining,400,1
+    .skill riding,300,1
+step
+    #completewith next
+    .goto Dalaran, 72.2,45.8
+    .fly Warsong Hold >> Fly to Borean Tundra (Warsong Hold)
+    .skill mining,400,1
+    .skill riding,<300,1
+step
+    #label Brunna
+    .goto Borean Tundra,42.6,53.2
+    .train 50310 >> Learn Grand Master Mining (350-450) from Brunna Ironaxe in Warsong Hold
+    .skill mining,400,1
+step
+    #label Borean Tundra
+    .skill mining,400 >> Train your mining from 375-400 in Borean Tundra
+    .loop 20,Borean Tundra,91.1,33.6,87.8,44.7,78.9,44.7,78.9,30.0,73.4,32.7,72.6,28.0,68.2,25.5,69.3,31.5,64.1,33.4,61.7,37.7,66.3,38.8,72.6,45.3,66.0,46.6,59.6,59.4,56.6,57.8,52.8,73.2,49.3,69.4,50.6,57.1,43.1,70.4,34.1,67.0,29.5,56.5,49.2,49.1,52.3,35.9,50.0,33.3,41.7,41.6,23.8,33.6,22.7,28.9,25.0,22.0,30.4,22.3,33.2,27.6,39.9,20.0,44.2,21.3,41.9,13.7,48.7,15.3,55.5,11.8,60.0,11.7,59.4,19.2,61.1,22.3,65.9,16.6,74.2,17.1,78.0,21.3,84.1,32.3,91.1,33.6
+step
+    #completewith next
+    .goto Sholazar Basin,50,50
+    .zone Sholazar Basin >> Fly to Sholazar Basin
+    .skill mining,425,1
+step
+    .skill mining,425 >> Level your Mining from 400-425 in Sholazar Basin
+    .loop 20,Sholazar Basin,77.7,56.8,76.3,65.9,64.0,81.0,60.2,80.3,59.7,87.0,54.0,88.3,59.3,66.8,53.8,64.0,47.7,60.4,45.9,63.5,50.2,78.8,48.5,87.0,40.3,87.1,37.4,83.7,40.4,76.5,36.6,69.1,32.2,75.0,31.8,80.2,32.2,83.6,22.8,82.4,20.8,70.3,23.5,52.8,25.8,47.2,31.9,59.5,36.3,57.5,39.5,51.2,31.4,37.9,35.2,32.8,37.6,37.0,40.8,38.4,43.1,35.8,49.7,43.3,53.5,38.7,51.0,31.6,43.6,22.3,58.9,25.0,59.0,29.4,62.9,31.8,67.2,42.9,61.3,50.4,64.2,53.8,67.3,50.7,67.8,55.2,74.2,55.5,77.7,56.8
+step
+    #completewith next
+    .goto Icecrown,50,50
+    .zone Icecrown >> Fly to Icecrown
+    .skill mining,450,1
+step
+    .skill nining,450 >> Level your Mining from 425-450 in Icecrown
+    .loop 20, Icecrown,65.6,35.1,59.3,29.4,54.9,38.6,47.8,35.1,42.8,37.8,39.3,33.4,37.9,36.2,37.2,41.7,41.6,41.1,38.0,50.8,37.9,57.1,40.2,59.8,31.5,58.1,30.8,64.5,36.2,68.9,39.9,65.6,49.6,61.4,48.5,51.2,56.5,44.7,65.6,59.8,67.1,72.2,72.0,63.8,74.2,65.0,77.8,64.3,79.3,57.0,75.8,46.4,67.6,46.5,67.3,42.9,74.1,40.1,74.7,35.3,65.6,35.1
+step
+    +Congratulations on reaching skill level 450 in Mining!
 ]])
 
 RXPGuides.RegisterGuide([[
 #wotlk
-#group +Profession leveling
-#subgroup Mining
+#group +Profession Leveling
 << Alliance
-#name 1-375 Alliance_a2
-#displayname 1-375 Alliance
+#name 1-450 Mining (A)
+#displayname 1-450 Mining
 
 step << Mage
     #completewith Gelman
@@ -284,12 +326,12 @@ step << Mage
     .skill mining,65,1
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >> Hearth to Dalaran
     .skill mining,65,1
     .zoneskip Stormwind City
 step << !Mage
-    .goto Shattrath City,55.8,36.6
-    .zone Stormwind City >> In Shattrath, take the portal to Stormwind City
+    .goto Dalaran,39.8,62.5
+    .zone Stormwind City >> In Dalaran, take the portal to Stormwind City
     .skill mining,65,1
 step
     #sticky
@@ -326,13 +368,12 @@ step << !Mage
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >> Hearth to Dalaran
     .skill mining,125,1
     .zoneskip Stormwind City
 step << !Mage
-    #completewith next
-    .goto Shattrath City,55.8,36.6
-    .zone Stormwind City >> In Shattrath, take the portal to Stormwind City
+    .goto Dalaran,39.8,62.5
+    .zone Stormwind City >> In Dalaran, take the portal to Stormwind City
     .skill mining,125,1
 step
     .goto Stormwind City,60.2,37.0,20,0
@@ -342,7 +383,7 @@ step
 step
     #completewith next
     .goto Stormwind City,68.2,72.9,20,0
-    .goto Stormwind City,70.954,72.512
+    .goto Stormwind City,71.0,72.5
     .fly Lakeshire >> Fly to Lakeshire
     .skill mining,125,1
     .zoneskip Redridge Mountains
@@ -361,13 +402,14 @@ step << !Mage
     .zoneskip Stormwind City
     .cooldown item,6948,<0,1
 step << !Mage
-    .hs >> Hearth to Shattrath City
+    #completewith next
+    .hs >> Hearth to Dalaran
     .skill mining,175,1
     .zoneskip Stormwind City
 step << !Mage
     #completewith next
-    .goto Shattrath City,55.8,36.6
-    .zone Stormwind City >> In Shattrath, take the portal to Stormwind City
+    .goto Dalaran,39.8,62.5
+    .zone Stormwind City >> In Dalaran, take the portal to Stormwind City
     .skill mining,175,1
 step
     .goto Stormwind City,60.2,37.0,20,0
@@ -377,7 +419,7 @@ step
 step
     #completewith next
     .goto Stormwind City,68.2,72.9,20,0
-    .goto Stormwind City,70.954,72.512
+    .goto Stormwind City,71.0,72.5
     .fly Refuge Pointe >> Fly to Refuge Pointe
     .skill mining,175,1
     .zoneskip Arathi Highlands
@@ -399,13 +441,13 @@ step << Mage
     .skill mining,245,1
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
-    .zoneskip Ironforge
+    .hs >> Hearth to Dalaran
     .skill mining,245,1
+    .zoneskip Stormwind City
 step << !Mage
     #completewith next
-    .goto Shattrath City,56.3,36.9
-    .zone Ironforge >> In Shattrath, take the portal to Ironforge
+    .goto Dalaran,39.2,63.7
+    .zone Stormwind City >> In Dalaran, take the portal to Ironforge
     .skill mining,245,1
 step
     .goto Ironforge,51.8,29.5,15,0
@@ -431,7 +473,7 @@ step << Mage
     .zoneskip Tanaris
 step << !Mage
     #completewith next
-    .goto Ironforge,55.501,47.742
+    .goto Ironforge,55.5,47.7
     .fly Wetlands >> Fly to Menethil Harbor
     .skill mining,245,1
     .zoneskip Tanaris
@@ -465,12 +507,18 @@ step
     .loop 60,Un'Goro Crater,48.4,13.8,53.1,30.7,56.1,33.3,62.2,32.3,58.6,23.4,57.7,14.1,63.0,16.8,64.5,20.9,69.5,20.3,71.6,28.1,74.5,34.5,75.6,38.7,78.9,41.8,76.5,43.8,76.2,51.1,76.0,61.2,79.6,59.9,76.0,61.2,74.1,68.0,69.8,68.4,60.8,65.7,61.6,70.1,63.8,79.0,60.4,83.4,56.1,89.5,54.4,86.3,51.0,86.5,44.8,82.6,48.8,80.7,50.7,72.5,54.3,64.9,50.8,53.4,50.8,53.4,53.1,51.3,52.5,47.6,51.7,45.7,47.7,46.8,46.9,51.8,47.9,64.6,39.0,64.8,37.9,78.6,31.8,78.9,32.1,73.6,32.7,70.8,28.9,68.2,25.3,61.4,22.9,58.2,24.2,55.0,24.3,43.1,22.2,41.2,28.1,40.4,32.8,47.7,38.3,37.0,44.5,35.1,44.1,28.8,35.8,22.1,39.6,17.4,44.2,14.5,48.4,13.8
 step << Mage
     #completewith next
-    .zone Shattrath City >> Teleport to Shattrath City
+    .zone Dalaran >> Teleport to Dalaran
     .skill mining,325,1
     .zoneskip Hellfire Peninsula
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >> Hearth to Dalaran
+    .skill mining,325,1
+    .zoneskip Hellfire Peninsula
+step
+    #completewith next
+    .goto Dalaran,37.3,66.2
+    .zone Shattrath City >> In Dalaran, take the portal to Shattrath
     .skill mining,325,1
     .zoneskip Hellfire Peninsula
 step
@@ -518,17 +566,6 @@ step
 step
     .skill mining,350 >> Level your Mining from 325-350 in Terokkar Forest
     .loop 60,Terokkar Forest,30.6,37.2,29.7,48.0,25.3,55.4,19.5,56.1,16.7,70.0,18.3,78.3,26.1,75.9,25.8,65.8,28.8,65.1,30.8,68.9,29.7,76.3,32.5,77.9,41.0,79.8,48.6,80.6,52.5,76.8,55.2,72.8,61.4,72.1,61.4,83.5,69.1,86.7,75.4,87.4,74.4,82.3,70.3,76.6,72.6,73.2,66.3,71.0,63.9,65.1,56.6,65.8,56.8,61.4,51.2,56.4,42.7,48.4,37.8,39.1,45.1,35.1,49.1,36.0,53.1,32.9,56.7,34.5,55.9,39.3,58.2,47.0,64.8,55.1,66.3,53.6,68.6,52.7,71.1,45.0,69.4,38.2,73.0,36.8,71.6,30.8,65.4,31.5,59.9,23.0,54.6,25.2,53.2,27.8,49.1,20.1,50.9,16.6,43.9,10.0,42.2,22.2,39.4,19.2,35.8,7.9,27.8,10.8,23.7,9.5,21.9,11.4,21.3,14.5,30.6,37.2
-step << Mage
-    #completewith next
-    .zone Shattrath City >> Teleport to Shattrath City
-    .skill mining,375,1
-    .zoneskip Nagrand
-step << !Mage
-    #completewith next
-    .hs >> Hearth to Shattrath City
-    .skill mining,375,1
-    .zoneskip Nagrand
-    .cooldown item,6948,>0,1
 step
     #completewith next
     .goto Nagrand,77.4,54.6
@@ -537,6 +574,52 @@ step
 step
     .skill mining,375 >> Level your Mining from 350-375 in Nagrand
     .loop 60,Nagrand,70.8,76.0,77.7,59.9,71.6,60.3,70.6,52.1,72.2,43.4,66.1,34.7,68.0,50.3,61.2,55.5,56.9,53.2,56.4,57.9,48.4,50.9,51.5,39.8,50.3,24.7,46.1,20.7,38.9,22.4,45.3,45.8,42.7,49.2,39.5,44.8,37.8,29.6,31.7,28.3,25.6,15.0,27.1,23.6,23.2,29.1,8.0,40.4,9.9,43.7,23.4,48.1,21.0,53.5,28.0,65.1,29.9,71.0,25.4,71.8,28.9,80.8,40.4,83.0,43.1,76.3,43.7,64.1,48.6,79.4,50.7,67.2,57.2,63.3,69.0,81.5,70.8,76.0
+step << Mage
+    #completewith next
+    .zone Dalaran >> Teleport to Dalaran
+    .zoneskip Borean Tundra
+    .skill mining 400,1
+step << !Mage
+    #completewith next
+    .hs >> Hearth to Dalaran
+    .zoneskip Borean Tundra
+    .skill mining 400,1
 step
-    +Congratulations on reaching 375 Mining!
+    #completewith next
+    .zone Borean Tundra >> Fly to Borean Tundra on your flying mount
+    .skill mining,400,1
+    .skill riding,300,1
+step
+    #completewith next
+    .goto Dalaran, 72.2,45.8
+    .fly Valiance Keep >> Fly to Borean Tundra (Valiance Keep)
+    .skill mining,400,1
+    .skill riding,<300,1
+step
+    #label Fendrig
+    .goto Borean Tundra,57.4,66.2
+    .train 50310 >> Learn Grand Master Mining (350-450) from Fendrig Redbeard in Valiance Keep
+    .skill mining,400,1
+step
+    #label Borean Tundra
+    .skill mining,400 >> Train your mining from 375-400 in Borean Tundra
+    .loop 20,Borean Tundra,91.1,33.6,87.8,44.7,78.9,44.7,78.9,30.0,73.4,32.7,72.6,28.0,68.2,25.5,69.3,31.5,64.1,33.4,61.7,37.7,66.3,38.8,72.6,45.3,66.0,46.6,59.6,59.4,56.6,57.8,52.8,73.2,49.3,69.4,50.6,57.1,43.1,70.4,34.1,67.0,29.5,56.5,49.2,49.1,52.3,35.9,50.0,33.3,41.7,41.6,23.8,33.6,22.7,28.9,25.0,22.0,30.4,22.3,33.2,27.6,39.9,20.0,44.2,21.3,41.9,13.7,48.7,15.3,55.5,11.8,60.0,11.7,59.4,19.2,61.1,22.3,65.9,16.6,74.2,17.1,78.0,21.3,84.1,32.3,91.1,33.6
+step
+    #completewith next
+    .goto Sholazar Basin,50,50
+    .zone Sholazar Basin >> Fly to Sholazar Basin
+    .skill mining,425,1
+step
+    .skill mining,425 >> Level your Mining from 400-425 in Sholazar Basin
+    .loop 20,Sholazar Basin,77.7,56.8,76.3,65.9,64.0,81.0,60.2,80.3,59.7,87.0,54.0,88.3,59.3,66.8,53.8,64.0,47.7,60.4,45.9,63.5,50.2,78.8,48.5,87.0,40.3,87.1,37.4,83.7,40.4,76.5,36.6,69.1,32.2,75.0,31.8,80.2,32.2,83.6,22.8,82.4,20.8,70.3,23.5,52.8,25.8,47.2,31.9,59.5,36.3,57.5,39.5,51.2,31.4,37.9,35.2,32.8,37.6,37.0,40.8,38.4,43.1,35.8,49.7,43.3,53.5,38.7,51.0,31.6,43.6,22.3,58.9,25.0,59.0,29.4,62.9,31.8,67.2,42.9,61.3,50.4,64.2,53.8,67.3,50.7,67.8,55.2,74.2,55.5,77.7,56.8
+step
+    #completewith next
+    .goto Icecrown,50,50
+    .zone Icecrown >> Fly to Icecrown
+    .skill mining,450,1
+step
+    .skill nining,450 >> Level your Mining from 425-450 in Icecrown
+    .loop 20, Icecrown,65.6,35.1,59.3,29.4,54.9,38.6,47.8,35.1,42.8,37.8,39.3,33.4,37.9,36.2,37.2,41.7,41.6,41.1,38.0,50.8,37.9,57.1,40.2,59.8,31.5,58.1,30.8,64.5,36.2,68.9,39.9,65.6,49.6,61.4,48.5,51.2,56.5,44.7,65.6,59.8,67.1,72.2,72.0,63.8,74.2,65.0,77.8,64.3,79.3,57.0,75.8,46.4,67.6,46.5,67.3,42.9,74.1,40.1,74.7,35.3,65.6,35.1
+step
+    +Congratulations on reaching skill level 450 in Mining!
 ]])

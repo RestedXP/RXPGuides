@@ -1867,6 +1867,9 @@ step
     .target Tonga Runetotem
     .target Sergra Darkthorn
     .target Gazrog
+step
+    .destroy 5165 >>Delete any leftover |T132914:0|t[Sunscale Feathers] you may still have
+    .itemcount 5165,1
 step << Hunter
     .goto The Barrens,51.67,29.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Barg|r
@@ -1999,16 +2002,12 @@ step
     .goto Stonetalon Mountains,47.47,62.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Jayka|r
     >>|cRXP_WARN_Do NOT set your hearthstone!|r
-    >>|cRXP_BUY_Buy|r |T133970:0|t[Mutton Chop] |cRXP_BUY_from her|r << Rogue/Warrior
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_from her|r << Priest/Mage
-    >>|cRXP_BUY_Buy|r |T133970:0|t[Mutton Chop] |cRXP_BUY_and|r |T132796:0|t[Melon Juice] |cRXP_BUY_from her|r << Warlock/Shaman/Druid/Hunter
-    .vendor >> Vendor Trash
-    .collect 3770,20,1093,1 << !Priest !Mage --Mutton Chop (20)
-    .collect 1205,20,1093,1 << !Rogue !Warrior --Melon Juice (20)
+	.vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
+    .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
     .target Innkeeper Jayka
 step
     .goto Stonetalon Mountains,47.61,61.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Jeeda|r |cRXP_BUY_on the second floor of the inn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeeda|r on the second floor of the inn
     .vendor >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_from her if they're up|r << !Warrior
     .vendor >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_and|r |T134413:0|t[Liferoot] |cRXP_BUY_from her if they're up|r << Warrior
     .target Jeeda
@@ -2193,17 +2192,14 @@ step << Druid
     .target Loganaar
     .xp <20,1
 step
+    #completewith next
     .hs >> Hearth to Camp Taurajo
     .use 6948
 step
     .goto The Barrens,45.58,59.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Byula|r
-    >>|cRXP_BUY_Buy|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_from him|r << Rogue/Warrior
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_from him|r << Priest/Mage
-    >>|cRXP_BUY_Buy|r |T133978:0|t[Snapvine Watermelon] |cRXP_BUY_and|r |T132796:0|t[Melon Juice] |cRXP_BUY_from him|r << Warlock/Shaman/Druid/Hunter
-    .vendor >> Vendor Trash
-    .collect 4538,20,895,1 << !Priest !Mage --Snapvine Watermelon (40)
-    .collect 1205,20,895,1 << !Rogue !Warrior --Melon Juice (40)
+	.vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
+    .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
     .target Innkeeper Byula
 step
     .goto The Barrens,44.85,59.14
@@ -2417,6 +2413,9 @@ step
     .goto The Barrens,52.26,31.93
     .target Tonga Runetotem
     .target Mankrik
+step
+    .destroy 5085 >>Delete any leftover |T133721:0|t[Bristleback Quilboar Tusks] you may still have
+    .itemcount 5085,1
 step
     #label XroadsHS2
     .goto The Barrens,51.99,29.89
@@ -2780,9 +2779,13 @@ step
     .target Mangletooth
     .addquestitem 4075,5052
 step
+    #optional
     #completewith Thunderhawk
+    .goto The Barrens,44.55,59.27,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
     +|cRXP_WARN_Use your|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r] |cRXP_WARN_to get buffs. Save at least 4 of them for later|r
     +|cRXP_WARN_Make sure to turn off any autocomplete functions from addons such as Questie or Leatrix Plus for this!|r
+    .target Mangletooth
 step
     #label IshamuhaleTurnin
     .goto The Barrens,44.85,59.14
@@ -2933,13 +2936,16 @@ step
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .accept 4021 >>Accept Counterattack!
+    --.timer 183,Warlord Krom'zar Spawn
     .target Regthar Deathgate
     .isQuestTurnedIn 852
     .group
+    --timer is random, generally somewhere between 120-210 seconds
 step
     .goto The Barrens,44.48,28.15
     >>Kill |cRXP_ENEMY_Warlord Krom'zar|r once he appears. Loot the |cRXP_PICK_Banner|r that he drops on the ground
     >>|cRXP_WARN_Be careful! He is a strong elite and is guarded by at least two|r |cRXP_ENEMY_Kolkar|r |cRXP_WARN_mobs|r
+    >>|cRXP_WARN_It can take up to 3 minutes until he spawns|r
     .complete 4021,1 --Piece of Krom'zar's Banner (1)
     .unitscan Warlord Krom'zar
     .group 3
@@ -2969,11 +2975,13 @@ step
     .complete 876,1 --Serena's Head (1)
     .mob Serena Bloodfeather
 step
+    #completewith ApothecaryPickup
     .hs >> Hearth to The Crossroads
     .use 6948
     .cooldown item,6948,>0
     .isQuestComplete 876
 step
+    #completewith next
     .goto The Barrens,52.09,30.43,120 >>Travel to The Crossroads. You can also grind untill your |T134414:0|t[Hearthstone] is back up
     .cooldown item,6948,<0
     .isQuestComplete 876
@@ -3008,6 +3016,7 @@ step
     #map Stonetalon Mountains
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seereth|r and |cRXP_FRIENDLY_Makaba|r
     .turnin 1062 >>Turn in Goblin Invaders
+    .timer 4,Goblin Invaders RP
     .accept 1063 >>Accept The Elder Crone
     .accept 1068 >> Accept Shredding Machines
     .goto The Barrens,35.26,27.88
@@ -3081,6 +3090,7 @@ step
     .group
 step
     #completewith ElderCroneTurnin
+    .goto Thunder Bluff,54.18,27.01,20,0
     .goto Thunder Bluff,50.75,37.07,40 >> Take the elevator up to Thunder Bluff
 step << Druid
     .goto Thunder Bluff,47.12,57.88
@@ -3775,16 +3785,12 @@ step
     .goto Stonetalon Mountains,47.47,62.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Jayka|r
     >>|cRXP_WARN_Do NOT set your hearthstone!|r
-    >>|cRXP_BUY_Buy|r |T133970:0|t[Mutton Chop] |cRXP_BUY_from her|r << Rogue/Warrior
-    >>|cRXP_BUY_Buy|r |T132796:0|t[Melon Juice] |cRXP_BUY_from her|r << Priest/Mage
-    >>|cRXP_BUY_Buy|r |T133970:0|t[Mutton Chop] |cRXP_BUY_and|r |T132796:0|t[Melon Juice] |cRXP_BUY_from her|r << Warlock/Shaman/Druid/Hunter
-    .vendor >> Vendor Trash
-    .collect 3770,40,895,1 << !Priest !Mage --Mutton Chop (40)
-    .collect 1205,40,895,1 << !Rogue !Warrior --Melon Juice (40)
+	.vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
+    .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
     .target Innkeeper Jayka
 step
     .goto Stonetalon Mountains,47.61,61.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Jeeda|r |cRXP_BUY_on the second floor of the inn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeeda|r on the second floor of the inn
     .vendor >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_from her if they're up|r << !Warrior
     .vendor >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_and|r |T134413:0|t[Liferoot] |cRXP_BUY_from her if they're up|r << Warrior
     .target Jeeda
@@ -3894,53 +3900,53 @@ step
     .target Ziz Fizziks
 step
     .line Stonetalon Mountains,70.82,55.25,70.52,56.22,69.76,56.70,68.52,56.04,67.77,55.97,66.94,56.25,66.41,56.31,65.74,57.20,65.14,57.02,64.37,56.47,63.72,56.80,62.99,56.25,62.32,56.11,61.58,55.10,61.10,54.68,60.98,54.06,59.81,53.51,59.66,52.14,60.33,51.68
-    .goto Stonetalon Mountains,61.03,52.32,30,0
-    .goto Stonetalon Mountains,60.33,51.68,30,0
-    .goto Stonetalon Mountains,59.66,52.14,30,0
-    .goto Stonetalon Mountains,59.81,53.51,30,0
-    .goto Stonetalon Mountains,60.98,54.06,30,0
-    .goto Stonetalon Mountains,61.10,54.68,30,0
-    .goto Stonetalon Mountains,61.58,55.10,30,0
-    .goto Stonetalon Mountains,62.32,56.11,30,0
-    .goto Stonetalon Mountains,62.99,56.25,30,0
-    .goto Stonetalon Mountains,63.72,56.80,30,0
-    .goto Stonetalon Mountains,64.37,56.47,30,0
-    .goto Stonetalon Mountains,65.14,57.02,30,0
-    .goto Stonetalon Mountains,65.74,57.20,30,0
-    .goto Stonetalon Mountains,66.41,56.31,30,0
-    .goto Stonetalon Mountains,66.94,56.25,30,0
-    .goto Stonetalon Mountains,67.77,55.97,30,0
-    .goto Stonetalon Mountains,68.52,56.04,30,0
-    .goto Stonetalon Mountains,69.76,56.70,30,0
-    .goto Stonetalon Mountains,70.52,56.22,30,0
-    .goto Stonetalon Mountains,70.82,55.25,30,0
-    .goto Stonetalon Mountains,59.66,52.14
+    .goto Stonetalon Mountains,67.18,46.87,50,0
+    .goto Stonetalon Mountains,66.53,46.95,50,0
+    .goto Stonetalon Mountains,65.72,45.09,50,0
+    .goto Stonetalon Mountains,63.73,45.02,50,0
+    .goto Stonetalon Mountains,63.72,45.92,50,0
+    .goto Stonetalon Mountains,63.43,46.57,50,0
+    .goto Stonetalon Mountains,64.43,46.13,50,0
+    .goto Stonetalon Mountains,64.72,46.63,50,0
+    .goto Stonetalon Mountains,64.82,47.72,50,0
+    .goto Stonetalon Mountains,65.11,48.31,50,0
+    .goto Stonetalon Mountains,65.98,48.67,50,0
+    .goto Stonetalon Mountains,66.24,49.65,50,0
+    .goto Stonetalon Mountains,66.65,49.58,50,0
+    .goto Stonetalon Mountains,66.88,48.95,50,0
+    .goto Stonetalon Mountains,68.41,49.58,50,0
+    .goto Stonetalon Mountains,69.45,46.56,50,0
+    .goto Stonetalon Mountains,70.22,48.62,50,0
+    .goto Stonetalon Mountains,70.95,48.49,50,0
+    .goto Stonetalon Mountains,71.41,45.54,50,0
+    .goto Stonetalon Mountains,71.25,43.45,50,0
+    .goto Stonetalon Mountains,64.82,47.23
     >>Kill |cRXP_ENEMY_XT:9|r. It patrols the southern side of the river
     >>|cRXP_WARN_This quest does not need to be completed now|r
     .complete 1068,2 --XT:9 (1)
     .unitscan XT:9
 step
     .line Stonetalon Mountains,67.18,46.87,66.53,46.95,65.72,45.09,63.73,45.02,63.72,45.92,63.43,46.57,64.43,46.13,64.72,46.63,64.82,47.72,65.11,48.31,65.98,48.67,66.24,49.65,66.65,49.58,66.88,48.95,68.41,49.58,69.45,46.56,70.22,48.62,70.95,48.49,71.41,45.54,71.25,43.45
-    .goto Stonetalon Mountains,67.18,46.87,30,0
-    .goto Stonetalon Mountains,66.53,46.95,30,0
-    .goto Stonetalon Mountains,65.72,45.09,30,0
-    .goto Stonetalon Mountains,63.73,45.02,30,0
-    .goto Stonetalon Mountains,63.72,45.92,30,0
-    .goto Stonetalon Mountains,63.43,46.57,30,0
-    .goto Stonetalon Mountains,64.43,46.13,30,0
-    .goto Stonetalon Mountains,64.72,46.63,30,0
-    .goto Stonetalon Mountains,64.82,47.72,30,0
-    .goto Stonetalon Mountains,65.11,48.31,30,0
-    .goto Stonetalon Mountains,65.98,48.67,30,0
-    .goto Stonetalon Mountains,66.24,49.65,30,0
-    .goto Stonetalon Mountains,66.65,49.58,30,0
-    .goto Stonetalon Mountains,66.88,48.95,30,0
-    .goto Stonetalon Mountains,68.41,49.58,30,0
-    .goto Stonetalon Mountains,69.45,46.56,30,0
-    .goto Stonetalon Mountains,70.22,48.62,30,0
-    .goto Stonetalon Mountains,70.95,48.49,30,0
-    .goto Stonetalon Mountains,71.41,45.54,30,0
-    .goto Stonetalon Mountains,71.25,43.45,30,0
+    .goto Stonetalon Mountains,67.18,46.87,50,0
+    .goto Stonetalon Mountains,66.53,46.95,50,0
+    .goto Stonetalon Mountains,65.72,45.09,50,0
+    .goto Stonetalon Mountains,63.73,45.02,50,0
+    .goto Stonetalon Mountains,63.72,45.92,50,0
+    .goto Stonetalon Mountains,63.43,46.57,50,0
+    .goto Stonetalon Mountains,64.43,46.13,50,0
+    .goto Stonetalon Mountains,64.72,46.63,50,0
+    .goto Stonetalon Mountains,64.82,47.72,50,0
+    .goto Stonetalon Mountains,65.11,48.31,50,0
+    .goto Stonetalon Mountains,65.98,48.67,50,0
+    .goto Stonetalon Mountains,66.24,49.65,50,0
+    .goto Stonetalon Mountains,66.65,49.58,50,0
+    .goto Stonetalon Mountains,66.88,48.95,50,0
+    .goto Stonetalon Mountains,68.41,49.58,50,0
+    .goto Stonetalon Mountains,69.45,46.56,50,0
+    .goto Stonetalon Mountains,70.22,48.62,50,0
+    .goto Stonetalon Mountains,70.95,48.49,50,0
+    .goto Stonetalon Mountains,71.41,45.54,50,0
+    .goto Stonetalon Mountains,71.25,43.45,50,0
     .goto Stonetalon Mountains,64.82,47.23
     >>Kill |cRXP_ENEMY_XT:4|r. It patrols the northern side of the river
     >>|cRXP_WARN_This quest does not need to be completed now|r
@@ -4279,8 +4285,9 @@ step << Druid
 step << Rogue
     #completewith next
     .goto The Barrens,55.70,5.89
-	.use 8051 >>Target |cRXP_FRIENDLY_Taskmaster Fizzule|r, then use your |T134536:0|t[Flare Gun] TWICE and type /Salute
+    +Target |cRXP_FRIENDLY_Taskmaster Fizzule|r, then use your |T134536:0|t[Flare Gun] TWICE and type /Salute
     >>|cRXP_WARN_Be careful! Do NOT approach him until he becomes friendly or he will attack you!|r
+    .use 8051
     .target Taskmaster Fizzule
 step << Rogue
     #label MissionProbable

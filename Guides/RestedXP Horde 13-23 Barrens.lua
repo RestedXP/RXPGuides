@@ -116,7 +116,7 @@ step << Warrior
     #completewith next
     #requires Steel
     >>Kill some Plainstriders en route. Loot them for Beaks << !Tauren
-    .complete 844,1 --Plainstrider Beak (7) << !Tauren
+    .complete 844,1 << !Tauren --Plainstrider Beak (7)
     .goto The Barrens,54.7,28.0,20 >>Run up the mountain here
 step << Warrior
     #requires Steel
@@ -1253,7 +1253,7 @@ step
 #xprate >1.499
     .goto Thunder Bluff,45.814,64.711
     #completewith next
-    >> Walk to Thunderbluff.
+    >> Walk to Thunder Bluff.
     .home >>Set your Hearthstone to Thunder Bluff
 step
 #xprate <1.5

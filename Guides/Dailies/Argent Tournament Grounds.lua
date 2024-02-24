@@ -2,7 +2,8 @@ RXPGuides.RegisterGuide([[
 #wotlk
 #version 1
 #group +Argent Tournament
-#name |cRXP_LOOT_1.0|r Becoming a Champion
+#name A_1_AT_Start
+#displayname |cRXP_LOOT_1.0|r - Becoming a Champion
 
 step
 	#completewith next
@@ -1716,7 +1717,8 @@ RXPGuides.RegisterGuide([[
 #wotlk
 #version 1
 #group +Argent Tournament
-#name |cRXP_FRIENDLY_2.0|r Exodar Champion
+#name B_2_AT_Exodar
+#displayname |cRXP_FRIENDLY_2.0|r - Exodar Champion
 << Alliance !Draenei
 
 step
@@ -2010,7 +2012,8 @@ RXPGuides.RegisterGuide([[
 #wotlk
 #version 1
 #group +Argent Tournament
-#name |cRXP_FRIENDLY_2.0|r Stormwind Champion
+#name C_2_AT_Stormwind
+#displayname |cRXP_FRIENDLY_2.0|r - Stormwind Champion
 << Alliance !Human
 
 step
@@ -2304,7 +2307,8 @@ RXPGuides.RegisterGuide([[
 #wotlk
 #version 1
 #group +Argent Tournament
-#name |cRXP_FRIENDLY_2.0|r Ironforge Champion
+#name D_2_AT_Ironforge
+#displayname |cRXP_FRIENDLY_2.0|r - Ironforge Champion
 << Alliance !Dwarf
 
 step
@@ -2600,7 +2604,8 @@ RXPGuides.RegisterGuide([[
 #wotlk
 #version 1
 #group +Argent Tournament
-#name |cRXP_FRIENDLY_2.0|r Gnomeregan Champion
+#name E_2_AT_Gnomeregan
+#displayname |cRXP_FRIENDLY_2.0|r - Gnomeregan Champion
 << Alliance !Gnome
 
 step
@@ -2894,7 +2899,8 @@ RXPGuides.RegisterGuide([[
 #wotlk
 #version 1
 #group +Argent Tournament
-#name |cRXP_FRIENDLY_2.0|r Darnassus Champion
+#name F_2_AT_Darnassus
+#displayname |cRXP_FRIENDLY_2.0|r - Darnassus Champion
 << Alliance !NightElf
 
 step
@@ -3187,7 +3193,8 @@ RXPGuides.RegisterGuide([[
 #wotlk
 #version 1
 #group +Argent Tournament
-#name |cRXP_FRIENDLY_2.0|r Orgrimmar Champion
+#name B_2_AT_Orgrimmar
+#displayname |cRXP_FRIENDLY_2.0|r - Orgrimmar Champion
 << Horde !Orc
 
 
@@ -3479,7 +3486,8 @@ RXPGuides.RegisterGuide([[
 #wotlk
 #version 1
 #group +Argent Tournament
-#name |cRXP_FRIENDLY_2.0|r Sen'jin Champion
+#name C_2_AT_Sen'jin
+#displayname |cRXP_FRIENDLY_2.0|r - Sen'jin Champion
 << Horde !Troll
 
 step
@@ -3773,7 +3781,8 @@ RXPGuides.RegisterGuide([[
 #wotlk
 #version 1
 #group +Argent Tournament
-#name |cRXP_FRIENDLY_2.0|r Thunder Bluff Champion
+#name D_2_AT_Thunder Bluff
+#displayname |cRXP_FRIENDLY_2.0|r - Thunder Bluff Champion
 << Horde !Tauren
 
 step
@@ -4068,7 +4077,8 @@ RXPGuides.RegisterGuide([[
 #wotlk
 #version 1
 #group +Argent Tournament
-#name |cRXP_FRIENDLY_2.0|r Undercity Champion
+#name E_2_AT_Undercity
+#displayname |cRXP_FRIENDLY_2.0|r - Undercity Champion
 << Horde !Scourge
 
 step
@@ -4362,7 +4372,8 @@ RXPGuides.RegisterGuide([[
 #wotlk
 #version 1
 #group +Argent Tournament
-#name |cRXP_FRIENDLY_2.0|r Silvermoon Champion
+#name F_2_AT_Silvermoon
+#displayname |cRXP_FRIENDLY_2.0|r - Silvermoon Champion
 #next Champion Side Quests
 << Horde !BloodElf
 
@@ -4661,7 +4672,8 @@ RXPGuides.RegisterGuide([[
 #wotlk
 #version 1
 #group +Argent Tournament
-#name |cRXP_PICK_2.1|r The Black Knight's Quest Story
+#name G_2.1_AT_The_Black Knight's_Quest_Story
+#displayname |cRXP_PICK_2.1|r - The Black Knight's Quest Story
 
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Crusader Rhydalla|r
@@ -4893,7 +4905,8 @@ RXPGuides.RegisterGuide([[
 #wotlk
 #version 1
 #group +Argent Tournament
-#name |cRXP_ENEMY_3.0|r Champion Daily Quests
+#name H_3_AT_Champion_Daily_Quests
+#displayname |cRXP_ENEMY_3.0|r - Champion Daily Quests
 
 step
 	>>To access Champion Daily Quests you must have completed the |cRXP_LOOT_1.0|r Becoming a Champion Guide
@@ -5331,7 +5344,9 @@ RXPGuides.RegisterGuide([[
 #wotlk
 #version 1
 #group +Argent Tournament
-#name |cRXP_ENEMY_3.1|r Crusader Daily Quests
+#name I_3.1_AT_Crusader_Daily_Quests
+#displayname |cRXP_ENEMY_3.1|r - Crusader Daily Quests
+
 step
 	#completewith next
 	+|cRXP_WARN_Phase 3 introduces the Crusader Daily Quests|r
@@ -5424,7 +5439,8 @@ RXPGuides.RegisterGuide([[
 #wotlk
 #version 1
 #group +Argent Tournament
-#name |cRXP_ENEMY_3.2|r Silver Covenant Daily Quests
+#name J_3.2_AT_Silver_Covenant_Daily_Quests
+#displayname |cRXP_ENEMY_3.2|r - Silver Covenant Daily Quests
 << Alliance
 
 step
@@ -5555,7 +5571,8 @@ RXPGuides.RegisterGuide([[
 #wotlk
 #version 1
 #group +Argent Tournament
-#name |cRXP_ENEMY_3.2|r Sunreavers Daily Quests
+#name J_3.2AT_Sunreavers_Daily_Quests
+#displayname |cRXP_ENEMY_3.2|r - Sunreavers Daily Quests
 << Horde
 
 step

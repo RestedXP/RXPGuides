@@ -1,11 +1,9 @@
 RXPGuides.RegisterGuide([[
-#tbc
 #wotlk
-#group +Profession leveling
-#subgroup Skinning
+#group +Profession Leveling
 << Horde
-#name 1-375 Horde_b1
-#displayname 1-375 Horde
+#name 1-450 Skinning (H)
+#displayname 1-450 Skinning
 
 step << Mage
     #completewith Thuwd
@@ -13,14 +11,14 @@ step << Mage
     .skill skinning,75,1
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >> Hearth to Dalaran
     .zoneskip Orgrimmar
-    .zoneskip Shattrath City
+    .zoneskip Dalaran
     .skill skinning,75,1
 step << !Mage
     #completewith Thuwd
-    .goto Shattrath City,52.2,52.9
-    .zone Orgrimmar >> In Shattrath, take the portal to Orgrimmar
+    .goto Dalaran,55.5,25.5
+    .zone Orgrimmar >> In Dalaran, take the portal to Orgrimmar
     .skill skinning,75,1
 step
     #sticky
@@ -34,7 +32,7 @@ step
     .goto Orgrimmar,62.1,45.7,20,0
     .goto Orgrimmar,63.4,45.4
     .train 8613 >> Train Apprentice Skinning (1-75) from Thuwd in the building in Orgrimmar
-       .skill skinning,75,1
+    .skill skinning,75,1
 step
     #requires Shank
     #completewith next
@@ -57,13 +55,13 @@ step << Mage
     .skill skinning,125,1
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >> Hearth to Dalaran
     .skill skinning,125,1
     .zoneskip Orgrimmar
 step << !Mage
     #completewith next
-    .goto Shattrath City,52.2,52.9
-    .zone Orgrimmar >> In Shattrath, take the portal to Orgrimmar
+    .goto Dalaran,55.5,25.5
+    .zone Orgrimmar >> In Dalaran, take the portal to Orgrimmar
     .skill skinning,125,1
 step
     .goto Orgrimmar,62.1,45.7,20,0
@@ -72,7 +70,7 @@ step
     .skill skinning,125,1
 step
     #completewith next
-    .goto Orgrimmar,45.120,63.889
+    .goto Orgrimmar,45.1,63.9
     .fly Crossroads >> Fly to The Crossroads
     .zoneskip The Barrens
     .skill skinning,125,1
@@ -140,7 +138,13 @@ step << Mage
     .zoneskip Hellfire Peninsula
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >> Hearth to Dalaran
+    .skill skinning,305,1
+    .zoneskip Hellfire Peninsula
+step << !Mage
+    #completewith next
+    .goto Dalaran,37.3,66.2
+    .zone Shattrath City >> In Dalaran, take the portal to Shattrath
     .skill skinning,305,1
     .zoneskip Hellfire Peninsula
 step
@@ -178,12 +182,6 @@ step << Mage
     .zone Shattrath City >> Teleport to Shattrath City
     .skill skinning,375,1
     .zoneskip Nagrand
-step << !Mage
-    #completewith next
-    .hs >> Hearth to Shattrath City
-    .skill skinning,375,1
-    .zoneskip Nagrand
-    .cooldown item,6948,>0,1
 step
     #completewith next
     .goto Nagrand,77.4,54.6
@@ -191,20 +189,97 @@ step
     .skill skinning,375,1
 step
     >>Kill Talbuks and Clefthoofs, then skin them
-    .skill skinning,375 >> Level your Skinning from 330-375 in Nagrand
+    .skill skinning,350 >> Level your Skinning from 330-350 in Nagrand
     .loop 45,Nagrand,51.3,37.6,52.3,33.6,54.1,30.0,52.8,26.1,50.6,25.3,48.4,26.8,46.6,27.2,46.6,33.6,46.5,40.3,47.0,45.1,49.2,49.2,53.5,53.8,55.3,52.8,57.3,49.8,60.1,48.4,62.0,46.1,60.6,43.4,57.9,42.5,54.7,42.5,52.7,40.7,51.3,37.6
+step << !Mage
+    #completewith next
+    .goto Shattrath City,52.3,52.5,40,0
+    .zone Orgrimmar >> Take portal to Orgrimmar
+    .skill skinning,375,1
+    .cooldown item,6948,<0,1
+step << !Mage
+    #completewith next
+    .goto Orgrimmar,52.6,85.4,40,0
+    .goto Durotar,41.4,18.0,40,0
+    .skill skinning,375,1
+    .cooldown item,6948,<0,1
+    .zone Borean Tundra >> Climb the Zeppelin Tower. Take the Zeppelin to Borean Tundra
+step << Mage
+    #completewith next
+    .zone Dalaran >> Teleport to Dalaran
+    .skill skinning,375,1
+    .zoneskip Borean Tundra
+step << !Mage
+    #completewith next
+    .hs >> Hearth to Dalaran
+    .zoneskip Shattrath City
+    .skill skinning,375,1
+step << !Mage
+    #completewith next
+    .goto Borean Tundra,42.6,53.2
+    .zone Borean Tundra >> Fly to Borean Tundra on your flying mount
+    .skill skinning,375,1
+    .skill riding,<300,1
+step << !Mage
+    #completewith next
+    .goto Dalaran,71.8,45.6
+    .fly Taunka'le Village >> Fly to Borean Tundra (Taunka'le Village)
+    .skill skinning,375,1
+    .skill riding,300,1
+    .zoneskip Borean Tundra
 step
-    +Congratulations on reaching 375 Skinning!
+    #label Tiponi
+    .goto Borean Tundra,76.2,37.6
+    .train 50305 >> Learn Grand Master Skinning (350-450) from Tiponi Stormwhisper in Taunka'le Village
+    .skill skinning,375,1
+step
+    #label BoreanTundra
+    .skill skinning,375 >> Level your Skinning from 350-375 in Borean Tundra
+    .loop 20,Borean Tundra,47.3,39.4,44.7,39.8,42.2,42.6,40.6,42.8,42.1,48.0,42.2,48.9,47.9,48.0,47.3,39.4
+    .loop 20,Borean Tundra,49.7,74.3,43.4,76.4,40.1,73.8,40.6,70.3,45.8,69.7,48.7,68.9,50.7,66.7,52.1,68.7,49.7,74.3
+step << Mage
+    #completewith next
+    .zone Dalaran >> Teleport to Dalaran
+    .skill skinning,400,1
+    .zoneskip Zul'Drak
+step << !mage
+    #completewith next
+    .hs >> Hearth to Dalaran
+    .skill skinning,400,1
+    .zoneskip Zul'Drak
+step << !Mage
+    #completewith next
+    .zone Zul'Drak >> Fly to Zul'Drak on your flying mount
+    .skill skinning,400,1
+    .skill riding,<300,1
+step << !Mage
+    #completewith next
+    .goto Dalaran,71.8,45.6
+    .fly The Argent Stand >> Fly to Zul'Drak (The Argent Stand)
+    .skill skinning,400,1
+    .skill riding,300,1
+    .zoneskip Borean Tundra
+step
+    #label ZulDrak
+    .skill skinning,400 >> Level your skinning from 375-400 in Zul'Drak
+    .loop 20,Zul'Drak,34.7,58.1,34.5,46.1,37.1,46.5,43.3,49.2,43.5,36.8,46.4,36.0,46.3,50.8,39.9,58.2,34.7,58.1
+step
+    #completewith next
+    .zone The Storm Peaks >> Fly to The Storm Peaks on your flying mount
+    .skill skinning 450,1
+step
+    .skill skinning,400 >> Level your skinning from 400-450 in The Storm Peaks
+    .loop 20,The Storm Peaks,60.6,61.7,59.9,57.5,57.9,58.7,56.4,63.4,53.5,65.5,56.0,68.2,60.6,61.7,
+step
+    +Congratulations on reaching skill level 450 in Skinning!
 ]])
 
 RXPGuides.RegisterGuide([[
-#tbc
 #wotlk
-#group +Profession leveling
-#subgroup Skinning
+#group +Profession Leveling
 << Alliance
-#name 1-375 Alliance_b2
-#displayname 1-375 Alliance
+#name 1-450 Skinning (A)
+#displayname 1-450 Skinning
 
 step << Mage
     #completewith Maris
@@ -212,12 +287,12 @@ step << Mage
     .skill skinning,75,1
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >> Hearth to Dalaran
     .skill skinning,75,1
     .zoneskip Stormwind City
 step << !Mage
-    .goto Shattrath City,55.8,36.6
-    .zone Stormwind City >> In Shattrath, take the portal to Stormwind City
+    .goto Dalaran,38.9,62.6
+    .zone Stormwind City >> In Dalaran, take the portal to Stormwind City
     .skill skinning,75,1
 step
     #sticky
@@ -249,7 +324,7 @@ step << Mage
     .skill skinning,125,1
 step << !Mage
     .goto Stormwind City,68.2,72.9,20,0
-    .goto Stormwind City,70.954,72.512
+    .goto Stormwind City,71.0,72.5
     >>Return to Stormwind
     .fly Ironforge
     .zone Ironforge >> Travel to Ironforge
@@ -258,13 +333,13 @@ step << !Mage
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >> Hearth to Dalaran
     .skill skinning,125,1
     .zoneskip Ironforge
 step << !Mage
     #completewith next
-    .goto Shattrath City,56.3,36.9
-    .zone Ironforge >> In Shattrath, take the portal to Ironforge
+    .goto Dalaran,39.2,63.7
+    .zone Ironforge >> In Dalaran, take the portal to Ironforge
     .skill skinning,125,1
 step
     .goto Ironforge,42.1,33.2,15,0
@@ -274,7 +349,7 @@ step
     .skill skinning,125,1
 step
     #completewith next
-    .goto Ironforge,55.501,47.742
+    .goto Ironforge,55.5,47.7
     .fly Thelsamar >> Fly to Thelsamar
     .skill skinning,125,1
     .zoneskip Loch Modan
@@ -289,7 +364,7 @@ step << Mage
     .zone Ironforge >> Teleport to Ironforge
     .skill skinning,155,1
 step << !Mage
-    .goto Loch Modan,33.938,50.954
+    .goto Loch Modan,33.9,51.0
     >>Return to Thelsamar
     .fly Ironforge
     .zone Ironforge >> Travel to Ironforge
@@ -298,13 +373,13 @@ step << !Mage
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >> Hearth to Dalaran
     .skill skinning,155,1
     .zoneskip Ironforge
 step << !Mage
     #completewith next
-    .goto Shattrath City,56.3,36.9
-    .zone Ironforge >> In Shattrath, take the portal to Ironforge
+    .goto Dalaran,39.2,63.7
+    .zone Ironforge >> In Dalaran, take the portal to Ironforge
     .skill skinning,155,1
 step
     .goto Ironforge,42.1,33.2,15,0
@@ -314,7 +389,7 @@ step
     .skill skinning,155,1
 step
     #completewith next
-    .goto Ironforge,55.501,47.742
+    .goto Ironforge,55.5,47.7
     .fly Menethil >> Fly to Menethil Harbor
     .skill skinning,155,1
     .zoneskip Wetlands
@@ -347,13 +422,13 @@ step << !Mage
     .cooldown item,6948,<0,1
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >> Hearth to Dalaran
     .skill skinning,230,1
     .zoneskip Ironforge
 step << !Mage
     #completewith next
-    .goto Shattrath City,56.3,36.9
-    .zone Ironforge >> In Shattrath, take the portal to Ironforge
+    .goto Dalaran,39.2,63.7
+    .zone Ironforge >> In Dalaran, take the portal to Ironforge
     .skill skinning,230,1
 step
     .goto Ironforge,42.1,33.2,15,0
@@ -367,7 +442,7 @@ step << Mage
     .skill skinning,230,1
 step << !Mage
     #completewith next
-    .goto Ironforge,55.501,47.742
+    .goto Ironforge,55.5,47.7
     .fly Menethil >> Fly to Menethil Harbor. Alternatively, pay a mage for a portal to Theramore
     .skill skinning,230,1
     .zoneskip Dustwallow Marsh
@@ -416,8 +491,14 @@ step << Mage
     .zoneskip Hellfire Peninsula
 step << !Mage
     #completewith next
-    .hs >> Hearth to Shattrath City
+    .hs >> Hearth to Dalaran
     .skill skinning,330,1
+    .zoneskip Hellfire Peninsula
+step >> !mage
+    #completewith next
+    .goto Dalaran,37.2,66.4
+    .zone Shattrath City >> In Dalaran, take the portal to Shattrath
+    .skill skinning,330.1
     .zoneskip Hellfire Peninsula
 step
     #completewith Jelena
@@ -453,23 +534,83 @@ step
 step << Mage
     #completewith next
     .zone Shattrath City >> Teleport to Shattrath City
-    .skill skinning,375,1
+    .skill skinning,350,1
     .zoneskip Nagrand
 step << !Mage
     #completewith next
     .hs >> Hearth to Shattrath City
-    .skill skinning,375,1
+    .skill skinning,350,1
     .zoneskip Nagrand
     .cooldown item,6948,>0,1
 step
     #completewith next
     .goto Nagrand,77.4,54.6
     .zone Nagrand >> Fly to Nagrand on your flying mount
-    .skill skinning,375,1
+    .skill skinning,350,1
 step
     >>Kill Talbuks and Clefthoofs, then skin them
-    .skill skinning,375 >> Level your Skinning from 330-375 in Nagrand
+    .skill skinning,350 >> Level your Skinning from 330-375 in Nagrand
     .loop 45,Nagrand,51.3,37.6,52.3,33.6,54.1,30.0,52.8,26.1,50.6,25.3,48.4,26.8,46.6,27.2,46.6,33.6,46.5,40.3,47.0,45.1,49.2,49.2,53.5,53.8,55.3,52.8,57.3,49.8,60.1,48.4,62.0,46.1,60.6,43.4,57.9,42.5,54.7,42.5,52.7,40.7,51.3,37.6
+step << Mage
+    #completewith next
+    .zone Dalaran >> Teleport to Dalaran
+    .skill skinning,375,1
+step << !Mage
+    #completewith next
+    .hs >> Hearth to Dalaran
+    .skill skinning,375,1
 step
-    +Congratulations on reaching 375 Skinning!
+    #completewith next
+    .goto Dalaran,72.4,45.5
+    .fly Valiance Keep >> Fly to Borean Tundra (Valiance Keep)
+    .skill riding,300,1
+    .skill skinning,375,1
+step
+    #completewith next
+    .goto Borean Tundra,57.6,71.8 >> Fly to Valiance Keep in Borean Tundra on your flying mount
+    .skill riding,<300,1
+    .skill skinning,375,1
+step
+    #label Jack
+    .train 50305 >> Learn Grand Master Skinning (350-450) from Trapper Jack in Valiance Keep
+    .skill skinning,375,1
+step
+    .skill skinning 375 >> Level your skinning from 350-375 in Borean Tundra
+    .loop 20,Borean Tundra,47.3,39.4,44.7,39.8,42.2,42.6,40.6,42.8,42.1,48.0,42.2,48.9,47.9,48.0,47.3,39.4
+    .loop 20,Borean Tundra,49.7,74.3,43.4,76.4,40.1,73.8,40.6,70.3,45.8,69.7,48.7,68.9,50.7,66.7,52.1,68.7,49.7,74.3
+step << Mage
+    #completewith next
+    .zone Dalaran >> Teleport to Dalaran
+    .skill skinning,400,1
+    .zoneskip Zul'Drak
+step << !mage
+    #completewith next
+    .hs >> Hearth to Dalaran
+    .skill skinning,400,1
+    .zoneskip Zul'Drak
+step << !Mage
+    #completewith next
+    .zone Zul'Drak >> Fly to Zul'Drak on your flying mount
+    .skill skinning,400,1
+    .skill riding,<300,1
+step << !Mage
+    #completewith next
+    .goto Dalaran,71.8,45.6
+    .fly The Argent Stand >> Fly to Zul'Drak (The Argent Stand)
+    .skill skinning,400,1
+    .skill riding,300,1
+    .zoneskip Borean Tundra
+step
+    #label ZulDrak
+    .skill skinning,400 >> Level your skinning from 375-400 in Zul'Drak
+    .loop 20,Zul'Drak,34.7,58.1,34.5,46.1,37.1,46.5,43.3,49.2,43.5,36.8,46.4,36.0,46.3,50.8,39.9,58.2,34.7,58.1
+step
+    #completewith next
+    .zone The Storm Peaks >> Fly to The Storm Peaks on your flying mount
+    .skill skinning 450,1
+step
+    .skill skinning,400 >> Level your skinning from 400-450 in The Storm Peaks
+    .loop 20,The Storm Peaks,60.6,61.7,59.9,57.5,57.9,58.7,56.4,63.4,53.5,65.5,56.0,68.2,60.6,61.7,
+step
+    +Congratulations on reaching skill level 450 in Skinning!
 ]])

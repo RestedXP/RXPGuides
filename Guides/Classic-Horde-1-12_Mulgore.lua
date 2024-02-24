@@ -146,8 +146,14 @@ step
     .complete 750,1 --Mountain Cougar Pelt (10)
     .mob Mountain Cougar
 step
+    #xprate <1.5
     .loop 25,Mulgore,45.56,87.95,46.92,87.84,48.67,86.83,50.65,85.87,51.01,83.71,52.06,81.53,51.87,79.58,51.67,77.39,51.95,75.16,50.32,76.33,48.85,75.82,47.41,75.30,46.80,78.21,45.84,80.41,45.03,82.15,44.09,83.89,43.90,86.08,45.56,87.95
     .xp 3+1150 >> Grind to 1150+/1400xp
+    .mob Plainstrider
+step
+    #xprate >1.49
+    .loop 25,Mulgore,45.56,87.95,46.92,87.84,48.67,86.83,50.65,85.87,51.01,83.71,52.06,81.53,51.87,79.58,51.67,77.39,51.95,75.16,50.32,76.33,48.85,75.82,47.41,75.30,46.80,78.21,45.84,80.41,45.03,82.15,44.09,83.89,43.90,86.08,45.56,87.95
+    .xp 3+1025 >> Grind to 1025+/1400xp
     .mob Plainstrider
 step << Warrior/Druid
     #completewith GrullTurnin2
@@ -318,11 +324,13 @@ step << Shaman
     .goto Mulgore,65.93,77.10,40,0
     .goto Mulgore,63.57,76.25,40,0
     .goto Mulgore,63.86,80.14
-    >>Continue to kill |cRXP_ENEMY_Bristleback Shamans|r and obtain 10 stacks of |T237556:0|t[Building Inspiration] as they deal nature damage to you
-    .use 206381 >>Use the |T134918:0|t[|cRXP_FRIENDLY_Dyadic Icon|r] once you have 10 stacks
-    .complete 77652,1 --Learn Spell: Engrave Chest - Overload
+    .aura 408828 >>Continue to kill |cRXP_ENEMY_Bristleback Shamans|r and obtain 10 stacks of |T237556:0|t[Building Inspiration] as they deal nature damage to you
     .mob Bristleback Shaman
     --User must be level 3 to be able to use item!
+step << Shaman
+    #season 2
+    .use 206381 >>Use the |T134918:0|t[|cRXP_FRIENDLY_Dyadic Icon|r]
+    .complete 77652,1 --Learn Spell: Engrave Chest - Overload
 step << Warrior
     #season 2
     .goto Mulgore,60.33,75.10,30,0
@@ -410,6 +418,7 @@ step << Shaman
     .complete 1519,1 --Ritual Salve (2)
     .mob Bristleback Shaman
 step
+    #xprate <1.5
     .goto Mulgore,63.98,80.08,40,0
     .goto Mulgore,64.31,78.29,40,0
     .goto Mulgore,63.67,76.18,40,0
@@ -423,6 +432,21 @@ step
     .goto Mulgore,62.27,82.03
     .xp 5+880 >> Grind to 880+/2800xp << !Shaman
     .xp 5 >> Grind to level 5 << Shaman
+step
+    #xprate >1.49
+    .goto Mulgore,63.98,80.08,40,0
+    .goto Mulgore,64.31,78.29,40,0
+    .goto Mulgore,63.67,76.18,40,0
+    .goto Mulgore,62.67,76.10,40,0
+    .goto Mulgore,61.34,77.13,40,0
+    .goto Mulgore,61.72,78.98,40,0
+    .goto Mulgore,62.29,81.53,40,0
+    .goto Mulgore,60.82,80.81,40,0
+    .goto Mulgore,60.08,81.93,40,0
+    .goto Mulgore,61.03,82.32,40,0
+    .goto Mulgore,62.27,82.03
+    .xp 5 >> Grind to level 5 << !Shaman
+    .xp 4+700 >> Grind to 700/2100xp << Shaman
 step
     #completewith next
     .hs >> Hearth to Camp Narache
@@ -462,7 +486,7 @@ step << Shaman
     .target Minor Manifestation of Earth
 step << Shaman
     .goto Mulgore,44.73,76.18
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Canaga|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ravenfeather|r
     .turnin 1521 >>Turn in Call of Earth
     .target Seer Ravenfeather
 step << Shaman
@@ -738,7 +762,7 @@ step << Hunter
     .goto Mulgore,59.02,54.36
     >>Cast |T132212:0|t[Hunter's Mark] on the |cRXP_ENEMY_Rustling Bush|r
     >>Kill the |cRXP_ENEMY_Venture Co. Poacher|r that spawns. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
-    .collect 206155,1 --Rune of Markmanship (1)
+    .collect 206155,1 --Rune of Marksmanship (1)
     .mob Rustling Bush
     .mob Venture Co. Poacher
     .train 410113,1
@@ -1255,7 +1279,7 @@ step << Shaman
     #requires MoltenBlast
     .cast 402265 >>|cRXP_WARN_Use the|r |T134918:0|t|cRXP_LOOT_[Sulfurous Icon]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves: Molten Blast]
     .use 206388
-    .aura 408828
+    .aura -408828
     .itemStat 18,QUALITY,2
     .train 425344,1
     .xp <3,1
@@ -1349,25 +1373,53 @@ step
     .complete 766,3 --Plainstrider Scale (1)
     .complete 766,4 --Swoop Gizzard (1)
 step
+    #xprate <1.5
     #optional
     .loop 25,Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
-    .xp 9+4400 >> Grind to 3020+/6500xp
+    .xp 9+3020 >> Grind to 3020+/6500xp
     .isQuestComplete 761
     .isQuestComplete 766
 step
+    #xprate <1.5
     #optional
     .loop 25,Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
-    .xp 9+4400 >> Grind to 3720+/6500xp
+    .xp 9+3720 >> Grind to 3720+/6500xp
     .isQuestComplete 761
 step
+    #xprate <1.5
     #optional
     .loop 25,Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
-    .xp 9+4400 >> Grind to 3700+/6500xp
+    .xp 9+3700 >> Grind to 3700+/6500xp
     .isQuestComplete 766
 step
+    #xprate <1.5
     #optional
     .loop 25,Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
     .xp 9+4400 >> Grind to 4400+/6500xp
+step
+    #xprate >1.49
+    #optional
+    .loop 25,Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
+    .xp 9+1280 >> Grind to 1280+/6500xp
+    .isQuestComplete 761
+    .isQuestComplete 766
+step
+    #xprate >1.49
+    #optional
+    .loop 25,Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
+    .xp 9+2330 >> Grind to 2330+/6500xp
+    .isQuestComplete 761
+step
+    #xprate >1.49
+    #optional
+    .loop 25,Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
+    .xp 9+2300 >> Grind to 2300+/6500xp
+    .isQuestComplete 766
+step
+    #xprate >1.49
+    #optional
+    .loop 25,Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
+    .xp 9+3350 >> Grind to 3350+/6500xp
 step << !Druid
     #completewith Bloodhoofturnins1
     .hs >>Hearth to Bloodhoof Village
@@ -1862,7 +1914,7 @@ step
     +Equip the |T135145:0|t[Cauldron Stirrer]
     .use 5340
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.1
-    .itemcount 5340
+    .itemcount 5340,1
 step << Warrior
     #season 2
     #completewith next
@@ -2099,8 +2151,8 @@ step << Warrior/Hunter
     >>Look around for |cRXP_ENEMY_Arra'Chea|r (Big black kodo). He walks clockwise. Kill and Loot him for his |cRXP_LOOT_Horn|r and |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r] << Warrior
     >>Look around for |cRXP_ENEMY_Arra'Chea|r (Big black kodo). He walks clockwise. Kill and Loot him for his |cRXP_LOOT_Horn|r and |T134419:0|t[|cRXP_FRIENDLY_Rune of Explosive Shot|r] << Hunter
     .complete 776,1 --Horn of Arra'chea (1)
-    .collect 204809,1 --Rune of Furious Thunder(1) << Warrior
-    .collect 206169,1 --Rune of Explosive Shot (1) << Hunter
+    .collect 204809,1 << Warrior --Rune of Furious Thunder(1)
+    .collect 206169,1 << Hunter --Rune of Explosive Shot (1)
     .unitscan Arra'chea
     .train 403476,1 << Warrior
     .train 410123,1 << Hunter
@@ -2361,8 +2413,13 @@ step
     .mob Venture Co. Worker
     .mob Venture Co. Supervisor
 step
+    #xprate <1.5
     .loop 25,Mulgore,61.35,47.55,60.10,47.84,59.50,48.21,59.68,48.85,60.14,49.14,62.01,48.74,61.89,47.84,61.35,47.55
     .xp 11+7150 >> Grind to 7150+/8700xp
+step
+    #xprate >1.49
+    .loop 25,Mulgore,61.35,47.55,60.10,47.84,59.50,48.21,59.68,48.85,60.14,49.14,62.01,48.74,61.89,47.84,61.35,47.55
+    .xp 11+6375 >> Grind to 6375+/8700xp
 step
     .goto Mulgore,59.65,62.40,50,0
     .goto Mulgore,57.47,61.26,50,0

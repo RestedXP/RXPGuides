@@ -1316,15 +1316,24 @@ step
     #completewith next
     +You have selected the Advanced guide. This is the fastest guide for the fastest class in the game (Alliance Mage). As such, there will be a lot of niche mechanics used as well as highly difficult AoE pulls. Stay persistent while you learn! Good Luck!
 step
-    #completewith next
-    .destroy 6948 >>|cRXP_WARN_Delete your|r |T134414:0|t[Hearthstone]
+    #completewith Adlin
+	.destroy 6948 >> Delete the |T134414:0|t[Hearthstone] from your bags, as it's no longer needed
 step
     .goto Dun Morogh,29.927,71.201
-    >>Talk to |cRXP_FRIENDLY_Sten|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sten Stoutarm|r
     .accept 179 >> Accept Dwarven Outfitters
     .target Sten Stoutarm
 step
-    .goto Dun Morogh,28.51,74.92
+    .goto 1426,29.529,73.286,0
+    .goto 1426,28.117,75.088,0
+    .goto 1426,28.557,72.487,0
+    .goto 1426,29.529,73.286,60,0
+    .goto 1426,29.054,74.608,60,0
+    .goto 1426,28.558,75.781,60,0
+    .goto 1426,28.117,75.088,60,0
+    .goto 1426,27.562,74.331,60,0
+    .goto 1426,27.793,73.123,60,0
+    .goto 1426,28.557,72.487,60,0
     >>Kill |cRXP_ENEMY_Ragged Young Wolves|r. Loot them for their |cRXP_LOOT_Tough Wolf Meat|r
     .complete 179,1 --Collect Tough Wolf Meat (x8)
     .mob Ragged Young Wolf
@@ -1332,29 +1341,28 @@ step
     #season 0
     #sticky
     #label Adlin
-    .goto Dun Morogh,30.09,71.58
-    >>|cRXP_WARN_Unequip your|r |T134581:0|t[Apprentice's Pants] |cRXP_WARN_and|r |T132664:0|t[Apprentice's Robe]
-    >>Talk to |cRXP_FRIENDLY_Adlin|r
+    .goto Dun Morogh,30.087,71.563
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adlin Pridedrift|r
+    >>Vendor Trash
     >>|cRXP_BUY_Buy 15|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
-    .vendor >> Vendor Trash
+    >>|cRXP_WARN_Grind extra |cRXP_ENEMY_Ragged Young Wolves|r if you don't have enough money|r
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target Adlin Pridedrift
-    .isQuestAvailable 233
+    .xp >6,1
 step
     #season 2
-    #sticky
-    #label Adlin
-    .goto Dun Morogh,30.09,71.58
-    >>|cRXP_WARN_Unequip your|r |T134581:0|t[Apprentice's Pants] |cRXP_WARN_and|r |T132664:0|t[Apprentice's Robe]
-    >>Talk to |cRXP_FRIENDLY_Adlin|r
+    .goto Dun Morogh,30.087,71.563
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adlin Pridedrift|r
+    >>Vendor Trash
     >>|cRXP_BUY_Buy 15|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
-    >>|cRXP_WARN_Make sure you save 10c or more for later|r
-    .vendor >> Vendor Trash
+    >>|cRXP_WARN_Grind extra |cRXP_ENEMY_Ragged Young Wolves|r if you don't have enough money|r
+    >>|cRXP_WARN_Make sure you save 10c for later|r
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target Adlin Pridedrift
-    .isQuestAvailable 233
+    .xp >6,1
 step
-    >>Talk to |cRXP_FRIENDLY_Sten|r and |cRXP_FRIENDLY_Balir|r
+    #xprate <1.1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sten Stoutarm|r and |cRXP_FRIENDLY_Balir Frosthammer|r
     .turnin 179,3 >> Turn in Dwarven Outfitters
     .accept 233 >> Accept Coldridge Valley Mail Delivery
     .accept 3114 >> Accept Glyphic Memorandum
@@ -1364,36 +1372,27 @@ step
     .target Sten Stoutarm
     .target Balir Frosthammer
 step
+    #xprate >1.09
+    .goto Dun Morogh,29.927,71.201
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sten Stoutarm|r
+    .turnin 179,3 >> Turn in Dwarven Outfitters
+    .accept 233 >> Accept Coldridge Valley Mail Delivery
+    .accept 3114 >> Accept Glyphic Memorandum
+    .target Sten Stoutarm
+step 
     #season 2
-    #optional
-    #requires Adlin
-    #completewith next
-    .goto 1426,28.910,69.703,15,0
-    .goto 1426,28.835,69.050,10,0
-    .goto 1426,28.835,68.702,10,0
-    .goto 1426,28.939,68.387,12 >> Enter Anvilmar
-    .train 401760,1
-step
-    #season 2
-    #requires Adlin
-    .goto Dun Morogh,28.709,66.366
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r inside
-    .accept 77667 >> Accept Spell Research
-    .target Marryk Nurribit
-    .train 401760,1
-    .xp <2,1
-step
-    #season 2
-    #optional
-    #completewith next
-    .goto 1426,28.751,69.058,12,0
-    .goto 1426,28.676,69.669,15 >> Exit Anvilmar
-    .train 401760,1
-    .xp <2,1
-step
-    #requires Adlin
-    #completewith ColdridgeV
-    >>|cRXP_WARN_Kill ALL |cRXP_ENEMY_Rockjaw Troggs|r you see and|r |cRXP_ENEMY_Burly Rockjaw Troggs|r
+    #xprate <1.1
+    #completewith EnterAnvilmar
+    .goto 1426,27.096,72.545,0
+    .goto 1426,26.620,73.548,0
+    .goto 1426,25.722,72.261,0
+    .goto 1426,24.878,72.329,0
+    .goto 1426,24.100,73.749,0
+    .goto 1426,24.920,74.697,0
+    .goto 1426,21.813,72.584,0
+    .goto 1426,19.578,72.086,0
+    .goto 1426,20.627,70.415,0
+    >>Kill |cRXP_ENEMY_Rockjaw Troggs|r and |cRXP_ENEMY_Burly Rockjaw Troggs|r
     .complete 170,1 --Kill Rockjaw Trogg (x6)
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
     .mob Rockjaw Trogg
@@ -1402,38 +1401,105 @@ step
 step
     #season 2
     .goto Dun Morogh,26.733,72.552
-    >>Open the |cRXP_PICK_Rockjaw Footlocker|r. Loot it for the |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r
+    >>Open the |cRXP_PICK_Rockjaw Footlocker|r on the ground. Loot it for the |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r
+    >>|cRXP_WARN_NOTE: You will be unable to train|r |T133816:0|t[Engrave Gloves - Ice Lance] |cRXP_WARN_here as you can only get a|r |T133736:0|t[Comprehension Primer] |cRXP_WARN_in your race's starting zone|r << !Gnome
     .collect 203751,1,77667,1 -- Spell Notes: CALE ENCI (1)
     .train 401760,1
-    .xp <2,1
-step
+step << Gnome
     #season 2
     .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
     .use 203751
     .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
-    .xp <2,1
 step
-    #requires Adlin
+    #season 2
+    #label EnterAnvilmar
+    #optional
+    #completewith next
+    .goto 1426,28.792,68.804,12,0
+    .goto 1426,28.642,68.375,12 >> Enter Anvilmar
+step
+    #season 2
+    .goto Dun Morogh,28.709,66.366
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r inside
+    .turnin 3114 >> Turn in Glyphic Memorandum << Gnome
+    .accept 77667 >> Accept Spell Research << Gnome
+    .turnin 77667 >> Turn in Spell Research << Gnome
+    .train 1459 >> Train |T135932:0|t[Arcane Intellect]
+    .target Marryk Nurribit
+step << Gnome
+    #season 2
+    #label GlovesEquip
+    #completewith Observations
+    .equip 10,711 >> |cRXP_WARN_Equip the|r |T132961:0|t[Tattered Cloth Gloves]
+    .use 711
+    .train 401760,1
+step << Gnome
+    #season 2
+    #requires GlovesEquip
+    #completewith Observations
+    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132961:0|t[Tattered Cloth Gloves] with|r |T133816:0|t[Engrave Gloves - Ice Lance]
+    .train 401760,1
+step
+    #season 2
+    #optional
+    #completewith Talin
+    .goto 1426,28.792,68.804,12 >> Exit Anvilmar
+    .subzoneskip 77,1
+step
+    #xprate <1.1
+    #completewith Rockjaw
+    .goto 1426,27.096,72.545,0
+    .goto 1426,26.620,73.548,0
+    .goto 1426,25.722,72.261,0
+    .goto 1426,24.878,72.329,0
+    .goto 1426,24.100,73.749,0
+    .goto 1426,24.920,74.697,0
+    .goto 1426,21.813,72.584,0
+    .goto 1426,19.578,72.086,0
+    .goto 1426,20.627,70.415,0
+    >>Kill |cRXP_ENEMY_Rockjaw Troggs|r and |cRXP_ENEMY_Burly Rockjaw Troggs|r
+    .complete 170,1 --Kill Rockjaw Trogg (x6)
+    .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
+    .mob Rockjaw Trogg
+    .mob Burly Rockjaw Trogg 
+    .isOnQuest 170
+step
+    #label Talin
     .goto Dun Morogh,22.601,71.433
-    >>Talk to |cRXP_FRIENDLY_Talin|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talin Keeneye|r
     .turnin 233 >> Turn in Coldridge Valley Mail Delivery
     .accept 183 >> Accept The Boar Hunter
     .accept 234 >> Accept Coldridge Valley Mail Delivery
     .target Talin Keeneye
 step
-    .loop 35,Dun Morogh,22.61,72.31,21.00,71.92,21.17,70.37,21.45,69.27,22.66,69.45,22.61,72.31
+    #loop
+    .goto 1426,22.276,72.549,0
+    .goto 1426,20.924,70.393,0
+    .goto 1426,22.662,69.331,0
+    .goto 1426,24.358,72.591,0
+    .goto 1426,22.276,72.549,45,0
+    .goto 1426,21.209,72.266,45,0
+    .goto 1426,20.880,71.470,45,0
+    .goto 1426,20.924,70.393,45,0
+    .goto 1426,21.330,69.261,45,0
+    .goto 1426,22.035,69.231,45,0
+    .goto 1426,22.662,69.331,45,0
+    .goto 1426,24.317,68.026,45,0
+    .goto 1426,24.754,69.257,45,0
+    .goto 1426,24.878,71.191,45,0
+    .goto 1426,24.358,72.591,45,0
     >>Kill |cRXP_ENEMY_Small Crag Boars|r
     .complete 183,1 --Kill Small Crag Boar (x12)
     .mob Small Crag Boar
 step
     .goto Dun Morogh,22.601,71.433
-    >>Talk to |cRXP_FRIENDLY_Talin|r
-    .turnin 183,2 >> Turn in The Boar Hunter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talin Keeneye|r
+    .turnin 183 >> Turn in The Boar Hunter
     .target Talin Keeneye
 step
-    #label ColdridgeV
-    .goto Dun Morogh,25.076,75.713
-    >>Talk to |cRXP_FRIENDLY_Grelin|r
+    #label Rockjaw
+    .goto 1426,25.077,75.711
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grelin Whitebeard|r
     .turnin 234 >> Turn in Coldridge Valley Mail Delivery
     .accept 182 >> Accept The Troll Cave
     .target Grelin Whitebeard
@@ -1469,7 +1535,7 @@ step
     .goto Dun Morogh,27.12,78.68,40,0
     .goto Dun Morogh,25.95,80.39,40,0
     .goto Dun Morogh,25.78,78.31
-    >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r en route back to |cRXP_FRIENDLY_Grelin|r
+    >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r en route back to |cRXP_FRIENDLY_Grelin Whitebeard|r
     .complete 182,1--Kill Frostmane Troll Whelp (x14)
     .mob Frostmane Troll Whelp
 step
@@ -1477,16 +1543,16 @@ step
     +|cRXP_WARN_If you don't know how to logout skip, watch this video first|r
     .link https://www.youtube.com/watch?v=SWBtPqm5M0Q >>|cRXP_WARN_CLICK HERE to learn how to logout skip|r
 step
-    >>Talk to |cRXP_FRIENDLY_Grelin|r and |cRXP_FRIENDLY_Nori|r
+    >>Talk to |cRXP_FRIENDLY_Grelin Whitebeard|r and |cRXP_FRIENDLY_Nori Pridedrift|r
     >>|cRXP_WARN_Be Aware that "Scalding Mornbrew Delivery" has a 5-minute timer|r
     >>|cRXP_WARN_Make sure you have 3 inventory slots for these turnins/accepts|r
     .turnin 182,4 >> Turn in The Troll Cave
     .accept 218 >> Accept The Stolen Journal
     .goto Dun Morogh,25.076,75.713,-1
+    .target +Grelin Whitebeard
     .accept 3364 >> Accept Scalding Mornbrew Delivery
     .goto Dun Morogh,24.98,75.96,-1
-    .target Grelin Whitebeard
-    .target Nori Pridedrift
+    .target +Nori Pridedrift
 step
     .goto Dun Morogh,26.73,79.72,40,0
     .goto Dun Morogh,29.34,79.09,30,0
@@ -1515,43 +1581,44 @@ step
 step
     #label Rybrad
     .goto Dun Morogh,28.66,67.74
-    >>Talk to |cRXP_FRIENDLY_Rybrad|r
+    >>Talk to |cRXP_FRIENDLY_Rybrad Coldbank|r
     .vendor >> Vendor Trash
     .target Rybrad Coldbank
     .isOnQuest 218
 step
-    #season 0
-    >>Talk to |cRXP_FRIENDLY_Durnan|r and |cRXP_FRIENDLY_Marryk|r
+    >>Talk to |cRXP_FRIENDLY_Durnan Furcutter|r and |cRXP_FRIENDLY_Marryk Nurribit|r
     .turnin 3364 >> Turn in Scalding Mornbrew Delivery
     .accept 3365 >> Accept Bring Back the Mug
     .goto Dun Morogh,28.77,66.37
+    .target +Durnan Furcutter
     .turnin 3114 >> Turn in Glyphic Memorandum
     .trainer >> Train your class spells (Arcane Intellect, Frostbolt)
     .goto Dun Morogh,28.709,66.366
-    .target Durnan Furcutter
-    .target Marryk Nurribit
+    .target +Marryk Nurribit
     .isQuestAvailable 420
 step
-    #season 2
-    >>Talk to |cRXP_FRIENDLY_Durnan|r and |cRXP_FRIENDLY_Marryk|r
-    .turnin 3364 >> Turn in Scalding Mornbrew Delivery
-    .accept 3365 >> Accept Bring Back the Mug
-    .goto Dun Morogh,28.77,66.37
-    .turnin 3114 >> Turn in Glyphic Memorandum
-    .turnin 77667 >> Turn in Spell Research
-    .trainer >> Train your class spells (Arcane Intellect, Frostbolt)
-    .goto Dun Morogh,28.709,66.366
-    .target Durnan Furcutter
-    .target Marryk Nurribit
-    .isQuestComplete 77667 << Gnome
-step
+    #optional
+    #xprate <1.1
     .goto Dun Morogh,29.71,71.25
-    >>Talk to |cRXP_FRIENDLY_Balir|r
+    >>Talk to |cRXP_FRIENDLY_Balir Frosthammer|r
     .turnin 170,3 >> Turn in A New Threat
     .target Balir Frosthammer
     .isQuestComplete 170
 step
-    #completewith next
+    #xprate <1.1
+    #sticky
+    #label TroggEnd
+    .goto 1426,27.858,76.482,0
+    .goto 1426,30.727,76.831,0
+    .goto 1426,29.280,75.500,0
+    .waypoint 1426,27.858,76.482,50,0
+    .waypoint 1426,28.946,77.153,50,0
+    .waypoint 1426,29.716,77.605,50,0
+    .waypoint 1426,30.727,76.831,50,0
+    .waypoint 1426,32.814,75.221,50,0
+    .waypoint 1426,31.138,74.048,50,0
+    .waypoint 1426,30.077,74.479,50,0
+    .waypoint 1426,29.280,75.500,50,0
     >>|cRXP_WARN_Kill ALL |cRXP_ENEMY_Rockjaw Troggs|r you see and|r |cRXP_ENEMY_Burly Rockjaw Troggs|r
     .complete 170,1 --Kill Rockjaw Trogg (x6)
     .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
@@ -1560,44 +1627,42 @@ step
     .isOnQuest 170
 step
     #label StolenJ
-    >>Talk to |cRXP_FRIENDLY_Grelin|r and |cRXP_FRIENDLY_Nori|r
+    >>Talk to |cRXP_FRIENDLY_Grelin Whitebeard|r and |cRXP_FRIENDLY_Nori Pridedrift|r
     .turnin 218,2 >> Turn in The Stolen Journal
     .accept 282 >> Accept Senir's Observations
     .goto Dun Morogh,25.076,75.713
+    .target +Grelin Whitebeard
     .turnin 3365 >> Turn in Bring Back the Mug
     .goto Dun Morogh,24.98,75.96
-    .target Grelin Whitebeard
-    .target Nori Pridedrift
+    .target +Nori Pridedrift
 step
-    .goto Dun Morogh,29.37,75.64,40,0
-    .goto Dun Morogh,30.86,74.47
-    >>Kill |cRXP_ENEMY_Rockjaw Troggs|r and |cRXP_ENEMY_Burly Rockjaw Troggs|r
-    .complete 170,1 --Kill Rockjaw Trogg (x6)
-    .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
-    .mob Rockjaw Trogg
-    .mob Burly Rockjaw Trogg
-    .isOnQuest 170
-step
+    #xprate <1.1
+    #requires TroggEnd
     .goto Dun Morogh,29.71,71.25
-    >>Talk to |cRXP_FRIENDLY_Balir|r
+    >>Talk to |cRXP_FRIENDLY_Balir Frosthammer|r
     .turnin 170,3 >> Turn in A New Threat
     .target Balir Frosthammer
     .isQuestComplete 170
 step
-    >>Talk to |cRXP_FRIENDLY_Thalos|r and |cRXP_FRIENDLY_Hands|r
+    #requires TroggEnd
+    #label Observations
+    >>Talk to |cRXP_FRIENDLY_Mountaineer Thalos|r and |cRXP_FRIENDLY_Hands Springsprocket|r
     .turnin 282 >> Turn in Senir's Observations
     .accept 420 >> Accept Senir's Observations
     .goto Dun Morogh,33.484,71.841
+    .target +Mountaineer Thalos
     .accept 2160 >> Accept Supplies to Tannok
     .goto Dun Morogh,33.85,72.24
-    .target Mountaineer Thalos
-    .target Hands Springsprocket
+    .target +Hands Springsprocket
 step
+    #xprate <1.1
+    #optional
     #completewith StockingJ
     .abandon 170 >> Abandon A New Threat
 step
-    .goto Dun Morogh,34.13,71.49,20,0
-    .goto Dun Morogh,35.70,65.89,30 >>Go through the tunnel
+    .goto Dun Morogh,34.32,70.95,15,0
+    .goto Dun Morogh,35.65,65.79,15 >> Travel through Coldridge Pass
+    .subzoneskip 800,1
     .isOnQuest 2160
 step
     #completewith StockingJ
@@ -6566,7 +6631,8 @@ step
     .target Vesprystus
 step
     #completewith next
-    .goto Teldrassil,55.95,89.86,30 >> Go through the purple portal
+    .goto 1438,55.885,89.350
+    .zone Darnassus >> Go through the purple portal into Darnassus
 step
     #completewith next
     .goto Darnassus,37.94,48.14,30,0

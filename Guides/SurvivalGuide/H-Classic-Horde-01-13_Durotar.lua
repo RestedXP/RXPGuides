@@ -965,7 +965,7 @@ step << Mage
     .train 143 >> Train |T135812:0|t[Fireball]
     .train 2136 >>Train |T135807:0|t[Fire Blast]
     .target Un'Thuwa
-step
+step << Warrior/Rogue
     #completewith TravelToTiragarde
     +|cRXP_WARN_Cast|r |T136025:0|t[Find Minerals] |cRXP_WARN_and mine any Copper Vein you find for|r |T135232:0|t[Rough Stones]|cRXP_WARN_. Make|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_from them|r
     .collect 2862,1,786,1
@@ -1176,7 +1176,7 @@ step
 step
     #sticky
     #completewith AgedEnvelope
-    +|cRXP_WARN_Be careful if|r |cRXP_ENEMY_Watch Commander Zalaphil|r |cRXP_WARN_is up, he is a level 9 rare. You may have to use a a |r |T134829:0|t[Minor Healing Potion] |cRXP_WARN_if you have it|r
+    +|cRXP_WARN_Be careful if|r |cRXP_ENEMY_Watch Commander Zalaphil|r |cRXP_WARN_is up, as he is a level 9 rare. You may have to use a|r |T134829:0|t[Minor Healing Potion] |cRXP_WARN_if you have one|r
     .unitscan Watch Commander Zalaphil
 step
     #completewith Benedict
@@ -3046,7 +3046,7 @@ step
     #label ZeptoUC1
     .goto Durotar,50.8,13.8,40 >>Go up the Zeppelin Tower
     .zone Tirisfal Glades >>Take the Zeppelin to Tirisfal Glades
-    +Conjure water while waiting << Mage
+    >>Conjure water while waiting << Mage
     .zoneskip Tirisfal Glades
 step << Orc Rogue/Troll Rogue
     #optional
@@ -3296,6 +3296,13 @@ step
     .complete 427,1 --Scarlet Warrior (10)
     .mob Scarlet Warrior
     .isOnQuest 427
+step
+    #completewith next
+    >>Kill any |cRXP_ENEMY_Duskbat|r that you see. Loot them for their |cRXP_LOOT_Pelts|r
+    .complete 375,1 --Duskbat Pelt (5)
+    .mob Greater Duskbat
+    .mob Vampiric Duskbat
+    .isOnQuest 375
 step
     #label Darkhounds1
     .goto Tirisfal Glades,45.90,50.95,50,0

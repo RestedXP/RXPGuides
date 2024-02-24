@@ -38,15 +38,9 @@ step
     .target Dirania Silvershine
     .target Melithar Staghelm
 step << Hunter
-    #season 0
-    #era
+    #season 0,1
     .goto Teldrassil,59.8,34.1
     .xp 4-610 >> Grind until you are 610xp away from level 4 (790/1400)
-step << Hunter
-    #season 0,1
-    #som--xpgate
-    .goto Teldrassil,59.8,34.1
-    .xp 4-755 >> Grind until you are 755xp away from level 4 (645/1400)
 step << Hunter
     .goto Teldrassil,54.593,32.992
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iverron|r
@@ -56,7 +50,7 @@ step << Hunter
 step << Hunter
     #season 2
     .goto Teldrassil,59.8,34.1
-    .xp 3-300 >> Grind until you are 300xp away from level 3 (600/900)
+    .xp 3-400 >> Grind until you are 400xp away from level 3 (500/900)
 step << Hunter
     #completewith next
     .hs >> Hearth to Shadowglen
@@ -225,6 +219,9 @@ step
     .turnin 3519 >> Turn in A Friend in Need
     .target Dirania Silvershine
     .accept 3521 >> Accept Iverron's Antidote
+step << Hunter
+    #season 2
+    .xp 3
 step << Hunter
     #completewith htraining
     .goto Teldrassil,59.306,41.091
@@ -461,7 +458,7 @@ step << Druid
     >>Ascend the Aldrassil Tree
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mardant Strongoak|r
 	.turnin 3120 >> Turn in Verdant Sigil
-    .accept 77571 >> Accept Relics of the Kaldorei
+    .turnin -77571 >> Turn in Relics of the Kaldorei
     .train 8921 >>Train |T136096:0|t[Moonfire]
     .target Mardant Strongoak
 step
@@ -619,18 +616,10 @@ step << Rogue
     .vendor >> |cRXP_BUY_Buy and equip a|r |T135426:0|t[Small Throwing Knife]
     .target Aldia
 step
-    #era
     .goto Teldrassil,55.574,56.948
     .target Tallonkai Swiftroot
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r atop the Tree
     .accept 932 >> Accept Twisted Hatred
-    .accept 2438 >> Accept The Emerald Dreamcatcher
-step
-    #som
-    .goto Teldrassil,55.574,56.948
-    .target Tallonkai Swiftroot
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r atop the Tree
-    .accept 932 >> Accept Twisted Hatred << !Hunter
     .accept 2438 >> Accept The Emerald Dreamcatcher
 step << Hunter
     .goto Teldrassil,55.890,59.205
@@ -787,6 +776,11 @@ step << Druid
     .train 416044 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Sun|r] |cRXP_WARN_to train|r |T236216:0|t[Sunfire]
     .use 206989
     .itemcount 206989,1
+step << Druid
+    #completewith next
+    #season 2
+    #softcore
+    .deathskip >>Die and respawn at Dolanaar
 step
     .goto Teldrassil,61.63,68.89,55,0
     .goto Teldrassil,60.52,70.47,55,0
@@ -890,18 +884,17 @@ step << Warrior
     .mob Webwood Venomfang
     .train 403475,1
 step
-    #era
-    .goto Teldrassil,60.7,54.4
-	.xp 7+3500 >> Grind to level 7 +3500xp
-step
-    #som--xpgate
-    .goto Teldrassil,60.7,54.4
-	.xp 7+2900 >> Grind to level 7 +2900xp
-step
     .goto Teldrassil,60.5,56.3
     .target Zenn Foulhoof
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zenn Foulhoof|r
     .turnin 488 >> Turn in Zenn's Bidding
+step
+    #xprate < 1.5
+    .goto Teldrassil,60.7,54.4
+	.xp 7+3520 >> Grind to level 7 +3520xp
+step
+    #xprate >1.49
+    .xp 7+2350 >> Grind to level 7 +2350xp
 step
 	.goto Teldrassil,56.078,57.723
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syral Bladeleaf|r
@@ -1001,6 +994,13 @@ step << Druid
     .itemcount 2495,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.19
 step << Druid
+#xprate >1.49
+    .goto Teldrassil,56.142,61.714
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
+    .turnin 929 >> Turn in Crown of the Earth
+    .target Corithras Moonrage
+step << Druid
+#xprate <1.50
     .goto Teldrassil,56.142,61.714
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
     .turnin 929 >> Turn in Crown of the Earth
@@ -1063,13 +1063,6 @@ step << Rogue
     .mob Rascal Sprite
     .mob Shadow Sprite
     .train 398196,1
-step << Hunter
-    #era
-    .goto Teldrassil,51.2,50.6
-    >>Kill |cRXP_ENEMY_Lord Melenas|r. Loot him for his |cRXP_LOOT_Head|r
-    >>|cRXP_ENEMY_Lord Melenas|r may be located in many different spawn locations throughout Fel Rock
-    .complete 932,1 --Collect Melenas' Head (x1)
-    .unitscan Lord Melenas
 step << Rogue
     #season 2
     #completewith next
@@ -1086,7 +1079,7 @@ step << Priest
     .mob Rascal Sprite
     .mob Shadow Sprite
     .train 402852,1
-step << !Hunter
+step
     .goto Teldrassil,51.2,50.6
     >>Kill |cRXP_ENEMY_Lord Melenas|r. Loot him for his |cRXP_LOOT_Head|r
     >>|cRXP_ENEMY_Lord Melenas|r may be located in many different spawn locations throughout Fel Rock
@@ -1104,7 +1097,7 @@ step << Priest
 step << Priest
     #season 2
     .train 402852 >> |cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] |cRXP_WARN_to train|r |T237570:0|t[Homunculi]
-    >>|cRXP_WARN_You must have a|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buff by typing /kneel in a holy area such as, a moonwell, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge|r
+    >>|cRXP_WARN_You must have 2|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buffs by typing /kneel in a holy area such as, a moonwell, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge|r
     .use 205947
     .itemcount 205947,1
 step << Rogue
@@ -1140,30 +1133,32 @@ step << !Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
     .turnin 929 >> Turn in Crown of the Earth
 step
-	#era/som
+	#xprate <1.5
     .goto Teldrassil,56.142,61.714
     .target Corithras Moonrage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
     .accept 933 >> Accept Crown of the Earth
 step
+	#xprate <1.5
     #completewith next
     .goto Teldrassil,42.61,76.18,50 >> Travel to southwestern Teldrassil
 step
-	#era/som
+	#xprate <1.5
 	.goto Teldrassil,42.61,76.18
 	>>Click the |cRXP_PICK_Strange Fruited Plant|r
 	.accept 930 >> Accept The Glowing Fruit
 step
+	#xprate <1.5
     #completewith next
     .goto Teldrassil,42.41,67.07,50 >> Travel to the Pools of Arlithrien
 step
-	#era/som
+	#xprate <1.5
 	#label spiderLegs
 	.goto Teldrassil,42.41,67.07
     .use 5621 >>|cRXP_WARN_Use the|r |T134765:0|t[Tourmaline Phial] |cRXP_WARN_at the Pools of Arlithrien moonwell|r
 	.complete 933,1
 step
-	#era/som
+	#xprate <1.5
     .goto Teldrassil,44.69,70.52,40,0
     .goto Teldrassil,44.88,73.83
     >>Kill |cRXP_ENEMY_Webwood Lurkers|r and |cRXP_ENEMY_Webwood Venomfangs|r. Loot them for their |cRXP_LOOT_Small Spider Legs|r
@@ -1171,24 +1166,25 @@ step
     .mob Webwood Lurker
     .mob Webwood Venomfang
 step
+	#xprate <1.5
     #hardcore
     #completewith next
     .goto Teldrassil,56.142,61.714,90 >> Travel to Dolanaar
 step
-	#era/som
+	#xprate <1.5
     #softcore
 	#completewith next
     .goto Teldrassil,43.50,68.42
     .deathskip >> Die and respawn at the Dolanaar graveyard, make sure to die east of the moonwell, otherwise you might end up in Darnassus
 step
-	#era/som
+	#xprate <1.5
     .goto Teldrassil,56.142,61.714
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
     .turnin 933 >> Turn in Crown of the Earth
     .target Corithras Moonrage
     .accept 7383 >> Accept Crown of the Earth
 step
-	#era/som
+	#xprate <1.5
     .goto Teldrassil,57.121,61.296
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zarrin|r
     .train 2550 >>Train Cooking
@@ -1201,14 +1197,6 @@ step << Warrior/Rogue
     .train 3273 >> Train |T135966:0|t[First Aid]
     .target Byancie
 step
-    #som
-    .goto Teldrassil,55.574,56.948
-    .target Tallonkai Swiftroot
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r atop the Tree
-    .turnin 932 >> Turn in Twisted Hatred << !Hunter
-    .turnin 2459 >> Turn in Ferocitas the Dream Eater
-step
-    #era
     .goto Teldrassil,55.574,56.948
     .target Tallonkai Swiftroot
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r atop the Tree
@@ -1233,6 +1221,19 @@ step << Rogue
     .mob Gnarlpine Defender
     .mob Gnarlpine Augur
     .train 398196,1
+step << Rogue
+    #sticky
+    #label topleft
+    #season 2
+    .goto Teldrassil,44.2,59.2,0,0
+    >>Kill or |T133644:0|t[Pick Pocket] |cRXP_ENEMY_Gnarlpine Furbolgs|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece]|r
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    .collect 208602,1 -- Top-Left Map Piece (1)
+    .mob Gnarlpine Ambusher
+    .mob Gnarlpine Shaman
+    .mob Gnarlpine Defender
+    .mob Gnarlpine Augur
+    .train 398196,1
 step
     .goto Teldrassil,46.6,53.0
     >>Kill |cRXP_ENEMY_Gnarlpine Ambushers|r
@@ -1243,7 +1244,7 @@ step << Hunter
     .goto Teldrassil,46.6,46.3
     >>|cRXP_WARN_Cast|r |T132212:0|t[Hunter's Mark] |cRXP_WARN_on the|r |cRXP_ENEMY_Rustling Bush|r
     >>Kill the |cRXP_ENEMY_Fallenroot Poacher|r that spawns. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
-    .collect 206155,1 --Rune of Markmanship (1)
+    .collect 206155,1 --Rune of Marksmanship (1)
     .mob Rustling Bush
     .mob Fallenroot Poacher
     .train 410113,1 --Master Marksman
@@ -1252,77 +1253,13 @@ step << Hunter
     .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r] |cRXP_WARN_to train|r |T132177:0|t[Master Marksman]
     .use 206155
     .train 410113,1
-step << Rogue
-    #season 2
-    .goto Teldrassil,46.8,54.6,60,0
-    .goto Teldrassil,44.2,59.2
-    >>Kill or |T133644:0|t[Pick Pocket] |cRXP_ENEMY_Gnarlpine Furbolgs|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece]|r
-    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
-    .collect 208602,1 -- Top-Left Map Piece (1)
-    .mob Gnarlpine Ambusher
-    .mob Gnarlpine Shaman
-    .mob Gnarlpine Defender
-    .mob Gnarlpine Augur
-    .train 398196,1
-step << Druid
-    .goto Teldrassil,55.83,58.31,40,0
-    .goto Teldrassil,50.22,53.83
-    .goto Teldrassil,55.83,58.31,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moon Priestess Amara|r
-    >>|cRXP_FRIENDLY_Moon Priestess Amara|r |cRXP_WARN_patrols the road west of Dolanaar|r
-    .turnin 487 >> Turn in The Road to Darnassus
-    .target Moon Priestess Amara
-step
-    #completewith next
-    .goto Teldrassil,38.32,34.36,50 >> Travel to The Oracle Glade
-step
-	#era/som
-    .goto Teldrassil,38.32,34.36
-    .target Sentinel Arynia Cloudsbreak
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
-    .accept 937 >> Accept The Enchanted Glade
-step
-	#era/som
-    .goto Teldrassil,38.43,34.03
-    .use 18152 >>|cRXP_WARN_Use the|r |T134798:0|t[Amethyst Phial] |cRXP_WARN_at The Oracle Glade moonwell|r
-    .complete 7383,1 --Collect Filled Amethyst Phial (x1)
-step << Rogue
-    #season 2
-    #completewith xp10
-    >>Kill or |T133644:0|t[Pick Pocket] |cRXP_ENEMY_Bloodfeather Harpies|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece]|r
-    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
-    .collect 208603,1 -- Bottom-Right Map Piece (1)
-    .mob Bloodfeather Harpy
-    .mob Bloodfeather Rogue
-    .mob Bloodfeather Sorceress
-    .mob Bloodfeather Fury
-    .mob Bloodfeather Wind Witch
-    .mob Bloodfeather Matriarch
-    .train 398196,1
-step
-	#era/som
-    #completewith xp10
-	#label harpies
-    >>Kill |cRXP_ENEMY_Bloodfeather Harpies|r. Loot them for their |cRXP_LOOT_Belts|r
-    >>|cRXP_ENEMY_Bloodfeather Matriarchs|r |cRXP_WARN_cast|r |T136052:0|t[Healing Wave] |cRXP_WARN_and|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_which does a lot of damage. Try to burst them fast|r
-    .complete 937,1 --Collect Bloodfeather Belt (x6)
-    .mob Bloodfeather Harpy
-    .mob Bloodfeather Rogue
-    .mob Bloodfeather Sorceress
-    .mob Bloodfeather Fury
-    .mob Bloodfeather Wind Witch
-    .mob Bloodfeather Matriarch
-step
-	#era/som
-    .goto Teldrassil,34.61,28.79
-    >>Click the |cRXP_PICK_Strange Fronded Plant|r
-    .accept 931 >> Accept The Shimmering Frond
-step << Priest
+step << Priest/Rogue
     #season 2
     #completewith next
     .goto Teldrassil,44.18,58.19
     .subzone 262 >> Enter the Ban'ethil Barrow Den. This can be difficult without a group. You can also do this a little later to obtain your |T237514:0|t[Void Plague] rune
-    .train 425216,1
+    .train 425216,1 << Priest
+    .train 400081,1 << Rogue
 step << Priest
     #season 2
     .goto Teldrassil,44.401,60.655
@@ -1348,12 +1285,69 @@ step << Rogue
     .itemcount 208749,1
     .train 400081,1
 step << Rogue
+#requires topleft
     #season 2
     .train 400081 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Precision|r] |cRXP_WARN_to train|r |T135610:0|t[Between the Eyes]
     .use 204174
     .itemcount 204174,1
+step << Druid
+    .goto Teldrassil,55.83,58.31,40,0
+    .goto Teldrassil,50.22,53.83
+    .goto Teldrassil,55.83,58.31,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moon Priestess Amara|r
+    >>|cRXP_FRIENDLY_Moon Priestess Amara|r |cRXP_WARN_patrols the road west of Dolanaar|r
+    .turnin 487 >> Turn in The Road to Darnassus
+    .target Moon Priestess Amara
+step
+	#xprate < 1.5
+    #completewith next
+    .goto Teldrassil,38.32,34.36,50 >> Travel to The Oracle Glade
+step
+	#xprate < 1.5
+    .goto Teldrassil,38.32,34.36
+    .target Sentinel Arynia Cloudsbreak
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
+    .accept 937 >> Accept The Enchanted Glade
+step
+	#xprate < 1.5
+    .goto Teldrassil,38.43,34.03
+    .use 18152 >>|cRXP_WARN_Use the|r |T134798:0|t[Amethyst Phial] |cRXP_WARN_at The Oracle Glade moonwell|r
+    .complete 7383,1 --Collect Filled Amethyst Phial (x1)
+step << Rogue
+	#xprate < 1.5
+    #season 2
+    #completewith xp10
+    >>Kill or |T133644:0|t[Pick Pocket] |cRXP_ENEMY_Bloodfeather Harpies|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece]|r
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    .collect 208603,1 -- Bottom-Right Map Piece (1)
+    .mob Bloodfeather Harpy
+    .mob Bloodfeather Rogue
+    .mob Bloodfeather Sorceress
+    .mob Bloodfeather Fury
+    .mob Bloodfeather Wind Witch
+    .mob Bloodfeather Matriarch
+    .train 398196,1
+step
+	#xprate < 1.5
+    #completewith xp10
+	#label harpies
+    >>Kill |cRXP_ENEMY_Bloodfeather Harpies|r. Loot them for their |cRXP_LOOT_Belts|r
+    >>|cRXP_ENEMY_Bloodfeather Matriarchs|r |cRXP_WARN_cast|r |T136052:0|t[Healing Wave] |cRXP_WARN_and|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_which does a lot of damage. Try to burst them fast|r
+    .complete 937,1 --Collect Bloodfeather Belt (x6)
+    .mob Bloodfeather Harpy
+    .mob Bloodfeather Rogue
+    .mob Bloodfeather Sorceress
+    .mob Bloodfeather Fury
+    .mob Bloodfeather Wind Witch
+    .mob Bloodfeather Matriarch
+step
+	#xprate < 1.5
+    .goto Teldrassil,34.61,28.79
+    >>Click the |cRXP_PICK_Strange Fronded Plant|r
+    .accept 931 >> Accept The Shimmering Frond
+
 step << Hunter
-	#era/som
+	#xprate <1.5
     #completewith xp10
     #label mist1
     .goto Teldrassil,31.54,31.62
@@ -1362,19 +1356,13 @@ step << Hunter
     .accept 938 >> Accept Mist
     .target Mist
 step << Hunter
-    #era
+	#xprate <1.5
     #sticky
     #label xp10
     .xp 10-2670 >> Grind until you are 2670 xp off level 10 (3830/6500)
     >>|cRXP_WARN_Once you reach this xp breakpoint, skip the harpy/escort quest and go straight to Darnassus. You will have another opportunity to finish those quests later|r
-step << Hunter skip
-    #era/som--xpgate
-    #sticky
-    #label xp10
-    .xp 10-3330 >> Grind until you are 3330 xp off level 10 (3170/6500)
-    >>|cRXP_WARN_Once you reach this xp breakpoint, skip the harpy/escort quest and go straight to Darnassus. You will have another opportunity to finish those quests later|r
 step << Hunter
-	#era/som
+	#xprate <1.5
     #completewith xp10
     #requires mist1
     .goto Teldrassil,38.32,34.36
@@ -1382,7 +1370,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
     .turnin 938 >> Turn in Mist
 step << Hunter
-	#era/som
+	#xprate <1.5
     #completewith xp10
 	#requires harpies
     .goto Teldrassil,38.32,34.36
@@ -1391,7 +1379,7 @@ step << Hunter
     .target Sentinel Arynia Cloudsbreak
     .accept 940 >> Accept Teldrassil
 step << !Hunter
-	#era/som
+	#xprate <1.5
     #label mist1
     .goto Teldrassil,31.54,31.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mist|r
@@ -1399,25 +1387,29 @@ step << !Hunter
     .accept 938 >> Accept Mist
     .target Mist
 step << !Hunter
-	#era/som
+	#xprate <1.5
     .goto Teldrassil,38.32,34.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
     .turnin 937 >> Turn in The Enchanted Glade
     .target Sentinel Arynia Cloudsbreak
     .accept 940 >> Accept Teldrassil
     .turnin 938 >> Turn in Mist
-step << !Hunter
-    #era
+step << Druid
+    #xprate <1.5
     #label xp10
-    .xp 10-750 << Druid
-    .xp 10-3110 << !Druid
-step << !Hunter
-	#som--xpgate
-    #phase 1-2
-	#label xp10
-   .xp 10-930 << Druid
-   .xp 10-3880 << !Druid
+    #season 2
+    .xp 10
+step << Druid
+    #xprate <1.5
+    #season 0,1
+    #label xp10
+    .xp 10-750
+step << !Hunter !Druid
+	#xprate <1.5
+    #label xp10
+    .xp 10-3110
 step << Rogue
+	#xprate <1.5
     #season 2
     .goto Teldrassil,37.8,43.0,60,0
     .goto Teldrassil,36.0,34.4,60,0
@@ -1434,6 +1426,7 @@ step << Rogue
     .mob Bloodfeather Matriarch
     .train 398196,1
 step << Rogue
+	#xprate < 1.5
     #season 2
     .cast 418600 >>|cRXP_WARN_Use any of the|r |T134327:0|t[|cRXP_LOOT_Map Pieces]|r |cRXP_WARN_to combine them into the|r |T134269:0|t[|cRXP_LOOT_Teldrassil Treasure Map|r]
     .collect 208605,1
@@ -1447,38 +1440,42 @@ step << Rogue
     .use 208603
     .train 398196,1
 step
-   #som--xpgate
-   #phase 3-6
+	#xprate >1.49
    .goto Teldrassil,38.6,58.0
    >>Finish off collecting 7 Small Spider Legs
    .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
 step << Druid
-   #som--xpgate
-   #phase 3-6
+   #xprate >1.49
    #label xp10
-   .xp 10-640
+   .xp 10-850
    .goto Teldrassil,38.3,34.4
    >>If you're still behind on xp do the harpy quest north
 step << !Druid
-	#som--xpgate
-	#phase 3-6
+    #xprate >1.49
 	#label xp10
-	.xp 10-3300
+	.xp 10-4415
 step << !Rogue
     #softcore
-	#era/som
     #requires xp10
     #completewith next
     .deathskip >> Die and respawn at the Spirit Healer in Darnassus
     .target Spirit Healer
 step << !Rogue
     #hardcore
-    #era/som
     #requires xp10
     #completewith next
     .goto Darnassus,82.01,36.70,100 >> Travel to Darnassus
+step << Druid
+    #optional
+    #season 2
+    .xp <10,1
+    .goto Darnassus,70.679,45.379
+    .target Mydrannul
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mydrannul|r
+    .accept 6344 >> Accept Nessa Shadowsong
 step << Warrior
     #season 2
+    #requires xp10
     .goto Darnassus,63.108,21.858
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delwynna|r upstairs
     >>|cRXP_WARN_After turning in the three |cRXP_LOOT_Severed Heads|r you will receive the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
@@ -1494,7 +1491,7 @@ step << !Rogue
     .target Rellian Greenspyre
     .accept 923 >> Accept Tumors
 step << !Hunter !Rogue
-	#era/som
+	#xprate <1.5
     .goto Darnassus,34.96,9.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Fandral Staghelm|r atop the Tree
     .turnin 940 >> Turn in Teldrassil
@@ -1513,8 +1510,104 @@ step << !Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
     .accept 2518 >> Accept Tears of the Moon
 step << Druid
+    #season 2
+    #softcore
+    .goto Darnassus,70.679,45.379
+    .target Mydrannul
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mydrannul|r
+    .accept 6344 >> Accept Nessa Shadowsong
+step << Druid
+    #season 2
+    #softcore
+    #completewith next
+    .goto Darnassus,28.52,39.89
+    .zone Teldrassil >> Travel through the purple portal to Rut'theran Village
+    .zoneskip Darkshore
+    .subzoneskip 702
+step << Druid
+    #season 2
+    #softcore
+    .goto Teldrassil,56.25,92.44
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nessa Shadowsong|r
+    .turnin 6344 >> Turn in Nessa Shadowsong
+    .accept 6341 >> Accept The Bounty of Teldrassil
+    .target Nessa Shadowsong
+step << Druid
+    #season 2
+    #softcore
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vesprystus|r
+	.goto Teldrassil,58.39,94.01
+    .turnin 6341 >> Turn in The Bounty of Teldrassil
+    .accept 6342 >> Accept Flight to Auberdine
+    .target Vesprystus
+step << Druid
+    #season 2
+    #softcore
+    #completewith next
+    .goto Teldrassil,58.39,94.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vesprystus|r
+    .fly Auberdine >> Fly to Darkshore
+    .target Vesprystus
+step << Druid
+    #season 2
+    #softcore
+#map Darkshore
+    .goto Felwood,19.27,19.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laird|r
+    .turnin 6342 >> Turn in Flight to Auberdine
+    .accept 6343 >> Accept Return to Nessa
+    .target Laird
+step << Druid
+    #season 2
+    #softcore
+    .goto Darkshore,32.44,43.71
+    .zone Wetlands >> |cRXP_WARN_Take the boat to Menethil Harbor. You will now go and get the|r |T135730:0|t[Starsurge] |cRXP_WARN_rune in Wetlands which is incredibly powerful at this level|r
+    >>|cRXP_WARN_You may die a few times during this process|r
+    .train 424718,1
+step << Druid
+    #season 2
+    #softcore
+    .goto Wetlands,36.941,15.157
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grugimdern|r
+    >>|cRXP_WARN_He will give you a|r |T134052:0|t[|cRXP_LOOT_Marshroom|r]
+    .collect 210499,1 -- Marshroom (1)
+    .target Grugimdern
+    .train 424718,1
+    .link https://youtu.be/fWVaDR-NnKU >> |cRXP_WARN_Click here for video reference|r
+step << Druid
+    #season 2
+    #softcore
+    .goto Wetlands,31.187,18.328,15 >> Head to the tree stump protruding from the lake surface
+    .train 424718,1
+step << Druid
+    #season 2
+    #softcore
+    #completewith next
+    .goto Wetlands,31.187,18.328
+    .cast 426019 >>|cRXP_WARN_Use the|r |T134052:0|t[|cRXP_LOOT_Marshroom|r] |cRXP_WARN_to eat it|r
+    >>|cRXP_WARN_Make sure you're safe before using it, if you die you'll have to get the mushroom again|r
+    .use 210499
+    .train 424718,1
+step << Druid
+    #season 2
+    #softcore
+    .goto Wetlands,31.187,18.328
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vodyanoi|r
+    >>You will only be able to see this NPC if you eat the mushroom first
+    .collect 210500,1 -- Rune of the Stars (1)
+    .skipgossip
+    .target Vodyanoi
+    .train 424718,1
+step << Druid
+    #season 2
+    #softcore
+    .train 424718 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Stars|r] |cRXP_WARN_to train|r |T135730:0|t[Starsurge]
+    .use 210500
+    .itemcount 210500,1
+step << Druid
 	#completewith next
 	.cast 18960 >> Cast Teleport: Moonglade
+    .usespell 18960
     >>|cRXP_WARN_It will be in your spellbook|r
 	.zoneskip Moonglade
 step << Druid
@@ -1542,16 +1635,15 @@ step << Druid
     .accept 5931 >> Accept Back to Darnassus
 step
     #requires xp10 << Rogue
-    #completewith next << !Rogue
     .hs >> Hearth to Dolanaar
+    .subzoneskip 186
 step << Hunter
     .goto Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeena Featherbow|r
 	.vendor >> |cRXP_BUY_Buy 4 stacks of|r |T132382:0|t[Sharp Arrows]|cRXP_BUY_. Equip them as soon as you reach level 10|r
     .target Jeena Featherbow
 step
-	#som
-	#phase 3-6
+	#xprate >1.49
     .goto Teldrassil,57.121,61.296
     .train 2550 >>Train Cooking
     .target Zarrin
@@ -1559,8 +1651,7 @@ step
     .accept 4161 >> Accept Recipe of the Kaldorei
     .turnin 4161 >> Turn in Recipe of the Kaldorei
 step
-	#som
-	#phase 3-6
+	#xprate >1.49
     .goto Teldrassil,51.9,56.4
     >>Find Moon Priestess Amara, she patrols the road west of Dolanaar
     .target Moon Priestess Amara
@@ -1568,6 +1659,7 @@ step
     .turnin 487 >> Turn in The Road to Darnassus
 	.maxlevel 9
 step << Hunter
+    #optional
     #completewith L10
     #level 10
     #label beast1
@@ -1577,6 +1669,7 @@ step << Hunter
     .accept 6063 >> Accept Taming the Beast
 	.train 13165 >> Train your level 10 spells
 step << Hunter
+    #optional
     #completewith L10
     #level 10
     #requires beast1
@@ -1586,6 +1679,7 @@ step << Hunter
     .complete 6063,1 --Tame a Webwood Lurker
     .mob Webwood Lurker
 step << Hunter
+    #optional
     #completewith L10
     #level 10
     #requires beast2
@@ -1595,28 +1689,28 @@ step << Hunter
     .target Dazalar
     .accept 6101 >> Accept Taming the Beast
 step
-	#era/som
+	#xprate <1.5
     .goto Teldrassil,56.142,61.714
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
     .turnin 7383 >> Turn in Crown of the Earth
     .target Corithras Moonrage
     .accept 935 >> Accept Crown of the Earth
 step
-	#era/som
+	#xprate <1.5
 	.goto Teldrassil,60.900,68.489
     .target Denalan
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denalan|r
     .turnin 931 >> Turn in The Shimmering Frond
     .turnin 930 >> Turn in The Glowing Fruit
 step
-	#era/som
+	#xprate <1.5
 	.goto Teldrassil,60.900,68.489
     .target Denalan
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denalan|r
 	.turnin 927 >> Turn in The Moss-twined Heart
     .isOnQuest 927
 step
-	#era/som
+	#xprate <1.5
 	.goto Teldrassil,60.78,68.59
 	>>Click on |cRXP_LOOT_Denalans Planter|r
 	.turnin 941 >> Turn in Planting the Heart
@@ -1634,7 +1728,7 @@ step << Warrior
     .target Innkeeper Keldamyr
     .mob Syllart
 step << Hunter
-	#era/som
+	#xprate <1.5
     .goto Teldrassil,62.6,72.2
     .use 15922 >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Nightsaber Stalker|r
     >>|cRXP_WARN_You must right click your Pet Frame and Dismiss your pet before you can tame another one|r
@@ -1645,7 +1739,7 @@ step
     #label L10
     .xp 10
 step
-	#era/som
+	#xprate <1.5
     #softcore
 	#sticky
     #completewith next
@@ -1723,6 +1817,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannok Breezesong|r
     .accept 2241 >> Accept The Apple Falls
 step << Hunter
+	#xprate <1.5--money issues 1.5x
     .goto Teldrassil,56.308,59.488
     .money <0.0504
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shalomon|r
@@ -1806,6 +1901,12 @@ step
     >>|cRXP_ENEMY_Lady Sathrah|r |cRXP_WARN_can spawn in 3 different locations|r
     .complete 2518,1 --Collect Silvery Spinnerets (x1)
     .mob Lady Sathrah
+step
+    #xprate >1.49 << !Hunter
+    .goto Teldrassil,38.3,34.3
+    .target Sentinel Arynia Cloudsbreak
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
+    .accept 937 >> Accept The Enchanted Glade
 step << Rogue
     .goto Teldrassil,38.0,25.2
     >>|cRXP_WARN_Cast|r |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Sethir the Ancient|r
@@ -1814,19 +1915,27 @@ step << Rogue
     >>|cRXP_WARN_Avoid fighting |cRXP_ENEMY_Sethir the Ancient|r. Let him walk passed you, then|r |T132320:0|t[Stealth] |cRXP_WARN_and|r |T133644:0|t[Pick Pocket] |cRXP_WARN_when you're behind him|r
     .complete 2242,1
     .mob Sethir the Ancient
+step << Rogue
+    #season 2
+    .goto Teldrassil,37.8,43.0,60,0
+    .goto Teldrassil,36.0,34.4,60,0
+    .goto Teldrassil,34.6,28.8,60,0
+    .goto Teldrassil,37.8,43.0
+    >>Kill or |T133644:0|t[Pick Pocket] |cRXP_ENEMY_Bloodfeather Harpies|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece]|r
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    .collect 208603,1 -- Bottom-Right Map Piece (1)
+    .mob Bloodfeather Harpy
+    .mob Bloodfeather Rogue
+    .mob Bloodfeather Sorceress
+    .mob Bloodfeather Fury
+    .mob Bloodfeather Wind Witch
+    .mob Bloodfeather Matriarch
+    .train 398196,1
 step
-	#som << !Hunter
-	#phase 3-6 << !Hunter
-    .goto Teldrassil,38.3,34.3
-    .target Sentinel Arynia Cloudsbreak
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
-    .accept 937 >> Accept The Enchanted Glade
-step
-	#som << !Hunter
-	#phase 3-6 << !Hunter
+    #xprate >1.49 << !Hunter
     #sticky
 	#label harpies2
-    .goto Teldrassil,33.619,29.819
+    .goto Teldrassil,33.619,29.819,0,0
     >>Kill |cRXP_ENEMY_Bloodfeather Harpies|r. Loot them for their |cRXP_LOOT_Belts|r
     >>|cRXP_ENEMY_Bloodfeather Matriarchs|r |cRXP_WARN_cast|r |T136052:0|t[Healing Wave] |cRXP_WARN_and|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_which does a lot of damage. Try to burst them fast|r
     .complete 937,1 --Collect Bloodfeather Belt (x6)
@@ -1836,24 +1945,35 @@ step
     .mob Bloodfeather Fury
     .mob Bloodfeather Wind Witch
     .mob Bloodfeather Matriarch
+step << Rogue
+    #season 2
+    .goto Teldrassil,33.619,29.819,0,0
+    .cast 418600 >>|cRXP_WARN_Use any of the|r |T134327:0|t[|cRXP_LOOT_Map Pieces]|r |cRXP_WARN_to combine them into the|r |T134269:0|t[|cRXP_LOOT_Teldrassil Treasure Map|r]
+    .collect 208605,1
+    .itemcount 208604,1
+    .itemcount 208601,1
+    .itemcount 208602,1
+    .itemcount 208603,1
+    .use 208604
+    .use 208601
+    .use 208602
+    .use 208603
+    .train 398196,1
 step
-	#som << !Hunter
-	#phase 3-6 << !Hunter
+    #xprate >1.49 << !Hunter
     .goto Teldrassil,31.54,31.62
     .target Mist
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mist|r
     >>|cRXP_WARN_This will start an escort quest|r
     .accept 938 >> Accept Mist
 step
-	#som << !Hunter
-	#phase 3-6 << !Hunter
+    #xprate >1.49 << !Hunter
     .goto Teldrassil,38.3,34.4
     .target Sentinel Arynia Cloudsbreak
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
     .turnin 938 >> Turn in Mist
 step
-	#som << !Hunter
-	#phase 3-6 << !Hunter
+    #xprate >1.49 << !Hunter
     #requires harpies2
     .goto Teldrassil,38.3,34.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
@@ -1862,18 +1982,25 @@ step
     .accept 940 >> Accept Teldrassil
 step
     #softcore
-	#completewith next
+	#completewith darn
     .deathskip >>Die and respawn at the Darnassus graveyard
     .target Spirit Healer
 step
     #hardcore
     #completewith next
-    .goto Darnassus,82.01,36.70,100 >> Travel to Darnassus
+    .goto Darnassus,82.01,36.70
+    .zone Darnassus >> Travel to Darnassus
 step
     .goto Darnassus,70.679,45.379
     .target Mydrannul
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mydrannul|r
     .accept 6344 >> Accept Nessa Shadowsong
+step
+    #softcore
+    #label darn
+    #optional
+    .goto Darnassus,82.01,36.70
+    .zone Darnassus >> Travel to Darnassus
 step
 	.abandon 927 >> Abandon The Moss-twined Heart. You never have an opportunity to turn it in
 step << Warrior
@@ -1907,6 +2034,75 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elanaria|r
     .turnin 1683 >> Turn in Vorlus Vilehoof
 --	.accept 1686 >> Accept The Shade of Elura
+step << Hunter
+    .goto Darnassus,40.377,8.545
+    .target Jocaste
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jocaste|r
+    .turnin 6103 >> Turn in Training the Beast
+step << Druid
+    .goto Darnassus,35.38,8.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r on the middle level
+    .turnin 5931 >> Turn in Back to Darnassus
+    .target Mathrengyl Bearwalker
+    .accept 6001 >> Accept Body and Heart
+step
+    .goto Darnassus,34.814,9.255
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Fandral Staghelm|r
+    .turnin 935 >> Turn in Crown of the Earth
+    .turnin -940 >> Turn in Teldrassil
+    .target Arch Druid Fandral Staghelm
+    .accept 952 >> Accept Grove of the Ancients
+step
+    .goto Darnassus,38.184,21.639
+    .target Rellian Greenspyre
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rellian Greenspyre|r
+    .turnin 923 >> Turn in Tumors
+step << Rogue
+    .goto Darnassus,31.21,17.72,8,0
+    .goto Darnassus,36.99,21.91
+    .target Syurna
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syurna|r
+    .turnin 2242 >> Turn in Destiny Calls
+step
+    .goto Darnassus,39.72,92.68,10,0
+    .goto Darnassus,36.65,85.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
+    .turnin 2518 >> Turn in Tears of the Moon
+    .target Priestess A'moora
+    .accept 2520 >> Accept Sathrah's Sacrifice
+step
+    .goto Darnassus,39.7,85.8
+	.use 8155 >>|cRXP_WARN_Use|r |T135652:0|t[Sathrah's Sacrifice] |cRXP_WARN_at the fountain|r
+    .complete 2520,1 --Offer the sacrifice at the fountain
+step
+    #label end
+    .goto Darnassus,39.72,92.68,10,0
+    .goto Darnassus,36.65,85.93
+    .target Priestess A'moora
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
+    .turnin 2520 >> Turn in Sathrah's Sacrifice
+step << Druid
+#ssf
+    .goto Darnassus,47.95,68.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Firodren Mooncaller|r
+    .train 2366 >> Train |T136065:0|t[Herbalism]
+    >>|T136065:0|t[Herbalism] |cRXP_WARN_is required to gather 5|r |T134187:0|t[Earthroot] |cRXP_WARN_for a level 15 quest later. You can unlearn it afterwards|r
+    .target Firodren Mooncaller
+step
+    #ah
+    .goto Darnassus,56.245,54.039,-1
+    .goto Darnassus,56.374,51.820,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to a |cRXP_FRIENDLY_Darnassus Auctioneer|r
+    >>Buy the following items for instant turn ins at Darkshore later:
+    >>|T134187:0|t[Earthroot] << Druid
+    >>|T133912:0|t[Darkshore Grouper]
+    >>|T133972:0|t[Strider Meat]
+    *Skip this step if you wish to not buy any
+    .collect 5469,5,2178,1 -- Strider Meat (5)
+    .collect 12238,6,1141,1 -- Darkshore Grouper (6)
+    .collect 2449,5,6123,1 << Druid
+    .target Auctioneer Tolon
+    .target Auctioneer Golothas
 step << Hunter/Warrior/Priest
     .goto Darnassus,57.56,46.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
@@ -1914,6 +2110,7 @@ step << Hunter/Warrior/Priest
     >>If you have a Staff in your bags, equip it << Hunter
     .target Ilyenia Moonfire
 step << Hunter
+    #optional
     #completewith end
     +|cRXP_WARN_Equip the|r |T135145:0|t[Walking Stick]
     .use 2495
@@ -1973,73 +2170,11 @@ step << Rogue
     .collect 2946,1 -- Balanced Throwing Dagger
     .target Turian
 step
-    #ah
-    .goto Darnassus,56.245,54.039,-1
-    .goto Darnassus,56.374,51.820,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to a |cRXP_FRIENDLY_Darnassus Auctioneer|r
-    >>Buy the following items for a instant turn ins at Darkshore shortly. Skip this step if you wish to not buy any
-    >>|T133972:0|t[Strider Meat]
-    >>|T133912:0|t[Darkshore Grouper]
-    .collect 5469,5,2178,1 -- Strider Meat (5)
-    .collect 12238,6,1141,1 -- Darkshore Grouper (6)
-    .target Auctioneer Tolon
-    .target Auctioneer Golothas
-step << Hunter
-    .goto Darnassus,40.377,8.545
-    .target Jocaste
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jocaste|r
-    .turnin 6103 >> Turn in Training the Beast
-step << Druid
-    .goto Darnassus,35.38,8.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r on the middle level
-    .turnin 5931 >> Turn in Back to Darnassus
-    .target Mathrengyl Bearwalker
-    .accept 6001 >> Accept Body and Heart
-step
-    .goto Darnassus,34.814,9.255
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Fandral Staghelm|r
-    .turnin 935 >> Turn in Crown of the Earth
-    .turnin 940 >> Turn in Teldrassil << Hunter
-    .target Arch Druid Fandral Staghelm
-    .accept 952 >> Accept Grove of the Ancients
-step
-    .goto Darnassus,38.184,21.639
-    .target Rellian Greenspyre
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rellian Greenspyre|r
-    .turnin 923 >> Turn in Tumors
-step << Rogue
-    .goto Darnassus,31.21,17.72,8,0
-    .goto Darnassus,36.99,21.91
-    .target Syurna
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syurna|r
-    .turnin 2242 >> Turn in Destiny Calls
-step
-    .goto Darnassus,39.72,92.68,10,0
-    .goto Darnassus,36.65,85.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
-    .turnin 2518 >> Turn in Tears of the Moon
-    .target Priestess A'moora
-    .accept 2520 >> Accept Sathrah's Sacrifice
-step
-    .goto Darnassus,39.7,85.8
-	.use 8155 >>|cRXP_WARN_Use|r |T135652:0|t[Sathrah's Sacrifice] |cRXP_WARN_at the fountain|r
-    .complete 2520,1 --Offer the sacrifice at the fountain
-step
-    #label end
-    .goto Darnassus,39.72,92.68,10,0
-    .goto Darnassus,36.65,85.93
-    .target Priestess A'moora
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
-    .turnin 2520 >> Turn in Sathrah's Sacrifice
-step << Druid
-    .goto Darnassus,47.95,68.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Firodren Mooncaller|r
-    .train 2366 >> Train |T136065:0|t[Herbalism]
-    >>|T136065:0|t[Herbalism] |cRXP_WARN_is required to gather 5|r |T134187:0|t[Earthroot] |cRXP_WARN_for a level 15 quest later. You can unlearn it afterwards|r
-    .target Firodren Mooncaller
-step
     #completewith NessaShadowsong
-    .goto Darnassus,30.00,41.43,10 >> Travel through the purple portal to Rut'theran Village
+    .goto Darnassus,28.52,39.89
+    .zone Teldrassil >> Travel through the purple portal to Rut'theran Village
+    .zoneskip Darkshore
+    .subzoneskip 702
 step << Rogue
     #season 2
     #completewith next
@@ -2059,12 +2194,19 @@ step << Rogue
     .use 203991
     .itemcount 203991,1
 step
-    #label NessaShadowsong
     .goto Teldrassil,56.25,92.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nessa Shadowsong|r
     .turnin 6344 >> Turn in Nessa Shadowsong
     .target Nessa Shadowsong
     .accept 6341 >> Accept The Bounty of Teldrassil
+step
+    #label NessaShadowsong
+    #optional
+    .goto Teldrassil,56.25,92.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nessa Shadowsong|r
+    .turnin 6343 >> Turn in Return to Nessa
+    .isOnQuest 6343
+    .target Nessa Shadowsong
 step
     .goto Teldrassil,58.399,94.016
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vesprystus|r

@@ -1,9 +1,11 @@
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Haunt - 3 (Elwynn Forest)
+#title Haunt
+
 step << Warlock
     #season 2
     .goto Elwynn Forest,52.544,51.922
@@ -20,29 +22,31 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Haunt - 1 (Dun Morogh)
+#title Haunt
 
 step << Warlock
     #season 2
     .goto Dun Morogh,26.733,72.552
-    >>Open the |cRXP_PICK_Rockjaw Footlocker|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r]
+    >>Open the |cRXP_PICK_Rockjaw Footlocker|r on the ground. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Haunting]|r
     .collect 205230,1 -- Rune of Haunting (1)
+    .train 403919,1
 step << Warlock
     #season 2
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r]
+    .train 403919 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Haunting]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Haunt]
     .use 205230
-    .itemcount 205230,1
+    .itemcount 205230,1 -- Rune of Haunting (1)
 ]])
-
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Haunt - 2 (Durotar)
+#title Haunt
 
 
     --Rune of Haunt
@@ -71,15 +75,15 @@ step << Orc
     .turnin 77586 >>Turn in Stolen Power
     .target Nartok
 
-    ]])
-
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Haunt - 2 (Tirisfal)
+#title Haunt
 
 
     --Rune of Haunt
@@ -109,14 +113,15 @@ step << Undead
     .target Maximillion
 
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Soul Siphon - 13 (Durotar)
+#title Soul Siphon
 
 step
     #completewith next
@@ -148,9 +153,10 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Soul Siphon - 9 (Tirisfal Glades)
+#title Soul Siphon
 
 step
     #completewith next
@@ -181,9 +187,10 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Demonic Tactics - 4 (Tirisfal Glades)
+#title Demonic Tactics
 
 step
     #completewith next
@@ -226,9 +233,10 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Demonic Grace - 8 (Durotar)
+#title Demonic Grace
 
 step
     #completewith DemonicGraceDurotarTome
@@ -279,9 +287,10 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Demonic Grace - 8 (Tirisfal Glades)
+#title Demonic Grace
 
 step
     .train 425477,1
@@ -340,11 +349,12 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 -- #subgroup Chest << Mage
 #subgroup Gloves << Warlock
 -- #name Burnout - 8 (Tirisfal Glades) << Mage
 #name Chaos Bolt - 8 (Tirisfal Glades) << Warlock
+#title Chaos Bolt << Warlock
 --Permok: Dont load it for mages for now
 
 step << Mage
@@ -376,9 +386,10 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Lake of Fire - 25 (Hillsbrad Foothills)
+#title Lake of Fire
 
 step
     #completewith next
@@ -407,9 +418,10 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
-#name Incinerate - 22 (Redrige Mountains)
+#name Incinerate - 22 (Redridge Mountains)
+#title Incinerate
 
 step
     #completewith next
@@ -431,9 +443,10 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Master Channeler - 12 (The Barrens)
+#title Master Channeler
 
 step
     #completewith next
@@ -455,9 +468,10 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Master Channeler - 14 (Silverpine Forest)
+#title Master Channeler
 
 step
     #completewith next
@@ -477,9 +491,10 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadow Bolt Volley - 16 (The Barrens)
+#title Shadow Bolt Volley
 
 step
     #completewith next
@@ -506,9 +521,10 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadow Bolt Volley - 18 (Silverpine Forest)
+#title Shadow Bolt Volley
 
 step
     #completewith next
@@ -538,17 +554,18 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
-#name Metamorphosis - 25
+#name Metamorphosis/Grimoire of Synergy - 25 & 40 (Azeroth)
+#title Metamorphosis/Grimoire of Synergy
 
 step
     #completewith WarlockRuneMetamorphosisA
     +|cRXP_WARN_It is recommended to do all these steps in a group. Some steps can be completed solo.|r
 step
     #completewith next
-    .zone Redridge Mountains >>Travel to the Redrige Mountains (e.g. take the boat from Ratchet to Booty Bay, run North) << Horde
-    .zone Redridge Mountains >>Travel to the Redrige Mountains << Alliance
+    .zone Redridge Mountains >>Travel to the Redridge Mountains (e.g. take the boat from Ratchet to Booty Bay, run North) << Horde
+    .zone Redridge Mountains >>Travel to the Redridge Mountains << Alliance
 step
     #label WarlockRuneMetamorphosisA
     .train 403938,1
@@ -653,14 +670,128 @@ step
     .use 210980
     .itemcount 210980,1
     .train 403938 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Metamorphosis|r] |cRXP_WARN_to train|r |T237558:0|t[Metamorphosis]
+step
+    .train 426445,1
+    #completewith next
+    .zone The Barrens >>Travel to The Barrens
+step
+    .train 426445,1
+    .xp <30,1
+    .goto The Barrens,49.2,57.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raszel Ander|r.
+    .accept 78994,1 >> Accept A Solid Foundation
+    .target Raszel Ander
+step << Alliance
+    .train 426445,1
+    .goto The Barrens,63.0,37.2
+    #completewith Invisibility Potion
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r.
+    .fly Astranaar >> Fly Astranaar
+    .target Bragok
+step
+    .train 426445,1
+    #completewith Invisibility Potion
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kimlya|r.
+    .home >> Set your Hearthstone to Astranaar
+    .target Innkeeper Kimlya
+step << Horde
+    .train 426445,1
+    #completewith Invisibility Potion
+    .goto The Barrens,45.6,59.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Byula|r.
+    .home >> Set your Hearthstone to Camp Taurajo
+    .target Innkeeper Byula
+step << Horde
+    .train 426445,1
+    #completewith Invisibility Potion
+    .goto The Barrens,44.4,59.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Omusa Thunderhorn|r.
+    .fly Astranaar >> Fly Astranaar
+    .target Omusa Thunderhorn
+step
+    .train 426445,1
+    #label Invisibility Potion
+    .goto Ashenvale,90.9,38.6,20,0
+    .goto Ashenvale,91,37
+    >>|cRXP_WARN_By using |T136155:0|t[Eye of Kilrogg] you can scout the area beforehand to unexpected deaths|r
+    >>Use |T236874:0|t[Invisibility Potion] to sneak past level 60 elites
+    .aura 429407,1 >> |cRXP_WARN_Before clicking the |cRXP_PICK_Tree|r remove your equipment and apply |T136121:0|t[Shadow Ward] on yourself.|r |cFFFF0000This is important as you will receive a deadly ticking debuff removing your equipment will reduce the amount of damage you'll receive and use food if you need to.|r
+    .cast 431268 >> Click on the |cRXP_PICK_Tree|r to obtain |T251535:0|t[Bough of Shadows].
+    .collect 211426,1
+    .complete 78994,1
+    .use 217693
+step
+    .train 426445,1
+    #completewith Turnin A Solid Foundation
+    .hs >> Hearth to Astranaar << Alliance
+    .hs >> Hearth to Camp Taurajo << Horde
+step
+    .train 426445,1
+    #label Turnin A Solid Foundation
+    .goto The Barrens,49.2,57.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raszel Ander|r.
+    .turnin 78994,1 >> Turnin A Solid Foundation
+    .accept 78914,1 >> Accept A Soul vessel
+    .target Raszel Ander
+step
+    .train 426445,1
+    #completewith next
+    >>If you have decided to buy the materials it's recommended to purchase |T135975:0|t[Shadowgem] and |T134074:0|t[Black Vitriol] from the auction house and |T134337:0|t[Demonic Figurine] from a |cRXP_FRIENDLY_Reagent Vendor.|r
+    >>|cRXP_WARN_Alternatively you can get |T135975:0|t[Shadowgem] from mining and low level monster and for |T134074:0|t[Black Vitriol] you'll need to mine Mithril/Thorium deposits and get lucky.|r
+    .collect 1210,4
+    .collect 9262,1
+    .collect 16583,1
+step
+    .train 426445,1
+    .collect 211427,1 >>It's recommended to buy the |T133254:0|t[Soul Vessel] from the auction house. if it's too expensive you can try buy the materials from the auction house or gather them yourself.Then, ask an Engineer to make the |T133254:0|t[Soul Vessel] for you.
+step << Alliance
+    .goto The Barrens,63.0,37.2
+    #completewith Turnin A Soul Vessel
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baritanas Skyriver|r.
+    .fly Nijel >> Fly Nijel's Point
+    .target Baritanas Skyriver
+step << Horde
+    .train 426445,1
+    #completewith Turnin A Soul Vessel
+    .goto The Barrens,44.4,59.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thalon|r.
+    .fly Shadowprey >> Fly Shadowprey Village
+    .target Omusa Thunderhorn
+step
+    .train 426445,1
+    #label Turnin A Soul Vessel
+    .goto Desolace,51.2,82.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raszel Ander|r.
+    .turnin 78914,1 >> Turnin A Soul Vessel
+    .accept 79298,1 >> Accept Tempting Fate
+    .target Raszel Ander
+step
+    .train 426445,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raszel Ander|r and select the gossipoption "Let's Begin the Ritual"
+    .gossip 215850,1
+    .timer 14, Summon RP
+    .skipgossip
+step
+    .train 426445,1
+    >>Click on the |cRXP_PICK_Reconstructed Staff of Des'Altek|r |cRXP_WARN_Make sure you are at 100% life as you will receive damage while channeling and fight a dreadlord after.|r Use |cFFFF0000|T136121:0|t[Shadow Ward] frequently.|r |cFFFF0000If you die you might have to wait for |cRXP_FRIENDLY_Raszel Ander|r to respawn before you can start the channel again.|r
+    .complete 79298,1
+step
+    .train 426445,1
+    .goto Desolace,51.2,82.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raszel Ander|r.
+    .turnin 79298,1 >> Turnin Tempting Fate
+    .target Raszel Ander
+step
+    .train 426445 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Synergy|r] |cRXP_WARN_to train|r |T133738:0|t[Grimoire of Synergy]
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Master Channeler - 10 (Loch Modan)
+#title Master Channeler
 
 step << Warlock
     .line Loch Modan,22.87,70.89,24.69,68.20,28.02,65.41,29.47,59.92,31.56,56.66,32.36,50.09,34.94,47.10,32.36,50.09,31.36,47.60,31.54,44.72,32.29,42.34,32.25,41.14,31.08,38.57,30.04,31.45,27.96,25.37,26.73,23.07,26.04,19.16,25.95,15.13,25.53,11.66
@@ -701,9 +832,10 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Master Channeler - 15 (Darkshore)
+#title Master Channeler
 
 step << Warlock
     .goto Darkshore,55.27,27.74,40,0
@@ -724,9 +856,10 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Soul Siphon - 10 (Dun Morogh)
+#title Soul Siphon
 
 step << Warlock
     #completewith next
@@ -734,7 +867,7 @@ step << Warlock
     .collect 205020,1 -- Pure Soul Shard (1)
     .train 403920,1
 step << Warlock
-    .goto Loch Modan,77.894,62.236
+    .goto Dun Morogh,77.894,62.236
     >>Kill |cRXP_ENEMY_Captain Beld|r downstairs inside the building. Loot him for a |T134085:0|t[|cRXP_LOOT_Tainted Soul Shard|r]
     >>|cRXP_WARN_Ensure he dies while you also have|r |T136163:0|t[Drain Soul] |cRXP_WARN_on him|r
     .collect 205019,1 -- Tainted Soul Shard (1)
@@ -761,9 +894,10 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Soul Siphon - 10 (Elwynn Forest)
+#title Soul Siphon
 
 step << Warlock
     #completewith next
@@ -809,9 +943,10 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Demonic Tactics - 1 (Elwynn Forest)
+#title Demonic Tactics
 
 step << Warlock
     .goto Elwynn Forest,56.743,57.650
@@ -863,9 +998,10 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Demonic Grace - 10 (Elwynn Forest)
+#title Demonic Grace
 
 step << Warlock
     .goto Elwynn Forest,61.6,53.8
@@ -935,9 +1071,10 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Demonic Grace - 10 (Dun Morogh)
+#title Demonic Grace
 
 step << Warlock
     .goto Dun Morogh,22.8,50.6
@@ -981,9 +1118,10 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadow Bolt Volley - 16 (Darkshore)
+#title Shadow Bolt Volley
 
 step << Warlock
     .goto Darkshore,56.8,27.6,60,0
@@ -1001,9 +1139,10 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Chaos Bolt - 8 (Dun Morogh)
+#title Chaos Bolt
 
 step << Warlock
     .goto Dun Morogh,69.365,58.302
@@ -1022,9 +1161,10 @@ step << Warlock
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Chaos Bolt - 8 (Elwynn Forest)
+#title Chaos Bolt
 
 step << Warlock
     .goto Elwynn Forest,77.010,51.897
@@ -1039,3 +1179,220 @@ step << Warlock
     .use 208744
     .itemcount 208744,1
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warlock SoD
+#group RestedXP Rune & Books Guide
+#subgroup Belt
+#name Invocation - 35 (Arathi Highlands)
+#title Invocation
+
+-- Invocation
+
+step
+    .train 426443,1
+    #completewith SyndicateConjuror
+    +|cRXP_WARN_It is recommended you find additional party members for acquiring the|r |T134419:0|t[|cRXP_LOOT_Rune of Invocation|r] |cRXP_WARN_as it requires killing elites in Stromgarde Keep|r
+step
+    .train 426443,1
+    .zone Arathi Highlands >> Travel to Arathi Highlands
+step
+    .train 426443,1
+    #completewith next
+    .subzone 324 >> Travel to Stromgarde Keep
+step
+    #label SyndicateConjuror
+    .train 426443,1
+    #loop
+    .goto Arathi Highlands,26.04,62.80,40,0
+    .goto Arathi Highlands,29.47,64.14,40,0
+    .goto Arathi Highlands,29.06,60.96,40,0
+    >>Kill |cRXP_ENEMY_Syndicate Conjurors|r. Loot them for their |T348282:0|t[|cRXP_LOOT_Conjuror's Pendants|r]
+    >>Kill a |cRXP_ENEMY_Voidwalker Minion|r while you are channelling |T136163:0|t[Drain Soul] on it to receive a |T132885:0|t[|cRXP_LOOT_Soul of the Void|r]
+    .collect 213573,10
+    .collect 213572,1
+    .mob Syndicate Conjuror
+    .mob Voidwalker Minion
+step
+    #completewith next
+    .train 426443,1
+    .goto Arathi Highlands,29.292,62.283,10 >> |cRXP_WARN_Enter the large house on the lower level of Stromgade Keep, and head up to the 2nd floor|r
+step
+    #completewith next
+    .train 426443,1
+    .goto Arathi Highlands,29.077,63.079
+    .cast 434994 >> |cRXP_WARN_Use the|r |T348282:0|t[|cRXP_LOOT_Conjuror's Pendants|r] |cRXP_WARN_up stairs next to the floating|r |cRXP_PICK_Void Prism|r |cRXP_WARN_to summon a level 36 elite |cRXP_ENEMY_Void Seeker|r
+    .use 213573
+step
+    .train 426443,1
+    .goto Arathi Highlands,29.077,63.079
+    >>Kill the |cRXP_ENEMY_Void Seeker|r. Loot it for the |T134419:0|t[|cRXP_LOOT_Rune of Invocation|r]
+    .collect 213098,1
+    .mob Void Seeker
+step
+    .train 426443 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_LOOT_Rune of Invocation|r] |cRXP_WARN_to train|r |T136133:0|t[Invocation]
+    .use 213098
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warlock SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Dance of the Wicked - 35 (Desolace)
+#title Dance of the Wicked
+
+-- Dance of the Wicked
+
+step
+    .train 416017,1
+    #completewith next
+    .zone Desolace >>Travel to Desolace
+step
+    .train 416017,1
+    .goto Desolace,74.5,13.4
+    >>Click the |cRXP_ENEMY_Reckless Warlock|r on the ground. Loot him for |T236297:0|t[Brimstone Carving]
+    >>|cRXP_WARN_This is a rare enemy and there's a chance it may not be present|r
+    .collect 213583,1
+    .mob Reckless Warlock
+    .unitscan Reckless Warlock
+step
+    .train 416017,1
+    >>|cRXP_WARN_Cast|r |T135818:0|t[Hellfire] |cRXP_WARN_to damage yourself below 70% health. Afterwards|r |T236297:0|t[Brimstone Carving] |cRXP_WARN_will transform into|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Wickedness|r]
+    .collect 213102,1 --Rune of Wickedness
+step
+    .train 416017 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Wickedness|r] |cRXP_WARN_to learn|r |T236295:0|t[Dance of the Wicked]
+    .use 416017
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warlock SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Dance of the Wicked - 35 (Stranglethorn)
+#title Dance of the Wicked
+
+-- Dance of the Wicked
+
+step
+    .train 416017,1
+    #completewith next
+    .zone Stranglethorn Vale>>Travel to Stranglethorn
+step
+    .train 416017,1
+    .goto Stranglethorn Vale,31.2,47.4
+    >>Click the |cRXP_ENEMY_Reckless Warlock|r on the ground. Loot him for |T236297:0|t[Brimstone Carving]
+    >>|cRXP_WARN_This is a rare enemy and there's a chance it may not be present|r
+    .collect 213583,1
+    .unitscan Reckless Warlock
+    .mob Reckless Warlock
+step
+    .train 416017,1
+    >>|cRXP_WARN_Cast|r |T135818:0|t[Hellfire] |cRXP_WARN_to damage yourself below 70% health. Afterwards|r |T236297:0|t[Brimstone Carving] |cRXP_WARN_will transform into|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Wickedness|r]
+    .collect 213102,1 --Rune of Wickedness
+step
+    .train 416017 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Wickedness|r] |cRXP_WARN_to learn|r |T236295:0|t[Dance of the Wicked]
+    .use 416017
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warlock SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Shadowflame - 40 (Desolace)
+
+
+-- Shadowflame
+
+step
+    .train 426467,1
+    #completewith next
+    .zone Desolace >>Travel to Desolace |cRXP_WARN_It is highly recommended to form a group of atleast 3 players.|r
+step
+    .train 426467,1
+    .train 19028,3 --Soul Link
+    .goto Desolace,81.2,79.7
+    .cast 434869 >> |cRXP_WARN_Click on the Altar to summon|r |cRXP_ENEMY_Seductress Ceeyna|r |cRXP_WARN_but make sure to use|r |T136121:0|t[Shadow Ward]|cRXP_WARN_,|r |T136190:0|t[Sacrifice] |cRXP_WARN_and|r |T136160:0|t[Soul Link]|r |cRXP_WARN_beforehand|r |cFFFF0000as you will receive a lot of damage during the channel and it cannot be healed|r
+step
+    .train 426467,1
+    .train 19028,1 --Soul Link
+    .goto Desolace,81.2,79.7
+    .cast 434869 >> |cRXP_WARN_Click on the Altar to summon|r |cRXP_ENEMY_Seductress Ceeyna|r |cRXP_WARN_but make sure to use|r |T136121:0|t[Shadow Ward] |cRXP_WARN_and|r |T136190:0|t[Sacrifice] |cRXP_WARN_beforehand|r |cFFFF0000as you will receive a lot of damage during the channel and it cannot be healed|r
+step
+    .train 426467,1
+    .goto Desolace,81.2,79.7
+    >>Kill |cRXP_ENEMY_Seductress Ceeyna|r. Loot her for |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowflames|r]
+    .collect 213101,1
+    .mob Seductress Ceeyna
+step
+    .train 426467 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowflames|r] |cRXP_WARN_to learn|r |T236302:0|t[Shadowflame]
+    .use 213101
+]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Warlock SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Bracers
+-- #name Immolation Aura
+-- for phase 3
+
+-- Immolation Aura
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Warlock SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Bracers
+-- #name Summon Felguard
+-- for phase 3
+
+-- Summon Felguard
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Warlock SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Bracers
+-- #name Unstable Affliction
+-- for phase 3
+
+-- Unstable Affliction
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Warlock SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helmet
+-- #name Backdraft
+-- for phase 3
+
+-- Backdraft
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Warlock SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helmet
+-- #name Pandemic
+-- for phase 3
+
+-- Pandemic
+
+
+-- ]])

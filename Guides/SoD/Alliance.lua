@@ -1,7 +1,7 @@
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Druid SoD/Alliance Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Lacerate - 12 (Darkshore) << Druid
 #name Beast Mastery - 12 (Darkshore) << Hunter
@@ -38,46 +38,113 @@ step << Druid/Hunter
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Druid SoD/Alliance Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Mangle - 8 (Teldrassil) << Druid
 #name Explosive Shot - 8 (Teldrassil) << Hunter
 
-step << Druid/Hunter
-    #completewith next
-    .goto Teldrassil,44.18,58.19
+step
+    +|cRXP_WARN_You should be at least level 8 in order to acquire|r |T133816:0|t[Engrave Gloves - Mangle] |cRXP_WARN_in Teldrassil alone|r << Druid
+    +|cRXP_WARN_You should be at least level 8 in order to acquire|r |T133816:0|t[Engrave Gloves - Explosive Shot] |cRXP_WARN_in Teldrassil alone|r << Hunter
+    .train 410025,1 << Druid
+    .train 410123,1 << Hunter
+    .xp >8,1
+step
+    #completewith Rune
+    #label Teld1
+    .zone Teldrassil >> Travel to Teldrassil
+    .subzoneskip 262
+    .train 410025,1 << Druid
+    .train 410123,1 << Hunter
+step
+    #optional
+    #requires Teld1
+    #label ShadowCave1
+    #completewith Rune
+    .goto 1438,44.197,58.040
     .subzone 262 >> Enter the Ban'ethil Barrow Den
     .train 410025,1 << Druid
     .train 410123,1 << Hunter
-step << Druid/Hunter
-    .goto Teldrassil,45.63,58.13
-    >>Kill |cRXP_ENEMY_Rageclaw|r. Loot him for the |T136061:0|t[|cRXP_FRIENDLY_Idol of Ursine Rage|r] << Druid
-    >>Kill |cRXP_ENEMY_Rageclaw|r. Loot him for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Explosive Shot|r] << Hunter
-    >>|cRXP_ENEMY_Rageclaw|r |cRXP_WARN_patrols throughout Ban'ethil Barrows|r
+step
+    #optional
+    #requires ShadowCave1
+    #completewith Rune
+    .goto 1438,44.064,58.196,15,0
+    .goto 1438,43.975,58.537,15,0
+    .goto 1438,44.196,58.597,15,0
+    .goto 1438,44.167,58.204,15,0
+    .goto 1438,43.073,59.123,15,0
+    .goto 1438,43.399,59.885,15,0
+    .goto 1438,43.602,59.799,15,0
+    .goto 1438,44.254,59.083,15,0
+    .goto 1438,44.292,58.555,15,0
+    .goto 1438,43.944,57.918,15,0
+    .goto 1438,43.947,57.297,15,0
+    .goto 1438,44.731,57.355,15,0
+    .goto 1438,45.118,57.701,20 >> Travel towards |cRXP_ENEMY_Rageclaw|r inside
+    .train 410025,1 << Druid
+    .train 410123,1 << Hunter
+step
+    #loop
+    #label Rune
+    .line 1438,45.055,57.739,45.008,58.055,45.091,58.386,45.256,58.538,45.492,58.609,45.668,58.356,45.702,57.980,45.604,57.699,45.370,57.566,45.161,57.638,45.118,57.701
+    .goto 1438,45.055,57.739,12,0
+    .goto 1438,45.008,58.055,12,0
+    .goto 1438,45.091,58.386,12,0
+    .goto 1438,45.256,58.538,12,0
+    .goto 1438,45.492,58.609,12,0
+    .goto 1438,45.668,58.356,12,0
+    .goto 1438,45.702,57.980,12,0
+    .goto 1438,45.604,57.699,12,0
+    .goto 1438,45.370,57.566,12,0
+    .goto 1438,45.161,57.638,12,0
+    .goto 1438,45.118,57.701,12,0
+    >>Kill |cRXP_ENEMY_Rageclaw|r on the bottom floor inside. Loot him for the |T136061:0|t|cRXP_LOOT_[Idol of Ursine Rage]|r << Druid
+    >>Kill |cRXP_ENEMY_Rageclaw|r on the bottom floor inside. Loot him for the |T134419:0|t|cRXP_LOOT_[Rune of Explosive Shot]|r << Hunter
     .collect 206954,1 << Druid -- Idol of Ursine Rage (1)
     .collect 206169,1 << Hunter -- Rune of Explosive Shot (1)
     .train 410025,1 << Druid
     .train 410123,1 << Hunter
     .unitscan Rageclaw
 step << Hunter
-    .train 410123 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Explosive Shot|r] |cRXP_WARN_to train|r |T236178:0|t[Explosive Shot]
+    .train 410123 >> |cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Explosive Shot]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Explosive Shot]
     .use 206169
     .itemcount 206169,1
 step << Druid
-    .equip 18,206954 >> |cRXP_WARN_Equip the|r |T136061:0|t[|cRXP_FRIENDLY_Idol of Ursine Rage|r]
+    .equip 18,206954 >> |cRXP_WARN_Equip the|r |T136061:0|t|cRXP_LOOT_[Idol of Ursine Rage]|r
     .use 206954
     .itemcount 206954,1
     .train 410025,1
 step << Druid
-    .train 410025 >>|cRXP_WARN_While in|r |T132276:0|t[Bear Form] |cRXP_WARN_maintain above 50 Rage for 60 seconds, then use the|r |T136061:0|t[|cRXP_FRIENDLY_Idol of Ursine Rage|r] |cRXP_WARN_again to train|r |T132135:0|t[Mangle]
+    .goto 1438,44.731,57.355,0
+    .goto 1438,44.254,59.083,0
+    .goto 1438,44.064,58.196,0
+    .goto 1438,44.731,57.355,15,0
+    .goto 1438,43.947,57.297,15,0
+    .goto 1438,43.944,57.918,15,0
+    .goto 1438,44.292,58.555,15,0
+    .goto 1438,44.254,59.083,15,0
+    .goto 1438,43.602,59.799,15,0
+    .goto 1438,43.399,59.885,15,0
+    .goto 1438,43.073,59.123,15,0
+    .goto 1438,44.167,58.204,15,0
+    .goto 1438,44.196,58.597,15,0
+    .goto 1438,43.975,58.537,15,0
+    .goto 1438,44.064,58.196,15,0
+    .aura 414824 >>|cRXP_WARN_While in|r |T132276:0|t[Bear Form]|cRXP_WARN_, maintain 50 or more Rage for 60 seconds|r
+    .itemStat 18,QUALITY,2
+    .train 410025,1
+step << Druid
+    .train 410025 >>|cRXP_WARN_Use the|r |T136061:0|t|cRXP_LOOT_[Idol of Ursine Rage]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Mangle]
     .use 206954
-    .itemcount 206954,1
+    .aura -414824
+    .train 410025,1
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD/Alliance Warrior SoD/Alliance Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest << Rogue/Priest
 #subgroup Legs << Warrior
 #name Slaughter from the Shadows - 8 (Teldrassil) << Rogue
@@ -117,7 +184,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD/Alliance Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves << Rogue
 #subgroup Legs << Priest
 #name Mutilate - 8 (Teldrassil) << Rogue

@@ -1,8 +1,9 @@
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Ice Lance - 2 (Elwynn Forest)
+#title Ice Lance
 << Human Mage SoD
 
 
@@ -105,9 +106,11 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Ice Lance - 2 (Dun Morogh)
+#title Ice Lance
+
 << Gnome Mage SoD
 
 
@@ -175,9 +178,11 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Ice Lance - 2 (Durotar)
+#title Ice Lance
+
 << Troll Mage SoD
 
 
@@ -249,9 +254,10 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Ice Lance - 2 (Tirisfal)
+#title Ice Lance
 << Undead Mage SoD
 
 
@@ -307,9 +313,11 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Regeneration - 12 (Westfall)
+#title Regeneration
+
 << Alliance Mage SoD
 
 
@@ -379,16 +387,18 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
-#name Regeneration - 12 (Loch Modan)
+#name Regeneration - 13 (Loch Modan)
+#title Regeneration
+
 << Alliance Mage SoD
 
 
 step
-    +|cRXP_WARN_You should be at least level 12 in order to acquire|r |T133815:0|t[Engrave Chest - Regeneration] |cRXP_WARN_in Loch Modan alone|r
+    +|cRXP_WARN_You should be at least level 13 in order to acquire|r |T133815:0|t[Engrave Chest - Regeneration] |cRXP_WARN_in Loch Modan alone|r
     .train 401767,1
-    .xp >12,1
+    .xp >13,1
 step
     #optional
     #label Charm
@@ -436,9 +446,11 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Regeneration - 12 (The Barrens)
+#title Regeneration
+
 << Horde Mage SoD
 
 
@@ -514,9 +526,10 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Regeneration - 12 (Silverpine Forest)
+#title Regeneration
 << Horde Mage SoD
 
 
@@ -576,9 +589,11 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Fingers of Frost - 10 (Elwynn Forest)
+#title Fingers of Frost
+
 << Alliance Mage SoD
 
 
@@ -632,16 +647,17 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
-#name Fingers of Frost - 10 (Dun Morogh)
+#name Fingers of Frost - 5 (Dun Morogh)
+#title Fingers of Frost
 << Alliance Mage SoD
 
 
 step
-    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T133815:0|t[Engrave Chest - Fingers of Frost] |cRXP_WARN_in Dun Morogh alone|r
+    +|cRXP_WARN_You should be at least level 5 in order to acquire|r |T133815:0|t[Engrave Chest - Fingers of Frost] |cRXP_WARN_in Dun Morogh alone|r
     .train 401765,1
-    .xp >10,1
+    .xp >5,1
 step
     #optional
     #label Charm
@@ -669,16 +685,32 @@ step
     .train 401765,1
 step
     #loop
-    .goto 1426,62.538,46.195,0
-    .goto 1426,62.094,47.154,40,0
-    .goto 1426,62.538,46.195,40,0
+    .goto 1426,31.87,38.45,0
+    .goto 1426,30.42,39.84,0
+    .goto 1426,30.02,39.08,0
+    .goto 1426,33.82,37.26,0
+    .goto 1426,31.87,38.45,50,0
+    .goto 1426,30.42,39.84,50,0
+    .goto 1426,30.02,39.08,50,0
+    .goto 1426,33.82,37.26,50,0
+    >>Kill |cRXP_ENEMY_Fyodi|r. Loot him for the |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r
+    >>|cRXP_WARN_Even though |cRXP_ENEMY_Fyodi|r shows as an elite, his health, damage, and armor values are that of a standard mob|r
+    >>|cRXP_WARN_Be careful as he casts|r |T132337:0|t[Charge] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 35-80 melee damage on hit. Only castable at range)|r
+    >>|cRXP_WARN_NOTE: The|r |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r |cRXP_WARN_can also drop off every rare mob in Dun Morogh, as well as |cRXP_ENEMY_Vagash|r, |cRXP_ENEMY_Mangeclaw|r, and|r |cRXP_ENEMY_Old Icebeard|r
+    .collect 203753,1 --Spell Notes: RING SEFF OSTROF (1)
+    .mob Fyodi
+    .train 401765,1
+    .xp >10,1
+step
     .goto 1426,62.094,47.154,40,0
     .goto 1426,62.434,48.989,40,0
+    .goto 1426,62.538,46.195
     >>Kill |cRXP_ENEMY_Vagash|r. Loot him for the |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r
-    >>|cRXP_WARN_NOTE: The|r |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r |cRXP_WARN_can also drop off every rare mob in Dun Morogh, and |cRXP_ENEMY_Old Icebeard|r, and |cRXP_ENEMY_Mangeclaw|r|r
+    >>|cRXP_WARN_NOTE: The|r |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r |cRXP_WARN_can also drop off every rare mob in Dun Morogh, as well as |cRXP_ENEMY_Fyodi|r, |cRXP_ENEMY_Mangeclaw|r, and|r |cRXP_ENEMY_Old Icebeard|r
     .collect 203753,1 --Spell Notes: RING SEFF OSTROF (1)
     .mob Vagash
     .train 401765,1
+    .xp <10,1
 step
     .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Fingers of Frost]
     .use 203753
@@ -687,9 +719,10 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Fingers of Frost - 8 (Tirisfal Glades)
+#title Fingers of Frost
 << Horde Mage SoD
 
 
@@ -738,9 +771,10 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Mage SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Fingers of Frost - 8 (Durotar)
+#title Fingers of Frost
 
 
 step
@@ -790,9 +824,11 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Burnout - 6 (Dun Morogh)
+#title Burnout
+
 << Alliance Mage SoD
 
 
@@ -807,7 +843,7 @@ step
 step
     .goto 1426,69.369,58.311
     >>|cRXP_WARN_Look for other Mages or Warlocks near the |cRXP_ENEMY_Frozen Trogg|r or in General Chat (Type /1 into chat)|r
-    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Trogg|r to apply a stack of|r |T134916:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Trogg|r. Loot it for the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r
+    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Trogg|r to apply a stack of|r |T135805:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Trogg|r. Loot it for the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r
     .collect 203748,1 --Spell Notes: Burnout (1)
     .train 401759,1
     .mob Frozen Trogg
@@ -819,9 +855,11 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Burnout - 6 (Elwynn Forest)
+#title Burnout
+
 << Alliance Mage SoD
 
 step
@@ -835,7 +873,7 @@ step
 step
     .goto 1429,77.015,51.901
     >>|cRXP_WARN_Look for other Mages or Warlocks near the |cRXP_ENEMY_Frozen Murloc|r or in General Chat (Type /1 into chat)|r
-    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Murloc|r to apply a stack of|r |T134916:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Murloc|r. Loot it for the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r
+    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Murloc|r to apply a stack of|r |T135805:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Murloc|r. Loot it for the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r
     .collect 203748,1 --Spell Notes: Burnout (1)
     .train 401759,1
     .mob Frozen Murloc
@@ -847,9 +885,11 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
-#name Burnout - 6 (Durotar) 
+#name Burnout - 6 (Durotar)
+#title Burnout
+
 << Horde Mage SoD
 
 step
@@ -863,7 +903,7 @@ step
 step
     .goto Durotar,58.69,45.53
     >>|cRXP_WARN_Look for other Mages, Warlocks, or Shamans near the |cRXP_ENEMY_Frozen Makrura|r or in General Chat (Type /1 into chat)|r
-    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Makrura|r to apply a stack of|r |T134916:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Makrura|r. Loot it for the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r
+    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Makrura|r to apply a stack of|r |T135805:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Makrura|r. Loot it for the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r
     .collect 203748,1 --Spell Notes: Burnout (1)
     .mob Frozen Makrura
     .train 401579,1
@@ -875,9 +915,11 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
-#name Burnout - 6 (Tirisfal Glades) 
+#name Burnout - 6 (Tirisfal Glades)
+#title Burnout
+
 << Horde Mage SoD
 
 
@@ -892,7 +934,7 @@ step
 step
     .goto 1420,66.337,40.059
     >>|cRXP_WARN_Look for other Mages or Warlocks near the |cRXP_ENEMY_Frozen Murloc|r or in General Chat (Type /1 into chat)|r
-    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Murloc|r to apply a stack of|r |T134916:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Murloc|r. Loot it for the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r
+    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Murloc|r to apply a stack of|r |T135805:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Murloc|r. Loot it for the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r
     .collect 203748,1 --Spell Notes: Burnout (1)
     .train 401759,1
     .mob Frozen Murloc
@@ -904,14 +946,16 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Enlightenment - 8 (Elwynn Forest)
+#title Enlightenment
+
 << Alliance Mage SoD
 
 
 step
-    +|cRXP_WARN_You MUST be at least level 8 in order to acquire|r |T133815:0|t[Engrave Chest - Enlightenment] |cRXP_WARN_as it is the level requirement of training|r |T134916:0|t[Polymorph]
+    +|cRXP_WARN_You MUST be at least level 8 in order to acquire|r |T133815:0|t[Engrave Chest - Enlightenment] |cRXP_WARN_as it is the level requirement of training|r |T136071:0|t[Polymorph]
     >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest - Enlightenment]
     .train 415942,1
     .xp >8,1
@@ -931,7 +975,7 @@ step
 step
     .goto 1429,43.248,66.192
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaldimar Wefhellt|r
-    .train 118 >> Train |T134916:0|t[Polymorph]
+    .train 118 >> Train |T136071:0|t[Polymorph]
     .target Zaldimar Wefhellt
     .train 415942,1
     .xp <8,1
@@ -964,7 +1008,7 @@ step
     .goto 1429,58.87,59.97,40,0
     .goto 1429,79.37,78.84,40,0
     .goto 1429,83.67,83.53,40,0
-    >>Cast |T134916:0|t[Polymorph] on the following unusual critters: |cRXP_ENEMY_Gazelles|r, |cRXP_ENEMY_Maggots|r, |cRXP_ENEMY_Parrots|r, |cRXP_ENEMY_Fire Beetles|r, |cRXP_ENEMY_Rams|r, |cRXP_ENEMY_Larvas|r, and |cRXP_ENEMY_Cats|r. Wait out the RP
+    >>Cast |T136071:0|t[Polymorph] on the following unusual critters: |cRXP_ENEMY_Gazelles|r, |cRXP_ENEMY_Maggots|r, |cRXP_ENEMY_Parrots|r, |cRXP_ENEMY_Fire Beetles|r, |cRXP_ENEMY_Rams|r, |cRXP_ENEMY_Larvas|r, and |cRXP_ENEMY_Cats|r. Wait out the RP
     >>Open the |cRXP_PICK_Spell Notes|r on the ground. Loot it for |T134332:0|t|cRXP_LOOT_[Azora Apprentice Notes]|r
     .collect 204864,6 --Azora Apprentice Notes (6)
     .mob Gazelle
@@ -991,13 +1035,15 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Enlightenment - 8 (Tirisfal Glades)
+#title Enlightenment
+
 << Horde Mage SoD
 
 step
-    +|cRXP_WARN_You MUST be at least level 8 in order to acquire|r |T133815:0|t[Engrave Chest - Enlightenment] |cRXP_WARN_as it is the level requirement of training|r |T134916:0|t[Polymorph]
+    +|cRXP_WARN_You MUST be at least level 8 in order to acquire|r |T133815:0|t[Engrave Chest - Enlightenment] |cRXP_WARN_as it is the level requirement of training|r |T136071:0|t[Polymorph]
     >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest - Enlightenment]
     .train 415942,1
     .xp >8,1
@@ -1016,7 +1062,7 @@ step
 step
     .goto 1420,61.972,52.476
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cain Firesong|r
-    .train 118 >> Train |T134916:0|t[Polymorph]
+    .train 118 >> Train |T136071:0|t[Polymorph]
     .target Cain Firesong
     .train 415942,1
     .xp <8,1
@@ -1037,7 +1083,7 @@ step
     .goto 1420,50.073,50.644,30,0
     .goto 1420,49.573,46.473,30,0
     .goto 1420,47.292,50.612,30,0
-    >>Cast |T134916:0|t[Polymorph] on |cRXP_ENEMY_Odd Melons|r, then wait out the RP
+    >>Cast |T136071:0|t[Polymorph] on |cRXP_ENEMY_Odd Melons|r, then wait out the RP
     >>Loot the |T134332:0|t|cRXP_LOOT_[Apothecary Notes]|r on the ground
     .collect 208183,6 --Apothecary Notes (6)
     .mob Odd Melon
@@ -1055,11 +1101,11 @@ step
 
 RXPGuides.RegisterGuide[[
 #classic
-#group RestedXP Rune Guide
-#subgroup Legs
-#name Icy Veins - 25 (Azeroth)
-
-<< Alliance Mage SoD
+#group RestedXP Rune & Books Guide
+<<Alliance Mage SoD
+#subgroup Legs/Boots
+#name Icy Veins/Spell Power - 40 (Azeroth)
+#title Icy Veins & Spell Power
 
 --x Shiek: The guide is specifically tailored for players who have reached level 25, rather than being intended for use during the leveling process.
 --x Shiek: Although there are a total of 16 books in the game, only 10 are necessary for this particular purpose. The additional books, while not included in the current version of the guide, have been noted and could be referenced later if needed.
@@ -1067,8 +1113,6 @@ RXPGuides.RegisterGuide[[
 --QQQ WIP to here
 
 step
-    .train 425170,1
-    .zoneskip Stormwind City
     .zone Stormwind City >> Travel to |cFFfa9602Stormwind.|r
     .cast 3561 >>Use [Teleport Stormwind] |cRXP_WARN_If you have|r |T134419:0|t[Rune of Teleportation]
     .disablecheckbox
@@ -1079,7 +1123,7 @@ step
     >>|cRXP_WARN_manually skip this step if you want to go without.|r
 step
     .goto Stormwind City,56.4,73.2
-    .bankwithdraw 209850,203755,208860,209845,209849,203754,208860,209848,209843,209851,209844 >> |cRXP_WARN_Check your bank for any books that might have been deposited.|r
+    .bankwithdraw 209850,203755,208860,209845,209849,203754,208860,209848,209843,209851,209844,215817,215822,215683,215815,215816,215820,213165,215824,216523,209846 >> |cRXP_WARN_Check your bank for any books that might have been deposited.|r
 step
     .goto Stormwind City,57.2,57.2
     .vendor >> |cRXP_WARN_It is highly recommended to repair, as we will be utilizing death skips.|r
@@ -1093,35 +1137,31 @@ step
     .goto 1429,65.24,70.25,5,0
     .goto 1429,65.02,70,5,0
     .goto 1429,65.47,70.07
-    .train 425170,1
     >>Click on the |cRXP_PICK_Library Book|r located |cFFfa9602on a shelf in Elwynn Forest|r to obtain |T133744:0|t[Archmage Theocrituss Research Journal.]
     .collect 203755,1
     .isQuestAvailable 79092
-step 
+step
     #completewith Rumi of Gnomeregan the Collected Works
-    .train 425170,1
     .zone Westfall >>Travel to |cFFfa9602Westfall|r on foot if you are |cRXP_WARN_in|r |cFFfa9602Elwynn Forest.|r|r
-    .fly Westfall >>Take a Flightpath to |cFFfa9602Westfall|r if you are |cRXP_WARN_ not in|r |cFFfa9602Elwynn Forest.|r|r 
+    .fly Westfall >>Take a Flightpath to |cFFfa9602Westfall|r if you are |cRXP_WARN_ not in|r |cFFfa9602Elwynn Forest.|r|r
     .disablecheckbox
     .isQuestAvailable 79093
 -- step
 --     #completewith Rumi of Gnomeregan the Collected Works
---     .train 425170,1
---     .deathskip >>Die and respawn at the |cFF00FF25Spirit Healer|r |cRXP_WARN_Additionally skip any deathskip by choice if you want to save repair costs!|r 
+--
+--     .deathskip >>Die and respawn at the |cFF00FF25Spirit Healer|r |cRXP_WARN_Additionally skip any deathskip by choice if you want to save repair costs!|r
 --     >>|cRXP_WARN_manually skip this step if you are on a flightpath.|r
 --     .isQuestAvailable 79092
 step
     #label Rumi of Gnomeregan the Collected Works
-    .goto 1436,53.01,53.34,10,0 
-    .goto 1436,52.64,53.83 
-    .train 425170,1
-    >>Click the |cRXP_PICK_Gnomish Tome|r |cFFfa9602on the table in the Westfall Inn|r to obtain |T133744:0|t[Rumi of Gnomeregan the Collected Works.] 
+    .goto 1436,53.01,53.34,10,0
+    .goto 1436,52.64,53.83
+    >>Click the |cRXP_PICK_Gnomish Tome|r |cFFfa9602on the table in the Westfall Inn|r to obtain |T133744:0|t[Rumi of Gnomeregan the Collected Works.]
     .collect 208860,1
     .isQuestAvailable 79093
-    --x shiek: designed for human, can be picked up as gnome.
+    --x shiek: designed for human, can be picked up as a gnome.
 step
     #completewith next
-    .train 425170,1
     .zoneskip Westfall
     .fly Westfall >>Travel to |cFFfa9602Westfall|r |cRXP_WARN_by taking a flight path.|r
     .isQuestAvailable 78142
@@ -1129,14 +1169,12 @@ step
 step
     .goto 1436,45.41,69.93,10,0
     .goto 1436,45.36,70.43
-    .train 425170,1
     >>Click the |cRXP_PICK_Spellbook|r located |cFFfa9602on the Alchemy Cabinet in a small house in Moonbrook, Westfall|r to obtain |T133733:0|t[Bewitchments and Glamours.]
     .collect 209845,1
     .isQuestAvailable 78142
 step
     #completewith next
-    .train 425170,1
-    .zone Duskwood >>Travel to |cFFfa9602Duskwood|r 
+    .zone Duskwood >>Travel to |cFFfa9602Duskwood|r
     .fly Westfall >>Take a flight path to |cFFfa9602Westfall|r |cRXP_WARN_if you have it unlocked and are not there yet.|r
     .disablecheckbox
     .isQuestAvailable 78147
@@ -1147,13 +1185,46 @@ step
     .goto 1431,16.12,33.43,15,0
     .goto 1431,16.15,30.75,15,0
     .goto 1431,16.64,28.33
-    .train 425170,1
     >>Click the |cRXP_PICK_Book|r |cFFfa9602inside the Dawning Wood Catacombs on the Alchemy Table in Duskwood|r to obtain |T133738:0|t[Crimes Against Anatomy.]
     >>|cRXP_WARN_It's recommended run to the end of the catacombs and die. Additionally you might want to consider grouping up.|r
     .collect 209849,1
     .isQuestAvailable 78147
 step
-    .train 425170,1
+    #completewith next
+    .zone Swamp of Sorrows >>Travel to |cFFfa9602Swamp of Sorrows|r
+    .fly Swamp of Sorrows >>Take a flight path to |cFFfa9602Swamp of Sorrows|r |cRXP_WARN_if you have it unlocked and are not there yet.|r
+    .disablecheckbox
+    .isQuestAvailable 79953
+step
+    #loop
+    .goto 55.6,29.0,25,0
+    .goto 65.0,23.2,25,0
+    .goto 63.6,27.2,25,0
+    .goto 57.0,33.0,25,0
+    >>Kill |cRXP_ENEMY_Lost One Hunter|r, |cRXP_ENEMY_Lost One Muckdweller|r,|cRXP_ENEMY_Lost One Cook|r and |cRXP_ENEMY_Lost One Seer|r . Loot them for |cRXP_LOOT_|T237379:0|t[Rusted Cage Key]|r
+    .collect 216523,1
+    .mob Lost One Hunter
+    .mob Lost One Muckdweller
+    .mob Lost One Cook
+    .mob Lost One Seer
+    .isQuestAvailable 79953
+step
+    .goto Swamp of Sorrows,61.0,22.0
+    >>Click on the |cRXP_PICK_Rusted Cage|r to receive the Book |T133742:0|t[A Ludite's Guide to Caring for Your Demonic Pet]
+    .collect 215824,1
+    .isQuestAvailable 79953
+step
+    #completewith next
+    .zone Stranglethorn Vale >>Travel to |cFFfa9602Stranglethorn Vale|r
+    .fly Stranglethorn Vale >>Take a flight path to |cFFfa9602Stranglethorn Vale|r |cRXP_WARN_if you have it unlocked.|r
+    .disablecheckbox
+    .isQuestAvailable 79535
+step
+    .goto Stranglethorn Vale,41.0,51.0
+    >>Click on the |cRXP_PICK_Researchnotes|r on the bench to receive the Book |T237162:0|t[Basilisks: Should Petrification be Feared?]
+    .collect 213165,1
+    .isQuestAvailable 79535
+step
     .zone Ironforge >>Travel |cFFfa9602to Ironforge.|r
     .cast 3562 >>Use [Teleport Ironforge] |cRXP_WARN_If you have|r |T134419:0|t[Rune of Teleportation]
     .disablecheckbox
@@ -1165,22 +1236,19 @@ step
     .goto 1455,69.76,24.39,10,0
     .goto 1455,70.43,18.37,10,0
     .goto 1455,75.99,10.55
-    .train 425170,1
     >>Click the |cRXP_PICK_Library Book|r |cFFfa9602on the table in Ironforge, Hall of Explorers|r to obtain |T133744:0|t[Archmage Antonidas the Unabridged Autobiography.]
     .collect 203754,1
     .isQuestAvailable 79091
-step 
+step
     #completewith next
     .goto 1455,55.51,47.78,10,0
-    .train 425170,1
     .zone Loch Modan >>Travel to |cFFfa9602Loch Modan.|r
     .fly Loch Modan >>Use a flight path to |cFFfa9602Loch Modan|r |cRXP_WARN_if you have it unlocked.|r
     .disablecheckbox
     .isQuestAvailable 79093
-step 
-    .train 425170,1
-    .goto 1432,35.2,47.76,10,0 
-    .goto 1432,35.5,48.98 
+step
+    .goto 1432,35.2,47.76,10,0
+    .goto 1432,35.5,48.98
     >>Click the |cRXP_PICK_Gnomish Tome|r |cFFfa9602on the table in the Loch Modan Inn|r to obtain |T133744:0|t[Rumi of Gnomeregan the Collected Works.]
     .collect 208860,1
     .isQuestAvailable 79093
@@ -1188,7 +1256,6 @@ step
 step
     #completewith next
     .goto 1455,55.51,47.78,10,0
-    .train 425170,1
     .zoneskip Loch Modan
     .zone Loch Modan >>Travel to |cFFfa9602Loch Modan.|r
     .fly Loch Modan >>Take a flight path to |cFFfa9602Loch Modan|r |cRXP_WARN_if you have it.|r
@@ -1200,7 +1267,6 @@ step
     .goto 1432,75.18,16.41,5,0
     .goto 1432,76.42,14.67,5,0
     .goto 1432,77.45,14.15
-    .train 425170,1
     >>Click the |cRXP_PICK_Scroll|r in the |cFFfa9602Elite Ogre Cave in Loch Modan|r to obtain |T134938:0|t[Runes of the Sorcerer Kings.]
     >>|cRXP_WARN_It's recommended to run to end of the cave and die. Additionally you might want to consider grouping up.|r
     .collect 209850,1
@@ -1208,18 +1274,25 @@ step
 step
     #completewith Goaz Scrolls
     .zoneskip Ironforge
-    .train 425170,1
     .deathskip >>Die and respawn at the |cFF00FF25Spirit Healer|r |cRXP_WARN_Additionally skip any deathskip by choice if you want to save repair costs!|r
     .isQuestAvailable 78148
 step
     #completewith Goaz Scrolls
-    .train 425170,1
+    .zone Badlands >>Travel to |cFFfa9602Badlands|r
+    .fly >> Use a flight path to |cFFfa9602Badlands|r |cRXP_WARN_if you have it unlocked.|r
+    .disablecheckbox
+    .isQuestAvailable 79951
+step
+    #label Goaz Scrolls
+    .goto Badlands,56.7,39.9
+    >>Click on the Book |T134937:0|t[Mummies: A Guide to the Unsavory Undead]
+    .collect 215820,1
+    .isQuestAvailable 79951
+step
     .fly Menethil Harbor >>Fly to |cFFfa9602Menethil Harbor|r
     .isQuestAvailable 78146
 step
-    #label Goaz Scrolls
     .goto 1437,33.61,47.82
-    .train 425170,1
     >>Click the |cRXP_PICK_Scroll|r |cFFfa9602 in the vase in Wetlands|r to obtain |T237450:0|t[Goaz Scrolls.]
     .collect 209848,1
     .isQuestAvailable 78146
@@ -1231,7 +1304,6 @@ step
 --     .goto 1437,35.41,47.44,15,0
 --     .goto 1437,35.62,45.27,15,0
 --     .goto 1437,34.2,43.89,15,0
---     .train 425170,1
 --     .deathskip >>Die and respawn at the |cFF00FF25Spirit Healer|r
 --     .isQuestAvailable 78146
 --     .zoneskip Ironforge
@@ -1243,7 +1315,6 @@ step
 step
     #completewith next
     .goto 1437,4.64,57.24,20,0
-    .train 425170,1
     .zone Darkshore >>Travel to |cFFfa9602Darkshore|r by taking the Boat.
     .fly Menethil Harbor >>Fly to |cFFfa9602Menethil Harbor|r |cRXP_WARN_if you are not already there.|r
     .disablecheckbox
@@ -1251,7 +1322,6 @@ step
     --x shiek might add teleport darnassus step later
 step
     #completewith next
-    .train 425170,1
     .deathskip >>Drown in the Water then respawn at the |cFF00FF25Spirit Healer|r |cRXP_WARN_Additionally skip any deathskip by choice if you want to save repair costs!|r
     .isQuestAvailable 78124
 step
@@ -1259,19 +1329,16 @@ step
     .goto 1439,58.99,22.49,10,0
     .goto 1439,59.07,23.07,15,0
     .goto 1439,59.62,22.13
-    .train 425170,1
     >>Click the |cRXP_PICK_Scroll|r in |cFFfa9602Darkshore|r to obtain |T237447:0|t[Narthalas Almanac vol 74.]
     .collect 209843,1
     .isQuestAvailable 78124
 step
     #completewith Fury of the Land
     .goto 1439,59.35,22.55
-    .train 425170,1
     .isQuestAvailable 78146
     .deathskip >>Die and respawn at the |cFF00FF25Spirit Healer|r
 step
     #completewith Fury of the Land
-    .train 425170,1
     .isQuestAvailable 78149
     .zone Stonetalon Mountains >>Travel to |cFFfa9602Stonetalon Mountains|r |cRXP_WARN_on foot if neither flight path is unlocked|r
     .fly Stonetalon Mountains >>Fly to |cFFfa9602Stonetalon Mountains|r |cRXP_WARN_if you have the flight path unlocked.|r
@@ -1281,54 +1348,139 @@ step
 -- step --x shiek another deathskip here technically better if you don't have either flightpath
 -- step --x shiek another deathskip here technically better if you don't have either flightpath
 -- step --x shiek another deathskip here technically better if you don't have either flightpath
--- step --x shiek another deathskip here technically better 
+-- step --x shiek another deathskip here technically better
 step
     #label Fury of the Land
     .goto 1442,74.27,85.72,5,0
     .goto 1442,74.37,85.75
-    .train 425170,1
-    >>Click the |cRXP_PICK_Scroll|r |cFFfa9602in the tent, located on a barrel in Stonetalon Mountains|r to obtain |T133209:0|t[Fury of the Land.] 
+    >>Click the |cRXP_PICK_Scroll|r |cFFfa9602in the tent, located on a barrel in Stonetalon Mountains|r to obtain |T133209:0|t[Fury of the Land.]
     .collect 209851,1
     .isQuestAvailable 78149
 step
-    .train 425170,1
+    #completewith next
+    .zone Desolace >>Travel to |cFFfa9602Desolace|r
+    .fly Desolace >>Take a flight path to |cFFfa9602Desolace|r |cRXP_WARN_if you have it unlocked.|r
+    .disablecheckbox
+    .isQuestAvailable 79950
+step
+    .goto Desolace,55.0,26.0
+    >>Click on the |cRXP_PICK_Scrool|r to receive the book |T133733:0|t[Demons and You]r
+    .collect 215817,1
+    .isQuestAvailable 79950
+step
+    #completewith next
+    .zone The Barrens >>Travel to |cFFfa9602The Barrens|r |cRXP_WARN_on foot if you have neither flight path.|r
+    .fly Ratchet >>Take a flight path to |cFFfa9602Ratchet|r |cRXP_WARN_if you have it unlocked.|r
+    .disablecheckbox
+    .isQuestAvailable 79097
+step
+    >>Click on the |cRXP_PICK_Goblin Tome|r |cFFfa9602in Ratchet next to|r |cRXP_FRIENDLY_Gazlove|r to obtain |T133744:0|t[Baxtan on Destructive Magics.]
+    .collect 208800,1
+    .isQuestAvailable 79097
+step
+    .goto 1413,45.98,36.39,15,0
+    .goto 1414,51.91,55.42,15,0
+    .goto 1414,51.98,55.23,15,0
+    .goto 1414,51.95,55.11,15,0
+    .goto 1414,51.89,54.79,15,0
+    .goto 1414,51.94,54.63,15,0
+    .goto 1414,52.01,54.57,15,0
+    .goto 1414,52.26,54.63,15,0
+    .goto 1414,52.48,54.93,15,0
+    .goto 1414,52.62,54.94,15,0
+    .goto 1414,52.83,54.71
+    >>Click on the |cRXP_PICK_Scroll|r located |cFFfa9602on the ground near the Wailing Caverns Portal in the Barrens|r to obtain |T135142:0|t[Secrets of the Dreamers.]
+    .collect 209846,1
+    .isQuestAvailable 78143
+step
+    #completewith next
+    .goto 1414,52.83,54.71
+    .deathskip >>Die and respawn at the |cFF00FF25Spirit Healer|r
+    .isQuestAvailable 78143
+step
+    .goto The Barrens,56.3,8.8
+    >>Click the |cRXP_PICK_Manual|r |cFFfa9602at the top of the Oil Rig in the Barrens|r to obtain |T134509:0|t[Arcanic Systems Manual.]
+    .collect 209847,1
+    .isQuestAvailable 78145
+step
+    #completewith next
+    .zone Dustwallow Marsh >>Travel to |cFFfa9602Dustwallow Marsh|r
+    .fly Dustwallow Marsh >>Take a flight path to |cFFfa9602Dustwallow Marsh|r |cRXP_WARN_if you have it unlocked.|r
+    .disablecheckbox
+    .isQuestAvailable 79952
+step
+    .goto Dustwallow Marsh,57.5,21.0
+    >>Click on the |cRXP_PICK_Waterlogged Book|r to receive the book |T133740:0|t[RwlRwlRwlRwl!].
+    .collect 215822,1
+    .isQuestAvailable 79952
+step
+    #completewith next
+    .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
+    .fly Thousand Needles >>Take a flight path to |cFFfa9602Thousand Needles|r |cRXP_WARN_if you have it unlocked.|r
+    .disablecheckbox
+    .isQuestAvailable 79947
+step
+    .goto Thousand Needles,34.0,40.0
+    >>Click on the |cRXP_PICK_Scroll|r to receive the book|T133740:0|t[Geomancy: The Stone-Cold Truth] inside the tent next to a sack.
+    .collect 215683,1
+    .isQuestAvailable 79947
+step
     .zone Ironforge >>Travel |cFFfa9602to Ironforge.|r
     .cast 3562 >>Use |T135757:0|t[Teleport Ironforge] |cRXP_WARN_If you have|r |T134419:0|t[Rune of Teleportation]
     .disablecheckbox
 step
     #completewith next
-    .train 425170,1
     .isQuestAvailable 78127
-    .zone Silverpine Forest >>Travel to |cFFfa9602Silverpine Forest|r primarily on foot.
-    .fly Hillsbrad Foothills >> |cRXP_WARN_Fly to Hillsbrad Foothills if you have the flight path unlocked.|r
-    .disablecheckbox
+    -- .zone Silverpine Forest >>Travel to |cFFfa9602Silverpine Forest|r primarily on foot.
+    -- .fly Hillsbrad Foothills >> |cRXP_WARN_Fly to Hillsbrad Foothills if you have the flight path unlocked.|r
+    -- .disablecheckbox
     .fly Arathi Highlands >> |cRXP_WARN_Fly to Arathi Highlands if you don't have the Hillsbrad Foothils flight path unlocked.|r
     .disablecheckbox
-    .fly Wetlands >> |cRXP_WARN_Fly to Wetlands if you have neither flight path unlocked.|r
+    .fly Wetlands >> |cRXP_WARN_Fly to Wetlands if you don't have Arathi Highlands unlocked.|r
     .disablecheckbox
+step
+    #completewith next
+    .zone Arathi Highlands >>Travel to |cFFfa9602Arathi Highlands|r
+    .fly Arathi Highlands >>Take a flight path to |cFFfa9602Arathi Highlands|r |cRXP_WARN_if you have it unlocked.|r
+    .disablecheckbox
+    .isQuestAvailable 79949
+step
+    .goto Arathi Highlands,74.0,65.0
+    >>Click on the |cRXP_PICK_Scroll|r to receive the Book |T134331:0|t[A Web of Lies: Debunking Myths and Legends]
+    .collect 215816,1
+    .isQuestAvailable 79949
+step
+    #completewith next
+    .zone Alterac Mountains >>Travel to |cFFfa9602Alterac Mountains|r
+    .fly Alterac Mountains >>Take a flight path to |cFFfa9602Alterac Mountains|r |cRXP_WARN_if you have it unlocked.|r
+    .disablecheckbox
+    .isQuestAvailable 79948
+step
+    .goto Alterac Mountains,48.5,57.6
+    >>Click on the |cRXP_PICK_Manual|r inside the tower on crates to receive the Book |T133736:0|t[Defensive Magics 101].
+    .collect 215815,1
+    .isQuestAvailable 79948
 step
     .goto 1421,62.01,64.19,10,0
     .goto 1421,63.08,63.99,5,0
     .goto 1421,63.08,63.48,5,0
     .goto 1421,63.54,63.13
-    .train 425170,1
     >>Click on the |cRXP_PICK_Book|r |cFFfa9602inside the Amber Hill Main Castle on a book shelf in Silverpine Forest|r to obtain |T134917:0|t[The Dalaran Digest vol 23.]
     .collect 209844,1
     .isQuestAvailable 78127
-step 
-    .train 425170,1
+step
     .zone Stormwind City >>Travel to |cFFfa9602Stormwind.|r
     .cast 3561 >>Use [Teleport Stormwind] |cRXP_WARN_If you have|r |T134419:0|t[Rune of Teleportation]
     .disablecheckbox
-step 
-    .train 425170,1
+step
     .goto Stormwind City,37.81,79.98
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garion Wendell|r |cFFfa9602in Stormwind, Mage Tower.|r
+    --x .accept is correct here because its a special kind of quest shiek
     .accept 78124 >>Turn in Nar'thalas Almanac
     .accept 78127 >>Turn in The Dalaran Digest
     .accept 78142 >>Turn in Bewitchments and Glamours
-    -- .accept 78143 >>Turn in Secrets of the Dreamers
-    -- .accept 78145 >>Turn in Arcanic Systems Manual
+    .accept 78143 >>Turn in Secrets of the Dreamers
+    .accept 78145 >>Turn in Arcanic Systems Manual
     .accept 78146 >>Turn in Goaz Scrolls
     .accept 78147 >>Turn in Crimes Against Anatomy
     .accept 78148 >>Turn in Runes of the Sorceror-Kings
@@ -1336,21 +1488,34 @@ step
     .accept 79091 >>Turn in Archmage Antonidas: The Unabridged Autobiography
     .accept 79092 >>Turn in Archmage Theocritus's Research Journal
     .accept 79093 >>Turn in Rumi of Gnomeregan: The Collected Works
-    -- .accept 79094 >>Turn in The Lessons of Ta'zo
-    -- .accept 79095 >>Turn in The Apothecary's Metaphysical Primer
-    -- .accept 79096 >>Turn in Ataeric: On Arcane Curiosities
-    -- .accept 79097 >>Turn in Ataeric: Baxtan: On Destructive Magics
+    .accept 79094 >>Turn in The Lessons of Ta'zo
+    .accept 79095 >>Turn in The Apothecary's Metaphysical Primer
+    .accept 79096 >>Turn in Ataeric: On Arcane Curiosities
+    .accept 79097 >>Turn in Ataeric: Baxtan: On Destructive Magics
+    .accept 79535 >>Turn in Basilisks: Should Petrification be Feared?
+    .accept 79947 >>Turn in Geomancy: The Stone-Cold Truth
+    .accept 79948 >>Turn in Defensive Magics 101
+    .accept 77949 >>Turn in A Web of Lies: Debunking Myths and Legends
+    .accept 79950 >>Turn in Demons and You
+    .accept 79951 >>Turn in Mummies: A Guide to the Unsavory Undead
+    .accept 79952 >>Turn in RwlRwlRwlRwl!
+    .accept 79953 >>Turn in A Ludite's Guide to Caring for Your Demonic Pet
     .accept 78150 >>Turn in Friend of the Library
+    .accept 79536 >>Turn in Greater Friend of the Library
     .target Garion Wendell
 step
-    +|cRXP_FRIENDLY_The Guide ends here. Thank you for using RestedXP.|r
+    .goto Stormwind City,56.4,73.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Newton Burnside|r.
+    .bankdeposit 209850,203755,208860,209845,209849,203754,208860,209848,209843,209851,209844,215817,215822,215683,215815,215816,215820,213165,215824,216523 >> |cRXP_WARN_Deposit the remaining Books for Phase 3.|r
+    .target Newton Burnside
 ]]
 
 RXPGuides.RegisterGuide[[
 #classic
-#group RestedXP Rune Guide
-#subgroup Legs
-#name Icy Veins - 25 (Azeroth)
+#group RestedXP Rune & Books Guide
+#subgroup Legs/Boots
+#name Icy Veins/Spell Power - 40 (Azeroth)
+#title Icy Veins & Spell Power
 
 << Horde Mage SoD
 
@@ -1358,9 +1523,8 @@ RXPGuides.RegisterGuide[[
 --x Shiek: Although there are a total of 16 books in the game, only 10 are necessary for this particular purpose. The additional books, while not included in the current version of the guide, have been noted and could be referenced later if needed.
 --x Shiek: Furthermore, I have created distinct routes for both Horde and Alliance players. These routes are designed to be generally effective, considering the varying locations and book possessions players might have when they start following this guide.
 
-step 
+step
     #completewith next
-    .train 425170,1
     .zone Orgrimmar >>Travel to |cFFfa9602Orgrimmar|r
     .cast 3567 >>Use [Teleport Orgrimmar] |cRXP_WARN_If you have|r |T134419:0|t[Rune of Teleportation]
     .disablecheckbox
@@ -1372,33 +1536,33 @@ step
     >>|cRXP_WARN_manually skip this step if you want to go without.|r
 step
     .goto Orgrimmar,50.0,68.8
-    .bankwithdraw 209850,203755,208860,209845,209849,203754,208860,209848,209843,209851,209844 >> |cRXP_WARN_Check your bank for any books that may have been deposited|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_the Banker|r
+    .bankwithdraw 209850,208185,208860,209845,209849,207972,210177,209848,209843,209851,209844,215817,215822,215683,215815,215816,215820,213165,215824,216523 >> |cRXP_WARN_Check your bank for any books that may have been deposited|r
+    .target Karus
+    .target Komawa
+    .target Soran
 step
     .goto Orgrimmar,55.8,73.0
     .vendor >> |cRXP_WARN_It is highly recommended to repair, as we will be utilizing death skips.|r
     >>|cFFFF0000If you prefer not to utilize death skips, manually skip this step.|r
-step 
+step
     .goto 1454,38.66,78.43
-    .train 425170,1
     >>Click on the |cRXP_PICK_Giant Stone|r |cFFfa9602on the wall in Orgrimmar|r to obtain |T134938:0|t[The Lessons of Ta'zo.]
     .collect 207972,1
     .isQuestAvailable 79094
 step
     #completewith next
-    .train 425170,1
     .zone The Barrens >>Travel to |cFFfa9602The Barrens|r |cRXP_WARN_on foot if you have neither flight path.|r
     .fly Ratchet >>Take a flight path to |cFFfa9602Ratchet|r |cRXP_WARN_if you have it unlocked.|r
     .fly Crossroads >>Take a Flightpath to |cFFfa9602Crossroads|r |cRXP_WARN_if you don't have the Ratchet one.|r
     .disablecheckbox
     .isQuestAvailable 79097
 step
-    .train 425170,1
     >>Click on the |cRXP_PICK_Goblin Tome|r |cFFfa9602in Ratchet next to|r |cRXP_FRIENDLY_Gazlove|r to obtain |T133744:0|t[Baxtan on Destructive Magics.]
     .collect 208800,1
     .isQuestAvailable 79097
 step
     #completewith next
-    .train 425170,1
     .fly Crossroads >>Take a flight path to the |cRXP_WARN_Crossroads|r if you have it unlocked, |cRXP_WARN_otherwise go on foot.|r
     .disablecheckbox
     .isQuestAvailable 78143
@@ -1414,7 +1578,6 @@ step
     .goto 1414,52.48,54.93,15,0
     .goto 1414,52.62,54.94,15,0
     .goto 1414,52.83,54.71
-    .train 425170,1
     >>Click on the |cRXP_PICK_Scroll|r located |cFFfa9602on the ground near the Wailing Caverns Portal in the Barrens|r to obtain |T135142:0|t[Secrets of the Dreamers.]
     .collect 209846,1
     .isQuestAvailable 78143
@@ -1423,25 +1586,38 @@ step
     .zoneskip Orgrimmar
     .goto 1414,52.83,54.71
     .deathskip >>Die and respawn at the |cFF00FF25Spirit Healer|r
-    .train 425170,1
     .isQuestAvailable 78143
-step 
+step
     #completewith Arcanic Systems Manual
-    .train 425170,1
     .zone The Barrens >>Travel to |cFFfa9602The Barrens|r
     .fly Crossroads >>Take a flight path to the |cRXP_WARN_Crossroads|r if you have it unlocked, |cRXP_WARN_otherwise go on foot.|r
     .disablecheckbox
     .isQuestAvailable 78145
 step
     #label Arcanic Systems Manual
-    .goto 1442,56,8
-    .train 425170,1
+    .goto The Barrens,56.3,8.8
     >>Click the |cRXP_PICK_Manual|r |cFFfa9602at the top of the Oil Rig in the Barrens|r to obtain |T134509:0|t[Arcanic Systems Manual.]
     .collect 209847,1
     .isQuestAvailable 78145
 step
     #completewith next
-    .train 425170,1
+    .zone Desolace >>Travel to |cFFfa9602Desolace|r
+    .fly Desolace >>Take a flight path to |cFFfa9602Desolace|r |cRXP_WARN_if you have it unlocked.|r
+    .disablecheckbox
+    .isQuestAvailable 79950
+step
+    .goto Desolace,55.0,26.0
+    >>Click on the |cRXP_PICK_Scrool|r to receive the book |T133733:0|t[Demons and You]r
+    .collect 215817,1
+    .isQuestAvailable 79950
+step
+    #completewith next
+    .zone The Barrens >>Travel to |cFFfa9602The Barrens|r |cRXP_WARN_on foot if you have neither flight path.|r
+    .fly Ratchet >>Take a flight path to |cFFfa9602Ratchet|r |cRXP_WARN_if you have it unlocked.|r
+    .disablecheckbox
+    .isQuestAvailable 79097
+step
+    #completewith next
     .zone Stonetalon Mountains >>Travel to |cFFfa9602Stonetalon Mountains|r on foot if you are in the |cFFfa9602Barrens.|r
     .fly Stonetalon Mountains >>Take a flight path from |cFFfa9602Orgrimmar|r if you have it unlocked.
     .disablecheckbox
@@ -1449,13 +1625,11 @@ step
 step
     .goto 1442,74.27,85.72,5,0
     .goto 1442,74.37,85.75
-    .train 425170,1
-    >>Click the |cRXP_PICK_Scroll|r |cFFfa9602in Stonetalon Mountain|r to obtain |T133209:0|t[Fury of the Land.] 
+    >>Click the |cRXP_PICK_Scroll|r |cFFfa9602in Stonetalon Mountain|r to obtain |T133209:0|t[Fury of the Land.]
     .collect 209851,1
     .isQuestAvailable 78149
 step
     #completewith next
-    .train 425170,1
     .zone Darkshore >>Travel to |cFFfa9602Darkshore|r on foot|cRXP_WARNif you have neither flightpath. _|r
     .fly Ashenvale >>Take a flight path to |cFFfa9602Ashenvale|r |cRXP_WARN_if you have it unlocked.|r
     .fly Stonetalon Mountains >>Take a flight path to |cFFfa9602Stonetalon Mountains|r |cRXP_WARN_if you don't have an|r |cFFfa9602Ashenvale|r flight path unlocked.
@@ -1466,12 +1640,32 @@ step
     .goto 1439,58.99,22.49,10,0
     .goto 1439,59.07,23.07,15,0
     .goto 1439,59.62,22.13
-    .train 425170,1
     >>Click the |cRXP_PICK_Scroll|r in |cFFfa9602Darkshore|r to obtain |T237447:0|t[Narthalas Almanac vol 74.]
     .collect 209843,1
     .isQuestAvailable 78124
-step 
-    .train 425170,1
+step
+    #completewith next
+    .zone Dustwallow Marsh >>Travel to |cFFfa9602Dustwallow Marsh|r
+    .fly Dustwallow Marsh >>Take a flight path to |cFFfa9602Dustwallow Marsh|r |cRXP_WARN_if you have it unlocked.|r
+    .disablecheckbox
+    .isQuestAvailable 79952
+step
+    .goto Dustwallow Marsh,57.5,21.0
+    >>Click on the |cRXP_PICK_Waterlogged Book|r to receive the book |T133740:0|t[RwlRwlRwlRwl!].
+    .collect 215822,1
+    .isQuestAvailable 79952
+step
+    #completewith next
+    .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
+    .fly Thousand Needles >>Take a flight path to |cFFfa9602Thousand Needles|r |cRXP_WARN_if you have it unlocked.|r
+    .disablecheckbox
+    .isQuestAvailable 79947
+step
+    .goto Thousand Needles,34.0,40.0
+    >>Click on the |cRXP_PICK_Scroll|r to receive the book|T133740:0|t[Geomancy: The Stone-Cold Truth] inside the tent next to a sack.
+    .collect 215683,1
+    .isQuestAvailable 79947
+step
     .zone Undercity >>Travel to |cFFfa9602Undercity|r
     .cast 3563 >>Use [Teleport Undercity] |cRXP_WARN_If you have|r |T134419:0|t[Rune of Teleportation]
     .disablecheckbox
@@ -1479,32 +1673,28 @@ step
     .goto Undercity,69.8,27.6
     .vendor >> |cRXP_WARN_It is highly recommended to repair, as we will be utilizing death skips.|r
     >>|cFFFF0000If you prefer not to utilize death skips, manually skip this step.|r
-step 
+step
     .goto 1420,59.62,52.05,5,0
     .goto 1420,59.39,52.29
-    .train 425170,1
     >>Click on the |cRXP_PICK_The Apothecary's Society Primer|r |cFFfa9602in Tirisfal Glades, Brill|r to obtain |T133737:0|t[The Apothecary's Metaphysical Primer.]
     .collect 208185,1
     .isQuestAvailable 79095
-step 
+step
     #completewith next
-    .train 425170,1
     .zone Silverpine Forest >>Travel to |cFFfa9602Silverpine Forest|r on foot |cRXP_WARN_if you are in|r |cFFfa9602Tirisfal Glades.|r
     .fly Silverpine Forest >>Take a flight path to |cFFfa9602Silverpine Forest|r |cRXP_WARN_if you are in|r |cFFfa9602Undercity.|r
     .disablecheckbox
     .isQuestAvailable 79096
-step 
+step
     .goto 1421,43.12,41.39,5,0
     .goto 1421,42.7,41.37,5,0
     .goto 1421,42.72,40.85,5,0
     .goto 1421,43.43,41.29
-    .train 425170,1
     >>Click on the |cRXP_PICK_Arcane Secrets|r |cFFfa9602in Silverpine Forest|r to obtain |T133744:0|t[Ataeric: On Arcane Curiosities.]
     .collect 219177,1
     .isQuestAvailable 79096
 step
     #completewith next
-    .train 425170,1
     .zone Silverpine Forest >>Travel to |cFFfa9602The Silverpine Forest.|r
     .fly Silverpine Forest >>Take a flight path to |cFFfa9602Silverpine Forest|r |cRXP_WARN_if you are in|r |cFFfa9602Undercity.|r
     .disablecheckbox
@@ -1514,44 +1704,161 @@ step
     .goto 1421,63.08,63.99,5,0
     .goto 1421,63.08,63.48,5,0
     .goto 1421,63.54,63.13
-    .train 425170,1
     >>Click on the |cRXP_PICK_Book|r |cFFfa9602inside the Amber Hill Main Castle in Silverpine Forest|r to obtain |T134917:0|t[The Dalaran Digest vol 23.]
     .collect 209844,1
     .isQuestAvailable 78127
-step 
+step
     #completewith next
-    .train 425170,1
-    .zone Undercity >>Travel to |cFFfa9602Undercity|r 
+    .zone Alterac Mountains >>Travel to |cFFfa9602Alterac Mountains|r
+    .fly Alterac Mountains >>Take a flight path to |cFFfa9602Alterac Mountains|r |cRXP_WARN_if you have it unlocked.|r
+    .disablecheckbox
+    .isQuestAvailable 79948
+step
+    .goto Alterac Mountains,48.5,57.6
+    >>Click on the |cRXP_PICK_Manual|r inside the tower on crates to receive the Book |T133736:0|t[Defensive Magics 101].
+    .collect 215815,1
+    .isQuestAvailable 79948
+step
+    #completewith next
+    .zone Arathi Highlands >>Travel to |cFFfa9602Arathi Highlands|r
+    .fly Arathi Highlands >>Take a flight path to |cFFfa9602Arathi Highlands|r |cRXP_WARN_if you have it unlocked.|r
+    .disablecheckbox
+    .isQuestAvailable 79949
+step
+    .goto Arathi Highlands,74.0,65.0
+    >>Click on the |cRXP_PICK_Scroll|r to receive the Book |T134331:0|t[A Web of Lies: Debunking Myths and Legends]
+    .collect 215816,1
+    .isQuestAvailable 79949
+step
+    #completewith next
+    .zone Badlands >>Travel to |cFFfa9602Badlands|r
+    .fly >> Use a flight path to |cFFfa9602Badlands|r |cRXP_WARN_if you have it unlocked.|r
+    .disablecheckbox
+    .isQuestAvailable 79951
+step
+    .goto Badlands,56.7,39.9
+    >>Click on the Book |T134937:0|t[Mummies: A Guide to the Unsavory Undead]
+    .collect 215820,1
+    .isQuestAvailable 79951
+step
+    .goto 1437,33.61,47.82
+    >>Click the |cRXP_PICK_Scroll|r |cFFfa9602 in the vase in Wetlands|r to obtain |T237450:0|t[Goaz Scrolls.]
+    .collect 209848,1
+    .isQuestAvailable 78146
+step
+    #completewith next
+    .zoneskip Westfall
+    .fly Westfall >>Travel to |cFFfa9602Westfall|r |cRXP_WARN_by taking a flight path.|r
+    .isQuestAvailable 78142
+    .disablecheckbox
+step
+    .goto 1436,45.41,69.93,10,0
+    .goto 1436,45.36,70.43
+    >>Click the |cRXP_PICK_Spellbook|r located |cFFfa9602on the Alchemy Cabinet in a small house in Moonbrook, Westfall|r to obtain |T133733:0|t[Bewitchments and Glamours.]
+    .collect 209845,1
+    .isQuestAvailable 78142
+step
+    #completewith next
+    .zone Duskwood >>Travel to |cFFfa9602Duskwood|r
+    .fly Westfall >>Take a flight path to |cFFfa9602Westfall|r |cRXP_WARN_if you have it unlocked and are not there yet.|r
+    .disablecheckbox
+    .isQuestAvailable 78147
+step
+    .goto 1431,15.9,38.74,10,0
+    .goto 1431,15.3,38.52,15,0
+    .goto 1431,15.61,36.52,15,0
+    .goto 1431,16.12,33.43,15,0
+    .goto 1431,16.15,30.75,15,0
+    .goto 1431,16.64,28.33
+    >>Click the |cRXP_PICK_Book|r |cFFfa9602inside the Dawning Wood Catacombs on the Alchemy Table in Duskwood|r to obtain |T133738:0|t[Crimes Against Anatomy.]
+    >>|cRXP_WARN_It's recommended run to the end of the catacombs and die. Additionally you might want to consider grouping up.|r
+    .collect 209849,1
+    .isQuestAvailable 78147
+step
+    #completewith next
+    .zone Swamp of Sorrows >>Travel to |cFFfa9602Swamp of Sorrows|r
+    .fly Swamp of Sorrows >>Take a flight path to |cFFfa9602Swamp of Sorrows|r |cRXP_WARN_if you have it unlocked and are not there yet.|r
+    .disablecheckbox
+    .isQuestAvailable 79953
+step
+    #loop
+    .goto 55.6,29.0,25,0
+    .goto 65.0,23.2,25,0
+    .goto 63.6,27.2,25,0
+    .goto 57.0,33.0,25,0
+    >>Kill |cRXP_ENEMY_Lost One Hunter|r, |cRXP_ENEMY_Lost One Muckdweller|r,|cRXP_ENEMY_Lost One Cook|r and |cRXP_ENEMY_Lost One Seer|r . Loot them for |cRXP_LOOT_|T237379:0|t[Rusted Cage Key]|r
+    .collect 216523,1
+    .mob Lost One Hunter
+    .mob Lost One Muckdweller
+    .mob Lost One Cook
+    .mob Lost One Seer
+    .isQuestAvailable 79953
+step
+    .goto Swamp of Sorrows,61.0,22.0
+    >>Click on the |cRXP_PICK_Rusted Cage|r to receive the Book |T133742:0|t[A Ludite's Guide to Caring for Your Demonic Pet]
+    .collect 215824,1
+    .isQuestAvailable 79953
+step
+    #completewith next
+    .zone Stranglethorn Vale >>Travel to |cFFfa9602Stranglethorn Vale|r
+    .fly Stranglethorn Vale >>Take a flight path to |cFFfa9602Stranglethorn Vale|r |cRXP_WARN_if you have it unlocked.|r
+    .disablecheckbox
+    .isQuestAvailable 79535
+step
+    .goto Stranglethorn Vale,41.0,51.0
+    >>Click on the |cRXP_PICK_Researchnotes|r on the bench to receive the Book |T237162:0|t[Basilisks: Should Petrification be Feared?]
+    .collect 213165,1
+    .isQuestAvailable 79535
+step
+    #completewith next
+    .zone Undercity >>Travel to |cFFfa9602Undercity|r
     .cast 3563 >>Use |T135766:0|t[Teleport Undercity] |cRXP_WARN_If you have|r |T134419:0|t[Rune of Teleportation]
     .disablecheckbox
-step 
-    .train 425170,1
+step
     .goto 1458,73.47,33.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Owen Thadd|r |cFFfa9602in Undercity, Magic Quarter.|r
+    --x .accept is correct here because its a special kind of quest shiek
     .accept 78124 >>Turn in Nar'thalas Almanac
     .accept 78127 >>Turn in The Dalaran Digest
     .accept 78142 >>Turn in Bewitchments and Glamours
     .accept 78143 >>Turn in Secrets of the Dreamers
     .accept 78145 >>Turn in Arcanic Systems Manual
-    -- .accept 78146 >>Turn in Goaz Scrolls
-    -- .accept 78147 >>Turn in Crimes Against Anatomy
-    -- .accept 78148 >>Turn in Runes of the Sorceror-Kings
+    .accept 78146 >>Turn in Goaz Scrolls
+    .accept 78147 >>Turn in Crimes Against Anatomy
+    .accept 78148 >>Turn in Runes of the Sorceror-Kings
     .accept 78149 >>Turn in Fury of the Land
     .accept 79094 >>Turn in The Lessons of Ta'zo
     .accept 79095 >>Turn in The Apothecary's Metaphysical Primer
     .accept 79096 >>Turn in Ataeric: On Arcane Curiosities
     .accept 79097 >>Turn in Ataeric: Baxtan: On Destructive Magics
+    .accept 79535 >>Turn in Basilisks: Should Petrification be Feared?
+    .accept 79947 >>Turn in Geomancy: The Stone-Cold Truth
+    .accept 79948 >>Turn in Defensive Magics 101
+    .accept 77949 >>Turn in A Web of Lies: Debunking Myths and Legends
+    .accept 79950 >>Turn in Demons and You
+    .accept 79951 >>Turn in Mummies: A Guide to the Unsavory Undead
+    .accept 79952 >>Turn in RwlRwlRwlRwl!
+    .accept 79953 >>Turn in A Ludite's Guide to Caring for Your Demonic Pet
     .accept 78150 >>Turn in Friend of the Library
+    .accept 79536 >>Turn in Greater Friend of the Library
     .target Owen Thadd
+    .target Garion Wendell
 step
-    +|cRXP_FRIENDLY_The guide ends here. Thank you for using Restedxp.|r
+    .goto Orgrimmar,50.0,68.8
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Banker|r
+    .bankdeposit 209850,208185,208860,209845,209849,207972,210177,209848,209843,209851,209844,215817,215822,215683,215815,215816,215820,213165,215824,216523 >> |cRXP_WARN_Deposit the remaining Books for Phase 3.|r
+    .target Karus
+    .target Komawa
+    .target Soran
 ]]
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Living Flame - 6 (Elwynn Forest)
+#title Living Flame
+
 << Alliance Mage SoD
 
 
@@ -1596,9 +1903,11 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Living Flame - 7 (Dun Morogh)
+#title Living Flame
+
 << Alliance Mage SoD
 
 
@@ -1646,9 +1955,11 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
-#name Living Flame - 8 (Durotar)
+#name Living Flame - 6 (Durotar)
+#title Living Flame
+
 << Horde Mage SoD
 
 
@@ -1668,17 +1979,24 @@ step
     >>Purchase one or more |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
     .collect 211779,1
 step
+    #completewith Flame
     .train 401768,1
-    #completewith next
     .zone Durotar >>Travel to |cFFfa9602Durotar|r
 step
+    .train 401768,1
+    >>Kill |cRXP_ENEMY_Burning Blade Orcs|r inside the Dustwind Cave. Loot them for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF|r]
+    .collect 203752,1
+    .goto Durotar,52.83,29.02
+    .mob Burning Blade Thug
+    .mob Burning Blade Neophyte
+    .xp >10,1
+step
+    #label Flame
     .train 401768,1
     >>Kill |cRXP_ENEMY_Burning Blade Orcs|r inside the Skull Rock Cave. Loot them for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF|r]
     .collect 203752,1
     .goto Durotar,55.0,9.8
-    .mob Burning Blade Neophyte
     .mob Burning Blade Fanatic
-    .mob Burning Blade Thug
     .mob Burning Blade Apprentice
 step
     .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
@@ -1688,9 +2006,11 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Living Flame - 6 (Tirisfal Glades)
+#title Living Flame
+
 << Horde Mage SoD
 
 
@@ -1741,9 +2061,10 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Arcane Blast - 18 (Ashenvale)
+#title Arcane Blast
 
 << Mage SoD
 
@@ -1811,9 +2132,11 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Living Bomb - 12 (Loch Modan)
+#title Living Bomb
+
 << Alliance Mage SoD
 
 
@@ -1861,9 +2184,11 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Living Bomb - 18 (Westfall)
+#title Living Bomb
+
 << Alliance Mage SoD
 
 
@@ -1896,7 +2221,7 @@ step
     >>Kill |cRXP_ENEMY_Harvest Watcher|r for |cRXP_LOOT_|T132996:0|t[Spare Reaper Parts]|r
     .train 401417,1
     .collect 209056,1
-    .mob Harvest Golem 
+    .mob Harvest Golem
     .mob Harvest Repair
     .mob Harvest Watcher
     .mob Rusty Harvest Golem
@@ -1932,9 +2257,11 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Living Bomb - 17 (Silverpine Forest)
+#title Living Bomb
+
 << Horde Mage SoD
 
 step
@@ -1982,10 +2309,11 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
---x shiek: Troll unsure to lock it behind class 
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Living Bomb - 20 (The Barrens)
+#title Living Bomb
+
 << Horde Mage SoD
 
 step
@@ -2001,3 +2329,275 @@ step
     .goto The Barrens,45,80
     .train 415936 >>To acquire the Living Bomb ability, initiate the event by blinking against the Stone Tablet. Following this, you must successfully blink into the designated green spots to complete the challenge.
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Mage SoD
+#group RestedXP Rune & Books Guide
+#subgroup Belt
+#title Spellfrost Bolt/Frostfire Bolt
+#name Spellfrost Bolt/Frostfire Bolt - 37 (Stranglethorn Vale)
+
+step << Alliance
+    .train 415948,1
+    .train 401762,1
+    .goto Stormwind City,55.8,65.2,-1
+    .goto Stormwind City,32.4,80.0,-1
+    .goto Stormwind City,43.4,26.8,-1
+    .goto Stormwind City,36.0,74.8,-1
+    .goto Elwynn Forest,64.8,69.2,-1
+    .goto Ironforge,19.6,56.2,-1
+    .goto Undercity,69.6,39.2,-1
+    .goto Darnassus,38.8,60.4,-1
+    .goto Ashenvale,35.0,48.6,-1
+    .goto Ironforge,31.2,27.6,-1
+    .goto Duskwood,76.0,45.2,-1
+    .goto Darnassus,34.6,9.8,-1
+    .goto Wetlands,8.4, 56.6,-1
+    >>|cRXP_BUY_Buy one or more|r |T135933:0|t[Comprehension Charm] |cRXP_BUY_from a|r |cRXP_FRIENDLY_Reagent Vendor|r
+    .collect 211779,1
+step << Horde
+    .train 415948,1
+    .train 401762,1
+    .goto Orgrimmar,45.6,56.8,-1
+    .goto Orgrimmar,46.2,46.6,-1
+    .goto Orgrimmar,45.8,40.6,-1
+    .goto The Barrens,51.4,30.2,-1
+    .goto Swamp of Sorrows,45.8,53.0,-1
+    .goto Thunder Bluff,42.6,55.4,-1
+    .goto Dustwallow Marsh,36.4,30.4,-1
+    .goto Undercity,82.6,16.0,-1
+    .goto Thunder Bluff,41.8,55.0,-1
+    .goto Thousand Needles,45.2,50.6,-1
+    .goto Stonetalon Mountains,47.6,61.6,-1
+    >>|cRXP_BUY_Buy one or more|r |T135933:0|t[Comprehension Charm] |cRXP_BUY_from a|r |cRXP_FRIENDLY_Reagent Vendor|r
+    .collect 211779,1
+step
+    .train 415948,1
+    .train 401762,1
+    #completewith next
+    .zone Stranglethorn Vale >>Travel to |cFFfa9602Stranglethorn Vale|r
+step
+    .train 415948,1
+    .train 401762,1
+    #loop
+    .goto Stranglethorn Vale,46.6,30.0,60,0
+    .goto Stranglethorn Vale,43.6,33.2,60,0
+    .goto Stranglethorn Vale,46.4,40.6,60,0
+    .goto Stranglethorn Vale,48.6,40.8,60,0
+    >>Kill |cRXP_ENEMY_Skullsplitter Mystics|r. Loot them for the |T134939:0|t[|cRXP_LOOT_Spell Notes: PELFRB STOLLOTS]|r and |T134939:0|t[|cRXP_LOOT_Spell Notes: TROFF IRESTBOL|r]
+    .collect 213127,1
+    .collect 217161,1
+    .mob Skullsplitter Mystic
+step << Alliance
+    #optional
+    #completewith next
+    .train 415948,1
+    .train 401762,1
+    .goto Stormwind City,55.8,65.2,-1
+    .goto Stormwind City,32.4,80.0,-1
+    .goto Stormwind City,43.4,26.8,-1
+    .goto Stormwind City,36.0,74.8,-1
+    .goto Elwynn Forest,64.8,69.2,-1
+    .goto Ironforge,19.6,56.2,-1
+    .goto Undercity,69.6,39.2,-1
+    .goto Darnassus,38.8,60.4,-1
+    .goto Ashenvale,35.0,48.6,-1
+    .goto Ironforge,31.2,27.6,-1
+    .goto Duskwood,76.0,45.2,-1
+    .goto Darnassus,34.6,9.8,-1
+    .goto Wetlands,8.4, 56.6,-1
+    >>|cRXP_BUY_Buy one or more|r |T135933:0|t[Comprehension Charm] |cRXP_BUY_from a |cRXP_FRIENDLY_Reagent Vendor|r to decipher the rune|r
+    .collect 211779,1
+step << Horde
+    #optional
+    #completewith next
+    .train 415948,1
+    .train 401762,1
+    .goto Orgrimmar,45.6,56.8,-1
+    .goto Orgrimmar,46.2,46.6,-1
+    .goto Orgrimmar,45.8,40.6,-1
+    .goto The Barrens,51.4,30.2,-1
+    .goto Swamp of Sorrows,45.8,53.0,-1
+    .goto Thunder Bluff,42.6,55.4,-1
+    .goto Dustwallow Marsh,36.4,30.4,-1
+    .goto Undercity,82.6,16.0,-1
+    .goto Thunder Bluff,41.8,55.0,-1
+    .goto Thousand Needles,45.2,50.6,-1
+    .goto Stonetalon Mountains,47.6,61.6,-1
+    >>|cRXP_BUY_Buy one or more|r |T135933:0|t[Comprehension Charm] |cRXP_BUY_from a |cRXP_FRIENDLY_Reagent Vendor|r to decipher the rune|r
+    .collect 211779,1
+step
+    .train 415948 >> |cRXP_WARN_Use the|r |T134939:0|t[|cRXP_LOOT_Spell Notes: PELFRB STOLLOTS|r] |cRXP_WARN_to train|r |T135780:0|t[Spellfrost Bolt]
+    .train 401762 >> |cRXP_WARN_Use the|r |T134939:0|t[|cRXP_LOOT_Spell Notes: TROFF IRESTBOL|r] |cRXP_WARN_to train|r |T236217:0|t[Frostfire Bolt]
+    .use 213127
+    .use 217161
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Mage SoD
+#group RestedXP Rune & Books Guide
+#subgroup Belt
+#name Hot Streak - 32 (Alterac Mountains)
+#title Hot Streak
+
+-- Hot Streak
+
+step
+    #optional
+    .train 401749,1
+    .train 2121,1 -- flamestrike r2
+    .train 8422,1 -- flamestrike r3
+    .train 8423,1 -- flamestrike r4
+    .train 2120 >> |cRXP_WARN_You must have|r |T135826:0|t[Flamestrike] |cRXP_WARN_trained in order to aquire the|r |T236218:0|t[Hot Streak] |cRXP_WARN_rune|r
+step
+    .train 401749,1
+    .goto Alterac Mountains,60.510,46.286
+    .zone Alterac Mountains >> Travel to the Alterac Mountains
+step
+    .train 401749,1
+    .goto Alterac Mountains,60.510,46.286,-1
+    .goto Alterac Mountains,60.278,44.900,-1
+    >>|cRXP_WARN_Cast|r |T135826:0|t[Flamestrike] |cRXP_WARN_on the two bellows attached to the blacksmith building in Strahnbrad. Once one of the bellows starts glowing red and fiery, cast|r |T135826:0|t[Flamestrike] |cRXP_WARN_again on the second bellow to ignite it as well. This will trigger the |cRXP_ENEMY_Ancient Fire Elemental|r to spawn|r
+    >>Kill the |cRXP_ENEMY_Ancient Fire Elemental|r. Loot it for the |T134939:0|t[|cRXP_LOOT_Spell Notes: Hot Streak|r]
+    .collect 213113,1
+    .mob Ancient Fire Elemental
+step
+    .train 401749 >> |cRXP_WARN_Use the|r |T134939:0|t[|cRXP_LOOT_Spell Notes: Hot Streak|r] |cRXP_WARN_to train|r |T236218:0|t[Hot Streak]
+    .use 213113
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Mage SoD
+#group RestedXP Rune & Books Guide
+#subgroup Belt
+#name Hot Streak - 37 (Arathi Highlands)
+#title Hot Streak
+
+-- Hot Streak
+
+step
+    .train 401749,1
+    #completewith next
+    .zone Arathi Highlands >> Travel to Arathi Highlands
+step
+    .train 401749,1
+    .goto Arathi Highlands,67.46,28.79,40,0
+    .goto Arathi Highlands,65.47,28.77,40,0
+    .goto Arathi Highlands,65.87,31.24,40,0
+    .goto Arathi Highlands,67.47,30.65,40,0
+    .goto Arathi Highlands,66.82,29.77
+    >>Kill |cRXP_ENEMY_Burning Exiles|r. Loot them for the |T134939:0|t[|cRXP_LOOT_Spell Notes: Hot Streak|r]
+    >>|cRXP_WARN_Note: This has been reported to have a relatively low drop rate. You may want to consider getting it from Alterac Mountains instead|r
+    .collect 213113,1
+    .mob Burning Exile
+step
+    .train 401749 >> |cRXP_WARN_Use the|r |T134939:0|t[|cRXP_LOOT_Spell Notes: Hot Streak|r] |cRXP_WARN_to train|r |T236218:0|t[Hot Streak]
+    .use 213113
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Mage SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Chronostatic Preservation - 30 (Thousand Needles)
+
+-- Chronostatic Preservation
+
+step
+    .train 425309,1
+    .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
+step
+    .train 425189,1
+    #loop
+    .goto Thousand Needles,23.2,25.0,25,0
+    .goto Thousand Needles,20.2,22.0,25,0
+    .goto Thousand Needles,17.6,19.6,25,0
+    .goto Thousand Needles,18.6,24.6,25,0
+    >>Kill |cRXP_ENEMY_Galak Mauler|r and loot them for |T134238:0|t|cRXP_LOOT_Cougar Cage Key|r
+    .collect 214435,1
+    .mob Galak Mauler
+step
+    .train 425189,1
+    .goto Thousand Needles,45,8,65,4
+    >>Use the |T134238:0|t|cRXP_LOOT_Cougar Cage Key|r and Kill |cRXP_ENEMY_Seared Needles Cougar|r |cRXP_WARN_with frost spells|r. Loot him for |T134943:0|t|cRXP_LOOT_Partial Spell Notes|r |cRXP_WARN_might require additional mages.|r
+    .mob Seared Needles Cougar
+    .collect 213634,1
+step
+    .train 425189,1
+    .goto Thousand Needles,45,8,64,4
+    >>Kill |cRXP_ENEMY_Singed Highperch Consort|r |cRXP_WARN_with frost spells|r. Loot him for |T134943:0|t|cRXP_LOOT_Partial Spell Notes|r |cRXP_WARN_might require additional mages.|r
+    .collect 213634,2
+    .mob Singed Highperch Consort
+step
+    .train 425189,1
+    .goto Thousand Needles,45,8,65,4
+    >>Kill |cRXP_ENEMY_Scorched Screeching Roguefeather|r |cRXP_WARN_with frost spells|r. Loot him for |T134943:0|t|cRXP_LOOT_Partial Spell Notes|r |cRXP_WARN_might require additional mages.|r
+    .collect 213634,3
+    .mob Scorched Screeching Roguefeather
+step
+    .cast 435185 >>Use one of the |T134943:0|t|cRXP_LOOT_Partial Spell Notes|r to receive |T135975:0|t[|cRXP_FRIENDLY_Spell Notes: Chronostatic Preservation|r.
+    .collect 213116,1
+    .use 213634
+step
+    .train 425189 >>Use |T135975:0|t[|cRXP_FRIENDLY_Spell Notes: Chronostatic Preservation|r to learn |T135729:0|t|{Chronostatic Preservation].
+    .use 213116
+]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Bracers
+-- #name Displacement
+-- for phase 3
+
+-- Displacement
+
+-- << Mage SoD
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Bracers
+-- #name Molten Armor
+-- for phase 3
+
+-- Molten Armor
+
+-- << Mage SoD
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helmet
+-- #name Temporal Anomaly
+-- for phase 3
+
+-- Temporal Anomaly
+
+-- << Mage SoD
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helmet
+-- #name Deep Freeze
+-- for phase 3
+
+-- Deep Freeze
+
+-- << Mage SoD
+
+
+-- ]])
+

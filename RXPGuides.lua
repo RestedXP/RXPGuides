@@ -1640,6 +1640,25 @@ end
 
 function addon.stepLogic.XpRateCheck(step)
     if step.xprate then
+        local rate = addon.settings.profile.xprate or 1
+        if addon.game == "CLASSIC" then
+            rate = 1
+            if addon.settings.profile.season == 1 then
+                if addon.settings.profile.phase < 3 then
+                    rate = 1.2
+                else
+                    rate = 1.5
+                end
+            elseif addon.settings.profile.season == 2 and addon.currentGuide then
+                local guide = addon.currentGuide.name
+                --local minLevel = tonumber(guide:sub(1,2))
+                local maxLevel = tonumber(guide:match("%d+%-(%d+)"))
+                if not step.elements or not maxLevel or maxLevel < 25 then
+                    --print(minLevel,step.elements)
+                    rate = 1.5
+                end
+            end
+        end
         local xpmin, xpmax = 1, 0xfff
 
         step.xprate:gsub("^([<>]?)%s*(%d+%.?%d*)%-?(%d*%.?%d*)",
@@ -1656,8 +1675,9 @@ function addon.stepLogic.XpRateCheck(step)
             end
         end)
 
-        if addon.settings.profile.xprate < xpmin or
-            addon.settings.profile.xprate > xpmax then return false end
+        if rate < xpmin or rate > xpmax then
+            return false
+        end
     end
 
     return true

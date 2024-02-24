@@ -1,7 +1,7 @@
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD/Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs << Warrior
 #subgroup Chest << Hunter
 #name Consumed by Rage - 25 (Wetlands) << Warrior
@@ -38,12 +38,12 @@ step << Hunter
     .use 211205
     .itemcount 211205,1
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Envenom - 25 (Hillsbrad)
 
@@ -83,13 +83,12 @@ step
     .use 210322
     .itemcount 210322,1
 
-    ]])
-
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shiv - 25 (Duskwood)
 
@@ -126,12 +125,12 @@ step
     .use 210252
     .itemcount 210252,1
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Druid SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Wild Strikes - 14 (Stonetalon Mountains)
 
@@ -163,7 +162,7 @@ step << Druid
 RXPGuides.RegisterGuide([[
 #classic
 << Druid SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Starsurge - 25 (Wetlands)
 
@@ -200,7 +199,7 @@ step << Druid
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest << Priest/Hunter/Druid/Warrior/Shaman
 #subgroup Legs << Warlock/Paladin
 #subgroup Gloves << Mage/Rogue
@@ -500,7 +499,7 @@ step << Paladin
 
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest << Shaman/Rogue
 #subgroup Legs << Mage/Warlock/Hunter/Druid
 #subgroup Gloves << Paladin/Warrior/Priest
@@ -561,7 +560,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Druid SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Wild Growth - 25 (Multiple Zones)
 
@@ -585,8 +584,7 @@ step << Druid
     .train 410028,1
 step << Druid
     .goto Duskwood,49.520,33.851
-    +Click the |cRXP_PICK_Owl Statue|r to gain the |T132150:0|t[Eyes of the Owl] buff
-    .aura 424310
+    .aura 424310 >> Click the |cRXP_PICK_Owl Statue|r to gain the |T132150:0|t[Eyes of the Owl] buff
     .train 410028,1
 step << Druid
     .goto Duskwood,45.13,58.26
@@ -650,7 +648,7 @@ step << Druid
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD/Mage SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest << Warrior
 #subgroup Legs << Mage
 #name Flagellation - 25 (Duskwood) << Warrior
@@ -704,7 +702,7 @@ step << Mage
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Raging Blow - 25 (Multiple Zones)
 
@@ -793,7 +791,7 @@ step << Warrior
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Strength of Soul - 22 (Ashenvale)
 
@@ -833,7 +831,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Power Word: Barrier - 22 (Redridge Mountains)
 
@@ -867,7 +865,7 @@ step << Priest
 RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Circle of Healing - 25 (Duskwood)
 
@@ -900,11 +898,10 @@ step << Priest
     .itemcount 211490,1
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Cobra Strikes - 25 (Hillsbrad Foothills)
 
@@ -940,12 +937,12 @@ step
     .use 210596
     .itemcount 210596,1
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Hunter SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Kill Command - 25 (Multiple Zones)
 
@@ -1029,4 +1026,736 @@ step
     .itemcount 209852,1
 
 
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+#group RestedXP Rune & Books Guide
+<< SoD
+#subgroup Chest << Shaman
+#subgroup Belt << Warrior/Hunter/Mage/Paladin
+#subgroup Boots << Warlock/Priest/Rogue/Druid
+#name Spirit of the Redeemer - 40 (Deadwind Pass) << Priest
+#name Melee Specialist - 40 (Deadwind Pass) << Hunter
+#name King of the Jungle - 40 (Deadwind Pass) << Druid
+#name Precise Timing - 40 (Deadwind Pass) << Warrior
+#name Two-Handed Mastery - 40 (Deadwind Pass) << Shaman
+#name Demonic Knowledge - 40 (Deadwind Pass) << Warlock
+#name Infusion of Light - 40 (Deadwind Pass) << Paladin
+#name Missile Barrage - 40 (Deadwind Pass) << Mage
+#name Waylay - 40 (Deadwind Pass) << Rogue
+
+step
+    #completewith next
+    .zone Deadwind Pass >>Travel to the Deadwind Pass
+step
+    .train 425312,1 << Priest
+    .train 426180,1 << Paladin
+    .train 401763,1 << Mage
+    .train 416086,1 << Hunter
+    .train 424765,1 << Druid
+    .train 416005,1 << Warrior
+    .train 416014,1 << Warlock
+    .train 415926,1 << Rogue
+    .train 436368,1 << Shaman
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Dalaran Agent|r to get |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r]
+    *|cRXP_WARN_Recommendation: Getting the rune is faster/easier in a raid.|r
+    .goto Deadwind Pass,52.09,34.12
+    .skipgossip 218920,1
+    .collect 216941,1
+    .target Dalaran Agent
+step
+    .train 425312,1 << Priest
+    .train 426180,1 << Paladin
+    .train 401763,1 << Mage
+    .train 416086,1 << Hunter
+    .train 424765,1 << Druid
+    .train 416005,1 << Warrior
+    .train 416014,1 << Warlock
+    .train 415926,1 << Rogue
+    .train 436368,1 << Shaman
+    *|cRXP_WARN_Make sure that you have the |T237534:0|t[Dark Presence] buff before using the trinket|r
+    >>Use |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r] at the waypoint location and kill the |cRXP_ENEMY_Dark Rider|r. Loot him for the |T236511:0|t[Curious Dalaran Relic]
+    .use 216941
+    .goto Deadwind Pass,43,29
+    .collect 216945,1
+    .mob Dark Rider
+step
+    #completewith next
+    .zone Swamp of Sorrows >>Travel to Swamp of Sorrows
+step
+    .train 425312,1 << Priest
+    .train 426180,1 << Paladin
+    .train 401763,1 << Mage
+    .train 416086,1 << Hunter
+    .train 424765,1 << Druid
+    .train 416005,1 << Warrior
+    .train 416014,1 << Warlock
+    .train 415926,1 << Rogue
+    .train 436368,1 << Shaman
+    *|cRXP_WARN_Make sure that you have the |T237534:0|t[Dark Presence] buff before using the trinket|r
+    >>Use |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r] at the waypoint location and kill the |cRXP_ENEMY_Dark Rider|r. Loot him for the |T236879:0|t[Odd Dalaran Relic]
+    .use 216941
+    .goto Swamp of Sorrows,69,28
+    .collect 216948,1
+    .mob Dark Rider
+step
+    #completewith next
+    .zone Duskwood >>Travel to Duskwood
+step
+    .train 425312,1 << Priest
+    .train 426180,1 << Paladin
+    .train 401763,1 << Mage
+    .train 416086,1 << Hunter
+    .train 424765,1 << Druid
+    .train 416005,1 << Warrior
+    .train 416014,1 << Warlock
+    .train 415926,1 << Rogue
+    .train 436368,1 << Shaman
+    *|cRXP_WARN_Make sure that you have the |T237534:0|t[Dark Presence] buff before using the trinket|r
+    >>Use |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r] at the waypoint location and kill the |cRXP_ENEMY_Dark Rider|r. Loot him for the |T237244:0|t[Glittering Dalaran Relic]
+    .use 216941
+    .goto Duskwood,23,47
+    .collect 216946,1
+    .mob Dark Rider
+step
+    #completewith next
+    .zone Badlands >>Travel to Badlands
+step
+    .train 425312,1 << Priest
+    .train 426180,1 << Paladin
+    .train 401763,1 << Mage
+    .train 416086,1 << Hunter
+    .train 424765,1 << Druid
+    .train 416005,1 << Warrior
+    .train 416014,1 << Warlock
+    .train 415926,1 << Rogue
+    .train 436368,1 << Shaman
+    *|cRXP_WARN_Make sure that you have the |T237534:0|t[Dark Presence] buff before using the trinket|r
+    >>Use |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r] at the waypoint location and kill the |cRXP_ENEMY_Dark Rider|r. Loot him for the |T237309:0|t[Slippery Dalaran Relic]
+    .use 216941
+    .goto Badlands,58,54
+    .collect 216951,1
+    .mob Dark Rider
+step
+    #completewith next
+    .zone Arathi Highlands >>Travel to Arathi Highlands
+step
+    .train 425312,1 << Priest
+    .train 426180,1 << Paladin
+    .train 401763,1 << Mage
+    .train 416086,1 << Hunter
+    .train 424765,1 << Druid
+    .train 416005,1 << Warrior
+    .train 416014,1 << Warlock
+    .train 415926,1 << Rogue
+    .train 436368,1 << Shaman
+    *|cRXP_WARN_Make sure that you have the |T237534:0|t[Dark Presence] buff before using the trinket|r
+    >>Use |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r] at the waypoint location and kill the |cRXP_ENEMY_Dark Rider|r. Loot him for the |T305162:0|t[Whirring Dalaran Relic]
+    .use 216941
+    .goto Arathi Highlands,60,40
+    .collect 216947,1
+    .mob Dark Rider
+
+step
+    #completewith next
+    .zone The Barrens >>Travel to The Barrens
+step
+    .train 425312,1 << Priest
+    .train 426180,1 << Paladin
+    .train 401763,1 << Mage
+    .train 416086,1 << Hunter
+    .train 424765,1 << Druid
+    .train 416005,1 << Warrior
+    .train 416014,1 << Warlock
+    .train 415926,1 << Rogue
+    .train 436368,1 << Shaman
+    *|cRXP_WARN_Make sure that you have the |T237534:0|t[Dark Presence] buff before using the trinket|r
+    >>Use |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r] at the waypoint location and kill the |cRXP_ENEMY_Dark Rider|r. Loot him for the |T133509:0|t[Heavy Dalaran Relic]
+    .use 216941
+    .goto The Barrens,52,36
+    .collect 216949,1
+    .mob Dark Rider
+step
+    #completewith next
+    .zone Desolace >>Travel to Desolace
+step
+    .train 425312,1 << Priest
+    .train 426180,1 << Paladin
+    .train 401763,1 << Mage
+    .train 416086,1 << Hunter
+    .train 424765,1 << Druid
+    .train 416005,1 << Warrior
+    .train 416014,1 << Warlock
+    .train 415926,1 << Rogue
+    .train 436368,1 << Shaman
+    *|cRXP_WARN_Make sure that you have the |T237534:0|t[Dark Presence] buff before using the trinket|r
+    >>Use |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r] at the waypoint location and kill the |cRXP_ENEMY_Dark Rider|r. Loot him for the |T338485:0|t[Creepy Dalaran Relic]
+    .use 216941
+    .goto Desolace,65,25
+    .collect 216950,1
+    .mob Dark Rider
+step
+    #completewith next
+    .zone Deadwind Pass >>Travel to the Deadwind Pass
+step
+    .train 425312,1 << Priest
+    .train 426180,1 << Paladin
+    .train 401763,1 << Mage
+    .train 416086,1 << Hunter
+    .train 424765,1 << Druid
+    .train 416005,1 << Warrior
+    .train 416014,1 << Warlock
+    .train 415926,1 << Rogue
+    .train 436368,1 << Shaman
+    .goto Deadwind Pass,52.09,34.12
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Dalaran Agent|r
+    .turnin 80147 >>Turn in Curious Dalaran Relic
+    .turnin 80149 >>Turn in Curious Dalaran Relic
+    .turnin 80098 >>Turn in Curious Dalaran Relic
+    .turnin 80152 >>Turn in Curious Dalaran Relic
+    .turnin 80148 >>Turn in Curious Dalaran Relic
+    .turnin 80150 >>Turn in Curious Dalaran Relic
+    .turnin 80151 >>Turn in Curious Dalaran Relic
+    .turnin 80120 >>Turn in A Service to Dalaran
+    .target Dalaran Agent
+step
+    .train 425312,1 << Priest
+    .train 426180,1 << Paladin
+    .train 401763,1 << Mage
+    .train 416086,1 << Hunter
+    .train 424765,1 << Druid
+    .train 416005,1 << Warrior
+    .train 416014,1 << Warlock
+    .train 415926,1 << Rogue
+    .train 436368,1 << Shaman
+    >>Open the |T133666:0|t[|cRXP_FRIENDLY_Supply Bag|r] for the rune
+    .use 217014
+    .collect 213144,1 << Priest
+    .collect 213130,1 << Paladin
+    .collect 213112,1 << Mage
+    .collect 213124,1 << Hunter
+    .collect 213118,1 << Druid
+    .collect 213104,1 << Warrior
+    .collect 213100,1 << Warlock
+    .collect 213137,1 << Rogue
+    .collect 216606,1 << Shaman
+step
+    .itemcount 213144,1 << Priest
+    .itemcount 213130,1 << Paladin
+    .itemcount 213112,1 << Mage
+    .itemcount 213124,1 << Hunter
+    .itemcount 213118,1 << Druid
+    .itemcount 213104,1 << Warrior
+    .itemcount 213100,1 << Warlock
+    .itemcount 213137,1 << Rogue
+    .itemcount 216606,1 << Shaman
+    .use 213144 << Priest
+    .use 213130 << Paladin
+    .use 213112 << Mage
+    .use 213124 << Hunter
+    .use 213118 << Druid
+    .use 213104 << Warrior
+    .use 213100 << Warlock
+    .use 213137 << Rogue
+    .use 216606 << Shaman
+    .train 425312 >>Use the |T135791:0|t[|cRXP_FRIENDLY_Luminous Epiphany|r] to learn |T132864:0|t[Spirit of the Redeemer] << Priest
+    .train 426180 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Infusion|r] to learn |T236254:0|t[Infusion of Light] << Paladin
+    .train 401763 >>Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Missile Barrage|r] to learn |T236221:0|t[Missile Barrage] << Mage
+    .train 416086 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Close Combat|r] to learn |T132394:0|t[Melee Specialist] << Hunter
+    .train 424765 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Jungle King|r] to learn |T236159:0|t[King of the Jungle] << Druid
+    .train 416005 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Ruthless Precision|r] to learn |T134377:0|t[Precise Timing] << Warrior
+    .train 416014 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Forbidden Knowledge|r] to learn |T136172:0|t[Demonic Knowledge] << Warlock
+    .train 415926 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Assailant|r] to learn |T236286:0|t[Waylay] << Rogue
+    .train 436368 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Two-Handed Mastery|r] to learn |T135145:0|t[Two-Handed Mastery] << Shaman
+]])
+
+RXPGuides.RegisterGuide([[
+
+#classic
+<< SoD
+#group RestedXP Rune & Books Guide
+#subgroup Belt << Druid/Priest/Rogue/Warlock
+#subgroup Boots << Mage/Shaman/Hunter/Paladin/Warrior
+#name Mind Spike - 35 (Azeroth) << Priest
+#name Trap Launcher - 35 (Azeroth) << Hunter
+#name Eclipse - 35 (Azeroth) << Druid
+#name Enraged Regeneration - 35 (Azeroth) << Warrior
+#name Ancestral Awakening - 35 (Azeroth) << Shaman
+#name Shadow and Flame - 35 (Azeroth) << Warlock
+#name The Art of War - 35 (Azeroth) << Paladin
+#name Brain Freeze - 35 (Azeroth) << Mage
+#name Poisoned Knife - 35 (Azeroth) << Rogue
+
+step
+    #completewith next
+    .zone Desolace >>Travel to Desolace
+step
+    .train 431663,1 << Priest
+    .train 416031,1 << Paladin
+    .train 401752,1 << Mage
+    .train 410118,1 << Hunter
+    .train 410029,1 << Druid
+    .train 403467,1 << Warrior
+    .train 426452,1 << Warlock
+    .train 425102,1 << Rogue
+    .train 425883,1 << Shaman
+    >>Click the |cRXP_PICK_Extinguished Campfire|r
+    .goto Desolace,47.532,54.605
+    .accept 79229 >>Accept Highway Robbery
+step
+    .train 431663,1 << Priest
+    .train 416031,1 << Paladin
+    .train 401752,1 << Mage
+    .train 410118,1 << Hunter
+    .train 410029,1 << Druid
+    .train 403467,1 << Warrior
+    .train 426452,1 << Warlock
+    .train 425102,1 << Rogue
+    .train 425883,1 << Shaman
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bibbly F'utzbuckle|r
+    .goto Desolace,62.314,38.965
+    .turnin 79229 >>Turn in Highway Robbery
+    .accept 79235 >>Accept On the Lam
+    .target Bibbly F'utzbuckle
+step
+    #completewith next
+    .zone Stranglethorn Vale >>Travel to Stranglethorn Vale |cRXP_WARN_(Booty Bay)|r
+step
+    .train 431663,1 << Priest
+    .train 416031,1 << Paladin
+    .train 401752,1 << Mage
+    .train 410118,1 << Hunter
+    .train 410029,1 << Druid
+    .train 403467,1 << Warrior
+    .train 426452,1 << Warlock
+    .train 425102,1 << Rogue
+    .train 425883,1 << Shaman
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tokal|r
+    .goto Stranglethorn Vale,26.988,77.284
+    .turnin 79235 >>Turn in On the Lam
+    .accept 79236 >>Accept Cherry for Your Thoughts?
+    .target Tokal
+step
+    .train 431663,1 << Priest
+    .train 416031,1 << Paladin
+    .train 401752,1 << Mage
+    .train 410118,1 << Hunter
+    .train 410029,1 << Druid
+    .train 403467,1 << Warrior
+    .train 426452,1 << Warlock
+    .train 425102,1 << Rogue
+    .train 425883,1 << Shaman
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nixxrax Fillamug|r
+    >>|cRXP_BUY_Buy a|r |T132790:0|t[Cherry Grog]
+    .goto Stranglethorn Vale,27.039,77.168
+    .collect 4600,1,79236,1
+    .target Nixxrax Fillamug
+step
+    .train 431663,1 << Priest
+    .train 416031,1 << Paladin
+    .train 401752,1 << Mage
+    .train 410118,1 << Hunter
+    .train 410029,1 << Druid
+    .train 403467,1 << Warrior
+    .train 426452,1 << Warlock
+    .train 425102,1 << Rogue
+    .train 425883,1 << Shaman
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tokal|r
+    .goto Stranglethorn Vale,26.988,77.284
+    .turnin 79236 >>Turn in Cherry for Your Thoughts?
+    .accept 79242 >>Accept No Honor Among Thieves
+    .target Tokal
+step
+    #completewith next
+    .zone Wetlands >>Travel to the Arathi Highlands/Wetlands zone border
+step
+    .goto Wetlands,58.320,6.927
+    .cast 6477 >>Enter the |cRXP_PICK_Rowboat|r in the water
+    .train 431663,1 << Priest
+    .train 416031,1 << Paladin
+    .train 401752,1 << Mage
+    .train 410118,1 << Hunter
+    .train 410029,1 << Druid
+    .train 403467,1 << Warrior
+    .train 426452,1 << Warlock
+    .train 425102,1 << Rogue
+    .train 425883,1 << Shaman
+    .subzoneskip 308
+step << NightElf
+    .train 431663,1 << Priest
+    .train 416031,1 << Paladin
+    .train 401752,1 << Mage
+    .train 410118,1 << Hunter
+    .train 410029,1 << Druid
+    .train 403467,1 << Warrior
+    .train 426452,1 << Warlock
+    .train 425102,1 << Rogue
+    .train 425883,1 << Shaman
+    .goto Arathi Highlands,93.90,71.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illari Duskfeather|r to receive |cRXP_LOOT_Illari's Key|r
+    .complete 79242,1 --Found Illari Duskfeather
+    .collect 212347,1,79242,1 --Illari's Key
+    .skipgossip 215655,1,1,2
+    .target Illari Duskfeather
+step << !NightElf
+    .train 431663,1 << Priest
+    .train 416031,1 << Paladin
+    .train 401752,1 << Mage
+    .train 410118,1 << Hunter
+    .train 410029,1 << Druid
+    .train 403467,1 << Warrior
+    .train 426452,1 << Warlock
+    .train 425102,1 << Rogue
+    .train 425883,1 << Shaman
+    #completewith next
+    .goto Arathi Highlands,93.90,71.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illari Duskfeather|r. You will have to fight her after
+    .complete 79242,1 --Found Illari Duskfeather
+    .skipgossip 215655,1,1,1
+    .target Illari Duskfeather
+step << !NightElf
+    .train 431663,1 << Priest
+    .train 416031,1 << Paladin
+    .train 401752,1 << Mage
+    .train 410118,1 << Hunter
+    .train 410029,1 << Druid
+    .train 403467,1 << Warrior
+    .train 426452,1 << Warlock
+    .train 425102,1 << Rogue
+    .train 425883,1 << Shaman
+    .goto Arathi Highlands,93.90,71.49
+    >>Kill |cRXP_ENEMY_Illari Duskfeather|r. Open the |cRXP_PICK_Dropped Pouch|r she drops on the ground. Loot it for |cRXP_LOOT_Illari's Key|r
+    .collect 212347,1,79242,1 --Illari's Key
+    .skipgossip 215655,1,1,1
+    .mob Illari Duskfeather 
+step << !NightElf
+    .train 431663,1 << Priest
+    .train 416031,1 << Paladin
+    .train 401752,1 << Mage
+    .train 410118,1 << Hunter
+    .train 410029,1 << Druid
+    .train 403467,1 << Warrior
+    .train 426452,1 << Warlock
+    .train 425102,1 << Rogue
+    .train 425883,1 << Shaman
+    .goto Arathi Highlands,93.90,71.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Illari Duskfeather|r
+    .complete 79242,1 --Found Illari Duskfeather
+    .skipgossip
+    .target Illari Duskfeather
+step
+    .train 431663,1 << Priest
+    .train 416031,1 << Paladin
+    .train 401752,1 << Mage
+    .train 410118,1 << Hunter
+    .train 410029,1 << Druid
+    .train 403467,1 << Warrior
+    .train 426452,1 << Warlock
+    .train 425102,1 << Rogue
+    .train 425883,1 << Shaman
+    >>Click |cRXP_PICK_Illari's Loot Cache|r on the ground
+    .goto Arathi Highlands,94.154,69.266
+    .turnin 79242 >>Turn in No Honor Among Thieves
+step
+    .train 431663,1 << Priest
+    .train 416031,1 << Paladin
+    .train 401752,1 << Mage
+    .train 410118,1 << Hunter
+    .train 410029,1 << Druid
+    .train 403467,1 << Warrior
+    .train 426452,1 << Warlock
+    .train 425102,1 << Rogue
+    .train 425883,1 << Shaman
+    >>Open the |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Box|r] for the |T135791:0|t[|cRXP_FRIENDLY_Psychosophic Epiphany|r] << Priest
+    >>Open the |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Box|r] for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Warfare|r] << Paladin
+    >>Open the |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Box|r] for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Brain Freeze|r] << Mage
+    >>Open the |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Box|r] for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Trapper|r] << Hunter
+    >>Open the |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Box|r] for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Eclipse|r] << Druid
+    >>Open the |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Box|r] for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Healing Rage|r] << Warrior
+    >>Open the |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Box|r] for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Burning Darkness|r] << Warlock
+    >>Open the |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Box|r] for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Poisoned Blade|r] << Rogue
+    >>Open the |T133876:0|t[|cRXP_LOOT_Jewel-Encrusted Box|r] for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Ancestral Awakening|r] << Shaman
+    .collect 212552,1 << Priest
+    .collect 212551,1 << Paladin
+    .collect 208853,1 << Mage
+    .collect 212549,1 << Hunter
+    .collect 212548,1 << Druid
+    .collect 212562,1 << Warrior
+    .collect 212561,1 << Warlock
+    .collect 212559,1 << Rogue
+    .collect 212560,1 << Shaman
+    .use 212553 --Jewel-Encrusted Box (1)
+step
+    .train 431663 >>|cRXP_WARN_Use the|r |T135791:0|t[|cRXP_FRIENDLY_Psychosophic Epiphany|r] |cRXP_WARN_to train|r |T136181:0|t[Mind Spike] << Priest
+    .train 416031 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Warfare|r] |cRXP_WARN_to train|r |T236246:0|t[The Art of War] << Paladin
+    .train 401752 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Brain Freeze|r] |cRXP_WARN_to train|r |T236206:0|t[Brain Freeze] << Mage
+    .train 410118 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Trapper|r] |cRXP_WARN_to train|r |T133882:0|t[Trap Launcher] << Hunter
+    .train 410029 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Eclipse|r] |cRXP_WARN_to train|r |T236151:0|t[Eclipse] << Druid
+    .train 403467 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Healing Rage|r] |cRXP_WARN_to train|r |T132345:0|t[Enraged Regeneration] << Warrior
+    .train 426452 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Burning Darkness|r] |cRXP_WARN_to train|r |T135823:0|t[Shadow and Flame] << Warlock
+    .train 425102 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Poisoned Blade|r] |cRXP_WARN_to train|r |T236270:0|t[Poisoned Blade] << Rogue
+    .train 425883 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Ancestral Awakening|r] |cRXP_WARN_to train|r |T237571:0|t[Ancestral Awakening] << Shaman
+    .use 212552 << Priest
+    .use 212551 << Paladin
+    .use 208853 << Mage
+    .use 212549 << Hunter
+    .use 212548 << Druid
+    .use 212562 << Warrior
+    .use 212561 << Warlock
+    .use 212559 << Rogue
+    .use 212560 << Shaman
+    .itemcount 212552,1 << Priest
+    .itemcount 212551,1 << Paladin
+    .itemcount 208853,1 << Mage
+    .itemcount 212549,1 << Hunter
+    .itemcount 212548,1 << Druid
+    .itemcount 212562,1 << Warrior
+    .itemcount 212561,1 << Warlock
+    .itemcount 212559,1 << Rogue
+    .itemcount 212560,1 << Shaman
+step
+    .goto 1417,89.536,78.149
+    .cast 6477 >>Enter the |cRXP_PICK_Rowboat|r in the water to get back to Arathi
+    .subzoneskip 308,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< SoD
+#group RestedXP Rune & Books Guide
+#subgroup Spell Books
+#name Totemic Projection - 27-40 (Scarlet Monastery) << Shaman
+#title Totemic Projection << Shaman
+#name Expanded Intellect - 27-40 (Scarlet Monastery) << Mage
+#title Expanded Intellect << Mage
+#name Treatise on Aspect of the Viper - 27-40 (Scarlet Monastery) << Hunter
+#title Treatise on Aspect of the Viper << Hunter
+#name Soul Harvesting/Portal of Summoning - 27-40 (Scarlet Monastery) << Warlock
+#title Soul Harvesting/Portal of Summoning << Warlock
+#name Redirect - 27-40 (Scarlet Monastery) << Rogue
+#title Redirect << Rogue
+#name Shadowfiend/Increased Fortitude - 27-40 (Scarlet Monastery) << Priest
+#title Shadowfiend/Increased Fortitude << Priest
+#name Enhanced Blessings - 27-40 (Scarlet Monastery) << Paladin
+#title Enhanced Blessings << Paladin
+#name Enhanced Restoration/Revive/Deeper Wilds - 27-40 (Scarlet Monastery) << Druid
+#title Enhanced Restoration/Revive/Deeper Wilds << Druid
+#name Commanding Shout - 27-40 (Scarlet Monastery) << Warrior
+#title Commanding Shout << Warrior
+
+step
+    .train 438040,1 << Rogue
+    .train 436949,1 << Mage
+    .train 436956,1 << Druid
+    .train 417123,1 << Druid
+    .train 437138,1 << Druid
+    .train 415423,1 << Hunter
+    .train 435984,1 << Paladin
+    .train 401977,1 << Priest
+    .train 436951,1 << Priest
+    .train 437032,1 << Warlock
+    .train 437169,1 << Warlock
+    .train 403215,1 << Warrior
+    .train 437009,1 << Shaman
+    #completewith Interrogator Vishas
+    +The Skill Books can be acquired by mobs within Scarlet Monastery: Graveyard/Library. The following enemies have an increased chance to drop them: the first and last dungeon bosses, or the rare enemy, |cRXP_ENEMY_Ironspine|r. |cRXP_WARN_It is highly recommended to form a group of 5 players.|r
+step
+    .train 438040,1 << Rogue
+    .train 436949,1 << Mage
+    .train 436956,1 << Druid
+    .train 417123,1 << Druid
+    .train 437138,1 << Druid
+    .train 415423,1 << Hunter
+    .train 435984,1 << Paladin
+    .train 401977,1 << Priest
+    .train 436951,1 << Priest
+    .train 437032,1 << Warlock
+    .train 437169,1 << Warlock
+    .train 403215,1 << Warrior
+    .train 437009,1 << Shaman
+    .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
+step
+    .train 438040,1 << Rogue
+    .train 436949,1 << Mage
+    .train 436956,1 << Druid
+    .train 417123,1 << Druid
+    .train 437138,1 << Druid
+    .train 415423,1 << Hunter
+    .train 435984,1 << Paladin
+    .train 401977,1 << Priest
+    .train 436951,1 << Priest
+    .train 437032,1 << Warlock
+    .train 437169,1 << Warlock
+    .train 403215,1 << Warrior
+    .train 437009,1 << Shaman
+    .goto 1415,47.44,19.75,10,0
+    .goto 1415,47.45,19.69,5,0
+    .goto 1415,47.62,19.59,10,0
+    .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
+step
+    .train 438040,1 << Rogue
+    .train 436949,1 << Mage
+    .train 436956,1 << Druid
+    .train 417123,1 << Druid
+    .train 437138,1 << Druid
+    .train 415423,1 << Hunter
+    .train 435984,1 << Paladin
+    .train 401977,1 << Priest
+    .train 436951,1 << Priest
+    .train 437032,1 << Warlock
+    .train 437169,1 << Warlock
+    .train 403215,1 << Warrior
+    .train 437009,1 << Shaman
+    #label Interrogator Vishas
+    >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Manual of Redirect|r |cRXP_WARN_This might require multiple runs.|r << Rogue
+    >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Leaflet of Enhanced Restoration|r, |T134914:0|t|cRXP_LOOT_[Leaflet of Revive]|r and |T134914:0|t|cRXP_LOOT_[Leaflet of Deeper Wilds]|r |cRXP_WARN_This might require multiple runs.|r << Druid
+    >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Treatise on Aspect of the Viper|r |cRXP_WARN_This might require multiple runs.|r << Hunter
+    >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Tome of Expanded Intellect|r |cRXP_WARN_This might require multiple runs.|r << Mage
+    >>Kill Bosses,Rares and monsters.Loot them for |T133745:0|t|cRXP_LOOT_[Testament of Enhanced Blessings]|r |cRXP_WARN_This might require multiple runs.|r << Paladin
+    >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Scroll of Shadowfiend|r, |T237543:0|t[Increased Fortitude] |cRXP_WARN_This might require multiple runs.|r << Priest
+    >>|cRXP_WARN_Additionally, click on the |cRXP_PICK_Tombstone|r near the Headless Horseman's spawn location to collect the |cRXP_LOOT_|T136222:0|t[Graveyard Echo]|r |cFFFF0000This is necessary for the Pain Suppression Rune. If you already have this rune, you can skip it|r. << Priest
+    >>Kill Bosses,Rares and monsters.Loot them for |T133733:0|t|cRXP_LOOT_[Grimoire of Soul Harvesting]|r,|T133733:0|t|cRXP_LOOT_[Grimoire of Portal of Summoning]|r |cRXP_WARN_This might require multiple runs.|r << Warlock
+    >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Rune of the Commander|r |cRXP_WARN_This might require multiple runs.|r << Warrior
+    >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Rune of the Commander|r |cRXP_WARN_This might require multiple runs.|r << Shaman
+    .link https://imgur.com/a/lqRc0i6 >> |cRXP_WARN_Click here for a picture reference for the |T136222:0|t[Graveyard Echo]|r. << Priest
+    .collect 216738,1 << Rogue -- Manual of Redirect
+    .collect 216740,1 << Mage -- Tome of Expanded Intellect
+    .collect 216744,1 << Priest -- Scroll of Increased Fortitude
+    .collect 216745,1 << Priest -- Scroll of Shadowfiend
+    .collect 215426,1 << Priest -- Graveyard Echo
+    .collect 216746,1 << Warrior -- Handbook of Commanding Shout
+    .collect 216747,1 << Warlock -- Grimoire of Soul Harvesting
+    .collect 216748,1 << Warlock -- Grimoire of Portal of Summoning
+    .collect 216764,1 << Druid -- Leaflet of Deeper Wilds
+    .collect 216767,1 << Druid -- Leaflet of Revive
+    .collect 216768,1 << Paladin -- Testament of Enhanced Blessings
+    .collect 216769,1 << Shaman -- Revelation of Totemic Projection
+    .collect 216770,1 << Hunter -- Treatise on Aspect of the Viper
+    .collect 216771,1 << Druid -- Leaflet of Enhanced Restoration
+    .mob Interrogator Vishas
+    .mob Bloodmage Thalnos
+    .mob Ironspine
+    .mob Houndmaster Loksey
+    .mob Arcanist Doan
+step
+    .train 438040 >>|cRXP_WARN_Use the|r |T133735:0|t|cRXP_LOOT_[Manual of Redirect]|r |cRXP_WARN_to learn|r |T135425:0|t[Redirect] << Rogue
+    .train 436949 >>|cRXP_WARN_Use the|r |T133736:0|t|cRXP_LOOT_[Tome of Expanded Intellect]|r |cRXP_WARN_to learn|r |T236513:0|t[Expanded Intellect] << Mage
+    .train 436956 >>|cRXP_WARN_Use the|r |T134914:0|t|cRXP_LOOT_[Leaflet of Deeper Wilds]|r |cRXP_WARN_to learn|r |T132124:0|t[Deeper Wilds] << Druid
+    .train 417123 >>|cRXP_WARN_Use the|r |T134914:0|t|cRXP_LOOT_[Leaflet of Enhanced Restoration]|r |cRXP_WARN_to learn|r |T136073:0|t[Enhanced Restoration] << Druid
+    .train 437138 >>|cRXP_WARN_Use the|r |T134914:0|t|cRXP_LOOT_[Leaflet of Revive]|r |cRXP_WARN_to learn|r |T132132:0|t[437138] << Druid
+    .train 415423 >>|cRXP_WARN_Use the|r |T133739:0|t|cRXP_LOOT_[Treatise on Aspect of the Viper]|r |cRXP_WARN_to learn|r |T132160:0|t[Aspect of the Viper] << Hunter
+    .train 435984 >>|cRXP_WARN_Use the|r |T133745:0|t|cRXP_LOOT_[Testament of Enhanced Blessings]|r |cRXP_WARN_to learn|r |T236248:0|t[Enhanced Blessings] << Paladin
+    .train 415423 >>|cRXP_WARN_Use the|r |T237162:0|t|cRXP_LOOT_[Scroll of Shadowfiend]|r |cRXP_WARN_to learn|r |T136199:0|t[Shadowfiend] << Priest
+    .train 436951 >>|cRXP_WARN_Use the|r |T237162:0|t|cRXP_LOOT_[Scroll of Increased Fortitude]|r |cRXP_WARN_to learn|r |T237543:0|t[Increased Fortitude] << Priest
+    .train 437032 >>|cRXP_WARN_Use the|r |T133733:0|t|cRXP_LOOT_[Grimoire of Soul Harvesting]|r |cRXP_WARN_to learn|r |T132851:0|t[Soul Harvesting] << Warlock
+    .train 437169 >>|cRXP_WARN_Use the|r |T133733:0|t|cRXP_LOOT_[Grimoire of Portal of Summoning]|r |cRXP_WARN_to learn|r |T134423:0|t[Portal of Summoning] << Warlock
+    .train 403215 >>|cRXP_WARN_Use the|r |T133741:0|t|cRXP_LOOT_[Handbook of Commanding Shout]|r |cRXP_WARN_to learn|r |T132351:0|t[Commanding Shout] << Warrior
+    .train 437009 >>|cRXP_WARN_Use the|r |T133747:0|t|cRXP_LOOT_[Revelation of Totemic Projection]|r |cRXP_WARN_to learn|r |T310733:0|t[Totemic Projection] << Shaman
+    .use 216738 << Rogue -- Manual of Redirect
+    .use 216740 << Mage -- Tome of Expanded Intellect
+    .use 216744 << Priest -- Scroll of Increased Fortitude
+    .use 216745 << Priest -- Scroll of Shadowfiend
+    .use 216746 << Warrior -- Handbook of Commanding Shout
+    .use 216747 << Warlock -- Grimoire of Soul Harvesting
+    .use 216748 << Warlock -- Grimoire of Portal of Summoning
+    .use 216764 << Druid -- Leaflet of Deeper Wilds
+    .use 216767 << Druid -- Leaflet of Revive
+    .use 216768 << Paladin -- Testament of Enhanced Blessings
+    .use 216769 << Shaman -- Revelation of Totemic Projection
+    .use 216770 << Hunter -- Treatise on Aspect of the Viper
+    .use 216771 << Druid -- Leaflet of Enhanced Restoration
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Hunter SoD/Druid SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Invigoration - 35 (Azeroth) << Hunter
+#name Survival Instincts - 35 (Azeroth) << Druid
+#title Invigoration << Hunter
+#title Survival Instincts << Druid
+
+-- Invigoration
+
+step
+    .train 416089,1 << Hunter
+    .train 410027,1 << Druid
+    #completewith next
+    .zone Swamp of Sorrows >>Travel to Swamp of Sorrows
+step
+    .train 416089,1 << Hunter
+    .train 410027,1 << Druid
+    .goto Swamp of Sorrows,25.0,54.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r
+    >>|cRXP_WARN_Buy a|r |T133653:0|t[Entomology Starter Kit] |cRXP_WARN_from her|r
+    .collect 213565,1 --Entomology Starter Kit (1x)
+    .target Amaryllis Webb
+step
+    .train 416089,1 << Hunter
+    .train 410027,1 << Druid
+    >>Open the |T133653:0|t[Entomology Starter Kit]
+    .use 213565
+    .collect 213562,1 --Bug Catching Net (1x)
+step
+    .train 416089,1 << Hunter
+    .train 410027,1 << Druid
+    #completewith next
+    .zone Stranglethorn Vale >>Travel to Stranglethorn Vale
+step
+    .train 416089,1 << Hunter
+    .train 410027,1 << Druid
+    >>Use the |T134325:0|t[Bug Catching Net] on the |cRXP_ENEMY_Arbor Tarantula|r on the tree stump
+    .goto Stranglethorn Vale,44.6,19.8
+    .use 213562
+    .collect 213566,1 --Arbor Tarantula Specimen (1x)
+    .mob Arbor Tarantula
+step
+    .train 416089,1 << Hunter
+    .train 410027,1 << Druid
+    #completewith next
+    .zone Arathi Highlands >>Travel to Arathi Highlands
+step
+    .train 416089,1 << Hunter
+    .train 410027,1 << Druid
+    >>Use the |T134325:0|t[Bug Catching Net] on a |cRXP_ENEMY_Hay Weevil|r
+    .goto Arathi Highlands,30.7,28.7
+    .use 213562
+    .collect 213568,1 --Hay Weevil Specimen (1x)
+    .mob Hay Weevil
+step
+    .train 416089,1 << Hunter
+    .train 410027,1 << Druid
+    #completewith next
+    .zone Desolace >>Travel to Desolace
+step
+    .train 416089,1 << Hunter
+    .train 410027,1 << Druid
+    >>Use the |T134325:0|t[Bug Catching Net] on a |cRXP_ENEMY_Flesh Picker|r
+    .goto Desolace,51.2,59.9
+    .use 213562
+    .collect 213567,1 --Flesh Picker Specimen (1x)
+    .mob Flesh Picker
+step
+    .train 416089,1 << Hunter
+    .train 410027,1 << Druid
+    #completewith next
+    .zone Swamp of Sorrows >>Travel to Swamp of Sorrows
+step
+    .train 416089,1 << Hunter
+    .train 410027,1 << Druid
+    .goto Swamp of Sorrows,25.0,54.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r 
+    >>Acquire the |T134419:0|t[Rune of Invigoration] from her << Hunter
+    >>Acquire the |T134419:0|t[Rune of Survival] from her << Druid
+    .collect 213125,1 << Hunter --Rune of Invigoration (1x)
+    .collect 210817,1 << Druid --Rune of Survival (1x)
+    .skipgossip 217412,1
+    .target Amaryllis Webb
+step
+    .train 416089 >> Use the |T134419:0|t[Rune of Invigoration] to learn |T236184:0|t[Invigoration] << Hunter
+    .train 410027 >> Use the |T134419:0|t[Rune of Survival] to learn |T132266:0|t[Survival Instincts] << Druid
+    .itemcount 210817,1 << Druid
+    .itemcount 213125,1 << Hunter
 ]])

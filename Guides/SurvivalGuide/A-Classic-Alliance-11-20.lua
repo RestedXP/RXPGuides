@@ -1270,10 +1270,10 @@ step
     #label CliffCave
     #completewith next
     .goto Darkshore,54.99,32.04,30,0
-    .goto Winterspring,5.49,36.64,35 >> Travel to the Cliffspring River Cave
+    .goto Darkshore,54.99,33.41,15 >> Travel to the Cliffspring River Cave
 step << Druid
     >>|cRXP_WARN_Use the|r |T134776:0|t[Empty Cliffspring Falls Sampler] |cRXP_WARN_in the water at the entrance of the Cliffspring River Cave|r
-    .goto Darkshore,54.80,33.16
+    .goto Darkshore,54.99,33.41
     .complete 6122,1 --Filled Cliffspring Falls Sampler (1)
 step
 .group

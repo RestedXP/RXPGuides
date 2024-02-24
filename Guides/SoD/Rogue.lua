@@ -1,51 +1,60 @@
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadowstrike - 3 (Elwynn Forest)
+#title Shadowstrike
 
 step << Rogue
-    #season 2
     .goto Elwynn Forest,52.544,51.922
-    >>Open the |cRXP_PICK_Defias Stashbox|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    >>Open the |cRXP_PICK_Defias Stashbox|r on the ground. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r
     .collect 204795,1 -- Rune of Shadowstrike (1)
     .train 400105,1
 step << Rogue
-    #season 2
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    .train 400105 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Shadowstrike]
     .use 204795
-    .itemcount 204795,1
-    .train 400105,1
+    .itemcount 204795,1 --Rune of Shadowstrike (1)
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadowstrike - 3 (Dun Morogh)
+#title Shadowstrike
 
-step << Rogue
-    #season 2
+step
+    #optional
+    #label FrostMCave1
+    #completewith Rune
+    .goto 1426,27.098,80.707,20 >> Enter the Frostmane Cave
+step
+    #optional
+    #requires FrostMCave1
+    #completewith Rune
+    .goto 1426,28.298,79.836,15,0
+    .goto 1426,29.252,79.043,15,0
+    .goto 1426,30.489,80.165,50 >> Travel towards the |cRXP_PICK_Frostmane Loot Cache|r inside
+step
     .goto Dun Morogh,30.773,80.063
-    >>Open the |cRXP_PICK_Frostmane Loot Cache|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
-    .collect 204795,1
+    >>Open the |cRXP_PICK_Frostmane Loot Cache|r on the ground inside. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r
+    .collect 204795,1 --Rune of Shadowstrike (1)
     .train 400105,1
-step << Rogue
-    #season 2
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+step
+    .train 400105 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Shadowstrike]
     .use 204795
-    .itemcount 204795,1
-    .train 400105,1
+    .itemcount 204795,1 --Rune of Shadowstrike (1)
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadowstrike - 3 (Shadowglen)
+#title Shadowstrike
 
 step << Rogue
     #season 2
@@ -55,24 +64,24 @@ step << Rogue
     .goto Teldrassil,59.674,42.613
     >>|cRXP_WARN_Make your way up the ramp on the Aldrassil tree, and jump onto the rooftop|r
     >>|cRXP_WARN_The |cRXP_PICK_Idol|r is found on top of the roof|r
-    >>Open the |cRXP_PICK_Idol|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    >>Open the |cRXP_PICK_Idol|r. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r
     >>|cRXP_WARN_If you are having difficulty jumping onto the roof, attempt to jump over the railing while running down the ramp you are on|r
     .collect 204795,1 -- Rune of Shadowstrike (1)
     .train 400105,1
 step << Rogue
     #season 2
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    .train 400105 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Shadowstrike]
     .use 204795
-    .itemcount 204795,1
-    .train 400105,1
+    .itemcount 204795,1 --Rune of Shadowstrike (1)
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Quick Draw - 8 (Elwynn Forest)
+#title Quick Draw
 
 step << Rogue
     #season 2
@@ -158,9 +167,10 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Quick Draw - 8 (Dun Morogh)
+#title Quick Draw
 
 step << Rogue
     #season 2
@@ -233,9 +243,10 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Quick Draw - 8 (Teldrassil)
+#title Quick Draw
 
 step << Rogue
     #season 2
@@ -331,9 +342,10 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Slaughter from the Shadows - 1 (Elwynn Forest)
+#title Slaughter from the Shadows
 
 step << Rogue
     #season 2
@@ -353,9 +365,10 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Slaughter from the Shadows - 1 (Dun Morogh)
+#title Slaughter from the Shadows
 
 step << Rogue
     #season 2
@@ -376,9 +389,10 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Between the Eyes - 8 (Stormwind)
+#title Between the Eyes
 
 step << Rogue
     #season 2
@@ -406,9 +420,10 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Between the Eyes - 8 (Ironforge)
+#title Between the Eyes
 
 step << Rogue
     #season 2
@@ -428,9 +443,10 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Between the Eyes - 8 (Teldrassil)
+#title Between the Eyes
 
 step << Rogue
     #season 2
@@ -457,9 +473,10 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Blade Dance - 10 (Westfall)
+#title Blade Dance
 
 step << Rogue
     #season 2
@@ -498,9 +515,10 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
-#name Blade Dance - 8 (Dun Morogh)
+#name Blade Dance - 16 (Dun Morogh)
+#title Blade Dance
 
 step << Rogue
     #season 2
@@ -527,9 +545,10 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Blade Dance - 16 (Darkshore)
+#title Blade Dance
 
 step << Rogue
     #season 2
@@ -560,9 +579,10 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Mutilate - 5 (Elwynn Forest)
+#title Mutilate
 
 step << Rogue
     #season 2
@@ -592,9 +612,10 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Mutilate - 8 (Dun Morogh)
+#title Mutilate
 
 step << Rogue
     #season 2
@@ -620,9 +641,10 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Saber Slash - 12 (Westfall)
+#title Saber Slash
 
 step << Rogue
     #season 2
@@ -645,9 +667,10 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Saber Slash - 12 (Loch Modan)
+#title Saber Slash
 
 step << Rogue
     #season 2
@@ -677,9 +700,10 @@ step << Rogue
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Saber Slash - 1 (Darkshore)
+#title Saber Slash
 
 step << Rogue
     #season 2
@@ -699,51 +723,52 @@ step << Rogue
     .train 424785,1
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadowstrike - 2 (Durotar)
+#title Shadowstrike
 
 
     --Rune of Shadowstrike
 
-step << !Undead
+step << Troll/Orc
     #season 2
     .goto Durotar,41.27,68.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
-    .accept 77592 >>Accept Atop the Cliffs << Troll Rogue
-    .accept 77583 >>Accept Atop the Cliffs << Orc Rogue
+    .accept 77592 >>Accept Atop the Cliffs << Troll
+    .accept 77583 >>Accept Atop the Cliffs << Orc
     .target Rwag
 step
     #season 2
     .goto Durotar,43.27,69.51
-    >>Loot the |cRXP_PICK_Hidden Cache|r for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    >>Open the |cRXP_PICK_Hidden Cache|r. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r
     >>|cRXP_WARN_Walk around past|r |cRXP_ENEMY_Sarkoth|r |cRXP_WARN_and jump down to reach the chest|r
     .collect 204795,1 --Rune of Shadowstrike (1)
     .train 400105,1
 step
     #season 2
-    .train 400105 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    .train 400105 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Shadowstrike]
     .use 204795
-    .itemcount 204795,1
-step << !Undead
+    .itemcount 204795,1 --Rune of Shadowstrike (1)
+step << Troll/Orc
     #season 2
     .goto Durotar,41.27,68.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
-    .turnin 77592 >>Turn in Atop the Cliffs << Troll Rogue
-    .turnin 77583 >>Turn in Atop the Cliffs << Orc Rogue
+    .turnin 77592 >>Turn in Atop the Cliffs << Troll
+    .turnin 77583 >>Turn in Atop the Cliffs << Orc
     .target Rwag
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shadowstrike - 2 (Tirisfal)
+#title Shadowstrike
 
 
     --Rune of Shadowstrike
@@ -757,29 +782,30 @@ step << Undead
 step
     #season 2
     .loop 25,Tirisfal Glades,36.13,68.74,36.46,69.49,36.85,70.02,37.42,69.58,38.05,69.79,37.91,69.22,38.03,68.77,38.49,68.28,38.72,67.07,38.59,66.25,38.65,65.07,37.62,65.36,36.93,65.38,36.51,65.42,36.85,66.59,37.45,67.95,36.93,68.16,36.13,68.74
-    >>Kill or pickpocket |cRXP_ENEMY_Scarlet Converts|r. Loot them for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    >>Kill or pickpocket |cRXP_ENEMY_Scarlet Converts|r. Loot them for the |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r
     .collect 204795,1 --Rune of Shadowstrike (1)
     .mob Scarlet Convert
     .train 400105,1
 step
     #season 2
-    .train 400105 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r]
+    .train 400105 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Shadowstrike]
     .use 204795
-    .itemcount 204795,1
+    .itemcount 204795,1 --Rune of Shadowstrike (1)
 step << Undead
     #season 2
     .goto Tirisfal Glades,32.53,65.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_David|r
     .turnin 77669 >>Turn in The Scarlet Rune
     .target David Trias
-    ]])
+]])
 
-    RXPGuides.RegisterGuide([[
+RXPGuides.RegisterGuide([[
 #classic
 << Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Deadly Brew - 25 (Silverpine Forest)
+#title Deadly Brew
 
 
     --Rune of Deadly Brew
@@ -796,7 +822,7 @@ step
     >>|cRXP_WARN_You have to do the next part solo! Grouping up will prevent you from obtaining the keys you need|r
 step << Horde
     #season 2
-    .gossipoption 88819,1 >>Stealth past |cRXP_ENEMY_Rethilgore|r, talk to |cRXP_FRIENDLY_Deathstalker Adamant|r and |T132331:0|t[Vanish] aftwards. He will open the door for you
+    .gossipoption 96495,1 >>Stealth past |cRXP_ENEMY_Rethilgore|r, talk to |cRXP_FRIENDLY_Deathstalker Adamant|r and |T132331:0|t[Vanish] aftwards. He will open the door for you
     .target Deathstalker Adamant
     .train 400080,1
 step << Alliance
@@ -898,14 +924,15 @@ step
     .train 400080 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Deadly Brew|r]
     .use 204795
     .itemcount 204795,1
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Quick Draw - 10 (Durotar)
+#title Quick Draw
 
 
     --Rune of Quick Draw
@@ -988,14 +1015,15 @@ step
     .use 203991
     .itemcount 203991,1
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Quick Draw - 10 (Tirisfal)
+#title Quick Draw
 
 
     --Rune of Quick Draw
@@ -1083,14 +1111,15 @@ step
     .use 203991
     .itemcount 203991,1
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Slaughter from the Shadows - 10 (Durotar)
+#title Slaughter from the Shadows
 
 
     --Rune of Slaughter from the Shadows
@@ -1112,14 +1141,15 @@ step
     .use 203993
     .itemcount 203993,1
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Slaughter from the Shadows - 10 (Tirisfal)
+#title Slaughter from the Shadows
 
 
     --Rune of Slaughter from the Shadows
@@ -1151,14 +1181,15 @@ step
     .use 203993
     .itemcount 203993,1
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Mutilate - 8 (Tirisfal)
+#title Mutilate
 
 
     --Rune of Mutilate
@@ -1184,25 +1215,26 @@ step
     #season 2
     .goto Tirisfal Glades,60.73,50.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jamie Nore|r to receive |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r]
-    .collect 210229,1 --Rune of Mutilation (1)
+    .collect 203990,1 --Rune of Mutilation (1)
     .target Jamie Nore
     .skipgossip
     .train 400094,1
 step
     #season 2
     .train 400094 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r] |cRXP_WARN_to train|r |T132304:0|t[Mutilate]
-    .use 210229
-    .itemcount 210229,1
+    .use 203990
+    .itemcount 203990,1
 
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Mutilate - 10 (Durotar)
+#title Mutilate
 
 
     --Rune of Mutilate
@@ -1228,24 +1260,25 @@ step
     .goto Tirisfal Glades,60.73,50.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ba'so|r to receive |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r]
     >>|cRXP_WARN_He is stealthed!|r
-    .collect 210229,1 --Rune of Mutilation (1)
+    .collect 203990,1 --Rune of Mutilation (1)
     .target Ba'so
     .skipgossip
     .train 400094,1
 step
     #season 2
     .train 400094 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r] |cRXP_WARN_to train|r |T132304:0|t[Mutilate]
-    .use 210229
-    .itemcount 210229,1
+    .use 203990
+    .itemcount 203990,1
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Between the Eyes - 8 (Tirisfal)
+#title Between the Eyes
 
 
     --Rune of Between the Eyes
@@ -1280,14 +1313,15 @@ step
     .itemcount 204174,1
 
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Between the Eyes - 8 (Orgrimmar)
+#title Between the Eyes
 
 
     --Rune of Between the Eyes
@@ -1306,14 +1340,15 @@ step
     .itemcount 204174,1
 
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Blade Dance - 15 (The Barrens)
+#title Blade Dance
 
 
     --Rune of Blade Dance
@@ -1339,14 +1374,15 @@ step
     .use 208771
     .itemcount 208771,1
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Saber Slash - 15 (The Barrens)
+#title Saber Slash
 
 
     --Rune of Saber Slash
@@ -1369,15 +1405,15 @@ step
     .use 208772
     .itemcount 208772,1
 
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Horde Rogue SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Saber Slash - 15 (Silverpine)
-
+#title Saber Slash
 
     --Rune of Saber Slash
 
@@ -1394,5 +1430,331 @@ step
     .train 424984 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Saber Slash|r] |cRXP_WARN_to train|r |T132375:0|t[Saber Slash]
     .use 208772
     .itemcount 208772,1
-    ]])
+]])
 
+RXPGuides.RegisterGuide([[
+#classic
+<< Rogue SoD
+#group RestedXP Rune & Books Guide
+#subgroup Belt
+#title Shadowstep
+#name Shadowstep - 30 (Silverpine Forest)
+
+step
+    #completewith next
+    .zone Silverpine Forest >>Travel to Silverpine Forest
+step
+    .train 400101,1
+    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with the |cRXP_PICK_Dead Drop|r chest on the ground
+    .goto Silverpine Forest,47.114,70.974
+    .accept 78699 >>Accept The Eye of Bhossca
+step
+    #completewith next
+    .zone Tirisfal Glades >>Travel to Tirisfal Glades to the Scarlet Monastery
+step
+    >>Open the |cRXP_PICK_Supply Locker|r |cRXP_WARN_inside the stable|r to get the |T132665:0|t[Scarlet Initiate's Uniform]
+    .goto Tirisfal Glades,81.2,32.12
+    .collect 210955,1
+    .train 400101,1
+step
+    #completewith next
+    .goto Eastern Kingdoms,47.44,19.69,10,0
+    .goto Eastern Kingdoms,47.73,19.39,5 >> Enter the Scarlet Monastery: |cRXP_WARN_Graveyard|r dungeon |cRXP_WARN_ALONE|r
+step
+    >>Use |T133644:0|t[Pick Pocket] on a |cRXP_ENEMY_Scarlet Scryer|r to get |T134241:0|t[Scryer's Key]
+    *|cRXP_WARN_Make use of|r |T132289:0|t[Distract] to avoid being detected
+    .goto Eastern Kingdoms,47.73,19.39
+    .collect 210963,1
+    .mob Scarlet Scryer
+    .train 400101,1
+step
+    #completewith next
+    .goto Eastern Kingdoms,47.79,19.59,5 >> Enter the Scarlet Monastery: |cRXP_WARN_Library|r dungeon |cRXP_WARN_ALONE|r
+step
+    >>|cRXP_WARN_Run to the hallway before the last boss|r, and loot the |cRXP_PICK_Personal Letterbox|r on the left for the |T134331:0|t[Confidential Message]
+    .cast 427592 >>Use the |T132665:0|t[Scarlet Initiate's Uniform] to make the NPCs neutral
+    .goto Eastern Kingdoms,47.79,19.59
+    .collect 210967,1
+    .train 400101,1
+step
+    #completewith next
+    .goto Eastern Kingdoms,47.73,19.39,5 >> Enter the Scarlet Monastery: |cRXP_WARN_Graveyard|r dungeon |cRXP_WARN_ALONE|r
+step
+    >>|cRXP_WARN_Go to the outside area inside the dungeon and look for a bench between two statues on the right and left walls|r
+    *|cRXP_WARN_On both sides|r use /sit (doable while in stealth) on the benches until the emote |cRXP_WARN_"You hear the sound of stone moving"|r appears in chat.
+    *Afterwards go to the Tomb next to |cRXP_WARN_the right wall|r and open the |cRXP_PICK_Stone Coffer|r for the |T134242:0|t[Reliquary Key]
+    .goto Eastern Kingdoms,47.79,19.59
+    .collect 210968,1
+    .train 400101,1
+step
+    #completewith next
+    .goto Eastern Kingdoms,47.79,19.59,5 >> Enter the Scarlet Monastery: |cRXP_WARN_Library|r dungeon |cRXP_WARN_ALONE|r
+step
+    >>|cRXP_WARN_Run to the "Gallery of Treasures"|r, and loot the |cRXP_PICK_Padlocked Reliquary|r in the first room on the left for the |T134331:0|t[Eye of Bhossca]
+    .cast 427592 >>Use the |T132665:0|t[Scarlet Initiate's Uniform] to make the NPCs neutral
+    .goto Eastern Kingdoms,47.79,19.59
+    .complete 78699,1 --1/1 Eye of Bhossca
+    .train 400101,1
+step
+    #completewith next
+    .zone Silverpine Forest >>Travel to Silverpine Forest
+step
+    .train 400101,1
+    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with the |cRXP_PICK_Dead Drop|r chest on the ground
+    .goto Silverpine Forest,47.1,71.1
+    .turnin 78699 >>Turn in The Eye of Bhossca
+step
+    #completewith next
+    +|cRXP_WARN_You now need to enter a capital city to receive mail from *C*|r
+    .train 400101,1
+step << Horde
+    .goto Silverpine Forest,45.62,42.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karos|r
+    .fly Undercity >> Fly to the Undercity
+    .target Karos Razok
+    .zoneskip Undercity
+    .train 400101,1
+step << Alliance
+    >>Run to Southshore
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darla Harris|r
+    .goto Hillsbrad Foothills,49.338,52.272
+    .fly Ironforge >> Fly to Ironforge
+    .target Darla Harris
+    .train 400101,1
+step
+    .goto Undercity,68.290,38.043,5 >> |cRXP_WARN_Enter Undercity. Check your mailbox for the letter from *C* and take it with you|r << Horde
+    .goto Ironforge,71.485,72.280,5 >> |cRXP_WARN_Enter Ironforge. Check your mailbox for the letter from *C* and take it with you. Skip this step if you're doing it in another major city|r << Alliance
+    .train 400101,1
+step
+    #completewith next
+    +|cRXP_WARN_Open your mailbox to read the mail from *C* once it has arrived. Fly back to Silverpine when you're ready|r << Horde
+    +|cRXP_WARN_Open your mailbox to read the mail from *C* once it has arrived. Fly back to Southshore then make your way to Silverpine when you're ready|r << Alliance
+step << Horde
+    .goto Undercity,63.27,48.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Michael|r
+    .fly The Sepulcher>> Fly to The Sepulcher
+    .target Michael Garrett
+    .zoneskip Silverpine Forest
+    .train 400101,1
+step << Alliance
+    .goto Ironforge,55.501,47.742
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
+    .fly Southshore >> Fly to Southshore
+    .target Gryth Thurden
+    .zoneskip Silverpine Forest
+    .train 400101,1
+step << Alliance
+    #completewith next
+    .zone Silverpine Forest >> Travel to Silverpine Forest
+    .train 400101,1
+step
+    .goto Silverpine Forest,47.114,70.974
+    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with the |cRXP_PICK_Dead Drop|r in for |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadwostep|r]
+    .collect 210979,1 --Rune of Shadowstep (1)
+    .train 400101,1
+step
+    .train 400101 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadwostep|r] to learn |T132303:0|t[Shadowstep]
+    .use 210979
+    .itemcount 210979,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Rogue SoD
+#group RestedXP Rune & Books Guide
+#subgroup Belt
+#name Shuriken Toss - 30 (Swamp of Sorrows)
+#title Shuriken Toss
+
+step
+    .train 400096,1
+    .train 1842 >>You have to learn |T136162:0|t[Disarm Trap] before you can obtain |T134419:0|t[|cRXP_FRIENDLY_Rune of the Assassin|r]
+    .collect 5060,1 >>You also need |T135259:0|t[Thieves' Tools]
+step
+    #completewith next
+    .zone Swamp of Sorrows >>Travel to Swamp of Sorrows
+step
+    .train 400096,1
+    >>Use |T136162:0|t[Disarm Trap] on the |cRXP_PICK_Dart Trap|r on the tree. |cRXP_WARN_Loot the chest to obtain the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Assassin|r]|r
+    .goto Swamp of Sorrows,41.9,30.2
+    .collect 213139,1
+step
+    .itemcount 213139,1
+    .use 213139
+    .train 400096 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Assassin|r] to learn |T132330:0|t[Shuriken Toss]
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Rogue SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Master of Subtlety - 34 (Stranglethorn Vale)
+#title Master of Subtlety
+
+step
+    .train 425103,1
+    .skill lockpicking,125 >>|cRXP_WARN_You must level your|r |T136058:0|t[Lockpicking] |cRXP_WARN_to at least 125 to obtain the|r |T132299:0|t[Master of Subtlety] |cRXP_WARN_rune|r
+step
+    .train 425103,1
+    #completewith next
+    .zone Stranglethorn Vale >>Travel to Stranglethorn Vale
+step
+    .train 425103,1
+    #completewith Uniform
+    .goto Stranglethorn Vale,46.30,7.61,30 >> Enter The Stockpile (Kurzen's Cave)
+step
+    .train 425103,1
+    #completewith next
+    >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Kurzen Elites|r and |cRXP_ENEMY_Kurzen Subchiefs|r for the |cRXP_LOOT_Compound Cage Key|r
+    .collect 216616,1
+    .mob Kurzen Elite
+    .mob Kurzen Subchief
+step
+    #label Uniform
+    .train 425103,1
+    .goto Stranglethorn Vale,49.616,7.743
+    >>Open the |cRXP_PICK_Kurzen Supply Crate|r. Loot it for the |cRXP_LOOT_Kurzen Fighter's Uniform|r
+    .collect 216617,1
+step
+    .train 425103,1
+    .goto Stranglethorn Vale,49.943,3.953,40,0
+    .goto Stranglethorn Vale,49.617,7.562,40,0
+    .goto Stranglethorn Vale,49.25,6.18
+    >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Kurzen Elites|r and |cRXP_ENEMY_Kurzen Subchiefs|r for the |cRXP_LOOT_Compound Cage Key|r
+    .collect 216616,1
+    .mob Kurzen Elite
+    .mob Kurzen Subchief
+step
+    .train 425103,1
+    #completewith next
+    .goto Stranglethorn Vale,44.261,7.908,60 >> Exit the cave. Travel toward |cRXP_FRIENDLY_Wendel Mathers|r in the tower outside
+step
+    .train 425103,1
+    .goto Stranglethorn Vale,44.261,7.908
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wendel Mathers|r in the tower
+    >>|cRXP_WARN_He has a respawn timer of around 3 minutes|r
+    .destroy 216616 >> Hand the |cRXP_LOOT_Compound Cage Key|r to him
+    .destroy 216617 >> Hand the |cRXP_LOOT_Kurzen Fighter's Uniform|r to him
+    .skipgossip 218230,1
+    .target Wendel Mathers
+step
+    .train 425103,1
+    #completewith next
+    .subzone 35 >>Travel to Booty Bay
+step
+    .train 425103,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Aransas|r
+    >>She will give you |T133640:0|t[|cRXP_LOOT_Captain Aransas' Reward|r]
+    .goto Stranglethorn Vale,27.681,76.648
+    .skipgossip
+    .collect 216618,1
+    .target Captain Aransas
+step
+    .train 425103,1
+    .use 216618 >>Open |T133640:0|t[|cRXP_LOOT_Captain Aransas' Reward|r] to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Sublety|r] and |T338666:0|t[|cRXP_FRIENDLY_Jani's Charm|r]
+    >>|cRXP_WARN_Do NOT destroy|r |T338666:0|t[|cRXP_FRIENDLY_Jani's Charm|r] |cRXP_WARN_as it is used for gather future runes|r
+    .collect 213136,1
+step
+    .itemcount 213136,1
+    .use 213136
+    .train 425103 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Sublety|r] |cRXP_WARN_to train|r |T132299:0|t[Master of Subtlety]
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Rogue SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#title Rolling with the Punches
+#name Rolling with the Punches - 27 (Thousand Needles)
+
+
+step
+    #optional
+    .train 400093,1
+    .skill lockpicking,45 >>|cRXP_WARN_You must level your|r |T136058:0|t[Lockpicking] |cRXP_WARN_to at least 45 to obtain the|r |T134919:0|t[Rolling with the Punches] |cRXP_WARN_rune|r
+step
+    .train 400093,1
+    #completewith next
+    .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
+step
+    .train 400093,1
+    #completewith next
+    .goto Thousand Needles,18.44,21.58,10 >> Enter the large tent at Camp E'thok
+step
+    .train 400093,1
+    .goto Thousand Needles,18.686,21.126
+    >>Open the |cRXP_PICK_Sizable Stolen Strongbox|r. Loot it for the |T132597:0|t[|cRXP_LOOT_Large Strongbox|r]
+    .collect 215451,1
+step
+    .train 400093,1
+    .cast 1804 >>|cRXP_WARN_Cast|r |T136058:0|t[Pick Lock] |cRXP_WARN_on the|r |T132597:0|t[|cRXP_LOOT_Large Strongbox|r] |cRXP_WARN_to unlock it|r
+    .usespell 1804
+    .use 215451
+step
+    .train 400093,1
+    .use 215451 >> Open the |T132597:0|t[|cRXP_LOOT_Large Strongbox|r]. Loot it for the |T132597:0|t[|cRXP_LOOT_Medium Strongbox|r]
+    .collect 215452,1
+step
+    .train 400093,1
+    .cast 1804 >>|cRXP_WARN_Cast|r |T136058:0|t[Pick Lock] |cRXP_WARN_on the|r |T132597:0|t[|cRXP_LOOT_Medium Strongbox|r] |cRXP_WARN_to unlock it|r
+    .usespell 1804
+    .use 215452
+step
+    .train 400093,1
+    .use 215452 >> Open the |T132597:0|t[|cRXP_LOOT_Medium Strongbox|r]. Loot it for the |T132597:0|t[|cRXP_LOOT_Small Strongbox|r]
+    .collect 215453,1
+step
+    .train 400093,1
+    .cast 1804 >>|cRXP_WARN_Cast|r |T136058:0|t[Pick Lock] |cRXP_WARN_on the|r |T132597:0|t[|cRXP_LOOT_Small Strongbox|r] |cRXP_WARN_to unlock it|r
+    .usespell 1804
+    .use 215453
+step
+    .train 400093,1
+    .use 215453 >> Open the |T132597:0|t[|cRXP_LOOT_Small Strongbox|r]. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Southpaw|r]
+    .collect 213138,1
+step
+    .itemcount 213138,1
+    .use 213138
+    .train 400093 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Southpaw|r] |cRXP_WARN_to train|r |T134919:0|t[Rolling with the Punches]
+]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Rogue SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helmet
+-- #name Combat Potency
+-- for phase 3
+
+-- Combat Potency
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Rogue SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helm
+-- #name Focused Attacks
+-- for phase 3
+
+-- Focused Attacks
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Rogue SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helm
+-- #name Honor Among Thieves
+-- for phase 3
+
+-- Honor Among Thieves
+
+
+-- ]])

@@ -1,9 +1,10 @@
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Crusader Strike - 4 (Elwynn Forest)
+#title Crusader Strike
 #next Inspiration Exemplar - 6 (Elwynn Forest)
 
 --VV Not sure if you want to gate CS in Elwynn for humans only/DunM for dwarves only
@@ -73,7 +74,7 @@ step
 step
     .cast 409920 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Crusader Strike]
     .use 205420
-    .aura 408828
+    .aura -408828
     .train 410002,1
     .xp <4,1
 ]])
@@ -81,9 +82,10 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Crusader Strike - 4 (Dun Morogh)
+#title Crusader Strike
 #next Inspiration Exemplar - 6 (Dun Morogh)
 
 step
@@ -148,7 +150,7 @@ step
 step
     .cast 409920 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Crusader Strike]
     .use 205420
-    .aura 408828
+    .aura -408828
     .train 410002,1
     .xp <4,1
 ]])
@@ -156,9 +158,10 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Hand of Reckoning - 14 (Loch Modan)
+#title Hand of Reckoning
 #next Inspiration Exemplar - 6 (Elwynn Forest)
 
 
@@ -316,7 +319,7 @@ step
     .xp <22,1
 step
     .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Justice]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Hand of Reckoning]
-    .aura 408828
+    .aura -408828
     .use 208851
     .train 410001,1
     .xp <8,1
@@ -325,9 +328,10 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Hand of Reckoning - 20 (Westfall)
+#title Hand of Reckoning
 #next Exorcist - 24 (Duskwood)
 
 
@@ -443,20 +447,19 @@ step
     .xp <22,1
 step
     .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Justice]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Hand of Reckoning]
-    .aura 408828
+    .aura -408828
     .use 208851
     .train 410001,1
     .xp <8,1
 ]])
 
-
-
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Horn of Lordaeron - 4 (Loch Modan)
+#title Horn of Lordaeron
 #next Hand of Reckoning - 14 (Loch Modan)
 
 step
@@ -530,7 +533,7 @@ step
     .xp <4,1
 step
     .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t[Libram of Blessings] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Horn of Lordaeron]
-    .aura 408828
+    .aura -408828
     .use 208849
     .train 425618,1
     .xp <4,1
@@ -539,9 +542,10 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Horn of Lordaeron - 12 (Westfall)
+#title Horn of Lordaeron
 #next Hand of Reckoning - 20 (Westfall)
 
 
@@ -637,7 +641,7 @@ step
 step
     .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Blessings]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Horn of Lordaeron]
     .use 208849
-    .aura 408828
+    .aura -408828
     .train 425618,1
     .xp <4,1
 ]])
@@ -645,9 +649,10 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Aegis - 8 (Elwynn Forest)
+#title Aegis
 #next Rebuke - 10 (Stormwind)
 
 step
@@ -722,9 +727,10 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Aegis - 8 (Dun Morogh)
+#title Aegis
 #next Rebuke - 10 (Ironforge)
 
 step
@@ -783,9 +789,10 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Seal of Martyrdom - 10 (Stormwind)
+#title Seal of Martyrdom
 #next Horn of Lordaeron - 12 (Westfall)
 
 step
@@ -865,18 +872,18 @@ step
     #sticky
     .destroy 205864 >> Delete the |T134939:0|t[Charred Note] from your bags, as it's no longer needed
 step
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Martyrdom] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Seal of Martyrdom]
+    .train 410015 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Martyrdom] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Seal of Martyrdom]
     .use 205897
     .itemcount 205897,1 --Rune of Martyrdom (1)
-    .train 410015,1
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Divine Storm - 25 (Darkshore)
+#title Divine Storm
 #next Divine Sacrifice - 25 (Ratchet)
 
 step
@@ -1091,6 +1098,7 @@ step
     .goto Ashenvale,26.19,38.69
     >>Talk to |cRXP_FRIENDLY_Delgren the Purifier|r
     .turnin 78093 >> Turn in Return to Delgren
+    .train 410014 >> This will teach you |T133815:0|t[Engrave Chest - Divine Storm]
     .target Delgren the Purifier
     .train 410014,1
 ]])
@@ -1098,9 +1106,10 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Inspiration Exemplar - 6 (Elwynn Forest)
+#title Inspiration Exemplar
 #next Aegis - 8 (Elwynn Forest)
 
 step
@@ -1139,9 +1148,10 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Inspiration Exemplar - 6 (Dun Morogh)
+#title Inspiration Exemplar
 #next Aegis - 8 (Dun Morogh)
 
 step
@@ -1191,9 +1201,10 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Rebuke - 10 (Ironforge)
+#title Rebuke
 #next Seal of Martyrdom - 10 (Stormwind)
 
 step
@@ -1228,7 +1239,7 @@ step
     >>|cRXP_WARN_Be careful as he casts|r |T132939:0|t[Backhand] |cRXP_WARN_(stuns you for 2 seconds)|r
     >>|cRXP_WARN_Remember to pre-cast|r |T135924:0|t[Seal of the Crusader] |cRXP_WARN_on him|r
     >>|cRXP_WARN_DO NOT accidentally cast|r |T135906:0|t[Blessing of Might] |cRXP_WARN_on him|r
-    >>|cRXP_WARN_Kite him upstairs to the balcony, then drop down outside the inn cast|r |T135920:0|t[Holy Light] |cRXP_WARN_if needed|r
+    >>|cRXP_WARN_Kite him upstairs to the balcony, then drop down outside the inn and cast|r |T135920:0|t[Holy Light] |cRXP_WARN_if needed|r
     .mob Bruart
     .skipgossip 209004,1
     .train 425621,1
@@ -1241,7 +1252,7 @@ step
     >>|cRXP_WARN_Be careful as he casts|r |T132939:0|t[Backhand] |cRXP_WARN_(stuns you for 2 seconds)|r
     >>|cRXP_WARN_Remember to pre-cast|r |T135924:0|t[Seal of the Crusader] |cRXP_WARN_on him|r
     >>|cRXP_WARN_DO NOT accidentally cast|r |T135906:0|t[Blessing of Might] |cRXP_WARN_on him|r
-    >>|cRXP_WARN_Kite him upstairs to the balcony, then drop down outside the inn cast|r |T135920:0|t[Holy Light] |cRXP_WARN_if needed|r
+    >>|cRXP_WARN_Kite him upstairs to the balcony, then drop down outside the inn and cast|r |T135920:0|t[Holy Light] |cRXP_WARN_if needed|r
     >>|cRXP_WARN_After defeating |cRXP_ENEMY_Bruart|r:|r
     >>Talk to |cRXP_FRIENDLY_Bruuk Barleybeard|r again to receive the |T134419:0|t[Rune of Rebuke]
     >>|cRXP_WARN_If he doesn't give you the|r |T134419:0|t[Rune of Rebuke]|cRXP_WARN_, you may need to fight |cRXP_ENEMY_Bruart|r again|r
@@ -1261,9 +1272,10 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Rebuke - 10 (Stormwind)
+#title Rebuke
 #next Seal of Martyrdom - 10 (Stormwind)
 
 step
@@ -1333,9 +1345,10 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Exorcist - 24 (Duskwood)
+#title Exorcist
 #next Beacon of Light - 25 (Reputation)
 
 step
@@ -1400,7 +1413,7 @@ step
 step
     .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Banishment]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants - Exorcist]
     .use 211472
-    .aura 408828
+    .aura -408828
     .train 416037,1
     .xp <24,1
 ]])
@@ -1408,7 +1421,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance Paladin SoD
-#group RestedXP Rune Guide
+#group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Avenger's Shield - 25 (Redridge Mountains)
 #next Inspiration Exemplar - 6 (Elwynn Forest)
@@ -1447,3 +1460,383 @@ step
     .train 410008,1
 --VV Overall paladin routing can be improved if Divine Sac turnin has items bought before Divine Storm -> Turned in after Divine Storm (run down after accepting Return to Delgren -> Turn in -> Fly to Astranaar -> DS Turnin)
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Paladin SoD
+#group RestedXP Rune & Books Guide
+#subgroup Belt
+#title Enlightened Judgements
+#name Enlightened Judgements - 30 (Arathi Highlands)
+
+step
+    #completewith next
+    .zone Arathi Highlands >>Travel to the Arathi Highlands
+step
+    #completewith Rosary
+    #label BeadBoM1
+    >>Kill |cRXP_ENEMY_Syndicate Members|r in the area. Loot them for the |T135261:0|t[Tarnished Prayer Bead I]
+    .goto Arathi Highlands,31.6,28.6
+    .goto Arathi Highlands,68.8,71.8,0
+    .goto Arathi Highlands,35.4,44.8,0
+    .collect 213444,1 --Tarnished Prayer Bead I
+    .mob Syndicate Mercenary
+    .mob Syndicate Pathstalker
+    .mob Syndicate Highwayman
+step
+    #requires BeadBoM1
+    #label BeadBoM2
+    #completewith Rosary
+    .goto Arathi Highlands,31.6,28.6
+    .goto Arathi Highlands,68.8,71.8,0
+    .goto Arathi Highlands,35.4,44.8,0
+    .aura 19835,1 >>Use |T135906:0|t[Blessing of Might]
+step
+    #requires BeadBoM2
+    #label BeadBoM3
+    #completewith Rosary
+    >>Use |T135906:0|t[Blessing of Might] and kill enemies until you get |T135260:0|t[Divine Prayer Bead I]
+    .goto Arathi Highlands,31.6,28.6
+    .goto Arathi Highlands,68.8,71.8,0
+    .goto Arathi Highlands,35.4,44.8,0
+    .collect 213448,1 --Divine Prayer Bead I
+step
+    #completewith Rosary
+    #label BeadDS1
+    >>Kill |cRXP_ENEMY_Syndicate Members|r in the area. Loot them for the |T135261:0|t[Tarnished Prayer Bead II]
+    .goto Arathi Highlands,31.6,28.6
+    .goto Arathi Highlands,68.8,71.8,0
+    .goto Arathi Highlands,35.4,44.8,0
+    .collect 213445,1 --Tarnished Prayer Bead II
+    .mob Syndicate Mercenary
+    .mob Syndicate Pathstalker
+    .mob Syndicate Highwayman
+step
+    #completewith Rosary
+    #requires BeadDS1
+    #label BeadDS2
+    >>Use |T135896:0|t[Divine Shield] |cRXP_WARN_at 10% HP to get|r |T135260:0|t[Divine Prayer Bead II]
+    .goto Arathi Highlands,31.6,28.6
+    .goto Arathi Highlands,68.8,71.8,0
+    .goto Arathi Highlands,35.4,44.8,0
+    .collect 213449,1 --Divine Prayer Bead II
+step
+    #completewith Rosary
+    #label BeadSoJ1
+    >>Kill |cRXP_ENEMY_Syndicate Members|r in the area. Loot them for the |T135261:0|t[Tarnished Prayer Bead III]
+    *|cRXP_WARN_You can also go to the other 2 locations marked on your map as any Humanoid can drop these|r
+    .goto Arathi Highlands,31.6,28.6
+    .goto Arathi Highlands,68.8,71.8,0
+    .goto Arathi Highlands,35.4,44.8,0
+    .collect 213446,1 --Tarnished Prayer Bead III
+    .mob Syndicate Mercenary
+    .mob Syndicate Pathstalker
+    .mob Syndicate Highwayman
+step
+    #completewith Rosary
+    #requires BeadSoJ1
+    #label BeadSoJ2
+    >>Use |T135971:0|t[Seal of Justice] and |T135959:0|t[Judgement] on a |cRXP_WARN_fleeing enemy|r to get |T135260:0|t[Divine Prayer Bead III]
+    .goto Arathi Highlands,31.6,28.6
+    .goto Arathi Highlands,68.8,71.8,0
+    .goto Arathi Highlands,35.4,44.8,0
+    .collect 213450,1 --Divine Prayer Bead III
+step
+    #optional
+    #requires BeadBoM3
+step
+    #optional
+    #requires BeadDS2
+step
+    #optional
+    #requires BeadSoJ2
+step
+    #label Rosary
+    >>Use the |T135260:0|t[Divine Prayer Bead I] to combine the beads into the |T133289:0|t[Rosary of the Light]
+    .goto Arathi Highlands,27.2,57.0
+    .use 213448
+    .collect 213447,1
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Atticus|r inside Stormgarde Keep to get the |T134419:0|t[|cRXP_FRIENDLY_Rune of Piety|r]
+    .goto Arathi Highlands,26.06,55.75,15,0
+    .goto Arathi Highlands,25.71,59.92,15,0
+    .goto Arathi Highlands,23.69,60.52,15,0
+    .goto Arathi Highlands,23.75,58.89,15,0
+    .goto Arathi Highlands,27.81,58.99,15,0
+    .goto Arathi Highlands,28.74,58.97,15,0
+    .goto Arathi Highlands,28.71,57.37,15,0
+    .goto Arathi Highlands,27.01,56.95
+    .skipgossip 217387,1
+    .collect 213128,1
+    .target Brother Atticus
+step
+    .itemcount 213128,1
+    .use 213128
+    .train 426175 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Piety|r] to learn |T236251:0|t[Enlightened Judgements]
+]])
+
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Paladin SoD
+#group RestedXP Rune & Books Guide
+#subgroup Belt
+#name Sheath of Light - 40 (Azeroth)
+#title Sheath of Light
+
+step
+    #completewith next
+    .zone Desolace >>Travel to Desolace
+step
+    .train 426178,1
+    .goto Desolace,52.730,84.761
+    >>Loot the |cRXP_PICK_Broken Warhammer|r on the ground for the |T133041:0|t[|cRXP_LOOT_Broken Hammer|r]
+    .use 215441 >>|cRXP_WARN_Use the |T133041:0|t[|cRXP_LOOT_Broken Hammer|r] to start the quest|r
+    .collect 215441,1
+    .accept 79939 >>Accept The Broken Hammer
+step
+    .train 426178,1
+    #loop
+    .goto Desolace,52.6,85.6,0
+    .goto Desolace,55.6,70.4,0
+    .goto Desolace,47,2,75.2,0
+    .goto Desolace,52.6,85.6,40,0
+    .goto Desolace,55.6,70.4,40,0
+    .goto Desolace,47,2,75.2,60,0
+    >>Kill |cRXP_ENEMY_Burning Blade Summoners|r. Loot them for a |T133471:0|t[|cRXP_LOOT_Torn Letter|r]
+    .collect 216956,1,79939,1
+    .mob Burning Blade Summoner
+step
+    #completewith Katherine
+    .zone Stormwind City >>Travel to Stormwind
+step
+    #completewith Katherine
+    .goto StormwindClassic,42.51,33.51,20 >> Travel to the Stormwind Cathedral
+step
+    .train 426178,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katherine the Pure|r
+    .goto Stormwind City,37.222,31.855
+    .turnin 79939 >>Turn in The Broken Hammer
+    .accept 79940 >>Accept A Lost Brother
+    .target Katherine the Pure
+step
+    #label Katherine
+    .train 426178,1
+    .goto Stormwind City,37.222,31.855
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katherine the Pure|r
+    .skipgossip 5492,1
+    .complete 79940,1
+    .turnin 79940 >>Turn in A Lost Brother
+    .target Katherine the Pure
+step
+    #completewith next
+    .zone Wetlands >>Travel to Menethil Harbor
+step
+    .isQuestTurnedIn 79940
+    .train 426178,1
+    .goto Wetlands,8.086,58.592
+    .gossip 3179,4 >> Talk to |cRXP_FRIENDLY_Harold Riggs|r. Ensure to go through all of his gossip dialogues
+    .skipgossip 3179,2
+    .target Harold Riggs
+step
+    #completewith next
+    .goto 1415,41.937,58.932,40 >> |cRXP_WARN_Swim down south, all the way around to Dun Morogh. You will have to kill a level 40 elite shortly. Considering bringing a friend for this part!|r
+step
+    .train 426178,1
+    .goto 1415,41.937,58.932
+    .gossip 217957 >> Talk to the |cRXP_FRIENDLY_Slain Scarlet Crusader|r inside the building
+    >>|cRXP_WARN_This will summon a level 40 elite|r |cRXP_ENEMY_Scarlet Crusade Assassin|r
+    .target Slain Scarlet Crusader
+step
+    .train 426178,1
+    .goto 1415,41.937,58.932
+    >>Kill the |cRXP_ENEMY_Scarlet Crusade Assassin|r. Loot it for the |T133471:0|t[|cRXP_LOOT_Orders from the Grand Crusade|r]
+    .use 215468 >>|cRXP_WARN_Use the |T133471:0|t[|cRXP_LOOT_Orders from the Grand Crusade|r] to start the quest|r
+    .collect 215468,1,79945,1
+    .accept 79945 >>Accept Orders from the Grand Crusade
+    .mob Scarlet Cursade Assassin
+step
+    #completewith Katherine2
+    .zone Stormwind City >>Travel to Stormwind
+step
+    #completewith Katherine2
+    .goto StormwindClassic,42.51,33.51,20 >> Travel to the Stormwind Cathedral
+step
+    .train 426178,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katherine the Pure|r
+    .goto Stormwind City,37.222,31.855
+    .turnin 79945 >>Turn in Orders from the Grand Crusade
+    .accept 79946 >>Accept A Brother in Need
+    .target Katherine the Pure
+step
+    #label Katherine2
+    .train 426178,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katherine the Pure|r
+    .goto Stormwind City,37.222,31.855
+    .skipgossip 5492,3
+    .complete 79946,1 --Learn more about Aeonas from Katherine
+    .target Katherine the Pure
+step
+    .train 426178,1
+    >>|cRXP_WARN_You now have to go into Scarlet Monastery and complete a full Cathedral run|r
+    >>After killing |cRXP_ENEMY_Mograine|r and |cRXP_ENEMY_Whitemane|r, talk to |cRXP_FRIENDLY_Aeonas|r in the back room
+    .complete 79946,2 --Find Aeonas in the Scarlet Monastery
+    .turnin 79946 >>Turn in A Brother in Need
+    .accept 79963 >>Accept By The Light's Grace
+    .target Aeonas
+step
+    .train 426178,1
+    >>Heal |cRXP_FRIENDLY_Aenoas|r to full HP
+    .complete 79963,1 --Heal Aeonas
+    .target Aeonas
+step
+    .train 426178,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aeonas|r
+    .turnin 79963 >>Turn in By The Light's Grace
+    .accept 79970 >>Accept Aeonas the Vindicated
+    .target Aeonas
+step
+    #completewith Aeonas
+    .zone Stormwind City >>Travel to Stormwind
+step
+    #completewith Aeonas
+    .goto StormwindClassic,42.51,33.51,20 >> Travel to the Stormwind Cathedral
+step
+    #label Aeonas
+    .goto Stormwind City,37.355,31.708
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aeonas the Vindicated|r
+    .turnin 79970 >> Turn in Aeonas the Vindicated
+    .train 426178 >> Train |T236263:0|t[Sheath of Light]
+    .target Aeonas the Vindicated
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Paladin SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Guarded by the Light - 30 (Alterac Mountains)
+#title Guarded by the Light
+
+step
+    .train 416035,1
+    .train 19752 >>You have to learn |T136106:0|t[Divine Intervention] before you can obtain the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Guardian|r].
+    .collect 17033,1 >>You also need at least 1 |T135259:0|t[Symbol of Divinity] (from any reagent vendor)
+step
+    #completewith next
+    .zone Alterac Mountains >>Travel to the Alterac Mountains
+step
+    .train 416035,1
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Frozen Remains|r
+    *|cRXP_WARN_Make sure to bring another player who can ressurect you|r.
+    .goto Alterac Mountains,39.8,60.8
+    .collect 213452,1
+step
+    .train 416035,1
+    >>Use |T136106:0|t[Divine Intervention] |cRXP_WARN_on the player that will ressurect you|r
+    .goto Alterac Mountains,39.8,60.8
+    .cast 19752
+step
+    .train 416035,1
+    >>The other player has to remove their |T136106:0|t[Divine Intervention] and ressurect you to get the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Guardian|r]
+    .goto Alterac Mountains,39.8,60.8
+    .collect 213132,1
+step
+    .use 213132
+    .itemcount 213132,1
+    .train 416035 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Guardian|r] to learn |T237537:0|t[Guarded by the Light]
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Paladin SoD
+#group RestedXP Rune & Books Guide
+#subgroup Boots
+#name Sacred Shield - 30 (Desolace)
+#title Sacred Shield
+
+-- Sacred Shield
+
+step
+    #completewith next
+    .zone Desolace >>Travel to Desolace
+step
+    .train 416028,1
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the glowing book to obtain |T134916:0|t[|cRXP_FRIENDLY_Libram of Deliverance|r]
+    .goto Desolace,66.5,7.7
+    .collect 213513,1
+step
+    .train 416028,1
+    .equip 18,213513 >> Equip |T134916:0|t[Libram of Deliverance]
+    .aura 408828,1+ >> Use |T135968:0|t[Blessing of Freedom] on 5 other players |cRXP_WARN_while they're movement impaired|r
+    *|cRXP_WARN_Good spots are quest areas with mobs that root players (lake in Ashenvale, Swamp of Sorrows)|r
+step
+    .use 213513
+    .train 416028 >>Use the |T134916:0|t[|cRXP_FRIENDLY_Libram of Deliverance|r] to learn |T236249:0|t[Sacred Shield]
+]])
+
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Paladin SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Bracers
+-- #name Improved Hammer of Wrath
+-- for phase 3
+
+-- Improved Hammer of Wrath
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Paladin SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Bracers
+-- #name Purifying Power
+-- for phase 3
+
+-- Purifying Power
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Paladin SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helmet
+-- #name Fanaticism
+-- for phase 3
+
+-- Fanaticism
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Paladin SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helmet
+-- #name Light's Grace
+-- for phase 3
+
+-- Light's Grace
+
+
+-- ]])
+
+-- RXPGuides.RegisterGuide([[
+-- #classic
+-- << Paladin SoD
+-- #group RestedXP Rune & Books Guide
+-- #subgroup Helmet
+-- #name Wrath
+-- for phase 3
+
+-- Wrath
+
+
+-- ]])
