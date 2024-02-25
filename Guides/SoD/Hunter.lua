@@ -828,42 +828,6 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-<< Horde Hunter SoD
-#group RestedXP Rune & Books Guide
-#subgroup Legs
-#name Sniper Training - 16 (The Barrens)
-#title Sniper Training
-
-    --Rune of the Sniper
-
-step
-    #season2
-    #completewith next
-    .train 416091,1
-    .zone The Barrens >>Travel to The Barrens
-step
-    #season 2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Klixx|r and buy |T135129:0|t[Fishing Harpoon]
-    .goto The Barrens,62.8,38.2
-    .buy 208773,1
-    .train 416091,1
-step
-    #season 2
-    .goto The Barrens,65,40
-    >>Use the |T135129:0|t[Fishing Harpoon] to weaken |cRXP_ENEMY_Bruuz|r then Kill |cRXP_ENEMY_Bruuz|r and loot him for |T134419:0|t[|cRXP_LOOT_Rune of the Sniper|r]
-    .collect 208777,1
-    .train 416091,1
-    .mob Bruuz
-    .use 208773
-step
-    #season 2
-    .train 416091 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Sniper|r] |cRXP_WARN_to train|r |T132212:0|t[Sniper Training]
-    .use 208777
-    .itemcount 208777,1
-]])
-
-RXPGuides.RegisterGuide([[
-#classic
 << Alliance Hunter SoD
 #group RestedXP Rune & Books Guide
 #subgroup Legs
