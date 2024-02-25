@@ -1553,7 +1553,7 @@ step
     .collect 210979,1 --Rune of Shadowstep (1)
     .train 400101,1
 step
-    .train 400101 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadwostep|r] to learn |T132303:0|t[Shadowstep]
+    .train 400101 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadwostep|r] |cRXP_WARN_to learn|r |T132303:0|t[Shadowstep]
     .use 210979
     .itemcount 210979,1
 ]])
@@ -1581,7 +1581,7 @@ step
 step
     .itemcount 213139,1
     .use 213139
-    .train 400096 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Assassin|r] to learn |T132330:0|t[Shuriken Toss]
+    .train 400096 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Assassin|r] |cRXP_WARN_to learn|r |T132330:0|t[Shuriken Toss]
 ]])
 
 RXPGuides.RegisterGuide([[

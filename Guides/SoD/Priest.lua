@@ -963,7 +963,7 @@ step << Priest
 
 RXPGuides.RegisterGuide([[
 #classic
-<< Alliance Priest SoD
+<< Priest SoD
 #group RestedXP Rune & Books Guide
 #subgroup Belt
 #name Empowered Renew - 27 (Thousand Needles)
@@ -996,7 +996,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-<< Alliance Priest SoD
+<< Priest SoD
 #group RestedXP Rune & Books Guide
 #subgroup Belt
 #name Empowered Renew - 33 (Alterac Mountains)

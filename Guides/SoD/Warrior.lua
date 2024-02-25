@@ -1246,7 +1246,7 @@ step << Warrior
 
 RXPGuides.RegisterGuide([[
 #classic
-<< Alliance Warrior SoD
+<< Warrior SoD
 #group RestedXP Rune & Books Guide
 #subgroup Belt
 #name Blood Surge - 30 (Azeroth)
@@ -1254,95 +1254,126 @@ RXPGuides.RegisterGuide([[
 -- Blood Surge
 
 --x shiek better coordinates
+
 step
     .train 416004,1
-    #completewith next
-    .zone Arathi Highlands >>Travel to Arathi Highlands
+    #completewith IllegibleReciple
+    .zone Arathi Highlands >>Travel to |cFFfa9602Arathi Highlands|r
 step
+    #completewith IllegibleReciple
+    +|cRXP_WARN_Grouping up is recommended as you have to kill level 36-40 elites|r
+step
+    #label IllegibleReciple
     .train 416004,1
     #loop
-    .goto Arathi Highlands,19.6,64.8,25,0
-    .goto Arathi Highlands,21.6,66.4,25,0
-    .goto Arathi Highlands,21.4,68.2,25,0
-    .goto Arathi Highlands,22.8,66.4,25,0
-    >>Kill |cRXP_ENEMY_Boulderfist Shaman|r. Loot them for the |T237451:0|t[Illegible Recipe].
-    .collect 213422,1
+    .goto Arathi Highlands,24.14,61.85,0
+    .goto Arathi Highlands,24.14,61.85,30,0
+    .goto Arathi Highlands,24.25,64.97,30,0
+    .goto Arathi Highlands,21.22,66.52,40,0
+    .goto Arathi Highlands,20.21,67.17,40,0
+    >>Kill |cRXP_ENEMY_Boulderfist Ogres|r inside Stromgarde Keep. Loot them for |T237451:0|t[|cRXP_LOOT_Illegible Recipe|r]. Use it to start the quest
+    >>|cRXP_WARN_Alternatively you can kill the|r |cRXP_ENEMY_Crushridge Ogres|r |cRXP_WARN_in Alterac Mountains as they are slightly lower level|r
+    .collect 213422,1,79624 --Illegible Recipe (1x)
+    .accept 79624 >>Accept Anyone Can Cook
     .mob Boulderfist Shaman
+    .mob Boulderfist Mauler
+    .mob Boulderfist Lord
 step
     .train 416004,1
-    .goto Arathi Highlands,57.6,74.6
-    >>Click on the |T237451:0|t[Illegible Recipe] in your bags to start the next quest.
-    .accept 79624 --Anyone Can Cook
-    .use 213422
-step
-    .train 416004,1
-    .goto Arathi Highlands,57.6,74.6
+    .goto Arathi Highlands,57.45,72.00,15,0
+    .goto Arathi Highlands,57.33,73.65,15,0
+    .goto Arathi Highlands,57.68,74.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skonk|r
-    .turnin 79624 --Anyone Can Cook
-    .accept 79677 --A Quick Grocery Run
+    .turnin 79624 >>Turn in Anyone Can Cook
+    .accept 79677 >>Accept A Quick Grocery Run
     .target Skonk
+step
+    #completewith next
+    .subzone 328 >>Travel to the sunken ship in |cFFfa9602The Drowned Reef|r just south of |cFFfa9602Faldir's Cove|r
 step
     .train 416004,1
     .goto Arathi Highlands,20.8,82.2
-    >>Enter the Sunken Ship and interact with the |cRXP_PICK_Barrel|r located in the ship's deepest section.
-    .complete 79678,1,2
+    >>Click the |cRXP_PICK_Sealed Barrel|r located inside the deepest section of the sunken ship for |cRXP_LOOT_Smuggler's Spice Blend|r
+    .complete 79677,2 --Smuggler's Spice Blend (1x)
 step
     .train 416004,1
     #completewith next
-    .zone Hillsbrad Foothills >>Travel to Hillsbrad Foothills
+    .zone Hillsbrad Foothills >>Travel to |cFFfa9602Hillsbrad Foothills|r
 step
     .train 416004,1
     #loop
-    .goto Arathi Highlands,86.0,41.0,25,0
-    .goto Arathi Highlands,88.0,38.2,25,0
-    .goto Arathi Highlands,82.0,33.0,25,0
-    .goto Arathi Highlands,80.4,34.0,25,0
-    >>Kill |cRXP_ENEMY_Wild Gryphon|r. Loot them for |cRXP_LOOT_Hybrid Haunch|r.
-    .complete 79678,1,1
+    .goto Hillsbrad Foothills,84.34,32.40,0
+    .goto Hillsbrad Foothills,81.33,34.03,50,0
+    .goto Hillsbrad Foothills,84.34,32.40,50,0
+    .goto Hillsbrad Foothills,82.09,36.92,50,0
+    >>Kill |cRXP_ENEMY_Gryphons|r. Loot them for their |cRXP_LOOT_Hybrid Haunch|r
+    .complete 79677,1 --Hybrid Haunch (1x)
+    .mob Kurdros
+    .mob Granistad
+    .mob Wild Gryphon
 step
     .train 416004,1
     #completewith next
-    .zone Swamp of Sorrows >>Travel to Swamp of Sorrows
+    .zone Swamp of Sorrows >>Travel to |cFFfa9602Swamp of Sorrows|r
 step
     .train 416004,1
     #loop
-    .goto 52.6,57.2,25,0
-    .goto 56.6,53.0,25,0
-    .goto 84.4,82.8,25,0
-    .goto 77.6,90.2,25,0
-    >>Kill |cRXP_ENEMY_Deathstrike Tarantulas|r. Loot them for |cRXP_LOOT_Viscous Venom|r.
-    .complete 79678,1,4
+    .goto Swamp of Sorrows,56.16,61.19,0
+    .goto Swamp of Sorrows,62.11,65.79,0
+    .goto Swamp of Sorrows,68.52,73.12,0
+    .goto Swamp of Sorrows,72.50,82.18,0
+    .goto Swamp of Sorrows,78.49,88.19,0
+    .goto Swamp of Sorrows,56.16,61.19,60,0
+    .goto Swamp of Sorrows,62.11,65.79,60,0
+    .goto Swamp of Sorrows,68.52,73.12,60,0
+    .goto Swamp of Sorrows,72.50,82.18,60,0
+    .goto Swamp of Sorrows,78.49,88.19,60,0
+    >>Kill |cRXP_ENEMY_Deathstrike Tarantulas|r. Loot them for |cRXP_LOOT_Viscous Venom|r
+    >>|cRXP_WARN_They can be found in the South-Eastern area of Swamp of Sorrows|r
+    .complete 79677,4 --Viscous Venom (1x)
     .mob Deathstrike Tarantula
 step
     .train 416004,1
     #completewith next
-    .zone Badlands >>Travel to Badlands
+    .zone Badlands >>Travel to |cFFfa9602Badlands|r
 step
     .train 416004,1
     .goto Badlands,41.2,27.8
-    >>Click on the |cRXP_PICK_Barrel|r in the basement of Angor Fortress
-    .complete 79678,1,3
+    >>Click on the |cRXP_PICK_Tapped Shadowforge Keg|r in the basement of Angor Fortress for |cRXP_LOOT_Balmy Brew|r
+    >>|cRXP_WARN_Keep maximum distance from|r |cRXP_ENEMY_Ambassador Infernus|r |cRXP_WARN_to avoid agro. This may not be possible if you are below level 40|r
+    .complete 79677,3 --Balmy Brew (1x)
 step
-    .goto Arathi Highlands,57.6,74.6
+    .train 416004,1
+    #completewith next
+    .zone Arathi Highlands >>Travel to |cFFfa9602Arathi Highlands|r
+step
+    .train 416004,1
+    .goto Arathi Highlands,57.45,72.00,15,0
+    .goto Arathi Highlands,57.33,73.65,15,0
+    .goto Arathi Highlands,57.68,74.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skonk|r
-    .turnin 79677 -- A Quick Grocery Run
-    .accept 79678  -- Taste Testing
+    .turnin 79677 >>Turn in A Quick Grocery Run
+    .accept 79678 >>Accept Taste Testing
 step
-    >>Defeat |cRXP_ENEMY_Skonk|r
-    .complete 79678,1 -- Taste Testing
+    .train 416004,1
+    .goto Arathi Highlands,57.68,74.66
+    >>Defeat |cRXP_ENEMY_Skonk|r as he becomes hostile
+    .complete 79678,1 --Taste Testing
     .mob Skonk
 step
-    .goto Arathi Highlands,57.6,74.6
+    .train 416004,1
+    .goto Arathi Highlands,57.68,74.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skonk|r
-    .turnin 79678  -- Taste Testing
+    .turnin 79678 >>Turn in Taste Testing
     .target Skonk
 step
-    .train 416004 >> Use |T134419:0|t[|cRXP_FRIENDLY_Rune of Bloodsurge|r] to learn |T236306:0|t[Blood Surge]
+    .train 416004 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of Bloodsurge|r] to learn |T236306:0|t[Blood Surge]
+    .use 213103
 ]])
 
 RXPGuides.RegisterGuide([[
 #classic
-<< Alliance Warrior SoD
+<< Warrior SoD
 #group RestedXP Rune & Books Guide
 #subgroup Belt
 #name Focused Rage - 35 (Arathi Highlands)
@@ -1357,7 +1388,7 @@ step
 step
     .train 409163,1
     #completewith WitherbarkCave
-    .zone Arathi Highlands >> Travel to Arathi Highlands
+    .zone Arathi Highlands >> Travel to |cFFfa9602Arathi Highlands|r
 step
     .train 409163,1
     .goto Arathi Highlands,72.51,65.67,70,0
@@ -1396,7 +1427,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-<< Alliance Warrior SoD
+<< Warrior SoD
 #group RestedXP Rune & Books Guide
 #subgroup Boots
 #name Intervene - 32 (Thousand Needles)
@@ -1406,38 +1437,48 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 403472,1
-    >>You have to learn the following spells from your class trainer to obtain the |T134419:0|t[Rune of Intervention].
-    .train 355 >> Train |T136080:0|t[Taunt]
-    .train 5308 >> Train |T135358:0|t[Execute]
-    .train 72  >> Train T132357:0|t[Shield Bash]
+    >>|cRXP_WARN_You have to learn the following spells from your class trainer to obtain the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Intervention|r]
+    .train 355 >>Train |T136080:0|t[Taunt]
+    .train 5308 >>Train |T135358:0|t[Execute]
+    .train 72 >>Train |T132357:0|t[Shield Bash]
 step
     .train 403472,1
     #completewith next
-    +Before you head out to Thousand Needles, make sure to pack a wearable two-handed sword along with 2 wearable one-handed weapons. Don't worry about their strength.
+    >>|cRXP_WARN_Before you head out to Thousand Needles make sure you have the following:|r
+    +A two handed weapon
+    +Two one-handed weapons
+    +A shield
+    >>|cRXP_WARN_Don't worry about their strength|r
 step
     .train 403472,1
-    .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
+    .goto Thousand Needles,67.97,89.80
+    .subzone 479 >>Travel to the Rustmaul Digsite in |cFFfa9602Thousand Needles|r
 step
     .train 403472,1
-    .goto Thousand Needles,67.8,89.4
-    .equip 16 >> Equip any Two-Handed Weapon.
-    .cast 5308 >> Cast |T135358:0|t[Execute] on the |cRXP_ENEMY_Combat Dummy|r located in front of the male statue while you are wielding a two-handed weapon.
+    .goto Thousand Needles,67.97,89.80
+    .cast 5308 >>Cast |T135358:0|t[Execute] on the |cRXP_ENEMY_Combat Dummy|r located in front of the male statue while you are wielding a two-handed weapon
+    >>|cRXP_WARN_Equip a two-handed weapon|r
     .mob Combat Dummy
 step
     .train 403472,1
-    .goto Thousand Needles,67.7,89.3
-    >>|cRXP_WARN_Equip a pair of one-handed weapons.|r
-    .cast 355 >> Cast |T136080:0|t[Taunt] on the |cRXP_ENEMY_Combat Dummy|r located in front of the dwarf statue while you are dual-wielding.
+    .goto Thousand Needles,67.85,89.51
+    .cast 355 >>Cast |T136080:0|t[Taunt] on the |cRXP_ENEMY_Combat Dummy|r located in front of the dwarf statue while you are dual-wielding
+    >>|cRXP_WARN_Equip a pair of one-handed weapons|r
     .mob Combat Dummy
 step
     .train 403472,1
-    .goto Thousand Needles,68.2,89.8
-    .cast 355 >> Cast |T132357:0|t[Shield Bash] on the |cRXP_ENEMY_Combat Dummy|r located in front of the human female statue while you are dual-wielding.
+    .goto Thousand Needles,67.72,89.24
+    .cast 355 >>Cast |T132357:0|t[Shield Bash] on the |cRXP_ENEMY_Combat Dummy|r located in front of the human female statue while you have a shield equipped
+    >>|cRXP_WARN_Equip a shield|r
     .mob Combat Dummy
 step
-    .goto Thousand Needles,67.9,89.5
-    >>Click on the |cRXP_PICK_Warrior's Bounty|r to receive |T134419:0|t[Rune of Intervention]
-    .train 403472 >> Use |T134419:0|t[Rune of Intervention] to learn |T132365:0|t[Intervene]
+    .train 403472,1
+    .goto Thousand Needles,67.93,89.41
+    >>Click on the |cRXP_PICK_Warrior's Bounty|r to receive |T134419:0|t[|cRXP_FRIENDLY_Rune of Intervention|r]
+    .collect 213111,1 --Rune of Intervention (1x)
+step
+    .train 403472 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of Intervention|r] to learn |T132365:0|t[Intervene]
+    .use 213111
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1449,11 +1490,13 @@ RXPGuides.RegisterGuide([[
 #title Rallying Cry
 
 -- Rallying Cry
+
 step
     .train 426491,1
     #completewith next
     .zone Badlands >>Travel to Badlands
 step
+    .train 426491,1
     #loop
     .goto Badlands,15.6,45.8,30,0 << Alliance
     .goto Badlands,20.0,57.0,30,0 << Alliance
@@ -1465,10 +1508,14 @@ step
     .goto Badlands,27.8,67.8,30,0 << Horde
     .goto Badlands,20.0,57.0,30,0 << Horde
     .goto Badlands,15.6,45.8,30,0 << Horde
-    >>Kill the |cRXP_ENEMY_Wandering Swordsman|r in Badlands |cRXP_WARN_ Please note, this is a rare enemy and there's a chance it may not be present.|r Loot him |T134419:0|t[Rune of the Commander]
-    .train 426491 >> Use |T134419:0|t[Rune of the Commander] to learn |T426490:0|t[Rallying Cry]
+    >>Kill the |cRXP_ENEMY_Wandering Swordsman|r in Badlands. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of the Commander|r]
+    >>|cRXP_WARN_This is a rare enemy and there's a chance it may not be present|r
+    .collect 213110,1 --Rune of the Commander (1x)
     .mob Wandering Swordsman
     .unitscan Wandering Swordsman
+step
+    .train 426491 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Commander|r] |cRXP_WARN_to learn|r |T132351:0|t[Rallying Cry]
+    .use 213110
 ]])
 
 
