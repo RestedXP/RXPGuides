@@ -1649,7 +1649,7 @@ function addon.stepLogic.XpRateCheck(step)
                 else
                     rate = 1.5
                 end
-            elseif addon.settings.profile.season == 2 then
+            elseif addon.settings.profile.season == 2 and addon.currentGuide then
                 local guide = addon.currentGuide.name
                 --local minLevel = tonumber(guide:sub(1,2))
                 local maxLevel = tonumber(guide:match("%d+%-(%d+)"))
