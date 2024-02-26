@@ -43,15 +43,84 @@
         </ButtonText>
         <NormalFont style="GameFontHighlightSmall"/>
     </Button>
+    <Button name="RXP_IU_AH_ItemKindHeader" hidden="false" virtual="true">
+        <Size>
+            <AbsDimension x="805" y="19"/>
+        </Size>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <FontString name="$parentName" inherits="GameFontNormal" justifyH="CENTER" text="Foo">
+                    <Size>
+                        <AbsDimension x="40" y="19"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPLEFT">
+                            <Offset>
+                                <AbsDimension x="400" y="3"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <Texture name="$parentLeft" file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
+                    <Size>
+                        <AbsDimension x="10" y="19"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT">
+                            <Offset>
+                                <AbsDimension x="34" y="2"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <TexCoords left="0" right="0.078125" top="0" bottom="1.0"/>
+                </Texture>
+                <Texture name="$parentRight" file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
+                    <Size>
+                        <AbsDimension x="10" y="19"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="RIGHT">
+                            <Offset>
+                                <AbsDimension x="0" y="2"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <TexCoords left="0.75" right="0.828125" top="0" bottom="1.0"/>
+                </Texture>
+                <Texture file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
+                    <Size>
+                        <AbsDimension x="10" y="19"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT" relativeTo="$parentLeft" relativePoint="RIGHT">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                        <Anchor point="RIGHT" relativeTo="$parentRight" relativePoint="LEFT">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <TexCoords left="0.078125" right="0.75" top="0" bottom="1.0"/>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+        </Frames>
+        <Scripts>
+        </Scripts>
+    </Button>
     <Button name="RXP_IU_AH_ItemRow" hidden="false" virtual="true">
         <Size>
-            <AbsDimension x="793" y="37"/>
+            <AbsDimension x="770" y="37"/>
         </Size>
         <Layers>
             <Layer level="BACKGROUND">
                 <FontString name="$parentName" inherits="GameFontNormal" justifyH="LEFT">
                     <Size>
-                        <AbsDimension x="187" y="32"/>
+                        <AbsDimension x="180" y="32"/>
                     </Size>
                     <Anchors>
                         <Anchor point="TOPLEFT">
@@ -63,24 +132,12 @@
                 </FontString>
                 <FontString name="$parentLevel" inherits="GameFontHighlightSmall">
                     <Size>
-                        <AbsDimension x="32" y="32"/>
+                        <AbsDimension x="86" y="32"/>
                     </Size>
                     <Anchors>
                         <Anchor point="TOPLEFT">
                             <Offset>
                                 <AbsDimension x="246" y="0"/>
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
-                <FontString name="$parentBidStatus" inherits="GameFontHighlightSmall">
-                    <Size>
-                        <AbsDimension x="75" y="32"/>
-                    </Size>
-                    <Anchors>
-                        <Anchor point="TOPLEFT">
-                            <Offset>
-                                <AbsDimension x="543" y="0"/>
                             </Offset>
                         </Anchor>
                     </Anchors>
@@ -226,20 +283,20 @@
                 <PushedTexture file="Interface\Buttons\UI-Quickslot-Depress"/>
                 <HighlightTexture file="Interface\Buttons\ButtonHilight-Square" alphaMode="ADD"/>
             </Button>
-            <Frame name="$parentClosingTime" enableMouse="true">
+            <Frame name="$parentItemLevel" enableMouse="true">
                 <Size>
-                    <AbsDimension x="75" y="32"/>
+                    <AbsDimension x="84" y="32"/>
                 </Size>
                 <Anchors>
                     <Anchor point="TOPLEFT">
                         <Offset>
-                            <AbsDimension x="291" y="0"/>
+                            <AbsDimension x="300" y="0"/>
                         </Offset>
                     </Anchor>
                 </Anchors>
                 <Layers>
                     <Layer level="BACKGROUND">
-                        <FontString name="$parentText" inherits="GameFontHighlightSmall">
+                        <FontString name="$parentText" inherits="GameFontHighlightSmall" text="23" >
                             <Size>
                                 <AbsDimension x="75" y="32"/>
                             </Size>
@@ -263,22 +320,78 @@
                     -->
                 </Scripts>
             </Frame>
-            <Frame name="$parentBuyoutMoneyFrame" inherits="SmallMoneyFrameTemplate">
+            <Frame name="$parentUpdateEP" enableMouse="true">
+                <Size>
+                    <AbsDimension x="204" y="32"/>
+                </Size>
                 <Anchors>
-                    <Anchor point="RIGHT" relativePoint="LEFT">
+                    <Anchor point="TOPLEFT">
                         <Offset>
-                            <AbsDimension x="543" y="0"/>
+                            <AbsDimension x="386" y="0"/>
                         </Offset>
                     </Anchor>
                 </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <FontString name="$parentText" inherits="GameFontHighlightSmall" text="+1412% / +5 EP" >
+                            <Size>
+                                <AbsDimension x="194" y="32"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="TOPLEFT"/>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
                 <Scripts>
                     <!--
-                    <OnLoad>
-						SmallMoneyFrame_OnLoad(self);
-						MoneyFrame_SetType(self, "AUCTION");
-					</OnLoad>
+                    <OnEnter>
+						self:GetParent():LockHighlight();
+						GameTooltip:SetOwner(self);
+						GameTooltip:SetText(self.tooltip);
+					</OnEnter>
+                    <OnLeave>
+						AuctionBrowseFrame_CheckUnlockHighlight(self, "bidder", FauxScrollFrame_GetOffset(BidScrollFrame));
+						GameTooltip:Hide();
+					</OnLeave>
                     -->
                 </Scripts>
+            </Frame>
+            <Frame name="$parentBuyoutMoneyFrame">
+                <Size x="186" y="32"/>
+                <Anchors>
+                    <Anchor point="LEFT" relativeTo="$parentUpdateEP" relativePoint="RIGHT"/>
+                </Anchors>
+                <Frames>
+                    <Frame name="$parentText">
+                        <Size x="48" y="13"/>
+                        <Anchors>
+                            <Anchor point="LEFT">
+                                <Offset>
+                                    <AbsDimension x="0" y="-6"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <FontString inherits="GameFontNormalSmall" justifyH="LEFT" setAllPoints="true" text="BUYOUT_COST"/>
+                            </Layer>
+                        </Layers>
+                    </Frame>
+                    <Frame name="$parentMoney" inherits="SmallMoneyFrameTemplate">
+                        <Anchors>
+                            <Anchor point="LEFT" relativeTo="$parentText" relativePoint="RIGHT"/>
+                        </Anchors>
+                        <Scripts>
+                            <OnLoad>
+								SmallMoneyFrame_OnLoad(self);
+								MoneyFrame_SetType(self, "AUCTION");
+								SetMoneyFrameColor(self:GetName(), "yellow")
+								MoneyFrame_SetMaxDisplayWidth(self, 146);
+							</OnLoad>
+                        </Scripts>
+                    </Frame>
+                </Frames>
             </Frame>
         </Frames>
         <Scripts>
@@ -298,13 +411,15 @@
             -->
         </Scripts>
         <HighlightTexture name="$parentHighlight" file="Interface\HelpFrame\HelpFrameButton-Highlight" alphaMode="ADD">
-            <Size>
-                <AbsDimension x="670" y="32"/>
-            </Size>
             <Anchors>
                 <Anchor point="TOPLEFT">
                     <Offset>
                         <AbsDimension x="33" y="0"/>
+                    </Offset>
+                </Anchor>
+                <Anchor point="BOTTOMRIGHT">
+                    <Offset>
+                        <AbsDimension x="0" y="4"/>
                     </Offset>
                 </Anchor>
             </Anchors>
@@ -345,7 +460,7 @@
         <Frames>
             <Button name="RXP_IU_AH_ItemName" inherits="RXP_IU_AH_AuctionColumnButtonTemplate" text="Item Name">
                 <Size>
-                    <AbsDimension x="195" y="19"/>
+                    <AbsDimension x="260" y="19"/>
                 </Size>
                 <Anchors>
                     <Anchor point="TOPLEFT">
@@ -357,7 +472,7 @@
             </Button>
             <Button name="RXP_IU_AH_Level" inherits="RXP_IU_AH_AuctionColumnButtonTemplate" text="REQ_LEVEL_ABBR">
                 <Size>
-                    <AbsDimension x="61" y="19"/>
+                    <AbsDimension x="86" y="19"/>
                 </Size>
                 <Anchors>
                     <Anchor point="LEFT" relativeTo="RXP_IU_AH_ItemName" relativePoint="RIGHT">
@@ -369,7 +484,7 @@
             </Button>
             <Button name="RXP_IU_AH_UpgradeEP" inherits="RXP_IU_AH_AuctionColumnButtonTemplate" text="Upgrade/EP">
                 <Size>
-                    <AbsDimension x="79" y="19"/>
+                    <AbsDimension x="208" y="19"/>
                 </Size>
                 <Anchors>
                     <Anchor point="LEFT" relativeTo="RXP_IU_AH_Level" relativePoint="RIGHT">
@@ -381,7 +496,7 @@
             </Button>
             <Button name="RXP_IU_AH_Buyout" inherits="RXP_IU_AH_AuctionColumnButtonTemplate" text="AUCTION_PRICE">
                 <Size>
-                    <AbsDimension x="166" y="19"/>
+                    <AbsDimension x="186" y="19"/>
                 </Size>
                 <Anchors>
                     <Anchor point="LEFT" relativeTo="RXP_IU_AH_UpgradeEP" relativePoint="RIGHT">
@@ -438,109 +553,33 @@
                     </OnVerticalScroll>
                 </Scripts>
             </ScrollFrame>
-            <Button name="RXP_IU_AH_Row1" inherits="RXP_IU_AH_ItemRow" id="1">
+            <Frame name="RXP_IU_AH_RowHeader" inherits="RXP_IU_AH_ItemKindHeader" id="1">
                 <Anchors>
                     <Anchor point="TOPLEFT">
                         <Offset>
-                            <AbsDimension x="27" y="-76"/>
+                            <AbsDimension x="-11" y="-81"/>
                         </Offset>
                     </Anchor>
                 </Anchors>
-            </Button>
-            <Button name="RXP_IU_AH_Row2" inherits="RXP_IU_AH_ItemRow" id="2">
-                <Anchors>
-                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_Row1" relativePoint="BOTTOMLEFT">
-                        <Offset>
-                            <AbsDimension x="0" y="0"/>
-                        </Offset>
-                    </Anchor>
-                </Anchors>
-            </Button>
-            <Button name="RXP_IU_AH_Row3" inherits="RXP_IU_AH_ItemRow" id="3">
-                <Anchors>
-                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_Row2" relativePoint="BOTTOMLEFT">
-                        <Offset>
-                            <AbsDimension x="0" y="0"/>
-                        </Offset>
-                    </Anchor>
-                </Anchors>
-            </Button>
-            <Button name="RXP_IU_AH_Row4" inherits="RXP_IU_AH_ItemRow" id="4">
-                <Anchors>
-                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_Row3" relativePoint="BOTTOMLEFT">
-                        <Offset>
-                            <AbsDimension x="0" y="0"/>
-                        </Offset>
-                    </Anchor>
-                </Anchors>
-            </Button>
-            <Button name="RXP_IU_AH_Row5" inherits="RXP_IU_AH_ItemRow" id="5">
-                <Anchors>
-                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_Row4" relativePoint="BOTTOMLEFT">
-                        <Offset>
-                            <AbsDimension x="0" y="0"/>
-                        </Offset>
-                    </Anchor>
-                </Anchors>
-            </Button>
-            <Button name="RXP_IU_AH_Row6" inherits="RXP_IU_AH_ItemRow" id="6">
-                <Anchors>
-                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_Row5" relativePoint="BOTTOMLEFT">
-                        <Offset>
-                            <AbsDimension x="0" y="0"/>
-                        </Offset>
-                    </Anchor>
-                </Anchors>
-            </Button>
-            <Button name="RXP_IU_AH_Row7" inherits="RXP_IU_AH_ItemRow" id="7">
-                <Anchors>
-                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_Row6" relativePoint="BOTTOMLEFT">
-                        <Offset>
-                            <AbsDimension x="0" y="0"/>
-                        </Offset>
-                    </Anchor>
-                </Anchors>
-            </Button>
-            <Button name="RXP_IU_AH_Row8" inherits="RXP_IU_AH_ItemRow" id="8">
-                <Anchors>
-                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_Row7" relativePoint="BOTTOMLEFT">
-                        <Offset>
-                            <AbsDimension x="0" y="0"/>
-                        </Offset>
-                    </Anchor>
-                </Anchors>
-            </Button>
-            <Button name="RXP_IU_AH_Row9" inherits="RXP_IU_AH_ItemRow" id="9">
-                <Anchors>
-                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_Row8" relativePoint="BOTTOMLEFT">
-                        <Offset>
-                            <AbsDimension x="0" y="0"/>
-                        </Offset>
-                    </Anchor>
-                </Anchors>
-            </Button>
-            <Frame name="RXP_IU_AH_BidPrice" inherits="MoneyInputFrameTemplate">
-                <Anchors>
-                    <Anchor point="BOTTOM">
-                        <Offset>
-                            <AbsDimension x="25" y="18"/>
-                        </Offset>
-                    </Anchor>
-                </Anchors>
-                <Layers>
-                    <Layer level="OVERLAY">
-                        <FontString name="RXP_IU_AH_BidText" inherits="GameFontHighlightSmall" text="BID" justifyH="RIGHT">
-                            <Anchors>
-                                <Anchor point="RIGHT" relativeTo="$parent" relativePoint="LEFT">
-                                    <Offset>
-                                        <AbsDimension x="-10" y="0"/>
-                                    </Offset>
-                                </Anchor>
-                            </Anchors>
-                        </FontString>
-                    </Layer>
-                </Layers>
             </Frame>
+            <Button name="RXP_IU_AH_RowBest" inherits="RXP_IU_AH_ItemRow" id="2">
+                <Anchors>
+                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_RowHeader" relativePoint="BOTTOMLEFT" >
+                        <Offset>
+                            <AbsDimension x="35" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Button>
+            <Button name="RXP_IU_AH_RowBudget" inherits="RXP_IU_AH_ItemRow" id="3">
+                <Anchors>
+                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_RowBest" relativePoint="BOTTOMLEFT">
+                        <Offset>
+                            <AbsDimension x="0" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Button>
             <Button name="RXP_IU_AH_CloseButton" inherits="UIPanelButtonTemplate" text="CLOSE">
                 <Size>
                     <AbsDimension x="80" y="22"/>
@@ -630,9 +669,9 @@
         </Frames>
         <Scripts>
             <!--
-            <OnLoad function="RXP_IU_AH__OnLoad"/>
-            <OnShow function="RXP_IU_AH__OnShow"/>
-            <OnEvent function="RXP_IU_AH__OnEvent"/>
+            <OnLoad function="RXP_IU_AH_OnLoad"/>
+            <OnShow function="RXP_IU_AH_OnShow"/>
+            <OnEvent function="RXP_IU_AH_OnEvent"/>
             -->
         </Scripts>
     </Frame>

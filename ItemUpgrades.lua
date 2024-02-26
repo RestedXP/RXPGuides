@@ -1383,57 +1383,6 @@ function addon.itemUpgrades.AH:Analyze()
 end
 
 local ahRows = {}
-local scrollContainer
-
-local function createRow(kind)
-    if not ahRows[kind] then
-        local r = AceGUI:Create("SimpleGroup")
-        r:SetLayout("Flow")
-
-        r.itemKindHeader = AceGUI:Create("Heading")
-        r.itemKindHeader:SetText("Kind: " .. kind)
-        r.itemKindHeader:SetFullWidth(true)
-        r:AddChild(r.itemKindHeader)
-
-        -- Icon and name
-        -- TODO add InteractiveLabel
-        r.itemInfo = AceGUI:Create("Label")
-        r.itemInfo:SetWidth(195)
-        r.itemInfo:SetHeight(32)
-        r:AddChild(r.itemInfo)
-        -- r:AddChild(buildSpacer(padding))
-
-        r.itemLevel = AceGUI:Create("Label")
-        -- r.data:SetFont(addon.font, 12, "")
-        r.itemLevel:SetWidth(61)
-        r.itemLevel:SetHeight(32)
-        r:AddChild(r.itemLevel)
-
-        r.itemUpgradeStats = AceGUI:Create("Label")
-        -- r.data:SetFont(addon.font, 12, "")
-        r.itemUpgradeStats:SetWidth(79)
-        r.itemUpgradeStats:SetHeight(32)
-        r:AddChild(r.itemUpgradeStats)
-
-        -- inherits="SmallMoneyFrameTemplate"
-        -- SmallMoneyFrame_OnLoad(self);
-        -- MoneyFrame_SetType(self, "AUCTION");
-        r.buyout = AceGUI:Create("Button")
-        r.buyout:SetWidth(166)
-        r.buyout:SetHeight(32)
-        r:AddChild(r.buyout)
-
-        ahRows[kind] = r
-    end
-    local r = ahRows[kind]
-
-    r.itemInfo:SetText("itemInfo")
-    r.itemLevel:SetText("itemLevel")
-    r.itemUpgradeStats:SetText("itemUpgradeStats")
-    r.buyout:SetText("itemUpgradeStats")
-
-    return r
-end
 
 function addon.itemUpgrades.AH:CreateEmbeddedGui()
     if ahSession.displayFrame then return end
