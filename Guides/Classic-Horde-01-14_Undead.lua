@@ -1608,13 +1608,12 @@ step << Warrior
     .itemcount 2488,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.7
-
 step << Rogue
     #season 2
     #completewith MaggotEye
     >>Pick Pocket or kill |cRXP_ENEMY_Rot Hide Gnolls|r. Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Left Map Piece|r]
     .collect 208038,1 --Bottom-Left Map Piece (1)
-    .train 400095,
+    .train 400095,1
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Mongrels|r and |cRXP_ENEMY_Graverobbers|r. Loot them for their |cRXP_LOOT_Ichor|r
