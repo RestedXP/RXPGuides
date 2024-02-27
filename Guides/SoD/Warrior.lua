@@ -767,23 +767,23 @@ RXPGuides.RegisterGuide([[
     --Rune of Frenzied Assault
 
 step
-    #season 2
-    #completewith next
-    .goto Tirisfal Glades,61.72,51.91,-1
-    .goto Tirisfal Glades,61.71,51.70,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Penny|r and |cRXP_FRIENDLY_Blueheart|r (downstairs) inside the inn
-    +Kill |cRXP_FRIENDLY_Blueheart|r when he becomes hostile
+    .goto Tirisfal Glades,61.73,51.91
+    .gossipoption 110750 >>Talk to |cRXP_FRIENDLY_Penny|r
     .target Penny Hawkins
+    .train 425447,1
+step
+    .goto Tirisfal Glades,61.72,51.72
+    .gossipoption 109084 >>Talk to |cRXP_FRIENDLY_Blueheart|r (downstairs) inside the inn
     .target Blueheart
-    .skipgossip
-    --Gossipoption
+    .train 425447,1
 step
     #season 2
     .goto Tirisfal Glades,61.72,51.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Penny|r
-    >>Receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r] from her
+    >>Kill |cRXP_ENEMY_Blueheart|r, then talk to |cRXP_FRIENDLY_Penny|r upstairs
+    .gossipoption 110751 >>Receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r] from her
     .collect 204716,1 --Rune of Frenzied Assault (1)
     .target Netali
+    .mob Blueheart
     .train 425447,1
     .skipgossip
 step
@@ -791,6 +791,7 @@ step
     .train 425447 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
     .use 204716
     .itemcount 204716,1
+
 ]])
 
 RXPGuides.RegisterGuide([[

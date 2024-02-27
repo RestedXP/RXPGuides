@@ -1329,7 +1329,7 @@ step << Warrior/Rogue/Paladin
     #label Blacksmithing1
     .goto 1426,45.344,51.936
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tognus Flintfire|r
-    .train 2020 >> Train |T136241:0|t[Blacksmithing]
+    .train 2018 >> Train |T136241:0|t[Blacksmithing]
     >>|cRXP_WARN_This will allow you to make |T135248:0|t[Rough Sharpening Stones] which increase melee hits by +2 Damage. This is very significant early on|r << Warrior/Rogue
     >>|cRXP_WARN_This will allow you to make |T135255:0|t[Rough Weightstones] which increase melee hits by +2 Damage. This is very significant early on|r << Paladin
     .target Tognus Flintfire

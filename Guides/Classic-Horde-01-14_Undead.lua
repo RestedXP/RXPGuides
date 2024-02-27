@@ -325,6 +325,7 @@ step
     .mob Rattlecage Skeleton
 step
     #som--xpgate
+    #optional
     #loop
     .goto Tirisfal Glades,31.82,61.48,30,0
     .goto Tirisfal Glades,31.11,60.71,30,0
@@ -342,6 +343,7 @@ step
     .mob Wretched Zombie
 step
     #era
+    #optional
     #loop
     .goto Tirisfal Glades,31.82,61.48,30,0
     .goto Tirisfal Glades,31.11,60.71,30,0
@@ -896,6 +898,14 @@ step
     .turnin 8 >>Turn in A Rogue's Deal
     .home >> Set your Hearthstone to Brill
     .target Innkeeper Renee
+step
+    #xprate >1.49
+    .goto Tirisfal Glades,61.89,52.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gretchen|r
+    >>|cRXP_FRIENDLY_Gretchen|r |cRXP_WARN_is on the second floor of the inn|r
+    .accept 375 >>Accept The Chill of Death
+    .target Gretchen Dedmar
+    .xp <7,1
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beryl|r on the second floor
@@ -914,7 +924,7 @@ step << Mage
 step << Warrior
     .goto Tirisfal Glades,61.85,52.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austil|r
-    .train 3126 >>Train |T132269:0|t[Parry]
+    .train 3127 >>Train |T132269:0|t[Parry]
     .target Austil de Mon
     .money <0.01
 step << Rogue
@@ -1007,6 +1017,42 @@ step
     .goto Tirisfal Glades,44.43,57.33
     >>Finish looting the |cRXP_PICK_Gloom Weed|r on the ground
     .complete 5481,1 --Gloom Weed (3)
+step << Warrior
+    #optional
+    #season 2
+    #xprate >1.49
+    #completewith DBlood
+    >>Kill |cRXP_ENEMY_Duskbats|r. Loot them for a |cRXP_LOOT_Severed Bat Head|r
+    .collect 207975,1 --Severed Bat Head (1)
+    .mob Greater Duskbat
+    .mob Vampiric Duskbat
+    .train 403475,1
+    .isOnQuest 375
+step
+    #optional
+    #xprate >1.49
+    #completewith next
+    >>Kill |cRXP_ENEMY_Duskbats|r. Loot them for their |cRXP_LOOT_Pelts|r
+    .complete 375,1 --Duskbat Pelt (5)
+    .mob Greater Duskbat
+    .mob Vampiric Duskbat
+    .isOnQuest 375
+step
+    #xprate >1.49
+    #label DBlood
+    #loop
+    .goto Tirisfal Glades,43.97,57.27,0
+    .goto Tirisfal Glades,40.57,47.23,0
+    .waypoint Tirisfal Glades,48.03,53.43,80,0
+    .waypoint Tirisfal Glades,43.97,57.27,80,0
+    .waypoint Tirisfal Glades,41.01,55.94,60,0
+    .waypoint Tirisfal Glades,40.57,47.23,60,0
+    .waypoint Tirisfal Glades,40.89,42.77,60,0
+    .waypoint Tirisfal Glades,39.12,39.85,60,0
+    >>Finish killing |cRXP_ENEMY_Darkhounds|r. Loot them for their |cRXP_LOOT_Blood|r
+    .complete 367,1 --Darkhound Blood (5)
+    .mob Decrepit Darkhound
+    .mob Cursed Darkhound
 step << Priest
     #ah
     #completewith FinishRings
@@ -1084,8 +1130,8 @@ step
     .goto Tirisfal Glades,33.73,45.29,50,0
     .goto Tirisfal Glades,34.10,47.88,50,0
     .goto Tirisfal Glades,33.73,49.34,50,0
-    >>Kill |cRXP_ENEMY_Scarlet Warriors|r << !Rogue !Warrior
-    >>|cRXP_WARN_Kill|r |cRXP_ENEMY_Scarlet Warriors|r |cRXP_WARN_. Be careful as they have 50% increased parry for 8 seconds after they do their defense stance animation|r  << Rogue/Warrior
+    >>Kill |cRXP_ENEMY_Scarlet Warriors|r
+    >>|cRXP_WARN_Be careful as they have 50% increased parry for 8 seconds after they do their defense stance animation|r << Rogue/Warrior
     .complete 427,1 --Scarlet Warrior (10)
     .mob Scarlet Warrior
 step << Rogue/Mage/Priest
@@ -1213,6 +1259,29 @@ step
     .target Deathguard Dillinger
     .target Executor Zygand
     .target Apothecary Johaan
+ step
+    #xprate >1.49
+    #optional
+    .goto Tirisfal Glades,61.03,52.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Abigail|r
+    >>|cRXP_BUY_Buy a|r |T132891:0|t[Coarse Thread] |cRXP_BUY_from her|r
+    .complete 375,2 --Coarse Thread (1)
+    .target Abigail Shiel
+    .itemcount 2876,5 --Duskbat Pelt (5)
+step
+    #xprate >1.49
+    .goto Tirisfal Glades,61.97,51.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Captured Scarlet Zealot|r
+    .turnin 407 >>Turn in Fields of Grief
+    .target Captured Scarlet Zealot
+step
+    #xprate >1.49
+    #optional
+    .goto Tirisfal Glades,61.89,52.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gretchen|r
+    .turnin 375 >>Turn in The Chill of Death
+    .target Gretchen Dedmar
+    .isQuestComplete 375
 step << Priest
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beryl|r on the second floor
@@ -1316,6 +1385,7 @@ step
     .target Junior Apothecary Holland
 step << Warrior
     #season 2
+    #xprate <1.5
     #completewith DuskbatTrophy1
     >>Kill |cRXP_ENEMY_Duskbats|r. Loot them for a |cRXP_LOOT_Severed Bat Head|r
     .collect 207975,1 --Severed Bat Head (1)
@@ -1323,12 +1393,14 @@ step << Warrior
     .mob Vampiric Duskbat
     .train 403475,1
 step
+    #xprate <1.5
     #completewith next
     >>Kill |cRXP_ENEMY_Duskbats|r. Loot them for their |cRXP_LOOT_Pelts|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
 step
+    #xprate <1.5
     .goto Tirisfal Glades,58.20,58.15,50,0
     .goto Tirisfal Glades,57.98,61.66,50,0
     .goto Tirisfal Glades,56.45,62.62,50,0
@@ -1410,11 +1482,13 @@ step
     .xp 7+2640 >> Grind to 2640+/4500
 --XX 700 (375)+540 (367)
 step
+    #xprate <1.5
     #hardcore
     #completewith NewPlague1
     .subzone 159 >> Travel back to Brill
     .subzoneskip 159
 step
+    #xprate <1.5
     #softcore
     #completewith NewPlague1
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
@@ -1436,6 +1510,7 @@ step
     .target Magistrate Sevren
     .target Deathguard Burgess
 step
+    #xprate <1.5
     #optional
     .goto Tirisfal Glades,61.03,52.35
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Abigail|r
@@ -1444,6 +1519,7 @@ step
     .target Abigail Shiel
     .itemcount 2876,5 --Duskbat Pelt (5)
 step
+    #xprate <1.5
     #optional
     .goto Tirisfal Glades,61.89,52.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gretchen|r
@@ -1451,35 +1527,41 @@ step
     .target Gretchen Dedmar
     .isQuestComplete 375
 step << Priest
+    #xprate <1.5
     .goto Tirisfal Glades,61.57,52.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beryl|r on the second floor
 	.train 139 >> Train your class spells
     .target Dark Cleric Beryl
     .xp <8,1
 step << Mage
+    #xprate <1.5
     .goto Tirisfal Glades,61.97,52.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cain|r on the second floor
     .train 205 >> Train your class spells
     .target Cain Firesong
     .xp <8,1
 step << Warrior
+    #xprate <1.5
     .goto Tirisfal Glades,61.85,52.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austil|r
     .train 284 >> Train your class spells
     .target Austil de Mon
     .xp <8,1
 step << Rogue
+    #xprate <1.5
     .goto Tirisfal Glades,61.75,52.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marion|r on the second floor
     .train 6760 >> Train your class spells
     .target Marion Call
     .xp <8,1
 step << Warlock
+    #xprate <1.5
     .goto Tirisfal Glades,61.59,52.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rupert|r
     .train 980 >> Train your class spells
     .target Rupe
 step << Rogue
+    #xprate <1.5
     .goto Tirisfal Glades,60.12,53.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oliver|r
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135641:0|t[Stiletto] (4s 01c). You'll come back later if you don't have enough yet
@@ -1487,6 +1569,7 @@ step << Rogue
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
+    #xprate <1.5
     .goto Tirisfal Glades,60.12,53.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Oliver|r|cRXP_BUY_. Buy a|r |T135641:0|t[Stiletto] |cRXP_BUY_from him|r
     .collect 2494,1,398,1 --Collect Stiletto (1)
@@ -1494,6 +1577,7 @@ step << Rogue
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
+    #xprate <1.5
     #completewith Doomweed
     +Equip the |T135641:0|t[Stiletto]
     .use 2494
@@ -1501,6 +1585,7 @@ step << Rogue
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Warrior
+    #xprate <1.5
     .goto Tirisfal Glades,60.12,53.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oliver|r
     .vendor >> Vendor trash. Sell your weapon if it gives you enough money for a |T135321:0|t[Gladius] (5s 36c). You'll come back later if you don't have enough yet
@@ -1508,6 +1593,7 @@ step << Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.7
 step << Warrior
+    #xprate <1.5
     .goto Tirisfal Glades,60.12,53.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Oliver|r|cRXP_BUY_. Buy a|r |T135321:0|t[Gladius] |cRXP_BUY_from him|r
     .collect 2488,1,398,1 --Collect Gladius (1)
@@ -1515,43 +1601,20 @@ step << Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.7
 step << Warrior
+    #xprate <1.5
     #completewith Doomweed
     +Equip the |T135321:0|t[Gladius]
     .use 2488
     .itemcount 2488,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.7
-step << Warrior
-    #season 2
-    #completewith next
-    .goto Tirisfal Glades,61.72,51.91,-1
-    .goto Tirisfal Glades,61.71,51.70,-1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Penny|r and |cRXP_FRIENDLY_Blueheart|r (downstairs) inside the inn
-    +Kill |cRXP_FRIENDLY_Blueheart|r when he becomes hostile
-    .target Penny Hawkins
-    .target Blueheart
-    .skipgossip
-    --Gossipoption
-step << Warrior
-    #season 2
-    .goto Tirisfal Glades,61.72,51.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Penny|r
-    >>Receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r] from her
-    .collect 204716,1 --Rune of Frenzied Assault (1)
-    .target Netali
-    .train 425447,1
-    .skipgossip
-step << Warrior
-    #season 2
-    .train 425447 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
-    .use 204716
-    .itemcount 204716,1
+
 step << Rogue
     #season 2
     #completewith MaggotEye
     >>Pick Pocket or kill |cRXP_ENEMY_Rot Hide Gnolls|r. Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Left Map Piece|r]
     .collect 208038,1 --Bottom-Left Map Piece (1)
-    .train 400095,1
+    .train 400095,
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Mongrels|r and |cRXP_ENEMY_Graverobbers|r. Loot them for their |cRXP_LOOT_Ichor|r
@@ -2058,6 +2121,7 @@ step
 --XX 880(426)+480(361, OPT)+880(354)+420(362)+700(375, OPT)
 step
     #xprate <1.5
+    #optional
     .goto Tirisfal Glades,48.15,34.64,60,0
     .goto Tirisfal Glades,47.65,31.65,60,0
     .goto Tirisfal Glades,46.03,30.25,60,0
@@ -2109,6 +2173,7 @@ step
     .isOnQuest 375
 step
     #xprate >1.49
+    #optional
     .goto Tirisfal Glades,48.15,34.64,60,0
     .goto Tirisfal Glades,47.65,31.65,60,0
     .goto Tirisfal Glades,46.03,30.25,60,0
@@ -2396,11 +2461,10 @@ step
     .zone Undercity >> Travel into the Undercity through the sewers
     .zoneskip Undercity
 --XX Priest skips on 1.5x unless they go for a Wand. No reason to go Undercity if skipping Lich quest and not setting hearth
-step << Warrior/Rogue
+step << Warrior
     .goto Undercity,57.29,32.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Archibald|r in the War Quarter
     .train 201 >>Train 1h Swords << Rogue
-    .train 202 >>Train 2H Swords << Warrior
     .target Archibald
 step << Warrior/Rogue
     .goto Undercity,56.06,37.44
@@ -2418,7 +2482,7 @@ step << Warrior/Rogue
  step << Warrior/Rogue
     .goto Undercity,60.17,29.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Basil Frye|r
-    .train 2020 >> Train |T136241:0|t[Blacksmithing]
+    .train 2018 >> Train |T136241:0|t[Blacksmithing]
     .target Basil Frye
     .train 2575,3 --Mining Trained
 step
@@ -2684,45 +2748,23 @@ step
     .accept 356 >>Accept Rear Guard Patrol
     .target Deathguard Linnea
 step << Warrior
-    #xprate >1.49
     #season 2
-    #sticky
-    #label BatHeadEnd
-    #loop
-    .goto Tirisfal Glades,58.20,58.15,0
-    .goto Tirisfal Glades,50.52,61.21,0
-    .goto Tirisfal Glades,56.45,62.62,0
-    .waypoint Tirisfal Glades,58.20,58.15,50,0
-    .waypoint Tirisfal Glades,57.98,61.66,50,0
-    .waypoint Tirisfal Glades,56.45,62.62,50,0
-    .waypoint Tirisfal Glades,54.73,64.28,50,0
-    .waypoint Tirisfal Glades,52.84,62.26,50,0
-    .waypoint Tirisfal Glades,50.52,61.21,50,0
-    .waypoint Tirisfal Glades,47.88,60.87,50,0
-    .waypoint Tirisfal Glades,46.09,59.70,50,0
-    .waypoint Tirisfal Glades,43.49,61.81,50,0
-    .waypoint Tirisfal Glades,56.45,62.62,50,0
+    #completewith ArriveBalnir
     >>Kill |cRXP_ENEMY_Duskbats|r. Loot them for a |cRXP_LOOT_Severed Bat Head|r
     .collect 207975,1 --Severed Bat Head (1)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
     .train 403475,1
 step
-    #xprate >1.49
-    .goto Tirisfal Glades,58.20,58.15,50,0
-    .goto Tirisfal Glades,57.98,61.66,50,0
-    .goto Tirisfal Glades,56.45,62.62,50,0
-    .goto Tirisfal Glades,54.73,64.28,50,0
-    .goto Tirisfal Glades,52.84,62.26,50,0
-    .goto Tirisfal Glades,50.52,61.21,50,0
-    .goto Tirisfal Glades,47.88,60.87,50,0
-    .goto Tirisfal Glades,46.09,59.70,50,0
-    .goto Tirisfal Glades,43.49,61.81,50,0
-    .goto Tirisfal Glades,56.45,62.62
+    #completewith ArriveBalnir
     >>Kill |cRXP_ENEMY_Duskbats|r. Loot them for their |cRXP_LOOT_Pelts|r
     .complete 375,1 --Duskbat Pelt (5)
     .mob Greater Duskbat
     .mob Vampiric Duskbat
+step
+    #label ArriveBalnir
+    .subzone 165 >>Travel to Balnir Farmstead
+    .isOnQuest 356
 step << Mage
     #season 2
     #completewith HorrorsandSpirits
@@ -2743,12 +2785,6 @@ step << Mage
     .goto Tirisfal Glades,77.48,62.00
     >>Loot any of the plants on the ground for a |cRXP_PICK_Balnir Snapdragon|r
     .complete 1882,1 --Balnir Snapdragons (1)
-step << Warrior
-    #xprate >1.49
-    #season 2
-    #optional
-    #requires BatHeadEnd
---XXREQ Placeholder invis step
 step
     #label HorrorsandSpirits
     .loop 25,Tirisfal Glades,74.31,60.98,74.45,59.64,75.08,58.56,76.45,58.67,77.41,58.66,78.55,60.43,77.45,61.46,76.79,62.60,74.99,61.98,74.31,60.98
@@ -2874,7 +2910,22 @@ step << Priest
     .collect 2589,60,435,1 --Linen Cloth (60)
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
+step << Warrior
+    #season 2
+    #completewith ViciousVenom
+    >>Kill |cRXP_ENEMY_Duskbats|r. Loot them for a |cRXP_LOOT_Severed Bat Head|r
+    .collect 207975,1 --Severed Bat Head (1)
+    .mob Greater Duskbat
+    .mob Vampiric Duskbat
+    .train 403475,1
 step
+    #completewith ViciousVenom
+    >>Kill |cRXP_ENEMY_Duskbats|r. Loot them for their |cRXP_LOOT_Pelts|r
+    .complete 375,1 --Duskbat Pelt (5)
+    .mob Greater Duskbat
+    .mob Vampiric Duskbat
+step
+    #label ViciousVenom
     #loop
     #requires Friars2
     .goto Tirisfal Glades,85.03,54.72,0
@@ -2893,6 +2944,48 @@ step
     >>Kill |cRXP_ENEMY_Vicious Night Web Spiders|r. Loot them for their |cRXP_LOOT_Venom|r
     .complete 369,1 --Vicious Night Web Spider Venom (4)
     .mob Vicious Night Web Spider
+step << Warrior
+    #season 2
+    #xprate >1.49
+    #optional
+    #completewith next
+    >>Kill |cRXP_ENEMY_Duskbats|r. Loot them for a |cRXP_LOOT_Severed Bat Head|r
+    .collect 207975,1 --Severed Bat Head (1)
+    .mob Greater Duskbat
+    .mob Vampiric Duskbat
+    .train 403475,1
+step
+    #xprate >1.49
+    #loop
+    .goto Tirisfal Glades,83.59,43.84,0
+    .goto Tirisfal Glades,72.33,33.01,0
+    .waypoint Tirisfal Glades,83.59,43.84,70,0
+    .waypoint Tirisfal Glades,80.77,46.40,70,0
+    .waypoint Tirisfal Glades,75.86,46.02,70,0
+    .waypoint Tirisfal Glades,73.10,40.71,70,0
+    .waypoint Tirisfal Glades,72.33,33.01,70,0
+    .waypoint Tirisfal Glades,68.69,34.33,70,0
+    >>Kill |cRXP_ENEMY_Duskbats|r. Loot them for their |cRXP_LOOT_Pelts|r
+    .complete 375,1 --Duskbat Pelt (5)
+    .mob Greater Duskbat
+    .mob Vampiric Duskbat
+step << Warrior
+    #season 2
+    #xprate >1.49
+    #loop
+    .goto Tirisfal Glades,83.59,43.84,0
+    .goto Tirisfal Glades,72.33,33.01,0
+    .waypoint Tirisfal Glades,83.59,43.84,70,0
+    .waypoint Tirisfal Glades,80.77,46.40,70,0
+    .waypoint Tirisfal Glades,75.86,46.02,70,0
+    .waypoint Tirisfal Glades,73.10,40.71,70,0
+    .waypoint Tirisfal Glades,72.33,33.01,70,0
+    .waypoint Tirisfal Glades,68.69,34.33,70,0
+    >>Kill |cRXP_ENEMY_Duskbats|r. Loot them for a |cRXP_LOOT_Severed Bat Head|r
+    .collect 207975,1 --Severed Bat Head (1)
+    .mob Greater Duskbat
+    .mob Vampiric Duskbat
+    .train 403475,1
 step
     #xprate >1.49
     .xp 11+2950 >> Grind to 2950+/8800xp
@@ -3045,6 +3138,12 @@ step
 	.vendor >>|cRXP_BUY_Sell your junk, then restock on food and water if necessary|r << !Rogue !Warrior
     .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
     .target Innkeeper Renee
+step << Warrior
+    #season 2
+    .goto Tirisfal Glades,61.73,51.91
+    .gossipoption 110750 >>Talk to |cRXP_FRIENDLY_Penny|r
+    .target Penny Hawkins
+    .train 425447,1
 step
     #label ANewPlagueFinal
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Captured Scarlet Zealot|r and the |cRXP_FRIENDLY_Captured Mountaineer|r downstairs in the back of the inn
@@ -3054,7 +3153,27 @@ step
     .turnin 492 >> Turn in A New Plague
     .goto Tirisfal Glades,61.94,51.40
     .target +Captured Mountaineer
-
+step << Warrior
+    #season 2
+    .goto Tirisfal Glades,61.72,51.72
+    .gossipoption 109084 >>Talk to |cRXP_FRIENDLY_Blueheart|r (downstairs) inside the inn
+    .target Blueheart
+    .train 425447,1
+step << Warrior
+    #season 2
+    .goto Tirisfal Glades,61.72,51.91
+    >>Kill |cRXP_ENEMY_Blueheart|r, then talk to |cRXP_FRIENDLY_Penny|r upstairs
+    .gossipoption 110751 >>Receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r] from her
+    .collect 204716,1 --Rune of Frenzied Assault (1)
+    .target Netali
+    .mob Blueheart
+    .train 425447,1
+    .skipgossip
+step << Warrior
+    #season 2
+    .train 425447 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
+    .use 204716
+    .itemcount 204716,1
 
 --XX Start of <1.5x section (undercity hs)
 

@@ -930,8 +930,11 @@ step << Shaman
 step << Hunter
     #season 2
     .loop 25,Durotar,42.70,52.99,42.97,51.14,43.56,52.05,43.74,52.65,44.13,52.85,44.82,52.51,44.83,53.40,44.78,54.57,45.14,55.02,45.51,55.23,45.14,55.02,44.51,55.03,44.21,54.12,43.92,54.30,43.87,55.22,43.46,55.56,43.05,55.24,42.38,54.22,42.53,53.48,43.27,53.82,42.70,52.99
-    >>|cRXP_WARN_This will allow you to obtain|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r] |cRXP_WARN_early|r
     .xp 6 >> Grind to level 6
+    >>|cRXP_WARN_This will allow you to obtain|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r] |cRXP_WARN_early|r
+    .mob Felstalker
+    .mob Vile Familiar
+    .train 410113,1
 step
     #optional
     #xprate <1.5
@@ -949,12 +952,12 @@ step
 	#completewith next
     .goto Durotar,44.70,52.47
     .goto Durotar,53.55,44.68,30 >>|cRXP_WARN_Perform a Logout Skip by positioning your character on the edge of the rock until it looks like they're floating, then logging out and back in|r
-	.link https://www.youtube.com/watch?v=7vmnvdjbUnM >> CLICK HERE
+	.link https://www.youtube.com/watch?v=7vmnvdjbUnM >> CLICK HERE for an example
 step
     #softcore
     #completewith next
     .goto Durotar,44.70,52.47
-    .deathskip >> |cRXP_WARN_Alternatively, Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r near the arrow|r
+    .deathskip >> |cRXP_WARN_Alternatively, die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r near the arrow|r
     .target Spirit Healer
 step
     #label Betrayers
@@ -966,10 +969,10 @@ step
 step << Hunter
     #season 2
     .goto Durotar,51.85,43.49
-    >>Go inside the bunker
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r inside
-    >>|cRXP_WARN_This is needed to be able to obtain|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r inside the bunker
+    >>|cRXP_WARN_You will need|r |T132212:0|t[Hunter's Mark] |cRXP_WARN_to be able to obtain|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
     .train 1130 >> Train |T132212:0|t[Hunter's Mark]
+    .train 410113,1
     .target Thotar
 step
     #completewith next
@@ -1006,7 +1009,7 @@ step << Warrior/Rogue
 step << Warrior/Rogue
     .goto Durotar,52.05,40.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dwukk|r
-    .train 2020 >> Train |T136241:0|t[Blacksmithing]
+    .train 2018 >> Train |T136241:0|t[Blacksmithing]
     .target Dwukk
     .skill blacksmithing,1,1
 step << Hunter
@@ -1020,7 +1023,7 @@ step << Hunter
     .train 410113,1
 step << Hunter
     #season 2
-    .train 410113 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
+    .train 410113 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r] to train |T132177:0|t[Master Marksman]
     .use 206155
     .itemcount 206155,1
 step
@@ -1104,14 +1107,14 @@ step << Hunter
 step << Warrior
     .goto Durotar,42.89,69.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frang|r
-    .train 3126 >>Train |T132269:0|t[Parry]
+    .train 3127 >>Train |T132269:0|t[Parry]
     .train 6343 >>Train |T136105:0|t[Thunder Clap]
     .target Frang
     .money <0.02
 step << Warrior
     .goto Durotar,42.89,69.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frang|r
-    .train 3126 >>Train |T132269:0|t[Parry]
+    .train 3127 >>Train |T132269:0|t[Parry]
     .target Frang
 step << Rogue
     #completewith RogueTraining
@@ -1939,7 +1942,7 @@ step << Warrior/Rogue
 step << Warrior/Rogue
     .goto Durotar,52.05,40.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dwukk|r
-    .train 2020 >> Train |T136241:0|t[Blacksmithing]
+    .train 2018 >> Train |T136241:0|t[Blacksmithing]
     .target Dwukk
     .skill blacksmithing,1,1
 step << Shaman

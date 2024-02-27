@@ -692,7 +692,7 @@ step << Mage
 step << Warrior
     .goto Tirisfal Glades,61.85,52.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Austil|r
-    .train 3126 >>Train |T132269:0|t[Parry]
+    .train 3127 >>Train |T132269:0|t[Parry]
     .target Austil de Mon
     .money <0.01
 step << Rogue
@@ -829,8 +829,8 @@ step
     .goto Tirisfal Glades,33.73,45.29,50,0
     .goto Tirisfal Glades,34.10,47.88,50,0
     .goto Tirisfal Glades,33.73,49.34,50,0
-    >>Kill |cRXP_ENEMY_Scarlet Warriors|r << !Rogue !Warrior
-    >>|cRXP_WARN_Kill|r |cRXP_ENEMY_Scarlet Warriors|r |cRXP_WARN_. Be careful as they have 50% increased parry for 8 seconds after they do their defense stance animation|r  << Rogue/Warrior
+    >>Kill |cRXP_ENEMY_Scarlet Warriors|r
+    >>|cRXP_WARN_Be careful as they have 50% increased parry for 8 seconds after they do their defense stance animation|r << Rogue/Warrior
     .complete 427,1 --Scarlet Warrior (10)
     .mob Scarlet Warrior
 step
@@ -954,7 +954,7 @@ step
 step << Warrior/Rogue
     .goto Durotar,52.05,40.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dwukk|r
-    .train 2020 >> Train |T136241:0|t[Blacksmithing]
+    .train 2018 >> Train |T136241:0|t[Blacksmithing]
     .target Dwukk
     .skill blacksmithing,1,1
 step << Warrior/Rogue
@@ -1438,7 +1438,7 @@ step << Warrior/Rogue
 step << Warrior/Rogue
     .goto Durotar,52.05,40.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dwukk|r
-    .train 2020 >> Train |T136241:0|t[Blacksmithing]
+    .train 2018 >> Train |T136241:0|t[Blacksmithing]
     .target Dwukk
     .skill blacksmithing,1,1
 step << Rogue
@@ -2442,10 +2442,6 @@ step << Warlock/Mage/Rogue/Priest
     .goto Tirisfal Glades,51.10,71.53,50,0
     .zone Tirisfal Glades >> Leave Undercity through the Sewers
     .zoneskip Tirisfal Glades
-step
-    #completewith ScarletCrusade1
-    >>Collect |cRXP_LOOT_Scarlet Insignia Rings|r. You don't have to complete this step now
-    .complete 374,1 --Scarlet Insignia Ring (10)
 step << Warlock
     #completewith next
     .goto Tirisfal Glades,51.06,67.57
@@ -2454,10 +2450,12 @@ step << Warlock
 step
     #label ScarletCrusade1
     .loop 25,Tirisfal Glades,50.07,68.87,50.23,66.94,51.16,65.73,51.75,66.04,52.93,67.62,52.72,69.33,51.96,69.57,51.03,69.55
-    >>Kill |cRXP_ENEMY_Captain Perrine|r, |cRXP_ENEMY_Zealots|r and |cRXP_ENEMY_Missionaries|r.
+    >>Kill |cRXP_ENEMY_Captain Perrine|r, |cRXP_ENEMY_Scarlet Zealots|r and |cRXP_ENEMY_Scarlet Missionaries|r. Loot them for their |cRXP_LOOT_Scarlet Insignia Rings|r
     .complete 370,1 --Captain Perrine (1)
     .complete 370,2 --Scarlet Zealot (3)
     .complete 370,3 --Scarlet Missionary (3)
+    .complete 374,1 --Scarlet Insignia Ring (10)
+    .disablecheckbox
     .mob Captain Perrine
     .mob Scarlet Zealot
     .mob Scarlet Missionary
