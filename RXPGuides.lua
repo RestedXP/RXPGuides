@@ -100,8 +100,10 @@ addon.version = 40000
 local gameVersion = select(4, GetBuildInfo())
 addon.gameVersion = gameVersion
 
-if gameVersion > 40000 then
-    addon.game = "DF"
+if gameVersion > 50000 then
+    addon.game = "RETAIL"
+elseif gameVersion > 40000 then
+    addon.game = "CATA"
 elseif gameVersion > 30000 then
     addon.game = "WOTLK"
 elseif gameVersion > 20000 then

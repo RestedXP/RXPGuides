@@ -56,6 +56,8 @@ local function applies(textEntry,customClass)
                         gendercheck = true
                     elseif uppercase == "SOD" and addon.player.season == 2 then
                         entry = faction
+                    elseif uppercase == "DF" then
+                        entry = "RETAIL"
                     elseif faction == "Neutral" and (entry == "Alliance" or entry == "Horde") then
                         entry = faction
                     end
@@ -877,7 +879,7 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
                 error(L("Error parsing guide") .. ": " .. L("Guide has no name") .. "\n" .. text)
             end
             if currentStep == 0 and ((not guide[game] and
-                (guide.classic or guide.tbc or guide.wotlk or guide.df)) or not guide.name or not guide.group) then
+                (guide.classic or guide.tbc or guide.wotlk or guide.df or guide.retail or guide.cata)) or not guide.name or not guide.group) then
                 -- print(game,guide[game],guide.name)
                 skipGuide = "#0"
             end
