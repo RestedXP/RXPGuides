@@ -3375,14 +3375,19 @@ _G.StaticPopupDialogs["RXP_Link"] = {
     hideOnEscape = 1
 }
 
-function addon.functions.cast(self, ...)
+function addon.functions.cast(self, text, ...)
     if type(self) == "string" then -- on parse
         local element = {}
-        local text, id = ...
-        element.id = tonumber(id)
+        local ids = {...}
+        for i,v in ipairs(ids) do
+            ids[i] = tonumber(v)
+        end
+        element.ids = ids
         element.text = text or ""
-        local icon = GetSpellTexture(id)
-
+        local icon
+        if #ids == 1 then
+            icon = GetSpellTexture(ids[1])
+        end
         if not text or text == "" then
             element.textOnly = true
             element.dynamicText = true
@@ -3394,19 +3399,23 @@ function addon.functions.cast(self, ...)
 
         return element
     end
-    local event, unit, _, id = ...
+    local event = text
+    local unit, _, id = ...
     local element = self.element
     local icon = GetSpellTexture(id)
     if not element.icon and not element.textOnly and icon then
         element.icon = "|T" .. icon .. ":0|t"
         element.tooltipText = element.icon .. element.text
     end
-    if event == "UNIT_SPELLCAST_SUCCEEDED" and unit == "player" and id ==
-        element.id then
-
-        addon.SetElementComplete(self)
-        if element.timer then
-            addon.StartTimer(element.timer,element.timerText)
+    if event == "UNIT_SPELLCAST_SUCCEEDED" and unit == "player" then
+        for _,spellId in pairs(element.ids) do
+            if id == spellId then
+                addon.SetElementComplete(self)
+                if element.timer then
+                    addon.StartTimer(element.timer,element.timerText)
+                end
+                break
+            end
         end
     end
 end
