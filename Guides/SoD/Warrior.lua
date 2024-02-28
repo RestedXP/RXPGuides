@@ -1368,7 +1368,7 @@ step
     .turnin 79678 >>Turn in Taste Testing
     .target Skonk
 step
-    .train 416004 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of Bloodsurge|r] to learn |T236306:0|t[Blood Surge]
+    .train 416004 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of Blood Surge|r] to learn |T236306:0|t[Blood Surge]
     .use 213103
 ]])
 
@@ -1431,54 +1431,72 @@ RXPGuides.RegisterGuide([[
 << Warrior SoD
 #group RestedXP Rune & Books Guide
 #subgroup Boots
-#name Intervene - 32 (Thousand Needles)
+#name Intervene - 24 (Thousand Needles)
 #title Intervene
 
 -- Intervene
 
 step
+    #optional
     .train 403472,1
-    >>|cRXP_WARN_You have to learn the following spells from your class trainer to obtain the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Intervention|r]
-    .train 355 >>Train |T136080:0|t[Taunt]
-    .train 5308 >>Train |T135358:0|t[Execute]
-    .train 72 >>Train |T132357:0|t[Shield Bash]
+    +|cRXP_WARN_You must be at least level 24 before you can acquire the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Intervention|r]
+    .xp >24,1
 step
     .train 403472,1
     #completewith next
-    >>|cRXP_WARN_Before you head out to Thousand Needles make sure you have the following:|r
-    +A two handed weapon
-    +Two one-handed weapons
+    .train 72,1
+    .train 1671,1
+    .train 1672,1
+    +|cRXP_WARN_You must train|r |T132357:0|t[Shield Bash] |cRXP_WARN_to acquire the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Intervention|r]
+step
+    .train 403472,1
+    .train 5308,1
+    .train 20658,1
+    .train 20660,1
+    .train 20661,1
+    .train 20662,1
+    +|cRXP_WARN_You must train|r |T135358:0|t[Execute] |cRXP_WARN_to acquire the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Intervention|r]
+step
+    .train 403472,1
+    #optional
+    .train 72,1
+    .train 1671,1
+    .train 1672,1
+    +|cRXP_WARN_You must train|r |T132357:0|t[Shield Bash] |cRXP_WARN_to acquire the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Intervention|r]
+step
+    .train 403472,1
+    #completewith next
+    >>|cRXP_WARN_Before you head out to Thousand Needles, ensure you have the following (their strength doesn't matter)|r
+    +A one-handed weapon
     +A shield
-    >>|cRXP_WARN_Don't worry about their strength|r
 step
     .train 403472,1
-    .goto Thousand Needles,67.97,89.80
-    .subzone 479 >>Travel to the Rustmaul Digsite in |cFFfa9602Thousand Needles|r
+    .goto Thousand Needles,67.84,89.50,100 >> Travel to the Rustmaul Digsite in |cFFfa9602Thousand Needles|r
+step
+    #completewith next
+    +|cRXP_WARN_Ensure you have equiped your one-handed weapon and shield|r
 step
     .train 403472,1
-    .goto Thousand Needles,67.97,89.80
-    .cast 5308 >>Cast |T135358:0|t[Execute] on the |cRXP_ENEMY_Combat Dummy|r located in front of the male statue while you are wielding a two-handed weapon
-    >>|cRXP_WARN_Equip a two-handed weapon|r
+    .goto Thousand Needles,67.968,89.800
+    .cast 5308,20658,20660,20661,20662 >>|cRXP_WARN_Cast|r |T135358:0|t[Execute] |cRXP_WARN_on the |cRXP_ENEMY_Combat Dummy|r, then move across to the next|r |cRXP_ENEMY_Combat Dummy|r
     .mob Combat Dummy
 step
     .train 403472,1
-    .goto Thousand Needles,67.85,89.51
-    .cast 355 >>Cast |T136080:0|t[Taunt] on the |cRXP_ENEMY_Combat Dummy|r located in front of the dwarf statue while you are dual-wielding
-    >>|cRXP_WARN_Equip a pair of one-handed weapons|r
+    .goto Thousand Needles,67.845,89.511
+    .cast 355 >>|cRXP_WARN_Cast|r |T136080:0|t[Taunt] |cRXP_WARN_on the |cRXP_ENEMY_Combat Dummy|r, then move across to the next|r |cRXP_ENEMY_Combat Dummy|r
     .mob Combat Dummy
 step
     .train 403472,1
-    .goto Thousand Needles,67.72,89.24
-    .cast 355 >>Cast |T132357:0|t[Shield Bash] on the |cRXP_ENEMY_Combat Dummy|r located in front of the human female statue while you have a shield equipped
-    >>|cRXP_WARN_Equip a shield|r
+    .goto Thousand Needles,67.713,89.245
+    .cast 72,1671,1672 >>|cRXP_WARN_Cast|r |T132357:0|t[Shield Bash] |cRXP_WARN_on the|r |cRXP_ENEMY_Combat Dummy|r
     .mob Combat Dummy
 step
     .train 403472,1
-    .goto Thousand Needles,67.93,89.41
-    >>Click on the |cRXP_PICK_Warrior's Bounty|r to receive |T134419:0|t[|cRXP_FRIENDLY_Rune of Intervention|r]
+    .goto Thousand Needles,67.933,89.408
+    >>Open the |cRXP_PICK_Warrior's Bounty|r chest. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Intervention|r]
     .collect 213111,1 --Rune of Intervention (1x)
 step
-    .train 403472 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of Intervention|r] to learn |T132365:0|t[Intervene]
+    .train 403472 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Intervention|r] |cRXP_WARN_to train|r |T132365:0|t[Intervene]
     .use 213111
 ]])
 

@@ -1569,7 +1569,7 @@ RXPGuides.RegisterGuide([[
 step
     .train 400096,1
     .train 1842 >>You have to learn |T136162:0|t[Disarm Trap] before you can obtain |T134419:0|t[|cRXP_FRIENDLY_Rune of the Assassin|r]
-    .collect 5060,1 >>You also need |T135259:0|t[Thieves' Tools]
+    .collect 5060,1 >>You also need |T134065:0|t[Thieves' Tools]
 step
     #completewith next
     .zone Swamp of Sorrows >>Travel to Swamp of Sorrows
