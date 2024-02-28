@@ -3402,14 +3402,14 @@ function addon.functions.cast(self, text, ...)
     local event = text
     local unit, _, id = ...
     local element = self.element
-    local icon = GetSpellTexture(id)
-    if not element.icon and not element.textOnly and icon then
-        element.icon = "|T" .. icon .. ":0|t"
-        element.tooltipText = element.icon .. element.text
-    end
     if event == "UNIT_SPELLCAST_SUCCEEDED" and unit == "player" then
         for _,spellId in pairs(element.ids) do
             if id == spellId then
+                local icon = GetSpellTexture(id)
+                if not element.icon and not element.textOnly and icon then
+                    element.icon = "|T" .. icon .. ":0|t"
+                    element.tooltipText = element.icon .. element.text
+                end
                 addon.SetElementComplete(self)
                 if element.timer then
                     addon.StartTimer(element.timer,element.timerText)
