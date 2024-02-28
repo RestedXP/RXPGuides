@@ -552,6 +552,11 @@ function addon.LoadEmbeddedGuides()
                             strupper(line):gsub("#" .. addon.game,function()
                                 enabled = true
                             end)
+                            if addon.game == "RETAIL" then
+                                strupper(line):gsub("#DF",function()
+                                    enabled = true
+                                end)
+                            end
                         end
                         enabledFor = enabledFor or line:match("^%s*<<%s*(.-)%s*$")
                         group = group or line:match("^%s*#group%s+(.-)%s*$")
