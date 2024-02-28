@@ -1517,6 +1517,11 @@ step
 step
     .train 426491,1
     #loop
+    .goto Badlands,15.6,45.8,0
+    .goto Badlands,20.0,57.0,0
+    .goto Badlands,27.8,67.8,0
+    .goto Badlands,33.0,66.2,0
+    .goto Badlands,36.6,56.8,0
     .goto Badlands,15.6,45.8,30,0 << Alliance
     .goto Badlands,20.0,57.0,30,0 << Alliance
     .goto Badlands,27.8,67.8,30,0 << Alliance
@@ -1527,11 +1532,13 @@ step
     .goto Badlands,27.8,67.8,30,0 << Horde
     .goto Badlands,20.0,57.0,30,0 << Horde
     .goto Badlands,15.6,45.8,30,0 << Horde
-    >>Kill the |cRXP_ENEMY_Wandering Swordsman|r in Badlands. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of the Commander|r]
-    >>|cRXP_WARN_This is a rare enemy and there's a chance it may not be present|r
+    >>Talk to a |cRXP_FRIENDLY_Wandering Swordsman|r in Badlands
+    >>Defeat the |cRXP_ENEMY_Wandering Swordsman|r in a duel
+    >>Open the |cRXP_PICK_Swordsman's Reward|r it drops on the ground. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Commander|r]
+    >>|cRXP_WARN_Note: The |cRXP_FRIENDLY_Wandering Swordsman|r can spawn throughout many locations in Badlands|r
     .collect 213110,1 --Rune of the Commander (1x)
-    .mob Wandering Swordsman
     .unitscan Wandering Swordsman
+    .skipgossip
 step
     .train 426491 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Commander|r] |cRXP_WARN_to learn|r |T132351:0|t[Rallying Cry]
     .use 213110

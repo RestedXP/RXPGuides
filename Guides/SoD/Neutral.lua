@@ -1764,6 +1764,8 @@ RXPGuides.RegisterGuide([[
 #classic
 << SoD
 #group RestedXP Rune & Books Guide
+#subgroup Extras
+#subweight -1
 #name Cozy Sleeping Bag - 14
 
 step
