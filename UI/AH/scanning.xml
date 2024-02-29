@@ -118,7 +118,7 @@
         </Size>
         <Layers>
             <Layer level="BACKGROUND">
-                <FontString name="$parentName" inherits="GameFontNormal" justifyH="LEFT">
+                <FontString name="$parentName" inherits="GameFontNormal" justifyH="LEFT" text="$parentName">
                     <Size>
                         <AbsDimension x="180" y="32"/>
                     </Size>
@@ -203,24 +203,6 @@
                 <Layers>
                     <Layer level="BORDER">
                         <Texture name="$parentIconTexture"/>
-                        <FontString name="$parentCount" inherits="NumberFontNormal" justifyH="RIGHT" hidden="true">
-                            <Anchors>
-                                <Anchor point="BOTTOMRIGHT">
-                                    <Offset>
-                                        <AbsDimension x="-5" y="2"/>
-                                    </Offset>
-                                </Anchor>
-                            </Anchors>
-                        </FontString>
-                        <FontString name="$parentStock" inherits="NumberFontNormalYellow" justifyH="LEFT" hidden="true">
-                            <Anchors>
-                                <Anchor point="TOPLEFT">
-                                    <Offset>
-                                        <AbsDimension x="0" y="-2"/>
-                                    </Offset>
-                                </Anchor>
-                            </Anchors>
-                        </FontString>
                     </Layer>
                     <Layer level="OVERLAY">
                         <Texture parentKey="IconBorder" file="Interface\Common\WhiteIconFrame" hidden="true">
@@ -270,7 +252,7 @@
                 </Scripts>
                 <NormalTexture name="$parentNormalTexture" file="Interface\Buttons\UI-Quickslot2">
                     <Size>
-                        <AbsDimension x="60" y="60"/>
+                        <AbsDimension x="32" y="32"/>
                     </Size>
                     <Anchors>
                         <Anchor point="CENTER">
@@ -357,7 +339,7 @@
                     -->
                 </Scripts>
             </Frame>
-            <Frame name="$parentBuyoutMoneyFrame">
+            <Frame name="$parentBuyout">
                 <Size x="186" y="32"/>
                 <Anchors>
                     <Anchor point="LEFT" relativeTo="$parentUpdateEP" relativePoint="RIGHT"/>
@@ -385,10 +367,9 @@
                         <Scripts>
                             <OnLoad>
 								SmallMoneyFrame_OnLoad(self);
-								MoneyFrame_SetType(self, "AUCTION");
-								SetMoneyFrameColor(self:GetName(), "yellow")
+                                MoneyFrame_SetType(self, "AUCTION");
 								MoneyFrame_SetMaxDisplayWidth(self, 146);
-							</OnLoad>
+                            </OnLoad>
                         </Scripts>
                     </Frame>
                 </Frames>
@@ -553,7 +534,7 @@
                     </OnVerticalScroll>
                 </Scripts>
             </ScrollFrame>
-            <Frame name="RXP_IU_AH_RowHeader" inherits="RXP_IU_AH_ItemKindHeader" id="1">
+            <Frame name="RXP_IU_AH_RowHeader0" inherits="RXP_IU_AH_ItemKindHeader" id="1">
                 <Anchors>
                     <Anchor point="TOPLEFT">
                         <Offset>
@@ -562,18 +543,18 @@
                     </Anchor>
                 </Anchors>
             </Frame>
-            <Button name="RXP_IU_AH_RowBest" inherits="RXP_IU_AH_ItemRow" id="2">
+            <Button name="RXP_IU_AH_RowBest0" inherits="RXP_IU_AH_ItemRow" id="2">
                 <Anchors>
-                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_RowHeader" relativePoint="BOTTOMLEFT" >
+                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_RowHeader0" relativePoint="BOTTOMLEFT" >
                         <Offset>
                             <AbsDimension x="35" y="0"/>
                         </Offset>
                     </Anchor>
                 </Anchors>
             </Button>
-            <Button name="RXP_IU_AH_RowBudget" inherits="RXP_IU_AH_ItemRow" id="3">
+            <Button name="RXP_IU_AH_RowBudget0" inherits="RXP_IU_AH_ItemRow" id="3">
                 <Anchors>
-                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_RowBest" relativePoint="BOTTOMLEFT">
+                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_RowBest0" relativePoint="BOTTOMLEFT">
                         <Offset>
                             <AbsDimension x="0" y="0"/>
                         </Offset>

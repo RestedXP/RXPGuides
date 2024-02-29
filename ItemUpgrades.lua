@@ -1137,7 +1137,6 @@ local GetNumAuctionItems, GetAuctionItemLink, GetAuctionItemInfo =
     _G.GetNumAuctionItems, _G.GetAuctionItemLink, _G.GetAuctionItemInfo
 
 local AuctionFilterButtons = {["Weapons"] = 1, ["Armor"] = 2}
-local AceGUI = LibStub("AceGUI-3.0")
 
 local ahSession = {
     isInitialized = false,
@@ -1227,13 +1226,13 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
     end
 
     local itemLink
-    local name, buyoutPrice, itemID, hasAllInfo
+    local name, level, buyoutPrice, itemID, hasAllInfo
 
     for i = 1, resultCount do
         itemLink = GetAuctionItemLink("list", i)
 
         -- name, texture, count, quality, canUse, level, levelColHeader, minBid, minIncrement, buyoutPrice, bidAmount, highBidder, bidderFullName, owner, ownerFullName, saleStatus, itemId, hasAllInfo = GetAuctionItemInfo(type, index)
-        name, _, _, _, _, _, _, _, _, buyoutPrice, _, _, _, _, _, _, itemID, hasAllInfo =
+        name, _, _, _, _, level, _, _, _, buyoutPrice, _, _, _, _, _, _, itemID, hasAllInfo =
             GetAuctionItemInfo("list", i)
 
         -- TODO if not hasAllInfo
@@ -1244,7 +1243,8 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
         else
             ahSession.scanData[itemLink] = {
                 lowestPrice = buyoutPrice,
-                itemID = itemID
+                itemID = itemID,
+                level = level
             }
         end
 
@@ -1364,6 +1364,7 @@ function addon.itemUpgrades.AH:Analyze()
             if scanData.ratio and scanData.ratio > bAS.relative.ratio then
                 bAS.relative.ratio = scanData.ratio
                 bAS.relative.itemLink = itemLink
+                bAS.relative.level = scanData.level
 
                 bAS.relative.lowestPrice =
                     ahSession.scanData[itemLink].lowestPrice
@@ -1372,6 +1373,7 @@ function addon.itemUpgrades.AH:Analyze()
             if scanData.relativeWeightPerCopper > bAS.budget.rwpc then
                 bAS.budget.rwpc = scanData.relativeWeightPerCopper
                 bAS.budget.itemLink = itemLink
+                bAS.budget.level = scanData.level
 
                 bAS.budget.lowestPrice =
                     ahSession.scanData[itemLink].lowestPrice
@@ -1382,7 +1384,26 @@ function addon.itemUpgrades.AH:Analyze()
     end
 end
 
-local ahRows = {}
+-- Sequentially re-usable frames
+local itemBlocks = {
+    -- Populated with first frame from UI\AH\scanning.xml, specially positioned
+    [0] = {
+        header = _G.RXP_IU_AH_RowHeader0:GetName(),
+        best = _G.RXP_IU_AH_RowBest0:GetName(),
+        budget = _G.RXP_IU_AH_RowBudget0:GetName()
+    }
+}
+
+local function getItemBlock(count)
+    if itemBlocks[count] then return itemBlocks[count] end
+
+    -- TODO create
+    return {
+        header = _G.RXP_IU_AH_RowHeader0:GetName(),
+        best = _G.RXP_IU_AH_RowBest0:GetName(),
+        budget = _G.RXP_IU_AH_RowBudget0:GetName()
+    }
+end
 
 function addon.itemUpgrades.AH:CreateEmbeddedGui()
     if ahSession.displayFrame then return end
@@ -1421,26 +1442,25 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
     tabButton:HookScript("OnHide", function() ahSession.displayFrame:Hide() end)
 
     tabButton.Selected = function(this)
-        print("tabButton.Selected")
         PanelTemplates_SetTab(attachment, this)
 
-        AuctionFrameTopLeft:SetTexture(
+        _G.AuctionFrameTopLeft:SetTexture(
             "Interface\\AuctionFrame\\UI-AuctionFrame-Bid-TopLeft")
-        AuctionFrameTop:SetTexture(
+        _G.AuctionFrameTop:SetTexture(
             "Interface\\AuctionFrame\\UI-AuctionFrame-Auction-Top")
-        AuctionFrameTopRight:SetTexture(
+        _G.AuctionFrameTopRight:SetTexture(
             "Interface\\AuctionFrame\\UI-AuctionFrame-Auction-TopRight")
-        AuctionFrameBotLeft:SetTexture(
+        _G.AuctionFrameBotLeft:SetTexture(
             "Interface\\AuctionFrame\\UI-AuctionFrame-Bid-BotLeft")
-        AuctionFrameBot:SetTexture(
+        _G.AuctionFrameBot:SetTexture(
             "Interface\\AuctionFrame\\UI-AuctionFrame-Auction-Bot")
-        AuctionFrameBotRight:SetTexture(
+        _G.AuctionFrameBotRight:SetTexture(
             "Interface\\AuctionFrame\\UI-AuctionFrame-Bid-BotRight")
 
         ahSession.displayFrame:Show()
 
-        AuctionFrame.type = nil
-        SetAuctionsTabShowing(false)
+        _G.AuctionFrame.type = nil
+        _G.SetAuctionsTabShowing(false)
         PanelTemplates_SelectTab(this)
     end
 
@@ -1463,10 +1483,89 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
     PanelTemplates_EnableTab(attachment, index)
 end
 
+local function setIcon(base, name, icon)
+    if not base or not _G[base .. name] then
+        print("setIcon: error", icon)
+        return
+    end
+
+    _G[base .. name]:SetNormalTexture(icon)
+end
+
+local function setText(base, name, text)
+    if not base or not _G[base .. name] then
+        print("setText: error", text)
+        return
+    end
+    -- print("setText", base, name, text)
+
+    _G[base .. name]:SetText(text)
+end
+
+local function setMoney(base, name, money)
+    if not base or not _G[base .. name] then
+        print("setMoney: error")
+        return
+    end
+
+    MoneyFrame_Update(_G[base .. name], money)
+end
+
 function addon.itemUpgrades.AH:DisplayEmbeddedResults()
     self:CreateEmbeddedGui()
     if not _G.AuctionFrame:IsShown() then return end
 
+    local block
+    local i = 0
+    local epPerCopper
+
+    for slotId, data in pairs(ahSession.bestAnalysis) do
+        block = getItemBlock(i)
+
+        if data.budget.itemLink or data.relative.itemLink then
+            setText(block.header, 'Name', data.slotName)
+
+            if data.relative.itemLink then
+                setText(block.best, 'Name', data.relative.itemLink)
+                setText(block.best, 'ItemLevelText', data.relative.level)
+                setText(block.best, 'UpdateEPText',
+                        fmt("%s", prettyPrintRatio(data.relative.ratio)))
+                setMoney(block.best, 'BuyoutMoney', data.relative.lowestPrice)
+                setIcon(block.best, 'ItemIcon',
+                        GetItemIcon(data.relative.itemLink))
+                -- print("  - Relative EP / copper", data.relative.itemLink, data.relative.weight)
+            end
+
+            if data.budget.itemLink then
+                epPerCopper = addon.Round(data.budget.rwpc, 2)
+
+                if epPerCopper == 0 then
+                    epPerCopper = addon.Round(data.budget.rwpc, 4)
+                end
+                setText(block.budget, 'Name', data.budget.itemLink)
+                setText(block.budget, 'ItemLevelText', data.budget.level)
+                setText(block.budget, 'UpdateEPText',
+                        fmt("%s (EP/c)", epPerCopper))
+                setMoney(block.budget, 'BuyoutMoney', data.budget.lowestPrice)
+                setIcon(block.budget, 'ItemIcon',
+                        GetItemIcon(data.budget.itemLink))
+
+                -- print("  - Highest EP / copper", data.budget.itemLink, data.budget.weight)
+            end
+
+            -- sFrame.data:SetText(sFrameData)
+            -- tabButton:SetID(index)
+
+            -- Only incrememnt frames if they have something
+            i = i + 1
+        else
+            print("DisplayEmbeddedResults:", data.slotName, "no upgrades found")
+        end
+
+        -- TODO remove after test
+        if i > 0 then return end
+
+    end
 end
 
 function addon.itemUpgrades.AH:DisplayResults()
