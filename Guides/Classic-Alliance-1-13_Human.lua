@@ -845,7 +845,7 @@ step
 step << Warrior/Rogue/Paladin
     .goto Elwynn Forest,41.706,65.544
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smith Argus|r
-    .train 2020 >> Train |T136241:0|t[Blacksmithing]
+    .train 2018 >> Train |T136241:0|t[Blacksmithing]
     >>|cRXP_WARN_This will allow you to make|r |T135248:0|t[Rough Sharpening Stones] |cRXP_WARN_which increase your melee damage by 2|r << Warrior/Rogue
     >>|cRXP_WARN_This will allow you to make|r |T135255:0|t[Rough Weightstones] |cRXP_WARN_which increase your melee damage by 2|r << Paladin
     >>|cRXP_WARN_If you don't want to do this, skip this step|r

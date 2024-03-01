@@ -916,6 +916,13 @@ step << Warlock
     .use 205230 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r]
     .complete 77586,1 --Learn Spell: Engrave Gloves - Haunt
     .isOnQuest 77586
+step << Rogue
+    #season 2
+    .goto Durotar,42.70,52.99
+    >>Use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Yarrog Baneshadow|r for |T134331:0|t[|cRXP_LOOT_Note from Ba'so|r]
+    .collect 207098,1 --Note from Ba'so (1)
+	.mob Yarrog Baneshadow
+    .train 400094,1
 step
     #label Yarrog
     .goto Durotar,42.70,52.99
@@ -1723,10 +1730,24 @@ step
     .turnin 786,1 >>Turn in Thwarting Kolkar Aggression << Shaman
     .turnin 786 >>Turn in Thwarting Kolkar Aggression << !Shaman
     .target Lar Prowltusk
+step << Rogue
+    #season 2
+    .goto Durotar,51.82,58.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ba'so|r to receive |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r]
+    >>|cRXP_WARN_He is stealthed!|r
+    .collect 203990,1 --Rune of Mutilation (1)
+    .target Ba'so
+    .skipgossip
+    .itemcount 207098,1
+    .train 400094,1
+step << Rogue
+    #season 2
+    .train 400094 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r] |cRXP_WARN_to train|r |T132304:0|t[Mutilate]
+    .use 203990
+    .itemcount 203990,1
 step
     #label TravelToTiragarde
     .goto Durotar,54.42,62.64,60,0
-    .goto Durotar,59.20,58.38,60,0
     .subzone 372 >> Travel to Tiragarde Keep. Grind mobs on the way
     .isOnQuest 784
 step

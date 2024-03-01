@@ -376,14 +376,14 @@ step << Druid
 step << Warrior
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harutt|r
-    .train 3126 >>Train |T132269:0|t[Parry]
+    .train 3127 >>Train |T132269:0|t[Parry]
     .train 6343 >>Train |T136105:0|t[Thunder Clap]
     .target Harutt Thunderhorn
     .money <0.02
 step << Warrior
     .goto Mulgore,44.02,76.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harutt|r
-    .train 3126 >>Train |T132269:0|t[Parry]
+    .train 3127 >>Train |T132269:0|t[Parry]
     .target Harutt Thunderhorn
 step
     .goto Mulgore,38.51,81.54

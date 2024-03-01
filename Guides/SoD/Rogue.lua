@@ -1257,7 +1257,7 @@ step
     .mob Burning Blade Thug
     .train 400094,1
 step
-    .goto Tirisfal Glades,60.73,50.60
+    .goto Durotar,51.82,58.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ba'so|r to receive |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r]
     >>|cRXP_WARN_He is stealthed!|r
     .collect 203990,1 --Rune of Mutilation (1)
