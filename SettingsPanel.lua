@@ -3346,7 +3346,7 @@ function addon.settings:SetupMapButton()
                  self.worldMapButton, 0, 0, "MENU")
     end)
 
-    local ref = WorldMapFrame.MaximizeMinimizeFrame.MaximizeButton
+    local ref = WorldMapFrame.MaximizeMinimizeFrame and WorldMapFrame.MaximizeMinimizeFrame.MaximizeButton
 
     local function recalculateMapButton()
         if WorldMapFrame.isMaximized then
@@ -3355,15 +3355,16 @@ function addon.settings:SetupMapButton()
                                          "TOPRIGHT", -10, -26)
         else
             self.worldMapButton:SetSize(20, 20)
-            self.worldMapButton:SetPoint("TOPRIGHT", ref, "TOPLEFT", 0, -5.5)
+            self.worldMapButton:SetPoint("TOPRIGHT", ref or _G.WorldMapFrameCloseButton, "TOPLEFT", 0, -5.5)
         end
     end
 
     -- self.worldMapButton:SetScript("OnShow", recalculateMapButton)
-
-    hooksecurefunc(ref, "Show", recalculateMapButton)
-    hooksecurefunc(WorldMapFrame.MaximizeMinimizeFrame.MinimizeButton, "Show",
-                   recalculateMapButton)
+    if ref then
+        hooksecurefunc(ref, "Show", recalculateMapButton)
+        hooksecurefunc(WorldMapFrame.MaximizeMinimizeFrame.MinimizeButton, "Show",
+                    recalculateMapButton)
+    end
 
 end
 

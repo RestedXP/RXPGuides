@@ -8,7 +8,7 @@ addon = LibStub("AceAddon-3.0"):NewAddon(addon, addonName, "AceEvent-3.0")
 
 local RegisterMessage_OLD = addon.RegisterMessage
 local rand, tinsert, select = math.random, table.insert, _G.select
-
+local IsAddOnLoadOnDemand = C_AddOns and C_AddOns.IsAddOnLoadOnDemand or _G.IsAddOnLoadOnDemand
 local messageList = {}
 
 local function MessageHandler(message,...)
@@ -1053,7 +1053,9 @@ function addon:OnEnable()
     self:RegisterEvent("PLAYER_LEAVING_WORLD")
     self:RegisterEvent("PLAYER_LOGOUT")
 
-    self:RegisterEvent("CALENDAR_UPDATE_EVENT_LIST")
+    if IsAddOnLoadOnDemand("Blizzard_Calendar") then
+        self:RegisterEvent("CALENDAR_UPDATE_EVENT_LIST")
+    end
     self:RegisterEvent("ZONE_CHANGED")
 
     if addon.gameVersion > 90000 then
