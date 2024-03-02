@@ -1105,7 +1105,7 @@ step << Rogue/Mage/Priest
     #completewith next
     >>Pick Pocket or kill |cRXP_ENEMY_Scarlet Warriors|r. Loot them for |T134327:0|t[|cRXP_LOOT_Top-Right Map Piece|r] << Rogue
     >>Kill |cRXP_ENEMY_Scarlet Warriors|r. Loot them for |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF|r] << Mage
-    >>Kill |cRXP_ENEMY_Scarlet Warriors|r. Loot them for|T135975:0|t[cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] << Priest
+    >>Kill |cRXP_ENEMY_Scarlet Warriors|r. Loot them for |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] << Priest
     >>|cRXP_WARN_Any of the Scarlet Humanoids in Tirisfal can drop the Map Piece|r << Rogue
     >>|cRXP_WARN_Any of the Scarlet Humanoids in Tirisfal can drop the Spell Note|r << Mage
     >>|cRXP_WARN_Any of the Scarlet Humanoids in Tirisfal can drop the Prophecy|r << Priest
@@ -1151,7 +1151,7 @@ step << Rogue/Mage/Priest
     .goto Tirisfal Glades,33.73,49.34,50,0
     >>Pick Pocket or kill |cRXP_ENEMY_Scarlet Warriors|r. Loot them for |T134327:0|t[|cRXP_LOOT_Top-Right Map Piece|r] << Rogue
     >>Kill |cRXP_ENEMY_Scarlet Warriors|r. Loot them for |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF|r] << Mage
-    >>Kill |cRXP_ENEMY_Scarlet Warriors|r. Loot them for|T135975:0|t[cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] << Priest
+    >>Kill |cRXP_ENEMY_Scarlet Warriors|r. Loot them for |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] << Priest
     >>|cRXP_WARN_Any of the Scarlet Humanoids in Tirisfal can drop the Map Piece|r << Rogue
     >>|cRXP_WARN_Any of the Scarlet Humanoids in Tirisfal can drop the Spell Note|r << Mage
     >>|cRXP_WARN_Any of the Scarlet Humanoids in Tirisfal can drop the Prophecy|r << Priest
@@ -1216,7 +1216,7 @@ step << Priest
     .use 205947
     .itemcount 205947,1
     .aura 417316 >>|cRXP_WARN_Now you have to find a Troll Priest with a Loa buff. You have to kneel before him and he has to /pray for you.|r
-    .train 402852 >>|cRXP_WARN_Use the|r |T135975:0|t[cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] |cRXP_WARN_to train|r |T237570:0|t[Homunculi]
+    .train 402852 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] |cRXP_WARN_to train|r |T237570:0|t[Homunculi]
 step
     #softcore
     .goto Tirisfal Glades,58.29,49.80,30,0
@@ -2258,6 +2258,7 @@ step
     .subzone 159 >> Travel back to Brill
     .subzoneskip 159
 step
+    #xprate >1.49
     #softcore
     #completewith FoodandWater2
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
@@ -2286,11 +2287,11 @@ step
     .target Coleman Farthing
     .isOnQuest 361
 step
+    .goto Tirisfal Glades,61.72,52.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman|r
     .turnin 354 >>Turn in Deaths in the Family
     .turnin 362 >>Turn in The Haunted Mills
     .accept 355 >>Accept Speak with Sevren
-    .goto Tirisfal Glades,61.72,52.29
     .target Coleman Farthing
 step
     #optional
@@ -2313,9 +2314,13 @@ step << Warrior
 step << Warlock
     .goto Tirisfal Glades,61.62,52.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ageron|r inside the inn
-    .trainer >> Train your class spells
     .accept 1478 >> Accept Halgar's Summons
     .target Ageron Kargal
+step << Warlock
+    .goto Tirisfal Glades,61.59,52.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rupert|r
+    .train 707 >> Train your class spells
+    .target Rupert Boch
 step << Rogue
     .goto Tirisfal Glades,61.75,52.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marion|r inside the inn
@@ -2460,10 +2465,10 @@ step
     .zone Undercity >> Travel into the Undercity through the sewers
     .zoneskip Undercity
 --XX Priest skips on 1.5x unless they go for a Wand. No reason to go Undercity if skipping Lich quest and not setting hearth
-step << Warrior
+step << Rogue
     .goto Undercity,57.29,32.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Archibald|r in the War Quarter
-    .train 201 >>Train 1h Swords << Rogue
+    .train 201 >>Train 1h Swords
     .target Archibald
 step << Warrior/Rogue
     .goto Undercity,56.06,37.44
@@ -2724,6 +2729,11 @@ step
     .collect 4496,1,356,1 --Small Brown Pouch (1)
     .target Mrs. Winters
     .money <0.05
+step << Warrior
+    .goto Tirisfal Glades,61.72,52.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coleman|r
+    .turnin 1820 >>Turn in Speak with Coleman
+    .target Coleman Farthing
 step << Warrior
     #season 2
     #completewith UnluckyRogue

@@ -2317,17 +2317,43 @@ RXPGuides.RegisterGuide([[
 << Horde Mage SoD
 
 step
-    .train 401767,1
+    #optional
+    .train 415936,1
+    .train 1953,1
+    +|cRXP_WARN_You must train|r |T135736:0|t[Blink] |cRXP_WARN_to acquire the|r |T236220:0|t[Living Bomb] |cRXP_WARN_rune|r
+step
+    #optional
+    .train 415936,1
+    .goto Orgrimmar,45.6,56.8,-1
+    .goto Orgrimmar,46.2,46.6,-1
+    .goto Orgrimmar,45.8,40.6,-1
+    .goto The Barrens,51.4,30.2,-1
+    .goto Swamp of Sorrows,45.8,53.0,-1
+    .goto Thunder Bluff,42.6,55.4,-1
+    .goto Dustwallow Marsh,36.4,30.4,-1
+    .goto Undercity,82.6,16.0,-1
+    .goto Thunder Bluff,41.8,55.0,-1
+    .goto Thousand Needles,45.2,50.6,-1
+    .goto Stonetalon Mountains,47.6,61.6,-1
+    >>|cRXP_BUY_Buy one or more|r |T135933:0|t[Comprehension Charm] |cRXP_BUY_from a|r |cRXP_FRIENDLY_Reagent Vendor|r
+    .collect 211779,1
+step
+    .train 415936,1
     #completewith next
-    .zone The Barrens >>Travel to |cFFfa9602The Barrens|r |cRXP_WARN_make sure to have blink learned.|r
+    .zone The Barrens >>Travel to |cFFfa9602The Barrens|r
 step
-    .train 401767,1
-    .goto The Barrens,45,80
-    .aura 421063,1 >>To receive the |T236168:0|t[Path of no Steps] aura, which allows you to blink without a cooldown, position yourself in the green area near the Stone Tablet.
+    .train 415936,1
+    .goto The Barrens,45.45,80.00
+    .aura 421063,1 >>|cRXP_WARN_Blink against the|r |cRXP_PICK_Etched Carving|r |cRXP_WARN_on the wall to obtain the|r |T236168:0|t[Path of no Steps] |cRXP_WARN_buff|r
 step
-    .train 401767,1
-    .goto The Barrens,45,80
-    .train 415936 >>To acquire the Living Bomb ability, initiate the event by blinking against the Stone Tablet. Following this, you must successfully blink into the designated green spots to complete the challenge.
+    .train 415936,1
+    .goto The Barrens,45.28,80.14,5,0
+    .goto The Barrens,45.23,80.42,5,0
+    .goto The Barrens,45.06,80.57,5,0
+    .goto The Barrens,44.94,80.80,5,0
+    .goto The Barrens,44.87,81.08,5,0
+    .goto The Barrens,44.80,81.37
+    .train 415936 >>|cRXP_WARN_Cast|r |T135736:0|t[Blink] |cRXP_WARN_onto the green circles one by one. At the end, blink against the|r |cRXP_PICK_Etched Carving|r |cRXP_WARN_to train|r |T236220:0|t[Living Bomb]
 ]])
 
 RXPGuides.RegisterGuide([[
