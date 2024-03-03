@@ -247,6 +247,9 @@ end
 
  -- add flight path times to taxi map tooltips:
 _G.hooksecurefunc("TaxiNodeOnButtonEnter", function(button)
+    if not (addon.settings.profile and addon.settings.profile.showFlightTimers) then
+        return
+    end
 
     local index = button:GetID()
     if TaxiNodeGetType(index) == "REACHABLE" then
