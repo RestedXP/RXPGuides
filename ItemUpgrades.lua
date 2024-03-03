@@ -1568,6 +1568,18 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
     end
 end
 
+-- right-align buyout block
+-- Remove brackets on item name
+-- Add update/vendor icons
+-- Propagate +EP up the chain
+-- Fix missing clicked icon texture
+-- Support multiple blocks, hide leftovers
+-- Verify scrollframe support
+-- Adjust item name positioning
+-- Make rows clickable
+-- Support actually buying the thing
+-- Hide scrollbar when not needed
+
 function addon.itemUpgrades.AH:DisplayResults()
     self:CreateEmbeddedGui()
 
