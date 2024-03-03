@@ -1036,7 +1036,7 @@ RXPGuides.RegisterGuide([[
 step << Warlock
     .goto Elwynn Forest,61.6,53.8
     >>Kill |cRXP_ENEMY_Kobold Geomancers|r. Loot them for a |T133733:0|t[|cRXP_LOOT_Ominous Tome|r]
-    .collect 204905,1 -- Ominous Tome (1)
+    .collect 208139,1 -- Ominous Tome (1)
     .mob Kobold Geomancer
     .train 425477,1
 step << Warlock
@@ -1084,11 +1084,11 @@ step << Warlock
     .goto StormwindClassic,25.154,77.406
     >>|cRXP_WARN_Travel to the bottom of The Slaughtered Lamb|r
     .cast 418065 >> |cRXP_WARN_Use the|r |T133733:0|t[|cRXP_LOOT_Ominous Tome|r] |cRXP_WARN_to call forth|r |cRXP_ENEMY_Soboz|r
-    .use 204905
+    .use 208139
     .train 425477,1
 step << Warlock
     .goto StormwindClassic,25.154,77.406
-    .use 204905 >> Kill |cRXP_ENEMY_Soboz|r. Loot him for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Grace|r]
+    .use 208139 >> Kill |cRXP_ENEMY_Soboz|r. Loot him for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Grace|r]
     .collect 204912,1 -- Rune of Grace (1)
     .mob Soboz
     .train 425477,1
@@ -1135,7 +1135,7 @@ step << Warlock
     .train 425477,1
 step << Warlock
     .goto Dun Morogh,42.23,35.40
-    .use 204905 >> Kill |cRXP_ENEMY_Soboz|r. Loot him for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Grace|r]
+    .use 208139 >> Kill |cRXP_ENEMY_Soboz|r. Loot him for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Grace|r]
     .collect 204912,1 -- Rune of Grace (1)
     .mob Soboz
     .train 425477,1
