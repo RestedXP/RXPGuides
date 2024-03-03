@@ -620,8 +620,9 @@ RXPGuides.RegisterGuide([[
 step << Rogue
     #season 2
     .goto Dun Morogh,77.86,61.66
-    >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Dark Iron Spies|r for |T134331:0|t[Blackrat's Note]
-    .collect 208205,1
+    >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Dark Iron Spies|r. Loot them for |T134331:0|t[Blackrat's Note]
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    .collect 208205,1 --Blackrat's Note (1)
     .mob Dark Iron Spy
     .train 400094,1
 step << Rogue

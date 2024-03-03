@@ -200,19 +200,37 @@ RXPGuides.RegisterGuide([[
 
 step << Warrior
     #season 2
-    .goto Dun Morogh,31.87,38.45,60,0
-    .goto Dun Morogh,30.42,39.84,60,0
-    .goto Dun Morogh,30.02,39.08,60,0
-    .goto Dun Morogh,33.82,37.26
-    >>Kill |cRXP_ENEMY_Fyodi|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r]
-    >>|cRXP_ENEMY_Fyodi|r |cRXP_WARN_is a level 7 elite boar|r
+    .goto 1426,31.87,38.45,0
+    .goto 1426,30.42,39.84,0
+    .goto 1426,30.02,39.08,0
+    .goto 1426,33.82,37.26,0
+    .goto 1426,31.87,38.45,50,0
+    .goto 1426,30.42,39.84,50,0
+    .goto 1426,30.02,39.08,50,0
+    .goto 1426,33.82,37.26,50,0
+    >>Kill |cRXP_ENEMY_Fyodi|r. Loot him for the |T134419:0|t|cRXP_LOOT_[Rune of Furious Thunder]|r
+    >>|cRXP_WARN_Even though |cRXP_ENEMY_Fyodi|r shows as an elite, his health, damage, and armor values are that of a standard mob|r
+    >>|cRXP_WARN_Be careful as he casts|r |T132337:0|t[Charge] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 35-80 melee damage on hit. Only castable at range)|r
+    >>|cRXP_WARN_NOTE: The|r |T134419:0|t|cRXP_LOOT_[Rune of Furious Thunder]|r |cRXP_WARN_can also drop off every rare mob in Dun Morogh, as well as |cRXP_ENEMY_Vagash|r, |cRXP_ENEMY_Mangeclaw|r, and|r |cRXP_ENEMY_Old Icebeard|r
     .collect 204809,1 -- Rune of Furious Thunder (1)
-    .unitscan Fyodi
+    .mob Fyodi
     .train 403476,1
+    .xp >10,1
+step << Warrior
+    #season 2
+    .goto 1426,62.094,47.154,40,0
+    .goto 1426,62.434,48.989,40,0
+    .goto 1426,62.538,46.195
+    >>Kill |cRXP_ENEMY_Vagash|r. Loot him for the |T134419:0|t|cRXP_LOOT_[Rune of Furious Thunder]|r
+    >>|cRXP_WARN_NOTE: The|r |T134419:0|t|cRXP_LOOT_[Rune of Furious Thunder]|r |cRXP_WARN_can also drop off every rare mob in Dun Morogh, as well as |cRXP_ENEMY_Fyodi|r, |cRXP_ENEMY_Mangeclaw|r, and|r |cRXP_ENEMY_Old Icebeard|r
+    .collect 204809,1 -- Rune of Furious Thunder (1)
+    .mob Vagash
+    .train 403476,1
+    .xp <10,1
 step << Warrior
     #label FuriousThunder
     #season 2
-    .train 403476 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r] |cRXP_WARN_to train|r |T136048:0|t[Furious Thunder]
+    .train 403476 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Furious Thunder]|r |cRXP_WARN_to train|r |T136048:0|t[Furious Thunder]
     .use 204809
     .itemcount 204809,1
 ]])

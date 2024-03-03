@@ -847,7 +847,7 @@ step
     .goto Dun Morogh,42.6,60.2,20,0
     .goto Dun Morogh,38.2,60.6,20,0
     .train 425762,1
-    >>Kill |cRXP_ENEMY_Boars|r in |cFFfa9602Dun Morogh|r and loot them for |T134026:0|t[Dun Morogh Pig Meat]
+    >>Kill |cRXP_ENEMY_Boars|r. Loot them for |T134026:0|t[Dun Morogh Pig Meat]
     .collect 208192,1
     .mob Crag Boar
     .mob Large Crag Boar
