@@ -279,7 +279,7 @@ function addon.UpdateItemFrame(itemFrame)
                               "SecureActionButtonTemplate")
             btn:SetAttribute("type1", "item")
             btn:SetSize(25, 25)
-            if btn.RegisterForClicks and addon.game == "DF" then
+            if btn.RegisterForClicks and addon.game == "RETAIL" then
                 btn:RegisterForClicks("AnyUp","AnyDown")
             end
             table.insert(buttonList, btn)

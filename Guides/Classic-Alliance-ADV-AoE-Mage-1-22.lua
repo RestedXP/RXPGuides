@@ -2836,7 +2836,6 @@ step
     .mob Bluegill Raider
     .unitscan Sludginn
     .isQuestAvailable 983
---VV Custom Video
 step
     #completewith next
     .goto Wetlands,10.80,59.80,10,0

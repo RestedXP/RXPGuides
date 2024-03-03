@@ -1759,3 +1759,96 @@ step
     .itemcount 210817,1 << Druid
     .itemcount 213125,1 << Hunter
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< SoD
+#group RestedXP Rune & Books Guide
+#subgroup Extras
+#subweight -1
+#name Cozy Sleeping Bag - 14
+
+step
+    #optional
+    +|cRXP_WARN_You must be at least level 14 before you can begin the quest for the|r |T133662:0|t[|cRXP_LOOT_Cozy Sleeping Bag|r]
+    .xp >14,1
+step << Alliance
+    #completewith next
+    .zone Westfall >> Travel to Westfall
+step << Alliance
+    .goto Westfall,37.413,50.701
+    >>Click the |cRXP_PICK_Burned-Out Remains|r on the ground
+    .accept 79008 >> Accept ...and that note you found
+step << Alliance
+    #completewith next
+    .zone The Barrens >> Travel to The Barrens
+step << Alliance
+    .goto The Barrens,46.361,73.904
+    >>Click the |cRXP_PICK_Burned-Out Remains|r on the ground
+    .turnin 79008 >> Turn in ...and that note you found
+    .accept 79192 >> Accept Stepping Stones
+step << Horde
+    #completewith next
+    .zone The Barrens >> Travel to The Barrens
+step << Horde
+    .goto The Barrens,46.361,73.904
+    >>Click the |cRXP_PICK_Burned-Out Remains|r on the ground
+    .accept 79007 >> Accept ...and that note you found
+step << Horde
+    #completewith next
+    .zone Westfall >> Travel to Westfall
+step << Horde
+    .goto Westfall,37.413,50.701
+    >>Click the |cRXP_PICK_Burned-Out Remains|r on the ground
+    .turnin 79007 >> Turn in ...and that note you found
+    .accept 79192 >> Accept Stepping Stones
+step
+    #completewith next
+    .zone Stonetalon Mountains >> Travel to Stonetalon Mountains
+step
+    #completewith next
+    .goto Stonetalon Mountains,50.29,52.94,25 >> Travel up and along the dirt path north of Sun Rock Retreat
+step
+    .goto Stonetalon Mountains,40.748,52.576
+    >>Click the |cRXP_PICK_Pocket Litter|r on the box
+    .turnin 79192 >> Turn in Stepping Stones
+    .accept 79980 >> Accept Scramble
+step
+    #completewith next
+    .goto Stonetalon Mountains,40.19,50.80,15 >> Follow the path through the mountains
+step
+    .goto Stonetalon Mountains,39.614,49.783
+    >>Click the |cRXP_PICK_Mound of Dirt|r on the ground
+    .turnin 79980 >> Turn in Scramble
+    .accept 79974 >> Accept Wet Job
+step
+    #completewith next
+    .zone Loch Modan >> Travel to Loch Modan
+step
+    #completewith next
+    .goto Loch Modan,41.01,12.60,50,0
+    .goto Loch Modan,42.86,10.36,60,0
+    .goto Loch Modan,49.4,12.9,8 >> |cRXP_WARN_Make your way onto the Loch Modan Dam wall and carefully drop down onto the ledge in the center of the Dam. Follow the arrow|r
+step
+    .goto Loch Modan,49.421,12.917
+    >>Click the |cRXP_PICK_Carved Figurine|r on the ledge
+    .turnin 79974 >> Turn in Wet Job
+    .accept 79975 >> Accept Eagle's Fist
+step
+    #completewith next
+    .goto Hillsbrad Foothills,87.691,48.166,10 >> Travel to Thoradin's Wall at the Arathi Highlands/Hillsbrad Foothills zone border
+step
+    #completewith next
+    .goto Arathi Highlands,24.132,21.470,7 >> Climb up the cart and make your way up along the wall
+step
+    .goto Arathi Highlands,22.466,24.127
+    >>Click the |cRXP_PICK_Messenger Bag|r hanging on the wall
+    .turnin 79975 >> Turn in Eagle's Fist
+    .accept 79976 >> Accept This Must Be The Place
+step
+    .goto Arathi Highlands,22.466,24.127
+    >>Click the |cRXP_PICK_Hastily Rolled-Up Satchel|r on the ground
+    .turnin 79976 >> Turn in This Must Be The Place
+step
+    +|cRXP_WARN_It is strongly adivsed you save your|r |T134057:0|t[|cRXP_LOOT_Student Fodder|r] |cRXP_WARN_for higher levels before consuming them. Each use of|r |T134057:0|t[|cRXP_LOOT_Student Fodder|r] |cRXP_WARN_adds 20% rested experience to your character, therefore it is more efficient to use at higher levels|r
+]])

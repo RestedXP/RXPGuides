@@ -56,6 +56,8 @@ local function applies(textEntry,customClass)
                         gendercheck = true
                     elseif uppercase == "SOD" and addon.player.season == 2 then
                         entry = faction
+                    elseif uppercase == "DF" then
+                        entry = "RETAIL"
                     elseif faction == "Neutral" and (entry == "Alliance" or entry == "Horde") then
                         entry = faction
                     end
@@ -550,6 +552,11 @@ function addon.LoadEmbeddedGuides()
                             strupper(line):gsub("#" .. addon.game,function()
                                 enabled = true
                             end)
+                            if addon.game == "RETAIL" then
+                                strupper(line):gsub("#DF",function()
+                                    enabled = true
+                                end)
+                            end
                         end
                         enabledFor = enabledFor or line:match("^%s*<<%s*(.-)%s*$")
                         group = group or line:match("^%s*#group%s+(.-)%s*$")
@@ -876,10 +883,13 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
             if not addon.currentGuideName then
                 error(L("Error parsing guide") .. ": " .. L("Guide has no name") .. "\n" .. text)
             end
-            if currentStep == 0 and ((not guide[game] and
-                (guide.classic or guide.tbc or guide.wotlk or guide.df)) or not guide.name or not guide.group) then
-                -- print(game,guide[game],guide.name)
-                skipGuide = "#0"
+            if currentStep == 0 then
+                if guide.df then guide.retail = true end
+                if ((not guide[game] and
+                    (guide.classic or guide.tbc or guide.wotlk or guide.df or guide.retail or guide.cata)) or not guide.name or not guide.group) then
+                    -- print(game,guide[game],guide.name)
+                    skipGuide = "#0"
+                end
             end
             if skipGuide then
                 guide.version = tonumber(guide.version) or 0

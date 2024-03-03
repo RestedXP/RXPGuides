@@ -2209,7 +2209,7 @@ RXPGuides.RegisterGuide([[
 << Horde Shaman SoD
 #group RestedXP Rune & Books Guide
 #subgroup Belt
-#name Fire Nova
+#name Fire Nova - 35 (Azeroth)
 
 -- Fire Nova
 

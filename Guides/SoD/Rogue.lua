@@ -620,8 +620,9 @@ RXPGuides.RegisterGuide([[
 step << Rogue
     #season 2
     .goto Dun Morogh,77.86,61.66
-    >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Dark Iron Spies|r for |T134331:0|t[Blackrat's Note]
-    .collect 208205,1
+    >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Dark Iron Spies|r. Loot them for |T134331:0|t[Blackrat's Note]
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    .collect 208205,1 --Blackrat's Note (1)
     .mob Dark Iron Spy
     .train 400094,1
 step << Rogue
@@ -1257,7 +1258,7 @@ step
     .mob Burning Blade Thug
     .train 400094,1
 step
-    .goto Tirisfal Glades,60.73,50.60
+    .goto Durotar,51.82,58.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ba'so|r to receive |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r]
     >>|cRXP_WARN_He is stealthed!|r
     .collect 203990,1 --Rune of Mutilation (1)
@@ -1553,7 +1554,7 @@ step
     .collect 210979,1 --Rune of Shadowstep (1)
     .train 400101,1
 step
-    .train 400101 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadwostep|r] to learn |T132303:0|t[Shadowstep]
+    .train 400101 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadwostep|r] |cRXP_WARN_to learn|r |T132303:0|t[Shadowstep]
     .use 210979
     .itemcount 210979,1
 ]])
@@ -1569,7 +1570,7 @@ RXPGuides.RegisterGuide([[
 step
     .train 400096,1
     .train 1842 >>You have to learn |T136162:0|t[Disarm Trap] before you can obtain |T134419:0|t[|cRXP_FRIENDLY_Rune of the Assassin|r]
-    .collect 5060,1 >>You also need |T135259:0|t[Thieves' Tools]
+    .collect 5060,1 >>You also need |T134065:0|t[Thieves' Tools]
 step
     #completewith next
     .zone Swamp of Sorrows >>Travel to Swamp of Sorrows
@@ -1581,7 +1582,7 @@ step
 step
     .itemcount 213139,1
     .use 213139
-    .train 400096 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Assassin|r] to learn |T132330:0|t[Shuriken Toss]
+    .train 400096 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Assassin|r] |cRXP_WARN_to learn|r |T132330:0|t[Shuriken Toss]
 ]])
 
 RXPGuides.RegisterGuide([[

@@ -187,7 +187,7 @@ step
     .target Serpent Loa
 step
     .train 402852,1
-    >>Kill the |cRXP_ENEMY_Voodoo Trolls|r. Loot them for the |T135975:0|t[cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r]
+    >>Kill the |cRXP_ENEMY_Voodoo Trolls|r. Loot them for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r]
     .goto Durotar,67.6,86.4
     .collect 205947,1
     .mob Voodoo Troll
@@ -213,7 +213,7 @@ step << Undead
 step
     .use 205947
     .itemcount 205947,1
-    .train 402852 >>|cRXP_WARN_Use the|r |T135975:0|t[cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] |cRXP_WARN_to train|r |T237570:0|t[Homunculi]
+    .train 402852 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] |cRXP_WARN_to train|r |T237570:0|t[Homunculi]
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -230,7 +230,7 @@ step
     .zone Tirisfal Glades >>Travel to Tirisfal Glades
 step
     .train 402852,1
-    >>Kill the |cRXP_ENEMY_Scarlet Warriors|r or the |cRXP_ENEMY_Scarlet Missionaries|r. Loot them for the |T135975:0|t[cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r]
+    >>Kill the |cRXP_ENEMY_Scarlet Warriors|r or the |cRXP_ENEMY_Scarlet Missionaries|r. Loot them for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r]
     .goto Tirisfal Glades,50.6,67.8,0
     .goto Tirisfal Glades,32.6,48.6
     .collect 205947,1
@@ -265,7 +265,7 @@ step << Undead
 step
     .use 205947
     .itemcount 205947,1
-    .train 402852 >>|cRXP_WARN_Use the|r |T135975:0|t[cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] |cRXP_WARN_to train|r |T237570:0|t[Homunculi]
+    .train 402852 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of a Desecrated Citadel|r] |cRXP_WARN_to train|r |T237570:0|t[Homunculi]
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -963,7 +963,7 @@ step << Priest
 
 RXPGuides.RegisterGuide([[
 #classic
-<< Alliance Priest SoD
+<< Priest SoD
 #group RestedXP Rune & Books Guide
 #subgroup Belt
 #name Empowered Renew - 27 (Thousand Needles)
@@ -996,7 +996,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-<< Alliance Priest SoD
+<< Priest SoD
 #group RestedXP Rune & Books Guide
 #subgroup Belt
 #name Empowered Renew - 33 (Alterac Mountains)

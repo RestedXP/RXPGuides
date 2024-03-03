@@ -8,7 +8,7 @@ addon = LibStub("AceAddon-3.0"):NewAddon(addon, addonName, "AceEvent-3.0")
 
 local RegisterMessage_OLD = addon.RegisterMessage
 local rand, tinsert, select = math.random, table.insert, _G.select
-
+local IsAddOnLoadOnDemand = C_AddOns and C_AddOns.IsAddOnLoadOnDemand or _G.IsAddOnLoadOnDemand
 local messageList = {}
 
 local function MessageHandler(message,...)
@@ -100,8 +100,10 @@ addon.version = 40000
 local gameVersion = select(4, GetBuildInfo())
 addon.gameVersion = gameVersion
 
-if gameVersion > 40000 then
-    addon.game = "DF"
+if gameVersion > 50000 then
+    addon.game = "RETAIL"
+elseif gameVersion > 40000 then
+    addon.game = "CATA"
 elseif gameVersion > 30000 then
     addon.game = "WOTLK"
 elseif gameVersion > 20000 then
@@ -1051,7 +1053,9 @@ function addon:OnEnable()
     self:RegisterEvent("PLAYER_LEAVING_WORLD")
     self:RegisterEvent("PLAYER_LOGOUT")
 
-    self:RegisterEvent("CALENDAR_UPDATE_EVENT_LIST")
+    if IsAddOnLoadOnDemand("Blizzard_Calendar") then
+        self:RegisterEvent("CALENDAR_UPDATE_EVENT_LIST")
+    end
     self:RegisterEvent("ZONE_CHANGED")
 
     if addon.gameVersion > 90000 then
@@ -1653,7 +1657,9 @@ function addon.stepLogic.XpRateCheck(step)
                 local guide = addon.currentGuide.name
                 --local minLevel = tonumber(guide:sub(1,2))
                 local maxLevel = tonumber(guide:match("%d+%-(%d+)"))
-                if not step.elements or not maxLevel or maxLevel < 25 then
+                if addon.settings.profile.enableBetaFeatures then
+                    rate = 2
+                elseif not step.elements or not maxLevel or maxLevel < 25 then
                     --print(minLevel,step.elements)
                     rate = 1.5
                 end
