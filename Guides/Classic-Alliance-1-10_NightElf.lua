@@ -28,7 +28,7 @@ step
     .mob Young Nightsaber
     .mob Young Thistle Boar
 step
-    .xp 2
+    .xp 2 >> Grind to level 2
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dirania Silvershine|r and |cRXP_FRIENDLY_Melithar Staghelm|r
     .accept 4495 >> Accept A Good Friend

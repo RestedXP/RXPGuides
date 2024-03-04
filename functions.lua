@@ -14,7 +14,11 @@ events.destroy = events.collect
 events.buy = events.collect
 events.accept = {"QUEST_ACCEPTED", "QUEST_TURNED_IN", "QUEST_REMOVED"}
 events.turnin = "QUEST_TURNED_IN"
-events.complete = {"QUEST_LOG_UPDATE", "CINEMATIC_STOP", "STOP_MOVIE"}
+if addon.game == "CLASSIC" then
+    events.complete = {"QUEST_LOG_UPDATE", "CINEMATIC_STOP"}
+else
+    events.complete = {"QUEST_LOG_UPDATE", "CINEMATIC_STOP", "STOP_MOVIE"}
+end
 events.fp = {"UI_INFO_MESSAGE", "UI_ERROR_MESSAGE", "TAXIMAP_OPENED", "GOSSIP_SHOW", "TAXIMAP_CLOSED"}
 events.hs = "UNIT_SPELLCAST_SUCCEEDED"
 events.home = {"HEARTHSTONE_BOUND","CONFIRM_BINDER","GOSSIP_SHOW"}
@@ -2519,7 +2523,7 @@ function addon.functions.reputation(self, ...)
             local standinglabel = getglobal(
                                       "FACTION_STANDING_LABEL" ..
                                           element.standing)
-            local factionname = GetFactionInfoByID(element.faction)
+            local factionname = GetFactionInfoByID(element.faction) or ""
             if element.repValue and element.repValue ~= 0 then
                 if element.repValue < 0 then
                     element.text = fmt(

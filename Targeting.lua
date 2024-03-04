@@ -801,9 +801,12 @@ function addon.targeting:CreateTargetFrame()
     f:SetClampedToScreen(true)
     f:EnableMouse(true)
     f:SetMovable(true)
+    f:Hide()
 
     addon.enabledFrames["activeTargetFrame"] = f
     f.IsFeatureEnabled = function()
+        if not addon.settings.profile.enableTargetAutomation then return end
+
         if addon.settings.profile.showTargetingOnProximity then
             return proxmityPolling.match and shouldTargetCheck()
         end

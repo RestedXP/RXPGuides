@@ -368,7 +368,7 @@ step << Rogue
     .turnin 3102 >> Turn in Encrypted Letter
     .accept 77618 >> Accept Thrice Stolen << Human Rogue
     .train 1784 >>Train |T132320:0|t[Stealth]
-    .train 921 >> Train |T133644:0|t[Pick Pocket]
+    .train 921 >>Train |T133644:0|t[Pick Pocket]
     .target Jorik Kerridan
 step << Rogue/Warlock
     #season 2
@@ -721,6 +721,16 @@ step << Priest/Mage
     .goto Elwynn Forest,53.86,47.05,30,0
     >>Loot |cRXP_PICK_Milly's Harvest|r on the ground
     .complete 3904,1 --Collect Milly's Harvest (x8)
+step << Rogue
+    #sticky
+    #label CuttyNote
+    #season 2
+    .goto Elwynn Forest,57.5,48.2
+    >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Garrick Padfoot|r for |T134331:0|t[Cutty's Note]
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    .collect 203723,1 -- Cutty's Note (1)
+    .mob Garrick Padfoot
+    .train 400094,1
 step
     .goto Elwynn Forest,57.5,48.2
     >>Kill |cRXP_ENEMY_Garrick Padfoot|r. Loot him for his |cRXP_LOOT_Head|r
@@ -733,6 +743,7 @@ step
     .abandon 3904 >> Abandon Milly's Harvest
 step
     #xprate <1.5
+    #requires CuttyNote << Rogue --Season 2
     .goto Elwynn Forest,52.55,48.79,0
     .goto Elwynn Forest,55.43,45.87,0
     .goto Elwynn Forest,52.55,48.79,30,0
@@ -747,6 +758,7 @@ step
     .mob Defias Thug
 step
     #xprate >1.49
+    #requires CuttyNote << Rogue --Season 2
     .goto Elwynn Forest,52.55,48.79,0
     .goto Elwynn Forest,55.43,45.87,0
     .goto Elwynn Forest,52.55,48.79,30,0
@@ -815,6 +827,34 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falkhaan Isenstrider|r
     .accept 2158 >> Accept Rest and Relaxation
     .target Falkhaan Isenstrider
+step << Rogue
+    #season 2
+    .goto Elwynn Forest,49.983,52.012
+    >>Talk to |cRXP_FRIENDLY_Cutty|r just south of the Northshire Valley wall
+    >>He will give you the |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r]
+    .collect 203990,1 -- Rune of Mutilation (1)
+    .skipgossip
+    .target Cutty
+    .train 400094,1
+step << Rogue
+    #season 2
+    .cast 402265 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r]
+    .use 203990 -- Rune of Mutilation (1)
+    .target Cutty
+    .train 400094,1
+step << Rogue
+    #season 2
+    .goto Elwynn Forest,46.122,62.937,5,0
+    .goto Elwynn Forest,46.175,62.124
+    >>|cRXP_WARN_Using the crates outside of the house, jump up on to the roof and run up behind the chimney|r
+    >>Open the |cRXP_PICK_Rusty Lockbox|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Slaughter|r]
+    .collect 203993,1 -- Rune of Slaughter (1)
+    .train 424992,1
+step << Rogue
+    #season 2
+    .train 424992 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Slaughter|r] |cRXP_WARN_to train|r |T236280:0|t[Slaughter from the Shadows]
+    .use 203993
+    .itemcount 203993,1
 ]])
 
 
@@ -826,7 +866,9 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Alliance 1-20
 #defaultfor Human
 #next 11-13 Loch Modan
+
 step
+    #season 0,1 << Rogue
     #hardcore
     #completewith next
     .subzone 87 >> Travel to Goldshire
@@ -838,10 +880,12 @@ step
     .accept 62 >> Accept The Fargodeep Mine
     .target Marshal Dughan
 step
+    #season 0,1 << Rogue
     #softcore
     #completewith Goldshire
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .target Spirit Healer
+    .subzoneskip 87
 step << Warrior/Rogue/Paladin
     .goto Elwynn Forest,41.706,65.544
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smith Argus|r
@@ -2958,11 +3002,13 @@ step << Warrior
     #completewith next
     +|cRXP_WARN_Put|r |T132363:0|t[Sunder Armor] |cRXP_WARN_on your action bar and ensure to use it constantly. It is more effective than using|r |T132282:0|t[Heroic Strike]
 step << Warrior/Paladin/Rogue
+    #optional
     .goto StormwindClassic,56.3,17.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaita Deepforge|r
     .collect 2901,1,432,1 >>|cRXP_BUY_Buy a|r |T134708:0|t[Mining Pick] |cRXP_BUY_from her|r
     >>|cRXP_WARN_You'll train|r |T134708:0|t[Mining] |cRXP_WARN_later|r
     .target Kaita Deepforge
+    .train 2018,3 --Blacksmithing
 --XX 81c, 1s 75c from 6281
 step
     #completewith next
@@ -4385,7 +4431,7 @@ step << Warlock
     .vendor >> |cRXP_BUY_Buy|r |T133738:0|t[Grimoire of Consume Shadows (Rank 1)] |cRXP_BUY_and|r |T133738:0|t[Grimoire of Sacrifice (Rank 1)] |cRXP_BUY_if you can afford it|r
     .target Jubahl Corpseseeker
 step << Gnome Rogue/Dwarf Rogue
-    #xprate >1.49
+    #xprate 1.49-1.59
     #optional
     .goto Ironforge,51.958,14.838
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hulfdan Blackbeard|r downstairs

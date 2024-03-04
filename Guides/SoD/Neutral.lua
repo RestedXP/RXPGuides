@@ -1035,20 +1035,33 @@ RXPGuides.RegisterGuide([[
 #subgroup Chest << Shaman
 #subgroup Belt << Warrior/Hunter/Mage/Paladin
 #subgroup Boots << Warlock/Priest/Rogue/Druid
-#name Spirit of the Redeemer - 40 (Deadwind Pass) << Priest
-#name Melee Specialist - 40 (Deadwind Pass) << Hunter
-#name King of the Jungle - 40 (Deadwind Pass) << Druid
-#name Precise Timing - 40 (Deadwind Pass) << Warrior
-#name Two-Handed Mastery - 40 (Deadwind Pass) << Shaman
-#name Demonic Knowledge - 40 (Deadwind Pass) << Warlock
-#name Infusion of Light - 40 (Deadwind Pass) << Paladin
-#name Missile Barrage - 40 (Deadwind Pass) << Mage
-#name Waylay - 40 (Deadwind Pass) << Rogue
+#name Spirit of the Redeemer - 40 (Azeroth) << Priest
+#name Melee Specialist - 40 (Azeroth) << Hunter
+#name King of the Jungle - 40 (Azeroth) << Druid
+#name Precise Timing - 40 (Azeroth) << Warrior
+#name Two-Handed Mastery - 40 (Azeroth) << Shaman
+#name Demonic Knowledge - 40 (Azeroth) << Warlock
+#name Infusion of Light - 40 (Azeroth) << Paladin
+#name Missile Barrage - 40 (Azeroth) << Mage
+#name Waylay - 40 (Azeroth) << Rogue
+#title Spirit of the Redeemer << Priest
+#title Melee Specialist << Hunter
+#title King of the Jungle << Druid
+#title Precise Timing << Warrior
+#title Two-Handed Mastery << Shaman
+#title Demonic Knowledge << Warlock
+#title Infusion of Light << Paladin
+#title Missile Barrage << Mage
+#title Waylay << Rogue
 
+step
+    #completewith Sigil
+    +|cRXP_WARN_Before attemping to acquire this rune it is strongly advised you look for a group. You must kill a level 41 elite 7 times total|r
 step
     #completewith next
     .zone Deadwind Pass >>Travel to the Deadwind Pass
 step
+    #label Sigil
     .train 425312,1 << Priest
     .train 426180,1 << Paladin
     .train 401763,1 << Mage
@@ -1058,9 +1071,8 @@ step
     .train 416014,1 << Warlock
     .train 415926,1 << Rogue
     .train 436368,1 << Shaman
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Dalaran Agent|r to get |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r]
-    *|cRXP_WARN_Recommendation: Getting the rune is faster/easier in a raid.|r
-    .goto Deadwind Pass,52.09,34.12
+    .goto Deadwind Pass,52.095,34.119
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Dalaran Agent|r to receive |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r]
     .skipgossip 218920,1
     .collect 216941,1
     .target Dalaran Agent
@@ -1074,10 +1086,42 @@ step
     .train 416014,1 << Warlock
     .train 415926,1 << Rogue
     .train 436368,1 << Shaman
-    *|cRXP_WARN_Make sure that you have the |T237534:0|t[Dark Presence] buff before using the trinket|r
-    >>Use |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r] at the waypoint location and kill the |cRXP_ENEMY_Dark Rider|r. Loot him for the |T236511:0|t[Curious Dalaran Relic]
+    .equip 13 >> |cRXP_WARN_Equip|r |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r]
     .use 216941
-    .goto Deadwind Pass,43,29
+step
+    .train 425312,1 << Priest
+    .train 426180,1 << Paladin
+    .train 401763,1 << Mage
+    .train 416086,1 << Hunter
+    .train 424765,1 << Druid
+    .train 416005,1 << Warrior
+    .train 416014,1 << Warlock
+    .train 415926,1 << Rogue
+    .train 436368,1 << Shaman
+    .goto Deadwind Pass,45.04,28.88
+    .aura 438288 >> |cRXP_WARN_Travel to the arrow location. As you approach you will receive the|r |T237534:0|t[Dark Presence] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_YOU MUST ALSO BE DISMOUNTED TO RECIEVE THE BUFF!|r
+    >>|cRXP_WARN_Ensure you have|r |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r] |cRXP_WARN_equiped|r
+    .use 216941
+    .itemcount 216945,<1
+step
+    #completewith next
+    .goto Deadwind Pass,45.04,28.88
+    .cast 438305 >> |cRXP_WARN_Use|r |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r] |cRXP_WARN_to reveal the|r |cRXP_ENEMY_Dark Rider|r
+    .use 216941
+step
+    .train 425312,1 << Priest
+    .train 426180,1 << Paladin
+    .train 401763,1 << Mage
+    .train 416086,1 << Hunter
+    .train 424765,1 << Druid
+    .train 416005,1 << Warrior
+    .train 416014,1 << Warlock
+    .train 415926,1 << Rogue
+    .train 436368,1 << Shaman
+    .goto Deadwind Pass,45.04,28.88
+    >>Kill the |cRXP_ENEMY_Dark Rider|r. Loot him for the |cRXP_LOOT_Curious Dalaran Relic|r
+    .use 216941
     .collect 216945,1
     .mob Dark Rider
 step
@@ -1093,10 +1137,30 @@ step
     .train 416014,1 << Warlock
     .train 415926,1 << Rogue
     .train 436368,1 << Shaman
-    *|cRXP_WARN_Make sure that you have the |T237534:0|t[Dark Presence] buff before using the trinket|r
-    >>Use |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r] at the waypoint location and kill the |cRXP_ENEMY_Dark Rider|r. Loot him for the |T236879:0|t[Odd Dalaran Relic]
-    .use 216941
     .goto Swamp of Sorrows,69,28
+    .aura 438288 >> |cRXP_WARN_Travel to the arrow location. As you approach you will receive the|r |T237534:0|t[Dark Presence] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_YOU MUST ALSO BE DISMOUNTED TO RECIEVE THE BUFF!|r
+    >>|cRXP_WARN_Ensure you have|r |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r] |cRXP_WARN_equiped|r
+    .use 216941
+    .itemcount 216948,<1
+step
+    #completewith next
+    .goto Swamp of Sorrows,69,28
+    .cast 438305 >> |cRXP_WARN_Use|r |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r] |cRXP_WARN_to reveal the|r |cRXP_ENEMY_Dark Rider|r
+    .use 216941
+step
+    .train 425312,1 << Priest
+    .train 426180,1 << Paladin
+    .train 401763,1 << Mage
+    .train 416086,1 << Hunter
+    .train 424765,1 << Druid
+    .train 416005,1 << Warrior
+    .train 416014,1 << Warlock
+    .train 415926,1 << Rogue
+    .train 436368,1 << Shaman
+    .goto Swamp of Sorrows,69,28
+    >>Kill the |cRXP_ENEMY_Dark Rider|r. Loot him for the |cRXP_LOOT_Odd Dalaran Relic|r
+    .use 216941
     .collect 216948,1
     .mob Dark Rider
 step
@@ -1112,10 +1176,30 @@ step
     .train 416014,1 << Warlock
     .train 415926,1 << Rogue
     .train 436368,1 << Shaman
-    *|cRXP_WARN_Make sure that you have the |T237534:0|t[Dark Presence] buff before using the trinket|r
-    >>Use |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r] at the waypoint location and kill the |cRXP_ENEMY_Dark Rider|r. Loot him for the |T237244:0|t[Glittering Dalaran Relic]
-    .use 216941
     .goto Duskwood,23,47
+    .aura 438288 >> |cRXP_WARN_Travel to the arrow location. As you approach you will receive the|r |T237534:0|t[Dark Presence] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_YOU MUST ALSO BE DISMOUNTED TO RECIEVE THE BUFF!|r
+    >>|cRXP_WARN_Ensure you have|r |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r] |cRXP_WARN_equiped|r
+    .use 216941
+    .itemcount 216946,<1
+step
+    #completewith next
+    .goto Duskwood,23,47
+    .cast 438305 >> |cRXP_WARN_Use|r |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r] |cRXP_WARN_to reveal the|r |cRXP_ENEMY_Dark Rider|r
+    .use 216941
+step
+    .train 425312,1 << Priest
+    .train 426180,1 << Paladin
+    .train 401763,1 << Mage
+    .train 416086,1 << Hunter
+    .train 424765,1 << Druid
+    .train 416005,1 << Warrior
+    .train 416014,1 << Warlock
+    .train 415926,1 << Rogue
+    .train 436368,1 << Shaman
+    .goto Duskwood,23,47
+    >>Kill the |cRXP_ENEMY_Dark Rider|r. Loot him for the |cRXP_LOOT_Glittering Dalaran Relic|r
+    .use 216941
     .collect 216946,1
     .mob Dark Rider
 step
@@ -1131,10 +1215,30 @@ step
     .train 416014,1 << Warlock
     .train 415926,1 << Rogue
     .train 436368,1 << Shaman
-    *|cRXP_WARN_Make sure that you have the |T237534:0|t[Dark Presence] buff before using the trinket|r
-    >>Use |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r] at the waypoint location and kill the |cRXP_ENEMY_Dark Rider|r. Loot him for the |T237309:0|t[Slippery Dalaran Relic]
-    .use 216941
     .goto Badlands,58,54
+    .aura 438288 >> |cRXP_WARN_Travel to the arrow location. As you approach you will receive the|r |T237534:0|t[Dark Presence] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_YOU MUST ALSO BE DISMOUNTED TO RECIEVE THE BUFF!|r
+    >>|cRXP_WARN_Ensure you have|r |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r] |cRXP_WARN_equiped|r
+    .use 216941
+    .itemcount 216951,<1
+step
+    #completewith next
+    .goto Badlands,58,54
+    .cast 438305 >> |cRXP_WARN_Use|r |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r] |cRXP_WARN_to reveal the|r |cRXP_ENEMY_Dark Rider|r
+    .use 216941
+step
+    .train 425312,1 << Priest
+    .train 426180,1 << Paladin
+    .train 401763,1 << Mage
+    .train 416086,1 << Hunter
+    .train 424765,1 << Druid
+    .train 416005,1 << Warrior
+    .train 416014,1 << Warlock
+    .train 415926,1 << Rogue
+    .train 436368,1 << Shaman
+    .goto Badlands,58,54
+    >>Kill the |cRXP_ENEMY_Dark Rider|r. Loot him for the |cRXP_LOOT_Slippery Dalaran Relic|r
+    .use 216941
     .collect 216951,1
     .mob Dark Rider
 step
@@ -1150,13 +1254,32 @@ step
     .train 416014,1 << Warlock
     .train 415926,1 << Rogue
     .train 436368,1 << Shaman
-    *|cRXP_WARN_Make sure that you have the |T237534:0|t[Dark Presence] buff before using the trinket|r
-    >>Use |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r] at the waypoint location and kill the |cRXP_ENEMY_Dark Rider|r. Loot him for the |T305162:0|t[Whirring Dalaran Relic]
-    .use 216941
     .goto Arathi Highlands,60,40
+    .aura 438288 >> |cRXP_WARN_Travel to the arrow location. As you approach you will receive the|r |T237534:0|t[Dark Presence] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_YOU MUST ALSO BE DISMOUNTED TO RECIEVE THE BUFF!|r
+    >>|cRXP_WARN_Ensure you have|r |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r] |cRXP_WARN_equiped|r
+    .use 216941
+    .itemcount 216947,<1
+step
+    #completewith next
+    .goto Arathi Highlands,60,40
+    .cast 438305 >> |cRXP_WARN_Use|r |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r] |cRXP_WARN_to reveal the|r |cRXP_ENEMY_Dark Rider|r
+    .use 216941
+step
+    .train 425312,1 << Priest
+    .train 426180,1 << Paladin
+    .train 401763,1 << Mage
+    .train 416086,1 << Hunter
+    .train 424765,1 << Druid
+    .train 416005,1 << Warrior
+    .train 416014,1 << Warlock
+    .train 415926,1 << Rogue
+    .train 436368,1 << Shaman
+    .goto Arathi Highlands,60,40
+    >>Kill the |cRXP_ENEMY_Dark Rider|r. Loot him for the |cRXP_LOOT_Whirring Dalaran Relic|r
+    .use 216941
     .collect 216947,1
     .mob Dark Rider
-
 step
     #completewith next
     .zone The Barrens >>Travel to The Barrens
@@ -1170,10 +1293,30 @@ step
     .train 416014,1 << Warlock
     .train 415926,1 << Rogue
     .train 436368,1 << Shaman
-    *|cRXP_WARN_Make sure that you have the |T237534:0|t[Dark Presence] buff before using the trinket|r
-    >>Use |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r] at the waypoint location and kill the |cRXP_ENEMY_Dark Rider|r. Loot him for the |T133509:0|t[Heavy Dalaran Relic]
-    .use 216941
     .goto The Barrens,52,36
+    .aura 438288 >> |cRXP_WARN_Travel to the arrow location. As you approach you will receive the|r |T237534:0|t[Dark Presence] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_YOU MUST ALSO BE DISMOUNTED TO RECIEVE THE BUFF!|r
+    >>|cRXP_WARN_Ensure you have|r |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r] |cRXP_WARN_equiped|r
+    .use 216941
+    .itemcount 216949,<1
+step
+    #completewith next
+    .goto The Barrens,52,36
+    .cast 438305 >> |cRXP_WARN_Use|r |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r] |cRXP_WARN_to reveal the|r |cRXP_ENEMY_Dark Rider|r
+    .use 216941
+step
+    .train 425312,1 << Priest
+    .train 426180,1 << Paladin
+    .train 401763,1 << Mage
+    .train 416086,1 << Hunter
+    .train 424765,1 << Druid
+    .train 416005,1 << Warrior
+    .train 416014,1 << Warlock
+    .train 415926,1 << Rogue
+    .train 436368,1 << Shaman
+    .goto The Barrens,52,36
+    >>Kill the |cRXP_ENEMY_Dark Rider|r. Loot him for the |cRXP_LOOT_Heavy Dalaran Relic|r
+    .use 216941
     .collect 216949,1
     .mob Dark Rider
 step
@@ -1189,10 +1332,30 @@ step
     .train 416014,1 << Warlock
     .train 415926,1 << Rogue
     .train 436368,1 << Shaman
-    *|cRXP_WARN_Make sure that you have the |T237534:0|t[Dark Presence] buff before using the trinket|r
-    >>Use |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r] at the waypoint location and kill the |cRXP_ENEMY_Dark Rider|r. Loot him for the |T338485:0|t[Creepy Dalaran Relic]
-    .use 216941
     .goto Desolace,65,25
+    .aura 438288 >> |cRXP_WARN_Travel to the arrow location. As you approach you will receive the|r |T237534:0|t[Dark Presence] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_YOU MUST ALSO BE DISMOUNTED TO RECIEVE THE BUFF!|r
+    >>|cRXP_WARN_Ensure you have|r |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r] |cRXP_WARN_equiped|r
+    .use 216941
+    .itemcount 216950,<1
+step
+    #completewith next
+    .goto Desolace,65,25
+    .cast 438305 >> |cRXP_WARN_Use|r |T338784:0|t[|cRXP_FRIENDLY_Ariden's Sigil|r] |cRXP_WARN_to reveal the|r |cRXP_ENEMY_Dark Rider|r
+    .use 216941
+step
+    .train 425312,1 << Priest
+    .train 426180,1 << Paladin
+    .train 401763,1 << Mage
+    .train 416086,1 << Hunter
+    .train 424765,1 << Druid
+    .train 416005,1 << Warrior
+    .train 416014,1 << Warlock
+    .train 415926,1 << Rogue
+    .train 436368,1 << Shaman
+    .goto Desolace,65,25
+    >>Kill the |cRXP_ENEMY_Dark Rider|r. Loot him for the |cRXP_LOOT_Creepy Dalaran Relic|r
+    .use 216941
     .collect 216950,1
     .mob Dark Rider
 step
@@ -1208,7 +1371,7 @@ step
     .train 416014,1 << Warlock
     .train 415926,1 << Rogue
     .train 436368,1 << Shaman
-    .goto Deadwind Pass,52.09,34.12
+    .goto Deadwind Pass,52.095,34.119
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Dalaran Agent|r
     .turnin 80147 >>Turn in Curious Dalaran Relic
     .turnin 80149 >>Turn in Curious Dalaran Relic
@@ -1229,7 +1392,15 @@ step
     .train 416014,1 << Warlock
     .train 415926,1 << Rogue
     .train 436368,1 << Shaman
-    >>Open the |T133666:0|t[|cRXP_FRIENDLY_Supply Bag|r] for the rune
+    >>Open the |T133666:0|t[|cRXP_FRIENDLY_Supply Bag|r] to receive the |T135791:0|t[|cRXP_FRIENDLY_Luminous Epiphany|r] << Priest
+    >>Open the |T133666:0|t[|cRXP_FRIENDLY_Supply Bag|r] to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Infusions|r] << Paladin
+    >>Open the |T133666:0|t[|cRXP_FRIENDLY_Supply Bag|r] to receive the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Missile Barrage|r] << Mage
+    >>Open the |T133666:0|t[|cRXP_FRIENDLY_Supply Bag|r] to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Close Combat|r] << Hunter
+    >>Open the |T133666:0|t[|cRXP_FRIENDLY_Supply Bag|r] to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Jungle King|r] << Druid
+    >>Open the |T133666:0|t[|cRXP_FRIENDLY_Supply Bag|r] to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Ruthless Precision|r] << Warrior
+    >>Open the |T133666:0|t[|cRXP_FRIENDLY_Supply Bag|r] to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Forbidden Knowledge|r] << Warlock
+    >>Open the |T133666:0|t[|cRXP_FRIENDLY_Supply Bag|r] to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Assailant|r] << Rogue
+    >>Open the |T133666:0|t[|cRXP_FRIENDLY_Supply Bag|r] to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Two-Handed Mastery|r] << Shaman
     .use 217014
     .collect 213144,1 << Priest
     .collect 213130,1 << Paladin
@@ -1259,15 +1430,15 @@ step
     .use 213100 << Warlock
     .use 213137 << Rogue
     .use 216606 << Shaman
-    .train 425312 >>Use the |T135791:0|t[|cRXP_FRIENDLY_Luminous Epiphany|r] to learn |T132864:0|t[Spirit of the Redeemer] << Priest
-    .train 426180 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Infusion|r] to learn |T236254:0|t[Infusion of Light] << Paladin
-    .train 401763 >>Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Missile Barrage|r] to learn |T236221:0|t[Missile Barrage] << Mage
-    .train 416086 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Close Combat|r] to learn |T132394:0|t[Melee Specialist] << Hunter
-    .train 424765 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Jungle King|r] to learn |T236159:0|t[King of the Jungle] << Druid
-    .train 416005 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Ruthless Precision|r] to learn |T134377:0|t[Precise Timing] << Warrior
-    .train 416014 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Forbidden Knowledge|r] to learn |T136172:0|t[Demonic Knowledge] << Warlock
-    .train 415926 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Assailant|r] to learn |T236286:0|t[Waylay] << Rogue
-    .train 436368 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Two-Handed Mastery|r] to learn |T135145:0|t[Two-Handed Mastery] << Shaman
+    .train 425312 >>|cRXP_WARN_Use the|r |T135791:0|t[|cRXP_FRIENDLY_Luminous Epiphany|r] |cRXP_WARN_to train|r |T132864:0|t[Spirit of the Redeemer] << Priest
+    .train 426180 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Infusions|r] |cRXP_WARN_to train|r |T236254:0|t[Infusion of Light] << Paladin
+    .train 401763 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Missile Barrage|r] |cRXP_WARN_to train|r |T236221:0|t[Missile Barrage] << Mage
+    .train 416086 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Close Combat|r] |cRXP_WARN_to train|r |T132394:0|t[Melee Specialist] << Hunter
+    .train 424765 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Jungle King|r] |cRXP_WARN_to train|r |T236159:0|t[King of the Jungle] << Druid
+    .train 416005 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Ruthless Precision|r] |cRXP_WARN_to train|r |T134377:0|t[Precise Timing] << Warrior
+    .train 416014 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Forbidden Knowledge|r] |cRXP_WARN_to train|r |T136172:0|t[Demonic Knowledge] << Warlock
+    .train 415926 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Assailant|r] |cRXP_WARN_to train|r |T236286:0|t[Waylay] << Rogue
+    .train 436368 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Two-Handed Mastery|r] |cRXP_WARN_to train|r |T135145:0|t[Two-Handed Mastery] << Shaman
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1677,8 +1848,6 @@ RXPGuides.RegisterGuide([[
 #title Invigoration << Hunter
 #title Survival Instincts << Druid
 
--- Invigoration
-
 step
     .train 416089,1 << Hunter
     .train 410027,1 << Druid
@@ -1687,9 +1856,9 @@ step
 step
     .train 416089,1 << Hunter
     .train 410027,1 << Druid
-    .goto Swamp of Sorrows,25.0,54.2
+    .goto Swamp of Sorrows,25.140,54.034
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r
-    >>|cRXP_WARN_Buy a|r |T133653:0|t[Entomology Starter Kit] |cRXP_WARN_from her|r
+    >>|cRXP_BUY_Buy a|r |T133653:0|t[Entomology Starter Kit]
     .collect 213565,1 --Entomology Starter Kit (1x)
     .target Amaryllis Webb
 step
@@ -1706,8 +1875,13 @@ step
 step
     .train 416089,1 << Hunter
     .train 410027,1 << Druid
-    >>Use the |T134325:0|t[Bug Catching Net] on the |cRXP_ENEMY_Arbor Tarantula|r on the tree stump
-    .goto Stranglethorn Vale,44.6,19.8
+    #loop
+    .goto Stranglethorn Vale,43.8,18.6,20,0
+    .goto Stranglethorn Vale,45.2,19.6,20,0
+    .goto Stranglethorn Vale,44.2,22.0,20,0
+    .goto Stranglethorn Vale,45.6,23,0,20,0
+    >>|cRXP_WARN_Use the|r |T134325:0|t[Bug Catching Net] |cRXP_WARN_on a|r |cRXP_ENEMY_Arbor Tarantula|r
+    >>|cRXP_WARN_They're found on top of tree stumps|r
     .use 213562
     .collect 213566,1 --Arbor Tarantula Specimen (1x)
     .mob Arbor Tarantula
@@ -1719,8 +1893,18 @@ step
 step
     .train 416089,1 << Hunter
     .train 410027,1 << Druid
-    >>Use the |T134325:0|t[Bug Catching Net] on a |cRXP_ENEMY_Hay Weevil|r
-    .goto Arathi Highlands,30.7,28.7
+    #loop
+    .goto Arathi Highlands,54.0,38.6,0
+    .goto Arathi Highlands,57.0,39.8,0
+    .goto Arathi Highlands,59.6,57.0,0
+    .goto Arathi Highlands,61.2,55.6,0
+    .goto Arathi Highlands,54.0,38.6,20,0
+    .goto Arathi Highlands,57.0,39.8,20,0
+    .goto Arathi Highlands,59.6,57.0,20,0
+    .goto Arathi Highlands,61.2,55.6,20,0
+    .goto Arathi Highlands,62.6,56.0,20,0
+    >>|cRXP_WARN_Use the|r |T134325:0|t[Bug Catching Net] |cRXP_WARN_on a|r |cRXP_ENEMY_Hay Weevil|r
+    >>|cRXP_WARN_These can be found at any of the farms including inside of the barns|r
     .use 213562
     .collect 213568,1 --Hay Weevil Specimen (1x)
     .mob Hay Weevil
@@ -1732,8 +1916,13 @@ step
 step
     .train 416089,1 << Hunter
     .train 410027,1 << Druid
-    >>Use the |T134325:0|t[Bug Catching Net] on a |cRXP_ENEMY_Flesh Picker|r
-    .goto Desolace,51.2,59.9
+    #loop
+    .goto Desolace,53.0,59.0,0
+    .goto Desolace,50.0,55.8,30,0
+    .goto Desolace,53.0,59.0,30,0
+    .goto Desolace,54.0,62.6,30,0
+    >>|cRXP_WARN_Use the|r |T134325:0|t[Bug Catching Net] |cRXP_WARN_on a|r |cRXP_ENEMY_Flesh Picker|r
+    >>|cRXP_WARN_These are found at the Kodo Graveyard|r
     .use 213562
     .collect 213567,1 --Flesh Picker Specimen (1x)
     .mob Flesh Picker
@@ -1745,19 +1934,18 @@ step
 step
     .train 416089,1 << Hunter
     .train 410027,1 << Druid
-    .goto Swamp of Sorrows,25.0,54.2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amaryllis Webb|r 
-    >>Acquire the |T134419:0|t[Rune of Invigoration] from her << Hunter
-    >>Acquire the |T134419:0|t[Rune of Survival] from her << Druid
+    .goto Swamp of Sorrows,25.140,54.034
+    >>Talk to |cRXP_FRIENDLY_Amaryllis Webb|r to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Invigoration|r] << Hunter
+    >>Talk to |cRXP_FRIENDLY_Amaryllis Webb|r to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Instinct|r] << Druid
     .collect 213125,1 << Hunter --Rune of Invigoration (1x)
-    .collect 210817,1 << Druid --Rune of Survival (1x)
+    .collect 213119,1 << Druid --Rune of Instinct (1x)
     .skipgossip 217412,1
     .target Amaryllis Webb
 step
-    .train 416089 >> Use the |T134419:0|t[Rune of Invigoration] to learn |T236184:0|t[Invigoration] << Hunter
-    .train 410027 >> Use the |T134419:0|t[Rune of Survival] to learn |T132266:0|t[Survival Instincts] << Druid
-    .itemcount 210817,1 << Druid
-    .itemcount 213125,1 << Hunter
+    .train 416089 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Invigoration|r] |cRXP_WARN_to train|r |T236184:0|t[Invigoration] << Hunter
+    .train 410027 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Instinct|r] |cRXP_WARN_to train|r |T132266:0|t[Survival Instincts] << Druid
+    .use 213125 << Hunter
+    .use 213119 << Druid
 ]])
 
 RXPGuides.RegisterGuide([[
