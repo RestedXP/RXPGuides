@@ -2519,7 +2519,7 @@ function addon.functions.reputation(self, ...)
             local standinglabel = getglobal(
                                       "FACTION_STANDING_LABEL" ..
                                           element.standing)
-            local factionname = GetFactionInfoByID(element.faction)
+            local factionname = GetFactionInfoByID(element.faction) or ""
             if element.repValue and element.repValue ~= 0 then
                 if element.repValue < 0 then
                     element.text = fmt(
