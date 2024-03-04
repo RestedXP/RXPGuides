@@ -922,6 +922,10 @@ RXPGuides.RegisterGuide([[
 
 step
     #optional
+    .train 426445,1
+    +|cRXP_WARN_You must be at least level 26 before you can acquire the|r |T132353:0|t[Expose Weakness] |cRXP_WARN_rune|r
+    .xp >26,1
+step
     #completewith next
     .zone Badlands >>Travel to Badlands
 step
@@ -956,48 +960,54 @@ step
     .zone Stranglethorn Vale >>Travel to Stranglethorn Vale
     .train 410114,1
 step
-    .goto Stranglethorn Vale,35.66,10.52
+    .goto Stranglethorn Vale,35.658,10.808
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary|r
     .turnin 78823 >> Turn in Terror of the Desert Skies
     .accept 78830 >> Accept Terror of the Desert Skies
     .target Hemet Nesingwary
     .train 410114,1
 step
-    #sticky
-    #label Bait
-    .use 211272 >>Use the |T132599:0|t[Empty Bait Cage] on any critter for a |T132599:0|t[Trapped Critter]
+    #loop
+    .goto Stranglethorn Vale,43.8,18.6,20,0
+    .goto Stranglethorn Vale,45.2,19.6,20,0
+    .goto Stranglethorn Vale,44.2,22.0,20,0
+    .goto Stranglethorn Vale,45.6,23,0,20,0
+    .use 211272 >>|cRXP_WARN_Use the|r |T132599:0|t[Empty Bait Cage] |cRXP_WARN_on a |cRXP_ENEMY_Arbor Tarantula|r critter in STV. They're found on top of tree stumps|r
+    >>|cRXP_WARN_You may also use it on any other critter you see in the world|r
     .collect 211273,1 --Trapped Critter
+    .mob Arbor Tarantula
     .mob Rat
     .mob Black Rat
     .mob Chicken
     .train 410114,1
 step
-    #optional
     #completewith next
     .zone Badlands >>Travel to Badlands
     .train 410114,1
 step
-    #requires Bait
-    .goto Badlands,22.6,67.4
-    >>Use the |T132599:0|t[Trapped Critter] atop the hill to lure |cRXP_ENEMY_Gharik|r
-    >>Kill |cRXP_ENEMY_Gharik|r. Loot him for the |cRXP_LOOT_Crimson Trophy Quill|r
+    #completewith next
+    .goto Badlands,22.352,67.733
+    +Click the |cRXP_PICK_Large Nest|r atop the mountain to summon |cRXP_ENEMY_Gharik|r
+    .itemcount 211272,<1
+step
+    .goto Badlands,22.352,67.733
+    >>Kill |cRXP_ENEMY_Gharik|r. Loot her for the |cRXP_LOOT_Crimson Trophy Quill|r
     .complete 78830,1 --Crimson Trophy Quill (1)
     .mob Gharik
     .train 410114,1
-    .use 211273
 step
-    #optional
     #completewith next
     .zone Stranglethorn Vale >>Travel to Stranglethorn Vale
     .train 410114,1
 step
-    .goto Stranglethorn Vale,35.66,10.52
+    .goto Stranglethorn Vale,35.658,10.808
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hemet Nesingwary|r
     .turnin 78830 >> Turn in Terror of the Desert Skies
+    .target Hemet Nesingwary
     .train 410114,1
 step
     #season 2
-    .train 410114 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Expose Weakness|r] |cRXP_WARN_to learn|r |T132353:0|t[Expose Weakness]
+    .train 410114 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Expose Weakness|r] |cRXP_WARN_to train|r |T132353:0|t[Expose Weakness]
     .use 211301
     .itemcount 211301,1
 ]])
@@ -1039,25 +1049,40 @@ RXPGuides.RegisterGuide([[
 #name Dual-Wield Specialization - 32 (Stranglethorn Vale)
 
 step
+    #optional
     .train 410116,1
-    .train 1543 >>You have to learn |T135815:0|t[Flare] before you can obtain |T134419:0|t[|cRXP_FRIENDLY_Rune of the Scrapper|r].
+    +|cRXP_WARN_You must be at least level 32 before you can acquire the|r |T132147:0|t[Dual-Wield Specialization] |cRXP_WARN_rune|r
+    .xp >32,1
+step
+    .train 410116,1
+    #optional
+    .train 1543 >>|cRXP_WARN_You must train|r |T135815:0|t[Flare] |cRXP_WARN_to acquire the|r |T132147:0|t[Dual-Wield Specialization] |cRXP_WARN_rune|r
 step
     #completewith next
     .zone Stranglethorn Vale >>Travel to Stranglethorn Vale
 step
     .train 410116,1
-    .goto Stranglethorn Vale,31.8,15.7
-    .aura 435548,1+ >>Go to the waypoint and run around until you get the buff |T132118:0|t[Danger!]
+    .goto Stranglethorn Vale,31.84,15.61
+    +|cRXP_WARN_Travel to the arrow location and run around until the buff called|r |T132118:0|t[Danger!] |cRXP_WARN_appears on you|r
+    .aura 435548
+    .aura 435428
+    .aura 435546
 step
     .train 410116,1
-    >>Use |T135815:0|t[Flare] and kill the appearing |cRXP_ENEMY_Bloodscalp Guerrilla|r. Loot him for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Scrapper|r]
-    .goto Stranglethorn Vale,31.8,15.7
+    .goto Stranglethorn Vale,31.84,15.61
+    #completewith next
+    .cast 1543 >>|cRXP_WARN_Cast|r |T135815:0|t[Flare] |cRXP_WARN_to reveal the|r |cRXP_ENEMY_Bloodscalp Guerrilla|r
+    .usespell 1543
+step
+    .train 410116,1
+    .goto Stranglethorn Vale,31.84,15.61
+    >>Kill the |cRXP_ENEMY_Bloodscalp Guerrilla|r. Loot him for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Scrapper|r]
     .collect 213126,1
     .mob Bloodscalp Guerrilla
 step
     .itemcount 213126,1
     .use 213126
-    .train 410116 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Scrapper|r] to learn |T132147:0|t[Dual-Wield Specialization]
+    .train 410116 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Scrapper|r] |cRXP_WARN_to train|r |T132147:0|t[Dual-Wield Specialization]
 ]])
 
 -- RXPGuides.RegisterGuide([[
