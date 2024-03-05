@@ -1203,6 +1203,104 @@ step
     .turnin 932 >> Turn in Twisted Hatred
     .turnin 2459 >> Turn in Ferocitas the Dream Eater
 step
+#xprate >1.99
+    .xp 10
+step << Priest
+#xprate >1.99
+    .goto Teldrassil,55.564,56.746
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laurna Morninglight|r
+	.trainer >> Train your class spells
+    .target Laurna Morninglight
+step << Warrior
+#xprate >1.99
+    .goto Teldrassil,56.221,59.198
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kyra Windblade|r
+	.trainer >> Train your class spells
+    .target Kyra Windblade
+step << Rogue
+#xprate >1.99
+    .goto Teldrassil,56.381,60.139
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannok Breezesong|r
+	.trainer >> Train your class spells
+    .train 5171 >> Train |T132306:0|t[Slice and Dice]
+    .train 921 >> Train |T133644:0|t[Pick Pocket] as well which is needed for your level 10 Rogue quest
+    .target Jannok Breezesong
+step << Hunter
+#xprate >1.99
+    .goto Teldrassil,56.676,59.489
+    .target Dazalar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dazalar|r
+    .accept 6063 >> Accept Taming the Beast
+	.trainer >> Train your class spells
+step << Hunter
+#xprate >1.99
+    .goto Teldrassil,59.9,58.8
+    .use 15921 >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Webwood Lurker|r
+    .complete 6063,1 --Tame a Webwood Lurker
+    .mob Webwood Lurker
+step << Hunter
+#xprate >1.99
+    .goto Teldrassil,56.676,59.489
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dazalar|r
+    .turnin 6063 >> Turn in Taming the Beast
+    .target Dazalar
+    .accept 6101 >> Accept Taming the Beast
+step << Hunter
+#xprate >1.99
+    .goto Teldrassil,62.6,72.2
+    .use 15922 >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Nightsaber Stalker|r
+    >>|cRXP_WARN_You must right click your Pet Frame and Dismiss your pet before you can tame another one|r
+    .complete 6101,1 --Tame a Nightsaber Stalker
+    .mob Nightsaber Stalker
+step << Hunter
+#xprate >1.99
+    .goto Teldrassil,56.676,59.489
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dazalar|r
+    .turnin 6101 >> Turn in Taming the Beast
+    .target Dazalar
+    .accept 6102 >> Accept Taming the Beast
+step << Hunter
+#xprate >1.99
+    .goto Teldrassil,64.7,66.7
+    .use 15923 >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Strigid Screecher|r
+    >>|cRXP_WARN_You must right click your Pet Frame and Dismiss your pet before you can tame another one|r
+    .complete 6102,1 --Tame a Strigid Screecher
+    .mob Strigid Screecher
+step << Hunter
+#xprate >1.99
+    .goto Teldrassil,56.676,59.489
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dazalar|r
+    .turnin 6102 >> Turn in Taming the Beast
+    .target Dazalar
+    .accept 6103 >> Accept Training the Beast
+step << Warrior
+    #season 2
+    .goto Teldrassil,55.619,59.787
+    >>Talk to |cRXP_FRIENDLY_Innkeeper Keldamyr|r at Dolanaar
+    >>Talk to |cRXP_ENEMY_Syllart|r upstairs, then beat him up. He will pass out at 0%
+    >>If |cRXP_ENEMY_Syllart|r is not there wait for him to respawn
+    >>Talk to |cRXP_FRIENDLY_Innkeeper Keldamyr|r again after knocking out |cRXP_ENEMY_Syllart|r to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
+    .train 425447 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r] |cRXP_WARN_to train|r |T236317:0|t[Frenzied Assault]
+    >>|cRXP_WARN_Note: This can be quite difficult solo depending on your level. Look for some help if needed|r
+    .use 204716
+    .target Innkeeper Keldamyr
+    .mob Syllart
+step << Warrior
+#xprate >1.99
+    .goto Teldrassil,55.83,58.31,40,0
+    .goto Teldrassil,50.22,53.83
+    .goto Teldrassil,55.83,58.31,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moon Priestess Amara|r
+    >>|cRXP_FRIENDLY_Moon Priestess Amara|r |cRXP_WARN_patrols the road west of Dolanaar|r
+    .accept 1684 >> Accept Elanaria
+    .target Moon Priestess Amara
+step << Rogue
+#xprate >1.99
+    .goto Teldrassil,56.381,60.139
+    .target Jannok Breezesong
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannok Breezesong|r
+    .accept 2241 >> Accept The Apple Falls
+step
     .goto Teldrassil,55.83,58.31,40,0
     .goto Teldrassil,50.22,53.83
     .goto Teldrassil,55.83,58.31,0
@@ -1213,19 +1311,7 @@ step
 step << Rogue
     #season 2
     #completewith next
-    >>Kill or |T133644:0|t[Pick Pocket] |cRXP_ENEMY_Gnarlpine Furbolgs|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece]|r
-    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
-    .collect 208602,1 -- Top-Left Map Piece (1)
-    .mob Gnarlpine Ambusher
-    .mob Gnarlpine Shaman
-    .mob Gnarlpine Defender
-    .mob Gnarlpine Augur
-    .train 398196,1
-step << Rogue
-    #sticky
-    #label topleft
-    #season 2
-    .goto Teldrassil,44.2,59.2,0,0
+    #optional
     >>Kill or |T133644:0|t[Pick Pocket] |cRXP_ENEMY_Gnarlpine Furbolgs|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece]|r
     >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
     .collect 208602,1 -- Top-Left Map Piece (1)
@@ -1239,20 +1325,28 @@ step
     >>Kill |cRXP_ENEMY_Gnarlpine Ambushers|r
     .complete 487,1 --Kill Gnarlpine Ambusher (x6)
     .mob Gnarlpine Ambusher
-step << Hunter
+step
+#xprate >1.99 << !Druid
+    .goto Teldrassil,55.83,58.31,40,0
+    .goto Teldrassil,50.22,53.83
+    .goto Teldrassil,55.83,58.31,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moon Priestess Amara|r
+    >>|cRXP_FRIENDLY_Moon Priestess Amara|r |cRXP_WARN_patrols the road west of Dolanaar|r
+    .turnin 487 >> Turn in The Road to Darnassus
+    .target Moon Priestess Amara
+step << Rogue
+    #sticky
+    #label topleft
     #season 2
-    .goto Teldrassil,46.6,46.3
-    >>|cRXP_WARN_Cast|r |T132212:0|t[Hunter's Mark] |cRXP_WARN_on the|r |cRXP_ENEMY_Rustling Bush|r
-    >>Kill the |cRXP_ENEMY_Fallenroot Poacher|r that spawns. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
-    .collect 206155,1 --Rune of Marksmanship (1)
-    .mob Rustling Bush
-    .mob Fallenroot Poacher
-    .train 410113,1 --Master Marksman
-step << Hunter
-    #season 2
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r] |cRXP_WARN_to train|r |T132177:0|t[Master Marksman]
-    .use 206155
-    .train 410113,1
+    .goto Teldrassil,44.2,59.2,0,0
+    >>Kill or |T133644:0|t[Pick Pocket] |cRXP_ENEMY_Gnarlpine Furbolgs|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece]|r
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    .collect 208602,1 -- Top-Left Map Piece (1)
+    .mob Gnarlpine Ambusher
+    .mob Gnarlpine Shaman
+    .mob Gnarlpine Defender
+    .mob Gnarlpine Augur
+    .train 398196,1
 step << Priest/Rogue
     #season 2
     #completewith next
@@ -1290,14 +1384,20 @@ step << Rogue
     .train 400081 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Precision|r] |cRXP_WARN_to train|r |T135610:0|t[Between the Eyes]
     .use 204174
     .itemcount 204174,1
-step << Druid
-    .goto Teldrassil,55.83,58.31,40,0
-    .goto Teldrassil,50.22,53.83
-    .goto Teldrassil,55.83,58.31,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moon Priestess Amara|r
-    >>|cRXP_FRIENDLY_Moon Priestess Amara|r |cRXP_WARN_patrols the road west of Dolanaar|r
-    .turnin 487 >> Turn in The Road to Darnassus
-    .target Moon Priestess Amara
+step << Hunter
+    #season 2
+    .goto Teldrassil,46.6,46.3
+    >>|cRXP_WARN_Cast|r |T132212:0|t[Hunter's Mark] |cRXP_WARN_on the|r |cRXP_ENEMY_Rustling Bush|r
+    >>Kill the |cRXP_ENEMY_Fallenroot Poacher|r that spawns. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
+    .collect 206155,1 --Rune of Marksmanship (1)
+    .mob Rustling Bush
+    .mob Fallenroot Poacher
+    .train 410113,1 --Master Marksman
+step << Hunter
+    #season 2
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r] |cRXP_WARN_to train|r |T132177:0|t[Master Marksman]
+    .use 206155
+    .train 410113,1
 step
 	#xprate < 1.5
     #completewith next
@@ -1440,18 +1540,18 @@ step << Rogue
     .use 208603
     .train 398196,1
 step
-	#xprate >1.49
+	#xprate 1.49-1.99
    .goto Teldrassil,38.6,58.0
    >>Finish off collecting 7 Small Spider Legs
    .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
 step << Druid
-   #xprate >1.49
+   #xprate 1.49-1.99
    #label xp10
    .xp 10-850
    .goto Teldrassil,38.3,34.4
    >>If you're still behind on xp do the harpy quest north
 step << !Druid
-    #xprate >1.49
+    #xprate 1.49-1.99
 	#label xp10
 	.xp 10-4415
 step << !Rogue
@@ -1474,6 +1574,13 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mydrannul|r
     .accept 6344 >> Accept Nessa Shadowsong
 step << Warrior
+#xprate >1.99
+    .goto Darnassus,57.305,34.606
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elanaria|r
+    .turnin 1684 >> Turn in Elanaria
+    .target Elanaria
+    .accept 1683 >> Accept Vorlus Vilehoof
+step << Warrior
     #season 2
     #requires xp10
     .goto Darnassus,63.108,21.858
@@ -1483,6 +1590,12 @@ step << Warrior
     .use 204703
     .skipgossip
     .target Delwynna
+step << !Rogue
+#xprate >1.99
+    .goto Darnassus,67.427,15.655
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Saelienne|r
+    .home >> Set your Hearthstone to Darnassus
+    .target Innkeeper Saelienne
 step << !Rogue
     #requires xp10
     .goto Darnassus,38.18,21.64
@@ -1503,6 +1616,12 @@ step << Druid
     .accept 5921 >> Accept Moonglade
 	.trainer >> Train your class spells
     .target Mathrengyl Bearwalker
+step << Hunter
+#xprate >1.99
+    .goto Darnassus,40.377,8.545
+    .target Jocaste
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jocaste|r
+    .turnin 6103 >> Turn in Training the Beast
 step << !Rogue
     .goto Darnassus,39.72,92.68,10,0
     .goto Darnassus,36.65,85.93
@@ -1634,16 +1753,18 @@ step << Druid
     .target Dendrite Starblaze
     .accept 5931 >> Accept Back to Darnassus
 step
+#xprate <1.99
     #requires xp10 << Rogue
     .hs >> Hearth to Dolanaar
     .subzoneskip 186
 step << Hunter
+#xprate <1.99
     .goto Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeena Featherbow|r
 	.vendor >> |cRXP_BUY_Buy 4 stacks of|r |T132382:0|t[Sharp Arrows]|cRXP_BUY_. Equip them as soon as you reach level 10|r
     .target Jeena Featherbow
 step
-	#xprate >1.49
+	#xprate 1.49-1.99
     .goto Teldrassil,57.121,61.296
     .train 2550 >>Train Cooking
     .target Zarrin
@@ -1651,7 +1772,7 @@ step
     .accept 4161 >> Accept Recipe of the Kaldorei
     .turnin 4161 >> Turn in Recipe of the Kaldorei
 step
-	#xprate >1.49
+	#xprate 1.49-1.99
     .goto Teldrassil,51.9,56.4
     >>Find Moon Priestess Amara, she patrols the road west of Dolanaar
     .target Moon Priestess Amara
@@ -1659,6 +1780,7 @@ step
     .turnin 487 >> Turn in The Road to Darnassus
 	.maxlevel 9
 step << Hunter
+#xprate <1.99
     #optional
     #completewith L10
     #level 10
@@ -1669,6 +1791,7 @@ step << Hunter
     .accept 6063 >> Accept Taming the Beast
 	.train 13165 >> Train your level 10 spells
 step << Hunter
+#xprate <1.99
     #optional
     #completewith L10
     #level 10
@@ -1679,6 +1802,7 @@ step << Hunter
     .complete 6063,1 --Tame a Webwood Lurker
     .mob Webwood Lurker
 step << Hunter
+#xprate <1.99
     #optional
     #completewith L10
     #level 10
@@ -1715,18 +1839,6 @@ step
 	>>Click on |cRXP_LOOT_Denalans Planter|r
 	.turnin 941 >> Turn in Planting the Heart
 	.isQuestTurnedIn 927
-step << Warrior
-    #season 2
-    .goto Teldrassil,55.619,59.787
-    >>Talk to |cRXP_FRIENDLY_Innkeeper Keldamyr|r at Dolanaar
-    >>Talk to |cRXP_ENEMY_Syllart|r upstairs, then beat him up. He will pass out at 0%
-    >>If |cRXP_ENEMY_Syllart|r is not there wait for him to respawn
-    >>Talk to |cRXP_FRIENDLY_Innkeeper Keldamyr|r again after knocking out |cRXP_ENEMY_Syllart|r to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
-    .train 425447,1 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r] |cRXP_WARN_to train|r |T236317:0|t[Frenzied Assault]
-    >>|cRXP_WARN_Note: This can be quite difficult solo depending on your level. Look for some help if needed|r
-    .use 204716
-    .target Innkeeper Keldamyr
-    .mob Syllart
 step << Hunter
 	#xprate <1.5
     .goto Teldrassil,62.6,72.2
@@ -1736,6 +1848,7 @@ step << Hunter
 	.isOnQuest 6101
     .mob Nightsaber Stalker
 step
+#xprate <1.99
     #label L10
     .xp 10
 step
@@ -1746,16 +1859,19 @@ step
     .deathskip >> Die and respawn at the Spirit Healer
     .target Spirit Healer
 step << Priest
+#xprate <1.99
     .goto Teldrassil,55.564,56.746
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laurna Morninglight|r
 	.trainer >> Train your class spells
     .target Laurna Morninglight
 step << Warrior
+#xprate <1.99
     .goto Teldrassil,56.221,59.198
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kyra Windblade|r
 	.trainer >> Train your class spells
     .target Kyra Windblade
 step << Rogue
+#xprate <1.99
     .goto Teldrassil,56.381,60.139
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannok Breezesong|r
 	.trainer >> Train your class spells
@@ -1763,47 +1879,55 @@ step << Rogue
     .train 921 >> Train |T133644:0|t[Pick Pocket] as well which is needed for your level 10 Rogue quest
     .target Jannok Breezesong
 step << Hunter
+#xprate <1.99
     .goto Teldrassil,56.676,59.489
     .target Dazalar
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dazalar|r
     .accept 6063 >> Accept Taming the Beast
 	.trainer >> Train your class spells
 step << Hunter
+#xprate <1.99
     .goto Teldrassil,59.9,58.8
     .use 15921 >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Webwood Lurker|r
     .complete 6063,1 --Tame a Webwood Lurker
     .mob Webwood Lurker
 step << Hunter
+#xprate <1.99
     .goto Teldrassil,56.676,59.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dazalar|r
     .turnin 6063 >> Turn in Taming the Beast
     .target Dazalar
     .accept 6101 >> Accept Taming the Beast
 step << Hunter
+#xprate <1.99
     .goto Teldrassil,62.6,72.2
     .use 15922 >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Nightsaber Stalker|r
     >>|cRXP_WARN_You must right click your Pet Frame and Dismiss your pet before you can tame another one|r
     .complete 6101,1 --Tame a Nightsaber Stalker
     .mob Nightsaber Stalker
 step << Hunter
+#xprate <1.99
     .goto Teldrassil,56.676,59.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dazalar|r
     .turnin 6101 >> Turn in Taming the Beast
     .target Dazalar
     .accept 6102 >> Accept Taming the Beast
 step << Hunter
+#xprate <1.99
     .goto Teldrassil,64.7,66.7
     .use 15923 >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Strigid Screecher|r
     >>|cRXP_WARN_You must right click your Pet Frame and Dismiss your pet before you can tame another one|r
     .complete 6102,1 --Tame a Strigid Screecher
     .mob Strigid Screecher
 step << Hunter
+#xprate <1.99
     .goto Teldrassil,56.676,59.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dazalar|r
     .turnin 6102 >> Turn in Taming the Beast
     .target Dazalar
     .accept 6103 >> Accept Training the Beast
 step << Warrior
+#xprate <1.99
     .goto Teldrassil,55.83,58.31,40,0
     .goto Teldrassil,50.22,53.83
     .goto Teldrassil,55.83,58.31,0
@@ -1812,6 +1936,7 @@ step << Warrior
     .accept 1684 >> Accept Elanaria
     .target Moon Priestess Amara
 step << Rogue
+#xprate <1.99
     .goto Teldrassil,56.381,60.139
     .target Jannok Breezesong
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannok Breezesong|r
@@ -1827,6 +1952,7 @@ step << Hunter
     .target Shalomon
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.20
 step << !Druid
+#xprate <1.99
     .goto Teldrassil,55.83,58.31,40,0
     .goto Teldrassil,50.22,53.83
     .goto Teldrassil,55.83,58.31,0
@@ -1835,6 +1961,7 @@ step << !Druid
     .turnin 487 >> Turn in The Road to Darnassus
     .target Moon Priestess Amara
 step << Rogue
+#xprate <1.99
     #softcore
     #completewith next
     .goto Teldrassil,44.0,54.6
@@ -1870,6 +1997,17 @@ step << Rogue
     .target Priestess A'moora
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
     .accept 2518 >> Accept Tears of the Moon
+step << Warrior
+#xprate >1.99
+    #sticky
+    #completewith next
+    .goto Teldrassil,48.7,62.2,18 >> Travel toward |cRXP_ENEMY_Vorlus Vilehoof|r
+step << Warrior
+#xprate >1.99
+    .goto Teldrassil,47.2,63.7
+    >>Kill |cRXP_ENEMY_Vorlus Vilehoof|r. Loot him for his |cRXP_LOOT_Horn|r
+    .complete 1683,1 --Collect Horn of Vorlus (x1)
+    .mob Vorlus Vilehoof
 step << Hunter
     #sticky
 	.goto Teldrassil,41.2,44.4,0
@@ -2004,27 +2142,32 @@ step
 step
 	.abandon 927 >> Abandon The Moss-twined Heart. You never have an opportunity to turn it in
 step << Warrior
+#xprate <1.99
     .goto Darnassus,57.305,34.606
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elanaria|r
     .turnin 1684 >> Turn in Elanaria
     .target Elanaria
     .accept 1683 >> Accept Vorlus Vilehoof
 step << Warrior
+#xprate <1.99
     #sticky
     #completewith next
     .goto Teldrassil,48.7,62.2,18 >> Travel toward |cRXP_ENEMY_Vorlus Vilehoof|r
 step << Warrior
+#xprate <1.99
     .goto Teldrassil,47.2,63.7
     >>Kill |cRXP_ENEMY_Vorlus Vilehoof|r. Loot him for his |cRXP_LOOT_Horn|r
     .complete 1683,1 --Collect Horn of Vorlus (x1)
     .mob Vorlus Vilehoof
 step << Warrior
+#xprate <1.99
     #softcore
 	#sticky
     #completewith next
     .goto Teldrassil,43.6,54.3
     .deathskip >>Die on purpose after you get past the furbolg area and respawn at Darnassus
 step << Warrior
+#xprate <1.99
     #hardcore
     #completewith next
     .goto Darnassus,82.01,36.70,100 >> Travel to Darnassus
@@ -2035,6 +2178,7 @@ step << Warrior
     .turnin 1683 >> Turn in Vorlus Vilehoof
 --	.accept 1686 >> Accept The Shade of Elura
 step << Hunter
+#xprate <1.99
     .goto Darnassus,40.377,8.545
     .target Jocaste
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jocaste|r
