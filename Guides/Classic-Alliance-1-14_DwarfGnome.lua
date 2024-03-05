@@ -6993,7 +6993,6 @@ step << Human
     .subzoneskip 150
 step
     #xprate >1.49
-    .money <0.08
     .goto Wetlands,10.4,56.0,15,0
     .goto Wetlands,10.1,56.9,15,0
     .goto Wetlands,10.6,57.2,15,0
@@ -7002,6 +7001,7 @@ step
     .vendor 1448 >> |cRXP_WARN_Buy a|r |T133024:0|t[Bronze Tube] |cRXP_BUY_from him (if it's up)|r
 	.target Neal Allen
     .bronzetube
+    .money <0.08
 step
     #xprate >1.49
     #hardcore << !Human
