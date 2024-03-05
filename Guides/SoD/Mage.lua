@@ -2539,12 +2539,15 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Boots
 #name Chronostatic Preservation - 30 (Thousand Needles)
-
--- Chronostatic Preservation
+#title Chronostatic Preservation
 
 step
-    .train 425309,1
-    .zone Thousand Needles >>Travel to |cFFfa9602Thousand Needles|r
+    .train 416028,1
+    #completewith SpellNotes
+    +|cRXP_WARN_Ensure to bring at least one other |cFF69CCF0Mage|r friend for the following steps! This next part cannot be completed solo!|r
+step
+    .train 425189,1
+    .zone Thousand Needles >>Travel to Thousand Needles
 step
     .train 425189,1
     #loop
@@ -2552,33 +2555,49 @@ step
     .goto Thousand Needles,20.2,22.0,25,0
     .goto Thousand Needles,17.6,19.6,25,0
     .goto Thousand Needles,18.6,24.6,25,0
-    >>Kill |cRXP_ENEMY_Galak Mauler|r and loot them for |T134238:0|t|cRXP_LOOT_Cougar Cage Key|r
+    >>Kill |cRXP_ENEMY_Galak Marauders|r, |cRXP_ENEMY_Galak Maulers|r and |cRXP_ENEMY_Galak Stormers|r. Loot them for the |cRXP_LOOT_Cougar Cage Key|r
     .collect 214435,1
     .mob Galak Mauler
+    .mob Galak Marauder
+    .mob Galak Stormer
+    .itemcount 213634,<1
+step
+    #completewith next
+    .goto Thousand Needles,23.714,24.780
+    +Open the |cRXP_PICK_Cougar Cage|r to release the |cRXP_ENEMY_Seared Needles Cougar|r
+    .itemcount 214435,1
 step
     .train 425189,1
-    .goto Thousand Needles,45,8,65,4
-    >>Use the |T134238:0|t|cRXP_LOOT_Cougar Cage Key|r and Kill |cRXP_ENEMY_Seared Needles Cougar|r |cRXP_WARN_with frost spells|r. Loot him for |T134943:0|t|cRXP_LOOT_Partial Spell Notes|r |cRXP_WARN_might require additional mages.|r
+    .goto Thousand Needles,23.714,24.780
+    >>Kill the |cRXP_ENEMY_Seared Needles Cougar|r. Loot her for the |T134943:0|t[|cRXP_LOOT_Partial Spell Notes|r]
+    >>|cRXP_WARN_You must only use Frost spells to weaken it so it can be damaged|r
     .mob Seared Needles Cougar
     .collect 213634,1
 step
     .train 425189,1
-    .goto Thousand Needles,45,8,64,4
-    >>Kill |cRXP_ENEMY_Singed Highperch Consort|r |cRXP_WARN_with frost spells|r. Loot him for |T134943:0|t|cRXP_LOOT_Partial Spell Notes|r |cRXP_WARN_might require additional mages.|r
-    .collect 213634,2
+    .goto Thousand Needles,13.598,33.854,40,0
+    .goto Thousand Needles,10.81,39.60
+    >>Kill the |cRXP_ENEMY_Singed Highperch Consort|r. Loot it for the |T134938:0|t[|cRXP_LOOT_Partial Spell Notes|r]
+    >>|cRXP_WARN_You must only use Frost spells to weaken it so it can be damaged|r
+    .collect 213633,1
     .mob Singed Highperch Consort
 step
+    #label SpellNotes
     .train 425189,1
-    .goto Thousand Needles,45,8,65,4
-    >>Kill |cRXP_ENEMY_Scorched Screeching Roguefeather|r |cRXP_WARN_with frost spells|r. Loot him for |T134943:0|t|cRXP_LOOT_Partial Spell Notes|r |cRXP_WARN_might require additional mages.|r
-    .collect 213634,3
+    .goto Thousand Needles,26.66,46.38
+    >>Kill the |cRXP_ENEMY_Scorched Screeching Roguefeather|r. Loot it for the |T134937:0|t[|cRXP_LOOT_Partial Spell Notes|r]
+    >>|cRXP_WARN_You must only use Frost spells to weaken it so it can be damaged|r
+    .collect 213632,1
     .mob Scorched Screeching Roguefeather
 step
-    .cast 435185 >>Use one of the |T134943:0|t|cRXP_LOOT_Partial Spell Notes|r to receive |T135975:0|t[|cRXP_FRIENDLY_Spell Notes: Chronostatic Preservation|r.
+    .train 425189,1
+    >>|cRXP_WARN_Use the|r |T134943:0|t|T134938:0|t|T134937:0|t[|cRXP_LOOT_Partial Spell Notes|r] |cRXP_WARN_to create the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Chronostatic Preservation|r]
     .collect 213116,1
     .use 213634
+    .use 213633
+    .use 213632
 step
-    .train 425189 >>Use |T135975:0|t[|cRXP_FRIENDLY_Spell Notes: Chronostatic Preservation|r to learn |T135729:0|t|{Chronostatic Preservation].
+    .train 425189 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Chronostatic Preservation|r |cRXP_WARN_to train|r |T135729:0|t[Chronostatic Preservation]
     .use 213116
 ]])
 

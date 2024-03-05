@@ -1818,24 +1818,46 @@ RXPGuides.RegisterGuide([[
 #name Sacred Shield - 30 (Desolace)
 #title Sacred Shield
 
--- Sacred Shield
-
 step
+    #optional
+    .train 416028,1
+    +|cRXP_WARN_You must be at least level 18 before you can acquire the|r |T236249:0|t[Sacred Shield] |cRXP_WARN_enraving|r
+    .xp >18,1
+step
+    .train 416028,1
+    .train 1044 >> |cRXP_WARN_You must train|r |T135968:0|t[Blessing of Freedom] |cRXP_WARN_to acquire the|r |T236249:0|t[Sacred Shield] |cRXP_WARN_enraving|r
+step
+    .train 416028,1
+    #completewith Deliverance
+    +|cRXP_WARN_Ensure to bring a friend for the following steps! This next part cannot be completed solo!|r
+step
+    .train 416028,1
     #completewith next
     .zone Desolace >>Travel to Desolace
 step
     .train 416028,1
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the glowing book to obtain |T134916:0|t[|cRXP_FRIENDLY_Libram of Deliverance|r]
-    .goto Desolace,66.5,7.7
+    #label Deliverance
+    .goto Desolace,66.532,7.531
+    >>Loot the |T134916:0|t[|cRXP_FRIENDLY_Libram of Deliverance|r] on the table
     .collect 213513,1
 step
     .train 416028,1
-    .equip 18,213513 >> Equip |T134916:0|t[Libram of Deliverance]
-    .aura 408828,1+ >> Use |T135968:0|t[Blessing of Freedom] on 5 other players |cRXP_WARN_while they're movement impaired|r
-    *|cRXP_WARN_Good spots are quest areas with mobs that root players (lake in Ashenvale, Swamp of Sorrows)|r
+    .equip 18,213513 >> |cRXP_WARN_Equip the|r |T134916:0|t[|cRXP_FRIENDLY_Libram of Deliverance|r]
+    .use 213513
+step
+    .train 416028,1
+    .goto Desolace,38.21,61.02,50,0
+    .goto Desolace,36.44,60.52,60,0
+    .goto Desolace,33.44,54.17,60,0
+    .goto Desolace,30.33,58.26,60,0
+    .goto Desolace,31.79,61.28
+    .aura 408828 >> |cRXP_WARN_Cast|r |T135968:0|t[Blessing of Freedom] |cRXP_WARN_on another player 5 times while their movement is impaired. You will gain a stack of|r |T237556:0|t[Building Inspiration] |cRXP_WARN_each time you do this|r
+    >>|cRXP_WARN_Once you have 5 stacks of|r |T237556:0|t[Building Inspiration]|cRXP_WARN_, you will receive the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_Complete this just outside of Maraudon. The|r |cRXP_ENEMY_Maraudine Wranglers|r |cRXP_WARN_there cast|r |T132149:0|t[Net] 
+    .mob Maraudine Wrangler
 step
     .use 213513
-    .train 416028 >>Use the |T134916:0|t[|cRXP_FRIENDLY_Libram of Deliverance|r] to learn |T236249:0|t[Sacred Shield]
+    .train 416028 >>|cRXP_WARN_Use the|r |T134916:0|t[|cRXP_FRIENDLY_Libram of Deliverance|r] |cRXP_WARN_to train|r |T236249:0|t[Sacred Shield]
 ]])
 
 
