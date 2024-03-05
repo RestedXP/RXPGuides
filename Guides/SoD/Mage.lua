@@ -2134,33 +2134,42 @@ RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
-#name Living Bomb - 12 (Loch Modan)
+#name Living Bomb - 11 (Loch Modan)
 #title Living Bomb
 
 << Alliance Mage SoD
 
 
 step
+    +|cRXP_WARN_You should be at least level 11 in order to acquire|r |T236220:0|t[Living Bomb] |cRXP_WARN_in Loch Modan alone|r
     .train 415936,1
-    .goto Stormwind City,55.8,65.2,-1
-    .goto Stormwind City,32.4,80.0,-1
-    .goto Stormwind City,43.4,26.8,-1
-    .goto Stormwind City,36.0,74.8,-1
-    .goto Elwynn Forest,64.8,69.2,-1
-    .goto Ironforge,19.6,56.2,-1
-    .goto Undercity,69.6,39.2,-1
-    .goto Darnassus,38.8,60.4,-1
-    .goto Ashenvale,35.0,48.6,-1
-    .goto Ironforge,31.2,27.6,-1
-    .goto Duskwood,76.0,45.2,-1
-    .goto Darnassus,34.6,9.8,-1
-    .goto Wetlands,8.4, 56.6,-1
-    >>Purchase one or more |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor.|r
-    .collect 211779,1
+    .xp >11,1
 step
+    #optional
+    #label Charm
+    #completewith Comprehension
+    .zone Ironforge >> Travel to Ironforge
     .train 415936,1
-    #completewith next
-    .zone Loch Modan >>Travel to |cFFfa9602Loch Modan|r
+step
+    #optional
+    #requires Charm
+    #completewith Comprehension
+    .goto Ironforge,31.33,27.80,8,0
+    .goto Ironforge,30.47,26.57,6 >>Enter |cRXP_FRIENDLY_Ginny Longberry|r's house
+    .train 415936,1
+step
+    #label Comprehension
+    .goto Ironforge,31.33,27.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ginny Longberry|r inside
+    >>|cRXP_BUY_Buy one or more|r |T135933:0|t[Comprehension Charms] |cRXP_BUY_from her|r
+    .collect 211779,1 --Comprehension Charm (1)
+    .target Ginny Longberry
+    .train 415936,1
+step
+    #label Loch1
+    #completewith Tengi
+    .zone Loch Modan >>Travel to Loch Modan
+    .train 415936,1
 step
     .goto Loch Modan,29.2,81.2,15,0
     .goto Loch Modan,28.8,83.4,15,0

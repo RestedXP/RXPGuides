@@ -1246,6 +1246,7 @@ step
     .accept 224 >> Accept In Defense of the King's Lands
     .target Mountaineer Cobbleflint
 step
+    #optional
     #completewith next
     .goto Loch Modan,23.27,75.65,12,0
     .goto Loch Modan,23.62,75.42,12,0

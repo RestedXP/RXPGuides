@@ -3619,9 +3619,25 @@ step << Rogue
     .subzoneskip 146
     .train 424785,1
 step << Rogue
+    #xprate <1.59
     #season 2
     #completewith LochModanDam
     >>Kill |cRXP_ENEMY_Tunnel Rats|r. Loot them for their |cRXP_LOOT_Ears|r
+    .complete 416,1 --Collect Tunnel Rat Ear (x12)
+    .mob Tunnel Rat Scout
+    .mob Tunnel Rat Vermin
+    .mob Tunnel Rat Forager
+    .mob Tunnel Rat Geomancer
+    .mob Tunnel Rat Digger
+    .mob Tunnel Rat Surveyor
+    .subzoneskip 146
+    .train 424785,1
+step << Rogue
+    #xprate >1.59
+    #season 2
+    #completewith LochModanDam
+    >>Kill |cRXP_ENEMY_Tunnel Rats|r. Loot them for their |cRXP_LOOT_Ears|r
+    >>|cRXP_WARN_Don't go out of your way for this as you will likely skip this quest|r
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
     .mob Tunnel Rat Scout
     .mob Tunnel Rat Vermin
@@ -3668,11 +3684,25 @@ step
     .mob Mountain Boar
     .mob Forest Lurker
 step
+    #optional
     #completewith MinerGear
     .goto Loch Modan,35.50,18.97,20 >> Enter the Silver Stream Mine
 step
-    #completewith next
+    #xprate <1.59
+    #completewith MinerGear
     >>Kill |cRXP_ENEMY_Tunnel Rats|r. Loot them for their |cRXP_LOOT_Ears|r
+    .complete 416,1 --Collect Tunnel Rat Ear (x12)
+    .mob Tunnel Rat Scout
+    .mob Tunnel Rat Vermin
+    .mob Tunnel Rat Forager
+    .mob Tunnel Rat Geomancer
+    .mob Tunnel Rat Digger
+    .mob Tunnel Rat Surveyor
+step
+    #xprate >1.59
+    #completewith MinerGear
+    >>Kill |cRXP_ENEMY_Tunnel Rats|r. Loot them for their |cRXP_LOOT_Ears|r
+    >>|cRXP_WARN_Don't go out of your way for this as you will likely skip this quest|r
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
     .mob Tunnel Rat Scout
     .mob Tunnel Rat Vermin
@@ -3708,7 +3738,6 @@ step
     .goto Loch Modan,35.48,16.82
     >>Kill |cRXP_ENEMY_Tunnel Rats|r. Loot them for their |cRXP_LOOT_Ears|r
     >>|cRXP_WARN_Ensure you have 10|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for your upcoming Paladin class quest|r << Paladin
-    >>|cRXP_ENEMY_Tunnel Rats|r |cRXP_WARN_can spawn throughout Loch Modan. Check your World Map for their locations|r
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
     .collect 2589,10,1644,1,1 << Human Paladin -- Linen Cloth (10)
     .mob Tunnel Rat Scout
@@ -3729,7 +3758,7 @@ step
     .goto Loch Modan,37.71,16.84,50,0
     .goto Loch Modan,35.48,16.82
     >>Kill |cRXP_ENEMY_Tunnel Rats|r. Loot them for their |cRXP_LOOT_Ears|r
-    >>|cRXP_ENEMY_Tunnel Rats|r |cRXP_WARN_can spawn throughout Loch Modan. Check your World Map for their locations|r
+    >>|cRXP_WARN_Don't go out of your way for this as you will likely skip this quest|r
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
     .mob Tunnel Rat Scout
     .mob Tunnel Rat Vermin
@@ -3737,6 +3766,7 @@ step
     .mob Tunnel Rat Geomancer
     .mob Tunnel Rat Digger
     .mob Tunnel Rat Surveyor
+    .itemcount 3110,8 --Tunnel Rat Ear
 step
     #completewith StormpikeDelivery
     #label StormpikeStop
@@ -3873,6 +3903,7 @@ step << Mage
     #requires LivingBombDelightEnd
     --XXREQ Placeholder invis step
 step
+    #xprate <1.59
     .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
     .goto Loch Modan,36.72,41.97,15,0
     .goto Loch Modan,37.24,43.19,15,0
@@ -3886,11 +3917,38 @@ step
     .target Mountaineer Kadrell
     .turnin 416 >> Turn in Rat Catching
 step
+    #xprate >1.59
+    .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
+    .goto Loch Modan,36.72,41.97,15,0
+    .goto Loch Modan,37.24,43.19,15,0
+    .goto Loch Modan,37.33,45.63,15,0
+    .goto Loch Modan,36.77,46.20,15,0
+    .goto Loch Modan,35.19,46.88,15,0
+    .goto Loch Modan,32.67,49.71,20,0
+    .goto Loch Modan,36.77,46.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Kadrell|r
+    >>|cRXP_FRIENDLY_Mountaineer Kadrell|r |cRXP_WARN_patrols the road through Thelsamar|r
+    .target Mountaineer Kadrell
+    .turnin 416 >> Turn in Rat Catching
+    .isQuestComplete 416
+step
+    #xprate >1.59
+    #optional
+    #sticky
+    #label RatAbandon
+    .abandon 416 >> Abandon Rat Catching
+step
+    #optional
+    #completewith FlintTinder
+    .goto 1432,35.273,47.750,10,0
+    .goto 1432,35.433,48.243,12 >> Enter the Stoutlager Inn
+step
     .goto Loch Modan,34.828,49.283
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r
     .turnin 418 >> Turn in Thelsamar Blood Sausages
     .target Vidra Hearthstove
 step
+    #label FlintTinder
     .goto Loch Modan,34.757,48.618
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yanni Stoutheart|r
     >>|cRXP_WARN_Buy a|r |T135237:0|t[Flint and Tinder] |cRXP_WARN_along with 2|r |T135435:0|t[Simple Wood]|cRXP_WARN_. Buy any|r|T133634:0|t[Small Brown Pouches] |cRXP_WARN_if needed|r
@@ -3903,6 +3961,7 @@ step
     .fp Thelsamar >> Get the Thelsamar flight path
     .target Thorgrum Borrelson
 step
+    #optional
     #completewith next
     .goto Loch Modan,24.78,70.17,10,0
     .goto Loch Modan,23.73,75.52,15 >> Run up the dirt path then drop down into the bunker
@@ -3919,7 +3978,18 @@ step
     .target Mountaineer Cobbleflint
 step << Warrior
     #season 2
-    #completewith next
+    #sticky
+    #label Geode
+    #loop
+    .goto Loch Modan,27.01,48.74,0
+    .goto Loch Modan,27.68,56.83,0
+    .goto Loch Modan,33.35,71.59,0
+    .goto Loch Modan,31.54,74.96,0
+    .waypoint Loch Modan,27.01,48.74,50,0
+    .waypoint Loch Modan,27.68,56.83,50,0
+    .waypoint Loch Modan,33.35,71.59,50,0
+    .waypoint Loch Modan,31.54,74.96,50,0
+    .waypoint Loch Modan,33.88,76.58,50,0
     >>Kill |cRXP_ENEMY_Troggs|r. Loot them for a |cRXP_LOOT_Skull-Shaped Geode|r
     .collect 208847,1 -- Skull-Shaped Geode (1)
     .mob Stonesplinter Scout
@@ -3961,11 +4031,16 @@ step << Warlock
     #xprate <1.5
     .goto Loch Modan,27.33,56.70
     .xp 13+9600 >>Grind until 9600+/11400xp
-step << Warlock
+step
     #optional
-    #xprate >1.49
+    #xprate 1.49-1.59
     .goto Loch Modan,27.33,56.70
     .xp 13+8700 >>Grind until 8700+/11400xp
+step
+    #optional
+    #xprate >1.59
+    .goto Loch Modan,27.33,56.70
+    .xp 13+7800 >>Grind until 7800+/11400xp
 step << Mage
     #xprate <1.5
     #season 2
@@ -3990,9 +4065,10 @@ step << Mage
     .use 208854
 step << Warrior
     #season 2
+    #requires Geode
     .goto Loch Modan,33.2,73.8
     >>Kill a |cRXP_ENEMY_Stonesplinter Skullthumper|r
-    >>|cRXP_WARN_During combat it'll give you a nice thumpin' which will turn the |cRXP_LOOT_Skull-Shaped Geode|r into a|r |T236489:0|t[|cRXP_LOOT_Cracked Skull-Shaped Geode|r]
+    >>|cRXP_WARN_During combat it'll hit you, turning the |cRXP_LOOT_Skull-Shaped Geode|r into a|r |T236489:0|t[|cRXP_LOOT_Cracked Skull-Shaped Geode|r]
     .collect 208848,1 -- Cracked Skull-Shaped Geode (1)
     .mob Stonesplinter Skullthumper
     .train 425443,1
@@ -4027,9 +4103,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Cobbleflint|r
     .turnin 224 >> Turn in In Defense of the King's Lands
     .target Mountaineer Cobbleflint
-step << Warlock
-    .goto Loch Modan,27.33,56.70
-    .xp 14 >> Grind to 14
 step
     #xprate >1.49
     #completewith HumbleBeginnings
@@ -4464,16 +4537,15 @@ step << Dwarf/Gnome
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
     .fly Wetlands>> Fly to Wetlands
     .target Gryth Thurden
-step
+    step
     #xprate >1.49
     #optional
     #hardcore << !Human
-    .goto Dun Morogh,53.5,34.9
-    .zone Dun Morogh>>Exit Ironforge
+    .goto 1426,53.042,35.383
+    .zone Dun Morogh >> Exit Ironforge
 step
     #xprate >1.49
     #hardcore
-    #optional
     #completewith next
     .goto Dun Morogh,59.43,42.85,150 >> Travel to the Dun Morogh -> Wetlands skip spot
 step
@@ -4508,35 +4580,48 @@ step
 step << Human
     #xprate >1.49
     #softcore
-    #optional
+    #label WetlandsDS1
     #completewith next
-    .goto Dun Morogh,30.9,33.1,20 >> Travel to the Dun Morogh -> Wetlands deathskip spot
+    .goto 1426,30.741,34.269,15,0
+    .goto 1426,30.812,33.548,15,0
+    .goto 1426,31.060,32.543,15,0
+    .goto 1426,31.439,32.356,15,0
+    .goto 1426,31.675,29.636,15,0
+    .goto 1426,32.209,28.777,15,0
+    .goto 1426,32.645,27.740,15,0
+    .goto 1415,44.910,52.022,15,0
+    .goto 1415,44.910,52.030
+    >>|cRXP_WARN_Do the Dun Morogh -> Wetlands deathskip. Follow the arrow closely|r
+    >>|cRXP_WARN_Do NOT jump off any heights yet|r
+    .zone Wetlands >>|cRXP_WARN_Climb the mountain, then walk down past the jagged pattern until your subzone changes to the Wetlands|r
+step << Human
+    #xprate >1.49
+    #softcore
+    #requires WetlandsDS1
+    #label WetlandsDS2
+    #completewith next
+    .goto 1415,44.733,51.882,-1
+    .goto 1437,11.730,43.304,-1
+    >>|cRXP_WARN_Jump off the mountain toward the north or north-west|r
+    .deathskip >> Die and respawn at the Baradin Bay |cRXP_FRIENDLY_Spirit Healer|r
+    .isQuestAvailable 984
+    .target Spirit Healer
 step << Human
     #xprate >1.49
     #softcore
     #optional
-    .goto Dun Morogh,32.4,29.1,20 >> Continue following through the mountain to the deathskip location
-step << Human
-    #xprate >1.49
-    #softcore
-    #optional
-    .goto Dun Morogh,33.0,27.2,20,0
-    .goto Dun Morogh,33.0,25.2,20,0
-    .goto Wetlands,11.727,43.306
-    .deathskip >> Run straight off the edge to the north and drop down. Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-step << Human
-    #xprate >1.49
-    #softcore
-    .goto Wetlands,12.7,46.7,80 >> Swim to Menethil Harbor
+    #requires WetlandsDS2
+    #completewith next
+    .goto Wetlands,11.95,50.24,60 >> Swim to shore toward Menethil Harbor
+    .subzoneskip 150
 step
     #xprate >1.49
     .goto Wetlands,10.4,56.0,15,0
     .goto Wetlands,10.1,56.9,15,0
     .goto Wetlands,10.6,57.2,15,0
     .goto Wetlands,10.7,56.8
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neal Allen|r
-    .vendor 1448 >> |cRXP_WARN_Buy a|r |T133024:0|t[Bronze Tube]
-    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Neal Allen|r doesn't have one|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neal Allen|r on the bottom floor of the barracks
+    .vendor 1448 >> |cRXP_WARN_Buy a|r |T133024:0|t[Bronze Tube] |cRXP_BUY_from him (if it's up)|r
 	.target Neal Allen
     .bronzetube
     .money <0.08
@@ -4547,6 +4632,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei|r
     .fp Wetlands >> Get the Wetlands flight path
     .target Shellei Brondir
+step
+    #xprate >1.49
+    .goto Wetlands,7.95,56.38
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dewin Shimmerdawn|r inside
+    .vendor 1453 >> |cRXP_BUY_Buy|r |T134831:0|t[Healing Potions] |cRXP_BUY_from him (if they're up)|r
+    .target Dewin Shimmerdawn
 step
     #xprate >1.49
     #completewith next
