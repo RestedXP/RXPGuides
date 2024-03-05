@@ -2197,7 +2197,13 @@ step
     >>Loot the |cRXP_PICK_Stolen Silver|r on the ground
     .complete 3281,1 --Stolen Silver (1)
 step
+    #xprate <1.5
     #completewith Verog
+    >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Stagnant Oasis
+    .complete 848,1 --Collect Fungal Spores (x4)
+step
+    #xprate >1.49
+    #completewith next
     >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Stagnant Oasis
     .complete 848,1 --Collect Fungal Spores (x4)
 step
