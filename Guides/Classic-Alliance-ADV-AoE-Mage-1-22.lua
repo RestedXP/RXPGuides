@@ -2986,7 +2986,7 @@ step
 step
     #completewith next
     .goto Darkshore,38.23,52.84,75,0
-    >>|cRXP_WARN_If you find a |cRXP_ENEMY_Rabid Thistle Bear|r, use|r |T134335:0|t[Tharnariun's Hope] |cRXP_WARN_then aggro it|r
+    >>|cRXP_WARN_Use|r |T134335:0|t[Tharnariun's Hope] |cRXP_WARN_on a |cRXP_ENEMY_Rabid Thistle Bear|r. It has a 50-yard range|r
     >>|cRXP_WARN_Be careful as they cast|r |T135914:0|t[Rabies] |cRXP_WARN_(Instant Melee: Reduces ALL health regen by 50% for 10 Minutes)|r
     .complete 2118,1 --Rabid Thistle Bear Captured (1)
     .use 7586
@@ -3001,7 +3001,7 @@ step
     .goto Darkshore,38.80,58.29,60,0
     .goto Darkshore,38.38,60.75,60,0
     .goto Darkshore,38.57,66.39
-    >>|cRXP_WARN_If you find a |cRXP_ENEMY_Rabid Thistle Bear|r, use|r |T134335:0|t[Tharnariun's Hope] |cRXP_WARN_then aggro it|r
+    >>|cRXP_WARN_Use|r |T134335:0|t[Tharnariun's Hope] |cRXP_WARN_on a |cRXP_ENEMY_Rabid Thistle Bear|r. It has a 50-yard range|r
     >>|cRXP_WARN_Be careful as they cast|r |T135914:0|t[Rabies] |cRXP_WARN_(Instant Melee: Reduces ALL health regen by 50% for 10 Minutes)|r
     .complete 2118,1 --Rabid Thistle Bear Captured (1)
     .use 7586
@@ -7596,6 +7596,7 @@ step
     .target Bailey Stonemantle
 step
     .goto Ironforge,25.50,7.04
+    >>Talk to |cRXP_FRIENDLY_Milstaff|r
     .train 3562 >> Train |T135763:0|t[Teleport: Ironforge]
     .target Milstaff Stormeye
 step

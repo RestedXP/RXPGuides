@@ -717,16 +717,37 @@ step
     .target Corithras Moonrage
     .accept 929 >> Accept Crown of the Earth
 step << Druid
+    #ah
     .goto Teldrassil,57.721,60.641
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malorne Bladeleaf|r
+    >>|T136065:0|t[Herbalism] |cRXP_WARN_is required to gather 5|r |T134187:0|t[Earthroot] |cRXP_WARN_for an important class quest soon. You can unlearn it afterwards|r
+    >>|cRXP_WARN_If you would rather purchase 5|r |T134187:0|t[Earthroot] |cRXP_WARN_from the Auction House later, skip this step|r
     .train 2366 >> Train |T136065:0|t[Herbalism]
-    >>|T136065:0|t[Herbalism] |cRXP_WARN_is required to gather 5|r |T134187:0|t[Earthroot] |cRXP_WARN_for a level 15 quest later. You can unlearn it afterwards|r
     .target Malorne Bladeleaf
+    .itemcount 2449,<5 --Earthroot (<5)
 step << Druid
+    #ssf
+    .goto Teldrassil,57.721,60.641
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malorne Bladeleaf|r
+    >>|T136065:0|t[Herbalism] |cRXP_WARN_is required to gather 5|r |T134187:0|t[Earthroot] |cRXP_WARN_for an important class quest soon. You can unlearn it afterwards|r
+    .train 2366 >> Train |T136065:0|t[Herbalism]
+    .target Malorne Bladeleaf
+    .itemcount 2449,<5 --Earthroot (<5)
+step << Druid
+    #ssf
+    #optional
     #completewith end
-    >>|cRXP_WARN_Level|r |T136065:0|t[Herbalism] |cRXP_WARN_to 15|r
-    >>|cRXP_WARN_Pick 5 Earthroot off the ground for a level 15 quest later|r
-    .collect 2449,5
+    #label GatheringQ
+    .skill herbalism,15 >>|cRXP_WARN_Level your|r |T136065:0|t[Herbalism] |cRXP_WARN_to 15 to be able to gather 5|r |T134187:0|t[Earthroot] |cRXP_WARN_for an important class quest soon. You can unlearn it afterwards|r
+    .collect 2449,5,6123,1 --Earthroot (5)
+    .disablecheckbox
+step << Druid
+    #optional
+    #completewith end
+    #requires GatheringQ
+    >>|cRXP_WARN_Collect 5 |T134187:0|t[Earthroot] via |T136065:0|t[Herbalism] and rarely |cRXP_PICK_Battered Chests|r for a future class quest|r
+    .collect 2449,5,6123,1 --Earthroot (5)
+    .skill herbalism,<15,1
 step << Priest
     .goto Teldrassil,57.242,63.511
     >>Target |cRXP_FRIENDLY_Sentinel Shaya|r
@@ -2230,7 +2251,7 @@ step << Druid
     .goto Darnassus,47.95,68.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Firodren Mooncaller|r
     .train 2366 >> Train |T136065:0|t[Herbalism]
-    >>|T136065:0|t[Herbalism] |cRXP_WARN_is required to gather 5|r |T134187:0|t[Earthroot] |cRXP_WARN_for a level 15 quest later. You can unlearn it afterwards|r
+    >>|T136065:0|t[Herbalism] |cRXP_WARN_is required to gather 5|r |T134187:0|t[Earthroot] |cRXP_WARN_for an important class quest soon. You can unlearn it afterwards|r
     .target Firodren Mooncaller
 step
     #ah
