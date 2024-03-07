@@ -1012,14 +1012,14 @@ function addon.GroupOverride(guide)
             if faction == "Alliance" then
                 guide.subgroup = guide.group:gsub("RestedXP Alliance", "RXP Speedrun Guide")
                 local group = "RestedXP Speedrun Guide (A)"
-                guide.next = guide.next and guide.next:gsub(".*\\","")
+                guide.next = guide.next and guide.next:gsub("[^;]-\\","")
                 guide.group = group
                 --print('\n',guide.group,guide.subgroup,faction,guide.name,'\n')
                 return group
             elseif faction == "Horde" then
                 guide.subgroup = guide.group:gsub("RestedXP Horde", "RXP Speedrun Guide")
                 local group = "RestedXP Speedrun Guide (H)"
-                guide.next = guide.next and guide.next:gsub(".*\\","")
+                guide.next = guide.next and guide.next:gsub("[^;]-\\","")
                 guide.group = group
                 --print(group,guide.subgroup,faction,guide.group,guide.name)
                 return group
