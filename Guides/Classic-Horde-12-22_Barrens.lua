@@ -8368,31 +8368,21 @@ step
     .turnin 888 >>Turn in Stolen Booty
     .target Gazlowe
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r, |cRXP_FRIENDLY_Mebok|r and |cRXP_FRIENDLY_Drohn|r
-    .turnin 1094 >>Turn in Further Instructions
-    .accept 1095 >>Accept Further Instructions
-    .goto The Barrens,62.98,37.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mebok|r and |cRXP_FRIENDLY_Drohn|r
     .turnin 865 >>Turn in Raptor Horns
-    .turnin 1069 >>Turn in Deepmoss Spider Eggs
     .accept 1491 >>Accept Smart Drinks
     .goto The Barrens,62.37,37.62
     .turnin 821 >>Turn in Chen's Empty Keg
     .goto The Barrens,62.27,38.39
-    .target Sputtervalve
     .target Mebok Mizzyrix
     .target Brewmaster Drohn
     .dungeon WC
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r, |cRXP_FRIENDLY_Mebok|r and |cRXP_FRIENDLY_Drohn|r
-    .turnin 1094 >>Turn in Further Instructions
-    .accept 1095 >>Accept Further Instructions
-    .goto The Barrens,62.98,37.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mebok|r and |cRXP_FRIENDLY_Drohn|r
     .turnin 865 >>Turn in Raptor Horns
-    .turnin 1069 >>Turn in Deepmoss Spider Eggs
     .goto The Barrens,62.37,37.62
     .turnin 821 >>Turn in Chen's Empty Keg
     .goto The Barrens,62.27,38.39
-    .target Sputtervalve
     .target Mebok Mizzyrix
     .target Brewmaster Drohn
 step << Warrior
@@ -8828,6 +8818,12 @@ step << Warlock
     #completewith next
     .goto Thunder Bluff,69.88,30.90,80 >> Travel to the Elder Rise
 step << Warlock
+    .goto Thunder Bluff,78.61,28.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamuul|r and |cRXP_FRIENDLY_Nara|r
+    .turnin 1489 >> Turn in Hamuul Runetotem
+    .accept 1490 >> Accept Nara Wildmane
+    .target Arch Druid Hamuul Runetotem
+step << Warlock
     .goto Thunder Bluff,75.65,31.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamuul|r and |cRXP_FRIENDLY_Nara|r
     .turnin 1490 >> Turn in Nara Wildmane
@@ -8845,6 +8841,12 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zangen|r
     .accept 1195 >> Accept The Sacred Flame
     .target Zangen Stonehoof
+step << Warlock
+    .goto Thunder Bluff,22.82,20.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
+    .accept 962 >> Accept Serpentbloom
+    .target Apothecary Zamah
+    .dungeon WC
 step << Warlock
     #completewith next
     .skill firstaid,80 >> Create |T133688:0|t[Heavy Linen Bandages] until your skill is 80 or higher
@@ -9073,6 +9075,12 @@ step << Rogue
 step << !Warlock
     #completewith FirstAid2
     .goto Thunder Bluff,28.14,32.97,40 >>Travel to the Spirit Rise
+step
+    .goto Thunder Bluff,22.82,20.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
+    .accept 962 >> Accept Serpentbloom
+    .target Apothecary Zamah
+    .dungeon WC
 step << Priest
     .goto Thunder Bluff,25.31,15.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miles|r
@@ -9297,7 +9305,6 @@ step << Shaman
     .turnin 884 >>Turn in Owatanka
     .turnin 913 >>Turn in Cry of the Thunderhawk
     .accept 874 >>Accept Mahren Skyseer
-    .accept 6382 >>Accept The Ashenvale Hunt << Hunter
     .target Jorn Skyseer
     .isOnQuest 884
 step << Shaman
