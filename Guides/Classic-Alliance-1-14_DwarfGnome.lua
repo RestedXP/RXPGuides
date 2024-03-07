@@ -3,13 +3,13 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
-<< Alliance
-#name 1-6 Coldridge Valley
 #version 1
+<< Alliance
 #group RestedXP Alliance 1-20
-#defaultfor Dwarf/Gnome
+#name 1-6 Coldridge Valley
 #next 6-11 Dun Morogh << !Hunter
 #next 6-11 Dun Morogh (Hunter);6-11 Dun Morogh << Hunter
+#defaultfor Dwarf/Gnome
 
 step << !Gnome !Dwarf
     #completewith next
@@ -1142,17 +1142,16 @@ step
 ]])
 
 RXPGuides.RegisterGuide([[
+#xprate >1.49 << Hunter
 #era/som--h
 #classic
-<< Alliance --!Hunter
-#name 6-11 Dun Morogh
 #version 1
+<< Alliance --!Hunter
 #group RestedXP Alliance 1-20
-#defaultfor Dwarf/Gnome
-#next 11-12 Elwynn (Dwarf/Gnome);11-12 Voidwalker Quest;12-14 Loch Modan (Dwarf/Gnome);11-13 Loch Modan (Hunter)
+#name 6-11 Dun Morogh
 #displayname 6-12 Dun Morogh << sod !Warlock
-
-#xprate >1.49 << Hunter
+#next 11-12 Elwynn (Dwarf/Gnome);11-12 Voidwalker Quest;12-14 Loch Modan (Dwarf/Gnome);11-13 Loch Modan (Hunter)
+#defaultfor Dwarf/Gnome
 
 step
     #completewith BoarMeat44 << !Paladin !Warrior !Rogue
@@ -3763,12 +3762,32 @@ step
     .goto 1432,24.279,17.959,12 >> Enter the Bunker. Go to the top floor
 step
     #label Stormpike1
-    .goto Loch Modan,24.764,18.397
+    .goto Loch Modan,24.77,18.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r inside the bunker
     .turnin 1339 >> Turn in Mountaineer Stormpike's Task
     .accept 1338 >> Accept Stormpike's Order
     .accept 307 >> Accept Filthy Paws
     .target Mountaineer Stormpike
+    .dungeon DM << Human
+step << Human
+    #xprate <1.59
+    #label Stormpike1
+    .goto Loch Modan,24.77,18.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r inside the bunker
+    .turnin 1339 >> Turn in Mountaineer Stormpike's Task
+    .accept 1338 >> Accept Stormpike's Order
+    .accept 307 >> Accept Filthy Paws
+    .target Mountaineer Stormpike
+    .dungeon !DM
+step << Human
+    #xprate >1.59
+    #label Stormpike1
+    .goto Loch Modan,24.77,18.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r inside the bunker
+    .turnin 1339 >> Turn in Mountaineer Stormpike's Task
+    .accept 307 >> Accept Filthy Paws
+    .target Mountaineer Stormpike
+    .dungeon !DM
 step
     #softcore
     #completewith flyIF
@@ -4413,11 +4432,13 @@ step << Dwarf Paladin
 RXPGuides.RegisterGuide([[
 #xprate >1.49
 #classic
-<< Gnome Warlock
-#name 11-12 Voidwalker Quest
 #version 1
+<< Gnome Warlock
 #group RestedXP Alliance 1-20
+#name 11-12 Voidwalker Quest
+#displayname 12-13 Voidwalker Quest << SoD
 #next 12-14 Loch Modan (Dwarf/Gnome)
+
 step
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
@@ -4490,7 +4511,7 @@ step
     .accept 244 >> Accept Encroaching Gnolls
     .target Guard Parker
 step
-    #xprate >1.59
+    #xprate >1.49
     .goto Redridge Mountains,29.31,53.63
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shawn|r
     >>|cRXP_WARN_Be careful of high level mobs en route|r
@@ -4499,7 +4520,7 @@ step
     .xp <12,1
 --XX Done now as you come RR only for p2 on >1.59x
 step
-    #xprate >1.59
+    #xprate >1.49
     .goto Redridge Mountains,31.29,54.27,90,0
     .goto Redridge Mountains,27.80,56.05,90,0
     .goto Redridge Mountains,26.56,50.63,90,0
@@ -4513,7 +4534,7 @@ step
     .complete 3741,1 --Hilary's Necklace (1)
     .isOnQuest 3741
 step
-    #xprate >1.59
+    #xprate >1.49
     .goto Redridge Mountains,29.24,53.63
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hilary|r from the lake by talking to her whilst jumping up
     >>|cRXP_WARN_You can talk to her whilst in the lake if you jump up directly below her whilst trying to talk to her|r
@@ -4521,13 +4542,13 @@ step
     .target Hilary
     .isQuestComplete 3741
 step
-    #xprate >1.59
+    #xprate >1.49
     .goto Redridge Mountains,30.733,59.996
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r
     .turnin 244 >> Turn in Encroaching Gnolls
     .target Deputy Feldon
 step
-    #xprate <1.59
+    #xprate <1.49
     .goto Redridge Mountains,30.733,59.996
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r
     >>|cRXP_WARN_Be careful of high level mobs en route|r
@@ -4611,9 +4632,9 @@ RXPGuides.RegisterGuide([[
 #xprate <1.5
 #classic
 << Alliance !Hunter
+#group RestedXP Alliance 1-20
 #name 11-12 Elwynn (Dwarf/Gnome)
 #version 1
-#group RestedXP Alliance 1-20
 #defaultfor Gnome/Dwarf
 #next 12-14 Loch Modan (Dwarf/Gnome)
 --#era << !Warlock
@@ -5294,13 +5315,13 @@ step << Dwarf Paladin
 RXPGuides.RegisterGuide([[
 #era/som--h
 #classic
-<< Alliance !Hunter
-#name 12-14 Loch Modan (Dwarf/Gnome)
 #version 1
+<< Alliance !Hunter
 #group RestedXP Alliance 1-20
-#defaultfor Gnome/Dwarf
-#next 13-15 Westfall;14-16 Darkshore
+#name 12-14 Loch Modan (Dwarf/Gnome)
 #displayname 12-14 Loch Modan
+#next 13-15 Westfall;14-16 Darkshore
+#defaultfor Gnome/Dwarf
 
 
 step << Rogue
@@ -5416,11 +5437,18 @@ step << Rogue
     .itemcount 2946,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step
-    #xprate >1.49
+    #xprate 1.49-1.59
     .goto StormwindClassic,66.277,62.137
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
     .fp Stormwind >> Get the Stormwind City flight path
     .target Dungar Longdrink
+step
+    #xprate >1.59
+    .goto StormwindClassic,66.277,62.137
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
+    .fp Stormwind >> Get the Stormwind City flight path
+    .target Dungar Longdrink
+    .dungeon !DM
 step << Paladin
     #xprate >1.49
     #season 2
@@ -5486,14 +5514,22 @@ step << Paladin
     >>|cRXP_WARN_Remember to put|r |T135961:0|t[Seal of Martyrdom] |cRXP_WARN_onto your action bars. It is better than both|r |T132325:0|t[Seal of Righteousness] |cRXP_WARN_and|r |T132347:0|t[Seal of Command] |cRXP_WARN_(until you get|r |T133815:0|t[Engrave Chest - Divine Storm]|cRXP_WARN_)|r
     .train 410015,3
 step
+    #season 0,1 << Paladin
     #xprate >1.49
     .hs >> Hearth to Loch Modan
     .cooldown item,6948,>180--wait for cd if <3min
     .zoneskip Loch Modan
     .zoneskip Wetlands
-step
-#optional
+step << Paladin
+    #season 2
     #xprate >1.49
+    .hs >> Hearth to Loch Modan
+    .zoneskip Loch Modan
+    .zoneskip Wetlands
+step
+    #season 0,1 << Paladin
+    #xprate >1.49
+    #optional
     .goto StormwindClassic,61.149,11.568,25,0
     .goto StormwindClassic,64.0,8.10
     .zone Ironforge >> Enter the Deeprun Tram. Take the Tram to Ironforge
@@ -5501,6 +5537,7 @@ step
     .zoneskip Dun Morogh
     .zoneskip Wetlands
 step
+    #season 0,1 << Paladin
     #xprate >1.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
     .goto Ironforge,55.501,47.742
@@ -5658,17 +5695,16 @@ step << Rogue
 step << Rogue
     #season 2
     #completewith SaberSlash1
+    #optional
+    #loop
     .goto Loch Modan,25.05,30.19,0
     .goto Loch Modan,26.06,43.44,0
     .goto Loch Modan,37.71,16.84,0
-    .goto Loch Modan,37.71,16.84,50,0
-    .goto Loch Modan,35.48,16.82,50,0
-    .goto Loch Modan,25.05,30.19,50,0
-    .goto Loch Modan,26.06,43.44,50,0
-    .goto Loch Modan,37.71,16.84,50,0
-    .goto Loch Modan,35.48,16.82
+    .waypoint Loch Modan,37.71,16.84,50,0
+    .waypoint Loch Modan,35.48,16.82,50,0
+    .waypoint Loch Modan,25.05,30.19,50,0
+    .waypoint Loch Modan,26.06,43.44,50,0
     >>Kill |cRXP_ENEMY_Tunnel Rats|r. Loot them for their |cRXP_LOOT_Ears|r
-    >>|cRXP_ENEMY_Tunnel Rats|r |cRXP_WARN_can spawn throughout Loch Modan. Check your World Map for their locations|r
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
     .mob Tunnel Rat Scout
     .mob Tunnel Rat Vermin
@@ -5725,15 +5761,15 @@ step
 step
     #xprate <1.59
     #completewith Gear
+    #optional
+    #loop
     .goto Loch Modan,25.05,30.19,0
     .goto Loch Modan,26.06,43.44,0
     .goto Loch Modan,37.71,16.84,0
-    .goto Loch Modan,37.71,16.84,50,0
-    .goto Loch Modan,35.48,16.82,50,0
-    .goto Loch Modan,25.05,30.19,50,0
-    .goto Loch Modan,26.06,43.44,50,0
-    .goto Loch Modan,37.71,16.84,50,0
-    .goto Loch Modan,35.48,16.82
+    .waypoint Loch Modan,37.71,16.84,50,0
+    .waypoint Loch Modan,35.48,16.82,50,0
+    .waypoint Loch Modan,25.05,30.19,50,0
+    .waypoint Loch Modan,26.06,43.44,50,0
     >>Kill |cRXP_ENEMY_Tunnel Rats|r. Loot them for their |cRXP_LOOT_Ears|r
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
     .mob Tunnel Rat Scout
@@ -5748,12 +5784,10 @@ step
     .goto Loch Modan,25.05,30.19,0
     .goto Loch Modan,26.06,43.44,0
     .goto Loch Modan,37.71,16.84,0
-    .goto Loch Modan,37.71,16.84,50,0
-    .goto Loch Modan,35.48,16.82,50,0
-    .goto Loch Modan,25.05,30.19,50,0
-    .goto Loch Modan,26.06,43.44,50,0
-    .goto Loch Modan,37.71,16.84,50,0
-    .goto Loch Modan,35.48,16.82
+    .waypoint Loch Modan,37.71,16.84,50,0
+    .waypoint Loch Modan,35.48,16.82,50,0
+    .waypoint Loch Modan,25.05,30.19,50,0
+    .waypoint Loch Modan,26.06,43.44,50,0
     >>Kill |cRXP_ENEMY_Tunnel Rats|r. Loot them for their |cRXP_LOOT_Ears|r
     >>|cRXP_WARN_Don't go out of your way for this as you will likely skip this quest|r
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
@@ -5933,6 +5967,7 @@ step << Mage
     .itemcount 208754,1 --Spell Notes: TENGI RONEERA (1)
 step
     #xprate >1.59
+    #loop
     .goto Loch Modan,25.05,30.19,0
     .goto Loch Modan,26.06,43.44,0
     .goto Loch Modan,37.71,16.84,0
@@ -5940,8 +5975,6 @@ step
     .goto Loch Modan,35.48,16.82,50,0
     .goto Loch Modan,25.05,30.19,50,0
     .goto Loch Modan,26.06,43.44,50,0
-    .goto Loch Modan,37.71,16.84,50,0
-    .goto Loch Modan,35.48,16.82
     >>Kill |cRXP_ENEMY_Tunnel Rats|r. Loot them for their |cRXP_LOOT_Ears|r
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
     .mob Tunnel Rat Scout
@@ -5971,6 +6004,7 @@ step
     .mob Tunnel Rat Digger
     .mob Tunnel Rat Surveyor
 step
+    #optional
     #completewith PawsDelivery
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
@@ -6377,10 +6411,10 @@ step << Mage/Priest/Warlock
     .itemcount 11288,<1
 step << Mage
     #xprate <1.5
-    .goto Ironforge,26.295,6.752
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Juli Stormkettle|r
+    .goto Ironforge,27.18,8.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dink|r
     .trainer >> Train your class spells
-    .target Juli Stormkettle
+    .target Dink
 step << Priest
     #xprate <1.5
     .goto Ironforge,25.207,10.756
@@ -6744,10 +6778,10 @@ step << Paladin
     .zone Dun Morogh >>|cRXP_WARN_Jump on top of the pillar above |cRXP_FRIENDLY_Toldren Deepiron|r, position your character until it looks like they're floating, then perform a Logout Skip by logging out and back in|r
 step << Mage
     #xprate >1.49
-    .goto Ironforge,26.295,6.752
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Juli Stormkettle|r
+    .goto Ironforge,27.18,8.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dink|r
     .trainer >> Train your class spells
-    .target Juli Stormkettle
+    .target Dink
 step << Priest
     #xprate >1.49
     .goto Ironforge,25.207,10.756
@@ -7034,16 +7068,19 @@ step
 
 
 RXPGuides.RegisterGuide([[
+#xprate <1.5
 #classic
 #era/som--h
+#version 1
 << Alliance Hunter
-#xprate <1.5
+#group RestedXP Alliance 1-20
 #name 6-11 Dun Morogh (Hunter)
 #displayname 6-11 Dun Morogh
-#version 1
-#group RestedXP Alliance 1-20
-#defaultfor Dwarf Hunter
 #next 11-13 Loch Modan (Hunter)
+#defaultfor Dwarf Hunter
+
+
+
 step
     #completewith ribs1
     >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Large Crag Boars|r. Loot them for their |cRXP_LOOT_Chunks of Boar Meat|r and |cRXP_LOOT_Crag Boar Ribs|r
@@ -7749,13 +7786,14 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #era/som--h
-<< Alliance Hunter
-#name 11-13 Loch Modan (Hunter)
 #version 1
+<< Alliance Hunter
 #group RestedXP Alliance 1-20
-#defaultfor Dwarf
+#name 11-13 Loch Modan (Hunter)
+#displayname 11-13 Loch Modan << !SoD
+#displayname 12-14 Loch Modan << SoD
 #next 14-16 Darkshore
-#displayname 11-13 Loch Modan
+#defaultfor Dwarf
 
 step
     #completewith next
@@ -7879,12 +7917,30 @@ step
     #completewith next
     .goto Loch Modan,23.85,17.92,100 >> Travel north to the Algaz Station
 step
-    .goto Loch Modan,24.764,18.397
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r
+    .goto Loch Modan,24.77,18.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r inside the bunker
     .turnin 1339 >> Turn in Mountaineer Stormpike's Task
     .accept 1338 >> Accept Stormpike's Order
     .accept 307 >> Accept Filthy Paws
     .target Mountaineer Stormpike
+    .dungeon DM << Human
+step << Human
+    #xprate <1.59
+    .goto Loch Modan,24.77,18.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r inside the bunker
+    .turnin 1339 >> Turn in Mountaineer Stormpike's Task
+    .accept 1338 >> Accept Stormpike's Order
+    .accept 307 >> Accept Filthy Paws
+    .target Mountaineer Stormpike
+    .dungeon !DM
+step << Human
+    #xprate >1.59
+    .goto Loch Modan,24.77,18.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r inside the bunker
+    .turnin 1339 >> Turn in Mountaineer Stormpike's Task
+    .accept 307 >> Accept Filthy Paws
+    .target Mountaineer Stormpike
+    .dungeon !DM
 step
     #label BraveSoul
     #completewith next

@@ -2717,10 +2717,10 @@ step << Warrior
     .trainer >> Train your class spells
     .target Bilban Tosslespanner
 step << Mage
-    .goto Ironforge,26.295,6.752
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Juli Stormkettle|r
+    .goto Ironforge,27.18,8.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dink|r
     .trainer >> Train your class spells
-    .target Juli Stormkettle
+    .target Dink
 step << Mage/Priest/Warlock
     #ah
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to an |cRXP_FRIENDLY_Ironforge Auctioneer|r
@@ -2789,7 +2789,7 @@ step
     #completewith Fly2WF
     .goto StormwindClassic,55.21,7.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Billibub Cogspinner|r
-    .vendor 5519 >> |cRXP_WARN_Buy a|r |T133024:0|t[Bronze Tube]
+    .vendor 5519 >> |cRXP_BUY_Buy a|r |T133024:0|t[Bronze Tube] |cRXP_BUY_from him (if its up)|r
     >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Billibub Cogspinner|r doesn't have one|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube
