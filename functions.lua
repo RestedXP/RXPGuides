@@ -1899,8 +1899,8 @@ function addon.functions.fp(self, ...)
         if element.textOnly and fpDiscovered and not element.text then
             element.step.completed = true
             addon.updateSteps = true
-        elseif fpDiscovered or addon.flightInfo.lastFlightSrc == fpId or
-                                  addon.flightInfo.lastFlightDest == fpId then
+        elseif fpDiscovered or fpId and (addon.flightInfo.lastFlightSrc == fpId or
+                                  addon.flightInfo.lastFlightDest == fpId) then
             addon.SetElementComplete(self)
         elseif event == "UI_INFO_MESSAGE" and arg2 == _G.ERR_NEWTAXIPATH or event == "UI_ERROR_MESSAGE" and arg2 == _G.ERR_TAXINOPATHS then
             local currentMap = C_Map.GetBestMapForUnit("player")
