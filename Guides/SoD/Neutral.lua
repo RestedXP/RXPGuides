@@ -673,8 +673,8 @@ step << Warrior/Mage
 step << Warrior/Mage
     #completewith next
     .goto Duskwood,18.140,37.940
-    .cast 426182 >> |cRXP_WARN_Use the|r |T252996:0|t[|cRXP_LOOT_Decrepit Phylactery|r] |cRXP_WARN_on the |cRXP_PICK_Slumbering Bones|r on the throne|r
-    .use 210568 >>|cRXP_WARN_This will summon a level 25 elite|r |cRXP_ENEMY_Awakened Lich|r
+    .cast 426182 >> Click the |cRXP_PICK_Slumbering Bones|r on the small throne|r
+    >>|cRXP_WARN_This will summon a level 25 elite|r |cRXP_ENEMY_Awakened Lich|r
     .train 403480,1 << Warrior
     .train 415939,1 << Mage
 step << Warrior/Mage
