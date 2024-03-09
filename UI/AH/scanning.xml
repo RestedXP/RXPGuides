@@ -262,7 +262,6 @@
                         </Anchor>
                     </Anchors>
                 </NormalTexture>
-                <PushedTexture file="Interface\Buttons\UI-Quickslot-Depress"/>
                 <HighlightTexture file="Interface\Buttons\ButtonHilight-Square" alphaMode="ADD"/>
             </Button>
             <Frame name="$parentItemLevel" enableMouse="true">
