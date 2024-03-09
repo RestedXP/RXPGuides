@@ -116,6 +116,7 @@ step << Druid
     .itemcount 206954,1
     .train 410025,1
 step << Druid
+    #loop
     .goto 1438,44.731,57.355,0
     .goto 1438,44.254,59.083,0
     .goto 1438,44.064,58.196,0
