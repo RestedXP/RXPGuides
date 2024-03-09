@@ -77,6 +77,12 @@ step << !Shaman !Warrior/Undead
     #hardcore
     #completewith ThievesPickup
     .goto The Barrens,52.34,29.27,150 >> Travel to The Crossroads
+step << !Shaman !Warrior/Undead
+    #softcore
+    .goto The Barrens,52.26,31.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga|r
+    .accept 870 >>Accept The Forgotten Pools
+    .target Tonga Runetotem
     .subzoneskip 380
 step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
     #hardcore
@@ -97,6 +103,7 @@ step << !Shaman !Warrior/Undead
     .accept 844 >>Accept Plainstrider Menace
     .target Sergra Darkthorn
 step << !Shaman !Warrior/Undead
+    #hardcore
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga|r
     .accept 870 >>Accept The Forgotten Pools
@@ -295,6 +302,12 @@ step << !Undead !Tauren
     #completewith EnterRFC
     .subzone 2437 >> Now you should be looking for a group to Ragefire Chasm
     .dungeon RFC
+ step
+    #completewith next
+    >>Kill every |cRXP_ENEMY_Raptor|r you see. Loot them for their |cRXP_LOOT_Heads|r
+    .complete 869,1 --Raptor Head (12)
+    .mob Sunscale Lashtail
+    .mob Sunscale Screecher
 step
     .goto The Barrens,53.36,26.28,80,0
     .goto The Barrens,53.23,28.41,80,0
@@ -340,6 +353,24 @@ step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .turnin 6365 >>Turn in Meats to Orgrimmar
     .accept 6384 >>Accept Ride to Orgrimmar
     .target Devrak
+step << Orc Hunter/Troll Hunter
+    #optional
+    .goto The Barrens,51.11,29.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uthrok|r|cRXP_BUY_. Buy a|r |T135499:0|t[Laminated Recurve Bow] |cRXP_BUY_from him|r
+    .collect 2507,1,871,1 --Collect Laminated Recurve Bow (1)
+    .money <0.1751
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
+    .target Uthrok
+step << Tauren Hunter
+    #optional
+    .goto The Barrens,51.11,29.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uthrok|r|cRXP_BUY_. Buy a|r |T135613:0|t[Hunter's Boomstick] |cRXP_BUY_from him|r
+    .collect 2511,1,871,1 --Collect Hunter's Boomstick (1)
+    .money <0.1324
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
+    .target Uthrok
 step << !Undead !Tauren
     .goto The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
@@ -1012,7 +1043,7 @@ step
     .isOnQuest 887
 step
     #completewith BaronLongshore
-    .destroy 5088 >> Delete the |T133735:0|t[Control Console Operating Manual] from your bags, as it's no longer needed
+    .destroy 5088 >> |cRXP_WARN_Delete the|r |T133735:0|t[Control Console Operating Manual] |cRXP_WARN_from your bags, as it's no longer needed|r
 step
     #completewith BaronLongshore
     >>Kill |cRXP_ENEMY_Southsea Brigands|r and |cRXP_ENEMY_Southsea Cannoneers|r
@@ -1243,6 +1274,7 @@ step
 step << Troll Hunter/Orc Hunter
     .goto The Barrens,51.67,29.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Barg|r
+    >>|cRXP_BUY_Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_from him|r
     .collect 2515,1200,850,1 << Hunter --Sharp Arrow (1200)
     .target Barg
 step << Tauren Hunter
@@ -1331,7 +1363,6 @@ step
     .mob Barak Kodobane
 step
     #xprate <1.5
-    #label KodobaneTurnin
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .turnin 850 >>Turn in Kolkar Leaders
@@ -1339,6 +1370,22 @@ step
     .turnin 855 >>Turn in Centaur Bracers
     .target Regthar Deathgate
     .isQuestComplete 855
+step
+    #xprate <1.5
+    #label KodobaneTurnin
+    .goto The Barrens,45.35,28.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
+    .turnin 850 >>Turn in Kolkar Leaders
+    .accept 851 >>Accept Verog the Dervish
+    .target Regthar Deathgate
+step
+    #xprate <1.5
+    #optional
+    .goto The Barrens,45.35,28.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
+    .accept 851 >>Accept Verog the Dervish
+    .target Regthar Deathgate
+    .isQuestTurnedIn 850
 step
     #completewith next
     >>Kill every |cRXP_ENEMY_Raptor|r you see. Loot them for their |cRXP_LOOT_Heads|r
@@ -1748,6 +1795,7 @@ step << Priest
     .xp <16,1
     .xp >18,1
 step << Priest
+    #optional
     .goto Orgrimmar,35.59,87.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 970 >> Train your class spells
@@ -1761,6 +1809,7 @@ step << Mage
     .xp <16,1
     .xp >18,1
 step << Mage
+    #optional
     .goto Orgrimmar,38.36,85.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo|r
     .train 3140 >> Train your class spells
@@ -1801,6 +1850,7 @@ step << Shaman
     .xp <16,1
     .xp >18,1
 step << Shaman
+    #optional
     .goto Orgrimmar,38.82,36.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
     .train 913 >> Train your class spells
@@ -1867,6 +1917,7 @@ step << Warlock
     .xp <16,1
     .xp >18,1
 step << Warlock
+    #optional
     .goto Orgrimmar,48.62,46.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mirket|r
     .train 1014 >> Train your class spells
@@ -1893,6 +1944,7 @@ step << Warrior
     .xp <16,1
     .xp >18,1
 step << Warrior
+    #optional
     .goto Orgrimmar,79.91,31.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grezz|r
     .train 8198 >> Train your class spells
@@ -1906,6 +1958,7 @@ step << Hunter
     .xp <16,1
     .xp >18,1
 step << Hunter
+    #optional
     .goto Orgrimmar,66.05,18.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormak|r
     .train 2643 >> Train your class spells
@@ -1921,6 +1974,7 @@ step << Troll Hunter/Orc Hunter/Undead Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
     .train 227 >>Train Staves
     .target Hanashi
+    .money <0.100
 step << Tauren Hunter
     .goto Orgrimmar,81.52,19.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
@@ -2045,6 +2099,7 @@ step
 step << Hunter
     .goto The Barrens,51.67,29.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Barg|r
+    >>|cRXP_BUY_Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_from him|r
     .collect 2515,1800,888,1 << Hunter --Sharp Arrow (1800)
     .target Barg
 step
@@ -2335,13 +2390,6 @@ step
     .target Beaten Corpse
     .skipgossip
 step
-    .goto The Barrens,52.0,46.5,90,0
-    .goto The Barrens,57.3,53.7
-    >>Kill |cRXP_ENEMY_Sunscale Scytheclaws|r. Loot them for their |cRXP_LOOT_Horns|r
-    >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r
-    .complete 865,1 --Intact Raptor Horn (5)
-    .mob Sunscale Scytheclaw
-step
     #completewith next
     >>Kill |cRXP_ENEMY_Stormsnouts|r. Loot them for a |cRXP_LOOT_Thunder Lizard Horn|r
     .complete 821,3 --Thunder Lizard Horn (1)
@@ -2441,7 +2489,7 @@ step
     .target Sergra Darkthorn
     .target Gazrog
 step
-    .destroy 5165 >>Delete any leftover |T132914:0|t[Sunscale Feathers] you may still have
+    .destroy 5165 >>|cRXP_WARN_Delete any leftover|r |T132914:0|t[Sunscale Feathers] |cRXP_WARN_you may still have|r
     .itemcount 5165,1
 step << Hunter
     .goto The Barrens,51.11,29.07
@@ -3195,6 +3243,12 @@ step
     .complete 821,3 --Thunder Lizard Horn (1)
     .mob Stormsnout
 step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Sunscale Scytheclaws|r. Loot them for their |cRXP_LOOT_Horns|r
+    >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r
+    .complete 865,1 --Intact Raptor Horn (5)
+    .mob Sunscale Scytheclaw
+step
     .goto The Barrens,53.98,51.68,50,0
     .goto The Barrens,54.10,50.58,50,0
     .goto The Barrens,53.85,49.76,50,0
@@ -3205,6 +3259,13 @@ step
     >>Finish killing |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Kidneys|r
     .complete 821,2 --Plainstrider Kidney (5)
     .mob Greater Plainstrider
+step
+    .goto The Barrens,52.0,46.5,90,0
+    .goto The Barrens,57.3,53.7
+    >>Kill |cRXP_ENEMY_Sunscale Scytheclaws|r. Loot them for their |cRXP_LOOT_Horns|r
+    >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r
+    .complete 865,1 --Intact Raptor Horn (5)
+    .mob Sunscale Scytheclaw
 step
     #completewith next
     >>Kill any |cRXP_ENEMY_Zhevra|r. Loot it for a |cRXP_LOOT_Fresh Zhevra Carcass|r
@@ -3387,7 +3448,7 @@ step
     .target Tonga Runetotem
     .target Mankrik
 step
-    .destroy 5085 >>Delete any leftover |T133721:0|t[Bristleback Quilboar Tusks] you may still have
+    .destroy 5085 >>|cRXP_WARN_Delete any leftover|r |T133721:0|t[Bristleback Quilboar Tusks] |cRXP_WARN_you may still have|r
     .itemcount 5085,1
 step
     .goto The Barrens,51.99,29.89
@@ -3472,6 +3533,7 @@ step << Shaman
     .xp >20,1
     .dungeon DM
 step << Shaman
+    #optional
     .goto Orgrimmar,38.82,36.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
     .train 2645 >> Train your class spells
@@ -3487,6 +3549,7 @@ step << Hunter
     .xp >20,1
     .dungeon DM
 step << Hunter
+    #optional
     .goto Orgrimmar,66.05,18.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormak|r
 	.train 14290 >>Train your class spells
@@ -3509,6 +3572,7 @@ step << Warrior
     .xp >20,1
     .dungeon DM
 step << Warrior
+    #optional
     .goto Orgrimmar,79.91,31.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grezz|r
     .train 845 >> Train your class spells
@@ -3531,6 +3595,7 @@ step << Warlock
     .xp >20,1
     .dungeon DM
 step << Warlock
+    #optional
     .goto Undercity,48.47,45.42
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zevrost|r
     .train 706 >> Train your class spells
@@ -3546,6 +3611,7 @@ step << Mage
     .xp >20,1
     .dungeon DM
 step << Mage
+    #optional
     .goto Orgrimmar,38.36,85.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo|r
     .train 1953 >> Train your class spells
@@ -3561,6 +3627,7 @@ step << Priest
     .xp >20,1
     .dungeon DM
 step << Priest
+    #optional
     .goto Orgrimmar,35.59,87.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 14914 >> Train your class spells
@@ -3767,12 +3834,6 @@ step
     .turnin 882 >>Turn in Ishamuhale
     .accept 907 >>Accept Enraged Thunder Lizards
     .target Jorn Skyseer
-step
-    #completewith next
-    >>Kill |cRXP_ENEMY_Thunder Lizards|r. Loot them for their |cRXP_LOOT_Blood|r
-    .complete 907,1 --Thunder Lizard Blood (3)
-    .mob Thunderhead
-    .mob Stormsnout
 step
     #completewith next
     .goto The Barrens,44.63,62.71,0
@@ -4317,6 +4378,7 @@ step << Hunter
     .xp <20,1
     .xp >22,1
 step << Hunter
+    #optional
     .goto Thunder Bluff,59.13,86.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urek|r
     .train 5118 >> Train your class spells
@@ -4360,7 +4422,7 @@ step << Undead Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ansekhwa|r
     .train 199 >>Train Two-Handed Maces
     .target Ansekhwa
-step << Warlock/Priest
+step << Troll Hunter/Orc Hunter/Undead Warrior/Warlock/Priest
     .goto Thunder Bluff,40.93,62.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ansekhwa|r
     .train 227 >>Train Staves
@@ -4436,6 +4498,7 @@ step << Mage
     .xp <20,1
     .xp >22,1
 step << Mage
+    #optional
     .goto Thunder Bluff,22.74,14.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shymm|r
     .train 2138 >> Train your class spells
@@ -4452,6 +4515,7 @@ step << Shaman
     .xp <20,1
     .xp >22,1
 step << Shaman
+    #optional
     .goto Thunder Bluff,23.64,18.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tigor|r
     .train 8498 >> Train your class spells
@@ -5621,6 +5685,7 @@ step << Mage
     .xp <22,1
     .xp >24,1
 step << Mage
+    #optional
     .goto Orgrimmar,38.36,85.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo|r
     .train 2121 >> Train your class spells
@@ -5645,6 +5710,7 @@ step << Undead Priest
     .xp <22,1
     .xp >24,1
 step << Undead Priest
+    #optional
     .goto Orgrimmar,35.59,87.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 3747 >> Train your class spells
@@ -5752,6 +5818,7 @@ step << Shaman
     .xp <22,1
     .xp >24,1
 step << Shaman
+    #optional
     .goto Orgrimmar,38.82,36.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
     .train 905 >> Train your class spells
@@ -5770,6 +5837,7 @@ step << Warrior
     .xp <22,1
     .xp >24,1
 step << Warrior
+    #optional
     .goto Orgrimmar,79.91,31.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grezz|r
     .train 5308 >> Train your class spells
@@ -5783,6 +5851,7 @@ step << Hunter
     .xp <22,1
     .xp >24,1
 step << Hunter
+    #optional
     .goto Orgrimmar,66.05,18.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormak|r
     .train 14262 >> Train your class spells
@@ -5805,8 +5874,8 @@ step << Rogue
     .aura 9991
     .aura 9810
 step << Rogue
-    .destroy 8051 >> Delete the |T134536:0|t[Flare Gun] from your bags, as it's no longer needed
-    .destroy 8066 >> Delete |T134374:0|t[Fizzule's Whistle] from your bags, as it's no longer needed
+    .destroy 8051 >> |cRXP_WARN_Delete the|r |T134536:0|t[Flare Gun] |cRXP_WARN_from your bags, as it's no longer needed|r
+    .destroy 8066 >> |cRXP_WARN_Delete|r |T134374:0|t[Fizzule's Whistle] |cRXP_WARN_from your bags, as it's no longer needed|r
 step
     #optional
     .abandon 6421 >> Abandon Boulderslide Ravine
@@ -5856,6 +5925,12 @@ step << !Tauren !Shaman !Warrior/Undead
     #completewith ThievesPickup
     .goto The Barrens,52.34,29.27,150 >> Travel to The Crossroads
     .subzoneskip 380
+step << !Shaman !Warrior/Undead
+    #softcore
+    .goto The Barrens,52.26,31.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga|r
+    .accept 870 >>Accept The Forgotten Pools
+    .target Tonga Runetotem
 step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
     #hardcore
     .goto The Barrens,52.62,29.84
@@ -5875,6 +5950,7 @@ step << !Shaman !Warrior/Undead
     .accept 844 >>Accept Plainstrider Menace
     .target Sergra Darkthorn
 step << !Shaman !Warrior/Undead
+    #hardcore
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga|r
     .accept 870 >>Accept The Forgotten Pools
@@ -5947,18 +6023,12 @@ step << !Tauren !Shaman !Warrior/Undead
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazrog|r
     .accept 869 >>Accept Raptor Thieves
     .target Gazrog
-step << Undead
+step << !Tauren
     .goto The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
     .home >> Set your Hearthstone to Crossroads
     .target Innkeeper Boorand Plainswind
     .dungeon !RFC
-step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
-    .goto The Barrens,51.99,29.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
-    .home >> Set your Hearthstone to Crossroads
-    .target Innkeeper Boorand Plainswind
-    .dungeon RFC
 step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
     #softcore
     .goto The Barrens,52.62,29.84
@@ -5972,7 +6042,7 @@ step
     .mob Greater Plainstrider
     .mob Fleeting Plainstrider
 step << !Tauren !Undead
-    #xprate <1.5 << !Hunter
+    #xprate <1.5
     #completewith next
     #label DemonMountain
     .goto The Barrens,51.09,22.68,40,0
@@ -5981,13 +6051,13 @@ step << !Tauren !Undead
     .goto The Barrens,47.65,19.21,100 >> Travel to the top of the mountain
     .isOnQuest 924
 step << !Tauren !Undead
-    #xprate <1.5 << !Hunter
+    #xprate <1.5
     #completewith next
     #requires DemonMountain
     .goto The Barrens,47.65,19.21,15 >> Go inside Dreadmist Den
     .isOnQuest 924
 step << !Tauren !Undead
-    #xprate <1.5 << !Hunter
+    #xprate <1.5
     #label DemonSeed
     .goto The Barrens,47.97,19.07
     >>Right click the |cRXP_PICK_Altar|r. Make sure you have a |T134095:0|t[Flawed Power Stone] on you
@@ -5995,7 +6065,7 @@ step << !Tauren !Undead
     .complete 924,1 --Destroy the Demon Seed (1)
     .isOnQuest 924
 step << skip
-    #xprate <1.5 << !Hunter
+    #xprate <1.5
     #completewith DisruptTheAttacks
     .goto The Barrens,47.58,19.38,40,0
     .goto The Barrens,49.21,20.42,40,0
@@ -6067,6 +6137,13 @@ step << !Undead !Tauren
     .subzone 2437 >> Now you should be looking for a group to Ragefire Chasm
     .dungeon RFC
 step
+    #completewith next
+    >>Kill every |cRXP_ENEMY_Raptor|r you see. Loot them for their |cRXP_LOOT_Heads|r
+    .complete 869,1 --Raptor Head (12)
+    .mob Sunscale Lashtail
+    .mob Sunscale Screecher
+step
+    #label PlainstriderBeaks
     .goto The Barrens,53.36,26.28,80,0
     .goto The Barrens,53.23,28.41,80,0
     .goto The Barrens,53.57,29.58,80,0
@@ -6111,12 +6188,24 @@ step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .turnin 6365 >>Turn in Meats to Orgrimmar
     .accept 6384 >>Accept Ride to Orgrimmar
     .target Devrak
-step << !Undead !Tauren
-    .goto The Barrens,51.99,29.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
-    .home >> Set your Hearthstone to Crossroads
-    .target Innkeeper Boorand Plainswind
-    .isOnQuest 867
+step << Orc Hunter/Troll Hunter
+    #optional
+    .goto The Barrens,51.11,29.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uthrok|r|cRXP_BUY_. Buy a|r |T135499:0|t[Laminated Recurve Bow] |cRXP_BUY_from him|r
+    .collect 2507,1,872,1 --Collect Laminated Recurve Bow (1)
+    .money <0.1751
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
+    .target Uthrok
+step << Tauren Hunter
+    #optional
+    .goto The Barrens,51.11,29.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uthrok|r|cRXP_BUY_. Buy a|r |T135613:0|t[Hunter's Boomstick] |cRXP_BUY_from him|r
+    .collect 2511,1,872,1 --Collect Hunter's Boomstick (1)
+    .money <0.1324
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
+    .target Uthrok
 step << Orc Warrior/Troll Warrior/Tauren Warrior
     #sticky
     #completewith KreenigSnarlsnout1
@@ -6783,7 +6872,7 @@ step
     .isOnQuest 887
 step
     #completewith BaronLongshore
-    .destroy 5088 >> Delete the |T133735:0|t[Control Console Operating Manual] from your bags, as it's no longer needed
+    .destroy 5088 >> |cRXP_WARN_Delete the|r |T133735:0|t[Control Console Operating Manual] |cRXP_WARN_from your bags, as it's no longer needed|r
 step
     #completewith BaronLongshore
     >>Kill |cRXP_ENEMY_Southsea Brigands|r and |cRXP_ENEMY_Southsea Cannoneers|r
@@ -7014,6 +7103,7 @@ step
 step << Troll Hunter/Orc Hunter
     .goto The Barrens,51.67,29.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Barg|r
+    >>|cRXP_BUY_Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_from him|r
     .collect 2515,1200,850,1 << Hunter --Sharp Arrow (1200)
     .target Barg
 step << Tauren Hunter
@@ -7106,7 +7196,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .turnin 850 >>Turn in Kolkar Leaders
     .target Regthar Deathgate
-    .isQuestComplete 855
+    .isQuestComplete 850
 step
     #completewith next
     >>Kill every |cRXP_ENEMY_Raptor|r you see. Loot them for their |cRXP_LOOT_Heads|r
@@ -7515,6 +7605,7 @@ step << Priest
     .xp <16,1
     .xp >18,1
 step << Priest
+    #optional
     .goto Orgrimmar,35.59,87.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 970 >> Train your class spells
@@ -7528,6 +7619,7 @@ step << Mage
     .xp <16,1
     .xp >18,1
 step << Mage
+    #optional
     .goto Orgrimmar,38.36,85.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo|r
     .train 3140 >> Train your class spells
@@ -7568,6 +7660,7 @@ step << Shaman
     .xp <16,1
     .xp >18,1
 step << Shaman
+    #optional
     .goto Orgrimmar,38.82,36.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
     .train 913 >> Train your class spells
@@ -7628,6 +7721,7 @@ step << Warlock
     .xp <16,1
     .xp >18,1
 step << Warlock
+    #optional
     .goto Orgrimmar,48.62,46.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mirket|r
     .train 1014 >> Train your class spells
@@ -7654,6 +7748,7 @@ step << Warrior
     .xp <16,1
     .xp >18,1
 step << Warrior
+    #optional
     .goto Orgrimmar,79.91,31.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grezz|r
     .train 8198 >> Train your class spells
@@ -7667,6 +7762,7 @@ step << Hunter
     .xp <16,1
     .xp >18,1
 step << Hunter
+    #optional
     .goto Orgrimmar,66.05,18.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormak|r
     .train 2643 >> Train your class spells
@@ -7682,6 +7778,7 @@ step << Troll Hunter/Orc Hunter/Undead Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
     .train 227 >>Train Staves
     .target Hanashi
+    .money <0.100
 step << Tauren Hunter
     .goto Orgrimmar,81.52,19.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
@@ -7806,6 +7903,7 @@ step
 step << Hunter
     .goto The Barrens,51.67,29.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Barg|r
+    >>|cRXP_BUY_Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_from him|r
     .collect 2515,1800,888,1 << Hunter --Sharp Arrow (1800)
     .target Barg
 step
@@ -8070,13 +8168,6 @@ step
     .target Beaten Corpse
     .skipgossip
 step
-    .goto The Barrens,52.0,46.5,90,0
-    .goto The Barrens,57.3,53.7
-    >>Kill |cRXP_ENEMY_Sunscale Scytheclaws|r. Loot them for their |cRXP_LOOT_Horns|r
-    >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r
-    .complete 865,1 --Intact Raptor Horn (5)
-    .mob Sunscale Scytheclaw
-step
     #completewith next
     >>Kill |cRXP_ENEMY_Stormsnouts|r. Loot them for a |cRXP_LOOT_Thunder Lizard Horn|r
     .complete 821,3 --Thunder Lizard Horn (1)
@@ -8176,7 +8267,7 @@ step
     .target Sergra Darkthorn
     .target Gazrog
 step
-    .destroy 5165 >>Delete any leftover |T132914:0|t[Sunscale Feathers] you may still have
+    .destroy 5165 >>|cRXP_WARN_Delete any leftover|r |T132914:0|t[Sunscale Feathers] |cRXP_WARN_you may still have|r
     .itemcount 5165,1
 step << Hunter
     .goto The Barrens,51.11,29.07
@@ -8288,6 +8379,12 @@ step
     .complete 821,3 --Thunder Lizard Horn (1)
     .mob Stormsnout
 step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Sunscale Scytheclaws|r. Loot them for their |cRXP_LOOT_Horns|r
+    >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r
+    .complete 865,1 --Intact Raptor Horn (5)
+    .mob Sunscale Scytheclaw
+step
     .goto The Barrens,53.98,51.68,50,0
     .goto The Barrens,54.10,50.58,50,0
     .goto The Barrens,53.85,49.76,50,0
@@ -8298,6 +8395,13 @@ step
     >>Finish killing |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Kidneys|r
     .complete 821,2 --Plainstrider Kidney (5)
     .mob Greater Plainstrider
+step
+    .goto The Barrens,52.0,46.5,90,0
+    .goto The Barrens,57.3,53.7
+    >>Kill |cRXP_ENEMY_Sunscale Scytheclaws|r. Loot them for their |cRXP_LOOT_Horns|r
+    >>|cRXP_WARN_Be careful as they cast|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r
+    .complete 865,1 --Intact Raptor Horn (5)
+    .mob Sunscale Scytheclaw
 step
     #completewith next
     >>Kill any |cRXP_ENEMY_Zhevra|r. Loot it for a |cRXP_LOOT_Fresh Zhevra Carcass|r
@@ -8453,7 +8557,7 @@ step
     .accept 868 >> Accept Egg Hunt
     .target Korran
 step
-    .destroy 5085 >>Delete any leftover |T133721:0|t[Bristleback Quilboar Tusks] you may still have
+    .destroy 5085 >>|cRXP_WARN_Delete any leftover|r |T133721:0|t[Bristleback Quilboar Tusks] |cRXP_WARN_you may still have|r
     .itemcount 5085,1
 step << Shaman
     #completewith next
@@ -8530,6 +8634,7 @@ step << Shaman
     .xp >20,1
     .dungeon DM
 step << Shaman
+    #optional
     .goto Orgrimmar,38.82,36.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
     .train 2645 >> Train your class spells
@@ -8545,6 +8650,7 @@ step << Hunter
     .xp >20,1
     .dungeon DM
 step << Hunter
+    #optional
     .goto Orgrimmar,66.05,18.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormak|r
 	.train 14290 >>Train your class spells
@@ -8567,6 +8673,7 @@ step << Warrior
     .xp >20,1
     .dungeon DM
 step << Warrior
+    #optional
     .goto Orgrimmar,79.91,31.36
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grezz|r
     .train 845 >> Train your class spells
@@ -8589,6 +8696,7 @@ step << Warlock
     .xp >20,1
     .dungeon DM
 step << Warlock
+    #optional
     .goto Undercity,48.47,45.42
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zevrost|r
     .train 706 >> Train your class spells
@@ -8604,6 +8712,7 @@ step << Mage
     .xp >20,1
     .dungeon DM
 step << Mage
+    #optional
     .goto Orgrimmar,38.36,85.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo|r
     .train 1953 >> Train your class spells
@@ -8619,6 +8728,7 @@ step << Priest
     .xp >20,1
     .dungeon DM
 step << Priest
+    #optional
     .goto Orgrimmar,35.59,87.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 14914 >> Train your class spells
@@ -8791,6 +8901,18 @@ step << !Shaman !Warlock
     --Warlock section
 
 step << Warlock
+    .goto The Barrens,51.44,30.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
+    >>|cRXP_FRIENDLY_Helbrim|r |cRXP_WARN_Starts a 45-minute timed quest|r
+    .accept 853 >> Accept Apothecary Zamah
+    .target Apothecary Helbrim
+    .isQuestTurnedIn 848
+step
+    #sticky
+    #completewith ZamahTurninLock
+    +|cRXP_WARN_You are on a timed quest, don't go afk. It will get turned in 10-15 minutes after pick-up|r
+    .isOnQuest 853
+step << Warlock
     #completewith Kenzigla
     .zone Stonetalon Mountains >> Travel to Stonetalon Mountains
     .zoneskip Stonetalon Mountains
@@ -8841,6 +8963,26 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zangen|r
     .accept 1195 >> Accept The Sacred Flame
     .target Zangen Stonehoof
+step << Warlock
+    #completewith ZamahTurninLock
+    .goto Thunder Bluff,28.51,28.95,10 >> Travel to the Spirit Rise and enter the pools of vision
+step << Warlock
+    #label ZamahTurninLock
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
+    .turnin 853 >> Turn in Apothecary Zamah
+    .goto Thunder Bluff,22.82,20.88
+    .target Apothecary Zamah
+    .isOnQuest 853
+    .dungeon !WC
+step << Warlock
+    #label ZamahTurninLock
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
+    .turnin 853 >> Turn in Apothecary Zamah
+    .accept 962 >> Accept Serpentbloom
+    .goto Thunder Bluff,22.82,20.88
+    .target Apothecary Zamah
+    .isOnQuest 853
+    .dungeon WC
 step << Warlock
     .goto Thunder Bluff,22.82,20.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
@@ -8917,12 +9059,6 @@ step
     .target Jorn Skyseer
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Thunder Lizards|r. Loot them for their |cRXP_LOOT_Blood|r
-    .complete 907,1 --Thunder Lizard Blood (3)
-    .mob Thunderhead
-    .mob Stormsnout
-step
-    #completewith next
     .goto The Barrens,44.63,62.71,0
     .goto The Barrens,45.78,63.09,0
     .goto The Barrens,49.57,59.36,0
@@ -8996,11 +9132,77 @@ step << Tauren
     .fly Thunder Bluff >>Fly to Thunder Bluff
     .target Omusa Thunderhorn
 step << !Warlock
-    #label SacredFlame
-    .goto Thunder Bluff,54.96,51.42
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zangen|r
-    .accept 1195 >> Accept The Sacred Flame
-    .target Zangen Stonehoof
+    #completewith FirstAid2
+    .goto Thunder Bluff,28.14,32.97,40 >>Travel to the Spirit Rise
+step << !Warlock
+    #label ZamahTurnin1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
+    .turnin 853 >> Turn in Apothecary Zamah
+    .goto Thunder Bluff,22.82,20.88
+    .target Apothecary Zamah
+    .isOnQuest 853
+    .dungeon !WC
+step << !Warlock
+    #label ZamahTurnin1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
+    .turnin 853 >> Turn in Apothecary Zamah
+    .accept 962 >> Accept Serpentbloom
+    .goto Thunder Bluff,22.82,20.88
+    .target Apothecary Zamah
+    .isOnQuest 853
+    .dungeon WC
+step << Priest
+    .goto Thunder Bluff,25.31,15.24
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miles|r
+    .accept 5644 >> Accept Devouring Plague << Undead Priest
+    .accept 5642 >> Accept Shadowguard << Troll Priest
+    .trainer >> Train your class spells
+    .target Miles Welsh
+step << Mage
+    .goto Thunder Bluff,22.74,14.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shymm|r
+    .train 12051 >> Train your class spells
+    .target Archmage Shymm
+    .xp <20,1
+    .xp >22,1
+step << Mage
+    #optional
+    .goto Thunder Bluff,22.74,14.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shymm|r
+    .train 2138 >> Train your class spells
+    .target Archmage Shymm
+    .xp <22,1
+step << Shaman
+    .goto Thunder Bluff,23.64,18.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tigor|r
+    .train 2645 >> Train your class spells
+    .target Tigor Skychaser
+    .xp <20,1
+    .xp >22,1
+step << Shaman
+    #optional
+    .goto Thunder Bluff,23.64,18.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tigor|r
+    .train 8498 >> Train your class spells
+    .target Tigor Skychaser
+    .xp <22,1
+step << !Warlock
+    #completewith next
+    .skill firstaid,80 >> Create |T133688:0|t[Heavy Linen Bandages] until your skill is 80 or higher
+    .skill firstaid,<1,1
+step << !Warlock
+    #label FirstAid2
+    .goto Thunder Bluff,29.68,21.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pand|r
+    .train 3277 >> Train |T133684:0|t[Wool Bandage]
+    .train 7934 >> Train |T134437:0|t[Anti-Venom] << Rogue
+    .target Pand Stonebinder
+    .skill firstaid,<1,1
+step << Rogue
+    >>|cRXP_WARN_Create|r |T134437:0|t[Anti-Venom] |cRXP_WARN_if you found any|r |T134339:0|t[Small Venom Sacs]
+    >>|cRXP_WARN_Save them for later|r
+    .collect 6452,1 --Anti Venom
+    .itemcount 1475,1
 step << !Warlock
     #completewith next
     .goto Thunder Bluff,69.88,30.90,80 >> Travel to the Elder Rise
@@ -9022,8 +9224,14 @@ step << !Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamuul|r and |cRXP_FRIENDLY_Nara|r
     .turnin 1490 >> Turn in Nara Wildmane
     .target Nara Wildmane
+step << !Warlock
+    #label SacredFlame
+    .goto Thunder Bluff,54.96,51.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zangen|r
+    .accept 1195 >> Accept The Sacred Flame
+    .target Zangen Stonehoof
 step << Hunter
-    #completewith next
+    #completewith HunterTraining2
     .goto Thunder Bluff,61.31,78.25,60 >> Travel to the Hunter Rise
 step << Hunter
     .goto Thunder Bluff,59.13,86.91
@@ -9033,6 +9241,8 @@ step << Hunter
     .xp <20,1
     .xp >22,1
 step << Hunter
+    #label HunterTraining2
+    #optional
     .goto Thunder Bluff,59.13,86.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urek|r
     .train 5118 >> Train your class spells
@@ -9057,7 +9267,7 @@ step << Undead Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ansekhwa|r
     .train 199 >>Train Two-Handed Maces
     .target Ansekhwa
-step << Priest
+step << Troll Hunter/Orc Hunter/Undead Warrior/Priest
     .goto Thunder Bluff,40.93,62.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ansekhwa|r
     .train 227 >>Train Staves
@@ -9072,65 +9282,6 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kuruk|r|cRXP_BUY_. Buy |r |T135423:0|t[Deadly Throwing Axe] |cRXP_BUY_from him|r
     .collect 3137,200,6544,1 --Deadly Throwing Axe (200)
     .target Kuruk
-step << !Warlock
-    #completewith FirstAid2
-    .goto Thunder Bluff,28.14,32.97,40 >>Travel to the Spirit Rise
-step
-    .goto Thunder Bluff,22.82,20.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
-    .accept 962 >> Accept Serpentbloom
-    .target Apothecary Zamah
-    .dungeon WC
-step << Priest
-    .goto Thunder Bluff,25.31,15.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miles|r
-    .accept 5644 >> Accept Devouring Plague << Undead Priest
-    .accept 5642 >> Accept Shadowguard << Troll Priest
-    .trainer >> Train your class spells
-    .target Miles Welsh
-step << Mage
-    .goto Thunder Bluff,22.74,14.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shymm|r
-    .train 12051 >> Train your class spells
-    .target Archmage Shymm
-    .xp <20,1
-    .xp >22,1
-step << Mage
-    .goto Thunder Bluff,22.74,14.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shymm|r
-    .train 2138 >> Train your class spells
-    .target Archmage Shymm
-    .xp <22,1
-step << Shaman
-    .goto Thunder Bluff,23.64,18.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tigor|r
-    .train 2645 >> Train your class spells
-    .target Tigor Skychaser
-    .xp <20,1
-    .xp >22,1
-step << Shaman
-    .goto Thunder Bluff,23.64,18.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tigor|r
-    .train 8498 >> Train your class spells
-    .target Tigor Skychaser
-    .xp <22,1
-step << !Warlock
-    #completewith next
-    .skill firstaid,80 >> Create |T133688:0|t[Heavy Linen Bandages] until your skill is 80 or higher
-    .skill firstaid,<1,1
-step << !Warlock
-    #label FirstAid2
-    .goto Thunder Bluff,29.68,21.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pand|r
-    .train 3277 >> Train |T133684:0|t[Wool Bandage]
-    .train 7934 >> Train |T134437:0|t[Anti-Venom] << Rogue
-    .target Pand Stonebinder
-    .skill firstaid,<1,1
-step << Rogue
-    >>|cRXP_WARN_Create|r |T134437:0|t[Anti-Venom] |cRXP_WARN_if you found any|r |T134339:0|t[Small Venom Sacs]
-    >>|cRXP_WARN_Save them for later|r
-    .collect 6452,1 --Anti Venom
-    .itemcount 1475,1
 step << Rogue
     .goto Thunder Bluff,53.00,56.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kard|r|cRXP_BUY_. Buy a|r |T135324:0|t[Longsword] |cRXP_BUY_from him.|r
@@ -9220,8 +9371,6 @@ step << Hunter
     .collect 2515,1600,493,1 << Hunter --Sharp Arrow (1600)
     .target Kuna Thunderhorn
 step << !Warlock
-    #completewith next << !Shaman
-    #completewith CallofWater2 << Shaman
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fp Thunder Bluff >> Get the Thunder Bluff flight path << !Tauren
@@ -9723,6 +9872,7 @@ step << Shaman
     .xp <22,1
     .xp >24,1
 step << Shaman
+    #optional
     .goto Orgrimmar,38.82,36.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
     .train 905 >> Train your class spells
@@ -9858,8 +10008,8 @@ step << Rogue
     .aura 9991
     .aura 9810
 step << Rogue
-    .destroy 8051 >> Delete the |T134536:0|t[Flare Gun] from your bags, as it's no longer needed
-    .destroy 8066 >> Delete |T134374:0|t[Fizzule's Whistle] from your bags, as it's no longer needed
+    .destroy 8051 >> |cRXP_WARN_Delete the|r |T134536:0|t[Flare Gun] |cRXP_WARN_from your bags, as it's no longer needed|r
+    .destroy 8066 >> |cRXP_WARN_Delete|r |T134374:0|t[Fizzule's Whistle] |cRXP_WARN_from your bags, as it's no longer needed|r
 step
     #optional
     .abandon 6421 >> Abandon Boulderslide Ravine

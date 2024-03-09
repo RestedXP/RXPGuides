@@ -451,11 +451,14 @@ step << !Warlock
     .accept 792 >>Accept Vile Familiars
     .target Zureetha Fargaze
 step << Hunter
+    #seaon 2
     #xprate >1.49
     .goto Durotar,42.84,69.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jen'shan|r
     .turnin 3082 >>Turn in Etched Tablet << Troll
     .turnin 3087 >>Turn in Etched Parchment << Orc
+    .accept 77590 >>Accept Rugged Terrain << Troll Hunter
+    .accept 77584 >>Accept Hunt for the Rune << Orc Hunter
     .train 1978 >> Train |T132204:0|t[Serpent Sting]
     .target Jen'shan
 step << Hunter
@@ -469,6 +472,16 @@ step << Hunter
     .accept 77584 >>Accept Hunt for the Rune << Orc Hunter
     .target Jen'shan
 step << Hunter
+    #xprate >1.49
+    #season 0
+    .goto Durotar,42.84,69.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jen'shan|r
+    .turnin 3082 >>Turn in Etched Tablet << Troll
+    .turnin 3087 >>Turn in Etched Parchment << Orc
+    .train 1978 >> Train |T132204:0|t[Serpent Sting]
+    .target Jen'shan
+step << Hunter
+    #xprate <1.5
     #season 0
     .goto Durotar,42.84,69.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jen'shan|r
@@ -477,16 +490,18 @@ step << Hunter
     .target Jen'shan
 step << Warrior
     #xprate >1.49
+    #season 2
     .goto Durotar,42.89,69.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frang|r
     .turnin 2383 >>Turn in Simple Parchment << Orc
     .turnin 3065 >>Turn in Simple Tablet << Troll
-    .train 100 >> Train |T132337:0|t[Charge]
+    .accept 77588 >>Accept A Trial of Fitness << Troll
+    .accept 77582 >>Accept A Trial of Fitness << Orc
     .train 772 >> Train |T132155:0|t[Rend]
     .target Frang
-    .money <0.02
 step << Warrior
     #xprate >1.49
+    #season 0
     .goto Durotar,42.89,69.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frang|r
     .turnin 2383 >>Turn in Simple Parchment << Orc
@@ -2218,7 +2233,18 @@ step
     .mob +Makrura Clacker
 step
     #label TaillasherEggs
-    .loop 25,Durotar,67.74,69.86,67.04,71.40,67.66,73.86,68.67,74.47,69.76,74.69,70.29,73.31,70.23,70.84,69.69,70.35,69.21,69.69,67.74,69.86
+    #loop
+    .goto Durotar,67.04,71.40,0
+    .goto Durotar,70.23,70.84,0
+    .waypoint Durotar,67.04,71.40,40,0
+    .waypoint Durotar,67.66,73.86,40,0
+    .waypoint Durotar,68.67,74.47,40,0
+    .waypoint Durotar,69.76,74.69,40,0
+    .waypoint Durotar,70.29,73.31,40,0
+    .waypoint Durotar,70.23,70.84,40,0
+    .waypoint Durotar,69.69,70.35,40,0
+    .waypoint Durotar,69.21,69.69,40,0
+    .waypoint Durotar,67.74,69.86,40,0
     >>Loot the |cRXP_PICK_Taillasher Eggs|r on the ground. They're usually guarded by a |cRXP_ENEMY_Bloodtalon Taillasher|r
     .complete 815,1 --Taillasher Egg (3)
     .mob Bloodtalon Taillasher
@@ -2729,6 +2755,10 @@ step << Warrior
     >>Enter Thunder Ridge and kill |cRXP_ENEMY_Lightning Hides|r. Loot them for their |cRXP_ENEMY_Scales|r
     .complete 1498,1 --Singed Scale (5)
     .mob Lightning Hide
+step << Shaman
+    #xprate >1.49
+    #completewith next
+    .goto Durotar,41.66,25.68,20 >>Jump into Thunder Ridge
 step << Warrior/Shaman
     #xprate >1.49
     #softcore
@@ -2985,12 +3015,22 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
     .target Zendo'jian
 step << Hunter
+    #optional
     #completewith FindAntidote
     +Equip the |T135499:0|t[Laminated Recurve Bow] when you are level 11
     .use 2507
     .itemcount 2507,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
+    .xp <11,1
+step << Hunter
+    #completewith FindAntidote
+    +Equip the |T135499:0|t[Laminated Recurve Bow]
+    .use 2507
+    .itemcount 2507,1
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
+    .xp >11,1
 step << Warrior/Shaman/Hunter
     #xprate <1.5 << Shaman/Warrior
     #label FindAntidote
@@ -4000,9 +4040,9 @@ step << Warrior
     .target Jark
 step << Hunter
     #completewith MargozTurnIn
-    +Tame a pet. A |cRXP_ENEMY_Scorpid|r or |cRXP_ENEMY_Raptor|r will have the highest dps
+    +Tame a |cRXP_ENEMY_Venomtail Scorpid|r
     .mob Venomtail Scorpid
-    .mob Bloodtalon Scythemaw
+    .train 16828,1 --Claw rank 2
 step << Shaman
     #xprate <1.5
     #completewith next
@@ -6718,11 +6758,14 @@ step << !Warlock
     .accept 792 >>Accept Vile Familiars
     .target Zureetha Fargaze
 step << Hunter
+    #seaon 2
     #xprate >1.49
     .goto Durotar,42.84,69.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jen'shan|r
     .turnin 3082 >>Turn in Etched Tablet << Troll
     .turnin 3087 >>Turn in Etched Parchment << Orc
+    .accept 77590 >>Accept Rugged Terrain << Troll Hunter
+    .accept 77584 >>Accept Hunt for the Rune << Orc Hunter
     .train 1978 >> Train |T132204:0|t[Serpent Sting]
     .target Jen'shan
 step << Hunter
@@ -6736,12 +6779,22 @@ step << Hunter
     .accept 77584 >>Accept Hunt for the Rune << Orc Hunter
     .target Jen'shan
 step << Hunter
+    #xprate >1.49
     #season 0
     .goto Durotar,42.84,69.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jen'shan|r
     .turnin 3082 >>Turn in Etched Tablet << Troll
     .turnin 3087 >>Turn in Etched Parchment << Orc
+    .train 1978 >> Train |T132204:0|t[Serpent Sting]
     .target Jen'shan
+step << Hunter
+    #xprate <1.5
+    #season 0
+    .goto Durotar,42.84,69.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jen'shan|r
+    .turnin 3082 >>Turn in Etched Tablet << Troll
+    .turnin 3087 >>Turn in Etched Parchment << Orc
+    .target Jen'sha
 step << Warrior
     #xprate >1.49
     .goto Durotar,42.89,69.44
@@ -6754,6 +6807,18 @@ step << Warrior
     .money <0.02
 step << Warrior
     #xprate >1.49
+    #season 2
+    .goto Durotar,42.89,69.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frang|r
+    .turnin 2383 >>Turn in Simple Parchment << Orc
+    .turnin 3065 >>Turn in Simple Tablet << Troll
+    .accept 77588 >>Accept A Trial of Fitness << Troll
+    .accept 77582 >>Accept A Trial of Fitness << Orc
+    .train 772 >> Train |T132155:0|t[Rend]
+    .target Frang
+step << Warrior
+    #xprate >1.49
+    #season 0
     .goto Durotar,42.89,69.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frang|r
     .turnin 2383 >>Turn in Simple Parchment << Orc
@@ -8410,7 +8475,18 @@ step
     .mob +Makrura Clacker
 step
     #label TaillasherEggs
-    .loop 25,Durotar,67.74,69.86,67.04,71.40,67.66,73.86,68.67,74.47,69.76,74.69,70.29,73.31,70.23,70.84,69.69,70.35,69.21,69.69,67.74,69.86
+    #loop
+    .goto Durotar,67.04,71.40,0
+    .goto Durotar,70.23,70.84,0
+    .waypoint Durotar,67.04,71.40,40,0
+    .waypoint Durotar,67.66,73.86,40,0
+    .waypoint Durotar,68.67,74.47,40,0
+    .waypoint Durotar,69.76,74.69,40,0
+    .waypoint Durotar,70.29,73.31,40,0
+    .waypoint Durotar,70.23,70.84,40,0
+    .waypoint Durotar,69.69,70.35,40,0
+    .waypoint Durotar,69.21,69.69,40,0
+    .waypoint Durotar,67.74,69.86,40,0
     >>Loot the |cRXP_PICK_Taillasher Eggs|r on the ground. They're usually guarded by a |cRXP_ENEMY_Bloodtalon Taillasher|r
     .complete 815,1 --Taillasher Egg (3)
     .mob Bloodtalon Taillasher
@@ -8897,6 +8973,12 @@ step << Warrior
     >>Enter Thunder Ridge and kill |cRXP_ENEMY_Lightning Hides|r. Loot them for their |cRXP_ENEMY_Scales|r
     .complete 1498,1 --Singed Scale (5)
     .mob Lightning Hide
+step << !Warrior
+    #xprate >1.49
+    #completewith next
+    .goto Durotar,41.66,25.68,20 >>Jump into Thunder Ridge << !Hunter !Warlock
+    .goto Durotar,41.66,25.68,20 >>|cRXP_WARN_Dismiss your|r |T136218:0|t[Imp] |cRXP_WARN_by right clicking its unit frame and clicking dismiss|r << Warlock
+    .goto Durotar,41.66,25.68,20 >>|cRXP_WARN_Cast|r |T136095:0|t[Dismiss Pet] |cRXP_WARN_and then jump into Thunder Ridge|r << Hunter
 step
     #xprate >1.49
     #softcore
@@ -9140,12 +9222,22 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
     .target Zendo'jian
 step << Hunter
+    #optional
     #completewith RazorTurnins2
     +Equip the |T135499:0|t[Laminated Recurve Bow] when you are level 11
     .use 2507
     .itemcount 2507,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
+    .xp <11,1
+step << Hunter
+    #completewith RazorTurnins2
+    +Equip the |T135499:0|t[Laminated Recurve Bow]
+    .use 2507
+    .itemcount 2507,1
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
+    .xp >11,1
 step << Warlock
     .goto Orgrimmar,48.246,45.281
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Gan'rul Bloodeye|r
@@ -9313,6 +9405,14 @@ step << Shaman
     .train 8050 >> Train your class spells
     .target Swart
     .xp <12,1
+step << Hunter
+    #completewith next
+    .goto Durotar,36.29,47.38,0
+    .goto Durotar,36.29,52.09,0
+    .waypoint Durotar,36.29,47.38,40,0
+    +Tame a |cRXP_ENEMY_Venomtail Scorpid|r
+    .mob Venomtail Scorpid
+    .train 16828,1 --Claw rank 2
 step
     #Label FarWatchPost
     .goto The Barrens,62.26,19.38,40 >> Travel to Far Watch Post
@@ -9328,14 +9428,6 @@ step << Warrior
     .turnin 1498 >>Turn in Path of Defense
     .accept 1502 >>Accept Thun'grim Firegaze
     .target Uzzek
-step
-    #hardcore
-    .goto The Barrens,52.34,29.27,150,0
-    .subzone 380 >> Travel to The Crossroads
-step
-    #softcore
-    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-    .subzoneskip 380
 
 ]])
 
