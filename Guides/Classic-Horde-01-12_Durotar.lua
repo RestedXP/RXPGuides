@@ -451,7 +451,7 @@ step << !Warlock
     .accept 792 >>Accept Vile Familiars
     .target Zureetha Fargaze
 step << Hunter
-    #seaon 2
+    #season 2
     #xprate >1.49
     .goto Durotar,42.84,69.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jen'shan|r
@@ -463,7 +463,7 @@ step << Hunter
     .target Jen'shan
 step << Hunter
     #xprate <1.5
-    #seaon 2
+    #season 2
     .goto Durotar,42.84,69.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jen'shan|r
     .turnin 3082 >>Turn in Etched Tablet << Troll
@@ -6758,7 +6758,7 @@ step << !Warlock
     .accept 792 >>Accept Vile Familiars
     .target Zureetha Fargaze
 step << Hunter
-    #seaon 2
+    #season 2
     #xprate >1.49
     .goto Durotar,42.84,69.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jen'shan|r
@@ -6770,7 +6770,7 @@ step << Hunter
     .target Jen'shan
 step << Hunter
     #xprate <1.5
-    #seaon 2
+    #season 2
     .goto Durotar,42.84,69.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jen'shan|r
     .turnin 3082 >>Turn in Etched Tablet << Troll
