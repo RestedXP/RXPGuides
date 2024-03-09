@@ -1174,6 +1174,7 @@ step << Rogue
     .goto Westfall,70.41,73.93
     >>|cRXP_WARN_Travel up to the top of the Tower|r
     >>Open the |cRXP_PICK_Duskwood Chest|r. Loot it for |cRXP_LOOT_Klaven Mortwake's Journal|r
+    >>|cRXP_WARN_If you have a|r |T132321:0|t[Dagger] |cRXP_WARN_in your bags or equipped, you can cast|r |T132282:0|t[Ambush] on the |cRXP_ENEMY_Defias Tower Sentries|r and |cRXP_ENEMY_Defias Tower Patrollers|r inside to kill them instantly|r
     >>|cRXP_WARN_You can|r |T132310:0|t[Sap] |cRXP_ENEMY_Klaven Mortwake|r |cRXP_WARN_and then open the|r |cRXP_PICK_Duskwood Chest|r
     >>|cRXP_WARN_If your|r |T132310:0|t[Sap] |cRXP_WARN_resists or misses, cast|r |T132331:0|t[Vanish] |cRXP_WARN_and try again or otherwise jump down and reset him. Alternatively you can come back later to complete it|r
     .complete 2359,1 --Collect Klaven Mortwake's Journal (x1)

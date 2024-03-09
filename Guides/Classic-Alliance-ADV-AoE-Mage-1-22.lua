@@ -6005,8 +6005,8 @@ step
    .isOnQuest 5321
 step
     #completewith Therylune1
-    >>AoE |cRXP_ENEMY_Twilight Disciples|r and |cRXP_ENEMY_Twilight Thugs|r. Loot them for the |T133743:0|t[|cRXP_LOOT_Book: Powers Below|r]
-    >>|cRXP_WARN_Use the |T133743:0|t[|cRXP_LOOT_Book: Powers Below|r] to start the quest|r
+    >>AoE |cRXP_ENEMY_Twilight Disciples|r and |cRXP_ENEMY_Twilight Thugs|r. Loot them for the |T133743:0|t[|cRXP_LOOT_Book: The Powers Below|r]
+    >>|cRXP_WARN_Use the |T133743:0|t[|cRXP_LOOT_Book: The Powers Below|r] to start the quest|r
     .collect 5352,1,968,1 --Book: The Powers Below (1)
     .accept 968 >> Accept The Powers Below
     .mob Twilight Disciple
@@ -6027,7 +6027,7 @@ step
 step
    .goto Darkshore,38.65,87.34
     >>Talk to |cRXP_FRIENDLY_Therylune|r
-    >>|cRXP_WARN_If |cRXP_FRIENDLY_Therylune|r is not there, AoE |cRXP_ENEMY_Twilight Disciples|r and |cRXP_ENEMY_Twilight Thugs|r for |T133743:0|t[|cRXP_LOOT_Book: Powers Below|r] until she's up|r
+    >>|cRXP_WARN_If |cRXP_FRIENDLY_Therylune|r is not there, AoE |cRXP_ENEMY_Twilight Disciples|r and |cRXP_ENEMY_Twilight Thugs|r for |T133743:0|t[|cRXP_LOOT_Book: The Powers Below|r] until she's up|r
    .accept 945 >> Accept Therylune's Escape
    .target Therylune
    .use 13536
@@ -6344,8 +6344,8 @@ step
    .complete 944,1 --Enter the Master's Glaive (1)
 step
     #completewith Therylune2
-    >>AoE |cRXP_ENEMY_Twilight Disciples|r and |cRXP_ENEMY_Twilight Thugs|r. Loot them for the |T133743:0|t[|cRXP_LOOT_Book: Powers Below|r]
-    >>|cRXP_WARN_Use the |T133743:0|t[|cRXP_LOOT_Book: Powers Below|r] to start the quest|r
+    >>AoE |cRXP_ENEMY_Twilight Disciples|r and |cRXP_ENEMY_Twilight Thugs|r. Loot them for the |T133743:0|t[|cRXP_LOOT_Book: The Powers Below|r]
+    >>|cRXP_WARN_Use the |T133743:0|t[|cRXP_LOOT_Book: The Powers Below|r] to start the quest|r
     .collect 5352,1,968,1 --Book: The Powers Below (1)
     .accept 968 >> Accept The Powers Below
     .mob Twilight Disciple
@@ -6362,7 +6362,7 @@ step
 step
     .goto Darkshore,38.65,87.34
     >>Talk to |cRXP_FRIENDLY_Therylune|r
-    >>|cRXP_WARN_If |cRXP_FRIENDLY_Therylune|r is not there, AoE |cRXP_ENEMY_Twilight Disciples|r and |cRXP_ENEMY_Twilight Thugs|r for |T133743:0|t[|cRXP_LOOT_Book: Powers Below|r] until she's up|r
+    >>|cRXP_WARN_If |cRXP_FRIENDLY_Therylune|r is not there, AoE |cRXP_ENEMY_Twilight Disciples|r and |cRXP_ENEMY_Twilight Thugs|r for |T133743:0|t[|cRXP_LOOT_Book: The Powers Below|r] until she's up|r
     .accept 945 >> Accept Therylune's Escape
     .target Therylune
 step

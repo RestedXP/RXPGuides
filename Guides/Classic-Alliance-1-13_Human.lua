@@ -4295,7 +4295,7 @@ step << Mage
 step << Warrior
     #season 2
     #requires Geode
-    .goto Loch Modan,33.2,73.8
+    .goto Loch Modan,30.47,79.71
     >>Kill a |cRXP_ENEMY_Stonesplinter Skullthumper|r
     >>|cRXP_WARN_During combat it'll hit you, turning the |cRXP_LOOT_Skull-Shaped Geode|r into a|r |T236489:0|t[|cRXP_LOOT_Cracked Skull-Shaped Geode|r]
     .collect 208848,1 -- Cracked Skull-Shaped Geode (1)
