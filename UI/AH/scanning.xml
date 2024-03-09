@@ -344,24 +344,13 @@
                     <Anchor point="LEFT" relativeTo="$parentUpdateEP" relativePoint="RIGHT"/>
                 </Anchors>
                 <Frames>
-                    <Frame name="$parentText">
-                        <Size x="48" y="13"/>
+                    <Frame name="$parentMoney" inherits="SmallMoneyFrameTemplate">
                         <Anchors>
-                            <Anchor point="LEFT">
+                            <Anchor point="RIGHT">
                                 <Offset>
                                     <AbsDimension x="0" y="-6"/>
                                 </Offset>
                             </Anchor>
-                        </Anchors>
-                        <Layers>
-                            <Layer level="BACKGROUND">
-                                <FontString inherits="GameFontNormalSmall" justifyH="LEFT" setAllPoints="true" text="BUYOUT_COST"/>
-                            </Layer>
-                        </Layers>
-                    </Frame>
-                    <Frame name="$parentMoney" inherits="SmallMoneyFrameTemplate">
-                        <Anchors>
-                            <Anchor point="LEFT" relativeTo="$parentText" relativePoint="RIGHT"/>
                         </Anchors>
                         <Scripts>
                             <OnLoad>
@@ -370,6 +359,17 @@
 								MoneyFrame_SetMaxDisplayWidth(self, 146);
                             </OnLoad>
                         </Scripts>
+                    </Frame>
+                    <Frame name="$parentText">
+                        <Size x="48" y="13"/>
+                        <Anchors>
+                            <Anchor point="RIGHT" relativeTo="$parentMoney" relativePoint="LEFT"/>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <FontString inherits="GameFontNormalSmall" justifyH="LEFT" setAllPoints="true" text="BUYOUT_COST"/>
+                            </Layer>
+                        </Layers>
                     </Frame>
                 </Frames>
             </Frame>

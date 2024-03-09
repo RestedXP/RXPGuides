@@ -1568,7 +1568,6 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
     end
 end
 
--- right-align buyout block
 -- Remove brackets on item name
 -- Add update/vendor icons
 -- Propagate +EP up the chain
