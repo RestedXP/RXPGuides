@@ -7597,7 +7597,7 @@ step
 step
     .goto Ironforge,25.50,7.04
     >>Talk to |cRXP_FRIENDLY_Milstaff|r
-    .train 3562 >> Train |T135763:0|t[Teleport: Ironforge]
+    .train 3562 >> Train |T135757:0|t[Teleport: Ironforge]
     .target Milstaff Stormeye
 step
     #completewith FlyMene
