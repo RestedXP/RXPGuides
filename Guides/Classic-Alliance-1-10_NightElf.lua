@@ -22,7 +22,7 @@ step
     #sticky
     #label balance1
     >>Kill |cRXP_ENEMY_Young Nightsabers|r and |cRXP_ENEMY_Young Thistle Boars|r
-    .goto Teldrassil,62.0,42.6
+    .goto Teldrassil,62.0,42.6,0,0
     .complete 456,1 --Kill Young Nightsaber (x7)
     .complete 456,2 --Kill Young Thistle Boar (x4)
     .mob Young Nightsaber
@@ -37,6 +37,22 @@ step
 	.goto Teldrassil,59.924,42.474
     .target Dirania Silvershine
     .target Melithar Staghelm
+step << Hunter
+#xprate >1.99
+    #requires balance1
+	.goto Teldrassil,58.695,44.266
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Conservator Ilthalaine|r
+    .turnin 456,1 >> Turn in The Balance of Nature << Hunter
+    .target Conservator Ilthalaine
+    .accept 457 >> Accept The Balance of Nature
+step << Hunter
+#xprate >1.99
+    .goto Teldrassil,59.8,34.1
+    >>Kill |cRXP_ENEMY_Mangy Nightsabers|r and |cRXP_ENEMY_Thistle Boars|r
+    .complete 457,1 --Kill Mangy Nightsaber (x7)
+    .complete 457,2 --Kill Thistle Boar (x7)
+    .mob Mangy Nightsaber
+    .mob Thistle Boar
 step << Hunter
     #season 0,1
     .goto Teldrassil,59.8,34.1
@@ -60,7 +76,16 @@ step << Hunter
     .turnin 458 >> Turn in The Woodland Protector
     .target Tarindrella
     .accept 459 >> Accept The Woodland Protector
+step << Hunter
+#xprate >1.99
+    #requires balance1
+	.goto Teldrassil,58.695,44.266
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Conservator Ilthalaine|r
+    .turnin 457 >> Turn in The Balance of Nature
+    .target Conservator Ilthalaine
+	.accept 3117 >> Accept Etched Sigil
 step
+#xprate <1.99 << Hunter
     #requires balance1
 	.goto Teldrassil,58.695,44.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Conservator Ilthalaine|r
@@ -270,10 +295,8 @@ step << Druid
     .target Mardant Strongoak
     .xp <4,1
 step << Hunter
-    #season 0;1
     .xp 4-40
 step << Hunter
-    #season 0;1
     .goto Teldrassil,57.80,40.97,25,0
     .goto Teldrassil,58.659,40.449
     >>Ascend the Aldrassil Tree
@@ -290,13 +313,21 @@ step
     >>Loot the |cRXP_LOOT_Moonpetal Lilies|r on the ground
     .complete 3521,2 --Collect Moonpetal Lily (x4)
 step << Hunter
+#optional
+#season 2
+#completewith next
+    >>Kill |cRXP_ENEMY_Webwood Spiders|r. Loot them for their |cRXP_LOOT_Ichor|r and |cRXP_LOOT_Venom Sacs|r
+    .complete 3521,3 --Collect Webwood Ichor (x1)
+    .complete 916,1 --Collect Webwood Venom Sac (x10)
+    .mob Webwood Spider
+step << Hunter
     #sticky
     #season 2
     #label hunterRuneChimera
     .goto Teldrassil,56.68,26.12
     >>Kill |cRXP_ENEMY_Githyiss the Vile|r. Loot Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Chimera|r]
     .collect 206168,1,77568,1 -- Rune of the Chimera (1)
-    .mob Githyiss the Vile
+    .unitscan Githyiss the Vile
     .engrave 10--skips if it's already engraved
 step << Hunter
     #season 2
@@ -430,18 +461,6 @@ step
     .turnin 916 >> Turn in Webwood Venom
     .target Gilshalan Windwalker
     .accept 917 >> Accept Webwood Egg
-step << Hunter
-    #requires hunterEngrave
-    #season 2
-    .goto Teldrassil,57.80,40.97,25,0
-    .goto Teldrassil,58.659,40.449
-    >>Ascend the Aldrassil Tree
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayanna Everstride|r
-    .turnin 3117 >> Turn in Etched Sigil
-    .accept 77568 >> Accept A Hunter's Strength
-    .turnin 77568 >> Turn in A Hunter's Strength
-    .train 1978 >>Train Serpent Sting
-    .target Ayanna Everstride
 step << Druid
     #season 0,1
     .goto Teldrassil,57.80,40.97,25,0
@@ -485,12 +504,32 @@ step
 	>>If you fall down, just run out the cave normally to the quest turn in
 	.link https://www.youtube.com/watch?v=TTZZT3jpv1s >> CLICK HERE for reference
 step
+#xprate <1.99
 	.goto Teldrassil,57.807,41.653
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilshalan Windwalker|r
     .turnin 917 >> Turn in Webwood Egg
     .target Gilshalan Windwalker
     .accept 920 >> Accept Tenaron's Summons
 step
+#xprate >1.99
+	.goto Teldrassil,57.807,41.653
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilshalan Windwalker|r
+    .turnin 917 >> Turn in Webwood Egg
+    .target Gilshalan Windwalker
+step << Hunter
+    #requires hunterEngrave
+    #season 2
+    .goto Teldrassil,57.80,40.97,25,0
+    .goto Teldrassil,58.659,40.449
+    >>Ascend the Aldrassil Tree
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayanna Everstride|r
+    .turnin 3117 >> Turn in Etched Sigil
+    .accept 77568 >> Accept A Hunter's Strength
+    .turnin 77568 >> Turn in A Hunter's Strength
+    .train 1978 >>Train Serpent Sting
+    .target Ayanna Everstride
+step
+#xprate <1.99
     .goto Teldrassil,57.80,40.97,25,0
     .goto Teldrassil,59.062,39.448
     >>Ascend the Aldrassil Tree
@@ -499,12 +538,14 @@ step
     .target Tenaron Stormgrip
     .accept 921 >> Accept Crown of the Earth
 step
+#xprate <1.99
     #sticky
     #label vial1
     .goto Teldrassil,59.9,33.0
 	.use 5185 >> |cRXP_WARN_Use the|r |T134776:0|t[Crystal Phial] |cRXP_WARN_at the Moonwell|r
     .complete 921,1 --Collect Filled Crystal Phial (x1)
 step << Hunter
+#xprate <1.99
     .goto Teldrassil,59.8,34.1
     >>Kill |cRXP_ENEMY_Mangy Nightsabers|r and |cRXP_ENEMY_Thistle Boars|r
     .complete 457,1 --Kill Mangy Nightsaber (x7)
@@ -512,11 +553,13 @@ step << Hunter
     .mob Mangy Nightsaber
     .mob Thistle Boar
 step
+#xprate <1.99
     #requires vial1
     #completewith next
     .deathskip >> Die and respawn at the Spirit Healer
     .target Spirit Healer
 step << Hunter
+#xprate <1.99
     #requires vial1
     .goto Teldrassil,58.695,44.266
     .target Conservator Ilthalaine
@@ -529,6 +572,7 @@ step << Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shanda|r
     .accept 5622 >> Accept In Favor of Elune
 step
+#xprate <1.99
     #requires vial1
     .goto Teldrassil,57.80,40.97,25,0
     .goto Teldrassil,59.062,39.448
@@ -617,10 +661,17 @@ step << Rogue
     .vendor >> |cRXP_BUY_Buy and equip a|r |T135426:0|t[Small Throwing Knife]
     .target Aldia
 step
+#xprate <1.99 << Hunter
     .goto Teldrassil,55.574,56.948
     .target Tallonkai Swiftroot
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r atop the Tree
     .accept 932 >> Accept Twisted Hatred
+    .accept 2438 >> Accept The Emerald Dreamcatcher
+step << Hunter
+#xprate >1.99
+    .goto Teldrassil,55.574,56.948
+    .target Tallonkai Swiftroot
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r atop the Tree
     .accept 2438 >> Accept The Emerald Dreamcatcher
 step << Hunter
     .goto Teldrassil,55.890,59.205
@@ -702,9 +753,16 @@ step
     .turnin 2159 >> Turn in Dolanaar Delivery << !Hunter
     .home >> Set your Hearthstone to Dolanaar
 step << Hunter
+#season 0,1
     .goto Teldrassil,56.676,59.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dazalar|r
 	.train 3044>> Train Arcane Shot
+    .target Dazalar
+step << Hunter
+#season 2
+    .goto Teldrassil,56.676,59.489
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dazalar|r
+	.train 1130>> Train Hunter's Mark
     .target Dazalar
 step << Druid
     .goto Teldrassil,55.945,61.566
@@ -712,6 +770,7 @@ step << Druid
 	.trainer >> Train your class spells
     .target Kal
 step
+#xprate <1.99
     .goto Teldrassil,56.142,61.714
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
     .turnin 928 >> Turn in Crown of the Earth
@@ -1016,7 +1075,7 @@ step << Druid
     .itemcount 2495,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.19
 step << Druid
-#xprate >1.49
+#xprate 1.49-1.99
     .goto Teldrassil,56.142,61.714
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
     .turnin 929 >> Turn in Crown of the Earth
@@ -1102,6 +1161,7 @@ step << Priest
     .mob Shadow Sprite
     .train 402852,1
 step
+#xprate <1.99 << Hunter
     .goto Teldrassil,51.2,50.6
     >>Kill |cRXP_ENEMY_Lord Melenas|r. Loot him for his |cRXP_LOOT_Head|r
     >>|cRXP_ENEMY_Lord Melenas|r may be located in many different spawn locations throughout Fel Rock
@@ -1150,6 +1210,7 @@ step
     .deathskip >> Die and respawn at the Spirit Healer
     .target Spirit Healer
 step << !Druid
+#xprate <1.99
     .goto Teldrassil,56.142,61.714
     .target Corithras Moonrage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corithras Moonrage|r
@@ -1219,10 +1280,17 @@ step << Warrior/Rogue
     .train 3273 >> Train |T135966:0|t[First Aid]
     .target Byancie
 step
+#xprate <1.99 << Hunter
     .goto Teldrassil,55.574,56.948
     .target Tallonkai Swiftroot
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r atop the Tree
     .turnin 932 >> Turn in Twisted Hatred
+    .turnin 2459 >> Turn in Ferocitas the Dream Eater
+step
+#xprate >1.99
+    .goto Teldrassil,55.574,56.948
+    .target Tallonkai Swiftroot
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r atop the Tree
     .turnin 2459 >> Turn in Ferocitas the Dream Eater
 step
 #xprate >1.99
@@ -1323,6 +1391,7 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannok Breezesong|r
     .accept 2241 >> Accept The Apple Falls
 step
+#xprate <1.99 << Hunter
     .goto Teldrassil,55.83,58.31,40,0
     .goto Teldrassil,50.22,53.83
     .goto Teldrassil,55.83,58.31,0
@@ -1343,12 +1412,14 @@ step << Rogue
     .mob Gnarlpine Augur
     .train 398196,1
 step
+#xprate <1.99 << Hunter
     .goto Teldrassil,46.6,53.0
     >>Kill |cRXP_ENEMY_Gnarlpine Ambushers|r
     .complete 487,1 --Kill Gnarlpine Ambusher (x6)
     .mob Gnarlpine Ambusher
 step
-#xprate >1.99 << !Druid
+#xprate >1.99 << !Druid !Hunter
+#xprate <1.99 << Hunter
     .goto Teldrassil,55.83,58.31,40,0
     .goto Teldrassil,50.22,53.83
     .goto Teldrassil,55.83,58.31,0
@@ -2002,8 +2073,8 @@ step << Rogue
 step << Rogue
     .goto Darnassus,34.96,9.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Fandral Staghelm|r atop the Tree
-    .turnin 935 >> Turn in Crown of the Earth
-    .turnin 940 >> Turn in Teldrassil
+    .turnin -935 >> Turn in Crown of the Earth
+    .turnin -940 >> Turn in Teldrassil
     .target Arch Druid Fandral Staghelm
     .accept 952 >> Accept Grove of the Ancients
 step << Rogue
@@ -2214,7 +2285,7 @@ step << Druid
 step
     .goto Darnassus,34.814,9.255
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Fandral Staghelm|r
-    .turnin 935 >> Turn in Crown of the Earth
+    .turnin -935 >> Turn in Crown of the Earth
     .turnin -940 >> Turn in Teldrassil
     .target Arch Druid Fandral Staghelm
     .accept 952 >> Accept Grove of the Ancients
