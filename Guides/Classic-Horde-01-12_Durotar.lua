@@ -98,10 +98,18 @@ step << Warlock
     .vendor >>Vendor Trash
     .target Hraug
 step << Warlock
+    #season 2
     #label Nartok
     .goto Durotar,40.65,68.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
     .accept 77586 >>Accept Stolen Power
+    .train 348 >>Train |T135817:0|t[Immolate]
+    .target Nartok
+step << Warlock
+    #season 0
+    #label Nartok
+    .goto Durotar,40.65,68.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
     .train 348 >>Train |T135817:0|t[Immolate]
     .target Nartok
 step << !Warrior !Rogue
@@ -6456,10 +6464,18 @@ step << Warlock
     .vendor >>Vendor Trash
     .target Hraug
 step << Warlock
+    #season 2
     #label Nartok
     .goto Durotar,40.65,68.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
     .accept 77586 >>Accept Stolen Power
+    .train 348 >>Train |T135817:0|t[Immolate]
+    .target Nartok
+step << Warlock
+    #season 0
+    #label Nartok
+    .goto Durotar,40.65,68.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
     .train 348 >>Train |T135817:0|t[Immolate]
     .target Nartok
 step << !Warrior !Rogue

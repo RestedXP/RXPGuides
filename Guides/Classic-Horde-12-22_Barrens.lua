@@ -3137,7 +3137,6 @@ step
     .mob Venture Co. Operator
 step
     #loop
-    .loop 25,Stonetalon Mountains
     .goto Stonetalon Mountains,61.50,55.12,0
     .waypoint Stonetalon Mountains,61.50,55.12,50,0
     .waypoint Stonetalon Mountains,60.48,55.10,50,0
@@ -9032,7 +9031,6 @@ step
     .mob Venture Co. Operator
 step
     #loop
-    .loop 25,Stonetalon Mountains
     .goto Stonetalon Mountains,61.50,55.12,0
     .waypoint Stonetalon Mountains,61.50,55.12,50,0
     .waypoint Stonetalon Mountains,60.48,55.10,50,0
