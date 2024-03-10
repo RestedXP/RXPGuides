@@ -6014,7 +6014,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Horde 1-22
 #defaultfor Undead
-#next 13-23 The Barrens
+#next 13-20 The Barrens
 
 step
     .goto Tirisfal Glades,40.91,54.17

@@ -3150,7 +3150,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Horde 1-22
 #name 7-13 Mulgore
-#next 13-23 The Barrens
+#next 13-20 The Barrens
 #defaultfor Tauren
 
 
@@ -5064,6 +5064,21 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gazrog|r
     .accept 869 >>Accept Raptor Thieves
     .target Gazrog
+step << Tauren Hunter
+    .goto The Barrens,51.11,29.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uthrok|r|cRXP_BUY_. Buy a|r |T135613:0|t[Hunter's Boomstick] |cRXP_BUY_from him|r
+    .collect 2511,1,871,1 --Collect Hunter's Boomstick (1)
+    .money <0.1324
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
+    .target Uthrok
+step << Tauren Hunter
+    #completewith DisruptTheAttacks
+    +Equip the |T135613:0|t[Hunter's Boomstick]
+    .use 2511
+    .itemcount 2511,1
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
 step << Shaman
     #completewith next
     >>Check for Chen's Empty Keg next to |cRXP_FRIENDLY_Kranal|r. Loot it and start the quest, otherwise you'll get it later
@@ -5122,4 +5137,26 @@ step << Shaman
     .turnin 840 >>Turn in Conscript of the Horde
     .accept 842 >>Accept Crossroads Conscription
     .target Kargal Battlescar
+step << Warrior
+    .goto The Barrens,61.4,21.1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uzzek|r
+    .turnin 1505 >>Turn in Veteran Uzzek
+    .accept 1498 >>Accept Path of Defense
+    .target Uzzek
+step << Warrior
+    .goto Durotar,39.11,30.76,40,0
+    .goto Durotar,39.34,28.25,40,0
+    .goto Durotar,39.11,26.46,40,0
+    .goto Durotar,39.39,25.05,40,0
+    .goto Durotar,40.00,24.06,40,0
+    .goto Durotar,42.51,24.29,40,0
+    .goto Durotar,39.34,28.25
+    >>Kill |cRXP_ENEMY_Lightning Hides|r. Loot them for their |cRXP_ENEMY_Scales|r
+    .complete 1498,1 --Singed Scale (5)
+    .mob Lightning Hide
+step << Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uzzek|r
+    .turnin 1498 >>Turn in Path of Defense
+    .accept 1502 >>Accept Thun'grim Firegaze
+    .target Uzzek
 ]])

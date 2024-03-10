@@ -461,6 +461,17 @@ step << Hunter
     .accept 77584 >>Accept Hunt for the Rune << Orc Hunter
     .train 1978 >> Train |T132204:0|t[Serpent Sting]
     .target Jen'shan
+    .money <0.01
+step << Hunter
+    #season 2
+    #xprate >1.49
+    .goto Durotar,42.84,69.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jen'shan|r
+    .turnin 3082 >>Turn in Etched Tablet << Troll
+    .turnin 3087 >>Turn in Etched Parchment << Orc
+    .accept 77590 >>Accept Rugged Terrain << Troll Hunter
+    .accept 77584 >>Accept Hunt for the Rune << Orc Hunter
+    .target Jen'shan
 step << Hunter
     #xprate <1.5
     #season 2
@@ -479,6 +490,15 @@ step << Hunter
     .turnin 3082 >>Turn in Etched Tablet << Troll
     .turnin 3087 >>Turn in Etched Parchment << Orc
     .train 1978 >> Train |T132204:0|t[Serpent Sting]
+    .target Jen'shan
+    .money <0.01
+step << Hunter
+    #xprate >1.49
+    #season 0
+    .goto Durotar,42.84,69.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jen'shan|r
+    .turnin 3082 >>Turn in Etched Tablet << Troll
+    .turnin 3087 >>Turn in Etched Parchment << Orc
     .target Jen'shan
 step << Hunter
     #xprate <1.5
@@ -499,6 +519,17 @@ step << Warrior
     .accept 77582 >>Accept A Trial of Fitness << Orc
     .train 772 >> Train |T132155:0|t[Rend]
     .target Frang
+    .money <0.01
+step << Warrior
+    #xprate >1.49
+    #season 2
+    .goto Durotar,42.89,69.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frang|r
+    .turnin 2383 >>Turn in Simple Parchment << Orc
+    .turnin 3065 >>Turn in Simple Tablet << Troll
+    .accept 77588 >>Accept A Trial of Fitness << Troll
+    .accept 77582 >>Accept A Trial of Fitness << Orc
+    .target Frang
 step << Warrior
     #xprate >1.49
     #season 0
@@ -507,6 +538,15 @@ step << Warrior
     .turnin 2383 >>Turn in Simple Parchment << Orc
     .turnin 3065 >>Turn in Simple Tablet << Troll
     .train 772 >> Train |T132155:0|t[Rend]
+    .target Frang
+    .money <0.01
+step << Warrior
+    #xprate >1.49
+    #season 0
+    .goto Durotar,42.89,69.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frang|r
+    .turnin 2383 >>Turn in Simple Parchment << Orc
+    .turnin 3065 >>Turn in Simple Tablet << Troll
     .target Frang
 step << Warrior
     #xprate <1.5
@@ -729,6 +769,8 @@ step << Shaman
     #season 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shikrik|r and |cRXP_FRIENDLY_Canaga|r
     .train 8042 >> Train |T136026:0|t[Earth Shock]
+    .turnin 77587 >>Turn in Icons of Power << Troll Shaman
+    .turnin 77585 >>Turn in Icons of Power << Orc Shaman
     .goto Durotar,42.39,69.00
     .accept 1516 >>Accept Call of Earth
     .goto Durotar,42.40,69.17
@@ -738,8 +780,6 @@ step << Shaman
     #season 0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shikrik|r and |cRXP_FRIENDLY_Canaga|r
     .train 8042 >> Train |T136026:0|t[Earth Shock]
-    .turnin 77587 >>Turn in Icons of Power << Troll Shaman
-    .turnin 77585 >>Turn in Icons of Power << Orc Shaman
     .goto Durotar,42.39,69.00
     .accept 1516 >>Accept Call of Earth
     .goto Durotar,42.40,69.17
@@ -6816,6 +6856,17 @@ step << Warrior
     .accept 77582 >>Accept A Trial of Fitness << Orc
     .train 772 >> Train |T132155:0|t[Rend]
     .target Frang
+    .money <0.01
+step << Warrior
+    #xprate >1.49
+    #season 2
+    .goto Durotar,42.89,69.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frang|r
+    .turnin 2383 >>Turn in Simple Parchment << Orc
+    .turnin 3065 >>Turn in Simple Tablet << Troll
+    .accept 77588 >>Accept A Trial of Fitness << Troll
+    .accept 77582 >>Accept A Trial of Fitness << Orc
+    .target Frang
 step << Warrior
     #xprate >1.49
     #season 0
@@ -6824,6 +6875,15 @@ step << Warrior
     .turnin 2383 >>Turn in Simple Parchment << Orc
     .turnin 3065 >>Turn in Simple Tablet << Troll
     .train 772 >> Train |T132155:0|t[Rend]
+    .target Frang
+    .money <0.01
+step << Warrior
+    #xprate >1.49
+    #season 0
+    .goto Durotar,42.89,69.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frang|r
+    .turnin 2383 >>Turn in Simple Parchment << Orc
+    .turnin 3065 >>Turn in Simple Tablet << Troll
     .target Frang
 step << Warrior
     #xprate <1.5
@@ -7040,6 +7100,8 @@ step << Shaman
     #season 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shikrik|r and |cRXP_FRIENDLY_Canaga|r
     .train 8042 >> Train |T136026:0|t[Earth Shock]
+    .turnin 77587 >>Turn in Icons of Power << Troll Shaman
+    .turnin 77585 >>Turn in Icons of Power << Orc Shaman
     .goto Durotar,42.39,69.00
     .accept 1516 >>Accept Call of Earth
     .goto Durotar,42.40,69.17
@@ -7049,8 +7111,6 @@ step << Shaman
     #season 0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shikrik|r and |cRXP_FRIENDLY_Canaga|r
     .train 8042 >> Train |T136026:0|t[Earth Shock]
-    .turnin 77587 >>Turn in Icons of Power << Troll Shaman
-    .turnin 77585 >>Turn in Icons of Power << Orc Shaman
     .goto Durotar,42.39,69.00
     .accept 1516 >>Accept Call of Earth
     .goto Durotar,42.40,69.17
@@ -7541,7 +7601,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Horde 1-22
 #defaultfor Troll/Orc
-#next 13-23 The Barrens
+#next 13-20 The Barrens
 
 step
     .goto Durotar,52.06,68.30
