@@ -222,16 +222,17 @@
                     </Layer>
                 </Layers>
                 <Scripts>
-                    <!--
                     <OnEnter>
 						self:GetParent():LockHighlight();
-						AuctionFrameItem_OnEnter(self, "bidder", self:GetParent():GetID() + FauxScrollFrame_GetOffset(BidScrollFrame));
-					</OnEnter>
+                        <!--AuctionFrameItem_OnEnter(self, "bidder", self:GetParent():GetID() + FauxScrollFrame_GetOffset(BidScrollFrame));-->
+                    </OnEnter>
                     <OnLeave>
-						AuctionBrowseFrame_CheckUnlockHighlight(self, "bidder", FauxScrollFrame_GetOffset(BidScrollFrame));
+                        self:GetParent():UnlockHighlight();
+                        <!--AuctionBrowseFrame_CheckUnlockHighlight(self, "bidder", FauxScrollFrame_GetOffset(BidScrollFrame));-->
 						GameTooltip_Hide();
 						ResetCursor();
-					</OnLeave>
+                    </OnLeave>
+                    <!--
                     <OnClick>
 						if ( IsModifiedClick() ) then
 							if ( not HandleModifiedItemClick(GetAuctionItemLink("bidder", self:GetParent():GetID() + FauxScrollFrame_GetOffset(BidScrollFrame))) ) then
@@ -288,17 +289,16 @@
                     </Layer>
                 </Layers>
                 <Scripts>
-                    <!--
                     <OnEnter>
 						self:GetParent():LockHighlight();
 						GameTooltip:SetOwner(self);
-						GameTooltip:SetText(self.tooltip);
-					</OnEnter>
+                        <!--GameTooltip:SetText(self.tooltip);-->
+                    </OnEnter>
                     <OnLeave>
-						AuctionBrowseFrame_CheckUnlockHighlight(self, "bidder", FauxScrollFrame_GetOffset(BidScrollFrame));
+                        self:GetParent():UnlockHighlight();
+                        <!--AuctionBrowseFrame_CheckUnlockHighlight(self, "bidder", FauxScrollFrame_GetOffset(BidScrollFrame));-->
 						GameTooltip:Hide();
-					</OnLeave>
-                    -->
+                    </OnLeave>
                 </Scripts>
             </Frame>
             <Frame name="$parentUpdateEP" enableMouse="true">
@@ -325,17 +325,16 @@
                     </Layer>
                 </Layers>
                 <Scripts>
-                    <!--
                     <OnEnter>
 						self:GetParent():LockHighlight();
 						GameTooltip:SetOwner(self);
-						GameTooltip:SetText(self.tooltip);
-					</OnEnter>
+                        <!--GameTooltip:SetText(self.tooltip);-->
+                    </OnEnter>
                     <OnLeave>
-						AuctionBrowseFrame_CheckUnlockHighlight(self, "bidder", FauxScrollFrame_GetOffset(BidScrollFrame));
+                        self:GetParent():UnlockHighlight();
+                        <!--AuctionBrowseFrame_CheckUnlockHighlight(self, "bidder", FauxScrollFrame_GetOffset(BidScrollFrame));-->
 						GameTooltip:Hide();
-					</OnLeave>
-                    -->
+                    </OnLeave>
                 </Scripts>
             </Frame>
             <Frame name="$parentBuyout">
