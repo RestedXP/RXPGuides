@@ -2515,6 +2515,7 @@ step
     #optional
     .goto 1439,35.743,43.710
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cerellean Whiteclaw|r
+    >>|cRXP_WARN_You may need to wait out his RP if someone else just turned in|r
     .turnin 963 >> Turn in For Love Eternal
     .target Cerellean Whiteclaw
     .isQuestComplete 963
@@ -3689,18 +3690,20 @@ step
 --  .goto Darkshore,32.17,82.92,45,0
 --  .goto Darkshore,33.85,80.92,45,0
 --  .goto Darkshore,35.03,72.19
-    >>Kill |cRXP_ENEMY_Encrusted Tide Crawlers|r and |cRXP_ENEMY_Reef Crawlers|r. Loot them for their |cRXP_LOOT_Crab Chunks|r
-    >>|cRXP_WARN_You don't have to complete this now|r
+    >>Kill |cRXP_ENEMY_Encrusted Tide Crawlers|r and |cRXP_ENEMY_Reef Crawlers|r. Loot them for their |cRXP_LOOT_Fine Crab Chunks|r
     .complete 1138,1 -- Fine Crab Chunks (6)
     .mob Reef Crawler
     .mob Encrusted Tide Crawler
 step
     #label Murk
+    .goto 1439,35.429,76.566,0
+    .goto 1439,35.429,76.566,60,0
     .goto Darkshore,36.64,76.53
-    >>Kill |cRXP_ENEMY_Greymist Warriors|r and |cRXP_ENEMY_Greymist Hunters|r at the camp
-    >>|cRXP_WARN_Move to the Bonfire in the center of the camp to summon|r |cRXP_ENEMY_Murkdeep|r
-    >>Kill |cRXP_ENEMY_Murkdeep|r. He will run in from the water
-    .complete 4740,1
+    >>|cRXP_WARN_Make sure you check if |cRXP_ENEMY_Murkdeep|r is already up in the water (if someone has previously failed the encounter or left the |cRXP_ENEMY_Greymist Hunter|r in the wave that he spawns with alive)|r
+    >>Kill the |cRXP_ENEMY_Greymist Warriors|r and |cRXP_ENEMY_Greymist Hunters|r in the camp
+    >>|cRXP_WARN_Move to the Bonfire in the center of the camp to start the |cRXP_ENEMY_Murkdeep|r encounter:|r
+    >>|cRXP_WARN_3 waves will spawn from the water, each after killing the previous wave: Wave 1 has 3 level 12-13 |cRXP_ENEMY_Greymist Coastrunners|r, Wave 2 has 2 level 15-16 |cRXP_ENEMY_Greymist Warriors|r, and Wave 3 has a level 19 |cRXP_ENEMY_Murkdeep|r and a level 16-17 |cRXP_ENEMY_Greymist Hunter|r. You can move away from the Bonfire to avoid aggroing the next wave|r
+    .complete 4740,1 -- Murkdeep (1)
     .unitscan Murkdeep
     .mob Greymist Warrior
     .mob Greymist Hunter
@@ -3805,23 +3808,31 @@ step
     #optional
     .goto 1439,35.743,43.710
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cerellean Whiteclaw|r
+    >>|cRXP_WARN_You may need to wait out his RP if someone else just turned in|r
     .turnin 963 >> Turn in For Love Eternal
     .target Cerellean Whiteclaw
     .isQuestComplete 963
 step
+    #optional
+    #completewith CleansingTharnariun
+    .abandon 963 >> Abandon For Love Eternal
+step
+    #xprate >1.49
     .goto 1439,36.701,45.122,8,0
     .goto 1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .turnin 4728 >> Turn in Beached Sea Creature
     .target Gwennyth Bly'Leggonde
 step
+    #xprate <1.5
     .goto 1439,36.701,45.122,8,0
     .goto 1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
-    .turnin -4730 >> Turn in Beached Sea Creature
-    .turnin -4731 >> Turn in Beached Sea Turtle
-    .turnin -4732 >> Turn in Beached Sea Turtle << Hunter
-    .turnin -4733 >> Turn in Beached Sea Creature << Hunter
+    .turnin 4728 >> Turn in Beached Sea Creature
+    .turnin 4730 >> Turn in Beached Sea Creature
+    .turnin 4731 >> Turn in Beached Sea Turtle
+    .turnin 4732 >> Turn in Beached Sea Turtle << Hunter
+    .turnin 4733 >> Turn in Beached Sea Creature << Hunter
     .target Gwennyth Bly'Leggonde
 step
     #optional
@@ -4580,7 +4591,7 @@ step << Druid
 
 
 
-step << !NightElf Warrior/Paladin
+step << Warrior/Paladin
     #xprate >1.59
     #ah
     .goto Darkshore,32.44,43.71
@@ -4592,7 +4603,7 @@ step << !NightElf Warrior/Paladin
     .zoneskip Stormwind City
     .zoneskip Westfall
     .dungeon !DM
-step << !NightElf Warrior/Paladin/Mage/Warlock
+step << Warrior/Paladin/Mage/Warlock/Rogue
     #xprate >1.59
     #ssf << Paladin/Warrior
     .goto Darkshore,32.44,43.71
@@ -4603,7 +4614,7 @@ step << !NightElf Warrior/Paladin/Mage/Warlock
     .zoneskip Stormwind City
     .zoneskip Westfall
     .dungeon !DM
-step << !NightElf Warrior/Paladin
+step << Warrior/Paladin
     #ah
     #xprate >1.59
     #optional
@@ -4612,6 +4623,7 @@ step << !NightElf Warrior/Paladin
     .goto 1437,11.435,59.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brak Durnad|r in Menethil Harbor
     .vendor 1441 >>|cRXP_BUY_Buy a|r |T135329:0|t[Executioner's Sword] |cRXP_BUY_from him (if its up and you can afford it)|r
+    >>|cRXP_WARN_If there isn't one, don't worry as you'll be going to the AH later|r
     .collect 4818,1,2040,1 --Collect Executioner's Sword (1)
     .disablecheckbox
     .target Brak Durnad
@@ -4620,7 +4632,7 @@ step << !NightElf Warrior/Paladin
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8
     .itemcount 4818,<1 --Executioner's Sword (<1)
     .dungeon !DM
-step << !NightElf Warrior/Paladin
+step << Warrior/Paladin
     #ssf
     #xprate >1.59
     .goto 1437,11.579,59.540,6,0
@@ -4655,7 +4667,7 @@ step << !NightElf Warrior/Paladin
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8
     .xp <21,1
     .dungeon !DM
-step << !NightElf Warrior/Paladin/Mage/Warlock
+step << !NightElf Warrior/Paladin/Mage/Warlock/!NightElf Rogue
     #xprate >1.59
     .goto Wetlands,9.490,59.694
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei Brondir|r
@@ -4666,7 +4678,229 @@ step << !NightElf Warrior/Paladin/Mage/Warlock
     .zoneskip Stormwind City
     .zoneskip Westfall
     .dungeon !DM
-step << !NightElf Warrior/Paladin/Mage/Warlock
+step << NightElf Warrior/NightElf Rogue
+    #xprate >1.59
+    .goto Wetlands,9.490,59.694
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei Brondir|r
+    .fp Menethil Harbor >> Get the Menethil Harbor flight path
+    .target Shellei Brondir
+    .dungeon !DM
+step << NightElf Warrior/NightElf Rogue
+    #xprate >1.59
+    #optional
+    #completewith next
+    .goto Wetlands,5.485,64.156,40 >> Jump off the end of the dock and swim to the waypoint
+    .zoneskip Elwynn Forest
+    .zoneskip Stormwind City
+    .zoneskip Ironforge
+    .zoneskip Westfall
+    .dungeon !DM
+step << NightElf Warrior/NightElf Rogue
+    #xprate >1.59
+    .goto Wetlands,2.433,78.689,-1
+    .goto Ironforge,17.089,83.373,-1
+    .zone Ironforge >>Use the character unstuck self service feature to skip to Ironforge. You will have to log off at the spot, then navigate to the help menu on another character (alternatively, paste the unstuck link below into your browser), then scroll down to self service. Click on your character and move. If you can't unstuck then skip this step and swim along the mountains to Westfall
+    .link https://www.youtube.com/watch?v=oVoxsr4zcg4 >> Click here for video reference
+    .link https://us.battle.net/support/en/help/product/wow/197/834/solution >> Click here for the unstuck link
+    .subzoneskip 809 --IF Gates
+    .subzoneskip 2257 --Deeprun Tram
+    .zoneskip Elwynn Forest
+    .zoneskip Stormwind City
+    .zoneskip Ironforge
+    .zoneskip Westfall
+    .dungeon !DM
+
+
+
+
+----Start of NE Warrior and Rogue 2x No Deadmines swim to Westfall Alternative section----  
+
+
+
+step << NightElf Warrior/NightElf Rogue
+    #xprate >1.59
+    #optional
+    .goto 1415,44.720,49.200,60,0 -- Wetlands to Westfall Swim
+    .goto 1415,43.162,49.946,60,0
+    .goto 1415,42.564,50.884,20,0
+    .goto 1415,42.363,50.812,20,0
+    .goto 1415,41.682,50.232,20,0
+    .goto 1415,40.959,50.142,20,0
+    .goto 1415,39.818,51.078,20,0
+    .goto 1415,39.778,51.615,30,0
+    .goto 1415,39.505,52.636,30,0
+    .goto 1415,40.160,54.451,20,0
+    .goto 1415,40.505,54.507,20,0
+    .goto 1415,41.370,57.126,40,0
+    .goto 1415,41.988,59.434,30,0
+    .goto 1415,41.342,61.214,30,0
+    .goto 1415,41.309,61.938,20,0
+    .goto 1415,40.545,64.111,30,0
+    .goto 1415,41.066,65.878,20,0
+    .goto 1415,41.349,66.265,30,0
+    .goto 1415,41.363,66.995,30,0
+    .goto 1415,41.625,67.689,30,0
+    .goto StormwindClassic,4.493,29.157,20,0
+    .goto StormwindClassic,10.336,40.166,10,0
+    .goto StormwindClassic,7,45.471,10,0
+    .goto StormwindClassic,5.560,50.125,10,0
+    .goto StormwindClassic,13.669,74.499,20,0
+    .goto Westfall,42.024,70.980
+    .zone Westfall >> If the website unstuck is not available, swim to Westfall
+    .zoneskip Ironforge
+    .subzoneskip 809--IF Gates
+    .subzoneskip 2257--Deeprun Tram
+    .zoneskip Stormwind City
+    .dungeon !DM
+step << NightElf Warrior/NightElf Rogue
+    #xprate >1.59
+    #optional
+    #completewith next
+    .goto Westfall,54.28,9.26,100,0
+    .goto Westfall,56.55,52.64,100 >> Run up the shore and make your way to Sentinel Hill
+    .zoneskip Ironforge
+    .subzoneskip 809
+    .subzoneskip 2257
+    .zoneskip Stormwind City
+    .dungeon !DM
+step << NightElf Warrior/NightElf Rogue
+    #xprate >1.59
+    #optional
+    .goto Westfall,56.55,52.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
+    .fp Sentinel Hill >> Get the Sentinel Hill flight path
+    .target Thor
+    .zoneskip Ironforge --Skips if you didn't swim from Wetlands
+    .subzoneskip 809
+    .subzoneskip 2257
+    .zoneskip Stormwind City
+    .dungeon !DM
+step << NightElf Rogue
+    #xprate >1.59
+    #optional
+    .goto Westfall,56.33,47.52
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .accept 65 >> Accept The Defias Brotherhood
+    .target Gryan Stoutmantle
+    .zoneskip Westfall,1
+    .dungeon !DM
+step << NightElf Warrior/NightElf Rogue
+    #xprate >1.59
+    #optional
+    .goto Elwynn Forest,36.809,72.429,100,0
+    .goto StormwindClassic,69.961,86.583
+    .zone Stormwind City >> Run to Stormwind
+    .zoneskip Ironforge
+    .subzoneskip 809
+    .subzoneskip 2257
+    .dungeon !DM
+
+
+
+
+----End of NE Warrior Rogue 2x No Deadmines swim to Westfall Alternative section----
+
+
+
+step << NightElf Warrior
+    #xprate >1.59
+    #optional
+    .goto Ironforge,61.177,89.508
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Buliwyf Stonehand|r inside
+    .train 197 >> Train 2h Axes
+    .train 199 >> Train 2h Maces
+    .target Buliwyf Stonehand
+    .zoneskip Wetlands
+    .zoneskip Elwynn Forest
+    .zoneskip Stormwind City
+    .zoneskip Westfall
+    .dungeon !DM
+step << NightElf Warrior
+    #xprate >1.59
+    #optional
+    .goto 1455,62.378,88.671
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r downstairs
+    >>|cRXP_BUY_Buy the|r |T135425:0|t[Keen Throwing Knives] |cRXP_BUY_from her|r
+    .collect 3107,1 --Collect Keen Throwing Knife (200)
+    .target Brenwyn Wintersteel
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
+    .zoneskip Wetlands
+    .zoneskip Elwynn Forest
+    .zoneskip Stormwind City
+    .zoneskip Westfall
+    .dungeon !DM
+step << Paladin/Warrior
+    #xprate >1.59
+    #ah
+    #optional << NightElf
+    .goto 1455,62.378,88.671
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r downstairs
+    >>|cRXP_BUY_Buy a|r |T135280:0|t[Dacian Falx] |cRXP_BUY_from her or check the Auction House for something better/cheaper|r
+    .collect 922,1,2040,1 --Collect Dacian Falx (1)
+    .target Brenwyn Wintersteel
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.0 --Arbitrary number lower than Falx/Exe
+    .train 202,3 << NightElf Warrior --2h swords trained
+    .dungeon !DM
+step << Paladin/Warrior
+    #xprate >1.59
+    #optional
+    +|cRXP_WARN_Equip the|r |T135280:0|t[Dacian Falx]
+    .use 922
+    .itemcount 922,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8
+    .xp <21,1
+    .dungeon !DM
+step << NightElf Warrior
+    #xprate >1.59
+    #optional << NightElf
+    #completewith DeeprunDM
+    +|cRXP_WARN_Equip the|r |T135425:0|t[Keen Throwing Knives]
+    .use 3107
+    .itemcount 3107,1
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
+    .zoneskip Wetlands
+    .zoneskip Elwynn Forest
+    .zoneskip Stormwind City
+    .zoneskip Westfall
+    .dungeon !DM
+step << Warrior
+    #xprate >1.59
+    #optional
+    #completewith next
+    .goto 1455,67.400,84.909,15,0
+    .goto Ironforge,65.905,88.405,12 >> Travel toward |cRXP_FRIENDLY_Bilban Tosslespanner|r
+    .zoneskip Darkshore
+    .zoneskip Elwynn Forest
+    .zoneskip Stormwind City
+    .zoneskip Westfall
+    .train 202,3 << NightElf Warrior --2h swords trained
+    .dungeon !DM
+step << Warrior
+    #xprate >1.59
+    #optional << NightElf
+    .goto Ironforge,65.905,88.405
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bilban Tosslespanner|r
+    .trainer >> Train your class spells
+    .target Bilban Tosslespanner
+    .zoneskip Darkshore
+    .zoneskip Elwynn Forest
+    .zoneskip Stormwind City
+    .zoneskip Westfall
+    .train 202,3 << NightElf Warrior --2h swords trained
+    .dungeon !DM
+step << NightElf Warrior/NightElf Rogue
+    #xprate >1.59
+    .goto Ironforge,55.491,47.751
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
+    .fp Ironforge >> Get the Ironforge flight path
+    .target Gryth Thurden
+    .zoneskip Wetlands
+    .zoneskip Elwynn Forest
+    .zoneskip Stormwind City
+    .zoneskip Westfall
+    .dungeon !DM
+step << Warrior/Paladin/Mage/Warlock/Rogue
     #xprate >1.59
     #optional
     .goto Ironforge,50.826,5.613
@@ -4679,7 +4913,7 @@ step << !NightElf Warrior/Paladin/Mage/Warlock
     .zoneskip Stormwind City
     .zoneskip Westfall
     .dungeon !DM
-step << !NightElf Warrior/Paladin/Mage/Warlock
+step << Warrior/Paladin/Mage/Warlock/Rogue
     #xprate >1.59
     .goto Ironforge,50.826,5.613
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gerrig Bonegrip|r inside
@@ -4732,18 +4966,17 @@ step << Paladin
     .target Brandur Ironhammer
     .zoneskip Darkshore
     .dungeon !DM
-step << Mage/Paladin
+step << Mage
     #xprate >1.59
     #optional
     #completewith DeeprunNoDM
     .goto 1455,27.611,8.074
     .goto 1455,76.414,51.226,20 >>|cRXP_WARN_Jump on top of the pillar above |cRXP_FRIENDLY_Bink|r, then walk slightly east of her onto the arrow position. Position your character until it looks like they're floating, then perform a Logout Skip by logging out and back in|r
-    .zoneskip Darkshore << Paladin
     .zoneskip Elwynn Forest
     .zoneskip Stormwind City
     .zoneskip Westfall
     .dungeon !DM
-step << !NightElf Warrior/Warlock
+step << NightElf Warrior/Warlock/Rogue
     #xprate >1.59
     #optional
     #completewith next
@@ -4753,8 +4986,9 @@ step << !NightElf Warrior/Warlock
     .zoneskip Stormwind City
     .zoneskip Westfall
     .isQuestTurnedIn 968
+    .train 202,1 << Warrior --2h swords not trained
     .dungeon !DM
-step << !NightElf Warrior/Warlock
+step << NightElf Warrior/Warlock/Rogue
     #xprate >1.59
     #optional
     #completewith DeeprunNoDM
@@ -4765,8 +4999,9 @@ step << !NightElf Warrior/Warlock
     .zoneskip Stormwind City
     .zoneskip Westfall
     .isQuestTurnedIn 968
+    .train 202,1 << Warrior --2h swords not trained
     .dungeon !DM
-step << !NightElf Warrior/Warlock
+step << NightElf Warrior/Warlock/Rogue
     #xprate >1.59
     #optional
     #completewith DeeprunNoDM
@@ -4777,8 +5012,9 @@ step << !NightElf Warrior/Warlock
     .zoneskip Stormwind City
     .zoneskip Westfall
     .isQuestAvailable 968
+    .train 202,1 << Warrior --2h swords not trained
     .dungeon !DM
-step << !NightElf Warrior/Paladin/Mage/Warlock
+step << NightElf Warrior/Mage/Warlock/Rogue
     #xprate >1.59
     #requires MilstaffNoDM << Mage
     .goto 1455,67.842,42.456
@@ -4786,54 +5022,57 @@ step << !NightElf Warrior/Paladin/Mage/Warlock
     .vendor 5175 >> |cRXP_BUY_Buy a|r |T133024:0|t[Bronze Tube] |cRXP_BUY_from him (if it's up)|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .target Gearcutter Cogspinner
-    .zoneskip Darkshore << Warrior/Paladin
+    .zoneskip Darkshore << Warrior
     .zoneskip Elwynn Forest
     .zoneskip Stormwind City
     .zoneskip Westfall
     .subzoneskip 2257
     .bronzetube
+    .train 202,1 << Warrior --2h swords not trained
     .dungeon !DM
-step << !NightElf Warrior/Paladin/Mage/Warlock
+step << NightElf Warrior/Mage/Warlock/Rogue
     #xprate >1.59
     #requires MilstaffNoDM << Mage
     #label DeeprunNoDM
     .goto Ironforge,78.00,51.40
     .subzone 2257 >>Enter the Deeprun Tram
-    .zoneskip Darkshore << Warrior/Paladin
+    .zoneskip Darkshore << Warrior
     .zoneskip Elwynn Forest
     .zoneskip Stormwind City
     .zoneskip Westfall
+    .train 202,1 << Warrior --2h swords not trained
     .dungeon !DM
-step << !NightElf Warrior/Paladin/Mage/Warlock
+step << NightElf Warrior/Mage/Warlock/Rogue
     #xprate >1.59
-    #completewith ShoniAccept
+    #completewith WepTrainNoDM << !Warrior
     >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_if needed while on the Tram|r
     >>|cRXP_WARN_You will need your|r |T135966:0|t[First Aid] |cRXP_WARN_to be 80+ for a quest later|r << Rogue !Dwarf
     .zone Stormwind City >> Take the Deeprun Tram to Stormwind
-    .zoneskip Darkshore << Warrior/Paladin
+    .zoneskip Darkshore << Warrior
     .zoneskip Elwynn Forest
     .zoneskip Westfall
+    .train 202,1 << Warrior --2h swords not trained
     .dungeon !DM
-step << !NightElf Warrior/Paladin/Mage/Warlock
+step << NightElf Warrior/Mage/Warlock/Rogue
     #xprate >1.59
     .goto StormwindClassic,55.21,7.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Billibub Cogspinner|r
     .vendor 5519 >> |cRXP_BUY_Buy a|r |T133024:0|t[Bronze Tube] |cRXP_BUY_from him (if its up)|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
+    .target Billibub Cogspinner
     .zoneskip Darkshore << Warrior/Paladin
     .bronzetube
-    .target Billibub Cogspinner
+    .train 202,1 << Warrior --2h swords not trained
     .dungeon !DM
-step << Human Warrior/Paladin/Mage/Warlock
+step << Mage/Warlock/Rogue
     #xprate >1.59
     .goto StormwindClassic,58.08,16.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furen Longbeard|r
     .turnin 1338 >> Turn in Stormpike's Order
     .target Furen Longbeard
-    .zoneskip Darkshore << Warrior/Paladin
     .isOnQuest 1338
     .dungeon !DM
-step << !NightElf Warrior
+step << NightElf Warrior
     #xprate >1.59
     #optional
     #completewith next
@@ -4841,37 +5080,522 @@ step << !NightElf Warrior
     .goto 1453,78.011,47.797,15,0
     .goto 1453,80.030,45.591,12 >> Travel toward |cRXP_FRIENDLY_Wu Shen|r inside the Command Center
     .zoneskip Darkshore
+    .zoneskip Ironforge
     .dungeon !DM
-step << !NightElf Warrior
+step << NightElf Warrior
     #xprate >1.59
     .goto 1453,78.673,45.791
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wu Shen|r inside upstairs
     .trainer >> Train your class spells
     .target Wu Shen
     .zoneskip Darkshore
+    .zoneskip Ironforge
     .dungeon !DM
-step << !NightElf Warrior/Paladin
+step << Rogue
+    #xprate >1.59
+    #optional
+    #completewith RogueTrainNoDMEnd
+    .goto StormwindClassic,74.65,52.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne the Night Man|r
+    >>|cRXP_WARN_Train|r |T132282:0|t[Ambush] |cRXP_WARN_if you have spare money and a|r |T135641:0|t[Dagger] |cRXP_WARN_equipped or in your bags. It'll save you time later|r
+    .train 8676 >> Train |T132282:0|t[Ambush]
+    .target Osborne the Night Man
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
+    #optional
+    .goto StormwindClassic,74.65,52.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne the Night Man|r
+    >>|cRXP_WARN_Make sure you train|r |T132320:0|t[Stealth]|cRXP_WARN_,|r |T133644:0|t[Pick Pocket]|cRXP_WARN_, and|r |T136058:0|t[Pick Lock] |cRXP_WARN_as you'll need them later|r
+    .train 1784 >>Train |T132320:0|t[Stealth]
+    .train 921 >>Train |T133644:0|t[Pick Pocket]
+    .train 1804 >> Train |T136058:0|t[Pick Lock]
+    .trainer >> Train your class spells
+    .target Osborne the Night Man
+    .dungeon !DM
+    .train 1784,1
+    .train 921,1
+step << Rogue
+    #xprate >1.59
+    #optional
+    .goto StormwindClassic,74.65,52.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne the Night Man|r
+    >>|cRXP_WARN_Make sure you train|r |T133644:0|t[Pick Pocket]|cRXP_WARN_and|r |T136058:0|t[Pick Lock] |cRXP_WARN_as you'll need them later|r
+    .train 921 >>Train |T133644:0|t[Pick Pocket]
+    .train 1804 >> Train |T136058:0|t[Pick Lock]
+    .trainer >> Train your class spells
+    .target Osborne the Night Man
+    .dungeon !DM
+    .train 921,1
+step << Rogue
+    #xprate >1.59
+    #label RogueTrainNoDMEnd
+    .goto StormwindClassic,74.65,52.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne the Night Man|r
+    >>|cRXP_WARN_Make sure you train|r |T136058:0|t[Pick Lock] |cRXP_WARN_as you'll need it later|r
+    .train 1804 >> Train |T136058:0|t[Pick Lock]
+    .trainer >> Train your class spells
+    .target Osborne the Night Man
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
+    #optional
+    #completewith next
+    .goto 1453,74.799,53.815,15,0
+    .goto 1453,77.290,58.138,12,0
+    .goto 1453,78.466,60.034,12,0
+    .goto 1453,78.560,58.435,6,0
+    .goto 1453,75.754,60.369,12 >> Travel toward |cRXP_FRIENDLY_Renzik "The Shiv"|r and |cRXP_FRIENDLY_Master Mathias Shaw|r inside SI:7 upstairs
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renzik "The Shiv"|r and |cRXP_FRIENDLY_Master Mathias Shaw|r
+    .accept 2281 >> Accept Redridge Rendezvous
+    .goto StormwindClassic,75.76,60.35
+    .target +Renzik "The Shiv"
+    .accept 2360 >> Accept Mathias and the Defias
+    .goto StormwindClassic,75.78,59.84
+    .target +Master Mathias Shaw
+    .dungeon !DM
+step << NightElf Warrior/NightElf Rogue/Mage/Warlock
     #xprate >1.59 << !Hunter
+    #label WepTrainNoDM
     .goto StormwindClassic,57.12,57.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Woo Ping|r
     .train 201 >> Train 1h Swords << Mage/Rogue/Warlock
-    .train 1180 >> Train Daggers << Mage/Druid/Priest
-    .train 202 >> Train 2h Swords << Warrior/Paladin/Hunter
+    .train 1180 >> Train Daggers << Mage
+    .train 202 >> Train 2h Swords << Warrior
     .target Woo Ping
-    .dungeon DM
---XX add NE/Rogue compatibility later
-step << !NightElf Warrior/Paladin
+    .dungeon !DM
+step << NightElf Warrior
+    #xprate >1.59
+    #optional
+    #completewith NoDMStockadeEnd
+    +|cRXP_WARN_Equip the|r |T135329:0|t[Executioner's Sword]
+    .use 4818
+    .itemcount 4818,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8
+    .dungeon !DM
+step << NightElf Warrior
     #xprate >1.59
     #ah
     #optional
-    #completewith next
-    .goto Stormwind City,53.612,59.764,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r inside
-    >>|cRXP_BUY_Buy a better weapon from the Auction House if you can afford it|r
-    .zoneskip Darkshore
+    .goto StormwindClassic,57.38,56.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r inside
+    >>|cRXP_BUY_Buy a|r |T135280:0|t[Dacian Falx] |cRXP_BUY_from her or check the Auction House for something better/cheaper|r
+    .collect 922,1,2040,1 --Collect Dacian Falx (1)
+    .target Marda Weller
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.0 --Arbitrary number lower than Falx/Exe
+    .zoneskip Stormwind City,1
     .dungeon !DM
+step << NightElf Warrior
+    #xprate >1.59
+    #optional
+    +|cRXP_WARN_Equip the|r |T135280:0|t[Dacian Falx]
+    .use 922
+    .itemcount 922,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8
+    .xp <21,1
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
+    #ah
+    .goto StormwindClassic,57.38,56.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r inside
+    >>|cRXP_BUY_Buy a|r |T135324:0|t[Longsword] |cRXP_BUY_from her or check the Auction House for something better/cheaper|r
+    .collect 923,1 --Longsword (1)
+    .target Marda Weller
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.2
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
+    #ssf
+    .goto StormwindClassic,57.38,56.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
+    >>|cRXP_WARN_Buy a|r |T135324:0|t[Longsword] |cRXP_BUY_from her if you can afford it|r
+    .collect 923,1 --Longsword (1)
+    .target Marda Weller
+    .money <0.8743
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.2
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
+    #optional
+    #completewith NoDMStockadeEnd
+    +|cRXP_WARN_Equip the|r |T135324:0|t[Longsword]
+    .use 923
+    .itemcount 923,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.19
+    .xp <21,1
+    .dungeon !DM
+
+
+
+----Start of 2x Non-Deadmines Rogue Class q section----
+
+
+
+step << Rogue
+    #xprate >1.59
+    #ah
+    .goto Stormwind City,53.612,59.764
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
+    >>Buy the |T134437:0|t[Anti-Venom] for your |T132290:0|t[Poisons] quest later, and the rest for faster turn ins at Redridge Mountains shortly << !Dwarf
+    >>Buy the following items for faster turn ins at Redridge Mountains shortly << Dwarf
+    >>This will save you time as you won't need to run around looking for mobs to kill. Skip this step if you wish to not buy any
+    >>|T134437:0|t[Anti-Venom] << !Dwarf
+    >>|T134172:0|t[Great Goretusk Snout]
+    >>|T134028:0|t[Tough Condor Meat]
+    >>|T134321:0|t[Crisp Spider Meat]
+    .collect 6452,1,2359,1 << !Dwarf --Anti-Venom (1)
+    .collect 2296,5,92,1 -- Great Goretusk Snout (5)
+    .collect 1080,5,92,1 -- Tough Condor Meat (5)
+    .collect 1081,5,92,1 -- Crisp Spider Meat (5)
+    .target Auctioneer Jaxon
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
+    #completewith GryanAll << Human
+    #optional << Human
+    .goto StormwindClassic,57.816,58.331,30,0
+    .goto StormwindClassic,63.301,62.103,30,0
+    .goto StormwindClassic,63.047,65.744,15,0
+    .goto StormwindClassic,66.276,62.135
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
+    .fp Stormwind >> Get the Stormwind City flight path << !Human
+    .fly Westfall >> Fly to Westfall << Human
+    .target Dungar Longdrink
+    .zoneskip Westfall << Human
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
+    #optional
+    #completewith next
+    .zone Westfall >> Travel to Westfall
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
+    #label GryanAll << Human
+    .goto Westfall,56.33,47.52
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .accept 65 >> Accept The Defias Brotherhood
+    .target Gryan Stoutmantle
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
+    .goto Westfall,56.55,52.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
+    .fp Sentinel Hill >> Get the Sentinel Hill flight path << !Human
+    .fly Redridge >> Fly to Redridge Mountains << Human
+    .target Thor
+    .dungeon !DM
+step << Human Rogue
+    #xprate >1.59
+    #optional
+    #completewith WileyStart
+    .goto StormwindClassic,57.816,58.331,30,0
+    .goto StormwindClassic,63.301,62.103,30,0
+    .goto StormwindClassic,63.047,65.744,15,0
+    .goto StormwindClassic,66.276,62.135
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
+    .fly Redridge >> Fly to Redridge Mountains
+    .target Dungar Longdrink
+    .zoneskip Stormwind City,1
+    .isOnQuest 65
+    .dungeon !DM
+step << !Human Rogue
+    #xprate >1.59
+    #optional
+    #completewith WileyStart
+    .goto Redridge Mountains,15.27,71.45
+    .zone Redridge Mountains >> Travel to Redridge Mountains
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59 << !Hunter
+    #optional
+    .goto Redridge Mountains,22.67,43.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Breanna|r inside
+    .accept 92 >> Accept Redridge Goulash
+    .turnin 92 >> Turn in Redridge Goulash
+    .itemcount 2296,5 -- Great Goretusk Snout (5)
+    .itemcount 1080,5 -- Tough Condor Meat (5)
+    .itemcount 1081,5 -- Crisp Spider Meat (5)
+    .target Chef Breanna
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
+    #label WileyStart
+    .goto Redridge Mountains,27.35,44.07,8,0
+    .goto Redridge Mountains,26.48,45.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wiley the Black|r inside upstairs
+    .turnin 65 >> Turn in The Defias Brotherhood
+    .accept 132 >> Accept The Defias Brotherhood
+	.target Wiley the Black
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
+    #label Rendevous
+    .goto Redridge Mountains,28.07,52.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lucius|r
+    .turnin 2281 >> Turn in Redridge Rendevous
+    .accept 2282 >> Accept Alther's Mill
+    .target Lucius
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
+    .goto 1433,51.846,45.116
+    >>|cRXP_WARN_You MUST do this for your|r |T132290:0|t[Poisons] |cRXP_WARN_quest later|r
+    >>|cRXP_WARN_Stand on the waypoint location. Position your camera and cursor until you can click 3 |cRXP_PICK_Practice Lockboxes|r at once without having to move anything|r
+    .skill lockpicking,80 >>|cRXP_WARN_Open the |cRXP_PICK_Practice Lockboxes|r on the ground in Alther's Mill until your|r |T136058:0|t[Lockpicking] skill is 80|r
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
+	.goto Redridge Mountains,52.05,44.69
+    >>Open |cRXP_PICK_Lucius's Lockbox|r. Loot it for the |cRXP_LOOT_Token of Thievery|r
+    .complete 2282,1 --Token of Thievery (1)
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
+    .goto Redridge Mountains,28.07,52.02
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lucius|r
+    .turnin 2282 >> Turn in Alther's Mill
+    .target Lucius
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
+    #optional
+    #completewith DefiasWestfall2
+    .destroy 7907 >> Delete the |T134328:0|t[Certificate of Thievery] from your bags, as it's no longer needed
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
+    #completewith next
+    .goto Redridge Mountains,30.59,59.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
+    .fp Redridge Mountains >> Get the Redridge Mountains flight path << !Human
+    .fly Westfall >> Fly to Westfall
+    .target Ariena Stormfeather
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
+    #label DefiasWestfall2
+    .goto Westfall,56.325,47.519
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .turnin 132 >> Turn in The Defias Brotherhood
+    .accept 135 >> Accept The Defias Brotherhood
+    .target Gryan Stoutmantle
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
+    #optional
+    #completewith KlavenFinish
+    +|cRXP_WARN_Equip the|r |T135324:0|t[Longsword]
+    .use 923
+    .itemcount 923,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.19
+    .xp <21,1
+    .dungeon !DM
+step << !Dwarf Rogue
+    #xprate >1.59
+    .goto Duskwood,15.90,72.10,60,0
+    .goto Duskwood,14.86,64.56,50,0
+    .goto Duskwood,10.43,53.97
+    >>Kill |cRXP_ENEMY_Pygmy Venom Web Spiders|r and |cRXP_ENEMY_Venom Web Spiders|r. Loot them for a |cRXP_LOOT_Small Venom Sac|r and their |cRXP_LOOT_Gooey Spider Legs|r
+    >>|cRXP_WARN_You need a |cRXP_LOOT_Small Venom Sac|r to make an|r |T134437:0|t[Anti-Venom] |cRXP_WARN_later to remove the|r |T136230:0|t[Touch of Zanzil] |cRXP_WARN_debuff later|r
+    >>|cRXP_WARN_Save the |cRXP_LOOT_Gooey Spider Legs|r for later|r
+    >>|cRXP_WARN_If you have a|r |T626003:0|t|cFFF48CBAPaladin|r |cRXP_WARN_or|r |T625999:0|t|cFFFF7C0ADruid|r |cRXP_WARN_friend you can skip this step and ask them to remove it for you later|r
+    .collect 1475,1,2359,1 -- Small Venom Sac (1)
+    .collect 2251,6,93,1,1 -- Gooey Spider Legs (6)
+    .disablecheckbox
+    .mob Pygmy Venom Web Spider
+    .mob Venom Web Spider
+    .itemcount 6452,<1 --Anti Venom (<1)
+    .isQuestAvailable 2359
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
+    #optional
+    #completewith TowerKey
+    +|cRXP_WARN_==PAY ATTENTION TO THE UPCOMING SECTION==|r
+    >>|cRXP_WARN_Press Escape, then go into -> Options -> Controls|r
+    >>|cRXP_WARN_Check "Enable Interact Key" and bind the "Interact with Target" option to a key|r
+    >>|cRXP_WARN_Additionally, it's recommended you enable Enemy Nameplates (Default Key: V) as it allows you to see enemies behind some of the corners inside the tower|r
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
+    .goto Westfall,68.50,70.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Agent Kearnen|r
+    >>|cRXP_WARN_You MUST do this quest your|r |T132290:0|t[Poisons]
+    .turnin 2360 >> Turn in Mathias and the Defias
+    .accept 2359 >> Accept Klaven's Tower
+    .target Agent Kearnen
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
+    #label TowerKey
+    #loop
+    .goto Westfall,71.49,73.49,0
+    .goto Westfall,71.01,75.72,0
+    .goto Westfall,69.58,73.07,0
+    .goto Westfall,71.49,73.49,30,0
+    .goto Westfall,71.01,75.72,30,0
+    .goto Westfall,69.58,73.07,30,0
+    >>|T133644:0|t[Pick Pocket] the |cRXP_ENEMY_Malformed Defias Drone|r. Loot it for the |cRXP_LOOT_Defias Tower Key|r
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    >>|cRXP_WARN_The |cRXP_ENEMY_Malformed Defias Drone|r spawns at the entrance to the tower, then patrols around the outside of it|r
+    >>|cRXP_WARN_Be careful as he deals a LOT of damage. If your|r |T132320:0|t[Stealth] |cRXP_WARN_breaks, quickly use|r |T132307:0|t[Sprint] |cRXP_WARN_and run away|r
+    .complete 2359,2 --Collect Defias Tower Key (x1)
+--QWE   .link >> Click HERE for a video guide
+    .mob Malformed Defias Drone
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
+    #optional
+    #completewith Mortwake
+    +|cRXP_WARN_Equip the|r |T135641:0|t[Curvewood Dagger] |cRXP_WARN_for this quest if you don't already have a|r |T135641:0|t[Dagger] |cRXP_WARN_equipped|r
+    .use 15396
+    .itemcount 15396,1
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
+    #label Mortwake
+    .goto 1436,70.421,74.031
+    >>|cRXP_WARN_Travel up to 2nd top floor of the tower. Whilst in|r |T132320:0|t[Stealth] |cRXP_WARN_and the |cRXP_ENEMY_Defias Tower Sentries|r aren't next to you, Jump onto the chair, then onto the lamp, then onto the bookshelf on top of the waypoint location|r
+    >>|cRXP_WARN_Manually|r |T132320:0|t[Unstealth]|cRXP_WARN_, then press your "Interact with Target" keybind to open the |cRXP_PICK_Duskwood Chest|r. Loot it for|r |cRXP_LOOT_Klaven Mortwake's Journal|r
+    >>|cRXP_WARN_NOTE: Your|r |T132320:0|t[Stealth] |cRXP_WARN_will temporarily stop working after looting|r |cRXP_LOOT_Klaven Mortwake's Journal|r 
+    >>|cRXP_WARN_Be prepared to run if you don't kill the |cRXP_ENEMY_Defias Tower Sentries|r on the 2nd floor. They will most likely aggro you permanently (but not attack you) when you are on top of the bookshelf as it is an evade spot|r
+    >>|cRXP_WARN_If you have a|r |T135641:0|t[Dagger] |cRXP_WARN_in your bags or equipped, you can cast|r |T132282:0|t[Ambush] |cRXP_WARN_on the |cRXP_ENEMY_Defias Tower Patrollers|r and |cRXP_ENEMY_Defias Tower Sentries|r inside to kill them instantly. Be prepared to run after you kill the first |cRXP_ENEMY_Defias Tower Sentry|r and remember you can be hit from above. This is slower, but a LOT safer|r
+    >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Malformed Defias Drone|r and |cRXP_ENEMY_Defias Drones|r can be at the entrance of the tower if you have to run out of it|r
+    .complete 2359,1 --Collect Klaven Mortwake's Journal (x1)
+--QWE   .link >> Click HERE for a video guide
+    .mob Defias Tower Patroller
+    .mob Defias Tower Sentry
+    .dungeon !DM
+step << !Dwarf Rogue
+    #xprate >1.59
+    #sticky
+    #label AntiVenomStart
+    .collect 6452,1 >> Craft an |T134437:0|t[Anti-Venom]
+    .aura -9991
+    .itemcount 6452,<1 --Anti-Venom (<1)
+    .train 7934,3 --Anti Venom spell trained
+    .dungeon !DM
+step << !Dwarf Rogue
+    #xprate >1.59
+    #optional
+    #requires AntiVenomStart
+    #label AntiVenomEnd
+    .cast 7932 >>|cRXP_WARN_Use the |T134437:0|t[Anti-Venom] in your bags to remove the |T136230:0|t[Touch of Zanzil] debuff|r
+    .use 6452
+    .aura -9991
+    .itemcount 6452,1 --Anti-Venom (1)
+    .dungeon !DM
+step << Dwarf Rogue
+    #xprate >1.59
+    #optional
+    #sticky
+    #label AntiVenomEnd2
+    .cast 20594 >>|cRXP_WARN_Cast |T136225:0|t[Stoneform] to remove the |T136230:0|t[Touch of Zanzil] debuff|r
+    .aura -9991
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
+    #optional
+    #completewith KlavenFinish
+    .goto Westfall,56.55,52.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
+    .fly Stormwind >> Fly to Stormwind
+    .target Thor
+    .dungeon !DM
+step << !Dwarf Rogue
+    #xprate >1.59
+    #optional
+    #requires AntiVenomEnd
+    #completewith FirstAidEnd
+    .goto 1453,42.938,33.878,20,0
+    .goto 1453,41.544,31.330,20,0
+    .goto 1453,41.688,28.049,20,0
+    .goto 1453,43.070,26.155,15 >> Travel toward |cRXP_FRIENDLY_Shaina Fuller|r
+    .aura -9991
+    .dungeon !DM
+step << !Dwarf Rogue
+    #xprate >1.59
+    #requires AntiVenomEnd
+    .goto 1453,43.070,26.155
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shaina Fuller|r
+    >>|cRXP_WARN_If you have a|r |T626003:0|t|cFFF48CBAPaladin|r |cRXP_WARN_or|r |T625999:0|t|cFFFF7C0ADruid|r |cRXP_WARN_friend, ask them to remove the|r |T136230:0|t[Touch of Zanzil] |cRXP_WARN_for you instead|r
+    .skill firstaid,80 >> |cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_to 80|r
+    .aura -9991
+    .itemcount 6452,<1 --Anti-Venom (<1)
+    .dungeon !DM
+step << !Dwarf Rogue
+    #xprate >1.59
+    #label FirstAidEnd
+    .goto 1453,43.070,26.155
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shaina Fuller|r
+    >>|cRXP_WARN_If you have a|r |T626003:0|t|cFFF48CBAPaladin|r |cRXP_WARN_or|r |T625999:0|t|cFFFF7C0ADruid|r |cRXP_WARN_friend, ask them to remove the|r |T136230:0|t[Touch of Zanzil] |cRXP_WARN_for you instead|r
+    .train 7934 >> |cRXP_WARN_Train|r |T134437:0|t[Anti-Venom]
+    .aura -9991
+    .itemcount 6452,<1 --Anti-Venom (<1)
+    .dungeon !DM
+step << !Dwarf Rogue
+    #xprate >1.59
+    #sticky
+    #label AntiVenomStart2
+    .collect 6452,1 >> Craft an |T134437:0|t[Anti-Venom]
+    .aura -9991
+    .itemcount 6452,<1 --Anti-Venom (<1)
+    .train 7934,3 --Anti Venom spell trained
+    .dungeon !DM
+step << !Dwarf Rogue
+    #xprate >1.59
+    #sticky
+    #requires AntiVenomStart2
+    #label AntiVenomEnd2
+    .cast 7932 >>|cRXP_WARN_Use the |T134437:0|t[Anti-Venom] in your bags to remove the |T136230:0|t[Touch of Zanzil] debuff|r
+    .use 6452
+    .aura -9991
+    .itemcount 6452,1 --Anti-Venom (1)
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
+    #optional
+    #completewith next
+    .goto StormwindClassic,74.90,54.00,20,0
+    .goto StormwindClassic,78.43,60.15,20,0
+    .goto StormwindClassic,78.67,60.13,10 >> Enter the SI:7 Headquarters. Travel up stairs toward |cRXP_FRIENDLY_Master Mathias Shaw|r
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59 << !Hunter
+    #label KlavenFinish
+    .goto Stormwind City,75.78,59.84
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Mathias Shaw|r
+    >>|cRXP_WARN_Remember to re-equip your main weapon if you switched to a|r |T135641:0|t[Dagger] |cRXP_WARN_earlier|r << Rogue
+    .turnin 135 >> Turn in The Defias Brotherhood
+--  .accept 141 >> Accept The Defias Brotherhood
+    .turnin 2359 >> Turn in Klaven's Tower
+    .target Master Mathias Shaw
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
+    #optional
+    .goto StormwindClassic,74.65,52.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne the Night Man|r
+    .train 1856 >> Train your class spells
+    .target Osborne the Night Man
+    .xp <22,1
+    .dungeon !DM
+
+
+
+
+----End of 2x Non-Deadmines Rogue Class q section----
+
+
+
+
+
 step << Warlock
     #xprate >1.59
     #ah
@@ -4902,7 +5626,7 @@ step << Warlock
 step << Warlock
     #xprate >1.59
     #optional
-    #completewith WileyStart
+    #completewith NoDMStockadeEnd
     +|cRXP_WARN_Equip the|r |T135469:0|t[Dusk Wand]
     .use 5211
     .itemcount 5211,1
@@ -4911,7 +5635,7 @@ step << Warlock
 step << Warlock
     #xprate >1.59
     #optional
-    #completewith WileyStart
+    #completewith NoDMStockadeEnd
     +|cRXP_WARN_Equip the|r |T135144:0|t[Greater Magic Wand]
     .use 11288
     .itemcount 11288,1
@@ -4984,25 +5708,129 @@ step << Mage
     .train 3561 >> Train |T135763:0|t[Teleport: Stormwind]
     .target Larimaine Purdue
     .dungeon !DM
-step << !NightElf Warrior/Paladin/Mage/Warlock
+step << NightElf Warrior/Mage/Warlock/Rogue
     #xprate >1.59
     #era
     #requires Torment2NoDMEnd << Warlock
     .goto StormwindClassic,21.40,55.80
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argos Nightwhisper|r
     .accept 3765 >> Accept The Corruption Abroad
-    .zoneskip Darkshore << Warrior/Paladin
+    .zoneskip Ironforge << Warrior
+    .zoneskip Darkshore << Warrior
     .target Argos Nightwhisper
     .dungeon !DM
-step << !NightElf Warrior/Paladin/Mage/Warlock
+step << NightElf Warrior/NightElf Rogue
     #xprate >1.59
-    .goto StormwindClassic,39.834,54.360
-    >>|cRXP_WARN_Zone into the Stockade in Stormwind|r
-    >>|cRXP_WARN_Once inside:|r
-    .link /run InviteUnit("a");C_Timer.After(1,function() LeaveParty() end) >> |cRXP_WARN_Click here to Copy + Paste this macro into chat to ghetto hearth back to Auberdine|r
-    .zone Darkshore >>|cRXP_WARN_If you are unable to do this, make your way back to Auberdine|r
-    .cooldown item,6948,<0
+    #optional
+    #completewith NEWarRogNoDMIFPP
+    .goto 1453,60.972,11.690,30,0
+    .goto 1453,65.933,5.771
+    .subzone 2257 >>Enter the Deeprun Tram
+    .zoneskip Darkshore
+    .zoneskip Teldrassil
+    .zoneskip Darnassus
+    .zoneskip Ironforge
     .dungeon !DM
+step << NightElf Warrior/NightElf Rogue
+    #xprate >1.59
+    #optional
+    #label NEWarRogNoDMNoFP1
+    #completewith NEWarRogNoDMIFPP
+    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_if needed while on the Tram|r
+    .zone Ironforge >> Take the Deeprun Tram to Ironforge
+    .zoneskip Darkshore
+    .zoneskip Teldrassil
+    .zoneskip Darnassus
+    .dungeon !DM
+step << NightElf Warrior/NightElf Rogue
+    #xprate >1.59
+    #optional
+    #requires NEWarRogNoDMNoFP1
+    #label NEWarRogNoDMNoFP2
+    #completewith NEWarRogNoDMIFPP
+    .goto 1455,67.842,42.456
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gearcutter Cogspinner|r
+    .vendor 5175 >> |cRXP_BUY_Buy a|r |T133024:0|t[Bronze Tube] |cRXP_BUY_from him (if it's up)|r
+--    >>You will need 2 bronze tubes for a quest later << Rogue
+    .target Gearcutter Cogspinner
+    .zoneskip Darkshore
+    .zoneskip Teldrassil
+    .zoneskip Darnassus
+    .bronzetube
+    .dungeon !DM
+step << NightElf Warrior
+    #xprate >1.59
+    #requires NEWarRogNoDMNoFP2
+    #label NEWarRogNoDMNoFP3
+    #completewith NEWarRogNoDMIFPP
+    .goto Ironforge,61.177,89.508
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Buliwyf Stonehand|r inside
+    .train 197 >> Train 2h Axes
+    .train 199 >> Train 2h Maces
+    .target Buliwyf Stonehand
+    .zoneskip Darkshore
+    .zoneskip Teldrassil
+    .zoneskip Darnassus
+    .dungeon !DM
+step << NightElf Warrior
+    #xprate >1.59
+    #requires NEWarRogNoDMNoFP3
+    #label NEWarRogNoDMNoFP4
+    #completewith NEWarRogNoDMIFPP
+    .goto 1455,62.378,88.671
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r downstairs
+    >>|cRXP_BUY_Buy the|r |T135427:0|t[Heavy Throwing Knives] |cRXP_BUY_from her|r
+    .collect 3108,200 --Collect Heavy Throwing Knife (200)
+    .target Brenwyn Wintersteel
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.7
+    .zoneskip Darkshore
+    .zoneskip Teldrassil
+    .zoneskip Darnassus
+    .dungeon !DM
+step << NightElf Warrior
+    #xprate >1.59
+    #requires NEWarRogNoDMNoFP4
+    #label NEWarRogNoDMNoFP5
+    #completewith NEWarRogNoDMIFPP
+    +|cRXP_WARN_Equip the|r |T135427:0|t[Heavy Throwing Knives]
+    .use 3108
+    .itemcount 3108,1
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.7
+    .zoneskip Darkshore
+    .zoneskip Teldrassil
+    .zoneskip Darnassus
+    .dungeon !DM
+step << NightElf Warrior/NightElf Rogue
+    #xprate >1.59
+    #label NEWarRogNoDMIFPP
+    .goto Ironforge,55.491,47.751
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
+    .fp Ironforge >> Get the Ironforge flight path
+    .target Gryth Thurden
+    .zoneskip Darkshore
+    .zoneskip Teldrassil
+    .zoneskip Darnassus
+    .dungeon !DM
+step << NightElf Warrior/NightElf Rogue
+    #xprate >1.59
+    #optional
+    .goto Ironforge,50.826,5.613
+    >>|cRXP_WARN_Use the |T133743:0|t[|cRXP_LOOT_Book: The Powers Below|r] to start the quest|r
+    .accept 968 >> Accept The Powers Below
+    .use 5352
+    .itemcount 5352,1
+    .zoneskip Ironforge,1
+    .dungeon !DM
+step << NightElf Warrior/NightElf Rogue
+    #xprate >1.59
+    .goto Ironforge,50.826,5.613
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gerrig Bonegrip|r inside
+    .turnin 968 >> Turn in The Powers Below
+    .target Gerrig Bonegrip
+    .zoneskip Ironforge,1
+    .isOnQuest 968
+    .dungeon !DM
+    
 
 
 ----End of 2x Non-Deadmines Training/Class q section----
@@ -5010,16 +5838,17 @@ step << !NightElf Warrior/Paladin/Mage/Warlock
 
 
 
-step << !NightElf !Warlock !Mage !Paladin !Druid
+step << !NightElf !Warlock !Mage !Paladin !Druid !Rogue
     #xprate >1.59
     .goto Darkshore,33.17,40.17,40,0
     .goto Darkshore,33.17,40.17,0
     >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_while waiting for the Darnassus boat|r
     .zone Teldrassil >> Take the boat to Darnassus
-    .zoneskip Stormwind City
+    .zoneskip Stormwind City << Warrior
+    .zoneskip Ironforge << Warrior
     .zoneskip Darnassus
-    .dungeon !DM
-step << NightElf !Warlock !Mage !Paladin !Druid
+    .dungeon !DM << !Dwarf/!Hunter
+step << NightElf !Druid !Rogue
     #xprate >1.59
     #optional
     #completwith next
@@ -5027,87 +5856,29 @@ step << NightElf !Warlock !Mage !Paladin !Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caylais Moonfeather|r
     .fly Teldrassil >> Fly to Teldrassil
 	.target Caylais Moonfeather
-    .zoneskip Stormwind City
+    .zoneskip Stormwind City << Warrior
+    .zoneskip Ironforge << Warrior
     .zoneskip Darnassus
+    .zoneskip Teldrassil
     .dungeon !DM
-step << !NightElf !Warlock !Mage !Paladin !Druid
+step << !NightElf !Warlock !Mage !Paladin !Druid !Rogue
     #xprate >1.59
     .goto Teldrassil,58.39,94.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vesprystus|r
     .fp Teldrassil >> Get the Teldrassil Flight Path
     .target Vesprystus
-    .zoneskip Stormwind City
-    .dungeon !DM
-step << NightElf Warrior/!Warlock !Mage !Paladin !Druid
+    .zoneskip Stormwind City << Warrior
+    .zoneskip Ironforge << Warrior
+    .dungeon !DM << !Dwarf/!Hunter
+step << !Warlock !Mage !Paladin !Druid !Rogue
     #xprate >1.59
     #optional
     #completewith DarnTrain
     .goto Teldrassil,55.889,89.456
     .zone Darnassus >> Take the purple portal into Darnassus
-    .zoneskip Stormwind City
-    .dungeon !DM
-step << Rogue
-    #xprate >1.59
-    #label DarnTrain
-    .goto 1457,33.123,16.269,20,0
-    .goto 1457,31.592,17.005,8,0
-    .goto 1457,31.786,18.587,8,0
-    .goto 1457,32.803,18.613,8,0
-    .goto 1457,32.947,17.109,8,0
-    .goto 1457,32.027,16.633,8,0
-    .goto 1457,31.541,17.897,8,0
-    .goto 1457,32.291,19.031,8,0
-    .goto 1457,37.009,21.920
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syurna|r underground
-    .trainer >> Train your class spells
-    .target Syurna
-    .zoneskip Stormwind City
-    .dungeon !DM
-step << NightElf Rogue
-    #xprate >1.59
-    #ah
-    .goto 1457,56.367,51.819,0
-    .goto 1457,58.774,44.495
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariyell Skyshadow|r
-    >>|cRXP_BUY_Buy a|r |T135342:0|t[Kris] |cRXP_BUY_from her or check the Auction House for something better/cheaper|r
-    .collect 2209,1 --Kris (1)
-    .target Ariyell Skyshadow
-    .zoneskip Stormwind City
-    .dungeon !DM
-step << NightElf Rogue
-    #xprate >1.59
-    #ssf
-    .goto 1457,58.774,44.495
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariyell Skyshadow|r
-    >>|cRXP_BUY_Buy a|r |T135342:0|t[Kris] |cRXP_BUY_from her if you can afford it|r
-    .collect 2209,1 --Kris (1)
-    .target Ariyell Skyshadow
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.9
-    .zoneskip Stormwind City
-    .dungeon !DM
-step << Human Rogue/NightElf Warrior
-    #xprate >1.59
-    #ah
-    .goto 1457,56.367,51.819,0
-    .goto 1457,58.774,44.495
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariyell Skyshadow|r
-    >>|cRXP_BUY_Buy a|r |T135324:0|t[Longsword] |cRXP_BUY_from her or check the Auction House for something better/cheaper|r
-    .collect 923,1 --Longsword (1)
-    .target Ariyell Skyshadow
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.2
-    .zoneskip Stormwind City
-    .dungeon !DM
-step << Human Rogue/NightElf Warrior
-    #xprate >1.59
-    #ssf
-    .goto 1457,58.774,44.495
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariyell Skyshadow|r
-    >>|cRXP_BUY_Buy a|r |T135324:0|t[Longsword] |cRXP_BUY_from her if you can afford it|r
-    .collect 923,1 --Longsword (1)
-    .target Ariyell Skyshadow
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.2
-    .zoneskip Stormwind City
-    .dungeon !DM
+    .zoneskip Stormwind City << Warrior
+    .zoneskip Ironforge << Warrior
+    .dungeon !DM << !Dwarf/!Hunter
 step << NightElf Warrior
     #xprate >1.59
     #label DarnTrain
@@ -5116,6 +5887,7 @@ step << NightElf Warrior
     .trainer >> Train your class spells
     .target Arias'ta Bladesinger
     .zoneskip Stormwind City
+    .zoneskip Ironforge
     .dungeon !DM
 step << Priest
     #xprate >1.59
@@ -5124,7 +5896,6 @@ step << Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jandria|r
     .trainer >> Train your class spells
     .target Jandria
-    .zoneskip Stormwind City
     .dungeon !DM
 step << Hunter
     #xprate >1.59
@@ -5132,9 +5903,18 @@ step << Hunter
     #completewith next
     .goto Darnassus,40.38,8.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jocaste|r
-    .trainer >> Train your class spells
+    .train 5118 >> Train your class spells
     .target Jocaste
-    .zoneskip Stormwind City
+    .dungeon !DM
+step << Hunter
+    #xprate >1.59
+    .goto 1457,42.769,9.978,12,0
+    .goto 1457,43.668,7.635,12,0
+    .goto 1457,41.406,6.757,12,0
+    .goto 1457,42.477,9.186
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Silvaria|r upstairs
+    .train 4197 >> Train your pet skills
+    .target Silvaria
     .dungeon !DM
 step << Dwarf Hunter
     #xprate >1.59
@@ -5143,19 +5923,31 @@ step << Dwarf Hunter
     .train 264 >> Train Bows
     .train 227 >> Train Staves
     .target Ilyenia Moonfire
-    .zoneskip Stormwind City
-    .dungeon !DM
+    .dungeon !DM << !Dwarf/!Hunter
 step << Hunter
     #xprate >1.59
+    #ssf
     .goto Darnassus,63.27,66.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Landria|r
-    >>|cRXP_WARN_Buy a|r |T135489:0|t[Heavy Recurve Bow] |cRXP_WARN_and a|r |T134410:0|t[Medium Quiver]
+    >>|cRXP_BUY_Buy a|r |T135489:0|t[Heavy Recurve Bow] |cRXP_BUY_and a|r |T134410:0|t[Medium Quiver] |cRXP_BUY_from her|r
     .collect 3027,1 -- Heavy Recurve Bow (1)
     .collect 11362,1 -- Medium Quiver (1)
     .target Landria
     .money <0.7349
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.20
-    .zoneskip Stormwind City
+    .dungeon !DM
+--LWE
+step << Hunter
+    #xprate >1.59
+    #ah
+    .goto Darnassus,63.27,66.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Landria|r
+    >>|cRXP_BUY_Buy a|r |T135489:0|t[Heavy Recurve Bow] |cRXP_BUY_and a|r |T134410:0|t[Medium Quiver] |cRXP_BUY_from her or check the Auction House for something better/cheaper|r
+    .collect 3027,1 -- Heavy Recurve Bow (1)
+    .collect 11362,1 -- Medium Quiver (1)
+    .target Landria
+    .money <0.7349
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.20
     .dungeon !DM
 step << Hunter
     #xprate >1.59
@@ -5164,9 +5956,8 @@ step << Hunter
     .turnin 741 >> Turn in The Absent Minded Prospector
     .accept 942 >> Accept The Absent Minded Prospector
     .target Chief Archaeologist Greywhisker
-    .zoneskip Stormwind City
     .isQuestComplete 741
-    .dungeon !DM
+    .dungeon !DM << !Dwarf/!Hunter
 step << Hunter
     #xprate >1.59
     #optional
@@ -5174,21 +5965,98 @@ step << Hunter
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Archaeologist Greywhisker|r
     .accept 942 >> Accept The Absent Minded Prospector
     .target Chief Archaeologist Greywhisker
-    .zoneskip Stormwind City
     .isQuestTurnedIn 741
+    .dungeon !DM << !Dwarf/!Hunter
+
+
+
+
+----Start of 2x no DM Return to Darkshore Steps----
+
+
+
+step << !Warlock !Mage !Paladin !Druid !Rogue
+    #xprate >1.59
+    #optional
+    #completewith next
+    .goto 1457,29.179,41.180
+    .zone Darnassus >> Take the purple portal to Rut'Theran Village
+    .zoneskip Stormwind City << Warrior
+    .zoneskip Ironforge << Warrior
+    .cooldown item,6948,<0
+    .dungeon !DM << !Dwarf/!Hunter
+step << !Warlock !Mage !Paladin !Druid !Rogue
+    #xprate >1.59
+    .goto Teldrassil,58.39,94.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vesprystus|r
+    .fly Darkshore >> Fly to Darkshore
+    .target Vesprystus
+    .zoneskip Stormwind City << Warrior
+    .zoneskip Ironforge << Warrior
+    .cooldown item,6948,<0
+    .dungeon !DM << !Dwarf/!Hunter
+step << NightElf Warrior/Mage/Warlock/Rogue
+    #xprate >1.59
+    #label NoDMStockadeEnd
+    #requires Torment2NoDMEnd << Warlock
+    .goto StormwindClassic,39.834,54.360
+    >>|cRXP_WARN_Zone into the Stockade in Stormwind|r
+    >>|cRXP_WARN_Once inside:|r
+    .link /run InviteUnit("a");C_Timer.After(1,function() LeaveParty() end) >> |cRXP_WARN_Click here to Copy + Paste this macro into chat to ghetto hearth back to Auberdine|r
+    .zone Darkshore >>|cRXP_WARN_If you are unable to do this, make your way back to Auberdine|r
+    .zoneskip Teldrassil << Warrior
+    .zoneskip Darnassus << Warrior
+    .zoneskip Ironforge
+    .cooldown item,6948,<0
     .dungeon !DM
-step << NightElf Warrior/!Warlock !Mage !Paladin !Druid
+step << Warrior/NightElf Rogue
+    #xprate >1.59
+    #optional
+    #completewith next
+    .goto Ironforge,55.491,47.751
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
+    .fly Menethil >> Fly to Wetlands
+    .zoneskip Ironforge,1
+    .cooldown item,6948,<0
+    .dungeon !DM
+step << Warrior/NightElf Rogue
+    #xprate >1.59
+    #optional
+    .zone Wetlands >> Travel to Menethil Harbor
+    .zoneskip Teldrassil << Warrior
+    .zoneskip Darnassus << Warrior
+    .zoneskip Darkshore << Warrior
+    .zoneskip Elwynn Forest
+    .zoneskip Stormwind City
+    .zoneskip Westfall
+    .cooldown item,6948,<0
+    .dungeon !DM
+step << Warrior/NightElf Rogue
+    #xprate >1.59
+    #optional
+    .goto 1437,4.370,56.762
+    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_while waiting for the Darkshore boat|r
+    .zone Darkshore >> Take the boat to Auberdine
+    .zoneskip Teldrassil << Warrior
+    .zoneskip Darnassus << Warrior
+    .zoneskip Elwynn Forest
+    .zoneskip Stormwind City
+    .zoneskip Westfall
+    .cooldown item,6948,<0
+    .dungeon !DM
+step << !Druid
     #xprate >1.59
     #optional
     #completewith next
     .hs >> Hearth to Auberdine
     .zoneskip Darkshore
     .subzoneskip 442
-    .dungeon !DM
+    .cooldown item,6948,>0,1
+    .dungeon !DM << !Dwarf/!Hunter
 
 
 
-
+----End of 2x no DM Return to Darkshore Steps----
 ----End of 2x Non-Deadmines (Darnassus) training section----
 
 
@@ -5279,7 +6147,7 @@ step << Dwarf Hunter
     #xprate <1.59
     .goto Darnassus,63.27,66.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Landria|r
-    >>|cRXP_WARN_Buy a|r |T135489:0|t[Heavy Recurve Bow] |cRXP_WARN_and a|r |T134410:0|t[Medium Quiver]
+    >>|cRXP_BUY_Buy a|r |T135489:0|t[Heavy Recurve Bow] |cRXP_BUY_and a|r |T134410:0|t[Medium Quiver] |cRXP_BUY_from her|r
     .collect 3027,1 -- Heavy Recurve Bow
     .collect 11362,1 -- Medium Quiver
     .target Landria
@@ -5536,8 +6404,8 @@ step << NightElf
     .zoneskip Stormwind City
     .dungeon DM
 step << NightElf
-    #optional
     #xprate >1.59 << !Hunter
+    #optional
     #completewith next
     .goto Westfall,54.28,9.26,100,0
     .goto Westfall,56.55,52.64,100 >> Run up the shore and make your way to Sentinel Hill
@@ -5547,8 +6415,8 @@ step << NightElf
     .zoneskip Stormwind City
     .dungeon DM
 step << NightElf
-    #optional
     #xprate >1.59 << !Hunter
+    #optional
     .goto Westfall,56.55,52.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
     .fp Sentinel Hill >> Get the Sentinel Hill flight path
@@ -5606,7 +6474,7 @@ step << NightElf Priest
 
 step << NightElf Warrior/NightElf Hunter
     #xprate >1.59 << !Hunter
-    #optional << NightElf
+    #optional
     .goto Ironforge,61.177,89.508
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Buliwyf Stonehand|r inside
     .train 197 >> Train 2h Axes << Warrior
@@ -5620,7 +6488,7 @@ step << NightElf Warrior/NightElf Hunter
     .dungeon DM
 step << NightElf Warrior
     #xprate >1.59
-    #optional << NightElf
+    #optional
     .goto 1455,62.378,88.671
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r downstairs
     >>|cRXP_BUY_Buy the|r |T135425:0|t[Keen Throwing Knives] |cRXP_BUY_from her|r
@@ -5634,7 +6502,7 @@ step << NightElf Warrior
     .dungeon DM
 step << NightElf Warrior
     #xprate >1.59
-    #optional << NightElf
+    #optional 
     #completewith DeeprunDM
     +|cRXP_WARN_Equip the|r |T135425:0|t[Keen Throwing Knives]
     .use 3107
@@ -5896,14 +6764,24 @@ step
     .target Shoni the Shilent
     .dungeon DM
 step << Hunter
-    #xprate >1.59
+--   #xprate >1.59
+    #sticky
+    #label DMPetTrain
+    .goto 1453,61.576,15.998
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karrina Mekenda|r inside
+    .trainer 2879 >> Train your pet spells
+    .target Karrina Mekenda
+    .dungeon DM
+step << Hunter
+--   #xprate >1.59
     .goto StormwindClassic,61.609,15.269
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r inside
-    .trainer >> Train your class spells
+    .trainer 5515 >> Train your class spells
     .target Einris Brightspear
     .dungeon DM
 step
     #xprate >1.59 << !Hunter
+    #requires DMPetTrain << Hunter
     .goto StormwindClassic,65.438,21.175
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r inside
     .accept 167 >> Accept Oh Brother. . .
@@ -6014,7 +6892,7 @@ step << Rogue
     #ah
     .goto StormwindClassic,57.38,56.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r inside
-    >>|cRXP_BUY_Buy a|r |T135324:0|t[Longsword] |cRXP_BUY_from her if you can afford it|r
+    >>|cRXP_BUY_Buy a|r |T135324:0|t[Longsword] |cRXP_BUY_from her or check the Auction House for something better/cheaper|r
     .collect 923,1 --Longsword (1)
     .target Marda Weller
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.2
@@ -6024,7 +6902,7 @@ step << Rogue
     #ssf
     .goto StormwindClassic,57.38,56.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
-    >>|cRXP_WARN_Buy a|r |T135324:0|t[Longsword] |cRXP_BUY_from her or check the Auction House for something better/cheaper|r
+    >>|cRXP_WARN_Buy a|r |T135324:0|t[Longsword] |cRXP_BUY_from her if you can afford it|r
     .collect 923,1 --Longsword (1)
     .target Marda Weller
     .money <0.8743
@@ -6033,7 +6911,7 @@ step << Rogue
 step << Rogue
     #xprate >1.59
     #optional
-    #completewith next
+    #completewith WileyStart
     +|cRXP_WARN_Equip the|r |T135324:0|t[Longsword]
     .use 923
     .itemcount 923,1
@@ -6086,12 +6964,22 @@ step << Paladin/Warrior
     #xprate >1.59
     #ah
     #optional
-    #completewith next
-    .goto Stormwind City,53.612,59.764,0
-    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r inside
-    >>|cRXP_BUY_Buy a better weapon from the Auction House if you can afford it|r
+    .goto StormwindClassic,57.38,56.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r inside
+    >>|cRXP_BUY_Buy a|r |T135280:0|t[Dacian Falx] |cRXP_BUY_from her or check the Auction House for something better/cheaper|r
+    .collect 922,1,2040,1 --Collect Dacian Falx (1)
+    .target Marda Weller
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.0 --Arbitrary number lower than Falx/Exe
+    .dungeon DM
+step << Paladin/Warrior
+    #xprate >1.59
+    #optional
+    +|cRXP_WARN_Equip the|r |T135280:0|t[Dacian Falx]
+    .use 922
+    .itemcount 922,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8
+    .xp <21,1
     .dungeon DM
 step << Warlock/Priest
     #xprate >1.59
@@ -6222,13 +7110,13 @@ step << Druid
     .target Sheldras Moontree
     .dungeon DM
 step << Hunter
-    #xprate >1.59
+--  #xprate >1.59
     #optional
     #completewith next
     .goto 1453,50.929,57.781,10 >>Enter The Empty Quiver inside the middle ring of the Trade District
     .dungeon DM
 step << Hunter
-    #xprate >1.59
+--  #xprate >1.59
     #ssf
     .goto 1453,49.962,57.638
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frederick Stover|r
@@ -6240,11 +7128,11 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.20
     .dungeon DM
 step << Hunter
-    #xprate >1.59
+--  #xprate >1.59
     #ah
     .goto 1453,49.962,57.638
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frederick Stover|r
-    >>|cRXP_BUY_Buy a|r |T135489:0|t[Heavy Recurve Bow] |cRXP_BUY_and a|r |T134410:0|t[Medium Quiver] |cRXP_BUY_from him or check the Auction House for something better/cheaper|r|r
+    >>|cRXP_BUY_Buy a|r |T135489:0|t[Heavy Recurve Bow] |cRXP_BUY_and a|r |T134410:0|t[Medium Quiver] |cRXP_BUY_from him or check the Auction House for something better/cheaper|r
     .collect 3027,1 -- Heavy Recurve Bow (1)
     .collect 11362,1 -- Medium Quiver (1)
     .target Landria
@@ -6358,7 +7246,7 @@ step
     #xprate >1.59 << !Hunter
     #optional
     .goto Redridge Mountains,22.67,43.83
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Breanna|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Breanna|r inside
     .accept 92 >> Accept Redridge Goulash
     .turnin 92 >> Turn in Redridge Goulash
     .itemcount 2296,5 -- Great Goretusk Snout (5)
@@ -9282,6 +10170,62 @@ step
     .isOnQuest 3765
     .dungeon DM
 step
+    #xprate >1.49
+    #optional
+    #completewith next
+    >>Kill |cRXP_ENEMY_Encrusted Tide Crawlers|r and |cRXP_ENEMY_Reef Crawlers|r. Loot them for their |cRXP_LOOT_Fine Crab Chunks|r
+    .complete 1138,1 -- Fine Crab Chunks (6)
+    .mob Encrusted Tide Crawler
+    .mob Reef Crawler
+step
+    #xprate >1.49
+    .goto 1439,32.644,80.711
+    >>Click the |cRXP_PICK_Beached Sea Creature|r
+    .accept 4730 >> Accept Beached Sea Creature
+step
+    #xprate >1.49
+    #optional
+    #completewith next
+    >>Kill |cRXP_ENEMY_Encrusted Tide Crawlers|r. Loot them for their |cRXP_LOOT_Fine Crab Chunks|r
+    .complete 1138,1 -- Fine Crab Chunks (6)
+    .mob Encrusted Tide Crawler
+step
+    #xprate >1.49
+    .goto 1439,31.690,83.700
+    >>Click the |cRXP_PICK_Beached Sea Turtle|r
+    .accept 4731 >> Accept Beached Sea Turtle
+step
+    #xprate >1.49
+    #loop
+    .goto 1439,32.674,81.752,0
+    .goto 1439,36.327,73.408,0
+    .goto 1439,35.195,71.864,0
+    .goto 1439,32.674,81.752,60,0
+    .goto 1439,33.284,80.330,60,0
+    .goto 1439,34.174,80.488,60,0
+    .goto 1439,35.432,79.052,60,0
+    .goto 1439,36.327,73.408,60,0
+    .goto 1439,35.412,73.176,60,0
+    .goto 1439,35.033,72.432,60,0
+    .goto 1439,35.195,71.864,60,0
+    >>Kill |cRXP_ENEMY_Encrusted Tide Crawlers|r and |cRXP_ENEMY_Reef Crawlers|r. Loot them for their |cRXP_LOOT_Fine Crab Chunks|r
+    .complete 1138,1 -- Fine Crab Chunks (6)
+    .mob Encrusted Tide Crawler
+    .mob Reef Crawler
+step
+    #xprate >1.49
+    .goto 1439,31.229,85.564
+    >>Click the |cRXP_PICK_Beached Sea Turtle|r
+    .accept 4732 >> Accept Beached Sea Turtle
+step
+    #xprate >1.49
+    #label SeaCreatureEnd
+    .goto 1439,31.251,87.419
+    >>Click the |cRXP_PICK_Beached Sea Creature|r
+    .accept 4733 >> Accept Beached Sea Creature
+    >>|cRXP_WARN_This quest can be VERY difficult. Engage the |cRXP_ENEMY_Murlocs|r 1 by 1, otherwise you may agro multiple at the same time|r
+    .link https://www.twitch.tv/videos/992307825?t=05h48m36s >> |cRXP_WARN_Click here for a video guide|r
+step
     #sticky
     #label prospector
     .goto 1439,35.724,83.696
@@ -9328,6 +10272,7 @@ step
     .isOnQuest 945
 step
     #xprate <1.5
+    #optional
     .goto 1439,31.251,87.419
     >>Click the |cRXP_PICK_Beached Sea Creature|r
     .accept 4733 >> Accept Beached Sea Creature
@@ -9335,21 +10280,24 @@ step
     .link https://www.twitch.tv/videos/992307825?t=05h48m36s >> |cRXP_WARN_Click here for a video guide|r
 step
     #xprate <1.5
+    #optional
     .goto 1439,31.229,85.564
     >>Click the |cRXP_PICK_Beached Sea Turtle|r
     .accept 4732 >> Accept Beached Sea Turtle
 step
     #xprate <1.5
+    #optional
     .goto 1439,31.690,83.700
     >>Click the |cRXP_PICK_Beached Sea Turtle|r
     .accept 4731 >> Accept Beached Sea Turtle
 step
     #xprate <1.5
+    #optional
     .goto 1439,32.644,80.711
     >>Click the |cRXP_PICK_Beached Sea Creature|r
     .accept 4730 >> Accept Beached Sea Creature
 step
-	#xprate <1.5 << !NightElf/Hunter
+	#xprate <1.5
     .goto Darkshore,41.44,86.06,50,0
     .goto Darkshore,41.77,84.60,50,0
     .goto Darkshore,42.94,82.25,50,0
@@ -9361,7 +10309,7 @@ step
     .isOnQuest 1003
     .mob Grizzled Thistle Bear
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5
     .goto Darkshore,41.389,80.565
     >>Click the |cRXP_PICK_Buzzbox 525|r on the ground
     .turnin 1003 >> Turn in Buzzbox 525
@@ -9541,16 +10489,19 @@ step
     >>Save up to 6 |cRXP_LOOT_Gooey Spider Legs|r looted from the |cRXP_ENEMY_Spiders|r in the zone for later
     .collect 2251,6,93,1 -- Gooey Spider Legs
 step << Hunter
+    #xprate <1.59
     .goto Ashenvale,18.010,59.832
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alenndaar Lapidaar|r
     .trainer >> Train your class skills
     .train 5118 >> Train |T132242:0|t[Aspect of the Cheetah]
     .target Alenndaar Lapidaar
 step << Hunter
+    #xprate <1.59
     .goto Ashenvale,17.976,60.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bolyun|r
     .trainer >> Train your pet skills
     .target Bolyun
+--XX Train in darn at 20 on 2x
 step
     .goto Ashenvale,34.40,48.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daelyshia|r
@@ -9574,6 +10525,7 @@ step
     .goto Ashenvale,35.76,49.10
     .accept 1056 >> Accept Journey to Stonetalon Peak
 step
+    #xprate <1.59
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r
 	.target Raene Wolfrunner
     .goto Ashenvale,36.61,49.58
@@ -9623,8 +10575,7 @@ step
     .goto Ashenvale,27.50,60.76,8 >> Climb the hill next to the big tree to the right of the Fire Scar Shrine entrance
     >>Jump over the tree root and hug the right to avoid aggroing mobs
 step
-    #xprate <1.59
---  #xprate <1.5
+    #xprate <1.5
     .goto Ashenvale,25.27,60.68
     >>Kill |cRXP_ENEMY_Ilkrud Magthrull|r. Loot him for his |cRXP_LOOT_Tome|r
     >>|cRXP_ENEMY_Ilkrud Magthrull|r |cRXP_WARN_will cast|r |T136221:0|t[Ilkrud's Guardians] |cRXP_WARN_which is a 5 second long cast and will summon 2 Voidwalkers. Stop this cast if you're able to|r
@@ -9634,8 +10585,7 @@ step
 	.isOnQuest 973
     .mob Ilkrud Magthrull
 step
-    #xprate <1.59
---   #xprate <1.5
+    #xprate <1.5
     .isQuestComplete 973
     .goto Ashenvale,26.19,38.69
     .target Delgren the Purifier
@@ -9841,7 +10791,9 @@ step << Dwarf Hunter
     .zoneskip Ashenvale
 ]])
 
+
 ----End of Hunter-only Darkshore/Ashen (Needs to be merged)----
+
 
 RXPGuides.RegisterGuide([[
 #classic
@@ -10072,9 +11024,18 @@ step
     .complete 731,1
     .isOnQuest 731
 step
+    #xprate <1.5
     #optional
     #completewith Murkdeep
-    >>Kill |cRXP_ENEMY_Encrusted Tide Crawlers|r and |cRXP_ENEMY_Reef Crawlers|r. Loot them for their |cRXP_LOOT_Crab Chunks|r
+    >>Kill |cRXP_ENEMY_Encrusted Tide Crawlers|r and |cRXP_ENEMY_Reef Crawlers|r. Loot them for their |cRXP_LOOT_Fine Crab Chunks|r
+    .complete 1138,1 -- Fine Crab Chunks (6)
+    .mob Encrusted Tide Crawler
+    .mob Reef Crawler
+step
+    #xprate >1.49
+    #optional
+    #completewith next
+    >>Kill |cRXP_ENEMY_Encrusted Tide Crawlers|r and |cRXP_ENEMY_Reef Crawlers|r. Loot them for their |cRXP_LOOT_Fine Crab Chunks|r
     .complete 1138,1 -- Fine Crab Chunks (6)
     .mob Encrusted Tide Crawler
     .mob Reef Crawler
@@ -10085,16 +11046,40 @@ step
     .accept 4730 >> Accept Beached Sea Creature
 step
     #xprate >1.49
+    #optional
+    #completewith next
+    >>Kill |cRXP_ENEMY_Encrusted Tide Crawlers|r. Loot them for their |cRXP_LOOT_Fine Crab Chunks|r
+    .complete 1138,1 -- Fine Crab Chunks (6)
+    .mob Encrusted Tide Crawler
+step
+    #xprate >1.49
     .goto 1439,31.690,83.700
     >>Click the |cRXP_PICK_Beached Sea Turtle|r
     .accept 4731 >> Accept Beached Sea Turtle
+step
+    #xprate >1.49
+    #loop
+    .goto 1439,32.674,81.752,0
+    .goto 1439,36.327,73.408,0
+    .goto 1439,35.195,71.864,0
+    .goto 1439,32.674,81.752,60,0
+    .goto 1439,33.284,80.330,60,0
+    .goto 1439,34.174,80.488,60,0
+    .goto 1439,35.432,79.052,60,0
+    .goto 1439,36.327,73.408,60,0
+    .goto 1439,35.412,73.176,60,0
+    .goto 1439,35.033,72.432,60,0
+    .goto 1439,35.195,71.864,60,0
+    >>Kill |cRXP_ENEMY_Encrusted Tide Crawlers|r and |cRXP_ENEMY_Reef Crawlers|r. Loot them for their |cRXP_LOOT_Fine Crab Chunks|r
+    .complete 1138,1 -- Fine Crab Chunks (6)
+    .mob Encrusted Tide Crawler
+    .mob Reef Crawler
 step
     #xprate >1.49
     .goto 1439,31.229,85.564
     >>Click the |cRXP_PICK_Beached Sea Turtle|r
     .accept 4732 >> Accept Beached Sea Turtle
 step
-    #xprate >1.49
     .goto 1439,31.251,87.419
     >>Click the |cRXP_PICK_Beached Sea Creature|r
     .accept 4733 >> Accept Beached Sea Creature
@@ -10102,44 +11087,52 @@ step
     .link https://www.twitch.tv/videos/992307825?t=05h48m36s >> |cRXP_WARN_Click here for a video guide|r
 step
     #xprate <1.5
-    .goto 1439,31.251,87.419
-    >>Click the |cRXP_PICK_Beached Sea Creature|r
-    .accept 4733 >> Accept Beached Sea Creature
-    >>|cRXP_WARN_This quest can be VERY difficult. Engage the |cRXP_ENEMY_Murlocs|r 1 by 1, otherwise you may agro multiple at the same time|r
-    .link https://www.twitch.tv/videos/992307825?t=05h48m36s >> |cRXP_WARN_Click here for a video guide|r
-step
-    #xprate <1.5
     .goto 1439,31.229,85.564
     >>Click the |cRXP_PICK_Beached Sea Turtle|r
     .accept 4732 >> Accept Beached Sea Turtle
 step
     #xprate <1.5
+    #optional
     .goto 1439,31.690,83.700
     >>Click the |cRXP_PICK_Beached Sea Turtle|r
     .accept 4731 >> Accept Beached Sea Turtle
 step
     #xprate <1.5
+    #optional
     .goto 1439,32.644,80.711
     >>Click the |cRXP_PICK_Beached Sea Creature|r
     .accept 4730 >> Accept Beached Sea Creature
 step
     #xprate <1.5
+    #optional
     #label Murkdeep
+    .goto 1439,35.429,76.566,0
+    .goto 1439,35.429,76.566,60,0
     .goto Darkshore,36.64,76.53
-    >>Kill |cRXP_ENEMY_Greymist Warriors|r and |cRXP_ENEMY_Greymist Hunters|r at the camp
-    >>|cRXP_WARN_Move to the Bonfire in the center of the camp to summon|r |cRXP_ENEMY_Murkdeep|r
-    >>Kill |cRXP_ENEMY_Murkdeep|r. He will run in from the water
-    .complete 4740,1
+    >>|cRXP_WARN_Make sure you check if |cRXP_ENEMY_Murkdeep|r is already up in the water (if someone has previously failed the encounter or left the |cRXP_ENEMY_Greymist Hunter|r in the wave that he spawns with alive)|r
+    >>Kill the |cRXP_ENEMY_Greymist Warriors|r and |cRXP_ENEMY_Greymist Hunters|r in the camp
+    >>|cRXP_WARN_Move to the Bonfire in the center of the camp to start the |cRXP_ENEMY_Murkdeep|r encounter:|r
+    >>|cRXP_WARN_3 waves will spawn from the water, each after killing the previous wave: Wave 1 has 3 level 12-13 |cRXP_ENEMY_Greymist Coastrunners|r, Wave 2 has 2 level 15-16 |cRXP_ENEMY_Greymist Warriors|r, and Wave 3 has a level 19 |cRXP_ENEMY_Murkdeep|r and a level 16-17 |cRXP_ENEMY_Greymist Hunter|r. You can move away from the Bonfire to avoid aggroing the next wave|r
+    .complete 4740,1 -- Murkdeep (1)
     .unitscan Murkdeep
     .mob Greymist Warrior
     .mob Greymist Hunter
     .mob Greymist Coastrunner
 step
-    .goto Darkshore,34.0,80.8,60,0
-    .goto Darkshore,35.8,77.8,60,0
-    .goto Darkshore,35.6,71.8,60,0
-    .goto Darkshore,35.8,77.8
-    >>Kill |cRXP_ENEMY_Encrusted Tide Crawlers|r and |cRXP_ENEMY_Reef Crawlers|r. Loot them for their |cRXP_LOOT_Crab Chunks|r
+    #xprate <1.5
+    #loop
+    .goto 1439,32.674,81.752,0
+    .goto 1439,36.327,73.408,0
+    .goto 1439,35.195,71.864,0
+    .goto 1439,32.674,81.752,60,0
+    .goto 1439,33.284,80.330,60,0
+    .goto 1439,34.174,80.488,60,0
+    .goto 1439,35.432,79.052,60,0
+    .goto 1439,36.327,73.408,60,0
+    .goto 1439,35.412,73.176,60,0
+    .goto 1439,35.033,72.432,60,0
+    .goto 1439,35.195,71.864,60,0
+    >>Kill |cRXP_ENEMY_Encrusted Tide Crawlers|r and |cRXP_ENEMY_Reef Crawlers|r. Loot them for their |cRXP_LOOT_Fine Crab Chunks|r
     .complete 1138,1 -- Fine Crab Chunks (6)
     .mob Encrusted Tide Crawler
     .mob Reef Crawler
@@ -10364,6 +11357,13 @@ step
     .accept 1020 >> Accept Orendil's Cure
     .target Orendil Broadleaf
 step
+    #xprate >1.59
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therysil|r
+	.target Therysil
+    .goto Ashenvale,22.64,51.91
+    .turnin 945 >> Turn in Therylune's Escape
+    .isQuestComplete 945
+step
     #optional
     #completewith next
     .goto Ashenvale,25.49,39.59,20,0
@@ -10394,6 +11394,7 @@ step
     .accept 1056 >> Accept Journey to Stonetalon Peak
     .target Faldreas Goeth'Shael
 step
+    #xprate <1.59
     .goto Ashenvale,36.61,49.58
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raene Wolfrunner|r
     .accept 991 >> Accept Raene's Cleansing
@@ -10403,7 +11404,7 @@ step << !Warlock
     #xprate <1.59
     .goto Ashenvale,36.99,49.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kimlya|r
-    .home 415>> Set your Hearthstone to Astranaar
+    .home 415 >> Set your Hearthstone to Astranaar
     .target Innkeeper Kimlya
 step
     #xprate <1.59
