@@ -4013,6 +4013,7 @@ step << Human
     .goto Loch Modan,24.77,18.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r
     .turnin 1339 >> Turn in Mountaineer Stormpike's Task
+    .accept 1338 >> Accept Stormpike's Order << Mage/Warlock/Rogue
     .target Mountaineer Stormpike
     .dungeon !DM
 step
