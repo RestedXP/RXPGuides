@@ -223,8 +223,14 @@
                 </Layers>
                 <Scripts>
                     <OnEnter>
-						self:GetParent():LockHighlight();
+                        local p = self:GetParent()
+						p:LockHighlight();
                         <!--AuctionFrameItem_OnEnter(self, "bidder", self:GetParent():GetID() + FauxScrollFrame_GetOffset(BidScrollFrame));-->
+                        if p.ItemID then
+                            GameTooltip:SetOwner(self);
+                            GameTooltip:SetItemByID(p.ItemID);
+                            GameTooltip:Show();
+                        end
                     </OnEnter>
                     <OnLeave>
                         self:GetParent():UnlockHighlight();
@@ -291,13 +297,9 @@
                 <Scripts>
                     <OnEnter>
 						self:GetParent():LockHighlight();
-						GameTooltip:SetOwner(self);
-                        <!--GameTooltip:SetText(self.tooltip);-->
                     </OnEnter>
                     <OnLeave>
                         self:GetParent():UnlockHighlight();
-                        <!--AuctionBrowseFrame_CheckUnlockHighlight(self, "bidder", FauxScrollFrame_GetOffset(BidScrollFrame));-->
-						GameTooltip:Hide();
                     </OnLeave>
                 </Scripts>
             </Frame>
@@ -327,13 +329,9 @@
                 <Scripts>
                     <OnEnter>
 						self:GetParent():LockHighlight();
-						GameTooltip:SetOwner(self);
-                        <!--GameTooltip:SetText(self.tooltip);-->
                     </OnEnter>
                     <OnLeave>
                         self:GetParent():UnlockHighlight();
-                        <!--AuctionBrowseFrame_CheckUnlockHighlight(self, "bidder", FauxScrollFrame_GetOffset(BidScrollFrame));-->
-						GameTooltip:Hide();
                     </OnLeave>
                 </Scripts>
             </Frame>

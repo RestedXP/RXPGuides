@@ -1226,13 +1226,13 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
     end
 
     local itemLink
-    local name, level, buyoutPrice, itemID, hasAllInfo
+    local name, level, buyoutPrice, itemID
 
     for i = 1, resultCount do
         itemLink = GetAuctionItemLink("list", i)
 
         -- name, texture, count, quality, canUse, level, levelColHeader, minBid, minIncrement, buyoutPrice, bidAmount, highBidder, bidderFullName, owner, ownerFullName, saleStatus, itemId, hasAllInfo = GetAuctionItemInfo(type, index)
-        name, _, _, _, _, level, _, _, _, buyoutPrice, _, _, _, _, _, _, itemID, hasAllInfo =
+        name, _, _, _, _, level, _, _, _, buyoutPrice, _, _, _, _, _, _, itemID, _ =
             GetAuctionItemInfo("list", i)
 
         -- TODO if not hasAllInfo
@@ -1242,6 +1242,7 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
             end
         else
             ahSession.scanData[itemLink] = {
+                name = name,
                 lowestPrice = buyoutPrice,
                 itemID = itemID,
                 level = level
@@ -1359,26 +1360,35 @@ function addon.itemUpgrades.AH:Analyze()
         if scanData.relativeWeightPerCopper then
             -- print("Analyze", itemLink, "weightPerCopper", scanData.weightPerCopper, "relativeWPC", scanData.relativeWeightPerCopper)
             slotId = session.equippableSlots[scanData.itemEquipLoc]
-            bAS = ahSession.bestAnalysis[slotId]
+            -- TODO handle slotId table
+            if type(slotId) ~= "table" then
+                bAS = ahSession.bestAnalysis[slotId]
 
-            if scanData.ratio and scanData.ratio > bAS.relative.ratio then
-                bAS.relative.ratio = scanData.ratio
-                bAS.relative.itemLink = itemLink
-                bAS.relative.level = scanData.level
+                if scanData.ratio and scanData.ratio > bAS.relative.ratio then
+                    bAS.relative.ratio = scanData.ratio
+                    bAS.relative.itemLink = itemLink
+                    bAS.relative.itemID = scanData.itemID
+                    bAS.relative.name = scanData.name
+                    bAS.relative.level = scanData.level
 
-                bAS.relative.lowestPrice =
-                    ahSession.scanData[itemLink].lowestPrice
+                    bAS.relative.lowestPrice =
+                        ahSession.scanData[itemLink].lowestPrice
+                end
+
+                if scanData.relativeWeightPerCopper > bAS.budget.rwpc then
+                    bAS.budget.rwpc = scanData.relativeWeightPerCopper
+                    bAS.budget.itemLink = itemLink
+                    bAS.budget.itemID = scanData.itemID
+                    bAS.budget.name = scanData.name
+                    bAS.budget.level = scanData.level
+
+                    bAS.budget.lowestPrice =
+                        ahSession.scanData[itemLink].lowestPrice
+                end
+                -- else -- downgrade, incompatible, or similar
+            else
+                print("skipping bAS slotId table for", scanData.itemEquipLoc)
             end
-
-            if scanData.relativeWeightPerCopper > bAS.budget.rwpc then
-                bAS.budget.rwpc = scanData.relativeWeightPerCopper
-                bAS.budget.itemLink = itemLink
-                bAS.budget.level = scanData.level
-
-                bAS.budget.lowestPrice =
-                    ahSession.scanData[itemLink].lowestPrice
-            end
-            -- else -- downgrade, incompatible, or similar
         end
 
     end
@@ -1511,6 +1521,22 @@ local function setMoney(base, name, money)
     MoneyFrame_Update(_G[base .. name], money)
 end
 
+local function setProperty(base, property, data)
+    if not base or not property then
+        print("setProperty: error", text)
+        return
+    end
+
+    _G[base][property] = data
+end
+
+local function getColorizedName(itemLink, itemName)
+    local quality = C_Item.GetItemQualityByID(itemLink)
+    local h = ITEM_QUALITY_COLORS[quality].hex
+
+    return h .. itemName
+end
+
 function addon.itemUpgrades.AH:DisplayEmbeddedResults()
     self:CreateEmbeddedGui()
     if not _G.AuctionFrame:IsShown() then return end
@@ -1526,7 +1552,10 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
             setText(block.header, 'Name', data.slotName)
 
             if data.relative.itemLink then
-                setText(block.best, 'Name', data.relative.itemLink)
+                setProperty(block.best, 'ItemLink', data.relative.itemLink)
+                setProperty(block.best, 'ItemID', data.relative.itemID)
+                setText(block.best, 'Name', getColorizedName(
+                            data.relative.itemLink, data.relative.name))
                 setText(block.best, 'ItemLevelText', data.relative.level)
                 setText(block.best, 'UpdateEPText',
                         fmt("%s", prettyPrintRatio(data.relative.ratio)))
@@ -1542,7 +1571,10 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
                 if epPerCopper == 0 then
                     epPerCopper = addon.Round(data.budget.rwpc, 4)
                 end
-                setText(block.budget, 'Name', data.budget.itemLink)
+                setProperty(block.budget, 'ItemLink', data.budget.itemLink)
+                setProperty(block.budget, 'ItemID', data.budget.itemID)
+                setText(block.budget, 'Name', getColorizedName(
+                            data.budget.itemLink, data.budget.name))
                 setText(block.budget, 'ItemLevelText', data.budget.level)
                 setText(block.budget, 'UpdateEPText',
                         fmt("%s (EP/c)", epPerCopper))
@@ -1568,7 +1600,6 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
     end
 end
 
--- Remove brackets on item name
 -- Add update/vendor icons
 -- Propagate +EP up the chain
 -- Support multiple blocks, hide leftovers
@@ -1577,3 +1608,4 @@ end
 -- Make rows clickable
 -- Support actually buying the thing
 -- Hide scrollbar when not needed
+-- fix randomly generated tooltip
