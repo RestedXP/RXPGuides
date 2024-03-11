@@ -2024,14 +2024,6 @@ step << Shaman
     .goto Mulgore,61.51,47.29,20 >> Travel to The Venture Co. Mine
 step << Shaman
     #season 2
-    #completewith VentureCoKills
-    >>Open the |cRXP_PICK_Blasting Supplies|r inside the mine and outside on the other side. Loot them for the |cRXP_LOOT_Seaforium Mining Charges|r
-    >>|cRXP_WARN_Stay on the upper levels of the cave if possible|r
-    .complete 76156,1 --Seaforium Mining Charge (5)
-    .train 410104,1
-    .xp <4,1
-step << Shaman
-    #season 2
     #completewith next
     >>Kill |cRXP_ENEMY_Venture Co. Workers|r and |cRXP_ENEMY_Venture Co. Supervisors|r
     .complete 764,1 --Venture Co. Worker (14)
@@ -4034,6 +4026,7 @@ step << Hunter
     .isQuestTurnedIn 6089
 step << Druid/Hunter/Shaman
     .goto Thunder Bluff,53.81,27.82,30,0
+    .goto Mulgore,59.85,25.62
     .zone Mulgore >>Exit Thunder Bluff by the Northern lift
     .zoneskip Thunder Bluff,1
     .isQuestTurnedIn 6089 << Hunter
@@ -4316,7 +4309,7 @@ step
     .target Innkeeper Grosk
     .money <0.05
     .target Jhawna Oatwind
-step
+step << skip
     .goto Mulgore,46.75,60.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skorn|r
     .accept 861 >>Accept The Hunter's Way
@@ -4404,19 +4397,6 @@ step << Druid
     .collect 206954,1 --Idol of Ursine Rage (1)
     .mob Prairie Wolf Alpha
     .train 410025,1
-step
-    .goto Mulgore,67.19,63.78,50,0
-    .goto Mulgore,66.34,67.01,50,0
-    .goto Mulgore,63.86,66.31,50,0
-    .goto Mulgore,61.81,65.52,50,0
-    .goto Mulgore,61.61,61.32,50,0
-    .goto Mulgore,63.58,60.51,50,0
-    .goto Mulgore,65.56,59.37,50,0
-    .goto Mulgore,67.62,59.06,50,0
-    .goto Mulgore,66.34,67.01
-    >>Kill |cRXP_ENEMY_Flatland Prowlers|r. Loot them for their |cRXP_LOOT_Claws|r
-    .complete 861,1 --Flatland Prowler Claw (4)
-    .mob Flatland Prowler
 step << Druid
     #season 2
     .goto Mulgore,67.19,63.78,50,0
