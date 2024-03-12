@@ -815,7 +815,7 @@ step << Dwarf Hunter
     .goto Darkshore,38.21,73.32,0
     .goto Darkshore,40.75,70.49,40,0
     .goto Darkshore,40.77,78.56,40,0
-    .goto Darkshore,38.21,73.32,40,0 
+    .goto Darkshore,38.21,73.32,40,0
     >>|cRXP_WARN_Send your pet to attack a |cRXP_ENEMY_Thistle Bear|r. Once your pet is stunned by the |cRXP_ENEMY_Thistle Bear|r, abandon your pet and start taming it|r
     .tame 2163 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Thistle Bear|r to tame it|r
     .target Thistle Bear
@@ -895,15 +895,8 @@ step << Hunter
     #sticky
     #label Treats1
     #loop
-    .goto 1439,47.294,48.653,0
-    .goto 1439,37.767,44.001,0
     .goto 1439,39.899,54.745,0
     .goto 1439,40.181,56.229,0
-    .goto 1439,47.294,48.653,50,0
-    .goto 1439,47.333,48.699,50,0
-    .goto 1439,47.564,41.758,50,0
-    .goto 1439,43.126,45.593,50,0
-    .goto 1439,37.767,44.001,50,0
     .goto 1439,39.267,53.092,50,0
     .goto 1439,39.754,53.444,50,0
     .goto 1439,40.234,54.325,50,0
@@ -1949,15 +1942,8 @@ step << Druid
     #sticky
     #label EarlyTreats1
     #loop
-    .goto 1439,47.294,48.653,0
-    .goto 1439,37.767,44.001,0
     .goto 1439,39.899,54.745,0
     .goto 1439,40.181,56.229,0
-    .goto 1439,47.294,48.653,50,0
-    .goto 1439,47.333,48.699,50,0
-    .goto 1439,47.564,41.758,50,0
-    .goto 1439,43.126,45.593,50,0
-    .goto 1439,37.767,44.001,50,0
     .goto 1439,39.267,53.092,50,0
     .goto 1439,39.754,53.444,50,0
     .goto 1439,40.234,54.325,50,0
@@ -2007,15 +1993,8 @@ step << NightElf/Hunter/Druid
     #optional
     #loop
     #label EarlyBlackwood
-    .goto 1439,47.294,48.653,0
-    .goto 1439,37.767,44.001,0
     .goto 1439,39.899,54.745,0
     .goto 1439,40.181,56.229,0
-    .goto 1439,47.294,48.653,50,0
-    .goto 1439,47.333,48.699,50,0
-    .goto 1439,47.564,41.758,50,0
-    .goto 1439,43.126,45.593,50,0
-    .goto 1439,37.767,44.001,50,0
     .goto 1439,39.267,53.092,50,0
     .goto 1439,39.754,53.444,50,0
     .goto 1439,40.234,54.325,50,0
@@ -2247,15 +2226,8 @@ step << Druid
     #sticky
     #label Treats1
     #loop
-    .goto 1439,47.294,48.653,0
-    .goto 1439,37.767,44.001,0
     .goto 1439,39.899,54.745,0
     .goto 1439,40.181,56.229,0
-    .goto 1439,47.294,48.653,50,0
-    .goto 1439,47.333,48.699,50,0
-    .goto 1439,47.564,41.758,50,0
-    .goto 1439,43.126,45.593,50,0
-    .goto 1439,37.767,44.001,50,0
     .goto 1439,39.267,53.092,50,0
     .goto 1439,39.754,53.444,50,0
     .goto 1439,40.234,54.325,50,0
@@ -2298,15 +2270,8 @@ step << Druid
     .itemcount 208687,1
 step
     #loop
-    .goto 1439,47.294,48.653,0
-    .goto 1439,37.767,44.001,0
     .goto 1439,39.899,54.745,0
     .goto 1439,40.181,56.229,0
-    .goto 1439,47.294,48.653,50,0
-    .goto 1439,47.333,48.699,50,0
-    .goto 1439,47.564,41.758,50,0
-    .goto 1439,43.126,45.593,50,0
-    .goto 1439,37.767,44.001,50,0
     .goto 1439,39.267,53.092,50,0
     .goto 1439,39.754,53.444,50,0
     .goto 1439,40.234,54.325,50,0
@@ -2326,15 +2291,8 @@ step
     #optional
     #requires Treats3 << Druid --Season 2
     #loop
-    .goto 1439,47.294,48.653,0
-    .goto 1439,37.767,44.001,0
     .goto 1439,39.899,54.745,0
     .goto 1439,40.181,56.229,0
-    .goto 1439,47.294,48.653,50,0
-    .goto 1439,47.333,48.699,50,0
-    .goto 1439,47.564,41.758,50,0
-    .goto 1439,43.126,45.593,50,0
-    .goto 1439,37.767,44.001,50,0
     .goto 1439,39.267,53.092,50,0
     .goto 1439,39.754,53.444,50,0
     .goto 1439,40.234,54.325,50,0
@@ -2352,15 +2310,8 @@ step
     #xprate <1.5
     #optional
     #loop
-    .goto 1439,47.294,48.653,0
-    .goto 1439,37.767,44.001,0
     .goto 1439,39.899,54.745,0
     .goto 1439,40.181,56.229,0
-    .goto 1439,47.294,48.653,50,0
-    .goto 1439,47.333,48.699,50,0
-    .goto 1439,47.564,41.758,50,0
-    .goto 1439,43.126,45.593,50,0
-    .goto 1439,37.767,44.001,50,0
     .goto 1439,39.267,53.092,50,0
     .goto 1439,39.754,53.444,50,0
     .goto 1439,40.234,54.325,50,0
@@ -2379,15 +2330,8 @@ step
     #optional
     #requires Treats3 << Druid --Season 2
     #loop
-    .goto 1439,47.294,48.653,0
-    .goto 1439,37.767,44.001,0
     .goto 1439,39.899,54.745,0
     .goto 1439,40.181,56.229,0
-    .goto 1439,47.294,48.653,50,0
-    .goto 1439,47.333,48.699,50,0
-    .goto 1439,47.564,41.758,50,0
-    .goto 1439,43.126,45.593,50,0
-    .goto 1439,37.767,44.001,50,0
     .goto 1439,39.267,53.092,50,0
     .goto 1439,39.754,53.444,50,0
     .goto 1439,40.234,54.325,50,0
@@ -2405,15 +2349,8 @@ step
     #xprate 1.49-1.59
     #optional
     #loop
-    .goto 1439,47.294,48.653,0
-    .goto 1439,37.767,44.001,0
     .goto 1439,39.899,54.745,0
     .goto 1439,40.181,56.229,0
-    .goto 1439,47.294,48.653,50,0
-    .goto 1439,47.333,48.699,50,0
-    .goto 1439,47.564,41.758,50,0
-    .goto 1439,43.126,45.593,50,0
-    .goto 1439,37.767,44.001,50,0
     .goto 1439,39.267,53.092,50,0
     .goto 1439,39.754,53.444,50,0
     .goto 1439,40.234,54.325,50,0
@@ -2432,15 +2369,8 @@ step
     #optional
     #requires Treats3 << Druid --Season 2
     #loop
-    .goto 1439,47.294,48.653,0
-    .goto 1439,37.767,44.001,0
     .goto 1439,39.899,54.745,0
     .goto 1439,40.181,56.229,0
-    .goto 1439,47.294,48.653,50,0
-    .goto 1439,47.333,48.699,50,0
-    .goto 1439,47.564,41.758,50,0
-    .goto 1439,43.126,45.593,50,0
-    .goto 1439,37.767,44.001,50,0
     .goto 1439,39.267,53.092,50,0
     .goto 1439,39.754,53.444,50,0
     .goto 1439,40.234,54.325,50,0
@@ -2458,15 +2388,8 @@ step
     #xprate >1.59
     #optional
     #loop
-    .goto 1439,47.294,48.653,0
-    .goto 1439,37.767,44.001,0
     .goto 1439,39.899,54.745,0
     .goto 1439,40.181,56.229,0
-    .goto 1439,47.294,48.653,50,0
-    .goto 1439,47.333,48.699,50,0
-    .goto 1439,47.564,41.758,50,0
-    .goto 1439,43.126,45.593,50,0
-    .goto 1439,37.767,44.001,50,0
     .goto 1439,39.267,53.092,50,0
     .goto 1439,39.754,53.444,50,0
     .goto 1439,40.234,54.325,50,0
@@ -2591,7 +2514,7 @@ step
 step
     #label Level10CookEnd
     .goto 1439,37.511,41.670
-    >>|cRXP_WARN_Travel toward the |cRXP_PICK_Campfire|r on the ground|r 
+    >>|cRXP_WARN_Travel toward the |cRXP_PICK_Campfire|r on the ground|r
     >>|cRXP_WARN_Start|r |T133971:0|t[Cooking] |T132834:0|t[Herb Baked Eggs]|cRXP_WARN_. Do this until your|r |T133971:0|t[Cooking] |cRXP_WARN_has reached at least level 10|r
     >>|cRXP_WARN_Continue leveling your|r |T133971:0|t[Cooking] |cRXP_WARN_ until you run out of|r |T132832:0|t[Small Eggs]
     >>|cRXP_WARN_There is a quest in Duskwood later requiring your|r |T133971:0|t[Cooking] |cRXP_WARN_to be 50 or higher. You can also cook this when you get on the boat soon|r
@@ -2741,7 +2664,7 @@ step
     >>Click the |cRXP_PICK_Beached Sea Turtle|r
     .accept 4725 >> Accept Beached Sea Turtle
 step
-    #optional 
+    #optional
     #completewith next
     .goto 1439,45.004,21.344,0
     .goto 1439,48.013,21.409,0
@@ -3145,15 +3068,8 @@ step
 
 step << Druid
     #optional
-    .goto 1439,47.294,48.653,0
-    .goto 1439,37.767,44.001,0
     .goto 1439,39.899,54.745,0
     .goto 1439,40.181,56.229,0
-    .goto 1439,47.294,48.653,50,0
-    .goto 1439,47.333,48.699,50,0
-    .goto 1439,47.564,41.758,50,0
-    .goto 1439,43.126,45.593,50,0
-    .goto 1439,37.767,44.001,50,0
     .goto 1439,39.267,53.092,50,0
     .goto 1439,39.754,53.444,50,0
     .goto 1439,40.234,54.325,50,0
@@ -3629,7 +3545,7 @@ step
     >>|cRXP_WARN_Click the |cRXP_PICK_Scrying Bowl|r on the ground|r
     .turnin 944 >> Turn in The Master's Glaive
     .accept 949 >> Accept The Twilight Camp
-    .use 5251 
+    .use 5251
 step
     .goto 1439,38.537,86.050
     >>Click the |cRXP_PICK_Twilight Tome|r on the northern pedestal
@@ -4568,7 +4484,7 @@ step
     #xprate >1.59
     #optional
     #completewith BeachedCloak
-    >>|cRXP_WARN_If you equip the|r |T133762:0|t[Enchanted Moonstalker Cloak]|cRXP_WARN_, make sure you save your current cloak for later as the|r |T133762:0|t[Enchanted Moonstalker Cloak] |cRXP_WARN_is lost upon a later turn in|r 
+    >>|cRXP_WARN_If you equip the|r |T133762:0|t[Enchanted Moonstalker Cloak]|cRXP_WARN_, make sure you save your current cloak for later as the|r |T133762:0|t[Enchanted Moonstalker Cloak] |cRXP_WARN_is lost upon a later turn in|r
     .equip 15,5387 >>|cRXP_WARN_Equip the|r |T133762:0|t[Enchanted Moonstalker Cloak] |cRXP_WARN_If it's better than your current Cloak|r
     .itemcount 5387,1
     .itemStat 15,QUALITY,<7
@@ -4753,7 +4669,7 @@ step << NightElf Warrior/NightElf Rogue
 
 
 
-----Start of NE Warrior and Rogue 2x No Deadmines swim to Westfall Alternative section----  
+----Start of NE Warrior and Rogue 2x No Deadmines swim to Westfall Alternative section----
 
 
 
@@ -5520,7 +5436,7 @@ step << Rogue
     .goto 1436,70.421,74.031
     >>|cRXP_WARN_Travel up to 2nd top floor of the tower. Whilst in|r |T132320:0|t[Stealth] |cRXP_WARN_and the |cRXP_ENEMY_Defias Tower Sentries|r aren't next to you, Jump onto the chair, then onto the lamp, then onto the bookshelf on top of the waypoint location|r
     >>|cRXP_WARN_Manually|r |T132320:0|t[Unstealth]|cRXP_WARN_, then press your "Interact with Target" keybind to open the |cRXP_PICK_Duskwood Chest|r. Loot it for|r |cRXP_LOOT_Klaven Mortwake's Journal|r
-    >>|cRXP_WARN_NOTE: Your|r |T132320:0|t[Stealth] |cRXP_WARN_will temporarily stop working after looting|r |cRXP_LOOT_Klaven Mortwake's Journal|r 
+    >>|cRXP_WARN_NOTE: Your|r |T132320:0|t[Stealth] |cRXP_WARN_will temporarily stop working after looting|r |cRXP_LOOT_Klaven Mortwake's Journal|r
     >>|cRXP_WARN_Be prepared to run if you don't kill the |cRXP_ENEMY_Defias Tower Sentries|r on the 2nd floor. They will most likely aggro you permanently (but not attack you) when you are on top of the bookshelf as it is an evade spot|r
     >>|cRXP_WARN_If you have a|r |T135641:0|t[Dagger] |cRXP_WARN_in your bags or equipped, you can cast|r |T132282:0|t[Ambush] |cRXP_WARN_on the |cRXP_ENEMY_Defias Tower Patrollers|r and |cRXP_ENEMY_Defias Tower Sentries|r inside to kill them instantly. Be prepared to run after you kill the first |cRXP_ENEMY_Defias Tower Sentry|r and remember you can be hit from above. This is slower, but a LOT safer|r
     >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Malformed Defias Drone|r and |cRXP_ENEMY_Defias Drones|r can be at the entrance of the tower if you have to run out of it|r
@@ -5887,7 +5803,7 @@ step << NightElf Warrior/NightElf Rogue
     .zoneskip Ironforge,1
     .isOnQuest 968
     .dungeon !DM
-    
+
 
 
 ----End of 2x Non-Deadmines Training/Class q section----
@@ -6161,12 +6077,12 @@ step << !NightElf
     #xprate <1.59
     #optional
     #completewith BeachedCloak
-    >>|cRXP_WARN_If you equip the|r |T133762:0|t[Enchanted Moonstalker Cloak]|cRXP_WARN_, make sure you save your current cloak for later as the|r |T133762:0|t[Enchanted Moonstalker Cloak] |cRXP_WARN_is lost upon a later turn in|r 
+    >>|cRXP_WARN_If you equip the|r |T133762:0|t[Enchanted Moonstalker Cloak]|cRXP_WARN_, make sure you save your current cloak for later as the|r |T133762:0|t[Enchanted Moonstalker Cloak] |cRXP_WARN_is lost upon a later turn in|r
     .equip 15,5387 >>|cRXP_WARN_Equip the|r |T133762:0|t[Enchanted Moonstalker Cloak] |cRXP_WARN_If it's better than your current Cloak|r
     .itemcount 5387,1
     .itemStat 15,QUALITY,<7
 step << Dwarf Hunter
-    #xprate <1.59 
+    #xprate <1.59
     #optional
     #completewith BeachedCloak
     .goto Darkshore,33.17,40.17,40,0
@@ -6304,7 +6220,7 @@ step << NightElf
 
 step << NightElf
     #optional
-    >>|cRXP_WARN_If you equip the|r |T133762:0|t[Enchanted Moonstalker Cloak]|cRXP_WARN_, make sure you save your current cloak for later as the|r |T133762:0|t[Enchanted Moonstalker Cloak] |cRXP_WARN_is lost upon a later turn in|r 
+    >>|cRXP_WARN_If you equip the|r |T133762:0|t[Enchanted Moonstalker Cloak]|cRXP_WARN_, make sure you save your current cloak for later as the|r |T133762:0|t[Enchanted Moonstalker Cloak] |cRXP_WARN_is lost upon a later turn in|r
     .equip 15,5387 >>|cRXP_WARN_Equip the|r |T133762:0|t[Enchanted Moonstalker Cloak] |cRXP_WARN_If it's better than your current Cloak|r
     .itemcount 5387,1
     .itemStat 15,QUALITY,<7
@@ -6421,7 +6337,7 @@ step << NightElf
 
 
 
-----Start of Hunter/All Night Elves 2x Deadmines swim to Westfall Alternative section----   
+----Start of Hunter/All Night Elves 2x Deadmines swim to Westfall Alternative section----
 
 
 
@@ -6523,7 +6439,7 @@ step << NightElf Priest
 
 
 
-----End of Hunter/All Night Elves 2x Deadmines swim to Westfall Alternative (and Alt NE Priest Training) section----  
+----End of Hunter/All Night Elves 2x Deadmines swim to Westfall Alternative (and Alt NE Priest Training) section----
 
 
 
@@ -6559,7 +6475,7 @@ step << NightElf Warrior
     .dungeon DM
 step << NightElf Warrior
     #xprate >1.59
-    #optional 
+    #optional
     #completewith DeeprunDM
     +|cRXP_WARN_Equip the|r |T135425:0|t[Keen Throwing Knives]
     .use 3107
@@ -7451,7 +7367,7 @@ step << Rogue
     .goto 1436,70.421,74.031
     >>|cRXP_WARN_Travel up to 2nd top floor of the tower. Whilst in|r |T132320:0|t[Stealth] |cRXP_WARN_and the |cRXP_ENEMY_Defias Tower Sentries|r aren't next to you, Jump onto the chair, then onto the lamp, then onto the bookshelf on top of the waypoint location|r
     >>|cRXP_WARN_Manually|r |T132320:0|t[Unstealth]|cRXP_WARN_, then press your "Interact with Target" keybind to open the |cRXP_PICK_Duskwood Chest|r. Loot it for|r |cRXP_LOOT_Klaven Mortwake's Journal|r
-    >>|cRXP_WARN_NOTE: Your|r |T132320:0|t[Stealth] |cRXP_WARN_will temporarily stop working after looting|r |cRXP_LOOT_Klaven Mortwake's Journal|r 
+    >>|cRXP_WARN_NOTE: Your|r |T132320:0|t[Stealth] |cRXP_WARN_will temporarily stop working after looting|r |cRXP_LOOT_Klaven Mortwake's Journal|r
     >>|cRXP_WARN_Be prepared to run if you don't kill the |cRXP_ENEMY_Defias Tower Sentries|r on the 2nd floor. They will most likely aggro you permanently (but not attack you) when you are on top of the bookshelf as it is an evade spot|r
     >>|cRXP_WARN_If you have a|r |T135641:0|t[Dagger] |cRXP_WARN_in your bags or equipped, you can cast|r |T132282:0|t[Ambush] |cRXP_WARN_on the |cRXP_ENEMY_Defias Tower Patrollers|r and |cRXP_ENEMY_Defias Tower Sentries|r inside to kill them instantly. Be prepared to run after you kill the first |cRXP_ENEMY_Defias Tower Sentry|r and remember you can be hit from above. This is slower, but a LOT safer|r
     >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Malformed Defias Drone|r and |cRXP_ENEMY_Defias Drones|r can be at the entrance of the tower if you have to run out of it|r
@@ -7904,7 +7820,7 @@ step
     #xprate >1.59
     #hardcore << !Paladin
     .goto Westfall,30.01,86.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r  
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r
     .turnin 104 >> Turn in The Coastal Menace
     .target Captain Grayson
     .isQuestComplete 104
@@ -9925,7 +9841,7 @@ step << Rogue
     .goto 1436,70.421,74.031
     >>|cRXP_WARN_Travel up to 2nd top floor of the tower. Whilst in|r |T132320:0|t[Stealth] |cRXP_WARN_and the |cRXP_ENEMY_Defias Tower Sentries|r aren't next to you, Jump onto the chair, then onto the lamp, then onto the bookshelf on top of the waypoint location|r
     >>|cRXP_WARN_Manually|r |T132320:0|t[Unstealth]|cRXP_WARN_, then press your "Interact with Target" keybind to open the |cRXP_PICK_Duskwood Chest|r. Loot it for|r |cRXP_LOOT_Klaven Mortwake's Journal|r
-    >>|cRXP_WARN_NOTE: Your|r |T132320:0|t[Stealth] |cRXP_WARN_will temporarily stop working after looting|r |cRXP_LOOT_Klaven Mortwake's Journal|r 
+    >>|cRXP_WARN_NOTE: Your|r |T132320:0|t[Stealth] |cRXP_WARN_will temporarily stop working after looting|r |cRXP_LOOT_Klaven Mortwake's Journal|r
     >>|cRXP_WARN_Be prepared to run if you don't kill the |cRXP_ENEMY_Defias Tower Sentries|r on the 2nd floor. They will most likely aggro you permanently (but not attack you) when you are on top of the bookshelf as it is an evade spot|r
     >>|cRXP_WARN_If you have a|r |T135641:0|t[Dagger] |cRXP_WARN_in your bags or equipped, you can cast|r |T132282:0|t[Ambush] |cRXP_WARN_on the |cRXP_ENEMY_Defias Tower Patrollers|r and |cRXP_ENEMY_Defias Tower Sentries|r inside to kill them instantly. Be prepared to run after you kill the first |cRXP_ENEMY_Defias Tower Sentry|r and remember you can be hit from above. This is slower, but a LOT safer|r
     >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Malformed Defias Drone|r and |cRXP_ENEMY_Defias Drones|r can be at the entrance of the tower if you have to run out of it|r
@@ -10023,7 +9939,7 @@ step << Rogue
 
 
 
-    
+
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Marcus Jonathan|r
 	.target General Marcus Jonathan
@@ -10937,7 +10853,7 @@ step
 step
     #optional
     #completewith OnuGrove
-    >>|cRXP_WARN_If you equip the|r |T133762:0|t[Enchanted Moonstalker Cloak]|cRXP_WARN_, make sure you save your current cloak for later as the|r |T133762:0|t[Enchanted Moonstalker Cloak] |cRXP_WARN_is lost upon a later turn in|r 
+    >>|cRXP_WARN_If you equip the|r |T133762:0|t[Enchanted Moonstalker Cloak]|cRXP_WARN_, make sure you save your current cloak for later as the|r |T133762:0|t[Enchanted Moonstalker Cloak] |cRXP_WARN_is lost upon a later turn in|r
     .equip 15,5387 >>|cRXP_WARN_Equip the|r |T133762:0|t[Enchanted Moonstalker Cloak] |cRXP_WARN_If it's better than your current Cloak|r
     .itemcount 5387,1
     .itemStat 15,QUALITY,<7
@@ -11023,7 +10939,7 @@ step
     .collect 5352,1,968,1 --Book: The Powers Below (1)
     .mob Twilight Disciple
     .mob Twilight Thug
---  .use 13536 
+--  .use 13536
 step
     #xprate <1.5
     #optional
@@ -11041,7 +10957,7 @@ step
     >>|cRXP_WARN_Click the |cRXP_PICK_Scrying Bowl|r on the ground|r
     .turnin 944 >> Turn in The Master's Glaive
     .accept 949 >> Accept The Twilight Camp
-    .use 5251 
+    .use 5251
 step
     #xprate <1.5
     .goto 1439,38.537,86.050
