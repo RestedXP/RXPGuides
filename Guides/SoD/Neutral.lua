@@ -372,10 +372,10 @@ step
     .train 425476,1 << Warlock
     .train 424990,1 << Rogue
     .train 410096,1 << Shaman
-    >>Kill the |cRXP_ENEMY_Blue Gill Oracles|r. Loot them for the |cRXP_LOOT_Fish Oil|r
+    >>Kill the |cRXP_ENEMY_Bluegill Oracles|r. Loot them for the |cRXP_LOOT_Fish Oil|r
     .goto Wetlands,16.6,32.2
     .collect 17058,24
-    .mob Blue Gill Oracle
+    .mob Bluegill Oracle
 step << Alliance
     .train 415995,1 << Priest
     .train 410010,1 << Paladin
