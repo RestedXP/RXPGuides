@@ -2728,6 +2728,13 @@ step
     .mob Moonstalker Runt
     .mob Moonstalker
     .isOnQuest 1002
+step << Hunter/Warrior
+    #season 2
+    .goto 1439,44.081,20.739
+    >>Loot the |T135129:0|t[Gnarled Harpoon] in the eye of the skeleton
+    .collect 209047,1 --Gnarled Harpoon (1)
+    .train 416091,1 << Hunter
+    .train 425443,1 << Warrior
 step
     #label CrabTurtle
     .goto Darkshore,44.18,20.60
@@ -4024,9 +4031,23 @@ step << Paladin
     .goto Darkshore,56.20,26.46
     >>|cRXP_WARN_Keep an eye out for groups going into the Tower of Althalaxx. If you see anyone, follow behind them slowly inside so you can loot the |cRXP_PICK_Strange Orb|r at the top
     >>|cRXP_WARN_Be careful as the mobs in this tower are impossible for you to kill (Level 28-31)|r
+    >>|cRXP_WARN_If you don't want to do this, skip this step|r
     >>Open the |cRXP_PICK_Strange Orb|r on the table atop the Tower of Althalaxx. Loot it for the |cRXP_LOOT_Althalaxx Orb|r
     .collect 209836,1,78089,1 --Athalaxx Orb (1)
     .train 410014,1
+step << Warlock
+    #season 2
+    #optional
+    #completewith Parchments
+    >>|cRXP_WARN_Keep an eye out for groups going into the Tower of Althalaxx. If you see anyone, follow behind them slowly inside so you can loot the |cRXP_PICK_Bough of Altek|r at the top for the |T135153:0|t[Bough of Altek]
+    >>|cRXP_WARN_This is for your|r |T237558:0|t[Metamorphosis] |cRXP_WARN_rune later. If you don't want to do this, skip this step|r
+    >>|cRXP_WARN_Be careful as the mobs in this tower are impossible for you to kill (Level 28-31)|r
+    >>|cRXP_WARN_If you don't want to do this, skip this step|r
+    .collect 210763,1
+    .goto Darkshore,56.3,26.5
+    .train 403938,1
+    .dungeon SFK
+    .isQuestAvailable 78680
 step << Warlock
     #season 2
     #sticky
@@ -4060,6 +4081,7 @@ step << Warlock
     .itemcount 208750,1
 step
 	#xprate >1.49 << Hunter/Druid
+    #label Parchments << Warlock --Season 2 SFK
     #loop
     .goto 1439,55.231,26.508,0
     .goto 1439,56.194,27.071,0
@@ -4291,15 +4313,33 @@ step
     #label DeleteGyromast
     #optional
     .destroy 7442 >> Delete |T134459:0|t[Gyromast's Key] Gyromast's Key from your bags, as it's no longer needed
-step << Warrior
+step << Hunter/Warrior
     #season 2
-    .goto Darkshore,48.2,15.6,70,0
-    .goto Darkshore,50.2,12.6
-    >>Kill |cRXP_ENEMY_Paxnozz|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Strike|r]
-    >>|cRXP_ENEMY_Paxnozz|r |cRXP_WARN_is a level 20 elite found patrolling in the water. Look for help before attemping to kill it|r
-    .collect 208778,1 -- Rune of Quick Strike (1)
+    #completewith next
+    .goto 1439,44.081,20.739
+    .cast 422397 >>|cRXP_WARN_Use the|r |T135129:0|t[Gnarled Harpoon] |cRXP_WARN_on |cRXP_ENEMY_Paxnozz|r to reduce his max health to 743|r
+    .train 416091,1 << Hunter
+    .train 425443,1 << Warrior
+step << Hunter/Warrior
+    #season 2
+    #loop
+    .goto Darkshore,48.0,18.0,0
+    .goto Darkshore,47.6,13.2,0
+    .goto Darkshore,50.4,12.0,0
+    .goto Darkshore,48.8,16.0,0
+    .goto Darkshore,48.0,18.0,40,0
+    .goto Darkshore,47.6,13.2,40,0
+    .goto Darkshore,50.4,12.0,40,0
+    .goto Darkshore,48.8,16.0,40,0
+    >>Kill |cRXP_ENEMY_Paxnozz|r. Loot him for the |T134419:0|t|cRXP_LOOT_[Rune of the Sniper]|r << Hunter
+    >>Kill |cRXP_ENEMY_Paxnozz|r. Loot him for the |T134419:0|t|cRXP_LOOT_[Rune of Quick Strike]|r << Warrior
+    >>|cRXP_WARN_Be careful as he is a level 20 elite|r
+    .collect 208777,1 << Hunter --Rune of the Sniper (1)
+    .collect 208778,1 << Warrior --Rune of Quick Strike (1)
     .unitscan Paxnozz
-    .train 425443,1
+    .use 209047
+    .train 416091,1 << Hunter
+    .train 425443,1 << Warrior
 step << Warrior
     #season 2
     .train 425443 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Strike|r] |cRXP_WARN_to train|r |T132394:0|t[Quick Strike]

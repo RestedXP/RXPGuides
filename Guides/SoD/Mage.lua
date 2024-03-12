@@ -2104,22 +2104,15 @@ step
     #completewith next
     .zone Ashenvale >>Travel to |cFFfa9602Ashenvale|r
 step
-    .goto Ashenvale,13.4,29.2,70,0
-    .goto Ashenvale,14.6,16,0,70,0
-    .goto Ashenvale,13.4,29.2
-    >>Kill |cRXP_ENEMY_Wrathtail Sorceress|r and |cRXP_ENEMY_Wrathtail Sea Witch|r and loot them for |cRXP_LOOT_|T133737:0|t[Naga Manuscript]|r
-    .train 401757,1
-    .collect 211777,1
-step
     .aura 430139,1 >>Use |T135142:0|t[Arcane Explosion] |cRXP_WARN_near the correct|r |cRXP_WARN_Purple Crystal|r
     .goto Ashenvale,13.06,24.84
     .train 401757,1
 step
-    .aura 430139,+2 >>Use |T135142:0|t[Arcane Explosion] |cRXP_WARN_near the correct|r |cRXP_WARN_Purple Crystal|r
+    .aura 430139,2+ >>Use |T135142:0|t[Arcane Explosion] |cRXP_WARN_near the correct|r |cRXP_WARN_Purple Crystal|r
     .goto Ashenvale,14.04,19.80
     .train 401757,1
 step
-    .aura 430139,+3 >>Use |T135142:0|t[Arcane Explosion] |cRXP_WARN_near the correct|r |cRXP_WARN_Purple Crystal|r
+    .aura 430139,3+ >>Use |T135142:0|t[Arcane Explosion] |cRXP_WARN_near the correct|r |cRXP_WARN_Purple Crystal|r
     .goto Ashenvale,13.50,15.75
     .train 401757,1
 step
