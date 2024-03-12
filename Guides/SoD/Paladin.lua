@@ -1424,6 +1424,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Avenger's Shield - 25 (Redridge Mountains)
+#title Avenger's Shield
 #next Inspiration Exemplar - 6 (Elwynn Forest)
 
 step

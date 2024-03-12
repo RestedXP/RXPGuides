@@ -1268,56 +1268,67 @@ RXPGuides.RegisterGuide([[
 << Warrior SoD
 #group RestedXP Rune & Books Guide
 #subgroup Belt
-#name Blood Surge - 30 (Azeroth)
-
--- Blood Surge
-
---x shiek better coordinates
+#name Blood Surge - 40 (Azeroth)
+#title Blood Surge
 
 step
     .train 416004,1
-    #completewith IllegibleReciple
-    .zone Arathi Highlands >>Travel to |cFFfa9602Arathi Highlands|r
+    #completewith SpiceBlend
+    .zone Arathi Highlands >>Travel to Arathi Highlands
 step
     #completewith IllegibleReciple
-    +|cRXP_WARN_Grouping up is recommended as you have to kill level 36-40 elites|r
+    +|cRXP_WARN_You may want to find a group as you must kill level 37+ elites for obtaining the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Blood Surge|r]
+    .subzoneskip 324
 step
     #label IllegibleReciple
     .train 416004,1
     #loop
+    .goto Alterac Mountains,39.0,54.6,0
     .goto Arathi Highlands,24.14,61.85,0
     .goto Arathi Highlands,24.14,61.85,30,0
     .goto Arathi Highlands,24.25,64.97,30,0
     .goto Arathi Highlands,21.22,66.52,40,0
     .goto Arathi Highlands,20.21,67.17,40,0
-    >>Kill |cRXP_ENEMY_Boulderfist Ogres|r inside Stromgarde Keep. Loot them for |T237451:0|t[|cRXP_LOOT_Illegible Recipe|r]. Use it to start the quest
-    >>|cRXP_WARN_Alternatively you can kill the|r |cRXP_ENEMY_Crushridge Ogres|r |cRXP_WARN_in Alterac Mountains as they are slightly lower level|r
+    >>Kill |cRXP_ENEMY_Boulderfist Ogres|r inside Stromgarde Keep. Loot them for an |T237451:0|t[|cRXP_LOOT_Illegible Recipe|r]
+    >>|cRXP_WARN_Use the|r |T237451:0|t[|cRXP_LOOT_Illegible Recipe|r] |cRXP_WARN_to start the quest|r
+    >>|cRXP_WARN_Alternatively you can kill |cRXP_ENEMY_Crushridge Ogres|r in Alterac Mountains as well|r
     .collect 213422,1,79624 --Illegible Recipe (1x)
     .accept 79624 >>Accept Anyone Can Cook
     .mob Boulderfist Shaman
     .mob Boulderfist Mauler
     .mob Boulderfist Lord
+    .mob Crushridge Mauler
+    .mob Crushridge Mage
+    .mob Crushridge Enforcer
+    .mob Crushridge Warmonger
+step
+    #completewith next
+    .goto Arathi Highlands,57.587,72.499,10 >> Travel up the mountain to get to |cRXP_FRIENDLY_Skonk|r
 step
     .train 416004,1
-    .goto Arathi Highlands,57.45,72.00,15,0
-    .goto Arathi Highlands,57.33,73.65,15,0
     .goto Arathi Highlands,57.68,74.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skonk|r
     .turnin 79624 >>Turn in Anyone Can Cook
     .accept 79677 >>Accept A Quick Grocery Run
     .target Skonk
 step
-    #completewith next
-    .subzone 328 >>Travel to the sunken ship in |cFFfa9602The Drowned Reef|r just south of |cFFfa9602Faldir's Cove|r
+    #completewith SpiceBlend
+    .goto Arathi Highlands,30.74,66.94,60,0
+    .goto Arathi Highlands,22.72,71.98,50,0
+    .goto Arathi Highlands,21.50,75.91,40,0
+    .goto Arathi Highlands,21.98,79.96,30 >> Travel to Faldir's Cove
 step
+    #label SpiceBlend
     .train 416004,1
-    .goto Arathi Highlands,20.8,82.2
-    >>Click the |cRXP_PICK_Sealed Barrel|r located inside the deepest section of the sunken ship for |cRXP_LOOT_Smuggler's Spice Blend|r
+    .goto Arathi Highlands,20.47,84.90,8,0
+    .goto Arathi Highlands,21.379,83.919
+    >>Open the |cRXP_PICK_Sealed Barrel|r. Loot it for the |cRXP_LOOT_Smuggler's Spice Blend|r
+    >>|cRXP_WARN_It is located at the bottom of the sunken ship. Swim through the large hole at the very bottom to get to it|r
     .complete 79677,2 --Smuggler's Spice Blend (1x)
 step
     .train 416004,1
     #completewith next
-    .zone Hillsbrad Foothills >>Travel to |cFFfa9602Hillsbrad Foothills|r
+    .zone Hillsbrad Foothills >>Travel to Hillsbrad Foothills
 step
     .train 416004,1
     #loop
@@ -1325,15 +1336,29 @@ step
     .goto Hillsbrad Foothills,81.33,34.03,50,0
     .goto Hillsbrad Foothills,84.34,32.40,50,0
     .goto Hillsbrad Foothills,82.09,36.92,50,0
-    >>Kill |cRXP_ENEMY_Gryphons|r. Loot them for their |cRXP_LOOT_Hybrid Haunch|r
+    >>Kill |cRXP_ENEMY_Wild Gryphons|r. Loot them for their |cRXP_LOOT_Hybrid Haunch|r
     .complete 79677,1 --Hybrid Haunch (1x)
-    .mob Kurdros
-    .mob Granistad
+    .mob Kurdros << Horde
+    .mob Granistad << Horde
     .mob Wild Gryphon
 step
     .train 416004,1
     #completewith next
-    .zone Swamp of Sorrows >>Travel to |cFFfa9602Swamp of Sorrows|r
+    .zone Badlands >>Travel to Badlands
+step
+    #completewith next
+    .goto Badlands,42.87,29.77,60 >> Enter Angor Fortress
+step
+    .train 416004,1
+    .goto Badlands,41.92,26.26,20,0
+    .goto Badlands,41.2,27.8
+    >>Click on the |cRXP_PICK_Tapped Shadowforge Keg|r. Loot it for the |cRXP_LOOT_Balmy Brew|r
+    >>|cRXP_WARN_Stay at maximum range to avoid agroing|r |cRXP_ENEMY_Ambassador Infernus|r
+    .complete 79677,3 --Balmy Brew (1x)
+step
+    .train 416004,1
+    #completewith next
+    .zone Swamp of Sorrows >>Travel to Swamp of Sorrows
 step
     .train 416004,1
     #loop
@@ -1347,20 +1372,10 @@ step
     .goto Swamp of Sorrows,68.52,73.12,60,0
     .goto Swamp of Sorrows,72.50,82.18,60,0
     .goto Swamp of Sorrows,78.49,88.19,60,0
-    >>Kill |cRXP_ENEMY_Deathstrike Tarantulas|r. Loot them for |cRXP_LOOT_Viscous Venom|r
+    >>Kill |cRXP_ENEMY_Deathstrike Tarantulas|r. Loot them for their |cRXP_LOOT_Viscous Venom|r
     >>|cRXP_WARN_They can be found in the South-Eastern area of Swamp of Sorrows|r
     .complete 79677,4 --Viscous Venom (1x)
     .mob Deathstrike Tarantula
-step
-    .train 416004,1
-    #completewith next
-    .zone Badlands >>Travel to |cFFfa9602Badlands|r
-step
-    .train 416004,1
-    .goto Badlands,41.2,27.8
-    >>Click on the |cRXP_PICK_Tapped Shadowforge Keg|r in the basement of Angor Fortress for |cRXP_LOOT_Balmy Brew|r
-    >>|cRXP_WARN_Keep maximum distance from|r |cRXP_ENEMY_Ambassador Infernus|r |cRXP_WARN_to avoid agro. This may not be possible if you are below level 40|r
-    .complete 79677,3 --Balmy Brew (1x)
 step
     .train 416004,1
     #completewith next

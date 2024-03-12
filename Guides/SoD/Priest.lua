@@ -1091,6 +1091,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Boots
 #name Dispersion 40 (Stranglethorn Vale)
+#title Dispersion
 
 -- Dispersion
 

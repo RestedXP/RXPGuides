@@ -1333,6 +1333,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Boots
 #name Shadowflame - 40 (Desolace)
+#title Shadowflame
 
 
 -- Shadowflame
