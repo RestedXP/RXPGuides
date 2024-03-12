@@ -4,6 +4,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Molten Blast - 8 (Mulgore)
+#title Molten Blast
 #next Lava Lash - 10 (Mulgore)
 
 
@@ -177,6 +178,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Molten Blast - 10 (Durotar)
+#title Molten Blast
 #next Way of Earth - 12 (The Barrens)
 
 
@@ -371,6 +373,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Lava Lash - 10 (Mulgore)
+#title Lava Lash
 #next Ancestral Guidance - 10 (Mulgore)
 
 
@@ -603,6 +606,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Water Shield - 20 (The Barrens)
+#title Water Shield
 #next Shamanistic Rage - 25 (Stonetalon Mountains)
 
 
@@ -815,6 +819,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Water Shield - 20 (Silverpine Forest)
+#title Water Shield
 #next Shamanistic Rage - 25 (Stonetalon Mountains)
 
 step
@@ -1020,6 +1025,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Lava Burst - 25 (Hillsbrad Foothills)
+#title Lava Burst
 #next Earth Shield - 25 (Azeroth)
 
 
@@ -1079,6 +1085,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Overload - 3 (Durotar)
+#title Overload
 #next Shield Mastery - 6 (Durotar)
 
     --Rune of Overload
@@ -1143,6 +1150,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Overload - 3 (Mulgore)
+#title Overload
 #next Shield Mastery - 6 (Mulgore)
 
 
@@ -1218,6 +1226,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Shield Mastery - 6 (Durotar)
+#title Shield Mastery
 #next Molten Blast - 10 (Durotar)
 
 step
@@ -1390,6 +1399,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Shield Mastery - 6 (Mulgore)
+#title Shield Mastery
 #next Molten Blast - 8 (Mulgore)
 
 
@@ -1599,6 +1609,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Ancestral Guidance - 6 (Durotar)
+#title Ancestral Guidance
 #next Molten Blast - 10 (Durotar)
 
     --Rune of Ancestral Guidance
@@ -1651,6 +1662,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Ancestral Guidance - 10 (Mulgore)
+#title Ancestral Guidance
 #next Way of Earth - 12 (The Barrens)
 
 
@@ -1725,6 +1737,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Way of Earth - 12 (The Barrens)
+#title Way of Earth
 #next Water Shield - 20 (The Barrens)
 
 
@@ -1808,6 +1821,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Way of Earth - 14 (Silverpine Forest)
+#title Way of Earth
 #next Water Shield - 20 (Silverpine Forest)
 
 step
@@ -1871,6 +1885,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Shamanistic Rage - 25 (Stonetalon Mountains)
+#title Shamanistic Rage
 #next Dual Wield Specialization - 25 (Ratchet)
 
 
@@ -1909,6 +1924,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Earth Shield - 25 (Azeroth)
+#title Earth Shield
 #next Overload - 3 (Durotar) << Orc Shaman/Troll Shaman
 #next Overload - 3 (Mulgore) << Tauren Shaman
 
@@ -2210,6 +2226,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Belt
 #name Fire Nova - 35 (Azeroth)
+#title Fire Nova
 
 -- Fire Nova
 
@@ -2292,6 +2309,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Belt
 #name Maelstrom Weapon - 40 (Azeroth)
+#title Maelstrom Weapon
 
 -- Maelstrom Weapon
 
@@ -2476,6 +2494,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Belt
 #name Power Surge - 30 (Arathi Highlands)
+#title Power Surge
 
 -- Power Surge
 

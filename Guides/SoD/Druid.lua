@@ -635,6 +635,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Belt
 #name Nourish - 35 (Azeroth)
+#title Nourish
 
 -- Probably needs better waypoints to avoid some dangerous mobs or anything else that could kill you
 

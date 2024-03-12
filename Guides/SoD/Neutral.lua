@@ -6,6 +6,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Chest << Hunter
 #name Consumed by Rage - 25 (Wetlands) << Warrior
 #name Aspect of the Lion - 25 (Wetlands) << Hunter
+#title Consumed by Rage << Warrior
+#title Aspect of the Lion << Hunter
 
 step
     #season 2
@@ -46,6 +48,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Envenom - 25 (Hillsbrad)
+#title Envenom
 
 
     --Rune of Envenom
@@ -91,6 +94,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Shiv - 25 (Duskwood)
+#title Shiv
 
 
     --Rune of Shiving
@@ -133,6 +137,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Wild Strikes - 14 (Stonetalon Mountains)
+#title Wild Strikes
 
 step << Druid
     .goto Stonetalon Mountains,80.2,90.6,60,0
@@ -165,6 +170,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Starsurge - 25 (Wetlands)
+#title Starsurge
 
 step << Druid
     #completewith next
@@ -215,6 +221,15 @@ RXPGuides.RegisterGuide([[
 #next Crusader Strike - 4 (Elwynn Forest) << Human Paladin
 #next Crusader Strike - 4 (Dun Morogh) << Dwarf Paladin
 #next Lava Burst - 25 (Hillsbrad Foothills) << Shaman
+#title Serendipity << Priest
+#title Lone Wolf << Hunter
+#title Survival of the Fittest << Druid
+#title Warbringer << Warrior
+#title Dual Wield Specialization << Shaman
+#title Demonic Pact << Warlock
+#title Divine Sacrifice << Paladin
+#title Rewind Time << Mage
+#title Main Gauche << Rogue
 
 << SoD
 
@@ -228,11 +243,22 @@ step << Horde
     .train 425476,1 << Warlock
     .train 424990,1 << Rogue
     .train 410096,1 << Shaman
-    #completewith next
-    >>OPTIONAL: Buy 24x |T134844:0|t[Fish Oil] and 20x |T133710:0|t[Dark Iron Ordinance]
-    *|cRXP_WARN_Keep in mind that you need at least 5 gold to see the quests|r
-    .collect 17058,24
-    .collect 210138,20
+    .goto Thunder Bluff,40.41,51.78,-1
+    .goto Orgrimmar,55.59,62.92,-1
+    .goto Undercity,71.42,46.69,-1
+    .target Auctioneer Stampi
+    .target Auctioneer Thathung
+    .target Auctioneer Stockton
+    >>|cRXP_BUY_Buy 24|r |T134844:0|t[Fish Oil]|cRXP_BUY_, 20|r |T133710:0|t[Dark Iron Ordinance] |cRXP_BUY_and 16|r |T133001:0|t[Shredder Turbocharger] |cRXP_BUY_from the Auction House|r
+    >>|cRXP_WARN_If the|r |T133001:0|t[Shredder Turbocharger] |cRXP_WARN_is too expensive, buy|r roughly 30|r |T133870:0|t[Shredder Autosalvage Units] |cRXP_WARN_instead|r
+    >>|cRXP_WARN_Note: Majority of these materials can also be farmed or made with Engineering if you wish to not buy any. If that is the case, skip this step|r
+    .collect 17058,24 -- Fish Oil
+    .collect 210138,20 -- Dark Iron Ordinance
+    .collect 210147,30 -- Shredder Autosalvage Unit
+    .disablecheckbox
+    .collect 210146,16 -- Shredder Turbocharger
+    .disablecheckbox
+    .skill engineering,<1,1
 step << Horde
     .train 415995,1 << Priest
     .train 410010,1 << Paladin
@@ -243,10 +269,22 @@ step << Horde
     .train 425476,1 << Warlock
     .train 424990,1 << Rogue
     .train 410096,1 << Shaman
-    >>Buy at least 30x |T133870:0|t[Shredder Autosalvage Units]
-    *If you have the gold you can also just directly buy the 16 |T133001:0|t[Shredder Turbocharger]
-    .goto Orgrimmar,55.69,62.86
-    .collect 210147,30
+    .goto Thunder Bluff,40.41,51.78,-1
+    .goto Orgrimmar,55.59,62.92,-1
+    .goto Undercity,71.42,46.69,-1
+    .target Auctioneer Stampi
+    .target Auctioneer Thathung
+    .target Auctioneer Stockton
+    >>|cRXP_BUY_Buy 24|r |T134844:0|t[Fish Oil]|cRXP_BUY_, 20|r |T133710:0|t[Dark Iron Ordinance] |cRXP_BUY_and 16|r |T133001:0|t[Shredder Turbocharger] |cRXP_BUY_from the Auction House|r
+    >>|cRXP_WARN_If the|r |T133001:0|t[Shredder Turbocharger] |cRXP_WARN_is too expensive, buy|r roughly 30|r |T133870:0|t[Shredder Autosalvage Units] |cRXP_WARN_instead|r
+    >>|cRXP_WARN_Note: Majority of these materials can also be farmed if you wish to not buy any. If that is the case, skip this step|r
+    .collect 17058,24 -- Fish Oil
+    .collect 210138,20 -- Dark Iron Ordinance
+    .collect 210147,30 -- Shredder Autosalvage Unit
+    .disablecheckbox
+    .collect 210146,16 -- Shredder Turbocharger
+    .disablecheckbox
+    .skill engineering,1,1
 step << Alliance
     .train 415995,1 << Priest
     .train 410010,1 << Paladin
@@ -257,11 +295,28 @@ step << Alliance
     .train 425476,1 << Warlock
     .train 424990,1 << Rogue
     .train 410096,1 << Shaman
-    #completewith next
-    >>OPTIONAL: Buy 24x |T134844:0|t[Fish Oil] and 20x |T133710:0|t[Dark Iron Ordinance]
-    *|cRXP_WARN_Keep in mind that you need at least 5 gold to see the quests|r
-    .collect 17058,24
-    .collect 210138,20
+    .goto Darnassus,56.245,54.039,-1
+    .goto Darnassus,56.374,51.820,-1
+    .goto Ironforge,25.800,75.500,-1
+    .goto Ironforge,24.200,74.600,-1
+    .goto Ironforge,23.800,71.800,-1
+    .goto Stormwind City,53.612,59.764
+    .target Auctioneer Tolon
+    .target Auctioneer Golothas
+    .target Auctioneer Lympkin
+    .target Auctioneer Redmuse
+    .target Auctioneer Buckler
+    .target Auctioneer Jaxon
+    >>|cRXP_BUY_Buy 24|r |T134844:0|t[Fish Oil]|cRXP_BUY_, 20|r |T133710:0|t[Dark Iron Ordinance] |cRXP_BUY_and 16|r |T133001:0|t[Shredder Turbocharger] |cRXP_BUY_from the Auction House|r
+    >>|cRXP_WARN_If the|r |T133001:0|t[Shredder Turbocharger] |cRXP_WARN_is too expensive, buy|r roughly 30|r |T133870:0|t[Shredder Autosalvage Units] |cRXP_WARN_instead|r
+    >>|cRXP_WARN_Note: Majority of these materials can also be farmed or made with Engineering if you wish to not buy any. If that is the case, skip this step|r
+    .collect 17058,24 -- Fish Oil
+    .collect 210138,20 -- Dark Iron Ordinance
+    .collect 210147,30 -- Shredder Autosalvage Unit
+    .disablecheckbox
+    .collect 210146,16 -- Shredder Turbocharger
+    .disablecheckbox
+    .skill engineering,<1,1
 step << Alliance
     .train 415995,1 << Priest
     .train 410010,1 << Paladin
@@ -272,11 +327,28 @@ step << Alliance
     .train 425476,1 << Warlock
     .train 424990,1 << Rogue
     .train 410096,1 << Shaman
-    >>Buy about 35x |T133870:0|t[Shredder Autosalvage Units]
-    *If you have the gold you can also just directly buy the 16x |T133001:0|t[Shredder Turbocharger]
-    .goto Ironforge,24.2,74.5,-1
-    .goto Stormwind City,61.1,70.7,-1
-    .collect 210147,30
+    .goto Darnassus,56.245,54.039,-1
+    .goto Darnassus,56.374,51.820,-1
+    .goto Ironforge,25.800,75.500,-1
+    .goto Ironforge,24.200,74.600,-1
+    .goto Ironforge,23.800,71.800,-1
+    .goto Stormwind City,53.612,59.764
+    .target Auctioneer Tolon
+    .target Auctioneer Golothas
+    .target Auctioneer Lympkin
+    .target Auctioneer Redmuse
+    .target Auctioneer Buckler
+    .target Auctioneer Jaxon
+    >>|cRXP_BUY_Buy 24|r |T134844:0|t[Fish Oil]|cRXP_BUY_, 20|r |T133710:0|t[Dark Iron Ordinance] |cRXP_BUY_and 16|r |T133001:0|t[Shredder Turbocharger] |cRXP_BUY_from the Auction House|r
+    >>|cRXP_WARN_If the|r |T133001:0|t[Shredder Turbocharger] |cRXP_WARN_is too expensive, buy|r roughly 30|r |T133870:0|t[Shredder Autosalvage Units] |cRXP_WARN_instead|r
+    >>|cRXP_WARN_Note: Majority of these materials can also be farmed if you wish to not buy any. If that is the case, skip this step|r
+    .collect 17058,24 -- Fish Oil
+    .collect 210138,20 -- Dark Iron Ordinance
+    .collect 210147,30 -- Shredder Autosalvage Unit
+    .disablecheckbox
+    .collect 210146,16 -- Shredder Turbocharger
+    .disablecheckbox
+    .skill engineering,1,1
 step << Horde
     .train 415995,1 << Priest
     .train 410010,1 << Paladin
@@ -311,38 +383,13 @@ step << Horde
     .train 425476,1 << Warlock
     .train 424990,1 << Rogue
     .train 410096,1 << Shaman
-    >>Kill |cRXP_ENEMY_Venture Co. Light Shredders|r, |cRXP_ENEMY_XT:4|r, and |cRXP_ENEMY_XT:9|r. Use the |T133870:0|t[Shredder Autosalvage Unit] on their corpse to loot them for a 66% chance of a |cRXP_LOOT_Shredder Turbocharger|r
+    >>Kill |cRXP_ENEMY_Venture Co. Light Shredders|r, |cRXP_ENEMY_XT:4|r, and |cRXP_ENEMY_XT:9|r
+    >>|cRXP_WARN_Use the|r |T133870:0|t[Shredder Autosalvage Unit] |cRXP_WARN_on their corpses for a 66% chance of receiving a|r |cRXP_LOOT_Shredder Turbocharger|r
     .collect 210146,16
     .use 210147
     .mob Venture Co. Light Shredder
     .mob XT:4
     .mob XT:9
-step << Horde
-    .train 415995,1 << Priest
-    .train 410010,1 << Paladin
-    .train 401761,1 << Mage
-    .train 410122,1 << Hunter
-    .train 416042,1 << Druid
-    .train 425445,1 << Warrior
-    .train 425476,1 << Warlock
-    .train 424990,1 << Rogue
-    .train 410096,1 << Shaman
-    #completewith RuneRatchetDarkIronOrdinance
-    .goto Wetlands,49.6,17.4
-    .zone Wetlands >>Take the zeppelin in Orgrimmar to Tirisfal and go to Wetlands. Start looking for a group to farm the |T133710:0|t[Dark Iron Ordinance]
-step << Alliance
-    .train 415995,1 << Priest
-    .train 410010,1 << Paladin
-    .train 401761,1 << Mage
-    .train 410122,1 << Hunter
-    .train 416042,1 << Druid
-    .train 425445,1 << Warrior
-    .train 425476,1 << Warlock
-    .train 424990,1 << Rogue
-    .train 410096,1 << Shaman
-    #completewith RuneRatchetDarkIronOrdinance
-    .goto Wetlands,49.6,17.4
-    .zone Wetlands >>Travel to Wetlands. Start looking for a group to farm the |T133710:0|t[Dark Iron Ordinance]
 step
     .train 415995,1 << Priest
     .train 410010,1 << Paladin
@@ -353,15 +400,29 @@ step
     .train 425476,1 << Warlock
     .train 424990,1 << Rogue
     .train 410096,1 << Shaman
-    #label RuneRatchetDarkIronOrdinance
+    #completewith next
+    .goto Wetlands,49.6,17.4
+    .zone Wetlands >>Travel to Wetlands. Start looking for a group to kill the elite |cRXP_ENEMY_Dark Iron Dwarves|r
+step
+    .train 415995,1 << Priest
+    .train 410010,1 << Paladin
+    .train 401761,1 << Mage
+    .train 410122,1 << Hunter
+    .train 416042,1 << Druid
+    .train 425445,1 << Warrior
+    .train 425476,1 << Warlock
+    .train 424990,1 << Rogue
+    .train 410096,1 << Shaman
     #loop
     .goto Wetlands,48.6,16.0,40,0
     .goto Wetlands,60.6,25.8,40,0
-    >>Kill the elite |cRXP_ENEMY_Dark Iron Dwarves|r. Loot them for the |cRXP_LOOT_Iron Ordinances|r
-    *|cRXP_WARN_They drop for everyone in your group|r
+    >>Kill |cRXP_ENEMY_Dark Iron Dwarves|r, |cRXP_ENEMY_Dark Iron Tunnelers|r, |cRXP_ENEMY_Dark Iron Saboteurs|r and |cRXP_ENEMY_Dark Iron Demolitionists|r. Loot them for their |cRXP_LOOT_Dark Iron Ordinances|r
+    *|cRXP_WARN_Everyone in the group can loot them if they drop|r
     .collect 210138,20
     .mob Dark Iron Dwarf
-    .mob Dark Iron Bombardier
+    .mob Dark Iron Tunneler
+    .mob Dark Iron Saboteur
+    .mob Dark Iron Demolitionist
 step
     .train 415995,1 << Priest
     .train 410010,1 << Paladin
@@ -372,10 +433,10 @@ step
     .train 425476,1 << Warlock
     .train 424990,1 << Rogue
     .train 410096,1 << Shaman
-    >>Kill the |cRXP_ENEMY_Blue Gill Oracles|r. Loot them for the |cRXP_LOOT_Fish Oil|r
+    >>Kill the |cRXP_ENEMY_Bluegill Oracles|r. Loot them for the |cRXP_LOOT_Fish Oil|r
     .goto Wetlands,16.6,32.2
     .collect 17058,24
-    .mob Blue Gill Oracle
+    .mob Bluegill Oracle
 step << Alliance
     .train 415995,1 << Priest
     .train 410010,1 << Paladin
@@ -388,7 +449,7 @@ step << Alliance
     .train 410096,1 << Shaman
     #completewith next
     .goto Stonetalon Mountains,66.6,55.5
-    .zone Stonetalon Mountains >>Travel to Stonetalon Mountains (e.g. take the boat to Dustwallow Marsh -> fly to Ratchet or directly to Stonetalon Mountains)
+    .zone Stonetalon Mountains >>Travel to Stonetalon Mountains
 step << Alliance
     #loop
     .goto Stonetalon Mountains,71.04,49.03,50,0
@@ -410,13 +471,14 @@ step << Alliance
     .train 425476,1 << Warlock
     .train 424990,1 << Rogue
     .train 410096,1 << Shaman
-    >>Kill |cRXP_ENEMY_Venture Co. Light Shredders|r, |cRXP_ENEMY_XT:4|r, and |cRXP_ENEMY_XT:9|r. Use the |T133870:0|t[Shredder Autosalvage Unit] on their corpse to loot them for a 66% chance of a |cRXP_LOOT_Shredder Turbocharger|r
+    >>Kill |cRXP_ENEMY_Venture Co. Light Shredders|r, |cRXP_ENEMY_XT:4|r, and |cRXP_ENEMY_XT:9|r
+    >>|cRXP_WARN_Use the|r |T133870:0|t[Shredder Autosalvage Unit] |cRXP_WARN_on their corpses for a 66% chance of receiving a|r |cRXP_LOOT_Shredder Turbocharger|r
     .collect 210146,16
     .use 210147
     .mob Venture Co. Light Shredder
     .mob XT:4
     .mob XT:9
-step << Horde
+step
     .train 415995,1 << Priest
     .train 410010,1 << Paladin
     .train 401761,1 << Mage
@@ -426,20 +488,7 @@ step << Horde
     .train 425476,1 << Warlock
     .train 424990,1 << Rogue
     .train 410096,1 << Shaman
-    #completewith RuneRatchetGrizzby
-    .goto The Barrens,61.8,39.4
-    .zone The Barrens >>Travel to The Barrens (e.g. fly to Undercity from Hammerfall (Arathi Highlands) -> take the zeppelin to Orgrimmar)
-step << Alliance
-    .train 415995,1 << Priest
-    .train 410010,1 << Paladin
-    .train 401761,1 << Mage
-    .train 410122,1 << Hunter
-    .train 416042,1 << Druid
-    .train 425445,1 << Warrior
-    .train 425476,1 << Warlock
-    .train 424990,1 << Rogue
-    .train 410096,1 << Shaman
-    #completewith RuneRatchetGrizzby
+    #completewith next
     .goto The Barrens,61.8,39.4
     .zone The Barrens >>Travel to The Barrens
 step
@@ -455,7 +504,10 @@ step
     #label RuneRatchetGrizzby
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grizzby|r and wait for the roleplay
     .goto The Barrens,61.8,39.4
-    .turnin 78625 >>Turn in Fish Oil
+    .accept 78265 >>Accept Fish Oil
+    .accept 78266 >>Accept Dark Iron Ordinance
+    .accept 78267 >>Accept Shredder Turbochargers
+    .turnin 78265 >>Turn in Fish Oil
     .turnin 78266 >>Turn in Dark Iron Ordinance
     .turnin 78267 >>Turn in Shredder Turbochargers
     .target Grizzby
@@ -480,21 +532,6 @@ step
     .train 424990 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Main Gauche|r] |cRXP_WARN_to train|r |T237531:0|t[Main Gauche] << Rogue
     .train 410096 >>|cRXP_WARN_Buy and use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Dual Wield Specialization|r] |cRXP_WARN_to train|r |T132686:0|t[Engrave Chest - Dual Wield Specialization] << Shaman
     .target Grizzby
-step << Paladin
-    +Congratulations! You have acquired all |T134419:0|t|cRXP_LOOT_[Runes]|r currently available.
-    .train 409999,3 --Beacon of Light
-    .train 410001,3 --Hand of Reckoning
-    .train 410002,3 --Crusader Strike
-    .train 410008,3 --Avenger's Shield
-    .train 410010,3 --Divine Sacrifice
-    .train 410011,3 --Inspiration Exemplar
-    .train 410014,3 --Divine Storm
-    .train 410015,3 --Seal of Martyrdom
-    .train 416037,3 --Exorcist
-    .train 425618,3 --Horn of Lordaeron
-    .train 425619,3 --Aegis
-    .train 425621,3 --Rebuke
-    .xp <25,1
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -513,6 +550,15 @@ RXPGuides.RegisterGuide([[
 #name Arcane Surge - 25 (Reputation) << Mage
 #name Just a Flesh Wound - 25 (Reputation) << Rogue
 #next Divine Sacrifice - 25 (Ratchet) << Paladin
+#title Mind Sear << Priest
+#title Serpent Spread << Hunter
+#title Skull Bash << Druid
+#title Single-Minded Fury << Warrior
+#title Healing Rain << Shaman
+#title Everlasting Affliction << Warlock
+#title Beacon of Light << Paladin
+#title Arcane Surge << Mage
+#title Just a Flesh Wound << Rogue
 
 << SoD
 
@@ -563,6 +609,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Wild Growth - 25 (Multiple Zones)
+#title Wild Growth
 
 step << Druid
     #completewith next
@@ -653,6 +700,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Legs << Mage
 #name Flagellation - 25 (Duskwood) << Warrior
 #name Mass Regeneration - 25 (Duskwood) << Mage
+#title Flagellation << Warrior
+#title Mass Regeneration << Mage
 
 step << Warrior/Mage
     #completewith next
@@ -705,19 +754,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Raging Blow - 25 (Multiple Zones)
+#title Raging Blow
 
-step << Warrior
-    #completewith next
-    .zone Ashenvale >> Travel to Ashenvale
-    .train 425444,1
-step << Warrior
-    .goto Ashenvale,43.513,70.463
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
-    .accept 78132 >> Accept Dragonslayer's Helm
-    .accept 78134 >> Accept Dragonslayer's Lance
-    .accept 78133 >> Accept Dragonslayer's Shield
-    .target Alonso
-    .train 425444,1
 step << Warrior
     #completewith next
     .goto Wetlands,49.40,16.98
@@ -729,7 +767,7 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Dark Iron Entrepreneur|r inside of the building
     >>|cRXP_WARN_You may need to corpse run a couple times to get to him|r
     >>|cRXP_BUY_Buy a|r |T135130:0|t[Dragonslayer's Lance] |cRXP_BUY_it costs 75 silver|r
-    .complete 78134,1 -- Dragonslayer's Lance (1)
+    .collect 209874,1,78134,1 -- Dragonslayer's Lance (1)
     .target Dark Iron Entrepreneur
     .train 425444,1
 step << Warrior
@@ -742,7 +780,7 @@ step << Warrior
     >>Click the |cRXP_PICK_Wall-Mounted Shield|r. Loot it for the |cRXP_LOOT_Dragonslayer's Shield|r
     >>|cRXP_WARN_This is inside of the main keep upstairs behind |cRXP_ENEMY_Gath'Ilzogg|r who is a level 26 elite|r
     >>|cRXP_WARN_You will need to kill |cRXP_ENEMY_Gath'Ilzogg|r or have him be engaged by someone else in order to loot it. Ensure you have a party before going in|r
-    .complete 78133,1 -- Dragonslayer's Shield (1)
+    .collect 209873,1,78133,1 -- Dragonslayer's Shield (1)
     .train 425444,1
 step << Warrior
     #completewith next
@@ -750,7 +788,7 @@ step << Warrior
 step << Warrior
     >>Open the |cRXP_PICK_Discarded Helm|r. Loot it for the |cRXP_LOOT_Dragonslayer's Helm|r
     >>|cRXP_WARN_This is found on a bench behind|r |cRXP_ENEMY_Commander Springvale|r
-    .complete 78132,1 -- Dragonslayer's Helm (1)
+    .collect 209872,1,78132,1 -- Dragonslayer's Helm (1)
     .train 425444,1
 step << Warrior
     #completewith next
@@ -759,6 +797,9 @@ step << Warrior
 step << Warrior
     .goto Ashenvale,43.513,70.463
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alonso|r
+    .accept 78132 >> Accept Dragonslayer's Helm
+    .accept 78134 >> Accept Dragonslayer's Lance
+    .accept 78133 >> Accept Dragonslayer's Shield
     .turnin 78132 >> Turn In Dragonslayer's Helm
     .turnin 78134 >> Turn In Dragonslayer's Lance
     .turnin 78133 >> Turn In Dragonslayer's Shield
@@ -785,7 +826,7 @@ step << Warrior
     .train 425444,1
 step << Warrior
     .train 425444 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Raging Blow|r] |cRXP_WARN_to train|r |T132215:0|t[Raging Blow]
-    .use 210569
+    .use 210015
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -794,6 +835,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Strength of Soul - 22 (Ashenvale)
+#title Strength of Soul
 
 step << Priest
     .goto Ashenvale,32.0,43.0,65,0
@@ -834,6 +876,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Power Word: Barrier - 22 (Redridge Mountains)
+#title Power Word: Barrier
 
 step << Priest
     #completewith next
@@ -868,6 +911,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
 #name Circle of Healing - 25 (Duskwood)
+#title Circle of Healing
 
 step << Priest
     .goto Duskwood,50.4,70.8,60,0
@@ -904,6 +948,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest
 #name Cobra Strikes - 25 (Hillsbrad Foothills)
+#title Cobra Strikes
 
 
     --Rune of Cobra Strikes
@@ -945,6 +990,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Kill Command - 25 (Multiple Zones)
+#title Kill Command
 
 step
     #completewith WyvernWrangling
@@ -1457,6 +1503,15 @@ RXPGuides.RegisterGuide([[
 #name The Art of War - 35 (Azeroth) << Paladin
 #name Brain Freeze - 35 (Azeroth) << Mage
 #name Poisoned Knife - 35 (Azeroth) << Rogue
+#title Mind Spike << Priest
+#title Trap Launcher << Hunter
+#title Eclipse << Druid
+#title Enraged Regeneration << Warrior
+#title Ancestral Awakening << Shaman
+#title Shadow and Flame << Warlock
+#title The Art of War << Paladin
+#title Brain Freeze << Mage
+#title Poisoned Knife << Rogue
 
 step
     #completewith next
@@ -1955,6 +2010,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Extras
 #subweight -1
 #name Cozy Sleeping Bag - 14
+#title Cozy Sleeping Bag
 
 step
     #optional
