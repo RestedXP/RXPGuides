@@ -468,12 +468,12 @@ step << Gnome Rogue/Dwarf Rogue
     .target Auctioneer Jaxon
     .isQuestComplete 399
 step << Gnome Rogue/Dwarf Rogue
-    .isQuestComplete 399
     .goto StormwindClassic,49.194,30.284
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r
     .turnin 399 >> Turn in Humble Beginnings
     .target Baros Alexston
     .zoneskip Stormwind City,1
+    .isQuestComplete 399
 step << Dwarf !Paladin/Gnome
     #label end
     #completewith DarkshoreBoat
@@ -8602,11 +8602,13 @@ step
     .target Wilder Thistlenettle
     .dungeon DM
 step << !NightElf
+    #xprate <1.5
     .goto StormwindClassic,49.194,30.284
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r
     .turnin 399 >> Turn in Humble Beginnings
     .target Baros Alexston
-    .isOnQuest 399
+    .isQuestComplete 399
+--XX Westfall 1x only
 step << Mage
     #completewith next
     .goto StormwindClassic,37.69,82.09,10 >> Travel to the Mage Tower
@@ -11292,6 +11294,7 @@ step << Paladin
     .itemcount 209836,1 --Athalaxx Orb (1)
 step << Paladin
     #season 2
+    #label tower
     #optional
     .goto Ashenvale,26.19,38.69
     >>Talk to |cRXP_FRIENDLY_Delgren the Purifier|r

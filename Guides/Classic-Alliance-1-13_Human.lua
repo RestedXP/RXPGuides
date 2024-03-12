@@ -3937,7 +3937,7 @@ step << Paladin/Warrior
     .target Nillen Andemar
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
 step
-    #xprate <1.5
+    #xprate <1.59
     .goto Loch Modan,25.05,30.19,0
     .goto Loch Modan,26.06,43.44,0
     .goto Loch Modan,37.71,16.84,0
@@ -3958,7 +3958,8 @@ step
     .mob Tunnel Rat Digger
     .mob Tunnel Rat Surveyor
 step
-    #xprate >1.49
+    #xprate >1.59
+    #loop
     .goto Loch Modan,25.05,30.19,0
     .goto Loch Modan,26.06,43.44,0
     .goto Loch Modan,37.71,16.84,0
@@ -3966,10 +3967,7 @@ step
     .goto Loch Modan,35.48,16.82,50,0
     .goto Loch Modan,25.05,30.19,50,0
     .goto Loch Modan,26.06,43.44,50,0
-    .goto Loch Modan,37.71,16.84,50,0
-    .goto Loch Modan,35.48,16.82
     >>Kill |cRXP_ENEMY_Tunnel Rats|r. Loot them for their |cRXP_LOOT_Ears|r
-    >>|cRXP_WARN_Don't go out of your way for this as you will likely skip this quest|r
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
     .mob Tunnel Rat Scout
     .mob Tunnel Rat Vermin
@@ -4196,16 +4194,33 @@ step
     .goto Loch Modan,24.78,70.17,10,0
     .goto Loch Modan,23.73,75.52,15 >> Run up the dirt path then drop down into the bunker
 step
+    #xprate <1.59
     .goto Loch Modan,23.233,73.675
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r in the bunker
-    .target Captain Rugelfuss
     .accept 267 >> Accept The Trogg Threat
+    .target Captain Rugelfuss
 step
+    #xprate <1.59
     #label DefenseStart
     .goto Loch Modan,22.071,73.127
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Cobbleflint|r
     .accept 224 >> Accept In Defense of the King's Lands
     .target Mountaineer Cobbleflint
+step
+    #xprate >1.59
+    .goto Loch Modan,23.233,73.675
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r in the bunker
+    .accept 267 >> Accept The Trogg Threat
+    .target Captain Rugelfuss
+    .xp >14,1 << !Warrior
+step
+    #xprate >1.59
+    #label DefenseStart
+    .goto Loch Modan,22.071,73.127
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Cobbleflint|r
+    .accept 224 >> Accept In Defense of the King's Lands
+    .target Mountaineer Cobbleflint
+    .xp >14,1 << !Warrior
 step << Warrior
     #season 2
     #sticky
@@ -4245,20 +4260,25 @@ step
     .complete 267,1 --Collect Trogg Stone Tooth (x8)
     .mob Stonesplinter Trogg
     .mob Stonesplinter Scout
+    .isOnQuest 224
+    .isOnQuest 267
 step << Warlock
     #xprate <1.5
+    #optional
     #completewith TroggT
     .goto Loch Modan,27.33,56.70,0
     +Grind |cRXP_ENEMY_Troggs|r until you have 75s 79c worth of vendor trash/money
     .money >0.7579
 step << Warlock
     #xprate >1.49
+    #optional
     #completewith TroggT
     .goto Loch Modan,27.33,56.70,0
     +Grind |cRXP_ENEMY_Troggs|r until you have 42s 39c worth of vendor trash/money
     .money >0.4239
 step << Warlock
     #xprate <1.5
+    #optional
     .goto Loch Modan,27.33,56.70
     .xp 13+9600 >>Grind until 9600+/11400xp
 step
@@ -4313,6 +4333,7 @@ step << Warrior
     .use 208778
     .itemcount 208778,1
 step
+    #xprate <1.5
     #optional
     .goto Loch Modan,27.33,56.70
     +Continue grinding |cRXP_ENEMY_Troggs|r until you have <1 minute on your |T134414:0|t[Hearthstone]
@@ -4327,17 +4348,27 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r
     .turnin 267 >> Turn in The Trogg Threat
     .target Captain Rugelfuss
+    .isQuestComplete 267
 step
     #label TroggT
     .goto Loch Modan,22.071,73.127
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Cobbleflint|r
     .turnin 224 >> Turn in In Defense of the King's Lands
     .target Mountaineer Cobbleflint
+    .isQuestComplete 224
 step
     #xprate >1.49
-    #completewith HumbleBeginnings
+    .goto Loch Modan,33.938,50.954
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
+    .fly Ironforge >>Fly to Ironforge
+    .target Thorgrum Borrelson
+    .zoneskip Ironforge
+    .cooldown item,6948,<0
+step
+    #xprate >1.49
     .hs >> Hearth to Ironforge
     .zoneskip Ironforge
+    .cooldown item,6948,>0,1
 step
     #xprate <1.5
     #completewith HumbleBeginnings
