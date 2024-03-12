@@ -2129,7 +2129,7 @@ step
     .waypoint 1439,42.794,62.166,50,0
     .waypoint 1439,42.489,60.677,50,0 --Middle spawn
     >>Kill |cRXP_ENEMY_Anaya Dawnrunner|r. Loot her for her |cRXP_LOOT_Pendant|r
-    >>|cRXP_WARN_Be aware that she has a 7-8 minute spawn time and 4 different spawnpoints spread apart|r
+    >>|cRXP_WARN_Be aware that she has a 7-8 minute spawn time and 4 different spawnpoints across Ameth'Aran|r
     >>|cRXP_WARN_If you can't find her and want to try again later at the cost of potentially grinding more mobs soon, skip this step|r
     .complete 963,1 --Anaya's Pendant (1)
     .unitscan Anaya Dawnrunner
@@ -2153,7 +2153,7 @@ step
     .waypoint 1439,42.794,62.166,50,0
     .waypoint 1439,42.489,60.677,50,0 --Middle spawn
     >>Kill |cRXP_ENEMY_Anaya Dawnrunner|r. Loot her for her |cRXP_LOOT_Pendant|r
-    >>|cRXP_WARN_Be aware that she has a 7-8 minute spawn time and 4 different spawnpoints spread apart|r
+    >>|cRXP_WARN_Be aware that she has a 7-8 minute spawn time and 4 different spawnpoints across Ameth'Aran|r
     >>|cRXP_WARN_You may want to group with others nearby if you can't find her. Ask in General Chat (/1) to group with anyone else that is also looking for her|r
     >>|cRXP_WARN_If you can't find her and want to try again later at the cost of potentially grinding more mobs soon, skip this step|r
     .complete 963,1 --Anaya's Pendant (1)
@@ -3474,7 +3474,7 @@ step
     .waypoint 1439,42.794,62.166,50,0
     .waypoint 1439,42.489,60.677,50,0 --Middle spawn
     >>Kill |cRXP_ENEMY_Anaya Dawnrunner|r. Loot her for her |cRXP_LOOT_Pendant|r
-    >>|cRXP_WARN_Be aware that she has a 7-8 minute spawn time and 4 different spawnpoints spread apart|r
+    >>|cRXP_WARN_Be aware that she has a 7-8 minute spawn time and 4 different spawnpoints across Ameth'Aran|r
     .complete 963,1 --Anaya's Pendant (1)
     .unitscan Anaya Dawnrunner
     .solo
@@ -3494,7 +3494,7 @@ step
     .waypoint 1439,42.794,62.166,50,0
     .waypoint 1439,42.489,60.677,50,0 --Middle spawn
     >>Kill |cRXP_ENEMY_Anaya Dawnrunner|r. Loot her for her |cRXP_LOOT_Pendant|r
-    >>|cRXP_WARN_Be aware that she has a 7-8 minute spawn time and 4 different spawnpoints spread apart|r
+    >>|cRXP_WARN_Be aware that she has a 7-8 minute spawn time and 4 different spawnpoints across Ameth'Aran|r
     >>|cRXP_WARN_You may want to group with others nearby if you can't find her. Ask in General Chat (/1) to group with anyone else that is also looking for her|r
     .complete 963,1 --Anaya's Pendant (1)
     .unitscan Anaya Dawnrunner
@@ -4794,6 +4794,21 @@ step << NightElf Warrior/NightElf Rogue
     .subzoneskip 809
     .subzoneskip 2257
     .dungeon !DM
+step << NightElf Warrior/NightElf Rogue
+    #xprate >1.59 << !Hunter
+    #label WepTrainNoDM
+    #optional << NightElf
+    .goto StormwindClassic,57.12,57.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Woo Ping|r
+    .train 201 >> Train 1h Swords << Rogue
+    .train 202 >> Train 2h Swords << Warrior
+    .target Woo Ping
+    .subzoneskip 809
+    .subzoneskip 2257
+    .zoneskip Darkshore
+    .zoneskip Wetlands
+    .zoneskip Ironforge
+    .dungeon !DM
 
 
 
@@ -5062,6 +5077,7 @@ step << NightElf Warrior/Mage/Warlock/Rogue
     .target Billibub Cogspinner
     .zoneskip Darkshore << Warrior/Paladin
     .bronzetube
+    .train 201,1 << NightElf Rogue --1h swords not trained
     .train 202,1 << Warrior --2h swords not trained
     .dungeon !DM
 step << Mage/Warlock/Rogue
@@ -5160,6 +5176,7 @@ step << Rogue
 step << NightElf Warrior/NightElf Rogue/Mage/Warlock
     #xprate >1.59 << !Hunter
     #label WepTrainNoDM
+    #optional << NightElf
     .goto StormwindClassic,57.12,57.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Woo Ping|r
     .train 201 >> Train 1h Swords << Mage/Rogue/Warlock
