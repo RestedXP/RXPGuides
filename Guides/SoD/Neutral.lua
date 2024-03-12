@@ -209,15 +209,15 @@ RXPGuides.RegisterGuide([[
 #subgroup Chest << Priest/Hunter/Druid/Warrior/Shaman
 #subgroup Legs << Warlock/Paladin
 #subgroup Gloves << Mage/Rogue
-#name Serendipity - 25 (Ratchet) << Priest
-#name Lone Wolf - 25 (Ratchet) << Hunter
-#name Survival of the Fittest - 25 (Ratchet) << Druid
-#name Warbringer - 25 (Ratchet) << Warrior
-#name Dual Wield Specialization - 25 (Ratchet) << Shaman
-#name Demonic Pact - 25 (Ratchet) << Warlock
-#name Divine Sacrifice - 25 (Ratchet) << Paladin
-#name Rewind Time - 25 (Ratchet) << Mage
-#name Main Gauche - 25 (Ratchet) << Rogue
+#name Serendipity - 25 (Azeroth) << Priest
+#name Lone Wolf - 25 (Azeroth) << Hunter
+#name Survival of the Fittest - 25 (Azeroth) << Druid
+#name Warbringer - 25 (Azeroth) << Warrior
+#name Dual Wield Specialization - 25 (Azeroth) << Shaman
+#name Demonic Pact - 25 (Azeroth) << Warlock
+#name Divine Sacrifice - 25 (Azeroth) << Paladin
+#name Rewind Time - 25 (Azeroth) << Mage
+#name Main Gauche - 25 (Azeroth) << Rogue
 #next Crusader Strike - 4 (Elwynn Forest) << Human Paladin
 #next Crusader Strike - 4 (Dun Morogh) << Dwarf Paladin
 #next Lava Burst - 25 (Hillsbrad Foothills) << Shaman
@@ -250,7 +250,7 @@ step << Horde
     .target Auctioneer Thathung
     .target Auctioneer Stockton
     >>|cRXP_BUY_Buy 24|r |T134844:0|t[Fish Oil]|cRXP_BUY_, 20|r |T133710:0|t[Dark Iron Ordinance] |cRXP_BUY_and 16|r |T133001:0|t[Shredder Turbocharger] |cRXP_BUY_from the Auction House|r
-    >>|cRXP_WARN_If the|r |T133001:0|t[Shredder Turbocharger] |cRXP_WARN_is too expensive, buy|r roughly 30|r |T133870:0|t[Shredder Autosalvage Units] |cRXP_WARN_instead|r
+    >>|cRXP_WARN_If the|r |T133001:0|t[Shredder Turbocharger] |cRXP_WARN_is too expensive, buy roughly 30|r |T133870:0|t[Shredder Autosalvage Units] |cRXP_WARN_instead|r
     >>|cRXP_WARN_Note: Majority of these materials can also be farmed or made with Engineering if you wish to not buy any. If that is the case, skip this step|r
     .collect 17058,24 -- Fish Oil
     .collect 210138,20 -- Dark Iron Ordinance
@@ -276,7 +276,7 @@ step << Horde
     .target Auctioneer Thathung
     .target Auctioneer Stockton
     >>|cRXP_BUY_Buy 24|r |T134844:0|t[Fish Oil]|cRXP_BUY_, 20|r |T133710:0|t[Dark Iron Ordinance] |cRXP_BUY_and 16|r |T133001:0|t[Shredder Turbocharger] |cRXP_BUY_from the Auction House|r
-    >>|cRXP_WARN_If the|r |T133001:0|t[Shredder Turbocharger] |cRXP_WARN_is too expensive, buy|r roughly 30|r |T133870:0|t[Shredder Autosalvage Units] |cRXP_WARN_instead|r
+    >>|cRXP_WARN_If the|r |T133001:0|t[Shredder Turbocharger] |cRXP_WARN_is too expensive, buy roughly 30|r |T133870:0|t[Shredder Autosalvage Units] |cRXP_WARN_instead|r
     >>|cRXP_WARN_Note: Majority of these materials can also be farmed if you wish to not buy any. If that is the case, skip this step|r
     .collect 17058,24 -- Fish Oil
     .collect 210138,20 -- Dark Iron Ordinance
@@ -308,7 +308,7 @@ step << Alliance
     .target Auctioneer Buckler
     .target Auctioneer Jaxon
     >>|cRXP_BUY_Buy 24|r |T134844:0|t[Fish Oil]|cRXP_BUY_, 20|r |T133710:0|t[Dark Iron Ordinance] |cRXP_BUY_and 16|r |T133001:0|t[Shredder Turbocharger] |cRXP_BUY_from the Auction House|r
-    >>|cRXP_WARN_If the|r |T133001:0|t[Shredder Turbocharger] |cRXP_WARN_is too expensive, buy|r roughly 30|r |T133870:0|t[Shredder Autosalvage Units] |cRXP_WARN_instead|r
+    >>|cRXP_WARN_If the|r |T133001:0|t[Shredder Turbocharger] |cRXP_WARN_is too expensive, buy roughly 30|r |T133870:0|t[Shredder Autosalvage Units] |cRXP_WARN_instead|r
     >>|cRXP_WARN_Note: Majority of these materials can also be farmed or made with Engineering if you wish to not buy any. If that is the case, skip this step|r
     .collect 17058,24 -- Fish Oil
     .collect 210138,20 -- Dark Iron Ordinance
@@ -340,7 +340,7 @@ step << Alliance
     .target Auctioneer Buckler
     .target Auctioneer Jaxon
     >>|cRXP_BUY_Buy 24|r |T134844:0|t[Fish Oil]|cRXP_BUY_, 20|r |T133710:0|t[Dark Iron Ordinance] |cRXP_BUY_and 16|r |T133001:0|t[Shredder Turbocharger] |cRXP_BUY_from the Auction House|r
-    >>|cRXP_WARN_If the|r |T133001:0|t[Shredder Turbocharger] |cRXP_WARN_is too expensive, buy|r roughly 30|r |T133870:0|t[Shredder Autosalvage Units] |cRXP_WARN_instead|r
+    >>|cRXP_WARN_If the|r |T133001:0|t[Shredder Turbocharger] |cRXP_WARN_is too expensive, buy roughly 30|r |T133870:0|t[Shredder Autosalvage Units] |cRXP_WARN_instead|r
     >>|cRXP_WARN_Note: Majority of these materials can also be farmed if you wish to not buy any. If that is the case, skip this step|r
     .collect 17058,24 -- Fish Oil
     .collect 210138,20 -- Dark Iron Ordinance
@@ -383,7 +383,7 @@ step << Horde
     .train 425476,1 << Warlock
     .train 424990,1 << Rogue
     .train 410096,1 << Shaman
-    >>Kill |cRXP_ENEMY_Venture Co. Light Shredders|r, |cRXP_ENEMY_XT:4|r, and |cRXP_ENEMY_XT:9|r
+    >>Kill |cRXP_ENEMY_Venture Co. Light Shredders|r, |cRXP_ENEMY_XT:4|r and |cRXP_ENEMY_XT:9|r
     >>|cRXP_WARN_Use the|r |T133870:0|t[Shredder Autosalvage Unit] |cRXP_WARN_on their corpses for a 66% chance of receiving a|r |cRXP_LOOT_Shredder Turbocharger|r
     .collect 210146,16
     .use 210147
@@ -402,7 +402,7 @@ step
     .train 410096,1 << Shaman
     #completewith next
     .goto Wetlands,49.6,17.4
-    .zone Wetlands >>Travel to Wetlands. Start looking for a group to kill the elite |cRXP_ENEMY_Dark Iron Dwarves|r
+    .zone Wetlands >>Travel to Wetlands. Start looking for a group to kill elite |cRXP_ENEMY_Dark Iron Dwarves|r
 step
     .train 415995,1 << Priest
     .train 410010,1 << Paladin
@@ -433,7 +433,7 @@ step
     .train 425476,1 << Warlock
     .train 424990,1 << Rogue
     .train 410096,1 << Shaman
-    >>Kill the |cRXP_ENEMY_Bluegill Oracles|r. Loot them for the |cRXP_LOOT_Fish Oil|r
+    >>Kill |cRXP_ENEMY_Bluegill Oracles|r. Loot them for their |cRXP_LOOT_Fish Oil|r
     .goto Wetlands,16.6,32.2
     .collect 17058,24
     .mob Bluegill Oracle
@@ -471,7 +471,7 @@ step << Alliance
     .train 425476,1 << Warlock
     .train 424990,1 << Rogue
     .train 410096,1 << Shaman
-    >>Kill |cRXP_ENEMY_Venture Co. Light Shredders|r, |cRXP_ENEMY_XT:4|r, and |cRXP_ENEMY_XT:9|r
+    >>Kill |cRXP_ENEMY_Venture Co. Light Shredders|r, |cRXP_ENEMY_XT:4|r and |cRXP_ENEMY_XT:9|r
     >>|cRXP_WARN_Use the|r |T133870:0|t[Shredder Autosalvage Unit] |cRXP_WARN_on their corpses for a 66% chance of receiving a|r |cRXP_LOOT_Shredder Turbocharger|r
     .collect 210146,16
     .use 210147
@@ -549,7 +549,7 @@ RXPGuides.RegisterGuide([[
 #name Beacon of Light - 25 (Reputation) << Paladin
 #name Arcane Surge - 25 (Reputation) << Mage
 #name Just a Flesh Wound - 25 (Reputation) << Rogue
-#next Divine Sacrifice - 25 (Ratchet) << Paladin
+#next Divine Sacrifice - 25 (Azeroth) << Paladin
 #title Mind Sear << Priest
 #title Serpent Spread << Hunter
 #title Skull Bash << Druid

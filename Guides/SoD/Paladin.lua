@@ -884,7 +884,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Chest
 #name Divine Storm - 25 (Darkshore)
 #title Divine Storm
-#next Divine Sacrifice - 25 (Ratchet)
+#next Divine Sacrifice - 25 (Azeroth)
 
 step
     #completewith LibramS
