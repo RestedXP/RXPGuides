@@ -746,6 +746,7 @@ step
     .complete 872,3 --Kreenig Snarlsnout's Tusk (1)
     .mob Kreenig Snarlsnout
 step << Warlock
+    #season 2
     .train 403932,1
     >>|cRXP_WARN_Go to the Altar of Thorns|r. Cast |T136126:0|t[Life Tap] until you're almost dying. Then cast |T136168:0|t[Health Funnel] on your pet to die and get |T134419:0|t[|cRXP_FRIENDLY_Rune of Channeling|r]
     *|cRXP_WARN_You will be revived immediately after dying|r
@@ -754,6 +755,7 @@ step << Warlock
     .cast 735
     .collect 208750,1
 step << Warlock
+    #season 2
     .use 208750
     .itemcount 208750,1
     .train 403932 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Channeling|r] |cRXP_WARN_to train|r |T136168:0|t[Master Channeler]
@@ -1788,6 +1790,7 @@ step
     .itemcount 814,5
     .dungeon DM
 step << Priest
+    #optional
     .goto Orgrimmar,35.59,87.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 8102 >> Train your class spells
@@ -1796,6 +1799,16 @@ step << Priest
     .xp >18,1
 step << Priest
     #optional
+    #season 2
+    .goto Orgrimmar,35.59,87.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
+    .train 527 >> Train |T135894:0|t[Dispel Magic]
+    >>|cRXP_WARN_You will need|r |T135894:0|t[Dispel Magic] |cRXP_WARN_to obtain a rune later|r
+    .target Ur'kyo
+    .xp <18,1
+step << Priest
+    #optional
+    #season 0
     .goto Orgrimmar,35.59,87.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 970 >> Train your class spells
@@ -1843,6 +1856,25 @@ step << Tauren/Undead
     .zoneskip The Barrens
     .target Doras
 step << Shaman
+    #season 2
+    .goto Orgrimmar,38.82,36.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
+    >>|cRXP_WARN_Make sure you have trained|r |T136075:0|t[Purge] |cRXP_WARN_as it will be needed to obtain a rune later|r
+    .train 8019 >> Train your class spells
+    .target Kardris Dreamseeker
+    .xp <16,1
+    .xp >18,1
+step << Shaman
+    #optional
+    #season 2
+    .goto Orgrimmar,38.82,36.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
+    >>|cRXP_WARN_Make sure you have trained|r |T136075:0|t[Purge] |cRXP_WARN_as it will be needed to obtain a rune later|r
+    .train 913 >> Train your class spells
+    .target Kardris Dreamseeker
+    .xp <18,1
+step << Shaman
+    #season 0
     .goto Orgrimmar,38.82,36.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
     .train 8019 >> Train your class spells
@@ -1851,6 +1883,7 @@ step << Shaman
     .xp >18,1
 step << Shaman
     #optional
+    #season 0
     .goto Orgrimmar,38.82,36.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
     .train 913 >> Train your class spells
@@ -1969,7 +2002,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xao'tsu|r
     .train 24557 >> Train your pet spells
     .target Xao'tsu
-step << Troll Hunter/Orc Hunter/Undead Warrior
+step << Troll Hunter/Orc Hunter/Undead Warrior/Priest
     .goto Orgrimmar,81.52,19.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
     .train 227 >>Train Staves
@@ -1980,17 +2013,37 @@ step << Tauren Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
     .train 264 >>Train Bows
     .target Hanashi
-step << Druid
+step << Hunter
+    .goto Orgrimmar,81.17,18.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Zendo'jian|r|cRXP_BUY_. Buy a|r |T135147:0|t[Gnarled Staff] |cRXP_BUY_from him|r
+    .collect 2030,1,3281,1 --Collect Laminated Recurve Bow (1)
+    .money <0.4990
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
+    .target Zendo'jian
+    .train 227,3
+step << Hunter
+    #optional
+    #completewith FoodandWater2
+    +Equip the |T135147:0|t[Gnarled Staff]
+    .use 2030
+    .itemcount 2030,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
+    .train 227,3
+step << Druid/Mage
     #season 2
     #ah
     .goto Orgrimmar,55.59,62.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thathung|r
     >>|cRXP_BUY_Buy a|r |T134237:0|t[Kolkar Booty Key] |cRXP_BUY_from the Auction House if possible|r
-    >>|cRXP_WARN_You will need this to obtain|r |T132942:0|t[|cRXP_FRIENDLY_Ferocious Idol|r] |cRXP_WARN_for|r |T236167:0|t[Savage Roar] << Druid
+    >>|cRXP_WARN_You will need this to obtain|r |T132942:0|t[|cRXP_FRIENDLY_Ferocious Idol|r] |cRXP_WARN_to train|r |T236167:0|t[Savage Roar] << Druid
+    >>|cRXP_WARN_You will need this to obtain|r |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: TENGI RONEERA]|r |cRXP_WARN_to train|r |T132869:0|t[Regeneration] << Mage
     .collect 5020,1 --Kolkar Booty Key (1)
 	.target Auctioneer Thathung
     .itemcount 208689,<1,1 << Druid
     .train 407988,1 << Druid
+    .train 401767,1,1 << Mage
 step
     #completewith FoodandWater2
     .hs >> Hearth to The Crossroads
@@ -2267,14 +2320,15 @@ step
     .goto The Barrens,55.61,42.75
     >>Click the |cRXP_PICK_Bubble Fissure|r underwater
     .complete 877,1 --Test the Dried Seeds (1)
-step << Druid
+step << Druid/Mage
     #season 2
     #completewith Verog
     >>Kill |cRXP_ENEMY_Kolkar|r. Loot them for a |T134237:0|t[|cRXP_LOOT_Kolkar Booty Key|r]
     .collect 5020,1 --Kolkar Booty Key (1)
     .mob Kolkar Wrangler
     .mob Kolkar Stormer
-    .train 407988,1
+    .train 407988,1 << Druid
+    .train 401767,1 << Mage
 step
     #xprate <1.5
     #completewith next
@@ -2304,7 +2358,7 @@ step
     .complete 851,1 --Verog's Head (1)
     .unitscan Verog the Dervish
     .isOnQuest 851
-step << Druid
+step << Druid/Mage
     #season 2
     #loop
     .goto The Barrens,55.80,45.78,50,0
@@ -2320,29 +2374,39 @@ step << Druid
     .collect 5020,1 --Kolkar Booty Key (1)
     .mob Kolkar Wrangler
     .mob Kolkar Stormer
-    .itemcount 208689,<1,1
-    .train 407988,1
-step << Druid
+    .itemcount 208689,<1,1 << Druid
+    .train 407988,1 << Druid
+    .train 401767,1 << Mage
+step << Druid/Mage
     #season 2
     .goto The Barrens,52.7,41.8
-    >>Open a |cRXP_PICK_Kolkar Booty|r chest for |T132942:0|t[|cRXP_FRIENDLY_Ferocious Idol|r]
+    >>Open a |cRXP_PICK_Kolkar Booty|r chest for |T132942:0|t[|cRXP_FRIENDLY_Ferocious Idol|r] << Druid
+    >>Open a |cRXP_PICK_Kolkar Booty|r chest for |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r] << Mage
     .collect 5020,1 --Kolkar Booty Key (1)
-    .collect 208689,1 --Ferocious Idol (1)
-    .itemcount 208689,<1,1
-    .train 407988,1
+    .collect 208689,1 << Druid --Ferocious Idol (1)
+    .collect 208754,1 << Mage --Spell Notes: TENGI RONEERA (1)
+    .itemcount 208689,<1,1 << Druid
+    .train 407988,1 << Druid
+    .train 401767,1 << Mage
 step << Druid
     #season 2
     #completewith Nest
     .equip 18,208689 >> |cRXP_WARN_Equip the|r |T132942:0|t[|cRXP_FRIENDLY_Ferocious Idol|r] |cRXP_WARN_Once you've learned|r |T132115:0|t[Cat Form]
     .use 208689
     .itemcount 208689,1
-    .train 407988,1
+    .train 407988,1 << Druid
+    .train 401767,1 << Mage
 step << Druid
     #season 2
     #completewith Nest
     .train 407988 >>|cRXP_WARN_Deal 20 instances of bleeding damage from|r |T132152:0|t[Rip] |cRXP_WARN_or|r |T132122:0|t[Rake] |cRXP_WARN_to humanoids, then use the|r |T132942:0|t[|cRXP_FRIENDLY_Ferocious Idol|r] |cRXP_WARN_again to learn|r |T236167:0|t[Savage Roar]
     .use 208689
     .itemcount 208689,1
+step << Mage
+    #season 2
+    .train 401767 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r] |cRXP_WARN_to train|r |T132869:0|t[Regeneration]
+    .use 208754
+    .itemcount 208754,1 --Spell Notes: TENGI RONEERA (1)
 step
     #loop
     .goto The Barrens,55.72,42.14,0
@@ -3383,6 +3447,8 @@ step << Shaman/Priest
     .unitscan Desert Mirage
     .train 410107,1 << Shaman
     .train 402849,1 << Priest
+    .train 370,3 << Shaman --Purge
+    .train 527,3 << Priest --Dispel Magic
 --XX Respawns after 85s-170s
 step
     #completewith next
@@ -6631,6 +6697,7 @@ step
     .complete 872,3 --Kreenig Snarlsnout's Tusk (1)
     .mob Kreenig Snarlsnout
 step << Warlock
+    #season 2
     .train 403932,1
     >>|cRXP_WARN_Go to the Altar of Thorns|r. Cast |T136126:0|t[Life Tap] until you're almost dying. Then cast |T136168:0|t[Health Funnel] on your pet to die and get |T134419:0|t[|cRXP_FRIENDLY_Rune of Channeling|r]
     *|cRXP_WARN_You will be revived immediately after dying|r
@@ -6639,6 +6706,7 @@ step << Warlock
     .cast 735
     .collect 208750,1
 step << Warlock
+    #season 2
     .use 208750
     .itemcount 208750,1
     .train 403932 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Channeling|r] |cRXP_WARN_to train|r |T136168:0|t[Master Channeler]
@@ -7189,6 +7257,7 @@ step
     .complete 821,2 --Plainstrider Kidney (5)
     .mob Greater Plainstrider
     .mob Fleeting Plainstrider
+    .maxlevel 16
 step
     #completewith next
     >>Kill every |cRXP_ENEMY_Raptor|r you see. Loot them for their |cRXP_LOOT_Heads|r
@@ -7653,6 +7722,7 @@ step
     .itemcount 814,5
     .dungeon DM
 step << Priest
+    #optional
     .goto Orgrimmar,35.59,87.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 8102 >> Train your class spells
@@ -7661,18 +7731,21 @@ step << Priest
     .xp >18,1
 step << Priest
     #optional
+    #season 2
+    .goto Orgrimmar,35.59,87.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
+    .train 527 >> Train |T135894:0|t[Dispel Magic]
+    >>|cRXP_WARN_You will need|r |T135894:0|t[Dispel Magic] |cRXP_WARN_to obtain a rune later|r
+    .target Ur'kyo
+    .xp <18,1
+step << Priest
+    #optional
+    #season 0
     .goto Orgrimmar,35.59,87.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Ur'kyo|r
     .train 970 >> Train your class spells
     .target Ur'kyo
     .xp <18,1
-step << Mage
-    .goto Orgrimmar,38.36,85.54
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pephredo|r
-    .train 2120 >> Train your class spells
-    .target Pephredo
-    .xp <16,1
-    .xp >18,1
 step << Mage
     #optional
     .goto Orgrimmar,38.36,85.54
@@ -7708,16 +7781,38 @@ step << Tauren/Undead
     .zoneskip The Barrens
     .target Doras
 step << Shaman
+    #season 2
     .goto Orgrimmar,38.82,36.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
+    >>|cRXP_WARN_Make sure you have trained|r |T136075:0|t[Purge] |cRXP_WARN_as it will be needed to obtain a rune later|r
     .train 8019 >> Train your class spells
     .target Kardris Dreamseeker
     .xp <16,1
     .xp >18,1
 step << Shaman
     #optional
+    #season 2
     .goto Orgrimmar,38.82,36.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
+    >>|cRXP_WARN_Make sure you have trained|r |T136075:0|t[Purge] |cRXP_WARN_as it will be needed to obtain a rune later|r
+    .train 913 >> Train your class spells
+    .target Kardris Dreamseeker
+    .xp <18,1
+step << Shaman
+    #season 0
+    .goto Orgrimmar,38.82,36.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
+    >>|cRXP_WARN_Make sure you have trained|r |T136075:0|t[Purge] |cRXP_WARN_as it will be needed to obtain a rune later|r
+    .train 8019 >> Train your class spells
+    .target Kardris Dreamseeker
+    .xp <16,1
+    .xp >18,1
+step << Shaman
+    #optional
+    #season 0
+    .goto Orgrimmar,38.82,36.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kardris|r
+    >>|cRXP_WARN_Make sure you have trained|r |T136075:0|t[Purge] |cRXP_WARN_as it will be needed to obtain a rune later|r
     .train 913 >> Train your class spells
     .target Kardris Dreamseeker
     .xp <18,1
@@ -7834,7 +7929,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xao'tsu|r
     .train 24557 >> Train your pet spells
     .target Xao'tsu
-step << Troll Hunter/Orc Hunter/Undead Warrior
+step << Troll Hunter/Orc Hunter/Undead Warrior/Priest
     .goto Orgrimmar,81.52,19.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
     .train 227 >>Train Staves
@@ -7845,6 +7940,24 @@ step << Tauren Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
     .train 264 >>Train Bows
     .target Hanashi
+step << Hunter
+    .goto Orgrimmar,81.17,18.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Zendo'jian|r|cRXP_BUY_. Buy a|r |T135147:0|t[Gnarled Staff] |cRXP_BUY_from him|r
+    .collect 2030,1,3281,1 --Collect Laminated Recurve Bow (1)
+    .money <0.4990
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
+    .target Zendo'jian
+    .train 227,3
+step << Hunter
+    #optional
+    #completewith FoodandWater2
+    +Equip the |T135147:0|t[Gnarled Staff]
+    .use 2030
+    .itemcount 2030,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
+    .train 227,3
 step << Druid
     #season 2
     #ah
@@ -8621,13 +8734,11 @@ step
     .mob Witchwing Ambusher
     .isOnQuest 875
 step
-    #label StonetalonPickups
     #completewith next
     .goto The Barrens,35.26,27.88,30 >> Travel toward |cRXP_FRIENDLY_Seereth|r
     .zoneskip Stonetalon Mountains
 step
     #map Stonetalon Mountains
-    #label StonetalonPickups
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seereth|r and |cRXP_FRIENDLY_Makaba|r
     .turnin 1061 >> Turn in The Spirits of Stonetalon
     .accept 1062 >> Accept Goblin Invaders
@@ -8666,6 +8777,7 @@ step << Druid
     .collect 210534,1 -- Idol of the Wild (1)
     .train 410021,1
 step
+    #optional
     #loop
     .goto Stonetalon Mountains,80.62,89.99,0
     .waypoint Stonetalon Mountains,80.62,89.99,40,0
@@ -8715,6 +8827,7 @@ step << Druid
     .train 410021 >> |cRXP_WARN_Use the|r |T134233:0|t[|cRXP_FRIENDLY_Idol of the Wild|r] |cRXP_WARN_to train|r |T132143:0|t[Wild Strikes]
     .itemcount 210534,1
 step
+    #optional
     #map Stonetalon Mountains
     .goto The Barrens,35.19,27.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Makaba|r
@@ -8732,10 +8845,12 @@ step
     .target Makaba Flathoof
     .isQuestTurnedIn 6548
 step
+    #optional
     #completewith next
     .goto Stonetalon Mountains,75.89,87.49,30 >>Travel up the path to the bonfire
     .isQuestTurnedIn 6548
 step
+    #optional
     .goto Stonetalon Mountains,73.65,86.13
     >>Kill |cRXP_ENEMY_Grundig Darkcloud|r and |cRXP_ENEMY_Grimtotem Brutes|r
     >>|cRXP_WARN_Make sure you kill all six|r |cRXP_ENEMY_Grimtotem Brutes|r |cRXP_WARN_before starting the quest inside|r
@@ -8745,12 +8860,14 @@ step
     .mob Grimtotem Brute
     .isQuestTurnedIn 6548
 step
+    #optional
     .goto Stonetalon Mountains,73.48,85.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaya|r
     .accept 6523 >> Accept Protect Kaya
     .target Kaya Flathoof
     .isQuestTurnedIn 6548
 step
+    #optional
     .goto Stonetalon Mountains,71.82,86.79,40,0
     .goto Stonetalon Mountains,71.83,89.79,40,0
     .goto Stonetalon Mountains,76.73,90.85
@@ -8760,6 +8877,7 @@ step
     .target Kaya Flathoof
     .isQuestTurnedIn 6548
 step
+    #optional
     #map Stonetalon Mountains
     .goto The Barrens,35.19,27.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Makaba|r
@@ -8771,6 +8889,7 @@ step
     .isQuestComplete 6629
 step
     #optional
+    #optional
     #map Stonetalon Mountains
     .goto The Barrens,35.19,27.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Makaba|r
@@ -8779,6 +8898,7 @@ step
     .target Makaba Flathoof
     .isQuestComplete 6523
 step
+    #optional
     #optional
     #map Stonetalon Mountains
     .goto The Barrens,35.19,27.79
@@ -9288,6 +9408,8 @@ step << Shaman/Priest
     .unitscan Desert Mirage
     .train 410107,1 << Shaman
     .train 402849,1 << Priest
+    .train 370,3 << Shaman --Purge
+    .train 527,3 << Priest --Dispel Magic
 --XX Respawns after 85s-170s
 step
     #completewith next
@@ -10258,6 +10380,7 @@ step << Hunter
     #completewith HunterTraining2
     .goto Thunder Bluff,61.31,78.25,60 >> Travel to the Hunter Rise
 step << Hunter
+    #optional
     .goto Thunder Bluff,59.13,86.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urek|r
     .train 5118 >> Train your class spells
@@ -10265,13 +10388,21 @@ step << Hunter
     .xp <20,1
     .xp >22,1
 step << Hunter
-    #label HunterTraining2
     #optional
     .goto Thunder Bluff,59.13,86.91
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urek|r
     .train 5118 >> Train your class spells
     .target Urek Thunderhorn
     .xp <22,1
+    .xp >24,1
+step << Hunter
+    #label HunterTraining2
+    #optional
+    .goto Thunder Bluff,59.13,86.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urek|r
+    .train 19885 >> Train |T132320:0|t[Track Hidden]
+    .target Urek Thunderhorn
+    .xp <24,1
 step << Hunter
     .goto Thunder Bluff,54.07,84.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hesuwa|r
@@ -10355,11 +10486,12 @@ step
 step << Priest
     .goto Thunder Bluff,25.31,15.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miles|r
-    .accept 5644 >> Accept Devouring Plague << Undead Priest
+    --.accept 5644 >> Accept Devouring Plague << Undead Priest
     .accept 5642 >> Accept Shadowguard << Troll Priest
     .trainer >> Train your class spells
     .target Miles Welsh
 step << Mage
+    #optional
     .goto Thunder Bluff,22.74,14.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shymm|r
     .train 12051 >> Train your class spells
@@ -10373,10 +10505,18 @@ step << Mage
     .train 2138 >> Train your class spells
     .target Archmage Shymm
     .xp <22,1
+    .xp >24,1
+step << Mage
+    .goto Thunder Bluff,22.74,14.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shymm|r
+    .train 2121 >> Train your class spells
+    .target Archmage Shymm
+    .xp <24,1
 step
     #optional
     #label DeathDUPpickup
 step << Shaman
+    #optional
     .goto Thunder Bluff,23.64,18.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tigor|r
     .train 2645 >> Train your class spells
@@ -10390,6 +10530,14 @@ step << Shaman
     .train 8498 >> Train your class spells
     .target Tigor Skychaser
     .xp <22,1
+    .xp >24,1
+step << Shaman
+    #optional
+    .goto Thunder Bluff,23.64,18.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tigor|r
+    .train 8046 >> Train your class spells
+    .target Tigor Skychaser
+    .xp <24,1
 step
     #completewith next
     .skill firstaid,80 >> Create |T133688:0|t[Heavy Linen Bandages] until your skill is 80 or higher

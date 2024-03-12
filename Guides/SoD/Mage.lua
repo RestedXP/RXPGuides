@@ -62,13 +62,13 @@ step
     .goto Elwynn Forest,55.09,49.00,50,0
     .goto Elwynn Forest,55.43,45.87,50,0
     .goto Elwynn Forest,53.86,47.05,50,0
-    >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for the |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r
+    >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for the |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: CALE ENCI]|r
     .collect 203751,1,77620,1 -- Spell Notes: CALE ENCI (1)
     .mob Defias Thug
     .train 401760,1
     .xp <2,1
 step
-    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
     .use 203751
     .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
     .xp <2,1
@@ -149,12 +149,12 @@ step
     .xp <2,1
 step
     .goto Dun Morogh,26.733,72.552
-    >>Open the |cRXP_PICK_Rockjaw Footlocker|r. Loot it for the |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r
+    >>Open the |cRXP_PICK_Rockjaw Footlocker|r. Loot it for the |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: CALE ENCI]|r
     .collect 203751,1,77667,1 -- Spell Notes: CALE ENCI (1)
     .train 401760,1
     .xp <2,1
 step
-    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
     .use 203751
     .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
     .xp <2,1
@@ -223,12 +223,12 @@ step
 step
     #label Stashbox
     .goto Durotar,43.004,54.456
-    >>Open the |cRXP_PICK_Waterlogged Stashbox|r underwater inside the cave. Loot it for the |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r
+    >>Open the |cRXP_PICK_Waterlogged Stashbox|r underwater inside the cave. Loot it for the |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: CALE ENCI]|r
     .collect 203751,1 --Spell Notes: CALE ENCI (1)
     .train 401760,1
     .xp <2,1
 step
-    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
     .use 203751
     .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
     .xp <2,1
@@ -286,13 +286,13 @@ step
     .xp <2,1
 step
     .loop 25,Tirisfal Glades,36.13,68.74,36.46,69.49,36.85,70.02,37.42,69.58,38.05,69.79,37.91,69.22,38.03,68.77,38.49,68.28,38.72,67.07,38.59,66.25,38.65,65.07,37.62,65.36,36.93,65.38,36.51,65.42,36.85,66.59,37.45,67.95,36.93,68.16,36.13,68.74
-    >>Kill |cRXP_ENEMY_Scarlet Initiates|r. Loot them for the |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r
+    >>Kill |cRXP_ENEMY_Scarlet Initiates|r. Loot them for the |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: CALE ENCI]|r
     .collect 203751,1,77671,1 --Spell Notes: CALE ENCI (1)
     .mob Scarlet Initiate
     .train 401760,1
     .xp <2,1
 step
-    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
     .use 203751
     .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
     .xp <2,1
@@ -375,12 +375,12 @@ step
     .goto 1436,45.794,69.292,40,0
     .goto 1436,44.952,67.095,40,0
     .goto 1436,44.547,65.624,40,0
-    >>Kill |cRXP_ENEMY_Defias Pillagers|r. Loot them for the |T134939:0|t|cRXP_LOOT_[Spell Notes: TENGI RONEERA]|r
+    >>Kill |cRXP_ENEMY_Defias Pillagers|r. Loot them for the |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: TENGI RONEERA]|r
     .collect 208754,1 --Spell Notes: TENGI RONEERA (1)
     .mob Defias Pillager
     .train 401767,1
 step
-    .train 401767 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: TENGI RONEERA]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Regeneration]
+    .train 401767 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: TENGI RONEERA]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Regeneration]
     .use 208754
     .itemcount 208754,1 --Spell Notes: TENGI RONEERA (1)
 ]])
@@ -435,11 +435,11 @@ step
     #label Tengi
     .goto 1432,54.33,26.82,5,0
     .goto 1432,54.17,27.03
-    >>Open the |cRXP_PICK_Pile of Stolen Books|r inside. Loot them for the |T134939:0|t|cRXP_LOOT_[Spell Notes: TENGI RONEERA]|r
+    >>Open the |cRXP_PICK_Pile of Stolen Books|r inside. Loot them for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r]
     .collect 208754,1 --Spell Notes: TENGI RONEERA (1)
     .train 401767,1
 step
-    .train 401767 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: TENGI RONEERA]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Regeneration]
+    .train 401767 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Regeneration]
     .use 208754
     .itemcount 208754,1 --Spell Notes: TENGI RONEERA (1)
 ]])
@@ -515,11 +515,11 @@ step
     .goto The Barrens,43.02,23.52,-1
 --  .goto The Barrens,52.73,41.84,-1
 --   .goto The Barrens,44.33,37.66,-1
-    >>Open the |cRXP_PICK_Kolkars' Booty|r on the ground. Loot it for the |T134939:0|t|cRXP_LOOT_[Spell Notes: TENGI RONEERA]|r
+    >>Open the |cRXP_PICK_Kolkars' Booty|r on the ground. Loot it for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r]
     .collect 208754,1 --Spell Notes: TENGI RONEERA (1)
     .train 401767,1
 step
-    .train 401767 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: TENGI RONEERA]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Regeneration]
+    .train 401767 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r] |cRXP_WARN_to train|r |T132869:0|t[Regeneration]
     .use 208754
     .itemcount 208754,1 --Spell Notes: TENGI RONEERA (1)
 ]])
@@ -577,12 +577,12 @@ step
     .goto 1421,52.850,66.113,45,0
     .goto 1421,51.986,66.138,45,0
     .goto 1421,52.689,71.258,45,0
-    >>Kill |cRXP_ENEMY_Dalaran Apprentices|r. Loot them for the |T134939:0|t|cRXP_LOOT_[Spell Notes: TENGI RONEERA]|r
+    >>Kill |cRXP_ENEMY_Dalaran Apprentices|r. Loot them for the |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: TENGI RONEERA]|r
     .collect 208754,1 --Spell Notes: TENGI RONEERA (1)
     .mob Dalaran Apprentice
     .train 401767,1
 step
-    .train 401767 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: TENGI RONEERA]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Regeneration]
+    .train 401767 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r] |cRXP_WARN_to train|r |T132869:0|t[Regeneration]
     .use 208754
     .itemcount 208754,1 --Spell Notes: TENGI RONEERA (1)
 ]])
@@ -635,12 +635,12 @@ step
     .goto Elwynn Forest,26.1,89.9,70,0
     .goto Elwynn Forest,25.2,92.7,70,0
     .goto Elwynn Forest,27.0,93.9,70,0
-    >>Kill |cRXP_ENEMY_Hogger|r. Loot him for the |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r
+    >>Kill |cRXP_ENEMY_Hogger|r. Loot him for the |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: RING SEFF OSTROF]|r
     .collect 203753,1 --Spell Notes: RING SEFF OSTROF (1)
     .unitscan Hogger
     .train 401765,1
 step
-    .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Fingers of Frost]
+    .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: RING SEFF OSTROF]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Fingers of Frost]
     .use 203753
     .itemcount 203753,1 --Spell Notes: RING SEFF OSTROF (1)
 ]])
@@ -693,10 +693,10 @@ step
     .goto 1426,30.42,39.84,50,0
     .goto 1426,30.02,39.08,50,0
     .goto 1426,33.82,37.26,50,0
-    >>Kill |cRXP_ENEMY_Fyodi|r. Loot him for the |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r
+    >>Kill |cRXP_ENEMY_Fyodi|r. Loot him for the |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: RING SEFF OSTROF]|r
     >>|cRXP_WARN_Even though |cRXP_ENEMY_Fyodi|r shows as an elite, his health, damage, and armor values are that of a standard mob|r
     >>|cRXP_WARN_Be careful as he casts|r |T132337:0|t[Charge] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 35-80 melee damage on hit. Only castable at range)|r
-    >>|cRXP_WARN_NOTE: The|r |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r |cRXP_WARN_can also drop off every rare mob in Dun Morogh, as well as |cRXP_ENEMY_Vagash|r, |cRXP_ENEMY_Mangeclaw|r, and|r |cRXP_ENEMY_Old Icebeard|r
+    >>|cRXP_WARN_NOTE: The|r |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: RING SEFF OSTROF]|r |cRXP_WARN_can also drop off every rare mob in Dun Morogh, as well as |cRXP_ENEMY_Vagash|r, |cRXP_ENEMY_Mangeclaw|r, and|r |cRXP_ENEMY_Old Icebeard|r
     .collect 203753,1 --Spell Notes: RING SEFF OSTROF (1)
     .mob Fyodi
     .train 401765,1
@@ -705,14 +705,14 @@ step
     .goto 1426,62.094,47.154,40,0
     .goto 1426,62.434,48.989,40,0
     .goto 1426,62.538,46.195
-    >>Kill |cRXP_ENEMY_Vagash|r. Loot him for the |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r
-    >>|cRXP_WARN_NOTE: The|r |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r |cRXP_WARN_can also drop off every rare mob in Dun Morogh, as well as |cRXP_ENEMY_Fyodi|r, |cRXP_ENEMY_Mangeclaw|r, and|r |cRXP_ENEMY_Old Icebeard|r
+    >>Kill |cRXP_ENEMY_Vagash|r. Loot him for the |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: RING SEFF OSTROF]|r
+    >>|cRXP_WARN_NOTE: The|r |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: RING SEFF OSTROF]|r |cRXP_WARN_can also drop off every rare mob in Dun Morogh, as well as |cRXP_ENEMY_Fyodi|r, |cRXP_ENEMY_Mangeclaw|r, and|r |cRXP_ENEMY_Old Icebeard|r
     .collect 203753,1 --Spell Notes: RING SEFF OSTROF (1)
     .mob Vagash
     .train 401765,1
     .xp <10,1
 step
-    .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Fingers of Frost]
+    .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: RING SEFF OSTROF]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Fingers of Frost]
     .use 203753
     .itemcount 203753,1 --Spell Notes: RING SEFF OSTROF (1)
 ]])
@@ -758,12 +758,12 @@ step
     .goto Tirisfal Glades,25.53,48.39,60 >>Travel toward |cRXP_ENEMY_Gillgar|r
 step
     .goto Tirisfal Glades,25.53,48.39
-    >>Kill |cRXP_ENEMY_Gillgar|r. Loot him for the |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r
+    >>Kill |cRXP_ENEMY_Gillgar|r. Loot him for the |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: RING SEFF OSTROF]|r
     .collect 203753,1 --Spell Notes: RING SEFF OSTROF (1)
     .mob Gillgar
     .train 401765,1
 step
-    .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Fingers of Frost]
+    .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: RING SEFF OSTROF]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Fingers of Frost]
     .use 203753
     .itemcount 203753,1 --Spell Notes: RING SEFF OSTROF (1)
 ]])
@@ -802,7 +802,7 @@ step
     .goto 1411,66.936,87.360,40,0
     .goto 1411,67.376,86.710,40,0
     .goto 1411,67.502,87.618
-    >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for the |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r
+    >>Kill |cRXP_ENEMY_Zalazane|r. Loot him for the |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: RING SEFF OSTROF]|r
     .collect 203753,1 --Spell Notes: RING SEFF OSTROF (1)
     .mob Zalazane
     .train 401765,1
@@ -811,13 +811,13 @@ step
     .goto 1411,42.123,26.666,40,0
     .goto 1411,42.654,26.448,40,0
     .goto 1411,42.123,26.666
-    >>Kill |cRXP_ENEMY_Fizzle Darkstorm|r. Loot him for the |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r
+    >>Kill |cRXP_ENEMY_Fizzle Darkstorm|r. Loot him for the |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: RING SEFF OSTROF]|r
     .collect 203753,1 --Spell Notes: RING SEFF OSTROF (1)
     .mob Fizzle Darkstorm
     .train 401765,1
     .xp <12,1
 step
-    .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Fingers of Frost]
+    .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: RING SEFF OSTROF]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Fingers of Frost]
     .use 203753
     .itemcount 203753,1 --Spell Notes: RING SEFF OSTROF (1)
 ]])
@@ -843,12 +843,12 @@ step
 step
     .goto 1426,69.369,58.311
     >>|cRXP_WARN_Look for other Mages or Warlocks near the |cRXP_ENEMY_Frozen Trogg|r or in General Chat (Type /1 into chat)|r
-    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Trogg|r to apply a stack of|r |T135805:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Trogg|r. Loot it for the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r
+    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Trogg|r to apply a stack of|r |T135805:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Trogg|r. Loot it for the|r |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: Burnout]|r
     .collect 203748,1 --Spell Notes: Burnout (1)
     .train 401759,1
     .mob Frozen Trogg
 step
-    .train 401759 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r |cRXP_WARN_to learn|r |T132686:0|t[Engrave Chest - Burnout]
+    .train 401759 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: Burnout]|r |cRXP_WARN_to learn|r |T132686:0|t[Engrave Chest - Burnout]
     .use 203748
     .itemcount 203748,1 --Spell Notes: Burnout (1)
 ]])
@@ -873,12 +873,12 @@ step
 step
     .goto 1429,77.015,51.901
     >>|cRXP_WARN_Look for other Mages or Warlocks near the |cRXP_ENEMY_Frozen Murloc|r or in General Chat (Type /1 into chat)|r
-    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Murloc|r to apply a stack of|r |T135805:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Murloc|r. Loot it for the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r
+    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Murloc|r to apply a stack of|r |T135805:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Murloc|r. Loot it for the|r |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: Burnout]|r
     .collect 203748,1 --Spell Notes: Burnout (1)
     .train 401759,1
     .mob Frozen Murloc
 step
-    .train 401759 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r |cRXP_WARN_to learn|r |T132686:0|t[Engrave Chest - Burnout]
+    .train 401759 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: Burnout]|r |cRXP_WARN_to learn|r |T132686:0|t[Engrave Chest - Burnout]
     .use 203748
     .itemcount 203748,1 --Spell Notes: Burnout (1)
 ]])
@@ -903,12 +903,12 @@ step
 step
     .goto Durotar,58.69,45.53
     >>|cRXP_WARN_Look for other Mages, Warlocks, or Shamans near the |cRXP_ENEMY_Frozen Makrura|r or in General Chat (Type /1 into chat)|r
-    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Makrura|r to apply a stack of|r |T135805:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Makrura|r. Loot it for the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r
+    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Makrura|r to apply a stack of|r |T135805:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Makrura|r. Loot it for the|r |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: Burnout]|r
     .collect 203748,1 --Spell Notes: Burnout (1)
     .mob Frozen Makrura
     .train 401579,1
 step
-    .train 401759 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r |cRXP_WARN_to learn|r |T132686:0|t[Engrave Chest - Burnout]
+    .train 401759 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: Burnout]|r |cRXP_WARN_to learn|r |T132686:0|t[Engrave Chest - Burnout]
     .use 203748
     .itemcount 203748,1 --Spell Notes: Burnout (1)
 ]])
@@ -934,12 +934,12 @@ step
 step
     .goto 1420,66.337,40.059
     >>|cRXP_WARN_Look for other Mages or Warlocks near the |cRXP_ENEMY_Frozen Murloc|r or in General Chat (Type /1 into chat)|r
-    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Murloc|r to apply a stack of|r |T135805:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Murloc|r. Loot it for the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r
+    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Murloc|r to apply a stack of|r |T135805:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Murloc|r. Loot it for the|r |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: Burnout]|r
     .collect 203748,1 --Spell Notes: Burnout (1)
     .train 401759,1
     .mob Frozen Murloc
 step
-    .train 401759 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: Burnout]|r |cRXP_WARN_to learn|r |T132686:0|t[Engrave Chest - Burnout]
+    .train 401759 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: Burnout]|r |cRXP_WARN_to learn|r |T132686:0|t[Engrave Chest - Burnout]
     .use 203748
     .itemcount 203748,1 --Spell Notes: Burnout (1)
 ]])
@@ -1021,13 +1021,13 @@ step
     .train 415942,1
     .xp <8,1
 step
-    >>Use the |T134332:0|t|cRXP_LOOT_[Azora Apprentice Notes]|r to create |T134332:0|t|cRXP_LOOT_[Spell Notes: Enlightenment]|r
+    >>Use the |T134332:0|t|cRXP_LOOT_[Azora Apprentice Notes]|r to create |T134332:0|t|cRXP_FRIENDLY_[Spell Notes: Enlightenment]|r
     .collect 203749,1 --Spell Notes: Enlightenment (1)
     .use 204864
     .train 415942,1
     .xp <8,1
 step
-    .train 415942 >>|cRXP_WARN_Use the|r |T134332:0|t|cRXP_LOOT_[Spell Notes: Enlightenment]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Enlightenment]
+    .train 415942 >>|cRXP_WARN_Use the|r |T134332:0|t|cRXP_FRIENDLY_[Spell Notes: Enlightenment]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Enlightenment]
     .use 203749
     .itemcount 203749,1 --Spell Notes: Enlightenment (1)
     .xp <8,1
@@ -1089,12 +1089,12 @@ step
     .mob Odd Melon
     .train 415942,1
 step
-    >>Use the |T134332:0|t|cRXP_LOOT_[Apothecary Notes]|r to create |T134332:0|t|cRXP_LOOT_[Spell Notes: Enlightenment]|r
+    >>Use the |T134332:0|t|cRXP_LOOT_[Apothecary Notes]|r to create |T134332:0|t|cRXP_FRIENDLY_[Spell Notes: Enlightenment]|r
     .collect 203749,1 --Spell Notes: Enlightenment (1)
     .use 208183 --Apothecary Notes
     .train 415942,1
 step
-    .train 415942 >>|cRXP_WARN_Use the|r |T134332:0|t|cRXP_LOOT_[Spell Notes: Enlightenment]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Enlightenment]
+    .train 415942 >>|cRXP_WARN_Use the|r |T134332:0|t|cRXP_FRIENDLY_[Spell Notes: Enlightenment]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Enlightenment]
     .use 203749
     .itemcount 203749,1 --Spell Notes: Enlightenment (1)
 ]])
