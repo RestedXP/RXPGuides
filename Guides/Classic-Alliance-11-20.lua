@@ -4165,35 +4165,23 @@ step
     .itemcount 5386,3 --Fine Moonstalker Pelt (3+)
 step
     #requires foreststriders
+    .group 2 << Warrior/Paladin/Rogue
     .goto 1439,56.654,13.484
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gelkak Gyromast|r
-    .turnin 2098 >> Turn in Gyromast's Retrieval
-    .accept 2078 >> Accept Gyromast's Revenge << !Warrior !Paladin !Rogue
-    .target Gelkak Gyromast
-    .solo << !Warrior !Paladin !Rogue
-step << Warrior/Paladin/Rogue
-    #requires foreststriders
-    .group 2
-    .goto 1439,56.654,13.484
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gelkak Gyromast|r
-    >>|cRXP_WARN_Start looking for a group for Gyromast's Revenge/|r|cRXP_ENEMY_The Threshwackonator 4100|r
+    >>|cRXP_WARN_Start looking for a group for Gyromast's Revenge/|r|cRXP_ENEMY_The Threshwackonator 4100|r << Warrior/Paladin/Rogue
     .turnin 2098 >> Turn in Gyromast's Retrieval
     .accept 2078 >> Accept Gyromast's Revenge
     .target Gelkak Gyromast
 step
     #optional
     #completewith next
-    .solo << !Warrior !Paladin !Rogue
-    .group 2 << Warrior/Paladin/Rogue
     .goto 1439,55.802,18.290
     .gossipoption 87696 >> Talk to |cRXP_FRIENDLY_The Threshwackonator 4100|r to start the escort
     >>|cRXP_WARN_This quest is VERY difficult|r
     .target The Threshwackonator 4100
-    .isOnQuest 2078
+    .isOnQuest 2078 << Warrior/Paladin/Rogue
 step
     .goto 1439,56.654,13.484
-    .solo << !Warrior !Paladin !Rogue
-    .group 2 << Warrior/Paladin/Rogue
     >>Escort |cRXP_FRIENDLY_The Threshwackonator 4100|r to |cRXP_FRIENDLY_Gelkak Gyromast|r
     >>Kill |cRXP_ENEMY_The Threshwackonator 4100|r once it turns hostile
     >>|cRXP_WARN_This quest is VERY difficult|r
@@ -4203,6 +4191,7 @@ step
     .complete 2078,1 --Gyromast's Revenge (1)
     .link https://clips.twitch.tv/VainAmorphousMacaroniPRChase-iGvhTnz0ked6LO0A >> |cRXP_WARN_Click here for a video guide|r
     .mob The Threshwackonator 4100
+    .isOnQuest 2078 << Warrior/Paladin/Rogue
 --XX DRUID: Test if you can root
 step
     #optional << Warrior/Paladin/Rogue
