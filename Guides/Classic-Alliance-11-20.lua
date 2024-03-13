@@ -4200,6 +4200,10 @@ step
     .turnin 2078 >> Turn in Gyromast's Revenge
     .target Gelkak Gyromast
     .isQuestComplete 2078
+step
+    #optional
+    #completewith BeachedCloak
+    .abandon 2078 >> Abandon Gyromasts Revenge
 step << Druid
     #xprate <1.5
     #optional
