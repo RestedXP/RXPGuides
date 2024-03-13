@@ -468,12 +468,12 @@ step << Gnome Rogue/Dwarf Rogue
     .target Auctioneer Jaxon
     .isQuestComplete 399
 step << Gnome Rogue/Dwarf Rogue
-    .isQuestComplete 399
     .goto StormwindClassic,49.194,30.284
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r
     .turnin 399 >> Turn in Humble Beginnings
     .target Baros Alexston
     .zoneskip Stormwind City,1
+    .isQuestComplete 399
 step << Dwarf !Paladin/Gnome
     #label end
     #completewith DarkshoreBoat
@@ -815,7 +815,7 @@ step << Dwarf Hunter
     .goto Darkshore,38.21,73.32,0
     .goto Darkshore,40.75,70.49,40,0
     .goto Darkshore,40.77,78.56,40,0
-    .goto Darkshore,38.21,73.32,40,0 
+    .goto Darkshore,38.21,73.32,40,0
     >>|cRXP_WARN_Send your pet to attack a |cRXP_ENEMY_Thistle Bear|r. Once your pet is stunned by the |cRXP_ENEMY_Thistle Bear|r, abandon your pet and start taming it|r
     .tame 2163 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Thistle Bear|r to tame it|r
     .target Thistle Bear
@@ -895,15 +895,8 @@ step << Hunter
     #sticky
     #label Treats1
     #loop
-    .goto 1439,47.294,48.653,0
-    .goto 1439,37.767,44.001,0
     .goto 1439,39.899,54.745,0
     .goto 1439,40.181,56.229,0
-    .goto 1439,47.294,48.653,50,0
-    .goto 1439,47.333,48.699,50,0
-    .goto 1439,47.564,41.758,50,0
-    .goto 1439,43.126,45.593,50,0
-    .goto 1439,37.767,44.001,50,0
     .goto 1439,39.267,53.092,50,0
     .goto 1439,39.754,53.444,50,0
     .goto 1439,40.234,54.325,50,0
@@ -1032,7 +1025,7 @@ step << Rogue
     .goto Darkshore,32.75,42.21,35 >> Travel to the end of the dock, then jump into the water
     .train 424785,3
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith washed1
     .goto Darkshore,33.59,40.36,0
@@ -1281,7 +1274,7 @@ step << NightElf Warrior/NightElf Rogue
     .usespell 2580
     .skill mining,<1,1
 step << !NightElf/!Warrior !Rogue
-    #xprate <1.5 << !NightElf/Hunter --XX Night Elves do it on 2x to catch up on xp EXCEPT Dwarf/NE Hunters (1x only)
+    #xprate <1.5 --<< !NightElf/Hunter --XX Night Elves do it on 2x to catch up on xp EXCEPT Dwarf/NE Hunters (1x only)
     .goto 1439,38.107,41.165
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
     .accept 982 >> Accept Deep Ocean, Vast Sea
@@ -1345,7 +1338,7 @@ step
 
 
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #completewith MistVeil
     .goto Darkshore,35.44,35.83,0
     .goto Darkshore,35.71,32.27,0
@@ -1359,13 +1352,13 @@ step
     .mob Darkshore Thresher
     .isOnQuest 1001
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith next
     +|cRXP_WARN_Press Escape, then go into -> Options -> Controls|r
     >>|cRXP_WARN_Check "Enable Interact Key" and bind the "Interact with Target" option to a key|r
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,38.213,28.754
 --  .goto 1439,38.234,28.796
     >>|cRXP_WARN_==BE AWARE OF YOUR BREATH METER==|r
@@ -1375,7 +1368,7 @@ step
     .complete 982,1 --Silver Dawning's Lockbox (1)
     .isOnQuest 982
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #label MistVeil
     .goto 1439,39.581,27.487
 --  .goto 1439,39.629,27.462
@@ -1386,7 +1379,7 @@ step
     .complete 982,2 --Mist Veil Lockbox (1)
     .isOnQuest 982
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #loop
     .goto Darkshore,40.17,28.76,0
     .goto Darkshore,38.73,28.25,0
@@ -1403,35 +1396,35 @@ step
     .mob Darkshore Thresher
     .isOnQuest 1001
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     .goto 1439,41.901,31.339
     >>Click the |cRXP_PICK_Beached Sea Creature|r
     .accept 4723 >> Accept Beached Sea Creature
     .isOnQuest 1001
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     .goto 1439,41.901,31.339
     >>Click the |cRXP_PICK_Beached Sea Creature|r
     .accept 4723 >> Accept Beached Sea Creature
     .isOnQuest 982
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,41.960,28.616
     >>Click the |cRXP_PICK_Buzzbox 411|r on the ground
     .turnin 1001 >> Turn in Buzzbox 411
     .accept 1002 >> Accept Buzzbox 323
     .isQuestComplete 1001
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     .goto 1439,41.960,28.616
     >>Click the |cRXP_PICK_Buzzbox 411|r on the ground
     .accept 1002 >> Accept Buzzbox 323
     .isQuestTurnedIn 1001
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith AsterionTravel
     .goto 1439,44.190,33.697,0
@@ -1585,7 +1578,7 @@ step
     .collect 5469,5,2178,1 --Strider Meat (5)
     .mob Foreststrider Fledgling
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith RedCrystal
     >>Kill |cRXP_ENEMY_Moonstalker Runts|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
@@ -1720,7 +1713,7 @@ step << NightElf/Hunter/Druid
     .skill cooking,10,1 --XX Shows if cooking skill is <10
     .isQuestTurnedIn 4811
 step << NightElf/Hunter/Druid
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith MysteriousCrystalHuntDruidEnd
     >>Kill |cRXP_ENEMY_Moonstalker Runts|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
@@ -1935,7 +1928,7 @@ step
 
 
 step << NightElf/Hunter/Druid
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #completewith EarlyBlackwood
     #optional
     >>Kill |cRXP_ENEMY_Moonstalker Runts|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
@@ -1949,15 +1942,8 @@ step << Druid
     #sticky
     #label EarlyTreats1
     #loop
-    .goto 1439,47.294,48.653,0
-    .goto 1439,37.767,44.001,0
     .goto 1439,39.899,54.745,0
     .goto 1439,40.181,56.229,0
-    .goto 1439,47.294,48.653,50,0
-    .goto 1439,47.333,48.699,50,0
-    .goto 1439,47.564,41.758,50,0
-    .goto 1439,43.126,45.593,50,0
-    .goto 1439,37.767,44.001,50,0
     .goto 1439,39.267,53.092,50,0
     .goto 1439,39.754,53.444,50,0
     .goto 1439,40.234,54.325,50,0
@@ -2007,15 +1993,8 @@ step << NightElf/Hunter/Druid
     #optional
     #loop
     #label EarlyBlackwood
-    .goto 1439,47.294,48.653,0
-    .goto 1439,37.767,44.001,0
     .goto 1439,39.899,54.745,0
     .goto 1439,40.181,56.229,0
-    .goto 1439,47.294,48.653,50,0
-    .goto 1439,47.333,48.699,50,0
-    .goto 1439,47.564,41.758,50,0
-    .goto 1439,43.126,45.593,50,0
-    .goto 1439,37.767,44.001,50,0
     .goto 1439,39.267,53.092,50,0
     .goto 1439,39.754,53.444,50,0
     .goto 1439,40.234,54.325,50,0
@@ -2032,7 +2011,7 @@ step << NightElf/Hunter/Druid
     .mob Blackwood Windtalker
     .isQuestTurnedIn 4811
 step << NightElf/Hunter/Druid
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #requires EarlyTreats3 << Druid --Season 2
     #completewith EarlyTurtleStart
@@ -2070,7 +2049,7 @@ step
 ----End of alternate section if early Red Crystal turnin----
 
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith AmethStart
     >>Kill |cRXP_ENEMY_Moonstalker Runts|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
@@ -2223,7 +2202,7 @@ step
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .mob Foreststrider Fledgling
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith FurbolgGrindEnd
     >>Kill |cRXP_ENEMY_Moonstalker Runts|r and |cRXP_ENEMY_Moonstalkers|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
@@ -2247,15 +2226,8 @@ step << Druid
     #sticky
     #label Treats1
     #loop
-    .goto 1439,47.294,48.653,0
-    .goto 1439,37.767,44.001,0
     .goto 1439,39.899,54.745,0
     .goto 1439,40.181,56.229,0
-    .goto 1439,47.294,48.653,50,0
-    .goto 1439,47.333,48.699,50,0
-    .goto 1439,47.564,41.758,50,0
-    .goto 1439,43.126,45.593,50,0
-    .goto 1439,37.767,44.001,50,0
     .goto 1439,39.267,53.092,50,0
     .goto 1439,39.754,53.444,50,0
     .goto 1439,40.234,54.325,50,0
@@ -2298,15 +2270,8 @@ step << Druid
     .itemcount 208687,1
 step
     #loop
-    .goto 1439,47.294,48.653,0
-    .goto 1439,37.767,44.001,0
     .goto 1439,39.899,54.745,0
     .goto 1439,40.181,56.229,0
-    .goto 1439,47.294,48.653,50,0
-    .goto 1439,47.333,48.699,50,0
-    .goto 1439,47.564,41.758,50,0
-    .goto 1439,43.126,45.593,50,0
-    .goto 1439,37.767,44.001,50,0
     .goto 1439,39.267,53.092,50,0
     .goto 1439,39.754,53.444,50,0
     .goto 1439,40.234,54.325,50,0
@@ -2326,15 +2291,8 @@ step
     #optional
     #requires Treats3 << Druid --Season 2
     #loop
-    .goto 1439,47.294,48.653,0
-    .goto 1439,37.767,44.001,0
     .goto 1439,39.899,54.745,0
     .goto 1439,40.181,56.229,0
-    .goto 1439,47.294,48.653,50,0
-    .goto 1439,47.333,48.699,50,0
-    .goto 1439,47.564,41.758,50,0
-    .goto 1439,43.126,45.593,50,0
-    .goto 1439,37.767,44.001,50,0
     .goto 1439,39.267,53.092,50,0
     .goto 1439,39.754,53.444,50,0
     .goto 1439,40.234,54.325,50,0
@@ -2352,15 +2310,8 @@ step
     #xprate <1.5
     #optional
     #loop
-    .goto 1439,47.294,48.653,0
-    .goto 1439,37.767,44.001,0
     .goto 1439,39.899,54.745,0
     .goto 1439,40.181,56.229,0
-    .goto 1439,47.294,48.653,50,0
-    .goto 1439,47.333,48.699,50,0
-    .goto 1439,47.564,41.758,50,0
-    .goto 1439,43.126,45.593,50,0
-    .goto 1439,37.767,44.001,50,0
     .goto 1439,39.267,53.092,50,0
     .goto 1439,39.754,53.444,50,0
     .goto 1439,40.234,54.325,50,0
@@ -2379,15 +2330,8 @@ step
     #optional
     #requires Treats3 << Druid --Season 2
     #loop
-    .goto 1439,47.294,48.653,0
-    .goto 1439,37.767,44.001,0
     .goto 1439,39.899,54.745,0
     .goto 1439,40.181,56.229,0
-    .goto 1439,47.294,48.653,50,0
-    .goto 1439,47.333,48.699,50,0
-    .goto 1439,47.564,41.758,50,0
-    .goto 1439,43.126,45.593,50,0
-    .goto 1439,37.767,44.001,50,0
     .goto 1439,39.267,53.092,50,0
     .goto 1439,39.754,53.444,50,0
     .goto 1439,40.234,54.325,50,0
@@ -2405,15 +2349,8 @@ step
     #xprate 1.49-1.59
     #optional
     #loop
-    .goto 1439,47.294,48.653,0
-    .goto 1439,37.767,44.001,0
     .goto 1439,39.899,54.745,0
     .goto 1439,40.181,56.229,0
-    .goto 1439,47.294,48.653,50,0
-    .goto 1439,47.333,48.699,50,0
-    .goto 1439,47.564,41.758,50,0
-    .goto 1439,43.126,45.593,50,0
-    .goto 1439,37.767,44.001,50,0
     .goto 1439,39.267,53.092,50,0
     .goto 1439,39.754,53.444,50,0
     .goto 1439,40.234,54.325,50,0
@@ -2432,15 +2369,8 @@ step
     #optional
     #requires Treats3 << Druid --Season 2
     #loop
-    .goto 1439,47.294,48.653,0
-    .goto 1439,37.767,44.001,0
     .goto 1439,39.899,54.745,0
     .goto 1439,40.181,56.229,0
-    .goto 1439,47.294,48.653,50,0
-    .goto 1439,47.333,48.699,50,0
-    .goto 1439,47.564,41.758,50,0
-    .goto 1439,43.126,45.593,50,0
-    .goto 1439,37.767,44.001,50,0
     .goto 1439,39.267,53.092,50,0
     .goto 1439,39.754,53.444,50,0
     .goto 1439,40.234,54.325,50,0
@@ -2458,15 +2388,8 @@ step
     #xprate >1.59
     #optional
     #loop
-    .goto 1439,47.294,48.653,0
-    .goto 1439,37.767,44.001,0
     .goto 1439,39.899,54.745,0
     .goto 1439,40.181,56.229,0
-    .goto 1439,47.294,48.653,50,0
-    .goto 1439,47.333,48.699,50,0
-    .goto 1439,47.564,41.758,50,0
-    .goto 1439,43.126,45.593,50,0
-    .goto 1439,37.767,44.001,50,0
     .goto 1439,39.267,53.092,50,0
     .goto 1439,39.754,53.444,50,0
     .goto 1439,40.234,54.325,50,0
@@ -2486,13 +2409,14 @@ step
     .subzone 442 >> Return to Auberdine
     .isOnQuest 4722
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,36.701,45.122,8,0
     .goto 1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .turnin 4722 >> Turn in Beached Sea Turtle
     .turnin 4723 >> Turn in Beached Sea Creature
     .target Gwennyth Bly'Leggonde
+    .isOnQuest 4723
 step
     #xprate >1.49
     #optional << NightElf !Hunter
@@ -2575,13 +2499,13 @@ step
     .target Gorbold Steelhand
     .itemcount 6889,1 -- Small Egg (1+)
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,38.107,41.165
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
     .accept 982 >> Accept Deep Ocean, Vast Sea
     .target Gorbold Steelhand
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     .goto 1439,38.107,41.165
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
@@ -2591,7 +2515,7 @@ step
 step
     #label Level10CookEnd
     .goto 1439,37.511,41.670
-    >>|cRXP_WARN_Travel toward the |cRXP_PICK_Campfire|r on the ground|r 
+    >>|cRXP_WARN_Travel toward the |cRXP_PICK_Campfire|r on the ground|r
     >>|cRXP_WARN_Start|r |T133971:0|t[Cooking] |T132834:0|t[Herb Baked Eggs]|cRXP_WARN_. Do this until your|r |T133971:0|t[Cooking] |cRXP_WARN_has reached at least level 10|r
     >>|cRXP_WARN_Continue leveling your|r |T133971:0|t[Cooking] |cRXP_WARN_ until you run out of|r |T132832:0|t[Small Eggs]
     >>|cRXP_WARN_There is a quest in Duskwood later requiring your|r |T133971:0|t[Cooking] |cRXP_WARN_to be 50 or higher. You can also cook this when you get on the boat soon|r
@@ -2619,13 +2543,13 @@ step
 
 
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith next
     +|cRXP_WARN_Press Escape, then go into -> Options -> Controls|r
     >>|cRXP_WARN_Check "Enable Interact Key" and bind the "Interact with Target" option to a key|r
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,38.213,28.754
 --  .goto 1439,38.234,28.796
     >>|cRXP_WARN_==BE AWARE OF YOUR BREATH METER==|r
@@ -2635,7 +2559,7 @@ step
     .complete 982,1 --Silver Dawning's Lockbox (1)
     .isOnQuest 982
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #label MistVeil
     .goto 1439,39.581,27.487
 --  .goto 1439,39.629,27.462
@@ -2646,7 +2570,7 @@ step
     .complete 982,2 --Mist Veil Lockbox (1)
     .isOnQuest 982
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     .goto 1439,41.901,31.339
     >>Click the |cRXP_PICK_Beached Sea Creature|r
@@ -2659,7 +2583,7 @@ step
 
 
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith BoatSeaCreature
     .goto 1439,44.190,33.697,0
@@ -2720,7 +2644,7 @@ step
     .mob Foreststrider Fledgling
     .mob Foreststrider
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith CrabTurtle
     >>Kill |cRXP_ENEMY_Moonstalker Runts|r and |cRXP_ENEMY_Moonstalkers|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
@@ -2728,13 +2652,20 @@ step
     .mob Moonstalker Runt
     .mob Moonstalker
     .isOnQuest 1002
+step << Hunter/Warrior
+    #season 2
+    .goto 1439,44.081,20.739
+    >>Loot the |T135129:0|t[Gnarled Harpoon] in the eye of the skeleton
+    .collect 209047,1 --Gnarled Harpoon (1)
+    .train 416091,1 << Hunter
+    .train 425443,1 << Warrior
 step
     #label CrabTurtle
     .goto Darkshore,44.18,20.60
     >>Click the |cRXP_PICK_Beached Sea Turtle|r
     .accept 4725 >> Accept Beached Sea Turtle
 step
-    #optional 
+    #optional
     #completewith next
     .goto 1439,45.004,21.344,0
     .goto 1439,48.013,21.409,0
@@ -2755,7 +2686,7 @@ step
     .complete 4762,1 --Cliffspring River Sample (1)
     .use 12350
 step
-	#xprate <1.5 << !NightElf/Hunter
+	#xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith next
     .goto 1439,51.118,23.670,20,0
@@ -2763,14 +2694,14 @@ step
     .isQuestComplete 1002
 step
     #optional
-	#xprate <1.5 << !NightElf/Hunter
+	#xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,51.288,24.554
     >>Click the |cRXP_PICK_Buzzbox 323|r on the ground
     .turnin 1002 >> Turn in Buzzbox 323
     .accept 1003 >> Accept Buzzbox 525
     .isQuestComplete 1002
 step
-	#xprate <1.5 << !NightElf/Hunter
+	#xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,51.288,24.554
     >>Click the |cRXP_PICK_Buzzbox 323|r on the ground
     .accept 1003 >> Accept Buzzbox 525
@@ -2881,7 +2812,7 @@ step
     .complete 2138,1 -- Rabid Thistle Bear slain (20)
     .mob Rabid Thistle Bear
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith CliffCave
     >>Kill |cRXP_ENEMY_Moonstalkers|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
@@ -2941,7 +2872,7 @@ step
     .mob Foreststrider
 step
     #optional
-	#xprate <1.5 << !NightElf/Hunter
+	#xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,51.288,24.554
     >>Click the |cRXP_PICK_Buzzbox 323|r on the ground
     .turnin 1002 >> Turn in Buzzbox 323
@@ -3015,7 +2946,7 @@ step
     .goto 1439,41.705,36.507,20 >>|cRXP_WARN_Jump on top of the rock on the top floor inside the cave. Position your character until it looks like they're floating, then perform a Logout Skip by logging out and back in|r
 step
     #hardcore << NightElf !Druid
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #requires MushroomLS
     #completewith CavetoAuber
     >>Kill |cRXP_ENEMY_Moonstalker Runts|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
@@ -3060,7 +2991,7 @@ step << !NightElf
     .target Archaeologist Hollee
     .isQuestComplete 2138
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,38.107,41.165
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
     .turnin 982 >> Turn in Deep Ocean, Vast Sea
@@ -3138,15 +3069,8 @@ step
 
 step << Druid
     #optional
-    .goto 1439,47.294,48.653,0
-    .goto 1439,37.767,44.001,0
     .goto 1439,39.899,54.745,0
     .goto 1439,40.181,56.229,0
-    .goto 1439,47.294,48.653,50,0
-    .goto 1439,47.333,48.699,50,0
-    .goto 1439,47.564,41.758,50,0
-    .goto 1439,43.126,45.593,50,0
-    .goto 1439,37.767,44.001,50,0
     .goto 1439,39.267,53.092,50,0
     .goto 1439,39.754,53.444,50,0
     .goto 1439,40.234,54.325,50,0
@@ -3500,7 +3424,7 @@ step
     .unitscan Anaya Dawnrunner
     .group
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith CompleteFangs
     >>Kill |cRXP_ENEMY_Moonstalker Runts|r and |cRXP_ENEMY_Moonstalkers|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
@@ -3560,7 +3484,7 @@ step
     .complete 986,1 -- Fine Moonstalker Pelt (5)
     .unitscan Moonstalker Sire
 step
-	#xprate <1.5 << !NightElf/Hunter
+	#xprate <1.5 --<< !NightElf/Hunter
     #completewith MasterG
     .goto Darkshore,38.60,80.50,0
     >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Scalps|r
@@ -3586,7 +3510,7 @@ step
     .accept 944 >> Accept The Master's Glaive
     .target Onu
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     .goto 1439,41.390,80.563
     >>Click the |cRXP_PICK_Buzzbox 525|r on the ground
@@ -3622,7 +3546,7 @@ step
     >>|cRXP_WARN_Click the |cRXP_PICK_Scrying Bowl|r on the ground|r
     .turnin 944 >> Turn in The Master's Glaive
     .accept 949 >> Accept The Twilight Camp
-    .use 5251 
+    .use 5251
 step
     .goto 1439,38.537,86.050
     >>Click the |cRXP_PICK_Twilight Tome|r on the northern pedestal
@@ -3653,7 +3577,7 @@ step
     .complete 986,1 -- Fine Moonstalker Pelt (5)
     .unitscan Moonstalker Sire
 step
-	#xprate <1.5 << !NightElf/Hunter
+	#xprate <1.5 --<< !NightElf/Hunter
     .goto Darkshore,41.44,86.06,50,0
     .goto Darkshore,41.77,84.60,50,0
     .goto Darkshore,42.94,82.25,50,0
@@ -3665,7 +3589,7 @@ step
     .isOnQuest 1003
     .mob Grizzled Thistle Bear
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #label LastBuzz
     .goto 1439,41.390,80.563
     >>Click the |cRXP_PICK_Buzzbox 525|r on the ground
@@ -3975,7 +3899,7 @@ step << Hunter
     >>Make sure your HS cooldown is <10 min
     >>Skip this step if the area is too crowded
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #loop
     .goto 1439,53.629,26.054,0
@@ -4003,7 +3927,7 @@ step
     .isOnQuest 1002
 --XX Can do later during Pelts but better if player gets more xp beforehand
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #label Buzzbox323End
     #requires SicklyDeers << Druid --xprate <1.5
     .goto 1439,51.288,24.554
@@ -4024,9 +3948,23 @@ step << Paladin
     .goto Darkshore,56.20,26.46
     >>|cRXP_WARN_Keep an eye out for groups going into the Tower of Althalaxx. If you see anyone, follow behind them slowly inside so you can loot the |cRXP_PICK_Strange Orb|r at the top
     >>|cRXP_WARN_Be careful as the mobs in this tower are impossible for you to kill (Level 28-31)|r
+    >>|cRXP_WARN_If you don't want to do this, skip this step|r
     >>Open the |cRXP_PICK_Strange Orb|r on the table atop the Tower of Althalaxx. Loot it for the |cRXP_LOOT_Althalaxx Orb|r
     .collect 209836,1,78089,1 --Athalaxx Orb (1)
     .train 410014,1
+step << Warlock
+    #season 2
+    #optional
+    #completewith Parchments
+    >>|cRXP_WARN_Keep an eye out for groups going into the Tower of Althalaxx. If you see anyone, follow behind them slowly inside so you can loot the |cRXP_PICK_Bough of Altek|r at the top for the |T135153:0|t[Bough of Altek]
+    >>|cRXP_WARN_This is for your|r |T237558:0|t[Metamorphosis] |cRXP_WARN_rune later. If you don't want to do this, skip this step|r
+    >>|cRXP_WARN_Be careful as the mobs in this tower are impossible for you to kill (Level 28-31)|r
+    >>|cRXP_WARN_If you don't want to do this, skip this step|r
+    .collect 210763,1
+    .goto Darkshore,56.3,26.5
+    .train 403938,1
+    .dungeon SFK
+    .isQuestAvailable 78680
 step << Warlock
     #season 2
     #sticky
@@ -4060,6 +3998,7 @@ step << Warlock
     .itemcount 208750,1
 step
 	#xprate >1.49 << Hunter/Druid
+    #label Parchments << Warlock --Season 2 SFK
     #loop
     .goto 1439,55.231,26.508,0
     .goto 1439,56.194,27.071,0
@@ -4156,14 +4095,14 @@ step
     #completewith next
     .goto Darkshore,56.10,16.88,0
     >>Kill |cRXP_ENEMY_Raging Reef Crawlers|r and |cRXP_ENEMY_Encrusted Tide Crawlers|r. Loot them for the |cRXP_LOOT_Bottom of Gelkak's Key|r
-    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Raging Reef Crawlers|r |T132152:0|t[Thrash] ability. You can take 200 damage instantly from their melee hits|r
+    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Raging Reef Crawlers|r'|r |T132152:0|t[Thrash] |cRXP_WARN_ability. You can take 200 damage instantly from their melee hits|r
     .complete 2098,3 -- Bottom of Gelkak's Key (1)
     .mob Raging Reef Crawler
     .mob Encrusted Tide Crawler
 step
     .goto Darkshore,54.93,12.19
     >>Kill |cRXP_ENEMY_Greymist Oracles|r and |cRXP_ENEMY_Greymist Tidehunters|r. Loot them for the |cRXP_LOOT_Middle of Gelkak's Key|r
-    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Greymist Oracles|r |T136048:0|t[Lightning Bolt] damage and they can also heal with |T136052:0|t[Healing Wave]|r
+    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Greymist Oracles|r'|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_damage and they can also heal with|r |T136052:0|t[Healing Wave]|r
     >>|cRXP_WARN_You can LoS (Line of Sight) the |cRXP_ENEMY_Greymist Oracles|r'|r  |T136048:0|t[Lightning Bolts] |cRXP_WARN_around the sunken ship to avoid taking its damage|r
     .complete 2098,2 -- Middle of Gelkak's Key (1)
     .mob Greymist Tidehunter
@@ -4174,7 +4113,7 @@ step
     .goto Darkshore,51.34,22.00,45,0
     .goto Darkshore,56.63,12.08
     >>Kill |cRXP_ENEMY_Raging Reef Crawlers|r and |cRXP_ENEMY_Encrusted Tide Crawlers|r. Loot them for the |cRXP_LOOT_Bottom of Gelkak's Key|r
-    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Raging Reef Crawlers|r |T132152:0|t[Thrash] ability. You can take 200 damage instantly from their melee hits|r
+    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Raging Reef Crawlers|r'|r |T132152:0|t[Thrash] |cRXP_WARN_ability. You can take 200 damage instantly from their melee hits|r
     .complete 2098,3 -- Bottom of Gelkak's Key (1)
     .mob Raging Reef Crawler
     .mob Encrusted Tide Crawler
@@ -4226,14 +4165,6 @@ step
     .itemcount 5386,3 --Fine Moonstalker Pelt (3+)
 step
     #requires foreststriders
-    .goto 1439,56.654,13.484
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gelkak Gyromast|r
-    .turnin 2098 >> Turn in Gyromast's Retrieval
-    .accept 2078 >> Accept Gyromast's Revenge << !Warrior !Paladin !Rogue
-    .target Gelkak Gyromast
-    .solo << !Warrior !Paladin !Rogue
-step
-    #requires foreststriders
     .group 2 << Warrior/Paladin/Rogue
     .goto 1439,56.654,13.484
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gelkak Gyromast|r
@@ -4244,17 +4175,13 @@ step
 step
     #optional
     #completewith next
-    .solo << !Warrior !Paladin !Rogue
-    .group 2 << Warrior/Paladin/Rogue
     .goto 1439,55.802,18.290
     .gossipoption 87696 >> Talk to |cRXP_FRIENDLY_The Threshwackonator 4100|r to start the escort
     >>|cRXP_WARN_This quest is VERY difficult|r
     .target The Threshwackonator 4100
-    .isOnQuest 2078
+    .isOnQuest 2078 << Warrior/Paladin/Rogue
 step
     .goto 1439,56.654,13.484
-    .solo << !Warrior !Paladin !Rogue
-    .group 2 << Warrior/Paladin/Rogue
     >>Escort |cRXP_FRIENDLY_The Threshwackonator 4100|r to |cRXP_FRIENDLY_Gelkak Gyromast|r
     >>Kill |cRXP_ENEMY_The Threshwackonator 4100|r once it turns hostile
     >>|cRXP_WARN_This quest is VERY difficult|r
@@ -4264,6 +4191,7 @@ step
     .complete 2078,1 --Gyromast's Revenge (1)
     .link https://clips.twitch.tv/VainAmorphousMacaroniPRChase-iGvhTnz0ked6LO0A >> |cRXP_WARN_Click here for a video guide|r
     .mob The Threshwackonator 4100
+    .isOnQuest 2078 << Warrior/Paladin/Rogue
 --XX DRUID: Test if you can root
 step
     #optional << Warrior/Paladin/Rogue
@@ -4272,6 +4200,10 @@ step
     .turnin 2078 >> Turn in Gyromast's Revenge
     .target Gelkak Gyromast
     .isQuestComplete 2078
+step
+    #optional
+    #completewith BeachedCloak
+    .abandon 2078 >> Abandon Gyromasts Revenge
 step << Druid
     #xprate <1.5
     #optional
@@ -4291,15 +4223,33 @@ step
     #label DeleteGyromast
     #optional
     .destroy 7442 >> Delete |T134459:0|t[Gyromast's Key] Gyromast's Key from your bags, as it's no longer needed
-step << Warrior
+step << Hunter/Warrior
     #season 2
-    .goto Darkshore,48.2,15.6,70,0
-    .goto Darkshore,50.2,12.6
-    >>Kill |cRXP_ENEMY_Paxnozz|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Strike|r]
-    >>|cRXP_ENEMY_Paxnozz|r |cRXP_WARN_is a level 20 elite found patrolling in the water. Look for help before attemping to kill it|r
-    .collect 208778,1 -- Rune of Quick Strike (1)
+    #completewith next
+    .goto 1439,44.081,20.739
+    .cast 422397 >>|cRXP_WARN_Use the|r |T135129:0|t[Gnarled Harpoon] |cRXP_WARN_on |cRXP_ENEMY_Paxnozz|r to reduce his max health to 743|r
+    .train 416091,1 << Hunter
+    .train 425443,1 << Warrior
+step << Hunter/Warrior
+    #season 2
+    #loop
+    .goto Darkshore,48.0,18.0,0
+    .goto Darkshore,47.6,13.2,0
+    .goto Darkshore,50.4,12.0,0
+    .goto Darkshore,48.8,16.0,0
+    .goto Darkshore,48.0,18.0,40,0
+    .goto Darkshore,47.6,13.2,40,0
+    .goto Darkshore,50.4,12.0,40,0
+    .goto Darkshore,48.8,16.0,40,0
+    >>Kill |cRXP_ENEMY_Paxnozz|r. Loot him for the |T134419:0|t|cRXP_LOOT_[Rune of the Sniper]|r << Hunter
+    >>Kill |cRXP_ENEMY_Paxnozz|r. Loot him for the |T134419:0|t|cRXP_LOOT_[Rune of Quick Strike]|r << Warrior
+    >>|cRXP_WARN_Be careful as he is a level 20 elite|r
+    .collect 208777,1 << Hunter --Rune of the Sniper (1)
+    .collect 208778,1 << Warrior --Rune of Quick Strike (1)
     .unitscan Paxnozz
-    .train 425443,1
+    .use 209047
+    .train 416091,1 << Hunter
+    .train 425443,1 << Warrior
 step << Warrior
     #season 2
     .train 425443 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Strike|r] |cRXP_WARN_to train|r |T132394:0|t[Quick Strike]
@@ -4509,6 +4459,14 @@ step
     .turnin 2139 >> Turn in Tharnariun's Hope
     .target Tharnariun Treetender
 step
+	#xprate >1.59
+    #optional
+    #completewith PeltEnd
+    .goto Darkshore,39.2,43.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Selarin|r if she's up
+    .accept 990 >> Accept Trek to Ashenvale
+    .target Sentinel Selarin
+step
     #xprate >1.59
     .goto 1439,39.373,43.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
@@ -4519,6 +4477,7 @@ step
 step
     #xprate >1.59
     #optional
+    #label PeltEnd
     .goto 1439,39.373,43.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
     .turnin 986 >> Turn in A Lost Master
@@ -4528,7 +4487,7 @@ step
     #xprate >1.59
     #optional
     #completewith BeachedCloak
-    >>|cRXP_WARN_If you equip the|r |T133762:0|t[Enchanted Moonstalker Cloak]|cRXP_WARN_, make sure you save your current cloak for later as the|r |T133762:0|t[Enchanted Moonstalker Cloak] |cRXP_WARN_is lost upon a later turn in|r 
+    >>|cRXP_WARN_If you equip the|r |T133762:0|t[Enchanted Moonstalker Cloak]|cRXP_WARN_, make sure you save your current cloak for later as the|r |T133762:0|t[Enchanted Moonstalker Cloak] |cRXP_WARN_is lost upon a later turn in|r
     .equip 15,5387 >>|cRXP_WARN_Equip the|r |T133762:0|t[Enchanted Moonstalker Cloak] |cRXP_WARN_If it's better than your current Cloak|r
     .itemcount 5387,1
     .itemStat 15,QUALITY,<7
@@ -4713,7 +4672,7 @@ step << NightElf Warrior/NightElf Rogue
 
 
 
-----Start of NE Warrior and Rogue 2x No Deadmines swim to Westfall Alternative section----  
+----Start of NE Warrior and Rogue 2x No Deadmines swim to Westfall Alternative section----
 
 
 
@@ -5323,6 +5282,13 @@ step << Human Rogue
     .dungeon !DM
 step << !Human Rogue
     #xprate >1.59
+    .goto Elwynn Forest,65.20,69.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theocritus|r atop the Tower of Azora
+    .accept 94 >> Accept A Watchful Eye
+    .target Theocritus
+    .dungeon !DM
+step << !Human Rogue
+    #xprate >1.59
     #optional
     #completewith WileyStart
     .goto Redridge Mountains,15.27,71.45
@@ -5480,7 +5446,7 @@ step << Rogue
     .goto 1436,70.421,74.031
     >>|cRXP_WARN_Travel up to 2nd top floor of the tower. Whilst in|r |T132320:0|t[Stealth] |cRXP_WARN_and the |cRXP_ENEMY_Defias Tower Sentries|r aren't next to you, Jump onto the chair, then onto the lamp, then onto the bookshelf on top of the waypoint location|r
     >>|cRXP_WARN_Manually|r |T132320:0|t[Unstealth]|cRXP_WARN_, then press your "Interact with Target" keybind to open the |cRXP_PICK_Duskwood Chest|r. Loot it for|r |cRXP_LOOT_Klaven Mortwake's Journal|r
-    >>|cRXP_WARN_NOTE: Your|r |T132320:0|t[Stealth] |cRXP_WARN_will temporarily stop working after looting|r |cRXP_LOOT_Klaven Mortwake's Journal|r 
+    >>|cRXP_WARN_NOTE: Your|r |T132320:0|t[Stealth] |cRXP_WARN_will temporarily stop working after looting|r |cRXP_LOOT_Klaven Mortwake's Journal|r
     >>|cRXP_WARN_Be prepared to run if you don't kill the |cRXP_ENEMY_Defias Tower Sentries|r on the 2nd floor. They will most likely aggro you permanently (but not attack you) when you are on top of the bookshelf as it is an evade spot|r
     >>|cRXP_WARN_If you have a|r |T135641:0|t[Dagger] |cRXP_WARN_in your bags or equipped, you can cast|r |T132282:0|t[Ambush] |cRXP_WARN_on the |cRXP_ENEMY_Defias Tower Patrollers|r and |cRXP_ENEMY_Defias Tower Sentries|r inside to kill them instantly. Be prepared to run after you kill the first |cRXP_ENEMY_Defias Tower Sentry|r and remember you can be hit from above. This is slower, but a LOT safer|r
     >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Malformed Defias Drone|r and |cRXP_ENEMY_Defias Drones|r can be at the entrance of the tower if you have to run out of it|r
@@ -5725,9 +5691,8 @@ step << Mage
     .train 3561 >> Train |T135763:0|t[Teleport: Stormwind]
     .target Larimaine Purdue
     .dungeon !DM
-step << NightElf Warrior/Mage/Warlock/Rogue
+step << !sod NightElf Warrior/Mage/Warlock/Rogue
     #xprate >1.59
-    #era
     #requires Torment2NoDMEnd << Warlock
     .goto StormwindClassic,21.40,55.80
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argos Nightwhisper|r
@@ -5847,7 +5812,7 @@ step << NightElf Warrior/NightElf Rogue
     .zoneskip Ironforge,1
     .isOnQuest 968
     .dungeon !DM
-    
+
 
 
 ----End of 2x Non-Deadmines Training/Class q section----
@@ -6121,12 +6086,12 @@ step << !NightElf
     #xprate <1.59
     #optional
     #completewith BeachedCloak
-    >>|cRXP_WARN_If you equip the|r |T133762:0|t[Enchanted Moonstalker Cloak]|cRXP_WARN_, make sure you save your current cloak for later as the|r |T133762:0|t[Enchanted Moonstalker Cloak] |cRXP_WARN_is lost upon a later turn in|r 
+    >>|cRXP_WARN_If you equip the|r |T133762:0|t[Enchanted Moonstalker Cloak]|cRXP_WARN_, make sure you save your current cloak for later as the|r |T133762:0|t[Enchanted Moonstalker Cloak] |cRXP_WARN_is lost upon a later turn in|r
     .equip 15,5387 >>|cRXP_WARN_Equip the|r |T133762:0|t[Enchanted Moonstalker Cloak] |cRXP_WARN_If it's better than your current Cloak|r
     .itemcount 5387,1
     .itemStat 15,QUALITY,<7
 step << Dwarf Hunter
-    #xprate <1.59 
+    #xprate <1.59
     #optional
     #completewith BeachedCloak
     .goto Darkshore,33.17,40.17,40,0
@@ -6264,7 +6229,7 @@ step << NightElf
 
 step << NightElf
     #optional
-    >>|cRXP_WARN_If you equip the|r |T133762:0|t[Enchanted Moonstalker Cloak]|cRXP_WARN_, make sure you save your current cloak for later as the|r |T133762:0|t[Enchanted Moonstalker Cloak] |cRXP_WARN_is lost upon a later turn in|r 
+    >>|cRXP_WARN_If you equip the|r |T133762:0|t[Enchanted Moonstalker Cloak]|cRXP_WARN_, make sure you save your current cloak for later as the|r |T133762:0|t[Enchanted Moonstalker Cloak] |cRXP_WARN_is lost upon a later turn in|r
     .equip 15,5387 >>|cRXP_WARN_Equip the|r |T133762:0|t[Enchanted Moonstalker Cloak] |cRXP_WARN_If it's better than your current Cloak|r
     .itemcount 5387,1
     .itemStat 15,QUALITY,<7
@@ -6381,7 +6346,7 @@ step << NightElf
 
 
 
-----Start of Hunter/All Night Elves 2x Deadmines swim to Westfall Alternative section----   
+----Start of Hunter/All Night Elves 2x Deadmines swim to Westfall Alternative section----
 
 
 
@@ -6483,7 +6448,7 @@ step << NightElf Priest
 
 
 
-----End of Hunter/All Night Elves 2x Deadmines swim to Westfall Alternative (and Alt NE Priest Training) section----  
+----End of Hunter/All Night Elves 2x Deadmines swim to Westfall Alternative (and Alt NE Priest Training) section----
 
 
 
@@ -6519,7 +6484,7 @@ step << NightElf Warrior
     .dungeon DM
 step << NightElf Warrior
     #xprate >1.59
-    #optional 
+    #optional
     #completewith DeeprunDM
     +|cRXP_WARN_Equip the|r |T135425:0|t[Keen Throwing Knives]
     .use 3107
@@ -6969,7 +6934,7 @@ step << Paladin
     .trainer >> Train your class spells
     .target Arthur the Faithful
     .dungeon DM
-step << Paladin
+step << !sod Paladin
     #xprate >1.59
     #era
     .goto StormwindClassic,21.40,55.80
@@ -7110,7 +7075,7 @@ step << Mage
     .train 3561 >> Train |T135763:0|t[Teleport: Stormwind]
     .target Larimaine Purdue
     .dungeon DM
-step << !Paladin
+step << !sod !Paladin
     #xprate >1.59
     #era
     .goto StormwindClassic,21.40,55.80
@@ -7252,6 +7217,13 @@ step << Human
     .zoneskip Stormwind City,1
     .dungeon DM
     .isOnQuest 65
+step << !Human !Warlock
+    #xprate >1.59 << !Hunter
+    .goto Elwynn Forest,65.20,69.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theocritus|r atop the Tower of Azora
+    .accept 94 >> Accept A Watchful Eye
+    .target Theocritus
+    .dungeon DM
 step << !Human !Warlock
     #xprate >1.59 << !Hunter
     #optional
@@ -7411,7 +7383,7 @@ step << Rogue
     .goto 1436,70.421,74.031
     >>|cRXP_WARN_Travel up to 2nd top floor of the tower. Whilst in|r |T132320:0|t[Stealth] |cRXP_WARN_and the |cRXP_ENEMY_Defias Tower Sentries|r aren't next to you, Jump onto the chair, then onto the lamp, then onto the bookshelf on top of the waypoint location|r
     >>|cRXP_WARN_Manually|r |T132320:0|t[Unstealth]|cRXP_WARN_, then press your "Interact with Target" keybind to open the |cRXP_PICK_Duskwood Chest|r. Loot it for|r |cRXP_LOOT_Klaven Mortwake's Journal|r
-    >>|cRXP_WARN_NOTE: Your|r |T132320:0|t[Stealth] |cRXP_WARN_will temporarily stop working after looting|r |cRXP_LOOT_Klaven Mortwake's Journal|r 
+    >>|cRXP_WARN_NOTE: Your|r |T132320:0|t[Stealth] |cRXP_WARN_will temporarily stop working after looting|r |cRXP_LOOT_Klaven Mortwake's Journal|r
     >>|cRXP_WARN_Be prepared to run if you don't kill the |cRXP_ENEMY_Defias Tower Sentries|r on the 2nd floor. They will most likely aggro you permanently (but not attack you) when you are on top of the bookshelf as it is an evade spot|r
     >>|cRXP_WARN_If you have a|r |T135641:0|t[Dagger] |cRXP_WARN_in your bags or equipped, you can cast|r |T132282:0|t[Ambush] |cRXP_WARN_on the |cRXP_ENEMY_Defias Tower Patrollers|r and |cRXP_ENEMY_Defias Tower Sentries|r inside to kill them instantly. Be prepared to run after you kill the first |cRXP_ENEMY_Defias Tower Sentry|r and remember you can be hit from above. This is slower, but a LOT safer|r
     >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Malformed Defias Drone|r and |cRXP_ENEMY_Defias Drones|r can be at the entrance of the tower if you have to run out of it|r
@@ -7522,7 +7494,7 @@ step
     >>|cRXP_WARN_Remember to re-equip your main weapon if you switched to a|r |T135641:0|t[Dagger] |cRXP_WARN_earlier|r << Rogue
     .turnin 135 >> Turn in The Defias Brotherhood
     .accept 141 >> Accept The Defias Brotherhood
-    .turnin 2359 >> Turn in Klaven's Tower
+    .turnin 2359 >> Turn in Klaven's Tower << Rogue
     .target Master Mathias Shaw
     .dungeon DM
 step
@@ -7864,7 +7836,7 @@ step
     #xprate >1.59
     #hardcore << !Paladin
     .goto Westfall,30.01,86.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r  
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r
     .turnin 104 >> Turn in The Coastal Menace
     .target Captain Grayson
     .isQuestComplete 104
@@ -8562,11 +8534,13 @@ step
     .target Wilder Thistlenettle
     .dungeon DM
 step << !NightElf
+    #xprate <1.5
     .goto StormwindClassic,49.194,30.284
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r
     .turnin 399 >> Turn in Humble Beginnings
     .target Baros Alexston
-    .isOnQuest 399
+    .isQuestComplete 399
+--XX Westfall 1x only
 step << Mage
     #completewith next
     .goto StormwindClassic,37.69,82.09,10 >> Travel to the Mage Tower
@@ -9055,8 +9029,7 @@ step << Warlock
     .accept 1716 >> Accept Devourer of Souls
     .target Gakin the Darkbinder
     .xp <20,1
-step
-    #era
+step << !sod
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argos Nightwhisper|r
 	.target Argos Nightwhisper
     .goto StormwindClassic,21.40,55.80
@@ -9727,8 +9700,7 @@ step << Mage
     .train 48464 >> Train |T135763:0|t[Teleport: Stormwind]
 	.xp <20,1
     .target Larimaine Purdue
-step
-    #era
+step << !sod
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argos Nightwhisper|r
 	.target Argos Nightwhisper
     .goto StormwindClassic,21.40,55.80
@@ -9883,7 +9855,7 @@ step << Rogue
     .goto 1436,70.421,74.031
     >>|cRXP_WARN_Travel up to 2nd top floor of the tower. Whilst in|r |T132320:0|t[Stealth] |cRXP_WARN_and the |cRXP_ENEMY_Defias Tower Sentries|r aren't next to you, Jump onto the chair, then onto the lamp, then onto the bookshelf on top of the waypoint location|r
     >>|cRXP_WARN_Manually|r |T132320:0|t[Unstealth]|cRXP_WARN_, then press your "Interact with Target" keybind to open the |cRXP_PICK_Duskwood Chest|r. Loot it for|r |cRXP_LOOT_Klaven Mortwake's Journal|r
-    >>|cRXP_WARN_NOTE: Your|r |T132320:0|t[Stealth] |cRXP_WARN_will temporarily stop working after looting|r |cRXP_LOOT_Klaven Mortwake's Journal|r 
+    >>|cRXP_WARN_NOTE: Your|r |T132320:0|t[Stealth] |cRXP_WARN_will temporarily stop working after looting|r |cRXP_LOOT_Klaven Mortwake's Journal|r
     >>|cRXP_WARN_Be prepared to run if you don't kill the |cRXP_ENEMY_Defias Tower Sentries|r on the 2nd floor. They will most likely aggro you permanently (but not attack you) when you are on top of the bookshelf as it is an evade spot|r
     >>|cRXP_WARN_If you have a|r |T135641:0|t[Dagger] |cRXP_WARN_in your bags or equipped, you can cast|r |T132282:0|t[Ambush] |cRXP_WARN_on the |cRXP_ENEMY_Defias Tower Patrollers|r and |cRXP_ENEMY_Defias Tower Sentries|r inside to kill them instantly. Be prepared to run after you kill the first |cRXP_ENEMY_Defias Tower Sentry|r and remember you can be hit from above. This is slower, but a LOT safer|r
     >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Malformed Defias Drone|r and |cRXP_ENEMY_Defias Drones|r can be at the entrance of the tower if you have to run out of it|r
@@ -9981,7 +9953,7 @@ step << Rogue
 
 
 
-    
+
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Marcus Jonathan|r
 	.target General Marcus Jonathan
@@ -10177,9 +10149,8 @@ RXPGuides.RegisterGuide([[
 #displayname 20-21 Darkshore/Ashenvale << SoD
 #next RestedXP Alliance 20-30\21-23 Ashenvale/Stonetalon;RestedXP Alliance 20-30\21-22 Ashenvale SoD
 
-step
+step << !sod
     #xprate >1.59
-    #era
     .goto 1439,38.325,43.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gershala Nightwhisper|r
     .turnin 3765 >> Turn in The Corruption Abroad
@@ -10350,6 +10321,14 @@ step
     .target Volcor
     .isQuestTurnedIn 993
 step
+	#xprate >1.59
+    #optional
+    #completewith Escaped
+    .goto Darkshore,39.2,43.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Selarin|r if she's up
+    .accept 990 >> Accept Trek to Ashenvale
+    .target Sentinel Selarin
+step
 	#xprate >1.49
     .goto Darkshore,45.00,85.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Volcor|r
@@ -10360,6 +10339,7 @@ step
 step
 	#xprate >1.49
     #optional
+    #label Escaped
     .goto Darkshore,45.00,85.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Volcor|r
     .accept 995 >> Accept Escape Through Stealth
@@ -10879,13 +10859,22 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Hollee|r
     .accept 729 >> Accept The Absent Minded Prospector
     .target Archaeologist Hollee
-step
-    #era
+step << !sod
+    #xprate <1.59
     .goto 1439,38.325,43.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gershala Nightwhisper|r
     .turnin 3765 >> Turn in The Corruption Abroad
     .target Gershala Nightwhisper
     .isOnQuest 3765
+--  .dungeon !DM << NightElf Warrior/Mage/Warlock/Rogue
+step << !sod
+    #xprate >1.59
+    .goto 1439,38.325,43.039
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gershala Nightwhisper|r
+    .turnin 3765 >> Turn in The Corruption Abroad
+    .target Gershala Nightwhisper
+    .isOnQuest 3765
+    .dungeon !DM << NightElf Warrior/Mage/Warlock/Rogue
 step
     .goto 1439,39.373,43.483
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
@@ -10895,12 +10884,12 @@ step
 step
     #optional
     #completewith OnuGrove
-    >>|cRXP_WARN_If you equip the|r |T133762:0|t[Enchanted Moonstalker Cloak]|cRXP_WARN_, make sure you save your current cloak for later as the|r |T133762:0|t[Enchanted Moonstalker Cloak] |cRXP_WARN_is lost upon a later turn in|r 
+    >>|cRXP_WARN_If you equip the|r |T133762:0|t[Enchanted Moonstalker Cloak]|cRXP_WARN_, make sure you save your current cloak for later as the|r |T133762:0|t[Enchanted Moonstalker Cloak] |cRXP_WARN_is lost upon a later turn in|r
     .equip 15,5387 >>|cRXP_WARN_Equip the|r |T133762:0|t[Enchanted Moonstalker Cloak] |cRXP_WARN_If it's better than your current Cloak|r
     .itemcount 5387,1
     .itemStat 15,QUALITY,<7
 step
-	#xprate <1.5 << !NightElf/Hunter
+	#xprate <1.5 --<< !NightElf/Hunter
     #completewith Murkdeep
     .goto Darkshore,40.23,81.28,0
     >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Scalps|r
@@ -10981,7 +10970,7 @@ step
     .collect 5352,1,968,1 --Book: The Powers Below (1)
     .mob Twilight Disciple
     .mob Twilight Thug
---  .use 13536 
+--  .use 13536
 step
     #xprate <1.5
     #optional
@@ -10999,7 +10988,7 @@ step
     >>|cRXP_WARN_Click the |cRXP_PICK_Scrying Bowl|r on the ground|r
     .turnin 944 >> Turn in The Master's Glaive
     .accept 949 >> Accept The Twilight Camp
-    .use 5251 
+    .use 5251
 step
     #xprate <1.5
     .goto 1439,38.537,86.050
@@ -11154,7 +11143,7 @@ step
     .mob Encrusted Tide Crawler
     .mob Reef Crawler
 step
-	#xprate <1.5 << !NightElf/Hunter
+	#xprate <1.5 --<< !NightElf/Hunter
     .goto Darkshore,41.44,86.06,50,0
     .goto Darkshore,41.77,84.60,50,0
     .goto Darkshore,42.94,82.25,50,0
@@ -11166,7 +11155,7 @@ step
     .isOnQuest 1003
     .mob Grizzled Thistle Bear
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     .goto Darkshore,41.389,80.565
     >>Click the |cRXP_PICK_Buzzbox 525|r on the ground
     .turnin 1003 >> Turn in Buzzbox 525
@@ -11252,6 +11241,7 @@ step << Paladin
     .itemcount 209836,1 --Athalaxx Orb (1)
 step << Paladin
     #season 2
+    #label tower
     #optional
     .goto Ashenvale,26.19,38.69
     >>Talk to |cRXP_FRIENDLY_Delgren the Purifier|r

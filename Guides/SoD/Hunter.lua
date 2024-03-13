@@ -730,25 +730,35 @@ RXPGuides.RegisterGuide([[
     --Rune of the Sniper
 
 step
-    #season2
+    #season 2
     #completewith next
     .train 416091,1
     .zone Darkshore >>Travel to Darkshore
 step
     #season 2
+    .goto 1439,44.081,20.739
+    >>Loot the |T135129:0|t[Gnarled Harpoon] in the eye of the skeleton
+    .collect 209047,1 --Gnarled Harpoon (1)
     .train 416091,1
-    .goto Darkshore,48.0,18.0
-    >>Search the area for dead turtles with a harpoon stuck in their skull, and click on the |cRXP_PICK_harpoon|r to acquire the item.
-    .collect 209047,1
+step
+    #completewith next
+    .goto 1439,44.081,20.739
+    .cast 422397 >>|cRXP_WARN_Use the|r |T135129:0|t[Gnarled Harpoon] |cRXP_WARN_on |cRXP_ENEMY_Paxnozz|r to reduce his max health to 743|r
+    .train 416091,1
 step
     #season 2
     #loop
-    .goto Darkshore,48.0,18.0,20,0
-    .goto Darkshore,47.6,13.2,20,0
-    .goto Darkshore,50.4,12.0,20,0
-    .goto Darkshore,48.8,16.0,20,0
-    >>Use the |T135129:0|t[Gnarled Harpoon] to weaken |cRXP_ENEMY_Paxnozz|r then Kill |cRXP_ENEMY_Paxnozz|r and loot him for |T134419:0|t[|cRXP_LOOT_Rune of the Sniper|r]
-    .collect 208777,1
+    .goto Darkshore,48.0,18.0,0
+    .goto Darkshore,47.6,13.2,0
+    .goto Darkshore,50.4,12.0,0
+    .goto Darkshore,48.8,16.0,0
+    .goto Darkshore,48.0,18.0,40,0
+    .goto Darkshore,47.6,13.2,40,0
+    .goto Darkshore,50.4,12.0,40,0
+    .goto Darkshore,48.8,16.0,40,0
+    >>Kill |cRXP_ENEMY_Paxnozz|r. Loot him for the |T134419:0|t|cRXP_LOOT_[Rune of the Sniper]|r
+    >>|cRXP_WARN_Be careful as he is a level 20 elite|r
+    .collect 208777,1 --Rune of the Sniper (1)
     .train 416091,1
     .use 209047
     .mob Paxnozz
@@ -781,7 +791,7 @@ step
     .goto Westfall,51.2,47.0,20,0
     .goto Westfall,50.2,48.6,20,0
     .goto Westfall,51.6,55.6,20,0
-    >>Kill |cRXP_ENEMY_Defias Scouts|r and loot him for |T134419:0|t[|cRXP_LOOT_Rune of the Sniper|r]
+    >>Kill the |cRXP_ENEMY_Defias Scout|r. Loot him for the |T134419:0|t[|cRXP_LOOT_Rune of the Sniper|r]
     .collect 208777,1
     .train 416091,1
     .mob Defias Scout
@@ -815,7 +825,7 @@ step
     .goto Loch Modan,55.8,54.4,20,0
     .goto Loch Modan,54.2,56.8,20,0
     .goto Loch Modan,53.8,54.4,20,0
-    >>Kill |cRXP_ENEMY_Kackle|r and loot him for |T134419:0|t[|cRXP_LOOT_Rune of the Sniper|r] |cRXP_WARN_consider grouping up if you have trouble killing it solo.|r
+    >>Kill |cRXP_ENEMY_Kackle|r. Loot him for the |T134419:0|t[|cRXP_LOOT_Rune of the Sniper|r]
     .collect 208777,1
     .train 416091,1
     .mob Kackle

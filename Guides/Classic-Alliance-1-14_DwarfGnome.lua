@@ -3652,7 +3652,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Cobbleflint|r
     .accept 224 >> Accept In Defense of the King's Lands
     .target Mountaineer Cobbleflint
-    .xp >14,1
+    .xp >14,1 << !Warrior !Dwarf/!Paladin
 step
     #optional
     #completewith next
@@ -3664,8 +3664,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r inside the bunker
     .accept 267 >> Accept The Trogg Threat
     .target Captain Rugelfuss
-    .xp >14,1
---XX Skip if 14+
+    .xp >14,1 << !Warrior !Dwarf/!Paladin
+--XX Skip if 14+ unless warr
 step
     #optional
     .goto 1432,23.522,70.102,40,0

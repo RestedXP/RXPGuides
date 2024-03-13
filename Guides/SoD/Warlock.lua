@@ -570,7 +570,7 @@ step
     #label WarlockRuneMetamorphosisA
     .train 403938,1
     >>Loot the |cRXP_PICK_Demonic Reliquary|r at the top of the tower to get the |T134337:0|t[Orb of Des]
-    *|cRXP_WARN_Be careful as it's guarded by an elite. One way would be to get to the second floor, die, ress at the top and loot the chest while your Voidwalker tanks the mobs.|r
+    *|cRXP_WARN_Be careful as it's guarded by an elite. Loot the chest whilst your Voidwalker tanks the mobs|r
     .collect 210765,1
     .goto Redridge Mountains,80.2,49.5
 step << Horde

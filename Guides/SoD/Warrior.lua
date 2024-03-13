@@ -103,7 +103,7 @@ step << Warrior
     .unitscan Wandering Swordsman
 step << Warrior
     #season 2
-    .train 403474 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r] |cRXP_WARN_to train|r |T136012:0|t[Blood Frenzy]
+    .train 403474 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Blood Frenzy|r] |cRXP_WARN_to train|r |T136012:0|t[Blood Frenzy]
     .use 204441
     .itemcount 204441,1
 ]])
@@ -128,7 +128,7 @@ step << Warrior
     .unitscan Wandering Swordsman
 step << Warrior
     #season 2
-    .train 403474 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r] |cRXP_WARN_to train|r |T136012:0|t[Blood Frenzy]
+    .train 403474 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Blood Frenzy|r] |cRXP_WARN_to train|r |T136012:0|t[Blood Frenzy]
     .use 204441
     .itemcount 204441,1
 ]])
@@ -158,7 +158,7 @@ step << Warrior
     .unitscan Wandering Swordsman
 step << Warrior
     #season 2
-    .train 403474 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r] |cRXP_WARN_to train|r |T136012:0|t[Blood Frenzy]
+    .train 403474 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Blood Frenzy|r] |cRXP_WARN_to train|r |T136012:0|t[Blood Frenzy]
     .use 204441
     .itemcount 204441,1
 ]])
@@ -1250,12 +1250,30 @@ RXPGuides.RegisterGuide([[
 #title Quick Strike
 
 step << Warrior
-    .goto Darkshore,48.2,15.6,70,0
-    .goto Darkshore,50.2,12.6
-    >>Kill |cRXP_ENEMY_Paxnozz|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Strike|r]
-    >>|cRXP_ENEMY_Paxnozz|r |cRXP_WARN_is a level 20 elite found patrolling in the water. Look for help before attemping to kill it|r
+    .goto 1439,44.081,20.739
+    >>Loot the |T135129:0|t[Gnarled Harpoon] in the eye of the skeleton
+    .collect 209047,1 --Gnarled Harpoon (1)
+    .train 425443,1
+step << Warrior
+    #completewith next
+    .goto 1439,44.081,20.739
+    .cast 422397 >>|cRXP_WARN_Use the|r |T135129:0|t[Gnarled Harpoon] |cRXP_WARN_on |cRXP_ENEMY_Paxnozz|r to reduce his max health to 743|r
+    .train 425443,1
+step << Warrior
+    #loop
+    .goto Darkshore,48.0,18.0,0
+    .goto Darkshore,47.6,13.2,0
+    .goto Darkshore,50.4,12.0,0
+    .goto Darkshore,48.8,16.0,0
+    .goto Darkshore,48.0,18.0,40,0
+    .goto Darkshore,47.6,13.2,40,0
+    .goto Darkshore,50.4,12.0,40,0
+    .goto Darkshore,48.8,16.0,40,0
+    >>Kill |cRXP_ENEMY_Paxnozz|r. Loot him for the |T134419:0|t|cRXP_LOOT_[Rune of Quick Strike]|r
+    >>|cRXP_WARN_Be careful as he is a level 20 elite|r
     .collect 208778,1 -- Rune of Quick Strike (1)
     .unitscan Paxnozz
+    .use 209047
     .train 425443,1
 step << Warrior
     .train 425443 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Strike|r] |cRXP_WARN_to train|r |T132394:0|t[Quick Strike]
@@ -1351,7 +1369,7 @@ step
 step
     .train 416004,1
     .goto Badlands,41.92,26.26,20,0
-    .goto Badlands,41.2,27.8
+    .goto Badlands,41.383,27.964
     >>Click on the |cRXP_PICK_Tapped Shadowforge Keg|r. Loot it for the |cRXP_LOOT_Balmy Brew|r
     >>|cRXP_WARN_Stay at maximum range to avoid agroing|r |cRXP_ENEMY_Ambassador Infernus|r
     .complete 79677,3 --Balmy Brew (1x)
@@ -1378,20 +1396,24 @@ step
     .mob Deathstrike Tarantula
 step
     .train 416004,1
-    #completewith next
-    .zone Arathi Highlands >>Travel to |cFFfa9602Arathi Highlands|r
+    #completewith GroceryRun
+    .zone Arathi Highlands >>Travel to Arathi Highlands
 step
+    #completewith next
+    .goto Arathi Highlands,57.587,72.499,10 >> Travel up the mountain to get to |cRXP_FRIENDLY_Skonk|r
+step
+    #label GroceryRun
     .train 416004,1
-    .goto Arathi Highlands,57.45,72.00,15,0
-    .goto Arathi Highlands,57.33,73.65,15,0
     .goto Arathi Highlands,57.68,74.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skonk|r
     .turnin 79677 >>Turn in A Quick Grocery Run
     .accept 79678 >>Accept Taste Testing
+    .timer 23,Taste Testing RP
+    .target Skonk
 step
     .train 416004,1
     .goto Arathi Highlands,57.68,74.66
-    >>Defeat |cRXP_ENEMY_Skonk|r as he becomes hostile
+    >>Defeat |cRXP_ENEMY_Skonk|r after he eats his meal
     .complete 79678,1 --Taste Testing
     .mob Skonk
 step
@@ -1401,7 +1423,7 @@ step
     .turnin 79678 >>Turn in Taste Testing
     .target Skonk
 step
-    .train 416004 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of Blood Surge|r] to learn |T236306:0|t[Blood Surge]
+    .train 416004 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Blood Surge|r] |cRXP_WARN_to train|r |T236306:0|t[Blood Surge]
     .use 213103
 ]])
 
@@ -1567,7 +1589,7 @@ step
     .goto Badlands,15.6,45.8,30,0 << Horde
     >>Talk to a |cRXP_FRIENDLY_Wandering Swordsman|r in Badlands
     >>Defeat the |cRXP_ENEMY_Wandering Swordsman|r in a duel
-    >>Open the |cRXP_PICK_Swordsman's Reward|r it drops on the ground. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Commander|r]
+    >>Open the |cRXP_PICK_Swordsman's Reward|r he drops on the ground. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Commander|r]
     >>|cRXP_WARN_Note: The |cRXP_FRIENDLY_Wandering Swordsman|r can spawn throughout many locations in Badlands|r
     .collect 213110,1 --Rune of the Commander (1x)
     .unitscan Wandering Swordsman
