@@ -1,4 +1,4 @@
-local _, addon = ...
+local addonName, addon = ...
 
 if addon.gameVersion > 30000 then return end
 
@@ -1521,9 +1521,25 @@ local function setMoney(base, name, money)
     MoneyFrame_Update(_G[base .. name], money)
 end
 
+local function setKindIcon(base, name, image)
+    if not base or not name then
+        print("setKindIcon: error", name)
+        return
+    end
+
+    if _G[base .. name].KindIcon then return end
+
+    local f = _G[base .. name]
+
+    f.KindIcon = f:CreateTexture(base .. name .. 'KindIcon', 'OVERLAY')
+    f.KindIcon:SetPoint("BOTTOMRIGHT", f, "BOTTOMRIGHT")
+    f.KindIcon:SetSize(16, 16)
+    f.KindIcon:SetTexture(image)
+end
+
 local function setProperty(base, property, data)
     if not base or not property then
-        print("setProperty: error", text)
+        print("setProperty: error", property)
         return
     end
 
@@ -1554,6 +1570,8 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
             if data.relative.itemLink then
                 setProperty(block.best, 'ItemLink', data.relative.itemLink)
                 setProperty(block.best, 'ItemID', data.relative.itemID)
+                setKindIcon(block.best, 'ItemIcon', "Interface/AddOns/" ..
+                                addonName .. "/Textures/rxp_logo-64")
                 setText(block.best, 'Name', getColorizedName(
                             data.relative.itemLink, data.relative.name))
                 setText(block.best, 'ItemLevelText', data.relative.level)
@@ -1573,6 +1591,8 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
                 end
                 setProperty(block.budget, 'ItemLink', data.budget.itemLink)
                 setProperty(block.budget, 'ItemID', data.budget.itemID)
+                setKindIcon(block.budget, 'ItemIcon',
+                            'Interface/GossipFrame/VendorGossipIcon.blp')
                 setText(block.budget, 'Name', getColorizedName(
                             data.budget.itemLink, data.budget.name))
                 setText(block.budget, 'ItemLevelText', data.budget.level)
@@ -1600,11 +1620,9 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
     end
 end
 
--- Add update/vendor icons
 -- Propagate +EP up the chain
 -- Support multiple blocks, hide leftovers
 -- Verify scrollframe support
--- Adjust item name positioning
 -- Make rows clickable
 -- Support actually buying the thing
 -- Hide scrollbar when not needed
