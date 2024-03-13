@@ -2416,6 +2416,7 @@ step
     .turnin 4722 >> Turn in Beached Sea Turtle
     .turnin 4723 >> Turn in Beached Sea Creature
     .target Gwennyth Bly'Leggonde
+    .isOnQuest 4723
 step
     #xprate >1.49
     #optional << NightElf !Hunter
@@ -4094,14 +4095,14 @@ step
     #completewith next
     .goto Darkshore,56.10,16.88,0
     >>Kill |cRXP_ENEMY_Raging Reef Crawlers|r and |cRXP_ENEMY_Encrusted Tide Crawlers|r. Loot them for the |cRXP_LOOT_Bottom of Gelkak's Key|r
-    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Raging Reef Crawlers|r |T132152:0|t[Thrash] ability. You can take 200 damage instantly from their melee hits|r
+    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Raging Reef Crawlers|r'|r |T132152:0|t[Thrash] |cRXP_WARN_ability. You can take 200 damage instantly from their melee hits|r
     .complete 2098,3 -- Bottom of Gelkak's Key (1)
     .mob Raging Reef Crawler
     .mob Encrusted Tide Crawler
 step
     .goto Darkshore,54.93,12.19
     >>Kill |cRXP_ENEMY_Greymist Oracles|r and |cRXP_ENEMY_Greymist Tidehunters|r. Loot them for the |cRXP_LOOT_Middle of Gelkak's Key|r
-    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Greymist Oracles|r |T136048:0|t[Lightning Bolt] damage and they can also heal with |T136052:0|t[Healing Wave]|r
+    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Greymist Oracles|r'|r |T136048:0|t[Lightning Bolt] |cRXP_WARN_damage and they can also heal with|r |T136052:0|t[Healing Wave]|r
     >>|cRXP_WARN_You can LoS (Line of Sight) the |cRXP_ENEMY_Greymist Oracles|r'|r  |T136048:0|t[Lightning Bolts] |cRXP_WARN_around the sunken ship to avoid taking its damage|r
     .complete 2098,2 -- Middle of Gelkak's Key (1)
     .mob Greymist Tidehunter
@@ -4112,7 +4113,7 @@ step
     .goto Darkshore,51.34,22.00,45,0
     .goto Darkshore,56.63,12.08
     >>Kill |cRXP_ENEMY_Raging Reef Crawlers|r and |cRXP_ENEMY_Encrusted Tide Crawlers|r. Loot them for the |cRXP_LOOT_Bottom of Gelkak's Key|r
-    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Raging Reef Crawlers|r |T132152:0|t[Thrash] ability. You can take 200 damage instantly from their melee hits|r
+    >>|cRXP_WARN_Be aware of |cRXP_ENEMY_Raging Reef Crawlers|r'|r |T132152:0|t[Thrash] |cRXP_WARN_ability. You can take 200 damage instantly from their melee hits|r
     .complete 2098,3 -- Bottom of Gelkak's Key (1)
     .mob Raging Reef Crawler
     .mob Encrusted Tide Crawler
@@ -4170,12 +4171,12 @@ step
     .accept 2078 >> Accept Gyromast's Revenge << !Warrior !Paladin !Rogue
     .target Gelkak Gyromast
     .solo << !Warrior !Paladin !Rogue
-step
+step << Warrior/Paladin/Rogue
     #requires foreststriders
-    .group 2 << Warrior/Paladin/Rogue
+    .group 2
     .goto 1439,56.654,13.484
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gelkak Gyromast|r
-    >>|cRXP_WARN_Start looking for a group for Gyromast's Revenge/|r|cRXP_ENEMY_The Threshwackonator 4100|r << Warrior/Paladin/Rogue
+    >>|cRXP_WARN_Start looking for a group for Gyromast's Revenge/|r|cRXP_ENEMY_The Threshwackonator 4100|r
     .turnin 2098 >> Turn in Gyromast's Retrieval
     .accept 2078 >> Accept Gyromast's Revenge
     .target Gelkak Gyromast
@@ -4465,6 +4466,14 @@ step
     .turnin 2139 >> Turn in Tharnariun's Hope
     .target Tharnariun Treetender
 step
+	#xprate >1.59
+    #optional
+    #completewith PeltEnd
+    .goto Darkshore,39.2,43.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Selarin|r if she's up
+    .accept 990 >> Accept Trek to Ashenvale
+    .target Sentinel Selarin
+step
     #xprate >1.59
     .goto 1439,39.373,43.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
@@ -4475,6 +4484,7 @@ step
 step
     #xprate >1.59
     #optional
+    #label PeltEnd
     .goto 1439,39.373,43.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
     .turnin 986 >> Turn in A Lost Master
@@ -5279,6 +5289,13 @@ step << Human Rogue
     .dungeon !DM
 step << !Human Rogue
     #xprate >1.59
+    .goto Elwynn Forest,65.20,69.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theocritus|r atop the Tower of Azora
+    .accept 94 >> Accept A Watchful Eye
+    .target Theocritus
+    .dungeon !DM
+step << !Human Rogue
+    #xprate >1.59
     #optional
     #completewith WileyStart
     .goto Redridge Mountains,15.27,71.45
@@ -5681,9 +5698,8 @@ step << Mage
     .train 3561 >> Train |T135763:0|t[Teleport: Stormwind]
     .target Larimaine Purdue
     .dungeon !DM
-step << NightElf Warrior/Mage/Warlock/Rogue
+step << !sod NightElf Warrior/Mage/Warlock/Rogue
     #xprate >1.59
-    #era
     #requires Torment2NoDMEnd << Warlock
     .goto StormwindClassic,21.40,55.80
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argos Nightwhisper|r
@@ -6925,7 +6941,7 @@ step << Paladin
     .trainer >> Train your class spells
     .target Arthur the Faithful
     .dungeon DM
-step << Paladin
+step << !sod Paladin
     #xprate >1.59
     #era
     .goto StormwindClassic,21.40,55.80
@@ -7066,7 +7082,7 @@ step << Mage
     .train 3561 >> Train |T135763:0|t[Teleport: Stormwind]
     .target Larimaine Purdue
     .dungeon DM
-step << !Paladin
+step << !sod !Paladin
     #xprate >1.59
     #era
     .goto StormwindClassic,21.40,55.80
@@ -7208,6 +7224,13 @@ step << Human
     .zoneskip Stormwind City,1
     .dungeon DM
     .isOnQuest 65
+step << !Human !Warlock
+    #xprate >1.59 << !Hunter
+    .goto Elwynn Forest,65.20,69.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Theocritus|r atop the Tower of Azora
+    .accept 94 >> Accept A Watchful Eye
+    .target Theocritus
+    .dungeon DM
 step << !Human !Warlock
     #xprate >1.59 << !Hunter
     #optional
@@ -7478,7 +7501,7 @@ step
     >>|cRXP_WARN_Remember to re-equip your main weapon if you switched to a|r |T135641:0|t[Dagger] |cRXP_WARN_earlier|r << Rogue
     .turnin 135 >> Turn in The Defias Brotherhood
     .accept 141 >> Accept The Defias Brotherhood
-    .turnin 2359 >> Turn in Klaven's Tower
+    .turnin 2359 >> Turn in Klaven's Tower << Rogue
     .target Master Mathias Shaw
     .dungeon DM
 step
@@ -9013,8 +9036,7 @@ step << Warlock
     .accept 1716 >> Accept Devourer of Souls
     .target Gakin the Darkbinder
     .xp <20,1
-step
-    #era
+step << !sod
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argos Nightwhisper|r
 	.target Argos Nightwhisper
     .goto StormwindClassic,21.40,55.80
@@ -9685,8 +9707,7 @@ step << Mage
     .train 48464 >> Train |T135763:0|t[Teleport: Stormwind]
 	.xp <20,1
     .target Larimaine Purdue
-step
-    #era
+step << !sod
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argos Nightwhisper|r
 	.target Argos Nightwhisper
     .goto StormwindClassic,21.40,55.80
@@ -10135,9 +10156,8 @@ RXPGuides.RegisterGuide([[
 #displayname 20-21 Darkshore/Ashenvale << SoD
 #next RestedXP Alliance 20-30\21-23 Ashenvale/Stonetalon;RestedXP Alliance 20-30\21-22 Ashenvale SoD
 
-step
+step << !sod
     #xprate >1.59
-    #era
     .goto 1439,38.325,43.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gershala Nightwhisper|r
     .turnin 3765 >> Turn in The Corruption Abroad
@@ -10308,6 +10328,14 @@ step
     .target Volcor
     .isQuestTurnedIn 993
 step
+	#xprate >1.59
+    #optional
+    #completewith Escaped
+    .goto Darkshore,39.2,43.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Selarin|r if she's up
+    .accept 990 >> Accept Trek to Ashenvale
+    .target Sentinel Selarin
+step
 	#xprate >1.49
     .goto Darkshore,45.00,85.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Volcor|r
@@ -10318,6 +10346,7 @@ step
 step
 	#xprate >1.49
     #optional
+    #label Escaped
     .goto Darkshore,45.00,85.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Volcor|r
     .accept 995 >> Accept Escape Through Stealth
@@ -10837,13 +10866,22 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Hollee|r
     .accept 729 >> Accept The Absent Minded Prospector
     .target Archaeologist Hollee
-step
-    #era
+step << !sod
+    #xprate <1.59
     .goto 1439,38.325,43.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gershala Nightwhisper|r
     .turnin 3765 >> Turn in The Corruption Abroad
     .target Gershala Nightwhisper
     .isOnQuest 3765
+--  .dungeon !DM << NightElf Warrior/Mage/Warlock/Rogue
+step << !sod
+    #xprate >1.59
+    .goto 1439,38.325,43.039
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gershala Nightwhisper|r
+    .turnin 3765 >> Turn in The Corruption Abroad
+    .target Gershala Nightwhisper
+    .isOnQuest 3765
+    .dungeon !DM << NightElf Warrior/Mage/Warlock/Rogue
 step
     .goto 1439,39.373,43.483
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
