@@ -912,12 +912,23 @@ step << Undead Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
 step << Undead Warrior
+    #optional
     #completewith BaronLongshore
     +Equip the |T135353:0|t[Espadon] when you are level 16
     .use 2024
     .itemcount 2024,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
+    .xp >16,1
+step << Undead Warrior
+    #optional
+    #completewith BaronLongshore
+    +Equip the |T135353:0|t[Espadon]
+    .use 2024
+    .itemcount 2024,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
+    .xp <16,1
 step << Troll Warrior
     .goto The Barrens,62.24,37.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Buy a|r |T135147:0|t[Gnarled Staff] |cRXP_BUY_from him|r
@@ -956,12 +967,23 @@ step << Tauren Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
 step << Tauren Warrior
+    #optional
     #completewith BaronLongshore
     +Equip the |T133046:0|t[Rock Hammer] when you are level 16
     .use 2026
     .itemcount 2026,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
+    .xp >16,1
+step << Tauren Warrior
+    #optional
+    #completewith BaronLongshore
+    +Equip the |T133046:0|t[Rock Hammer]
+    .use 2026
+    .itemcount 2026,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
+    .xp <16,1
 step << Shaman
     #season 0
     .goto The Barrens,62.24,37.48
@@ -1002,7 +1024,7 @@ step << Rogue
     .collect 2027,1,895,1 --Collect Scimitar (1)
     .money <0.3815
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
     .target Ironzar
 step << Rogue
     #completewith BaronLongshore
@@ -1010,14 +1032,14 @@ step << Rogue
     .use 2027
     .itemcount 2027,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
 step << Rogue
     .goto The Barrens,62.24,37.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Buy a second|r |T135343:0|t[Scimitar] |cRXP_BUY_from him for your off-hand|r
     .collect 2027,2,895,1 --Collect Scimitar(1)
     .money <0.3815
     .itemStat 17,QUALITY,<7
-    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
     .target Ironzar
 step << Rogue
     #completewith BaronLongshore
@@ -1025,7 +1047,7 @@ step << Rogue
     .use 2027
     .itemcount 2027,1
     .itemStat 17,QUALITY,<7
-    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
 step
     .goto The Barrens,62.27,38.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drohn|r
@@ -1118,12 +1140,23 @@ step << Undead Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
 step << Undead Warrior
+    #optional
     #completewith FlyToXroads1
     +Equip the |T135353:0|t[Espadon] when you are level 16
     .use 2024
     .itemcount 2024,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
+    .xp >16,1
+step << Undead Warrior
+    #optional
+    #completewith FlyToXroads1
+    +Equip the |T135353:0|t[Espadon]
+    .use 2024
+    .itemcount 2024,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
+    .xp <16,1
 step << Troll Warrior
     .goto The Barrens,62.24,37.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Buy a|r |T135147:0|t[Gnarled Staff] |cRXP_BUY_from him|r
@@ -1162,12 +1195,23 @@ step << Tauren Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
 step << Tauren Warrior
+    #optional
     #completewith FlyToXroads1
     +Equip the |T133046:0|t[Rock Hammer] when you are level 16
     .use 2026
     .itemcount 2026,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
+    .xp >16,1
+step << Tauren Warrior
+    #optional
+    #completewith FlyToXroads1
+    +Equip the |T133046:0|t[Rock Hammer]
+    .use 2026
+    .itemcount 2026,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
+    .xp <16,1
 step << Shaman
     #season 0
     .goto The Barrens,62.24,37.48
@@ -1208,7 +1252,7 @@ step << Rogue
     .collect 923,1,850,1 --Collect Scimitar (1)
     .money <0.3815
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
     .target Ironzar
 step << Rogue
     #completewith FlyToXroads1
@@ -1216,14 +1260,14 @@ step << Rogue
     .use 923
     .itemcount 923,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
 step << Rogue
     .goto The Barrens,62.24,37.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Buy a second|r |T135343:0|t[Scimitar] |cRXP_BUY_from him for your off-hand.|r
     .collect 923,1,850,1 --Collect Scimitar (1)
     .money <0.3815
     .itemStat 17,QUALITY,<7
-    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
     .target Ironzar
 step << Rogue
     #completewith FlyToXroads1
@@ -1231,7 +1275,7 @@ step << Rogue
     .use 923
     .itemcount 923,1
     .itemStat 17,QUALITY,<7
-    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
     --Enter completewith label
 step
     .goto The Barrens,63.89,35.93,50,0
@@ -2002,7 +2046,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xao'tsu|r
     .train 24557 >> Train your pet spells
     .target Xao'tsu
-step << Troll Hunter/Orc Hunter/Undead Warrior/Priest
+step << Troll Hunter/Orc Hunter/Priest
     .goto Orgrimmar,81.52,19.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
     .train 227 >>Train Staves
@@ -2013,24 +2057,55 @@ step << Tauren Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
     .train 264 >>Train Bows
     .target Hanashi
+step << Tauren Warrior/Undead Warrior
+    .goto Orgrimmar,81.52,19.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
+    .train 172 >>Train Two-Handed Axes
+    .train 227 >>Train Staves << Undead Warrior
+    .target Hanashi
 step << Hunter
     .goto Orgrimmar,81.17,18.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Zendo'jian|r|cRXP_BUY_. Buy a|r |T135147:0|t[Gnarled Staff] |cRXP_BUY_from him|r
-    .collect 2030,1,3281,1 --Collect Laminated Recurve Bow (1)
-    .money <0.4990
-    .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Zendo'jian|r|cRXP_BUY_. Buy a|r |T135490:0|t[Reinforced Bow] |cRXP_BUY_from him|r
+    .collect 3026,1,3281,1 --Collect Laminated Recurve Bow (1)
+    .money <0.3588
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.4
     .target Zendo'jian
     .train 227,3
 step << Hunter
+    #completewith FoodandWater2
+    +Equip the |T135490:0|t[Reinforced Bow]
+    .use 3026
+    .itemcount 3026,1
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.4
+step << Warrior
+    .goto Orgrimmar,81.17,18.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Zendo'jian|r|cRXP_BUY_. Buy a|r |T135423:0|t[Battle Axe] |cRXP_BUY_from him|r
+    .collect 926,1,3281,1 --Collect Battle Axe (1)
+    .money <1.021
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
+    .target Zendo'jian
+    .train 227,3
+step << Warrior
     #optional
     #completewith FoodandWater2
-    +Equip the |T135147:0|t[Gnarled Staff]
-    .use 2030
-    .itemcount 2030,1
-    .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
-    .train 227,3
+    +Equip the |T135423:0|t[Battle Axe] when you are level 20
+    .use 926
+    .itemcount 926,1
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
+    .xp >20,1
+step << Warrior
+    #optional
+    #completewith FoodandWater2
+    +Equip the |T135423:0|t[Battle Axe]
+    .use 926
+    .itemcount 926,1
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
+    .xp <20,1
 step << Druid/Mage
     #season 2
     #ah
@@ -2043,7 +2118,7 @@ step << Druid/Mage
 	.target Auctioneer Thathung
     .itemcount 208689,<1,1 << Druid
     .train 407988,1 << Druid
-    .train 401767,1,1 << Mage
+    .train 401767,1 << Mage
 step
     #completewith FoodandWater2
     .hs >> Hearth to The Crossroads
@@ -3117,19 +3192,27 @@ step << Troll Warrior/Orc Warrior/Tauren Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
 step << Undead Warrior
     .goto Stonetalon Mountains,58.22,51.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Veenix|r|cRXP_BUY_. Buy a|r |T135329:0|t[Executioner's Sword] |cRXP_BUY_from him|r
-    .collect 4818,1,899,1 --Collect Executioner's Sword (1)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veenix|r
+    .vendor >>|cRXP_BUY_Buy an|r |T135329:0|t[Executioner's Sword] |cRXP_BUY_from him|r
+    >>|cRXP_WARN_If it's not up, buy a|r |T135280:0|t[Dacian Falx] |cRXP_WARN_instead|r
     .money <1.5024
     .target Veenix
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.9
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8
 step << Undead Warrior
     #completewith BluePrints
     +Equip the |T135329:0|t[Executioner's Sword]
     .use 4818
     .itemcount 4818,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.9
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8
+step << Undead Warrior
+    #completewith BluePrints
+    +Equip the |T135280:0|t[Dacian Falx]
+    .use 922
+    .itemcount 922,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8
 step << Shaman
     #season 0
     .goto Stonetalon Mountains,58.22,51.74
@@ -4561,7 +4644,7 @@ step << !Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chesmu|r
     .bankdeposit 5075 >> Deposit your |T134128:0|t[Blood Shards]
     .target Chesmu
-step << Undead Warrior
+step << Undead Warrior/Orc Warrior/Troll Warrior
     .goto Thunder Bluff,40.93,62.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ansekhwa|r
     .train 199 >>Train Two-Handed Maces
@@ -6145,6 +6228,53 @@ step << Orc Hunter/Troll Hunter
     .itemcount 2507,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
+step << Orc Warrior
+    .goto The Barrens,51.11,29.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uthrok|r|cRXP_BUY_. Buy a|r |T132395:0|t[Tabar] |cRXP_BUY_from him|r
+    .collect 1196,1,871,1 --Collect Tabar (1)
+    .money <0.2214
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.2
+    .target Uthrok
+step << Orc Warrior
+    #completewith DisruptTheAttacks
+    +Equip the |T132395:0|t[Tabar]
+    .use 1196
+    .itemcount 1196,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.2
+step << Troll Rogue/Orc Rogue
+    #season 2
+    .goto The Barrens,51.11,29.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uthrok|r|cRXP_BUY_. Buy one or two|r |T135640:0|t[Jambiya] |cRXP_BUY_from him|r
+    .collect 2207,1,871,1 --Collect Jambiya (1)
+    .money <0.2390
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.1
+    .target Uthrok
+step << Troll Rogue/Orc Rogue
+    #season 2
+    #completewith DisruptTheAttacks
+    +Equip the |T135640:0|t[Jambiya]
+    .use 2207
+    .itemcount 2207,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.1
+step << Orc Shaman/Troll Shaman
+    .goto The Barrens,51.11,29.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uthrok|r|cRXP_BUY_. Buy a|r |T133490:0|t[Mace] |cRXP_BUY_from him|r
+    .collect 852,1,871,1 --Collect Mace (1)
+    .money <0.1739
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.2
+    .target Uthrok
+step << Orc Shaman/Troll Shaman
+    #completewith DisruptTheAttacks
+    +Equip the |T133490:0|t[Mace]
+    .use 852
+    .itemcount 852,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.2
 step << !Tauren
     #label ThievesPickup
     .goto The Barrens,51.93,30.32
@@ -6286,6 +6416,15 @@ step
     .complete 844,1 --Plainstrider Beak (7)
     .mob Greater Plainstrider
     .mob Fleeting Plainstrider
+step << Tauren Warrior
+    #sticky
+    #completewith KreenigSnarlsnout1
+    .goto The Barrens,52.5,30.7,0
+    .vendor >>|cRXP_WARN_Check if|r |cRXP_FRIENDLY_Lizzarik|r |cRXP_WARN_is in the Crossroads. He sells potions and|r |T133476:0|t[|cRXP_FRIENDLY_Heavy Spiked Mace|r] |cRXP_WARN_which is a limited supply item|r
+	.unitscan Lizzarik
+    .subzoneskip 380,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r and |cRXP_FRIENDLY_Thork|r
     .turnin 842 >>Turn in Crossroads Conscription << Tauren Shaman
@@ -6319,6 +6458,14 @@ step << Orc Hunter/Troll Hunter
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
     .target Uthrok
+step << Orc Hunter/Troll Hunter
+    #optional
+    #completewith KreenigSnarlsnout1
+    +Equip the |T135499:0|t[Laminated Recurve Bow]
+    .use 2507
+    .itemcount 2507,1
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
 step << Tauren Hunter
     #optional
     .goto The Barrens,51.11,29.07
@@ -6328,15 +6475,67 @@ step << Tauren Hunter
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
     .target Uthrok
-step << Orc Warrior/Troll Warrior/Tauren Warrior
-    #sticky
+step << Tauren Hunter
+    #optional
     #completewith KreenigSnarlsnout1
-    .goto The Barrens,52.5,30.7,0
-    .vendor >>|cRXP_WARN_Check if|r |cRXP_FRIENDLY_Lizzarik|r |cRXP_WARN_is in the Crossroads. He sells potions and|r |T133476:0|t[|cRXP_FRIENDLY_Heavy Spiked Mace|r] |cRXP_WARN_which is a limited supply item|r
-	.unitscan Lizzarik
-    .subzoneskip 380,1
+    +Equip the |T135613:0|t[Hunter's Boomstick]
+    .use 2511
+    .itemcount 2511,1
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
+step << Orc Warrior
+    #optional
+    .goto The Barrens,51.11,29.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uthrok|r|cRXP_BUY_. Buy a|r |T132395:0|t[Tabar] |cRXP_BUY_from him|r
+    .collect 1196,1,872,1 --Collect Tabar (1)
+    .money <0.2214
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.2
+    .target Uthrok
+step << Orc Warrior
+    #optional
+    #completewith KreenigSnarlsnout1
+    +Equip the |T132395:0|t[Tabar]
+    .use 1196
+    .itemcount 1196,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.2
+step << Troll Rogue/Orc Rogue
+    #optional
+    #season 2
+    .goto The Barrens,51.11,29.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uthrok|r|cRXP_BUY_. Buy one or two|r |T135640:0|t[Jambiya] |cRXP_BUY_from him|r
+    .collect 2207,1,872,1 --Collect Jambiya (1)
+    .money <0.2390
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.1
+    .target Uthrok
+step << Troll Rogue/Orc Rogue
+    #optional
+    #season 2
+    #completewith KreenigSnarlsnout1
+    +Equip the |T135640:0|t[Jambiya]
+    .use 2207
+    .itemcount 2207,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.1
+step << Orc Shaman/Troll Shaman
+    #optional
+    .goto The Barrens,51.11,29.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uthrok|r|cRXP_BUY_. Buy a|r |T133490:0|t[Mace] |cRXP_BUY_from him|r
+    .collect 852,1,871,1 --Collect Mace (1)
+    .money <0.1739
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.2
+    .target Uthrok
+step << Orc Shaman/Troll Shaman
+    #optional
+    #completewith DisruptTheAttacks
+    +Equip the |T133490:0|t[Mace]
+    .use 852
+    .itemcount 852,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.2
 step << !Undead !Tauren
     #completewith HiddenEnemiesPickup
     .goto The Barrens,51.50,30.34
@@ -6863,12 +7062,23 @@ step << Undead Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
 step << Undead Warrior
+    #optional
     #completewith BaronLongshore
     +Equip the |T135353:0|t[Espadon] when you are level 16
     .use 2024
     .itemcount 2024,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
+    .xp >16,1
+step << Undead Warrior
+    #optional
+    #completewith BaronLongshore
+    +Equip the |T135353:0|t[Espadon]
+    .use 2024
+    .itemcount 2024,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
+    .xp <16,1
 step << Troll Warrior
     .goto The Barrens,62.24,37.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Buy a|r |T135147:0|t[Gnarled Staff] |cRXP_BUY_from him|r
@@ -6907,12 +7117,23 @@ step << Tauren Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
 step << Tauren Warrior
+    #optional
     #completewith BaronLongshore
     +Equip the |T133046:0|t[Rock Hammer] when you are level 16
     .use 2026
     .itemcount 2026,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
+    .xp <16,1
+step << Tauren Warrior
+    #optional
+    #completewith BaronLongshore
+    +Equip the |T133046:0|t[Rock Hammer]
+    .use 2026
+    .itemcount 2026,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
+    .xp >16,1
 step << Shaman
     #season 0
     .goto The Barrens,62.24,37.48
@@ -6948,35 +7169,56 @@ step << Shaman
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.5
 step << Rogue
+    #season 0
     .goto The Barrens,62.24,37.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Buy a|r |T135343:0|t[Scimitar] |cRXP_BUY_from him|r
     .collect 2027,1,895,1 --Collect Scimitar (1)
     .money <0.3815
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
     .target Ironzar
 step << Rogue
+    #season 0
     #completewith BaronLongshore
     +Equip the |T135343:0|t[Scimitar]
     .use 2027
     .itemcount 2027,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
 step << Rogue
+    #season 0
     .goto The Barrens,62.24,37.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Buy a second|r |T135343:0|t[Scimitar] |cRXP_BUY_from him for your off-hand|r
     .collect 2027,2,895,1 --Collect Scimitar(1)
     .money <0.3815
     .itemStat 17,QUALITY,<7
-    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
     .target Ironzar
 step << Rogue
+    #season 0
     #completewith BaronLongshore
     +Equip the second |T135343:0|t[Scimitar] in your off-hand
     .use 2027
     .itemcount 2027,1
     .itemStat 17,QUALITY,<7
-    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
+step << Rogue
+    #season 2
+    .goto The Barrens,62.24,37.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Buy one or two|r |T135302:0|t[Poniard] |cRXP_BUY_from him|r
+    .collect 2208,1,895,1 --Collect Poniard (1)
+    .money <0.3842
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.4
+    .target Ironzar
+step << Rogue
+    #season 2
+    #completewith BaronLongshore
+    +Equip the |T135302:0|t[Poniard] 
+    .use 2208
+    .itemcount 2208,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.4
 step
     .goto The Barrens,62.27,38.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drohn|r
@@ -7069,12 +7311,23 @@ step << Undead Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
 step << Undead Warrior
+    #optional
     #completewith FlyToXroads1
     +Equip the |T135353:0|t[Espadon] when you are level 16
     .use 2024
     .itemcount 2024,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
+    .xp >16,1
+step << Undead Warrior
+    #optional
+    #completewith FlyToXroads1
+    +Equip the |T135353:0|t[Espadon]
+    .use 2024
+    .itemcount 2024,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
+    .xp <16,1
 step << Troll Warrior
     .goto The Barrens,62.24,37.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Buy a|r |T135147:0|t[Gnarled Staff] |cRXP_BUY_from him|r
@@ -7113,12 +7366,23 @@ step << Tauren Warrior
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
 step << Tauren Warrior
+    #optional
     #completewith FlyToXroads1
     +Equip the |T133046:0|t[Rock Hammer] when you are level 16
     .use 2026
     .itemcount 2026,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
+    .xp >16,1
+step << Tauren Warrior
+    #optional
+    #completewith FlyToXroads1
+    +Equip the |T133046:0|t[Rock Hammer]
+    .use 2026
+    .itemcount 2026,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
+    .xp <16,1
 step << Shaman
     #season 0
     .goto The Barrens,62.24,37.48
@@ -7130,7 +7394,7 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
 step << Shaman
     #season 0
-    #completewith BaronLongshore
+    #completewith FlyToXroads1
     +Equip the |T135147:0|t[Gnarled Staff]
     .use 2030
     .itemcount 2030,1
@@ -7147,43 +7411,64 @@ step << Shaman
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.5
 step << Shaman
     #season 2
-    #completewith BaronLongshore
+    #completewith FlyToXroads1
     +Equip the |T133052:0|t[Hammer] 
     .use 2028
     .itemcount 2028,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.5
 step << Rogue
+    #season 0
     .goto The Barrens,62.24,37.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Buy a|r |T135343:0|t[Scimitar] |cRXP_BUY_from him.|r
     .collect 923,1,850,1 --Collect Scimitar (1)
     .money <0.3815
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
     .target Ironzar
 step << Rogue
+    #season 0
     #completewith FlyToXroads1
     +Equip the |T135343:0|t[Scimitar]
     .use 923
     .itemcount 923,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
 step << Rogue
+    #season 0
     .goto The Barrens,62.24,37.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Buy a second|r |T135343:0|t[Scimitar] |cRXP_BUY_from him for your off-hand.|r
     .collect 923,1,850,1 --Collect Scimitar (1)
     .money <0.3815
     .itemStat 17,QUALITY,<7
-    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
     .target Ironzar
 step << Rogue
+    #season 0
     #completewith FlyToXroads1
     +Equip the |T135343:0|t[Scimitar]
     .use 923
     .itemcount 923,1
     .itemStat 17,QUALITY,<7
-    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
     --Enter completewith label
+step << Rogue
+    #season 2
+    .goto The Barrens,62.24,37.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Ironzar|r|cRXP_BUY_. Buy one or two|r |T135302:0|t[Poniard] |cRXP_BUY_from him|r
+    .collect 2208,1,850,1 --Collect Poniard (1)
+    .money <0.3842
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.4
+    .target Ironzar
+step << Rogue
+    #season 2
+    #completewith FlyToXroads1
+    +Equip the |T135302:0|t[Poniard] 
+    .use 2208
+    .itemcount 2208,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.4
 step
     .goto The Barrens,63.89,35.93,50,0
     .goto The Barrens,64.28,35.60,50,0
@@ -7869,6 +8154,21 @@ step << Orc Rogue/Troll Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therzok|r
     .turnin 1858 >>Turn in The Shattered Hand
     .target Therzok
+step << Rogue
+    .goto Orgrimmar,45.64,55.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kareth|r|cRXP_BUY_. Buy one or two|r |T135342:0|t[Kris] |cRXP_BUY_from him|r
+    .collect 2209,1,881,1 --Collect Kris (1)
+    .money <0.7115
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.8
+    .target Kareth
+step << Rogue
+    #completewith FoodandWater2
+    +Equip the |T135342:0|t[Kris]
+    .use 2209
+    .itemcount 2209,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.8
 step << Warlock
     .goto Orgrimmar,48.62,46.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mirket|r
@@ -7886,14 +8186,14 @@ step << Warlock
 step << Warlock
     .goto Orgrimmar,47.54,46.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kurgul|r and buy |T133738:0|t[Grimoire of Sacrifice]
-    .collect 16316,1,896,1 --Grimoire of Sacrifice (Rank 1) (1)
+    .collect 16316,1,881,1 --Grimoire of Sacrifice (Rank 1) (1)
     .target Kurgul
     .xp <16,1
     .xp >18,1
 step << Warlock
     .goto Orgrimmar,47.54,46.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kurgul|r and buy |T133738:0|t[Grimoire of Sacrifice]
-    .collect 16351,1,896,1 --Grimoire of Sacrifice (Rank 1) (1)
+    .collect 16351,1,881,1 --Grimoire of Sacrifice (Rank 1) (1)
     .target Kurgul
     .xp <18,1
 step << Warrior
@@ -7929,7 +8229,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xao'tsu|r
     .train 24557 >> Train your pet spells
     .target Xao'tsu
-step << Troll Hunter/Orc Hunter/Undead Warrior/Priest
+step << Troll Hunter/Orc Hunter/Priest
     .goto Orgrimmar,81.52,19.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
     .train 227 >>Train Staves
@@ -7940,24 +8240,55 @@ step << Tauren Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
     .train 264 >>Train Bows
     .target Hanashi
+step << Tauren Warrior/Undead Warrior
+    .goto Orgrimmar,81.52,19.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
+    .train 172 >>Train Two-Handed Axes
+    .train 227 >>Train Staves << Undead Warrior
+    .target Hanashi
 step << Hunter
     .goto Orgrimmar,81.17,18.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Zendo'jian|r|cRXP_BUY_. Buy a|r |T135147:0|t[Gnarled Staff] |cRXP_BUY_from him|r
-    .collect 2030,1,3281,1 --Collect Laminated Recurve Bow (1)
-    .money <0.4990
-    .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Zendo'jian|r|cRXP_BUY_. Buy a|r |T135490:0|t[Reinforced Bow] |cRXP_BUY_from him|r
+    .collect 3026,1,3281,1 --Collect Laminated Recurve Bow (1)
+    .money <0.3588
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.4
     .target Zendo'jian
     .train 227,3
 step << Hunter
+    #completewith FoodandWater2
+    +Equip the |T135490:0|t[Reinforced Bow]
+    .use 3026
+    .itemcount 3026,1
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.4
+step << Warrior
+    .goto Orgrimmar,81.17,18.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Zendo'jian|r|cRXP_BUY_. Buy a|r |T135423:0|t[Battle Axe] |cRXP_BUY_from him|r
+    .collect 926,1,3281,1 --Collect Battle Axe (1)
+    .money <1.021
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
+    .target Zendo'jian
+    .train 227,3
+step << Warrior
     #optional
     #completewith FoodandWater2
-    +Equip the |T135147:0|t[Gnarled Staff]
-    .use 2030
-    .itemcount 2030,1
-    .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
-    .train 227,3
+    +Equip the |T135423:0|t[Battle Axe] when you are level 20
+    .use 926
+    .itemcount 926,1
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
+    .xp >20,1
+step << Warrior
+    #optional
+    #completewith FoodandWater2
+    +Equip the |T135423:0|t[Battle Axe]
+    .use 926
+    .itemcount 926,1
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
+    .xp <20,1
 step << Druid
     #season 2
     #ah
@@ -9057,29 +9388,37 @@ step << Troll Warrior/Orc Warrior/Tauren Warrior
     .money <0.9860
     .target Veenix
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.1
 step << Troll Warrior/Orc Warrior/Tauren Warrior
     #completewith BluePrints
     +Equip the |T135157:0|t[Long Staff]
     .use 928
     .itemcount 928,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.1
 step << Undead Warrior
     .goto Stonetalon Mountains,58.22,51.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Veenix|r|cRXP_BUY_. Buy a|r |T135329:0|t[Executioner's Sword] |cRXP_BUY_from him|r
-    .collect 4818,1,899,1 --Collect Executioner's Sword (1)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veenix|r
+    .vendor >>|cRXP_BUY_Buy an|r |T135329:0|t[Executioner's Sword] |cRXP_BUY_from him|r
+    >>|cRXP_WARN_If it's not up, buy a|r |T135280:0|t[Dacian Falx] |cRXP_WARN_instead|r
     .money <1.5024
     .target Veenix
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.9
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.1
 step << Undead Warrior
     #completewith BluePrints
     +Equip the |T135329:0|t[Executioner's Sword]
     .use 4818
     .itemcount 4818,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.9
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.1
+step << Undead Warrior
+    #completewith BluePrints
+    +Equip the |T135280:0|t[Dacian Falx]
+    .use 922
+    .itemcount 922,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.1
 step << Shaman
     #season 0
     .goto Stonetalon Mountains,58.22,51.74
@@ -9115,20 +9454,39 @@ step << Shaman
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
 step << Rogue
+    #season 0
     .goto Stonetalon Mountains,58.22,51.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Veenix|r|cRXP_BUY_. Buy a|r |T135324:0|t[Longsword] |cRXP_BUY_from him.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Veenix|r|cRXP_BUY_. Buy a|r |T135324:0|t[Longsword] |cRXP_BUY_from him|r
     .collect 923,1,899,1 --Collect Longsword (1)
     .money <0.8743
     .target Veenix
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.1
 step << Rogue
+    #season 0
     #completewith BluePrints
     +Equip the |T135324:0|t[Longsword]
     .use 923
     .itemcount 923,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.1
+step << Rogue
+    #season 2
+    .goto Stonetalon Mountains,58.22,51.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Veenix|r|cRXP_BUY_. Buy one or two|r |T135342:0|t[Kris] |cRXP_BUY_from him|r
+    .collect 2209,1,899,1 --Collect Kris (1)
+    .money <0.7115
+    .target Veenix
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.8
+step << Rogue
+    #season 2
+    #completewith BluePrints
+    +Equip the |T135342:0|t[Kris]
+    .use 2209
+    .itemcount 2209,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.8
 step
     #label Windshear
     .subzone 461 >> Travel to Windshear Crag
@@ -10417,7 +10775,7 @@ step << Warrior
     .train 845 >> Train your class spells
     .accept 1823 >>Accept Speak with Ruga
     .target Torm Ragetotem
-step << Undead Warrior
+step << Undead Warrior/Orc Warrior/Troll Warrior
     .goto Thunder Bluff,40.93,62.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ansekhwa|r
     .train 199 >>Train Two-Handed Maces
@@ -10556,6 +10914,7 @@ step << Rogue
     .collect 6452,1 --Anti Venom
     .itemcount 1475,1
 step << Rogue
+    #season 0
     .goto Thunder Bluff,53.00,56.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kard|r|cRXP_BUY_. Buy a|r |T135324:0|t[Longsword] |cRXP_BUY_from him.|r
     .collect 923,1,493,1 --Collect Longsword (1)
@@ -10564,12 +10923,30 @@ step << Rogue
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.1
 step << Rogue
+    #season 0
     #completewith FlyOrgSR
     +Equip the |T135324:0|t[Longsword]
     .use 923
     .itemcount 923,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.1
+step << Rogue
+    #season 2
+    .goto Thunder Bluff,53.00,56.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kard|r|cRXP_BUY_. Buy one or two|r |T135342:0|t[Kris] |cRXP_BUY_from him|rr
+    .collect 2209,1,493,1 --Collect Kris (1)
+    .money <0.7115
+    .target Kard Ragetotem
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.9
+step << Rogue
+    #season 2
+    #completewith FlyOrgSR
+    +Equip the |T135342:0|t[Kris]
+    .use 2209
+    .itemcount 2209,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.9
 step << Warrior/Shaman
     #completewith next
     #softcore

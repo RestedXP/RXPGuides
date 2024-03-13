@@ -2774,6 +2774,7 @@ step
     .mob Vampiric Duskbat
 step
     #label ArriveBalnir
+    .goto Tirisfal Glades,76.51,61.77
     .subzone 165 >>Travel to Balnir Farmstead
     .isOnQuest 356
 step << Mage
@@ -4446,7 +4447,7 @@ step << Rogue
     .collect 2027,1,809,1 --Collect Scimitar (1)
     .money <0.3815
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
     .target Louis Warren
 step << Rogue
     #ah
@@ -4457,7 +4458,7 @@ step << Rogue
     .collect 2027,1,809,1 --Collect Scimitar (1)
     .money <0.3815
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
     .target Louis Warren
 step << Rogue
     #optional
@@ -4466,7 +4467,7 @@ step << Rogue
     .use 2027
     .itemcount 2027,1
     .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
 step << Undead
     .goto Undercity,63.27,48.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Michael|r
@@ -8144,6 +8145,7 @@ step
     .mob Vampiric Duskbat
 step
     #label ArriveBalnir
+    .goto Tirisfal Glades,76.51,61.77
     .subzone 165 >>Travel to Balnir Farmstead
     .isOnQuest 356
 step << Mage

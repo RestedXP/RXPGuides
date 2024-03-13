@@ -9218,6 +9218,50 @@ step << Troll Priest
     .turnin 5652 >>Turn in Hex of Weakness
     .trainer >>Train your class spells
     .target Ur'kyo
+step << Rogue
+    .goto Orgrimmar,42.75,53.53
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therzok|r
+	.accept 1963 >> Accept The Shattered Hand << Orc Rogue/Troll Rogue
+    .target Therzok
+step << Rogue
+    .goto Orgrimmar,45.64,55.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kareth|r|cRXP_BUY_. Buy one or two|r |T135640:0|t[Jambiya] |cRXP_BUY_from him|r
+    .collect 2207,1 --Collect Jambiya (1)
+    .money <0.2390
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.1
+    .target Kareth
+step << Rogue
+    #completewith RazorTurnins2
+    +Equip the |T135640:0|t[Jambiya]
+    .use 2207
+    .itemcount 2207,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.1
+step << Rogue
+    #season 2
+    .goto Orgrimmar,55.87,44.89
+    >>Loot the |cRXP_PICK_Dusty Chest|r for |T134419:0|t[|cRXP_FRIENDLY_Rune of Precision|r]
+    >>|cRXP_WARN_It's located in The Drag on the upper floor|r
+    .collect 204174,1 --Rune of Precision (1)
+    .train 400081,1
+step << Rogue
+    #season 2
+    .train 400081 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Precision|r] |cRXP_WARN_to train|r |T135610:0|t[Between the Eyes]
+    .use 204174
+    .itemcount 204174,1
+step << Warlock/Hunter/Rogue/Priest/Warrior
+    #season 2 << Warrior
+    #label AdmiralTurnin
+    .goto Orgrimmar,32.28,35.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nazgrel|r
+    .turnin 831 >>Turn in The Admiral's Orders
+    .target Nazgrel
+step << Warlock
+    .goto Orgrimmar,31.74,37.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
+    .accept 5726 >>Accept Hidden Enemies
+    .target Nazgrel
 step << Warrior
     #season 2
     #completewith next
@@ -9243,35 +9287,30 @@ step << Warrior
     .train 425447 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
     .use 204716
     .itemcount 204716,1
-step << Rogue
-    .goto Orgrimmar,42.75,53.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therzok|r
-	.accept 1963 >> Accept The Shattered Hand << Orc Rogue/Troll Rogue
-    .target Therzok
-step << Rogue
-    #season 2
-    .goto Orgrimmar,55.87,44.89
-    >>Loot the |cRXP_PICK_Dusty Chest|r for |T134419:0|t[|cRXP_FRIENDLY_Rune of Precision|r]
-    >>|cRXP_WARN_It's located in The Drag on the upper floor|r
-    .collect 204174,1 --Rune of Precision (1)
-    .train 400081,1
-step << Rogue
-    #season 2
-    .train 400081 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Precision|r] |cRXP_WARN_to train|r |T135610:0|t[Between the Eyes]
-    .use 204174
-    .itemcount 204174,1
-step << Warlock/Hunter/Rogue/Priest/Warrior
-    #season 2 << Warrior
-    #label AdmiralTurnin
-    .goto Orgrimmar,32.28,35.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nazgrel|r
-    .turnin 831 >>Turn in The Admiral's Orders
-    .target Nazgrel
-step << Warlock
-    .goto Orgrimmar,31.74,37.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thrall|r
-    .accept 5726 >>Accept Hidden Enemies
-    .target Nazgrel
+step << Troll Warrior
+    .goto Orgrimmar,81.52,19.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
+    .train 227 >>Train Staves
+    .target Hanashi
+    .money <0.100
+step << Troll Warrior
+    .goto Orgrimmar,81.17,18.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Zendo'jian|r|cRXP_BUY_. Buy a|r |T135154:0|t[Quarter Staff] |cRXP_BUY_from him|r
+    .collect 854,1,1502,1 --Collect Quarter Staff (1)
+    .money <0.3022
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
+    .target Zendo'jian
+    .train 227,3
+step << Troll Warrior
+    #optional
+    #completewith RazorTurnins2
+    +Equip the |T135154:0|t[Quarter Staff]
+    .use 854
+    .itemcount 854,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
+    .train 227,3
 step << Hunter
     #completewith next
     .goto Orgrimmar,68.02,38.69,30 >> Travel to the Valley of Honor
