@@ -1025,7 +1025,7 @@ step << Rogue
     .goto Darkshore,32.75,42.21,35 >> Travel to the end of the dock, then jump into the water
     .train 424785,3
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith washed1
     .goto Darkshore,33.59,40.36,0
@@ -1274,7 +1274,7 @@ step << NightElf Warrior/NightElf Rogue
     .usespell 2580
     .skill mining,<1,1
 step << !NightElf/!Warrior !Rogue
-    #xprate <1.5 << !NightElf/Hunter --XX Night Elves do it on 2x to catch up on xp EXCEPT Dwarf/NE Hunters (1x only)
+    #xprate <1.5 --<< !NightElf/Hunter --XX Night Elves do it on 2x to catch up on xp EXCEPT Dwarf/NE Hunters (1x only)
     .goto 1439,38.107,41.165
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
     .accept 982 >> Accept Deep Ocean, Vast Sea
@@ -1338,7 +1338,7 @@ step
 
 
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #completewith MistVeil
     .goto Darkshore,35.44,35.83,0
     .goto Darkshore,35.71,32.27,0
@@ -1352,13 +1352,13 @@ step
     .mob Darkshore Thresher
     .isOnQuest 1001
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith next
     +|cRXP_WARN_Press Escape, then go into -> Options -> Controls|r
     >>|cRXP_WARN_Check "Enable Interact Key" and bind the "Interact with Target" option to a key|r
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,38.213,28.754
 --  .goto 1439,38.234,28.796
     >>|cRXP_WARN_==BE AWARE OF YOUR BREATH METER==|r
@@ -1368,7 +1368,7 @@ step
     .complete 982,1 --Silver Dawning's Lockbox (1)
     .isOnQuest 982
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #label MistVeil
     .goto 1439,39.581,27.487
 --  .goto 1439,39.629,27.462
@@ -1379,7 +1379,7 @@ step
     .complete 982,2 --Mist Veil Lockbox (1)
     .isOnQuest 982
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #loop
     .goto Darkshore,40.17,28.76,0
     .goto Darkshore,38.73,28.25,0
@@ -1396,35 +1396,35 @@ step
     .mob Darkshore Thresher
     .isOnQuest 1001
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     .goto 1439,41.901,31.339
     >>Click the |cRXP_PICK_Beached Sea Creature|r
     .accept 4723 >> Accept Beached Sea Creature
     .isOnQuest 1001
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     .goto 1439,41.901,31.339
     >>Click the |cRXP_PICK_Beached Sea Creature|r
     .accept 4723 >> Accept Beached Sea Creature
     .isOnQuest 982
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,41.960,28.616
     >>Click the |cRXP_PICK_Buzzbox 411|r on the ground
     .turnin 1001 >> Turn in Buzzbox 411
     .accept 1002 >> Accept Buzzbox 323
     .isQuestComplete 1001
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     .goto 1439,41.960,28.616
     >>Click the |cRXP_PICK_Buzzbox 411|r on the ground
     .accept 1002 >> Accept Buzzbox 323
     .isQuestTurnedIn 1001
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith AsterionTravel
     .goto 1439,44.190,33.697,0
@@ -1578,7 +1578,7 @@ step
     .collect 5469,5,2178,1 --Strider Meat (5)
     .mob Foreststrider Fledgling
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith RedCrystal
     >>Kill |cRXP_ENEMY_Moonstalker Runts|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
@@ -1713,7 +1713,7 @@ step << NightElf/Hunter/Druid
     .skill cooking,10,1 --XX Shows if cooking skill is <10
     .isQuestTurnedIn 4811
 step << NightElf/Hunter/Druid
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith MysteriousCrystalHuntDruidEnd
     >>Kill |cRXP_ENEMY_Moonstalker Runts|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
@@ -1928,7 +1928,7 @@ step
 
 
 step << NightElf/Hunter/Druid
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #completewith EarlyBlackwood
     #optional
     >>Kill |cRXP_ENEMY_Moonstalker Runts|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
@@ -2011,7 +2011,7 @@ step << NightElf/Hunter/Druid
     .mob Blackwood Windtalker
     .isQuestTurnedIn 4811
 step << NightElf/Hunter/Druid
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #requires EarlyTreats3 << Druid --Season 2
     #completewith EarlyTurtleStart
@@ -2049,7 +2049,7 @@ step
 ----End of alternate section if early Red Crystal turnin----
 
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith AmethStart
     >>Kill |cRXP_ENEMY_Moonstalker Runts|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
@@ -2202,7 +2202,7 @@ step
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .mob Foreststrider Fledgling
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith FurbolgGrindEnd
     >>Kill |cRXP_ENEMY_Moonstalker Runts|r and |cRXP_ENEMY_Moonstalkers|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
@@ -2409,7 +2409,7 @@ step
     .subzone 442 >> Return to Auberdine
     .isOnQuest 4722
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,36.701,45.122,8,0
     .goto 1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
@@ -2498,13 +2498,13 @@ step
     .target Gorbold Steelhand
     .itemcount 6889,1 -- Small Egg (1+)
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,38.107,41.165
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
     .accept 982 >> Accept Deep Ocean, Vast Sea
     .target Gorbold Steelhand
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     .goto 1439,38.107,41.165
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
@@ -2542,13 +2542,13 @@ step
 
 
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith next
     +|cRXP_WARN_Press Escape, then go into -> Options -> Controls|r
     >>|cRXP_WARN_Check "Enable Interact Key" and bind the "Interact with Target" option to a key|r
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,38.213,28.754
 --  .goto 1439,38.234,28.796
     >>|cRXP_WARN_==BE AWARE OF YOUR BREATH METER==|r
@@ -2558,7 +2558,7 @@ step
     .complete 982,1 --Silver Dawning's Lockbox (1)
     .isOnQuest 982
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #label MistVeil
     .goto 1439,39.581,27.487
 --  .goto 1439,39.629,27.462
@@ -2569,7 +2569,7 @@ step
     .complete 982,2 --Mist Veil Lockbox (1)
     .isOnQuest 982
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     .goto 1439,41.901,31.339
     >>Click the |cRXP_PICK_Beached Sea Creature|r
@@ -2582,7 +2582,7 @@ step
 
 
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith BoatSeaCreature
     .goto 1439,44.190,33.697,0
@@ -2643,7 +2643,7 @@ step
     .mob Foreststrider Fledgling
     .mob Foreststrider
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith CrabTurtle
     >>Kill |cRXP_ENEMY_Moonstalker Runts|r and |cRXP_ENEMY_Moonstalkers|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
@@ -2685,7 +2685,7 @@ step
     .complete 4762,1 --Cliffspring River Sample (1)
     .use 12350
 step
-	#xprate <1.5 << !NightElf/Hunter
+	#xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith next
     .goto 1439,51.118,23.670,20,0
@@ -2693,14 +2693,14 @@ step
     .isQuestComplete 1002
 step
     #optional
-	#xprate <1.5 << !NightElf/Hunter
+	#xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,51.288,24.554
     >>Click the |cRXP_PICK_Buzzbox 323|r on the ground
     .turnin 1002 >> Turn in Buzzbox 323
     .accept 1003 >> Accept Buzzbox 525
     .isQuestComplete 1002
 step
-	#xprate <1.5 << !NightElf/Hunter
+	#xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,51.288,24.554
     >>Click the |cRXP_PICK_Buzzbox 323|r on the ground
     .accept 1003 >> Accept Buzzbox 525
@@ -2811,7 +2811,7 @@ step
     .complete 2138,1 -- Rabid Thistle Bear slain (20)
     .mob Rabid Thistle Bear
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith CliffCave
     >>Kill |cRXP_ENEMY_Moonstalkers|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
@@ -2871,7 +2871,7 @@ step
     .mob Foreststrider
 step
     #optional
-	#xprate <1.5 << !NightElf/Hunter
+	#xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,51.288,24.554
     >>Click the |cRXP_PICK_Buzzbox 323|r on the ground
     .turnin 1002 >> Turn in Buzzbox 323
@@ -2945,7 +2945,7 @@ step
     .goto 1439,41.705,36.507,20 >>|cRXP_WARN_Jump on top of the rock on the top floor inside the cave. Position your character until it looks like they're floating, then perform a Logout Skip by logging out and back in|r
 step
     #hardcore << NightElf !Druid
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #requires MushroomLS
     #completewith CavetoAuber
     >>Kill |cRXP_ENEMY_Moonstalker Runts|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
@@ -2990,7 +2990,7 @@ step << !NightElf
     .target Archaeologist Hollee
     .isQuestComplete 2138
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     .goto 1439,38.107,41.165
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
     .turnin 982 >> Turn in Deep Ocean, Vast Sea
@@ -3423,7 +3423,7 @@ step
     .unitscan Anaya Dawnrunner
     .group
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #completewith CompleteFangs
     >>Kill |cRXP_ENEMY_Moonstalker Runts|r and |cRXP_ENEMY_Moonstalkers|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
@@ -3483,7 +3483,7 @@ step
     .complete 986,1 -- Fine Moonstalker Pelt (5)
     .unitscan Moonstalker Sire
 step
-	#xprate <1.5 << !NightElf/Hunter
+	#xprate <1.5 --<< !NightElf/Hunter
     #completewith MasterG
     .goto Darkshore,38.60,80.50,0
     >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Scalps|r
@@ -3509,7 +3509,7 @@ step
     .accept 944 >> Accept The Master's Glaive
     .target Onu
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     .goto 1439,41.390,80.563
     >>Click the |cRXP_PICK_Buzzbox 525|r on the ground
@@ -3576,7 +3576,7 @@ step
     .complete 986,1 -- Fine Moonstalker Pelt (5)
     .unitscan Moonstalker Sire
 step
-	#xprate <1.5 << !NightElf/Hunter
+	#xprate <1.5 --<< !NightElf/Hunter
     .goto Darkshore,41.44,86.06,50,0
     .goto Darkshore,41.77,84.60,50,0
     .goto Darkshore,42.94,82.25,50,0
@@ -3588,7 +3588,7 @@ step
     .isOnQuest 1003
     .mob Grizzled Thistle Bear
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #label LastBuzz
     .goto 1439,41.390,80.563
     >>Click the |cRXP_PICK_Buzzbox 525|r on the ground
@@ -3898,7 +3898,7 @@ step << Hunter
     >>Make sure your HS cooldown is <10 min
     >>Skip this step if the area is too crowded
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #optional
     #loop
     .goto 1439,53.629,26.054,0
@@ -3926,7 +3926,7 @@ step
     .isOnQuest 1002
 --XX Can do later during Pelts but better if player gets more xp beforehand
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     #label Buzzbox323End
     #requires SicklyDeers << Druid --xprate <1.5
     .goto 1439,51.288,24.554
@@ -10858,7 +10858,7 @@ step
     .itemcount 5387,1
     .itemStat 15,QUALITY,<7
 step
-	#xprate <1.5 << !NightElf/Hunter
+	#xprate <1.5 --<< !NightElf/Hunter
     #completewith Murkdeep
     .goto Darkshore,40.23,81.28,0
     >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r. Loot them for their |cRXP_LOOT_Scalps|r
@@ -11112,7 +11112,7 @@ step
     .mob Encrusted Tide Crawler
     .mob Reef Crawler
 step
-	#xprate <1.5 << !NightElf/Hunter
+	#xprate <1.5 --<< !NightElf/Hunter
     .goto Darkshore,41.44,86.06,50,0
     .goto Darkshore,41.77,84.60,50,0
     .goto Darkshore,42.94,82.25,50,0
@@ -11124,7 +11124,7 @@ step
     .isOnQuest 1003
     .mob Grizzled Thistle Bear
 step
-    #xprate <1.5 << !NightElf/Hunter
+    #xprate <1.5 --<< !NightElf/Hunter
     .goto Darkshore,41.389,80.565
     >>Click the |cRXP_PICK_Buzzbox 525|r on the ground
     .turnin 1003 >> Turn in Buzzbox 525
