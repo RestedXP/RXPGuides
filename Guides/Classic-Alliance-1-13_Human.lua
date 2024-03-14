@@ -677,7 +677,7 @@ step << Paladin
     #requires EarlyLibram4
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .target Spirit Healer
-    .subzoneskip 59,1
+-- .subzoneskip 59,1
 step << Paladin/Rogue
     #xprate >1.59
     #season 2
@@ -1346,7 +1346,7 @@ step << !Human/!Rogue
     #requires Shadowstrike2 << Rogue
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .target Spirit Healer
-    .subzoneskip 59,1
+--   .subzoneskip 59,1
 step << Human Rogue
     #xprate <1.59
     #season 2
@@ -1642,7 +1642,7 @@ step
     #completewith next
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .target Spirit Healer
-    .subzoneskip 59,1
+-- .subzoneskip 59,1
 step << Priest/Mage
     #xprate <1.5
     .goto Elwynn Forest,50.692,39.347
@@ -2192,27 +2192,32 @@ step
 step
     .goto Elwynn Forest,42.105,65.927
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
-    .turnin 40 >> Turn in A Fishy Peril
-    .accept 35 >> Accept Further Concerns
     .turnin 62 >> Turn in The Fargodeep Mine
     .accept 76 >> Accept The Jasperlode Mine
+    .turnin 40 >> Turn in A Fishy Peril
+    .accept 35 >> Accept Further Concerns
     .target Marshal Dughan
 step
+    #optional << Warrior/Rogue/Paladin
     #completewith CandlesEnd
     .goto Elwynn Forest,41.529,65.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
-    .vendor >>|cRXP_WARN_Vendor trash|r
+    .vendor >>Vendor Trash
     .target Corina Steele
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,>3.3 << Rogue
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,>3.8 << Warrior
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,>5.0 << Paladin
 step << Warrior
     .goto Elwynn Forest,41.529,65.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
-    >>|cRXP_WARN_Buy a|r |T135321:0|t[Gladius]
+    .vendor 54 >>|cRXP_BUY_Buy a|r |T135321:0|t[Gladius] |cRXP_BUY_from her if you can afford it|r
     .collect 2488,1 --Collect Gladius (1)
-    .money <0.0536
+    .disablecheckbox
+--  .money <0.0536
     .target Corina Steele
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.8
 step << Warrior
-    #completewith next
+    #completewith CandlesEnd
     +|cRXP_WARN_Equip the|r |T135321:0|t[Gladius]
     .use 2488
     .itemcount 2488,1
@@ -2220,13 +2225,14 @@ step << Warrior
 step << Rogue
     .goto Elwynn Forest,41.529,65.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
-    >>|cRXP_WARN_Buy a|r |T135641:0|t[Stiletto]
+    .vendor 54 >>|cRXP_BUY_Buy a|r |T135641:0|t[Stiletto] |cRXP_BUY_from her if you can afford it|r 
     .collect 2494,1 --Collect Stiletto (1)
+    .disablecheckbox
     .target Corina Steele
-    .money <0.0400
+--   .money <0.0400
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
-    #completewith next
+    #completewith CandlesEnd
     +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
     .use 2494
     .itemcount 2494,1
@@ -2234,17 +2240,30 @@ step << Rogue
 step << Paladin
     .goto Elwynn Forest,41.529,65.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
-    >>|cRXP_WARN_Buy a|r |T133053:0|t[Wooden Mallet]
+    .vendor 54 >>|cRXP_BUY_Buy a|r |T133053:0|t[Wooden Mallet] |cRXP_BUY_from her if you can afford it|r
     .collect 2493,1 --Collect Wooden Mallet (1)
+    .disablecheckbox
     .target Corina Steele
-    .money <0.0631
+--  .money <0.0631
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.0
 step << Paladin
-    #completewith next
+    #completewith CandlesEnd
     +|cRXP_WARN_Equip the|r |T133053:0|t[Wooden Mallet]
     .use 2493
     .itemcount 2493,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.0
+step << Paladin
+    #xprate >1.59
+    .goto Elwynn Forest,41.096,66.041
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Wilhelm|r
+    .trainer >> Train your class spells
+    .target Brother Wilhelm
+step << Warrior
+    #xprate >1.59
+    .goto Elwynn Forest,41.087,65.768
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyria Du Lac|r
+    .trainer >> Train your class spells
+    .target Lyria Du Lac
 step
     #label CandlesEnd
     .goto Elwynn Forest,43.318,65.705
@@ -2258,11 +2277,13 @@ step
     #optional
     .xp 8 >> Grind to 8
 step << Warrior
+    #xprate <1.59
     .goto Elwynn Forest,41.087,65.768
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyria Du Lac|r
     .trainer >> Train your class spells
     .target Lyria Du Lac
 step << Paladin
+    #xprate <1.59
     .goto Elwynn Forest,41.096,66.041
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Wilhelm|r
     .trainer >> Train your class spells
@@ -2320,9 +2341,9 @@ step
     #completewith next
     .goto Elwynn Forest,43.771,65.803
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Farley|r
-    .vendor >> |cRXP_WARN_Buy up to 40|r |T132815:0|t[Ice Cold Milk] << !Warrior !Rogue !Paladin
-    .vendor >> |cRXP_WARN_Buy up to 40|r |T133995:0|t[Dalaran Sharp] << Warrior/Rogue
-    .vendor >> |cRXP_WARN_Buy up to 10|r |T133995:0|t[Dalaran Sharp] |cRXP_WARN_and 10|r |T132815:0|t[Ice Cold Milk] << Paladin
+    .vendor >> |cRXP_BUY_Buy up to 40|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him if you can afford it|r << !Warrior !Rogue !Paladin
+    .vendor >> |cRXP_BUY_Buy up to 40|r |T133995:0|t[Dalaran Sharp] |cRXP_BUY_from him if you can afford it|r << Warrior/Rogue
+    .vendor >> |cRXP_BUY_Buy up to 10|r |T133995:0|t[Dalaran Sharp] |cRXP_BUY_and 10|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him if you can afford it|r << Paladin
     .target Innkeeper Farley
 step << Warrior
     #season 2
@@ -2414,7 +2435,7 @@ step << Paladin
 step << Paladin
     #season 2
     .goto Elwynn Forest,61.97,47.31
-    >>Talk to the |cRXP_FRIENDLY_Wounded Adventurer|r after casting |T135949:0|t[Purify] on him to be given the |T134419:0|t[Rune of Aegis]
+    >>|cRXP_WARN_Talk to the |cRXP_FRIENDLY_Wounded Adventurer|r after casting|r |T135949:0|t[Purify] |cRXP_WARN_on him to be given the|r |T134419:0|t[Rune of Aegis]
     .collect 205685,1 --Rune of Aegis (1)
     .target Wounded Adventurer
     .skipgossip
@@ -2444,37 +2465,6 @@ step << Rogue
     .mob Riverpaw Runt
     .train 398196,1
 step
-    #xprate >1.59
-    .goto Elwynn Forest,73.973,72.179
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
-    .turnin 35 >> Turn in Further Concerns
-    .accept 37 >> Accept Find the Lost Guards
-    .accept 52 >> Accept Protect the Frontier
-    .accept 109 >> Accept Report to Gryan Stoutmantle
-    .target Guard Thomas
-    .xp <9,1
-step
-    #xprate >1.59
-    #optional
-    .goto Elwynn Forest,73.973,72.179
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
-    .turnin 35 >> Turn in Further Concerns
-    .accept 37 >> Accept Find the Lost Guards
-    .accept 52 >> Accept Protect the Frontier
-    .target Guard Thomas
-step
-    #xprate <1.59
-    #optional
-    .goto Elwynn Forest,73.973,72.179
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
-    .turnin 35 >> Turn in Further Concerns
-    .accept 37 >> Accept Find the Lost Guards
-    .accept 52 >> Accept Protect the Frontier
-    .accept 109 >> Accept Report to Gryan Stoutmantle
-    .target Guard Thomas
-    .xp <9,1
-step
-    #xprate <1.59
     .goto Elwynn Forest,73.973,72.179
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
     .turnin 35 >> Turn in Further Concerns
@@ -2490,22 +2480,22 @@ step
     .mob Prowler
     .mob Young Forest Bear
 step
-    >>Click |cRXP_PICK_A half-eaten body|r on the ground
     .goto Elwynn Forest,72.656,60.334
+    >>Click |cRXP_PICK_A half-eaten body|r on the ground
     .turnin 37 >> Turn in Find the Lost Guards
     .accept 45 >> Accept Discover Rolf's Fate
 step
     #label AcceptBundle
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Supervisor Raelen|r
-    .target Supervisor Raelen
     .goto Elwynn Forest,81.382,66.112
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Supervisor Raelen|r
     .accept 5545 >> Accept A Bundle of Trouble
+    .target Supervisor Raelen
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rallic Finn|r
-    .target Rallic Finn
     .goto Elwynn Forest,83.283,66.089
-    .vendor >> |cRXP_WARN_Vendor trash|r
-    .zoneskip Elwynn Forest,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rallic Finn|r
+    .vendor >> Vendor trash
+    .subzoneskip 88,1
+    .target Rallic Finn
 step
     #completewith Prowlers
     >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r
@@ -2516,7 +2506,8 @@ step
     .mob Young Forest Bear
 step
     #completewith next
-    >>Loot the |cRXP_LOOT_Bundle of Wood|r on the ground. |cRXP_WARN_They are found beneath the trees|r
+    >>Loot the |cRXP_LOOT_Bundle of Wood|r on the ground 
+    >>|cRXP_WARN_They are found beneath the trees|r
     .complete 5545,1 -- Bundle of Wood (8)
 step << Paladin
     #softcore
@@ -2612,22 +2603,12 @@ step
     .mob Prowler
     .mob Young Forest Bear
 step
-    #optional
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
-    .target Guard Thomas
     .goto Elwynn Forest,73.973,72.179
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
     .turnin 52 >> Turn in Protect the Frontier
     .turnin 71 >> Turn in Report to Thomas
     .accept 39 >> Accept Deliver Thomas' Report
-    .accept 109 >> Accept Report to Gryan Stoutmantle
-    .xp <9,1
-step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
     .target Guard Thomas
-    .goto Elwynn Forest,73.973,72.179
-    .turnin 52 >> Turn in Protect the Frontier
-    .turnin 71 >> Turn in Report to Thomas
-    .accept 39 >> Accept Deliver Thomas' Report
 step
     #xprate >1.49
     #completewith Level9Grind << Warlock/Warrior/Rogue
@@ -2863,7 +2844,7 @@ step << Paladin
     .goto Redridge Mountains,30.590,59.410
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
     .fp Redridge Mountains >> Get the Redridge Mountains flight path
-    .fly Stormwind City >> Fly to Stormwind City
+    .fly Stormwind >> Fly to Stormwind City
     .target Ariena Stormfeather
     .train 410015,1
 step << Paladin
@@ -2883,7 +2864,7 @@ step << Paladin
     #completewith Romulus
     .goto StormwindClassic,42.51,33.51,20 >> Travel to the Stormwind Cathedral
     .train 410015,1
-step << Human Paladin
+step << skip --Human Paladin
     #season 2
     #xprate >1.59
     .goto StormwindClassic,39.80,29.77
@@ -2892,7 +2873,8 @@ step << Human Paladin
     .turnin 1641 >> Turn in The Tome of Divinity
     .target Duthorian Rall
     .xp <12,1
-step << Human Paladin
+--XX so you can get the 500xp breadcrumb in goldshire
+step << skip --Human Paladin
     #season 2
     #xprate >1.59
     .goto StormwindClassic,39.80,29.77
@@ -2900,7 +2882,7 @@ step << Human Paladin
     .accept 1642 >>Accept The Tome of Divinity
     .use 6775
     .xp <12,1
-step << Human Paladin
+step << skip --Human Paladin
     #season 2
     #xprate >1.59
     .goto StormwindClassic,39.80,29.77
@@ -2961,6 +2943,7 @@ step << Warrior/Rogue
 --XX 7s from 39, 3.5s from 76, 3.5s from 61, 2.5s from 109, 1.75 from 6281 (warrior)
 step
     #xprate <1.59
+    #label CollectKelp
     .goto Elwynn Forest,43.318,65.705
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
     .turnin 112 >> Turn in Collecting Kelp
@@ -2968,22 +2951,13 @@ step
     .accept 114 >> Accept The Escape
     .target William Pestle
 step
-    #xprate <1.59
-    #label CollectKelp
-    .goto Elwynn Forest,43.318,65.705
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
-    >>|cRXP_WARN_Wait out the RP|r
-    .accept 114 >> Accept The Escape
-    .target William Pestle
-    .isQuestTurnedIn 112
-step
     #xprate >1.59
     #label CollectKelp
     .goto Elwynn Forest,43.318,65.705
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
     .turnin 112 >> Turn in Collecting Kelp
---  .timer 9,Collecting Kelp RP
---   .accept 114 >> Accept The Escape
+    .timer 9,Collecting Kelp RP
+    .accept 114 >> Accept The Escape
     .target William Pestle
 step << Warrior/Rogue
     #optional
@@ -3053,6 +3027,16 @@ step << Paladin
     .trainer >> Train your class spells
     .target Brother Wilhelm
     .xp <10,1
+    .xp >12,1
+step << Paladin
+    #optional
+    #requires GoldshireVendor
+    .goto Elwynn Forest,41.096,66.041
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Wilhelm|r
+    .accept 2998 >> Accept Tome of Divinity
+    .trainer >> Train your class spells
+    .target Brother Wilhelm
+    .xp <12,1
 step << Warlock
     #optional
     #completewith next
@@ -3104,7 +3088,7 @@ step
     #completewith next
     .goto Elwynn Forest,43.154,89.625,50 >> Travel to The Maclure Vineyards
 step
-    #xprate <1.59
+--  #xprate <1.59
     #label Escape
     #requires GoldshireVendor
     .goto Elwynn Forest,43.154,89.625
@@ -3650,7 +3634,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
     .fly Stormwind >> Fly to Stormwind
     .target Thor
-step << Human Paladin
+step << skip --Human Paladin
     #season 2
     #xprate >1.59
     .goto StormwindClassic,57.08,61.74
@@ -3841,6 +3825,16 @@ step << skip --Warrior
     .use 204716
     .target Liv Bradford
     .mob Stuart
+step << Human Paladin
+    #xprate >1.59
+    #optional
+    .goto StormwindClassic,39.80,29.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
+    .turnin 2998 >> Turn in Tome of Divinity
+    .accept 1641 >> Accept The Tome of Divinity
+    .turnin 1641 >> Turn in The Tome of Divinity
+    .target Duthorian Rall
+    .isOnQuest 2998
 step << Human Paladin
     #xprate >1.59
     .goto StormwindClassic,39.80,29.77

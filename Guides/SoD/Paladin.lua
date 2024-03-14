@@ -707,7 +707,7 @@ step
     .xp <8,1
 step
     .goto Elwynn Forest,61.97,47.31
-    >>Talk to the |cRXP_FRIENDLY_Wounded Adventurer|r after casting |T135949:0|t[Purify] on him to be given the |T134419:0|t[Rune of Aegis]
+    >>|cRXP_WARN_Talk to the |cRXP_FRIENDLY_Wounded Adventurer|r after casting|r |T135949:0|t[Purify] |cRXP_WARN_on him to be given the|r |T134419:0|t[Rune of Aegis]
     .collect 205685,1 --Rune of Aegis (1)
     .target Wounded Adventurer
     .skipgossip
@@ -770,7 +770,7 @@ step
     .xp <8,1
 step
     .goto Dun Morogh,25.57,43.37
-    >>Talk to the |cRXP_FRIENDLY_Wounded Adventurer|r after casting |T135949:0|t[Purify] on him to be given the |T134419:0|t[Rune of Aegis]
+    >>|cRXP_WARN_Talk to the |cRXP_FRIENDLY_Wounded Adventurer|r after casting|r |T135949:0|t[Purify] |cRXP_WARN_on him to be given the|r |T134419:0|t[Rune of Aegis]
     .collect 205685,1 --Rune of Aegis (1)
     .target Wounded Adventurer
     .skipgossip
