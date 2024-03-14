@@ -2380,7 +2380,7 @@ step << Dwarf Paladin
     .target Tiza Battleforge
 step << Dwarf Paladin
     .goto Ironforge,27.628,12.183
-    .use 6916>>|cRXP_WARN_Use the |T133464:0|t[|cRXP_LOOT_The Tome of Divinity|r] to start the quest|r
+    .use 6916>>|cRXP_WARN_Use the |T133739:0|t[|cRXP_LOOT_The Tome of Divinity|r] to start the quest|r
     .accept 1646 >>Accept The Tome of Divinity
 step << Dwarf Paladin
     .goto Ironforge,27.628,12.183

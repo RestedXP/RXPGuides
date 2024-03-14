@@ -2217,7 +2217,7 @@ step << Human Paladin
     .target Duthorian Rall
 step << Human Paladin
     .goto StormwindClassic,39.80,29.77
-    .use 6775>>|cRXP_WARN_Use the |T133464:0|t[|cRXP_LOOT_The Tome of Divinity|r] to start the quest|r
+    .use 6775>>|cRXP_WARN_Use the |T133739:0|t[|cRXP_LOOT_The Tome of Divinity|r] to start the quest|r
     .accept 1642 >>Accept The Tome of Divinity
 step << Human Paladin
     .goto StormwindClassic,39.80,29.77

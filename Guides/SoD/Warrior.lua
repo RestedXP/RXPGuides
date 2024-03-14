@@ -8,17 +8,26 @@ RXPGuides.RegisterGuide([[
 
 step << Warrior
     #season 2
+    #optional
+    #completewith next
+    .goto 1429,48.086,30.502,20,0
+    .goto 1429,48.379,29.579,20,0
+    .goto 1429,48.336,28.597,20,0
+    .goto 1429,48.679,26.618,20,0
+    .goto 1429,49.919,25.792,20,0
+    .goto 1429,50.639,27.274,15 >>Travel toward the |cRXP_PICK_Kobold Stashbox|r inside Echo Ridge Mine
+    .train 403470,1
+step << Warrior
+    #season 2
     .goto Elwynn Forest,50.640,27.276
-    >>Open the |cRXP_PICK_Kobold Stashbox|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    >>Open the |cRXP_PICK_Kobold Stashbox|r on the ground. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Victory Rush]|r
     .collect 204806,1 -- Rune of Victory Rush (1)
     .train 403470,1
 step << Warrior
     #season 2
-    #label RoVR
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    .train 403470 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Victory Rush]|r |cRXP_WARN_to learn|r |T132342:0|t[Victory Rush]
     .use 204806
-    .itemcount 204806,1
-    .train 403470,1
+    .itemcount 204806,1 -- Rune of Victory Rush (1)
 ]])
 
 RXPGuides.RegisterGuide([[

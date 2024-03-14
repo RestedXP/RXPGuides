@@ -1493,7 +1493,7 @@ step << Warrior/Rogue
     +|cRXP_WARN_Cast|r |T136025:0|t[Find Minerals] |cRXP_WARN_and mine any Copper Vein you find for|r |T135232:0|t[Rough Stones]|cRXP_WARN_. Make|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_from them|r
     .collect 2862,1,786,1
     .skill blacksmithing,<1,1
-    .skill mining,<1,1
+    .train 2575,3 --Mining Trained
 step
     #xprate >1.49
     #completewith next
@@ -7799,7 +7799,7 @@ step << Warrior/Rogue
     +|cRXP_WARN_Cast|r |T136025:0|t[Find Minerals] |cRXP_WARN_and mine any Copper Vein you find for|r |T135232:0|t[Rough Stones]|cRXP_WARN_. Make|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_from them|r
     .collect 2862,1,786,1
     .skill blacksmithing,<1,1
-    .skill mining,<1,1
+    .train 2575,3 --Mining Trained
 step
     #xprate >1.49
     #completewith next

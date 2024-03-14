@@ -591,7 +591,7 @@ step
     #hardcore
     .goto Dun Morogh,59.5,42.8,40,0
     .goto Dun Morogh,60.4,44.1,40,0
-    .goto Dun Morogh,61.1,44.1,40,0
+    .goto Dun Morogh,61.1,44.1,20,0
     .goto Dun Morogh,61.2,42.3,40,0
     .goto Dun Morogh,60.8,40.9,40,0
     .goto Dun Morogh,59.0,39.5,40,0
@@ -674,10 +674,14 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Alliance 1-20
 #name 14-16 Darkshore
 #displayname 11-16 Darkshore << NightElf !SoD
-#displayname 12-16 Darkshore << NightElf SoD
--- #displayname 13-16 Darkshore << Dwarf Hunter/!NightElf sod
-#displayname 15-16 Darkshore << !NightElf !Hunter
+#displayname 13-16 Darkshore << !NightElf !SoD
+#displayname 12-18 Darkshore << NightElf SoD
+#displayname 15-18 Darkshore << !NightElf SoD
 #next 16-19 Darkshore
+
+-- #displayname 11-16 Darkshore << NightElf/Dwarf Hunter !SoD
+-- #displayname 15-17 Darkshore << !NightElf !Dwarf/!Hunter !SoD
+-- #displayname 13-18 Darkshore << Dwarf Hunter/!NightElf sod
 
 step << NightElf
     .goto Teldrassil,56.25,92.44
@@ -1266,13 +1270,13 @@ step << NightElf Warrior/NightElf Rogue
     >>|cRXP_BUY_Buy a|r |T134708:0|t[Mining Pick] |cRXP_BUY_from her|r
     .target Elisa Steelhand
     .collect 2901,1 -- Mining Pick (1)
-    .skill mining,<1,1
+    .train 2575,3 --Mining Trained
 step << NightElf Warrior/NightElf Rogue
     #optional
     #completewith Bashal1
     .cast 2580 >> |cRXP_WARN_Cast|r |T136025:0|t[Find Minerals]
     .usespell 2580
-    .skill mining,<1,1
+    .train 2575,3 --Mining Trained
 step << !NightElf/!Warrior !Rogue
     #xprate <1.5 --<< !NightElf/Hunter --XX Night Elves do it on 2x to catch up on xp EXCEPT Dwarf/NE Hunters (1x only)
     .goto 1439,38.107,41.165
@@ -1315,8 +1319,8 @@ step
     .accept 958 >> Accept Tools of the Highborne
     .accept 954 >> Accept Bashal'Aran
     .target Thundris Windweaver
-    .xp >17,1
---XX if 17+, skip Tools
+    .xp >16,1
+--XX if 16+, skip Tools
 step
     #optional
     .goto 1439,37.394,40.128
@@ -1458,8 +1462,8 @@ step
     .accept 955 >> Accept Bashal'Aran
     .target Asterion
     .isOnQuest 954
-    .xp >17,1
---XX skip Bashal Aran qline if 17+
+    .xp >16,1
+--XX skip Bashal Aran qline if 16+
 step
     #optional
     .goto 1439,44.168,36.289
@@ -1477,8 +1481,8 @@ step
     .accept 955 >> Accept Bashal'Aran
     .target Asterion
     .isQuestTurnedIn 954
-    .xp >17,1
---XX if you ding 17 from turnin, skip Bashal Aran qline
+    .xp >16,1
+--XX if you ding 16 from turnin, skip Bashal Aran qline
 step
     #loop
     .goto 1439,44.528,36.587,0
@@ -1598,7 +1602,7 @@ step
     .skill cooking,10,1 --XX Shows if cooking skill is <10
 step
     #xprate >1.49
-    #completewith AmethStart
+    #completewith LateTurtleStart
     >>Kill |cRXP_ENEMY_Moonkin|r. Loot them for their |T132832:0|t|cRXP_LOOT_[Small Eggs]|r
     >>|cRXP_WARN_They will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_to 10 later|r
     .collect 6889,9,2178,1,0x21,cooking --Small Egg (1-10)
@@ -1607,6 +1611,8 @@ step
     .mob Moonkin Oracle
     .mob Moonkin
     .skill cooking,10,1 --XX Shows if cooking skill is <10
+    .subzoneskip 442 --Auberdine
+    .subzoneskip 447 --Ameth'Aran
 step
     #label RedCrystal
     .goto 1439,47.314,48.676
@@ -1922,6 +1928,7 @@ step
     >>Kill |cRXP_ENEMY_Foreststrider Fledglings|r. Loot them for their |cRXP_LOOT_Strider Meat|r
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .mob Foreststrider Fledgling
+    .subzoneskip 447
 
 
 ----Start of alternate section if early Red Crystal turnin----
@@ -2018,17 +2025,19 @@ step << NightElf/Hunter/Druid
     >>Kill |cRXP_ENEMY_Moonstalkers|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob Moonstalker
+    .subzoneskip 447
     .isOnQuest 1002
     .isQuestTurnedIn 4811
 step << NightElf/Hunter/Druid
     #optional
-    #completewith EarlyAmethStart
+    #completewith Anaya
     #requires EarlyTreats3 << Druid --Season 2
     >>Kill |cRXP_ENEMY_Rabid Thistle Bears|r
     >>|cRXP_WARN_Be careful as they cast|r |T135914:0|t[Rabies] |cRXP_WARN_if you dont kill them fast enough (Instant Melee: Reduces ALL health regen by 50% for 10 Minutes)|r
     .complete 2138,1 -- Rabid Thistle Bear slain (20)
     .mob Rabid Thistle Bear
     .isQuestTurnedIn 4811
+    .subzoneskip 447
 step << NightElf/Hunter/Druid
     #optional
     #label EarlyTurtleStart
@@ -2045,6 +2054,7 @@ step
     .accept 953 >> Accept The Fall of Ameth'Aran
     .target Sentinel Tysha Moonblade
     .isQuestTurnedIn 4811
+    .xp >17,1
 
 ----End of alternate section if early Red Crystal turnin----
 
@@ -2168,10 +2178,12 @@ step
     .accept 953 >> Accept The Fall of Ameth'Aran
     .target Sentinel Tysha Moonblade
     .isQuestAvailable 4811
+    .xp >17,1
 step
     .goto 1439,42.652,63.145
     >>Click the |cRXP_PICK_The Fall of Ameth'Aran|r
     .complete 953,2 --Read The Fall of Ameth'Aran (1)
+    .isOnQuest 953
 step
     .goto 1439,42.373,61.815
     >>Click the |cRXP_PICK_Ancient Flame|r
@@ -2182,6 +2194,7 @@ step
     .goto Darkshore,43.30,58.70
     >>Click the |cRXP_PICK_The Lay of Ameth'Aran|r
     .complete 953,1 --Read The Lay of Ameth'Aran (1)
+    .isOnQuest 953
 step
     #optional
     #requires Relics
@@ -2191,10 +2204,18 @@ step
     #requires Anaya
 --XXREQ Placeholder invis step until multiple requires per step
 step
+    #xprate <1.59
     .goto 1439,40.302,59.731
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
     .turnin 953 >> Turn in The Fall of Ameth'Aran
     .target Sentinel Tysha Moonblade
+step
+    #xprate >1.59
+    .goto 1439,40.302,59.731
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
+    .turnin 953 >> Turn in The Fall of Ameth'Aran
+    .target Sentinel Tysha Moonblade
+    .isQuestComplete 953
 step
     #optional
     #completewith FurbolgGrindEnd
@@ -2218,6 +2239,7 @@ step
     .complete 2138,1 -- Rabid Thistle Bear slain (20)
     .mob Rabid Thistle Bear
 step
+    #label LateTurtleStart
     .goto 1439,37.105,62.167
     >>Click the |cRXP_PICK_Beached Sea Turtle|r
     .accept 4722 >> Accept Beached Sea Turtle
@@ -2918,7 +2940,7 @@ step
     .goto Darkshore,55.89,35.40,12,0
     >>Loot the |cRXP_LOOT_Scaber Stalks|r and a |cRXP_LOOT_Death Cap|r on the ground
     >>|cRXP_WARN_Stay on the upper section. If there is not a |cRXP_LOOT_Death Cap|r at the end of the top side, drop down and get one from the southern room below|r
-    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Stormscale Wave Riders|r cast |T135836:0|t[Aqua Jet] (Ranged Instant: Deals  damage to nearby enemies and knocks them back) - make sure you're not in a position to get knocked off the upper level of the cave|r
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Stormscale Wave Riders|r cast|r |T135836:0|t[Aqua Jet] |cRXP_WARN_(Ranged Instant: Deals damage to nearby enemies and knocks them back) - make sure you're not in a position to get knocked off the upper level of the cave|r
     .complete 947,1 --Scaber Stalk (5)
     .goto Darkshore,55.04,33.34,8,0
     .goto Darkshore,55.28,34.00,8,0
@@ -3266,7 +3288,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #group RestedXP Alliance 1-20
 #name 16-19 Darkshore
-#displayname 16-20 Darkshore << SoD
+#displayname 18-20 Darkshore << SoD
 #next 19-20 Redridge;20-21 Darkshore/Ashenvale << !Hunter
 #next 19-21 Darkshore/Ashenvale << Hunter
 
@@ -3568,7 +3590,7 @@ step
     #optional
     #sticky
     .isQuestTurnedIn 949
-    .destroy 5251 >> Destroy the |T134715:0|t[Phial of Scrying] you no longer need it
+    .destroy 5251 >> Delete the |T134715:0|t[Phial of Scrying] from your bags, as it's no longer needed
 step
     #optional
     #completewith Murk
@@ -3844,10 +3866,17 @@ step << Druid
     .use 15826
     .isQuestTurnedIn 1138
 step
+    #sticky
+    #label Blackwood1
+    .goto Darkshore,52.38,33.39,0
     .goto Darkshore,50.66,34.94
-    >>Open the |cRXP_PICK_Blackwood Grain Stores|r. Loot it for the |cRXP_LOOT_Blackwood Grain Sample|r
-    >>|cRXP_WARN_Looting this will spawn 2 |cRXP_ENEMY_Blackwood Furbolgs|r that will agro and run at you. Be ready to fight them or reset them|r
+    >>Open the |cRXP_PICK_Blackwood Grain Stores|r. Loot it for the |T134939:0|t|cRXP_LOOT_[Blackwood Grain Sample]|r
+    >>|cRXP_WARN_Looting this will spawn 2 |cRXP_ENEMY_Blackwood Furbolgs|r that will agro and run towards you. Be ready to fight them or reset them|r
+    >>|cRXP_WARN_If you see |cRXP_ENEMY_Xabraxxis|r yell in chat or see someone fighting him, help them. Open the |cRXP_PICK_Xabraxxis' Demon Bag|r he drops on the ground. Loot it for the|r |cRXP_LOOT_Talisman of Corruption|r
     .collect 12342,1,4763,1 -- Blackwood Grain Stores (1)
+    .complete 4763,1 --Talisman of Corruption (1)
+    .disablecheckbox
+    .itemcount 12355,<1 --Talisman of Corruption (<1)
 step << Druid
     #season 2
     .goto Darkshore,52.60,36.65,45,0
@@ -3865,23 +3894,41 @@ step
     .complete 2139,1 --Den Mother (1)
     .mob Den Mother
 step
+    #sticky
+    #requires Blackwood1
+    #label Blackwood2
+    .goto Darkshore,52.38,33.39,0
     .goto Darkshore,51.83,33.50
-    >>Open the |cRXP_PICK_Blackwood Nut Stores|r. Loot it for the |cRXP_LOOT_Blackwood Nut Sample|r
-    >>|cRXP_WARN_Looting this will spawn 2 |cRXP_ENEMY_Blackwood Furbolgs|r that will agro and run at you. Be ready to fight them or reset them|r
+    >>Open the |cRXP_PICK_Blackwood Nut Stores|r. Loot it for the |T133944:0|t|cRXP_LOOT_[Blackwood Nut Sample]|r
+    >>|cRXP_WARN_Looting this will spawn 2 |cRXP_ENEMY_Blackwood Furbolgs|r that will agro and run towards you. Be ready to fight them or reset them|r
+    >>|cRXP_WARN_If you see |cRXP_ENEMY_Xabraxxis|r yell in chat or see someone fighting him, help them. Open the |cRXP_PICK_Xabraxxis' Demon Bag|r he drops on the ground. Loot it for the|r |cRXP_LOOT_Talisman of Corruption|r
     .collect 12343,1,4763,1 -- Blackwood Nut Sample (1)
+    .complete 4763,1 --Talisman of Corruption (1)
+    .disablecheckbox
+    .itemcount 12355,<1 --Talisman of Corruption (<1)
 step
+    #sticky
+    #requires Blackwood2
+    #label Blackwood3
+    .goto Darkshore,52.38,33.39,0
     .goto Darkshore,52.86,33.41
-    >>Open the |cRXP_PICK_Blackwood Fruit Stores|r. Loot it for the |cRXP_LOOT_Blackwood Fruit Sample|r
-    >>|cRXP_WARN_Looting this will spawn 2 |cRXP_ENEMY_Blackwood Furbolgs|r that will agro and run at you. Be ready to fight them or reset them|r
+    >>Open the |cRXP_PICK_Blackwood Fruit Stores|r. Loot it for the |T134013:0|t|cRXP_LOOT_[Blackwood Fruit Sample]|r
+    >>|cRXP_WARN_Looting this will spawn 2 |cRXP_ENEMY_Blackwood Furbolgs|r that will agro and run towards you. Be ready to fight them or reset them|r
+    >>|cRXP_WARN_If you see |cRXP_ENEMY_Xabraxxis|r yell in chat or see someone fighting him, help them. Open the |cRXP_PICK_Xabraxxis' Demon Bag|r he drops on the ground. Loot it for the|r |cRXP_LOOT_Talisman of Corruption|r
     .collect 12341,1,4763,1 -- Blackwood Fruit Sample (1)
+    .complete 4763,1 --Talisman of Corruption (1)
+    .disablecheckbox
+    .itemcount 12355,<1 --Talisman of Corruption (<1)
 step
     #optional
+    #requires Blackwood3
     #completewith next
     .goto Darkshore,52.38,33.39
     .cast 16072 >> |cRXP_WARN_Use the|r |T134712:0|t[Filled Cleansing Bowl] |cRXP_WARN_at the |cRXP_PICK_Bonfire|r to summon|r |cRXP_ENEMY_Xabraxxis|r
     .timer 17,The Blackwood Corrupted RP
     .use 12347
 step
+    #requires Blackwood3
     .goto Darkshore,52.38,33.39
     >>Kill |cRXP_ENEMY_Xabraxxis|r. Open the |cRXP_PICK_Xabraxxis' Demon Bag|r he drops on the ground. Loot it for the |cRXP_LOOT_Talisman of Corruption|r
     .use 12347
@@ -4203,7 +4250,7 @@ step
 step
     #optional
     #completewith BeachedCloak
-    .abandon 2078 >> Abandon Gyromasts Revenge
+    .abandon 2078 >> Abandon Gyromast's Revenge
 step << Druid
     #xprate <1.5
     #optional
@@ -4222,7 +4269,7 @@ step
     #sticky
     #label DeleteGyromast
     #optional
-    .destroy 7442 >> Delete |T134459:0|t[Gyromast's Key] Gyromast's Key from your bags, as it's no longer needed
+    .destroy 7442 >> Delete |T134459:0|t[Gyromast's Key] from your bags, as it's no longer needed
 step << Hunter/Warrior
     #season 2
     #completewith next
@@ -4452,6 +4499,21 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
     .turnin 4763 >> Turn in The Blackwood Corrupted
     .target Thundris Windweaver
+step
+    #xprate >1.59
+    #optional
+    #completewith BeachedCloak
+    .destroy 12342 >> Delete the |T134939:0|t|cRXP_LOOT_[Blackwood Grain Sample]|r from your bags, as it's no longer needed
+step
+    #xprate >1.59
+    #optional
+    #completewith BeachedCloak
+    .destroy 12343 >> Delete the |T133944:0|t|cRXP_LOOT_[Blackwood Nut Sample]|r from your bags, as it's no longer needed
+step
+    #xprate >1.59
+    #optional
+    #completewith BeachedCloak
+    .destroy 12341 >> Delete the |T134013:0|t|cRXP_LOOT_[Blackwood Fruit Sample]|r from your bags, as it's no longer needed
 step
     #xprate >1.59
     .goto 1439,38.843,43.416
@@ -6071,6 +6133,21 @@ step << !NightElf
     .target Thundris Windweaver
 step << !NightElf
     #xprate <1.59
+    #optional
+    #completewith BeachedCloak
+    .destroy 12342 >> Delete the |T134939:0|t|cRXP_LOOT_[Blackwood Grain Sample]|r from your bags, as it's no longer needed
+step << !NightElf
+    #xprate <1.59
+    #optional
+    #completewith BeachedCloak
+    .destroy 12343 >> Delete the |T133944:0|t|cRXP_LOOT_[Blackwood Nut Sample]|r from your bags, as it's no longer needed
+step << !NightElf
+    #xprate <1.59
+    #optional
+    #completewith BeachedCloak
+    .destroy 12341 >> Delete the |T134013:0|t|cRXP_LOOT_[Blackwood Fruit Sample]|r from your bags, as it's no longer needed
+step << !NightElf
+    #xprate <1.59
     .goto 1439,38.843,43.416
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun Treetender|r
     .turnin 2139 >> Turn in Tharnariun's Hope
@@ -6199,6 +6276,21 @@ step << NightElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
     .turnin 4763 >> Turn in The Blackwood Corrupted
     .target Thundris Windweaver
+step << NightElf
+    #xprate <1.59
+    #optional
+    #completewith LostMasters
+    .destroy 12342 >> Delete the |T134939:0|t|cRXP_LOOT_[Blackwood Grain Sample]|r from your bags, as it's no longer needed
+step << NightElf
+    #xprate <1.59
+    #optional
+    #completewith LostMasters
+    .destroy 12343 >> Delete the |T133944:0|t|cRXP_LOOT_[Blackwood Nut Sample]|r from your bags, as it's no longer needed
+step << NightElf
+    #xprate <1.59
+    #optional
+    #completewith LostMasters
+    .destroy 12341 >> Delete the |T134013:0|t|cRXP_LOOT_[Blackwood Fruit Sample]|r from your bags, as it's no longer needed
 step << NightElf Hunter
     #xprate <1.59
     .goto Darkshore,37.45,40.50
@@ -6213,6 +6305,7 @@ step << NightElf
     .target Tharnariun Treetender
 step << NightElf
     #xprate <1.59
+    #label LostMasters
     .goto 1439,39.373,43.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
     .turnin 986 >> Turn in A Lost Master

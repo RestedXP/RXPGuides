@@ -307,9 +307,9 @@ step << Gnome Mage/Gnome Warlock/Dwarf Priest
     #completewith Observations
     .equip 10,711 >> |cRXP_WARN_Equip the|r |T132961:0|t[Tattered Cloth Gloves]
     .use 711
-    .train 402862,1 << Priest
-    .train 401760,1 << Mage
-    .train 403919,1 << Warlock
+    .train 402862,3 << Priest
+    .train 401760,3 << Mage
+    .train 403919,3 << Warlock
 step << Gnome Mage/Gnome Warlock/Dwarf Priest
     #season 2
     #requires GlovesEquip
@@ -317,9 +317,9 @@ step << Gnome Mage/Gnome Warlock/Dwarf Priest
     .engrave 10 >>|cRXP_WARN_Engrave your|r |T132961:0|t[Tattered Cloth Gloves] with|r |T133816:0|t[Engrave Gloves - Ice Lance] << Mage
     .engrave 10 >>|cRXP_WARN_Engrave your|r |T132961:0|t[Tattered Cloth Gloves] with|r |T133816:0|t[Engrave Gloves - Haunt] << Warlock
     .engrave 10 >>|cRXP_WARN_Engrave your|r |T132961:0|t[Tattered Cloth Gloves] with|r |T133816:0|t[Engrave Gloves - Penance] << Priest
-    .train 402862,1 << Priest
-    .train 401760,1 << Mage
-    .train 403919,1 << Warlock
+    .train 402862,3 << Priest
+    .train 401760,3 << Mage
+    .train 403919,3 << Warlock
 --XX SoD level 2 Training/Rune quest accept end
 --XX SoD Warlock Imp Quest Start
 step << Warlock
@@ -3994,7 +3994,7 @@ step << Dwarf Paladin
 step << Dwarf Paladin
     #xprate >1.49
     .goto 1455,27.622,12.177
-    >>|cRXP_WARN_Use the |T133464:0|t|cRXP_LOOT_[The Tome of Divinity]|r to start the quest|r
+    >>|cRXP_WARN_Use the |T133739:0|t|cRXP_LOOT_[The Tome of Divinity]|r to start the quest|r
     .accept 1646 >>Accept The Tome of Divinity
     .use 6916
 step << Dwarf Paladin
@@ -5364,7 +5364,8 @@ RXPGuides.RegisterGuide([[
 << Alliance !Hunter
 #group RestedXP Alliance 1-20
 #name 12-14 Loch Modan (Dwarf/Gnome)
-#displayname 12-14 Loch Modan
+#displayname 12-15 Loch Modan << SoD !Warlock
+#displayname 13-15 Loch Modan << SoD Warlock
 #next 13-15 Westfall;14-16 Darkshore
 #defaultfor Gnome/Dwarf
 
@@ -5625,7 +5626,7 @@ step << Dwarf Paladin
 step << Dwarf Paladin
     #xprate <1.5
     .goto 1455,27.622,12.177
-    >>|cRXP_WARN_Use the |T133464:0|t|cRXP_LOOT_[The Tome of Divinity]|r to start the quest|r
+    >>|cRXP_WARN_Use the |T133739:0|t|cRXP_LOOT_[The Tome of Divinity]|r to start the quest|r
     .accept 1646 >>Accept The Tome of Divinity
     .use 6916
 step << Dwarf Paladin
@@ -7103,6 +7104,7 @@ step
 step
     #xprate >1.49
     #label DarkshoreBoat
+    .goto 1437,4.370,56.762
     .zone Darkshore >> Take the boat to Darkshore
     >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_while waiting for the boat to Darkshore|r
     >>|cRXP_WARN_Level up your|r |T133971:0|t[Cooking] |cRXP_WARN_using the|r |T133970:0|t[Chunks of Boar Meat] |cRXP_WARN_you farmed earlier. Level it to 10 ideally|r
@@ -7120,7 +7122,8 @@ RXPGuides.RegisterGuide([[
 << Alliance Hunter
 #group RestedXP Alliance 1-20
 #name 6-11 Dun Morogh (Hunter)
-#displayname 6-11 Dun Morogh
+#displayname 6-11 Dun Morogh << !SoD
+#displayname 6-12 Dun Morogh << SoD
 #next 11-13 Loch Modan (Hunter)
 #defaultfor Dwarf Hunter
 
@@ -7836,7 +7839,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Alliance 1-20
 #name 11-13 Loch Modan (Hunter)
 #displayname 11-13 Loch Modan << !SoD
-#displayname 12-14 Loch Modan << SoD
+#displayname 12-15 Loch Modan << SoD
 #next 14-16 Darkshore
 #defaultfor Dwarf
 

@@ -7,14 +7,16 @@ RXPGuides.RegisterGuide([[
 #title Shadowstrike
 
 step << Rogue
+    #season 2
     .goto Elwynn Forest,52.544,51.922
-    >>Open the |cRXP_PICK_Defias Stashbox|r on the ground. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r
+    >>|cRXP_WARN_Open the |cRXP_PICK_Defias Stashbox|r on the ground. Loot it for the|r |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r
     .collect 204795,1 -- Rune of Shadowstrike (1)
     .train 400105,1
 step << Rogue
-    .train 400105 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Shadowstrike]
+    #season 2
+    .train 400105 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r |cRXP_WARN_to learn|r |T132291:0|t[Shadowstrike]
     .use 204795
-    .itemcount 204795,1 --Rune of Shadowstrike (1)
+    .itemcount 204795,1
 ]])
 
 RXPGuides.RegisterGuide([[
