@@ -209,11 +209,6 @@ step << Mage
     >>|cRXP_WARN_NOTE: You will be unable to train|r |T133816:0|t[Engrave Gloves - Ice Lance] |cRXP_WARN_here as you can only get a|r |T133736:0|t[Comprehension Primer] |cRXP_WARN_in your race's starting zone|r << !Gnome
     .collect 203751,1,77667,1 -- Spell Notes: CALE ENCI (1)
     .train 401760,1
-step << Gnome Mage
-    #season 2
-    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
-    .use 203751
-    .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
 step << Warlock
     #season 2
     .goto Dun Morogh,26.733,72.552
@@ -264,15 +259,6 @@ step << Rogue
     .accept 77659 >> Accept Thrice Stolen << Gnome
     .train 1784 >>Train |T132320:0|t[Stealth]
     .target Solm Hargrin
-step << Mage
-    #season 2
-    .goto Dun Morogh,28.709,66.366
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r inside
-    .turnin 3114 >> Turn in Glyphic Memorandum << Gnome
-    .accept 77667 >> Accept Spell Research << Gnome
-    .turnin 77667 >> Turn in Spell Research << Gnome
-    .train 1459 >> Train |T135932:0|t[Arcane Intellect]
-    .target Marryk Nurribit
 step << Priest
     #season 2
     .goto Dun Morogh,28.600,66.385
@@ -301,24 +287,21 @@ step << Dwarf Priest
     .turnin 77661 >> Turn in Meditation on the Light
     .target Branstock Khalder
     .isQuestComplete 77661
-step << Gnome Mage/Gnome Warlock/Dwarf Priest
+step << Gnome Warlock/Dwarf Priest
     #season 2
     #label GlovesEquip
     #completewith Observations
     .equip 10,711 >> |cRXP_WARN_Equip the|r |T132961:0|t[Tattered Cloth Gloves]
     .use 711
     .train 402862,3 << Priest
-    .train 401760,3 << Mage
     .train 403919,3 << Warlock
-step << Gnome Mage/Gnome Warlock/Dwarf Priest
+step << Gnome Warlock/Dwarf Priest
     #season 2
     #requires GlovesEquip
     #completewith Observations
-    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132961:0|t[Tattered Cloth Gloves] with|r |T133816:0|t[Engrave Gloves - Ice Lance] << Mage
     .engrave 10 >>|cRXP_WARN_Engrave your|r |T132961:0|t[Tattered Cloth Gloves] with|r |T133816:0|t[Engrave Gloves - Haunt] << Warlock
     .engrave 10 >>|cRXP_WARN_Engrave your|r |T132961:0|t[Tattered Cloth Gloves] with|r |T133816:0|t[Engrave Gloves - Penance] << Priest
     .train 402862,3 << Priest
-    .train 401760,3 << Mage
     .train 403919,3 << Warlock
 --XX SoD level 2 Training/Rune quest accept end
 --XX SoD Warlock Imp Quest Start
@@ -1010,9 +993,35 @@ step << Mage
     #season 2
     .goto Dun Morogh,28.709,66.366
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r inside
+    .turnin 3114 >> Turn in Glyphic Memorandum << Gnome
+    .accept 77667 >> Accept Spell Research << Gnome
     .train 1459 >> Train |T135932:0|t[Arcane Intellect]
     .train 116 >> Train |T135846:0|t[Frostbolt]
     .target Marryk Nurribit
+step << Gnome Mage
+    #season 2
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
+    .use 203751
+    .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
+step << Gnome Mage
+    #season 2
+    .goto Dun Morogh,28.709,66.366
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r inside
+    .turnin 77667 >> Turn in Spell Research
+    .target Marryk Nurribit
+step << Gnome Mage
+    #season 2
+    #label GlovesEquip
+    #completewith Observations
+    .equip 10,711 >> |cRXP_WARN_Equip the|r |T132961:0|t[Tattered Cloth Gloves]
+    .use 711
+    .train 401760,3
+step << Gnome Mage
+    #season 2
+    #requires GlovesEquip
+    #completewith Observations
+    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132961:0|t[Tattered Cloth Gloves] with|r |T133816:0|t[Engrave Gloves - Ice Lance]
+    .train 401760,3
 step << Rogue
     #season 0,1
     .goto Dun Morogh,28.369,67.513
