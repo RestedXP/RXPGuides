@@ -1,6 +1,6 @@
 local _, addon = ...
 
-if addon.player.class ~= "HUNTER" then return end
+if addon.player.class ~= "HUNTER" or addon.gameVersion >= 40000 then return end
 
 addon.talents.RegisterGuide([[
 #name Hardcore Hunter 10-60
@@ -11,7 +11,7 @@ addon.talents.RegisterGuide([[
 
 level -- Endurance Training Rank 1
 	.talent 1,1,3,1
-	
+
 level -- Endurance Training Rank 2
 	.talent 1,1,3,2
 
@@ -50,7 +50,7 @@ level -- Pathfinding Rank 2
 
 level -- Unleashed Fury Rank 1
 	.talent 1,3,3,1
-	
+
 level -- Unleashed Fury Rank 2
 	.talent 1,3,3,2
 
@@ -65,7 +65,7 @@ level -- Unleashed Fury Rank 5
 
 level -- Ferocity Rank 1
 	.talent 1,4,3,1
-	
+
 level -- Ferocity Rank 2
 	.talent 1,4,3,2
 
@@ -171,7 +171,7 @@ addon.talents.RegisterGuide([[
 
 level -- Endurance Training Rank 1
 	.talent 1,1,3,1
-	
+
 level -- Endurance Training Rank 2
 	.talent 1,1,3,2
 
@@ -210,7 +210,7 @@ level -- Pathfinding Rank 2
 
 level -- Unleashed Fury Rank 1
 	.talent 1,3,3,1
-	
+
 level -- Unleashed Fury Rank 2
 	.talent 1,3,3,2
 
@@ -225,7 +225,7 @@ level -- Unleashed Fury Rank 5
 
 level -- Ferocity Rank 1
 	.talent 1,4,3,1
-	
+
 level -- Ferocity Rank 2
 	.talent 1,4,3,2
 

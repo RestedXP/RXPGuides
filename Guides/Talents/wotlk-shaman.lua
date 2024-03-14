@@ -1,6 +1,6 @@
 local _, addon = ...
 
-if addon.player.class ~= "SHAMAN" then return end
+if addon.player.class ~= "SHAMAN" or addon.gameVersion >= 40000 then return end
 
 addon.talents.RegisterGuide([[
 #name Shaman 10-80
