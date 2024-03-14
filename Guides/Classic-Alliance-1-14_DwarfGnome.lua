@@ -2107,7 +2107,8 @@ step << Priest/Mage/Warlock
     #completewith next
     .goto Dun Morogh,30.453,46.005
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keeg Gibn|r
-    .collect 1179,20 |cRXP_BUY_Buy up to 20|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_Buy up to 20|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r
+    .collect 1179,20
     .target Keeg Gibn
     .isOnQuest 318
 step
@@ -3318,6 +3319,7 @@ step << Mage
     #requires rune1
     #completewith GolBolarQuarry
     .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r]
+    .disablecheckbox
     .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r |cRXP_WARN_to train|r |T236227:0|t[Fingers of Frost]
     .use 203753
 step
@@ -3608,6 +3610,7 @@ step << Mage
     #season 2
     #completewith next
     .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r]
+    .disablecheckbox
     .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r |cRXP_WARN_to train|r |T236227:0|t[Fingers of Frost]
     .use 203753
 step
@@ -4038,6 +4041,14 @@ step << Dwarf Paladin
     .turnin 1648 >>Turn in The Tome of Divinity
     .accept 1778 >>Accept The Tome of Divinity
     .unitscan John Turner
+step << Mage
+    #season 2
+    .goto Ironforge,19.197,56.094
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barim Jurgenstaad|r
+    >>|cRXP_BUY_Buy 5|r |T135933:0|t[Comprehension Charms] |cRXP_BUY_from him|r
+    >>|cRXP_WARN_These are needed for learning runes|r
+    .collect 211779,5
+    .target Barim Jurgenstaad
 step
     #ah
     .goto Ironforge,25.800,75.500,-1

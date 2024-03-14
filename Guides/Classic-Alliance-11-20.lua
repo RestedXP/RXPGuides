@@ -2427,6 +2427,7 @@ step
     .itemcount 5382,1 --Anaya's Pendant (1)
 step
     #label FurbolgGrindEnd
+    #completewith TOTH
     #optional
     .subzone 442 >> Return to Auberdine
     .isOnQuest 4722
