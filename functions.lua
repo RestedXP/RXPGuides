@@ -1482,6 +1482,9 @@ addon.functions["goto"] = function(self, ...)
         local subzone,continent = zone:match("(.-)/(%d+)")
         if subzone then
             zone = addon.GetMapId(subzone) or tonumber(subzone)
+            if addon.mapConversion[element.zone] then
+                zone = addon.mapConversion[element.zone]
+            end
             x = tonumber(x)
             y = tonumber(y)
             local zx,zy = HBD:GetZoneCoordinatesFromWorld(x, y, zone)
@@ -1508,6 +1511,14 @@ addon.functions["goto"] = function(self, ...)
             element.wx, element.wy, element.instance =
               HBD:GetWorldCoordinatesFromZone(element.x / 100, element.y / 100,
                                             element.zone)
+
+            if addon.mapConversion[element.zone] then
+                zone = addon.mapConversion[element.zone]
+                local zx,zy = HBD:GetZoneCoordinatesFromWorld(element.wx, element.wy, zone)
+                element.x = zx * 100
+                element.y = zy * 100
+                element.zone = zone
+            end
         end
         element.text = text
 
@@ -1581,6 +1592,9 @@ function addon.functions.waypoint(self, text, zone, x, y, radius, lowPrio, ...)
         local subzone,continent = zone:match("(.-)/(%d+)")
         if subzone then
             zone = addon.GetMapId(subzone) or tonumber(subzone)
+            if addon.mapConversion[element.zone] then
+                zone = addon.mapConversion[element.zone]
+            end
             x = tonumber(x)
             y = tonumber(y)
             local zx,zy = HBD:GetZoneCoordinatesFromWorld(x, y, zone)
@@ -1622,6 +1636,14 @@ function addon.functions.waypoint(self, text, zone, x, y, radius, lowPrio, ...)
         element.wx, element.wy, element.instance =
             HBD:GetWorldCoordinatesFromZone(element.x / 100, element.y / 100,
                                             element.zone)
+
+            if addon.mapConversion[element.zone] then
+                zone = addon.mapConversion[element.zone]
+                local zx,zy = HBD:GetZoneCoordinatesFromWorld(element.wx, element.wy, zone)
+                element.x = zx * 100
+                element.y = zy * 100
+                element.zone = zone
+            end
         end
         element.arrow = true
         element.parent = true
@@ -1656,6 +1678,9 @@ function addon.functions.pin(self, ...)
         local subzone,continent = zone:match("(.-)/(%d+)")
         if subzone then
             zone = addon.GetMapId(subzone) or tonumber(subzone)
+            if addon.mapConversion[element.zone] then
+                zone = addon.mapConversion[element.zone]
+            end
             x = tonumber(x)
             y = tonumber(y)
             local zx,zy = HBD:GetZoneCoordinatesFromWorld(x, y, zone)
@@ -1679,6 +1704,14 @@ function addon.functions.pin(self, ...)
         element.wx, element.wy, element.instance =
             HBD:GetWorldCoordinatesFromZone(element.x / 100, element.y / 100,
                                             element.zone)
+
+            if addon.mapConversion[element.zone] then
+                zone = addon.mapConversion[element.zone]
+                local zx,zy = HBD:GetZoneCoordinatesFromWorld(element.wx, element.wy, zone)
+                element.x = zx * 100
+                element.y = zy * 100
+                element.zone = zone
+            end
         end
         element.mapTooltip = tooltip
         element.parent = true
