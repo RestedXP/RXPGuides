@@ -1654,7 +1654,7 @@ function addon.functions.line(self, text, zone, ...)
         else
             zone = lastZone
         end
-        local mapID = addon.mapId[zone] or tonumber(zone)
+        local mapID = addon.GetMapId(zone) or tonumber(zone)
         if not (segments and #segments > 0 and zone and mapID) then
             return addon.error(
                         L("Error parsing guide") .. " " .. (addon.currentGuideName or _G.NONE) ..
@@ -1702,7 +1702,7 @@ function addon.functions.loop(self, text, range, zone, ...)
         else
             zone = lastZone
         end
-        local mapID = addon.mapId[zone] or tonumber(zone)
+        local mapID = addon.GetMapId(zone) or tonumber(zone)
         if not (segments and #segments > 0 and zone and mapID) then
             return addon.error(
                         L("Error parsing guide") .. " "  .. (addon.currentGuideName or _G.NONE) ..
@@ -3160,7 +3160,7 @@ function addon.GetSubZoneId(zone,x,y)
     local subzone = GetSubZoneText() or 1
     local zoneText = GetZoneText() or 2
     if zone and x and y then
-       zone = addon.mapId[zone] or zone
+       zone = addon.GetMapId(zone) or zone
        x = x / 100
        y = y / 100
        subzone = MapUtil.FindBestAreaNameAtMouse(zone,x,y)
@@ -3272,7 +3272,7 @@ function addon.functions.zone(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
         local text, zone = ...
-        local mapID = addon.mapId[zone] or tonumber(zone)
+        local mapID = addon.GetMapId(zone) or tonumber(zone)
         if not (mapID and text) then
             return addon.error(
                         L("Error parsing guide") .. " " .. addon.currentGuideName ..
@@ -3301,7 +3301,7 @@ end
 function addon.functions.zoneskip(self, text, zone, flags)
     if type(self) == "string" then -- on parse
         local element = {}
-        local mapID = addon.mapId[zone] or tonumber(zone)
+        local mapID = addon.GetMapId(zone) or tonumber(zone)
         if not mapID then
             return addon.error(
                 L("Error parsing guide") .. " " .. addon.currentGuideName ..
@@ -4424,7 +4424,7 @@ function addon.functions.openmap(self, text, map, callback, ...)
         element.text = text
         element.textOnly = true
 
-        element.mapId = addon.mapId[map] or tonumber(map)
+        element.mapId = addon.GetMapId(map) or tonumber(map)
         return element
     end
 
@@ -4819,7 +4819,7 @@ function addon.CanPlayerFly(zoneOrContinent)
         local cwf = IsPlayerSpell(54197)
 
         --1945 = outland,113 = northrend
-        if ((continentId == addon.mapId["Outland"] or (cwf and continentId == addon.mapId["Northrend"])) and ridingSkill > 224) then
+        if ((continentId == addon.GetMapId("Outland") or (cwf and continentId == addon.GetMapId("Northrend"))) and ridingSkill > 224) then
             return true
         end
     end
@@ -4829,7 +4829,7 @@ events.noflyable = "ZONE_CHANGED"
 function addon.functions.noflyable(self, text, zone, skill)
     if type(self) == "string" then
         local element = {}
-        element.zone = tonumber(zone) or addon.mapId[zone]
+        element.zone = tonumber(zone) or addon.GetMapId(zone)
         if text and text ~= "" then element.text = text end
         element.textOnly = true
         element.reverse = true
@@ -4843,7 +4843,7 @@ events.flyable = "ZONE_CHANGED"
 function addon.functions.flyable(self, text, zone, skill)
     if type(self) == "string" then
         local element = {}
-        element.zone = tonumber(zone) or addon.mapId[zone]
+        element.zone = tonumber(zone) or addon.GetMapId(zone)
         if text and text ~= "" then element.text = text end
         element.textOnly = true
         element.skill = tonumber(skill) or -4
@@ -5130,7 +5130,7 @@ function addon.functions.isWorldQuestAvailable(self, ...)
         return
     elseif type(self) == "string" then -- on parse
         local text, mapId, questId, remaining = ...
-        mapId = addon.mapId[mapId] or tonumber(mapId)
+        mapId = addon.GetMapId(mapId) or tonumber(mapId)
         questId = tonumber(questId)
         if not (questId and mapId) then
             return addon.error(
