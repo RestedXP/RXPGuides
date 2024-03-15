@@ -4749,12 +4749,12 @@ for i,v in pairs(retailData) do
             classicId = v.parent
         elseif C_Map.GetMapInfo(addon.mapConversion[v.parent] or -1) then
             classicId = addon.mapConversion[v.parent]
-            print(v.name,i,classicId)
+            --print(v.name,i,classicId)
         end
     end
     addon.mapConversion[i] = classicId
     if classicId then
-        print(v.name,i,classicId)
+        --print(v.name,i,classicId)
     end
 end
 
