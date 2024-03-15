@@ -1,4 +1,5 @@
 local addonName, addon = ...
+if addon.game ~= "CLASSIC" then return end
 local L = addon.locale.Get
 local default_x = 420
 local default_y = -60

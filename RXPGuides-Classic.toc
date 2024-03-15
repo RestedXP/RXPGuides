@@ -20,6 +20,7 @@ Help.lua
 SettingsPanel.lua
 
 DB/classic.xml
+DB/cata.xml
 
 HSBatching.lua
 QuestLog.lua
