@@ -2104,23 +2104,24 @@ step
     #completewith next
     .zone Ashenvale >>Travel to |cFFfa9602Ashenvale|r
 step
-    .aura 430139,1 >>Use |T135142:0|t[Arcane Explosion] |cRXP_WARN_near the correct|r |cRXP_WARN_Purple Crystal|r
+    .aura 430139,1 >>|cRXP_WARN_Cast|r |T136116:0|t[Arcane Explosion] |cRXP_WARN_next to the|r |cRXP_PICK_Purple Crystal|r |cRXP_WARN_to gain the|r |T135734:0|t[Arcane Charge] |cRXP_WARN_buff|r
     .goto Ashenvale,13.06,24.84
     .train 401757,1
 step
-    .aura 430139,2+ >>Use |T135142:0|t[Arcane Explosion] |cRXP_WARN_near the correct|r |cRXP_WARN_Purple Crystal|r
+    .aura 430139,2+ >>|cRXP_WARN_Cast|r |T136116:0|t[Arcane Explosion] |cRXP_WARN_next to the|r |cRXP_PICK_Purple Crystal|r |cRXP_WARN_to gain another stack of the|r |T135734:0|t[Arcane Charge] |cRXP_WARN_buff|r
     .goto Ashenvale,14.04,19.80
     .train 401757,1
 step
-    .aura 430139,3+ >>Use |T135142:0|t[Arcane Explosion] |cRXP_WARN_near the correct|r |cRXP_WARN_Purple Crystal|r
+    .aura 430139,3+ >>|cRXP_WARN_Cast|r |T136116:0|t[Arcane Explosion] |cRXP_WARN_next to the|r |cRXP_PICK_Purple Crystal|r |cRXP_WARN_to gain another stack of the|r |T135734:0|t[Arcane Charge] |cRXP_WARN_buff|r
     .goto Ashenvale,13.50,15.75
     .train 401757,1
 step
     .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
-    .train 401757 >>|cRXP_WARN_Use|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Arcane Blast|r] to learn |T135820:0|t[Arcane Blast]
+    .train 401757 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Arcane Blast|r] |cRXP_WARN_to train|r |T135820:0|t[Arcane Blast]
     .use 211691
--- step
-    --.engrave 9,400574 >> Open your character sheet and engrave your gloves with |T135735:0|t[Arcane Blast.]
+step
+    #optional
+    .destroy 211777 >> Destroy the |T133737:0|t[Naga Manuscript]. You no longer need it
 ]])
 
 RXPGuides.RegisterGuide([[

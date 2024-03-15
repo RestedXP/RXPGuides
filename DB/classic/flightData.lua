@@ -1,5 +1,6 @@
 local _,addon = ...
 
+if addon.game ~= "CLASSIC" then return end
 addon.FPDB = {
     ["Horde"] = {
         [58] = {

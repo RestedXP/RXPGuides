@@ -1478,7 +1478,24 @@ addon.functions["goto"] = function(self, ...)
         else
             zone = lastZone
         end
-        element.zone, element.x , element.y = addon.GetMapInfo(zone,x,y)
+        --print(zone)
+        local subzone,continent = zone:match("(.-)/(%d+)")
+        if subzone then
+            zone = addon.GetMapId(subzone) or tonumber(subzone)
+            x = tonumber(x)
+            y = tonumber(y)
+            local zx,zy = HBD:GetZoneCoordinatesFromWorld(x, y, zone)
+            if zx and zy then
+                element.wx = x
+                element.wy = y
+                element.x = zx*100
+                element.y = zy*100
+                element.zone = zone
+                element.instance = tonumber(continent)
+            end
+        else
+            element.zone, element.x , element.y = addon.GetMapInfo(zone,x,y)
+        end
         if not (element.x and element.y and element.zone) then
             return addon.error(
                         L("Error parsing guide") .. " "  .. addon.currentGuideName ..
@@ -1487,10 +1504,11 @@ addon.functions["goto"] = function(self, ...)
 
         element.radius = tonumber(radius)
         radius = element.radius
-        element.wx, element.wy, element.instance =
-            HBD:GetWorldCoordinatesFromZone(element.x / 100, element.y / 100,
+        if not subzone then
+            element.wx, element.wy, element.instance =
+              HBD:GetWorldCoordinatesFromZone(element.x / 100, element.y / 100,
                                             element.zone)
-
+        end
         element.text = text
 
         if radius then
@@ -1560,7 +1578,23 @@ function addon.functions.waypoint(self, text, zone, x, y, radius, lowPrio, ...)
         else
             zone = lastZone
         end
-        element.zone, element.x , element.y = addon.GetMapInfo(zone,x,y)
+        local subzone,continent = zone:match("(.-)/(%d+)")
+        if subzone then
+            zone = addon.GetMapId(subzone) or tonumber(subzone)
+            x = tonumber(x)
+            y = tonumber(y)
+            local zx,zy = HBD:GetZoneCoordinatesFromWorld(x, y, zone)
+            if zx and zy then
+                element.wx = x
+                element.wy = y
+                element.x = zx*100
+                element.y = zy*100
+                element.zone = zone
+                element.instance = tonumber(continent)
+            end
+        else
+            element.zone, element.x , element.y = addon.GetMapInfo(zone,x,y)
+        end
         if not (element.x and element.y and element.zone) then
             return addon.error(
                         L("Error parsing guide") .. " "  .. addon.currentGuideName ..
@@ -1584,10 +1618,11 @@ function addon.functions.waypoint(self, text, zone, x, y, radius, lowPrio, ...)
             element.dynamic = true
             element.radius = math.abs(element.radius)
         end
+        if not subzone then
         element.wx, element.wy, element.instance =
             HBD:GetWorldCoordinatesFromZone(element.x / 100, element.y / 100,
                                             element.zone)
-
+        end
         element.arrow = true
         element.parent = true
         element.hidePin = true
@@ -1618,17 +1653,33 @@ function addon.functions.pin(self, ...)
         else
             zone = lastZone
         end
-        element.zone, element.x , element.y = addon.GetMapInfo(zone,x,y)
+        local subzone,continent = zone:match("(.-)/(%d+)")
+        if subzone then
+            zone = addon.GetMapId(subzone) or tonumber(subzone)
+            x = tonumber(x)
+            y = tonumber(y)
+            local zx,zy = HBD:GetZoneCoordinatesFromWorld(x, y, zone)
+            if zx and zy then
+                element.wx = x
+                element.wy = y
+                element.x = zx*100
+                element.y = zy*100
+                element.zone = zone
+                element.instance = tonumber(continent)
+            end
+        else
+            element.zone, element.x , element.y = addon.GetMapInfo(zone,x,y)
+        end
         if not (element.x and element.y and element.zone) then
             return addon.error(
                         L("Error parsing guide") .. " "  .. addon.currentGuideName ..
                            ": Invalid coordinates or map name\n" .. self)
         end
-
+        if not subzone then
         element.wx, element.wy, element.instance =
             HBD:GetWorldCoordinatesFromZone(element.x / 100, element.y / 100,
                                             element.zone)
-
+        end
         element.mapTooltip = tooltip
         element.parent = true
         element.text = text
