@@ -1515,6 +1515,11 @@ addon.functions["goto"] = function(self, ...)
             if addon.mapConversion[element.zone] then
                 zone = addon.mapConversion[element.zone]
                 local zx,zy = HBD:GetZoneCoordinatesFromWorld(element.wx, element.wy, zone)
+                if not (zx and zy) then
+                    local info = C_Map.GetMapInfo(zone)
+                    zone = info.parentMapID
+                    zx,zy = HBD:GetZoneCoordinatesFromWorld(element.wx, element.wy, zone)
+                end
                 element.x = zx * 100
                 element.y = zy * 100
                 element.zone = zone
@@ -1640,6 +1645,11 @@ function addon.functions.waypoint(self, text, zone, x, y, radius, lowPrio, ...)
             if addon.mapConversion[element.zone] then
                 zone = addon.mapConversion[element.zone]
                 local zx,zy = HBD:GetZoneCoordinatesFromWorld(element.wx, element.wy, zone)
+                if not (zx and zy) then
+                    local info = C_Map.GetMapInfo(zone)
+                    zone = info.parentMapID
+                    zx,zy = HBD:GetZoneCoordinatesFromWorld(element.wx, element.wy, zone)
+                end
                 element.x = zx * 100
                 element.y = zy * 100
                 element.zone = zone
@@ -1708,6 +1718,11 @@ function addon.functions.pin(self, ...)
             if addon.mapConversion[element.zone] then
                 zone = addon.mapConversion[element.zone]
                 local zx,zy = HBD:GetZoneCoordinatesFromWorld(element.wx, element.wy, zone)
+                if not (zx and zy) then
+                    local info = C_Map.GetMapInfo(zone)
+                    zone = info.parentMapID
+                    zx,zy = HBD:GetZoneCoordinatesFromWorld(element.wx, element.wy, zone)
+                end
                 element.x = zx * 100
                 element.y = zy * 100
                 element.zone = zone
