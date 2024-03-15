@@ -3719,7 +3719,7 @@ step << Druid
 --XX Add waypoints later
 step << !NightElf !Hunter !Druid
     #label Southcrabs
-    #completewith next
+    #completewith CleansingTharnariun
     .hs >> Hearth to Auberdine
 step << Druid
     #label Southcrabs
@@ -4224,7 +4224,8 @@ step
     #optional
     #completewith next
     .goto 1439,55.802,18.290
-    .gossipoption 87696 >> Talk to |cRXP_FRIENDLY_The Threshwackonator 4100|r to start the escort
+    .gossip 6669,0 >> Talk to |cRXP_FRIENDLY_The Threshwackonator 4100|r to start the escort
+    .skipgossip
     >>|cRXP_WARN_This quest is VERY difficult|r
     .target The Threshwackonator 4100
     .isOnQuest 2078 << Warrior/Paladin/Rogue
@@ -4981,7 +4982,6 @@ step << Mage
     .dungeon !DM
 step << Mage
     #xprate >1.59
-    #sticky
     #label MilstaffNoDM
     .goto Ironforge,25.50,7.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milstaff Stormeye|r
@@ -5745,11 +5745,11 @@ step << Mage
     .goto 1453,38.035,81.729,6,0
     .goto 1453,37.550,82.500,10,0
     >>Ascend the Mage Tower. Go through the Green Portal
-    .goto Stormwind City,38.61,79.39,15 >>Travel toward |cRXP_FRIENDLY_Larimaine Purdue|r
+    .goto Stormwind City,39.681,79.538,15 >>Travel toward |cRXP_FRIENDLY_Larimaine Purdue|r
     .dungeon !DM
 step << Mage
     #xprate >1.59
-    .goto Stormwind City,38.61,79.39
+    .goto Stormwind City,39.681,79.538
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Larimaine Purdue|r
     .train 3561 >> Train |T135763:0|t[Teleport: Stormwind]
     .target Larimaine Purdue
@@ -6645,7 +6645,6 @@ step << Mage
     .dungeon DM
 step << Mage
     #xprate >1.59
-    #sticky
     #label MilstaffDM
     .goto Ironforge,25.50,7.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milstaff Stormeye|r
@@ -7160,11 +7159,11 @@ step << Mage
     .goto 1453,38.035,81.729,6,0
     .goto 1453,37.550,82.500,10,0
     >>Ascend the Mage Tower. Go through the Green Portal
-    .goto Stormwind City,38.61,79.39,15 >>Travel toward |cRXP_FRIENDLY_Larimaine Purdue|r
+    .goto Stormwind City,39.681,79.538,15 >>Travel toward |cRXP_FRIENDLY_Larimaine Purdue|r
     .dungeon DM
 step << Mage
     #xprate >1.59
-    .goto Stormwind City,38.61,79.39
+    .goto Stormwind City,39.681,79.538
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Larimaine Purdue|r
     .train 3561 >> Train |T135763:0|t[Teleport: Stormwind]
     .target Larimaine Purdue
@@ -10953,7 +10952,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Hollee|r
     .accept 729 >> Accept The Absent Minded Prospector
     .target Archaeologist Hollee
-step << !sod
+step
     #xprate <1.59
     .goto 1439,38.325,43.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gershala Nightwhisper|r
@@ -10961,7 +10960,7 @@ step << !sod
     .target Gershala Nightwhisper
     .isOnQuest 3765
 --  .dungeon !DM << NightElf Warrior/Mage/Warlock/Rogue
-step << !sod
+step
     #xprate >1.59
     .goto 1439,38.325,43.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gershala Nightwhisper|r
@@ -11033,6 +11032,7 @@ step
     .goto Darkshore,44.44,84.69
     >>|cRXP_WARN_Wait out the RP|r
     .complete 995,1 --Help Volcor escape the cave (1)
+    .isOnQuest 995
 step
     #xprate >1.49
     #optional
@@ -11271,6 +11271,7 @@ step
     .goto Darkshore,44.44,84.69
     >>|cRXP_WARN_Wait out the RP|r
     .complete 995,1
+    .isOnQuest 995
 step
     #xprate <1.5
     .goto 1439,43.555,76.293
@@ -11466,18 +11467,15 @@ step
     .isQuestComplete 945
 step
     #optional
-    #completewith next
-    .goto Ashenvale,25.49,39.59,20,0
-    .goto Ashenvale,25.98,41.72,20,0
-    .goto Ashenvale,26.88,44.47,30,0
-    .goto Ashenvale,28.16,47.68,60,0
-    .goto Ashenvale,34.40,48.00,50 >> Travel to Astranaar
+    #completewith TZS
+    .subzone 415 >> Travel to Astranaar
 step
     .goto Ashenvale,34.40,48.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daelyshia|r
     .fp Astranaar >> Get the Astranaar Flight Path
 	.target Daelyshia
 step
+    #label TZS
     .goto Ashenvale,34.67,48.83
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shindrell Swiftfire|r
     .accept 1008 >> Accept The Zoram Strand
