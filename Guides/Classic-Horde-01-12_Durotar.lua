@@ -7675,7 +7675,8 @@ step << Warlock/Mage/Priest
     >>|cRXP_BUY_Buy|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from her|r --Refreshing Spring Water (10)
     .collect 159,10,786,1
     .target K'waii
-    .money <0.0050
+    .money >0.001
+    .money <0.005
 step << Shaman
     .goto Durotar,56.47,73.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Trayexir|r
