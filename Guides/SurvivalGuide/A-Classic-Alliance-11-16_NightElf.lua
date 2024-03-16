@@ -462,7 +462,7 @@ step
     .goto Darkshore,42.73,45.67
     >>Kill |cRXP_ENEMY_Moonkins|r. Loot them for their |T132832:0|t[|cRXP_LOOT_Small Eggs|r]
     >>|cRXP_WARN_You will level|r |T133971:0|t[Cooking] |cRXP_WARN_to 10 later using|r |T132832:0|t[|cRXP_LOOT_Small Eggs|r]
-    .collect 6889,9,2178 -- Small Egg
+    .collect 6889,10,2178 -- Small Egg
     .skill cooking,10,1 -- step displays if cooking skill is less than 10
     .mob Young Moonkin
     .mob Raging Moonkin
@@ -794,7 +794,7 @@ step
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
     .collect 3174,3,418,1 --Collect Spider Ichor (x3)
-    >>|cRXP_WARN_Save any|r |T133970:0|t[Chunks of Boar Meat] |cRXP_WARN_to use for leveling |T133971:0|t[Cooking] |cRXP_WARN_later|r
+    >>|cRXP_WARN_Save any|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_to use for leveling |T133971:0|t[Cooking] |cRXP_WARN_later|r
     .mob Elder Black Bear
     .mob Mountain Boar
     .mob Forest Lurker

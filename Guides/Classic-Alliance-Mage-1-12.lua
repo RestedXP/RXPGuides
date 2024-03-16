@@ -307,7 +307,7 @@ step
 .target "Auntie" Bernice Stonefield
     .accept 84 >> Accept Back to Billy
 step
-    .goto Elwynn Forest,34.9,83.9
+    .goto 1429,34.945,83.855
 >>Talk to |cRXP_FRIENDLY_Gramma Stonefield|r
     .turnin 111 >> Turn in Speak with Gramma
 .target Gramma Stonefield
@@ -1865,7 +1865,7 @@ step
     .goto Wetlands,10.4,56.0,15,0
     .goto Wetlands,10.1,56.9,15,0
     .goto Wetlands,10.6,57.2,15,0
-    .goto Wetlands,10.7,56.8
+    .goto 1437,10.760,56.721
     .vendor >> If you have 8s, Check for Bronze Tube from Neal Allen and buy it if it's there
 step
     .money <0.04

@@ -394,7 +394,7 @@ step
     .target Remy "Two Times"
 step
     #completewith BoarMeat1
-    >>Kill |cRXP_ENEMY_Stonetusk Boars|r. Loot them for |cRXP_LOOT_Chunks of Boar Meat|r
+    >>Kill |cRXP_ENEMY_Stonetusk Boars|r. Loot them for |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     .collect 769,4,86,1 --Collect Chunk of Boar Meat (x4)
     .mob Stonetusk Boar
 step
@@ -431,7 +431,7 @@ step
     .target Joshua Maclure
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Stonetusk Boars|r. Loot them for |cRXP_LOOT_Chunks of Boar Meat|r
+    >>Kill |cRXP_ENEMY_Stonetusk Boars|r. Loot them for |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     .collect 769,4,86,1 --Collect Chunk of Boar Meat (x4)
     .mob Stonetusk Boar
 step
@@ -442,7 +442,7 @@ step
     .target Tommy Joe Stonefield
 step
     .loop 35,Elwynn Forest,31.15,85.36,33.08,86.64,33.51,85.22,32.17,83.88,31.15,85.36
-    >>Kill |cRXP_ENEMY_Stonetusk Boars|r. Loot them for |cRXP_LOOT_Chunks of Boar Meat|r
+    >>Kill |cRXP_ENEMY_Stonetusk Boars|r. Loot them for |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     .collect 769,4,86,1 --Collect Chunk of Boar Meat (x4)
     .mob Stonetusk Boar
 step
@@ -489,7 +489,7 @@ step
     #label Mine
     .goto Elwynn Forest,39.07,80.87,12,0
     .goto Elwynn Forest,39.71,79.92
-    >>Go into one of the main rooms of the Fargodeep Mine
+    >>Enter one of the larger open spaces in Fargodeep Mine
     .complete 62,1 --Scout Through the Fargodeep Mine
 step
     #completewith next
@@ -1061,7 +1061,7 @@ step
     .target Rudra Amberstill
 step
     #completewith Ghilm
-    +|cRXP_WARN_Remember to save|r |T133970:0|t[Chunks of Boar Meat] |cRXP_WARN_you get for leveling|r |T133971:0|t[Cooking] |cRXP_WARN_to 50 later|r
+    +|cRXP_WARN_Remember to save|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_you get for leveling|r |T133971:0|t[Cooking] |cRXP_WARN_to 50 later|r
 step
     #completewith next
     .goto Dun Morogh,66.34,50.92,50,0
@@ -1668,7 +1668,7 @@ step
 step
     #completewith StockingJ
     .goto Dun Morogh,36.51,62.94,40,0
-    >>Kill |cRXP_ENEMY_Crag Boars|r. Loot them for |cRXP_LOOT_Chunks of Boar Meat|r and |cRXP_LOOT_Crag Boar Ribs|r
+    >>Kill |cRXP_ENEMY_Crag Boars|r. Loot them for |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r and |cRXP_LOOT_Crag Boar Ribs|r
     >>|cRXP_WARN_Be careful as they cast|r |T132337:0|t[Charge] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 25-70 melee damage on hit. Only castable at range)|r
     .collect 769,4,317,1 --Collect Chunk of Boar Meat (x4)
     .collect 2886,6,384,1 --Collect Crag Boar Rib (x6)
@@ -1714,7 +1714,7 @@ step
     .isQuestAvailable 312
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Large Crag Boars|r. Loot them for |cRXP_LOOT_Chunks of Boar Meat|r and |cRXP_LOOT_Crag Boar Ribs|r
+    >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Large Crag Boars|r. Loot them for |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r and |cRXP_LOOT_Crag Boar Ribs|r
     >>|cRXP_WARN_Be careful as they cast|r |T132337:0|t[Charge] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 25-70 melee damage on hit. Only castable at range)|r
     .complete 317,1 --Collect Chunk of Boar Meat (x4)
     .collect 2886,6,384,1 --Collect Crag Boar Rib (x6)
@@ -1749,7 +1749,7 @@ step
     .mob Ice Claw Bear
 step
     .loop 40,Dun Morogh,51.70,49.66,51.08,52.42,51.43,53.21,50.06,51.66,49.56,50.82,48.12,49.10,48.21,46.93,45.48,50.04,44.07,52.50,43.69,55.59,42.78,56.86,44.45,59.33,46.31,61.85,46.26,59.49,48.08,59.05,49.40,58.97,48.30,56.86,49.09,54.74,49.61,54.32,51.43,53.21
-    >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Large Crag Boars|r. Loot them for |cRXP_LOOT_Chunks of Boar Meat|r and |cRXP_LOOT_Crag Boar Ribs|r
+    >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Large Crag Boars|r. Loot them for |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r and |cRXP_LOOT_Crag Boar Ribs|r
     >>|cRXP_WARN_Be careful as they cast|r |T132337:0|t[Charge] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 25-70 melee damage on hit. Only castable at range)|r
     .complete 317,1 --Collect Chunk of Boar Meat (x4)
     .collect 2886,6,384,1 --Collect Crag Boar Rib (x6)
@@ -2356,7 +2356,7 @@ step
     .isQuestAvailable 314
 step
     #completewith Senir2
-    +|cRXP_WARN_Remember to save|r |T133970:0|t[Chunks of Boar Meat] |cRXP_WARN_you get for leveling|r |T133971:0|t[Cooking] |cRXP_WARN_to 50 later|r
+    +|cRXP_WARN_Remember to save|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_you get for leveling|r |T133971:0|t[Cooking] |cRXP_WARN_to 50 later|r
 step
     .goto Dun Morogh,46.83,52.36
     >>Talk to |cRXP_FRIENDLY_Ragnar|r
@@ -2422,7 +2422,7 @@ step
     .target Rudra Amberstill
 step << skip
     #completewith Ghilm
-    +|cRXP_WARN_Remember to save|r |T133970:0|t[Chunks of Boar Meat] |cRXP_WARN_you get for leveling|r |T133971:0|t[Cooking] |cRXP_WARN_to 50 later|r
+    +|cRXP_WARN_Remember to save|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_you get for leveling|r |T133971:0|t[Cooking] |cRXP_WARN_to 50 later|r
 step
     #completewith next
     .goto Dun Morogh,66.34,50.92,50,0
@@ -2859,7 +2859,7 @@ step
     #completewith DarkshoreBoat
     .goto Wetlands,7.89,56.22
     >>|cRXP_WARN_If the Boat has just arrived, skip this step|r
-    +|cRXP_WARN_Cook any|r |T133970:0|t[Chunks of Boar Meat] |cRXP_WARN_you have from outside (there's a campfire inside)|r
+    +|cRXP_WARN_Cook any|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_you have from outside (there's a campfire inside)|r
     .itemcount 769,1
 step
     .goto Wetlands,7.89,56.22
@@ -3404,7 +3404,7 @@ step
     #completewith DarkshoreBoat
     .goto Wetlands,7.89,56.22
     >>|cRXP_WARN_If the Boat has just arrived, skip this step|r
-    +|cRXP_WARN_Cook any|r |T133970:0|t[Chunks of Boar Meat] |cRXP_WARN_you have from outside (there's a campfire inside)|r
+    +|cRXP_WARN_Cook any|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_you have from outside (there's a campfire inside)|r
     .itemcount 769,1
 step
     .goto Wetlands,7.89,56.22
@@ -4262,8 +4262,8 @@ step
     .target Vidra Hearthstove
 step
     .goto Loch Modan,34.76,48.62
-    >>|cRXP_WARN_Do NOT get rid of any of your extra|r |T133970:0|t[Chunks of Boar Meat]
-    .skill cooking,10 >> Cook |T133970:0|t[Chunks of Boar Meat] into |T133974:0|t[Roasted Boar Meat] until your |T133971:0|t[Cooking] skill reaches 10
+    >>|cRXP_WARN_Do NOT get rid of any of your extra|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    .skill cooking,10 >> Cook |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r into |T133974:0|t[Roasted Boar Meat] until your |T133971:0|t[Cooking] skill reaches 10
 step
     .goto Loch Modan,34.76,48.62
     >>Talk to |cRXP_FRIENDLY_Yanni|r
@@ -6608,7 +6608,7 @@ step
     #completewith Teldrassil
     #requires BoatT
     #label BoarM
-    +Cook any |T133970:0|t[Chunks of Boar Meat] into |T133974:0|t[Roasted Boar Meat]
+    +Cook any |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r into |T133974:0|t[Roasted Boar Meat]
     .itemcount 769,1
     .skill cooking,50,1
 step
@@ -7020,7 +7020,7 @@ step
 step
     #completewith Gnolls
     >>AoE |cRXP_ENEMY_Tarantulas|r. Loot them for |cRXP_LOOT_Crisp Spider Meat|r
-    >>AoE |cRXP_ENEMY_Great Goretusks|r. Loot them for |cRXP_LOOT_Great Goretusk Snouts|r and |cRXP_LOOT_Chunks of Boar Meat|r
+    >>AoE |cRXP_ENEMY_Great Goretusks|r. Loot them for |cRXP_LOOT_Great Goretusk Snouts|r and |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     .collect 1081,5,92,1 --Crisp Spider Meat (5)
     .collect 2296,5,92,1 --Great Goretusk Snout (5)
     .collect 769,50,90,1,1 --Chunk of Boar Meat (50)
@@ -7049,7 +7049,7 @@ step << skip
     .isOnQuest 244
 step << skip
     #completewith Gnolls
-    >>AoE |cRXP_ENEMY_Great Goretusks|r. Loot them for |cRXP_LOOT_Great Goretusk Snouts|r and |cRXP_LOOT_Chunks of Boar Meat|r
+    >>AoE |cRXP_ENEMY_Great Goretusks|r. Loot them for |cRXP_LOOT_Great Goretusk Snouts|r and |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     .collect 2296,5,92,1 --Great Goretusk Snout (5)
     .collect 769,50,90,1,1 --Chunk of Boar Meat (50)
     .mob Great Goretusk
@@ -7150,7 +7150,7 @@ step
     .target Hilary
 step
     #completewith Gnolls2
-    >>AoE |cRXP_ENEMY_Great Goretusks|r. Loot them for |cRXP_LOOT_Great Goretusk Snouts|r and |cRXP_LOOT_Chunks of Boar Meat|r
+    >>AoE |cRXP_ENEMY_Great Goretusks|r. Loot them for |cRXP_LOOT_Great Goretusk Snouts|r and |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     .collect 2296,5,92,1 --Great Goretusk Snout (5)
     .collect 769,50,90,1,1 --Chunk of Boar Meat (50)
     .mob Great Goretusk
@@ -7171,7 +7171,7 @@ step
 step
     #completewith Gnolls3
     >>AoE |cRXP_ENEMY_Tarantulas|r. Loot them for |cRXP_LOOT_Crisp Spider Meat|r
-    >>AoE |cRXP_ENEMY_Great Goretusks|r. Loot them for |cRXP_LOOT_Great Goretusk Snouts|r and |cRXP_LOOT_Chunks of Boar Meat|r
+    >>AoE |cRXP_ENEMY_Great Goretusks|r. Loot them for |cRXP_LOOT_Great Goretusk Snouts|r and |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     .collect 1081,5,92,1 --Crisp Spider Meat (5)
     .collect 2296,5,92,1 --Great Goretusk Snout (5)
     .collect 769,50,90,1,1 --Chunk of Boar Meat (50)

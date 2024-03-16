@@ -7,6 +7,8 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #group RestedXP Alliance 1-20
 #name 1-6 Coldridge Valley
+#displayname 1-6 Coldridge Valley << !SoD
+#displayname 1-7 Coldridge Valley << SoD
 #next 6-11 Dun Morogh << !Hunter
 #next 6-11 Dun Morogh (Hunter);6-11 Dun Morogh << Hunter
 #defaultfor Dwarf/Gnome
@@ -263,7 +265,9 @@ step << Priest
     #season 2
     .goto Dun Morogh,28.600,66.385
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branstock Khalder|r inside
+    >>|cRXP_WARN_Train|r |T135987:0|t[Power Word: Fortitude] |cRXP_WARN_as you'll need it for a class quest soon|r << Dwarf
     .turnin 3110 >> Turn in Hallowed Rune << Dwarf
+    .accept 5626 >> Accept In Favor of the Light << Dwarf
     .accept 77661 >> Accept Meditation on the Light << Dwarf
     .train 1243 >> Train |T135987:0|t[Power Word: Fortitude]
     .target Branstock Khalder
@@ -926,6 +930,20 @@ step << !Paladin !Warlock !Hunter
     .vendor >> Vendor Trash
     .target Durnan Furcutter
     .isOnQuest 3364
+step << !Paladin !Warlock !Hunter
+    #optional
+    #softcore
+    .goto Dun Morogh,28.769,66.377
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Durnan Furcutter|r
+    .accept 3365 >> Accept Bring Back the Mug
+    .vendor >> Vendor Trash
+    .target Durnan Furcutter
+    .isQuestTurnedIn 3364
+    .isQuestAvailable 317
+step << !Paladin !Warlock !Hunter
+    #softcore
+    #requires Grelin << Rogue
+    .abandon 3364 >> Abandon Scalding Mornbrew Delivery. You'll pick it up again
 step << Rogue
     #season 2
     #softcore
@@ -947,22 +965,16 @@ step << Rogue
     .engrave 10 >>|cRXP_WARN_Engrave your|r |T132952:0|t|cRXP_LOOT_[Gloves]|r with|r |T133816:0|t[Engrave Gloves - Shadowstrike]
     .train 400105,3
 step << !Paladin !Warlock !Hunter
-    #optional
-    #softcore
-    .goto Dun Morogh,28.769,66.377
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Durnan Furcutter|r
-    .accept 3365 >> Accept Bring Back the Mug
-    .vendor >> Vendor Trash
-    .target Durnan Furcutter
-    .isQuestTurnedIn 3364
-    .isQuestAvailable 317
-step << !Paladin !Warlock !Hunter
     #softcore
     #optional
-    .goto Dun Morogh,24.980,75.963
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r and |cRXP_FRIENDLY_Grelin Whitebeard|r
     .accept 3364 >> Accept Scalding Mornbrew Delivery
-    .target Nori Pridedrift
+    .goto Dun Morogh,24.980,75.963
+    .target +Nori Pridedrift
+    .turnin 218 >> Turn in The Stolen Journal
+    .accept 282 >> Accept Senir's Observations
+    .goto Dun Morogh,25.075,75.715
+    .target +Grelin Whitebeard
     .isQuestAvailable 3364
 step << !Paladin !Warlock !Hunter
     #softcore
@@ -981,7 +993,135 @@ step << !Paladin !Warlock !Hunter
 --  .vendor >> Vendor Trash
     .target Durnan Furcutter
     .isQuestAvailable 317
+
+
+
+
+----Start of >1.59x training section----
+
+
+
+
 step << Mage
+    #xprate >1.59
+    #season 0,1
+    .goto Dun Morogh,28.709,66.366
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r inside
+    .turnin 3114 >> Turn in Glyphic Memorandum << Gnome
+    .trainer >> Train your class spells
+    .target Marryk Nurribit
+step << Mage
+    #xprate >1.59
+    #season 2
+    .goto Dun Morogh,28.709,66.366
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r inside
+    .turnin 3114 >> Turn in Glyphic Memorandum << Gnome
+    .accept 77667 >> Accept Spell Research << Gnome
+    .trainer >> Train your class spells
+    .target Marryk Nurribit
+step << Gnome Mage
+    #xprate >1.59
+    #season 2
+    #completewith next
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
+    .use 203751
+    .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
+step << Gnome Mage
+    #xprate >1.59
+    #season 2
+    .goto Dun Morogh,28.709,66.366
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r inside
+    .turnin 77667 >> Turn in Spell Research
+    .target Marryk Nurribit
+step << Gnome Mage
+    #xprate >1.59
+    #season 2
+    #label GlovesEquip
+    #completewith Observations
+    .equip 10,711 >> |cRXP_WARN_Equip the|r |T132961:0|t[Tattered Cloth Gloves]
+    .use 711
+    .train 401760,3
+step << Gnome Mage
+    #xprate >1.59
+    #season 2
+    #requires GlovesEquip
+    #completewith Observations
+    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132961:0|t[Tattered Cloth Gloves] with|r |T133816:0|t[Engrave Gloves - Ice Lance]
+    .train 401760,3
+step << Rogue
+    #xprate >1.59
+    #season 0,1
+    .goto Dun Morogh,28.369,67.513
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Solm Hargrin|r
+    .turnin 3113 >> Turn in Encrypted Memorandum << Gnome
+    .turnin 3109 >> Turn in Encrypted Rune << Dwarf
+    .train 1784 >>Train |T132320:0|t[Stealth]
+    .trainer >>Train your class spells
+    .target Solm Hargrin
+step << Rogue
+    #xprate >1.59
+    #season 2
+    .goto Dun Morogh,28.369,67.513
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Solm Hargrin|r
+    .turnin 77658 >> Turn in Thrice Stolen << Dwarf
+    .turnin 77659 >> Turn in Thrice Stolen << Gnome
+    .train 921 >>Train |T133644:0|t[Pick Pocket]
+    .trainer >>Train your class spells
+    .target Solm Hargrin
+step << Priest
+    #xprate >1.59
+    #season 0,1
+    .goto Dun Morogh,28.600,66.385
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branstock Khalder|r
+    >>|cRXP_WARN_Train|r |T135987:0|t[Power Word: Fortitude] |cRXP_WARN_and|r |T135929:0|t[Lesser Heal] (Rank 2) |cRXP_WARN_as you'll need them for a class quest soon|r << Dwarf
+    .turnin 3110 >> Turn in Hallowed Rune << Dwarf
+    .accept 5626 >> Accept In Favor of the Light << Dwarf
+    .train 1243 >> Train |T135987:0|t[Power Word: Fortitude]
+    .train 2052 >> Train |T135929:0|t[Lesser Heal] (Rank 2) << Dwarf
+    .trainer >> Train your class spells
+    .target Branstock Khalder
+step << Priest
+    #xprate >1.59
+    #season 2
+    .goto Dun Morogh,28.600,66.385
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branstock Khalder|r
+    >>|cRXP_WARN_Train|r |T135929:0|t[Lesser Heal] (Rank 2) |cRXP_WARN_as you'll need it for a class quest soon|r << Dwarf
+    .accept 5626 >> Accept In Favor of the Light << Dwarf
+    .train 2052 >> Train |T135929:0|t[Lesser Heal] (Rank 2) << Dwarf
+    .trainer >> Train your class spells
+    .target Branstock Khalder
+step << Warrior
+    #xprate >1.59
+    #season 0,1
+    .goto Dun Morogh,28.832,67.242
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thran Khorman|r
+    .turnin 3106 >> Turn in Simple Rune << Dwarf
+    .turnin 3112 >> Turn in Simple Memorandum << Gnome
+    .trainer >> Train your class spells
+    .target Thran Khorman
+step << Warrior
+    #xprate >1.59
+    #season 2
+    .goto Dun Morogh,28.832,67.242
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thran Khorman|r
+    .turnin 77655 >> Turn in The Lost Rune << Dwarf
+    .turnin 77656 >> Turn in The Lost Rune << Gnome
+    .trainer >> Train your class spells
+    .target Thran Khorman
+
+
+
+
+
+----End of >1.59x training section----
+----Start of <1.59x training section----
+
+
+
+
+
+step << Mage
+    #xprate <1.59
     #season 0,1
     .goto Dun Morogh,28.709,66.366
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r inside
@@ -990,6 +1130,7 @@ step << Mage
     .train 116 >> Train |T135846:0|t[Frostbolt]
     .target Marryk Nurribit
 step << Mage
+    #xprate <1.59
     #season 2
     .goto Dun Morogh,28.709,66.366
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r inside
@@ -999,17 +1140,21 @@ step << Mage
     .train 116 >> Train |T135846:0|t[Frostbolt]
     .target Marryk Nurribit
 step << Gnome Mage
+    #xprate <1.59
     #season 2
+    #completewith next
     .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
     .use 203751
     .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
 step << Gnome Mage
+    #xprate <1.59
     #season 2
     .goto Dun Morogh,28.709,66.366
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r inside
     .turnin 77667 >> Turn in Spell Research
     .target Marryk Nurribit
 step << Gnome Mage
+    #xprate <1.59
     #season 2
     #label GlovesEquip
     #completewith Observations
@@ -1017,12 +1162,14 @@ step << Gnome Mage
     .use 711
     .train 401760,3
 step << Gnome Mage
+    #xprate <1.59
     #season 2
     #requires GlovesEquip
     #completewith Observations
     .engrave 10 >>|cRXP_WARN_Engrave your|r |T132961:0|t[Tattered Cloth Gloves] with|r |T133816:0|t[Engrave Gloves - Ice Lance]
     .train 401760,3
 step << Rogue
+    #xprate <1.59
     #season 0,1
     .goto Dun Morogh,28.369,67.513
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Solm Hargrin|r
@@ -1031,6 +1178,7 @@ step << Rogue
     .train 1784 >>Train |T132320:0|t[Stealth]
     .target Solm Hargrin
 step << Rogue
+    #xprate <1.59
     #season 2
     .goto Dun Morogh,28.369,67.513
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Solm Hargrin|r
@@ -1038,20 +1186,26 @@ step << Rogue
     .turnin 77659 >> Turn in Thrice Stolen << Gnome
     .target Solm Hargrin
 step << Priest
+    #xprate <1.59
     #season 0,1
     .goto Dun Morogh,28.600,66.385
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branstock Khalder|r
+    >>|cRXP_WARN_Train|r |T135987:0|t[Power Word: Fortitude] |cRXP_WARN_and|r |T135929:0|t[Lesser Heal] (Rank 2) |cRXP_WARN_as you'll need them for a class quest soon|r << Dwarf
     .turnin 3110 >> Turn in Hallowed Rune << Dwarf
+    .accept 5626 >> Accept In Favor of the Light << Dwarf
     .train 1243 >> Train |T135987:0|t[Power Word: Fortitude]
-    .train 589 >> Train |T136207:0|t[Shadow Word: Pain]
+    .train 2052 >> Train |T135929:0|t[Lesser Heal] (Rank 2) << Dwarf
+    .trainer >> Train your class spells
     .target Branstock Khalder
 step << Priest
+    #xprate <1.59
     #season 2
     .goto Dun Morogh,28.600,66.385
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branstock Khalder|r
     .train 589 >> Train |T136207:0|t[Shadow Word: Pain]
     .target Branstock Khalder
 step << Warrior
+    #xprate <1.59
     #season 0,1
     .goto Dun Morogh,28.832,67.242
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thran Khorman|r
@@ -1061,6 +1215,7 @@ step << Warrior
     .train 772 >> Train |T132155:0|t[Rend]
     .target Thran Khorman
 step << Warrior
+    #xprate <1.59
     #season 2
     .goto Dun Morogh,28.832,67.242
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thran Khorman|r
@@ -1069,6 +1224,16 @@ step << Warrior
     .train 100 >> Train |T132337:0|t[Charge]
     .train 772 >> Train |T132155:0|t[Rend]
     .target Thran Khorman
+
+
+
+
+----End of <1.59x training section----
+
+
+
+
+
 step << !Paladin !Warlock !Hunter
     #optional
     #completewith Stolen
@@ -1163,47 +1328,48 @@ RXPGuides.RegisterGuide([[
 #defaultfor Dwarf/Gnome
 
 step
-    #completewith BoarMeat44 << !Paladin !Warrior !Rogue
-    #completewith BearFur << Paladin/Warrior/Rogue
-    >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Large Crag Boars|r. Loot them for |cRXP_LOOT_Chunks of Boar Meat|r and |cRXP_LOOT_Crag Boar Ribs|r
+    #optional
+    #label BoarMeatQuest
+    #completewith SenirEnd
+    >>Kill |cRXP_ENEMY_Crag Boars|r. Loot them for |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r and |cRXP_LOOT_Crag Boar Ribs|r
+    >>|cRXP_WARN_Save all the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_you get for Stocking Jetsteam and then for leveling your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r
+    >>|cRXP_WARN_You need 10|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Auberdine later|r
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
     .collect 769,4,317,1 --Collect Chunk of Boar Meat (x4)
     .collect 2886,6,384,1 --Collect Crag Boar Rib (x6)
     .mob Crag Boar
-    .mob Large Crag Boar
+    .subzoneskip 131 --Kharanos
 step
     #xprate <1.49
+    #optional
     .goto 1426,43.316,56.283,60,0
     .goto 1426,43.949,52.524,60,0
     .goto 1426,38.677,60.561,60,0
     .goto Dun Morogh,46.726,53.826
     .xp 5+2145 >> Travel to Kharanos. Grind to 2145+/2800xp killing |cRXP_ENEMY_Crag Boars|r en-route << Priest
     .xp 5+2415 >> Travel to Kharanos. Grind to 2415+/2800xp killing |cRXP_ENEMY_Crag Boars|r en-route << !Priest
-    .mob Crag Boar
-    .mob Large Crag Boar
     .subzoneskip 131
 --XX 270 from priest quest
 --XX 340 from quest, 45 from explore
 step
     #xprate 1.49-1.59
+    #optional
     .goto 1426,43.316,56.283,60,0
     .goto 1426,43.949,52.524,60,0
     .goto 1426,38.677,60.561,60,0
     .goto Dun Morogh,46.726,53.826
     .xp 5+1817 >> Travel to Kharanos. Grind to 1817+/2800xp killing |cRXP_ENEMY_Crag Boars|r en-route << Priest
     .xp 5+2222 >> Travel to Kharanos. Grind to 2222+/2800xp killing |cRXP_ENEMY_Crag Boars|r en-route << !Priest
-    .mob Crag Boar
-    .mob Large Crag Boar
     .subzoneskip 131
 step
     #xprate >1.59
+    #optional
     .goto 1426,43.316,56.283,60,0
     .goto 1426,43.949,52.524,60,0
     .goto 1426,38.677,60.561,60,0
     .goto Dun Morogh,46.726,53.826
     .xp 5+1490 >> Travel to Kharanos. Grind to 1490+/2800xp killing |cRXP_ENEMY_Crag Boars|r en-route << Priest
     .xp 5+2030 >> Travel to Kharanos. Grind to 2030+/2800xp killing |cRXP_ENEMY_Crag Boars|r en-route << !Priest
-    .mob Crag Boar
-    .mob Large Crag Boar
     .subzoneskip 131
 step
     #hardcore
@@ -1211,7 +1377,6 @@ step
     .goto Dun Morogh,46.726,53.826
     .subzone 131 >> Travel to Kharanos
     .mob Crag Boar
-    .mob Large Crag Boar
 step
     #softcore
     #completewith next
@@ -1219,6 +1384,7 @@ step
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .target Spirit Healer
 step
+    #label SenirEnd
     .goto Dun Morogh,46.726,53.826
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senir Whitebeard|r
     .turnin 420 >> Turn in Senir's Observations
@@ -1274,51 +1440,69 @@ step << Rogue
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step << Rogue
     #optional
-    #completewith next
+    #sticky
+    #label BalancedDaggers1
     +|cRXP_WARN_Equip the|r |T135641:0|t[Balanced Throwing Daggers]
     .use 2946
     .itemcount 2946,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step << Rogue
+    #optional
+    #sticky
+    #requires BalancedDaggers1
+    #label DeleteOldDaggers
+    .destroy 2947 >> Delete the |T135426:0|t[Small Throwing Knives] from your bags, as they're no longer needed
+step << Rogue
+    #xprate <1.59
     .goto Dun Morogh,47.563,52.608
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hogral Bakkan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hogral Bakkan|r inside in the backroom
     .trainer >> Train your class spells
     .target Hogral Bakkan
 step << Mage
+    #xprate <1.59
     .goto Dun Morogh,47.498,52.076
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magis Sparkmantle|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magis Sparkmantle|r inside upstairs
     .trainer >> Train your class spells
     .target Magis Sparkmantle
 step << Paladin
+    #xprate <1.59
     .goto Dun Morogh,47.597,52.070
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azar Stronghammer|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azar Stronghammer|r inside upstairs
     .trainer >> Train your class spells
-    .target Azar Stronghamme
+    .target Azar Stronghammer
 step << Priest
     .goto Dun Morogh,47.342,52.190
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maxan Anvol|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maxan Anvol|r inside
     .accept 5625 >> Accept Garments of the Light
     .target Maxan Anvol
 step << Priest
     .goto Dun Morogh,45.805,54.568
-    >>Cast |T135929:0|t[Lesser Heal] (Rank 2) and then |T135987:0|t[Power Word: Fortitude] on |cRXP_FRIENDLY_Mountaineer Dolf|r
+    >>Cast |T135929:0|t[Lesser Heal] (Rank 2) and then |T135987:0|t[Power Word: Fortitude] on |cRXP_FRIENDLY_Mountaineer Dolf|r outside
     .complete 5625,1 --Heal and fortify Mountaineer Dolf
     .target Mountaineer Dolf
 step << Priest
+    #xprate <1.59
     .goto Dun Morogh,47.342,52.190
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maxan Anvol|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maxan Anvol|r inside
     .turnin 5625 >> Turn in Garments of the Light
     .trainer >> Train your class spells
     .target Maxan Anvol
+step << Priest
+    #xprate >1.59
+    .goto Dun Morogh,47.342,52.190
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maxan Anvol|r inside
+    .turnin 5625 >> Turn in Garments of the Light
+    .target Maxan Anvol
 step
     .goto Dun Morogh,47.377,52.523
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
     .home >> Set your Hearthstone to Thunderbrew Distillery
     .vendor >> |cRXP_BUY_Buy as much|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_as you can afford|r << Priest/Mage/Warlock
     .target Innkeeper Belm
 step << Warrior
+    #xprate <1.59
     .goto Dun Morogh,47.360,52.646
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Granis Swiftaxe|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Granis Swiftaxe|r inside
     .trainer >> Train your class spells
     .target Granis Swiftaxe
 step << Paladin/Warrior/Rogue
@@ -1386,11 +1570,13 @@ step << Warrior/Rogue/Paladin
     #label Blacksmithing1
     .goto 1426,45.344,51.936
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tognus Flintfire|r
+    >>|cRXP_WARN_This will allow you to make|r |T135248:0|t[Rough Sharpening Stones] |cRXP_WARN_which increase your melee damage by 2|r << Warrior/Rogue
+    >>|cRXP_WARN_This will allow you to make|r |T135255:0|t[Rough Weightstones] |cRXP_WARN_which increase your melee damage by 2|r << Paladin
+    >>|cRXP_WARN_If you don't want to do this, skip this step|r
     .train 2018 >> Train |T136241:0|t[Blacksmithing]
-    >>|cRXP_WARN_This will allow you to make |T135248:0|t[Rough Sharpening Stones] which increase melee hits by +2 Damage. This is very significant early on|r << Warrior/Rogue
-    >>|cRXP_WARN_This will allow you to make |T135255:0|t[Rough Weightstones] which increase melee hits by +2 Damage. This is very significant early on|r << Paladin
     .target Tognus Flintfire
 step
+    #requires DeleteOldDaggers << Rogue
     .goto Dun Morogh,46.021,51.676
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharek Blackstone|r
     .accept 400 >> Accept Tools for Steelgrill
@@ -1410,7 +1596,16 @@ step << Rogue
     .use 203993
     .itemcount 203993,1
 step
+    #optional
+    #completewith next
+    >>Kill |cRXP_ENEMY_Crag Boars|r. Loot them for |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r and |cRXP_LOOT_Crag Boar Ribs|r
+    .collect 769,4,317,1 --Collect Chunk of Boar Meat (x4)
+    .collect 2886,6,384,1 --Collect Crag Boar Rib (x6)
+    .mob Crag Boar
+    .subzoneskip 131 --Kharanos
+step
     #xprate <1.5
+    #label StartStocking
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Bellowfiz|r and |cRXP_FRIENDLY_Pilot Stonegear|r
     >>|cRXP_WARN_Don't kill any |cRXP_ENEMY_Young Black Bears|r en-route|r
     .accept 317 >> Accept Stocking Jetsteam
@@ -1421,6 +1616,7 @@ step
     .target +Pilot Stonegear
 step << Warrior/Paladin/Rogue
     #xprate 1.49-1.59
+    #label StartStocking
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Bellowfiz|r and |cRXP_FRIENDLY_Pilot Stonegear|r
     >>|cRXP_WARN_Don't kill any |cRXP_ENEMY_Young Black Bears|r en-route|r
     .accept 317 >> Accept Stocking Jetsteam
@@ -1432,6 +1628,7 @@ step << Warrior/Paladin/Rogue
 step
     #xprate >1.49 << !Warrior !Paladin !Rogue
     #xprate >1.59 << Warrior/Paladin/Rogue
+    #label StartStocking
     .goto Dun Morogh,49.426,48.410
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Bellowfiz|r
     >>|cRXP_WARN_Don't kill any |cRXP_ENEMY_Young Black Bears|r en-route|r
@@ -1451,7 +1648,6 @@ step << Warrior/Paladin/Rogue
     .target +Loslor Rudge
     .train 2018,3 --Blacksmithing
 step
-    #label BoarMeat44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beldin Steelgrill|r and |cRXP_FRIENDLY_Loslor Rudge|r
     .turnin 400 >> Turn in Tools for Steelgrill
     .goto Dun Morogh,50.443,49.092
@@ -1462,9 +1658,9 @@ step
 step << Warrior/Paladin/Rogue
     #optional
     .goto Dun Morogh,50.01,50.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yarr Hammerstone|r inside
-    .train 2575 >>Train |T134708:0|t[Mining]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yarr Hammerstone|r inside downstairs
     >>|cRXP_WARN_If you can't afford it, skip this step|r
+    .train 2575 >>Train |T134708:0|t[Mining]
     .target Yarr Hammerstone
     .train 2018,3 --Blacksmithing
 step << Warrior/Paladin/Rogue
@@ -1473,6 +1669,14 @@ step << Warrior/Paladin/Rogue
     .cast 2580 >> |cRXP_WARN_Cast|r |T136025:0|t[Find Minerals]
     .usespell 2580
     .train 2575,3 --Mining
+step << Warrior/Paladin/Rogue
+    #xprate <1.59
+    #completewith BearFur
+    >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Large Crag Boars|r. Loot them for |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r and |cRXP_LOOT_Crag Boar Ribs|r
+    .complete 317,1 --Chunk of Boar Meat (4)
+    .collect 2886,6,384,1 --Collect Crag Boar Rib (x6)
+    .mob Crag Boar
+    .mob Large Crag Boar
 step << Warrior/Paladin/Rogue
     #xprate <1.59
     #completewith BearFur
@@ -1492,50 +1696,33 @@ step << Hunter
     .train 425762,1
 step
     #xprate >1.59 << Paladin/Warrior/Rogue
-    .goto Dun Morogh,52.0,50.1,75,0
-    .goto Dun Morogh,51.5,53.9,75,0
-    .goto Dun Morogh,50.1,53.9,75,0
-    .goto Dun Morogh,49.9,50.9,75,0
-    .goto Dun Morogh,48.0,49.5,75,0
-    .goto Dun Morogh,48.2,46.9,75,0
-    .goto Dun Morogh,43.5,52.5,75,0
-    .goto Dun Morogh,52.0,50.1,75,0
-    .goto Dun Morogh,51.5,53.9,75,0
-    .goto Dun Morogh,50.1,53.9,75,0
-    .goto Dun Morogh,49.9,50.9,75,0
-    .goto Dun Morogh,48.0,49.5,75,0
-    .goto Dun Morogh,48.2,46.9,75,0
-    .goto Dun Morogh,43.5,52.5,75,0
-    .goto Dun Morogh,52.0,50.1,75,0
-    .goto Dun Morogh,51.5,53.9,75,0
-    .goto Dun Morogh,50.1,53.9,75,0
-    .goto Dun Morogh,49.9,50.9,75,0
-    .goto Dun Morogh,48.0,49.5,75,0
-    .goto Dun Morogh,48.2,46.9,75,0
-    .goto Dun Morogh,43.5,52.5,75,0
+    #loop
     .goto Dun Morogh,52.0,50.1,0
-    .goto Dun Morogh,51.5,53.9,0
-    .goto Dun Morogh,50.1,53.9,0
-    .goto Dun Morogh,49.9,50.9,0
-    .goto Dun Morogh,48.0,49.5,0
-    .goto Dun Morogh,48.2,46.9,0
-    .goto Dun Morogh,43.5,52.5
+    .goto Dun Morogh,43.5,52.5,0
+    .goto Dun Morogh,52.0,50.1,75,0
+    .goto Dun Morogh,51.5,53.9,75,0
+    .goto Dun Morogh,50.1,53.9,75,0
+    .goto Dun Morogh,49.9,50.9,75,0
+    .goto Dun Morogh,48.0,49.5,75,0
+    .goto Dun Morogh,48.2,46.9,75,0
+    .goto Dun Morogh,43.5,52.5,75,0
     >>Kill |cRXP_ENEMY_Young Black Bears|r. Loot them for their |cRXP_LOOT_Thick Bear Fur|r
-    >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Large Crag Boars|r. Loot them for their |cRXP_LOOT_Chunks of Boar Meat|r and |cRXP_LOOT_Crag Boar Ribs|r
+    >>Kill |cRXP_ENEMY_Large Crag Boars|r and |cRXP_ENEMY_Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r and |cRXP_LOOT_Crag Boar Ribs|r
     .complete 317,2 --Collect Thick Bear Fur (x2)
+    .mob +Young Black Bear
     .complete 317,1 --Collect Chunk of Boar Meat (x4)
     .collect 2886,6,384,1 --Collect Crag Boar Rib (x6)
     .disablecheckbox
-    .mob Crag Boar
     .mob Large Crag Boar
-    .mob Young Black Bear
+    .mob Crag Boar
 step
     #xprate >1.59 << Paladin/Warrior/Rogue
-    #completewith Ribs
-    >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Large Crag Boars|r. Loot them for their |cRXP_LOOT_Crag Boar Ribs|r
+    #optional
+    #completewith EvershineEnd
+    >>Kill |cRXP_ENEMY_Large Crag Boars|r and |cRXP_ENEMY_Crag Boars|r. Loot them for their |cRXP_LOOT_Crag Boar Ribs|r
     .collect 2886,6,384,1 --Collect Crag Boar Rib (x6)
-    .mob Crag Boar
     .mob Large Crag Boar
+    .mob Crag Boar
 step
     #xprate >1.59 << Paladin/Warrior/Rogue
     .goto Dun Morogh,49.426,48.410
@@ -1556,7 +1743,7 @@ step << Warrior/Paladin/Rogue
     #xprate >1.59
     #optional
     .goto Dun Morogh,50.01,50.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yarr Hammerstone|r inside
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yarr Hammerstone|r inside downstairs
     .train 2575 >>Train |T134708:0|t[Mining]
     .target Yarr Hammerstone
     .train 2018,3 --Blacksmithing
@@ -1570,7 +1757,7 @@ step
     #xprate >1.59 << Warrior/Paladin/Rogue
     #optional
     .goto Dun Morogh,47.377,52.523
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
     >>|cRXP_BUY_Buy a|r |T132800:0|t[Rhapsody Malt] |cRXP_BUY_from him|r
     .complete 384,2 --Collect Rhapsody Malt (x1)
     .target Innkeeper Belm
@@ -1677,7 +1864,7 @@ step << Warrior/Rogue/Priest/Mage/Warlock
 step << Warrior/Rogue
     #completewith next
     .goto Dun Morogh,47.377,52.523
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
     .vendor 1247 >> |cRXP_BUY_Buy as much|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_from him as you can afford|r
     .target Innkeeper Belm
     .money <0.0125
@@ -1686,7 +1873,7 @@ step << Warrior/Rogue
 step << Priest/Mage/Warlock
     #completewith next
     .goto Dun Morogh,47.377,52.523
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
     .vendor 1247 >> |cRXP_BUY_Buy as much|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him as you can afford|r
     .target Innkeeper Belm
     .money <0.0125
@@ -1738,8 +1925,8 @@ step
     .goto 1426,42.177,53.274,40,0
     .goto 1426,41.100,48.927,40,0
     >>Kill |cRXP_ENEMY_Wendigos|r and |cRXP_ENEMY_Young Wendigos|r. Loot them for their |cRXP_LOOT_Wendigo Manes|r
-    >>|cRXP_WARN_Remember to keep an eye out for|r |T134566:0|t[Copper Veins] |cRXP_WARN_which yield|r |T135232:0|t[Rough Stones] |cRXP_WARN_so you can craft|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
-    >>|cRXP_WARN_Remember to keep an eye out for|r |T134566:0|t[Copper Veins] |cRXP_WARN_which yield|r |T135232:0|t[Rough Stones] |cRXP_WARN_so you can craft|r |T135255:0|t[Rough Weightstones] << Paladin
+    >>|cRXP_WARN_Remember to keep an eye out for|r |T134566:0|t[Copper Veins] |cRXP_WARN_which yield|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_so you can craft|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
+    >>|cRXP_WARN_Remember to keep an eye out for|r |T134566:0|t[Copper Veins] |cRXP_WARN_which yield|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_so you can craft|r |T135255:0|t[Rough Weightstones] << Paladin
     .complete 313,1 --Collect Wendigo Mane (x8)
     .mob Wendigo
     .mob Young Wendigo
@@ -1802,7 +1989,7 @@ step
 step << Warrior/Paladin/Rogue
     #xprate <1.59
     #loop
-    >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Large Crag Boars|r. Loot them for their |cRXP_LOOT_Chunks of Boar Meat|r and |cRXP_LOOT_Crag Boar Ribs|r
+    >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Large Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r and |cRXP_LOOT_Crag Boar Ribs|r
     >>Kill |cRXP_ENEMY_Young Black Bears|r. Loot them for their |cRXP_LOOT_Fur|r
     .complete 317,1 --Collect Chunk of Boar Meat (x4)
     .goto 1426,43.704,65.296,0
@@ -1872,7 +2059,7 @@ step << Warrior/Paladin/Rogue
     #xprate <1.59
     #optional
     .goto Dun Morogh,50.01,50.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yarr Hammerstone|r inside
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yarr Hammerstone|r inside downstairs
     .train 2575 >>Train |T134708:0|t[Mining]
     .target Yarr Hammerstone
     .train 2018,3 --Blacksmithing
@@ -1880,7 +2067,7 @@ step << Warrior/Paladin/Rogue
     #xprate <1.59
     #optional
     .goto Dun Morogh,47.377,52.523
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
     >>|cRXP_BUY_Buy a|r |T132800:0|t[Rhapsody Malt] |cRXP_BUY_from him|r
     .complete 384,2 --Collect Rhapsody Malt (x1)
     .target Innkeeper Belm
@@ -1926,21 +2113,21 @@ step << Warrior/Rogue
 step << Rogue
     #xprate <1.59
     .goto Dun Morogh,47.563,52.608
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hogral Bakkan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hogral Bakkan|r inside in the backroom
     .trainer >> Train your class spells
     .target Hogral Bakkan
     .xp <8,1
 step << Paladin
     #xprate <1.59
     .goto Dun Morogh,47.597,52.070
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azar Stronghammer|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azar Stronghammer|r inside upstairs
     .trainer >> Train your class spells
     .target Azar Stronghammer
     .xp <8,1
 step << Warrior
     #xprate <1.59
     .goto Dun Morogh,47.360,52.646
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Granis Swiftaxe|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Granis Swiftaxe|r inside
     .trainer >> Train your class spells
     .target Granis Swiftaxe
     .xp <8,1
@@ -2024,7 +2211,7 @@ step << Warrior/Rogue
     #completewith Tundra
     .goto Dun Morogh,46.9,52.1,20,0
     .goto Dun Morogh,47.377,52.523
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
     .vendor 1247 > |cRXP_BUY_Buy as much|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_from him as you can afford|r
     .target Innkeeper Belm
     .money <0.0125
@@ -2112,7 +2299,7 @@ step << Priest/Mage/Warlock
     .target Keeg Gibn
     .isOnQuest 318
 step
-    #label Ribs
+    #label EvershineEnd
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rejold Barleybrew|r and |cRXP_FRIENDLY_Marleth Barleybrew|r
     .turnin 318 >> Turn in Evershine
     .accept 319 >> Accept A Favor for Evershine
@@ -2470,7 +2657,6 @@ step
     #softcore
     #requires WetlandsDS1
     #label WetlandsDS2
-    #completewith next
     .goto 1415,44.733,51.882,-1
     .goto 1437,11.730,43.304,-1
     >>|cRXP_WARN_Jump off the mountain toward the north or north-west|r
@@ -2498,7 +2684,7 @@ step
 step
     #optional
     .goto Dun Morogh,47.377,52.523
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
     >>|cRXP_BUY_Buy a|r |T132800:0|t[Rhapsody Malt] |cRXP_BUY_and a|r |T132800:0|t[Thunder Ale] |cRXP_BUY_from him|r
     .complete 384,2 --Collect Rhapsody Malt (x1)
     .collect 2686,1,311 --Collect Thunder Ale (x1)
@@ -2506,7 +2692,7 @@ step
     .isQuestAvailable 384
 step
     .goto Dun Morogh,47.377,52.523
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
     >>|cRXP_BUY_Buy a|r |T132800:0|t[Thunder Ale] |cRXP_BUY_from him|r
     .collect 2686,1,311 --Collect Thunder Ale (x1)
     .target Innkeeper Belm
@@ -2595,7 +2781,7 @@ step << Warlock
 step << Rogue
     #xprate >1.59
     .goto Dun Morogh,47.563,52.608
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hogral Bakkan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hogral Bakkan|r inside in the backroom
     >>|cRXP_WARN_Only train|r |T132147:0|t[Dual Wield] |cRXP_WARN_and|r |T132307:0|t[Sprint]|cRXP_WARN_. Do not train other spells to save your money for later|r
     .train 674 >> Train |T132147:0|t[Dual Wield]
     .train 2983 >> Train |T132307:0|t[Sprint]
@@ -2604,27 +2790,27 @@ step << Rogue
 step << Rogue
     #xprate <1.59
     .goto Dun Morogh,47.563,52.608
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hogral Bakkan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hogral Bakkan|r inside in the backroom
     .trainer >> Train your class spells
     .target Hogral Bakkan
 step << Paladin
     .goto Dun Morogh,47.597,52.070
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azar Stronghammer|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azar Stronghammer|r inside upstairs
     .trainer >> Train your class spells
     .target Azar Stronghammer
 step << Warrior
     .goto Dun Morogh,47.360,52.646
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Granis Swiftaxe|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Granis Swiftaxe|r inside
     .trainer >> Train your class spells
     .target Granis Swiftaxe
 step << Mage
     .goto Dun Morogh,47.498,52.076
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magis Sparkmantle|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magis Sparkmantle|r inside upstairs
     .train 118 >> Train |T136071:0|t[Polymorph]
     .target Magis Sparkmantle
 step << Priest
     .goto Dun Morogh,47.342,52.190
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maxan Anvol|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maxan Anvol|r inside
     .trainer >> Train your class spells
     .target Maxan Anvol
 step << Warrior/Rogue/Paladin
@@ -2693,14 +2879,14 @@ step << Paladin
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.99
 step << Warrior/Rogue/Paladin
     .goto Dun Morogh,47.377,52.523
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
     .vendor 1247 >> |cRXP_BUY_Buy up to 15|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_from him if you can afford it|r << Warrior/Rogue
     .vendor 1247 >> |cRXP_BUY_Buy 5|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_from him if you can afford it|r << Paladin
     .money <0.0125 << Paladin
     .target Innkeeper Belm
 step << Priest/Mage/Warlock
     .goto Dun Morogh,47.377,52.523
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
     .vendor 1247 >> |cRXP_BUY_Buy up to 20|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him if you can afford it|r
     .target Innkeeper Belm
 step
@@ -3196,7 +3382,7 @@ step << Hunter
 step << Rogue
     #xprate <1.59
     .goto Dun Morogh,47.563,52.608
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hogral Bakkan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hogral Bakkan|r inside in the backroom
     .accept 2218 >> Accept Road to Salvation
     .target Hogral Bakkan
     .xp <10,1
@@ -3260,11 +3446,33 @@ step << Warrior
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step << Warrior
     #optional
-    #completewith next
     .goto 1455,48.046,83.707
     >>|cRXP_WARN_Walk onto the edge of the metal floor on top of the waypoint arrow|r
     .zone Dun Morogh >>|cRXP_WARN_Position your character until it looks like they're floating, then perform a Logout Skip by logging out and back in|r
     .zoneskip Ironforge,1
+step
+    #optional
+    #label BoarMeatDunMorogh1
+    #completewith Dirt
+    .goto 1426,57.936,50.787,0
+    >>Kill |cRXP_ENEMY_Elder Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r 
+    >>|cRXP_WARN_You need 10|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Auberdine later|r
+    .collect 769,10,2178,1,0x20,cooking --Chunk of Boar Meat (1-10)
+    .mob Elder Crag Boar
+    .skill cooking,10,1 --XX Shows if cooking skill is <10
+step
+    #optional
+    #requires BoarMeatDunMorogh1
+    #completewith Dirt
+    .goto 1426,57.936,50.787,0
+    >>Kill |cRXP_ENEMY_Elder Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r 
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
+    .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
+    .mob Elder Crag Boar
+--  .skill cooking,<10,1
+    .skill cooking,50,1 --XX Shows if cooking skill is between 1-50
 step
     #completewith Rudra
     #label Dirt
@@ -3329,6 +3537,27 @@ step
     .target Rudra Amberstill
 step
     #optional
+    #label BoarMeatDunMorogh2
+    #completewith QuarryStart
+    .goto 1426,66.356,51.02,0
+    >>Kill |cRXP_ENEMY_Large Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    .collect 769,10,2178,1,0x20,cooking --Chunk of Boar Meat (1-10)
+    .mob Large Crag Boar
+    .skill cooking,10,1 --XX Shows if cooking skill is <10
+    .subzoneskip 134 --Gol'Bolar Quarry
+step
+    #optional
+    #requires BoarMeatDunMorogh2
+    #completewith QuarryStart
+    .goto 1426,66.356,51.02,0
+    >>Kill |cRXP_ENEMY_Large Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
+    .mob Large Crag Boar
+--  .skill cooking,<10,1
+    .skill cooking,50,1 --XX Shows if cooking skill is between 1-50
+    .subzoneskip 134 --Gol'Bolar Quarry
+step
+    #optional
     #completewith next
     .goto Dun Morogh,68.379,54.492,60 >> Travel to Gol'Bolar Quarry
     .subzoneskip 134
@@ -3347,7 +3576,7 @@ step << !Hunter
     .target Kazan Mogosh
 --XX Mud slappers instead
 step
-    #label GolBolarQuarry
+    #label QuarryStart
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r and |cRXP_FRIENDLY_Foreman Stonebrow|r
     .accept 433 >> Accept The Public Servant
     .goto Dun Morogh,68.671,55.969
@@ -3572,6 +3801,37 @@ step << Rogue
     .train 400094,1
 step
     #optional
+    #label BoarMeatDunMorogh3
+    #completewith LochEnter
+    .goto 1426,70.845,51.784,0
+    .goto 1426,73.533,50.850,0
+    .goto 1426,75.353,48.533,0
+    .goto 1426,79.881,46.805,0
+    .goto 1426,81.040,43.456,0
+    .goto 1426,80.583,36.040,0
+    >>Kill |cRXP_ENEMY_Scarred Crag Boars|r and |cRXP_ENEMY_Elder Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    .collect 769,10,2178,1,0x20,cooking --Chunk of Boar Meat (1-10)
+    .mob Scarred Crag Boar
+    .mob Elder Crag Boar
+    .skill cooking,10,1 --XX Shows if cooking skill is <10
+step
+    #optional
+    #requires BoarMeatDunMorogh3
+    #completewith LochEnter
+    .goto 1426,70.845,51.784,0
+    .goto 1426,73.533,50.850,0
+    .goto 1426,75.353,48.533,0
+    .goto 1426,79.881,46.805,0
+    .goto 1426,81.040,43.456,0
+    .goto 1426,80.583,36.040,0
+    >>Kill |cRXP_ENEMY_Scarred Crag Boars|r and |cRXP_ENEMY_Elder Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
+    .mob Scarred Crag Boar
+    .mob Elder Crag Boar
+--  .skill cooking,<10,1
+    .skill cooking,50,1 --XX Shows if cooking skill is between 1-50
+step
+    #optional
     #completewith next
     .goto 1426,77.189,48.816,50,0
     .goto 1426,81.252,42.650,50,0
@@ -3651,6 +3911,7 @@ step
     .target Mountaineer Barleybrew
 step
     #optional
+    #label LochEnter
     #completewith next
     .goto 1432,16.494,58.424,20,0
     .goto 1432,19.594,62.735,20,0
@@ -3707,12 +3968,17 @@ step
     .target Vidra Hearthstove
     .xp >14,1
 --XX Skip if 14+
-step << !Rogue
-    #completewith next
+step
     .goto Loch Modan,34.757,48.618
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yanni Stoutheart|r
-    .vendor 1682 >> |cRXP_BUY_Buy a|r |T133634:0|t[Small Brown Pouch] |cRXP_BUY_from her if needed|r
+    >>|cRXP_BUY_Buy a|r |T135435:0|t[Simple Wood] |cRXP_BUY_and a|r |T135237:0|t[Flint and Tinder] |cRXP_BUY_from her|r
+    >>|cRXP_BUY_Buy a|r |T133634:0|t[Small Brown Pouch] |cRXP_BUY_too from her if needed|r << !Rogue
+    >>|cRXP_WARN_This is used to make|r |T135805:0|t[Basic Campfires] |cRXP_WARN_on Boats or Trams to level your|r |T133971:0|t[Cooking] |cRXP_WARN_skill without losing time|r
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    .collect 4470,1 --Simple Wood (1)
+    .collect 4471,1 --Flint and Tinder (1)
     .target Yanni Stoutheart
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
 step
     #xprate >1.49 << Paladin
     #label ThelsaHS
@@ -3747,19 +4013,56 @@ step
     .accept 1339 >> Accept Mountaineer Stormpike's Task
     .target Mountaineer Kadrell
 step
-    #completewith Thelsamar1
+    #optional
+    #label BoarMeatLoch1
+    #completewith Algaz
+    .goto 1426,70.845,51.784,0
+    .goto 1426,73.533,50.850,0
+    .goto 1426,75.353,48.533,0
+    .goto 1426,79.881,46.805,0
+    .goto 1426,81.040,43.456,0
+    .goto 1426,80.583,36.040,0
+    >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r 
+    >>|cRXP_WARN_You need 10|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Auberdine later|r
+    .collect 769,10,2178,1,0x20,cooking --Chunk of Boar Meat (1-10)
+    .mob Mountain Boar
+    .skill cooking,10,1 --XX Shows if cooking skill is <10
+    .subzoneskip 925 --Algaz Station
+step
+    #optional
+    #requires BoarMeatLoch1
+    #completewith Algaz
+    .goto 1426,70.845,51.784,0
+    .goto 1426,73.533,50.850,0
+    .goto 1426,75.353,48.533,0
+    .goto 1426,79.881,46.805,0
+    .goto 1426,81.040,43.456,0
+    .goto 1426,80.583,36.040,0
+    >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r 
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
+    .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
+    .mob Mountain Boar
+--  .skill cooking,<10,1
+    .skill cooking,50,1 --XX Shows if cooking skill is between 1-50
+    .subzoneskip 925 --Algaz Station
+step
+    #optional
+    #completewith Algaz
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Spider Ichor|r
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
     .collect 3174,3,418,1 --Collect Spider Ichor (x3)
-    >>|cRXP_WARN_Save any|r |T133970:0|t[Chunks of Boar Meat] |cRXP_WARN_to use for leveling |T133971:0|t[Cooking] |cRXP_WARN_later|r
+    >>|cRXP_WARN_Save any|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_to use for leveling |T133971:0|t[Cooking] |cRXP_WARN_later|r
     >>|cRXP_WARN_Don't go out of your way to complete this right now. You'll come back to Loch Modan soon|r
     .mob Elder Black Bear
     .mob Mountain Boar
     .mob Forest Lurker
     .isOnQuest 418
+    .subzoneskip 925 --Algaz Station
 step
     #optional
     #label Algaz
@@ -4055,8 +4358,37 @@ step
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to an |cRXP_FRIENDLY_Ironforge Auctioneer|r
-    >>Buy the following items for a faster turn in at Loch Modan shortly
-    >>This will save you time as you won't need to run around looking for mobs to kill. Skip this step if you wish to not buy any
+    >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_BUY_to level your|r |T133971:0|t[Cooking] |cRXP_BUY_with later|r
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
+    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|cRXP_BUY_Buy the following items for a faster turn in at Loch Modan shortly and to level your|r |T133971:0|t[Cooking] |cRXP_BUY_skill with:|r
+    >>|T134342:0|t[Boar Intestines]
+    >>|T134027:0|t[Bear Meat]
+    >>|T134437:0|t[Spider Ichor]
+    >>|T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    >>|T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
+    .collect 3172,3,418,1 -- Boar Intestines (3)
+    .collect 3173,3,418,1 -- Bear Meat (3)
+    .collect 3174,3,418,1 -- Spider Ichor (3)
+    .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (1-50)
+    .disablecheckbox
+    .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (1-50)
+    .disablecheckbox
+    .target Auctioneer Lympkin
+    .target Auctioneer Redmuse
+    .target Auctioneer Buckler
+    .zoneskip Dun Morogh
+    .isQuestAvailable 418
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+step
+    #ah
+    #optional
+    .goto Ironforge,25.800,75.500,-1
+    .goto Ironforge,24.200,74.600,-1
+    .goto Ironforge,23.800,71.800,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to an |cRXP_FRIENDLY_Ironforge Auctioneer|r
+    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|cRXP_BUY_Buy the following items for a faster turn in at Loch Modan shortly:|r
     >>|T134342:0|t[Boar Intestines]
     >>|T134027:0|t[Bear Meat]
     >>|T134437:0|t[Spider Ichor]
@@ -4068,6 +4400,7 @@ step
     .target Auctioneer Buckler
     .zoneskip Dun Morogh
     .isQuestAvailable 418
+    .skill cooking,<50,1 --XX Shows if cooking skill is 50+
 step << Dwarf Paladin
     #xprate >1.49
     #optional
@@ -4341,15 +4674,96 @@ step
     .timer 11,Deeprun Rat Roundup RP
     .accept 6662 >> Accept Me Brother, Nipsy
     .target Monty
+----
 step
     #optional
-    #label TramEnd
-    #completewith next
-    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_if needed while waiting for the Tram|r
-    >>|cRXP_WARN_You will need your|r |T135966:0|t[First Aid] |cRXP_WARN_to be 80 for a quest at level 24|r << Rogue !Dwarf
-    .zone Stormwind City >> Take the Deeprun Tram to Stormwind side
+    #label TramCook1
+    #completewith TramEnd
+    >>|cRXP_WARN_On the Tram when it arrives:|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .usespell 818
+    .zoneskip Stormwind City
+    .itemcount 769,1 --Chunk of Boar Meat (1+)
+    .itemcount 2672,1 --Stringy Wolf Meat (1+)
+    .itemcount 4470,1 --Simple Wood (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nipsy|r on the center platform when you get off the Tram on the Stormwind side
+    #optional
+    #requires TramCook1
+    #label TramCook2
+    #completewith TramEnd
+    >>|cRXP_WARN_On the Tram when it arrives:|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .usespell 818
+    .zoneskip Stormwind City
+    .itemcount 769,<1 --Chunk of Boar Meat (<1)
+    .itemcount 2672,1 --Stringy Wolf Meat (1+)
+    .itemcount 4470,1 --Simple Wood (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+step
+    #optional
+    #requires TramCook2
+    #label TramCook3
+    #completewith TramEnd
+    >>|cRXP_WARN_On the Tram when it arrives:|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .usespell 818
+    .zoneskip Stormwind City
+    .itemcount 769,1 --Chunk of Boar Meat (1+)
+    .itemcount 2672,<1 --Stringy Wolf Meat (<1)
+    .itemcount 4470,1 --Simple Wood (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+step
+    #optional
+    #requires TramCook3
+    #label TramCook4
+    #completewith TramEnd
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the following items:|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_into|r |T133974:0|t[Roasted Boar Meat]
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
+    .usespell 2550
+    .zoneskip Stormwind City
+    .itemcount 769,1 --Chunk of Boar Meat (1+)
+    .itemcount 2672,1 --Stringy Wolf Meat (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1
+step
+    #optional
+    #requires TramCook4
+    #label TramCook5
+    #completewith TramEnd
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
+    .usespell 2550
+    .zoneskip Stormwind City
+    .itemcount 769,<1 --Chunk of Boar Meat (<1)
+    .itemcount 2672,1 --Stringy Wolf Meat (1)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1
+step
+    #optional
+    #requires TramCook5
+    #label TramCook6
+    #completewith TramEnd
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_into|r |T133974:0|t[Roasted Boar Meat]
+    .usespell 2550
+    .zoneskip Stormwind City
+    .itemcount 769,1 --Chunk of Boar Meat (1)
+    .itemcount 2672,<1 --Stringy Wolf Meat (<1)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1
+----
+step
+    #label TramEnd
+    >>|cRXP_WARN_Take the Deeprun Tram to the Stormwind side|r
+    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_while waiting for the Tram to Stormwind City if needed|r << Rogue/Warrior/Paladin
+    >>|cRXP_WARN_You will need your|r |T135966:0|t[First Aid] |cRXP_WARN_to be 80 for a quest at level 24|r << Rogue !Dwarf
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nipsy|r on the middle platform on the Stormwind side of the Deeprun Tram
     .turnin 6662 >> Turn in Me Brother, Nipsy
     .target Nipsy
     .subzoneskip 2257,1 --Deeprun Tram
@@ -4359,6 +4773,7 @@ step
     .abandon 6662 >> Abandon Me Brother, Nipsy
 step
     #optional
+    #completewith Order
     .zone Stormwind City >> Enter Stormwind
     .isOnQuest 1338
 step
@@ -4558,15 +4973,71 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .turnin 176,3 >> Turn in Wanted: "Hogger"
     .target Marshal Dughan
-step
+step << Warlock
+    #optional
+    #label BoarMeatElwynnCooking1
+    #completewith SChoker
+    .goto 1429,49.917,72.959,0
+    .goto 1429,54.444,75.879,0
+    .goto 1429,57.620,76.213,0
+    .goto 1429,61.911,78.274,0
+    .goto 1429,65.619,78.388,0
+    >>Kill |cRXP_ENEMY_Rockhide Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    .collect 769,10,2178,1,0x20,cooking --Chunk of Boar Meat (1-10)
+    .mob Rockhide Boar
+    .skill cooking,10,1 --XX Shows if cooking skill is <10
+    .subzoneskip 62 --Brackwell Pumpkin Patch
+step << Warlock
+    #optional
+    #requires BoarMeatElwynnCooking1
+    #completewith SChoker
+    .goto 1429,49.917,72.959,0
+    .goto 1429,54.444,75.879,0
+    .goto 1429,57.620,76.213,0
+    .goto 1429,61.911,78.274,0
+    .goto 1429,65.619,78.388,0
+    >>Kill |cRXP_ENEMY_Rockhide Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
+    .mob Rockhide Boar
+--  .skill cooking,<10,1
+    .skill cooking,50,1 --XX Shows if cooking skill is between 1-50
+    .subzoneskip 62 --Brackwell Pumpkin Patch
+step << Warlock
+    #label SChoker
     .goto Elwynn Forest,71.10,80.66
     >>Kill |cRXP_ENEMY_Surena Caledon|r. Loot her for her |cRXP_LOOT_Choker|r
     >>|cRXP_WARN_Focus on killing |cRXP_ENEMY_Surena Caledon|r very quickly|r
     >>|cRXP_WARN_Cast|r |T136183:0|t[Fear] |cRXP_WARN_on |cRXP_ENEMY_Morgan the Collector|r continously|r
     .complete 1688,1 --Surena's Choker (1)
     .mob Surena Caledon
+step << Warlock
+    #optional
+    #label WolfMeatElwynnCooking1
+    #completewith WlockRedridge
+    .goto 1429,84.448,72.486,0
+    .goto 1429,88.611,71.379,0
+    .goto 1429,89.657,75.373,0
+    .goto 1429,87.250,75.853,0
+    >>Kill |cRXP_ENEMY_Prowlers|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
+    .collect 2672,10,2178,1,0x20,cooking --Stringy Wolf Meat (1-10)
+    .mob Prowler
+    .skill cooking,10,1 --XX Shows if cooking skill is <10
+step << Warlock
+    #optional
+    #requires WolfMeatElwynnCooking1
+    #completewith WlockRedridge
+    .goto 1429,84.448,72.486,0
+    .goto 1429,88.611,71.379,0
+    .goto 1429,89.657,75.373,0
+    .goto 1429,87.250,75.853,0
+    >>Kill |cRXP_ENEMY_Prowlers|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
+    .collect 2672,50,86,1,0x20,cooking --Stringy Wolf Meat (10-50)
+    .mob Prowler
+--  .skill cooking,<10,1
+    .skill cooking,50,1 --XX Shows if cooking skill is between 1-50
 step
     #optional
+    #label WlockRedridge
     #completewith next
     .goto Redridge Mountains,17.4,69.6
     .zone Redridge Mountains >> Travel to Redridge Mountains
@@ -4629,31 +5100,41 @@ step
     #ah
     .goto Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
-    >>Buy the following items for a faster turn in at Loch Modan shortly
-    >>This will save you time as you won't need to run around looking for mobs to kill. Skip this step if you wish to not buy any
-    >>Buying extra |T134437:0|t[Chunk of Boar Meat] can be useful as well for leveling |T133971:0|t[Cooking] to 50 for later
+    >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_BUY_to level your|r |T133971:0|t[Cooking] |cRXP_BUY_with later|r
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
+    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|cRXP_BUY_Buy the following items for a faster turn in at Loch Modan shortly and to level your|r |T133971:0|t[Cooking] |cRXP_BUY_skill with:|r
     >>|T134342:0|t[Boar Intestines]
     >>|T134027:0|t[Bear Meat]
     >>|T134437:0|t[Spider Ichor]
-    >>|T134437:0|t[Chunk of Boar Meat]
+    >>|T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    >>|T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
     .collect 3172,3,418,1 -- Boar Intestines (3)
     .collect 3173,3,418,1 -- Bear Meat (3)
     .collect 3174,3,418,1 -- Spider Ichor (3)
-    .collect 769,49 -- Chunk of Boar Meat (49)
+    .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (1-50)
+    .disablecheckbox
+    .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (1-50)
     .disablecheckbox
     .target Auctioneer Jaxon
     .isQuestAvailable 418
-    .skill cooking,50,1
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
 step
     #ah
     #optional
     .goto Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
-    >>Buy |T134437:0|t[Chunk of Boar Meat] from the Auction House (or other cooking materials) for leveling |T133971:0|t[Cooking] to 50 for later. Skip this step if you wish to not buy any
-    .collect 769,49 -- Chunk of Boar Meat (49)
+    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|cRXP_BUY_Buy the following items for a faster turn in at Loch Modan shortly:|r
+    >>|T134342:0|t[Boar Intestines]
+    >>|T134027:0|t[Bear Meat]
+    >>|T134437:0|t[Spider Ichor]
+    .collect 3172,3,418,1 -- Boar Intestines (3)
+    .collect 3173,3,418,1 -- Bear Meat (3)
+    .collect 3174,3,418,1 -- Spider Ichor (3)
     .target Auctioneer Jaxon
-    .isQuestTurnedIn 418
-    .skill cooking,50,1
+    .isQuestAvailable 418
+    .skill cooking,<50,1 --XX Shows if cooking skill is 50+
 step
     #optional
     #completewith next
@@ -5181,18 +5662,41 @@ step
     #ah
     .goto Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
-    >>Buy the following items for a faster turn in at Loch Modan shortly
-    >>This will save you time as you won't need to run around looking for mobs to kill. Skip this step if you wish to not buy any
-    >>Buying extra |T134437:0|t[Chunk of Boar Meat] can be useful as well for leveling |T133971:0|t[Cooking] to 50 for later
+    >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_BUY_to level your|r |T133971:0|t[Cooking] |cRXP_BUY_with later|r
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
+    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|cRXP_BUY_Buy the following items for a faster turn in at Loch Modan shortly and to level your|r |T133971:0|t[Cooking] |cRXP_BUY_skill with:|r
     >>|T134342:0|t[Boar Intestines]
     >>|T134027:0|t[Bear Meat]
     >>|T134437:0|t[Spider Ichor]
-    >>|T134437:0|t[Chunk of Boar Meat]
+    >>|T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    >>|T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
     .collect 3172,3,418,1 -- Boar Intestines (3)
     .collect 3173,3,418,1 -- Bear Meat (3)
     .collect 3174,3,418,1 -- Spider Ichor (3)
-    .collect 769,4,86,1 -- Chunk of Boar Meat (4)
+    .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (1-50)
+    .disablecheckbox
+    .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (1-50)
+    .disablecheckbox
     .target Auctioneer Jaxon
+    .isQuestAvailable 418
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+step
+    #ah
+    #optional
+    .goto Stormwind City,53.612,59.764
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
+    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|cRXP_BUY_Buy the following items for a faster turn in at Loch Modan shortly:|r
+    >>|T134342:0|t[Boar Intestines]
+    >>|T134027:0|t[Bear Meat]
+    >>|T134437:0|t[Spider Ichor]
+    .collect 3172,3,418,1 -- Boar Intestines (3)
+    .collect 3173,3,418,1 -- Bear Meat (3)
+    .collect 3174,3,418,1 -- Spider Ichor (3)
+    .target Auctioneer Jaxon
+    .isQuestAvailable 418
+    .skill cooking,<50,1 --XX Shows if cooking skill is 50+
 step << Warlock
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0
@@ -5748,6 +6252,41 @@ step << Dwarf/Gnome
 step << Rogue
     #season 2
     #optional
+    #label BoarMeatLochRogue
+    #completewith SaberSlash1
+    .goto 1426,70.845,51.784,0
+    .goto 1426,73.533,50.850,0
+    .goto 1426,75.353,48.533,0
+    .goto 1426,79.881,46.805,0
+    .goto 1426,81.040,43.456,0
+    .goto 1426,80.583,36.040,0
+    >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    .collect 769,10,2178,1,0x20,cooking --Chunk of Boar Meat (1-10)
+    .mob Mountain Boar
+    .skill cooking,10,1 --XX Shows if cooking skill is <10
+    .subzoneskip 146 --Stonewrought Dam
+    .subzoneskip 149 --Silver Stream Mine
+step << Rogue
+    #season 2
+    #optional
+    #requires BoarMeatLochRogue
+    #completewith SaberSlash1
+    .goto 1426,70.845,51.784,0
+    .goto 1426,73.533,50.850,0
+    .goto 1426,75.353,48.533,0
+    .goto 1426,79.881,46.805,0
+    .goto 1426,81.040,43.456,0
+    .goto 1426,80.583,36.040,0
+    >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
+    .mob Mountain Boar
+--  .skill cooking,<10,1
+    .skill cooking,50,1 --XX Shows if cooking skill is between 1-50
+    .subzoneskip 146 --Stonewrought Dam
+    .subzoneskip 149 --Silver Stream Mine
+step << Rogue
+    #season 2
+    #optional
     #completewith SaberSlash1
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
@@ -5758,6 +6297,8 @@ step << Rogue
     .mob Elder Black Bear
     .mob Mountain Boar
     .mob Forest Lurker
+    .subzoneskip 146 --Stonewrought Dam
+    .subzoneskip 149 --Silver Stream Mine
 step << Rogue
     #season 2
     #completewith SaberSlash1
@@ -5778,6 +6319,7 @@ step << Rogue
     .mob Tunnel Rat Geomancer
     .mob Tunnel Rat Digger
     .mob Tunnel Rat Surveyor
+    .subzoneskip 146 --Stonewrought Dam
 step << Rogue
     #season 2
     #optional
@@ -5813,7 +6355,39 @@ step << Rogue
     .subzoneskip 146,1
 step
     #optional
-    #season 0,1 << Rogue
+    #label BoarMeatLoch3
+    #completewith SilverMine
+    .goto 1426,70.845,51.784,0
+    .goto 1426,73.533,50.850,0
+    .goto 1426,75.353,48.533,0
+    .goto 1426,79.881,46.805,0
+    .goto 1426,81.040,43.456,0
+    .goto 1426,80.583,36.040,0
+    >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    .collect 769,10,2178,1,0x20,cooking --Chunk of Boar Meat (1-10)
+    .mob Mountain Boar
+    .skill cooking,10,1 --XX Shows if cooking skill is <10
+    .subzoneskip 146 --Stonewrought Dam
+    .subzoneskip 149 --Silver Stream Mine
+step
+    #optional
+    #requires BoarMeatLoch3
+    #completewith SilverMine
+    .goto 1426,70.845,51.784,0
+    .goto 1426,73.533,50.850,0
+    .goto 1426,75.353,48.533,0
+    .goto 1426,79.881,46.805,0
+    .goto 1426,81.040,43.456,0
+    .goto 1426,80.583,36.040,0
+    >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
+    .mob Mountain Boar
+--  .skill cooking,<10,1
+    .skill cooking,50,1 --XX Shows if cooking skill is between 1-50
+    .subzoneskip 146 --Stonewrought Dam
+    .subzoneskip 149 --Silver Stream Mine
+step
+    #optional
     #completewith SilverMine
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
@@ -5824,6 +6398,8 @@ step
     .mob Elder Black Bear
     .mob Mountain Boar
     .mob Forest Lurker
+    .subzoneskip 146 --Stonewrought Dam
+    .subzoneskip 149 --Silver Stream Mine
 step
     #xprate <1.59
     #completewith Gear
@@ -5942,7 +6518,7 @@ step << Paladin/Warrior
     .collect 4777,1,307,1 --Ironwood Maul (1)
     .target Nillen Andemar
     .itemcount 4778,<1 --Heavy Spiked Mace (<1)
-    .itemcount 4777,<1 --Ironwood Maul (1)
+    .itemcount 4777,<1 --Ironwood Maul (<1)
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
 step << Paladin/Warrior
     #ah
@@ -6071,6 +6647,37 @@ step
     .mob Tunnel Rat Surveyor
 step
     #optional
+    #label BoarMeatLoch4
+    #completewith PawsDelivery
+    .goto 1426,70.845,51.784,0
+    .goto 1426,73.533,50.850,0
+    .goto 1426,75.353,48.533,0
+    .goto 1426,79.881,46.805,0
+    .goto 1426,81.040,43.456,0
+    .goto 1426,80.583,36.040,0
+    >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    .collect 769,10,2178,1,0x20,cooking --Chunk of Boar Meat (1-10)
+    .mob Mountain Boar
+    .skill cooking,10,1 --XX Shows if cooking skill is <10
+    .subzoneskip 925 --Algaz Station
+step
+    #optional
+    #requires BoarMeatLoch4
+    #completewith PawsDelivery
+    .goto 1426,70.845,51.784,0
+    .goto 1426,73.533,50.850,0
+    .goto 1426,75.353,48.533,0
+    .goto 1426,79.881,46.805,0
+    .goto 1426,81.040,43.456,0
+    .goto 1426,80.583,36.040,0
+    >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
+    .mob Mountain Boar
+--  .skill cooking,<10,1
+    .skill cooking,50,1 --XX Shows if cooking skill is between 1-50
+    .subzoneskip 925 --Algaz Station
+step
+    #optional
     #completewith PawsDelivery
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
@@ -6081,6 +6688,7 @@ step
     .mob Elder Black Bear
     .mob Mountain Boar
     .mob Forest Lurker
+    .subzoneskip 925 --Algaz Station
 step
     #optional
     #completewith next
@@ -6100,6 +6708,39 @@ step
     .turnin 307 >> Turn in Filthy Paws
     .turnin 353 >> Turn in Stormpike's Delivery
     .target Mountaineer Stormpike
+step
+    #optional
+    #label BoarMeatLoch5
+    #completewith RatAbandon
+    .goto 1426,70.845,51.784,0
+    .goto 1426,73.533,50.850,0
+    .goto 1426,75.353,48.533,0
+    .goto 1426,79.881,46.805,0
+    .goto 1426,81.040,43.456,0
+    .goto 1426,80.583,36.040,0
+    >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    .collect 769,10,2178,1,0x20,cooking --Chunk of Boar Meat (1-10)
+    .mob Mountain Boar
+    .skill cooking,10,1 --XX Shows if cooking skill is <10
+    .subzoneskip 144 --Thelsamar
+    .subzoneskip 925 --Algaz Station
+step
+    #optional
+    #requires BoarMeatLoch5
+    #completewith RatAbandon
+    .goto 1426,70.845,51.784,0
+    .goto 1426,73.533,50.850,0
+    .goto 1426,75.353,48.533,0
+    .goto 1426,79.881,46.805,0
+    .goto 1426,81.040,43.456,0
+    .goto 1426,80.583,36.040,0
+    >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
+    .mob Mountain Boar
+--  .skill cooking,<10,1
+    .skill cooking,50,1 --XX Shows if cooking skill is between 1-50
+    .subzoneskip 144 --Thelsamar
+    .subzoneskip 925 --Algaz Station
 step
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
@@ -6224,10 +6865,13 @@ step
     #label FlintTinder
     .goto Loch Modan,34.757,48.618
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yanni Stoutheart|r
-    >>|cRXP_BUY_Buy a|r |T135237:0|t[Flint and Tinder] |cRXP_BUY_along with 2|r |T135435:0|t[Simple Wood]|cRXP_BUY_. Buy any|r|T133634:0|t[Small Brown Pouches] |cRXP_BUY_if needed|r
-    .collect 4470,2 --Simple Wood (2)
+    >>|cRXP_BUY_Buy a|r |T135435:0|t[Simple Wood] |cRXP_BUY_and a|r |T135237:0|t[Flint and Tinder] |cRXP_BUY_from her|r
+    >>|cRXP_WARN_This is used to make|r |T135805:0|t[Basic Campfires] |cRXP_WARN_on Boats or Trams to level your|r |T133971:0|t[Cooking] |cRXP_WARN_skill without losing time|r
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
     .target Yanni Stoutheart
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
 step << !Dwarf/!Paladin
     #optional
     #requires DefenseAbandon
@@ -6583,10 +7227,99 @@ step << !Paladin
     .zoneskip Stormwind City
 step << !Paladin
     #xprate <1.5
-    .goto Ironforge,78.00,52.00,5,0
-    .zone Stormwind City >> Take the Tram to Stormwind City
-    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_if needed while waiting for the tram|r
+    #optional
+    #label WestfallTramCook1
+    #completewith WestfallTramEnd
+    >>|cRXP_WARN_On the Tram when it arrives:|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .usespell 818
+    .zoneskip Stormwind City
+    .itemcount 769,1 --Chunk of Boar Meat (1+)
+    .itemcount 2672,1 --Stringy Wolf Meat (1+)
+    .itemcount 4470,1 --Simple Wood (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+step << !Paladin
+    #xprate <1.5
+    #optional
+    #requires WestfallTramCook1
+    #label WestfallTramCook2
+    #completewith WestfallTramEnd
+    >>|cRXP_WARN_On the Tram when it arrives:|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .usespell 818
+    .zoneskip Stormwind City
+    .itemcount 769,<1 --Chunk of Boar Meat (<1)
+    .itemcount 2672,1 --Stringy Wolf Meat (1+)
+    .itemcount 4470,1 --Simple Wood (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+step << !Paladin
+    #xprate <1.5
+    #optional
+    #requires WestfallTramCook2
+    #label WestfallTramCook3
+    #completewith WestfallTramEnd
+    >>|cRXP_WARN_On the Tram when it arrives:|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .usespell 818
+    .zoneskip Stormwind City
+    .itemcount 769,1 --Chunk of Boar Meat (1+)
+    .itemcount 2672,<1 --Stringy Wolf Meat (<1)
+    .itemcount 4470,1 --Simple Wood (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+step << !Paladin
+    #xprate <1.5
+    #optional
+    #requires WestfallTramCook3
+    #label WestfallTramCook4
+    #completewith WestfallTramEnd
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the following items:|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_into|r |T133974:0|t[Roasted Boar Meat]
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
+    .usespell 2550
+    .zoneskip Stormwind City
+    .itemcount 769,1 --Chunk of Boar Meat (1+)
+    .itemcount 2672,1 --Stringy Wolf Meat (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1
+step << !Paladin
+    #xprate <1.5
+    #optional
+    #requires WestfallTramCook4
+    #label WestfallTramCook5
+    #completewith WestfallTramEnd
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
+    .usespell 2550
+    .zoneskip Stormwind City
+    .itemcount 769,<1 --Chunk of Boar Meat (<1)
+    .itemcount 2672,1 --Stringy Wolf Meat (1)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1
+step << !Paladin
+    #xprate <1.5
+    #optional
+    #requires WestfallTramCook5
+    #label WestfallTramCook6
+    #completewith WestfallTramEnd
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_into|r |T133974:0|t[Roasted Boar Meat]
+    .usespell 2550
+    .zoneskip Stormwind City
+    .itemcount 769,1 --Chunk of Boar Meat (1)
+    .itemcount 2672,<1 --Stringy Wolf Meat (<1)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1
+step << !Paladin
+    #xprate <1.5
+    #optional
+    #label WestfallTramEnd
+    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_while waiting for the Tram to Stormwind City if needed|r << Rogue/Warrior/Paladin
     >>|cRXP_WARN_You will need your|r |T135966:0|t[First Aid] |cRXP_WARN_to be 80 for a quest at level 24|r << Rogue !Dwarf
+    .zone Stormwind City >> Take the Deeprun Tram to Stormwind City
 step << Dwarf Paladin
     #xprate <1.5
 	#completewith PaladinTrainSW
@@ -6596,8 +7329,40 @@ step << Paladin
     #ah
     .goto Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
-    >>Buy the following items for faster turn ins at Westfall and Darkshore shortly
-    >>This will save you time as you won't need to run around looking for mobs to kill. Skip this step if you wish to not buy any
+    >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_BUY_to level your|r |T133971:0|t[Cooking] |cRXP_BUY_with later|r
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
+    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|cRXP_BUY_Buy the following items for faster turn ins at Westfall and Darkshore shortly:|r
+    >>|T133972:0|t[Stringy Vulture Meat]
+    >>|T133884:0|t[Murloc Eye]
+    >>|T135997:0|t[Goretusk Snout]
+    >>|T134185:0|t[Okra]
+    >>|T134341:0|t[Goretusk Liver]
+    >>|T133972:0|t[Strider Meat]
+    >>|T133912:0|t[Darkshore Grouper]
+    >>|T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    >>|T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
+    .collect 729,3,38,1 -- Stringy Vulture Meat (3)
+    .collect 730,3,38,1 -- Murloc Eye (3)
+    .collect 731,3,38,1 -- Goretusk Snout (3)
+    .collect 732,3,38,1 -- Okra (3)
+    .collect 723,8,22,1 -- Goretusk Liver (8)
+    .collect 5469,5,2178,1 -- Strider Meat (5)
+    .collect 12238,6,1141,1 -- Darkshore Grouper (6)
+    .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (1-50)
+    .disablecheckbox
+    .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (1-50)
+    .disablecheckbox
+    .target Auctioneer Jaxon
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+step << Paladin
+    #xprate <1.5
+    #ah
+    #optional
+    .goto Stormwind City,53.612,59.764
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
+    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|cRXP_BUY_Buy the following items for faster turn ins at Westfall and Darkshore shortly:|r
     >>|T133972:0|t[Stringy Vulture Meat]
     >>|T133884:0|t[Murloc Eye]
     >>|T135997:0|t[Goretusk Snout]
@@ -6613,6 +7378,7 @@ step << Paladin
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
     .target Auctioneer Jaxon
+    .skill cooking,<50,1 --XX Shows if cooking skill is 50+
 step << Paladin
     #xprate <1.5
     #optional
@@ -6693,8 +7459,40 @@ step << !Paladin
     #ah
     .goto Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
-    >>|cRXP_BUY_Buy the following items for faster turn ins in Westfall and Darkshore shortly|r
+    >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_BUY_to level your|r |T133971:0|t[Cooking] |cRXP_BUY_with later|r
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
     >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|cRXP_BUY_Buy the following items for faster turn ins at Westfall and Darkshore shortly:|r
+    >>|T133972:0|t[Stringy Vulture Meat]
+    >>|T133884:0|t[Murloc Eye]
+    >>|T135997:0|t[Goretusk Snout]
+    >>|T134185:0|t[Okra]
+    >>|T134341:0|t[Goretusk Liver]
+    >>|T133972:0|t[Strider Meat]
+    >>|T133912:0|t[Darkshore Grouper]
+    >>|T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    >>|T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
+    .collect 729,3,38,1 -- Stringy Vulture Meat (3)
+    .collect 730,3,38,1 -- Murloc Eye (3)
+    .collect 731,3,38,1 -- Goretusk Snout (3)
+    .collect 732,3,38,1 -- Okra (3)
+    .collect 723,8,22,1 -- Goretusk Liver (8)
+    .collect 5469,5,2178,1 -- Strider Meat (5)
+    .collect 12238,6,1141,1 -- Darkshore Grouper (6)
+    .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (1-50)
+    .disablecheckbox
+    .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (1-50)
+    .disablecheckbox
+    .target Auctioneer Jaxon
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+step << !Paladin
+    #xprate <1.5
+    #ah
+    #optional
+    .goto Stormwind City,53.612,59.764
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
+    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|cRXP_BUY_Buy the following items for faster turn ins at Westfall and Darkshore shortly:|r
     >>|T133972:0|t[Stringy Vulture Meat]
     >>|T133884:0|t[Murloc Eye]
     >>|T135997:0|t[Goretusk Snout]
@@ -6710,6 +7508,7 @@ step << !Paladin
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
     .target Auctioneer Jaxon
+    .skill cooking,<50,1 --XX Shows if cooking skill is 50+
     --XX on <1.5 Gnomes/dwarves dont go back to capital cities to train (can't buy groupers/strider meat some other time)
 step << Mage/Priest/Warlock
     #xprate <1.5
@@ -6954,13 +7753,43 @@ step
     .goto Ironforge,24.200,74.600,-1
     .goto Ironforge,23.800,71.800,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to an |cRXP_FRIENDLY_Ironforge Auctioneer|r
-    >>|cRXP_BUY_Buy the following items for faster turn ins in Darkshore shortly|r
+    >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_BUY_to level your|r |T133971:0|t[Cooking] |cRXP_BUY_with later|r
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
     >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|cRXP_BUY_Buy the following items for faster turn ins in Darkshore shortly:|r
+    >>|T133972:0|t[Strider Meat]
+    >>|T133912:0|t[Darkshore Grouper]
+    >>|T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    >>|T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
+    .collect 5469,5,2178,1 -- Strider Meat (5)
+    .collect 12238,6,1141,1 -- Darkshore Grouper (6)
+    .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (1-50)
+    .disablecheckbox
+    .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (1-50)
+    .disablecheckbox
+    .target Auctioneer Lympkin
+    .target Auctioneer Redmuse
+    .target Auctioneer Buckler
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+step
+    #xprate >1.49
+    #ah
+    #optional
+    .goto 1455,33.225,64.648,0
+    .goto Ironforge,25.800,75.500,-1
+    .goto Ironforge,24.200,74.600,-1
+    .goto Ironforge,23.800,71.800,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to an |cRXP_FRIENDLY_Ironforge Auctioneer|r
+    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|cRXP_BUY_Buy the following items for faster turn ins in Darkshore shortly:|r
+    >>|T133972:0|t[Strider Meat]
+    >>|T133912:0|t[Darkshore Grouper]  
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
     .target Auctioneer Lympkin
     .target Auctioneer Redmuse
     .target Auctioneer Buckler
+    .skill cooking,<50,1 --XX Shows if cooking skill is 50+
 step << Mage/Priest/Warlock
     #xprate >1.49
     #ah
@@ -7067,10 +7896,12 @@ step << Human
     .goto 1426,32.209,28.777,15,0
     .goto 1426,32.645,27.740,15,0
     .goto 1415,44.910,52.022,15,0
-    .goto 1415,44.910,52.030
     >>|cRXP_WARN_Do the Dun Morogh -> Wetlands deathskip. Follow the arrow closely|r
     >>|cRXP_WARN_Do NOT jump off any heights yet|r
-    .zone Wetlands >>|cRXP_WARN_Climb the mountain, then walk down past the jagged pattern until your subzone changes to the Wetlands|r
+    .goto 1415,44.910,52.030,15 >>|cRXP_WARN_Climb the mountain, then walk down past the jagged pattern until your subzone changes to The Great Sea|r
+    .zoneskip Wetlands
+    .subzoneskip 207 --The Great Sea
+--XX neither of these zoneskips/subzoneskips want to work, so using waypoint obj instead
 step << Human
     #xprate >1.49
     #softcore
@@ -7096,7 +7927,7 @@ step
     .goto Wetlands,10.4,56.0,15,0
     .goto Wetlands,10.1,56.9,15,0
     .goto Wetlands,10.6,57.2,15,0
-    .goto Wetlands,10.7,56.8
+    .goto 1437,10.760,56.721
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neal Allen|r on the bottom floor of the barracks
     .vendor 1448 >> |cRXP_WARN_Buy a|r |T133024:0|t[Bronze Tube] |cRXP_BUY_from him (if it's up)|r
 	.target Neal Allen
@@ -7104,9 +7935,15 @@ step
     .money <0.08
 step
     #xprate >1.49
+    #optional
+    #completewith next
+    .goto 1437,10.233,56.201,15 >> Exit Menethil Keep
+    .subzoneskip 2103,1 --Menethil Keep
+step
+    #xprate >1.49
     #hardcore << !Human
     .goto Wetlands,9.49,59.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei|r outside
     .fp Wetlands>> Get the Wetlands flight path
     .target Shellei Brondir
 step
@@ -7118,16 +7955,106 @@ step
 step
     #xprate >1.49
     #optional
+    #label DockTravel
     #completewith next
     .goto Wetlands,7.10,57.96,30,0
-    .goto Wetlands,4.61,57.26,15 >> Travel to the Menethil Harbor docks. Wait for the boat to Darkshore
+    .goto Wetlands,4.61,57.26,15 >> Travel to the dock of the Auberdine boat
+    .zoneskip Darkshore
+step
+    #xprate >1.49
+    #optional
+    #requires DockTravel
+    #label DarkshoreCook1
+    #completewith DarkshoreBoat
+    >>|cRXP_WARN_On the Boat if it just arrived or on the dock if the boat just left:|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .usespell 818
+    .zoneskip Darkshore
+    .itemcount 769,1 --Chunk of Boar Meat (1+)
+    .itemcount 2672,1 --Stringy Wolf Meat (1+)
+    .itemcount 4470,1 --Simple Wood (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+step
+    #xprate >1.49
+    #optional
+    #requires DarkshoreCook1
+    #label DarkshoreCook2
+    #completewith DarkshoreBoat
+    >>|cRXP_WARN_On the Boat if it just arrived or on the dock if the boat just left:|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .usespell 818
+    .zoneskip Darkshore
+    .itemcount 769,<1 --Chunk of Boar Meat (<1)
+    .itemcount 2672,1 --Stringy Wolf Meat (1+)
+    .itemcount 4470,1 --Simple Wood (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+step
+    #xprate >1.49
+    #optional
+    #requires DarkshoreCook2
+    #label DarkshoreCook3
+    #completewith DarkshoreBoat
+    >>|cRXP_WARN_On the Boat if it just arrived or on the dock if the boat just left:|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .usespell 818
+    .zoneskip Darkshore
+    .itemcount 769,1 --Chunk of Boar Meat (1+)
+    .itemcount 2672,<1 --Stringy Wolf Meat (<1)
+    .itemcount 4470,1 --Simple Wood (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+step
+    #xprate >1.49
+    #optional
+    #requires DarkshoreCook3
+    #label DarkshoreCook4
+    #completewith DarkshoreBoat
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the following items:|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_into|r |T133974:0|t[Roasted Boar Meat]
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
+    .usespell 2550
+    .zoneskip Darkshore
+    .itemcount 769,1 --Chunk of Boar Meat (1+)
+    .itemcount 2672,1 --Stringy Wolf Meat (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1
+step
+    #xprate >1.49
+    #optional
+    #requires DarkshoreCook4
+    #label DarkshoreCook5
+    #completewith DarkshoreBoat
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
+    .usespell 2550
+    .zoneskip Darkshore
+    .itemcount 769,<1 --Chunk of Boar Meat (<1)
+    .itemcount 2672,1 --Stringy Wolf Meat (1)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1
+step
+    #xprate >1.49
+    #optional
+    #requires DarkshoreCook5
+    #label DarkshoreCook6
+    #completewith DarkshoreBoat
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_into|r |T133974:0|t[Roasted Boar Meat]
+    .usespell 2550
+    .zoneskip Darkshore
+    .itemcount 769,1 --Chunk of Boar Meat (1)
+    .itemcount 2672,<1 --Stringy Wolf Meat (<1)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1
 step
     #xprate >1.49
     #label DarkshoreBoat
     .goto 1437,4.370,56.762
+    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_while waiting for the boat to Darkshore if needed|r
     .zone Darkshore >> Take the boat to Darkshore
-    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_while waiting for the boat to Darkshore|r
-    >>|cRXP_WARN_Level up your|r |T133971:0|t[Cooking] |cRXP_WARN_using the|r |T133970:0|t[Chunks of Boar Meat] |cRXP_WARN_you farmed earlier. Level it to 10 ideally|r
 
     ----End of >1.5x+ IF->Darkshore Section----
 
@@ -7151,7 +8078,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith ribs1
-    >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Large Crag Boars|r. Loot them for their |cRXP_LOOT_Chunks of Boar Meat|r and |cRXP_LOOT_Crag Boar Ribs|r
+    >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Large Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r and |cRXP_LOOT_Crag Boar Ribs|r
     .collect 769,4,317,1 --Collect Chunk of Boar Meat (x4)
     .collect 2886,6,384,1 --Collect Crag Boar Rib (x6)
     .mob Crag Boar
@@ -7232,7 +8159,7 @@ step << !Paladin !Warrior !Rogue
     .goto Dun Morogh,48.2,46.9,0
     .goto Dun Morogh,43.5,52.5
     >>Kill |cRXP_ENEMY_Young Black Bears|r. Loot them for their |cRXP_LOOT_Fur|r
-    >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Large Crag Boars|r. Loot them for their |cRXP_LOOT_Chunks of Boar Meat|r and |cRXP_LOOT_Crag Boar Ribs|r
+    >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Large Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r and |cRXP_LOOT_Crag Boar Ribs|r
     .complete 317,2 --Collect Thick Bear Fur (x2)
     .complete 317,1 --Collect Chunk of Boar Meat (x4)
     .collect 2886,6,384,1,1 --Collect Crag Boar Rib (x6)
@@ -7270,8 +8197,8 @@ step
     .goto Dun Morogh,40.682,65.130
     .turnin 5541 >> Turn in Ammo for Rumbleshot
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hegnar Rumbleshot|r
     .goto Dun Morogh,40.682,65.130
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hegnar Rumbleshot|r
     >>|cRXP_BUY_Buy and equip a|r |T135611:0|t[Ornate Blunderbuss]|cRXP_BUY_. Skip this step if you can't afford it|r
     .collect 2509,1 -- Ornate Blunderbuss (1)
     .money <0.0414
@@ -7408,7 +8335,7 @@ step
     .turnin 313 >> Turn in The Grizzled Den
 step
     .goto Dun Morogh,47.377,52.523
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
     >>|cRXP_BUY_Buy a|r |T132800:0|t[Rhapsody Malt] |cRXP_BUY_and a|r |T132800:0|t[Thunder Ale]
     .complete 384,2 --Collect Rhapsody Malt (x1)
     .collect 2686,1,311 --Collect Thunder Ale (x1)
@@ -7426,7 +8353,7 @@ step
     .turnin 310 >> Turn in Bitter Rivals
     .accept 311 >> Accept Return to Marleth
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
     .target Innkeeper Belm
     .goto Dun Morogh,47.377,52.523
     .home >> Set your Hearthstone to Kharanos
@@ -8190,13 +9117,16 @@ step
     .turnin 257 >> Turn in A Hunter's Boast
     .target Daryl the Youngling
 step
-#xprate <1.5
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xandar Goodbeard|r
+    #xprate <1.5
     .goto Loch Modan,82.496,63.369
-    .vendor >>|cRXP_WARN_Buy a|r |T135237:0|t[Flint and Tinder] |cRXP_WARN_and|r |T135435:0|t[Simple Wood]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xandar Goodbeard|r
+    >>|cRXP_BUY_Buy a|r |T135435:0|t[Simple Wood] |cRXP_BUY_and a|r |T135237:0|t[Flint and Tinder] |cRXP_BUY_from him|r
+    >>|cRXP_WARN_This is used to make|r |T135805:0|t[Basic Campfires] |cRXP_WARN_on Boats or Trams to level your|r |T133971:0|t[Cooking] |cRXP_WARN_skill without losing time|r
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
     .collect 4470,1 --Simple Wood (1)
     .collect 4471,1 --Flint and Tinder (1)
     .target Xandar Goodbeard
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
 step
 #xprate <1.5
     #hardcore
@@ -8285,12 +9215,31 @@ step
     #ah
     .goto Stormwind City,53.612,59.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
-    >>Buy the following items for instant turn ins at Darkshore shortly. Skip this step if you wish to not buy any
+    >>|cRXP_BUY_Buy|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_BUY_and/or|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_BUY_to level your|r |T133971:0|t[Cooking] |cRXP_BUY_with later|r
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
+    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|cRXP_BUY_Buy the following items for faster turn ins in Darkshore shortly:|r
+    >>|T133972:0|t[Strider Meat]
+    >>|T133912:0|t[Darkshore Grouper]
+    >>|T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
+    >>|T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
+    .collect 5469,5,2178,1 -- Strider Meat (5)
+    .collect 12238,6,1141,1 -- Darkshore Grouper (6)
+    .target Auctioneer Jaxon
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+step
+    #ah
+    #optional
+    .goto Stormwind City,53.612,59.764
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
+    >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
+    >>|cRXP_BUY_Buy the following items for faster turn ins in Darkshore shortly:|r
     >>|T133972:0|t[Strider Meat]
     >>|T133912:0|t[Darkshore Grouper]
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
     .target Auctioneer Jaxon
+    .skill cooking,<50,1 --XX Shows if cooking skill is 50+
 step
     #softcore
     .hs >> Hearth to Loch Modan
@@ -8388,10 +9337,98 @@ step
     >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Dewin Shimmerdawn|r doesn't have any|r
     .target Dewin Shimmerdawn
 step
+    #optional
+    #label DockTravel
     #completewith next
     .goto Wetlands,7.10,57.96,30,0
-    .goto Wetlands,4.61,57.26,15 >> Travel to the Menethil Harbor docks. Wait for the boat to Darkshore
+    .goto Wetlands,4.61,57.26,15 >> Travel to the dock of the Auberdine boat
+    .zoneskip Darkshore
 step
+    #optional
+    #requires DockTravel
+    #label DarkshoreCook1
+    #completewith DarkshoreBoat
+    >>|cRXP_WARN_On the Boat if it just arrived or on the dock if the boat just left:|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .usespell 818
+    .zoneskip Darkshore
+    .itemcount 769,1 --Chunk of Boar Meat (1+)
+    .itemcount 2672,1 --Stringy Wolf Meat (1+)
+    .itemcount 4470,1 --Simple Wood (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+step
+    #optional
+    #requires DarkshoreCook1
+    #label DarkshoreCook2
+    #completewith DarkshoreBoat
+    >>|cRXP_WARN_On the Boat if it just arrived or on the dock if the boat just left:|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .usespell 818
+    .zoneskip Darkshore
+    .itemcount 769,<1 --Chunk of Boar Meat (<1)
+    .itemcount 2672,1 --Stringy Wolf Meat (1+)
+    .itemcount 4470,1 --Simple Wood (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+step
+    #optional
+    #requires DarkshoreCook2
+    #label DarkshoreCook3
+    #completewith DarkshoreBoat
+    >>|cRXP_WARN_On the Boat if it just arrived or on the dock if the boat just left:|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .usespell 818
+    .zoneskip Darkshore
+    .itemcount 769,1 --Chunk of Boar Meat (1+)
+    .itemcount 2672,<1 --Stringy Wolf Meat (<1)
+    .itemcount 4470,1 --Simple Wood (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+step
+    #optional
+    #requires DarkshoreCook3
+    #label DarkshoreCook4
+    #completewith DarkshoreBoat
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the following items:|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_into|r |T133974:0|t[Roasted Boar Meat]
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
+    .usespell 2550
+    .zoneskip Darkshore
+    .itemcount 769,1 --Chunk of Boar Meat (1+)
+    .itemcount 2672,1 --Stringy Wolf Meat (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1
+step
+    #optional
+    #requires DarkshoreCook4
+    #label DarkshoreCook5
+    #completewith DarkshoreBoat
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r |cRXP_WARN_into|r |T133974:0|t[Charred Wolf Meat]
+    .usespell 2550
+    .zoneskip Darkshore
+    .itemcount 769,<1 --Chunk of Boar Meat (<1)
+    .itemcount 2672,1 --Stringy Wolf Meat (1)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1
+step
+    #optional
+    #requires DarkshoreCook5
+    #label DarkshoreCook6
+    #completewith DarkshoreBoat
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_into|r |T133974:0|t[Roasted Boar Meat]
+    .usespell 2550
+    .zoneskip Darkshore
+    .itemcount 769,1 --Chunk of Boar Meat (1)
+    .itemcount 2672,<1 --Stringy Wolf Meat (<1)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1
+step
+    #label DarkshoreBoat
+    .goto 1437,4.370,56.762
+    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_while waiting for the boat to Darkshore if needed|r
     .zone Darkshore >> Take the boat to Darkshore
-    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_while waiting for the boat to Darkshore|r
 ]])

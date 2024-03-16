@@ -473,7 +473,7 @@ step << Paladin
 step << Dwarf Priest
 .goto Dun Morogh,47.3,52.2
 .target Maxan Anvol
->>Talk to |cRXP_FRIENDLY_Maxan Anvol|r
+>>Talk to |cRXP_FRIENDLY_Maxan Anvol|r inside
     .accept 5625 >> Garments of the Light
 step << Dwarf Priest
     .goto Dun Morogh,45.8,54.6
@@ -481,7 +481,7 @@ step << Dwarf Priest
 step << Dwarf Priest
 .goto Dun Morogh,47.3,52.2
 .target Maxan Anvol
->>Talk to |cRXP_FRIENDLY_Maxan Anvol|r
+>>Talk to |cRXP_FRIENDLY_Maxan Anvol|r inside
     .turnin 5625 >> Garments of the Light
     .train 591 >>Train Smite r2
     .train 17 >>Train Power Word: Shield
@@ -1106,7 +1106,7 @@ step << !NightElf !Draenei Priest tbc
 step << Rogue tbc
     .goto Dun Morogh,47.6,52.5
 .target Hogral Bakkan
->>Talk to |cRXP_FRIENDLY_Hogral Bakkan|r
+>>Talk to |cRXP_FRIENDLY_Hogral Bakkan|r inside in the backroom
     .accept 2218 >> Accept Road to Salvation
     .train 2983 >>Train Sprint
     .train 674 >>Train Dual Wield
