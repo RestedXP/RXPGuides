@@ -4742,7 +4742,9 @@ end
 addon.mapConversion = addon.mapConversion or {}
 
 for i,v in pairs(retailData) do
-    HBD.mapData[i] = v
+    if not HBD.mapData[i] then
+        HBD.mapData[i] = v
+    end
     local classicId = addon.mapId[v.name]
     if not classicId and v.parent then
         if C_Map.GetMapInfo(v.parent) then
@@ -4753,9 +4755,7 @@ for i,v in pairs(retailData) do
         end
     end
     addon.mapConversion[i] = classicId
-    if classicId then
-        --print(v.name,i,classicId)
-    end
+
 end
 
 addon.mapId["IcecrownGlacier"] = addon.mapId["Icecrown"]
