@@ -38,7 +38,7 @@ elseif class == "HUNTER" then
 end
 
 addon.mapId = {
-    ["87"] = 1455,
+   --[[ ["87"] = 1455,
     ["77"] = 1448,
     ["97"] = 1943,
     ["93"] = 1461,
@@ -107,7 +107,7 @@ addon.mapId = {
     ["76"] = 1447,
     ["14"] = 1417,
     ["42"] = 1430,
-    ["63"] = 1440,
+    ["63"] = 1440,]]
     ["ScarletEnclave"] = 124,
 }
 
@@ -527,7 +527,7 @@ addon.mountIDs = {
 	},
 
 }
-
+--[[
 addon.mapId = {
     ["Durotar"] = 1411,
     ["Mulgore"] = 1412,
@@ -578,7 +578,7 @@ addon.mapId = {
     ["Alterac Valley"] = 1459,
     ["Kalimdor"] = 1414,
     ["Eastern Kingdoms"] = 1415,
-}
+}]]
 
 local zoneData = {
 		[27] = {
@@ -4727,9 +4727,9 @@ local zoneData = {
             HBD.mapData[i] = v
         end
     end
-    for i,v in pairs(cataZones) do
+    --[[for i,v in pairs(cataZones) do
         HBD.mapData[i] = v
-    end
+    end]]
 
 
 for i = 1, 2200 do

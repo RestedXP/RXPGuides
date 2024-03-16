@@ -194,6 +194,7 @@ local IsQuestTurnedIn = function(id)
     if isQuestTurnedIn then addon.recentTurnIn[id] = nil end
     return isQuestTurnedIn or (recentTurnIn and GetTime() - recentTurnIn < 2)
 end
+QT = IsQuestTurnedIn
 
 function addon.IsQuestComplete(id)
     if not id then return end
@@ -1482,8 +1483,8 @@ addon.functions["goto"] = function(self, ...)
         local subzone,continent = zone:match("(.-)/(%d+)")
         if subzone then
             zone = addon.GetMapId(subzone) or tonumber(subzone)
-            if addon.mapConversion[element.zone] then
-                zone = addon.mapConversion[element.zone]
+            if addon.mapConversion[zone] then
+                zone = addon.mapConversion[zone]
             end
             x = tonumber(x)
             y = tonumber(y)
