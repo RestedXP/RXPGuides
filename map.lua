@@ -1144,7 +1144,7 @@ function addon.UpdateGotoSteps()
         elseif element.wpHash == af.element.wpHash and radius and element.anchor.pointCount then
             local _, dist = HBD:GetWorldVector(instance, x, y, element.wx,
                                                element.wy)
-            if dist <= radius then
+            if dist and dist <= radius then
                 if not element.lowPrio then
                     element.anchor.pointCount = element.anchor.pointCount + 1
                     element.lowPrio = true
