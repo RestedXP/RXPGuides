@@ -897,7 +897,7 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
             if skipGuide then
                 guide.version = tonumber(guide.version) or 0
                 addon.minGuideVersion = math.min(guide.version,addon.minGuideVersion)
-                addon.maxGuideVersion = math.min(guide.version,addon.maxGuideVersion)
+                addon.maxGuideVersion = math.max(guide.version,addon.maxGuideVersion)
                 addon.guide = false
                 addon.lastEelement = nil
                 guide.key = guide.key or key
@@ -992,7 +992,7 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
     guide.key = addon.BuildGuideKey(guide)
     guide.version = tonumber(guide.version) or 0
     addon.minGuideVersion = math.min(guide.version,addon.minGuideVersion)
-    addon.maxGuideVersion = math.min(guide.version,addon.maxGuideVersion)
+    addon.maxGuideVersion = math.max(guide.version,addon.maxGuideVersion)
 
     addon.guide = false
     addon.lastElement = nil
