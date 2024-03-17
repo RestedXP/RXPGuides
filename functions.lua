@@ -838,11 +838,14 @@ function addon.functions.accept(self, ...)
         local event, arg1, questId = ...
         local id = element.questId
         local isCompleted = element.completed
-        local isQuestAccepted = IsQuestTurnedIn(id) or IsOnQuest(id)
         local index = step.index
+        local isQuestAccepted
 
-        if (event == "QUEST_ACCEPTED" and questId == id) then
-            isQuestAccepted = true
+        if event == "QUEST_ACCEPTED" then
+            questId = questId or arg1
+            isQuestAccepted = questId == id or IsQuestTurnedIn(id) or IsOnQuest(id)
+        else
+            isQuestAccepted = IsQuestTurnedIn(id) or IsOnQuest(id)
         end
 
         if step.active or element.retrieveText or
@@ -3373,6 +3376,7 @@ function addon.functions.zone(self, ...)
         local element = {}
         local text, zone = ...
         local mapID = addon.GetMapId(zone) or tonumber(zone)
+        mapID = addon.mapConversion[mapID] or mapID
         if not (mapID and text) then
             return addon.error(
                         L("Error parsing guide") .. " " .. addon.currentGuideName ..
@@ -3402,6 +3406,7 @@ function addon.functions.zoneskip(self, text, zone, flags)
     if type(self) == "string" then -- on parse
         local element = {}
         local mapID = addon.GetMapId(zone) or tonumber(zone)
+        mapID = addon.mapConversion[mapID] or mapID
         if not mapID then
             return addon.error(
                 L("Error parsing guide") .. " " .. addon.currentGuideName ..
@@ -4574,6 +4579,9 @@ function addon.functions.cooldown(self, text, cooldownType, id, remaining,
             element.operator = 1
         end
         if suffix == "m" then cd = cd * 60 end
+        if cd < 2 then
+            cd = 2
+        end
         element.updateOnce = updateOnce
         element.id = id
         element.remaining = cd
