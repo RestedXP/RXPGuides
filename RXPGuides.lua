@@ -929,7 +929,19 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
             return GossipSelectActiveQuest(missingTurnIn)
         end
     elseif event == "QUEST_AUTOCOMPLETE" then
-        ShowQuestComplete(arg1)
+        if addon.gameVersion < 50000 then
+            for i = 1, GetNumAutoQuestPopUps() do
+                local id,status = GetAutoQuestPopUp(i)
+                if status == "COMPLETE" or id == arg1 then
+                    local frame = _G['WatchFrameAutoQuestPopUp' .. i]
+                    if frame and frame:IsShown() then
+                        frame:GetScript("OnMouseUp")(frame)
+                    end
+                end
+            end
+        else
+            ShowQuestComplete(arg1)
+        end
     end
 end
 
