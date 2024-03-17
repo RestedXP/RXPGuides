@@ -2575,6 +2575,79 @@ function addon.functions.skill(self, text, skillName, str, skipstep, useMaxValue
 
 end
 
+function addon.functions.mountcount(self, ...)
+    if gameVersion < 30000 or not addon.mountIDs then
+        return
+    elseif type(self) == "string" then -- on parse
+        local element = {}
+        local text, skill, str = ...
+        local operator, eq, total
+
+        if str then
+            str = str:gsub(" ", "")
+            operator, eq, total = str:match("([<>]?)(=?)%s*(%d+)")
+        end
+        --flags = tonumber(flags) or 0
+        --element.enableBank = bit.band(flags, 0x1) == 0x1
+
+        element.skill = tonumber(skill)
+        element.total = tonumber(total)
+        if not (element.total and element.skill) then
+            return addon.error(L("Error parsing guide") .. " " .. addon.currentGuideName ..
+                            ": Invalid skill/count\n" .. self)
+        end
+        if operator == "<" then
+            element.operator = -1
+        elseif operator == ">" then
+            element.operator = 1
+        else
+            element.operator = 0
+        end
+        if eq == "=" then element.eq = true end
+
+        if text ~= "" then element.text = text end
+
+        element.textOnly = true
+
+        return element
+    end
+
+    local element = self.element
+    local step = element.step
+    if not step.active or addon.isHidden then return end
+    local operator = element.operator
+    local eq = element.eq
+    local total = element.total
+    local count = 0
+
+    for i = 75,375,75 do
+        if element.skill < i then
+            break
+        end
+        for _,id in pairs(addon.mountIDs[i]) do
+            if addon.IsPlayerSpell(id) then
+                count = count + 1
+            end
+        end
+    end
+
+    if not ((eq and count == total) or (count * operator > total * operator) or
+        (not eq and operator == 0 and count >= total)) then
+        if step.active and not step.completed then
+            addon.updateSteps = true
+            step.completed = true
+            if operator < 0 then
+                element.tooltipText = "Step skipped: You already have the required item for this step"
+            else
+                element.tooltipText = "Step skipped: You don't have the required item for this step"
+            end
+        end
+    elseif step.active then
+        element.tooltipText = nil
+    end
+
+end
+
 function addon.functions.maxskill(self, text, skillName, str, skipstep)
     return addon.functions.skill(self, text, skillName, str, skipstep, true)
 end
