@@ -1406,24 +1406,60 @@ function addon.itemUpgrades.AH:Analyze()
 end
 
 -- Sequentially re-usable frames
-local itemBlocks = {
-    -- Populated with first frame from UI\AH\scanning.xml, specially positioned
-    [0] = {
-        header = _G.RXP_IU_AH_RowHeader0:GetName(),
-        best = _G.RXP_IU_AH_RowBest0:GetName(),
-        budget = _G.RXP_IU_AH_RowBudget0:GetName()
+local itemBlocks = {}
+local baseBlockName = 'RXP_IU_AH_'
+
+-- TODO fix incremental IDs
+local function createItemBlock(count)
+    print("createItemBlock", count)
+    -- Header0 already exists for positioning, exceptional case
+    local header, best, budget
+    local idBase = count * 3
+    if count == 0 then
+        header = _G['RXP_IU_AH_RowHeader' .. count]
+    else
+        header = CreateFrame("Frame", baseBlockName .. 'RowHeader' .. count,
+                             _G.RXP_IU_AH_ScrollFrame,
+                             baseBlockName .. 'ItemKindHeader', idBase + 1)
+        -- header:ClearAllPoints()
+        header:SetPoint("TOPLEFT", baseBlockName .. 'RowBudget' .. count - 1,
+                        "BOTTOMLEFT", 0, 0)
+    end
+
+    if count == 0 then
+        best = _G['RXP_IU_AH_RowBest' .. count]
+    else
+        best = CreateFrame("Button", baseBlockName .. 'RowBest' .. count,
+                           _G.RXP_IU_AH_ScrollFrame, baseBlockName .. 'ItemRow',
+                           idBase + 2)
+        best:SetPoint("TOPLEFT", baseBlockName .. 'RowHeader' .. count,
+                      "BOTTOMLEFT", 0, 0)
+    end
+
+    budget = CreateFrame("Button", baseBlockName .. 'RowBudget' .. count,
+                         _G.RXP_IU_AH_ScrollFrame, baseBlockName .. 'ItemRow',
+                         idBase + 3)
+    budget:SetPoint("TOPLEFT", baseBlockName .. 'RowBest' .. count,
+                    "BOTTOMLEFT", 0, 0)
+
+    local itemBlock = {
+        header = header:GetName(),
+        best = best:GetName(),
+        budget = budget:GetName()
     }
-}
+
+    return itemBlock
+end
 
 local function getItemBlock(count)
-    if itemBlocks[count] then return itemBlocks[count] end
+    if itemBlocks[count] then
+        print("getItemBlock, returning cached", count)
+        return itemBlocks[count]
+    end
 
-    -- TODO create
-    return {
-        header = _G.RXP_IU_AH_RowHeader0:GetName(),
-        best = _G.RXP_IU_AH_RowBest0:GetName(),
-        budget = _G.RXP_IU_AH_RowBudget0:GetName()
-    }
+    itemBlocks[count] = createItemBlock(count)
+
+    return itemBlocks[count]
 end
 
 function addon.itemUpgrades.AH:CreateEmbeddedGui()
@@ -1633,7 +1669,7 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
         end
 
         -- TODO remove after test
-        if i > 0 then return end
+        -- if i > 0 then return end
 
     end
 end

@@ -51,7 +51,7 @@
             <Layer level="BACKGROUND">
                 <FontString name="$parentName" inherits="GameFontNormal" justifyH="CENTER" text="Foo">
                     <Size>
-                        <AbsDimension x="40" y="19"/>
+                        <AbsDimension x="96" y="19"/>
                     </Size>
                     <Anchors>
                         <Anchor point="TOPLEFT">
@@ -530,6 +530,7 @@
                     </OnVerticalScroll>
                 </Scripts>
             </ScrollFrame>
+            <!-- Rows are built in ItemUpgrades:createItemBlock(count) -->
             <Frame name="RXP_IU_AH_RowHeader0" inherits="RXP_IU_AH_ItemKindHeader" id="1">
                 <Anchors>
                     <Anchor point="TOPLEFT">
@@ -544,10 +545,12 @@
                     <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_RowHeader0" relativePoint="BOTTOMLEFT" >
                         <Offset>
                             <AbsDimension x="35" y="0"/>
+                            <!-- Requires special offset as well -->
                         </Offset>
                     </Anchor>
                 </Anchors>
             </Button>
+            <!--
             <Button name="RXP_IU_AH_RowBudget0" inherits="RXP_IU_AH_ItemRow" id="3">
                 <Anchors>
                     <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_RowBest0" relativePoint="BOTTOMLEFT">
@@ -557,6 +560,7 @@
                     </Anchor>
                 </Anchors>
             </Button>
+            -->
             <Button name="RXP_IU_AH_CloseButton" inherits="UIPanelButtonTemplate" text="CLOSE">
                 <Size>
                     <AbsDimension x="80" y="22"/>
