@@ -988,13 +988,13 @@ local function calculateWeaponDPSWeight(equippedData, comparedData,
     return equippedWeight, comparedWeight
 end
 
--- return ratio, debugMsg
+-- return ratio, weight, debugMsg
 function addon.itemUpgrades:GetEquippedComparisonRatio(equippedItemLink,
                                                        comparedData,
                                                        slotComparisonId)
     if not comparedData or not equippedItemLink then
         -- print("GetEquippedComparisonRatio: not comparedData or not equippedItemLink ")
-        return nil, "invalid parameters"
+        return nil, -1, "invalid parameters"
     end
 
     -- Load equipped item into hidden tooltip for parsing
@@ -1002,7 +1002,7 @@ function addon.itemUpgrades:GetEquippedComparisonRatio(equippedItemLink,
 
     if not equippedData then
         -- print("GetEquippedComparisonRatio: not equippedData")
-        return nil, "not equippedData"
+        return nil, -1, "not equippedData"
     end
 
     -- _G.INVSLOT_RANGED, _G.INVSLOT_OFFHAND, _G.INVSLOT_MAINHAND
@@ -1013,20 +1013,21 @@ function addon.itemUpgrades:GetEquippedComparisonRatio(equippedItemLink,
     if equippedWeight == 0 or comparedWeight == 0 then
         -- Prevent division by 0
         -- One of these has no stats, so treat same as empty slot (nil)
-        return nil, _G.NONE
+        return nil, -1, _G.NONE
     elseif comparedWeight > equippedWeight then
-        return addon.Round(comparedWeight / equippedWeight, 2)
+        return addon.Round(comparedWeight / equippedWeight, 2),
+               comparedWeight - equippedWeight, nil
     elseif comparedWeight < equippedWeight then
         -- Item upgrade being negative is confusing and difficult to represent accurately, ignore
         -- return -1 * addon.Round(comparedWeight / equippedWeight, 2)
         -- Display 'downgrade' when debugging
-        return nil, 'downgrade'
+        return nil, -1, 'downgrade'
     elseif comparedWeight == equippedWeight then
-        return 0, 'equal'
+        return 0, -1, 'equal'
     end
 
     -- print("GetEquippedComparisonRatio nil")
-    return nil, _G.UNKNOWN
+    return nil, -1, _G.UNKNOWN
 end
 
 -- nil if same item
@@ -1071,9 +1072,9 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
     end
 
     local comparisons = {
-        -- { ['Ratio'] = 1.23, ['ItemLink'] = 'item:1234', ['itemEquipLoc'] = itemEquipLoc },
+        -- { ['Ratio'] = 1.23, ['WeightIncrease'] = 23.4, ['ItemLink'] = 'item:1234', ['itemEquipLoc'] = itemEquipLoc },
     }
-    local equippedItemLink, ratio, debug
+    local equippedItemLink, ratio, weightIncrease, debug
 
     -- Check applicable slots
     -- Will be 1 for most, 1-2 for weapons, 1-2 for rings
@@ -1091,14 +1092,16 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
             ratio = nil
             debug = 'same'
         else
-            ratio, debug = self:GetEquippedComparisonRatio(equippedItemLink,
-                                                           comparedData, slotId)
+            ratio, weightIncrease, debug =
+                self:GetEquippedComparisonRatio(equippedItemLink, comparedData,
+                                                slotId)
         end
 
         -- Even if ratio nil, add to comparisons for upstream handling based on debug value
         if ratio or equippedItemLink == _G.EMPTY then
             tinsert(comparisons, {
                 ['Ratio'] = ratio,
+                ['WeightIncrease'] = weightIncrease,
                 ['ItemLink'] = equippedItemLink or _G.UNKNOWN, -- Pass "Unknown" for debugging
                 ['itemEquipLoc'] = itemEquipLoc, -- Is actually slotID for rings/trinkets
                 ['debug'] = addon.settings.profile.debug and debug
@@ -1301,8 +1304,8 @@ local function calculate(itemLink, scanData)
     scanData.ratio = 10.0 -- Empty slot value
     scanData.comparisons = addon.itemUpgrades:CompareItemWeight(itemLink) or {}
 
-    local rwpc, ratio
-    local highestRWPC, highestRatio = -1, 0
+    local rwpc
+    local highestRWPC, highestRatio, hightestWeightIncrease = -1, 0, 0
     -- TODO account for multi-slot comparisons, show both
     for _, compareData in ipairs(scanData.comparisons) do
         -- To avoid complicated comparison, use ratio as a multiplier
@@ -1315,12 +1318,17 @@ local function calculate(itemLink, scanData)
 
             if compareData.Ratio > highestRatio then
                 highestRatio = compareData.Ratio
+
+                -- Include flat EP for AH Scanning UI
+                hightestWeightIncrease = compareData.WeightIncrease
+                -- print(itemLink, scanData.totalWeight, hightestWeightIncrease)
             end
         end
     end
 
     scanData.relativeWeightPerCopper = highestRWPC
     scanData.ratio = highestRatio
+    scanData.weightIncrease = hightestWeightIncrease
 end
 
 function addon.itemUpgrades.AH:Analyze()
@@ -1370,17 +1378,20 @@ function addon.itemUpgrades.AH:Analyze()
                     bAS.relative.itemID = scanData.itemID
                     bAS.relative.name = scanData.name
                     bAS.relative.level = scanData.level
+                    bAS.relative.weightIncrease = scanData.weightIncrease
 
                     bAS.relative.lowestPrice =
                         ahSession.scanData[itemLink].lowestPrice
                 end
 
                 if scanData.relativeWeightPerCopper > bAS.budget.rwpc then
+                    bAS.budget.ratio = scanData.ratio
                     bAS.budget.rwpc = scanData.relativeWeightPerCopper
                     bAS.budget.itemLink = itemLink
                     bAS.budget.itemID = scanData.itemID
                     bAS.budget.name = scanData.name
                     bAS.budget.level = scanData.level
+                    bAS.budget.weightIncrease = scanData.weightIncrease
 
                     bAS.budget.lowestPrice =
                         ahSession.scanData[itemLink].lowestPrice
@@ -1553,13 +1564,25 @@ local function getColorizedName(itemLink, itemName)
     return h .. itemName
 end
 
+local function prettyPrintUpgradeColumn(data)
+    return fmt("%s / %d EP", prettyPrintRatio(data.ratio), data.weightIncrease)
+end
+
+local function prettyPrintBudgetColumn(data)
+    local epPerCopper = addon.Round(data.rwpc, 2)
+
+    if epPerCopper == 0 then epPerCopper = addon.Round(data.rwpc, 4) end
+
+    return fmt("%s / %d (EP/c)", prettyPrintRatio(data.ratio),
+               data.weightIncrease)
+end
+
 function addon.itemUpgrades.AH:DisplayEmbeddedResults()
     self:CreateEmbeddedGui()
     if not _G.AuctionFrame:IsShown() then return end
 
     local block
     local i = 0
-    local epPerCopper
 
     for slotId, data in pairs(ahSession.bestAnalysis) do
         block = getItemBlock(i)
@@ -1576,7 +1599,7 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
                             data.relative.itemLink, data.relative.name))
                 setText(block.best, 'ItemLevelText', data.relative.level)
                 setText(block.best, 'UpdateEPText',
-                        fmt("%s", prettyPrintRatio(data.relative.ratio)))
+                        prettyPrintUpgradeColumn(data.relative))
                 setMoney(block.best, 'BuyoutMoney', data.relative.lowestPrice)
                 setIcon(block.best, 'ItemIcon',
                         GetItemIcon(data.relative.itemLink))
@@ -1584,11 +1607,6 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
             end
 
             if data.budget.itemLink then
-                epPerCopper = addon.Round(data.budget.rwpc, 2)
-
-                if epPerCopper == 0 then
-                    epPerCopper = addon.Round(data.budget.rwpc, 4)
-                end
                 setProperty(block.budget, 'ItemLink', data.budget.itemLink)
                 setProperty(block.budget, 'ItemID', data.budget.itemID)
                 setKindIcon(block.budget, 'ItemIcon',
@@ -1597,7 +1615,7 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
                             data.budget.itemLink, data.budget.name))
                 setText(block.budget, 'ItemLevelText', data.budget.level)
                 setText(block.budget, 'UpdateEPText',
-                        fmt("%s (EP/c)", epPerCopper))
+                        prettyPrintBudgetColumn(data.budget))
                 setMoney(block.budget, 'BuyoutMoney', data.budget.lowestPrice)
                 setIcon(block.budget, 'ItemIcon',
                         GetItemIcon(data.budget.itemLink))
@@ -1620,7 +1638,6 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
     end
 end
 
--- Propagate +EP up the chain
 -- Support multiple blocks, hide leftovers
 -- Verify scrollframe support
 -- Make rows clickable
