@@ -3333,24 +3333,32 @@ function addon.functions.spellmissing(self, text, id)
 end
 
 function addon.GetSubZoneId(zone,x,y)
-    local subzone = GetSubZoneText() or 1
-    local zoneText = GetZoneText() or 2
+    local subzonemax = 1e6
+    if gameVersion < 50000 then
+        subzonemax = 15325
+    end
+    local subzone = ""
+    local zoneText = ""
     if zone and x and y then
+       zoneText = GetZoneText() or 2
        zone = addon.GetMapId(zone) or zone
        x = x / 100
        y = y / 100
        subzone = MapUtil.FindBestAreaNameAtMouse(zone,x,y)
     elseif zone then
        subzone = zone
+    else
+        subzone = GetSubZoneText() or 1
+        zoneText = GetZoneText() or 2
     end
 
     if subzone or zoneText then
         local bestMatchId,bestMatchText
-        for i = 1,1e6 do
+        for i = 1,subzonemax do
             local zoneName = C_Map.GetAreaInfo(i) or 3
             if zoneName and zoneName == subzone then
                 print(zoneName .. ' Subzone ID: ' .. i)
-                return
+                return i
             elseif zoneText == zoneName then
                 bestMatchId = i
                 bestMatchText = zoneName
@@ -3358,7 +3366,7 @@ function addon.GetSubZoneId(zone,x,y)
         end
         if bestMatchId and bestMatchText then
             print(bestMatchText .. ' Subzone ID: ' .. bestMatchId)
-            return
+            return bestMatchId
         end
     end
     print('ERROR: Subzone not found')
