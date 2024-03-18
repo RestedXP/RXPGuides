@@ -1421,9 +1421,10 @@ local function createItemBlock(count)
         header = CreateFrame("Frame", baseBlockName .. 'RowHeader' .. count,
                              _G.RXP_IU_AH_ScrollFrame,
                              baseBlockName .. 'ItemKindHeader', idBase + 1)
-        -- header:ClearAllPoints()
-        header:SetPoint("TOPLEFT", baseBlockName .. 'RowBudget' .. count - 1,
-                        "BOTTOMLEFT", 0, 0)
+
+        -- Align with right side, left side is skewed by item icon
+        header:SetPoint("TOPRIGHT", baseBlockName .. 'RowBudget' .. count - 1,
+                        "BOTTOMRIGHT", 0, 0) -- Slide left to counter item icon
     end
 
     if count == 0 then
@@ -1432,15 +1433,15 @@ local function createItemBlock(count)
         best = CreateFrame("Button", baseBlockName .. 'RowBest' .. count,
                            _G.RXP_IU_AH_ScrollFrame, baseBlockName .. 'ItemRow',
                            idBase + 2)
-        best:SetPoint("TOPLEFT", baseBlockName .. 'RowHeader' .. count,
-                      "BOTTOMLEFT", 0, 0)
+        best:SetPoint("TOPRIGHT", baseBlockName .. 'RowHeader' .. count,
+                      "BOTTOMRIGHT", 0, 0)
     end
 
     budget = CreateFrame("Button", baseBlockName .. 'RowBudget' .. count,
                          _G.RXP_IU_AH_ScrollFrame, baseBlockName .. 'ItemRow',
                          idBase + 3)
-    budget:SetPoint("TOPLEFT", baseBlockName .. 'RowBest' .. count,
-                    "BOTTOMLEFT", 0, 0)
+    budget:SetPoint("TOPRIGHT", baseBlockName .. 'RowBest' .. count,
+                    "BOTTOMRIGHT", 0, 0)
 
     local itemBlock = {
         header = header:GetName(),

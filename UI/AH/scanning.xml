@@ -50,13 +50,11 @@
         <Layers>
             <Layer level="BACKGROUND">
                 <FontString name="$parentName" inherits="GameFontNormal" justifyH="CENTER" text="Foo">
-                    <Size>
-                        <AbsDimension x="96" y="19"/>
-                    </Size>
+                    <Size x="96" y="19"/>
                     <Anchors>
-                        <Anchor point="TOPLEFT">
+                        <Anchor point="TOP">
                             <Offset>
-                                <AbsDimension x="400" y="3"/>
+                                <AbsDimension x="0" y="3"/>
                             </Offset>
                         </Anchor>
                     </Anchors>
