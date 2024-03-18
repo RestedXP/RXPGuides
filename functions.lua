@@ -3,6 +3,8 @@ local addonName, addon = ...
 local localizedClass, class = UnitClass("player")
 local gameVersion = select(4, GetBuildInfo())
 local fmt, tinsert = string.format,tinsert
+local LoadAddOn = C_AddOns and C_AddOns.LoadAddOn or _G.LoadAddOn
+local IsAddOnLoaded = C_AddOns and C_AddOns.IsAddOnLoaded or _G.IsAddOnLoaded
 --local RXPGuides = addon.RXPGuides
 local L = addon.locale.Get
 addon.functions.__index = addon.functions
@@ -4912,8 +4914,8 @@ function addon.functions.dmf(self, ...)
     -- Async relies on CALENDAR_UPDATE_EVENT_LIST
     -- Currently results in one false negative if on a DMF step at login
     -- If called during the loading process, (even at PLAYER_ENTERING_WORLD) the query will not return
-    if not _G.IsAddOnLoaded('Blizzard_Calendar') then
-        _G.LoadAddOn("Blizzard_Calendar")
+    if not IsAddOnLoaded('Blizzard_Calendar') then
+        LoadAddOn("Blizzard_Calendar")
         addon.calendarLoaded = true
     end
 
