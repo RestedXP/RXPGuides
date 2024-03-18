@@ -44,9 +44,7 @@
         <NormalFont style="GameFontHighlightSmall"/>
     </Button>
     <Button name="RXP_IU_AH_ItemKindHeader" hidden="false" virtual="true">
-        <Size>
-            <AbsDimension x="805" y="19"/>
-        </Size>
+        <Size x="810" y="19"/>
         <Layers>
             <Layer level="BACKGROUND">
                 <FontString name="$parentName" inherits="GameFontNormal" justifyH="CENTER" text="Foo">
@@ -105,21 +103,15 @@
                 </Texture>
             </Layer>
         </Layers>
-        <Frames>
-        </Frames>
-        <Scripts>
-        </Scripts>
     </Button>
     <Button name="RXP_IU_AH_ItemRow" hidden="false" virtual="true">
         <Size>
-            <AbsDimension x="770" y="37"/>
+            <AbsDimension x="773" y="37"/>
         </Size>
         <Layers>
             <Layer level="BACKGROUND">
                 <FontString name="$parentName" inherits="GameFontNormal" justifyH="LEFT" text="$parentName">
-                    <Size>
-                        <AbsDimension x="180" y="32"/>
-                    </Size>
+                    <Size x="180" y="32"/>
                     <Anchors>
                         <Anchor point="TOPLEFT">
                             <Offset>
@@ -188,15 +180,9 @@
         </Layers>
         <Frames>
             <Button name="$parentItemIcon">
-                <Size>
-                    <AbsDimension x="32" y="32"/>
-                </Size>
+                <Size x="32" y="32"/>
                 <Anchors>
-                    <Anchor point="TOPLEFT">
-                        <Offset>
-                            <AbsDimension x="0" y="0"/>
-                        </Offset>
-                    </Anchor>
+                    <Anchor point="TOPLEFT"/>
                 </Anchors>
                 <Layers>
                     <Layer level="BORDER">
@@ -270,9 +256,7 @@
                 <HighlightTexture file="Interface\Buttons\ButtonHilight-Square" alphaMode="ADD"/>
             </Button>
             <Frame name="$parentItemLevel" enableMouse="true">
-                <Size>
-                    <AbsDimension x="84" y="32"/>
-                </Size>
+                <Size x="84" y="32"/>
                 <Anchors>
                     <Anchor point="TOPLEFT">
                         <Offset>
@@ -283,9 +267,7 @@
                 <Layers>
                     <Layer level="BACKGROUND">
                         <FontString name="$parentText" inherits="GameFontHighlightSmall" text="23" >
-                            <Size>
-                                <AbsDimension x="75" y="32"/>
-                            </Size>
+                            <Size x="75" y="32"/>
                             <Anchors>
                                 <Anchor point="TOPLEFT"/>
                             </Anchors>
@@ -401,13 +383,26 @@
             <TexCoords left="0" right="1.0" top="0" bottom="0.578125"/>
         </HighlightTexture>
     </Button>
+    <Frame name="RXP_IU_AH_ItemBlock" hidden="false" virtual="true">
+        <Frames>
+            <Frame name="$parentHeader" inherits="RXP_IU_AH_ItemKindHeader" id="1">
+                <Anchors>
+                    <Anchor point="TOPLEFT"/>
+                </Anchors>
+            </Frame>
+            <Button name="$parentBest" inherits="RXP_IU_AH_ItemRow" id="2">
+                <Anchors>
+                    <Anchor point="TOPRIGHT" relativeTo="$parentHeader" relativePoint="BOTTOMRIGHT"/>
+                </Anchors>
+            </Button>
+            <Button name="$parentBudget" inherits="RXP_IU_AH_ItemRow" id="3">
+                <Anchors>
+                    <Anchor point="TOPLEFT" relativeTo="$parentBest" relativePoint="BOTTOMLEFT"/>
+                </Anchors>
+            </Button>
+        </Frames>
+    </Frame>
     <Frame name="RXP_IU_AH_Frame" hidden="true">
-        <Size>
-            <AbsDimension x="758" y="447"/>
-        </Size>
-        <Anchors>
-            <Anchor point="TOPLEFT"/>
-        </Anchors>
         <Layers>
             <Layer level="BACKGROUND">
                 <FontString name="RXP_IU_AH_Title" inherits="GameFontNormal" text="MINIMAP_TRACKING_AUCTIONEER">
@@ -415,17 +410,6 @@
                         <Anchor point="TOP">
                             <Offset>
                                 <AbsDimension x="0" y="-18"/>
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                </FontString>
-            </Layer>
-            <Layer level="ARTWORK">
-                <FontString name="RXP_IU_AH_SearchCountText" inherits="GameFontHighlightSmall">
-                    <Anchors>
-                        <Anchor point="BOTTOM">
-                            <Offset>
-                                <AbsDimension x="-10" y="53"/>
                             </Offset>
                         </Anchor>
                     </Anchors>
@@ -481,92 +465,12 @@
                     </Anchor>
                 </Anchors>
             </Button>
-            <ScrollFrame name="RXP_IU_AH_ScrollFrame" inherits="FauxScrollFrameTemplate">
-                <Size>
-                    <AbsDimension x="775" y="335"/>
-                </Size>
-                <Anchors>
-                    <Anchor point="TOPRIGHT">
-                        <Offset>
-                            <AbsDimension x="40" y="-74"/>
-                        </Offset>
-                    </Anchor>
-                </Anchors>
-                <Layers>
-                    <Layer level="ARTWORK">
-                        <Texture file="Interface\PaperDollInfoFrame\UI-Character-ScrollBar">
-                            <Size>
-                                <AbsDimension x="31" y="256"/>
-                            </Size>
-                            <Anchors>
-                                <Anchor point="TOPLEFT" relativePoint="TOPRIGHT">
-                                    <Offset>
-                                        <AbsDimension x="-2" y="5"/>
-                                    </Offset>
-                                </Anchor>
-                            </Anchors>
-                            <TexCoords left="0" right="0.484375" top="0" bottom="1.0"/>
-                        </Texture>
-                        <Texture file="Interface\PaperDollInfoFrame\UI-Character-ScrollBar">
-                            <Size>
-                                <AbsDimension x="31" y="106"/>
-                            </Size>
-                            <Anchors>
-                                <Anchor point="BOTTOMLEFT" relativePoint="BOTTOMRIGHT">
-                                    <Offset>
-                                        <AbsDimension x="-2" y="-2"/>
-                                    </Offset>
-                                </Anchor>
-                            </Anchors>
-                            <TexCoords left="0.515625" right="1.0" top="0" bottom="0.4140625"/>
-                        </Texture>
-                    </Layer>
-                </Layers>
-                <Scripts>
-                    <OnVerticalScroll>
-                        FauxScrollFrame_OnVerticalScroll(self, offset, AUCTIONS_BUTTON_HEIGHT, RXP_IU_AH_Update)
-                    </OnVerticalScroll>
-                </Scripts>
-            </ScrollFrame>
-            <!-- Rows are built in ItemUpgrades:createItemBlock(count) -->
-            <Frame name="RXP_IU_AH_RowHeader0" inherits="RXP_IU_AH_ItemKindHeader" id="1">
-                <Anchors>
-                    <Anchor point="TOPLEFT">
-                        <Offset>
-                            <AbsDimension x="-11" y="-81"/>
-                        </Offset>
-                    </Anchor>
-                </Anchors>
-            </Frame>
-            <Button name="RXP_IU_AH_RowBest0" inherits="RXP_IU_AH_ItemRow" id="2">
-                <Anchors>
-                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_RowHeader0" relativePoint="BOTTOMLEFT" >
-                        <Offset>
-                            <AbsDimension x="35" y="0"/>
-                            <!-- Requires special offset as well -->
-                        </Offset>
-                    </Anchor>
-                </Anchors>
-            </Button>
-            <!--
-            <Button name="RXP_IU_AH_RowBudget0" inherits="RXP_IU_AH_ItemRow" id="3">
-                <Anchors>
-                    <Anchor point="TOPLEFT" relativeTo="RXP_IU_AH_RowBest0" relativePoint="BOTTOMLEFT">
-                        <Offset>
-                            <AbsDimension x="0" y="0"/>
-                        </Offset>
-                    </Anchor>
-                </Anchors>
-            </Button>
-            -->
             <Button name="RXP_IU_AH_CloseButton" inherits="UIPanelButtonTemplate" text="CLOSE">
-                <Size>
-                    <AbsDimension x="80" y="22"/>
-                </Size>
+                <Size x="80" y="22"/>
                 <Anchors>
                     <Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT">
                         <Offset>
-                            <AbsDimension x="66" y="14"/>
+                            <AbsDimension x="-6" y="14"/>
                         </Offset>
                     </Anchor>
                 </Anchors>
@@ -617,15 +521,9 @@
                 </Scripts>
             </Button>
             <Button name="RXP_IU_AH_SearchButton" inherits="UIPanelButtonTemplate" text="SEARCH">
-                <Size>
-                    <AbsDimension x="80" y="22"/>
-                </Size>
+                <Size x="80" y="22"/>
                 <Anchors>
-                    <Anchor point="RIGHT" relativeTo="RXP_IU_AH_BuyoutButton" relativePoint="LEFT">
-                        <Offset>
-                            <AbsDimension x="0" y="0"/>
-                        </Offset>
-                    </Anchor>
+                    <Anchor point="RIGHT" relativeTo="RXP_IU_AH_BuyoutButton" relativePoint="LEFT"/>
                 </Anchors>
                 <Layers>
                     <Layer level="BORDER">

@@ -1405,62 +1405,12 @@ function addon.itemUpgrades.AH:Analyze()
     end
 end
 
--- Sequentially re-usable frames
-local itemBlocks = {}
-local baseBlockName = 'RXP_IU_AH_'
-
--- TODO fix incremental IDs
-local function createItemBlock(count)
-    print("createItemBlock", count)
-    -- Header0 already exists for positioning, exceptional case
-    local header, best, budget
-    local idBase = count * 3
-    if count == 0 then
-        header = _G['RXP_IU_AH_RowHeader' .. count]
-    else
-        header = CreateFrame("Frame", baseBlockName .. 'RowHeader' .. count,
-                             _G.RXP_IU_AH_ScrollFrame,
-                             baseBlockName .. 'ItemKindHeader', idBase + 1)
-
-        -- Align with right side, left side is skewed by item icon
-        header:SetPoint("TOPRIGHT", baseBlockName .. 'RowBudget' .. count - 1,
-                        "BOTTOMRIGHT", 0, 0) -- Slide left to counter item icon
-    end
-
-    if count == 0 then
-        best = _G['RXP_IU_AH_RowBest' .. count]
-    else
-        best = CreateFrame("Button", baseBlockName .. 'RowBest' .. count,
-                           _G.RXP_IU_AH_ScrollFrame, baseBlockName .. 'ItemRow',
-                           idBase + 2)
-        best:SetPoint("TOPRIGHT", baseBlockName .. 'RowHeader' .. count,
-                      "BOTTOMRIGHT", 0, 0)
-    end
-
-    budget = CreateFrame("Button", baseBlockName .. 'RowBudget' .. count,
-                         _G.RXP_IU_AH_ScrollFrame, baseBlockName .. 'ItemRow',
-                         idBase + 3)
-    budget:SetPoint("TOPRIGHT", baseBlockName .. 'RowBest' .. count,
-                    "BOTTOMRIGHT", 0, 0)
-
-    local itemBlock = {
-        header = header:GetName(),
-        best = best:GetName(),
-        budget = budget:GetName()
-    }
-
-    return itemBlock
-end
-
 local function getItemBlock(count)
-    if itemBlocks[count] then
-        print("getItemBlock, returning cached", count)
-        return itemBlocks[count]
-    end
+    local c = ahSession.displayFrame.DataProvider:GetCollection()
 
-    itemBlocks[count] = createItemBlock(count)
+    if c and c[count] then ahSession.displayFrame.DataProvider:Insert({}) end
 
-    return itemBlocks[count]
+    return c[count]
 end
 
 function addon.itemUpgrades.AH:CreateEmbeddedGui()
@@ -1472,8 +1422,39 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
     ahSession.displayFrame = _G["RXP_IU_AH_Frame"]
     if not ahSession.displayFrame then return end
 
+    ahSession.displayFrame:SetParent(attachment)
+    ahSession.displayFrame:SetPoint("TOPLEFT", attachment, "TOPLEFT")
+    ahSession.displayFrame:SetPoint("BOTTOMRIGHT", attachment, "BOTTOMRIGHT")
+
     _G.RXP_IU_AH_Title:SetText(fmt("%s - %s", addon.title,
                                    _G.MINIMAP_TRACKING_AUCTIONEER))
+
+    local ScrollBox = CreateFrame("Frame", 'RXP_IU_AH_ScrollFrame',
+                                  ahSession.displayFrame, "WowScrollBoxList")
+
+    ScrollBox:SetPoint("TOPLEFT", -12, -78)
+    ScrollBox:SetPoint("BOTTOMRIGHT")
+
+    local ScrollBar = CreateFrame("EventFrame", nil, ahSession.displayFrame,
+                                  "WowTrimScrollBar")
+    ScrollBar:SetHideIfUnscrollable(false)
+    ScrollBar:SetPoint("TOPRIGHT", ScrollBox, "TOPRIGHT", -9, 6)
+    ScrollBar:SetPoint("BOTTOMRIGHT", ScrollBox, "BOTTOMRIGHT", 0, 37)
+
+    local DataProvider = CreateDataProvider()
+    local ScrollView = CreateScrollBoxListLinearView()
+    ScrollView:SetDataProvider(DataProvider)
+    ScrollView:SetElementExtent(37 * 2 + 19)
+    ahSession.displayFrame.DataProvider = DataProvider
+
+    ScrollUtil.InitScrollBoxListWithScrollBar(ScrollBox, ScrollBar, ScrollView)
+
+    local function Initializer(itemBlockFrame, arg)
+        print("Initializer", itemBlockFrame:GetName())
+    end
+
+    ScrollView:SetElementInitializer("RXP_IU_AH_ItemBlock", Initializer)
+    DataProvider:Insert({})
 
     ahSession.displayFrame.scanButton = _G.RXP_IU_AH_SearchButton
 
@@ -1482,9 +1463,6 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
     end)
 
     _G.RXP_IU_AH_BuyoutButton:Disable()
-
-    ahSession.displayFrame:SetParent(attachment)
-    ahSession.displayFrame:SetPoint("TOPLEFT", attachment, "TOPLEFT")
 
     -- Create tab button
     local index = attachment.numTabs + 1
@@ -1676,8 +1654,6 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
 end
 
 -- Support multiple blocks, hide leftovers
--- Verify scrollframe support
 -- Make rows clickable
 -- Support actually buying the thing
--- Hide scrollbar when not needed
 -- fix randomly generated tooltip
