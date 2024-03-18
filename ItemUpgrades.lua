@@ -1405,120 +1405,6 @@ function addon.itemUpgrades.AH:Analyze()
     end
 end
 
-local function getItemBlock(count)
-    local c = ahSession.displayFrame.DataProvider:GetCollection()
-
-    if c and c[count] then ahSession.displayFrame.DataProvider:Insert({}) end
-
-    return c[count]
-end
-
-function addon.itemUpgrades.AH:CreateEmbeddedGui()
-    if ahSession.displayFrame then return end
-
-    local attachment = _G.AuctionFrame
-    if not attachment then return end
-
-    ahSession.displayFrame = _G["RXP_IU_AH_Frame"]
-    if not ahSession.displayFrame then return end
-
-    ahSession.displayFrame:SetParent(attachment)
-    ahSession.displayFrame:SetPoint("TOPLEFT", attachment, "TOPLEFT")
-    ahSession.displayFrame:SetPoint("BOTTOMRIGHT", attachment, "BOTTOMRIGHT")
-
-    _G.RXP_IU_AH_Title:SetText(fmt("%s - %s", addon.title,
-                                   _G.MINIMAP_TRACKING_AUCTIONEER))
-
-    local ScrollBox = CreateFrame("Frame", 'RXP_IU_AH_ScrollFrame',
-                                  ahSession.displayFrame, "WowScrollBoxList")
-
-    ScrollBox:SetPoint("TOPLEFT", -12, -78)
-    ScrollBox:SetPoint("BOTTOMRIGHT")
-
-    local ScrollBar = CreateFrame("EventFrame", nil, ahSession.displayFrame,
-                                  "WowTrimScrollBar")
-    ScrollBar:SetHideIfUnscrollable(false)
-    ScrollBar:SetPoint("TOPRIGHT", ScrollBox, "TOPRIGHT", -9, 6)
-    ScrollBar:SetPoint("BOTTOMRIGHT", ScrollBox, "BOTTOMRIGHT", 0, 37)
-
-    local DataProvider = CreateDataProvider()
-    local ScrollView = CreateScrollBoxListLinearView()
-    ScrollView:SetDataProvider(DataProvider)
-    ScrollView:SetElementExtent(37 * 2 + 19)
-    ahSession.displayFrame.DataProvider = DataProvider
-
-    ScrollUtil.InitScrollBoxListWithScrollBar(ScrollBox, ScrollBar, ScrollView)
-
-    local function Initializer(itemBlockFrame, arg)
-        print("Initializer", itemBlockFrame:GetName())
-    end
-
-    ScrollView:SetElementInitializer("RXP_IU_AH_ItemBlock", Initializer)
-    DataProvider:Insert({})
-
-    ahSession.displayFrame.scanButton = _G.RXP_IU_AH_SearchButton
-
-    ahSession.displayFrame.scanButton:SetScript("OnClick", function()
-        addon.itemUpgrades.AH:Scan()
-    end)
-
-    _G.RXP_IU_AH_BuyoutButton:Disable()
-
-    -- Create tab button
-    local index = attachment.numTabs + 1
-    local tabButton = CreateFrame("Button", "AuctionFrameTab" .. index,
-                                  attachment, "AuctionTabTemplate")
-    tabButton.isRXP = true
-    tabButton:SetText(addon.name)
-    tabButton:SetID(index)
-
-    tabButton:SetPoint("TOPLEFT", "AuctionFrameTab" .. (index - 1), "TOPRIGHT",
-                       -8, 0)
-
-    tabButton:HookScript("OnHide", function() ahSession.displayFrame:Hide() end)
-
-    tabButton.Selected = function(this)
-        PanelTemplates_SetTab(attachment, this)
-
-        _G.AuctionFrameTopLeft:SetTexture(
-            "Interface\\AuctionFrame\\UI-AuctionFrame-Bid-TopLeft")
-        _G.AuctionFrameTop:SetTexture(
-            "Interface\\AuctionFrame\\UI-AuctionFrame-Auction-Top")
-        _G.AuctionFrameTopRight:SetTexture(
-            "Interface\\AuctionFrame\\UI-AuctionFrame-Auction-TopRight")
-        _G.AuctionFrameBotLeft:SetTexture(
-            "Interface\\AuctionFrame\\UI-AuctionFrame-Bid-BotLeft")
-        _G.AuctionFrameBot:SetTexture(
-            "Interface\\AuctionFrame\\UI-AuctionFrame-Auction-Bot")
-        _G.AuctionFrameBotRight:SetTexture(
-            "Interface\\AuctionFrame\\UI-AuctionFrame-Bid-BotRight")
-
-        ahSession.displayFrame:Show()
-
-        _G.AuctionFrame.type = nil
-        _G.SetAuctionsTabShowing(false)
-        PanelTemplates_SelectTab(this)
-    end
-
-    tabButton.Deselected = function(this)
-        PanelTemplates_DeselectTab(this)
-        ahSession.displayFrame:Hide()
-    end
-
-    hooksecurefunc(_G, "AuctionFrameTab_OnClick", function(button, ...)
-        if not button.isRXP then
-            tabButton:Deselected()
-            return
-        end
-
-        tabButton:Selected()
-    end)
-
-    PanelTemplates_TabResize(tabButton, 0, nil, 36)
-    PanelTemplates_SetNumTabs(attachment, index)
-    PanelTemplates_EnableTab(attachment, index)
-end
-
 local function setIcon(base, name, icon)
     if not base or not _G[base .. name] then
         print("setIcon: error", icon)
@@ -1592,20 +1478,167 @@ local function prettyPrintBudgetColumn(data)
                data.weightIncrease)
 end
 
+-- TODO convert to lua itemblock generation, lua+frame isn't evaluating $parentFoo properly and harder to access
+local function Initializer(itemBlockFrame, data)
+    _G.RXPD = itemBlockFrame
+    print("Initializer", itemBlockFrame, itemBlockFrame:GetName())
+    -- setText(itemBlockFrame, 'Name', data.Name)
+
+    if data.best.ItemLink and false then
+        setProperty(block.best, 'ItemLink', data.best.itemLink)
+        setProperty(block.best, 'ItemID', data.best.itemID)
+        setKindIcon(block.best, 'ItemIcon',
+                    "Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64")
+        setText(block.best, 'Name',
+                getColorizedName(data.relative.itemLink, data.best.name))
+        setText(block.best, 'ItemLevelText', data.best.level)
+        setText(block.best, 'UpdateEPText', prettyPrintUpgradeColumn(data.best))
+        setMoney(block.best, 'BuyoutMoney', data.best.lowestPrice)
+        setIcon(block.best, 'ItemIcon', GetItemIcon(data.best.itemLink))
+    end
+
+    if data.budget.ItemLink and false then
+        setProperty(block.budget, 'ItemLink', data.budget.itemLink)
+        setProperty(block.budget, 'ItemID', data.budget.itemID)
+        setKindIcon(block.budget, 'ItemIcon',
+                    'Interface/GossipFrame/VendorGossipIcon.blp')
+        setText(block.budget, 'Name',
+                getColorizedName(data.budget.itemLink, data.budget.name))
+        setText(block.budget, 'ItemLevelText', data.budget.level)
+        setText(block.budget, 'UpdateEPText',
+                prettyPrintBudgetColumn(data.budget))
+        setMoney(block.budget, 'BuyoutMoney', data.budget.lowestPrice)
+        setIcon(block.budget, 'ItemIcon', GetItemIcon(data.budget.itemLink))
+    end
+end
+
+function addon.itemUpgrades.AH:CreateEmbeddedGui()
+    if ahSession.displayFrame then return end
+
+    local attachment = _G.AuctionFrame
+    if not attachment then return end
+
+    ahSession.displayFrame = _G["RXP_IU_AH_Frame"]
+    if not ahSession.displayFrame then return end
+
+    ahSession.displayFrame:SetParent(attachment)
+    ahSession.displayFrame:SetPoint("TOPLEFT", attachment, "TOPLEFT")
+    ahSession.displayFrame:SetPoint("BOTTOMRIGHT", attachment, "BOTTOMRIGHT")
+
+    _G.RXP_IU_AH_Title:SetText(fmt("%s - %s", addon.title,
+                                   _G.MINIMAP_TRACKING_AUCTIONEER))
+
+    local scrollBox = CreateFrame("Frame", 'RXP_IU_AH_ScrollFrame',
+                                  ahSession.displayFrame, "WowScrollBoxList")
+
+    scrollBox:SetPoint("TOPLEFT", -12, -78)
+    scrollBox:SetPoint("BOTTOMRIGHT", 0, 37)
+
+    local ScrollBar = CreateFrame("EventFrame", nil, ahSession.displayFrame,
+                                  "WowTrimScrollBar")
+    ScrollBar:SetHideIfUnscrollable(false)
+    ScrollBar:SetPoint("TOPRIGHT", scrollBox, "TOPRIGHT", -9, 6)
+    ScrollBar:SetPoint("BOTTOMRIGHT", scrollBox, "BOTTOMRIGHT")
+
+    local DataProvider = CreateDataProvider()
+    local ScrollView = CreateScrollBoxListLinearView()
+    ScrollView:SetDataProvider(DataProvider)
+    ScrollView:SetElementExtent(37 * 2 + 19)
+    ahSession.displayFrame.DataProvider = DataProvider
+
+    ScrollUtil.InitScrollBoxListWithScrollBar(scrollBox, ScrollBar, ScrollView)
+
+    ScrollView:SetElementInitializer("RXP_IU_AH_ItemBlock", Initializer)
+    -- DataProvider:Insert({})
+
+    ahSession.displayFrame.scanButton = _G.RXP_IU_AH_SearchButton
+
+    ahSession.displayFrame.scanButton:SetScript("OnClick", function()
+        addon.itemUpgrades.AH:Scan()
+    end)
+
+    _G.RXP_IU_AH_BuyoutButton:Disable()
+
+    -- Create tab button
+    local index = attachment.numTabs + 1
+    local tabButton = CreateFrame("Button", "AuctionFrameTab" .. index,
+                                  attachment, "AuctionTabTemplate")
+    tabButton.isRXP = true
+    tabButton:SetText(addon.name)
+    tabButton:SetID(index)
+
+    tabButton:SetPoint("TOPLEFT", "AuctionFrameTab" .. (index - 1), "TOPRIGHT",
+                       -8, 0)
+
+    tabButton:HookScript("OnHide", function() ahSession.displayFrame:Hide() end)
+
+    tabButton.Selected = function(this)
+        PanelTemplates_SetTab(attachment, this)
+
+        _G.AuctionFrameTopLeft:SetTexture(
+            "Interface\\AuctionFrame\\UI-AuctionFrame-Bid-TopLeft")
+        _G.AuctionFrameTop:SetTexture(
+            "Interface\\AuctionFrame\\UI-AuctionFrame-Auction-Top")
+        _G.AuctionFrameTopRight:SetTexture(
+            "Interface\\AuctionFrame\\UI-AuctionFrame-Auction-TopRight")
+        _G.AuctionFrameBotLeft:SetTexture(
+            "Interface\\AuctionFrame\\UI-AuctionFrame-Bid-BotLeft")
+        _G.AuctionFrameBot:SetTexture(
+            "Interface\\AuctionFrame\\UI-AuctionFrame-Auction-Bot")
+        _G.AuctionFrameBotRight:SetTexture(
+            "Interface\\AuctionFrame\\UI-AuctionFrame-Bid-BotRight")
+
+        ahSession.displayFrame:Show()
+
+        _G.AuctionFrame.type = nil
+        _G.SetAuctionsTabShowing(false)
+        PanelTemplates_SelectTab(this)
+    end
+
+    tabButton.Deselected = function(this)
+        PanelTemplates_DeselectTab(this)
+        ahSession.displayFrame:Hide()
+    end
+
+    hooksecurefunc(_G, "AuctionFrameTab_OnClick", function(button, ...)
+        if not button.isRXP then
+            tabButton:Deselected()
+            return
+        end
+
+        tabButton:Selected()
+    end)
+
+    PanelTemplates_TabResize(tabButton, 0, nil, 36)
+    PanelTemplates_SetNumTabs(attachment, index)
+    PanelTemplates_EnableTab(attachment, index)
+end
+
 function addon.itemUpgrades.AH:DisplayEmbeddedResults()
     self:CreateEmbeddedGui()
     if not _G.AuctionFrame:IsShown() then return end
 
-    local block
-    local i = 0
+    local blockData
 
     for slotId, data in pairs(ahSession.bestAnalysis) do
-        block = getItemBlock(i)
-
         if data.budget.itemLink or data.relative.itemLink then
-            setText(block.header, 'Name', data.slotName)
+            blockData = {['Name'] = data.slotName, best = {}, budget = {}}
+            -- setText(block.header, 'Name', data.slotName)
 
             if data.relative.itemLink then
+                blockData.best = {
+                    ItemLink = data.relative.itemLink,
+                    ItemID = data.relative.itemID,
+                    ItemKindIcon = "Interface/AddOns/" .. addonName ..
+                        "/Textures/rxp_logo-64",
+                    Name = getColorizedName(data.relative.itemLink,
+                                            data.relative.name),
+                    ItemLevelText = data.relative.level,
+                    UpdateEPText = prettyPrintUpgradeColumn(data.relative),
+                    BuyoutMoney = data.relative.lowestPrice,
+                    ItemIcon = GetItemIcon(data.relative.itemLink) -- TODO fix randomized items link
+                }
+                --[[
                 setProperty(block.best, 'ItemLink', data.relative.itemLink)
                 setProperty(block.best, 'ItemID', data.relative.itemID)
                 setKindIcon(block.best, 'ItemIcon', "Interface/AddOns/" ..
@@ -1619,9 +1652,22 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
                 setIcon(block.best, 'ItemIcon',
                         GetItemIcon(data.relative.itemLink))
                 -- print("  - Relative EP / copper", data.relative.itemLink, data.relative.weight)
+                --]]
             end
 
             if data.budget.itemLink then
+                blockData.budget = {
+                    ItemLink = data.budget.itemLink,
+                    ItemID = data.budget.itemID,
+                    ItemKindIcon = 'Interface/GossipFrame/VendorGossipIcon.blp',
+                    Name = getColorizedName(data.budget.itemLink,
+                                            data.budget.name),
+                    ItemLevelText = data.budget.level,
+                    UpdateEPText = prettyPrintBudgetColumn(data.budget),
+                    BuyoutMoney = data.budget.lowestPrice,
+                    ItemIcon = GetItemIcon(data.budget.itemLink)
+                }
+                --[[
                 setProperty(block.budget, 'ItemLink', data.budget.itemLink)
                 setProperty(block.budget, 'ItemID', data.budget.itemID)
                 setKindIcon(block.budget, 'ItemIcon',
@@ -1634,22 +1680,14 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
                 setMoney(block.budget, 'BuyoutMoney', data.budget.lowestPrice)
                 setIcon(block.budget, 'ItemIcon',
                         GetItemIcon(data.budget.itemLink))
-
                 -- print("  - Highest EP / copper", data.budget.itemLink, data.budget.weight)
+                --]]
             end
 
-            -- sFrame.data:SetText(sFrameData)
-            -- tabButton:SetID(index)
-
-            -- Only incrememnt frames if they have something
-            i = i + 1
+            ahSession.displayFrame.DataProvider:Insert(blockData)
         else
             print("DisplayEmbeddedResults:", data.slotName, "no upgrades found")
         end
-
-        -- TODO remove after test
-        -- if i > 0 then return end
-
     end
 end
 
