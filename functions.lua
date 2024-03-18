@@ -1524,6 +1524,11 @@ addon.functions["goto"] = function(self, ...)
                     zone = info.parentMapID
                     zx,zy = HBD:GetZoneCoordinatesFromWorld(element.wx, element.wy, zone)
                 end
+                if not (zx and zy) then
+                    return addon.error(
+                        L("Error parsing guide") .. " "  .. addon.currentGuideName ..
+                           ": Invalid coordinates or map name\n" .. self)
+                end
                 element.x = zx * 100
                 element.y = zy * 100
                 element.zone = zone
