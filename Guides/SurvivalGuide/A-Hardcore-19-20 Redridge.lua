@@ -1212,7 +1212,7 @@ step << Rogue
     >>|cRXP_WARN_The |cRXP_ENEMY_Malformed Defias Drone|r spawns at the entrance to the tower, then patrols around the outside of it|r
     >>|cRXP_WARN_Be careful as he deals a LOT of damage. If your|r |T132320:0|t[Stealth] |cRXP_WARN_breaks, quickly use|r |T132307:0|t[Sprint] |cRXP_WARN_and run away|r
     .complete 2359,2 --Collect Defias Tower Key (x1)
---QWE   .link >> Click HERE for a video guide
+    .link https://www.youtube.com/watch?v=5sIew15IcG0 >> Click HERE for a video guide
     .mob Malformed Defias Drone
     .isOnQuest 2359
     .train 1856,3 -- skips step if not 22/doesnt have Vanish
@@ -1237,7 +1237,7 @@ step << Rogue
     >>|cRXP_WARN_If you have a|r |T135641:0|t[Dagger] |cRXP_WARN_in your bags or equipped, you can cast|r |T132282:0|t[Ambush] |cRXP_WARN_on the |cRXP_ENEMY_Defias Tower Patrollers|r and |cRXP_ENEMY_Defias Tower Sentries|r inside to kill them instantly. Be prepared to run after you kill the first |cRXP_ENEMY_Defias Tower Sentry|r and remember you can be hit from above. This is slower, but a LOT safer|r
     >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Malformed Defias Drone|r and |cRXP_ENEMY_Defias Drones|r can be at the entrance of the tower if you have to run out of it|r
     .complete 2359,1 --Collect Klaven Mortwake's Journal (x1)
---QWE   .link >> Click HERE for a video guide
+    .link https://www.youtube.com/watch?v=5sIew15IcG0 >> Click HERE for a video guide
     .mob Defias Tower Patroller
     .mob Defias Tower Sentry
     .isOnQuest 2359
