@@ -1621,6 +1621,16 @@ function addon.stepLogic.AHCheck(step)
     return true
 end
 
+--MAX_PLAYER_LEVEL_TABLE[GetAccountExpansionLevel()]--not working on cata beta
+function addon.stepLogic.LoremasterCheck(step)
+    if (addon.game == "WOTLK" and step.questguide and not addon.settings.profile.northrendLM) or
+        (addon.game == "CATA" and step.questguide and not addon.settings.profile.loremasterMode)
+    then
+        return false
+    end
+    return true
+end
+
 function addon.stepLogic.SeasonCheck(step)
     local currentSeason = addon.settings.profile.season or 0
     local SoM = currentSeason == 1
