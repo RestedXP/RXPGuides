@@ -1374,7 +1374,8 @@ step
     .disablecheckbox
     .isQuestAvailable 79097
 step
-    >>Click on the |cRXP_PICK_Goblin Tome|r |cFFfa9602in Ratchet next to|r |cRXP_FRIENDLY_Gazlove|r to obtain |T133744:0|t[Baxtan on Destructive Magics.]
+    .goto The Barrens,62.665,36.222
+    >>Click on the |cRXP_PICK_Goblin Tome|r |cFFfa9602in Ratchet next to|r |cRXP_FRIENDLY_Gazlowe|r to obtain |T133744:0|t[Baxtan on Destructive Magics.]
     .collect 208800,1
     .isQuestAvailable 79097
 step
@@ -1558,7 +1559,8 @@ step
     .disablecheckbox
     .isQuestAvailable 79097
 step
-    >>Click on the |cRXP_PICK_Goblin Tome|r |cFFfa9602in Ratchet next to|r |cRXP_FRIENDLY_Gazlove|r to obtain |T133744:0|t[Baxtan on Destructive Magics.]
+    .goto The Barrens,62.665,36.222
+    >>Click on the |cRXP_PICK_Goblin Tome|r |cFFfa9602in Ratchet next to|r |cRXP_FRIENDLY_Gazlowe|r to obtain |T133744:0|t[Baxtan on Destructive Magics.]
     .collect 208800,1
     .isQuestAvailable 79097
 step
