@@ -312,7 +312,7 @@ step
     .target Cerellean Whiteclaw
 step
     #completewith next
-    .goto Darkshore,32.75,42.21,35 >> Travel to the end of the dock then jump into the water
+    .goto 1439,32.432,43.744,15 >> Travel to the end of the dock then jump into the water
 step
 #map Darkshore
     .goto Felwood,13.63,21.44

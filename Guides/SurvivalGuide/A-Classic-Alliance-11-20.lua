@@ -659,7 +659,7 @@ step
     .target Cerellean Whiteclaw
 step
     #completewith next
-    .goto Darkshore,32.75,42.21,35 >> Travel to the end of the dock then jump into the water
+    .goto 1439,32.432,43.744,15 >> Travel to the end of the dock then jump into the water
 step
     #completewith washed1
     .goto Darkshore,33.59,40.36,0
@@ -1615,7 +1615,7 @@ step << Druid
     .target Vesprystus
 step
     #completewith next
-    .goto Darkshore,32.75,42.21,35 >> Travel to the Auberdine Docks. Wait for the Menethil Harbor boat
+    .goto 1439,32.432,43.744,15 >> Travel to the Auberdine Docks. Wait for the Menethil Harbor boat
 step
     .goto Darkshore,32.44,43.71
     >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_while waiting for the Menethil Harbor boat|r

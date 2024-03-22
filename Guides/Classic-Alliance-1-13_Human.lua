@@ -7285,6 +7285,45 @@ step
     .mob Bluegill Raider
 step << Human
     #xprate >1.49
+    #season 2
+    #softcore
+    #completewith next
+    .goto Dun Morogh,59.43,42.85,150 >> Travel to the Dun Morogh -> Wetlands skip spot
+    .aura -438536 --Player has Spark of Inspiration (Alliance)
+step << Human
+    #xprate >1.49
+    #season 2
+    #softcore
+    .goto Dun Morogh,59.5,42.8,40,0
+    .goto Dun Morogh,60.4,44.1,40,0
+    .goto Dun Morogh,61.1,44.1,20,0
+    .goto Dun Morogh,61.2,42.3,40,0
+    .goto Dun Morogh,60.8,40.9,40,0
+    .goto Dun Morogh,59.0,39.5,40,0
+    .goto Dun Morogh,60.3,38.6,40,0
+    .goto Dun Morogh,61.7,38.7,40,0
+    .goto Dun Morogh,65.7,21.6,40,0
+    .goto Dun Morogh,65.8,12.5,40,0
+    .goto Dun Morogh,65.6,10.8,40,0
+    .goto Dun Morogh,66.5,10.0,40,0
+    .goto Dun Morogh,66.9,8.5,40,0
+    .goto Wetlands,20.6,67.2,50,0
+    .goto Wetlands,17.7,67.7,40,0
+    .goto Wetlands,16.8,65.3,40,0
+    .goto Wetlands,15.1,64.0,40,0
+    .goto Wetlands,12.1,60.3
+    >>|cRXP_WARN_Watch the video guide for a reference on how to do the skip first!|r
+    >>|cRXP_WARN_Do the Deathless Dun Morogh -> Wetlands skip|r
+    >>|cRXP_WARN_Avoid the |cRXP_ENEMY_Wetlands Crocolisks|r and |cRXP_ENEMY_Murlocs|r when crossing the water|r
+    >>|cRXP_WARN_NOTE: You're doing the slower deathless skip as you have the|r |T134916:0|t[Spark of Inspiration] |cRXP_WARN_world buff|r
+    .link https://www.youtube.com/watch?v=9afQTimaiZQ >> |cRXP_WARN_Click here for a video guide|r
+    .subzone 150 >> Travel to Menethil Harbor
+    .mob Wetlands Crocolisk
+    .mob Young Wetlands Crocolisk
+    .mob Bluegill Raider
+    .aura -438536 --Player has Spark of Inspiration (Alliance)
+step << Human
+    #xprate >1.49
     #softcore
     #label WetlandsDS1
     #completewith next
@@ -7311,8 +7350,9 @@ step << Human
     .goto 1437,11.730,43.304,-1
     >>|cRXP_WARN_Jump off the mountain toward the north or north-west|r
     .deathskip >> Die and respawn at the Baradin Bay |cRXP_FRIENDLY_Spirit Healer|r
-    .isQuestAvailable 984
     .target Spirit Healer
+    .subzoneskip 150 --Menethil Harbor
+    .isQuestAvailable 984
 step << Human
     #xprate >1.49
     #softcore
@@ -7320,7 +7360,7 @@ step << Human
     #requires WetlandsDS2
     #completewith next
     .goto Wetlands,11.95,50.24,60 >> Swim to shore toward Menethil Harbor
-    .subzoneskip 150
+    .subzoneskip 150 --Menethil Harbor
 step
     #xprate >1.49
     .goto Wetlands,10.4,56.0,15,0

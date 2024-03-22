@@ -1181,12 +1181,12 @@ step
     #season 0,1 << Rogue
     #optional
     #completewith SeaT1
-    .goto Darkshore,32.75,42.21,35 >> Travel to the end of the dock, then jump into the water
+    .goto 1439,32.432,43.744,15 >> Travel to the end of the dock, then jump into the water
 step << Rogue
     #season 2
     #optional
     #completewith SeaT1
-    .goto Darkshore,32.75,42.21,35 >> Travel to the end of the dock, then jump into the water
+    .goto 1439,32.432,43.744,15 >> Travel to the end of the dock, then jump into the water
     .train 424785,3
 step
     #xprate <1.5 --<< !NightElf/Hunter
@@ -2770,9 +2770,9 @@ step
     .goto 1439,38.107,41.165
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
     .vendor 6301 >>|cRXP_BUY_Buy|r |T134059:0|t[Mild Spices] |cRXP_BUY_from him until you have|r |T134059:0|t[Mild Spices] |cRXP_BUY_equal or more than the amount of|r |T132832:0|t[Small Eggs] |cRXP_BUY_that you currently have|r
-    .collect 2678,49 --Mild Spices (0-49)
+    .collect 2678,50,90,1,0x20,cooking --Mild Spices (1-50)
     .disablecheckbox
-    .collect 6889,50 --Small Egg (0-49)
+    .collect 6889,50,90,1,0x20,cooking --Small Egg (1-50)
     .disablecheckbox
     .target Gorbold Steelhand
     .skill cooking,50,1 --XX Shows if cooking skill is <50
@@ -2795,7 +2795,7 @@ step
     #label Level10CookEnd
     .goto 1439,37.511,41.670
     >>|cRXP_WARN_Travel toward the |cRXP_PICK_Campfire|r on the ground|r
-    >>|cRXP_WARN_Start|r |T133971:0|t[Cooking] |T132834:0|t[Herb Baked Eggs]|cRXP_WARN_. Do this until your|r |T133971:0|t[Cooking] |cRXP_WARN_has reached at least level 10|r
+    +|cRXP_WARN_Start|r |T133971:0|t[Cooking] |T132834:0|t[Herb Baked Eggs]|cRXP_WARN_. Do this until your|r |T133971:0|t[Cooking] |cRXP_WARN_has reached at least level 10|r
     >>|cRXP_WARN_Continue leveling your|r |T133971:0|t[Cooking] |cRXP_WARN_ until you run out of|r |T132832:0|t[Small Eggs]
     >>|cRXP_WARN_There is a quest in Duskwood later requiring your|r |T133971:0|t[Cooking] |cRXP_WARN_to be 50 or higher. You can also cook this when you get on the boat soon|r
     .skill cooking,50,1
@@ -3247,18 +3247,6 @@ step
     .turnin 4762 >> Turn in The Cliffspring River
     .accept 4763 >> Accept The Blackwood Corrupted
     .target Thundris Windweaver
-step
-    #xprate >1.59
-    .goto Darkshore,37.45,40.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalmond|r
-    >>|cRXP_BUY_Buy a|r |T135237:0|t[Flint and Tinder] |cRXP_BUY_and a|r |T135435:0|t[Simple Wood] |cRXP_BUY_from him|r
-    >>|cRXP_WARN_This is for leveling up your|r |T133971:0|t[Cooking] |cRXP_WARN_while on the boat soon|r
-    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
-    .collect 4470,1 --Simple Wood (1)
-    .collect 4471,1 --Flint and Tinder (1)
-    .itemcount 6889,1 -- Small Egg (1+)
-    .skill cooking,50,1
-    .target Dalmond
 step
     .goto Darkshore,37.70,40.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alanndarian Nightsong|r
@@ -3895,7 +3883,8 @@ step
     .goto 1439,43.555,76.293
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Onu|r
     .turnin 950 >> Turn in Return to Onu
-    .timer 14,Return to Onu RP
+    .timer 11.5,Return to Onu RP
+--  .timer 14,Return to Onu RP
     .accept 951 >> Accept Mathystra Relics
     .target Onu
 step
@@ -4801,6 +4790,32 @@ step
     .destroy 12341 >> Delete the |T134013:0|t|cRXP_LOOT_[Blackwood Fruit Sample]|r from your bags, as it's no longer needed
 step
     #xprate >1.59
+    #optional
+    .goto Darkshore,37.45,40.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalmond|r
+    >>|cRXP_BUY_Buy a|r |T135237:0|t[Flint and Tinder] |cRXP_BUY_and a|r |T135435:0|t[Simple Wood] |cRXP_BUY_from him|r
+    >>|cRXP_WARN_This is for leveling up your|r |T133971:0|t[Cooking] |cRXP_WARN_while on the boat soon|r
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    .collect 4470,1 --Simple Wood (1)
+    .collect 4471,1 --Flint and Tinder (1)
+    .itemcount 6889,1 -- Small Egg (1+)
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+    .target Dalmond
+step
+    #xprate >1.59
+    #optional
+    .goto 1439,38.107,41.165
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
+    .vendor 6301 >>|cRXP_BUY_Buy|r |T134059:0|t[Mild Spices] |cRXP_BUY_from him until you have|r |T134059:0|t[Mild Spices] |cRXP_BUY_equal or more than the amount of|r |T132832:0|t[Small Eggs] |cRXP_BUY_that you currently have|r
+    .collect 2678,50,90,1,0x20,cooking --Mild Spices (1-50)
+    .disablecheckbox
+    .collect 6889,50,90,1,0x20,cooking --Small Egg (1-50)
+    .disablecheckbox
+    .target Gorbold Steelhand
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+    .itemcount 6889,1 -- Small Egg (1+)
+step
+    #xprate >1.59
     .goto 1439,38.843,43.416
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun Treetender|r
     .turnin 2139 >> Turn in Tharnariun's Hope
@@ -4890,19 +4905,61 @@ step << Druid
 
 
 
-----End of Darkshire 2x 20 Turnins & Druid Training----
+----End of Darkshore 2x 20 Turnins & Druid Training----
 ----Start of 2x Non-Deadmines Training/Class q section----
-----TODO: Add NE compatibility----
 
 
 
-
+step << Warrior/Paladin/Mage/Warlock/Rogue
+    #xprate >1.59
+    #label TravelMenethilNoDMBoat
+    #completewith MenethilNoDMBoat
+    .goto Darkshore,32.44,43.71,15 >> Travel to the dock of the Menethil Harbor boat
+    .zoneskip Wetlands
+    .zoneskip Elwynn Forest
+    .zoneskip Stormwind City
+    .zoneskip Westfall
+    .dungeon !DM
+step << Warrior/Paladin/Mage/Warlock/Rogue
+    #xprate >1.59
+    #optional
+    #label DarkshoreNoDMCook1
+    #requires TravelMenethilNoDMBoat
+    #completewith MenethilNoDMBoat
+    >>|cRXP_WARN_On the Boat if it just arrived or on the dock if the boat just left:|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .usespell 818
+    .zoneskip Wetlands
+    .zoneskip Elwynn Forest
+    .zoneskip Stormwind City
+    .zoneskip Westfall
+    .itemcount 6889,1 --Small Egg (1+)
+    .itemcount 4470,1 --Simple Wood (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+    .dungeon !DM
+step << Warrior/Paladin/Mage/Warlock/Rogue
+    #xprate >1.59
+    #optional
+    #requires DarkshoreNoDMCook1
+    #completewith MenethilNoDMBoat
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T132832:0|t|cRXP_LOOT_[Small Eggs]|r |cRXP_WARN_and|r |T134059:0|t[Mild Spices] |cRXP_WARN_into|r |T132834:0|t[Herb Baked Eggs]
+    .usespell 2550
+    .zoneskip Wetlands
+    .zoneskip Elwynn Forest
+    .zoneskip Stormwind City
+    .zoneskip Westfall
+    .itemcount 6889,1 --Small Egg (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1
+    .dungeon !DM
 step << Warrior/Paladin
     #xprate >1.59
     #ah
-    .goto Darkshore,32.44,43.71,15,0
+    #label MenethilNoDMBoat
     .goto Darkshore,32.29,44.05
-    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_while waiting for the Menethil Harbor boat|r
+    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_while waiting for the boat to Menethil Harbor if needed|r << Warrior/Paladin/Rogue
     >>|cRXP_WARN_If you have a very good weapon in your bags that you can equip soon, skip this step|r
     .zone Wetlands >> Take the boat to Menethil Harbor
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8 << Paladin/Warrior
@@ -4913,9 +4970,9 @@ step << Warrior/Paladin
 step << Warrior/Paladin/Mage/Warlock/Rogue
     #xprate >1.59
     #ssf << Paladin/Warrior
-    .goto Darkshore,32.44,43.71,15,0
+    #label MenethilNoDMBoat
     .goto Darkshore,32.29,44.05
-    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_while waiting for the Menethil Harbor boat|r
+    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_while waiting for the boat to Menethil Harbor if needed|r << Warrior/Paladin/Rogue
     .zone Wetlands >> Take the boat to Menethil Harbor
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8 << Paladin/Warrior
     .zoneskip Elwynn Forest
@@ -6039,7 +6096,7 @@ step << Mage
     .train 3561 >> Train |T135763:0|t[Teleport: Stormwind]
     .target Larimaine Purdue
     .dungeon !DM
-step << !sod NightElf Warrior/Mage/Warlock/Rogue
+step << NightElf Warrior/Mage/Warlock/Rogue
     #xprate >1.59
     #requires Torment2NoDMEnd << Warlock
     .goto StormwindClassic,21.40,55.80
@@ -6167,12 +6224,55 @@ step << NightElf Warrior/NightElf Rogue
 ----Start of 2x Non-Deadmines (Darnassus) training section----
 
 
-
 step << !NightElf !Warlock !Mage !Paladin !Druid !Rogue
     #xprate >1.59
-    .goto Darkshore,33.17,40.17,40,0
-    .goto Darkshore,33.17,40.17,0
-    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_while waiting for the Darnassus boat|r
+    #label TravelDarnNoDMBoat
+    #completewith DarnNoDMBoat
+    .goto 1439,33.169,40.179,15 >> Travel to the dock of the Darnassus boat
+    .zoneskip Stormwind City << Warrior
+    .zoneskip Ironforge << Warrior
+    .zoneskip Teldrassil
+    .zoneskip Darnassus
+    .dungeon !DM << !Dwarf/!Hunter
+step << !NightElf !Warlock !Mage !Paladin !Druid !Rogue
+    #xprate >1.59
+    #optional
+    #label DarnDarkshoreNoDMCook1
+    #requires TravelDarnNoDMBoat
+    #completewith DarnNoDMBoat
+    >>|cRXP_WARN_On the Boat if it just arrived or on the dock if the boat just left:|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .usespell 818
+    .zoneskip Stormwind City << Warrior
+    .zoneskip Ironforge << Warrior
+    .zoneskip Teldrassil
+    .zoneskip Darnassus
+    .itemcount 6889,1 --Small Egg (1+)
+    .itemcount 4470,1 --Simple Wood (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+    .dungeon !DM << !Dwarf/!Hunter
+step << !NightElf !Warlock !Mage !Paladin !Druid !Rogue
+    #xprate >1.59
+    #optional
+    #requires DarnDarkshoreNoDMCook1
+    #completewith DarnNoDMBoat
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T132832:0|t|cRXP_LOOT_[Small Eggs]|r |cRXP_WARN_and|r |T134059:0|t[Mild Spices] |cRXP_WARN_into|r |T132834:0|t[Herb Baked Eggs]
+    .usespell 2550
+    .zoneskip Stormwind City << Warrior
+    .zoneskip Ironforge << Warrior
+    .zoneskip Teldrassil
+    .zoneskip Darnassus
+    .itemcount 6889,1 --Small Egg (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1
+    .dungeon !DM << !Dwarf/!Hunter
+step << !NightElf !Warlock !Mage !Paladin !Druid !Rogue
+    #xprate >1.59
+    #label DarnNoDMBoat
+    .goto 1439,33.213,39.883
+    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_while waiting for the boat to Menethil Harbor if needed|r << Warrior/Paladin/Rogue
     .zone Teldrassil >> Take the boat to Darnassus
     .zoneskip Stormwind City << Warrior
     .zoneskip Ironforge << Warrior
@@ -6353,9 +6453,23 @@ step << Warrior/NightElf Rogue
     #xprate >1.59
     #optional
     .zone Wetlands >> Travel to Menethil Harbor
-    .zoneskip Teldrassil << Warrior
-    .zoneskip Darnassus << Warrior
-    .zoneskip Darkshore << Warrior
+    .zoneskip Teldrassil
+    .zoneskip Darnassus
+    .zoneskip Darkshore
+    .zoneskip Elwynn Forest
+    .zoneskip Stormwind City
+    .zoneskip Westfall
+    .cooldown item,6948,<0
+    .dungeon !DM
+step << Warrior/NightElf Rogue
+    #xprate >1.59
+    #optional
+    #completewith next
+    .goto Wetlands,7.10,57.96,30,0
+    .goto Wetlands,4.61,57.26,15 >> Travel to the dock of the Auberdine boat
+    .zoneskip Teldrassil
+    .zoneskip Darnassus
+    .zoneskip Darkshore
     .zoneskip Elwynn Forest
     .zoneskip Stormwind City
     .zoneskip Westfall
@@ -6365,10 +6479,11 @@ step << Warrior/NightElf Rogue
     #xprate >1.59
     #optional
     .goto 1437,4.370,56.762
-    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_while waiting for the Darkshore boat|r
+    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_while waiting for the boat to Auberdine if needed|r << Warrior/Paladin/Rogue
     .zone Darkshore >> Take the boat to Auberdine
-    .zoneskip Teldrassil << Warrior
-    .zoneskip Darnassus << Warrior
+    .zoneskip Teldrassil
+    .zoneskip Darnassus
+    .zoneskip Darkshore
     .zoneskip Elwynn Forest
     .zoneskip Stormwind City
     .zoneskip Westfall
@@ -6455,10 +6570,43 @@ step << !NightElf
     .itemStat 15,QUALITY,<7
 step << Dwarf Hunter
     #xprate <1.59
+    #label TravelDarnDwarfHBoat
+    #completewith DarnDwarfHBoat
+    .goto 1439,33.169,40.179,15 >> Travel to the dock of the Darnassus boat
+    .zoneskip Teldrassil
+    .zoneskip Darnassus
+step << Dwarf Hunter
+    #xprate <1.59
     #optional
-    #completewith BeachedCloak
-    .goto Darkshore,33.17,40.17,40,0
-    .goto Darkshore,33.17,40.17,0
+    #label DarnDwarfHCook1
+    #requires TravelDarnDwarfHBoat
+    #completewith DarnDwarfHBoat
+    >>|cRXP_WARN_On the Boat if it just arrived or on the dock if the boat just left:|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .usespell 818
+    .zoneskip Teldrassil
+    .zoneskip Darnassus
+    .itemcount 6889,1 --Small Egg (1+)
+    .itemcount 4470,1 --Simple Wood (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+step << Dwarf Hunter
+    #xprate <1.59
+    #optional
+    #requires DarnDwarfHCook1
+    #completewith DarnDwarfHBoat
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T132832:0|t|cRXP_LOOT_[Small Eggs]|r |cRXP_WARN_and|r |T134059:0|t[Mild Spices] |cRXP_WARN_into|r |T132834:0|t[Herb Baked Eggs]
+    .usespell 2550
+    .zoneskip Teldrassil
+    .zoneskip Darnassus
+    .itemcount 6889,1 --Small Egg (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1
+step << Dwarf Hunter
+    #xprate <1.59
+    #label DarnDwarfHBoat
+    .goto 1439,33.213,39.883
     .zone Teldrassil >> Take the boat to Darnassus
     .zoneskip Darnassus
 step << Dwarf Hunter
@@ -6614,14 +6762,57 @@ step << NightElf
     .itemStat 15,QUALITY,<7
 
 ----Start of Hunter Deadmines/All 2x Deadmines Section----
-
+step 
+    #xprate <1.59 << !Hunter
+    #label TravelMenethilDMBoat
+    #completewith MenethilDMBoat
+    .goto 1439,32.432,43.744,15 >> Travel to the dock of the Menethil Harbor boat
+    .zoneskip Elwynn Forest
+    .zoneskip Stormwind City
+    .zoneskip Westfall
+    .zoneskip Wetlands
+    .dungeon DM
 step
     #xprate >1.59 << !Hunter
     #optional
-    .goto Darkshore,32.44,43.71,15,0
+    #label DarkshoreDMCook1
+    #requires TravelMenethilDMBoat
+    #completewith MenethilDMBoat
+    >>|cRXP_WARN_On the Boat if it just arrived or on the dock if the boat just left:|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .usespell 818
+    .itemcount 6889,1 --Small Egg (1+)
+    .itemcount 4470,1 --Simple Wood (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+    .zoneskip Elwynn Forest
+    .zoneskip Stormwind City
+    .zoneskip Westfall
+    .zoneskip Wetlands
+    .dungeon DM
+step
+    #xprate >1.59 << !Hunter
+    #optional
+    #requires DarkshoreDMCook1
+    #completewith DarnDMBoat
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T132832:0|t|cRXP_LOOT_[Small Eggs]|r |cRXP_WARN_and|r |T134059:0|t[Mild Spices] |cRXP_WARN_into|r |T132834:0|t[Herb Baked Eggs]
+    .usespell 2550
+    .itemcount 6889,1 --Small Egg (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1
+    .zoneskip Elwynn Forest
+    .zoneskip Stormwind City
+    .zoneskip Westfall
+    .zoneskip Wetlands
+    .dungeon DM
+step
+    #xprate >1.59 << !Hunter
+    #optional
+    #label DarnDMBoat
     .goto Darkshore,32.29,44.05
-    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_while waiting for the Menethil Harbor boat|r
     >>|cRXP_WARN_You will now begin to travel to The Deadmines|r
+    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_while waiting for the boat to Menethil Harbor if needed|r << Warrior/Paladin/Rogue
     .zone Wetlands >> Take the boat to Menethil Harbor
     .zoneskip Elwynn Forest
     .zoneskip Stormwind City
@@ -7313,9 +7504,8 @@ step << Paladin
     .trainer >> Train your class spells
     .target Arthur the Faithful
     .dungeon DM
-step << !sod Paladin
+step << Paladin
     #xprate >1.59
-    #era
     .goto StormwindClassic,21.40,55.80
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argos Nightwhisper|r
     .accept 3765 >> Accept The Corruption Abroad
@@ -7454,9 +7644,8 @@ step << Mage
     .train 3561 >> Train |T135763:0|t[Teleport: Stormwind]
     .target Larimaine Purdue
     .dungeon DM
-step << !sod !Paladin
+step << !Paladin
     #xprate >1.59
-    #era
     .goto StormwindClassic,21.40,55.80
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argos Nightwhisper|r
     .accept 3765 >> Accept The Corruption Abroad
@@ -7464,7 +7653,6 @@ step << !sod !Paladin
     .dungeon DM
 step << Druid
     #xprate >1.59
-    #era
     .goto 1453,20.883,55.505
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sheldras Moontree|r
     .train 6756 >> Train your class spells
@@ -8678,23 +8866,60 @@ step << !Hunter
     .goto 1439,38.107,41.165
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
     .vendor 6301 >>|cRXP_BUY_Buy|r |T134059:0|t[Mild Spices] |cRXP_BUY_from him until you have|r |T134059:0|t[Mild Spices] |cRXP_BUY_equal or more than the amount of|r |T132832:0|t[Small Eggs] |cRXP_BUY_that you currently have|r
-    .collect 2678,49 --Mild Spices (0-49)
+    .collect 2678,50,90,1,0x20,cooking --Mild Spices (1-50)
     .disablecheckbox
-    .collect 6889,50 --Small Egg (0-49)
+    .collect 6889,50,90,1,0x20,cooking --Small Egg (1-50)
     .disablecheckbox
     .target Gorbold Steelhand
     .skill cooking,50,1 --XX Shows if cooking skill is <50
     .itemcount 6889,1 -- Small Egg (1+)
+--ZXCV
 step << !Hunter
     #xprate <1.59
-    #completewith next
-    .goto Darkshore,32.75,42.21,35 >> Travel to the Auberdine Docks. Wait for the Menethil Harbor boat
+    #label TravelMenethilRRBoat
+    #completewith MenethilRRBoat
+    .goto 1439,32.432,43.744,15 >> Travel to the dock of the Menethil Harbor boat
+    .zoneskip Loch Modan
+    .zoneskip Dun Morogh
+    .zoneskip Ironforge
     .zoneskip Wetlands
 step << !Hunter
     #xprate <1.59
-    .goto Darkshore,32.44,43.71,15,0
+    #optional
+    #label DarkshoreRRCook1
+    #requires TravelMenethilRRBoat
+    #completewith MenethilRRBoat
+    >>|cRXP_WARN_On the Boat if it just arrived or on the dock if the boat just left:|r
+    .cast 818 >>|cRXP_WARN_Create a|r |T135805:0|t[Basic Campfire] |cRXP_WARN_(under the General Tab of your Spellbook)|r
+    .usespell 818
+    .zoneskip Loch Modan
+    .zoneskip Dun Morogh
+    .zoneskip Ironforge
+    .zoneskip Wetlands
+    .itemcount 6889,1 --Small Egg (1+)
+    .itemcount 4470,1 --Simple Wood (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1 --XX Shows if cooking skill is <50
+step << !Hunter
+    #xprate <1.59
+    #optional
+    #requires DarkshoreRRCook1
+    #completewith MenethilRRBoat
+    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
+    >>|T133971:0|t[Cook] |cRXP_WARN_the|r |T132832:0|t|cRXP_LOOT_[Small Eggs]|r |cRXP_WARN_and|r |T134059:0|t[Mild Spices] |cRXP_WARN_into|r |T132834:0|t[Herb Baked Eggs]
+    .usespell 2550
+    .zoneskip Loch Modan
+    .zoneskip Dun Morogh
+    .zoneskip Ironforge
+    .zoneskip Wetlands
+    .itemcount 6889,1 --Small Egg (1+)
+    .itemcount 4471,1 --Flint and Tinder (1)
+    .skill cooking,50,1
+step << !Hunter
+    #xprate <1.59
+    #label MenethilRRBoat
     .goto Darkshore,32.29,44.05
-    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_while waiting for the Menethil Harbor boat|r
+    >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_while waiting for the boat to Menethil Harbor if needed|r << Rogue/Warrior/Paladin
     .zone Wetlands >> Take the boat to Menethil Harbor
     .zoneskip Loch Modan
     .zoneskip Dun Morogh
@@ -9415,11 +9640,11 @@ step << Warlock
     .accept 1716 >> Accept Devourer of Souls
     .target Gakin the Darkbinder
     .xp <20,1
-step << !sod
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argos Nightwhisper|r
-	.target Argos Nightwhisper
+step
     .goto StormwindClassic,21.40,55.80
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argos Nightwhisper|r
     .accept 3765 >> Accept The Corruption Abroad
+    .target Argos Nightwhisper
     .dungeon DM
 step << Druid
 .dungeon DM
@@ -10086,11 +10311,11 @@ step << Mage
     .train 48464 >> Train |T135763:0|t[Teleport: Stormwind]
 	.xp <20,1
     .target Larimaine Purdue
-step << !sod
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argos Nightwhisper|r
-	.target Argos Nightwhisper
+step
     .goto StormwindClassic,21.40,55.80
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argos Nightwhisper|r
     .accept 3765 >> Accept The Corruption Abroad
+    .target Argos Nightwhisper
     .dungeon !DM
 step << Druid
 .dungeon !DM
@@ -10535,7 +10760,7 @@ RXPGuides.RegisterGuide([[
 #displayname 20-21 Darkshore/Ashenvale << SoD
 #next RestedXP Alliance 20-30\21-23 Ashenvale/Stonetalon;RestedXP Alliance 20-30\21-22 Ashenvale SoD
 
-step << !sod
+step
     #xprate >1.59
     .goto 1439,38.325,43.039
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gershala Nightwhisper|r
