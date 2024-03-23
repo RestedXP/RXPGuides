@@ -47,7 +47,7 @@
         <Size x="810" y="19"/>
         <Layers>
             <Layer level="BACKGROUND">
-                <FontString parentKey="name" inherits="GameFontNormal" justifyH="CENTER" text="Foo">
+                <FontString parentKey="Name" inherits="GameFontNormal" justifyH="CENTER" text="Foo">
                     <Size x="96" y="19"/>
                     <Anchors>
                         <Anchor point="TOP">
@@ -57,7 +57,7 @@
                         </Anchor>
                     </Anchors>
                 </FontString>
-                <Texture parentKey="left" file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
+                <Texture parentKey="Left" file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
                     <Size>
                         <AbsDimension x="10" y="19"/>
                     </Size>
@@ -70,7 +70,7 @@
                     </Anchors>
                     <TexCoords left="0" right="0.078125" top="0" bottom="1.0"/>
                 </Texture>
-                <Texture parentKey="right" file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
+                <Texture parentKey="Right" file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
                     <Size>
                         <AbsDimension x="10" y="19"/>
                     </Size>
@@ -108,7 +108,7 @@
         <Size x="773" y="37"/>
         <Layers>
             <Layer level="BACKGROUND">
-                <FontString parentKey="name" inherits="GameFontNormal" justifyH="LEFT" text="$parentName">
+                <FontString parentKey="Name" inherits="GameFontNormal" justifyH="LEFT" text="$parentName">
                     <Size x="180" y="32"/>
                     <Anchors>
                         <Anchor point="TOPLEFT">
@@ -118,7 +118,7 @@
                         </Anchor>
                     </Anchors>
                 </FontString>
-                <FontString parentKey="level" inherits="GameFontHighlightSmall">
+                <FontString parentKey="Level" inherits="GameFontHighlightSmall">
                     <Size x="86" y="32"/>
                     <Anchors>
                         <Anchor point="TOPLEFT">
@@ -128,7 +128,7 @@
                         </Anchor>
                     </Anchors>
                 </FontString>
-                <Texture parentKey="left" file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
+                <Texture parentKey="Left" file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
                     <Size x="10" y="32"/>
                     <Anchors>
                         <Anchor point="LEFT">
@@ -139,7 +139,7 @@
                     </Anchors>
                     <TexCoords left="0" right="0.078125" top="0" bottom="1.0"/>
                 </Texture>
-                <Texture parentKey="right" file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
+                <Texture parentKey="Right" file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
                     <Size x="10" y="32"/>
                     <Anchors>
                         <Anchor point="RIGHT">
@@ -295,7 +295,7 @@
                     <Anchor point="LEFT" relativeKey="$parent.UpdateEP" relativePoint="RIGHT"/>
                 </Anchors>
                 <Frames>
-                    <Frame parentKey="Money" inherits="SmallMoneyFrameTemplate">
+                    <Frame name="$parent.Money1" parentKey="Money" inherits="SmallMoneyFrameTemplate">
                         <Anchors>
                             <Anchor point="RIGHT">
                                 <Offset>
@@ -305,6 +305,10 @@
                         </Anchors>
                         <Scripts>
                             <OnLoad>
+                                RXPD6 = self
+                                print("OnLoad1", self:GetName())
+                                self.Name = self:GetParent():GetName() .. "foobar"
+                                print("OnLoad2", self:GetName())
 								SmallMoneyFrame_OnLoad(self);
                                 MoneyFrame_SetType(self, "AUCTION");
 								MoneyFrame_SetMaxDisplayWidth(self, 146);
@@ -359,19 +363,19 @@
     </Button>
     <Frame name="RXP_IU_AH_ItemBlock" hidden="false" virtual="true">
         <Frames>
-            <Frame name="$parentHeader" inherits="RXP_IU_AH_ItemKindHeader" parentKey="header">
+            <Frame name="$parentHeader" inherits="RXP_IU_AH_ItemKindHeader" parentKey="Header">
                 <Anchors>
                     <Anchor point="TOPLEFT"/>
                 </Anchors>
             </Frame>
-            <Button name="$parentBest" inherits="RXP_IU_AH_ItemRow" parentKey="best">
+            <Button name="$parentBest" inherits="RXP_IU_AH_ItemRow" parentKey="Best">
                 <Anchors>
-                    <Anchor point="TOPRIGHT" relativeKey="$parent.header" relativePoint="BOTTOMRIGHT"/>
+                    <Anchor point="TOPRIGHT" relativeKey="$parent.Header" relativePoint="BOTTOMRIGHT"/>
                 </Anchors>
             </Button>
-            <Button name="$parentBudget" inherits="RXP_IU_AH_ItemRow" parentKey="budget">
+            <Button name="$parentBudget" inherits="RXP_IU_AH_ItemRow" parentKey="Budget">
                 <Anchors>
-                    <Anchor point="TOPLEFT" relativeKey="$parent.best" relativePoint="BOTTOMLEFT"/>
+                    <Anchor point="TOPLEFT" relativeKey="$parent.Best" relativePoint="BOTTOMLEFT"/>
                 </Anchors>
             </Button>
         </Frames>

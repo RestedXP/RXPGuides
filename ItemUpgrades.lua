@@ -416,6 +416,8 @@ local function KeyToRegex(keyString)
 end
 
 local function prettyPrintRatio(ratio)
+    if not ratio then return "NaN" end
+
     if ratio == 1 then
         return '100%'
     elseif ratio > 0 then
@@ -1405,57 +1407,27 @@ function addon.itemUpgrades.AH:Analyze()
     end
 end
 
-local function setIcon(base, name, icon)
-    if not base or not _G[base .. name] then
-        print("setIcon: error", icon)
-        return
-    end
-
-    _G[base .. name]:SetNormalTexture(icon)
+local function loadMoneyFrame(frame, buyoutMoney)
+    print("loadMoneyFrame", frame:GetName())
+    -- RXPD5 = frame
+    -- SmallMoneyFrame_OnLoad(frame)
+    -- MoneyFrame_SetType(frame, "AUCTION")
+    -- MoneyFrame_SetMaxDisplayWidth(frame, 146)
+    MoneyFrame_Update(frame, buyoutMoney)
 end
 
-local function setText(base, name, text)
-    if not base or not _G[base .. name] then
-        print("setText: error", text)
-        return
-    end
-    -- print("setText", base, name, text)
-
-    _G[base .. name]:SetText(text)
-end
-
-local function setMoney(base, name, money)
-    if not base or not _G[base .. name] then
-        print("setMoney: error")
+local function setKindIcon(frame, image)
+    if not frame or not image then
+        print("setKindIcon: error", frame, image)
         return
     end
 
-    MoneyFrame_Update(_G[base .. name], money)
-end
+    if frame.KindIcon then return end
 
-local function setKindIcon(base, name, image)
-    if not base or not name then
-        print("setKindIcon: error", name)
-        return
-    end
-
-    if _G[base .. name].KindIcon then return end
-
-    local f = _G[base .. name]
-
-    f.KindIcon = f:CreateTexture(base .. name .. 'KindIcon', 'OVERLAY')
-    f.KindIcon:SetPoint("BOTTOMRIGHT", f, "BOTTOMRIGHT")
-    f.KindIcon:SetSize(16, 16)
-    f.KindIcon:SetTexture(image)
-end
-
-local function setProperty(base, property, data)
-    if not base or not property then
-        print("setProperty: error", property)
-        return
-    end
-
-    _G[base][property] = data
+    frame.KindIcon = frame:CreateTexture(nil, 'OVERLAY')
+    frame.KindIcon:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT")
+    frame.KindIcon:SetSize(16, 16)
+    frame.KindIcon:SetTexture(image)
 end
 
 local function getColorizedName(itemLink, itemName)
@@ -1478,37 +1450,44 @@ local function prettyPrintBudgetColumn(data)
                data.weightIncrease)
 end
 
--- TODO convert to lua itemblock generation, lua+frame isn't evaluating $parentFoo properly and harder to access
-local function Initializer(itemBlockFrame, data)
-    _G.RXPD = itemBlockFrame
-    print("Initializer", itemBlockFrame, itemBlockFrame:GetName())
-    -- setText(itemBlockFrame, 'Name', data.Name)
+local function Initializer(frame, data)
+    _G.RXPD = frame
+    _G.RXPD1 = data
 
-    if data.best.ItemLink and false then
-        setProperty(block.best, 'ItemLink', data.best.itemLink)
-        setProperty(block.best, 'ItemID', data.best.itemID)
-        setKindIcon(block.best, 'ItemIcon',
-                    "Interface/AddOns/" .. addonName .. "/Textures/rxp_logo-64")
-        setText(block.best, 'Name',
-                getColorizedName(data.relative.itemLink, data.best.name))
-        setText(block.best, 'ItemLevelText', data.best.level)
-        setText(block.best, 'UpdateEPText', prettyPrintUpgradeColumn(data.best))
-        setMoney(block.best, 'BuyoutMoney', data.best.lowestPrice)
-        setIcon(block.best, 'ItemIcon', GetItemIcon(data.best.itemLink))
+    frame.Header.Name:SetText(data.Name)
+
+    local d = data.best
+    if d then
+        local f = frame.Best
+
+        f.ItemLink = d.ItemLink
+        f.ItemID = d.ItemID
+        f.Name:SetText(d.Name)
+        f.ItemLevel.Text:SetText(d.ItemLevelText)
+        f.UpdateEP.Text:SetText(d.UpdateEPText)
+        f.ItemIcon:SetNormalTexture(d.ItemIcon)
+        setKindIcon(f.ItemIcon, d.ItemKindIcon)
+
+        f.Buyout.Money:SetScript("OnLoad", function()
+            loadMoneyFrame(f.Buyout.Money, d.BuyoutMoney)
+        end)
     end
 
-    if data.budget.ItemLink and false then
-        setProperty(block.budget, 'ItemLink', data.budget.itemLink)
-        setProperty(block.budget, 'ItemID', data.budget.itemID)
-        setKindIcon(block.budget, 'ItemIcon',
-                    'Interface/GossipFrame/VendorGossipIcon.blp')
-        setText(block.budget, 'Name',
-                getColorizedName(data.budget.itemLink, data.budget.name))
-        setText(block.budget, 'ItemLevelText', data.budget.level)
-        setText(block.budget, 'UpdateEPText',
-                prettyPrintBudgetColumn(data.budget))
-        setMoney(block.budget, 'BuyoutMoney', data.budget.lowestPrice)
-        setIcon(block.budget, 'ItemIcon', GetItemIcon(data.budget.itemLink))
+    d = data.budget
+    if data.budget then
+        local f = frame.Budget
+
+        f.ItemLink = d.ItemLink
+        f.ItemID = d.ItemID
+        f.Name:SetText(d.Name)
+        f.ItemLevel.Text:SetText(d.ItemLevelText)
+        f.UpdateEP.Text:SetText(d.UpdateEPText)
+        f.ItemIcon:SetNormalTexture(d.ItemIcon)
+        setKindIcon(f.ItemIcon, d.ItemKindIcon)
+
+        f.Buyout.Money:SetScript("OnLoad", function()
+            loadMoneyFrame(f.Buyout.Money, d.BuyoutMoney)
+        end)
     end
 end
 
@@ -1549,7 +1528,6 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
     ScrollUtil.InitScrollBoxListWithScrollBar(scrollBox, ScrollBar, ScrollView)
 
     ScrollView:SetElementInitializer("RXP_IU_AH_ItemBlock", Initializer)
-    -- DataProvider:Insert({})
 
     ahSession.displayFrame.scanButton = _G.RXP_IU_AH_SearchButton
 
@@ -1622,8 +1600,7 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
 
     for slotId, data in pairs(ahSession.bestAnalysis) do
         if data.budget.itemLink or data.relative.itemLink then
-            blockData = {['Name'] = data.slotName, best = {}, budget = {}}
-            -- setText(block.header, 'Name', data.slotName)
+            blockData = {['Name'] = data.slotName}
 
             if data.relative.itemLink then
                 blockData.best = {
@@ -1638,21 +1615,6 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
                     BuyoutMoney = data.relative.lowestPrice,
                     ItemIcon = GetItemIcon(data.relative.itemLink) -- TODO fix randomized items link
                 }
-                --[[
-                setProperty(block.best, 'ItemLink', data.relative.itemLink)
-                setProperty(block.best, 'ItemID', data.relative.itemID)
-                setKindIcon(block.best, 'ItemIcon', "Interface/AddOns/" ..
-                                addonName .. "/Textures/rxp_logo-64")
-                setText(block.best, 'Name', getColorizedName(
-                            data.relative.itemLink, data.relative.name))
-                setText(block.best, 'ItemLevelText', data.relative.level)
-                setText(block.best, 'UpdateEPText',
-                        prettyPrintUpgradeColumn(data.relative))
-                setMoney(block.best, 'BuyoutMoney', data.relative.lowestPrice)
-                setIcon(block.best, 'ItemIcon',
-                        GetItemIcon(data.relative.itemLink))
-                -- print("  - Relative EP / copper", data.relative.itemLink, data.relative.weight)
-                --]]
             end
 
             if data.budget.itemLink then
@@ -1665,33 +1627,21 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
                     ItemLevelText = data.budget.level,
                     UpdateEPText = prettyPrintBudgetColumn(data.budget),
                     BuyoutMoney = data.budget.lowestPrice,
-                    ItemIcon = GetItemIcon(data.budget.itemLink)
+                    ItemIcon = GetItemIcon(data.budget.itemLink) -- TODO fix randomized items link
                 }
-                --[[
-                setProperty(block.budget, 'ItemLink', data.budget.itemLink)
-                setProperty(block.budget, 'ItemID', data.budget.itemID)
-                setKindIcon(block.budget, 'ItemIcon',
-                            'Interface/GossipFrame/VendorGossipIcon.blp')
-                setText(block.budget, 'Name', getColorizedName(
-                            data.budget.itemLink, data.budget.name))
-                setText(block.budget, 'ItemLevelText', data.budget.level)
-                setText(block.budget, 'UpdateEPText',
-                        prettyPrintBudgetColumn(data.budget))
-                setMoney(block.budget, 'BuyoutMoney', data.budget.lowestPrice)
-                setIcon(block.budget, 'ItemIcon',
-                        GetItemIcon(data.budget.itemLink))
-                -- print("  - Highest EP / copper", data.budget.itemLink, data.budget.weight)
-                --]]
             end
 
-            ahSession.displayFrame.DataProvider:Insert(blockData)
+            if blockData.best or blockData.budget then -- TODO remove old data from insert
+                ahSession.displayFrame.DataProvider:Insert(blockData)
+            end
         else
             print("DisplayEmbeddedResults:", data.slotName, "no upgrades found")
         end
     end
 end
 
--- Support multiple blocks, hide leftovers
 -- Make rows clickable
 -- Support actually buying the thing
 -- fix randomly generated tooltip
+-- only display one row if same item, stack/stagger ItemKindIcon
+-- Fix non-unique buyout lists
