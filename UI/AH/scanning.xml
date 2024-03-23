@@ -295,30 +295,10 @@
                     <Anchor point="LEFT" relativeKey="$parent.UpdateEP" relativePoint="RIGHT"/>
                 </Anchors>
                 <Frames>
-                    <Frame name="$parent.Money1" parentKey="Money" inherits="SmallMoneyFrameTemplate">
-                        <Anchors>
-                            <Anchor point="RIGHT">
-                                <Offset>
-                                    <AbsDimension x="0" y="-6"/>
-                                </Offset>
-                            </Anchor>
-                        </Anchors>
-                        <Scripts>
-                            <OnLoad>
-                                RXPD6 = self
-                                print("OnLoad1", self:GetName())
-                                self.Name = self:GetParent():GetName() .. "foobar"
-                                print("OnLoad2", self:GetName())
-								SmallMoneyFrame_OnLoad(self);
-                                MoneyFrame_SetType(self, "AUCTION");
-								MoneyFrame_SetMaxDisplayWidth(self, 146);
-                            </OnLoad>
-                        </Scripts>
-                    </Frame>
-                    <Frame parentKey="Text">
+                    <Frame parentKey="Label">
                         <Size x="48" y="13"/>
                         <Anchors>
-                            <Anchor point="RIGHT" relativeKey="$parent.Money" relativePoint="LEFT"/>
+                            <Anchor point="RIGHT"/>
                         </Anchors>
                         <Layers>
                             <Layer level="BACKGROUND">
@@ -363,17 +343,17 @@
     </Button>
     <Frame name="RXP_IU_AH_ItemBlock" hidden="false" virtual="true">
         <Frames>
-            <Frame name="$parentHeader" inherits="RXP_IU_AH_ItemKindHeader" parentKey="Header">
+            <Frame inherits="RXP_IU_AH_ItemKindHeader" parentKey="Header">
                 <Anchors>
                     <Anchor point="TOPLEFT"/>
                 </Anchors>
             </Frame>
-            <Button name="$parentBest" inherits="RXP_IU_AH_ItemRow" parentKey="Best">
+            <Button inherits="RXP_IU_AH_ItemRow" parentKey="Best">
                 <Anchors>
                     <Anchor point="TOPRIGHT" relativeKey="$parent.Header" relativePoint="BOTTOMRIGHT"/>
                 </Anchors>
-            </Button>
-            <Button name="$parentBudget" inherits="RXP_IU_AH_ItemRow" parentKey="Budget">
+            </Button>7
+            <Button inherits="RXP_IU_AH_ItemRow" parentKey="Budget">
                 <Anchors>
                     <Anchor point="TOPLEFT" relativeKey="$parent.Best" relativePoint="BOTTOMLEFT"/>
                 </Anchors>

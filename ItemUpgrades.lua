@@ -1407,13 +1407,33 @@ function addon.itemUpgrades.AH:Analyze()
     end
 end
 
-local function loadMoneyFrame(frame, buyoutMoney)
-    print("loadMoneyFrame", frame:GetName())
-    -- RXPD5 = frame
-    -- SmallMoneyFrame_OnLoad(frame)
-    -- MoneyFrame_SetType(frame, "AUCTION")
-    -- MoneyFrame_SetMaxDisplayWidth(frame, 146)
-    MoneyFrame_Update(frame, buyoutMoney)
+-- TODO get parent frame names instead
+local buyoutIncr = 0
+-- SmallMoneyFrameTemplate doesn't handle parentKey well in .xml, moved to Lua
+local function createBuyoutFrame(buyout)
+    if not buyout then
+        print("createBuyoutFrame: error", buyout)
+        return
+    end
+
+    if buyout.Money then return end
+
+    buyout.Money = CreateFrame("Frame", "$parentMoneyFrame" .. buyoutIncr,
+                               buyout, "SmallMoneyFrameTemplate")
+    buyoutIncr = buyoutIncr + 1
+    buyout.Money:SetPoint("RIGHT", 0, -6)
+
+    buyout.Money:SetScript("OnLoad", function(this)
+        SmallMoneyFrame_OnLoad(this);
+        MoneyFrame_SetType(this, "AUCTION");
+        MoneyFrame_SetMaxDisplayWidth(this, 146);
+    end)
+end
+
+local function updateBuyoutFrame(buyout, buyoutMoney)
+    MoneyFrame_Update(buyout.Money, buyoutMoney)
+
+    buyout.Label:SetPoint("RIGHT", buyout.Money, "LEFT")
 end
 
 local function setKindIcon(frame, image)
@@ -1451,9 +1471,6 @@ local function prettyPrintBudgetColumn(data)
 end
 
 local function Initializer(frame, data)
-    _G.RXPD = frame
-    _G.RXPD1 = data
-
     frame.Header.Name:SetText(data.Name)
 
     local d = data.best
@@ -1468,9 +1485,8 @@ local function Initializer(frame, data)
         f.ItemIcon:SetNormalTexture(d.ItemIcon)
         setKindIcon(f.ItemIcon, d.ItemKindIcon)
 
-        f.Buyout.Money:SetScript("OnLoad", function()
-            loadMoneyFrame(f.Buyout.Money, d.BuyoutMoney)
-        end)
+        createBuyoutFrame(f.Buyout)
+        updateBuyoutFrame(f.Buyout, d.BuyoutMoney)
     end
 
     d = data.budget
@@ -1485,9 +1501,8 @@ local function Initializer(frame, data)
         f.ItemIcon:SetNormalTexture(d.ItemIcon)
         setKindIcon(f.ItemIcon, d.ItemKindIcon)
 
-        f.Buyout.Money:SetScript("OnLoad", function()
-            loadMoneyFrame(f.Buyout.Money, d.BuyoutMoney)
-        end)
+        createBuyoutFrame(f.Buyout)
+        updateBuyoutFrame(f.Buyout, d.BuyoutMoney)
     end
 end
 
@@ -1644,4 +1659,3 @@ end
 -- Support actually buying the thing
 -- fix randomly generated tooltip
 -- only display one row if same item, stack/stagger ItemKindIcon
--- Fix non-unique buyout lists
