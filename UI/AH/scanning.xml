@@ -47,7 +47,7 @@
         <Size x="810" y="19"/>
         <Layers>
             <Layer level="BACKGROUND">
-                <FontString name="$parentName" inherits="GameFontNormal" justifyH="CENTER" text="Foo">
+                <FontString parentKey="name" inherits="GameFontNormal" justifyH="CENTER" text="Foo">
                     <Size x="96" y="19"/>
                     <Anchors>
                         <Anchor point="TOP">
@@ -57,7 +57,7 @@
                         </Anchor>
                     </Anchors>
                 </FontString>
-                <Texture name="$parentLeft" file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
+                <Texture parentKey="left" file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
                     <Size>
                         <AbsDimension x="10" y="19"/>
                     </Size>
@@ -70,7 +70,7 @@
                     </Anchors>
                     <TexCoords left="0" right="0.078125" top="0" bottom="1.0"/>
                 </Texture>
-                <Texture name="$parentRight" file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
+                <Texture parentKey="right" file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
                     <Size>
                         <AbsDimension x="10" y="19"/>
                     </Size>
@@ -88,12 +88,12 @@
                         <AbsDimension x="10" y="19"/>
                     </Size>
                     <Anchors>
-                        <Anchor point="LEFT" relativeTo="$parentLeft" relativePoint="RIGHT">
+                        <Anchor point="LEFT" relativeKey="$parent.left" relativePoint="RIGHT">
                             <Offset>
                                 <AbsDimension x="0" y="0"/>
                             </Offset>
                         </Anchor>
-                        <Anchor point="RIGHT" relativeTo="$parentRight" relativePoint="LEFT">
+                        <Anchor point="RIGHT" relativeKey="$parent.right" relativePoint="LEFT">
                             <Offset>
                                 <AbsDimension x="0" y="0"/>
                             </Offset>
@@ -105,12 +105,10 @@
         </Layers>
     </Button>
     <Button name="RXP_IU_AH_ItemRow" hidden="false" virtual="true">
-        <Size>
-            <AbsDimension x="773" y="37"/>
-        </Size>
+        <Size x="773" y="37"/>
         <Layers>
             <Layer level="BACKGROUND">
-                <FontString name="$parentName" inherits="GameFontNormal" justifyH="LEFT" text="$parentName">
+                <FontString parentKey="name" inherits="GameFontNormal" justifyH="LEFT" text="$parentName">
                     <Size x="180" y="32"/>
                     <Anchors>
                         <Anchor point="TOPLEFT">
@@ -120,10 +118,8 @@
                         </Anchor>
                     </Anchors>
                 </FontString>
-                <FontString name="$parentLevel" inherits="GameFontHighlightSmall">
-                    <Size>
-                        <AbsDimension x="86" y="32"/>
-                    </Size>
+                <FontString parentKey="level" inherits="GameFontHighlightSmall">
+                    <Size x="86" y="32"/>
                     <Anchors>
                         <Anchor point="TOPLEFT">
                             <Offset>
@@ -132,10 +128,8 @@
                         </Anchor>
                     </Anchors>
                 </FontString>
-                <Texture name="$parentLeft" file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
-                    <Size>
-                        <AbsDimension x="10" y="32"/>
-                    </Size>
+                <Texture parentKey="left" file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
+                    <Size x="10" y="32"/>
                     <Anchors>
                         <Anchor point="LEFT">
                             <Offset>
@@ -145,10 +139,8 @@
                     </Anchors>
                     <TexCoords left="0" right="0.078125" top="0" bottom="1.0"/>
                 </Texture>
-                <Texture name="$parentRight" file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
-                    <Size>
-                        <AbsDimension x="10" y="32"/>
-                    </Size>
+                <Texture parentKey="right" file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
+                    <Size x="10" y="32"/>
                     <Anchors>
                         <Anchor point="RIGHT">
                             <Offset>
@@ -159,34 +151,24 @@
                     <TexCoords left="0.75" right="0.828125" top="0" bottom="1.0"/>
                 </Texture>
                 <Texture file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
-                    <Size>
-                        <AbsDimension x="10" y="32"/>
-                    </Size>
+                    <Size x="10" y="32"/>
                     <Anchors>
-                        <Anchor point="LEFT" relativeTo="$parentLeft" relativePoint="RIGHT">
-                            <Offset>
-                                <AbsDimension x="0" y="0"/>
-                            </Offset>
-                        </Anchor>
-                        <Anchor point="RIGHT" relativeTo="$parentRight" relativePoint="LEFT">
-                            <Offset>
-                                <AbsDimension x="0" y="0"/>
-                            </Offset>
-                        </Anchor>
+                        <Anchor point="LEFT" relativeKey="$parent.left" relativePoint="RIGHT"/>
+                        <Anchor point="RIGHT" relativeKey="$parent.right" relativePoint="LEFT"/>
                     </Anchors>
                     <TexCoords left="0.078125" right="0.75" top="0" bottom="1.0"/>
                 </Texture>
             </Layer>
         </Layers>
         <Frames>
-            <Button name="$parentItemIcon">
+            <Button parentKey="ItemIcon">
                 <Size x="32" y="32"/>
                 <Anchors>
                     <Anchor point="TOPLEFT"/>
                 </Anchors>
                 <Layers>
                     <Layer level="BORDER">
-                        <Texture name="$parentIconTexture"/>
+                        <Texture parentKey="IconTexture"/>
                     </Layer>
                     <Layer level="OVERLAY">
                         <Texture parentKey="IconBorder" file="Interface\Common\WhiteIconFrame" hidden="true">
@@ -241,21 +223,17 @@
 					</OnUpdate>
                     -->
                 </Scripts>
-                <NormalTexture name="$parentNormalTexture" file="Interface\Buttons\UI-Quickslot2">
+                <NormalTexture parentKey="NormalTexture" file="Interface\Buttons\UI-Quickslot2">
                     <Size>
                         <AbsDimension x="32" y="32"/>
                     </Size>
                     <Anchors>
-                        <Anchor point="CENTER">
-                            <Offset>
-                                <AbsDimension x="0" y="0"/>
-                            </Offset>
-                        </Anchor>
+                        <Anchor point="CENTER"/>
                     </Anchors>
                 </NormalTexture>
                 <HighlightTexture file="Interface\Buttons\ButtonHilight-Square" alphaMode="ADD"/>
             </Button>
-            <Frame name="$parentItemLevel" enableMouse="true">
+            <Frame parentKey="ItemLevel" enableMouse="true">
                 <Size x="84" y="32"/>
                 <Anchors>
                     <Anchor point="TOPLEFT">
@@ -266,7 +244,7 @@
                 </Anchors>
                 <Layers>
                     <Layer level="BACKGROUND">
-                        <FontString name="$parentText" inherits="GameFontHighlightSmall" text="23" >
+                        <FontString parentKey="Text" inherits="GameFontHighlightSmall" text="23" >
                             <Size x="75" y="32"/>
                             <Anchors>
                                 <Anchor point="TOPLEFT"/>
@@ -283,10 +261,8 @@
                     </OnLeave>
                 </Scripts>
             </Frame>
-            <Frame name="$parentUpdateEP" enableMouse="true">
-                <Size>
-                    <AbsDimension x="204" y="32"/>
-                </Size>
+            <Frame parentKey="UpdateEP" enableMouse="true">
+                <Size x="204" y="32"/>
                 <Anchors>
                     <Anchor point="TOPLEFT">
                         <Offset>
@@ -296,10 +272,8 @@
                 </Anchors>
                 <Layers>
                     <Layer level="BACKGROUND">
-                        <FontString name="$parentText" inherits="GameFontHighlightSmall" text="+1412% / +5 EP" >
-                            <Size>
-                                <AbsDimension x="194" y="32"/>
-                            </Size>
+                        <FontString parentKey="Text" inherits="GameFontHighlightSmall" text="+1412% / +5 EP" >
+                            <Size x="194" y="32"/>
                             <Anchors>
                                 <Anchor point="TOPLEFT"/>
                             </Anchors>
@@ -315,13 +289,13 @@
                     </OnLeave>
                 </Scripts>
             </Frame>
-            <Frame name="$parentBuyout">
+            <Frame parentKey="Buyout">
                 <Size x="186" y="32"/>
                 <Anchors>
-                    <Anchor point="LEFT" relativeTo="$parentUpdateEP" relativePoint="RIGHT"/>
+                    <Anchor point="LEFT" relativeKey="$parent.UpdateEP" relativePoint="RIGHT"/>
                 </Anchors>
                 <Frames>
-                    <Frame name="$parentMoney" inherits="SmallMoneyFrameTemplate">
+                    <Frame parentKey="Money" inherits="SmallMoneyFrameTemplate">
                         <Anchors>
                             <Anchor point="RIGHT">
                                 <Offset>
@@ -337,10 +311,10 @@
                             </OnLoad>
                         </Scripts>
                     </Frame>
-                    <Frame name="$parentText">
+                    <Frame parentKey="Text">
                         <Size x="48" y="13"/>
                         <Anchors>
-                            <Anchor point="RIGHT" relativeTo="$parentMoney" relativePoint="LEFT"/>
+                            <Anchor point="RIGHT" relativeKey="$parent.Money" relativePoint="LEFT"/>
                         </Anchors>
                         <Layers>
                             <Layer level="BACKGROUND">
@@ -367,7 +341,7 @@
 			</OnClick>
             -->
         </Scripts>
-        <HighlightTexture name="$parentHighlight" file="Interface\HelpFrame\HelpFrameButton-Highlight" alphaMode="ADD">
+        <HighlightTexture parentKey="Highlight" file="Interface\HelpFrame\HelpFrameButton-Highlight" alphaMode="ADD">
             <Anchors>
                 <Anchor point="TOPLEFT">
                     <Offset>
@@ -385,19 +359,19 @@
     </Button>
     <Frame name="RXP_IU_AH_ItemBlock" hidden="false" virtual="true">
         <Frames>
-            <Frame name="$parentHeader" inherits="RXP_IU_AH_ItemKindHeader" id="1">
+            <Frame name="$parentHeader" inherits="RXP_IU_AH_ItemKindHeader" parentKey="header">
                 <Anchors>
                     <Anchor point="TOPLEFT"/>
                 </Anchors>
             </Frame>
-            <Button name="$parentBest" inherits="RXP_IU_AH_ItemRow" id="2">
+            <Button name="$parentBest" inherits="RXP_IU_AH_ItemRow" parentKey="best">
                 <Anchors>
-                    <Anchor point="TOPRIGHT" relativeTo="$parentHeader" relativePoint="BOTTOMRIGHT"/>
+                    <Anchor point="TOPRIGHT" relativeKey="$parent.header" relativePoint="BOTTOMRIGHT"/>
                 </Anchors>
             </Button>
-            <Button name="$parentBudget" inherits="RXP_IU_AH_ItemRow" id="3">
+            <Button name="$parentBudget" inherits="RXP_IU_AH_ItemRow" parentKey="budget">
                 <Anchors>
-                    <Anchor point="TOPLEFT" relativeTo="$parentBest" relativePoint="BOTTOMLEFT"/>
+                    <Anchor point="TOPLEFT" relativeKey="$parent.best" relativePoint="BOTTOMLEFT"/>
                 </Anchors>
             </Button>
         </Frames>
