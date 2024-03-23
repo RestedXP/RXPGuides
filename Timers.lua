@@ -173,7 +173,7 @@ end
 
 function addon:PLAYER_CONTROL_LOST()
     -- Don't display flight timer if addon hidden
-
+    if not (flightInfo and flightInfo.startFlight) then return end
     if GetTime() - flightInfo.startFlight < 1.5 then
         flightInfo.lastFlightSrc = flightInfo.currentFP
         flightInfo.lastFlightDest = flightInfo.dest
