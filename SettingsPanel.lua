@@ -2065,9 +2065,6 @@ function addon.settings:CreateAceOptionsPanel()
                         hidden = function()
                             return not addon.itemUpgrades
                         end,
-                        disabled = function()
-                            return UnitLevel("player") == GetMaxPlayerLevel()
-                        end,
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.itemUpgrades:Setup()
