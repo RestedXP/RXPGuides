@@ -1972,6 +1972,31 @@ function addon.functions.bindlocation(self, ...)
     end
 end
 
+function addon.GetNearestFp()
+    if not addon.taxiPos then return end
+    local factionid = 0
+    local faction = addon.player.faction
+    if faction == "Alliance" then
+        factionid = 1
+    elseif faction == "Horde" then
+        factionid = 2
+    end
+    local x,y,_,map = UnitPosition('player')
+    local mindist = math.huge
+    local closestFP
+    for node,t in pairs(addon.taxiPos[map]) do
+        if bit.band(t.flag,factionid) == factionid then
+            local dist = (x-t.wx)^2 + (y-t.wy)^2
+            if mindist > dist then
+                mindist = dist
+                closestFP = node
+            end
+        end
+    end
+    --print(closestFP,mindist,addon.FPDB[faction][closestFP].name)
+    return closestFP
+end
+
 function addon.functions.fp(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
@@ -2028,6 +2053,10 @@ function addon.functions.fp(self, ...)
                     addon.SetElementComplete(self)
                 end
             else
+                local nearestFP = addon.GetNearestFp()
+                if nearestFP then
+                    RXPCData.flightPaths[nearestFP] = addon.FPDB[addon.player.faction][nearestFP] and addon.FPDB[addon.player.faction][nearestFP].name
+                end
                 addon.SetElementComplete(self)
             end
         elseif (GetTime() - element.confirm) > 10 and event == "GOSSIP_SHOW" and addon.SelectGossipType("taxi") then
