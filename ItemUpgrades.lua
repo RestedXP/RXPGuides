@@ -1458,7 +1458,7 @@ local function getColorizedName(itemLink, itemName)
 end
 
 local function prettyPrintUpgradeColumn(data)
-    return fmt("%s / %d EP", prettyPrintRatio(data.ratio), data.weightIncrease)
+    return fmt("%s / %s EP", prettyPrintRatio(data.ratio), data.weightIncrease)
 end
 
 local function prettyPrintBudgetColumn(data)
@@ -1466,7 +1466,7 @@ local function prettyPrintBudgetColumn(data)
 
     if epPerCopper == 0 then epPerCopper = addon.Round(data.rwpc, 4) end
 
-    return fmt("%s / %d (EP/c)", prettyPrintRatio(data.ratio),
+    return fmt("%s / %s (EP/c)", prettyPrintRatio(data.ratio),
                data.weightIncrease)
 end
 
