@@ -1,5 +1,6 @@
 local _, addon = ...
 
+if addon.game ~= "CLASSIC" then return end
 C_Spell.RequestLoadSpellData(2575) -- mining
 C_Spell.RequestLoadSpellData(2368) -- herbalism
 

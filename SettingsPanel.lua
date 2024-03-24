@@ -1187,6 +1187,19 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = addon.game ~= "WOTLK"
                     },
+                    loremasterMode = {
+                        name = L("Loremaster Mode"),
+                        desc = L(
+                            "Adjust the routes to include more quests"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 2.11,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.ReloadGuide()
+                        end,
+                        hidden = addon.game ~= "CATA"
+                    },
                     chromieTime = {
                         name = L("Show Chromie Time Guides"),
                         desc = L(
@@ -2052,9 +2065,6 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 5.1,
                         hidden = function()
                             return not addon.itemUpgrades
-                        end,
-                        disabled = function()
-                            return UnitLevel("player") == GetMaxPlayerLevel()
                         end,
                         set = function(info, value)
                             SetProfileOption(info, value)

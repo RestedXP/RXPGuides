@@ -152,7 +152,11 @@ function addon.SetupGuideWindow()
     GuideName.text:SetTextColor(unpack(addon.activeTheme.textColor))
 
     Footer.text:SetFont(addon.font, 9, "")
-    Footer.text:SetText(fmt("%s %s", addon.title, addon.release))
+    if addon.game ~= "CATA" then
+        Footer.text:SetText(fmt("%s %s", addon.title, addon.release))
+    else
+        Footer.text:SetText(fmt("RXP Beta %s %d/%d", addon.release, addon.minGuideVersion ,addon.maxGuideVersion))
+    end
     Footer.text:SetTextColor(unpack(addon.activeTheme.textColor))
 
     GuideName.bg:SetTexture(addon.GetTexture("rxp-banner"))
@@ -1365,6 +1369,12 @@ addon.emptyGuide = {
     steps = {{hidewindow = true, text = ""}}
 }
 
+function addon.BetaVersionCheck()
+    if addon.game == "CATA" then
+        Footer.text:SetText(fmt("RXP Beta %s %d/%d", addon.release, addon.minGuideVersion ,addon.maxGuideVersion))
+    end
+end
+
 function addon:FetchGuide(guide,arg2)
     if type(guide) == "string" then
         return addon:FetchGuide(addon.GetGuideTable(guide,arg2))
@@ -1843,6 +1853,8 @@ function BottomFrame.UpdateFrame(self, stepn)
         end
         BottomFrame:Show()
     end
+
+    addon.BetaVersionCheck()
 
 end
 -- addon.hiddenFrames = 0

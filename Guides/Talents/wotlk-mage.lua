@@ -1,6 +1,6 @@
 local _, addon = ...
 
-if addon.player.class ~= "MAGE" then return end
+if addon.player.class ~= "MAGE" or addon.gameVersion >= 40000 then return end
 
 addon.talents.RegisterGuide([[
 #name Mage AoE 10-80
@@ -138,7 +138,7 @@ level -- Enduring Water Rank 2
 
 level -- Enduring Water Rank 3
     .talent 3,9,3,3
-    
+
 level -- Arctic Winds Rank 1
     .talent 3,7,3,1
 
@@ -233,7 +233,7 @@ level -- Improved Frostbolt Rank 1
 
 level -- Improved Frostbolt Rank 2
     .talent 3,1,2,2
-    
+
 level -- Improved Frostbolt Rank 3
     .talent 3,1,2,3
 

@@ -53,21 +53,21 @@ step << !Druid !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Briarthorn|r << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fenthwick|r << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Toldren Deepiron|r << Priest
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Juli Stormkettle|r << Mage
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dink|r << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brandur Ironhammer|r << Paladin
     .goto Ironforge,65.905,88.405 << Warrior
     .goto Ironforge,51.1,8.7,15,0 << Warlock
     .goto Ironforge,50.343,5.657 << Warlock
     .goto Ironforge,51.495,15.330 << Rogue
     .goto Ironforge,25.207,10.756 << Priest
-    .goto Ironforge,26.295,6.752 << Mage
+    .goto Ironforge,27.18,8.60 << Mage
     .goto Ironforge,23.141,6.149 << Paladin
     .trainer >> Train your class spells
     .target Bilban Tosslespanner << Warrior
     .target Briarthorn << Warlock
     .target Fenthwick << Rogue
     .target Toldren Deepiron << Priest
-    .target Juli Stormkettle << Mage
+    .target Dink << Mage
     .target Brandur Ironhammer << Paladin
     .xp <18,1
 step << !Druid !Hunter

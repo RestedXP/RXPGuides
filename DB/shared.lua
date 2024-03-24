@@ -1,5 +1,7 @@
 local addonName, addon = ...
 
+addon.mapConversion = {}
+
 addon.skipPreReq = {
     [9573] = 1,
     [533] = 1,

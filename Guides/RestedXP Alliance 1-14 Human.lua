@@ -471,7 +471,7 @@ step << Priest
     .complete 5624,1 --Heal and fortify Guard Roberts
 step
     #completewith BoarMeat1
-    >>Start killing |cRXP_LOOT_Boars|r you see for |cRXP_LOOT_Chunks of Boar Meat|r
+    >>Start killing |cRXP_LOOT_Boars|r you see for |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     .collect 769,4 --Collect Chunk of Boar Meat (x4)
 step
     >> Talk to |cRXP_FRIENDLY_Ma Stonefield|r and |cRXP_FRIENDLY_"Auntie" Bernice Stonefield|r
@@ -538,7 +538,7 @@ step << !Mage !Priest !Warlock tbc
     .vendor >>vendor trash
 step
     #completewith next
-    >>Grind |cRXP_LOOT_Boars|r you see for |cRXP_LOOT_Chunks of Boar Meat|r en route
+    >>Grind |cRXP_LOOT_Boars|r you see for |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r en route
     .collect 769,4 --Collect Chunk of Boar Meat (x4)
 step
     >> Head back to the Stonefield farm, then keep going to the river. Talk to |cRXP_FRIENDLY_Tommy Joe Stonefield|r
@@ -548,7 +548,7 @@ step
     .accept 111 >> Accept Speak with Gramma
 step
     .goto Elwynn Forest,32.5,85.5
-    >>Finish killing |cRXP_LOOT_Boars|r you see for |cRXP_LOOT_Chunks of Boar Meat|r
+    >>Finish killing |cRXP_LOOT_Boars|r you see for |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     .complete 86,1 --Collect Chunk of Boar Meat (x4)
 step
     >> Return to |cRXP_FRIENDLY_"Auntie" Bernice Stonefield|r
@@ -559,7 +559,7 @@ step
 step
     >> Speak with |cRXP_FRIENDLY_Gramma Stonefield|r inside the house
     .target Gramma Stonefield
-    .goto Elwynn Forest,34.9,83.9
+    .goto 1429,34.945,83.855
     .turnin 111 >> Turn in Speak with Gramma
     .accept 107 >> Accept Note to William
 step
@@ -1544,7 +1544,7 @@ step << tbc
     .goto Wetlands,10.4,56.0,15,0
     .goto Wetlands,10.1,56.9,15,0
     .goto Wetlands,10.6,57.2,15,0
-    .goto Wetlands,10.7,56.8
+    .goto 1437,10.760,56.721
     .vendor >> If you have 7.6s, Check for Bronze Tube from Neal Allen and buy it if it's there
     .bronzetube
 step << tbc
@@ -2080,7 +2080,7 @@ step << tbc
     .goto Wetlands,10.4,56.0,15,0
     .goto Wetlands,10.1,56.9,15,0
     .goto Wetlands,10.6,57.2,15,0
-    .goto Wetlands,10.7,56.8
+    .goto 1437,10.760,56.721
     .vendor >> If you have 7.6s, Check for Bronze Tube from Neal Allen and buy it if it's there
     .bronzetube
 step << tbc

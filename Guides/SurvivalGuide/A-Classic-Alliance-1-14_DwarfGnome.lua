@@ -420,7 +420,7 @@ RXPGuides.RegisterGuide([[
 step
     #completewith BoarMeat44 << !Paladin !Warrior !Rogue
     #completewith BearFur << Paladin/Warrior/Rogue
-    >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Large Crag Boars|r. Loot them for their |cRXP_LOOT_Chunks of Boar Meat|r
+    >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Large Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     .collect 769,4,317,1 --Collect Chunk of Boar Meat (x4)
     .mob Crag Boar
     .mob Large Crag Boar
@@ -484,22 +484,22 @@ step << Rogue
     .vendor >> |cRXP_BUY_Buy and equip a|r |T135426:0|t[Small Throwing Knife]
     .target Kreg Bilmn
 step << Rogue
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hogral Bakkan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hogral Bakkan|r inside in the backroom
     .target Hogral Bakkan
     .goto Dun Morogh,47.563,52.608
     .trainer >> Train your class spells
 step << Mage
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magis Sparkmantle|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magis Sparkmantle|r inside upstairs
     .target Magis Sparkmantle
     .goto Dun Morogh,47.498,52.076
     .trainer >> Train your class spells
 step << Paladin
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azar Stronghammer|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azar Stronghammer|r inside upstairs
     .target Azar Stronghammer
     .goto Dun Morogh,47.597,52.070
     .trainer >> Train your class spells
 step << Priest
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maxan Anvol|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maxan Anvol|r inside
     .target Maxan Anvol
     .goto Dun Morogh,47.342,52.190
     .accept 5625 >> Accept Garments of the Light
@@ -509,7 +509,7 @@ step << Priest
     .goto Dun Morogh,45.805,54.568
     .complete 5625,1 --Heal and fortify Mountaineer Dolf
 step << Priest
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maxan Anvol|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maxan Anvol|r inside
     .target Maxan Anvol
     .goto Dun Morogh,47.342,52.190
     .turnin 5625 >> Turn in Garments of the Light
@@ -517,18 +517,18 @@ step << Priest
 step << Priest
     .xp 6 >> Grind to 6
 step << Priest/Mage/Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
     .target Innkeeper Belm
     .goto Dun Morogh,47.377,52.523
     .home >> Set your Hearthstone to Thunderbrew Distillery
     .vendor >> |cRXP_BUY_Buy as much|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_as you can afford|r
 step << !Mage !Priest !Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
     .target Innkeeper Belm
     .goto Dun Morogh,47.377,52.523
     .home >> Set your Hearthstone to Thunderbrew Distillery
 step << Warrior
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Granis Swiftaxe|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Granis Swiftaxe|r inside
     .target Granis Swiftaxe
     .goto Dun Morogh,47.360,52.646
     .trainer >> Train your class spells
@@ -647,7 +647,7 @@ step << !Paladin !Warrior !Rogue
     .goto Dun Morogh,48.2,46.9,0
     .goto Dun Morogh,43.5,52.5
     >>Kill |cRXP_ENEMY_Young Black Bears|r. Loot them for their |cRXP_LOOT_Fur|r
-    >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Large Crag Boars|r. Loot them for their |cRXP_LOOT_Chunks of Boar Meat|r and |cRXP_LOOT_Crag Boar Ribs|r
+    >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Large Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r and |cRXP_LOOT_Crag Boar Ribs|r
     .complete 317,2 --Collect Thick Bear Fur (x2)
     .complete 317,1 --Collect Chunk of Boar Meat (x4)
     .collect 2886,6,384,1,1 --Collect Crag Boar Rib (x6)
@@ -670,14 +670,14 @@ step << Warrior
     #completewith next
     .goto Dun Morogh,46.9,52.1,20,0
     .goto Dun Morogh,47.377,52.523
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
     .vendor >> |cRXP_BUY_Buy as much|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_as you can afford|r
     .target Innkeeper Belm
 step << Priest/Mage/Warlock
     #completewith next
     .goto Dun Morogh,46.9,52.1,20,0
     .goto Dun Morogh,47.377,52.523
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
     .vendor >> |cRXP_BUY_Buy as much|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_as you can afford|r
     .target Innkeeper Belm
 step
@@ -688,8 +688,8 @@ step
     .goto Dun Morogh,41.07,49.04,50,0
     .goto Dun Morogh,42.25,53.68
     >>Kill |cRXP_ENEMY_Wendigos|r and |cRXP_ENEMY_Young Wendigos|r. Loot them for their |cRXP_LOOT_Manes|r
-    >>|cRXP_WARN_Remember to keep an eye out for|r |T134566:0|t[Copper Veins] |cRXP_WARN_which yield|r |T135232:0|t[Rough Stones] |cRXP_WARN_so you can craft|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
-    >>|cRXP_WARN_Remember to keep an eye out for|r |T134566:0|t[Copper Veins] |cRXP_WARN_which yield|r |T135232:0|t[Rough Stones] |cRXP_WARN_so you can craft|r |T135255:0|t[Rough Weightstones] << Paladin
+    >>|cRXP_WARN_Remember to keep an eye out for|r |T134566:0|t[Copper Veins] |cRXP_WARN_which yield|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_so you can craft|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
+    >>|cRXP_WARN_Remember to keep an eye out for|r |T134566:0|t[Copper Veins] |cRXP_WARN_which yield|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_so you can craft|r |T135255:0|t[Rough Weightstones] << Paladin
     .complete 313,1 --Collect Wendigo Mane (x8)
     .mob Wendigo
     .mob Young Wendigo
@@ -716,7 +716,7 @@ step << !Paladin !Warrior !Rogue
 step << Paladin/Warrior/Rogue
     .goto Dun Morogh,51.4,50.4
     >>Kill |cRXP_ENEMY_Young Black Bears|r. Loot them for their |cRXP_LOOT_Fur|r
-    >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Large Crag Boars|r. Loot them for their |cRXP_LOOT_Chunks of Boar Meat|r and |cRXP_LOOT_Crag Boar Ribs|r
+    >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Large Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r and |cRXP_LOOT_Crag Boar Ribs|r
     .complete 317,2 --Collect Thick Bear Fur (x2)
     .complete 317,1 --Collect Chunk of Boar Meat (x4)
     .collect 2886,6,384,1,1 --Collect Crag Boar Rib (x6)
@@ -751,19 +751,19 @@ step << Warrior/Rogue
     .xp 8 >> Grind nearby mobs to 8
 step << Rogue
     .xp <8,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hogral Bakkan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hogral Bakkan|r inside in the backroom
     .target Hogral Bakkan
     .goto Dun Morogh,47.563,52.608
     .trainer >> Train your class spells
 step << Paladin
     .xp <8,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azar Stronghammer|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azar Stronghammer|r inside upstairs
     .target Azar Stronghammer
     .goto Dun Morogh,47.597,52.070
     .trainer >> Train your class spells
 step << Warrior
     .xp <8,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Granis Swiftaxe|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Granis Swiftaxe|r inside
     .target Granis Swiftaxe
     .goto Dun Morogh,47.360,52.646
     .trainer >> Train your class spells
@@ -798,7 +798,7 @@ step << Paladin
 step << Warrior/Rogue/Paladin
     #completewith next
     .goto Dun Morogh,47.377,52.523
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
     .vendor >> |cRXP_BUY_Buy up to 20|r |T133968:0|t[Freshly Baked Bread] << Warrior/Rogue
     .vendor >> |cRXP_BUY_Buy up to 10|r |T133968:0|t[Freshly Baked Bread] << Paladin
     .target Innkeeper Belm
@@ -959,7 +959,7 @@ step
     .hs >> Hearth to Kharanos
 step
     .goto Dun Morogh,47.377,52.523
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
     >>|cRXP_BUY_Buy a|r |T132800:0|t[Rhapsody Malt] |cRXP_BUY_and a|r |T132800:0|t[Thunder Ale]
     .complete 384,2 --Collect Rhapsody Malt (x1)
     .collect 2686,1,311 --Collect Thunder Ale (x1)
@@ -1002,32 +1002,32 @@ step << Warlock
     .target Gimrizz Shadowcog
 step << Rogue
     .xp <8,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hogral Bakkan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hogral Bakkan|r inside in the backroom
     .target Hogral Bakkan
     .goto Dun Morogh,47.563,52.608
     .trainer >> Train your class spells
 step << Paladin
     .xp <8,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azar Stronghammer|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azar Stronghammer|r inside upstairs
     .target Azar Stronghammer
     .goto Dun Morogh,47.597,52.070
     .trainer >> Train your class spells
 step << Warrior
     .xp <8,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Granis Swiftaxe|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Granis Swiftaxe|r inside
     .target Granis Swiftaxe
     .goto Dun Morogh,47.360,52.646
     .trainer >> Train your class spells
 step << Mage
     .xp <8,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magis Sparkmantle|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magis Sparkmantle|r inside upstairs
     .target Magis Sparkmantle
     .goto Dun Morogh,47.498,52.076
     .trainer >> Train your class spells
     .train 118 >> Train |T136071:0|t[Polymorph]
 step << Priest
     .xp <8,1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maxan Anvol|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maxan Anvol|r inside
     .target Maxan Anvol
     .goto Dun Morogh,47.342,52.190
     .trainer >> Train your class spells
@@ -1065,13 +1065,13 @@ step << Paladin
     .goto Dun Morogh,45.290,52.190
     .collect 2493,1 --Collect Wooden Mallet (1)
 step << Warrior/Rogue/Paladin
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
     .goto Dun Morogh,47.377,52.523
     .vendor >> |cRXP_BUY_Buy up to 30|r |T133968:0|t[Freshly Baked Bread] << Warrior/Rogue
     .vendor >> |cRXP_BUY_Buy up to 15|r |T133968:0|t[Freshly Baked Bread] << Paladin
     .target Innkeeper Belm
 step << Priest/Mage/Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
     .target Innkeeper Belm
     .goto Dun Morogh,47.377,52.523
     .vendor >> |cRXP_BUY_Buy up to 30|r |T132815:0|t[Ice Cold Milk]
@@ -1222,7 +1222,7 @@ step
     .accept 291 >> Accept The Reports
 step << Rogue
     #level 10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hogral Bakkan|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hogral Bakkan|r inside in the backroom
     .target Hogral Bakkan
     .goto Dun Morogh,47.563,52.608
     .accept 2218 >> Accept Road to Salvation
@@ -1473,7 +1473,7 @@ step
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
     .collect 3174,3,418,1 --Collect Spider Ichor (x3)
-    >>|cRXP_WARN_Save any|r |T133970:0|t[Chunks of Boar Meat] |cRXP_WARN_to use for leveling |T133971:0|t[Cooking] |cRXP_WARN_later|r
+    >>|cRXP_WARN_Save any|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_to use for leveling |T133971:0|t[Cooking] |cRXP_WARN_later|r
     >>|cRXP_WARN_Don't go out of your way to complete this right now. You'll come back to Loch Modan soon|r
     .mob Elder Black Bear
     .mob Mountain Boar
@@ -2380,7 +2380,7 @@ step << Dwarf Paladin
     .target Tiza Battleforge
 step << Dwarf Paladin
     .goto Ironforge,27.628,12.183
-    .use 6916>>|cRXP_WARN_Use the |T133464:0|t[|cRXP_LOOT_The Tome of Divinity|r] to start the quest|r
+    .use 6916>>|cRXP_WARN_Use the |T133739:0|t[|cRXP_LOOT_The Tome of Divinity|r] to start the quest|r
     .accept 1646 >>Accept The Tome of Divinity
 step << Dwarf Paladin
     .goto Ironforge,27.628,12.183
@@ -2717,10 +2717,10 @@ step << Warrior
     .trainer >> Train your class spells
     .target Bilban Tosslespanner
 step << Mage
-    .goto Ironforge,26.295,6.752
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Juli Stormkettle|r
+    .goto Ironforge,27.18,8.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dink|r
     .trainer >> Train your class spells
-    .target Juli Stormkettle
+    .target Dink
 step << Mage/Priest/Warlock
     #ah
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to an |cRXP_FRIENDLY_Ironforge Auctioneer|r
@@ -2789,7 +2789,7 @@ step
     #completewith Fly2WF
     .goto StormwindClassic,55.21,7.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Billibub Cogspinner|r
-    .vendor 5519 >> |cRXP_WARN_Buy a|r |T133024:0|t[Bronze Tube]
+    .vendor 5519 >> |cRXP_BUY_Buy a|r |T133024:0|t[Bronze Tube] |cRXP_BUY_from him (if its up)|r
     >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Billibub Cogspinner|r doesn't have one|r
 --    >>You will need 2 bronze tubes for a quest later << Rogue
     .bronzetube

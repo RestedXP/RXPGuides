@@ -158,7 +158,7 @@ step
     >>|T134172:0|t[Great Goretusk Snout]
     >>|T134028:0|t[Tough Condor Meat]
     >>|T134321:0|t[Crisp Spider Meat]
-    >>|T134572:0|t[Rethban Ore]  
+    >>|T134572:0|t[Rethban Ore]
     .collect 2296,5,92,1 -- Great Goretusk Snout (5)
     .collect 1080,5,92,1 -- Tough Condor Meat (5)
     .collect 1081,5,92,1 -- Crisp Spider Meat (5)
@@ -277,7 +277,7 @@ step
     #completewith next
     .goto StormwindClassic,74.90,54.00,20,0
     .goto StormwindClassic,78.43,60.15,20,0
-    .goto StormwindClassic,78.67,60.13,5 >> Enter the SI:7 Headquarters. Travel up stairs toward |cRXP_FRIENDLY_Master Mathias Shaw|r 
+    .goto StormwindClassic,78.67,60.13,10 >> Enter the SI:7 Headquarters. Travel up stairs toward |cRXP_FRIENDLY_Master Mathias Shaw|r 
 step
     .goto StormwindClassic,75.78,59.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Mathias Shaw|r
@@ -633,7 +633,6 @@ step
 step
     .goto StormwindClassic,66.27,62.12,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
-    >>Fly to Redridge if you are in Stormwind
     .fly Redridge >> Fly to Redridge
     .target Dungar Longdrink
     .zoneskip Stormwind City,1
@@ -675,7 +674,7 @@ step
     >>Kill |cRXP_ENEMY_Tarantulas|r. Loot them for their |cRXP_LOOT_Crisp Spider Meat|r
     >>Kill |cRXP_ENEMY_Dire Condors|r. Loot them for their |cRXP_LOOT_Tough Condor Meat|r
     >>|cRXP_WARN_Do NOT sell any of these items until you turn the Redridge Goulash quest|r
-    >>|cRXP_WARN_Save any|r |T133970:0|t[Chunks of Boar Meat] |cRXP_WARN_you loot as well as you can use them to level|r |T133971:0|t[Cooking] |cRXP_WARN_to 50 which is required for Duskwood later|r
+    >>|cRXP_WARN_Save any|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_you loot as well as you can use them to level|r |T133971:0|t[Cooking] |cRXP_WARN_to 50 which is required for Duskwood later|r
     .collect 2296,5,92,1
     .collect 1080,5,92,1
     .collect 1081,5,92,1
@@ -708,7 +707,7 @@ step
     >>Kill |cRXP_ENEMY_Great Goretusks|r. Loot them for their |cRXP_LOOT_Great Goretusk Snouts|r
     >>Kill |cRXP_ENEMY_Dire Condors|r. Loot them for their |cRXP_LOOT_Tough Condor Meat|r
     >>|cRXP_WARN_Do NOT sell any of these items until you turn the Redridge Goulash quest|r
-    >>|cRXP_WARN_Save any|r |T133970:0|t[Chunks of Boar Meat] |cRXP_WARN_you loot as well as you can use them to level|r |T133971:0|t[Cooking] |cRXP_WARN_to 50 which is required for Duskwood later|r
+    >>|cRXP_WARN_Save any|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_you loot as well as you can use them to level|r |T133971:0|t[Cooking] |cRXP_WARN_to 50 which is required for Duskwood later|r
     .collect 2296,5,92,1
     .collect 1080,5,92,1
     .mob Great Goretusk
@@ -728,7 +727,7 @@ step
     >>Kill |cRXP_ENEMY_Great Goretusks|r. Loot them for their |cRXP_LOOT_Great Goretusk Snouts|r
     >>Kill |cRXP_ENEMY_Dire Condors|r. Loot them for their |cRXP_LOOT_Tough Condor Meat|r
     >>|cRXP_WARN_Do NOT sell any of these items until you turn the Redridge Goulash quest|r
-    >>|cRXP_WARN_Save any|r |T133970:0|t[Chunks of Boar Meat] |cRXP_WARN_you loot as well as you can use them to level|r |T133971:0|t[Cooking] |cRXP_WARN_to 50 which is required for Duskwood later|r
+    >>|cRXP_WARN_Save any|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_you loot as well as you can use them to level|r |T133971:0|t[Cooking] |cRXP_WARN_to 50 which is required for Duskwood later|r
     .collect 1080,5,92,1
     .goto Redridge Mountains,66.4,76.6,60,0
     .goto Redridge Mountains,35.6,69.6,60,0
@@ -852,6 +851,14 @@ step << Rogue
     >>|cRXP_WARN_Skip this step if you have something better|r
     .collect 923,1 --Longsword (1)
     .target Marda Weller
+step << !Dwarf Rogue
+    #ah
+    .goto Stormwind City,53.612,59.764
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
+    >>Buy the |T134437:0|t[Anti-Venom] for your |T132290:0|t[Poisons] quest later
+    >>This will save you time as you won't need to run around looking for mobs to kill. Skip this step if you wish to not buy it
+    .collect 6452,1,2359,1 --Anti-Venom (1)
+    .target Auctioneer Jaxon
 step << Rogue
     #hardcore
     .goto StormwindClassic,57.38,56.77
@@ -1075,8 +1082,8 @@ step
     .goto Redridge Mountains,19.24,41.53,0
     .goto Redridge Mountains,16.90,55.02,0
     .goto Redridge Mountains,26.52,44.95
-    +|cRXP_WARN_Level up your|r |T133971:0|t[Cooking] |cRXP_WARN_using the|r |T133970:0|t[Chunks of Boar Meat] |cRXP_WARN_you farmed earlier. You need level 50|r |T133971:0|t[Cooking]
-    +|cRXP_WARN_If you need more|r |T133970:0|t[Chunks of Boar Meat] |cRXP_WARN_travel to the west near|r |cRXP_ENEMY_Bellygrub|r |cRXP_WARN_and kill more|r |cRXP_ENEMY_Great Goretusks|r
+    +|cRXP_WARN_Level up your|r |T133971:0|t[Cooking] |cRXP_WARN_using the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_you farmed earlier. You need level 50|r |T133971:0|t[Cooking]
+    +|cRXP_WARN_If you need more|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_travel to the west near|r |cRXP_ENEMY_Bellygrub|r |cRXP_WARN_and kill more|r |cRXP_ENEMY_Great Goretusks|r
     .skill cooking,50,1
     .mob Great Goretusk
 step
@@ -1098,12 +1105,17 @@ step
     .goto Redridge Mountains,30.97,47.27
     .turnin 124 >> Turn in A Baying of Gnolls
 step << Rogue
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lucius|r
-	.target Lucius
     .goto Redridge Mountains,28.07,52.02
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lucius|r
     .turnin 2282 >> Turn in Alther's Mill
+    .target Lucius
+step << Rogue
+    #sticky
+    #optional
+    .destroy 7907 >> Delete the |T134328:0|t[Certificate of Thievery] from your bags, as it's no longer needed
 step << NightElf Rogue
     #hardcore
+    #optional
     #completewith next
     .goto Redridge Mountains,30.59,59.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
@@ -1113,12 +1125,14 @@ step << NightElf Rogue
     .train 1856,3 -- skips step if not 22/doesnt have Vanish
 step << NightElf Rogue
     #hardcore
+    #optional
     .goto Westfall,56.55,52.64,5,0
     .zone Westfall >> Travel to Westfall
     .isOnQuest 2360
     .train 1856,3 -- skips step if not 22/doesnt have Vanish
 step << NightElf Rogue
     #hardcore
+    #optional
     .goto Westfall,56.55,52.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
     .fp Westfall >> Get the Westfall flight path
@@ -1127,115 +1141,216 @@ step << NightElf Rogue
     .train 1856,3 -- skips step if not 22/doesnt have Vanish
 step << !NightElf Rogue
     #hardcore
+    #optional
     .goto Redridge Mountains,30.59,59.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
     .fly Westfall >> Fly to Westfall
     .target Ariena Stormfeather
     .isOnQuest 2360
     .train 1856,3 -- skips step if not 22/doesnt have Vanish
-
-step << Rogue
+step << !Dwarf Rogue
     #hardcore
-    .goto Westfall,68.50,70.08
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Agent Kearnen|r
-    .turnin 2360 >> Turn in Mathias and the Defias
-    >>|cRXP_WARN_The following quest chain is for the Rogue Poison questline|r
-    >>|cRXP_WARN_This quest is VERY difficult. You can skip this step and come back at level 24|r
-    .target Agent Kearnen
-    .link https://www.youtube.com/watch?v=t05Ux5Qis9k >>|cRXP_WARN_Click here for a video guide|r
-    .train 1856,3 -- skips entire step if Vanish isn't trained. Can do Poison quest later
-step << Rogue
-    #hardcore
-    .goto Westfall,68.50,70.08
-    .target Agent Kearnen
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Agent Kearnen|r
-    .accept 2359 >> Accept Klaven's Tower
-    .isQuestTurnedIn 2360
-    .train 1856,3 -- skips entire step if Vanish isn't trained. Can do Poison quest later
-step << Rogue
-    #hardcore
-    .goto Westfall,71.49,73.49,30,0
-    .goto Westfall,71.01,75.72,30,0
-    .goto Westfall,69.58,73.07,30,0
-    .goto Westfall,71.49,73.49,30,0
-    .goto Westfall,71.01,75.72,30,0
-    .goto Westfall,69.58,73.07
-    >>|T133644:0|t[Pick Pocket] a |cRXP_ENEMY_Malformed Defias Drone|r. Loot it for the |cRXP_LOOT_Tower Key|r
-    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
-    >>|cRXP_WARN_The |cRXP_ENEMY_Malformed Defias Drone|r patrols around the outside of the Tower|r
-    .complete 2359,2 --Collect Defias Tower Key (x1)
-    .link https://www.youtube.com/watch?v=t05Ux5Qis9k >>|cRXP_WARN_Click here for a video guide|r
-    .isOnQuest 2359
-    .mob Malformed Defias Drone
-    .train 1856,3 -- skips entire step if Vanish isn't trained. Can do Poison quest later
-step << Rogue
-    #hardcore
-    .xp <22,1
-    .goto Westfall,70.41,73.93
-    >>|cRXP_WARN_Travel up to the top of the Tower|r
-    >>Open the |cRXP_PICK_Duskwood Chest|r. Loot it for |cRXP_LOOT_Klaven Mortwake's Journal|r
-    >>|cRXP_WARN_You can|r |T132310:0|t[Sap] |cRXP_ENEMY_Klaven Mortwake|r |cRXP_WARN_and then open the|r |cRXP_PICK_Duskwood Chest|r
-    >>|cRXP_WARN_If your|r |T132310:0|t[Sap] |cRXP_WARN_resists or misses, cast|r |T132331:0|t[Vanish] |cRXP_WARN_and try again or otherwise jump down and reset him. Alternatively you can come back later to complete it|r
-    .complete 2359,1 --Collect Klaven Mortwake's Journal (x1)
-    .link https://www.youtube.com/watch?v=t05Ux5Qis9k >>|cRXP_WARN_Click here for a video guide|r
-    .isOnQuest 2359
-    .train 1856,3 -- skips entire step if Vanish isn't trained. Can do Poison quest later
-step << Rogue !Dwarf
-    #hardcore
+    #optional
     .goto Duskwood,15.90,72.10,60,0
     .goto Duskwood,14.86,64.56,50,0
     .goto Duskwood,10.43,53.97
-    >>Kill |cRXP_ENEMY_Pygmy Venom Web Spiders|r and |cRXP_ENEMY_Venom Web Spiders|r. Loot them for their |cRXP_LOOT_Small Venom Sac|r and |cRXP_LOOT_Gooey Spider Legs|r
-    >>|cRXP_WARN_You need 1 |cRXP_LOOT_Small Venom Sac|r to make an|r |T134437:0|t[Anti-Venom] |cRXP_WARN_later to remove the|r |T136230:0|t[Touch of Zanzil] |cRXP_WARN_debuff|r
-    >>|cRXP_WARN_Save |cRXP_LOOT_Gooey Spider Legs|r for a later quest in Duskwood|r
-    >>|cRXP_WARN_If you have a|r |T626003:0|t|cFFF48CBAPaladin|r |cRXP_WARN_or|r |T625999:0|t|cFFFF7C0ADruid|r |cRXP_WARN_friend you can skip this step and ask them to remove it for you|r
-    .collect 1475,1,2359,1 -- Small Venom Sac
-    .collect 2251,6,93,1,1 -- Gooey Spider Legs
-    .isOnQuest 2359
+    >>Kill |cRXP_ENEMY_Pygmy Venom Web Spiders|r and |cRXP_ENEMY_Venom Web Spiders|r. Loot them for a |cRXP_LOOT_Small Venom Sac|r and their |cRXP_LOOT_Gooey Spider Legs|r
+    >>|cRXP_WARN_You need a |cRXP_LOOT_Small Venom Sac|r to make an|r |T134437:0|t[Anti-Venom] |cRXP_WARN_later to remove the|r |T136230:0|t[Touch of Zanzil] |cRXP_WARN_debuff later|r
+    >>|cRXP_WARN_Save the |cRXP_LOOT_Gooey Spider Legs|r for later|r
+    >>|cRXP_WARN_If you have a|r |T626003:0|t|cFFF48CBAPaladin|r |cRXP_WARN_or|r |T625999:0|t|cFFFF7C0ADruid|r |cRXP_WARN_friend you can skip this step and ask them to remove it for you later|r
+    .collect 1475,1,2359,1 -- Small Venom Sac (1)
+    .collect 2251,6,93,1,1 -- Gooey Spider Legs (6)
+    .disablecheckbox
     .mob Pygmy Venom Web Spider
     .mob Venom Web Spider
+    .itemcount 6452,<1 --Anti Venom (<1)
+    .isOnQuest 2360
+    .train 1856,3 -- skips step if not 22/doesnt have Vanish
 step << Rogue
     #hardcore
-    #completewith next
+    #optional
+    #completewith TowerKey
+    +|cRXP_WARN_==PAY ATTENTION TO THE UPCOMING SECTION==|r
+    >>|cRXP_WARN_Press Escape, then go into -> Options -> Controls|r
+    >>|cRXP_WARN_Check "Enable Interact Key" and bind the "Interact with Target" option to a key|r
+    >>|cRXP_WARN_Additionally, it's recommended you enable Enemy Nameplates (Default Key: V) as it allows you to see enemies behind some of the corners inside the tower|r
+    .train 1856,3 -- skips step if not 22/doesnt have Vanish
+step << Rogue
+    #hardcore
+    #optional
+    .goto Westfall,68.50,70.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Agent Kearnen|r
+    >>|cRXP_WARN_You MUST do this quest your|r |T132290:0|t[Poisons]
+    .turnin 2360 >> Turn in Mathias and the Defias
+    .accept 2359 >> Accept Klaven's Tower
+    .target Agent Kearnen
+    .isOnQuest 2360
+    .train 1856,3 -- skips step if not 22/doesnt have Vanish
+step << Rogue
+    #hardcore
+    #optional
+    .goto Westfall,68.50,70.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Agent Kearnen|r
+    >>|cRXP_WARN_You MUST do this quest your|r |T132290:0|t[Poisons]
+    .accept 2359 >> Accept Klaven's Tower
+    .target Agent Kearnen
+    .isQuestTurnedIn 2360
+    .train 1856,3 -- skips step if not 22/doesnt have Vanish
+step << Rogue
+    #hardcore
+    #optional
+    #label TowerKey
+    #loop
+    .goto Westfall,71.49,73.49,0
+    .goto Westfall,71.01,75.72,0
+    .goto Westfall,69.58,73.07,0
+    .goto Westfall,71.49,73.49,30,0
+    .goto Westfall,71.01,75.72,30,0
+    .goto Westfall,69.58,73.07,30,0
+    >>|T133644:0|t[Pick Pocket] the |cRXP_ENEMY_Malformed Defias Drone|r. Loot it for the |cRXP_LOOT_Defias Tower Key|r
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    >>|cRXP_WARN_The |cRXP_ENEMY_Malformed Defias Drone|r spawns at the entrance to the tower, then patrols around the outside of it|r
+    >>|cRXP_WARN_Be careful as he deals a LOT of damage. If your|r |T132320:0|t[Stealth] |cRXP_WARN_breaks, quickly use|r |T132307:0|t[Sprint] |cRXP_WARN_and run away|r
+    .complete 2359,2 --Collect Defias Tower Key (x1)
+    .link https://www.youtube.com/watch?v=5sIew15IcG0 >> Click HERE for a video guide
+    .mob Malformed Defias Drone
+    .isOnQuest 2359
+    .train 1856,3 -- skips step if not 22/doesnt have Vanish
+step << Rogue
+    #hardcore
+    #optional
+    #completewith Mortwake
+    +|cRXP_WARN_Equip the|r |T135641:0|t[Curvewood Dagger] |cRXP_WARN_for this quest if you don't already have a|r |T135641:0|t[Dagger] |cRXP_WARN_equipped|r
+    .use 15396
+    .itemcount 15396,1
+    .isOnQuest 2359
+    .train 1856,3 -- skips step if not 22/doesnt have Vanish
+step << Rogue
+    #hardcore
+    #optional
+    #label Mortwake
+    .goto 1436,70.421,74.031
+    >>|cRXP_WARN_Travel up to 2nd top floor of the tower. Whilst in|r |T132320:0|t[Stealth] |cRXP_WARN_and the |cRXP_ENEMY_Defias Tower Sentries|r aren't next to you, Jump onto the chair, then onto the lamp, then onto the bookshelf on top of the waypoint location|r
+    >>|cRXP_WARN_Manually|r |T132320:0|t[Unstealth]|cRXP_WARN_, then press your "Interact with Target" keybind to open the |cRXP_PICK_Duskwood Chest|r. Loot it for|r |cRXP_LOOT_Klaven Mortwake's Journal|r
+    >>|cRXP_WARN_NOTE: Your|r |T132320:0|t[Stealth] |cRXP_WARN_will temporarily stop working after looting|r |cRXP_LOOT_Klaven Mortwake's Journal|r 
+    >>|cRXP_WARN_Be prepared to run if you don't kill the |cRXP_ENEMY_Defias Tower Sentries|r on the 2nd floor. They will most likely aggro you permanently (but not attack you) when you are on top of the bookshelf as it is an evade spot|r
+    >>|cRXP_WARN_If you have a|r |T135641:0|t[Dagger] |cRXP_WARN_in your bags or equipped, you can cast|r |T132282:0|t[Ambush] |cRXP_WARN_on the |cRXP_ENEMY_Defias Tower Patrollers|r and |cRXP_ENEMY_Defias Tower Sentries|r inside to kill them instantly. Be prepared to run after you kill the first |cRXP_ENEMY_Defias Tower Sentry|r and remember you can be hit from above. This is slower, but a LOT safer|r
+    >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Malformed Defias Drone|r and |cRXP_ENEMY_Defias Drones|r can be at the entrance of the tower if you have to run out of it|r
+    .complete 2359,1 --Collect Klaven Mortwake's Journal (x1)
+    .link https://www.youtube.com/watch?v=5sIew15IcG0 >> Click HERE for a video guide
+    .mob Defias Tower Patroller
+    .mob Defias Tower Sentry
+    .isOnQuest 2359
+    .train 1856,3 -- skips step if not 22/doesnt have Vanish
+step << !Dwarf Rogue
+    #hardcore
+    #optional
+    #sticky
+    #label AntiVenomStart
+    .collect 6452,1 >> Craft an |T134437:0|t[Anti-Venom]
+    .aura -9991
+    .itemcount 6452,<1 --Anti-Venom (<1)
+    .train 7934,3 --Anti Venom spell trained
+    .isQuestComplete 2359
+step << !Dwarf Rogue
+    #hardcore
+    #optional
+    #requires AntiVenomStart
+    #label AntiVenomEnd
+    .cast 7932 >>|cRXP_WARN_Use the |T134437:0|t[Anti-Venom] in your bags to remove the |T136230:0|t[Touch of Zanzil] debuff|r
+    .use 6452
+    .aura -9991
+    .itemcount 6452,1 --Anti-Venom (1)
+    .isQuestComplete 2359
+step << Dwarf Rogue
+    #hardcore
+    #optional
+    #sticky
+    #label AntiVenomEnd2
+    .cast 20594 >>|cRXP_WARN_Cast |T136225:0|t[Stoneform] to remove the |T136230:0|t[Touch of Zanzil] debuff|r
+    .aura -9991
+    .isQuestComplete 2359
+step << Rogue
+    #hardcore
+    #optional
+    #completewith KlavenEnd
     .goto Westfall,56.55,52.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
     .fly Stormwind >> Fly to Stormwind
-    .isOnQuest 2359
     .target Thor
+    .isQuestComplete 2359
+step << !Dwarf Rogue
+    #hardcore
+    #optional
+    #requires AntiVenomEnd
+    #completewith FirstAidEnd
+    .goto 1453,42.938,33.878,20,0
+    .goto 1453,41.544,31.330,20,0
+    .goto 1453,41.688,28.049,20,0
+    .goto 1453,43.070,26.155,15 >> Travel toward |cRXP_FRIENDLY_Shaina Fuller|r
+    .aura -9991
+    .isQuestComplete 2359
+step << !Dwarf Rogue
+    #hardcore
+    #optional
+    #requires AntiVenomEnd
+    .goto 1453,43.070,26.155
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shaina Fuller|r
+    >>|cRXP_WARN_If you have a|r |T626003:0|t|cFFF48CBAPaladin|r |cRXP_WARN_or|r |T625999:0|t|cFFFF7C0ADruid|r |cRXP_WARN_friend, ask them to remove the|r |T136230:0|t[Touch of Zanzil] |cRXP_WARN_for you instead|r
+    .skill firstaid,80 >> |cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_to 80|r
+    .aura -9991
+    .itemcount 6452,<1 --Anti-Venom (<1)
+    .isQuestComplete 2359
+step << !Dwarf Rogue
+    #hardcore
+    #optional
+    #label FirstAidEnd
+    .goto 1453,43.070,26.155
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shaina Fuller|r
+    >>|cRXP_WARN_If you have a|r |T626003:0|t|cFFF48CBAPaladin|r |cRXP_WARN_or|r |T625999:0|t|cFFFF7C0ADruid|r |cRXP_WARN_friend, ask them to remove the|r |T136230:0|t[Touch of Zanzil] |cRXP_WARN_for you instead|r
+    .train 7934 >> |cRXP_WARN_Train|r |T134437:0|t[Anti-Venom]
+    .aura -9991
+    .itemcount 6452,<1 --Anti-Venom (<1)
+    .isQuestComplete 2359
+step << !Dwarf Rogue
+    #hardcore
+    #optional
+    #sticky
+    #label AntiVenomStart2
+    .collect 6452,1 >> Craft an |T134437:0|t[Anti-Venom]
+    .aura -9991
+    .itemcount 6452,<1 --Anti-Venom (<1)
+    .train 7934,3 --Anti Venom spell trained
+    .isQuestComplete 2359
+step << !Dwarf Rogue
+    #hardcore
+    #optional
+    #sticky
+    #requires AntiVenomStart2
+    #label AntiVenomEnd2
+    .cast 7932 >>|cRXP_WARN_Use the |T134437:0|t[Anti-Venom] in your bags to remove the |T136230:0|t[Touch of Zanzil] debuff|r
+    .use 6452
+    .aura -9991
+    .itemcount 6452,1 --Anti-Venom (1)
+    .isQuestComplete 2359
 step << Rogue
     #hardcore
+    #optional
+    #requires AntiVenomEnd2 << Rogue
     #completewith next
     .goto StormwindClassic,74.90,54.00,20,0
     .goto StormwindClassic,78.43,60.15,20,0
     .goto StormwindClassic,78.67,60.13,5 >> Enter the SI:7 Headquarters. Travel up stairs toward |cRXP_FRIENDLY_Master Mathias Shaw|r
-    .isOnQuest 2359
-step << Rogue
-    #hardcore
-    .goto StormwindClassic,75.78,59.84
-    .target Master Mathias Shaw
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Mathias Shaw|r
-    .turnin 2359 >> Turn in Klaven's Tower
     .isQuestComplete 2359
 step << Rogue
     #hardcore
+    #optional
+    #label KlavenEnd
+    #requires AntiVenomEnd2 << Rogue
     .goto StormwindClassic,75.78,59.84
-    .target Master Mathias Shaw
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Mathias Shaw|r
-    .accept 2607 >> Accept The Touch of Zanzil
-    .isQuestTurnedIn 2359
-step << Rogue
-    #hardcore
-    #completewith next
-    .goto StormwindClassic,78.86,58.85,9 >> Travel down into the basement
-    .isQuestTurnedIn 2359
-step << Rogue
-    #hardcore
-    .goto StormwindClassic,78.03,58.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doc Mixilpixil|r
-    .target Doc Mixilpixil
-    .turnin 2607 >> Turn in The Touch of Zanzil
-    .isQuestTurnedIn 2359
-step << Rogue
-	#optional
-	.destroy 7907 >> Destroy the |T134328:0|t[Certificate of Thievery]. You don't need it
+    >>|cRXP_WARN_Remember to re-equip your main weapon if you switched to a|r |T135641:0|t[Dagger] |cRXP_WARN_earlier|r << Rogue
+    .turnin 2359 >> Turn in Klaven's Tower
+    .target Master Mathias Shaw
+    .isQuestComplete 2359
 ]])

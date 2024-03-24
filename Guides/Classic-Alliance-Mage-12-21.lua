@@ -749,7 +749,7 @@ step
     .goto Wetlands,10.4,56.0,15,0
     .goto Wetlands,10.1,56.9,15,0
     .goto Wetlands,10.6,57.2,15,0
-    .goto Wetlands,10.7,56.8
+    .goto 1437,10.760,56.721
     >> If you have 8s, Check for Bronze Tube from Neal Allen and buy it if it's there. Otherwise, skip this step
     .collect 4371,1,175,1
 step

@@ -9,14 +9,16 @@ RXPGuides.RegisterGuide([[
 step << Warlock
     #season 2
     .goto Elwynn Forest,52.544,51.922
-    >>Open the |cRXP_PICK_Defias Stashbox|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r]
+    >>Open the |cRXP_PICK_Defias Stashbox|r on the ground. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r]
     .collect 205230,1 -- Rune of Haunting (1)
+    .train 403919,1
 step << Warlock
     #season 2
     #label RoH
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Haunting|r] |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Haunt]
     .use 205230
     .itemcount 205230,1
+    .train 403919,1
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -57,6 +59,7 @@ step << Orc
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nartok|r
     .accept 77586 >>Accept Stolen Power
     .target Nartok
+    .train 403919,1
 step
     #season 2
     .goto Durotar,42.99,54.43
@@ -65,16 +68,16 @@ step
     .train 403919,1
 step
     #season 2
-    .cast 402265 >>Use the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: CALE ENCI|r]
+    .train 403919 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Haunting]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Haunt]
     .use 205230
-    .train 403919,1
+    .itemcount 205230,1 -- Rune of Haunting (1)
 step << Orc
     #season 2
     .goto Durotar,42.51,69.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mai'ah|r
     .turnin 77586 >>Turn in Stolen Power
     .target Nartok
-
+    .isOnQuest 77586
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -570,7 +573,7 @@ step
     #label WarlockRuneMetamorphosisA
     .train 403938,1
     >>Loot the |cRXP_PICK_Demonic Reliquary|r at the top of the tower to get the |T134337:0|t[Orb of Des]
-    *|cRXP_WARN_Be careful as it's guarded by an elite. One way would be to get to the second floor, die, ress at the top and loot the chest while your Voidwalker tanks the mobs.|r
+    *|cRXP_WARN_Be careful as it's guarded by an elite. Loot the chest whilst your Voidwalker tanks the mobs|r
     .collect 210765,1
     .goto Redridge Mountains,80.2,49.5
 step << Horde
@@ -1333,6 +1336,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Boots
 #name Shadowflame - 40 (Desolace)
+#title Shadowflame
 
 
 -- Shadowflame

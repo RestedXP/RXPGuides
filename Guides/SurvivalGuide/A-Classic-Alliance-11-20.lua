@@ -415,7 +415,7 @@ step << !NightElf
 step << !NightElf
     .zone Darkshore >> Take the boat to Darkshore
     >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_while waiting for the boat to Darkshore|r
-    >>|cRXP_WARN_Level up your|r |T133971:0|t[Cooking] |cRXP_WARN_using the|r |T133970:0|t[Chunks of Boar Meat] |cRXP_WARN_you farmed earlier. Level it to 10 ideally|r
+    >>|cRXP_WARN_Level up your|r |T133971:0|t[Cooking] |cRXP_WARN_using the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_you farmed earlier. Level it to 10 ideally|r
 step << NightElf !Druid
     .goto Westfall,56.556,52.643
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
@@ -659,7 +659,7 @@ step
     .target Cerellean Whiteclaw
 step
     #completewith next
-    .goto Darkshore,32.75,42.21,35 >> Travel to the end of the dock then jump into the water
+    .goto 1439,32.432,43.744,15 >> Travel to the end of the dock then jump into the water
 step
     #completewith washed1
     .goto Darkshore,33.59,40.36,0
@@ -1615,7 +1615,7 @@ step << Druid
     .target Vesprystus
 step
     #completewith next
-    .goto Darkshore,32.75,42.21,35 >> Travel to the Auberdine Docks. Wait for the Menethil Harbor boat
+    .goto 1439,32.432,43.744,15 >> Travel to the Auberdine Docks. Wait for the Menethil Harbor boat
 step
     .goto Darkshore,32.44,43.71
     >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_while waiting for the Menethil Harbor boat|r

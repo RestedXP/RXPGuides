@@ -707,7 +707,7 @@ step
     .xp <8,1
 step
     .goto Elwynn Forest,61.97,47.31
-    >>Talk to the |cRXP_FRIENDLY_Wounded Adventurer|r after casting |T135949:0|t[Purify] on him to be given the |T134419:0|t[Rune of Aegis]
+    >>|cRXP_WARN_Talk to the |cRXP_FRIENDLY_Wounded Adventurer|r after casting|r |T135949:0|t[Purify] |cRXP_WARN_on him to be given the|r |T134419:0|t[Rune of Aegis]
     .collect 205685,1 --Rune of Aegis (1)
     .target Wounded Adventurer
     .skipgossip
@@ -770,7 +770,7 @@ step
     .xp <8,1
 step
     .goto Dun Morogh,25.57,43.37
-    >>Talk to the |cRXP_FRIENDLY_Wounded Adventurer|r after casting |T135949:0|t[Purify] on him to be given the |T134419:0|t[Rune of Aegis]
+    >>|cRXP_WARN_Talk to the |cRXP_FRIENDLY_Wounded Adventurer|r after casting|r |T135949:0|t[Purify] |cRXP_WARN_on him to be given the|r |T134419:0|t[Rune of Aegis]
     .collect 205685,1 --Rune of Aegis (1)
     .target Wounded Adventurer
     .skipgossip
@@ -884,7 +884,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Chest
 #name Divine Storm - 25 (Darkshore)
 #title Divine Storm
-#next Divine Sacrifice - 25 (Ratchet)
+#next Divine Sacrifice - 25 (Azeroth)
 
 step
     #completewith LibramS
@@ -1424,6 +1424,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Legs
 #name Avenger's Shield - 25 (Redridge Mountains)
+#title Avenger's Shield
 #next Inspiration Exemplar - 6 (Elwynn Forest)
 
 step
@@ -1467,100 +1468,150 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Belt
 #title Enlightened Judgements
-#name Enlightened Judgements - 30 (Arathi Highlands)
+#name Enlightened Judgements - 34 (Arathi Highlands)
 
 step
+    #optional
+    .train 426175,1
+    +|cRXP_WARN_You must be at least level 34 before you can acquire the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Piety|r]
+    .xp >34,1
+step
+    .train 426175,1
+    #completewith next
+    .train 20164,1
+    +|cRXP_WARN_You must train|r |T135971:0|t[Seal of Justice] |cRXP_WARN_to acquire the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Piety|r]
+step
+    .train 426175,1
+    .train 642,1
+    .train 1020,1
+    +|cRXP_WARN_You must train|r |T135896:0|t[Divine Shield] |cRXP_WARN_to acquire the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Piety|r]
+step
+    .train 426175,1
+    #optional
+    .train 20164,1
+    +|cRXP_WARN_You must train|r |T135971:0|t[Seal of Justice] |cRXP_WARN_to acquire the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Piety|r]
+step
+    .train 426175,1
     #completewith next
     .zone Arathi Highlands >>Travel to the Arathi Highlands
 step
-    #completewith Rosary
-    #label BeadBoM1
-    >>Kill |cRXP_ENEMY_Syndicate Members|r in the area. Loot them for the |T135261:0|t[Tarnished Prayer Bead I]
-    .goto Arathi Highlands,31.6,28.6
+    .train 426175,1
+    #completewith BeadSoJ1
     .goto Arathi Highlands,68.8,71.8,0
     .goto Arathi Highlands,35.4,44.8,0
+    +|cRXP_WARN_Trolls and Ogres in Arathi Highlands can also drop any of the|r |T135261:0|t[|cRXP_LOOT_Tarnished Prayer Beads|r]
+step
+    .train 426175,1
+    #completewith Rosary
+    #label BeadBoM1
+    #loop
+    .goto Arathi Highlands,33.26,32.60,50,0
+    .goto Arathi Highlands,30.38,30.68,50,0
+    .goto Arathi Highlands,31.46,25.36,50,0
+    .goto Arathi Highlands,33.87,29.13,50,0
+    .goto Arathi Highlands,31.13,29.47,50,0
+    >>Kill |cRXP_ENEMY_Syndicate Mercenaries|r, |cRXP_ENEMY_Syndicate Pathstalkers|r and |cRXP_ENEMY_Syndicate Highwaymen|r. Loot them for the |T135261:0|t[|cRXP_LOOT_Tarnished Prayer Bead I|r]
     .collect 213444,1 --Tarnished Prayer Bead I
     .mob Syndicate Mercenary
     .mob Syndicate Pathstalker
     .mob Syndicate Highwayman
 step
+    .train 426175,1
     #requires BeadBoM1
     #label BeadBoM2
     #completewith Rosary
-    .goto Arathi Highlands,31.6,28.6
-    .goto Arathi Highlands,68.8,71.8,0
-    .goto Arathi Highlands,35.4,44.8,0
-    .aura 19835,1 >>Use |T135906:0|t[Blessing of Might]
+    +|cRXP_WARN_Cast|r |T135906:0|t[Blessing of Might] |cRXP_WARN_on yourself|r
+    .aura 19740
+    .aura 19834
+    .aura 19835
+    .aura 19836
+    .aura 19837
+    .aura 19838
+    .aura 25291
+    .aura 25782
+    .aura 25916
 step
+    .train 426175,1
     #requires BeadBoM2
     #label BeadBoM3
     #completewith Rosary
-    >>Use |T135906:0|t[Blessing of Might] and kill enemies until you get |T135260:0|t[Divine Prayer Bead I]
-    .goto Arathi Highlands,31.6,28.6
-    .goto Arathi Highlands,68.8,71.8,0
-    .goto Arathi Highlands,35.4,44.8,0
+    >>|cRXP_WARN_Continue killing enemies to receive the|r |T135260:0|t[|cRXP_LOOT_Divine Prayer Bead I|r]
+    >>|cRXP_WARN_You must have an active|r |T135906:0|t[Blessing of Might] |cRXP_WARN_buff|r
     .collect 213448,1 --Divine Prayer Bead I
 step
+    .train 426175,1
     #completewith Rosary
     #label BeadDS1
-    >>Kill |cRXP_ENEMY_Syndicate Members|r in the area. Loot them for the |T135261:0|t[Tarnished Prayer Bead II]
-    .goto Arathi Highlands,31.6,28.6
-    .goto Arathi Highlands,68.8,71.8,0
-    .goto Arathi Highlands,35.4,44.8,0
+    #loop
+    .goto Arathi Highlands,33.26,32.60,50,0
+    .goto Arathi Highlands,30.38,30.68,50,0
+    .goto Arathi Highlands,31.46,25.36,50,0
+    .goto Arathi Highlands,33.87,29.13,50,0
+    .goto Arathi Highlands,31.13,29.47,50,0
+    >>Kill |cRXP_ENEMY_Syndicate Mercenaries|r, |cRXP_ENEMY_Syndicate Pathstalkers|r and |cRXP_ENEMY_Syndicate Highwaymen|r. Loot them for the |T135261:0|t[|cRXP_LOOT_Tarnished Prayer Bead II|r]
     .collect 213445,1 --Tarnished Prayer Bead II
     .mob Syndicate Mercenary
     .mob Syndicate Pathstalker
     .mob Syndicate Highwayman
 step
+    .train 426175,1
     #completewith Rosary
     #requires BeadDS1
     #label BeadDS2
-    >>Use |T135896:0|t[Divine Shield] |cRXP_WARN_at 10% HP to get|r |T135260:0|t[Divine Prayer Bead II]
-    .goto Arathi Highlands,31.6,28.6
-    .goto Arathi Highlands,68.8,71.8,0
-    .goto Arathi Highlands,35.4,44.8,0
+    >>|cRXP_WARN_Cast|r |T135896:0|t[Divine Shield] |cRXP_WARN_while in combat and below 40% HP to receive the|r |T135260:0|t[|cRXP_LOOT_Divine Prayer Bead II|r]
     .collect 213449,1 --Divine Prayer Bead II
+    .usespell 642
+    .usespell 1020
 step
+    .train 426175,1
     #completewith Rosary
     #label BeadSoJ1
-    >>Kill |cRXP_ENEMY_Syndicate Members|r in the area. Loot them for the |T135261:0|t[Tarnished Prayer Bead III]
-    *|cRXP_WARN_You can also go to the other 2 locations marked on your map as any Humanoid can drop these|r
-    .goto Arathi Highlands,31.6,28.6
-    .goto Arathi Highlands,68.8,71.8,0
-    .goto Arathi Highlands,35.4,44.8,0
+    >>Kill |cRXP_ENEMY_Syndicate Mercenaries|r, |cRXP_ENEMY_Syndicate Pathstalkers|r and |cRXP_ENEMY_Syndicate Highwaymen|r. Loot them for the |T135261:0|t[|cRXP_LOOT_Tarnished Prayer Bead III|r]
+    #loop
+    .goto Arathi Highlands,33.26,32.60,50,0
+    .goto Arathi Highlands,30.38,30.68,50,0
+    .goto Arathi Highlands,31.46,25.36,50,0
+    .goto Arathi Highlands,33.87,29.13,50,0
+    .goto Arathi Highlands,31.13,29.47,50,0
     .collect 213446,1 --Tarnished Prayer Bead III
     .mob Syndicate Mercenary
     .mob Syndicate Pathstalker
     .mob Syndicate Highwayman
 step
+    .train 426175,1
     #completewith Rosary
     #requires BeadSoJ1
     #label BeadSoJ2
-    >>Use |T135971:0|t[Seal of Justice] and |T135959:0|t[Judgement] on a |cRXP_WARN_fleeing enemy|r to get |T135260:0|t[Divine Prayer Bead III]
-    .goto Arathi Highlands,31.6,28.6
-    .goto Arathi Highlands,68.8,71.8,0
-    .goto Arathi Highlands,35.4,44.8,0
+    >>|cRXP_WARN_Cast|r |T135971:0|t[Seal of Justice] |cRXP_WARN_followed by|r |T135959:0|t[Judgement] |cRXP_WARN_on a fleeing enemy to receive the|r |T135260:0|t[|cRXP_LOOT_Divine Prayer Bead III|r]
     .collect 213450,1 --Divine Prayer Bead III
+    .usespell 20164
+    .usespell 20271
 step
+    .train 426175,1
     #optional
     #requires BeadBoM3
 step
+    .train 426175,1
     #optional
     #requires BeadDS2
 step
+    .train 426175,1
     #optional
     #requires BeadSoJ2
 step
+    .train 426175,1
     #label Rosary
-    >>Use the |T135260:0|t[Divine Prayer Bead I] to combine the beads into the |T133289:0|t[Rosary of the Light]
-    .goto Arathi Highlands,27.2,57.0
+    >>|cRXP_WARN_Use a|r |T135260:0|t[|cRXP_LOOT_Divine Prayer Bead|r] |cRXP_WARN_to combine them into the|r |T133289:0|t[|cRXP_LOOT_Rosary of the Light|r]
     .use 213448
+    .use 213449
+    .use 213450
     .collect 213447,1
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Atticus|r inside Stormgarde Keep to get the |T134419:0|t[|cRXP_FRIENDLY_Rune of Piety|r]
-    .goto Arathi Highlands,26.06,55.75,15,0
-    .goto Arathi Highlands,25.71,59.92,15,0
-    .goto Arathi Highlands,23.69,60.52,15,0
+    .train 426175,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Atticus|r inside Stormgarde Keep to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Piety|r]
+    .goto Arathi Highlands,26.06,55.75,20,0
+    .goto Arathi Highlands,25.71,59.92,20,0
+    .goto Arathi Highlands,23.69,60.52,20,0
     .goto Arathi Highlands,23.75,58.89,15,0
     .goto Arathi Highlands,27.81,58.99,15,0
     .goto Arathi Highlands,28.74,58.97,15,0
@@ -1572,7 +1623,7 @@ step
 step
     .itemcount 213128,1
     .use 213128
-    .train 426175 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Piety|r] to learn |T236251:0|t[Enlightened Judgements]
+    .train 426175 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Piety|r] |cRXP_WARN_to train|r |T236251:0|t[Enlightened Judgements]
 ]])
 
 
@@ -1719,32 +1770,45 @@ RXPGuides.RegisterGuide([[
 #title Guarded by the Light
 
 step
+    #optional
     .train 416035,1
-    .train 19752 >>You have to learn |T136106:0|t[Divine Intervention] before you can obtain the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Guardian|r].
-    .collect 17033,1 >>You also need at least 1 |T135259:0|t[Symbol of Divinity] (from any reagent vendor)
+    +|cRXP_WARN_You must be at least level 30 before you can acquire the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Guardian|r]
+    .xp >30,1
 step
-    #completewith next
+    .train 416035,1
+    .train 19752 >> |cRXP_WARN_You must train|r |T136106:0|t[Divine Intervention] |cRXP_WARN_to acquire the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Guardian|r]
+step
+    .train 416035,1
+    .collect 17033,1 >>|cRXP_BUY_Buy at least one|r |T135259:0|t[Symbol of Divinity] |cRXP_BUY_from any Reagent Vendor|r
+step
+    .train 416035,1
+    #completewith FriendRequired
+    +|cRXP_WARN_Ensure to bring a |cFFFFFFFFPriest|r, |cFFF58CBAPaladin|r or |cFFFF7D0ADruid|r friend for the following steps! This next part cannot be completed solo as someone must ressurect you!|r
+    .subzoneskip 281
+step
+    .train 416035,1
+    .goto Alterac Mountains,39.675,60.675
     .zone Alterac Mountains >>Travel to the Alterac Mountains
+    .itemcount 213452,<1
 step
     .train 416035,1
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Frozen Remains|r
-    *|cRXP_WARN_Make sure to bring another player who can ressurect you|r.
-    .goto Alterac Mountains,39.8,60.8
+    #label FriendRequired
+    >>Click the |cRXP_PICK_Frozen Remains|r on the ground. Loot it for the |cRXP_LOOT_Dormant Holy Rune|r
+    .goto Alterac Mountains,39.675,60.675
     .collect 213452,1
 step
     .train 416035,1
-    >>Use |T136106:0|t[Divine Intervention] |cRXP_WARN_on the player that will ressurect you|r
-    .goto Alterac Mountains,39.8,60.8
-    .cast 19752
+    .cast 19752 >> |cRXP_WARN_Cast|r |T136106:0|t[Divine Intervention] |cRXP_WARN_on your friend that has accompanied you|r
+    .usespell 19752
 step
     .train 416035,1
-    >>The other player has to remove their |T136106:0|t[Divine Intervention] and ressurect you to get the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Guardian|r]
-    .goto Alterac Mountains,39.8,60.8
+    >>|cRXP_WARN_Have you friend remove the|r |T136106:0|t[Divine Intervention] |cRXP_WARN_buff and ressurect you|r
+    >>|cRXP_WARN_You will receive the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Guardian|r]
     .collect 213132,1
 step
     .use 213132
     .itemcount 213132,1
-    .train 416035 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Guardian|r] to learn |T237537:0|t[Guarded by the Light]
+    .train 416035 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Guardian|r] |cRXP_WARN_to train|r |T237537:0|t[Guarded by the Light]
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1755,24 +1819,46 @@ RXPGuides.RegisterGuide([[
 #name Sacred Shield - 30 (Desolace)
 #title Sacred Shield
 
--- Sacred Shield
-
 step
+    #optional
+    .train 416028,1
+    +|cRXP_WARN_You must be at least level 18 before you can acquire the|r |T236249:0|t[Sacred Shield] |cRXP_WARN_enraving|r
+    .xp >18,1
+step
+    .train 416028,1
+    .train 1044 >> |cRXP_WARN_You must train|r |T135968:0|t[Blessing of Freedom] |cRXP_WARN_to acquire the|r |T236249:0|t[Sacred Shield] |cRXP_WARN_enraving|r
+step
+    .train 416028,1
+    #completewith Deliverance
+    +|cRXP_WARN_Ensure to bring a friend for the following steps! This next part cannot be completed solo!|r
+step
+    .train 416028,1
     #completewith next
     .zone Desolace >>Travel to Desolace
 step
     .train 416028,1
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the glowing book to obtain |T134916:0|t[|cRXP_FRIENDLY_Libram of Deliverance|r]
-    .goto Desolace,66.5,7.7
+    #label Deliverance
+    .goto Desolace,66.532,7.531
+    >>Loot the |T134916:0|t[|cRXP_FRIENDLY_Libram of Deliverance|r] on the table
     .collect 213513,1
 step
     .train 416028,1
-    .equip 18,213513 >> Equip |T134916:0|t[Libram of Deliverance]
-    .aura 408828,1+ >> Use |T135968:0|t[Blessing of Freedom] on 5 other players |cRXP_WARN_while they're movement impaired|r
-    *|cRXP_WARN_Good spots are quest areas with mobs that root players (lake in Ashenvale, Swamp of Sorrows)|r
+    .equip 18,213513 >> |cRXP_WARN_Equip the|r |T134916:0|t[|cRXP_FRIENDLY_Libram of Deliverance|r]
+    .use 213513
+step
+    .train 416028,1
+    .goto Desolace,38.21,61.02,50,0
+    .goto Desolace,36.44,60.52,60,0
+    .goto Desolace,33.44,54.17,60,0
+    .goto Desolace,30.33,58.26,60,0
+    .goto Desolace,31.79,61.28
+    .aura 408828 >> |cRXP_WARN_Cast|r |T135968:0|t[Blessing of Freedom] |cRXP_WARN_on another player 5 times while their movement is impaired. You will gain a stack of|r |T237556:0|t[Building Inspiration] |cRXP_WARN_each time you do this|r
+    >>|cRXP_WARN_Once you have 5 stacks of|r |T237556:0|t[Building Inspiration]|cRXP_WARN_, you will receive the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_Complete this just outside of Maraudon. The|r |cRXP_ENEMY_Maraudine Wranglers|r |cRXP_WARN_there cast|r |T132149:0|t[Net] 
+    .mob Maraudine Wrangler
 step
     .use 213513
-    .train 416028 >>Use the |T134916:0|t[|cRXP_FRIENDLY_Libram of Deliverance|r] to learn |T236249:0|t[Sacred Shield]
+    .train 416028 >>|cRXP_WARN_Use the|r |T134916:0|t[|cRXP_FRIENDLY_Libram of Deliverance|r] |cRXP_WARN_to train|r |T236249:0|t[Sacred Shield]
 ]])
 
 

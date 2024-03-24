@@ -1,6 +1,7 @@
 local _, addon = ...
 local locale = GetLocale()
 
+if addon.game ~= "CLASSIC" then return end
 if locale == "enUS" or locale == "enGB" then
 
     addon.rares = {

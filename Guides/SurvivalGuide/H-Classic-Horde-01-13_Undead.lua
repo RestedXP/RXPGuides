@@ -960,7 +960,7 @@ step << Warrior/Rogue
 step << Warrior/Rogue
     .goto Durotar,51.81,40.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krunn|r
-    .train 2575 >> Train |T136248:0|t[Mining]. This will allow you to find |T135232:0|t[Rough Stones] from nodes in order to craft |T135248:0|t[Sharpening Stones] (+2 Weapon Damage for 30 minutes)
+    .train 2575 >> Train |T136248:0|t[Mining]. This will allow you to find |T135232:0|t|cRXP_LOOT_[Rough Stones]|r from nodes in order to craft |T135248:0|t[Sharpening Stones] (+2 Weapon Damage for 30 minutes)
     .target Krunn
 step << Warrior/Rogue
     .goto Durotar,51.90,41.14
@@ -1012,10 +1012,10 @@ step
     .target Furl Scornbrow
 step
     #completewith TravelToTiragarde
-    +|cRXP_WARN_Cast|r |T136025:0|t[Find Minerals] |cRXP_WARN_and mine any Copper Vein you find for|r |T135232:0|t[Rough Stones]|cRXP_WARN_. Make|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_from them|r
+    +|cRXP_WARN_Cast|r |T136025:0|t[Find Minerals] |cRXP_WARN_and mine any Copper Vein you find for|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r|cRXP_WARN_. Make|r |T135248:0|t[Sharpening Stones] |cRXP_WARN_from them|r
     .collect 2862,1,786,1
     .skill blacksmithing,<1,1
-    .skill mining,<1,1
+    .train 2575,3 --Mining Trained
 step
     #completewith next
     .goto Durotar,52.06,68.30,50 >> Travel toward Sen'jin Village
@@ -1427,7 +1427,7 @@ step
 step << Warrior/Rogue
     .goto Durotar,51.81,40.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krunn|r
-    .train 2575 >> Train |T136248:0|t[Mining]. This will allow you to find |T135232:0|t[Rough Stones] from nodes in order to craft |T135248:0|t[Sharpening Stones] (+2 Weapon Damage for 30 minutes)
+    .train 2575 >> Train |T136248:0|t[Mining]. This will allow you to find |T135232:0|t|cRXP_LOOT_[Rough Stones]|r from nodes in order to craft |T135248:0|t[Sharpening Stones] (+2 Weapon Damage for 30 minutes)
     .target Krunn
 step << Warrior/Rogue
     .goto Durotar,51.90,41.14

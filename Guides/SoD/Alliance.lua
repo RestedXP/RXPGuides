@@ -5,6 +5,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Gloves
 #name Lacerate - 12 (Darkshore) << Druid
 #name Beast Mastery - 12 (Darkshore) << Hunter
+#title Lacerate << Druid
+#title Beast Mastery << Hunter
 
 step << Druid/Hunter
     .goto Darkshore,39.84,53.82,50,0
@@ -42,6 +44,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Gloves
 #name Mangle - 8 (Teldrassil) << Druid
 #name Explosive Shot - 8 (Teldrassil) << Hunter
+#title Mangle << Druid
+#title Explosive Shot << Hunter
 
 step
     +|cRXP_WARN_You should be at least level 8 in order to acquire|r |T133816:0|t[Engrave Gloves - Mangle] |cRXP_WARN_in Teldrassil alone|r << Druid
@@ -116,6 +120,7 @@ step << Druid
     .itemcount 206954,1
     .train 410025,1
 step << Druid
+    #loop
     .goto 1438,44.731,57.355,0
     .goto 1438,44.254,59.083,0
     .goto 1438,44.064,58.196,0
@@ -150,6 +155,9 @@ RXPGuides.RegisterGuide([[
 #name Slaughter from the Shadows - 8 (Teldrassil) << Rogue
 #name Furious Thunder - 8 (Teldrassil) << Warrior
 #name Void Plague - 8 (Teldrassil) << Priest
+#title Slaughter from the Shadows << Rogue
+#title Furious Thunder << Warrior
+#title Void Plague << Priest
 
 step
     #completewith next
@@ -189,6 +197,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Legs << Priest
 #name Mutilate - 8 (Teldrassil) << Rogue
 #name Shared Pain - 8 (Teldrassil) << Priest
+#title Mutilate << Rogue
+#title Shared Pain << Priest
 
 step << Rogue/Priest
     #completewith next

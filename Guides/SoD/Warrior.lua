@@ -8,17 +8,26 @@ RXPGuides.RegisterGuide([[
 
 step << Warrior
     #season 2
+    #optional
+    #completewith next
+    .goto 1429,48.086,30.502,20,0
+    .goto 1429,48.379,29.579,20,0
+    .goto 1429,48.336,28.597,20,0
+    .goto 1429,48.679,26.618,20,0
+    .goto 1429,49.919,25.792,20,0
+    .goto 1429,50.639,27.274,15 >>Travel toward the |cRXP_PICK_Kobold Stashbox|r inside Echo Ridge Mine
+    .train 403470,1
+step << Warrior
+    #season 2
     .goto Elwynn Forest,50.640,27.276
-    >>Open the |cRXP_PICK_Kobold Stashbox|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    >>Open the |cRXP_PICK_Kobold Stashbox|r on the ground. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Victory Rush]|r
     .collect 204806,1 -- Rune of Victory Rush (1)
     .train 403470,1
 step << Warrior
     #season 2
-    #label RoVR
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    .train 403470 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Victory Rush]|r |cRXP_WARN_to learn|r |T132342:0|t[Victory Rush]
     .use 204806
-    .itemcount 204806,1
-    .train 403470,1
+    .itemcount 204806,1 -- Rune of Victory Rush (1)
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -103,7 +112,7 @@ step << Warrior
     .unitscan Wandering Swordsman
 step << Warrior
     #season 2
-    .train 403474 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r] |cRXP_WARN_to train|r |T136012:0|t[Blood Frenzy]
+    .train 403474 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Blood Frenzy|r] |cRXP_WARN_to train|r |T136012:0|t[Blood Frenzy]
     .use 204441
     .itemcount 204441,1
 ]])
@@ -128,7 +137,7 @@ step << Warrior
     .unitscan Wandering Swordsman
 step << Warrior
     #season 2
-    .train 403474 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r] |cRXP_WARN_to train|r |T136012:0|t[Blood Frenzy]
+    .train 403474 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Blood Frenzy|r] |cRXP_WARN_to train|r |T136012:0|t[Blood Frenzy]
     .use 204441
     .itemcount 204441,1
 ]])
@@ -158,7 +167,7 @@ step << Warrior
     .unitscan Wandering Swordsman
 step << Warrior
     #season 2
-    .train 403474 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r] |cRXP_WARN_to train|r |T136012:0|t[Blood Frenzy]
+    .train 403474 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Blood Frenzy|r] |cRXP_WARN_to train|r |T136012:0|t[Blood Frenzy]
     .use 204441
     .itemcount 204441,1
 ]])
@@ -1250,12 +1259,30 @@ RXPGuides.RegisterGuide([[
 #title Quick Strike
 
 step << Warrior
-    .goto Darkshore,48.2,15.6,70,0
-    .goto Darkshore,50.2,12.6
-    >>Kill |cRXP_ENEMY_Paxnozz|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Strike|r]
-    >>|cRXP_ENEMY_Paxnozz|r |cRXP_WARN_is a level 20 elite found patrolling in the water. Look for help before attemping to kill it|r
+    .goto 1439,44.081,20.739
+    >>Loot the |T135129:0|t[Gnarled Harpoon] in the eye of the skeleton
+    .collect 209047,1 --Gnarled Harpoon (1)
+    .train 425443,1
+step << Warrior
+    #completewith next
+    .goto 1439,44.081,20.739
+    .cast 422397 >>|cRXP_WARN_Use the|r |T135129:0|t[Gnarled Harpoon] |cRXP_WARN_on |cRXP_ENEMY_Paxnozz|r to reduce his max health to 743|r
+    .train 425443,1
+step << Warrior
+    #loop
+    .goto Darkshore,48.0,18.0,0
+    .goto Darkshore,47.6,13.2,0
+    .goto Darkshore,50.4,12.0,0
+    .goto Darkshore,48.8,16.0,0
+    .goto Darkshore,48.0,18.0,40,0
+    .goto Darkshore,47.6,13.2,40,0
+    .goto Darkshore,50.4,12.0,40,0
+    .goto Darkshore,48.8,16.0,40,0
+    >>Kill |cRXP_ENEMY_Paxnozz|r. Loot him for the |T134419:0|t|cRXP_LOOT_[Rune of Quick Strike]|r
+    >>|cRXP_WARN_Be careful as he is a level 20 elite|r
     .collect 208778,1 -- Rune of Quick Strike (1)
     .unitscan Paxnozz
+    .use 209047
     .train 425443,1
 step << Warrior
     .train 425443 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Strike|r] |cRXP_WARN_to train|r |T132394:0|t[Quick Strike]
@@ -1268,56 +1295,67 @@ RXPGuides.RegisterGuide([[
 << Warrior SoD
 #group RestedXP Rune & Books Guide
 #subgroup Belt
-#name Blood Surge - 30 (Azeroth)
-
--- Blood Surge
-
---x shiek better coordinates
+#name Blood Surge - 40 (Azeroth)
+#title Blood Surge
 
 step
     .train 416004,1
-    #completewith IllegibleReciple
-    .zone Arathi Highlands >>Travel to |cFFfa9602Arathi Highlands|r
+    #completewith SpiceBlend
+    .zone Arathi Highlands >>Travel to Arathi Highlands
 step
     #completewith IllegibleReciple
-    +|cRXP_WARN_Grouping up is recommended as you have to kill level 36-40 elites|r
+    +|cRXP_WARN_You may want to find a group as you must kill level 37+ elites for obtaining the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Blood Surge|r]
+    .subzoneskip 324
 step
     #label IllegibleReciple
     .train 416004,1
     #loop
+    .goto Alterac Mountains,39.0,54.6,0
     .goto Arathi Highlands,24.14,61.85,0
     .goto Arathi Highlands,24.14,61.85,30,0
     .goto Arathi Highlands,24.25,64.97,30,0
     .goto Arathi Highlands,21.22,66.52,40,0
     .goto Arathi Highlands,20.21,67.17,40,0
-    >>Kill |cRXP_ENEMY_Boulderfist Ogres|r inside Stromgarde Keep. Loot them for |T237451:0|t[|cRXP_LOOT_Illegible Recipe|r]. Use it to start the quest
-    >>|cRXP_WARN_Alternatively you can kill the|r |cRXP_ENEMY_Crushridge Ogres|r |cRXP_WARN_in Alterac Mountains as they are slightly lower level|r
+    >>Kill |cRXP_ENEMY_Boulderfist Ogres|r inside Stromgarde Keep. Loot them for an |T237451:0|t[|cRXP_LOOT_Illegible Recipe|r]
+    >>|cRXP_WARN_Use the|r |T237451:0|t[|cRXP_LOOT_Illegible Recipe|r] |cRXP_WARN_to start the quest|r
+    >>|cRXP_WARN_Alternatively you can kill |cRXP_ENEMY_Crushridge Ogres|r in Alterac Mountains as well|r
     .collect 213422,1,79624 --Illegible Recipe (1x)
     .accept 79624 >>Accept Anyone Can Cook
     .mob Boulderfist Shaman
     .mob Boulderfist Mauler
     .mob Boulderfist Lord
+    .mob Crushridge Mauler
+    .mob Crushridge Mage
+    .mob Crushridge Enforcer
+    .mob Crushridge Warmonger
+step
+    #completewith next
+    .goto Arathi Highlands,57.587,72.499,10 >> Travel up the mountain to get to |cRXP_FRIENDLY_Skonk|r
 step
     .train 416004,1
-    .goto Arathi Highlands,57.45,72.00,15,0
-    .goto Arathi Highlands,57.33,73.65,15,0
     .goto Arathi Highlands,57.68,74.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skonk|r
     .turnin 79624 >>Turn in Anyone Can Cook
     .accept 79677 >>Accept A Quick Grocery Run
     .target Skonk
 step
-    #completewith next
-    .subzone 328 >>Travel to the sunken ship in |cFFfa9602The Drowned Reef|r just south of |cFFfa9602Faldir's Cove|r
+    #completewith SpiceBlend
+    .goto Arathi Highlands,30.74,66.94,60,0
+    .goto Arathi Highlands,22.72,71.98,50,0
+    .goto Arathi Highlands,21.50,75.91,40,0
+    .goto Arathi Highlands,21.98,79.96,30 >> Travel to Faldir's Cove
 step
+    #label SpiceBlend
     .train 416004,1
-    .goto Arathi Highlands,20.8,82.2
-    >>Click the |cRXP_PICK_Sealed Barrel|r located inside the deepest section of the sunken ship for |cRXP_LOOT_Smuggler's Spice Blend|r
+    .goto Arathi Highlands,20.47,84.90,8,0
+    .goto Arathi Highlands,21.379,83.919
+    >>Open the |cRXP_PICK_Sealed Barrel|r. Loot it for the |cRXP_LOOT_Smuggler's Spice Blend|r
+    >>|cRXP_WARN_It is located at the bottom of the sunken ship. Swim through the large hole at the very bottom to get to it|r
     .complete 79677,2 --Smuggler's Spice Blend (1x)
 step
     .train 416004,1
     #completewith next
-    .zone Hillsbrad Foothills >>Travel to |cFFfa9602Hillsbrad Foothills|r
+    .zone Hillsbrad Foothills >>Travel to Hillsbrad Foothills
 step
     .train 416004,1
     #loop
@@ -1325,15 +1363,29 @@ step
     .goto Hillsbrad Foothills,81.33,34.03,50,0
     .goto Hillsbrad Foothills,84.34,32.40,50,0
     .goto Hillsbrad Foothills,82.09,36.92,50,0
-    >>Kill |cRXP_ENEMY_Gryphons|r. Loot them for their |cRXP_LOOT_Hybrid Haunch|r
+    >>Kill |cRXP_ENEMY_Wild Gryphons|r. Loot them for their |cRXP_LOOT_Hybrid Haunch|r
     .complete 79677,1 --Hybrid Haunch (1x)
-    .mob Kurdros
-    .mob Granistad
+    .mob Kurdros << Horde
+    .mob Granistad << Horde
     .mob Wild Gryphon
 step
     .train 416004,1
     #completewith next
-    .zone Swamp of Sorrows >>Travel to |cFFfa9602Swamp of Sorrows|r
+    .zone Badlands >>Travel to Badlands
+step
+    #completewith next
+    .goto Badlands,42.87,29.77,60 >> Enter Angor Fortress
+step
+    .train 416004,1
+    .goto Badlands,41.92,26.26,20,0
+    .goto Badlands,41.383,27.964
+    >>Click on the |cRXP_PICK_Tapped Shadowforge Keg|r. Loot it for the |cRXP_LOOT_Balmy Brew|r
+    >>|cRXP_WARN_Stay at maximum range to avoid agroing|r |cRXP_ENEMY_Ambassador Infernus|r
+    .complete 79677,3 --Balmy Brew (1x)
+step
+    .train 416004,1
+    #completewith next
+    .zone Swamp of Sorrows >>Travel to Swamp of Sorrows
 step
     .train 416004,1
     #loop
@@ -1347,36 +1399,30 @@ step
     .goto Swamp of Sorrows,68.52,73.12,60,0
     .goto Swamp of Sorrows,72.50,82.18,60,0
     .goto Swamp of Sorrows,78.49,88.19,60,0
-    >>Kill |cRXP_ENEMY_Deathstrike Tarantulas|r. Loot them for |cRXP_LOOT_Viscous Venom|r
+    >>Kill |cRXP_ENEMY_Deathstrike Tarantulas|r. Loot them for their |cRXP_LOOT_Viscous Venom|r
     >>|cRXP_WARN_They can be found in the South-Eastern area of Swamp of Sorrows|r
     .complete 79677,4 --Viscous Venom (1x)
     .mob Deathstrike Tarantula
 step
     .train 416004,1
+    #completewith GroceryRun
+    .zone Arathi Highlands >>Travel to Arathi Highlands
+step
     #completewith next
-    .zone Badlands >>Travel to |cFFfa9602Badlands|r
+    .goto Arathi Highlands,57.587,72.499,10 >> Travel up the mountain to get to |cRXP_FRIENDLY_Skonk|r
 step
+    #label GroceryRun
     .train 416004,1
-    .goto Badlands,41.2,27.8
-    >>Click on the |cRXP_PICK_Tapped Shadowforge Keg|r in the basement of Angor Fortress for |cRXP_LOOT_Balmy Brew|r
-    >>|cRXP_WARN_Keep maximum distance from|r |cRXP_ENEMY_Ambassador Infernus|r |cRXP_WARN_to avoid agro. This may not be possible if you are below level 40|r
-    .complete 79677,3 --Balmy Brew (1x)
-step
-    .train 416004,1
-    #completewith next
-    .zone Arathi Highlands >>Travel to |cFFfa9602Arathi Highlands|r
-step
-    .train 416004,1
-    .goto Arathi Highlands,57.45,72.00,15,0
-    .goto Arathi Highlands,57.33,73.65,15,0
     .goto Arathi Highlands,57.68,74.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skonk|r
     .turnin 79677 >>Turn in A Quick Grocery Run
     .accept 79678 >>Accept Taste Testing
+    .timer 23,Taste Testing RP
+    .target Skonk
 step
     .train 416004,1
     .goto Arathi Highlands,57.68,74.66
-    >>Defeat |cRXP_ENEMY_Skonk|r as he becomes hostile
+    >>Defeat |cRXP_ENEMY_Skonk|r after he eats his meal
     .complete 79678,1 --Taste Testing
     .mob Skonk
 step
@@ -1386,7 +1432,7 @@ step
     .turnin 79678 >>Turn in Taste Testing
     .target Skonk
 step
-    .train 416004 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of Blood Surge|r] to learn |T236306:0|t[Blood Surge]
+    .train 416004 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Blood Surge|r] |cRXP_WARN_to train|r |T236306:0|t[Blood Surge]
     .use 213103
 ]])
 
@@ -1552,7 +1598,7 @@ step
     .goto Badlands,15.6,45.8,30,0 << Horde
     >>Talk to a |cRXP_FRIENDLY_Wandering Swordsman|r in Badlands
     >>Defeat the |cRXP_ENEMY_Wandering Swordsman|r in a duel
-    >>Open the |cRXP_PICK_Swordsman's Reward|r it drops on the ground. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Commander|r]
+    >>Open the |cRXP_PICK_Swordsman's Reward|r he drops on the ground. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Commander|r]
     >>|cRXP_WARN_Note: The |cRXP_FRIENDLY_Wandering Swordsman|r can spawn throughout many locations in Badlands|r
     .collect 213110,1 --Rune of the Commander (1x)
     .unitscan Wandering Swordsman

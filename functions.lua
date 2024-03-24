@@ -3,6 +3,8 @@ local addonName, addon = ...
 local localizedClass, class = UnitClass("player")
 local gameVersion = select(4, GetBuildInfo())
 local fmt, tinsert = string.format,tinsert
+local LoadAddOn = C_AddOns and C_AddOns.LoadAddOn or _G.LoadAddOn
+local IsAddOnLoaded = C_AddOns and C_AddOns.IsAddOnLoaded or _G.IsAddOnLoaded
 --local RXPGuides = addon.RXPGuides
 local L = addon.locale.Get
 addon.functions.__index = addon.functions
@@ -14,7 +16,11 @@ events.destroy = events.collect
 events.buy = events.collect
 events.accept = {"QUEST_ACCEPTED", "QUEST_TURNED_IN", "QUEST_REMOVED"}
 events.turnin = "QUEST_TURNED_IN"
-events.complete = {"QUEST_LOG_UPDATE", "CINEMATIC_STOP", "STOP_MOVIE"}
+if addon.game == "CLASSIC" then
+    events.complete = {"QUEST_LOG_UPDATE", "CINEMATIC_STOP"}
+else
+    events.complete = {"QUEST_LOG_UPDATE", "CINEMATIC_STOP", "STOP_MOVIE"}
+end
 events.fp = {"UI_INFO_MESSAGE", "UI_ERROR_MESSAGE", "TAXIMAP_OPENED", "GOSSIP_SHOW", "TAXIMAP_CLOSED"}
 events.hs = "UNIT_SPELLCAST_SUCCEEDED"
 events.home = {"HEARTHSTONE_BOUND","CONFIRM_BINDER","GOSSIP_SHOW"}
@@ -190,6 +196,7 @@ local IsQuestTurnedIn = function(id)
     if isQuestTurnedIn then addon.recentTurnIn[id] = nil end
     return isQuestTurnedIn or (recentTurnIn and GetTime() - recentTurnIn < 2)
 end
+QT = IsQuestTurnedIn
 
 function addon.IsQuestComplete(id)
     if not id then return end
@@ -833,11 +840,14 @@ function addon.functions.accept(self, ...)
         local event, arg1, questId = ...
         local id = element.questId
         local isCompleted = element.completed
-        local isQuestAccepted = IsQuestTurnedIn(id) or IsOnQuest(id)
         local index = step.index
+        local isQuestAccepted
 
-        if (event == "QUEST_ACCEPTED" and questId == id) then
-            isQuestAccepted = true
+        if event == "QUEST_ACCEPTED" then
+            questId = questId or arg1
+            isQuestAccepted = questId == id or IsQuestTurnedIn(id) or IsOnQuest(id)
+        else
+            isQuestAccepted = IsQuestTurnedIn(id) or IsOnQuest(id)
         end
 
         if step.active or element.retrieveText or
@@ -1474,7 +1484,27 @@ addon.functions["goto"] = function(self, ...)
         else
             zone = lastZone
         end
-        element.zone, element.x , element.y = addon.GetMapInfo(zone,x,y)
+        --print(zone)
+        local subzone,continent = zone:match("(.-)/(%d+)")
+        if subzone then
+            zone = addon.GetMapId(subzone) or tonumber(subzone)
+            if addon.mapConversion[zone] then
+                zone = addon.mapConversion[zone]
+            end
+            x = tonumber(x)
+            y = tonumber(y)
+            local zx,zy = HBD:GetZoneCoordinatesFromWorld(x, y, zone)
+            if zx and zy then
+                element.wx = x
+                element.wy = y
+                element.x = zx*100
+                element.y = zy*100
+                element.zone = zone
+                element.instance = tonumber(continent)
+            end
+        else
+            element.zone, element.x , element.y = addon.GetMapInfo(zone,x,y)
+        end
         if not (element.x and element.y and element.zone) then
             return addon.error(
                         L("Error parsing guide") .. " "  .. addon.currentGuideName ..
@@ -1483,10 +1513,29 @@ addon.functions["goto"] = function(self, ...)
 
         element.radius = tonumber(radius)
         radius = element.radius
-        element.wx, element.wy, element.instance =
-            HBD:GetWorldCoordinatesFromZone(element.x / 100, element.y / 100,
+        if not subzone then
+            element.wx, element.wy, element.instance =
+              HBD:GetWorldCoordinatesFromZone(element.x / 100, element.y / 100,
                                             element.zone)
 
+            if addon.mapConversion[element.zone] then
+                zone = addon.mapConversion[element.zone]
+                local zx,zy = HBD:GetZoneCoordinatesFromWorld(element.wx, element.wy, zone)
+                if not (zx and zy) then
+                    local info = C_Map.GetMapInfo(zone)
+                    zone = info.parentMapID
+                    zx,zy = HBD:GetZoneCoordinatesFromWorld(element.wx, element.wy, zone)
+                end
+                if not (zx and zy) then
+                    return addon.error(
+                        L("Error parsing guide") .. " "  .. addon.currentGuideName ..
+                           ": Invalid coordinates or map name\n" .. self)
+                end
+                element.x = zx * 100
+                element.y = zy * 100
+                element.zone = zone
+            end
+        end
         element.text = text
 
         if radius then
@@ -1556,7 +1605,26 @@ function addon.functions.waypoint(self, text, zone, x, y, radius, lowPrio, ...)
         else
             zone = lastZone
         end
-        element.zone, element.x , element.y = addon.GetMapInfo(zone,x,y)
+        local subzone,continent = zone:match("(.-)/(%d+)")
+        if subzone then
+            zone = addon.GetMapId(subzone) or tonumber(subzone)
+            if addon.mapConversion[element.zone] then
+                zone = addon.mapConversion[element.zone]
+            end
+            x = tonumber(x)
+            y = tonumber(y)
+            local zx,zy = HBD:GetZoneCoordinatesFromWorld(x, y, zone)
+            if zx and zy then
+                element.wx = x
+                element.wy = y
+                element.x = zx*100
+                element.y = zy*100
+                element.zone = zone
+                element.instance = tonumber(continent)
+            end
+        else
+            element.zone, element.x , element.y = addon.GetMapInfo(zone,x,y)
+        end
         if not (element.x and element.y and element.zone) then
             return addon.error(
                         L("Error parsing guide") .. " "  .. addon.currentGuideName ..
@@ -1580,10 +1648,24 @@ function addon.functions.waypoint(self, text, zone, x, y, radius, lowPrio, ...)
             element.dynamic = true
             element.radius = math.abs(element.radius)
         end
+        if not subzone then
         element.wx, element.wy, element.instance =
             HBD:GetWorldCoordinatesFromZone(element.x / 100, element.y / 100,
                                             element.zone)
 
+            if addon.mapConversion[element.zone] then
+                zone = addon.mapConversion[element.zone]
+                local zx,zy = HBD:GetZoneCoordinatesFromWorld(element.wx, element.wy, zone)
+                if not (zx and zy) then
+                    local info = C_Map.GetMapInfo(zone)
+                    zone = info.parentMapID
+                    zx,zy = HBD:GetZoneCoordinatesFromWorld(element.wx, element.wy, zone)
+                end
+                element.x = zx * 100
+                element.y = zy * 100
+                element.zone = zone
+            end
+        end
         element.arrow = true
         element.parent = true
         element.hidePin = true
@@ -1614,17 +1696,49 @@ function addon.functions.pin(self, ...)
         else
             zone = lastZone
         end
-        element.zone, element.x , element.y = addon.GetMapInfo(zone,x,y)
+        local subzone,continent = zone:match("(.-)/(%d+)")
+        if subzone then
+            zone = addon.GetMapId(subzone) or tonumber(subzone)
+            if addon.mapConversion[element.zone] then
+                zone = addon.mapConversion[element.zone]
+            end
+            x = tonumber(x)
+            y = tonumber(y)
+            local zx,zy = HBD:GetZoneCoordinatesFromWorld(x, y, zone)
+            if zx and zy then
+                element.wx = x
+                element.wy = y
+                element.x = zx*100
+                element.y = zy*100
+                element.zone = zone
+                element.instance = tonumber(continent)
+            end
+        else
+            element.zone, element.x , element.y = addon.GetMapInfo(zone,x,y)
+        end
         if not (element.x and element.y and element.zone) then
             return addon.error(
                         L("Error parsing guide") .. " "  .. addon.currentGuideName ..
                            ": Invalid coordinates or map name\n" .. self)
         end
-
+        if not subzone then
         element.wx, element.wy, element.instance =
             HBD:GetWorldCoordinatesFromZone(element.x / 100, element.y / 100,
                                             element.zone)
 
+            if addon.mapConversion[element.zone] then
+                zone = addon.mapConversion[element.zone]
+                local zx,zy = HBD:GetZoneCoordinatesFromWorld(element.wx, element.wy, zone)
+                if not (zx and zy) then
+                    local info = C_Map.GetMapInfo(zone)
+                    zone = info.parentMapID
+                    zx,zy = HBD:GetZoneCoordinatesFromWorld(element.wx, element.wy, zone)
+                end
+                element.x = zx * 100
+                element.y = zy * 100
+                element.zone = zone
+            end
+        end
         element.mapTooltip = tooltip
         element.parent = true
         element.text = text
@@ -1650,7 +1764,7 @@ function addon.functions.line(self, text, zone, ...)
         else
             zone = lastZone
         end
-        local mapID = addon.mapId[zone] or tonumber(zone)
+        local mapID = addon.GetMapId(zone) or tonumber(zone)
         if not (segments and #segments > 0 and zone and mapID) then
             return addon.error(
                         L("Error parsing guide") .. " " .. (addon.currentGuideName or _G.NONE) ..
@@ -1698,7 +1812,7 @@ function addon.functions.loop(self, text, range, zone, ...)
         else
             zone = lastZone
         end
-        local mapID = addon.mapId[zone] or tonumber(zone)
+        local mapID = addon.GetMapId(zone) or tonumber(zone)
         if not (segments and #segments > 0 and zone and mapID) then
             return addon.error(
                         L("Error parsing guide") .. " "  .. (addon.currentGuideName or _G.NONE) ..
@@ -1858,6 +1972,31 @@ function addon.functions.bindlocation(self, ...)
     end
 end
 
+function addon.GetNearestFp()
+    if not addon.taxiPos then return end
+    local factionid = 0
+    local faction = addon.player.faction
+    if faction == "Alliance" then
+        factionid = 1
+    elseif faction == "Horde" then
+        factionid = 2
+    end
+    local x,y,_,map = UnitPosition('player')
+    local mindist = math.huge
+    local closestFP
+    for node,t in pairs(addon.taxiPos[map]) do
+        if bit.band(t.flag,factionid) == factionid then
+            local dist = (x-t.wx)^2 + (y-t.wy)^2
+            if mindist > dist then
+                mindist = dist
+                closestFP = node
+            end
+        end
+    end
+    --print(closestFP,mindist,addon.FPDB[faction][closestFP].name)
+    return closestFP
+end
+
 function addon.functions.fp(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
@@ -1895,10 +2034,10 @@ function addon.functions.fp(self, ...)
         if element.textOnly and fpDiscovered and not element.text then
             element.step.completed = true
             addon.updateSteps = true
-        elseif fpDiscovered or addon.flightInfo.lastFlightSrc == fpId or
-                                  addon.flightInfo.lastFlightDest == fpId then
+        elseif fpDiscovered or fpId and (addon.flightInfo.lastFlightSrc == fpId or
+                                  addon.flightInfo.lastFlightDest == fpId) then
             addon.SetElementComplete(self)
-        elseif event == "UI_INFO_MESSAGE" and arg2 == _G.ERR_NEWTAXIPATH or event == "UI_ERROR_MESSAGE" and arg2 == _G.ERR_TAXINOPATHS then
+        elseif event == "UI_INFO_MESSAGE" and (arg2 == _G.ERR_NEWTAXIPATH or arg2 == _G.ERR_TAXINOPATHS) then
             local currentMap = C_Map.GetBestMapForUnit("player")
             local validFP = false
             if addon.FPbyZone then
@@ -1914,6 +2053,10 @@ function addon.functions.fp(self, ...)
                     addon.SetElementComplete(self)
                 end
             else
+                local nearestFP = addon.GetNearestFp()
+                if nearestFP then
+                    RXPCData.flightPaths[nearestFP] = addon.FPDB[addon.player.faction][nearestFP] and addon.FPDB[addon.player.faction][nearestFP].name
+                end
                 addon.SetElementComplete(self)
             end
         elseif (GetTime() - element.confirm) > 10 and event == "GOSSIP_SHOW" and addon.SelectGossipType("taxi") then
@@ -2468,6 +2611,79 @@ function addon.functions.skill(self, text, skillName, str, skipstep, useMaxValue
 
 end
 
+function addon.functions.mountcount(self, ...)
+    if gameVersion < 30000 or not addon.mountIDs then
+        return
+    elseif type(self) == "string" then -- on parse
+        local element = {}
+        local text, skill, str = ...
+        local operator, eq, total
+
+        if str then
+            str = str:gsub(" ", "")
+            operator, eq, total = str:match("([<>]?)(=?)%s*(%d+)")
+        end
+        --flags = tonumber(flags) or 0
+        --element.enableBank = bit.band(flags, 0x1) == 0x1
+
+        element.skill = tonumber(skill)
+        element.total = tonumber(total)
+        if not (element.total and element.skill) then
+            return addon.error(L("Error parsing guide") .. " " .. addon.currentGuideName ..
+                            ": Invalid skill/count\n" .. self)
+        end
+        if operator == "<" then
+            element.operator = -1
+        elseif operator == ">" then
+            element.operator = 1
+        else
+            element.operator = 0
+        end
+        if eq == "=" then element.eq = true end
+
+        if text ~= "" then element.text = text end
+
+        element.textOnly = true
+
+        return element
+    end
+
+    local element = self.element
+    local step = element.step
+    if not step.active or addon.isHidden then return end
+    local operator = element.operator
+    local eq = element.eq
+    local total = element.total
+    local count = 0
+
+    for i = 75,375,75 do
+        if element.skill < i then
+            break
+        end
+        for _,id in pairs(addon.mountIDs[i]) do
+            if addon.IsPlayerSpell(id) then
+                count = count + 1
+            end
+        end
+    end
+
+    if not ((eq and count == total) or (count * operator > total * operator) or
+        (not eq and operator == 0 and count >= total)) then
+        if step.active and not step.completed then
+            addon.updateSteps = true
+            step.completed = true
+            if operator < 0 then
+                element.tooltipText = "Step skipped: You already have the required item for this step"
+            else
+                element.tooltipText = "Step skipped: You don't have the required item for this step"
+            end
+        end
+    elseif step.active then
+        element.tooltipText = nil
+    end
+
+end
+
 function addon.functions.maxskill(self, text, skillName, str, skipstep)
     return addon.functions.skill(self, text, skillName, str, skipstep, true)
 end
@@ -2519,7 +2735,7 @@ function addon.functions.reputation(self, ...)
             local standinglabel = getglobal(
                                       "FACTION_STANDING_LABEL" ..
                                           element.standing)
-            local factionname = GetFactionInfoByID(element.faction)
+            local factionname = GetFactionInfoByID(element.faction) or ""
             if element.repValue and element.repValue ~= 0 then
                 if element.repValue < 0 then
                     element.text = fmt(
@@ -3153,24 +3369,32 @@ function addon.functions.spellmissing(self, text, id)
 end
 
 function addon.GetSubZoneId(zone,x,y)
-    local subzone = GetSubZoneText() or 1
-    local zoneText = GetZoneText() or 2
+    local subzonemax = 1e6
+    if gameVersion < 50000 then
+        subzonemax = 15325
+    end
+    local subzone = ""
+    local zoneText = ""
     if zone and x and y then
-       zone = addon.mapId[zone] or zone
+       zoneText = GetZoneText() or 2
+       zone = addon.GetMapId(zone) or zone
        x = x / 100
        y = y / 100
        subzone = MapUtil.FindBestAreaNameAtMouse(zone,x,y)
     elseif zone then
        subzone = zone
+    else
+        subzone = GetSubZoneText() or 1
+        zoneText = GetZoneText() or 2
     end
 
     if subzone or zoneText then
         local bestMatchId,bestMatchText
-        for i = 1,1e6 do
+        for i = 1,subzonemax do
             local zoneName = C_Map.GetAreaInfo(i) or 3
             if zoneName and zoneName == subzone then
                 print(zoneName .. ' Subzone ID: ' .. i)
-                return
+                return i
             elseif zoneText == zoneName then
                 bestMatchId = i
                 bestMatchText = zoneName
@@ -3178,7 +3402,7 @@ function addon.GetSubZoneId(zone,x,y)
         end
         if bestMatchId and bestMatchText then
             print(bestMatchText .. ' Subzone ID: ' .. bestMatchId)
-            return
+            return bestMatchId
         end
     end
     print('ERROR: Subzone not found')
@@ -3268,7 +3492,8 @@ function addon.functions.zone(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
         local text, zone = ...
-        local mapID = addon.mapId[zone] or tonumber(zone)
+        local mapID = addon.GetMapId(zone) or tonumber(zone)
+        mapID = addon.mapConversion[mapID] or mapID
         if not (mapID and text) then
             return addon.error(
                         L("Error parsing guide") .. " " .. addon.currentGuideName ..
@@ -3297,7 +3522,8 @@ end
 function addon.functions.zoneskip(self, text, zone, flags)
     if type(self) == "string" then -- on parse
         local element = {}
-        local mapID = addon.mapId[zone] or tonumber(zone)
+        local mapID = addon.GetMapId(zone) or tonumber(zone)
+        mapID = addon.mapConversion[mapID] or mapID
         if not mapID then
             return addon.error(
                 L("Error parsing guide") .. " " .. addon.currentGuideName ..
@@ -4420,7 +4646,7 @@ function addon.functions.openmap(self, text, map, callback, ...)
         element.text = text
         element.textOnly = true
 
-        element.mapId = addon.mapId[map] or tonumber(map)
+        element.mapId = addon.GetMapId(map) or tonumber(map)
         return element
     end
 
@@ -4470,6 +4696,9 @@ function addon.functions.cooldown(self, text, cooldownType, id, remaining,
             element.operator = 1
         end
         if suffix == "m" then cd = cd * 60 end
+        if cd < 2 then
+            cd = 2
+        end
         element.updateOnce = updateOnce
         element.id = id
         element.remaining = cd
@@ -4714,8 +4943,8 @@ function addon.functions.dmf(self, ...)
     -- Async relies on CALENDAR_UPDATE_EVENT_LIST
     -- Currently results in one false negative if on a DMF step at login
     -- If called during the loading process, (even at PLAYER_ENTERING_WORLD) the query will not return
-    if not _G.IsAddOnLoaded('Blizzard_Calendar') then
-        _G.LoadAddOn("Blizzard_Calendar")
+    if not IsAddOnLoaded('Blizzard_Calendar') then
+        LoadAddOn("Blizzard_Calendar")
         addon.calendarLoaded = true
     end
 
@@ -4815,7 +5044,7 @@ function addon.CanPlayerFly(zoneOrContinent)
         local cwf = IsPlayerSpell(54197)
 
         --1945 = outland,113 = northrend
-        if ((continentId == addon.mapId["Outland"] or (cwf and continentId == addon.mapId["Northrend"])) and ridingSkill > 224) then
+        if ((continentId == addon.GetMapId("Outland") or (cwf and continentId == addon.GetMapId("Northrend"))) and ridingSkill > 224) then
             return true
         end
     end
@@ -4825,7 +5054,7 @@ events.noflyable = "ZONE_CHANGED"
 function addon.functions.noflyable(self, text, zone, skill)
     if type(self) == "string" then
         local element = {}
-        element.zone = tonumber(zone) or addon.mapId[zone]
+        element.zone = tonumber(zone) or addon.GetMapId(zone)
         if text and text ~= "" then element.text = text end
         element.textOnly = true
         element.reverse = true
@@ -4839,7 +5068,7 @@ events.flyable = "ZONE_CHANGED"
 function addon.functions.flyable(self, text, zone, skill)
     if type(self) == "string" then
         local element = {}
-        element.zone = tonumber(zone) or addon.mapId[zone]
+        element.zone = tonumber(zone) or addon.GetMapId(zone)
         if text and text ~= "" then element.text = text end
         element.textOnly = true
         element.skill = tonumber(skill) or -4
@@ -5126,7 +5355,7 @@ function addon.functions.isWorldQuestAvailable(self, ...)
         return
     elseif type(self) == "string" then -- on parse
         local text, mapId, questId, remaining = ...
-        mapId = addon.mapId[mapId] or tonumber(mapId)
+        mapId = addon.GetMapId(mapId) or tonumber(mapId)
         questId = tonumber(questId)
         if not (questId and mapId) then
             return addon.error(

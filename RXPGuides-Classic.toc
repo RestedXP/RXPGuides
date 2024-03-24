@@ -1,4 +1,4 @@
-## Interface: 11500
+## Interface: 11501
 ## Title: RestedXP Guides
 ## Notes: In-game leveling guides
 ## Notes-zhCN: TODO
@@ -21,6 +21,7 @@ Help.lua
 SettingsPanel.lua
 
 DB/classic.xml
+DB/cata.xml
 
 HSBatching.lua
 QuestLog.lua

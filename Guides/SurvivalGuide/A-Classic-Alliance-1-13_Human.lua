@@ -515,7 +515,7 @@ step << Priest
     .complete 5624,1 --Heal and fortify Guard Roberts
 step
     #completewith BoarMeat1
-    >>Kill |cRXP_ENEMY_Stonetusk Boars|r. Loot them for their |cRXP_LOOT_Chunks of Boar Meat|r
+    >>Kill |cRXP_ENEMY_Stonetusk Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     .collect 769,4 --Collect Chunk of Boar Meat (x4)
     .mob Stonetusk Boar
 step
@@ -529,8 +529,8 @@ step
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Candles|r and |cRXP_LOOT_Dust|r
-    >>|cRXP_WARN_If you loot any|r |T135232:0|t[Rough Stones] |cRXP_WARN_turn them into|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
-    >>|cRXP_WARN_If you loot any|r |T135232:0|t[Rough Stones] |cRXP_WARN_turn them into|r |T135255:0|t[Rough Weightstones] << Paladin
+    >>|cRXP_WARN_If you loot any|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_turn them into|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
+    >>|cRXP_WARN_If you loot any|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_turn them into|r |T135255:0|t[Rough Weightstones] << Paladin
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
     .mob Kobold Tunneler
@@ -556,8 +556,8 @@ step
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Candles|r and |cRXP_LOOT_Dust|r
-    >>|cRXP_WARN_If you loot any|r |T135232:0|t[Rough Stones] |cRXP_WARN_turn them into|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
-    >>|cRXP_WARN_If you loot any|r |T135232:0|t[Rough Stones] |cRXP_WARN_turn them into|r |T135255:0|t[Rough Weightstones] << Paladin
+    >>|cRXP_WARN_If you loot any|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_turn them into|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
+    >>|cRXP_WARN_If you loot any|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_turn them into|r |T135255:0|t[Rough Weightstones] << Paladin
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
     .mob Kobold Tunneler
@@ -571,7 +571,7 @@ step
     .target Tommy Joe Stonefield
 step
     .goto Elwynn Forest,32.5,85.5
-    >>Kill |cRXP_ENEMY_Stonetusk Boars|r. Loot them for their |cRXP_LOOT_Chunks of Boar Meat|r
+    >>Kill |cRXP_ENEMY_Stonetusk Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     .complete 86,1 --Collect Chunk of Boar Meat (x4)
     .mob Stonetusk Boar
 step
@@ -583,14 +583,14 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gramma Stonefield|r
     .target Gramma Stonefield
-    .goto Elwynn Forest,34.9,83.9
+    .goto 1429,34.945,83.855
     .turnin 111 >> Turn in Speak with Gramma
     .accept 107 >> Accept Note to William
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Candles|r and |cRXP_LOOT_Dust|r
-    >>|cRXP_WARN_If you loot any|r |T135232:0|t[Rough Stones] |cRXP_WARN_turn them into|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
-    >>|cRXP_WARN_If you loot any|r |T135232:0|t[Rough Stones] |cRXP_WARN_turn them into|r |T135255:0|t[Rough Weightstones] << Paladin
+    >>|cRXP_WARN_If you loot any|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_turn them into|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
+    >>|cRXP_WARN_If you loot any|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_turn them into|r |T135255:0|t[Rough Weightstones] << Paladin
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
     .mob Kobold Tunneler
@@ -604,8 +604,8 @@ step
 step
     #completewith KillGoldtooth
     >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Candles|r and |cRXP_LOOT_Dust|r
-    >>|cRXP_WARN_If you loot any|r |T135232:0|t[Rough Stones] |cRXP_WARN_turn them into|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
-    >>|cRXP_WARN_If you loot any|r |T135232:0|t[Rough Stones] |cRXP_WARN_turn them into|r |T135255:0|t[Rough Weightstones] << Paladin
+    >>|cRXP_WARN_If you loot any|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_turn them into|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
+    >>|cRXP_WARN_If you loot any|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_turn them into|r |T135255:0|t[Rough Weightstones] << Paladin
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
     .mob Kobold Tunneler
@@ -625,8 +625,8 @@ step
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Candles|r and |cRXP_LOOT_Dust|r
-    >>|cRXP_WARN_If you loot any|r |T135232:0|t[Rough Stones] |cRXP_WARN_turn them into|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
-    >>|cRXP_WARN_If you loot any|r |T135232:0|t[Rough Stones] |cRXP_WARN_turn them into|r |T135255:0|t[Rough Weightstones] << Paladin
+    >>|cRXP_WARN_If you loot any|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_turn them into|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
+    >>|cRXP_WARN_If you loot any|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_turn them into|r |T135255:0|t[Rough Weightstones] << Paladin
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
     .mob Kobold Tunneler
@@ -642,8 +642,8 @@ step
     .goto Elwynn Forest,37.71,83.76,25,0
     .goto Elwynn Forest,40.5,82.3
     >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Candles|r and |cRXP_LOOT_Dust|r
-    >>|cRXP_WARN_If you loot any|r |T135232:0|t[Rough Stones] |cRXP_WARN_turn them into|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
-    >>|cRXP_WARN_If you loot any|r |T135232:0|t[Rough Stones] |cRXP_WARN_turn them into|r |T135255:0|t[Rough Weightstones] << Paladin
+    >>|cRXP_WARN_If you loot any|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_turn them into|r |T135248:0|t[Rough Sharpening Stones] << Warrior/Rogue
+    >>|cRXP_WARN_If you loot any|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r |cRXP_WARN_turn them into|r |T135255:0|t[Rough Weightstones] << Paladin
     .complete 60,1 --Kobold Candle (8)
     .complete 47,1 --Gold Dust (10)
     .mob Kobold Tunneler
@@ -652,10 +652,10 @@ step << Warrior
     #completewith Goldtooth
     +|cRXP_WARN_Try to save a single|r |T134829:0|t[Minor Healing Potion] |cRXP_WARN_from now on as you will need it for Rolf's Corpse later|r
 step << Warrior/Rogue
-    >>|cRXP_WARN_Remember to make|r |T135248:0|t[Rough Sharpening Stones] |cRXP_WARN_if you picked up a|r |T135232:0|t[Rough Stones]
+    >>|cRXP_WARN_Remember to make|r |T135248:0|t[Rough Sharpening Stones] |cRXP_WARN_if you picked up a|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r
     .xp 7+1600 >>Grind until 1600+/4500xp
 step << Paladin
-    >>|cRXP_WARN_Remember to make|r |T135255:0|t[Rough Weightstones] |cRXP_WARN_if you picked up a|r |T135232:0|t[Rough Stones]
+    >>|cRXP_WARN_Remember to make|r |T135255:0|t[Rough Weightstones] |cRXP_WARN_if you picked up a|r |T135232:0|t|cRXP_LOOT_[Rough Stones]|r
     .xp 7+1600 >>Grind until 1600+/4500xp
 step << !Priest !Paladin !Warrior !Rogue
     .xp 7+1600 >>Grind until 1600+/4500xp
@@ -1888,7 +1888,7 @@ step
     .collect 3172,3,418,1 --Collect Boar Intestines (x3)
     .collect 3173,3,418,1 --Collect Bear Meat (x3)
     .collect 3174,3,418,1 --Collect Spider Ichor (x3)
-    >>|cRXP_WARN_Save any|r |T133970:0|t[Chunks of Boar Meat] |cRXP_WARN_to use for leveling |T133971:0|t[Cooking] |cRXP_WARN_later|r
+    >>|cRXP_WARN_Save any|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_to use for leveling |T133971:0|t[Cooking] |cRXP_WARN_later|r
     .mob Elder Black Bear
     .mob Mountain Boar
     .mob Forest Lurker
@@ -2217,7 +2217,7 @@ step << Human Paladin
     .target Duthorian Rall
 step << Human Paladin
     .goto StormwindClassic,39.80,29.77
-    .use 6775>>|cRXP_WARN_Use the |T133464:0|t[|cRXP_LOOT_The Tome of Divinity|r] to start the quest|r
+    .use 6775>>|cRXP_WARN_Use the |T133739:0|t[|cRXP_LOOT_The Tome of Divinity|r] to start the quest|r
     .accept 1642 >>Accept The Tome of Divinity
 step << Human Paladin
     .goto StormwindClassic,39.80,29.77

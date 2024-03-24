@@ -6,6 +6,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Gloves << Hunter
 #name Furious Thunder - 10 (Mulgore) << Warrior
 #name Explosive Shot - 10 (Mulgore) << Hunter
+#title Furious Thunder << Warrior
+#title Explosive Shot << Hunter
 
 
     --Rune of Furious Thunder/Explosive Shot
@@ -48,7 +50,8 @@ RXPGuides.RegisterGuide([[
 #subgroup Legs << Hunter
 #name Quick Strike - 18 (The Barrens) << Warrior
 #name Sniper Training - 16 (The Barrens) << Hunter
-
+#title Quick Strike << Warrior
+#title Sniper Training << Hunter
 
     --Rune of Quick Strike/Sniper Training
 

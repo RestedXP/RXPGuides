@@ -22,6 +22,9 @@ local L = addon.locale.Get
 -- File guides and string-imports need different load order support
 local embeddedGuides = {}
 
+addon.minGuideVersion = 0
+addon.maxGuideVersion = 0
+
 local function applies(textEntry,customClass)
     if textEntry then
         --if not(textEntry:match("Alliance") or textEntry:match("Horde")) then return true end
@@ -893,6 +896,8 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
             end
             if skipGuide then
                 guide.version = tonumber(guide.version) or 0
+                addon.minGuideVersion = math.min(guide.version,addon.minGuideVersion)
+                addon.maxGuideVersion = math.max(guide.version,addon.maxGuideVersion)
                 addon.guide = false
                 addon.lastEelement = nil
                 guide.key = guide.key or key
@@ -986,6 +991,8 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
 
     guide.key = addon.BuildGuideKey(guide)
     guide.version = tonumber(guide.version) or 0
+    addon.minGuideVersion = math.min(guide.version,addon.minGuideVersion)
+    addon.maxGuideVersion = math.max(guide.version,addon.maxGuideVersion)
 
     addon.guide = false
     addon.lastElement = nil
@@ -1010,16 +1017,16 @@ function addon.GroupOverride(guide)
         --if true then  return end
             local faction = guide.group:match("RestedXP ([AH][lo][lr][id][ea]%w*)")
             if faction == "Alliance" then
-                guide.subgroup = guide.group:gsub("RestedXP Alliance", "RXP Speedrun Guide")
+                guide.subgroup = guide.subgroup or guide.group:gsub("RestedXP Alliance", "RXP Speedrun Guide")
                 local group = "RestedXP Speedrun Guide (A)"
-                guide.next = guide.next and guide.next:gsub(".*\\","")
+                guide.next = guide.next and guide.next:gsub("[^;]-\\","")
                 guide.group = group
                 --print('\n',guide.group,guide.subgroup,faction,guide.name,'\n')
                 return group
             elseif faction == "Horde" then
-                guide.subgroup = guide.group:gsub("RestedXP Horde", "RXP Speedrun Guide")
+                guide.subgroup = guide.subgroup or guide.group:gsub("RestedXP Horde", "RXP Speedrun Guide")
                 local group = "RestedXP Speedrun Guide (H)"
-                guide.next = guide.next and guide.next:gsub(".*\\","")
+                guide.next = guide.next and guide.next:gsub("[^;]-\\","")
                 guide.group = group
                 --print(group,guide.subgroup,faction,guide.group,guide.name)
                 return group
