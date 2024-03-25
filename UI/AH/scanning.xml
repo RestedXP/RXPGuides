@@ -104,7 +104,7 @@
             </Layer>
         </Layers>
     </Button>
-    <Button name="RXP_IU_AH_ItemRow" hidden="false" virtual="true">
+    <Button name="RXP_IU_AH_ItemRow" hidden="false" virtual="true" enableMouse="true">
         <Size x="773" y="37"/>
         <Layers>
             <Layer level="BACKGROUND">
@@ -190,20 +190,22 @@
                 <Scripts>
                     <OnEnter>
                         local p = self:GetParent()
-						p:LockHighlight();
-                        <!--AuctionFrameItem_OnEnter(self, "bidder", self:GetParent():GetID() + FauxScrollFrame_GetOffset(BidScrollFrame));-->
                         if p.ItemID then
                             GameTooltip:SetOwner(self);
                             GameTooltip:SetItemByID(p.ItemID);
                             GameTooltip:Show();
                         end
+                        RXP.itemUpgrades.AH.RowOnEnter(p)
                     </OnEnter>
                     <OnLeave>
-                        self:GetParent():UnlockHighlight();
-                        <!--AuctionBrowseFrame_CheckUnlockHighlight(self, "bidder", FauxScrollFrame_GetOffset(BidScrollFrame));-->
+                        RXP.itemUpgrades.AH.RowOnLeave(self:GetParent())
 						GameTooltip_Hide();
 						ResetCursor();
                     </OnLeave>
+                    <OnClick>
+                        print("ItemIcon")
+                        RXP.itemUpgrades.AH.RowOnClick(self:GetParent())
+                    </OnClick>
                     <!--
                     <OnClick>
 						if ( IsModifiedClick() ) then
@@ -254,10 +256,10 @@
                 </Layers>
                 <Scripts>
                     <OnEnter>
-						self:GetParent():LockHighlight();
+						RXP.itemUpgrades.AH.RowOnEnter(self:GetParent())
                     </OnEnter>
                     <OnLeave>
-                        self:GetParent():UnlockHighlight();
+                        RXP.itemUpgrades.AH.RowOnLeave(self:GetParent())
                     </OnLeave>
                 </Scripts>
             </Frame>
@@ -282,10 +284,10 @@
                 </Layers>
                 <Scripts>
                     <OnEnter>
-						self:GetParent():LockHighlight();
+                        RXP.itemUpgrades.AH.RowOnEnter(self:GetParent())
                     </OnEnter>
                     <OnLeave>
-                        self:GetParent():UnlockHighlight();
+                        RXP.itemUpgrades.AH.RowOnLeave(self:GetParent())
                     </OnLeave>
                 </Scripts>
             </Frame>
@@ -310,6 +312,16 @@
             </Frame>
         </Frames>
         <Scripts>
+            <OnEnter>
+                RXP.itemUpgrades.AH.RowOnEnter(self)
+            </OnEnter>
+            <OnLeave>
+                RXP.itemUpgrades.AH.RowOnLeave(self)
+            </OnLeave>
+            <OnClick>
+                print("RXP_IU_AH_ItemRow")
+                RXP.itemUpgrades.AH.RowOnClick(self)
+            </OnClick>
             <!--
             <OnClick>
 				if ( IsModifiedClick() ) then
@@ -339,6 +351,14 @@
                 </Anchor>
             </Anchors>
             <TexCoords left="0" right="1.0" top="0" bottom="0.578125"/>
+            <Scripts>
+                <OnEnter>
+                    RXP.itemUpgrades.AH.RowOnEnter(self:GetParent())
+                </OnEnter>
+                <OnLeave>
+                    RXP.itemUpgrades.AH.RowOnLeave(self:GetParent())
+                </OnLeave>
+            </Scripts>
         </HighlightTexture>
     </Button>
     <Frame name="RXP_IU_AH_ItemBlock" hidden="false" virtual="true">
@@ -412,9 +432,7 @@
                 </Anchors>
             </Button>
             <Button name="RXP_IU_AH_Buyout" inherits="RXP_IU_AH_AuctionColumnButtonTemplate" text="AUCTION_PRICE">
-                <Size>
-                    <AbsDimension x="186" y="19"/>
-                </Size>
+                <Size x="186" y="19"/>
                 <Anchors>
                     <Anchor point="LEFT" relativeTo="RXP_IU_AH_UpgradeEP" relativePoint="RIGHT">
                         <Offset>
@@ -450,15 +468,9 @@
                 </Scripts>
             </Button>
             <Button name="RXP_IU_AH_BuyoutButton" inherits="UIPanelButtonTemplate" text="BUYOUT">
-                <Size>
-                    <AbsDimension x="80" y="22"/>
-                </Size>
+                <Size x="80" y="22"/>
                 <Anchors>
-                    <Anchor point="RIGHT" relativeTo="RXP_IU_AH_CloseButton" relativePoint="LEFT">
-                        <Offset>
-                            <AbsDimension x="0" y="0"/>
-                        </Offset>
-                    </Anchor>
+                    <Anchor point="RIGHT" relativeTo="RXP_IU_AH_CloseButton" relativePoint="LEFT"/>
                 </Anchors>
                 <Layers>
                     <Layer level="BORDER">
@@ -473,8 +485,11 @@
                 </Layers>
                 <Scripts>
                     <OnClick>
-                        StaticPopup_Show("BUYOUT_AUCTION");
+                        StaticPopup_Show("RXP_IU_AH_BUYOUT_AUCTION");
+                        <!--
                         self:Disable();
+                        PlaceAuctionBid("bidder", GetSelectedAuctionItem("bidder"), MoneyInputFrame_GetCopper(BidBidPrice))
+                        -->
                     </OnClick>
                 </Scripts>
             </Button>
@@ -494,12 +509,6 @@
                         </Texture>
                     </Layer>
                 </Layers>
-                <Scripts>
-                    <OnClick>
-                        <!--PlaceAuctionBid("bidder", GetSelectedAuctionItem("bidder"), MoneyInputFrame_GetCopper(BidBidPrice))
-                        self:Disable();-->
-                    </OnClick>
-                </Scripts>
             </Button>
         </Frames>
         <Scripts>

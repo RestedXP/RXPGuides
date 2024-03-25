@@ -1153,7 +1153,9 @@ local ahSession = {
     windowOpen = false,
     scanPage = 0,
     scanResults = 0,
-    scanType = AuctionFilterButtons["Armor"]
+    scanType = AuctionFilterButtons["Armor"],
+
+    selectedRow = nil
 }
 
 addon.itemUpgrades.AH = addon:NewModule("ItemUpgradesAH", "AceEvent-3.0")
@@ -1454,7 +1456,7 @@ local function getColorizedName(itemLink, itemName)
     local quality = C_Item.GetItemQualityByID(itemLink)
     local h = ITEM_QUALITY_COLORS[quality].hex
 
-    return h .. itemName
+    return h .. itemName .. '|r'
 end
 
 local function prettyPrintUpgradeColumn(data)
@@ -1470,6 +1472,33 @@ local function prettyPrintBudgetColumn(data)
                data.weightIncrease)
 end
 
+function addon.itemUpgrades.AH.RowOnEnter(row)
+    if ahSession.selectedRow == row then return end
+    row:LockHighlight()
+end
+
+function addon.itemUpgrades.AH.RowOnLeave(row)
+    if ahSession.selectedRow == row then return end
+    row:UnlockHighlight()
+end
+
+function addon.itemUpgrades.AH.RowOnClick(this)
+    print("frame.Best:OnClick", this.nodeData.ItemID, this.nodeData.Name,
+          this.nodeData.BuyoutMoney)
+
+    if ahSession.selectedRow == this then
+        ahSession.selectedRow = nil
+        this:UnlockHighlight()
+    else
+        -- Remove previous locked highlight
+        if ahSession.selectedRow then
+            ahSession.selectedRow:UnlockHighlight()
+        end
+        ahSession.selectedRow = this
+        this:LockHighlight()
+    end
+end
+
 local function Initializer(frame, data)
     frame.Header.Name:SetText(data.Name)
 
@@ -1477,6 +1506,7 @@ local function Initializer(frame, data)
     if d then
         local f = frame.Best
 
+        f.nodeData = d -- TODO minimize reference
         f.ItemLink = d.ItemLink
         f.ItemID = d.ItemID
         f.Name:SetText(d.Name)
@@ -1493,6 +1523,7 @@ local function Initializer(frame, data)
     if data.budget then
         local f = frame.Budget
 
+        f.nodeData = d
         f.ItemLink = d.ItemLink
         f.ItemID = d.ItemID
         f.Name:SetText(d.Name)
@@ -1550,7 +1581,7 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
         addon.itemUpgrades.AH:Scan()
     end)
 
-    _G.RXP_IU_AH_BuyoutButton:Disable()
+    -- _G.RXP_IU_AH_BuyoutButton:Disable()
 
     -- Create tab button
     local index = attachment.numTabs + 1
@@ -1605,6 +1636,25 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
     PanelTemplates_TabResize(tabButton, 0, nil, 36)
     PanelTemplates_SetNumTabs(attachment, index)
     PanelTemplates_EnableTab(attachment, index)
+
+    StaticPopupDialogs["RXP_IU_AH_BUYOUT_AUCTION"] = {
+        text = BUYOUT_AUCTION_CONFIRMATION,
+        button1 = ACCEPT,
+        button2 = CANCEL,
+        OnAccept = function(self)
+            PlaceAuctionBid("RXP", GetSelectedAuctionItem(AuctionFrame.type),
+                            AuctionFrame.buyoutPrice);
+        end,
+        OnShow = function(self)
+            MoneyFrame_Update(self.moneyFrame, AuctionFrame.buyoutPrice);
+        end,
+        OnCancel = function(self) BrowseBuyoutButton:Enable(); end,
+        hasMoneyFrame = 1,
+        showAlert = 1,
+        timeout = 0,
+        exclusive = 1,
+        hideOnEscape = 1
+    };
 end
 
 function addon.itemUpgrades.AH:DisplayEmbeddedResults()
