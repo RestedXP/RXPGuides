@@ -73,7 +73,11 @@ function addon.UpdateQuestButton(index)
                 end
                 local solo = step.solo or not step.group
                 local grpTbl = guides[entry.group]
-                grpTbl[entry.name] = grpTbl[entry.name] or solo
+                local entryDisplayName = entry.name
+                if step.index then
+                    entryDisplayName = entryDisplayName .. L(" at step ") .. step.index
+                end
+                grpTbl[entryDisplayName] = grpTbl[entryDisplayName] or solo
                 --print(entry.name,entry.group,solo,qid)
             end
         end
