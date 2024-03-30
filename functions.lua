@@ -57,9 +57,9 @@ events.collecttoy = "TOYS_UPDATED"
 events.collectpet = {"COMPANION_LEARNED", "COMPANION_UNLEARNED", "COMPANION_UPDATE", "NEW_PET_ADDED"}
 events.tradeskill = events.train
 events.cooldown = "SPELL_UPDATE_COOLDOWN"
-events.mob = "UNIT_TARGET"
-events.unitscan = "UNIT_TARGET"
-events.target = "UNIT_TARGET"
+events.mob = {"UNIT_TARGET","QUEST_TURNED_IN","QUEST_ACCEPTED"}
+events.unitscan = events.mob
+events.target = events.mob
 
 events.bankwithdraw = events.bankdeposit
 events.abandon = events.complete
@@ -4260,6 +4260,9 @@ function addon.functions.gossip(self, text, npc, length)
         --print(element.level, element.length)
         if element.level >= element.length then
             addon.SetElementComplete(self)
+            if element.timer then
+                addon.StartTimer(element.timer, element.timerText)
+            end
         end
         element.level = -1
     end
