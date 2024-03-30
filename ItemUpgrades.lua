@@ -1616,7 +1616,7 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
 
         ahSession.displayFrame:Show()
 
-        _G.AuctionFrame.type = nil
+        _G.AuctionFrame.type = "RXP"
         _G.SetAuctionsTabShowing(false)
         PanelTemplates_SelectTab(this)
     end
@@ -1635,6 +1635,14 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
         tabButton:Selected()
     end)
 
+    hooksecurefunc("PlaceAuctionBid", function(aType, aIndex, bid)
+        if _G.AuctionFrame.type ~= "RXP" or not ahSession.selectedRow then
+            return
+        end
+
+        print("aType", aType)
+    end)
+
     PanelTemplates_TabResize(tabButton, 0, nil, 36)
     PanelTemplates_SetNumTabs(attachment, index)
     PanelTemplates_EnableTab(attachment, index)
@@ -1644,13 +1652,13 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
         button1 = ACCEPT,
         button2 = CANCEL,
         OnAccept = function(this)
-            PlaceAuctionBid("RXP", GetSelectedAuctionItem(AuctionFrame.type),
-                            AuctionFrame.buyoutPrice);
+            print('Would have bought ' .. GetSelectedAuctionItem("RXP") ..
+                      ' for ' .. ahSession.selectedRow.nodeData.BuyoutMoney)
+            -- PlaceAuctionBid("RXP", 2,ahSession.selectedRow.nodeData.BuyoutMoney - 10);
         end,
         OnShow = function(this)
-            RXPD = ahSession.selectedRow
             MoneyFrame_Update(this.moneyFrame,
-                              ahSession.selectedRow.nodeData.BuyoutMoney);
+                              ahSession.selectedRow.nodeData.BuyoutMoney - 10);
         end,
         OnCancel = function(this) _G.RXP_IU_AH_BuyoutButton:Enable() end,
         hasMoneyFrame = 1,
