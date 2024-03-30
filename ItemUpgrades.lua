@@ -1489,6 +1489,7 @@ function addon.itemUpgrades.AH.RowOnClick(this)
     if ahSession.selectedRow == this then
         ahSession.selectedRow = nil
         this:UnlockHighlight()
+        _G.RXP_IU_AH_BuyoutButton:Disable()
     else
         -- Remove previous locked highlight
         if ahSession.selectedRow then
@@ -1496,6 +1497,7 @@ function addon.itemUpgrades.AH.RowOnClick(this)
         end
         ahSession.selectedRow = this
         this:LockHighlight()
+        _G.RXP_IU_AH_BuyoutButton:Enable()
     end
 end
 
@@ -1581,7 +1583,7 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
         addon.itemUpgrades.AH:Scan()
     end)
 
-    -- _G.RXP_IU_AH_BuyoutButton:Disable()
+    _G.RXP_IU_AH_BuyoutButton:Disable()
 
     -- Create tab button
     local index = attachment.numTabs + 1
@@ -1646,15 +1648,17 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
                             AuctionFrame.buyoutPrice);
         end,
         OnShow = function(this)
-            MoneyFrame_Update(self.moneyFrame, AuctionFrame.buyoutPrice);
+            RXPD = ahSession.selectedRow
+            MoneyFrame_Update(this.moneyFrame,
+                              ahSession.selectedRow.nodeData.BuyoutMoney);
         end,
-        OnCancel = function(this) BrowseBuyoutButton:Enable(); end,
+        OnCancel = function(this) _G.RXP_IU_AH_BuyoutButton:Enable() end,
         hasMoneyFrame = 1,
         showAlert = 1,
         timeout = 0,
         exclusive = 1,
         hideOnEscape = 1
-    };
+    }
 end
 
 function addon.itemUpgrades.AH:DisplayEmbeddedResults()

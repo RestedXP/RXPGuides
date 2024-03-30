@@ -476,8 +476,8 @@
                 <Scripts>
                     <OnClick>
                         StaticPopup_Show("RXP_IU_AH_BUYOUT_AUCTION");
-                        <!--
                         self:Disable();
+                        <!--
                         PlaceAuctionBid("bidder", GetSelectedAuctionItem("bidder"), MoneyInputFrame_GetCopper(BidBidPrice))
                         -->
                     </OnClick>
@@ -501,12 +501,5 @@
                 </Layers>
             </Button>
         </Frames>
-        <Scripts>
-            <!--
-            <OnLoad function="RXP_IU_AH_OnLoad"/>
-            <OnShow function="RXP_IU_AH_OnShow"/>
-            <OnEvent function="RXP_IU_AH_OnEvent"/>
-            -->
-        </Scripts>
     </Frame>
 </Ui>
