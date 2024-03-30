@@ -203,7 +203,6 @@
 						ResetCursor();
                     </OnLeave>
                     <OnClick>
-                        print("ItemIcon")
                         RXP.itemUpgrades.AH.RowOnClick(self:GetParent())
                     </OnClick>
                     <!--
@@ -319,7 +318,6 @@
                 RXP.itemUpgrades.AH.RowOnLeave(self)
             </OnLeave>
             <OnClick>
-                print("RXP_IU_AH_ItemRow")
                 RXP.itemUpgrades.AH.RowOnClick(self)
             </OnClick>
             <!--
@@ -351,14 +349,6 @@
                 </Anchor>
             </Anchors>
             <TexCoords left="0" right="1.0" top="0" bottom="0.578125"/>
-            <Scripts>
-                <OnEnter>
-                    RXP.itemUpgrades.AH.RowOnEnter(self:GetParent())
-                </OnEnter>
-                <OnLeave>
-                    RXP.itemUpgrades.AH.RowOnLeave(self:GetParent())
-                </OnLeave>
-            </Scripts>
         </HighlightTexture>
     </Button>
     <Frame name="RXP_IU_AH_ItemBlock" hidden="false" virtual="true">
@@ -372,7 +362,7 @@
                 <Anchors>
                     <Anchor point="TOPRIGHT" relativeKey="$parent.Header" relativePoint="BOTTOMRIGHT"/>
                 </Anchors>
-            </Button>7
+            </Button>
             <Button inherits="RXP_IU_AH_ItemRow" parentKey="Budget">
                 <Anchors>
                     <Anchor point="TOPLEFT" relativeKey="$parent.Best" relativePoint="BOTTOMLEFT"/>

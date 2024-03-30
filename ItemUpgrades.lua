@@ -1483,7 +1483,7 @@ function addon.itemUpgrades.AH.RowOnLeave(row)
 end
 
 function addon.itemUpgrades.AH.RowOnClick(this)
-    print("frame.Best:OnClick", this.nodeData.ItemID, this.nodeData.Name,
+    print("row:OnClick", this.nodeData.ItemID, this.nodeData.Name,
           this.nodeData.BuyoutMoney)
 
     if ahSession.selectedRow == this then
@@ -1641,14 +1641,14 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
         text = BUYOUT_AUCTION_CONFIRMATION,
         button1 = ACCEPT,
         button2 = CANCEL,
-        OnAccept = function(self)
+        OnAccept = function(this)
             PlaceAuctionBid("RXP", GetSelectedAuctionItem(AuctionFrame.type),
                             AuctionFrame.buyoutPrice);
         end,
-        OnShow = function(self)
+        OnShow = function(this)
             MoneyFrame_Update(self.moneyFrame, AuctionFrame.buyoutPrice);
         end,
-        OnCancel = function(self) BrowseBuyoutButton:Enable(); end,
+        OnCancel = function(this) BrowseBuyoutButton:Enable(); end,
         hasMoneyFrame = 1,
         showAlert = 1,
         timeout = 0,
@@ -1705,7 +1705,7 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
     end
 end
 
--- Make rows clickable
 -- Support actually buying the thing
 -- fix randomly generated tooltip
 -- only display one row if same item, stack/stagger ItemKindIcon
+-- Update icons to Brandung mockup
