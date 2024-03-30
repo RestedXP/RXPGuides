@@ -952,7 +952,6 @@ function addon:CreateMetaDataTable(wipe)
     end
     local guideMetaData = RXPData.guideMetaData or {}
     RXPData.guideMetaData = guideMetaData
-    guideMetaData.headers = guideMetaData.headers or {}
     RXPCData.guideDisabled = RXPCData.guideDisabled or {}
     guideMetaData.dungeonGuides = guideMetaData.dungeonGuides or {}
     guideMetaData.enabledDungeons = guideMetaData.enabledDungeons or {}
@@ -1024,9 +1023,6 @@ function addon:OnInitialize()
     end
 
     addon.LoadCachedGuides()
-    --A1 = GetTimePreciseSec()
-    addon.LoadEmbeddedGuides()
-    --A1 = GetTimePreciseSec() - A1
     addon.UpdateGuideFontSize()
     addon.isHidden = not addon.settings.profile.showEnabled or addon.settings.profile.hideGuideWindow
     addon.RXPFrame:SetShown(not addon.isHidden)
@@ -1051,7 +1047,7 @@ function addon:OnEnable()
         addon.RXPFrame.BottomFrame.UpdateFrame()
         addon.noGuide = true
     end
-    addon.RXPFrame.GenerateMenuTable()
+    --addon.RXPFrame.GenerateMenuTable()
 
     self:RegisterEvent("GET_ITEM_INFO_RECEIVED")
     self:RegisterEvent("BAG_UPDATE_DELAYED")

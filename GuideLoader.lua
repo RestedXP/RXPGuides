@@ -519,11 +519,18 @@ function addon.ProcessInputBuffer(workerFrame)
     return false
 end
 
+local embeddedGuidesLoaded
 function addon.LoadEmbeddedGuides()
     if not addon.db then
         error('Initialization error, db not set')
         return
     end
+    if embeddedGuidesLoaded then
+        return
+    else
+        embeddedGuidesLoaded = true
+    end
+    --A1 = GetTimePreciseSec()
     if RXPCData.guideDisabled[0] ~= #embeddedGuides then
         RXPCData.guideDisabled = {[0] = #embeddedGuides}
     end
@@ -636,6 +643,9 @@ function addon.LoadEmbeddedGuides()
     else
         embeddedGuides = {}
     end
+
+    --A1 = GetTimePreciseSec() - A1
+    addon.RXPFrame.GenerateMenuTable()
 end
 
 function addon.BuildGuideKey(arg1,arg2,arg3)
