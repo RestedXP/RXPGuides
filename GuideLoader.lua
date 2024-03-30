@@ -524,15 +524,19 @@ function addon.LoadEmbeddedGuides()
         error('Initialization error, db not set')
         return
     end
-
-    for _, guideData in pairs(embeddedGuides) do
+    if RXPCData.guideDisabled[0] ~= #embeddedGuides then
+        RXPCData.guideDisabled = {[0] = #embeddedGuides}
+    end
+    for n, guideData in ipairs(embeddedGuides) do
         if guideData.cache then
             addon.ImportGuide(guideData.groupOrContent, guideData.text,
                               guideData.defaultFor, true)
         else
             local guide, errorMsg, metadata, length, key, group, name
             local enabled = true
-            if not guideData.text then
+            if RXPCData.guideDisabled[n] then
+                enabled = false
+            elseif not guideData.text then
                 length = guideData.groupOrContent:len()
                 local index = guideData.groupOrContent:find("[\r\n]%s*step")
                 local header = index and guideData.groupOrContent:sub(1,index)
@@ -567,9 +571,12 @@ function addon.LoadEmbeddedGuides()
                         name = name or line:match("^%s*#name%s+(.-)%s*$")
                     end
                     enabled = enabled and (not enabledFor or applies(enabledFor))
+
                     if enabled then
                         key = addon.BuildGuideKey(group,subgroup,name)
                         guide = key and RXPData.guideMetaData[key]
+                    else
+                        RXPCData.guideDisabled[n] = length
                     end
                 end
                 --print('g-ok',guide and guide.length)

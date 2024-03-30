@@ -85,7 +85,7 @@ end
 local GetAddOnMetadata = C_AddOns and C_AddOns.GetAddOnMetadata or _G.GetAddOnMetadata
 addon.release = GetAddOnMetadata(addonName, "Version")
 addon.title = GetAddOnMetadata(addonName, "Title")
-local cacheVersion = false
+local cacheVersion = 20
 local L = addon.locale.Get
 
 if string.match(addon.release, 'project') then
@@ -948,9 +948,12 @@ end
 function addon:CreateMetaDataTable(wipe)
     if wipe or addon.release ~= RXPData.release or RXPData.cacheVersion ~= cacheVersion or not cacheVersion then
         RXPData.guideMetaData = nil
+        RXPCData.guideDisabled = nil
     end
     local guideMetaData = RXPData.guideMetaData or {}
     RXPData.guideMetaData = guideMetaData
+    guideMetaData.headers = guideMetaData.headers or {}
+    RXPCData.guideDisabled = RXPCData.guideDisabled or {}
     guideMetaData.dungeonGuides = guideMetaData.dungeonGuides or {}
     guideMetaData.enabledDungeons = guideMetaData.enabledDungeons or {}
     guideMetaData.enabledDungeons.Horde = guideMetaData.enabledDungeons.Horde or {}
@@ -1021,7 +1024,9 @@ function addon:OnInitialize()
     end
 
     addon.LoadCachedGuides()
+    --A1 = GetTimePreciseSec()
     addon.LoadEmbeddedGuides()
+    --A1 = GetTimePreciseSec() - A1
     addon.UpdateGuideFontSize()
     addon.isHidden = not addon.settings.profile.showEnabled or addon.settings.profile.hideGuideWindow
     addon.RXPFrame:SetShown(not addon.isHidden)
