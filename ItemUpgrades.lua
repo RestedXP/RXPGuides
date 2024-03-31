@@ -1204,10 +1204,63 @@ function addon.itemUpgrades.AH:GET_ITEM_INFO_RECEIVED(_, itemID, success)
     ahSession.infoItemsReceived[itemID] = true
 end
 
+function addon.itemUpgrades.AH:SearchForBuyoutItem(nodeData)
+    if not CanSendAuctionQuery() then
+        -- print("addon.itemUpgrades.AH:Scan() - queued", ahSession.scanPage, ahSession.scanType)
+
+        C_Timer.After(0.35, function() self:SearchForBuyoutItem(nodeData) end)
+        return
+    end
+
+    print("SearchForBuyoutItem", nodeData.name)
+    -- TODO scan page handling
+    -- TODO handle randomized items
+    -- text, minLevel, maxLevel, page, usable, rarity, getAll, exactMatch, filterData
+    QueryAuctionItems(nodeData.name, nodeData.ItemLevel, nodeData.ItemLevel, 0,
+                      true, Enum.ItemQuality.Uncommon, false, true,
+                      AuctionCategories[ahSession.scanType].filters)
+end
+
+function addon.itemUpgrades.AH:FindItemOnPage(nodeData)
+    if not nodeData then
+        print("FindItemOnPage error: selectedRow nil")
+        return
+    end
+
+    local resultCount = GetNumAuctionItems("list")
+
+    if resultCount == 0 then
+        print("FindItemOnPage error: no results")
+        return
+    end
+
+    print("FindItemOnPage", nodeData.Name, resultCount)
+    local itemLink
+    local buyoutPrice, itemID
+
+    for i = 1, resultCount do
+        itemLink = GetAuctionItemLink("list", i)
+
+        -- name, texture, count, quality, canUse, level, levelColHeader, minBid, minIncrement, buyoutPrice, bidAmount, highBidder, bidderFullName, owner, ownerFullName, saleStatus, itemId, hasAllInfo = GetAuctionItemInfo(type, index)
+        _, _, _, _, _, _, _, _, _, buyoutPrice, _, _, _, _, _, _, itemID, _ =
+            GetAuctionItemInfo("list", i)
+        print("Evaluating", i, itemLink, buyoutPrice)
+
+        if itemID == nodeData.ItemID and itemLink == nodeData.ItemLink and
+            buyoutPrice == nodeData.BuyoutMoney then return i end
+
+    end
+end
+
 -- Triggers each time the scroll panel is updated
 -- Scrolling, initial population
 -- Blizzard's standard auction house view overcomes this problem by reacting to AUCTION_ITEM_LIST_UPDATE and re-querying the items.
 function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
+    if ahSession.selectedRow and ahSession.selectedRow.nodeData then
+        -- TODO reduce duplicate calls
+        self:FindItemOnPage(ahSession.selectedRow.nodeData)
+    end
+
     if not ahSession.sentQuery then return end
 
     local resultCount, totalAuctions = GetNumAuctionItems("list")
@@ -1233,13 +1286,13 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
     end
 
     local itemLink
-    local name, level, buyoutPrice, itemID
+    local name, texture, level, buyoutPrice, itemID
 
     for i = 1, resultCount do
         itemLink = GetAuctionItemLink("list", i)
 
         -- name, texture, count, quality, canUse, level, levelColHeader, minBid, minIncrement, buyoutPrice, bidAmount, highBidder, bidderFullName, owner, ownerFullName, saleStatus, itemId, hasAllInfo = GetAuctionItemInfo(type, index)
-        name, _, _, _, _, level, _, _, _, buyoutPrice, _, _, _, _, _, _, itemID, _ =
+        name, texture, _, _, _, level, _, _, _, buyoutPrice, _, _, _, _, _, _, itemID, _ =
             GetAuctionItemInfo("list", i)
 
         -- TODO if not hasAllInfo
@@ -1252,7 +1305,9 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
                 name = name,
                 lowestPrice = buyoutPrice,
                 itemID = itemID,
-                level = level
+                level = level,
+                scanType = ahSession.scanType, -- TODO propagate scanType for proper filters
+                texture = texture -- TODO use texture in itemIcom
             }
         end
 
@@ -1497,7 +1552,12 @@ function addon.itemUpgrades.AH.RowOnClick(this)
         end
         ahSession.selectedRow = this
         this:LockHighlight()
-        _G.RXP_IU_AH_BuyoutButton:Enable()
+
+        if this.nodeData.BuyoutMoney <= GetMoney() then
+            _G.RXP_IU_AH_BuyoutButton:Enable()
+        else
+            _G.RXP_IU_AH_BuyoutButton:Disable()
+        end
     end
 end
 
@@ -1512,7 +1572,7 @@ local function Initializer(frame, data)
         f.ItemLink = d.ItemLink
         f.ItemID = d.ItemID
         f.Name:SetText(d.Name)
-        f.ItemLevel.Text:SetText(d.ItemLevelText)
+        f.ItemLevel.Text:SetText(d.ItemLevel)
         f.UpdateEP.Text:SetText(d.UpdateEPText)
         f.ItemIcon:SetNormalTexture(d.ItemIcon)
         setKindIcon(f.ItemIcon, d.ItemKindIcon)
@@ -1529,7 +1589,7 @@ local function Initializer(frame, data)
         f.ItemLink = d.ItemLink
         f.ItemID = d.ItemID
         f.Name:SetText(d.Name)
-        f.ItemLevel.Text:SetText(d.ItemLevelText)
+        f.ItemLevel.Text:SetText(d.ItemLevel)
         f.UpdateEP.Text:SetText(d.UpdateEPText)
         f.ItemIcon:SetNormalTexture(d.ItemIcon)
         setKindIcon(f.ItemIcon, d.ItemKindIcon)
@@ -1616,7 +1676,7 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
 
         ahSession.displayFrame:Show()
 
-        _G.AuctionFrame.type = "RXP"
+        _G.AuctionFrame.type = "list"
         _G.SetAuctionsTabShowing(false)
         PanelTemplates_SelectTab(this)
     end
@@ -1636,11 +1696,11 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
     end)
 
     hooksecurefunc("PlaceAuctionBid", function(aType, aIndex, bid)
-        if _G.AuctionFrame.type ~= "RXP" or not ahSession.selectedRow then
+        if _G.AuctionFrame.type ~= "list" or not ahSession.selectedRow then
             return
         end
 
-        print("aType", aType)
+        print("aType", aType, "aIndex", aIndex, "bid", bid)
     end)
 
     PanelTemplates_TabResize(tabButton, 0, nil, 36)
@@ -1652,9 +1712,13 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
         button1 = ACCEPT,
         button2 = CANCEL,
         OnAccept = function(this)
-            print('Would have bought ' .. GetSelectedAuctionItem("RXP") ..
-                      ' for ' .. ahSession.selectedRow.nodeData.BuyoutMoney)
-            -- PlaceAuctionBid("RXP", 2,ahSession.selectedRow.nodeData.BuyoutMoney - 10);
+            self:SearchForBuyoutItem(ahSession.selectedRow.nodeData)
+            -- TODO retry/async
+            local i = self:FindItemOnPage(ahSession.selectedRow.nodeData)
+            print('Would have bought ' .. i .. ' for ' ..
+                      ahSession.selectedRow.nodeData.BuyoutMoney)
+            PlaceAuctionBid("list", i,
+                            ahSession.selectedRow.nodeData.BuyoutMoney - 10);
         end,
         OnShow = function(this)
             MoneyFrame_Update(this.moneyFrame,
@@ -1687,7 +1751,7 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
                         "/Textures/rxp_logo-64",
                     Name = getColorizedName(data.relative.itemLink,
                                             data.relative.name),
-                    ItemLevelText = data.relative.level,
+                    ItemLevel = data.relative.level,
                     UpdateEPText = prettyPrintUpgradeColumn(data.relative),
                     BuyoutMoney = data.relative.lowestPrice,
                     ItemIcon = GetItemIcon(data.relative.itemLink) -- TODO fix randomized items link
@@ -1701,7 +1765,7 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
                     ItemKindIcon = 'Interface/GossipFrame/VendorGossipIcon.blp',
                     Name = getColorizedName(data.budget.itemLink,
                                             data.budget.name),
-                    ItemLevelText = data.budget.level,
+                    ItemLevel = data.budget.level,
                     UpdateEPText = prettyPrintBudgetColumn(data.budget),
                     BuyoutMoney = data.budget.lowestPrice,
                     ItemIcon = GetItemIcon(data.budget.itemLink) -- TODO fix randomized items link
@@ -1721,3 +1785,5 @@ end
 -- fix randomly generated tooltip
 -- only display one row if same item, stack/stagger ItemKindIcon
 -- Update icons to Brandung mockup
+-- fix last item remnant
+-- Add owner to scanData for additional buyout validation
