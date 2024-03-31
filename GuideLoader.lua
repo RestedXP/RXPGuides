@@ -580,7 +580,7 @@ function addon.LoadEmbeddedGuides()
                     enabled = enabled and (not enabledFor or applies(enabledFor))
 
                     if enabled then
-                        key = addon.BuildGuideKey(group,subgroup,name)
+                        key = addon.BuildGuideKey(group,"",name)
                         guide = key and RXPData.guideMetaData[key]
                     else
                         RXPCData.guideDisabled[n] = length
@@ -1028,27 +1028,35 @@ function addon.ParseGuide(groupOrContent, text, defaultFor, isEmbedded, group, k
 end
 
 
-function addon.GroupOverride(guide)
+function addon.GroupOverride(guide,arg2)
+    local function SwapGroup(grp,subgrp)
+        local faction = grp:match("RestedXP ([AH][lo][lr][id][ea]%w*)")
+        --local group,subgroup
+        if faction == "Alliance" then
+            subgrp = subgrp or grp:gsub("RestedXP Alliance", "RXP Speedrun Guide")
+            grp = "RestedXP Speedrun Guide (A)"
+            --print('\n',grp,subgrp,faction,type(guide) == "table" and guide.name,'\n')
+        elseif faction == "Horde" then
+            subgrp = subgrp or grp:gsub("RestedXP Horde", "RXP Speedrun Guide")
+            grp = "RestedXP Speedrun Guide (H)"
+            --print(group,guide.subgroup,faction,guide.group,guide.name)
+        end
+        return grp,subgrp
+    end
+
     if type(guide) == "table" then
         if guide.group then
         --if true then  return end
-            local faction = guide.group:match("RestedXP ([AH][lo][lr][id][ea]%w*)")
-            if faction == "Alliance" then
-                guide.subgroup = guide.subgroup or guide.group:gsub("RestedXP Alliance", "RXP Speedrun Guide")
-                local group = "RestedXP Speedrun Guide (A)"
-                guide.next = guide.next and guide.next:gsub("[^;]-\\","")
-                guide.group = group
-                --print('\n',guide.group,guide.subgroup,faction,guide.name,'\n')
-                return group
-            elseif faction == "Horde" then
-                guide.subgroup = guide.subgroup or guide.group:gsub("RestedXP Horde", "RXP Speedrun Guide")
-                local group = "RestedXP Speedrun Guide (H)"
-                guide.next = guide.next and guide.next:gsub("[^;]-\\","")
-                guide.group = group
-                --print(group,guide.subgroup,faction,guide.group,guide.name)
-                return group
-            end
+            local group
+            group, guide.subgroup = SwapGroup(guide.group,guide.subgroup)
+            guide.group = group
+            guide.next = guide.next and guide.next:gsub("[^;]-\\","")
+            --print(group,'//',guide.subgroup)
+            return group
         end
+    elseif type(guide) == "string" then
+        --print(guide,arg2)
+        return SwapGroup(guide,arg2)
     else
         return guide
     end
