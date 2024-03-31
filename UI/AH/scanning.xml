@@ -457,7 +457,7 @@
                     </OnClick>
                 </Scripts>
             </Button>
-            <Button name="RXP_IU_AH_BuyoutButton" inherits="UIPanelButtonTemplate" text="BUYOUT">
+            <Button name="RXP_IU_AH_BuyButton" inherits="UIPanelButtonTemplate" text="BUYOUT">
                 <Size x="80" y="22"/>
                 <Anchors>
                     <Anchor point="RIGHT" relativeTo="RXP_IU_AH_CloseButton" relativePoint="LEFT"/>
@@ -475,8 +475,8 @@
                 </Layers>
                 <Scripts>
                     <OnClick>
-                        StaticPopup_Show("RXP_IU_AH_BUYOUT_AUCTION");
                         self:Disable();
+                        RXP.itemUpgrades.AH:SearchForSelectedItem();
                         <!--
                         PlaceAuctionBid("bidder", GetSelectedAuctionItem("bidder"), MoneyInputFrame_GetCopper(BidBidPrice))
                         -->
@@ -486,7 +486,7 @@
             <Button name="RXP_IU_AH_SearchButton" inherits="UIPanelButtonTemplate" text="SEARCH">
                 <Size x="80" y="22"/>
                 <Anchors>
-                    <Anchor point="RIGHT" relativeTo="RXP_IU_AH_BuyoutButton" relativePoint="LEFT"/>
+                    <Anchor point="RIGHT" relativeTo="RXP_IU_AH_BuyButton" relativePoint="LEFT"/>
                 </Anchors>
                 <Layers>
                     <Layer level="BORDER">

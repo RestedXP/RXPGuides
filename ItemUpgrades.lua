@@ -1136,8 +1136,8 @@ function addon.itemUpgrades.Test()
     end
 end
 
-local CanSendAuctionQuery, QueryAuctionItems = _G.CanSendAuctionQuery,
-                                               _G.QueryAuctionItems
+local CanSendAuctionQuery, QueryAuctionItems, SetSelectedAuctionItem =
+    _G.CanSendAuctionQuery, _G.QueryAuctionItems, _G.SetSelectedAuctionItem
 local GetNumAuctionItems, GetAuctionItemLink, GetAuctionItemInfo =
     _G.GetNumAuctionItems, _G.GetAuctionItemLink, _G.GetAuctionItemInfo
 
@@ -1204,21 +1204,34 @@ function addon.itemUpgrades.AH:GET_ITEM_INFO_RECEIVED(_, itemID, success)
     ahSession.infoItemsReceived[itemID] = true
 end
 
+-- Helper function for scanning.xml RXP_IU_AH_BuyButton:OnClick
+function addon.itemUpgrades.AH:SearchForSelectedItem()
+    return self:SearchForBuyoutItem(ahSession.selectedRow.nodeData)
+end
+
+local function getNameFromLink(itemLink)
+    return string.match(itemLink, "h%[(.*)%]|h")
+end
+
 function addon.itemUpgrades.AH:SearchForBuyoutItem(nodeData)
-    if not CanSendAuctionQuery() then
-        -- print("addon.itemUpgrades.AH:Scan() - queued", ahSession.scanPage, ahSession.scanType)
 
-        C_Timer.After(0.35, function() self:SearchForBuyoutItem(nodeData) end)
-        return
-    end
+    -- print("SearchForBuyoutItem", nodeData.Name)
 
-    print("SearchForBuyoutItem", nodeData.name)
+    if _G.BrowseResetButton then _G.BrowseResetButton:Click() end
+
+    _G.BrowseName:SetText(getNameFromLink(nodeData.ItemLink))
+    _G.BrowseMinLevel:SetText(nodeData.ItemLevel)
+    _G.BrowseMaxLevel:SetText(nodeData.ItemLevel)
+
+    -- Sort to make item very likely on first page
+    -- sortTable, sortColumn, oppositeOrder
+    _G.AuctionFrame_SetSort("list", "bid", false);
+    _G.AuctionFrameTab1:Click()
+
+    -- Pre-populates UI, so let user retry if server overloaded
+    if CanSendAuctionQuery() then _G.AuctionFrameBrowse_Search() end
+
     -- TODO scan page handling
-    -- TODO handle randomized items
-    -- text, minLevel, maxLevel, page, usable, rarity, getAll, exactMatch, filterData
-    QueryAuctionItems(nodeData.name, nodeData.ItemLevel, nodeData.ItemLevel, 0,
-                      true, Enum.ItemQuality.Uncommon, false, true,
-                      AuctionCategories[ahSession.scanType].filters)
 end
 
 function addon.itemUpgrades.AH:FindItemOnPage(nodeData)
@@ -1234,7 +1247,7 @@ function addon.itemUpgrades.AH:FindItemOnPage(nodeData)
         return
     end
 
-    print("FindItemOnPage", nodeData.Name, resultCount)
+    -- print("FindItemOnPage", nodeData.Name, resultCount)
     local itemLink
     local buyoutPrice, itemID
 
@@ -1244,20 +1257,26 @@ function addon.itemUpgrades.AH:FindItemOnPage(nodeData)
         -- name, texture, count, quality, canUse, level, levelColHeader, minBid, minIncrement, buyoutPrice, bidAmount, highBidder, bidderFullName, owner, ownerFullName, saleStatus, itemId, hasAllInfo = GetAuctionItemInfo(type, index)
         _, _, _, _, _, _, _, _, _, buyoutPrice, _, _, _, _, _, _, itemID, _ =
             GetAuctionItemInfo("list", i)
-        print("Evaluating", i, itemLink, buyoutPrice)
+        -- print("Evaluating", i, itemLink, buyoutPrice)
 
         if itemID == nodeData.ItemID and itemLink == nodeData.ItemLink and
-            buyoutPrice == nodeData.BuyoutMoney then return i end
+            buyoutPrice == nodeData.BuyoutMoney then
+            SetSelectedAuctionItem("list", i)
+            return i
+        end
 
     end
+
+    -- TODO handle pagination
+    -- Rely on BrowseNextPageButton:Click() :IsEnabled for easy pagination handling
 end
 
 -- Triggers each time the scroll panel is updated
 -- Scrolling, initial population
 -- Blizzard's standard auction house view overcomes this problem by reacting to AUCTION_ITEM_LIST_UPDATE and re-querying the items.
 function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
+    -- TODO prevent overwriting/blocking full scan
     if ahSession.selectedRow and ahSession.selectedRow.nodeData then
-        -- TODO reduce duplicate calls
         self:FindItemOnPage(ahSession.selectedRow.nodeData)
     end
 
@@ -1544,7 +1563,7 @@ function addon.itemUpgrades.AH.RowOnClick(this)
     if ahSession.selectedRow == this then
         ahSession.selectedRow = nil
         this:UnlockHighlight()
-        _G.RXP_IU_AH_BuyoutButton:Disable()
+        _G.RXP_IU_AH_BuyButton:Disable()
     else
         -- Remove previous locked highlight
         if ahSession.selectedRow then
@@ -1554,9 +1573,9 @@ function addon.itemUpgrades.AH.RowOnClick(this)
         this:LockHighlight()
 
         if this.nodeData.BuyoutMoney <= GetMoney() then
-            _G.RXP_IU_AH_BuyoutButton:Enable()
+            _G.RXP_IU_AH_BuyButton:Enable()
         else
-            _G.RXP_IU_AH_BuyoutButton:Disable()
+            _G.RXP_IU_AH_BuyButton:Disable()
         end
     end
 end
@@ -1643,7 +1662,7 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
         addon.itemUpgrades.AH:Scan()
     end)
 
-    _G.RXP_IU_AH_BuyoutButton:Disable()
+    _G.RXP_IU_AH_BuyButton:Disable()
 
     -- Create tab button
     local index = attachment.numTabs + 1
@@ -1706,31 +1725,6 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
     PanelTemplates_TabResize(tabButton, 0, nil, 36)
     PanelTemplates_SetNumTabs(attachment, index)
     PanelTemplates_EnableTab(attachment, index)
-
-    StaticPopupDialogs["RXP_IU_AH_BUYOUT_AUCTION"] = {
-        text = BUYOUT_AUCTION_CONFIRMATION,
-        button1 = ACCEPT,
-        button2 = CANCEL,
-        OnAccept = function(this)
-            self:SearchForBuyoutItem(ahSession.selectedRow.nodeData)
-            -- TODO retry/async
-            local i = self:FindItemOnPage(ahSession.selectedRow.nodeData)
-            print('Would have bought ' .. i .. ' for ' ..
-                      ahSession.selectedRow.nodeData.BuyoutMoney)
-            PlaceAuctionBid("list", i,
-                            ahSession.selectedRow.nodeData.BuyoutMoney - 10);
-        end,
-        OnShow = function(this)
-            MoneyFrame_Update(this.moneyFrame,
-                              ahSession.selectedRow.nodeData.BuyoutMoney - 10);
-        end,
-        OnCancel = function(this) _G.RXP_IU_AH_BuyoutButton:Enable() end,
-        hasMoneyFrame = 1,
-        showAlert = 1,
-        timeout = 0,
-        exclusive = 1,
-        hideOnEscape = 1
-    }
 end
 
 function addon.itemUpgrades.AH:DisplayEmbeddedResults()
@@ -1781,9 +1775,9 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
     end
 end
 
--- Support actually buying the thing
 -- fix randomly generated tooltip
 -- only display one row if same item, stack/stagger ItemKindIcon
 -- Update icons to Brandung mockup
 -- fix last item remnant
 -- Add owner to scanData for additional buyout validation
+-- Fix row money frames resetting to player money
