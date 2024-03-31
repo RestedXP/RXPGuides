@@ -1486,7 +1486,7 @@ end
 -- TODO get parent frame names instead
 local buyoutIncr = 0
 -- SmallMoneyFrameTemplate doesn't handle parentKey well in .xml, moved to Lua
-local function createBuyoutFrame(buyout)
+local function createBuyoutFrame(buyout, buyoutMoney)
     if not buyout then
         print("createBuyoutFrame: error", buyout)
         return
@@ -1499,14 +1499,13 @@ local function createBuyoutFrame(buyout)
     buyoutIncr = buyoutIncr + 1
     buyout.Money:SetPoint("RIGHT", 0, -6)
 
-    buyout.Money:SetScript("OnLoad", function(this)
-        SmallMoneyFrame_OnLoad(this);
-        MoneyFrame_SetType(this, "AUCTION");
-        MoneyFrame_SetMaxDisplayWidth(this, 146);
-    end)
+    buyout.Money.staticMoney = buyoutMoney
+
+    MoneyFrame_SetType(buyout.Money, "AUCTION")
 end
 
 local function updateBuyoutFrame(buyout, buyoutMoney)
+    buyout.Money.staticMoney = buyoutMoney
     MoneyFrame_Update(buyout.Money, buyoutMoney)
 
     buyout.Label:SetPoint("RIGHT", buyout.Money, "LEFT")
@@ -1596,10 +1595,15 @@ local function Initializer(frame, data)
         f.ItemIcon:SetNormalTexture(d.ItemIcon)
         setKindIcon(f.ItemIcon, d.ItemKindIcon)
 
-        createBuyoutFrame(f.Buyout)
+        createBuyoutFrame(f.Buyout, d.BuyoutMoney)
         updateBuyoutFrame(f.Buyout, d.BuyoutMoney)
+
+        f:Show()
+    else
+        frame.Best:Hide()
     end
 
+    -- Won't be populated if best == budget items
     d = data.budget
     if data.budget then
         local f = frame.Budget
@@ -1615,6 +1619,10 @@ local function Initializer(frame, data)
 
         createBuyoutFrame(f.Buyout)
         updateBuyoutFrame(f.Buyout, d.BuyoutMoney)
+
+        f:Show()
+    else
+        frame.Budget:Hide()
     end
 end
 
@@ -1655,6 +1663,18 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
     ScrollUtil.InitScrollBoxListWithScrollBar(scrollBox, ScrollBar, ScrollView)
 
     ScrollView:SetElementInitializer("RXP_IU_AH_ItemBlock", Initializer)
+
+    ScrollView:SetElementExtentCalculator(
+        function(_, itemBlock)
+            if itemBlock.best and itemBlock.budget then
+                -- Header + two rows
+                return 93 -- 19 + 37 * 2
+            end
+
+            -- print("SetElementExtentCalculator", itemBlock.Name, "one row")
+            -- Header + one row
+            return 56 -- 19 + 37
+        end)
 
     ahSession.displayFrame.scanButton = _G.RXP_IU_AH_SearchButton
 
@@ -1714,14 +1734,6 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
         tabButton:Selected()
     end)
 
-    hooksecurefunc("PlaceAuctionBid", function(aType, aIndex, bid)
-        if _G.AuctionFrame.type ~= "list" or not ahSession.selectedRow then
-            return
-        end
-
-        print("aType", aType, "aIndex", aIndex, "bid", bid)
-    end)
-
     PanelTemplates_TabResize(tabButton, 0, nil, 36)
     PanelTemplates_SetNumTabs(attachment, index)
     PanelTemplates_EnableTab(attachment, index)
@@ -1735,9 +1747,12 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
 
     for slotId, data in pairs(ahSession.bestAnalysis) do
         if data.budget.itemLink or data.relative.itemLink then
+            -- print("DisplayEmbeddedResults:", data.slotName, "processing upgrades")
             blockData = {['Name'] = data.slotName}
 
+            -- Best upgrade
             if data.relative.itemLink then
+                -- print("  - DisplayEmbeddedResults relative", data.relative.itemLink)
                 blockData.best = {
                     ItemLink = data.relative.itemLink,
                     ItemID = data.relative.itemID,
@@ -1753,31 +1768,34 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
             end
 
             if data.budget.itemLink then
-                blockData.budget = {
-                    ItemLink = data.budget.itemLink,
-                    ItemID = data.budget.itemID,
-                    ItemKindIcon = 'Interface/GossipFrame/VendorGossipIcon.blp',
-                    Name = getColorizedName(data.budget.itemLink,
-                                            data.budget.name),
-                    ItemLevel = data.budget.level,
-                    UpdateEPText = prettyPrintBudgetColumn(data.budget),
-                    BuyoutMoney = data.budget.lowestPrice,
-                    ItemIcon = GetItemIcon(data.budget.itemLink) -- TODO fix randomized items link
-                }
+                -- print("  - DisplayEmbeddedResults budget", data.budget.itemLink)
+                if data.relative.itemLink and data.budget.itemLink and
+                    data.relative.itemLink ~= data.budget.itemLink then
+                    blockData.budget = {
+                        ItemLink = data.budget.itemLink,
+                        ItemID = data.budget.itemID,
+                        ItemKindIcon = 'Interface/GossipFrame/VendorGossipIcon.blp',
+                        Name = getColorizedName(data.budget.itemLink,
+                                                data.budget.name),
+                        ItemLevel = data.budget.level,
+                        UpdateEPText = prettyPrintBudgetColumn(data.budget),
+                        BuyoutMoney = data.budget.lowestPrice,
+                        ItemIcon = GetItemIcon(data.budget.itemLink) -- TODO fix randomized items link
+                    }
+                end
+
             end
 
             if blockData.best or blockData.budget then -- TODO remove old data from insert
+                -- print("  - DisplayEmbeddedResults inserting", blockData.Name)
                 ahSession.displayFrame.DataProvider:Insert(blockData)
             end
         else
-            print("DisplayEmbeddedResults:", data.slotName, "no upgrades found")
+            -- print("DisplayEmbeddedResults:", data.slotName, "no upgrades found")
         end
     end
 end
 
 -- fix randomly generated tooltip
--- only display one row if same item, stack/stagger ItemKindIcon
 -- Update icons to Brandung mockup
--- fix last item remnant
 -- Add owner to scanData for additional buyout validation
--- Fix row money frames resetting to player money

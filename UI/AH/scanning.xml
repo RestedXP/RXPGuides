@@ -477,9 +477,6 @@
                     <OnClick>
                         self:Disable();
                         RXP.itemUpgrades.AH:SearchForSelectedItem();
-                        <!--
-                        PlaceAuctionBid("bidder", GetSelectedAuctionItem("bidder"), MoneyInputFrame_GetCopper(BidBidPrice))
-                        -->
                     </OnClick>
                 </Scripts>
             </Button>
