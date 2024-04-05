@@ -1408,8 +1408,9 @@ function addon:FetchGuide(guide,arg2)
             end
             return
         end
+    elseif type(guide) == "table" then
+        return guide
     end
-    return guide
 end
 
 function addon:LoadGuideTable(guideGroup,guideName)
@@ -1482,28 +1483,76 @@ function addon:LoadGuide(guide, OnLoad)
     end
 
     addon.currentGuide = {}
-
-    for k, v in pairs(guide) do addon.currentGuide[k] = v end
+    local copy = guide.copy
+    local guideCopy
+    if copy then
+        local group,name = copy:match("(.-)%s*\\%s*(.-)")
+        if not group then
+            name = copy
+            group = guide.group
+        end
+        guideCopy = addon:FetchGuide(name,group)
+    end
+    if guideCopy then
+        for k, v in pairs(guide) do
+            if type(v) ~= "table" then
+                addon.currentGuide[k] = v
+            end
+        end
+        for k, v in pairs(guideCopy) do
+            if type(v) == "table" then
+                addon.currentGuide[k] = v
+            end
+        end
+        guide = guideCopy
+    else
+        for k, v in pairs(guide) do
+            addon.currentGuide[k] = v
+        end
+    end
     addon.currentGuide.steps = {}
     addon.currentGuide.tips = {}
+    local ProcessSteps
+    local InsertGuide
+    local guideRef = {}
+    function InsertGuide(group,name)
+        local newGuide = addon:FetchGuide(group,name)
+        if not newGuide then return end
+        if not guideRef[newGuide] and guide ~= newGuide then
+            guideRef[newGuide] = true
+            ProcessSteps(newGuide)
+            guideRef[newGuide] = false
+        end
+    end
     local lastTip
-    for _, step in ipairs(guide.steps) do
-        if addon.IsStepShown(step) then
-            if step.tip then
-                tinsert(addon.currentGuide.tips,step)
-                lastTip = step
-                step.title = step.title or "Tip"
-            else
-                tinsert(addon.currentGuide.steps, step)
-                step.tipWindow = lastTip
-            end
-            if step.elements then
-                for _,element in pairs(step.elements) do
-                    addon.settings.ReplaceColors(element)
+    function ProcessSteps(guide)
+        for _, step in ipairs(guide.steps) do
+            if addon.IsStepShown(step) then
+                if step.tip then
+                    tinsert(addon.currentGuide.tips,step)
+                    lastTip = step
+                    step.title = step.title or "Tip"
+                else
+                    tinsert(addon.currentGuide.steps, step)
+                    step.tipWindow = lastTip
+                end
+                if step.elements then
+                    for _,element in pairs(step.elements) do
+                        addon.settings.ReplaceColors(element)
+                    end
+                end
+                if step.insert then
+                    local group, name = step.insert:match("(.-)%s*\\%s*(.-)")
+                    if not group then
+                        group = guide.group
+                        name = step.insert
+                    end
+                    InsertGuide(group,name)
                 end
             end
         end
     end
+    ProcessSteps(guide)
     guide = addon.currentGuide
 
     addon.currentGuideName = guide.name
