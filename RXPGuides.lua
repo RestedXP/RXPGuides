@@ -178,8 +178,8 @@ function addon.QuestAutoAccept(titleOrId)
     local element = addon.questAccept[titleOrId]
 
     if not element then return end
-
-    if element.step.active then
+    local step = element.step
+    if step.active or step.index > 1 and addon.currentGuide.steps[step.index - 1].active then
         addon:SendEvent("RXP_QUEST_ACCEPT",element.questId)
         return true
     end
