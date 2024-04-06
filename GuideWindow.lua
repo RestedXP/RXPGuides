@@ -1408,7 +1408,8 @@ function addon:FetchGuide(guide,arg2)
             end
             return
         end
-    elseif type(guide) == "table" then
+    end
+    if type(guide) == "table" then
         return guide
     end
 end
@@ -1420,7 +1421,7 @@ end
 function addon:LoadGuide(guide, OnLoad)
     addon.loadNextStep = false
 
-    if not addon.IsGuideActive(guide) or not guide.empty and
+    if not guide.empty and not addon.IsGuideActive(guide) and
         (guide.farm and not RXPCData.GA or not guide.farm and RXPCData.GA) then
         return addon:LoadGuide(addon.emptyGuide)
     end
@@ -1483,51 +1484,54 @@ function addon:LoadGuide(guide, OnLoad)
     end
 
     addon.currentGuide = {}
-    local copy = guide.copy
-    local guideCopy
-    if copy then
-        local group,name = copy:match("(.-)%s*\\%s*(.-)")
-        if not group then
-            name = copy
-            group = guide.group
-        end
-        guideCopy = addon:FetchGuide(name,group)
+
+    for k, v in pairs(guide) do
+        addon.currentGuide[k] = v
     end
-    if guideCopy then
-        for k, v in pairs(guide) do
-            if type(v) ~= "table" then
-                addon.currentGuide[k] = v
-            end
-        end
-        for k, v in pairs(guideCopy) do
-            if type(v) == "table" then
-                addon.currentGuide[k] = v
-            end
-        end
-        guide = guideCopy
-    else
-        for k, v in pairs(guide) do
-            addon.currentGuide[k] = v
-        end
-    end
+
     addon.currentGuide.steps = {}
     addon.currentGuide.tips = {}
     local ProcessSteps
-    local InsertGuide
+    local IncludeGuide
     local guideRef = {}
-    function InsertGuide(group,name)
+    function IncludeGuide(group,name)
+        local startAt, stopAt
+        if type(group) == "table" then
+            if not group.include then
+                return
+            end
+            local step = group
+            group, name = step.include:match("(.-)%s*\\\\?%s*([^\\]+)")
+            if not group then
+                group = guide.group
+                name = step.include
+            end
+            local newName
+            newName, startAt, stopAt = name:match("(.-)@([^@%-]+)%-?([^@%-]*)$")
+            name = newName or name
+            startAt = tonumber(startAt) or startAt
+            stopAt = tonumber(stopAt) or stopAt
+            if startAt and startAt == "" then startAt = nil end
+            if stopAt and stopAt == "" then stopAt = nil end
+
+            print(startAt,stopAt)
+        end
         local newGuide = addon:FetchGuide(group,name)
         if not newGuide then return end
         if not guideRef[newGuide] and guide ~= newGuide then
             guideRef[newGuide] = true
-            ProcessSteps(newGuide)
+            ProcessSteps(newGuide,startAt,stopAt)
             guideRef[newGuide] = false
         end
     end
     local lastTip
-    function ProcessSteps(guide)
+    function ProcessSteps(guide,startAt,stopAt)
         for _, step in ipairs(guide.steps) do
-            if addon.IsStepShown(step) then
+            local isShown = addon.IsStepShown(step)
+            if isShown and startAt and (step.label == startAt or startAt == step.stepId) then
+                startAt = nil
+            end
+            if isShown and not startAt then
                 if step.tip then
                     tinsert(addon.currentGuide.tips,step)
                     lastTip = step
@@ -1541,17 +1545,14 @@ function addon:LoadGuide(guide, OnLoad)
                         addon.settings.ReplaceColors(element)
                     end
                 end
-                if step.insert then
-                    local group, name = step.insert:match("(.-)%s*\\%s*(.-)")
-                    if not group then
-                        group = guide.group
-                        name = step.insert
-                    end
-                    InsertGuide(group,name)
+                IncludeGuide(step)
+                if stopAt and (step.label == stopAt or stopAt == step.stepId) then
+                    break
                 end
             end
         end
     end
+    IncludeGuide(guide)
     ProcessSteps(guide)
     guide = addon.currentGuide
 
@@ -1937,7 +1938,7 @@ end]]
 local function IsGuideActive(guide)
     if guide and addon.stepLogic.SeasonCheck(guide) and addon.stepLogic.PhaseCheck(guide) and
         addon.stepLogic.XpRateCheck(guide) and addon.stepLogic.FreshAccountCheck(guide) and
-        addon.stepLogic.LevelCheck(guide) and
+        addon.stepLogic.LevelCheck(guide) and not guide.internal and
         (not addon.player.neutral or not guide.enabledFor or addon.applies(guide.enabledFor)) then
         -- print('-',guide.name,not guide.som,not guide.era,som)
         return true
