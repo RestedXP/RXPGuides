@@ -4230,7 +4230,7 @@ function addon.functions.skipgossip(self, text, ...)
 
 end
 
-function addon.functions.gossip(self, text, npc, length)
+function addon.functions.gossip(self, text, npc, length, flags)
     if type(self) == "string" then
         npc = tonumber(npc)
         if not npc then
@@ -4238,7 +4238,7 @@ function addon.functions.gossip(self, text, npc, length)
                         L("Error parsing guide") .. " " .. addon.currentGuideName ..
                            ': No npc ID provided\n' .. self)
         end
-        local element = {text = text, npc = npc, level = -1, length = tonumber(length) or 0}
+        local element = {text = text, npc = npc, level = -1, length = tonumber(length) or 0, flags = tonumber(flags) or 0}
         return element
     end
     local event = text
@@ -4253,6 +4253,9 @@ function addon.functions.gossip(self, text, npc, length)
             --print(name)
         elseif element.currentNPC == element.npc and frame and frame:IsShown() and frame:GetText() == element.name then
             element.level = element.level + 1
+        end
+        if element.flags % 2 == 1 and element.level >= element.length then
+            _G.GossipFrame:Hide()
         end
     elseif event == "PLAYER_INTERACTION_MANAGER_FRAME_HIDE" then
         element.name = nil
