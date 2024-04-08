@@ -4244,6 +4244,9 @@ function addon.functions.gossip(self, text, npc, length, flags)
     local event = text
     local element = self.element
     local frame = _G.GossipFrame and _G.GossipFrame.TitleContainer.TitleText
+    if not event and element.step.active and _G.GossipFrame:IsShown() then
+        event = "GOSSIP_SHOW"
+    end
     if event == "GOSSIP_SHOW" then
         local name = UnitName('target')
         if UnitExists('target') and not UnitIsPlayer('target') and not element.name then
