@@ -4255,9 +4255,10 @@ function addon.functions.gossip(self, text, npc, length, flags)
             element.level = element.level + 1
         end
         if element.flags % 2 == 1 and element.level >= element.length then
-            _G.GossipFrame:Hide()
+            event = "PLAYER_INTERACTION_MANAGER_FRAME_HIDE"
         end
-    elseif event == "PLAYER_INTERACTION_MANAGER_FRAME_HIDE" then
+    end
+    if event == "PLAYER_INTERACTION_MANAGER_FRAME_HIDE" then
         element.name = nil
         element.currentNPC = nil
         --print(element.level, element.length)
@@ -4268,6 +4269,7 @@ function addon.functions.gossip(self, text, npc, length, flags)
             end
         end
         element.level = -1
+        _G.GossipFrame:Hide()
     end
 end
 
