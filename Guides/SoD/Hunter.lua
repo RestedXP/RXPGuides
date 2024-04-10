@@ -1095,28 +1095,151 @@ step
     .train 410116 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Scrapper|r] |cRXP_WARN_to train|r |T132147:0|t[Dual-Wield Specialization]
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Hunter SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Bracers
--- #name Focus Fire
--- for phase 3
+RXPGuides.RegisterGuide([[
+#classic
+<< Hunter SoD
+#group RestedXP Rune & Books Guide
+#subgroup Bracers
+#title Focus Fire
+#name Focus Fire - 40 (Searing Gorge)
 
--- Focus Fire
+step
+    >>|cRXP_WARN_You will have to kill a level 45 mob in a hostile area to acquire this rune. Make sure to being help if you're lower level. 
+    .goto Searing Gorge,53.29,57.35,5
+step
+    .goto Searing Gorge,53.10,55.85
+    >>Carefully walk along the tree branch towards the bird nest. Loot the |cRXP_PICK_Stormcrow Egg|r from it.
+    .collect 221544,1 --Stormcrow Egg
+step
+    .goto 1427/0,-1532.400,-6953.600
+    >>Walk back along the tree branch. Wait a couple seconds for |cRXP_ENEMY_Enraged Stormcrow|r to spawn. Kill it and loot it for |T134419:0|t[|cRXP_FRIENDLY_Rune of Focused Fire|r]
+    .collect 221445,1
+    .mob Enraged Stormcrow
+step
+    .itemcount 221445,1
+    .use 221445
+    .train 428726 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Focused Fire|r] |cRXP_WARN_to train|r |T135548:0|t[Focus Fire]
+ ]])
+ 
+ RXPGuides.RegisterGuide([[
+    #classic
+    << Hunter SoD
+    #group RestedXP Rune & Books Guide
+    #subgroup Bracers
+    #title Raptor Fury
+    #name Raptor Fury - 40 (Tanaris)
+    
+step
+    #completewith next
+    .zone Tanaris >>Travel to Tanaris
+step
+    #loop
+    .goto 1446/1,-3973.700,-7372.900
+    .goto 1446/1,-3777.100,-7358.200
+    .goto 1446/1,-3290.200,-7330.700
+    .goto 1446/1,-3563.000,-7352.400
+    .goto 1446/1,-3386.400,-7337.400
+    .goto 1446/1,-3290.200,-7330.700
+    >>Kill |cRXP_ENEMY_Zopilote|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of The Raptor|r]
+    >>|cRXP_ENEMY_Zopilote|r |cRXP_WARN_is a carrion bird that patrols east to west in a large area spanning from south of Sandsorrow Watch to Gadgetzan|r
+    >>TIP: Instead of running around you can use |T132172:0|t[|cRXP_FRIENDLY_Eagle Eye|r] to scout for his position. If you can't find him he's probably dead and should respawn arond the spot marked with "2+" on your map
+    .collect 220687,1
+    .unitscan Zopilote
+step
+    .train 415358 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Raptor|r] |cRXP_WARN_to train|r |T132253:0|t[Raptor Fury]
+    .use 2220687
+    .itemcount 220687,1
 
+    ]])
+RXPGuides.RegisterGuide([[
+    #classic
+    << Hunter SoD
+    #group RestedXP Rune & Books Guide
+    #subgroup Head
+    #title Catlike Reflexes
+    #name Catlike Reflexes - 40 (Feralas)
 
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Hunter SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Bracers
--- #name T.N.T.
--- for phase 3
-
--- T.N.T.
-
-
--- ]])
+step
+    #completewith next
+    .zone Feralas >>Travel to Feralas
+step
+    +|cRXP_WARN_You will need one of either |T133951:0|t|cRXP_PICK_Soft Banana Bread|r or |T133980:0|t|cRXP_PICK_Tel'Abim Banana|r to acquire this rune. |cRXP_FRIENDLY_Madrack Greenwell|r sells the bread in Feathermoon for Alliance. |cRXP_FRIENDLY_Innkeeper Greul|r sells it in Camp Mojache for Horde.
+    .itemcount 4601,<1 --Soft Banana Bread
+    .itemcount 4537,<1 --Tel'Abim Banana
+    .target Innkeeper Greul
+    .target Madrack Greenwell
+step
+    >>Go to the Yeti cave in The High Wilderness
+    .goto 1444/1,1599.300,-4977.800,10
+step
+    .goto 1444/1,1778.900,-5179.100,
+    >>Take the middle path at the crossroads after you enter the second cave. At the back of it you'll find a |cRXP_FRIENDLY_Groddoc Infant|r
+    .gossip 222376,1 >>Complete the monkeys dialogue to feed it the |T133951:0|t|cRXP_PICK_Soft Banana Bread|r or |T133980:0|t|cRXP_PICK_Tel'Abim Banana|r. It will spawn a version of it that follows you around.
+    .target Groddoc Infant
+step
+    .goto 1444/1,1330.900,-5078.100
+    >>Escort the |cRXP_FRIENDLY_Groddoc Infant|r to a |cRXP_FRIENDLY_Groddoc Matriarch|r marked on your map. Be careful, the infant is agressive and will attack nearby enemies including opposing faction players. 
+    .gossip 222406,1 >>Once you're there talk to the Matriarch and complete her dialogue to receive |T134419:0|t[|cRXP_FRIENDLY_Rune of the Jungle Cat|r]
+    .collect 220791,1 -- Rune of the Jungle Cat
+step
+    .train 415428 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of the Jungle Cat|r] |cRXP_WARN_to train|r |T132167:0|t[Catlike Reflexes]
+    ]])
+RXPGuides.RegisterGuide([[
+    #classic
+    << Hunter SoD
+    #group RestedXP Rune & Books Guide
+    #subgroup Head
+    #title Rapid Killing
+    #name Rapid Killing - 45 (Searing Gorge & Blasted Lands)
+step
+    #completewith next
+    .zone Searing Gorge >>Travel to Searing Gorge
+step
+    .goto 1427/0,-832.800,-6647.500,10
+    >>Travel to the cave entrance in Firewatch Ridge. Note that you'll need to enter a cave filled with lvl 47-48 elites. That being said it is possible to complete this part using deathruns.
+step
+    .goto Searing Gorge,14.5,36.5
+    >>|cRXP_WARN_As you enter the cave take the path to the right. You'll quickly see a large tablet called |cRXP_FRIENDLY_Weathered Etching|r atop a rise in the middle section of the cave. Run to it and accept the quest. 
+    >>TIP: If you're alone try using traps and your pet to get as far as you can before using |T132293:0|t[|cRXP_FRIENDLY_Feign Death|r] to drop aggro from the mobs. Alternatively you can corpse run to the item. 
+    .accept 81900 >> Accept The Burning Beast
+step
+    #completewith next
+    .zone Blasted Lands >>Travel to Blasted Lands
+step
+    .goto Blasted Lands,50.6,14.2
+    >>Talk to |cRXP_FRIENDLY_Bloodmage Lynnore|r
+    .turnin 81900 >>Turnin The Burning Beast
+    .accept 81917 >>Accept Chains That Bind
+    .target Bloodmage Lynnore
+step
+    .goto Blasted Lands,64.24,32.36
+    >>Travel to the Shadowsworn cave area and kill any |cRXP_ENEMY_Shadowsworn Cultist, Thug or Adept|r for |cRXP_LOOT_Infernal Chains|r
+    .complete 81917,1 --Infernal Chains 5/5
+    .mob Shadowsworn Cultist
+    .mob Shadowsworn Thug
+    .mob Shadowsworn Adept
+step
+    .goto Blasted Lands,50.6,14.2
+    >>Talk to |cRXP_FRIENDLY_Bloodmage Lynnore|r
+    .turnin 81917 >>Turnin Chains That Bind
+    .accept 81919 >>Accept Brought to Heel
+    .target Bloodmage Lynnore
+step
+    #loop
+    .goto 1419/0,-2976.500,-11483.101
+    .goto 1419/0,-2778.300,-11420.800
+    .goto 1419/0,-2821.900,-11353.700
+    .goto 1419/0,-2934.700,-11419.101
+    >>Look for |cRXP_ENEMY_Calefactus the Unleashed|r a level 50 green Corehound. He has multiple spawn points around the southern edge of the red part of the map. Try using |T132172:0|t[|cRXP_FRIENDLY_Eagle Eye|r] to look for him. Once you find him, use the |T136091:0|t|cRXP_LOOT_Infernal Lasso|r on him, kill him and then loot him for his blood.
+    .complete 81919,1 --Fel Lifeblood 1/1
+    .use 220216
+    .unitscan Calefactus the Unleashed
+step
+    .goto Blasted Lands,50.6,14.2
+    >>Talk to |cRXP_FRIENDLY_Bloodmage Lynnore|r
+    .turnin 81919 >>Turnin Brought to Heel
+    .target Bloodmage Lynnore
+step
+    .train 415405 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of the Ravenous|r] |cRXP_WARN_to train|r |T132205:0|t[Rapid Killing]
+    >>You also received an |T136091:0|t|cRXP_LOOT_Infernal Lasso|r trinket which can be used to tame Corehounds
+]])
