@@ -2114,17 +2114,17 @@ RXPGuides.RegisterGuide([[
 RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune & Books Guide
-#subgroup Helm
-#subgroup Bracers
-#name Molten Armor
-#name Bloodshed
-#name Detonation
-#name Hammer of Wrath
-#name Nihilist Epiphany
-#name Alacrity
-#name Burn
-#name Unstable Affliction
-#name Shield Mastery
+#subgroup Helm <<Druid/Shaman/Warrior
+#subgroup Bracers <<Mage/Hunter/Paladin/Priest/Rogue/Warlock
+#name Molten Armor <<Mage
+#name Bloodshed <<Druid
+#name Detonation <<Hunter
+#name Hammer of Wrath <<Paladin
+#name Nihilist Epiphany <<Priest
+#name Alacrity <<Rogue
+#name Burn <<Shaman
+#name Unstable Affliction <<Warlock
+#name Shield Mastery <<Warrior
 
 
 
