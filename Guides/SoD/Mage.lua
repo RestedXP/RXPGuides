@@ -2680,57 +2680,606 @@ step
     .use 213116
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- #group RestedXP Rune & Books Guide
--- #subgroup Bracers
--- #name Displacement
--- for phase 3
-
--- Displacement
-
--- << Mage SoD
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- #group RestedXP Rune & Books Guide
--- #subgroup Bracers
--- #name Molten Armor
--- for phase 3
-
--- Molten Armor
-
--- << Mage SoD
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- #group RestedXP Rune & Books Guide
--- #subgroup Helmet
--- #name Temporal Anomaly
--- for phase 3
-
--- Temporal Anomaly
-
--- << Mage SoD
+RXPGuides.RegisterGuide([[
+#classic
+#group RestedXP Rune & Books Guide
+#subgroup Helmet
+#name Temporal Anomaly - 42 (Azeroth)
 
 
--- ]])
+<< Mage SoD
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- #group RestedXP Rune & Books Guide
--- #subgroup Helmet
--- #name Deep Freeze
--- for phase 3
+step
+    .train 429306,1
+    .zone Feralas >>Travel to Feralas
+step
+    .train 429306,1
+    #loop
+    .goto Feralas,76.0,58.4,20,0
+    .goto Feralas,76.8,63.6,20,0
+    .goto Feralas,72.6,63.8,20,0
+    .goto Feralas,75.0,59.2,20,0
+    >>Kill |cRXP_ENEMY_Zukk'ash Forces.|r Loot them for |T237070:0|t[Zukk'ash Resin.]
+    .collect 221361,5
+    .mob Zukk'ash Worker
+    .mob Zukk'ash Stinger
+    .mob Zukk'ash Tunneler
+    .mob Zukk'ash Wasp
+step
+    .train 429306,1
+    .zone Hinterlands >>Travel to Hinterlands
+step
+    .train 429306,1
+    >>Kill |cRXP_ENEMY_Owlbeast.|r Loot them for |cRXP_LOOT_|T132914:0|tPristine Owlbeast Quill.|r
+    .collect 221359,1
+    .mob Primitive Owlbeast
+    .mob Savage Owlbeast
+    .mob Vicious Owlbeast
+step
+    .train 429306,1
+    .zone Tanaris >>Travel to Tanaris
+step
+    .train 429306,1
+    >>Kill |cRXP_ENEMY_Zul'Farrak Zombie|r. Loot them for |cRXP_LOOT_|T237132:0|tFarraki Papyrus.|r
+    .collect 221360,8
+    .mob Zul'Farrak Zombie
+step << Horde
+    .train 429306,1
+    .goto 1458,73.47,33.54
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Owen Thadd|r |cFFfa9602in Undercity, Magic Quarter.|r
+    .accept 82054
+step << Alliance
+    .train 429306,1
+    .goto Stormwind City,37.81,79.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garion Wendell|r |cFFfa9602in Stormwind, Mage Tower.|r
+    .accept 82054
+]])
 
--- Deep Freeze
+RXPGuides.RegisterGuide([[
+#classic
+#group RestedXP Rune & Books Guide
+#subgroup Bracers(Balefire Bolt)
+#name Balefire Bolt - 15 (Westfall)
 
--- << Mage SoD
+<< Mage SoD
 
+step << Alliance
+    .train 429311,1
+    #completewith Scroll of Spatial Mending
+    .zone Stormwind City >> Travel to Stormwind
+step << Horde
+    .train 429311,1
+    #completewith Scroll of Spatial Mending
+    .zone Undercity >> Travel to Undercity
+step
+    .train 429311,1
+    #label Scroll of Spatial Mending
+    >>|cRXP_BUY_Buy a|r |T134945:0|t[Scroll of Spatial Mending] |cRXP_BUY_from the Auction House.|r |cRXP_WARN_Alternatively an enchanter can craft it for you.|r
+    .collect 220792,1 --Scroll of Spatial Mending
+step
+    .train 429311,1
+    #completewith next
+    .zone Westfall >> Travel to Westfall
+step
+    .train 429311,1
+    #loop
+    .goto Westfall,47.0,39.4,40,0
+    .goto Westfall,51.0,32.6,40,0
+    .goto Westfall,47.6,22.0,40,0
+    .goto Westfall,46.8,12.6,40,0
+    .goto Westfall,41.6,15.2,40,0
+    .goto Westfall,32.4,29.2,40,0
+    .goto Westfall,29.8,34.4,40,0
+    .goto Westfall,31.8,39.4,40,0
+    .goto Westfall,28.6,44.0,40,0
+    .goto Westfall,29.0,47.8,40,0
+    .goto Westfall,29.0,58.8,40,0
+    .goto Westfall,31.4,65.6,40,0
+    .goto Westfall,29.6,69.4,40,0
+    .goto Westfall,32.2,76.0,40,0
+    .goto Westfall,32.2,80.2,40,0
+    .goto Westfall,34.0,82.2,40,0
+    .goto Westfall,37.8,85.4,40,0
+    .goto Westfall,47.6,79.6,40,0
+    .goto Westfall,51.6,71.4,40,0
+    .goto Westfall,47.6,67.2,40,0
+    .goto Westfall,62.6,26.6,40,0
+    .goto Westfall,57.0,10.6,40,0
+    .cast 448381 >>Use |cRXP_FRIENDLY_Scroll of Spatial Mending|r on the |cRXP_PICK_Portal|r to summon a |cRXP_ENEMY_Fel Interloper.|r
+    .target Fel Silver
+    .target Fel Crack
+    .target Fel Tear
+    .target Fel Scar
+    .target Fel Rift
+    .use 220792
+step
+    >>Kill |cRXP_ENEMY_Fel Interloper|r. Loot him for |cRXP_LOOT_|T134939:0|tSpell Notes: Balefire Bolt.|r
+    .collect 223147,1 --Spell Notes: Balefire Bolt
+    .mob Fel Interloper
+step
+    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt.]
+    .use 223147
+]])
 
--- ]])
+RXPGuides.RegisterGuide([[
+#classic
+#group RestedXP Rune & Books Guide
+#subgroup Bracers(Balefire Bolt)
+#name Balefire Bolt - 35 (Desolace)
 
+<< Mage SoD
+
+step << Alliance
+    .train 429311,1
+    #completewith Scroll of Spatial Mending
+    .zone Darnassus >> Travel to Darnassus
+step << Horde
+    .train 429311,1
+    #completewith Scroll of Spatial Mending
+    .zone Orgrimmar >> Travel to Orgrimmar
+step
+    .train 429311,1
+    #label Scroll of Spatial Mending
+    >>|cRXP_BUY_Buy a|r |T134945:0|t[Scroll of Spatial Mending] |cRXP_BUY_from the Auction House.|r |cRXP_WARN_Alternatively an enchanter can craft it for you.|r
+    .collect 220792,1 --Scroll of Spatial Mending
+step
+    .train 429311,1
+    #completewith next
+    .zone Desolace >> Travel to Desolace
+step
+    .train 429311,1
+    #loop
+    .goto Desolace,71.6,18.4,40,0
+    .goto Desolace,73.6,24.8,40,0
+    .goto Desolace,80.4,17.0,40,0
+    .goto Desolace,74.6,10.4,40,0
+    .goto Desolace,54.4,19.2,40,0
+    .goto Desolace,47.4,22.2,40,0
+    .goto Desolace,56.0,74.8,40,0
+    .goto Desolace,52.0,85.6,40,0
+    .goto Desolace,49.6,74.8,40,0
+    .cast 448381 >>Use |cRXP_FRIENDLY_Scroll of Spatial Mending|r on the |cRXP_PICK_Portal|r to summon a |cRXP_ENEMY_Fel Interloper.|r
+    .target Fel Silver
+    .target Fel Crack
+    .target Fel Tear
+    .target Fel Scar
+    .target Fel Rift
+    .use 220792
+step
+    >>Kill |cRXP_ENEMY_Fel Interloper|r. Loot him for |cRXP_LOOT_|T134939:0|tSpell Notes: Balefire Bolt.|r
+    .collect 223147,1 --Spell Notes: Balefire Bolt
+    .mob Fel Interloper
+step
+    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt.]
+    .use 223147
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+#group RestedXP Rune & Books Guide
+#subgroup Bracers(Balefire Bolt)
+#name Balefire Bolt - 45 (Feralas)
+
+<< Mage SoD
+
+step << Alliance
+    .train 429311,1
+    #completewith Scroll of Spatial Mending
+    .zone Darnassus >> Travel to Darnassus
+step << Horde
+    .train 429311,1
+    #completewith Scroll of Spatial Mending
+    .zone Orgrimmar >> Travel to Orgrimmar
+step
+    .train 429311,1
+    #label Scroll of Spatial Mending
+    >>|cRXP_BUY_Buy a|r |T134945:0|t[Scroll of Spatial Mending] |cRXP_BUY_from the Auction House.|r |cRXP_WARN_Alternatively an enchanter can craft it for you.|r
+    .collect 220792,1 --Scroll of Spatial Mending
+step
+    .train 429311,1
+    #completewith next
+    .zone Feralas >> Travel to Feralas
+step
+    .train 429311,1
+    #loop
+    .goto Feralas,74.2,50.8,40,0
+    .goto Feralas,73.2,54.4,40,0
+    .goto Feralas,74.2,56.8,40,0
+    .goto Feralas,76.2,56.6,40,0
+    .goto Feralas,74.2,60.0,40,0
+    .goto Feralas,76.6,63.6,40,0
+    .goto Feralas,72.6,63.8,40,0
+    .goto Feralas,70.6,62.6,40,0
+    .goto Feralas,68.2,58.8,40,0
+    .cast 448381 >>Use |cRXP_FRIENDLY_Scroll of Spatial Mending|r on the |cRXP_PICK_Portal|r to summon a |cRXP_ENEMY_Fel Interloper.|r
+    .target Fel Silver
+    .target Fel Crack
+    .target Fel Tear
+    .target Fel Scar
+    .target Fel Rift
+    .use 220792
+step
+    >>Kill |cRXP_ENEMY_Fel Interloper|r. Loot him for |cRXP_LOOT_|T134939:0|tSpell Notes: Balefire Bolt.|r
+    .collect 223147,1 --Spell Notes: Balefire Bolt
+    .mob Fel Interloper
+step
+    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt.]
+    .use 223147
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+#group RestedXP Rune & Books Guide
+#subgroup Bracers(Balefire Bolt)
+#name Balefire Bolt - 45 (Azshara)
+
+<< Mage SoD
+
+step << Alliance
+    .train 429311,1
+    #completewith Scroll of Spatial Mending
+    .zone Darnassus >> Travel to Darnassus
+step << Horde
+    .train 429311,1
+    #completewith Scroll of Spatial Mending
+    .zone Orgrimmar >> Travel to Orgrimmar
+step
+    .train 429311,1
+    #label Scroll of Spatial Mending
+    >>|cRXP_BUY_Buy a|r |T134945:0|t[Scroll of Spatial Mending] |cRXP_BUY_from the Auction House.|r |cRXP_WARN_Alternatively an enchanter can craft it for you.|r
+    .collect 220792,1 --Scroll of Spatial Mending
+step
+    .train 429311,1
+    #completewith next
+    .zone Azshara >> Travel to Azshara
+step
+    .train 429311,1
+    #loop
+    .goto Azshara,17.6,58.8,40,0
+    .goto Azshara,16.6,51.0,40,0
+    .goto Azshara,21.2,54.0,40,0
+    .goto Azshara,24.8,47.8,40,0
+    .goto Azshara,33.0,81.6,40,0
+    .goto Azshara,30.2,79.8,40,0
+    .goto Azshara,25.2,81.6,40,0
+    .cast 448381 >>Use |cRXP_FRIENDLY_Scroll of Spatial Mending|r on the |cRXP_PICK_Portal|r to summon a |cRXP_ENEMY_Fel Interloper.|r
+    .target Fel Silver
+    .target Fel Crack
+    .target Fel Tear
+    .target Fel Scar
+    .target Fel Rift
+    .use 220792
+step
+    >>Kill |cRXP_ENEMY_Fel Interloper|r. Loot him for |cRXP_LOOT_|T134939:0|tSpell Notes: Balefire Bolt.|r
+    .collect 223147,1 --Spell Notes: Balefire Bolt
+    .mob Fel Interloper
+step
+    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt.]
+    .use 223147
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+#group RestedXP Rune & Books Guide
+#subgroup Bracers(Balefire Bolt)
+#name Balefire Bolt - 35 (Blasted Lands)
+
+<< Mage SoD
+
+step << Alliance
+    .train 429311,1
+    #completewith Scroll of Spatial Mending
+    .zone Stormwind City>> Travel to Stormwind
+step << Horde
+    .train 429311,1
+    #completewith Scroll of Spatial Mending
+    .zone Undercity >> Travel to Undercity
+step
+    .train 429311,1
+    #label Scroll of Spatial Mending
+    >>|cRXP_BUY_Buy a|r |T134945:0|t[Scroll of Spatial Mending] |cRXP_BUY_from the Auction House.|r |cRXP_WARN_Alternatively an enchanter can craft it for you.|r
+    .collect 220792,1 --Scroll of Spatial Mending
+step
+    .train 429311,1
+    #completewith next
+    .zone Blasted Lands >> Travel to Blasted Lands
+step
+    .train 429311,1
+    #loop
+    .goto Blasted Lands,56.2,36.6,40,0
+    .goto Blasted Lands,62.0,39.2,40,0
+    .goto Blasted Lands,60.2,46.8,40,0
+    .goto Blasted Lands,49.0,48.2,40,0
+    .goto Blasted Lands,46.8,39.2,40,0
+    .goto Blasted Lands,41.4,33.6,40,0
+    .goto Blasted Lands,43.8,25.0,40,0
+    .goto Blasted Lands,35.0,54.8,40,0
+    .cast 448381 >>Use |cRXP_FRIENDLY_Scroll of Spatial Mending|r on the |cRXP_PICK_Portal|r to summon a |cRXP_ENEMY_Fel Interloper.|r
+    .target Fel Silver
+    .target Fel Crack
+    .target Fel Tear
+    .target Fel Scar
+    .target Fel Rift
+step
+    >>Kill |cRXP_ENEMY_Fel Interloper|r. Loot him for |cRXP_LOOT_|T134939:0|tSpell Notes: Balefire Bolt.|r
+    .collect 223147,1 --Spell Notes: Balefire Bolt
+    .mob Fel Interloper
+step
+    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt.]
+    .use 223147
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+#group RestedXP Rune & Books Guide
+#subgroup Bracers(Balefire Bolt)
+#name Balefire Bolt - 15 (Barrens)
+
+<< Mage SoD
+
+step << Alliance
+    .train 429311,1
+    #completewith Scroll of Spatial Mending
+    .zone Darnassus >> Travel to Darnassus
+step << Horde
+    .train 429311,1
+    #completewith Scroll of Spatial Mending
+    .zone Orgrimmar >> Travel to Orgrimmar
+step
+    .train 429311,1
+    #label Scroll of Spatial Mending
+    >>|cRXP_BUY_Buy a|r |T134945:0|t[Scroll of Spatial Mending] |cRXP_BUY_from the Auction House.|r |cRXP_WARN_Alternatively an enchanter can craft it for you.|r
+    .collect 220792,1 --Scroll of Spatial Mending
+step
+    .train 429311,1
+    #completewith next
+    .zone Westfall >> Travel to Westfall
+step
+    .train 429311,1
+    #loop
+    .goto The Barrens,60.2,36.0,40,0
+    .goto The Barrens,60.8,29.0,40,0
+    .goto The Barrens,59.8,27.6,40,0
+    .goto The Barrens,57.6,23.6,40,0
+    .goto The Barrens,42.0,14.2,40,0
+    .goto The Barrens,40.0,18.4,40,0
+    .goto The Barrens,44.4,50.0,40,0
+    .goto The Barrens,46.4,52.6,40,0
+    .goto The Barrens,47.6,49.4,40,0
+    .goto The Barrens,54.4,48.6,40,0
+    .goto The Barrens,58.2,49.6,40,0
+    .goto The Barrens,51.8,53.4,40,0
+    .goto The Barrens,48.6,83.0,40,0
+    .goto The Barrens,46.2,85.6,40,0
+    .goto The Barrens,43.8,83.8,40,0
+    .cast 448381 >>Use |cRXP_FRIENDLY_Scroll of Spatial Mending|r on the |cRXP_PICK_Portal|r to summon a |cRXP_ENEMY_Fel Interloper.|r
+    .target Fel Silver
+    .target Fel Crack
+    .target Fel Tear
+    .target Fel Scar
+    .target Fel Rift
+    .use 220792
+step
+    >>Kill |cRXP_ENEMY_Fel Interloper|r. Loot him for |cRXP_LOOT_|T134939:0|tSpell Notes: Balefire Bolt.|r
+    .collect 223147,1 --Spell Notes: Balefire Bolt
+    .mob Fel Interloper
+step
+    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt.]
+    .use 223147
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+#group RestedXP Rune & Books Guide
+#subgroup Bracers(Balefire Bolt)
+#name Balefire Bolt - 15 (Darkshore)
+
+<< Mage SoD
+
+step << Alliance
+    .train 429311,1
+    #completewith Scroll of Spatial Mending
+    .zone Darnassus >> Travel to Darnassus
+step << Horde
+    .train 429311,1
+    #completewith Scroll of Spatial Mending
+    .zone Orgrimmar >> Travel to Orgrimmar
+step
+    .train 429311,1
+    #label Scroll of Spatial Mending
+    >>|cRXP_BUY_Buy a|r |T134945:0|t[Scroll of Spatial Mending] |cRXP_BUY_from the Auction House.|r |cRXP_WARN_Alternatively an enchanter can craft it for you.|r
+    .collect 220792,1 --Scroll of Spatial Mending
+step
+    .train 429311,1
+    #completewith next
+    .zone Darkshore >> Travel to Darkshore
+step
+    .train 429311,1
+    #loop
+    .goto Darkshore,43.2,27.0,40,0
+    .goto Darkshore,47.4,28.8,40,0
+    .goto Darkshore,56.4,24.8,40,0
+    .goto Darkshore,59.8,21.8,40,0
+    .goto Darkshore,49.8,36.8,40,0
+    .goto Darkshore,46.2,46.8,40,0
+    .goto Darkshore,37.6,63.8,40,0
+    .cast 448381 >>Use |cRXP_FRIENDLY_Scroll of Spatial Mending|r on the |cRXP_PICK_Portal|r to summon a |cRXP_ENEMY_Fel Interloper.|r
+    .target Fel Silver
+    .target Fel Crack
+    .target Fel Tear
+    .target Fel Scar
+    .target Fel Rift
+    .use 220792
+step
+    >>Kill |cRXP_ENEMY_Fel Interloper|r. Loot him for |cRXP_LOOT_|T134939:0|tSpell Notes: Balefire Bolt.|r
+    .collect 223147,1 --Spell Notes: Balefire Bolt
+    .mob Fel Interloper
+step
+    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt.]
+    .use 223147
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+#group RestedXP Rune & Books Guide
+#subgroup Bracers(Balefire Bolt)
+#name Balefire Bolt - 15 (Silverpine Forest)
+
+<< Mage SoD
+
+step << Alliance
+    .train 429311,1
+    #completewith Scroll of Spatial Mending
+    .zone Ironforge >> Travel to Ironforge
+step << Horde
+    .train 429311,1
+    #completewith Scroll of Spatial Mending
+    .zone Undercity >> Travel to Undercity
+step
+    .train 429311,1
+    #label Scroll of Spatial Mending
+    >>|cRXP_BUY_Buy a|r |T134945:0|t[Scroll of Spatial Mending] |cRXP_BUY_from the Auction House.|r |cRXP_WARN_Alternatively an enchanter can craft it for you.|r
+    .collect 220792,1 --Scroll of Spatial Mending
+step
+    .train 429311,1
+    #completewith next
+    .zone Westfall >> Travel to Westfall
+step
+    .train 429311,1
+    #loop
+    .goto Silverpine Forest,45.6,31.8,40,0
+    .goto Silverpine Forest,44.6,25.8,40,0
+    .goto Silverpine Forest,38.8,23.4,40,0
+    .goto Silverpine Forest,38.8,18.4,40,0
+    .goto Silverpine Forest,49.8,13.4,40,0
+    .goto Silverpine Forest,55.6,24.6,40,0
+    .goto Silverpine Forest,50.2,56.8,40,0
+    .goto Silverpine Forest,50.2,65.2,40,0
+    .cast 448381 >>Use |cRXP_FRIENDLY_Scroll of Spatial Mending|r on the |cRXP_PICK_Portal|r to summon a |cRXP_ENEMY_Fel Interloper.|r
+    .target Fel Silver
+    .target Fel Crack
+    .target Fel Tear
+    .target Fel Scar
+    .target Fel Rift
+step
+    >>Kill |cRXP_ENEMY_Fel Interloper|r. Loot him for |cRXP_LOOT_|T134939:0|tSpell Notes: Balefire Bolt.|r
+    .collect 223147,1 --Spell Notes: Balefire Bolt
+    .mob Fel Interloper
+step
+    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt.]
+    .use 223147
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+#group RestedXP Rune & Books Guide
+#subgroup Bracers(Balefire Bolt)
+#name Balefire Bolt - 35 (Swamp of Sorrows)
+
+<< Mage SoD
+
+step << Alliance
+    .train 429311,1
+    #completewith Scroll of Spatial Mending
+    .zone Stormwind City >> Travel to Stormwind
+step << Horde
+    .train 429311,1
+    #completewith Scroll of Spatial Mending
+    .zone Undercity >> Travel to Undercity
+step
+    .train 429311,1
+    #label Scroll of Spatial Mending
+    >>|cRXP_BUY_Buy a|r |T134945:0|t[Scroll of Spatial Mending] |cRXP_BUY_from the Auction House.|r |cRXP_WARN_Alternatively an enchanter can craft it for you.|r
+    .collect 220792,1 --Scroll of Spatial Mending
+step
+    .train 429311,1
+    #completewith next
+    .zone Swamp of Sorrows >> Travel to Swamp of Sorrows
+step
+    .train 429311,1
+    #loop
+    .goto Swamp of Sorrows,36.6,50.0,40,0
+    .goto Swamp of Sorrows,27.0,49.8,40,0
+    .goto Swamp of Sorrows,22.8,64.6,40,0
+    .goto Swamp of Sorrows,16.6,63.6,40,0
+    .goto Swamp of Sorrows,10.6,60.2,40,0
+    .goto Swamp of Sorrows,12.6,29.6,40,0
+    .goto Swamp of Sorrows,34.6,28.0,40,0
+    .goto Swamp of Sorrows,49.8,38.6,40,0
+    .goto Swamp of Sorrows,61.0,43.4,40,0
+    .goto Swamp of Sorrows,60.8,27.4,40,0
+    .goto Swamp of Sorrows,72.8,10.4,40,0
+    .goto Swamp of Sorrows,87.6,26.0,40,0
+    .goto Swamp of Sorrows,81.4,34.6,40,0
+    .goto Swamp of Sorrows,91.6,56.4,40,0
+    .goto Swamp of Sorrows,91.0,65.6,40,0
+    .goto Swamp of Sorrows,83.8,66.4,40,0
+    .goto Swamp of Sorrows,77.4,89.6,40,0
+    .goto Swamp of Sorrows,77.6,90.0,40,0
+    .goto Swamp of Sorrows,69.8,78.0,40,0
+    .goto Swamp of Sorrows,56.8,65.6,40,0
+    .cast 448381 >>Use |cRXP_FRIENDLY_Scroll of Spatial Mending|r on the |cRXP_PICK_Portal|r to summon a |cRXP_ENEMY_Fel Interloper.|r
+    .target Fel Silver
+    .target Fel Crack
+    .target Fel Tear
+    .target Fel Scar
+    .target Fel Rift
+    .use 220792
+step
+    >>Kill |cRXP_ENEMY_Fel Interloper|r. Loot him for |cRXP_LOOT_|T134939:0|tSpell Notes: Balefire Bolt.|r
+    .collect 223147,1 --Spell Notes: Balefire Bolt
+    .mob Fel Interloper
+step
+    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt.]
+    .use 223147
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+#group RestedXP Rune & Books Guide
+#subgroup Bracers(Balefire Bolt)
+#name Balefire Bolt - 28 (Redridge Mountains)
+
+<< Mage SoD
+
+step << Alliance
+    .train 429311,1
+    #completewith Scroll of Spatial Mending
+    .zone Stormwind City >> Travel to Stormwind
+step << Horde
+    .train 429311,1
+    #completewith Scroll of Spatial Mending
+    .zone Undercity >> Travel to Undercity
+step
+    .train 429311,1
+    #label Scroll of Spatial Mending
+    >>|cRXP_BUY_Buy a|r |T134945:0|t[Scroll of Spatial Mending] |cRXP_BUY_from the Auction House.|r |cRXP_WARN_Alternatively an enchanter can craft it for you.|r
+    .collect 220792,1 --Scroll of Spatial Mending
+step
+    .train 429311,1
+    #completewith next
+    .zone Redridge Mountains >> Travel to Redridge Mountains
+step
+    .train 429311,1
+    #loop
+    .goto Redridge Mountains,29.8,30.4,40,0
+    .goto Redridge Mountains,79.2,33.8,40,0
+    .goto Redridge Mountains,83.2,45.2,40,0
+    .goto Redridge Mountains,81.8,60.8,40,0
+    .goto Redridge Mountains,79.0,73.0,40,0
+    .goto Redridge Mountains,71.4,83.6,40,0
+    .cast 448381 >>Use |cRXP_FRIENDLY_Scroll of Spatial Mending|r on the |cRXP_PICK_Portal|r to summon a |cRXP_ENEMY_Fel Interloper.|r
+    .target Fel Silver
+    .target Fel Crack
+    .target Fel Tear
+    .target Fel Scar
+    .target Fel Rift
+    .use 220792
+step
+    >>Kill |cRXP_ENEMY_Fel Interloper|r. Loot him for |cRXP_LOOT_|T134939:0|tSpell Notes: Balefire Bolt.|r
+    .collect 223147,1 --Spell Notes: Balefire Bolt
+    .mob Fel Interloper
+step
+    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt.]
+    .use 223147
+]])
