@@ -1654,7 +1654,7 @@ step << !NightElf
     >>Kill |cRXP_ENEMY_Illari Duskfeather|r. Open the |cRXP_PICK_Dropped Pouch|r she drops on the ground. Loot it for |cRXP_LOOT_Illari's Key|r
     .collect 212347,1,79242,1 --Illari's Key
     .skipgossip 215655,1,1,1
-    .mob Illari Duskfeather 
+    .mob Illari Duskfeather
 step << !NightElf
     .train 431663,1 << Priest
     .train 416031,1 << Paladin
@@ -2095,4 +2095,59 @@ step
     .turnin 79976 >> Turn in This Must Be The Place
 step
     +|cRXP_WARN_It is strongly adivsed you save your|r |T134057:0|t[|cRXP_LOOT_Student Fodder|r] |cRXP_WARN_for higher levels before consuming them. Each use of|r |T134057:0|t[|cRXP_LOOT_Student Fodder|r] |cRXP_WARN_adds 20% rested experience to your character, therefore it is more efficient to use at higher levels|r
+]])
+
+
+RXPGuides.RegisterGuide([[
+#classic
+#group RestedXP Rune & Books Guide
+#subgroup Bracers
+#name Displacement
+-- Mage Paladin Warlock All share this
+
+
+
+
+
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+#group RestedXP Rune & Books Guide
+#subgroup Helm <<Druid/Shaman/Warrior
+#subgroup Bracers <<Mage/Hunter/Paladin/Priest/Rogue/Warlock
+#name Molten Armor <<Mage
+#name Bloodshed <<Druid
+#name Detonation <<Hunter
+#name Hammer of Wrath <<Paladin
+#name Nihilist Epiphany <<Priest
+#name Alacrity <<Rogue
+#name Burn <<Shaman
+#name Unstable Affliction <<Warlock
+#name Shield Mastery <<Warrior
+
+
+
+
+]])
+
+
+RXPGuides.RegisterGuide([[
+#classic
+#group RestedXP Rune & Books Guide
+#subgroup Helmet <<Mage/Hunter/Paladin/Priest/Rogue/Warlock
+#subgroup Bracers <<Druid/Shaman/Warrior
+#name Advanced Warding <<Mage
+#name Lock and Load <<Hunter
+#name Improved Sanctuary <<Paladin
+#name Divine Aegis <<Priest
+#name Combat Potency <<Rogue
+#name Riptide <<Shaman
+#name Vengeance <<Warlock
+#name Sword and Board <<Warrior
+#name Improved Frenzied Regeneration <<Druid
+
+
+
+
 ]])

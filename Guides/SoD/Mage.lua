@@ -1103,9 +1103,9 @@ RXPGuides.RegisterGuide[[
 #classic
 #group RestedXP Rune & Books Guide
 <<Alliance Mage SoD
-#subgroup Legs/Boots/
+#subgroup Legs/Boots/Helm
 #name Icy Veins/Spell Power/Deep Freeze - 40 (Azeroth)
-#title Icy Veins & Spell Power
+#title Icy Veins & Spell Power & Deep Freeze
 
 --x Shiek: The guide is specifically tailored for players who have reached level 25, rather than being intended for use during the leveling process.
 --x Shiek: Although there are a total of 16 books in the game, only 10 are necessary for this particular purpose. The additional books, while not included in the current version of the guide, have been noted and could be referenced later if needed.
@@ -1589,8 +1589,9 @@ RXPGuides.RegisterGuide[[
 #classic
 #group RestedXP Rune & Books Guide
 #subgroup Legs/Boots
-#name Icy Veins/Spell Power - 40 (Azeroth)
-#title Icy Veins & Spell Power
+#subgroup Legs/Boots/Helm
+#name Icy Veins/Spell Power/Deep Freeze - 40 (Azeroth)
+#title Icy Veins & Spell Power & Deep Freeze
 
 << Horde Mage SoD
 
@@ -1683,7 +1684,7 @@ step
     .isQuestAvailable 79950
 step
     .goto Desolace,55.0,26.0
-    >>Click on the |cRXP_PICK_Scrool|r to receive the book |T133733:0|t[Demons and You]r
+    >>Click on the |cRXP_PICK_Scroll|r to receive the book |T133733:0|t[Demons and You]r
     .collect 215817,1
     .isQuestAvailable 79950
 step
@@ -1705,10 +1706,18 @@ step
     .collect 209851,1
     .isQuestAvailable 78149
 step
+    .isQuestAvailable 81952
+    .zone Azshara >>Travel to |cFFfa9602Azshara|r
+    .fly Ashenvale >>Fly to |cFFfa9602Ashenvale|r
+    .disablecheckbox
+step
+    .goto Azshara,20.7,62
+    >>Click on the |cRXP_PICK_Book|r to obtain |T133740:0|t[Everyday Etiquette.]
+    .collect 220348,1
+    .isQuestAvailable 81952
+step
     #completewith next
     .zone Darkshore >>Travel to |cFFfa9602Darkshore|r on foot|cRXP_WARNif you have neither flightpath. _|r
-    .fly Ashenvale >>Take a flight path to |cFFfa9602Ashenvale|r |cRXP_WARN_if you have it unlocked.|r
-    .fly Stonetalon Mountains >>Take a flight path to |cFFfa9602Stonetalon Mountains|r |cRXP_WARN_if you don't have an|r |cFFfa9602Ashenvale|r flight path unlocked.
     .disablecheckbox
     .isQuestAvailable 78124
 step
@@ -1741,6 +1750,17 @@ step
     >>Click on the |cRXP_PICK_Scroll|r to receive the book|T133740:0|t[Geomancy: The Stone-Cold Truth] inside the tent next to a sack.
     .collect 215683,1
     .isQuestAvailable 79947
+step
+    #completewith next
+    .zone Tanaris >>Travel to |cFFfa9602Tanaris|r
+    .fly Tanaris >>Take a flight path to |cFFfa9602Tanaris|r |cRXP_WARN_if you have it unlocked.|r
+    .disablecheckbox
+    .isQuestAvailable 81949
+step
+    .goto Tanaris,72.6,47.8
+    >>Click on the |cRXP_PICK_Book|r to obtain |T134941:0|t[Legends of the Tidesages]
+    .collect 220346,1
+    .isQuestAvailable 81949
 step
     .zone Undercity >>Travel to |cFFfa9602Undercity|r
     .cast 3563 >>Use [Teleport Undercity] |cRXP_WARN_If you have|r |T134419:0|t[Rune of Teleportation]
@@ -1794,6 +1814,17 @@ step
     >>Click on the |cRXP_PICK_Manual|r inside the tower on crates to receive the Book |T133736:0|t[Defensive Magics 101].
     .collect 215815,1
     .isQuestAvailable 79948
+step
+    #completewith next
+    .zone Hinterlands >>Travel to |cFFfa9602Hinterlands|r
+    .fly Hinterlands >>Take a flight path to |cFFfa9602Hinterlands|r |cRXP_WARN_if you have it unlocked.|r
+    .disablecheckbox
+    .isQuestAvailable 81954
+step
+    .goto Hinterlands,36,72.7
+    >>Click on the |cRXP_PICK_Book|r to obtain |T134942:0|t[Venomous Journeys]
+    .collect 220350,1
+    .isQuestAvailable 81954
 step
     #completewith next
     .zone Arathi Highlands >>Travel to |cFFfa9602Arathi Highlands|r
@@ -1876,6 +1907,28 @@ step
     .isQuestAvailable 79953
 step
     #completewith next
+    .zone Swamp of Sorrows >>Travel to |cFFfa9602Swamp of Sorrows|r
+    .fly Swamp of Sorrows >>Take a flight path to |cFFfa9602Swamp of Sorrows|r |cRXP_WARN_if you have it unlocked and are not there yet.|r
+    .disablecheckbox
+    .isQuestAvailable 81947
+step
+    .goto Swamp of Sorrows,70,51
+    >>Click on the |cRXP_PICK_Book|r to obtain |T133738:0|t[Sanguine Sorcery]
+    .collect 220345,1
+    .isQuestAvailable 81947
+step
+    #completewith next
+    .zone Blasted Lands >>Travel to |cFFfa9602Blasted Lands|r
+    .fly Blasted Lands >>Take a flight path to |cFFfa9602Blasted Lands|r |cRXP_WARN_if you have it unlocked and are not there yet.|r
+    .disablecheckbox
+    .isQuestAvailable 81955
+step
+    .goto Blasted Lands,55.3,32.2
+    >>Click on the |cRXP_PICK_Book|r to obtain |T133736:0|t[Conjurer's Codex]
+    .collect 220353,1
+    .isQuestAvailable 81955
+step
+    #completewith next
     .zone Stranglethorn Vale >>Travel to |cFFfa9602Stranglethorn Vale|r
     .fly Stranglethorn Vale >>Take a flight path to |cFFfa9602Stranglethorn Vale|r |cRXP_WARN_if you have it unlocked.|r
     .disablecheckbox
@@ -1885,6 +1938,28 @@ step
     >>Click on the |cRXP_PICK_Researchnotes|r on the bench to receive the Book |T237162:0|t[Basilisks: Should Petrification be Feared?]
     .collect 213165,1
     .isQuestAvailable 79535
+step
+    #completewith next
+    .zone Searing Gorge >>Travel to |cFFfa9602Searing Gorge|r
+    .fly Searing Gorge >>Take a flight path to |cFFfa9602Searing Gorge|r |cRXP_WARN_if you have it unlocked.|r
+    .disablecheckbox
+    .isQuestAvailable 81955
+step
+    .goto Searing Gorge,37.8,49.6
+    >>Click on the |cRXP_PICK_Book|r to obtain |T133743:0|t[Stonewrought Design]
+    .collect 220352,1
+    .isQuestAvailable 81955
+step
+    #completewith next
+    .zone Searing Gorge >>Travel to |cFFfa9602Searing Gorge|r
+    .fly Searing Gorge >>Take a flight path to |cFFfa9602Searing Gorge|r |cRXP_WARN_if you have it unlocked.|r
+    .disablecheckbox
+    .isQuestAvailable 81953
+step
+    .goto Blackrock Depths,20.7,62
+    >>Click on the |cRXP_PICK_Book|r to obtain |T133743:0|t[Stonewrought Design]
+    .collect 220349,1
+    .isQuestAvailable 81953
 step
     #completewith next
     .zone Undercity >>Travel to |cFFfa9602Undercity|r
