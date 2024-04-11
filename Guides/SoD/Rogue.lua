@@ -1723,41 +1723,97 @@ step
     .train 400093 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Southpaw|r] |cRXP_WARN_to train|r |T134919:0|t[Rolling with the Punches]
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Rogue SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Helmet
--- #name Combat Potency
--- for phase 3
+ RXPGuides.RegisterGuide([[
+ #classic
+ << Rogue SoD
+ #group RestedXP Rune & Books Guide
+ #subgroup Helm
+ #title Focused Attacks
+ #name Focused Attacks - 34 (Hinterlands)
 
--- Combat Potency
+ step
+    >>|cRXP_WARN_You will need|r |T136175:0|t[Blind] |cRXP_WARN_to obtain the|r |T236274:0|t[Focused Attacks] |cRXP_WARN_rune|r. |cRXP_WARN_Make sure you have the spell and blinding powder with you
+    .collect 5530,1 -- Blinding Powder 1/1
+    
+step
+    #completewith next
+    .zone The Hinterlands >>Travel to |cFFfa9602The Hinterlands|r
+step
+    .goto The Hinterlands,72,53
+    >>Look for a small chest in front of an altar in the ruins. It's guarded by a |cRXP_ENEMY_Vilebranch Mask|r use |T136175:0|t[Blind] on it and loot the chest for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Focus|r]
+    .collect 221433,1 -- rune of focus
+    .mob Vilebranch Mask
+step
+    .itemcount 221433,1
+    .use 221433
+    .train 400093 >>|cRXP_WARN_Use the|T134419:0|t[|cRXP_FRIENDLY_Rune of Focus|r] |cRXP_WARN_to train|r |T236274:0|t[Focused Attacks]
+
+ ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Rogue SoD
+#group RestedXP Rune & Books Guide
+#subgroup Bracers
+#title Unfair Advantage
+#name Unfair Advantage - 40 (Tanaris)
+
+step
+    #completewith next
+    .zone Tanaris >>|cRXP_WARN_Travel to|r |cFFfa9602Tanaris|r, |cRXP_WARN_you will need|r |T133644:0|t[Pick Pocket] |cRXP_WARN_to obtain the|r |T236285:0|t[Unfair Advantage] |cRXP_WARN_rune|r
+step
+    .goto Tanaris,71,45
+    >>Go to the Lost Rigger Cove in Tanaris. Look for |cRXP_ENEMY_Southsea Pirates|r or |cRXP_ENEMY_Southsea Freebooters|r, cast |r |T133644:0|t[Pick Pocket] on them untill you receive a |T133639:0|t|cRXP_LOOT_Kidnapper's Coin Purse|r
+    .collect 221371,1 - Kidnapper's Coin Purse 1/1
+    .mob Southsea Pirate
+    .mob Southsea Freebooter
+step
+    .goto Tanaris,71,45
+    >>Open the |T133639:0|t|cRXP_LOOT_Kidnapper's Coin Purse|r and loot it for a |T133302:0|t|cRXP_LOOT_Precious Medalion|r
+    .collect 221370,1 -- Precious Medalion 1/1
+    .use 221371
+step
+    .goto Tanaris,67,22
+    >>Go to Steamwheedle Port and find |cRXP_FRIENDLY_Jabbey|r the Goblin in one of the northmost huts. Complete the dialogue with him to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Foul Play|r]
+    .collect 221428,1 -- Rune of Foul Play
+    .target Jabbey
+step
+    .use 221428
+    .train 432273 >>|cRXP_WARN_Use the|T134419:0|t[|cRXP_FRIENDLY_Rune of Foul Play|r] |cRXP_WARN_to train|r |T236285:0|t[Unfair Advantage]
+
+]])
+RXPGuides.RegisterGuide([[
+#classic
+<< Rogue SoD
+#group RestedXP Rune & Books Guide
+#subgroup Bracers
+#title Carnage
+#name Carnage - 45 (Blasted Lands)
+
+step
+    #optional
+    .skill lockpicking,225 >>|cRXP_WARN_You must level your|r |T136058:0|t[Lockpicking] |cRXP_WARN_to at least 225 to obtain the|r |T236268:0|t[Carnage] |cRXP_WARN_rune|r
+step
+    #completewith next
+    .zone Blasted Lands >>Travel to |cFFfa9602Blasted Lands|r
+step
+    .goto Blasted Lands,45.3,16.4 
+    >>Go to the tower near Dreadmaul Hold in the Blasted Lands. At the top you will find an Abandoned Cache requiring lockpicking 225 to open. After unlocking it a level 46 |cRXP_FRIENDLY_Murderous Lost One|r will spawn. Kill it and loot it for the|T134419:0|t[|cRXP_FRIENDLY_Rune of Carnage|r]
+    .collect 221461,1 -- Rune of Carnage 1/1
+    .unitscan Murderous Lost One
+step
+    .use 221461
+    .train 432276 >>|cRXP_WARN_Use the|T134419:0|t[|cRXP_FRIENDLY_Rune of Carnage|r] |cRXP_WARN_to train|r |T236268:0|t[Carnage]
+
+]])
 
 
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Rogue SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Helm
--- #name Focused Attacks
--- for phase 3
-
--- Focused Attacks
-
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Rogue SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Helm
--- #name Honor Among Thieves
--- for phase 3
-
--- Honor Among Thieves
-
+--RXPGuides.RegisterGuide([[
+--#classic
+--<< Rogue SoD
+--#group RestedXP Rune & Books Guide
+--#subgroup Helm
+--#title Honor Among Thieves
+--#name Honor Among Thieves - 45 (Azeroth)
 
 -- ]])

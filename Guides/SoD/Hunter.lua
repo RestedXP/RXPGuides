@@ -1116,7 +1116,10 @@ step
     .collect 221445,1
     .mob Enraged Stormcrow
 step
+<<<<<<< HEAD
     .itemcount 221445,1
+=======
+>>>>>>> Ksuper
     .use 221445
     .train 428726 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Focused Fire|r] |cRXP_WARN_to train|r |T135548:0|t[Focus Fire]
  ]])
@@ -1148,6 +1151,7 @@ step
 step
     .train 415358 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Raptor|r] |cRXP_WARN_to train|r |T132253:0|t[Raptor Fury]
     .use 2220687
+<<<<<<< HEAD
     .itemcount 220687,1
 
     ]])
@@ -1159,6 +1163,19 @@ RXPGuides.RegisterGuide([[
     #title Catlike Reflexes
     #name Catlike Reflexes - 40 (Feralas)
 
+=======
+
+    ]])
+
+RXPGuides.RegisterGuide([[
+    #classic
+    << Hunter SoD
+    #group RestedXP Rune & Books Guide
+    #subgroup Head
+    #title Catlike Reflexes
+    #name Catlike Reflexes - 40 (Feralas)
+
+>>>>>>> Ksuper
 step
     #completewith next
     .zone Feralas >>Travel to Feralas
@@ -1183,7 +1200,9 @@ step
     .collect 220791,1 -- Rune of the Jungle Cat
 step
     .train 415428 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of the Jungle Cat|r] |cRXP_WARN_to train|r |T132167:0|t[Catlike Reflexes]
+    .use 220791
     ]])
+
 RXPGuides.RegisterGuide([[
     #classic
     << Hunter SoD
@@ -1242,4 +1261,9 @@ step
 step
     .train 415405 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of the Ravenous|r] |cRXP_WARN_to train|r |T132205:0|t[Rapid Killing]
     >>You also received an |T136091:0|t|cRXP_LOOT_Infernal Lasso|r trinket which can be used to tame Corehounds
+<<<<<<< HEAD
 ]])
+=======
+    .use 220217
+]])
+>>>>>>> Ksuper
