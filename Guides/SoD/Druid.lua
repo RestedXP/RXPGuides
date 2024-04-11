@@ -818,15 +818,139 @@ step
     .train 410059 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of Nourishing|r] to learn |T236162:0|t[Nourish]
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Druid SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Bracers
--- #name Efflorescence
--- for phase 3
+RXPGuides.RegisterGuide([[
+#classic
+<< Druid SoD
+#group RestedXP Rune & Books Guide
+#subgroup Bracers
+#name Efflorescence - 45 (Azeroth)
 
--- ]])
+step
+    #optional
+    .train 431468,1
+    .train 2728 >> |cRXP_WARN_You must have|r |T135952:0|t[Remove Curse] |cRXP_WARN_trained in order to aquire the|r |T134222:0|t[Efflorescence] |cRXP_WARN_rune|r
+step
+    #optional
+    .train 431468,1
+    .train 8946 >> |cRXP_WARN_You must have|r |T136067:0|t[Cure Poison] |cRXP_WARN_trained in order to aquire the|r |T134222:0|t[Efflorescence] |cRXP_WARN_rune|r
+step
+    #optional
+    .train 431468,1
+    .train 16914 >> |cRXP_WARN_You must have|r |T136018:0|t[Hurricane] |cRXP_WARN_trained in order to aquire the|r |T134222:0|t[Efflorescence] |cRXP_WARN_rune|r
+step
+    #optional
+    .train 431468,1
+    .train 740 >> |cRXP_WARN_You must have|r |T136107:0|t[Tranquility] |cRXP_WARN_trained in order to aquire the|r |T134222:0|t[Efflorescence] |cRXP_WARN_rune|r
+step
+    #optional
+    .train 431468,1
+    .train 768 >> |cRXP_WARN_You must have|r |T132115:0|t[Cat Form] |cRXP_WARN_trained in order to aquire the|r |T134222:0|t[Efflorescence] |cRXP_WARN_rune|r
+step
+    #completewith next
+    .zone Feralas >>Travel to Feralas
+    .train 431468,1
+step
+    .train 431468,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tyrisius|r |cRXP_WARN_inside the tower|r
+    .goto Feralas,57.2,69.0
+    .accept 81924 >>Accept Wisdom of the Guardians
+    .target Tyrisius
+step
+    .train 431468,1
+    .aura 446488 >>Click on the |cRXP_PICK_Shrine of the Warden|r to get the |T132145:0|t[Duty of the Warden] buff
+    .goto Feralas,58.7,52.4
+step
+    .train 431468,1
+    #sticky
+    #label MarkoftheWarden
+    .aura 446467 >>Follow the following steps to get the |T236157:0|t[Mark of the Warden] buff
+step
+    .train 431468,1
+    #loop
+    .goto Feralas,61.8,55.6,35,0
+    .goto Feralas,58.6,66.2,35,0
+    >>Attack a |cRXP_ENEMY_Gordunni Warlock|r. |cRXP_WARN_Wait until they use|r |T136121:0|t[Shrink] |cRXP_WARN_on you.|r 
+    .cast 2728 >>|cRXP_WARN_Use|r |T135952:0|t[Remove Curse] |cRXP_WARN_to remove the|r |T136121:0|t[Shrink] |cRXP_WARN_debuff|r
+    .mob Gordunni Warlock
+step
+    .train 431468,1
+    .goto Feralas,73.8,61.6
+    >>Attack a |cRXP_ENEMY_Zukk'ash Wasp|r. |cRXP_WARN_Wait until they use|r |T136016:0|t[Poison] |cRXP_WARN_on you.|r
+    .cast 526 >>|cRXP_WARN_Use|r |T135952:0|t[Cure Poison] |cRXP_WARN_to remove the|r |T136016:0|t[Poison] |cRXP_WARN_debuff|r
+    .mob Zukk'ash Wasp
+step
+    #requires MarkoftheWarden
+    .train 431468,1
+    >>|cRXP_WARN_Click on/Run to the|r |cRXP_PICK_Shrine of the Warden|r |cRXP_WARN_to summon the |cRXP_ENEMY_Treant Avatar|r|r
+    >>Kill the |cRXP_ENEMY_Treant Avatar|r.
+    .complete 81924,1 --Guardian of Feralas
+    .goto Feralas,58.7,52.4
+    .mob Treant Avatar
+step
+    .train 431468,1
+    #completewith next
+    .zone Azshara >>Travel to Azshara (Moonglade Teleport -> Azshara Flight Path)
+step
+    .train 431468,1
+    .goto Azshara,34.6,49.0
+    .gossip 441947,0 >>Click on the |cRXP_PICK_Shrine of the Beast|r
+    *|cRXP_WARN_Skip this step manually if it doesn't complete|r
+step
+    .train 431468,1
+    >>Kill |cRXP_ENEMY_Child of Apa'ro|r |cRXP_WARN_with Melee Abilities (go into Cat or Bear Form)|r. Loot it for the |T134338:0|t[|cRXP_LOOT_Sacred Stag Heart|r]
+    .collect 221326,1
+    .mob Child of Apa'ro
+step
+    #completewith next
+    .itemcount 221362,1
+    .use 221326
+    .goto Azshara,34.6,49.0
+    .cast 446509 >>|cRXP_WARN_Use the|r |T134338:0|t[|cRXP_LOOT_Sacred Stag Heart|r] |cRXP_WARN_next to the|r |cRXP_PICK_Shrine of the Beast|r |cRXP_WARN_to summon the|r |cRXP_ENEMY_Hippogryph Avatar|r
+    .train 431468,1
+step
+    .train 431468,1
+    >>Kill the |cRXP_ENEMY_Hippogryph Avatar|r
+    .goto Azshara,34.6,49.0
+    .complete 81924,3 --Guardian of Azshara
+    .mob Hippogryph Avatar
+step
+    .train 431468,1
+    #completewith next
+    .zone The Hinterlands >>Travel to The Hinterlands
+step
+    .train 431468,1
+    .goto The Hinterlands,66.2,53.1
+    .gossip 441946,0 >>Click on the |cRXP_PICK_Shrine of the Moon|r at the top of the Hill
+    *|cRXP_WARN_Skip this step manually if it doesn't complete|r
+step
+    .train 431468,1
+    .cast 740 >>|cRXP_WARN_Use|r |T136107:0|t[Tranquility]
+step
+    .train 431468,1
+    .cast 16914 >>|cRXP_WARN_Use|r |T136018:0|t[Hurricane]
+step
+    .train 431468,1
+    >>Kill the |cRXP_WARN_Moonkin Avatar|r
+    .goto The Hinterlands,66.2,53.1
+    .complete 81924,2 --Guardian of the Hinterlands
+    .mob Moonkin Avatar
+step
+    #completewith next
+    .zone Feralas >>Travel to Feralas
+    .train 431468,1
+step
+    .train 431468,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tyrisius|r |cRXP_WARN_inside the tower|r
+    .goto Feralas,57.2,69.0
+    .turnin 81924 >>Turn in Wisdom of the Guardians
+    .target Tyrisius
+step
+    .itemcount 220360,1
+    .use 220360
+    .train 431468 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of Efflorescence|r] to learn |T134222:0|t[Efflorescence]
+    
+]])
+
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
@@ -839,33 +963,126 @@ step
 
 -- ]])
 
+RXPGuides.RegisterGuide([[
+#classic
+<< Druid SoD
+#group RestedXP Rune & Books Guide
+#subgroup Helm
+#name Gale Winds - 40 (Feralas)
+
+step
+    #completewith NamidaGrimtotem
+    .train 431451,1
+    .zone Feralas >>Travel to Feralas
+step
+    #label NamidaGrimtotem
+    .train 431451,1
+    >>Kill |cRXP_ENEMY_Namida Grimtotem|r. Loot her for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Windstorm|r]
+    .goto Feralas,66.8,38.6
+    .collect 220754,1 
+    .mob Namida Grimtotem
+step
+    .itemcount 220754,1
+    .use 220754
+    .train 431451 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Windstorm|r] |cRXP_WARN_to train|r |T236154:0|t[Gale Winds]
+
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Druid SoD
+#group RestedXP Rune & Books Guide
+#subgroup Bracers
+#name Elune's Fire - 45 (Azshara)
+
+step
+    #completewith next
+    .zone Azshara >>Travel to Azshara
+    .train 416051,1
+step
+    --PERMOK: Check coordiantes
+    .train 416051,1
+    >>Click on the |cRXP_PICK_Traveller's Knapsack|r to loot the |T236229:0|t[|cRXP_LOOT_Field Medicine Kit|r] and |T133741:0|t[|cRXP_LOOT_Kelara's Log|r]
+    .goto Azshara,20.61,61.97
+    .collect 221018,1
+    .collect 221017,1
+step
+    .train 416051,1
+    --PERMOK: Fix coordiantes
+    #loop
+    .goto Azshara,20,65,30,0
+    .goto Azshara,20,62,30,0
+    .goto Azshara,21,61,30,0
+    >>Pick up 3 |T134218:0|t[|cRXP_PICK_Satyrweed Samples|r]
+    .collect 221019,3
+step
+    >>|cRXP_WARN_Use the|r |T236229:0|t[|cRXP_LOOT_Field Medicine Kit|r] |cRXP_WARN_to combine the samples into the|r |T236868:0|t[Satyrweed Tincture]
+    .collect 221199,1
+step
+    .train 416051,1
+    #loop
+    .goto Azshara,16.0,49.6,30,0
+    .goto Azshara,18.6,66.6,30,0
+    .goto Azshara,21.0,56.2,30,0
+    >>Look for a |cRXP_ENEMY_Thunderhead Hyppogryph|r with the |T136134:0|t[Satyr Corruption] debuff
+    *|cRXP_WARN_If it has the debuff then it emits a green poison cloud|r.
+    .cast 2637 >>Use |T136090:0|t[Hybernate] on the |cRXP_ENEMY_Thunderhead Hyppogryph|r
+    .mob Thunderhead Hyppogryph
+step
+    .train 416051,1
+    >>|cRXP_WARN_Use the|r |T236868:0|t[Satyrweed Tincture] |cRXP_WARN_on the |cRXP_ENEMY_Thunderhead Hyppogryph|r to remove the|r |T136134:0|t[Satyr Corruption] |cRXP_WARN_debuff|r and get the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Moon Goddess|r] 
+    .itemcount 221199,1
+    .use 221199
+    .collect 221020,1
+    .mob Thunderhead Hyppogryph
+step
+    .itemcount 221020,1
+    .use 221020
+    .train 416051 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Windstorm|r] |cRXP_WARN_to train|r |T236163:0|t[Elune's Fires]
+]]) 
+
 -- RXPGuides.RegisterGuide([[
 -- #classic
 -- << Druid SoD
 -- #group RestedXP Rune & Books Guide
--- #subgroup Helmet
--- #name Gale Winds
--- for phase 3
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Druid SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Helmet
+-- #subgroup Helm
 -- #name Gore
 -- for phase 3
 
 
 -- ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Druid SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Helmet
--- #name Improved Barkskin
--- for phase 3
+RXPGuides.RegisterGuide([[
+#classic
+<< Druid SoD
+#group RestedXP Rune & Books Guide
+#subgroup Helm
+#name Improved Barkskin - 44 (Tanaris)
 
--- ]])
+step
+    #optional
+    .train 431468,1
+    .train 22812 >> |cRXP_WARN_You must have|r |T136097:0|t[Barkskin] |cRXP_WARN_trained in order to aquire the|r |T136097:0|t[Improved Barkskin] |cRXP_WARN_rune|r
+step
+    #completewith next
+    .zone Tanaris >>Travel to Tanaris
+    .train 431449,1
+step
+    #loop
+    .goto Tanaris,28.2,63.0,40,0
+    .goto Tanaris,28.2,68.6,40,0
+    .goto Tanaris,30.8,63.4,40,0
+    >>Kill |cRXP_ENEMY_Thistleshrub Dew Collector|r and |cRXP_ENEMY_Thistleshrub Rootshaper|r. Loot them for the |T136061:0|t[|cRXP_LOOT_Idol of the Raging Shambler|r]
+    .collect 220915,1
+    .mob Thistleshrub Dew Collector
+    .mob Thistleshrub Rootshaper
+step
+    .equip 18,220915 >>|cRXP_WARN_Equip the|r |T136061:0|t[|cRXP_FRIENDLY_Idol of the Raging Shambler|r]
+step
+    .aura 408828 >>Kill |cRXP_WARN_five enemies with a Nature spell (e.g. Wrath) while under the effect of |T136097:0|t[Barkskin].|r 
+    *|cRXP_WARN_Use |T136097:0|t[Barkskin] when the enemy is at low HP and finish him with a Wrath or another Nature spell|r
+step
+    .itemcount 221020,1
+    .use 221020
+    .train 416051 >> |cRXP_WARN_Use the|r |T136061:0|t[|cRXP_FRIENDLY_Idol of the Raging Shambler|r] |cRXP_WARN_to train|r |T136097:0|t[Improved Barkskin]
+]])
