@@ -3603,10 +3603,16 @@ _G.StaticPopupDialogs["RXP_Link"] = {
 
 function addon.functions.cast(self, text, ...)
     if type(self) == "string" then -- on parse
-        local element = {}
+        local element = {unit = "player"}
         local ids = {...}
         for i,v in ipairs(ids) do
-            ids[i] = tonumber(v)
+            local newValue = tonumber(v)
+            if i == 1 and not newValue then
+                element.unit = v
+                ids[1] = -1
+            else
+                ids[i] = newValue or -1
+            end
         end
         element.ids = ids
         element.text = text or ""
@@ -3628,7 +3634,7 @@ function addon.functions.cast(self, text, ...)
     local event = text
     local unit, _, id = ...
     local element = self.element
-    if event == "UNIT_SPELLCAST_SUCCEEDED" and unit == "player" then
+    if event == "UNIT_SPELLCAST_SUCCEEDED" and unit == element.unit then
         for _,spellId in pairs(element.ids) do
             if id == spellId then
                 local icon = GetSpellTexture(id)
