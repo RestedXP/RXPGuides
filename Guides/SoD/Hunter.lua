@@ -1104,7 +1104,7 @@ RXPGuides.RegisterGuide([[
 #name Focus Fire - 40 (Searing Gorge)
 
 step
-    >>|cRXP_WARN_You will have to kill a level 45 mob in a hostile area to acquire this rune. Make sure to being help if you're lower level. 
+    >>|cRXP_WARN_You will have to kill a level 45 mob in a hostile area to acquire this rune. Make sure to being help if you're lower level.
     .goto Searing Gorge,53.29,57.35,5
 step
     .goto Searing Gorge,53.10,55.85
@@ -1116,14 +1116,11 @@ step
     .collect 221445,1
     .mob Enraged Stormcrow
 step
-<<<<<<< HEAD
     .itemcount 221445,1
-=======
->>>>>>> Ksuper
     .use 221445
     .train 428726 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Focused Fire|r] |cRXP_WARN_to train|r |T135548:0|t[Focus Fire]
  ]])
- 
+
  RXPGuides.RegisterGuide([[
     #classic
     << Hunter SoD
@@ -1131,7 +1128,7 @@ step
     #subgroup Bracers
     #title Raptor Fury
     #name Raptor Fury - 40 (Tanaris)
-    
+
 step
     #completewith next
     .zone Tanaris >>Travel to Tanaris
@@ -1151,7 +1148,6 @@ step
 step
     .train 415358 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Raptor|r] |cRXP_WARN_to train|r |T132253:0|t[Raptor Fury]
     .use 2220687
-<<<<<<< HEAD
     .itemcount 220687,1
 
     ]])
@@ -1163,19 +1159,6 @@ RXPGuides.RegisterGuide([[
     #title Catlike Reflexes
     #name Catlike Reflexes - 40 (Feralas)
 
-=======
-
-    ]])
-
-RXPGuides.RegisterGuide([[
-    #classic
-    << Hunter SoD
-    #group RestedXP Rune & Books Guide
-    #subgroup Head
-    #title Catlike Reflexes
-    #name Catlike Reflexes - 40 (Feralas)
-
->>>>>>> Ksuper
 step
     #completewith next
     .zone Feralas >>Travel to Feralas
@@ -1195,13 +1178,13 @@ step
     .target Groddoc Infant
 step
     .goto 1444/1,1330.900,-5078.100
-    >>Escort the |cRXP_FRIENDLY_Groddoc Infant|r to a |cRXP_FRIENDLY_Groddoc Matriarch|r marked on your map. Be careful, the infant is agressive and will attack nearby enemies including opposing faction players. 
+    >>Escort the |cRXP_FRIENDLY_Groddoc Infant|r to a |cRXP_FRIENDLY_Groddoc Matriarch|r marked on your map. Be careful, the infant is agressive and will attack nearby enemies including opposing faction players.
     .gossip 222406,1 >>Once you're there talk to the Matriarch and complete her dialogue to receive |T134419:0|t[|cRXP_FRIENDLY_Rune of the Jungle Cat|r]
     .collect 220791,1 -- Rune of the Jungle Cat
 step
     .train 415428 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of the Jungle Cat|r] |cRXP_WARN_to train|r |T132167:0|t[Catlike Reflexes]
     .use 220791
-    ]])
+]])
 
 RXPGuides.RegisterGuide([[
     #classic
@@ -1218,8 +1201,8 @@ step
     >>Travel to the cave entrance in Firewatch Ridge. Note that you'll need to enter a cave filled with lvl 47-48 elites. That being said it is possible to complete this part using deathruns.
 step
     .goto Searing Gorge,14.5,36.5
-    >>|cRXP_WARN_As you enter the cave take the path to the right. You'll quickly see a large tablet called |cRXP_FRIENDLY_Weathered Etching|r atop a rise in the middle section of the cave. Run to it and accept the quest. 
-    >>TIP: If you're alone try using traps and your pet to get as far as you can before using |T132293:0|t[|cRXP_FRIENDLY_Feign Death|r] to drop aggro from the mobs. Alternatively you can corpse run to the item. 
+    >>|cRXP_WARN_As you enter the cave take the path to the right. You'll quickly see a large tablet called |cRXP_FRIENDLY_Weathered Etching|r atop a rise in the middle section of the cave. Run to it and accept the quest.
+    >>TIP: If you're alone try using traps and your pet to get as far as you can before using |T132293:0|t[|cRXP_FRIENDLY_Feign Death|r] to drop aggro from the mobs. Alternatively you can corpse run to the item.
     .accept 81900 >> Accept The Burning Beast
 step
     #completewith next
@@ -1261,9 +1244,5 @@ step
 step
     .train 415405 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of the Ravenous|r] |cRXP_WARN_to train|r |T132205:0|t[Rapid Killing]
     >>You also received an |T136091:0|t|cRXP_LOOT_Infernal Lasso|r trinket which can be used to tame Corehounds
-<<<<<<< HEAD
-]])
-=======
     .use 220217
 ]])
->>>>>>> Ksuper
