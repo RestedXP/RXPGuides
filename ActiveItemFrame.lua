@@ -31,6 +31,7 @@ addon.GetItemCooldown = GetItemCooldown
 
 local function GetActiveItemList(ref)
     local itemList = {}
+    local activeItems = {}
     --[[
     if not (ref and ref.activeItems) then
         ref = addon
@@ -70,7 +71,8 @@ local function GetActiveItemList(ref)
         for slot = 1, GetContainerNumSlots(bag) do
             local id = GetContainerItemID(bag, slot)
             -- local spell = GetItemSpell(id)
-            if id and ref.activeItems[id] then
+            if id and ref.activeItems[id] and not activeItems[id] then
+                activeItems[id] = true
                 local itemName, _, _, _, _, _, _, _, _, itemTexture, _, classID =
                     GetItemInfo(id)
                 table.insert(itemList,{
