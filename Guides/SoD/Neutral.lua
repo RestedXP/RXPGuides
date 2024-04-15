@@ -2117,17 +2117,75 @@ RXPGuides.RegisterGuide([[
 #subgroup Helm <<Druid/Shaman/Warrior
 #subgroup Bracers <<Mage/Hunter/Paladin/Priest/Rogue/Warlock
 #name Molten Armor <<Mage
-#name Bloodshed <<Druid
-#name Detonation <<Hunter
-#name Hammer of Wrath <<Paladin
-#name Nihilist Epiphany <<Priest
-#name Alacrity <<Rogue
+#name Gore <<Druid
+#name T.N.T. <<Hunter
+#name Improved Hammer of Wrath <<Paladin
+#name Void Zone <<Priest
+#name Cut to the Chase <<Rogue
 #name Burn <<Shaman
 #name Unstable Affliction <<Warlock
 #name Shield Mastery <<Warrior
 
-
-
+step
+    +|cRXP_WARN_Go to any of the zones listed below. At the marked locations in each respecive one you will find an NPC from a new faction,|r |cRXP_FRIENDLY_The Emerald Wardens|r. |cRXP_WARN_To unlock this rune you will need to complete their quests and reach|r |cRXP_FRIENDLY_friendly|r |cRXP_WARN_reputation with them|r
+    >>|cRXP_WARN_TIP: If you're close to level 50 or above go to Feralas or The Hinterlands. In those zones you can complete a daily quest for an additional 1000 reputation|r. |cRXP_WARN_Farming this reputation is also much more efficient when done in a group so you can share quests between party members|r
+    >>Duskwood
+    >>Ashenvale
+    >>Feralas
+    >>The Hinterlands
+    .zoneskip Duskwood
+    .zoneskip Ashenvale
+    .zoneskip Feralas
+    .zoneskip The Hinterlands
+step
+    .reputation 2641,friendly >>Look for a Quartermaster of |cRXP_FRIENDLY_The Emerald Wardens|r in the marked location. Start doing quests for them untill you reach |cRXP_FRIENDLY_friendly|r status
+    .link https://www.wowhead.com/classic/guide/season-of-discovery/emerald-wardens-reputation-nightmare-incursions >>Click here for a more in-depth guide for |cRXP_FRIENDLY_The Emerald Wardens|r reputation
+    .goto Duskwood,45.6,51.2,-1
+    .goto Ashenvale,89.6,40.6,-1
+    .goto Feralas,48.6,12.6,-1
+    .goto The Hinterlands,61.4,34.6,-1
+    .target Quartermaster Falinar
+    .target Quartermaster Kyleen
+    .target Quartermaster Valdane
+    .target Quartermaster Alandra
+step
+    >>Go back to |cRXP_FRIENDLY_the Quartermaster|r and buy your rune from them
+    .goto Duskwood,45.6,51.2,-1
+    .goto Ashenvale,89.6,40.6,-1
+    .goto Feralas,48.6,12.6,-1
+    .goto The Hinterlands,61.4,34.6,-1
+    .target Quartermaster Falinar
+    .target Quartermaster Kyleen
+    .target Quartermaster Valdane
+    .target Quartermaster Alandra
+    .collect 221480,1 << Mage --Spell Notes: Molten Armor
+    .collect 221481,1 << Priest --Nihilist Epiphany
+    .collect 221482,1 << Warlock --Rune of Affliciton
+    .collect 221483,1 << Shaman --Rune of Burn
+    .collect 221511,1 << Warrior --Rune of the Protector
+    .collect 221512,1 << Rogue --Rune of Alclarity
+    .collect 221515,1 << Hunter --Rune of Detonation
+    .collect 221517,1 << Druid --Rune of Bloodshed
+    .collect 223288,1 << Paladin --Rune of the Hammer
+step
+    .train 431681 >>|cRXP_WARN_Use the|r |T135791:0|t[|cRXP_FRIENDLY_Nihilist Epiphany|r] |cRXP_WARN_to train|r |T132886:0|t[Void Zone] << Priest
+    .train 428741 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Molten Armor|r] |cRXP_WARN_to train|r |T132221:0|t[Molten Armor] << Mage
+    .train 427717 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Affliction|r] |cRXP_WARN_to train|r |T136228:0|t[Unstable Affliciton] << Warlock
+    .train 415231 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Burn|r] |cRXP_WARN_to train|r |T135822:0|t[Burn] << Shaman
+    .train 426980 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Protector|r] |cRXP_WARN_to train|r |T132359:0|t[Shield Mastery] << Warrior
+    .train 432271 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Alclarity|r] |cRXP_WARN_to train|r |T236269:0|t[Cut to the Chase] << Rogue
+    .train 428717 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Detonation|r] |cRXP_WARN_to train|r |T133713:0|t[T.N.T.] << Hunter
+    .train 417145 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Bloodshed|r] |cRXP_WARN_to train|r |T304501:0|t[Gore] << Druid
+    .train 429152 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Hammer|r] |cRXP_WARN_to train|r |T236262:0|t[Improved Hammer of Wrath] << Paladin
+    .use 221480 << Mage -- Spell Notes: Molten Armor
+    .use 221481 << Priest --Nihilist Epiphany
+    .use 221482 << Warlock --Rune of Affliciton
+    .use 221483 << Shaman --Rune of Burn
+    .use 221511 << Shaman --Rune of the Protector
+    .use 221512 << Rogue --Rune of Alclarity
+    .use 221515 << Hunter --Rune of Detonation
+    .use 221517 << Druid --Rune of Bloodshed
+    .use 223288,1 << Paladin --Rune of the Hammer
 
 ]])
 
