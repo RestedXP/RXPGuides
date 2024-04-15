@@ -1366,67 +1366,272 @@ step
     .use 213101
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Warlock SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Bracers
--- #name Immolation Aura
--- for phase 3
+RXPGuides.RegisterGuide([[
+#classic
+<< Warlock SoD
+#group RestedXP Rune & Books Guide
+#subgroup Bracers
+#title Immolation Aura
+#name Immolation Aura - 40 (Ashenvale)
 
--- Immolation Aura
+step
+    #completewith next
+    .zone Ashenvale >> Travel to Ashenvale
+step
+    .goto Ashenvale,93.5,38.0,100 >> Head to the Ashenvale Nightmare Incursion area marked on your map
+step
+    >>Kill the demons outside the portal untill you loot all of the three items listed below
+    .collect 221972,1 >>|T132839:0|t|cRXP_LOOT_Dreampyre Fire|r dropped by |cRXP_ENEMY_Dreampyre Imps|r
+    .collect 221971,1 >>|T237396:0|t|cRXP_LOOT_Dreamsworn Horn|r dropped by |cRXP_ENEMY_Emberspark Dreamsworn|r
+    .collect 221973,1 >>|T133724:0|t|cRXP_LOOT_Dreamhunter Fang|r dropped by |cRXP_ENEMY_Dreampyre Hounds|r
+    .mob Dreampyre Imp
+    .mob Emberspark Dreamsworn
+    .mob Dreamhunter Hound
+step
+    .cast 447537 >> Right click on any of the items from your bag to combine them and receive |T134419:0|t[|cRXP_FRIENDLY_Rune of Immolation Aura|r]
+    .collect 220618,1 --Rune of Immolation Aura
+    .use 221972
+step
+    .train 427726 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Immolation Aura|r] |cRXP_WARN_to learn|r |T135802:0|t[Immolation Aura]
+    .use 220618
+]])
 
+RXPGuides.RegisterGuide([[
+#classic
+<< Warlock SoD
+#group RestedXP Rune & Books Guide
+#subgroup Bracers
+#title Summon Felguard
+#name Summon Felguard - 10 (Azeroth)
 
--- ]])
+step
+    #completewith next
+    +|cRXP_WARN_In order to receive this rune you will need to have found an|r |T236294:0|t|cRXP_FRIENDLY_Explorer Imp|r. |cRXP_WARN_If you don't already have one cast|r |T136163:0|t|cRXP_FRIENDLY_[Drain Soul]|r |cRXP_WARN_on mobs. On each tick of the spell you will have a chance to obtain an|r |T133257:0|t|cRXP_LOOT_Explorer's Soul|r. |cRXP_WARN_Use it to learn how to summon your|r |T236294:0|t|cRXP_FRIENDLY_Explorer Imp|r
+step
+    +Go to one of the zones below. The rune can be obtained in any of them however higher level zones will offer you better rewards from your Explorer Imp
+    >>The Barrens
+    >>Westfall
+    >>Darkshore
+    >>Silverpine Forest
+    >>Ashenvale
+    >>Redridge Mountains
+    >>Swamp of Sorrows
+    >>Desolace
+    >>Feralas
+    >>Azshara
+    >>Blasted Lands
+    .zoneskip The Barrens
+    .zoneskip Westfall
+    .zoneskip Darkshore
+    .zoneskip Silverpine Forest
+    .zoneskip Ashenvale
+    .zoneskip Redridge Mountains
+    .zoneskip Swamp of Sorrows
+    .zoneskip Desolace
+    .zoneskip Feralas
+    .zoneskip Azshara
+    .zoneskip Blasted Lands
+step
+    >>Look for |cRXP_FRIENDLY_Fel Portals|r in the locations pinned on your map. Once you find one summon your |T236294:0|t|cRXP_FRIENDLY_Explorer Imp|r and complete its dialogue while standing next to the portal. The Imp will begin exploring it and you will receive an |T136164:0|t|cRXP_FRIENDLY_Imp on a Mission|r buff. After around 10-20 minutes your Imp will either return to you or you will be able to resummon it and talk to it again to turn in a repeatable quest rewarding |T133639:0|t|cRXP_LOOT_Otherworldly Treasure|r. Upon opening it you will receive loot and have a chance to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Felguard|r]. Keep looking for rifts and looting treasures untill you find it
+    .goto Westfall,28.6,44.0,0
+    .goto Westfall,29.0,47.8,0
+    .goto Westfall,29.0,58.2,0
+    .goto Westfall,29.6,69.4,0
+    .goto Westfall,29.8,34.4,0
+    .goto Westfall,31.4,39.2,0
+    .goto Westfall,31.4,65.6,0
+    .goto Westfall,32.2,76.0,0
+    .goto Westfall,32.2,80.2,0
+    .goto Westfall,32.4,29.2,0
+    .goto Westfall,34.0,82.2,0
+    .goto Westfall,37.4,85.0,0
+    .goto Westfall,41.4,15.4,0
+    .goto Westfall,44.8,46.6,0
+    .goto Westfall,47.0,39.4,0
+    .goto Westfall,47.4,79.2,0
+    .goto Westfall,47.6,22.0,0
+    .goto Westfall,47.6,67.2,0
+    .goto Westfall,47.8,13.8,0
+    .goto Westfall,51.0,32.2,0
+    .goto Westfall,51.6,71.4,0
+    .goto Westfall,57.0,10.6,0
+    .goto Westfall,62.6,26.0,0
+    .goto The Barrens,39.6,13.8,0
+    .goto The Barrens,40.0,18.4,0
+    .goto The Barrens,40.8,14.4,0
+    .goto The Barrens,42.0,14.2,0
+    .goto The Barrens,44.4,50.0,0
+    .goto The Barrens,45.8,51.2,0
+    .goto The Barrens,46.4,52.6,0
+    .goto The Barrens,47.6,49.4,0
+    .goto The Barrens,51.6,53.4,0
+    .goto The Barrens,53.0,50.8,0
+    .goto The Barrens,54.2,52.6,0
+    .goto The Barrens,54.4,48.6,0
+    .goto The Barrens,55.6,25.6,0
+    .goto The Barrens,55.8,51.0,0
+    .goto The Barrens,56.0,24.8,0
+    .goto The Barrens,57.6,23.6,0
+    .goto The Barrens,58.2,49.6,0
+    .goto The Barrens,58.8,25.8,0
+    .goto The Barrens,59.0,29.2,0
+    .goto The Barrens,59.0,32.0,0
+    .goto The Barrens,59.2,36.4,0
+    .goto The Barrens,59.8,27.6,0
+    .goto The Barrens,60.2,36.0,0
+    .goto The Barrens,60.8,29.0,0
+    .goto The Barrens,61.8,32.0,0
+    .goto Silverpine Forest,38.8,18.4,0
+    .goto Silverpine Forest,38.8,23.4,0
+    .goto Silverpine Forest,44.6,25.2,0
+    .goto Silverpine Forest,45.4,31.8,0
+    .goto Silverpine Forest,49.8,13.4,0
+    .goto Silverpine Forest,50.2,56.8,0
+    .goto Silverpine Forest,50.2,65.2,0
+    .goto Silverpine Forest,55.6,24.6,0
+    .goto Darkshore,37.6,63.8,0
+    .goto Darkshore,43.2,27.0,0
+    .goto Darkshore,44.0,82.0,0
+    .goto Darkshore,45.0,26.2,0
+    .goto Darkshore,46.2,46.8,0
+    .goto Darkshore,47.4,28.8,0
+    .goto Darkshore,49.8,36.8,0
+    .goto Darkshore,56.4,24.8,0
+    .goto Darkshore,59.8,21.8,0
+    .goto Ashenvale,24.4,63.4,0
+    .goto Ashenvale,27.6,62.6,0
+    .goto Ashenvale,30.2,30.2,0
+    .goto Ashenvale,33.6,28.4,0
+    .goto Ashenvale,44.6,64.2,0
+    .goto Ashenvale,51.2,47.0,0
+    .goto Ashenvale,52.6,62.8,0
+    .goto Ashenvale,55.6,40.2,0
+    .goto Ashenvale,67.0,46.0,0
+    .goto Ashenvale,67.2,51.0,0
+    .goto Ashenvale,77.4,73.0,0
+    .goto Ashenvale,80.4,70.6,0
+    .goto Ashenvale,84.8,70.2,0
+    .goto Redridge Mountains,29.8,30.4,0
+    .goto Redridge Mountains,31.2,21.8,0
+    .goto Redridge Mountains,42.8,16.8,0
+    .goto Redridge Mountains,71.4,57.8,0
+    .goto Redridge Mountains,71.4,83.6,0
+    .goto Redridge Mountains,72.0,57.8,0
+    .goto Redridge Mountains,79.0,33.4,0
+    .goto Redridge Mountains,81.6,60.4,0
+    .goto Redridge Mountains,83.2,44.4,0
+    .goto Redridge Mountains,86.2,52.6,0
+    .goto The Barrens,42.8,81.8,0
+    .goto The Barrens,43.2,80.2,0
+    .goto The Barrens,46.2,85.6,0
+    .goto The Barrens,47.8,83.6,0
+    .goto The Barrens,48.4,81.2,0
+    .goto The Barrens,50.2,80.6,0
+    .goto Swamp of Sorrows,10.4,59.4,0
+    .goto Swamp of Sorrows,12.4,29.8,0
+    .goto Swamp of Sorrows,16.4,63.0,0
+    .goto Swamp of Sorrows,22.8,64.0,0
+    .goto Swamp of Sorrows,27.0,48.8,0
+    .goto Swamp of Sorrows,34.2,28.8,0
+    .goto Swamp of Sorrows,36.2,50.6,0
+    .goto Swamp of Sorrows,49.0,38.8,0
+    .goto Swamp of Sorrows,56.6,65.0,0
+    .goto Swamp of Sorrows,60.2,27.6,0
+    .goto Swamp of Sorrows,69.4,78.4,0
+    .goto Swamp of Sorrows,72.4,10.4,0
+    .goto Swamp of Sorrows,77.4,89.6,0
+    .goto Swamp of Sorrows,81.2,34.0,0
+    .goto Swamp of Sorrows,83.2,66.6,0
+    .goto Swamp of Sorrows,87.6,26.0,0
+    .goto Swamp of Sorrows,90.8,65.2,0
+    .goto Swamp of Sorrows,91.4,57.0,0
+    .goto Desolace,47.4,22.2,0
+    .goto Desolace,48.8,82.2,0
+    .goto Desolace,49.4,75.0,0
+    .goto Desolace,52.0,85.4,0
+    .goto Desolace,52.2,72.4,0
+    .goto Desolace,52.8,81.0,0
+    .goto Desolace,54.4,19.2,0
+    .goto Desolace,56.0,74.8,0
+    .goto Desolace,71.6,18.4,0
+    .goto Desolace,72.6,21.8,0
+    .goto Desolace,73.4,24.6,0
+    .goto Desolace,74.4,10.6,0
+    .goto Desolace,76.4,19.2,0
+    .goto Desolace,80.4,17.0,0
+    .goto Blasted Lands,35.0,55.0,0
+    .goto Blasted Lands,41.2,33.4,0
+    .goto Blasted Lands,43.6,25.0,0
+    .goto Blasted Lands,46.8,39.2,0
+    .goto Blasted Lands,48.8,48.6,0
+    .goto Blasted Lands,56.0,36.6,0
+    .goto Blasted Lands,60.2,46.0,0
+    .goto Blasted Lands,62.0,39.2,0
+    .goto Feralas,68.2,58.8,0
+    .goto Feralas,70.4,62.6,0
+    .goto Feralas,72.4,63.8,0
+    .goto Feralas,73.2,54.4,0
+    .goto Feralas,74.2,50.4,0
+    .goto Feralas,74.2,60.0,0
+    .goto Feralas,76.2,56.4,0
+    .goto Feralas,76.6,63.4,0
+    .goto Azshara,16.4,51.0,0
+    .goto Azshara,17.6,58.4,0
+    .goto Azshara,21.2,54.0,0
+    .goto Azshara,24.8,47.8,0
+    .goto Azshara,25.0,81.4,0
+    .goto Azshara,30.2,79.8,0
+    .goto Azshara,33.0,81.4,0
+    
+    .collect 221499,1 --Rune of the felguard
+    .use 223148 --Otherworldy Treasure
+    .unitscan Fel Sliver
+    .unitscan Fel Crack
+    .unitscan Fel Tear
+    .unitscan Fel Scar
+    .unitscan Fel Rift
+step
+    .train 427733 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Felguard|r] |cRXP_WARN_to learn|r |T136216:0|t[Summon Felguard]
+    .use 221499
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Warlock SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Bracers
--- #name Summon Felguard
--- for phase 3
+]])
 
--- Summon Felguard
+RXPGuides.RegisterGuide([[
+#classic
+<< Warlock SoD
+#group RestedXP Rune & Books Guide
+#subgroup Helmet
+#title Pandemic
+#name Pandemic - 40 (Feralas)
 
+step
+    #completewith next
+    .zone Feralas >> Travel to Feralas
+step
+    .goto Feralas,69.6,43.3 
+    >> Head to the marked location west of Camp Mojache. Look for a |cRXP_ENEMY_Dead Diseased Grimtotem Shaman|r laying next to a tree. Next to the corpse you will find a |cRXP_PICK_Grimtotem Chest|r, loot it for |T133291:0|t|cRXP_LOOT_Grimtotem Necklace|r
+    .collect 221974,1 --Grimtotem Necklace 1/1
+    .unitscan Dead Diseased Grimtotem Shaman
+step
+    .goto 1444/1,695.400,-4920.300,20 >>Go to the path leading up the hill towards the Woodpaw Den
+step
+    .goto 1444/1,831.200,-4851.000,20 >>Go up the path marked by torches
+step
+    .goto 1444/1,826.500,-4725.100
+    >>Stick to the right edge of the camp and go to the |cRXP_ENEMY_Dead Diseased Woodpaw Mystic|r. Next to him you will find a |cRXP_PICK_Woodpaw Bag|r, loot it for a |T135139:0|t|cRXP_LOOT_Broken Woodpaw Staff|r
+    .collect 221975,1 --Broken Woodpaw Staff
+    .unitscan Dead Diseased Woodpaw Mystic
+step
+    >>Use the |T135139:0|t|cRXP_LOOT_Broken Woodpaw Staff|r to combine it with the |T133291:0|t|cRXP_LOOT_Grimtotem Necklace|r and create a |T135153:0|t|cRXP_LOOT_Diseased Nature Staff|r
+    .collect 221976,1 --Diseased Nature Staff
+    .use 221975
+step
+    .goto Feralas,72.6,50.8
+    >>Look for a sleeping |cRXP_ENEMY_Diseased Forest Walker|r, use your |T135153:0|t|cRXP_LOOT_Diseased Nature Staff|r to awaken him. Defeat him and loot for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Pandemic|r]
+    .collect 220617,1 --Rune of Pandemic
+    .use 221976
+step
+    .train 427712 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Pandemic|r] |cRXP_WARN_to learn|r |T136227:0|t[Pandemic]
+    .use 220617
 
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Warlock SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Bracers
--- #name Unstable Affliction
--- for phase 3
-
--- Unstable Affliction
-
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Warlock SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Helmet
--- #name Backdraft
--- for phase 3
-
--- Backdraft
-
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Warlock SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Helmet
--- #name Pandemic
--- for phase 3
-
--- Pandemic
-
-
--- ]])
+]])
