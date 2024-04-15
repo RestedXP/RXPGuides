@@ -2617,18 +2617,25 @@ function addon.functions.mountcount(self, ...)
     elseif type(self) == "string" then -- on parse
         local element = {}
         local text, skill, str = ...
-        local operator, eq, total
+        local operator, eq, total, minskill, maxskill
 
         if str then
             str = str:gsub(" ", "")
             operator, eq, total = str:match("([<>]?)(=?)%s*(%d+)")
         end
+        if skill then
+            skill,minskill,maxskill = skill:match("(%d+)%-(%d+)")
+        end
+        skill = tonumber(skill)
+        maxskill = tonumber(maxskill) or skill
+        minskill = tonumber(minskill) or skill
         --flags = tonumber(flags) or 0
         --element.enableBank = bit.band(flags, 0x1) == 0x1
 
-        element.skill = tonumber(skill)
+        element.minskill = minskill
+        element.maxskill = maxskill
         element.total = tonumber(total)
-        if not (element.total and element.skill) then
+        if not (element.total and minskill and maxskill) then
             return addon.error(L("Error parsing guide") .. " " .. addon.currentGuideName ..
                             ": Invalid skill/count\n" .. self)
         end
@@ -2657,12 +2664,15 @@ function addon.functions.mountcount(self, ...)
     local count = 0
 
     for i = 75,375,75 do
-        if element.skill < i then
+        if i > element.maxskill then
             break
         end
-        for _,id in pairs(addon.mountIDs[i]) do
-            if addon.IsPlayerSpell(id) then
-                count = count + 1
+
+        if i >= element.minskill then
+            for _,id in pairs(addon.mountIDs[i]) do
+                if addon.IsPlayerSpell(id) then
+                    count = count + 1
+                end
             end
         end
     end
