@@ -2209,3 +2209,72 @@ RXPGuides.RegisterGuide([[
 
 
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Shaman SoD/Priest SoD
+#group RestedXP Rune & Books Guide
+#subgroup Helm
+#title Mental Dexterity << Shaman
+#title Pain and Suffering << Priest
+#name Mental Dexterity - 43 (Tanaris) << Shaman
+#name Pain and Suffering - 43 (Tanaris) << Priest
+
+-- Mental Dexterity/Pain and Suffering
+-- PERMOK: Needs better waypoints
+
+step
+    #completewith next
+    .zone Tanaris >>Travel to Tanaris
+    .train 416055,1 << Shaman
+    .train 415991,1 << Priest
+step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Wastewander Shadow Mages|r. Loot them for the |T134939:0|t[|cRXP_LOOT_Coded Warlock Notes|r]
+    .collect 221547,1
+    .mob Wastewander Shadow Mage
+    .train 416055,1 << Shaman
+    .train 415991,1 << Priest
+step
+    .train 416055,1 << Shaman
+    .train 415991,1 << Priest
+    #loop
+    .goto Tanaris,59.8,24.0,35,0
+    .goto Tanaris,65.6,32.2,35,0
+    .goto Tanaris,62.4,33.2,30,0
+    >>Kill |cRXP_ENEMY_Wastewander Thieves|r. Loot them for the |T134329:0|t[|cRXP_LOOT_Wastewander Cipher|r]
+    .collect 221549,1
+    .mob Wastewander Thief
+step
+    .train 416055,1 << Shaman
+    .train 415991,1 << Priest
+    #loop
+    .goto Tanaris,58.4,38.6,40,0
+    .goto Tanaris,60.3,23.4,40,0
+    .goto Tanaris,66.2,35.0,40,0
+    >>Kill |cRXP_ENEMY_Wastewander Shadow Mages|r. Loot them for the |T134939:0|t[|cRXP_LOOT_Coded Warlock Notes|r]
+    .collect 221547,1
+    .mob Wastewander Shadow Mage
+step
+    .train 416055,1 << Shaman
+    .train 415991,1 << Priest
+    >>|cRXP_WARN_Use the|r |T134329:0|t[Wastewander Cipher] |cRXP_WARN_to receive|r |T237018:0|t[Deciphered Warlock Notes]
+    .goto Tanaris,58.0,36.0
+    .use 221549
+    .collect 221545,1
+step
+    .train 416055,1 << Shaman
+    .train 415991,1 << Priest
+    >>|cRXP_WARN_Stand on top of the|r "Cryptic Scroll of Summoning". |cRXP_WARN_Use the|r |T237018:0|t[Deciphered Warlock Notes] |cRXP_WARN_while standing on top of the scroll|r.
+    >>Kill the |cRXP_ENEMY_Enraged Voidwalker|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Mental Dexterity|r] << Shaman
+    >>Kill the |cRXP_ENEMY_Enraged Voidwalker|r. Loot it for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of Verdant Winter|r] << Priest
+    .collect 220610,1 << Shaman
+    .collect 221979,1 << Priest
+step
+    .itemcount 220610,1 << Shaman
+    .itemcount 221979,1 << Priest
+    .use 220610 << Shaman
+    .use 221979 << Priest
+    .train 416055 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Mental Dexterity|r] |cRXP_WARN_to learn|r |T136055:0|t[Mental Dexterity] << Shaman
+    .train 415991 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of Verdant Winter|r] |cRXP_WARN_to learn|r |T237567:0|t[Pain and Suffering] << Priest
+]])
