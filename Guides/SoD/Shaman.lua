@@ -2638,3 +2638,105 @@ step
     .train 410103 >>|cRXP_WARN_Use the|r |T136095:0|t|cRXP_FRIENDLY_Echo of the Alpha|r |cRXP_WARN_to learn|r |T408696:0|t[Spirit of the Alpha]
     .use 206985
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Shaman SoD
+#group RestedXP Rune & Books Guide
+#subgroup Bracers
+#title Rolling Thunder
+#name Rolling Thunder - 41 (Tanaris)
+
+-- Rolling Thunder
+-- PERMOK: Needs better waypoints
+
+step
+    #completewith next
+    .zone Tanaris >>Travel to Tanaris
+    .train 432236,1
+step
+    .train 432236,1
+    .goto Tanaris,43.0,41.2
+    .aura 446888,1 >>|cRXP_WARN_Click on the|r |cRXP_PICK_Odd Totem|r. This will transform you into a Ghost Wolf |cRXP_WARN_and increases your damage taken by 50%|r
+step
+    .train 432236,1
+    >>|cRXP_WARN_Run towards the other totem while avoiding mobs.|r Loot the appearing chest for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Rolling Thunder|r]
+    *|cRXP_WARN_You are receiving 50% additional damage. Be careful!|r. You can also pre-clear the mobs on the path to the other totem
+    .goto Tanaris,45.6,37.8
+    .collect 220613,1
+step
+    .itemcount 220613,1
+    .use 220613
+    .train 432236 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Rolling Thunder|r] |cRXP_WARN_to learn|r |T136111:0|t[Rolling Thunder]
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Shaman SoD
+#group RestedXP Rune & Books Guide
+#subgroup Bracers
+#title Static Shock
+#name Static Shock - 44 (Feralas)
+
+-- PERMOK: Needs better waypoints
+
+step
+    #completewith ChargedAir
+    +|cRXP_WARN_You have to be in a group with another player who can help you in order to obtain this rune|r
+step
+    #completewith next
+    .zone Feralas >>Travel to Feralas
+    .train 432238,1
+step
+    .train 432238,1
+    .goto Feralas,60.0,66.8
+    .aura 447259 >>Click on the |cRXP_PICK_Charged Totem|r to get the |T136075:0|t[Charged Air] buff
+step
+    #label ChargedAir
+    .train 432238,1
+    >>|cRXP_WARN_Stay near the totem and kill the surrounding |cRXP_ENEMY_Gordunni Ogres|r with LIGHTNING DAMAGE (e.g. Lightning Shield) until the |cRXP_ENEMY_Whirling Tempest|r spawns.
+    >>Kill the |cRXP_ENEMY_Whirling Tempest|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Static Shock|r]
+    *|cRXP_WARN_All players of the party have to stay in range of the totem|r
+    .goto Feralas,60.0,66.8
+    .collect 220614,1
+    .mob Whirling Tempest
+    .mob Gordunni Warlock
+    .mob Gordunni Shaman
+    .mob Gordunni Mauler
+step
+    .itemcount 220614,1
+    .use 220614
+    .train 432238 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Static Shock|r] |cRXP_WARN_to learn|r |T237587:0|t[Static Shock]
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Shaman SoD
+#group RestedXP Rune & Books Guide
+#subgroup Helm
+#title Tidal Waves
+#name Tidal Waves - 42 (Feralas)
+
+-- PERMOK: Needs better waypoints
+
+step
+    #completewith next
+    .zone Feralas >>Travel to Feralas
+    .train 432234,1
+step
+    .train 432234,1
+    >>Click on the |cRXP_PICK_Old Crate|r behind the tent to loot the |T134239:0|t[Old Key]
+    .goto Feralas,76.6,48.0
+    .collect 221497,1
+step
+    .train 432234,1
+    >>Click on the |cRXP_PICK_Old Chest|r at the seafloor to loot the |T134419:0|t[|cRXP_FRIENDLY_Rune of Tidal Waves|r]
+    *|cRXP_WARN_Be careful! This will summon FOUR |cRXP_ENEMY_Simmering Elementals|r (lvl 42, Frost immune)|r
+    .goto Feralas,79.2,49.4
+    .collect 220612,1
+    .mob Simmering Elemental
+step
+    .itemcount 220612,1
+    .use 220612
+    .train 432234 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Tidal Waves|r] |cRXP_WARN_to learn|r |T237590:0|t[Tidal Waves]
+]])
