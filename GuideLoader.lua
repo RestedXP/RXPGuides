@@ -760,14 +760,8 @@ local function parseLine(linetext,step,parsingLogic)
     line:gsub("^%.(%S+)%s*(.*)", function(tag, args)
         local t = {}
 
-        if tag == "link" then
-            local link = args:gsub("%s+$", "")
-            tinsert(t, link)
-        elseif tag == "mob" or tag == "unitscan" or tag == "target" then
-            args = args:gsub("%s*;%s*", ";")
-            for arg in string.gmatch(args, "[^;]+") do
-                tinsert(t, arg)
-            end
+        if addon.separators[tag] then
+            addon.separators[tag](t,args)
         else
             args = args:gsub("%s*,%s*", ",")
             for arg in string.gmatch(args, "[^,]+") do

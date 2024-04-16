@@ -8,6 +8,7 @@ local IsAddOnLoaded = C_AddOns and C_AddOns.IsAddOnLoaded or _G.IsAddOnLoaded
 --local RXPGuides = addon.RXPGuides
 local L = addon.locale.Get
 addon.functions.__index = addon.functions
+addon.separators = {}
 local events = {}
 addon.stepUpdateList = {}
 addon.functions.events = events
@@ -3560,6 +3561,11 @@ function addon.functions.zoneskip(self, text, zone, flags)
     end
 end
 
+addon.separators.link = function(t,args)
+    local link = args:gsub("%s+$", "")
+    tinsert(t, link)
+end
+
 local function LinkOnClick(self)
 
     addon.url = self.element.url
@@ -3676,6 +3682,17 @@ local function UpdateTargets(element,context)
         element[context] = element.unitlist
     end
 end
+
+local semicolonsep = function(t,args)
+    args = args:gsub("%s*;%s*", ";")
+    for arg in string.gmatch(args, "[^;]+") do
+        tinsert(t, arg)
+    end
+end
+
+addon.separators.unitscan = semicolonsep
+addon.separators.target = semicolonsep
+addon.separators.mob = semicolonsep
 
 function addon.functions.unitscan(self, text, ...)
     if type(self) == "string" then
