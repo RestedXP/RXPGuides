@@ -1887,32 +1887,132 @@ step
 
 
 -- ]])
+RXPGuides.RegisterGuide([[
+#classic
+<< Paladin SoD
+#group RestedXP Rune & Books Guide
+#subgroup Helm
+#name Fanaticism - 44 (Azeroth)
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Paladin SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Helmet
--- #name Fanaticism
--- for phase 3
+step
+    #optional
+    .train 426178 >>|cRXP_WARN_You have to learn the rune for|r |T236263:0|t[Sheath of Light] |cRXP_WARN_first before you can obtain this one|r
+    .train 429251,1
+step
+    #completewith next
+    .zone Stormwind City >>Travel to Stormwind
+    .train 429251,1
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aeonas the Vindicated|r
+    .goto Stormwind City,37.355,31.708
+    .accept 81762 >>Accept Some Good News
+    .target Aeonas the Vindicated
+step
+    .train 429251,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katherine the Pure|r
+    .goto Stormwind City,37.222,31.855
+    .turnin 81762 >>Turn in Some Good News
+    .accept 81764 >>Accept The Mysterious Merchant
+    .target Katherine the Pure
+step
+    #completewith next
+    .zone Dustwallow Marsh >>Travel to Dustwallow Marsh/Theramore Isles |cRXP_WARN_(e.g. take the boat from Menethil Harbor to Theramore)|r
+    .train 429251,1
+step
+    .train 429251,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elrick|r inside the inn
+    *|cRXP_WARN_Two level 45 enemies will attack you after accepting the quest|r
+    .goto Dustwallow Marsh,66.52,45.41
+    .turnin 81764 >>Turn in The Mysterious Merchant
+    .accept 81765 >>Accept Elrick, Paladin of the Silver Hand
+    .target Elrick
+step
+    #completewith next
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elrick|r
+    .goto Dustwallow Marsh,66.52,45.41
+    .gossip 221575,5
+    .skipgossip 221575,1
+    .train 429251,1
+step
+    .train 429251,1
+    >>Kill |cRXP_ENEMY_Elrick|r. Loot him for the |T133471:0|t[|cRXP_LOOT_Bloody Missive|r]
+    >>|cRXP_WARN_Use the|r |T133471:0|t[|cRXP_LOOT_Bloody Missive|r] |cRXP_WARN_to get the quest|r
+    .goto Dustwallow Marsh,66.52,45.41
+    .collect 219930,1,81766,1
+    .accept 81766 >>Accept The Bloody Missive
+    .use 219930
+    .skipgossip 221575,1
+    .target Elrick
+step
+    #completewith next
+    .zone Stormwind City >>Travel to Stormwind
+    .train 429251,1
+step
+    .train 429251,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katherine the Pure|r |cRXP_WARN_to train|r |T135905:0|t[Fanaticism]
+    .goto Stormwind City,37.222,31.855
+    .turnin 81762 >>Turn in The Bloody Missive
+    .target Katherine the Pure
+]])
 
--- Fanaticism
+RXPGuides.RegisterGuide([[
+#classic
+<< Paladin SoD
+#group RestedXP Rune & Books Guide
+#subgroup Helm
+#name Light's Grace - 40 (Feralas)
 
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Paladin SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Helmet
--- #name Light's Grace
--- for phase 3
-
--- Light's Grace
-
-
--- ]])
+step
+    #optional
+    .train 5599 >>|cRXP_WARN_You must have|r |T135964:0|t[Blessing of Protection] |cRXP_WARN_trained in order to aquire the|r |T135931:0|t[Light's Grace] |cRXP_WARN_rune|r
+step
+    #optional
+    #completewith TeleporterTaken
+    .isQuestTurnedIn 79984
+    .goto Stranglethorn Vale,27.6,77.4,8 >>Use the Teleporter to Feralas in Booty Bay
+    .train 429242,1
+step
+    #optional
+    .isQuestAvailable 79984
+    #completewith TeleporterTaken
+    .zone Feralas >>Travel to Feralas
+    .goto Feralas,85.27,43.66,8 >>Use the |cRXP_PICK_Wondergear Worldporter|r
+    .train 429242,1
+step
+    #label TeleporterTaken
+    .goto Feralas,84.26,43.81,10 >>Reach the platform
+    .train 429242,1
+step
+    .train 429242,1
+    >>1) |cRXP_WARN_Set the faction Gadgetzan to "At War" in your Reputation window|r
+    >>2) Go to the exact waypoint position
+    >>3) Look at the green bush next to the wooden house
+    .goto Feralas,83.93,43.89
+    .goto Feralas,85.27,43.66,0
+    .aura 436534,1 >>4) |cRXP_WARN_Wait for the |cRXP_ENEMY_Tower Defense Automaton|r to be exactly between you and the bush and attack it|r
+    .mob Tower Defense Automaton
+step
+    .train 429242,1
+    >>|cRXP_WARN_Heal|r |cRXP_FRIENDLY_Frix Xizzix|r |cRXP_WARN_until he stands up|r.
+    .gossip 220930,1 >>Afterwards talk to |cRXP_FRIENDLY_Frix Xizzix|r
+    .skipgossip 220930,1
+    .goto Feralas,81.45,42.46
+    .target Frix Xizzix
+step
+    #completewith next
+    .zone Stranglethorn Vale >>Travel to Stranglethorn Vale/Booty Bay
+    .train 429242,1
+step
+    .train 429242,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rix Xizzix|r and buy the |T134419:0|t[|cRXP_FRIENDLY_Rune of Grace|r]
+    .goto Stranglethorn Vale,28.4,75.8
+    .collect 219147,1
+    .target Rix Xizzix
+step
+    .itemcount 219147,1
+    .use 219147
+    .train 429242 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Grace|r] |cRXP_WARN_to train|r |T236249:0|t[Sacred Shield]
+]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
