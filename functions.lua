@@ -5693,18 +5693,23 @@ function addon.functions.aura(self, ...)
     local event, target = ...
     if (target == "player" or event ~= "UNIT_AURA") and step.active then
         local buffFound = false
-        for i = 1, 32 do
-            local name, icon, count, _, duration, expirationTime, _, _, _, spellId = UnitAura(element.unit, i)
-            if spellId == element.id then
-                local remaining = expirationTime - GetTime()
-                --print(remaining,duration,expirationTime)
-                if (not element.stacks or count >= element.stacks) and (remaining > element.duration or (duration == expirationTime and duration == 0)) then
-                    element.icon = "|T" .. icon .. ":0|t"
-                    buffFound = true
-                    break
+
+        local function CheckBuffs(func)
+            for i = 1, 32 do
+                local name, icon, count, _, duration, expirationTime, _, _, _, spellId = func(element.unit, i)
+                if spellId == element.id then
+                    local remaining = expirationTime - GetTime()
+                    --print(remaining,duration,expirationTime)
+                    if (not element.stacks or count >= element.stacks) and (remaining > element.duration or (duration == expirationTime and duration == 0)) then
+                        element.icon = "|T" .. icon .. ":0|t"
+                        buffFound = true
+                        break
+                    end
                 end
             end
         end
+        CheckBuffs(UnitDebuff)
+        CheckBuffs(UnitBuff)
         if buffFound == not element.reverse then
             if element.text then
                 addon.SetElementComplete(self)
