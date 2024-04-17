@@ -228,7 +228,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Alliance Druid SoD
 #group RestedXP Rune & Books Guide
-#subgroup Gloves
+#subgroup Legs
 #name Lacerate - 10 (Loch Modan)
 #title Lacerate
 

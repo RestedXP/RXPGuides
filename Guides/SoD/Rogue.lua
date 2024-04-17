@@ -1727,7 +1727,7 @@ step
  #classic
  << Rogue SoD
  #group RestedXP Rune & Books Guide
- #subgroup Helm
+ #subgroup Helmet
  #title Focused Attacks
  #name Focused Attacks - 34 (Hinterlands)
 
@@ -1812,7 +1812,7 @@ step
 --#classic
 --<< Rogue SoD
 --#group RestedXP Rune & Books Guide
---#subgroup Helm
+--#subgroup Helmet
 --#title Honor Among Thieves
 --#name Honor Among Thieves - 45 (Azeroth)
 

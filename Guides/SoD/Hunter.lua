@@ -1155,7 +1155,7 @@ RXPGuides.RegisterGuide([[
     #classic
     << Hunter SoD
     #group RestedXP Rune & Books Guide
-    #subgroup Head
+    #subgroup Helmet
     #title Catlike Reflexes
     #name Catlike Reflexes - 40 (Feralas)
 
@@ -1190,7 +1190,7 @@ RXPGuides.RegisterGuide([[
     #classic
     << Hunter SoD
     #group RestedXP Rune & Books Guide
-    #subgroup Head
+    #subgroup Helmet
     #title Rapid Killing
     #name Rapid Killing - 45 (Searing Gorge & Blasted Lands)
 step

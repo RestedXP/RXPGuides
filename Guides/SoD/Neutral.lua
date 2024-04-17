@@ -209,15 +209,15 @@ RXPGuides.RegisterGuide([[
 #subgroup Chest << Priest/Hunter/Druid/Warrior/Shaman
 #subgroup Legs << Warlock/Paladin
 #subgroup Gloves << Mage/Rogue
-#name Serendipity - 25 (Azeroth) << Priest
-#name Lone Wolf - 25 (Azeroth) << Hunter
-#name Survival of the Fittest - 25 (Azeroth) << Druid
-#name Warbringer - 25 (Azeroth) << Warrior
-#name Dual Wield Specialization - 25 (Azeroth) << Shaman
-#name Demonic Pact - 25 (Azeroth) << Warlock
-#name Divine Sacrifice - 25 (Azeroth) << Paladin
-#name Rewind Time - 25 (Azeroth) << Mage
-#name Main Gauche - 25 (Azeroth) << Rogue
+#name Serendipity - 25 (The Barrens) << Priest
+#name Lone Wolf - 25 (The Barrens) << Hunter
+#name Survival of the Fittest - 25 (The Barrens) << Druid
+#name Warbringer - 25 (The Barrens) << Warrior
+#name Dual Wield Specialization - 25 (The Barrens) << Shaman
+#name Demonic Pact - 25 (The Barrens) << Warlock
+#name Divine Sacrifice - 25 (The Barrens) << Paladin
+#name Rewind Time - 25 (The Barrens) << Mage
+#name Main Gauche - 25 (The Barrens) << Rogue
 #next Crusader Strike - 4 (Elwynn Forest) << Human Paladin
 #next Crusader Strike - 4 (Dun Morogh) << Dwarf Paladin
 #next Lava Burst - 25 (Hillsbrad Foothills) << Shaman
@@ -233,286 +233,12 @@ RXPGuides.RegisterGuide([[
 
 << SoD
 
-step << Horde
-    .train 415995,1 << Priest
-    .train 410010,1 << Paladin
-    .train 401761,1 << Mage
-    .train 410122,1 << Hunter
-    .train 416042,1 << Druid
-    .train 425445,1 << Warrior
-    .train 425476,1 << Warlock
-    .train 424990,1 << Rogue
-    .train 410096,1 << Shaman
-    .goto Thunder Bluff,40.41,51.78,-1
-    .goto Orgrimmar,55.59,62.92,-1
-    .goto Undercity,71.42,46.69,-1
-    .target Auctioneer Stampi
-    .target Auctioneer Thathung
-    .target Auctioneer Stockton
-    >>|cRXP_BUY_Buy 24|r |T134844:0|t[Fish Oil]|cRXP_BUY_, 20|r |T133710:0|t[Dark Iron Ordinance] |cRXP_BUY_and 16|r |T133001:0|t[Shredder Turbocharger] |cRXP_BUY_from the Auction House|r
-    >>|cRXP_WARN_If the|r |T133001:0|t[Shredder Turbocharger] |cRXP_WARN_is too expensive, buy roughly 30|r |T133870:0|t[Shredder Autosalvage Units] |cRXP_WARN_instead|r
-    >>|cRXP_WARN_Note: Majority of these materials can also be farmed or made with Engineering if you wish to not buy any. If that is the case, skip this step|r
-    .collect 17058,24 -- Fish Oil
-    .collect 210138,20 -- Dark Iron Ordinance
-    .collect 210147,30 -- Shredder Autosalvage Unit
-    .disablecheckbox
-    .collect 210146,16 -- Shredder Turbocharger
-    .disablecheckbox
-    .skill engineering,<1,1
-step << Horde
-    .train 415995,1 << Priest
-    .train 410010,1 << Paladin
-    .train 401761,1 << Mage
-    .train 410122,1 << Hunter
-    .train 416042,1 << Druid
-    .train 425445,1 << Warrior
-    .train 425476,1 << Warlock
-    .train 424990,1 << Rogue
-    .train 410096,1 << Shaman
-    .goto Thunder Bluff,40.41,51.78,-1
-    .goto Orgrimmar,55.59,62.92,-1
-    .goto Undercity,71.42,46.69,-1
-    .target Auctioneer Stampi
-    .target Auctioneer Thathung
-    .target Auctioneer Stockton
-    >>|cRXP_BUY_Buy 24|r |T134844:0|t[Fish Oil]|cRXP_BUY_, 20|r |T133710:0|t[Dark Iron Ordinance] |cRXP_BUY_and 16|r |T133001:0|t[Shredder Turbocharger] |cRXP_BUY_from the Auction House|r
-    >>|cRXP_WARN_If the|r |T133001:0|t[Shredder Turbocharger] |cRXP_WARN_is too expensive, buy roughly 30|r |T133870:0|t[Shredder Autosalvage Units] |cRXP_WARN_instead|r
-    >>|cRXP_WARN_Note: Majority of these materials can also be farmed if you wish to not buy any. If that is the case, skip this step|r
-    .collect 17058,24 -- Fish Oil
-    .collect 210138,20 -- Dark Iron Ordinance
-    .collect 210147,30 -- Shredder Autosalvage Unit
-    .disablecheckbox
-    .collect 210146,16 -- Shredder Turbocharger
-    .disablecheckbox
-    .skill engineering,1,1
-step << Alliance
-    .train 415995,1 << Priest
-    .train 410010,1 << Paladin
-    .train 401761,1 << Mage
-    .train 410122,1 << Hunter
-    .train 416042,1 << Druid
-    .train 425445,1 << Warrior
-    .train 425476,1 << Warlock
-    .train 424990,1 << Rogue
-    .train 410096,1 << Shaman
-    .goto Darnassus,56.245,54.039,-1
-    .goto Darnassus,56.374,51.820,-1
-    .goto Ironforge,25.800,75.500,-1
-    .goto Ironforge,24.200,74.600,-1
-    .goto Ironforge,23.800,71.800,-1
-    .goto Stormwind City,53.612,59.764
-    .target Auctioneer Tolon
-    .target Auctioneer Golothas
-    .target Auctioneer Lympkin
-    .target Auctioneer Redmuse
-    .target Auctioneer Buckler
-    .target Auctioneer Jaxon
-    >>|cRXP_BUY_Buy 24|r |T134844:0|t[Fish Oil]|cRXP_BUY_, 20|r |T133710:0|t[Dark Iron Ordinance] |cRXP_BUY_and 16|r |T133001:0|t[Shredder Turbocharger] |cRXP_BUY_from the Auction House|r
-    >>|cRXP_WARN_If the|r |T133001:0|t[Shredder Turbocharger] |cRXP_WARN_is too expensive, buy roughly 30|r |T133870:0|t[Shredder Autosalvage Units] |cRXP_WARN_instead|r
-    >>|cRXP_WARN_Note: Majority of these materials can also be farmed or made with Engineering if you wish to not buy any. If that is the case, skip this step|r
-    .collect 17058,24 -- Fish Oil
-    .collect 210138,20 -- Dark Iron Ordinance
-    .collect 210147,30 -- Shredder Autosalvage Unit
-    .disablecheckbox
-    .collect 210146,16 -- Shredder Turbocharger
-    .disablecheckbox
-    .skill engineering,<1,1
-step << Alliance
-    .train 415995,1 << Priest
-    .train 410010,1 << Paladin
-    .train 401761,1 << Mage
-    .train 410122,1 << Hunter
-    .train 416042,1 << Druid
-    .train 425445,1 << Warrior
-    .train 425476,1 << Warlock
-    .train 424990,1 << Rogue
-    .train 410096,1 << Shaman
-    .goto Darnassus,56.245,54.039,-1
-    .goto Darnassus,56.374,51.820,-1
-    .goto Ironforge,25.800,75.500,-1
-    .goto Ironforge,24.200,74.600,-1
-    .goto Ironforge,23.800,71.800,-1
-    .goto Stormwind City,53.612,59.764
-    .target Auctioneer Tolon
-    .target Auctioneer Golothas
-    .target Auctioneer Lympkin
-    .target Auctioneer Redmuse
-    .target Auctioneer Buckler
-    .target Auctioneer Jaxon
-    >>|cRXP_BUY_Buy 24|r |T134844:0|t[Fish Oil]|cRXP_BUY_, 20|r |T133710:0|t[Dark Iron Ordinance] |cRXP_BUY_and 16|r |T133001:0|t[Shredder Turbocharger] |cRXP_BUY_from the Auction House|r
-    >>|cRXP_WARN_If the|r |T133001:0|t[Shredder Turbocharger] |cRXP_WARN_is too expensive, buy roughly 30|r |T133870:0|t[Shredder Autosalvage Units] |cRXP_WARN_instead|r
-    >>|cRXP_WARN_Note: Majority of these materials can also be farmed if you wish to not buy any. If that is the case, skip this step|r
-    .collect 17058,24 -- Fish Oil
-    .collect 210138,20 -- Dark Iron Ordinance
-    .collect 210147,30 -- Shredder Autosalvage Unit
-    .disablecheckbox
-    .collect 210146,16 -- Shredder Turbocharger
-    .disablecheckbox
-    .skill engineering,1,1
-step << Horde
-    .train 415995,1 << Priest
-    .train 410010,1 << Paladin
-    .train 401761,1 << Mage
-    .train 410122,1 << Hunter
-    .train 416042,1 << Druid
-    .train 425445,1 << Warrior
-    .train 425476,1 << Warlock
-    .train 424990,1 << Rogue
-    .train 410096,1 << Shaman
-    #completewith next
-    .goto Stonetalon Mountains,66.6,55.5
-    .zone Stonetalon Mountains >>Travel to Stonetalon Mountains
-step << Horde
-    #loop
-    .goto Stonetalon Mountains,71.04,49.03,50,0
-    .goto Stonetalon Mountains,72.59,53.21,50,0
-    .goto Stonetalon Mountains,70.63,55.47,50,0
-    .goto Stonetalon Mountains,70.04,55.12,50,0
-    .goto Stonetalon Mountains,67.53,57.65,50,0
-    .goto Stonetalon Mountains,59.95,55.51,50,0
-    .goto Stonetalon Mountains,62.35,52.73,50,0
-    .goto Stonetalon Mountains,66.91,47.82,50,0
-    .goto Stonetalon Mountains,67.31,46.39,50,0
-    .goto Stonetalon Mountains,68.76,47.95,50,0
-    .train 415995,1 << Priest
-    .train 410010,1 << Paladin
-    .train 401761,1 << Mage
-    .train 410122,1 << Hunter
-    .train 416042,1 << Druid
-    .train 425445,1 << Warrior
-    .train 425476,1 << Warlock
-    .train 424990,1 << Rogue
-    .train 410096,1 << Shaman
-    >>Kill |cRXP_ENEMY_Venture Co. Light Shredders|r, |cRXP_ENEMY_XT:4|r and |cRXP_ENEMY_XT:9|r
-    >>|cRXP_WARN_Use the|r |T133870:0|t[Shredder Autosalvage Unit] |cRXP_WARN_on their corpses for a 66% chance of receiving a|r |cRXP_LOOT_Shredder Turbocharger|r
-    .collect 210146,16
-    .use 210147
-    .mob Venture Co. Light Shredder
-    .mob XT:4
-    .mob XT:9
 step
-    .train 415995,1 << Priest
-    .train 410010,1 << Paladin
-    .train 401761,1 << Mage
-    .train 410122,1 << Hunter
-    .train 416042,1 << Druid
-    .train 425445,1 << Warrior
-    .train 425476,1 << Warlock
-    .train 424990,1 << Rogue
-    .train 410096,1 << Shaman
     #completewith next
-    .goto Wetlands,49.6,17.4
-    .zone Wetlands >>Travel to Wetlands. Start looking for a group to kill elite |cRXP_ENEMY_Dark Iron Dwarves|r
+    .zone The Barrens >>Travel to Ratchet in The Barrens. |cRXP_WARN_You will need 3 gold to buy the rune|r
 step
-    .train 415995,1 << Priest
-    .train 410010,1 << Paladin
-    .train 401761,1 << Mage
-    .train 410122,1 << Hunter
-    .train 416042,1 << Druid
-    .train 425445,1 << Warrior
-    .train 425476,1 << Warlock
-    .train 424990,1 << Rogue
-    .train 410096,1 << Shaman
-    #loop
-    .goto Wetlands,48.6,16.0,40,0
-    .goto Wetlands,60.6,25.8,40,0
-    >>Kill |cRXP_ENEMY_Dark Iron Dwarves|r, |cRXP_ENEMY_Dark Iron Tunnelers|r, |cRXP_ENEMY_Dark Iron Saboteurs|r and |cRXP_ENEMY_Dark Iron Demolitionists|r. Loot them for their |cRXP_LOOT_Dark Iron Ordinances|r
-    *|cRXP_WARN_Everyone in the group can loot them if they drop|r
-    .collect 210138,20
-    .mob Dark Iron Dwarf
-    .mob Dark Iron Tunneler
-    .mob Dark Iron Saboteur
-    .mob Dark Iron Demolitionist
-step
-    .train 415995,1 << Priest
-    .train 410010,1 << Paladin
-    .train 401761,1 << Mage
-    .train 410122,1 << Hunter
-    .train 416042,1 << Druid
-    .train 425445,1 << Warrior
-    .train 425476,1 << Warlock
-    .train 424990,1 << Rogue
-    .train 410096,1 << Shaman
-    >>Kill |cRXP_ENEMY_Bluegill Oracles|r. Loot them for their |cRXP_LOOT_Fish Oil|r
-    .goto Wetlands,16.6,32.2
-    .collect 17058,24
-    .mob Bluegill Oracle
-step << Alliance
-    .train 415995,1 << Priest
-    .train 410010,1 << Paladin
-    .train 401761,1 << Mage
-    .train 410122,1 << Hunter
-    .train 416042,1 << Druid
-    .train 425445,1 << Warrior
-    .train 425476,1 << Warlock
-    .train 424990,1 << Rogue
-    .train 410096,1 << Shaman
-    #completewith next
-    .goto Stonetalon Mountains,66.6,55.5
-    .zone Stonetalon Mountains >>Travel to Stonetalon Mountains
-step << Alliance
-    #loop
-    .goto Stonetalon Mountains,71.04,49.03,50,0
-    .goto Stonetalon Mountains,72.59,53.21,50,0
-    .goto Stonetalon Mountains,70.63,55.47,50,0
-    .goto Stonetalon Mountains,70.04,55.12,50,0
-    .goto Stonetalon Mountains,67.53,57.65,50,0
-    .goto Stonetalon Mountains,59.95,55.51,50,0
-    .goto Stonetalon Mountains,62.35,52.73,50,0
-    .goto Stonetalon Mountains,66.91,47.82,50,0
-    .goto Stonetalon Mountains,67.31,46.39,50,0
-    .goto Stonetalon Mountains,68.76,47.95,50,0
-    .train 415995,1 << Priest
-    .train 410010,1 << Paladin
-    .train 401761,1 << Mage
-    .train 410122,1 << Hunter
-    .train 416042,1 << Druid
-    .train 425445,1 << Warrior
-    .train 425476,1 << Warlock
-    .train 424990,1 << Rogue
-    .train 410096,1 << Shaman
-    >>Kill |cRXP_ENEMY_Venture Co. Light Shredders|r, |cRXP_ENEMY_XT:4|r and |cRXP_ENEMY_XT:9|r
-    >>|cRXP_WARN_Use the|r |T133870:0|t[Shredder Autosalvage Unit] |cRXP_WARN_on their corpses for a 66% chance of receiving a|r |cRXP_LOOT_Shredder Turbocharger|r
-    .collect 210146,16
-    .use 210147
-    .mob Venture Co. Light Shredder
-    .mob XT:4
-    .mob XT:9
-step
-    .train 415995,1 << Priest
-    .train 410010,1 << Paladin
-    .train 401761,1 << Mage
-    .train 410122,1 << Hunter
-    .train 416042,1 << Druid
-    .train 425445,1 << Warrior
-    .train 425476,1 << Warlock
-    .train 424990,1 << Rogue
-    .train 410096,1 << Shaman
-    #completewith next
     .goto The Barrens,61.8,39.4
-    .zone The Barrens >>Travel to The Barrens
-step
-    .train 415995,1 << Priest
-    .train 410010,1 << Paladin
-    .train 401761,1 << Mage
-    .train 410122,1 << Hunter
-    .train 416042,1 << Druid
-    .train 425445,1 << Warrior
-    .train 425476,1 << Warlock
-    .train 424990,1 << Rogue
-    .train 410096,1 << Shaman
-    #label RuneRatchetGrizzby
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grizzby|r and wait for the roleplay
-    .goto The Barrens,61.8,39.4
-    .accept 78265 >>Accept Fish Oil
-    .accept 78266 >>Accept Dark Iron Ordinance
-    .accept 78267 >>Accept Shredder Turbochargers
-    .turnin 78265 >>Turn in Fish Oil
-    .turnin 78266 >>Turn in Dark Iron Ordinance
-    .turnin 78267 >>Turn in Shredder Turbochargers
-    .target Grizzby
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grizzby|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grizzby|r in the inn
     .use 210822 << Priest
     .use 210820 << Paladin
     .use 210654 << Mage
@@ -538,8 +264,8 @@ RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune & Books Guide
 #subgroup Chest << Shaman/Rogue
-#subgroup Legs << Mage/Warlock/Hunter/Druid
-#subgroup Gloves << Paladin/Warrior/Priest
+#subgroup Legs << Mage/Warlock/Hunter
+#subgroup Gloves << Paladin/Warrior/Priest/Druid
 #name Mind Sear - 25 (Reputation) << Priest
 #name Serpent Spread - 25 (Reputation) << Hunter
 #name Skull Bash - 25 (Reputation) << Druid
@@ -2114,7 +1840,7 @@ RXPGuides.RegisterGuide([[
 RXPGuides.RegisterGuide([[
 #classic
 #group RestedXP Rune & Books Guide
-#subgroup Helm <<Druid/Shaman/Warrior
+#subgroup Helmet <<Druid/Shaman/Warrior
 #subgroup Bracers <<Mage/Hunter/Paladin/Priest/Rogue/Warlock
 #name Molten Armor <<Mage
 #name Gore <<Druid
@@ -2195,86 +1921,65 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Helmet <<Mage/Hunter/Paladin/Priest/Rogue/Warlock
 #subgroup Bracers <<Druid/Shaman/Warrior
-#name Advanced Warding <<Mage
-#name Lock and Load <<Hunter
-#name Improved Sanctuary <<Paladin
-#name Divine Aegis <<Priest
-#name Combat Potency <<Rogue
-#name Riptide <<Shaman
-#name Vengeance <<Warlock
-#name Sword and Board <<Warrior
-#name Improved Frenzied Regeneration <<Druid
-
-
-
-
-]])
-
-RXPGuides.RegisterGuide([[
-#classic
-<< Shaman SoD/Priest SoD
-#group RestedXP Rune & Books Guide
-#subgroup Helm
-#title Mental Dexterity << Shaman
-#title Pain and Suffering << Priest
-#name Mental Dexterity - 43 (Tanaris) << Shaman
-#name Pain and Suffering - 43 (Tanaris) << Priest
-
--- Mental Dexterity/Pain and Suffering
--- PERMOK: Needs better waypoints
+#name Advanced Warding - 40 (Azeroth) <<Mage
+#name Lock and Load - 40 (Azeroth) <<Hunter
+#name Improved Sanctuary - 40 (Azeroth) <<Paladin
+#name Divine Aegis - 40 (Azeroth) <<Priest
+#name Combat Potency - 40 (Azeroth) <<Rogue
+#name Riptide - 40 (Azeroth) <<Shaman
+#name Vengeance - 40 (Azeroth) <<Warlock
+#name Sword and Board - 40 (Azeroth) <<Warrior
+#name Improved Frenzied Regeneration - 40 (Azeroth) <<Druid
 
 step
     #completewith next
-    .zone Tanaris >>Travel to Tanaris
-    .train 416055,1 << Shaman
-    .train 415991,1 << Priest
+    .zone Felwood >>Travel to Felwood
 step
+    .goto Felwood,51.6,82.0
+    >>Talk to the |cRXP_FRIENDLY_Shadowtooth Emissary|r near the Emerald Sanctuary
+    .accept 82043 >>Accept The Wild Gods
+    .target Shadowtooth Emissary
+step
+    #optional
     #completewith next
-    >>Kill |cRXP_ENEMY_Wastewander Shadow Mages|r. Loot them for the |T134939:0|t[|cRXP_LOOT_Coded Warlock Notes|r]
-    .collect 221547,1
-    .mob Wastewander Shadow Mage
-    .train 416055,1 << Shaman
-    .train 415991,1 << Priest
+    .goto The Hinterlands,66.27,65.13,0
+    >>|cRXP_WARN_In order to complete this quest you will need one person with a|r |T134799:0|t|cRXP_LOOT_Wildwshiper Draught|r |cRXP_WARN_in bags. It drops from the elite trolls in Jintha'alor in the Hinterlands. Only get it if no one in your Razorfen Downs party has it|r
+    .collect 221261,1 --Wildwhisper Draught
 step
-    .train 416055,1 << Shaman
-    .train 415991,1 << Priest
-    #loop
-    .goto Tanaris,59.8,24.0,35,0
-    .goto Tanaris,65.6,32.2,35,0
-    .goto Tanaris,62.4,33.2,30,0
-    >>Kill |cRXP_ENEMY_Wastewander Thieves|r. Loot them for the |T134329:0|t[|cRXP_LOOT_Wastewander Cipher|r]
-    .collect 221549,1
-    .mob Wastewander Thief
+    .goto The Barrens,45.5,92.4
+    >>Look for a group for Razorfen Downs. You will need to clear up the spiral to the end boss |cRXP_ENEMY_Amnennar the Coldbringer|r and kill him. Afterward one person from the group has to use their |T134799:0|t|cRXP_LOOT_Wildwshiper Draught|r to summon a ghostly |cRXP_FRIENDLY_Spirit of Agamaggan|r. Speak to him to turn in the quest and receive a followup
+    .turnin 82043 >>Turn in The Wild Gods
+    .accept 82044 >>Accept The Wild Gods
+    .target Spirit of Agamaggan
+    .mob Amnennar the Coldbringer
+    .use 221261
 step
-    .train 416055,1 << Shaman
-    .train 415991,1 << Priest
-    #loop
-    .goto Tanaris,58.4,38.6,40,0
-    .goto Tanaris,60.3,23.4,40,0
-    .goto Tanaris,66.2,35.0,40,0
-    >>Kill |cRXP_ENEMY_Wastewander Shadow Mages|r. Loot them for the |T134939:0|t[|cRXP_LOOT_Coded Warlock Notes|r]
-    .collect 221547,1
-    .mob Wastewander Shadow Mage
+    >>You have now received an |T237378:0|t|cRXP_LOOT_Agamaggan's Roar|r. This item can be used in specific areas in |cRXP_PICK_Blackrock Depths|r, |cRXP_PICK_Zul'farrak|r and |cRXP_PICK_Maraudon|r in order to summon a new |cRXP_ENEMY_Delirious Ancient|r boss which always drops one |T132119:0|t|cRXP_LOOT_Wild Offering|r on kill. Collect 3 of those in order to complete the quest. |T132119:0|t|cRXP_LOOT_Wild Offerings|r are also used as a currency to purchase very powerful items from the |cRXP_FRIENDLY_Shadowtooth Emissary|r so you might want to farm more than just the 3 for your rune
+    >>|cRXP_WARN_In|r |cRXP_FRIENDLY_Zul'farrak|r |cRXP_WARN_kill any 3 bosses and you will be able to spawn a|r |cRXP_ENEMY_Delirious Ancient|r |cRXP_WARN_near the Ghaz'rilla pool|r
+    >>|cRXP_WARN_In|r |cRXP_FRIENDLY_Maraudon|r |cRXP_WARN_kill|r |cRXP_ENEMY_Princess Theradras|r |cRXP_WARN_and you will be able to spawn a|r |cRXP_ENEMY_Delirious Ancient|r |cRXP_WARN_in her arena|r
+    >>|cRXP_WARN_In|r |cRXP_FRIENDLY_Blackrock Depths|r |cRXP_WARN_kill|r |cRXP_ENEMY_High Interrogator Gerstahn|r, |cRXP_ENEMY_Houndmaster Grebmar|r |cRXP_WARN_and complete|r |cRXP_ENEMY_the Arena|r |cRXP_WARN_event. Afterward you will be able to spawn a|r |cRXP_ENEMY_Delirious Ancient|r |cRXP_WARN_on the Dark Iron Highway (road to Bael'gar)|r
+    >>|cRXP_WARN_TIP:|r The offerings can be collected in a raid and you can run the same dungeon repeatedly. Currently the fastest way to farm them is to |cRXP_WARN_join a 10 man raid|r and run either |cRXP_WARN_repeat Maraudon Princess or Zul'farrak runs|r
+    .complete 82044,1 --Wild Offering 3/3
+    .use 221418
+    .mob Delirious Ancient
 step
-    .train 416055,1 << Shaman
-    .train 415991,1 << Priest
-    >>|cRXP_WARN_Use the|r |T134329:0|t[Wastewander Cipher] |cRXP_WARN_to receive|r |T237018:0|t[Deciphered Warlock Notes]
-    .goto Tanaris,58.0,36.0
-    .use 221549
-    .collect 221545,1
+    #optional
+    #completewith next
+    .zone Felwood >>Return to Felwood
 step
-    .train 416055,1 << Shaman
-    .train 415991,1 << Priest
-    >>|cRXP_WARN_Stand on top of the|r "Cryptic Scroll of Summoning". |cRXP_WARN_Use the|r |T237018:0|t[Deciphered Warlock Notes] |cRXP_WARN_while standing on top of the scroll|r.
-    >>Kill the |cRXP_ENEMY_Enraged Voidwalker|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Mental Dexterity|r] << Shaman
-    >>Kill the |cRXP_ENEMY_Enraged Voidwalker|r. Loot it for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of Verdant Winter|r] << Priest
-    .collect 220610,1 << Shaman
-    .collect 221979,1 << Priest
+    .goto Felwood,51.6,82.0
+    >>Talk to the |cRXP_FRIENDLY_Shadowtooth Emissary|r near the Emerald Sanctuary
+    .turnin 82044 >>Turn in The Wild Gods
+    .target Shadowtooth Emissary
 step
-    .itemcount 220610,1 << Shaman
-    .itemcount 221979,1 << Priest
-    .use 220610 << Shaman
-    .use 221979 << Priest
-    .train 416055 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Mental Dexterity|r] |cRXP_WARN_to learn|r |T136055:0|t[Mental Dexterity] << Shaman
-    .train 415991 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of Verdant Winter|r] |cRXP_WARN_to learn|r |T237567:0|t[Pain and Suffering] << Priest
+    .train 431622 >>|cRXP_WARN_Use the|r |T236160:0|t[|cRXP_FRIENDLY_Hyjal's Wisdom|r] item you received |cRXP_WARN_to train|r |T237539:0|t[Divine Aegis] << Priest
+    .train 431389 >>|cRXP_WARN_Use the|r |T236160:0|t[|cRXP_FRIENDLY_Hyjal's Wisdom|r] item you received |cRXP_WARN_to train|r |T132091:0|t[Improved Frenzied Regeneration] << Druid
+    .train 428738 >>|cRXP_WARN_Use the|r |T236160:0|t[|cRXP_FRIENDLY_Hyjal's Wisdom|r] item you received |cRXP_WARN_to train|r |T135733:0|t[Advanced Warding] << Mage
+    .train 415413 >>|cRXP_WARN_Use the|r |T236160:0|t[|cRXP_FRIENDLY_Hyjal's Wisdom|r] item you received |cRXP_WARN_to train|r |T236185:0|t[Lock and Load] << Hunter
+    .train 429133 >>|cRXP_WARN_Use the|r |T236160:0|t[|cRXP_FRIENDLY_Hyjal's Wisdom|r] item you received |cRXP_WARN_to train|r |T135925:0|t[Improved Sanctuary] << Paladin
+    .train 432259 >>|cRXP_WARN_Use the|r |T236160:0|t[|cRXP_FRIENDLY_Hyjal's Wisdom|r] item you received |cRXP_WARN_to train|r |T135673:0|t[Combat Potency] << Rogue
+    .train 409954 >>|cRXP_WARN_Use the|r |T236160:0|t[|cRXP_FRIENDLY_Hyjal's Wisdom|r] item you received |cRXP_WARN_to train|r |T252995:0|t[Riptide] << Shaman
+    .train 426469 >>|cRXP_WARN_Use the|r |T236160:0|t[|cRXP_FRIENDLY_Hyjal's Wisdom|r] item you received |cRXP_WARN_to train|r |T236299:0|t[Vengeance] << Warlock
+    .train 426978 >>|cRXP_WARN_Use the|r |T236160:0|t[|cRXP_FRIENDLY_Hyjal's Wisdom|r] item you received |cRXP_WARN_to train|r |T236315:0|t[Sword and Board] << Warrior
+    .use 222962 --Hyjal's Wisdom
 ]])

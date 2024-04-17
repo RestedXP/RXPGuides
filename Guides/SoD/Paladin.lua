@@ -1891,7 +1891,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Paladin SoD
 #group RestedXP Rune & Books Guide
-#subgroup Helm
+#subgroup Helmet
 #name Fanaticism - 44 (Azeroth)
 
 step
@@ -1959,7 +1959,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Paladin SoD
 #group RestedXP Rune & Books Guide
-#subgroup Helm
+#subgroup Bracers
 #name Light's Grace - 40 (Feralas)
 
 step
