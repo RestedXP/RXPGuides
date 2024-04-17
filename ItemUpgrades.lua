@@ -1326,7 +1326,7 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
                 itemID = itemID,
                 level = level,
                 scanType = ahSession.scanType, -- TODO propagate scanType for proper filters
-                texture = texture -- TODO use texture in itemIcom
+                itemIcon = texture
             }
         end
 
@@ -1454,6 +1454,7 @@ function addon.itemUpgrades.AH:Analyze()
                     bAS.relative.ratio = scanData.ratio
                     bAS.relative.itemLink = itemLink
                     bAS.relative.itemID = scanData.itemID
+                    bAS.relative.itemIcon = scanData.itemIcon
                     bAS.relative.name = scanData.name
                     bAS.relative.level = scanData.level
                     bAS.relative.weightIncrease = scanData.weightIncrease
@@ -1467,6 +1468,7 @@ function addon.itemUpgrades.AH:Analyze()
                     bAS.budget.rwpc = scanData.relativeWeightPerCopper
                     bAS.budget.itemLink = itemLink
                     bAS.budget.itemID = scanData.itemID
+                    bAS.budget.itemIcon = scanData.itemIcon
                     bAS.budget.name = scanData.name
                     bAS.budget.level = scanData.level
                     bAS.budget.weightIncrease = scanData.weightIncrease
@@ -1763,7 +1765,7 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
                     ItemLevel = data.relative.level,
                     UpdateEPText = prettyPrintUpgradeColumn(data.relative),
                     BuyoutMoney = data.relative.lowestPrice,
-                    ItemIcon = GetItemIcon(data.relative.itemLink) -- TODO fix randomized items link
+                    ItemIcon = data.relative.itemIcon
                 }
             end
 
@@ -1780,13 +1782,13 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
                         ItemLevel = data.budget.level,
                         UpdateEPText = prettyPrintBudgetColumn(data.budget),
                         BuyoutMoney = data.budget.lowestPrice,
-                        ItemIcon = GetItemIcon(data.budget.itemLink) -- TODO fix randomized items link
+                        ItemIcon = data.budget.itemIcon
                     }
                 end
 
             end
 
-            if blockData.best or blockData.budget then -- TODO remove old data from insert
+            if blockData.best or blockData.budget then
                 -- print("  - DisplayEmbeddedResults inserting", blockData.Name)
                 ahSession.displayFrame.DataProvider:Insert(blockData)
             end
