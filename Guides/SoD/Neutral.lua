@@ -1,11 +1,13 @@
+if not C_Seasons or C_Seasons.GetActiveSeason() ~= 2 then return end
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD/Hunter SoD
 #group RestedXP Rune & Books Guide
 #subgroup Legs << Warrior
 #subgroup Chest << Hunter
-#name Consumed by Rage - 25 (Wetlands) << Warrior
-#name Aspect of the Lion - 25 (Wetlands) << Hunter
+#name Carrodin Runes
+#displayname Consumed by Rage - 25 (Wetlands) << Warrior
+#displayname Aspect of the Lion - 25 (Wetlands) << Hunter
 #title Consumed by Rage << Warrior
 #title Aspect of the Lion << Hunter
 
@@ -209,15 +211,16 @@ RXPGuides.RegisterGuide([[
 #subgroup Chest << Priest/Hunter/Druid/Warrior/Shaman
 #subgroup Legs << Warlock/Paladin
 #subgroup Gloves << Mage/Rogue
-#name Serendipity - 25 (The Barrens) << Priest
-#name Lone Wolf - 25 (The Barrens) << Hunter
-#name Survival of the Fittest - 25 (The Barrens) << Druid
-#name Warbringer - 25 (The Barrens) << Warrior
-#name Dual Wield Specialization - 25 (The Barrens) << Shaman
-#name Demonic Pact - 25 (The Barrens) << Warlock
-#name Divine Sacrifice - 25 (The Barrens) << Paladin
-#name Rewind Time - 25 (The Barrens) << Mage
-#name Main Gauche - 25 (The Barrens) << Rogue
+#name Grizzby Runes
+#displayname Serendipity - 25 (The Barrens) << Priest
+#displayname Lone Wolf - 25 (The Barrens) << Hunter
+#displayname Survival of the Fittest - 25 (The Barrens) << Druid
+#displayname Warbringer - 25 (The Barrens) << Warrior
+#displayname Dual Wield Specialization - 25 (The Barrens) << Shaman
+#displayname Demonic Pact - 25 (The Barrens) << Warlock
+#displayname Divine Sacrifice - 25 (The Barrens) << Paladin
+#displayname Rewind Time - 25 (The Barrens) << Mage
+#displayname Main Gauche - 25 (The Barrens) << Rogue
 #next Crusader Strike - 4 (Elwynn Forest) << Human Paladin
 #next Crusader Strike - 4 (Dun Morogh) << Dwarf Paladin
 #next Lava Burst - 25 (Hillsbrad Foothills) << Shaman
@@ -266,15 +269,16 @@ RXPGuides.RegisterGuide([[
 #subgroup Chest << Shaman/Rogue
 #subgroup Legs << Mage/Warlock/Hunter
 #subgroup Gloves << Paladin/Warrior/Priest/Druid
-#name Mind Sear - 25 (Reputation) << Priest
-#name Serpent Spread - 25 (Reputation) << Hunter
-#name Skull Bash - 25 (Reputation) << Druid
-#name Single-Minded Fury - 25 (Reputation) << Warrior
-#name Healing Rain - 25 (Reputation) << Shaman
-#name Everlasting Affliction - 25 (Reputation) << Warlock
-#name Beacon of Light - 25 (Reputation) << Paladin
-#name Arcane Surge - 25 (Reputation) << Mage
-#name Just a Flesh Wound - 25 (Reputation) << Rogue
+#name Waylaid Runes
+#displayname Mind Sear - 25 (Reputation) << Priest
+#displayname Serpent Spread - 25 (Reputation) << Hunter
+#displayname Skull Bash - 25 (Reputation) << Druid
+#displayname Single-Minded Fury - 25 (Reputation) << Warrior
+#displayname Healing Rain - 25 (Reputation) << Shaman
+#displayname Everlasting Affliction - 25 (Reputation) << Warlock
+#displayname Beacon of Light - 25 (Reputation) << Paladin
+#displayname Arcane Surge - 25 (Reputation) << Mage
+#displayname Just a Flesh Wound - 25 (Reputation) << Rogue
 #next Divine Sacrifice - 25 (Azeroth) << Paladin
 #title Mind Sear << Priest
 #title Serpent Spread << Hunter
@@ -424,8 +428,9 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest << Warrior
 #subgroup Legs << Mage
-#name Flagellation - 25 (Duskwood) << Warrior
-#name Mass Regeneration - 25 (Duskwood) << Mage
+#name Duskwood Lich Runes
+#displayname Flagellation - 25 (Duskwood) << Warrior
+#displayname Mass Regeneration - 25 (Duskwood) << Mage
 #title Flagellation << Warrior
 #title Mass Regeneration << Mage
 
@@ -807,15 +812,16 @@ RXPGuides.RegisterGuide([[
 #subgroup Chest << Shaman
 #subgroup Belt << Warrior/Hunter/Mage/Paladin
 #subgroup Boots << Warlock/Priest/Rogue/Druid
-#name Spirit of the Redeemer - 40 (Azeroth) << Priest
-#name Melee Specialist - 40 (Azeroth) << Hunter
-#name King of the Jungle - 40 (Azeroth) << Druid
-#name Precise Timing - 40 (Azeroth) << Warrior
-#name Two-Handed Mastery - 40 (Azeroth) << Shaman
-#name Demonic Knowledge - 40 (Azeroth) << Warlock
-#name Infusion of Light - 40 (Azeroth) << Paladin
-#name Missile Barrage - 40 (Azeroth) << Mage
-#name Waylay - 40 (Azeroth) << Rogue
+#name Dark Rider Runes
+#displayname Spirit of the Redeemer - 40 (Azeroth) << Priest
+#displayname Melee Specialist - 40 (Azeroth) << Hunter
+#displayname King of the Jungle - 40 (Azeroth) << Druid
+#displayname Precise Timing - 40 (Azeroth) << Warrior
+#displayname Two-Handed Mastery - 40 (Azeroth) << Shaman
+#displayname Demonic Knowledge - 40 (Azeroth) << Warlock
+#displayname Infusion of Light - 40 (Azeroth) << Paladin
+#displayname Missile Barrage - 40 (Azeroth) << Mage
+#displayname Waylay - 40 (Azeroth) << Rogue
 #title Spirit of the Redeemer << Priest
 #title Melee Specialist << Hunter
 #title King of the Jungle << Druid
@@ -1220,15 +1226,16 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Belt << Druid/Priest/Rogue/Warlock
 #subgroup Boots << Mage/Shaman/Hunter/Paladin/Warrior
-#name Mind Spike - 35 (Azeroth) << Priest
-#name Trap Launcher - 35 (Azeroth) << Hunter
-#name Eclipse - 35 (Azeroth) << Druid
-#name Enraged Regeneration - 35 (Azeroth) << Warrior
-#name Ancestral Awakening - 35 (Azeroth) << Shaman
-#name Shadow and Flame - 35 (Azeroth) << Warlock
-#name The Art of War - 35 (Azeroth) << Paladin
-#name Brain Freeze - 35 (Azeroth) << Mage
-#name Poisoned Knife - 35 (Azeroth) << Rogue
+#name Desolace Chain Runes
+#displayname Mind Spike - 35 (Azeroth) << Priest
+#displayname Trap Launcher - 35 (Azeroth) << Hunter
+#displayname Eclipse - 35 (Azeroth) << Druid
+#displayname Enraged Regeneration - 35 (Azeroth) << Warrior
+#displayname Ancestral Awakening - 35 (Azeroth) << Shaman
+#displayname Shadow and Flame - 35 (Azeroth) << Warlock
+#displayname The Art of War - 35 (Azeroth) << Paladin
+#displayname Brain Freeze - 35 (Azeroth) << Mage
+#displayname Poisoned Knife - 35 (Azeroth) << Rogue
 #title Mind Spike << Priest
 #title Trap Launcher << Hunter
 #title Eclipse << Druid
@@ -1477,23 +1484,24 @@ RXPGuides.RegisterGuide([[
 << SoD
 #group RestedXP Rune & Books Guide
 #subgroup Spell Books
-#name Totemic Projection - 27-40 (Scarlet Monastery) << Shaman
+#name Spell Book Runes
+#displayname Totemic Projection - 27-40 (Scarlet Monastery) << Shaman
 #title Totemic Projection << Shaman
-#name Expanded Intellect - 27-40 (Scarlet Monastery) << Mage
+#displayname Expanded Intellect - 27-40 (Scarlet Monastery) << Mage
 #title Expanded Intellect << Mage
-#name Treatise on Aspect of the Viper - 27-40 (Scarlet Monastery) << Hunter
+#displayname Treatise on Aspect of the Viper - 27-40 (Scarlet Monastery) << Hunter
 #title Treatise on Aspect of the Viper << Hunter
-#name Soul Harvesting/Portal of Summoning - 27-40 (Scarlet Monastery) << Warlock
+#displayname Soul Harvesting/Portal of Summoning - 27-40 (Scarlet Monastery) << Warlock
 #title Soul Harvesting/Portal of Summoning << Warlock
-#name Redirect - 27-40 (Scarlet Monastery) << Rogue
+#displayname Redirect - 27-40 (Scarlet Monastery) << Rogue
 #title Redirect << Rogue
-#name Shadowfiend/Increased Fortitude - 27-40 (Scarlet Monastery) << Priest
+#displayname Shadowfiend/Increased Fortitude - 27-40 (Scarlet Monastery) << Priest
 #title Shadowfiend/Increased Fortitude << Priest
-#name Enhanced Blessings - 27-40 (Scarlet Monastery) << Paladin
+#displayname Enhanced Blessings - 27-40 (Scarlet Monastery) << Paladin
 #title Enhanced Blessings << Paladin
-#name Enhanced Restoration/Revive/Deeper Wilds - 27-40 (Scarlet Monastery) << Druid
+#displayname Enhanced Restoration/Revive/Deeper Wilds - 27-40 (Scarlet Monastery) << Druid
 #title Enhanced Restoration/Revive/Deeper Wilds << Druid
-#name Commanding Shout - 27-40 (Scarlet Monastery) << Warrior
+#displayname Commanding Shout - 27-40 (Scarlet Monastery) << Warrior
 #title Commanding Shout << Warrior
 
 step
@@ -1624,8 +1632,9 @@ RXPGuides.RegisterGuide([[
 << Hunter SoD/Druid SoD
 #group RestedXP Rune & Books Guide
 #subgroup Boots
-#name Invigoration - 35 (Azeroth) << Hunter
-#name Survival Instincts - 35 (Azeroth) << Druid
+#name Bugcatcher Runes
+#displayname Invigoration - 35 (Azeroth) << Hunter
+#displayname Survival Instincts - 35 (Azeroth) << Druid
 #title Invigoration << Hunter
 #title Survival Instincts << Druid
 
@@ -1823,34 +1832,22 @@ step
     +|cRXP_WARN_It is strongly adivsed you save your|r |T134057:0|t[|cRXP_LOOT_Student Fodder|r] |cRXP_WARN_for higher levels before consuming them. Each use of|r |T134057:0|t[|cRXP_LOOT_Student Fodder|r] |cRXP_WARN_adds 20% rested experience to your character, therefore it is more efficient to use at higher levels|r
 ]])
 
-
 RXPGuides.RegisterGuide([[
 #classic
-#group RestedXP Rune & Books Guide
-#subgroup Bracers
-#name Displacement
--- Mage Paladin Warlock All share this
-
-
-
-
-
-]])
-
-RXPGuides.RegisterGuide([[
-#classic
+<< SoD
 #group RestedXP Rune & Books Guide
 #subgroup Helmet <<Druid/Shaman/Warrior
 #subgroup Bracers <<Mage/Hunter/Paladin/Priest/Rogue/Warlock
-#name Molten Armor <<Mage
-#name Gore <<Druid
-#name T.N.T. <<Hunter
-#name Improved Hammer of Wrath <<Paladin
-#name Void Zone <<Priest
-#name Cut to the Chase <<Rogue
-#name Burn <<Shaman
-#name Unstable Affliction <<Warlock
-#name Shield Mastery <<Warrior
+#name Emerald Wardens Runes
+#displayname Molten Armor <<Mage
+#displayname Gore <<Druid
+#displayname T.N.T. <<Hunter
+#displayname Improved Hammer of Wrath <<Paladin
+#displayname Void Zone <<Priest
+#displayname Cut to the Chase <<Rogue
+#displayname Burn <<Shaman
+#displayname Unstable Affliction <<Warlock
+#displayname Shield Mastery <<Warrior
 
 step
     +|cRXP_WARN_Go to any of the zones listed below. At the marked locations in each respecive one you will find an NPC from a new faction,|r |cRXP_FRIENDLY_The Emerald Wardens|r. |cRXP_WARN_To unlock this rune you will need to complete their quests and reach|r |cRXP_FRIENDLY_friendly|r |cRXP_WARN_reputation with them|r
@@ -1918,18 +1915,20 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+<< SoD
 #group RestedXP Rune & Books Guide
 #subgroup Helmet <<Mage/Hunter/Paladin/Priest/Rogue/Warlock
 #subgroup Bracers <<Druid/Shaman/Warrior
-#name Advanced Warding - 40 (Azeroth) <<Mage
-#name Lock and Load - 40 (Azeroth) <<Hunter
-#name Improved Sanctuary - 40 (Azeroth) <<Paladin
-#name Divine Aegis - 40 (Azeroth) <<Priest
-#name Combat Potency - 40 (Azeroth) <<Rogue
-#name Riptide - 40 (Azeroth) <<Shaman
-#name Vengeance - 40 (Azeroth) <<Warlock
-#name Sword and Board - 40 (Azeroth) <<Warrior
-#name Improved Frenzied Regeneration - 40 (Azeroth) <<Druid
+#name Wild Offering Runes
+#displayname Advanced Warding - 40 (Azeroth) <<Mage
+#displayname Lock and Load - 40 (Azeroth) <<Hunter
+#displayname Improved Sanctuary - 40 (Azeroth) <<Paladin
+#displayname Divine Aegis - 40 (Azeroth) <<Priest
+#displayname Combat Potency - 40 (Azeroth) <<Rogue
+#displayname Riptide - 40 (Azeroth) <<Shaman
+#displayname Vengeance - 40 (Azeroth) <<Warlock
+#displayname Sword and Board - 40 (Azeroth) <<Warrior
+#displayname Improved Frenzied Regeneration - 40 (Azeroth) <<Druid
 
 step
     #completewith next
@@ -1982,4 +1981,47 @@ step
     .train 426469 >>|cRXP_WARN_Use the|r |T236160:0|t[|cRXP_FRIENDLY_Hyjal's Wisdom|r] item you received |cRXP_WARN_to train|r |T236299:0|t[Vengeance] << Warlock
     .train 426978 >>|cRXP_WARN_Use the|r |T236160:0|t[|cRXP_FRIENDLY_Hyjal's Wisdom|r] item you received |cRXP_WARN_to train|r |T236315:0|t[Sword and Board] << Warrior
     .use 222962 --Hyjal's Wisdom
+]])
+
+RXPGuides.RegisterGuide([[
+<<Warlock/Priest/Mage/Paladin
+<< SoD
+#classic
+#group RestedXP Rune & Books Guide
+#subgroup Helmet <<Warlock
+#subgroup Bracers <<Paladin/Priest/Mage
+#name Ley Crystal Runes 
+#displayname Displacement - 45 (Azeroth) <<Mage
+#displayname Purifying Power - 45 (Azeroth) <<Paladin
+#displayname Despair - 45 (Azeroth) <<Priest
+#displayname Backdraft - 45 (Azeroth) <<Warlock
+
+step
+    #optional
+    #completewith next
+    >>|cRXP_WARN_In order to find this rune you will need to get 4|r |T134938:0|t|cRXP_LOOT_Scrolls of Geomancy|r |cRXP_WARN_and channel one into four Ley Crystals in various zones in the world to spawn the|r |cRXP_ENEMY_Enraged Leywalkers|r. |cRXP_WARN_Alternatively you can party up with other mages who have the scroll or warlocks with|r |T132842:0|t|cRXP_FRIENDLY_Worldcore Fragments|r << Mage
+    >>|cRXP_WARN_In order to find this rune you will need to get 4|r |T132842:0|t|cRXP_FRIENDLY_Worldcore Fragments|r |cRXP_WARN_from your|r |T236294:0|t[|cRXP_FRIENDLY_Explorer Imp|r] |cRXP_WARN_expeditions and channel one into four Ley Crystals in various zones in the world to spawn the|r |cRXP_ENEMY_Enraged Leywalkers|r. |cRXP_WARN_Alternatively you can party up with other warlocks who have the fragment or mages with |r |T134938:0|t|cRXP_LOOT_Scrolls of Geomancy|r << Warlock
+    +|cRXP_WARN_In order to find this rune you will need to party up with a warlock with|r |T132842:0|t|cRXP_FRIENDLY_Worldcore Fragments|r |cRXP_WARN_or a mage with|r |T134938:0|t|cRXP_LOOT_Scrolls of Geomancy|r |cRXP_WARN_to summon the needed mobs. You can't summon them by yourself|r << Priest/Paladin
+    .collect 223171,4 << Mage
+    .collect 223168,4 << Warlock
+
+step
+    >>Go to each of the Ley Crystals marked on your map and use your |T134938:0|t|cRXP_LOOT_Scroll of Geomancy|r on them or have someone in your party do it to summon an |cRXP_ENEMY_Enraged Leywalker|r. Defeat it and loot for its |cRXP_LOOT_Leycryst|r. This can be done in any order << Mage
+    >>Go to each of the Ley Crystals marked on your map and use your |T132842:0|t|cRXP_FRIENDLY_Worldcore Fragment|r on them or have someone in your party do it to summon an |cRXP_ENEMY_Enraged Leywalker|r. Defeat it and loot for its |cRXP_LOOT_Leycryst|r. This can be done in any order << Warlock
+    >>Go to each of the Ley Crystals marked on your map and have the warlock or mage in your group summon an |cRXP_ENEMY_Enraged Leywalker|r. Defeat it and loot for it's |cRXP_LOOT_Leycryst|r. This can be done in any order << Priest/Paladin
+    .goto Azshara,22.0,79.0,-1
+    .goto Feralas,57.0,60.0,-1
+    .goto The Hinterlands,48.0,59.0,-1
+    .goto Searing Gorge,55,65,-1
+    .collect 221318,1 >>|T237193:0|t|cRXP_LOOT_Azshara Leycryst|r from |cRXP_PICK_Azshara|r near The Forlorn Ridge
+    .collect 221317,1 >>|T237189:0|t|cRXP_LOOT_Feralas Leycryst|r from |cRXP_PICK_Feralas|r in the High Wilderness
+    .collect 221319,1 >>|T237192:0|t|cRXP_LOOT_Blackrock Leycryst|r from southern |cRXP_PICK_Searing Gorge|r
+    .collect 221320,1 >>|T237191:0|t|cRXP_LOOT_Hinterlands Leycryst|r from |cRXP_PICK_The Hinterlands|r north of Altar of Zul
+    .mob Enraged Leywalker
+step
+    .train 428861 >> |cRXP_WARN_Use any of the four crystals you collected to combine them and learn|r |T132171:0|t[Displacement] << Mage
+    .train 427713 >> |cRXP_WARN_Use any of the four crystals you collected to combine them and learn|r |T236290:0|t[Backdraft] << Warlock
+    .train 429144 >> |cRXP_WARN_Use any of the four crystals you collected to combine them and learn|r |T135950:0|t[Purifying Power] << Paladin
+    .train 431670 >> |cRXP_WARN_Use any of the four crystals you collected to combine them and learn|r |T237555:0|t[Despair] << Priest
+    .use 221318 --Azshara Leycryst
 ]])

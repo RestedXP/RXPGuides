@@ -1807,13 +1807,119 @@ step
 
 ]])
 
+RXPGuides.RegisterGuide([[
+#classic
+<< Rogue SoD
+#group RestedXP Rune & Books Guide
+#subgroup Helmet
+#title Honor Among Thieves
+#name Honor Among Thieves - 45 (Azeroth)
 
---RXPGuides.RegisterGuide([[
---#classic
---<< Rogue SoD
---#group RestedXP Rune & Books Guide
---#subgroup Helmet
---#title Honor Among Thieves
---#name Honor Among Thieves - 45 (Azeroth)
-
--- ]])
+step
+    #optional
+    #completewith letterC
+    +|cRXP_WARN_In order to start the quest for this rune you need to have completed "The Manor, Ravenholdt" quest introducing you to the Ravenholdt rogue faction. In order to receive it talk to a|r|cRXP_WARN_|r|cRXP_WARN_|r|cRXP_WARN_|r |cRXP_FRIENDLY_Osborne the Night Man|r |cRXP_WARN_in Stormwind|r|cRXP_WARN_|r|cRXP_WARN_|r << Alliance
+    +|cRXP_WARN_In order to start the quest for this rune you need to have completed "The Manor, Ravenholdt" quest introducing you to the Ravenholdt rogue faction. In order to receive it talk to a|r |cRXP_FRIENDLY_Ormok|r |cRXP_WARN_in Orgrimmar|r << Horde
+step
+    .xp 45 >>You need to reach level 45 in order to receive the quest starting this runehunt
+step << Alliance
+    +Go to any Major City
+    >>Darnassus
+    >>Ironforge
+    >>Stormwind City
+    .zoneskip Darnassus
+    .zoneskip Ironforge
+    .zoneskip Stormwind City
+step << Horde
+    +Go to any Major City
+    >>Undercity
+    >>Thunder Bluff
+    >>Orgrimmar
+    .zoneskip Undercity
+    .zoneskip Thunderbluff
+    .zoneskip Orgrimmar
+step
+    #label letterC
+    >>Go to any mailbox. You will receive a letter which starts a quest. Accept it
+    .accept 80526 >>Accept Fool Me Twice
+step
+    #optional
+    #completewith next
+    .zone Alterac Mountains >>Travel to Alterac Mountains
+step
+    .goto Alterac Mountains,84.6,80.2
+    >>Go to the Ravenholdt Manor and talk to |cRXP_FRIENDLY_Fahrad|r
+    .turnin 80526 >>Turn in Fool Me Twice
+    .accept 80411 >>Accept The Talisman of Kazdor
+    .target Fahrad
+step
+    #optional
+    #completewith next
+    .zone Tanaris >>Travel to Tanaris
+step
+    .goto Tanaris,38.69,20.20
+    >>|cRXP_WARN_Head to Zul'Farrak in Tanaris. You can't be in a group. Entering Zul'Farrak will put you in a special version of the instance where you will be able to complete the objectives of your quest|r
+    >>Scout the troll tents looking for |cRXP_PICK_Clay Vessels|r loot them for |T134799:0|t|cRXP_LOOT_Vile Concoctions|r. You will need two of these to complete the quest
+    .collect 217716,2
+step
+    >>Go to to |cRXP_ENEMY_Antu'sul's|r cave, use one of your |T134799:0|t|cRXP_LOOT_Vile Concoctions|r on the cauldron next to it. It will not break your stealth. While the boss is distracted you can loot |cRXP_PICK_Antu'Sul's Satchel|r for an |T133724:0|t|cRXP_LOOT_Offering of Bone|r
+    .collect 217721,1 --Offering of Bone
+    .use 217716
+step
+    >>Go to the graveyard area. Use your second |T134799:0|t|cRXP_LOOT_Vile Concoction|r on the cauldron next to |cRXP_ENEMY_Witch Doctor Zum'rah|r. While he's distracted loot the |T136232:0|t|cRXP_LOOT_Ward of the Dead|r
+    .collect 217727,1 --ward of the dead
+    .use 217716
+step
+    .equip 13,217727 >>Equip the |T136232:0|t|cRXP_LOOT_Ward of the Dead|r trinket you just looted. It will reveal one of the |cRXP_PICK_graves|r which you need to loot for an |T236304:0|t|cRXP_LOOT_Offering of Flesh|r
+    .collect 217720,1 --offering of flesh
+step
+    >>Use the |T236304:0|t|cRXP_LOOT_Offering of Flesh|r you just collected to combine it with the |T133724:0|t|cRXP_LOOT_Offering of Bone|r into a |T236305:0|t|cRXP_LOOT_Blood Magic Essence|r
+    .collect 217719,1 --Blood Magic Essence
+    .use 217720
+step
+    >>Go to the foot of the pyramid staircase and look to your right. On the side of the wall you will see a small stone block. Jump onto it and then walk onto the edge. On the second balcony you will find a small chest. Loot it for a |T237274:0|t|cRXP_LOOT_Hollow Emblem|r
+    .collect 217717,1 --Hollow Emblem
+step
+    >>Use the |T237274:0|t|cRXP_LOOT_Hollow Emblem|r you just looted to combine it with the |T236305:0|t|cRXP_LOOT_Blood Magic Essence|r and receive an |T133572:0|t|cRXP_LOOT_Emblem of Blood Magic|r
+    .collect 217718,1 --Emblem of Blood Magic
+step
+    >>Climb the stairs to the top of the pyramid and loot the |cRXP_PICK_Spellbound War Chest|r for |T133313:0|t|cRXP_LOOT_Talisman of Kazdor|r
+    .collect 217609,1 --Talisman of Kazdor
+step
+    #optional
+    #completewith next
+    .zone Alterac Mountains >>Travel to Alterac Mountains
+step
+    .goto Alterac Mountains,84.6,80.2
+    >>Return to the Ravenholdt Manor and talk to |cRXP_FRIENDLY_Fahrad|r
+    .turnin 80411 >>Turn in The Talisman of Kazdor
+    .accept 80453 >>Accept Best Laid Plans
+    .target Fahrad
+step
+    .goto Alterac Mountains,86.0,80.0
+    >>Head to the basement of the mansion. Look for |cRXP_FRIENDLY_Zan Shivsproket|r a gnome engineer
+    .turnin 80453 >>Turn in Best Laid Plans
+    .accept 80454 >>Accept One Last Drop
+    .target Zan Shivsproket
+step
+    #optional
+    #completewith next
+    .zone Silverpine Forest >>Travel to the Silverpine Forest
+step
+    .goto Silverpine Forest,47.1,71.1
+    >>Head to a cabin in Pyrewood Village in Silverpine Forest
+    .turnin 80454 >>Turnin One Last Drop
+    .accept 80455 >>Accept Biding Our Time
+step
+    #optional
+    #completewith next
+    .zone Alterac Mountains >>Travel to Alterac Mountains
+step
+    .goto Alterac Mountains,84.6,80.2
+    >>Return to the Ravenholdt Manor and talk to |cRXP_FRIENDLY_Fahrad|r
+    .turnin 80455 >>Turn in Biding Our Time
+    .target Fahrad
+step
+    .train 432264 >>Use the |T134419:0|t|cRXP_FRIENDLY_Rune of the Coterie|r you received to train |T236275:0|t[Honor Among Thieves]
+    .use 217736
+]])
