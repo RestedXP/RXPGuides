@@ -1514,7 +1514,7 @@ function addon:LoadGuide(guide, OnLoad)
             if startAt and startAt == "" then startAt = nil end
             if stopAt and stopAt == "" then stopAt = nil end
 
-            print(startAt,stopAt)
+            --print(startAt,stopAt)
         end
         local newGuide = addon:FetchGuide(group,name)
         if not newGuide then return end

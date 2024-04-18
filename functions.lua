@@ -138,7 +138,7 @@ function addon.error(text,arg1)
         text = ""
     end
     if not arg1 then
-        print(text)
+        print(text)--ok
     else
         print(fmt(L("Error parsing guide") .. " %s: %s\n%s" ,addon.currentGuideName,arg1,text))
     end
@@ -5646,6 +5646,47 @@ function addon.functions.disablecheckbox(self, text)
             addon.SetElementComplete(element.parent)
             addon.RXPFrame.CurrentStepFrame.UpdateText()
         end
+    end
+end
+
+addon.QuestDB = addon.QuestDB or {}
+function addon.functions.addtoquestdb(self,text,index,...)
+    if type(self) == "string" then
+        local group = addon.guide.group
+        local questDB
+        index = tonumber(index)
+        if not group then
+            return
+        elseif addon.QuestDB[group] then
+            questDB = addon.QuestDB[group]
+            if questDB[index] then
+                return
+            end
+        else
+            questDB = {}
+            addon.QuestDB[group] = questDB
+        end
+        if not index then return end
+        local tindex = {}
+        questDB[index] = tindex
+
+        for _,arg in ipairs({...}) do
+            local k,v = arg:match("(.+):(.*)")
+            k = tonumber(k) or k
+            if k then
+                v = v == "true" or tonumber(v) or v
+                if type(v) == "string" and v:find(";") then
+                    local t = {}
+                    for entry in v:gmatch("[^;]+") do
+                        tinsert(t,entry)
+                    end
+                    v = t
+                end
+                tindex[k] = v
+            end
+            --print(k,v)
+        end
+
     end
 end
 

@@ -334,7 +334,7 @@ function addon.GetBestQuests(refreshQuestDB,output)
         end
         outputString = outputString:gsub("^\n","")
         if bit.band(output,0x1) == 0x1 then
-            print(outputString)
+            print(outputString)--ok
         end
     end
 

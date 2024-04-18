@@ -307,7 +307,11 @@ C_Spell.RequestLoadSpellData(1809) -- lockpicking
 
 addon.base = {66,78,71,101,116,73,110,102,111}
 
+local showAllQs
+
 local function IsPreReqComplete(quest)
+    local group = addon.currentGuide.group
+    local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy
     local t = type(quest.previousQuest)
     if t == "table" then
         local state = not quest.preQuestAny
@@ -322,7 +326,7 @@ local function IsPreReqComplete(quest)
     elseif t == "number" then
         local preReqComplete
         if quest.uniqueWith then
-            local prevQuest = addon.QuestDB[quest.previousQuest]
+            local prevQuest = QuestDB[quest.previousQuest]
             if prevQuest and prevQuest.uniqueWith then
                 for _,uniqueId in pairs(prevQuest.uniqueWith) do
                     preReqComplete = preReqComplete or addon.IsQuestTurnedIn(uniqueId)
@@ -389,11 +393,14 @@ end
 local questQueryTimer = 0
 function addon.GetBestQuests(refreshQuestDB,output)
     output = output or 0
+    local group = addon.currentGuide.group
+    local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy
+    if not QuestDB then return end
     if not addon.questLogQuests or refreshQuestDB then
         addon.questLogQuests = {}
 
         local groups = {}
-        for id, v in pairs(addon.QuestDB) do
+        for id, v in pairs(QuestDB) do
             v.Id = id
             local group = v.group or ""
             if IsQuestAvailable(v,id) and not v.itemId and (group == "" or not groups[group]) and
@@ -407,7 +414,8 @@ function addon.GetBestQuests(refreshQuestDB,output)
         end
     end
     local qDB = addon.questLogQuests
-    if GetTime() - questQueryTimer > 1 then
+    if GetTime() - questQueryTimer > 1 or refreshQuestDB then
+
         questQueryTimer = GetTime()
         table.sort(qDB, function(k1, k2)
             local x1 = k1.xp or 0
@@ -441,8 +449,10 @@ function addon.GetBestQuests(refreshQuestDB,output)
             local xp = qDB[i].xp or 0
             local id = qDB[i].Id
             if i > 25 and xp < (qDB[25].xp or 1) or addon.IsQuestTurnedIn(id) then
-                addon.QuestDB[id].isActive = false
-                table.remove(qDB, i)
+                QuestDB[id].isActive = false
+                if not showAllQs then
+                    table.remove(qDB, i)
+                end
             end
         end
     end
@@ -461,7 +471,7 @@ function addon.GetBestQuests(refreshQuestDB,output)
         end
         outputString = outputString:gsub("^\n","")
         if bit.band(output,0x1) == 0x1 then
-            print(outputString)
+            print(outputString)--ok
         end
     end
 
@@ -503,8 +513,7 @@ local function OnClick(self)
     if not addon.settings.gui.quest then
         CreatePanel()
     end
-    _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.quest)
-    _G.InterfaceOptionsFrame_OpenToCategory(addon.settings.gui.quest)
+    addon.settings.OpenSettings('Quest Data')
 end
 
 function addon.functions.show25quests(self,text,flags)
@@ -531,26 +540,25 @@ function CreatePanel()
                 type = 'input',
                 name = 'List of 25 best quests',
                 width = "full",
-                multiline = 31,
+                multiline = 25,
                 confirmText = "Refresh",
                 -- usage = "Usage string",
                 get = SetText,
                 set = SetText,
                 --validate = function() return true,SetText() end,
             },
-            refresh = {
-                order = 13,
-                name = "Refresh",
-                type = 'execute',
-                func = function() _G.InterfaceOptionsFrame_OpenToCategory(RXP.settings.gui.quest) end,
-            },
+
             showAvailable = {
                 order = 14,
-                name = "Show 25 Quests",
+                name = "Show 25 Best Quests",
                 type = 'execute',
                 func = function()
                     mode = "quests"
-                    _G.InterfaceOptionsFrame_OpenToCategory(RXP.settings.gui.quest)
+                    if showAllQs then
+                        showAllQs = false
+                        questText,requestText = addon.GetBestQuests(true,2)
+                    end
+                    addon.settings.OpenSettings('Quest Data')
                 end,
             },
             showMissing = {
@@ -559,7 +567,20 @@ function CreatePanel()
                 type = 'execute',
                 func = function()
                     mode = "missing"
-                    _G.InterfaceOptionsFrame_OpenToCategory(RXP.settings.gui.quest)
+                    addon.settings.OpenSettings('Quest Data')
+                end,
+            },
+            showAllQs = {
+                order = 16,
+                name = "Show All Available",
+                type = 'execute',
+                func = function()
+                    mode = "quests"
+                    if not showAllQs then
+                        showAllQs = true
+                        questText,requestText = addon.GetBestQuests(true,2)
+                    end
+                    addon.settings.OpenSettings('Quest Data')
                 end,
             },
         }
@@ -575,12 +596,14 @@ end
 
 
 function addon.IsGuideQuestActive(id)
-    if not addon.QuestDB[id] then
+    local group = addon.currentGuide.group
+    local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy
+    if not (QuestDB and QuestDB[id]) then
         return false
-    elseif not addon.questLogQuests or addon.IsQuestTurnedIn(id) and addon.QuestDB[id].isActive then
+    elseif not addon.questLogQuests or addon.IsQuestTurnedIn(id) and addon.QuestDB[group][id].isActive then
         addon.GetBestQuests(true)
     end
-    return not addon.IsQuestTurnedIn(id) and addon.QuestDB[id].isActive
+    return not addon.IsQuestTurnedIn(id) and QuestDB[id].isActive
 end
 
 function addon.functions.requires(self,text,mode,...)
@@ -602,11 +625,13 @@ function addon.functions.requires(self,text,mode,...)
             if not (step.hidewindow and step.completed) then
                 step.completed = true
                 step.hidewindow = true
+                step.optional = true
                 addon.updateSteps = true
             end
         elseif step.hidewindow then
             step.hidewindow = false
             addon.updateSteps = true
+            step.optional = false
         end
     end
     element.requestFromServer = false
@@ -632,6 +657,8 @@ addon.questsDone = {}
 addon.questsAvailable = {}
 
 function addon.CalculateTotalXP(flags)
+    local grp = addon.currentGuide.group
+    local QuestDB = addon.QuestDB[grp] or addon.QuestDBLegacy
     local totalXp = 0
     flags = flags or 0
     local output = bit.band(flags,0x2) == 0x2
@@ -669,7 +696,7 @@ function addon.CalculateTotalXP(flags)
             end
         end
     end
-    for id, quest in pairs(addon.QuestDB) do
+    for id, quest in pairs(QuestDB) do
 
         if not ignorePreReqs and quest.questLog and addon.IsQuestComplete(id) then
             if ProcessQuest(quest,id) then
@@ -719,12 +746,13 @@ function addon.ShowMissingQuests(output)
         end
     end
     if output then
-        print(t)
+        print(t)--ok
     end
     return t
 end
 
-addon.QuestDB = {
+
+addon.QuestDBLegacy = {
 	[11505] = {
 		["questLog"] = true,
 		["xp"] = 10050,
