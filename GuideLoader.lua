@@ -601,8 +601,8 @@ function addon.LoadEmbeddedGuides()
                 --print(guide,errorMsg,guide.enabledFor)
                 addon.guideCache[guide.key] = function(self)
                     local tbl = addon.ParseGuide(guideData.groupOrContent,guideData.text)
-                    if RXPGuides and RXPGuides.guideMetaData then
-                        RXPGuides.guideMetaData[guide.key] = metadata
+                    if RXPData and RXPData.guideMetaData then
+                        RXPData.guideMetaData[guide.key] = metadata
                     end
                     if addon.player.faction == "Neutral" and tbl then
                         tbl.parse = self
@@ -678,8 +678,8 @@ function addon.LoadCachedGuides()
                 addon.guideCache[key] = function(self)
                     local g = LibDeflate:DecompressDeflate(data.groupOrContent)
                     local tbl = addon.ParseGuide(g)
-                    if RXPGuides and RXPGuides.guideMetaData then
-                        RXPGuides.guideMetaData[guide.key] = metadata
+                    if RXPData and RXPData.guideMetaData then
+                        RXPData.guideMetaData[guide.key] = metadata
                     end
                     if addon.player.faction == "Neutral" and tbl then
                         tbl.parse = self

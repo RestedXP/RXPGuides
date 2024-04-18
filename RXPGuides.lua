@@ -85,7 +85,7 @@ end
 local GetAddOnMetadata = C_AddOns and C_AddOns.GetAddOnMetadata or _G.GetAddOnMetadata
 addon.release = GetAddOnMetadata(addonName, "Version")
 addon.title = GetAddOnMetadata(addonName, "Title")
-local cacheVersion = 20
+local cacheVersion = 21
 local L = addon.locale.Get
 
 if string.match(addon.release, 'project') then
@@ -1218,11 +1218,11 @@ function addon:PLAYER_LEVEL_UP(_, level)
     if addon.settings.profile.season == 3 and level == 25 then
         addon.RXPFrame.GenerateMenuTable()
         addon.ReloadGuide()
-    else
+    --[[else
         local stepn = RXPCData.currentStep
         -- addon:LoadGuide(addon.currentGuide)
         addon.SetStep(1)
-        addon.SetStep(stepn)
+        addon.SetStep(stepn)]]
     end
 end
 
@@ -1425,14 +1425,15 @@ function addon:UpdateLoop(diff)
             elseif skip % 2 == 1 and next(addon.guideCache) then
                 event = event .. "/cache"
                 local length = 0
+                local loadGuide = true
                 for _,guide in pairs(addon.guides) do
-                    if not guide.steps then
+                    if (loadGuide or guide.disablecaching) and not guide.steps then
                         addon:FetchGuide(guide)
                         guideLoaded = true
                         length = length + (tonumber(guide.length) or 0)
                         --print('f',not guide.steps and guide.name)
                         if length > 45000 or GetFramerate() < 60 then
-                            break
+                            loadGuide = false
                         end
                     end
                 end
