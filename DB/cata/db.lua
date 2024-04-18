@@ -4673,9 +4673,13 @@ local zoneData = {
     end]]
 
 
+local mapOverride = {
+    [1454] = true,
+}
+
 for i = 1, 2200 do
     local map = C_Map.GetMapInfo(i)
-    if map and not addon.mapId[map.name] then
+    if map and (not addon.mapId[map.name] or mapOverride[i]) then
         addon.mapId[map.name] = i
     end
 end
