@@ -42,8 +42,13 @@ events.istrained = events.train
 events.spellmissing = events.train
 events.zone = "ZONE_CHANGED_NEW_AREA"
 events.zoneskip = "ZONE_CHANGED_NEW_AREA"
-events.subzone = "ZONE_CHANGED"
-events.subzoneskip = "ZONE_CHANGED"
+if C_EventUtils and C_EventUtils.IsEventValid("ZONE_CHANGED_INDOORS") then
+    events.subzone = {"ZONE_CHANGED","ZONE_CHANGED_INDOORS"}
+    events.subzoneskip = events.subzone
+else
+    events.subzone = "ZONE_CHANGED"
+    events.subzoneskip = "ZONE_CHANGED"
+end
 events.bankdeposit = {"BANKFRAME_OPENED", "BAG_UPDATE_DELAYED"}
 events.skipgossip = {"GOSSIP_SHOW", "GOSSIP_CLOSED", "GOSSIP_CONFIRM_CANCEL"}
 events.gossip = {"GOSSIP_SHOW", "PLAYER_INTERACTION_MANAGER_FRAME_HIDE"}
@@ -3455,8 +3460,8 @@ function addon.GetSubZoneId(zone,x,y)
     if ((zone == currentMap or zone == subzone) and isMapValid)
         == (element.flags % 2 == 0) then
         addon.SetElementComplete(self)
-        step.completed = true
-        addon.updateSteps = true
+        --step.completed = true
+        --addon.updateSteps = true
     end
 end
 
