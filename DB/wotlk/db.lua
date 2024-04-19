@@ -456,7 +456,10 @@ function addon.GetBestQuests(refreshQuestDB,output)
             end
         end
     end
-
+    local xpmod = 1
+    if addon.IsPlayerSpell(78632) then
+        xpmod = 1.1
+    end
     local outputString = ""
     local requestFromServer = true
 
@@ -466,6 +469,7 @@ function addon.GetBestQuests(refreshQuestDB,output)
             local qname = addon.GetQuestName(id)
             requestFromServer = qname and requestFromServer
             local xp = v.xp or 0
+            xp = xp * xpmod
             outputString = string.format("%s\n%d: %dxp %s (%d)",outputString, k, xp,
                                              qname or "", id)
         end
@@ -670,6 +674,10 @@ function addon.CalculateTotalXP(flags)
     else
         addon.questsDone = {}
     end
+    local xpmod = 1
+    if addon.IsPlayerSpell(78632) then
+        xpmod = 1.1
+    end
     local groups = {}
     local function ProcessQuest(quest,qid,skipgrpcheck)
         qid = qid or quest.Id
@@ -678,6 +686,7 @@ function addon.CalculateTotalXP(flags)
         if (group == "" or skipgrpcheck or not groups[group]) and isAvailable and (ignorePreReqs or (IsPreReqComplete(quest))) then
             groups[group] = true
             local xp = quest.xp or 0
+            xp = xp * xpmod
             totalXp = totalXp + xp
             if output then
                     print(string.format("%dxp %s (%d)", xp,
@@ -736,8 +745,8 @@ function addon.CalculateTotalXP(flags)
 end
 
 function addon.ShowMissingQuests(output)
-    RXP.CalculateTotalXP(1)
-    RXP.CalculateTotalXP(0)
+    addon.CalculateTotalXP(1)
+    addon.CalculateTotalXP(0)
     local t = ""
     for qid,v in pairs(addon.questsAvailable) do
         if not addon.questsDone[qid] and qid > 0 then
