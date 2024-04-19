@@ -2827,28 +2827,28 @@ step
     .train 432241,1
 step
     #loop
-    .goto Hinterlands,48.8,53.0,40,0
-    .goto Hinterlands,47.6,40.8,40,0
-    .goto Hinterlands,58.2,41.8,40,0
+    .goto The Hinterlands,48.8,53.0,40,0
+    .goto The Hinterlands,47.6,40.8,40,0
+    .goto The Hinterlands,58.2,41.8,40,0
     >>Kill |cRXP_ENEMY_Green Sludge|r and |cRXP_ENEMY_Jade Ooze.|r Loot them for |cRXP_LOOT_|T134332:0|tTorn Shaman's Notes|r
     .collect 220379,1 --1/1 Torn Shaman's Notes
     .mob Green Sludge
     .mob Jade Ooze
     .train 432241,1
 step
-    .goto Hinterlands,51,46
+    .goto The Hinterlands,51,46
     >>Click on |cRXP_PICK_|T134332:0|tTorn Shaman's Notes|r to start the quest.
     .accept 81960,1 >>Accept Clarifying Air
     .use 220379
     .train 432241,1
 step
     .isOnQuest 82072
-    .goto Hinterlands,51,46
+    .goto The Hinterlands,51,46
     .cast 446581 >>Use |T134743:0|t[Murky Earth Sapta] near the Corrupted Air Totem.
     .use 221349
     .train 432241,1
 step
-    .goto Hinterlands,51.2,47.0
+    .goto The Hinterlands,51.2,47.0
     >>Kill |cRXP_ENEMY_Corrupt Moderate Manifestation of Air|r then >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moderate Manifestation of Earth.|r
     .turnin 81960 >>Turn in Clarifying Air
     .accept 81968 >>Accept Answering Air's Call
