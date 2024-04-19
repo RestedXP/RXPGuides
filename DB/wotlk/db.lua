@@ -600,7 +600,7 @@ function addon.IsGuideQuestActive(id)
     local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy
     if not (QuestDB and QuestDB[id]) then
         return false
-    elseif not addon.questLogQuests or addon.IsQuestTurnedIn(id) and addon.QuestDB[group][id].isActive then
+    elseif not addon.questLogQuests or addon.IsQuestTurnedIn(id) and QuestDB[id].isActive then
         addon.GetBestQuests(true)
     end
     return not addon.IsQuestTurnedIn(id) and QuestDB[id].isActive
