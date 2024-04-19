@@ -1165,6 +1165,9 @@ function addon.itemUpgrades.AH:Setup()
     if not addon.settings.profile.enableBetaFeatures then return end
     if addon.settings.profile.soloSelfFound then return end
 
+    addon.settings.enabledBetaFeatures[fmt("%s %s", _G.ENABLE, _G.MINIMAP_TRACKING_AUCTIONEER)]
+        = fmt("%s %s", _G.AUCTION_ITEM, _G.SEARCH)
+
     if ahSession.isInitialized then return end
 
     self:RegisterEvent("AUCTION_HOUSE_SHOW")
@@ -1236,14 +1239,14 @@ end
 
 function addon.itemUpgrades.AH:FindItemOnPage(nodeData)
     if not nodeData then
-        print("FindItemOnPage error: selectedRow nil")
+        -- print("FindItemOnPage error: selectedRow nil")
         return
     end
 
     local resultCount = GetNumAuctionItems("list")
 
     if resultCount == 0 then
-        print("FindItemOnPage error: no results")
+        -- print("FindItemOnPage error: no results")
         return
     end
 
@@ -1267,7 +1270,8 @@ function addon.itemUpgrades.AH:FindItemOnPage(nodeData)
 
     end
 
-    -- TODO handle pagination
+    -- Shouldn't need to handle Pagination, sorted by cheapest which is the goal
+    --  May hit issues if 10+ bid-only
     -- Rely on BrowseNextPageButton:Click() :IsEnabled for easy pagination handling
 end
 
@@ -1353,7 +1357,7 @@ function addon.itemUpgrades.AH:Scan()
         C_Timer.After(0.35, function() self:Scan() end)
         return
     end
-    print("addon.itemUpgrades.AH:Scan()", ahSession.scanType, ahSession.scanPage)
+    -- print("addon.itemUpgrades.AH:Scan()", ahSession.scanType, ahSession.scanPage)
 
     local maxLevel = UnitLevel("player")
 
@@ -1410,9 +1414,7 @@ local function calculate(itemLink, scanData)
 end
 
 function addon.itemUpgrades.AH:Analyze()
-    print("Analyze")
-
-    -- TODO handle retry loop
+    -- TODO handle retry loop better
     ahSession.retryQuery = {}
 
     ahSession.bestAnalysis = {}
@@ -1558,8 +1560,7 @@ function addon.itemUpgrades.AH.RowOnLeave(row)
 end
 
 function addon.itemUpgrades.AH.RowOnClick(this)
-    print("row:OnClick", this.nodeData.ItemID, this.nodeData.Name,
-          this.nodeData.BuyoutMoney)
+    -- print("row:OnClick", this.nodeData.ItemID, this.nodeData.Name, this.nodeData.BuyoutMoney)
 
     if ahSession.selectedRow == this then
         ahSession.selectedRow = nil

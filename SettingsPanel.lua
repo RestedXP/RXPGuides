@@ -29,6 +29,7 @@ local loadedProfileKey
 local L = addon.locale.Get
 
 addon.settings = addon:NewModule("Settings", "AceConsole-3.0")
+addon.settings.enabledBetaFeatures = {}
 
 if not addon.settings.gui then
     addon.settings.gui = {selectedDeleteGuide = "", importStatusHistory = {}}
@@ -737,6 +738,20 @@ function addon.settings:CreateAceOptionsPanel()
             addon.settings.profile.frameHeight = 10
         end
         addon.updateBottomFrame = true
+    end
+
+    local function listBetaFeatures(first)
+        if next(addon.settings.enabledBetaFeatures) == nil then
+            return first
+        end
+
+        local features = fmt('%s\n\n%s:', first , _G.FEATURES_LABEL)
+
+        for feature, desc in pairs(addon.settings.enabledBetaFeatures) do
+            features = fmt('%s\n%s\n - %s', features, feature, desc)
+        end
+
+        return features
     end
 
     local optionsWidth = 1.08
@@ -2003,8 +2018,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = "full",
                         order = 4.0,
                         hidden = function()
-                            return -- not addon.settings.profile.enableBetaFeatures or
-                            not addon.dangerousMobs
+                            return not addon.dangerousMobs
                         end
                     },
                     showDangerousMobsMap = {
@@ -2023,8 +2037,7 @@ function addon.settings:CreateAceOptionsPanel()
                             return not self.profile.enableTips
                         end,
                         hidden = function()
-                            return -- not addon.settings.profile.enableBetaFeatures or
-                            not addon.dangerousMobs
+                            return not addon.dangerousMobs
                         end
                     },
                     showDangerousUnitscan = {
@@ -2043,8 +2056,7 @@ function addon.settings:CreateAceOptionsPanel()
                             return not self.profile.enableTips
                         end,
                         hidden = function()
-                            return -- not addon.settings.profile.enableBetaFeatures or
-                            not addon.dangerousMobs
+                            return not addon.dangerousMobs
                         end
                     },
                     itemUpgradesHeader = {
@@ -2795,8 +2807,9 @@ function addon.settings:CreateAceOptionsPanel()
                 args = {
                     enableBetaFeatures = {
                         name = L("Enable Beta Features"),
-                        desc = L(
-                            "Enables new features, forces reload to take effect"),
+                        desc = function ()
+                            return listBetaFeatures(L("Enables new features, forces reload to take effect"))
+                        end,
                         type = "toggle",
                         width = optionsWidth,
                         order = 1,
