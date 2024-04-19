@@ -1798,6 +1798,6 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
     end
 end
 
--- fix randomly generated tooltip
 -- Update icons to Brandung mockup
 -- Add owner to scanData for additional buyout validation
+-- Support rings
