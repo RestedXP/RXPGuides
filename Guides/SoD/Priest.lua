@@ -1219,18 +1219,89 @@ step
     .use 213143
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Priest SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Bracers
--- #name Despair
--- for phase 3
+RXPGuides.RegisterGuide([[
+#classic
+<< Priest SoD
+#group RestedXP Rune & Books Guide
+#subgroup Helm
+#name Eye of the Void
 
--- Despair
-
-
--- ]])
+--x shiek: needs better coordinates and travelsteps
+step
+    #completewith next
+    .zone Hinterlands >>Travel to Hinterlands
+    .train 402864,1
+step
+    .goto Hinterlands,58.4,72.7
+    >>Click on |cRXP_PICK_|T236407:0|tGlowing Eye|r
+    .collect 223334,1 --1/1 Glowing Eye
+    .train 402864,1
+step
+    #completewith next
+    .zone Blasted Lands >>Travel to Blasted Lands
+    .train 402864,1
+step
+    .goto Blasted Lands,43.8 45.8
+    >>Click on |cRXP_PICK_|T236407:0|tPulsating Eye|r
+    .collect 223331,1 --1/1 Pulsating Eye
+    .train 402864,1
+step
+    #completewith next
+    .zone Searing Gorge >>Travel to Searing Gorge
+    .train 402864,1
+step
+    .goto Searing Gorge,43.8 45.8
+    >>Click on |cRXP_PICK_|T236407:0|tVibrating Eye|r
+    .collect 223332,1 --1/1 Vibrating Eye
+    .train 402864,1
+step
+    #completewith next
+    .zone Stranglethorn Vale >>Travel to Stranglethorn Vale
+    .train 402864,1
+step
+    .goto Stranglethorn Vale,33 88
+    >>Click on |cRXP_PICK_|T236407:0|tBaleful Eye|r
+    .collect 223333,1 --1/1 Baleful Eye
+    .train 402864,1
+step
+    #completewith next
+    .zone Feralas >>Travel to Feralas
+    .train 402864,1
+step
+    .goto Feralas,57.2 68.7
+    >>Click on |cRXP_PICK_|T236407:0|tBurning Eye|r
+    .collect 223337,1 --1/1 Burning Eye
+    .train 402864,1
+step
+    #completewith next
+    .zone Tanaris >>Travel to Tanaris
+    .train 402864,1
+step
+    .goto Tanaris,56.4 73.7
+    >>Click on |cRXP_PICK_|T236407:0|tOozing Eye|r
+    .collect 223335,1 --1/1 Oozing Eye
+    .train 402864,1
+step
+    #completewith next
+    .zone Felwood >>Travel to Felwood
+    .train 410013,1
+step
+    .goto Felwood,36.5 55.7
+    >>Click on |cRXP_PICK_|T236407:0|tPiercing Eye|r
+    .collect 223336,1 --1/1 Piercing Eye
+    .train 402864,1
+step
+    #completewith next
+    .zone Azshara >>Travel to Azshara
+    .train 402864,1
+step
+    .goto Azshara,89.8,33.6
+    >>Target |cRXP_FRIENDLY_Shrine of the Watcher|r
+    .emote KNEEL,223590
+    .accept 82316,1 >>Accept Seven Eyes I Seek...
+    .target Shrine of the Watcher
+    .train 402864,1
+]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic

@@ -2740,3 +2740,242 @@ step
     .use 220612
     .train 432234 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Tidal Waves|r] |cRXP_WARN_to learn|r |T237590:0|t[Tidal Waves]
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Shaman SoD
+#group RestedXP Rune & Books Guide
+#subgroup Bracers
+#title Tidal Waves
+#name Tidal Waves - 45 (Azeroth)
+
+--x shiek: needs better coordinates
+step
+    #completewith next
+    .zone Tanaris >>Travel to Tanaris
+    .train 432241,1
+step
+    #loop
+    .goto Tanaris,51.6,44.2,40,0
+    .goto Tanaris,51.2,52.0,40,0
+    .goto Tanaris,41.0,48.6,40,0
+    .goto Tanaris,41.8,44.0,40,0
+    >>Kill |cRXP_ENEMY_Blisterpaw Hyena|r, |cRXP_ENEMY_Land Rager|r and |cRXP_ENEMY_Glasshide Gazer.|r Loot them for |cRXP_LOOT_|T134327:0|tSmudged Shaman's Notes|r
+    .collect 221352,1 --1/1 Smudged Shaman's Notes
+    .mob Blisterpaw Hyena
+    .mob Land Rager
+    .mob Glasshide Gazer
+    .train 432241,1
+step
+    .goto Tanaris,62,64
+    >>Click on |cRXP_PICK_|T134327:0|tSmudged Shaman's Notes|r to start the quest.
+    .accept 82072,1 >>Accept Purging Earth
+    .use 221352
+    .train 432241,1
+step
+    .isOnQuest 82072
+    .goto Tanaris,62,64
+    .cast 446581 >>Use |T134743:0|t[Murky Earth Sapta] near the Corrupted Earth Totem.
+    .use 221349
+    .train 432241,1
+step
+    .goto Tanaris,62.0,62.6
+    >>Kill |cRXP_ENEMY_Corrupt Moderate Manifestation of Earth|r then >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moderate Manifestation of Earth.|r
+    .turnin 82072 >>Turn in Purging Earth
+    .accept 82075 >>Accept Answering Earth's Call
+    .mob Corrupt Moderate Manifestation of Earth
+    .target Moderate Manifestation of Earth
+    .train 432241,1
+step
+    #completewith next
+    .zone Azshara >>Travel to Azshara
+    .train 432241,1
+step
+    #loop
+    .goto Azshara,19.4 64.0,20,0
+    .goto Azshara,21.2 60.8,20,0
+    .goto Azshara,21.0 60.0,20,0
+    >>Kill |cRXP_ENEMY_Haldarr Satyr|r, |cRXP_ENEMY_Haldarr Trickster|r and |cRXP_ENEMY_Haldarr Felsworn.|r Loot them for |cRXP_LOOT_|T134331:0|tWaterlogged Shaman's Notes|r
+    .collect 221351,1 --1/1 Waterlogged Shaman's Notes
+    .mob Haldarr Satyr
+    .mob Haldarr Trickster
+    .mob Haldarr Felsworn
+    .train 432241,1
+step
+    .goto Azshara,14,49
+    >>Click on |cRXP_PICK_|T134331:0|tWaterlogged Shaman's Notes|r to start the quest.
+    .accept 82073,1 >>Accept Cleansing Water
+    .use 221352
+    .train 432241,1
+step
+    .isOnQuest 82073
+    .goto Azshara,14,49
+    .cast 446581 >>Use |T134743:0|t[Murky Earth Sapta] near the Corrupted Water Totem.
+    .use 221348
+    .train 432241,1
+step
+    .goto Azshara,15.0,49.8
+    >>Kill |cRXP_ENEMY_Corrupt Moderate Manifestation of Water|r then >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moderate Manifestation of Water.|r
+    .turnin 82073 >>Turn in Cleansing Water
+    .accept 82076 >>Accept Answering Water's Call
+    .mob Corrupt Moderate Manifestation of Water
+    .target Moderate Manifestation of Water
+    .train 432241,1
+step
+    #completewith next
+    .zone Hinterlands >>Travel to Hinterlands
+    .train 432241,1
+step
+    #loop
+    .goto Hinterlands,48.8,53.0,40,0
+    .goto Hinterlands,47.6,40.8,40,0
+    .goto Hinterlands,58.2,41.8,40,0
+    >>Kill |cRXP_ENEMY_Green Sludge|r and |cRXP_ENEMY_Jade Ooze.|r Loot them for |cRXP_LOOT_|T134332:0|tTorn Shaman's Notes|r
+    .collect 220379,1 --1/1 Torn Shaman's Notes
+    .mob Green Sludge
+    .mob Jade Ooze
+    .train 432241,1
+step
+    .goto Hinterlands,51,46
+    >>Click on |cRXP_PICK_|T134332:0|tTorn Shaman's Notes|r to start the quest.
+    .accept 81960,1 >>Accept Clarifying Air
+    .use 220379
+    .train 432241,1
+step
+    .isOnQuest 82072
+    .goto Hinterlands,51,46
+    .cast 446581 >>Use |T134743:0|t[Murky Earth Sapta] near the Corrupted Air Totem.
+    .use 221349
+    .train 432241,1
+step
+    .goto Hinterlands,51.2,47.0
+    >>Kill |cRXP_ENEMY_Corrupt Moderate Manifestation of Air|r then >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moderate Manifestation of Earth.|r
+    .turnin 81960 >>Turn in Clarifying Air
+    .accept 81968 >>Accept Answering Air's Call
+    .mob Corrupt Moderate Manifestation of Air
+    .target Moderate Manifestation of Air
+    .train 432241,1
+step
+    #completewith next
+    .zone Searing Gorge >>Travel to Searing Gorge
+    .train 432241,1
+step
+    #loop
+    .goto Searing Gorge,52.0,35.4,40,0
+    .goto Searing Gorge,42.4,38.6,40,0
+    .goto Searing Gorge,32.8,43.0,40,0
+    .goto Searing Gorge,28.8,44.4,40,0
+    .goto Searing Gorge,30.6,64.6,40,0
+    .goto Searing Gorge,31.6,73.8,40,0
+    >>Kill |cRXP_ENEMY_Magma Elemental|r and |cRXP_ENEMY_Inferno Elemental.|r Loot them for |cRXP_LOOT_|T134327:0|tCharred Shaman's Notes|r
+    .collect 221350,1 --1/1 Charred Shaman's Notes
+    .mob Inferno Elemental
+    .mob Magma Elemental
+    .train 432241,1
+step
+    .goto Searing Gorge,24,72
+    >>Click on |cRXP_PICK_|T134329:0|tCharred Shaman's Notes|r to start the quest.
+    .accept 82071,1 >>Accept Purifying Fire
+    .use 221352
+    .train 432241,1
+step
+    .isOnQuest 82072
+    .goto Searing Gorge,24,72
+    .cast 446581 >>Use |T134743:0|t[Murky Earth Sapta] near the Corrupted Fire Totem.
+    .use 221349
+    .train 432241,1
+step
+    .goto Seaying Gorge,24.0,72.4
+    >>Kill |cRXP_ENEMY_Corrupt Moderate Manifestation of Fire|r then >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moderate Manifestation of Fire.|r
+    .turnin 82071 >>Turn in Purifying Fire
+    .accept 82074 >>Accept Answering Fire's Call
+    .mob Corrupt Moderate Manifestation of Fire
+    .target Moderate Manifestation of Fire
+    .train 432241,1
+step
+    #completewith next
+    .zone Feralas >>Travel to Feralas
+    .train 432241,1
+step
+    #loop
+    .goto Feralas,50.2,51.4,20,0
+    .goto Feralas,44.8,46.2,20,0
+    .goto Feralas,41.0,37.8,20,0
+    .goto Feralas,37.4,33.0,20,0
+    >>Kill |cRXP_ENEMY_Sea Spray|r and |cRXP_ENEMY_Sea Elemental.|r Loot them for |cRXP_LOOT_|T132849:0|tElemental Essence|r
+    .collect 220510,3
+    .train 432241,1
+step
+    .cast 446803 >>Use |T134118:0|t[Fragment of Earth]
+    .use 221355
+    .train 432241,1
+step
+    .goto Feralas,36.0,32.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moderate Manifestation of Earth.|r
+    .turnin 82075 >> Answering Earth's Call
+    .target Moderate Manifestation of Earth
+    .train 432241,1
+step
+    #loop
+    .goto Feralas,37.4,33.0,20,0
+    .goto Feralas,41.0,37.8,20,0
+    .goto Feralas,44.8,46.2,20,0
+    .goto Feralas,50.2,51.4,20,0
+    >>Kill |cRXP_ENEMY_Sea Spray|r and |cRXP_ENEMY_Sea Elemental.|r Loot them for |cRXP_LOOT_|T132849:0|tElemental Essence|r
+    .collect 220510,3
+    .train 432241,1
+step
+    .cast 446802 >>Use |T134130:0|t[Fragment of Fire]
+    .use 221353
+    .train 432241,1
+step
+    .goto Feralas,36.0,32.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moderate Manifestation of Earth.|r
+    .turnin 82075 >> Answering Earth's Call
+    .target Moderate Manifestation of Earth
+    .train 432241,1
+step
+    #loop
+    .goto Feralas,50.2,51.4,20,0
+    .goto Feralas,44.8,46.2,20,0
+    .goto Feralas,41.0,37.8,20,0
+    .goto Feralas,37.4,33.0,20,0
+    >>Kill |cRXP_ENEMY_Sea Spray|r and |cRXP_ENEMY_Sea Elemental.|r Loot them for |cRXP_LOOT_|T132849:0|tElemental Essence|r
+    .collect 220510,3
+    .train 432241,1
+step
+    .cast 445748 >>Use |T134133:0|t[Fragment of Air]
+    .use 220375
+    .train 432241,1
+step
+    .goto Feralas,36.0,32.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moderate Manifestation of Earth.|r
+    .turnin 82075 >> Answering Earth's Call
+    .target Moderate Manifestation of Earth
+    .train 432241,1
+step
+    #loop
+    .goto Feralas,37.4,33.0,20,0
+    .goto Feralas,41.0,37.8,20,0
+    .goto Feralas,44.8,46.2,20,0
+    .goto Feralas,50.2,51.4,20,0
+    >>Kill |cRXP_ENEMY_Sea Spray|r and |cRXP_ENEMY_Sea Elemental.|r Loot them for |cRXP_LOOT_|T132849:0|tElemental Essence|r
+    .collect 220510,3
+    .train 432241,1
+step
+    .cast 446804 >>Use |T134089:0|t[Fragment of Water]
+    .use 221354
+    .train 432241,1
+step
+    .goto Feralas,36.0,32.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moderate Manifestation of Earth.|r
+    .turnin 82075 >> Answering Earth's Call
+    .target Moderate Manifestation of Earth
+    .train 432241,1
+step
+    >>Kill |cRXP_ENEMY_Twilight Dark Shaman.|r Loot him for |cRXP_LOOT_|cRXP_FRIENDLY_|T134419:0|tRune of Overcharged|r|r
+    .collect 220616,1 --1/1 Rune of Overcharged
+    .train 432241,1
+step
+    .train 432241 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Overcharged|r] |cRXP_WARN_to train|r |T132213:0|t[Overcharged]
+]])
