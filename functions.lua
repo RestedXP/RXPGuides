@@ -1588,6 +1588,9 @@ local function DetectFlying(self,mode)
             element.skip = not mode
             addon.UpdateMap()
         end
+        if element.skip and not element.textOnly then
+            element.completed = true
+        end
     end
 end
 
