@@ -135,11 +135,16 @@ end
 
 -- Debug function, helps finding out quest log problems on a given guide
 
-function addon.GetCurrentQuestLog()
+function addon.GetExpectedQuestLog()
     local guide = addon.currentGuide
-    local group = guide.group
-    local name = addon.guideList[group].defaultGuide_
-    local startGuide = addon:FetchGuide(group,name)
+    local startGuide
+    if guide.standalone then
+        startGuide = guide
+    else
+        local group = guide.group
+        local name = addon.guideList[group].defaultGuide_
+        startGuide = addon:FetchGuide(group,name)
+    end
     startGuide = addon.ProcessGuideTable(startGuide)
     if not (startGuide and startGuide.steps) then return {} end
     --print(group,name)
