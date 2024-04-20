@@ -3024,8 +3024,12 @@ function addon.functions.next(skip, guide)
                     nextGuide.softcore and addon.settings.profile.hardcore) then
                 return addon.functions.next(nil, nextGuide)
             else
-                addon:LoadGuide(nextGuide)
-                return true
+                if skip ~= false then
+                    addon:LoadGuide(nextGuide)
+                    return true
+                else
+                    return group,next
+                end
             end
         elseif guideSkip then
             --Used in case it doesn't find a valid guide after the name substition

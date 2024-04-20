@@ -134,16 +134,28 @@ if _G.QuestLog_SetSelection then
 end
 
 -- Debug function, helps finding out quest log problems on a given guide
-function addon.GetQuestLog(QL, LT)
 
+function addon.GetCurrentQuestLog()
     local guide = addon.currentGuide
-    local name = RXPCData.currentGuideName
+    local group = guide.group
+    local name = addon.guideList[group].defaultGuide_
+    local startGuide = addon:FetchGuide(group,name)
+    startGuide = addon.ProcessGuideTable(startGuide)
+    if not (startGuide and startGuide.steps) then return {} end
+    --print(group,name)
+    return addon.GetQuestLog(nil,nil,startGuide,true,guide.key,RXPCData.currentStep)
+end
+
+function addon.GetQuestLog(QL, LT, guide, silent, stopGuide, stopStep)
+    if not (QL and LT) then
+        QL = {}
+        LT = {}
+        guide = guide or addon.currentGuide
+    end
+    local name = guide.name
     local group = addon.functions
-    QL = QL or {}
-    LT = LT or {}
     local qError
     local eStep
-    addon.next = group.next
     local stop
     local lastQuestAccepted
     if not (guide and addon.stepLogic.SeasonCheck(guide)) then return end
@@ -154,9 +166,11 @@ function addon.GetQuestLog(QL, LT)
         end
         for en, element in pairs(step.elements) do
             if element.tag == "accept" then
-                QL[element.questId] = element.text or tostring(element.questId)
+                local qname = element.text or tostring(element.questId)
                 LT[element.questId] = false
-                lastQuestAccepted = QL[element.questId]:gsub("^Accept ", "")
+                qname = qname:gsub("^Accept ", "")
+                lastQuestAccepted = qname
+                QL[element.questId] = qname
             elseif element.tag == "turnin" or element.tag == "abandon" then
                 if LT[element.questId] == nil and not element.skipIfMissing then
                     local t = element.questId .. "/" ..
@@ -169,42 +183,53 @@ function addon.GetQuestLog(QL, LT)
         end
         local nQuests = 0
         for n in pairs(QL) do nQuests = nQuests + 1 end
-        if nQuests > maxQuests or step.stop then
+        if (not silent and (nQuests > maxQuests or step.stop)) or (stopGuide == guide.key and stopStep == step.index) then
             qError = true
             eStep = step
             stop = step.stop
             break
         end
     end
-    local n = 0
-    print("\n\nGuide: " .. name)
-    for i, v in pairs(QL) do
-        print(format("%s (%d)", v:gsub("^Accept ", ""), i))
-        n = n + 1
-    end
-    print("QuestLog length: " .. n)
 
+    if not silent then
+        local n = 0
+        print("\n\nGuide: " .. name)
+        for i, v in pairs(QL) do
+            print(format("%s (%d)", v:gsub("^Accept ", ""), i))
+            n = n + 1
+        end
+        print("QuestLog length: " .. n)
+    end
     if qError then
-        if stop then
-            print(format("Stopped at step %d", eStep.index or 0))
-        else
-            print(format("Error at step %d: Quest log length greater than " ..
-                            maxQuests, eStep.index or 0))
-            print('Last Quest Accepted: ',lastQuestAccepted)
+        if not silent then
+            if stop then
+                print(format("Stopped at step %d", eStep.index or 0))
+            else
+                print(format("Error at step %d: Quest log length greater than " ..
+                                maxQuests, eStep.index or 0))
+                print('Last Quest Accepted: ',lastQuestAccepted)
+            end
         end
     else
-        if group.next() then
-            return addon.GetQuestLog(QL, LT)
-        elseif eStep then
-            print(format("Error at step %d", eStep.index or 0))
+        local nextGroup,nextName = group.next(false,guide)
+        local nextGuide = addon:FetchGuide(nextGroup,nextName)
+        if nextGuide and nextGuide.steps then
+            nextGuide = addon.ProcessGuideTable(nextGuide)
+            if guide.key ~= nextGuide.key then
+                return addon.GetQuestLog(QL, LT, nextGuide, silent, stopGuide, stopStep)
+            end
+        elseif eStep and not silent then
+            print(format("Error at step %d (%s)", eStep.index or 0,guide.name))
         end
     end
 
-    local prefix = "\n\nQuests missing an accept step:\n"
-    for _, v in pairs(LT) do
-        if type(v) == "string" and not v:find("A Donation of") then
-            print(prefix .. v)
-            prefix = ""
+    if not silent then
+        local prefix = "\n\nQuests missing an accept step:\n"
+        for _, v in pairs(LT) do
+            if type(v) == "string" and not v:find("A Donation of") then
+                print(prefix .. v)
+                prefix = ""
+            end
         end
     end
     return QL
