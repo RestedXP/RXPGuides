@@ -2018,6 +2018,41 @@ RXPGuides.RegisterGuide([[
 #classic
 << Paladin SoD
 #group RestedXP Rune & Books Guide
+#subgroup Helm
+#name Wrath - 43 (The Hinterlands)
+
+-- Wrath
+
+step
+    #optional
+    .train 5502 >>|cRXP_WARN_You must have|r |T135974:0|t[Sense Undead] |cRXP_WARN_trained in order to aquire the|r |T236260:0|t[Wrath] |cRXP_WARN_rune|r
+    .train 429249,1
+step
+    #completewith RuneLearned
+    +|cRXP_WARN_You can only get the|r |T236260:0|t[Wrath] |cRXP_WARN_rune between 9pm-6am.|r
+step
+    #completewith next
+    .zone The Hinterlands >>Travel to The Hinterlands
+    .train 429249,1
+step
+    .train 429249,1
+    >>|cRXP_WARN_Use|r |T135974:0|t[Sense Undead] |cRXP_WARN_to be able to see the|r |cRXP_ENEMY_Vengeful Spirit|r
+    >>Kill the |cRXP_ENEMY_Vengeful Spirit|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Wrath|r]
+    *The |cRXP_ENEMY_Vengeful Spirit|r walks around the lake
+    .goto 33.0,44.2
+    .collect 220165,1
+    .mob Vengeful Spirit
+step
+    #label RuneLearned
+    .itemcount 220165,1
+    .use 220165
+    .train 429249 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Wrath|r] |cRXP_WARN_to train|r |T236260:0|t[Wrath]
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Paladin SoD
+#group RestedXP Rune & Books Guide
 #subgroup Bracers
 #name Hammer of the Righteous - 50 (Azeroth)
 
