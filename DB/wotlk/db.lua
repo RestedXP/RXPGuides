@@ -629,9 +629,17 @@ function addon.functions.requires(self,text,mode,...)
     local args = element.args
     local step = element.step
     if element.mode == "quest" then
-        local id = tonumber(args[1])
+        --local id = tonumber(args[1])
         local optional = step.optional
-        if id and not addon.IsGuideQuestActive(id) then
+        local pass = false
+        for _,v in pairs(args) do
+            local id = tonumber(v)
+            if id then
+                pass = pass or addon.IsGuideQuestActive(id)
+            end
+        end
+
+        if not pass then
             if not (optional and step.completed) then
                 step.completed = true
                 --step.hidewindow = true
