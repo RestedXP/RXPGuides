@@ -366,8 +366,13 @@ local function IsQuestAvailable(quest,id,skipRepCheck)
         end
     end
 
-    if quest.uniqueWith then
-        for _,uniqueId in pairs(quest.uniqueWith) do
+    local uniqueWith = quest.uniqueWith
+    if uniqueWith then
+        if type(uniqueWith) ~= "table" then
+            uniqueWith = {uniqueWith}
+            quest.uniqueWith = uniqueWith
+        end
+        for _,uniqueId in pairs(uniqueWith) do
             if addon.IsQuestTurnedIn(uniqueId) then
                 return false
             end
