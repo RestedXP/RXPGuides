@@ -630,17 +630,24 @@ function addon.functions.requires(self,text,mode,...)
     local step = element.step
     if element.mode == "quest" then
         local id = tonumber(args[1])
+        local optional = step.optional
         if id and not addon.IsGuideQuestActive(id) then
-            if not (step.hidewindow and step.completed) then
+            if not (optional and step.completed) then
                 step.completed = true
-                step.hidewindow = true
+                --step.hidewindow = true
                 step.optional = true
                 addon.updateSteps = true
+                element.text = "Step skipped: This is part of a quest you don't have"
             end
-        elseif step.hidewindow then
-            step.hidewindow = false
+        elseif optional then
+            --step.hidewindow = false
             addon.updateSteps = true
             step.optional = false
+        end
+        if addon.settings.profile.debug then
+            step.optional = false
+        elseif optional ~= step.optional then
+            addon:ScheduleTask(addon.ReloadGuide)
         end
     end
     element.requestFromServer = false
