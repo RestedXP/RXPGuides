@@ -1303,18 +1303,170 @@ step
     .train 402864,1
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Priest SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Bracers
--- #name Surge of Light
--- for phase 3
+RXPGuides.RegisterGuide([[
+#classic
+<< Priest SoD
+#group RestedXP Rune & Books Guide
+#subgroup Bracers
+#title Surge of Light
+#name Surge of Light - 40 (Tanaris)
 
 -- Surge of Light
 
+step
+    #completewith RuneLearned
+    +|cRXP_WARN_You may only get the|r |T135981:0|t[Surge of Light] |cRXP_WARN_rune between 9pm-6am in Tanaris.|r
+    +You can look into the Stranglethorn Vale when you want to get the rune outside of this timespan.
+    .train 431669,1
+step
+    #completewith next
+    .zone Tanaris >>Travel to Tanaris
+    .train 431669,1
+step
+    .train 431669,1
+    >>Kill the |cRXP_ENEMY_Echo of a Lost Soul|r |cRXP_WARN_with Holy or Arcane spells/wands|r. Loot it for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of the Lost Tribe|r]
+    .collect 221981,1
+    .goto Tanaris,52,29
+    .mob Echo of a Lost Soul
+step
+    #label RuneLearned
+    .itemcount 221981,1
+    .use 221981
+    *|cRXP_WARN_You need TWO meditation buffs: Look for a priest with multiple buffs, /kneel before him, wait for him to /pray for you.|r
+    .train 431669 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of the Lost Tribe|r] |cRXP_WARN_to train|r |T135981:0|t[Surge of Light]
+]])
 
--- ]])
+RXPGuides.RegisterGuide([[
+#classic
+<< Priest SoD
+#group RestedXP Rune & Books Guide
+#subgroup Bracers
+#title Surge of Light
+#name Surge of Light - 40 (Swamp of Sorrows)
+
+-- Surge of Light
+
+step
+    #completewith RuneLearned
+    +|cRXP_WARN_You may only get the|r |T135981:0|t[Surge of Light] |cRXP_WARN_rune between 9pm-6am in Swamp of Sorrows.|r
+    +You can look into the Stranglethorn Vale when you want to get the rune outside of this timespan.
+    .train 431669,1
+step
+    #completewith next
+    .zone Swamp of Sorrows >>Travel to Swamp of Sorrows
+    .train 431669,1
+step
+    .train 431669,1
+    >>Kill the |cRXP_ENEMY_Echo of a Lost Soul|r |cRXP_WARN_with Holy or Arcane spells/wands|r. Loot it for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of the Lost Tribe|r]
+    .collect 221981,1
+    .goto Swamp of Sorrows,50,60
+    .mob Echo of a Lost Soul
+step
+    #label RuneLearned
+    .itemcount 221981,1
+    .use 221981
+    *|cRXP_WARN_You need TWO meditation buffs: Look for a priest with multiple buffs, /kneel before him, wait for him to /pray for you.|r
+    .train 431669 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of the Lost Tribe|r] |cRXP_WARN_to train|r |T135981:0|t[Surge of Light]
+]])
+
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Priest SoD
+#group RestedXP Rune & Books Guide
+#subgroup Bracers
+#title Surge of Light
+#name Surge of Light - 40 (The Hinterlands)
+
+-- Surge of Light
+
+step
+    #completewith RuneLearned
+    +|cRXP_WARN_You may only get the|r |T135981:0|t[Surge of Light] |cRXP_WARN_rune between 9pm-6am in The Hinterlands.|r
+    +You can look into the Stranglethorn Vale when you want to get the rune outside of this timespan.
+    .train 431669,1
+step
+    #completewith next
+    .zone The Hinterlands>>Travel to The Hinterlands
+    .train 431669,1
+step
+    .train 431669,1
+    >>Kill the |cRXP_ENEMY_Echo of a Lost Soul|r |cRXP_WARN_with Holy or Arcane spells/wands|r. Loot it for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of the Lost Tribe|r]
+    .collect 221981,1
+    .goto The Hinterlands,73,68
+    .mob Echo of a Lost Soul
+step
+    #label RuneLearned
+    .itemcount 221981,1
+    .use 221981
+    *|cRXP_WARN_You need TWO meditation buffs: Look for a priest with multiple buffs, /kneel before him, wait for him to /pray for you.|r
+    .train 431669 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of the Lost Tribe|r] |cRXP_WARN_to train|r |T135981:0|t[Surge of Light]
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Priest SoD
+#group RestedXP Rune & Books Guide
+#subgroup Bracers
+#title Surge of Light
+#name Surge of Light - 40 (Stranglethorn Vale) 2
+
+-- Surge of Light
+
+step
+    #completewith RuneLearned
+    +|cRXP_WARN_The soul may only spawn after a Blood Moon event. You can also disable the event and run to the waypoint location|r. 
+    .train 431669,1
+step
+    #completewith next
+    .zone Stranglethorn Value >>Travel to Stranglethorn Vale
+    .train 431669,1
+step
+    .train 431669,1
+    >>Kill the |cRXP_ENEMY_Echo of a Lost Soul|r |cRXP_WARN_with Holy or Arcane spells/wands|r. Loot it for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of the Lost Tribe|r]
+    .collect 221981,1
+    .goto Stranglethorn Vale,40.0,58.0
+    .mob Echo of a Lost Soul
+step
+    #label RuneLearned
+    .itemcount 221981,1
+    .use 221981
+    *|cRXP_WARN_You need TWO meditation buffs: Look for a priest with multiple buffs, /kneel before him, wait for him to /pray for you.|r
+    .train 431669 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of the Lost Tribe|r] |cRXP_WARN_to train|r |T135981:0|t[Surge of Light]
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Priest SoD
+#group RestedXP Rune & Books Guide
+#subgroup Bracers
+#title Surge of Light
+#name Surge of Light - 40 (Stranglethorn Vale) 1
+
+-- Surge of Light
+
+step
+    #completewith RuneLearned
+    +|cRXP_WARN_You may only get the|r |T135981:0|t[Surge of Light] |cRXP_WARN_rune between 9pm-6am.|r
+    +You can look into the Stranglethorn Vale 2 when you want to get the rune outside of this timespan.
+    .train 431669,1
+step
+    #completewith next
+    .zone Stranglethorn Vale >>Travel to Stranglethorn Vale
+    .train 431669,1
+step
+    .train 431669,1
+    >>Kill the |cRXP_ENEMY_Echo of a Lost Soul|r |cRXP_WARN_with Holy or Arcane spells/wands|r. Loot it for the |T135975:0|t[|cRXP_FRIENDLY_Prophecy of the Lost Tribe|r]
+    .collect 221981,1
+    .goto Stranglethorn Vale,30.0,73.0
+    .mob Echo of a Lost Soul
+step
+    #label RuneLearned
+    .itemcount 221981,1
+    .use 221981
+    *|cRXP_WARN_You need TWO meditation buffs: Look for a priest with multiple buffs, /kneel before him, wait for him to /pray for you.|r
+    .train 431669 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of the Lost Tribe|r] |cRXP_WARN_to train|r |T135981:0|t[Surge of Light]
+]])
 
 -- RXPGuides.RegisterGuide([[
 -- #classic
