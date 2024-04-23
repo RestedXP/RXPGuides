@@ -423,8 +423,10 @@ function addon.GetBestQuests(refreshQuestDB,output)
 
         questQueryTimer = GetTime()
         table.sort(qDB, function(k1, k2)
-            local x1 = k1.xp or 0
-            local x2 = k2.xp or 0
+            local xc1 = k1.xpcorrection or 0
+            local xc2 = k2.xpcorrection or 0
+            local x1 = (k1.xp or 0) + xc1
+            local x2 = (k2.xp or 0) + xc2
             local q1 = addon.IsQuestTurnedIn(k1.Id)
             local q2 = addon.IsQuestTurnedIn(k2.Id)
             local prev1 = k1.previousQuest and not IsPreReqComplete(k1)
@@ -502,6 +504,7 @@ local questText = ""
 local requestTimer = 0
 local mode
 local missingQs
+local textOverride
 
 local SetText = function()
     local ctime = GetTime()
@@ -511,7 +514,9 @@ local SetText = function()
         missingQs = addon.ShowMissingQuests()
     end
 
-    if mode == "missing" then
+    if textOverride then
+        return textOverride
+    elseif mode == "missing" then
         return missingQs
     else
         return questText
@@ -522,6 +527,7 @@ local function OnClick(self)
     if not addon.settings.gui.quest then
         CreatePanel()
     end
+    textOverride = nil
     addon.settings.OpenSettings('Quest Data')
 end
 
@@ -563,6 +569,7 @@ function CreatePanel()
                 type = 'execute',
                 func = function()
                     mode = "quests"
+                    textOverride = nil
                     if showAllQs then
                         showAllQs = false
                         questText,requestText = addon.GetBestQuests(true,2)
@@ -576,6 +583,7 @@ function CreatePanel()
                 type = 'execute',
                 func = function()
                     mode = "missing"
+                    textOverride = nil
                     addon.settings.OpenSettings('Quest Data')
                 end,
             },
@@ -585,6 +593,7 @@ function CreatePanel()
                 type = 'execute',
                 func = function()
                     mode = "quests"
+                    textOverride = nil
                     if not showAllQs then
                         showAllQs = true
                         questText,requestText = addon.GetBestQuests(true,2)
@@ -650,10 +659,10 @@ function addon.functions.requires(self,text,mode,...)
         elseif optional then
             --step.hidewindow = false
             addon.updateSteps = true
-            step.optional = false
+            step.optional = nil
         end
         if addon.settings.profile.debug then
-            step.optional = false
+            step.optional = nil
         elseif optional ~= step.optional then
             addon:ScheduleTask(addon.ReloadGuide)
         end
@@ -687,6 +696,7 @@ function addon.CalculateTotalXP(flags)
     flags = flags or 0
     local output = bit.band(flags,0x2) == 0x2
     local ignorePreReqs
+    local outputString = {}
     if bit.band(flags,0x1) == 0x1 then
         local aldor = addon.stepLogic.AldorScryerCheck("Aldor") and 932
         local scryer = addon.stepLogic.AldorScryerCheck("Scryer") and 934
@@ -709,8 +719,10 @@ function addon.CalculateTotalXP(flags)
             xp = xp * xpmod
             totalXp = totalXp + xp
             if output then
-                    print(string.format("%dxp %s (%d)", xp,
-                                    addon.GetQuestName(qid) or "", qid))
+                    local s = string.format("%dxp %s (%d)", xp,
+                                    addon.GetQuestName(qid) or "", qid)
+                    table.insert(outputString,s)
+                    print(s)
             end
         end
         return isAvailable
@@ -760,7 +772,13 @@ function addon.CalculateTotalXP(flags)
             end
         end
     end
-
+    if output then
+        textOverride = format("Total XP: %d\n%s",totalXp,table.concat(outputString,'\n'))
+        if not addon.settings.gui.quest then
+            CreatePanel()
+        end
+        addon.settings.OpenSettings('Quest Data')
+    end
     return totalXp
 end
 
