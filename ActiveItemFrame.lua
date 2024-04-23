@@ -281,7 +281,7 @@ function addon.UpdateItemFrame(itemFrame)
                               "SecureActionButtonTemplate")
             btn:SetAttribute("type1", "item")
             btn:SetSize(25, 25)
-            if btn.RegisterForClicks and addon.game == "RETAIL" then
+            if btn.RegisterForClicks then--and addon.game == "RETAIL" then
                 btn:RegisterForClicks("AnyUp","AnyDown")
             end
             table.insert(buttonList, btn)
@@ -326,7 +326,13 @@ function addon.UpdateItemFrame(itemFrame)
             attribute = "spell"
         end
         btn:SetAttribute("type1",attribute)
-        btn:SetAttribute(attribute, item.name)
+        if attribute == "item" then
+            --btn:SetAttribute("macro", format("/use item:%d",item.id))
+            btn:SetAttribute(attribute, format("item:%d",item.id))
+        else
+            btn:SetAttribute(attribute, item.name)
+        end
+
         if btn.itemId ~= item.id and btn.cooldown then
             btn.cooldown:Clear()
         end
