@@ -1026,25 +1026,30 @@ function addon.GroupOverride(guide,arg2)
     local function SwapGroup(grp,subgrp)
         local faction = grp:match("RestedXP ([AH][lo][lr][id][ea]%w*)")
         --local group,subgroup
+        local swap
         if faction == "Alliance" then
             subgrp = subgrp or grp:gsub("RestedXP Alliance", "RXP Speedrun Guide")
             grp = "RestedXP Speedrun Guide (A)"
+            swap = true
             --print('\n',grp,subgrp,faction,type(guide) == "table" and guide.name,'\n')
         elseif faction == "Horde" then
             subgrp = subgrp or grp:gsub("RestedXP Horde", "RXP Speedrun Guide")
             grp = "RestedXP Speedrun Guide (H)"
+            swap = true
             --print(group,guide.subgroup,faction,guide.group,guide.name)
         end
-        return grp,subgrp
+        return grp,subgrp,swap
     end
 
     if type(guide) == "table" then
         if guide.group then
         --if true then  return end
-            local group
-            group, guide.subgroup = SwapGroup(guide.group,guide.subgroup)
+            local group,swap
+            group, guide.subgroup,swap = SwapGroup(guide.group,guide.subgroup)
             guide.group = group
-            guide.next = guide.next and guide.next:gsub("[^;]-\\","")
+            if swap then
+                guide.next = guide.next and guide.next:gsub("[^;]-\\","")
+            end
             --print(group,'//',guide.subgroup)
             return group
         end

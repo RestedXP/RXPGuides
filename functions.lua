@@ -241,8 +241,10 @@ addon.IsOnQuest = IsOnQuest
 addon.IsQuestTurnedIn = IsQuestTurnedIn
 addon.IsQuestComplete = IsQuestComplete
 
-local function GetQuestId(src)
-    local guide = addon.currentGuide or addon.guide
+local function GetQuestId(src,guide)
+    if type(guide) ~= "table" then
+        guide = addon.currentGuide or addon.guide
+    end
     if not (src and guide) then
         return src
     end
@@ -257,6 +259,7 @@ local function GetQuestId(src)
         return src
     end
 end
+addon.GetQuestId = GetQuestId
 
 
 local timer = GetTime()
@@ -2633,7 +2636,7 @@ function addon.functions.mountcount(self, ...)
             operator, eq, total = str:match("([<>]?)(=?)%s*(%d+)")
         end
         if skill then
-            skill,minskill,maxskill = skill:match("(%d+)%-(%d+)")
+            minskill,maxskill = skill:match("(%d+)%-(%d+)")
         end
         skill = tonumber(skill)
         maxskill = tonumber(maxskill) or skill
@@ -2685,7 +2688,7 @@ function addon.functions.mountcount(self, ...)
             end
         end
     end
-
+    print('-',count,element.minskill,element.maxskill)
     if not ((eq and count == total) or (count * operator > total * operator) or
         (not eq and operator == 0 and count >= total)) then
         if step.active and not step.completed then

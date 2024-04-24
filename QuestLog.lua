@@ -170,20 +170,26 @@ function addon.GetQuestLog(QL, LT, guide, silent, stopGuide, stopStep)
             QL[remove] = nil
         end
         for en, element in pairs(step.elements) do
+            local ids
             if element.tag == "accept" then
-                local qname = element.text or tostring(element.questId)
-                LT[element.questId] = false
+                local id = addon.GetQuestId(element.questId,guide)
+                local qname = element.text or tostring(id)
+                LT[id] = false
                 qname = qname:gsub("^Accept ", "")
                 lastQuestAccepted = qname
-                QL[element.questId] = qname
-            elseif element.tag == "turnin" or element.tag == "abandon" then
-                if LT[element.questId] == nil and not element.skipIfMissing then
-                    local t = element.questId .. "/" ..
-                                  (element.text or tostring(element.questId)) ..
-                                  "/" .. guide.name
-                    LT[element.questId] = t:gsub("^[Tt]urn in", "")
+                QL[id] = qname
+            elseif element.tag and (element.tag:find("turnin") or element.tag == "abandon") then
+                ids = element.ids or {element.questId}
+                for _,id in pairs(ids) do
+                    id = addon.GetQuestId(id,guide)
+                    if LT[id] == nil and not element.skipIfMissing then
+                        local t = id .. "/" ..
+                                    (element.text or tostring(id)) ..
+                                    "/" .. guide.name
+                        LT[id] = t:gsub("^[Tt]urn in", "")
+                    end
+                    QL[id] = nil
                 end
-                QL[element.questId] = nil
             end
         end
         local nQuests = 0
