@@ -243,7 +243,16 @@ step
     .target Coach Crosscheck
 step
     >>Pick up the |cRXP_PICK_Replacements Parts|r from the ground while on the Hot Rod
-    .loop 20,194,50.99,57.96,51.22,61.01,49.78,66.39,48.17,66.87,46.08,68.18,44.49,65.76,44.23,63.11,43.75,59.25
+#loop
+	.line 194,50.99,57.96,51.22,61.01,49.78,66.39,48.17,66.87,46.08,68.18,44.49,65.76,44.23,63.11,43.75,59.25
+	.goto 194,50.99,57.96,20,0
+	.goto 194,51.22,61.01,20,0
+	.goto 194,49.78,66.39,20,0
+	.goto 194,48.17,66.87,20,0
+	.goto 194,46.08,68.18,20,0
+	.goto 194,44.49,65.76,20,0
+	.goto 194,44.23,63.11,20,0
+	.goto 194,43.75,59.25,20,0
     .complete 24488,1 --6/6 Replacement Parts
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Coach Crosscheck|r
@@ -778,7 +787,16 @@ step
     .target Hobart Grapplehammer
 step
     >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on 10 |cRXP_PICK_cluckers|r around the town
-    .loop 20,174,45.64,64.12,46.45,64.90,47.03,65.75,46.28,66.40,45.39,66.82,44.55,66.91,44.52,65.61,44.67,63.90
+#loop
+	.line 174,45.64,64.12,46.45,64.90,47.03,65.75,46.28,66.40,45.39,66.82,44.55,66.91,44.52,65.61,44.67,63.90
+	.goto 174,45.64,64.12,20,0
+	.goto 174,46.45,64.90,20,0
+	.goto 174,47.03,65.75,20,0
+	.goto 174,46.28,66.40,20,0
+	.goto 174,45.39,66.82,20,0
+	.goto 174,44.55,66.91,20,0
+	.goto 174,44.52,65.61,20,0
+	.goto 174,44.67,63.90,20,0
     .complete 24671,1 --10/10 Wild Cluckers captured
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hobart Grapplehammer|r and |cRXP_FRIENDLY_Bamm Megabomb|r

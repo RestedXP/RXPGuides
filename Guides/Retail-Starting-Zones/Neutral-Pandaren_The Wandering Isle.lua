@@ -586,7 +586,12 @@ step
     .goto 378,69.55,79.23,15,0
     .goto 378,70.84,80.41,15,0
     .goto 378,71.46,78.11,15,0
-    .loop 10,378,70.11,77.63,69.55,79.23,70.84,80.41,71.46,78.11
+#loop
+	.line 378,70.11,77.63,69.55,79.23,70.84,80.41,71.46,78.11
+	.goto 378,70.11,77.63,10,0
+	.goto 378,69.55,79.23,10,0
+	.goto 378,70.84,80.41,10,0
+	.goto 378,71.46,78.11,10,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Turnips|r
     .complete 29770,1 --3/3 Uprooted Turnip
 step
@@ -595,7 +600,12 @@ step
     .goto 378,78.01,72.56,15,0
     .goto 378,78.85,70.76,20,0
     .goto 378,78.6,69.74,20,0
-    .loop 10,378,77.35,70.51,78.12,72.61,78.82,70.88,78.6,69.75
+#loop
+	.line 378,77.35,70.51,78.12,72.61,78.82,70.88,78.6,69.75
+	.goto 378,77.35,70.51,10,0
+	.goto 378,78.12,72.61,10,0
+	.goto 378,78.82,70.88,10,0
+	.goto 378,78.60,69.75,10,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Pumpkin|r
     .complete 29770,3 --3/3 Pilfered Pumpkin
 step
@@ -608,7 +618,11 @@ step
     .goto 378,73.97,72.58,15,0
     .goto 378,73.94,70.86,15,0
     .goto 378,74.7,74.76,15,0
-    .loop 5,378,73.97,72.58,73.94,70.86,74.7,74.76
+#loop
+	.line 378,73.97,72.58,73.94,70.86,74.7,74.76
+	.goto 378,73.97,72.58,5,0
+	.goto 378,73.94,70.86,5,0
+	.goto 378,74.70,74.76,5,0
     >>Kill |cRXP_ENEMY_Plump Carrotcatchers|r and loot them for their |cRXP_LOOT_Carrots|r. You can also |TInterface/cursor/crosshair/interact.blp:20|tclick the |cRXP_PICK_Carrots|r on the ground.
     .complete 29770,2 --3/3 Stolen Carrot
 	.mob Plump Carrotcatcher
@@ -620,7 +634,11 @@ step
     .goto 378,72.67,69.48,15,0
     .goto 378,70.75,71.61,15,0
     .goto 378,69.4,69.74,15,0
-    .loop 10,378,77.89,70.13,77.36,70.49,77.85,71.75
+#loop
+	.line 378,77.89,70.13,77.36,70.49,77.85,71.75
+	.goto 378,77.89,70.13,10,0
+	.goto 378,77.36,70.49,10,0
+	.goto 378,77.85,71.75,10,0
     >>Kill |cRXP_ENEMY_Plump Virmens|r
     .complete 29769,1 --10/10 Plump Virmen slain
 	.mob Plump Virmen
@@ -755,7 +773,11 @@ step
     .goto 378,31.19,47.97,15,0
     .goto 378,32.49,46.63,15,0
     .goto 378,33.13,46.32,15,0
-    .loop 15,378,33.42,50.88,32.57,53.31,28.71,50.23
+#loop
+	.line 378,33.42,50.88,32.57,53.31,28.71,50.23
+	.goto 378,33.42,50.88,15,0
+	.goto 378,32.57,53.31,15,0
+	.goto 378,28.71,50.23,15,0
     #label Defaced Scroll of Wisdom burned
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Banners|r on the monuments.
     .complete 29778,1 --5/5 Defaced Scroll of Wisdom burned
@@ -772,11 +794,23 @@ step
     .goto 378,33.06,52.27,15,0
     .goto 378,32.16,50.53,15,0
     .goto 378,31.32,52.22,15,0
-    .loop 15,378,31.18,47.9,32.57,46.43,33.99,50.9,32.16,50.53,31.32,52.22
+#loop
+	.line 378,31.18,47.9,32.57,46.43,33.99,50.9,32.16,50.53,31.32,52.22
+	.goto 378,31.18,47.90,15,0
+	.goto 378,32.57,46.43,15,0
+	.goto 378,33.99,50.90,15,0
+	.goto 378,32.16,50.53,15,0
+	.goto 378,31.32,52.22,15,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Stone Blocks.|r
     .complete 29783,1 --12/12 Abandoned Stone Block
 step
-    .loop 15,378,31.18,47.9,32.57,46.43,33.99,50.9,32.16,50.53,31.32,52.22
+#loop
+	.line 378,31.18,47.9,32.57,46.43,33.99,50.9,32.16,50.53,31.32,52.22
+	.goto 378,31.18,47.90,15,0
+	.goto 378,32.57,46.43,15,0
+	.goto 378,33.99,50.90,15,0
+	.goto 378,32.16,50.53,15,0
+	.goto 378,31.32,52.22,15,0
     >>Kill |cRXP_ENEMY_Fe-Feng Wisemans|r and loot them for their |cRXP_LOOT_Brushes.|r
     .complete 29777,1 --8/8 Paint Soaked Brush
 	.mob Fe-Feng Wiseman
@@ -819,7 +853,12 @@ step
     .goto 378,25.72,29.91,15,0
     .goto 378,24.24,30.84,15,0
     .goto 378,20.52,34.6,10,0
-    .loop 10,378,24.24,30.84,25.72,29.91,27.49,29.61,26.75,31.86
+#loop
+	.line 378,24.24,30.84,25.72,29.91,27.49,29.61,26.75,31.86
+	.goto 378,24.24,30.84,10,0
+	.goto 378,25.72,29.91,10,0
+	.goto 378,27.49,29.61,10,0
+	.goto 378,26.75,31.86,10,0
 	>>Kill |cRXP_ENEMY_Fe-Feng Hozen|r
     .complete 29779,1 --20/20 Fe-Feng Hozen slain
 	.mob Fe-Feng Firethief
@@ -840,7 +879,12 @@ step
 	.mob Fe-Feng Firethief
 	.mob Fe-Feng Ruffian
 step
-    .loop 10,378,24.24,30.84,25.72,29.91,27.49,29.61,26.75,31.86
+#loop
+	.line 378,24.24,30.84,25.72,29.91,27.49,29.61,26.75,31.86
+	.goto 378,24.24,30.84,10,0
+	.goto 378,25.72,29.91,10,0
+	.goto 378,27.49,29.61,10,0
+	.goto 378,26.75,31.86,10,0
 	>>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Firework Bundles|r
     .complete 29781,1 --8/8 Stolen Firework Bundle
 step
@@ -1024,7 +1068,13 @@ step
 	.target Provisioner Drog
 	.isOnQuest 29795
 step
-	.loop 40,378,54.51,85.54,45.05,85.81,45.89,71.57,55.62,69.49,54.51,85.54
+#loop
+	.line 378,54.51,85.54,45.05,85.81,45.89,71.57,55.62,69.49,54.51,85.54
+	.goto 378,54.51,85.54,40,0
+	.goto 378,45.05,85.81,40,0
+	.goto 378,45.89,71.57,40,0
+	.goto 378,55.62,69.49,40,0
+	.goto 378,54.51,85.54,40,0
     >>Kill |cRXP_ENEMY_Pei-Wu Tigers|r. Loot the |cRXP_PICK_Bamboo Stalks|r |cFFfa9602on the ground.|r
     .complete 30591,1 --9/9 Pei-Wu Tiger slain
     .complete 29795,1 --10/10 Broken Bamboo Stalk

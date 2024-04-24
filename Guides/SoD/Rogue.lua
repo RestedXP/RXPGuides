@@ -784,7 +784,26 @@ step << Undead
     .target David Trias
 step
     #season 2
-    .loop 25,Tirisfal Glades,36.13,68.74,36.46,69.49,36.85,70.02,37.42,69.58,38.05,69.79,37.91,69.22,38.03,68.77,38.49,68.28,38.72,67.07,38.59,66.25,38.65,65.07,37.62,65.36,36.93,65.38,36.51,65.42,36.85,66.59,37.45,67.95,36.93,68.16,36.13,68.74
+#loop
+	.line Tirisfal Glades,36.13,68.74,36.46,69.49,36.85,70.02,37.42,69.58,38.05,69.79,37.91,69.22,38.03,68.77,38.49,68.28,38.72,67.07,38.59,66.25,38.65,65.07,37.62,65.36,36.93,65.38,36.51,65.42,36.85,66.59,37.45,67.95,36.93,68.16,36.13,68.74
+	.goto Tirisfal Glades,36.13,68.74,25,0
+	.goto Tirisfal Glades,36.46,69.49,25,0
+	.goto Tirisfal Glades,36.85,70.02,25,0
+	.goto Tirisfal Glades,37.42,69.58,25,0
+	.goto Tirisfal Glades,38.05,69.79,25,0
+	.goto Tirisfal Glades,37.91,69.22,25,0
+	.goto Tirisfal Glades,38.03,68.77,25,0
+	.goto Tirisfal Glades,38.49,68.28,25,0
+	.goto Tirisfal Glades,38.72,67.07,25,0
+	.goto Tirisfal Glades,38.59,66.25,25,0
+	.goto Tirisfal Glades,38.65,65.07,25,0
+	.goto Tirisfal Glades,37.62,65.36,25,0
+	.goto Tirisfal Glades,36.93,65.38,25,0
+	.goto Tirisfal Glades,36.51,65.42,25,0
+	.goto Tirisfal Glades,36.85,66.59,25,0
+	.goto Tirisfal Glades,37.45,67.95,25,0
+	.goto Tirisfal Glades,36.93,68.16,25,0
+	.goto Tirisfal Glades,36.13,68.74,25,0
     >>Kill or pickpocket |cRXP_ENEMY_Scarlet Converts|r. Loot them for the |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r
     .collect 204795,1 --Rune of Shadowstrike (1)
     .mob Scarlet Convert
@@ -973,7 +992,18 @@ step
     .train 400095,1
 step
     #season 2
-    .loop 25,Durotar,67.23,88.76,66.52,87.74,65.94,86.72,65.90,84.04,65.88,82.85,67.38,82.61,68.42,82.43,68.50,84.32,68.47,86.77,67.23,88
+#loop
+	.line Durotar,67.23,88.76,66.52,87.74,65.94,86.72,65.90,84.04,65.88,82.85,67.38,82.61,68.42,82.43,68.50,84.32,68.47,86.77,67.23,88
+	.goto Durotar,67.23,88.76,25,0
+	.goto Durotar,66.52,87.74,25,0
+	.goto Durotar,65.94,86.72,25,0
+	.goto Durotar,65.90,84.04,25,0
+	.goto Durotar,65.88,82.85,25,0
+	.goto Durotar,67.38,82.61,25,0
+	.goto Durotar,68.42,82.43,25,0
+	.goto Durotar,68.50,84.32,25,0
+	.goto Durotar,68.47,86.77,25,0
+	.goto Durotar,67.23,88.00,25,0
     >>Kill or use |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Hexed Trolls|r and |cRXP_ENEMY_Voodoo Trolls|r. Loot them for |T134327:0|t[|cRXP_LOOT_Bottom-Left Map Piece|r]
     .collect 207106,1 --Bottom-Left Map Piece (1)
     .mob Hexed Troll
@@ -1165,7 +1195,12 @@ step
     .goto Tirisfal Glades,52.29,26.40,8 >> Travel to the crypt in Agamand Mills
 step
     #season 2
-    .loop 15,Tirisfal Glades,51.88,25.86,52.61,25.85,52.60,26.88,51.90,26.87
+#loop
+	.line Tirisfal Glades,51.88,25.86,52.61,25.85,52.60,26.88,51.90,26.87
+	.goto Tirisfal Glades,51.88,25.86,15,0
+	.goto Tirisfal Glades,52.61,25.85,15,0
+	.goto Tirisfal Glades,52.60,26.88,15,0
+	.goto Tirisfal Glades,51.90,26.87,15,0
     >>Kill |cRXP_ENEMY_Wailing Ancestors|r and |cRXP_ENEMY_Rotting Ancestors|r. Loot them for an |T134245:0|t[|cRXP_LOOT_Agamand Relic Coffer Key|r]
     >>|cRXP_WARN_Be careful! The mobs in this crypt respawn dynamically!|r
     .collect 208005,1 --Agamand Relic Coffer Key (1)

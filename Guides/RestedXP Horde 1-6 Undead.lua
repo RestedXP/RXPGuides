@@ -130,7 +130,18 @@ step << Warrior
 step << Warlock tbc
     #requires Piercing
     .goto Tirisfal Glades,31.35,66.21,10,0
-    .loop 40,Tirisfal Glades,31.82,61.48,31.11,60.71,32.07,60.17,32.26,59.21,33.28,59.53,33.66,60.76,33.94,61.81,34.21,63.05,33.01,63.01,31.82,61.48
+#loop
+	.line Tirisfal Glades,31.82,61.48,31.11,60.71,32.07,60.17,32.26,59.21,33.28,59.53,33.66,60.76,33.94,61.81,34.21,63.05,33.01,63.01,31.82,61.48
+	.goto Tirisfal Glades,31.82,61.48,40,0
+	.goto Tirisfal Glades,31.11,60.71,40,0
+	.goto Tirisfal Glades,32.07,60.17,40,0
+	.goto Tirisfal Glades,32.26,59.21,40,0
+	.goto Tirisfal Glades,33.28,59.53,40,0
+	.goto Tirisfal Glades,33.66,60.76,40,0
+	.goto Tirisfal Glades,33.94,61.81,40,0
+	.goto Tirisfal Glades,34.21,63.05,40,0
+	.goto Tirisfal Glades,33.01,63.01,40,0
+	.goto Tirisfal Glades,31.82,61.48,40,0
     >>Kill |cRXP_ENEMY_Rattlecage Skeletons|r. Loot them for their |cRXP_LOOT_Rattlecage Skulls|r
     .complete 1470,1 --Rattlecage Skull (3)
     .mob Rattlecage Skeleton
@@ -161,7 +172,22 @@ step
     #label Zombies
     #requires Piercing << Warlock/Mage
     .goto Tirisfal Glades,31.35,66.21,10,0
-    .loop 40,Tirisfal Glades,31.72,63.98,30.69,63.88,30.90,62.20,30.73,61.66,31.14,61.41,31.80,61.83,32.85,63.02,32.90,63.54,33.41,63.06,33.75,62.86,33.51,63.82,33.55,64.57,33.29,64.96,31.72,63.98
+#loop
+	.line Tirisfal Glades,31.72,63.98,30.69,63.88,30.90,62.20,30.73,61.66,31.14,61.41,31.80,61.83,32.85,63.02,32.90,63.54,33.41,63.06,33.75,62.86,33.51,63.82,33.55,64.57,33.29,64.96,31.72,63.98
+	.goto Tirisfal Glades,31.72,63.98,40,0
+	.goto Tirisfal Glades,30.69,63.88,40,0
+	.goto Tirisfal Glades,30.90,62.20,40,0
+	.goto Tirisfal Glades,30.73,61.66,40,0
+	.goto Tirisfal Glades,31.14,61.41,40,0
+	.goto Tirisfal Glades,31.80,61.83,40,0
+	.goto Tirisfal Glades,32.85,63.02,40,0
+	.goto Tirisfal Glades,32.90,63.54,40,0
+	.goto Tirisfal Glades,33.41,63.06,40,0
+	.goto Tirisfal Glades,33.75,62.86,40,0
+	.goto Tirisfal Glades,33.51,63.82,40,0
+	.goto Tirisfal Glades,33.55,64.57,40,0
+	.goto Tirisfal Glades,33.29,64.96,40,0
+	.goto Tirisfal Glades,31.72,63.98,40,0
     >>Kill |cRXP_ENEMY_Mindless Zombies|r and |cRXP_ENEMY_Wretched Zombies|r << tbc
     >>Kill |cRXP_ENEMY_Mindless Zombies|r and |cRXP_ENEMY_Wretched Ghouls|r << wotlk
     .complete 364,1 --Kill Mindless Zombie (x8) // --Kill Mindless Zombie (x5) wotlk
@@ -304,12 +330,38 @@ step
     .mob Duskbat
     .mob Mangy Duskbat
 step
-    .loop 40,Tirisfal Glades,31.82,61.48,31.11,60.71,32.07,60.17,32.26,59.21,33.28,59.53,33.66,60.76,33.94,61.81,34.21,63.05,33.01,63.01,31.82,61.48
+#loop
+	.line Tirisfal Glades,31.82,61.48,31.11,60.71,32.07,60.17,32.26,59.21,33.28,59.53,33.66,60.76,33.94,61.81,34.21,63.05,33.01,63.01,31.82,61.48
+	.goto Tirisfal Glades,31.82,61.48,40,0
+	.goto Tirisfal Glades,31.11,60.71,40,0
+	.goto Tirisfal Glades,32.07,60.17,40,0
+	.goto Tirisfal Glades,32.26,59.21,40,0
+	.goto Tirisfal Glades,33.28,59.53,40,0
+	.goto Tirisfal Glades,33.66,60.76,40,0
+	.goto Tirisfal Glades,33.94,61.81,40,0
+	.goto Tirisfal Glades,34.21,63.05,40,0
+	.goto Tirisfal Glades,33.01,63.01,40,0
+	.goto Tirisfal Glades,31.82,61.48,40,0
     >>Kill |cRXP_ENEMY_Rattlecage Skeletons|r
     .complete 3901,1 --Kill Rattlecage Skeleton (12)
     .mob Rattlecage Skeleton
 step
-    .loop 40,Tirisfal Glades,31.72,63.98,30.69,63.88,30.90,62.20,30.73,61.66,31.14,61.41,31.80,61.83,32.85,32.38,63.02,32.90,63.54,33.41,63.06,33.75,62.86,33.51,63.82,33.55,64.57,33.29,64.96,31.72,63.98
+#loop
+	.line Tirisfal Glades,31.72,63.98,30.69,63.88,30.90,62.20,30.73,61.66,31.14,61.41,31.80,61.83,32.85,32.38,63.02,32.90,63.54,33.41,63.06,33.75,62.86,33.51,63.82,33.55,64.57,33.29,64.96,31.72,63.98
+	.goto Tirisfal Glades,31.72,63.98,40,0
+	.goto Tirisfal Glades,30.69,63.88,40,0
+	.goto Tirisfal Glades,30.90,62.20,40,0
+	.goto Tirisfal Glades,30.73,61.66,40,0
+	.goto Tirisfal Glades,31.14,61.41,40,0
+	.goto Tirisfal Glades,31.80,61.83,40,0
+	.goto Tirisfal Glades,32.85,32.38,40,0
+	.goto Tirisfal Glades,63.02,32.90,40,0
+	.goto Tirisfal Glades,63.54,33.41,40,0
+	.goto Tirisfal Glades,63.06,33.75,40,0
+	.goto Tirisfal Glades,62.86,33.51,40,0
+	.goto Tirisfal Glades,63.82,33.55,40,0
+	.goto Tirisfal Glades,64.57,33.29,40,0
+	.goto Tirisfal Glades,64.96,31.72,40,0
     .xp 3+980 >>Grind to 980+/1400xp
     .mob Mindless Zombie
     .mob Wretched Zombie << tbc
@@ -399,19 +451,53 @@ step << Rogue
     .target David Trias
 step
     >>Open the |cRXP_PICK_Equipment Boxes|r on the ground. Loot them for the |cRXP_LOOT_Scavenged Goods|r
-    .loop 12,Tirisfal Glades,32.37,64.37,32.81,64.39,32.89,64.60,33.01,65.38,33.79,64.57,33.13,63.08,32.79,63.11,31.86,61.49,31.75,61.96,31.70,62.53,31.34,62.44,32.37,64.37
+#loop
+	.line Tirisfal Glades,32.37,64.37,32.81,64.39,32.89,64.60,33.01,65.38,33.79,64.57,33.13,63.08,32.79,63.11,31.86,61.49,31.75,61.96,31.70,62.53,31.34,62.44,32.37,64.37
+	.goto Tirisfal Glades,32.37,64.37,12,0
+	.goto Tirisfal Glades,32.81,64.39,12,0
+	.goto Tirisfal Glades,32.89,64.60,12,0
+	.goto Tirisfal Glades,33.01,65.38,12,0
+	.goto Tirisfal Glades,33.79,64.57,12,0
+	.goto Tirisfal Glades,33.13,63.08,12,0
+	.goto Tirisfal Glades,32.79,63.11,12,0
+	.goto Tirisfal Glades,31.86,61.49,12,0
+	.goto Tirisfal Glades,31.75,61.96,12,0
+	.goto Tirisfal Glades,31.70,62.53,12,0
+	.goto Tirisfal Glades,31.34,62.44,12,0
+	.goto Tirisfal Glades,32.37,64.37,12,0
     .complete 3902,1 --Collect Scavenged Goods (x6)
 step
     .goto Tirisfal Glades,29.29,59.38,50,0
     .goto Tirisfal Glades,29.94,57.33,50,0
-    .loop 40,Tirisfal Glades,29.94,57.33,29.82,56.03,29.25,55.77,28.40,56.51,27.68,57.10,28.29,58.31,28.25,59.41,28.80,59.53,29.29,59.40,29.67,58.53,29.94,57.33
+#loop
+	.line Tirisfal Glades,29.94,57.33,29.82,56.03,29.25,55.77,28.40,56.51,27.68,57.10,28.29,58.31,28.25,59.41,28.80,59.53,29.29,59.40,29.67,58.53,29.94,57.33
+	.goto Tirisfal Glades,29.94,57.33,40,0
+	.goto Tirisfal Glades,29.82,56.03,40,0
+	.goto Tirisfal Glades,29.25,55.77,40,0
+	.goto Tirisfal Glades,28.40,56.51,40,0
+	.goto Tirisfal Glades,27.68,57.10,40,0
+	.goto Tirisfal Glades,28.29,58.31,40,0
+	.goto Tirisfal Glades,28.25,59.41,40,0
+	.goto Tirisfal Glades,28.80,59.53,40,0
+	.goto Tirisfal Glades,29.29,59.40,40,0
+	.goto Tirisfal Glades,29.67,58.53,40,0
+	.goto Tirisfal Glades,29.94,57.33,40,0
     >>Kill |cRXP_ENEMY_Young Night Web Spiders|r
     .complete 380,1,5 << WOTLK --Kill Young Night Web Spider (8)
     .complete 380,1,6 << TBC --Kill Young Night Web Spider (10)
     .mob Young Night Web Spider
 step
     .goto Tirisfal Glades,27.86,58.98,40,0
-    .loop 40,Tirisfal Glades,28.25,58.27,28.42,59.07,27.86,60.57,27.17,59.18,27.30,57.97,26.94,56.42,27.51,56.00,28.25,58.27
+#loop
+	.line Tirisfal Glades,28.25,58.27,28.42,59.07,27.86,60.57,27.17,59.18,27.30,57.97,26.94,56.42,27.51,56.00,28.25,58.27
+	.goto Tirisfal Glades,28.25,58.27,40,0
+	.goto Tirisfal Glades,28.42,59.07,40,0
+	.goto Tirisfal Glades,27.86,60.57,40,0
+	.goto Tirisfal Glades,27.17,59.18,40,0
+	.goto Tirisfal Glades,27.30,57.97,40,0
+	.goto Tirisfal Glades,26.94,56.42,40,0
+	.goto Tirisfal Glades,27.51,56.00,40,0
+	.goto Tirisfal Glades,28.25,58.27,40,0
     >>Kill |cRXP_ENEMY_Young Night Web Spiders|r close to the cave entrance
     .complete 380,1 << WOTLK --Kill Young Night Web Spider (8)
     .complete 380,1 << TBC --Kill Young Night Web Spider (10)
@@ -477,7 +563,26 @@ step << Warlock/Mage/Priest
     .itemcount 159,<5 << wotlk
 step
     #requires NightWebH
-    .loop 40,Tirisfal Glades,36.13,68.74,36.46,69.49,36.85,70.02,37.42,69.58,38.05,69.79,37.91,69.22,38.03,68.77,38.49,68.28,38.72,67.07,38.59,66.25,38.65,65.07,37.62,65.36,36.93,65.38,36.51,65.42,36.85,66.59,37.45,67.95,36.93,68.16,36.13,68.74
+#loop
+	.line Tirisfal Glades,36.13,68.74,36.46,69.49,36.85,70.02,37.42,69.58,38.05,69.79,37.91,69.22,38.03,68.77,38.49,68.28,38.72,67.07,38.59,66.25,38.65,65.07,37.62,65.36,36.93,65.38,36.51,65.42,36.85,66.59,37.45,67.95,36.93,68.16,36.13,68.74
+	.goto Tirisfal Glades,36.13,68.74,40,0
+	.goto Tirisfal Glades,36.46,69.49,40,0
+	.goto Tirisfal Glades,36.85,70.02,40,0
+	.goto Tirisfal Glades,37.42,69.58,40,0
+	.goto Tirisfal Glades,38.05,69.79,40,0
+	.goto Tirisfal Glades,37.91,69.22,40,0
+	.goto Tirisfal Glades,38.03,68.77,40,0
+	.goto Tirisfal Glades,38.49,68.28,40,0
+	.goto Tirisfal Glades,38.72,67.07,40,0
+	.goto Tirisfal Glades,38.59,66.25,40,0
+	.goto Tirisfal Glades,38.65,65.07,40,0
+	.goto Tirisfal Glades,37.62,65.36,40,0
+	.goto Tirisfal Glades,36.93,65.38,40,0
+	.goto Tirisfal Glades,36.51,65.42,40,0
+	.goto Tirisfal Glades,36.85,66.59,40,0
+	.goto Tirisfal Glades,37.45,67.95,40,0
+	.goto Tirisfal Glades,36.93,68.16,40,0
+	.goto Tirisfal Glades,36.13,68.74,40,0
     >>Kill |cRXP_ENEMY_Scarlet Initiates|r and |cRXP_ENEMY_Scarlet Converts|r. Loot them for their |cRXP_LOOT_Scarlet Armbands|r
     >>|cRXP_WARN_Don't kill |cRXP_ENEMY_Meven Korgal|r yet|r
     >>|cRXP_WARN_Try to avoid |cRXP_ENEMY_Scarlet Converts|r if you can as they have|r |T135843:0|t[Frost Armor] |cRXP_WARN_(slows your attack speed)|r << Warrior/Rogue
@@ -541,7 +646,26 @@ step << Warrior
     .goto Tirisfal Glades,36.83,56.85,40,0
     .goto Tirisfal Glades,37.76,59.38,40,0
     .goto Tirisfal Glades,37.51,62.99,40,0
-    .loop 40,Tirisfal Glades,36.13,68.74,36.46,69.49,36.85,70.02,37.42,69.58,38.05,69.79,37.91,69.22,38.03,68.77,38.49,68.28,38.72,67.07,38.59,66.25,38.65,65.07,37.62,65.36,36.93,65.38,36.51,65.42,36.85,66.59,37.45,67.95,36.93,68.16,36.13,68.74
+#loop
+	.line Tirisfal Glades,36.13,68.74,36.46,69.49,36.85,70.02,37.42,69.58,38.05,69.79,37.91,69.22,38.03,68.77,38.49,68.28,38.72,67.07,38.59,66.25,38.65,65.07,37.62,65.36,36.93,65.38,36.51,65.42,36.85,66.59,37.45,67.95,36.93,68.16,36.13,68.74
+	.goto Tirisfal Glades,36.13,68.74,40,0
+	.goto Tirisfal Glades,36.46,69.49,40,0
+	.goto Tirisfal Glades,36.85,70.02,40,0
+	.goto Tirisfal Glades,37.42,69.58,40,0
+	.goto Tirisfal Glades,38.05,69.79,40,0
+	.goto Tirisfal Glades,37.91,69.22,40,0
+	.goto Tirisfal Glades,38.03,68.77,40,0
+	.goto Tirisfal Glades,38.49,68.28,40,0
+	.goto Tirisfal Glades,38.72,67.07,40,0
+	.goto Tirisfal Glades,38.59,66.25,40,0
+	.goto Tirisfal Glades,38.65,65.07,40,0
+	.goto Tirisfal Glades,37.62,65.36,40,0
+	.goto Tirisfal Glades,36.93,65.38,40,0
+	.goto Tirisfal Glades,36.51,65.42,40,0
+	.goto Tirisfal Glades,36.85,66.59,40,0
+	.goto Tirisfal Glades,37.45,67.95,40,0
+	.goto Tirisfal Glades,36.93,68.16,40,0
+	.goto Tirisfal Glades,36.13,68.74,40,0
     .xp 5+2350 >>Grind to 2350+/2800xp
 step
     .goto Tirisfal Glades,38.24,56.77

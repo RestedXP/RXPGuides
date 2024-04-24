@@ -231,7 +231,16 @@ step
     .vendor >> Vendor trash
     .target Killian Sanatha
 step
-    .loop 25,Silverpine Forest,37.25,15.99,35.67,16.01,34.96,16.34,33.99,17.24,34.14,15.26,35.06,14.50,35.85,13.83,36.33,14.20
+#loop
+	.line Silverpine Forest,37.25,15.99,35.67,16.01,34.96,16.34,33.99,17.24,34.14,15.26,35.06,14.50,35.85,13.83,36.33,14.20
+	.goto Silverpine Forest,37.25,15.99,25,0
+	.goto Silverpine Forest,35.67,16.01,25,0
+	.goto Silverpine Forest,34.96,16.34,25,0
+	.goto Silverpine Forest,33.99,17.24,25,0
+	.goto Silverpine Forest,34.14,15.26,25,0
+	.goto Silverpine Forest,35.06,14.50,25,0
+	.goto Silverpine Forest,35.85,13.83,25,0
+	.goto Silverpine Forest,36.33,14.20,25,0
     >>Kill |cRXP_ENEMY_Spiders|r. Loot them for their |cRXP_LOOT_Blood|r
     >>|cRXP_WARN_Be careful if|r |cRXP_ENEMY_Krethis Shadowspinner|r |cRXP_WARN_is up, SHE WILL KILL YOU! She has a 130 damage shield on a 15s cooldown, and 110 damage instant shock ability|r
     .complete 447,2 --Skittering Blood (6)
@@ -355,7 +364,24 @@ step
     .unitscan Son of Arugal
 step
     #label Shackles
-    .loop 25,Silverpine Forest,44.22,31.55,43.51,32.38,42.61,31.12,41.28,30.25,39.70,30.24,38.96,29.15,38.28,27.10,37.60,24.16,38.07,23.13,38.56,21.93,39.73,23.26,41.49,23.51,41.14,25.50,41.17,28.26,42.01,29.27,43.83,31.00
+#loop
+	.line Silverpine Forest,44.22,31.55,43.51,32.38,42.61,31.12,41.28,30.25,39.70,30.24,38.96,29.15,38.28,27.10,37.60,24.16,38.07,23.13,38.56,21.93,39.73,23.26,41.49,23.51,41.14,25.50,41.17,28.26,42.01,29.27,43.83,31.00
+	.goto Silverpine Forest,44.22,31.55,25,0
+	.goto Silverpine Forest,43.51,32.38,25,0
+	.goto Silverpine Forest,42.61,31.12,25,0
+	.goto Silverpine Forest,41.28,30.25,25,0
+	.goto Silverpine Forest,39.70,30.24,25,0
+	.goto Silverpine Forest,38.96,29.15,25,0
+	.goto Silverpine Forest,38.28,27.10,25,0
+	.goto Silverpine Forest,37.60,24.16,25,0
+	.goto Silverpine Forest,38.07,23.13,25,0
+	.goto Silverpine Forest,38.56,21.93,25,0
+	.goto Silverpine Forest,39.73,23.26,25,0
+	.goto Silverpine Forest,41.49,23.51,25,0
+	.goto Silverpine Forest,41.14,25.50,25,0
+	.goto Silverpine Forest,41.17,28.26,25,0
+	.goto Silverpine Forest,42.01,29.27,25,0
+	.goto Silverpine Forest,43.83,31.00,25,0
     >>Kill |cRXP_ENEMY_Moonrage Gluttons|r and |cRXP_ENEMY_Moonrage Darksouls|r. Loot them for their |cRXP_LOOT_Shackles|r
     >>|cRXP_WARN_Be careful!|r |cRXP_ENEMY_Moonrage Darksouls|r |cRXP_WARN_enrage when they are below 25% health. Kill them quickly when they are low|r
     .complete 423,1 --Glutton Shackle (6)
@@ -738,7 +764,19 @@ step
     .goto Silverpine Forest,57.90,63.10,120 >> Travel toward Ambermill
     .group
 step
-    .loop 25,Silverpine Forest,57.91,62.48,59.10,61.88,59.79,63.08,60.79,62.55,61.98,62.56,61.00,64.89,60.10,65.93,59.02,67.10,57.56,67.57,57.62,65.17,57.12,63.39
+#loop
+	.line Silverpine Forest,57.91,62.48,59.10,61.88,59.79,63.08,60.79,62.55,61.98,62.56,61.00,64.89,60.10,65.93,59.02,67.10,57.56,67.57,57.62,65.17,57.12,63.39
+	.goto Silverpine Forest,57.91,62.48,25,0
+	.goto Silverpine Forest,59.10,61.88,25,0
+	.goto Silverpine Forest,59.79,63.08,25,0
+	.goto Silverpine Forest,60.79,62.55,25,0
+	.goto Silverpine Forest,61.98,62.56,25,0
+	.goto Silverpine Forest,61.00,64.89,25,0
+	.goto Silverpine Forest,60.10,65.93,25,0
+	.goto Silverpine Forest,59.02,67.10,25,0
+	.goto Silverpine Forest,57.56,67.57,25,0
+	.goto Silverpine Forest,57.62,65.17,25,0
+	.goto Silverpine Forest,57.12,63.39,25,0
     >>Kill |cRXP_ENEMY_Dalaran Protectors|r and |cRXP_ENEMY_Dalaran Mages|r. Loot them for their |cRXP_LOOT_Pendants|r
     .complete 479,1 --Dalaran Pendant (8)
     .mob Dalaran Mage

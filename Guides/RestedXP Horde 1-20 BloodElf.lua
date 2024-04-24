@@ -334,7 +334,14 @@ step
     >>Loot the |cRXP_PICK_Scrying Orb|r on the platform
     .complete 8330,1 --Collect Solanian's Scrying Orb (x1)
 step
-    .loop 40,Eversong Woods,33.92,26.49,33.97,28.55,35.15,29.78,36.52,29.35,35.58,27.42,33.92,26.49
+#loop
+	.line Eversong Woods,33.92,26.49,33.97,28.55,35.15,29.78,36.52,29.35,35.58,27.42,33.92,26.49
+	.goto Eversong Woods,33.92,26.49,40,0
+	.goto Eversong Woods,33.97,28.55,40,0
+	.goto Eversong Woods,35.15,29.78,40,0
+	.goto Eversong Woods,36.52,29.35,40,0
+	.goto Eversong Woods,35.58,27.42,40,0
+	.goto Eversong Woods,33.92,26.49,40,0
     >>Kill |cRXP_ENEMY_Tenders|r and |cRXP_ENEMY_Feral Tenders|r << Warlock tbc
     >>Kill |cRXP_ENEMY_Tenders|r and |cRXP_ENEMY_Feral Tenders|r. Loot |cRXP_ENEMY_Feral Tenders|r for their |cRXP_LOOT_Slivers|r << wotlk
     >>Kill |cRXP_ENEMY_Tenders|r and |cRXP_ENEMY_Feral Tenders|r. Cast |T135738:0|t[Mana Tap] on |cRXP_ENEMY_Feral Tenders|r. Loot |cRXP_ENEMY_Feral Tenders|r for their |cRXP_LOOT_Slivers|r << !Warlock tbc
@@ -575,7 +582,14 @@ step
     .accept 8347 >> Accept Aiding the Outrunners
     .target Lanthan Perilon
 step
-    .loop 40,Eversong Woods,33.92,26.49,33.97,28.55,35.15,29.78,36.52,29.35,35.58,27.42,33.92,26.49
+#loop
+	.line Eversong Woods,33.92,26.49,33.97,28.55,35.15,29.78,36.52,29.35,35.58,27.42,33.92,26.49
+	.goto Eversong Woods,33.92,26.49,40,0
+	.goto Eversong Woods,33.97,28.55,40,0
+	.goto Eversong Woods,35.15,29.78,40,0
+	.goto Eversong Woods,36.52,29.35,40,0
+	.goto Eversong Woods,35.58,27.42,40,0
+	.goto Eversong Woods,33.92,26.49,40,0
     .xp 5+1800 >> Grind to 1800+/2800xp
 step
     #completewith next
@@ -1217,7 +1231,14 @@ step
     .mob Darnassian Scout
     .use 20765
 step
-    .loop 40,Eversong Woods,35.57,61.41,34.41,60.64,35.02,56.58,35.82,58.36,36.20,60.28,35.57,61.41
+#loop
+	.line Eversong Woods,35.57,61.41,34.41,60.64,35.02,56.58,35.82,58.36,36.20,60.28,35.57,61.41
+	.goto Eversong Woods,35.57,61.41,40,0
+	.goto Eversong Woods,34.41,60.64,40,0
+	.goto Eversong Woods,35.02,56.58,40,0
+	.goto Eversong Woods,35.82,58.36,40,0
+	.goto Eversong Woods,36.20,60.28,40,0
+	.goto Eversong Woods,35.57,61.41,40,0
     >>Kill |cRXP_ENEMY_Manawraiths|r and |cRXP_ENEMY_Mana Stalkers|r
     .complete 8486,1 --Kill Manawraith (x5)
     .complete 8486,2 --Kill Mana Stalker (x5)
@@ -1737,7 +1758,16 @@ step << skip
     --VV BloodElf Hunter
 step << skip
     #xprate <1.5
-    .loop 40,Eversong Woods,36.07,83.10,36.21,85.47,33.24,87.69,32.05,87.25,32.63,83.57,33.46,81.99,34.47,83.08,36.07,83.10
+#loop
+	.line Eversong Woods,36.07,83.10,36.21,85.47,33.24,87.69,32.05,87.25,32.63,83.57,33.46,81.99,34.47,83.08,36.07,83.10
+	.goto Eversong Woods,36.07,83.10,40,0
+	.goto Eversong Woods,36.21,85.47,40,0
+	.goto Eversong Woods,33.24,87.69,40,0
+	.goto Eversong Woods,32.05,87.25,40,0
+	.goto Eversong Woods,32.63,83.57,40,0
+	.goto Eversong Woods,33.46,81.99,40,0
+	.goto Eversong Woods,34.47,83.08,40,0
+	.goto Eversong Woods,36.07,83.10,40,0
     >>Kill |cRXP_ENEMY_Withered Green Keepers|r
     >>|cRXP_WARN_Be careful as cast|r |T132282:0|t[Strike], |cRXP_WARN_dealing double damage instantly|r
     .complete 8473,1 --Kill Withered Green Keeper (x10)
@@ -1772,7 +1802,16 @@ step << skip
 step << skip
     #xprate <1.5
     #completewith Sareyn
-    .loop 40,Eversong Woods,36.07,83.10,36.21,85.47,33.24,87.69,32.05,87.25,32.63,83.57,33.46,81.99,34.47,83.08,36.07,83.10
+#loop
+	.line Eversong Woods,36.07,83.10,36.21,85.47,33.24,87.69,32.05,87.25,32.63,83.57,33.46,81.99,34.47,83.08,36.07,83.10
+	.goto Eversong Woods,36.07,83.10,40,0
+	.goto Eversong Woods,36.21,85.47,40,0
+	.goto Eversong Woods,33.24,87.69,40,0
+	.goto Eversong Woods,32.05,87.25,40,0
+	.goto Eversong Woods,32.63,83.57,40,0
+	.goto Eversong Woods,33.46,81.99,40,0
+	.goto Eversong Woods,34.47,83.08,40,0
+	.goto Eversong Woods,36.07,83.10,40,0
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .target Spirit Healer
     --VV BloodElf Hunter
@@ -3038,7 +3077,18 @@ step
     .accept 8894 >> Accept Cleaning up the Grounds
     .target Groundskeeper Wyllithen
 step
-    .loop 40,Eversong Woods,69.15,50.56,70.02,50.62,70.58,48.16,69.97,46.28,69.50,44.69,68.29,43.31,67.61,45.28,67.13,48.48,69.01,48.22,69.15,50.56
+#loop
+	.line Eversong Woods,69.15,50.56,70.02,50.62,70.58,48.16,69.97,46.28,69.50,44.69,68.29,43.31,67.61,45.28,67.13,48.48,69.01,48.22,69.15,50.56
+	.goto Eversong Woods,69.15,50.56,40,0
+	.goto Eversong Woods,70.02,50.62,40,0
+	.goto Eversong Woods,70.58,48.16,40,0
+	.goto Eversong Woods,69.97,46.28,40,0
+	.goto Eversong Woods,69.50,44.69,40,0
+	.goto Eversong Woods,68.29,43.31,40,0
+	.goto Eversong Woods,67.61,45.28,40,0
+	.goto Eversong Woods,67.13,48.48,40,0
+	.goto Eversong Woods,69.01,48.22,40,0
+	.goto Eversong Woods,69.15,50.56,40,0
     >>Kill |cRXP_ENEMY_Mana Serpents|r and |cRXP_ENEMY_Ether Fiends|r
     .complete 8894,1 --Kill Mana Serpent (x6)
     .complete 8894,2 --Kill Ether Fiend (x6)
@@ -3093,7 +3143,18 @@ step
     .cast 26572 >>Click the Orb of Translocation to teleport back down
     .isOnQuest 8889
 step << !BloodElf/!Warlock
-    .loop 40,Eversong Woods,69.15,50.56,70.02,50.62,70.58,48.16,69.97,46.28,69.50,44.69,68.29,43.31,67.61,45.28,67.13,48.48,69.01,48.22,69.15,50.56
+#loop
+	.line Eversong Woods,69.15,50.56,70.02,50.62,70.58,48.16,69.97,46.28,69.50,44.69,68.29,43.31,67.61,45.28,67.13,48.48,69.01,48.22,69.15,50.56
+	.goto Eversong Woods,69.15,50.56,40,0
+	.goto Eversong Woods,70.02,50.62,40,0
+	.goto Eversong Woods,70.58,48.16,40,0
+	.goto Eversong Woods,69.97,46.28,40,0
+	.goto Eversong Woods,69.50,44.69,40,0
+	.goto Eversong Woods,68.29,43.31,40,0
+	.goto Eversong Woods,67.61,45.28,40,0
+	.goto Eversong Woods,67.13,48.48,40,0
+	.goto Eversong Woods,69.01,48.22,40,0
+	.goto Eversong Woods,69.15,50.56,40,0
     .xp 11+6375 >> Grind to 6375+/8700xp
 step
     .goto Eversong Woods,67.80,56.54
@@ -3831,7 +3892,16 @@ step
     .use 23228
     --VV !BloodElf/!Hunter
 step
-    .loop 40,Eversong Woods,36.07,83.10,36.21,85.47,33.24,87.69,32.05,87.25,32.63,83.57,33.46,81.99,34.47,83.08,36.07,83.10
+#loop
+	.line Eversong Woods,36.07,83.10,36.21,85.47,33.24,87.69,32.05,87.25,32.63,83.57,33.46,81.99,34.47,83.08,36.07,83.10
+	.goto Eversong Woods,36.07,83.10,40,0
+	.goto Eversong Woods,36.21,85.47,40,0
+	.goto Eversong Woods,33.24,87.69,40,0
+	.goto Eversong Woods,32.05,87.25,40,0
+	.goto Eversong Woods,32.63,83.57,40,0
+	.goto Eversong Woods,33.46,81.99,40,0
+	.goto Eversong Woods,34.47,83.08,40,0
+	.goto Eversong Woods,36.07,83.10,40,0
     >>Kill |cRXP_ENEMY_Withered Green Keepers|r
     >>|cRXP_WARN_Be careful as they have|r |T132282:0|t[Strike] |cRXP_WARN_which deals double their normal damage|r
     .complete 8473,1 --Kill Withered Green Keeper (x10)
@@ -4327,7 +4397,23 @@ step
     .complete 9315,1 --Kill Anok'suten (x1)
     .unitscan Anok'suten
 step << !Paladin
-    .loop 30,Ghostlands,59.47,12.43,59.83,10.22,58.92,9.19,60.72,9.46,61.74,9.63,62.86,11.04,63.26,9.50,62.76,12.68,63.52,13.39,62.00,14.21,60.70,14.39,60.34,16.13,59.92,13.83,62.86,11.04,59.47,12.43
+#loop
+	.line Ghostlands,59.47,12.43,59.83,10.22,58.92,9.19,60.72,9.46,61.74,9.63,62.86,11.04,63.26,9.50,62.76,12.68,63.52,13.39,62.00,14.21,60.70,14.39,60.34,16.13,59.92,13.83,62.86,11.04,59.47,12.43
+	.goto Ghostlands,59.47,12.43,30,0
+	.goto Ghostlands,59.83,10.22,30,0
+	.goto Ghostlands,58.92,9.19,30,0
+	.goto Ghostlands,60.72,9.46,30,0
+	.goto Ghostlands,61.74,9.63,30,0
+	.goto Ghostlands,62.86,11.04,30,0
+	.goto Ghostlands,63.26,9.50,30,0
+	.goto Ghostlands,62.76,12.68,30,0
+	.goto Ghostlands,63.52,13.39,30,0
+	.goto Ghostlands,62.00,14.21,30,0
+	.goto Ghostlands,60.70,14.39,30,0
+	.goto Ghostlands,60.34,16.13,30,0
+	.goto Ghostlands,59.92,13.83,30,0
+	.goto Ghostlands,62.86,11.04,30,0
+	.goto Ghostlands,59.47,12.43,30,0
     >>Kill |cRXP_ENEMY_Nerubis Guards|r
     .complete 9138,1 --Kill Nerubis Guard (x10)
     .mob Nerubis Guard
@@ -4346,7 +4432,17 @@ step << Paladin
     .complete 9678,1 --Undergo the First Trial
     .mob Sangrias Stillblade
 step << Paladin
-    .loop 30,Ghostlands,68.61,10.24,69.93,9.00,70.52,5.81,69.54,4.65,68.63,4.93,66.76,5.54,66.70,6.58,67.41,9.70,68.61,10.24
+#loop
+	.line Ghostlands,68.61,10.24,69.93,9.00,70.52,5.81,69.54,4.65,68.63,4.93,66.76,5.54,66.70,6.58,67.41,9.70,68.61,10.24
+	.goto Ghostlands,68.61,10.24,30,0
+	.goto Ghostlands,69.93,9.00,30,0
+	.goto Ghostlands,70.52,5.81,30,0
+	.goto Ghostlands,69.54,4.65,30,0
+	.goto Ghostlands,68.63,4.93,30,0
+	.goto Ghostlands,66.76,5.54,30,0
+	.goto Ghostlands,66.70,6.58,30,0
+	.goto Ghostlands,67.41,9.70,30,0
+	.goto Ghostlands,68.61,10.24,30,0
     >>Kill |cRXP_ENEMY_Nerubis Guards|r
     .complete 9138,1 --Kill Nerubis Guard (x10)
     .mob Nerubis Guard
@@ -4361,7 +4457,19 @@ step
     .accept 9157 >> Accept Forgotten Rituals
     .target Geranis Whitemorn
 step
-    .loop 30,Ghostlands,73.64,14.43,73.77,11.83,74.70,11.89,74.75,9.70,75.89,8.49,76.87,8.54,78.20,9.68,77.70,12.61,75.88,10.23,76.00,13.71,73.64,14.43
+#loop
+	.line Ghostlands,73.64,14.43,73.77,11.83,74.70,11.89,74.75,9.70,75.89,8.49,76.87,8.54,78.20,9.68,77.70,12.61,75.88,10.23,76.00,13.71,73.64,14.43
+	.goto Ghostlands,73.64,14.43,30,0
+	.goto Ghostlands,73.77,11.83,30,0
+	.goto Ghostlands,74.70,11.89,30,0
+	.goto Ghostlands,74.75,9.70,30,0
+	.goto Ghostlands,75.89,8.49,30,0
+	.goto Ghostlands,76.87,8.54,30,0
+	.goto Ghostlands,78.20,9.68,30,0
+	.goto Ghostlands,77.70,12.61,30,0
+	.goto Ghostlands,75.88,10.23,30,0
+	.goto Ghostlands,76.00,13.71,30,0
+	.goto Ghostlands,73.64,14.43,30,0
     >>Kill |cRXP_ENEMY_Shadowpine Rippers|r and |cRXP_ENEMY_Shadowpine Witches|r. Loot them for their |cRXP_LOOT_Troll Ears|r
     .complete 9143,1 --Collect Zeb'Sora Troll Ear (x6)
     .mob Shadowpine Ripper
@@ -4671,22 +4779,74 @@ step
     .target Ranger Valanna
 step
     #xprate <1.5
-    .loop 30,Ghostlands,59.47,12.43,59.83,10.22,58.92,9.19,60.72,9.46,61.74,9.63,62.86,11.04,63.26,9.50,62.76,12.68,63.52,13.39,62.00,14.21,60.70,14.39,60.34,16.13,59.92,13.83,62.86,11.04,59.47,12.43
+#loop
+	.line Ghostlands,59.47,12.43,59.83,10.22,58.92,9.19,60.72,9.46,61.74,9.63,62.86,11.04,63.26,9.50,62.76,12.68,63.52,13.39,62.00,14.21,60.70,14.39,60.34,16.13,59.92,13.83,62.86,11.04,59.47,12.43
+	.goto Ghostlands,59.47,12.43,30,0
+	.goto Ghostlands,59.83,10.22,30,0
+	.goto Ghostlands,58.92,9.19,30,0
+	.goto Ghostlands,60.72,9.46,30,0
+	.goto Ghostlands,61.74,9.63,30,0
+	.goto Ghostlands,62.86,11.04,30,0
+	.goto Ghostlands,63.26,9.50,30,0
+	.goto Ghostlands,62.76,12.68,30,0
+	.goto Ghostlands,63.52,13.39,30,0
+	.goto Ghostlands,62.00,14.21,30,0
+	.goto Ghostlands,60.70,14.39,30,0
+	.goto Ghostlands,60.34,16.13,30,0
+	.goto Ghostlands,59.92,13.83,30,0
+	.goto Ghostlands,62.86,11.04,30,0
+	.goto Ghostlands,59.47,12.43,30,0
     .xp 13+10150 >>Grind to 9275+/11000xp
 step << Paladin
     #xprate 1.49-1.58
-    .loop 30,Ghostlands,73.64,14.43,73.77,11.83,74.70,11.89,74.75,9.70,75.89,8.49,76.87,8.54,78.20,9.68,77.70,12.61,75.88,10.23,76.00,13.71,73.64,14.43
+#loop
+	.line Ghostlands,73.64,14.43,73.77,11.83,74.70,11.89,74.75,9.70,75.89,8.49,76.87,8.54,78.20,9.68,77.70,12.61,75.88,10.23,76.00,13.71,73.64,14.43
+	.goto Ghostlands,73.64,14.43,30,0
+	.goto Ghostlands,73.77,11.83,30,0
+	.goto Ghostlands,74.70,11.89,30,0
+	.goto Ghostlands,74.75,9.70,30,0
+	.goto Ghostlands,75.89,8.49,30,0
+	.goto Ghostlands,76.87,8.54,30,0
+	.goto Ghostlands,78.20,9.68,30,0
+	.goto Ghostlands,77.70,12.61,30,0
+	.goto Ghostlands,75.88,10.23,30,0
+	.goto Ghostlands,76.00,13.71,30,0
+	.goto Ghostlands,73.64,14.43,30,0
     .xp 15+8267 >>Grind to 8267+/13600xp
 step << !Rogue
     #xprate 1.59-1.68
-    .loop 30,Ghostlands,73.64,14.43,73.77,11.83,74.70,11.89,74.75,9.70,75.89,8.49,76.87,8.54,78.20,9.68,77.70,12.61,75.88,10.23,76.00,13.71,73.64,14.43
+#loop
+	.line Ghostlands,73.64,14.43,73.77,11.83,74.70,11.89,74.75,9.70,75.89,8.49,76.87,8.54,78.20,9.68,77.70,12.61,75.88,10.23,76.00,13.71,73.64,14.43
+	.goto Ghostlands,73.64,14.43,30,0
+	.goto Ghostlands,73.77,11.83,30,0
+	.goto Ghostlands,74.70,11.89,30,0
+	.goto Ghostlands,74.75,9.70,30,0
+	.goto Ghostlands,75.89,8.49,30,0
+	.goto Ghostlands,76.87,8.54,30,0
+	.goto Ghostlands,78.20,9.68,30,0
+	.goto Ghostlands,77.70,12.61,30,0
+	.goto Ghostlands,75.88,10.23,30,0
+	.goto Ghostlands,76.00,13.71,30,0
+	.goto Ghostlands,73.64,14.43,30,0
     .xp 15+10840 >>Grind to 10840+/13600xp << !Paladin
     .xp 15+7912 >>Grind to 7912+/13600xp << Paladin
     .train 1460,1 << Mage
     .train 6222,1 << Warlock
 step << !Rogue
     #xprate >1.6999
-    .loop 30,Ghostlands,73.64,14.43,73.77,11.83,74.70,11.89,74.75,9.70,75.89,8.49,76.87,8.54,78.20,9.68,77.70,12.61,75.88,10.23,76.00,13.71,73.64,14.43
+#loop
+	.line Ghostlands,73.64,14.43,73.77,11.83,74.70,11.89,74.75,9.70,75.89,8.49,76.87,8.54,78.20,9.68,77.70,12.61,75.88,10.23,76.00,13.71,73.64,14.43
+	.goto Ghostlands,73.64,14.43,30,0
+	.goto Ghostlands,73.77,11.83,30,0
+	.goto Ghostlands,74.70,11.89,30,0
+	.goto Ghostlands,74.75,9.70,30,0
+	.goto Ghostlands,75.89,8.49,30,0
+	.goto Ghostlands,76.87,8.54,30,0
+	.goto Ghostlands,78.20,9.68,30,0
+	.goto Ghostlands,77.70,12.61,30,0
+	.goto Ghostlands,75.88,10.23,30,0
+	.goto Ghostlands,76.00,13.71,30,0
+	.goto Ghostlands,73.64,14.43,30,0
     .xp 15+10668 >>Grind to 10668+/13600xp << !Paladin
     .xp 15+7557 >>Grind to 7557+/13600xp << Paladin
     .train 1460,1 << Mage
@@ -5621,13 +5781,31 @@ step
     >>Travel toward the |cRXP_PICK_Shrine|r
     .complete 9160,2 --Investigate An'daroth
 step
-    .loop 35,Ghostlands,38.21,17.44,36.67,17.00,35.87,14.42,34.77,12.01,35.94,11.58,38.51,13.19,37.50,14.67,38.21,17.44
+#loop
+	.line Ghostlands,38.21,17.44,36.67,17.00,35.87,14.42,34.77,12.01,35.94,11.58,38.51,13.19,37.50,14.67,38.21,17.44
+	.goto Ghostlands,38.21,17.44,35,0
+	.goto Ghostlands,36.67,17.00,35,0
+	.goto Ghostlands,35.87,14.42,35,0
+	.goto Ghostlands,34.77,12.01,35,0
+	.goto Ghostlands,35.94,11.58,35,0
+	.goto Ghostlands,38.51,13.19,35,0
+	.goto Ghostlands,37.50,14.67,35,0
+	.goto Ghostlands,38.21,17.44,35,0
     >>Kill |cRXP_ENEMY_Sentinel Spies|r
     .complete 9160,1 --Kill Sentinel Spy (x12)
     .mob Sentinel Spy
 step
     #xprate <1.5
-    .loop 35,Ghostlands,38.21,17.44,36.67,17.00,35.87,14.42,34.77,12.01,35.94,11.58,38.51,13.19,37.50,14.67,38.21,17.44
+#loop
+	.line Ghostlands,38.21,17.44,36.67,17.00,35.87,14.42,34.77,12.01,35.94,11.58,38.51,13.19,37.50,14.67,38.21,17.44
+	.goto Ghostlands,38.21,17.44,35,0
+	.goto Ghostlands,36.67,17.00,35,0
+	.goto Ghostlands,35.87,14.42,35,0
+	.goto Ghostlands,34.77,12.01,35,0
+	.goto Ghostlands,35.94,11.58,35,0
+	.goto Ghostlands,38.51,13.19,35,0
+	.goto Ghostlands,37.50,14.67,35,0
+	.goto Ghostlands,38.21,17.44,35,0
     .xp 14+5200 >> Grind to 5200+/12300xp
 step << BloodElf Rogue
     .goto Ghostlands,32.97,11.17
@@ -5718,7 +5896,23 @@ step
     .complete 9159,1 --Kill Vampiric Mistbat (x10)
     .mob Vampiric Mistbat
 step
-    .loop 40,Ghostlands,26.17,37.11,24.52,39.78,25.64,42.73,25.18,44.78,27.23,44.19,27.81,42.02,29.30,41.97,31.41,42.20,32.04,43.60,34.11,42.43,35.24,41.73,35.69,38.63,32.27,39.40,29.89,36.61,26.17,37.11
+#loop
+	.line Ghostlands,26.17,37.11,24.52,39.78,25.64,42.73,25.18,44.78,27.23,44.19,27.81,42.02,29.30,41.97,31.41,42.20,32.04,43.60,34.11,42.43,35.24,41.73,35.69,38.63,32.27,39.40,29.89,36.61,26.17,37.11
+	.goto Ghostlands,26.17,37.11,40,0
+	.goto Ghostlands,24.52,39.78,40,0
+	.goto Ghostlands,25.64,42.73,40,0
+	.goto Ghostlands,25.18,44.78,40,0
+	.goto Ghostlands,27.23,44.19,40,0
+	.goto Ghostlands,27.81,42.02,40,0
+	.goto Ghostlands,29.30,41.97,40,0
+	.goto Ghostlands,31.41,42.20,40,0
+	.goto Ghostlands,32.04,43.60,40,0
+	.goto Ghostlands,34.11,42.43,40,0
+	.goto Ghostlands,35.24,41.73,40,0
+	.goto Ghostlands,35.69,38.63,40,0
+	.goto Ghostlands,32.27,39.40,40,0
+	.goto Ghostlands,29.89,36.61,40,0
+	.goto Ghostlands,26.17,37.11,40,0
     >>Kill |cRXP_ENEMY_Spindleweb Lurkers|r. Loot them for their |cRXP_LOOT_Spider Legs|r
     >>|cRXP_WARN_Be careful of their|r |T136016:0|t[Poison]
     .complete 9159,2 --Kill Spindleweb Lurker (x8)
@@ -5727,7 +5921,23 @@ step
     .itemcount 22644,<5
 step
     #label SLurker
-    .loop 40,Ghostlands,26.17,37.11,24.52,39.78,25.64,42.73,25.18,44.78,27.23,44.19,27.81,42.02,29.30,41.97,31.41,42.20,32.04,43.60,34.11,42.43,35.24,41.73,35.69,38.63,32.27,39.40,29.89,36.61,26.17,37.11
+#loop
+	.line Ghostlands,26.17,37.11,24.52,39.78,25.64,42.73,25.18,44.78,27.23,44.19,27.81,42.02,29.30,41.97,31.41,42.20,32.04,43.60,34.11,42.43,35.24,41.73,35.69,38.63,32.27,39.40,29.89,36.61,26.17,37.11
+	.goto Ghostlands,26.17,37.11,40,0
+	.goto Ghostlands,24.52,39.78,40,0
+	.goto Ghostlands,25.64,42.73,40,0
+	.goto Ghostlands,25.18,44.78,40,0
+	.goto Ghostlands,27.23,44.19,40,0
+	.goto Ghostlands,27.81,42.02,40,0
+	.goto Ghostlands,29.30,41.97,40,0
+	.goto Ghostlands,31.41,42.20,40,0
+	.goto Ghostlands,32.04,43.60,40,0
+	.goto Ghostlands,34.11,42.43,40,0
+	.goto Ghostlands,35.24,41.73,40,0
+	.goto Ghostlands,35.69,38.63,40,0
+	.goto Ghostlands,32.27,39.40,40,0
+	.goto Ghostlands,29.89,36.61,40,0
+	.goto Ghostlands,26.17,37.11,40,0
     >>Kill |cRXP_ENEMY_Spindleweb Lurkers|r
     >>|cRXP_WARN_Be careful of their|r |T136016:0|t[Poison]
     .complete 9159,2 --Kill Spindleweb Lurker (x8)
@@ -7079,7 +7289,15 @@ step
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Darnassian Huntresses|r cast|r |T132282:0|t[Strike] |cRXP_WARN_(Instant cast attack dealing double damage)|r
     .complete 9163,3 --Collect Night Elf Plans: Scrying on the Sin'dorei (x1)
 step << Priest/Druid/Rogue/Paladin
-    .loop 30,Ghostlands,14.71,26.66,13.06,26.15,11.63,26.63,12.51,24.81,9.43,23.77,10.47,22.51,14.71,26.66
+#loop
+	.line Ghostlands,14.71,26.66,13.06,26.15,11.63,26.63,12.51,24.81,9.43,23.77,10.47,22.51,14.71,26.66
+	.goto Ghostlands,14.71,26.66,30,0
+	.goto Ghostlands,13.06,26.15,30,0
+	.goto Ghostlands,11.63,26.63,30,0
+	.goto Ghostlands,12.51,24.81,30,0
+	.goto Ghostlands,9.43,23.77,30,0
+	.goto Ghostlands,10.47,22.51,30,0
+	.goto Ghostlands,14.71,26.66,30,0
     .xp 15+10600 >> Grind to 10600+/13600
 step
     #completewith WindrunnerV
@@ -7882,7 +8100,19 @@ step
     .complete 9193,2 --Investigate the Amani Catacombs
 step
     #label TrollR1
-    .loop 12,Ghostlands,62.60,31.00,62.41,31.34,62.32,31.81,62.41,32.23,62.63,32.56,63.22,32.55,63.44,32.18,63.50,31.74,63.43,31.29,63.21,30.98,62.60,31.00
+#loop
+	.line Ghostlands,62.60,31.00,62.41,31.34,62.32,31.81,62.41,32.23,62.63,32.56,63.22,32.55,63.44,32.18,63.50,31.74,63.43,31.29,63.21,30.98,62.60,31.00
+	.goto Ghostlands,62.60,31.00,12,0
+	.goto Ghostlands,62.41,31.34,12,0
+	.goto Ghostlands,62.32,31.81,12,0
+	.goto Ghostlands,62.41,32.23,12,0
+	.goto Ghostlands,62.63,32.56,12,0
+	.goto Ghostlands,63.22,32.55,12,0
+	.goto Ghostlands,63.44,32.18,12,0
+	.goto Ghostlands,63.50,31.74,12,0
+	.goto Ghostlands,63.43,31.29,12,0
+	.goto Ghostlands,63.21,30.98,12,0
+	.goto Ghostlands,62.60,31.00,12,0
     >>Click the |cRXP_PICK_Mummified Troll Remains|r on the ground to burn them
     >>|cRXP_WARN_Do NOT talk to|r |cRXP_FRIENDLY_Lilatha|r |cRXP_WARN_yet|r
     >>|cRXP_WARN_Check the main room if the Bonfire room has no remains left|r
@@ -8302,7 +8532,25 @@ step
     .complete 9275,2 --Poison the Smoked Meat Rack (x1)
 step
     #xprate <1.5
-    .loop 50,Ghostlands,61.16,75.58,60.28,73.66,61.68,71.27,61.81,71.16,61.46,68.82,64.27,73.63,64.34,73.03,61.46,73.38,64.22,73.82,63.93,73.70,63.90,72.99,64.87,70.28,65.31,70.32,64.70,67.70,65.42,66.39,64.66,64.07,61.16,75.58
+#loop
+	.line Ghostlands,61.16,75.58,60.28,73.66,61.68,71.27,61.81,71.16,61.46,68.82,64.27,73.63,64.34,73.03,61.46,73.38,64.22,73.82,63.93,73.70,63.90,72.99,64.87,70.28,65.31,70.32,64.70,67.70,65.42,66.39,64.66,64.07,61.16,75.58
+	.goto Ghostlands,61.16,75.58,50,0
+	.goto Ghostlands,60.28,73.66,50,0
+	.goto Ghostlands,61.68,71.27,50,0
+	.goto Ghostlands,61.81,71.16,50,0
+	.goto Ghostlands,61.46,68.82,50,0
+	.goto Ghostlands,64.27,73.63,50,0
+	.goto Ghostlands,64.34,73.03,50,0
+	.goto Ghostlands,61.46,73.38,50,0
+	.goto Ghostlands,64.22,73.82,50,0
+	.goto Ghostlands,63.93,73.70,50,0
+	.goto Ghostlands,63.90,72.99,50,0
+	.goto Ghostlands,64.87,70.28,50,0
+	.goto Ghostlands,65.31,70.32,50,0
+	.goto Ghostlands,64.70,67.70,50,0
+	.goto Ghostlands,65.42,66.39,50,0
+	.goto Ghostlands,64.66,64.07,50,0
+	.goto Ghostlands,61.16,75.58,50,0
     .xp 18 >> Grind to level 18
 step
     #completewith next
@@ -8400,7 +8648,16 @@ step
     .mob Shadowpine Catlord
     .mob Shadowpine Hexxer
 step
-    .loop 30,Ghostlands,57.70,67.55,58.19,67.07,58.89,65.55,58.37,62.88,57.24,63.00,56.35,65.01,56.49,68.12,57.70,67.55
+#loop
+	.line Ghostlands,57.70,67.55,58.19,67.07,58.89,65.55,58.37,62.88,57.24,63.00,56.35,65.01,56.49,68.12,57.70,67.55
+	.goto Ghostlands,57.70,67.55,30,0
+	.goto Ghostlands,58.19,67.07,30,0
+	.goto Ghostlands,58.89,65.55,30,0
+	.goto Ghostlands,58.37,62.88,30,0
+	.goto Ghostlands,57.24,63.00,30,0
+	.goto Ghostlands,56.35,65.01,30,0
+	.goto Ghostlands,56.49,68.12,30,0
+	.goto Ghostlands,57.70,67.55,30,0
     >>Kill |cRXP_ENEMY_Sentinel Infiltrators|r. Loot them for the |cRXP_LOOT_Controlling Orb|r
     .collect 23191,1,9169,1 --Collect Crystal Controlling Orb (x1)
     .mob Sentinel Infiltrator

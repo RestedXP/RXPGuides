@@ -117,7 +117,13 @@ step
     .goto 864,37.5,33.27,30,0
     .goto 864,38.1,34.45,30,0
     .goto 864,39.11,35.56,15,0
-    .loop 30,864,36.94,33.05,37.5,33.27,38.1,34.45,37.69,35.66,36.91,34.85
+#loop
+	.line 864,36.94,33.05,37.5,33.27,38.1,34.45,37.69,35.66,36.91,34.85
+	.goto 864,36.94,33.05,30,0
+	.goto 864,37.50,33.27,30,0
+	.goto 864,38.10,34.45,30,0
+	.goto 864,37.69,35.66,30,0
+	.goto 864,36.91,34.85,30,0
     .complete 51170,2 --15/15 Sethrak forces slain
     .mob Sethrak Raider
     .mob Sethrak Mender
@@ -184,7 +190,12 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick |cRXP_PICK_Prickly Pear|r on the Ground.
     .complete 51350,1,8 --8/8 Prickly Pear Root
 step
-    .loop 15,864,40.2,40.58,39.6,42.03,40.96,42.31,41.95,41.24
+#loop
+	.line 864,40.2,40.58,39.6,42.03,40.96,42.31,41.95,41.24
+	.goto 864,40.20,40.58,15,0
+	.goto 864,39.60,42.03,15,0
+	.goto 864,40.96,42.31,15,0
+	.goto 864,41.95,41.24,15,0
     >>Kill |cRXP_ENEMY_Saltspine Krolusks|r and loot them for their |T132274:0|t|cRXP_LOOT_[Barb|r
     .complete 51351,1 --8/8 Saltspine Barb
 step
@@ -296,7 +307,12 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Spire|r
     .complete 51394,3,2 --2/2 Spires shattered
 step
-    .loop 30,864,28.97,54.75,30.43,54.54,30.01,51.35,29.02,51.91
+#loop
+	.line 864,28.97,54.75,30.43,54.54,30.01,51.35,29.02,51.91
+	.goto 864,28.97,54.75,30,0
+	.goto 864,30.43,54.54,30,0
+	.goto 864,30.01,51.35,30,0
+	.goto 864,29.02,51.91,30,0
     >>Kill |cRXP_ENEMY_Faithless|r
     .complete 51391,1 --12/12 Faithless slain
     .mob Faithless Warden
@@ -528,7 +544,13 @@ step
     .goto 863,32.3,46.15,10,0
     .goto 863,32.12,47.34,10,0
     .goto 863,31.69,48.19,10,0
-    .loop 15,863,31.52,46.14,31.82,45.6,32.3,46.15,32.12,47.34,31.69,48.19
+#loop
+	.line 863,31.52,46.14,31.82,45.6,32.3,46.15,32.12,47.34,31.69,48.19
+	.goto 863,31.52,46.14,15,0
+	.goto 863,31.82,45.60,15,0
+	.goto 863,32.30,46.15,15,0
+	.goto 863,32.12,47.34,15,0
+	.goto 863,31.69,48.19,15,0
     >>Kill |cRXP_ENEMY_Zalamar Zealots|r
     .complete 51168,1 --10/10 Zalamar Zealot slain
     .mob Zalamar Zealot
@@ -601,7 +623,13 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_vase|r in the |cFFfa9602open world.|r
     .complete 51280,1,8 --8/8 Offering to G'huun destroyed
 step
-    .loop 30,863,46.17,52.43,48.65,52.43,45.50,59.64,45.8,53.58,47.33,51.20
+#loop
+	.line 863,46.17,52.43,48.65,52.43,45.50,59.64,45.8,53.58,47.33,51.20
+	.goto 863,46.17,52.43,30,0
+	.goto 863,48.65,52.43,30,0
+	.goto 863,45.50,59.64,30,0
+	.goto 863,45.80,53.58,30,0
+	.goto 863,47.33,51.20,30,0
     >>Kill |cRXP_ENEMY_Nazmani trolls|r
     .complete 51279,1 --15/15 Nazmani troll slain
     .mob Nazmani Warrior
@@ -1001,7 +1029,10 @@ step
     |cRXP_WARN_Kill the remaining Zandalari and Forsakens|r
     .complete 51193,1 --1/1 Degdod's Hammer
 step
-    .loop 15,862,80.71,52.64;79.85,53.56,80.82,55.67,82.23,54.63
+#loop
+	.line 862,80.71,52.64;79.85,53.56,80.82,55.67,82.23,54.63
+	.goto 862,80.71,80.82,15,0
+	.goto 862,53.56,82.23,15,0
     >>Kill |cRXP_ENEMY_Zandalari|r and |cRXP_ENEMY_Forsakens.|r
     .complete 51190,2 --8/8 Zandalari slain
     .complete 51190,1 --8/8 Forsaken slain
@@ -1343,7 +1374,12 @@ step
     .cast 6478 >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Zandalari Water Jug|r
     >>|cRXP_WARN_manually skip this step if the quest is complete.|r
 step
-    .loop 15,864,40.02,76.13,40.73,76.73,41.12,76.11,41.12,73.76
+#loop
+	.line 864,40.02,76.13,40.73,76.73,41.12,76.11,41.12,73.76
+	.goto 864,40.02,76.13,15,0
+	.goto 864,40.73,76.73,15,0
+	.goto 864,41.12,76.11,15,0
+	.goto 864,41.12,73.76,15,0
     >>Kill |cRXP_ENEMY_Zandalari Exile|r
     .complete 52034,1 --12/12 Zandalari Exile slain
     .mob Zandalari Exile
@@ -1540,7 +1576,12 @@ step
     .complete 52156,1,6 --6/6 Tortollan captive rescued
     .target Tortollan Captive
 step
-    .loop 15,863,60.76,26.64,61.98,27.78,63.06,26.52,62.95,24.34
+#loop
+	.line 863,60.76,26.64,61.98,27.78,63.06,26.52,62.95,24.34
+	.goto 863,60.76,26.64,15,0
+	.goto 863,61.98,27.78,15,0
+	.goto 863,63.06,26.52,15,0
+	.goto 863,62.95,24.34,15,0
     >>Kill |cRXP_ENEMY_Blood Crawgs|r, |cRXP_ENEMY_Loa-Gutter Scavengers|r and |cRXP_ENEMY_Crawg Riders|r
     .complete 52158,1 --15/15 Blood trolls and allies slain
     .mob Blood Crawgs
@@ -1742,13 +1783,25 @@ step
     .mob Bilgewater Boomer
     .mob Bilgewater Driller
 step
-    .loop 25,862,34.9,69.06,34.52,70.6,33.88,71.61,36.89,71.35,35.8,72.14
+#loop
+	.line 862,34.9,69.06,34.52,70.6,33.88,71.61,36.89,71.35,35.8,72.14
+	.goto 862,34.90,69.06,25,0
+	.goto 862,34.52,70.60,25,0
+	.goto 862,33.88,71.61,25,0
+	.goto 862,36.89,71.35,25,0
+	.goto 862,35.80,72.14,25,0
     >>Kill |cRXP_ENEMY_Bilgewater Fracker|r or |TInterface/cursor/crosshair/interact.blp:20|tClick them.
     .complete 52204,1 --4/4 Bilgewater Fracker destroyed
     .use 161422
     .mob Bilgewater Fracker
 step
-    .loop 25,862,34.9,69.06,34.52,70.6,33.88,71.61,36.89,71.35,35.8,72.14
+#loop
+	.line 862,34.9,69.06,34.52,70.6,33.88,71.61,36.89,71.35,35.8,72.14
+	.goto 862,34.90,69.06,25,0
+	.goto 862,34.52,70.60,25,0
+	.goto 862,33.88,71.61,25,0
+	.goto 862,36.89,71.35,25,0
+	.goto 862,35.80,72.14,25,0
     >>Kill |cRXP_ENEMY_Goblin|r
     .complete 52205,1 --12/12 Bilgewater goblin slain
     .mob Bilgewater Hauler
@@ -2440,7 +2493,12 @@ step
     .timer 30, Okri Putterwrench RP
 step
     #completewith Emma
-    .loop 15,895,43.39,27.88,42.99,27.00,42.35,26.56,41.84,27.37
+#loop
+	.line 895,43.39,27.88,42.99,27.00,42.35,26.56,41.84,27.37
+	.goto 895,43.39,27.88,15,0
+	.goto 895,42.99,27.00,15,0
+	.goto 895,42.35,26.56,15,0
+	.goto 895,41.84,27.37,15,0
     >>Kill |cRXP_ENEMY_Invading Shaman|r and |cRXP_ENEMY_Invading Berserker|r
     .complete 53910,1 --Defeat Axe Throwers and Berserkers (100%)
     .mob Invading Shaman
@@ -2499,7 +2557,12 @@ step
     .mob Horde Bombardier
 step
     .goto 895,41.54,27.08,20,0
-    .loop 15,895,43.39,27.88,42.99,27.00,42.35,26.56,41.84,27.37
+#loop
+	.line 895,43.39,27.88,42.99,27.00,42.35,26.56,41.84,27.37
+	.goto 895,43.39,27.88,15,0
+	.goto 895,42.99,27.00,15,0
+	.goto 895,42.35,26.56,15,0
+	.goto 895,41.84,27.37,15,0
     >>Kill |cRXP_ENEMY_Invading Shaman|r and |cRXP_ENEMY_Invading Berserker|r
     .complete 53910,1 --Defeat Axe Throwers and Berserkers (100%)
     .mob Invading Shaman
@@ -2613,7 +2676,15 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Gunpowder Keg|r
     .complete 53978,1,6 --6/6 Gunpowder Keg Collected
 step
-    .loop 20,895,37.50,24.89,38.43,25.65,39.11,25.3,39.53,26.75,39.89,26.28,40.31,26.39,40.46,26.84
+#loop
+	.line 895,37.50,24.89,38.43,25.65,39.11,25.3,39.53,26.75,39.89,26.28,40.31,26.39,40.46,26.84
+	.goto 895,37.50,24.89,20,0
+	.goto 895,38.43,25.65,20,0
+	.goto 895,39.11,25.30,20,0
+	.goto 895,39.53,26.75,20,0
+	.goto 895,39.89,26.28,20,0
+	.goto 895,40.31,26.39,20,0
+	.goto 895,40.46,26.84,20,0
     >>Kill |cRXP_ENEMY_Invading Blight Specialist|r and loot them for |T133145:0|t|cRXP_LOOT_Blight Specialist Mask|r
     .complete 54787,1 --4/4 Blight Specialist Mask collected
     .mob Invading Blight Specialist
@@ -2821,7 +2892,12 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Cage|r
     .complete 54197,1,8 --8/8 Da'kani Highbrow freed
 step
-    .loop 15,862,48.06,52.3,48.14,51.29,47.7,52.07,47.09,52.12
+#loop
+	.line 862,48.06,52.3,48.14,51.29,47.7,52.07,47.09,52.12
+	.goto 862,48.06,52.30,15,0
+	.goto 862,48.14,51.29,15,0
+	.goto 862,47.70,52.07,15,0
+	.goto 862,47.09,52.12,15,0
     >>Kill |cRXP_ENEMY_Bilgewater Poacher|r
     .complete 54196,1 --12/12 Bilgewater Poacher slain
     .mob Bilgewater Poacher
@@ -2918,7 +2994,12 @@ step
     >>|cRXP_WARN_Don't pick up the |cRXP_PICK_Azerite Infused Ore.|r|r
     .complete 54201,1,12 --12/12 Azerite Infused Ore
 step
-    .loop 20,862,35.33,72.67,34.45,71.86,33.65,70.29,34.74,69.39
+#loop
+	.line 862,35.33,72.67,34.45,71.86,33.65,70.29,34.74,69.39
+	.goto 862,35.33,72.67,20,0
+	.goto 862,34.45,71.86,20,0
+	.goto 862,33.65,70.29,20,0
+	.goto 862,34.74,69.39,20,0
     >>|cRXP_WARN_Bilgewater Fracker might not work|r
     >>Kill |cRXP_ENEMY_Bilgewater enemies|r, click to calibrate them.
     .complete 54202,1 --10/10 Embiggifier Core calibrated
@@ -2969,7 +3050,12 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Void Portal|r
     .complete 54204,1 --1/1 Umbric's portal used
 step
-    .loop 15,862,49.76,41.46,50.05,43.08,49.1,43.03,49.79,40.57
+#loop
+	.line 862,49.76,41.46,50.05,43.08,49.1,43.03,49.79,40.57
+	.goto 862,49.76,41.46,15,0
+	.goto 862,50.05,43.08,15,0
+	.goto 862,49.10,43.03,15,0
+	.goto 862,49.79,40.57,15,0
     >>Use |T463836:0|t(1) to leap a distance, also deals damage.
     >>Use |T1058933:0|t(2) to deal damage around you.
     >>Use |T236164:0|t(3) to deal damage infront of you.
@@ -3231,7 +3317,12 @@ step
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Mole Machine.|r
     .complete 54404,1,3 --3/3 Mole machines signalled
 step
-    .loop 15,863,33.89,48.39,34.27,47.04,32.24,46.33,32.06,44.15
+#loop
+	.line 863,33.89,48.39,34.27,47.04,32.24,46.33,32.06,44.15
+	.goto 863,33.89,48.39,15,0
+	.goto 863,34.27,47.04,15,0
+	.goto 863,32.24,46.33,15,0
+	.goto 863,32.06,44.15,15,0
     >>Kill |cRXP_ENEMY_Blood trolls.|r
     .complete 54310,1 --12/12 Defeat blood trolls within Zalamar
     .mob Warspawn Rider
@@ -3326,7 +3417,12 @@ step
     .complete 54421,1,3 --3/3 Resting Battlebeast tamed
     .mob Resting Battlebeast
 step
-    .loop 20,863,48.76,79.98,48.79,76.91,46.79,76.32,45.97,78.32
+#loop
+	.line 863,48.76,79.98,48.79,76.91,46.79,76.32,45.97,78.32
+	.goto 863,48.76,79.98,20,0
+	.goto 863,48.79,76.91,20,0
+	.goto 863,46.79,76.32,20,0
+	.goto 863,45.97,78.32,20,0
     >>Kill |cRXP_ENEMY_Zandalari|r
     .complete 54417,1 --12/12 Zandalari slain
     .mob Zandalari Witch Doctor

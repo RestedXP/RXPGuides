@@ -1116,7 +1116,16 @@ step << Warlock
     .mob Frostmane Shadowcaster
     .train 425477,1
 step << Warlock
-    .loop 10,Dun Morogh,42.57,54.80,41.89,54.51,42.13,52.68,42.46,51.96,41.91,51.43,42.46,51.96,42.13,52.68,42.57,54.80
+#loop
+	.line Dun Morogh,42.57,54.80,41.89,54.51,42.13,52.68,42.46,51.96,41.91,51.43,42.46,51.96,42.13,52.68,42.57,54.80
+	.goto Dun Morogh,42.57,54.80,10,0
+	.goto Dun Morogh,41.89,54.51,10,0
+	.goto Dun Morogh,42.13,52.68,10,0
+	.goto Dun Morogh,42.46,51.96,10,0
+	.goto Dun Morogh,41.91,51.43,10,0
+	.goto Dun Morogh,42.46,51.96,10,0
+	.goto Dun Morogh,42.13,52.68,10,0
+	.goto Dun Morogh,42.57,54.80,10,0
     >>Kill |cRXP_ENEMY_Young Wendigos|r and |cRXP_ENEMY_Wendigos|r. Loot them for their |cRXP_LOOT_Wendigo Blood|r
     .collect 208140,1 -- Wendigo Blood (1)
     .mob Young Wendigo

@@ -927,7 +927,19 @@ step
     .train 403475,1
 step
     #season 2
-    .loop 25,Mulgore,34.08,43.71,32.98,42.96,31.72,43.08,31.08,42.09,31.12,40.87,31.74,40.31,32.44,41.17,33.57,41.30,33.82,40.26,34.48,41.21,34.50,42.29
+#loop
+	.line Mulgore,34.08,43.71,32.98,42.96,31.72,43.08,31.08,42.09,31.12,40.87,31.74,40.31,32.44,41.17,33.57,41.30,33.82,40.26,34.48,41.21,34.50,42.29
+	.goto Mulgore,34.08,43.71,25,0
+	.goto Mulgore,32.98,42.96,25,0
+	.goto Mulgore,31.72,43.08,25,0
+	.goto Mulgore,31.08,42.09,25,0
+	.goto Mulgore,31.12,40.87,25,0
+	.goto Mulgore,31.74,40.31,25,0
+	.goto Mulgore,32.44,41.17,25,0
+	.goto Mulgore,33.57,41.30,25,0
+	.goto Mulgore,33.82,40.26,25,0
+	.goto Mulgore,34.48,41.21,25,0
+	.goto Mulgore,34.50,42.29,25,0
     >>Kill |cRXP_ENEMY_Windfury Wind Witches|r and |cRXP_ENEMY_Windfury Harpies|r. Loot them for a |cRXP_LOOT_Severed Harpy Head|r
     .collect 206995,1 ---Severed Harpy Head (1)
     .mob Windfury Wind Witch
@@ -935,7 +947,18 @@ step
     .train 403475,1
 step
     #season 2
-    .loop 25,Mulgore,59.85,25.62,61.14,22.93,61.77,22.49,62.18,22.05,62.32,20.89,61.62,19.50,60.44,19.50,60.16,21.06,60.41,21.96,61.12,22.88
+#loop
+	.line Mulgore,59.85,25.62,61.14,22.93,61.77,22.49,62.18,22.05,62.32,20.89,61.62,19.50,60.44,19.50,60.16,21.06,60.41,21.96,61.12,22.88
+	.goto Mulgore,59.85,25.62,25,0
+	.goto Mulgore,61.14,22.93,25,0
+	.goto Mulgore,61.77,22.49,25,0
+	.goto Mulgore,62.18,22.05,25,0
+	.goto Mulgore,62.32,20.89,25,0
+	.goto Mulgore,61.62,19.50,25,0
+	.goto Mulgore,60.44,19.50,25,0
+	.goto Mulgore,60.16,21.06,25,0
+	.goto Mulgore,60.41,21.96,25,0
+	.goto Mulgore,61.12,22.88,25,0
     >>Kill |cRXP_ENEMY_Bristleback Interlopers|r. Loot them for a |cRXP_LOOT_Severed Quilboar Head|r
     .collect 206994,1 ---Severed Quilboar Head (1)
     .mob Bristleback Interloper

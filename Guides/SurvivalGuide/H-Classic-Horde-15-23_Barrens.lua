@@ -235,7 +235,19 @@ step
     .accept 819 >> Accept Chen's Empty Keg
 step << !Tauren !Hunter !Shaman
     #label DisruptTheAttacks
-    .loop 25,The Barrens,53.63,24.50,54.26,24.64,54.81,25.19,55.50,25.61,55.86,26.3,55.83,27.15,55.41,27.41,54.50,26.97,54.05,26.11,53.51,25.24,53.63,24.50
+#loop
+	.line The Barrens,53.63,24.50,54.26,24.64,54.81,25.19,55.50,25.61,55.86,26.3,55.83,27.15,55.41,27.41,54.50,26.97,54.05,26.11,53.51,25.24,53.63,24.50
+	.goto The Barrens,53.63,24.50,25,0
+	.goto The Barrens,54.26,24.64,25,0
+	.goto The Barrens,54.81,25.19,25,0
+	.goto The Barrens,55.50,25.61,25,0
+	.goto The Barrens,55.86,26.30,25,0
+	.goto The Barrens,55.83,27.15,25,0
+	.goto The Barrens,55.41,27.41,25,0
+	.goto The Barrens,54.50,26.97,25,0
+	.goto The Barrens,54.05,26.11,25,0
+	.goto The Barrens,53.51,25.24,25,0
+	.goto The Barrens,53.63,24.50,25,0
     >>Kill |cRXP_ENEMY_Water Seekers|r, |cRXP_ENEMY_Thornweavers|r and |cRXP_ENEMY_Hunters|r
     .complete 871,1 --Razormane Water Seeker (8)
     .complete 871,2 --Razormane Thornweaver (8)
@@ -644,7 +656,21 @@ step
     >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r. It has multiple spawn locations
     .complete 5041,1 --Crossroads' Supply Crates (1)
 step
-    .loop 25,The Barrens,59.37,25.38,59.63,24.46,59.63,23.88,59.06,23.89,58.62,23.98,57.83,24.28,56.87,24.55,56.74,25.37,57.25,25.46,57.52,25.63,57.65,25.08,58.24,24.98,58.90,25.37
+#loop
+	.line The Barrens,59.37,25.38,59.63,24.46,59.63,23.88,59.06,23.89,58.62,23.98,57.83,24.28,56.87,24.55,56.74,25.37,57.25,25.46,57.52,25.63,57.65,25.08,58.24,24.98,58.90,25.37
+	.goto The Barrens,59.37,25.38,25,0
+	.goto The Barrens,59.63,24.46,25,0
+	.goto The Barrens,59.63,23.88,25,0
+	.goto The Barrens,59.06,23.89,25,0
+	.goto The Barrens,58.62,23.98,25,0
+	.goto The Barrens,57.83,24.28,25,0
+	.goto The Barrens,56.87,24.55,25,0
+	.goto The Barrens,56.74,25.37,25,0
+	.goto The Barrens,57.25,25.46,25,0
+	.goto The Barrens,57.52,25.63,25,0
+	.goto The Barrens,57.65,25.08,25,0
+	.goto The Barrens,58.24,24.98,25,0
+	.goto The Barrens,58.90,25.37,25,0
     >>Kill |cRXP_ENEMY_Razormane Geomancers|r and |cRXP_ENEMY_Razormane Defenders|r
     .complete 872,1 --Razormane Geomancer (8)
     .complete 872,2 --Razormane Defender (8)
@@ -1484,7 +1510,18 @@ step
     .mob Venture Co. Drudger
     .mob Overseer Glibby
 step
-    .loop 25,The Barrens,55.50,7.98,55.60,8.85,56.04,9.79,56.68,8.82,57.17,9.08,57.61,8.41,57.31,7.20,56.72,6.92,56.17,6.80,55.69,6.94
+#loop
+	.line The Barrens,55.50,7.98,55.60,8.85,56.04,9.79,56.68,8.82,57.17,9.08,57.61,8.41,57.31,7.20,56.72,6.92,56.17,6.80,55.69,6.94
+	.goto The Barrens,55.50,7.98,25,0
+	.goto The Barrens,55.60,8.85,25,0
+	.goto The Barrens,56.04,9.79,25,0
+	.goto The Barrens,56.68,8.82,25,0
+	.goto The Barrens,57.17,9.08,25,0
+	.goto The Barrens,57.61,8.41,25,0
+	.goto The Barrens,57.31,7.20,25,0
+	.goto The Barrens,56.72,6.92,25,0
+	.goto The Barrens,56.17,6.80,25,0
+	.goto The Barrens,55.69,6.94,25,0
     >>Loot |cRXP_PICK_Tool Buckets|r from the ground around The Sludge Ven.
     .complete 3922,1 --Nugget Slugs (15)
 step
@@ -1531,7 +1568,25 @@ step
     .mob Sunscale Screecher
     .mob Sunscale Scytheclaw
 step
-    .loop 25,The Barrens,40.28,15.49,39.50,14.68,39.47,13.24,38.94,12.80,38.18,12.56,37.96,13.52,38.62,13.95,38.18,14.62,38.14,15.59,37.29,15.68,37.24,16.26,37.67,16.34,38.35,17.08,38.83,17.71,39.37,17.21,39.87,16.66,40.15,15.98
+#loop
+	.line The Barrens,40.28,15.49,39.50,14.68,39.47,13.24,38.94,12.80,38.18,12.56,37.96,13.52,38.62,13.95,38.18,14.62,38.14,15.59,37.29,15.68,37.24,16.26,37.67,16.34,38.35,17.08,38.83,17.71,39.37,17.21,39.87,16.66,40.15,15.98
+	.goto The Barrens,40.28,15.49,25,0
+	.goto The Barrens,39.50,14.68,25,0
+	.goto The Barrens,39.47,13.24,25,0
+	.goto The Barrens,38.94,12.80,25,0
+	.goto The Barrens,38.18,12.56,25,0
+	.goto The Barrens,37.96,13.52,25,0
+	.goto The Barrens,38.62,13.95,25,0
+	.goto The Barrens,38.18,14.62,25,0
+	.goto The Barrens,38.14,15.59,25,0
+	.goto The Barrens,37.29,15.68,25,0
+	.goto The Barrens,37.24,16.26,25,0
+	.goto The Barrens,37.67,16.34,25,0
+	.goto The Barrens,38.35,17.08,25,0
+	.goto The Barrens,38.83,17.71,25,0
+	.goto The Barrens,39.37,17.21,25,0
+	.goto The Barrens,39.87,16.66,25,0
+	.goto The Barrens,40.15,15.98,25,0
     >>Kill |cRXP_ENEMY_Witchwing Slayers|r. Loot them for their |cRXP_LOOT_Rings|r
     >>|cRXP_WARN_Be careful!|r |cRXP_ENEMY_Witchwing Slayers|r |cRXP_WARN_can execute. Stay above 20% health|r
     >>|cRXP_WARN_Watch out for|r |cRXP_ENEMY_Witchwing Ambushers|r|cRXP_WARN_. They are stealthed and patrol in the area|r
@@ -1928,7 +1983,21 @@ step
     .abandon 6541 >> Abandon Report to Kadrak
     .isOnQuest 6541
 step
-    .loop 25,Stonetalon Mountains,80.62,89.99,79.79,88.75,81.19,87.56,81.70,86.44,82.26,86.10,82.55,85.22,83.64,85.02,84.20,85.20,83.80,86.38,83.25,87.23,82.33,89.73,82.33,90.43,81.34,90.78
+#loop
+	.line Stonetalon Mountains,80.62,89.99,79.79,88.75,81.19,87.56,81.70,86.44,82.26,86.10,82.55,85.22,83.64,85.02,84.20,85.20,83.80,86.38,83.25,87.23,82.33,89.73,82.33,90.43,81.34,90.78
+	.goto Stonetalon Mountains,80.62,89.99,25,0
+	.goto Stonetalon Mountains,79.79,88.75,25,0
+	.goto Stonetalon Mountains,81.19,87.56,25,0
+	.goto Stonetalon Mountains,81.70,86.44,25,0
+	.goto Stonetalon Mountains,82.26,86.10,25,0
+	.goto Stonetalon Mountains,82.55,85.22,25,0
+	.goto Stonetalon Mountains,83.64,85.02,25,0
+	.goto Stonetalon Mountains,84.20,85.20,25,0
+	.goto Stonetalon Mountains,83.80,86.38,25,0
+	.goto Stonetalon Mountains,83.25,87.23,25,0
+	.goto Stonetalon Mountains,82.33,89.73,25,0
+	.goto Stonetalon Mountains,82.33,90.43,25,0
+	.goto Stonetalon Mountains,81.34,90.78,25,0
     >>Kill |cRXP_ENEMY_Grimtotem Ruffians|r and |cRXP_ENEMY_Grimtotem Mercenaries|r in the area
     .complete 6548,1 --Kill Grimtotem Ruffian (x8)
     .complete 6548,2 --Kill Grimtotem Mercenary (x6)
@@ -2052,7 +2121,23 @@ step
     >>|cRXP_WARN_Be careful! The|r |cRXP_ENEMY_Deepmoss Hatchlings|r |cRXP_WARN_have a chance of summoning a level 22|r |cRXP_ENEMY_Deepmoss Matriarch|r
     .complete 1069,1 --Collect Deepmoss Egg (x15)
 step
-    .loop 25,Stonetalon Mountains,59.25,61.55,60.37,60.10,61.34,59.15,61.15,57.85,61.41,56.77,62.21,58.55,63.12,60.02,64.69,60.03,62.76,61.69,62.50,62.92,62.48,64.15,61.85,66.07,60.71,66.12,60.96,63.99,60.25,63.21
+#loop
+	.line Stonetalon Mountains,59.25,61.55,60.37,60.10,61.34,59.15,61.15,57.85,61.41,56.77,62.21,58.55,63.12,60.02,64.69,60.03,62.76,61.69,62.50,62.92,62.48,64.15,61.85,66.07,60.71,66.12,60.96,63.99,60.25,63.21
+	.goto Stonetalon Mountains,59.25,61.55,25,0
+	.goto Stonetalon Mountains,60.37,60.10,25,0
+	.goto Stonetalon Mountains,61.34,59.15,25,0
+	.goto Stonetalon Mountains,61.15,57.85,25,0
+	.goto Stonetalon Mountains,61.41,56.77,25,0
+	.goto Stonetalon Mountains,62.21,58.55,25,0
+	.goto Stonetalon Mountains,63.12,60.02,25,0
+	.goto Stonetalon Mountains,64.69,60.03,25,0
+	.goto Stonetalon Mountains,62.76,61.69,25,0
+	.goto Stonetalon Mountains,62.50,62.92,25,0
+	.goto Stonetalon Mountains,62.48,64.15,25,0
+	.goto Stonetalon Mountains,61.85,66.07,25,0
+	.goto Stonetalon Mountains,60.71,66.12,25,0
+	.goto Stonetalon Mountains,60.96,63.99,25,0
+	.goto Stonetalon Mountains,60.25,63.21,25,0
     >>Kill |cRXP_ENEMY_Deepmoss Venomspitters|r
     .complete 6461,2 --Kill Deepmoss Venomspitter (x7)
     .mob Deepmoss Venomspitter
@@ -2148,7 +2233,25 @@ step
     .complete 1093,1 --Collect Super Reaper 6000 Blueprints (x1)
     .mob Venture Co. Operator
 step
-    .loop 25,Stonetalon Mountains,61.50,55.12,60.48,55.10,59.80,53.69,59.53,52.52,60.80,51.23,62.06,54.39,62.63,55.35,63.63,54.42,65.42,54.15,66.83,54.92,68.64,54.03,69.86,53.53,70.34,56.41,67.90,56.96,66.25,56.64,65.29,57.14,64.27,57.63
+#loop
+	.line Stonetalon Mountains,61.50,55.12,60.48,55.10,59.80,53.69,59.53,52.52,60.80,51.23,62.06,54.39,62.63,55.35,63.63,54.42,65.42,54.15,66.83,54.92,68.64,54.03,69.86,53.53,70.34,56.41,67.90,56.96,66.25,56.64,65.29,57.14,64.27,57.63
+	.goto Stonetalon Mountains,61.50,55.12,25,0
+	.goto Stonetalon Mountains,60.48,55.10,25,0
+	.goto Stonetalon Mountains,59.80,53.69,25,0
+	.goto Stonetalon Mountains,59.53,52.52,25,0
+	.goto Stonetalon Mountains,60.80,51.23,25,0
+	.goto Stonetalon Mountains,62.06,54.39,25,0
+	.goto Stonetalon Mountains,62.63,55.35,25,0
+	.goto Stonetalon Mountains,63.63,54.42,25,0
+	.goto Stonetalon Mountains,65.42,54.15,25,0
+	.goto Stonetalon Mountains,66.83,54.92,25,0
+	.goto Stonetalon Mountains,68.64,54.03,25,0
+	.goto Stonetalon Mountains,69.86,53.53,25,0
+	.goto Stonetalon Mountains,70.34,56.41,25,0
+	.goto Stonetalon Mountains,67.90,56.96,25,0
+	.goto Stonetalon Mountains,66.25,56.64,25,0
+	.goto Stonetalon Mountains,65.29,57.14,25,0
+	.goto Stonetalon Mountains,64.27,57.63,25,0
     >>Kill |cRXP_ENEMY_Venture Co. Loggers|r
     .complete 1062,1 --Kill Venture Co. Logger (x15)
     .mob Venture Co. Logger
@@ -4009,7 +4112,34 @@ step
     .unitscan Astranaar Sentinel
 step
     #optional
-    .loop 25,Ashenvale,10.86,26.99,11.23,25.73,11.83,25.75,12.51,24.09,14.18,24.03,14.85,23.08,14.13,20.77,14.73,19.56,14.59,17.90,13.38,16.39,13.62,14.48,14.15,15.31,15.88,15.42,15.40,16.96,15.22,18.81,15.33,20.78,15.33,22.51,15.32,24.90,14.76,25.52,14.62,26.49,14.52,28.25,13.55,29.36,12.41,29.15,11.22,31.04,10.38,29.60,11.01,28.57
+#loop
+	.line Ashenvale,10.86,26.99,11.23,25.73,11.83,25.75,12.51,24.09,14.18,24.03,14.85,23.08,14.13,20.77,14.73,19.56,14.59,17.90,13.38,16.39,13.62,14.48,14.15,15.31,15.88,15.42,15.40,16.96,15.22,18.81,15.33,20.78,15.33,22.51,15.32,24.90,14.76,25.52,14.62,26.49,14.52,28.25,13.55,29.36,12.41,29.15,11.22,31.04,10.38,29.60,11.01,28.57
+	.goto Ashenvale,10.86,26.99,25,0
+	.goto Ashenvale,11.23,25.73,25,0
+	.goto Ashenvale,11.83,25.75,25,0
+	.goto Ashenvale,12.51,24.09,25,0
+	.goto Ashenvale,14.18,24.03,25,0
+	.goto Ashenvale,14.85,23.08,25,0
+	.goto Ashenvale,14.13,20.77,25,0
+	.goto Ashenvale,14.73,19.56,25,0
+	.goto Ashenvale,14.59,17.90,25,0
+	.goto Ashenvale,13.38,16.39,25,0
+	.goto Ashenvale,13.62,14.48,25,0
+	.goto Ashenvale,14.15,15.31,25,0
+	.goto Ashenvale,15.88,15.42,25,0
+	.goto Ashenvale,15.40,16.96,25,0
+	.goto Ashenvale,15.22,18.81,25,0
+	.goto Ashenvale,15.33,20.78,25,0
+	.goto Ashenvale,15.33,22.51,25,0
+	.goto Ashenvale,15.32,24.90,25,0
+	.goto Ashenvale,14.76,25.52,25,0
+	.goto Ashenvale,14.62,26.49,25,0
+	.goto Ashenvale,14.52,28.25,25,0
+	.goto Ashenvale,13.55,29.36,25,0
+	.goto Ashenvale,12.41,29.15,25,0
+	.goto Ashenvale,11.22,31.04,25,0
+	.goto Ashenvale,10.38,29.60,25,0
+	.goto Ashenvale,11.01,28.57,25,0
     .xp 21 >> Grind to level 21
 step
     #label ZoramFP
@@ -4061,7 +4191,34 @@ step
     .mob Vorsha the Lasher
     .group 2
 step
-    .loop 25,Ashenvale,10.86,26.99,11.23,25.73,11.83,25.75,12.51,24.09,14.18,24.03,14.85,23.08,14.13,20.77,14.73,19.56,14.59,17.90,13.38,16.39,13.62,14.48,14.15,15.31,15.88,15.42,15.40,16.96,15.22,18.81,15.33,20.78,15.33,22.51,15.32,24.90,14.76,25.52,14.62,26.49,14.52,28.25,13.55,29.36,12.41,29.15,11.22,31.04,10.38,29.60,11.01,28.57
+#loop
+	.line Ashenvale,10.86,26.99,11.23,25.73,11.83,25.75,12.51,24.09,14.18,24.03,14.85,23.08,14.13,20.77,14.73,19.56,14.59,17.90,13.38,16.39,13.62,14.48,14.15,15.31,15.88,15.42,15.40,16.96,15.22,18.81,15.33,20.78,15.33,22.51,15.32,24.90,14.76,25.52,14.62,26.49,14.52,28.25,13.55,29.36,12.41,29.15,11.22,31.04,10.38,29.60,11.01,28.57
+	.goto Ashenvale,10.86,26.99,25,0
+	.goto Ashenvale,11.23,25.73,25,0
+	.goto Ashenvale,11.83,25.75,25,0
+	.goto Ashenvale,12.51,24.09,25,0
+	.goto Ashenvale,14.18,24.03,25,0
+	.goto Ashenvale,14.85,23.08,25,0
+	.goto Ashenvale,14.13,20.77,25,0
+	.goto Ashenvale,14.73,19.56,25,0
+	.goto Ashenvale,14.59,17.90,25,0
+	.goto Ashenvale,13.38,16.39,25,0
+	.goto Ashenvale,13.62,14.48,25,0
+	.goto Ashenvale,14.15,15.31,25,0
+	.goto Ashenvale,15.88,15.42,25,0
+	.goto Ashenvale,15.40,16.96,25,0
+	.goto Ashenvale,15.22,18.81,25,0
+	.goto Ashenvale,15.33,20.78,25,0
+	.goto Ashenvale,15.33,22.51,25,0
+	.goto Ashenvale,15.32,24.90,25,0
+	.goto Ashenvale,14.76,25.52,25,0
+	.goto Ashenvale,14.62,26.49,25,0
+	.goto Ashenvale,14.52,28.25,25,0
+	.goto Ashenvale,13.55,29.36,25,0
+	.goto Ashenvale,12.41,29.15,25,0
+	.goto Ashenvale,11.22,31.04,25,0
+	.goto Ashenvale,10.38,29.60,25,0
+	.goto Ashenvale,11.01,28.57,25,0
     >>Kill |cRXP_ENEMY_Wraithtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
     .complete 6442,1 --Wraithtail Head (20)
     .mob Wrathtail Razortail
@@ -4108,7 +4265,34 @@ step
     .complete 6563,1 --Sapphire of Aku'Mai (20)
     .group 4
 step
-    .loop 25,Ashenvale,10.86,26.99,11.23,25.73,11.83,25.75,12.51,24.09,14.18,24.03,14.85,23.08,14.13,20.77,14.73,19.56,14.59,17.90,13.38,16.39,13.62,14.48,14.15,15.31,15.88,15.42,15.40,16.96,15.22,18.81,15.33,20.78,15.33,22.51,15.32,24.90,14.76,25.52,14.62,26.49,14.52,28.25,13.55,29.36,12.41,29.15,11.22,31.04,10.38,29.60,11.01,28.57
+#loop
+	.line Ashenvale,10.86,26.99,11.23,25.73,11.83,25.75,12.51,24.09,14.18,24.03,14.85,23.08,14.13,20.77,14.73,19.56,14.59,17.90,13.38,16.39,13.62,14.48,14.15,15.31,15.88,15.42,15.40,16.96,15.22,18.81,15.33,20.78,15.33,22.51,15.32,24.90,14.76,25.52,14.62,26.49,14.52,28.25,13.55,29.36,12.41,29.15,11.22,31.04,10.38,29.60,11.01,28.57
+	.goto Ashenvale,10.86,26.99,25,0
+	.goto Ashenvale,11.23,25.73,25,0
+	.goto Ashenvale,11.83,25.75,25,0
+	.goto Ashenvale,12.51,24.09,25,0
+	.goto Ashenvale,14.18,24.03,25,0
+	.goto Ashenvale,14.85,23.08,25,0
+	.goto Ashenvale,14.13,20.77,25,0
+	.goto Ashenvale,14.73,19.56,25,0
+	.goto Ashenvale,14.59,17.90,25,0
+	.goto Ashenvale,13.38,16.39,25,0
+	.goto Ashenvale,13.62,14.48,25,0
+	.goto Ashenvale,14.15,15.31,25,0
+	.goto Ashenvale,15.88,15.42,25,0
+	.goto Ashenvale,15.40,16.96,25,0
+	.goto Ashenvale,15.22,18.81,25,0
+	.goto Ashenvale,15.33,20.78,25,0
+	.goto Ashenvale,15.33,22.51,25,0
+	.goto Ashenvale,15.32,24.90,25,0
+	.goto Ashenvale,14.76,25.52,25,0
+	.goto Ashenvale,14.62,26.49,25,0
+	.goto Ashenvale,14.52,28.25,25,0
+	.goto Ashenvale,13.55,29.36,25,0
+	.goto Ashenvale,12.41,29.15,25,0
+	.goto Ashenvale,11.22,31.04,25,0
+	.goto Ashenvale,10.38,29.60,25,0
+	.goto Ashenvale,11.01,28.57,25,0
     .xp 23 >> Grind to level 23
 step
     .goto Ashenvale,11.56,34.29

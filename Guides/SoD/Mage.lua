@@ -285,7 +285,26 @@ step
     .target Isabella
     .xp <2,1
 step
-    .loop 25,Tirisfal Glades,36.13,68.74,36.46,69.49,36.85,70.02,37.42,69.58,38.05,69.79,37.91,69.22,38.03,68.77,38.49,68.28,38.72,67.07,38.59,66.25,38.65,65.07,37.62,65.36,36.93,65.38,36.51,65.42,36.85,66.59,37.45,67.95,36.93,68.16,36.13,68.74
+#loop
+	.line Tirisfal Glades,36.13,68.74,36.46,69.49,36.85,70.02,37.42,69.58,38.05,69.79,37.91,69.22,38.03,68.77,38.49,68.28,38.72,67.07,38.59,66.25,38.65,65.07,37.62,65.36,36.93,65.38,36.51,65.42,36.85,66.59,37.45,67.95,36.93,68.16,36.13,68.74
+	.goto Tirisfal Glades,36.13,68.74,25,0
+	.goto Tirisfal Glades,36.46,69.49,25,0
+	.goto Tirisfal Glades,36.85,70.02,25,0
+	.goto Tirisfal Glades,37.42,69.58,25,0
+	.goto Tirisfal Glades,38.05,69.79,25,0
+	.goto Tirisfal Glades,37.91,69.22,25,0
+	.goto Tirisfal Glades,38.03,68.77,25,0
+	.goto Tirisfal Glades,38.49,68.28,25,0
+	.goto Tirisfal Glades,38.72,67.07,25,0
+	.goto Tirisfal Glades,38.59,66.25,25,0
+	.goto Tirisfal Glades,38.65,65.07,25,0
+	.goto Tirisfal Glades,37.62,65.36,25,0
+	.goto Tirisfal Glades,36.93,65.38,25,0
+	.goto Tirisfal Glades,36.51,65.42,25,0
+	.goto Tirisfal Glades,36.85,66.59,25,0
+	.goto Tirisfal Glades,37.45,67.95,25,0
+	.goto Tirisfal Glades,36.93,68.16,25,0
+	.goto Tirisfal Glades,36.13,68.74,25,0
     >>Kill |cRXP_ENEMY_Scarlet Initiates|r. Loot them for the |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: CALE ENCI]|r
     .collect 203751,1,77671,1 --Spell Notes: CALE ENCI (1)
     .mob Scarlet Initiate
