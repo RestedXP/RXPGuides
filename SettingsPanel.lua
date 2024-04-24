@@ -1106,7 +1106,7 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.ReloadGuide()
                             addon.RXPFrame.GenerateMenuTable()
                         end,
-                        hidden = addon.game ~= "WOTLK",
+                        hidden = addon.game == "CLASSIC" or addon.game == "RETAIL",
                         disabled = function()
                             return addon.settings.profile.enableAutomaticXpRate
                         end
@@ -3000,7 +3000,7 @@ end
 
 function addon.settings:DetectXPRate()
     if not addon.settings.profile.enableAutomaticXpRate or addon.gameVersion >
-        40000 then return end
+        50000 then return end
 
     local UnitBuff = UnitBuff
     local GetInventoryItemLink = GetInventoryItemLink
@@ -3052,6 +3052,11 @@ function addon.settings:DetectXPRate()
                 addon.comms.PrettyPrint("Heirloom detected in Shoulder slot")
             end
         end
+    end
+
+    --Fast Track (Guild Perk)
+    if addon.IsPlayerSpell(78632) then
+        calculatedRate = calculatedRate + 0.1
     end
 
     itemLink = GetInventoryItemLink("player", 5) -- Chest
