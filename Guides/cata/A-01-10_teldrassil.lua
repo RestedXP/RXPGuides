@@ -1,3 +1,5 @@
+local _,addon = ...
+if addon.game ~= "CATA" or addon.player.faction ~= 'Alliance' then return end
 RXPGuides.RegisterGuide([[
 #version 1
 #group RXP Cataclysm 1-80 (A)

@@ -1,5 +1,5 @@
-local faction = UnitFactionGroup("player")
-if faction == "Alliance" then return end
+local _,addon = ...
+if addon.game ~= "CATA" or addon.player.faction ~= 'Horde' then return end
 
 RXPGuides.RegisterGuide([[
 #cata
@@ -83,7 +83,7 @@ step
     .complete 14456,1 --Stolen Rifle (7)
     .mob +Bristleback Gun Thiefs
     .complete 14455,1 --Bristleback Thorncaller (7)
-    .mob +Bristleback Thorncaller 
+    .mob +Bristleback Thorncaller
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adana|r and |cRXP_FRIENDLY_Rohaku|r
     .turnin 14456 >>Turn in Rite of Courage
@@ -104,7 +104,7 @@ step
     #completewith ThirdTrough
     >>Kill |cRXP_ENEMY_Armored Battleboar|r
     .complete 14459,1 --Armored Battleboar (10)
-    .mob Armored Battleboar 
+    .mob Armored Battleboar
 step
     .goto 7,44.70,87.82
     >>Use |T135432:0|t[Adana's Torch] next to the first trough
@@ -133,7 +133,7 @@ step
 	.goto 7,45.73,88.00,30,0
     >>Kill |cRXP_ENEMY_Armored Battleboar|r
     .complete 14459,1 --Armored Battleboar (10)
-    .mob Armored Battleboar 
+    .mob Armored Battleboar
 step
     .goto 7,46.18,82.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adana|r
@@ -192,7 +192,7 @@ step << Paladin
 step << Druid
     .goto 7,45.22,75.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gart|r
-    .turnin 3094 >>Turn in Verdant Note 
+    .turnin 3094 >>Turn in Verdant Note
     .accept 27067 >>Accept Rejuvenating Touch
     .train 774 >>Train |T136081:0|t[Rejuvenation]
     .target Gart Mistrunner
@@ -420,7 +420,7 @@ step << Paladin
     .target Sunwalker Iopi
 step
     .goto 7,48.62,59.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mull|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mull|r
     .accept 20440 >>Accept Poison Water
     .target Mull Thunderhorn
 step << Warrior
@@ -457,7 +457,23 @@ step
 	.goto 7,49.24,70.24,30,0
 	.goto 7,48.87,69.80,30,0
 	.goto 7,47.96,69.82,30,0
-    .loop 30,7,51.94,69.95,52.07,70.98,52.52,71.73,52.92,72.36,53.62,72.44,53.84,72.04,54.25,72.15,55.07,72.12,55.52,71.26,55.22,70.65,54.55,70.22,53.92,70.07,53.15,69.85,52.58,70.17,51.94,69
+#loop
+	.line 7,51.94,69.95,52.07,70.98,52.52,71.73,52.92,72.36,53.62,72.44,53.84,72.04,54.25,72.15,55.07,72.12,55.52,71.26,55.22,70.65,54.55,70.22,53.92,70.07,53.15,69.85,52.58,70.17,51.94,69
+	.goto 7,51.94,69.95,30,0
+	.goto 7,52.07,70.98,30,0
+	.goto 7,52.52,71.73,30,0
+	.goto 7,52.92,72.36,30,0
+	.goto 7,53.62,72.44,30,0
+	.goto 7,53.84,72.04,30,0
+	.goto 7,54.25,72.15,30,0
+	.goto 7,55.07,72.12,30,0
+	.goto 7,55.52,71.26,30,0
+	.goto 7,55.22,70.65,30,0
+	.goto 7,54.55,70.22,30,0
+	.goto 7,53.92,70.07,30,0
+	.goto 7,53.15,69.85,30,0
+	.goto 7,52.58,70.17,30,0
+	.goto 7,51.94,69.00,30,0
     >>Kill |cRXP_ENEMY_Palemane Skinners|r, |cRXP_ENEMY_Palemane Poachers|r and |cRXP_ENEMY_Palemane Tanners|r
     .complete 14438,1 --Palemane Gnolls (15)
     .mob Palemane Skinner
@@ -512,7 +528,7 @@ step
     .target Maur Raincaller
 step
     .goto 7,47.15,56.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maur|r
     .accept 26188 >>Accept Mazzranache
     .target Maur Raincaller
 step << Hunter
@@ -564,10 +580,10 @@ step << Hunter
     .itemcount 2509,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
-step 
+step
     #label AcceptDangers
     .goto 1412/1,-384.80002,-2397.00000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ruul|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ruul|r
     .accept 743 >>Accept Dangers of the Windfury
     .target Ruul Eagletalon
 step
@@ -649,7 +665,7 @@ step
     .target Morin Cloudstalker
 step
     #completewith VentureCoCave
-    >>Kill |cRXP_ENEMY_Prairie Stalkers|r. Loot them for their |cRXP_LOOT_Claws|r 
+    >>Kill |cRXP_ENEMY_Prairie Stalkers|r. Loot them for their |cRXP_LOOT_Claws|r
     >>Kill |cRXP_ENEMY_Flatland Cougars|r. Loot them for their |cRXP_LOOT_Claws|r and a |cRXP_LOOT_Flatland Cougar Femur|r
     .complete 24441,1 --Stalker Claws (6)
     .complete 24441,2 --Cougar Claws (6)
@@ -686,7 +702,7 @@ step
 step
     #label FizsprocketKill
     .goto 7,61.21,46.29
-    >>Kill |cRXP_ENEMY_Fizsprocket|r. Loot him for his |cRXP_LOOT_Clipboard|r 
+    >>Kill |cRXP_ENEMY_Fizsprocket|r. Loot him for his |cRXP_LOOT_Clipboard|r
     .complete 26180,1 --Fizsprocket's Clipboard (1)
     .mob Supervisor Fizsprocket
 step
@@ -701,7 +717,7 @@ step
     .mob Venture Co. Worker
 step
     #completewith FizsprocketTurnin
-    >>Kill |cRXP_ENEMY_Prairie Stalkers|r. Loot them for their |cRXP_LOOT_Claws|r 
+    >>Kill |cRXP_ENEMY_Prairie Stalkers|r. Loot them for their |cRXP_LOOT_Claws|r
     >>Kill |cRXP_ENEMY_Flatland Cougars|r. Loot them for their |cRXP_LOOT_Claws|r and a |cRXP_LOOT_Flatland Cougar Femur|r
     .complete 24441,1 --Stalker Claws (6)
     .complete 24441,2 --Cougar Claws (6)
@@ -741,7 +757,7 @@ step
     .goto 7,55.66,53.73,40,0
     .goto 7,55.60,55.55,40,0
     .goto 7,56.14,57.59
-    >>Kill |cRXP_ENEMY_Prairie Stalkers|r. Loot them for their |cRXP_LOOT_claws|r 
+    >>Kill |cRXP_ENEMY_Prairie Stalkers|r. Loot them for their |cRXP_LOOT_claws|r
     >>Kill |cRXP_ENEMY_Flatland Cougars|r. Loot them for their |cRXP_LOOT_claws|r and for a |cRXP_LOOT_Femur|r
     .complete 24441,1 --Stalker Claws (6)
     .complete 24441,2 --Cougar Claws (6)
@@ -881,7 +897,7 @@ step
 step
     #label DangerTurnin
     .goto 7,47.51,61.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ruul|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ruul|r
     .turnin 743 >>Turn in Dangers of the Windfury
     .target Ruul Eagletalon
 step

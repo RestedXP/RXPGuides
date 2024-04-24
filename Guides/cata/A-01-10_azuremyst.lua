@@ -1,3 +1,5 @@
+local _,addon = ...
+if addon.game ~= "CATA" or addon.player.faction ~= 'Alliance' then return end
 --TODO: skip the furbolg quests if xp rate is greater than 1x    
 RXPGuides.RegisterGuide([[
 << Alliance

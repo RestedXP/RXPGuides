@@ -3,6 +3,7 @@ RXPGuides.RegisterGuide([[
 #group +RestedXP Northrend Daily Quests
 #subgroup Profession Daily Quests
 #wotlk
+#cata
 #name Cooking
 
 step << Alliance
@@ -319,7 +320,7 @@ step
 	.collect 43137,1 --Aged Dalaran Limburger (1)
 	.isOnQuest 13103 << Alliance
 	.isOnQuest 13115 << Horde
-step 
+step
 	>>Start looking for Half Full Dalaran Wine Glasses. These are scattered throughout Dalaran buildings. Check inside of the inn as well as upstairs
 	.goto Dalaran,54.70,31.57
 	.collect 43138,6 --Half Full Dalaran Wine Glass (6)
@@ -399,7 +400,7 @@ step << Horde
 	.collect 43013,4,-1 -- Chilled Meat (4)
 	.goto Orgrimmar,54.57,63.68,0
 	.skill engineering,350,1
-	.isOnQuest 13113   
+	.isOnQuest 13113
 step << Alliance
 	#completewith next
 	.isQuestAvailable 13087
@@ -409,12 +410,12 @@ step << Alliance
 	.collect 43013,4 -- Chilled Meat (4)
 	.accept 13087 >> Accept Northern Cooking
 	.turnin 13087 >> Turn in Northern Cooking
-	.goto HowlingFjord,58.21,62.06	
+	.goto HowlingFjord,58.21,62.06
 step << Horde
 	#completewith next
 	.isQuestAvailable 13089
 	.isOnQuest 13113
-	>>To learn how to cook Northern Stew you must take 4 Chilled Meat to Thomas Kolichio in Howling Fjord. Alternatively you can buy the Northern Stew straight from the Auction House. If you are buying Northern Stew from the Auction House skip this step	
+	>>To learn how to cook Northern Stew you must take 4 Chilled Meat to Thomas Kolichio in Howling Fjord. Alternatively you can buy the Northern Stew straight from the Auction House. If you are buying Northern Stew from the Auction House skip this step
 	>>If you are completing this quest you will need a total of 8 Chilled Meat
 	.collect 43013,4 -- Chilled Meat (4)
 	.accept 13089 >> Accept Northern Cooking
@@ -427,7 +428,7 @@ step << Alliance
 	.complete 13101,1 --Northern Stew (4)
 	.isOnQuest 13101
 step << Horde
-    #label stew    
+    #label stew
 	.goto Dalaran,70.44,39.80
 	>>Use your Cooking proffession to cook 4 Chilled Meat into 4 Northern Stew
 	.complete 13113,1 --Northern Stew (4)

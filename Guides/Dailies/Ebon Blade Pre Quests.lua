@@ -3,6 +3,7 @@ RXPGuides.RegisterGuide([[
 #group +RestedXP Northrend Daily Quests
 #subgroup Faction Daily Quests
 #wotlk
+#cata
 #name Ebon Blade Unlock Daily Quests
 
 step

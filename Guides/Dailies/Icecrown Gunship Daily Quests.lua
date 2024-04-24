@@ -3,6 +3,7 @@ RXPGuides.RegisterGuide([[
 #group +RestedXP Northrend Daily Quests
 #subgroup Faction Daily Quests
 #wotlk
+#cata
 #name Icecrown Gunship Daily Quests Route
 
 step << Alliance -- Checking that the actual pre quests that have been completed, not dailies

@@ -1,5 +1,5 @@
-local faction = UnitFactionGroup("player")
-if faction == "Alliance" then return end
+local _,addon = ...
+if addon.game ~= "CATA" or addon.player.faction ~= 'Horde' then return end
 
 RXPGuides.RegisterGuide([[
 #cata
@@ -31,7 +31,7 @@ step << Rogue
     .goto 1454,29.60,50.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rekkul|r.
     >>|cRXP_BUY_Buy|r |T132273:0|t[Instant Poison] |cRXP_BUY_from him|r
-    .collect 6947,20,14129,1 --Instant Poison (20) 
+    .collect 6947,20,14129,1 --Instant Poison (20)
     .target Rekkul
 step << Shaman
     .goto 1454,44.64,52.00
@@ -462,7 +462,7 @@ step
     #completewith Refleshify
     >>Kill |cRXP_ENEMY_Greystone Basilisks|r
     .complete 14161,1 --Greystone Basilisk (10)
-    .mob Greystone Basilisk 
+    .mob Greystone Basilisk
 step
     .goto 76,21.91,69.37
     >>Kill |cRXP_ENEMY_Talrendis Saboteurs|r. Loot them for a |cRXP_LOOT_Crystal Pendant|r
@@ -506,7 +506,7 @@ step
     .waypoint 76,22.607,69.349,40,0
     >>Kill |cRXP_ENEMY_Greystone Basilisks|r
     .complete 14161,1 --Greystone Basilisk (10)
-    .mob Greystone Basilisk 
+    .mob Greystone Basilisk
 step
     #loop
     .goto 76,22.683,68.753,0
@@ -761,7 +761,7 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Bilgewater Rocket-jockey|r
     .goto 76,50.411,74.293,80 >>Take the rocketride to the Southern Rocketway Terminus
-    .skipgossipid 112430 
+    .skipgossipid 112430
     .target Bilgewater Rocket-jockey
 step
     .goto 76,50.411,74.293
@@ -1297,20 +1297,20 @@ step
     .target Captain Tork
 step
     .goto 76,34.450,44.766
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Zelks|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Zelks|r
     .accept 14480 >>Accept Extermination
     .accept 14484 >>Accept Head of the Snake
     .accept 14485 >>Accept Ticker Required
     .target Sergeant Zelks
 step
     .goto 76,34.53,44.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tora Halotrix|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tora Halotrix|r
     .accept 14486 >>Accept Handling the Goods
     .target Tora Halotrix
 step
     #sticky
     #completewith SpitelashNagas
-    +|cRXP_WARN_Use|r |T134286:0|t[Gob Squad Flare] |cRXP_WARN_to summon|r |cRXP_FRIENDLY_Goblins|r |cRXP_WARN_who will assist you with the upcoming quests|r 
+    +|cRXP_WARN_Use|r |T134286:0|t[Gob Squad Flare] |cRXP_WARN_to summon|r |cRXP_FRIENDLY_Goblins|r |cRXP_WARN_who will assist you with the upcoming quests|r
     .use 49629
 step
     #completewith LordKassarus
@@ -1392,7 +1392,7 @@ step
     .target Sergeant Zelks
 step
     .goto 76,34.53,44.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tora Halotrix|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tora Halotrix|r
     .turnin 14486 >>Turn in Handling the Goods
     .target Tora Halotrix
 step
@@ -1453,7 +1453,7 @@ step
     .waypoint 76,76.552,39.047,50,0
     .waypoint 76,75.496,36.880,50,0
     >>Kill |cRXP_ENEMY_Vile Splashes|r. Loot them for their |cRXP_LOOT_Simmering Water Droplets|r
-    >>|cRXP_ENEMY_Vile Splashes|r |cRXP_WARN_die instantly when in close proximity|r 
+    >>|cRXP_ENEMY_Vile Splashes|r |cRXP_WARN_die instantly when in close proximity|r
     .complete 14323,1 --Simmering Water Droplet (20)
     .mob Vile Splash
 step
@@ -1607,7 +1607,7 @@ step
 step
     .goto 76,47.241,20.861
     >>Travel toward the |cRXP_FRIENDLY_Image of Archmage Xylem|r
-    .use 49201 >>|cRXP_WARN_Use your|r |T133131:0|t[Dingy Wizard Hat] 
+    .use 49201 >>|cRXP_WARN_Use your|r |T133131:0|t[Dingy Wizard Hat]
     .complete 14340,1 --Approach Archmage Xylem while wearing your Wizard Hat (1)
     .target Image of Archmage Xylem
 step
@@ -1943,7 +1943,7 @@ step
 step
     #completewith AmbRobes
     >>Loot |cRXP_LOOT_Briaroot Brew|r on the ground
-    >>|cRXP_ENEMY_Blackmaw Timbermaw|r |cRXP_WARN_can also drop|r |cRXP_LOOT_Briaroot Brew|r 
+    >>|cRXP_ENEMY_Blackmaw Timbermaw|r |cRXP_WARN_can also drop|r |cRXP_LOOT_Briaroot Brew|r
     .complete 14432,1 --Briaroot Brew (10)
     .mob Blackmaw Pathfinder
     .mob Blackmaw Warrior
@@ -1973,7 +1973,7 @@ step
     .waypoint 76,31.073,34.994,30,0
     .waypoint 76,31.171,33.729,30,0
     >>Loot |cRXP_LOOT_Briaroot Brew|r on the ground
-    >>|cRXP_ENEMY_Blackmaw Timbermaw|r |cRXP_WARN_can also drop|r |cRXP_LOOT_Briaroot Brew|r 
+    >>|cRXP_ENEMY_Blackmaw Timbermaw|r |cRXP_WARN_can also drop|r |cRXP_LOOT_Briaroot Brew|r
     .complete 14432,1 --Briaroot Brew (10)
     .mob Blackmaw Pathfinder
     .mob Blackmaw Warrior
@@ -2068,12 +2068,12 @@ step
     .target Kalec
 step
     .goto 76,66.338,20.249
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jellix Fuselighter|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jellix Fuselighter|r
     .accept 14297 >>Accept Pro-liberation
     .target Jellix Fuselighter
 step
     .goto 76,66.540,19.590
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Feno Blastnoggin|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Feno Blastnoggin|r
     .accept 14261 >>Accept Ice Cold
     .target Feno Blastnoggin
 step
@@ -2143,7 +2143,7 @@ step
     .target Jellix Fuselighter
 step
     .goto 76,67.042,20.595
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azuregos|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azuregos|r
     .accept 14392 >>Accept Farewell, Minnow
     .target Azuregos
 step
@@ -2193,7 +2193,7 @@ step
     .target Sorata Firespinner
 step
     .goto 76,52.977,49.761
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gurlorn|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gurlorn|r
     .accept 24497 >>Accept Airborne Again
     .target Gurlorn
 
@@ -2202,7 +2202,7 @@ step
 step
     .goto 76,60.479,52.205
     .vehicle >>Mount a |cRXP_FRIENDLY_Wings of Steel|r
-    .target Wings of Steel 
+    .target Wings of Steel
     .isOnQuest 24497
     --VV No need for this if flight path is available automatically
 step
@@ -2214,12 +2214,12 @@ step
     .target Chawg
 step
     .goto 76,13.854,64.479
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andorel Sunsworn|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andorel Sunsworn|r
     .accept 24434 >>Accept Commando Drop
     .target Andorel Sunsworn
 step
     .goto 76,14.346,65.018
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kroum|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kroum|r
     .accept 14475 >>Accept Grounded!
     .target Kroum
 step
@@ -2230,7 +2230,7 @@ step
     .complete 24433,1 --Talrendis Defender (12)
     .mob +Talrendis Defender
     .complete 24434,1 --Talrendis Lorekeeper (5)
-    .mob +Talrendis Lorekeeper 
+    .mob +Talrendis Lorekeeper
 step
     .goto 76,14.453,75.567
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bombardier Captain Smooks|r
@@ -2257,7 +2257,7 @@ step
     .target Bombardier Captain Smooks
 step
     .goto 76,14.408,75.734
-    >>Click |cRXP_PICK_Goblin Detonator|r 
+    >>Click |cRXP_PICK_Goblin Detonator|r
     .complete 14477,1 --Detonate the Explosives
 step
     #completewith next
@@ -2267,7 +2267,7 @@ step
     .complete 24433,1 --Talrendis Defender (12)
     .mob +Talrendis Defender
     .complete 24434,1 --Talrendis Lorekeeper (5)
-    .mob +Talrendis Lorekeeper 
+    .mob +Talrendis Lorekeeper
 step
     .goto 76,12.517,67.451
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Slinky|r
@@ -2298,7 +2298,7 @@ step
     .complete 24433,1 --Talrendis Defender (12)
     .mob +Talrendis Defender
     .complete 24434,1 --Talrendis Lorekeeper (5)
-    .mob +Talrendis Lorekeeper 
+    .mob +Talrendis Lorekeeper
 step
     .goto 76,10.56,69.85
     >>Click the |cRXP_PICK_Lorekeeper's Summoning Stone|r
@@ -2316,12 +2316,12 @@ step
     .target Kroum
 step
     .goto 76,14.471,65.725
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jr. Bombardier Hackel|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jr. Bombardier Hackel|r
     .accept 24430 >>Accept Blacken the Skies
     .target Jr. Bombardier Hackel
 step
     .goto 76,14.455,65.770
-    .vehicle >>Mount the |cRXP_FRIENDLY_Grounded Wind Rider|r 
+    .vehicle >>Mount the |cRXP_FRIENDLY_Grounded Wind Rider|r
     .target Grounded Wind Rider
     .isOnQuest 24430
 step
@@ -2383,7 +2383,7 @@ step
 
 step
     .goto 76,14.345,65.025
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kroum|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kroum|r
     .accept 24463 >>Accept Probing into Ashenvale
     .target Kroum
 step

@@ -1,5 +1,5 @@
-local faction = UnitFactionGroup("player")
-if faction == "Alliance" then return end
+local _,addon = ...
+if addon.game ~= "CATA" or addon.player.faction ~= 'Horde' then return end
 
 RXPGuides.RegisterGuide([[
 #cata
@@ -117,7 +117,7 @@ step
     .target Deathguard Saltain
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Rattlecage Skeletons|r and |cRXP_ENEMY_Wretches Ghouls|r 
+    >>Kill |cRXP_ENEMY_Rattlecage Skeletons|r and |cRXP_ENEMY_Wretches Ghouls|r
     .complete 26801,1 --8/8 Deathknell Scourge slain
     .mob Rattlecage Skeleton
     .mob Wretches Ghoul
@@ -144,7 +144,7 @@ step
     .waypoint 18,31.26,61.24,30,0
     .waypoint 18,30.95,62.35,30,0
     .waypoint 18,31.24,63.43,30,0
-    >>Kill |cRXP_ENEMY_Rattlecage Skeletons|r and |cRXP_ENEMY_Wretches Ghouls|r 
+    >>Kill |cRXP_ENEMY_Rattlecage Skeletons|r and |cRXP_ENEMY_Wretches Ghouls|r
     .complete 26801,1 --8/8 Deathknell Scourge slain
     .mob Rattlecage Skeleton
     .mob Wretches Ghoul
@@ -185,7 +185,7 @@ step << Mage
 step << Rogue
     .goto 18,32.53,65.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_David|r
-    .turnin 3096 >>Turn in Encrypted Scroll 
+    .turnin 3096 >>Turn in Encrypted Scroll
     .accept 24967 >>Accept Stab!
     .train 2098 >>Train |T132292:0|t[Eviscerate]
     .target David Trias
@@ -318,7 +318,7 @@ step
     .waypoint 18,34.19,59.64,40,0
     .waypoint 18,32.90,58.08,40,0
     >>Kill |cRXP_ENEMY_Duskbats|r. Loot them for their |cRXP_LOOT_Wings|r
-    >>Kill |cRXP_ENEMY_Scavengers|r. Loot them for their |cRXP_LOOT_Paws|r 
+    >>Kill |cRXP_ENEMY_Scavengers|r. Loot them for their |cRXP_LOOT_Paws|r
     .complete 26802,2 --4/4 Duskbat Wing
     .mob +Duskbat
     .mob +Mangy Duskbat
@@ -384,7 +384,7 @@ step
     .mob Rotbrain Berserker
 step
     .goto 18,36.50,68.82
-    >>Kill |cRXP_ENEMY_Marshal Redpath|r 
+    >>Kill |cRXP_ENEMY_Marshal Redpath|r
     .complete 24971,1 --1/1 Marshal Redpath slain
     .mob Marshal Redpath
 step
@@ -416,7 +416,7 @@ step
     #completewith ReapReapers
     .subzone 4916 >>Travel to Calston Estate
 step
-    .goto 18,44.75,53.68 
+    .goto 18,44.75,53.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Simmer|r
     .turnin 24972 >>Turn in Vital Intelligence
     .accept 24978 >>Accept Reaping the Reapers
@@ -425,7 +425,7 @@ step
 step
     #optional
     #label ReapReapers
-    .goto 18,44.75,53.68 
+    .goto 18,44.75,53.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Simmer|r
     .turnin 24972 >>Turn in Vital Intelligence
     .accept 24978 >>Accept Reaping the Reapers
@@ -515,7 +515,7 @@ step
     #completewith next
     .subzone 4916 >>Travel to Calston Estate
 step
-    .goto 18,44.75,53.68 
+    .goto 18,44.75,53.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Simmer|r
     .turnin 24978 >>Turn in Reaping the Reapers
     .target Deathguard Simmer
@@ -541,7 +541,7 @@ step
     .target Sedrick Calston
 step
     #completewith next
-    .goto 18,44.49,53.86,5,0 
+    .goto 18,44.49,53.86,5,0
     .goto 18,44.75,53.65 >> Go upstairs to return the |cRXP_FRIENDLY_Murloc|r
     .complete 24974,2 --1/1 Vile Fin returned
 step

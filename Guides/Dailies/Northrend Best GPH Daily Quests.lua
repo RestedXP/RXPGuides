@@ -1,6 +1,7 @@
 RXPGuides.RegisterGuide([[
 #version 1
 #wotlk
+#cata
 #group +RestedXP Northrend Daily Quests
 #name Best Daily Quests Gold Per Hour Route
 

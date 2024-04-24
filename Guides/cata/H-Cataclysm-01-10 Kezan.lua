@@ -1,5 +1,5 @@
-local faction = UnitFactionGroup("player")
-if faction == "Alliance" then return end
+local _,addon = ...
+if addon.game ~= "CATA" or addon.player.faction ~= 'Horde' then return end
 
 RXPGuides.RegisterGuide([[
 #cata
@@ -177,7 +177,7 @@ step
     .use 46856
     .skipgossip
     .target Szabo
-step 
+step
     .goto 194,34.87,45.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Gappy|r
     >>Obtain |cRXP_LOOT_Shiny Bling|r from him
@@ -285,7 +285,7 @@ step << Warrior
     .train 100 >> |T132337:0|t[Charge]
     .target Warrior-Matic NX-01
 step << Hunter
-    .goto 194,60.42,77.50 
+    .goto 194,60.42,77.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Bamm|r
     .accept 14007 >>Accept Steady Shot
     .train 56641 >>Train |T132213:0|t[Steady Shot]
@@ -362,7 +362,7 @@ step << Warrior
     .turnin 14013 >>Turn in Charge
     .target Warrior-Matic NX-01
 step << Hunter
-    .goto 194,60.42,77.50 
+    .goto 194,60.42,77.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Bamm|r
     .turnin 14007 >>Turn in Steady Shot
     .target Bamm Megabomb
@@ -455,12 +455,12 @@ step
     .target Sassy Hardwrench
 step
     .goto 194,60.054,78.092
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Megs Dreadshredder|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Megs Dreadshredder|r
     .accept 14121 >>Accept Robbing Hoods
     .target Megs Dreadshredder
 step
     .goto 194,62.965,77.824
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Dampwick|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Dampwick|r
     .accept 14124 >>Accept Liberate the Kaja'mite
     .target Foreman Dampwick
 step
@@ -600,7 +600,7 @@ step
     .turnin 14125 >>Turn in 447
 step
     .goto 194,59.607,77.106
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r
     .target Sassy Hardwrench
     .accept 14126 >>Accept Life Savings
 step
@@ -725,7 +725,7 @@ step
     .goto 174,29.73,75.42,15,0
     .goto 174,30.35,74.49,15,0
     .goto 174,30.10,72.55,20,0
-    .goto 174,28.44,70.88,20,0  
+    .goto 174,28.44,70.88,20,0
     .goto 174,27.32,70.14,20,0
     >>Collect |cRXP_LOOT_Crates of Tools|r
     .complete 14014,1 --8/8 Crate of Tools
@@ -1136,7 +1136,7 @@ step
     .waypoint 174/648,1713.59998,401.10001,30,0
     .waypoint 174/648,1684.20007,416.89999,30,0
     .waypoint 174/648,1661.20007,386.00000,30,0
-    .waypoint 174/648,1619.50000,380.10001,30,0 
+    .waypoint 174/648,1619.50000,380.10001,30,0
     .waypoint 174/648,1594.09998,415.60001,30,0
     .waypoint 174/648,1567.59998,351.70001,30,0
     .waypoint 174/648,1689.50000,325.50000,30,0
@@ -1362,12 +1362,12 @@ step
     .target Thrall
 step
     .goto 174,37.349,41.922
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r
     .accept 25058 >>Accept Mine Disposal, the Goblin Way
     .target Sassy Hardwrench
 step
     .goto 174,36.248,43.380
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggra|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggra|r
     .accept 25093 >>Accept The Heads of the SI:7
     .target Aggra
 step
@@ -1427,7 +1427,7 @@ step
     .subzone 4912 >>Travel to Warchief's Lookout
 step
     .goto 174,36.248,43.380
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggra|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aggra|r
     .turnin 25093 >>Turn in The Heads of the SI:7
     .target Aggra
 step
@@ -1437,7 +1437,7 @@ step
     .target Thrall
 step
     .goto 174,37.349,41.922
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sassy Hardwrench|r
     .turnin 25058 >>Turn in Mine Disposal, the Goblin Way
     .accept 25066 >>Accept The Pride of Kezan
     .target Sassy Hardwrench
@@ -1562,7 +1562,7 @@ step
     .complete 25122,2 --1/1 Izzy's mind freed
     .target Izzy
 step
-    >>Kill |cRXP_ENEMY_Blastshadow the Brutemaster|r and pick up the |cRXP_PICK_Blastshadow's Soulstone|r. 
+    >>Kill |cRXP_ENEMY_Blastshadow the Brutemaster|r and pick up the |cRXP_PICK_Blastshadow's Soulstone|r.
     .use 52481 >>|cRXP_WARN_Use|r |T134336:0|t[Blastshadow's Soulstone] |cRXP_WARN_on the corpse of|r |cRXP_ENEMY_Blastshadow the Brutemaster|r
     .goto 174,56.18,32.29
     .complete 25123,1 --1/1 Blastshadow's Soulstone destroyed

@@ -1,3 +1,5 @@
+local _,addon = ...
+if addon.game ~= "CATA" or addon.player.faction ~= 'Horde' then return end
 local faction = UnitFactionGroup("player")
 if faction == "Alliance" then return end
 

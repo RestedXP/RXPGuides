@@ -19,7 +19,7 @@ GuideWindow.lua
 Help.lua
 SettingsPanel.lua
 
-DB/classic.xml
+DB/cata.xml
 
 HSBatching.lua
 QuestLog.lua
@@ -36,10 +36,10 @@ functions.lua
 GuideLoader.lua
 HardcoreIntroUI.lua
 
-Guides/GuideList-classic.xml
+Guides/GuideList-cata.xml
 
-Talents.lua
-Guides/Talents/classic.xml
+#Talents.lua
+#Guides/Talents/classic.xml
 
-CptStadicsVendorTreasures.lua
+#CptStadicsVendorTreasures.lua
 ItemUpgrades.lua
