@@ -118,7 +118,8 @@ addon.icons = {
     clock = "|TInterface/ICONS/INV_Misc_PocketWatch_02:0|t",
     engrave = "|T134419:0|t",
 }
-if addon.gameVersion > 40000 then
+
+if addon.gameVersion > 50000 then
     addon.icons["goto"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:63:72:0:4|t"
     addon.icons["home"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:45:54:0:4|t"
     addon.icons["deathskip"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:72:81:0:4|t"
@@ -131,6 +132,9 @@ else
     addon.icons["home"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:64:80:0:16|t"
     addon.icons["deathskip"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:112:128:0:16|t"
 end
+
+--GetIcon("Interface/MINIMAP/POIICONS",5,128)
+
 addon.icons.groundgoto = addon.icons["goto"]
 addon.icons.flygoto = addon.icons["goto"]
 
