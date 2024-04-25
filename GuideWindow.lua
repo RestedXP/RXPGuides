@@ -1568,7 +1568,7 @@ function addon:LoadGuide(guide, OnLoad)
     if guide.subgroup and not guide.title then
         GuideName.text:SetText(guidename .. "\n" .. guide.subgroup)
     else
-        GuideName.text:SetText(guidename)
+        GuideName.text:SetText(guidename:gsub("\\n","\n"))
     end
 
     guide.labels = {}
