@@ -5709,6 +5709,22 @@ function addon.functions.addtoquestdb(self,text,index,...)
     end
 end
 
+addon.separators.setquestdb = function(t,args)
+    table.insert(t,args)
+end
+
+function addon.functions.setquestdb(self,text,str)
+    if type(self) == "string" then
+        local group = addon.guide.group
+        if not group or addon.QuestDB[group] then
+            return
+        end
+        local t = assert(loadstring("return " .. str))
+        setfenv(t, {})
+        addon.QuestDB[group] = t()
+    end
+end
+
 function addon.functions.convertquest(self, text, src, dst)
     if type(self) == "string" then -- on parse
         src = tonumber(src)
