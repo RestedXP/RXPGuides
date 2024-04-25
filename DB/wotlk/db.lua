@@ -345,17 +345,35 @@ local function IsQuestAvailable(quest,id,skipRepCheck)
 
     local function ProcessRep(rep,faction)
         local _, _, standing = GetFactionInfoByID(faction)
-        local current = addon.repStandingID[strlower(rep)]
+        local target = addon.repStandingID[strlower(rep)]
         if skipRepCheck then
             if (skipRepCheck == 932 and faction == 934) or
                 (skipRepCheck == 934 and faction == 932) then
                 return false
             end
-        elseif not (current and standing) or standing < current then
+        elseif not (target and standing) or standing < target then
             return false
         end
         return true
     end
+
+    local function ProcessTitle(titleId)
+        if skipRepCheck then
+            return true
+        else
+            return IsTitleKnown(titleId)
+        end
+    end
+
+    local titleCheck = true
+    if type(quest.title) == "number" then
+        titleCheck = ProcessTitle(quest.title)
+    elseif type(quest.title) == "table" then
+        for _,title in pairs(quest.title) do
+            titleCheck = titleCheck and ProcessTitle(title)
+        end
+    end
+
 
     local repCheck = true
     if type(quest.repfaction) == "number" then
@@ -379,7 +397,7 @@ local function IsQuestAvailable(quest,id,skipRepCheck)
         end
     end
 
-    if addon.IsQuestTurnedIn(id) or not repCheck
+    if addon.IsQuestTurnedIn(id) or not repCheck or not titleCheck
         or (quest.completewith and addon.IsQuestTurnedIn(quest.completewith)) then
         return false
     end
