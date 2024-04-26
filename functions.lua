@@ -5108,10 +5108,13 @@ function addon.CanPlayerFly(zoneOrContinent)
             return true
         end
     else
-        local cwf = addon.IsPlayerSpell(54197)
-
+        local cwf = addon.IsPlayerSpell(54197)--Cold weather flying
+        local fml = addon.IsPlayerSpell(90267)--Flight Master's license
         --1945 = outland,113 = northrend
-        if ((continentId == addon.GetMapId("Outland") or (cwf and continentId == addon.GetMapId("Northrend"))) and ridingSkill > 224) then
+        if ((continentId == addon.GetMapId("Outland") or
+            (cwf and continentId == addon.GetMapId("Northrend")) or
+            (fml and (continentId == addon.GetMapId("Kalimdor") or continentId == addon.GetMapId("Eastern Kingdoms"))))
+                and ridingSkill > 224) then
             return true
         end
     end
