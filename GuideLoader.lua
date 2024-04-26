@@ -778,10 +778,16 @@ local function parseLine(linetext,step,parsingLogic)
                 element.parent = addon.lastEelement
             end
         else
+            local ltext
+            if #linetext > 60 then
+                ltext = linetext:sub(1,60)
+            else
+                ltext = linetext
+            end
             return addon.error(L("Error parsing guide") .. " " ..
                                    addon.currentGuideName ..
                                    ": Invalid function call (." .. tag ..
-                                   ")\n" .. linetext)
+                                   ")\n" .. ltext)
         end
     end)
 
