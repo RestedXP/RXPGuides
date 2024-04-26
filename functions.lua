@@ -5080,9 +5080,13 @@ function addon.CanPlayerFly(zoneOrContinent)
 
     local mapInfo = C_Map.GetMapInfo(region)
     local continentId = region
-    while mapInfo and mapInfo.parentMapID and mapInfo.flags ~= 0 do
+    local flags = mapInfo.flags
+    local mapType = mapInfo.mapType
+    while mapInfo and mapInfo.parentMapID and (mapType and mapType > 2 or flags and flags ~= 0) do
         continentId = mapInfo.parentMapID
         mapInfo = C_Map.GetMapInfo(continentId)
+        flags = mapInfo.flags
+        mapType = mapInfo.mapType
     end
 
     local ridingSkill = addon.GetSkillLevel("riding")
@@ -5104,7 +5108,7 @@ function addon.CanPlayerFly(zoneOrContinent)
             return true
         end
     else
-        local cwf = IsPlayerSpell(54197)
+        local cwf = addon.IsPlayerSpell(54197)
 
         --1945 = outland,113 = northrend
         if ((continentId == addon.GetMapId("Outland") or (cwf and continentId == addon.GetMapId("Northrend"))) and ridingSkill > 224) then
@@ -5113,6 +5117,7 @@ function addon.CanPlayerFly(zoneOrContinent)
     end
 end
 
+AA = addon.CanPlayerFly
 events.noflyable = "ZONE_CHANGED"
 function addon.functions.noflyable(self, text, zone, skill)
     if type(self) == "string" then
