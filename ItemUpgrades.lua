@@ -1165,8 +1165,9 @@ function addon.itemUpgrades.AH:Setup()
     if not addon.settings.profile.enableBetaFeatures then return end
     if addon.settings.profile.soloSelfFound then return end
 
-    addon.settings.enabledBetaFeatures[fmt("%s %s", _G.ENABLE, _G.MINIMAP_TRACKING_AUCTIONEER)]
-        = fmt("%s %s", _G.AUCTION_ITEM, _G.SEARCH)
+    addon.settings.enabledBetaFeatures[fmt("%s %s", _G.ENABLE,
+                                           _G.MINIMAP_TRACKING_AUCTIONEER)] =
+        fmt("%s %s", _G.AUCTION_ITEM, _G.SEARCH)
 
     if ahSession.isInitialized then return end
 
@@ -1682,6 +1683,7 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
     ahSession.displayFrame.scanButton = _G.RXP_IU_AH_SearchButton
 
     ahSession.displayFrame.scanButton:SetScript("OnClick", function()
+        ahSession.displayFrame.DataProvider:Flush()
         addon.itemUpgrades.AH:Scan()
     end)
 
