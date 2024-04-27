@@ -1,0 +1,510 @@
+local _,addon = ...
+
+local showAllQs
+
+local function IsPreReqComplete(quest)
+    local group = addon.currentGuide.group
+    local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy or {}
+    local t = type(quest.previousQuest)
+    if t == "table" then
+        local state = not quest.preQuestAny
+        for _, id in ipairs(quest.previousQuest) do
+            if quest.preQuestAny then
+                state = state or addon.IsQuestTurnedIn(id)
+            else
+                state = state and addon.IsQuestTurnedIn(id)
+            end
+        end
+        return state
+    elseif t == "number" then
+        local preReqComplete
+        if quest.uniqueWith then
+            local prevQuest = QuestDB[quest.previousQuest]
+            if prevQuest and prevQuest.uniqueWith then
+                for _,uniqueId in pairs(prevQuest.uniqueWith) do
+                    preReqComplete = preReqComplete or addon.IsQuestTurnedIn(uniqueId)
+                end
+            end
+        end
+        return preReqComplete or addon.IsQuestTurnedIn(quest.previousQuest)
+    else
+        return true
+    end
+end
+
+local function IsQuestAvailable(quest,id,skipRepCheck)
+    if not quest then return end
+    id = id or quest.Id
+
+    local function ProcessRep(rep,faction)
+        local _, _, standing = GetFactionInfoByID(faction)
+        local target = addon.repStandingID[strlower(rep)]
+        if skipRepCheck then
+            if (skipRepCheck == 932 and faction == 934) or
+                (skipRepCheck == 934 and faction == 932) then
+                return false
+            end
+        elseif not (target and standing) or standing < target then
+            return false
+        end
+        return true
+    end
+
+    local function ProcessTitle(titleId)
+        if skipRepCheck then
+            return true
+        else
+            return IsTitleKnown(titleId)
+        end
+    end
+
+    local titleCheck = true
+    if type(quest.title) == "number" then
+        titleCheck = ProcessTitle(quest.title)
+    elseif type(quest.title) == "table" then
+        for _,title in pairs(quest.title) do
+            titleCheck = titleCheck and ProcessTitle(title)
+        end
+    end
+
+
+    local repCheck = true
+    if type(quest.repfaction) == "number" then
+        repCheck = ProcessRep(quest.reputation,quest.repfaction)
+    elseif type(quest.reputation) == "table" then
+        for i,rep in pairs(quest.reputation) do
+            repCheck = repCheck and ProcessRep(rep,quest.repfaction[i])
+        end
+    end
+
+    local uniqueWith = quest.uniqueWith
+    if uniqueWith then
+        if type(uniqueWith) ~= "table" then
+            uniqueWith = {uniqueWith}
+            quest.uniqueWith = uniqueWith
+        end
+        for _,uniqueId in pairs(uniqueWith) do
+            if addon.IsQuestTurnedIn(uniqueId) then
+                return false
+            end
+        end
+    end
+
+    if addon.IsQuestTurnedIn(id) or not repCheck or not titleCheck
+        or (quest.completewith and addon.IsQuestTurnedIn(quest.completewith)) then
+        return false
+    end
+
+    local activeFor = quest.appliesTo
+    if activeFor then
+        activeFor = addon.applies(activeFor) or
+                        addon.GetSkillLevel(activeFor) > 0
+    else
+        activeFor = true
+    end
+    return activeFor
+end
+
+
+local questQueryTimer = 0
+function addon.GetBestQuests(refreshQuestDB,output)
+    output = output or 0
+    local group = addon.currentGuide.group
+    local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy or {}
+    if not QuestDB then return end
+    if not addon.questLogQuests or refreshQuestDB then
+        addon.questLogQuests = {}
+
+        local groups = {}
+        for id, v in pairs(QuestDB) do
+            v.Id = id
+            local group = v.group or ""
+            if IsQuestAvailable(v,id) and not v.itemId and (group == "" or not groups[group]) and
+                v.questLog and (not v.forcePreReq or IsPreReqComplete(v)) then
+                table.insert(addon.questLogQuests, v)
+                v.isActive = true
+                groups[group] = true
+            elseif v.questLog then
+                v.isActive = false
+            end
+        end
+    end
+    local qDB = addon.questLogQuests
+    if GetTime() - questQueryTimer > 1 or refreshQuestDB then
+
+        questQueryTimer = GetTime()
+        table.sort(qDB, function(k1, k2)
+            local xc1 = k1.xpcorrection or 0
+            local xc2 = k2.xpcorrection or 0
+            local x1 = (k1.xp or 0) + xc1
+            local x2 = (k2.xp or 0) + xc2
+            local q1 = addon.IsQuestTurnedIn(k1.Id)
+            local q2 = addon.IsQuestTurnedIn(k2.Id)
+            local prev1 = k1.previousQuest and not IsPreReqComplete(k1)
+            local prev2 = k2.previousQuest and not IsPreReqComplete(k2)
+            local prio1 = k1.priority or 1e3
+            local prio2 = k2.priority or 1e3
+            if q1 and not q2 then
+                return false
+            elseif q2 and not q1 then
+                return true
+            elseif x1 ~= x2 then
+                return x1 > x2
+            elseif prev1 and not prev2 then
+                return false
+            elseif prev2 and not prev1 then
+                return true
+            elseif prio1 < prio2 then
+                return true
+            elseif prio2 < prio1 then
+                return false
+            else
+                return k1.Id < k2.Id
+            end
+        end)
+
+        for i = #qDB, 1, -1 do
+            local xp = qDB[i].xp or 0
+            local id = qDB[i].Id
+            if i > 25 and xp < (qDB[25].xp or 1) or addon.IsQuestTurnedIn(id) then
+                QuestDB[id].isActive = false
+                if not showAllQs then
+                    table.remove(qDB, i)
+                end
+            end
+        end
+    end
+    local xpmod = 1
+    if addon.IsPlayerSpell(78632) then
+        xpmod = 1.1
+    end
+    local outputString = ""
+    local requestFromServer = true
+
+    if output ~= 0 then
+        for k, v in ipairs(qDB) do
+            local id = v.Id
+            local qname = addon.GetQuestName(id)
+            requestFromServer = qname and requestFromServer
+            local xp = v.xp or 0
+            xp = xp * xpmod
+            outputString = string.format("%s\n%d: %dxp %s (%d)",outputString, k, xp,
+                                             qname or "", id)
+        end
+        outputString = outputString:gsub("^\n","")
+        if bit.band(output,0x1) == 0x1 then
+            print(outputString)--ok
+        end
+    end
+
+    for i = #qDB, 1, -1 do
+        if i > 25 then
+            qDB[i].isActive = false
+        else
+            break
+        end
+    end
+
+    return outputString,not requestFromServer
+end
+
+
+local CreatePanel
+local requestText = true
+local questText = ""
+local requestTimer = 0
+local mode
+local missingQs
+local textOverride
+
+local SetText = function()
+    local ctime = GetTime()
+    if requestText and ctime - requestTimer > 0.2 then
+        requestTimer = ctime
+        questText,requestText = addon.GetBestQuests(false,2)
+        missingQs = addon.ShowMissingQuests()
+    end
+
+    if textOverride then
+        return textOverride
+    elseif mode == "missing" then
+        return missingQs
+    else
+        return questText
+    end
+end
+
+local function OnClick(self)
+    if not addon.settings.gui.quest then
+        CreatePanel()
+    end
+    textOverride = nil
+    addon.settings.OpenSettings('Quest Data')
+end
+
+function addon.functions.show25quests(self,text,flags)
+    if type(self) == "string" then
+        return { text = text, event = "OnUpdate", hideTooltip = true, tooltip = "Click to view the 25 best quests", icon = addon.icons.link, textOnly = true}
+    end
+    if self and self.highlight and not self.highlight:IsShown() then
+        self.highlight:Show()
+        self:SetScript("OnMouseDown", OnClick)
+    end
+    SetText()
+
+end
+
+
+function CreatePanel()
+
+    local questDataTable = {
+        type = "group",
+        name = "RestedXP Quest Data",
+        args = {
+            importBox = {
+                order = 10,
+                type = 'input',
+                name = 'List of 25 best quests',
+                width = "full",
+                multiline = 25,
+                confirmText = "Refresh",
+                -- usage = "Usage string",
+                get = SetText,
+                set = SetText,
+                --validate = function() return true,SetText() end,
+            },
+
+            showAvailable = {
+                order = 14,
+                name = "Show 25 Best Quests",
+                type = 'execute',
+                func = function()
+                    mode = "quests"
+                    textOverride = nil
+                    if showAllQs then
+                        showAllQs = false
+                        questText,requestText = addon.GetBestQuests(true,2)
+                    end
+                    addon.settings.OpenSettings('Quest Data')
+                end,
+            },
+            showMissing = {
+                order = 15,
+                name = "Show Missing Quests",
+                type = 'execute',
+                func = function()
+                    mode = "missing"
+                    textOverride = nil
+                    addon.settings.OpenSettings('Quest Data')
+                end,
+            },
+            showAllQs = {
+                order = 16,
+                name = "Show All Available",
+                type = 'execute',
+                func = function()
+                    mode = "quests"
+                    textOverride = nil
+                    if not showAllQs then
+                        showAllQs = true
+                        questText,requestText = addon.GetBestQuests(true,2)
+                    end
+                    addon.settings.OpenSettings('Quest Data')
+                end,
+            },
+        }
+
+    }
+
+    LibStub("AceConfig-3.0"):RegisterOptionsTable(addon.title .. "/Quest Data", questDataTable)
+
+    addon.settings.gui.quest = LibStub("AceConfigDialog-3.0"):AddToBlizOptions(
+                                    addon.title .. "/Quest Data", "Quest Data", addon.title)
+
+end
+
+
+function addon.IsGuideQuestActive(id)
+    local group = addon.currentGuide.group
+    local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy or {}
+    if not (QuestDB and QuestDB[id]) then
+        return false
+    elseif not addon.questLogQuests or addon.IsQuestTurnedIn(id) and QuestDB[id].isActive then
+        addon.GetBestQuests(true)
+    end
+    return not addon.IsQuestTurnedIn(id) and QuestDB[id].isActive
+end
+
+function addon.functions.requires(self,text,mode,...)
+    if type(self) == "string" then
+        local args = {...}
+        local element = {textOnly = true,text = text, args = args, mode = mode, requestFromServer = true}
+        if mode == "quest" then
+            element.event = "QUEST_LOG_UPDATE"
+        end
+        return element
+    end
+
+    local element = self.element
+    local args = element.args
+    local step = element.step
+    if element.mode == "quest" then
+        --local id = tonumber(args[1])
+        local optional = step.optional
+        local pass = false
+        for _,v in pairs(args) do
+            local id = tonumber(v)
+            if id then
+                pass = pass or addon.IsGuideQuestActive(id)
+            end
+        end
+
+        if not pass then
+            if not (optional and step.completed) then
+                step.completed = true
+                --step.hidewindow = true
+                step.optional = true
+                addon.updateSteps = true
+                element.text = "Step skipped: This is part of a quest you don't have"
+            end
+        elseif optional then
+            --step.hidewindow = false
+            addon.updateSteps = true
+            step.optional = nil
+        end
+        if addon.settings.profile.debug then
+            step.optional = nil
+        elseif optional ~= step.optional then
+            addon:ScheduleTask(addon.ReloadGuide)
+        end
+    end
+    element.requestFromServer = false
+end
+
+function addon.functions.showtotalxp(self,text,flags)
+    if type(self) == "string" then
+        return {textOnly = true,rawtext = text or "", text = text, flags = tonumber(flags) or 0, event = "QUEST_LOG_UPDATE"}
+    end
+
+    local element = self.element
+
+    local xp = addon.CalculateTotalXP(element.flags)
+    text = format("%s %s",element.rawtext,addon.FormatNumber(xp))
+    if text ~= element.text then
+        element.text = text
+        addon.UpdateStepText(element)
+    end
+
+end
+
+addon.questsDone = {}
+addon.questsAvailable = {}
+
+function addon.CalculateTotalXP(flags)
+    local grp = addon.currentGuide.group
+    local QuestDB = addon.QuestDB[grp] or addon.QuestDBLegacy or {}
+    local totalXp = 0
+    flags = flags or 0
+    local output = bit.band(flags,0x2) == 0x2
+    local ignorePreReqs
+    local outputString = {}
+    if bit.band(flags,0x1) == 0x1 then
+        local aldor = addon.stepLogic.AldorScryerCheck("Aldor") and 932
+        local scryer = addon.stepLogic.AldorScryerCheck("Scryer") and 934
+        ignorePreReqs = aldor or scryer or 932
+    else
+        addon.questsDone = {}
+    end
+    local xpmod = 1
+    if addon.IsPlayerSpell(78632) then
+        xpmod = 1.1
+    end
+    local groups = {}
+    local function ProcessQuest(quest,qid,skipgrpcheck)
+        qid = qid or quest.Id
+        local group = quest.group or ""
+        local isAvailable = IsQuestAvailable(quest,qid,ignorePreReqs)
+        if (group == "" or skipgrpcheck or not groups[group]) and isAvailable and (ignorePreReqs or (IsPreReqComplete(quest))) then
+            groups[group] = true
+            local xp = quest.xp or 0
+            xp = xp * xpmod
+            totalXp = totalXp + xp
+            if output then
+                    local s = string.format("%dxp %s (%d)", xp,
+                                    addon.GetQuestName(qid) or "", qid)
+                    table.insert(outputString,s)
+                    print(s)
+            end
+        end
+        return isAvailable
+    end
+    if not addon.questLogQuests then addon.GetBestQuests(true) end
+    if ignorePreReqs then
+        for i = 1, 25 do
+            local quest = addon.questLogQuests[i]
+            if quest then
+                ProcessQuest(quest)
+                addon.questsAvailable[quest.Id] = true
+            end
+        end
+    end
+    for id, quest in pairs(QuestDB) do
+
+        if not ignorePreReqs and quest.questLog and addon.IsQuestComplete(id) then
+            if ProcessQuest(quest,id) then
+                addon.questsDone[id] = true
+            end
+        elseif not (quest.questLog or addon.IsQuestTurnedIn(id)) then
+            local item = quest.itemId
+            if ignorePreReqs and item then
+                if ProcessQuest(quest,id) then
+                    addon.questsDone[id] = true
+                end
+            elseif type(item) == "table" then
+                local state = true
+                for n, itemId in pairs(item) do
+                    state = state and GetItemCount(itemId, true) >=
+                                quest.itemAmount[n]
+                end
+                if state then
+                    if ProcessQuest(quest,id) then
+                        addon.questsDone[id] = true
+                    end
+                end
+            elseif type(item) == "number" and GetItemCount(item, true) >=
+                quest.itemAmount then
+                if ProcessQuest(quest,id) then
+                    addon.questsDone[id] = true
+                end
+            elseif not item then
+                if ProcessQuest(quest,id) then
+                    addon.questsDone[id] = true
+                end
+            end
+        end
+    end
+    if output then
+        textOverride = format("Total XP: %d\n%s",totalXp,table.concat(outputString,'\n'))
+        if not addon.settings.gui.quest then
+            CreatePanel()
+        end
+        addon.settings.OpenSettings('Quest Data')
+    end
+    return math.floor(totalXp)
+end
+
+function addon.ShowMissingQuests(output)
+    addon.CalculateTotalXP(1)
+    addon.CalculateTotalXP(0)
+    local t = ""
+    for qid,v in pairs(addon.questsAvailable) do
+        if not addon.questsDone[qid] and qid > 0 then
+            t = string.format("%s\n%s (%d)", t,
+                addon.GetQuestName(qid) or "", qid)
+        end
+    end
+    if output then
+        print(t)--ok
+    end
+    return t
+end

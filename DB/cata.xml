@@ -8,4 +8,6 @@
     <Script file="DB/cata/rares.lua"/>
     <Script file="DB/cata/db.lua"/>
 
+    <Script file="DB/questDB.lua"/>
+
 </Ui>

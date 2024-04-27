@@ -8,4 +8,6 @@
     <Script file="DB/wotlk/rares.lua"/>
     <Script file="DB/wotlk/db.lua"/>
 
+    <Script file="DB/questDB.lua"/>
+
 </Ui>

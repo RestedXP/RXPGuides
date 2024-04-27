@@ -7,4 +7,6 @@
     <Script file="DB/tbc/spells.lua"/>
     <Script file="DB/tbc/db.lua"/>
 
+    <Script file="DB/questDB.lua"/>
+
 </Ui>

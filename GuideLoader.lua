@@ -779,8 +779,8 @@ local function parseLine(linetext,step,parsingLogic)
             end
         else
             local ltext
-            if #linetext > 60 then
-                ltext = linetext:sub(1,60)
+            if #linetext > 150 then
+                ltext = linetext:sub(1,150)
             else
                 ltext = linetext
             end
