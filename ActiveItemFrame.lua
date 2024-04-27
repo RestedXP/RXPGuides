@@ -86,6 +86,21 @@ local function GetActiveItemList(ref)
             end
         end
     end
+    if C_ToyBox and PlayerHasToy then
+        for id in pairs(ref.activeItems) do
+            if not activeItems[id] and PlayerHasToy(id) then
+                activeItems[id] = true
+                local itemID, toyName, icon = C_ToyBox.GetToyInfo(id)
+                table.insert(itemList, {
+                    name = toyName,
+                    texture = icon,
+                    toy = true,
+                    id = id,
+                    spell = false,
+                })
+            end
+        end
+    end
     return itemList
 end
 
@@ -225,6 +240,8 @@ local fOnEnter = function(self)
             GameTooltip:SetInventoryItemByID(self.itemId)
         elseif self.spell then
             GameTooltip:SetSpellByID(self.itemId)
+        elseif self.toy then
+            GameTooltip:SetToyByItemID(self.itemId)
         end
         GameTooltip:Show()
     end
@@ -341,6 +358,7 @@ function addon.UpdateItemFrame(itemFrame)
         btn.slot = item.slot
         btn.invSlot = item.invSlot
         btn.spell = item.spell
+        btn.toy = item.toy
 
         btn.icon:SetTexture(item.texture)
         btn:Show()
