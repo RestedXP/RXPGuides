@@ -136,7 +136,7 @@ end
 -- Debug function, helps finding out quest log problems on a given guide
 --Returns the expected quest log and a list of quest that will be turend in later
 --This will run from the 1st guide to the point where you are now, counting the accept/turn in steps in order to determine the quest log state
---After determining the expected quest log, it will run from the current step forward, counting existing turn in steps for the quest log quests
+--After determining the expected quest log, it will run from the current step forward, counting existing turn in steps for the quests in your quest log currently
 
 --Guides have a lot of optional steps of the like: Turn in this quest if you have completed it, otherwise do it later
 
@@ -165,7 +165,7 @@ function addon.GetExpectedQuestLog()
             if element.tag and (element.tag:find("turnin") or element.tag == "abandon") then
                 local ids = element.ids or {element.questId}
                 for _,id in pairs(ids) do
-                    if qLog[id] then
+                    if addon.IsOnQuest(id) then
                         futureTurnIns[id] = guide.key
                     end
                 end
