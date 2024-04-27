@@ -220,7 +220,7 @@ function addon.GetQuestLog(QL, LT, guide, silent, stopGuide, stopStep)
         end
         for en, element in pairs(step.elements) do
             local ids
-            if element.tag == "accept" then
+            if element.tag == "accept" or element.tag == "daily" then
                 local id = addon.GetQuestId(element.questId,guide)
                 local qname = element.text or tostring(id)
                 LT[id] = false
