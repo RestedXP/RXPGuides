@@ -162,7 +162,7 @@ function addon.GetExpectedQuestLog()
 
     local function ProcessStep(step,guide)
         for _,element in ipairs(step.elements) do
-            if element.tag and (element.tag:find("turnin") or element.tag == "abandon") then
+            if element.tag and (element.tag:find("turnin")) then
                 local ids = element.ids or {element.questId}
                 for _,id in pairs(ids) do
                     if addon.IsOnQuest(id) then
