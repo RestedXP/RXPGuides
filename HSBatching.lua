@@ -29,7 +29,7 @@ end
 --[[
 hooksecurefunc("SetCVar",function(n,v)
     if n == "maxfps" then
-        print(n,v)
+        print(n,v)--ok
         C_Timer.After(1,function()
             print(GetCVar("maxfps"))
         end)

@@ -1854,7 +1854,7 @@ step
     .goto Desolace,31.79,61.28
     .aura 408828 >> |cRXP_WARN_Cast|r |T135968:0|t[Blessing of Freedom] |cRXP_WARN_on another player 5 times while their movement is impaired. You will gain a stack of|r |T237556:0|t[Building Inspiration] |cRXP_WARN_each time you do this|r
     >>|cRXP_WARN_Once you have 5 stacks of|r |T237556:0|t[Building Inspiration]|cRXP_WARN_, you will receive the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
-    >>|cRXP_WARN_Complete this just outside of Maraudon. The|r |cRXP_ENEMY_Maraudine Wranglers|r |cRXP_WARN_there cast|r |T132149:0|t[Net] 
+    >>|cRXP_WARN_Complete this just outside of Maraudon. The|r |cRXP_ENEMY_Maraudine Wranglers|r |cRXP_WARN_there cast|r |T132149:0|t[Net]
     .mob Maraudine Wrangler
 step
     .use 213513
@@ -1887,42 +1887,298 @@ step
 
 
 -- ]])
+RXPGuides.RegisterGuide([[
+#classic
+<< Paladin SoD
+#group RestedXP Rune & Books Guide
+#subgroup Helmet
+#name Fanaticism - 44 (Azeroth)
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Paladin SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Helmet
--- #name Fanaticism
--- for phase 3
+step
+    #optional
+    .train 426178 >>|cRXP_WARN_You have to learn the rune for|r |T236263:0|t[Sheath of Light] |cRXP_WARN_first before you can obtain this one|r
+    .train 429251,1
+step
+    #completewith next
+    .zone Stormwind City >>Travel to Stormwind
+    .train 429251,1
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aeonas the Vindicated|r
+    .goto Stormwind City,37.355,31.708
+    .accept 81762 >>Accept Some Good News
+    .target Aeonas the Vindicated
+step
+    .train 429251,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katherine the Pure|r
+    .goto Stormwind City,37.222,31.855
+    .turnin 81762 >>Turn in Some Good News
+    .accept 81764 >>Accept The Mysterious Merchant
+    .target Katherine the Pure
+step
+    #completewith next
+    .zone Dustwallow Marsh >>Travel to Dustwallow Marsh/Theramore Isles |cRXP_WARN_(e.g. take the boat from Menethil Harbor to Theramore)|r
+    .train 429251,1
+step
+    .train 429251,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elrick|r inside the inn
+    *|cRXP_WARN_Two level 45 enemies will attack you after accepting the quest|r
+    .goto Dustwallow Marsh,66.52,45.41
+    .turnin 81764 >>Turn in The Mysterious Merchant
+    .accept 81765 >>Accept Elrick, Paladin of the Silver Hand
+    .target Elrick
+step
+    #completewith next
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elrick|r
+    .goto Dustwallow Marsh,66.52,45.41
+    .gossip 221575,5
+    .skipgossip 221575,1
+    .train 429251,1
+step
+    .train 429251,1
+    >>Kill |cRXP_ENEMY_Elrick|r. Loot him for the |T133471:0|t[|cRXP_LOOT_Bloody Missive|r]
+    >>|cRXP_WARN_Use the|r |T133471:0|t[|cRXP_LOOT_Bloody Missive|r] |cRXP_WARN_to get the quest|r
+    .goto Dustwallow Marsh,66.52,45.41
+    .collect 219930,1,81766,1
+    .accept 81766 >>Accept The Bloody Missive
+    .use 219930
+    .skipgossip 221575,1
+    .target Elrick
+step
+    #completewith next
+    .zone Stormwind City >>Travel to Stormwind
+    .train 429251,1
+step
+    .train 429251,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katherine the Pure|r |cRXP_WARN_to train|r |T135905:0|t[Fanaticism]
+    .goto Stormwind City,37.222,31.855
+    .turnin 81762 >>Turn in The Bloody Missive
+    .target Katherine the Pure
+]])
 
--- Fanaticism
+RXPGuides.RegisterGuide([[
+#classic
+<< Paladin SoD
+#group RestedXP Rune & Books Guide
+#subgroup Bracers
+#name Light's Grace - 40 (Feralas)
 
+step
+    #optional
+    .train 5599 >>|cRXP_WARN_You must have|r |T135964:0|t[Blessing of Protection] |cRXP_WARN_trained in order to aquire the|r |T135931:0|t[Light's Grace] |cRXP_WARN_rune|r
+step
+    #optional
+    #completewith TeleporterTaken
+    .isQuestTurnedIn 79984
+    .goto Stranglethorn Vale,27.6,77.4,8 >>Use the Teleporter to Feralas in Booty Bay
+    .train 429242,1
+step
+    #optional
+    .isQuestAvailable 79984
+    #completewith TeleporterTaken
+    .zone Feralas >>Travel to Feralas
+    .goto Feralas,85.27,43.66,8 >>Use the |cRXP_PICK_Wondergear Worldporter|r
+    .train 429242,1
+step
+    #label TeleporterTaken
+    .goto Feralas,84.26,43.81,10 >>Reach the platform
+    .train 429242,1
+step
+    .train 429242,1
+    >>1) |cRXP_WARN_Set the faction Gadgetzan to "At War" in your Reputation window|r
+    >>2) Go to the exact waypoint position
+    >>3) Look at the green bush next to the wooden house
+    .goto Feralas,83.93,43.89
+    .goto Feralas,85.27,43.66,0
+    .aura 436534,1 >>4) |cRXP_WARN_Wait for the |cRXP_ENEMY_Tower Defense Automaton|r to be exactly between you and the bush and attack it|r
+    .mob Tower Defense Automaton
+step
+    .train 429242,1
+    >>|cRXP_WARN_Heal|r |cRXP_FRIENDLY_Frix Xizzix|r |cRXP_WARN_until he stands up|r.
+    .gossip 220930,1 >>Afterwards talk to |cRXP_FRIENDLY_Frix Xizzix|r
+    .skipgossip 220930,1
+    .goto Feralas,81.45,42.46
+    .target Frix Xizzix
+step
+    #completewith next
+    .zone Stranglethorn Vale >>Travel to Stranglethorn Vale/Booty Bay
+    .train 429242,1
+step
+    .train 429242,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rix Xizzix|r and buy the |T134419:0|t[|cRXP_FRIENDLY_Rune of Grace|r]
+    .goto Stranglethorn Vale,28.4,75.8
+    .collect 219147,1
+    .target Rix Xizzix
+step
+    .itemcount 219147,1
+    .use 219147
+    .train 429242 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Grace|r] |cRXP_WARN_to train|r |T236249:0|t[Sacred Shield]
+]])
 
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Paladin SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Helmet
--- #name Light's Grace
--- for phase 3
-
--- Light's Grace
-
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Paladin SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Helmet
--- #name Wrath
--- for phase 3
+RXPGuides.RegisterGuide([[
+#classic
+<< Paladin SoD
+#group RestedXP Rune & Books Guide
+#subgroup Helm
+#name Wrath - 43 (The Hinterlands)
 
 -- Wrath
 
+step
+    #optional
+    .train 5502 >>|cRXP_WARN_You must have|r |T135974:0|t[Sense Undead] |cRXP_WARN_trained in order to aquire the|r |T236260:0|t[Wrath] |cRXP_WARN_rune|r
+    .train 429249,1
+step
+    #completewith RuneLearned
+    +|cRXP_WARN_You can only get the|r |T236260:0|t[Wrath] |cRXP_WARN_rune between 9pm-6am.|r
+step
+    #completewith next
+    .zone The Hinterlands >>Travel to The Hinterlands
+    .train 429249,1
+step
+    .train 429249,1
+    >>|cRXP_WARN_Use|r |T135974:0|t[Sense Undead] |cRXP_WARN_to be able to see the|r |cRXP_ENEMY_Vengeful Spirit|r
+    >>Kill the |cRXP_ENEMY_Vengeful Spirit|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Wrath|r]
+    *The |cRXP_ENEMY_Vengeful Spirit|r walks around the lake
+    .goto 33.0,44.2
+    .collect 220165,1
+    .mob Vengeful Spirit
+step
+    #label RuneLearned
+    .itemcount 220165,1
+    .use 220165
+    .train 429249 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Wrath|r] |cRXP_WARN_to train|r |T236260:0|t[Wrath]
+]])
 
--- ]])
+RXPGuides.RegisterGuide([[
+#classic
+<< Paladin SoD
+#group RestedXP Rune & Books Guide
+#subgroup Bracers
+#name Hammer of the Righteous - 50 (Azeroth)
+
+--x shiek: needs better coordinates
+step
+    #optional
+    .train 410013 >>|cRXP_WARN_You have to learn the rune for|r |T236253:0|t[Hammer of the Righteous] |cRXP_WARN_first before you can obtain this one|r
+    .train 410013,1
+step
+    #completewith next
+    .zone Felwood >>Travel to Felwood
+    .train 410013,1
+step
+    .goto Felwood,45.0,52.0
+    .gossip 217996,5 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aoenas the Vindicated|r
+    .target Aoenas the Vindicated
+    .train 410013,1
+step
+    .goto Felwood,44.6,52.0
+    .gossip 221636,8 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gregory|r
+    .target Gregory
+    .train 410013,1
+step
+    .goto Felwood,44.6,52.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gregory|r
+    .accept 81790,1 >>Accept Materials of Significance
+    .target Gregory
+    .train 410013,1
+step
+    #loop
+    .goto Felwood,44.4,46.8,40,0
+    .goto Felwood,40.0,43.6,40,0
+    .goto Felwood,41.8,34.8,40,0
+    .goto Felwood,48.0,38.8,40,0
+    >>Kill |cRXP_ENEMY_Infernal Sentry|r, |cRXP_ENEMY_Infernal Bodyguard|r, |cRXP_ENEMY_Entropic Beast|r and |cRXP_ENEMY_Entropic Horror|r. Loot them for |cRXP_LOOT_|T136030:0|tFiery Infernal Core|r
+    .complete 81790,1 --3/3 Fiery Infernal Core
+    .mob Infernal Sentry
+    .mob Infernal Bodyguard
+    .mob Entropic Beast
+    .mob Entropic Horror
+step
+    #completewith next
+    #title Maraudon
+    .zone Desolace >>Travel to Maraudon
+    .goto Desolace,30,62,20
+    .train 410013,1
+step
+    >>|cRXP_WARN_It's recommended to form a group of 5players.|r
+    >>Kill |cRXP_ENEMY_Princess Theradras.|r the endboss of Maraudon. Loot her for |cRXP_LOOT_|T134389:0|tShimmering Grave Dust.|r
+    .complete 81790,2 --1/1 Shimmering Grave Dust
+    .mob Princess Theradras
+    .train 410013,1
+step << Alliance
+    #completewith next
+    #title Blackrock Depths
+    .zone Searing Gorge >>Travel to Blackrock Depths
+    .goto 1415,48.09,62.42,20
+    .train 410013,1
+step << Alliance
+    >>|cRXP_WARN_It's recommended to form a group of 5players and you'll need 3 gold.|r
+    >>Venture through Blackrock Depths until you reach the Grim Guzzler Bar. |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Plugger Spazzring|r and buy |T135262:0|t[Triple-Brewed Molten Lager]
+    .complete 81790,3 --1/1 Triple-Brewed Molten Lager
+    .target Plugger Spazzring
+    .train 410013,1
+step << Alliance
+    #completewith next
+    .zone Hillsbrad Foothills >>Travel to Hillsbrad Foothills
+    .train 410013,1
+step << Alliance
+    #loop
+    .goto Felwood,65.8,19.6,20,0
+    .goto Felwood,67.6,15.0,20,0
+    .goto Felwood,68.6,13.8,20,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brave Stonetorch|r
+    .target Brave Stonetorch
+    .accept 81944,1 >>Accept A Newly Discovered Purpose
+    .complete 81970,4 --1/1 Symbol of Faith
+step << Horde
+    #completewith next
+    .zone Hillsbrad Foothills >>Travel to Hillsbrad Foothills
+    .train 410013,1
+step << Horde
+    #loop
+    .goto Felwood,65.8,19.6,20,0
+    .goto Felwood,67.6,15.0,20,0
+    .goto Felwood,68.6,13.8,20,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brave Stonetorch|r
+    .target Brave Stonetorch
+    .accept 81944,1 >>Accept A Newly Discovered Purpose
+    .complete 81970,4 --1/1 Symbol of Faith
+step << Horde
+    #completewith next
+    .zone Searing Gorge >>Travel to Searing Gorge
+    .train 410013,1
+step << Horde
+    >>|cRXP_WARN_It's recommended to form a group of 5players and you'll need 3 gold.|r
+    >>Venture through Blackrock Depths until you reach the Grim Guzzler Bar. |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Plugger Spazzring|r and buy |T135262:0|t[Triple-Brewed Molten Lager]
+    .complete 81790,3 --1/1 Triple-Brewed Molten Lager
+    .target Plugger Spazzring
+    .train 410013,1
+step
+    #completewith next
+    .zone Felwood >>Travel to Felwood
+    .train 410013,1
+step
+    .goto Felwood,44.6,52.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gregory|r
+    .turnin 81790 >>Accept Materials of Significance
+    .target Gregory
+    .train 410013,1
+step
+    .goto Felwood,45.0,52.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aoenas the Vindicated|r
+    .accept 81885,1 >>Accept The Ritual
+    .target Aoenas the Vindicated
+    .train 410013,1
+step
+    .goto Felwood,44.6,52.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gregory|r
+    .complete 81885,1 --1/1 Complete the Ritual
+    .target Gregory
+    .train 410013,1
+step
+    .goto Felwood,45.0,52.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aoenas the Vindicated|r
+    .turnin 81885 >>Turn in The Ritual
+    .target Aoenas the Vindicated
+    .train 410013,1
+]])

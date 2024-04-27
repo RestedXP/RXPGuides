@@ -1109,7 +1109,56 @@ step << !Tauren skip
     .xp <3,1
 step
     #label IconS
-    .loop 25,Durotar,43.26,58.28,42.81,58.41,41.90,58.35,41.97,59.20,41.36,60.35,40.66,61.27,40.07,61.35,39.42,61.29,39.46,62.17,39.55,63.10,40.13,64.04,40.84,64.06,40.74,65.86,39.93,66.03,40.04,66.99,40.09,67.66,40.13,68.50,40.72,68.55,41.30,67.84,41.37,66.72,41.89,66.05,41.27,65.71,41.36,64.07,41.33,63.12,41.35,61.98,41.49,61.25,41.90,60.24,42.51,59.34,43.08,59.62,43.91,59.33,45.15,59.46,45.81,59.30,45.85,60.34,46.46,61.11,47.09,62.24,47.08,63.15,47.14,64.08,47.58,64.04,47.08,63.15,47.09,62.24,46.90,61.15,46.98,60.18,47.07,59.34,46.47,58.28,45.81,59.30,45.15,59.46,43.91,59.33,43.26,58.28
+#loop
+	.line Durotar,43.26,58.28,42.81,58.41,41.90,58.35,41.97,59.20,41.36,60.35,40.66,61.27,40.07,61.35,39.42,61.29,39.46,62.17,39.55,63.10,40.13,64.04,40.84,64.06,40.74,65.86,39.93,66.03,40.04,66.99,40.09,67.66,40.13,68.50,40.72,68.55,41.30,67.84,41.37,66.72,41.89,66.05,41.27,65.71,41.36,64.07,41.33,63.12,41.35,61.98,41.49,61.25,41.90,60.24,42.51,59.34,43.08,59.62,43.91,59.33,45.15,59.46,45.81,59.30,45.85,60.34,46.46,61.11,47.09,62.24,47.08,63.15,47.14,64.08,47.58,64.04,47.08,63.15,47.09,62.24,46.90,61.15,46.98,60.18,47.07,59.34,46.47,58.28,45.81,59.30,45.15,59.46,43.91,59.33,43.26,58.28
+	.goto Durotar,43.26,58.28,25,0
+	.goto Durotar,42.81,58.41,25,0
+	.goto Durotar,41.90,58.35,25,0
+	.goto Durotar,41.97,59.20,25,0
+	.goto Durotar,41.36,60.35,25,0
+	.goto Durotar,40.66,61.27,25,0
+	.goto Durotar,40.07,61.35,25,0
+	.goto Durotar,39.42,61.29,25,0
+	.goto Durotar,39.46,62.17,25,0
+	.goto Durotar,39.55,63.10,25,0
+	.goto Durotar,40.13,64.04,25,0
+	.goto Durotar,40.84,64.06,25,0
+	.goto Durotar,40.74,65.86,25,0
+	.goto Durotar,39.93,66.03,25,0
+	.goto Durotar,40.04,66.99,25,0
+	.goto Durotar,40.09,67.66,25,0
+	.goto Durotar,40.13,68.50,25,0
+	.goto Durotar,40.72,68.55,25,0
+	.goto Durotar,41.30,67.84,25,0
+	.goto Durotar,41.37,66.72,25,0
+	.goto Durotar,41.89,66.05,25,0
+	.goto Durotar,41.27,65.71,25,0
+	.goto Durotar,41.36,64.07,25,0
+	.goto Durotar,41.33,63.12,25,0
+	.goto Durotar,41.35,61.98,25,0
+	.goto Durotar,41.49,61.25,25,0
+	.goto Durotar,41.90,60.24,25,0
+	.goto Durotar,42.51,59.34,25,0
+	.goto Durotar,43.08,59.62,25,0
+	.goto Durotar,43.91,59.33,25,0
+	.goto Durotar,45.15,59.46,25,0
+	.goto Durotar,45.81,59.30,25,0
+	.goto Durotar,45.85,60.34,25,0
+	.goto Durotar,46.46,61.11,25,0
+	.goto Durotar,47.09,62.24,25,0
+	.goto Durotar,47.08,63.15,25,0
+	.goto Durotar,47.14,64.08,25,0
+	.goto Durotar,47.58,64.04,25,0
+	.goto Durotar,47.08,63.15,25,0
+	.goto Durotar,47.09,62.24,25,0
+	.goto Durotar,46.90,61.15,25,0
+	.goto Durotar,46.98,60.18,25,0
+	.goto Durotar,47.07,59.34,25,0
+	.goto Durotar,46.47,58.28,25,0
+	.goto Durotar,45.81,59.30,25,0
+	.goto Durotar,45.15,59.46,25,0
+	.goto Durotar,43.91,59.33,25,0
+	.goto Durotar,43.26,58.28,25,0
     >>Kill |cRXP_ENEMY_Scorpid Workers|r. Loot them for the |T134918:0|t|cRXP_LOOT_[Dyadic Icon]|r
     .collect 206381,1 --Dyadic Icon (1)
     .mob Scorpid Worker
@@ -1122,7 +1171,56 @@ step
     .train 410094,1
     .xp <3,1
 step
-    .loop 25,Durotar,43.26,58.28,42.81,58.41,41.90,58.35,41.97,59.20,41.36,60.35,40.66,61.27,40.07,61.35,39.42,61.29,39.46,62.17,39.55,63.10,40.13,64.04,40.84,64.06,40.74,65.86,39.93,66.03,40.04,66.99,40.09,67.66,40.13,68.50,40.72,68.55,41.30,67.84,41.37,66.72,41.89,66.05,41.27,65.71,41.36,64.07,41.33,63.12,41.35,61.98,41.49,61.25,41.90,60.24,42.51,59.34,43.08,59.62,43.91,59.33,45.15,59.46,45.81,59.30,45.85,60.34,46.46,61.11,47.09,62.24,47.08,63.15,47.14,64.08,47.58,64.04,47.08,63.15,47.09,62.24,46.90,61.15,46.98,60.18,47.07,59.34,46.47,58.28,45.81,59.30,45.15,59.46,43.91,59.33,43.26,58.28
+#loop
+	.line Durotar,43.26,58.28,42.81,58.41,41.90,58.35,41.97,59.20,41.36,60.35,40.66,61.27,40.07,61.35,39.42,61.29,39.46,62.17,39.55,63.10,40.13,64.04,40.84,64.06,40.74,65.86,39.93,66.03,40.04,66.99,40.09,67.66,40.13,68.50,40.72,68.55,41.30,67.84,41.37,66.72,41.89,66.05,41.27,65.71,41.36,64.07,41.33,63.12,41.35,61.98,41.49,61.25,41.90,60.24,42.51,59.34,43.08,59.62,43.91,59.33,45.15,59.46,45.81,59.30,45.85,60.34,46.46,61.11,47.09,62.24,47.08,63.15,47.14,64.08,47.58,64.04,47.08,63.15,47.09,62.24,46.90,61.15,46.98,60.18,47.07,59.34,46.47,58.28,45.81,59.30,45.15,59.46,43.91,59.33,43.26,58.28
+	.goto Durotar,43.26,58.28,25,0
+	.goto Durotar,42.81,58.41,25,0
+	.goto Durotar,41.90,58.35,25,0
+	.goto Durotar,41.97,59.20,25,0
+	.goto Durotar,41.36,60.35,25,0
+	.goto Durotar,40.66,61.27,25,0
+	.goto Durotar,40.07,61.35,25,0
+	.goto Durotar,39.42,61.29,25,0
+	.goto Durotar,39.46,62.17,25,0
+	.goto Durotar,39.55,63.10,25,0
+	.goto Durotar,40.13,64.04,25,0
+	.goto Durotar,40.84,64.06,25,0
+	.goto Durotar,40.74,65.86,25,0
+	.goto Durotar,39.93,66.03,25,0
+	.goto Durotar,40.04,66.99,25,0
+	.goto Durotar,40.09,67.66,25,0
+	.goto Durotar,40.13,68.50,25,0
+	.goto Durotar,40.72,68.55,25,0
+	.goto Durotar,41.30,67.84,25,0
+	.goto Durotar,41.37,66.72,25,0
+	.goto Durotar,41.89,66.05,25,0
+	.goto Durotar,41.27,65.71,25,0
+	.goto Durotar,41.36,64.07,25,0
+	.goto Durotar,41.33,63.12,25,0
+	.goto Durotar,41.35,61.98,25,0
+	.goto Durotar,41.49,61.25,25,0
+	.goto Durotar,41.90,60.24,25,0
+	.goto Durotar,42.51,59.34,25,0
+	.goto Durotar,43.08,59.62,25,0
+	.goto Durotar,43.91,59.33,25,0
+	.goto Durotar,45.15,59.46,25,0
+	.goto Durotar,45.81,59.30,25,0
+	.goto Durotar,45.85,60.34,25,0
+	.goto Durotar,46.46,61.11,25,0
+	.goto Durotar,47.09,62.24,25,0
+	.goto Durotar,47.08,63.15,25,0
+	.goto Durotar,47.14,64.08,25,0
+	.goto Durotar,47.58,64.04,25,0
+	.goto Durotar,47.08,63.15,25,0
+	.goto Durotar,47.09,62.24,25,0
+	.goto Durotar,46.90,61.15,25,0
+	.goto Durotar,46.98,60.18,25,0
+	.goto Durotar,47.07,59.34,25,0
+	.goto Durotar,46.47,58.28,25,0
+	.goto Durotar,45.81,59.30,25,0
+	.goto Durotar,45.15,59.46,25,0
+	.goto Durotar,43.91,59.33,25,0
+	.goto Durotar,43.26,58.28,25,0
     .aura 408828 >>|cRXP_WARN_Let |cRXP_ENEMY_Scorpid Workers|r cast|r |T136016:0|t[Weak Poison] |cRXP_WARN_on you, then take damage from it 10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
     .mob Scorpid Worker
     .itemStat 18,QUALITY,2
@@ -2039,7 +2137,22 @@ step
     .train 410101,1
     .xp <25,1
 step
-    .loop 50,Ashenvale,48.36,69.74,48.43,70.14,48.93,70.82,49.49,70.76,50.21,70.36,50.47,70.43,50.54,71.08,50.74,71.31,51.42,70.86,52.13,71.14,52.18,71.60,52.08,72.10,45.84,70.67,48.36,69.74
+#loop
+	.line Ashenvale,48.36,69.74,48.43,70.14,48.93,70.82,49.49,70.76,50.21,70.36,50.47,70.43,50.54,71.08,50.74,71.31,51.42,70.86,52.13,71.14,52.18,71.60,52.08,72.10,45.84,70.67,48.36,69.74
+	.goto Ashenvale,48.36,69.74,50,0
+	.goto Ashenvale,48.43,70.14,50,0
+	.goto Ashenvale,48.93,70.82,50,0
+	.goto Ashenvale,49.49,70.76,50,0
+	.goto Ashenvale,50.21,70.36,50,0
+	.goto Ashenvale,50.47,70.43,50,0
+	.goto Ashenvale,50.54,71.08,50,0
+	.goto Ashenvale,50.74,71.31,50,0
+	.goto Ashenvale,51.42,70.86,50,0
+	.goto Ashenvale,52.13,71.14,50,0
+	.goto Ashenvale,52.18,71.60,50,0
+	.goto Ashenvale,52.08,72.10,50,0
+	.goto Ashenvale,45.84,70.67,50,0
+	.goto Ashenvale,48.36,69.74,50,0
     >>Kill |cRXP_ENEMY_Befouled Water Elementals|r. Loot them for the |T132844:0|t|cRXP_LOOT_[Mote of Torrential Rage]|r
     .complete 78506,3 --Mote of Torrential Rage (1)
     .mob Befouled Water Elemental
@@ -2637,4 +2750,345 @@ step
 step
     .train 410103 >>|cRXP_WARN_Use the|r |T136095:0|t|cRXP_FRIENDLY_Echo of the Alpha|r |cRXP_WARN_to learn|r |T408696:0|t[Spirit of the Alpha]
     .use 206985
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Shaman SoD
+#group RestedXP Rune & Books Guide
+#subgroup Bracers
+#title Rolling Thunder
+#name Rolling Thunder - 41 (Tanaris)
+
+-- Rolling Thunder
+-- PERMOK: Needs better waypoints
+
+step
+    #completewith next
+    .zone Tanaris >>Travel to Tanaris
+    .train 432236,1
+step
+    .train 432236,1
+    .goto Tanaris,43.0,41.2
+    .aura 446888,1 >>|cRXP_WARN_Click on the|r |cRXP_PICK_Odd Totem|r. This will transform you into a Ghost Wolf |cRXP_WARN_and increases your damage taken by 50%|r
+step
+    .train 432236,1
+    >>|cRXP_WARN_Run towards the other totem while avoiding mobs.|r Loot the appearing chest for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Rolling Thunder|r]
+    *|cRXP_WARN_You are receiving 50% additional damage. Be careful!|r. You can also pre-clear the mobs on the path to the other totem
+    .goto Tanaris,45.6,37.8
+    .collect 220613,1
+step
+    .itemcount 220613,1
+    .use 220613
+    .train 432236 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Rolling Thunder|r] |cRXP_WARN_to learn|r |T136111:0|t[Rolling Thunder]
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Shaman SoD
+#group RestedXP Rune & Books Guide
+#subgroup Bracers
+#title Static Shock
+#name Static Shock - 44 (Feralas)
+
+-- PERMOK: Needs better waypoints
+
+step
+    #completewith ChargedAir
+    +|cRXP_WARN_You have to be in a group with another player who can help you in order to obtain this rune|r
+step
+    #completewith next
+    .zone Feralas >>Travel to Feralas
+    .train 432238,1
+step
+    .train 432238,1
+    .goto Feralas,60.0,66.8
+    .aura 447259 >>Click on the |cRXP_PICK_Charged Totem|r to get the |T136075:0|t[Charged Air] buff
+step
+    #label ChargedAir
+    .train 432238,1
+    >>|cRXP_WARN_Stay near the totem and kill the surrounding |cRXP_ENEMY_Gordunni Ogres|r with LIGHTNING DAMAGE (e.g. Lightning Shield) until the |cRXP_ENEMY_Whirling Tempest|r spawns.
+    >>Kill the |cRXP_ENEMY_Whirling Tempest|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Static Shock|r]
+    *|cRXP_WARN_All players of the party have to stay in range of the totem|r
+    .goto Feralas,60.0,66.8
+    .collect 220614,1
+    .mob Whirling Tempest
+    .mob Gordunni Warlock
+    .mob Gordunni Shaman
+    .mob Gordunni Mauler
+step
+    .itemcount 220614,1
+    .use 220614
+    .train 432238 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Static Shock|r] |cRXP_WARN_to learn|r |T237587:0|t[Static Shock]
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Shaman SoD
+#group RestedXP Rune & Books Guide
+#subgroup Helm
+#title Tidal Waves
+#name Tidal Waves - 42 (Feralas)
+
+-- PERMOK: Needs better waypoints
+
+step
+    #completewith next
+    .zone Feralas >>Travel to Feralas
+    .train 432234,1
+step
+    .train 432234,1
+    >>Click on the |cRXP_PICK_Old Crate|r behind the tent to loot the |T134239:0|t[Old Key]
+    .goto Feralas,76.6,48.0
+    .collect 221497,1
+step
+    .train 432234,1
+    >>Click on the |cRXP_PICK_Old Chest|r at the seafloor to loot the |T134419:0|t[|cRXP_FRIENDLY_Rune of Tidal Waves|r]
+    *|cRXP_WARN_Be careful! This will summon FOUR |cRXP_ENEMY_Simmering Elementals|r (lvl 42, Frost immune)|r
+    .goto Feralas,79.2,49.4
+    .collect 220612,1
+    .mob Simmering Elemental
+step
+    .itemcount 220612,1
+    .use 220612
+    .train 432234 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Tidal Waves|r] |cRXP_WARN_to learn|r |T237590:0|t[Tidal Waves]
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Shaman SoD
+#group RestedXP Rune & Books Guide
+#subgroup Bracers
+#title Tidal Waves
+#name Tidal Waves - 45 (Azeroth)
+
+--x shiek: needs better coordinates
+step
+    #completewith next
+    .zone Tanaris >>Travel to Tanaris
+    .train 432241,1
+step
+    #loop
+    .goto Tanaris,51.6,44.2,40,0
+    .goto Tanaris,51.2,52.0,40,0
+    .goto Tanaris,41.0,48.6,40,0
+    .goto Tanaris,41.8,44.0,40,0
+    >>Kill |cRXP_ENEMY_Blisterpaw Hyena|r, |cRXP_ENEMY_Land Rager|r and |cRXP_ENEMY_Glasshide Gazer.|r Loot them for |cRXP_LOOT_|T134327:0|tSmudged Shaman's Notes|r
+    .collect 221352,1 --1/1 Smudged Shaman's Notes
+    .mob Blisterpaw Hyena
+    .mob Land Rager
+    .mob Glasshide Gazer
+    .train 432241,1
+step
+    .goto Tanaris,62,64
+    >>Click on |cRXP_PICK_|T134327:0|tSmudged Shaman's Notes|r to start the quest.
+    .accept 82072,1 >>Accept Purging Earth
+    .use 221352
+    .train 432241,1
+step
+    .isOnQuest 82072
+    .goto Tanaris,62,64
+    .cast 446581 >>Use |T134743:0|t[Murky Earth Sapta] near the Corrupted Earth Totem.
+    .use 221349
+    .train 432241,1
+step
+    .goto Tanaris,62.0,62.6
+    >>Kill |cRXP_ENEMY_Corrupt Moderate Manifestation of Earth|r then >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moderate Manifestation of Earth.|r
+    .turnin 82072 >>Turn in Purging Earth
+    .accept 82075 >>Accept Answering Earth's Call
+    .mob Corrupt Moderate Manifestation of Earth
+    .target Moderate Manifestation of Earth
+    .train 432241,1
+step
+    #completewith next
+    .zone Azshara >>Travel to Azshara
+    .train 432241,1
+step
+    #loop
+    .goto Azshara,19.4 64.0,20,0
+    .goto Azshara,21.2 60.8,20,0
+    .goto Azshara,21.0 60.0,20,0
+    >>Kill |cRXP_ENEMY_Haldarr Satyr|r, |cRXP_ENEMY_Haldarr Trickster|r and |cRXP_ENEMY_Haldarr Felsworn.|r Loot them for |cRXP_LOOT_|T134331:0|tWaterlogged Shaman's Notes|r
+    .collect 221351,1 --1/1 Waterlogged Shaman's Notes
+    .mob Haldarr Satyr
+    .mob Haldarr Trickster
+    .mob Haldarr Felsworn
+    .train 432241,1
+step
+    .goto Azshara,14,49
+    >>Click on |cRXP_PICK_|T134331:0|tWaterlogged Shaman's Notes|r to start the quest.
+    .accept 82073,1 >>Accept Cleansing Water
+    .use 221352
+    .train 432241,1
+step
+    .isOnQuest 82073
+    .goto Azshara,14,49
+    .cast 446581 >>Use |T134743:0|t[Murky Earth Sapta] near the Corrupted Water Totem.
+    .use 221348
+    .train 432241,1
+step
+    .goto Azshara,15.0,49.8
+    >>Kill |cRXP_ENEMY_Corrupt Moderate Manifestation of Water|r then >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moderate Manifestation of Water.|r
+    .turnin 82073 >>Turn in Cleansing Water
+    .accept 82076 >>Accept Answering Water's Call
+    .mob Corrupt Moderate Manifestation of Water
+    .target Moderate Manifestation of Water
+    .train 432241,1
+step
+    #completewith next
+    .zone Hinterlands >>Travel to Hinterlands
+    .train 432241,1
+step
+    #loop
+    .goto The Hinterlands,48.8,53.0,40,0
+    .goto The Hinterlands,47.6,40.8,40,0
+    .goto The Hinterlands,58.2,41.8,40,0
+    >>Kill |cRXP_ENEMY_Green Sludge|r and |cRXP_ENEMY_Jade Ooze.|r Loot them for |cRXP_LOOT_|T134332:0|tTorn Shaman's Notes|r
+    .collect 220379,1 --1/1 Torn Shaman's Notes
+    .mob Green Sludge
+    .mob Jade Ooze
+    .train 432241,1
+step
+    .goto The Hinterlands,51,46
+    >>Click on |cRXP_PICK_|T134332:0|tTorn Shaman's Notes|r to start the quest.
+    .accept 81960,1 >>Accept Clarifying Air
+    .use 220379
+    .train 432241,1
+step
+    .isOnQuest 82072
+    .goto The Hinterlands,51,46
+    .cast 446581 >>Use |T134743:0|t[Murky Earth Sapta] near the Corrupted Air Totem.
+    .use 221349
+    .train 432241,1
+step
+    .goto The Hinterlands,51.2,47.0
+    >>Kill |cRXP_ENEMY_Corrupt Moderate Manifestation of Air|r then >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moderate Manifestation of Earth.|r
+    .turnin 81960 >>Turn in Clarifying Air
+    .accept 81968 >>Accept Answering Air's Call
+    .mob Corrupt Moderate Manifestation of Air
+    .target Moderate Manifestation of Air
+    .train 432241,1
+step
+    #completewith next
+    .zone Searing Gorge >>Travel to Searing Gorge
+    .train 432241,1
+step
+    #loop
+    .goto Searing Gorge,52.0,35.4,40,0
+    .goto Searing Gorge,42.4,38.6,40,0
+    .goto Searing Gorge,32.8,43.0,40,0
+    .goto Searing Gorge,28.8,44.4,40,0
+    .goto Searing Gorge,30.6,64.6,40,0
+    .goto Searing Gorge,31.6,73.8,40,0
+    >>Kill |cRXP_ENEMY_Magma Elemental|r and |cRXP_ENEMY_Inferno Elemental.|r Loot them for |cRXP_LOOT_|T134327:0|tCharred Shaman's Notes|r
+    .collect 221350,1 --1/1 Charred Shaman's Notes
+    .mob Inferno Elemental
+    .mob Magma Elemental
+    .train 432241,1
+step
+    .goto Searing Gorge,24,72
+    >>Click on |cRXP_PICK_|T134329:0|tCharred Shaman's Notes|r to start the quest.
+    .accept 82071,1 >>Accept Purifying Fire
+    .use 221352
+    .train 432241,1
+step
+    .isOnQuest 82072
+    .goto Searing Gorge,24,72
+    .cast 446581 >>Use |T134743:0|t[Murky Earth Sapta] near the Corrupted Fire Totem.
+    .use 221349
+    .train 432241,1
+step
+    .goto Seaying Gorge,24.0,72.4
+    >>Kill |cRXP_ENEMY_Corrupt Moderate Manifestation of Fire|r then >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moderate Manifestation of Fire.|r
+    .turnin 82071 >>Turn in Purifying Fire
+    .accept 82074 >>Accept Answering Fire's Call
+    .mob Corrupt Moderate Manifestation of Fire
+    .target Moderate Manifestation of Fire
+    .train 432241,1
+step
+    #completewith next
+    .zone Feralas >>Travel to Feralas
+    .train 432241,1
+step
+    #loop
+    .goto Feralas,50.2,51.4,20,0
+    .goto Feralas,44.8,46.2,20,0
+    .goto Feralas,41.0,37.8,20,0
+    .goto Feralas,37.4,33.0,20,0
+    >>Kill |cRXP_ENEMY_Sea Spray|r and |cRXP_ENEMY_Sea Elemental.|r Loot them for |cRXP_LOOT_|T132849:0|tElemental Essence|r
+    .collect 220510,3
+    .train 432241,1
+step
+    .cast 446803 >>Use |T134118:0|t[Fragment of Earth]
+    .use 221355
+    .train 432241,1
+step
+    .goto Feralas,36.0,32.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moderate Manifestation of Earth.|r
+    .turnin 82075 >> Answering Earth's Call
+    .target Moderate Manifestation of Earth
+    .train 432241,1
+step
+    #loop
+    .goto Feralas,37.4,33.0,20,0
+    .goto Feralas,41.0,37.8,20,0
+    .goto Feralas,44.8,46.2,20,0
+    .goto Feralas,50.2,51.4,20,0
+    >>Kill |cRXP_ENEMY_Sea Spray|r and |cRXP_ENEMY_Sea Elemental.|r Loot them for |cRXP_LOOT_|T132849:0|tElemental Essence|r
+    .collect 220510,3
+    .train 432241,1
+step
+    .cast 446802 >>Use |T134130:0|t[Fragment of Fire]
+    .use 221353
+    .train 432241,1
+step
+    .goto Feralas,36.0,32.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moderate Manifestation of Earth.|r
+    .turnin 82075 >> Answering Earth's Call
+    .target Moderate Manifestation of Earth
+    .train 432241,1
+step
+    #loop
+    .goto Feralas,50.2,51.4,20,0
+    .goto Feralas,44.8,46.2,20,0
+    .goto Feralas,41.0,37.8,20,0
+    .goto Feralas,37.4,33.0,20,0
+    >>Kill |cRXP_ENEMY_Sea Spray|r and |cRXP_ENEMY_Sea Elemental.|r Loot them for |cRXP_LOOT_|T132849:0|tElemental Essence|r
+    .collect 220510,3
+    .train 432241,1
+step
+    .cast 445748 >>Use |T134133:0|t[Fragment of Air]
+    .use 220375
+    .train 432241,1
+step
+    .goto Feralas,36.0,32.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moderate Manifestation of Earth.|r
+    .turnin 82075 >> Answering Earth's Call
+    .target Moderate Manifestation of Earth
+    .train 432241,1
+step
+    #loop
+    .goto Feralas,37.4,33.0,20,0
+    .goto Feralas,41.0,37.8,20,0
+    .goto Feralas,44.8,46.2,20,0
+    .goto Feralas,50.2,51.4,20,0
+    >>Kill |cRXP_ENEMY_Sea Spray|r and |cRXP_ENEMY_Sea Elemental.|r Loot them for |cRXP_LOOT_|T132849:0|tElemental Essence|r
+    .collect 220510,3
+    .train 432241,1
+step
+    .cast 446804 >>Use |T134089:0|t[Fragment of Water]
+    .use 221354
+    .train 432241,1
+step
+    .goto Feralas,36.0,32.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moderate Manifestation of Earth.|r
+    .turnin 82075 >> Answering Earth's Call
+    .target Moderate Manifestation of Earth
+    .train 432241,1
+step
+    >>Kill |cRXP_ENEMY_Twilight Dark Shaman.|r Loot him for |cRXP_LOOT_|cRXP_FRIENDLY_|T134419:0|tRune of Overcharged|r|r
+    .collect 220616,1 --1/1 Rune of Overcharged
+    .train 432241,1
+step
+    .train 432241 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Overcharged|r] |cRXP_WARN_to train|r |T132213:0|t[Overcharged]
 ]])

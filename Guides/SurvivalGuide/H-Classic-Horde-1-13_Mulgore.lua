@@ -147,7 +147,26 @@ step
     .complete 750,1 --Mountain Cougar Pelt (10)
     .mob Mountain Cougar
 step
-    .loop 25,Mulgore,45.56,87.95,46.92,87.84,48.67,86.83,50.65,85.87,51.01,83.71,52.06,81.53,51.87,79.58,51.67,77.39,51.95,75.16,50.32,76.33,48.85,75.82,47.41,75.30,46.80,78.21,45.84,80.41,45.03,82.15,44.09,83.89,43.90,86.08,45.56,87.95
+#loop
+	.line Mulgore,45.56,87.95,46.92,87.84,48.67,86.83,50.65,85.87,51.01,83.71,52.06,81.53,51.87,79.58,51.67,77.39,51.95,75.16,50.32,76.33,48.85,75.82,47.41,75.30,46.80,78.21,45.84,80.41,45.03,82.15,44.09,83.89,43.90,86.08,45.56,87.95
+	.goto Mulgore,45.56,87.95,25,0
+	.goto Mulgore,46.92,87.84,25,0
+	.goto Mulgore,48.67,86.83,25,0
+	.goto Mulgore,50.65,85.87,25,0
+	.goto Mulgore,51.01,83.71,25,0
+	.goto Mulgore,52.06,81.53,25,0
+	.goto Mulgore,51.87,79.58,25,0
+	.goto Mulgore,51.67,77.39,25,0
+	.goto Mulgore,51.95,75.16,25,0
+	.goto Mulgore,50.32,76.33,25,0
+	.goto Mulgore,48.85,75.82,25,0
+	.goto Mulgore,47.41,75.30,25,0
+	.goto Mulgore,46.80,78.21,25,0
+	.goto Mulgore,45.84,80.41,25,0
+	.goto Mulgore,45.03,82.15,25,0
+	.goto Mulgore,44.09,83.89,25,0
+	.goto Mulgore,43.90,86.08,25,0
+	.goto Mulgore,45.56,87.95,25,0
     .xp 3+1150 >> Grind to 1150+/1400xp
     .mob Plainstrider
 step << Warrior/Druid
@@ -534,7 +553,21 @@ step
     >>Collect the |cRXP_PICK_Ambercorns|r. They can be found under the trees on the ground
     .complete 771,2 --Ambercorn (2)
 step
-    .loop 25,Mulgore,50.82,66.66,51.06,63.63,52.79,62.06,53.98,61.68,55.67,62.77,56.46,64.93,56.02,67.78,55.02,69.65,52.33,70.07,50.40,70.24,48.60,69.43,45.98,69.70,48.58,67.37
+#loop
+	.line Mulgore,50.82,66.66,51.06,63.63,52.79,62.06,53.98,61.68,55.67,62.77,56.46,64.93,56.02,67.78,55.02,69.65,52.33,70.07,50.40,70.24,48.60,69.43,45.98,69.70,48.58,67.37
+	.goto Mulgore,50.82,66.66,25,0
+	.goto Mulgore,51.06,63.63,25,0
+	.goto Mulgore,52.79,62.06,25,0
+	.goto Mulgore,53.98,61.68,25,0
+	.goto Mulgore,55.67,62.77,25,0
+	.goto Mulgore,56.46,64.93,25,0
+	.goto Mulgore,56.02,67.78,25,0
+	.goto Mulgore,55.02,69.65,25,0
+	.goto Mulgore,52.33,70.07,25,0
+	.goto Mulgore,50.40,70.24,25,0
+	.goto Mulgore,48.60,69.43,25,0
+	.goto Mulgore,45.98,69.70,25,0
+	.goto Mulgore,48.58,67.37,25,0
     >>Kill |cRXP_ENEMY_Prairie Wolves|r and |cRXP_ENEMY_Adult Plainstriders|r. Loot them for their |cRXP_LOOT_Paws|r and |cRXP_LOOT_Talons|r
     .complete 748,1 --Prairie Wolf Paw (6)
     .complete 748,2 --Plainstrider Talon (4)
@@ -925,7 +958,19 @@ step
     .mob Bael'dun Digger
     .mob Bael'dun Appraiser
 step
-    .loop 25,Mulgore,34.08,43.71,32.98,42.96,31.72,43.08,31.08,42.09,31.12,40.87,31.74,40.31,32.44,41.17,33.57,41.30,33.82,40.26,34.48,41.21,34.50,42.29
+#loop
+	.line Mulgore,34.08,43.71,32.98,42.96,31.72,43.08,31.08,42.09,31.12,40.87,31.74,40.31,32.44,41.17,33.57,41.30,33.82,40.26,34.48,41.21,34.50,42.29
+	.goto Mulgore,34.08,43.71,25,0
+	.goto Mulgore,32.98,42.96,25,0
+	.goto Mulgore,31.72,43.08,25,0
+	.goto Mulgore,31.08,42.09,25,0
+	.goto Mulgore,31.12,40.87,25,0
+	.goto Mulgore,31.74,40.31,25,0
+	.goto Mulgore,32.44,41.17,25,0
+	.goto Mulgore,33.57,41.30,25,0
+	.goto Mulgore,33.82,40.26,25,0
+	.goto Mulgore,34.48,41.21,25,0
+	.goto Mulgore,34.50,42.29,25,0
     >>Kill |cRXP_ENEMY_Windfury Wind Witches|r and |cRXP_ENEMY_Windfury Harpies|r. Loot them for their |cRXP_LOOT_Talons|r
     .complete 743,1 --Windfury Talon (8)
     .mob Windfury Wind Witch
@@ -975,7 +1020,18 @@ step
     .accept 775 >>Accept Journey into Thunder Bluff
     .target Ancestral Spirit
 step
-    .loop 25,Mulgore,59.85,25.62,61.14,22.93,61.77,22.49,62.18,22.05,62.32,20.89,61.62,19.50,60.44,19.50,60.16,21.06,60.41,21.96,61.12,22.88
+#loop
+	.line Mulgore,59.85,25.62,61.14,22.93,61.77,22.49,62.18,22.05,62.32,20.89,61.62,19.50,60.44,19.50,60.16,21.06,60.41,21.96,61.12,22.88
+	.goto Mulgore,59.85,25.62,25,0
+	.goto Mulgore,61.14,22.93,25,0
+	.goto Mulgore,61.77,22.49,25,0
+	.goto Mulgore,62.18,22.05,25,0
+	.goto Mulgore,62.32,20.89,25,0
+	.goto Mulgore,61.62,19.50,25,0
+	.goto Mulgore,60.44,19.50,25,0
+	.goto Mulgore,60.16,21.06,25,0
+	.goto Mulgore,60.41,21.96,25,0
+	.goto Mulgore,61.12,22.88,25,0
     >>Kill |cRXP_ENEMY_Bristleback Interlopers|r
     .complete 833,1 --Bristleback Interloper (8)
     .mob Bristleback Interloper
@@ -992,14 +1048,50 @@ step
     .complete 766,3 --Plainstrider Scale (1)
     .complete 766,4 --Swoop Gizzard (1)
 step
-    .loop 25,Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
+#loop
+	.line Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
+	.goto Mulgore,59.52,23.36,25,0
+	.goto Mulgore,57.51,19.08,25,0
+	.goto Mulgore,55.21,18.67,25,0
+	.goto Mulgore,52.99,17.34,25,0
+	.goto Mulgore,51.00,18.40,25,0
+	.goto Mulgore,49.84,20.74,25,0
+	.goto Mulgore,49.82,23.69,25,0
+	.goto Mulgore,49.52,26.10,25,0
+	.goto Mulgore,49.72,28.14,25,0
+	.goto Mulgore,50.79,29.37,25,0
+	.goto Mulgore,52.24,30.07,25,0
+	.goto Mulgore,54.21,30.43,25,0
+	.goto Mulgore,56.15,30.35,25,0
+	.goto Mulgore,57.77,30.48,25,0
+	.goto Mulgore,58.79,28.52,25,0
+	.goto Mulgore,60.56,25.88,25,0
+	.goto Mulgore,59.52,23.36,25,0
 	>>Kill |cRXP_ENEMY_Swoops|r. Loot them for their |cRXP_LOOT_Quills|r
     .complete 761,1 --Trophy Swoop Quill (8)
     .mob Wiry Swoop
     .mob Swoop
     .mob Taloned Swoop
 step
-    .loop 25,Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
+#loop
+	.line Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
+	.goto Mulgore,59.52,23.36,25,0
+	.goto Mulgore,57.51,19.08,25,0
+	.goto Mulgore,55.21,18.67,25,0
+	.goto Mulgore,52.99,17.34,25,0
+	.goto Mulgore,51.00,18.40,25,0
+	.goto Mulgore,49.84,20.74,25,0
+	.goto Mulgore,49.82,23.69,25,0
+	.goto Mulgore,49.52,26.10,25,0
+	.goto Mulgore,49.72,28.14,25,0
+	.goto Mulgore,50.79,29.37,25,0
+	.goto Mulgore,52.24,30.07,25,0
+	.goto Mulgore,54.21,30.43,25,0
+	.goto Mulgore,56.15,30.35,25,0
+	.goto Mulgore,57.77,30.48,25,0
+	.goto Mulgore,58.79,28.52,25,0
+	.goto Mulgore,60.56,25.88,25,0
+	.goto Mulgore,59.52,23.36,25,0
     >>|cRXP_WARN_Finish getting the items for Mazzranache|r
     .complete 766,1 --Prairie Wolf Heart (1)
     .complete 766,2 --Flatland Cougar Femur (1)
@@ -1007,23 +1099,95 @@ step
     .complete 766,4 --Swoop Gizzard (1)
 step
     #optional
-    .loop 25,Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
+#loop
+	.line Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
+	.goto Mulgore,59.52,23.36,25,0
+	.goto Mulgore,57.51,19.08,25,0
+	.goto Mulgore,55.21,18.67,25,0
+	.goto Mulgore,52.99,17.34,25,0
+	.goto Mulgore,51.00,18.40,25,0
+	.goto Mulgore,49.84,20.74,25,0
+	.goto Mulgore,49.82,23.69,25,0
+	.goto Mulgore,49.52,26.10,25,0
+	.goto Mulgore,49.72,28.14,25,0
+	.goto Mulgore,50.79,29.37,25,0
+	.goto Mulgore,52.24,30.07,25,0
+	.goto Mulgore,54.21,30.43,25,0
+	.goto Mulgore,56.15,30.35,25,0
+	.goto Mulgore,57.77,30.48,25,0
+	.goto Mulgore,58.79,28.52,25,0
+	.goto Mulgore,60.56,25.88,25,0
+	.goto Mulgore,59.52,23.36,25,0
     .xp 9+4400 >> Grind to 3020+/6500xp
     .isQuestComplete 761
     .isQuestComplete 766
 step
     #optional
-    .loop 25,Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
+#loop
+	.line Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
+	.goto Mulgore,59.52,23.36,25,0
+	.goto Mulgore,57.51,19.08,25,0
+	.goto Mulgore,55.21,18.67,25,0
+	.goto Mulgore,52.99,17.34,25,0
+	.goto Mulgore,51.00,18.40,25,0
+	.goto Mulgore,49.84,20.74,25,0
+	.goto Mulgore,49.82,23.69,25,0
+	.goto Mulgore,49.52,26.10,25,0
+	.goto Mulgore,49.72,28.14,25,0
+	.goto Mulgore,50.79,29.37,25,0
+	.goto Mulgore,52.24,30.07,25,0
+	.goto Mulgore,54.21,30.43,25,0
+	.goto Mulgore,56.15,30.35,25,0
+	.goto Mulgore,57.77,30.48,25,0
+	.goto Mulgore,58.79,28.52,25,0
+	.goto Mulgore,60.56,25.88,25,0
+	.goto Mulgore,59.52,23.36,25,0
     .xp 9+4400 >> Grind to 3720+/6500xp
     .isQuestComplete 761
 step
     #optional
-    .loop 25,Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
+#loop
+	.line Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
+	.goto Mulgore,59.52,23.36,25,0
+	.goto Mulgore,57.51,19.08,25,0
+	.goto Mulgore,55.21,18.67,25,0
+	.goto Mulgore,52.99,17.34,25,0
+	.goto Mulgore,51.00,18.40,25,0
+	.goto Mulgore,49.84,20.74,25,0
+	.goto Mulgore,49.82,23.69,25,0
+	.goto Mulgore,49.52,26.10,25,0
+	.goto Mulgore,49.72,28.14,25,0
+	.goto Mulgore,50.79,29.37,25,0
+	.goto Mulgore,52.24,30.07,25,0
+	.goto Mulgore,54.21,30.43,25,0
+	.goto Mulgore,56.15,30.35,25,0
+	.goto Mulgore,57.77,30.48,25,0
+	.goto Mulgore,58.79,28.52,25,0
+	.goto Mulgore,60.56,25.88,25,0
+	.goto Mulgore,59.52,23.36,25,0
     .xp 9+4400 >> Grind to 3700+/6500xp
     .isQuestComplete 766
 step
     #optional
-    .loop 25,Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
+#loop
+	.line Mulgore,59.52,23.36,57.51,19.08,55.21,18.67,52.99,17.34,51.00,18.40,49.84,20.74,49.82,23.69,49.52,26.10,49.72,28.14,50.79,29.37,52.24,30.07,54.21,30.43,56.15,30.35,57.77,30.48,58.79,28.52,60.56,25.88,59.52,23.36
+	.goto Mulgore,59.52,23.36,25,0
+	.goto Mulgore,57.51,19.08,25,0
+	.goto Mulgore,55.21,18.67,25,0
+	.goto Mulgore,52.99,17.34,25,0
+	.goto Mulgore,51.00,18.40,25,0
+	.goto Mulgore,49.84,20.74,25,0
+	.goto Mulgore,49.82,23.69,25,0
+	.goto Mulgore,49.52,26.10,25,0
+	.goto Mulgore,49.72,28.14,25,0
+	.goto Mulgore,50.79,29.37,25,0
+	.goto Mulgore,52.24,30.07,25,0
+	.goto Mulgore,54.21,30.43,25,0
+	.goto Mulgore,56.15,30.35,25,0
+	.goto Mulgore,57.77,30.48,25,0
+	.goto Mulgore,58.79,28.52,25,0
+	.goto Mulgore,60.56,25.88,25,0
+	.goto Mulgore,59.52,23.36,25,0
     .xp 9+4400 >> Grind to 4400+/6500xp
 step << !Druid
     #completewith Bloodhooffinalturnins
@@ -1204,7 +1368,16 @@ step
     .mob Supervisor Fizsprocket
     .group 2
 step
-    .loop 25,Mulgore,61.35,47.55,60.10,47.84,59.50,48.21,59.68,48.85,60.14,49.14,62.01,48.74,61.89,47.84,61.35,47.55
+#loop
+	.line Mulgore,61.35,47.55,60.10,47.84,59.50,48.21,59.68,48.85,60.14,49.14,62.01,48.74,61.89,47.84,61.35,47.55
+	.goto Mulgore,61.35,47.55,25,0
+	.goto Mulgore,60.10,47.84,25,0
+	.goto Mulgore,59.50,48.21,25,0
+	.goto Mulgore,59.68,48.85,25,0
+	.goto Mulgore,60.14,49.14,25,0
+	.goto Mulgore,62.01,48.74,25,0
+	.goto Mulgore,61.89,47.84,25,0
+	.goto Mulgore,61.35,47.55,25,0
     >>Kill |cRXP_ENEMY_Venture Co. Workers|r and |cRXP_ENEMY_Venture Co. Supervisors|r
     .complete 764,1 --Venture Co. Worker (14)
     .complete 764,2 --Venture Co. Supervisor (6)
@@ -1739,7 +1912,18 @@ step
     .mob Durotar Tiger
 step
     #label Fur
-    .loop 25,Durotar,67.23,88.76,66.52,87.74,65.94,86.72,65.90,84.04,65.88,82.85,67.38,82.61,68.42,82.43,68.50,84.32,68.47,86.77,67.23,88.76
+#loop
+	.line Durotar,67.23,88.76,66.52,87.74,65.94,86.72,65.90,84.04,65.88,82.85,67.38,82.61,68.42,82.43,68.50,84.32,68.47,86.77,67.23,88.76
+	.goto Durotar,67.23,88.76,25,0
+	.goto Durotar,66.52,87.74,25,0
+	.goto Durotar,65.94,86.72,25,0
+	.goto Durotar,65.90,84.04,25,0
+	.goto Durotar,65.88,82.85,25,0
+	.goto Durotar,67.38,82.61,25,0
+	.goto Durotar,68.42,82.43,25,0
+	.goto Durotar,68.50,84.32,25,0
+	.goto Durotar,68.47,86.77,25,0
+	.goto Durotar,67.23,88.76,25,0
     >>Kill |cRXP_ENEMY_Hexed Trolls|r and |cRXP_ENEMY_Voodoo Trolls|r.
     >>|cRXP_WARN_Be careful!|r |cRXP_ENEMY_Voodoo Trolls|r |cRXP_WARN_can cast|r |T136052:0|t[Healing Wave]
     .complete 826,1 --Hexed Troll (8)
@@ -1834,7 +2018,16 @@ step
     .mob Razormane Scout
 step
     #label Encroachment
-    .loop 25,Durotar,44.45,39.74,44.49,37.47,43.30,37.32,41.70,37.09,41.64,38.27,41.94,40.46,43.30,40.40,44.45,39.74
+#loop
+	.line Durotar,44.45,39.74,44.49,37.47,43.30,37.32,41.70,37.09,41.64,38.27,41.94,40.46,43.30,40.40,44.45,39.74
+	.goto Durotar,44.45,39.74,25,0
+	.goto Durotar,44.49,37.47,25,0
+	.goto Durotar,43.30,37.32,25,0
+	.goto Durotar,41.70,37.09,25,0
+	.goto Durotar,41.64,38.27,25,0
+	.goto Durotar,41.94,40.46,25,0
+	.goto Durotar,43.30,40.40,25,0
+	.goto Durotar,44.45,39.74,25,0
     >>Kill |cRXP_ENEMY_Razormane Dustrunners|r and |cRXP_ENEMY_Razormane Battleguards|r
     .complete 837,3 --Razormane Dustrunner (4)
     .complete 837,4 --Razormane Battleguard (4)
@@ -2483,7 +2676,19 @@ step
     .accept 819 >> Accept Chen's Empty Keg
 step
     #label DisruptTheAttacks
-    .loop 25,The Barrens,53.63,24.50,54.26,24.64,54.81,25.19,55.50,25.61,55.86,26.3,55.83,27.15,55.41,27.41,54.50,26.97,54.05,26.11,53.51,25.24,53.63,24.50
+#loop
+	.line The Barrens,53.63,24.50,54.26,24.64,54.81,25.19,55.50,25.61,55.86,26.3,55.83,27.15,55.41,27.41,54.50,26.97,54.05,26.11,53.51,25.24,53.63,24.50
+	.goto The Barrens,53.63,24.50,25,0
+	.goto The Barrens,54.26,24.64,25,0
+	.goto The Barrens,54.81,25.19,25,0
+	.goto The Barrens,55.50,25.61,25,0
+	.goto The Barrens,55.86,26.30,25,0
+	.goto The Barrens,55.83,27.15,25,0
+	.goto The Barrens,55.41,27.41,25,0
+	.goto The Barrens,54.50,26.97,25,0
+	.goto The Barrens,54.05,26.11,25,0
+	.goto The Barrens,53.51,25.24,25,0
+	.goto The Barrens,53.63,24.50,25,0
     >>Kill |cRXP_ENEMY_Water Seekers|r, |cRXP_ENEMY_Thornweavers|r and |cRXP_ENEMY_Hunters|r
     .complete 871,1 --Razormane Water Seeker (8)
     .complete 871,2 --Razormane Thornweaver (8)

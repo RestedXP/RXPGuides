@@ -91,13 +91,28 @@ step
 	.mob Young Wolf
     .mob Timber Wolf
 step
-    .loop 35,Elwynn Forest,47.01,35.68,47.70,35.04,49.81,35.14,49.82,36.23,49.18,37.16,47.01,35.68
+#loop
+	.line Elwynn Forest,47.01,35.68,47.70,35.04,49.81,35.14,49.82,36.23,49.18,37.16,47.01,35.68
+	.goto Elwynn Forest,47.01,35.68,35,0
+	.goto Elwynn Forest,47.70,35.04,35,0
+	.goto Elwynn Forest,49.81,35.14,35,0
+	.goto Elwynn Forest,49.82,36.23,35,0
+	.goto Elwynn Forest,49.18,37.16,35,0
+	.goto Elwynn Forest,47.01,35.68,35,0
     >>Kill |cRXP_ENEMY_Kobold Vermin|r
     >>|cRXP_WARN_Kill Level 1 |cRXP_ENEMY_Kobold Vermin|r if possible|r
     .complete 7,1 --Kill Kobold Vermin (x10)
 	.mob Kobold Vermin
 step
-    .loop 35,Elwynn Forest,49.32,37.91,48.24,37.88,46.18,37.29,45.69,39.05,46.03,40.91,48.04,39.55,49.32,37.91
+#loop
+	.line Elwynn Forest,49.32,37.91,48.24,37.88,46.18,37.29,45.69,39.05,46.03,40.91,48.04,39.55,49.32,37.91
+	.goto Elwynn Forest,49.32,37.91,35,0
+	.goto Elwynn Forest,48.24,37.88,35,0
+	.goto Elwynn Forest,46.18,37.29,35,0
+	.goto Elwynn Forest,45.69,39.05,35,0
+	.goto Elwynn Forest,46.03,40.91,35,0
+	.goto Elwynn Forest,48.04,39.55,35,0
+	.goto Elwynn Forest,49.32,37.91,35,0
     >>Kill |cRXP_LOOT_Young Wolves|r and |cRXP_LOOT_Timber Wolves|r. Loot them for their |cRXP_LOOT_Tough Wolf Meat|r
     >>Focus on the |cRXP_LOOT_Young Wolves|r
     .complete 33,1 --Collect Tough Wolf Meat (x8)
@@ -123,12 +138,28 @@ step
     .accept 3104 >> Accept Glyphic Letter
     .target Marshal McBride
 step
-    .loop 35,Elwynn Forest,47.25,36.41,47.39,35.77,47.35,34.06,46.29,32.42,47.75,32.77,50.11,34.98,47.25,36.41
+#loop
+	.line Elwynn Forest,47.25,36.41,47.39,35.77,47.35,34.06,46.29,32.42,47.75,32.77,50.11,34.98,47.25,36.41
+	.goto Elwynn Forest,47.25,36.41,35,0
+	.goto Elwynn Forest,47.39,35.77,35,0
+	.goto Elwynn Forest,47.35,34.06,35,0
+	.goto Elwynn Forest,46.29,32.42,35,0
+	.goto Elwynn Forest,47.75,32.77,35,0
+	.goto Elwynn Forest,50.11,34.98,35,0
+	.goto Elwynn Forest,47.25,36.41,35,0
     >>Kill |cRXP_ENEMY_Kobold Workers|r
     .complete 15,1 --Kill Kobold Worker (x10)
 	.mob Kobold Worker
 step
-    .loop 35,Elwynn Forest,49.32,37.91,48.24,37.88,46.18,37.29,45.69,39.05,46.03,40.91,48.04,39.55,49.32,37.91
+#loop
+	.line Elwynn Forest,49.32,37.91,48.24,37.88,46.18,37.29,45.69,39.05,46.03,40.91,48.04,39.55,49.32,37.91
+	.goto Elwynn Forest,49.32,37.91,35,0
+	.goto Elwynn Forest,48.24,37.88,35,0
+	.goto Elwynn Forest,46.18,37.29,35,0
+	.goto Elwynn Forest,45.69,39.05,35,0
+	.goto Elwynn Forest,46.03,40.91,35,0
+	.goto Elwynn Forest,48.04,39.55,35,0
+	.goto Elwynn Forest,49.32,37.91,35,0
     .xp 3+1110 >> Grind to 1110+/1400xp
 	.mob Young Wolf
 	.mob Kobold Vermin
@@ -209,7 +240,16 @@ step
     .goto Elwynn Forest,55.09,49.00,30,0
     .goto Elwynn Forest,55.43,45.87,30,0
     .goto Elwynn Forest,53.86,47.05,30,0
-    .loop 35,Elwynn Forest,51.14,49.29,52.55,48.75,53.81,48.09,54.58,49.02,55.15,47.86,54.76,45.96,53.81,44.79,,51.14,49.29
+#loop
+	.line Elwynn Forest,51.14,49.29,52.55,48.75,53.81,48.09,54.58,49.02,55.15,47.86,54.76,45.96,53.81,44.79,,51.14,49.29
+	.goto Elwynn Forest,51.14,49.29,35,0
+	.goto Elwynn Forest,52.55,48.75,35,0
+	.goto Elwynn Forest,53.81,48.09,35,0
+	.goto Elwynn Forest,54.58,49.02,35,0
+	.goto Elwynn Forest,55.15,47.86,35,0
+	.goto Elwynn Forest,54.76,45.96,35,0
+	.goto Elwynn Forest,53.81,44.79,35,0
+	.goto Elwynn Forest,51.14,49.29,35,0
     >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for |cRXP_LOOT_Red Burlap Bandanas|r
     .complete 18,1 --Collect Red Burlap Bandana (x12)
 	.mob Defias Thug
@@ -277,12 +317,30 @@ step
     .target Milly Osworth
 step
     #completewith Harvest
-    .loop 35,Elwynn Forest,53.68,47.29,52.82,48.78,54.43,48.10,54.52,49.58,53.85,50.68,54.52,49.58,54.43,48.10,53.68,47.29
+#loop
+	.line Elwynn Forest,53.68,47.29,52.82,48.78,54.43,48.10,54.52,49.58,53.85,50.68,54.52,49.58,54.43,48.10,53.68,47.29
+	.goto Elwynn Forest,53.68,47.29,35,0
+	.goto Elwynn Forest,52.82,48.78,35,0
+	.goto Elwynn Forest,54.43,48.10,35,0
+	.goto Elwynn Forest,54.52,49.58,35,0
+	.goto Elwynn Forest,53.85,50.68,35,0
+	.goto Elwynn Forest,54.52,49.58,35,0
+	.goto Elwynn Forest,54.43,48.10,35,0
+	.goto Elwynn Forest,53.68,47.29,35,0
     .xp 5+1175 >> Grind to 1175+/2800xp
     .mob Defias Thug
 step
     #completewith next
-    .loop 35,Elwynn Forest,53.68,47.29,52.82,48.78,54.43,48.10,54.52,49.58,53.85,50.68,54.52,49.58,54.43,48.10,53.68,47.29
+#loop
+	.line Elwynn Forest,53.68,47.29,52.82,48.78,54.43,48.10,54.52,49.58,53.85,50.68,54.52,49.58,54.43,48.10,53.68,47.29
+	.goto Elwynn Forest,53.68,47.29,35,0
+	.goto Elwynn Forest,52.82,48.78,35,0
+	.goto Elwynn Forest,54.43,48.10,35,0
+	.goto Elwynn Forest,54.52,49.58,35,0
+	.goto Elwynn Forest,53.85,50.68,35,0
+	.goto Elwynn Forest,54.52,49.58,35,0
+	.goto Elwynn Forest,54.43,48.10,35,0
+	.goto Elwynn Forest,53.68,47.29,35,0
     >>Loot the |cRXP_PICK_Buckets of Grapes|r on the ground
     >>|cRXP_WARN_This has a 5 second cast time|r
     .complete 3904,1 --Collect Milly's Harvest (x8)
@@ -293,12 +351,30 @@ step
 	.mob Garrick Padfoot
 step
     #label Harvest
-    .loop 35,Elwynn Forest,53.68,47.29,52.82,48.78,54.43,48.10,54.52,49.58,53.85,50.68,54.52,49.58,54.43,48.10,53.68,47.29
+#loop
+	.line Elwynn Forest,53.68,47.29,52.82,48.78,54.43,48.10,54.52,49.58,53.85,50.68,54.52,49.58,54.43,48.10,53.68,47.29
+	.goto Elwynn Forest,53.68,47.29,35,0
+	.goto Elwynn Forest,52.82,48.78,35,0
+	.goto Elwynn Forest,54.43,48.10,35,0
+	.goto Elwynn Forest,54.52,49.58,35,0
+	.goto Elwynn Forest,53.85,50.68,35,0
+	.goto Elwynn Forest,54.52,49.58,35,0
+	.goto Elwynn Forest,54.43,48.10,35,0
+	.goto Elwynn Forest,53.68,47.29,35,0
     >>Loot the |cRXP_PICK_Buckets of Grapes|r on the ground
     >>|cRXP_WARN_This has a 5 second cast time|r
     .complete 3904,1 --Collect Milly's Harvest (x8)
 step
-    .loop 35,Elwynn Forest,53.68,47.29,52.82,48.78,54.43,48.10,54.52,49.58,53.85,50.68,54.52,49.58,54.43,48.10,53.68,47.29
+#loop
+	.line Elwynn Forest,53.68,47.29,52.82,48.78,54.43,48.10,54.52,49.58,53.85,50.68,54.52,49.58,54.43,48.10,53.68,47.29
+	.goto Elwynn Forest,53.68,47.29,35,0
+	.goto Elwynn Forest,52.82,48.78,35,0
+	.goto Elwynn Forest,54.43,48.10,35,0
+	.goto Elwynn Forest,54.52,49.58,35,0
+	.goto Elwynn Forest,53.85,50.68,35,0
+	.goto Elwynn Forest,54.52,49.58,35,0
+	.goto Elwynn Forest,54.43,48.10,35,0
+	.goto Elwynn Forest,53.68,47.29,35,0
     .xp 5+1175 >> Grind to 1175+/2800xp
     .mob Defias Thug
 step
@@ -441,7 +517,13 @@ step
     .accept 111 >> Accept Speak with Gramma
     .target Tommy Joe Stonefield
 step
-    .loop 35,Elwynn Forest,31.15,85.36,33.08,86.64,33.51,85.22,32.17,83.88,31.15,85.36
+#loop
+	.line Elwynn Forest,31.15,85.36,33.08,86.64,33.51,85.22,32.17,83.88,31.15,85.36
+	.goto Elwynn Forest,31.15,85.36,35,0
+	.goto Elwynn Forest,33.08,86.64,35,0
+	.goto Elwynn Forest,33.51,85.22,35,0
+	.goto Elwynn Forest,32.17,83.88,35,0
+	.goto Elwynn Forest,31.15,85.36,35,0
     >>Kill |cRXP_ENEMY_Stonetusk Boars|r. Loot them for |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     .collect 769,4,86,1 --Collect Chunk of Boar Meat (x4)
     .mob Stonetusk Boar
@@ -503,7 +585,14 @@ step
     .complete 87,1 --Collect Bernice's Necklace (x1)
     .mob Goldtooth
 step
-    .loop 35,Elwynn Forest,39.14,82.87,39.16,84.79,37.81,85.40,36.76,83.19,38.02,81.70,39.14,82.87
+#loop
+	.line Elwynn Forest,39.14,82.87,39.16,84.79,37.81,85.40,36.76,83.19,38.02,81.70,39.14,82.87
+	.goto Elwynn Forest,39.14,82.87,35,0
+	.goto Elwynn Forest,39.16,84.79,35,0
+	.goto Elwynn Forest,37.81,85.40,35,0
+	.goto Elwynn Forest,36.76,83.19,35,0
+	.goto Elwynn Forest,38.02,81.70,35,0
+	.goto Elwynn Forest,39.14,82.87,35,0
     >>Kill |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for |cRXP_LOOT_Gold Dust|r and |cRXP_LOOT_Kobold Candles|r
     .complete 47,1 --Collect Gold Dust (x10)
     .complete 60,1 --Collect Kobold Candle (x8)
@@ -642,7 +731,24 @@ step
     .turnin 45 >> Turn in Discover Rolf's Fate
     .accept 71 >> Accept Report to Thomas
 step
-    .loop 35,Elwynn Forest,80.48,55.18,80.88,53.88,79.68,52.31,80.86,52.17,80.88,53.88,80.48,55.18,79.76,56.70,80.15,60.03,80.24,61.46,81.27,61.59,81.58,62.64,82.79,60.12,83.25,61.12,83.48,59.19,81.77,59.17,80.48,55.18
+#loop
+	.line Elwynn Forest,80.48,55.18,80.88,53.88,79.68,52.31,80.86,52.17,80.88,53.88,80.48,55.18,79.76,56.70,80.15,60.03,80.24,61.46,81.27,61.59,81.58,62.64,82.79,60.12,83.25,61.12,83.48,59.19,81.77,59.17,80.48,55.18
+	.goto Elwynn Forest,80.48,55.18,35,0
+	.goto Elwynn Forest,80.88,53.88,35,0
+	.goto Elwynn Forest,79.68,52.31,35,0
+	.goto Elwynn Forest,80.86,52.17,35,0
+	.goto Elwynn Forest,80.88,53.88,35,0
+	.goto Elwynn Forest,80.48,55.18,35,0
+	.goto Elwynn Forest,79.76,56.70,35,0
+	.goto Elwynn Forest,80.15,60.03,35,0
+	.goto Elwynn Forest,80.24,61.46,35,0
+	.goto Elwynn Forest,81.27,61.59,35,0
+	.goto Elwynn Forest,81.58,62.64,35,0
+	.goto Elwynn Forest,82.79,60.12,35,0
+	.goto Elwynn Forest,83.25,61.12,35,0
+	.goto Elwynn Forest,83.48,59.19,35,0
+	.goto Elwynn Forest,81.77,59.17,35,0
+	.goto Elwynn Forest,80.48,55.18,35,0
     >>Loot the |cRXP_PICK_Bundles Of Wood|r at the base of the trees
     >>|cRXP_WARN_This has a 5 second cast time|r
     .complete 5545,1 --Collect Bundle of Wood (x8)
@@ -692,7 +798,20 @@ step
     .accept 39 >> Accept Deliver Thomas' Report
     .target Guard Thomas
 step
-    .loop 40,Elwynn Forest,70.45,76.94,68.68,76.69,68.23,77.78,67.80,80.76,68.49,82.68,70.71,81.48,70.63,80.66,71.51,78.96,70.95,77.25,71.38,76.77,70.95,77.25,70.45,76.94
+#loop
+	.line Elwynn Forest,70.45,76.94,68.68,76.69,68.23,77.78,67.80,80.76,68.49,82.68,70.71,81.48,70.63,80.66,71.51,78.96,70.95,77.25,71.38,76.77,70.95,77.25,70.45,76.94
+	.goto Elwynn Forest,70.45,76.94,40,0
+	.goto Elwynn Forest,68.68,76.69,40,0
+	.goto Elwynn Forest,68.23,77.78,40,0
+	.goto Elwynn Forest,67.80,80.76,40,0
+	.goto Elwynn Forest,68.49,82.68,40,0
+	.goto Elwynn Forest,70.71,81.48,40,0
+	.goto Elwynn Forest,70.63,80.66,40,0
+	.goto Elwynn Forest,71.51,78.96,40,0
+	.goto Elwynn Forest,70.95,77.25,40,0
+	.goto Elwynn Forest,71.38,76.77,40,0
+	.goto Elwynn Forest,70.95,77.25,40,0
+	.goto Elwynn Forest,70.45,76.94,40,0
     >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for |cRXP_LOOT_Red Linen Bandanas|r and the |T134939:0|t[|cRXP_LOOT_Westfall Deed|r]
     >>|cRXP_WARN_Use the |T134939:0|t[|cRXP_LOOT_Westfall Deed|r] to start the quest|r
     .complete 83,1 --Collect Red Linen Bandana (x6)
@@ -765,12 +884,24 @@ step
     .target Ma Stonefield
     .target "Auntie" Bernice Stonefield
 step
-    .loop 35,Elwynn Forest,31.15,85.36,33.08,86.64,33.51,85.22,32.17,83.88,31.15,85.36
+#loop
+	.line Elwynn Forest,31.15,85.36,33.08,86.64,33.51,85.22,32.17,83.88,31.15,85.36
+	.goto Elwynn Forest,31.15,85.36,35,0
+	.goto Elwynn Forest,33.08,86.64,35,0
+	.goto Elwynn Forest,33.51,85.22,35,0
+	.goto Elwynn Forest,32.17,83.88,35,0
+	.goto Elwynn Forest,31.15,85.36,35,0
     .xp 9+4825 >> Grind to 4225+/6500xp
     .mob Stonetusk Boar
     .isOnQuest 184
 step
-    .loop 35,Elwynn Forest,31.15,85.36,33.08,86.64,33.51,85.22,32.17,83.88,31.15,85.36
+#loop
+	.line Elwynn Forest,31.15,85.36,33.08,86.64,33.51,85.22,32.17,83.88,31.15,85.36
+	.goto Elwynn Forest,31.15,85.36,35,0
+	.goto Elwynn Forest,33.08,86.64,35,0
+	.goto Elwynn Forest,33.51,85.22,35,0
+	.goto Elwynn Forest,32.17,83.88,35,0
+	.goto Elwynn Forest,31.15,85.36,35,0
     .xp 9+4825 >> Grind to 4825+/6500xp
     .mob Stonetusk Boar
     .itemcount 1972,<1
@@ -1131,7 +1262,14 @@ step
     .mob Rockjaw Bonesnapper
 step
     .goto Dun Morogh,70.74,56.23,30,0
-    .loop 30,Dun Morogh,69.93,57.29,70.57,58.61,69.68,59.37,68.36,59.57,69.16,57.51,69.93,57.29
+#loop
+	.line Dun Morogh,69.93,57.29,70.57,58.61,69.68,59.37,68.36,59.57,69.16,57.51,69.93,57.29
+	.goto Dun Morogh,69.93,57.29,30,0
+	.goto Dun Morogh,70.57,58.61,30,0
+	.goto Dun Morogh,69.68,59.37,30,0
+	.goto Dun Morogh,68.36,59.57,30,0
+	.goto Dun Morogh,69.16,57.51,30,0
+	.goto Dun Morogh,69.93,57.29,30,0
     >>Kill |cRXP_ENEMY_Rockjaw Skullthumpers|r
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .mob Rockjaw Skullthumper
@@ -1748,7 +1886,28 @@ step
     .mob Young Black Bear
     .mob Ice Claw Bear
 step
-    .loop 40,Dun Morogh,51.70,49.66,51.08,52.42,51.43,53.21,50.06,51.66,49.56,50.82,48.12,49.10,48.21,46.93,45.48,50.04,44.07,52.50,43.69,55.59,42.78,56.86,44.45,59.33,46.31,61.85,46.26,59.49,48.08,59.05,49.40,58.97,48.30,56.86,49.09,54.74,49.61,54.32,51.43,53.21
+#loop
+	.line Dun Morogh,51.70,49.66,51.08,52.42,51.43,53.21,50.06,51.66,49.56,50.82,48.12,49.10,48.21,46.93,45.48,50.04,44.07,52.50,43.69,55.59,42.78,56.86,44.45,59.33,46.31,61.85,46.26,59.49,48.08,59.05,49.40,58.97,48.30,56.86,49.09,54.74,49.61,54.32,51.43,53.21
+	.goto Dun Morogh,51.70,49.66,40,0
+	.goto Dun Morogh,51.08,52.42,40,0
+	.goto Dun Morogh,51.43,53.21,40,0
+	.goto Dun Morogh,50.06,51.66,40,0
+	.goto Dun Morogh,49.56,50.82,40,0
+	.goto Dun Morogh,48.12,49.10,40,0
+	.goto Dun Morogh,48.21,46.93,40,0
+	.goto Dun Morogh,45.48,50.04,40,0
+	.goto Dun Morogh,44.07,52.50,40,0
+	.goto Dun Morogh,43.69,55.59,40,0
+	.goto Dun Morogh,42.78,56.86,40,0
+	.goto Dun Morogh,44.45,59.33,40,0
+	.goto Dun Morogh,46.31,61.85,40,0
+	.goto Dun Morogh,46.26,59.49,40,0
+	.goto Dun Morogh,48.08,59.05,40,0
+	.goto Dun Morogh,49.40,58.97,40,0
+	.goto Dun Morogh,48.30,56.86,40,0
+	.goto Dun Morogh,49.09,54.74,40,0
+	.goto Dun Morogh,49.61,54.32,40,0
+	.goto Dun Morogh,51.43,53.21,40,0
     >>Kill |cRXP_ENEMY_Crag Boars|r and |cRXP_ENEMY_Large Crag Boars|r. Loot them for |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r and |cRXP_LOOT_Crag Boar Ribs|r
     >>|cRXP_WARN_Be careful as they cast|r |T132337:0|t[Charge] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 25-70 melee damage on hit. Only castable at range)|r
     .complete 317,1 --Collect Chunk of Boar Meat (x4)
@@ -1763,7 +1922,28 @@ step
     .accept 318 >> Accept Evershine
     .target Pilot Bellowfiz
 step
-    .loop 40,Dun Morogh,51.70,49.66,51.08,52.42,51.43,53.21,50.06,51.66,49.56,50.82,48.12,49.10,48.21,46.93,45.48,50.04,44.07,52.50,43.69,55.59,42.78,56.86,44.45,59.33,46.31,61.85,46.26,59.49,48.08,59.05,49.40,58.97,48.30,56.86,49.09,54.74,49.61,54.32,51.43,53.21
+#loop
+	.line Dun Morogh,51.70,49.66,51.08,52.42,51.43,53.21,50.06,51.66,49.56,50.82,48.12,49.10,48.21,46.93,45.48,50.04,44.07,52.50,43.69,55.59,42.78,56.86,44.45,59.33,46.31,61.85,46.26,59.49,48.08,59.05,49.40,58.97,48.30,56.86,49.09,54.74,49.61,54.32,51.43,53.21
+	.goto Dun Morogh,51.70,49.66,40,0
+	.goto Dun Morogh,51.08,52.42,40,0
+	.goto Dun Morogh,51.43,53.21,40,0
+	.goto Dun Morogh,50.06,51.66,40,0
+	.goto Dun Morogh,49.56,50.82,40,0
+	.goto Dun Morogh,48.12,49.10,40,0
+	.goto Dun Morogh,48.21,46.93,40,0
+	.goto Dun Morogh,45.48,50.04,40,0
+	.goto Dun Morogh,44.07,52.50,40,0
+	.goto Dun Morogh,43.69,55.59,40,0
+	.goto Dun Morogh,42.78,56.86,40,0
+	.goto Dun Morogh,44.45,59.33,40,0
+	.goto Dun Morogh,46.31,61.85,40,0
+	.goto Dun Morogh,46.26,59.49,40,0
+	.goto Dun Morogh,48.08,59.05,40,0
+	.goto Dun Morogh,49.40,58.97,40,0
+	.goto Dun Morogh,48.30,56.86,40,0
+	.goto Dun Morogh,49.09,54.74,40,0
+	.goto Dun Morogh,49.61,54.32,40,0
+	.goto Dun Morogh,51.43,53.21,40,0
     .xp 5+2690 >> Grind to 2690+/2800xp
     .mob Young Black Bear
     .mob Crag Boar
@@ -1927,7 +2107,16 @@ step
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.2
 step
     #requires Golorn
-    .loop 10,Dun Morogh,42.57,54.80,41.89,54.51,42.13,52.68,42.46,51.96,41.91,51.43,42.46,51.96,42.13,52.68,42.57,54.80
+#loop
+	.line Dun Morogh,42.57,54.80,41.89,54.51,42.13,52.68,42.46,51.96,41.91,51.43,42.46,51.96,42.13,52.68,42.57,54.80
+	.goto Dun Morogh,42.57,54.80,10,0
+	.goto Dun Morogh,41.89,54.51,10,0
+	.goto Dun Morogh,42.13,52.68,10,0
+	.goto Dun Morogh,42.46,51.96,10,0
+	.goto Dun Morogh,41.91,51.43,10,0
+	.goto Dun Morogh,42.46,51.96,10,0
+	.goto Dun Morogh,42.13,52.68,10,0
+	.goto Dun Morogh,42.57,54.80,10,0
     >>Kill |cRXP_ENEMY_Young Wendigos|r and |cRXP_ENEMY_Wendigos|r. Loot them for their |cRXP_LOOT_Wendigo Manes|r
     >>|cRXP_WARN_Be careful as they cast|r |T135848:0|t[Frost Breath] |cRXP_WARN_(Melee Cast: Deals 6-10 Frost damage) and have increased|r |T135849:0|t[Frost Resistance]
     .complete 313,1 --Collect Wendigo Mane (x8)
@@ -2492,7 +2681,14 @@ step
     .mob Rockjaw Bonesnapper
 step
     .goto Dun Morogh,70.74,56.23,30,0
-    .loop 30,Dun Morogh,69.93,57.29,70.57,58.61,69.68,59.37,68.36,59.57,69.16,57.51,69.93,57.29
+#loop
+	.line Dun Morogh,69.93,57.29,70.57,58.61,69.68,59.37,68.36,59.57,69.16,57.51,69.93,57.29
+	.goto Dun Morogh,69.93,57.29,30,0
+	.goto Dun Morogh,70.57,58.61,30,0
+	.goto Dun Morogh,69.68,59.37,30,0
+	.goto Dun Morogh,68.36,59.57,30,0
+	.goto Dun Morogh,69.16,57.51,30,0
+	.goto Dun Morogh,69.93,57.29,30,0
     >>Kill |cRXP_ENEMY_Rockjaw Skullthumpers|r
     .complete 432,1 --Kill Rockjaw Skullthumper (x6)
     .mob Rockjaw Skullthumper
@@ -2618,7 +2814,12 @@ step
     >>|cRXP_WARN_Be careful as they cast|r |T132337:0|t[Charge] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 40-100 melee damage on hit. Only castable at range)|r
     .mob Scarred Crag Boar
 step
-    .loop 35,Loch Modan,21.14,71.62,19.06,75.46,20.91,77.67,21.14,71.62
+#loop
+	.line Loch Modan,21.14,71.62,19.06,75.46,20.91,77.67,21.14,71.62
+	.goto Loch Modan,21.14,71.62,35,0
+	.goto Loch Modan,19.06,75.46,35,0
+	.goto Loch Modan,20.91,77.67,35,0
+	.goto Loch Modan,21.14,71.62,35,0
     .xp 10 >> Grind to Level 10
     .mob Elder Black Bear
     .mob Forest Lurker
@@ -3081,7 +3282,18 @@ step
     >>|cRXP_WARN_He casts|r |T136197:0|t[Shadow Bolt] |cRXP_WARN_(Ranged Cast: Deals 55-70 Shadow damage)|r
     .unitscan Licillin
 step
-    .loop 35,Darkshore,44.57,36.57,44.47,38.11,44.02,38.55,45.01,39.62,45.61,38.81,45.18,37.51,45.86,36.96,46.91,37.11,45.47,36.01,44.57,36.57
+#loop
+	.line Darkshore,44.57,36.57,44.47,38.11,44.02,38.55,45.01,39.62,45.61,38.81,45.18,37.51,45.86,36.96,46.91,37.11,45.47,36.01,44.57,36.57
+	.goto Darkshore,44.57,36.57,35,0
+	.goto Darkshore,44.47,38.11,35,0
+	.goto Darkshore,44.02,38.55,35,0
+	.goto Darkshore,45.01,39.62,35,0
+	.goto Darkshore,45.61,38.81,35,0
+	.goto Darkshore,45.18,37.51,35,0
+	.goto Darkshore,45.86,36.96,35,0
+	.goto Darkshore,46.91,37.11,35,0
+	.goto Darkshore,45.47,36.01,35,0
+	.goto Darkshore,44.57,36.57,35,0
     >>Kill |cRXP_ENEMY_Vile Sprites|r and |cRXP_ENEMY_Wild Grells|r. Loot them for their |cRXP_LOOT_Grell Earrings|r
     >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Vile Sprites|r cast|r |T136016:0|t[Poison] |cRXP_WARN_(Melee Instant: Deals 3 damage every 3 seconds for 15 seconds) and |cRXP_ENEMY_Wild Grells|r cast|r |T136215:0|t[Crazed] |cRXP_WARN_(Self Instant: Increases attack speed by 20% at <20% health)|r
     .complete 955,1 --Grell Earring (8)
@@ -3115,7 +3327,18 @@ step
     .complete 956,1 --Ancient Moonstone Seal (1)
     .mob Deth'ryll Satyr
 step
-    .loop 35,Darkshore,44.57,36.57,44.47,38.11,44.02,38.55,45.01,39.62,45.61,38.81,45.18,37.51,45.86,36.96,46.91,37.11,45.47,36.01,44.57,36.57
+#loop
+	.line Darkshore,44.57,36.57,44.47,38.11,44.02,38.55,45.01,39.62,45.61,38.81,45.18,37.51,45.86,36.96,46.91,37.11,45.47,36.01,44.57,36.57
+	.goto Darkshore,44.57,36.57,35,0
+	.goto Darkshore,44.47,38.11,35,0
+	.goto Darkshore,44.02,38.55,35,0
+	.goto Darkshore,45.01,39.62,35,0
+	.goto Darkshore,45.61,38.81,35,0
+	.goto Darkshore,45.18,37.51,35,0
+	.goto Darkshore,45.86,36.96,35,0
+	.goto Darkshore,46.91,37.11,35,0
+	.goto Darkshore,45.47,36.01,35,0
+	.goto Darkshore,44.57,36.57,35,0
     .xp 11+1100 >> Grind to 1100+/8800xp
     .mob Vile Sprite
     .mob Wild Grell
@@ -3541,7 +3764,18 @@ step
     >>|cRXP_WARN_He casts|r |T136197:0|t[Shadow Bolt] |cRXP_WARN_(Ranged Cast: Deals 55-70 Shadow damage)|r
     .unitscan Licillin
 step
-    .loop 35,Darkshore,44.57,36.57,44.47,38.11,44.02,38.55,45.01,39.62,45.61,38.81,45.18,37.51,45.86,36.96,46.91,37.11,45.47,36.01,44.57,36.57
+#loop
+	.line Darkshore,44.57,36.57,44.47,38.11,44.02,38.55,45.01,39.62,45.61,38.81,45.18,37.51,45.86,36.96,46.91,37.11,45.47,36.01,44.57,36.57
+	.goto Darkshore,44.57,36.57,35,0
+	.goto Darkshore,44.47,38.11,35,0
+	.goto Darkshore,44.02,38.55,35,0
+	.goto Darkshore,45.01,39.62,35,0
+	.goto Darkshore,45.61,38.81,35,0
+	.goto Darkshore,45.18,37.51,35,0
+	.goto Darkshore,45.86,36.96,35,0
+	.goto Darkshore,46.91,37.11,35,0
+	.goto Darkshore,45.47,36.01,35,0
+	.goto Darkshore,44.57,36.57,35,0
     >>Kill |cRXP_ENEMY_Vile Sprites|r and |cRXP_ENEMY_Wild Grells|r. Loot them for their |cRXP_LOOT_Grell Earrings|r
     >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Vile Sprites|r cast|r |T136016:0|t[Poison] |cRXP_WARN_(Melee Instant: Deals 3 damage every 3 seconds for 15 seconds) and |cRXP_ENEMY_Wild Grells|r cast|r |T136215:0|t[Crazed] |cRXP_WARN_(Self Instant: Increases attack speed by 20% at <20% health)|r
     .complete 955,1 --Grell Earring (8)
@@ -4033,7 +4267,20 @@ step
     .goto Loch Modan,35.47,18.95,40 >>Exit the Mine
     .isOnQuest 307
 step
-    .loop 40,Loch Modan,34.38,17.67,35.44,15.34,37.15,10.53,39.38,10.92,38.46,14.43,39.67,18.12,39.84,24.83,37.34,26.82,37.15,24.53,38.85,21.25,37.89,18.88,34.38,17.67
+#loop
+	.line Loch Modan,34.38,17.67,35.44,15.34,37.15,10.53,39.38,10.92,38.46,14.43,39.67,18.12,39.84,24.83,37.34,26.82,37.15,24.53,38.85,21.25,37.89,18.88,34.38,17.67
+	.goto Loch Modan,34.38,17.67,40,0
+	.goto Loch Modan,35.44,15.34,40,0
+	.goto Loch Modan,37.15,10.53,40,0
+	.goto Loch Modan,39.38,10.92,40,0
+	.goto Loch Modan,38.46,14.43,40,0
+	.goto Loch Modan,39.67,18.12,40,0
+	.goto Loch Modan,39.84,24.83,40,0
+	.goto Loch Modan,37.34,26.82,40,0
+	.goto Loch Modan,37.15,24.53,40,0
+	.goto Loch Modan,38.85,21.25,40,0
+	.goto Loch Modan,37.89,18.88,40,0
+	.goto Loch Modan,34.38,17.67,40,0
     >>Kill |cRXP_ENEMY_Tunnel Rat Scouts|r, |cRXP_ENEMY_Tunnel Rat Vermin|r, |cRXP_ENEMY_Tunnel Rat Kobolds|r, and |cRXP_ENEMY_Tunnel Rat Foragers|r. Loot them for their |cRXP_LOOT_Tunnel Rat Ears|r
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Tunnel Rat Kobolds|r cast|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
@@ -4070,7 +4317,24 @@ step
     .turnin 307,2 >> Turn in Filthy Paws
     .target Mountaineer Stormpike
 step
-    .loop 35,Loch Modan,31.01,24.84,32.69,28.67,34.93,31.55,36.78,33.19,39.65,32.82,38.15,38.16,33.53,40.53,29.87,53.51,29.58,46.54,29.95,39.84,27.09,40.10,29.03,33.44,27.19,29.01,25.77,25.60,23.64,22.20,31.01,24.84
+#loop
+	.line Loch Modan,31.01,24.84,32.69,28.67,34.93,31.55,36.78,33.19,39.65,32.82,38.15,38.16,33.53,40.53,29.87,53.51,29.58,46.54,29.95,39.84,27.09,40.10,29.03,33.44,27.19,29.01,25.77,25.60,23.64,22.20,31.01,24.84
+	.goto Loch Modan,31.01,24.84,35,0
+	.goto Loch Modan,32.69,28.67,35,0
+	.goto Loch Modan,34.93,31.55,35,0
+	.goto Loch Modan,36.78,33.19,35,0
+	.goto Loch Modan,39.65,32.82,35,0
+	.goto Loch Modan,38.15,38.16,35,0
+	.goto Loch Modan,33.53,40.53,35,0
+	.goto Loch Modan,29.87,53.51,35,0
+	.goto Loch Modan,29.58,46.54,35,0
+	.goto Loch Modan,29.95,39.84,35,0
+	.goto Loch Modan,27.09,40.10,35,0
+	.goto Loch Modan,29.03,33.44,35,0
+	.goto Loch Modan,27.19,29.01,35,0
+	.goto Loch Modan,25.77,25.60,35,0
+	.goto Loch Modan,23.64,22.20,35,0
+	.goto Loch Modan,31.01,24.84,35,0
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
     >>Kill |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Spider Ichor|r
@@ -4121,10 +4385,44 @@ step
     .xp >13+6550,1 << Gnome
     .isQuestTurnedIn 6392
 step << Human
-    .loop 50,Loch Modan,31.01,24.84,32.69,28.67,34.93,31.55,36.78,33.19,39.65,32.82,38.15,38.16,33.53,40.53,29.87,53.51,29.58,46.54,29.95,39.84,27.09,40.10,29.03,33.44,27.19,29.01,25.77,25.60,23.64,22.20,31.01,24.84
+#loop
+	.line Loch Modan,31.01,24.84,32.69,28.67,34.93,31.55,36.78,33.19,39.65,32.82,38.15,38.16,33.53,40.53,29.87,53.51,29.58,46.54,29.95,39.84,27.09,40.10,29.03,33.44,27.19,29.01,25.77,25.60,23.64,22.20,31.01,24.84
+	.goto Loch Modan,31.01,24.84,50,0
+	.goto Loch Modan,32.69,28.67,50,0
+	.goto Loch Modan,34.93,31.55,50,0
+	.goto Loch Modan,36.78,33.19,50,0
+	.goto Loch Modan,39.65,32.82,50,0
+	.goto Loch Modan,38.15,38.16,50,0
+	.goto Loch Modan,33.53,40.53,50,0
+	.goto Loch Modan,29.87,53.51,50,0
+	.goto Loch Modan,29.58,46.54,50,0
+	.goto Loch Modan,29.95,39.84,50,0
+	.goto Loch Modan,27.09,40.10,50,0
+	.goto Loch Modan,29.03,33.44,50,0
+	.goto Loch Modan,27.19,29.01,50,0
+	.goto Loch Modan,25.77,25.60,50,0
+	.goto Loch Modan,23.64,22.20,50,0
+	.goto Loch Modan,31.01,24.84,50,0
     .xp 13+8675 >> Grind to 8675+/11400xp
 step << Gnome
-    .loop 50,Loch Modan,31.01,24.84,32.69,28.67,34.93,31.55,36.78,33.19,39.65,32.82,38.15,38.16,33.53,40.53,29.87,53.51,29.58,46.54,29.95,39.84,27.09,40.10,29.03,33.44,27.19,29.01,25.77,25.60,23.64,22.20,31.01,24.84
+#loop
+	.line Loch Modan,31.01,24.84,32.69,28.67,34.93,31.55,36.78,33.19,39.65,32.82,38.15,38.16,33.53,40.53,29.87,53.51,29.58,46.54,29.95,39.84,27.09,40.10,29.03,33.44,27.19,29.01,25.77,25.60,23.64,22.20,31.01,24.84
+	.goto Loch Modan,31.01,24.84,50,0
+	.goto Loch Modan,32.69,28.67,50,0
+	.goto Loch Modan,34.93,31.55,50,0
+	.goto Loch Modan,36.78,33.19,50,0
+	.goto Loch Modan,39.65,32.82,50,0
+	.goto Loch Modan,38.15,38.16,50,0
+	.goto Loch Modan,33.53,40.53,50,0
+	.goto Loch Modan,29.87,53.51,50,0
+	.goto Loch Modan,29.58,46.54,50,0
+	.goto Loch Modan,29.95,39.84,50,0
+	.goto Loch Modan,27.09,40.10,50,0
+	.goto Loch Modan,29.03,33.44,50,0
+	.goto Loch Modan,27.19,29.01,50,0
+	.goto Loch Modan,25.77,25.60,50,0
+	.goto Loch Modan,23.64,22.20,50,0
+	.goto Loch Modan,31.01,24.84,50,0
     .xp 13+6545 >> Grind to 6545+/11400xp
     .xp <13+5500,1
     .isOnQuest 6392
@@ -4171,7 +4469,16 @@ step << Gnome
     .target Daryl The Youngling
     .isOnQuest 298
 step << Gnome
-    .loop 45,Loch Modan,79.89,65.91,76.70,74.44,74.74,69.21,77.03,60.55,76.09,57.94,77.39,55.98,79.63,59.85,79.89,65.91
+#loop
+	.line Loch Modan,79.89,65.91,76.70,74.44,74.74,69.21,77.03,60.55,76.09,57.94,77.39,55.98,79.63,59.85,79.89,65.91
+	.goto Loch Modan,79.89,65.91,45,0
+	.goto Loch Modan,76.70,74.44,45,0
+	.goto Loch Modan,74.74,69.21,45,0
+	.goto Loch Modan,77.03,60.55,45,0
+	.goto Loch Modan,76.09,57.94,45,0
+	.goto Loch Modan,77.39,55.98,45,0
+	.goto Loch Modan,79.63,59.85,45,0
+	.goto Loch Modan,79.89,65.91,45,0
     >>Kill |cRXP_ENEMY_Mountain Buzzards|r
     .complete 257,1 --Mountain Buzzard (6)
     .mob Mountain Buzzard
@@ -4187,7 +4494,24 @@ step << Gnome
     .target Daryl The Youngling
     .isQuestComplete 257
 step << Gnome
-    .loop 50,Loch Modan,31.01,24.84,32.69,28.67,34.93,31.55,36.78,33.19,39.65,32.82,38.15,38.16,33.53,40.53,29.87,53.51,29.58,46.54,29.95,39.84,27.09,40.10,29.03,33.44,27.19,29.01,25.77,25.60,23.64,22.20,31.01,24.84
+#loop
+	.line Loch Modan,31.01,24.84,32.69,28.67,34.93,31.55,36.78,33.19,39.65,32.82,38.15,38.16,33.53,40.53,29.87,53.51,29.58,46.54,29.95,39.84,27.09,40.10,29.03,33.44,27.19,29.01,25.77,25.60,23.64,22.20,31.01,24.84
+	.goto Loch Modan,31.01,24.84,50,0
+	.goto Loch Modan,32.69,28.67,50,0
+	.goto Loch Modan,34.93,31.55,50,0
+	.goto Loch Modan,36.78,33.19,50,0
+	.goto Loch Modan,39.65,32.82,50,0
+	.goto Loch Modan,38.15,38.16,50,0
+	.goto Loch Modan,33.53,40.53,50,0
+	.goto Loch Modan,29.87,53.51,50,0
+	.goto Loch Modan,29.58,46.54,50,0
+	.goto Loch Modan,29.95,39.84,50,0
+	.goto Loch Modan,27.09,40.10,50,0
+	.goto Loch Modan,29.03,33.44,50,0
+	.goto Loch Modan,27.19,29.01,50,0
+	.goto Loch Modan,25.77,25.60,50,0
+	.goto Loch Modan,23.64,22.20,50,0
+	.goto Loch Modan,31.01,24.84,50,0
     >>Kill |cRXP_ENEMY_Mangy Mountain Boars|r and |cRXP_ENEMY_Mountain Boars|r. Loot them for their |cRXP_LOOT_Boar Intestines|r
     >>Kill |cRXP_ENEMY_Grizzled Black Bears|r and |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
     >>Kill |cRXP_ENEMY_Cliff Lurkers|r and |cRXP_ENEMY_Forest Lurkers|r. Loot them for their |cRXP_LOOT_Spider Ichor|r
@@ -4203,7 +4527,24 @@ step << Gnome
     .mob Cliff Lurker
     .mob Forest Lurker
 step << Gnome
-    .loop 50,Loch Modan,31.01,24.84,32.69,28.67,34.93,31.55,36.78,33.19,39.65,32.82,38.15,38.16,33.53,40.53,29.87,53.51,29.58,46.54,29.95,39.84,27.09,40.10,29.03,33.44,27.19,29.01,25.77,25.60,23.64,22.20,31.01,24.84
+#loop
+	.line Loch Modan,31.01,24.84,32.69,28.67,34.93,31.55,36.78,33.19,39.65,32.82,38.15,38.16,33.53,40.53,29.87,53.51,29.58,46.54,29.95,39.84,27.09,40.10,29.03,33.44,27.19,29.01,25.77,25.60,23.64,22.20,31.01,24.84
+	.goto Loch Modan,31.01,24.84,50,0
+	.goto Loch Modan,32.69,28.67,50,0
+	.goto Loch Modan,34.93,31.55,50,0
+	.goto Loch Modan,36.78,33.19,50,0
+	.goto Loch Modan,39.65,32.82,50,0
+	.goto Loch Modan,38.15,38.16,50,0
+	.goto Loch Modan,33.53,40.53,50,0
+	.goto Loch Modan,29.87,53.51,50,0
+	.goto Loch Modan,29.58,46.54,50,0
+	.goto Loch Modan,29.95,39.84,50,0
+	.goto Loch Modan,27.09,40.10,50,0
+	.goto Loch Modan,29.03,33.44,50,0
+	.goto Loch Modan,27.19,29.01,50,0
+	.goto Loch Modan,25.77,25.60,50,0
+	.goto Loch Modan,23.64,22.20,50,0
+	.goto Loch Modan,31.01,24.84,50,0
     .xp 13+6780 >> Grind to 6780+/11400xp
     .isOnQuest 298
 step
@@ -4761,14 +5102,32 @@ step
     >>|cRXP_WARN_This has a 5 second cast time|r
     .accept 4722 >> Accept Beached Sea Turtle
 step
-    .loop 45,Darkshore,38.74,58.10,39.91,58.50,39.23,63.60,39.87,66.31,39.98,70.55,37.40,70.05,38.63,67.72,38.50,63.73,38.74,58.10
+#loop
+	.line Darkshore,38.74,58.10,39.91,58.50,39.23,63.60,39.87,66.31,39.98,70.55,37.40,70.05,38.63,67.72,38.50,63.73,38.74,58.10
+	.goto Darkshore,38.74,58.10,45,0
+	.goto Darkshore,39.91,58.50,45,0
+	.goto Darkshore,39.23,63.60,45,0
+	.goto Darkshore,39.87,66.31,45,0
+	.goto Darkshore,39.98,70.55,45,0
+	.goto Darkshore,37.40,70.05,45,0
+	.goto Darkshore,38.63,67.72,45,0
+	.goto Darkshore,38.50,63.73,45,0
+	.goto Darkshore,38.74,58.10,45,0
     >>Kill |cRXP_ENEMY_Rabid Thistle Bears|r
     >>|cRXP_WARN_Be careful as they cast|r |T135914:0|t[Rabies] |cRXP_WARN_(Instant Melee: Reduces ALL health regen by 50% for 10 Minutes)|r
     .complete 2138,1 --Rabid Thistle Bear (20)
     .mob Rabid Thistle Bear
 step
     #label RBears
-    .loop 50,Darkshore,39.26,56.72,40.21,56.23,39.96,55.22,39.90,54.38,40.24,53.47,39.21,53.01,39.90,54.38
+#loop
+	.line Darkshore,39.26,56.72,40.21,56.23,39.96,55.22,39.90,54.38,40.24,53.47,39.21,53.01,39.90,54.38
+	.goto Darkshore,39.26,56.72,50,0
+	.goto Darkshore,40.21,56.23,50,0
+	.goto Darkshore,39.96,55.22,50,0
+	.goto Darkshore,39.90,54.38,50,0
+	.goto Darkshore,40.24,53.47,50,0
+	.goto Darkshore,39.21,53.01,50,0
+	.goto Darkshore,39.90,54.38,50,0
     >>Kill |cRXP_ENEMY_Blackwood Pathfinders|r and |cRXP_ENEMY_Blackwood Windtalkers|r
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Blackwood Pathfinders|r cast|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds), and |cRXP_ENEMY_Blackwood Windtalkers|r cast|r |T136022:0|t[Gust of Wind] |cRXP_WARN_(melee-range aoe stun)|r
     .complete 985,1 --Blackwood Pathfinder (8)
@@ -4781,7 +5140,17 @@ step
     .complete 1002,1 --Moonstalker Fang (6)
     .mob Moonstalker Runt
 step
-    .loop 50,Darkshore,38.63,51.25,38.33,50.00,38.18,48.42,38.73,47.62,39.49,47.65,41.40,47.13,41.67,49.47,41.45,50.84,38.63,51.25
+#loop
+	.line Darkshore,38.63,51.25,38.33,50.00,38.18,48.42,38.73,47.62,39.49,47.65,41.40,47.13,41.67,49.47,41.45,50.84,38.63,51.25
+	.goto Darkshore,38.63,51.25,50,0
+	.goto Darkshore,38.33,50.00,50,0
+	.goto Darkshore,38.18,48.42,50,0
+	.goto Darkshore,38.73,47.62,50,0
+	.goto Darkshore,39.49,47.65,50,0
+	.goto Darkshore,41.40,47.13,50,0
+	.goto Darkshore,41.67,49.47,50,0
+	.goto Darkshore,41.45,50.84,50,0
+	.goto Darkshore,38.63,51.25,50,0
     >>Kill |cRXP_ENEMY_Foreststrider Fledglings|r. Loot them for their |cRXP_LOOT_Strider Meat|r
     .collect 5469,5,2178,1 --Strider Meat (5)
     .mob Foreststrider Fledgling
@@ -7271,7 +7640,17 @@ step
     >>AoE |cRXP_ENEMY_Redridge Mystics|r and |cRXP_ENEMY_Redridge Brutes|r Loot them for their |cRXP_LOOT_Iron Pikes|r and |cRXP_LOOT_Iron Rivets|r
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Blackrock Outrunners|r cast|r |T132149:0|t[Net]|cRXP_WARN_, |cRXP_ENEMY_Dire Condors|r cast|r |T132154:0|t[Knockdown]
     .complete 20,1 --Blackrock Axe (10)
-    .loop 30,Redridge Mountains,37.16,45.20,38.36,41.34,40.09,40.64,42.89,39.26,59.36,44.56,59.79,42.05,62.58,41.46,62.57,45.48,59.36,44.56
+#loop
+	.line Redridge Mountains,37.16,45.20,38.36,41.34,40.09,40.64,42.89,39.26,59.36,44.56,59.79,42.05,62.58,41.46,62.57,45.48,59.36,44.56
+	.goto Redridge Mountains,37.16,45.20,30,0
+	.goto Redridge Mountains,38.36,41.34,30,0
+	.goto Redridge Mountains,40.09,40.64,30,0
+	.goto Redridge Mountains,42.89,39.26,30,0
+	.goto Redridge Mountains,59.36,44.56,30,0
+	.goto Redridge Mountains,59.79,42.05,30,0
+	.goto Redridge Mountains,62.58,41.46,30,0
+	.goto Redridge Mountains,62.57,45.48,30,0
+	.goto Redridge Mountains,59.36,44.56,30,0
     .complete 127,1 --Spotted Sunfish (10)
     .collect 1468,8,150,1 --Murloc Fin (8)
     .goto Redridge Mountains,58.06,52.01,40,0
@@ -7279,9 +7658,28 @@ step
     .goto Redridge Mountains,56.12,53.55,40,0
     .goto Redridge Mountains,58.06,52.01
     .collect 1080,5,92,1 --Tough Condor Meat (5)
-    .loop 30,Redridge Mountains,43.25,34.03,47.37,34.77,47.37,34.77,49.97,33.60,51.90,39.75,54.81,40.66,54.70,44.93,57.63,46.48
+#loop
+	.line Redridge Mountains,43.25,34.03,47.37,34.77,47.37,34.77,49.97,33.60,51.90,39.75,54.81,40.66,54.70,44.93,57.63,46.48
+	.goto Redridge Mountains,43.25,34.03,30,0
+	.goto Redridge Mountains,47.37,34.77,30,0
+	.goto Redridge Mountains,47.37,34.77,30,0
+	.goto Redridge Mountains,49.97,33.60,30,0
+	.goto Redridge Mountains,51.90,39.75,30,0
+	.goto Redridge Mountains,54.81,40.66,30,0
+	.goto Redridge Mountains,54.70,44.93,30,0
+	.goto Redridge Mountains,57.63,46.48,30,0
     .collect 1081,5,92,1 --Crisp Spider Meat (5)
-    .loop 30,Redridge Mountains,52.26,36.56,54.08,38.28,54.98,40.31,56.79,41.36,57.26,47.60,54.76,45.58,52.67,42.73,50.50,41.55,52.26,36.56
+#loop
+	.line Redridge Mountains,52.26,36.56,54.08,38.28,54.98,40.31,56.79,41.36,57.26,47.60,54.76,45.58,52.67,42.73,50.50,41.55,52.26,36.56
+	.goto Redridge Mountains,52.26,36.56,30,0
+	.goto Redridge Mountains,54.08,38.28,30,0
+	.goto Redridge Mountains,54.98,40.31,30,0
+	.goto Redridge Mountains,56.79,41.36,30,0
+	.goto Redridge Mountains,57.26,47.60,30,0
+	.goto Redridge Mountains,54.76,45.58,30,0
+	.goto Redridge Mountains,52.67,42.73,30,0
+	.goto Redridge Mountains,50.50,41.55,30,0
+	.goto Redridge Mountains,52.26,36.56,30,0
     .collect 2296,5,92,1 --Great Goretusk Snout (5)
     .disablecheckbox
     .complete 89,1 --Iron Pike (5)
@@ -7371,7 +7769,17 @@ step
     .goto Redridge Mountains,20.58,28.29,40 >>Travel to the Rethban Caverns
     .isOnQuest 347
 step
-    .loop 20,Redridge Mountains,18.95,24.50,21.62,23.72,21.89,15.06,20.21,13.25,18.82,15.03,16.06,17.08,17.48,19.55,16.05,21.04,18.95,24.50
+#loop
+	.line Redridge Mountains,18.95,24.50,21.62,23.72,21.89,15.06,20.21,13.25,18.82,15.03,16.06,17.08,17.48,19.55,16.05,21.04,18.95,24.50
+	.goto Redridge Mountains,18.95,24.50,20,0
+	.goto Redridge Mountains,21.62,23.72,20,0
+	.goto Redridge Mountains,21.89,15.06,20,0
+	.goto Redridge Mountains,20.21,13.25,20,0
+	.goto Redridge Mountains,18.82,15.03,20,0
+	.goto Redridge Mountains,16.06,17.08,20,0
+	.goto Redridge Mountains,17.48,19.55,20,0
+	.goto Redridge Mountains,16.05,21.04,20,0
+	.goto Redridge Mountains,18.95,24.50,20,0
     >>AoE |cRXP_ENEMY_Redridge Drudgers|r. Loot them for their |cRXP_LOOT_Rethban Ore|r, |cRXP_LOOT_Iron Pikes|r, and |cRXP_LOOT_Iron Rivets|r
     >>AoE |cRXP_ENEMY_Redridge Bashers|r. Loot them for their |cRXP_LOOT_Iron Pikes|r and |cRXP_LOOT_Iron Rivets|r
     >>Mine the |cRXP_PICK_Copper Veins|r in the cave. Loot them for the |cRXP_LOOT_Rethban Ore|r
@@ -7381,11 +7789,31 @@ step
     .mob Redridge Drudger
     .mob Redridge Basher
 step
-    .loop 20,Redridge Mountains,18.95,24.50,21.62,23.72,21.89,15.06,20.21,13.25,18.82,15.03,16.06,17.08,17.48,19.55,16.05,21.04,18.95,24.50
+#loop
+	.line Redridge Mountains,18.95,24.50,21.62,23.72,21.89,15.06,20.21,13.25,18.82,15.03,16.06,17.08,17.48,19.55,16.05,21.04,18.95,24.50
+	.goto Redridge Mountains,18.95,24.50,20,0
+	.goto Redridge Mountains,21.62,23.72,20,0
+	.goto Redridge Mountains,21.89,15.06,20,0
+	.goto Redridge Mountains,20.21,13.25,20,0
+	.goto Redridge Mountains,18.82,15.03,20,0
+	.goto Redridge Mountains,16.06,17.08,20,0
+	.goto Redridge Mountains,17.48,19.55,20,0
+	.goto Redridge Mountains,16.05,21.04,20,0
+	.goto Redridge Mountains,18.95,24.50,20,0
     .xp 21+14365 >> Grind to 14365+/25200xp
     .isQuestAvailable 92
 step
-    .loop 20,Redridge Mountains,18.95,24.50,21.62,23.72,21.89,15.06,20.21,13.25,18.82,15.03,16.06,17.08,17.48,19.55,16.05,21.04,18.95,24.50
+#loop
+	.line Redridge Mountains,18.95,24.50,21.62,23.72,21.89,15.06,20.21,13.25,18.82,15.03,16.06,17.08,17.48,19.55,16.05,21.04,18.95,24.50
+	.goto Redridge Mountains,18.95,24.50,20,0
+	.goto Redridge Mountains,21.62,23.72,20,0
+	.goto Redridge Mountains,21.89,15.06,20,0
+	.goto Redridge Mountains,20.21,13.25,20,0
+	.goto Redridge Mountains,18.82,15.03,20,0
+	.goto Redridge Mountains,16.06,17.08,20,0
+	.goto Redridge Mountains,17.48,19.55,20,0
+	.goto Redridge Mountains,16.05,21.04,20,0
+	.goto Redridge Mountains,18.95,24.50,20,0
     .xp 21+15715 >> Grind to 15715+/25200xp
     .isQuestTurnedIn 92
 step

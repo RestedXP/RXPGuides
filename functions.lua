@@ -8,6 +8,7 @@ local IsAddOnLoaded = C_AddOns and C_AddOns.IsAddOnLoaded or _G.IsAddOnLoaded
 --local RXPGuides = addon.RXPGuides
 local L = addon.locale.Get
 addon.functions.__index = addon.functions
+addon.separators = {}
 local events = {}
 addon.stepUpdateList = {}
 addon.functions.events = events
@@ -41,8 +42,13 @@ events.istrained = events.train
 events.spellmissing = events.train
 events.zone = "ZONE_CHANGED_NEW_AREA"
 events.zoneskip = "ZONE_CHANGED_NEW_AREA"
-events.subzone = "ZONE_CHANGED"
-events.subzoneskip = "ZONE_CHANGED"
+if C_EventUtils and C_EventUtils.IsEventValid("ZONE_CHANGED_INDOORS") then
+    events.subzone = {"ZONE_CHANGED","ZONE_CHANGED_INDOORS"}
+    events.subzoneskip = events.subzone
+else
+    events.subzone = "ZONE_CHANGED"
+    events.subzoneskip = "ZONE_CHANGED"
+end
 events.bankdeposit = {"BANKFRAME_OPENED", "BAG_UPDATE_DELAYED"}
 events.skipgossip = {"GOSSIP_SHOW", "GOSSIP_CLOSED", "GOSSIP_CONFIRM_CANCEL"}
 events.gossip = {"GOSSIP_SHOW", "PLAYER_INTERACTION_MANAGER_FRAME_HIDE"}
@@ -112,7 +118,8 @@ addon.icons = {
     clock = "|TInterface/ICONS/INV_Misc_PocketWatch_02:0|t",
     engrave = "|T134419:0|t",
 }
-if addon.gameVersion > 40000 then
+
+if addon.gameVersion > 50000 then
     addon.icons["goto"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:63:72:0:4|t"
     addon.icons["home"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:45:54:0:4|t"
     addon.icons["deathskip"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:72:81:0:4|t"
@@ -125,6 +132,9 @@ else
     addon.icons["home"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:64:80:0:16|t"
     addon.icons["deathskip"] = "|TInterface/MINIMAP/POIICONS:0:0:0:0:128:128:112:128:0:16|t"
 end
+
+--GetIcon("Interface/MINIMAP/POIICONS",5,128)
+
 addon.icons.groundgoto = addon.icons["goto"]
 addon.icons.flygoto = addon.icons["goto"]
 
@@ -137,7 +147,7 @@ function addon.error(text,arg1)
         text = ""
     end
     if not arg1 then
-        print(text)
+        print(text)--ok
     else
         print(fmt(L("Error parsing guide") .. " %s: %s\n%s" ,addon.currentGuideName,arg1,text))
     end
@@ -235,8 +245,10 @@ addon.IsOnQuest = IsOnQuest
 addon.IsQuestTurnedIn = IsQuestTurnedIn
 addon.IsQuestComplete = IsQuestComplete
 
-local function GetQuestId(src)
-    local guide = addon.currentGuide or addon.guide
+local function GetQuestId(src,guide)
+    if type(guide) ~= "table" then
+        guide = addon.currentGuide or addon.guide
+    end
     if not (src and guide) then
         return src
     end
@@ -251,6 +263,7 @@ local function GetQuestId(src)
         return src
     end
 end
+addon.GetQuestId = GetQuestId
 
 
 local timer = GetTime()
@@ -1582,6 +1595,9 @@ local function DetectFlying(self,mode)
             element.skip = not mode
             addon.UpdateMap()
         end
+        if element.skip and not element.textOnly then
+            element.completed = true
+        end
     end
 end
 
@@ -2617,18 +2633,25 @@ function addon.functions.mountcount(self, ...)
     elseif type(self) == "string" then -- on parse
         local element = {}
         local text, skill, str = ...
-        local operator, eq, total
+        local operator, eq, total, minskill, maxskill
 
         if str then
             str = str:gsub(" ", "")
             operator, eq, total = str:match("([<>]?)(=?)%s*(%d+)")
         end
+        if skill then
+            minskill,maxskill = skill:match("(%d+)%-(%d+)")
+        end
+        skill = tonumber(skill)
+        maxskill = tonumber(maxskill) or skill
+        minskill = tonumber(minskill) or skill
         --flags = tonumber(flags) or 0
         --element.enableBank = bit.band(flags, 0x1) == 0x1
 
-        element.skill = tonumber(skill)
+        element.minskill = minskill
+        element.maxskill = maxskill
         element.total = tonumber(total)
-        if not (element.total and element.skill) then
+        if not (element.total and minskill and maxskill) then
             return addon.error(L("Error parsing guide") .. " " .. addon.currentGuideName ..
                             ": Invalid skill/count\n" .. self)
         end
@@ -2657,16 +2680,19 @@ function addon.functions.mountcount(self, ...)
     local count = 0
 
     for i = 75,375,75 do
-        if element.skill < i then
+        if i > element.maxskill then
             break
         end
-        for _,id in pairs(addon.mountIDs[i]) do
-            if addon.IsPlayerSpell(id) then
-                count = count + 1
+
+        if i >= element.minskill then
+            for _,id in pairs(addon.mountIDs[i]) do
+                if addon.IsPlayerSpell(id) then
+                    count = count + 1
+                end
             end
         end
     end
-
+    print('-',count,element.minskill,element.maxskill)
     if not ((eq and count == total) or (count * operator > total * operator) or
         (not eq and operator == 0 and count >= total)) then
         if step.active and not step.completed then
@@ -3005,8 +3031,12 @@ function addon.functions.next(skip, guide)
                     nextGuide.softcore and addon.settings.profile.hardcore) then
                 return addon.functions.next(nil, nextGuide)
             else
-                addon:LoadGuide(nextGuide)
-                return true
+                if skip ~= false then
+                    addon:LoadGuide(nextGuide)
+                    return true
+                else
+                    return group,next
+                end
             end
         elseif guideSkip then
             --Used in case it doesn't find a valid guide after the name substition
@@ -3444,8 +3474,8 @@ function addon.GetSubZoneId(zone,x,y)
     if ((zone == currentMap or zone == subzone) and isMapValid)
         == (element.flags % 2 == 0) then
         addon.SetElementComplete(self)
-        step.completed = true
-        addon.updateSteps = true
+        --step.completed = true
+        --addon.updateSteps = true
     end
 end
 
@@ -3550,6 +3580,11 @@ function addon.functions.zoneskip(self, text, zone, flags)
     end
 end
 
+addon.separators.link = function(t,args)
+    local link = args:gsub("%s+$", "")
+    tinsert(t, link)
+end
+
 local function LinkOnClick(self)
 
     addon.url = self.element.url
@@ -3603,10 +3638,16 @@ _G.StaticPopupDialogs["RXP_Link"] = {
 
 function addon.functions.cast(self, text, ...)
     if type(self) == "string" then -- on parse
-        local element = {}
+        local element = {unit = "player"}
         local ids = {...}
         for i,v in ipairs(ids) do
-            ids[i] = tonumber(v)
+            local newValue = tonumber(v)
+            if i == 1 and not newValue then
+                element.unit = v
+                ids[1] = -1
+            else
+                ids[i] = newValue or -1
+            end
         end
         element.ids = ids
         element.text = text or ""
@@ -3628,7 +3669,7 @@ function addon.functions.cast(self, text, ...)
     local event = text
     local unit, _, id = ...
     local element = self.element
-    if event == "UNIT_SPELLCAST_SUCCEEDED" and unit == "player" then
+    if event == "UNIT_SPELLCAST_SUCCEEDED" and unit == element.unit then
         for _,spellId in pairs(element.ids) do
             if id == spellId then
                 local icon = GetSpellTexture(id)
@@ -3660,6 +3701,17 @@ local function UpdateTargets(element,context)
         element[context] = element.unitlist
     end
 end
+
+local semicolonsep = function(t,args)
+    args = args:gsub("%s*;%s*", ";")
+    for arg in string.gmatch(args, "[^;]+") do
+        tinsert(t, arg)
+    end
+end
+
+addon.separators.unitscan = semicolonsep
+addon.separators.target = semicolonsep
+addon.separators.mob = semicolonsep
 
 function addon.functions.unitscan(self, text, ...)
     if type(self) == "string" then
@@ -5028,9 +5080,13 @@ function addon.CanPlayerFly(zoneOrContinent)
 
     local mapInfo = C_Map.GetMapInfo(region)
     local continentId = region
-    while mapInfo and mapInfo.parentMapID and mapInfo.flags ~= 0 do
+    local flags = mapInfo.flags
+    local mapType = mapInfo.mapType
+    while mapInfo and mapInfo.parentMapID and (mapType and mapType > 2 or flags and flags ~= 0) do
         continentId = mapInfo.parentMapID
         mapInfo = C_Map.GetMapInfo(continentId)
+        flags = mapInfo.flags
+        mapType = mapInfo.mapType
     end
 
     local ridingSkill = addon.GetSkillLevel("riding")
@@ -5052,15 +5108,19 @@ function addon.CanPlayerFly(zoneOrContinent)
             return true
         end
     else
-        local cwf = IsPlayerSpell(54197)
-
+        local cwf = addon.IsPlayerSpell(54197)--Cold weather flying
+        local fml = addon.IsPlayerSpell(90267)--Flight Master's license
         --1945 = outland,113 = northrend
-        if ((continentId == addon.GetMapId("Outland") or (cwf and continentId == addon.GetMapId("Northrend"))) and ridingSkill > 224) then
+        if ((continentId == addon.GetMapId("Outland") or
+            (cwf and continentId == addon.GetMapId("Northrend")) or
+            (fml and (continentId == addon.GetMapId("Kalimdor") or continentId == addon.GetMapId("Eastern Kingdoms"))))
+                and ridingSkill > 224) then
             return true
         end
     end
 end
 
+AA = addon.CanPlayerFly
 events.noflyable = "ZONE_CHANGED"
 function addon.functions.noflyable(self, text, zone, skill)
     if type(self) == "string" then
@@ -5616,6 +5676,63 @@ function addon.functions.disablecheckbox(self, text)
     end
 end
 
+addon.QuestDB = addon.QuestDB or {}
+function addon.functions.addtoquestdb(self,text,index,...)
+    if type(self) == "string" then
+        local group = addon.guide.group
+        local questDB
+        index = tonumber(index)
+        if not group then
+            return
+        elseif addon.QuestDB[group] then
+            questDB = addon.QuestDB[group]
+            if questDB[index] then
+                return
+            end
+        else
+            questDB = {}
+            addon.QuestDB[group] = questDB
+        end
+        if not index then return end
+        local tindex = {}
+        questDB[index] = tindex
+
+        for _,arg in ipairs({...}) do
+            local k,v = arg:match("(.+):(.*)")
+            k = tonumber(k) or k
+            if k then
+                v = v == "true" or tonumber(v) or v
+                if type(v) == "string" and v:find(";") then
+                    local t = {}
+                    for entry in v:gmatch("[^;]+") do
+                        tinsert(t,entry)
+                    end
+                    v = t
+                end
+                tindex[k] = v
+            end
+            --print(k,v)
+        end
+
+    end
+end
+
+addon.separators.setquestdb = function(t,args)
+    table.insert(t,args)
+end
+
+function addon.functions.setquestdb(self,text,str)
+    if type(self) == "string" then
+        local group = addon.guide.group
+        if not group or addon.QuestDB[group] then
+            return
+        end
+        local t = assert(loadstring("return " .. str))
+        setfenv(t, {})
+        addon.QuestDB[group] = t()
+    end
+end
+
 function addon.functions.convertquest(self, text, src, dst)
     if type(self) == "string" then -- on parse
         src = tonumber(src)
@@ -5677,18 +5794,23 @@ function addon.functions.aura(self, ...)
     local event, target = ...
     if (target == "player" or event ~= "UNIT_AURA") and step.active then
         local buffFound = false
-        for i = 1, 32 do
-            local name, icon, count, _, duration, expirationTime, _, _, _, spellId = UnitAura(element.unit, i)
-            if spellId == element.id then
-                local remaining = expirationTime - GetTime()
-                --print(remaining,duration,expirationTime)
-                if (not element.stacks or count >= element.stacks) and (remaining > element.duration or (duration == expirationTime and duration == 0)) then
-                    element.icon = "|T" .. icon .. ":0|t"
-                    buffFound = true
-                    break
+
+        local function CheckBuffs(func)
+            for i = 1, 32 do
+                local name, icon, count, _, duration, expirationTime, _, _, _, spellId = func(element.unit, i)
+                if spellId == element.id then
+                    local remaining = expirationTime - GetTime()
+                    --print(remaining,duration,expirationTime)
+                    if (not element.stacks or count >= element.stacks) and (remaining > element.duration or (duration == expirationTime and duration == 0)) then
+                        element.icon = "|T" .. icon .. ":0|t"
+                        buffFound = true
+                        break
+                    end
                 end
             end
         end
+        CheckBuffs(UnitDebuff)
+        CheckBuffs(UnitBuff)
         if buffFound == not element.reverse then
             if element.text then
                 addon.SetElementComplete(self)

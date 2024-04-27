@@ -31,7 +31,12 @@ step
     .goto 468,50.96,26.54,25,0
     .goto 468,49.20,26.20,25,0
     .goto 468,44.84,30.01,25,0
-    .loop 15,468,52.47,31.08,50.96,26.54,49.20,26.20,44.84,30.01
+#loop
+	.line 468,52.47,31.08,50.96,26.54,49.20,26.20,44.84,30.01
+	.goto 468,52.47,31.08,15,0
+	.goto 468,50.96,26.54,15,0
+	.goto 468,49.20,26.20,15,0
+	.goto 468,44.84,30.01,15,0
     >>Kill |cRXP_ENEMY_Vale Moths|r and loot them for |cRXP_LOOT_Vial of Moth Blood.|r
     .complete 9280,1 --6/6 Vial of Moth Blood
 	.mob Vale Moth
@@ -76,7 +81,12 @@ step
 	.goto 468,50.96,26.54,25,0
 	.goto 468,49.20,26.20,25,0
 	.goto 468,44.84,30.01,25,0
-	.loop 15,468,52.47,31.08,50.96,26.54,49.20,26.20,44.84,30.01
+#loop
+	.line 468,52.47,31.08,50.96,26.54,49.20,26.20,44.84,30.01
+	.goto 468,52.47,31.08,15,0
+	.goto 468,50.96,26.54,15,0
+	.goto 468,49.20,26.20,15,0
+	.goto 468,44.84,30.01,15,0
     >>Kill |cRXP_ENEMY_Volatile Mutations.|r
     .complete 10302,1 --8/8 Volatile Mutation slain
 	.mob Volatile Mutation
@@ -99,12 +109,24 @@ step
     .goto 468,37.59,51.92,15,0
     .goto 468,35.66,52.75,15,0
     .goto 468,39.6,50.1,15,0
-    .loop 15,468,40.41,42.32,37.51,44.62,33.22,49.4,37.59,51.92,35.66,52.75,39.6,50.1
+#loop
+	.line 468,40.41,42.32,37.51,44.62,33.22,49.4,37.59,51.92,35.66,52.75,39.6,50.1
+	.goto 468,40.41,42.32,15,0
+	.goto 468,37.51,44.62,15,0
+	.goto 468,33.22,49.40,15,0
+	.goto 468,37.59,51.92,15,0
+	.goto 468,35.66,52.75,15,0
+	.goto 468,39.60,50.10,15,0
     >>Kill |cRXP_ENEMY_Mutated Root Lashers|r and loot them for their |cRXP_LOOT_Lasher Samples.|r
     .complete 9293,1 --10/10 Lasher Sample
 	.mob Root Lasher
 step
-    .loop 15,468,40.77,42.25,39,50.27,34.95,37.36,35.24,52.45
+#loop
+	.line 468,40.77,42.25,39,50.27,34.95,37.36,35.24,52.45
+	.goto 468,40.77,42.25,15,0
+	.goto 468,39.00,50.27,15,0
+	.goto 468,34.95,37.36,15,0
+	.goto 468,35.24,52.45,15,0
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Corrupted Flowers.|r
     .complete 9799,1 --3/3 Corrupted Flower
 step

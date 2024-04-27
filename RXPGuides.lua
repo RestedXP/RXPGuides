@@ -85,7 +85,7 @@ end
 local GetAddOnMetadata = C_AddOns and C_AddOns.GetAddOnMetadata or _G.GetAddOnMetadata
 addon.release = GetAddOnMetadata(addonName, "Version")
 addon.title = GetAddOnMetadata(addonName, "Title")
-local cacheVersion = 20
+local cacheVersion = 22
 local L = addon.locale.Get
 
 if string.match(addon.release, 'project') then
@@ -99,17 +99,23 @@ end
 addon.version = 40000
 local gameVersion = select(4, GetBuildInfo())
 addon.gameVersion = gameVersion
+local maxLevel
 
 if gameVersion > 50000 then
     addon.game = "RETAIL"
+    maxLevel = 70
 elseif gameVersion > 40000 then
     addon.game = "CATA"
+    maxLevel = 85
 elseif gameVersion > 30000 then
     addon.game = "WOTLK"
+    maxLevel = 80
 elseif gameVersion > 20000 then
     addon.game = "TBC"
+    maxLevel = 70
 else
     addon.game = "CLASSIC"
+    maxLevel = 60
 end
 
 local RXPGuides = {}
@@ -132,6 +138,7 @@ addon.player = {
     faction = select(1,UnitFactionGroup("player")),
     guid = UnitGUID("player"),
     name = UnitName("player"),
+    maxlevel = maxLevel,
     season = C_Seasons and C_Seasons.HasActiveSeason() and C_Seasons.GetActiveSeason(),
 }
 addon.player.neutral = addon.player.faction == "Neutral"
@@ -271,7 +278,7 @@ function addon.GetProfessionLevel()
         currrentSkillLevel["riding"] = 375
     end
 
-    if IsPlayerSpell(54197) then currrentSkillLevel["coldweatherflying"] = 1 end
+    if addon.IsPlayerSpell(54197) then currrentSkillLevel["coldweatherflying"] = 1 end
 
     if not _G.GetSkillLineInfo then return end
     if not names.riding then names.riding = GetSpellInfo(33388) end
@@ -1218,11 +1225,11 @@ function addon:PLAYER_LEVEL_UP(_, level)
     if addon.settings.profile.season == 3 and level == 25 then
         addon.RXPFrame.GenerateMenuTable()
         addon.ReloadGuide()
-    else
+    --[[else
         local stepn = RXPCData.currentStep
         -- addon:LoadGuide(addon.currentGuide)
         addon.SetStep(1)
-        addon.SetStep(stepn)
+        addon.SetStep(stepn)]]
     end
 end
 
@@ -1425,14 +1432,15 @@ function addon:UpdateLoop(diff)
             elseif skip % 2 == 1 and next(addon.guideCache) then
                 event = event .. "/cache"
                 local length = 0
+                local loadGuide = true
                 for _,guide in pairs(addon.guides) do
-                    if not guide.steps then
+                    if (loadGuide or guide.disablecaching) and not guide.steps then
                         addon:FetchGuide(guide)
                         guideLoaded = true
                         length = length + (tonumber(guide.length) or 0)
                         --print('f',not guide.steps and guide.name)
                         if length > 45000 or GetFramerate() < 60 then
-                            break
+                            loadGuide = false
                         end
                     end
                 end
@@ -1624,9 +1632,9 @@ end
 
 --MAX_PLAYER_LEVEL_TABLE[GetAccountExpansionLevel()]--not working on cata beta
 function addon.stepLogic.LoremasterCheck(step)
-    if (addon.game == "WOTLK" and step.questguide and not addon.settings.profile.northrendLM) or
-        (addon.game == "CATA" and step.questguide and not addon.settings.profile.loremasterMode)
-    then
+    local loremaster = addon.game == "WOTLK" and addon.settings.profile.northrendLM or
+                     addon.game == "CATA" and addon.settings.profile.loremasterMode
+    if step.questguide and not loremaster or step.speedrunguide and loremaster then
         return false
     end
     return true

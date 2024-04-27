@@ -539,7 +539,17 @@ step
     .goto The Barrens,52.95,41.77
     .complete 851,1 --Verog's Head (1)
 step
-    .loop 25,The Barrens,55.72,42.14,55.49,41.75,55.09,41.58,55.03,42.24,55.27,43.17,55.78,43.47,56.15,43.28,56.08,42.58,55.72,42.14
+#loop
+	.line The Barrens,55.72,42.14,55.49,41.75,55.09,41.58,55.03,42.24,55.27,43.17,55.78,43.47,56.15,43.28,56.08,42.58,55.72,42.14
+	.goto The Barrens,55.72,42.14,25,0
+	.goto The Barrens,55.49,41.75,25,0
+	.goto The Barrens,55.09,41.58,25,0
+	.goto The Barrens,55.03,42.24,25,0
+	.goto The Barrens,55.27,43.17,25,0
+	.goto The Barrens,55.78,43.47,25,0
+	.goto The Barrens,56.15,43.28,25,0
+	.goto The Barrens,56.08,42.58,25,0
+	.goto The Barrens,55.72,42.14,25,0
     >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Stagnant Oasis
     .complete 848,1 --Collect Fungal Spores (x4)
 step

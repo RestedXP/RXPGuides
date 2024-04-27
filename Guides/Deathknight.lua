@@ -4,10 +4,13 @@ if class ~= "DEATHKNIGHT" then return end
 RXPGuides.RegisterGuide([[
 #version 6
 #wotlk
+#cata
 << DK
 #group RestedXP Death Knight Start
-#next RestedXP Alliance 60-70\59-61 Hellfire Peninsula << Alliance
-#next RestedXP Horde 60-70\59-61 Hellfire Peninsula << Horde
+#next RestedXP Alliance 60-70\59-61 Hellfire Peninsula << Alliance wotlk
+#next RestedXP Horde 60-70\59-61 Hellfire Peninsula << Horde wotlk
+#next RXP Cataclysm 60-80 (H)\59-61 Hellfire Peninsula << Horde !wotlk
+#next RXP Cataclysm 60-80 (A)\59-61 Hellfire Peninsula << Alliance !wotlk
 #defaultfor DK
 #name 55-58 The Scarlet Enclave
 

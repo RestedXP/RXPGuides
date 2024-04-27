@@ -3,6 +3,7 @@ RXPGuides.RegisterGuide([[
 #group +RestedXP Northrend Daily Quests
 #subgroup Profession Daily Quests
 #wotlk
+#cata
 #name Jewelcrafting
 
 step

@@ -31,6 +31,7 @@ addon.GetItemCooldown = GetItemCooldown
 
 local function GetActiveItemList(ref)
     local itemList = {}
+    local activeItems = {}
     --[[
     if not (ref and ref.activeItems) then
         ref = addon
@@ -70,7 +71,8 @@ local function GetActiveItemList(ref)
         for slot = 1, GetContainerNumSlots(bag) do
             local id = GetContainerItemID(bag, slot)
             -- local spell = GetItemSpell(id)
-            if id and ref.activeItems[id] then
+            if id and ref.activeItems[id] and not activeItems[id] then
+                activeItems[id] = true
                 local itemName, _, _, _, _, _, _, _, _, itemTexture, _, classID =
                     GetItemInfo(id)
                 table.insert(itemList,{
@@ -279,7 +281,7 @@ function addon.UpdateItemFrame(itemFrame)
                               "SecureActionButtonTemplate")
             btn:SetAttribute("type1", "item")
             btn:SetSize(25, 25)
-            if btn.RegisterForClicks and addon.game == "RETAIL" then
+            if btn.RegisterForClicks then--and addon.game == "RETAIL" then
                 btn:RegisterForClicks("AnyUp","AnyDown")
             end
             table.insert(buttonList, btn)
@@ -324,7 +326,13 @@ function addon.UpdateItemFrame(itemFrame)
             attribute = "spell"
         end
         btn:SetAttribute("type1",attribute)
-        btn:SetAttribute(attribute, item.name)
+        if attribute == "item" then
+            --btn:SetAttribute("macro", format("/use item:%d",item.id))
+            btn:SetAttribute(attribute, format("item:%d",item.id))
+        else
+            btn:SetAttribute(attribute, item.name)
+        end
+
         if btn.itemId ~= item.id and btn.cooldown then
             btn.cooldown:Clear()
         end

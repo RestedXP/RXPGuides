@@ -1,5 +1,6 @@
 RXPGuides.RegisterGuide([[
 #wotlk
+#cata
 #version 1
 #group +Argent Tournament
 #name A_1_AT_Start
@@ -1715,6 +1716,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #wotlk
+#cata
 #version 1
 #group +Argent Tournament
 #name B_2_AT_Exodar
@@ -2010,6 +2012,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #wotlk
+#cata
 #version 1
 #group +Argent Tournament
 #name C_2_AT_Stormwind
@@ -2305,6 +2308,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #wotlk
+#cata
 #version 1
 #group +Argent Tournament
 #name D_2_AT_Ironforge
@@ -2602,6 +2606,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #wotlk
+#cata
 #version 1
 #group +Argent Tournament
 #name E_2_AT_Gnomeregan
@@ -2897,6 +2902,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #wotlk
+#cata
 #version 1
 #group +Argent Tournament
 #name F_2_AT_Darnassus
@@ -3191,6 +3197,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #wotlk
+#cata
 #version 1
 #group +Argent Tournament
 #name B_2_AT_Orgrimmar
@@ -3484,6 +3491,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #wotlk
+#cata
 #version 1
 #group +Argent Tournament
 #name C_2_AT_Sen'jin
@@ -3779,6 +3787,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #wotlk
+#cata
 #version 1
 #group +Argent Tournament
 #name D_2_AT_Thunder Bluff
@@ -4075,6 +4084,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #wotlk
+#cata
 #version 1
 #group +Argent Tournament
 #name E_2_AT_Undercity
@@ -4370,6 +4380,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #wotlk
+#cata
 #version 1
 #group +Argent Tournament
 #name F_2_AT_Silvermoon
@@ -4670,6 +4681,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #wotlk
+#cata
 #version 1
 #group +Argent Tournament
 #name G_2.1_AT_The_Black Knight's_Quest_Story
@@ -4903,6 +4915,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #wotlk
+#cata
 #version 1
 #group +Argent Tournament
 #name H_3_AT_Champion_Daily_Quests
@@ -5342,6 +5355,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #wotlk
+#cata
 #version 1
 #group +Argent Tournament
 #name I_3.1_AT_Crusader_Daily_Quests
@@ -5437,6 +5451,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #wotlk
+#cata
 #version 1
 #group +Argent Tournament
 #name J_3.2_AT_Silver_Covenant_Daily_Quests
@@ -5569,6 +5584,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #wotlk
+#cata
 #version 1
 #group +Argent Tournament
 #name J_3.2AT_Sunreavers_Daily_Quests

@@ -29,6 +29,11 @@ jobs:
         with:
           args: -g wrath
 
+      - name: Package and release Cata
+        uses: BigWigsMods/packager@v2
+        with:
+          args: -g cata
+
       - name: Package and release Retail
         uses: BigWigsMods/packager@v2
         with:
@@ -41,7 +46,7 @@ jobs:
 
           cp RXPGuides/CHANGELOG.md ./ftp/
 
-          for game in wrath classic; do
+          for game in wrath classic cata; do
             zip=$(ls RXPGuides-*${game}.zip)
 
             cp "${zip}" "./ftp/RXPGuides-latest-${game}.zip"

@@ -2219,7 +2219,15 @@ step
     .complete 527,4 --Farmer Getz (1)
     .unitscan Farmer Getz
 step
-    .loop 45,Hillsbrad Foothills,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
+#loop
+	.line Hillsbrad Foothills,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
+	.goto Hillsbrad Foothills,35.90,40.63,45,0
+	.goto Hillsbrad Foothills,33.88,41.80,45,0
+	.goto Hillsbrad Foothills,30.19,38.48,45,0
+	.goto Hillsbrad Foothills,30.67,35.21,45,0
+	.goto Hillsbrad Foothills,31.71,36.72,45,0
+	.goto Hillsbrad Foothills,33.67,35.66,45,0
+	.goto Hillsbrad Foothills,35.90,40.63,45,0
 	>>Kill |cRXP_ENEMY_Hillsbrad Farmers|r and |cRXP_ENEMY_Hillsbrad Farmhands|r
     .complete 527,1 --Kill Hillsbrad Farmer (x6)
 	.complete 527,2 --Kill Hillsbrad Farmhand (x6)
@@ -2239,20 +2247,85 @@ step
     .mob Vicious Gray Bear
     .mob Gray Bear
 step
-    .loop 45,Hillsbrad Foothills,39.79,34.43,38.70,36.71,38.45,38.77,39.88,40.56,37.97,44.59,39.92,45.83,40.91,44.23,42.56,40.19,43.36,39.38,51.28,35.37,54.29,31.75,52.93,29.45,54.77,28.72
+#loop
+	.line Hillsbrad Foothills,39.79,34.43,38.70,36.71,38.45,38.77,39.88,40.56,37.97,44.59,39.92,45.83,40.91,44.23,42.56,40.19,43.36,39.38,51.28,35.37,54.29,31.75,52.93,29.45,54.77,28.72
+	.goto Hillsbrad Foothills,39.79,34.43,45,0
+	.goto Hillsbrad Foothills,38.70,36.71,45,0
+	.goto Hillsbrad Foothills,38.45,38.77,45,0
+	.goto Hillsbrad Foothills,39.88,40.56,45,0
+	.goto Hillsbrad Foothills,37.97,44.59,45,0
+	.goto Hillsbrad Foothills,39.92,45.83,45,0
+	.goto Hillsbrad Foothills,40.91,44.23,45,0
+	.goto Hillsbrad Foothills,42.56,40.19,45,0
+	.goto Hillsbrad Foothills,43.36,39.38,45,0
+	.goto Hillsbrad Foothills,51.28,35.37,45,0
+	.goto Hillsbrad Foothills,54.29,31.75,45,0
+	.goto Hillsbrad Foothills,52.93,29.45,45,0
+	.goto Hillsbrad Foothills,54.77,28.72,45,0
 	>>Kill |cRXP_ENEMY_Starving Mountain Lions|r. Loot them for their |cRXP_LOOT_Blood|r
     .complete 501,1 --Collect Mountain Lion Blood (x10)
     .mob Starving Mountain Lion
 step
     #label BearT
-    .loop 45,Hillsbrad Foothills,40.88,33.87,40.86,37.40,40.85,39.42,38.50,38.04,37.68,41.23,38.71,42.66,40.40,44.65,44.39,41.34,45.23,39.62,43.87,37.01,49.75,34.33,52.06,36.86,51.91,32.97,52.39,29.27,57.38,22.85,57.09,25.67,58.08,28.07,56.88,28.85,59.68,30.90,57.71,34.06,59.89,36.74,62.63,37.64,64.73,38.03,66.52,34.52
+#loop
+	.line Hillsbrad Foothills,40.88,33.87,40.86,37.40,40.85,39.42,38.50,38.04,37.68,41.23,38.71,42.66,40.40,44.65,44.39,41.34,45.23,39.62,43.87,37.01,49.75,34.33,52.06,36.86,51.91,32.97,52.39,29.27,57.38,22.85,57.09,25.67,58.08,28.07,56.88,28.85,59.68,30.90,57.71,34.06,59.89,36.74,62.63,37.64,64.73,38.03,66.52,34.52
+	.goto Hillsbrad Foothills,40.88,33.87,45,0
+	.goto Hillsbrad Foothills,40.86,37.40,45,0
+	.goto Hillsbrad Foothills,40.85,39.42,45,0
+	.goto Hillsbrad Foothills,38.50,38.04,45,0
+	.goto Hillsbrad Foothills,37.68,41.23,45,0
+	.goto Hillsbrad Foothills,38.71,42.66,45,0
+	.goto Hillsbrad Foothills,40.40,44.65,45,0
+	.goto Hillsbrad Foothills,44.39,41.34,45,0
+	.goto Hillsbrad Foothills,45.23,39.62,45,0
+	.goto Hillsbrad Foothills,43.87,37.01,45,0
+	.goto Hillsbrad Foothills,49.75,34.33,45,0
+	.goto Hillsbrad Foothills,52.06,36.86,45,0
+	.goto Hillsbrad Foothills,51.91,32.97,45,0
+	.goto Hillsbrad Foothills,52.39,29.27,45,0
+	.goto Hillsbrad Foothills,57.38,22.85,45,0
+	.goto Hillsbrad Foothills,57.09,25.67,45,0
+	.goto Hillsbrad Foothills,58.08,28.07,45,0
+	.goto Hillsbrad Foothills,56.88,28.85,45,0
+	.goto Hillsbrad Foothills,59.68,30.90,45,0
+	.goto Hillsbrad Foothills,57.71,34.06,45,0
+	.goto Hillsbrad Foothills,59.89,36.74,45,0
+	.goto Hillsbrad Foothills,62.63,37.64,45,0
+	.goto Hillsbrad Foothills,64.73,38.03,45,0
+	.goto Hillsbrad Foothills,66.52,34.52,45,0
     >>Kill |cRXP_ENEMY_Vicious Gray Bears|r and |cRXP_ENEMY_Gray Bears|r. Loot them for their |cRXP_LOOT_Tongues|r
     >>|cRXP_WARN_Avoid |cRXP_ENEMY_Elder Gray Bears|r as they're not worth killing|r
 	.complete 496,1 --Collect Gray Bear Tongue (x10)
     .mob Vicious Gray Bear
     .mob Gray Bear
 step
-    .loop 45,Hillsbrad Foothills,62.85,38.74,62.24,39.96,60.92,37.92,59.62,33.33,56.88,29.73,59.80,27.72,57.63,24.16,56.47,16.42,59.36,14.55,60.54,13.67,62.65,12.90,64.43,10.22,65.18,6.93,65.31,5.76,66.90,9.02,70.39,8.89,68.86,10.18,67.35,12.95,71.38,19.81,71.78,21.89,64.85,24.92,66.68,28.15,69.76,31.89,67.62,37.65,62.85,38.74
+#loop
+	.line Hillsbrad Foothills,62.85,38.74,62.24,39.96,60.92,37.92,59.62,33.33,56.88,29.73,59.80,27.72,57.63,24.16,56.47,16.42,59.36,14.55,60.54,13.67,62.65,12.90,64.43,10.22,65.18,6.93,65.31,5.76,66.90,9.02,70.39,8.89,68.86,10.18,67.35,12.95,71.38,19.81,71.78,21.89,64.85,24.92,66.68,28.15,69.76,31.89,67.62,37.65,62.85,38.74
+	.goto Hillsbrad Foothills,62.85,38.74,45,0
+	.goto Hillsbrad Foothills,62.24,39.96,45,0
+	.goto Hillsbrad Foothills,60.92,37.92,45,0
+	.goto Hillsbrad Foothills,59.62,33.33,45,0
+	.goto Hillsbrad Foothills,56.88,29.73,45,0
+	.goto Hillsbrad Foothills,59.80,27.72,45,0
+	.goto Hillsbrad Foothills,57.63,24.16,45,0
+	.goto Hillsbrad Foothills,56.47,16.42,45,0
+	.goto Hillsbrad Foothills,59.36,14.55,45,0
+	.goto Hillsbrad Foothills,60.54,13.67,45,0
+	.goto Hillsbrad Foothills,62.65,12.90,45,0
+	.goto Hillsbrad Foothills,64.43,10.22,45,0
+	.goto Hillsbrad Foothills,65.18,6.93,45,0
+	.goto Hillsbrad Foothills,65.31,5.76,45,0
+	.goto Hillsbrad Foothills,66.90,9.02,45,0
+	.goto Hillsbrad Foothills,70.39,8.89,45,0
+	.goto Hillsbrad Foothills,68.86,10.18,45,0
+	.goto Hillsbrad Foothills,67.35,12.95,45,0
+	.goto Hillsbrad Foothills,71.38,19.81,45,0
+	.goto Hillsbrad Foothills,71.78,21.89,45,0
+	.goto Hillsbrad Foothills,64.85,24.92,45,0
+	.goto Hillsbrad Foothills,66.68,28.15,45,0
+	.goto Hillsbrad Foothills,69.76,31.89,45,0
+	.goto Hillsbrad Foothills,67.62,37.65,45,0
+	.goto Hillsbrad Foothills,62.85,38.74,45,0
 	>>Kill |cRXP_ENEMY_Forest Moss Creepers|r and |cRXP_ENEMY_Giant Moss Creepers|r. Loot them for their |cRXP_LOOT_Ichor|r
     .complete 496,2 --Collect Creeper Ichor (x1)
     .mob Forest Moss Creeper
@@ -2412,7 +2485,17 @@ step
     .complete 567,4 --Kill Farmer Kalaba (x1)
     .mob Farmer Kalaba
 step
-    .loop 35,Hillsbrad Foothills,36.64,45.21,36.03,44.40,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21
+#loop
+	.line Hillsbrad Foothills,36.64,45.21,36.03,44.40,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21
+	.goto Hillsbrad Foothills,36.64,45.21,35,0
+	.goto Hillsbrad Foothills,36.03,44.40,35,0
+	.goto Hillsbrad Foothills,34.36,44.62,35,0
+	.goto Hillsbrad Foothills,33.82,45.75,35,0
+	.goto Hillsbrad Foothills,33.25,48.54,35,0
+	.goto Hillsbrad Foothills,34.59,48.13,35,0
+	.goto Hillsbrad Foothills,35.29,47.28,35,0
+	.goto Hillsbrad Foothills,36.49,47.49,35,0
+	.goto Hillsbrad Foothills,36.64,45.21,35,0
 	>>Kill |cRXP_ENEMY_Hillsbrad Peasants|r
 	.complete 528,1 --Kill Hillsbrad Peasant (x15)
     .mob Hillsbrad Peasant
@@ -2521,18 +2604,40 @@ step
 	.goto Hillsbrad Foothills,32.56,45.95,15,0
 	.goto Hillsbrad Foothills,32.20,45.65,15,0
 	.goto Hillsbrad Foothills,32.11,44.43,15,0
-    .loop 20,Hillsbrad Foothills,32.56,45.95,32.20,45.65,32.11,44.33,32.56,45.95
+#loop
+	.line Hillsbrad Foothills,32.56,45.95,32.20,45.65,32.11,44.33,32.56,45.95
+	.goto Hillsbrad Foothills,32.56,45.95,20,0
+	.goto Hillsbrad Foothills,32.20,45.65,20,0
+	.goto Hillsbrad Foothills,32.11,44.33,20,0
+	.goto Hillsbrad Foothills,32.56,45.95,20,0
 	>>Kill |cRXP_ENEMY_Blacksmith Verringtan|r
 	.complete 529,1 --Kill Blacksmith Verringtan (x1)
     .mob Blacksmith Verringtan
 step
     #label Blacksmith
-    .loop 25,Hillsbrad Foothills,31.96,45.83,32.69,45.10,31.15,43.91,31.10,46.75,31.89,46.72,31.96,45.83
+#loop
+	.line Hillsbrad Foothills,31.96,45.83,32.69,45.10,31.15,43.91,31.10,46.75,31.89,46.72,31.96,45.83
+	.goto Hillsbrad Foothills,31.96,45.83,25,0
+	.goto Hillsbrad Foothills,32.69,45.10,25,0
+	.goto Hillsbrad Foothills,31.15,43.91,25,0
+	.goto Hillsbrad Foothills,31.10,46.75,25,0
+	.goto Hillsbrad Foothills,31.89,46.72,25,0
+	.goto Hillsbrad Foothills,31.96,45.83,25,0
     >>Kill |cRXP_ENEMY_Hillsbrad Apprentice Blacksmiths|r
     .complete 529,2 --Kill Hillsbrad Apprentice Blacksmith (x4)
     .mob Hillsbrad Apprentice Blacksmith
 step
-    .loop 35,Hillsbrad Foothills,36.64,45.21,36.03,44.40,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21
+#loop
+	.line Hillsbrad Foothills,36.64,45.21,36.03,44.40,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21
+	.goto Hillsbrad Foothills,36.64,45.21,35,0
+	.goto Hillsbrad Foothills,36.03,44.40,35,0
+	.goto Hillsbrad Foothills,34.36,44.62,35,0
+	.goto Hillsbrad Foothills,33.82,45.75,35,0
+	.goto Hillsbrad Foothills,33.25,48.54,35,0
+	.goto Hillsbrad Foothills,34.59,48.13,35,0
+	.goto Hillsbrad Foothills,35.29,47.28,35,0
+	.goto Hillsbrad Foothills,36.49,47.49,35,0
+	.goto Hillsbrad Foothills,36.64,45.21,35,0
     >>Kill |cRXP_ENEMY_Hillsbrad Humans|r. Loot them for their |cRXP_LOOT_Skulls|r
     .complete 546,1 --Hillsbrad Human Skull (30)
     .mob Hillsbrad Peasant
@@ -2541,7 +2646,17 @@ step
     .mob Hillsbrad Councilman
     .mob Hillsbrad Apprentice Blacksmith
 step
-    .loop 35,Hillsbrad Foothills,36.64,45.21,36.03,44.40,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21
+#loop
+	.line Hillsbrad Foothills,36.64,45.21,36.03,44.40,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21
+	.goto Hillsbrad Foothills,36.64,45.21,35,0
+	.goto Hillsbrad Foothills,36.03,44.40,35,0
+	.goto Hillsbrad Foothills,34.36,44.62,35,0
+	.goto Hillsbrad Foothills,33.82,45.75,35,0
+	.goto Hillsbrad Foothills,33.25,48.54,35,0
+	.goto Hillsbrad Foothills,34.59,48.13,35,0
+	.goto Hillsbrad Foothills,35.29,47.28,35,0
+	.goto Hillsbrad Foothills,36.49,47.49,35,0
+	.goto Hillsbrad Foothills,36.64,45.21,35,0
     .xp 24 >> Grind to level 24
 step
     #xprate >1.499
@@ -5339,7 +5454,15 @@ step
     .unitscan Farmer Getz
 step
     #label Farmhands
-    .loop 35,Hillsbrad Foothills,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
+#loop
+	.line Hillsbrad Foothills,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
+	.goto Hillsbrad Foothills,35.90,40.63,35,0
+	.goto Hillsbrad Foothills,33.88,41.80,35,0
+	.goto Hillsbrad Foothills,30.19,38.48,35,0
+	.goto Hillsbrad Foothills,30.67,35.21,35,0
+	.goto Hillsbrad Foothills,31.71,36.72,35,0
+	.goto Hillsbrad Foothills,33.67,35.66,35,0
+	.goto Hillsbrad Foothills,35.90,40.63,35,0
 	>>Kill |cRXP_ENEMY_Hillsbrad Farmers|r and |cRXP_ENEMY_Hillsbrad Farmhands|r
     .complete 527,1 --Kill Hillsbrad Farmer (x6)
 	.complete 527,2 --Kill Hillsbrad Farmhand (x6)
@@ -5359,20 +5482,85 @@ step
     .mob Vicious Gray Bear
     .mob Gray Bear
 step
-    .loop 45,Hillsbrad Foothills,39.79,34.43,38.70,36.71,38.45,38.77,39.88,40.56,37.97,44.59,39.92,45.83,40.91,44.23,42.56,40.19,43.36,39.38,51.28,35.37,54.29,31.75,52.93,29.45,54.77,28.72
+#loop
+	.line Hillsbrad Foothills,39.79,34.43,38.70,36.71,38.45,38.77,39.88,40.56,37.97,44.59,39.92,45.83,40.91,44.23,42.56,40.19,43.36,39.38,51.28,35.37,54.29,31.75,52.93,29.45,54.77,28.72
+	.goto Hillsbrad Foothills,39.79,34.43,45,0
+	.goto Hillsbrad Foothills,38.70,36.71,45,0
+	.goto Hillsbrad Foothills,38.45,38.77,45,0
+	.goto Hillsbrad Foothills,39.88,40.56,45,0
+	.goto Hillsbrad Foothills,37.97,44.59,45,0
+	.goto Hillsbrad Foothills,39.92,45.83,45,0
+	.goto Hillsbrad Foothills,40.91,44.23,45,0
+	.goto Hillsbrad Foothills,42.56,40.19,45,0
+	.goto Hillsbrad Foothills,43.36,39.38,45,0
+	.goto Hillsbrad Foothills,51.28,35.37,45,0
+	.goto Hillsbrad Foothills,54.29,31.75,45,0
+	.goto Hillsbrad Foothills,52.93,29.45,45,0
+	.goto Hillsbrad Foothills,54.77,28.72,45,0
 	>>Kill |cRXP_ENEMY_Starving Mountain Lions|r. Loot them for their |cRXP_LOOT_Blood|r
     .complete 501,1 --Collect Mountain Lion Blood (x10)
     .mob Starving Mountain Lion
 step
     #label BearT
-    .loop 45,Hillsbrad Foothills,40.88,33.87,40.86,37.40,40.85,39.42,38.50,38.04,37.68,41.23,38.71,42.66,40.40,44.65,44.39,41.34,45.23,39.62,43.87,37.01,49.75,34.33,52.06,36.86,51.91,32.97,52.39,29.27,57.38,22.85,57.09,25.67,58.08,28.07,56.88,28.85,59.68,30.90,57.71,34.06,59.89,36.74,62.63,37.64,64.73,38.03,66.52,34.52
+#loop
+	.line Hillsbrad Foothills,40.88,33.87,40.86,37.40,40.85,39.42,38.50,38.04,37.68,41.23,38.71,42.66,40.40,44.65,44.39,41.34,45.23,39.62,43.87,37.01,49.75,34.33,52.06,36.86,51.91,32.97,52.39,29.27,57.38,22.85,57.09,25.67,58.08,28.07,56.88,28.85,59.68,30.90,57.71,34.06,59.89,36.74,62.63,37.64,64.73,38.03,66.52,34.52
+	.goto Hillsbrad Foothills,40.88,33.87,45,0
+	.goto Hillsbrad Foothills,40.86,37.40,45,0
+	.goto Hillsbrad Foothills,40.85,39.42,45,0
+	.goto Hillsbrad Foothills,38.50,38.04,45,0
+	.goto Hillsbrad Foothills,37.68,41.23,45,0
+	.goto Hillsbrad Foothills,38.71,42.66,45,0
+	.goto Hillsbrad Foothills,40.40,44.65,45,0
+	.goto Hillsbrad Foothills,44.39,41.34,45,0
+	.goto Hillsbrad Foothills,45.23,39.62,45,0
+	.goto Hillsbrad Foothills,43.87,37.01,45,0
+	.goto Hillsbrad Foothills,49.75,34.33,45,0
+	.goto Hillsbrad Foothills,52.06,36.86,45,0
+	.goto Hillsbrad Foothills,51.91,32.97,45,0
+	.goto Hillsbrad Foothills,52.39,29.27,45,0
+	.goto Hillsbrad Foothills,57.38,22.85,45,0
+	.goto Hillsbrad Foothills,57.09,25.67,45,0
+	.goto Hillsbrad Foothills,58.08,28.07,45,0
+	.goto Hillsbrad Foothills,56.88,28.85,45,0
+	.goto Hillsbrad Foothills,59.68,30.90,45,0
+	.goto Hillsbrad Foothills,57.71,34.06,45,0
+	.goto Hillsbrad Foothills,59.89,36.74,45,0
+	.goto Hillsbrad Foothills,62.63,37.64,45,0
+	.goto Hillsbrad Foothills,64.73,38.03,45,0
+	.goto Hillsbrad Foothills,66.52,34.52,45,0
     >>Kill |cRXP_ENEMY_Vicious Gray Bears|r and |cRXP_ENEMY_Gray Bears|r. Loot them for their |cRXP_LOOT_Tongues|r
     >>|cRXP_WARN_Avoid |cRXP_ENEMY_Elder Gray Bears|r as they're not worth killing|r
 	.complete 496,1 --Collect Gray Bear Tongue (x10)
     .mob Vicious Gray Bear
     .mob Gray Bear
 step
-    .loop 45,Hillsbrad Foothills,62.85,38.74,62.24,39.96,60.92,37.92,59.62,33.33,56.88,29.73,59.80,27.72,57.63,24.16,56.47,16.42,59.36,14.55,60.54,13.67,62.65,12.90,64.43,10.22,65.18,6.93,65.31,5.76,66.90,9.02,70.39,8.89,68.86,10.18,67.35,12.95,71.38,19.81,71.78,21.89,64.85,24.92,66.68,28.15,69.76,31.89,67.62,37.65,62.85,38.74
+#loop
+	.line Hillsbrad Foothills,62.85,38.74,62.24,39.96,60.92,37.92,59.62,33.33,56.88,29.73,59.80,27.72,57.63,24.16,56.47,16.42,59.36,14.55,60.54,13.67,62.65,12.90,64.43,10.22,65.18,6.93,65.31,5.76,66.90,9.02,70.39,8.89,68.86,10.18,67.35,12.95,71.38,19.81,71.78,21.89,64.85,24.92,66.68,28.15,69.76,31.89,67.62,37.65,62.85,38.74
+	.goto Hillsbrad Foothills,62.85,38.74,45,0
+	.goto Hillsbrad Foothills,62.24,39.96,45,0
+	.goto Hillsbrad Foothills,60.92,37.92,45,0
+	.goto Hillsbrad Foothills,59.62,33.33,45,0
+	.goto Hillsbrad Foothills,56.88,29.73,45,0
+	.goto Hillsbrad Foothills,59.80,27.72,45,0
+	.goto Hillsbrad Foothills,57.63,24.16,45,0
+	.goto Hillsbrad Foothills,56.47,16.42,45,0
+	.goto Hillsbrad Foothills,59.36,14.55,45,0
+	.goto Hillsbrad Foothills,60.54,13.67,45,0
+	.goto Hillsbrad Foothills,62.65,12.90,45,0
+	.goto Hillsbrad Foothills,64.43,10.22,45,0
+	.goto Hillsbrad Foothills,65.18,6.93,45,0
+	.goto Hillsbrad Foothills,65.31,5.76,45,0
+	.goto Hillsbrad Foothills,66.90,9.02,45,0
+	.goto Hillsbrad Foothills,70.39,8.89,45,0
+	.goto Hillsbrad Foothills,68.86,10.18,45,0
+	.goto Hillsbrad Foothills,67.35,12.95,45,0
+	.goto Hillsbrad Foothills,71.38,19.81,45,0
+	.goto Hillsbrad Foothills,71.78,21.89,45,0
+	.goto Hillsbrad Foothills,64.85,24.92,45,0
+	.goto Hillsbrad Foothills,66.68,28.15,45,0
+	.goto Hillsbrad Foothills,69.76,31.89,45,0
+	.goto Hillsbrad Foothills,67.62,37.65,45,0
+	.goto Hillsbrad Foothills,62.85,38.74,45,0
 	>>Kill |cRXP_ENEMY_Forest Moss Creepers|r and |cRXP_ENEMY_Giant Moss Creepers|r. Loot them for their |cRXP_LOOT_Ichor|r
     .complete 496,2 --Collect Creeper Ichor (x1)
     .mob Forest Moss Creeper
@@ -5531,7 +5719,17 @@ step
     .unitscan Enraged Stanley
 step
     #label Peasants
-    .loop 35,Hillsbrad Foothills,36.64,45.21,36.03,44.40,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21
+#loop
+	.line Hillsbrad Foothills,36.64,45.21,36.03,44.40,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21
+	.goto Hillsbrad Foothills,36.64,45.21,35,0
+	.goto Hillsbrad Foothills,36.03,44.40,35,0
+	.goto Hillsbrad Foothills,34.36,44.62,35,0
+	.goto Hillsbrad Foothills,33.82,45.75,35,0
+	.goto Hillsbrad Foothills,33.25,48.54,35,0
+	.goto Hillsbrad Foothills,34.59,48.13,35,0
+	.goto Hillsbrad Foothills,35.29,47.28,35,0
+	.goto Hillsbrad Foothills,36.49,47.49,35,0
+	.goto Hillsbrad Foothills,36.64,45.21,35,0
 	>>Kill |cRXP_ENEMY_Hillsbrad Peasants|r
 	.complete 528,1 --Kill Hillsbrad Peasant (x15)
     .mob Hillsbrad Peasant
@@ -5624,7 +5822,13 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<16.75
     .xp <27,1
 step
-    .loop 45,Hillsbrad Foothills,64.24,59.25,66.03,61.63,64.51,63.41,62.90,62.04,64.24,59.25
+#loop
+	.line Hillsbrad Foothills,64.24,59.25,66.03,61.63,64.51,63.41,62.90,62.04,64.24,59.25
+	.goto Hillsbrad Foothills,64.24,59.25,45,0
+	.goto Hillsbrad Foothills,66.03,61.63,45,0
+	.goto Hillsbrad Foothills,64.51,63.41,45,0
+	.goto Hillsbrad Foothills,62.90,62.04,45,0
+	.goto Hillsbrad Foothills,64.24,59.25,45,0
     >>Loot the |cRXP_LOOT_Mudsnout Blossoms|r on the ground
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Mudsnout Gnolls|r cast|r |T136090:0|t[Sling Mud] |cRXP_WARN_(Reduces hit chance by 50% for 15 seconds)|r << Rogue/Warrior/Paladin
     .complete 509,1 --Mudsnout Blossoms (6)
@@ -5652,18 +5856,40 @@ step
 	.goto Hillsbrad Foothills,32.56,45.95,15,0
 	.goto Hillsbrad Foothills,32.20,45.65,15,0
 	.goto Hillsbrad Foothills,32.11,44.43,15,0
-    .loop 20,Hillsbrad Foothills,32.56,45.95,32.20,45.65,32.11,44.33,32.56,45.95
+#loop
+	.line Hillsbrad Foothills,32.56,45.95,32.20,45.65,32.11,44.33,32.56,45.95
+	.goto Hillsbrad Foothills,32.56,45.95,20,0
+	.goto Hillsbrad Foothills,32.20,45.65,20,0
+	.goto Hillsbrad Foothills,32.11,44.33,20,0
+	.goto Hillsbrad Foothills,32.56,45.95,20,0
 	>>Kill |cRXP_ENEMY_Blacksmith Verringtan|r
 	.complete 529,1 --Kill Blacksmith Verringtan (x1)
     .mob Blacksmith Verringtan
 step
     #label Blacksmith
-    .loop 25,Hillsbrad Foothills,31.96,45.83,32.69,45.10,31.15,43.91,31.10,46.75,31.89,46.72,31.96,45.83
+#loop
+	.line Hillsbrad Foothills,31.96,45.83,32.69,45.10,31.15,43.91,31.10,46.75,31.89,46.72,31.96,45.83
+	.goto Hillsbrad Foothills,31.96,45.83,25,0
+	.goto Hillsbrad Foothills,32.69,45.10,25,0
+	.goto Hillsbrad Foothills,31.15,43.91,25,0
+	.goto Hillsbrad Foothills,31.10,46.75,25,0
+	.goto Hillsbrad Foothills,31.89,46.72,25,0
+	.goto Hillsbrad Foothills,31.96,45.83,25,0
     >>Kill |cRXP_ENEMY_Hillsbrad Apprentice Blacksmiths|r
     .complete 529,2 --Kill Hillsbrad Apprentice Blacksmith (x4)
     .mob Hillsbrad Apprentice Blacksmith
 step
-    .loop 35,Hillsbrad Foothills,36.64,45.21,36.03,44.40,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21
+#loop
+	.line Hillsbrad Foothills,36.64,45.21,36.03,44.40,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21
+	.goto Hillsbrad Foothills,36.64,45.21,35,0
+	.goto Hillsbrad Foothills,36.03,44.40,35,0
+	.goto Hillsbrad Foothills,34.36,44.62,35,0
+	.goto Hillsbrad Foothills,33.82,45.75,35,0
+	.goto Hillsbrad Foothills,33.25,48.54,35,0
+	.goto Hillsbrad Foothills,34.59,48.13,35,0
+	.goto Hillsbrad Foothills,35.29,47.28,35,0
+	.goto Hillsbrad Foothills,36.49,47.49,35,0
+	.goto Hillsbrad Foothills,36.64,45.21,35,0
     >>Kill |cRXP_ENEMY_Hillsbrad Humans|r. Loot them for their |cRXP_LOOT_Skulls|r
     .complete 546,1 --Hillsbrad Human Skull (30)
     .mob Hillsbrad Peasant
@@ -5673,7 +5899,23 @@ step
     .mob Hillsbrad Apprentice Blacksmith
 step << skip
     #xprate 1.49-1.58
-    .loop 35,Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
+#loop
+	.line Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
+	.goto Hillsbrad Foothills,33.88,41.80,35,0
+	.goto Hillsbrad Foothills,34.36,44.62,35,0
+	.goto Hillsbrad Foothills,33.82,45.75,35,0
+	.goto Hillsbrad Foothills,33.25,48.54,35,0
+	.goto Hillsbrad Foothills,34.59,48.13,35,0
+	.goto Hillsbrad Foothills,35.29,47.28,35,0
+	.goto Hillsbrad Foothills,36.49,47.49,35,0
+	.goto Hillsbrad Foothills,36.64,45.21,35,0
+	.goto Hillsbrad Foothills,35.90,40.63,35,0
+	.goto Hillsbrad Foothills,33.88,41.80,35,0
+	.goto Hillsbrad Foothills,30.19,38.48,35,0
+	.goto Hillsbrad Foothills,30.67,35.21,35,0
+	.goto Hillsbrad Foothills,31.71,36.72,35,0
+	.goto Hillsbrad Foothills,33.67,35.66,35,0
+	.goto Hillsbrad Foothills,35.90,40.63,35,0
     .xp 25+14275 >> Grind to level 25 and 14275+/28900xp << !Shaman !Warrior
     .xp 25+16000 >> Grind to level 25 and 18475+/28900xp << Shaman/Warrior
     .isOnQuest 546
@@ -5682,7 +5924,23 @@ step << skip
 --1.5x, on SOD and Darkhan
 step << skip
     #xprate 1.49-1.58
-    .loop 35,Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
+#loop
+	.line Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
+	.goto Hillsbrad Foothills,33.88,41.80,35,0
+	.goto Hillsbrad Foothills,34.36,44.62,35,0
+	.goto Hillsbrad Foothills,33.82,45.75,35,0
+	.goto Hillsbrad Foothills,33.25,48.54,35,0
+	.goto Hillsbrad Foothills,34.59,48.13,35,0
+	.goto Hillsbrad Foothills,35.29,47.28,35,0
+	.goto Hillsbrad Foothills,36.49,47.49,35,0
+	.goto Hillsbrad Foothills,36.64,45.21,35,0
+	.goto Hillsbrad Foothills,35.90,40.63,35,0
+	.goto Hillsbrad Foothills,33.88,41.80,35,0
+	.goto Hillsbrad Foothills,30.19,38.48,35,0
+	.goto Hillsbrad Foothills,30.67,35.21,35,0
+	.goto Hillsbrad Foothills,31.71,36.72,35,0
+	.goto Hillsbrad Foothills,33.67,35.66,35,0
+	.goto Hillsbrad Foothills,35.90,40.63,35,0
     .xp 25+18100 >> Grind to level 25 and 18100+/28900xp << !Shaman !Warrior
     .xp 25+22300 >> Grind to level 25 and 22300+/28900xp << Shaman/Warrior
     .isQuestTurnedIn 546
@@ -5691,21 +5949,69 @@ step << skip
 --1.5x, on Darkhan
 step << !Shaman !Warrior skip
     #xprate 1.49-1.58
-    .loop 35,Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
+#loop
+	.line Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
+	.goto Hillsbrad Foothills,33.88,41.80,35,0
+	.goto Hillsbrad Foothills,34.36,44.62,35,0
+	.goto Hillsbrad Foothills,33.82,45.75,35,0
+	.goto Hillsbrad Foothills,33.25,48.54,35,0
+	.goto Hillsbrad Foothills,34.59,48.13,35,0
+	.goto Hillsbrad Foothills,35.29,47.28,35,0
+	.goto Hillsbrad Foothills,36.49,47.49,35,0
+	.goto Hillsbrad Foothills,36.64,45.21,35,0
+	.goto Hillsbrad Foothills,35.90,40.63,35,0
+	.goto Hillsbrad Foothills,33.88,41.80,35,0
+	.goto Hillsbrad Foothills,30.19,38.48,35,0
+	.goto Hillsbrad Foothills,30.67,35.21,35,0
+	.goto Hillsbrad Foothills,31.71,36.72,35,0
+	.goto Hillsbrad Foothills,33.67,35.66,35,0
+	.goto Hillsbrad Foothills,35.90,40.63,35,0
     .xp 25+16750 >> Grind to level 25 and 16750+/28900xp
     .isOnQuest 546
     .isQuestAvailable 9167 << !Shaman !Warrior
 --1.5x, on SOD
 step << !Shaman !Warrior skip
     #xprate 1.49-1.58
-    .loop 35,Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
+#loop
+	.line Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
+	.goto Hillsbrad Foothills,33.88,41.80,35,0
+	.goto Hillsbrad Foothills,34.36,44.62,35,0
+	.goto Hillsbrad Foothills,33.82,45.75,35,0
+	.goto Hillsbrad Foothills,33.25,48.54,35,0
+	.goto Hillsbrad Foothills,34.59,48.13,35,0
+	.goto Hillsbrad Foothills,35.29,47.28,35,0
+	.goto Hillsbrad Foothills,36.49,47.49,35,0
+	.goto Hillsbrad Foothills,36.64,45.21,35,0
+	.goto Hillsbrad Foothills,35.90,40.63,35,0
+	.goto Hillsbrad Foothills,33.88,41.80,35,0
+	.goto Hillsbrad Foothills,30.19,38.48,35,0
+	.goto Hillsbrad Foothills,30.67,35.21,35,0
+	.goto Hillsbrad Foothills,31.71,36.72,35,0
+	.goto Hillsbrad Foothills,33.67,35.66,35,0
+	.goto Hillsbrad Foothills,35.90,40.63,35,0
     .xp 25+20575 >> Grind to level 25 and 20575+/28900xp
     .isQuestTurnedIn 546
     .isQuestAvailable 9167 << !Shaman !Warrior
 --1.5x on neither
 step << skip
     #xprate 1.59-1.68
-    .loop 35,Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
+#loop
+	.line Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
+	.goto Hillsbrad Foothills,33.88,41.80,35,0
+	.goto Hillsbrad Foothills,34.36,44.62,35,0
+	.goto Hillsbrad Foothills,33.82,45.75,35,0
+	.goto Hillsbrad Foothills,33.25,48.54,35,0
+	.goto Hillsbrad Foothills,34.59,48.13,35,0
+	.goto Hillsbrad Foothills,35.29,47.28,35,0
+	.goto Hillsbrad Foothills,36.49,47.49,35,0
+	.goto Hillsbrad Foothills,36.64,45.21,35,0
+	.goto Hillsbrad Foothills,35.90,40.63,35,0
+	.goto Hillsbrad Foothills,33.88,41.80,35,0
+	.goto Hillsbrad Foothills,30.19,38.48,35,0
+	.goto Hillsbrad Foothills,30.67,35.21,35,0
+	.goto Hillsbrad Foothills,31.71,36.72,35,0
+	.goto Hillsbrad Foothills,33.67,35.66,35,0
+	.goto Hillsbrad Foothills,35.90,40.63,35,0
     .xp 25+13300 >> Grind to level 25 and 13300+/28900xp << !Shaman !Warrior
     .xp 25+17780 >> Grind to level 25 and 17780+/28900xp << Shaman/Warrior
     .isOnQuest 546
@@ -5714,7 +6020,23 @@ step << skip
 --1.6x, on SOD and Darkhan
 step << skip
     #xprate 1.59-1.68
-    .loop 35,Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
+#loop
+	.line Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
+	.goto Hillsbrad Foothills,33.88,41.80,35,0
+	.goto Hillsbrad Foothills,34.36,44.62,35,0
+	.goto Hillsbrad Foothills,33.82,45.75,35,0
+	.goto Hillsbrad Foothills,33.25,48.54,35,0
+	.goto Hillsbrad Foothills,34.59,48.13,35,0
+	.goto Hillsbrad Foothills,35.29,47.28,35,0
+	.goto Hillsbrad Foothills,36.49,47.49,35,0
+	.goto Hillsbrad Foothills,36.64,45.21,35,0
+	.goto Hillsbrad Foothills,35.90,40.63,35,0
+	.goto Hillsbrad Foothills,33.88,41.80,35,0
+	.goto Hillsbrad Foothills,30.19,38.48,35,0
+	.goto Hillsbrad Foothills,30.67,35.21,35,0
+	.goto Hillsbrad Foothills,31.71,36.72,35,0
+	.goto Hillsbrad Foothills,33.67,35.66,35,0
+	.goto Hillsbrad Foothills,35.90,40.63,35,0
     .xp 25+17380 >> Grind to level 25 and 17380+/28900xp << !Shaman !Warrior
     .xp 25+21860 >> Grind to level 25 and 21860+/28900xp << Shaman/Warrior
     .isQuestTurnedIn 546
@@ -5723,21 +6045,69 @@ step << skip
 --1.6x, on Darkhan
 step << !Shaman !Warrior skip
     #xprate 1.59-1.68
-    .loop 35,Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
+#loop
+	.line Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
+	.goto Hillsbrad Foothills,33.88,41.80,35,0
+	.goto Hillsbrad Foothills,34.36,44.62,35,0
+	.goto Hillsbrad Foothills,33.82,45.75,35,0
+	.goto Hillsbrad Foothills,33.25,48.54,35,0
+	.goto Hillsbrad Foothills,34.59,48.13,35,0
+	.goto Hillsbrad Foothills,35.29,47.28,35,0
+	.goto Hillsbrad Foothills,36.49,47.49,35,0
+	.goto Hillsbrad Foothills,36.64,45.21,35,0
+	.goto Hillsbrad Foothills,35.90,40.63,35,0
+	.goto Hillsbrad Foothills,33.88,41.80,35,0
+	.goto Hillsbrad Foothills,30.19,38.48,35,0
+	.goto Hillsbrad Foothills,30.67,35.21,35,0
+	.goto Hillsbrad Foothills,31.71,36.72,35,0
+	.goto Hillsbrad Foothills,33.67,35.66,35,0
+	.goto Hillsbrad Foothills,35.90,40.63,35,0
     .xp 25+15940 >> Grind to level 25 and 15940+/28900xp
     .isOnQuest 546
     .isQuestAvailable 9167 << !Shaman !Warrior
 --1.6x, on SOD
 step << !Shaman !Warrior skip
     #xprate 1.59-1.68
-    .loop 35,Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
+#loop
+	.line Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
+	.goto Hillsbrad Foothills,33.88,41.80,35,0
+	.goto Hillsbrad Foothills,34.36,44.62,35,0
+	.goto Hillsbrad Foothills,33.82,45.75,35,0
+	.goto Hillsbrad Foothills,33.25,48.54,35,0
+	.goto Hillsbrad Foothills,34.59,48.13,35,0
+	.goto Hillsbrad Foothills,35.29,47.28,35,0
+	.goto Hillsbrad Foothills,36.49,47.49,35,0
+	.goto Hillsbrad Foothills,36.64,45.21,35,0
+	.goto Hillsbrad Foothills,35.90,40.63,35,0
+	.goto Hillsbrad Foothills,33.88,41.80,35,0
+	.goto Hillsbrad Foothills,30.19,38.48,35,0
+	.goto Hillsbrad Foothills,30.67,35.21,35,0
+	.goto Hillsbrad Foothills,31.71,36.72,35,0
+	.goto Hillsbrad Foothills,33.67,35.66,35,0
+	.goto Hillsbrad Foothills,35.90,40.63,35,0
     .xp 25+20020 >> Grind to level 25 and 20020+/28900xp
     .isQuestTurnedIn 546
     .isQuestAvailable 9167 << !Shaman !Warrior
 --1.6x on neither
 step << skip
     #xprate >1.6999
-    .loop 35,Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
+#loop
+	.line Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
+	.goto Hillsbrad Foothills,33.88,41.80,35,0
+	.goto Hillsbrad Foothills,34.36,44.62,35,0
+	.goto Hillsbrad Foothills,33.82,45.75,35,0
+	.goto Hillsbrad Foothills,33.25,48.54,35,0
+	.goto Hillsbrad Foothills,34.59,48.13,35,0
+	.goto Hillsbrad Foothills,35.29,47.28,35,0
+	.goto Hillsbrad Foothills,36.49,47.49,35,0
+	.goto Hillsbrad Foothills,36.64,45.21,35,0
+	.goto Hillsbrad Foothills,35.90,40.63,35,0
+	.goto Hillsbrad Foothills,33.88,41.80,35,0
+	.goto Hillsbrad Foothills,30.19,38.48,35,0
+	.goto Hillsbrad Foothills,30.67,35.21,35,0
+	.goto Hillsbrad Foothills,31.71,36.72,35,0
+	.goto Hillsbrad Foothills,33.67,35.66,35,0
+	.goto Hillsbrad Foothills,35.90,40.63,35,0
     .xp 25+12325 >> Grind to level 25 and 12325+/28900xp << !Shaman !Warrior
     .xp 25+17085 >> Grind to level 25 and 17085+/28900xp << Shaman/Warrior
     .isOnQuest 546
@@ -5746,7 +6116,23 @@ step << skip
 --1.7x, on SOD and Darkhan
 step << skip
     #xprate >1.6999
-    .loop 35,Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
+#loop
+	.line Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
+	.goto Hillsbrad Foothills,33.88,41.80,35,0
+	.goto Hillsbrad Foothills,34.36,44.62,35,0
+	.goto Hillsbrad Foothills,33.82,45.75,35,0
+	.goto Hillsbrad Foothills,33.25,48.54,35,0
+	.goto Hillsbrad Foothills,34.59,48.13,35,0
+	.goto Hillsbrad Foothills,35.29,47.28,35,0
+	.goto Hillsbrad Foothills,36.49,47.49,35,0
+	.goto Hillsbrad Foothills,36.64,45.21,35,0
+	.goto Hillsbrad Foothills,35.90,40.63,35,0
+	.goto Hillsbrad Foothills,33.88,41.80,35,0
+	.goto Hillsbrad Foothills,30.19,38.48,35,0
+	.goto Hillsbrad Foothills,30.67,35.21,35,0
+	.goto Hillsbrad Foothills,31.71,36.72,35,0
+	.goto Hillsbrad Foothills,33.67,35.66,35,0
+	.goto Hillsbrad Foothills,35.90,40.63,35,0
     .xp 25+16660 >> Grind to level 25 and 16660+/28900xp << !Shaman !Warrior
     .xp 25+21420 >> Grind to level 25 and 21420+/28900xp << Shaman/Warrior
     .isQuestTurnedIn 546
@@ -5755,14 +6141,46 @@ step << skip
 --1.7x, on Darkhan
 step << !Shaman !Warrior skip
     #xprate >1.6999
-    .loop 35,Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
+#loop
+	.line Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
+	.goto Hillsbrad Foothills,33.88,41.80,35,0
+	.goto Hillsbrad Foothills,34.36,44.62,35,0
+	.goto Hillsbrad Foothills,33.82,45.75,35,0
+	.goto Hillsbrad Foothills,33.25,48.54,35,0
+	.goto Hillsbrad Foothills,34.59,48.13,35,0
+	.goto Hillsbrad Foothills,35.29,47.28,35,0
+	.goto Hillsbrad Foothills,36.49,47.49,35,0
+	.goto Hillsbrad Foothills,36.64,45.21,35,0
+	.goto Hillsbrad Foothills,35.90,40.63,35,0
+	.goto Hillsbrad Foothills,33.88,41.80,35,0
+	.goto Hillsbrad Foothills,30.19,38.48,35,0
+	.goto Hillsbrad Foothills,30.67,35.21,35,0
+	.goto Hillsbrad Foothills,31.71,36.72,35,0
+	.goto Hillsbrad Foothills,33.67,35.66,35,0
+	.goto Hillsbrad Foothills,35.90,40.63,35,0
     .xp 25+15130 >> Grind to level 25 and 15130+/28900xp
     .isOnQuest 546
     .isQuestAvailable 9167 << !Shaman !Warrior
 --1.7x, on SOD
 step << !Shaman !Warrior skip
     #xprate >1.6999
-    .loop 35,Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
+#loop
+	.line Hillsbrad Foothills,33.88,41.80,34.36,44.62,33.82,45.75,33.25,48.54,34.59,48.13,35.29,47.28,36.49,47.49,36.64,45.21,35.90,40.63,33.88,41.80,30.19,38.48,30.67,35.21,31.71,36.72,33.67,35.66,35.90,40.63
+	.goto Hillsbrad Foothills,33.88,41.80,35,0
+	.goto Hillsbrad Foothills,34.36,44.62,35,0
+	.goto Hillsbrad Foothills,33.82,45.75,35,0
+	.goto Hillsbrad Foothills,33.25,48.54,35,0
+	.goto Hillsbrad Foothills,34.59,48.13,35,0
+	.goto Hillsbrad Foothills,35.29,47.28,35,0
+	.goto Hillsbrad Foothills,36.49,47.49,35,0
+	.goto Hillsbrad Foothills,36.64,45.21,35,0
+	.goto Hillsbrad Foothills,35.90,40.63,35,0
+	.goto Hillsbrad Foothills,33.88,41.80,35,0
+	.goto Hillsbrad Foothills,30.19,38.48,35,0
+	.goto Hillsbrad Foothills,30.67,35.21,35,0
+	.goto Hillsbrad Foothills,31.71,36.72,35,0
+	.goto Hillsbrad Foothills,33.67,35.66,35,0
+	.goto Hillsbrad Foothills,35.90,40.63,35,0
     .xp 25+19465 >> Grind to level 25 and 19465+/28900xp
     .isQuestTurnedIn 546
     .isQuestAvailable 9167 << !Shaman !Warrior
@@ -7290,13 +7708,26 @@ step << Rogue tbc
     .complete 2478,1 --Mutated Venture Co. Drone (2)
     .mob Mutated Venture Co. Drone
 step << Rogue tbc
-    .loop 6,The Barrens,54.70,5.84,54.80,5.78,54.71,5.61,54.67,5.57,54.70,5.84
+#loop
+	.line The Barrens,54.70,5.84,54.80,5.78,54.71,5.61,54.67,5.57,54.70,5.84
+	.goto The Barrens,54.70,5.84,6,0
+	.goto The Barrens,54.80,5.78,6,0
+	.goto The Barrens,54.71,5.61,6,0
+	.goto The Barrens,54.67,5.57,6,0
+	.goto The Barrens,54.70,5.84,6,0
     >>|cRXP_WARN_Re-Equip your main weapon if you equipped a Dagger earlier|r
     >>Go Upstairs. Kill the |cRXP_ENEMY_Venture Co. Patrollers|r. |cRXP_WARN_Cast 1 Combo-Point|r |T132302:0|t[Ruptures] |cRXP_WARN_to deal 50% damage each time|r
     .complete 2478,3 --Venture Co. Patroller (2)
     .mob Venture Co. Patroller
 step << Rogue tbc
-    .loop 6,The Barrens,54.63,5.64,54.65,5.78,54.74,5.83,54.82,5.74,54.81,5.59,54.71,5.55
+#loop
+	.line The Barrens,54.63,5.64,54.65,5.78,54.74,5.83,54.82,5.74,54.81,5.59,54.71,5.55
+	.goto The Barrens,54.63,5.64,6,0
+	.goto The Barrens,54.65,5.78,6,0
+	.goto The Barrens,54.74,5.83,6,0
+	.goto The Barrens,54.82,5.74,6,0
+	.goto The Barrens,54.81,5.59,6,0
+	.goto The Barrens,54.71,5.55,6,0
     >>Go Upstairs. Kill the |cRXP_ENEMY_Venture Co. Lookouts|r. |cRXP_WARN_Cast 1 Combo-Point|r |T132292:0|t[Eviscerates] |cRXP_WARN_to deal 50% damage each time|r
     .complete 2478,2 --Venture Co. Lookout (2)
     .mob Venture Co. Lookout
@@ -7498,7 +7929,18 @@ step
     #completewith next
     .zone Ashenvale >> Travel to Ashenvale
 step << Warlock
-    .loop 40,Ashenvale,67.36,82.59,67.30,80.85,66.61,79.75,65.53,79.62,65.16,80.23,65.74,81.65,65.66,82.72,66.61,84.10,67.03,83.39,67.36,82.59
+#loop
+	.line Ashenvale,67.36,82.59,67.30,80.85,66.61,79.75,65.53,79.62,65.16,80.23,65.74,81.65,65.66,82.72,66.61,84.10,67.03,83.39,67.36,82.59
+	.goto Ashenvale,67.36,82.59,40,0
+	.goto Ashenvale,67.30,80.85,40,0
+	.goto Ashenvale,66.61,79.75,40,0
+	.goto Ashenvale,65.53,79.62,40,0
+	.goto Ashenvale,65.16,80.23,40,0
+	.goto Ashenvale,65.74,81.65,40,0
+	.goto Ashenvale,65.66,82.72,40,0
+	.goto Ashenvale,66.61,84.10,40,0
+	.goto Ashenvale,67.03,83.39,40,0
+	.goto Ashenvale,67.36,82.59,40,0
     >>Kill |cRXP_ENEMY_Shadethicket Stone Movers|r and |cRXP_ENEMY_Shadethicket Bark Rippers|r. Loot them for the |cRXP_LOOT_Withered Scarf|r
     .complete 65610,1 --Withered Scarf
     .mob Shadethicket Stone Mover
@@ -7631,7 +8073,17 @@ step << !Shaman !Warrior
     .goto Ashenvale,71.90,49.60,40,0
     .goto Ashenvale,71.90,49.60,50 >> Travel toward Night Run
 step << !Shaman !Warrior
-    .loop 40,Ashenvale,68.84,53.16,67.41,55.32,66.70,57.09,66.23,55.16,66.58,51.68,66.62,54.28,67.15,54.63,67.96,54.20,68.84,53.16
+#loop
+	.line Ashenvale,68.84,53.16,67.41,55.32,66.70,57.09,66.23,55.16,66.58,51.68,66.62,54.28,67.15,54.63,67.96,54.20,68.84,53.16
+	.goto Ashenvale,68.84,53.16,40,0
+	.goto Ashenvale,67.41,55.32,40,0
+	.goto Ashenvale,66.70,57.09,40,0
+	.goto Ashenvale,66.23,55.16,40,0
+	.goto Ashenvale,66.58,51.68,40,0
+	.goto Ashenvale,66.62,54.28,40,0
+	.goto Ashenvale,67.15,54.63,40,0
+	.goto Ashenvale,67.96,54.20,40,0
+	.goto Ashenvale,68.84,53.16,40,0
     >>Kill |cRXP_ENEMY_Felmusk Shadowstalkers|r, |cRXP_ENEMY_Felmusk Satyrs|r, and |cRXP_ENEMY_Felmusk Felsworns|r. Loot them for their |cRXP_LOOT_Satyr Horns|r
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Felmusk Shadowstalkers|r cast|r |T132092:0|t[Shadowstalker Slash] |cRXP_WARN_(Cheap Shot) and are stealthed|r
     >>|cRXP_WARN_Be VERY careful as all the Felmusk cast|r |T136119:0|t[Overwhelming Stench], |cRXP_WARN_an instant-cast 6 second silence|r
@@ -7790,7 +8242,22 @@ step
     .use 16408
     .unitscan Tideress
 step
-    .loop 50,Ashenvale,48.36,69.74,48.43,70.14,48.93,70.82,49.49,70.76,50.21,70.36,50.47,70.43,50.54,71.08,50.74,71.31,51.42,70.86,52.13,71.14,52.18,71.60,52.08,72.10,45.84,70.67,48.36,69.74
+#loop
+	.line Ashenvale,48.36,69.74,48.43,70.14,48.93,70.82,49.49,70.76,50.21,70.36,50.47,70.43,50.54,71.08,50.74,71.31,51.42,70.86,52.13,71.14,52.18,71.60,52.08,72.10,45.84,70.67,48.36,69.74
+	.goto Ashenvale,48.36,69.74,50,0
+	.goto Ashenvale,48.43,70.14,50,0
+	.goto Ashenvale,48.93,70.82,50,0
+	.goto Ashenvale,49.49,70.76,50,0
+	.goto Ashenvale,50.21,70.36,50,0
+	.goto Ashenvale,50.47,70.43,50,0
+	.goto Ashenvale,50.54,71.08,50,0
+	.goto Ashenvale,50.74,71.31,50,0
+	.goto Ashenvale,51.42,70.86,50,0
+	.goto Ashenvale,52.13,71.14,50,0
+	.goto Ashenvale,52.18,71.60,50,0
+	.goto Ashenvale,52.08,72.10,50,0
+	.goto Ashenvale,45.84,70.67,50,0
+	.goto Ashenvale,48.36,69.74,50,0
     >>Kill |cRXP_ENEMY_Befouled Water Elementals|r
     .complete 25,1 --Kill Befouled Water Elemental (x12)
     .mob Befouled Water Elemental
@@ -8092,7 +8559,16 @@ step << Tauren wotlk
     .zone The Barrens >>Travel to The Barrens
     .zoneskip Mulgore,1
 step
-    .loop 40,The Barrens,50.07,52.96,49.99,53.44,46.07,49.11,46.20,49.74,45.39,52.31,45.14,52.37,45.12,52.73,50.07,52.96
+#loop
+	.line The Barrens,50.07,52.96,49.99,53.44,46.07,49.11,46.20,49.74,45.39,52.31,45.14,52.37,45.12,52.73,50.07,52.96
+	.goto The Barrens,50.07,52.96,40,0
+	.goto The Barrens,49.99,53.44,40,0
+	.goto The Barrens,46.07,49.11,40,0
+	.goto The Barrens,46.20,49.74,40,0
+	.goto The Barrens,45.39,52.31,40,0
+	.goto The Barrens,45.14,52.37,40,0
+	.goto The Barrens,45.12,52.73,40,0
+	.goto The Barrens,50.07,52.96,40,0
     >>Kill |cRXP_ENEMY_Lakota'mani|r. Loot him for the |T132318:0|t[|cRXP_LOOT_Hoof of Lakota'mani|r]
     >>|cRXP_WARN_Use the |T132318:0|t[|cRXP_LOOT_Hoof of Lakota'mani|r] to start the quest|r
     .collect 5099,1,883,1 --Collect Hoof of Lakota'Mani
@@ -8119,7 +8595,16 @@ step << Warrior
     .goto The Barrens,44.67,59.42
     .target Ruga Ragetotem
 step
-    .loop 40,The Barrens,44.33,61.78,44.06,62.18,45.57,62.95,45.75,62.52,49.67,59.54,49.42,61.04,49.18,61.45,44.33,61.78
+#loop
+	.line The Barrens,44.33,61.78,44.06,62.18,45.57,62.95,45.75,62.52,49.67,59.54,49.42,61.04,49.18,61.45,44.33,61.78
+	.goto The Barrens,44.33,61.78,40,0
+	.goto The Barrens,44.06,62.18,40,0
+	.goto The Barrens,45.57,62.95,40,0
+	.goto The Barrens,45.75,62.52,40,0
+	.goto The Barrens,49.67,59.54,40,0
+	.goto The Barrens,49.42,61.04,40,0
+	.goto The Barrens,49.18,61.45,40,0
+	.goto The Barrens,44.33,61.78,40,0
     >>Kill |cRXP_ENEMY_Owatanka|r. Loot him for |T133723:0|t[|cRXP_LOOT_Owatanka's Tailspike|r]
     >>|cRXP_WARN_Use |T133723:0|t[|cRXP_LOOT_Owatanka's Tailspike|r] to start the quest|r
     .collect 5102,1,884,1 --Collect Owatanka's Tailspike
@@ -8136,7 +8621,16 @@ step << skip
     .use 5138
     .unitscan Silithid Harvester
 step << skip
-    .loop 40,The Barrens,45.17,69.08,43.87,68.84,42.17,69.65,42.35,71.85,42.77,72.28,43.86,72.06,45.38,72.25,45.17,69.08
+#loop
+	.line The Barrens,45.17,69.08,43.87,68.84,42.17,69.65,42.35,71.85,42.77,72.28,43.86,72.06,45.38,72.25,45.17,69.08
+	.goto The Barrens,45.17,69.08,40,0
+	.goto The Barrens,43.87,68.84,40,0
+	.goto The Barrens,42.17,69.65,40,0
+	.goto The Barrens,42.35,71.85,40,0
+	.goto The Barrens,42.77,72.28,40,0
+	.goto The Barrens,43.86,72.06,40,0
+	.goto The Barrens,45.38,72.25,40,0
+	.goto The Barrens,45.17,69.08,40,0
     >>Kill |cRXP_ENEMY_Silithid Protectors|r, |cRXP_ENEMY_Silithid Swarmers|r, |cRXP_ENEMY_Silithid Creepers|r and |cRXP_ENEMY_Silithid Grubs|r. Loot them for their |T133027:0|t[Twitching Antenna]
     >>|cRXP_WARN_NOTE: The |T133027:0|t[Twitching Antenna] only have a 15 minute duration, do not AFK or logout during this quest|r
     .complete 1824,1 --Twitching Antenna (5)
@@ -8273,7 +8767,36 @@ step << Shaman/Warrior
     .goto The Barrens,45.05,79.75,45,0
     .goto The Barrens,44.83,79.87,45,0
     .goto The Barrens,44.37,79.85
-    .loop 45,The Barrens,44.37,79.85,44.83,79.87,45.05,79.75,45.12,79.20,44.89,78.87,44.43,78.71,43.80,79.46,43.66,79.12,43.48,78.95,43.07,78.98,42.65,79.87,42.82,80.23,43.24,80.49,43.49,80.48,43.63,80.97,43.79,81.40,44.15,81.44,44.83,80.95,45.46,80.91,45.52,80.47,45.10,80.30,44.66,80.49,44.31,80.79,44.16,80.46,44.03,80.38,43.91,80.46,44.06,80.02,44.37,79.85
+#loop
+	.line The Barrens,44.37,79.85,44.83,79.87,45.05,79.75,45.12,79.20,44.89,78.87,44.43,78.71,43.80,79.46,43.66,79.12,43.48,78.95,43.07,78.98,42.65,79.87,42.82,80.23,43.24,80.49,43.49,80.48,43.63,80.97,43.79,81.40,44.15,81.44,44.83,80.95,45.46,80.91,45.52,80.47,45.10,80.30,44.66,80.49,44.31,80.79,44.16,80.46,44.03,80.38,43.91,80.46,44.06,80.02,44.37,79.85
+	.goto The Barrens,44.37,79.85,45,0
+	.goto The Barrens,44.83,79.87,45,0
+	.goto The Barrens,45.05,79.75,45,0
+	.goto The Barrens,45.12,79.20,45,0
+	.goto The Barrens,44.89,78.87,45,0
+	.goto The Barrens,44.43,78.71,45,0
+	.goto The Barrens,43.80,79.46,45,0
+	.goto The Barrens,43.66,79.12,45,0
+	.goto The Barrens,43.48,78.95,45,0
+	.goto The Barrens,43.07,78.98,45,0
+	.goto The Barrens,42.65,79.87,45,0
+	.goto The Barrens,42.82,80.23,45,0
+	.goto The Barrens,43.24,80.49,45,0
+	.goto The Barrens,43.49,80.48,45,0
+	.goto The Barrens,43.63,80.97,45,0
+	.goto The Barrens,43.79,81.40,45,0
+	.goto The Barrens,44.15,81.44,45,0
+	.goto The Barrens,44.83,80.95,45,0
+	.goto The Barrens,45.46,80.91,45,0
+	.goto The Barrens,45.52,80.47,45,0
+	.goto The Barrens,45.10,80.30,45,0
+	.goto The Barrens,44.66,80.49,45,0
+	.goto The Barrens,44.31,80.79,45,0
+	.goto The Barrens,44.16,80.46,45,0
+	.goto The Barrens,44.03,80.38,45,0
+	.goto The Barrens,43.91,80.46,45,0
+	.goto The Barrens,44.06,80.02,45,0
+	.goto The Barrens,44.37,79.85,45,0
     >>Kill |cRXP_ENEMY_Kuz|r. Loot him for |cRXP_LOOT_Kuz's Skull|r
     >>|cRXP_ENEMY_Kuz|r patrols around slightly
     .complete 879,1 --Kuz's Skull (1)
@@ -8316,7 +8839,18 @@ step
     .mob Razormane Pathfinder
 step
     #label WandShield
-    .loop 45,The Barrens,42.57,78.81,42.12,78.48,41.49,78.69,41.22,79.72,40.91,80.60,40.55,80.84,41.62,80.92,41.54,82.28,42.48,82.28,42.57,78.81
+#loop
+	.line The Barrens,42.57,78.81,42.12,78.48,41.49,78.69,41.22,79.72,40.91,80.60,40.55,80.84,41.62,80.92,41.54,82.28,42.48,82.28,42.57,78.81
+	.goto The Barrens,42.57,78.81,45,0
+	.goto The Barrens,42.12,78.48,45,0
+	.goto The Barrens,41.49,78.69,45,0
+	.goto The Barrens,41.22,79.72,45,0
+	.goto The Barrens,40.91,80.60,45,0
+	.goto The Barrens,40.55,80.84,45,0
+	.goto The Barrens,41.62,80.92,45,0
+	.goto The Barrens,41.54,82.28,45,0
+	.goto The Barrens,42.48,82.28,45,0
+	.goto The Barrens,42.57,78.81,45,0
     >>Kill |cRXP_ENEMY_Razormane Seers|r. Loot them for the |T135139:0|t[|cRXP_LOOT_Charred Razormane Wand|r]
     >>Kill |cRXP_ENEMY_Razormane Warfrenzies|r. Loot them for the |T134955:0|t[|cRXP_LOOT_Razormane War Shield|r]
     .complete 893,2 --Collect Charred Razormane Wand (x1)
@@ -8324,7 +8858,12 @@ step
     .mob Razormane Seer
     .mob Razormane Warfrenzy
 step << Shaman/Warrior
-    .loop 30,The Barrens,44.07,83.34,43.54,83.14,43.60,83.69,44.07,83.34
+#loop
+	.line The Barrens,44.07,83.34,43.54,83.14,43.60,83.69,44.07,83.34
+	.goto The Barrens,44.07,83.34,30,0
+	.goto The Barrens,43.54,83.14,30,0
+	.goto The Barrens,43.60,83.69,30,0
+	.goto The Barrens,44.07,83.34,30,0
     >>Kill |cRXP_ENEMY_Nak|r. Loot him for |cRXP_LOOT_Nak's Skull|r
     .complete 879,2 --Lok's Skull (1)
     .mob Nak
@@ -8386,7 +8925,18 @@ step
 	.complete 843,3 --Collect Khazgorm's Journal (x1)
     .mob Prospector Khazgorm
 step
-    .loop 30,The Barrens,47.22,84.98,47.28,85.74,47.60,85.66,48.43,86.34,48.03,85.46,47.94,84.86,47.37,84.01,46.92,84.22,46.99,85.82,47.22,84.98
+#loop
+	.line The Barrens,47.22,84.98,47.28,85.74,47.60,85.66,48.43,86.34,48.03,85.46,47.94,84.86,47.37,84.01,46.92,84.22,46.99,85.82,47.22,84.98
+	.goto The Barrens,47.22,84.98,30,0
+	.goto The Barrens,47.28,85.74,30,0
+	.goto The Barrens,47.60,85.66,30,0
+	.goto The Barrens,48.43,86.34,30,0
+	.goto The Barrens,48.03,85.46,30,0
+	.goto The Barrens,47.94,84.86,30,0
+	.goto The Barrens,47.37,84.01,30,0
+	.goto The Barrens,46.92,84.22,30,0
+	.goto The Barrens,46.99,85.82,30,0
+	.goto The Barrens,47.22,84.98,30,0
     >>Kill |cRXP_ENEMY_Bael'dun Excavators|r and |cRXP_ENEMY_Bael'dun Foremen|r
     .complete 843,1 --Kill Bael'dun Excavator (x15)
     .complete 843,2 --Kill Bael'dun Foreman (x5)
@@ -8394,7 +8944,18 @@ step
     .mob Bael'dun Foreman
 step
     #xprate <1.7
-    .loop 40,The Barrens,47.22,84.98,47.28,85.74,47.60,85.66,48.43,86.34,48.03,85.46,47.94,84.86,47.37,84.01,46.92,84.22,46.99,85.82,47.22,84.98
+#loop
+	.line The Barrens,47.22,84.98,47.28,85.74,47.60,85.66,48.43,86.34,48.03,85.46,47.94,84.86,47.37,84.01,46.92,84.22,46.99,85.82,47.22,84.98
+	.goto The Barrens,47.22,84.98,40,0
+	.goto The Barrens,47.28,85.74,40,0
+	.goto The Barrens,47.60,85.66,40,0
+	.goto The Barrens,48.43,86.34,40,0
+	.goto The Barrens,48.03,85.46,40,0
+	.goto The Barrens,47.94,84.86,40,0
+	.goto The Barrens,47.37,84.01,40,0
+	.goto The Barrens,46.92,84.22,40,0
+	.goto The Barrens,46.99,85.82,40,0
+	.goto The Barrens,47.22,84.98,40,0
     .xp 27+15500 >> Grind to 15500+/32200xp
 step
     .line The Barrens,46.12,81.25,46.09,80.54,46.16,79.66,46.14,79.37,46.07,79.19,45.86,78.77,45.79,78.47,45.83,77.21,45.91,76.97,46.02,76.71,46.08,76.33,46.14,75.40
@@ -8478,7 +9039,15 @@ step
     .turnin 857 >> Turn in The Tear of the Moons
     .target Feegly the Exiled
 step
-    .loop 20,The Barrens,48.96,84.36,48.88,84.02,49.28,83.76,49.22,84.21,49.47,84.41,49.09,84.67,48.96,84.36
+#loop
+	.line The Barrens,48.96,84.36,48.88,84.02,49.28,83.76,49.22,84.21,49.47,84.41,49.09,84.67,48.96,84.36
+	.goto The Barrens,48.96,84.36,20,0
+	.goto The Barrens,48.88,84.02,20,0
+	.goto The Barrens,49.28,83.76,20,0
+	.goto The Barrens,49.22,84.21,20,0
+	.goto The Barrens,49.47,84.41,20,0
+	.goto The Barrens,49.09,84.67,20,0
+	.goto The Barrens,48.96,84.36,20,0
     >>Kill |cRXP_ENEMY_Bael'dun Dwarves|r. Loot them for their |cRXP_LOOT_Nitroglycerin|r, |cRXP_LOOT_Wood Pulp|r, and |cRXP_LOOT_Sodium Nitrate|r
     .complete 846,1 --Collect Nitroglycerin (x6)
     .complete 846,2 --Collect Wood Pulp (x6)
@@ -8503,7 +9072,16 @@ step << !Shaman !Warrior
     .accept 849 >> Accept Revenge of Gann
     .target Gann Stonespire
 step
-    .loop 45,The Barrens,44.85,78.81,44.44,78.97,43.14,80.75,43.35,81.16,47.22,79.72,47.21,79.35,44.76,74.79,44.85,78.81
+#loop
+	.line The Barrens,44.85,78.81,44.44,78.97,43.14,80.75,43.35,81.16,47.22,79.72,47.21,79.35,44.76,74.79,44.85,78.81
+	.goto The Barrens,44.85,78.81,45,0
+	.goto The Barrens,44.44,78.97,45,0
+	.goto The Barrens,43.14,80.75,45,0
+	.goto The Barrens,43.35,81.16,45,0
+	.goto The Barrens,47.22,79.72,45,0
+	.goto The Barrens,47.21,79.35,45,0
+	.goto The Barrens,44.76,74.79,45,0
+	.goto The Barrens,44.85,78.81,45,0
     >>Kill |cRXP_ENEMY_Washte Pawne|r. Loot him for |T135992:0|t[|cRXP_LOOT_Washte Pawne's Feather|r]
     >>|cRXP_WARN_Use |T135992:0|t[|cRXP_LOOT_Washte Pawne's Feather|r] to start the quest|r
     .collect 5103,1,885,1 --Collect Washte Pawne's Feather
@@ -8876,7 +9454,31 @@ step
     .use 12564
     .unitscan Galak Messenger
 step
-    .loop 40,Thousand Needles,43.12,36.86,41.18,34.83,40.42,34.45,39.00,32.56,39.68,34.93,39.76,35.82,39.32,36.93,40.43,37.96,41.04,39.03,41.12,41.34,42.33,40.54,42.84,39.09,44.15,40.72,44.98,41.03,45.66,43.81,47.23,41.98,48.57,43.53,49.39,41.24,48.14,40.43,47.11,40.29,45.89,40.32,44.43,38.36,,43.12,36.86
+#loop
+	.line Thousand Needles,43.12,36.86,41.18,34.83,40.42,34.45,39.00,32.56,39.68,34.93,39.76,35.82,39.32,36.93,40.43,37.96,41.04,39.03,41.12,41.34,42.33,40.54,42.84,39.09,44.15,40.72,44.98,41.03,45.66,43.81,47.23,41.98,48.57,43.53,49.39,41.24,48.14,40.43,47.11,40.29,45.89,40.32,44.43,38.36,,43.12,36.86
+	.goto Thousand Needles,43.12,36.86,40,0
+	.goto Thousand Needles,41.18,34.83,40,0
+	.goto Thousand Needles,40.42,34.45,40,0
+	.goto Thousand Needles,39.00,32.56,40,0
+	.goto Thousand Needles,39.68,34.93,40,0
+	.goto Thousand Needles,39.76,35.82,40,0
+	.goto Thousand Needles,39.32,36.93,40,0
+	.goto Thousand Needles,40.43,37.96,40,0
+	.goto Thousand Needles,41.04,39.03,40,0
+	.goto Thousand Needles,41.12,41.34,40,0
+	.goto Thousand Needles,42.33,40.54,40,0
+	.goto Thousand Needles,42.84,39.09,40,0
+	.goto Thousand Needles,44.15,40.72,40,0
+	.goto Thousand Needles,44.98,41.03,40,0
+	.goto Thousand Needles,45.66,43.81,40,0
+	.goto Thousand Needles,47.23,41.98,40,0
+	.goto Thousand Needles,48.57,43.53,40,0
+	.goto Thousand Needles,49.39,41.24,40,0
+	.goto Thousand Needles,48.14,40.43,40,0
+	.goto Thousand Needles,47.11,40.29,40,0
+	.goto Thousand Needles,45.89,40.32,40,0
+	.goto Thousand Needles,44.43,38.36,40,0
+	.goto Thousand Needles,43.12,36.86,40,0
     >>Kill |cRXP_ENEMY_Galak Scouts|r, |cRXP_ENEMY_Galak Wranglers|r, and |cRXP_ENEMY_Galak Windchasers|r
     .complete 4841,1 --Kill Galak Scout (x12)
     .complete 4841,2 --Kill Galak Wrangler (x10)
@@ -9478,7 +10080,18 @@ step
     .turnin 4966 >> Turn in Protect Kanati Greycloud
     .isQuestComplete 4966
 step
-    .loop 30,Thousand Needles,36.58,38.77,37.77,38.17,36.63,36.23,34.96,33.22,33.37,32.85,33.67,34.09,34.88,34.82,35.62,36.20,36.05,37.41,36.58,38.77
+#loop
+	.line Thousand Needles,36.58,38.77,37.77,38.17,36.63,36.23,34.96,33.22,33.37,32.85,33.67,34.09,34.88,34.82,35.62,36.20,36.05,37.41,36.58,38.77
+	.goto Thousand Needles,36.58,38.77,30,0
+	.goto Thousand Needles,37.77,38.17,30,0
+	.goto Thousand Needles,36.63,36.23,30,0
+	.goto Thousand Needles,34.96,33.22,30,0
+	.goto Thousand Needles,33.37,32.85,30,0
+	.goto Thousand Needles,33.67,34.09,30,0
+	.goto Thousand Needles,34.88,34.82,30,0
+	.goto Thousand Needles,35.62,36.20,30,0
+	.goto Thousand Needles,36.05,37.41,30,0
+	.goto Thousand Needles,36.58,38.77,30,0
     >>Loot the |cRXP_PICK_Incendia Agave Plants|r on the ground and underwater
     >>|cRXP_ENEMY_Scalding Elementals|r and |cRXP_ENEMY_Boiling Elementals|r are immune to frost damage, and highly resistant to fire. Try to avoid them/use Arcane spells << Mage
     >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Boiling Elementals|r cast|r |T132156:0|t[Steam Jet]|cRXP_WARN_, reducing your chance to hit by 30% for 10 seconds|r << Warrior/Rogue/Paladin
@@ -9486,11 +10099,33 @@ step
     .complete 5062,1 --Collect Incendia Agave (x10)
 step
     #xprate 1.48-1.58
-    .loop 30,Thousand Needles,36.58,38.77,37.77,38.17,36.63,36.23,34.96,33.22,33.37,32.85,33.67,34.09,34.88,34.82,35.62,36.20,36.05,37.41,36.58,38.77
+#loop
+	.line Thousand Needles,36.58,38.77,37.77,38.17,36.63,36.23,34.96,33.22,33.37,32.85,33.67,34.09,34.88,34.82,35.62,36.20,36.05,37.41,36.58,38.77
+	.goto Thousand Needles,36.58,38.77,30,0
+	.goto Thousand Needles,37.77,38.17,30,0
+	.goto Thousand Needles,36.63,36.23,30,0
+	.goto Thousand Needles,34.96,33.22,30,0
+	.goto Thousand Needles,33.37,32.85,30,0
+	.goto Thousand Needles,33.67,34.09,30,0
+	.goto Thousand Needles,34.88,34.82,30,0
+	.goto Thousand Needles,35.62,36.20,30,0
+	.goto Thousand Needles,36.05,37.41,30,0
+	.goto Thousand Needles,36.58,38.77,30,0
     .xp 29+29325 >> Grind to 29325+/36300xp
 step
     #xprate 1.59-1.68
-    .loop 30,Thousand Needles,36.58,38.77,37.77,38.17,36.63,36.23,34.96,33.22,33.37,32.85,33.67,34.09,34.88,34.82,35.62,36.20,36.05,37.41,36.58,38.77
+#loop
+	.line Thousand Needles,36.58,38.77,37.77,38.17,36.63,36.23,34.96,33.22,33.37,32.85,33.67,34.09,34.88,34.82,35.62,36.20,36.05,37.41,36.58,38.77
+	.goto Thousand Needles,36.58,38.77,30,0
+	.goto Thousand Needles,37.77,38.17,30,0
+	.goto Thousand Needles,36.63,36.23,30,0
+	.goto Thousand Needles,34.96,33.22,30,0
+	.goto Thousand Needles,33.37,32.85,30,0
+	.goto Thousand Needles,33.67,34.09,30,0
+	.goto Thousand Needles,34.88,34.82,30,0
+	.goto Thousand Needles,35.62,36.20,30,0
+	.goto Thousand Needles,36.05,37.41,30,0
+	.goto Thousand Needles,36.58,38.77,30,0
     .xp 29+28860 >> Grind to 28860+/36300xp
 step
 	#completewith next
@@ -9800,7 +10435,11 @@ step << Shaman
     .goto The Barrens,65.51,47.32,70,0
     .goto The Barrens,64.21,50.70,70,0
     .goto The Barrens,63.63,53.85,70,0
-    .loop 70,The Barrens,65.51,47.32,64.21,50.70,63.63,53.85
+#loop
+	.line The Barrens,65.51,47.32,64.21,50.70,63.63,53.85
+	.goto The Barrens,65.51,47.32,70,0
+	.goto The Barrens,64.21,50.70,70,0
+	.goto The Barrens,63.63,53.85,70,0
     >>Kill |cRXP_ENEMY_Isha Awak|r. Loot him for the |cRXP_LOOT_Heart of Isha Awak|r
     .complete 873,1 --Heart of Isha Awak
     .unitscan Isha Awak

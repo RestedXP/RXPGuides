@@ -259,7 +259,19 @@ step
     .accept 819 >> Accept Chen's Empty Keg
 step
     #label DisruptTheAttacks
-    .loop 25,The Barrens,53.63,24.50,54.26,24.64,54.81,25.19,55.50,25.61,55.86,26.3,55.83,27.15,55.41,27.41,54.50,26.97,54.05,26.11,53.51,25.24,53.63,24.50
+#loop
+	.line The Barrens,53.63,24.50,54.26,24.64,54.81,25.19,55.50,25.61,55.86,26.3,55.83,27.15,55.41,27.41,54.50,26.97,54.05,26.11,53.51,25.24,53.63,24.50
+	.goto The Barrens,53.63,24.50,25,0
+	.goto The Barrens,54.26,24.64,25,0
+	.goto The Barrens,54.81,25.19,25,0
+	.goto The Barrens,55.50,25.61,25,0
+	.goto The Barrens,55.86,26.30,25,0
+	.goto The Barrens,55.83,27.15,25,0
+	.goto The Barrens,55.41,27.41,25,0
+	.goto The Barrens,54.50,26.97,25,0
+	.goto The Barrens,54.05,26.11,25,0
+	.goto The Barrens,53.51,25.24,25,0
+	.goto The Barrens,53.63,24.50,25,0
     >>Kill |cRXP_ENEMY_Water Seekers|r, |cRXP_ENEMY_Thornweavers|r and |cRXP_ENEMY_Hunters|r
     .complete 871,1 --Razormane Water Seeker (8)
     .complete 871,2 --Razormane Thornweaver (8)
@@ -440,7 +452,21 @@ step << Tauren
     .complete 5041,1 --Crossroads' Supply Crates (1)
     .dungeon RFC
 step << Tauren
-    .loop 25,The Barrens,59.37,25.38,59.63,24.46,59.63,23.88,59.06,23.89,58.62,23.98,57.83,24.28,56.87,24.55,56.74,25.37,57.25,25.46,57.52,25.63,57.65,25.08,58.24,24.98,58.90,25.37
+#loop
+	.line The Barrens,59.37,25.38,59.63,24.46,59.63,23.88,59.06,23.89,58.62,23.98,57.83,24.28,56.87,24.55,56.74,25.37,57.25,25.46,57.52,25.63,57.65,25.08,58.24,24.98,58.90,25.37
+	.goto The Barrens,59.37,25.38,25,0
+	.goto The Barrens,59.63,24.46,25,0
+	.goto The Barrens,59.63,23.88,25,0
+	.goto The Barrens,59.06,23.89,25,0
+	.goto The Barrens,58.62,23.98,25,0
+	.goto The Barrens,57.83,24.28,25,0
+	.goto The Barrens,56.87,24.55,25,0
+	.goto The Barrens,56.74,25.37,25,0
+	.goto The Barrens,57.25,25.46,25,0
+	.goto The Barrens,57.52,25.63,25,0
+	.goto The Barrens,57.65,25.08,25,0
+	.goto The Barrens,58.24,24.98,25,0
+	.goto The Barrens,58.90,25.37,25,0
     >>Kill |cRXP_ENEMY_Razormane Geomancers|r and |cRXP_ENEMY_Razormane Defenders|r
     .complete 872,1 --Razormane Geomancer (8)
     .complete 872,2 --Razormane Defender (8)
@@ -774,7 +800,21 @@ step
     >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r. It has multiple spawn locations
     .complete 5041,1 --Crossroads' Supply Crates (1)
 step
-    .loop 25,The Barrens,59.37,25.38,59.63,24.46,59.63,23.88,59.06,23.89,58.62,23.98,57.83,24.28,56.87,24.55,56.74,25.37,57.25,25.46,57.52,25.63,57.65,25.08,58.24,24.98,58.90,25.37
+#loop
+	.line The Barrens,59.37,25.38,59.63,24.46,59.63,23.88,59.06,23.89,58.62,23.98,57.83,24.28,56.87,24.55,56.74,25.37,57.25,25.46,57.52,25.63,57.65,25.08,58.24,24.98,58.90,25.37
+	.goto The Barrens,59.37,25.38,25,0
+	.goto The Barrens,59.63,24.46,25,0
+	.goto The Barrens,59.63,23.88,25,0
+	.goto The Barrens,59.06,23.89,25,0
+	.goto The Barrens,58.62,23.98,25,0
+	.goto The Barrens,57.83,24.28,25,0
+	.goto The Barrens,56.87,24.55,25,0
+	.goto The Barrens,56.74,25.37,25,0
+	.goto The Barrens,57.25,25.46,25,0
+	.goto The Barrens,57.52,25.63,25,0
+	.goto The Barrens,57.65,25.08,25,0
+	.goto The Barrens,58.24,24.98,25,0
+	.goto The Barrens,58.90,25.37,25,0
     >>Kill |cRXP_ENEMY_Razormane Geomancers|r and |cRXP_ENEMY_Razormane Defenders|r
     .complete 872,1 --Razormane Geomancer (8)
     .complete 872,2 --Razormane Defender (8)
@@ -3452,7 +3492,27 @@ step
     .mob Bristleback Thornweaver
     .mob Bristleback Geomancer
 step << Warlock/Shaman
-    .loop 25,The Barrens,50.71,54.60,50.74,55.33,50.73,56.78,50.42,57.23,50.50,57.65,50.87,57.50,51.26,57.84,51.74,57.69,51.79,57.10,53.08,54.69,53.65,54.27,53.63,53.53,53.35,52.72,53.00,51.83,52.62,52.19,52.59,52.71,52.41,53.07,52.32,53.71,51.39,54.22
+#loop
+	.line The Barrens,50.71,54.60,50.74,55.33,50.73,56.78,50.42,57.23,50.50,57.65,50.87,57.50,51.26,57.84,51.74,57.69,51.79,57.10,53.08,54.69,53.65,54.27,53.63,53.53,53.35,52.72,53.00,51.83,52.62,52.19,52.59,52.71,52.41,53.07,52.32,53.71,51.39,54.22
+	.goto The Barrens,50.71,54.60,25,0
+	.goto The Barrens,50.74,55.33,25,0
+	.goto The Barrens,50.73,56.78,25,0
+	.goto The Barrens,50.42,57.23,25,0
+	.goto The Barrens,50.50,57.65,25,0
+	.goto The Barrens,50.87,57.50,25,0
+	.goto The Barrens,51.26,57.84,25,0
+	.goto The Barrens,51.74,57.69,25,0
+	.goto The Barrens,51.79,57.10,25,0
+	.goto The Barrens,53.08,54.69,25,0
+	.goto The Barrens,53.65,54.27,25,0
+	.goto The Barrens,53.63,53.53,25,0
+	.goto The Barrens,53.35,52.72,25,0
+	.goto The Barrens,53.00,51.83,25,0
+	.goto The Barrens,52.62,52.19,25,0
+	.goto The Barrens,52.59,52.71,25,0
+	.goto The Barrens,52.41,53.07,25,0
+	.goto The Barrens,52.32,53.71,25,0
+	.goto The Barrens,51.39,54.22,25,0
     .xp 19+11000 >> Grind to 11000+/21300 xp
     --VV 1.5x Add 1.5x grind step
 step
@@ -5547,7 +5607,34 @@ step
 step
     #xprate <1.5
     #optional
-    .loop 25,Ashenvale,10.86,26.99,11.23,25.73,11.83,25.75,12.51,24.09,14.18,24.03,14.85,23.08,14.13,20.77,14.73,19.56,14.59,17.90,13.38,16.39,13.62,14.48,14.15,15.31,15.88,15.42,15.40,16.96,15.22,18.81,15.33,20.78,15.33,22.51,15.32,24.90,14.76,25.52,14.62,26.49,14.52,28.25,13.55,29.36,12.41,29.15,11.22,31.04,10.38,29.60,11.01,28.57
+#loop
+	.line Ashenvale,10.86,26.99,11.23,25.73,11.83,25.75,12.51,24.09,14.18,24.03,14.85,23.08,14.13,20.77,14.73,19.56,14.59,17.90,13.38,16.39,13.62,14.48,14.15,15.31,15.88,15.42,15.40,16.96,15.22,18.81,15.33,20.78,15.33,22.51,15.32,24.90,14.76,25.52,14.62,26.49,14.52,28.25,13.55,29.36,12.41,29.15,11.22,31.04,10.38,29.60,11.01,28.57
+	.goto Ashenvale,10.86,26.99,25,0
+	.goto Ashenvale,11.23,25.73,25,0
+	.goto Ashenvale,11.83,25.75,25,0
+	.goto Ashenvale,12.51,24.09,25,0
+	.goto Ashenvale,14.18,24.03,25,0
+	.goto Ashenvale,14.85,23.08,25,0
+	.goto Ashenvale,14.13,20.77,25,0
+	.goto Ashenvale,14.73,19.56,25,0
+	.goto Ashenvale,14.59,17.90,25,0
+	.goto Ashenvale,13.38,16.39,25,0
+	.goto Ashenvale,13.62,14.48,25,0
+	.goto Ashenvale,14.15,15.31,25,0
+	.goto Ashenvale,15.88,15.42,25,0
+	.goto Ashenvale,15.40,16.96,25,0
+	.goto Ashenvale,15.22,18.81,25,0
+	.goto Ashenvale,15.33,20.78,25,0
+	.goto Ashenvale,15.33,22.51,25,0
+	.goto Ashenvale,15.32,24.90,25,0
+	.goto Ashenvale,14.76,25.52,25,0
+	.goto Ashenvale,14.62,26.49,25,0
+	.goto Ashenvale,14.52,28.25,25,0
+	.goto Ashenvale,13.55,29.36,25,0
+	.goto Ashenvale,12.41,29.15,25,0
+	.goto Ashenvale,11.22,31.04,25,0
+	.goto Ashenvale,10.38,29.60,25,0
+	.goto Ashenvale,11.01,28.57,25,0
     .xp 21 >> Grind to level 21
 step
     #xprate <1.5
@@ -5607,7 +5694,34 @@ step << Priest
     .dungeon BFD
 step
     #xprate <1.5
-   .loop 25,Ashenvale,10.86,26.99,11.23,25.73,11.83,25.75,12.51,24.09,14.18,24.03,14.85,23.08,14.13,20.77,14.73,19.56,14.59,17.90,13.38,16.39,13.62,14.48,14.15,15.31,15.88,15.42,15.40,16.96,15.22,18.81,15.33,20.78,15.33,22.51,15.32,24.90,14.76,25.52,14.62,26.49,14.52,28.25,13.55,29.36,12.41,29.15,11.22,31.04,10.38,29.60,11.01,28.57
+#loop
+	.line Ashenvale,10.86,26.99,11.23,25.73,11.83,25.75,12.51,24.09,14.18,24.03,14.85,23.08,14.13,20.77,14.73,19.56,14.59,17.90,13.38,16.39,13.62,14.48,14.15,15.31,15.88,15.42,15.40,16.96,15.22,18.81,15.33,20.78,15.33,22.51,15.32,24.90,14.76,25.52,14.62,26.49,14.52,28.25,13.55,29.36,12.41,29.15,11.22,31.04,10.38,29.60,11.01,28.57
+	.goto Ashenvale,10.86,26.99,25,0
+	.goto Ashenvale,11.23,25.73,25,0
+	.goto Ashenvale,11.83,25.75,25,0
+	.goto Ashenvale,12.51,24.09,25,0
+	.goto Ashenvale,14.18,24.03,25,0
+	.goto Ashenvale,14.85,23.08,25,0
+	.goto Ashenvale,14.13,20.77,25,0
+	.goto Ashenvale,14.73,19.56,25,0
+	.goto Ashenvale,14.59,17.90,25,0
+	.goto Ashenvale,13.38,16.39,25,0
+	.goto Ashenvale,13.62,14.48,25,0
+	.goto Ashenvale,14.15,15.31,25,0
+	.goto Ashenvale,15.88,15.42,25,0
+	.goto Ashenvale,15.40,16.96,25,0
+	.goto Ashenvale,15.22,18.81,25,0
+	.goto Ashenvale,15.33,20.78,25,0
+	.goto Ashenvale,15.33,22.51,25,0
+	.goto Ashenvale,15.32,24.90,25,0
+	.goto Ashenvale,14.76,25.52,25,0
+	.goto Ashenvale,14.62,26.49,25,0
+	.goto Ashenvale,14.52,28.25,25,0
+	.goto Ashenvale,13.55,29.36,25,0
+	.goto Ashenvale,12.41,29.15,25,0
+	.goto Ashenvale,11.22,31.04,25,0
+	.goto Ashenvale,10.38,29.60,25,0
+	.goto Ashenvale,11.01,28.57,25,0
    >>Kill |cRXP_ENEMY_Wraithtail Nagas|r. Loot them for their |cRXP_LOOT_Heads|r
    .complete 6442,1 --Wraithtail Head (20)
    .mob Wrathtail Razortail
@@ -5619,7 +5733,34 @@ step
    .mob Lady Vespia
 step
     #xprate <1.5
-    .loop 25,Ashenvale,10.86,26.99,11.23,25.73,11.83,25.75,12.51,24.09,14.18,24.03,14.85,23.08,14.13,20.77,14.73,19.56,14.59,17.90,13.38,16.39,13.62,14.48,14.15,15.31,15.88,15.42,15.40,16.96,15.22,18.81,15.33,20.78,15.33,22.51,15.32,24.90,14.76,25.52,14.62,26.49,14.52,28.25,13.55,29.36,12.41,29.15,11.22,31.04,10.38,29.60,11.01,28.57
+#loop
+	.line Ashenvale,10.86,26.99,11.23,25.73,11.83,25.75,12.51,24.09,14.18,24.03,14.85,23.08,14.13,20.77,14.73,19.56,14.59,17.90,13.38,16.39,13.62,14.48,14.15,15.31,15.88,15.42,15.40,16.96,15.22,18.81,15.33,20.78,15.33,22.51,15.32,24.90,14.76,25.52,14.62,26.49,14.52,28.25,13.55,29.36,12.41,29.15,11.22,31.04,10.38,29.60,11.01,28.57
+	.goto Ashenvale,10.86,26.99,25,0
+	.goto Ashenvale,11.23,25.73,25,0
+	.goto Ashenvale,11.83,25.75,25,0
+	.goto Ashenvale,12.51,24.09,25,0
+	.goto Ashenvale,14.18,24.03,25,0
+	.goto Ashenvale,14.85,23.08,25,0
+	.goto Ashenvale,14.13,20.77,25,0
+	.goto Ashenvale,14.73,19.56,25,0
+	.goto Ashenvale,14.59,17.90,25,0
+	.goto Ashenvale,13.38,16.39,25,0
+	.goto Ashenvale,13.62,14.48,25,0
+	.goto Ashenvale,14.15,15.31,25,0
+	.goto Ashenvale,15.88,15.42,25,0
+	.goto Ashenvale,15.40,16.96,25,0
+	.goto Ashenvale,15.22,18.81,25,0
+	.goto Ashenvale,15.33,20.78,25,0
+	.goto Ashenvale,15.33,22.51,25,0
+	.goto Ashenvale,15.32,24.90,25,0
+	.goto Ashenvale,14.76,25.52,25,0
+	.goto Ashenvale,14.62,26.49,25,0
+	.goto Ashenvale,14.52,28.25,25,0
+	.goto Ashenvale,13.55,29.36,25,0
+	.goto Ashenvale,12.41,29.15,25,0
+	.goto Ashenvale,11.22,31.04,25,0
+	.goto Ashenvale,10.38,29.60,25,0
+	.goto Ashenvale,11.01,28.57,25,0
     .xp 21+21450 >> Grind to 21450+/25200 xp
     .dungeon !BFD << Priest
 step
@@ -6356,7 +6497,19 @@ step
     .accept 819 >> Accept Chen's Empty Keg
 step
     #label DisruptTheAttacks
-    .loop 25,The Barrens,53.63,24.50,54.26,24.64,54.81,25.19,55.50,25.61,55.86,26.3,55.83,27.15,55.41,27.41,54.50,26.97,54.05,26.11,53.51,25.24,53.63,24.50
+#loop
+	.line The Barrens,53.63,24.50,54.26,24.64,54.81,25.19,55.50,25.61,55.86,26.3,55.83,27.15,55.41,27.41,54.50,26.97,54.05,26.11,53.51,25.24,53.63,24.50
+	.goto The Barrens,53.63,24.50,25,0
+	.goto The Barrens,54.26,24.64,25,0
+	.goto The Barrens,54.81,25.19,25,0
+	.goto The Barrens,55.50,25.61,25,0
+	.goto The Barrens,55.86,26.30,25,0
+	.goto The Barrens,55.83,27.15,25,0
+	.goto The Barrens,55.41,27.41,25,0
+	.goto The Barrens,54.50,26.97,25,0
+	.goto The Barrens,54.05,26.11,25,0
+	.goto The Barrens,53.51,25.24,25,0
+	.goto The Barrens,53.63,24.50,25,0
     >>Kill |cRXP_ENEMY_Water Seekers|r, |cRXP_ENEMY_Thornweavers|r and |cRXP_ENEMY_Hunters|r
     .complete 871,1 --Razormane Water Seeker (8)
     .complete 871,2 --Razormane Thornweaver (8)
@@ -6590,7 +6743,21 @@ step << Tauren
     .complete 5041,1 --Crossroads' Supply Crates (1)
     .dungeon RFC
 step << Tauren
-    .loop 25,The Barrens,59.37,25.38,59.63,24.46,59.63,23.88,59.06,23.89,58.62,23.98,57.83,24.28,56.87,24.55,56.74,25.37,57.25,25.46,57.52,25.63,57.65,25.08,58.24,24.98,58.90,25.37
+#loop
+	.line The Barrens,59.37,25.38,59.63,24.46,59.63,23.88,59.06,23.89,58.62,23.98,57.83,24.28,56.87,24.55,56.74,25.37,57.25,25.46,57.52,25.63,57.65,25.08,58.24,24.98,58.90,25.37
+	.goto The Barrens,59.37,25.38,25,0
+	.goto The Barrens,59.63,24.46,25,0
+	.goto The Barrens,59.63,23.88,25,0
+	.goto The Barrens,59.06,23.89,25,0
+	.goto The Barrens,58.62,23.98,25,0
+	.goto The Barrens,57.83,24.28,25,0
+	.goto The Barrens,56.87,24.55,25,0
+	.goto The Barrens,56.74,25.37,25,0
+	.goto The Barrens,57.25,25.46,25,0
+	.goto The Barrens,57.52,25.63,25,0
+	.goto The Barrens,57.65,25.08,25,0
+	.goto The Barrens,58.24,24.98,25,0
+	.goto The Barrens,58.90,25.37,25,0
     >>Kill |cRXP_ENEMY_Razormane Geomancers|r and |cRXP_ENEMY_Razormane Defenders|r
     .complete 872,1 --Razormane Geomancer (8)
     .complete 872,2 --Razormane Defender (8)
@@ -6924,7 +7091,21 @@ step
     >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r. It has multiple spawn locations
     .complete 5041,1 --Crossroads' Supply Crates (1)
 step
-    .loop 25,The Barrens,59.37,25.38,59.63,24.46,59.63,23.88,59.06,23.89,58.62,23.98,57.83,24.28,56.87,24.55,56.74,25.37,57.25,25.46,57.52,25.63,57.65,25.08,58.24,24.98,58.90,25.37
+#loop
+	.line The Barrens,59.37,25.38,59.63,24.46,59.63,23.88,59.06,23.89,58.62,23.98,57.83,24.28,56.87,24.55,56.74,25.37,57.25,25.46,57.52,25.63,57.65,25.08,58.24,24.98,58.90,25.37
+	.goto The Barrens,59.37,25.38,25,0
+	.goto The Barrens,59.63,24.46,25,0
+	.goto The Barrens,59.63,23.88,25,0
+	.goto The Barrens,59.06,23.89,25,0
+	.goto The Barrens,58.62,23.98,25,0
+	.goto The Barrens,57.83,24.28,25,0
+	.goto The Barrens,56.87,24.55,25,0
+	.goto The Barrens,56.74,25.37,25,0
+	.goto The Barrens,57.25,25.46,25,0
+	.goto The Barrens,57.52,25.63,25,0
+	.goto The Barrens,57.65,25.08,25,0
+	.goto The Barrens,58.24,24.98,25,0
+	.goto The Barrens,58.90,25.37,25,0
     >>Kill |cRXP_ENEMY_Razormane Geomancers|r and |cRXP_ENEMY_Razormane Defenders|r
     .complete 872,1 --Razormane Geomancer (8)
     .complete 872,2 --Razormane Defender (8)
@@ -9689,7 +9870,27 @@ step
     .mob Bristleback Geomancer
 step << Warlock/Shaman
     #optional
-    .loop 25,The Barrens,50.71,54.60,50.74,55.33,50.73,56.78,50.42,57.23,50.50,57.65,50.87,57.50,51.26,57.84,51.74,57.69,51.79,57.10,53.08,54.69,53.65,54.27,53.63,53.53,53.35,52.72,53.00,51.83,52.62,52.19,52.59,52.71,52.41,53.07,52.32,53.71,51.39,54.22
+#loop
+	.line The Barrens,50.71,54.60,50.74,55.33,50.73,56.78,50.42,57.23,50.50,57.65,50.87,57.50,51.26,57.84,51.74,57.69,51.79,57.10,53.08,54.69,53.65,54.27,53.63,53.53,53.35,52.72,53.00,51.83,52.62,52.19,52.59,52.71,52.41,53.07,52.32,53.71,51.39,54.22
+	.goto The Barrens,50.71,54.60,25,0
+	.goto The Barrens,50.74,55.33,25,0
+	.goto The Barrens,50.73,56.78,25,0
+	.goto The Barrens,50.42,57.23,25,0
+	.goto The Barrens,50.50,57.65,25,0
+	.goto The Barrens,50.87,57.50,25,0
+	.goto The Barrens,51.26,57.84,25,0
+	.goto The Barrens,51.74,57.69,25,0
+	.goto The Barrens,51.79,57.10,25,0
+	.goto The Barrens,53.08,54.69,25,0
+	.goto The Barrens,53.65,54.27,25,0
+	.goto The Barrens,53.63,53.53,25,0
+	.goto The Barrens,53.35,52.72,25,0
+	.goto The Barrens,53.00,51.83,25,0
+	.goto The Barrens,52.62,52.19,25,0
+	.goto The Barrens,52.59,52.71,25,0
+	.goto The Barrens,52.41,53.07,25,0
+	.goto The Barrens,52.32,53.71,25,0
+	.goto The Barrens,51.39,54.22,25,0
     .xp 19 >> Grind to level 19
 step
     .goto The Barrens,50.88,52.96,50,0

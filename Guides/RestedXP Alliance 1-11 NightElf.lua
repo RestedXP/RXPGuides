@@ -166,7 +166,23 @@ step << Hunter
     .train 1978 >>Train Serpent Sting
 step
     #requires EtchedSigil << Hunter
-    .loop 20,Teldrassil,56.98,39.08,56.51,38.92,56.55,38.40,56.80,38.15,56.94,36.95,57.18,37.12,57.49,36.04,58.07,35.60,58.21,36.21,58.43,36.46,58.94,37.35,58.81,37.59,58.67,38.17,58.05,38.44,56.98,39.08
+#loop
+	.line Teldrassil,56.98,39.08,56.51,38.92,56.55,38.40,56.80,38.15,56.94,36.95,57.18,37.12,57.49,36.04,58.07,35.60,58.21,36.21,58.43,36.46,58.94,37.35,58.81,37.59,58.67,38.17,58.05,38.44,56.98,39.08
+	.goto Teldrassil,56.98,39.08,20,0
+	.goto Teldrassil,56.51,38.92,20,0
+	.goto Teldrassil,56.55,38.40,20,0
+	.goto Teldrassil,56.80,38.15,20,0
+	.goto Teldrassil,56.94,36.95,20,0
+	.goto Teldrassil,57.18,37.12,20,0
+	.goto Teldrassil,57.49,36.04,20,0
+	.goto Teldrassil,58.07,35.60,20,0
+	.goto Teldrassil,58.21,36.21,20,0
+	.goto Teldrassil,58.43,36.46,20,0
+	.goto Teldrassil,58.94,37.35,20,0
+	.goto Teldrassil,58.81,37.59,20,0
+	.goto Teldrassil,58.67,38.17,20,0
+	.goto Teldrassil,58.05,38.44,20,0
+	.goto Teldrassil,56.98,39.08,20,0
 	>>Loot the yellow flowers around the lake
     .complete 3521,2 --Collect Moonpetal Lily (x4)
 step

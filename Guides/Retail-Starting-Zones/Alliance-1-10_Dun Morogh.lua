@@ -569,8 +569,7 @@ step
     #optional
     #completewith Griknir
     #label Hovel1
-    .goto 428,12.774,40.711
-    .subzone 6137 >> Enter Frostmane Hovel
+    .goto 428,12.774,40.711,15 >> Enter the Coldridge Valley cave
 	.isOnQuest 218
 step
     #optional
@@ -643,8 +642,7 @@ step
     .goto 428,36.573,30.430,12,0
     .goto 428,20.348,46.954,12,0
     .goto 428,14.750,45.019,12,0
-    .goto 27,33.772,78.335,15 >>Exit Frostmane Hovel
-    .subzoneskip 6137,1
+    .goto 27,33.772,78.335,15 >>Exit the Coldridge Valley cave
     .isOnQuest 218
 step
     .goto 27,32.064,74.170
