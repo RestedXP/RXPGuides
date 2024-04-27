@@ -1944,6 +1944,7 @@ local function IsGuideActive(guide)
     if guide and addon.stepLogic.SeasonCheck(guide) and addon.stepLogic.PhaseCheck(guide) and
         addon.stepLogic.XpRateCheck(guide) and addon.stepLogic.FreshAccountCheck(guide) and
         addon.stepLogic.LevelCheck(guide) and not guide.internal and
+        addon.stepLogic.LoremasterCheck(guide) and
         (not addon.player.neutral or not guide.enabledFor or addon.applies(guide.enabledFor)) then
         -- print('-',guide.name,not guide.som,not guide.era,som)
         return true
