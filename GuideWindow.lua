@@ -1587,6 +1587,9 @@ function addon:LoadGuide(guide, OnLoad)
 
     for n, step in ipairs(guide.steps) do
         step.index = n
+        if #step.elements == 0 then
+            step.optional = true
+        end
         --BottomFrame.stepList[n] = n
         if step.completewith and not step.tip then step.sticky = true end
         if step.requires then

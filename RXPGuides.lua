@@ -1636,7 +1636,7 @@ function addon.stepLogic.LoremasterCheck(step)
     local loremaster = addon.game == "WOTLK" and addon.settings.profile.northrendLM or
                      addon.game == "CATA" and addon.settings.profile.loremasterMode
     if step.questguide and not loremaster or step.speedrunguide and loremaster then
-        return true
+        return false
     end
     return true
 end
