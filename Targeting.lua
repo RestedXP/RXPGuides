@@ -120,6 +120,14 @@ local function shouldTargetCheck()
 
 end
 
+
+local currentTargets = ""
+local function AnnounceTargets()
+    if addon.settings.profile.notifyOnTargetUpdates then
+        addon.comms.PrettyPrint(L("Targeting macro updated with:%s"),currentTargets)
+    end
+end
+
 function addon.targeting:UpdateMacro(queuedTargets)
     -- TODO add rare targets
     if not addon.settings.profile.enableTargetMacro then return end
@@ -163,6 +171,7 @@ function addon.targeting:UpdateMacro(queuedTargets)
     end
 
     local content
+    local targetText = ""
     for n = #targets,1,-1 do
         local t = targets[n]
         if t then
@@ -174,8 +183,7 @@ function addon.targeting:UpdateMacro(queuedTargets)
             -- Prevent multiple spams
             if not (announcedTargets[t] or lowPrioTargets[t]) and
                 addon.settings.profile.notifyOnTargetUpdates then
-                addon.comms.PrettyPrint(L("Targeting macro updated with (%s)"),
-                                        t) -- TODO locale
+                targetText = fmt("%s %s,",targetText,t)
             end
 
             announcedTargets[t] = true
@@ -184,6 +192,11 @@ function addon.targeting:UpdateMacro(queuedTargets)
                 content = content:gsub("^\n?[^\n]*[\n]*", "")
             end
         end
+    end
+
+    if #targetText > 0 then
+        currentTargets = targetText:sub(1,-2)
+        addon.ScheduleTask(1.5,AnnounceTargets)
     end
 
     if content then
