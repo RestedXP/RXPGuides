@@ -112,20 +112,70 @@ function addon.GetBestQuests(refreshQuestDB,output)
     local group = addon.currentGuide.group
     local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy or {}
     if not QuestDB then return end
+    local sortfunc = function(k1, k2)
+        local xc1 = k1.xpcorrection or 0
+        local xc2 = k2.xpcorrection or 0
+        local x1 = (k1.xp or 0) + xc1
+        local x2 = (k2.xp or 0) + xc2
+        local q1 = addon.IsQuestTurnedIn(k1.Id)
+        local q2 = addon.IsQuestTurnedIn(k2.Id)
+        local prev1 = k1.previousQuest and not IsPreReqComplete(k1)
+        local prev2 = k2.previousQuest and not IsPreReqComplete(k2)
+        local prio1 = k1.priority or 1e3
+        local prio2 = k2.priority or 1e3
+        if q1 and not q2 then
+            return false
+        elseif q2 and not q1 then
+            return true
+        elseif x1 ~= x2 then
+            return x1 > x2
+        elseif prev1 and not prev2 then
+            return false
+        elseif prev2 and not prev1 then
+            return true
+        elseif prio1 < prio2 then
+            return true
+        elseif prio2 < prio1 then
+            return false
+        else
+            return k1.Id < k2.Id
+        end
+    end
     if not addon.questLogQuests or refreshQuestDB then
         addon.questLogQuests = {}
 
         local groups = {}
         for id, v in pairs(QuestDB) do
             v.Id = id
-            local group = v.group or ""
-            if IsQuestAvailable(v,id) and not v.itemId and (group == "" or not groups[group]) and
+            local grp = v.group
+            if grp and not groups[grp] then
+                groups[grp] = {}
+            end
+            if IsQuestAvailable(v,id) and not v.itemId and
                 v.questLog and (not v.forcePreReq or IsPreReqComplete(v)) then
-                table.insert(addon.questLogQuests, v)
-                v.isActive = true
-                groups[group] = true
+                if grp then
+                    table.insert(groups[grp],v)
+                else
+                    table.insert(addon.questLogQuests, v)
+                    v.isActive = true
+                end
             elseif v.questLog then
                 v.isActive = false
+            end
+        end
+        for _,v in pairs(groups) do
+            table.sort(v, sortfunc)
+            local pick
+            for _,q in ipairs(v) do
+                if q.questLog then
+                    if pick then
+                        q.isActive = false
+                    else
+                        q.isActive = true
+                        table.insert(addon.questLogQuests, q)
+                        pick = true
+                    end
+                end
             end
         end
     end
@@ -133,35 +183,7 @@ function addon.GetBestQuests(refreshQuestDB,output)
     if GetTime() - questQueryTimer > 1 or refreshQuestDB then
 
         questQueryTimer = GetTime()
-        table.sort(qDB, function(k1, k2)
-            local xc1 = k1.xpcorrection or 0
-            local xc2 = k2.xpcorrection or 0
-            local x1 = (k1.xp or 0) + xc1
-            local x2 = (k2.xp or 0) + xc2
-            local q1 = addon.IsQuestTurnedIn(k1.Id)
-            local q2 = addon.IsQuestTurnedIn(k2.Id)
-            local prev1 = k1.previousQuest and not IsPreReqComplete(k1)
-            local prev2 = k2.previousQuest and not IsPreReqComplete(k2)
-            local prio1 = k1.priority or 1e3
-            local prio2 = k2.priority or 1e3
-            if q1 and not q2 then
-                return false
-            elseif q2 and not q1 then
-                return true
-            elseif x1 ~= x2 then
-                return x1 > x2
-            elseif prev1 and not prev2 then
-                return false
-            elseif prev2 and not prev1 then
-                return true
-            elseif prio1 < prio2 then
-                return true
-            elseif prio2 < prio1 then
-                return false
-            else
-                return k1.Id < k2.Id
-            end
-        end)
+        table.sort(qDB, sortfunc)
 
         for i = #qDB, 1, -1 do
             local xp = qDB[i].xp or 0
