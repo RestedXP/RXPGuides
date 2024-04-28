@@ -37,8 +37,14 @@ local function IsQuestAvailable(quest,id,skipRepCheck)
     id = id or quest.Id
 
     local function ProcessRep(rep,faction)
-        local _, _, standing = GetFactionInfoByID(faction)
-        local target = addon.repStandingID[strlower(rep)]
+        local _, _, standing,_,_,value = GetFactionInfoByID(faction)
+        local target
+        local repname, bonus = rep:match("(%w+)%s*([%+%-]?%d*)")
+        bonus = tonumber(bonus) or 0
+        target = addon.repStandingID[strlower(repname)]
+        target = addon.repStartValue[target] + bonus
+        standing = value or -42000
+
         if skipRepCheck then
             if (skipRepCheck == 932 and faction == 934) or
                 (skipRepCheck == 934 and faction == 932) then
