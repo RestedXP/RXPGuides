@@ -5603,13 +5603,13 @@ function addon.functions.dungeon(self, text, instance)
         end
         local name, tag = addon.GetDungeonName(instance)
         if tag and not skip then
-            if RXPData.guideMetaData.enabledDungeons[addon.player.faction] then
-                RXPData.guideMetaData.enabledDungeons[addon.player.faction][tag] = name
+            if RXPCData.guideMetaData.enabledDungeons[addon.player.faction] then
+                RXPCData.guideMetaData.enabledDungeons[addon.player.faction][tag] = name
             end
             addon.dungeons[tag] = name
             addon.step.dungeon = tag
             --print(tag,name)
-            RXPData.guideMetaData.dungeonGuides[addon.currentGuideGroup] = true
+            RXPCData.guideMetaData.dungeonGuides[addon.currentGuideGroup] = true
         elseif tag and skip then
             addon.step.dungeonskip = tag
         else
@@ -5636,7 +5636,7 @@ function addon.functions.group(self, ...)
 
         addon.step.group = true
         addon.step.solo = false
-        RXPData.guideMetaData.enableGroupQuests[addon.currentGuideGroup] = true
+        RXPCData.guideMetaData.enableGroupQuests[addon.currentGuideGroup] = true
         return {hideTooltip = true,textOnly = true, text = text, generateText = generateText}
     end
 

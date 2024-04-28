@@ -1133,7 +1133,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = function()
                             local out = L "Guides that support this feature:\n"
                             for guide in pairs(
-                                             RXPData.guideMetaData
+                                             RXPCData.guideMetaData
                                                  .enableGroupQuests) do
                                 out = fmt("%s\n%s", out, guide)
                             end
@@ -1144,7 +1144,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 1.4,
                         hidden = function()
                             return not next(
-                                       RXPData.guideMetaData.enableGroupQuests)
+                                       RXPCData.guideMetaData.enableGroupQuests)
                         end,
                         set = function(info, value)
                             SetProfileOption(info, value)
@@ -1269,7 +1269,7 @@ function addon.settings:CreateAceOptionsPanel()
                             local out =
                                 L "Routes in quests for the selected dungeon\nGuides that support this feature:\n"
                             for guide in pairs(
-                                             RXPData.guideMetaData.dungeonGuides) do
+                                             RXPCData.guideMetaData.dungeonGuides) do
                                 out = fmt("%s\n%s", out, guide)
                             end
                             return out
@@ -1277,7 +1277,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "multiselect",
                         width = optionsWidth,
                         order = 2.9,
-                        values = RXPData.guideMetaData.enabledDungeons[addon.player
+                        values = RXPCData.guideMetaData.enabledDungeons[addon.player
                             .faction],
                         get = function(_, key)
                             return addon.settings.profile.dungeons[key]
@@ -1288,7 +1288,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         hidden = function()
                             return not next(
-                                       RXPData.guideMetaData.enabledDungeons[addon.player
+                                       RXPCData.guideMetaData.enabledDungeons[addon.player
                                            .faction])
                         end
                     }

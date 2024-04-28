@@ -1991,6 +1991,7 @@ function RXPFrame:GenerateMenuTable(menu)
     local menuIndex = 1
 
     local function createMenu(group)
+        if group == "RXPGuides" then return end
         local t = addon.guideList[group]
         menuIndex = menuIndex + 1
 

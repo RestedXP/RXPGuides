@@ -1192,7 +1192,7 @@ local function RXP_loadWelcomeAdventurerFrame(backFunctor, dungeons_enabled_func
         end
 	)
 	y_offset = y_offset + y_offset_delta - height
-    local dungeonlist = next(RXPData.guideMetaData.enabledDungeons[addon.player.faction])
+    local dungeonlist = next(RXPCData.guideMetaData.enabledDungeons[addon.player.faction])
     if dungeonlist then
         addHardcoreOptionButton(
             frame,

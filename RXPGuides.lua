@@ -85,7 +85,7 @@ end
 local GetAddOnMetadata = C_AddOns and C_AddOns.GetAddOnMetadata or _G.GetAddOnMetadata
 addon.release = GetAddOnMetadata(addonName, "Version")
 addon.title = GetAddOnMetadata(addonName, "Title")
-local cacheVersion = 23
+local cacheVersion = 24
 local L = addon.locale.Get
 
 if string.match(addon.release, 'project') then
@@ -954,11 +954,12 @@ end
 
 function addon:CreateMetaDataTable(wipe)
     if wipe or addon.release ~= RXPData.release or RXPData.cacheVersion ~= cacheVersion or not cacheVersion then
-        RXPData.guideMetaData = nil
+        RXPCData.guideMetaData = nil
         RXPCData.guideDisabled = nil
     end
-    local guideMetaData = RXPData.guideMetaData or {}
-    RXPData.guideMetaData = guideMetaData
+    RXPData.guideMetaData = nil
+    local guideMetaData = RXPCData.guideMetaData or {}
+    RXPCData.guideMetaData = guideMetaData
     RXPCData.guideDisabled = RXPCData.guideDisabled or {}
     guideMetaData.dungeonGuides = guideMetaData.dungeonGuides or {}
     guideMetaData.enabledDungeons = guideMetaData.enabledDungeons or {}
@@ -1444,10 +1445,10 @@ function addon:UpdateLoop(diff)
                         end
                     end
                 end
-                if not next(addon.guideCache) and RXPData.guideMetaData.enabledDungeons then
-                    RXPData.guideMetaData.enabledDungeons[addon.player.faction] =
+                if not next(addon.guideCache) and RXPCData.guideMetaData.enabledDungeons then
+                    RXPCData.guideMetaData.enabledDungeons[addon.player.faction] =
                         addon.dungeons or
-                        RXPData.guideMetaData.enabledDungeons[addon.player.faction]
+                        RXPCData.guideMetaData.enabledDungeons[addon.player.faction]
                 end
             end
         end
@@ -1635,7 +1636,7 @@ function addon.stepLogic.LoremasterCheck(step)
     local loremaster = addon.game == "WOTLK" and addon.settings.profile.northrendLM or
                      addon.game == "CATA" and addon.settings.profile.loremasterMode
     if step.questguide and not loremaster or step.speedrunguide and loremaster then
-        return false
+        return true
     end
     return true
 end

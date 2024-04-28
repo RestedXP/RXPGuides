@@ -563,13 +563,10 @@ function addon.LoadEmbeddedGuides()
                             end
                         end)
                         if not enabled then
-                            strupper(line):gsub("#" .. addon.game,function()
+                            local u = strupper(line)
+                            if u:find("#" .. addon.game) or
+                                (addon.game == "RETAIL" and u:find("#DF")) then
                                 enabled = true
-                            end)
-                            if addon.game == "RETAIL" then
-                                strupper(line):gsub("#DF",function()
-                                    enabled = true
-                                end)
                             end
                         end
                         enabledFor = enabledFor or line:match("^%s*<<%s*(.-)%s*$")
@@ -581,7 +578,7 @@ function addon.LoadEmbeddedGuides()
 
                     if enabled then
                         key = addon.BuildGuideKey(group,"",name)
-                        guide = key and RXPData.guideMetaData[key]
+                        guide = key and RXPCData.guideMetaData[key]
                     else
                         RXPCData.guideDisabled[n] = length
                     end
@@ -601,8 +598,8 @@ function addon.LoadEmbeddedGuides()
                 --print(guide,errorMsg,guide.enabledFor)
                 addon.guideCache[guide.key] = function(self)
                     local tbl = addon.ParseGuide(guideData.groupOrContent,guideData.text)
-                    if RXPData and RXPData.guideMetaData then
-                        RXPData.guideMetaData[guide.key] = metadata
+                    if RXPData and RXPCData.guideMetaData then
+                        RXPCData.guideMetaData[guide.key] = metadata
                     end
                     if addon.player.faction == "Neutral" and tbl then
                         tbl.parse = self
@@ -618,15 +615,15 @@ function addon.LoadEmbeddedGuides()
                 enabled = not errorMsg
                 if key and metadata then
                     local cleanup = {}
-                    for guideKey,data in pairs(RXPData.guideMetaData) do
+                    for guideKey,data in pairs(RXPCData.guideMetaData) do
                         if data.key == guide.key then
                             tinsert(cleanup,guideKey)
                         end
                     end
                     for _,guideKey in pairs(cleanup) do
-                        RXPData.guideMetaData[guideKey] = nil
+                        RXPCData.guideMetaData[guideKey] = nil
                     end
-                    RXPData.guideMetaData[key] = metadata
+                    RXPCData.guideMetaData[key] = metadata
                 end
             end
             if enabled then
@@ -678,8 +675,8 @@ function addon.LoadCachedGuides()
                 addon.guideCache[key] = function(self)
                     local g = LibDeflate:DecompressDeflate(data.groupOrContent)
                     local tbl = addon.ParseGuide(g)
-                    if RXPData and RXPData.guideMetaData then
-                        RXPData.guideMetaData[guide.key] = metadata
+                    if RXPData and RXPCData.guideMetaData then
+                        RXPCData.guideMetaData[guide.key] = metadata
                     end
                     if addon.player.faction == "Neutral" and tbl then
                         tbl.parse = self
