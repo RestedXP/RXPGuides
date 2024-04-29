@@ -1294,7 +1294,7 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
 
     if resultCount == 0 or totalAuctions == 0 then
         ahSession.sentQuery = false
-        ahSession.scanPage = 0
+        ahSession.scanPage = 0 -- TODO show scanPage on UI
 
         if ahSession.scanType == AuctionFilterButtons["Armor"] then
             ahSession.scanType = AuctionFilterButtons["Weapons"] -- weapons
@@ -1381,7 +1381,6 @@ local function calculate(itemLink, scanData)
     -- Should only have queried usable items, so not intentionally nil
     if not itemData then
         print("itemData nil", itemLink)
-        tinsert(ahSession.retryQuery, itemLink)
         return
     end
 
@@ -1396,50 +1395,48 @@ local function calculate(itemLink, scanData)
     -- TODO account for multi-slot comparisons, show both
     for _, compareData in ipairs(scanData.comparisons) do
         -- To avoid complicated comparison, use ratio as a multiplier
-        -- Ignore relative if slot is empty
         if compareData.Ratio then
             rwpc = (scanData.totalWeight * compareData.Ratio) /
                        scanData.lowestPrice
+        else -- Treat an empty slot as 1:1 upgrade weight
+            rwpc = scanData.totalWeight / scanData.lowestPrice
+            compareData.Ratio = scanData.totalWeight
+        end
 
-            if rwpc > highestRWPC then highestRWPC = rwpc end
+        if rwpc > highestRWPC then highestRWPC = rwpc end
 
-            if compareData.Ratio > highestRatio then
-                highestRatio = compareData.Ratio
+        if compareData.Ratio > highestRatio then
+            highestRatio = compareData.Ratio
 
-                -- Include flat EP for AH Scanning UI
+            -- Include flat EP for AH Scanning UI
+            if compareData.WeightIncrease then -- Item upgrade
                 hightestWeightIncrease = compareData.WeightIncrease
-                -- print(itemLink, scanData.totalWeight, hightestWeightIncrease)
+            else -- Empty slot upgrade
+                hightestWeightIncrease = scanData.totalWeight
             end
+            -- print(itemLink, scanData.totalWeight, hightestWeightIncrease)
         end
     end
 
-    -- If not an empty slot, overwrite ratio
-    if highestRatio > 0 then
-        scanData.ratio = highestRatio
-        scanData.relativeWeightPerCopper = highestRWPC
-        scanData.weightIncrease = hightestWeightIncrease
-    else
-        -- Empty slot upgrade, leave ratio at 10.0, leave relativeWeightPerCopper nil
-        -- TODO account for 900% upgrade miscalculation
-        scanData.weightIncrease = itemData.totalWeight
-    end
-
+    scanData.ratio = highestRatio
+    scanData.relativeWeightPerCopper = highestRWPC
+    scanData.weightIncrease = hightestWeightIncrease
 end
 
 local function analyzeSlotUpgrade(scanData, itemLink, bAS)
     -- Empty slot, so the rest of this won't handle itself
     if not bAS then return end
 
-    if scanData.ratio and scanData.ratio > bAS.relative.ratio then
-        bAS.relative.ratio = scanData.ratio
-        bAS.relative.itemLink = itemLink
-        bAS.relative.itemID = scanData.itemID
-        bAS.relative.itemIcon = scanData.itemIcon
-        bAS.relative.name = scanData.name
-        bAS.relative.level = scanData.level
-        bAS.relative.weightIncrease = scanData.weightIncrease
+    if scanData.ratio and scanData.ratio > bAS.best.ratio then
+        bAS.best.ratio = scanData.ratio
+        bAS.best.itemLink = itemLink
+        bAS.best.itemID = scanData.itemID
+        bAS.best.itemIcon = scanData.itemIcon
+        bAS.best.name = scanData.name
+        bAS.best.level = scanData.level
+        bAS.best.weightIncrease = scanData.weightIncrease
 
-        bAS.relative.lowestPrice = ahSession.scanData[itemLink].lowestPrice
+        bAS.best.lowestPrice = ahSession.scanData[itemLink].lowestPrice
     end
 
     -- Done processing, is empty slot
@@ -1463,9 +1460,6 @@ local function analyzeSlotUpgrade(scanData, itemLink, bAS)
 end
 
 function addon.itemUpgrades.AH:Analyze()
-    -- TODO handle retry loop better
-    ahSession.retryQuery = {}
-
     ahSession.bestAnalysis = {}
 
     -- We already know all of this is usable, so just care about slots
@@ -1474,14 +1468,14 @@ function addon.itemUpgrades.AH:Analyze()
             for j, _ in pairs(slotId) do
                 ahSession.bestAnalysis[j] = {
                     slotName = _G[invEquipType],
-                    relative = {ratio = 0, lowestPrice = 0, itemLink = nil}, -- Biggest upgrade ratio
+                    best = {ratio = 0, lowestPrice = 0, itemLink = nil}, -- Biggest upgrade ratio
                     budget = {rwpc = 0, lowestPrice = 0, itemLink = nil} -- Biggest upgrade ratio / copper
                 }
             end
         else
             ahSession.bestAnalysis[slotId] = {
                 slotName = _G[invEquipType],
-                relative = {ratio = 0, lowestPrice = 0, itemLink = nil}, -- Biggest upgrade ratio
+                best = {ratio = 0, lowestPrice = 0, itemLink = nil}, -- Biggest upgrade ratio
                 budget = {rwpc = 0, lowestPrice = 0, itemLink = nil} -- Biggest upgrade ratio / copper
             }
         end
@@ -1503,20 +1497,10 @@ function addon.itemUpgrades.AH:Analyze()
 
         for _, id in ipairs(comparisons) do
             bAS = ahSession.bestAnalysis[id]
-
-            -- Only run upgrade calculations if deeper code was not nil and ratio > 0
-            if scanData.relativeWeightPerCopper and
-                scanData.relativeWeightPerCopper > 0 then
-                analyzeSlotUpgrade(scanData, itemLink, bAS)
-            elseif scanData.weightIncrease then
-                print("Empty slot upgrade", itemLink, "weightPerCopper",
-                      scanData.weightPerCopper, "relativeWPC",
-                      scanData.relativeWeightPerCopper)
-                analyzeSlotUpgrade(scanData, itemLink, bAS)
-            else
-                -- print("Analyze", itemLink, "weightPerCopper", scanData.weightPerCopper, "relativeWPC", scanData.relativeWeightPerCopper)
-            end
-
+            print("Analyze", itemLink, "weightPerCopper",
+                  scanData.weightPerCopper, "relativeWPC",
+                  scanData.relativeWeightPerCopper, "ratio", scanData.ratio)
+            analyzeSlotUpgrade(scanData, itemLink, bAS)
         end
     end
 end
@@ -1571,6 +1555,14 @@ local function getColorizedName(itemLink, itemName)
 end
 
 local function prettyPrintUpgradeColumn(data)
+    print("data.ratio", data.ratio, "prettyPrintRatio(data.ratio)",
+          prettyPrintRatio(data.ratio), "addon.Round(data.weightIncrease, 2))",
+          addon.Round(data.weightIncrease, 2))
+
+    if data.ratio < 0 then
+        return fmt("%s / %s EP", _G.EMPTY, addon.Round(data.weightIncrease, 2))
+    end
+
     return fmt("%s / %s EP", prettyPrintRatio(data.ratio),
                addon.Round(data.weightIncrease, 2))
 end
@@ -1683,7 +1675,7 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
     local scrollBox = CreateFrame("Frame", 'RXP_IU_AH_ScrollFrame',
                                   ahSession.displayFrame, "WowScrollBoxList")
 
-    scrollBox:SetPoint("TOPLEFT", -12, -78)
+    scrollBox:SetPoint("TOPLEFT", 20, -78)
     scrollBox:SetPoint("BOTTOMRIGHT", 0, 37)
 
     local ScrollBar = CreateFrame("EventFrame", nil, ahSession.displayFrame,
@@ -1785,31 +1777,30 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
     local blockData
 
     for slotId, data in pairs(ahSession.bestAnalysis) do
-        if data.budget.itemLink or data.relative.itemLink then
+        if data.budget.itemLink or data.best.itemLink then
             -- print("DisplayEmbeddedResults:", data.slotName, "processing upgrades")
             blockData = {['Name'] = data.slotName}
 
             -- Best upgrade
-            if data.relative.itemLink then
-                -- print("  - DisplayEmbeddedResults relative", data.relative.itemLink)
+            if data.best.itemLink then
+                -- print("  - DisplayEmbeddedResults best", data.best.itemLink)
                 blockData.best = {
-                    ItemLink = data.relative.itemLink,
-                    ItemID = data.relative.itemID,
+                    ItemLink = data.best.itemLink,
+                    ItemID = data.best.itemID,
                     ItemKindIcon = "Interface/AddOns/" .. addonName ..
                         "/Textures/rxp_logo-64",
-                    Name = getColorizedName(data.relative.itemLink,
-                                            data.relative.name),
-                    ItemLevel = data.relative.level,
-                    UpdateEPText = prettyPrintUpgradeColumn(data.relative),
-                    BuyoutMoney = data.relative.lowestPrice,
-                    ItemIcon = data.relative.itemIcon
+                    Name = getColorizedName(data.best.itemLink, data.best.name),
+                    ItemLevel = data.best.level,
+                    UpdateEPText = prettyPrintUpgradeColumn(data.best),
+                    BuyoutMoney = data.best.lowestPrice,
+                    ItemIcon = data.best.itemIcon
                 }
             end
 
             if data.budget.itemLink then
                 -- print("  - DisplayEmbeddedResults budget", data.budget.itemLink)
-                if data.relative.itemLink and data.budget.itemLink and
-                    data.relative.itemLink ~= data.budget.itemLink then
+                if data.best.itemLink and data.budget.itemLink and
+                    data.best.itemLink ~= data.budget.itemLink then
                     blockData.budget = {
                         ItemLink = data.budget.itemLink,
                         ItemID = data.budget.itemID,
@@ -1837,4 +1828,3 @@ end
 
 -- Update icons to Brandung mockup
 -- Add owner to scanData for additional buyout validation
--- Support rings
