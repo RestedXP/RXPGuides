@@ -584,6 +584,7 @@ step
     .goto 179,36.47,61.39
     >>|cRXP_WARN_Wait out the RP|r
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Genn Greymane|r
+    .accept 14375 >>Accept Last Chance at Humanity
     .turnin 14375 >>Turn in Last Chance at Humanity
     .timer 7,Last Chance at Humanity RP
 	.target King Genn Greymane
@@ -613,8 +614,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jack "All Trades" Derrington|r
     >>|cRXP_WARN_Herbing Herbs and Mining Veins provides XP. Only gather resources in your direct path|r
     >>|cRXP_WARN_If you don't want to do this, skip this step|r
-    .train 2366 >> Train |T4620675:0|t[Herbalism]
-    .train 2575 >> Train |T4620679:0|t[Mining]
+    .train 2366 >> Train |T136065:0|t[Herbalism]
+    .train 2575 >> Train |T136248:0|t[Mining]
     .target Jack "All Trades" Derrington
     .skipgossip 50247,1,1,1
     .train 2366,1 --Herbalism
@@ -628,7 +629,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jack "All Trades" Derrington|r
     >>|cRXP_WARN_Herbing Herbs provides XP. Only gather resources in your direct path|r
     >>|cRXP_WARN_If you don't want to do this, skip this step|r
-    .train 2366 >> Train |T4620675:0|t[Herbalism]
+    .train 2366 >> Train |T136065:0|t[Herbalism]
     .target Jack "All Trades" Derrington
     .skipgossip 50247,2,2,2
     .train 2575,3 --Mining
@@ -640,11 +641,28 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jack "All Trades" Derrington|r
     >>|cRXP_WARN_Mining Veins provides XP. Only gather resources in your direct path|r
     >>|cRXP_WARN_If you don't want to do this, skip this step|r
-    .train 2575 >> Train |T4620679:0|t[Mining]
+    .train 2575 >> Train |T136248:0|t[Mining]
     .target Jack "All Trades" Derrington
     .skipgossip 50247,2,3,2
     .train 2366,3 --Herbalism
 step
+    #completewith INOG
+    #optional
+    .cast 2383 >> |cRXP_WARN_Cast|r [Find Herbs]
+    .cast 2580 >> |cRXP_WARN_Cast|r [Find Minerals]
+    .train 2575,3 --Mining
+    .train 2366,3 --Herbalism
+    .subzoneskip 4786,1
+step
+    #optional
+    .goto 179,36.228,64.861
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Samantha Buckley|r
+    .collect 2901,1 >>|cRXP_BUY_Buy a|r |T134708:0|t[Mining Pick] |cRXP_BUY_from her|r
+    .target Samantha Buckley
+    .train 2575,3 --Mining
+    .subzoneskip 4786,1
+step
+    #label INOG
     .goto 179,32.77,66.39
     >>Click the |cRXP_PICK_Crate of Mandrake Essence|r on the ground
 	>>|cRXP_WARN_Press "Escape" on your keyboard to skip the cinematic|r
@@ -907,14 +925,13 @@ step
     .goto 179,28.97,63.93
 	.target +Lord Godfrey
 step
+    .isOnQuest 14386
     #optional
-    #label Cellar6
     #completewith next
     .goto 179,28.32,63.88,6,0
     .goto 179,28.41,64.23,5 >>Exit the Cellar
 step
-    #optional
-    #requires Cellar6
+    .isOnQuest 14386
     #completewith Thyala
     .cast 68682 >>Use the |T132161:0|t[Mastiff Whistle] to summon |cRXP_FRIENDLY_Attack Mastiffs|r to attack |cRXP_ENEMY_Dark Ranger Thyala|r
 step
@@ -1240,9 +1257,9 @@ step
     #completewith next
     .goto 179,30.27,52.03,15,0
     .goto 179,29.54,51.55,15,0
-    .goto 181,70.44,61.92,10 >>Enter Graymane Manor
+    .goto 179,28.67,51.02,10 >>Enter Graymane Manor
 step
-    .goto 181,62.10,49.64
+    .goto 179,28.132,50.021
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Queen Mia Greymane|r inside
     .turnin 14465 >>Turn in To Greymane Manor
     .accept 14466 >>Accept The King's Observatory
@@ -1251,24 +1268,18 @@ step
     #optional
     #label Manor1
     #completewith AlasGilneas
-    .goto 181,60.45,38.72,12,0
-    .goto 182,61.52,38.13,6 >>Go upstairs toward the balcony
+    .goto 179,27.89,48.10,15,0
+    .goto 179,27.11,48.12,15 >>Go upstairs toward the balcony
 step
     #optional
     #label Manor2
     #requires Manor1
     #completewith AlasGilneas
-    .goto 182,50.53,33.85,10,0
-    .goto 182,40.44,15.56,10,0
-    .goto 182,43.87,15.56,6 >>Ascend toward the top of the Manor's tower
+    .goto 179,26.16,46.41,10,0
+    .goto 179,26.74,46.34,10 >>Ascend toward the top of the Manor's tower
 step
     #label AlasGilneas
-    .goto 182,46.40,21.17,8,0
-    .goto 182,42.76,27.22,8,0
-    .goto 182,39.16,20.96,8,0
-    .goto 182,43.26,16.63,8,0
-    .goto 182,45.33,22.62,8,0
-    .goto 182,41.91,20.10
+    .goto 179,26.44,46.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Genn Greymane|r atop the Tower
 	>>|cRXP_WARN_Press "Escape" on your keyboard to skip the cinematic|r
     .turnin 14466 >>Turn in The King's Observatory
@@ -1278,15 +1289,17 @@ step
 step
     #optional
     #completewith next
-    .goto 181,68.57,64.01,10,0
-    .goto 179,65.65,82.88,10,0
-    .goto 179,28.90,54.22,15 >>Descend the tower, then exit Graymane Manor. Jump down toward the |cRXP_FRIENDLY_Stagecoach Carriage|r
+    .goto 179,29.12,51.80,20,0
+    .goto 179,29.86,52.22,15 >>Descend the tower, then exit Graymane Manor. Jump down toward the |cRXP_FRIENDLY_Stagecoach Carriage|r
 step
     .goto 179,28.90,54.22
-    >>Enter the |cRXP_FRIENDLY_Stagecoach Carriage|r
-    .complete 24438,1 --Carriage boarded (1)
-	.timer 80,Exodus RP
+    .isOnQuest 24438
+    .vehicle >>Enter the |cRXP_FRIENDLY_Stagecoach Carriage|r
+    .timer 80,Stagecoach Carriage Ride RP
     .target Stagecoach Carriage
+step
+    .isOnQuest 24438
+    .goto 179,51.81,80.49,10 >> |cRXP_WARN_Wait out the RP|r
 step
     .goto 179,51.81,80.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prince Liam Greymane|r
@@ -1464,10 +1477,10 @@ step
 	.target +Lorna Crowley
 step
     .goto 179,63.35,82.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belyrsa Starbreeze|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belysra Starbreeze|r
     .turnin 24578 >>Turn in The Blackwald
     .accept 24616 >>Accept Losing Your Tail
-	.target Belyrsa Starbreeze
+	.target Belysra Starbreeze
 step
     #optional
     #sticky
@@ -1494,10 +1507,10 @@ step
     .use 49944
 step
     .goto 179,63.35,82.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belyrsa Starbreeze|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belysra Starbreeze|r
     .turnin 24616 >>Turn in Losing Your Tail
     .accept 24617 >>Accept Tal'doren, the Wild Home
-	.target Belyrsa Starbreeze
+	.target Belysra Starbreeze
 step
     .goto 179,68.72,73.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Darius Crowley|r
@@ -1771,19 +1784,11 @@ step
     #sticky
     #label Enslaved
     #loop
-    .goto 180,64.14,74.25,0
-    .goto 180,47.14,34.18,0
     .goto 179,75.71,31.17,0
-    .waypoint 180,64.14,74.25,15,0
-    .waypoint 180,64.24,67.89,15,0
-    .waypoint 180,55.31,36.68,15,0
-    .waypoint 180,50.40,27.86,15,0
-    .waypoint 180,47.14,34.18,15,0
-    .waypoint 180,41.60,26.07,15,0
-    .waypoint 180,35.36,40.89,15,0
-    .waypoint 180,27.38,59.96,15,0
-    .waypoint 180,27.12,66.71,15,0
-    .waypoint 179,75.71,31.17,15,0
+    .waypoint 179,82.16,30.73,20,0
+    .waypoint 179,81.95,26.18,20,0
+    .waypoint 179,78.75,25.15,20,0
+    .waypoint 179,79.37,27.64,20,0
     >>Kill |cRXP_ENEMY_Forsaken Slavedrivers|r. Loot them for |T134247:0|t|cRXP_LOOT_[Slaver's Keys]|r
     >>Use the |T134247:0|t|cRXP_LOOT_[Slaver's Keys]|r on the |cRXP_PICK_Ball and Chain|r of the |cRXP_FRIENDLY_Enslaved Villagers|r inside and around Emberstone Mine to free them
     .collect 49881,5,24575,1,-1 --Slaver's Key (5)
@@ -1801,16 +1806,12 @@ step
     #optional
     #requires Emberstone1 
     #completewith Brothogg
-    .goto 180,29.52,60.93,15,0
-    .goto 180,34.05,48.96,15,0
-    .goto 180,34.48,33.25,15,0
-    .goto 180,56.95,38.04,15,0
-    .goto 180,58.17,42.57,15,0
-    .goto 180,54.26,81.11,10 >>Travel toward |cRXP_ENEMY_Brothogg the Slavemaster|r inside
+    .goto 179,78.13,24.95,15,0
+    .goto 179,79.39,26.51,15 >>Travel toward |cRXP_ENEMY_Brothogg the Slavemaster|r inside
     .isOnQuest 24674
 step
     #label Brothogg
-    .goto 180,54.26,81.11
+    .goto 179,80.32,32.11
     >>Kill |cRXP_ENEMY_Brothogg the Slavemaster|r inside
     .complete 24674,1 --Brothogg the Slavemaster slain (1)
 	.mob Brothogg the Slavemaster
@@ -1883,61 +1884,26 @@ step
     .accept 24904 >>Accept The Battle for Gilneas City
 	.target Lorna Crowley
 step
-    #optional
-    #label GoreTravel1
-    #completewith Gorerot
-    .goto 179,67.43,44.08,30,0
-    .goto 202,70.99,40.78,30,0
-    .goto 202,70.53,49.79,30,0
-    .goto 202,69.29,63.84,30,0
-    .goto 202,67.38,65.22,30,0
-    >>|cRXP_WARN_Ignore |cRXP_FRIENDLY_Price Liam Greymane|r's RP
-    >>If you accidentally aggro any mobs or need to clear a path, enter a nearby |cRXP_FRIENDLY_Emberstone Cannon|r 
-    >>Whilst in an |cRXP_FRIENDLY_Emberstone Cannon|r:
-    >>Cast |T252185:0|t[Emberstone Cannon] (1) (Ranged instant: Deals a LOT of damage)
-    >>|cRXP_WARN_Use the|r |T135340:0|t[Rapier of the Gilnean Patriots] |cRXP_WARN_on your |cRXP_FRIENDLY_Gilnean Militia|r guardians to increase their haste and health regeneration|r
-    .goto 202,61.86,70.83,30 >>Travel toward |cRXP_ENEMY_Gorerot|r
+    .isOnQuest 24904
+    .goto 179,70.049,40.897
+    .gossip 38553,0 >>Talk to |cRXP_FRIENDLY_Krennan Aranas|r to begin the Battle for Gilneas City. You may be also teleported into Gilneas if a battle is already in progress
+    >>|cRXP_WARN_You won't have an arrow to follow during this as you may be teleported to a random location of Gilneas. Follow |cRXP_FRIENDLY_Prince Liam Greymane|r and |cRXP_FRIENDLY_Lord Darius Crowley|r closely|r
+    .skipgossip 38553,1
+    .target Krennan Aranas
+step
+    .isOnQuest 24904
+    >>|cRXP_WARN_Follow |cRXP_FRIENDLY_Prince Liam Greymane|r and |cRXP_FRIENDLY_Lord Darius Crowley|r through Gilneas|r
+    .use 50334 >>|cRXP_WARN_Use the|r |T135340:0|t[Rapier of the Gilnean Patriots] |cRXP_WARN_on your |cRXP_FRIENDLY_Gilnean Militia|r guardians to increase their haste and health regeneration|r
+    >>|cRXP_WARN_Enter an |cRXP_FRIENDLY_Emberstone Cannon|r and a |cRXP_FRIENDLY_Damaged Catapult|r to defeat |cRXP_ENEMY_Vile Abominations|r and|r |cRXP_ENEMY_Gorerot|r
+    >>|cRXP_WARN_Defeat |cRXP_ENEMY_Lady Sylvanas Windrunner|r by getting her to 40% health|r
+    .complete 24904,1 --Battle for Gilneas City Complete (1)
+    .timer 17,The Battle for Gilneas City RP
+    .target Prince Liam Greymane
+    .target Lord Darius Crowley
     .target Emberstone Cannon
-    .use 50334
-step
-    #optional
-    #requires GoreTravel1
-    #completewith Gorerot
-    #loop
-    .goto 202,59.74,63.47,15,0
-    .goto 202,55.39,68.35,15,0
-    .goto 202,60.09,77.28,15,0
-    .goto 202,63.20,80.72,15,0
--- .goto 202,68.34,82.00,15,0
-    +Enter nearby |cRXP_FRIENDLY_Damaged Catapults|r
-    >>Whilst in a |cRXP_FRIENDLY_Damaged Catapult|r:
-    >>Cast|r |T132386:0|t[Fiery Boulder] (1) (Ranged instant: Applies the|r |T132386:0|t[Fiery Boulder] debuff, dealing fire damage over 30 seconds, doesn't stack). Refresh the debuff every 30 seconds to deal a LOT of damage
     .target Damaged Catapult
-    .use 50334
-step
-    #label Gorerot
-    .goto 202,57.73,66.59
-    >>Kill |cRXP_ENEMY_Gorerot|r
-    >>|cRXP_WARN_Don't worry about being attacked by him as you have the|r |T236310:0|t[Soldier of the Battle for Gilneas City] |cRXP_WARN_buff (Passive Aura: Greatly increases haste, health regeneration, and resource regeneration)|r
-    >>|cRXP_WARN_Use the|r |T135340:0|t[Rapier of the Gilnean Patriots] |cRXP_WARN_on your |cRXP_FRIENDLY_Gilnean Militia|r guardians to increase their haste and health regeneration|r
-    .complete 24904,1 --Gorerot slain (1)
-	.mob Gorerot
-step
-    #optional
-    #completewith next
-    .goto 202,57.73,77.33,30,0
-    .goto 202,48.15,75.63,20,0
-    .goto 202,48.26,72.93,20,0
-    .goto 202,50.12,70.54,20,0
-    .goto 202,41.51,62.98,20,0
-    .goto 202,36.17,62.68,50 >>Travel toward |cRXP_ENEMY_Lady Sylvanas Windrunner|r
-step
-    .goto 202,36.17,62.68
-    >>Kill the |cRXP_ENEMY_Soultethered Banshees|r
-    >>Defeat |cRXP_ENEMY_Lady Sylvanas Windrunner|r by getting her to <30% health
-    .complete 24904,2 --Battle for Gilneas City Complete (1)
-    .timer 15,The Battle for Gilneas City RP
-    .mob Soultethered Banshees
+    .mob Vile Abomination
+    .mob Gorerot
     .mob Lady Sylvanas Windrunner
 step
     #optional
@@ -1949,7 +1915,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t Talk to |cRXP_FRIENDLY_Lorna Crowley|r inside
     .turnin 24904 >>Turn in The Battle for Gilneas City
     .accept 24902 >>Accept The Hunt For Sylvanas
-    .timer 193.5,The Hunt For Sylvanas RP
+    .timer 170,The Hunt For Sylvanas RP
 	.target Lorna Crowley
 step
     .goto 202,36.17,62.68,0
@@ -1966,7 +1932,7 @@ step
     .complete 24902,1 --Hunt for Sylvanas (1)
 	.target Tobias Mistmantle
 	.target Lorna Crowley
-    .isOnQuest 24092
+    .isOnQuest 24902
 step
     #optional
     #completewith next

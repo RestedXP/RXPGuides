@@ -2146,6 +2146,16 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azuregos|r
     .accept 14392 >>Accept Farewell, Minnow
     .target Azuregos
+step << Druid
+    #completewith DruidTraining1
+    .cast 18960 >>Cast |T135758:0|t[Teleport: Moonglade]
+    .zoneskip Moonglade
+step << Druid
+    #label DruidTraining1
+    .goto 1450/1,-2593.69995,7867.39990
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loganaar|r
+    .trainer >> Train your class spells
+    .target Loganaar
 step
     #completewith next
     .hs >>Hearth to Bilgewater Harbor
@@ -2377,21 +2387,109 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chawg|r
     .turnin 24439 >>Turn in The Conquest of Azshara
     .target Chawg
-
-    --VV Skip next 4 steps if user still needs to get mount. Fly to Mor'Shan Ramparts from ORG instead
-    --Can't do this currently, no auto FP pickups on beta
-
 step
     .goto 76,14.345,65.025
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kroum|r
     .accept 24463 >>Accept Probing into Ashenvale
     .target Kroum
 step
-    .goto 63,94.410,46.819
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kulg Gorespatter|r
-    .turnin 24463 >>Turn in Probing into Ashenvale
-    .accept 13866 >>Accept To The Ramparts!
-    .target Kulg Gorespatter
+    #completewith next
+    .goto 76,14.346,65.018
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kroum|r
+    .fly Orgrimmar >> Fly to Orgrimmar
+    .target Kroum
+step
+    .goto 1454/1,-4356.80029,1799.59998
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maztha|r
+    .train 33388 >>Train Apprentice Riding
+    .target Maztha
+    .xp <20,1
+    .train 33391,1 --Journeyman Riding
+    .train 34090,1 --Expert Riding
+    .train 34091,1 --Artisan Riding
+    .train 90265,1 --Master Riding
+step << Orc
+    .goto 1454/1,-4569.50000,2095.10010
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ogunaro Wolfrunner|r
+	.vendor >>|cRXP_BUY_Buy a|r |T132224:0|t[Wolf] |cRXP_BUY_from him if you do not have a mount in your collection yet|r
+	.target Ogunaro Wolfrunner
+	.mountcount 75-150,<1
+    .xp <20,1
+step << Goblin
+    .goto 1454/1,-4132.89990,1483.09998
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kall Worthaton|r
+	.vendor >>|cRXP_BUY_Buy a|r |T134237:0|t[Trike] |cRXP_BUY_from him if you do not have a mount in your collection yet|r
+	.target Kall Worthaton
+	.mountcount 75-150,<1
+    .xp <20,1
+step << !Orc !Goblin
+    .goto 1454/1,-4439.39990,1573.30005
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryshka|r
+    .home >>Set your hearthstone to Orgrimmar
+    .target Gryshka
+	.mountcount 75-150,<1
+step << Troll
+    #completewith next
+    .goto 1454/1,-4370.00000,1799.90002
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doras|r
+    .fly Sen'Jin Village >>Fly to Sen'Jin Village
+    .target Doras
+    .subzoneskip 367
+step << Troll
+    .goto 1411/1,-4882.50000,-857.90002
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zjolnir|r
+	.vendor >>|cRXP_BUY_Buy a|r |T132253:0|t[Raptor] |cRXP_BUY_from him if you do not have a mount in your collection yet|r
+	.target Zjolnir
+	.mountcount 75-150,<1
+    .xp <20,1
+step << Undead/BloodElf
+    .goto 1454/1,-4390.80029,1840.09998
+    #completewith next << Undead
+    #completewith SilvermoonPort << BloodElf
+    .zone Tirisfal Glades >>Take the zeppelin to Tirisfal Glades
+    .zoneskip Undercity
+step << Undead
+    .goto 1420/0,235.70000,2277.60010
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zachariah Post|r
+	.vendor >>|cRXP_BUY_Buy a|r |T132264:0|t[Skeletal Horse] |cRXP_BUY_from him if you do not have a mount in your collection yet|r
+	.target Zachariah Post
+	.mountcount 75-150,<1
+    .xp <20,1
+step << BloodElf
+    #completewith SilvermoonPort
+    .goto 18,66.21,1.16,20,0
+    .zone Undercity >>Travel to Undercity
+step << BloodElf
+    #label SilvermoonPort
+    .goto 1420/0,269.10001,1804.59998,15,0
+    .goto 1420/0,346.60001,1806.00000
+    .zone Silvermoon City >>Click the |cRXP_PICK_Orb of Translocation|r to Silvermoon City
+    .mountcount 75,<1
+step << BloodElf
+    #completewith next
+    .goto 110,72.396,85.242,12,0
+    .goto 1941/0,-4877.20020,7012.10059,15,0
+    .zone Eversong Woods >>Exit Silvermoon City
+step << BloodElf
+    .goto 1941/0,-5096.30029,6844.10059
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Winaestra|r
+	.vendor >>|cRXP_BUY_Buy a|r |T132227:0|t[Hawkstrider] |cRXP_BUY_from her if you do not have a mount in your collection yet|r
+	.target Winaestra
+	.mountcount 75-150,<1
+    .xp <20,1
+step << !Orc !Goblin
+    #completewith next
+    .hs >>Hearth to Orgrimmar
+    .use 6948
+    .zoneskip Azshara
+    .zoneskip Orgrimmar
+    .zoneskip Ashenvale
+step
+    .goto 1454/1,-4370.00000,1799.90002
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doras|r
+    .fly Valormok >>Fly to Valormok
+    .target Doras
+    .zoneskip Azshara
 step
     .goto 63,94.410,46.819
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kulg Gorespatter|r
@@ -2404,8 +2502,4 @@ step
     .gossipoption 111683 >>Fly to The Mor'Shan Ramparts
     .target Kulg Gorespatter
     .isOnQuest 13866
-
-
-    --TODO: Add mount step sequences after North Azshara and at end of zone
-
     ]])

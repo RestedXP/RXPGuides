@@ -237,10 +237,12 @@ step
 step
     .goto 10,42.71,14.95
     .gossipoption 111669 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kadrak|r to have him fly you to Splintertree Post
+    >>|cRXP_WARN_This quest may be bugged! Skip this step if this is the case|r
     .target Kadrak
 step
     .goto 63,73.59,62.19
     >>Arrive in Splintertree Post
+    >>|cRXP_WARN_This quest may be bugged! Skip this step if this is the case|r
     .complete 13712,1 --1/1 Splintertree Post Siege Broken
 step
     .goto 63,73.61,62.13
@@ -248,6 +250,18 @@ step
     .turnin 13712 >>Turn in To the Rescue!
     .accept 13803 >>Accept Blood of the Weak
     .target Kadrak
+    .isQuestComplete 13712
+step
+    #optional
+    .goto 63,73.61,62.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kadrak|r
+    .accept 13803 >>Accept Blood of the Weak
+    .target Kadrak
+    .isQuestTurnedIn 13712
+step
+    #completewith next
+    .subzone 431 >>Travel to Splintertree Post
+    .isQuestAvailable 13712
 step
     .goto 63,73.19,61.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vhulgra|r
@@ -258,32 +272,38 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kuray'bin|r
     .accept 6503 >>Accept Ashenvale Outrunners
     .target Kuray'bin
+    .isQuestTurnedIn 13712
 step
     .goto 63,74.00,60.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kaylisk|r
     .home >>Set your Hearthstone to Splintertree Post
     .target Innkeeper Kaylisk
+    .isQuestTurnedIn 13712
 step
     .goto 63,73.19,60.05
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valusha|r
     .accept 26448 >>Accept Destroy the Legion
     .target Valusha
+    .isQuestTurnedIn 13712
 step
     .goto 63,72.20,57.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Durak|r inside the cave
     .turnin 13803 >>Turn in Blood of the Weak
     .accept 13805 >>Accept Pierce Their Heart!
     .target Durak
+    .isQuestTurnedIn 13712
 step
     .goto 63,73.83,62.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pixel|r
     .accept 13801 >>Accept Dead Elves Walking
     .target Pixel
+    .isQuestTurnedIn 13712
 step
     .goto 63,73.34,62.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Splintertree Demolisher|r
     .accept 13730 >>Accept Playing With Felfire
     .target Splintertree Demolisher
+    .isQuestTurnedIn 13712
 step
     #completewith FelFires
     >>Kill |cRXP_ENEMY_Demons|r in Felfire Hill
@@ -296,6 +316,7 @@ step
     >>One of the |cRXP_ENEMY_Demons|r may drop the |T134943:0|t[|cRXP_LOOT_Diabolical Plans|r]. Use it to start the quest
     .collect 23798,1,26447 --Diabolical Plans (1)
     .accept 26447 >>Accept Diabolical Plans
+    .isQuestTurnedIn 13712
 step
     #label FelFires
     #loop
@@ -311,6 +332,7 @@ step
     .waypoint 63,81.829,69.984,30,0
     .use 45478 >>Use the |T237030:0|t[Reinforced Canister] on the green fires
     .complete 13730,1 --7/7 Fel Fires Siphoned
+    .isQuestTurnedIn 13712
 step
     #label KillDemons
     .goto 63,81.928,66.385,0
@@ -328,6 +350,7 @@ step
     .mob Mannaroc Lasher
     .mob Roaming Felguard
     .mob Searing Infernal
+    .isQuestTurnedIn 13712
 step
     #completewith DorDanilDen
     >>Kill |cRXP_ENEMY_Sharptalon|r. Loot him for |T136063:0|t[|cRXP_LOOT_Sharptalon's Claw|r] and use it to start the quest
@@ -344,6 +367,7 @@ step
 step
     #label DorDanilDen
     .goto 63,75.66,75.32,20 >>Enter the The Dor'Danil Barrow Den
+    .isQuestTurnedIn 13712
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Night Elf Ghosts|r
@@ -354,6 +378,7 @@ step
     .goto 63,75.52,74.20
     .use 45683 >> Use the |T134840:0|t[Tainted Blood of the Kaldorei] at the centre of the cave
     .complete 13805,1 --1/1 Forest Heart Corrupted
+    .isQuestTurnedIn 13712
 step
     #loop
     .goto 63,76.929,74.847,0
@@ -369,6 +394,7 @@ step
     .complete 13801,1 --15/15 Night Elf Ghosts Slain
     .mob Severed Druid
     .mob Severed Keeper
+    .isQuestTurnedIn 13712
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Sharptalon|r. Loot him for |T136063:0|t[|cRXP_LOOT_Sharptalon's Claw|r] and use it to start the quest
@@ -393,6 +419,7 @@ step
     >>|cRXP_WARN_They are stealthed near the trees|r
     .complete 6503,1 --9/9 Ashenvale Outrunners Killed
     .unitscan Ashenvale Outrunner
+    .isQuestTurnedIn 13712
 step
     #loop
     .goto 1440/1,-2557.50000,1751.50000,0
@@ -408,6 +435,7 @@ step
     .accept 2 >> Accept Sharptalon's Claw
     .unitscan Sharptalon
     .use 16305
+    .isQuestTurnedIn 13712
 step << skip
     #completewith next
     .hs >> Hearth to Splintertree Post
@@ -419,6 +447,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pixel|r
     .turnin 13801 >>Turn in Dead Elves Walking
     .target Pixel
+    .isQuestTurnedIn 13712
 step
     .goto 63,73.61,62.12
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kadrak|r
@@ -426,17 +455,20 @@ step
     --.accept 13808 >>Accept Mission Improbable
     .accept 13848 >>Accept Bad News Bear-er
     .target Kadrak
+    .isQuestTurnedIn 13712
 step
     .goto 63,73.32,62.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Splintertree Demolisher|r
     .turnin 13730 >>Turn in Playing With Felfire
     --.accept 13751 >>Accept Tell No One! -- Optional skip
     .target Splintertree Demolisher
+    .isQuestTurnedIn 13712
 step
     .goto 63,73.56,60.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kuray'bin|r
     .turnin 6503 >>Turn in Ashenvale Outrunners
     .target Kuray'bin
+    .isQuestTurnedIn 13712
 step
     .goto 63,73.16,60.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valusha|r
@@ -450,6 +482,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valusha|r
     .turnin 26448 >>Turn in Destroy the Legion
     .target Valusha
+    .isQuestTurnedIn 13712
 --step
     --.goto 63,73.16,60.10
     -->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valusha|r
@@ -666,6 +699,11 @@ step
     .gossipoption 37541,2 >> Fly to Zoram Strand
     .target Vhulgra
     .subzoneskip 414
+    .isQuestTurnedIn 13712
+step
+    #completewith next
+    .subzone 2897 >>Travel to Zoram'gar Outpost 
+    .isQuestAvailable 13712
 step
     .goto 63,11.16,34.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andruk|r
@@ -1172,9 +1210,17 @@ step
     .accept 6621 >>Accept King of the Foulweald
     .target Senani Thunderheart
 step
+    #optional
     .goto 63,49.74,65.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senani Thunderheart|r
     .turnin 2 >>Turn in Sharptalon's Claw
+    .turnin 13967 >>Turn in Thinning the... Herd?
+    .accept 6621 >>Accept King of the Foulweald
+    .target Senani Thunderheart
+    .isOnQuest 2
+step
+    .goto 63,49.74,65.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senani Thunderheart|r
     .turnin 13967 >>Turn in Thinning the... Herd?
     .accept 6621 >>Accept King of the Foulweald
     .target Senani Thunderheart
@@ -1367,7 +1413,7 @@ step
     .fly Orgrimmar >>Fly to Orgrimmar
     .target Vhulgra
     .zoneskip Orgrimmar
-step << Rogue/Warlock/Mage
+step << Rogue/Warlock
     #completewith next
     .goto 1454,45.81,66.88,40 >> Travel toward the Cleft of Shadow
 step << Shaman/Druid/Paladin/Warrior/Hunter/Priest
@@ -1394,10 +1440,24 @@ step << Druid
     .trainer >> Train your class spells
     .target Shalla Whiteleaf
 step << Mage
-    .goto 1454,48.45,62.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marud|r
+    .goto 1454/1,-4125.10010,1690.59998
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uthel'nay|r
     .trainer >> Train your class spells
-    .target Marud
+    .target Uthel'nay
+step << Mage
+    .goto 1454/1,-4128.89990,1692.09998
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zirazi the Star-Gazer|r
+    .train 3567 >>Train |T135759:0|t[Teleport: Orgrimmar]
+    .train 3563 >>Train |T135766:0|t[Teleport: Undercity]
+    .train 3566 >>Train |T135765:0|t[Teleport: Thunder Bluff]
+    .train 32272 >>Train |T135761:0|t[Teleport: Silvermoon]
+    .target Zirazi the Star-Gazer
+    .xp <24,1
+step << Mage
+    .goto 1454/1,-4382.50000,1673.30005
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horthus|r
+    .collect 17031,20 >>|cRXP_BUY_Buy a stack of|r |T134419:0|t[Rune of Teleportation] |cRXP_BUY_from him|r
+    .target Horthus
 step << Priest
     .goto 1454/1,-4297.60010,1863.30005
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Liwatha|r
