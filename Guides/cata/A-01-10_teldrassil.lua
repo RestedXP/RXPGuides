@@ -369,13 +369,13 @@ step
 	#completewith next
     .goto 57,56.00,52.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iranis Shadebloom.|r
-    .train 2366 >> Train |T4620675:0|tHerbalism
+    .train 2366 >> Train |T136065:0|t[Herbalism]
 	.skipgossip 47420,1,1,1
 	.target Iranis Shadebloom
 step
     .goto 57,56.00,52.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iranis Shadebloom.|r
-    .train 2575 >> Train |T4620679:0|tMining
+    .train 2575 >> Train |T136248:0|t[Mining]
 	.skipgossip 47420,2,3,2
 	.target Iranis Shadebloom
 step
