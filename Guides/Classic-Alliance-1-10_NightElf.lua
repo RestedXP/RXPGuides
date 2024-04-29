@@ -248,11 +248,29 @@ step << Hunter
     #season 2
     .xp 3
 step << Hunter
+    #season 0
     #completewith htraining
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keina|r
-	.vendor >> |cRXP_BUY_Buy 3 stacks of|r |T132382:0|t[Rough Arrows]
+    >>|cRXP_WARN_Make sure that you have 1 silver leftover after leaving the vendor to be able to afford|r |T132204:0|t[|cRXP_FRIENDLY_Serpent Sting|r]
+	.vendor >> |cRXP_BUY_Buy 2 stacks of|r |T132382:0|t[Rough Arrows]
     .target Keina
+step << Hunter
+    #season 2
+    #completewith htraining
+    .goto Teldrassil,59.306,41.091
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keina|r
+    >>|cRXP_WARN_Make sure that you have 1 silver leftover after leaving the vendor to be able to afford|r |T132204:0|t[|cRXP_FRIENDLY_Serpent Sting|r]. |cRXP_WARN_Don't buy the bow if you won't be able to afford training later|r
+	.vendor >> |cRXP_BUY_Buy a stack of|r |T132382:0|t[Rough Arrows]
+    .vendor >> |cRXP_BUY_Buy a|r |T135499:0|t[Hornwood Recurve Bow]
+    .target Keina
+step << Hunter
+    #season 2
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135499:0|t[Hornwood Recurve Bow]
+    .use 2506
+    .itemcount 2506,1
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.37
 step << !Hunter !Druid
     #season 2
     .goto Teldrassil,59.306,41.091
@@ -321,7 +339,6 @@ step << Hunter
     .complete 916,1 --Collect Webwood Venom Sac (x10)
     .mob Webwood Spider
 step << Hunter
-    #sticky
     #season 2
     #label hunterRuneChimera
     .goto Teldrassil,56.68,26.12
@@ -329,12 +346,6 @@ step << Hunter
     .collect 206168,1,77568,1 -- Rune of the Chimera (1)
     .unitscan Githyiss the Vile
     .engrave 10--skips if it's already engraved
-step << Hunter
-    #season 2
-    #sticky
-    #requires hunterRuneChimera
-    #label hunterEngrave
-    .engrave 10 >> Open your character sheet and engrave your gloves with a rune
 step << Warrior
     #season 2
     #completewith IchorVenomSac
@@ -390,6 +401,24 @@ step
     .complete 3521,3 --Collect Webwood Ichor (x1)
     .complete 916,1 --Collect Webwood Venom Sac (x10)
     .mob Webwood Spider
+step << Hunter
+    #season 2
+	#softcore
+	#completewith next
+    .deathskip >> Die and respawn at the Spirit Healer
+    .target Spirit Healer
+step << Hunter
+    #season 2
+    #requires hunterRuneChimera
+    #label hunterEngrave
+    .engrave 10 >> Open your character sheet and engrave your gloves with a rune
+step << Hunter
+	#hardcore
+    #season 2
+	#completewith next
+	+Logout skip on the ledge behind the eggs. Move your character until it looks like they're floating, then log out, and back in.
+	>>If you fall down, just run out the cave normally to the quest turn in
+	.link https://www.youtube.com/watch?v=TTZZT3jpv1s >> CLICK HERE for reference
 step << Warrior
     #season 2
     .goto Teldrassil,56.8,31.7
@@ -401,10 +430,18 @@ step << Warrior
     .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
     .use 204806
     .itemcount 204806,1
-step
+step << !Hunter
     #season 0,1 << Druid
     #requires hunterRuneChimera << Hunter
     .goto Teldrassil,55.0,43.7
+    >>Kill |cRXP_ENEMY_Grell|r and |cRXP_ENEMY_Grellkin|r. Loot them for their |cRXP_LOOT_Mushrooms|r and |cRXP_LOOT_Fel Moss|r
+    .complete 3521,1 --Collect Hyacinth Mushroom (x7)
+    .complete 459,1 --Collect Fel Moss (x8)
+    .mob Grell
+    .mob Grellkin
+step << Hunter
+    #season 2
+    .goto 1438/1,962.200,10276.300
     >>Kill |cRXP_ENEMY_Grell|r and |cRXP_ENEMY_Grellkin|r. Loot them for their |cRXP_LOOT_Mushrooms|r and |cRXP_LOOT_Fel Moss|r
     .complete 3521,1 --Collect Hyacinth Mushroom (x7)
     .complete 459,1 --Collect Fel Moss (x8)
@@ -414,6 +451,7 @@ step
     .goto Teldrassil,57.8,45.1
     .target Tarindrella
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarindrella|r
+    >>TIP: |cRXP_WARN_Take the leggings as the reward and keep them. You will use them to engrave a rune on later on|r
     .turnin 459 >> Turn in The Woodland Protector
 step
     .goto Teldrassil,60.899,41.961
@@ -422,12 +460,28 @@ step
     .target Dirania Silvershine
     .accept 3522 >> Accept Iverron's Antidote
 step << !Priest
+    #season 0
     #completewith next
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keina|r
 	.vendor >> |cRXP_WARN_Vendor trash|r << !Hunter
 	.vendor >> |cRXP_BUY_Buy 3 or 4 stacks of|r |T132382:0|t[Rough Arrows] << Hunter
     .target Keina
+step << Hunter
+    #season 2
+    #completewith next
+    .goto Teldrassil,59.306,41.091
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keina|r
+	.vendor >> |cRXP_WARN_Vendor trash|r << !Hunter
+	.vendor >> |cRXP_BUY_Buy 3 or 4 stacks of|r |T132382:0|t[Rough Arrows] << Hunter
+    .vendor >> |cRXP_BUY_Buy a|r |T135499:0|t[Hornwood Recurve Bow] |cRXP_BUY_Buy if you haven't already got it|r << Hunter
+    .target Keina
+step << Hunter
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135499:0|t[Hornwood Recurve Bow]
+    .use 2506
+    .itemcount 2506,1
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.37
 step << Warrior
     #season 0
     .goto Teldrassil,59.637,38.442
@@ -461,6 +515,12 @@ step
     .turnin 916 >> Turn in Webwood Venom
     .target Gilshalan Windwalker
     .accept 917 >> Accept Webwood Egg
+step << Hunter
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135641:0|t[Thistlewood Dagger]
+    .use 5392
+    .itemcount 5392,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.05
 step << Druid
     #season 0,1
     .goto Teldrassil,57.80,40.97,25,0
@@ -514,20 +574,9 @@ step
 #xprate >1.99
 	.goto Teldrassil,57.807,41.653
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilshalan Windwalker|r
+    >>TIP: |cRXP_WARN_Take the chestpiece as a reward from this quest and equip it. You will use it to engrave a rune on later|r
     .turnin 917 >> Turn in Webwood Egg
     .target Gilshalan Windwalker
-step << Hunter
-    #requires hunterEngrave
-    #season 2
-    .goto Teldrassil,57.80,40.97,25,0
-    .goto Teldrassil,58.659,40.449
-    >>Ascend the Aldrassil Tree
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ayanna Everstride|r
-    .turnin 3117 >> Turn in Etched Sigil
-    .accept 77568 >> Accept A Hunter's Strength
-    .turnin 77568 >> Turn in A Hunter's Strength
-    .train 1978 >>Train Serpent Sting
-    .target Ayanna Everstride
 step
 #xprate <1.99
     .goto Teldrassil,57.80,40.97,25,0
@@ -602,6 +651,12 @@ step
     .target Zenn Foulhoof
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zenn Foulhoof|r
     .accept 488 >> Accept Zenn's Bidding
+step << Hunter
+    #season 2
+    #completewith FlankingStrike
+    #sticky
+    >>While questing kill |cRXP_ENEMY_Strigid Owls|r or |cRXP_ENEMY_Strigid Screechers|r. Loot them for |T134025:0|t|cRXP_LOOT_Teldrassil Bird Meat|r
+    .collect 208608,1 -- Teldrassil Bird Meat 1/1
 step << Warrior
     #season 2
     #completewith zenn
@@ -683,9 +738,16 @@ step << Hunter
     .money <0.0285
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.38
 step << Hunter
+    #season 0
     .goto Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeena Featherbow|r
     .vendor >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_until your Quiver is full|r
+    .target Jeena Featherbow
+step << Hunter
+    #season 2
+    .goto Teldrassil,55.890,59.205
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeena Featherbow|r
+    .vendor >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_until you have 1 silver left or your quiver is full|r
     .target Jeena Featherbow
 step << Hunter
     #completewith next
@@ -753,16 +815,10 @@ step
     .turnin 2159 >> Turn in Dolanaar Delivery << !Hunter
     .home >> Set your Hearthstone to Dolanaar
 step << Hunter
-#season 0,1
+#season 0,1,2
     .goto Teldrassil,56.676,59.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dazalar|r
 	.train 3044>> Train Arcane Shot
-    .target Dazalar
-step << Hunter
-#season 2
-    .goto Teldrassil,56.676,59.489
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dazalar|r
-	.train 1130>> Train Hunter's Mark
     .target Dazalar
 step << Druid
     .goto Teldrassil,55.945,61.566
@@ -906,6 +962,7 @@ step
     .target Gaerolas Talvethren
     .accept 476 >> Accept Gnarlpine Corruption
 step
+    #xprate <1.99
     #label zenn
     .goto Teldrassil,63.38,58.10
     >>|cRXP_WARN_Use the|r |T134721:0|t[Jade Phial] |cRXP_WARN_at the Starbreeze Village Moonwell|r
@@ -1007,9 +1064,16 @@ step << Hunter
     .money <0.0285
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.38
 step << Hunter
+    #season 0
     .goto Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeena Featherbow|r
 	.vendor >>|cRXP_BUY_Buy up to 800|r |T132382:0|t[Rough Arrows]
+    .target Jeena Featherbow
+step << Hunter
+    #season 2
+    .goto Teldrassil,55.890,59.205
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeena Featherbow|r
+	.vendor >>|cRXP_BUY_Buy up to 400|r |T132382:0|t[Rough Arrows]
     .target Jeena Featherbow
 step << Hunter
     #completewith next
@@ -1093,10 +1157,29 @@ step << Druid
 	.trainer >> Train your class spells
     .target Kal
 step
+    #loop
+    .goto 1438/1,854.400,9952.500,4 >>Next to a small tree
+    .goto 1438/1,822.200,9948.500,4 >>On the small Hill
+    .goto 1438/1,809.800,9926.400,4 >>Next to the massive tree
+    >>Loot the 3 felcones from the locations marked on your map. 
+    >>|cRXP_WARN_Skip this step if any of them is not there and you're unable to complete the objective|r
+    .complete 489,1 --Fel Cone 3/3
+    .isOnQuest 489
+step
+    #label QuickRedemption
+    .goto Teldrassil,60.4,56.4
+    .target Zenn Foulhoof
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zenn Foulhoof|r
+    .turnin 489 >> Turn in Seek Redemption!
+    .itemcount 3418,3
+    .isOnQuest 489
+    .target Zenn Foulhoof
+step
 	#completewith jewel
     >>Loot the |cRXP_LOOT_Fel Cones|r on the ground
     >>|cRXP_WARN_They are usually located next to tree trunks|r
     .complete 489,1 --Collect Fel Cone (x3)
+    .isOnQuest 489
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Gnarlpine Mystics|r
@@ -1118,6 +1201,19 @@ step
     .complete 2459,1 --Kill Gnarlpine Mystic (x7)
     .mob Gnarlpine Mystic
 step
+    #softcore
+    #completewith next
+    #label redemptionskip
+    .deathskip >> Die and respawn at the Spirit Healer
+    .target Spirit Healer
+    .isQuestComplete 489
+step
+    #requires redemptionskip
+    .goto Teldrassil,56.2,60.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brannol Eaglemoon|r
+    .vendor >> |cRXP_BUY_Vendor and repair if necessary|r
+    .target Brannol Eaglemoon
+step
     .goto Teldrassil,59.0,56.1,50,0
     .goto Teldrassil,56.5,65.5,50,0
     .goto Teldrassil,53.0,59.5,50,0
@@ -1126,12 +1222,14 @@ step
     >>Loot the |cRXP_LOOT_Fel Cones|r on the ground
     >>|cRXP_WARN_They are usually located next to tree trunks|r
     .complete 489,1 --Collect Fel Cone (x3)
+    .isOnQuest 489
 step
     .goto Teldrassil,60.4,56.4
     .target Zenn Foulhoof
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zenn Foulhoof|r
     .turnin 489 >> Turn in Seek Redemption!
-step
+    .isOnQuest 489
+step << !Hunter
     #completewith next
     .goto Teldrassil,54.68,52.84,20,0
     .goto Teldrassil,54.42,51.19,15 >> Travel to Fel Rock
@@ -1161,7 +1259,7 @@ step << Priest
     .mob Shadow Sprite
     .train 402852,1
 step
-#xprate <1.99 << Hunter
+    #xprate <1.99 << Hunter
     .goto Teldrassil,51.2,50.6
     >>Kill |cRXP_ENEMY_Lord Melenas|r. Loot him for his |cRXP_LOOT_Head|r
     >>|cRXP_ENEMY_Lord Melenas|r may be located in many different spawn locations throughout Fel Rock
@@ -1205,6 +1303,7 @@ step << Rogue
     .mob Shadow Sprite
     .train 398196,1
 step
+    #xprate <1.99 << Hunter
     #softcore
     #completewith next
     .deathskip >> Die and respawn at the Spirit Healer
@@ -1479,6 +1578,12 @@ step << Rogue
     .itemcount 204174,1
 step << Hunter
     #season 2
+    .goto Teldrassil,55.890,59.205
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeena Featherbow|r
+    >>|cRXP_BUY_Buy 600|r |T132382:0|t[Sharp Arrows]
+    .target Jeena Featherbow
+step << Hunter
+    #season 2
     .goto Teldrassil,46.6,46.3
     >>|cRXP_WARN_Cast|r |T132212:0|t[Hunter's Mark] |cRXP_WARN_on the|r |cRXP_ENEMY_Rustling Bush|r
     >>Kill the |cRXP_ENEMY_Fallenroot Poacher|r that spawns. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
@@ -1486,11 +1591,6 @@ step << Hunter
     .mob Rustling Bush
     .mob Fallenroot Poacher
     .train 410113,1 --Master Marksman
-step << Hunter
-    #season 2
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r] |cRXP_WARN_to train|r |T132177:0|t[Master Marksman]
-    .use 206155
-    .train 410113,1
 step
 	#xprate < 1.5
     #completewith next
@@ -1653,6 +1753,16 @@ step << !Rogue
     #completewith next
     .deathskip >> Die and respawn at the Spirit Healer in Darnassus
     .target Spirit Healer
+step << Hunter
+    #season 2
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r] |cRXP_WARN_to train|r |T132177:0|t[Master Marksman]
+    .use 206155
+    .train 410113,1
+step << Hunter
+    #season 2
+    #optional
+    #completewith next
+    .engrave 5 >> Open your character sheet and engrave your chest with a rune
 step << !Rogue
     #hardcore
     #requires xp10
@@ -1683,7 +1793,7 @@ step << Warrior
     .use 204703
     .skipgossip
     .target Delwynna
-step << !Rogue
+step << !Rogue !Hunter
 #xprate >1.99
     .goto Darnassus,67.427,15.655
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Saelienne|r
@@ -2102,6 +2212,37 @@ step << Warrior
     .complete 1683,1 --Collect Horn of Vorlus (x1)
     .mob Vorlus Vilehoof
 step << Hunter
+    #loop
+    .goto Darnassus,60.6,66.6,0
+    .goto Darnassus,64.2,70.8,0
+    .goto Darnassus,66.3,66.0,0
+    .goto Darnassus,67.9,61.0,0
+    .goto Darnassus,67.5,56.5,0
+    .goto Darnassus,62.5,54.8,0
+    .goto Darnassus,62.3,59.0,0
+    .goto Darnassus,61.8,63.4,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tLook for |cRXP_FRIENDLY_Jaeana|r, she patrols around the Tradesmen's Terrace
+    >>|cRXP_BUY_Buy a stack of|r |T133972:0|t[Tough Jerky] |cRXP_BUY_from her. 
+    >>|cRXP_WARN_You will need it to feed your owl, they only eat meat and there's no meat vendor in Darkshore|r
+    .collect 117,20
+    .target Jaeana
+step << Hunter
+    #season 2
+    .goto Darnassus,58.76,44.48
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariyell Skyshadow|r
+    >>|cRXP_BUY_Buy and equip a|r |T135489:0|t[Laminated Recurve Bow]
+    .collect 2507,1
+    .target Ariyell Skyshadow
+    .money <0.1751
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.77 
+step << Hunter
+    #season 2
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135489:0|t[Laminated Recurve Bow]
+    .use 2507
+    .itemcount 2507,1
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.76
+step << Hunter
     #sticky
 	.goto Teldrassil,41.2,44.4,0
 	.goto Teldrassil,44.2,39.8,0
@@ -2121,6 +2262,25 @@ step
     .mob Elder Timberling
     .mob Timberling Trampler
     .mob Timberling Mire Beast
+step << Hunter
+    #season2
+    .train 425762,1
+    .goto Teldrassil,48.3,31.4
+    >>Use |T134025:0|t[Teldrassil Bird Meat] near the corpse to summon |cRXP_ENEMY_Mowgh|r
+    >>Kill |cRXP_ENEMY_Mowgh|r and loot him for |T134419:0|t|cRXP_LOOT_[Rune of Flanking]|r
+    .collect 205979,1
+    .use 208608
+    .mob Mowgh
+step << Hunter
+    #season 2
+    .train 425762 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Flanking|r] |cRXP_WARN_to train|r |T132175:0|t[Flanking Strike]
+    .use 205979
+    .itemcount 205979,1
+step << Hunter
+    #season 2
+    #optional
+    #completewith next
+    .engrave 7 >> Open your character sheet and engrave your legs with a rune
 step
     #label Spinnerets
 	.goto Teldrassil,47.3,26.0,0
@@ -2196,6 +2356,7 @@ step
     .target Mist
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mist|r
     >>|cRXP_WARN_This will start an escort quest|r
+    >>|cRXP_WARN_Skip this quest if the NPC is not there|r
     .accept 938 >> Accept Mist
 step
     #xprate >1.49 << !Hunter
@@ -2203,6 +2364,7 @@ step
     .target Sentinel Arynia Cloudsbreak
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
     .turnin 938 >> Turn in Mist
+    .isOnQuest 938
 step
     #xprate >1.49 << !Hunter
     #requires harpies2
@@ -2283,6 +2445,7 @@ step << Druid
     .target Mathrengyl Bearwalker
     .accept 6001 >> Accept Body and Heart
 step
+    #season 0
     .goto Darnassus,34.814,9.255
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Fandral Staghelm|r
     .turnin -935 >> Turn in Crown of the Earth
@@ -2290,10 +2453,32 @@ step
     .target Arch Druid Fandral Staghelm
     .accept 952 >> Accept Grove of the Ancients
 step
+    #season 2
     .goto Darnassus,38.184,21.639
     .target Rellian Greenspyre
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rellian Greenspyre|r
     .turnin 923 >> Turn in Tumors
+step
+    #season 2
+    .goto Darnassus,34.814,9.255
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Fandral Staghelm|r
+    .turnin 940 >> Turn in Teldrassil
+    .target Arch Druid Fandral Staghelm
+    .accept 952 >> Accept Grove of the Ancients
+step
+    #season 0
+    .goto Darnassus,38.184,21.639
+    .target Rellian Greenspyre
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rellian Greenspyre|r
+    .turnin 923 >> Turn in Tumors
+step
+    .goto Darnassus,40.2,9.8
+    .trainer >>Train lvl 12 spells
+    .target Jocaste
+step
+    .goto Darnassus,42.2,8.8
+    .trainer >>Train pet spells
+    .target Silvaria
 step << Rogue
     .goto Darnassus,31.21,17.72,8,0
     .goto Darnassus,36.99,21.91
@@ -2340,6 +2525,16 @@ step
     .collect 2449,5,6123,1 << Druid
     .target Auctioneer Tolon
     .target Auctioneer Golothas
+step << Hunter
+    #season 2
+    .goto Darnassus,64.2,59.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kieran|r. He's on the upper level of the hut
+    >>|cRXP_BUY_Buy a|r |T135145:0|t[Walking Stick]
+    >>|cRXP_WARN_Skip this step if you have a different staff ready in your bags|r
+    .collect 2495,1
+    .target Kieran
+    .money <0.1539
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.19
 step << Hunter/Warrior/Priest
     .goto Darnassus,57.56,46.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
@@ -2362,9 +2557,17 @@ step << Hunter
     .money <0.1751
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.77
 step << Hunter
+    #season 0
     .goto Darnassus,58.76,44.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariyell Skyshadow|r
 	.vendor >>|cRXP_BUY_Buy|r |T132382:0|t[Sharp Arrows]
+    .target Ariyell Skyshadow
+step << Hunter
+    #season 2
+    .goto Darnassus,58.76,44.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariyell Skyshadow|r
+	.vendor >>|cRXP_BUY_Buy|r |T132382:0|t[Sharp Arrows]
+    .vendor >>|cRXP_BUY_Buy a|r |T134410:0|t[Medium Quiver] |cRXP_BUY_if you have spare money|r
     .target Ariyell Skyshadow
 step << Hunter
     #completewith next

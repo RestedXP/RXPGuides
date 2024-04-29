@@ -947,7 +947,7 @@ step
     .goto Teldrassil,40.8,31.6,20,0
     .goto Teldrassil,46.6,31.2,20,0
     .train 425762,1
-    >>Kill |cRXP_ENEMY_Birds|r in |cFFfa9602Teldrassil|r and loot them for |T134025:0|t[Teldrassil Pig Meat]
+    >>Kill |cRXP_ENEMY_Birds|r in |cFFfa9602Teldrassil|r and loot them for |T134025:0|t[Teldrassil Bird Meat]
     .collect 208608,1
     .mob Strigid Owl
     .mob Strigid Screecher
@@ -956,8 +956,8 @@ step
     #season2
     .train 425762,1
     .goto Teldrassil,48.3,31.4
-    >>Use |T134025:0|t[Teldrassil Pig Meat] near the corpse to summon |cRXP_ENEMY_Mowgh|r
-    >>Kill |cRXP_ENEMY_Mowgh|r and loot him for |T135142:0|t|cRXP_LOOT_[Rune of Flanking]|r
+    >>Use |T134025:0|t[Teldrassil Bird Meat] near the corpse to summon |cRXP_ENEMY_Mowgh|r
+    >>Kill |cRXP_ENEMY_Mowgh|r and loot him for |T134419:0|t|cRXP_LOOT_[Rune of Flanking]|r
     .collect 205979,1
     .use 208608
     .mob Mowgh
