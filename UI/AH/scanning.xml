@@ -44,7 +44,7 @@
         <NormalFont style="GameFontHighlightSmall"/>
     </Button>
     <Button name="RXP_IU_AH_ItemKindHeader" hidden="false" virtual="true">
-        <Size x="810" y="19"/>
+        <Size x="773" y="19"/>
         <Layers>
             <Layer level="BACKGROUND">
                 <FontString parentKey="Name" inherits="GameFontNormal" justifyH="CENTER" text="Foo">
@@ -205,24 +205,6 @@
                     <OnClick>
                         RXP.itemUpgrades.AH.RowOnClick(self:GetParent())
                     </OnClick>
-                    <!--
-                    <OnClick>
-						if ( IsModifiedClick() ) then
-							if ( not HandleModifiedItemClick(GetAuctionItemLink("bidder", self:GetParent():GetID() + FauxScrollFrame_GetOffset(BidScrollFrame))) ) then
-								if ( IsModifiedClick("DRESSUP") ) then
-									DressUpBattlePet(GetAuctionItemBattlePetInfo("bidder", self:GetParent():GetID() + FauxScrollFrame_GetOffset(BidScrollFrame)));
-								end
-							end
-						else
-							BidButton_OnClick(self:GetParent());
-						end
-					</OnClick>
-                    <OnUpdate>
-						if ( GameTooltip:IsOwned(self) ) then
-							AuctionFrameItem_OnEnter(self, "bidder", self:GetParent():GetID() + FauxScrollFrame_GetOffset(BidScrollFrame));
-						end
-					</OnUpdate>
-                    -->
                 </Scripts>
                 <NormalTexture parentKey="NormalTexture" file="Interface\Buttons\UI-Quickslot2">
                     <Size>
@@ -320,20 +302,6 @@
             <OnClick>
                 RXP.itemUpgrades.AH.RowOnClick(self)
             </OnClick>
-            <!--
-            <OnClick>
-				if ( IsModifiedClick() ) then
-					if ( not HandleModifiedItemClick(GetAuctionItemLink("bidder", self:GetID() + FauxScrollFrame_GetOffset(BidScrollFrame))) ) then
-						if ( IsModifiedClick("DRESSUP") ) then
-							DressUpBattlePet(GetAuctionItemBattlePetInfo("bidder", self:GetID() + FauxScrollFrame_GetOffset(BidScrollFrame)));
-						end
-					end
-				else
-					BidButton_OnClick(self);
-				end
-
-			</OnClick>
-            -->
         </Scripts>
         <HighlightTexture parentKey="Highlight" file="Interface\HelpFrame\HelpFrameButton-Highlight" alphaMode="ADD">
             <Anchors>
