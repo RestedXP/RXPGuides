@@ -164,7 +164,11 @@
             <Button parentKey="ItemIcon">
                 <Size x="32" y="32"/>
                 <Anchors>
-                    <Anchor point="TOPLEFT"/>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                            <AbsDimension x="1" y="-2"/>
+                        </Offset>
+                    </Anchor>
                 </Anchors>
                 <Layers>
                     <Layer level="BORDER">
