@@ -408,6 +408,15 @@ step << Hunter
     .deathskip >> Die and respawn at the Spirit Healer
     .target Spirit Healer
 step << Hunter
+    #optional
+    #completewith next
+    #season 2
+    .train 410121 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of the Chimera]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Chimera Shot]
+    .use 206168
+    .itemcount 206168,1
+step << Hunter
+    #optional
+    #completewith next
     #season 2
     #requires hunterRuneChimera
     #label hunterEngrave
@@ -469,7 +478,6 @@ step << !Priest
     .target Keina
 step << Hunter
     #season 2
-    #completewith next
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keina|r
 	.vendor >> |cRXP_WARN_Vendor trash|r << !Hunter
@@ -697,6 +705,7 @@ step
     .goto Teldrassil,56.08,57.72
     .target Syral Bladeleaf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syral Bladeleaf|r
+    >>|cRXP_WARN_Make sure you have 1 empty bagspace slot before accepting this quest|r
     .accept 997 >> Accept Denalan's Earth
 step
     .goto Teldrassil,55.954,57.272
@@ -1158,15 +1167,14 @@ step << Druid
     .target Kal
 step
     #loop
-    .goto 1438/1,854.400,9952.500,4 >>Next to a small tree
-    .goto 1438/1,822.200,9948.500,4 >>On the small Hill
-    .goto 1438/1,809.800,9926.400,4 >>Next to the massive tree
+    .goto 1438/1,854.400,9952.500,3 >>Next to a small tree
+    .goto 1438/1,822.200,9948.500,3 >>On the small Hill
+    .goto 1438/1,809.800,9926.400,3 >>Next to the massive tree
     >>Loot the 3 felcones from the locations marked on your map. 
     >>|cRXP_WARN_Skip this step if any of them is not there and you're unable to complete the objective|r
     .complete 489,1 --Fel Cone 3/3
     .isOnQuest 489
 step
-    #label QuickRedemption
     .goto Teldrassil,60.4,56.4
     .target Zenn Foulhoof
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zenn Foulhoof|r
@@ -1203,16 +1211,16 @@ step
 step
     #softcore
     #completewith next
-    #label redemptionskip
     .deathskip >> Die and respawn at the Spirit Healer
     .target Spirit Healer
-    .isQuestComplete 489
+    .isQuestTurnedIn 489
 step
-    #requires redemptionskip
+    #softcore
     .goto Teldrassil,56.2,60.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brannol Eaglemoon|r
     .vendor >> |cRXP_BUY_Vendor and repair if necessary|r
     .target Brannol Eaglemoon
+    .isQuestTurnedIn 489
 step
     .goto Teldrassil,59.0,56.1,50,0
     .goto Teldrassil,56.5,65.5,50,0
@@ -2212,15 +2220,7 @@ step << Warrior
     .complete 1683,1 --Collect Horn of Vorlus (x1)
     .mob Vorlus Vilehoof
 step << Hunter
-    #loop
-    .goto Darnassus,60.6,66.6,0
-    .goto Darnassus,64.2,70.8,0
-    .goto Darnassus,66.3,66.0,0
-    .goto Darnassus,67.9,61.0,0
-    .goto Darnassus,67.5,56.5,0
-    .goto Darnassus,62.5,54.8,0
-    .goto Darnassus,62.3,59.0,0
-    .goto Darnassus,61.8,63.4,0
+    .goto Darnassus,64.2,63.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tLook for |cRXP_FRIENDLY_Jaeana|r, she patrols around the Tradesmen's Terrace
     >>|cRXP_BUY_Buy a stack of|r |T133972:0|t[Tough Jerky] |cRXP_BUY_from her. 
     >>|cRXP_WARN_You will need it to feed your owl, they only eat meat and there's no meat vendor in Darkshore|r
