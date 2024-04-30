@@ -2477,6 +2477,25 @@ step << BloodElf
 	.target Winaestra
 	.mountcount 75-150,<1
     .xp <20,1
+step << Tauren
+    #completewith next
+    .goto 1454/1,-4370.00000,1799.90002
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doras|r
+    .fly Valormok >>Fly to Thunder Bluff
+    .target Doras
+    .zoneskip Thunder Bluff
+    .zoneskip Mulgore
+step << Tauren
+    #completewith next
+    .goto 1456/1,183.30000,-1314.09998,20 >>Take the elevator to exit Thunder Bluff
+    .zoneskip Mulgore
+step << Tauren
+    .goto 1412/1,-392.20001,-2280.00000
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harb Clawhoof|r
+	.vendor >>|cRXP_BUY_Buy a|r |T132243:0|t[Kodo] |cRXP_BUY_from her if you do not have a mount in your collection yet|r
+	.target Harb Clawhoof
+	.mountcount 75-150,<1
+    .xp <20,1
 step << !Orc !Goblin
     #completewith next
     .hs >>Hearth to Orgrimmar
