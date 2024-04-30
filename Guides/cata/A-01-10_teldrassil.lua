@@ -884,6 +884,85 @@ step
     .turnin 935 >>Turn in The Waters of Teldrassil
     .accept 14039 >>Accept Home of the Kaldorei
 step
+    #completewith end
+    .zone 89 >> Travel to Darnassus
+step << Warrior
+    .goto 89,56.327,52.547
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariyell Skyshadow|r
+    >>|cRXP_BUY_Buy a|r |T135350:0|t[Claymore] |cRXP_BUY_from her|r
+    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    .collect 1198,1 -- Claymore (1)
+    .money <0.2142
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
+    .target Ariyell Skyshadow
+step << Rogue
+    .goto 89,56.327,52.547
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariyell Skyshadow|r
+    >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from her|r
+    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    .collect 851,1 -- Cutlass (1)
+    .money <0.1618
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.7
+    .target Ariyell Skyshadow
+    .xp >11,1
+    .xp <10,1
+step << Rogue
+    .goto 89,56.327,52.547
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariyell Skyshadow|r
+    >>|cRXP_BUY_Buy a|r |T132402:0|t[Hatchet] |cRXP_BUY_from her|r
+    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    .collect 853,1 -- Hatchet (1)
+    .money <0.1927
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.1
+    .target Ariyell Skyshadow
+    .xp >12,1
+    .xp <11,1
+step << Hunter
+    .goto 89,56.327,52.547
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariyell Skyshadow|r
+    >>|cRXP_BUY_Buy a|r |T135499:0|t[Laminated Recurve Bow] |cRXP_BUY_from her|r
+    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    .collect 2507,1 --Collect Laminated Recurve Bow (1)
+    .money <0.1402
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.5
+    .target Ariyell Skyshadow 
+step << Warrior
+    #optional
+    #completewith end
+    +|cRXP_WARN_Equip the|r |T135350:0|t[Claymore]
+    .use 1198
+    .itemcount 1198,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
+step << Rogue
+    #optional
+    #completewith end
+    +|cRXP_WARN_Equip the|r |T135346:0|t[Cutlass] |cRXP_WARN_in your mainhand|r
+    .use 851
+    .itemcount 851,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.7
+step << Rogue
+    #optional
+    #completewith end
+    +|cRXP_WARN_Equip the|r |T132402:0|t[Hatchet] |cRXP_WARN_in your mainhand|r
+    .use 853
+    .itemcount 853,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.1
+step << Hunter
+    #optional
+    #completewith end
+    +|cRXP_WARN_Equip the|r |T135499:0|t[Laminated Recurve Bow]
+    .use 2507
+    .itemcount 2507,1
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
+step
     .goto 89,43.832,76.529
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Cordressa Briarbow|r 
     .target Sentinel Cordressa Briarbow
@@ -909,6 +988,7 @@ step
     .subzone 702 >>Step into the purple portal next to the flight master
     .zoneskip Darkshore
 step
+    #label end
     .goto 57,55.406,88.415
     .fly Lor'danel >>Fly to Lor'danel
     .zoneskip Darkshore

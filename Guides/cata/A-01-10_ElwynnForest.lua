@@ -1256,15 +1256,67 @@ step << Human Paladin/Human Warrior/Human Rogue
     .fly Stormwind >> Fly to Stormwind 
 	.target Bartlett the Brave
     .zoneskip Stormwind City
-    .itemStat 18,QUALITY,<7
-step << Paladin/Warrior/Rogue/Shaman
-    .goto 1453/0,610.70001,-8790.70020
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
-    .vendor 1289 >> Buy the level 10/11 weapon upgrade
-    .target Gunther Weller
-    .itemStat 18,QUALITY,<7
-
+    .itemStat 16,QUALITY,<7
+step << Warrior/Paladin
+    .goto 84,64.074,68.362
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
+    >>|cRXP_BUY_Buy a|r |T135350:0|t[Claymore] |cRXP_BUY_from her|r
+    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    .collect 1198,1 -- Claymore (1)
+    .money <0.2142
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
+    .target Marda Weller
+step << Rogue/Shaman
+    .goto 84,64.074,68.362
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
+    >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from her|r
+    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    .collect 851,1 -- Cutlass (1)
+    .money <0.1618
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.7
+    .target Marda Weller
+    .xp >11,1
+    .xp <10,1
+step << Rogue/Shaman
+    .goto 84,64.074,68.362
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
+    >>|cRXP_BUY_Buy a|r |T132402:0|t[Hatchet] |cRXP_BUY_from her|r
+    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    .collect 853,1 -- Hatchet (1)
+    .money <0.1927
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.1
+    .target Marda Weller
+    .xp >12,1
+    .xp <11,1
+step << Warrior/Paladin
+    #optional
+    #completewith end
+    +|cRXP_WARN_Equip the|r |T135350:0|t[Claymore]
+    .use 1198
+    .itemcount 1198,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
+step << Rogue/Shaman
+    #optional
+    #completewith end
+    +|cRXP_WARN_Equip the|r |T135346:0|t[Cutlass] |cRXP_WARN_in your mainhand|r
+    .use 851
+    .itemcount 851,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.7
+step << Rogue/Shaman
+    #optional
+    #completewith end
+    +|cRXP_WARN_Equip the|r |T132402:0|t[Hatchet] |cRXP_WARN_in your mainhand|r
+    .use 853
+    .itemcount 853,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.1
 step << Human Paladin/Human Warrior/Human Rogue
+    #label end
     #completewith next
     .goto 84,70.938,72.472
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r

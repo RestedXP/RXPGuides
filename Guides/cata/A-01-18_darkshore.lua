@@ -360,6 +360,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keeper Karithus|r
     .target Keeper Karithus
     .turnin 13569 >>Turn in The Ritual Bond
+    .accept 13599 >>Accept Grimclaw's Return
 step
     .xp 13
 --Grinding checkpoint, likely won't be needed at all
@@ -415,11 +416,13 @@ step
     .use 44868 >>Destroy the |T236968:0|t[Frenzied Cyclone Bracers] by right clicking them next to the Auberdine moonwell
     .complete 13542,1 --|8/8 Frenzied Cyclone bracers destroyed
 step
-    .goto 62,42.595,45.160,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Selarin|r
-    .target Sentinel Selarin
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Selarin|r and |cRXP_FRIENDLY_Corvine Moonrise|r
     .turnin 13542 >>Turn in Against the Wind
+    .goto 62,42.595,45.160
+    .target +Sentinel Selarin
     .turnin 13543 >>Turn in Three Hammers to Break
+    .goto 62,42.680,45.152
+    .target +Corvine Moonrise
 --
 step
     .goto 62,43.638,53.501
@@ -512,6 +515,7 @@ step
     .goto 62,45.281,58.363,40,0
     .goto 62,42.966,60.120,40,0
     .goto 62,45.190,56.295,40,0
+    >>Kill |cRXP_ENEMY_Enraged Earth Elementals|r
     .complete 13584,1 --|8/8 Enraged Earth Elemental slain
     .mob Enraged Earth Elemental
 step
@@ -660,7 +664,9 @@ step
     >>Kill |cRXP_ENEMY_Enforcers|r and |cRXP_ENEMY_Mystics|r
     .use 44999 >> Use the |T135433:0|t[Sentinel Torch] on the boxes around the horde camp
     .complete 13507,1 --|6/6 Horde Enforcer slain
+    .mob +Horde Enforcer
     .complete 13507,2 --|6/6 Shatterspear Mystic slain
+    .mob +Shatterspear Mystic
     .complete 13509,1 --|12/12 Shatterspear Armaments burned
 step
     .goto 62,63.757,6.014
@@ -692,7 +698,9 @@ step
     >>Kill |cRXP_ENEMY_Enforcers|r and |cRXP_ENEMY_Mystics|r
     .use 44999 >> Use the |T135433:0|t[Sentinel Torch] on the boxes around the horde camp
     .complete 13507,1 --|6/6 Horde Enforcer slain
+    .mob +Horde Enforcer
     .complete 13507,2 --|6/6 Shatterspear Mystic slain
+    .mob +Shatterspear Mystic
     .complete 13509,1 --|12/12 Shatterspear Armaments burned
 step
     .goto 62,58.901,19.483
@@ -750,15 +758,13 @@ step
 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balthule Shadowstrike|r
     .goto 1439/1,-791.50000,7381.60010
     .turnin 13513 >>Turn in On the Brink
-    .target Balthule Shadowstrike
-step
-    .goto 1439/1,-792.29999,7385.00000
-    .turnin 13512 >>Turn in Strategic Strikes
+    .target Balthule Shadowstrike  
 step
     .goto 1439/1,-792.79999,7384.80029
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lieutenant Morra Starbreeze|r
-    .target Lieutenant Morra Starbreeze
+    .turnin 13512 >>Turn in Strategic Strikes
     .accept 13590 >>Accept The Front Line
+    .target Lieutenant Morra Starbreeze
 step
     .goto 1439/1,-1450.59998,7392.20020
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kerlonian Evershade|r
@@ -783,6 +789,12 @@ step
     .turnin 13590 >>Turn in The Front Line
     .accept 13515 >>Accept Ending the Threat
 step
+    .isOnQuest 13515
+    .goto 62,72.263,19.096
+    .gossip 33178,0 >> Talk to |cRXP_FRIENDLY_Huntress Sandrya Moonfall|r to begin the assault
+    .skipgossip 33178,1
+    .target Huntress Sandrya Moonfall
+step
     .goto 62,72.857,18.019
     >>Follow the Night Elf sentinels and let them tank |cRXP_ENEMY_Jor'kil the Soulripper|r, then loot him for the quest item
     .complete 13515,1 --|1/1 Jor'kil the Soulripper slain
@@ -803,7 +815,7 @@ step
 step
     #completewith next
     .hs >> Hearth to Lor'Danel
-step
+step << skip
     .goto 62,51.004,19.217
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
     .target Gorbold Steelhand

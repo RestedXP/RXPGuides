@@ -31,6 +31,61 @@ step
     .accept 26145 >>Accept The Trogg Threat
     .goto 48,23.332,74.925
     .target +Mountaineer Cobbleflint
+step << Warrior/Paladin
+    .goto 48,23.673,74.329
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorvald Deepforge|r
+    >>|cRXP_BUY_Buy a|r |T135350:0|t[Claymore] |cRXP_BUY_from him|r
+    .collect 1198,1 -- Claymore (1)
+    .money <0.2142
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
+    .target Thorvald Deepforge
+step << Rogue/Shaman
+    .goto 48,23.673,74.329
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorvald Deepforge|r
+    >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
+    .collect 851,1 -- Cutlass (1)
+    .money <0.1618
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.7
+    .target Thorvald Deepforge
+    .xp >11,1
+    .xp <10,1
+step << Rogue/Shaman
+    .goto 48,23.673,74.329
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorvald Deepforge|r
+    >>|cRXP_BUY_Buy a|r |T132402:0|t[Hatchet] |cRXP_BUY_from him|r
+    .collect 853,1 -- Hatchet (1)
+    .money <0.1927
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.1
+    .target Thorvald Deepforge
+    .xp >12,1
+    .xp <11,1
+step << Warrior/Paladin
+    #optional
+    #completewith end
+    +|cRXP_WARN_Equip the|r |T135350:0|t[Claymore]
+    .use 1198
+    .itemcount 1198,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
+step << Rogue/Shaman
+    #optional
+    #completewith end
+    +|cRXP_WARN_Equip the|r |T135346:0|t[Cutlass] |cRXP_WARN_in your mainhand|r
+    .use 851
+    .itemcount 851,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.7
+step << Rogue/Shaman
+    #optional
+    #completewith end
+    +|cRXP_WARN_Equip the|r |T132402:0|t[Hatchet] |cRXP_WARN_in your mainhand|r
+    .use 853
+    .itemcount 853,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.1
 step
     #completewith next
     .goto 48,22.850,77.894,20,0
@@ -585,6 +640,7 @@ step
     .goto 1432/0,-4255.70020,-5667.39990
     .fly Thelsamar >>Fly to Thelsamar
 step
+    #label end
     .goto 48,37.228,47.851
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torren Squarejaw|r
     .target Torren Squarejaw

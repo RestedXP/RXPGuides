@@ -970,12 +970,67 @@ step
     .turnin 9604 >> Turn in On the Wings of a Hippogryph
     .accept 9605 >> Accept Hippogryph Master Stephanos
     .target Nurguni
+step << Warrior/Paladin
+    .goto The Exodar,69.945,90.749
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ven|r
+    >>|cRXP_BUY_Buy a|r |T135350:0|t[Claymore] |cRXP_BUY_from him|r
+    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    .collect 1198,1 -- Claymore (1)
+    .money <0.2142
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
+    .target Ven
+step << Shaman
+    .goto The Exodar,69.945,90.749
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ven|r
+    >>|cRXP_BUY_Buy a|r |T132402:0|t[Hatchet] |cRXP_BUY_from him|r
+    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    .collect 853,1 -- Hatchet (1)
+    .money <0.1927
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.1
+    .target Ven
+step << Hunter
+    .goto The Exodar,47.904,89.780
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ven|r
+    >>|cRXP_BUY_Buy a|r |T135499:0|t[Laminated Recurve Bow] |cRXP_BUY_from her|r
+    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    .collect 2507,1 --Collect Laminated Recurve Bow (1)
+    .money <0.1402
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.5
+    .target Ven 
+step << Warrior/Paladin
+    #optional
+    #completewith end
+    +|cRXP_WARN_Equip the|r |T135350:0|t[Claymore]
+    .use 1198
+    .itemcount 1198,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
+step << Shaman
+    #optional
+    #completewith end
+    +|cRXP_WARN_Equip the|r |T132402:0|t[Hatchet] |cRXP_WARN_in your mainhand|r
+    .use 853
+    .itemcount 853,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.1
+step << Hunter
+    #optional
+    #completewith end
+    +|cRXP_WARN_Equip the|r |T135499:0|t[Laminated Recurve Bow]
+    .use 2507
+    .itemcount 2507,1
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stephanos|r
     .goto The Exodar,54.488,36.285
     .turnin 9605 >>Turn in Hippogryph Master Stephanos
     .target Stephanos
 step
+    #label end
     .goto The Exodar,54.488,36.285
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stephanos|r
     .fly Lor'danel >> Fly to Lor'danel

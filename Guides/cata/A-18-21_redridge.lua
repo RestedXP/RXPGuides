@@ -19,6 +19,68 @@ step << NightElf/Draenei/Worgen
     .target Teldira Moonfeather
     .fly Rut'theran Village >>Fly to Rut'theran Village
     .zoneskip Darkshore,1
+step << NightElf
+    .goto 57,55.045,88.301
+    .zone 89 >>Go through the portal to Darnassus
+    .train 33388,1
+    .xp <20,1
+step << NightElf
+    .goto 57,55.045,88.301
+    .zone 89 >>Go through the portal to Darnassus
+    .mountcount 0-150,<1
+    .itemcount 8632,<1
+    .itemcount 8631,<1
+    .itemcount 8629,<1
+    .itemcount 47100,<1
+step << NightElf
+    .goto 89,42.497,32.595
+    >>Talk to |cRXP_FRIENDLY_Lelanai|r
+    +|cRXP_BUY_Buy a|r |T132267:0|t[Saber] |cRXP_BUY_mount, you won't be able to use it until level 20, keep it in your bags for later|r
+    .target Lelanai
+    .mountcount 0-150,<1
+    .itemcount 8632,<1
+    .itemcount 8631,<1
+    .itemcount 8629,<1
+    .itemcount 47100,<1
+step << NightElf
+    .goto 89,48.125,21.796
+    >>Talk to |cRXP_FRIENDLY_Jartsam|r
+    .train 33388 >> Train Apprentice Riding
+    .target Jartsam
+    .money <3.6000 
+    .xp <20,1
+step << NightElf
+    .goto 89,36.547,50.413
+    .zone 57 >>Go back through the portal to Rut'Theran Village
+    .zoneskip 89,1
+step << Draenei
+    .goto 57,52.30,89.50
+    .zone Azuremyst Isle >> Take the boat to Azuremyst Isle
+    .mountcount 0-150,<1
+    .itemcount 29743,<1
+    .itemcount 29744,<1
+    .itemcount 28481,<1
+step << Draenei
+    .goto Azuremyst Isle,81.497,51.456
+    >>Talk to |cRXP_FRIENDLY_Torallius the Pack Handler|r
+    +Buy an Elekk, you won't be able to use it until level 20, keep it in your bags for later
+    .target Torallius the Pack Handler
+    .mountcount 0-150,<1
+    .itemcount 29743,<1
+    .itemcount 29744,<1
+    .itemcount 28481,<1
+step << Draenei
+    .goto 89,81.348,52.623
+    >>Talk to |cRXP_FRIENDLY_Aalun|r
+    .train 33388 >> Train Apprentice Riding
+    .target Aalun
+    .money <3.6000 
+    .xp <20,1
+    .zoneskip Azuremyst Isle,1
+step << Draenei
+    .goto Azuremyst Isle,20.41,54.18
+    .zone 57 >> Take the boat back to Rut'theran Village
+    .zoneskip Azuremyst Isle,1
 step << NightElf/Draenei/Worgen
     .goto 57,55.037,93.677,25,0
     .goto 57,55.037,93.677,0
@@ -42,7 +104,7 @@ step << Gnome/Dwarf
 step << Gnome
     .goto 1426/0,-618.400,-5451.100
     >>Talk to |cRXP_FRIENDLY_Milli Featherwhistle|r
-    +Buy a Mechanostrider mount, you won't be able to use it until level 20, keep it in your bags for later
+    +|cRXP_BUY_Buy a|r |T132247:0|t[Mechanostrider] |cRXP_BUY_mount, you won't be able to use it until level 20, keep it in your bags for later|r
     .target Milli Featherwhistle
     .mountcount 0-150,<1
     .itemcount 8563,<1
@@ -52,7 +114,7 @@ step << Gnome
 step << Dwarf
     .goto 1426/0,-1322.500,-5539.800
     >>Talk to |cRXP_FRIENDLY_Veron Amberstill|r
-    +Buy a Ram mount, you won't be able to use it until level 20, keep it in your bags for later
+    +|cRXP_BUY_Buy a|r |T132248:0|t[Ram] |cRXP_BUY_mount, you won't be able to use it until level 20, keep it in your bags for later|r
     .target Veron Amberstill
     .mountcount 0-150,<1
     .itemcount 5864,<1
@@ -74,7 +136,114 @@ step
     .goto Stormwind City,62.875,71.490
     >>Click the |cRXP_PICK_Hero's Call Board|r
     .accept 28563 >>Accept Hero's Call: Redridge Mountains!
+    >>|cRXP_WARN_Skip this step if you are not being offered this quest|r
     .isQuestAvailable 26504
+step << Warrior/Paladin
+    .goto 84,64.074,68.362
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
+    >>|cRXP_BUY_Buy a|r |T135280:0|t[Dacian Falx] |cRXP_BUY_from her|r
+    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    .collect 922,1 -- Dacian Falx (1)
+    .money <1.0233
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8
+    .target Marda Weller
+    .xp <21,1
+step << Warrior/Paladin
+    .goto 84,64.074,68.362
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
+    >>|cRXP_BUY_Buy a|r |T135280:0|t[Dacian Falx] |cRXP_BUY_from her. Equip when you are level 21|r
+    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    .collect 922,1 -- Dacian Falx (1)
+    .money <1.0233
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8
+    .target Marda Weller
+    .xp >21,1
+step << Rogue
+    .goto 84,64.074,68.362
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
+    >>|cRXP_BUY_Buy a|r |T135324:0|t[Longsword] |cRXP_BUY_from her|r
+    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    .collect 923,1 -- Longsword (1)
+    .money <0.7432
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.1
+    .target Marda Weller
+    .xp <21,1
+step << Rogue
+    .goto 84,64.074,68.362
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
+    >>|cRXP_BUY_Buy a|r |T135324:0|t[Longsword] |cRXP_BUY_from her. Equip when you are level 21|r
+    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    .collect 923,1 -- Longsword (1)
+    .money <0.7432
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.1
+    .target Marda Weller
+    .xp >21,1
+step << Shaman
+    .goto 84,64.074,68.362
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
+    >>|cRXP_BUY_Buy a|r |T132415:0|t[Double Axe] |cRXP_BUY_from her|r
+    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    .collect 927,1 -- Double Axe (1)
+    .money <0.5911
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.9
+    .target Marda Weller
+step << Hunter
+    .goto 84,58.720,68.721
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lina Stover|r
+    >>|cRXP_BUY_Buy a|r |T135612:0|t[BKP 2700 "Enforcer"] |cRXP_BUY_from her|r
+    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    .collect 3024,1 -- BKP 2700 "Enforcer" (1)
+    .money <0.6033
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8
+    .target Lina Stover
+    .xp <21,1
+step << Hunter
+    .goto 84,58.720,68.721
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lina Stover|r
+    >>|cRXP_BUY_Buy a|r |T135612:0|t[BKP 2700 "Enforcer"] |cRXP_BUY_from her. Equip when you are level 21|r
+    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
+    .collect 3024,1 -- BKP 2700 "Enforcer" (1)
+    .money <0.6033
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8
+    .target Lina Stover
+    .xp >21,1
+step << Warrior/Paladin
+    #optional
+    #completewith EnterRR
+    +|cRXP_WARN_Equip the|r |T135280:0|t[Dacian Falx]
+    .use 922
+    .itemcount 922,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8
+    .xp <21,1
+step << Rogue
+    #optional
+    #completewith EnterRR
+    +|cRXP_WARN_Equip the|r |T135324:0|t[Longsword]
+    .use 923
+    .itemcount 923,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.1
+    .xp <21,1
+step << Shaman
+    #optional
+    #completewith EnterRR
+    +|cRXP_WARN_Equip the|r |T132415:0|t[Double Axe]
+    .use 927
+    .itemcount 927,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.9
+step << Hunter
+    #optional
+    #completewith EnterRR
+    +|cRXP_WARN_Equip the|r |T135612:0|t[BKP 2700 "Enforcer"]
+    .use 3024
+    .itemcount 3024,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.8
 step
     #optional
     #completewith next
@@ -92,7 +261,26 @@ step
     .zoneskip 49 --Redridge Mountains
     .noflyable --Azeroth Flying
 step
-    .goto 49,16.032,64.633
+    .goto 37,84.322,64.870
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Randal Hunter|r
+    .train 33388 >> Train Apprentice Riding
+    .money <3.6000 
+    .target Randal Hunter
+    .xp <20,1
+step << Human
+    .train 33388,3
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katie Hunter|r
+    +|cRXP_BUY_Buy a|r |T132261:0|t[Horse] |cRXP_BUY_from her|r
+    .money 0.08
+    .target Katie Hunter
+    .mountcount 0-150,<1
+    .itemcount 2414,<1
+    .itemcount 5655,<1
+    .itemcount 5656,<1
+    .itemcount 47100,<1
+step
+    #label EnterRR
+    .goto 49,11.78,64.40
     .zone Redridge Mountains >> Travel to Redridge Mountains
     .isQuestAvailable 26504
 step
@@ -320,7 +508,7 @@ step
     .accept 26505 >>Accept Parker's Report
     .target Watch Captain Parker
 step
-    .goto Redridge Mountains,30.590,59.410
+    .goto Redridge Mountains,29.405,53.770
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
     .fp Lakeshire >> Get the Lakeshire flight path
     .target Ariena Stormfeather
