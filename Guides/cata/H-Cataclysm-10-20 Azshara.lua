@@ -2481,7 +2481,7 @@ step << Tauren
     #completewith next
     .goto 1454/1,-4370.00000,1799.90002
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doras|r
-    .fly Valormok >>Fly to Thunder Bluff
+    .fly Thunder Bluff >>Fly to Thunder Bluff
     .target Doras
     .zoneskip Thunder Bluff
     .zoneskip Mulgore
