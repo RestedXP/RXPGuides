@@ -2692,7 +2692,7 @@ function addon.functions.mountcount(self, ...)
             end
         end
     end
-    print('-',count,element.minskill,element.maxskill)
+    --print('-',count,element.minskill,element.maxskill)
     if not ((eq and count == total) or (count * operator > total * operator) or
         (not eq and operator == 0 and count >= total)) then
         if step.active and not step.completed then

@@ -152,7 +152,7 @@ function addon.SetupGuideWindow()
     GuideName.text:SetTextColor(unpack(addon.activeTheme.textColor))
 
     Footer.text:SetFont(addon.font, 9, "")
-    if addon.game ~= "CATA" then
+    if GetCurrentRegion() < 20 then--PTR Region 72?
         Footer.text:SetText(fmt("%s %s", addon.title, addon.release))
     else
         Footer.text:SetText(fmt("RXP Beta %s %d/%d", addon.release, addon.minGuideVersion ,addon.maxGuideVersion))
@@ -1998,8 +1998,8 @@ function RXPFrame:GenerateMenuTable(menu)
         local t = addon.guideList[group]
         menuIndex = menuIndex + 1
 
-        if not t.sorted_ then
-            t.sorted_ = true
+        if t.sorted_ ~= #t.names_ then
+            t.sorted_ = #t.names_
             table.sort(t.names_)
         end
         local item = {
