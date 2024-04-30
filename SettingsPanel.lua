@@ -2998,6 +2998,96 @@ function addon.settings.ToggleActive()
 
 end
 
+local function CheckBuff(buffId)
+    local id
+
+    for i = 1, 40 do
+        id = select(10, UnitBuff("player", i))
+        if not id then return false end
+
+        if id == buffId then return true end
+    end
+end
+
+local ITEM_RANGE = ITEM_LEVEL_RANGE_CURRENT:gsub("([%(%)])","%%%1")
+ITEM_RANGE = ITEM_RANGE:gsub("%%d","%(%%d+%)")
+local XPTEXT = strlower(POWER_TYPE_EXPERIENCE)
+
+function addon.GetXPBonuses(ignoreBuffs,playerLevel)
+    local calculatedRate = not ignoreBuffs and CheckBuff(377749) and 1.5 or 1.0 -- Joyous Journeys
+
+    --Fast track guild perk
+    if addon.IsPlayerSpell(78632) then
+        calculatedRate = calculatedRate + 0.1
+    end
+
+    if addon.game == "WOTLK" then
+        local itemQuality
+        local itemLink = GetInventoryItemLink("player", 3) -- Shoulder
+
+        if itemLink then
+            itemQuality = select(3, GetItemInfo(itemLink))
+
+            if itemQuality == INV_HEIRLOOM then
+                calculatedRate = calculatedRate + 0.1
+
+                if addon.settings.profile.debug then
+                    addon.comms.PrettyPrint("Heirloom detected in Shoulder slot")
+                end
+            end
+        end
+
+        itemLink = GetInventoryItemLink("player", 5) -- Chest
+
+        if itemLink then
+            itemQuality = select(3, GetItemInfo(itemLink))
+
+            if itemQuality == INV_HEIRLOOM then
+                calculatedRate = calculatedRate + 0.1
+
+                if addon.settings.profile.debug then
+                    addon.comms.PrettyPrint("Heirloom detected in Chest slot")
+                end
+            end
+        end
+    else
+        --Parses tooltips to figure out heirloom xp bonuses
+        for i = 1, _G.INVSLOT_LAST_EQUIPPED do
+            local itemLink = GetInventoryItemLink("player", i)
+            local itemQuality
+            if itemLink then
+                itemQuality = select(3, GetItemInfo(itemLink))
+            end
+            if itemQuality == INV_HEIRLOOM then
+                local minilvl,maxilvl
+                GameTooltip:SetOwner(addon.RXPFrame, "ANCHOR_RIGHT")
+                GameTooltip:SetInventoryItem("player",i)
+                for n = 2,GameTooltip:NumLines() do
+                    local text = getglobal("GameTooltipTextLeft"..n):GetText() or ""
+                    --print(text)
+                    if not (minilvl and maxilvl) then
+                        local tminlvl,tmaxlvl = text:match(ITEM_RANGE)
+                        minilvl = tonumber(tminlvl)
+                        maxilvl = tonumber(tmaxlvl)
+                    else
+                        local lower = strlower(text)
+                        local xp = lower:match("(%d%d?)%%")
+                        if xp and lower:find(XPTEXT) then
+                            xp = tonumber(xp)
+                            if maxilvl > (playerLevel or UnitLevel("player")) then
+                                calculatedRate = calculatedRate + xp/100
+                            end
+                            break
+                        end
+                    end
+                end
+                GameTooltip:Hide()
+            end
+        end
+    end
+    return calculatedRate
+end
+
 function addon.settings:DetectXPRate()
     if not addon.settings.profile.enableAutomaticXpRate or addon.gameVersion >
         50000 then return end
@@ -3005,16 +3095,6 @@ function addon.settings:DetectXPRate()
     local UnitBuff = UnitBuff
     local GetInventoryItemLink = GetInventoryItemLink
 
-    local function CheckBuff(buffId)
-        local id
-
-        for i = 1, 40 do
-            id = select(10, UnitBuff("player", i))
-            if not id then return false end
-
-            if id == buffId then return true end
-        end
-    end
 
     if addon.gameVersion < 20000 then
         local season = addon.player.season or CheckBuff(362859) and 1
@@ -3035,43 +3115,8 @@ function addon.settings:DetectXPRate()
         return
     end
 
-    local calculatedRate = CheckBuff(377749) and 1.5 or 1.0 -- Joyous Journeys
+    local calculatedRate = addon.GetXPBonuses()
 
-    -- Ignoring ring 5% (11, 12) and Wintergrasp 5% (57940)
-    local itemQuality
-
-    local itemLink = GetInventoryItemLink("player", 3) -- Shoulder
-
-    if itemLink then
-        itemQuality = select(3, GetItemInfo(itemLink))
-
-        if itemQuality == INV_HEIRLOOM then
-            calculatedRate = calculatedRate + 0.1
-
-            if addon.settings.profile.debug then
-                addon.comms.PrettyPrint("Heirloom detected in Shoulder slot")
-            end
-        end
-    end
-
-    --Fast Track (Guild Perk)
-    if addon.IsPlayerSpell(78632) then
-        calculatedRate = calculatedRate + 0.1
-    end
-
-    itemLink = GetInventoryItemLink("player", 5) -- Chest
-
-    if itemLink then
-        itemQuality = select(3, GetItemInfo(itemLink))
-
-        if itemQuality == INV_HEIRLOOM then
-            calculatedRate = calculatedRate + 0.1
-
-            if addon.settings.profile.debug then
-                addon.comms.PrettyPrint("Heirloom detected in Chest slot")
-            end
-        end
-    end
 
     -- Bypass floating point comparison issues
     if fmt("%.2f", addon.settings.profile.xprate) == fmt("%.2f", calculatedRate) then

@@ -111,7 +111,6 @@ local function IsQuestAvailable(quest,id,skipRepCheck)
     return activeFor
 end
 
-
 local questQueryTimer = 0
 function addon.GetBestQuests(refreshQuestDB,output)
     output = output or 0
@@ -202,10 +201,8 @@ function addon.GetBestQuests(refreshQuestDB,output)
             end
         end
     end
-    local xpmod = 1
-    if addon.IsPlayerSpell(78632) then
-        xpmod = 1.1
-    end
+    local xpmod = addon.GetXPBonuses(false,80)
+    --print(xpmod)
     local outputString = ""
     local requestFromServer = true
 
@@ -443,10 +440,8 @@ function addon.CalculateTotalXP(flags)
     else
         addon.questsDone = {}
     end
-    local xpmod = 1
-    if addon.IsPlayerSpell(78632) then
-        xpmod = 1.1
-    end
+    local xpmod = addon.GetXPBonuses(false,80)
+    --print(xpmod)
     local groups = {}
     local function ProcessQuest(quest,qid,skipgrpcheck)
         qid = qid or quest.Id
