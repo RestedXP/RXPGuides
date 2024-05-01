@@ -561,19 +561,71 @@ RXPGuides.RegisterGuide([[
 #defaultfor Human/Dwarf/Gnome
 
 << Alliance
+
+step << Dwarf
+#xprate >1.19
+    .goto 27,53.124,49.995
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharek Blackstone|r
+    .turnin 24493 >>Turn in Don't Forget About Us
+	.target Tharek Blackstone
+    .isOnQuest 24493
+step << Dwarf/Gnome
+#xprate >1.19
+    #optional
+    #completewith Belm
+    .goto 27,54.083,50.335,8,0
+    .goto 27,54.277,50.312,8,0
+    .goto 27,54.485,50.847,10 >> Enter the Thunderbrew Distillery. Travel toward |cRXP_FRIENDLY_Innkeeper Belm|r inside
+    .subzoneskip 2102
+step << Gnome
+#xprate >1.19
+    .goto 27,54.485,50.847
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
+    .turnin 26380,2 >>Turn in Bound for Kharanos
+	.target Innkeeper Belm
+    .isOnQuest 26380
+--XX not sure how to do this otherwise
+step << Dwarf/Gnome
+#xprate >1.19
+    #label Belm
+    .goto 27,54.485,50.847
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
+    .home >>Set your Hearthstone to Thunderbrew Distillery
+	.target Innkeeper Belm
+step << Dwarf/Gnome/DarkIronDwarf
+#xprate >1.19
+    .goto 27,54.723,50.607,8,0
+    .goto 27,54.784,50.629,8,0
+    .goto 27,54.733,50.815,8,0
+    .goto 27,54.733,50.815
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gremlock Pilsnor|r inside in the backroom
+    .accept 6387 >>Accept Honor Students
+	.target Gremlock Pilsnor
 step << cata Shaman
+    #xprate <1.2
     .xp 7
 step << cata Shaman
+    #xprate <1.2
     .goto 1426/0,-536.50000,-5581.50000
     .train 331 >> Train |T136052:0|tHeaing Wave at the Kharanos Inn
+step << Gnome
+#xprate >1.19
+    #optional
+    #questguide
+    .goto 27,53.713,52.190
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Tharran|r
+    .turnin 26373 >>Turn in On to Kharanos
+	.target Captain Tharran
+    .isOnQuest 26373
 step << Dwarf/Gnome
     .goto 1426/0,-497.50000,-5664.00000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brolan Galebeard|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brolan Galebeard|r
     .target Brolan Galebeard
+    .turnin 6387 >>Turn in Honor Students
     .accept 6391 >>Accept Ride to Ironforge
 step << Dwarf/Gnome
 #completewith next
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brolan Galebeard|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brolan Galebeard|r
     .target Brolan Galebeard
     .goto 1426/0,-497.50000,-5664.00000
     .fly Ironforge >>Fly to Ironforge
@@ -637,7 +689,7 @@ step << Human
     .turnin 2158 >>Turn in Rest and Relaxation
     .home >>Set your Hearthstone to Lion's Pride Inn
 	.target Innkeeper Farley
-step
+step << skip
     #optional
     #completewith RemyTT
     .goto 37,41.95,67.16,0
@@ -780,21 +832,32 @@ step
     .complete 86,1 --Tender Boar Meat (4)
     .mob Stonetusk Boar
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Auntie" Bernice Stonefield|r and |cRXP_FRIENDLY_Ma Stonefield|r
-    .turnin 86 >> Turn in Pie for Billy
-    .accept 84 >> Accept Back to Billy << Human
-    .goto 37,34.486,84.253,-1
-    .target +"Auntie" Bernice Stonefield
+#sticky
+#label princessT
+    .goto 37,34.66,84.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r
     .turnin 88 >>Turn in Princess Must Die!
-    .goto 37,34.66,84.48,-1
-	.target +Ma Stonefield
+	.target Ma Stonefield
 step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Auntie" Bernice Stonefield|r
+    .goto 37,34.486,84.253
+    .turnin 86 >> Turn in Pie for Billy
+    .target "Auntie" Bernice Stonefield
+step << Human
+#xprate <1.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Auntie" Bernice Stonefield|r
+    .goto 37,34.486,84.253
+    .target "Auntie" Bernice Stonefield
+    .accept 84 >> Accept Back to Billy
+step
+#requires princessT
     .goto 37,34.94,83.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gramma Stonefield|r inside
     .turnin 111 >> Turn in Speak with Gramma
     .accept 107 >> Accept Note to William
     .target Gramma Stonefield
 step << Human
+#xprate <1.2
     #completewith Goldtooth
     .goto 37,38.22,83.41,0
     >>Kill |cRXP_ENEMY_Kobold Tunnelers|r. Loot them for their |cRXP_LOOT_Large Candles|r and |cRXP_LOOT_Gold Dust|r
@@ -802,24 +865,19 @@ step << Human
     .complete 47,1 --10/10 Gold Dust
 	.mob *Kobold Tunneler
 step << Human
+#xprate <1.2
     .goto 37,43.13,85.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Billy Maclure|r
     .turnin 84 >> Turn in Back to Billy
     .accept 87 >> Accept Goldtooth
     .target Billy Maclure
 step << Human
+#xprate <1.2
     #label Goldtooth
     .goto Elwynn Forest,40.08,80.62
     >>Kill |cRXP_ENEMY_Goldtooth|r |cRXP_WARN_outside|r the mine. Loot him for |cRXP_LOOT_Bernice's Necklace|r
     .complete 87,1 --Collect Bernice's Necklace (x1)
     .mob Goldtooth
-step << Human
-    #optional
-    #completewith next
-    .goto 37,38.22,83.41,40 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Narg the Taskmaster|r. Kill him if he's up|r
-	.unitscan Narg the Taskmaster
-    .isOnQuest 60
-    .noflyable
 step << skip
     #optional
     .goto 37,38.22,83.41,40 >>|cRXP_WARN_[RARE] Check for |cRXP_ENEMY_Narg the Taskmaster|r. Kill him if he's up|r
@@ -860,6 +918,7 @@ step
     .mob *Kobold Tunneler
     .mob *Kobold Miner
 step
+#xprate <1.2
 #requires scoutm1
     #optional
     .goto 37,37.82,86.14,40,0
@@ -881,6 +940,7 @@ step
     .mob Kobold Miner
 --XX 625 (Gold Dust) 700 (Goldtooth) - Ensure "A Fishy Peril"
 step << Human
+#xprate <1.2
     .goto 37,34.486,84.253
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Auntie" Bernice Stonefield|r
     .turnin 87 >> Turn in Goldtooth
@@ -895,19 +955,21 @@ step << !Human
     .deathskip >> Die and respawn at Goldshire
     .subzoneskip 87
 step
-    .goto 37,43.318,65.705
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
-    .turnin 60 >> Turn in Kobold Candles
-    .turnin 107 >> Turn in Note to William
-    .accept 112 >> Accept Collecting Kelp << Human
-    .target William Pestle
-step
-    #optional
     #label Kelp
+    #xprate >1.19 << Human
     .goto 37,43.318,65.705
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
     .turnin 60 >> Turn in Kobold Candles
     .turnin 107 >> Turn in Note to William
+    .target William Pestle
+step << Human
+    #label Kelp
+    #xprate <1.2
+    .goto 37,43.318,65.705
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
+    .turnin 60 >> Turn in Kobold Candles
+    .turnin 107 >> Turn in Note to William
+    .accept 112 >> Accept Collecting Kelp
     .target William Pestle
 step
     #completewith next
@@ -925,6 +987,7 @@ step << !Shaman
 --TODO: Coords, need to train before taking the horse from the next quest
     .trainer >> Train your class spels
 step << Human
+    #xprate <1.2
     .goto 37,42.105,65.927
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .turnin 40 >> Turn in A Fishy Peril
@@ -942,6 +1005,7 @@ step
     .turnin 62 >> Turn in The Fargodeep Mine
     .target Marshal Dughan
 step << Human
+    #xprate <1.2
     #completewith Frond
     #label ChargerMurloc
     .goto 37,42.105,65.927
@@ -953,6 +1017,7 @@ step << Human
     .skipgossip 240,1
     .skill riding,75,1
 step << Human
+    #xprate <1.2
     #optional
     #completewith Frond
     #requires ChargerMurloc
@@ -962,6 +1027,7 @@ step << Human
     .isOnQuest 76
     .skill riding,75,1
 step << Human
+    #xprate <1.2
     #label Frond
     #loop
     .goto 37,56.23,66.64,0
@@ -976,6 +1042,7 @@ step << Human
     .mob Murloc
     .isOnQuest 112
 step << Human
+    #xprate <1.2
     #optional
     #completewith next
     .goto 37,61.65,53.93,12,0
@@ -983,6 +1050,7 @@ step << Human
     .subzone 54 >>Enter the Jasperlode Mine
     .isOnQuest 76
 step << Human
+    #xprate <1.2
     .goto 40,44.22,67.89,12,0
     .goto 40,38.71,60.84,12,0
     .goto 40,35.92,52.81
@@ -990,19 +1058,22 @@ step << Human
     .complete 76,1 --Scout Through the Jasperlode Mine (1)
     .isOnQuest 76
 step << Human
+    #xprate <1.2
     #completewith Thomas
     .goto 37,61.58,70.04,0
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .isOnQuest 76
     .skill riding,75,1
 step << Human
+    #xprate <1.2
     .goto 40,38.71,60.84,12,0
     .goto 40,44.22,67.89,12,0
     .goto 37,61.82,53.88,12,0
     .subzone 54,1 >>Exit Jasperlode Mine
     .isOnQuest 76
     .skill riding,<75,1
-step << !Human
+step
+    #xprate >1.19 << !Human
     #completewith Thomas
     .goto 37,42.105,65.927
     .vehicle >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r to ride the |cRXP_FRIENDLY_Stormwind Charger|r toward |cRXP_FRIENDLY_Guard Thomas|r
@@ -1010,18 +1081,6 @@ step << !Human
     .target Marshal Dughan
     .skipgossip 240,1
     .subzoneskip 87,1 --Goldshire
-step << skip
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
-    --.accept 46 >>Accept Bounty on Murlocs
-    .accept 26152 >>Accept WANTED: James Clark
-    .goto 37,74.025,72.310
-    .turnin 35 >>Turn in Further Concerns
-    .accept 37 >>Accept Find the Lost Guards
-    .accept 52 >>Accept Protect the Frontier
-    --.accept 26378 >>Accept Hero's Call: Westfall!
-    .goto 37,73.973,72.177
-    .target +Guard Thomas
-    .xp <9,1
 step
     #label Thomas
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tClick the |cRXP_PICK_Bounty Board|r and talk to |cRXP_FRIENDLY_Guard Thomas|r
@@ -1192,46 +1251,37 @@ step << Hunter
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.6
 step << Human
-    #completewith Garrison
+    #optional
+    #completewith hs1
+    .hs >> hearth to Goldshire
+    .cooldown item,6948,<0,1
+step << Human
+    #completewith hs1
+    #xprate <1.2
     .goto 37,81.829,66.556
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Goss the Swift|r
     .fly Goldshire >> Fly to Goldshire
     .target Goss the Swift
     .subzoneskip 87
     .zoneskip 37,1
---XX Add hs check if they have double hs? Normal user needs it up for after Westfall
+    .cooldown item,6948,>0,1
+step << Human !Paladin !Warrior !Rogue
+    #xprate >1.19
+    .goto 37,81.829,66.556
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Goss the Swift|r
+    .fly Gol'Bolar Quarry >> Fly to Gol'Bolar Quarry
+    .target Goss the Swift
+    .cooldown item,6948,>0,1
 step << Human
+#xprate <1.2
     .goto 37,43.318,65.705
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
     .turnin 112 >> Turn in Collecting Kelp
     .target William Pestle
     .isQuestComplete 112
---XX optional if below not skipped
-step << skip
-    .goto 37,43.318,65.705
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
-    .turnin 112 >> Turn in Collecting Kelp
-    .timer 9,Collecting Kelp RP
-    .accept 114 >> Accept The Escape
-    .target William Pestle
-    .isQuestComplete 112
-step << skip
-    .goto 37,43.318,65.705
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
-    >>|cRXP_WARN_Wait for the RP|r
-    .accept 114 >> Accept The Escape
-    .target William Pestle
-    .isQuestTurnedIn 112
-step << skip
-    .goto 37,42.105,65.927
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
-    .turnin 76 >> Turn in The Jasperlode Mine
-    .accept 239 >> Accept Westbrook Garrison Needs Help!
-    .accept 26378 >>Accept Hero's Call: Westfall!
-    .target Marshal Dughan
-    .isQuestComplete 76
-    .xp <9,1
+
 step << Human
+#xprate <1.2
     .goto 37,42.105,65.927
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .turnin 76 >> Turn in The Jasperlode Mine
@@ -1239,25 +1289,21 @@ step << Human
     .target Marshal Dughan
     .isQuestComplete 76
 --XX Can skip rest of steps and fly to Dun Morogh from here if level 10+? #Optional if above step not skipped
-
+step
+#label hs1
 --Melee classes need to buy weapon upgrades:
-step << !Human Paladin/!Human Warrior/!Human Rogue/Shaman
-    #completewith next
-    .goto 37,81.829,66.556
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Goss the Swift|r
-    .fly Stormwind >> Fly to Stormwind
-    .target Goss the Swift
-    .zoneskip Stormwind City
-step << Human Paladin/Human Warrior/Human Rogue
+step << Human
+#xprate <1.2
     #completewith next
     #label FlySW
     .goto 37,41.715,64.636
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bartlett the Brave|r
-    .fly Stormwind >> Fly to Stormwind 
+    .fly Stormwind >> Fly to Stormwind << Rogue/Paladin/Warrior
+    .fly Gol'Bolar Quarry >> Fly to Gol'Bolar Quarry << !Rogue !Paladin !Warrior
 	.target Bartlett the Brave
     .zoneskip Stormwind City
     .itemStat 16,QUALITY,<7
-step << Warrior/Paladin
+step << Human (Warrior/Paladin)
     .goto 84,64.074,68.362
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
     >>|cRXP_BUY_Buy a|r |T135350:0|t[Claymore] |cRXP_BUY_from her|r
@@ -1267,7 +1313,7 @@ step << Warrior/Paladin
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
     .target Marda Weller
-step << Rogue/Shaman
+step << Human Rogue
     .goto 84,64.074,68.362
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
     >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from her|r
@@ -1279,7 +1325,7 @@ step << Rogue/Shaman
     .target Marda Weller
     .xp >11,1
     .xp <10,1
-step << Rogue/Shaman
+step << Human Rogue
     .goto 84,64.074,68.362
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
     >>|cRXP_BUY_Buy a|r |T132402:0|t[Hatchet] |cRXP_BUY_from her|r
@@ -1291,7 +1337,7 @@ step << Rogue/Shaman
     .target Marda Weller
     .xp >12,1
     .xp <11,1
-step << Warrior/Paladin
+step <<Human (Warrior/Paladin)
     #optional
     #completewith end
     +|cRXP_WARN_Equip the|r |T135350:0|t[Claymore]
@@ -1299,7 +1345,7 @@ step << Warrior/Paladin
     .itemcount 1198,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
-step << Rogue/Shaman
+step << Human Rogue
     #optional
     #completewith end
     +|cRXP_WARN_Equip the|r |T135346:0|t[Cutlass] |cRXP_WARN_in your mainhand|r
@@ -1307,7 +1353,7 @@ step << Rogue/Shaman
     .itemcount 851,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.7
-step << Rogue/Shaman
+step << Human Rogue
     #optional
     #completewith end
     +|cRXP_WARN_Equip the|r |T132402:0|t[Hatchet] |cRXP_WARN_in your mainhand|r
@@ -1315,15 +1361,14 @@ step << Rogue/Shaman
     .itemcount 853,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.1
-step << Human Paladin/Human Warrior/Human Rogue
-    #label end
-    #completewith next
-    .goto 84,70.938,72.472
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
+step << Human (Rogue/Paladin/Warrior)
+    .goto 84,70.938,72.472,-1
+    .goto 37,81.829,66.556,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r or |cRXP_FRIENDLY_Goss the Swift|r
     .fly Gol'Bolar Quarry >> Fly to Gol'Bolar Quarry
 	.target Dungar Longdrink
     .zoneskip 27 --Dun Morogh
-    .itemStat 18,QUALITY,<7
+    .target Goss the Swift
 
 step << Dwarf/Gnome
 #completewith next
@@ -1334,9 +1379,15 @@ step << Dwarf/Gnome
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gremlock Pilsnor|r inside in the backroom
     .turnin 6392 >>Turn in Return to Gremlock
 	.target Gremlock Pilsnor
+--TODO: Training for dwarf/gnomes
 step << Dwarf/Gnome
     .goto 27,53.802,52.762
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brolan Galebeard|r
     .fly Gol'Bolar Quarry >> Fly to Gol'Bolar Quarry
 	.target Brolan Galebeard
+step << Human
+    .abandon 26394 >> Abandon all the Elwynn Forest quests from your quest log
+step
+#label end
+.zone Dun Morogh >> Head to Eastern Dun Morogh
 ]])

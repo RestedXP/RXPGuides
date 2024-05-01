@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 #cata
 #name 1-6 Coldridge Valley
 #displayname 1-6 Coldridge Valley
-#next 6-7 Dun Morogh
+#next 6-7 Dun Morogh;6-9 Elwynn Forest
 #defaultfor Dwarf !DK
 
 << Alliance
@@ -55,7 +55,7 @@ step
 step << skip
     #completewith next
     +|cRXP_WARN_To enable keybinding for quest items, follow these steps:|r
-    *[1] Press the |cRXP_WARN_Escape key.|r 
+    *[1] Press the |cRXP_WARN_Escape key.|r
     *[2] Select |cRXP_WARN_Options.|r
     *[3] Navigate to |cRXP_WARN_Keybindings.|r
     *[4] Within |cRXP_WARN_Keybindings|r, find |cRXP_WARN_RestedXP Guides.|r
@@ -100,7 +100,7 @@ step
     .goto 27,35.620,71.276,15,0
     >>Use |T133675:0|t[Sten's First Aid Kit] on |cRXP_FRIENDLY_Wounded Coldridge Mountaineers|r
     .complete 24471,1 --Wounded Coldridge Mountaineers Aided (4)
-	.target Wounded Coldridge Mountaineer	
+	.target Wounded Coldridge Mountaineer
 	.use 49743
 step
     #requires Goons
@@ -111,7 +111,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sten Stoutarm|r
     .turnin 24471 >>Turn in Aid for the Wounded
 	.target Sten Stoutarm
-step  
+step
     .goto 27,36.872,70.045
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Joren Ironstock|r
     .turnin 24470 >>Turn in Give 'em What-For
@@ -182,7 +182,7 @@ step
     .complete 24477,1 --Forgotten Dwarven Artifacts	(5)
 step
     .goto 27,34.822,67.386
-    >>Open the |cRXP_PICK_Keg of Stormhammer Stout|r on the ground. Loot it for the |cRXP_LOOT_Casak of Stormhammer Stout|r 
+    >>Open the |cRXP_PICK_Keg of Stormhammer Stout|r on the ground. Loot it for the |cRXP_LOOT_Casak of Stormhammer Stout|r
     .complete 24474,1 --Cask of Stormhammer Stout (1)
 step
     #optional
@@ -198,7 +198,7 @@ step
     .complete 24477,1 --Forgotten Dwarven Artifacts	(5)
 step
     .goto 27,31.469,67.635
-    >>Open the |cRXP_PICK_Keg of Theramore Pale Ale|r in the ground. Loot it for the |cRXP_LOOT_Cask of Stormhammer Stout|r 
+    >>Open the |cRXP_PICK_Keg of Theramore Pale Ale|r in the ground. Loot it for the |cRXP_LOOT_Cask of Stormhammer Stout|r
     .complete 24474,2 --Cask of Theramore Pale Ale (1)
 step
     #loop
@@ -206,7 +206,7 @@ step
     .goto 27,33.794,67.327,0
     .goto 27,38.307,66.701,0
     .goto 27,36.450,67.833,0
-    .goto 27,33.794,67.327,15,0   
+    .goto 27,33.794,67.327,15,0
     .goto 27,34.321,68.013,15,0
     .goto 27,34.244,67.234,15,0
     .goto 27,34.440,66.416,15,0
@@ -314,7 +314,7 @@ step
     .goto 27,39.236,72.809,0
     .goto 27,37.185,74.444,0
     .goto 27,34.571,68.391,35,0
-    >>Kill |cRXP_ENEMY_Ragged Timber Wolves|r and |cRXP_ENEMY_Ragged Young Wolves|r. Loot them for their |cRXP_LOOT_Ragged Wolf Hides|r 
+    >>Kill |cRXP_ENEMY_Ragged Timber Wolves|r and |cRXP_ENEMY_Ragged Young Wolves|r. Loot them for their |cRXP_LOOT_Ragged Wolf Hides|r
     .complete 24475,2 --Ragged Wolf Hide (4)
     .mob *Ragged Young Wolf
     .mob *Ragged Timber Wolf
@@ -369,7 +369,7 @@ step
     .waypoint 27,38.883,72.557,50,0
     .waypoint 27,37.879,73.478,50,0
     .waypoint 27,37.185,74.444,50,0
-    >>Kill |cRXP_ENEMY_Ragged Timber Wolves|r and |cRXP_ENEMY_Ragged Young Wolves|r. Loot them for their |cRXP_LOOT_Ragged Wolf Hides|r 
+    >>Kill |cRXP_ENEMY_Ragged Timber Wolves|r and |cRXP_ENEMY_Ragged Young Wolves|r. Loot them for their |cRXP_LOOT_Ragged Wolf Hides|r
     .complete 24475,2 --Ragged Wolf Hide (4)
     .mob *Ragged Young Wolf
     .mob *Ragged Timber Wolf
@@ -504,7 +504,7 @@ step
 step
     #optional
     #completewith next
-    .goto 27,29.593,78.754,11 >> Travel toward |cRXP_FRIENDLY_Soothsayer Rikkari|r inside 
+    .goto 27,29.593,78.754,11 >> Travel toward |cRXP_FRIENDLY_Soothsayer Rikkari|r inside
     .timer 11,Trolling for Information RP
     .isOnQuest 24489
 step
@@ -563,7 +563,7 @@ step
 step
     #optional
     #completewith Hovel2
-    >>Kill |cRXP_ENEMY_Frostmane Blades|r 
+    >>Kill |cRXP_ENEMY_Frostmane Blades|r
     .complete 218,4 --Frostmane Blade (6)
 	.mob Frostmane Blade
 step
@@ -770,7 +770,7 @@ step
 step << skip
     #completewith next
     +|cRXP_WARN_To enable keybinding for quest items, follow these steps:|r
-    *[1] Press the |cRXP_WARN_Escape key.|r 
+    *[1] Press the |cRXP_WARN_Escape key.|r
     *[2] Select |cRXP_WARN_Options.|r
     *[3] Navigate to |cRXP_WARN_Keybindings.|r
     *[4] Within |cRXP_WARN_Keybindings|r, find |cRXP_WARN_RestedXP Guides.|r
@@ -847,25 +847,25 @@ step
 step << Gnome Rogue
     .goto 469,38.025,33.570
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kelsey Steelspark|r
-    .turnin 26206 >>Turn in The Future of Gnomeregan 
+    .turnin 26206 >>Turn in The Future of Gnomeregan
     .accept 26423 >>Accept Meet the High Tinker
 	.target Kelsey Steelspark
 step << Gnome Mage
     .goto 469,41.093,29.130
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bipsi Frostflinger|r
-    .turnin 26197 >>Turn in The Future of Gnomeregan 
+    .turnin 26197 >>Turn in The Future of Gnomeregan
     .accept 26421 >>Accept Meet the High Tinker
 	.target Bipsi Frostflinger
 step << Gnome Priest
     .goto 469,39.406,28.385
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Doc" Cogspin|r
-    .turnin 26199 >>Turn in The Future of Gnomeregan 
+    .turnin 26199 >>Turn in The Future of Gnomeregan
     .accept 26422 >>Accept Meet the High Tinker
 	.target "Doc" Cogspin
 step << Gnome Warlock
     .goto 469,37.679,37.957
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alamar Grimm|r
-    .turnin 26202 >>Turn in The Future of Gnomeregan 
+    .turnin 26202 >>Turn in The Future of Gnomeregan
     .accept 26424 >>Accept Meet the High Tinker
 	.target Alamar Grimm
 step << Gnome Warrior
@@ -876,20 +876,20 @@ step << Gnome Warrior
     .goto 469,40.645,35.354,10,0
     .goto 469,40.517,34.973,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drill Seargent Steamcrank|r
-    .turnin 26203 >>Turn in The Future of Gnomeregan 
+    .turnin 26203 >>Turn in The Future of Gnomeregan
     .accept 26425 >>Accept Meet the High Tinker
 	.target Drill Seargent Steamcrank
 step << Gnome Monk
     .goto 469,40.086,35.614
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xi, Friend to the Small|r
-    .turnin 31135 >>Turn in The Future of Gnomeregan 
-    .accept 31137 >>Accept Meet the High Tinker 
+    .turnin 31135 >>Turn in The Future of Gnomeregan
+    .accept 31137 >>Accept Meet the High Tinker
 	.target Xi, Friend to the Small
 step << Gnome Hunter
     .goto 469,41.925,31.636
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muffinus Chromebrew|r
-    .turnin 41217 >>Turn in The Future of Gnomeregan 
-    .accept 41218 >>Accept Meet the High Tinker 
+    .turnin 41217 >>Turn in The Future of Gnomeregan
+    .accept 41218 >>Accept Meet the High Tinker
 	.target Muffinus Chromebrew
 step
     .goto 469,38.802,32.715
@@ -1355,6 +1355,7 @@ step
 
 RXPGuides.RegisterGuide([[
 
+#xprate <1.2
 #version 1
 #group RXP Cataclysm 1-80 (A)
 #cata
@@ -1365,7 +1366,10 @@ RXPGuides.RegisterGuide([[
 << Alliance
 
 --XX 6-9 and 9-10 separated so can combine human guide without maintaining 2x code
-
+step
+    #xprate >1.19
+    .next
+    +-
 step << Gnome
     #optional
     #questguide
@@ -1389,6 +1393,7 @@ step
     .goto 27,54.083,50.335,8,0
     .goto 27,54.277,50.312,8,0
     .goto 27,54.485,50.847,10 >> Enter the Thunderbrew Distillery. Travel toward |cRXP_FRIENDLY_Innkeeper Belm|r inside
+    .subzoneskip 2102
 step << Gnome
     #requires Distillery
     #completewith Belm
@@ -1919,7 +1924,7 @@ step
     .mob Frostmane Raider
 step
     #questguide
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Flinthammer|r and |cRXP_FRIENDLY_Veron Amberstill|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Flinthammer|r and |cRXP_FRIENDLY_Veron Amberstill|r
     .turnin 25932 >>Turn in It's Raid Night Every Night
     .goto 27,70.410,48.918
     .target +Sergeant Flinthammer
@@ -1930,7 +1935,7 @@ step
 step
     #questguide
     .goto 27,70.280,48.160
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
     .accept 314 >>Accept Protecting the Herd
     .target Rudra Amberstill
 step
@@ -1948,7 +1953,7 @@ step
 step
     #questguide
     .goto 27,70.280,48.160
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
     .turnin 314 >>Turn in Protecting the Herd
     .target Rudra Amberstill
 step
@@ -2003,25 +2008,25 @@ step << Human
 
 step
     .goto 27,75.899,54.312
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
     .accept 433 >>Accept The Public Servant
     .target Senator Mehr Stonehallow
 step
     .goto 27,76.187,53.043
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Drugan|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Drugan|r
     .accept 25937 >>Accept Priceless Treasures
     .target Prospector Drugan
 step
     #optional
     .goto 27,76.314,54.672
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Stonebrow|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Stonebrow|r
     .accept 432 >>Accept Those Blasted Troggs!
     .turnin 25933 >>Turn in Help for the Quarry
     .target Foreman Stonebrow
     .isOnQuest 25933
 step
     .goto 27,76.314,54.672
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Stonebrow|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Stonebrow|r
     .accept 432 >>Accept Those Blasted Troggs!
     .target Foreman Stonebrow
 step
@@ -2236,10 +2241,10 @@ step << !Human
     .goto 27,88.873,48.312,12,0
     .goto 48,12.138,54.947,20,0
     .goto 48,14.025,56.641,12 >> |cRXP_WARN_Travel up the mountain, then carefully drop down toward|r |cRXP_FRIENDLY_Pilot Hammerfoot|r
-    .noflyable 
+    .noflyable
 step
     .goto 48,14.006,56.485
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Hammerfoot|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Hammerfoot|r
     .accept 26854 >>Accept The Lost Pilot
     .target Pilot Hammerfoot
 step
