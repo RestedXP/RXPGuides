@@ -2039,7 +2039,7 @@ step
     >>|cRXP_WARN_Use|r |T135974:0|t[Sense Undead] |cRXP_WARN_to be able to see the|r |cRXP_ENEMY_Vengeful Spirit|r
     >>Kill the |cRXP_ENEMY_Vengeful Spirit|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Wrath|r]
     *The |cRXP_ENEMY_Vengeful Spirit|r walks around the lake
-    .goto 33.0,44.2
+    .goto The Hinterlands,33.0,44.2
     .collect 220165,1
     .mob Vengeful Spirit
 step
