@@ -1415,7 +1415,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith RuneLearned
-    +|cRXP_WARN_The soul may only spawn after a Blood Moon event. You can also disable the event and run to the waypoint location|r. 
+    +|cRXP_WARN_The soul may only spawn after a Blood Moon event. You can also disable the event and run to the waypoint location|r.
     .train 431669,1
 step
     #completewith next
