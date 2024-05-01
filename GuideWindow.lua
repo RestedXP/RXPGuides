@@ -1370,7 +1370,9 @@ addon.emptyGuide = {
 }
 
 function addon.BetaVersionCheck()
-    if addon.game == "CATA" then
+    if GetCurrentRegion() < 20 then--PTR Region 72?
+        Footer.text:SetText(fmt("%s %s", addon.title, addon.release))
+    else
         Footer.text:SetText(fmt("RXP Beta %s %d/%d", addon.release, addon.minGuideVersion ,addon.maxGuideVersion))
     end
 end
