@@ -3038,6 +3038,7 @@ end
 
 local function CheckBuff(buffId)
     local id
+    local UnitBuff = UnitBuff
 
     for i = 1, 40 do
         id = select(10, UnitBuff("player", i))
@@ -3053,6 +3054,8 @@ local XPTEXT = strlower(POWER_TYPE_EXPERIENCE)
 
 function addon.GetXPBonuses(ignoreBuffs,playerLevel)
     local calculatedRate = not ignoreBuffs and CheckBuff(377749) and 1.5 or 1.0 -- Joyous Journeys
+
+    local GetInventoryItemLink = GetInventoryItemLink
 
     --Fast track guild perk
     if addon.IsPlayerSpell(78632) then
@@ -3090,6 +3093,7 @@ function addon.GetXPBonuses(ignoreBuffs,playerLevel)
         end
     else
         --Parses tooltips to figure out heirloom xp bonuses
+        GameTooltip:SetOwner(addon.RXPFrame, "ANCHOR_RIGHT")
         for i = 1, _G.INVSLOT_LAST_EQUIPPED do
             local itemLink = GetInventoryItemLink("player", i)
             local itemQuality
@@ -3098,7 +3102,6 @@ function addon.GetXPBonuses(ignoreBuffs,playerLevel)
             end
             if itemQuality == INV_HEIRLOOM then
                 local minilvl,maxilvl
-                GameTooltip:SetOwner(addon.RXPFrame, "ANCHOR_RIGHT")
                 GameTooltip:SetInventoryItem("player",i)
                 for n = 2,GameTooltip:NumLines() do
                     local text = getglobal("GameTooltipTextLeft"..n):GetText() or ""
@@ -3119,22 +3122,18 @@ function addon.GetXPBonuses(ignoreBuffs,playerLevel)
                         end
                     end
                 end
-                GameTooltip:Hide()
             end
         end
+        GameTooltip:Hide()
     end
     return calculatedRate
 end
 
-function addon.settings:DetectXPRate()
+function addon.settings:DetectXPRate(softUpdate)
     if not addon.settings.profile.enableAutomaticXpRate or addon.gameVersion >
         50000 then return end
 
-    local UnitBuff = UnitBuff
-    local GetInventoryItemLink = GetInventoryItemLink
-
-
-    if addon.gameVersion < 20000 then
+    if addon.gameVersion < 20000 and not softUpdate then
         local season = addon.player.season or CheckBuff(362859) and 1
 
         if season == addon.settings.profile.season then return end
@@ -3155,16 +3154,16 @@ function addon.settings:DetectXPRate()
 
     local calculatedRate = addon.GetXPBonuses()
 
-
     -- Bypass floating point comparison issues
     if fmt("%.2f", addon.settings.profile.xprate) == fmt("%.2f", calculatedRate) then
         return
     end
 
     addon.settings.profile.xprate = calculatedRate
+    addon:ScheduleTask(addon.RXPFrame.GenerateMenuTable)
 
     -- Gold assistant, ignore reloads, silently update
-    if (RXPCData and RXPCData.GA) or (addon.guide and addon.guide.farm) then
+    if (RXPCData and RXPCData.GA) or (addon.guide and addon.guide.farm) or softUpdate then
         return
     end
 
@@ -3177,8 +3176,6 @@ function addon.settings:DetectXPRate()
     else
         addon.ReloadGuide()
     end
-
-    addon.RXPFrame.GenerateMenuTable()
 end
 
 function addon.settings:RefreshProfile()

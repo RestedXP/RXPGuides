@@ -1534,6 +1534,8 @@ function addon:LoadGuide(guide, OnLoad)
         RXPCData.currentStep = 1
         RXPCData.stepSkip = {}
         RXPCData.completedWaypoints = {}
+        --Detects XP rate again when switching guides, in case player equipped heirlooms in between guides
+        addon.settings:DetectXPRate(true)
     end
     -- local totalHeight = 0
     local nframes = 0
