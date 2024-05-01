@@ -271,7 +271,7 @@ step << Human
     .train 33388,3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katie Hunter|r
     +|cRXP_BUY_Buy a|r |T132261:0|t[Horse] |cRXP_BUY_from her|r
-    .money 0.08
+    .money <0.08
     .target Katie Hunter
     .mountcount 0-150,<1
     .itemcount 2414,<1
@@ -814,19 +814,22 @@ step
     .goto 49,28.282,41.910,8,0
     .goto 49,27.972,41.567,8 >> Enter the Lakeshire Town Hall
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Solomon|r, |cRXP_FRIENDLY_Bailiff Conacher|r, and |cRXP_FRIENDLY_Colonel Troteman|r inside
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Solomon|r and |cRXP_FRIENDLY_Colonel Troteman|r inside
     .turnin 26545 >>Turn in Yowler Must Die!
     .turnin 26520 >>Turn in Saving Foreman Oslow
     .goto 49,28.971,41.123
     .target +Magistrate Solomon
-    .accept 26728 >>Accept Hero's Call: Duskwood!
-    .goto 49,28.681,40.955
-    .target +Bailiff Conacher
     .accept 26567 >>Accept John J. Keeshan
     .goto 49,28.659,40.744,5,0
     .goto 49,28.892,40.894,5,0
     .goto 49,28.659,40.744
     .target +Colonel Troteman
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bailiff Conacher|r
+    >>|cRXP_WARN_If you already accepted the Hero's Call: Duskwood! quest earlier from Stormwind, skip this step|r
+    .accept 26728 >>Accept Hero's Call: Duskwood!
+    .goto 49,28.681,40.955
+    .target +Bailiff Conacher
 step << skip
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bailiff Conacher|r and |cRXP_FRIENDLY_Magistrate Solomon|r inside
     .accept 26728 >>Accept Hero's Call: Duskwood!
@@ -888,6 +891,36 @@ step
     >>|cRXP_WARN_Swim underwater and check the spawn locations. There are 10 locations with 2 spawns up at once|r
     >>Open the |cRXP_PICK_Glinting Mud|r. Loot it for |cRXP_LOOT_Nida's Necklace|r
     .complete 26508,1 --Nida's Necklace (1)
+step
+    .train 33388,1
+    .goto Redridge Mountains,29.405,53.770
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
+    .fly Eastvale Logging Camp >> Fly to Eastvale Logging Camp
+	.target Ariena Stormfeather
+step << Human
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Katie Hunter|r
+    +|cRXP_BUY_Buy a|r |T132261:0|t[Horse] |cRXP_BUY_from her|r
+    .target Katie Hunter
+    .mountcount 0-150,<1
+    .itemcount 2414,<1
+    .itemcount 5655,<1
+    .itemcount 5656,<1
+    .itemcount 47100,<1
+step
+    .train 33388,1
+    .goto 37,84.322,64.870
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Randal Hunter|r
+    .train 33388 >> Train Apprentice Riding
+    .money <3.6000 
+    .target Randal Hunter
+    .xp <20,1
+step
+    .train 33388,3
+    .goto 37,81.830,66.553
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Goss the Swift|r
+    .fly Lakeshire, Redridge >> Fly to Lakeshire
+	.target Goss the Swift
+    .zoneskip 37,1
 step
     #optional
     .goto 49,28.277,48.871
@@ -1143,8 +1176,8 @@ step
     #optional
 	#completewith BlackrockC
     #requires RendersRock
-    .goto 49,30.050,9.353
-    .goto 49,29.150,10.594
+    .goto 49,30.050,9.353,15,0
+    .goto 49,29.150,10.594,15,0
     .goto 49,26.586,10.530,15 >>Travel toward the |cRXP_PICK_Blackrock Coffer|r inside
 step
 	#label BlackrockC
