@@ -814,6 +814,7 @@ function addon.DisplayQuestLogRewards(questLogIndex)
     end
 end
 
+local turnInTimer = 0
 function addon:QuestAutomation(event, arg1, arg2, arg3)
     if not addon.settings.profile.enableQuestAutomation or IsControlKeyDown() or addon.isHidden then
         return
@@ -843,18 +844,31 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
         ConfirmAcceptQuest()
     elseif event == "QUEST_COMPLETE" then
         handleQuestComplete()
-
-    elseif event == "QUEST_PROGRESS" and IsQuestCompletable() then
-        CompleteQuest()
+    elseif event == "QUEST_PROGRESS" then
+        if IsQuestCompletable() then
+            CompleteQuest()
+        elseif addon.QuestAutoAccept(GetQuestID()) then
+            HideUIPanel(_G.QuestFrame)
+        elseif GetTime()-turnInTimer < 0.5 then
+            HideUIPanel(_G.QuestFrame)
+            turnInTimer = 0
+        end
         -- questProgressTimer = GetTime()
-
     elseif event == "QUEST_DETAIL" then
         local id = GetQuestID()
         if addon.QuestAutoAccept(id) then
+            --acceptTimer =
             AcceptQuest()
             HideUIPanel(_G.QuestFrame)
+        elseif GetTime()-turnInTimer < 0.5 then
+            HideUIPanel(_G.QuestFrame)
+            turnInTimer = 0
         end
-
+    elseif event == "QUEST_ACCEPTED" then
+        local id = arg1 and arg2 or arg1
+        if id == GetQuestID() or addon.QuestAutoAccept(id) then
+           HideUIPanel(_G.QuestFrame)
+        end
     elseif event == "QUEST_GREETING" then
         local nActive = GetNumActiveQuests()
         local nAvailable = GetNumAvailableQuests()
@@ -935,6 +949,8 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
         if missingTurnIn then
             return GossipSelectActiveQuest(missingTurnIn)
         end
+    elseif event == "QUEST_TURNED_IN" and addon.questTurnIn[arg1] then
+            turnInTimer = GetTime()
     elseif event == "QUEST_AUTOCOMPLETE" then
         if addon.gameVersion < 50000 then
             for i = 1, GetNumAutoQuestPopUps() do
@@ -1097,6 +1113,7 @@ function addon:OnEnable()
     questFrame:RegisterEvent("QUEST_DETAIL")
     questFrame:RegisterEvent("QUEST_TURNED_IN")
     questFrame:RegisterEvent("QUEST_AUTOCOMPLETE")
+    questFrame:RegisterEvent("QUEST_ACCEPTED")
 
     if C_QuestLog.RequestLoadQuestByID then
         self:RegisterEvent("QUEST_DATA_LOAD_RESULT")
