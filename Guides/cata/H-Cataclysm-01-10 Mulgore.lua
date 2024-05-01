@@ -107,18 +107,18 @@ step
     .mob Armored Battleboar
 step
     .goto 7,44.70,87.82
-    >>Use |T135432:0|t[Adana's Torch] next to the first trough
+    >>|cRXP_WARN_Use|r |T135432:0|t[Adana's Torch] |cRXP_WARN_next to the first trough|r
     .complete 14461,1 --First Trough (1)
     .use 49539
 step
     .goto 7,44.32,88.71
-    >>Use |T135432:0|t[Adana's Torch] next to the second trough
+    >>|cRXP_WARN_Use|r |T135432:0|t[Adana's Torch] |cRXP_WARN_next to the second trough|r
     .complete 14461,2 --Second Trough (1)
     .use 49539
 step
     #label ThirdTrough
     .goto 1412/1,-265.00000,-3405.80005
-    >>Use |T135432:0|t[Adana's Torch] next to the third trough
+    >>|cRXP_WARN_Use|r |T135432:0|t[Adana's Torch] |cRXP_WARN_next to the third trough|r
     .complete 14461,3 --Third Trough (1)
     .use 49539
 step
@@ -148,7 +148,7 @@ step
     .mob Chief Squealer Thornmantle
 step
     #completewith next
-    .hs >> Use your hearthstone
+    .hs >> Hearth to Camp Narache
     .cooldown item,6948,>0
 step
     .goto 7,45.17,75.44
@@ -158,7 +158,7 @@ step
     .target Chief Hawkwind
 step
     .goto 7,45.11,75.39
-    >>Use the |T132813:0|t[Water Pitcher]
+    >>|cRXP_WARN_Use the|r |T132813:0|t[Water Pitcher]
     .complete 24861,1 --Offering Placed (1)
     .use 50465
 step
@@ -480,6 +480,8 @@ step
     .mob Palemane Poacher
     .mob Palemane Tanner
 step
+    #loop
+    .goto 7,48.25,67.61,0
     .goto 7,50.61,68.08,40,0
     .goto 7,50.23,66.00,40,0
     .goto 7,51.06,64.06,40,0
@@ -490,7 +492,7 @@ step
     .goto 7,56.63,62.25,40,0
     .goto 7,56.75,64.83,40,0
     .goto 7,56.06,67.30,40,0
-    .goto 7,48.25,67.61
+    .goto 7,48.25,67.61,40,0
     >>Kill |cRXP_ENEMY_Wolfs|r. Loot them for their |cRXP_LOOT_Paws|r
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Talons|r and |T134343:0|t[|cRXP_LOOT_Tender Strider Meat|r]
     .complete 20440,1 --Prairie Wolf Paw (6)
@@ -680,7 +682,7 @@ step
     .mob Wiry Swoop
 step
     .goto 7,53.52,48.29
-    >>Right click on the |cRXP_PICK_Sealed Supply Crate|r
+    >>Click on the |cRXP_PICK_Sealed Supply Crate|r
     .turnin 749 >>Turn in The Ravaged Caravan
     .accept 751 >>Accept The Ravaged Caravan
 step
@@ -706,12 +708,14 @@ step
     .complete 26180,1 --Fizsprocket's Clipboard (1)
     .mob Supervisor Fizsprocket
 step
+    #loop
+    .goto 7,59.30,48.85,0
     .goto 7,62.21,45.13,20,0
     .goto 7,61.81,44.74,20,0
     .goto 7,61.29,43.64,20,0
     .goto 7,60.73,48.13,40,0
     .goto 7,60.47,49.63,40,0
-    .goto 7,59.30,48.85
+    .goto 7,59.30,48.85,40,0
     >>Kill |cRXP_ENEMY_Venture Co. Workers|r
     .complete 26179,1 --Venture Co. Worker (7)
     .mob Venture Co. Worker
@@ -744,6 +748,8 @@ step
     .mob Swoop
     .mob Wiry Swoop
 step
+    #loop
+    .goto 7,56.14,57.59,0
     .goto 7,57.94,60.08,40,0
     .goto 7,58.60,58.93,40,0
     .goto 7,59.73,57.46,40,0
@@ -756,7 +762,7 @@ step
     .goto 7,56.00,51.41,40,0
     .goto 7,55.66,53.73,40,0
     .goto 7,55.60,55.55,40,0
-    .goto 7,56.14,57.59
+    .goto 7,56.14,57.59,40,0
     >>Kill |cRXP_ENEMY_Prairie Stalkers|r. Loot them for their |cRXP_LOOT_claws|r
     >>Kill |cRXP_ENEMY_Flatland Cougars|r. Loot them for their |cRXP_LOOT_claws|r and for a |cRXP_LOOT_Femur|r
     .complete 24441,1 --Stalker Claws (6)
@@ -765,17 +771,29 @@ step
     .mob Flatland Cougar
     .mob Prairie Stalkers
 step
+    #loop
+    .goto 7,54.70,67.69,0
     .goto 7,54.11,62.03,40,0
     .goto 7,51.77,66.37,40,0
     .goto 7,51.06,67.33,40,0
     .goto 7,50.01,68.11,40,0
-    .goto 7,54.70,67.69
+    .goto 7,54.70,67.69,40,0
     >>Kill |cRXP_ENEMY_Swoops|r. Loot them for their |cRXP_LOOT_Quills|r
     .complete 761,1 --Trophy Swoop Quill (8)
     .mob Swoop
     .mob Wiry Swoop
 step
+    #xprate <1.2
     #completewith ThunderHornTotem
+    .goto 1412/1,-354.10001,-2318.40015,0
+    .goto 1412/1,-488.20001,-2347.90015,0
+    .use 33009>> Find |cRXP_FRIENDLY_Kyle|r. Use the |T134343:0|t[|cRXP_LOOT_Tender Strider Meat|r] to feed him
+    >>|cRXP_WARN_He runs in circles around Bloodhoof Village|r
+    .complete 11129,1 --1/1 Kyle fed
+    .unitscan Kyle the Frenzied
+step
+    #xprate >1.19
+    #completewith FlyTB
     .goto 1412/1,-354.10001,-2318.40015,0
     .goto 1412/1,-488.20001,-2347.90015,0
     .use 33009>> Find |cRXP_FRIENDLY_Kyle|r. Use the |T134343:0|t[|cRXP_LOOT_Tender Strider Meat|r] to feed him
@@ -830,11 +848,45 @@ step << Hunter
     .train 5116 >> Train your class spells
     .target Yaw Sharpmane
 step
+    #xprate <1.2
     #label ThunderHornTotem
     .goto 7,44.805,45.597
     .use 5415 >>|cRXP_WARN_Use the|r |T135139:0|t[Thunderhorn Cleansing Totem] |cRXP_WARN_next to the well|r
     .complete 24456,1 --Well Cleansed (1)
- step
+step
+    #xprate >1.19
+    #label FlyTB
+    #completewith next
+    .goto 7,47.44,58.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tak|r
+    .fly Thunder Bluff >>Fly to Thunder Bluff
+    .target Tak
+step << Tauren
+    #xprate >1.19
+    .goto 88,45.77,55.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahanu|r
+    .turnin 6362 >>Turn in Ride to Thunder Bluff
+    .accept 6363 >>Accept Tal the Wind Rider Master
+    .target Ahanu
+step << Tauren
+    #xprate >1.19
+    .goto 88,47.05,49.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
+    .turnin 6363 >>Turn in Tal the Wind Rider Master
+    .accept 6364 >>Accept Return to Varg
+    .target Tal
+step << skip
+    #xprate >1.19
+    .goto 88,45.822,64.762
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Pala|r
+    .home >>Set your hearthstone to Thunder Bluff
+    .target Innkeeper Pala
+step
+    #xprate >1.19
+    #completewith next
+    .goto 1456/1,183.30000,-1314.09998,20 >>Take the elevator to exit Thunder Bluff
+    .zoneskip Mulgore
+step
     #loop
     .goto 7,35.869,42.670,0
     .waypoint 7,36.260,44.783,40,0
@@ -859,6 +911,11 @@ step
     .complete 14491,1 --Spirits Calmed (6)
     .use 49647
     .mob Agitated Earth Spirit
+step
+    #xprate >1.19
+    .goto 7,44.805,45.597
+    .use 5415 >>|cRXP_WARN_Use the|r |T135139:0|t[Thunderhorn Cleansing Totem] |cRXP_WARN_next to the well|r
+    .complete 24456,1 --Well Cleansed (1)
 step
     #completewith DangerTurnin
     .deathskip >>Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
@@ -889,6 +946,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahab|r
     .turnin 11129 >>Turn in Kyle's Gone Missing!
     .target Ahab Wheathoof
+step << Tauren
+    #xprate >1.19
+    .goto 7,46.06,58.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Varg|r
+    .turnin 6364 >>Turn in Return to Varg
+    .target Varg Windwhisper
 step
     .goto 7,47.66,59.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahmo|r
@@ -901,10 +964,17 @@ step
     .turnin 743 >>Turn in Dangers of the Windfury
     .target Ruul Eagletalon
 step
+    #xprate <1.2
     .goto 7,48.60,59.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mull|r
     .turnin 24456 >>Turn in Thunderhorn Cleansing
     .accept 24457 >>Accept Rite of Vision
+    .target Mull Thunderhorn
+step
+    #xprate >1.19
+    .goto 7,48.60,59.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mull|r
+    .turnin 24456 >>Turn in Thunderhorn Cleansing
     .target Mull Thunderhorn
 step << Hunter
     .goto 7,47.94,55.36
@@ -939,46 +1009,54 @@ step << Druid
 step << Paladin
     .goto 7,48.78,58.92
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iopi|r
-    .train 1120 >> Train your class spells
+    .train 82242 >> Train your class spells
     .target Sunwalker Iopi
     .xp <10,1
 step
+    #xprate <1.2
     .goto 7,47.889,57.097
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zarlman|r
     .turnin 24457 >>Turn in Rite of Vision
     .accept 20441 >>Accept Rite of Vision
     .target Zarlman Two-Moons
 step
+    #xprate <1.2
     .goto 7,47.850,56.961
     .use 49651 >>|cRXP_WARN_Use the|r |T134712:0|t[Water of Vision] |cRXP_WARN_at the tribal fire|r
     .complete 20441,1 --Water of Vision consumed (1x)
     .timer 86,Rite of Vision RP
 step
+    #xprate <1.2
     #completewith next.
     .subzone 4835 >>Wait until you arrive in Camp Sungraze
 step
+    #xprate <1.2
     .goto 7,49.370,17.324
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Una|r
     .turnin 20441 >>Turn in Rite of Vision
     .accept 24523 >>Accept Wildmane Totem
     .target Una Wildmane
 step
+    #xprate <1.2
     .goto 7,49.523,17.088
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorekeeper Raintotem|r
     .accept 833 >>Accept A Sacred Burial
     .accept 773 >>Accept Rite of Wisdom
     .target Lorekeeper Raintotem
 step
+    #xprate <1.2
     .goto 7,49.685,17.241
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skorn|r
     .accept 861 >>Accept The Hunter's Way
     .target Skorn Whitecloud
 step
+    #xprate <1.2
     .goto 7,49.586,17.587
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eyahn|r
     .accept 744 >>Accept Preparation for Ceremony
     .target Eyahn Eagletalon
 step
+    #xprate <1.2
     #completewith RedRocks
     >>Kill |cRXP_ENEMY_Prairie Wolf Alphas|r. Loot them for their |cRXP_LOOT_Teeth|r
     >>Kill |cRXP_ENEMY_Flatland Prowlers|r. Loot them for their |cRXP_LOOT_Claws|r
@@ -987,6 +1065,7 @@ step
     .complete 861,1 --Flatland Prowler Claw (x4)
     .mob +Flatland Prowler
 step
+    #xprate <1.2
     #loop
     .goto 7,52.476,8.126,0
     .waypoint 7,54.950,13.407,0
@@ -1001,21 +1080,25 @@ step
     .complete 744,2 --Bronze Feather (x6)
     .mob +Windfury Matriarch
 step
+    #xprate <1.2
     #label RedRocks
     .goto 7,60.828,22.737
     .subzone 225 >>Travel to Red Rocks
     .isOnQuest 833
 step
+    #xprate <1.2
     #completewith next
     >>Kill |cRXP_ENEMY_Bristleback Interlopers|r.
     .complete 833,1 --Bristleback Interloper Slain (x8)
     .mob Bristleback Interloper
 step
+    #xprate <1.2
     .goto 7,60.787,22.684
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahanu|r
     .turnin 773 >>Turn in Rite of Wisdom
     .target Ancestral Spirit
 step
+    #xprate <1.2
     #loop
     .goto 7,60.374,21.638,0
     .waypoint 7,61.344,24.848,50,0
@@ -1026,6 +1109,7 @@ step
     .complete 833,1 --Bristleback Interloper Slain (x8)
     .mob Bristleback Interloper
 step
+    #xprate <1.2
     #loop
     .goto 7,54.646,24.065,0
     .goto 7,46.777,18.984,0
@@ -1043,83 +1127,99 @@ step
     .complete 861,1 --Flatland Prowler Claw (x4)
     .mob +Flatland Prowler
 step
+    #xprate <1.2
     .goto 7,49.370,17.324
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Una|r
     .turnin 24523 >>Turn in Wildmane Totem
     .accept 24524 >>Accept Wildmane Cleansing
     .target Una Wildmane
 step
+    #xprate <1.2
     .goto 7,49.523,17.088
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorekeeper Raintotem|r
     .turnin 833 >>Turn in A Sacred Burial
     .target Lorekeeper Raintotem
 step
+    #xprate <1.2
     .goto 7,49.685,17.241
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Skorn|r
     .turnin 861 >>Turn in The Hunter's Way
     .target Skorn Whitecloud
 step
+    #xprate <1.2
     .goto 7,49.586,17.587
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eyahn|r
     .turnin 744 >>Turn in Preparation for Ceremony
     .target Eyahn Eagletalon
 step
+    #xprate <1.2
     .goto 7,43.204,16.050
     .use 5416 >>|cRXP_WARN_Use the|r |T135139:0|t[Wildmane Cleansing Totem] |cRXP_WARN_next to the well|r
     .complete 24524,1 --Well Cleansed (1)
 step
+    #xprate <1.2
     .goto 7,49.370,17.324
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Una|r
     .turnin 24524 >>Turn in Wildmane Cleansing
     .accept 24550 >>Accept Journey into Thunder Bluff
     .target Una Wildmane
 step
+    #xprate <1.2
     #completewith next
     .deathskip >>Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step
+    #xprate <1.2
     #completewith next
     .goto 88,54.766,26.571,15,0
     .goto 88,50.038,34.337,20 >>Take the elevator into Thunder Bluff
 step
+    #xprate <1.2
     .goto 88,60.330,51.693
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baine|r
     .turnin 24550 >>Turn in Journey into Thunder Bluff
     .accept 24540 >>Accept War Dance
     .target Baine Bloodhoof
 step << Tauren
+    #xprate <1.2
     .goto 88,45.77,55.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahanu|r
     .turnin 6362 >>Turn in Ride to Thunder Bluff
     .accept 6363 >>Accept Tal the Wind Rider Master
     .target Ahanu
 step
+    #xprate <1.2
     .goto 88,45.822,64.762
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Pala|r
     .home >>Set your hearthstone to Thunder Bluff
     .target Innkeeper Pala
 step
+    #xprate <1.2
     #completewith next
     .goto 88,51.937,26.573,15,0
     .goto 7,37.883,13.834,50 >>Take the Northern Elevator back into Mulgore
     .zoneskip Mulgore
 step
+    #xprate <1.2
     .goto 7,36.975,11.910
     >>Attack |cRXP_ENEMY_Orno Grimtotem|r
     >>|cRXP_WARN_The quest will complete once he is at 90% health|r
     .complete 24540,1 --Orno Grimtotem Defeated (1x)
     .mob Orno Grimtotem
 step
+    #xprate <1.2
     #completewith next
     .hs >>Hearth to Thunder Bluff
     .use 6948
     .zoneskip Thunder Bluff
 step
+    #xprate <1.2
     .goto 88,60.330,51.693
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baine|r
     .turnin 24540 >>Turn in War Dance
     .accept 26397 >>Accept Walk With The Earth Mother
     .target Baine Bloodhoof
 step << Tauren
+    #xprate <1.2
     .goto 88,47.05,49.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .turnin 6363 >>Turn in Tal the Wind Rider Master
@@ -1127,17 +1227,28 @@ step << Tauren
     .target Tal
     .zoneskip Orgrimmar
 step << !Tauren
+    #xprate <1.2
     .goto 88,47.05,49.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .gossipoption 111516 >> Fly to Orgrimmar
     .target Tal
     .zoneskip Orgrimmar
 step
+    #xprate >1.19
+    .goto 7,47.44,58.63
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tak|r
+    .fly Orgrimmar >>Fly to Orgrimmar
+    .target Tak
+    .zoneskip Orgrimmar
+step
+    #xprate <1.2
     #completewith next
     .goto 85,49.886,75.613,8 >>Enter Grommash Hold
 step
+    #xprate <1.2
     .goto 1454/1,-4343.10010,1669.20007
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garrosh Hellscream|r
     .turnin 26397 >>Turn in Walk With The Earth Mother
     .target Garrosh Hellscream
+    .isOnQuest 26397
     ]])

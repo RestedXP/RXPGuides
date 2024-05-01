@@ -219,7 +219,7 @@ step
     .mob Scorpid Worker
  step
     #completewith ScorpidTails
-    >>Use the |T133486:0|t[Foreman's Blackjack] on sleeping |cRXP_FRIENDLY_Lazy Peons|r.
+    >>|cRXP_WARN_Use the|r |T133486:0|t[Foreman's Blackjack] |cRXP_WARN_on sleeping |r|cRXP_FRIENDLY_Lazy Peons|r
     .complete 25134,1 --Peons Awoken (4)
     .use 16114
     .target Lazy Peon
@@ -279,12 +279,19 @@ step
     .target Foreman Thazz'ril
 	.isQuestComplete 37446
 step
-    #completewith next
-    >>Use the |T133486:0|t[Foreman's Blackjack] on sleeping |cRXP_FRIENDLY_Lazy Peons|r
+    #completewith VileFamiliars
+    >>|cRXP_WARN_Use the|r |T133486:0|t[Foreman's Blackjack] |cRXP_WARN_on sleeping |r|cRXP_FRIENDLY_Lazy Peons|r
     .complete 25134,1 --Peons Awoken (4)
     .use 16114
     .target Lazy Peon
 step
+    #completewith WakePeons
+    >>Loot the |cRXP_LOOT_Cactus Apples|r
+    .complete 25136,1 --Cactus Apple (6)
+step
+    #label VileFamiliars
+    #loop
+    .goto 1411,45.26,57.37,0
     .goto 1411,46.90,59.59,40,0
     .goto 1411,46.94,58.61,40,0
     .goto 1411,46.25,58.00,40,0
@@ -298,7 +305,7 @@ step
     .goto 1411,43.78,57.46,40,0
     .goto 1411,43.95,58.65,40,0
     .goto 1411,43.11,58.25,40,0
-    .goto 1411,45.26,57.37
+    .goto 1411,45.26,57.37,40,0
     >>Kill |cRXP_ENEMY_Vile Familiars|r
     .complete 25131,1 --Vile Familiar (8)
     .mob Vile Familiar
@@ -309,7 +316,7 @@ step
     .goto 1411,41.15,58.91,20,0
     .goto 1411,40.91,60.24,20,0
     .goto 1411,40.43,62.93,20,0
-    >>Use the |T133486:0|t[Foreman's Blackjack] on sleeping |cRXP_FRIENDLY_Lazy Peons|r
+    >>|cRXP_WARN_Use the|r |T133486:0|t[Foreman's Blackjack] |cRXP_WARN_on sleeping |r|cRXP_FRIENDLY_Lazy Peons|r
     .complete 25134,1 --Peons Awoken (4)
     .use 16114
     .target Lazy Peon
@@ -321,6 +328,9 @@ step
     .accept 25130 >>Accept Back to the Den
     .target Hana'zua
 step
+    #label WakePeons
+    #loop
+    .goto 1411,45.53,65.80,0
     .goto 1411,38.84,61.82,20,0
     .goto 1411,39.78,67.17,20,0
     .goto 1411,40.71,68.62,20,0
@@ -331,8 +341,8 @@ step
     .goto 1411,42.84,57.25,20,0
     .goto 1411,41.14,58.93,20,0
     .goto 1411,40.89,60.23,20,0
-    .goto 1411,45.53,65.80
-    >>Use the |T133486:0|t[Foreman's Blackjack] on sleeping |cRXP_FRIENDLY_Lazy Peons|r
+    .goto 1411,45.53,65.80,20,0
+    >>|cRXP_WARN_Use the|r |T133486:0|t[Foreman's Blackjack] |cRXP_WARN_on sleeping |r|cRXP_FRIENDLY_Lazy Peons|r
     .complete 25134,1 --Peons Awoken (4)
     .use 16114
     .target Lazy Peon
@@ -359,12 +369,14 @@ step
     .accept 25132 >>Accept Burning Blade Medallion
     .target Zureetha Fargaze
 step
+    #loop
+    .goto 1411,44.85,59.65,0
     .goto 1411,40.52,60.35,20,0
     .goto 1411,41.59,58.59,20,0
     .goto 1411,42.60,58.76,20,0
     .goto 1411,44.64,58.22,20,0
     .goto 1411,45.45,58.45,20,0
-    .goto 1411,44.85,59.65
+    .goto 1411,44.85,59.65,20,0
     >>Loot the |cRXP_LOOT_Cactus Apples|r
     .complete 25136,1 --6/6 Cactus Apple
 step
@@ -1243,16 +1255,16 @@ step << skip
     .goto 1411,63.67,82.61,40,0
     .goto 1411,60.48,81.45,40,0
     .goto 1411,60.09,79.68,40,0
-    .goto 1411,57.84,75.47,40 >> Travel to Sen'Jin Village
+    .subzone 367 >> Travel to Sen'Jin Village
 step << Troll
     #completewith BreakingtheChain
     .goto 1411,64.10,74.25,40,0
-    .goto 1411,57.22,74.97,40 >> Travel to Sen'Jin Village
+    .subzone 367 >> Travel to Sen'Jin Village
 step << Orc
     #completewith BreakingtheChain
     .goto 1411,48.47,67.93,40,0
     .goto 1411,50.44,68.39,40,0
-    .goto 1411,55.95,74.71,40 >> Travel to Sen'jin Village
+    .subzone 367 >> Travel to Sen'Jin Village
 step
     #optional << Troll
     .goto 1411,55.95,74.73
@@ -1295,7 +1307,7 @@ step << Mage/Priest/Warlock/Druid
     .vendor >> Vendor trash
     .target Tai'tasi
 step << Warrior
-    .goto 1411,56.45,73.24
+    .goto 1411,56.70,73.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yeniss|r
     .train 34428 >> Train your class spells
     .target Yeniss
@@ -1398,7 +1410,13 @@ step
     .complete 25170,1 --Collect Crawler Mucus (5)
     .mob Surf Crawler
 step
-    .goto 1411,52.32,81.53
+    #loop
+    .goto 1411,52.32,81.53,0
+    .goto 1411,51.14,79.19,0
+    .goto 1411,49.67,79.64,0
+    .goto 1411,52.32,81.53,30,0
+    .goto 1411,51.14,79.19,20,0
+    .goto 1411,49.67,79.64,30,0
     >>Kill |cRXP_ENEMY_Northwatch Supply Crates|r and |cRXP_ENEMY_Northwatch Lugs|r
     >>|cRXP_WARN_You may have to wait for more to respawn|r
     .complete 25167,1 --Northwatch Supply Crates destroyed (3)
@@ -1452,7 +1470,7 @@ step << Hunter
     .target Hai'zan
     .xp <6,1
 step << Warrior
-    .goto 1411,56.45,73.24
+    .goto 1411,56.70,73.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yeniss|r
     .train 34428 >> Train your class spells
     .target Yeniss
@@ -1541,8 +1559,9 @@ step
     .waypoint 1411,52.27,74.29,40,0
     .waypoint 1411,51.60,73.68,40,0
     .waypoint 1411,51.40,74.88,40,0
-    >>Attack |cRXP_ENEMY_Clattering Scorpids|r. Use the |T136061:0|t[Poison Extraction Totem] when |cRXP_ENEMY_Clattering Scorpids|r cast |T132287:0|t[Envenom]
-    >>|cRXP_WARN_Pull multiple|r |cRXP_ENEMY_Clattering Scorpids|r |cRXP_WARN_simultaneously time to expedite the process|r
+    >>Attack |cRXP_ENEMY_Clattering Scorpids|r
+    >>|cRXP_WARN_Use the|r |T136061:0|t[Poison Extraction Totem] |cRXP_WARN_when|r |cRXP_ENEMY_Clattering Scorpids|r |cRXP_WARN_cast|r |T132287:0|t[Envenom]
+    >>|cRXP_WARN_This has a 15 second cooldown. Pull multiple|r |cRXP_ENEMY_Clattering Scorpids|r |cRXP_WARN_simultaneously time to expedite the process|r
     .complete 25165,1 --Sample of Scorpid Venom Collected (6)
     .mob Clattering Scorpid
     .use 52505
@@ -1567,6 +1586,8 @@ step
     >>Destroy the |cRXP_PICK_Attack Plans|r on the ground
     .complete 25169,3 --Attack Plan: Orgrimmar burned (1)
 step
+    #loop
+    .goto 1411,48.36,79.40,0
     .goto 1411,46.63,79.76,40,0
     .goto 1411,47.27,80.88,40,0
     .goto 1411,47.84,79.84,40,0
@@ -1574,7 +1595,7 @@ step
     .goto 1411,49.03,79.33,40,0
     .goto 1411,49.89,79.04,40,0
     .goto 1411,49.97,80.86,40,0
-    .goto 1411,48.36,79.40
+    .goto 1411,48.36,79.40,40,0
     >>Kill |cRXP_ENEMY_Northwatch Infantryman|r and |cRXP_ENEMY_Northwatch Rangers|r
     .complete 25168,1 --Northwatch Troop (12)
     .mob Northwatch Infantryman
@@ -1625,16 +1646,16 @@ step << Hunter
     .target Hai'zan
     .xp <6,1
     .xp >8,1
-step << Hunter
+step << Hunterw 
     .goto 1411,55.72,73.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hai'zan|r
     .train 5116 >> Train your class spells
     .target Hai'zan
     .xp <8,1
 step << Warrior
-    .goto 1411,56.45,73.24
+    .goto 1411,56.70,73.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yeniss|r
-    .train 84939 >> Train your class spells
+    .train 772 >> Train your class spells
     .target Yeniss
     .xp <7,1
 step << Mage
@@ -1658,6 +1679,7 @@ step << Warlock
 step
     .goto 1411,55.26,74.66
     .gossipoption 112084 >> Talk to |cRXP_FRIENDLY_Jhash|r
+    >>|cRXP_WARN_Take the ride to Razor Hill|r
     .timer 67, Riding on RP
     .target Raider Jhash
     .isOnQuest 25171
@@ -1680,7 +1702,7 @@ step
 step
     #label TravelToTiragarde
     #completewith Palliter
-    .goto 1411,59.30,58.36,15 >> Travel to Tiragarde Keep
+    .subzone 372>> Travel to Tiragarde Keep
 step
     #completewith Palliter
     >>Kill |cRXP_ENEMY_Northwatch Marines|r and |cRXP_ENEMY_Northwatch Sharpshooters|r
@@ -1698,7 +1720,7 @@ step
     .goto 1411,59.48,58.82,8,0
     .goto 1411,59.81,58.44,8,0
     .goto 1411,59.58,57.88,8,0
-    .goto 1411,59.31,57.88,8 >>Move toward |cRXP_ENEMY_Lieutenant Palliter|r
+    .goto 1411,59.31,57.88,8 >>Move toward |cRXP_ENEMY_Lieutenant Palliter|r on the second floor of the keep
 step
     #label Palliter
     .goto 1411,59.75,58.31
@@ -1713,21 +1735,25 @@ step
     .complete 25173,2 --Northwatch Sharpshooter (6)
     .mob +Northwatch Sharpshooter
 step
+    #loop
+    .goto 1411,59.84,58.12,0
     .goto 1411,57.93,58.57,15,0
     .goto 1411,57.17,56.21,15,0
     .goto 1411,58.23,55.44,15,0
     .goto 1411,59.44,56.13,15,0
     .goto 1411,59.32,58.03,8,0
-    .goto 1411,59.84,58.12
+    .goto 1411,59.84,58.12,15,0
     >>Loot the |cRXP_LOOT_Kul Tiras Treasure|r on the ground
     .complete 25176,1 --Kul Tiras Treasure (6)
 step
+    #loop
+    .goto 1411,59.02,57.24,0
     .goto 1411,58.50,58.88,40,0
     .goto 1411,57.67,58.53,40,0
     .goto 1411,57.87,57.50,40,0
     .goto 1411,57.34,56.57,40,0
     .goto 1411,58.41,56.40,40,0
-    .goto 1411,59.02,57.24
+    .goto 1411,59.02,57.24,40,0
     >>Kill |cRXP_ENEMY_Northwatch Marines|r and |cRXP_ENEMY_Northwatch Sharpshooters|r
     .complete 25173,1 --Northwatch Marine (6)
     .mob +Northwatch Marine
@@ -1738,7 +1764,7 @@ step
     .goto 1411,58.71,56.76,-1
     .goto 1411,58.56,54.00,-1
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-    >>|cRXP_WARN_Make sure you die near the waypoint or further north of the keep|r
+    >>|cRXP_WARN_Make sure you die near the waypoint or further North of the keep|r
 step
     .goto 1411,52.00,43.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gar'Thok|r
@@ -1789,9 +1815,9 @@ step << Hunter
 step << Warrior
     .goto 1411,54.18,42.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw|r inside
-    .train 29131 >> Train your class spells
+    .train 772 >> Train your class spells
     .target Tarshaw Jaggedscar
-    .xp <8,1
+    .xp <7,1
 step << Mage
     .goto 1411,53.04,41.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Un'Thuwa|r
@@ -1811,6 +1837,8 @@ step << Warlock
     .target Ghugru Gorelust
     .xp <8,1
 step
+    #loop
+    .goto 1411,58.98,46.57,0
     .goto 1411,57.91,45.11,10,0
     .goto 1411,57.91,45.11,10,0
     .goto 1411,58.41,43.50,10,0
@@ -1818,7 +1846,7 @@ step
     .goto 1411,59.84,44.31,10,0
     .goto 1411,59.34,41.92,10,0
     .goto 1411,59.71,41.51,10,0
-    .goto 1411,58.98,46.57
+    .goto 1411,58.98,46.57,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to an |cRXP_FRIENDLY_Injured Razor Hill Grunt|r lying on the ground
     .accept 25179 >>Accept Loss Reduction
     .target Injured Razor Hill Grunt
@@ -1849,13 +1877,15 @@ step
     .complete 25178,1 --Gnomish Tools (4)
 step
     #label RazorGrunts
+    #loop
+    .goto 1411,58.98,46.57,0
     .goto 1411,57.91,45.11,10,0
     .goto 1411,58.41,43.50,10,0
     .goto 1411,59.02,43.37,10,0
     .goto 1411,59.84,44.31,10,0
     .goto 1411,59.34,41.92,10,0
     .goto 1411,59.71,41.51,10,0
-    .goto 1411,58.98,46.57
+    .goto 1411,58.98,46.57,10,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Injured Razor Hill Grunts|r
     .complete 25179,1 --Injured Razor Hill Grunt Rescued (4)
     .target Injured Razor Hill Grunt
@@ -1921,9 +1951,9 @@ step << Hunter
 step << Warrior
     .goto 1411,54.18,42.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw|r inside
-    .train 29131 >> Train your class spells
+    .train 772 >> Train your class spells
     .target Tarshaw Jaggedscar
-    .xp <8,1
+    .xp <7,1
 step << Mage
     .goto 1411,53.04,41.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Un'Thuwa|r
@@ -1959,7 +1989,7 @@ step
     .target Thonk
 step
     .goto 1411,49.60,40.17
-    >>Use |T134441:0|t[Thonk's Spyglass] to find |cRXP_FRIENDLY_Raggaran|r, |cRXP_FRIENDLY_Flooded hut|r, |cRXP_FRIENDLY_Misha|r, and |cRXP_FRIENDLY_Zen'Taji|r
+    >>|cRXP_WARN_Use|r |T134441:0|t[Thonk's Spyglass] |cRXP_WARN_to find|r |cRXP_FRIENDLY_Raggaran|r|cRXP_WARN_,|r |cRXP_FRIENDLY_Flooded hut|r|cRXP_WARN_,|r |cRXP_FRIENDLY_Misha|r|cRXP_WARN_, and|r |cRXP_FRIENDLY_Zen'Taji|r
     >>|cRXP_WARN_You cannot skip this cinematic|r
     .complete 25187,1 --Find Raggaran (1)
     .complete 25187,2 --Find flooded hut (1)
@@ -1991,6 +2021,8 @@ step
     .accept 25194 >>Accept Unbidden Visitors
     .target Zen'Taji
 step
+    #loop
+    .goto 1411,35.26,39.70,0
     .goto 1411,35.26,39.70,50,0
     .goto 1411,34.96,36.71,50,0
     .goto 1411,34.90,35.09,50,0
@@ -2000,7 +2032,7 @@ step
     .goto 1411,34.79,43.39,50,0
     .goto 1411,34.64,44.87,50,0
     .goto 1411,35.37,46.05,50,0
-    .goto 1411,35.26,39.70
+    .goto 1411,35.26,39.70,50,0
     >>Attack |cRXP_ENEMY_Wayward Plainstriders|r alongside the river to make them flee into the Barrens
     .complete 25194,1 --Wayward Plainstrider Returned (3)
     .unitscan Wayward Plainstrider
@@ -2064,6 +2096,8 @@ step
     .accept 25190 >>Accept Raggaran's Rage
     .target Raggaran
 step
+    #loop
+    .goto 1411,43.57,50.27,0
     .goto 1411,43.57,50.27,40,0
     .goto 1411,44.15,49.45,40,0
     .goto 1411,44.54,50.09,40,0
@@ -2072,12 +2106,12 @@ step
     .goto 1411,48.53,49.04,40,0
     .goto 1411,49.21,48.60,40,0
     .goto 1411,50.13,49.39,40,0
-    .goto 1411,43.57,50.27
+    .goto 1411,43.57,50.27,40,0
     >>Kill |cRXP_ENEMY_Razormane Quilboars|r and |cRXP_ENEMY_Razormane Scouts|r 
     .complete 25190,1 --Razormane Quilboar (4)
+    .mob +Razormane Quilboar 
     .complete 25190,2 --Razormane Scout (4)
-    .mob Razormane Quilboar 
-    .mob Razormane Scout
+    .mob +Razormane Scout
 step
     .goto 1411,42.75,49.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Raggaran|r
@@ -2167,6 +2201,8 @@ step
     #completewith next
     .goto 1411,52.82,28.88,40 >> Travel inside the cave
 step
+    #loop
+    .goto 1411,52.66,29.15,0
     .goto 1411,52.66,29.15,15,0
     .goto 1411,53.04,29.18,15,0
     .goto 1411,52.75,28.40,15,0
@@ -2177,7 +2213,7 @@ step
     .goto 1411,52.20,26.90,15,0
     .goto 1411,51.90,26.06,15,0
     .goto 1411,52.20,24.46,15,0
-    .goto 1411,52.66,29.15
+    .goto 1411,52.66,29.15,15,0
     >>Kill |cRXP_ENEMY_Burning Blade Neophytes|r and |cRXP_ENEMY_Burning Blade Thugs|r. Loot them for their |cRXP_LOOT_Spellscrolls|r
     .complete 25232,1 --Burning Blade Spellscroll (6)
     .mob Burning Blade Thug
@@ -2348,6 +2384,7 @@ step
     .maxlevel 9
 step
     #optional
+    .goto 1411,48.95,22.34,0
     .goto 1411,48.95,22.34,40,0
     .goto 1411,49.75,21.95,40,0
     .goto 1411,49.62,24.17,40,0
@@ -2363,7 +2400,7 @@ step
     .goto 1411,48.13,32.02,40,0
     .goto 1411,47.07,30.87,40,0
     .goto 1411,47.16,29.67,40,0
-    .goto 1411,48.95,22.34
+    .goto 1411,48.95,22.34,40,0
     >>Loot the |cRXP_LOOT_Kul Sack of Supplies|r on the ground  
     .complete 834,1 --Sack of Supplies (5)
     .isOnQuest 834
@@ -2384,6 +2421,7 @@ step
     .isQuestTurnedIn 835
 step
     #optional
+    .goto 1411,49.76,28.04,0
     .goto 1411,48.86,22.10,40,0
     .goto 1411,49.76,23.27,40,0
     .goto 1411,50.13,25.15,40,0
@@ -2395,7 +2433,7 @@ step
     .goto 1411,51.98,20.78,40,0
     .goto 1411,52.88,24.14,40,0
     .goto 1411,51.26,23.79,40,0
-    .goto 1411,49.76,28.04
+    .goto 1411,49.76,28.04,40,0
     >>Kill any type of |cRXP_ENEMY_Dustwind Harpy|r
     .complete 835,1 --Durotar Harpy (12)
     .mob Dustwind Pillager
