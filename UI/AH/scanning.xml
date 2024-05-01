@@ -1,0 +1,474 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+    <Button name="RXP_IU_AH_AuctionColumnButtonTemplate" virtual="true">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentLeft" file="Interface\FriendsFrame\WhoFrame-ColumnTabs">
+                    <Size>
+                        <AbsDimension x="5" y="19"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPLEFT"/>
+                    </Anchors>
+                    <TexCoords left="0" right="0.078125" top="0" bottom="0.59375"/>
+                </Texture>
+                <Texture name="$parentRight" file="Interface\FriendsFrame\WhoFrame-ColumnTabs">
+                    <Size>
+                        <AbsDimension x="4" y="19"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPRIGHT"/>
+                    </Anchors>
+                    <TexCoords left="0.90625" right="0.96875" top="0" bottom="0.59375"/>
+                </Texture>
+                <Texture name="$parentMiddle" file="Interface\FriendsFrame\WhoFrame-ColumnTabs">
+                    <Size>
+                        <AbsDimension x="10" y="19"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT" relativeTo="$parentLeft" relativePoint="RIGHT"/>
+                        <Anchor point="RIGHT" relativeTo="$parentRight" relativePoint="LEFT"/>
+                    </Anchors>
+                    <TexCoords left="0.078125" right="0.90625" top="0" bottom="0.59375"/>
+                </Texture>
+            </Layer>
+        </Layers>
+        <ButtonText name="$parentText">
+            <Anchors>
+                <Anchor point="LEFT">
+                    <Offset>
+                        <AbsDimension x="8" y="0"/>
+                    </Offset>
+                </Anchor>
+            </Anchors>
+        </ButtonText>
+        <NormalFont style="GameFontHighlightSmall"/>
+    </Button>
+    <Button name="RXP_IU_AH_ItemKindHeader" hidden="false" virtual="true">
+        <Size x="773" y="19"/>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <FontString parentKey="Name" inherits="GameFontNormal" justifyH="CENTER" text="Foo">
+                    <Size x="96" y="19"/>
+                    <Anchors>
+                        <Anchor point="TOP">
+                            <Offset>
+                                <AbsDimension x="0" y="3"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <Texture parentKey="Left" file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
+                    <Size>
+                        <AbsDimension x="10" y="19"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT">
+                            <Offset>
+                                <AbsDimension x="34" y="2"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <TexCoords left="0" right="0.078125" top="0" bottom="1.0"/>
+                </Texture>
+                <Texture parentKey="Right" file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
+                    <Size>
+                        <AbsDimension x="10" y="19"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="RIGHT">
+                            <Offset>
+                                <AbsDimension x="0" y="2"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <TexCoords left="0.75" right="0.828125" top="0" bottom="1.0"/>
+                </Texture>
+                <Texture file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
+                    <Size>
+                        <AbsDimension x="10" y="19"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="LEFT" relativeKey="$parent.left" relativePoint="RIGHT">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                        <Anchor point="RIGHT" relativeKey="$parent.right" relativePoint="LEFT">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <TexCoords left="0.078125" right="0.75" top="0" bottom="1.0"/>
+                </Texture>
+            </Layer>
+        </Layers>
+    </Button>
+    <Button name="RXP_IU_AH_ItemRow" hidden="false" virtual="true" enableMouse="true">
+        <Size x="773" y="37"/>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <FontString parentKey="Name" inherits="GameFontNormal" justifyH="LEFT" text="$parentName">
+                    <Size x="180" y="32"/>
+                    <Anchors>
+                        <Anchor point="TOPLEFT">
+                            <Offset>
+                                <AbsDimension x="41" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString parentKey="Level" inherits="GameFontHighlightSmall">
+                    <Size x="86" y="32"/>
+                    <Anchors>
+                        <Anchor point="TOPLEFT">
+                            <Offset>
+                                <AbsDimension x="246" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <Texture parentKey="Left" file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
+                    <Size x="10" y="32"/>
+                    <Anchors>
+                        <Anchor point="LEFT">
+                            <Offset>
+                                <AbsDimension x="34" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <TexCoords left="0" right="0.078125" top="0" bottom="1.0"/>
+                </Texture>
+                <Texture parentKey="Right" file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
+                    <Size x="10" y="32"/>
+                    <Anchors>
+                        <Anchor point="RIGHT">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <TexCoords left="0.75" right="0.828125" top="0" bottom="1.0"/>
+                </Texture>
+                <Texture file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
+                    <Size x="10" y="32"/>
+                    <Anchors>
+                        <Anchor point="LEFT" relativeKey="$parent.left" relativePoint="RIGHT"/>
+                        <Anchor point="RIGHT" relativeKey="$parent.right" relativePoint="LEFT"/>
+                    </Anchors>
+                    <TexCoords left="0.078125" right="0.75" top="0" bottom="1.0"/>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Button parentKey="ItemIcon">
+                <Size x="32" y="32"/>
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                            <AbsDimension x="1" y="-2"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BORDER">
+                        <Texture parentKey="IconTexture"/>
+                    </Layer>
+                    <Layer level="OVERLAY">
+                        <Texture parentKey="IconBorder" file="Interface\Common\WhiteIconFrame" hidden="true">
+                            <Size x="32" y="32"/>
+                            <Anchors>
+                                <Anchor point="CENTER"/>
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                    <Layer level="OVERLAY" textureSubLevel="1">
+                        <Texture parentKey="IconOverlay" hidden="true">
+                            <Size x="32" y="32"/>
+                            <Anchors>
+                                <Anchor point="CENTER"/>
+                            </Anchors>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnEnter>
+                        local p = self:GetParent()
+                        if p.ItemID then
+                            GameTooltip:SetOwner(self);
+                            GameTooltip:SetHyperlink(p.ItemLink);
+                            GameTooltip:Show();
+                        end
+                        RXP.itemUpgrades.AH.RowOnEnter(p)
+                    </OnEnter>
+                    <OnLeave>
+                        RXP.itemUpgrades.AH.RowOnLeave(self:GetParent())
+						GameTooltip_Hide();
+						ResetCursor();
+                    </OnLeave>
+                    <OnClick>
+                        RXP.itemUpgrades.AH.RowOnClick(self:GetParent())
+                    </OnClick>
+                </Scripts>
+                <NormalTexture parentKey="NormalTexture" file="Interface\Buttons\UI-Quickslot2">
+                    <Size>
+                        <AbsDimension x="32" y="32"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="CENTER"/>
+                    </Anchors>
+                </NormalTexture>
+                <HighlightTexture file="Interface\Buttons\ButtonHilight-Square" alphaMode="ADD"/>
+            </Button>
+            <Frame parentKey="ItemLevel" enableMouse="true">
+                <Size x="84" y="32"/>
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                            <AbsDimension x="300" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <FontString parentKey="Text" inherits="GameFontHighlightSmall" text="23" >
+                            <Size x="75" y="32"/>
+                            <Anchors>
+                                <Anchor point="TOPLEFT"/>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnEnter>
+						RXP.itemUpgrades.AH.RowOnEnter(self:GetParent())
+                    </OnEnter>
+                    <OnLeave>
+                        RXP.itemUpgrades.AH.RowOnLeave(self:GetParent())
+                    </OnLeave>
+                </Scripts>
+            </Frame>
+            <Frame parentKey="UpdateEP" enableMouse="true">
+                <Size x="204" y="32"/>
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                            <AbsDimension x="386" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <FontString parentKey="Text" inherits="GameFontHighlightSmall" text="+1412% / +5 EP" >
+                            <Size x="194" y="32"/>
+                            <Anchors>
+                                <Anchor point="TOPLEFT"/>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnEnter>
+                        RXP.itemUpgrades.AH.RowOnEnter(self:GetParent())
+                    </OnEnter>
+                    <OnLeave>
+                        RXP.itemUpgrades.AH.RowOnLeave(self:GetParent())
+                    </OnLeave>
+                </Scripts>
+            </Frame>
+            <Frame parentKey="Buyout">
+                <Size x="186" y="32"/>
+                <Anchors>
+                    <Anchor point="LEFT" relativeKey="$parent.UpdateEP" relativePoint="RIGHT"/>
+                </Anchors>
+                <Frames>
+                    <Frame parentKey="Label">
+                        <Size x="48" y="13"/>
+                        <Anchors>
+                            <Anchor point="RIGHT"/>
+                        </Anchors>
+                        <Layers>
+                            <Layer level="BACKGROUND">
+                                <FontString inherits="GameFontNormalSmall" justifyH="LEFT" setAllPoints="true" text="BUYOUT_COST"/>
+                            </Layer>
+                        </Layers>
+                    </Frame>
+                </Frames>
+            </Frame>
+        </Frames>
+        <Scripts>
+            <OnEnter>
+                RXP.itemUpgrades.AH.RowOnEnter(self)
+            </OnEnter>
+            <OnLeave>
+                RXP.itemUpgrades.AH.RowOnLeave(self)
+            </OnLeave>
+            <OnClick>
+                RXP.itemUpgrades.AH.RowOnClick(self)
+            </OnClick>
+        </Scripts>
+        <HighlightTexture parentKey="Highlight" file="Interface\HelpFrame\HelpFrameButton-Highlight" alphaMode="ADD">
+            <Anchors>
+                <Anchor point="TOPLEFT">
+                    <Offset>
+                        <AbsDimension x="33" y="-2"/>
+                    </Offset>
+                </Anchor>
+                <Anchor point="BOTTOMRIGHT">
+                    <Offset>
+                        <AbsDimension x="0" y="2"/>
+                    </Offset>
+                </Anchor>
+            </Anchors>
+            <TexCoords left="0" right="1.0" top="0" bottom="0.578125"/>
+        </HighlightTexture>
+    </Button>
+    <Frame name="RXP_IU_AH_ItemBlock" hidden="false" virtual="true">
+        <Frames>
+            <Frame inherits="RXP_IU_AH_ItemKindHeader" parentKey="Header">
+                <Anchors>
+                    <Anchor point="TOPLEFT"/>
+                </Anchors>
+            </Frame>
+            <Button inherits="RXP_IU_AH_ItemRow" parentKey="Best">
+                <Anchors>
+                    <Anchor point="TOPRIGHT" relativeKey="$parent.Header" relativePoint="BOTTOMRIGHT"/>
+                </Anchors>
+            </Button>
+            <Button inherits="RXP_IU_AH_ItemRow" parentKey="Budget">
+                <Anchors>
+                    <Anchor point="TOPLEFT" relativeKey="$parent.Best" relativePoint="BOTTOMLEFT"/>
+                </Anchors>
+            </Button>
+        </Frames>
+    </Frame>
+    <Frame name="RXP_IU_AH_Frame" hidden="true">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <FontString name="RXP_IU_AH_Title" inherits="GameFontNormal" text="MINIMAP_TRACKING_AUCTIONEER">
+                    <Anchors>
+                        <Anchor point="TOP">
+                            <Offset>
+                                <AbsDimension x="0" y="-18"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Button name="RXP_IU_AH_ItemName" inherits="RXP_IU_AH_AuctionColumnButtonTemplate" text="Item Name">
+                <Size>
+                    <AbsDimension x="260" y="19"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                            <AbsDimension x="65" y="-52"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Button>
+            <Button name="RXP_IU_AH_Level" inherits="RXP_IU_AH_AuctionColumnButtonTemplate" text="REQ_LEVEL_ABBR">
+                <Size>
+                    <AbsDimension x="86" y="19"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="LEFT" relativeTo="RXP_IU_AH_ItemName" relativePoint="RIGHT">
+                        <Offset>
+                            <AbsDimension x="-2" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Button>
+            <Button name="RXP_IU_AH_UpgradeEP" inherits="RXP_IU_AH_AuctionColumnButtonTemplate" text="Upgrade/EP">
+                <Size>
+                    <AbsDimension x="208" y="19"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="LEFT" relativeTo="RXP_IU_AH_Level" relativePoint="RIGHT">
+                        <Offset>
+                            <AbsDimension x="-2" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Button>
+            <Button name="RXP_IU_AH_Buyout" inherits="RXP_IU_AH_AuctionColumnButtonTemplate" text="AUCTION_PRICE">
+                <Size x="186" y="19"/>
+                <Anchors>
+                    <Anchor point="LEFT" relativeTo="RXP_IU_AH_UpgradeEP" relativePoint="RIGHT">
+                        <Offset>
+                            <AbsDimension x="-2" y="0"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Button>
+            <Button name="RXP_IU_AH_CloseButton" inherits="UIPanelButtonTemplate" text="CLOSE">
+                <Size x="80" y="22"/>
+                <Anchors>
+                    <Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT">
+                        <Offset>
+                            <AbsDimension x="-6" y="14"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BORDER">
+                        <Texture file="Interface\FrameGeneral\UI-Frame">
+                            <Size x="13" y="25"/>
+                            <Anchors>
+                                <Anchor point="TOPRIGHT" relativePoint="TOPLEFT" x="5" y="1"/>
+                            </Anchors>
+                            <TexCoords left="0.00781250" right="0.10937500" top="0.75781250" bottom="0.95312500"/>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>
+                        HideUIPanel(self:GetParent():GetParent());
+                    </OnClick>
+                </Scripts>
+            </Button>
+            <Button name="RXP_IU_AH_BuyButton" inherits="UIPanelButtonTemplate" text="BUYOUT">
+                <Size x="80" y="22"/>
+                <Anchors>
+                    <Anchor point="RIGHT" relativeTo="RXP_IU_AH_CloseButton" relativePoint="LEFT"/>
+                </Anchors>
+                <Layers>
+                    <Layer level="BORDER">
+                        <Texture file="Interface\FrameGeneral\UI-Frame">
+                            <Size x="13" y="25"/>
+                            <Anchors>
+                                <Anchor point="TOPRIGHT" relativePoint="TOPLEFT" x="5" y="1"/>
+                            </Anchors>
+                            <TexCoords left="0.00781250" right="0.10937500" top="0.75781250" bottom="0.95312500"/>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnClick>
+                        self:Disable();
+                        RXP.itemUpgrades.AH:SearchForSelectedItem();
+                    </OnClick>
+                </Scripts>
+            </Button>
+            <Button name="RXP_IU_AH_SearchButton" inherits="UIPanelButtonTemplate" text="SEARCH">
+                <Size x="80" y="22"/>
+                <Anchors>
+                    <Anchor point="RIGHT" relativeTo="RXP_IU_AH_BuyButton" relativePoint="LEFT"/>
+                </Anchors>
+                <Layers>
+                    <Layer level="BORDER">
+                        <Texture file="Interface\FrameGeneral\UI-Frame">
+                            <Size x="13" y="25"/>
+                            <Anchors>
+                                <Anchor point="TOPRIGHT" relativePoint="TOPLEFT" x="5" y="1"/>
+                            </Anchors>
+                            <TexCoords left="0.00781250" right="0.10937500" top="0.75781250" bottom="0.95312500"/>
+                        </Texture>
+                    </Layer>
+                </Layers>
+            </Button>
+        </Frames>
+    </Frame>
+</Ui>

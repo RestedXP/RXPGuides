@@ -120,6 +120,10 @@ end
 function addon.tracker:SetupInspections()
     if addon.settings.profile.enableLevelingReportInspections and
         addon.settings.profile.enableBetaFeatures then
+
+        -- TODO reduce duplication with SettingsPanel
+        addon.settings.enabledBetaFeatures[L("Enable Leveling Report Inspections")]
+            = L("Send or receive inspection requests for other Leveling Reports")
         self:RegisterEvent("INSPECT_READY")
         self:RegisterComm(self._commPrefix)
 

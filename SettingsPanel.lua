@@ -29,6 +29,7 @@ local loadedProfileKey
 local L = addon.locale.Get
 
 addon.settings = addon:NewModule("Settings", "AceConsole-3.0")
+addon.settings.enabledBetaFeatures = {}
 
 if not addon.settings.gui then
     addon.settings.gui = {selectedDeleteGuide = "", importStatusHistory = {}}
@@ -183,6 +184,7 @@ function addon.settings:InitializeSettings()
 
             enableTips = true,
             enableItemUpgrades = true,
+            enableItemUpgradesAH = true,
             enableDrowningWarning = true,
             enableDrowningWarningSound = true,
             drowningThreshold = 0.2,
@@ -736,6 +738,20 @@ function addon.settings:CreateAceOptionsPanel()
             addon.settings.profile.frameHeight = 10
         end
         addon.updateBottomFrame = true
+    end
+
+    local function listBetaFeatures(first)
+        if next(addon.settings.enabledBetaFeatures) == nil then
+            return first
+        end
+
+        local features = fmt('%s\n\n%s:', first , _G.FEATURES_LABEL)
+
+        for feature, desc in pairs(addon.settings.enabledBetaFeatures) do
+            features = fmt('%s\n%s\n - %s', features, feature, desc)
+        end
+
+        return features
     end
 
     local optionsWidth = 1.08
@@ -2002,8 +2018,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = "full",
                         order = 4.0,
                         hidden = function()
-                            return -- not addon.settings.profile.enableBetaFeatures or
-                            not addon.dangerousMobs
+                            return not addon.dangerousMobs
                         end
                     },
                     showDangerousMobsMap = {
@@ -2022,8 +2037,7 @@ function addon.settings:CreateAceOptionsPanel()
                             return not self.profile.enableTips
                         end,
                         hidden = function()
-                            return -- not addon.settings.profile.enableBetaFeatures or
-                            not addon.dangerousMobs
+                            return not addon.dangerousMobs
                         end
                     },
                     showDangerousUnitscan = {
@@ -2042,8 +2056,7 @@ function addon.settings:CreateAceOptionsPanel()
                             return not self.profile.enableTips
                         end,
                         hidden = function()
-                            return -- not addon.settings.profile.enableBetaFeatures or
-                            not addon.dangerousMobs
+                            return not addon.dangerousMobs
                         end
                     },
                     itemUpgradesHeader = {
@@ -2123,6 +2136,28 @@ function addon.settings:CreateAceOptionsPanel()
                             return not (self.profile.enableItemUpgrades and
                                        self.profile
                                            .enableQuestChoiceRecommendation)
+                        end
+                    },
+                    enableItemUpgradesAH = {
+                        name = fmt("%s %s (Beta)", _G.ENABLE,
+                                   _G.MINIMAP_TRACKING_AUCTIONEER),
+                        desc = fmt("%s %s", _G.AUCTION_ITEM, _G.SEARCH),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 5.6,
+                        hidden = function()
+                            return not addon.itemUpgrades or
+                                       not self.profile.enableBetaFeatures
+                        end,
+                        disabled = function()
+                            return not self.profile.enableItemUpgrades or
+                                       UnitLevel("player") ==
+                                       GetMaxPlayerLevel() or
+                                       self.profile.soloSelfFound
+                        end,
+                        set = function(info, value)
+                            SetProfileOption(info, value)
+                            addon.itemUpgrades.AH:Setup()
                         end
                     }
                 }
@@ -2772,8 +2807,9 @@ function addon.settings:CreateAceOptionsPanel()
                 args = {
                     enableBetaFeatures = {
                         name = L("Enable Beta Features"),
-                        desc = L(
-                            "Enables new features, forces reload to take effect"),
+                        desc = function ()
+                            return listBetaFeatures(L("Enables new features, forces reload to take effect"))
+                        end,
                         type = "toggle",
                         width = optionsWidth,
                         order = 1,
@@ -2819,8 +2855,9 @@ function addon.settings:CreateAceOptionsPanel()
                                     p.alwaysSendBranded or p.checkVersions or
                                     p.enableLevelingReportInspections or
                                     p.enableVendorTreasure or
-                                    p.enableItemUpgrades or p.hideCompletedSteps or
-                                    p.showUnusedGuides) or
+                                    p.enableItemUpgrades or
+                                    p.enableItemUpgradesAH or
+                                    p.hideCompletedSteps or p.showUnusedGuides) or
                                     addon.RXPFrame.BottomFrame:GetHeight() < 35
                         end,
                         set = function(_, value)
@@ -2839,6 +2876,7 @@ function addon.settings:CreateAceOptionsPanel()
                             p.enableLevelingReportInspections = value
                             p.enableVendorTreasure = value
                             p.enableItemUpgrades = value
+                            p.enableItemUpgradesAH = value
                             p.hideCompletedSteps = value
                             p.showUnusedGuides = value
 

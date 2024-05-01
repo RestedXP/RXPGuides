@@ -14,6 +14,7 @@
 
 libs\embeds.xml
 locale\locales.xml
+UI\includes.xml
 
 Locale.lua
 Themes.lua
