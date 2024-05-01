@@ -1,6 +1,6 @@
 -- HereBeDragons-Pins is a library to show pins/icons on the world map and minimap
 
-local MAJOR, MINOR = "HereBeDragons-Pins-2.0", 11
+local MAJOR, MINOR = "HereBeDragons-Pins-2.0", 12
 assert(LibStub, MAJOR .. " requires LibStub")
 
 local pins, _oldversion = LibStub:NewLibrary(MAJOR, MINOR)
@@ -463,6 +463,9 @@ function worldmapProviderPin:OnReleased()
         self.icon = nil
     end
 end
+
+-- hack to avoid in-combat error on 10.1.5
+worldmapProviderPin.SetPassThroughButtons = function() end
 
 -- register with the world map
 WorldMapFrame:AddDataProvider(worldmapProvider)
