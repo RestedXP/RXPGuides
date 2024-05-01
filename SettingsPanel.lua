@@ -426,7 +426,7 @@ function addon.settings.GetImportedGuides()
     local importedGuidesFound = false
 
     for _, guide in pairs(addon.guides) do
-        if guide.imported or guide.cache then
+        if (guide.imported or guide.cache) and (guide.group ~= "RXPGuides" or addon.settings.profile.debug) then
             importedGuidesFound = true
             local group, subgroup, name = guide.key:match("^(.*)|(.*)|(.*)")
             if subgroup ~= "" then group = group .. "/" .. subgroup end
