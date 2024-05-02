@@ -441,7 +441,7 @@ step
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Talons|r and |T134343:0|t[|cRXP_LOOT_Tender Strider Meat|r]
     .complete 20440,1 --Prairie Wolf Paw (6)
     .complete 20440,2 --Plainstrider Talon (4)
-    .collect 33009,1 --Tender Strider Meat (1)
+    .collect 33009,1,11129,1 --Tender Strider Meat (1)
     .mob Prairie Wolf
     .mob Adult Plainstrider
 step
@@ -497,7 +497,7 @@ step
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Talons|r and |T134343:0|t[|cRXP_LOOT_Tender Strider Meat|r]
     .complete 20440,1 --Prairie Wolf Paw (6)
     .complete 20440,2 --Plainstrider Talon (4)
-    .collect 33009,1 --Tender Strider Meat (1)
+    .collect 33009,1,11129,1 --Tender Strider Meat (1)
     .mob Prairie Wolf
     .mob Adult Plainstrider
 step

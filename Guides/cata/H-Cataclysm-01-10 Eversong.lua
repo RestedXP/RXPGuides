@@ -474,7 +474,7 @@ step << Undead
     .target Ranger Jaela
 step
     #completewith next
-    .subzone 3665 >>Travel to Falcongwing Square
+    .subzone 3665 >>Travel to Falconwing Square
 step
     .goto Eversong Woods,47.256,46.314
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jarondis|r
@@ -565,6 +565,8 @@ step
     .complete 8468,1 --Collect Thaelis's Head (x1)
     .mob Thaelis the Hungerer
 step
+    #loop
+    .goto Eversong Woods,47.22,37.39,0
     .goto Eversong Woods,47.22,37.39,40,0
     .goto Eversong Woods,46.67,35.11,40,0
     .goto Eversong Woods,43.96,34.90,40,0
@@ -576,11 +578,7 @@ step
     .goto Eversong Woods,44.23,45.21,40,0
     .goto Eversong Woods,46.96,43.56,40,0
     .goto Eversong Woods,47.09,39.00,40,0
-    .goto Eversong Woods,47.22,37.39,40,0
-    .goto Eversong Woods,46.67,35.11,40,0
-    .goto Eversong Woods,43.96,34.90,40,0
-    .goto Eversong Woods,42.41,38.04,40,0
-    .goto Eversong Woods,42.17,40.49
+    .goto Eversong Woods,42.17,40.49,40,0
     >>Loot the |cRXP_PICK_Unstable Mana Crystal Boxes|r on the ground
     >>Kill |cRXP_ENEMY_Arcane Patrollers|r. Loot them for their |cRXP_LOOT_Cores|r
     .complete 8463,1 --Collect Unstable Mana Crystal (x6)
@@ -759,7 +757,7 @@ step << Warrior/Paladin
 step
     #completewith next
     .goto Eversong Woods,46.68,48.07,30,0
-    .goto Eversong Woods,44.63,53.13,30 >>Travel toward Caidanis
+    .goto Eversong Woods,44.63,53.13,30 >>Travel toward |cRXP_FRIENDLY_Caidanis|r
 step
     #label Caidanis
     .goto Eversong Woods,44.63,53.13
@@ -781,14 +779,12 @@ step
     .complete 8486,2 --Kill Mana Stalker (x5)
     .mob +Mana Stalker
 step
+    #loop
+    .goto Eversong Woods,36.77,60.99,0
     .goto Eversong Woods,36.77,60.99,30,0
     .goto Eversong Woods,34.65,62.03,30,0
     .goto Eversong Woods,34.04,60.81,30,0
     .goto Eversong Woods,34.19,58.49,30,0
-    .goto Eversong Woods,36.77,60.99,30,0
-    .goto Eversong Woods,34.65,62.03,30,0
-    .goto Eversong Woods,34.04,60.81,30,0
-    .goto Eversong Woods,34.19,58.49
     >>Kill a |cRXP_ENEMY_Darnassian Scout|r. Loot him for his |T133464:0|t[|cRXP_LOOT_Incriminating Documents|r]
     >>|cRXP_WARN_Use the |T133464:0|t[|cRXP_LOOT_Incriminating Documents|r] to start the quest|r
     .complete 9352,1 --Intruder Defeated
@@ -822,6 +818,8 @@ step
     .accept 8884 >>Accept Fish Heads, Fish Heads...
     .target Hathvelion Sungaze
 step
+    #loop
+    .goto Eversong Woods,25.61,64.29,0
     .goto Eversong Woods,27.47,56.54,40,0
     .goto Eversong Woods,26.45,58.14,40,0
     .goto Eversong Woods,26.35,59.41,40,0
@@ -829,7 +827,7 @@ step
     .goto Eversong Woods,27.96,61.31,40,0
     .goto Eversong Woods,25.70,60.50,40,0
     .goto Eversong Woods,25.36,62.88,40,0
-    .goto Eversong Woods,25.61,64.29
+    .goto Eversong Woods,25.61,64.29,40,0
     >>Kill |cRXP_ENEMY_Grimscale Foragers|r and |cRXP_ENEMY_Grimscale Seers|r. Loot them for their |cRXP_LOOT_Murloc Heads|r and |T134939:0|t[|cRXP_LOOT_Captain Kelisendra's Lost Rutters|r]
     >>|cRXP_WARN_Use |T134939:0|t[|cRXP_LOOT_Captain Kelisendra's Lost Rutters|r] to start the quest|r
     .complete 8884,1 --Collect Grimscale Murloc Head (x8)
@@ -854,6 +852,7 @@ step
     .deathskip >>Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .target Spirit Healer
 step
+    #xprate <1.2
     .goto Eversong Woods,44.718,69.619
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Velan Brightoak|r 
     .accept 8491 >>Accept Pelt Collection
@@ -879,6 +878,7 @@ step << BloodElf
     .accept 9133 >>Accept Fly to Silvermoon City
     .target Skymaster Brightdawn
 step
+    #xprate <1.2
     #completewith next
     .goto Eversong Woods,40.742,70.869,0
     >>Kill |cRXP_ENEMY_Springpaw Stalkers|r. Loot them for their |cRXP_LOOT_Pelts|r
@@ -901,6 +901,8 @@ step
     .complete 8892,2 --Kill Wretched Hooligan (x5)
     .mob +Wretched Hooligan
 step
+    #loop
+    .goto Eversong Woods,34.66,68.00,0
     .goto Eversong Woods,34.66,68.00,25,0
     .goto Eversong Woods,34.11,69.20,25,0
     .goto Eversong Woods,33.01,71.10,25,0
@@ -913,11 +915,6 @@ step
     .goto Eversong Woods,31.71,68.95,25,0
     .goto Eversong Woods,30.54,69.24,25,0
     .goto Eversong Woods,31.40,70.90,25,0
-    .goto Eversong Woods,34.66,68.00,25,0
-    .goto Eversong Woods,34.11,69.20,25,0
-    .goto Eversong Woods,33.01,71.10,25,0
-    .goto Eversong Woods,32.39,69.80,25,0
-    .goto Eversong Woods,32.76,68.51
     >>Loot the |cRXP_PICK_Armament Boxes|r on the ground near the |cRXP_ENEMY_Wretched|r and inside the building
     .complete 8480,1 --Collect Sin'dorei Armaments (x8)
 step
@@ -942,6 +939,8 @@ step
     .complete 9076,1 --Collect Aldaron's Head (x1)
     .mob Aldaron the Reckless
 step
+    #loop
+    .goto Eversong Woods,31.40,70.90,0
     .goto Eversong Woods,34.66,68.00,30,0
     .goto Eversong Woods,34.11,69.20,30,0
     .goto Eversong Woods,33.01,71.10,30,0
@@ -954,21 +953,14 @@ step
     .goto Eversong Woods,31.71,68.95,30,0
     .goto Eversong Woods,30.54,69.24,30,0
     .goto Eversong Woods,31.40,70.90,30,0
-    .goto Eversong Woods,34.66,68.00,30,0
-    .goto Eversong Woods,34.11,69.20,30,0
-    .goto Eversong Woods,33.01,71.10,30,0
-    .goto Eversong Woods,32.39,69.80,30,0
-    .goto Eversong Woods,32.76,68.51
     >>Kill |cRXP_ENEMY_Wretched Thugs|r and |cRXP_ENEMY_Wretched Hooligans|r
     .complete 8892,1 --Kill Wretched Thug (x5)
     .mob +Wretched Thug
     .complete 8892,2 --Kill Wretched Hooligan (x5)
     .mob +Wretched Hooligan
 step
+    #xprate <1.2
     #completewith next
-    .goto Eversong Woods,29.53,72.32,40,0
-    .goto Eversong Woods,27.73,71.83,40,0
-    .goto Eversong Woods,26.53,74.16,40,0
     >>Kill |cRXP_ENEMY_Springpaw Stalkers|r. Loot them for their |cRXP_LOOT_Pelts|r
     .complete 8491,1 --Collect Springpaw Pelt (x6)
     .mob Springpaw Stalker
@@ -982,6 +974,8 @@ step
     .mob Grimscale Murloc
     .mob Grimscale Oracle
 step
+    #loop
+    .goto Eversong Woods,24.36,72.66,0
     .goto Eversong Woods,24.36,72.66,40,0
     .goto Eversong Woods,25.09,71.12,40,0
     .goto Eversong Woods,24.32,69.66,40,0
@@ -996,13 +990,15 @@ step
     .goto Eversong Woods,24.66,68.47,40,0
     .goto Eversong Woods,24.32,69.66,40,0
     .goto Eversong Woods,25.09,71.12,40,0
-    .goto Eversong Woods,24.36,72.66
+    .goto Eversong Woods,24.36,72.66,40,0
     >>Kill |cRXP_ENEMY_Mmmrrrggglll|r. Loot him for the |cRXP_LOOT_Ring of Mmmrrrggglll|r
     >>|cRXP_WARN_He patrols around slightly|r
     >>|cRXP_WARN_Use|r |T136222:0|t[Arcane Torrent] |cRXP_WARN_to interrupt|r |cRXP_ENEMY_Mmmrrrggglll|r's |T136052:0|t[Healing Wave] << BloodElf
     .complete 8885,1 --Collect Ring of Mmmrrrggglll (x1)
     .unitscan Mmmrrrggglll
 step
+    #loop
+    .goto Eversong Woods,24.36,72.66,0
     .goto Eversong Woods,25.24,65.65,50,0
     .goto Eversong Woods,24.89,66.85,50,0
     .goto Eversong Woods,25.81,68.16,50,0
@@ -1010,7 +1006,7 @@ step
     .goto Eversong Woods,24.66,68.47,50,0
     .goto Eversong Woods,24.32,69.66,50,0
     .goto Eversong Woods,25.09,71.12,50,0
-    .goto Eversong Woods,24.36,72.66
+    .goto Eversong Woods,24.36,72.66,50,0
     >>Kill |cRXP_ENEMY_Grimscale Murlocs|r and |cRXP_ENEMY_Grimscale Oracles|r. Loot them for their |cRXP_LOOT_Cargo|r
     >>Loot the |cRXP_PICK_Cargo Barrels|r on the ground
     >>|cRXP_WARN_Use|r |T136222:0|t[Arcane Torrent] |cRXP_WARN_to interrupt the|r |cRXP_ENEMY_Grimscale Oracles|r' |T135907:0|t[Flash Heal] << BloodElf
@@ -1025,6 +1021,7 @@ step
     .turnin 8885 >>Turn in The Ring of Mmmrrrggglll
     .target Hathvelion Sungaze
 step
+    #xprate <1.2
     #completewith next
     >>Kill |cRXP_ENEMY_Springpaw Stalkers|r. Loot them for their |cRXP_LOOT_Pelts|r
     .complete 8491,1 --Collect Springpaw Pelt (x6)
@@ -1038,6 +1035,8 @@ step
     .target Captain Kelisendra
     .target Velendris Whitemorn
 step
+    #xprate <1.2
+    #loop
     .goto Eversong Woods,36.115,71.876,0
     .goto Eversong Woods,28.840,71.832,0
     .waypoint Eversong Woods,36.115,71.876,60,0
@@ -1051,6 +1050,7 @@ step
     #completewith SunsailTurnin
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r or run back to Fairbreeze Village
 step
+    #xprate <1.2
     .goto Eversong Woods,44.72,69.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Velan|r
     .turnin 8491 >>Turn in Pelt Collection
@@ -1065,18 +1065,21 @@ step
     --Section below for users who are not level 10 yet
 
 step
+    #xprate <1.2
     .goto Eversong Woods,43.675,71.309
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marniel Amberlight|r 
     .accept 9358 >>Accept Ranger Sareyn
     .target Marniel Amberlight
     .maxlevel 9
 step
+    #xprate <1.2
     .goto Eversong Woods,44.030,70.760
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrix Landra Dawnstrider|r 
     .accept 9254 >>Accept The Wayward Apprentice
     .target Magistrix Landra Dawnstrider
     .maxlevel 9
 step
+    #xprate <1.2
     .goto Eversong Woods,46.93,71.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sareyn|r
     .turnin 9358 >>Turn in Ranger Sareyn
@@ -1084,6 +1087,7 @@ step
     .target Ranger Sareyn
     .isOnQuest 9358
 step
+    #xprate <1.2
     #optional
     .goto Eversong Woods,46.93,71.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sareyn|r
@@ -1091,12 +1095,16 @@ step
     .target Ranger Sareyn
     .isQuestTurnedIn 9358
 step
+    #xprate <1.2
     #completewith Notes
     >>Kill |cRXP_ENEMY_Rotlimb Marauders|r
     .complete 9252,1 --Kill Rotlimb Marauder (x4)
     .mob Rotlimb Marauder
     .isOnQuest 9252
 step
+    #xprate <1.2
+    #loop
+    .goto Eversong Woods,51.07,76.32,0
     .goto Eversong Woods,50.89,80.74,40,0
     .goto Eversong Woods,50.83,78.68,40,0
     .goto Eversong Woods,50.42,77.39,40,0
@@ -1104,13 +1112,14 @@ step
     .goto Eversong Woods,50.89,80.74,40,0
     .goto Eversong Woods,50.83,78.68,40,0
     .goto Eversong Woods,50.42,77.39,40,0
-    .goto Eversong Woods,51.07,76.32
+    .goto Eversong Woods,51.07,76.32,40,0
     >>Kill |cRXP_ENEMY_Darkwraiths|r
     >>|cRXP_WARN_Be careful as|r |cRXP_ENEMY_Darkwraiths|r |cRXP_WARN_cast|r |T136224:0|t[Enrage] |cRXP_WARN_(increased damage and attack speed) at low health|r
     .complete 9252,2 --Kill Darkwraith (x4)
     .mob Darkwraith
     .isOnQuest 9252
 step
+    #xprate <1.2
     .goto Eversong Woods,54.28,70.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mirveda|r
     .turnin 9254 >>Turn in The Wayward Apprentice
@@ -1118,6 +1127,7 @@ step
     .target Apprentice Mirveda
     .isOnQuest 9254
 step
+    #xprate <1.2
     #optional
     .goto Eversong Woods,54.28,70.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mirveda|r
@@ -1125,6 +1135,9 @@ step
     .target Apprentice Mirveda
     .isQuestTurnedIn 9254
 step
+    #xprate <1.2
+    #loop
+    .goto Eversong Woods,53.88,70.03,0
     .goto Eversong Woods,54.13,71.21,40,0
     .goto Eversong Woods,50.79,72.17,40,0
     .goto Eversong Woods,50.87,71.40,40,0
@@ -1133,18 +1146,11 @@ step
     .goto Eversong Woods,52.60,68.47,40,0
     .goto Eversong Woods,53.24,69.28,40,0
     .goto Eversong Woods,53.88,70.03,40,0
-    .goto Eversong Woods,54.13,71.21,40,0
-    .goto Eversong Woods,50.79,72.17,40,0
-    .goto Eversong Woods,50.87,71.40,40,0
-    .goto Eversong Woods,51.21,69.89,40,0
-    .goto Eversong Woods,51.47,69.09,40,0
-    .goto Eversong Woods,52.60,68.47,40,0
-    .goto Eversong Woods,53.24,69.28,40,0
-    .goto Eversong Woods,53.88,70.03
     >>Loot |cRXP_PICK_Tainted Soil Piles|r on the ground
     .complete 8487,1 --Collect Tainted Soil Sample (x8)
     .isQuestTurnedIn 9254
 step
+    #xprate <1.2
     .goto Eversong Woods,54.28,70.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mirveda|r
     >>|cRXP_WARN_Wait out the RP|r
@@ -1154,6 +1160,7 @@ step
     .target Apprentice Mirveda
     .isQuestTurnedIn 9254
 step
+    #xprate <1.2
     .goto Eversong Woods,53.66,69.74,20,0
     .goto Eversong Woods,54.28,70.97
     >>Kill |cRXP_ENEMY_Gharsul the Remorseless|r and the |cRXP_ENEMY_Angershades|r to protect |cRXP_FRIENDLY_Mirveda|r
@@ -1162,6 +1169,7 @@ step
     .mob Angershade
     .isQuestTurnedIn 9254
 step
+    #xprate <1.2
     #label Notes
     .goto Eversong Woods,54.28,70.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mirveda|r
@@ -1170,6 +1178,9 @@ step
     .target Apprentice Mirveda
     .isQuestTurnedIn 9254
 step
+    #xprate <1.2
+    #loop
+    .goto Eversong Woods,54.13,71.21,0
     .goto Eversong Woods,54.13,71.21,40,0
     .goto Eversong Woods,50.79,72.17,40,0
     .goto Eversong Woods,50.87,71.40,40,0
@@ -1178,29 +1189,24 @@ step
     .goto Eversong Woods,52.60,68.47,40,0
     .goto Eversong Woods,53.24,69.28,40,0
     .goto Eversong Woods,53.88,70.03,40,0
-    .goto Eversong Woods,54.13,71.21,40,0
-    .goto Eversong Woods,50.79,72.17,40,0
-    .goto Eversong Woods,50.87,71.40,40,0
-    .goto Eversong Woods,51.21,69.89,40,0
-    .goto Eversong Woods,51.47,69.09,40,0
-    .goto Eversong Woods,52.60,68.47,40,0
-    .goto Eversong Woods,53.24,69.28,40,0
-    .goto Eversong Woods,53.88,70.03
     >>Kill |cRXP_ENEMY_Rotlimb Marauders|r
     .complete 9252,1 --Kill Rotlimb Marauder (x4)
     .mob Rotlimb Marauder
     .isOnQuest 9252
 step
+    #xprate <1.2
     #completewith DefendingFBV
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r or run back to Fairbreeze Village
     .isQuestComplete 9252
 step
+    #xprate <1.2
     .goto Eversong Woods,44.029,70.765
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrix Landra Dawnstrider|r
     .turnin 9255 >>Turn in Research Notes
     .target Magistrix Landra Dawnstrider
     .isQuestComplete 9255
 step
+    #xprate <1.2
     #label DefendingFBV
     .goto Eversong Woods,46.93,71.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sareyn|r

@@ -1920,6 +1920,7 @@ step
     .turnin 25179 >>Turn in Loss Reduction
     .target Gar'Thok
 step
+    #xprate <1.2
     .goto 1411,52.25,43.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil|r
     .accept 25232 >>Accept The Burning Blade
@@ -2146,6 +2147,28 @@ step
     .complete 25188,2 --Help Raggaran (1)
     .target Raggaran
 step
+    #xprate >1.19
+    #completewith FlyORG
+    .hs >> Hearth to Razor Hill
+    .cooldown item,6948,>0,1
+step
+    #xprate >1.19
+    #completewith FlyORG
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .cooldown item,6948,<0
+step
+    #xprate >1.19
+    #completewith next
+    .goto 1411,50.86,42.26,40,0
+    .goto 1411,49.58,40.51,12 >> Travel toward the tower
+step
+    #xprate >1.19
+    .goto 1411,49.60,40.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thonk|r
+    .turnin 25188 >>Turn in Watershed Patrol
+    .target Thonk
+step
+    #xprate <1.2
     #completewith DustwindCave
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step << Rogue
@@ -2197,10 +2220,12 @@ step << Warlock
     .target Ghugru Gorelust
     .xp <10,1
 step
+    #xprate <1.2
     #label DustwindCave
     #completewith next
     .goto 1411,52.82,28.88,40 >> Travel inside the cave
 step
+    #xprate <1.2
     #loop
     .goto 1411,52.66,29.15,0
     .goto 1411,52.66,29.15,15,0
@@ -2219,6 +2244,7 @@ step
     .mob Burning Blade Thug
     .mob Burning Blade Neophyte
 step
+    #xprate <1.2
     #completewith next
     .goto 1411,54.36,29.18,70,0
     .goto 1411,56.13,28.06,70,0
@@ -2226,11 +2252,13 @@ step
     .goto 1411,56.11,21.96,40,0
     .goto 1411,56.21,20.23 >> Travel to Vek'nag
 step
+    #xprate <1.2
     .goto 1411,56.21,20.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vek'nag|r
     .accept 25256 >>Accept Sent for Help
     .target Vek'nag
 step
+    #xprate <1.2
     .goto 1411,58.81,23.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spiketooth|r
     .turnin 25256 >>Turn in Sent for Help
@@ -2239,39 +2267,46 @@ step
     .accept 25259 >>Accept Gaur Icehorn
     .target Spiketooth
 step
+    #xprate <1.2
     #completewith next
     .goto 1411,59.41,23.47
     +|cRXP_WARN_Talk to |cRXP_FRIENDLY_Gaur Icehorn|r to turn him hostile|r
     .target Gaur Icehorn
     .skipgossip
 step
+    #xprate <1.2
     .goto 1411,59.41,23.47
     >>Kill |cRXP_ENEMY_Gaur Icehorn|r
     .complete 25259,1 --Gaur defeated (1)
     .mob Gaur Icehorn
 step
+    #xprate <1.2
     #completewith next
     .goto 1411,59.68,22.63
     +|cRXP_WARN_Talk to |cRXP_FRIENDLY_Ghislania|r to turn her hostile|r
     .target Ghislania
     .skipgossip
 step
+    #xprate <1.2
     .goto 1411,59.68,22.63
     >>Kill |cRXP_ENEMY_Ghislania|r
     .complete 25257,1 --Ghislania defeated (1)
     .mob Ghislania
 step
+    #xprate <1.2
     #completewith next
     .goto 1411,59.06,22.26
     +|cRXP_WARN_Talk to |cRXP_FRIENDLY_Griswold|r to turn him hostile|r
     .target Griswold
     .skipgossip
 step
+    #xprate <1.2
     .goto 1411,59.06,22.26
     >>Kill |cRXP_ENEMY_Griswold|r
     .complete 25258,1 --Griswold defeated (1)
     .mob Griswold
 step
+    #xprate <1.2
     .goto 1411,58.80,23.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Spiketooth|r
     .turnin 25257 >>Turn in Ghislania
@@ -2279,6 +2314,7 @@ step
     .turnin 25259 >>Turn in Gaur Icehorn
     .target Spiketooth
 step
+    #xprate <1.2
     #completewith Orgnil
     .goto 1411,57.13,27.37,40,0
     .goto 1411,55.79,31.03,40,0
@@ -2286,10 +2322,12 @@ step
     .goto 1411,52.81,39.75,40 >> Run back to Razor Hill
     .cooldown item,6948,<0
 step
+    #xprate <1.2
     #completewith Orgnil
     .hs >> Hearth to Razor Hill
     .cooldown item,6948,>0
 step
+    #xprate <1.2
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil|r
     .goto 1411,52.24,43.16
@@ -2298,69 +2336,81 @@ step
     .target Orgnil Soulscar
     .maxlevel 9
 step
+    #xprate <1.2
     #label Orgnil
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orgnil|r
     .goto 1411,52.24,43.16
     .turnin 25232 >>Turn in The Burning Blade
     .target Orgnil Soulscar
 step << Rogue
+    #xprate <1.2
     .goto 1411,51.98,43.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaplak|r in the bunker on the top floor
     .train 61922 >> Train your class spells
     .target Kaplak
     .xp <10,1
 step << Shaman
+    #xprate <1.2
     .goto 1411,54.42,42.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Swart|r inside
     .train 3599 >> Train your class spells
     .target Swart
     .xp <10,1
 step << Druid
+    #xprate <1.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jabul|r
     .goto 1411,53.10,41.61
     .train 5215 >> Train your class spells
     .target Jabul
     .xp <10,1
 step << Hunter
+    #xprate <1.2
     .goto 1411,51.86,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r in the bunker on the bottom floor
     .train 1978 >> Train your class spells
     .target Thotar
     .xp <10,1
 step << Warrior
+    #xprate <1.2
     .goto 1411,54.18,42.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw|r inside
     .train 71 >> Train your class spells
     .target Tarshaw Jaggedscar
     .xp <10,1
 step << Mage
+    #xprate <1.2
     .goto 1411,53.04,41.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Un'Thuwa|r
     .train 2139 >> Train your class spells
     .target Un'Thuwa
     .xp <9,1
 step << Priest
+    #xprate <1.2
     .goto 1411,54.26,42.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Parata|r inside
     .train 8092 >> Train your class spells
     .target Tai'jin
     .xp <9,1
 step << Warlock
+    #xprate <1.2
     .goto 1411,54.38,41.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ghugru|r outside
     .train 1120 >> Train your class spells
     .target Ghugru Gorelust
     .xp <10,1
 step
+    #xprate <1.2
     #completewith next
     .goto 1411,50.86,42.26,40,0
     .goto 1411,49.58,40.51,12 >> Travel toward the tower
 step
+    #xprate <1.2
     .goto 1411,49.60,40.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thonk|r
     .turnin 25188 >>Turn in Watershed Patrol
     .target Thonk
 step
+    #label FlyORG
     .goto 1411,53.04,43.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Burok|r
     .fly Orgrimmar >>Fly to Orgrimmar
@@ -2370,12 +2420,14 @@ step
     --Next section if user isn't lvl 10 yet
 
 step
+    #xprate <1.2
     #optional
     #completewith next
     .goto 1411,46.26,30.19
     >>|cRXP_WARN_Travel to the the waypoint. Do not die until you are there|r
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step
+    #xprate <1.2
     #optional
     .goto 1411,46.371,22.942
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rezlak|r
@@ -2383,6 +2435,7 @@ step
     .target Rezlak
     .maxlevel 9
 step
+    #xprate <1.2
     #optional
     .goto 1411,48.95,22.34,0
     .goto 1411,48.95,22.34,40,0
@@ -2405,6 +2458,7 @@ step
     .complete 834,1 --Sack of Supplies (5)
     .isOnQuest 834
 step
+    #xprate <1.2
     #optional
     .goto 1411,46.371,22.942
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rezlak|r
@@ -2413,6 +2467,7 @@ step
     .target Rezlak
     .isQuestComplete 834
 step
+    #xprate <1.2
     #optional
     .goto 1411,46.371,22.942
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rezlak|r
@@ -2420,6 +2475,7 @@ step
     .target Rezlak
     .isQuestTurnedIn 835
 step
+    #xprate <1.2
     #optional
     .goto 1411,49.76,28.04,0
     .goto 1411,48.86,22.10,40,0
@@ -2442,6 +2498,7 @@ step
     .mob Dustwind Storm Witch
     .isQuestTurnedIn 835
 step
+    #xprate <1.2
     #optional
     .goto 1411,46.371,22.942
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rezlak|r
@@ -2449,6 +2506,7 @@ step
     .target Rezlak
     .isQuestComplete 835
 step
+    #xprate <1.2
     #optional
     #completewith Fizzled
     .goto 1411,45.11,13.65,30 >> Run to |cRXP_FRIENDLY_Gor|r 
@@ -2465,6 +2523,7 @@ step << skip
     .target Gor the Enforcer
     .target Shin Stonepillar
 step
+    #xprate <1.2
     #optional
     .goto 1411,45.01,14.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gor|r
@@ -2476,6 +2535,7 @@ step
     .target Gor the Enforcer
     .maxlevel 9
 step
+    #xprate <1.2
     #optional
     #label Fizzled
     .goto 1411,45.01,14.78
@@ -2519,6 +2579,7 @@ step << skip
     .mob Teeming Waterguard
     .mob Furious Earthguard
 step
+    #xprate <1.2
     #optional
     #completewith next
     >>Click the |cRXP_FRIENDLY_Drowned Thunder Lizards|r underwater
@@ -2526,6 +2587,7 @@ step
     .target Drowned Thunder Lizard
     .isOnQuest 25236
 step
+    #xprate <1.2
     #optional
     #label Fizzle
     .goto 1411,42.11,26.65
@@ -2536,6 +2598,7 @@ step
     .isOnQuest 25260
     --BB Bugged on beta
 step
+    #xprate <1.2
     #optional
     #loop
     .goto 1411,41.22,24.55,0
@@ -2560,11 +2623,13 @@ step
     .target Drowned Thunder Lizard
     .isOnQuest 25236
 step
+    #xprate <1.2
     #optional
     #completewith FizzledTurnin
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .isQuestComplete 25236
 step
+    #xprate <1.2
     #optional
     .goto 1411,44.97,14.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gor|r
@@ -2575,6 +2640,7 @@ step
     .isQuestComplete 25236
     .isQuestComplete 25260
 step
+    #xprate <1.2
     #optional
     .goto 1411,44.97,14.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gor|r
@@ -2583,6 +2649,7 @@ step
     .target Gor the Enforcer
     .isQuestComplete 25260
 step
+    #xprate <1.2
     #optional
     #label FizzledTurnin
     .goto 1411,44.97,14.77
@@ -2592,6 +2659,7 @@ step
     .target Gor the Enforcer
     .isQuestComplete 25236
 step
+    #xprate <1.2
     #optional
     .goto 1411,45.506,11.949,30,0
     .zone Orgrimmar >>Enter Orgrimmar

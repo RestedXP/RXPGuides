@@ -34,7 +34,7 @@ step
     .goto 18,29.94,72.45,5 >>Enter the shadow grave
 step
     .goto 18,29.67,71.98
-    >>Loot the |cRXP_LOOT_Corpse-Stitching Twine|r and |cRXP_LOOT_Thick Embalming Fluid|r
+    >>Loot the |cRXP_LOOT_Corpse-Stitching Twine|r and |cRXP_LOOT_Thick Embalming Fluid|r on the table
     .complete 28608,2 --Corpse-Stitching Twine (1)
     .complete 28608,1 --Thick Embalming Fluid (1)
 step
@@ -194,7 +194,7 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dannal|r
     .turnin 3095 >>Turn in Simple Scroll
     .accept 24969 >>Accept Charging into Battle
-    .train 100 >>|T132337:0|t[Charge]
+    .train 100 >>Train |T132337:0|t[Charge]
     .target Dannal Stern
 step << Hunter
     .goto 18,31.45,65.61
@@ -238,7 +238,7 @@ step
 step
     .goto 18,32.69,65.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lilian|r
-    >>|cRXP_WARN_She might be upstairs|r
+    >>|cRXP_WARN_She might be upstairs. Do not wait for the RP|r
     .complete 24961,1 --1/1 Show Lilian her reflection
     .skipgossip
     .target Lilian Voss
@@ -318,7 +318,7 @@ step
     .waypoint 18,34.19,59.64,40,0
     .waypoint 18,32.90,58.08,40,0
     >>Kill |cRXP_ENEMY_Duskbats|r. Loot them for their |cRXP_LOOT_Wings|r
-    >>Kill |cRXP_ENEMY_Scavengers|r. Loot them for their |cRXP_LOOT_Paws|r
+    >>Kill |cRXP_ENEMY_Wolves|r. Loot them for their |cRXP_LOOT_Paws|r
     .complete 26802,2 --4/4 Duskbat Wing
     .mob +Duskbat
     .mob +Mangy Duskbat
@@ -336,7 +336,7 @@ step
     .subzone 155 >>Travel to the Night's Web Hollow cave
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Young Night Web Spiders|r outside the mine
+    >>Kill |cRXP_ENEMY_Young Night Web Spiders|r |cRXP_WARN_outside the mine|r
     .complete 24973,1 --8/8 Young Night Web Spider slain
     .mob Young Night Web Spider
 step
@@ -350,7 +350,7 @@ step
     .waypoint 18,24.15,60.82,8,0
     .waypoint 18,23.23,60.06,8,0
     .waypoint 18,23.68,58.52,8,0
-    >>Kill |cRXP_ENEMY_Night Web Spiders|r inside the mine
+    >>Kill |cRXP_ENEMY_Night Web Spiders|r |cRXP_WARN_inside the mine|r
     .complete 24973,2 --5/5 Night Web Spider slain
     .mob Night Web Spider
 step
@@ -408,38 +408,39 @@ step
     .accept 24972 >>Accept Vital Intelligence
     .target Shadow Priest Sarvis
 step
-    #completewith ReapReapers
+    #completewith next
     .goto 18,38.09,56.48,20,0
     .goto 18,38.41,55.69,20,0
-    .goto 18,38.78,55.57 >>Leave Deathknell
+    .goto 18,38.78,55.57,20 >>Leave Deathknell
 step
-    #completewith ReapReapers
+    #completewith next
     .subzone 4916 >>Travel to Calston Estate
 step
-    .goto 18,44.75,53.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Simmer|r
-    .turnin 24972 >>Turn in Vital Intelligence
-    .accept 24978 >>Accept Reaping the Reapers
-    .target Deathguard Simmer
-    .isOnQuest 24972
-step
-    #optional
-    #label ReapReapers
+    #xprate <1.2
     .goto 18,44.75,53.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Simmer|r
     .turnin 24972 >>Turn in Vital Intelligence
     .accept 24978 >>Accept Reaping the Reapers
     .target Deathguard Simmer
 step
+    #xprate >1.19
+    .goto 18,44.75,53.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Simmer|r
+    .turnin 24972 >>Turn in Vital Intelligence
+    .target Deathguard Simmer
+step
+    #xprate <1.2
     .goto 18,44.61,53.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r
     .accept 24975 >>Accept Fields of Grief
     .target Apothecary Johaan
 step
+    #xprate <1.2
     #completewith next
     .goto 18,44.49,53.85,3,0
     .goto 18,44.63,53.75,3 >> Go upstairs
 step
+    #xprate <1.2
     .goto 18,44.75,53.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sedrick|r
     .accept 24974 >>Accept Ever So Lonely
@@ -475,11 +476,13 @@ step << Warlock
     .target Maressa Milner
     .xp <5,1
 step
+    #xprate <1.2
     #completewith next
     >>Kill |cRXP_ENEMY_Tirisfal Farmers|r
     .complete 24978,1 --10/10 Tirisfal Farmer slain
     .mob Tirisfal Farmer
 step
+    #xprate <1.2
     #loop
     .goto 18,41.12,51.69,0
     .goto 18,35.25,50.90,0
@@ -491,6 +494,7 @@ step
     >>Loot the |cRXP_LOOT_Tirisfal Pumpkins|r on the ground
     .complete 24975,1 --10/10 Tirisfal Pumpkin
 step
+    #xprate <1.2
     #loop
     .goto 18,41.12,51.69,0
     .goto 18,35.25,50.90,0
@@ -503,6 +507,7 @@ step
     .complete 24978,1 --10/10 Tirisfal Farmer slain
     .mob Tirisfal Farmer
 step
+    #xprate <1.2
     .goto 18,34.37,43.68,40,0
     .goto 18,35.90,42.92,40,0
     .goto 18,36.66,40.40,40,0
@@ -512,68 +517,81 @@ step
     .mob File Vin Puddlejumper
     .mob File Vin Minor Oracle
 step
+    #xprate <1.2
     #completewith next
     .subzone 4916 >>Travel to Calston Estate
 step
+    #xprate <1.2
     .goto 18,44.75,53.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Simmer|r
     .turnin 24978 >>Turn in Reaping the Reapers
     .target Deathguard Simmer
 step
+    #xprate <1.2
     .goto 18,44.61,53.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Johaan|r
     .turnin 24975 >>Turn in Fields of Grief
     .target Apothecary Johaan
 step
+    #xprate <1.2
     #completewith MurlocDelivery
     .goto 18,44.49,53.85,3,0
     .goto 18,44.63,53.75,3 >> Go upstairs
 step
+    #xprate <1.2
     .goto 18,44.75,53.65
     >>Deliver the |cRXP_FRIENDLY_Murloc|r
     .complete 24974,2 --1/1 Vile Fin returned
     .target Sedrick Calston
 step
+    #xprate <1.2
     #label MurlocDelivery
     .goto 18,44.75,53.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sedrick|r
     .turnin 24974 >>Turn in Ever So Lonely
     .target Sedrick Calston
 step
+    #xprate <1.2
     #completewith next
     .goto 18,44.49,53.86,5,0
     .goto 18,44.75,53.65 >> Go upstairs to return the |cRXP_FRIENDLY_Murloc|r
     .complete 24974,2 --1/1 Vile Fin returned
 step
+    #xprate <1.2
     .goto 18,44.75,53.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sedrick|r
     .turnin 24974 >>Turn in Ever So Lonely
     .target Sedrick Calston
 step << Hunter
+    #xprate <1.2
     .goto 18,44.97,53.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darna|r outside
     .train 2973 >>Train your class spells
     .target Darna Woad
     .xp <6,1
 step << Warrior
+    #xprate <1.2
     .goto 18,45.03,53.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karla|r outside
     .train 34428 >>Train your class spells
     .target Karla Fain
     .xp <5,1
 step << Mage
+    #xprate <1.2
     .goto 18,44.78,53.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Larah|r outside
     .train 2136 >>Train your class spells
     .target Larah Firesong
     .xp <5,1
 step << Priest
+    #xprate <1.2
     .goto 18,44.78,53.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Claressa|r outside
     .train 589 >>Train your class spells
     .target Dark Cleric Claressa
     .xp <5,1
 step << Warlock
+    #xprate <1.2
     .goto 18,44.73,53.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maressa|r outside
     .train 87389 >>Train your class spells
