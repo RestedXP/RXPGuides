@@ -3100,7 +3100,7 @@ function addon.GetXPBonuses(ignoreBuffs,playerLevel)
             if itemLink then
                 itemQuality = select(3, GetItemInfo(itemLink))
             end
-            if itemQuality == INV_HEIRLOOM then
+            if itemQuality == INV_HEIRLOOM and i ~= 13 and i ~= 14 then
                 local minilvl,maxilvl
                 GameTooltip:SetInventoryItem("player",i)
                 for n = 2,GameTooltip:NumLines() do
