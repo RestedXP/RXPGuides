@@ -3093,6 +3093,13 @@ function addon.functions.train(self, ...)
         if element.textOnly then
             self.element.step.completed = true
             addon.updateSteps = true
+            if not element.text then
+                if element.reverse then
+                    element.tooltipText = fmt("Step skipped: You don't have the required spell or ability (%s)",element.title or "")
+                else
+                    element.tooltipText = fmt("Step skipped: You already have the required spell or ability (%s)",element.title or "")
+                end
+            end
         else
             addon.SetElementComplete(self, true)
         end
@@ -3108,6 +3115,19 @@ function addon.functions.train(self, ...)
     else
         element.requestFromServer = true
     end
+end
+
+function addon.functions.hastyhearth(self,...)
+    if type(self) == "string" then
+        local text,flag = ...
+        if flag then
+            flag = 1
+        else
+            flag = 3
+        end
+        return addon.functions.train(self, text, 83944, flag)
+    end
+    return addon.functions.train(self,...)
 end
 
 function addon.functions.istrained(self, text, ...)
