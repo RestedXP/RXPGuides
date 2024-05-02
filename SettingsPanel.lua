@@ -3054,6 +3054,7 @@ local XPTEXT = strlower(POWER_TYPE_EXPERIENCE)
 
 addon.settings.heirloomSlots = {}
 local tooltipTimer = 0
+local playerLevelCheck = 0
 
 function addon.GetXPBonuses(ignoreBuffs,playerLevel)
     local calculatedRate = not ignoreBuffs and CheckBuff(377749) and 1.5 or 1.0 -- Joyous Journeys
@@ -3111,11 +3112,11 @@ function addon.GetXPBonuses(ignoreBuffs,playerLevel)
         --Disable trinket parsing:
         heirloomSlots[13] = false
         heirloomSlots[14] = false
-
+        local currentLevel = UnitLevel('player')
         local t = GetTime()
         local lastScan = addon.settings.heirloomSlots
         for i,isHeirloom in pairs(heirloomSlots) do
-            if isHeirloom ~= lastScan[i] or isHeirloom and t - tooltipTimer > 30 then
+            if isHeirloom ~= lastScan[i] or isHeirloom and (t - tooltipTimer > 30 or playerLevelCheck ~=  currentLevel) then
                 GameTooltip:SetOwner(addon.RXPFrame, "ANCHOR_RIGHT")
                 tooltipShown = true
                 local minilvl,maxilvl
@@ -3132,7 +3133,7 @@ function addon.GetXPBonuses(ignoreBuffs,playerLevel)
                         local xp = lower:match("(%d%d?)%%")
                         if xp and lower:find(XPTEXT) then
                             xp = tonumber(xp)
-                            if maxilvl > (playerLevel or UnitLevel("player")) then
+                            if maxilvl > (playerLevel or currentLevel) then
                                 calculatedRate = calculatedRate + xp/100
                             end
                             break
@@ -3141,6 +3142,7 @@ function addon.GetXPBonuses(ignoreBuffs,playerLevel)
                 end
             end
         end
+        playerLevelCheck = playerLevel
         addon.settings.heirloomSlots = heirloomSlots
         if tooltipShown then
             tooltipTimer = t
