@@ -2186,6 +2186,16 @@ step
     .complete 25978,1 --Frozen Mountaineers freed (6)
     .mob +Icy Tomb
 step
+#xprate >1.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khurgorn Singefeather|r
+    .turnin 25979 >>Turn in Dealing with the Surge
+    .goto 27,82.642,48.295
+    .target +Khurgorn Singefeather
+    .turnin 25978 >>Turn in Entombed in Ice
+    .goto 27,82.854,48.409
+    .target +Sergeant Bahrum
+step
+#xprate <1.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khurgorn Singefeather|r
     .turnin 25979 >>Turn in Dealing with the Surge
     .goto 27,82.642,48.295
@@ -2195,6 +2205,7 @@ step
     .goto 27,82.854,48.409
     .target +Sergeant Bahrum
 step
+#xprate <1.2
     #sticky
     #label Spies
     #loop
@@ -2209,23 +2220,26 @@ step
     .complete 25997,1 --Dark Iron Spy (5)
     .mob *Dark Iron Spy
 step
+#xprate <1.2
     #optional
     #completewith Beld
     .goto 27,85.20,60.62,10,0
     .goto 27,85.19,60.98,8 >>Enter Ironband's Compound
     .isOnQuest 25997
 step
+#xprate <1.2
     #label Beld
     .goto 27,85.172,60.614
     >>Kill |cRXP_ENEMY_Captain Beld|r inside Ironband's Compound on the bottom floor. Loot him for the |cRXP_LOOT_Dark Iron Attack Plans|r
     .complete 25997,2 --Dark Iron Attack Plans (1)
     .mob Captain Beld
 step
+#xprate <1.2
     #requires Spies
     #completewith next
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-    .skill riding,75,1
 step
+#xprate <1.2
     #requires Spies
     .goto 27,82.854,48.409
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Bahrum|r
@@ -2233,7 +2247,7 @@ step
     --.accept 25998 >>Accept Get to the Airfield << !Human
     .target Sergeant Bahrum
 
-step << !Human
+step
     #optional
     #completewith next
     .goto 27,87.534,48.059,20,0
