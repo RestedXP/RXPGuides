@@ -109,15 +109,17 @@ step
     .mob Stonesplinter Trogg
     .mob Stonesplinter Scout
 step
-    .goto 48,23.359,74.990
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r
-    .target Captain Rugelfuss
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r, |cRXP_FRIENDLY_Mountaineer Cobbleflint|r and |cRXP_FRIENDLY_Captain Wallbang|r
     .turnin 26146 >>Turn in In Defense of the King's Lands
     .accept 26148 >>Accept A Decisive Strike
+    .target +Captain Rugelfuss
+    .goto 48,23.359,74.990
     .turnin 26145 >>Turn in The Trogg Threat
+    .target +Mountaineer Cobbleflint
+    .goto 48,23.332,74.927
     .accept 26147 >>Accept Bigger and Uglier
-
-
+    .target +Mountaineer Wallbang
+    .goto 48,23.298,75.054
 step
 #sticky
 #label troggcave1
@@ -144,12 +146,14 @@ step
 step
 #requires troggcave1
     .goto 48,23.321,75.013
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Wallbang|r
-    .target Mountaineer Wallbang
-    .turnin 26147 >>Turn in Bigger and Uglier
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r and |cRXP_FRIENDLY_Captain Wallbang|r
     .turnin 26148 >>Turn in A Decisive Strike
     .accept 26176 >>Accept Onward to Thelsamar
-
+    .target +Captain Rugelfuss
+    .goto 48,23.359,74.990
+    .turnin 26147 >>Turn in Bigger and Uglier
+    .target +Mountaineer Wallbang
+    .goto 48,23.298,75.054
 step
     .goto 48,35.079,46.663
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Kadrell|r
@@ -158,191 +162,320 @@ step
     .accept 26842 >>Accept Out of Gnoll-where
     .accept 13636 >>Accept Stormpike's Orders
 step
-    .goto 48,35.503,48.359
+    .goto 48,35.536,48.404
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Hearthstove|r
     .home >>Set your Hearthstone to Thelsamar
+    .target Innkeeper Hearthstove
 step
     .goto 48,34.849,49.177
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r 
     .target Vidra Hearthstove
     .accept 26860 >>Accept Thelsamar Blood Sausages
+step << Paladin
+    .goto 48,35.374,48.810
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faldoc Stonefaith|r
+    .trainer >> Train your class spells
+    .target Faldoc Stonefaith
+step << Rogue
+    .goto 48,34.935,48.483
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Galda Bronzeblade|r
+    .trainer >> Train your class spells
+    .target Galda Bronzeblade
+step << Mage
+    .goto 48,35.012,48.445
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gindle the Green|r
+    .trainer >> Train your class spells
+    .target Gindle the Green
+step << Hunter
+    .goto 48,34.553,48.117
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belda Wildheart|r
+    .trainer >> Train your class spells
+    .target Belda Wildheart    
+step << Warrior
+    .goto 48,33.951,46.768
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grendin Swiftaxe|r
+    .trainer >> Train your class spells
+    .target Grendin Swiftaxe
+step << Shaman
+    .goto 48,36.596,48.341
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grenhild Darktalon|r
+    .trainer >> Train your class spells
+    .target Grenhild Darktalon
+step << Warlock
+    .goto 48,35.879,46.199
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Solbin Shadowcog|r
+    .trainer >> Train your class spells
+    .target Solbin Shadowcog
+step << Priest
+    .goto 48,36.108,45.893
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Baerla|r
+    .trainer >> Train your class spells
+    .target Priestess Baerla
 step
-    .goto 48,35.911,44.437
+    .goto 48,37.303,46.517
+    >>Click the |cRXP_PICK_Wanted!|r poster
+    .accept 13648 >>Accept WANTED: The Dark Iron Spy
+step
+    .goto 48,35.960,44.028
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dakk Blunderblast|r 
     .target Dakk Blunderblast
     .accept 25118 >>Accept Looking for Lurkers
 step
-    .goto 48,37.229,46.402
-    .accept 13648 >>Accept WANTED: The Dark Iron Spy
-
-step
-#completewith sausage1
-    >>Kill |cRXP_ENEMY_Forest Lurkers|r and |cRXP_ENEMY_Black Bears|r as you quest
-    >>Loot the bears for |T237350:0|t[Bear Rump]
+    #completewith SilverStreamMine
+    >>Kill |cRXP_ENEMY_Forest Lurkers|r
     .complete 25118,1 --|8/8 Forest Lurker slain
     .mob Forest Lurker
-    .complete 26860,1 --|8/8 Bear Rump
-
 step
-#loop
+    #completewith SilverStreamMine
+    >>Kill |cRXP_ENEMY_Black Bears|r. Loot them for their |cRXP_LOOT_Rump|r
+    .complete 26860,1 --|8/8 Bear Rump
+    .mob Black Bear
+step
+    #loop
     .goto 48,26.258,42.477,30,0
     .goto 48,26.888,50.154,30,0
     .goto 48,26.258,42.477,0
     .goto 48,26.888,50.154,0
-    >>Kill |cRXP_ENEMY_Mosshide Gnolls|r
+    >>Kill |cRXP_ENEMY_Mosshide Scouts|r and |cRXP_ENEMY_Mosshide Bashers|r. Loot them for their |cRXP_LOOT_Ears|r
     .complete 26842,1 --|12/12 Mosshide Ear
     .mob Mosshide Basher
     .mob Mosshide Scout
 step
-    .goto 48,25.557,18.000
+    .goto 48,25.444,17.963
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r
-    .target Mountaineer Stormpike
     .turnin 13636 >>Turn in Stormpike's Orders
     .accept 26843 >>Accept A Tiny, Clever Commander
-
+    .target Mountaineer Stormpike
 step
     .goto 48,26.111,31.575
+    >>Kill |cRXP_ENEMY_"Commander" Nazrim|r
     .complete 26843,1 --|1/1 "Commander" Nazrim slain
     .mob "Commander" Nazrim
 step
-    .goto 48,25.444,17.857
+    .goto 48,25.444,17.963
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r
-    .target Mountaineer Stormpike
     .turnin 26843 >>Turn in A Tiny, Clever Commander
     .accept 26844 >>Accept Kobold and Kobolder
-
+    .target Mountaineer Stormpike
 step
     .goto 48,31.485,13.582,30,0
     .goto 48,35.425,16.773,30,0
     .goto 48,38.607,15.477,30,0
     .goto 48,38.760,13.619,0
-    >>Kill |cRXP_ENEMY_Surveyors|r and |cRXP_ENEMY_Foragers|r
+    >>Kill |cRXP_ENEMY_Tunnel Rat Surveyors|r and |cRXP_ENEMY_Tunnel Rat Foragers|r
     .complete 26844,1 --|5/5 Tunnel Rat Surveyor slain
+    .mob +Tunnel Rat Surveyor
     .complete 26844,2 --|5/5 Tunnel Rat Forager slain
-    .mob Tunnel Rat Forager
-    .mob Tunnel Rat Surveyor
-
+    .mob +Tunnel Rat Forager
 step
-#label sausage1
-    .goto 48,25.522,17.747
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r
-    .target Mountaineer Stormpike
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r and |cRXP_FRIENDLY_Scout Dorli|r
     .turnin 26844 >>Turn in Kobold and Kobolder
     .accept 26845 >>Accept Who's In Charge Here?
     .accept 26863 >>Accept Filthy Paws
+    .goto 48,25.444,17.963
+    .target +Mountaineer Stormpike
     .accept 26846 >>Accept A Nasty Exploit
+    .goto 48,25.398,17.793
+    .target +Scout Dorli
 step
-#sticky
-#label koboldmine1
-#loop
+    #label SilverStreamMine
+    #completewith ForemanSharpsneer
+    .goto 48,35.49,19.13,15 >> Enter the Silver Stream Mine
+step
+    #sticky
+    #label koboldmine1
+    #loop
     .goto 48,35.623,20.181,20,0
     .goto 48,36.222,24.255,20,0
     .goto 48,34.854,27.180,20,0
     .goto 48,34.752,26.885,20,0
     .goto 48,35.214,20.966,0
-    >>Loot the |cRXP_PICK_wooden crates|r inside the mine
     >>Kill |cRXP_ENEMY_Tunnel Rat Geomancers|r
+    >>Open the |cRXP_PICK_Miners' League Crates|r. Loot them for the |cRXP_LOOT_Miners' Gear|r
     .complete 26846,1 --|5/5 Tunnel Rat Geomancer slain
+    .mob +Tunnel Rat Geomancer
     .complete 26863,1 --|6/6 Miners' Gear
-    .mob Tunnel Rat Geomancer
 step
+    #label ForemanSharpsneer
     .goto 48,34.752,26.885
-    >>Dive deep into the mine tunnel and kill and loot |cRXP_ENEMY_Foreman Sharpsneer|r
+    >>|cRXP_WARN_Head to the back of the Silver Stream Mine|r
+    >>Kill |cRXP_ENEMY_Foreman Sharpsneer|r. Loot him for his |cRXP_LOOT_Head|r
     .complete 26845,1 --|1/1 Foreman Sharpsneer's Head
-    .unitscan Foreman Sharpsneer
+    .mob Foreman Sharpsneer
 step
-#requires koboldmine1
-    .goto 48,25.541,17.885
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r
-    .target Mountaineer Stormpike
+    #requires koboldmine1
+    #completewith next
+    .goto 48,35.49,19.13,15 >> Exit the Silver Stream Mine
+step
+    #completewith TheBearer
+    >>Kill |cRXP_ENEMY_Forest Lurkers|r
+    .complete 25118,1 --|8/8 Forest Lurker slain
+    .mob Forest Lurker
+step
+    #completewith TheBearer
+    >>Kill |cRXP_ENEMY_Black Bears|r. Loot them for their |cRXP_LOOT_Rump|r
+    .complete 26860,1 --|8/8 Bear Rump
+    .mob Black Bear
+step
+    #requires koboldmine1
+    #label TheBearer
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r and |cRXP_FRIENDLY_Scout Dorli|r
     .turnin 26845 >>Turn in Who's In Charge Here?
     .accept 26864 >>Accept The Bearer of Gnoll-edge
     .turnin 26863 >>Turn in Filthy Paws
+    .target +Mountaineer Stormpike
+    .goto 48,25.444,17.963
     .turnin 26846 >>Turn in A Nasty Exploit
+    .goto 48,25.398,17.793
+    .target +Scout Dorli
 step
-#loop
+    #completewith next
+    >>Kill |cRXP_ENEMY_Forest Lurkers|r
+    .complete 25118,1 --|8/8 Forest Lurker slain
+    .mob Forest Lurker
+step
+    #loop
     .goto 48,27.649,21.203,40,0
     .goto 48,33.193,31.069,40,0
     .goto 48,35.295,39.016,40,0
     .goto 48,27.649,21.203,0
     .goto 48,33.193,31.069,0
     .goto 48,35.295,39.016,0
-
-    >>Kill |cRXP_ENEMY_Forest Lurkers|r and |cRXP_ENEMY_Black Bears|r
-    >>Loot the bears for |T237350:0|t[Bear Rump]
+    >>Kill |cRXP_ENEMY_Black Bears|r. Loot them for their |cRXP_LOOT_Rump|r
+    .complete 26860,1 --|8/8 Bear Rump
+    .mob Black Bear
+step
+    #loop
+    .goto 48,33.55,37.43,60,0
+    .goto 48,38.94,30.41,60,0
+    .goto 48,35.19,27.68,60,0
+    .goto 48,27.64,21.20,70,0
+    >>Kill |cRXP_ENEMY_Forest Lurkers|r
     .complete 25118,1 --|8/8 Forest Lurker slain
     .mob Forest Lurker
-    .complete 26860,1 --|8/8 Bear Rump
---TODO: Maybe Hearth here? tbd
+step
+    .isOnQuest 26860,25118
+    .hs >> Hearth to Thelsemar
+    .cooldown item,6948,>2,1
 step
     .goto 48,35.969,44.330
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dakk Blunderblast|r
-    .target Dakk Blunderblast
     .turnin 25118 >>Turn in Looking for Lurkers
+    .target Dakk Blunderblast
 step
     .goto 48,35.017,46.663
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Kadrell|r
-    .target Mountaineer Kadrell
     .turnin 26842 >>Turn in Out of Gnoll-where
     .turnin 26864 >>Turn in The Bearer of Gnoll-edge
     .accept 26927 >>Accept Suddenly, Murlocs!
+    .target Mountaineer Kadrell
 step
-    .goto 48,34.913,49.013
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cannary Caskshot|r
-    .target Cannary Caskshot
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cannary Caskshot|r and |cRXP_FRIENDLY_Vidra Hearthstove|r
     .turnin 26927 >>Turn in Suddenly, Murlocs!
     .accept 26928 >>Accept Smells Like A Plan
     .accept 26929 >>Accept A Load of Croc
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r
-    .target Vidra Hearthstove
+    .target +Cannary Caskshot
+    .goto 48,34.789,49.122
     .turnin 26860 >>Turn in Thelsamar Blood Sausages
+    .target +Vidra Hearthstove
+    .goto 48,34.827,49.285
+step << Paladin
+    .goto 48,35.374,48.810
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faldoc Stonefaith|r
+    .trainer >> Train your class spells
+    .target Faldoc Stonefaith
+step << Rogue
+    .goto 48,34.935,48.483
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Galda Bronzeblade|r
+    .trainer >> Train your class spells
+    .target Galda Bronzeblade
+step << Mage
+    .goto 48,35.012,48.445
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gindle the Green|r
+    .trainer >> Train your class spells
+    .target Gindle the Green
+step << Hunter
+    .goto 48,34.553,48.117
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belda Wildheart|r
+    .trainer >> Train your class spells
+    .target Belda Wildheart    
+step << Warrior
+    .goto 48,33.951,46.768
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grendin Swiftaxe|r
+    .trainer >> Train your class spells
+    .target Grendin Swiftaxe
 step
     .goto 48,35.058,46.632
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Kadrell|r 
     .target Mountaineer Kadrell
     .accept 26932 >>Accept Buzz Off
+step << Shaman
+    .goto 48,36.596,48.341
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grenhild Darktalon|r
+    .trainer >> Train your class spells
+    .target Grenhild Darktalon
+step << Warlock
+    .goto 48,35.879,46.199
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Solbin Shadowcog|r
+    .trainer >> Train your class spells
+    .target Solbin Shadowcog
+step << Priest
+    .goto 48,36.108,45.893
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Baerla|r
+    .trainer >> Train your class spells
+    .target Priestess Baerla
 step
-#label gorick
-#sticky
     .goto 48,40.642,58.310,15,0
     .goto 48,39.670,62.104,15,0
     .goto 48,36.796,61.173
-    >>Climb to the top of Grizzlepaw Ridge and kill |cRXP_ENEMY_Gorick Guzzledraught|r
+    >>Follow the arrow up to the top of Grizzlepaw Ridge
+    >>Kill |cRXP_ENEMY_Gorick Guzzledraught|r
     .complete 13648,1 --|1/1 Gorick Guzzledraught slain
     .mob Gorick Guzzledraught
 step
     .goto 48,36.752,61.108
-    >>Click on the small scroll located inside the cave at the top of the hill
+    >>Click the |cRXP_PICK_Stolen Explorer's Leaguye Document|r inside of the Cave
     .accept 13656>> Accept Explorers' League Document (1 of 6)
-
-
 step
-#requires gorick
-    .goto 48,50.790,63.748,40,0
-    .goto 48,55.580,56.273,40,0
-    .goto 48,59.933,52.441,40,0
-    .goto 48,50.790,63.748,0
-    .goto 48,55.580,56.273,0
-    .goto 48,59.933,52.441,0
-    >>Kill |cRXP_ENEMY_Loch Crocolisks|r and loot them for |cRXP_LOOT_Intact Crocolisk Jaw|r
-    >>Kill |cRXP_ENEMY_Loch Buzzard|r, most of them are flying up in the sky, use a ranged ability to pull them down
+    #completewith next
+    >>Kill |cRXP_ENEMY_Loch Buzzards|r
+    >>|cRXP_WARN_Some |cRXP_ENEMY_Loch Buzzards|r can be flying in the air|r
     .complete 26932,1 --|8/8 Loch Buzzard slain
-    .complete 26929,1 --|6/6 Intact Crocolisk Jaw
     .mob Loch Buzzard
+step
+    #loop
+    .goto 48,50.790,63.748,60,0
+    .goto 48,55.580,56.273,60,0
+    .goto 48,59.933,52.441,60,0
+    >>Kill |cRXP_ENEMY_Loch Crocolisks|r. Loot them for their |cRXP_LOOT_Intact Crocolisk Jaws|r
+    .complete 26929,1 --|6/6 Intact Crocolisk Jaw
     .mob Loch Crocolisk
 step
-#label scroll2
-#sticky
-    .goto 48,41.351,39.019
-    >>Click on the small scroll under the bridge, between the 2 support columns
+    #loop
+    .goto 48,50.790,63.748,60,0
+    .goto 48,55.580,56.273,60,0
+    .goto 48,59.933,52.441,60,0
+    >>Kill |cRXP_ENEMY_Loch Buzzards|r
+    >>|cRXP_WARN_Some |cRXP_ENEMY_Loch Buzzards|r can be flying in the air|r
+    .complete 26932,1 --|8/8 Loch Buzzard slain
+    .mob Loch Buzzard
+step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Bluegill Mudskippers|r and |cRXP_ENEMY_Bluegill Wanderers|r. Loot them for their |cRXP_LOOT_Scent Glands|r
+    .complete 26928,1 --|7/7 Murloc Scent Gland
+    .mob Bluegill Mudskipper
+    .mob Bluegill Wanderer
+step
+    .goto 48,41.379,38.967
+    >>Click the |cRXP_PICK_Stolen Explorer's Leaguye Document|r under the bridge
     .accept 13655 >>Accept Explorers' League Document (2 of 6)
 step
-    .goto 48,46.231,51.109,0
-    .goto 48,42.957,39.201,0
-    .goto 48,42.957,39.201,40,0
-    .goto 48,46.231,51.109,40,0
-    >>Kill |cRXP_ENEMY_Scouts|r and |cRXP_ENEMY_Wanderers|r loot them for their |cRXP_LOOT_Scent Glands|r
+    #loop
+    .goto 48,42.957,39.201,60,0
+    .goto 48,46.231,51.109,60,0
+    >>Kill |cRXP_ENEMY_Bluegill Mudskippers|r and |cRXP_ENEMY_Bluegill Wanderers|r. Loot them for their |cRXP_LOOT_Scent Glands|r
     .complete 26928,1 --|7/7 Murloc Scent Gland
-    .mob Bluegill Scout
+    .mob Bluegill Mudskipper
     .mob Bluegill Wanderer
 step
     .goto 48,35.191,46.577
@@ -732,7 +865,7 @@ step
     .accept 27116 >>Accept The Winds of Loch Modan
 step
 #questguide
-    .goto 48,25.513,17.887
+    .goto 48,25.444,17.963
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r
     .target Mountaineer Stormpike
     .turnin 27116 >>Turn in The Winds of Loch Modan

@@ -464,7 +464,11 @@ step << skip
     *[4] Within |cRXP_WARN_Keybindings|r, find |cRXP_WARN_RestedXP Guides.|r
     *[5] Select and bind the |cRXP_WARN_Active Buttons.|r
 step
-    #sticky
+    #completewith next
+    >>Kill |cRXP_ENEMY_Blackrock Invaders|r. Loot them for their |cRXP_LOOT_Blackrock Orc Weapons|r
+    .complete 26389,1 --Blackrock Orc Weapon (8)
+    .mob Blackrock Invader
+step
     #label Fire
     .goto 425,57.48,71.22,0
     .goto 425,49.10,78.42,20,0
@@ -485,7 +489,7 @@ step
     .goto 425,55.49,70.94,20,0
     .goto 425,53.67,68.68,20,0
     .goto 425,50.63,73.13,20,0
-    >>Use and then channel |T308321:0|t[Milly's Fire Extinguisher] near the |cRXP_PICK_Vineyard Fires|r
+    >>|cRXP_WARN_Channel|r |T308321:0|t[Milly's Fire Extinguisher] |cRXP_WARN_on the fires throughout the Northshire Vineyards|r
     .complete 26391,1 --Vineyard Fire extinguished (8)
     .use 58362
 step
@@ -498,27 +502,21 @@ step
     .goto 425,57.63,77.83,50,0
     .goto 425,57.48,71.22,50,0
     .goto 425,56.07,62.66,50,0
-    >>Kill |cRXP_ENEMY_Blackrock Invaders|r. Loot them for |cRXP_LOOT_Blackrock Orc Weapons|r
+    >>Kill |cRXP_ENEMY_Blackrock Invaders|r. Loot them for their |cRXP_LOOT_Blackrock Orc Weapons|r
     .complete 26389,1 --Blackrock Orc Weapon (8)
     .mob Blackrock Invader
 step
-    #requires Fire
     #completewith next
-    .goto 425,54.27,77.40,0
-    .goto 425,38.29,58.12,0
--- .goto 425,38.29,58.12
-    *|cRXP_WARN_Spamming /sit or removing your gear will make you die faster|r
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-    .skill riding,75,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milly Osworth|r and |cRXP_FRIENDLY_Marshal McBride|r
     .turnin 26391 >>Turn in Extinguishing Hope
+    .target +Milly Osworth
     .goto 425,33.38,54.67
     .turnin 26389 >>Turn in Blackrock Invasion
     .accept 26390 >>Accept Ending the Invasion!
     .goto 425,33.56,53.04
-    .target Milly Osworth
-    .target Marshal McBride
+    .target +Marshal McBride
 step
     .goto 425,64.97,48.38
     >>Kill |cRXP_ENEMY_Kurtok the Slayer|r
@@ -526,11 +524,7 @@ step
     .mob Kurtok the Slayer
 step
     #completewith next
-    .goto 425,54.27,77.40,0
-    .goto 425,38.29,58.12,0
--- .goto 425,38.29,58.12
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-    .skill riding,75,1
 step
     .goto 425,33.56,53.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r
@@ -540,13 +534,11 @@ step
 step
     #optional
     #completewith next
-    .goto 425,29.17,72.43,15,0
-    .goto 425,28.28,73.45,15,0
-    .goto 425,24.47,74.67,15,0
-    .goto 37,45.37,49.00,15 >> Travel toward |cRXP_FRIENDLY_Falkhaan Isenstrider|r
+    .goto 37,46.877,48.018,20,0
+    .goto 37,45.563,47.738,15 >> Travel toward |cRXP_FRIENDLY_Falkhaan Isenstrider|r
     .skill riding,75,1
 step
-    .goto 37,45.37,49.00
+    .goto 37,45.563,47.738
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Falkhaan Isenstrider|r
     .accept 2158 >>Accept Rest and Relaxation
     .target Falkhaan Isenstrider
@@ -885,17 +877,10 @@ step << skip
     .isOnQuest 60
     .noflyable
 step
-    #optional
-	#completewith next
-    .goto 37,38.94,82.23,12,0
-    .goto 38,42.52,71.63
-    .subzone 57 >> Enter the upper level of the Fargodeep Mine
-step
-#sticky
-#label scoutm1
-    .goto 38,54.31,59.56,-1
-    .goto 39,66.53,66.18,-1
-    >>Enter one of the central rooms inside Fargodeep Mine
+    #completewith next
+    .goto 37,38.37,81.52,30,0
+    .goto 37,40.69,81.74
+    >>Explore Fargodeep Mine
     .complete 62,1 --Scout through the Fargodeep Mine
 step
     .goto 37,37.82,86.14,40,0
@@ -917,6 +902,12 @@ step
     .complete 47,1 --10/10 Gold Dust
     .mob *Kobold Tunneler
     .mob *Kobold Miner
+step
+    #label scoutm1
+    .goto 37,38.37,81.52,30,0
+    .goto 37,40.69,81.74
+    >>Explore Fargodeep Mine
+    .complete 62,1 --Scout through the Fargodeep Mine
 step
 #xprate <1.2
 #requires scoutm1
@@ -983,16 +974,54 @@ step
     .turnin 47 >> Turn in Gold Dust Exchange
     .accept 40 >> Accept A Fishy Peril
 	.target Remy "Two Times"
-step << !Shaman
---TODO: Coords, need to train before taking the horse from the next quest
+step << Hunter
+    .goto 37,40.854,65.902
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Benjamin Foxworthy|r
     .trainer >> Train your class spels
+    .target Benjamin Foxworthy
+step << Paladin
+    .goto 37,41.074,65.953
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Wilhelm|r
+    .trainer >> Train your class spels
+    .target Brother Wilhelm
+step << Warrior
+    .goto 37,41.069,65.825
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyria Du Lac|r
+    .trainer >> Train your class spels
+    .target Lyria Du Lac
+step << Warlock
+    #completewith next
+    .goto 37,44.54,65.76,15 >> Travel down into the Goldshire Inn basement
+step << Warlock
+    .goto 37,44.389,66.240
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maximillian Crowe|r
+    .trainer >> Train your class spels
+    .target Maximillian Crowe
+step << Mage/Priest/Rogue
+    #completewith next
+    .goto 37,43.86,66.40,15 >> Travel up stairs in the Goldshire Inn
+step << Mage
+    .goto 37,43.246,66.192
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaldimar Wefhellt|r
+    .trainer >> Train your class spels
+    .target Zaldimar Wefhellt
+step << Priest
+    .goto 37,43.282,65.720
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Josetta|r
+    .trainer >> Train your class spels
+    .target Priestess Josetta
+step << Rogue
+    .goto 37,43.872,65.943
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keryn Sylvius|r
+    .trainer >> Train your class spels
+    .target Keryn Sylvius
 step << Human
     #xprate <1.2
     .goto 37,42.105,65.927
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .turnin 40 >> Turn in A Fishy Peril
-    .accept 35 >> Accept Further Concerns
     .turnin 62 >> Turn in The Fargodeep Mine
+    .accept 35 >> Accept Further Concerns
     .accept 76 >> Accept The Jasperlode Mine
     .target Marshal Dughan
     .isOnQuest 112
