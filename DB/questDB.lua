@@ -128,6 +128,7 @@ function addon.GetBestQuests(refreshQuestDB,output)
         local prev2 = k2.previousQuest and not IsPreReqComplete(k2)
         local prio1 = k1.priority or 1e3
         local prio2 = k2.priority or 1e3
+        local isQuestLog = k1.questLog and k2.questLog
         if q1 and not q2 then
             return false
         elseif q2 and not q1 then
@@ -141,6 +142,10 @@ function addon.GetBestQuests(refreshQuestDB,output)
         elseif prio1 < prio2 then
             return true
         elseif prio2 < prio1 then
+            return false
+        elseif isQuestLog and addon.IsQuestComplete(k1.Id) and not addon.IsQuestComplete(k2.Id) then
+            return true
+        elseif isQuestLog and addon.IsQuestComplete(k2.Id) and not addon.IsQuestComplete(k1.Id) then
             return false
         else
             return k1.Id < k2.Id
