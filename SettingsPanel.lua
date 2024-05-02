@@ -3099,6 +3099,7 @@ function addon.GetXPBonuses(ignoreBuffs,playerLevel)
         --Parses tooltips to figure out heirloom xp bonuses
         local tooltipShown
         local heirloomSlots = {}
+        local lastScan = addon.settings.heirloomSlots
         for i = 1, _G.INVSLOT_LAST_EQUIPPED do
             local itemLink = GetInventoryItemLink("player", i)
             local itemQuality
@@ -3106,17 +3107,17 @@ function addon.GetXPBonuses(ignoreBuffs,playerLevel)
                 itemQuality = select(3, GetItemInfo(itemLink))
             end
             if itemQuality == INV_HEIRLOOM then
-                heirloomSlots[i] = true
+                heirloomSlots[i] = 0
             end
         end
         --Disable trinket parsing:
-        heirloomSlots[13] = false
-        heirloomSlots[14] = false
+        heirloomSlots[13] = nil
+        heirloomSlots[14] = nil
         local currentLevel = UnitLevel('player')
         local t = GetTime()
-        local lastScan = addon.settings.heirloomSlots
-        for i,isHeirloom in pairs(heirloomSlots) do
-            if isHeirloom ~= lastScan[i] or isHeirloom and (t - tooltipTimer > 30 or playerLevelCheck ~=  currentLevel) then
+        for i in pairs(heirloomSlots) do
+            if (not lastScan[i] or t - tooltipTimer > 30 or playerLevelCheck ~=  currentLevel) then
+                --print(i)
                 GameTooltip:SetOwner(addon.RXPFrame, "ANCHOR_RIGHT")
                 tooltipShown = true
                 local minilvl,maxilvl
@@ -3132,14 +3133,17 @@ function addon.GetXPBonuses(ignoreBuffs,playerLevel)
                         local lower = strlower(text)
                         local xp = lower:match("(%d%d?)%%")
                         if xp and lower:find(XPTEXT) then
-                            xp = tonumber(xp)
+                            xp = tonumber(xp)/100
                             if maxilvl > (playerLevel or currentLevel) then
-                                calculatedRate = calculatedRate + xp/100
+                                heirloomSlots[i] = xp
+                                calculatedRate = calculatedRate + xp
                             end
                             break
                         end
                     end
                 end
+            else
+                calculatedRate = calculatedRate + (lastScan[i] or 0)
             end
         end
         playerLevelCheck = playerLevel
