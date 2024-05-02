@@ -2,6 +2,10 @@ local _,addon = ...
 
 local showAllQs
 
+local function GetXPMods()
+    return addon.GetXPBonuses(false,80)
+end
+
 local function IsPreReqComplete(quest)
     local group = addon.currentGuide.group
     local QuestDB = addon.QuestDB[group] or addon.QuestDBLegacy or {}
@@ -206,7 +210,7 @@ function addon.GetBestQuests(refreshQuestDB,output)
             end
         end
     end
-    local xpmod = addon.GetXPBonuses(false,80)
+    local xpmod = GetXPMods()
     --print(xpmod)
     local outputString = ""
     local requestFromServer = true
@@ -246,8 +250,9 @@ local requestTimer = 0
 local mode
 local missingQs
 local textOverride
+local currentText = ""
 
-local SetText = function()
+local SetText = function(self,refresh)
     local ctime = GetTime()
     if requestText and ctime - requestTimer > 0.2 then
         requestTimer = ctime
@@ -255,13 +260,19 @@ local SetText = function()
         missingQs = addon.ShowMissingQuests()
     end
 
+    local t
     if textOverride then
-        return textOverride
+        t = textOverride
     elseif mode == "missing" then
-        return missingQs
+        t = missingQs
     else
-        return questText
+        t = questText
     end
+    if refresh and t ~= currentText and addon.settings.gui.quest then
+        addon.settings.OpenSettings('Quest Data')
+    end
+    currentText = t
+    return t
 end
 
 local function OnClick(self)
@@ -280,7 +291,8 @@ function addon.functions.show25quests(self,text,flags)
         self.highlight:Show()
         self:SetScript("OnMouseDown", OnClick)
     end
-    SetText()
+
+    SetText(self,true)
 
 end
 

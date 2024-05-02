@@ -3052,6 +3052,9 @@ local ITEM_RANGE = ITEM_LEVEL_RANGE_CURRENT:gsub("([%(%)])","%%%1")
 ITEM_RANGE = ITEM_RANGE:gsub("%%d","%(%%d+%)")
 local XPTEXT = strlower(POWER_TYPE_EXPERIENCE)
 
+addon.settings.heirloomSlots = {}
+local tooltipTimer = 0
+
 function addon.GetXPBonuses(ignoreBuffs,playerLevel)
     local calculatedRate = not ignoreBuffs and CheckBuff(377749) and 1.5 or 1.0 -- Joyous Journeys
 
@@ -3093,14 +3096,28 @@ function addon.GetXPBonuses(ignoreBuffs,playerLevel)
         end
     else
         --Parses tooltips to figure out heirloom xp bonuses
-        GameTooltip:SetOwner(addon.RXPFrame, "ANCHOR_RIGHT")
+        local tooltipShown
+        local heirloomSlots = {}
         for i = 1, _G.INVSLOT_LAST_EQUIPPED do
             local itemLink = GetInventoryItemLink("player", i)
             local itemQuality
             if itemLink then
                 itemQuality = select(3, GetItemInfo(itemLink))
             end
-            if itemQuality == INV_HEIRLOOM and i ~= 13 and i ~= 14 then
+            if itemQuality == INV_HEIRLOOM then
+                heirloomSlots[i] = true
+            end
+        end
+        --Disable trinket parsing:
+        heirloomSlots[13] = false
+        heirloomSlots[14] = false
+
+        local t = GetTime()
+        local lastScan = addon.settings.heirloomSlots
+        for i,isHeirloom in pairs(heirloomSlots) do
+            if isHeirloom ~= lastScan[i] or isHeirloom and t - tooltipTimer > 30 then
+                GameTooltip:SetOwner(addon.RXPFrame, "ANCHOR_RIGHT")
+                tooltipShown = true
                 local minilvl,maxilvl
                 GameTooltip:SetInventoryItem("player",i)
                 for n = 2,GameTooltip:NumLines() do
@@ -3124,7 +3141,11 @@ function addon.GetXPBonuses(ignoreBuffs,playerLevel)
                 end
             end
         end
-        GameTooltip:Hide()
+        addon.settings.heirloomSlots = heirloomSlots
+        if tooltipShown then
+            tooltipTimer = t
+            GameTooltip:Hide()
+        end
     end
     return calculatedRate
 end
