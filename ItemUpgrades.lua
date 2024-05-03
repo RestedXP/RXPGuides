@@ -570,7 +570,13 @@ function addon.itemUpgrades:LoadStatWeights()
     -- TODO chance this doesn't evaluate properly on PLAYER_LEVEL_UP event
     local playerLevel = UnitLevel("player")
 
-    for _, data in pairs(addon.statWeights) do
+    for dbTitle, data in pairs(addon.statWeights) do
+        if data.MAX_LEVEL <= data.MIN_LEVEL then
+            addon.comms.PrettyPrint(
+                "Invalid min (%s) and max %s level for for %s", data.MIN_LEVEL,
+                data.MAX_LEVEL, dbTitle)
+        end
+
         if strupper(data.Class) == addon.player.class and strupper(data.Kind) ==
             guideMode and playerLevel >= data.MIN_LEVEL and playerLevel <=
             data.MAX_LEVEL then
