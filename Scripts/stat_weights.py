@@ -1,23 +1,20 @@
-import csv, os
+import csv, os, glob
 
 db = {}
-csvPath = "./Scripts/Values leveling - Classic sheet.csv"
+csvGlob = "./Scripts/Values leveling - .* Classic Era.csv"
 
-if not os.path.exists(csvPath):
-    print(f"{csvPath} not found")
-    exit
+for csvPath in glob.glob("./Scripts/Values leveling - * Classic Era.csv"):
+    with open(csvPath, "r", newline="") as csvfile:
+        csvreader = csv.DictReader(csvfile)
 
-with open(csvPath, "r", newline="") as csvfile:
-    csvreader = csv.DictReader(csvfile)
+        for row in csvreader:
+            db[row["Title"]] = {}
+            for key in row:
+                value = row[key]
+                if key == "" or row[key] == "":
+                    continue
 
-    for row in csvreader:
-        db[row["Title"]] = {}
-        for key in row:
-            value = row[key]
-            if key == "" or row[key] == "":
-                continue
-
-            db[row["Title"]][key] = value
+                db[row["Title"]][key] = value
 
 # print(json.dumps(db, indent=2))
 
