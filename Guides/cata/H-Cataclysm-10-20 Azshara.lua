@@ -38,31 +38,37 @@ step << Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sahi|r
     .train 3599 >> Train your class spells
     .target Sahi Cloudsinger
+    .xp <10,1
 step << Druid
     .goto 1454,44.79,51.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shalla|r
     .train 5215 >> Train your class spells
     .target Shalla Whiteleaf
+    .xp <10,1
 step << Mage
     .goto 1454,48.45,62.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marud|r
     .train 5505 >> Train your class spells
     .target Marud
+    .xp <10,1
 step << Priest
     .goto 1454,49.17,70.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tyelis|r
     .train 8092 >> Train your class spells
     .target Tyelis
+    .xp <10,1
 step << Warlock
     .goto 1454,54.49,39.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mirket|r
     .train 1120 >> Train your class spells
     .target Mirket
+    .xp <10,1
 step << Paladin
     .goto 1454,49.27,71.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pyreanor|r
-    .train 1120 >> Train your class spells
+    .train 82242 >> Train your class spells
     .target Master Pyreanor
+    .xp <10,1
 step
     #completewith next
     .goto 1454,59.59,50.63,40,0
@@ -223,9 +229,11 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormak Grimshot|r
     .train 1978 >> Train your class spells
     .target Ormak Grimshot
+    .xp <10,1
 step
     #completewith RunawayShredder
-    .zone Azshara >> Enter Azshara
+    .goto 1454,75.39,4.15,0
+    .zone Azshara >> Enter Azshara through the Northern exit
 step
     #optional
     .goto 76,26.81,76.96
@@ -302,14 +310,19 @@ step
     .waypoint 1447/1,-5013.30029,2780.50000,30,0
     .waypoint 1447/1,-5084.10010,2787.19995,30,0
     .waypoint 1447/1,-5088.00000,2726.50000,30,0
-    >>Use |T134427:0|t[Buzzsaw]|r at |cRXP_FRIENDLY_Azshara Saplings|r to make |cRXP_ENEMY_Talrendis Snipers|r spawn
-    >>|cRXP_WARN_Make sure your|r |T134427:0|t[Buzzsaw]|r |cRXP_WARN_hits the very core of the tree|r
+    >>|cRXP_WARN_Use|r |T134427:0|t[Buzzsaw]|r |cRXP_WARN_at|r |cRXP_FRIENDLY_Azshara Saplings|r |cRXP_WARN_to make|r |cRXP_ENEMY_Talrendis Snipers|r |cRXP_WARN_attack you|r
+    >>|cRXP_WARN_Use|r |T134427:0|t[Buzzsaw]|r |cRXP_WARN_and|r |T132330:0|t[Fling Blade]|r |cRXP_WARN_to kill the|r |cRXP_ENEMY_Talrendis Snipers|r
+    -->>|cRXP_WARN_Make sure your|r |T134427:0|t[Buzzsaw]|r |cRXP_WARN_hits the very core of the tree|r
     .complete 14135,1 --Talrendis Sniper (9)
     .mob Talrendis Sniper
+    .target Azshara Sapling
 step
     #label DefendtheGates
     .turnin 14135 >>Turn in Up a Tree
     .accept 14146 >>Accept Defend the Gates!
+step
+    #completewith next
+    .goto 76,27.00,76.76,50 >>Return to the Orgrimmar Rear Gate
 step
     .goto 76,27.017,76.728
     >>|cRXP_WARN_Use your|r |T134427:0|t[Buzzsaw]|r|cRXP_WARN_,|r |T132330:0|t[Fling Blade|r |cRXP_WARN_and|r |T133716:0|t[Grenade Launcher|r |cRXP_WARN_to kill|r |cRXP_ENEMY_Talrendis Raiders|r
@@ -412,11 +425,31 @@ step
     .isOnQuest 14127
 step
     #optional
+    .goto 76,26.83,76.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ag'tor|r
+    .accept 14128 >>Accept Return of the Highborne?
+    .target Ag'tor Bloodfist
+    .isQuestTurnedIn 14127
+step
+    #completewith Horzak1
+    #optional
     .abandon 14118 >>Abandon Venison for the Troops
 step
-    #completewith next
+    #completewith Horzak1
     .subzone 4830 >>Travel to the Orgrimmar Rocketway Exchange
 step
+    .goto Azshara,29.67,66.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malynea|r
+    .turnin 14128 >>Turn in Return of the Highborne?
+    .target Malynea Skyreaver
+    .isOnQuest 14128
+step
+    .goto 76,29.12,66.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fisk|r
+    .accept 14197 >>Accept A Quota to Meet
+    .target Foreman Fisk
+step
+    #label Horzak1
     .goto 76,29.15,66.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horzak|r
     .turnin 14162 >>Turn in Report to Horzak
@@ -424,13 +457,8 @@ step
     .accept 14165 >>Accept Stone Cold
     .target Horzak Zignibble
 step
-    .goto 76,29.12,66.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fisk|r
-    .accept 14197 >>Accept A Quota to Meet
-    .target Foreman Fisk
-step
     #completewith next
-    .subzone 4744 >>Travel west to the Mountainfoot Stripmine
+    .subzone 4744 >>Travel West to the Mountainfoot Stripmine
 step
     #loop
     .goto 76,25.976,68.758,0
@@ -559,7 +587,7 @@ step
 step
     #completewith next
     >>Loot |cRXP_FRIENDLY_Dead Soldiers|r on the ground for |cRXP_LOOT_Military Supplies|r
-    >>|cRXP_WARN_Be careful of the mines. They will launch you away if stepped on|r
+    >>|cRXP_WARN_Be careful of the|r |cFFEB144CLand Mines|r|cRXP_WARN_. You will get launched away if stepped on|r
     .complete 14469,1 --Military Supplies (12)
     .target Dead Soldier
     .target Sergeant Dynamo
@@ -581,7 +609,7 @@ step
     .waypoint 76,29.166,54.338,20,0
     .waypoint 76,28.623,54.670,20,0
     >>Loot |cRXP_FRIENDLY_Dead Soldiers|r on the ground for |cRXP_LOOT_Military Supplies|r
-    >>|cRXP_WARN_Be careful! You have to navigate around the mines or else you'll die|r
+    >>|cRXP_WARN_Be careful of the|r |cFFEB144CLand Mines|r|cRXP_WARN_. You will get launched away if stepped on|r
     .complete 14469,1 --Military Supplies (12)
     .target Dead Soldier
     .target Sergeant Dynamo
@@ -602,7 +630,7 @@ step
     .isOnQuest 14471
 step
     .goto 76,31.12,57.59
-    >>Use |T252172:0|t[Mortar Round] to kill |cRXP_ENEMY_Spitelash Attackers|r
+    >>|cRXP_WARN_Use|r |T252172:0|t[Mortar Round] |cRXP_WARN_to kill|r |cRXP_ENEMY_Spitelash Attackers|r
     .complete 14471,1 --Spitelash Attackers blown to bits (60)
 step
     .goto 76,29.11,57.93
@@ -616,7 +644,7 @@ step
     .target Glix Grindlock
 step
     .goto 76,31.61,60.49
-    .use 49700 >> Use your |T133032:0|t[SFG] to kill an |cRXP_ENEMY_Enslaved Son of Arkkoroc|r
+    .use 49700 >> |cRXP_WARN_Use your|r |T133032:0|t[SFG] |cRXP_WARN_to kill an|r |cRXP_ENEMY_Enslaved Son of Arkkoroc|r
     .complete 14472,1 --Enslaved Son of Arkkoroc (1)
     .mob Enslaved Son of Arkkoroc
 step
@@ -713,9 +741,11 @@ step
     .target Custer Clubnik
 step
     .goto 76,30.08,67.27
-    .use 49350 >>|cRXP_WARN_Use|r |T135619:0|t[Blessed Flaregun] |cRXP_WARN_near|r |cRXP_FRIENDLY_Clubnik's Dozer|r
-    >>Attack |cRXP_ENEMY_Clubnik's Dozer|r as it becomes hostile
+    .cast 68007 >>|cRXP_WARN_Use|r |T135619:0|t[Blessed Flaregun] |cRXP_WARN_near|r |cRXP_FRIENDLY_Clubnik's Dozer|r
+    .timer 34,Dozercism RP
+    >>Attack |cRXP_ENEMY_Clubnik's Dozer|r once it becomes hostile
     .complete 14423,1 --Clubnik's Dozer Exorcised (1)
+    .use 49350
     .target Clubnik's Dozer
 step
     .goto 1447/1,-5012.00000,2915.30005
@@ -780,7 +810,7 @@ step
     .complete 14258,1 --Goblin Mortar Shell (5)
 step
     #completewith NineVisit1
-    .use 49132 >> WARN_Aim your |T133037:0|t[Fireliminator X-21] at fires and |cRXP_FRIENDLY_Research Interns|r
+    .use 49132 >> |cRXP_WARN_Aim your|r |T133037:0|t[Fireliminator X-21] |cRXP_WARN_at fires and|r |cRXP_FRIENDLY_Research Interns|r
     .complete 14308,1 --Lab Fires Extinguished (8)
     .complete 14308,2 --Research Interns Rescued (6)
     .target Research Intern
@@ -802,8 +832,8 @@ step
     .waypoint 76,44.122,76.798,30,0
     .waypoint 76,43.906,74.755,30,0
     .waypoint 76,43.465,75.872,30,0
-    .use 49132 >> Aim your |T133037:0|t[Fireliminator X-21] at fires and |cRXP_FRIENDLY_Research Interns|r
-    >>|cRXP_WARN_Be careful of|r |cRXP_ENEMY_Subject Four|r|cRXP_WARN_. He can oneshot you|r
+    .use 49132 >> |cRXP_WARN_Aim your|r |T133037:0|t[Fireliminator X-21] |cRXP_WARN_at fires and|r |cRXP_FRIENDLY_Research Interns|r
+    >>|cRXP_WARN_Be careful of|r |cRXP_ENEMY_Subject Four|r|cRXP_WARN_ (red raptor). He can oneshot you|r
     .complete 14308,1 --Lab Fires Extinguished (8)
     .complete 14308,2 --Research Interns Rescued (6)
     .target Research Intern
@@ -958,7 +988,7 @@ step
     .complete 14383,3 --Zapper Gnome (6)
     .mob +Zapper Gnome
 step
-    .goto 76,47.98,74.83
+    .goto 1447/1,-6005.39990,2603.50000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gormungan|r
     .complete 14385,1 --Try to Feed Gormungan (1)
     .skipgossip
@@ -982,7 +1012,7 @@ step
     .target Rocketway Rat
     .isOnQuest 14388
 step
-    .goto 76,47.750,75.525
+    .goto 1447/1,-6005.39990,2603.50000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gormungan|r
     >>|cRXP_WARN_Use|r |T132328:0|t[Scurry] |cRXP_WARN_to increase your movement speed|r
     .complete 14388,1 --Gormungan Scared (1)
@@ -1018,7 +1048,7 @@ step
     .turnin 14258 >>Turn in Mortar the Point
     .target Bombardier Captain Smooks
 step
-    #optional
+    #xprate <1.2
     .goto 76,50.68,75.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torg|r
     .accept 14262 >>Accept To Gut a Fish
@@ -1026,13 +1056,13 @@ step
     .target Torg Twocrush
     .maxlevel 15
 step
-    #optional
+    #xprate <1.2
     #completewith KeystoneShard
     .goto 1447/1,-6378.30029,2577.10010
     .subzone 4826 >>Travel to Storm Cliffs
     .isOnQuest 14262
 step
-    #optional
+    #xprate <1.2
     #completewith KeystoneShard
     >>Kill |cRXP_ENEMY_Spitelash Stormfury|r and |cRXP_ENEMY_Spitelash Seacallers|r
     .complete 14262,1 --Spitelash Stormfury (6)
@@ -1041,20 +1071,20 @@ step
     .mob +Spitelash Seacaller
     .isOnQuest 14262
 step
-    #optional
+    #xprate <1.2
     .goto 76,58.98,71.85
     >>Click the |cRXP_PICK_Naga Power Stone|r
     .turnin 14267 >>Turn in Investigating the Sea Shrine
     .accept 14270 >>Accept The Keystone Shard
     .isOnQuest 14262
 step
-    #optional
+    #xprate <1.2
     .goto 76,57.51,70.96
     >>Loot the |cRXP_LOOT_Keystone Shard|r on the ground
     .complete 14270,1 --Keystone Shard (1)
     .isOnQuest 14262
 step
-    #optional
+    #xprate <1.2
     #label KeystoneShard
     .goto 76,58.98,71.85
     >>Click the |cRXP_PICK_Naga Power Stone|r
@@ -1062,7 +1092,7 @@ step
     .accept 14271 >>Accept Report to Twocrush
     .isOnQuest 14262
 step
-    #optional
+    #xprate <1.2
     #loop
     .goto 76,61.858,77.871,0
     .waypoint 76,58.019,76.688,50,0
@@ -1076,7 +1106,7 @@ step
     .mob +Spitelash Seacaller
     .isOnQuest 14262
 step
-    #optional
+    #xprate <1.2
     .goto 76,50.68,75.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torg Twocrush|r
     .turnin 14262 >>Turn in To Gut a Fish
@@ -1085,7 +1115,7 @@ step
     .target Torg Twocrush
     .isQuestComplete 14262
 step
-    #optional
+    #xprate <1.2
     .goto 76,50.68,75.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torg Twocrush|r
     .turnin 14271 >>Turn in Report to Twocrush
@@ -1093,7 +1123,7 @@ step
     .target Torg Twocrush
     .isQuestComplete 14271
 step
-    #optional
+    #xprate <1.2
     .goto 76,50.68,75.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torg Twocrush|r
     .turnin 14271 >>Turn in Report to Twocrush
@@ -1101,7 +1131,7 @@ step
     .target Torg Twocrush
     .isQuestTurnedIn 14271
 step
-    #optional
+    #xprate <1.2
     .goto 76,63.15,75.87
     >>Kill |cRXP_ENEMY_Lady Silisthra|r
     >>|cRXP_WARN_Click|r |cRXP_FRIENDLY_Silisthra's Power Stone|r |cRXP_WARN_on top of the platform to weaken her|r
@@ -1109,7 +1139,7 @@ step
     .mob Lady Silisthra
     .isQuestTurnedIn 14271
 step
-    #optional
+    #xprate <1.2
     .goto 76,63.63,79.42
     >>Kill |cRXP_ENEMY_Lady Vesthra|r
     >>|cRXP_WARN_Click|r |cRXP_FRIENDLY_Vesthra's Power Stone|r |cRXP_WARN_on top of the platform to weaken her|r
@@ -1117,7 +1147,7 @@ step
     .mob Lady Vesthra
     .isQuestTurnedIn 14271
 step
-    #optional
+    #xprate <1.2
     .goto 76,50.67,75.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torg Twocrush|r
     .turnin 14295 >>Turn in Sisters of the Sea
@@ -1229,21 +1259,21 @@ step
     .mob Spitelash Siren
 step
     #completewith KillNagas
-    .use 49679 >>Use your |T135619:0|t[Sanctified Flaregun] on |cRXP_FRIENDLY_Wounded Soldiers|r
+    .use 49679 >>|cRXP_WARN_Use your|r |T135619:0|t[Sanctified Flaregun] |cRXP_WARN_on|r |cRXP_FRIENDLY_Wounded Soldiers|r
     .complete 24436,1 --Wounded Soldier rescued (8)
     .target Wounded Soldier
 step
     .goto 76,43.86,59.95
-    .use 49685 >>Use the |T132485:0|t[Flag of Territorial Claim]  at the Southern Pagoda
+    .use 49685 >>|cRXP_WARN_Use the|r |T132485:0|t[Flag of Territorial Claim] |cRXP_WARN_at the Southern Pagoda|r
     .complete 24437,1 --Southern Pagoda claimed (1)
 step
     .goto 76,43.60,43.43
-    .use 49685 >>Use the |T132485:0|t[Flag of Territorial Claim]  at the Big ol' Tower
+    .use 49685 >>|cRXP_WARN_Use the|r |T132485:0|t[Flag of Territorial Claim] |cRXP_WARN_at the Big ol' Tower|r
     .complete 24437,2 --Big ol' Tower claimed (1)
 step
     #label NorthernVista
     .goto 76,45.46,38.52
-    .use 49685 >>Use the |T1324855:0|t[Flag of Territorial Claim]  at the Northern Vista
+    .use 49685 >>|cRXP_WARN_Use the|r |T1324855:0|t[Flag of Territorial Claim] |cRXP_WARN_at the Northern Vista|r
     .complete 24437,3 --Northern Vista claimed (1)
 step
     #label KillNagas
@@ -1270,7 +1300,7 @@ step
     .waypoint 76,42.040,50.686,30,0
     .waypoint 76,43.193,52.463,30,0
     .waypoint 76,42.736,60.005,30,0
-    .use 49679 >>Use your |T135619:0|t[Sanctified Flaregun] on |cRXP_FRIENDLY_Wounded Soldiers|r
+    .use 49679 >>|cRXP_WARN_Use your|r |T135619:0|t[Sanctified Flaregun] |cRXP_WARN_on|r |cRXP_FRIENDLY_Wounded Soldiers|r
     .complete 24436,1 --Wounded Soldier rescued (8)
     .target Wounded Soldier
 step
@@ -1310,7 +1340,7 @@ step
 step
     #sticky
     #completewith SpitelashNagas
-    +|cRXP_WARN_Use|r |T134286:0|t[Gob Squad Flare] |cRXP_WARN_to summon|r |cRXP_FRIENDLY_Goblins|r |cRXP_WARN_who will assist you with the upcoming quests|r
+    .cast 69310 >>|cRXP_WARN_Use|r |T134286:0|t[Gob Squad Flare] |cRXP_WARN_to summon|r |cRXP_FRIENDLY_Goblins|r |cRXP_WARN_who will assist you with the upcoming quests|r
     .use 49629
 step
     #completewith LordKassarus
@@ -1331,12 +1361,14 @@ step
     .goto 76,31.877,50.086
     >>Loot the |cRXP_LOOT_Heart of Arkkoroc|r on the ground
     .complete 14487,1 --|1/1 Heart of Arkkoroc
+    .use 49629
 step
     #label LordKassarus
     .goto 76,35.993,49.836
     >>Kill |cRXP_ENEMY_Lord Kassarus|r
     .complete 14484,1 --Lord Kassarus (1)
     .mob Lord Kassarus
+    .use 49629
 step
     #label Runestones
     #loop
@@ -1350,6 +1382,7 @@ step
     >>Destroy |cRXP_PICK_Spitelash Runestones|r
     >>|cRXP_FRIENDLY_Tinker|r |cRXP_WARN_will set explosives at the Runestones. Defend him from incoming|r |cRXP_ENEMY_Spitelash Naga|r
     .complete 14485,1 --Spitelash Runestones destroyed (3)
+    .use 49629
 step
     #label HighborneTablets
     #loop
@@ -1369,6 +1402,7 @@ step
     .waypoint 76,34.745,47.102,20,0
     >>Loot |cRXP_LOOT_Highborne Tablets|r on the ground
     .complete 14486,1 --Highborne Tablet (12)
+    .use 49629
 step
     #label SpitelashNagas
     #loop
@@ -1383,6 +1417,7 @@ step
     .complete 14480,1 --Spitelash Naga (30)
     .mob Spitelash Battlemaster
     .mob Spitelash Enchantress
+    .use 49629
 step
     .goto 76,34.464,44.727
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Zelks|r
@@ -1462,7 +1497,7 @@ step
     --.accept 14324 >>Accept Full of Hot Water
 step
     .goto 76,81.40,30.84
-    .use 49176 >>Use the |T135231:0|t[Engorged Azshari Sea Sponge] at the |cRXP_PICK_Stone of the Scalding Water lords|r
+    .use 49176 >>|cRXP_WARN_Use the|r |T135231:0|t[Engorged Azshari Sea Sponge] |cRXP_WARN_at the|r |cRXP_PICK_Stone of the Scalding Water lords|r
     >>Kill the |cRXP_ENEMY_Scalding Water Lord|r that appears. Loot it for its |cRXP_LOOT_Globe of Boiling Water|r
     .complete 14324,1 --Globe of Boiling Water (1)
     .isOnQuest 14324
@@ -1514,7 +1549,7 @@ step
 step
     #optional
     .goto 76,81.40,30.84
-    .use 49176 >>Use the |T135231:0|t[Engorged Azshari Sea Sponge] at the |cRXP_PICK_Stone of the Scalding Water lords|r
+    .use 49176 >>|cRXP_WARN_Use the|r |T135231:0|t[Engorged Azshari Sea Sponge] |cRXP_WARN_at the|r |cRXP_PICK_Stone of the Scalding Water lords|r
     >>Kill the |cRXP_ENEMY_Scalding Water Lord|r that appears. Loot it for its |cRXP_LOOT_Globe of Boiling Water|r
     .complete 14324,1 --Globe of Boiling Water (1)
 step
@@ -1523,8 +1558,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ergll|r
     .turnin 14324 >>Turn in Full of Hot Water
     .accept 14345 >>Accept Wash Out
+    .timer 198,Turtle Ride
     .target Ergll
-step
+step << skip
     .goto 76,70.36,36.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ergll|r
     .vehicle >>Take the Turtle Ride toward the Northern Rocketway Exchange
@@ -1535,23 +1571,28 @@ step
 step
     #completewith next
     .goto 76,42.71,25.15,80 >>Wait until you arrive at the Northern Rocketway Exchange
+    >>|cRXP_WARN_Talk to|r |cRXP_FRIENDLY_Ergll|r |cRXP_WARN_again to ride the Turtle if this did not happen automatically|r
+    .skipgossip
 step
     .goto 76,42.71,25.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sorata Firespinner|r
     .turnin 14345 >>Turn in Wash Out
     .accept 14340 >>Accept Dressed to Impress
     .target Sorata Firespinner
-step
+step 
+    #xprate <1.2
     .goto 76,42.61,23.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andorel Sunsworn|r
     .accept 14428 >>Accept Amberwind's Journal
     .target Andorel Sunsworn
 step
+    #xprate <1.2
     .goto 76,42.41,23.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Haggrum Bloodfist|r
     .accept 14431 >>Accept The Blackmaw Scar
     .target Haggrum Bloodfist
 step
+    #xprate <1.2
     #loop
     .goto 76,37.967,28.403,0
     .waypoint 76,38.478,26.428,40,0
@@ -1563,6 +1604,7 @@ step
     .complete 14431,1 --Talrendis Biologist (8)
     .mob Talrendis Biologist
 step
+    #xprate <1.2
     .goto 76,42.408,23.605
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Haggrum Bloodfist|r
     .turnin 14431 >>Turn in The Blackmaw Scar
@@ -1570,16 +1612,19 @@ step
     .accept 14433 >>Accept Diplomacy by Another Means
     .target Haggrum Bloodfist
 step
+    #xprate <1.2
     .goto 76,49.75,28.44
     >>Kill |cRXP_ENEMY_Lorekeeper Amberwind|r. Loot her for |cRXP_LOOT_Amberwind's Journal|r
     .complete 14428,1 --Amberwind's Journal (1)
     .mob Lorekeeper Amberwind
 step
+    #xprate <1.2
     .goto 76,49.53,28.78
     >>Click the |cRXP_PICK_Upper Scrying Stone|r
     .turnin 14428 >>Turn in Amberwind's Journal
     .accept 14429 >>Accept Arcane De-Construction
 step
+    #xprate <1.2
     #loop
     .goto 76,52.303,27.112,0
     .goto 76,49.663,28.456,0
@@ -1594,11 +1639,13 @@ step
     .mob Apprentice Investigator
     .mob Apprentice Illuminator
 step
+    #xprate <1.2
     .goto 76,53.02,29.01
     >>Click the |cRXP_PICK_Lower Scrying Stone|r
     .turnin 14429 >>Turn in Arcane De-Construction
     .accept 14430 >>Accept Hacking the Construct
 step
+    #xprate <1.2
     .goto 76,52.998,29.974
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arcane Construct|r
     .complete 14430,1 --Arcane Construct Hacked (1)
@@ -1755,7 +1802,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Image of Archmage Xylem|r
     .turnin 14226 >>Turn in Trouble Under Foot
     .accept 14413 >>Accept The Pinnacle of Learning
-    .timer 30,The Pinnacle of Learning
+    .timer 30,The Pinnacle of Learning RP
     .target Image of Archmage Xylem
 step
     .goto 76,55.71,14.78
@@ -1936,11 +1983,13 @@ step
     .target Anara
     .isOnQuest 14391
 step
+    #xprate <1.2
     #completewith MeetingAgenda
     >>Kill |cRXP_ENEMY_Talrendis Ambassadors|r. Loot them for |cRXP_LOOT_Ambassador's Robes|r
     .complete 14433,2 --Ambassador's Robes (1)
     .mob Talrendis Ambassador
 step
+    #xprate <1.2
     #completewith AmbRobes
     >>Loot |cRXP_LOOT_Briaroot Brew|r on the ground
     >>|cRXP_ENEMY_Blackmaw Timbermaw|r |cRXP_WARN_can also drop|r |cRXP_LOOT_Briaroot Brew|r
@@ -1949,11 +1998,13 @@ step
     .mob Blackmaw Warrior
     .mob Blackmaw Shaman
 step
+    #xprate <1.2
     #label MeetingAgenda
     .goto 76,29.813,38.566
     >>Loot the |cRXP_PICK_Important Documents|r on the ground for the |cRXP_LOOT_Blackmaw Meeting Agenda|r
     .complete 14433,1 --Blackmaw Meeting Agenda (1)
 step
+    #xprate <1.2
     #label AmbRobes
     #loop
     .goto 76,30.564,37.729,0
@@ -1965,6 +2016,7 @@ step
     .complete 14433,2 --Ambassador's Robes (1)
     .mob Talrendis Ambassador
 step
+    #xprate <1.2
     #loop
     .goto 76,30.365,37.578,0
     .waypoint 76,29.926,38.784,30,0
@@ -1979,9 +2031,11 @@ step
     .mob Blackmaw Warrior
     .mob Blackmaw Shaman
 step
+    #xprate <1.2
     #completewith Diplomatic
     .subzone 4825 >>Travel to the Northern Rocketway Exchange
 step
+    #xprate <1.2
     #optional
     .goto 76,42.402,23.602
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Haggrum Bloodfist|r
@@ -1991,6 +2045,7 @@ step
     .target Haggrum Bloodfist
     .maxlevel 20
 step
+    #xprate <1.2
     #label Diplomatic
     .goto 76,42.402,23.602
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Haggrum Bloodfist|r
@@ -1998,18 +2053,21 @@ step
     .turnin 14433 >>Turn in Diplomacy by Another Means
     .target Haggrum Bloodfist
 step
+    #xprate <1.2
     #optional
     .goto 76,42.614,23.709
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andorel Sunsworn|r
     .turnin 14430 >>Turn in Hacking the Construct
     .target Andorel Sunsworn
 step
+    #xprate <1.2
     #optional
     .goto 76,42.435,23.696
     .aura 69054 >>|cRXP_WARN_Use your|r |T132671:0|t[Ambassador Disguise] |cRXP_WARN_at|r |cRXP_PICK_Haggrum's Smokepit|r
     .use 49368
     .isOnQuest 14435
 step
+    #xprate <1.2
     #optional
     .goto 76,42.614,23.709
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andorel Sunsworn|r
@@ -2017,6 +2075,7 @@ step
     .target Andorel Sunsworn
     .isOnQuest 14435
 step
+    #xprate <1.2
     #optional
     .goto 76,30.986,29.992
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andorel Sunsworn|r
@@ -2025,6 +2084,7 @@ step
     .skipgossip 36618,2,1,1
     .isOnQuest 14435
 step
+    #xprate <1.2
     #optional
     .goto 76,31.046,29.258,12,0
     .goto 76,31.889,30.192,12,0
@@ -2037,12 +2097,14 @@ step
     .mob Blackmaw Shaman
     .isOnQuest 14435
 step
+    #xprate <1.2
     #optional
     #completewith next
     .goto 76,32.755,32.247,12 >> Exit Blackmaw Hold
     .subzoneskip 1216,1
     .isOnQuest 14435
 step
+    #xprate <1.2
     #optional
     .goto 76,42.402,23.602
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Haggrum Bloodfist|r
@@ -2050,16 +2112,35 @@ step
     .target Haggrum Bloodfist
     .isOnQuest 14435
 step
+    #xprate <1.2
     #completewith next
     .goto 1447/1,-5711.20020,4488.30029,5,0
     .goto 1447/1,-5718.10010,4477.89990,3 >>Take the lift up the platform
 step
+    #xprate <1.2
     .goto 76,42.526,24.562,5,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Bilgewater Rocket-jockey|r
-    .goto 76,50.411,74.293,80 >>Take the rocketride to the Northern Rocketway Terminus
+    .goto 76,66.24,20.7,80 >>Take the rocketride to the Northern Rocketway Terminus
     .skipgossipid 112443
     .target Bilgewater Rocket-jockey
     .isOnQuest 14391
+step
+    #xprate >1.19
+    #completewith next
+    .goto 76,25.93,49.64,7 >>Travel to the top of the Rocketway platform
+step
+    #xprate >1.19
+    .goto 76,25.93,49.64,5,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Bilgewater Rocket-jockey|r
+    .goto 76,66.24,20.7,80 >>Take the rocketride to the Northern Rocketway Terminus
+    .skipgossipid 112442
+    .target Bilgewater Rocket-jockey
+    .isOnQuest 14391
+step
+    .goto Azshara,66.50,21.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Blitz Blastospazz|r
+    .fp >>Get the Bitter Reaches Flight Path
+    .target Blitz Blastospazz
 step
     .goto 76,66.551,20.368
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalec|r
@@ -2086,9 +2167,8 @@ step
     .mob Sable Drakonid
 step
     #completewith LaborerRescue
-    .goto 76,68.55,16.73
     .use 49596 >>Use your |T133146:0|t[Cryomatic 16] on |cRXP_ENEMY_Sable Dragons|r
-    >>|cRXP_WARN_This will kill kill them almost instantly|r
+    >>|cRXP_WARN_This will kill them almost instantly|r
     .complete 14261,1 --Sable Drake (8)
     .mob Sable Drake
 step
@@ -2100,7 +2180,7 @@ step
     .mob Twilight Lord Katrana
 step
     #label FadeToBlack
-    .goto 1447/1,-7332.89990,4766.60010
+    .goto 76,71.81,16.7
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalecgos|r
     .turnin 24467 >>Turn in Fade to Black
     .target Kalecgos
@@ -2128,7 +2208,7 @@ step
     .waypoint 76,65.900,16.034,40,0
     .waypoint 76,69.595,19.144,40,0
     .use 49596 >>Use your |T133146:0|t[Cryomatic 16] on |cRXP_ENEMY_Sable Dragons|r
-    >>|cRXP_WARN_This will kill kill them almost instantly|r
+    >>|cRXP_WARN_This will kill them almost instantly|r
     .complete 14261,1 --Sable Drake (8)
     .mob Sable Drake
 step
@@ -2206,15 +2286,16 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gurlorn|r
     .accept 24497 >>Accept Airborne Again
     .target Gurlorn
-
-    --VV Good time to visit ORG here for mount if user is lvl 20 at this point
-
 step
     .goto 76,60.479,52.205
     .vehicle >>Mount a |cRXP_FRIENDLY_Wings of Steel|r
+    .timer 130,Airborne Again RP
     .target Wings of Steel
     .isOnQuest 24497
     --VV No need for this if flight path is available automatically
+step
+    #completewith next
+    +|cRXP_WARN_Remove the|r |T135992:0|t[Parachute] |cRXP_WARN_buff as you arrive to avoid flying into the river|r
 step
     .goto 76,13.999,64.836
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chawg|r
@@ -2315,6 +2396,7 @@ step
     .turnin 24434 >>Turn in Commando Drop
     .target Lorekeeper's Summoning Stone
 step
+    #completewith next
     .goto 76,10.56,69.85
     >>Click the |cRXP_PICK_Lorekeeper's Summoning Stone|r
     .gossipoption 111875 >>Teleport back to Valormok
@@ -2336,12 +2418,12 @@ step
     .isOnQuest 24430
 step
     #completewith next
-    >>Use |T133709:0|t[Bomb Toss] to destroy |cRXP_ENEMY_Talrendis Glaive Throwers|r
+    >>|cRXP_WARN_Use|r |T133709:0|t[Bomb Toss] |cRXP_WARN_to destroy|r |cRXP_ENEMY_Talrendis Glaive Throwers|r
     .complete 24430,1 --Talrendis Glaive Thrower (6)
     .mob Talrendis Glaive Thrower
 step
     .goto 76,9.239,72.539
-    >>Use |T133709:0|t[Bomb Toss] to destroy the |cRXP_ENEMY_Command Center|r
+    >>|cRXP_WARN_Use|r |T133709:0|t[Bomb Toss] |cRXP_WARN_to destroy the|r |cRXP_ENEMY_Command Center|r
     .complete 24430,2 --Command Center Bombed (1)
 step
     #loop
@@ -2353,7 +2435,7 @@ step
     .waypoint 76,12.825,70.135,40,0
     .waypoint 76,11.672,67.149,40,0
     .waypoint 76,9.737,69.693,40,0
-    >>Use |T133709:0|t[Bomb Toss] to destroy |cRXP_ENEMY_Talrendis Glaive Throwers|r
+    >>|cRXP_WARN_Use|r |T133709:0|t[Bomb Toss] |cRXP_WARN_to destroy|r |cRXP_ENEMY_Talrendis Glaive Throwers|r
     .complete 24430,1 --Talrendis Glaive Thrower (6)
     .mob Talrendis Glaive Thrower
 step
@@ -2378,7 +2460,7 @@ step
     .mob Commander Jarrodenus
 step
     #completewith next
-    .goto 76,10.56,69.85,5,0
+    .goto 76,10.56,69.85
     >>Click the |cRXP_PICK_Lorekeeper's Summoning Stone|r
     .gossipoption 111875 >>Teleport back to Valormok
     .target Lorekeeper's Summoning Stone
@@ -2509,6 +2591,9 @@ step
     .fly Valormok >>Fly to Valormok
     .target Doras
     .zoneskip Azshara
+step
+    #completewith next
+    .zone Ashenvale >>Cross the bridge into Ashenvale
 step
     .goto 63,94.410,46.819
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kulg Gorespatter|r
