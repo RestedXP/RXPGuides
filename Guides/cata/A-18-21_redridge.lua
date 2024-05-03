@@ -292,6 +292,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darcy Parker|r inside
     .accept 26506 >>Accept Franks and Beans
     .target Darcy Parker
+    .maxlevel 20
 step
     .goto 49,15.309,64.691
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Watch Captain Parker|r atop Tower Watch
@@ -330,6 +331,7 @@ step
     .disablecheckbox
     .unitscan Dire Condor
     .mob Tarantula
+    .maxlevel 20
 step
     #completewith GnollGuide
     .goto 49,13.543,66.732,0
@@ -359,6 +361,7 @@ step
     .unitscan +Dire Condor
     .complete 26506,3 --Goretusk Kidney (4)
     .mob +Great Goretusk
+    .maxlevel 20
 step
     #completewith Kidneys
     .goto 49,28.028,74.887,0
@@ -406,6 +409,7 @@ step
     >>Kill |cRXP_ENEMY_Great Goretusks|r. Loot them for their |cRXP_LOOT_Goretusk Kidneys|r
     .complete 26506,3 --Goretusk Kidney (4)
     .mob Great Goretusk
+    .maxlevel 20
 step
     #optional
     #completewith RRGnolls
@@ -426,6 +430,7 @@ step
     .mob +Tarantula
     .complete 26506,2 --Condor Giblets (4)
     .unitscan +Dire Condor
+    .maxlevel 20
 step
     #optional
     #completewith next
@@ -475,6 +480,7 @@ step
     >>Kill |cRXP_ENEMY_Tarantulas|r. Loot them for their |cRXP_LOOT_Tarantula Eyes|r
     .complete 26506,1 --Tarantula Eyes (4)
     .mob Tarantula
+    .maxlevel 20
 step
     #loop
     .goto 49,16.461,54.587,0
@@ -494,12 +500,14 @@ step
     >>Kill |cRXP_ENEMY_Dire Condors|r flying above or sitting on perches. Loot them for their |cRXP_LOOT_Condor Giblets|r
     .complete 26506,2 --Condor Giblets (4)
     .unitscan Dire Condor
+    .maxlevel 20
 step
     #requires Eyes
     .goto 49,15.622,65.327
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darcy Parker|r inside
     .turnin 26506 >>Turn in Franks and Beans
     .target Darcy Parker
+    .maxlevel 20
 step
     .goto 49,15.309,64.691
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Watch Captain Parker|r atop Tower Watch
@@ -597,7 +605,7 @@ step
     .target Marshal Marris
 step
     .goto 49,32.330,39.544
-	>>Go into the Lakeshire graveyard
+	>>|cRXP_WARN_Travel to the Lakeshire graveyard|r
     .complete 26512,1 --Test the Gnomecorder at the Lakeshire Graveyard
     .turnin 26512 >>Turn in Tuning the Gnomecorder
     .accept 26514 >>Accept Canyon Romp
@@ -724,14 +732,13 @@ step
 step
     #requires DirtScroll
     #label Ardo
-    .goto 49,18.432,18.172
     >>Kill |cRXP_ENEMY_Ardo Dirtpaw|r. Click the |cRXP_PICK_Ettin Control Orb|r next to him
     .complete 26519,1 --Ardo Dirtpaw (1)
     .goto 49,18.432,18.172
     .mob +Ardo Dirtpaw
     .turnin 26519 >>Turn in He Who Controls the Ettins
     .accept 26520 >>Accept Saving Foreman Oslow
-    .goto 49,17.841,18.618
+    .goto 49,17.841,18.619
 step
     #requires Missive1
     .goto 49,20.431,26.655,25,0

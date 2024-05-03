@@ -35,7 +35,7 @@ step
 step
     .goto 47,75.56,45.37,8,0
     .goto 47,75.83,45.26
-    >>Talk to |cRXP_FRIENDLY_Eva|r inside the house
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to inside the house
     .turnin 26653 >>Turn in Supplies from Darkshire
     .accept 26652 >>Accept Ghost Hair Thread
 	.target Madame Eva
@@ -65,11 +65,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daltry|r inside and |cRXP_FRIENDLY_Althea|r outside
     .turnin 26666 >>Turn in The Legend of Stalvan
     .accept 26667 >>Accept The Stolen Letters
-    .goto 47,72.44,46.91
+    .goto 47,72.448,46.909
 	.target +Clerk Daltry
     .turnin -26728 >>Turn in Hero's Call: Duskwood!
     .accept 26618 >>Accept Wolves at Our Heels
-    .goto 47,73.53,46.92
+    .goto 47,73.523,46.925
 	.target +Commander Althea Ebonlocke
 step
     .goto 47,75.33,48.02
@@ -87,13 +87,13 @@ step
 #completewith next
 #optional
     .goto 47,64.12,51.62,0,0
-    >>Kill |cRXP_ENEMY_Nightbane Worgen|r
+    >>Kill |cRXP_ENEMY_Nightbane Worgens|r
     .complete 26688,1 --7/7 Nightbane Worgen slain
 	.mob Nightbane Worgen
 step
 	#label Letters
     .goto 47,61.24,40.50
-    >>Loot the |cRXP_PICK_Bundle of Letters|r on the ground.
+    >>Loot the |cRXP_PICK_Pile of Scraps|r on the ground for |cRXP_LOOT_A Slashed Bundle of Letters|r
     .complete 26667,1 --1/1 A Slashed Bundle of Letters
 step
 #loop
@@ -103,7 +103,7 @@ step
     .goto 47,64.12,51.62,0
     .goto 47,60.883,40.830,0
     .goto 47,65.304,44.317,0
-    >>Kill |cRXP_ENEMY_Nightbane Worgen|r
+    >>Kill |cRXP_ENEMY_Nightbane Worgens|r
     .complete 26688,1 --7/7 Nightbane Worgen slain
 	.mob Nightbane Worgen
 step
@@ -147,34 +147,19 @@ step
     .complete 26620,1 --5/5 Wolf Skirt Steak
 	.mob Dire Wolf
 step
-    #completewith Grual
+    .isOnQuest 26620,26618,26623,26688,26667
     .hs >> Hearthstone to Darkshire
     .cooldown item,6948,>2
-step
-    .goto 47,73.75,43.47
-	>>Return to Darkshire
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grual|r
-    .turnin 26620 >>Turn in Seasoned Wolf Kabobs
-    .turnin 26623 >>Turn in Dusky Crab Cakes
-	.target Chef Grual
-    .cooldown item,6948,<0
-step
-	#label Grual
-    .goto 47,73.75,43.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grual|r
-    .turnin 26620 >>Turn in Seasoned Wolf Kabobs
-    .turnin 26623 >>Turn in Dusky Crab Cakes
-	.target Chef Grual
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daltry|r inside and |cRXP_FRIENDLY_Althea|r outside
     .turnin 26667 >>Turn in The Stolen Letters
     .accept 26669 >>Accept In A Dark Corner
-    .goto 47,72.44,46.91
+    .target +Clerk Daltry
+    .goto 47,72.448,46.909
     .turnin 26618 >>Turn in Wolves at Our Heels
     .accept 26645 >>Accept The Night Watch
-    .goto 47,73.53,46.92
-	.target Clerk Daltry
-	.target Commander Althea Ebonlocke
+    .goto 47,73.523,46.925
+	.target +Commander Althea Ebonlocke
 step
     .goto 47,75.33,48.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calor|r
@@ -213,9 +198,12 @@ step
 	.complete 26645,1 --8/8 Rotting Horror slain
 	.mob Rotting Horror
 step
+    #completewith next
+    .subzone 42 >> Return to Darkshire
+step
     .goto 47,75.56,45.37,8,0
     .goto 47,75.83,45.26
-    >>Return to Darkshire. Talk to |cRXP_FRIENDLY_Eva|r inside the house
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to inside the house
     .turnin 26654 >>Turn in Return the Comb
     .accept 26655 >>Accept Deliver the Thread
 	.target Madame Eva
@@ -246,7 +234,7 @@ step
     .goto 47,74.07,45.32,8,0
 	.goto 47,73.82,45.95,8 >>Exit the Inn
 step
-    .goto 47,73.53,46.92
+    .goto 47,73.523,46.925
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Althea|r
     .turnin 26645 >>Turn in The Night Watch
     .accept 26686 >>Accept Bones That Walk
@@ -255,7 +243,7 @@ step
 #optional
 	#completewith next
     >>Kill |cRXP_ENEMY_Skeletal Warriors|r and |cRXP_ENEMY_Skeletal Mages|r
-	>>Loot the |cRXP_PICK_Rot Blossoms|r on the ground
+	>>Loot the |cRXP_LOOT_Rot Blossoms|r on the ground
     .complete 26686,1 --5/5 Skeletal Warrior slain
 	.mob +Skeletal Warrior
     .complete 26686,2 --5/5 Skeletal Mage
@@ -276,7 +264,7 @@ step
     .goto 47,80.89,74.21,30,0
     .goto 47,81.85,68.34,30,0
     >>Kill |cRXP_ENEMY_Skeletal Warriors|r and |cRXP_ENEMY_Skeletal Mages|r
-	>>Loot the |cRXP_PICK_Rot Blossoms|r on the ground
+	>>Loot the |cRXP_LOOT_Rot Blossoms|r on the ground
     .complete 26686,1 --5/5 Skeletal Warrior slain
 	.mob +Skeletal Warrior
     .complete 26686,2 --5/5 Skeletal Mage
@@ -295,7 +283,7 @@ step
 step
 #label journal1
     .goto 47,66.59,76.44
-    >>Loot the |cRXP_PICK_Journal|r on the ground.
+    >>Loot the |cRXP_LOOT_A Torn Journal|r on the ground
     .complete 26669,1 --1/1 A Torn Journal
 step
 #loop
@@ -306,17 +294,17 @@ step
     .goto 47,60.88,73.19,40,0
     .goto 47,64.19,65.03,40,0
     .goto 47,63.50,76.61,0
-    >>Kill |cRXP_ENEMY_Nightbane Shadow Weavers|r.
+    >>Kill |cRXP_ENEMY_Nightbane Shadow Weavers|r
     .complete 26689,1 --10/10 Nightbane Shadow Weaver slain
 	.mob Nightbane Shadow Weaver
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|cRXP_FRIENDLY_Althea|r outside and |cRXP_FRIENDLY_Daltry|r inside
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Althea|r outside and |cRXP_FRIENDLY_Daltry|r inside
     .turnin 26686 >>Turn in Bones That Walk
-    .goto 47,73.53,46.92
+    .goto 47,73.523,46.925
 	.target +Commander Althea Ebonlocke
     .turnin 26669 >>Turn in In A Dark Corner
     .accept 26670 >>Accept Roland's Doom
-    .goto 47,72.44,46.91
+    .goto 47,72.448,46.909
 	.target +Clerk Daltry
 step
 	#completewith next
@@ -353,17 +341,17 @@ step
 	.target Abercrombie
 step
     #completewith JPages
-    >>Kill |cRXP_ENEMY_Nightbane Tainted Ones|r and |cRXP_ENEMY_Vile Fangs|r
-    .complete 26690,2 --8/8 Nightbane Tainted One slain
-    .mob +Nightbane Tainted One
+    >>Kill |cRXP_ENEMY_Nightbane Vile Fangs|r and |cRXP_ENEMY_Nightbane Tainted Ones|r
     .complete 26690,1 --8/8 Nightbane Vile Fang slain
     .mob +Nightbane Vile Fang
+    .complete 26690,2 --8/8 Nightbane Tainted One slain
+    .mob +Nightbane Tainted One
 step
 	#label JPages
     .goto 47,73.44,76.86,20,0
     .goto 47,74.26,77.92,20,0
     .goto 47,73.62,79.21
-    >>Loot the |cRXP_PICK_Pages|r on the ground
+    >>Loot the |cRXP_LOOT_Muddy Journal Pages|r on the ground
     .complete 26670,1 --1/1 Muddy Journal Pages
 step
 #loop
@@ -377,13 +365,13 @@ step
     .goto 47,72.03,74.77,40,0
     .goto 47,74.25,73.86,40,0
     .goto 47,73.46,73.17,0
-    >>Kill |cRXP_ENEMY_Nightbane Tainted Ones|r and |cRXP_ENEMY_Vile Fangs|r
-    .complete 26690,2 --8/8 Nightbane Tainted One slain
-    .mob +Nightbane Tainted One
+    >>Kill |cRXP_ENEMY_Nightbane Vile Fangs|r and |cRXP_ENEMY_Nightbane Tainted Ones|r
     .complete 26690,1 --8/8 Nightbane Vile Fang slain
     .mob +Nightbane Vile Fang
+    .complete 26690,2 --8/8 Nightbane Tainted One slain
+    .mob +Nightbane Tainted One
 step
-    .goto 47,72.44,46.91
+    .goto 47,72.448,46.909
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daltry|r inside
     .turnin 26670 >>Turn in Roland's Doom
     .accept 26671 >>Accept The Fate of Stalvan Mistmantle
@@ -400,15 +388,16 @@ step
 	.target +Jonathan Carevin
 step
     .goto 47,78.74,44.53,8,0
-    .goto 47,79.09,44.17
+    .goto 47,79.084,44.173
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tobias|r inside the house
     .turnin 26671 >>Turn in The Fate of Stalvan Mistmantle
     .accept 26672 >>Accept Clawing at the Truth
+    .target Tobias Mistmantle
 step
 	#label Clawing
     .goto 47,75.56,45.37,8,0
     .goto 47,75.83,45.26
-    >>Talk to |cRXP_FRIENDLY_Eva|r inside the house
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eva|r inside the house
     .turnin 26672 >>Turn in Clawing at the Truth
     .accept 26674 >>Accept Mistmantle's Revenge
 	.target Madame Eva
@@ -419,14 +408,12 @@ step
 step
     .goto 47,77.42,35.85,10,0
     .goto 47,77.33,36.18
-    >>|cRXP_WARN_Use the|r |T133343:0|t[Mistmantle Family Ring] |cRXP_WARN_inside Stalvan's house. Wait out the RP|r
-    >>Kill |cRXP_ENEMY_Stalvan|r
+    .use 59363 >>Kill |cRXP_ENEMY_Stalvan Mistmantle|r
     .complete 26674,1 --1/1 Stalvan Mistmantle slain
 	.mob Stalvan Mistmantle
-    .use 59363
 step
     .goto 47,78.74,44.53,8,0
-    .goto 47,79.09,44.17
+    .goto 47,79.084,44.173
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tobias|r inside the house
     .turnin 26674 >>Turn in Mistmantle's Revenge
     .accept 26785 >>Accept Part of the Pack
@@ -445,44 +432,40 @@ step
     .goto 47,44.92,67.43
 	.target +Apprentice Fess
 step
-#optional
     #completewith next
-    >>Kill |cRXP_ENEMY_Corpseweed|r. Loot them for their |cRXP_LOOT_Corpseweed|r
-	>>Check for the |cRXP_ENEMY_Carved One|r (Rare). Kill him if he's up
+    >>Kill |cRXP_ENEMY_Corpseweeds|r. Loot them for their |cRXP_LOOT_Corpseweed|r
     .complete 26707,1 --5/5 Corpseweed
 	.mob Corpseweed
-	.unitscan Carved One
 step
     .goto 47,49.86,77.69
-    >>Click the |cRXP_PICK_Dirt Pile|r on the ground
+    >>Click the |cRXP_PICK_Mound of Loose Dirt|r on the ground
     .complete 26717,1 --1/1 Mound of Loose Dirt
 step
-#loop
-    .goto 47,51.99,73.61,40,0
-    .goto 47,49.04,70.73,40,0
-    .goto 47,47.12,73.79,40,0
-    .goto 47,49.28,76.56,40,0
-    .goto 47,51.99,73.61,40,0
-    .goto 47,49.04,70.73,40,0
-    .goto 47,47.12,73.79,40,0
-    .goto 47,49.28,76.56,0
-    >>Kill |cRXP_ENEMY_Corpseweed|r. Loot them for their |cRXP_LOOT_Corpseweed|r
-	>>Check for the |cRXP_ENEMY_Carved One|r (Rare). Kill him if he's up
+    #loop
+    .goto 47,51.99,73.61,60,0
+    .goto 47,49.04,70.73,60,0
+    .goto 47,47.12,73.79,60,0
+    .goto 47,49.28,76.56,60,0
+    .goto 47,51.99,73.61,60,0
+    .goto 47,49.04,70.73,60,0
+    .goto 47,47.12,73.79,60,0
+    >>Kill |cRXP_ENEMY_Corpseweeds|r. Loot them for their |cRXP_LOOT_Corpseweed|r
     .complete 26707,1 --5/5 Corpseweed
 	.mob Corpseweed
-	.unitscan Carved One
 step
-#optional
     #completewith Zzarc
-	>>Kill |cRXP_ENEMY_Splinter Fist Ogres|r, |cRXP_ENEMY_Firemongers|r, and |cRXP_ENEMY_Warriors|r
+	>>Kill |cRXP_ENEMY_Splinter Fist Ogres|r, |cRXP_ENEMY_Splinter Fist Firemongers|r, and |cRXP_ENEMY_Splinter Fist Warriors|r
     .complete 25235,1 --15/15 Splinter Fist Ogre slain
 	.mob Splinter Fist Ogre
 	.mob Splinter Fist Firemonger
 	.mob Splinter Fist Warrior
 step
     .goto 47,33.52,75.33
-    >>Loot the |cRXP_PICK_Crate|r on the ground
+    >>Loot |cRXP_LOOT_Abercrombie's Crate|r on the ground
     .complete 26680,1 --1/1 Abercrombie's Crate
+step
+    #completewith next
+    .goto 47,34.23,77.47,15 >> Enter the Splinter Fist Ogre Cave
 step
 	#label Zzarc
     .goto 47,37.87,84.33
@@ -490,27 +473,26 @@ step
     .complete 26685,1 --1/1 Ogre's Monocle
 	.unitscan Zzarc' Vul
 step
-	#completewith DeadlyV
-    .goto 47,34.20,77.47,15 >>Exit the mine
-	.isOnQuest 25235
+	#completewith next
+    .goto 47,34.20,77.47,15 >>Exit the Splinter Fist Ogre Cave
+	.isOnQuest 25235,26685
 step
-#loop
-    .goto 47,33.32,74.63,40,0
-    .goto 47,32.82,68.37,40,0
-    .goto 47,39.06,70.59,40,0
-    .goto 47,40.66,74.97,40,0
-    .goto 47,33.32,74.63,40,0
-    .goto 47,32.82,68.37,40,0
-    .goto 47,39.06,70.59,40,0
-    .goto 47,40.66,74.97,40,0
+    #loop
+    .goto 47,33.32,74.63,60,0
+    .goto 47,32.82,68.37,60,0
+    .goto 47,39.06,70.59,60,0
+    .goto 47,40.66,74.97,60,0
+    .goto 47,33.32,74.63,60,0
+    .goto 47,32.82,68.37,60,0
+    .goto 47,39.06,70.59,60,0
+    .goto 47,40.66,74.97,60,0
     .goto 47,34.261,73.014,0
-	>>Kill |cRXP_ENEMY_Splinter Fist Ogres|r, |cRXP_ENEMY_Firemongers|r, and |cRXP_ENEMY_Warriors|r
+	>>Kill |cRXP_ENEMY_Splinter Fist Ogres|r, |cRXP_ENEMY_Splinter Fist Firemongers|r, and |cRXP_ENEMY_Splinter Fist Warriors|r
     .complete 25235,1 --15/15 Splinter Fist Ogre slain
 	.mob Splinter Fist Ogre
 	.mob Splinter Fist Firemonger
 	.mob Splinter Fist Warrior
 step
-	#label DeadlyV
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fess|r and |cRXP_FRIENDLY_Dodds|r
     .turnin 26707 >>Turn in A Deadly Vine
     .turnin 26717 >>Turn in The Yorgen Worgen
@@ -527,9 +509,11 @@ step
     .accept 26777 >>Accept Soothing Spirits
 step
     .goto 47,18.628,58.335
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jitters|r 
     .accept 26721 >>Accept The Jitters-Bugs
+    .target Jitters
 step
-    .goto 47,18.359,57.707
+    .goto 47,18.310,57.671
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oliver Harris|r
     .target Oliver Harris
     .turnin 26719 >>Turn in Delivery to Master Harris
@@ -537,41 +521,40 @@ step
 step
 #optional
     #completewith LurkingW
-    >>Use the |T134547:0|t[Holy Censer] on |cRXP_FRIENDLY_Forlorn Spirits.|r
+    .use 60225 >>|cRXP_WARN_Use the|r |T134547:0|t[Holy Censer] |cRXP_WARN_on|r |cRXP_FRIENDLY_Forlorn Spirits|r
     .complete 26777,1 --5/5 Forlorn Spirit soothed
-	.mob Forlorn Spirit
-    .use 60225
+	.target Forlorn Spirit
 step
 #optional
 	#completewith next
     .goto 47,21.65,72.34,8,0
-    .goto 47,21.29,72.73,8 >>Go |cFFfa9602inside the Stable|r
+    .goto 47,21.29,72.73,8 >>|cRXP_WARN_Head inside of the Barn Stable|r
 step
     #label LurkingW
     .goto 47,21.61,73.15
-	>>|cRXP_WARN_Damage the Worgen that spawns to 20% or less health, then use the|r |T134825:0|t[Harris's Ampule] |cRXP_WARN_on it.|r
+	>>|cRXP_WARN_Damage the |cRXP_ENEMY_Lurking Worgen|r that spawns to 20% or less health, then use|r |T134825:0|t[Harris's Ampule] |cRXP_WARN_on it|r
     .complete 26720,1 --1/1 Lurking Worgen captured
 	.mob Lurking Worgen
     .use 60206
 step
-#loop
-    .goto 47,19.20,68.25,40,0
-    .goto 47,19.95,64.85,40,0
-    .goto 47,23.23,66.58,40,0
-    .goto 47,25.13,70.24,40,0
-    .goto 47,22.85,72.11,40,0
-    .goto 47,19.20,68.25,40,0
-    .goto 47,19.95,64.85,40,0
-    .goto 47,23.23,66.58,40,0
-    .goto 47,25.13,70.24,40,0
-    .goto 47,22.85,72.11,40,0
+    #loop
+    .goto 47,19.20,68.25,60,0
+    .goto 47,19.95,64.85,60,0
+    .goto 47,23.23,66.58,60,0
+    .goto 47,25.13,70.24,60,0
+    .goto 47,22.85,72.11,60,0
+    .goto 47,19.20,68.25,60,0
+    .goto 47,19.95,64.85,60,0
+    .goto 47,23.23,66.58,60,0
+    .goto 47,25.13,70.24,60,0
+    .goto 47,22.85,72.11,60,0
     .goto 47,21.695,68.981,0
-    >>Use the |T134547:0|t[Holy Censer] on |cRXP_FRIENDLY_Forlorn Spirits.|r
+    .use 60225 >>|cRXP_WARN_Use the|r |T134547:0|t[Holy Censer] |cRXP_WARN_on|r |cRXP_FRIENDLY_Forlorn Spirits|r
     .complete 26777,1 --5/5 Forlorn Spirit soothed
-	.mob Forlorn Spirit
+	.target Forlorn Spirit
     .use 60225
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oliver Harris|r and |cRXP_FRIENDLY_Sister Elsington.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oliver Harris|r and |cRXP_FRIENDLY_Sister Elsington|r
     .turnin 26720 >>Turn in A Curse We Cannot Lift
     .accept 26760 >>Accept Cry For The Moon
 	.timer 58,Cry For The Moon RP
@@ -606,68 +589,57 @@ step
     .goto 47,31.66,50.31,50,0
     .goto 47,37.52,25.18,50,0
     .goto 47,30.98,31.14
-    >>Kill |cRXP_ENEMY_Black Widows|r and loot them for their |cRXP_LOOT_Widow Venom Sac.|r
+    >>Kill |cRXP_ENEMY_Black Widows|r. Loot them for their |cRXP_LOOT_Widow Venom Sacs|r
 	>>|cRXP_WARN_They sometimes vanish for 1-2s in combat|r
     .complete 26721,1 --8/8 Widow Venom Sac
 	.mob Black Widow
 step
-#optional
-#completewith hat
-    +|cRXP_WARN_Avoid fighting Mor'Ladim patrolling nearby|r
-	.unitscan Mor'Ladim
-step
     .goto 47,17.72,29.05
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_A Weathered Grave.|r
+    >>Click |cRXP_PICK_A Weathered Grave|r
     .accept 26793 >>Accept The Weathered Grave
 step
-#label hat
     .goto 47,17.49,33.40,8,0
     .goto 47,17.44,34.17,5,0
     .goto 47,16.97,33.42
-    >>Loot the |cRXP_PICK_Hat|r on the ground |cFFfa9602upstairs inside the house |rfor |cRXP_PICK_Morbent's Remains.|r
+    >>Click the |cRXP_PICK_Bloodsoaked Hat|r upstairs on the ground
     .complete 26723,1 --1/1 Remains of Morbent Fel
 step
-    #completewith next
-    .hs >> Hearthstone |cFFfa9602to Darkshire.|r
+    .isOnQuest 26793,26685,26680
+    .hs >> Hearthstone to Darkshire
+    .cooldown item,6948,>2
 step
-	#completewith next
-    .goto 47,74.07,45.32,8,0
-	.goto 47,73.82,45.95,8,0 
-	.goto 47,72.86,46.82,10,0
-	.goto 47,72.53,47.21,8 >>Exit |cFFfa9602the Inn, then go into the Town Hall.|r
-step
-    .goto 47,72.575,47.646
+    .goto 47,72.43,46.80,15,0
+    .goto 47,72.605,47.764
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sirra Von'Indi|r
-    .target Sirra Von'Indi
     .turnin 26793 >>Turn in The Weathered Grave
     .accept 26794 >>Accept Morgan Ladimore
+    .target Sirra Von'Indi
 step
-    .goto 47,73.471,46.870
+    .goto 47,73.523,46.925
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
-    .target Commander Althea Ebonlocke
     .turnin 26794 >>Turn in Morgan Ladimore
     .accept 26795 >>Accept Mor'Ladim
+    .target Commander Althea Ebonlocke
 step
 	#sticky
-	#label Morladim
-	.destroy 2154 >> |cRXP_WARN_You can delete "The Story of Morgan Ladimore" from your bags, as it's no longer needed.|r
+    .destroy 2154 >> Delete the |T133741:0|t[The Story of Morgan Ladimore]
 step
     .goto 47,79.53,47.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Viktori Prism'Antras.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Viktori Prism'Antras|r
     .turnin 26685 >>Turn in Classy Glass
 	.target Viktori Prism'Antras
 step
     .goto 47,87.43,35.21
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Abercrombie.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Abercrombie|r
+    .turnin 26680 >>Turn in Ogre Thieves
+	.target Abercrombie
+step
+    .goto 47,87.43,35.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Abercrombie|r
     .turnin 26680 >>Turn in Ogre Thieves
     .accept 26677 >>Accept Ghoulish Effigy
 	.target Abercrombie
-step
-    #completewith next
-    .goto 47,87.98,33.16,20,0
-    .goto 47,88.1,31.33,20,0
-    .goto 47,90.98,30.53,30 >>Check for the |cRXP_ENEMY_Unknown Soldier|r(Rare).
-	.unitscan Unknown Soldier
+    .maxlevel 28
 step
     .goto 47,77.34,36.27,15,0
     .goto 47,75.08,37.23,40,0
@@ -679,47 +651,55 @@ step
     .goto 47,81.23,32.15,40,0
     .goto 47,79.79,35.41,40,0
     .goto 47,77.760,33.889
-    >>Kill |cRXP_ENEMY_Fetid Corpses|r and loot them for their |cRXP_LOOT_Ghoul Ribs.|r
+    >>Kill |cRXP_ENEMY_Fetid Corpses|r. Loot them for their |cRXP_LOOT_Ghoul Ribs|r
 	>>|cRXP_WARN_Check for a |cRXP_PICK_Chest|r in and around the House|r
     .complete 26677,1 --7/7 Ghoul Rib
 	.mob Fetid Corpse
+    .maxlevel 28
 step
     .goto 47,87.43,35.21
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Abercrombie.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Abercrombie|r
     .turnin 26677 >>Turn in Ghoulish Effigy
     .accept 26681 >>Accept Note to the Mayor
 	.target Abercrombie
+    .maxlevel 28
 step
 	#completewith next
 	.goto 47,72.86,46.82,10,0
 	.goto 47,72.53,47.21,8,0
-	.goto 47,72.35,47.75,8 >>Enter |cFFfa9602the Town Hall.|r
+	.goto 47,72.35,47.75,8 >>|cRXP_WARN_Enter the Town Hall|r
+    .maxlevel 28
 step
     .goto 47,71.93,46.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Ello Ebonlocke.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Ello Ebonlocke|r
     .turnin 26681 >>Turn in Note to the Mayor
     .accept 26727 >>Accept The Embalmer's Revenge
 	.target Lord Ello Ebonlocke
+    .maxlevel 28
 step
 	#completewith next
 	.goto 47,72.35,47.75,8,0
 	.goto 47,72.53,47.21,8,0
-	.goto 47,72.86,46.82,10 >>Exit |cFFfa9602the Town Hall.|r
+	.goto 47,72.86,46.82,10 >>|cRXP_WARN_Exit the Town Hall|r
+    .maxlevel 28
 step
     .goto 47,74.17,46.47
     >>Kill |cRXP_ENEMY_Stiches.|r
     .complete 26727,1 --1/1 Stitches slain
 	.mob Stitches
+    .maxlevel 28
 step
 	#completewith next
 	.goto 47,72.86,46.82,10,0
 	.goto 47,72.53,47.21,8,0
-	.goto 47,72.35,47.75,8 >>Enter |cFFfa9602the Town Hall.|r
+	.goto 47,72.35,47.75,8 >>|cRXP_WARN_Enter the Town Hall|r
+    .maxlevel 28
 step
     .goto 47,71.93,46.43
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Ello Ebonlocke.|r
     .turnin 26727 >>Turn in The Embalmer's Revenge
 	.target Lord Ello Ebonlocke
+    .maxlevel 28
 step
 	#completewith next
     .goto 47,77.48,44.28
@@ -751,7 +731,7 @@ step
 	.target Sister Elsington
 step
 #optional
-    #completewith CatacombsX
+    #completewith LightforgedRod
     >>Kill |cRXP_ENEMY_Plague Spreaders|r, |cRXP_ENEMY_Flesh Eaters|r, |cRXP_ENEMY_Rotted Ones|r, and |cRXP_ENEMY_Bone Chewers.|r
     .complete 26778,1 --20/20 Ghoul slain
 	.mob Plague Spreader
@@ -760,15 +740,16 @@ step
 	.mob Bone Chewer
 step
 #optional
-    #completewith CatacombsX
-    >>Kill |cRXP_ENEMY_Mor'Ladim|r and loot his |cRXP_LOOT_skull|r.
-    >>He patrols around the northern part of the graveyard
+    #completewith LightforgedRod
+    >>Kill |cRXP_ENEMY_Mor'Ladim|r. Loot him for his |cRXP_LOOT_Skull|r
+    >>|cRXP_ENEMY_Mor'Ladim|r |cRXP_WARN_patrols the Raven Hill Cemetery|r
     .complete 26795,1 --Mor'Ladim's Skull (1)
-    .mob Mor'Ladim
+    .unitscan Mor'Ladim
     .isOnQuest 26795
 step
+    #label LightforgedRod
     .goto 47,23.45,35.41
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Lightforged Rod|r |cFFfa9602on the ground.|r
+    >>Click the |cRXP_PICK_Lightforged Rod|r on the ground
     .turnin 26725 >>Turn in Guided by the Light
     .accept 26753 >>Accept The Halls of the Dead
 step
@@ -778,10 +759,10 @@ step
     .goto 47,25.68,33.76,15,0
     .goto 47,25.46,31.50,15,0
     .goto 47,23.47,27.99,15,0
-    .goto 47,20.37,27.46,20 >>Go deep |cFFfa9602inside the Catacombs.|r
+    .goto 47,20.37,27.46,20 >>|cRXP_WARN_Travel down into the Catacombs. Avoid running over any graves as it will spawn|r |cRXP_ENEMY_Buried Corpses|r
 step
     .goto 47,20.37,27.46
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Lightforged Arch|r |cFFfa9602on the ground.|r
+    >>Click the |cRXP_PICK_Lightforged Arch|r on the ground
     .turnin 26753 >>Turn in The Halls of the Dead
     .accept 26722 >>Accept Buried Below
 step
@@ -789,30 +770,29 @@ step
     .goto 47,20.33,26.81,10,0
     .goto 47,19.47,26.81,10,0
     .goto 47,18.53,24.94,10,0
-    .goto 47,18.01,25.37,10 >>Go through the hole in the wall and descend deeper |cFFfa9602into the Catacombs.|r
+    .goto 47,18.01,25.37,10 >>|cRXP_WARN_Travel through the hole in the wall|r
 step
     .goto 47,18.01,25.37
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_FRIENDLY_Lightforged Crest|r |cFFfa9602on the ground.|r
+    >>Click the |cRXP_FRIENDLY_Lightforged Crest|r on the ground
     .turnin 26722 >>Turn in Buried Below
     .accept 26754 >>Accept Morbent's Bane
 step
 	#completewith next
     .goto 47,16.53,31.06
-    .cast 82130 >>|cRXP_WARN_Use|r |T135142:0|t[Morbent's Bane] |cRXP_WARN_on|r |cRXP_ENEMY_Morbent Fel|r |cRXP_WARN_to weaken him.|r
-	.mob Morbent Fel
-    .use 60212
+    .cast 82130 >>|cRXP_WARN_Use|r |T135142:0|t[Morbent's Bane] |cRXP_WARN_on|r |cRXP_ENEMY_Morbent Fel|r |cRXP_WARN_to weaken him|r
+	.use 60212
+    .mob Morbent Fel
 step
     .goto 47,16.53,31.06
-    >>Kill |cRXP_ENEMY_Morbent Fel.|r
+    .use 60212 >>Kill |cRXP_ENEMY_Morbent Fel|r
     .complete 26754,1 --1/1 Morbent Fel slain
 	.mob Morbent Fel
-    .use 60212
 step
 	#completewith CoalB
     .goto 47,16.18,33.19,15,0
     .goto 47,15.31,38.48,15,0
     .goto 47,16.09,38.78,15,0
-    .subzone 2098,1 >>Exit the Catacombs |cFFfa9602through the other side.|r
+    .subzone 2098,1 >>|cRXP_WARN_Exit the Catacombs|r
 step
 #sticky
 #label morladim
@@ -826,8 +806,8 @@ step
     .goto 47,16.20,33.17,40,0
     .goto 47,14.27,41.46,40,0
     .goto 47,22.922,37.687,0
-    >>Kill |cRXP_ENEMY_Mor'Ladim|r and loot his |cRXP_LOOT_skull|r.
-    >>He patrols around the northern part of the graveyard
+    >>Kill |cRXP_ENEMY_Mor'Ladim|r. Loot him for his |cRXP_LOOT_Skull|r
+    >>|cRXP_ENEMY_Mor'Ladim|r |cRXP_WARN_patrols the Raven Hill Cemetery|r
     .complete 26795,1 --Mor'Ladim's Skull (1)
 	.unitscan Mor'Ladim
     .isOnQuest 26795
@@ -858,12 +838,12 @@ step
     .goto 47,10.144,41.314,0
     .goto 47,11.636,54.060,0
     .goto 47,13.663,69.726,0
-    >>Kill |cRXP_ENEMY_Coalpelt Bears|r and loot them for their |cRXP_LOOT_Black Bear Brains.|r
+    >>Kill |cRXP_ENEMY_Coalpelt Bears|r. Loot them for their |cRXP_LOOT_Black Bear Brains|r
     .complete 26787,1 --8/8 Black Bear Brain
 	.mob Coalpelt Bear
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sven Yorgen|r and |cRXP_FRIENDLY_Jitters|r
-    .turnin 26754,1 >>Turn in Morbent's Bane
+    .turnin 26754 >>Turn in Morbent's Bane
 	.target +Sven Yorgen
     .goto 47,18.34,58.06
     .turnin 26787 >>Turn in Bear In Mind
@@ -876,8 +856,6 @@ step
     .turnin 26778 >>Turn in The Cries of the Dead
     .accept 26838 >>Accept Rebels Without a Clue
 step
-    .goto 47,21.08,56.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_John Shelby.|r
-    .fly Rebel Camp >> Fly to Rebel Camp
-	.target John Shelby
+    .goto 50,51.88,12.10
+    .zone 50 >> Travel to Northern Stranglethorn
 ]])

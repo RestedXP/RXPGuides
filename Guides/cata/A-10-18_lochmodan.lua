@@ -405,7 +405,7 @@ step << Warrior
     .trainer >> Train your class spells
     .target Grendin Swiftaxe
 step
-    .goto 48,35.058,46.632
+    .goto 48,35.079,46.663
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Kadrell|r 
     .target Mountaineer Kadrell
     .accept 26932 >>Accept Buzz Off
@@ -434,7 +434,7 @@ step
     .mob Gorick Guzzledraught
 step
     .goto 48,36.752,61.108
-    >>Click the |cRXP_PICK_Stolen Explorer's Leaguye Document|r inside of the Cave
+    >>Click the |cRXP_PICK_Stolen Explorers' League Document|r inside of the Cave
     .accept 13656>> Accept Explorers' League Document (1 of 6)
 step
     #completewith next
@@ -467,7 +467,7 @@ step
     .mob Bluegill Wanderer
 step
     .goto 48,41.379,38.967
-    >>Click the |cRXP_PICK_Stolen Explorer's Leaguye Document|r under the bridge
+    >>Click the |cRXP_PICK_Stolen Explorers' League Document|r under the bridge
     .accept 13655 >>Accept Explorers' League Document (2 of 6)
 step
     #loop
@@ -478,47 +478,57 @@ step
     .mob Bluegill Mudskipper
     .mob Bluegill Wanderer
 step
-    .goto 48,35.191,46.577
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Kadrell|r
-    .target Mountaineer Kadrell
-    .turnin 26932 >>Turn in Buzz Off
-step
     .goto 48,34.613,44.539
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Bluntnose|r
     .target Magistrate Bluntnose
     .turnin 13648 >>Turn in WANTED: The Dark Iron Spy
 step
-    .goto 48,34.861,49.031
+    .goto 48,35.079,46.663
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Kadrell|r
+    .target Mountaineer Kadrell
+    .turnin 26932 >>Turn in Buzz Off
+step
+    .goto 48,34.789,49.122
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cannary Caskshot|r
-    .target Cannary Caskshot
     .turnin 26929 >>Turn in A Load of Croc
     .turnin 26928 >>Turn in Smells Like A Plan
     .accept 26868 >>Accept Axis of Awful
-step
-    .goto 48,50.428,56.633
-    >>Open the |T133639:0|t[Cannary's Cache]
-    >>Use the |T237425:0|t[Clever Plant Disguise Kit] to get close to the |cRXP_ENEMY_Mosshide Representative|r
-    >>Once you get close, use the |T134839:0|t[Potent Murloc Pheromones] to tag it
-    .complete 26868,1 --|1/1 Mosshide Tagged
-    .mob Mosshide Representative
-    .use 60681
-    .use 60502
-    .use 60503
-step
-    .goto 48,34.840,49.101
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cannary Caskshot|r
     .target Cannary Caskshot
-    .turnin 26868 >>Turn in Axis of Awful
-
 step
-    .goto 48,37.238,47.478
+    .goto 48,37.200,46.363
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torren Squarejaw|r
-    .target Torren Squarejaw
     .turnin 13656 >>Turn in Explorers' League Document (1 of 6)
     .turnin 13655 >>Turn in Explorers' League Document (2 of 6)
+    .target Torren Squarejaw
+step
+    .isOnQuest 26868
+    .use 60681 >> |cRXP_WARN_Open|r |T133639:0|t[Cannary's Cache] |cRXP_WARN_for the|r |T237425:0|t[|cRXP_LOOT_Clever Plant Disguise Kit|r] |cRXP_WARN_and|r |T134839:0|t[|cRXP_LOOT_Potent Murloc Pheromones|r]
+    .collect 60502,1,26868,1 -- Clever Plant Disguise Kit (1)
+    .collect 60503,1,26868,1 -- Potent Murloc Pheromones (1)
+step
+    .isOnQuest 26868
+    .goto 48,50.585,56.048,85 >> |cRXP_WARN_Travel toward the|r |cRXP_ENEMY_Mosshide Representative|r
+step
+    .isOnQuest 26868
+    .cast 82788 >> |cRXP_WARN_Use the|r |T237425:0|t[|cRXP_LOOT_Clever Plant Disguise Kit|r] |cRXP_WARN_to disguise yourself|r
+    .use 60502
+step
+    .goto 48,50.585,56.048
+    >>|cRXP_WARN_Use the|r |T134839:0|t[|cRXP_LOOT_Potent Murloc Pheromones|r] |cRXP_WARN_on the|r |cRXP_ENEMY_Mosshide Representative|r
+    >>|cRXP_WARN_This has a 15 yard range|r
+    .complete 26868,1 --|1/1 Mosshide Tagged
+    .mob Mosshide Representative
+    .use 60503
+step
+    .goto 48,34.789,49.122
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cannary Caskshot|r
+    .turnin 26868 >>Turn in Axis of Awful
+    .target Cannary Caskshot
+step
+    .goto 48,36.992,47.016
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jern Hornhelm|r 
-    .target Jern Hornhelm
     .accept 13639 >>Accept Resupplying the Excavation
+    .target Jern Hornhelm
 step
     .goto 48,56.353,65.959
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Huldar|r
@@ -527,58 +537,64 @@ step
     .accept 309 >>Accept Protecting the Shipment
 step
     .goto 48,56.353,65.959
-    >>Protect the caravan from the incoming enemies, then defeat |cRXP_ENEMY_Saean|r on the last wave
-    .complete 309,1
+    >>|cRXP_WARN_Remain at the Caravan and protect |cRXP_FRIENDLY_Huldar|r from the |cRXP_ENEMY_Dark Iron Ambushers|r and|r |cRXP_ENEMY_Saean|r
+    .complete 309,1 -- Protect the Ironband Caravan (1)
+    .mob Dark Iron Ambusher
     .mob Saean
+    .target Huldar
 step
     .goto 48,58.183,68.975,20,0
     .goto 48,59.722,72.385,20,0
-    .goto 48,61.686,73.166
-    >>Click on the small scroll next to the wooden crate
+    .goto 48,61.701,73.181
+    >>Click the |cRXP_PICK_Stolen Explorers' League Document|r on the ground
     .accept 13657 >>Accept Explorers' League Document (3 of 6)
 step
-    .goto 48,64.807,66.525
+    .goto 48,64.896,66.659
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magmar Fellhew|r 
     .target Magmar Fellhew
     .accept 26961 >>Accept Gathering Idols
 step
-    .goto 48,65.282,65.939
+    .goto 48,65.336,65.979
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Ironband|r
     .target Prospector Ironband
     .turnin 309 >>Turn in Protecting the Shipment
     .accept 13650 >>Accept Keep Your Hands Off The Goods!
-
 step
-#label doc4
-#sticky
+    #completewith Artifacts
+    >>Kill |cRXP_ENEMY_Stonesplinter Diggers|r and |cRXP_ENEMY_Stonesplinter Geomancers|r. Loot them for their |cRXP_LOOT_Carved Stone Idols|r
+    .complete 26961,1 --|8/8 Carved Stone Idol
+    .mob Stonesplinter Digger
+    .mob Stonesplinter Geomancer
+step
     .goto 48,67.610,68.736,20,0
     .goto 48,69.218,66.357,8,0
-    .goto 48,68.122,66.036
-    >>Click on the small scroll next to the wooden barrel
+    .goto 48,68.112,66.143
+    >>Click the |cRXP_PICK_Stolen Explorers' League Document|r next to the barrel
     .accept 13658 >>Accept Explorers' League Document (4 of 6)
 step
-#loop
-    >>Visit the 3 artifacts around the digsite
-    >>Kill and loot |cRXP_ENEMY_Troggs|r for their |cRXP_LOOT_Carved Stone Idols|r
+    #label Artifacts
+    >>|cRXP_WARN_Explore the Artifacts of the Excavation Site|r
     .complete 13650,1 --|1/1 Artifact of the Broken Tablet Inspected
     .goto 48,70.696,67.524
     .complete 13650,3 --|1/1 Artifact of the Overdressed Woman Inspected
     .goto 48,72.759,65.494
     .complete 13650,2 --|1/1 Artifact of the Upturned Giant Inspected
     .goto 48,70.111,59.987
-    .complete 26961,1 --|8/8 Carved Stone Idol
+step
+    #loop
     .goto 48,69.037,59.360,40,0
     .goto 48,70.633,67.770,40,0
+    >>Kill |cRXP_ENEMY_Stonesplinter Diggers|r and |cRXP_ENEMY_Stonesplinter Geomancers|r. Loot them for their |cRXP_LOOT_Carved Stone Idols|r
+    .complete 26961,1 --|8/8 Carved Stone Idol
     .mob Stonesplinter Digger
     .mob Stonesplinter Geomancer
 step
-#requires doc4
-    .goto 48,65.298,66.175
+    .goto 48,65.336,65.979
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Ironband|r
     .target Prospector Ironband
     .turnin 13650 >>Turn in Keep Your Hands Off The Goods!
 step
-    .goto 48,64.943,66.597
+    .goto 48,64.896,66.659
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magmar Fellhew|r
     .target Magmar Fellhew
     .turnin 26961 >>Turn in Gathering Idols
@@ -588,19 +604,11 @@ step
     .goto 48,69.478,51.742,70,0
     .goto 48,83.597,60.675,40 >> Head to The Farstrider Lodge
     .subzoneskip 147
-
 step
-    .goto 48,82.824,63.414
+    .goto 48,82.789,63.459
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Safety Warden Pipsy|r 
     .target Safety Warden Pipsy
     .accept 27025 >>Accept Thistle While You Work
-step
-    .goto 48,81.803,61.735
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marek Ironheart|r
-    .target Marek Ironheart
-    .turnin 13647 >>Turn in Joining the Hunt
-    .accept 27028 >>Accept Hornet Hunting
-    .accept 27030 >>Accept Foxtails By The Handful
 step
     .goto 48,83.428,65.309
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryl the Youngling|r 
@@ -612,14 +620,17 @@ step
     .target Vyrin Swiftwind
     .home >>Set your Hearthstone to Farstrider Lodge
 step
-    .goto 48,81.678,64.714
+    .goto 48,81.647,64.750
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bingles Blastenheimer|r 
     .target Bingles Blastenheimer
     .accept 27031 >>Accept Wing Nut
-
 step
-    .goto 48,77.978,73.633
-    .complete 27031,1 --|3/3 Pristine Flight Feather
+    .goto 48,81.803,61.735
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marek Ironheart|r
+    .target Marek Ironheart
+    .turnin 13647 >>Turn in Joining the Hunt
+    .accept 27028 >>Accept Hornet Hunting
+    .accept 27030 >>Accept Foxtails By The Handful
 step
     .goto 48,78.350,69.552,40,0
     .goto 48,77.581,75.929,40,0
@@ -627,34 +638,81 @@ step
     .goto 48,78.350,69.552,0
     .goto 48,77.581,75.929,0
     .goto 48,74.254,71.828,0
-    >>Kill and loot |cRXP_ENEMY_Golden Eagle|r
+    >>Kill |cRXP_ENEMY_Golden Eagles|r. Loot them for their |cRXP_LOOT_Feathers|r
     .complete 27031,1 --|3/3 Pristine Flight Feather
     .mob Golden Eagle
 step
-#sticky
-#label doc6
+    #completewith doc6
+    >>Loot the |cRXP_LOOT_Stabthistle Seeds|r on the ground
+    .complete 27025,1 --|6/6 Stabthistle Seed
+step
+    #completewith doc6
+    >>Kill |cRXP_ENEMY_Hill Foxes|r. Loot them for their |cRXP_LOOT_Tails|r
+    .complete 27030,1 --|7/7 Fluffy Fox Tail
+    .mob Hill Fox
+step
+    #label doc6
     .goto 48,73.188,35.870
-    >>Loot the small scroll next to the stone monument
+    >>Click the |cRXP_PICK_Stolen Explorers' League Document|r on the ground
     .accept 13659 >>Accept Explorers' League Document (6 of 6)
 step
-#loop
+    #completewith next
+    >>Loot the |cRXP_LOOT_Stabthistle Seeds|r on the ground
+    .complete 27025,1 --|6/6 Stabthistle Seed
+step
+    #loop
     .goto 48,72.311,40.993,0
     .goto 48,75.992,46.409,40,0
     .goto 48,66.113,37.946,40,0
     .goto 48,72.311,40.993,40,0
     .goto 48,76.495,36.873,40,0
-    >>Kill |cRXP_ENEMY_Hill Foxes|r and loot their |cRXP_LOOT_tails|r
-    >>Loot the big spiky seeds next to the trees around the area
+    >>Kill |cRXP_ENEMY_Hill Foxes|r. Loot them for their |cRXP_LOOT_Tails|r
     .complete 27030,1 --|7/7 Fluffy Fox Tail
+    .mob Hill Fox
+step
+    #loop
+    .goto 48,72.311,40.993,0
+    .goto 48,75.992,46.409,40,0
+    .goto 48,66.113,37.946,40,0
+    .goto 48,72.311,40.993,40,0
+    .goto 48,76.495,36.873,40,0
+    >>Loot the |cRXP_LOOT_Stabthistle Seeds|r on the ground
     .complete 27025,1 --|6/6 Stabthistle Seed
 step
-#sticky
-#label doc5
-    .goto 48,53.703,38.173
-    >>Click the small scroll next the 3 small trees
+    #completewith doc5
+    >>Kill |cRXP_ENEMY_Mudbelly Boars|r
+    .complete 27016,1 --|10/10 Mudbelly Boar slain
+    .mob Mudbelly Boar
+step
+    #completewith doc5
+    >>Kill |cRXP_ENEMY_Marsh Hornets|r. Loot them for their |cRXP_LOOT_Wings|r
+    .complete 27028,1 --|6/6 Glassy Hornet Wing
+    .mob Marsh Hornet
+    .mob Marsh Wasp
+step
+    #label doc5
+    .goto 48,53.707,38.109
+    >>Click the |cRXP_PICK_Stolen Explorers' League Document|r on the ground
     .accept 13660 >>Accept Explorers' League Document (5 of 6)
 step
-#loop
+    #completewith next
+    >>Kill |cRXP_ENEMY_Mudbelly Boars|r
+    .complete 27016,1 --|10/10 Mudbelly Boar slain
+    .mob Mudbelly Boar
+step
+    #loop
+    .goto 48,52.298,39.499,40,0
+    .goto 48,56.479,31.679,40,0
+    .goto 48,58.179,44.704,40,0  
+    .goto 48,52.298,39.499,0
+    .goto 48,56.479,31.679,0
+    .goto 48,58.179,44.704,0
+    >>Kill |cRXP_ENEMY_Marsh Hornets|r. Loot them for their |cRXP_LOOT_Wings|r
+    .complete 27028,1 --|6/6 Glassy Hornet Wing
+    .mob Marsh Hornet
+    .mob Marsh Wasp
+step
+    #loop
     .goto 48,52.298,39.499,40,0
     .goto 48,56.479,31.679,40,0
     .goto 48,58.179,44.704,40,0  
@@ -662,19 +720,15 @@ step
     .goto 48,56.479,31.679,0
     .goto 48,58.179,44.704,0
     >>Kill |cRXP_ENEMY_Mudbelly Boars|r
-    >>Kill |cRXP_ENEMY_Marsh Hornets|r and loot their |cRXP_LOOT_Wings|r
     .complete 27016,1 --|10/10 Mudbelly Boar slain
-    .mob +Mudbelly Boar
-    .complete 27028,1 --|6/6 Glassy Hornet Wing
-    .mob +Marsh Hornet
-    .mob +Marsh Wasp
+    .mob Mudbelly Boar
 step
-#requires doc5
-    #completewith next
+    .isOnQuest 27016,27028,13660,27025,27030,27031
     .hs >> Hearth to Farstrider's Lodge
+    .cooldown item,6948,>2,1
 step
 #requires doc5
-    .goto 48,82.758,63.695
+    .goto 48,82.789,63.459
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Safety Warden Pipsy|r
     .target Safety Warden Pipsy
     .turnin 27025 >>Turn in Thistle While You Work
@@ -685,18 +739,18 @@ step
     .target Daryl the Youngling
     .turnin 27016 >>Turn in The Joy of Boar Hunting
 step
-    .goto 48,81.810,61.814
+    .goto 48,81.756,61.661
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marek Ironheart|r
     .target Marek Ironheart
     .turnin 27028 >>Turn in Hornet Hunting
     .turnin 27030 >>Turn in Foxtails By The Handful
 step
-    .goto 48,81.937,64.479
+    .goto 48,81.910,64.618
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vyrin Swiftwind|r 
     .target Vyrin Swiftwind
     .accept 27036 >>Accept Vyrin's Revenge
 step
-    .goto 48,81.777,64.602
+    .goto 48,81.647,64.750
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bingles Blastenheimer|r
     .target Bingles Blastenheimer
     .turnin 27031 >>Turn in Wing Nut
@@ -712,23 +766,32 @@ step
     .subzoneskip 5391
     .isOnQuest 27032
 step
+    .isOnQuest 27032
+    #completewith next
+    .goto 48,78.594,76.215,20 >> |cRXP_WARN_Clear your way to the back of the Cave|r
+step
     .goto 48,78.594,76.215
-    >>Head towards the back of the cave
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rusted Skystrider|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Rusted Skystrider|r
     .target Rusted Skystrider
     .turnin 27032 >>Turn in Bird is the Word
     .accept 27033 >>Accept Skystrider's Heart
---TODO: Test logout skip
-
 step
-#label olsooty
-#sticky
+    #completewith next
+    .goto 48,71.603,77.167,20 >> Exit the Ironwing Cavern
+    .subzoneskip 5391,1
+    .isOnQuest 27033
+step
+    #completewith next
+    >>Kill |cRXP_ENEMY_Bobcats|r
+    .complete 27026,1
+    .mob Bobcat
+step
     .goto 48,80.158,51.943
-    >>Kill and loot |cRXP_ENEMY_Ol' Sooty|r
+    >>Kill |cRXP_ENEMY_Ol' Sooty|r. Loot him for his |cRXP_LOOT_Head|r
     .complete 27036,1 --|1/1 Ol' Sooty's Head
     .mob Ol' Sooty
 step
-#loop
+    #loop
     .goto 48,76.773,58.389,40,0
     .goto 48,78.786,69.272,40,0
     .goto 48,72.778,71.667,40,0
@@ -739,8 +802,11 @@ step
     .complete 27026,1
     .mob Bobcat
 step
-#requires olsooty
-    .goto 48,82.657,63.364
+    .isOnQuest 27026,27036
+    .hs >> Hearth to Farstrider's Lodge
+    .cooldown item,6948,>2,1
+step
+    .goto 48,82.789,63.459
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Safety Warden Pipsy|r
     .target Safety Warden Pipsy
     .turnin 27026 >>Turn in Defcon: Bobcat
@@ -751,37 +817,78 @@ step
     .turnin 27036 >>Turn in Vyrin's Revenge
     .accept 27037 >>Accept Vyrin's Revenge
 step
-    .goto 48,82.007,64.553
+    .goto 48,81.910,64.618
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vyrin Swiftwind|r
     .target Vyrin Swiftwind
     .turnin 27037 >>Turn in Vyrin's Revenge
 step
 #questguide
-    .goto 48,81.702,64.687
+    .goto 48,81.647,64.750
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bingles Blastenheimer|r
     .target Bingles Blastenheimer
     .turnin 27033 >>Turn in Skystrider's Heart
     .accept 27034 >>Accept He's That Age
 step
-    .goto 48,81.702,64.687
+    .goto 48,81.647,64.750
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bingles Blastenheimer|r
     .target Bingles Blastenheimer
     .turnin 27033 >>Turn in Skystrider's Heart
 step
->>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eeryven Grayer|r
-.target Eeryven Grayer
-    .goto 1432/0,-4255.70020,-5667.39990
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eeryven Grayer|r
+    .goto 48,81.877,64.071
     .fly Thelsamar >>Fly to Thelsamar
+    .target Eeryven Grayer
 step
     #label end
-    .goto 48,37.228,47.851
+    .goto 48,37.200,46.363
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torren Squarejaw|r
     .target Torren Squarejaw
     .turnin 13657 >>Turn in Explorers' League Document (3 of 6)
     .turnin 13658 >>Turn in Explorers' League Document (4 of 6)
-    .turnin 13659 >>Turn in Explorers' League Document (6 of 6)
     .turnin 13660 >>Turn in Explorers' League Document (5 of 6)
+    .turnin 13659 >>Turn in Explorers' League Document (6 of 6)
+    .accept 13661 >>Accept Heartfelt Appreciation
     .turnin 13661 >>Turn in Heartfelt Appreciation
+step << Paladin
+    .goto 48,35.374,48.810
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Faldoc Stonefaith|r
+    .trainer >> Train your class spells
+    .target Faldoc Stonefaith
+step << Rogue
+    .goto 48,34.935,48.483
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Galda Bronzeblade|r
+    .trainer >> Train your class spells
+    .target Galda Bronzeblade
+step << Mage
+    .goto 48,35.012,48.445
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gindle the Green|r
+    .trainer >> Train your class spells
+    .target Gindle the Green
+step << Hunter
+    .goto 48,34.553,48.117
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Belda Wildheart|r
+    .trainer >> Train your class spells
+    .target Belda Wildheart    
+step << Warrior
+    .goto 48,33.951,46.768
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grendin Swiftaxe|r
+    .trainer >> Train your class spells
+    .target Grendin Swiftaxe
+step << Shaman
+    .goto 48,36.596,48.341
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grenhild Darktalon|r
+    .trainer >> Train your class spells
+    .target Grenhild Darktalon
+step << Warlock
+    .goto 48,35.879,46.199
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Solbin Shadowcog|r
+    .trainer >> Train your class spells
+    .target Solbin Shadowcog
+step << Priest
+    .goto 48,36.108,45.893
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Baerla|r
+    .trainer >> Train your class spells
+    .target Priestess Baerla
 step
 #questguide
     .goto 48,33.938,50.932
