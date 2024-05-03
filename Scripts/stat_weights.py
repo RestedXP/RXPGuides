@@ -1,28 +1,32 @@
-import csv, os
+import csv, os, glob
 
 db = {}
-csvPath = "./Scripts/Values leveling - Classic sheet.csv"
+csvGlob = "./Scripts/Values leveling - .* Classic Era.csv"
 
-if not os.path.exists(csvPath):
-    print(f"{csvPath} not found")
-    exit
+for csvPath in glob.glob("./Scripts/Values leveling - * Classic Era.csv"):
+    with open(csvPath, "r", newline="") as csvfile:
+        csvreader = csv.DictReader(csvfile)
 
-with open(csvPath, "r", newline="") as csvfile:
-    csvreader = csv.DictReader(csvfile)
+        for row in csvreader:
+            if row["Spec"]:
+                dbTitle = f'{row["Title"]} - {row["Spec"]}'
+            else:
+                dbTitle = row["Title"]
 
-    for row in csvreader:
-        db[row["Title"]] = {}
-        for key in row:
-            value = row[key]
-            if key == "" or row[key] == "":
-                continue
+            db[dbTitle] = {}
+            for key in row:
+                value = row[key]
+                if key == "" or row[key] == "":
+                    continue
 
-            db[row["Title"]][key] = value
+                db[dbTitle][key] = value
 
 # print(json.dumps(db, indent=2))
 
 with open(f"DB/classic/statWeights.lua", "w", newline="") as out:
     out.write("local _, addon = ...\n\n")
+
+    out.write('if addon.game ~= "CLASSIC" then return end\n\n')
 
     out.write("addon.statWeights = {\n")
 

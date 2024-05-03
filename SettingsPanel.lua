@@ -2098,7 +2098,7 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.itemUpgrades:Setup()
                         end,
                         values = function()
-                            return addon.itemUpgrades:GetSpecWeights()
+                            return addon.itemUpgrades:GetSpecWeights() or {}
                         end,
                         hidden = function()
                             return not addon.itemUpgrades
@@ -2106,7 +2106,9 @@ function addon.settings:CreateAceOptionsPanel()
                         disabled = function()
                             return not self.profile.enableItemUpgrades or
                                        UnitLevel("player") ==
-                                       GetMaxPlayerLevel()
+                                       GetMaxPlayerLevel() or
+                                       addon.itemUpgrades:GetSpecWeights() ==
+                                       nil
                         end
                     },
                     enableQuestChoiceRecommendation = {
