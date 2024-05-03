@@ -26,6 +26,8 @@ for csvPath in glob.glob("./Scripts/Values leveling - * Classic Era.csv"):
 with open(f"DB/classic/statWeights.lua", "w", newline="") as out:
     out.write("local _, addon = ...\n\n")
 
+    out.write('if addon.game ~= "CLASSIC" then return end\n\n')
+
     out.write("addon.statWeights = {\n")
 
     for title in db:
