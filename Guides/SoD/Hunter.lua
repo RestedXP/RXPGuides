@@ -1183,12 +1183,12 @@ step
     .zone Tanaris >>Travel to Tanaris
 step
     #loop
-    .goto 1446/1,-3973.700,-7372.900
-    .goto 1446/1,-3777.100,-7358.200
-    .goto 1446/1,-3290.200,-7330.700
-    .goto 1446/1,-3563.000,-7352.400
-    .goto 1446/1,-3386.400,-7337.400
-    .goto 1446/1,-3290.200,-7330.700
+    .goto 1446/1,-3973.700,-7372.900,0
+    .goto 1446/1,-3777.100,-7358.200,0
+    .goto 1446/1,-3290.200,-7330.700,0
+    .goto 1446/1,-3563.000,-7352.400,0
+    .goto 1446/1,-3386.400,-7337.400,0
+    .goto 1446/1,-3290.200,-7330.700,0
     >>Kill |cRXP_ENEMY_Zopilote|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of The Raptor|r]
     >>|cRXP_ENEMY_Zopilote|r |cRXP_WARN_is a carrion bird that patrols east to west in a large area spanning from south of Sandsorrow Watch to Gadgetzan|r
     >>TIP: Instead of running around you can use |T132172:0|t[|cRXP_FRIENDLY_Eagle Eye|r] to scout for his position. If you can't find him he's probably dead and should respawn arond the spot marked with "2+" on your map

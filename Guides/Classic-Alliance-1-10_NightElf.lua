@@ -420,7 +420,7 @@ step << Hunter
     #season 2
     #requires hunterRuneChimera
     #label hunterEngrave
-    .engrave 10 >> Open your character sheet and engrave your gloves with a rune
+    .engrave 10 >> Open your character sheet and engrave your gloves with |T133816:0|t[|cRXP_FRIENDLY_Chimera Shot|r]
 step << Hunter
 	#hardcore
     #season 2
