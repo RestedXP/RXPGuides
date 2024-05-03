@@ -1514,9 +1514,9 @@ function addon.itemUpgrades.AH:Analyze()
 
         for _, id in ipairs(comparisons) do
             bAS = ahSession.bestAnalysis[id]
-            print("Analyze", itemLink, "weightPerCopper",
-                  scanData.weightPerCopper, "relativeWPC",
-                  scanData.relativeWeightPerCopper, "ratio", scanData.ratio)
+            -- print("Analyze", itemLink, "weightPerCopper",
+            --      scanData.weightPerCopper, "relativeWPC",
+            --      scanData.relativeWeightPerCopper, "ratio", scanData.ratio)
             analyzeSlotUpgrade(scanData, itemLink, bAS)
         end
     end
@@ -1527,7 +1527,7 @@ local buyoutIncr = 0
 -- SmallMoneyFrameTemplate doesn't handle parentKey well in .xml, moved to Lua
 local function createBuyoutFrame(buyout, buyoutMoney)
     if not buyout then
-        print("createBuyoutFrame: error", buyout)
+        -- print("createBuyoutFrame: error", buyout)
         return
     end
 
@@ -1552,7 +1552,7 @@ end
 
 local function setKindIcon(frame, image)
     if not frame or not image then
-        print("setKindIcon: error", frame, image)
+        -- print("setKindIcon: error", frame, image)
         return
     end
 
@@ -1572,9 +1572,9 @@ local function getColorizedName(itemLink, itemName)
 end
 
 local function prettyPrintUpgradeColumn(data)
-    print("data.ratio", data.ratio, "prettyPrintRatio(data.ratio)",
-          prettyPrintRatio(data.ratio), "addon.Round(data.weightIncrease, 2))",
-          addon.Round(data.weightIncrease, 2))
+    -- print("data.ratio", data.ratio, "prettyPrintRatio(data.ratio)",
+    --      prettyPrintRatio(data.ratio), "addon.Round(data.weightIncrease, 2))",
+    --      addon.Round(data.weightIncrease, 2))
 
     if data.ratio < 0 then
         return fmt("%s / %s EP", _G.EMPTY, addon.Round(data.weightIncrease, 2))
