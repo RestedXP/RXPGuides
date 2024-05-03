@@ -8,13 +8,18 @@ for csvPath in glob.glob("./Scripts/Values leveling - * Classic Era.csv"):
         csvreader = csv.DictReader(csvfile)
 
         for row in csvreader:
-            db[row["Title"]] = {}
+            if row["Spec"]:
+                dbTitle = f'{row["Title"]} - {row["Spec"]}'
+            else:
+                dbTitle = row["Title"]
+
+            db[dbTitle] = {}
             for key in row:
                 value = row[key]
                 if key == "" or row[key] == "":
                     continue
 
-                db[row["Title"]][key] = value
+                db[dbTitle][key] = value
 
 # print(json.dumps(db, indent=2))
 
