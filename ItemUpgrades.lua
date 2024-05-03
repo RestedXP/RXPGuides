@@ -567,11 +567,17 @@ function addon.itemUpgrades:LoadStatWeights()
     local guideMode = addon.settings.profile.hardcore and "HARDCORE" or
                           "SPEEDRUN"
 
+    -- TODO chance this doesn't evaluate properly on PLAYER_LEVEL_UP event
+    local playerLevel = UnitLevel("player")
+
     for _, data in pairs(addon.statWeights) do
         if strupper(data.Class) == addon.player.class and strupper(data.Kind) ==
-            guideMode then
+            guideMode and playerLevel >= data.MIN_LEVEL and playerLevel <=
+            data.MAX_LEVEL then
             newWeights[data.Spec or data.Class] = data
+
             -- print("Loaded statWeights", data.Title)
+            -- print("Loaded statWeights, level:", playerLevel, data.MIN_LEVEL, data.MAX_LEVEL)
         end
     end
 
@@ -609,6 +615,8 @@ function addon.itemUpgrades:ActivateSpecWeights()
 
     session.activeStatWeights = session.specWeights[spec]
 
+    if not session.activeStatWeights then return end
+
     session.activeStatWeights.extraWeight =
         ITEM_WEIGHT_ADDITIONS[addon.player.class] or {}
 
@@ -618,6 +626,9 @@ end
 function addon.itemUpgrades:GetSpecWeights()
     local options = {}
     for k, _ in pairs(session.specWeights) do options[k] = k end
+
+    -- No current support for class, spec, etc
+    if next(options) == nil then return end
 
     return options
 end
