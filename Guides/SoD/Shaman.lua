@@ -2826,7 +2826,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Shaman SoD
 #group RestedXP Rune & Books Guide
-#subgroup Helm
+#subgroup Helmet
 #title Tidal Waves
 #name Tidal Waves - 42 (Feralas)
 

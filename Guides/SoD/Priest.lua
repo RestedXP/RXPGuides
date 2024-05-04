@@ -1223,7 +1223,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
 #group RestedXP Rune & Books Guide
-#subgroup Helm
+#subgroup Helmet
 #name Eye of the Void
 
 --x shiek: needs better coordinates and travelsteps
@@ -1468,42 +1468,4 @@ step
     .train 431669 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of the Lost Tribe|r] |cRXP_WARN_to train|r |T135981:0|t[Surge of Light]
 ]])
 
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Priest SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Bracers
--- #name Void Zone
--- for phase 3
-
--- Void Zone
-
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- << Priest SoD
--- #group RestedXP Rune & Books Guide
--- #subgroup Helmet
--- #name Divine Aegis
--- for phase 3
-
--- Divine Aegis
-
-
--- ]])
-
--- RXPGuides.RegisterGuide([[
--- #classic
--- #group RestedXP Rune & Books Guide
--- #subgroup Skill Books
--- #name Increased Fortitude
--- for phase 3
-
--- -- Increased Fortitude
-
-
-
--- ]])
 
