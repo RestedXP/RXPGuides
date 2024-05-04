@@ -1,7 +1,7 @@
 --[[-----------------------------------------------------------------------------
 ColorPicker Widget
 -------------------------------------------------------------------------------]]
-local Type, Version = "ColorPicker", 25
+local Type, Version = "ColorPicker", 27
 local AceGUI = LibStub and LibStub("AceGUI-3.0", true)
 if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
 
@@ -17,6 +17,10 @@ Support functions
 local function ColorCallback(self, r, g, b, a, isAlpha)
 	if not self.HasAlpha then
 		a = 1
+	end
+	-- no change, skip update
+	if r == self.r and g == self.g and b == self.b and a == self.a then
+		return
 	end
 	self:SetColor(r, g, b, a)
 	if ColorPickerFrame:IsVisible() then
@@ -49,31 +53,62 @@ local function ColorSwatch_OnClick(frame)
 		ColorPickerFrame:SetFrameStrata("FULLSCREEN_DIALOG")
 		ColorPickerFrame:SetFrameLevel(frame:GetFrameLevel() + 10)
 		ColorPickerFrame:SetClampedToScreen(true)
+		ColorPickerFrame:EnableMouse(true) -- Make sure the background isn't click-through
 
-		ColorPickerFrame.func = function()
-			local r, g, b = ColorPickerFrame:GetColorRGB()
-			local a = 1 - OpacitySliderFrame:GetValue()
-			ColorCallback(self, r, g, b, a)
+		if ColorPickerFrame.SetupColorPickerAndShow then -- 10.2.5 color picker overhaul
+			local r2, g2, b2, a2 = self.r, self.g, self.b, self.a
+
+			local info = {
+				swatchFunc = function()
+					local r, g, b = ColorPickerFrame:GetColorRGB()
+					local a = ColorPickerFrame:GetColorAlpha()
+					ColorCallback(self, r, g, b, a)
+				end,
+
+				hasOpacity = self.HasAlpha,
+				opacityFunc = function()
+					local r, g, b = ColorPickerFrame:GetColorRGB()
+					local a = ColorPickerFrame:GetColorAlpha()
+					ColorCallback(self, r, g, b, a, true)
+				end,
+				opacity = (a2 or 1),
+
+				cancelFunc = function()
+					ColorCallback(self, r2, g2, b2, a2, true)
+				end,
+
+				r = r2,
+				g = g2,
+				b = b2,
+			}
+
+			ColorPickerFrame:SetupColorPickerAndShow(info)
+		else
+			ColorPickerFrame.func = function()
+				local r, g, b = ColorPickerFrame:GetColorRGB()
+				local a = 1 - OpacitySliderFrame:GetValue()
+				ColorCallback(self, r, g, b, a)
+			end
+
+			ColorPickerFrame.hasOpacity = self.HasAlpha
+			ColorPickerFrame.opacityFunc = function()
+				local r, g, b = ColorPickerFrame:GetColorRGB()
+				local a = 1 - OpacitySliderFrame:GetValue()
+				ColorCallback(self, r, g, b, a, true)
+			end
+
+			local r, g, b, a = self.r, self.g, self.b, self.a
+			if self.HasAlpha then
+				ColorPickerFrame.opacity = 1 - (a or 0)
+			end
+			ColorPickerFrame:SetColorRGB(r, g, b)
+
+			ColorPickerFrame.cancelFunc = function()
+				ColorCallback(self, r, g, b, a, true)
+			end
+
+			ColorPickerFrame:Show()
 		end
-
-		ColorPickerFrame.hasOpacity = self.HasAlpha
-		ColorPickerFrame.opacityFunc = function()
-			local r, g, b = ColorPickerFrame:GetColorRGB()
-			local a = 1 - OpacitySliderFrame:GetValue()
-			ColorCallback(self, r, g, b, a, true)
-		end
-
-		local r, g, b, a = self.r, self.g, self.b, self.a
-		if self.HasAlpha then
-			ColorPickerFrame.opacity = 1 - (a or 0)
-		end
-		ColorPickerFrame:SetColorRGB(r, g, b)
-
-		ColorPickerFrame.cancelFunc = function()
-			ColorCallback(self, r, g, b, a, true)
-		end
-
-		ColorPickerFrame:Show()
 	end
 	AceGUI:ClearFocus()
 end
