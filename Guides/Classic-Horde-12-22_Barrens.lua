@@ -6370,13 +6370,13 @@ step << Orc Hunter/Troll Hunter
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.7
 step << Orc Warrior
-    .goto The Barrens,51.11,29.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uthrok|r|cRXP_BUY_. Buy a|r |T132395:0|t[Tabar] |cRXP_BUY_from him|r
+    .goto The Barrens,51.23,29.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Nargal|r|cRXP_BUY_. Buy a|r |T132395:0|t[Tabar] |cRXP_BUY_from him|r
     .collect 1196,1,871,1 --Collect Tabar (1)
     .money <0.2214
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.2
-    .target Uthrok
+    .target Nargal Deatheye
 step << Orc Warrior
     #completewith DisruptTheAttacks
     +Equip the |T132395:0|t[Tabar]
@@ -6386,13 +6386,13 @@ step << Orc Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.2
 step << Troll Rogue/Orc Rogue
     #season 2
-    .goto The Barrens,51.11,29.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uthrok|r|cRXP_BUY_. Buy one or two|r |T135640:0|t[Jambiya] |cRXP_BUY_from him|r
+    .goto The Barrens,51.23,29.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Nargal|r|cRXP_BUY_. Buy one or two|r |T135640:0|t[Jambiya] |cRXP_BUY_from him|r
     .collect 2207,1,871,1 --Collect Jambiya (1)
     .money <0.2390
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.1
-    .target Uthrok
+    .target Nargal Deatheye
 step << Troll Rogue/Orc Rogue
     #season 2
     #completewith DisruptTheAttacks
@@ -6402,13 +6402,13 @@ step << Troll Rogue/Orc Rogue
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.1
 step << Orc Shaman/Troll Shaman
-    .goto The Barrens,51.11,29.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uthrok|r|cRXP_BUY_. Buy a|r |T133490:0|t[Mace] |cRXP_BUY_from him|r
+    .goto The Barrens,51.23,29.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Nargal|r|cRXP_BUY_. Buy a|r |T133490:0|t[Mace] |cRXP_BUY_from him|r
     .collect 852,1,871,1 --Collect Mace (1)
     .money <0.1739
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.2
-    .target Uthrok
+    .target Nargal Deatheye
 step << Orc Shaman/Troll Shaman
     #completewith DisruptTheAttacks
     +Equip the |T133490:0|t[Mace]
@@ -6638,13 +6638,13 @@ step << Tauren Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.9
 step << Orc Warrior
     #optional
-    .goto The Barrens,51.11,29.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uthrok|r|cRXP_BUY_. Buy a|r |T132395:0|t[Tabar] |cRXP_BUY_from him|r
+    .goto The Barrens,51.23,29.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Nargal|r|cRXP_BUY_. Buy a|r |T132395:0|t[Tabar] |cRXP_BUY_from him|r
     .collect 1196,1,872,1 --Collect Tabar (1)
     .money <0.2214
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.2
-    .target Uthrok
+    .target Nargal Deatheye
 step << Orc Warrior
     #optional
     #completewith KreenigSnarlsnout1
@@ -6656,13 +6656,13 @@ step << Orc Warrior
 step << Troll Rogue/Orc Rogue
     #optional
     #season 2
-    .goto The Barrens,51.11,29.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uthrok|r|cRXP_BUY_. Buy one or two|r |T135640:0|t[Jambiya] |cRXP_BUY_from him|r
+    .goto The Barrens,51.23,29.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Nargal|r|cRXP_BUY_. Buy one or two|r |T135640:0|t[Jambiya] |cRXP_BUY_from him|r
     .collect 2207,1,872,1 --Collect Jambiya (1)
     .money <0.2390
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.1
-    .target Uthrok
+    .target Nargal Deatheye
 step << Troll Rogue/Orc Rogue
     #optional
     #season 2
@@ -6674,13 +6674,13 @@ step << Troll Rogue/Orc Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.1
 step << Orc Shaman/Troll Shaman
     #optional
-    .goto The Barrens,51.11,29.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uthrok|r|cRXP_BUY_. Buy a|r |T133490:0|t[Mace] |cRXP_BUY_from him|r
+    .goto The Barrens,51.23,29.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Nargal|r|cRXP_BUY_. Buy a|r |T133490:0|t[Mace] |cRXP_BUY_from him|r
     .collect 852,1,871,1 --Collect Mace (1)
     .money <0.1739
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.2
-    .target Uthrok
+    .target Nargal Deatheye
 step << Orc Shaman/Troll Shaman
     #optional
     #completewith DisruptTheAttacks

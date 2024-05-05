@@ -57,7 +57,7 @@ step
     .mob +Ashenvale Bowman
 step
     #completewith Skirmishers
-    .use 45001 >> Use the |T133690:0|t[Medicated Salve] on |cRXP_FRIENDLY_Wounded Mor'shan Defenders|r
+    .use 45001 >> |cRXP_WARN_Use|r |T133690:0|t[Medicated Salve] |cRXP_WARN_on|r |cRXP_FRIENDLY_Wounded Mor'shan Defenders|r
     .complete 13613,1 --5/5 Wounded Mor'shan Defenders Rescued
     .target Wounded Mor'shan Defender
 step
@@ -134,14 +134,19 @@ step
     .accept 13621 >>Accept Gorat's Vengeance
     .target Dinah Halfmoon
 step
-    .goto 63,64.16,84.50,12,0
+    #completewith next
+    .goto 63,64.16,84.50
+    .cast 62772 >> |cRXP_WARN_Use|r |T134719:0|t[Gorat's Imbued Blood] |cRXP_WARN_on|r |cRXP_FRIENDLY_Gorat|r
+    .timer 103,Gorat's Vengeance RP
+    .use 45023
+step
     .goto 63,65.72,82.20
-    .use 45023 >> Use |T134719:0|t[Gorat's Imbued Blood] on |cRXP_FRIENDLY_Gorat|r
     >>Follow the |cRXP_FRIENDLY_Spirit of Gorat|r and kill |cRXP_ENEMY_Captain Elendilad|r once he appears
     .complete 13621,1 --1/1 Captain Elendilad slain
     .mob Captain Elendilad
     .target Gorat
     .target Spirit of Gorat
+    .use 45023
 step
     .goto 1413/1,-2251.30005,1236.80005
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kadrak|r
@@ -175,14 +180,14 @@ step
 step
     #loop
     .goto 1440/1,-2385.00000,1520.30005,0
-    .waypoint 1440/1,-2437.60010,1554.80005,30,0
-    .waypoint 1440/1,-2417.50000,1496.09998,30,0
-    .waypoint 1440/1,-2385.00000,1520.30005,30,0
-    .waypoint 1440/1,-2373.19995,1467.50000,30,0
-    .waypoint 1440/1,-2383.90015,1405.90002,30,0
-    .waypoint 1440/1,-2323.00000,1496.50000,30,0
+    .goto 1440/1,-2437.60010,1554.80005,30,0
+    .goto 1440/1,-2417.50000,1496.09998,30,0
+    .goto 1440/1,-2385.00000,1520.30005,30,0
+    .goto 1440/1,-2373.19995,1467.50000,30,0
+    .goto 1440/1,-2383.90015,1405.90002,30,0
+    .goto 1440/1,-2323.00000,1496.50000,30,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Demoralized Peons|r
-    >>Follow and protect them from |cRXP_ENEMY_Ashenvale Stalkers|r as they start cutting wood. Loot the |cRXP_LOOT_Freshly Cut Wood|r on the ground as it appears
+    >>|cRXP_WARN_Follow and protect them from|r |cRXP_ENEMY_Ashenvale Stalkers|r |cRXP_WARN_as they start cutting wood. Loot the|r |cRXP_LOOT_Freshly Cut Wood|r |cRXP_WARN_on the ground as it appears|r
     .complete 13640,1 --5/5 Freshly Cut Wood
     .skipgossip
     .target Demoralized Peon
@@ -200,6 +205,7 @@ step
     .accept 2 >> Accept Sharptalon's Claw
     .unitscan Sharptalon
     .use 16305
+    .maxlevel 24
 step
     #loop
     .goto 1440/1,-2566.90015,1799.70007,0
@@ -221,8 +227,14 @@ step
     .target Gorka
 step
     .goto 63,72.93,80.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorka|r
-    >>|cRXP_WARN_Make sure you are not mounted|r
+    .gossipoption 111661 >>Talk to |cRXP_FRIENDLY_Gorka|r
+    .timer 79,Crisis at Splintertree RP
+    .target Gorka
+    .isOnQuest 13653
+step
+    .goto 63,72.93,80.44
+    >>Return to Mor'shan Ramparts with |cRXP_FRIENDLY_Gorka|r
+    >>|cRXP_WARN_Make sure you are not mounted!|r
     .complete 13653,1 --1/1 Gorka accompanied to Mor'shan Ramparts
     .target Gorka
     .skipgossip
@@ -236,9 +248,11 @@ step
     --VV Timer
 step
     .goto 10,42.71,14.95
-    .gossipoption 111669 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kadrak|r to have him fly you to Splintertree Post
+    .gossipoption 111656 >>Talk to |cRXP_FRIENDLY_Kadrak|r to travel to Splintertree Post
+    .timer 110,To the Rescue! RP
     >>|cRXP_WARN_This quest may be bugged! Skip this step if this is the case|r
     .target Kadrak
+    .isOnQuest 13712
 step
     .goto 63,73.59,62.19
     >>Arrive in Splintertree Post
@@ -330,7 +344,7 @@ step
     .waypoint 63,80.768,64.565,30,0
     .waypoint 63,80.654,67.347,30,0
     .waypoint 63,81.829,69.984,30,0
-    .use 45478 >>Use the |T237030:0|t[Reinforced Canister] on the green fires
+    .use 45478 >>|cRXP_WARN_Use the|r |T237030:0|t[Reinforced Canister] |cRXP_WARN_on the green fires|r
     .complete 13730,1 --7/7 Fel Fires Siphoned
     .isQuestTurnedIn 13712
 step
@@ -358,9 +372,10 @@ step
     .accept 2 >> Accept Sharptalon's Claw
     .unitscan Sharptalon
     .use 16305
+    .maxlevel 24
 step
     #completewith next
-    >>Finish killing |cRXP_ENEMY_Ashenvale Outrunners|r
+    >>Kill |cRXP_ENEMY_Ashenvale Outrunners|r
     >>|cRXP_WARN_They are stealthed near the trees|r
     .complete 6503,1 --9/9 Ashenvale Outrunners Killed
     .unitscan Ashenvale Outrunner
@@ -368,15 +383,16 @@ step
     #label DorDanilDen
     .goto 63,75.66,75.32,20 >>Enter the The Dor'Danil Barrow Den
     .isQuestTurnedIn 13712
+    .isOnQuest 13805
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Night Elf Ghosts|r
+    >>Kill |cRXP_ENEMY_Severed Keepers|r and |cRXP_ENEMY_Severed Druids|r
     .complete 13801,1 --15/15 Night Elf Ghosts Slain
     .mob Severed Druid
     .mob Severed Keeper
 step
     .goto 63,75.52,74.20
-    .use 45683 >> Use the |T134840:0|t[Tainted Blood of the Kaldorei] at the centre of the cave
+    .use 45683 >> |cRXP_WARN_Use the|r |T134840:0|t[Tainted Blood of the Kaldorei] |cRXP_WARN_at the centre of the cave|r
     .complete 13805,1 --1/1 Forest Heart Corrupted
     .isQuestTurnedIn 13712
 step
@@ -390,7 +406,7 @@ step
     .waypoint 63,77.359,75.949,15,0
     .waypoint 63,76.722,75.943,15,0
     .waypoint 63,77.401,74.644,15,0
-    >>Finish killing |cRXP_ENEMY_Night Elf Ghosts|r
+    >>Finish killing |cRXP_ENEMY_Severed Keepers|r and |cRXP_ENEMY_Severed Druids|r
     .complete 13801,1 --15/15 Night Elf Ghosts Slain
     .mob Severed Druid
     .mob Severed Keeper
@@ -402,6 +418,7 @@ step
     .accept 2 >> Accept Sharptalon's Claw
     .unitscan Sharptalon
     .use 16305
+    .maxlevel 24
 step
     #loop
     .goto 63,74.504,72.562,0
@@ -436,6 +453,7 @@ step
     .unitscan Sharptalon
     .use 16305
     .isQuestTurnedIn 13712
+    .maxlevel 24
 step << skip
     #completewith next
     .hs >> Hearth to Splintertree Post
@@ -457,10 +475,27 @@ step
     .target Kadrak
     .isQuestTurnedIn 13712
 step
+    #questguide
+    .goto 63,73.61,62.12
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kadrak|r
+    .turnin 13805 >>Turn in Pierce Their Heart!
+    .accept 13808 >>Accept Mission Improbable
+    .accept 13848 >>Accept Bad News Bear-er
+    .target Kadrak
+    .isQuestTurnedIn 13712
+step
     .goto 63,73.32,62.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Splintertree Demolisher|r
     .turnin 13730 >>Turn in Playing With Felfire
     --.accept 13751 >>Accept Tell No One! -- Optional skip
+    .target Splintertree Demolisher
+    .isQuestTurnedIn 13712
+step
+    #questguide
+    .goto 63,73.32,62.17
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Splintertree Demolisher|r
+    .turnin 13730 >>Turn in Playing With Felfire
+    .accept 13751 >>Accept Tell No One!
     .target Splintertree Demolisher
     .isQuestTurnedIn 13712
 step
@@ -493,64 +528,75 @@ step
 
     --Could go straight to Zoram Strand from here. The 13751 chain is bad xp/hr (13751/13797/13798/13841/13842)
 
-step << skip
+step
+    #questguide
     .goto 63,72.20,57.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Durak|r inside the cave
     .turnin 13751 >>Turn in Tell No One!
     .accept 13797 >>Accept Dirty Deeds
     .target Durak
-step << skip
+step
+    #questguide
     .goto 63,72.62,58.34
     >>Loot |cRXP_PICK_Fresh Rubble|r scattered throughout the cave for |cRXP_LOOT_Chunks of Ore|r
     .complete 13797,1 --10/10 Chunk of Ore
-step << skip
+step
+    #questguide
     .goto 63,72.20,57.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Durak|r
     .turnin 13797 >>Turn in Dirty Deeds
     .accept 13798 >>Accept Rain of Destruction
     .target Durak
-step << skip
+step
+    #questguide
     .goto 63,74.09,62.92
-    .use 45598 >> Climb the tower and aim the |T134569:0|t[Accursed Ore] at |cRXP_ENEMY_Raging Ancients|r and |cRXP_ENEMY_Attacking Elves|r
+    .use 45598 >> |cRXP_WARN_Climb the tower and aim the|r |T134569:0|t[Accursed Ore] |cRXP_WARN_at|r |cRXP_ENEMY_Raging Ancients|r |cRXP_WARN_and|r |cRXP_ENEMY_Attacking Elves|r
     .complete 13798,2 --5/5 Raging Ancients Slain
     .complete 13798,1 --30/30 Attacking Elves Slain
     .mob Raging Ancients
     .mob Ashenvale Assailant
     .mob Ashenvale Bowman
     --VV Dogshit quest, item has 15sec cd and must be used like 10+ times. But good quest rewards
-step << skip
+step
+    #questguide
     .goto 63,72.18,57.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Durak|r
     .turnin 13798 >>Turn in Rain of Destruction
     .target Durak
-step << skip
+step
+    #questguide
     .goto 63,73.34,62.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Splintertree Demolisher|r
     .accept 13841 >>Accept All Apologies
     .target Splintertree Demolisher
     .isQuestTurnedIn 13798
-step << skip
+step
+    #questguide
     .goto 63,82.55,53.63
     .use 45710 >>|cRXP_WARN_Use your|r |T133639:0|t[Secret Signal Powder] |cRXP_WARN_at the Smoldering Brazier|r
     .complete 13808,1 --1/1 Smoldering Brazier lit
-step << skip
+step
+    #questguide
     .goto 63,82.54,53.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krokk|r
     .turnin 13808 >>Turn in Mission Improbable
     .accept 13815 >>Accept Making Stumps
     .accept 13865 >>Accept Wet Work
     .target Krokk
-step << skip
+step
+    #questguide
     #completewith ChopSomeTrees
     >>Kill |cRXP_ENEMY_Ashenvale Scouts|r
     .complete 13865,4 --12/12 Ashenvale Scouts defeated
     .mob Ashenvale Scout
-step << skip
+step
+    #questguide
     #completewith next
-    .use 45807 >> Use your |T132399:0|t[Splintertree Axe] to chop down |cRXP_FRIENDLY_Ashenvale Oaks|r
+    .use 45807 >> |cRXP_WARN_Use your|r |T132399:0|t[Splintertree Axe] |cRXP_WARN_to chop down|r |cRXP_FRIENDLY_Ashenvale Oaks|r
     .complete 13815,1 --6/6 Ashenvale Oaks Chopped Down
     .target Ashenvale Oak
-step << skip
+step
+    #questguide
     >>Kill |cRXP_ENEMY_Endolar|r, |cRXP_ENEMY_Arminon|r and |cRXP_ENEMY_Dorinar|r
     .goto 63,85.46,56.04
     .complete 13865,1 --1/1 Protector Endolar slain
@@ -561,13 +607,15 @@ step << skip
     .mob Protector Endolar
     .mob Protector Arminon
     .mob Protector Dorinar
-step << skip
+step
+    #questguide
     #label ChopSomeTrees
     .goto 63,86.51,54.67
-    .use 45807 >> Use your |T132399:0|t[Splintertree Axe] to chop down |cRXP_FRIENDLY_Ashenvale Oaks|r
+    .use 45807 >> |cRXP_WARN_Use your|r |T132399:0|t[Splintertree Axe] |cRXP_WARN_to chop down|r |cRXP_FRIENDLY_Ashenvale Oaks|r
     .complete 13815,1 --6/6 Ashenvale Oaks Chopped Down
     .target Ashenvale Oak
-step << skip
+step
+    #questguide
     .goto 63,85.53,56.74
     >>Finish killing |cRXP_ENEMY_Ashenvale Scouts|r
     .complete 13865,4 --12/12 Ashenvale Scouts defeated
@@ -575,23 +623,27 @@ step << skip
 
     --Quest below (26449) not worth, too much travel
 
-step << skip
+step
+    #questguide
     #completewith next
     .subzone 435 >> Travel to Demon Fall Canyon
-step << skip
+step
+    #questguide
     .goto 63,89.75,76.72
     >>Kill |cRXP_ENEMY_Gorgannon|r. Loot him for his |cRXP_LOOT_Blade|r
     .complete 26449,1 --1/1 Gorgannon's Flaming Blade
     .mob Gorgannon
     .isQuestTurnedIn 26447
-step << skip
+step
+    #questguide
     .goto 63,78.46,83.89
     >>Kill |cRXP_ENEMY_Diathorus the Seeker|r. Loot him for his |cRXP_LOOT_Spear|r.
     >>|cRXP_WARN_He is located across from the first bridge you run into after entering the cave|r
     .complete 26449,2 --1/1 Seeker's Fel Spear
     .mob Diathorus the Seeker
     .isQuestTurnedIn 26447
-step << skip
+step
+    #questguide
     .goto 63,82.54,53.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krokk|r
     .use 45710 >>|cRXP_WARN_Use your|r |T133639:0|t[Secret Signal Powder] |cRXP_WARN_at the Smoldering Brazier to summon|r |cRXP_FRIENDLY_Krokk|r
@@ -599,67 +651,84 @@ step << skip
     .turnin 13865 >>Turn in Wet Work
     .accept 13870 >>Accept As Good as it Gets
     .target Krokk
-step << skip
+step
+    #questguide
     .goto 63,90.94,58.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Overseer Gorthak|r at the Warsong Lumber Camp
     .turnin 13870 >>Turn in As Good as it Gets
     .accept 13871 >>Accept Security!
     .target Overseer Gorthak
-step << skip
+step
+    #questguide
     .goto 63,89.97,59.10
     >>Run outside and turn left. Kill the |cRXP_ENEMY_Assassin|r that jumps you
     .complete 13871,1 --1/1 Kaldorei Assassin's Head
     .unitscan Kaldorei Assassin
-step << skip
+step
+    #questguide
     .goto 63,90.94,58.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Overseer Gorthak|r
     .turnin 13871 >>Turn in Security!
     .target Overseer Gorthak
-step << skip
+step
+    #questguide
     .goto 63,90.75,58.16
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guardian Menerin|r
     .accept 13873 >>Accept Sheelah's Last Wish
     .target Guardian Menerin
-step << skip
+step
+    #questguide
     .goto 63,89.60,48.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guardian Gurtar|r
     .turnin 13873 >>Turn in Sheelah's Last Wish
     .accept 13875 >>Accept Gurtar's Request
     .target Guardian Gurtar
-step << skip
+step
+    #label Bloodcups
+    #questguide
     .goto 63,73.29,60.22
-    .use 46316 >>Loot |cRXP_PICK_Thorned Bloodcups|r from the ground. Once you have 8, use the |T134892:0|t[Orc-Hair Braid] to create a |cRXP_LOOT_Bloodcup Braid|r
+    >>Loot |cRXP_PICK_Thorned Bloodcups|r from the ground
     >>|cRXP_WARN_Many can be found along the road toward Splintertree Post|r
     .collect 46315,8,13875,1 --Thorned Bloodcup (8)
+step
+    #questguide
+    #requires Bloodcups
+    .use 46316 >>Use the |T134892:0|t[Orc-Hair Braid] to create a |cRXP_LOOT_Bloodcup Braid|r
     .complete 13875,1 --1/1 Bloodcup Braid
-step << skip
+step
+    #questguide
     .goto 63,73.34,62.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Splintertree Demolisher|r
     .turnin 13875 >>Turn in Gurtar's Request
     .target Splintertree Demolisher
-step << skip
+step
+    #questguide
     .goto 63,73.15,60.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valusha|r
     .turnin 26449 >>Turn in Never Again!
     .target Valusha
     .isQuestComplete 26447
-step << skip
+step
+    #questguide
     .goto 63,73.74,61.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Locke Okarr|r
     .accept 13806 >>Accept Demon Duty
     .target Locke Okarr
     .isQuestTurnedIn 26449
-step << skip
+step
+    #questguide
     .goto 63,73.86,62.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pixel|r
     .accept 6441 >>Accept Satyr Horns
     .target Pixel
     .isQuestTurnedIn 26449
-step << skip
+step
+    #questguide
     #completewith next
     .subzone 430 >>Travel north to Satyrnaar
     .isQuestTurnedIn 26449
-step << skip
+step
+    #questguide
     #completewith next
     >>Kill |cRXP_ENEMY_Satyrs|r. Loot them for their |cRXP_LOOT_Horns|r
     .complete 6441,1 --16/16 Satyr Horns
@@ -668,12 +737,14 @@ step << skip
     .mob Bleakheart Trickster
     .mob Bleakheart Shadowstalker
     .isQuestTurnedIn 26449
-step << skip
+step
+    #questguide
     .goto 63,79.48,50.21
     >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the purple |cRXP_FRIENDLY_Ritual Gems|r
     .complete 13806,1 --12/12 Demon Portals Interrupted
     .isQuestTurnedIn 26449
-step << skip
+step
+    #questguide
     .goto 63,81.69,49.40
     >>Finish killing |cRXP_ENEMY_Satyrs|r. Loot them for their |cRXP_LOOT_Horns|r
     .complete 6441,1 --16/16 Satyr Horns
@@ -682,21 +753,36 @@ step << skip
     .mob Bleakheart Trickster
     .mob Bleakheart Shadowstalker
     .isQuestTurnedIn 26449
-step << skip
+step
+    #questguide
     .goto 63,73.87,62.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pixel|r
     .turnin 6441 >>Turn in Satyr Horns
     .target Pixel
-step << skip
+step
+    #questguide
     .goto 63,73.78,61.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Locke Okarr|r
     .turnin 13806 >>Turn in Demon Duty
     .target Locke Okarr
     .isQuestTurnedIn 26449
 step
+    #xprate >1.19
+    .maxlevel 24,AshenvaleEnd
     .goto 63,73.19,61.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vhulgra|r
-    .gossipoption 37541,2 >> Fly to Zoram Strand
+    .gossipoption 111682 >> Fly to Zoram Strand
+    .timer 165, Zoram Strand, Ashenvale
+    .target Vhulgra
+    .subzoneskip 414
+    .isQuestTurnedIn 13712
+step
+    #xprate <1.2
+    .maxlevel 25,AshenvaleEnd
+    .goto 63,73.19,61.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vhulgra|r
+    .gossipoption 111682 >> Fly to Zoram Strand
+    .timer 165, Zoram Strand, Ashenvale
     .target Vhulgra
     .subzoneskip 414
     .isQuestTurnedIn 13712
@@ -778,7 +864,7 @@ step
     .goto 63,11.69,35.36,30 >> Travel to the forge in Zoram'Gar Outpost
 step
     .goto 63,11.69,35.36
-    .use 46365 >>Use the |T237338:0|t[Mystlash Hydra Blubber] to create |cRXP_LOOT_Mystlash Hydra Oil|r
+    .use 46365 >>|cRXP_WARN_Use the|r |T237338:0|t[Mystlash Hydra Blubber] |cRXP_WARN_to create|r |cRXP_LOOT_Mystlash Hydra Oil|r
     >>|cRXP_WARN_You need to be at the forge in Zoram'Gar Outpost to do this|r
     .collect 46366,1,13890,1 --Mystlash Hydra Oil (1)
 step
@@ -1011,7 +1097,7 @@ step
     .target Mitsuwa
 step
     .goto 63,38.47,44.22
-    .use 46701 >>Use |T133711:0|t[Tweedle's Improvised Explosive] at the broken wagon
+    .use 46701 >>|cRXP_WARN_Use|r |T133711:0|t[Tweedle's Improvised Explosive] |cRXP_WARN_at the broken wagon|r
     .complete 13944,1 --1/1 Broken Wagon exploded
 step
     .goto 63,38.00,42.84
@@ -1048,41 +1134,49 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tweedle|r
     .accept 13974 >>Accept Tweedle's Tiny Parcel
     .target Tweedle
-step << skip
+step
+    #questguide
     .goto 63,38.79,43.33
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Broyk|r
     .accept 13879 >>Accept Thunder Peak
     .target Broyk
-step << skip
+step
+    #questguide
     #completewith next
     .goto 63,52.08,56.50,50 >>Travel to Thunder Peak
-step << skip
+step
+    #questguide
     .goto 63,52.08,56.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stikwad|r
     .turnin 13879 >>Turn in Thunder Peak
     .target Stikwad
-step << skip
+step
+    #questguide
     .goto 63,52.08,56.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arctanus|r
     .accept 13884 >>Accept Put Out The Fire
     .target Arctanus
-step << skip
+step
+    #questguide
     .goto 63,52.31,56.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Core|r
     .accept 13880 >>Accept Hot Lava
     .target Core
-step << skip
+step
+    #questguide
     #completewith LavaRagers
     .goto 63,52.08,56.71,0
     +|cRXP_WARN_If you lose your|r |cRXP_FRIENDLY_Freezing Surger|r|cRXP_WARN_, talk to|r |cRXP_FRIENDLY_Arctanus|r |cRXP_WARN_again to get another|r
     .skipgossipid 111688
     .target Arctanus
-step << skip
+step
+    #questguide
     #completewith next
     >>Kill |cRXP_ENEMY_Lava Ragers|r
     .complete 13884,1 --10/10 Lava Rager slain
     .mob Lava Rager
-step << skip
+step
+    #questguide
     #loop
     .goto 1440/1,-1165.50000,2678.50000,0
     .waypoint 1440/1,-1189.80005,2600.30005,30,0
@@ -1092,9 +1186,10 @@ step << skip
     .waypoint 1440/1,-1247.30005,2860.00000,30,0
     .waypoint 1440/1,-1300.80005,2733.19995,30,0
     .waypoint 1440/1,-1323.30005,2631.60010,30,0
-    .use 46352 >> Use the |T237588:0|t[Gift of the Earth] on |cRXP_PICK_Lava Fissures|r
+    .use 46352 >> |cRXP_WARN_Use the|r |T237588:0|t[Gift of the Earth] |cRXP_WARN_on|r |cRXP_PICK_Lava Fissures|r
     .complete 13880,1 --8/8 Lava fissures filled
-step << skip
+step
+    #questguide
     #label LavaRagers
     #loop
     .goto 1440/1,-1165.50000,2678.50000,0
@@ -1108,33 +1203,39 @@ step << skip
     >>Finish killing |cRXP_ENEMY_Lava Ragers|r
     .complete 13884,1 --10/10 Lava Rager slain
     .mob Lava Rager
-step << skip
+step
+    #questguide
     .goto 63,52.08,56.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arctanus|r
     .turnin 13884 >>Turn in Put Out The Fire
     .target Arctanus
-step << skip
+step
+    #questguide
     .goto 63,52.32,56.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Core|r
     .turnin 13880 >>Turn in Hot Lava
     .target Core
-step << skip
+step
+    #questguide
     .goto 63,52.34,56.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Vortex|r
     .accept 13888 >>Accept Vortex
     .target The Vortex
-step << skip
+step
+    #questguide
     .goto 63,52.34,56.79
     .gossipoption 111689 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Vortex|r again to start the encounter with |cRXP_ENEMY_Lord Magmathar|r
     .target The Vortex
-step << skip
+step
+    #questguide
     .goto 63,49.19,39.86
     >>Kill |cRXP_ENEMY_Lord Magmathar|r
     >>|cRXP_WARN_Use|r |T252174:0|t[Sky Lightning] |cRXP_WARN_and|r |T236154:0|t[Vortex Vengeance] |cRXP_WARN_on cooldown|r
     >>|cRXP_WARN_Use|r |T135833:0|t[Extinguish Flames] |cRXP_WARN_when inflicted with|r |T135817:0|t[Lordly Immolate]
     .complete 13888,1 --1/1 Lord Magmathar slain
     .mob Lord Magmathar
-step << skip
+step
+    #questguide
     .goto 63,52.09,56.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stikwad|r
     .turnin 13888 >>Turn in Vortex
@@ -1226,7 +1327,7 @@ step
     .target Senani Thunderheart
 step
     .goto 63,56.37,63.54
-    .use 16972 >> Use the |T237588:0|t[Gift of the Earth] on the Totem Mound and protect it from incoming |cRXP_ENEMY_Furbolgs|r
+    .use 16972 >> |cRXP_WARN_Use the|r |T237588:0|t[Gift of the Earth] |cRXP_WARN_on the Totem Mound and protect it from incoming|r |cRXP_ENEMY_Furbolgs|r
     >>Kill |cRXP_ENEMY_Chief Murgut|r once he appears. Loot the |cRXP_PICK_Basket|r for |cRXP_LOOT_Murgut's Totem|r
     .complete 6621,1 --1/1 Murgut's Totem
     .mob Chief Murgut
@@ -1270,7 +1371,7 @@ step
 step
     #completewith next
     >>Kill |cRXP_ENEMY_Ashenvale Assassins|r
-    .use 46776 >>|cRXP_WARN_They are stealthed! Use |T133023:0|t[Jinx's Goggles] to detect them|r
+    .use 46776 >>|cRXP_WARN_They are stealthed! Use|r |T133023:0|t[Jinx's Goggles] |cRXP_WARN_to detect them|r
     .complete 13980,1 --12/12 Ashenvale Assassin slain
     .unitscan Ashenvale Assassin
 step
@@ -1299,7 +1400,7 @@ step
     .waypoint 1440/1,-685.79999,2128.40015,40,0
     .waypoint 1440/1,-726.40002,2037.50000,40,0
     >>Finish killing |cRXP_ENEMY_Ashenvale Assassins|r
-    .use 46776 >>|cRXP_WARN_They are stealthed! Use |T133023:0|t[Jinx's Goggles] to detect them|r
+    .use 46776 >>|cRXP_WARN_They are stealthed! Use|r |T133023:0|t[Jinx's Goggles] |cRXP_WARN_to detect them|r
     .complete 13980,1 --12/12 Ashenvale Assassin slain
     .unitscan Ashenvale Assassin
 step
@@ -1408,6 +1509,13 @@ step
     .target Mastok Wrilehiss
     .itemcount 16408,1
 step
+    #optional
+    #label AshenvaleEnd
+step
+    #optional
+    #sticky
+    .abandon 2 >>Abandon Sharptalon's Claw as it won't get turned in anymore
+step
     .goto 63,73.18,61.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vhulgra|r
     .fly Orgrimmar >>Fly to Orgrimmar
@@ -1483,56 +1591,57 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nahu|r
     .trainer >> Train your class spells
     .target Nahu Ragehoof
-step
-    .goto 85,51.31,56.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bort|r
-    .turnin 26416 >>Turn in Well, Come to the Jungle
-    .accept 26417 >>Accept Northern Stranglethorn: The Fallen Empire
-    .target Bort
-    --STV breadcrumb quest
+
 
     --Next section is flying back only for final Ashenvale quest, not worth xp wise. Nice bow reward for hunters though..
 
-step << skip
+step
+    #questguide
     .goto 85,49.21,72.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eitrigg|r inside Grommash Hold
     .turnin 13841 >>Turn in All Apologies
     .accept 13842 >>Accept Dread Head Redemption
     .target Eitrigg
     .isQuestTurnedIn 13798
-step << skip
+step
+    #questguide
     .goto 85,53.62,78.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Gryshka|r
     .home >>Set your Hearthstone to Orgrimmar
     .target Innkeeper Gryshka
     .isQuestTurnedIn 13841
-step << skip
+step
+    #questguide
     .goto 85,49.64,59.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doras|r
     .fly Splintertree Post >>Fly to Splintertree Post
     .target Doras
     .zoneskip Ashenvale
     .isQuestTurnedIn 13841
-step << skip
+step
+    #questguide
     .goto 63,72.20,57.66
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Durak|r inside the cave
     .complete 13842,1 --1/1 Durak Persuaded
     .skipgossip
     .target Durak
     .isQuestTurnedIn 13841
-step << skip
+step
+    #questguide
     .goto 63,72.22,56.76
     >>Follow |cRXP_ENEMY_Durak|r until he becomes hostile, then kill him
     .complete 13842,2 --1/1 Durak slain
     .mob Durak
     .isQuestTurnedIn 13841
-step << skip
+step
+    #questguide
     .hs >> Hearth to Orgrimmar
     .use 6948
     .cooldown item,6948,>2
     .zoneskip Orgrimmar
     .isQuestTurnedIn 13841
-step << skip
+step
+    #questguide
     .goto 63,73.18,61.58
     .fly Orgrimmar >>Fly to Orgrimmar
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vhulgra|r
@@ -1540,12 +1649,26 @@ step << skip
     .cooldown item,6948,<0
     .zoneskip Orgrimmar
     .isQuestTurnedIn 13841
-step << skip
+step
+    #questguide
     .goto 85,49.20,72.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eitrigg|r
     .turnin 13842 >>Turn in Dread Head Redemption
     .target Eitrigg
     .isQuestTurnedIn 13841
-
-
+step
+    .goto 85,51.31,56.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bort|r
+    .turnin 26416 >>Turn in Well, Come to the Jungle
+    .accept 26417 >>Accept Northern Stranglethorn: The Fallen Empire
+    .target Bort
+    .isOnQuest 26416
+    --STV breadcrumb quest
+step
+    #optional
+    .goto 85,51.31,56.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bort|r
+    .accept 26417 >>Accept Northern Stranglethorn: The Fallen Empire
+    .target Bort
+    .isQuestTurnedIn 26416
     ]])

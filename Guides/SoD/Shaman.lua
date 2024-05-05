@@ -2352,14 +2352,6 @@ step
     .collect 213451,1
     .mob Flameseer Dubelen
 step
-    #completewith next
-    .zone Orgrimmar >>Travel to |cFFfa9602Orgrimmar|r
-step
-    .goto Orgrimmar,38.94,38.39
-    .gossip 4047 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zor Lonetree|r and select the dialogoption
-    -- .gossipoption --x insert id
-    .target Zor Lonetree
-step
     .goto 1443,38.23,61,25,0
     .goto 1443,37.13,60.41,25,0
     .goto 1443,35.38,58.25,25,0
@@ -2393,6 +2385,14 @@ step
     >>Click on a |cRXP_PICK_Blue Crystal|r amongst the purple crystals to collect |T134088:0|t[Tear of Theradras]
     >>|cRXP_WARN_Be careful as enemies in this area are elite and they can stun.|r |cFFFF0000you are likely going to die multiple times|r
     .collect 213552,1
+step
+    #completewith next
+    .zone Orgrimmar >>Travel to |cFFfa9602Orgrimmar|r
+step
+    .goto Orgrimmar,38.94,38.39
+    .gossip 4047 >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zor Lonetree|r and select the dialogoption
+    -- .gossipoption --x insert id
+    .target Zor Lonetree
 step
     #completewith next
     .zone Thunder Bluff >>Travel to |cFFfa9602Thunder Bluff|r

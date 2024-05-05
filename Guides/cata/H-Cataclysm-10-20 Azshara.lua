@@ -747,6 +747,7 @@ step
     .complete 14423,1 --Clubnik's Dozer Exorcised (1)
     .use 49350
     .target Clubnik's Dozer
+    .isOnQuest 14423
 step
     .goto 1447/1,-5012.00000,2915.30005
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Custer|r
@@ -789,10 +790,12 @@ step
     .goto 1447/1,-4993.50000,2936.90015,5,0
     .goto 1447/1,-4998.70020,2947.10010,3 >>Take the lift up the platform
 step
+    .goto Azshara,29.49,66.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Bilgewater Rocket-jockey|r
-    .goto 76,50.411,74.293,80 >>Take the rocketride to the Southern Rocketway Terminus
-    .skipgossipid 112430
+    .gossipoption 112430 >>Take the rocketride to the Southern Rocketway Terminus
+    .timer 41,Southern Rocketway Terminus
     .target Bilgewater Rocket-jockey
+    .isOnQuest 14424
 step
     .goto 76,50.411,74.293
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Greely|r
@@ -2118,10 +2121,10 @@ step
     .goto 1447/1,-5718.10010,4477.89990,3 >>Take the lift up the platform
 step
     #xprate <1.2
-    .goto 76,42.526,24.562,5,0
+    .goto 76,42.526,24.562
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Bilgewater Rocket-jockey|r
-    .goto 76,66.24,20.7,80 >>Take the rocketride to the Northern Rocketway Terminus
-    .skipgossipid 112443
+    .gossipoption 112443 >>Take the rocketride to the Northern Rocketway Terminus
+    .timer 51,Northern Rocketway Terminus
     .target Bilgewater Rocket-jockey
     .isOnQuest 14391
 step
@@ -2130,10 +2133,10 @@ step
     .goto 76,25.93,49.64,7 >>Travel to the top of the Rocketway platform
 step
     #xprate >1.19
-    .goto 76,25.93,49.64,5,0
+    .goto 76,25.93,49.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Bilgewater Rocket-jockey|r
-    .goto 76,66.24,20.7,80 >>Take the rocketride to the Northern Rocketway Terminus
-    .skipgossipid 112442
+    .gossipoption 112442 >>Take the rocketride to the Northern Rocketway Terminus
+    .timer 83,Northern Rocketway Terminus 
     .target Bilgewater Rocket-jockey
     .isOnQuest 14391
 step
@@ -2490,76 +2493,76 @@ step
     .train 34090,1 --Expert Riding
     .train 34091,1 --Artisan Riding
     .train 90265,1 --Master Riding
-step << Orc
+step << Orc !Warlock
     .goto 1454/1,-4569.50000,2095.10010
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ogunaro Wolfrunner|r
 	.vendor >>|cRXP_BUY_Buy a|r |T132224:0|t[Wolf] |cRXP_BUY_from him if you do not have a mount in your collection yet|r
 	.target Ogunaro Wolfrunner
 	.mountcount 75-150,<1
     .xp <20,1
-step << Goblin
+step << Goblin !Warlock
     .goto 1454/1,-4132.89990,1483.09998
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kall Worthaton|r
 	.vendor >>|cRXP_BUY_Buy a|r |T134237:0|t[Trike] |cRXP_BUY_from him if you do not have a mount in your collection yet|r
 	.target Kall Worthaton
 	.mountcount 75-150,<1
     .xp <20,1
-step << !Orc !Goblin
+step << !Orc !Goblin !Warlock !Paladin
     .goto 1454/1,-4439.39990,1573.30005
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryshka|r
     .home >>Set your hearthstone to Orgrimmar
     .target Gryshka
 	.mountcount 75-150,<1
-step << Troll
+step << Troll !Warlock
     #completewith next
     .goto 1454/1,-4370.00000,1799.90002
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doras|r
     .fly Sen'Jin Village >>Fly to Sen'Jin Village
     .target Doras
     .subzoneskip 367
-step << Troll
+step << Troll !Warlock
     .goto 1411/1,-4882.50000,-857.90002
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zjolnir|r
 	.vendor >>|cRXP_BUY_Buy a|r |T132253:0|t[Raptor] |cRXP_BUY_from him if you do not have a mount in your collection yet|r
 	.target Zjolnir
 	.mountcount 75-150,<1
     .xp <20,1
-step << Undead/BloodElf
+step << Undead/BloodElf !Warlock
     .goto 1454/1,-4390.80029,1840.09998
     #completewith next << Undead
     #completewith SilvermoonPort << BloodElf
     .zone Tirisfal Glades >>Take the zeppelin to Tirisfal Glades
     .zoneskip Undercity
-step << Undead
+step << Undead !Warlock
     .goto 1420/0,235.70000,2277.60010
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zachariah Post|r
 	.vendor >>|cRXP_BUY_Buy a|r |T132264:0|t[Skeletal Horse] |cRXP_BUY_from him if you do not have a mount in your collection yet|r
 	.target Zachariah Post
 	.mountcount 75-150,<1
     .xp <20,1
-step << BloodElf
+step << BloodElf !Warlock
     #completewith SilvermoonPort
     .goto 18,66.21,1.16,20,0
     .zone Undercity >>Travel to Undercity
-step << BloodElf
+step << BloodElf !Warlock
     #label SilvermoonPort
     .goto 1420/0,269.10001,1804.59998,15,0
     .goto 1420/0,346.60001,1806.00000
     .zone Silvermoon City >>Click the |cRXP_PICK_Orb of Translocation|r to Silvermoon City
     .mountcount 75,<1
-step << BloodElf
+step << BloodElf !Warlock
     #completewith next
     .goto 110,72.396,85.242,12,0
     .goto 1941/0,-4877.20020,7012.10059,15,0
     .zone Eversong Woods >>Exit Silvermoon City
-step << BloodElf
+step << BloodElf !Warlock
     .goto 1941/0,-5096.30029,6844.10059
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Winaestra|r
 	.vendor >>|cRXP_BUY_Buy a|r |T132227:0|t[Hawkstrider] |cRXP_BUY_from her if you do not have a mount in your collection yet|r
 	.target Winaestra
 	.mountcount 75-150,<1
     .xp <20,1
-step << Tauren
+step << Tauren !Paladin
     #completewith next
     .goto 1454/1,-4370.00000,1799.90002
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doras|r
@@ -2567,18 +2570,31 @@ step << Tauren
     .target Doras
     .zoneskip Thunder Bluff
     .zoneskip Mulgore
-step << Tauren
+step << Tauren !Paladin
     #completewith next
     .goto 1456/1,183.30000,-1314.09998,20 >>Take the elevator to exit Thunder Bluff
     .zoneskip Mulgore
-step << Tauren
+step << Tauren !Paladin
     .goto 1412/1,-392.20001,-2280.00000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harb Clawhoof|r
 	.vendor >>|cRXP_BUY_Buy a|r |T132243:0|t[Kodo] |cRXP_BUY_from her if you do not have a mount in your collection yet|r
 	.target Harb Clawhoof
 	.mountcount 75-150,<1
     .xp <20,1
-step << !Orc !Goblin
+step << Warlock
+    .goto 1454,54.49,39.68
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mirket|r
+    .train 5784 >>Train |T136103:0|t[Felsteed]
+    .target Mirket
+    .mountcount 75-150,<1
+step << Paladin
+    .goto 1454/1,-4292.50000,1863.70007
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Atohmo|r
+    .train 34769 >>Train |T136103:0|t[Summon Warhorse] << BloodElf
+    .train 69820 >>Train |T132245:0|t[Summon Sunwalker Kodo] << Tauren
+    .target Sunwalker Atohmo
+    .mountcount 75-150,<1
+step << !Orc !Goblin !Warlock !Paladin
     #completewith next
     .hs >>Hearth to Orgrimmar
     .use 6948
