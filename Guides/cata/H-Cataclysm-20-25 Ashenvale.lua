@@ -767,7 +767,18 @@ step
     .target Locke Okarr
     .isQuestTurnedIn 26449
 step
+    #xprate >1.19
     .maxlevel 24,AshenvaleEnd
+    .goto 63,73.19,61.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vhulgra|r
+    .gossipoption 111682 >> Fly to Zoram Strand
+    .timer 165, Zoram Strand, Ashenvale
+    .target Vhulgra
+    .subzoneskip 414
+    .isQuestTurnedIn 13712
+step
+    #xprate <1.2
+    .maxlevel 25,AshenvaleEnd
     .goto 63,73.19,61.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vhulgra|r
     .gossipoption 111682 >> Fly to Zoram Strand
@@ -1316,7 +1327,7 @@ step
     .target Senani Thunderheart
 step
     .goto 63,56.37,63.54
-    .use 16972 >> |cRXP_WARN_Use th|re |T237588:0|t[Gift of the Earth] |cRXP_WARN_on the Totem Mound and protect it from incoming|r |cRXP_ENEMY_Furbolgs|r
+    .use 16972 >> |cRXP_WARN_Use the|r |T237588:0|t[Gift of the Earth] |cRXP_WARN_on the Totem Mound and protect it from incoming|r |cRXP_ENEMY_Furbolgs|r
     >>Kill |cRXP_ENEMY_Chief Murgut|r once he appears. Loot the |cRXP_PICK_Basket|r for |cRXP_LOOT_Murgut's Totem|r
     .complete 6621,1 --1/1 Murgut's Totem
     .mob Chief Murgut
