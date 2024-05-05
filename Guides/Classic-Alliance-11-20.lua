@@ -804,7 +804,6 @@ RXPGuides.RegisterGuide([[
 -- #displayname 11-16 Darkshore << NightElf/Dwarf Hunter !SoD
 -- #displayname 15-17 Darkshore << !NightElf !Dwarf/!Hunter !SoD
 -- #displayname 13-18 Darkshore << Dwarf Hunter/!NightElf sod
-
 step << NightElf
     .goto Teldrassil,56.25,92.44
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nessa Shadowsong|r
@@ -973,6 +972,49 @@ step << Dwarf Hunter
     >>|cRXP_WARN_Send your pet to attack a |cRXP_ENEMY_Thistle Bear|r. Once your pet is stunned by the |cRXP_ENEMY_Thistle Bear|r, abandon your pet and start taming it|r
     .tame 2163 >>|cRXP_WARN_Cast|r |T132164:0|t[Tame Beast] |cRXP_WARN_on a |cRXP_ENEMY_Thistle Bear|r to tame it|r
     .target Thistle Bear
+step << Warlock
+    #season 2
+    #label ExplorerImpDarkshore
+    #sticky
+    #completewith DarkshoreEnd
+    >>As you're questing cast |T136163:0|t|cRXP_FRIENDLY_[Drain Soul]|r on mobs untill you receive an |T133257:0|t|cRXP_LOOT_Explorer's Soul|r. |cRXP_WARN_Use it to learn how to summon an|r |T236294:0|t|cRXP_FRIENDLY_[Explorer Imp]|r
+    .train 445459 >>|cRXP_WARN_Use|r |T133257:0|t|cRXP_LOOT_Explorer's Soul|r |cRXP_WARN_to learn how to summon an|r |T236294:0|t[|cRXP_FRIENDLY_Explorer Imp|r]
+    .train 445459,1 --Skips if you already have Explorer Imp
+    .train 1120,3 --Skips if you don't have drain soul
+    .use 221978
+step << Warlock/Mage
+    #season 2
+    #requires ExplorerImpDarkshore << Warlock
+    #sticky
+    #completewith DarkshoreEnd
+    #label FelPortalRuneDarkshore
+    >>You are in a zone with |cRXP_FRIENDLY_Fel Portals|r present. If you find one summon your |T236294:0|t[|cRXP_FRIENDLY_Explorer Imp|r] and talk to it while next to a portal to send it on an expedition. After 10-20 minutes it will return with loot and a chance to award you with |T134419:0|t[|cRXP_FRIENDLY_Rune of the Felguard|r] << Warlock
+    >>You are in a zone with |cRXP_FRIENDLY_Fel Portals|r present. If you find one close it using a |T134945:0|t[|cRXP_LOOT_Scroll of Spatial Mending|r]. This will award you with |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r] << Mage
+    >>|cRXP_WARN_Be on the lookout for the portals untill you get the rune|r
+    .collect 221499,1 << Warlock --rune of the felguard
+    .collect 223147,1 << Mage --Spell Notes: Balefire Bolt
+    .itemcount 220792,1 << Mage --Skips if you don't have a Scroll of Spatial Mending
+    .use 223148 << Warlock --Otherworldy Treasure
+    .use 220792 << Mage 
+    .train 428878,1 << Mage
+    .train 427733,1 << Warlock
+    .train 1120,3 << Warlock --Skips if you don't have drain soul
+    .unitscan Fel Sliver
+    .unitscan Fel Crack
+    .unitscan Fel Tear
+    .unitscan Fel Scar
+    .unitscan Fel Rift
+step << Warlock/Mage
+    #season 2
+    #requires FelPortalRuneDarkshore
+    #sticky
+    #completewith DarkshoreEnd
+    .itemcount 221499,1 << Warlock --Rune of the Felguard
+    .itemcount 223147,1 << Mage --Spell Notes: Balefire Bolt
+    .train 427733 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Felguard|r] |cRXP_WARN_to learn|r |T136216:0|t[Summon Felguard] << Warlock
+    .train 428878 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt] << Mage
+    .use 221499 << Warlock
+    .use 223147 << Mage
 step
     #sticky
     #label BuzzBox1
@@ -3666,6 +3708,49 @@ step
     .use 12346 >>|cRXP_WARN_Use the|r |T133748:0|t[Empty Cleansing Bowl] |cRXP_WARN_at the|r |cRXP_PICK_Auberdine Moonwell|r
     .collect 12347,1,4763,1
     .isOnQuest 4763
+step << Warlock
+    #season 2
+    #sticky
+    #completewith TravelMenethilNoDMBoat
+    #label ExplorerImpDarkshoreTwo
+    >>As you're questing cast |T136163:0|t|cRXP_FRIENDLY_[Drain Soul]|r on mobs untill you receive an |T133257:0|t|cRXP_LOOT_Explorer's Soul|r. |cRXP_WARN_Use it to learn how to summon an|r |T236294:0|t|cRXP_FRIENDLY_[Explorer Imp]|r
+    .train 445459 >>|cRXP_WARN_Use|r |T133257:0|t|cRXP_LOOT_Explorer's Soul|r |cRXP_WARN_to learn how to summon an|r |T236294:0|t[|cRXP_FRIENDLY_Explorer Imp|r]
+    .train 445459,1 --Skips if you already have Explorer Imp
+    .train 1120,3 --Skips if you don't have drain soul
+    .use 221978
+step << Warlock/Mage
+    #season 2
+    #requires ExplorerImpDarkshoreTwo << Warlock
+    #sticky
+    #completewith TravelMenethilNoDMBoat
+    #label FelPortalRuneDarkshore
+    >>You are in a zone with |cRXP_FRIENDLY_Fel Portals|r present. If you find one summon your |T236294:0|t[|cRXP_FRIENDLY_Explorer Imp|r] and talk to it while next to a portal to send it on an expedition. After 10-20 minutes it will return with loot and a chance to award you with |T134419:0|t[|cRXP_FRIENDLY_Rune of the Felguard|r] << Warlock
+    >>You are in a zone with |cRXP_FRIENDLY_Fel Portals|r present. If you find one close it using a |T134945:0|t[|cRXP_LOOT_Scroll of Spatial Mending|r]. This will award you with |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r] << Mage
+    >>|cRXP_WARN_Be on the lookout for the portals untill you get the rune|r
+    .collect 221499,1 << Warlock --rune of the felguard
+    .collect 223147,1 << Mage --Spell Notes: Balefire Bolt
+    .itemcount 220792,1 << Mage --Scroll of Spatial Mending
+    .use 223148 << Warlock --Otherworldy Treasure
+    .use 220792 << Mage
+    .train 428878,1 << Mage
+    .train 427733,1 << Warlock
+    .train 1120,3 << Warlock --Skips if you don't have drain soul
+    .unitscan Fel Sliver
+    .unitscan Fel Crack
+    .unitscan Fel Tear
+    .unitscan Fel Scar
+    .unitscan Fel Rift
+step << Warlock/Mage
+    #season 2
+    #requires FelPortalRuneDarkshore
+    #sticky
+    #completewith TravelMenethilNoDMBoat
+    .itemcount 221499,1 << Warlock --Rune of the Felguard
+    .itemcount 223147,1 << Mage --Spell Notes: Balefire Bolt
+    .train 427733 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Felguard|r] |cRXP_WARN_to learn|r |T136216:0|t[Summon Felguard] << Warlock
+    .train 428878 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt] << Mage
+    .use 221499 << Warlock
+    .use 223147 << Mage
 step
     .goto 1439,42.017,58.866,0 --NE spawn
     .goto 1439,43.222,59.693,0 --NE spawn

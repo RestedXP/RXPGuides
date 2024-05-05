@@ -1782,7 +1782,6 @@ step
     .itemcount 221433,1
     .use 221433
     .train 400093 >>|cRXP_WARN_Use the|T134419:0|t[|cRXP_FRIENDLY_Rune of Focus|r] |cRXP_WARN_to train|r |T236274:0|t[Focused Attacks]
-
  ]])
 
 RXPGuides.RegisterGuide([[

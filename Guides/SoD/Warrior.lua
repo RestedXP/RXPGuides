@@ -1627,7 +1627,7 @@ step
     .unitscan Wandering Swordsman
     .skipgossip
 step
-    .train 426491 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Commander|r] |cRXP_WARN_to learn|r |T132351:0|t[Rallying Cry]
+    .train 426491 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Commander|r] |cRXP_WARN_to learn|r |T132339:0|t[Rallying Cry]
     .use 213110
 ]])
 
@@ -1671,8 +1671,8 @@ step
 step
     #loop
     .goto The Hinterlands,23.6,57.4
-    .goto The Hinterlands,36.6,66.2
-    .goto The Hinterlands,31.6,59.8
+    .goto The Hinterlands,36.6,66.2,0
+    .goto The Hinterlands,31.6,59.8,0
     >>Kill any of the |cRXP_ENEMY_Witherbark Trolls|r in the western part of the map untill you loot a |T133054:0|t|cRXP_LOOT_Geode Hammer|r from them
     .collect 220912,1 --Geode Hammer 1/1
     .mob Witherbark Sadist
@@ -1734,6 +1734,7 @@ step
 step
     .goto 1427/0,-1271.900,-6553.500
     >>Go to the very back of the Incendosaur cave. Loot the |cRXP_LOOT_Left Foot of the Obliterator|r from the ground there
+    .collect 221259,1
 step
 	#completewith next
 	+Logout skip by jumping on the rock behind the foot and logging out
