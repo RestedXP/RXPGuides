@@ -532,10 +532,10 @@ local function ProcessJunk(sellWares)
     for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
         for slot = 1, GetContainerNumSlots(bag) do
             local id = GetContainerItemID(bag,slot)
-            local _,stack,locked = GetContainerItemInfo(bag, slot)
+            local _,stack,locked,quality = GetContainerItemInfo(bag, slot)
             local junk = IsJunk(id)
-            if junk and not locked then
-                local _, _, quality, _, _, _, _, _, _, _, price = GetItemInfo(id)
+            if junk and not(locked and isMerchant) then
+                local price = select(11,GetItemInfo(id))
                 local value = price * stack
                 if isMerchant and value > 0 then
                     table.insert(itemsToSell,{bag = bag, slot = slot, value = value, quality = quality})
