@@ -361,8 +361,8 @@ end
 local function UpdateBagButton(button,bag,slot)
     local id = GetContainerItemID(bag, slot)
 
-    local isJunk = id and IsJunk(id, bag, slot)
-
+    local isJunk = IsJunk(id)
+    print(bag,slot,isJunk)
     if isJunk then
         ShowJunkIcon(button)
     else
@@ -395,6 +395,7 @@ local function UpdateBag(frame,pattern)
         if bag and bag >= BACKPACK_CONTAINER and bag <= NUM_BAG_FRAMES then
             local slot = button:GetID()
             bagFrame[bag][slot] = ref
+            print(ref)
             UpdateBagButton(button,bag,slot)
         end
         i = i + 1
@@ -411,7 +412,10 @@ inventoryManager.containerName = "ContainerFrame%d"
 inventoryManager.containerIndex = -1
 
 local function DetectBagMods()
-    if _G["ElvUI_ContainerFrame"] then
+    if _G["BagnonContainerItem1"] then
+        inventoryManager.containerName = "BagnonContainerItem%d"
+        inventoryManager.containerPattern = "%s"
+    elseif _G["ElvUI_ContainerFrame"] then
         inventoryManager.containerName = "ElvUI_ContainerFrameBag%d"
         inventoryManager.containerPattern = "%sSlot%d"
     elseif _G["AdiBagsItemButton1"] then
@@ -441,6 +445,7 @@ local function UpdateAllBags(self,name,i)
     DetectBagMods()
     i = i or inventoryManager.containerIndex
     name = name or inventoryManager.containerName
+    print(name,inventoryManager.containerPattern)
     local frame = _G[format(name,i)]
     while frame or i <= 0 do
         if frame then
