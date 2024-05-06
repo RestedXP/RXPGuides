@@ -460,6 +460,7 @@ invUpdate:RegisterEvent("BAG_UPDATE_DELAYED")
 invUpdate:RegisterEvent("MERCHANT_SHOW")
 local updateTimer = 0
 local merchantOpened
+local updateBags
 inventoryManager.BagHandler = function(self,event,bag,slot)
     if type(event) == "number" then
         updateTimer = updateTimer + event
@@ -467,7 +468,9 @@ inventoryManager.BagHandler = function(self,event,bag,slot)
             if merchantOpened then
                 merchantOpened = false
                 inventoryManager.ProcessJunk(true)
-            else
+            end
+            if updateBags then
+                updateBags = false
                 UpdateAllBags()
             end
             updateTimer = 0
@@ -475,6 +478,7 @@ inventoryManager.BagHandler = function(self,event,bag,slot)
         end
     elseif event == "BAG_CONTAINER_UPDATE" then
         updateTimer = 0
+        updateBags = true
         self:SetScript("OnUpdate",inventoryManager.BagHandler)
     elseif event == "MERCHANT_SHOW" then
         merchantOpened = true
@@ -496,6 +500,7 @@ inventoryManager.BagHandler = function(self,event,bag,slot)
         end
     elseif event == "BAG_UPDATE_DELAYED" then
         updateTimer = 0
+        updateBags = true
         self:SetScript("OnUpdate",inventoryManager.BagHandler)
     end
 end
@@ -530,27 +535,27 @@ local function ProcessJunk(sellWares)
             local _,stack,locked = GetContainerItemInfo(bag, slot)
             local junk = IsJunk(id)
             if junk and not locked then
-                local price = select(11, GetItemInfo(id))
+                local _, _, quality, _, _, _, _, _, _, _, price = GetItemInfo(id)
                 local value = price * stack
-                if isMerchant then
-                    table.insert(itemsToSell,{bag = bag, slot = slot, value = value})
+                if isMerchant and value > 0 then
+                    table.insert(itemsToSell,{bag = bag, slot = slot, value = value, quality = quality})
                 end
                 totalCost = totalCost + value
             end
         end
     end
     if isMerchant and totalCost > 0 then
-        --Sorts the item list to sell cheap items first, in case of needing to buy stuff back
+        --Sorts the item list to sell low quality/cheap items first, in case of needing to buy stuff back
         table.sort(itemsToSell,function(i1,i2)
-            return i1.value < i2.value
+            if i1.quality == i2.quality then
+                return i1.value < i2.value
+            else
+                return i1.quality < i2.quality
+            end
         end)
         for _,item in ipairs(itemsToSell) do
             PickupContainerItem(item.bag,item.slot)
-            if item.value > 0 then
-                PickupMerchantItem()
-            else
-                DeleteCursorItem()
-            end
+            PickupMerchantItem()
         end
         local colour = addon.guideTextColors["RXP_WARN_"]
         print(format("RXPGuides: |c%sSold junk items for|r %s",colour,GetCoinTextureString(totalCost)))
