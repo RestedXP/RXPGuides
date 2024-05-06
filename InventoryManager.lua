@@ -463,6 +463,7 @@ invUpdate:RegisterEvent("ITEM_UNLOCKED")
 invUpdate:RegisterEvent("BAG_CONTAINER_UPDATE")
 invUpdate:RegisterEvent("BAG_UPDATE_DELAYED")
 invUpdate:RegisterEvent("MERCHANT_SHOW")
+invUpdate:RegisterEvent("PLAYER_MONEY")
 local updateTimer = 0
 local merchantOpened
 local updateBags
@@ -472,6 +473,7 @@ inventoryManager.BagHandler = function(self,event,bag,slot)
         if updateTimer > 0.33 then
             if merchantOpened then
                 merchantOpened = false
+                inventoryManager.sellGoods = false
                 inventoryManager.ProcessJunk(true)
             end
             if updateBags then
@@ -481,6 +483,10 @@ inventoryManager.BagHandler = function(self,event,bag,slot)
             updateTimer = 0
             self:SetScript("OnUpdate",nil)
         end
+    elseif event == "PLAYER_MONEY" and inventoryManager.sellGoods then
+        merchantOpened = true
+        updateTimer = 0.125
+        self:SetScript("OnUpdate",inventoryManager.BagHandler)
     elseif event == "BAG_CONTAINER_UPDATE" then
         updateTimer = 0
         updateBags = true
@@ -550,6 +556,7 @@ local function ProcessJunk(sellWares)
         end
     end
     if isMerchant and totalCost > 0 then
+        inventoryManager.sellGoods = true
         --Sorts the item list to sell low quality/cheap items first, in case of needing to buy stuff back
         table.sort(itemsToSell,function(i1,i2)
             if i1.quality == i2.quality then
@@ -558,10 +565,12 @@ local function ProcessJunk(sellWares)
                 return i1.quality < i2.quality
             end
         end)
-        for _,item in ipairs(itemsToSell) do
+
+        for i,item in ipairs(itemsToSell) do
             PickupContainerItem(item.bag,item.slot)
             PickupMerchantItem()
         end
+
         local colour = addon.guideTextColors["RXP_WARN_"]
         print(format("RXPGuides: |c%sSold junk items for|r %s",colour,GetCoinTextureString(totalCost)))
     end
