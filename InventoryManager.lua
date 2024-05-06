@@ -1,0 +1,567 @@
+local addonName,addon = ...
+
+local inventoryManager = {}
+addon.inventoryManager = inventoryManager
+
+local gameVersion = select(4, GetBuildInfo())
+local GetContainerNumFreeSlots = C_Container and C_Container.GetContainerNumFreeSlots or _G.GetContainerNumFreeSlots
+local GetContainerNumSlots = C_Container and C_Container.GetContainerNumSlots or _G.GetContainerNumSlots
+
+local GetContainerItemID = C_Container and C_Container.GetContainerItemID or _G.GetContainerItemID
+
+local PickupContainerItem = C_Container and C_Container.PickupContainerItem or _G.PickupContainerItem
+
+--local UseContainerItem = C_Container and C_Container.UseContainerItem or _G.UseContainerItem
+--local GetContainerItemLink = C_Container and C_Container.GetContainerItemLink or _G.GetContainerItemLink
+
+
+local GetContainerItemInfo
+
+if C_Container.GetContainerItemInfo then
+    GetContainerItemInfo = function(...)
+        local itemTable = C_Container.GetContainerItemInfo(...)
+        if itemTable then
+            return itemTable.texture,
+                    itemTable.stackCount,
+                    itemTable.isLocked,
+                    itemTable.quality,
+                    itemTable.isReadable,
+                    itemTable.hasLoot,
+                    itemTable.hyperlink,
+                    itemTable.isFiltered,
+                    itemTable.hasNoValue,
+                    itemTable.itemID,
+                    itemTable.isBound
+        end
+    end
+else
+    GetContainerItemInfo = _G.GetContainerItemInfo
+end
+
+
+--TODO: Handle UI options:
+function inventoryManager.IsRightClickEnabled()
+    return true
+end
+
+function inventoryManager.IsBagAutomationEnabled()
+    return true
+end
+
+function inventoryManager.IsMerchantAutomationEnabled()
+    return true
+end
+
+function inventoryManager.IsJunkIconEnabled()
+    return true
+end
+
+function inventoryManager.GetModKey()
+    --IsAltKeyDown or IsControlKeyDown, shift is used for splitting stacks
+    --Ctrl + Left click is used for dressing room
+    return IsControlKeyDown()
+end
+
+function inventoryManager.GetMouseButton()
+    --LeftButton/RightButton
+    return "RightButton"
+end
+
+local projectileType = 0
+local quiverFreeSlots = 0
+local quiverSlot
+local organizeQuiver
+local closestSlot = {}
+
+local function SortQuiver()
+--Makes sure you only have 1 partial stack at the left most quiver slot for each ammo type
+    if gameVersion > 30000 or not inventoryManager.IsBagAutomationEnabled() or UnitIsDead('player') then
+        return
+    end
+    organizeQuiver = false
+    local function GetQuiverSlot()
+        for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
+            local free, type = GetContainerNumFreeSlots(bag)
+            if bit.band(type,3) > 0 then
+                quiverSlot = bag
+                projectileType,quiverFreeSlots = type,free
+            end
+        end
+    end
+
+    if not quiverSlot then
+        GetQuiverSlot()
+    else
+        local _,quiverType = GetContainerNumFreeSlots(quiverSlot)
+        if bit.band(quiverType,3) == 0 then
+            GetQuiverSlot()
+        end
+    end
+    local id
+    table.wipe(closestSlot)
+    local numQuiverSlots = GetContainerNumSlots(quiverSlot)
+    for slot = 1, numQuiverSlots do
+        id = GetContainerItemID(quiverSlot, slot)
+
+        if id then
+            if not closestSlot[id] then
+                closestSlot[id] = numQuiverSlots
+            end
+            --local t = GetItemInfo(id)
+            local maxStack = select(8, GetItemInfo(id))
+            --print(maxStack)
+            local itemtable,stack,locked = GetContainerItemInfo(quiverSlot, slot)
+            if type(itemtable) == "table" then
+                stack,locked = itemtable.stackCount,itemtable.isLocked
+            end
+            --print('sl',stack,locked)
+            if slot < closestSlot[id] then
+                closestSlot[id] = slot
+            elseif stack < maxStack then
+                local itemExists,_,destLocked = GetContainerItemInfo(quiverSlot,closestSlot[id])
+                if type(itemExists) == "table" then
+                    destLocked = itemExists.isLocked
+                end
+                organizeQuiver = true
+                if not (GetCursorInfo() or locked or itemExists and destLocked) then
+                    C_Timer.After(0.01,function()
+                        if not GetCursorInfo() then
+                            PickupContainerItem(quiverSlot, slot)
+                            PickupContainerItem(quiverSlot, closestSlot[id])
+                            ClearCursor()
+                            --print(quiverSlot, slot)
+                        end
+                    end)
+                    break
+                end
+            end
+        end
+
+    end
+
+end
+
+local function IsJunk(id)
+    if not id then return end
+    local discard = RXPCData.discardPile[id]
+    if discard == nil then
+        local _, _, quality = GetItemInfo(id)
+        if quality == Enum.ItemQuality.Poor then
+            return true
+            --TODO: add an option that ignores auto selling grays if item is an upgrade
+        end
+        --TODO: Integrate with item upgrade system to auto sell soulbound greens, check if C_Item.IsBound exists, otherwise parse tooltips, check if character has enchanting or not
+    else
+        return discard
+    end
+end
+
+inventoryManager.IsJunk = IsJunk
+
+local function ToggleJunk(id)
+    if not id then return end
+    local junk = IsJunk(id)
+    local _,link = GetItemInfo(id)
+    local colour = addon.guideTextColors["RXP_WARN_"]
+    RXPCData.discardPile[id] = not junk
+    if junk then
+        print(format("%s: |c%sSet %s as useful|r",addonName,colour,link))
+    else
+        print(format("%s: |c%sSet %s as junk|r",addonName,colour,link))
+    end
+    inventoryManager.UpdateAllBags()
+end
+
+inventoryManager.ToggleJunk = ToggleJunk
+
+local function FindJunk(deleteItem)
+
+    inventoryManager.deleteBag = nil
+    inventoryManager.deleteSlot = nil
+
+    if organizeQuiver then
+        SortQuiver()
+    end
+    quiverFreeSlots = 0
+
+    for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
+        local freeSlots, bagType = GetContainerNumFreeSlots(bag)
+        --print(bagType,freeSlots,deleteItem)
+        if bagType and bagType == 0 and freeSlots and freeSlots > 0 and not deleteItem then
+            return
+        end
+
+        local ammoFlags = bit.band(bagType or 0,3) + 1
+        --bit flag 1 for arrows, 2 for guns, according to ItemBagFamily.db2
+        --add 1 to compare with Enum.ItemWeaponSubclass (2 for arrows, 3 for bullets)
+        if  ammoFlags > 1 then
+            quiverSlot = bag
+            projectileType = ammoFlags
+            quiverFreeSlots = freeSlots
+        end
+    end
+
+    local movingAmmo
+    local bestBag, bestSlot
+    local bestValue = math.huge
+
+    for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
+        local _,bagType = GetContainerNumFreeSlots(bag)
+        local numSlots
+        if not bagType or bagType > 2 then
+            numSlots = 0
+        else
+            numSlots = GetContainerNumSlots(bag)
+        end
+        for slot = 1, numSlots do
+            local isProjectile
+            local id = GetContainerItemID(bag, slot)
+            if id then
+                local stackMax,_,_,price,class,subclass = select(8, GetItemInfo(id))
+                if bagType == 0 and class == Enum.ItemClass.Projectile and subclass == projectileType then
+                    isProjectile = true
+                end
+
+                if not (isProjectile or movingAmmo) then
+                    local t,count = GetContainerItemInfo(bag,slot)
+                    if type(t) == "table" and not count then
+                        count = t.stackCount
+                    end
+                    if stackMax and count and IsJunk(id,bag,slot) then
+                        --local item_count = select(2, GetContainerItemInfo(bag, slot))
+                        price = price or 0
+                        local value = (stackMax + count) * price/2
+                        if value < bestValue then
+                            bestBag = bag
+                            bestSlot = slot
+                            bestValue = value
+                            --print(bestBag,bestSlot)
+                        end
+                    end
+                elseif isProjectile and quiverFreeSlots > 0 then
+                    movingAmmo = true
+                    bestBag,bestSlot,bestValue = nil,nil,nil
+                    PickupContainerItem(bag, slot)
+                    PutItemInBag(quiverSlot + CharacterBag0Slot:GetID() - 1)
+
+                    --CharacterBag0Slot:BagSlotButton_OnClick()
+                    --/run local bagframe = _G["CharacterBag".. tostring(1 - 1) .."Slot"] local f = bagframe:GetScript("OnClick") print(f) f(bagframe,"LeftButton")
+
+                    quiverFreeSlots = quiverFreeSlots -1
+                end
+            end
+        end
+    end
+
+    if movingAmmo then
+        SortQuiver()
+    elseif bestBag and bestSlot then
+        inventoryManager.deleteBag = bestBag
+        inventoryManager.deleteSlot = bestSlot
+    end
+    --print(bestBag,bestSlot)
+end
+
+local function DeleteItems()
+    if not inventoryManager.IsBagAutomationEnabled() or UnitIsDead('player') or GetCursorInfo() then
+        return
+    elseif inventoryManager.deleteBag then
+        PickupContainerItem(inventoryManager.deleteBag,inventoryManager.deleteSlot)
+        DeleteCursorItem()
+        inventoryManager.deleteBag = nil
+        inventoryManager.deleteSlot = nil
+    elseif organizeQuiver and not InCombatLockdown() then
+        SortQuiver()
+    end
+end
+
+local DeleteCheapestItem = function(deleteIfFull)
+
+    if not inventoryManager.bagUpdated then
+        return
+    end
+    FindJunk(not deleteIfFull)
+    DeleteItems()
+end
+
+addon.DeleteCheapestItem = DeleteCheapestItem
+--A3 =DeleteCheapestItem
+
+local bagEvent = "BAG_UPDATE_DELAYED"
+local WorldFrameHook = DeleteItems
+local f = inventoryManager.DeleteJunkFrame or CreateFrame("Frame","RXPDeleteJunk",WorldFrame)
+f:RegisterEvent("PLAYER_ENTERING_WORLD")
+
+--You can only delete items on a hardware input, so we hook every keyboard input and mouse click to our item deletion function
+
+f:SetScript("OnEvent",function(self)
+    inventoryManager.bagUpdated = true
+    self:RegisterEvent(bagEvent)
+    self:RegisterEvent("LOOT_READY")
+    self:SetScript("OnEvent",function()
+        FindJunk()
+    end)
+    RXPCData.discardPile = RXPCData.discardPile or {}
+
+    WorldFrame:HookScript("OnMouseDown", WorldFrameHook)
+    WorldFrame:HookScript("OnMouseUp", WorldFrameHook)
+
+    inventoryManager.DeleteJunkFrame = self
+
+    self:SetPropagateKeyboardInput(true)
+    self:SetScript("OnKeyDown", WorldFrameHook)
+    self:SetScript("OnKeyUp", WorldFrameHook)
+
+
+    hooksecurefunc("ContainerFrameItemButton_OnModifiedClick", function(self,button)
+        local mod = inventoryManager.GetModKey()
+        if not inventoryManager.IsRightClickEnabled() or not mod or button ~= inventoryManager.GetMouseButton() then
+            return
+        end
+        local parent = self:GetParent()
+        local bag = parent and parent:GetID()
+        local slot = self:GetID()
+        if bag and slot then
+            local id = GetContainerItemID(bag,slot)
+            ToggleJunk(id)
+        end
+
+    end)
+
+    hooksecurefunc('ToggleAllBags', inventoryManager.InitializeBags)
+    hooksecurefunc('ToggleBag', inventoryManager.InitializeBags)
+
+end)
+
+local junkIcons = {}
+
+local function ShowJunkIcon(frame)
+
+    if not frame.RXPJunkIcon then
+        local texture = frame:CreateTexture(nil, "OVERLAY")
+        table.insert(junkIcons,texture)
+        texture:SetTexture("Interface/Buttons/UI-GroupLoot-Coin-Up")
+        texture:SetSize(16,16)
+        texture:SetPoint("TOPLEFT", 1, -1)
+        frame.RXPJunkIcon = texture
+    end
+
+    frame.RXPJunkIcon:SetShown(inventoryManager.IsJunkIconEnabled())
+
+end
+
+local function HideJunkIcon(frame)
+
+    if frame.RXPJunkIcon then
+        frame.RXPJunkIcon:Hide()
+    end
+
+end
+
+local function UpdateBagButton(button,bag,slot)
+    local id = GetContainerItemID(bag, slot)
+
+    local isJunk = id and IsJunk(id, bag, slot)
+
+    if isJunk then
+        ShowJunkIcon(button)
+    else
+        HideJunkIcon(button)
+    end
+end
+
+local bagFrame = {}
+
+for i = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
+    bagFrame[i] = {}
+end
+
+
+
+local function UpdateBag(frame,pattern)
+    if not inventoryManager.IsJunkIconEnabled() then
+        return
+    end
+    pattern = pattern or inventoryManager.containerPattern
+    local name = frame:GetName()
+    local i = 1
+    local ref = format(pattern,name,i)
+    local lastFrame
+    local button = _G[ref]
+
+    while button and lastFrame ~= ref do
+        local parent = button:GetParent()
+        local bag = parent and parent:GetID()
+        if bag and bag >= BACKPACK_CONTAINER and bag <= NUM_BAG_FRAMES then
+            local slot = button:GetID()
+            bagFrame[bag][slot] = ref
+            UpdateBagButton(button,bag,slot)
+        end
+        i = i + 1
+        lastFrame = ref
+        ref = format(pattern,name,i)
+        button = _G[ref]
+    end
+end
+
+--Junk icon has to hook into existing UI elements, different bag UI mods have different frame names causing compatibility issues
+
+inventoryManager.containerPattern = "%sItem%d"
+inventoryManager.containerName = "ContainerFrame%d"
+inventoryManager.containerIndex = -1
+
+local function DetectBagMods()
+    if _G["ElvUI_ContainerFrame"] then
+        inventoryManager.containerName = "ElvUI_ContainerFrameBag%d"
+        inventoryManager.containerPattern = "%sSlot%d"
+    elseif _G["AdiBagsItemButton1"] then
+        inventoryManager.containerName = "AdiBagsItemButton%d"
+        inventoryManager.containerPattern = "%s"
+    elseif _G["BetterBagsItemButton1"] then
+        inventoryManager.containerName = "BetterBagsItemButton%d"
+        inventoryManager.containerPattern = "%s"
+    elseif _G["BagginsPooledItemButton0"] then
+        inventoryManager.containerName = "BagginsPooledItemButton%d"
+        inventoryManager.containerPattern = "%s"
+    elseif _G["ARKINV_Frame1ScrollContainer"] then
+        inventoryManager.containerName = "ARKINV_Frame1ScrollContainerBag%d"
+    elseif _G["BaudBagSubBag0"] then
+        inventoryManager.containerName = "BaudBagSubBag%d"
+    end
+end
+
+
+local function UpdateAllBags(self,name,i)
+    if not inventoryManager.IsJunkIconEnabled() then
+        for _,icon in pairs(junkIcons) do
+            icon:Hide()
+        end
+        return
+    end
+    DetectBagMods()
+    i = i or inventoryManager.containerIndex
+    name = name or inventoryManager.containerName
+    local frame = _G[format(name,i)]
+    while frame or i <= 0 do
+        if frame then
+            UpdateBag(frame)
+        end
+        i = i + 1
+        frame = _G[format(name,i)]
+    end
+end
+inventoryManager.UpdateAllBags = UpdateAllBags
+
+local invUpdate = CreateFrame("Frame")
+invUpdate:RegisterEvent("ITEM_LOCKED")
+invUpdate:RegisterEvent("ITEM_UNLOCKED")
+invUpdate:RegisterEvent("BAG_CONTAINER_UPDATE")
+invUpdate:RegisterEvent("BAG_UPDATE_DELAYED")
+invUpdate:RegisterEvent("MERCHANT_SHOW")
+local updateTimer = 0
+local merchantOpened
+inventoryManager.BagHandler = function(self,event,bag,slot)
+    if type(event) == "number" then
+        updateTimer = updateTimer + event
+        if updateTimer > 0.33 then
+            if merchantOpened then
+                merchantOpened = false
+                inventoryManager.ProcessJunk(true)
+            else
+                UpdateAllBags()
+            end
+            updateTimer = 0
+            self:SetScript("OnUpdate",nil)
+        end
+    elseif event == "BAG_CONTAINER_UPDATE" then
+        updateTimer = 0
+        self:SetScript("OnUpdate",inventoryManager.BagHandler)
+    elseif event == "MERCHANT_SHOW" then
+        merchantOpened = true
+        updateTimer = 0
+        self:SetScript("OnUpdate",inventoryManager.BagHandler)
+    elseif inventoryManager.containerPattern ~= "%s" then
+        if event == "ITEM_LOCKED" then
+            local frame = bagFrame[bag] and bagFrame[bag][slot]
+            frame = frame and _G[frame]
+            if frame then
+                HideJunkIcon(frame)
+            end
+        elseif event == "ITEM_UNLOCKED" and inventoryManager.containerPattern ~= "%s" then
+            local frame = bagFrame[bag] and bagFrame[bag][slot]
+            frame = frame and _G[frame]
+            if frame then
+                UpdateBagButton(frame,bag,slot)
+            end
+        end
+    elseif event == "BAG_UPDATE_DELAYED" then
+        updateTimer = 0
+        self:SetScript("OnUpdate",inventoryManager.BagHandler)
+    end
+end
+
+invUpdate:SetScript("OnEvent",inventoryManager.BagHandler)
+
+
+local initialized
+function inventoryManager.InitializeBags()
+    if initialized then return end
+    initialized = true
+    UpdateAllBags()
+end
+
+hooksecurefunc('ContainerFrame_Update', function(self)
+    UpdateBag(self,"%sItem%d")
+end)
+
+--[[
+hooksecurefunc('ContainerFrameItemButton_OnEnter',function(self)
+    print(self:GetName(),self:GetParent():GetID(),self:GetID())
+end)]]
+
+
+local function ProcessJunk(sellWares)
+    local isMerchant = sellWares and MerchantFrame:IsShown() and MerchantFrame.selectedTab == 1 and inventoryManager.IsMerchantAutomationEnabled()
+    local totalCost = 0
+    local itemsToSell = {}
+    for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do
+        for slot = 1, GetContainerNumSlots(bag) do
+            local id = GetContainerItemID(bag,slot)
+            local _,stack,locked = GetContainerItemInfo(bag, slot)
+            local junk = IsJunk(id)
+            if junk and not locked then
+                local price = select(11, GetItemInfo(id))
+                local value = price * stack
+                if isMerchant then
+                    table.insert(itemsToSell,{bag = bag, slot = slot, value = value})
+                end
+                totalCost = totalCost + value
+            end
+        end
+    end
+    if isMerchant and totalCost > 0 then
+        --Sorts the item list to sell cheap items first, in case of needing to buy stuff back
+        table.sort(itemsToSell,function(i1,i2)
+            return i1.value < i2.value
+        end)
+        for _,item in ipairs(itemsToSell) do
+            PickupContainerItem(item.bag,item.slot)
+            if item.value > 0 then
+                PickupMerchantItem()
+            else
+                DeleteCursorItem()
+            end
+        end
+        local colour = addon.guideTextColors["RXP_WARN_"]
+        print(format("RXPGuides: |c%sSold junk items for|r %s",colour,GetCoinTextureString(totalCost)))
+    end
+
+    return totalCost
+end
+inventoryManager.ProcessJunk = ProcessJunk
+
+function inventoryManager.GetNetWorth()
+    local inventory = ProcessJunk()
+    return GetMoney() + inventory
+end
+

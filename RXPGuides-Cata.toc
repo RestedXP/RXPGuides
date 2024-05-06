@@ -29,6 +29,7 @@ Timers.lua
 Communications.lua
 Targeting.lua
 Tips.lua
+InventoryManager.lua
 
 
 map.lua

@@ -19,6 +19,9 @@ RXPGuides.lua
 GuideWindow.lua
 Help.lua
 SettingsPanel.lua
+
+DB/wotlk.xml
+
 HSBatching.lua
 QuestLog.lua
 ActiveItemFrame.lua
@@ -27,8 +30,8 @@ Timers.lua
 Communications.lua
 Targeting.lua
 Tips.lua
+InventoryManager.lua
 
-DB/wotlk.xml
 
 map.lua
 functions.lua
