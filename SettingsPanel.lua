@@ -1002,6 +1002,58 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 4.7
                     },
+                    inventoryHeader = {
+                        name = _G.INVENTORY_TOOLTIP,
+                        type = "header",
+                        width = "full",
+                        order = 4.8
+                    },
+                    showJunkIcon = {
+                        name = L("Show junk item indicator"), -- TODO locale
+                        desc = L("Any items marked as junk will display a gold coin icon on the top left corner of the item icon within your bags"),
+                        type = "toggle",
+                        width = optionsWidth * 1.5,
+                        order = 4.81,
+                    },
+                    autoDiscardItems = {
+                        name = L("Discard junk items if bag is full"), -- TODO locale
+                        desc = L("Automatically attempts to discard a junk item from your bags if your inventory is full"),
+                        type = "toggle",
+                        width = optionsWidth * 1.5,
+                        order = 4.83,
+                    },
+                    rightClickJunk = {
+                        name = L("Toggle junk with modified right click"), -- TODO locale
+                        desc = L("Allows you to toggle items as junk by clicking on it with CTRL+RightClick or ALT+RightClick"),
+                        type = "toggle",
+                        width = optionsWidth * 1.5,
+                        order = 4.84,
+                    },
+                    rightClickMod = {
+                        name = L("Right Click Modifier"), -- TODO locale
+                        type = "select",
+                        width = optionsWidth,
+                        order = 4.85,
+                        get = function()
+                            return
+                                self.profile.rightClickMod or 1
+                        end,
+                        disabled = function ()
+                            return not self.profile.rightClickJunk
+                        end,
+                        values = {
+                            [1] = "CTRL",
+                            [2] = "ALT",
+                            [3] = "CTRL+ALT",
+                        },
+                    },
+                    autoSellJunk = {
+                        name = L("Auto Sell Junk"), -- TODO locale
+                        desc = L("Automatically sell all gray items and all other items that you set as junk"),
+                        type = "toggle",
+                        width = optionsWidth * 1.5,
+                        order = 4.86,
+                    },
                     talentsHeader = {
                         name = function()
                             if addon.talents and addon.talents:IsSupported() then

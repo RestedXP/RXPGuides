@@ -41,25 +41,32 @@ end
 
 --TODO: Handle UI options:
 function inventoryManager.IsRightClickEnabled()
-    return true
+    return addon.settings.profile.rightClickJunk
 end
 
 function inventoryManager.IsBagAutomationEnabled()
-    return true
+    return addon.settings.profile.autoDiscardItems
 end
 
 function inventoryManager.IsMerchantAutomationEnabled()
-    return true
+    return addon.settings.profile.autoSellJunk
 end
 
 function inventoryManager.IsJunkIconEnabled()
-    return true
+    return addon.settings.profile.showJunkIcon
 end
 
 function inventoryManager.GetModKey()
     --IsAltKeyDown or IsControlKeyDown, shift is used for splitting stacks
     --Ctrl + Left click is used for dressing room
-    return IsControlKeyDown()
+    local mod = addon.settings.profile.rightClickMod
+    if mod == 3 then
+        return IsControlKeyDown() and IsAltKeyDown()
+    elseif mod == 2 then
+        return IsAltKeyDown()
+    else
+        return IsControlKeyDown()
+    end
 end
 
 function inventoryManager.GetMouseButton()
