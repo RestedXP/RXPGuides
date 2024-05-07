@@ -263,7 +263,10 @@ local function FindJunk(deleteItem)
 end
 
 local function DeleteItems()
-    if not inventoryManager.IsBagAutomationEnabled() or UnitIsDead('player') or GetCursorInfo() then
+    if inventoryManager.sellGoods and MerchantFrame:IsShown() and MerchantFrame.selectedTab == 1 then
+        inventoryManager.ProcessJunk(true)
+        return
+    elseif not inventoryManager.IsBagAutomationEnabled() or UnitIsDead('player') or GetCursorInfo() then
         return
     elseif inventoryManager.deleteBag then
         PickupContainerItem(inventoryManager.deleteBag,inventoryManager.deleteSlot)
@@ -362,7 +365,7 @@ local function UpdateBagButton(button,bag,slot)
     local id = GetContainerItemID(bag, slot)
 
     local isJunk = IsJunk(id)
-    print(bag,slot,isJunk)
+    --print(bag,slot,isJunk)
     if isJunk then
         ShowJunkIcon(button)
     else
@@ -395,7 +398,7 @@ local function UpdateBag(frame,pattern)
         if bag and bag >= BACKPACK_CONTAINER and bag <= NUM_BAG_FRAMES then
             local slot = button:GetID()
             bagFrame[bag][slot] = ref
-            print(ref)
+            --print(ref)
             UpdateBagButton(button,bag,slot)
         end
         i = i + 1
@@ -445,7 +448,7 @@ local function UpdateAllBags(self,name,i)
     DetectBagMods()
     i = i or inventoryManager.containerIndex
     name = name or inventoryManager.containerName
-    print(name,inventoryManager.containerPattern)
+    --print(name,inventoryManager.containerPattern)
     local frame = _G[format(name,i)]
     while frame or i <= 0 do
         if frame then
@@ -473,7 +476,6 @@ inventoryManager.BagHandler = function(self,event,bag,slot)
         if updateTimer > 0.33 then
             if merchantOpened then
                 merchantOpened = false
-                inventoryManager.sellGoods = false
                 inventoryManager.ProcessJunk(true)
             end
             if updateBags then
@@ -545,7 +547,7 @@ local function ProcessJunk(sellWares)
             local id = GetContainerItemID(bag,slot)
             local _,stack,locked,quality = GetContainerItemInfo(bag, slot)
             local junk = IsJunk(id)
-            if junk and not(locked and isMerchant) then
+            if junk then
                 local price = select(11,GetItemInfo(id))
                 local value = price * stack
                 if isMerchant and value > 0 then
@@ -555,8 +557,16 @@ local function ProcessJunk(sellWares)
             end
         end
     end
-    if isMerchant and totalCost > 0 then
-        inventoryManager.sellGoods = true
+
+    if totalCost == 0 then
+        if inventoryManager.sellGoods then
+            local value = GetMoney() - inventoryManager.sellGoods
+            local colour = addon.guideTextColors["RXP_WARN_"]
+            print(format("RXPGuides: |c%sSold junk items for|r %s",colour,GetCoinTextureString(value)))
+            inventoryManager.sellGoods = false
+        end
+    elseif isMerchant then
+        inventoryManager.sellGoods = inventoryManager.sellGoods or GetMoney()
         --Sorts the item list to sell low quality/cheap items first, in case of needing to buy stuff back
         table.sort(itemsToSell,function(i1,i2)
             if i1.quality == i2.quality then
@@ -566,13 +576,11 @@ local function ProcessJunk(sellWares)
             end
         end)
 
-        for i,item in ipairs(itemsToSell) do
+        for _,item in ipairs(itemsToSell) do
             PickupContainerItem(item.bag,item.slot)
             PickupMerchantItem()
         end
 
-        local colour = addon.guideTextColors["RXP_WARN_"]
-        print(format("RXPGuides: |c%sSold junk items for|r %s",colour,GetCoinTextureString(totalCost)))
     end
 
     return totalCost
