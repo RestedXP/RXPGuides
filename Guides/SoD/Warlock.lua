@@ -1618,7 +1618,7 @@ step
     .zone Feralas >> Travel to Feralas
 step
     .goto Feralas,69.6,43.3 
-    >> Head to the marked location west of Camp Mojache. Look for a |cRXP_ENEMY_Dead Diseased Grimtotem Shaman|r laying next to a tree. Next to the corpse you will find a |cRXP_PICK_Grimtotem Chest|r, loot it for |T133291:0|t|cRXP_LOOT_Grimtotem Necklace|r
+    >>Head to the marked location west of Camp Mojache. Look for a |cRXP_ENEMY_Dead Diseased Grimtotem Shaman|r laying next to a tree. Next to the corpse you will find a |cRXP_PICK_Grimtotem Chest|r, loot it for |T133291:0|t|cRXP_LOOT_Grimtotem Necklace|r
     .collect 221974,1 --Grimtotem Necklace 1/1
     .unitscan Dead Diseased Grimtotem Shaman
 step
