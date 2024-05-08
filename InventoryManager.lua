@@ -188,8 +188,8 @@ local function ToggleJunk(id,bag,slot)
     else
         print(format(L("%s: |c%sSet %s as junk|r"),addonName,colour,link))
     end
-    addon:SendEvent("RXP_JUNK", id, bag, slot)
     inventoryManager.UpdateAllBags()
+    addon:SendEvent("RXP_JUNK", id, bag, slot)
 end
 
 inventoryManager.ToggleJunk = ToggleJunk
@@ -429,12 +429,12 @@ end
 
 
 
-local function UpdateBag(frame,pattern)
+local function UpdateBag(frame,name,pattern)
     if not inventoryManager.IsJunkIconEnabled() then
         return
     end
     pattern = pattern or inventoryManager.containerPattern
-    local name = frame:GetName()
+    name = name or frame:GetName()
     local i = 1
     local ref = format(pattern,name,i)
     local lastFrame
@@ -497,13 +497,15 @@ local function UpdateAllBags(self,name,i)
     i = i or inventoryManager.containerIndex
     name = name or inventoryManager.containerName
     --print(name,inventoryManager.containerPattern)
-    local frame = _G[format(name,i)]
+    local ref = format(name,i)
+    local frame = _G[ref]
     while frame or i <= 0 do
         if frame then
-            UpdateBag(frame)
+            UpdateBag(frame,ref)
         end
         i = i + 1
-        frame = _G[format(name,i)]
+        ref = format(name,i)
+        frame = _G[ref]
     end
 end
 inventoryManager.UpdateAllBags = UpdateAllBags
@@ -547,6 +549,10 @@ inventoryManager.BagHandler = function(self,event,bag,slot)
         merchantOpened = true
         updateTimer = 0
         self:SetScript("OnUpdate",inventoryManager.BagHandler)
+    elseif event == "BAG_UPDATE_DELAYED" then
+        updateTimer = 0
+        updateBags = true
+        self:SetScript("OnUpdate",inventoryManager.BagHandler)
     elseif inventoryManager.containerPattern ~= "%s" then
         if event == "ITEM_LOCKED" then
             local frame = bagFrame[bag] and bagFrame[bag][slot]
@@ -561,10 +567,6 @@ inventoryManager.BagHandler = function(self,event,bag,slot)
                 UpdateBagButton(frame,bag,slot)
             end
         end
-    elseif event == "BAG_UPDATE_DELAYED" then
-        updateTimer = 0
-        updateBags = true
-        self:SetScript("OnUpdate",inventoryManager.BagHandler)
     end
     if not next(junkIcons) then
         updateBags = true
@@ -585,7 +587,7 @@ function inventoryManager.InitializeBags()
 end
 
 hooksecurefunc('ContainerFrame_Update', function(self)
-    UpdateBag(self,"%sItem%d")
+    UpdateBag(self,nil,"%sItem%d")
 end)
 
 --[[
