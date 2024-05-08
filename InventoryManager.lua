@@ -177,7 +177,7 @@ end
 
 inventoryManager.IsJunk = IsJunk
 
-local function ToggleJunk(id)
+local function ToggleJunk(id,bag,slot)
     if not id then return end
     local junk = IsJunk(id)
     local _,link = GetItemInfo(id)
@@ -188,6 +188,7 @@ local function ToggleJunk(id)
     else
         print(format(L("%s: |c%sSet %s as junk|r"),addonName,colour,link))
     end
+    addon:SendEvent("RXP_JUNK", id, bag, slot)
     inventoryManager.UpdateAllBags()
 end
 
@@ -372,13 +373,14 @@ f:SetScript("OnEvent",function(self)
         local slot = self:GetID()
         if bag and slot then
             local id = GetContainerItemID(bag,slot)
-            ToggleJunk(id)
+            ToggleJunk(id,bag,slot)
         end
 
     end)
 
     hooksecurefunc('ToggleAllBags', inventoryManager.InitializeBags)
     hooksecurefunc('ToggleBag', inventoryManager.InitializeBags)
+    _G.MainMenuBarBackpackButton:HookScript("OnClick",inventoryManager.InitializeBags)
 
 end)
 
@@ -531,10 +533,12 @@ inventoryManager.BagHandler = function(self,event,bag,slot)
             updateTimer = 0
             self:SetScript("OnUpdate",nil)
         end
+        return
     elseif event == "PLAYER_MONEY" and inventoryManager.sellGoods then
         merchantOpened = true
         updateTimer = 0.125
         self:SetScript("OnUpdate",inventoryManager.BagHandler)
+        return
     elseif event == "BAG_CONTAINER_UPDATE" then
         updateTimer = 0
         updateBags = true
@@ -562,6 +566,10 @@ inventoryManager.BagHandler = function(self,event,bag,slot)
         updateBags = true
         self:SetScript("OnUpdate",inventoryManager.BagHandler)
     end
+    if not next(junkIcons) then
+        updateBags = true
+        self:SetScript("OnUpdate",inventoryManager.BagHandler)
+    end
 end
 
 invUpdate:SetScript("OnEvent",inventoryManager.BagHandler)
@@ -569,9 +577,11 @@ invUpdate:SetScript("OnEvent",inventoryManager.BagHandler)
 
 local initialized
 function inventoryManager.InitializeBags()
-    if initialized then return end
+    if initialized and next(junkIcons) then return end
     initialized = true
-    UpdateAllBags()
+    updateBags = true
+    invUpdate:SetScript("OnUpdate",inventoryManager.BagHandler)
+    --UpdateAllBags()
 end
 
 hooksecurefunc('ContainerFrame_Update', function(self)
