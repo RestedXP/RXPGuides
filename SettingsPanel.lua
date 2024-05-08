@@ -1010,7 +1010,8 @@ function addon.settings:CreateAceOptionsPanel()
                         name = _G.INVENTORY_TOOLTIP,
                         type = "header",
                         width = "full",
-                        order = 4.8
+                        order = 4.8,
+                        hidden = not addon.inventoryManager,
                     },
                     showJunkIcon = {
                         name = L("Show junk item indicator"), -- TODO locale
@@ -1018,13 +1019,15 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth * 1.5,
                         order = 4.81,
+                        hidden = not addon.inventoryManager,
                     },
                     autoDiscardItems = {
                         name = L("Discard junk items if bag is full"), -- TODO locale
-                        desc = L("Automatically attempts to discard a junk item from your bags if your inventory is full"),
+                        desc = L("Automatically attempts to discard the cheapest junk item from your bags if your inventory is full"),
                         type = "toggle",
                         width = optionsWidth * 1.5,
                         order = 4.83,
+                        hidden = not addon.inventoryManager,
                     },
                     rightClickJunk = {
                         name = L("Toggle junk with modified right click"), -- TODO locale
@@ -1032,11 +1035,12 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth * 1.5,
                         order = 4.84,
+                        hidden = not addon.inventoryManager,
                     },
                     rightClickMod = {
                         name = L("Right Click Modifier"), -- TODO locale
                         type = "select",
-                        width = optionsWidth,
+                        width = optionsWidth*0.6,
                         order = 4.85,
                         get = function()
                             return
@@ -1050,6 +1054,7 @@ function addon.settings:CreateAceOptionsPanel()
                             [2] = "ALT",
                             [3] = "CTRL+ALT",
                         },
+                        hidden = not addon.inventoryManager,
                     },
                     autoSellJunk = {
                         name = L("Auto Sell Junk"), -- TODO locale
@@ -1057,6 +1062,40 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth * 1.5,
                         order = 4.86,
+                        hidden = not addon.inventoryManager,
+                    },
+                    sellKeybind = {
+                        name = L("Delete Cheapest Junk Item Keybind"), -- TODO locale
+                        desc = L("Click to set a keybind"),
+                        type = "keybinding",
+                        width = optionsWidth * 1.25,
+                        order = 4.87,
+                        hidden = not addon.inventoryManager,
+                        get = function()
+                            local commandName = "CLICK RXPInventory_DeleteJunk:LeftButton"
+                            local i = addon.inventoryManager.bindingIndex
+                            local c,_,key = GetBinding(i or 1)
+                            if c == commandName then
+                                return key
+                            else
+                                for index = 1, GetNumBindings() do
+                                    local command,_,key1 = GetBinding(index)
+                                    if command == commandName then
+                                        addon.inventoryManager.bindingIndex = index
+                                        return key1
+                                    end
+                                end
+                            end
+                        end,
+                        set = function(info, key)
+                            local i = addon.inventoryManager.bindingIndex
+                            local c = "CLICK RXPInventory_DeleteJunk:LeftButton"
+                            local command,_,key1 = GetBinding(i or 1)
+                            if command == c and key1 then
+                                SetBinding(key1)
+                            end
+                            SetBinding(key,c)
+                        end
                     },
                     talentsHeader = {
                         name = function()
