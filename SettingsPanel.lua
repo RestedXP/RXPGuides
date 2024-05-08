@@ -203,7 +203,11 @@ function addon.settings:InitializeSettings()
         }
     }
 
-    settingsDB = LibStub("AceDB-3.0"):New("RXPSettings", settingsDBDefaults)
+    if type(RXPData.defaultProfile) ~= "table" or not RXPData.defaultProfile.profile then
+        RXPData.defaultProfile = false
+    end
+
+    settingsDB = LibStub("AceDB-3.0"):New("RXPSettings", RXPData.defaultProfile or settingsDBDefaults)
 
     settingsDB.RegisterCallback(self, "OnProfileChanged", "RefreshProfile")
     settingsDB.RegisterCallback(self, "OnProfileCopied", "CopyProfile")
@@ -3019,6 +3023,38 @@ function addon.settings:CreateAceOptionsPanel()
         end
     }
 
+    optionsTable.args.profiles.args.defaultProfileHeader = {
+        name = "",
+        type = "header",
+        width = "full",
+        order = 900
+    }
+
+    optionsTable.args.profiles.args["setDefaultProfile"] = {
+        order = 910,
+        name = L("Set current profile as default"),
+        type = 'execute',
+        width = 1.5,
+        func = function()
+            addon.settings.defaultProfileKey = settingsDB:GetCurrentProfile()
+            local function copy(t)
+                local out = {}
+                for i,v in pairs(t) do
+                    if type(v) == "table" then
+                        out[i] = copy(v)
+                    else
+                        out[i] = v
+                    end
+                end
+                return out
+            end
+            RXPData.defaultProfile = {profile = copy(addon.settings.profile)}
+        end,
+        disabled = function()
+            return addon.settings.defaultProfileKey == settingsDB:GetCurrentProfile()
+        end
+    }
+
     addon.RXPOptions = AceConfigDialog:AddToBlizOptions(addon.title)
 
     -- Ace3 ConfigDialog doesn't support embedding icons in header
@@ -3264,6 +3300,7 @@ function addon.settings:RefreshProfile()
     addon.settings:SaveFramePositions()
 
     self.profile = settingsDB.profile
+    addon.settings.defaultProfileKey = false
 
     if loadedProfileKey ~= settingsDB.keys.profile then
         addon.comms.PrettyPrint(L(
