@@ -1,4 +1,5 @@
 local addonName,addon = ...
+local L = addon.locale.Get
 
 local inventoryManager = {}
 addon.inventoryManager = inventoryManager
@@ -172,9 +173,9 @@ local function ToggleJunk(id)
     local colour = addon.guideTextColors["RXP_WARN_"]
     RXPCData.discardPile[id] = not junk
     if junk then
-        print(format("%s: |c%sSet %s as useful|r",addonName,colour,link))
+        print(format(L("%s: |c%sSet %s as useful|r"),addonName,colour,link))
     else
-        print(format("%s: |c%sSet %s as junk|r",addonName,colour,link))
+        print(format(L("%s: |c%sSet %s as junk|r"),addonName,colour,link))
     end
     inventoryManager.UpdateAllBags()
 end
@@ -569,7 +570,7 @@ local function ProcessJunk(sellWares)
         if inventoryManager.sellGoods then
             local value = GetMoney() - inventoryManager.sellGoods
             local colour = addon.guideTextColors["RXP_WARN_"]
-            print(format("RXPGuides: |c%sSold junk items for|r %s",colour,GetCoinTextureString(value)))
+            print(format(L("RXPGuides: |c%sSold junk items for|r %s"),colour,GetCoinTextureString(value)))
             inventoryManager.sellGoods = false
         end
     elseif isMerchant then
