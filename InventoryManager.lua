@@ -80,10 +80,11 @@ local quiverFreeSlots = 0
 local quiverSlot
 local organizeQuiver
 local closestSlot = {}
+local sortTimer = 0
 
 local function SortQuiver()
 --Makes sure you only have 1 partial stack at the left most quiver slot for each ammo type
-    if gameVersion > 30000 or not inventoryManager.IsBagAutomationEnabled() or UnitIsDead('player') then
+    if gameVersion > 30000 or UnitIsDead('player') then
         return
     end
     organizeQuiver = false
@@ -108,6 +109,16 @@ local function SortQuiver()
     local id
     table.wipe(closestSlot)
     local numQuiverSlots = GetContainerNumSlots(quiverSlot)
+    local t = GetTime()
+    local colour = addon.guideTextColors["RXP_WARN_"]
+    if inventoryManager.manualDelete then
+        inventoryManager.manualDelete = false
+        print(format(L("RXPGuides: |c%sSorting arrows/bullets|r"),colour))
+    elseif t - sortTimer > 3 then
+        print(format(L("RXPGuides: |c%sInventory is full, sorting arrows/bullets|r"),colour))
+    end
+    sortTimer = t
+
     for slot = 1, numQuiverSlots do
         id = GetContainerItemID(quiverSlot, slot)
 
@@ -274,11 +285,20 @@ local function DeleteItems()
     if inventoryManager.sellGoods and MerchantFrame:IsShown() and MerchantFrame.selectedTab == 1 then
         inventoryManager.ProcessJunk(true)
         return
-    elseif not inventoryManager.IsBagAutomationEnabled() or UnitIsDead('player') or GetCursorInfo() then
+    elseif UnitIsDead('player') or GetCursorInfo() then
         return
     elseif inventoryManager.deleteBag then
         PickupContainerItem(inventoryManager.deleteBag,inventoryManager.deleteSlot)
         DeleteCursorItem()
+        local colour = addon.guideTextColors["RXP_WARN_"]
+        local _,stack,_,_,_,_,link = GetContainerItemInfo(inventoryManager.deleteBag,inventoryManager.deleteSlot)
+        if link then
+            if inventoryManager.manualDelete then
+                print(format(L("RXPGuides: |c%sDeleting %sx%s|r"),colour,link,stack))
+            else
+                print(format(L("RXPGuides: |c%sInventory is full, deleting %sx%s|r"),colour,link,stack))
+            end
+        end
         inventoryManager.deleteBag = nil
         inventoryManager.deleteSlot = nil
     elseif organizeQuiver and not InCombatLockdown() then
@@ -286,20 +306,36 @@ local function DeleteItems()
     end
 end
 
-local DeleteCheapestItem = function(deleteIfFull)
+local DeleteCheapestItem = function(self,deleteIfFull)
 
     if not inventoryManager.bagUpdated then
         return
     end
+    inventoryManager.manualDelete = true
     FindJunk(not deleteIfFull)
-    DeleteItems()
+    DeleteItems(true)
+    inventoryManager.manualDelete = false
 end
 
 addon.DeleteCheapestItem = DeleteCheapestItem
 --A3 =DeleteCheapestItem
 
+local btn = CreateFrame("BUTTON", "RXPInventory_DeleteJunk")
+btn:SetScript("OnClick", function()
+    DeleteCheapestItem()
+end)
+
+BINDING_HEADER_RXPInventory = addon.title
+
+_G["BINDING_NAME_CLICK RXPInventory_DeleteJunk:LeftButton"] =
+    L("Delete Cheapest Junk Item")
+
 local bagEvent = "BAG_UPDATE_DELAYED"
-local WorldFrameHook = DeleteItems
+local WorldFrameHook = function()
+    if inventoryManager.IsBagAutomationEnabled() then
+        DeleteItems()
+    end
+end
 local f = inventoryManager.DeleteJunkFrame or CreateFrame("Frame","RXPDeleteJunk",WorldFrame)
 f:RegisterEvent("PLAYER_ENTERING_WORLD")
 
@@ -310,7 +346,9 @@ f:SetScript("OnEvent",function(self)
     self:RegisterEvent(bagEvent)
     self:RegisterEvent("LOOT_READY")
     self:SetScript("OnEvent",function()
-        FindJunk()
+        if inventoryManager.IsBagAutomationEnabled() then
+            FindJunk()
+        end
     end)
     RXPCData.discardPile = RXPCData.discardPile or {}
 
@@ -546,8 +584,8 @@ hooksecurefunc('ContainerFrameItemButton_OnEnter',function(self)
 end)]]
 
 
-local function ProcessJunk(sellWares)
-    local isMerchant = sellWares and MerchantFrame:IsShown() and MerchantFrame.selectedTab == 1 and inventoryManager.IsMerchantAutomationEnabled()
+local function ProcessJunk(sellWares,override)
+    local isMerchant = sellWares and MerchantFrame:IsShown() and MerchantFrame.selectedTab == 1 and (inventoryManager.IsMerchantAutomationEnabled() or override)
     local totalCost = 0
     local itemsToSell = {}
     for bag = BACKPACK_CONTAINER, NUM_BAG_FRAMES do

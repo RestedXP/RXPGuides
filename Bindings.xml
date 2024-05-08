@@ -1,4 +1,5 @@
 <Bindings>
+    <Binding name="CLICK RXPInventory_DeleteJunk:LeftButton" header="Inventory Management" category="BINDING_HEADER_RXPInventory" />
     <Binding name="CLICK RXPItemFrameButton1:LeftButton" header="Active Items" category="BINDING_HEADER_RXPGuides" />
     <Binding name="CLICK RXPItemFrameButton2:LeftButton" category="BINDING_HEADER_RXPGuides"/>
     <Binding name="CLICK RXPItemFrameButton3:LeftButton" category="BINDING_HEADER_RXPGuides"/>
