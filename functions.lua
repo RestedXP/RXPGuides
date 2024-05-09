@@ -2265,7 +2265,8 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
 
     local element = self.element
     local questId = element.questId
-    local name = addon.GetItemName(element.id)
+    local id = element.id
+    local name = addon.GetItemName(id)
     local step = element.step
     local numRequired = element.qty
     local event = ...
@@ -2284,11 +2285,11 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
 
             step.activeItems = step.activeItems or {}
             if not event then
-                step.activeItems[element.id] = true
+                step.activeItems[id] = true
             elseif event ~= "BAG_UPDATE_DELAYED" and event ~= "WindowUpdate" and addon.activeItems then
                 local isItemActive = not IsOnQuest(questId)
-                step.activeItems[element.id] = isItemActive
-                addon.activeItems[element.id] = isItemActive
+                step.activeItems[id] = isItemActive
+                addon.activeItems[id] = isItemActive
                 addon.UpdateItemFrame()
             end
         elseif element.profession then
@@ -2327,14 +2328,14 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
         end
     end
 
-    local count = GetItemCount(element.id,element.includeBank)
+    local count = GetItemCount(id,element.includeBank)
     if count == 0 then
-        if C_ToyBox and PlayerHasToy(element.id) then
+        if C_ToyBox and PlayerHasToy(id) and C_ToyBox.IsToyUsable(id) then
             count = count + 1
         end
 
         for i = 1, _G.INVSLOT_LAST_EQUIPPED do
-            if GetInventoryItemID("player", i) == element.id then
+            if GetInventoryItemID("player", i) == id then
                 count = count + 1
                 break
             end
@@ -4662,14 +4663,15 @@ function addon.functions.itemcount(self, ...)
     local operator = element.operator
     local eq = element.eq
     local total = element.total
-    local count = GetItemCount(element.id,element.enableBank)
+    local id = element.id
+    local count = GetItemCount(id,element.enableBank)
     if count == 0 then
-        if C_ToyBox and PlayerHasToy(element.id) then
+        if C_ToyBox and PlayerHasToy(id) and C_ToyBox.IsToyUsable(id) then
             count = count + 1
         end
 
         for i = 1, _G.INVSLOT_LAST_EQUIPPED do
-            if GetInventoryItemID("player", i) == element.id then
+            if GetInventoryItemID("player", i) == id then
                 count = count + 1
                 break
             end
@@ -5250,7 +5252,7 @@ function addon.functions.collecttoy(self, ...)
     local element = self.element
 
     local itemID, toyName, icon, isFavorite, hasFanfare = C_ToyBox.GetToyInfo(element.id)
-    local isCollected = PlayerHasToy(element.id)
+    local isCollected = PlayerHasToy(element.id) and C_ToyBox.IsToyUsable(element.id)
 
     element.itemName = toyName
     if element.rawtext then
