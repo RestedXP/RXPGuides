@@ -1741,6 +1741,8 @@ step
 	.link https://youtu.be/oBnDG1AWcxU >> CLICK HERE for reference
 step
     #label summonIodax
+    #optional
+    #completewith next
     .goto 1427/0,-1791.400,-6774.900
     .cast 446363 >>Go to the Head of the Obliterator marked on your map. Use the parts you collected to summon |cRXP_ENEMY_Iodax the Obliterator|r a lvl 50 elite giant
     .unitscan Iodax the Obliterator
@@ -1752,6 +1754,7 @@ step
 step
     .train 426953 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Bloodthirsty|r] |cRXP_WARN_to learn|r |T236276:0|t[Taste for Blood]
     .use 221267
+    .itemcount 221267,1
 ]])
 
 RXPGuides.RegisterGuide([[
