@@ -263,6 +263,7 @@ RXPFrame.OnMouseUp = function(self, button)
     SetStepFrameAnchor()
     addon.UpdateItemFrame()
     isResizing = false
+    addon.settings:SaveFramePositions()
 end
 
 RXPFrame:SetScript("OnMouseDown", RXPFrame.OnMouseDown)
@@ -456,6 +457,7 @@ local TipWindowMouseUp = function(self)
         local point = {self:GetPoint()}
         point[2] = nil
         RXPCData.tipWindow = point
+        addon.settings:SaveFramePositions()
     end
 end
 

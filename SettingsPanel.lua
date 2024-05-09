@@ -8,6 +8,10 @@ local LibDataBroker = LibStub("LibDataBroker-1.1")
 local AceConfigRegistry = LibStub("AceConfigRegistry-3.0")
 local AceConfigDialog = LibStub("AceConfigDialog-3.0")
 
+local IsAddOnLoaded = C_AddOns and C_AddOns.IsAddOnLoaded or _G.IsAddOnLoaded
+local GetNumAddOns =  C_AddOns and C_AddOns.GetNumAddOns or _G.GetNumAddOns
+local GetAddOnInfo = C_AddOns and C_AddOns.GetAddOnInfo or _G.GetAddOnInfo
+
 local fmt, tostr, next, GetTime = string.format, tostring, next, GetTime
 
 local INV_HEIRLOOM = _G.Enum.ItemQuality.Heirloom
@@ -94,116 +98,120 @@ function addon.settings.ChatCommand(input)
     end
 end
 
+local settingsDBDefaults = {
+    profile = {
+        enableTracker = true,
+        enableLevelUpAnnounceSolo = true,
+        enableLevelUpAnnounceGroup = true,
+        enableFlyStepAnnouncements = true,
+        alwaysSendBranded = true,
+        checkVersions = true,
+        enableLevelingReportInspections = true,
+        levelSplitsHistory = 10,
+        levelSplitsFontSize = 11,
+        levelSplitsOpacity = 0.9,
+        compareTotalTimeSplit = true,
+        enableMinimapButton = true,
+        enableWorldMapButton = true,
+        minimap = {minimapPos = 146},
+
+        --
+        enableQuestAutomation = true,
+        enableFPAutomation = true,
+        enableBindAutomation = true,
+        enableGossipAutomation = true,
+        showUnusedGuides = true,
+        anchorOrientation = "top",
+        chromieTime = "auto",
+        enableXpStepSkipping = true,
+        enableAutomaticXpRate = true,
+        showFlightTimers = true,
+
+        -- Sliders
+        arrowScale = 1,
+        arrowText = 9,
+        windowScale = 1,
+        numMapPins = 7,
+        worldMapPinScale = 1,
+        vendorTreasurePinScale = 0.8,
+        distanceBetweenPins = 1,
+        worldMapPinBackgroundOpacity = 0.35,
+        batchSize = 6,
+        phase = 6,
+        xprate = 1,
+        guideFontSize = 9,
+        activeItemsScale = 1,
+
+        showEnabled = true,
+
+        -- Targeting
+        enableTargetMacro = true,
+        notifyOnTargetUpdates = true,
+        enableTargetAutomation = true,
+        enableFriendlyTargeting = true,
+        enableTargetMarking = true,
+        enableEnemyTargeting = true,
+        enableEnemyMarking = true,
+        enableMobMarking = true,
+        showTargetingOnProximity = true,
+        soundOnFind = 3175,
+        soundOnFindChannel = 'Master',
+        scanForRares = true,
+        notifyOnRares = true,
+        activeTargetScale = 1,
+
+        enableAddonIncompatibilityCheck = true,
+        enableVendorTreasure = true,
+
+        -- Themes
+        activeTheme = 'Default',
+        customTheme = addon.customThemeBase,
+        enableThemeLiveReload = true,
+
+        -- Text colors
+        textEnemyColor = addon.guideTextColors.default['RXP_ENEMY_'],
+        textFriendlyColor = addon.guideTextColors.default['RXP_FRIENDLY_'],
+        textLootColor = addon.guideTextColors.default['RXP_LOOT_'],
+        textWarnColor = addon.guideTextColors.default['RXP_WARN_'],
+        textPickColor = addon.guideTextColors.default['RXP_PICK_'],
+        textBuyColor = addon.guideTextColors.default['RXP_BUY_'],
+
+        -- Talents
+        enableTalentGuides = true,
+        activeTalentGuide = nil,
+        previewTalents = true,
+        hightlightTalentPlan = true,
+        upcomingTalentCount = 5,
+
+        enableTips = true,
+        enableItemUpgrades = true,
+        enableItemUpgradesAH = true,
+        enableDrowningWarning = true,
+        enableDrowningWarningSound = true,
+        drowningThreshold = 0.2,
+        enableDrowningScreenFlash = true,
+        enableQuestChoiceRecommendation = true,
+        enableQuestChoiceGoldRecommendation = true,
+
+        enableEmergencyActions = true,
+        emergencyThreshold = 0.2,
+        enableEmergencyIconAnimations = true,
+
+        dungeons = {},
+
+        framePositions = {},
+        frameSizes = {}
+    }
+}
+
 function addon.settings:InitializeSettings()
     -- New character settings format
     -- Only set defaults for enabled = true
-    local settingsDBDefaults = {
-        profile = {
-            enableTracker = true,
-            enableLevelUpAnnounceSolo = true,
-            enableLevelUpAnnounceGroup = true,
-            enableFlyStepAnnouncements = true,
-            alwaysSendBranded = true,
-            checkVersions = true,
-            enableLevelingReportInspections = true,
-            levelSplitsHistory = 10,
-            levelSplitsFontSize = 11,
-            levelSplitsOpacity = 0.9,
-            compareTotalTimeSplit = true,
-            enableMinimapButton = true,
-            enableWorldMapButton = true,
-            minimap = {minimapPos = 146},
+    if type(RXPData.defaultProfile) ~= "table" or not RXPData.defaultProfile.profile then
+        RXPData.defaultProfile = false
+    end
 
-            --
-            enableQuestAutomation = true,
-            enableFPAutomation = true,
-            enableBindAutomation = true,
-            enableGossipAutomation = true,
-            showUnusedGuides = true,
-            anchorOrientation = "top",
-            chromieTime = "auto",
-            enableXpStepSkipping = true,
-            enableAutomaticXpRate = true,
-            showFlightTimers = true,
-
-            -- Sliders
-            arrowScale = 1,
-            arrowText = 9,
-            windowScale = 1,
-            numMapPins = 7,
-            worldMapPinScale = 1,
-            vendorTreasurePinScale = 0.8,
-            distanceBetweenPins = 1,
-            worldMapPinBackgroundOpacity = 0.35,
-            batchSize = 6,
-            phase = 6,
-            xprate = 1,
-            guideFontSize = 9,
-            activeItemsScale = 1,
-
-            showEnabled = true,
-
-            -- Targeting
-            enableTargetMacro = true,
-            notifyOnTargetUpdates = true,
-            enableTargetAutomation = true,
-            enableFriendlyTargeting = true,
-            enableTargetMarking = true,
-            enableEnemyTargeting = true,
-            enableEnemyMarking = true,
-            enableMobMarking = true,
-            showTargetingOnProximity = true,
-            soundOnFind = 3175,
-            soundOnFindChannel = 'Master',
-            scanForRares = true,
-            notifyOnRares = true,
-            activeTargetScale = 1,
-
-            enableAddonIncompatibilityCheck = true,
-            enableVendorTreasure = true,
-
-            -- Themes
-            activeTheme = 'Default',
-            customTheme = addon.customThemeBase,
-            enableThemeLiveReload = true,
-
-            -- Text colors
-            textEnemyColor = addon.guideTextColors.default['RXP_ENEMY_'],
-            textFriendlyColor = addon.guideTextColors.default['RXP_FRIENDLY_'],
-            textLootColor = addon.guideTextColors.default['RXP_LOOT_'],
-            textWarnColor = addon.guideTextColors.default['RXP_WARN_'],
-            textPickColor = addon.guideTextColors.default['RXP_PICK_'],
-            textBuyColor = addon.guideTextColors.default['RXP_BUY_'],
-
-            -- Talents
-            enableTalentGuides = true,
-            activeTalentGuide = nil,
-            previewTalents = true,
-            hightlightTalentPlan = true,
-            upcomingTalentCount = 5,
-
-            enableTips = true,
-            enableItemUpgrades = true,
-            enableItemUpgradesAH = true,
-            enableDrowningWarning = true,
-            enableDrowningWarningSound = true,
-            drowningThreshold = 0.2,
-            enableDrowningScreenFlash = true,
-            enableQuestChoiceRecommendation = true,
-            enableQuestChoiceGoldRecommendation = true,
-
-            enableEmergencyActions = true,
-            emergencyThreshold = 0.2,
-            enableEmergencyIconAnimations = true,
-
-            dungeons = {},
-
-            framePositions = {},
-            frameSizes = {}
-        }
-    }
-
-    settingsDB = LibStub("AceDB-3.0"):New("RXPSettings", settingsDBDefaults)
+    settingsDB = LibStub("AceDB-3.0"):New("RXPSettings", RXPData.defaultProfile or settingsDBDefaults)
 
     settingsDB.RegisterCallback(self, "OnProfileChanged", "RefreshProfile")
     settingsDB.RegisterCallback(self, "OnProfileCopied", "CopyProfile")
@@ -1001,6 +1009,97 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 4.7
+                    },
+                    inventoryHeader = {
+                        name = _G.INVENTORY_TOOLTIP,
+                        type = "header",
+                        width = "full",
+                        order = 4.8,
+                        hidden = not addon.inventoryManager,
+                    },
+                    showJunkIcon = {
+                        name = L("Show junk item indicator"), -- TODO locale
+                        desc = L("Any items marked as junk will display a gold coin icon on the top left corner of the item icon within your bags"),
+                        type = "toggle",
+                        width = optionsWidth * 1.5,
+                        order = 4.81,
+                        hidden = not addon.inventoryManager,
+                    },
+                    autoDiscardItems = {
+                        name = L("Discard junk items if bag is full"), -- TODO locale
+                        desc = L("Automatically attempts to discard the cheapest junk item from your bags if your inventory is full"),
+                        type = "toggle",
+                        width = optionsWidth * 1.5,
+                        order = 4.83,
+                        hidden = not addon.inventoryManager,
+                    },
+                    rightClickJunk = {
+                        name = L("Toggle junk with modified right click"), -- TODO locale
+                        desc = L("Allows you to toggle items as junk by clicking on it with CTRL+RightClick or ALT+RightClick"),
+                        type = "toggle",
+                        width = optionsWidth * 1.5,
+                        order = 4.84,
+                        hidden = not addon.inventoryManager,
+                    },
+                    rightClickMod = {
+                        name = L("Right Click Modifier"), -- TODO locale
+                        type = "select",
+                        width = optionsWidth*0.6,
+                        order = 4.85,
+                        get = function()
+                            return
+                                self.profile.rightClickMod or 1
+                        end,
+                        disabled = function ()
+                            return not self.profile.rightClickJunk
+                        end,
+                        values = {
+                            [1] = "CTRL",
+                            [2] = "ALT",
+                            [3] = "CTRL+ALT",
+                        },
+                        hidden = not addon.inventoryManager,
+                    },
+                    autoSellJunk = {
+                        name = L("Auto Sell Junk"), -- TODO locale
+                        desc = L("Automatically sell all gray items and all other items that you set as junk"),
+                        type = "toggle",
+                        width = optionsWidth * 1.5,
+                        order = 4.86,
+                        hidden = not addon.inventoryManager,
+                    },
+                    sellKeybind = {
+                        name = L("Delete Cheapest Junk Item Keybind"), -- TODO locale
+                        desc = L("Click to set a keybind"),
+                        type = "keybinding",
+                        width = optionsWidth * 1.25,
+                        order = 4.87,
+                        hidden = not addon.inventoryManager,
+                        get = function()
+                            local commandName = "CLICK RXPInventory_DeleteJunk:LeftButton"
+                            local i = addon.inventoryManager.bindingIndex
+                            local c,_,key = GetBinding(i or 1)
+                            if c == commandName then
+                                return key
+                            else
+                                for index = 1, GetNumBindings() do
+                                    local command,_,key1 = GetBinding(index)
+                                    if command == commandName then
+                                        addon.inventoryManager.bindingIndex = index
+                                        return key1
+                                    end
+                                end
+                            end
+                        end,
+                        set = function(info, key)
+                            local i = addon.inventoryManager.bindingIndex
+                            local c = "CLICK RXPInventory_DeleteJunk:LeftButton"
+                            local command,_,key1 = GetBinding(i or 1)
+                            if command == c and key1 then
+                                SetBinding(key1)
+                            end
+                            SetBinding(key,c)
+                        end
                     },
                     talentsHeader = {
                         name = function()
@@ -2963,7 +3062,39 @@ function addon.settings:CreateAceOptionsPanel()
         type = 'execute',
         func = function() _G.ReloadUI() end,
         disabled = function()
-            return loadedProfileKey == settingsDB.keys.profile
+            return loadedProfileKey == settingsDB.keys.profile and not settingsDB.isResetting
+        end
+    }
+
+    optionsTable.args.profiles.args.defaultProfileHeader = {
+        name = "",
+        type = "header",
+        width = "full",
+        order = 900
+    }
+
+    optionsTable.args.profiles.args["setDefaultProfile"] = {
+        order = 910,
+        name = L("Set current profile as default"),
+        type = 'execute',
+        width = 1.5,
+        func = function()
+            addon.settings.defaultProfileKey = settingsDB:GetCurrentProfile()
+            local function copy(t)
+                local out = {}
+                for i,v in pairs(t) do
+                    if type(v) == "table" then
+                        out[i] = copy(v)
+                    else
+                        out[i] = v
+                    end
+                end
+                return out
+            end
+            RXPData.defaultProfile = {profile = copy(addon.settings.profile)}
+        end,
+        disabled = function()
+            return addon.settings.defaultProfileKey == settingsDB:GetCurrentProfile()
         end
     }
 
@@ -3212,6 +3343,7 @@ function addon.settings:RefreshProfile()
     addon.settings:SaveFramePositions()
 
     self.profile = settingsDB.profile
+    addon.settings.defaultProfileKey = false
 
     if loadedProfileKey ~= settingsDB.keys.profile then
         addon.comms.PrettyPrint(L(
@@ -3253,6 +3385,16 @@ function addon.settings:ResetProfile()
     addon.comms.PrettyPrint(L(
                                 "Profile changed, Reload UI for settings to take effect"))
 
+    --resets to the actual defaults, in case the profile is bricked or frames are offscreen
+    settingsDBDefaults.profile.framePositions = {
+        arrowFrame = {{"TOP","UIParent","TOP",0,0}},
+        RXPFrame = {{"LEFT",nil,"LEFT",0,35}},
+        activeItemFrame = {{"CENTER","UIParent","CENTER",0,0}},
+        activeTargetFrame = {{"CENTER","UIParent","CENTER",0,-50}}
+    }
+    settingsDBDefaults.profile.frameSizes = {}
+    settingsDBDefaults.profile.minimap.minimapPos = 146
+    settingsDB.defaults.profile = settingsDBDefaults.profile
     settingsDB:ResetProfile(false, true)
 end
 
