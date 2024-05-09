@@ -135,10 +135,7 @@ local function UpdateCooldowns()
             if start then
                 --remaining = start + duration - GetTime()
                 --cd = FormatCooldown(start,remaining,enable)
-                if btn.cooldown:GetCooldownDuration() == 0 or
-                                         not btn.cooldown:IsShown() then
-                    btn.cooldown:SetCooldown(start,duration)
-                end
+                btn.cooldown:SetCooldown(start,duration)
             else
                 btn.cooldown:Clear()
             end
