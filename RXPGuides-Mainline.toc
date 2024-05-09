@@ -19,14 +19,14 @@ GuideWindow.lua
 Help.lua
 SettingsPanel.lua
 
+DB/mainline.xml
+
 QuestLog.lua
 ActiveItemFrame.lua
 LevelingTracker.lua
 Timers.lua
 Communications.lua
 Targeting.lua
-
-DB/mainline.xml
 
 map.lua
 functions.lua

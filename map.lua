@@ -48,7 +48,10 @@ af:Hide()
 af:SetScript("OnMouseDown", function(self, button)
     if not addon.settings.profile.lockFrames and af:GetAlpha() ~= 0 then af:StartMoving() end
 end)
-af:SetScript("OnMouseUp", function(self, button) af:StopMovingOrSizing() end)
+af:SetScript("OnMouseUp", function(self, button)
+    self:StopMovingOrSizing()
+    addon.settings:SaveFramePositions()
+end)
 
 function addon.SetupArrow()
     af.text:SetFont(addon.font, 9,"OUTLINE")

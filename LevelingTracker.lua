@@ -1152,7 +1152,10 @@ function addon.tracker:CreateLevelSplits()
     f:EnableMouse(true)
     f:SetMovable(true)
     function f.onMouseDown() f:StartMoving() end
-    function f.onMouseUp() f:StopMovingOrSizing() end
+    function f.onMouseUp()
+        f:StopMovingOrSizing()
+        addon.settings:SaveFramePositions()
+    end
     f:SetScript("OnMouseDown", f.StartMoving)
     f:SetScript("OnMouseUp", f.StopMovingOrSizing)
 

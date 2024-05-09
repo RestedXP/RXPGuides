@@ -835,7 +835,10 @@ function addon.targeting:CreateTargetFrame()
         end
         f:StartMoving()
     end
-    function f.onMouseUp() f:StopMovingOrSizing() end
+    function f.onMouseUp()
+        f:StopMovingOrSizing()
+        addon.settings:SaveFramePositions()
+    end
     f:SetScript("OnMouseDown", f.onMouseDown)
     f:SetScript("OnMouseUp", f.onMouseUp)
     f.friendlyTargetButtons = {}
