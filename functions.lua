@@ -2328,10 +2328,16 @@ if objFlags is omitted or set to 0, element will complete if you have the quest 
     end
 
     local count = GetItemCount(element.id,element.includeBank)
-    for i = 1, _G.INVSLOT_LAST_EQUIPPED do
-        if GetInventoryItemID("player", i) == element.id then
+    if count == 0 then
+        if C_ToyBox and PlayerHasToy(element.id) then
             count = count + 1
-            break
+        end
+
+        for i = 1, _G.INVSLOT_LAST_EQUIPPED do
+            if GetInventoryItemID("player", i) == element.id then
+                count = count + 1
+                break
+            end
         end
     end
 
@@ -4657,12 +4663,18 @@ function addon.functions.itemcount(self, ...)
     local eq = element.eq
     local total = element.total
     local count = GetItemCount(element.id,element.enableBank)
-    --[[for i = 1, _G.INVSLOT_LAST_EQUIPPED do
-        if GetInventoryItemID("player", i) == element.id then
+    if count == 0 then
+        if C_ToyBox and PlayerHasToy(element.id) then
             count = count + 1
-            break
         end
-    end]]
+
+        for i = 1, _G.INVSLOT_LAST_EQUIPPED do
+            if GetInventoryItemID("player", i) == element.id then
+                count = count + 1
+                break
+            end
+        end
+    end
 
     if not ((eq and count == total) or (count * operator > total * operator) or
         (not eq and operator == 0 and count >= total)) then
