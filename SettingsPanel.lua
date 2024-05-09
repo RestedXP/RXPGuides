@@ -8,6 +8,10 @@ local LibDataBroker = LibStub("LibDataBroker-1.1")
 local AceConfigRegistry = LibStub("AceConfigRegistry-3.0")
 local AceConfigDialog = LibStub("AceConfigDialog-3.0")
 
+local IsAddOnLoaded = C_AddOns and C_AddOns.IsAddOnLoaded or _G.IsAddOnLoaded
+local GetNumAddOns =  C_AddOns and C_AddOns.GetNumAddOns or _G.GetNumAddOns
+local GetAddOnInfo = C_AddOns and C_AddOns.GetAddOnInfo or _G.GetAddOnInfo
+
 local fmt, tostr, next, GetTime = string.format, tostring, next, GetTime
 
 local INV_HEIRLOOM = _G.Enum.ItemQuality.Heirloom
@@ -94,115 +98,115 @@ function addon.settings.ChatCommand(input)
     end
 end
 
+local settingsDBDefaults = {
+    profile = {
+        enableTracker = true,
+        enableLevelUpAnnounceSolo = true,
+        enableLevelUpAnnounceGroup = true,
+        enableFlyStepAnnouncements = true,
+        alwaysSendBranded = true,
+        checkVersions = true,
+        enableLevelingReportInspections = true,
+        levelSplitsHistory = 10,
+        levelSplitsFontSize = 11,
+        levelSplitsOpacity = 0.9,
+        compareTotalTimeSplit = true,
+        enableMinimapButton = true,
+        enableWorldMapButton = true,
+        minimap = {minimapPos = 146},
+
+        --
+        enableQuestAutomation = true,
+        enableFPAutomation = true,
+        enableBindAutomation = true,
+        enableGossipAutomation = true,
+        showUnusedGuides = true,
+        anchorOrientation = "top",
+        chromieTime = "auto",
+        enableXpStepSkipping = true,
+        enableAutomaticXpRate = true,
+        showFlightTimers = true,
+
+        -- Sliders
+        arrowScale = 1,
+        arrowText = 9,
+        windowScale = 1,
+        numMapPins = 7,
+        worldMapPinScale = 1,
+        vendorTreasurePinScale = 0.8,
+        distanceBetweenPins = 1,
+        worldMapPinBackgroundOpacity = 0.35,
+        batchSize = 6,
+        phase = 6,
+        xprate = 1,
+        guideFontSize = 9,
+        activeItemsScale = 1,
+
+        showEnabled = true,
+
+        -- Targeting
+        enableTargetMacro = true,
+        notifyOnTargetUpdates = true,
+        enableTargetAutomation = true,
+        enableFriendlyTargeting = true,
+        enableTargetMarking = true,
+        enableEnemyTargeting = true,
+        enableEnemyMarking = true,
+        enableMobMarking = true,
+        showTargetingOnProximity = true,
+        soundOnFind = 3175,
+        soundOnFindChannel = 'Master',
+        scanForRares = true,
+        notifyOnRares = true,
+        activeTargetScale = 1,
+
+        enableAddonIncompatibilityCheck = true,
+        enableVendorTreasure = true,
+
+        -- Themes
+        activeTheme = 'Default',
+        customTheme = addon.customThemeBase,
+        enableThemeLiveReload = true,
+
+        -- Text colors
+        textEnemyColor = addon.guideTextColors.default['RXP_ENEMY_'],
+        textFriendlyColor = addon.guideTextColors.default['RXP_FRIENDLY_'],
+        textLootColor = addon.guideTextColors.default['RXP_LOOT_'],
+        textWarnColor = addon.guideTextColors.default['RXP_WARN_'],
+        textPickColor = addon.guideTextColors.default['RXP_PICK_'],
+        textBuyColor = addon.guideTextColors.default['RXP_BUY_'],
+
+        -- Talents
+        enableTalentGuides = true,
+        activeTalentGuide = nil,
+        previewTalents = true,
+        hightlightTalentPlan = true,
+        upcomingTalentCount = 5,
+
+        enableTips = true,
+        enableItemUpgrades = true,
+        enableItemUpgradesAH = true,
+        enableDrowningWarning = true,
+        enableDrowningWarningSound = true,
+        drowningThreshold = 0.2,
+        enableDrowningScreenFlash = true,
+        enableQuestChoiceRecommendation = true,
+        enableQuestChoiceGoldRecommendation = true,
+
+        enableEmergencyActions = true,
+        emergencyThreshold = 0.2,
+        enableEmergencyIconAnimations = true,
+
+        dungeons = {},
+
+        framePositions = {},
+        frameSizes = {}
+    }
+}
+
 function addon.settings:InitializeSettings()
     -- New character settings format
     -- Only set defaults for enabled = true
-    local settingsDBDefaults = {
-        profile = {
-            enableTracker = true,
-            enableLevelUpAnnounceSolo = true,
-            enableLevelUpAnnounceGroup = true,
-            enableFlyStepAnnouncements = true,
-            alwaysSendBranded = true,
-            checkVersions = true,
-            enableLevelingReportInspections = true,
-            levelSplitsHistory = 10,
-            levelSplitsFontSize = 11,
-            levelSplitsOpacity = 0.9,
-            compareTotalTimeSplit = true,
-            enableMinimapButton = true,
-            enableWorldMapButton = true,
-            minimap = {minimapPos = 146},
-
-            --
-            enableQuestAutomation = true,
-            enableFPAutomation = true,
-            enableBindAutomation = true,
-            enableGossipAutomation = true,
-            showUnusedGuides = true,
-            anchorOrientation = "top",
-            chromieTime = "auto",
-            enableXpStepSkipping = true,
-            enableAutomaticXpRate = true,
-            showFlightTimers = true,
-
-            -- Sliders
-            arrowScale = 1,
-            arrowText = 9,
-            windowScale = 1,
-            numMapPins = 7,
-            worldMapPinScale = 1,
-            vendorTreasurePinScale = 0.8,
-            distanceBetweenPins = 1,
-            worldMapPinBackgroundOpacity = 0.35,
-            batchSize = 6,
-            phase = 6,
-            xprate = 1,
-            guideFontSize = 9,
-            activeItemsScale = 1,
-
-            showEnabled = true,
-
-            -- Targeting
-            enableTargetMacro = true,
-            notifyOnTargetUpdates = true,
-            enableTargetAutomation = true,
-            enableFriendlyTargeting = true,
-            enableTargetMarking = true,
-            enableEnemyTargeting = true,
-            enableEnemyMarking = true,
-            enableMobMarking = true,
-            showTargetingOnProximity = true,
-            soundOnFind = 3175,
-            soundOnFindChannel = 'Master',
-            scanForRares = true,
-            notifyOnRares = true,
-            activeTargetScale = 1,
-
-            enableAddonIncompatibilityCheck = true,
-            enableVendorTreasure = true,
-
-            -- Themes
-            activeTheme = 'Default',
-            customTheme = addon.customThemeBase,
-            enableThemeLiveReload = true,
-
-            -- Text colors
-            textEnemyColor = addon.guideTextColors.default['RXP_ENEMY_'],
-            textFriendlyColor = addon.guideTextColors.default['RXP_FRIENDLY_'],
-            textLootColor = addon.guideTextColors.default['RXP_LOOT_'],
-            textWarnColor = addon.guideTextColors.default['RXP_WARN_'],
-            textPickColor = addon.guideTextColors.default['RXP_PICK_'],
-            textBuyColor = addon.guideTextColors.default['RXP_BUY_'],
-
-            -- Talents
-            enableTalentGuides = true,
-            activeTalentGuide = nil,
-            previewTalents = true,
-            hightlightTalentPlan = true,
-            upcomingTalentCount = 5,
-
-            enableTips = true,
-            enableItemUpgrades = true,
-            enableItemUpgradesAH = true,
-            enableDrowningWarning = true,
-            enableDrowningWarningSound = true,
-            drowningThreshold = 0.2,
-            enableDrowningScreenFlash = true,
-            enableQuestChoiceRecommendation = true,
-            enableQuestChoiceGoldRecommendation = true,
-
-            enableEmergencyActions = true,
-            emergencyThreshold = 0.2,
-            enableEmergencyIconAnimations = true,
-
-            dungeons = {},
-
-            framePositions = {},
-            frameSizes = {}
-        }
-    }
-
     if type(RXPData.defaultProfile) ~= "table" or not RXPData.defaultProfile.profile then
         RXPData.defaultProfile = false
     end
@@ -3058,7 +3062,7 @@ function addon.settings:CreateAceOptionsPanel()
         type = 'execute',
         func = function() _G.ReloadUI() end,
         disabled = function()
-            return loadedProfileKey == settingsDB.keys.profile
+            return loadedProfileKey == settingsDB.keys.profile and not settingsDB.isResetting
         end
     }
 
@@ -3381,6 +3385,16 @@ function addon.settings:ResetProfile()
     addon.comms.PrettyPrint(L(
                                 "Profile changed, Reload UI for settings to take effect"))
 
+    --resets to the actual defaults, in case the profile is bricked or frames are offscreen
+    settingsDBDefaults.profile.framePositions = {
+        arrowFrame = {{"TOP","UIParent","TOP",0,0}},
+        RXPFrame = {{"LEFT",nil,"LEFT",0,35}},
+        activeItemFrame = {{"CENTER","UIParent","CENTER",0,0}},
+        activeTargetFrame = {{"CENTER","UIParent","CENTER",0,-50}}
+    }
+    settingsDBDefaults.profile.frameSizes = {}
+    settingsDBDefaults.profile.minimap.minimapPos = 146
+    settingsDB.defaults.profile = settingsDBDefaults.profile
     settingsDB:ResetProfile(false, true)
 end
 
