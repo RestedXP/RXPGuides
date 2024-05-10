@@ -6470,6 +6470,49 @@ step << !Undead !Tauren
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zargh|r
     .accept 6365 >>Accept Meats to Orgrimmar
     .target Zargh
+step << Warlock
+    #season 2
+    #sticky
+    #completewith BarrensEnd
+    #label ExplorerImp
+    >>As you're questing cast |T136163:0|t|cRXP_FRIENDLY_[Drain Soul]|r on mobs untill you receive an |T133257:0|t|cRXP_LOOT_Explorer's Soul|r. |cRXP_WARN_Use it to learn how to summon an|r |T236294:0|t|cRXP_FRIENDLY_[Explorer Imp]|r
+    .train 445459 >>|cRXP_WARN_Use|r |T133257:0|t|cRXP_LOOT_Explorer's Soul|r |cRXP_WARN_to learn how to summon an|r |T236294:0|t[|cRXP_FRIENDLY_Explorer Imp|r]
+    .train 445459,1 --Skips if you already have Explorer Imp
+    .train 1120,3 --Skips if you don't have drain soul
+    .use 221978
+step << Warlock/Mage
+    #season 2
+    #requires ExplorerImp << Warlock
+    #sticky
+    #completewith BarrensEnd
+    #label FelPortalRune
+    >>You are in a zone with |cRXP_FRIENDLY_Fel Portals|r present. If you find one summon your |T236294:0|t[|cRXP_FRIENDLY_Explorer Imp|r] and talk to it while next to a portal to send it on an expedition. After 10-20 minutes it will return with loot and a chance to award you with |T134419:0|t[|cRXP_FRIENDLY_Rune of the Felguard|r] << Warlock
+    >>You are in a zone with |cRXP_FRIENDLY_Fel Portals|r present. If you find one close it using a |T134945:0|t[|cRXP_LOOT_Scroll of Spatial Mending|r]. This will award you with |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r] << Mage
+    >>|cRXP_WARN_Be on the lookout for the portals untill you get the rune|r
+    .collect 221499,1 << Warlock --rune of the felguard
+    .collect 223147,1 << Mage --Spell Notes: Balefire Bolt
+    .itemcount 220792,1 << Mage --Scroll of Spatial Mending
+    .use 223148 << Warlock --Otherworldy Treasure
+    .use 220792 << Mage
+    .train 428878,1 << Mage
+    .train 427733,1 << Warlock
+    .train 1120,3 << Warlock --Skips if you don't have drain soul
+    .unitscan Fel Sliver
+    .unitscan Fel Crack
+    .unitscan Fel Tear
+    .unitscan Fel Scar
+    .unitscan Fel Rift
+step << Warlock/Mage
+    #season 2
+    #requires FelPortalRune
+    #sticky
+    #completewith BarrensEnd
+    .itemcount 221499,1 << Warlock --Rune of the Felguard
+    .itemcount 223147,1 << Mage --Spell Notes: Balefire Bolt
+    .train 427733 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Felguard|r] |cRXP_WARN_to learn|r |T136216:0|t[Summon Felguard] << Warlock
+    .train 428878 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt] << Mage
+    .use 221499 << Warlock
+    .use 223147 << Mage
 step
     #completewith DisruptTheAttacks
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Beaks|r
@@ -9318,6 +9361,7 @@ step
     .mob Witchwing Ambusher
     .isOnQuest 875
 step
+    #label BarrensEnd
     #completewith next
     .goto The Barrens,35.26,27.88,30 >> Travel toward |cRXP_FRIENDLY_Seereth|r
     .zoneskip Stonetalon Mountains
@@ -9872,6 +9916,49 @@ step
     .turnin 3261 >>Turn in Jorn Skyseer
     .accept 882 >>Accept Ishamuhale
     .target Jorn Skyseer
+step << Warlock
+    #season 2
+    #sticky
+    #completewith CounterattackTurnin3
+    #label ExplorerImp
+    >>As you're questing cast |T136163:0|t|cRXP_FRIENDLY_[Drain Soul]|r on mobs untill you receive an |T133257:0|t|cRXP_LOOT_Explorer's Soul|r. |cRXP_WARN_Use it to learn how to summon an|r |T236294:0|t|cRXP_FRIENDLY_[Explorer Imp]|r
+    .train 445459 >>|cRXP_WARN_Use|r |T133257:0|t|cRXP_LOOT_Explorer's Soul|r |cRXP_WARN_to learn how to summon an|r |T236294:0|t[|cRXP_FRIENDLY_Explorer Imp|r]
+    .train 445459,1 --Skips if you already have Explorer Imp
+    .train 1120,3 --Skips if you don't have drain soul
+    .use 221978
+step << Warlock/Mage
+    #season 2
+    #requires ExplorerImp << Warlock
+    #sticky
+    #completewith CounterattackTurnin3
+    #label FelPortalRune
+    >>You are in a zone with |cRXP_FRIENDLY_Fel Portals|r present. If you find one summon your |T236294:0|t[|cRXP_FRIENDLY_Explorer Imp|r] and talk to it while next to a portal to send it on an expedition. After 10-20 minutes it will return with loot and a chance to award you with |T134419:0|t[|cRXP_FRIENDLY_Rune of the Felguard|r] << Warlock
+    >>You are in a zone with |cRXP_FRIENDLY_Fel Portals|r present. If you find one close it using a |T134945:0|t[|cRXP_LOOT_Scroll of Spatial Mending|r]. This will award you with |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r] << Mage
+    >>|cRXP_WARN_Be on the lookout for the portals untill you get the rune|r
+    .collect 221499,1 << Warlock --rune of the felguard
+    .collect 223147,1 << Mage --Spell Notes: Balefire Bolt
+    .itemcount 220792,1 << Mage --Scroll of Spatial Mending
+    .use 223148 << Warlock --Otherworldy Treasure
+    .use 220792 << Mage
+    .train 428878,1 << Mage
+    .train 427733,1 << Warlock
+    .train 1120,3 << Warlock --Skips if you don't have drain soul
+    .unitscan Fel Sliver
+    .unitscan Fel Crack
+    .unitscan Fel Tear
+    .unitscan Fel Scar
+    .unitscan Fel Rift
+step << Warlock/Mage
+    #season 2
+    #requires FelPortalRune
+    #sticky
+    #completewith CounterattackTurnin3
+    .itemcount 221499,1 << Warlock --Rune of the Felguard
+    .itemcount 223147,1 << Mage --Spell Notes: Balefire Bolt
+    .train 427733 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Felguard|r] |cRXP_WARN_to learn|r |T136216:0|t[Summon Felguard] << Warlock
+    .train 428878 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt] << Mage
+    .use 221499 << Warlock
+    .use 223147 << Mage
 step
 	#completewith LakotaMani
     >>Kill |cRXP_ENEMY_Stormsnouts|r. Loot them for a |cRXP_LOOT_Horn|r
