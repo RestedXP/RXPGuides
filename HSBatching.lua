@@ -24,7 +24,10 @@ local function SwitchBindLocation()
         SetCVar("maxfps", currentFPS)
         HSstart = 0
         --print('bind-ok')
+    elseif GetFramerate() < 20 then
+        SetCVar("maxfps", currentFPS)
     end
+    addon.isCastingHS = false
 end
 --[[
 hooksecurefunc("SetCVar",function(n,v)
@@ -38,7 +41,7 @@ end)
 ]]
 
 local function StartHSTimer()
-    if HSstart == 0 then
+    if HSstart == 0 and addon.settings.profile.enableHSbatch then
         --print('start-hs')
         local size = addon.settings.profile.batchSize or 6
         batchingWindow = size / 1e3
@@ -48,7 +51,8 @@ local function StartHSTimer()
         local bind = _G.StaticPopup1 and _G.StaticPopup1.text and
                             _G.StaticPopup1.text:GetText() or ""
         if bind:find(bindConfirmation) then
-            SetCVar("maxfps", "250")
+            SetCVar("maxfps", "300")
+            addon.isCastingHS = 0.5
             addon.StartTimer(10-batchingWindow,"Hearthstone")
         end
     end

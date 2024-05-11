@@ -2926,17 +2926,29 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 1.1
                     },
+                    enableHSbatch = {
+                        name = L("Hearthstone batching"),
+                        desc = L(
+                            "Enables the automation of the innkeeper prompt, where you can set your home location in the same server tick you're teleporting away"),
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 1.4,
+                        hidden = addon.gameVersion > 50000
+                    },
                     batchSize = {
                         name = L("Batching window size (ms)"),
                         desc = L(
                             "Adjusts the batching window tolerance, used for hearthstone batching. Increase this value if you're experiencing framerate drops when using your Hearthstone"),
                         type = "range",
                         width = optionsWidth,
-                        order = 1.2,
+                        order = 1.5,
                         min = 1,
                         max = 100,
                         step = 1,
-                        hidden = addon.gameVersion > 40000
+                        hidden = addon.gameVersion > 50000,
+                        disabled = function()
+                            return not addon.settings.profile.enableHSbatch
+                        end
                     },
                     optimizePerformance = {
                         name = fmt("%s %s %s", _G.LOW, _G.QUALITY, _G.SETTINGS),

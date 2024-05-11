@@ -1390,7 +1390,7 @@ function addon:UpdateLoop(diff)
         local activeQuestUpdate = 0
         skip = skip + 1
         event = ""
-        tickRate = math.min(0.1,4*GetTickTime())
+        tickRate = math.min(0.1,4*GetTickTime()) + (addon.isCastingHS or 0)
 
         if not addon.loadNextStep then
             for ref, func in pairs(addon.updateActiveQuest) do

@@ -113,7 +113,7 @@ function addon.targeting:Setup()
 end
 
 local function shouldTargetCheck()
-    return not IsInRaid() and not UnitOnTaxi("player") and
+    return not IsInRaid() and not UnitOnTaxi("player") and not addon.isCastingHS and
                (next(unitscanList) ~= nil or next(mobList) ~= nil or
                    next(targetList) ~= nil or next(rareTargets) ~= nil or
                    next(proxmityPolling.scannedTargets) ~= nil)
