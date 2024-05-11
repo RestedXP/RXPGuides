@@ -695,7 +695,7 @@ step
     .mob Webwood Lurker
 step
     #sticky
-	#completewith spiderLegs
+	#completewith SoDSpiderLegs
     >>Kill |cRXP_ENEMY_Webwood Lurkers|r and |cRXP_ENEMY_Webwood Venomfangs|r. Loot them for their |cRXP_LOOT_Small Spider Legs|r
     >>|cRXP_WARN_You need these for a later quest|r
     .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
@@ -725,13 +725,13 @@ step << Rogue
     .vendor >> |cRXP_BUY_Buy and equip a|r |T135426:0|t[Small Throwing Knife]
     .target Aldia
 step
-#xprate <1.99 << Hunter
+#xprate <1.99 << Hunter/Warrior/Druid
     .goto Teldrassil,55.574,56.948
     .target Tallonkai Swiftroot
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r atop the Tree
     .accept 932 >> Accept Twisted Hatred
     .accept 2438 >> Accept The Emerald Dreamcatcher
-step << Hunter
+step << Hunter/Warrior/Druid
 #xprate >1.99
     .goto Teldrassil,55.574,56.948
     .target Tallonkai Swiftroot
@@ -756,7 +756,7 @@ step << Hunter
     #season 2
     .goto Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeena Featherbow|r
-    .vendor >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_until you have 1 silver left or your quiver is full|r
+    .vendor >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_until you have 1 silver left or you have 3 stacks|r
     .target Jeena Featherbow
 step << Hunter
     #completewith next
@@ -882,10 +882,11 @@ step << Priest
 step
     .goto Teldrassil,60.900,68.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denalan|r
+    >>|cRXP_WARN_Don't take the sprouts quest|r << sod
     .turnin 997 >> Turn in Denalan's Earth
     .target Denalan
     .accept 918 >> Accept Timberling Seeds
-    .accept 919 >> Accept Timberling Sprouts
+    .accept 919 >> Accept Timberling Sprouts << !sod
 step << Rogue
     #season 2
     #completewith next
@@ -901,7 +902,7 @@ step << Druid
     >>Kill |cRXP_ENEMY_Timberlings|r. Loot them for their |cRXP_LOOT_Seeds|r
     >>Loot the |cRXP_LOOT_Timberling Sprouts|r on the ground
     .complete 918,1 --Collect Timberling Seed (x8)
-    .complete 919,1 --Collect Timberling Sprout (x12)
+    .complete 919,1 << !sod --Collect Timberling Sprout (x12)
     .mob Timberling
 step << Druid
     #season 2
@@ -936,9 +937,9 @@ step
     .goto Teldrassil,57.89,64.84,55,0
     .goto Teldrassil,61.21,66.28
     >>Kill |cRXP_ENEMY_Timberlings|r. Loot them for their |cRXP_LOOT_Seeds|r
-    >>Loot the |cRXP_LOOT_Timberling Sprouts|r on the ground
+    >>Loot the |cRXP_LOOT_Timberling Sprouts|r on the ground << !sod
     .complete 918,1 --Collect Timberling Seed (x8)
-    .complete 919,1 --Collect Timberling Sprout (x12)
+    .complete 919,1 << !sod --Collect Timberling Sprout (x12)
     .mob Timberling
 step << Rogue
     #season 2
@@ -956,7 +957,10 @@ step
     .turnin 918 >> Turn in Timberling Seeds
     .target Denalan
     .accept 922 >> Accept Rellian Greenspyre
-    .turnin 919 >> Turn in Timberling Sprouts
+    .turnin 919 >> Turn in Timberling Sprouts << !sod
+step
+    #season 2
+	.abandon 919 >> Abandon The Timberling Sprouts quest, it's not worth doing
 step
     #completewith next
     .goto Teldrassil,68.02,59.66,120 >> Travel to Starbreeze Village
@@ -1063,7 +1067,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r atop the Tree
     .turnin 2438 >> Turn in The Emerald Dreamcatcher
     .target Tallonkai Swiftroot
-    .accept 2459 >> Accept Ferocitas the Dream Eater
+    .accept 2459 >> Accept Ferocitas the Dream Eater << !sod
 step << Hunter
     .goto Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeena Featherbow|r
@@ -1082,7 +1086,7 @@ step << Hunter
     #season 2
     .goto Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeena Featherbow|r
-	.vendor >>|cRXP_BUY_Buy up to 400|r |T132382:0|t[Rough Arrows]
+	.vendor >>|cRXP_BUY_Buy up to 200|r |T132382:0|t[Rough Arrows]
     .target Jeena Featherbow
 step << Hunter
     #completewith next
@@ -1167,14 +1171,15 @@ step << Druid
     .target Kal
 step
     #loop
-    .goto 1438/1,854.400,9952.500,3 >>Next to a small tree
-    .goto 1438/1,822.200,9948.500,3 >>On the small Hill
-    .goto 1438/1,809.800,9926.400,3 >>Next to the massive tree
+    .goto 1438/1,854.400,9952.500,4 >>Next to a small tree
+    .goto 1438/1,822.200,9948.500,4 >>On the small Hill
+    .goto 1438/1,809.800,9926.400,4 >>Next to the massive tree
     >>Loot the 3 felcones from the locations marked on your map. 
     >>|cRXP_WARN_Skip this step if any of them is not there and you're unable to complete the objective|r
     .complete 489,1 --Fel Cone 3/3
     .isOnQuest 489
 step
+    #label SoDSpiderLegs
     .goto Teldrassil,60.4,56.4
     .target Zenn Foulhoof
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zenn Foulhoof|r
@@ -1183,24 +1188,28 @@ step
     .isOnQuest 489
     .target Zenn Foulhoof
 step
+    #season 0
 	#completewith jewel
     >>Loot the |cRXP_LOOT_Fel Cones|r on the ground
     >>|cRXP_WARN_They are usually located next to tree trunks|r
     .complete 489,1 --Collect Fel Cone (x3)
     .isOnQuest 489
 step
+    #season 0
     #completewith next
     >>Kill |cRXP_ENEMY_Gnarlpine Mystics|r
     >>|cRXP_WARN_If there aren't many |cRXP_ENEMY_Gnarlpine Mystics|r you may have to kill |cRXP_ENEMY_Gnarlpine Warriors|r to make them spawn|r
     .complete 2459,1 --Kill Gnarlpine Mystic (x7)
     .mob Gnarlpine Mystic
 step
+    #season 0
 	.goto Teldrassil,69.37,53.41
 	>>Kill |cRXP_ENEMY_Ferocitas the Dream Eater|r. Loot him for the |T133288:0|t[|cRXP_LOOT_Gnarlpine Necklace|r]
     .use 8049 >>|cRXP_WARN_Use the |T133288:0|t[|cRXP_LOOT_Gnarlpine Necklace|r] to loot|r |cRXP_LOOT_Tallonkai's Jewel|r
     .complete 2459,2 --Collect Tallonkai's Jewel (x1)
     .mob Ferocitas the Dream Eater
 step
+    #season 0
     #label jewel
     .goto Teldrassil,68.38,52.06,30,0
     .goto Teldrassil,69.37,53.41
@@ -1209,12 +1218,14 @@ step
     .complete 2459,1 --Kill Gnarlpine Mystic (x7)
     .mob Gnarlpine Mystic
 step
+    #season 0
     #softcore
     #completewith next
     .deathskip >> Die and respawn at the Spirit Healer
     .target Spirit Healer
     .isQuestTurnedIn 489
 step
+    #season 0
     #softcore
     .goto Teldrassil,56.2,60.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brannol Eaglemoon|r
@@ -1222,6 +1233,7 @@ step
     .target Brannol Eaglemoon
     .isQuestTurnedIn 489
 step
+    #season 0
     .goto Teldrassil,59.0,56.1,50,0
     .goto Teldrassil,56.5,65.5,50,0
     .goto Teldrassil,53.0,59.5,50,0
@@ -1232,12 +1244,34 @@ step
     .complete 489,1 --Collect Fel Cone (x3)
     .isOnQuest 489
 step
+    #season 0
     .goto Teldrassil,60.4,56.4
     .target Zenn Foulhoof
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zenn Foulhoof|r
     .turnin 489 >> Turn in Seek Redemption!
     .isOnQuest 489
-step << !Hunter
+step
+    #season 2
+    .goto Teldrassil,44.69,70.52,40,0
+    .goto Teldrassil,44.88,73.83
+    >>Kill |cRXP_ENEMY_Webwood Lurkers|r and |cRXP_ENEMY_Webwood Venomfangs|r. Loot them for their |cRXP_LOOT_Small Spider Legs|r
+    >>|cRXP_WARN_Skip this step if there's no spiders near Zenn|r
+    .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
+    .mob Webwood Lurker
+    .mob Webwood Venomfang
+step
+    #season 0
+    #sticky
+	#completewith spiderLegs
+    >>Kill |cRXP_ENEMY_Webwood Lurkers|r and |cRXP_ENEMY_Webwood Venomfangs|r. Loot them for their |cRXP_LOOT_Small Spider Legs|r
+    >>|cRXP_WARN_You need these for a later quest|r
+    .collect 5465,7,4161,1 --Collect Small Spider Leg (x7)
+    .mob Webwood Lurker
+    .mob Webwood Venomfang
+step
+    #season 2
+    .abandon 489 >> Abandon Seek Redemption. It's not worth going out of your way to turn it in later
+step << !sod/Priest/Rogue
     #completewith next
     .goto Teldrassil,54.68,52.84,20,0
     .goto Teldrassil,54.42,51.19,15 >> Travel to Fel Rock
@@ -1266,8 +1300,7 @@ step << Priest
     .mob Rascal Sprite
     .mob Shadow Sprite
     .train 402852,1
-step
-    #xprate <1.99 << Hunter
+step << !sod/Priest/Rogue
     .goto Teldrassil,51.2,50.6
     >>Kill |cRXP_ENEMY_Lord Melenas|r. Loot him for his |cRXP_LOOT_Head|r
     >>|cRXP_ENEMY_Lord Melenas|r may be located in many different spawn locations throughout Fel Rock
@@ -1310,8 +1343,7 @@ step << Rogue
     .mob Rascal Sprite
     .mob Shadow Sprite
     .train 398196,1
-step
-    #xprate <1.99 << Hunter
+step << !sod/Priest/Rogue
     #softcore
     #completewith next
     .deathskip >> Die and respawn at the Spirit Healer
@@ -1387,21 +1419,24 @@ step << Warrior/Rogue
     .train 3273 >> Train |T135966:0|t[First Aid]
     .target Byancie
 step
-#xprate <1.99 << Hunter
+	#season 2
+    .goto Teldrassil,57.121,61.296
+    .train 2550 >>Train Cooking
+    .target Zarrin
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zarrin|r
+    .accept 4161 >> Accept Recipe of the Kaldorei
+    .turnin 4161 >> Turn in Recipe of the Kaldorei
+    >>|cRXP_WARN_If you're already level 10 and you don't have the spider legs yet feel free to skip this quest. Do still train cooking regardless|r
+step << !sod/Priest/Rogue
     .goto Teldrassil,55.574,56.948
     .target Tallonkai Swiftroot
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r atop the Tree
     .turnin 932 >> Turn in Twisted Hatred
-    .turnin 2459 >> Turn in Ferocitas the Dream Eater
-step
-#xprate >1.99
-    .goto Teldrassil,55.574,56.948
-    .target Tallonkai Swiftroot
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r atop the Tree
-    .turnin 2459 >> Turn in Ferocitas the Dream Eater
+    .turnin 2459 >> Turn in Ferocitas the Dream Eater << !sod
 step
 #xprate >1.99
     .xp 10
+   >>|cRXP_WARN_If you're not even close do the Lord Melenas quest|r
 step << Priest
 #xprate >1.99
     .goto Teldrassil,55.564,56.746
@@ -1497,8 +1532,7 @@ step << Rogue
     .target Jannok Breezesong
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannok Breezesong|r
     .accept 2241 >> Accept The Apple Falls
-step
-#xprate <1.99 << Hunter
+step << !sod/Priest/Rogue
     .goto Teldrassil,55.83,58.31,40,0
     .goto Teldrassil,50.22,53.83
     .goto Teldrassil,55.83,58.31,0
@@ -1518,15 +1552,12 @@ step << Rogue
     .mob Gnarlpine Defender
     .mob Gnarlpine Augur
     .train 398196,1
-step
-#xprate <1.99 << Hunter
+step << !sod/Priest/Rogue
     .goto Teldrassil,46.6,53.0
     >>Kill |cRXP_ENEMY_Gnarlpine Ambushers|r
     .complete 487,1 --Kill Gnarlpine Ambusher (x6)
     .mob Gnarlpine Ambusher
-step
-#xprate >1.99 << !Druid !Hunter
-#xprate <1.99 << Hunter
+step << !sod/Priest/Rogue
     .goto Teldrassil,55.83,58.31,40,0
     .goto Teldrassil,50.22,53.83
     .goto Teldrassil,55.83,58.31,0
@@ -1587,8 +1618,24 @@ step << Rogue
 step << Hunter
     #season 2
     .goto Teldrassil,55.890,59.205
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeena Featherbow|r
+    >>|cRXP_BUY_Buy and equip a|r |T135489:0|t[Laminated Recurve Bow]
+    .collect 2507,1
+    .target Ariyell Skyshadow
+    .money <0.1751
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.77 
+step << Hunter
+    #season 2
+    #completewith next
+    +|cRXP_WARN_Equip the|r |T135489:0|t[Laminated Recurve Bow]
+    .use 2507
+    .itemcount 2507,1
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.76
+step << Hunter
+    #season 2
+    .goto Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeena Featherbow|r
-    >>|cRXP_BUY_Buy 600|r |T132382:0|t[Sharp Arrows]
+    >>|cRXP_BUY_Buy 400|r |T132382:0|t[Sharp Arrows]
     .target Jeena Featherbow
 step << Hunter
     #season 2
@@ -1770,7 +1817,7 @@ step << Hunter
     #season 2
     #optional
     #completewith next
-    .engrave 5 >> Open your character sheet and engrave your chest with a rune
+    .engrave 5 >> Open your character sheet and engrave your chest with |T132177:0|t[Master Marksman]
 step << !Rogue
     #hardcore
     #requires xp10
@@ -2280,7 +2327,7 @@ step << Hunter
     #season 2
     #optional
     #completewith next
-    .engrave 7 >> Open your character sheet and engrave your legs with a rune
+    .engrave 7 >> Open your character sheet and engrave your legs with |T132175:0|t[Flanking Strike]
 step
     #label Spinnerets
 	.goto Teldrassil,47.3,26.0,0
@@ -2292,8 +2339,7 @@ step
     >>|cRXP_ENEMY_Lady Sathrah|r |cRXP_WARN_can spawn in 3 different locations|r
     .complete 2518,1 --Collect Silvery Spinnerets (x1)
     .mob Lady Sathrah
-step
-    #xprate >1.49 << !Hunter
+step << !sod/Warrior/Rogue/Druid
     .goto Teldrassil,38.3,34.3
     .target Sentinel Arynia Cloudsbreak
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
@@ -2322,8 +2368,7 @@ step << Rogue
     .mob Bloodfeather Wind Witch
     .mob Bloodfeather Matriarch
     .train 398196,1
-step
-    #xprate >1.49 << !Hunter
+step << !sod/Warrior/Rogue/Druid
     #sticky
 	#label harpies2
     .goto Teldrassil,33.619,29.819,0,0
@@ -2336,7 +2381,7 @@ step
     .mob Bloodfeather Fury
     .mob Bloodfeather Wind Witch
     .mob Bloodfeather Matriarch
-step << Rogue
+step << !sod/Warrior/Rogue/Druid
     #season 2
     .goto Teldrassil,33.619,29.819,0,0
     .cast 418600 >>|cRXP_WARN_Use any of the|r |T134327:0|t[|cRXP_LOOT_Map Pieces]|r |cRXP_WARN_to combine them into the|r |T134269:0|t[|cRXP_LOOT_Teldrassil Treasure Map|r]
@@ -2350,23 +2395,20 @@ step << Rogue
     .use 208602
     .use 208603
     .train 398196,1
-step
-    #xprate >1.49 << !Hunter
+step << !sod/Warrior/Rogue/Druid
     .goto Teldrassil,31.54,31.62
     .target Mist
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mist|r
     >>|cRXP_WARN_This will start an escort quest|r
     >>|cRXP_WARN_Skip this quest if the NPC is not there|r
     .accept 938 >> Accept Mist
-step
-    #xprate >1.49 << !Hunter
+step << !sod/Warrior/Rogue/Druid
     .goto Teldrassil,38.3,34.4
     .target Sentinel Arynia Cloudsbreak
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
     .turnin 938 >> Turn in Mist
     .isOnQuest 938
-step
-    #xprate >1.49 << !Hunter
+step << !sod/Warrior/Rogue/Druid
     #requires harpies2
     .goto Teldrassil,38.3,34.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
@@ -2458,7 +2500,7 @@ step
     .target Rellian Greenspyre
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rellian Greenspyre|r
     .turnin 923 >> Turn in Tumors
-step
+step << !Hunter/!Priest
     #season 2
     .goto Darnassus,34.814,9.255
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Fandral Staghelm|r
@@ -2471,11 +2513,14 @@ step
     .target Rellian Greenspyre
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rellian Greenspyre|r
     .turnin 923 >> Turn in Tumors
-step
+step << Hunter
+    #season 2
     .goto Darnassus,40.2,9.8
-    .trainer >>Train lvl 12 spells
+    .trainer >>Train lvl 12 spells. 
+    >>|cRXP_WARN_Skip this step and come back after turning in Tears of the Moon if you don't have enough money or aren't level 12 yet|r
     .target Jocaste
-step
+step << Hunter
+    #season 2
     .goto Darnassus,42.2,8.8
     .trainer >>Train pet spells
     .target Silvaria
@@ -2503,6 +2548,10 @@ step
     .target Priestess A'moora
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
     .turnin 2520 >> Turn in Sathrah's Sacrifice
+step << Priest
+    #season 2
+    .goto Darnassus,38.6,82.0
+    .trainer >> Train lvl 12 Spells
 step << Druid
 #ssf
     .goto Darnassus,47.95,68.03
