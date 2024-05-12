@@ -342,7 +342,8 @@ step << Hunter
     #season 2
     #label hunterRuneChimera
     .goto Teldrassil,56.68,26.12
-    >>Kill |cRXP_ENEMY_Githyiss the Vile|r. Loot Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Chimera|r]
+    >>Enter the spider cave, follow the middle path.
+    >>Kill |cRXP_ENEMY_Githyiss the Vile|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Chimera|r]
     .collect 206168,1,77568,1 -- Rune of the Chimera (1)
     .unitscan Githyiss the Vile
     .engrave 10--skips if it's already engraved
@@ -460,7 +461,7 @@ step
     .goto Teldrassil,57.8,45.1
     .target Tarindrella
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarindrella|r
-    >>TIP: |cRXP_WARN_Take the leggings as the reward and keep them. You will use them to engrave a rune on later on|r
+    >>TIP: |cRXP_WARN_Take the leggings as the reward and keep them. You will use them to engrave a rune on later on|r << sod Hunter/sod Rogue/sod Warrior/sod Druid
     .turnin 459 >> Turn in The Woodland Protector
 step
     .goto Teldrassil,60.899,41.961
@@ -523,7 +524,7 @@ step
     .turnin 916 >> Turn in Webwood Venom
     .target Gilshalan Windwalker
     .accept 917 >> Accept Webwood Egg
-step << Hunter
+step << Hunter/Rogue
     #completewith next
     +|cRXP_WARN_Equip the|r |T135641:0|t[Thistlewood Dagger]
     .use 5392
@@ -582,7 +583,7 @@ step
 #xprate >1.99
 	.goto Teldrassil,57.807,41.653
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilshalan Windwalker|r
-    >>TIP: |cRXP_WARN_Take the chestpiece as a reward from this quest and equip it. You will use it to engrave a rune on later|r
+    >>TIP: |cRXP_WARN_Take the chestpiece as a reward from this quest and equip it. You will use it to engrave a rune on later|r << sod Hunter/sod Rogue/sod Druid
     .turnin 917 >> Turn in Webwood Egg
     .target Gilshalan Windwalker
 step
@@ -1552,12 +1553,14 @@ step << Rogue
     .mob Gnarlpine Defender
     .mob Gnarlpine Augur
     .train 398196,1
-step << !sod/Priest/Rogue
+step
+    #season 0
     .goto Teldrassil,46.6,53.0
     >>Kill |cRXP_ENEMY_Gnarlpine Ambushers|r
     .complete 487,1 --Kill Gnarlpine Ambusher (x6)
     .mob Gnarlpine Ambusher
-step << !sod/Priest/Rogue
+step
+    #season 0
     .goto Teldrassil,55.83,58.31,40,0
     .goto Teldrassil,50.22,53.83
     .goto Teldrassil,55.83,58.31,0
@@ -1578,13 +1581,12 @@ step << Rogue
     .mob Gnarlpine Defender
     .mob Gnarlpine Augur
     .train 398196,1
-step << Priest/Rogue
+step << Priest
     #season 2
     #completewith next
     .goto Teldrassil,44.18,58.19
     .subzone 262 >> Enter the Ban'ethil Barrow Den. This can be difficult without a group. You can also do this a little later to obtain your |T237514:0|t[Void Plague] rune
     .train 425216,1 << Priest
-    .train 400081,1 << Rogue
 step << Priest
     #season 2
     .goto Teldrassil,44.401,60.655
@@ -1615,6 +1617,12 @@ step << Rogue
     .train 400081 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Precision|r] |cRXP_WARN_to train|r |T135610:0|t[Between the Eyes]
     .use 204174
     .itemcount 204174,1
+step << Rogue
+    #season 2
+    #softcore
+    #completewith next
+    .deathskip >> Die and respawn at the Spirit Healer in Darnassus
+    .target Spirit Healer
 step << Hunter
     #season 2
     .goto Teldrassil,55.890,59.205
@@ -2236,6 +2244,7 @@ step << Rogue
     .target Rellian Greenspyre
     .accept 923 >> Accept Tumors
 step << Rogue
+    #season 0
     .goto Darnassus,34.96,9.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Fandral Staghelm|r atop the Tree
     .turnin -935 >> Turn in Crown of the Earth
@@ -2300,6 +2309,7 @@ step << Hunter
     .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Click here for more info about pet training|r
 	.unitscan Strigid Hunter
 step
+    #season 0 << sod Rogue
     .goto Teldrassil,43.2,42.8,55,0
     .goto Teldrassil,43.2,32.8,55,0
     .goto Teldrassil,43.6,26.0,55,0
@@ -2329,6 +2339,7 @@ step << Hunter
     #completewith next
     .engrave 7 >> Open your character sheet and engrave your legs with |T132175:0|t[Flanking Strike]
 step
+    #season 0 << sod Rogue
     #label Spinnerets
 	.goto Teldrassil,47.3,26.0,0
     .goto Teldrassil,37.9,25.1,0
@@ -2345,6 +2356,18 @@ step << !sod/Warrior/Rogue/Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
     .accept 937 >> Accept The Enchanted Glade
 step << Rogue
+    #season 2
+    #label Spinnerets
+	.goto Teldrassil,47.3,26.0,0
+    .goto Teldrassil,37.9,25.1,0
+    .goto Teldrassil,47.3,26.0,30,0
+    .goto Teldrassil,37.9,25.1,30,0
+    .goto Teldrassil,40.7,25.4
+    >>Kill |cRXP_ENEMY_Lady Sathrah|r. Loot it for its |cRXP_LOOT_Spinnerets|r
+    >>|cRXP_ENEMY_Lady Sathrah|r |cRXP_WARN_can spawn in 3 different locations|r
+    .complete 2518,1 --Collect Silvery Spinnerets (x1)
+    .mob Lady Sathrah
+step << Rogue
     .goto Teldrassil,38.0,25.2
     >>|cRXP_WARN_Cast|r |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Sethir the Ancient|r
     >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
@@ -2354,6 +2377,8 @@ step << Rogue
     .mob Sethir the Ancient
 step << Rogue
     #season 2
+    #sticky
+    #completewith harpies2
     .goto Teldrassil,37.8,43.0,60,0
     .goto Teldrassil,36.0,34.4,60,0
     .goto Teldrassil,34.6,28.8,60,0
@@ -2494,12 +2519,33 @@ step
     .turnin -940 >> Turn in Teldrassil
     .target Arch Druid Fandral Staghelm
     .accept 952 >> Accept Grove of the Ancients
-step
+step << !Rogue
     #season 2
     .goto Darnassus,38.184,21.639
     .target Rellian Greenspyre
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rellian Greenspyre|r
     .turnin 923 >> Turn in Tumors
+step << Rogue
+    #season 2
+    .goto Darnassus,39.72,92.68,10,0
+    .goto Darnassus,36.65,85.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
+    .turnin 2518 >> Turn in Tears of the Moon
+    .target Priestess A'moora
+    .accept 2520 >> Accept Sathrah's Sacrifice
+step << Rogue
+    #season 2
+    .goto Darnassus,39.7,85.8
+	.use 8155 >>|cRXP_WARN_Use|r |T135652:0|t[Sathrah's Sacrifice] |cRXP_WARN_at the fountain|r
+    .complete 2520,1 --Offer the sacrifice at the fountain
+step << Rogue
+    #season 2
+    #label end
+    .goto Darnassus,39.72,92.68,10,0
+    .goto Darnassus,36.65,85.93
+    .target Priestess A'moora
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
+    .turnin 2520 >> Turn in Sathrah's Sacrifice
 step << !Hunter/!Priest
     #season 2
     .goto Darnassus,34.814,9.255
@@ -2514,34 +2560,42 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rellian Greenspyre|r
     .turnin 923 >> Turn in Tumors
 step << Hunter
-    #season 2
     .goto Darnassus,40.2,9.8
-    .trainer >>Train lvl 12 spells. 
-    >>|cRXP_WARN_Skip this step and come back after turning in Tears of the Moon if you don't have enough money or aren't level 12 yet|r
+    .trainer >>Train lvl 12 spells << sod
+    >>|cRXP_WARN_Skip this step and come back after turning in Tears of the Moon if you don't have enough money or aren't level 12 yet|r << sod
     .target Jocaste
 step << Hunter
-    #season 2
     .goto Darnassus,42.2,8.8
     .trainer >>Train pet spells
     .target Silvaria
+step << Rogue
+    #season 2
+    .goto Darnassus,38.6,15.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lelanai|r
+    .vendor >> |cRXP_BUY_Vendor trash|r
+    .target Lelanai
 step << Rogue
     .goto Darnassus,31.21,17.72,8,0
     .goto Darnassus,36.99,21.91
     .target Syurna
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syurna|r
     .turnin 2242 >> Turn in Destiny Calls
-step
+step << Rogue
+    #season 2
+    >>|cRXP_WARN_Make sure you have at least 29 silver leftover after training. You will need it to get a bow|r
+    .trainer >> Train level 12 spells
+step << !sod Rogue
     .goto Darnassus,39.72,92.68,10,0
     .goto Darnassus,36.65,85.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
     .turnin 2518 >> Turn in Tears of the Moon
     .target Priestess A'moora
     .accept 2520 >> Accept Sathrah's Sacrifice
-step
+step << !sod Rogue
     .goto Darnassus,39.7,85.8
 	.use 8155 >>|cRXP_WARN_Use|r |T135652:0|t[Sathrah's Sacrifice] |cRXP_WARN_at the fountain|r
     .complete 2520,1 --Offer the sacrifice at the fountain
-step
+step << !sod Rogue
     #label end
     .goto Darnassus,39.72,92.68,10,0
     .goto Darnassus,36.65,85.93
@@ -2584,11 +2638,13 @@ step << Hunter
     .target Kieran
     .money <0.1539
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.19
-step << Hunter/Warrior/Priest
+step << Hunter/Warrior/Priest/Sod Rogue
     .goto Darnassus,57.56,46.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
-    .train 227 >>Train Staves
+    .train 227 >>Train Staves << Hunter/Warrior/Priest
+    .train 265 >>Train Bows << Sod Rogue
     >>If you have a Staff in your bags, equip it << Hunter
+    >>If you have a Bow in your bags, equip it << Rogue
     .target Ilyenia Moonfire
 step << Hunter
     #optional
@@ -2597,7 +2653,7 @@ step << Hunter
     .use 2495
     .itemcount 2495,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.19
-step << Hunter
+step << Hunter/Sod Rogue
     .goto Darnassus,58.76,44.48
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariyell Skyshadow|r
     >>|cRXP_BUY_Buy and equip a|r |T135489:0|t[Laminated Recurve Bow]
@@ -2611,12 +2667,12 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariyell Skyshadow|r
 	.vendor >>|cRXP_BUY_Buy|r |T132382:0|t[Sharp Arrows]
     .target Ariyell Skyshadow
-step << Hunter
+step << Hunter/Sod Rogue
     #season 2
     .goto Darnassus,58.76,44.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariyell Skyshadow|r
 	.vendor >>|cRXP_BUY_Buy|r |T132382:0|t[Sharp Arrows]
-    .vendor >>|cRXP_BUY_Buy a|r |T134410:0|t[Medium Quiver] |cRXP_BUY_if you have spare money|r
+    .vendor >>|cRXP_BUY_Buy a|r |T134410:0|t[Medium Quiver] |cRXP_BUY_if you have spare money|r << Hunter
     .target Ariyell Skyshadow
 step << Hunter
     #completewith next
@@ -2653,6 +2709,7 @@ step << Warrior
     .itemcount 854,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.43
 step << Rogue
+    #season 0
     .goto Darnassus,62.68,65.58
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rellian Greenspyre|r on the second floor
     >>|cRXP_BUY_Buy a|r |T135641:0|t[Balanced Throwing Dagger]
