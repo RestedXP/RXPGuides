@@ -1492,6 +1492,7 @@ step << Warrior
     .target Tallonkai Swiftroot
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r atop the Tree
     .turnin 2459 >> Turn in Ferocitas the Dream Eater
+    .accept 932 >> Accept Twisted Hatred
 step
 #xprate >1.99
     .xp 10
@@ -1565,18 +1566,6 @@ step << Hunter
     .turnin 6102 >> Turn in Taming the Beast
     .target Dazalar
     .accept 6103 >> Accept Training the Beast
-step << Warrior
-    #season 2
-    .goto Teldrassil,55.619,59.787
-    >>Talk to |cRXP_FRIENDLY_Innkeeper Keldamyr|r at Dolanaar
-    >>Talk to |cRXP_ENEMY_Syllart|r upstairs, then beat him up. He will pass out at 0%
-    >>If |cRXP_ENEMY_Syllart|r is not there wait for him to respawn
-    >>Talk to |cRXP_FRIENDLY_Innkeeper Keldamyr|r again after knocking out |cRXP_ENEMY_Syllart|r to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
-    .train 425447 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r] |cRXP_WARN_to train|r |T236317:0|t[Frenzied Assault]
-    >>|cRXP_WARN_Note: This can be quite difficult solo depending on your level. Look for some help if needed|r
-    .use 204716
-    .target Innkeeper Keldamyr
-    .mob Syllart
 step << Warrior
 #xprate >1.99
     .goto Teldrassil,55.83,58.31,40,0
@@ -1908,6 +1897,17 @@ step << Druid
     .train 227 >>Train Staves << Warrior
     .target Ilyenia Moonfire
 step << Warrior
+    #season 2
+    #ah
+    .goto Darnassus,56.245,54.039,-1
+    .goto Darnassus,56.374,51.820,-1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to a |cRXP_FRIENDLY_Darnassus Auctioneer|r
+    >>Buy one |T134830:0|t[|cRXP_LOOT_Lesser Healing Potion|r]. It will help you get rune of |T236317:0|t[Frenzied Assault] from Dolnaar
+    .collect 929,1 --Lesser Healing Potion (1)
+    .target Auctioneer Tolon
+    .target Auctioneer Golothas
+    .train 425412,1 --Skips if you already have Frenzied Assault
+step << Warrior
 #xprate >1.99
     .goto Darnassus,57.305,34.606
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elanaria|r
@@ -1924,6 +1924,10 @@ step << Warrior
     .use 204703
     .skipgossip
     .target Delwynna
+    .itemcount 208612,1 --Severed Spider Head (1)
+    .itemcount 208611,1 --Severed Tiger Head (1)
+    .itemcount 208610,1 --Severed Owl Head
+    .train 403475,1 --Rune not known
 step << !Rogue !Hunter
 #xprate >1.99
     .goto Darnassus,67.427,15.655
@@ -1976,6 +1980,38 @@ step << Warrior
     .collect 2495,1 -- Walking Stick (1)
     .target Shalomon
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.20
+step << Warrior
+    #season 2
+    #completewith next
+    .goto Teldrassil,54.68,52.84,20,0
+    .goto Teldrassil,54.42,51.19,15 >> Travel to Fel Rock
+step << Warrior
+    #season 2
+    .goto Teldrassil,51.2,50.6
+    >>Kill |cRXP_ENEMY_Lord Melenas|r. Loot him for his |cRXP_LOOT_Head|r
+    >>|cRXP_ENEMY_Lord Melenas|r may be located in many different spawn locations throughout Fel Rock
+    .complete 932,1 --Collect Melenas' Head (x1)
+    .unitscan Lord Melenas
+step << Warrior
+    #season 2
+    .goto Teldrassil,55.574,56.948
+    .target Tallonkai Swiftroot
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r atop the Tree
+    .turnin 932 >> Turn in Twisted Hatred
+step << Warrior
+    #season 2
+    .goto Teldrassil,55.619,59.787
+    >>Talk to |cRXP_FRIENDLY_Innkeeper Keldamyr|r at Dolanaar
+    >>Talk to |cRXP_ENEMY_Syllart|r upstairs, then beat him up. He will pass out at 0%
+    >>If |cRXP_ENEMY_Syllart|r is not there wait for him to respawn
+    >>Talk to |cRXP_FRIENDLY_Innkeeper Keldamyr|r again after knocking out |cRXP_ENEMY_Syllart|r to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
+    .train 425447 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r] |cRXP_WARN_to train|r |T236317:0|t[Frenzied Assault]
+    >>|cRXP_WARN_Note: This can be quite difficult solo depending on your level. Look for some help if needed|r
+    >>|cRXP_WARN_U can solo him if you pool a bit of|r |cRXP_ENEMY_Rage|r |cRXP_WARN_by kiting one of the|r |cRXP_ENEMY_Owls|r |cRXP_WARN_near the inn to start the fight at high rage. Try casting|r |T132155:0|t[Rend] |cRXP_WARN_on him and then kite using|r |T132316:0|t[Hamstring]. |cRXP_WARN_Use a|r |T134830:0|t[Healing Potion] |cRXP_WARN_and|r |T133685:0|t[Bandages] |cRXP_WARN_to heal yourself if necessary|r
+    --Might wanna add a guide video
+    .use 204716
+    .target Innkeeper Keldamyr
+    .mob Syllart
 step << Druid
     #season 2
     #softcore
@@ -2583,6 +2619,20 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elanaria|r
     .turnin 1683 >> Turn in Vorlus Vilehoof
 --	.accept 1686 >> Accept The Shade of Elura
+step << Warrior
+    #season 2
+    #requires xp10
+    .goto Darnassus,63.108,21.858
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delwynna|r upstairs
+    >>|cRXP_WARN_After turning in the three |cRXP_LOOT_Severed Heads|r you will receive the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
+    .train 403475 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r] |cRXP_WARN_to train|r |T135291:0|t[Devastate]
+    .use 204703
+    .skipgossip
+    .target Delwynna
+    .itemcount 208612,1 --Severed Spider Head (1)
+    .itemcount 208611,1 --Severed Tiger Head (1)
+    .itemcount 208610,1 --Severed Owl Head
+    .train 403475,1 --Rune not known
 step << Hunter
 #xprate <1.99
     .goto Darnassus,40.377,8.545
