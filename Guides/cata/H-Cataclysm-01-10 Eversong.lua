@@ -17,45 +17,49 @@ RXPGuides.RegisterGuide([[
 
 step
     #label SunstriderIsleFirstQuestCheck
-    .goto 467,61.044,45.126
+    .goto Eversong Woods,38.02,21.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrix Erona|r
     .accept 8325 >>Accept Reclaiming Sunstrider Isle
     .target Magistrix Erona
 step
     #loop
-    .goto 467,59.391,55.646,0
-    .goto 467,50.598,41.908,0
-    .waypoint 467,60.621,51.451,40,0
-    .waypoint 467,59.391,55.646,40,0
-    .waypoint 467,55.748,49.424,40,0
-    .waypoint 467,50.598,41.908,40,0
-    .waypoint 467,55.720,42.010,40,0
+    .goto Eversong Woods,37.70,23.26,0
+    .goto Eversong Woods,37.70,23.26,30,0
+    .goto Eversong Woods,38.21,24.56,30,0
+    .goto Eversong Woods,37.62,25.77,30,0
+    .goto Eversong Woods,37.30,24.54,30,0
     >>Kill |cRXP_ENEMY_Mana Wyrms|r
     .complete 8325,1 --6/6 Mana Wyrm slain
     .mob Mana Wyrm
 step
-    .goto 467,61.044,45.126
+    .goto Eversong Woods,38.02,21.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrix Erona|r
     .turnin 8325 >>Turn in Reclaiming Sunstrider Isle
     .accept 8326 >>Accept Unfortunate Measures
     .target Magistrix Erona
 step
-    .goto 467,65.77,39.97,20,0
-    .goto 467,68.40,37.61,20,0
-    .goto 467,63.49,33.62,30,0
-    .goto 467,68.13,34.18
+    #loop
+    .goto Eversong Woods,39.13,19.06,0
+    .goto Eversong Woods,39.13,19.06,30,0
+    .goto Eversong Woods,40.36,17.88,30,0
+    .goto Eversong Woods,40.54,16.43,30,0
+    .goto Eversong Woods,40.05,20.44,30,0
+    .goto Eversong Woods,39.32,22.18,30,0
     >>Kill |cRXP_ENEMY_Springpaw Cubs|r and |cRXP_ENEMY_Springpaw Lynx|r. Loot them for their |cRXP_LOOT_Collars|r
     .complete 8326,1 --8/8 Lynx Collar
     .mob Springpaw Cub
     .mob Springpaw Lynx
 step
-    .goto 467,65.77,39.97,20,0
-    .goto 467,68.40,37.61,20,0
-    .goto 467,63.49,33.62,30,0
-    .goto 467,68.13,34.18
+    #loop
+    .goto Eversong Woods,39.13,19.06,0
+    .goto Eversong Woods,39.13,19.06,30,0
+    .goto Eversong Woods,40.36,17.88,30,0
+    .goto Eversong Woods,40.54,16.43,30,0
+    .goto Eversong Woods,40.05,20.44,30,0
+    .goto Eversong Woods,39.32,22.18,30,0
     .xp 2+650 >>Grind to 650/900 xp
 step
-    .goto 467,61.044,45.126
+    .goto Eversong Woods,38.02,21.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrix Erona|r
     .turnin 8326 >>Turn in Unfortunate Measures
     .accept 8327 >>Accept Report to Lanthan Perilon
@@ -68,21 +72,21 @@ step
     .accept 8329 >>Accept Warrior Training << Warrior
     .target Magistrix Erona
 step << Hunter
-    .goto 467,64.207,42.067
+    .goto Eversong Woods,39.05,20.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ranger Sallina|r
     .turnin 9393 >>Turn in Hunter Training
     .accept 10070 <<Accept Steady Shot
     .train 56641 >>Train |T132213:0|t[Steady Shot]
     .target Ranger Sallina
 step << Mage
-    .goto 467,64.755,46.512
+    .goto Eversong Woods,39.23,21.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Julia Sunstriker|r
     .turnin 8328 >>Turn in Mage Training
     .accept 10068 >>Accept Arcane Missiles
     .train 5143 >>Train |T136096:0|t[Arcane Missiles]
     .target Julia Sunstriker
 step << Paladin
-    .goto 467,65.516,43.755
+    .goto Eversong Woods,39.47,20.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jesthenis Sunstriker|r
     .turnin 9676 >>Turn in Paladin Training
     .accept 10069 >>Accept Ways of the Light
@@ -90,120 +94,121 @@ step << Paladin
     .train 20154 >>Train |T135960:0|t[Seal of Righteousness]
     .target Jesthenis Sunstriker
 step << Priest
-    .goto 467,65.342,43.197
+    .goto Eversong Woods,39.41,20.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matron Arena|r
     .turnin 8564 >>Turn in Priest Training
     .accept 10072 >>Accept Healing the Wounded
     .train 2061 >>Train |T135907:0|t[Flash Heal]
     .target Matron Arena
 step << Rogue
-    .goto 467,63.850,42.067
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pathstalker Kariel|r
+    .goto Eversong Woods,38.93,20.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pathstalker Avoker|r
     .turnin 9392 >>Turn in Rogue Training
     .accept 10071 >>Accept Evisceration
     .train 2098 >>Train |T132292:0|t[Eviscerate]
-    .target Pathstalker Kariel
+    .target Pathstalker Avoker
 step << Warlock
-    .goto 467,63.855,46.499
+    .goto Eversong Woods,38.94,21.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Summoner Teli'Larien|r
     .turnin 8563 >>Turn in Warlock Training
     .accept 10073 >>Accept Immolation
     .train 348 >>Train |T135817:0|t[Immolate]
     .target Summoner Teli'Larien
 step << Warrior
-    .goto 467,64.939,42.372
+    .goto Eversong Woods,39.29,20.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delios Silverblade|r
     .turnin 8329 >>Turn in Warrior Training
     .accept 27091 >>Accept Charge!
     .train 100 >>Train |T132337:0|t[Charge]
     .target Delios Silverblade
 step << Hunter
-    .goto 467,61.995,44.019
+    .goto Eversong Woods,38.34,20.64
 	>>Cast |T132213:0|t[Steady Shot] on a |cRXP_ENEMY_Training Dummy|r outside
 	.complete 10070,1 --Cast Steady Shot
 	.mob Training Dummy
 step << Mage
-    .goto 467,61.995,44.019
+    .goto Eversong Woods,38.34,20.64
 	>>Cast |T136096:0|t[Arcane Missiles] on a |cRXP_ENEMY_Training Dummy|r outside
 	.complete 10068,1 --Cast Arcane Missiles
 	.mob Training Dummy
 step << Paladin
-    .goto 467,61.995,44.019
+    .goto Eversong Woods,38.34,20.64
 	>>Cast |T135960:0|t[Seal of Righteousness] on yourself, then cast |T135959:0|t[Judgement] on a |cRXP_ENEMY_Training Dummy|r outside
 	.complete 10069,1 --Cast Judgement
 	.mob Training Dummy
  step << Priest
-    .goto 467,65.544,42.948
+    .goto Eversong Woods,39.49,20.29
 	>>Cast |T135907:0|t[Flash Heal] on a |cRXP_ENEMY_Wounded Outrunner|r
 	.complete 10072,1 --Cast Flash Heal
 	.target Wounded Outrunner
 step << Rogue
-    .goto 467,61.995,44.019
+    .goto Eversong Woods,38.34,20.64
 	>>Cast |T132292:0|t[Eviscerate] on a |cRXP_ENEMY_Training Dummy|r outside
 	.complete 10071,1 --Cast Eviscerate
 	.mob Training Dummy
 step << Warlock
-    .goto 467,61.995,44.019
+    .goto Eversong Woods,38.34,20.64
 	>>Cast |T135817:0|t[Immolate] on a |cRXP_ENEMY_Training Dummy|r outside
 	.complete 10073,1 --Cast Immolate
 	.mob Training Dummy
 step << Warrior
-    .goto 467,61.995,44.019
+    .goto Eversong Woods,38.34,20.64
 	>>Cast |T132337:0|t[Charge] on a |cRXP_ENEMY_Training Dummy|r outside
 	.complete 27091,1 --Cast Charge
 	.mob Training Dummy
 step << Hunter
-    .goto 467,64.207,42.067
+    .goto Eversong Woods,39.05,20.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ranger Sallina|r
     .turnin 10070 >>Turn in Steady Shot
     .target Ranger Sallina
 step << Mage
-    .goto 467,64.755,46.512
+    .goto Eversong Woods,39.23,21.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Julia Sunstriker|r
     .turnin 10068 >>Turn in Arcane Missiles
     .target Julia Sunstriker
 step << Paladin
-    .goto 467,65.516,43.755
+    .goto Eversong Woods,39.47,20.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jesthenis Sunstriker|r
     .turnin 10069 >>Turn in Ways of the Light
     .target Jesthenis Sunstriker
 step << Priest
-    .goto 467,65.342,43.197
+    .goto Eversong Woods,39.41,20.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matron Arena|r
     .turnin 10072 >>Turn in Healing the Wounded
     .target Matron Arena
 step << Rogue
-    .goto 467,63.850,42.067
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pathstalker Kariel|r
+    .goto Eversong Woods,38.93,20.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pathstalker Avoker|r
     .turnin 10071 >>Turn in Evisceration
-    .target Pathstalker Kariel
+    .target Pathstalker Avoker
 step << Warlock
-    .goto 467,63.855,46.499
+    .goto Eversong Woods,38.94,21.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Summoner Teli'Larien|r
     .turnin 10073 >>Turn in Immolation
     .target Summoner Teli'Larien
 step << Warrior
-    .goto 467,64.939,42.372
+    .goto Eversong Woods,39.29,20.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delios Silverblade|r
     .turnin 27091 >>Turn in Charge!
     .target Delios Silverblade
 step
     #completewith next
-    .goto 467,65.290,45.633,10,0
-    .goto 467,65.376,43.115,10 >>Go upstairs
+    .goto Eversong Woods,39.44,21.16,10,0
+    .goto Eversong Woods,39.44,20.35,10,0
+    .goto Eversong Woods,39.10,20.04,10 >>Go upstairs
 step
-    .goto 467,63.949,42.847
+    .goto Eversong Woods,38.97,20.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Well Watcher Solanian|r
     .accept 8330 >>Accept Solanian's Belongings
     .accept 8345 >>Accept The Shrine of Dath'Remar
     .target Well Watcher Solanian
 step
-    .goto 467,61.818,39.345
+    .goto Eversong Woods,38.27,19.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arcanist Ithanas|r
     .accept 8336 >>Accept A Fistful of Slivers
     .target Arcanist Ithanas
 step
-    .goto 467,58.468,38.781
+    .goto Eversong Woods,37.18,18.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arcanist Helion|r
     .accept 8346 >>Accept Thirst Unending
     .target Arcanist Helion
@@ -216,14 +221,14 @@ step
     .mob Mana Wyrm
     .mob Feral Tender
 step
-    .goto 467,52.869,49.794
+    .goto Eversong Woods,35.37,22.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lanthan Perilon|r
     .turnin 8327 >>Turn in Report to Lanthan Perilon
     .accept 8334 >>Accept Aggression
     .target Lanthan Perilon
 step
     #label Journal
-    .goto 467,60.057,57.136
+    .goto Eversong Woods,37.70,24.91
     >>Loot the |cRXP_PICK_Journal|r on the ground
     .complete 8330,3 --Collect Solanian's Journal (x1)
 step
@@ -236,25 +241,27 @@ step
     .mob Feral Tender
 step
     #label RedOrb
-    .goto 467,52.180,69.402
+    .goto Eversong Woods,35.14,28.89
     >>Loot the |cRXP_PICK_Scrying Orb|r on the platform
     .complete 8330,1 --Collect Solanian's Scrying Orb (x1)
 step
     #loop
-    .goto 467,50.004,67.593,0
-    .waypoint 467,50.004,67.593,40,0
-    .waypoint 467,50.791,63.254,40,0
-    .waypoint 467,54.740,66.969,40,0
-    .waypoint 467,54.729,72.281,40,0
+	.line Eversong Woods,33.92,26.49,33.97,28.55,35.15,29.78,36.52,29.35,35.58,27.42,33.92,26.49
+	.goto Eversong Woods,33.92,26.49,40,0
+	.goto Eversong Woods,33.97,28.55,40,0
+	.goto Eversong Woods,35.15,29.78,40,0
+	.goto Eversong Woods,36.52,29.35,40,0
+	.goto Eversong Woods,35.58,27.42,40,0
+	.goto Eversong Woods,33.92,26.49,40,0
     >>Kill |cRXP_ENEMY_Tenders|r and |cRXP_ENEMY_Feral Tenders|r. Loot them for their |cRXP_LOOT_Slivers|r
     .complete 8334,1 --Kill Tender (x7)
+    .mob +Tender
     .complete 8334,2 --Kill Feral Tender (x7)
+    .mob +Feral Tender
     .complete 8336,1--Collect Arcane Sliver (x6)
-    .mob Tender
-    .mob Feral Tender
 step
     #label Aggression
-    .goto 467,52.869,49.794
+    .goto Eversong Woods,35.37,22.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lanthan|r
     .turnin 8334 >>Turn in Aggression
     .accept 8335 >>Accept Felendren the Banished
@@ -266,18 +273,18 @@ step
     .mob Feral Tender
 step
     #label Shrine
-    .goto 467,35.264,40.187
+    .goto Eversong Woods,29.61,19.38
     >>Click the |cRXP_PICK_Shrine of Dath'Remar|r
     .complete 8345,1 --Collect Shrine of Dath'Remar Read (x1)
 step
-    .goto 467,40.438,50.463
+    .goto Eversong Woods,31.33,22.74
     >>Loot the |cRXP_PICK_Scroll|r on the ground
     .complete 8330,2 --Collect Scroll of Scourge Magic (x1)
 step
     #label RunRamp
     #completewith next
-    .goto 467,44.313,59.090,20,0
-    .goto 467,42.213,61.166,20 >>Run up the ramp
+    .goto Eversong Woods,32.57,25.53,20,0
+    .goto Eversong Woods,32.02,26.09,20 >>Run up the ramp
 step
     #completewith Academy
     >>Kill a |cRXP_ENEMY_Tainted Arcane Wraith|r. Loot it for its |T132884:0|t[|cRXP_LOOT_Tainted Arcane Sliver|r].
@@ -288,14 +295,14 @@ step
     .use 20483
 step
     #label Academy
-    .goto 467,42.856,66.720,20,0
-    .goto 467,41.962,71.354,20,0
-    .goto 467,37.717,71.493,20,0
-    .goto 467,38.382,66.014,20,0
-    .goto 467,38.755,61.604,10,0
-    .goto 467,36.305,63.664,10,0
-    .goto 467,38.126,66.148,10,0
-    .goto 467,38.940,63.996
+    .goto Eversong Woods,30.79,25.37,20,0
+    .goto Eversong Woods,29.35,24.44,20,0
+    .goto Eversong Woods,29.32,26.24,20,0
+    .goto Eversong Woods,30.75,26.30,10,0
+    .goto Eversong Woods,30.13,26.42,10,0
+    .goto Eversong Woods,30.09,27.41,10,0
+    .goto Eversong Woods,30.48,27.90,10,0
+    .goto Eversong Woods,30.84,27.13
     >>Kill |cRXP_ENEMY_Arcane Wraiths|r and |cRXP_ENEMY_Tainted Arcane Wraiths|r whilst heading up the Academy. Loot them for their |cRXP_LOOT_Slivers|r
     >>Kill |cRXP_ENEMY_Felendren the Banished|r at the top. Loot him for his |cRXP_LOOT_Head|r
     .complete 8335,1 --Kill Arcane Wraith (x8)
@@ -306,7 +313,7 @@ step
     .mob Tainted Arcane Wraith
     .mob Felendren the Banished
 step
-    .goto 467,38.280,63.460
+    .goto Eversong Woods,30.84,27.13
     >>Kill a |cRXP_ENEMY_Tainted Arcane Wraith|r. Loot it for its |T132884:0|t[|cRXP_LOOT_Tainted Arcane Sliver|r].
     >>|cRXP_WARN_Use the |T132884:0|t[|cRXP_LOOT_Tainted Arcane Sliver|r] to start the quest|r
     .collect 20483,1,8338,1 --Tainted Arcane Sliver (1)
@@ -323,25 +330,21 @@ step
     .mob Mana Wyrm
 step
     #loop
-    .goto 467,59.391,55.646,0
-    .goto 467,50.598,41.908,0
-    .waypoint 467,60.621,51.451,40,0
-    .waypoint 467,59.391,55.646,40,0
-    .waypoint 467,55.748,49.424,40,0
-    .waypoint 467,50.598,41.908,40,0
-    .waypoint 467,55.720,42.010,40,0
+    .goto Eversong Woods,36.79,19.88,0
+    .goto Eversong Woods,36.79,19.88,40,0
+    .goto Eversong Woods,34.64,18.82,40,0
+    .goto Eversong Woods,33.78,19.46,40,0
+    .goto Eversong Woods,34.17,20.59,40,0
     >>Cast |T136222:0|t[Arcane Torrent] when in melee range of a |cRXP_ENEMY_Mana Wyrm|r
     .complete 8346,1 --Cast Arcane Torrent on Mana Wyrm (x1)
     .mob Mana Wyrm
 step
     #loop
-    .goto 467,59.391,55.646,0
-    .goto 467,50.598,41.908,0
-    .waypoint 467,60.621,51.451,40,0
-    .waypoint 467,59.391,55.646,40,0
-    .waypoint 467,55.748,49.424,40,0
-    .waypoint 467,50.598,41.908,40,0
-    .waypoint 467,55.720,42.010,40,0
+    .goto Eversong Woods,36.79,19.88,0
+    .goto Eversong Woods,36.79,19.88,40,0
+    .goto Eversong Woods,34.64,18.82,40,0
+    .goto Eversong Woods,33.78,19.46,40,0
+    .goto Eversong Woods,34.17,20.59,40,0
     >>Kill |cRXP_ENEMY_Mana Wyrms|r. Loot them for their |cRXP_LOOT_Slivers|r
     .complete 8336,1 --Collect Arcane Sliver (x6)
     .mob Mana Wyrm
@@ -349,67 +352,67 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helion|r and |cRXP_FRIENDLY_Ithanas|r
     .turnin 8346 >>Turn in Thirst Unending
     .turnin 8338 >>Turn in Tainted Arcane Sliver
-    .goto 467,58.468,38.781
+    .target +Arcanist Helion
+    .goto Eversong Woods,37.18,18.94
     .turnin 8336 >>Turn in A Fistful of Slivers
-    .goto 467,61.818,39.345
-    .target Arcanist Helion
-    .target Arcanist Ithanas
+    .target +Arcanist Ithanas
+    .goto Eversong Woods,38.27,19.13
 step
     #completewith next
-    .goto 467,65.290,45.633,10,0
-    .goto 467,65.376,43.115,10,0
-    .goto 467,64.376,42.305,10 >>Go upstairs
+    .goto Eversong Woods,39.44,21.16,10,0
+    .goto Eversong Woods,39.44,20.35,10,0
+    .goto Eversong Woods,39.10,20.04,10 >>Go upstairs
 step
     #label SolanianB
-    .goto 467,63.949,42.847
+    .goto Eversong Woods,38.97,20.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Solanian|r
     .turnin 8330 >>Turn in Solanian's Belongings
     .turnin 8345 >>Turn in The Shrine of Dath'Remar
     .target Well Watcher Solanian
 step << Hunter
-    .goto 467,64.207,42.067
+    .goto Eversong Woods,39.05,20.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ranger Sallina|r
     .train 2973 >>Train |T132223:0|t[Raptor Strike]
     .target Ranger Sallina
     .xp <6,1
 step << Mage
-    .goto 467,64.755,46.512
+    .goto Eversong Woods,39.23,21.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Julia Sunstriker|r
     .train 2136 >>Train |T135807:0|t[Fire Blast]
     .target Julia Sunstriker
     .xp <5,1
 step << Paladin
-    .goto 467,65.516,43.755
+    .goto Eversong Woods,39.47,20.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jesthenis Sunstriker|r
     .train 465 >>Train |T135893:0|t[Devotion Aura]
     .target Jesthenis Sunstriker
     .xp <5,1
 step << Priest
-    .goto 467,65.342,43.197
+    .goto Eversong Woods,39.41,20.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matron Arena|r
     .train 17 >>Train |T135940:0|t[Power Word: Shield]
     .target Matron Arena
     .xp <5,1
 step << Rogue
-    .goto 467,63.850,42.067
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pathstalker Kariel|r
+    .goto Eversong Woods,38.93,20.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pathstalker Avoker|r
     .train 1784 >>Train |T132320:0|t[Stealth]
-    .target Pathstalker Kariel
+    .target Pathstalker Avoker
     .xp <5,1
 step << Warlock
-    .goto 467,63.855,46.499
+    .goto Eversong Woods,38.94,21.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Summoner Teli'Larien|r
     .train 1454 >>Train |T136126:0|t[Life Tap]
     .target Summoner Teli'Larien
     .xp <5,1
 step << Warrior
-    .goto 467,64.939,42.372
+    .goto Eversong Woods,39.29,20.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delios Silverblade|r
     .train 34428 >>Train |T132342:0|t[Victory Rush]
     .target Delios Silverblade
     .xp <5,1
 step
-    .goto 467,52.869,49.794
+    .goto Eversong Woods,35.37,22.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lanthan|r
     .turnin 8335 >>Turn in Felendren the Banished
     .accept 8347 >>Accept Aiding the Outrunners
