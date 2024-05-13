@@ -388,6 +388,7 @@ step << Warrior
     >>Kill |cRXP_ENEMY_Webwood Spiders|r. Loot them for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
     .collect 204806,1 -- Rune of Victory Rush (1)
     .mob Webwood Spider
+    .train 402927,1
 step << Warrior
     #season 2
     #requires RoVR
@@ -395,6 +396,7 @@ step << Warrior
     .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
     .use 204806
     .itemcount 204806,1
+    .train 402927,1
 step << Druid
     #season 2
     #completewith Stormrage
@@ -469,11 +471,13 @@ step << Warrior
     >>Kill |cRXP_ENEMY_Webwood Spiders|r. Loot them for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
     .collect 204806,1 -- Rune of Victory Rush (1)
     .mob Webwood Spider
+    .train 402927,1
 step << Warrior
     #season 2
     .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
     .use 204806
     .itemcount 204806,1
+    .train 402927,1
 step << !Hunter
     #season 0,1 << Druid
     #requires hunterRuneChimera << Hunter
@@ -505,7 +509,6 @@ step
     .accept 3522 >> Accept Iverron's Antidote
 step << !Priest
     #season 0 << Hunter
-    #completewith next
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keina|r
 	.vendor >> |cRXP_WARN_Vendor trash|r << !Hunter
@@ -1019,7 +1022,7 @@ step
     .complete 929,1 --Collect Filled Jade Phial (x1)
 step << Warrior
     #season 2
-    #completewith next
+    #completewith TeldrassilEnd
     >>Kill |cRXP_ENEMY_Nightsabers|r or |cRXP_ENEMY_Nightsaber Stalkers|r. Loot them for their |cRXP_LOOT_Severed Tiger Head|r
     >>Kill |cRXP_ENEMY_Strigid Owls|r or |cRXP_ENEMY_Strigid Screechers|r. Loot them for their |cRXP_LOOT_Severed Owl Head|r
     >>Kill |cRXP_ENEMY_Webwood Lurkers|r or |cRXP_ENEMY_Webwood Venomfangs|r. Loot them for their |cRXP_LOOT_Severed Spider Head|r
@@ -1138,11 +1141,6 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dazalar|r
 	.trainer >> Train your class spells
     .target Dazalar
-step << Warrior
-    .goto Teldrassil,56.221,59.198
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kyra Windblade|r
-	.trainer >> Train your class spells
-    .target Kyra Windblade
 step << Rogue
     .goto Teldrassil,56.381,60.139
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannok Breezesong|r
@@ -1162,6 +1160,11 @@ step << Warrior
     .use 2488
     .itemcount 2488,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.79
+    step << Warrior
+    .goto Teldrassil,56.221,59.198
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kyra Windblade|r
+	.trainer >> Train your class spells
+    .target Kyra Windblade
 step << Rogue
     .goto Teldrassil,56.308,59.488
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shalomon|r
@@ -1210,9 +1213,9 @@ step << Druid
     .target Kal
 step
     #loop
-    .goto 1438/1,854.400,9952.500,5 >>Next to a small tree
-    .goto 1438/1,822.200,9948.500,5 >>On the small Hill
-    .goto 1438/1,809.800,9926.400,5 >>Next to the massive tree
+    .goto 1438/1,854.400,9952.500,6 >>Next to a small tree
+    .goto 1438/1,822.200,9948.500,6 >>On the small Hill
+    .goto 1438/1,809.800,9926.400,6 >>Next to the massive tree
     >>Loot the 3 felcones from the locations marked on your map. 
     >>|cRXP_WARN_Skip this step if any of them is not there and you're unable to complete the objective|r
     .complete 489,1 --Fel Cone 3/3
@@ -1483,6 +1486,12 @@ step << !sod/Priest/Rogue
     .turnin 2438 >> Turn in The Emerald Dreamcatcher << sod Priest/sod Rogue
     .turnin 932 >> Turn in Twisted Hatred
     .turnin 2459 >> Turn in Ferocitas the Dream Eater << !sod
+step << Warrior
+    #season 2
+    .goto Teldrassil,55.574,56.948
+    .target Tallonkai Swiftroot
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r atop the Tree
+    .turnin 2459 >> Turn in Ferocitas the Dream Eater
 step
 #xprate >1.99
     .xp 10
@@ -2508,6 +2517,7 @@ step << !sod/Warrior/Rogue/Druid
     .isOnQuest 938
 step << !sod/Warrior/Rogue/Druid
     #requires harpies2
+    #label TeldrassilEnd
     .goto Teldrassil,38.3,34.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
     .turnin 937 >> Turn in The Enchanted Glade
