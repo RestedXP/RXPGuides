@@ -596,6 +596,17 @@ function addon.itemUpgrades:LoadStatWeights()
                 data[kind] = nil
             end
         end
+
+        -- SoD
+        if addon.player.season == 3 and data['ITEM_MOD_SPIRIT_SHORT'] then
+            if addon.player.class == "PRIEST" then
+                data['ITEM_MOD_SPIRIT_SHORT'] =
+                    data['ITEM_MOD_SPIRIT_SHORT'] * 0.75
+            else
+                data['ITEM_MOD_SPIRIT_SHORT'] =
+                    data['ITEM_MOD_SPIRIT_SHORT'] * 0.5
+            end
+        end
     end
 
     session.specWeights = newWeights
