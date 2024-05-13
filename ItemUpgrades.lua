@@ -1117,7 +1117,7 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
         end
 
         -- Even if ratio nil, add to comparisons for upstream handling based on debug value
-        if ratio or equippedItemLink == _G.EMPTY then
+        if ratio or equippedItemLink == _G.EMPTY or equippedItemLink == _G.NONE then
             tinsert(comparisons, {
                 ['Ratio'] = ratio,
                 ['WeightIncrease'] = weightIncrease,
