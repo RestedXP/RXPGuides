@@ -115,20 +115,20 @@ step << Warrior/Paladin
 step << Shaman
     .goto 1454,76.12,37.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoma|r
-    >>|cFFFCDC00Skip this step if you did not take Enhancement specialization!|r
-    .vendor >> Vendor trash and repair. Sell your weapon if it gives you enough money for |T132938:0|t[Right-Handed Brass Knuckles]  (19s 17c) and |T132938:0|t[Left-Handed Brass Knucklles] [19s 24c] << Orc/Troll
-    .vendor >> Vendor trash and repair. Sell your weapon if it gives you enough money for |T132938:0|t[Right-Handed Brass Knuckles]  (20s 24c) and |T132938:0|t[Left-Handed Brass Knucklles] [20s 31c] << Tauren
-    .vendor >> Vendor trash and repair. Sell your weapon if it gives you enough money for |T132938:0|t[Right-Handed Brass Knuckles]  (17s 4c) and |T132938:0|t[Left-Handed Brass Knucklles] [17s 10c] << Goblin
+    >>|cRXP_WARN_Skip this step if you did not take Enhancement specialization!|r
+    .vendor >> Vendor trash and repair. Sell your weapon if it gives you enough money for |T132938:0|t[Right-Handed Brass Knuckles]  (19s 17c) and |T132938:0|t[Left-Handed Brass Knuckles] [19s 24c] << Orc/Troll
+    .vendor >> Vendor trash and repair. Sell your weapon if it gives you enough money for |T132938:0|t[Right-Handed Brass Knuckles]  (20s 24c) and |T132938:0|t[Left-Handed Brass Knuckles] [20s 31c] << Tauren
+    .vendor >> Vendor trash and repair. Sell your weapon if it gives you enough money for |T132938:0|t[Right-Handed Brass Knuckles]  (17s 4c) and |T132938:0|t[Left-Handed Brass Knuckles] [17s 10c] << Goblin
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.7
     .target Shoma
 step << Shaman
     .goto 1454,76.12,37.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoma|r
-    >>|cFFFCDC00Skip this step if you did not take Enhancement specialization!|r
-    >>|cRXP_BUY_Buy|r |T132938:0|t[Right-Handed Brass Knuckles] |cRXP_BUY_and|r |T132938:0|t[Left-Handed Brass Knucklles] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_Buy|r |T132938:0|t[Right-Handed Brass Knuckles] |cRXP_BUY_and|r |T132938:0|t[Left-Handed Brass Knuckles] |cRXP_BUY_from him|r
+    >>|cRXP_WARN_Skip this step if you did not take Enhancement specialization!|r
     .collect 15905,1,14129,1 --Collect Right-Handed Brass Knuckles (1)
-    .collect 15906,1,14129,1 --Collect Left-Handed Brass Knucklles (1)
+    .collect 15906,1,14129,1 --Collect Left-Handed Brass Knuckles (1)
     .money <0.3841 << Orc/Troll
     .money <0.4045 << Tauren
     .money <0.3450 << Goblin
@@ -179,6 +179,7 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.7
     .target Shoma
 step << Warrior/Paladin
+    #optional
     #completewith RunawayShredder
     +Equip the |T133477:0|t[Giant Mace]
     .use 1197
@@ -186,6 +187,7 @@ step << Warrior/Paladin
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.9
 step << Shaman
+    #optional
     #completewith RunawayShredder
     #label Knuckles
     +Equip the |T132938:0|t[Right-Handed Brass Knuckles]
@@ -194,6 +196,7 @@ step << Shaman
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.7
 step << Shaman
+    #optional
     #completewith RunawayShredder
     #label Knuckles
     +Equip the |T132938:0|t[Left-Handed Brass Knuckles]
@@ -202,6 +205,7 @@ step << Shaman
     .itemStat 17,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.7
 step << Hunter
+    #optional
     #completewith RunawayShredder
     +Equip the |T135489:0|t[Laminated Recurve Bow]
     .use 2507
@@ -210,6 +214,7 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.5
     .xp <11,1
 step << Hunter
+    #optional
     #completewith RunawayShredder
     +Equip the |T135489:0|t[Laminated Recurve Bow] when you are level 11
     .use 2507
@@ -218,6 +223,7 @@ step << Hunter
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.5
     .xp >11,1
 step << Rogue
+    #optional
     #completewith RunawayShredder
     +Equip the |T135346:0|t[Cutlass]
     .use 851
@@ -1450,8 +1456,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uncle Bedlam|r
     .turnin 24449 >>Turn in Shore Leave
     .target Uncle Bedlam
-    --VV Could accept 24497 now and skip North Azshara if overleveled
 step
+    .maxlevel 18,NorthAzsharaSkip
     .goto 76,55.49,52.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kalec|r
     .turnin 14407 >>Turn in Azshara Blues
@@ -2306,6 +2312,39 @@ step
     .accept 14462 >>Accept Where's My Head?
     .accept 24433 >>Accept Let Them Feast on Fear
     .target Chawg
+    .isOnQuest 24497
+step
+    #optional
+    #label NorthAzsharaSkip
+step
+    #completewith next
+    .goto Azshara,52.92,49.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kroum|r
+    .fly Southern Rocketway >>Fly to Southern Rocketway Terminus
+    .target Kroum
+    .subzoneskip 1237
+step
+    #completewith next
+    .goto Azshara,50.78,74.52,5,0
+    .goto Azshara,50.70,74.22,3 >>Take the lift up the platform
+step
+    .goto Azshara,50.70,74.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Bilgewater Rocket-jockey|r
+    .gossipoption 112434 >>Take the rocketride to the Southern Rocketway Terminus
+    .timer 35,Southern Rocketway Terminus
+    .target Bilgewater Rocket-jockey
+    .subzoneskip 1237
+    .isQuestAvailable 14392
+step
+    #completewith next
+    .subzone 1237 >>Travel to Valormok
+    .isQuestAvailable 14392
+step
+    .goto 76,13.999,64.836
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chawg|r
+    .accept 14462 >>Accept Where's My Head?
+    .accept 24433 >>Accept Let Them Feast on Fear
+    .target Chawg
 step
     .goto 76,13.854,64.479
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andorel Sunsworn|r
@@ -2478,7 +2517,9 @@ step
     .accept 24463 >>Accept Probing into Ashenvale
     .target Kroum
 step
-    #completewith next
+    #completewith next << !Warlock !Paladin
+    #completewith FelsteedTraining << Warlock
+    #completewith WarhorseTraining << Paladin
     .goto 76,14.346,65.018
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kroum|r
     .fly Orgrimmar >> Fly to Orgrimmar
@@ -2582,12 +2623,14 @@ step << Tauren !Paladin
 	.mountcount 75-150,<1
     .xp <20,1
 step << Warlock
+    #label FelsteedTraining
     .goto 1454,54.49,39.68
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mirket|r
     .train 5784 >>Train |T136103:0|t[Felsteed]
     .target Mirket
     .mountcount 75-150,<1
 step << Paladin
+    #label WarhorseTraining
     .goto 1454/1,-4292.50000,1863.70007
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Atohmo|r
     .train 34769 >>Train |T136103:0|t[Summon Warhorse] << BloodElf
@@ -2595,18 +2638,107 @@ step << Paladin
     .target Sunwalker Atohmo
     .mountcount 75-150,<1
 step << !Orc !Goblin !Warlock !Paladin
-    #completewith next
+    #completewith FlyValormok
     .hs >>Hearth to Orgrimmar
     .use 6948
     .zoneskip Azshara
     .zoneskip Orgrimmar
     .zoneskip Ashenvale
+step << Warrior/Paladin
+    .goto 1454,75.08,36.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zendo'jian|r
+    >>|cRXP_BUY_Buy a|r |T135423:0|t[Battle Axe] |cRXP_BUY_from him|r
+    .collect 926,1,24463,1 --Battle Axe (1)
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
+    .target Zendo'jian
+    .zoneskip Orgrimmar,1
+step << Shaman
+    .goto 1454,76.12,37.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoma|r
+    >>|cRXP_BUY_Buy|r |T132941:0|t[Right-Handed Claw] |cRXP_BUY_and|r |T132941:0|t[Left-Handed Claw] |cRXP_BUY_from him|r
+    >>|cRXP_WARN_Skip this step if you did not take Enhancement specialization!|r
+    .collect 15903,1,24463,1 --Collect Right-Handed Claw (1)
+    .collect 15907,1,24463,1 --Collect Left-Handed Claw (1)
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.6
+    .target Shoma
+    .zoneskip Orgrimmar,1
+step << Rogue
+    .goto 1454,76.12,37.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoma|r
+    >>|cRXP_BUY_Buy a|r |T135419:0|t[Longsword] |cRXP_BUY_from him. Equip it once you are level 21|r
+    >>|cRXP_WARN_Buy a|r |T135342:0|t[Kris] |cRXP_WARN_instead if you have Assasination or Subtlety specialization|r
+    .collect 923,1,24463,1 --Longsword (1)
+    .target Shoma
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.1
+    .xp >21,1
+    .zoneskip Orgrimmar,1
+step << Rogue
+    .goto 1454,76.12,37.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoma|r
+    >>|cRXP_BUY_Buy a|r |T135419:0|t[Longsword] |cRXP_BUY_from him|r
+    >>|cRXP_WARN_Buy a|r |T135342:0|t[Kris] |cRXP_WARN_instead if you have Assasination or Subtlety specialization|r
+    .collect 923,1,24463,1 --Longsword (1)
+    .target Shoma
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.1
+    .xp <21,1
+    .zoneskip Orgrimmar,1
+step << Warrior/Paladin
+    #optional
+    #optional
+    #completewith AzsharaEnd
+    +|cRXP_WARN_Equip the|r |T135423:0|t[Battle Axe]
+    .use 926
+    .itemcount 926,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<15.2
+step << Shaman
+    #optional
+    #completewith AzsharaEnd
+    #label Knuckles
+    +Equip the |T132941:0|t[Right-Handed Claw]
+    .use 15903
+    .itemcount 15903,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.6
+step << Shaman
+    #optional
+    #completewith AzsharaEnd
+    #label Knuckles
+    +Equip the |T132938:0|t[Left-Handed Claw]
+    .use 15907
+    .itemcount 15907,1
+    .itemStat 17,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.6
+step << Rogue
+    #optional
+    #completewith AzsharaEnd
+    +|cRXP_WARN_Equip the|r |T135419:0|t[Longsword]
+    .use 923
+    .itemcount 923,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.1
+    .xp <21,1
+step << Rogue
+    #optional
+    #completewith AzsharaEnd
+    +|cRXP_WARN_Equip the|r |T135342:0|t[Kris]
+    .use 2209
+    .itemcount 2209,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.9
+
 step
+    #label FlyValormok
     .goto 1454/1,-4370.00000,1799.90002
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doras|r
     .fly Valormok >>Fly to Valormok
     .target Doras
     .zoneskip Azshara
+    .zoneskip Ashenvale
 step
     #completewith next
     .zone Ashenvale >>Cross the bridge into Ashenvale
@@ -2617,9 +2749,13 @@ step
     .accept 13866 >>Accept To The Ramparts!
     .target Kulg Gorespatter
 step
+    #label AzsharaEnd
     .goto 63,94.410,46.819
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kulg Gorespatter|r
     .gossipoption 111683 >>Fly to The Mor'Shan Ramparts
     .target Kulg Gorespatter
     .isOnQuest 13866
+step
+    #optional
+    .abandon 14407 >>Abandon Azshara Blues
     ]])
