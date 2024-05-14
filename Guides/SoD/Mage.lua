@@ -1835,12 +1835,12 @@ step
     .isQuestAvailable 79948
 step
     #completewith next
-    .zone Hinterlands >>Travel to |cFFfa9602Hinterlands|r
+    .zone The Hinterlands >>Travel to |cFFfa9602The Hinterlands|r
     .fly Hinterlands >>Take a flight path to |cFFfa9602Hinterlands|r |cRXP_WARN_if you have it unlocked.|r
     .disablecheckbox
     .isQuestAvailable 81954
 step
-    .goto Hinterlands,36,72.7
+    .goto The Hinterlands,36.0,72.7
     >>Click on the |cRXP_PICK_Book|r to obtain |T134942:0|t[Venomous Journeys]
     .collect 220350,1
     .isQuestAvailable 81954
