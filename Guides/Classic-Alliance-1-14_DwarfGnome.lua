@@ -34,6 +34,21 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sten Stoutarm|r
     .accept 179 >> Accept Dwarven Outfitters
     .target Sten Stoutarm
+step << Warlock
+#sticky
+#label wlrune1
+    #season 2
+    .goto Dun Morogh,26.733,72.552
+    >>Open the |cRXP_PICK_Rockjaw Footlocker|r on the ground. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Haunting]|r
+    .collect 205230,1 -- Rune of Haunting (1)
+    .train 403919,1
+step << Warlock
+#requires wlrune1
+#sticky
+    #season 2
+    .train 403919 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Haunting]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Haunt]
+    .use 205230
+    .itemcount 205230,1 -- Rune of Haunting (1)
 --XX Era Level 1 Warrior/Warlock training, Era Warlock imp accept start
 step << Warrior/Warlock
     #season 0,1
@@ -137,7 +152,7 @@ step << Priest/Mage/Warlock
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target Adlin Pridedrift
     .xp >6,1
-step << Priest/Mage/Warlock
+step << Mage
     #season 2
     .goto Dun Morogh,30.087,71.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adlin Pridedrift|r
@@ -211,17 +226,6 @@ step << Mage
     >>|cRXP_WARN_NOTE: You will be unable to train|r |T133816:0|t[Engrave Gloves - Ice Lance] |cRXP_WARN_here as you can only get a|r |T133736:0|t[Comprehension Primer] |cRXP_WARN_in your race's starting zone|r << !Gnome
     .collect 203751,1,77667,1 -- Spell Notes: CALE ENCI (1)
     .train 401760,1
-step << Warlock
-    #season 2
-    .goto Dun Morogh,26.733,72.552
-    >>Open the |cRXP_PICK_Rockjaw Footlocker|r on the ground. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Haunting]|r
-    .collect 205230,1 -- Rune of Haunting (1)
-    .train 403919,1
-step << Warlock
-    #season 2
-    .train 403919 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Haunting]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Haunt]
-    .use 205230
-    .itemcount 205230,1 -- Rune of Haunting (1)
 step << !Paladin !Hunter
     #season 2
     #label EnterAnvilmar
@@ -307,35 +311,9 @@ step << Gnome Warlock/Dwarf Priest
     .engrave 10 >>|cRXP_WARN_Engrave your|r |T132961:0|t[Tattered Cloth Gloves] with|r |T133816:0|t[Engrave Gloves - Penance] << Priest
     .train 402862,3 << Priest
     .train 403919,3 << Warlock
---XX SoD level 2 Training/Rune quest accept end
---XX SoD Warlock Imp Quest Start
+
 step << Warlock
-    #season 2
-    #softcore
-    #label FrostmaneC1
-    #completewith Feathers
-    .hs >> Hearth to Coldridge Valley
-    .subzoneskip 77,1
---XX All SoD softcore warlocks
-step << Warlock
-    #season 2
-    #softcore
-    #optional
-    #requires FrostmaneC1
-    #completewith Feathers
-	.destroy 6948 >> Delete the |T134414:0|t[Hearthstone] from your bags, as it's no longer needed
---XX SoD Softcore Warlocks drop HS
-step << Warlock
-    #season 2
-    #hardcore
-    #optional
-    #label FrostmaneC1
-    #completewith Feathers
-    .goto 1426,28.792,68.804,12 >> Exit Anvilmar
-    .subzoneskip 77,1
---XX SoD Warlock joins with Era Warlock route
-step << Warlock
-    #xprate <1.1
+    #season 0,1
     #requires FrostmaneC1
     #completewith next
     .goto 1426,30.146,74.521,0
@@ -351,26 +329,14 @@ step << Warlock
     .mob Ragged Young Wolf
     .mob Ragged Timber Wolf
 step << Warlock
-    #xprate >1.09
-    #requires FrostmaneC1
-    #completewith next
-    .goto 1426,30.146,74.521,0
-    .goto 1426,28.322,77.854,0
-    .goto 1426,28.747,74.380,0
-    .goto 1426,27.018,77.305,0
-    +Kill |cRXP_ENEMY_Rockjaw Troggs|r, |cRXP_ENEMY_Burly Rockjaw Troggs|r, |cRXP_ENEMY_Ragged Young Wolves|r, and |cRXP_ENEMY_Ragged Timber Wolves|r en route
-    >>|cRXP_WARN_Try to avoid|r |cRXP_ENEMY_Frostmane Troll Whelps|r
-    .mob Rockjaw Trogg
-    .mob Burly Rockjaw Trogg
-    .mob Ragged Young Wolf
-    .mob Ragged Timber Wolf
-step << Warlock
+    #season 0,1
     #optional
     #requires FrostmaneC1
     #label FrostmaneC
     #completewith Feathers
     .goto Dun Morogh,26.85,79.83,20 >> Enter the Frostmane Cave
 step << Warlock
+    #season 0,1
     #optional
     #requires FrostmaneC
     #completewith Feathers
@@ -379,6 +345,7 @@ step << Warlock
     .goto 1426,27.857,81.067,20,0
     .goto 1426,28.696,83.148,50 >> Travel toward the |cRXP_ENEMY_Frostmane Novices|r inside
 step << Warlock
+    #season 0,1
     #label Feathers
     .goto 1426,28.696,83.148,0
     .goto 1426,30.216,80.254,0
@@ -392,8 +359,8 @@ step << Warlock
     >>Kill |cRXP_ENEMY_Frostmane Novices|r inside. Loot them for their |cRXP_LOOT_Feather Charms|r
     .complete 1599,1 --Collect Feather Charm (x3)
     .mob Frostmane Novice
---XXSOD increased xp rate: grind to 4
 step << Warlock
+    #season 0,1
     #hardcore
     #label BeginningsHS
     #completewith BeginningsEnd
@@ -401,6 +368,7 @@ step << Warlock
     .subzoneskip 77,1
 --XX Era hardcore warlocks
 step << Warlock
+    #season 0,1
     #hardcore
     #optional
     #requires BeginningsHS
@@ -408,12 +376,14 @@ step << Warlock
 	.destroy 6948 >> Delete the |T134414:0|t[Hearthstone] from your bags, as it's no longer needed
 --XX HC Warlocks drop HS (No hearthstone items remain)
 step << Warlock
+    #season 0,1
     #softcore
     #label BeginningsHS
     #completewith BeginningsEnd
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .target Spirit Healer
 step << Warlock
+    #season 0,1
     #optional
     #requires BeginningsHS
     #completewith next
@@ -425,14 +395,7 @@ step << Warlock
     .goto Dun Morogh,28.650,66.145
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alamar Grimm|r upstairs
     .turnin 1599 >> Turn in Beginnings
-    .turnin 3115 >> Turn in Tainted Memorandum << Gnome Warlock
-    .target Alamar Grimm
-step << Warlock
-    #season 2
-    #label BeginningsEnd
-    .goto Dun Morogh,28.650,66.145
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alamar Grimm|r upstairs
-    .turnin 1599 >> Turn in Beginnings
+    .turnin -3115 >> Turn in Tainted Memorandum
     .target Alamar Grimm
 --XX Warlock Imp Quest End. Return to normal
 step << !Paladin !Hunter
@@ -459,6 +422,7 @@ step
     .mob Rockjaw Trogg
     .mob Burly Rockjaw Trogg
 step
+#season 0,1
     #label Talin
     .goto Dun Morogh,22.601,71.433
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talin Keeneye|r
@@ -467,6 +431,15 @@ step
     .accept 234 >> Accept Coldridge Valley Mail Delivery
     .target Talin Keeneye
 step
+#season 2
+    #label Talin
+    .goto Dun Morogh,22.601,71.433
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talin Keeneye|r
+    .turnin 233 >> Turn in Coldridge Valley Mail Delivery
+    .accept 234 >> Accept Coldridge Valley Mail Delivery
+    .target Talin Keeneye
+step
+#season 0,1
     #loop
     .goto 1426,22.276,72.549,0
     .goto 1426,20.924,70.393,0
@@ -487,6 +460,7 @@ step
     .complete 183,1 --Kill Small Crag Boar (x12)
     .mob Small Crag Boar
 step
+#season 0,1
     .goto Dun Morogh,22.601,71.433
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talin Keeneye|r
     .turnin 183 >> Turn in The Boar Hunter
@@ -571,6 +545,31 @@ step << Paladin/Warlock/Hunter
     >>|cRXP_WARN_This will start a 5 minute timer for the quest. Do NOT go AFK or log out for the next 5 minutes|r
     .accept 3364 >> Accept Scalding Mornbrew Delivery
     .target Nori Pridedrift
+step << Warlock
+#season 2
+#completewith next
+    .goto Dun Morogh,26.85,79.83,20 >> Enter the troll cave
+step << Warlock
+#loop
+#season 2
+    #label Feathers
+    .goto 1426,28.696,83.148,0
+    .goto 1426,30.216,80.254,0
+    .goto 1426,28.696,83.148,40,0
+    .goto 1426,28.999,82.504,40,0
+    .goto 1426,29.298,81.579,15,0
+    .goto 1426,29.041,81.168,40,0
+    .goto 1426,30.055,82.385,40,0
+    .goto 1426,30.381,80.766,40,0
+    .goto 1426,30.216,80.254,40,0
+    >>Kill |cRXP_ENEMY_Frostmane Novices|r inside the troll cave. Loot them for their |cRXP_LOOT_Feather Charms|r
+    >>|cRXP_WARN_You're on a timer. Do NOT go AFK or log out|r
+    .complete 1599,1 --Collect Feather Charm (x3)
+    .mob Frostmane Novice
+step << Warlock
+    #season 2
+    #completewith next
+    .hs >> Hearth to Anvilmar
 step << Paladin/Warlock/Hunter
     #optional
     #completewith next
@@ -629,6 +628,7 @@ step << Warlock
     .goto Dun Morogh,28.650,66.145
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alamar Grimm|r upstairs
     .train 172 >>Train |T136118:0|t[Corruption]
+    .turnin 1599 >> Turn in Beginnings
     .target Alamar Grimm
 step << Paladin/Warlock/Hunter
     #hardcore
@@ -643,6 +643,7 @@ step << Paladin/Warlock/Hunter
     .turnin 170 >> Turn in A New Threat
     .target Balir Frosthammer
 step << Warlock
+#season 0,1
     .goto Dun Morogh,30.087,71.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adlin Pridedrift|r
     >>Vendor Trash
@@ -1246,6 +1247,7 @@ step << !Paladin !Warlock !Hunter
     .turnin 170 >> Turn in A New Threat
     .target Balir Frosthammer
 step << Priest/Mage
+#season 0,1
     .goto Dun Morogh,30.087,71.563
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adlin Pridedrift|r
     >>Vendor Trash
@@ -2282,7 +2284,7 @@ step << Hunter
     .target Tundra MacGrann
 step
     #completewith next
-    .goto Dun Morogh,30.453,46.005 
+    .goto Dun Morogh,30.453,46.005
     .subzone 137 >> Travel to Brewnall Village
 step << !Mage !Priest
     #completewith next
@@ -3456,7 +3458,7 @@ step
     #completewith Dirt
     .goto 1426,57.936,50.787,0
     >>Kill |cRXP_ENEMY_Elder Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
-    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r 
+    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r
     >>|cRXP_WARN_You need 10|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Auberdine later|r
     .collect 769,10,2178,1,0x20,cooking --Chunk of Boar Meat (1-10)
     .mob Elder Crag Boar
@@ -3467,7 +3469,7 @@ step
     #completewith Dirt
     .goto 1426,57.936,50.787,0
     >>Kill |cRXP_ENEMY_Elder Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
-    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r 
+    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r
     >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
     .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
     .mob Elder Crag Boar
@@ -4023,7 +4025,7 @@ step
     .goto 1426,81.040,43.456,0
     .goto 1426,80.583,36.040,0
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
-    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r 
+    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r
     >>|cRXP_WARN_You need 10|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Auberdine later|r
     .collect 769,10,2178,1,0x20,cooking --Chunk of Boar Meat (1-10)
     .mob Mountain Boar
@@ -4040,7 +4042,7 @@ step
     .goto 1426,81.040,43.456,0
     .goto 1426,80.583,36.040,0
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
-    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r 
+    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r
     >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
     .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
     .mob Mountain Boar
@@ -7783,7 +7785,7 @@ step
     >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
     >>|cRXP_BUY_Buy the following items for faster turn ins in Darkshore shortly:|r
     >>|T133972:0|t[Strider Meat]
-    >>|T133912:0|t[Darkshore Grouper]  
+    >>|T133912:0|t[Darkshore Grouper]
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
     .target Auctioneer Lympkin
