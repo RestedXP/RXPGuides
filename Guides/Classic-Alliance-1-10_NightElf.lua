@@ -18,6 +18,11 @@ step
     .target Conservator Ilthalaine
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Conservator Ilthalaine|r
     .accept 456 >> Accept The Balance of Nature
+step << Druid
+    #season2
+    #sticky
+    #completewith DTrain4
+    .equip 5 >> Be on the lookout for a chestpiece drop from the mobs you kill. You will need one to engrave a rune on in a bit
 step
     #sticky
     #label balance1
@@ -321,12 +326,21 @@ step << Druid
     .target Dellylah
 step << Druid
     #season 2
+    #label DTrain4
     .goto Teldrassil,59.602,40.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dellylah|r
     .vendor >> |cRXP_WARN_Vendor trash|r
     >>|cRXP_BUY_Buy 10|r |T132794:0|t[Refreshing Spring Water]
     .collect 159,10 --Collect Refreshing Spring Water (x10)
     .target Dellylah
+step << Druid
+    #season 2
+    .goto Teldrassil,59.456,41.050
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Janna Brightmoon|r up stairs
+	>> Buy and equip a |T135029:0|t[|cRXP_LOOT_Thin Cloth Armor|r] you will need it to engrave a rune on soon
+    >>|cRXP_WARN_Skip this step if you already found a different chestpiece|r
+    .collect 2121,1
+    .target Janna Brightmoon
 step
     .goto Teldrassil,57.807,41.653
     .target Gilshalan Windwalker
@@ -438,7 +452,7 @@ step
     .complete 3521,3 --Collect Webwood Ichor (x1)
     .complete 916,1 --Collect Webwood Venom Sac (x10)
     .mob Webwood Spider
-step << Hunter
+step << Hunter/Druid
     #season 2
 	#softcore
 	#completewith next
@@ -809,7 +823,6 @@ step << Warrior
     >>|cRXP_BUY_Buy and equip a|r |T135321:0|t[Gladius] |cRXP_BUY_if you can afford it (5s 36c), if not skip this step|r
     .collect 2488,1 --Collect Gladius
     .target Shalomon
-    .money <0.0536
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.80
 step << Warrior
     #completewith next
@@ -863,6 +876,12 @@ step
     .turnin 2159 >> Turn in Dolanaar Delivery << !Hunter
     .vendor >>|cRXP_BUY_Buy 10 |T132815:0|t|cRXP_LOOT_Ice Cold Milk|r or as much as you can afford << Priest
     .home >> Set your Hearthstone to Dolanaar
+step << Warrior
+    #season 2
+    .goto Teldrassil,54.8,66.0,30 >>Head to the marked spot. Check if |cRXP_FRIENDLY_Wandering Swordsman|r is there. If you find him you can challenge him to a duel which will award you with the rune of |T132334:0|t[|cRXP_FRIENDLY_Blood Frenzy|r]
+    >>|cRXP_WARN_He has multiple spawn points and can only be present in one of them at the time. Skip this step if he's not there|r
+    .unitscan Wandering Swordsman
+    .train 412507,1
 step << Hunter
 #season 0,1,2
     .goto Teldrassil,56.676,59.489
@@ -968,6 +987,13 @@ step << Druid
     #season 2
     #softcore
     .deathskip >>Die and respawn at Dolanaar
+step << Druid
+    #season 2
+    #softcore
+    .goto Teldrassil,56.2,60.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brannol Eaglemoon|r
+    .vendor >> |cRXP_BUY_Vendor and repair if necessary|r
+    .target Brannol Eaglemoon
 step
     .goto Teldrassil,61.63,68.89,55,0
     .goto Teldrassil,60.52,70.47,55,0
@@ -1001,6 +1027,12 @@ step
 step << !sod/Warrior
     #season 2
 	.abandon 919 >> Abandon The Timberling Sprouts quest, it's not worth doing
+step << Warrior
+    #season 2
+    .goto Teldrassil,62.6,71.8,30 >>Head to the marked spot. Check if |cRXP_FRIENDLY_Wandering Swordsman|r is there. If you find him you can challenge him to a duel which will award you with the rune of |T132334:0|t[|cRXP_FRIENDLY_Blood Frenzy|r]
+    >>|cRXP_WARN_He has multiple spawn points and can only be present in one of them at the time. Skip this step if he's not there|r
+    .unitscan Wandering Swordsman
+    .train 412507,1
 step
     #completewith next
     .goto Teldrassil,68.02,59.66,120 >> Travel to Starbreeze Village
@@ -1023,6 +1055,7 @@ step
 step << Warrior
     #season 2
     #completewith TeldrassilEnd
+    #sticky
     >>Kill |cRXP_ENEMY_Nightsabers|r or |cRXP_ENEMY_Nightsaber Stalkers|r. Loot them for their |cRXP_LOOT_Severed Tiger Head|r
     >>Kill |cRXP_ENEMY_Strigid Owls|r or |cRXP_ENEMY_Strigid Screechers|r. Loot them for their |cRXP_LOOT_Severed Owl Head|r
     >>Kill |cRXP_ENEMY_Webwood Lurkers|r or |cRXP_ENEMY_Webwood Venomfangs|r. Loot them for their |cRXP_LOOT_Severed Spider Head|r
@@ -1056,24 +1089,6 @@ step
     .mob Nightsaber
     .mob Strigid Owl
     .mob Webwood Lurker
-step << Warrior
-    #season 2
-    >>Kill |cRXP_ENEMY_Nightsabers|r or |cRXP_ENEMY_Nightsaber Stalkers|r. Loot them for their |cRXP_LOOT_Severed Tiger Head|r
-    >>Kill |cRXP_ENEMY_Strigid Owls|r or |cRXP_ENEMY_Strigid Screechers|r. Loot them for their |cRXP_LOOT_Severed Owl Head|r
-    >>Kill |cRXP_ENEMY_Webwood Lurkers|r or |cRXP_ENEMY_Webwood Venomfangs|r. Loot them for their |cRXP_LOOT_Severed Spider Head|r
-    .collect 208611,1 -- Severed Tiger Head (1)
-    .goto Teldrassil,53.6,62.4
-    .collect 208610,1 -- Severed Owl Head (1)
-    .goto Teldrassil,54.6,60.4
-    .collect 208612,1 -- Severed Spider Head (1)
-    .goto Teldrassil,53.0,67.0
-    .mob Nightsaber
-    .mob Nightsaber Stalker
-    .mob Strigid Owl
-    .mob Strigid Screecher
-    .mob Webwood Lurker
-    .mob Webwood Venomfang
-    .train 403475,1
 step
     .goto Teldrassil,60.5,56.3
     .target Zenn Foulhoof
@@ -1207,6 +1222,7 @@ step << Druid
     .target Corithras Moonrage
     .accept 933 >> Accept Crown of the Earth
 step << Druid
+    #season 0
     .goto Teldrassil,55.945,61.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kal|r
 	.trainer >> Train your class spells
@@ -1214,7 +1230,7 @@ step << Druid
 step
     #loop
     .goto 1438/1,854.400,9952.500,6 >>Next to a small tree
-    .goto 1438/1,822.200,9948.500,6 >>On the small Hill
+    .goto 1438/1,822.200,9948.500,6 >>On the small hill
     .goto 1438/1,809.800,9926.400,6 >>Next to the massive tree
     >>Loot the 3 felcones from the locations marked on your map. 
     >>|cRXP_WARN_Skip this step if any of them is not there and you're unable to complete the objective|r
@@ -1471,7 +1487,7 @@ step << Warrior/Rogue
     .target Byancie
 step
     #season 1 << Warrior
-    #season 2 << Hunter/Warrior/Druid/Priest/Rogue
+    #season 2 << Hunter/Druid/Priest/Rogue
     .goto Teldrassil,57.121,61.296
     .train 2550 >>Train Cooking
     .target Zarrin
@@ -1497,6 +1513,13 @@ step
 #xprate >1.99
     .xp 10
    >>|cRXP_WARN_If you're not even close do the Lord Melenas quest|r
+step << Druid
+    #season 2
+    .goto Teldrassil,55.945,61.566
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kal|r
+	.trainer >> Train your class spells
+    .accept 5925 >> Accept Heeding the Call
+    .target Kal
 step << Priest
 #xprate >1.99
     .goto Teldrassil,55.564,56.746
@@ -1574,6 +1597,7 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moon Priestess Amara|r
     >>|cRXP_FRIENDLY_Moon Priestess Amara|r |cRXP_WARN_patrols the road west of Dolanaar|r
     .accept 1684 >> Accept Elanaria
+    .accept 487 >> Accept The Road to Darnassus
     .target Moon Priestess Amara
 step << Rogue
 #xprate >1.99
@@ -1604,6 +1628,12 @@ step << Rogue
     .train 398196,1
 step
     #season 0
+    .goto Teldrassil,46.6,53.0
+    >>Kill |cRXP_ENEMY_Gnarlpine Ambushers|r
+    .complete 487,1 --Kill Gnarlpine Ambusher (x6)
+    .mob Gnarlpine Ambusher
+step << Warrior
+    #season 2
     .goto Teldrassil,46.6,53.0
     >>Kill |cRXP_ENEMY_Gnarlpine Ambushers|r
     .complete 487,1 --Kill Gnarlpine Ambusher (x6)
@@ -1865,7 +1895,7 @@ step << !Rogue
     #completewith next
     .deathskip >> Die and respawn at the Spirit Healer in Darnassus
     >>|cRXP_WARN_Make sure you're closer to the Darnassus graveyard than to the Dolnaar one or you might end up going the wrong way. Run all the way out of the den and then die if you're not sure about it|r << sod Priest
-    >>|cRXP_WARN_Make sure you're closer to the Darnassus graveyard than to the Dolnaar one or you might end up going the wrong way. Run to the west side of the river if you're not sure about it|r << sod Hunter/sod Warrior
+    >>|cRXP_WARN_Make sure you're closer to the Darnassus graveyard than to the Dolnaar one or you might end up going the wrong way. Run to the west side of the river if you're not sure about it|r << sod Hunter/sod Warrior/sod Druid
     .target Spirit Healer
 step << Hunter
     #season 2
@@ -1895,7 +1925,15 @@ step << Druid
     .goto Darnassus,57.56,46.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ilyenia Moonfire|r
     .train 227 >>Train Staves << Warrior
+    .train 2567 >> Train Thrown << Warrior
     .target Ilyenia Moonfire
+step << Warrior
+    #season 2
+    .goto Darnassus,58.76,44.48
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariyell Skyshadow|r
+    >>|cRXP_BUY_Buy a stack of equip a|r |T135641:0|t[Balanced Throwing Daggers]
+    .collect 2946,200
+    .target Ariyell Skyshadow
 step << Warrior
     #season 2
     #ah
@@ -1928,13 +1966,12 @@ step << Warrior
     .itemcount 208611,1 --Severed Tiger Head (1)
     .itemcount 208610,1 --Severed Owl Head
     .train 403475,1 --Rune not known
-step << !Rogue !Hunter
+step << !Rogue !Hunter !Warrior
 #xprate >1.99
     .goto Darnassus,67.427,15.655
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Saelienne|r
     .home >> Set your Hearthstone to Darnassus << !Warrior
     .vendor >>|cRXP_BUY_Buy some more|r |T132815:0|t|cRXP_LOOT_Ice Cold Milk|r << Priest
-    .vendor >>|cRXP_BUY_Buy some |r |T133980:0|t|cRXP_LOOT_Tel'Abim Bananas|r << Warrior
     .target Innkeeper Saelienne
 step << !Rogue
     #requires xp10
@@ -1953,6 +1990,7 @@ step << !Hunter !Rogue
 step << Druid
     .goto Darnassus,35.38,8.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r on the middle level
+    .turnin 5925 >>  Turn in Heeding the Call << sod
     .accept 5921 >> Accept Moonglade
 	.trainer >> Train your class spells
     .target Mathrengyl Bearwalker
@@ -1972,6 +2010,13 @@ step << Warrior
     #season 2
     .hs >> Hearthstone to Dolnaar
 step << Warrior
+    #season 2
+    #sticky
+    #completewith FrenziedAssault
+    >>Turn in the quest from |cRXP_FRIENDLY_Moon Priestess Amara|r |cRXP_WARN_if you happen to see her as you're completing the other steps. Don't go out of your way to look for her yet|r
+    .turnin 487 >> Turn in The Road to Darnassus
+    .target Moon Priestess Amara
+step << Warrior
 	#season 2
     .goto Teldrassil,56.308,59.488
     .money <0.0504
@@ -1982,11 +2027,12 @@ step << Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<4.20
 step << Warrior
     #season 2
-    #completewith next
+    #completewith melenas
     .goto Teldrassil,54.68,52.84,20,0
     .goto Teldrassil,54.42,51.19,15 >> Travel to Fel Rock
 step << Warrior
     #season 2
+    #label melenas
     .goto Teldrassil,51.2,50.6
     >>Kill |cRXP_ENEMY_Lord Melenas|r. Loot him for his |cRXP_LOOT_Head|r
     >>|cRXP_ENEMY_Lord Melenas|r may be located in many different spawn locations throughout Fel Rock
@@ -2000,6 +2046,7 @@ step << Warrior
     .turnin 932 >> Turn in Twisted Hatred
 step << Warrior
     #season 2
+    #label FrenziedAssault
     .goto Teldrassil,55.619,59.787
     >>Talk to |cRXP_FRIENDLY_Innkeeper Keldamyr|r at Dolanaar
     >>Talk to |cRXP_ENEMY_Syllart|r upstairs, then beat him up. He will pass out at 0%
@@ -2007,11 +2054,29 @@ step << Warrior
     >>Talk to |cRXP_FRIENDLY_Innkeeper Keldamyr|r again after knocking out |cRXP_ENEMY_Syllart|r to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
     .train 425447 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r] |cRXP_WARN_to train|r |T236317:0|t[Frenzied Assault]
     >>|cRXP_WARN_Note: This can be quite difficult solo depending on your level. Look for some help if needed|r
-    >>|cRXP_WARN_U can solo him if you pool a bit of|r |cRXP_ENEMY_Rage|r |cRXP_WARN_by kiting one of the|r |cRXP_ENEMY_Owls|r |cRXP_WARN_near the inn to start the fight at high rage. Try casting|r |T132155:0|t[Rend] |cRXP_WARN_on him and then kite using|r |T132316:0|t[Hamstring]. |cRXP_WARN_Use a|r |T134830:0|t[Healing Potion] |cRXP_WARN_and|r |T133685:0|t[Bandages] |cRXP_WARN_to heal yourself if necessary|r
+    >>|cRXP_WARN_U can solo him with thrown kiting. Try casting|r |T132155:0|t[Rend] |cRXP_WARN_on him and then kite using|r |T132316:0|t[Hamstring] and|r |T132324:0|t[Throw] |cRXP_WARN_at him from range.|r |cRXP_WARN_Use a|r |T134830:0|t[Healing Potion] |cRXP_WARN_and|r |T133685:0|t[Bandages] |cRXP_WARN_to heal yourself if necessary|r
     --Might wanna add a guide video
     .use 204716
     .target Innkeeper Keldamyr
     .mob Syllart
+step << Warrior
+    #season 2
+    .goto Teldrassil,57.121,61.296
+    .train 2550 >>Train Cooking
+    .target Zarrin
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zarrin|r
+    .accept 4161 >> Accept Recipe of the Kaldorei
+    .turnin 4161 >> Turn in Recipe of the Kaldorei
+    >>|cRXP_WARN_Skip the quest if you don't have 7 small spider legs. Train cooking anyway, you'll need it later|r
+step << Warrior
+    #season 2
+    .goto Teldrassil,55.83,58.31,40,0
+    .goto Teldrassil,50.22,53.83
+    .goto Teldrassil,55.83,58.31,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moon Priestess Amara|r
+    >>|cRXP_FRIENDLY_Moon Priestess Amara|r |cRXP_WARN_patrols the road west of Dolanaar|r
+    .turnin 487 >> Turn in The Road to Darnassus
+    .target Moon Priestess Amara
 step << Druid
     #season 2
     #softcore
@@ -2136,6 +2201,9 @@ step << Druid
     .turnin 5929 >> Turn in Great Bear Spirit
     .target Dendrite Starblaze
     .accept 5931 >> Accept Back to Darnassus
+step << Druid
+    #season 2
+    .hs >> Hearthstone back to Darnassus
 step
 #xprate <1.99
     #requires xp10 << Rogue
@@ -2468,7 +2536,7 @@ step
     >>|cRXP_ENEMY_Lady Sathrah|r |cRXP_WARN_can spawn in 3 different locations|r
     .complete 2518,1 --Collect Silvery Spinnerets (x1)
     .mob Lady Sathrah
-step << !sod/Warrior/Rogue/Druid
+step << !sod/Warrior/Rogue
     .goto Teldrassil,38.3,34.3
     .target Sentinel Arynia Cloudsbreak
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
@@ -2511,7 +2579,7 @@ step << Rogue
     .mob Bloodfeather Wind Witch
     .mob Bloodfeather Matriarch
     .train 398196,1
-step << !sod/Warrior/Rogue/Druid
+step << !sod/Warrior/Rogue
     #sticky
 	#label harpies2
     .goto Teldrassil,33.619,29.819,0,0
@@ -2524,7 +2592,7 @@ step << !sod/Warrior/Rogue/Druid
     .mob Bloodfeather Fury
     .mob Bloodfeather Wind Witch
     .mob Bloodfeather Matriarch
-step << !sod/Warrior/Rogue/Druid
+step << !sod/Warrior/Rogue
     #season 2
     .goto Teldrassil,33.619,29.819,0,0
     .cast 418600 >>|cRXP_WARN_Use any of the|r |T134327:0|t[|cRXP_LOOT_Map Pieces]|r |cRXP_WARN_to combine them into the|r |T134269:0|t[|cRXP_LOOT_Teldrassil Treasure Map|r]
@@ -2538,20 +2606,20 @@ step << !sod/Warrior/Rogue/Druid
     .use 208602
     .use 208603
     .train 398196,1
-step << !sod/Warrior/Rogue/Druid
+step << !sod/Warrior/Rogue
     .goto Teldrassil,31.54,31.62
     .target Mist
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mist|r
     >>|cRXP_WARN_This will start an escort quest|r
     >>|cRXP_WARN_Skip this quest if the NPC is not there|r
     .accept 938 >> Accept Mist
-step << !sod/Warrior/Rogue/Druid
+step << !sod/Warrior/Rogue
     .goto Teldrassil,38.3,34.4
     .target Sentinel Arynia Cloudsbreak
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
     .turnin 938 >> Turn in Mist
     .isOnQuest 938
-step << !sod/Warrior/Rogue/Druid
+step << !sod/Warrior/Rogue
     #requires harpies2
     #label TeldrassilEnd
     .goto Teldrassil,38.3,34.4
@@ -2559,6 +2627,12 @@ step << !sod/Warrior/Rogue/Druid
     .turnin 937 >> Turn in The Enchanted Glade
     .target Sentinel Arynia Cloudsbreak
     .accept 940 >> Accept Teldrassil
+step << Warrior
+    #season 2
+    .goto Teldrassil,39.8,37.4,30 >>Head to the marked spot. Check if |cRXP_FRIENDLY_Wandering Swordsman|r is there. If you find him you can challenge him to a duel which will award you with the rune of |T132334:0|t[|cRXP_FRIENDLY_Blood Frenzy|r]
+    >>|cRXP_WARN_He has multiple spawn points and can only be present in one of them at the time. Skip this step if he's not there|r
+    .unitscan Wandering Swordsman
+    .train 412507,1
 step
     #softcore
 	#completewith darn
@@ -2680,7 +2754,7 @@ step << Rogue
     .target Priestess A'moora
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
     .turnin 2520 >> Turn in Sathrah's Sacrifice
-step << !sod Hunter/!sod Priest
+step << Warrior/Rogue
     #season 2
     .goto Darnassus,34.814,9.255
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Fandral Staghelm|r
