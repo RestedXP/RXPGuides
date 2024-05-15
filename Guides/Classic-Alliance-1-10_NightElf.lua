@@ -548,11 +548,6 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alyissia|r
 	.trainer >> Train your class spells
     .target Alyissia
-step << NightElf Warrior
-    #season 2
-    #completewith next
-    #sticky
-   .abandon 77575 >> Abandon Amidst the Shadowed Webs. It's not worth running to the trainer to turn it in
 step << Priest
     #completewith next
     .goto Teldrassil,59.456,41.050
@@ -598,6 +593,11 @@ step << Druid
     .turnin -77571 >> Turn in Relics of the Kaldorei
     .train 8921 >>Train |T136096:0|t[Moonfire]
     .target Mardant Strongoak
+step << NightElf Warrior
+    #season 2
+    #completewith next
+    #sticky
+   .abandon 77575 >> Abandon Amidst the Shadowed Webs. It's not worth running to the trainer to turn it in
 step
     .goto Teldrassil,54.593,32.992
     .target Iverron
@@ -878,7 +878,7 @@ step
     .home >> Set your Hearthstone to Dolanaar
 step << Warrior
     #season 2
-    .goto Teldrassil,54.8,66.0,30 >>Head to the marked spot. Check if |cRXP_FRIENDLY_Wandering Swordsman|r is there. If you find him you can challenge him to a duel which will award you with the rune of |T132334:0|t[|cRXP_FRIENDLY_Blood Frenzy|r]
+    .goto Teldrassil,54.8,66.0,25 >>Head to the marked spot. Check if |cRXP_FRIENDLY_Wandering Swordsman|r is there. If you find him you can challenge him to a duel which will award you with the rune of |T132334:0|t[|cRXP_FRIENDLY_Blood Frenzy|r]
     >>|cRXP_WARN_He has multiple spawn points and can only be present in one of them at the time. Skip this step if he's not there|r
     .unitscan Wandering Swordsman
     .train 412507,1
@@ -1029,7 +1029,7 @@ step << !sod/Warrior
 	.abandon 919 >> Abandon The Timberling Sprouts quest, it's not worth doing
 step << Warrior
     #season 2
-    .goto Teldrassil,62.6,71.8,30 >>Head to the marked spot. Check if |cRXP_FRIENDLY_Wandering Swordsman|r is there. If you find him you can challenge him to a duel which will award you with the rune of |T132334:0|t[|cRXP_FRIENDLY_Blood Frenzy|r]
+    .goto Teldrassil,62.6,71.8,25 >>Head to the marked spot. Check if |cRXP_FRIENDLY_Wandering Swordsman|r is there. If you find him you can challenge him to a duel which will award you with the rune of |T132334:0|t[|cRXP_FRIENDLY_Blood Frenzy|r]
     >>|cRXP_WARN_He has multiple spawn points and can only be present in one of them at the time. Skip this step if he's not there|r
     .unitscan Wandering Swordsman
     .train 412507,1
@@ -1931,8 +1931,8 @@ step << Warrior
     #season 2
     .goto Darnassus,58.76,44.48
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariyell Skyshadow|r
-    >>|cRXP_BUY_Buy a stack of equip a|r |T135641:0|t[Balanced Throwing Daggers]
-    .collect 2946,200
+    >>|cRXP_BUY_Buy and equip a stack of |r |T135425:0|t[Keen Throwing Knives]
+    .collect 3107,200
     .target Ariyell Skyshadow
 step << Warrior
     #season 2
@@ -1957,8 +1957,10 @@ step << Warrior
     #requires xp10
     .goto Darnassus,63.108,21.858
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delwynna|r upstairs
-    >>|cRXP_WARN_After turning in the three |cRXP_LOOT_Severed Heads|r you will receive the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
-    .train 403475 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r] |cRXP_WARN_to train|r |T135291:0|t[Devastate]
+    >>|cRXP_WARN_Turn in the three |cRXP_LOOT_Severed Heads|r to receive|r |T134455:0|t[|cRXP_FRIENDLY_Monster Hunter's Rune Fragments|r]
+    .collect 204689,1
+    .collect 204690,1
+    .collect 204688,1
     .use 204703
     .skipgossip
     .target Delwynna
@@ -1966,6 +1968,14 @@ step << Warrior
     .itemcount 208611,1 --Severed Tiger Head (1)
     .itemcount 208610,1 --Severed Owl Head
     .train 403475,1 --Rune not known
+step << Warrior
+    #season 2
+    >>Use any of the |T134455:0|t[|cRXP_FRIENDLY_Monster Hunter's Rune Fragments|r] to combine them into |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
+    .train 403475 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r] |cRXP_WARN_to train|r |T135291:0|t[Devastate]
+    .use 204689
+    .itemcount 204689,1
+    .itemcount 204690,1
+    .itemcount 204688,1
 step << !Rogue !Hunter !Warrior
 #xprate >1.99
     .goto Darnassus,67.427,15.655
@@ -2009,11 +2019,13 @@ step << !Rogue
 step << Warrior
     #season 2
     .hs >> Hearthstone to Dolnaar
+    .vendor >> |cRXP_BUY_Vendor and buy 5-10 |T133968:0|t[|cRXP_LOOT_Freshly Baked Bread|r] from the innkeeper
 step << Warrior
     #season 2
     #sticky
     #completewith FrenziedAssault
-    >>Turn in the quest from |cRXP_FRIENDLY_Moon Priestess Amara|r |cRXP_WARN_if you happen to see her as you're completing the other steps. Don't go out of your way to look for her yet|r
+    >>Turn in the quest from |cRXP_FRIENDLY_Moon Priestess Amara|r if you happen to see her as you're completing the other steps
+    >>|cRXP_WARN_Don't go out of your way to look for her yet|r
     .turnin 487 >> Turn in The Road to Darnassus
     .target Moon Priestess Amara
 step << Warrior
@@ -2039,11 +2051,19 @@ step << Warrior
     .complete 932,1 --Collect Melenas' Head (x1)
     .unitscan Lord Melenas
 step << Warrior
+	#season 2
+    #softcore
+    .deathskip >> Die and respawn at the Spirit Healer
+    .target Spirit Healer
+step << Warrior
     #season 2
-    .goto Teldrassil,55.574,56.948
-    .target Tallonkai Swiftroot
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r atop the Tree
-    .turnin 932 >> Turn in Twisted Hatred
+    .goto Teldrassil,57.121,61.296
+    .train 2550 >>Train Cooking
+    .target Zarrin
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zarrin|r
+    .accept 4161 >> Accept Recipe of the Kaldorei
+    .turnin 4161 >> Turn in Recipe of the Kaldorei
+    >>|cRXP_WARN_Skip the quest if you don't have 7 small spider legs. Train cooking anyway, you'll need it later|r
 step << Warrior
     #season 2
     #label FrenziedAssault
@@ -2054,20 +2074,17 @@ step << Warrior
     >>Talk to |cRXP_FRIENDLY_Innkeeper Keldamyr|r again after knocking out |cRXP_ENEMY_Syllart|r to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
     .train 425447 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r] |cRXP_WARN_to train|r |T236317:0|t[Frenzied Assault]
     >>|cRXP_WARN_Note: This can be quite difficult solo depending on your level. Look for some help if needed|r
-    >>|cRXP_WARN_U can solo him with thrown kiting. Try casting|r |T132155:0|t[Rend] |cRXP_WARN_on him and then kite using|r |T132316:0|t[Hamstring] and|r |T132324:0|t[Throw] |cRXP_WARN_at him from range.|r |cRXP_WARN_Use a|r |T134830:0|t[Healing Potion] |cRXP_WARN_and|r |T133685:0|t[Bandages] |cRXP_WARN_to heal yourself if necessary|r
+    >>|cRXP_WARN_You can solo him with thrown kiting. Try slowing him using|r |T132316:0|t[Hamstring] |cRXP_WARN_then run and|r |r |T132324:0|t[Throw] |cRXP_WARN_at him from range.|r |cRXP_WARN_Use a|r |T134830:0|t[Healing Potion] |cRXP_WARN_and|r |T133685:0|t[Bandages] |cRXP_WARN_to heal yourself if necessary|r
     --Might wanna add a guide video
     .use 204716
     .target Innkeeper Keldamyr
     .mob Syllart
 step << Warrior
     #season 2
-    .goto Teldrassil,57.121,61.296
-    .train 2550 >>Train Cooking
-    .target Zarrin
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zarrin|r
-    .accept 4161 >> Accept Recipe of the Kaldorei
-    .turnin 4161 >> Turn in Recipe of the Kaldorei
-    >>|cRXP_WARN_Skip the quest if you don't have 7 small spider legs. Train cooking anyway, you'll need it later|r
+    .goto Teldrassil,55.574,56.948
+    .target Tallonkai Swiftroot
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tallonkai Swiftroot|r atop the Tree
+    .turnin 932 >> Turn in Twisted Hatred
 step << Warrior
     #season 2
     .goto Teldrassil,55.83,58.31,40,0
@@ -2629,7 +2646,7 @@ step << !sod/Warrior/Rogue
     .accept 940 >> Accept Teldrassil
 step << Warrior
     #season 2
-    .goto Teldrassil,39.8,37.4,30 >>Head to the marked spot. Check if |cRXP_FRIENDLY_Wandering Swordsman|r is there. If you find him you can challenge him to a duel which will award you with the rune of |T132334:0|t[|cRXP_FRIENDLY_Blood Frenzy|r]
+    .goto Teldrassil,39.8,37.4,25 >>Head to the marked spot. Check if |cRXP_FRIENDLY_Wandering Swordsman|r is there. If you find him you can challenge him to a duel which will award you with the rune of |T132334:0|t[|cRXP_FRIENDLY_Blood Frenzy|r]
     >>|cRXP_WARN_He has multiple spawn points and can only be present in one of them at the time. Skip this step if he's not there|r
     .unitscan Wandering Swordsman
     .train 412507,1
@@ -2698,8 +2715,10 @@ step << Warrior
     #requires xp10
     .goto Darnassus,63.108,21.858
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delwynna|r upstairs
-    >>|cRXP_WARN_After turning in the three |cRXP_LOOT_Severed Heads|r you will receive the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
-    .train 403475 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r] |cRXP_WARN_to train|r |T135291:0|t[Devastate]
+    >>|cRXP_WARN_Turn in the three |cRXP_LOOT_Severed Heads|r to receive|r |T134455:0|t[|cRXP_FRIENDLY_Monster Hunter's Rune Fragments|r]
+    .collect 204689,1
+    .collect 204690,1
+    .collect 204688,1
     .use 204703
     .skipgossip
     .target Delwynna
@@ -2707,6 +2726,14 @@ step << Warrior
     .itemcount 208611,1 --Severed Tiger Head (1)
     .itemcount 208610,1 --Severed Owl Head
     .train 403475,1 --Rune not known
+step << Warrior
+    #season 2
+    >>Use any of the |T134455:0|t[|cRXP_FRIENDLY_Monster Hunter's Rune Fragments|r] to combine them into |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
+    .train 403475 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r] |cRXP_WARN_to train|r |T135291:0|t[Devastate]
+    .use 204689
+    .itemcount 204689,1
+    .itemcount 204690,1
+    .itemcount 204688,1
 step << Hunter
 #xprate <1.99
     .goto Darnassus,40.377,8.545
