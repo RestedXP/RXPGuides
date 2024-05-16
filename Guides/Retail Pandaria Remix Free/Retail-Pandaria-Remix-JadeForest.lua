@@ -424,10 +424,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Shan Long|r
     .turnin 29631 >>Turn in Burning Bright
     .target Guard Shan Long
-step
-    .goto 371,41.60,23.69
-    >>|cRXP_WARN_Return the Cauldron|r but be careful not to stretch the rope |cRXP_WARN_beyond 100 yards to avoid disconnecting.|r
-    .complete 29628,2 --1/1 Boiling Cauldron returned
+--step
+--    .goto 371,41.60,23.69
+--    >>|cRXP_WARN_Return the Cauldron|r but be careful not to stretch the rope |cRXP_WARN_beyond 100 yards to avoid disconnecting.|r
+--    .complete 29628,2 --1/1 Boiling Cauldron returned
 step
     .convertquest 29646,29646 << Horde
     .goto 371,41.60,23.69
