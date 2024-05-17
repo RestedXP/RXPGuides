@@ -869,6 +869,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
+    .isOnQuest 80013
     .goto 371,65.25,37.20
     >>Use |T134376:0|t[Bronze Timepiece]
     .itemcount 216712,1
@@ -2301,14 +2302,9 @@ step
     .complete 31740,1 --1/1 Koukou slain
     .mob koukou
 step
-<<<<<<< HEAD
     #completewith Critical Condition
     .goto 371,65.25,37.20
     .cast 437035 >>Use |T134376:0|t[Bronze Timepiece] to teleport to the dragonriding quests.
-=======
-    .goto 371,65.25,37.20
-    >>Use |T134376:0|t[Bronze Timepiece]
->>>>>>> e4f7afa456426215c1a1f3f2e857224c7157fc96
     .itemcount 216712,1
     .use 216712
 step
@@ -2475,10 +2471,7 @@ step
 step
     #include 1) Jade Forest Defiance Side Quests
 step
-<<<<<<< HEAD
     #completewith Paw'don Village
-=======
->>>>>>> e4f7afa456426215c1a1f3f2e857224c7157fc96
     .goto 371,65.25,37.20
     .cast 437035 >>Use |T134376:0|t[Bronze Timepiece] to teleport to the dragonriding quests.
     .itemcount 216712,1
