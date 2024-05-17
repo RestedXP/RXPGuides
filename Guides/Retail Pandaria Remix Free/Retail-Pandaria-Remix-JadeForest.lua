@@ -1124,10 +1124,18 @@ step
     .accept 79432 >>Accept It's About Time
     .target Eternus
 step
+    #completewith next
     .goto 554,25.72,46.29
-    >>Kill |cRXP_ENEMY_Archaios the Artificer|r. Loot him for his |cRXP_LOOT_artifact|r
+    >>Click on the |cRXP_PICK_Unstable Rift.|r
+    .complete 79432,1 --1/1 Investigate the Unstable Rift (Optional)
+step
+    .goto 554,25.72,46.29
+    >>Kill |cRXP_ENEMY_Archaios the Artificer.|r
     .complete 79432,1 --1/1 Investigate the Unstable Rift (Optional)
     .complete 79432,2 --1/1 Archaios the Artificer slain
+step
+    .goto 554,25.72,46.29
+    >>Loot him for his |cRXP_LOOT_Artifact.|r
     .complete 79432,3 --1/1 Archaios's artifact taken
     .mob archaios the artificer
 step
@@ -1179,16 +1187,22 @@ step
 step
     .goto 554,25.46,53.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Horos|r
-    .buy 215438,1
     .complete 79435,1 --1/1 Chronobadge purchased
+    .skipgossip 217051,1
+    .buy 215438,1
     .target Horos
 step
+    #completewith next
     .goto 554,24.97,52.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
+    .gossipoption 120769>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
+    .timer 9,RP
+    .target Momentus
+step
+    .goto 554,25.67,51.61
+    >>|cRXP_WARN_Wait for the Roleplay.|r
     .complete 79435,2 --1/1 Ask Momentus to forge your artifact
     .skipgossip
     .target Momentus
-    --x shiek: gonna add gossipoption id + timer later
 step
     .goto 554,25.67,51.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
@@ -1196,9 +1210,13 @@ step
     .accept 80380 >>Accept Cloak and Needle
     .target Moratari
 step
+    .goto 554,24.0,55.4,40,0
+    .goto 554,22.4,43.4,40,0
+    .goto 554,24.0,55.4,0
+    .goto 554,22.4,43.4,0
     >>Equip the |T622728:0|t[Cloak of Infinite Potential]
     .complete 80380,1 --1/1 Cloak of Infinite Potential equipped
-    .use 215442
+    .use 210333
 step
     #loop
     .goto 554,24.0,55.4,40,0
@@ -1228,8 +1246,18 @@ step
 step
     .goto 554,26.04,53.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
-    .skipgossip 216591,1
     .complete 79440,1 --1/1 Speak to Eternus about recent events
+    .skipgossip 217538,3
+    .target Eternus
+step << Horde
+    .goto 371,30.84,10.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
+    .turnin 79440 >>Turn in Recalling the War
+    .target Eternus
+step << Alliance
+    .goto 371,41.98,92.72
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
+    .turnin 79440 >>Turn in Recalling the War
     .target Eternus
 ]])
 
@@ -1961,7 +1989,7 @@ step
     .timer 25.5, RP
     .target Skyfire Gyrocopter
 step
-    >>Use |T249177:0|t[Full Autofire(1)] and |T249177:0|t[Torpedo Rocket(2)] on |cRXP_ENEMY_Shredders|r, |cRXP_ENEMY_Peons|r and |cRXP_ENEMY_Grunts|r |cRXP_WARN_Ideally, target as many as possible at once and barrels if they are in close proximity.|r
+    >>Use |T249177:0|t[Full Autofire(1)] then use |T249177:0|t[Torpedo Rocket(2)] on |cRXP_ENEMY_Shredders|r, |cRXP_ENEMY_Peons|r and |cRXP_ENEMY_Grunts|r |cRXP_WARN_Ideally, target as many as possible at once and barrels if they are in close proximity.|r
     *|cFFFF0000Make sure to do this as often as possible.|r|r
     .complete 31732,2 --8/8 Garrosh'ar Shredder slain
     .complete 31732,1 --60/60 Garrosh'ar Horde slain
@@ -2126,24 +2154,49 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Taran Zhu|r, |cRXP_FRIENDLY_Sunke Khang|r, |cRXP_FRIENDLY_Teng Applebloom|r and |cRXP_FRIENDLY_Mishka|r
     .turnin 31737 >>Turn in The Cost of War
     .goto 371,46.25,84.81
+    .target +Taran Zhu
     .turnin 31736 >>Turn in Envoy of the Alliance
     .accept 31738 >>Accept Pillaging Peons
     .goto 371,46.26,84.73
+    .target +Sunke Khang
     .accept 31739 >>Accept Priorities!
+    .target +Teng Applebloom
     .goto 371,46.22,84.69
     .accept 29552 >>Accept Critical Condition
     .goto 371,46.14,84.57
-    .target Taran Zhu
-    .target Teng Applebloom
-    .target Sunke Khang
-    .target Mishka
+    .target +Mishka
 step
-    .goto 371,28.53,14.01
+    .goto 371,45.79,84.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
     .target Moratari
     .accept 80012 >>Accept Dragonriding
 step
-    .goto 371,28.53,14.01
+    .xp >14,1
+    #loop
+    .goto 371,45.89,84.63,5,0
+    .goto 371,45.83,84.83,5,0
+    .goto 371,45.89,84.63,0
+    .goto 371,45.83,84.83,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r and buy |T134491:0|t[Nostwin's Voucher.]
+    .collect 217930,10
+    .buy 217930,10
+    .skipgossip
+    .target Nostwin
+step
+    .xp <14,1
+    #loop
+    .goto 371,45.89,84.63,5,0
+    .goto 371,45.83,84.83,5,0
+    .goto 371,45.89,84.63,0
+    .goto 371,45.83,84.83,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r and buy |T134491:0|t[Nostwin's Voucher.]
+    .collect 217930,10
+    .buy 217930,10
+    .skipgossip
+    .turnin 81976 >>Turn in Bazaar, Isn't It?
+    .target Nostwin
+step
+    .goto 371,45.82,84.72
     >>Click on the |cRXP_PICK_Portal|r
     .complete 80012,1 --1/1 Take Moratari's portal
     .complete 80012,3 --1/1 Learn your new dragonriding mount from your inventory
@@ -2151,31 +2204,37 @@ step
 step
     .goto 371,65.25,37.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
-    -- .skipgossip 218469,2
     .complete 80012,4 --1/1 Speak to Lord Andestrasz about Dragonriding
+    .skipgossip 218469,2
     .target Lord Andestrasz
 step
     .goto 371,65.25,37.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
-    .turnin 80012 >>Turn in Dragonriding
-    .target Lord Andestrasz
     .accept 80013 >>Accept How to Glide with Your Dragon
+    .target Lord Andestrasz
 step
-    .goto 371,65.11,37.57,10,0
-    .goto 371,45.8,84.6,40 >> |cRXP_WARN_We arent doing these quests yet.|r Click on the |cRXP_PICK_Portal|r to go back.
+    #completewith next
+    .goto 371,65.21,37.46,10,0
+    .goto 371,45.8,84.6,40 >> |cRXP_WARN_We aren't doing these quests yet.|r |cRXP_WARN_These quests scale with XP, so it's better to do them later.|r
+    *Click on the |cRXP_PICK_Portal|r to go back.
+    .itemcount 216712,1
 step
     #loop
-    .goto 371,45.89,84.63,10,0
-    .goto 371,45.83,84.83,10,0
+    .goto 371,45.89,84.63,5,0
+    .goto 371,45.83,84.83,5,0
     .goto 371,45.89,84.63,0
     .goto 371,45.83,84.83,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r
-    .buy 217930,2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r and buy |T134491:0|t[Nostwin's Voucher.]
+    .collect 217930,10
+    .buy 217930,10
+    .skipgossip
     --x .turnin 81976 >>Turn in Bazaar, Isn't It? -- high chance of inaccessibility requires level 14
     .target Nostwin
 step
+    .goto 371,44.89,84.58,10,0
     .goto 371,44.88,84.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jiayi Applebloom|r
+    .accept 81638 >>Accept in Home Is Where the Hearthstone Is
     .turnin 81638 >>Turn in Home Is Where the Hearthstone Is
     .target Jiayi Applebloom
 step
@@ -2224,31 +2283,46 @@ step
     .complete 31740,1 --1/1 Koukou slain
     .mob koukou
 step
-    .isOnQuest 80013
+    #completewith Critical Condition
     .goto 371,65.25,37.20
-    >>Use |T134376:0|t[Bronze Timepiece]
-    .itemcount 216712,1
+    .cast 437035 >>Use |T134376:0|t[Bronze Timepiece] to teleport to the dragonriding quests.
     .itemcount 216712,1
     .use 216712
 step
-    .isOnQuest 80013
-    .goto 371,65.11,37.57,10,0
-    .goto 371,45.8,84.6,40 >> |cRXP_WARN_We arent doing these quests yet.|r Click on the |cRXP_PICK_Portal|r to go back.
+    #completewith Critical Condition
+    .goto 371,65.21,37.46,5,0
+    .goto 371,45.8,84.6,40 >> |cRXP_WARN_We aren't doing these quests yet.|r |cRXP_WARN_These quests scale with XP, so it's better to do them later.|r
+    *Click on the |cRXP_PICK_Portal|r to go back.
+    .itemcount 216712,1
 step
+    .xp <14,1
+    #loop
+    .goto 371,45.89,84.63,5,0
+    .goto 371,45.83,84.83,5,0
+    .goto 371,45.89,84.63,0
+    .goto 371,45.83,84.83,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r and buy |T134491:0|t[Nostwin's Voucher.]
+    .collect 217930,10
+    .buy 217930,10
+    .skipgossip
+    .turnin 81976 >>Turn in Bazaar, Isn't It?
+    .target Nostwin
+step
+    #label Critical Condition
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mishka|r, |cRXP_FRIENDLY_Sunke Khang|r and |cRXP_FRIENDLY_Rell Nightwind|r
     .turnin 29552 >>Turn in Critical Condition
     .goto 371,46.12,84.57
+    .target +Mishka
     .turnin 31738 >>Turn in Pillaging Peons
     .turnin 31740 >>Turn in Koukou's Rampage
     .accept 31741 >>Accept Twinspire Keep
     .accept 31744 >>Accept Unfair Trade
     .goto 371,46.26,84.72
+    .target +Sunke Khang
     .accept 31742 >>Accept Fractured Forces
     .accept 31743 >>Accept Smoke Before Fire
+    .target +Rell Nightwind
     .goto 371,46.2,84.82
-    .target Rell Nightwind
-    .target Sunke Khang
-    .target Mishka
 step
     #completewith Dalgan and Bellandra Felstorm
     >>Kill |cRXP_ENEMY_Eye of Ga'trul|r to free |cRXP_FRIENDLY_Pandaren Cubs|r
@@ -2354,11 +2428,11 @@ step
     .goto 371,41.39,79.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sully "The Pickle" McLeary|r |cRXP_WARN_infont of the temple.|r
     .turnin 31741 >>Turn in Unfair Trade
-    .target Sully "The Pickle" McLeary
     .turnin 31742 >>Turn in Unfair Trade
     .turnin 31743 >>Turn in Smoke Before Fire
     .turnin 31744 >>Turn in Unfair Trade
     .accept 30070 >>Accept The Fall of Ga'trul
+    .target Sully "The Pickle" McLeary
 step
     .goto 371,41.38,77.82
     >>Kill |cRXP_ENEMY_Ga'trul|r
@@ -2368,21 +2442,29 @@ step
     .goto 371,41.45,79.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rell Nightwind|r
     .turnin 30070 >>Turn in The Fall of Ga'trul
-    .target Rell Nightwind
     .accept 31745 >>Accept Onward and Inward
+    .target Rell Nightwind
+step
+    .isOnQuest 31745
+    .goto 371,41.46,79.84,10 >> Leave the Temple. |cRXP_WARN_Don't click on the Gyrocopter|r
+--x step
+--x .goto 371,46.31,80.67 add treasure
 step
     #include 1) Jade Forest Defiance Side Quests
 step
-    .isOnQuest 80013
+    #completewith Paw'don Village
     .goto 371,65.25,37.20
-    >>Use |T134376:0|t[Bronze Timepiece]
+    .cast 437035 >>Use |T134376:0|t[Bronze Timepiece] to teleport to the dragonriding quests.
     .itemcount 216712,1
     .use 216712
 step
-    .isOnQuest 80013
-    .goto 371,65.11,37.57,10,0
-    .goto 371,28.53,14.01,40 >> |cRXP_WARN_We arent doing these quests yet.|r Click on the |cRXP_PICK_Portal|r to go back.
+    #completewith Paw'don Village
+    .goto 371,65.21,37.46,5,0
+    .goto 371,45.8,84.6,40 >> |cRXP_WARN_We aren't doing these quests yet.|r |cRXP_WARN_These quests scale with XP, so it's better to do them later.|r
+    *Click on the |cRXP_PICK_Portal|r to go back.
+    .itemcount 216712,1
 step
+    #label Paw'don Village
     .goto 371,48.06,88.4
     >>|cRXP_WARN_Follow the Arrow|r
     .complete 31745,1 --1/1 Return to Paw'don Village
@@ -2492,7 +2574,7 @@ step
     .complete 29560,1 --8/8 Ancient Hozen Skull
 step
     #label Prisoners freed
-    >>Click on |cRXP_PICK_Hozen Cages|r to free |cRXP_FRIENDLY_Alliance Prisoners.|r
+    >>Click on |cRXP_PICK_Hozen Cages|r to free |cRXP_FRIENDLY_Alliance Prisoners.|r |cRXP_WARN_Don't open empty cages.|r
     .complete 29559,1 --6/6 Prisoners freed
     .collect 74260,6
     .disablecheckbox
@@ -2671,11 +2753,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bold Karasshi|r and |cRXP_FRIENDLY_Pearlkeeper Fujin.|r
     .turnin 29762 >>Turn in Family Heirlooms
     .goto 371,58.97,81.69
+    .target +Bold Karasshi
     .turnin 29887 >>Turn in The Elder's Instruments
     -- .accept 29894 >>Accept Spirits of the Water
     .goto 371,58.76,81.29
-    .target Bold Karasshi
-    .target Pearlkeeper Fujin
+    .target +Pearlkeeper Fujin
 step
     #include 1) Jade Forest Cloud Serpent Side Quests
 step
