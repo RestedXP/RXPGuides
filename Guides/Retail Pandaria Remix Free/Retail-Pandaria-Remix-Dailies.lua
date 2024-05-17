@@ -320,3 +320,14 @@ RXPGuides.RegisterGuide([[
 
 
 ]])
+
+-- Anglers Dailies
+RXPGuides.RegisterGuide([[
+#df
+#version 1
+#group RestedXP Panda Remix
+#name X) Landfall Daillies
+#internal
+
+
+]])
