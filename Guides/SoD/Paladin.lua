@@ -2018,7 +2018,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Paladin SoD
 #group RestedXP Rune & Books Guide
-#subgroup Helm
+#subgroup Helmet
 #name Wrath - 43 (The Hinterlands)
 
 -- Wrath
