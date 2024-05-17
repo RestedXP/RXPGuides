@@ -424,10 +424,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Shan Long|r
     .turnin 29631 >>Turn in Burning Bright
     .target Guard Shan Long
-step
-    .goto 371,41.60,23.69
-    >>|cRXP_WARN_Return the Cauldron|r but be careful not to stretch the rope |cRXP_WARN_beyond 100 yards to avoid disconnecting.|r
-    .complete 29628,2 --1/1 Boiling Cauldron returned
+--step
+--    .goto 371,41.60,23.69
+--    >>|cRXP_WARN_Return the Cauldron|r but be careful not to stretch the rope |cRXP_WARN_beyond 100 yards to avoid disconnecting.|r
+--    .complete 29628,2 --1/1 Boiling Cauldron returned
 step
     .convertquest 29646,29646 << Horde
     .goto 371,41.60,23.69
@@ -869,7 +869,6 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    .isOnQuest 80013
     .goto 371,65.25,37.20
     >>Use |T134376:0|t[Bronze Timepiece]
     .itemcount 216712,1
@@ -1001,7 +1000,6 @@ step
     .target Instructor Tong
 step
     #completewith next
-    .isOnQuest 80013
     .goto 371,65.25,37.20
     >>Use |T134376:0|t[Bronze Timepiece]
     .itemcount 216712,1
@@ -1158,16 +1156,16 @@ step
     .mob Infinite Ravager
 step
     .goto 554,22.95,55.54
-    >>Click on the |cRXP_PICK_Portal.|r
+    >>Click on the |cRXP_PICK_Time Rift|r
     .complete 79437,1,1 --3/3 Time Rift closed
 step
     .goto 554,22.47,50.32
-    >>Click on the |cRXP_PICK_Portal.|r
+    >>Click on the |cRXP_PICK_Time Rift|r
     .complete 79437,1,2 --3/3 Time Rift closed
 step
     #label Time Rift
     .goto 554,20.95,45.15
-    >>Click on the |cRXP_PICK_Portal.|r
+    >>Click on the |cRXP_PICK_Time Rift|r
     .complete 79437,1,3 --3/3 Time Rift closed
 step
     #loop
@@ -1272,6 +1270,11 @@ RXPGuides.RegisterGuide([[
 -- #subweight 9
 << Horde
 
+step
+    .goto 371,30.85,10.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
+    .turnin 79440 >>Turn in Recalling the War
+    .target Eternus
 step
     .goto 12,61.22,42.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Nazgrim|r
@@ -1418,8 +1421,8 @@ step
     .target +Taran Zhu
 step
     #loop
-    .goto 371,34.45,9.89,22,0
-    .goto 371,34.55,11.31,22,0
+    .goto 371,34.45,9.89,30,0
+    .goto 371,34.55,11.31,30,0
     .goto 371,34.66,10.61,10,0
     .goto 371,35.00,10.62,10,0
     .goto 371,34.63,8.83,10,0
@@ -1566,12 +1569,27 @@ step
     .goto 371,28.53,14.01
     >>Click on the |cRXP_PICK_Portal|r
     .complete 80012,1 --1/1 Take Moratari's portal
-    .complete 80012,3 --1/1 Learn your new dragonriding mount from your inventory
-    .disablecheckbox
 step
-    .isOnQuest 31774
-    .goto 371,65.11,37.57,10,0
-    .goto 371,45.84,84.73,40 >> |cRXP_WARN_We arent doing these quests yet.|r Click on the |cRXP_PICK_Portal|r to go back.
+    #completewith next
+    .goto 371,65.28,37.18
+    .gossipoption 120916 >>Talk to |cRXP_FRIENDLY_Lord Andestrasz|r
+    .target Lord Andestrasz
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
+    .goto 371,65.28,37.18
+    .complete 80012,4 --1/1 Learn your new dragonriding mount from your inventory
+    .target Lord Andestrasz
+    --.complete 80012,3 --1/1 Learn your new dragonriding mount from your inventory
+step
+    .goto 371,65.27,37.18
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
+    .turnin 80012 >>Turn in Dragonriding
+    .accept 80013 >>Accept How to Glide with Your Dragon
+    .target Lord Andestrasz
+step
+    #completewith next
+    .goto 371,65.20,37.45,10,0
+    .goto 371,28.58,13.9740 >> |cRXP_WARN_We arent doing these quests yet.|r Click on the |cRXP_PICK_Portal to Honeydew Village|r to go back.
 step
     .goto 371,31.14,17.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zin'Jun|r
@@ -2283,9 +2301,14 @@ step
     .complete 31740,1 --1/1 Koukou slain
     .mob koukou
 step
+<<<<<<< HEAD
     #completewith Critical Condition
     .goto 371,65.25,37.20
     .cast 437035 >>Use |T134376:0|t[Bronze Timepiece] to teleport to the dragonriding quests.
+=======
+    .goto 371,65.25,37.20
+    >>Use |T134376:0|t[Bronze Timepiece]
+>>>>>>> e4f7afa456426215c1a1f3f2e857224c7157fc96
     .itemcount 216712,1
     .use 216712
 step
@@ -2452,7 +2475,10 @@ step
 step
     #include 1) Jade Forest Defiance Side Quests
 step
+<<<<<<< HEAD
     #completewith Paw'don Village
+=======
+>>>>>>> e4f7afa456426215c1a1f3f2e857224c7157fc96
     .goto 371,65.25,37.20
     .cast 437035 >>Use |T134376:0|t[Bronze Timepiece] to teleport to the dragonriding quests.
     .itemcount 216712,1
