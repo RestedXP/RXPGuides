@@ -491,22 +491,6 @@ step
     .goto 1426,42.982,54.755
     .subzone 136 >> Travel to The Grizzled Den
     .isOnQuest 313
-step << Warrior
-    #season 2
-    #sticky
-    #label WendigoPaw
-    #loop
-    .goto 1426,42.982,54.755,0
-    .goto 1426,41.918,54.053,0
-    .goto 1426,41.100,48.927,0
-    .waypoint 1426,41.918,54.053,40,0
-    .waypoint 1426,42.177,53.274,40,0
-    .waypoint 1426,41.100,48.927,40,0
-    >>Kill |cRXP_ENEMY_Wendigos|r. Loot them for a |cRXP_LOOT_Severed Wendigo Paw|r
-    .collect 208160,1 -- Severed Wendigo Paw (1)
-    .mob Young Wendigo
-    .mob Wendigo
-    .train 403475,1
 step
     #loop
     .goto 1426,42.982,54.755,0
@@ -850,23 +834,6 @@ step << Rogue
     .mob Frostmane Headhunter
     .mob Frostmane Snowstrider
     .train 398196,1
-step << Warrior
-    #season 2
-    .goto 1426,22.390,51.701,0
-    .goto 1426,23.136,50.886,0
-    .goto 1426,24.301,50.898,0
-    .waypoint 1426,22.390,51.701,30,0
-    .waypoint 1426,21.113,51.717,30,0
-    .waypoint 1426,21.131,51.024,30,0
-    .waypoint 1426,22.067,50.215,30,0
-    .waypoint 1426,23.136,50.886,30,0
-    .waypoint 1426,23.373,51.385,30,0
-    .waypoint 1426,23.568,50.924,30,0
-    .waypoint 1426,24.301,50.898,30,0
-    >>Kill |cRXP_ENEMY_Frostmane Trolls|r. Loot them for their |cRXP_LOOT_Severed Troll Head|r
-    .collect 208159,1 -- Severed Troll Head (1)
-    .train 403475,1
-    .mob Frostmane Headhunter
 step << !Hunter
     #requires Headhunters
     .goto Dun Morogh,22.86,52.16
@@ -1128,24 +1095,6 @@ step
     .goto Dun Morogh,69.084,56.330
     .target Senator Mehr Stonehallow
     .target Foreman Stonebrow
-step << Warrior
-    #season 2
-    #loop
-    .goto 1426,70.073,57.030,0
-    .goto 1426,68.533,58.372,0
-    .goto 1426,68.958,59.357,0
-    .waypoint 1426,70.073,57.030,45,0
-    .waypoint 1426,69.223,58.242,45,0
-    .waypoint 1426,68.533,58.372,45,0
-    .waypoint 1426,67.687,60.059,45,0
-    .waypoint 1426,68.958,59.357,45,0
-    .waypoint 1426,70.475,59.420,45,0
-    >>Kill |cRXP_ENEMY_Rockjaw Troggs|r. Loot them for their |cRXP_LOOT_Pristine Trogg Heart|r
-    .collect 208158,1 -- Pristine Trogg Heart (1)
-    .mob Rockjaw Ambusher
-    .mob Rockjaw Skullthumper
-    .mob Rockjaw Bonesnapper
-    .train 403475,1
 step << Rogue
     #season 2
     #loop
@@ -1205,24 +1154,14 @@ step << Rogue
     .use 208215
     .use 208218
     .train 398196,1
-step << Warrior/Rogue
+step << Rogue
     #season 2
     #softcore
     #optional
     #completewith next
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .target Spirit Healer
-    .train 403475,1 << Warrior
-    .train 398196,1 << Rogue
-step << Warrior
-    #season 2
-    .goto Dun Morogh,46.611,53.335
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Junni Steelpass|r
-    >>|cRXP_WARN_After turning in the three items, you will receive the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
-    .train 403475 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r] |cRXP_WARN_to train|r |T135291:0|t[Devastate]
-    .use 204703
-    .skipgossip
-    .target Junni Steelpass
+    .train 398196,1
 step << Rogue
     #season 2
     #completewith next
@@ -2288,7 +2227,7 @@ step
     .target Vidra Hearthstove
     .goto Loch Modan,34.828,49.283
     .turnin 418 >> Turn in Thelsamar Blood Sausages
-step << Human
+step << Human !Warlock !Rogue !Priest !Paladin
     .hs >> Hearth to Stormwind
 step << !Human
     #requires ratcatching
@@ -2297,15 +2236,14 @@ step << !Human
     .fly Ironforge >> Fly to Ironforge
     .target Thorgrum Borrelson
 step << !Human
-    #completewith TramEnd
+    #completewith next
     .goto Ironforge,78.00,51.40
-    .subzone 2257 >>Enter the Deeprun Tram
-step
+    .zone Stormwind City >>Enter the Deeprun Tram and take the Tram to Stormwind
+step << !Human
     .goto StormwindClassic,58.08,16.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furen Longbeard|r
     .turnin 1338 >> Turn in Stormpike's Order
     .target Furen Longbeard
-    .isOnQuest 1338
 step << Rogue
     .goto StormwindClassic,74.64,52.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r
