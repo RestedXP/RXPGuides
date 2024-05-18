@@ -1130,13 +1130,27 @@ function addon:OnEnable()
         addon.HideInRaid()
     end
 
-    if addon.game == "WOTLK" then
+    if addon.game == "RETAIL" then
+        local detectXPRateQueued = false
+        self:RegisterEvent("PLAYER_FLAGS_CHANGED", function(_, unit)
+            if detectXPRateQueued or unit ~= "player" then return end
+
+            -- Warmode xp buff detection
+            detectXPRateQueued = true
+            C_Timer.After(1.5, function()
+                addon.settings:DetectXPRate()
+                detectXPRateQueued = false
+            end)
+        end)
+    elseif addon.gameVersion > 30000 then
         local detectXPRateQueued = false
         self:RegisterEvent("PLAYER_EQUIPMENT_CHANGED", function(_, slot)
             if detectXPRateQueued then return end
 
             -- Abort if not chest/shoulders
-            if slot ~= 3 and slot ~= 5 then return end
+            if not addon.heirlooms[slot] then
+             return
+            end
 
             detectXPRateQueued = true
             C_Timer.After(3, function()

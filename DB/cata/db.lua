@@ -12,6 +12,16 @@ addon.skipPreReq = {
     [10008] = 1
 }
 
+--Which invslot to check for heirlooms
+addon.heirlooms = {
+    [3] = true,--shoulder
+    [5] = true,--chest
+    [12] = true,--ring1
+    [13] = true,--ring2
+    [1] = true,--head
+    [15] = true,--cloak
+}
+
 local _,class = UnitClass("player")
 
 addon.defaultGuideList = {
