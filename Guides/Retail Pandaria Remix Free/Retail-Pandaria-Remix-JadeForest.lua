@@ -868,13 +868,19 @@ RXPGuides.RegisterGuide([[
 #internal
 
 step
-    #completewith next
-    .isOnQuest 80013
+    #completewith Wild Things
     .goto 371,65.25,37.20
-    >>Use |T134376:0|t[Bronze Timepiece]
+    .cast 437035 >>Use |T134376:0|t[Bronze Timepiece] to teleport to the dragonriding quests.
     .itemcount 216712,1
     .use 216712
 step
+    #completewith Wild Things
+    .goto 371,65.21,37.46,5,0
+    .goto 371,45.8,84.6,40 >> |cRXP_WARN_We aren't doing these quests yet.|r |cRXP_WARN_These quests scale with XP, so it's better to do them later.|r
+    *Click on the |cRXP_PICK_Portal|r to go back.
+    .itemcount 216712,1
+step
+    #label Wild Things
     .goto 371,57.64,44.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
     .accept 30134 >>Accept Wild Things
@@ -883,10 +889,10 @@ step
     .goto 371,65.33,31.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Tong|r
     .turnin 30134 >>Turn in Wild Things
-    .target Instructor Tong
     .accept 30135 >>Accept Beating the Odds
     .accept 30136 >>Accept Empty Nests
     .accept 30137 >>Accept Egg Collection
+    .target Instructor Tong
 step
     #completewith Interact with Windward Hatchlings
     #hidewindow
@@ -1570,6 +1576,8 @@ step
     .goto 371,28.53,14.01
     >>Click on the |cRXP_PICK_Portal|r
     .complete 80012,1 --1/1 Take Moratari's portal
+    .complete 80012,3 --1/1 Learn your new dragonriding mount from your inventory
+    .disablecheckbox
 step
     #completewith next
     .goto 371,65.28,37.18
@@ -2117,9 +2125,9 @@ step
     .goto 371,45.17,95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rell Nightwind|r
     .turnin 30069 >>Turn in Welcome Wagons
-    .target Rell Nightwind
     .turnin 31734 >>Turn in Welcome Wagons
     .accept 31735 >>Accept The Right Tool For The Job
+    .target Rell Nightwind
 step
     .goto 371,45.62,95.24
     >>Use |T135619:0|t[Sully's Flare Gun] |cRXP_WARN_near the barricade.|r
@@ -2187,8 +2195,8 @@ step
 step
     .goto 371,45.79,84.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
-    .target Moratari
     .accept 80012 >>Accept Dragonriding
+    .target Moratari
 step
     .xp >14,1
     #loop
@@ -2294,8 +2302,8 @@ step
     .goto 371,39.56,90.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lin Applebloom|r
     .turnin 31739 >>Turn in Priorities!
-    .target Lin Applebloom
     .accept 31740 >>Accept Koukou's Rampage
+    .target Lin Applebloom
 step
     .goto 371,39.32,89.86
     >>Kill |cRXP_ENEMY_Koukou|r
@@ -2548,12 +2556,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Admiral Taylor|r and |cRXP_FRIENDLY_Bold Karasshi|r
     .turnin 29553 >>Turn in The Missing Admiral
     .goto 371,54.21,82.50
+    .target +Admiral Taylor
     .accept 29558 >>Accept The Path of War
     .accept 29559 >>Accept Freeing Our Brothers
     .accept 29560 >>Accept Ancient Power
     .goto 371,54.19,82.41
-    .target Admiral Taylor
-    .target Bold Karasshi
+    .target +Bold Karasshi
 step
     #completewith Slingtail Hozen Camp loop
     #hidewindow
@@ -2725,10 +2733,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pearlkeeper Fujin|r and |cRXP_FRIENDLY_Bold Karasshi.|r
     .accept 29762 >>Accept Family Heirlooms
     .goto 371,58.97,81.7
+    .target +Pearlkeeper Fujin
     .accept 29887 >>Accept The Elder's Instruments
     .goto 371,58.76,81.28
-    .target Pearlkeeper Fujin
-    .target Bold Karasshi
+    .target +Bold Karasshi
 step
     #completewith Clothes
     #hidewindow
