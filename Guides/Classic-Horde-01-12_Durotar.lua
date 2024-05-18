@@ -444,7 +444,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Galgar|r
     .accept 4402 >>Accept Galgar's Cactus Apple Surprise
     .target Galgar
-step
+step << !Rogue
     #xprate <1.5
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duokna|r
@@ -456,7 +456,7 @@ step
     .target Duokna
     .money >0.1 << Rogue/Warrior
     .itemcount 159,<15 << !Rogue !Warrior !Hunter !Shaman
-step
+step << !Rogue
     #xprate >1.49
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duokna|r
@@ -703,7 +703,7 @@ step << Rogue/Warrior
     .goto Durotar,43.27,69.51
     >>Loot the |cRXP_PICK_Hidden Cache|r for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r] << Rogue
     >>Loot the |cRXP_PICK_Hidden Cache|r for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r] << Warrior
-    >>|cRXP_WARN_Walk around past|r |cRXP_ENEMY_Sarkoth|r and jump down to reach the chest|r
+    >>|cRXP_WARN_Walk around past |cRXP_ENEMY_Sarkoth|r and jump down to reach the chest|r
     .collect 204795,1,77592,1 << Troll Rogue --Rune of Shadowstrike (1)
     .collect 204795,1,77583,1 << Orc Rogue --Rune of Shadowstrike (1)
     .collect 204806,1,77588,1 << Troll Warrior--Rune of Victory Rush (1)
@@ -727,6 +727,16 @@ step << Rogue
     .turnin 77592 >>Turn in Atop the Cliffs << Troll Rogue
     .turnin 77583 >>Turn in Atop the Cliffs << Orc Rogue
     .train 1784 >>Train |T132320:0|t[Stealth]
+    .train 921 >>Train |T133644:0|t[Pick Pocket]
+    .target Rwag
+    .money <0.011
+step << Rogue
+    #season 2
+    .goto Durotar,41.27,68.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
+    .turnin 77592 >>Turn in Atop the Cliffs << Troll Rogue
+    .turnin 77583 >>Turn in Atop the Cliffs << Orc Rogue
+    .train 921 >>Train |T133644:0|t[Pick Pocket]
     .target Rwag
 step << Warrior
     #season 2
@@ -1234,6 +1244,12 @@ step << Warrior
     .train 100 >> Train |T132337:0|t[Charge]
     .target Frang
     .money <0.01
+step << Rogue
+    #season 2
+    .goto Durotar,41.27,68.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
+    .train 921 >>Train |T133644:0|t[Pick Pocket]
+    .target Rwag
 step
     .goto Durotar,44.63,68.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thazz'ril|r
@@ -7349,7 +7365,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Galgar|r
     .accept 4402 >>Accept Galgar's Cactus Apple Surprise
     .target Galgar
-step
+step << !Rogue
     #xprate <1.5
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duokna|r
@@ -7361,7 +7377,7 @@ step
     .target Duokna
     .money >0.1 << Rogue/Warrior
     .itemcount 159,<15 << !Rogue !Warrior !Hunter !Shaman
-step
+step << !Rogue
     #xprate >1.49
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cFF00FF25Duokna|r
@@ -7598,7 +7614,7 @@ step << Rogue/Warrior
     .goto Durotar,43.27,69.51
     >>Loot the |cRXP_PICK_Hidden Cache|r for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstrike|r] << Rogue
     >>Loot the |cRXP_PICK_Hidden Cache|r for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r] << Warrior
-    >>|cRXP_WARN_Walk around past|r |cRXP_ENEMY_Sarkoth|r and jump down to reach the chest|r
+    >>|cRXP_WARN_Walk around past |cRXP_ENEMY_Sarkoth|r and jump down to reach the chest|r
     .collect 204795,1,77592,1 << Troll Rogue --Rune of Shadowstrike (1)
     .collect 204795,1,77583,1 << Orc Rogue --Rune of Shadowstrike (1)
     .collect 204806,1,77588,1 << Troll Warrior--Rune of Victory Rush (1)
@@ -7622,6 +7638,15 @@ step << Rogue
     .turnin 77592 >>Turn in Atop the Cliffs << Troll Rogue
     .turnin 77583 >>Turn in Atop the Cliffs << Orc Rogue
     .train 1784 >>Train |T132320:0|t[Stealth]
+    .train 921 >>Train |T133644:0|t[Pick Pocket]
+    .target Rwag
+    .money <0.011
+step << Rogue
+    #season 2
+    .goto Durotar,41.27,68.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
+    .turnin 77592 >>Turn in Atop the Cliffs << Troll Rogue
+    .turnin 77583 >>Turn in Atop the Cliffs << Orc Rogue
     .train 921 >>Train |T133644:0|t[Pick Pocket]
     .target Rwag
 step << Warrior
@@ -8048,7 +8073,6 @@ step << Priest
     .turnin 3085 >>Turn in Hallowed Tablet
     .money <0.01
     .target Ken'jai
-
 step << !Warlock
 	.goto Durotar,42.85,69.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zureetha|r
@@ -8100,6 +8124,12 @@ step << Warrior
     .train 100 >> Train |T132337:0|t[Charge]
     .target Frang
     .money <0.01
+step << Rogue
+    #season 2
+    .goto Durotar,41.27,68.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
+    .train 921 >>Train |T133644:0|t[Pick Pocket]
+    .target Rwag
 step
     .goto Durotar,44.63,68.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thazz'ril|r

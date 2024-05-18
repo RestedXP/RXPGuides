@@ -2905,9 +2905,9 @@ step
     .train 432241,1
 step
     #loop
-    .goto Azshara,19.4 64.0,20,0
-    .goto Azshara,21.2 60.8,20,0
-    .goto Azshara,21.0 60.0,20,0
+    .goto Azshara,19.4,64.0,20,0
+    .goto Azshara,21.2,60.8,20,0
+    .goto Azshara,21.0,60.0,20,0
     >>Kill |cRXP_ENEMY_Haldarr Satyr|r, |cRXP_ENEMY_Haldarr Trickster|r and |cRXP_ENEMY_Haldarr Felsworn.|r Loot them for |cRXP_LOOT_|T134331:0|tWaterlogged Shaman's Notes|r
     .collect 221351,1 --1/1 Waterlogged Shaman's Notes
     .mob Haldarr Satyr
@@ -2936,7 +2936,7 @@ step
     .train 432241,1
 step
     #completewith next
-    .zone Hinterlands >>Travel to Hinterlands
+    .zone The Hinterlands >>Travel to The Hinterlands
     .train 432241,1
 step
     #loop
@@ -2998,7 +2998,7 @@ step
     .use 221349
     .train 432241,1
 step
-    .goto Seaying Gorge,24.0,72.4
+    .goto Searing Gorge,24.0,72.4
     >>Kill |cRXP_ENEMY_Corrupt Moderate Manifestation of Fire|r then >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moderate Manifestation of Fire.|r
     .turnin 82071 >>Turn in Purifying Fire
     .accept 82074 >>Accept Answering Fire's Call

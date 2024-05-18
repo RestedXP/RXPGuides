@@ -1870,7 +1870,7 @@ step << Horde
     >>Thunder Bluff
     >>Orgrimmar
     .zoneskip Undercity
-    .zoneskip Thunderbluff
+    .zoneskip Thunder Bluff
     .zoneskip Orgrimmar
 step
     #label letterC
