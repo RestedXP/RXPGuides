@@ -34,5 +34,7 @@
 
 <Script file="Guides/Retail-BfA-War-Campaign/Retail-Alliance_Battle for Azeroth War Campaign.lua"/>
 <Script file="Guides/Retail-BfA-War-Campaign/Retail-Horde_Battle for Azeroth War Campaign.lua"/>
-  
+
+<Script file="Guides/Retail Pandaria Remix Free/Retail-Pandaria-Remix-Dailies.lua"/>
+<Script file="Guides/Retail Pandaria Remix Free/Retail-Pandaria-Remix-JadeForest.lua"/>
 </Ui>

@@ -967,7 +967,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Druid SoD
 #group RestedXP Rune & Books Guide
-#subgroup Helm
+#subgroup Helmet
 #name Gale Winds - 40 (Feralas)
 
 step
@@ -1045,7 +1045,7 @@ step
 -- #classic
 -- << Druid SoD
 -- #group RestedXP Rune & Books Guide
--- #subgroup Helm
+-- #subgroup Helmet
 -- #name Gore
 -- for phase 3
 
@@ -1056,7 +1056,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Druid SoD
 #group RestedXP Rune & Books Guide
-#subgroup Helm
+#subgroup Helmet
 #name Improved Barkskin - 44 (Tanaris)
 
 step

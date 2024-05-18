@@ -2030,7 +2030,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Shaman SoD/Priest SoD
 #group RestedXP Rune & Books Guide
-#subgroup Helm
+#subgroup Helmet
 #title Mental Dexterity << Shaman
 #title Pain and Suffering << Priest
 #name Mental Dexterity - 43 (Tanaris) << Shaman

@@ -467,10 +467,11 @@ step << !Rogue
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .vendor >> Vendor Trash
     .target Duokna
-    .money <0.0145 << Hunter
+    .money <0.005 << Hunter
     .money >0.1 << Rogue/Warrior/Shaman
     .itemcount 159,<15 << !Rogue !Warrior !Hunter !Shaman
 step << Hunter
+    #optional
     #xprate >1.49
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duokna|r
@@ -478,9 +479,10 @@ step << Hunter
     .collect 2512,400,6394,1 --Rough Arrow (400)
     .vendor >> Vendor Trash
     .target Duokna
-    .money <0.0115
+    .money <0.002
     .itemcount 2512,<200
 step << Hunter
+    #optional
     #xprate >1.49
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duokna|r
@@ -488,7 +490,7 @@ step << Hunter
     .collect 2512,200,6394,1 --Rough Arrow (200)
     .vendor >> Vendor Trash
     .target Duokna
-    .money <0.0105
+    .money <0.001
     .itemcount 2512,<200
 step << Shaman
     #season 2
@@ -1209,6 +1211,7 @@ step << Hunter
     .turnin 77584 >>Turn in Hunt for the Rune << Orc Hunter
     .target Jen'shan
     .xp <4,1
+    .money <0.01
 step << Hunter
     #season 2
     .goto Durotar,42.84,69.32
@@ -1223,6 +1226,7 @@ step << Hunter
     .train 1978 >> Train |T132204:0|t[Serpent Sting]
     .target Jen'shan
     .xp <4,1
+    .money <0.01
 step << Warrior
     #xprate <1.5
     .goto Durotar,42.89,69.44
@@ -7101,7 +7105,7 @@ step << !Warrior !Rogue
     .collect 159,30,6394,1 << !Hunter !Shaman --Refreshing Spring Water (30)
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .target Duokna
-    .money <0.015 << !Hunter
+    .money <0.005 << !Hunter
     .money <0.0040 << Hunter
 step << Warlock
     .goto Durotar,42.59,67.34
@@ -7388,10 +7392,11 @@ step << !Rogue
     .collect 2512,1000,6394,1 << Hunter --Rough Arrow (1000)
     .vendor >> Vendor Trash
     .target Duokna
-    .money <0.0145 << Hunter
+    .money <0.005 << Hunter
     .money >0.1 << Rogue/Warrior/Shaman
     .itemcount 159,<15 << !Rogue !Warrior !Hunter !Shaman
 step << Hunter
+    #optional
     #xprate >1.49
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duokna|r
@@ -7399,9 +7404,10 @@ step << Hunter
     .collect 2512,400,6394,1 --Rough Arrow (400)
     .vendor >> Vendor Trash
     .target Duokna
-    .money <0.0115
+    .money <0.002
     .itemcount 2512,<200
 step << Hunter
+    #optional
     #xprate >1.49
     .goto Durotar,42.59,67.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duokna|r
@@ -7409,7 +7415,7 @@ step << Hunter
     .collect 2512,200,6394,1 --Rough Arrow (200)
     .vendor >> Vendor Trash
     .target Duokna
-    .money <0.0105
+    .money <0.001
     .itemcount 2512,<200
 step << Shaman
     #season 2
@@ -7479,6 +7485,18 @@ step << Hunter
     .accept 77584 >>Accept Hunt for the Rune << Orc Hunter
     .train 1978 >> Train |T132204:0|t[Serpent Sting]
     .target Jen'shan
+    .money <0.01
+step << Hunter
+    #optional
+    #season 2
+    #xprate >1.49
+    .goto Durotar,42.84,69.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jen'shan|r
+    .turnin 3082 >>Turn in Etched Tablet << Troll
+    .turnin 3087 >>Turn in Etched Parchment << Orc
+    .accept 77590 >>Accept Rugged Terrain << Troll Hunter
+    .accept 77584 >>Accept Hunt for the Rune << Orc Hunter
+    .target Jen'shan
 step << Hunter
     #xprate <1.5
     #season 2
@@ -7497,6 +7515,16 @@ step << Hunter
     .turnin 3082 >>Turn in Etched Tablet << Troll
     .turnin 3087 >>Turn in Etched Parchment << Orc
     .train 1978 >> Train |T132204:0|t[Serpent Sting]
+    .target Jen'shan
+    .money <0.01
+step << Hunter
+    #optional
+    #xprate >1.49
+    #season 0
+    .goto Durotar,42.84,69.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jen'shan|r
+    .turnin 3082 >>Turn in Etched Tablet << Troll
+    .turnin 3087 >>Turn in Etched Parchment << Orc
     .target Jen'shan
 step << Hunter
     #xprate <1.5
@@ -8103,6 +8131,7 @@ step << Hunter
     .train 1978 >> Train |T132204:0|t[Serpent Sting]
     .target Jen'shan
     .xp <4,1
+    .money <0.01
 step << Warrior
     #xprate <1.5
     .goto Durotar,42.89,69.44

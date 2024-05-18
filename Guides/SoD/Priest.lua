@@ -1224,7 +1224,7 @@ RXPGuides.RegisterGuide([[
 << Priest SoD
 #group RestedXP Rune & Books Guide
 #subgroup Helmet
-#name Eye of the Void
+#name Eye of the Void - 50 (Azeroth)
 
 --x shiek: needs better coordinates and travelsteps
 step
