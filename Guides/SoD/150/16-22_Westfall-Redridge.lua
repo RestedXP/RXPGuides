@@ -18,6 +18,56 @@ step << Priest !NightElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nara Meideros|r
     .target Nara Meideros
     .accept 78194 >> Accept Secrets of Elune
+step << Human Paladin
+    #optional
+    .goto StormwindClassic,39.80,29.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
+    .turnin -2998 >> Turn in Tome of Divinity
+    .accept 1641 >> Accept The Tome of Divinity
+    .turnin 1641 >> Turn in The Tome of Divinity
+    .target Duthorian Rall
+step << Human Paladin
+    .goto StormwindClassic,39.80,29.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
+    .accept 1641 >> Accept The Tome of Divinity
+    .turnin 1641 >> Turn in The Tome of Divinity
+    .target Duthorian Rall
+step << Human Paladin
+    .goto StormwindClassic,39.80,29.77
+    >>|cRXP_WARN_Use the |T133739:0|t[|cRXP_LOOT_The Tome of Divinity|r] to start the quest|r
+    .accept 1642 >>Accept The Tome of Divinity
+    .use 6775
+step << Human Paladin
+    .goto StormwindClassic,39.80,29.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
+    .turnin 1642 >>Turn in The Tome of Divinity
+    .accept 1643 >>Accept The Tome of Divinity
+    .target Duthorian Rall
+step << Paladin
+    .goto StormwindClassic,38.67,32.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r
+    .trainer >> Train your class spells
+    .target Arthur the Faithful
+step << Human Paladin
+    .goto StormwindClassic,57.08,61.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Stephanie Turner|r
+    .turnin 1643 >> Turn in The Tome of Divinity
+    .accept 1644 >> Accept The Tome of Divinity
+    .turnin 1644 >> Turn in The Tome of Divinity
+    .accept 1780 >> Accept The Tome of Divinity
+    .target Stephanie Turner
+step << Human Paladin
+    .goto StormwindClassic,40.1,29.9
+    >>Talk to |cRXP_FRIENDLY_Duthorian Rall|r
+    .turnin 1780 >>Turn in The Tome of Divinity
+    .target Duthorian Rall
+    .accept 1781 >>Accept The Tome of Divinity
+step << Human Paladin
+    .goto StormwindClassic,38.7,26.6
+    >>Talk to |cRXP_FRIENDLY_Gazin Tenorm|r
+    .turnin 1781 >>Turn in The Tome of Divinity
+    .target Gazin Tenorm
+    .accept 1786 >>Accept The Tome of Divinity
 step << Priest !NightElf
     #season 2
     .goto StormwindClassic,20.8,50.2
@@ -205,6 +255,19 @@ step << !Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .target Marshal Dughan
     .accept 109 >>Accept Report to Gryan Stoutmantle
+step << Human Paladin
+    .goto Elwynn Forest,72.7,51.5
+    >>Use |cRXP_PICK_the Symbol of Life|r on |cRXP_FRIENDLY_Henze Faulk|r
+>>Talk to |cRXP_FRIENDLY_Henze Faulk|r
+    .turnin 1786 >>Turn in The Tome of Divinity
+.target Henze Faulk
+    .accept 1787 >>Accept The Tome of Divinity
+    .use 6866
+step << Human Paladin
+    .goto Elwynn Forest,73.5,51.3
+    >>Kill |cRXP_ENEMY_Defias Rogue Wizards|r around the island
+    .complete 1787,1 --Defias Script (1)
+    .mob Defias Rogue Wizard
 step << !Warlock
     #label RedridgeS
     .goto Redridge Mountains,17.4,69.6
@@ -533,15 +596,11 @@ step << Rogue
     .turnin 2282 >> Turn in Alther's Mill
     .target Lucius
 step << Rogue
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darcy|r
-    >>|cRXP_FRIENDLY_Darcy|r |cRXP_WARN_walks around inside the Inn|r
-	.target Darcy
-    .goto Redridge Mountains,26.80,44.30
-    .turnin 131 >> Turn in Delivering Daffodils
-step << Rogue
     .goto Redridge Mountains,21.85,46.32
     .target Martie Jainrose
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Martie Jainrose|r
+    .turnin 130 >> Turn in Visit the Herbalist
+    .accept 131 >> Accept Delivering Daffodils
     .accept 34 >> Accept An Unwelcome Guest
 step << Rogue
 #completewith xp20
@@ -553,12 +612,20 @@ step << Rogue
     .complete 34,1 -- Bellygrub's Tusk (1)
     .mob Bellygrub
 step << Rogue
+    #label bellygrub2
     #completewith xp20
     #requires Bellygrub
     .goto Redridge Mountains,21.85,46.32
     .target Martie Jainrose
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Martie Jainrose|r
     .turnin 34 >> Turn in An Unwelcome Guest
+step << Rogue
+    #completewith xp20
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darcy|r
+    >>|cRXP_FRIENDLY_Darcy|r |cRXP_WARN_walks around inside the Inn|r
+	.target Darcy
+    .goto Redridge Mountains,26.80,44.30
+    .turnin 131 >> Turn in Delivering Daffodils
 step << Rogue
 #label xp20
     >> You should be almost level 20 here, if you're not, do the gnoll quests north of Lakeshire or the murloc quests east and grind until you are 20
@@ -578,6 +645,7 @@ step
     .target General Marcus Jonathan
     .isQuestTurnedIn 118
 step
+#label db1
     .goto Stormwind City,75.78,59.84
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Mathias Shaw|r
     .turnin 135 >> Turn in The Defias Brotherhood
@@ -595,12 +663,56 @@ step
     .target Wilder Thistlenettle
     .target Shoni the Shilent
     .dungeon DM
+step << Human Paladin
+    .goto StormwindClassic,38.6,26.7
+>>Talk to |cRXP_FRIENDLY_Gazin Tenorm|r
+    .turnin 1787 >>Turn in The Tome of Divinity
+.target Gazin Tenorm
+    .accept 1788 >>Accept The Tome of Divinity
+step << Human Paladin
+    .goto StormwindClassic,39.9,29.8
+.target Duthorian Rall
+>>Talk to |cRXP_FRIENDLY_Duthorian Rall|r
+    .turnin 1788 >>Turn in The Tome of Divinity
 step
     .goto StormwindClassic,55.510,12.504
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r
     .accept 2040 >> Accept Underground Assault
     .target Shoni the Shilent
     .dungeon DM
+step << Hunter
+    .goto 1453/0,702.100,-8792.601
+    .target Lina Stover
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lina Stover|r
+    >>Buy a |T135612:0|t[BKP 2700 "Enforcer"] (9.6 dps) or look for a better upgrade on the Auction House
+    .collect 3024,1
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.6
+step << Rogue
+    .goto StormwindClassic,57.38,56.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
+    .target Marda Weller
+    >>|cRXP_WARN_Buy a|r |T135342:0|t[Kris]
+    >>|cRXP_WARN_Buy something from the Auction House if there's something cheaper/better|r
+    .collect 2209,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.9
+step << Warrior/Paladin
+    .goto StormwindClassic,57.54,57.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
+    >>|cRXP_WARN_Buy a|r |T135280:0|t[Dacian Falx] |cRXP_WARN_if you have enough money. Equip it at 21|r
+    >>|cRXP_WARN_Buy something from the Auction House if there's something cheaper/better|r
+    .collect 922,1 --Dacian Falx (1)
+    .target Gunther Weller
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<16.0
+step << Warlock/Priest
+    .goto StormwindClassic,42.65,67.16,14,0
+    .goto StormwindClassic,42.88,65.11
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ardwyn Cailen|r inside
+    .vendor 1312 >>|cRXP_BUY_Buy a|r |T135139:0|t[Burning Wand] |cRXP_BUY_from her if you can afford it|r
+    .collect 5210,1
+    .disablecheckbox
+    .target Ardwyn Cailen
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<17.4
 step
     .goto StormwindClassic,63.982,75.338
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Marcus Jonathan|r
@@ -954,4 +1066,233 @@ step
     .fly Redridge >> Fly to Redridge
     .target Dungar Longdrink
     .zoneskip Redridge Mountains
+step
+    .goto Redridge Mountains,30.97,47.27
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
+	.target Verner Osgood
+    .turnin 119 >> Turn in Return to Verner
+step
+    .goto Redridge Mountains,30.97,47.27
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
+	.target Verner Osgood
+    .accept 124 >> Accept A Baying of Gnolls
+    .accept 122 >> Accept Underbelly Scales
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Soloman|r
+	.target Magistrate Solomon
+    .goto Redridge Mountains,29.31,45.33,15,0
+    .goto Redridge Mountains,29.98,44.45
+    .turnin 121 >> Turn in Messenger to Stormwind
+step
+    .goto Redridge Mountains,29.71,44.26
+    .target Bailiff Conacher
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bailiff Conacher|r
+    .accept 91 >> Accept Solomon's Law
+step
+    .goto Redridge Mountains,26.75,46.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tClick on |cRXP_FRIENDLY_The Wanted Poster|r
+    .accept 180 >> Accept Wanted: Lieutenant Fangore
+step << Rogue
+    .goto Redridge Mountains,27.0,44.8
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Brianna|r
+    .target Innkeeper Brianna
+    .home >> Set your Hearthstone to Lakeshire
+
+step
+    .goto Redridge Mountains,21.85,46.32
+    .target Martie Jainrose
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Martie Jainrose|r
+    .turnin 130 >> Turn in Visit the Herbalist
+    .accept 131 >> Accept Delivering Daffodils
+    .accept 34 >> Accept An Unwelcome Guest
+step
+#optional
+	#completewith next
+	>>Kill |cRXP_ENEMY_Black Dragon Whelps|r. Loot them for their |cRXP_LOOT_Scales|r
+    .complete 122,1 --Underbelly Whelp Scale (6)
+    .mob Black Dragon Whelp
+step
+    .goto Redridge Mountains,21.23,36.17,60,0
+    .goto Redridge Mountains,34.20,39.70,60,0
+    .goto Redridge Mountains,39.61,31.46,60,0
+    .goto Redridge Mountains,34.20,39.70,60,0
+    .goto Redridge Mountains,21.23,36.17,60,0
+    .goto Redridge Mountains,34.20,39.70,60,0
+    .goto Redridge Mountains,39.61,31.46,60,0
+    .goto Redridge Mountains,22.5,35.7,0
+    >>Kill |cRXP_ENEMY_Redridge Brutes|r and |cRXP_ENEMY_Redridge Mystics|r. Loot them for their |cRXP_LOOT_Iron Pikes|r and |cRXP_LOOT_Iron Rivets|r
+    .complete 124,1 --Redridge Brute (10)
+    .complete 124,2 --Redridge Mystic (8)
+    .complete 89,1 --Iron Pike (5)
+    .complete 89,2 --Iron Rivet (5)
+	.mob Redridge Mystic
+	.mob Redridge Brute
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darcy|r
+    >>|cRXP_FRIENDLY_Darcy|r |cRXP_WARN_walks around inside the Inn|r
+	.target Darcy
+    .goto Redridge Mountains,26.80,44.30
+    .turnin 131 >> Turn in Delivering Daffodils
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
+	.target Verner Osgood
+    .goto Redridge Mountains,31.00,47.30
+    .turnin 124 >> Turn in A Baying of Gnolls
+    .accept 126 >> Accept Howling in the Hills
+step
+    #optional
+    #completewith orcs
+    >>Kill |cRXP_ENEMY_Dire Condors|r. Loot them for their |cRXP_LOOT_Tough Condor Meat|r
+    >>Kill |cRXP_ENEMY_Black Dragon Whelps|r. Loot them for their |cRXP_LOOT_Scales|r
+    .complete 122,1 --Underbelly Whelp Scale (6)
+    .mob +Black Dragon Whelp
+    .collect 1080,5,92,1
+    .mob +Dire Condor
+    .subzoneskip 997--Render's Valley
+step
+#completewith next
+    >>Kill |cRXP_ENEMY_Great Goretusks|r. Loot them for their |cRXP_LOOT_Great Goretusk Snouts|r
+    .collect 2296,5,92,1
+    .mob Great Goretusk
+step
+    .goto Redridge Mountains,49.0,70.0
+    >>Kill |cRXP_ENEMY_Murloc Shorestrikers|r and |cRXP_ENEMY_Murloc Minor Tidecallers|r. Loot them for their |cRXP_LOOT_Fins|r and |cRXP_LOOT_Sunfish|r
+	>>|cRXP_WARN_Be aware this area is a hyperspawn, meaning the |cRXP_ENEMY_Murlocs|r respawn quickly|r
+    .complete 127,1
+    .collect 1468,8,150,1
+    .mob Murloc Shorestriker
+    .mob Murloc Minor Tidecaller
+step
+    #loop
+    >>Kill |cRXP_ENEMY_Blackrock Grunts|r and |cRXP_ENEMY_Blackrock Outrunners|r. Loot them for their |cRXP_LOOT_Axes|r
+	>>|cRXP_WARN_Be aware the |cRXP_ENEMY_Blackrock Outrunners|r will cast |T132149:0|t[Net] on you|r
+    .goto Redridge Mountains,74.00,79.00,60,0
+    .goto Redridge Mountains,76.18,83.39,60,0
+    .goto Redridge Mountains,77.80,68.50,60,0
+    .goto Redridge Mountains,70.11,77.34,60,0
+    .goto Redridge Mountains,74.00,79.00,60,0
+    .goto Redridge Mountains,74.00,79.00,0
+    .complete 20,1 --Battleworn Axe (10)
+    .mob Blackrock Grunt
+	.mob Blackrock Outrunner
+step
+    .goto Redridge Mountains,61.37,77.10
+    >>Kill |cRXP_ENEMY_Dire Condors|r. Loot them for their |cRXP_LOOT_Tough Condor Meat|r
+    >>Kill |cRXP_ENEMY_Black Dragon Whelps|r. Loot them for their |cRXP_LOOT_Scales|r
+    .complete 122,1 --Underbelly Whelp Scale (6)
+    .mob +Black Dragon Whelp
+    .collect 1080,5,92,1
+    .mob +Dire Condor
+step
+    #completewith next
+    .hs >> Hearth to Lakeshire
+    .cooldown item,6948,>0,1
+    .subzoneskip 69
+step
+    #loop
+    >>Kill |cRXP_ENEMY_Great Goretusks|r. Loot them for their |cRXP_LOOT_Great Goretusk Snouts|r
+    >>|cRXP_WARN_Save any|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_you loot as well as you can use them to level|r |T133971:0|t[Cooking] |cRXP_WARN_to 50 which is required for Duskwood later|r
+    .goto Redridge Mountains,15.73,52.83,60,0
+    .goto Redridge Mountains,32.25,70.20,60,0
+    .goto Redridge Mountains,31.02,72.14,60,0
+    .goto Redridge Mountains,15.73,52.83,0
+    .goto Redridge Mountains,32.25,70.20,0
+    .goto Redridge Mountains,31.02,72.14,0
+    .collect 2296,5,92,1
+    .mob Great Goretusk
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Breanna|r
+	.target Chef Breanna
+    .goto Redridge Mountains,22.67,43.83
+    .accept 92 >> Accept Redridge Goulash
+    .turnin 92 >> Turn in Redridge Goulash
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dockmaster Baren|r
+	.target Dockmaster Baren
+    .goto Redridge Mountains,27.72,47.38
+    .turnin 127 >> Turn in Selling Fish
+    .accept 150 >> Accept Murloc Poachers
+    .turnin 150 >> Turn in Murloc Poachers
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
+	.target Verner Osgood
+    .goto Redridge Mountains,31.00,47.30
+    .turnin 122 >> Turn in Underbelly Scales
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
+	.target Marshal Marris
+    .goto Redridge Mountains,33.50,48.97
+    .turnin 20 >> Turn in Blackrock Menace
+step
+    .goto Redridge Mountains,30.59,59.42
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
+	.target Ariena Stormfeather
+    .fly Stormwind >> Fly to Stormwind City
+step << !Mage
+    .goto StormwindClassic,52.623,65.701
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Allison|r
+    .home >> Set your Hearthstone to Stormwind City
+    .target Innkeeper Allison
+step << Mage
+    .goto Stormwind City,39.681,79.538
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Larimaine Purdue|r
+    .train 3561 >> Train |T135763:0|t[Teleport: Stormwind]
+    .target +Larimaine Purdue
+step << Mage
+    .goto Stormwind City,36.87,81.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea|r
+    .trainer >> Train your class spells
+    .target Elsharin
+	.target Jennea Cannon
+step << Warrior
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wu|r or |cRXP_FRIENDLY_Ilsa|r
+    .goto StormwindClassic,76.08,50.14,15,0
+    .goto StormwindClassic,80.22,45.37,15,0
+	.goto StormwindClassic,78.68,45.79
+    .trainer >> Train your class spells
+    .target Wu Shen
+    .target Ilsa Corbin
+step << Rogue
+    .goto StormwindClassic,74.65,52.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r
+    .trainer >> Train your class spells
+    .target Osborne the Night Man
+step << Paladin
+    .goto StormwindClassic,38.67,32.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r
+    .trainer >> Train your class spells
+    .target Arthur the Faithful
+step << Priest
+    .goto StormwindClassic,38.54,26.86
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r
+    .trainer >> Train your class spells
+    .target High Priestess Laurena
+step << Hunter
+    .goto StormwindClassic,61.609,15.269
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einris Brightspear|r
+    .trainer >> Train your class spells
+    .target Einris Brightspear
+step
+    .goto StormwindClassic,61.149,11.568,25,0
+    .goto StormwindClassic,64.0,8.10
+    .zone Ironforge >> Enter the Deeprun Tram. Take the Tram to Ironforge
+step << Warlock
+    .goto Ironforge,51.1,8.7,15,0
+    .goto Ironforge,50.343,5.657
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Briarthorn|r
+    .trainer >> Train your class spells
+    .target Briarthorn
+step << Warlock
+    .goto Ironforge,52.701,6.070
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jubahl Corpseseeker|r
+    .vendor 6382 >> |cRXP_BUY_Buy a|r |T133738:0|t[Grimoire of Torment (Rank 2)]
+    .collect 16346,1
+    .disablecheckbox
+    .target Jubahl Corpseseeker
+    .train 427733,1 --skips if you have a felguard
+step << Mage
+    .goto Ironforge,25.50,7.04
+    >>Talk to |cRXP_FRIENDLY_Milstaff|r
+    .train 3562 >> Train |T135757:0|t[Teleport: Ironforge]
+    .target Milstaff Stormeye
 ]])
