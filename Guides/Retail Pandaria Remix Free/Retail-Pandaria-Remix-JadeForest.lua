@@ -676,6 +676,9 @@ RXPGuides.RegisterGuide([[
 #name 1) Jade Forest Defiance Side Quests
 #internal
 
+step << Alliance
+    #completewith next
+    .goto 371,46.31,80.67,40 >>Look for the Treasure on the shrine.
 step
     .goto 371,43.49,75.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shao the Defiant|r
@@ -712,7 +715,6 @@ step
     .goto 371,43.91,75.07,20,0
     .goto 371,44.66,75.61,20,0
     .goto 371,43.98,76.54,20,0
-
     .goto 371,43.40,75.36,0
     .goto 371,43.06,74.88,0
     .goto 371,43.21,73.76,0
@@ -806,7 +808,7 @@ step
     #completewith next
     .goto 371,43.49,75.92,10 >> Leave the House
 step
-    .goto 371,41.01,73.98
+    .goto 371,41.01,73.97
     >>|cRXP_WARN_Follow the Arrow.|r
     .complete 29586,1 --1/1 Mogu Camp Discovered
 step
@@ -1125,6 +1127,11 @@ RXPGuides.RegisterGuide([[
 
 step
     .goto 554,24.54,52.21
+    .achievementComplete 19871,1
+    .gossipoption 120607 >>Talk to |cRXP_FRIENDLY_Eternus|r
+    .target Eternus
+step
+    .goto 554,24.54,52.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eternus|r
     .accept 79432 >>Accept It's About Time
     .target Eternus
@@ -1199,7 +1206,7 @@ step
 step
     #completewith next
     .goto 554,24.97,52.87
-    .gossipoption 120769>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
+    .gossipoption 120769>>Talk to |cRXP_FRIENDLY_Momentus|r
     .timer 9,RP
     .target Momentus
 step
@@ -2220,6 +2227,7 @@ step
     .collect 217930,10
     .buy 217930,10
     .skipgossip
+    .accept 81976 >>Turn in Bazaar, Isn't It?
     .turnin 81976 >>Turn in Bazaar, Isn't It?
     .target Nostwin
 step
@@ -2229,10 +2237,9 @@ step
     .complete 80012,3 --1/1 Learn your new dragonriding mount from your inventory
     .disablecheckbox
 step
+    #completewith next
     .goto 371,65.25,37.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Andestrasz|r
-    .complete 80012,4 --1/1 Speak to Lord Andestrasz about Dragonriding
-    .skipgossip 218469,2
+    .gossipoption 120916 >>Talk to |cRXP_FRIENDLY_Lord Andestrasz|r
     .target Lord Andestrasz
 step
     .goto 371,65.25,37.20
@@ -2241,22 +2248,10 @@ step
     .target Lord Andestrasz
 step
     #completewith next
-    .goto 371,65.21,37.46,10,0
+    .goto 371,65.21,37.46,5,0
     .goto 371,45.8,84.6,40 >> |cRXP_WARN_We aren't doing these quests yet.|r |cRXP_WARN_These quests scale with XP, so it's better to do them later.|r
     *Click on the |cRXP_PICK_Portal|r to go back.
     .itemcount 216712,1
-step
-    #loop
-    .goto 371,45.89,84.63,5,0
-    .goto 371,45.83,84.83,5,0
-    .goto 371,45.89,84.63,0
-    .goto 371,45.83,84.83,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r and buy |T134491:0|t[Nostwin's Voucher.]
-    .collect 217930,10
-    .buy 217930,10
-    .skipgossip
-    --x .turnin 81976 >>Turn in Bazaar, Isn't It? -- high chance of inaccessibility requires level 14
-    .target Nostwin
 step
     .goto 371,44.89,84.58,10,0
     .goto 371,44.88,84.34
@@ -2329,9 +2324,6 @@ step
     .goto 371,45.89,84.63,0
     .goto 371,45.83,84.83,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r and buy |T134491:0|t[Nostwin's Voucher.]
-    .collect 217930,10
-    .buy 217930,10
-    .skipgossip
     .turnin 81976 >>Turn in Bazaar, Isn't It?
     .target Nostwin
 step
@@ -2356,6 +2348,17 @@ step
     .complete 31744,1 --8/8 Captive Pandaren Cub freed
     .target Captive Pandaren Cub
     .mob Eye of Ga'trul
+step
+    .xp <14,1
+    #loop
+    .goto 371,45.89,84.63,5,0
+    .goto 371,45.83,84.83,5,0
+    .goto 371,45.89,84.63,0
+    .goto 371,45.83,84.83,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r and buy |T134491:0|t[Nostwin's Voucher.]
+    .accept 81976 >>Turn in Bazaar, Isn't It?
+    .turnin 81976 >>Turn in Bazaar, Isn't It?
+    .target Nostwin
 step
     #completewith Dalgan and Bellandra Felstorm
     >>Kill |cRXP_ENEMY_Horde Forces|r
@@ -2474,8 +2477,6 @@ step
 step
     .isOnQuest 31745
     .goto 371,41.46,79.84,10 >> Leave the Temple. |cRXP_WARN_Don't click on the Gyrocopter|r
---x step
---x .goto 371,46.31,80.67 add treasure
 step
     #include 1) Jade Forest Defiance Side Quests
 step
@@ -2664,15 +2665,10 @@ step
     .turnin 29562 >>Turn in Jailbreak
     .timer 54, RP
     .target Bold Karasshi
+--x likely skip at this point with higher xprate
 step
     #completewith Accept The Pearlfin Situation
     +|cRXP_WARN_Wait for the roleplay, which will be completed when the timer runs out.|r |cFFFF0000tidy your bags and optimize your equipment use --x item .|r
--- step
---     .isQuestAvailable 29885
---     .goto 371,59.61,83.21
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cheerful Jessu|r
---     .home >>Set your Hearthstone to Pearlfin Village
---     .target Cheerful Jessu
 step
     #label Accept The Pearlfin Situation
     .goto 371,58.93,81.93
