@@ -531,6 +531,13 @@ step << Dwarf/Gnome
     .turnin 6391 >> Turn in Ride to Ironforge
     .accept 6388 >> Accept Gryth Thurden
     .target Golnir Bouldertoe
+step << Dwarf/Gnome
+    .goto Ironforge,55.501,47.742
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
+    >>|cRXP_WARN_Do NOT fly anywhere|r
+    .turnin 6388 >> Turn in Gryth Thurden
+    .accept 6392 >> Accept Return to Brock
+    .target Gryth Thurden
 step << Dwarf Paladin
     #optional
     #completewith next
@@ -1036,6 +1043,12 @@ step << Hunter
     .money <0.1300
     .target Vrok Blunderblast
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.00
+step << Dwarf/Gnome
+    .goto Loch Modan,37.17,47.94,8,0
+    .goto Loch Modan,37.019,47.806
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brock Stoneseeker|r
+    .turnin 6392 >> Turn in Return to Brock
+    .target Brock Stoneseeker
 step
     .goto Loch Modan,22.071,73.127
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Cobbleflint|r
