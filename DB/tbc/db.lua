@@ -29,6 +29,14 @@ elseif class == "HUNTER" then
     addon.defaultGuideList["Dun Morogh"] = "RestedXP Alliance 1-20\\1-11 Dun Morogh"
 end
 
+--Which invslot to check for heirlooms
+addon.heirlooms = {
+    [3] = true,--shoulder
+    [5] = true,--chest
+    [12] = true,--ring1
+    [13] = true,--ring2
+}
+
 addon.mapId = {
 	["Durotar"] = 1411,
 	["Mulgore"] = 1412,

@@ -1209,7 +1209,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 1.2,
                         min = 1,
-                        max = 1.7,
+                        max = addon.game == "RETAIL" and 5 or 2,
                         step = 0.05,
                         isPercent = true,
                         confirm = function()
@@ -1221,7 +1221,7 @@ function addon.settings:CreateAceOptionsPanel()
                             addon.ReloadGuide()
                             addon.RXPFrame.GenerateMenuTable()
                         end,
-                        hidden = addon.game == "CLASSIC" or addon.game == "RETAIL",
+                        hidden = addon.game == "CLASSIC",
                         disabled = function()
                             return addon.settings.profile.enableAutomaticXpRate
                         end
@@ -3182,14 +3182,13 @@ function addon.settings.ToggleActive()
 end
 
 local function CheckBuff(buffId)
-    local id
     local UnitBuff = UnitBuff
-
-    for i = 1, 40 do
+    local id = 0
+    local i = 1
+    while id do
         id = select(10, UnitBuff("player", i))
-        if not id then return false end
-
         if id == buffId then return true end
+        i = i + 1
     end
 end
 
@@ -3211,7 +3210,12 @@ function addon.GetXPBonuses(ignoreBuffs,playerLevel)
         calculatedRate = calculatedRate + 0.1
     end
 
-    if addon.game == "WOTLK" then
+    if addon.game == "RETAIL" then
+        local cloakBonus = C_CurrencyInfo.GetCurrencyInfo(3001).quantity
+        local warModeBonus = (C_PvP.IsWarModeActive() or CheckBuff(282559) or CheckBuff(269083) or CheckBuff(289954)) and C_PvP.GetWarModeRewardBonus() or 0
+        calculatedRate = calculatedRate + (cloakBonus + warModeBonus)/100
+        return calculatedRate
+    elseif addon.game == "WOTLK" then
         local itemQuality
         local itemLink = GetInventoryItemLink("player", 3) -- Shoulder
 
@@ -3302,10 +3306,9 @@ function addon.GetXPBonuses(ignoreBuffs,playerLevel)
 end
 
 function addon.settings:DetectXPRate(softUpdate)
-    if not addon.settings.profile.enableAutomaticXpRate or addon.gameVersion >
-        50000 then return end
-
-    if addon.gameVersion < 20000 and not softUpdate then
+    if not addon.settings.profile.enableAutomaticXpRate then
+        return
+    elseif addon.gameVersion < 20000 and not softUpdate then
         local season = addon.player.season or CheckBuff(362859) and 1
 
         if season == addon.settings.profile.season then return end
@@ -3325,14 +3328,19 @@ function addon.settings:DetectXPRate(softUpdate)
     end
 
     local calculatedRate = addon.GetXPBonuses()
+    addon:ScheduleTask(addon.RXPFrame.GenerateMenuTable)
 
     -- Bypass floating point comparison issues
-    if fmt("%.2f", addon.settings.profile.xprate) == fmt("%.2f", calculatedRate) then
+    local increment = "%.2f"
+    if addon.game == "RETAIL" then
+        increment = "%.1f"
+    end
+
+    if fmt(increment, addon.settings.profile.xprate) == fmt(increment, calculatedRate) then
         return
     end
 
     addon.settings.profile.xprate = calculatedRate
-    addon:ScheduleTask(addon.RXPFrame.GenerateMenuTable)
 
     -- Gold assistant, ignore reloads, silently update
     if (RXPCData and RXPCData.GA) or (addon.guide and addon.guide.farm) or softUpdate then
