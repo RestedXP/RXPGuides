@@ -678,7 +678,6 @@ step << Warrior !Human
 --XX Check if another player can skip the "how's business" dialogue for you (paladin, warrior)
 step << Warrior !Human
     #season 2
-    #optional
     .goto Ironforge,72.40,73.63,-1
     .goto Ironforge,72.53,76.94,-1
     >>Defeat |cRXP_ENEMY_Bruart|r
@@ -936,6 +935,11 @@ step << Dwarf Paladin
     .train 410015,1
     .itemcount 205864,1 --Charred Note (1)
 step << Dwarf Paladin
+    .goto 1429/0,73.800,-9465.000
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
+    .target Marshal Dughan
+    .accept 109 >>Accept Report to Gryan Stoutmantle
+step << Dwarf Paladin
     #season 2
     #completewith next
     #label Island
@@ -991,6 +995,12 @@ step << Dwarf Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
     .fp Sentinel Hill >> Get the Sentinel Hill flight path
     .target Thor
+step << Dwarf Paladin
+    .goto Westfall,56.33,47.52
+    .target Gryan Stoutmantle
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .turnin 109 >> Turn in Report to Gryan Stoutmantle
+    .isOnQuest 109
 step << !Human
     .hs >> Hearth to Loch Modan
     .cooldown item,6948,>0,1 << !Warlock
@@ -1284,7 +1294,7 @@ step
     .target Vidra Hearthstove
     .goto Loch Modan,34.828,49.283
     .turnin 418 >> Turn in Thelsamar Blood Sausages
-step << Human !Warlock !Rogue !Priest !Paladin
+step << Human
     .hs >> Hearth to Stormwind
 step << !Human
     #requires ratcatching
@@ -1357,109 +1367,6 @@ step << Warrior !Human
     .engrave 7 >>|cRXP_WARN_Engrave your|r |T134596:0|t|cRXP_LOOT_[Pants]|r |cRXP_WARN_with|r |T134596:0|t[Engrave Pants - Frenzied Assault]
     .train 425447,3
 step << !Human
-    #completewith next
     .goto Ironforge,78.00,51.40
     .zone Stormwind City >>Enter the Deeprun Tram and take the Tram to Stormwind
-step << !Human
-    .goto StormwindClassic,58.08,16.52
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furen Longbeard|r
-    .turnin 1338 >> Turn in Stormpike's Order
-    .target Furen Longbeard
-step << Priest !NightElf
-    #season 2
-    .goto StormwindClassic,20.8,50.2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nara Meideros|r
-    .target Nara Meideros
-    .accept 78194 >> Accept Secrets of Elune
-step << Priest !NightElf
-    #season 2
-    .goto StormwindClassic,20.8,50.2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nara Meideros|r
-    .target Nara Meideros
-    .train >> Train your class spells
-step << Warlock
-    #completewith next
-    .goto StormwindClassic,29.2,74.0,20,0
-    .goto StormwindClassic,27.2,78.1,15 >> Travel to The Slaughtered Lamb and go downstairs
-step << Warlock Gnome
-    .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ursula Deline|r
-    .trainer >> Train your class spells
-    .target Ursula Deline
-step << Warlock
-    .goto StormwindClassic,25.25,78.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gakin the Darkbinder|r
-    .turnin 1688 >> Turn in Surena Caledon
-    .accept 1689 >> Accept The Binding
-    .target Gakin the Darkbinder
-step << Warlock
-    #completewith next
-    .goto StormwindClassic,25.2,80.7,18,0
-    .goto StormwindClassic,23.2,79.5,18,0
-    .goto StormwindClassic,26.3,79.5,18,0
-    .goto StormwindClassic,25.154,77.406
-    >>|cRXP_WARN_Travel to the bottom of The Slaughtered Lamb|r
-    .cast 7728 >> |cRXP_WARN_Use the|r |T133292:0|t[Bloodstone Choker] |cRXP_WARN_to call forth a|r |cRXP_ENEMY_Summoned Voidwalker|r
-    .use 6928
-step << Warlock
-    .goto StormwindClassic,25.154,77.406
-    .use 6928 >> Kill the |cRXP_ENEMY_Summoned Voidwalker|r
-    .complete 1689,1 --Kill Summoned Voidwalker (x1)
-    .mob Summoned Voidwalker
-step << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gakin the Darkbinder|r
-    .target Gakin the Darkbinder
-    .goto StormwindClassic,25.25,78.59
-    .turnin 1689 >> Turn in The Binding
-step << Rogue
-    .goto StormwindClassic,74.64,52.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r
-    >>|cRXP_WARN_Ensure you train|r |T136058:0|t[Lockpicking] |cRXP_WARN_as well as you will need it for your Rogue class quest soon|r
-    .trainer >> Train your class spells
-    .train 1804 >> Train |T136058:0|t[Pick Lock]
-    .target Osborne the Night Man
-step << Rogue
-    #completewith next
-    .goto StormwindClassic,74.90,54.00,20,0
-    .goto StormwindClassic,78.43,60.15,20,0
-    .goto StormwindClassic,78.67,60.13,5 >> Enter the SI:7 Headquarters. Travel up stairs toward |cRXP_FRIENDLY_Renzik "The Shiv"|r
-step << Rogue
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renzik "The Shiv"|r
-    .accept 2281 >> Accept Redridge Rendezvous
-    .goto StormwindClassic,75.76,60.35
-    .target Renzik "The Shiv"
-step << !Human !Mage
-    .goto StormwindClassic,57.129,57.698
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Woo Ping|r
-    .train 227 >>Train Staves << Priest/Warlock/Hunter
-    .train 201 >>Train 1h Swords << Mage/Warlock/Rogue
-    .train 202 >>Train 2h Swords << Warrior/Paladin
-    .train 5011 >>Train Crossbows << Hunter
-    .target Woo Ping
-step << Warrior/Paladin
-    .goto StormwindClassic,57.38,56.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
-    >>Buy a |T135353:0|t[Espadon] (12.6 dps) or look for a better upgrade on the Auction House
-    .target Marda Weller
-    .collect 2024,1 --Collect Espadon (1)
-    .money <0.6397
-    .itemStat 16,QUALITY,<7
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
-step << Hunter
-    .goto StormwindClassic,57.38,56.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
-    >>Buy a |T135531:0|t[Fine Light Crossbow] (7.4 dps) or look for a better upgrade on the Auction House
-    .target Marda Weller
-    .collect 15808,1
-    .money <0.3640
-    .itemStat 18,QUALITY,<7
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.3
-step << Warlock
-    .goto Westfall,56.55,52.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
-    .fly Redridge >> Fly to Redridge Mountains
-    .target Thor
-step << !Warlock
-    .goto Elwynn Forest,32.45,50.16
-    .zone Elwynn Forest >> Travel to Elwynn Forest
 ]])
