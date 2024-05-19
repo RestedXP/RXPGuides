@@ -596,6 +596,12 @@ step
     .target Shoni the Shilent
     .dungeon DM
 step
+    .goto StormwindClassic,55.510,12.504
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r
+    .accept 2040 >> Accept Underground Assault
+    .target Shoni the Shilent
+    .dungeon DM
+step
     .goto StormwindClassic,63.982,75.338
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Marcus Jonathan|r
     .turnin 120 >> Turn in Messenger to Stormwind
@@ -692,7 +698,147 @@ step
     .accept 214 >> Accept Red Silk Bandanas
     .goto Westfall,56.67,47.35
     .target Scout Riell
+step << Rogue
+    #optional
+    #completewith TowerKey
+    +|cRXP_WARN_==PAY ATTENTION TO THE UPCOMING SECTION==|r
+    >>|cRXP_WARN_Press Escape, then go into -> Options -> Controls|r
+    >>|cRXP_WARN_Check "Enable Interact Key" and bind the "Interact with Target" option to a key|r
+    >>|cRXP_WARN_Additionally, it's recommended you enable Enemy Nameplates (Default Key: V) as it allows you to see enemies behind some of the corners inside the tower|r
+step << Rogue
+    .goto Westfall,68.50,70.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Agent Kearnen|r
+    >>|cRXP_WARN_You MUST do this quest your|r |T132290:0|t[Poisons]
+    .turnin 2360 >> Turn in Mathias and the Defias
+    .accept 2359 >> Accept Klaven's Tower
+    .target Agent Kearnen
+step << Rogue
+    #label TowerKey
+    #loop
+    .goto Westfall,71.49,73.49,0
+    .goto Westfall,71.01,75.72,0
+    .goto Westfall,69.58,73.07,0
+    .goto Westfall,71.49,73.49,30,0
+    .goto Westfall,71.01,75.72,30,0
+    .goto Westfall,69.58,73.07,30,0
+    >>|T133644:0|t[Pick Pocket] the |cRXP_ENEMY_Malformed Defias Drone|r. Loot it for the |cRXP_LOOT_Defias Tower Key|r
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    >>|cRXP_WARN_The |cRXP_ENEMY_Malformed Defias Drone|r spawns at the entrance to the tower, then patrols around the outside of it|r
+    >>|cRXP_WARN_Be careful as he deals a LOT of damage. If your|r |T132320:0|t[Stealth] |cRXP_WARN_breaks, quickly use|r |T132307:0|t[Sprint] |cRXP_WARN_and run away|r
+    .complete 2359,2 --Collect Defias Tower Key (x1)
+    .link https://www.youtube.com/watch?v=5sIew15IcG0 >> Click HERE for a video guide
+    .mob Malformed Defias Drone
+step << Rogue
+    #optional
+    #completewith Mortwake
+    +|cRXP_WARN_Equip the|r |T135641:0|t[Curvewood Dagger] |cRXP_WARN_for this quest if you don't already have a|r |T135641:0|t[Dagger] |cRXP_WARN_equipped|r
+    .use 15396
+    .itemcount 15396,1
+step << Rogue
+    #label Mortwake
+    .goto 1436,70.421,74.031
+    >>|cRXP_WARN_Travel up to 2nd top floor of the tower. Whilst in|r |T132320:0|t[Stealth] |cRXP_WARN_and the |cRXP_ENEMY_Defias Tower Sentries|r aren't next to you, Jump onto the chair, then onto the lamp, then onto the bookshelf on top of the waypoint location|r
+    >>|cRXP_WARN_Manually|r |T132320:0|t[Unstealth]|cRXP_WARN_, then press your "Interact with Target" keybind to open the |cRXP_PICK_Duskwood Chest|r. Loot it for|r |cRXP_LOOT_Klaven Mortwake's Journal|r
+    >>|cRXP_WARN_NOTE: Your|r |T132320:0|t[Stealth] |cRXP_WARN_will temporarily stop working after looting|r |cRXP_LOOT_Klaven Mortwake's Journal|r
+    >>|cRXP_WARN_Be prepared to run if you don't kill the |cRXP_ENEMY_Defias Tower Sentries|r on the 2nd floor. They will most likely aggro you permanently (but not attack you) when you are on top of the bookshelf as it is an evade spot|r
+    >>|cRXP_WARN_If you have a|r |T135641:0|t[Dagger] |cRXP_WARN_in your bags or equipped, you can cast|r |T132282:0|t[Ambush] |cRXP_WARN_on the |cRXP_ENEMY_Defias Tower Patrollers|r and |cRXP_ENEMY_Defias Tower Sentries|r inside to kill them instantly. Be prepared to run after you kill the first |cRXP_ENEMY_Defias Tower Sentry|r and remember you can be hit from above. This is slower, but a LOT safer|r
+    >>|cRXP_WARN_Be careful as the |cRXP_ENEMY_Malformed Defias Drone|r and |cRXP_ENEMY_Defias Drones|r can be at the entrance of the tower if you have to run out of it|r
+    .complete 2359,1 --Collect Klaven Mortwake's Journal (x1)
+    .link https://www.youtube.com/watch?v=5sIew15IcG0 >> Click HERE for a video guide
+    .mob Defias Tower Patroller
+    .mob Defias Tower Sentry
+step << !Dwarf Rogue
+    #sticky
+    #label AntiVenomStart
+    .collect 6452,1 >> Craft an |T134437:0|t[Anti-Venom]
+    .aura -9991
+    .itemcount 6452,<1 --Anti-Venom (<1)
+    .train 7934,3 --Anti Venom spell trained
+step << !Dwarf Rogue
+    #optional
+    #requires AntiVenomStart
+    #label AntiVenomEnd
+    .cast 7932 >>|cRXP_WARN_Use the |T134437:0|t[Anti-Venom] in your bags to remove the |T136230:0|t[Touch of Zanzil] debuff|r
+    .use 6452
+    .aura -9991
+    .itemcount 6452,1 --Anti-Venom (1)
+step << Dwarf Rogue
+    #optional
+    #sticky
+    #label AntiVenomEnd2
+    .cast 20594 >>|cRXP_WARN_Cast |T136225:0|t[Stoneform] to remove the |T136230:0|t[Touch of Zanzil] debuff|r
+    .aura -9991
+step << Rogue
+    #optional
+    #completewith KlavenEnd
+    .goto Westfall,56.55,52.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
+    .fly Stormwind >> Fly to Stormwind
+    .target Thor
+step << !Dwarf Rogue
+    #optional
+    #requires AntiVenomEnd
+    #completewith FirstAidEnd
+    .goto 1453,42.938,33.878,20,0
+    .goto 1453,41.544,31.330,20,0
+    .goto 1453,41.688,28.049,20,0
+    .goto 1453,43.070,26.155,15 >> Travel toward |cRXP_FRIENDLY_Shaina Fuller|r
+    .aura -9991
+step << !Dwarf Rogue
+    #requires AntiVenomEnd
+    .goto 1453,43.070,26.155
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shaina Fuller|r
+    >>|cRXP_WARN_If you have a|r |T626003:0|t|cFFF48CBAPaladin|r |cRXP_WARN_or|r |T625999:0|t|cFFFF7C0ADruid|r |cRXP_WARN_friend, ask them to remove the|r |T136230:0|t[Touch of Zanzil] |cRXP_WARN_for you instead|r
+    .skill firstaid,80 >> |cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_to 80|r
+    .aura -9991
+    .itemcount 6452,<1 --Anti-Venom (<1)
+step << !Dwarf Rogue
+    #label FirstAidEnd
+    .goto 1453,43.070,26.155
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shaina Fuller|r
+    >>|cRXP_WARN_If you have a|r |T626003:0|t|cFFF48CBAPaladin|r |cRXP_WARN_or|r |T625999:0|t|cFFFF7C0ADruid|r |cRXP_WARN_friend, ask them to remove the|r |T136230:0|t[Touch of Zanzil] |cRXP_WARN_for you instead|r
+    .train 7934 >> |cRXP_WARN_Train|r |T134437:0|t[Anti-Venom]
+    .aura -9991
+    .itemcount 6452,<1 --Anti-Venom (<1)
+step << !Dwarf Rogue
+    #sticky
+    #label AntiVenomStart2
+    .collect 6452,1 >> Craft an |T134437:0|t[Anti-Venom]
+    .aura -9991
+    .itemcount 6452,<1 --Anti-Venom (<1)
+    .train 7934,3 --Anti Venom spell trained
+step << !Dwarf Rogue
+    #sticky
+    #requires AntiVenomStart2
+    #label AntiVenomEnd2
+    .cast 7932 >>|cRXP_WARN_Use the |T134437:0|t[Anti-Venom] in your bags to remove the |T136230:0|t[Touch of Zanzil] debuff|r
+    .use 6452
+    .aura -9991
+    .itemcount 6452,1 --Anti-Venom (1)
+step << Rogue
+    #optional
+    #requires AntiVenomEnd2 << Rogue
+    #completewith next
+    .goto StormwindClassic,74.90,54.00,20,0
+    .goto StormwindClassic,78.43,60.15,20,0
+    .goto StormwindClassic,78.67,60.13,10 >> Enter the SI:7 Headquarters. Travel up stairs toward |cRXP_FRIENDLY_Master Mathias Shaw|r
+step << Rogue
+    #label KlavenEnd
+    #requires AntiVenomEnd2 << Rogue
+    .goto StormwindClassic,75.78,59.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Mathias Shaw|r
+    >>|cRXP_WARN_Remember to re-equip your main weapon if you switched to a|r |T135641:0|t[Dagger] |cRXP_WARN_earlier|r << Rogue
+    .turnin 2359 >> Turn in Klaven's Tower
+    .target Master Mathias Shaw
 
+step << Rogue
+#completewith next
+.dungeon DM
+    .goto StormwindClassic,66.277,62.137
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
+    .fly Westfall >> Fly to Westfall
+    .target Dungar Longdrink
+    .zoneskip Westfall
 step
 .dungeon DM
     .goto Westfall,60.4,72.2
@@ -787,4 +933,25 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
     .fly Stormwind >> Fly to Stormwind
     .target Thor
+step
+    .goto StormwindClassic,65.438,21.175
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r inside
+    .turnin 167 >> Turn in Oh Brother. . .
+    .turnin 168 >> Turn in Collecting Memories
+    .target Wilder Thistlenettle
+    .dungeon DM
+step
+    #label ShoniEnd
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r
+    .turnin 2040 >> Turn in Underground Assault
+    .goto StormwindClassic,55.510,12.504
+    .target Shoni the Shilent
+    .dungeon DM
+step
+.dungeon DM << !Rogue
+    .goto StormwindClassic,66.277,62.137
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
+    .fly Redridge >> Fly to Redridge
+    .target Dungar Longdrink
+    .zoneskip Redridge Mountains
 ]])
