@@ -12,36 +12,36 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith next
-    >>Use |T134491:0|t[Nostwin's Voucher] to teleport to the Infinite Bazaar.
+    .cast 441154 >> Use |T134491:0|t[Nostwin's Voucher] to teleport to Infinite Bazaar.
     .use 217930
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
-    .goto 371,42.5,27.32
-    .accept 78894 >>Accept Infinite Growth
-    .target Momentus
 --x step
 --x upgrade gear perhaps
+step
+    .goto 371,42.96,27.44 --x left
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arturos|r
+    .accept 80446 >>Accept Looking for Group
+    .target Arturos
+step
+    #completewith next
+    .goto 371,43.01,27.58,10,0
+    .vendor >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy additional gems |cRXP_WARN_if you don't care about cosmetics.|r
+    .skipgossip
+    .target Lidamorrutu
+step
+    .goto 371,42.95,27.73 --x middle
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pythagorus|r
+    .accept 80447 >>Accept Looking for More
+    .target Pythagorus
 step
     .goto 371,42.81,27.62 --x left
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Larah Treebender|r
     .accept 80448 >>Accept A Fresh Scene
     .target Larah Treebender
 step
-    .goto 371,42.95,27.73 --x middle
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pythagorus|r
-    .accept 80447 >>Accept Looking for More
-    .target Pythagorus
---x step
---  .goto 371,43.01,27.58
---  >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lidamorrutu|r
---  .target Lidamorrutu
---x buy gems perhaps
-step
-    .goto 371,42.96,27.44 --x left
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arturos|r
-    .accept 80446 >>Accept Looking for Group
-    .target Arturos
-
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
+    .goto 371,42.5,27.32
+    .accept 78894 >>Accept Infinite Growth
+    .target Momentus
 step
     .goto 371,44.99,24.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lin Tenderpaw|r
@@ -531,12 +531,15 @@ step
     .goto 371,44.23,14.95
     >>Click on the |cRXP_PICK_Staff|r
     .complete 29749,1 --1/1 Staff of Pei-Zhi
-    .timer 100,RP
+    -- .timer 100,RP
 step
     .goto 371,44.363,15.629
     >>Kill |cRXP_ENEMY_Ancient Spirits|r until quest completion (you have to kill 20 mobs to fill the bar).
     .complete 29749,2 --1/1 Interrupt the Ritual of Spiritbinding
     .mob Ancient Spirit
+step
+    #completewith next
+    .logout 19 >> Logout to skip roleplay
 step
     .goto 371,44.23,15.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pei-Zhi|r
@@ -545,6 +548,7 @@ step
     .accept 29751 >>Accept Ritual Artifacts
     .accept 29752 >>Accept The Wayward Dead
     .target Pei-Zhi
+--x step add treasure
 step
     #completewith Chipped Ritual Bowl
     >>Kill |cRXP_ENEMY_Shan'ze Spiritclaws.|r Loot them for the |T461804:0|t[|cRXP_LOOT_Spirit Bottles|r].
@@ -625,6 +629,7 @@ step
     .goto 371,39.19,12.60,0
     .goto 371,40.15,11.76,0
     +1
+--x step add treasure
 step
     #completewith next
     >>Click on the |cRXP_PICK_Tidemist Caps|r
@@ -870,23 +875,22 @@ RXPGuides.RegisterGuide([[
 #internal
 
 step
-    #completewith Wild Things
-    .goto 371,65.25,37.20
+    #completewith next
+    .goto 371,65.25,37.20,20,0
     .cast 437035 >>Use |T134376:0|t[Bronze Timepiece] to teleport to the dragonriding quests.
     .itemcount 216712,1
     .use 216712
 step
-    #completewith Wild Things
-    .goto 371,65.21,37.46,5,0
-    .goto 371,45.8,84.6,40 >> |cRXP_WARN_We aren't doing these quests yet.|r |cRXP_WARN_These quests scale with XP, so it's better to do them later.|r
-    *Click on the |cRXP_PICK_Portal|r to go back.
-    .itemcount 216712,1
-step
-    #label Wild Things
     .goto 371,57.64,44.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
     .accept 30134 >>Accept Wild Things
     .target Elder Anli
+step
+    #completewith next
+    .goto 371,65.25,37.20,20,0
+    .cast 437035 >>Use |T134376:0|t[Bronze Timepiece] to teleport to the dragonriding quests.
+    .itemcount 216712,1
+    .use 216712
 step
     .goto 371,65.33,31.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Tong|r
@@ -921,33 +925,33 @@ step
     .mob Slitherscale Eggdrinker
 step
     .isOnQuest 30136
-    .cast 110171 >>Interact with a |cRXP_FRIENDLY_Windward Hatchling|r
+    .cast 110171 >>Interact with a |cRXP_FRIENDLY_Windward Hatchling|r |cRXP_WARN_[1]|r
     .use 78947
     .target Windward Hatchlings
 step
     .isOnQuest 30136
-    .cast 110171 >>Interact with a |cRXP_FRIENDLY_Windward Hatchling|r
+    .cast 110171 >>Interact with a |cRXP_FRIENDLY_Windward Hatchling|r |cRXP_WARN_[2]|r
     .use 78947
     .target Windward Hatchlings
 step
     .isOnQuest 30136
-    .cast 110171 >>Interact with a |cRXP_FRIENDLY_Windward Hatchling|r
+    .cast 110171 >>Interact with a |cRXP_FRIENDLY_Windward Hatchling|r |cRXP_WARN_[3]|r
     .use 78947
     .target Windward Hatchlings
 step
     .isOnQuest 30136
-    .cast 110171 >>Interact with a |cRXP_FRIENDLY_Windward Hatchling|r
+    .cast 110171 >>Interact with a |cRXP_FRIENDLY_Windward Hatchling|r |cRXP_WARN_[4]|r
     .use 78947
     .target Windward Hatchlings
 step
     .isOnQuest 30136
-    .cast 110171 >>Interact with a |cRXP_FRIENDLY_Windward Hatchling|r
+    .cast 110171 >>Interact with a |cRXP_FRIENDLY_Windward Hatchling|r |cRXP_WARN_[5]|r
     .use 78947
     .target Windward Hatchlings
 step
     #label Interact with Windward Hatchlings
     .isOnQuest 30136
-    .cast 110171 >>Interact with a |cRXP_FRIENDLY_Windward Hatchling|
+    .cast 110171 >>Interact with a |cRXP_FRIENDLY_Windward Hatchling|r |cRXP_WARN_[6]|r
     .use 78947
     .target Windward Hatchlings
 step
@@ -998,6 +1002,12 @@ step
     .mob Slitherscale Eggdrinker
     .mob Slitherscale Ripper
 step
+    #completewith next
+    .goto 371,65.25,37.20,20,0
+    .cast 437035 >>Use |T134376:0|t[Bronze Timepiece] to teleport to the dragonriding quests.
+    .itemcount 216712,1
+    .use 216712
+step
     .goto 371,65.34,31.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Tong.|r
     .turnin 30135 >>Turn in Beating the Odds
@@ -1005,30 +1015,62 @@ step
     .turnin 30137 >>Turn in Egg Collection
     .accept 30138 >>Accept Choosing the One
     .turnin 30138 >>Turn in Choosing the One
-    .accept 30139 >>Accept The Rider's Journey
+step
+    .goto 371,65.34,31.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Tong.|r
+    .accept 30140 >>Accept The Rider's Journey
+    .itemcount 78960,1
     .target Instructor Tong
 step
-    #completewith next
-    .goto 371,65.25,37.20
-    >>Use |T134376:0|t[Bronze Timepiece]
+    .goto 371,65.34,31.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Tong.|r
+    .accept 30141 >>Accept The Rider's Journey
+    .itemcount 78961,1
+    .target Instructor Tong
+step
+    .goto 371,65.34,31.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Tong.|r
+    .accept 30139 >>Accept The Rider's Journey
+    .itemcount 78962,1
+    .target Instructor Tong
+step
+    #completewith Egg hatched
+    .goto 371,65.25,37.20,20,0
+    .cast 437035 >>Use |T134376:0|t[Bronze Timepiece] to teleport to the dragonriding quests.
     .itemcount 216712,1
     .use 216712
 step
     .goto 371,57.55,45.10
+    .isOnQuest 30139
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Skythorn|r
     .turnin 30139 >>Turn in The Rider's Journey
+    -- .itemcount 78962,1
     .target Instructor Skythorn
-    .accept 30142 >>Accept It's A...
-    .complete 30142,1 --1/1 Egg hatched
 step
     .goto 371,57.55,45.10
+    .isOnQuest 30140
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Skythorn|r
+    .turnin 30140 >>Turn in The Rider's Journey
+    .target Instructor Skythorn
+    -- .itemcount 78960,1
+step
+    .isOnQuest 30141
+    .goto 371,57.55,45.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Skythorn|r
+    .turnin 30141 >>Turn in The Rider's Journey
+    .target Instructor Skythorn
+    -- .itemcount 78961,1
+step
+    #label Egg hatched
+    .goto 371,57.55,45.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Skythorn|r
+    .accept 30142 >>Accept It's A...
+    .complete 30142,1 --1/1 Egg hatched
     .turnin 30142 >>Turn in It's A...
     .target Instructor Skythorn
-
 ]])
 
-----------------------------
+---------------------------
 ---x MAIN QUESTS
 ----------------------------
 
@@ -1095,8 +1137,8 @@ step
     *Here's a detailed explanation of how Bronze works and its role in the event:
 step
     +|cRXP_WARN_Acquisition of |T4638724:0|t[Bronze]|r
-    *|cRXP_WARN_Scrapping Unwanted Items:|r Players can scrap unwanted or outleveled items by using the |T4643984:0|t[Unraveling Sands] Abilty to obtain Bronze. This process helps players clear their inventory of items they no longer need while gaining a valuable resource.
-    *|cRXP_WARN_Gem extraction:|r  Players can remove gems from items by using the |T1379201:0|t[Gem Extraction] Ability so they can be reused or replaced with better gems. This ensures that players can continually optimize their gear without losing valuable gems.
+    *|cRXP_WARN_Scrapping Unwanted Items:|r Players can scrap unwanted or outleveled items |cRXP_WARN_including prismatic gems|r by using the |T4643984:0|t[Unraveling Sands] Abilty to obtain Bronze. This process helps players clear their inventory of items they no longer need while gaining a valuable resource.
+    *|cRXP_WARN_Gem extraction:|r  Players can remove gems from items by using the |T1379201:0|t[Gem Extraction] Ability or by scrapping obsolete gear with gems inside, allowing them to reuse or replace the gems with better ones. This ensures that players can continually optimize their gear without losing valuable gems.
     *|cRXP_WARN_Loot and Rewards:|r |T4638724:0|t[Bronze] can also be obtained from various event activities, such as dragonriding, looting enemies and completing quests.
 step
     +|cFFFF0000TLDR: Always loot each enemy and never forget to wear your cloak.|r
