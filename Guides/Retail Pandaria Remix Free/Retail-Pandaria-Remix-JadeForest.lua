@@ -132,7 +132,7 @@ step
     .goto 371,42.74,23.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Elder Cloudfall|r
     .turnin 29620 >>Turn in The Great Banquet
-    .timer 15, RP
+    .timer 8, RP
     .target High Elder Cloudfall
 step
     .goto 371,43.13,23.62
@@ -1467,6 +1467,10 @@ step
     .target General Nazgrim
     --PERMOK: Fix timer
 step
+    #completewith next
+    +|cRXP_WARN_To efficiently learn dragonriding talents, use the macro found under "CLICK HERE"|r
+    .link /run GenericTraitUI_LoadUI();GenericTraitFrame:SetSystemID(1);ToggleFrame(GenericTraitFrame) >> CLICK HERE
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Nazgrim|r and |cRXP_FRIENDLY_Taran Zhu|r
     .accept 29694 >>Accept Regroup!
     .accept 31770 >>Accept You're Either With Us Or...
@@ -2064,6 +2068,10 @@ step
     .vehicle >> Click on the |cRXP_PICK_Skyfire Gyrocopter.|r
     .timer 25.5, RP
     .target Skyfire Gyrocopter
+step
+    #completewith next
+    +|cRXP_WARN_To efficiently learn dragonriding talents, use the macro found under "CLICK HERE"|r
+    .link /run GenericTraitUI_LoadUI();GenericTraitFrame:SetSystemID(1);ToggleFrame(GenericTraitFrame) >> CLICK HERE
 step
     >>Use |T249177:0|t[Full Autofire(1)] then use |T249177:0|t[Torpedo Rocket(2)] on |cRXP_ENEMY_Shredders|r, |cRXP_ENEMY_Peons|r and |cRXP_ENEMY_Grunts|r |cRXP_WARN_Ideally, target as many as possible at once and barrels if they are in close proximity.|r
     *|cFFFF0000Make sure to do this as often as possible.|r|r
@@ -2760,7 +2768,7 @@ step
     .goto 371,60.56,84.90,0
     >>Kill |cRXP_ENEMY_Pearly Tortoise.|r Loot them for |cRXP_LOOT_Tortoise Flank.|r
     .complete 29885,1 --6/6 Tortoise Flank
-    .mob .mob Pearly Tortoise
+    .mob Pearly Tortoise
 step
     .goto 371,58.93,81.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rell Nightwind|r
@@ -2829,4 +2837,24 @@ step
     #include 1) Jade Forest Side Quests Sprites Plight
 step
     #include 1) Jade Forest Side Quests Tian Monastery
+step
+    #completewith next
+    .goto 371,65.25,37.20,20,0
+    .cast 437035 >>Use |T134376:0|t[Bronze Timepiece] to teleport to the dragonriding quests.
+    .itemcount 216712,1
+    .use 216712
+step
+    .goto 371,65.21,37.46,5,0
+    .goto 371,45.8,84.6,40 >> |cRXP_WARN_We aren't doing these quests yet.|r |cRXP_WARN_These quests scale with XP, so it's better to do them later.|r
+    *Click on the |cRXP_PICK_Portal|r to go back.
+    .itemcount 216712,1
+    -- step
+    -- .goto 371,31.96,27.76
+    -- .cast 3365 >>Click on the Lucky Pandaren Coin
+    -- step
+    -- .goto 371,26.22,32.35
+    -- .cast 3365 >>Click on the Ancient Pandaren Tea Pot
+    -- step
+    -- .goto 371,23.5,35.04
+    -- .cast 3365 >>Click on the Ancient Pandaren Tea Pot
 ]])
