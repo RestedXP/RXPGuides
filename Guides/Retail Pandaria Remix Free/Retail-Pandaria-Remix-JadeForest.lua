@@ -14,6 +14,7 @@ step
     #completewith next
     .cast 441154 >> Use |T134491:0|t[Nostwin's Voucher] to teleport to Infinite Bazaar.
     .use 217930
+    .itemcount 217930,1
 --x step
 --x upgrade gear perhaps
 step
@@ -24,7 +25,7 @@ step
 step
     #completewith next
     .goto 371,43.01,27.58,10,0
-    .vendor >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy additional gems |cRXP_WARN_if you don't care about cosmetics.|r
+    .vendor >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy additional gems |cRXP_WARN_It's recommended for faster leveling but uses bronze, a cosmetic currency.|r
     .skipgossip
     .target Lidamorrutu
 step
@@ -41,6 +42,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
     .goto 371,42.5,27.32
     .accept 78894 >>Accept Infinite Growth
+    .target Momentus
+step
+    #completewith next
+    .goto 371,42.5,27.32
+    .vendor >>Talk to |cRXP_FRIENDLY_Momentus|r and upgrade your gear |cRXP_WARN_It's recommended for faster leveling but uses bronze, a cosmetic currency.|r
+    .skipgossip
     .target Momentus
 step
     .goto 371,44.99,24.95
@@ -1154,6 +1161,8 @@ step
 step
     +|cRXP_WARN_Useful Weakaura:|r
     .link https://wago.io/DSKFme0-p >> |cRXP_WARN_Click Here|r
+step
+    +If you spot any Rares or Treasures along the route, be sure to collect and kill them.
 ]])
 
 -- Introduction
