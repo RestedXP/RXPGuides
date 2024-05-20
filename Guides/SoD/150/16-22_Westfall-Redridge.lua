@@ -358,6 +358,40 @@ step
     .complete 153,1 -- Red Leather Bandana (15)
     .mob Defias Trapper
     .mob Defias Smuggler
+step << Mage
+    #loop
+    .goto 1436,35.043,53.785,0
+    .goto 1436,43.045,67.127,0
+    .goto 1436,43.459,70.800,0
+    .goto 1436,45.458,70.322,0
+    .goto 1436,44.547,65.624,0
+    .goto 1436,35.043,53.785,40,0
+    .goto 1436,35.952,53.085,40,0
+    .goto 1436,36.549,54.105,40,0
+    .goto 1436,36.025,54.822,40,0
+    .goto 1436,38.732,56.872,40,0
+    .goto 1436,43.045,67.127,40,0
+    .goto 1436,42.825,68.290,40,0
+    .goto 1436,42.524,69.212,40,0
+    .goto 1436,42.103,69.530,40,0
+    .goto 1436,42.240,70.517,40,0
+    .goto 1436,43.459,70.800,40,0
+    .goto 1436,43.698,69.251,40,0
+    .goto 1436,43.798,67.692,40,0
+    .goto 1436,44.042,69.247,40,0
+    .goto 1436,44.333,68.588,40,0
+    .goto 1436,45.458,70.322,40,0
+    .goto 1436,45.794,69.292,40,0
+    .goto 1436,44.952,67.095,40,0
+    .goto 1436,44.547,65.624,40,0
+    >>Kill |cRXP_ENEMY_Defias Pillagers|r. Loot them for the |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: TENGI RONEERA]|r
+    .collect 208754,1 --Spell Notes: TENGI RONEERA (1)
+    .mob Defias Pillager
+    .train 401767,1
+step << Mage
+    .train 401767 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: TENGI RONEERA]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Regeneration]
+    .use 208754
+    .itemcount 208754,1 --Spell Notes: TENGI RONEERA (1)
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scout Galiaan|r
 	.target Scout Galiaan

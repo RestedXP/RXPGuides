@@ -254,17 +254,24 @@ RXPGuides.RegisterGuide([[
 
 step << Warrior
     #season 2
+    #completewith next
     .gossipoption 109045 >> Talk to |cRXP_FRIENDLY_Liv Bradford|r inside the Inn at the Park
-    .gossipoption 109047
     .goto Stormwind City,22.608,64.621
     .gossipoption 109084 >> Talk to |cRXP_ENEMY_Stuart|r, then beat him up. He will pass out at 0%
     .goto Stormwind City,21.213,62.781
     >>If |cRXP_ENEMY_Stuart|r is not there wait for him to respawn
-    .gossipoption 109044 >> Talk to |cRXP_FRIENDLY_Liv Bradford|r again after knocking out |cRXP_ENEMY_Stuart|r to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
+    .skipgossipid 109047
+    .skipgossipid 109045
+    .skipgossipid 109084
+    --.train 425447,1
+step << Warrior
+    #season 2
     .goto Stormwind City,22.608,64.621
+    .use 204716 >> Talk to |cRXP_FRIENDLY_Liv Bradford|r again after knocking out |cRXP_ENEMY_Stuart|r to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
+    .collect 204716,1
     .train 425447,1 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r] |cRXP_WARN_to train|r |T236317:0|t[Frenzied Assault]
     >>|cRXP_WARN_Note: This can be quite difficult solo depending on your level. Look for some help if needed|r
-    .use 204716
+    .skipgossip 203478,1
     .target Liv Bradford
     .mob Stuart
 ]])
@@ -276,19 +283,43 @@ RXPGuides.RegisterGuide([[
 #subgroup Legs
 #name Frenzied Assault - 10 (Ironforge)
 #title Frenzied Assault
-
+step << Warrior
+#completewith next
+    #season 2
+    .goto Ironforge,72.53,76.94
+    .gossipoption 110791 >>Talk to |cRXP_FRIENDLY_Bruuk Barleybeard|r inside
+    .target Bruuk Barleybeard
+    .skipgossip 5570,1,1
+    .train 425447,1
+--XX 110793 "How's business?"
+--XX 110791 "Sounds like you need someone to bounce him for you."
 step << Warrior
     #season 2
-    .goto Ironforge,72.512,76.942
-    >>Talk to |cRXP_FRIENDLY_Bruuk Barleybeard|r at the Military Ward
-    >>Talk to |cRXP_ENEMY_Bruart|r by the doorway, then beat him up. He will pass out at 0%
-    >>If |cRXP_ENEMY_Bruart|r is not there wait for him to respawn
-    >>Talk to |cRXP_FRIENDLY_Bruuk Barleybeard|r again after knocking out |cRXP_ENEMY_Bruart|r to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
-    .train 425447,1 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r] |cRXP_WARN_to train|r |T236317:0|t[Frenzied Assault]
-    >>|cRXP_WARN_Note: This can be quite difficult solo depending on your level. Look for some help if needed|r
-    .use 204716
-    .target Bruuk Barleybeard
+    .goto Ironforge,72.40,73.63
+    .gossipoption 109084 >>Talk to |cRXP_FRIENDLY_Bruart|r to start a fight
+    >>Defeat |cRXP_ENEMY_Bruart|r
+    >>|cRXP_WARN_Be careful as he casts|r |T132939:0|t[Backhand] |cRXP_WARN_(stuns you for 2 seconds)|r
+    >>|cRXP_WARN_Kite him upstairs to the balcony, then drop down outside the inn and use|r |T133688:0|t[Bandages] |cRXP_WARN_if you have them/if needed|r
     .mob Bruart
+    .skipgossip 209004,1
+    .train 425447,1
+step << Warrior
+    #season 2
+    .goto Ironforge,72.40,73.63,-1
+    .goto Ironforge,72.53,76.94,-1
+    >>Defeat |cRXP_ENEMY_Bruart|r
+    >>|cRXP_WARN_Be careful as he casts|r |T132939:0|t[Backhand] |cRXP_WARN_(stuns you for 2 seconds)|r
+    >>|cRXP_WARN_Kite him upstairs to the balcony, then drop down outside the inn and use|r |T133688:0|t[Bandages] |cRXP_WARN_if you have them/if needed|r
+    >>|cRXP_WARN_After defeating |cRXP_ENEMY_Bruart|r:|r
+    >>Talk to |cRXP_FRIENDLY_Bruuk Barleybeard|r again to receive the |T134419:0|t[Rune of Frenzied Assault]
+    >>|cRXP_WARN_If he doesn't give you the|r |T134419:0|t[Rune of Frenzied Assault]|cRXP_WARN_, you may need to fight |cRXP_ENEMY_Bruart|r again|r
+    >>|cRXP_WARN_NOTE: This can be difficult to solo. You may need to look for help, otherwise you can do this again later in the guide|r
+    .collect 204716,1 --Rune of Frenzied Assault (1)
+    .target Bruuk Barleybeard
+    .skipgossip 5570,2,1
+    .skipgossip 209004,1
+    .train 425447,1
+    .use 204716
 ]])
 
 RXPGuides.RegisterGuide([[
