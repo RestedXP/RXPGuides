@@ -247,11 +247,11 @@ step
     #completewith next
     >>Kill |cRXP_ENEMY_Water Seekers|r, |cRXP_ENEMY_Thornweavers|r and |cRXP_ENEMY_Hunters|r
     .complete 871,1 --Razormane Water Seeker (8)
+    .mob +Razormane Water Seeker
     .complete 871,2 --Razormane Thornweaver (8)
+    .mob +Razormane Thornweaver
     .complete 871,3 --Razormane Hunter (3)
-    .mob Razormane Water Seeker
-    .mob Razormane Thornweaver
-    .mob Razormane Hunter
+    .mob +Razormane Hunter
 step
     .goto The Barrens,55.70,27.30
     .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. If it's not up you'll get it later
@@ -274,11 +274,11 @@ step
 	.goto The Barrens,53.63,24.50,25,0
     >>Kill |cRXP_ENEMY_Water Seekers|r, |cRXP_ENEMY_Thornweavers|r and |cRXP_ENEMY_Hunters|r
     .complete 871,1 --Razormane Water Seeker (8)
+    .mob +Razormane Water Seeker
     .complete 871,2 --Razormane Thornweaver (8)
+    .mob +Razormane Thornweaver
     .complete 871,3 --Razormane Hunter (3)
-    .mob Razormane Water Seeker
-    .mob Razormane Thornweaver
-    .mob Razormane Hunter
+    .mob +Razormane Hunter
 step << Warrior !Undead
     #xprate >1.49
     #completewith next
@@ -419,9 +419,9 @@ step << Tauren
     .goto The Barrens,59.26,24.67,50,0
     >>Kill |cRXP_ENEMY_Razormane Geomancers|r and |cRXP_ENEMY_Razormane Defenders|r
     .complete 872,1 --Razormane Geomancer (8)
+    .mob +Razormane Geomancer
     .complete 872,2 --Razormane Defender (8)
-    .mob Razormane Geomancer
-    .mob Razormane Defender
+    .mob +Razormane Defender
     .dungeon RFC
 step << Tauren
     #completewith next
@@ -441,9 +441,9 @@ step << Tauren
     .goto The Barrens,59.26,24.67,50,0
     >>Kill |cRXP_ENEMY_Razormane Geomancers|r and |cRXP_ENEMY_Razormane Defenders|r
     .complete 872,1 --Razormane Geomancer (8)
+    .mob +Razormane Geomancer
     .complete 872,2 --Razormane Defender (8)
-    .mob Razormane Geomancer
-    .mob Razormane Defender
+    .mob +Razormane Defender
     .dungeon RFC
 step << Tauren
     .goto The Barrens,58.38,27.01,30,0
@@ -469,9 +469,9 @@ step << Tauren
 	.goto The Barrens,58.90,25.37,25,0
     >>Kill |cRXP_ENEMY_Razormane Geomancers|r and |cRXP_ENEMY_Razormane Defenders|r
     .complete 872,1 --Razormane Geomancer (8)
+    .mob +Razormane Geomancer
     .complete 872,2 --Razormane Defender (8)
-    .mob Razormane Geomancer
-    .mob Razormane Defender
+    .mob +Razormane Defender
     .dungeon RFC
 step << Tauren
     #completewith next
@@ -758,9 +758,9 @@ step
     .goto The Barrens,59.26,24.67,50,0
     >>Kill |cRXP_ENEMY_Razormane Geomancers|r and |cRXP_ENEMY_Razormane Defenders|r
     .complete 872,1 --Razormane Geomancer (8)
+    .mob +Razormane Geomancer
     .complete 872,2 --Razormane Defender (8)
-    .mob Razormane Geomancer
-    .mob Razormane Defender
+    .mob +Razormane Defender
 step
     #completewith next
     >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r. It has multiple spawn locations
@@ -791,9 +791,9 @@ step
     .goto The Barrens,59.26,24.67,50,0
     >>Kill |cRXP_ENEMY_Razormane Geomancers|r and |cRXP_ENEMY_Razormane Defenders|r
     .complete 872,1 --Razormane Geomancer (8)
+    .mob +Razormane Geomancer
     .complete 872,2 --Razormane Defender (8)
-    .mob Razormane Geomancer
-    .mob Razormane Defender
+    .mob +Razormane Defender
 step
     .goto The Barrens,58.38,27.01,30,0
     .goto The Barrens,59.46,24.58
@@ -817,9 +817,9 @@ step
 	.goto The Barrens,58.90,25.37,25,0
     >>Kill |cRXP_ENEMY_Razormane Geomancers|r and |cRXP_ENEMY_Razormane Defenders|r
     .complete 872,1 --Razormane Geomancer (8)
+    .mob +Razormane Geomancer
     .complete 872,2 --Razormane Defender (8)
-    .mob Razormane Geomancer
-    .mob Razormane Defender
+    .mob +Razormane Defender
 step << !Tauren !Undead
     #completewith next
     >>Kill any |cRXP_ENEMY_Zhevra|r you see. Loot them for their |cRXP_LOOT_Hooves|r
@@ -1112,9 +1112,9 @@ step
     #completewith BaronLongshore
     >>Kill |cRXP_ENEMY_Southsea Brigands|r and |cRXP_ENEMY_Southsea Cannoneers|r
     .complete 887,1 --Southsea Brigand (12)
+    .mob +Southsea Brigand
     .complete 887,2 --Southsea Cannoneer (6)
-    .mob Southsea Brigand
-    .mob Southsea Cannoneer
+    .mob +Southsea Cannoneer
 step << Orc Rogue/Troll Rogue
 	#completewith next
 	>>Kill |cRXP_ENEMY_Tazan|r. Loot him for his |cRXP_LOOT_Satchel|r. He patrols up and down the hill
@@ -1140,9 +1140,9 @@ step
     .goto The Barrens,64.23,47.10
     >>Kill |cRXP_ENEMY_Southsea Brigands|r and |cRXP_ENEMY_Southsea Cannoneers|r
     .complete 887,1 --Southsea Brigand (12)
+    .mob +Southsea Brigand
     .complete 887,2 --Southsea Cannoneer (6)
-    .mob Southsea Brigand
-    .mob Southsea Cannoneer
+    .mob +Southsea Cannoneer
 step << Orc Rogue/Troll Rogue
     .goto The Barrens,63.70,44.32,50,0
     .goto The Barrens,62.70,44.07,50,0
@@ -6318,12 +6318,14 @@ RXPGuides.RegisterGuide([[
 
 
 step << !Tauren
+    #xprate <2.05 << !Undead
     #softcore
     #completewith ThievesPickup
     .goto The Barrens,50.72,32.61
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .subzoneskip 380
 step << !Tauren
+    #xprate <2.05 << !Undead
     #hardcore
     #completewith ThievesPickup
     .goto The Barrens,52.34,29.27,150 >> Travel to The Crossroads
@@ -6335,10 +6337,17 @@ step << !Tauren
     .accept 870 >>Accept The Forgotten Pools
     .target Tonga Runetotem
 step << !Undead !Tauren
+    #xprate <2.05
     #hardcore
     .goto The Barrens,52.62,29.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zargh|r
     .accept 6365 >>Accept Meats to Orgrimmar
+    .target Zargh
+step << !Undead !Tauren
+    #xprate >2.04
+    .goto The Barrens,52.62,29.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zargh|r
+    .turnin 6386 >> Turn in Return to the Crossroads
     .target Zargh
 step << !Tauren
     .goto The Barrens,52.24,31.01
@@ -6365,6 +6374,7 @@ step << !Tauren
     .accept 5041 >>Accept Supplies for the Crossroads
     .target Thork
 step << !Undead !Tauren
+    #xprate <2.05
     #hardcore
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
@@ -6459,12 +6469,21 @@ step << !Tauren
     .accept 869 >>Accept Raptor Thieves
     .target Gazrog
 step << !Tauren
+    #xprate <2.1
+    .goto The Barrens,51.99,29.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
+    .home >> Set your Hearthstone to Crossroads
+    .target Innkeeper Boorand Plainswind
+    .dungeon !RFC
+step << Undead
+    #xprate >2.09
     .goto The Barrens,51.99,29.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
     .home >> Set your Hearthstone to Crossroads
     .target Innkeeper Boorand Plainswind
     .dungeon !RFC
 step << !Undead !Tauren
+    #xprate <2.05
     #softcore
     .goto The Barrens,52.62,29.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zargh|r
@@ -6564,11 +6583,11 @@ step
     #completewith next
     >>Kill |cRXP_ENEMY_Water Seekers|r, |cRXP_ENEMY_Thornweavers|r and |cRXP_ENEMY_Hunters|r
     .complete 871,1 --Razormane Water Seeker (8)
+    .mob +Razormane Water Seeker
     .complete 871,2 --Razormane Thornweaver (8)
+    .mob +Razormane Thornweaver
     .complete 871,3 --Razormane Hunter (3)
-    .mob Razormane Water Seeker
-    .mob Razormane Thornweaver
-    .mob Razormane Hunter
+    .mob +Razormane Hunter
 step
     .goto The Barrens,55.70,27.30
     .use 4926 >> Loot |cRXP_PICK_Chen's Empty Keg|r from the ground and start the quest. If it's not up you'll get it later
@@ -6591,11 +6610,11 @@ step
 	.goto The Barrens,53.63,24.50,25,0
     >>Kill |cRXP_ENEMY_Water Seekers|r, |cRXP_ENEMY_Thornweavers|r and |cRXP_ENEMY_Hunters|r
     .complete 871,1 --Razormane Water Seeker (8)
+    .mob +Razormane Water Seeker
     .complete 871,2 --Razormane Thornweaver (8)
+    .mob +Razormane Thornweaver
     .complete 871,3 --Razormane Hunter (3)
-    .mob Razormane Water Seeker
-    .mob Razormane Thornweaver
-    .mob Razormane Hunter
+    .mob +Razormane Hunter
 step << Warrior !Undead
     #completewith next
     .goto The Barrens,54.53,27.96,30,0
@@ -6676,6 +6695,7 @@ step
     .target Darsok Swiftdagger
 step << !Tauren !Undead
     #softcore
+    #xprate <2.05
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .turnin 6365 >>Turn in Meats to Orgrimmar
@@ -6789,9 +6809,9 @@ step << Tauren
     .goto The Barrens,59.26,24.67,50,0
     >>Kill |cRXP_ENEMY_Razormane Geomancers|r and |cRXP_ENEMY_Razormane Defenders|r
     .complete 872,1 --Razormane Geomancer (8)
+    .mob +Razormane Geomancer
     .complete 872,2 --Razormane Defender (8)
-    .mob Razormane Geomancer
-    .mob Razormane Defender
+    .mob +Razormane Defender
     .dungeon RFC
 step << Tauren
     #completewith next
@@ -6811,9 +6831,9 @@ step << Tauren
     .goto The Barrens,59.26,24.67,50,0
     >>Kill |cRXP_ENEMY_Razormane Geomancers|r and |cRXP_ENEMY_Razormane Defenders|r
     .complete 872,1 --Razormane Geomancer (8)
+    .mob +Razormane Geomancer
     .complete 872,2 --Razormane Defender (8)
-    .mob Razormane Geomancer
-    .mob Razormane Defender
+    .mob +Razormane Defender
     .dungeon RFC
 step << Tauren
     .goto The Barrens,58.38,27.01,30,0
@@ -6839,9 +6859,9 @@ step << Tauren
 	.goto The Barrens,58.90,25.37,25,0
     >>Kill |cRXP_ENEMY_Razormane Geomancers|r and |cRXP_ENEMY_Razormane Defenders|r
     .complete 872,1 --Razormane Geomancer (8)
+    .mob +Razormane Geomancer
     .complete 872,2 --Razormane Defender (8)
-    .mob Razormane Geomancer
-    .mob Razormane Defender
+    .mob +Razormane Defender
     .dungeon RFC
 step << Tauren
     #completewith next
@@ -7128,9 +7148,9 @@ step
     .goto The Barrens,59.26,24.67,50,0
     >>Kill |cRXP_ENEMY_Razormane Geomancers|r and |cRXP_ENEMY_Razormane Defenders|r
     .complete 872,1 --Razormane Geomancer (8)
+    .mob +Razormane Geomancer
     .complete 872,2 --Razormane Defender (8)
-    .mob Razormane Geomancer
-    .mob Razormane Defender
+    .mob +Razormane Defender
 step
     #completewith next
     >>Loot the |cRXP_PICK_Crossroads' Supply Crates|r. It has multiple spawn locations
@@ -7161,9 +7181,9 @@ step
     .goto The Barrens,59.26,24.67,50,0
     >>Kill |cRXP_ENEMY_Razormane Geomancers|r and |cRXP_ENEMY_Razormane Defenders|r
     .complete 872,1 --Razormane Geomancer (8)
+    .mob +Razormane Geomancer
     .complete 872,2 --Razormane Defender (8)
-    .mob Razormane Geomancer
-    .mob Razormane Defender
+    .mob +Razormane Defender
 step
     .goto The Barrens,58.38,27.01,30,0
     .goto The Barrens,59.46,24.58
@@ -7187,9 +7207,9 @@ step
 	.goto The Barrens,58.90,25.37,25,0
     >>Kill |cRXP_ENEMY_Razormane Geomancers|r and |cRXP_ENEMY_Razormane Defenders|r
     .complete 872,1 --Razormane Geomancer (8)
+    .mob +Razormane Geomancer
     .complete 872,2 --Razormane Defender (8)
-    .mob Razormane Geomancer
-    .mob Razormane Defender
+    .mob +Razormane Defender
 step << !Tauren !Undead
     #completewith next
     >>Kill any |cRXP_ENEMY_Zhevra|r you see. Loot them for their |cRXP_LOOT_Hooves|r
@@ -7503,9 +7523,9 @@ step
     #completewith BaronLongshore
     >>Kill |cRXP_ENEMY_Southsea Brigands|r and |cRXP_ENEMY_Southsea Cannoneers|r
     .complete 887,1 --Southsea Brigand (12)
+    .mob +Southsea Brigand
     .complete 887,2 --Southsea Cannoneer (6)
-    .mob Southsea Brigand
-    .mob Southsea Cannoneer
+    .mob +Southsea Cannoneer
 step << Orc Rogue/Troll Rogue
 	#completewith next
 	>>Kill |cRXP_ENEMY_Tazan|r. Loot him for his |cRXP_LOOT_Satchel|r. He patrols up and down the hill
@@ -7531,9 +7551,9 @@ step
     .goto The Barrens,64.23,47.10
     >>Kill |cRXP_ENEMY_Southsea Brigands|r and |cRXP_ENEMY_Southsea Cannoneers|r
     .complete 887,1 --Southsea Brigand (12)
+    .mob +Southsea Brigand
     .complete 887,2 --Southsea Cannoneer (6)
-    .mob Southsea Brigand
-    .mob Southsea Cannoneer
+    .mob +Southsea Cannoneer
 step << Orc Rogue/Troll Rogue
     .goto The Barrens,63.70,44.32,50,0
     .goto The Barrens,62.70,44.07,50,0
@@ -8299,6 +8319,7 @@ step << Mage
     .target Pephredo
     .xp <18,1
 step << !Tauren !Undead
+    #xprate <2.05
     .goto Orgrimmar,54.097,68.407
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Gryshka|r
     .turnin 6384 >>Turn in Ride to Orgrimmar
@@ -8306,6 +8327,7 @@ step << !Tauren !Undead
     .target Innkeeper Gryshka
     .isOnQuest 6384
 step << !Tauren !Undead
+    #xprate <2.05
     .goto Orgrimmar,45.120,63.889
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Doras|r
     .turnin 6385 >> Turn in Doras the Wind Rider Master
@@ -8313,6 +8335,7 @@ step << !Tauren !Undead
     .target Doras
     .isOnQuest 6385
 step << !Tauren !Undead
+    #xprate <2.05
     .goto Orgrimmar,45.120,63.889
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Doras|r
     .accept 6386 >> Accept Return to the Crossroads
@@ -8611,6 +8634,7 @@ step
     .accept 881 >>Accept Echeyakee
     .target Sergra Darkthorn
 step << !Tauren !Undead
+    #xprate <2.05
     .goto The Barrens,52.62,29.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zargh|r
     .turnin 6386 >> Turn in Return to the Crossroads

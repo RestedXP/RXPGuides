@@ -2330,10 +2330,10 @@ step
     #completewith AgedEnvelope
     >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r. Loot them for their |cRXP_LOOT_Canvas Scraps|r
     .complete 784,1 --Kul Tiras Sailor (10)
+    .mob +Kul Tiras Sailor
     .complete 784,2 --Kul Tiras Marine (8)
+    .mob +Kul Tiras Marine
     .complete 791,1 --Canvas Scraps (8)
-    .mob Kul Tiras Sailor
-    .mob Kul Tiras Marine
 step
     #label Benedict
     .goto Durotar,59.75,58.27
@@ -2380,9 +2380,9 @@ step
     .goto Durotar,58.99,58.30
     >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r
     .complete 784,1 --Kul Tiras Sailor (10)
+    .mob +Kul Tiras Sailor
     .complete 784,2 --Kul Tiras Marine (8)
-    .mob Kul Tiras Sailor
-    .mob Kul Tiras Marine
+    .mob +Kul Tiras Marine
 step
     #label ScrapsFinished
     .goto Durotar,57.65,58.52,30,0
@@ -2805,9 +2805,9 @@ step
     #completewith MinshinasSkull
     >>Kill |cRXP_ENEMY_Hexed Trolls|r and |cRXP_ENEMY_Voodoo Trolls|r
     .complete 826,1 --Hexed Troll (8)
+    .mob +Hexed Troll
     .complete 826,2 --Voodoo Troll (8)
-    .mob Hexed Troll
-    .mob Voodoo Troll
+    .mob +Voodoo Troll
 step << Priest
     #season 2
     #completewith Fur
@@ -2875,9 +2875,9 @@ step
 	.goto Durotar,67.23,88.00,25,0
     >>Kill |cRXP_ENEMY_Hexed Trolls|r and |cRXP_ENEMY_Voodoo Trolls|r
     .complete 826,1 --Hexed Troll (8)
+    .mob +Hexed Troll
     .complete 826,2 --Voodoo Troll (8)
-    .mob Hexed Troll
-    .mob Voodoo Troll
+    .mob +Voodoo Troll
 step << Priest
     #season 2
 #loop
@@ -3010,9 +3010,9 @@ step << Warrior
     >>Kill |cRXP_ENEMY_Razormane Quilboars|r and |cRXP_ENEMY_Razormane Scouts|r. Loot them for a |cRXP_LOOT_Severed Quilboar Head|r
     .collect 206994,1 ---Severed Quilboar Head (1)
     .complete 837,1 --Razormane Quilboar (4)
+    .mob +Razormane Quilboar
     .complete 837,2 --Razormane Scout (4)
-    .mob Razormane Quilboar
-    .mob Razormane Scout
+    .mob +Razormane Scout
     .train 403475,1
 step
     #label QuilboarsScouts
@@ -3028,9 +3028,9 @@ step
     .goto Durotar,49.22,48.96
     >>Kill |cRXP_ENEMY_Razormane Quilboars|r and |cRXP_ENEMY_Razormane Scouts|r
     .complete 837,1 --Razormane Quilboar (4)
+    .mob +Razormane Quilboar
     .complete 837,2 --Razormane Scout (4)
-    .mob Razormane Quilboar
-    .mob Razormane Scout
+    .mob +Razormane Scout
 step
     #xprate <1.5 
 #loop
@@ -3045,9 +3045,9 @@ step
 	.goto Durotar,44.45,39.74,25,0
     >>Kill |cRXP_ENEMY_Razormane Dustrunners|r and |cRXP_ENEMY_Razormane Battleguards|r
     .complete 837,3 --Razormane Dustrunner (4)
+    .mob +Razormane Dustrunner
     .complete 837,4 --Razormane Battleguard (4)
-    .mob Razormane Dustrunner
-    .mob Razormane Battleguard
+    .mob +Razormane Battleguard
 step << Hunter
     #xprate <1.5 
 #loop
@@ -3279,9 +3279,9 @@ step
 	.goto Durotar,44.45,39.74,25,0
     >>Kill |cRXP_ENEMY_Razormane Dustrunners|r and |cRXP_ENEMY_Razormane Battleguards|r
     .complete 837,3 --Razormane Dustrunner (4)
+    .mob +Razormane Dustrunner
     .complete 837,4 --Razormane Battleguard (4)
-    .mob Razormane Dustrunner
-    .mob Razormane Battleguard
+    .mob +Razormane Battleguard
 step << Warrior/Shaman
     #xprate >1.49
     .goto The Barrens,62.26,19.38,40 >> Travel to Far Watch Post
@@ -4356,9 +4356,9 @@ step << Warrior/Shaman
     #completewith next
     >>Kill |cRXP_ENEMY_Venture Co. Workers|r and |cRXP_ENEMY_Venture Co. Supervisors|r
     .complete 764,1 --Venture Co. Worker (14)
+    .mob +Venture Co. Worker
     .complete 764,2 --Venture Co. Supervisor (6)
-    .mob Venture Co. Worker
-    .mob Venture Co. Supervisor
+    .mob +Venture Co. Supervisor
 step << Warrior/Shaman
     #label Fizsprocket
     .goto Mulgore,64.95,43.33
@@ -4379,9 +4379,9 @@ step << Warrior/Shaman
 	.goto Mulgore,61.35,47.55,25,0
     >>Kill |cRXP_ENEMY_Venture Co. Workers|r and |cRXP_ENEMY_Venture Co. Supervisors|r
     .complete 764,1 --Venture Co. Worker (14)
+    .mob +Venture Co. Worker
     .complete 764,2 --Venture Co. Supervisor (6)
-    .mob Venture Co. Worker
-    .mob Venture Co. Supervisor
+    .mob +Venture Co. Supervisor
 step << Shaman
     #season 2
     #loop
@@ -4857,9 +4857,9 @@ step
     .goto Durotar,53.98,23.70
     >>Kill |cRXP_ENEMY_Dustwind Savages|r and |cRXP_ENEMY_Dustwind Storm Witches|r
     .complete 835,1 --Dustwind Savage (12)
+    .mob +Dustwind Savage
     .complete 835,2 --Dustwind Storm Witch (8)
-    .mob Dustwind Savage
-    .mob Dustwind Storm Witch
+    .mob +Dustwind Storm Witch
 step
     #xprate <1.5
     #softcore
@@ -8876,6 +8876,7 @@ step
     .goto Durotar,46.23,78.94
     .complete 786,3 --Attack Plan: Orgrimmar destroyed (1)
 step << Warrior
+    #xprate <2.1
     #season 2
     .goto Durotar,50.10,79.24,40,0
     .goto Durotar,47.74,80.35,40,0
@@ -9124,10 +9125,10 @@ step
     #completewith AgedEnvelope
     >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r. Loot them for their |cRXP_LOOT_Canvas Scraps|r
     .complete 784,1 --Kul Tiras Sailor (10)
+    .mob +Kul Tiras Sailor
     .complete 784,2 --Kul Tiras Marine (8)
+    .mob +Kul Tiras Marine
     .complete 791,1 --Canvas Scraps (8)
-    .mob Kul Tiras Sailor
-    .mob Kul Tiras Marine
 step
     #label Benedict
     .goto Durotar,59.75,58.27
@@ -9159,10 +9160,10 @@ step
     .goto Durotar,58.99,58.30
     >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r. Loot them for their |cRXP_LOOT_Canvas Scraps|r
     .complete 784,1 --Kul Tiras Sailor (10)
-    .complete 784,2 --Kul Tiras Marine (8)
-    .complete 791,1 --Canvas Scraps (8)
     .mob Kul Tiras Sailor
+    .complete 784,2 --Kul Tiras Marine (8)
     .mob Kul Tiras Marine
+    .complete 791,1 --Canvas Scraps (8)
     .itemcount 4870,<8 --Canvas Scraps (<8)
 step
     .goto Durotar,57.65,58.52,30,0
@@ -9174,9 +9175,9 @@ step
     .goto Durotar,58.99,58.30
     >>Kill |cRXP_ENEMY_Kul Tiras Sailors|r and |cRXP_ENEMY_Kul Tiras Marines|r
     .complete 784,1 --Kul Tiras Sailor (10)
+    .mob +Kul Tiras Sailor
     .complete 784,2 --Kul Tiras Marine (8)
-    .mob Kul Tiras Sailor
-    .mob Kul Tiras Marine
+    .mob +Kul Tiras Marine
 step
     #label ScrapsFinished
     .goto Durotar,57.65,58.52,30,0
@@ -9228,6 +9229,7 @@ step
     #completewith next
     .goto Durotar,52.38,43.77,120 >> Travel to Razor Hill
 step
+    #xprate <2.1
     #label RazorTurnins1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Orgnil|r, |cRXP_FRIENDLY_Gar'Thok|r and |cRXP_FRIENDLY_Torka|r
     .turnin 823 >>Turn in Report to Orgnil
@@ -9238,6 +9240,22 @@ step
     .accept 825 >>Accept From The Wreckage....
     .accept 831 >>Accept The Admiral's Orders << !Mage !Shaman
     .accept 837 >>Accept Encroachment
+    .goto Durotar,51.95,43.50
+    .accept 815 >>Accept Break a Few Eggs
+    .goto Durotar,51.09,42.49
+    .target Orgnil Soulscar
+    .target Gar'Thok
+    .target Cook Torka
+step
+    #xprate >2.09
+    #label RazorTurnins1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Orgnil|r, |cRXP_FRIENDLY_Gar'Thok|r and |cRXP_FRIENDLY_Torka|r
+    .turnin 823 >>Turn in Report to Orgnil
+    .goto Durotar,52.24,43.15
+    .turnin 784 >>Turn in Vanquish the Betrayers
+    .turnin 830 >>Turn in The Admiral's Orders
+    .accept 825 >>Accept From The Wreckage....
+    .accept 831 >>Accept The Admiral's Orders << !Mage !Shaman
     .goto Durotar,51.95,43.50
     .accept 815 >>Accept Break a Few Eggs
     .goto Durotar,51.09,42.49
@@ -9563,9 +9581,9 @@ step
     #completewith MinshinasSkull
     >>Kill |cRXP_ENEMY_Hexed Trolls|r and |cRXP_ENEMY_Voodoo Trolls|r
     .complete 826,1 --Hexed Troll (8)
+    .mob +Hexed Troll
     .complete 826,2 --Voodoo Troll (8)
-    .mob Hexed Troll
-    .mob Voodoo Troll
+    .mob +Voodoo Troll
 step << Priest
     #season 2
     #completewith Fur
@@ -9633,9 +9651,9 @@ step
 	.goto Durotar,67.23,88.00,25,0
     >>Kill |cRXP_ENEMY_Hexed Trolls|r and |cRXP_ENEMY_Voodoo Trolls|r
     .complete 826,1 --Hexed Troll (8)
+    .mob +Hexed Troll
     .complete 826,2 --Voodoo Troll (8)
-    .mob Hexed Troll
-    .mob Voodoo Troll
+    .mob +Voodoo Troll
 step << Priest
     #season 2
 #loop
@@ -9762,6 +9780,7 @@ step
     #completewith QuilboarsScouts
     +|cRXP_WARN_Bind your|r |T133728:0|t[Faintly Glowing Skull] |cRXP_WARN_and|r |T134712:0|t[Really Sticky Glue]|cRXP_WARN_. Save them for emergency situations|r
 step << Warrior
+    #xprate <2.1
     #season 2
     .goto Durotar,50.21,50.78,30,0
     .goto Durotar,50.18,49.23,30,0
@@ -9776,11 +9795,12 @@ step << Warrior
     >>Kill |cRXP_ENEMY_Razormane Quilboars|r and |cRXP_ENEMY_Razormane Scouts|r. Loot them for a |cRXP_LOOT_Severed Quilboar Head|r
     .collect 206994,1 ---Severed Quilboar Head (1)
     .complete 837,1 --Razormane Quilboar (4)
+    .mob +Razormane Quilboar
     .complete 837,2 --Razormane Scout (4)
-    .mob Razormane Quilboar
-    .mob Razormane Scout
+    .mob +Razormane Scout
     .train 403475,1
 step
+    #xprate <2.1
     #label QuilboarsScouts
     .goto Durotar,50.21,50.78,30,0
     .goto Durotar,50.18,49.23,30,0
@@ -9794,9 +9814,9 @@ step
     .goto Durotar,49.22,48.96
     >>Kill |cRXP_ENEMY_Razormane Quilboars|r and |cRXP_ENEMY_Razormane Scouts|r
     .complete 837,1 --Razormane Quilboar (4)
+    .mob +Razormane Quilboar
     .complete 837,2 --Razormane Scout (4)
-    .mob Razormane Quilboar
-    .mob Razormane Scout
+    .mob +Razormane Scout
 step
     #optional
     #loop
@@ -9805,13 +9825,20 @@ step
     .waypoint Durotar,47.43,49.18,30,0
     .xp 9+3350 >> Grind to 3350+/6500xp
 step
+    #xprate <2.1
     #softcore
     #completewith RazorTurnins015
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r, or run to Razor Hill
 step
+    #xprate <2.1
     #hardcore
     #completewith RazorTurnins015
-    .goto Durotar,51.95,43.50,100 >>Run to Razor Hill
+    .subzone 362 >>Travel to Razor Hill
+step
+    #xprate >2.09
+    #completewith RazorTurnins015
+    .subzone 362 >> Travel to Razor Hill
+    .cooldown item,6948,<0
 step << Shaman
     #xprate >1.49
     .goto Durotar,54.42,42.59
@@ -9987,7 +10014,7 @@ step
     .accept 840 >>Accept Conscript of the Horde
     .target Takrin Pathseeker
 step
-    #xprate >1.49
+    #xprate <2.1
 #loop
 	.line Durotar,44.45,39.74,44.49,37.47,43.30,37.32,41.70,37.09,41.64,38.27,41.94,40.46,43.30,40.40,44.45,39.74
 	.goto Durotar,44.45,39.74,25,0
@@ -10000,15 +10027,28 @@ step
 	.goto Durotar,44.45,39.74,25,0
     >>Kill |cRXP_ENEMY_Razormane Dustrunners|r and |cRXP_ENEMY_Razormane Battleguards|r
     .complete 837,3 --Razormane Dustrunner (4)
+    .mob +Razormane Dustrunner
     .complete 837,4 --Razormane Battleguard (4)
-    .mob Razormane Dustrunner
-    .mob Razormane Battleguard
+    .mob +Razormane Battleguard
 step << Warrior/Shaman
-    #xprate >1.49
+    #xprate <2.1
+    #completewith next
     .goto The Barrens,62.26,19.38,40 >> Travel to Far Watch Post
     .zoneskip The Barrens
 step << Warrior/Shaman
-    #xprate >1.49
+    #xprate <2.1
+    .goto The Barrens,62.27,19.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kargal|r
+    .turnin 840 >>Turn in Conscript of the Horde
+    .accept 842 >>Accept Crossroads Conscription
+    .target Kargal Battlescar
+step
+    #xprate >2.09
+    #completewith next
+    .goto The Barrens,62.26,19.38,40 >> Travel to Far Watch Post
+    .zoneskip The Barrens
+step
+    #xprate >2.09
     .goto The Barrens,62.27,19.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kargal|r
     .turnin 840 >>Turn in Conscript of the Horde
@@ -10062,13 +10102,13 @@ step << Warrior
     .complete 1498,1 --Singed Scale (5)
     .mob Lightning Hide
 step << !Warrior
-    #xprate >1.49
+    #xprate <2.1
     #completewith next
     .goto Durotar,41.66,25.68,20 >>Jump into Thunder Ridge << !Hunter !Warlock
     .goto Durotar,41.66,25.68,20 >>|cRXP_WARN_Dismiss your|r |T136218:0|t[Imp] |cRXP_WARN_by right clicking its unit frame and clicking dismiss|r << Warlock
     .goto Durotar,41.66,25.68,20 >>|cRXP_WARN_Cast|r |T136095:0|t[Dismiss Pet] |cRXP_WARN_and then jump into Thunder Ridge|r << Hunter
 step
-    #xprate >1.49
+    #xprate <2.1
     #softcore
     .goto Durotar,42.13,26.67
     >>Kill |cRXP_ENEMY_Fizzle Darkstorm|r and loot him for his |cRXP_LOOT_Claw|r
@@ -10087,7 +10127,7 @@ step
     .mob Burning Blade Fanatic
     .mob Lightning Hide
 step
-    #xprate >1.49
+    #xprate <2.1
     #hardcore
     .goto Durotar,42.13,26.67
     >>Kill |cRXP_ENEMY_Fizzle Darkstorm|r and loot him for his |cRXP_LOOT_Claw|r
@@ -10105,25 +10145,28 @@ step
     .mob Burning Blade Fanatic
     .mob Lightning Hide
 step
-    #xprate >1.49
+    #xprate <2.1
     #softcore
     .goto Durotar,47.04,17.58
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .isQuestComplete 806
 step
-    #xprate >1.49
+    #xprate <2.1
     #hardcore
     .goto Durotar,39.20,32.02,60 >> Fight your way out of Thunder Ridge
     .isQuestComplete 806
 step
+    #xprate <2.1
     #completewith next
     .goto Durotar,46.37,22.94,50 >> Travel to Rezlak
 step
+    #xprate <2.1
     .goto Durotar,46.37,22.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rezlak|r
     .accept 834 >>Accept Winds in the Desert
     .target Rezlak
 step << Warrior
+    #xprate <2.1
     #season 2
     #completewith next
     >>Kill |cRXP_ENEMY_Dustwind Harpies|r. Loot them for a |cRXP_LOOT_Severed Harpy Head|r
@@ -10134,6 +10177,7 @@ step << Warrior
     .mob Dustwind Harpy
     .train 403475,1
 step
+    #xprate <2.1
     .goto Durotar,49.70,21.90,40,0
     .goto Durotar,49.70,24.33,40,0
     .goto Durotar,50.13,25.70,40,0
@@ -10149,6 +10193,7 @@ step
     >>Loot the |cRXP_PICK_Stolen Supply Sacks|r from the ground
     .complete 834,1 --Sack of Supplies (5)
 step << Warrior
+    #xprate <2.1
     #season 2
     .goto Durotar,54.02,27.23,40,0
     .goto Durotar,52.82,24.27,40,0
@@ -10165,12 +10210,13 @@ step << Warrior
     .mob Dustwind Harpy
     .train 403475,1
 step
+    #xprate <2.1
     .goto Durotar,46.37,22.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rezlak|r
     .turnin 834 >>Turn in Winds in the Desert
     .target Rezlak
 step << Shaman
-    #xprate >1.49
+    #xprate <2.1
     #completewith next
     .goto Durotar,49.42,18.47,40,0
     .goto Durotar,51.35,16.76,40,0
@@ -10179,7 +10225,7 @@ step << Shaman
     .subzone 371 >>Travel toward Dustwind Cave
     >>|cRXP_WARN_Travel east around the hills to reach the cave. Follow the waypoint arrow|r
 step << Shaman
-    #xprate >1.49
+    #xprate <2.1
     .goto Durotar,53.18,29.15,20,0
     .goto Durotar,52.70,27.97,12,0
     .goto Durotar,53.05,27.87,12,0
@@ -10190,12 +10236,8 @@ step << Shaman
     >>Kill |cRXP_ENEMY_Burning Blade Cultists|r. Loot them for a |cRXP_LOOT_Reagent Pouch|r
     .complete 1525,2 --Reagent Pouch (1)
     .mob Burning Blade Cultist
-
-
-    --Main 100% xp changes from here
-
 step << Mage
-    #xprate >1.49
+    #xprate <2.1
     #season 2
     .goto Durotar,54.96,9.69,30,0
     .goto Durotar,54.69,8.73,30,0
@@ -10208,10 +10250,87 @@ step << Mage
     .mob Burning Blade Cultist
     .train 401768,1
     --Living Flame Rune
+step << Warrior/Shaman
+    #xprate >2.09
+    #completewith next
+    .goto The Barrens,62.26,19.38,40 >> Travel to Far Watch Post
+    .zoneskip The Barrens
+step << Warrior
+    #xprate >2.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uzzek|r
+    .turnin 1498 >>Turn in Path of Defense
+    .accept 1502 >>Accept Thun'grim Firegaze
+    .target Uzzek
+step
+    #xprate >2.09
+    #softcore
+    #completewith
+    .goto The Barrens,50.72,32.61
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .subzoneskip 380
+step
+    #xprate >2.09
+    #hardcore
+    #completewith
+    .goto The Barrens,52.34,29.27,150 >> Travel to The Crossroads
+step
+    #xprate >2.09
+    .goto The Barrens,51.50,30.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thork|r
+    .accept 871 >>Accept Disrupt the Attacks
+    .accept 5041 >>Accept Supplies for the Crossroads
+    .target Thork
+step
+    #xprate >2.09
+    .goto The Barrens,52.24,31.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r
+    .turnin 842 >>Turn in Crossroads Conscription
+    .accept 844 >>Accept Plainstrider Menace
+    .target Sergra Darkthorn
+step
+    #xprate >2.09
+    .goto The Barrens,52.62,29.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zargh|r
+    .accept 6365 >>Accept Meats to Orgrimmar
+    .target Zargh
+step
+    #xprate >2.09
+    .goto The Barrens,51.99,29.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Boorand|r
+    .home >> Set your Hearthstone to Crossroads
+    .target Innkeeper Boorand Plainswind
+step
+    #xprate >2.09
+    .goto The Barrens,51.50,30.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
+    .fp The Crossroads >> Get the The Crossroads flight path
+    .turnin 6365 >>Turn in Meats to Orgrimmar
+    .accept 6384 >>Accept Ride to Orgrimmar
+    .target Devrak
+step
+    #xprate >2.09
+    .goto The Barrens,51.50,30.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
+    .fly Orgrimmar >>Fly to Orgrimmar
+    .target Devrak
 
-    --Mage/Shaman dont need to go ORG
-
+    --Mage/Shaman dont need to go ORG 100% route
+step
+    #xprate >2.09
+    .goto Orgrimmar,54.097,68.407
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Gryshka|r
+    .turnin 6384 >>Turn in Ride to Orgrimmar
+    .accept 6385 >>Accept Doras the Wind Rider Master
+    .target Innkeeper Gryshka
+step
+    #xprate >2.09
+    .goto Orgrimmar,45.120,63.889
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Doras|r
+    .turnin 6385 >> Turn in Doras the Wind Rider Master
+    .accept 6386 >> Accept Return to the Crossroads
+    .target Doras
 step << Warlock/Hunter/Rogue/Priest/Warrior
+    #xprate <2.1
     #season 2 << Warrior
     #completewith AdmiralTurnin
     .goto Orgrimmar,48.97,92.84,50,0
@@ -10263,7 +10382,15 @@ step << Rogue
     .use 204174
     .itemcount 204174,1
 step << Warlock/Hunter/Rogue/Priest/Warrior
+    #xprate <2.1
     #season 2 << Warrior
+    #label AdmiralTurnin
+    .goto Orgrimmar,32.28,35.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nazgrel|r
+    .turnin 831 >>Turn in The Admiral's Orders
+    .target Nazgrel
+step
+    #xprate >2.09
     #label AdmiralTurnin
     .goto Orgrimmar,32.28,35.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nazgrel|r
@@ -10476,12 +10603,67 @@ step << Warlock
     .turnin 5727 >>Turn in Hidden Enemies
     .target Nazgrel
     .isQuestTurnedIn 5726
+step << Shaman/Mage/Hunter
+    #xprate >2.09
+    #completewith next
+    .zone Durotar >>Exit Orgrimmar
+step << Hunter
+    #xprate >2.09
+    #completewith next
+    .goto Durotar,36.29,47.38,0
+    .goto Durotar,36.29,52.09,0
+    .waypoint Durotar,36.29,47.38,40,0
+    +Tame a |cRXP_ENEMY_Venomtail Scorpid|r
+    >>|cRXP_WARN_This will allow you to train|r |T132140:0|t[Claw Rank 2]
+    .mob Venomtail Scorpid
+    .train 16828,1 --Claw rank 2
+step << Shaman
+    #xprate >2.09
+    #completewith next
+    .goto Durotar,51.35,16.76,40,0
+    .goto Durotar,54.65,19.02,40,0
+    .goto Durotar,55.86,28.31,40,0
+    .subzone 371 >>Travel toward Dustwind Cave
+    >>|cRXP_WARN_Travel east around the hills to reach the cave. Follow the waypoint arrow|r
+step << Shaman
+    #xprate >2.09
+    .goto Durotar,53.18,29.15,20,0
+    .goto Durotar,52.70,27.97,12,0
+    .goto Durotar,53.05,27.87,12,0
+    .goto Durotar,53.14,27.24,12,0
+    .goto Durotar,52.84,26.80,12,0
+    .goto Durotar,52.07,26.85,12,0
+    .goto Durotar,51.90,25.70
+    >>Kill |cRXP_ENEMY_Burning Blade Cultists|r. Loot them for a |cRXP_LOOT_Reagent Pouch|r
+    .complete 1525,2 --Reagent Pouch (1)
+    .mob Burning Blade Cultist
+step << Mage
+    #xprate >2.09
+    #season 2
+    .goto Durotar,54.96,9.69,30,0
+    .goto Durotar,54.69,8.73,30,0
+    .goto Durotar,53.78,9.14,30,0
+    .goto Durotar,52.93,9.01
+    >>Kill |cRXP_ENEMY_Burning Blade Orcs|r inside the Skull Rock Cave. Loot them for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: MILEGIN VALF|r]
+    .collect 203752,1 --Spell Notes: MILEGIN VALF (1)
+    .mob Burning Blade Thug
+    .mob Burning Blade Neophyte
+    .mob Burning Blade Cultist
+    .train 401768,1
+    --Living Flame Rune
 step
+    #xprate >2.09
+    .hs >> Hearth to The Crossroads
+    .use 6948
+    .subzoneskip 380
+step
+    #xprate <2.1
     #completewith RazorTurnins2
     .hs >> Hearth to Razor Hill
     .use 6948
     .subzoneskip 362
 step
+    #xprate <2.1
     .goto Durotar,51.51,41.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Grosk|r
     .vendor >> Vendor Trash
@@ -10492,6 +10674,7 @@ step
     .target Innkeeper Grosk
     .money <0.0375
 step << Warrior
+    #xprate <2.1
     #season 2
     .goto Durotar,53.14,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vahi|r
@@ -10502,16 +10685,19 @@ step << Warrior
     .target Vahi Bonesplitter
     .train 403475,1
 step << Warrior
+    #xprate <2.1
     #season 2
     .use 204688 >>Use the |T134455:0|t[Rune Fragments] to create |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
     .collect 204703,1 --Rune of Devastate (1)
     .train 403475,1
 step << Warrior
+    #xprate <2.1
     #season 2
     .train 403475 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
     .use 204703
     .itemcount 204703,1
 step
+    #xprate <2.1
     #label RazorTurnins2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Orgnil|r and |cRXP_FRIENDLY_Gar'Thok|r
     .turnin 806 >>Turn in Dark Storms
@@ -10521,40 +10707,46 @@ step
     .target Orgnil Soulscar
     .target Gar'Thok
 step << Warrior
+    #xprate <2.1
     .goto Durotar,54.18,42.46
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarshaw|r
     .train 6546 >> Train your class spells
     .target Tarshaw Jaggedscar
     .xp <12,1
 step << Shaman
+    #xprate <2.1
     .goto Durotar,54.42,42.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Swart|r
     .train 8050 >> Train your class spells
     .target Swart
     .xp <12,1
 step << Hunter
+    #xprate <2.1
     #completewith next
     .goto Durotar,36.29,47.38,0
     .goto Durotar,36.29,52.09,0
     .waypoint Durotar,36.29,47.38,40,0
     +Tame a |cRXP_ENEMY_Venomtail Scorpid|r
+    >>|cRXP_WARN_This will allow you to train|r |T132140:0|t[Claw Rank 2]
     .mob Venomtail Scorpid
     .train 16828,1 --Claw rank 2
 step
+    #xprate <2.1
     #Label FarWatchPost
     .goto The Barrens,62.26,19.38,40 >> Travel to Far Watch Post
     .zoneskip The Barrens
 step
+    #xprate <2.1
     .goto The Barrens,62.27,19.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kargal|r
     .turnin 840 >>Turn in Conscript of the Horde
     .accept 842 >>Accept Crossroads Conscription
     .target Kargal Battlescar
 step << Warrior
+    #xprate <2.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uzzek|r
     .turnin 1498 >>Turn in Path of Defense
     .accept 1502 >>Accept Thun'grim Firegaze
     .target Uzzek
 
 ]])
-
