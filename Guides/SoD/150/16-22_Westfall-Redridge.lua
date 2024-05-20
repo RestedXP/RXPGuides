@@ -1162,6 +1162,16 @@ step
     .collect 1468,8,150,1
     .mob Murloc Shorestriker
     .mob Murloc Minor Tidecaller
+step << Warlock
+    #season 2
+    #sticky
+    #label Incinerate
+    .goto Redridge Mountains,76.8,82.2
+    .train 416015 >>Kill |cRXP_ENEMY_Incinerator Gar'im|r |cRXP_WARN_(lvl 23 elite)|r. Loot him for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Incinerate|r]
+    .use 211477>>This rune can be a bit tough, but it's very much doable, just keep Gar'im feared, you'll need this rune for a quest later
+    .collect 211477,1
+    .disablecheckbox
+    .unitscan Incinerator Gar'im
 step
     #loop
     >>Kill |cRXP_ENEMY_Blackrock Grunts|r and |cRXP_ENEMY_Blackrock Outrunners|r. Loot them for their |cRXP_LOOT_Axes|r
@@ -1176,6 +1186,7 @@ step
     .mob Blackrock Grunt
 	.mob Blackrock Outrunner
 step
+    #requires Incinerate<< Warlock
     .goto Redridge Mountains,61.37,77.10
     >>Kill |cRXP_ENEMY_Dire Condors|r. Loot them for their |cRXP_LOOT_Tough Condor Meat|r
     >>Kill |cRXP_ENEMY_Black Dragon Whelps|r. Loot them for their |cRXP_LOOT_Scales|r
