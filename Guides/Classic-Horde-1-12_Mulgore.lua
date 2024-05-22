@@ -2025,7 +2025,7 @@ step << Tauren
     .target Kirge Sternhorn
 step
     #completewith next
-    .goto The Barrens,52.07,31.96,120 >>Travel north toward The Crossroads
+    .goto The Barrens,52.07,31.96,120 >>Travel North toward The Crossroads
 step
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga|r
@@ -5000,7 +5000,7 @@ step << Tauren
     .target Kirge Sternhorn
 step
     #completewith next
-    .goto The Barrens,52.07,31.96,120 >>Travel north toward The Crossroads
+    .goto The Barrens,52.07,31.96,120 >>Travel North toward The Crossroads
 step
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga|r
@@ -5023,22 +5023,26 @@ step
     .accept 6361 >>Accept A Bundle of Hides
     .target Jahan Hawkwing
 step
+    #xprate <2.1
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
     .accept 848 >>Accept Fungal Spores
     .accept 1492 >>Accept Wharfmaster Dizzywig
     .target Apothecary Helbrim
 step
+    #xprate <2.1
     #completewith next
     >>Collect |cRXP_LOOT_Laden Mushrooms|r around The Forgotten Pools
     >>|cRXP_WARN_Keep maximum distance from |cRXP_ENEMY_Kolkar|r |cRXP_WARN_as you loot the mushrooms. They are level 12-14|r
     >>|cRXP_WARN_The follow-up of this quest has the powerful |cRXP_FRIENDLY_Cauldron Stinger|r |cRXP_WARN_as a reward. You can skip this quest for now if you do not intend to use it|r
     .complete 848,1 --Collect Fungal Spores (x4)
 step
+    #xprate <2.1
     .goto The Barrens,45.06,22.54
     >>Dive underwater to the |cRXP_PICK_Bubble Fissure|r
     .complete 870,1 --Explore the waters of the Forgotten Pools
 step
+    #xprate <2.1
     .goto The Barrens,45.2,23.3,40,0
     .goto The Barrens,45.2,22.0,40,0
     .goto The Barrens,44.6,22.5,40,0
@@ -5052,14 +5056,17 @@ step
     >>|cRXP_WARN_The follow-up of this quest has the powerful |cRXP_FRIENDLY_Cauldron Stinger|r |cRXP_WARN_as a reward. You can skip this quest for now if you do not intend to use it|r
     .complete 848,1 --Collect Fungal Spores (x4)
 step
+    #xprate <2.1
     #softcore
 	#completewith ZamahPickup
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step
+    #xprate <2.1
     #hardcore
     #completewith ZamahPickup
     .subzone 380 >> Travel back to the Crossroads
 step
+    #xprate <2.1
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga|r
     .turnin 870 >>Turn in The Forgotten Pools
@@ -5067,6 +5074,7 @@ step
     .target Tonga Runetotem
     .isQuestComplete 870
 step
+    #xprate <2.1
     #optional
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga|r
@@ -5075,6 +5083,7 @@ step
     .target Tonga Runetotem
     .isQuestTurnedIn 877
 step
+    #xprate <2.1
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
     >>|cRXP_WARN_Wait for the RP to finish|r
@@ -5084,6 +5093,7 @@ step
     .target Apothecary Helbrim
     .isQuestComplete 848
 step
+    #xprate <2.1
     #optional
     #label ZamahPickup
     .goto The Barrens,51.44,30.15
@@ -5093,6 +5103,7 @@ step
     .target Apothecary Helbrim
     .isQuestTurnedIn 848
 step
+    #xprate <2.1
     #sticky
     #completewith CauldronStirrer
     +|cRXP_WARN_You are on a timed quest, don't go afk. It will get turned in around 5-10 minutes after pick-up|r
@@ -5176,10 +5187,12 @@ step << Shaman
     .target Boarton Shadetotem
     .train 410104,1
 step
+    #xprate <2.1
     #completewith next
     .goto Thunder Bluff,28.14,32.97,40,0
     .goto Thunder Bluff,28.51,28.95,10 >> Travel to the Spirit Rise and enter the pools of vision
 step
+    #xprate <2.1
     #label CauldronStirrer
     .goto Thunder Bluff,22.82,20.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
@@ -5187,6 +5200,7 @@ step
     .target Apothecary Zamah
     .isOnQuest 853
 step
+    #xprate <2.1
     #completewith ReturntoJahan
     +Equip the |T135145:0|t[Cauldron Stirrer]
     .use 5340
@@ -5466,11 +5480,20 @@ step
     .accept 5041 >>Accept Supplies for the Crossroads
     .target Thork
 step
+    #xprate <2.1
     .goto The Barrens,51.62,30.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r
     >>|cRXP_WARN_He is at the top of the tower|r
     .accept 867 >>Accept Harpy Raiders
     .target Darsok Swiftdagger
+step
+    #optional
+    .goto The Barrens,52.23,31.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r
+    .turnin 860 >>Turn in Sergra Darkthorn
+    .accept 844 >>Accept Plainstrider Menace
+    .target Sergra Darkthorn
+    .isOnQuest 6860
 step
     .goto The Barrens,52.23,31.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r
