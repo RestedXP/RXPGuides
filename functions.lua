@@ -1438,6 +1438,9 @@ function addon.functions.complete(self, ...)
     local step = element.step
     local id = self.element.questId
 
+    if IsQuestTurnedIn(id) then
+        addon.SetElementComplete(self,true)
+    end
     if not event then
         if step.active and addon.questCompleteItems[id] then
             local qItem = addon.questCompleteItems[id]
