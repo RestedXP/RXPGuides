@@ -1523,6 +1523,7 @@ step
     .goto Durotar,44.70,52.47
     .deathskip >> |cRXP_WARN_Alternatively, die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r near the arrow|r
     .target Spirit Healer
+    .subzoneskip 362
 step
     #label Betrayers
     .goto Durotar,51.95,43.50
@@ -1579,7 +1580,7 @@ step << Warrior/Rogue
 step << Hunter
     #season 2
     .goto Durotar,40.61,52.19
-    >>Cast |T132212:0|t[Hunter's Mark] on the |cRXP_ENEMY_Rustling Bush|r
+    >>|cRXP_WARN_Cast|r |T132212:0|t[Hunter's Mark] |cRXP_WARN_on the|r |cRXP_ENEMY_Rustling Bush|r
     >>Kill the |cRXP_ENEMY_Razormane Poacher|r that spawns. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
     .collect 206155,1 --Rune of Marksmanship (1)
     .mob Rustling Bush
@@ -3164,7 +3165,7 @@ step << Hunter
     .target Thotar
 step << Hunter
     .goto Durotar,52.97,41.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to |cRXP_FRIENDLY_Ghrawt|r. Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_and a|r |T134410:0|t[Meidum Quiver] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to |cRXP_FRIENDLY_Ghrawt|r. Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_and a|r |T134410:0|t[Medium Quiver] |cRXP_BUY_from him|r
     .collect 2515,1200,6082,1 --Sharp Arrow (1200)
     .collect 11362,1,6082,1 --Medium Quiver (1)
     .target Ghrawt
@@ -8316,6 +8317,7 @@ step
     .goto Durotar,44.70,52.47
     .deathskip >> |cRXP_WARN_Alternatively, die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r near the arrow|r
     .target Spirit Healer
+    .subzoneskip 362
 step
     #label Betrayers
     .goto Durotar,51.95,43.50
@@ -8372,7 +8374,7 @@ step << Warrior/Rogue
 step << Hunter
     #season 2
     .goto Durotar,40.61,52.19
-    >>Cast |T132212:0|t[Hunter's Mark] on the |cRXP_ENEMY_Rustling Bush|r
+    >>|cRXP_WARN_Cast|r |T132212:0|t[Hunter's Mark] |cRXP_WARN_on the|r |cRXP_ENEMY_Rustling Bush|r
     >>Kill the |cRXP_ENEMY_Razormane Poacher|r that spawns. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
     .collect 206155,1 --Rune of Marksmanship (1)
     .mob Rustling Bush
@@ -8384,7 +8386,7 @@ step << Hunter
     .use 206155
     .itemcount 206155,1
 step
-    #completewith next
+    #completewith BurningBladeTurnin
     .hs >>Hearth to the Valley of Trials
     .use 6948
 step
@@ -8405,6 +8407,7 @@ step
     .target Duokna
     .money >0.03
 step
+    #label BurningBladeTurnin
     .goto Durotar,42.85,69.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zureetha|r
     .turnin 794 >>Turn in Burning Blade Medallion
@@ -9099,9 +9102,16 @@ step << Rogue
     .use 203990
     .itemcount 203990,1
 step
+    #xprate <1.5
     #label TravelToTiragarde
     .goto Durotar,59.20,58.38,60,0
     .subzone 372 >> Travel to Tiragarde Keep. Grind mobs on the way
+    .isOnQuest 784
+step
+    #xprate >1.49
+    #label TravelToTiragarde
+    .goto Durotar,59.20,58.38,60,0
+    .subzone 372 >> Travel to Tiragarde Keep
     .isOnQuest 784
 step
     #sticky
@@ -9914,7 +9924,7 @@ step << Hunter
     .target Thotar
 step << Hunter
     .goto Durotar,52.97,41.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to |cRXP_FRIENDLY_Ghrawt|r. Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_and a|r |T134410:0|t[Meidum Quiver] |cRXP_BUY_from him|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to |cRXP_FRIENDLY_Ghrawt|r. Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_and a|r |T134410:0|t[Medium Quiver] |cRXP_BUY_from him|r
     .collect 2515,1200,6082,1 --Sharp Arrow (1200)
     .collect 11362,1,6082,1 --Medium Quiver (1)
     .target Ghrawt
@@ -10606,14 +10616,17 @@ step << Warlock
 step << Shaman/Mage/Hunter
     #xprate >2.09
     #completewith next
+    .goto Durotar,45.54,12.14
     .zone Durotar >>Exit Orgrimmar
 step << Hunter
     #xprate >2.09
     #completewith next
-    .goto Durotar,36.29,47.38,0
-    .goto Durotar,36.29,52.09,0
-    .waypoint Durotar,36.29,47.38,40,0
-    +Tame a |cRXP_ENEMY_Venomtail Scorpid|r
+    #loop
+    .goto Durotar,43.73,16.42,0
+    .goto Durotar,43.73,16.42,50,0
+    .goto Durotar,41.52,20.06,50,0
+    .goto Durotar,38.43,17.65,50,0
+    .cast 1515 >>Tame a |cRXP_ENEMY_Venomtail Scorpid|r
     >>|cRXP_WARN_This will allow you to train|r |T132140:0|t[Claw Rank 2]
     .mob Venomtail Scorpid
     .train 16828,1 --Claw rank 2

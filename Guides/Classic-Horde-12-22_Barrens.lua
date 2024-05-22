@@ -918,6 +918,7 @@ step << skip
 --XX Need to add goto about halfway down since they only spawn up north, would be too messy to add it
 step
     #completewith next
+    .goto The Barrens,63.89,31.66,100,0
     >>Kill |cRXP_ENEMY_Zhevra Runners|r. Loot them for their |cRXP_LOOT_Hooves|r
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
@@ -1372,7 +1373,7 @@ step << Tauren Hunter
 step << Troll Hunter/Orc Hunter
     .goto The Barrens,51.11,29.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uthrok|r
-    .vendor >> |cRXP_BUY_Buy a|r |T135490:0|t[Fine Longbow] |cRXP_BUY_from him if it's available and stock up on arrows|r
+    .vendor >> |cRXP_BUY_Buy a|r |T135490:0|t[|cRXP_FRIENDLY_Fine Longbow|r] |cRXP_BUY_from him if it's available and stock up on arrows|r
     >>|cRXP_WARN_If it's not up, buy a|r |T135490:0|t[Reinforced Bow] |cRXP_WARN_instead|r
     .collect 2515,1200,870,1 << Hunter --Sharp Arrow (1200)
     .target Uthrok
@@ -4019,7 +4020,7 @@ step
     #label EnterDM
     .goto Eastern Kingdoms,40.92,81.97,8,0
     .goto Eastern Kingdoms,40.92,82.02,8,0
-    .goto Eastern Kingdoms,40.89,82.04,8,0
+    .goto Eastern Kingdoms,40.89,82.09,8,0
     .goto Eastern Kingdoms,40.96,82.10,8,0
     .goto Eastern Kingdoms,40.92,82.16,15,0
     .goto Eastern Kingdoms,40.82,82.30,15,0
@@ -6318,14 +6319,14 @@ RXPGuides.RegisterGuide([[
 
 
 step << !Tauren
-    #xprate <2.05 << !Undead
+    #xprate <2.1 << !Undead
     #softcore
     #completewith ThievesPickup
     .goto The Barrens,50.72,32.61
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .subzoneskip 380
 step << !Tauren
-    #xprate <2.05 << !Undead
+    #xprate <2.1 << !Undead
     #hardcore
     #completewith ThievesPickup
     .goto The Barrens,52.34,29.27,150 >> Travel to The Crossroads
@@ -6337,17 +6338,11 @@ step << !Tauren
     .accept 870 >>Accept The Forgotten Pools
     .target Tonga Runetotem
 step << !Undead !Tauren
-    #xprate <2.05
+    #xprate <2.1
     #hardcore
     .goto The Barrens,52.62,29.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zargh|r
     .accept 6365 >>Accept Meats to Orgrimmar
-    .target Zargh
-step << !Undead !Tauren
-    #xprate >2.04
-    .goto The Barrens,52.62,29.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zargh|r
-    .turnin 6386 >> Turn in Return to the Crossroads
     .target Zargh
 step << !Tauren
     .goto The Barrens,52.24,31.01
@@ -6374,7 +6369,7 @@ step << !Tauren
     .accept 5041 >>Accept Supplies for the Crossroads
     .target Thork
 step << !Undead !Tauren
-    #xprate <2.05
+    #xprate <2.1
     #hardcore
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
@@ -6502,7 +6497,13 @@ step << Undead
     .target Innkeeper Boorand Plainswind
     .dungeon !RFC
 step << !Undead !Tauren
-    #xprate <2.05
+    #xprate >2.09
+    .goto The Barrens,52.62,29.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zargh|r
+    .turnin 6386 >> Turn in Return to the Crossroads
+    .target Zargh
+step << !Undead !Tauren
+    #xprate <2.1
     #softcore
     .goto The Barrens,52.62,29.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zargh|r
@@ -6715,7 +6716,7 @@ step
     .target Darsok Swiftdagger
 step << !Tauren !Undead
     #softcore
-    #xprate <2.05
+    #xprate <2.1
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .turnin 6365 >>Turn in Meats to Orgrimmar
@@ -7349,6 +7350,7 @@ step << skip
 --XX Need to add goto about halfway down since they only spawn up north, would be too messy to add it
 step
     #completewith next
+    .goto The Barrens,63.89,31.66,100,0
     >>Kill |cRXP_ENEMY_Zhevra Runners|r. Loot them for their |cRXP_LOOT_Hooves|r
     .complete 845,1 --Zhevra Hooves (4)
     .mob Zhevra Runner
@@ -7830,7 +7832,7 @@ step
     .goto The Barrens,52.24,31.01
     .target Sergra Darkthorn
     .target Thork
-step << Troll Hunter/Orc Hunter
+step << skip
     .goto The Barrens,51.67,29.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Barg|r
     >>|cRXP_BUY_Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_from him|r
@@ -7845,11 +7847,10 @@ step << Tauren Hunter
 step << Troll Hunter/Orc Hunter
     .goto The Barrens,51.11,29.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uthrok|r
-    .vendor >> |cRXP_BUY_Buy a|r |T135490:0|t[Fine Longbow] |cRXP_BUY_from him if it's available and stock up on arrows|r
+    .vendor >> |cRXP_BUY_Buy a|r |T135490:0|t[|cRXP_FRIENDLY_Fine Longbow|r] |cRXP_BUY_from him if it's available and stock up on arrows|r
     >>|cRXP_WARN_If it's not up, buy a|r |T135490:0|t[Reinforced Bow] |cRXP_WARN_instead|r
     .collect 2515,1200,870,1 << Hunter --Sharp Arrow (1200)
     .target Uthrok
-    .isOnQuest 903
 step << Tauren Hunter
     .goto The Barrens,51.11,29.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Uthrok|r|cRXP_BUY_. Buy a|r |T135613:0|t[Hunter's Boomstick] |cRXP_BUY_from him|r
@@ -7914,6 +7915,24 @@ step
     .complete 850,1 --Kodobane's Head (1)
     .mob Barak Kodobane
 step
+    #completewith KodobaneTurnin
+    >>Kill every |cRXP_ENEMY_Raptor|r you see. Loot them for their |cRXP_LOOT_Heads|r
+    .complete 869,1 --Raptor Head (12)
+    .mob Sunscale Lashtail
+    .mob Sunscale Screecher
+step
+    #xprate >2.09
+    .goto The Barrens,41.62,23.42,50,0
+    .goto The Barrens,41.30,24.31,50,0
+    .goto The Barrens,40.52,22.88,50,0
+    .goto The Barrens,41.00,21.19,50,0
+    .goto The Barrens,40.32,20.69,50,0
+    .goto The Barrens,41.62,23.42
+    >>Kill |cRXP_ENEMY_Savannah Prowlers|r. Loot them for their |cRXP_LOOT_Claws|r and |cRXP_LOOT_Tusks|r
+    .complete 903,1 --Prowler Claws (7)
+    .complete 821,1 --Savannah Lion Tusk (5)
+    .mob Savannah Prowler
+step
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .turnin 850 >>Turn in Kolkar Leaders
@@ -7954,6 +7973,7 @@ step
     .complete 821,1 --Savannah Lion Tusk (5)
     .mob Savannah Prowler
 step << Orc Warrior/Troll Warrior/Tauren Warrior
+    #xprate <2.1
     #season 0
     #completewith next
     .goto The Barrens,43.80,12.22,0
@@ -8137,6 +8157,7 @@ step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .mob Ornery Plainstrider
     .dungeon RFC
 step
+    #xprate <2.1
     #completewith Samophlange
     +|cRXP_WARN_Be careful of|r |cRXP_ENEMY_Sunscale Scytheclaws|r |cRXP_WARN_in the area. They are up to level 18 and can|r |T132152:0|t[Thrash]
     .dungeon !RFC
@@ -8150,11 +8171,19 @@ step
     .mob Ornery Plainstrider
     .dungeon !RFC
 step
+    #xprate <2.1
     .goto The Barrens,43.80,12.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vrang|r
     >>|cRXP_FRIENDLY_Vrang|r |cRXP_WARN_sells|r |T133476:0|t[|cRXP_FRIENDLY_Heavy Spiked Mace|r] |cRXP_WARN_which is a limited supply item|r << Orc Warrior/Troll Warrior/Tauren Warrior
 	.vendor	>> Vendor trash and repair
     .dungeon !RFC
+step
+    #xprate >2.09
+    #completewith next
+    >>Kill every |cRXP_ENEMY_Raptor|r you see. Loot them for their |cRXP_LOOT_Heads|r
+    .complete 869,1 --Raptor Head (12)
+    .mob Sunscale Lashtail
+    .mob Sunscale Screecher
 step
 	#label Samophlange
     .goto The Barrens,52.40,11.65
@@ -8362,7 +8391,7 @@ step << Mage
     .target Pephredo
     .xp <18,1
 step << !Tauren !Undead
-    #xprate <2.05
+    #xprate <2.1
     .goto Orgrimmar,54.097,68.407
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Gryshka|r
     .turnin 6384 >>Turn in Ride to Orgrimmar
@@ -8370,7 +8399,7 @@ step << !Tauren !Undead
     .target Innkeeper Gryshka
     .isOnQuest 6384
 step << !Tauren !Undead
-    #xprate <2.05
+    #xprate <2.1
     .goto Orgrimmar,45.120,63.889
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Doras|r
     .turnin 6385 >> Turn in Doras the Wind Rider Master
@@ -8378,7 +8407,7 @@ step << !Tauren !Undead
     .target Doras
     .isOnQuest 6385
 step << !Tauren !Undead
-    #xprate <2.05
+    #xprate <2.1
     .goto Orgrimmar,45.120,63.889
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Doras|r
     .accept 6386 >> Accept Return to the Crossroads
@@ -8679,7 +8708,7 @@ step
     .accept 881 >>Accept Echeyakee
     .target Sergra Darkthorn
 step << !Tauren !Undead
-    #xprate <2.05
+    #xprate <2.1
     .goto The Barrens,52.62,29.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zargh|r
     .turnin 6386 >> Turn in Return to the Crossroads
@@ -10772,7 +10801,7 @@ step
     #label EnterDM
     .goto Eastern Kingdoms,40.92,81.97,8,0
     .goto Eastern Kingdoms,40.92,82.02,8,0
-    .goto Eastern Kingdoms,40.89,82.04,8,0
+    .goto Eastern Kingdoms,40.89,82.09,8,0
     .goto Eastern Kingdoms,40.96,82.10,8,0
     .goto Eastern Kingdoms,40.92,82.16,15,0
     .goto Eastern Kingdoms,40.82,82.30,15,0
