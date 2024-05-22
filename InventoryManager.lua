@@ -620,7 +620,9 @@ local function ProcessJunk(sellWares,override)
         if inventoryManager.sellGoods then
             local value = GetMoney() - inventoryManager.sellGoods
             local colour = addon.guideTextColors["RXP_WARN_"]
-            print(format(L("RXPGuides: |c%sSold junk items for|r %s"),colour,GetCoinTextureString(value)))
+            if value > 0 then
+                print(format(L("RXPGuides: |c%sSold junk items for|r %s"),colour,GetCoinTextureString(value)))
+            end
             inventoryManager.sellGoods = false
         end
     elseif isMerchant then
