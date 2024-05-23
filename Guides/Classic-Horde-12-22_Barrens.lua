@@ -3658,6 +3658,7 @@ step
     .train 425476,1 << Warlock
     .train 424990,1 << Rogue
     .train 410096,1 << Shaman
+    .money <3.0
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r, |cRXP_FRIENDLY_Mebok|r and |cRXP_FRIENDLY_Drohn|r
     .turnin 1094 >>Turn in Further Instructions
@@ -4947,6 +4948,7 @@ step << Hunter
 step << Hunter
     .goto Thunder Bluff,46.98,45.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kuna|r
+    >>|cRXP_BUY_Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_from her|r
     .collect 2515,1600,493,1 << Hunter --Sharp Arrow (1600)
     .target Kuna Thunderhorn
 step << Warlock
@@ -7933,6 +7935,7 @@ step
     .complete 821,1 --Savannah Lion Tusk (5)
     .mob Savannah Prowler
 step
+    #xprate <2.1
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .turnin 850 >>Turn in Kolkar Leaders
@@ -7941,6 +7944,7 @@ step
     .target Regthar Deathgate
     .isQuestComplete 855
 step
+    #xprate <2.1
     #label KodobaneTurnin
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
@@ -7948,12 +7952,28 @@ step
     .accept 851 >>Accept Verog the Dervish
     .target Regthar Deathgate
 step
+    #xprate <2.1
     #optional
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .accept 851 >>Accept Verog the Dervish
     .target Regthar Deathgate
     .isQuestTurnedIn 850
+step
+    #xprate >2.09
+    .goto The Barrens,45.35,28.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
+    .turnin 850 >>Turn in Kolkar Leaders
+    .turnin 855 >>Turn in Centaur Bracers
+    .target Regthar Deathgate
+    .isQuestComplete 855
+step
+    #xprate >2.09
+    #label KodobaneTurnin
+    .goto The Barrens,45.35,28.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
+    .turnin 850 >>Turn in Kolkar Leaders
+    .target Regthar Deathgate
 step
     #completewith next
     >>Kill every |cRXP_ENEMY_Raptor|r you see. Loot them for their |cRXP_LOOT_Heads|r
@@ -8928,6 +8948,7 @@ step
     .train 425476,1 << Warlock
     .train 424990,1 << Rogue
     .train 410096,1 << Shaman
+    .money <3.0
 step
     .goto The Barrens,62.05,39.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Wiley|r
@@ -9033,6 +9054,7 @@ step
     >>Click the |cRXP_PICK_Bubble Fissure|r underwater
     .complete 877,1 --Test the Dried Seeds (1)
 step << Druid
+    #xprate <2.1
     #season 2
     #completewith Verog
     >>Kill |cRXP_ENEMY_Kolkar|r. Loot them for a |T134237:0|t[|cRXP_LOOT_Kolkar Booty Key|r]
@@ -9041,6 +9063,7 @@ step << Druid
     .mob Kolkar Stormer
     .train 407988,1
 step
+    #xprate <2.1
     #completewith next
     #loop
     .goto The Barrens,55.80,45.78,50,0
@@ -9059,7 +9082,7 @@ step
     .mob Kolkar Marauder
     .isOnQuest 851
 step
-    #label Verog
+    #xprate <2.1
     .goto The Barrens,52.95,41.75
     >>Kill |cRXP_ENEMY_Verog|r. Loot him for his |cRXP_LOOT_Head|r
     >>|cRXP_WARN_He has a chance of spawning every time a |cRXP_ENEMY_Kolkar|r is killed|r
@@ -9067,6 +9090,9 @@ step
     .complete 851,1 --Verog's Head (1)
     .unitscan Verog the Dervish
     .isOnQuest 851
+step
+    #optional
+    #label Verog
 step << Druid
     #season 2
     #loop
@@ -9284,12 +9310,21 @@ step
     .isQuestComplete 855
 step
     #xprate <2.1 << Warlock
-    #label Leaders
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .turnin 851 >>Turn in Verog the Dervish
     .accept 852 >>Accept Hezrul Bloodmark
     .target Regthar Deathgate
+    .isQuestComplete 851
+step
+    #optional
+    #label Leaders
+    #xprate <2.1 << Warlock
+    .goto The Barrens,45.35,28.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
+    .accept 852 >>Accept Hezrul Bloodmark
+    .target Regthar Deathgate
+    .isQuestTurnedIn 851
 step
     #xprate <2.1 << Warlock
     #completewith Hezrul
@@ -9354,7 +9389,7 @@ step
     .unitscan Hezrul Bloodmark
     .isQuestTurnedIn 851
 step
-    #xprate <2.1 << Warlock
+    #xprate <2.1
     .goto The Barrens,45.64,38.16,0
     .goto The Barrens,45.64,38.16,50,0
     .goto The Barrens,45.84,37.86,50,0
@@ -10418,6 +10453,7 @@ step
     .train 425476,1 << Warlock
     .train 424990,1 << Rogue
     .train 410096,1 << Shaman
+    .money <3.0
 step
     #xprate <2.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r, |cRXP_FRIENDLY_Mebok|r and |cRXP_FRIENDLY_Drohn|r
@@ -10801,7 +10837,7 @@ step
     #label EnterDM
     .goto Eastern Kingdoms,40.92,81.97,8,0
     .goto Eastern Kingdoms,40.92,82.02,8,0
-    .goto Eastern Kingdoms,40.89,82.09,8,0
+    .goto Eastern Kingdoms,40.89,82.04,8,0
     .goto Eastern Kingdoms,40.96,82.10,8,0
     .goto Eastern Kingdoms,40.92,82.16,15,0
     .goto Eastern Kingdoms,40.82,82.30,15,0
@@ -10921,6 +10957,16 @@ step << Warlock
     .turnin 851 >>Turn in Verog the Dervish
     .accept 852 >>Accept Hezrul Bloodmark
     .target Regthar Deathgate
+    .isQuestComplete 851
+step << Warlock
+    #xprate >2.09
+    #optional
+    #label Leaders
+    .goto The Barrens,45.35,28.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
+    .accept 852 >>Accept Hezrul Bloodmark
+    .target Regthar Deathgate
+    .isQuestTurnedIn 851
 step << Warlock
     #xprate >2.09
     #completewith Hezrul
@@ -10978,7 +11024,7 @@ step << Warlock
     .complete 852,1 --Hezrul's Head
     .unitscan Hezrul Bloodmark
     .isQuestTurnedIn 851
-step << Warlock
+step << skip
     #xprate >2.09
     .goto The Barrens,45.64,38.16,0
     .goto The Barrens,45.64,38.16,50,0
@@ -11419,7 +11465,7 @@ step
     .complete 913,1 --Thunderhawk Wings (1)
     .mob Thunderhawk Hatchling
     .mob Thunderhawk Cloudscraper
-step << Shaman
+step
     .goto The Barrens,44.85,59.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorn Skyseer|r
     .turnin 884 >>Turn in Owatanka
@@ -11427,7 +11473,7 @@ step << Shaman
     .accept 874 >>Accept Mahren Skyseer
     .target Jorn Skyseer
     .isOnQuest 884
-step << Shaman
+step
     #label ThunderhawkTurnin
     .goto The Barrens,44.85,59.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorn Skyseer|r
@@ -12084,6 +12130,7 @@ step << Hunter
 step << Hunter
     .goto Thunder Bluff,46.98,45.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kuna|r
+    >>|cRXP_BUY_Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_from her|r
     .collect 2515,1600,493,1 << Hunter --Sharp Arrow (1600)
     .target Kuna Thunderhorn
 step << !Shaman !Rogue
@@ -12747,7 +12794,7 @@ step
     #optional
     .abandon 6421 >> Abandon Boulderslide Ravine
     .isOnQuest 6421
-step
+step 
     #optional
     .abandon 4021 >> Abandon Counterattack!
     .isOnQuest 4021
@@ -12767,4 +12814,8 @@ step
     #optional
     .abandon 6563 >> Abandon The Essence of Aku'Mai
     .isOnQuest 6563
+step
+    #optional
+    .abandon 855 >>Abandon Centaur Bracers
+    .isOnQuest 855
 ]])
