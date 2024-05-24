@@ -972,7 +972,7 @@ step
     .collect 204689,1 --Monster Hunter's Second Rune Fragment (1)
     .collect 204690,1 --Monster Hunter's Third Rune Fragment (1)
     .target Vateya Timberhoof
-    .train 403475
+    .train 403475,1
 step
     #season 2
     .use 204688 >>Use the |T134455:0|t[Rune Fragments] to create |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
