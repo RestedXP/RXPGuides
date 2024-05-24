@@ -107,33 +107,6 @@ step
     .use 211279
     .usespell 436523
     .usespell 433397
-    -- .use 210715
-    -- .use 216640
-    -- .use 211106
-    -- .use 210715
-    -- .use 210714
-    -- .use 216644
-    -- .use 211123
-    -- .use 210681
-    -- .use 216643
-    -- .use 211107
-    -- .use 220371
-    -- .use 220372
-    -- .use 220374
-    -- .use 220367
-    -- .use 220368
-    -- .use 220370
-    -- .use 211109
-    -- .use 216642
-    -- .use 211125
-    -- .use 210717
-    -- .use 210718
-    -- .use 211103
-    -- .use 216641
-    -- .use 210716
-    -- .use 216639
-    -- .use 211124
-    -- .use 210681
     .complete 29620,1 --1/1 Speak with High Elder Cloudfall
 step
     .goto 371,42.74,23.17
@@ -1660,7 +1633,8 @@ step
 step
     #completewith next
     .goto 371,65.20,37.45,10,0
-    .goto 371,28.58,13.9740 >> |cRXP_WARN_We arent doing these quests yet.|r Click on the |cRXP_PICK_Portal to Honeydew Village|r to go back.
+    .goto 371,28.58,13.9740 >> |cRXP_WARN_We pick up this quest for a teleport item to this area.|r
+    *Click on the |cRXP_PICK_Portal to Honeydew Village|r to go back.
 step
     .goto 371,31.14,17.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zin'Jun|r
@@ -2308,7 +2282,7 @@ step
 step
     #completewith next
     .goto 371,65.21,37.46,5,0
-    .goto 371,45.8,84.6,40 >> |cRXP_WARN_We aren't doing these quests yet.|r |cRXP_WARN_These quests scale with XP, so it's better to do them later.|r
+    .goto 371,45.8,84.6,40 >>|cRXP_WARN_We pick up this quest for a teleport item to this area.|r
     *Click on the |cRXP_PICK_Portal|r to go back.
     .itemcount 216712,1
 step
@@ -2372,7 +2346,7 @@ step
 step
     #completewith Critical Condition
     .goto 371,65.21,37.46,5,0
-    .goto 371,45.8,84.6,40 >> |cRXP_WARN_We aren't doing these quests yet.|r |cRXP_WARN_These quests scale with XP, so it's better to do them later.|r
+    .goto 371,45.8,84.6,40 >>|cRXP_WARN_We pick up this quest for a teleport item to this area.|r
     *Click on the |cRXP_PICK_Portal|r to go back.
     .itemcount 216712,1
 step
@@ -2382,7 +2356,7 @@ step
     .goto 371,45.83,84.83,5,0
     .goto 371,45.89,84.63,0
     .goto 371,45.83,84.83,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r and buy |T134491:0|t[Nostwin's Voucher.]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r
     .turnin 81976 >>Turn in Bazaar, Isn't It?
     .target Nostwin
 step
@@ -2414,7 +2388,7 @@ step
     .goto 371,45.83,84.83,5,0
     .goto 371,45.89,84.63,0
     .goto 371,45.83,84.83,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r and buy |T134491:0|t[Nostwin's Voucher.]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r
     .accept 81976 >>Turn in Bazaar, Isn't It?
     .turnin 81976 >>Turn in Bazaar, Isn't It?
     .target Nostwin
@@ -2547,7 +2521,7 @@ step
 step
     #completewith Paw'don Village
     .goto 371,65.21,37.46,5,0
-    .goto 371,45.8,84.6,40 >> |cRXP_WARN_We aren't doing these quests yet.|r |cRXP_WARN_These quests scale with XP, so it's better to do them later.|r
+    .goto 371,45.8,84.6,40 >>|cRXP_WARN_We pick up this quest for a teleport item to this area.|r
     *Click on the |cRXP_PICK_Portal|r to go back.
     .itemcount 216712,1
 step
@@ -2854,7 +2828,7 @@ step
     .use 216712
 step
     .goto 371,65.21,37.46,5,0
-    .goto 371,45.8,84.6,40 >> |cRXP_WARN_We aren't doing these quests yet.|r |cRXP_WARN_These quests scale with XP, so it's better to do them later.|r
+    .goto 371,45.8,84.6,40 >>|cRXP_WARN_We pick up this quest for a teleport item to this area.|r
     *Click on the |cRXP_PICK_Portal|r to go back.
     .itemcount 216712,1
     -- step
