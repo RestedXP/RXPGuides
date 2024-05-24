@@ -566,54 +566,43 @@ s["HUNTER"] = {
     [4] = {
         1978 -- serpent sting
     },
-    [6] = {
-        3044 -- arcane shot
-    },
     [8] = {
-        5116, -- concussive shot
-        14260, -- raptor strike r2
-        1130, -- hunter's mark
-        13163, -- aspect of the monkey
-        3127 -- parry
+        5116 -- concussive shot
     },
     [10] = {
-        13165, -- aspect of the hawk
         13549, -- serpent string r2
-        4187, -- great stamina
-        24545, -- natural armor
+        1130, --Hunter's Mark
         1494 -- track beasts
     },
     [12] = {
-        136, -- mend pet
+        13165, -- aspect of the hawk
         2974, -- wing clip
+        136, -- mend pet
+        4187, -- great stamina
+        24545, -- natural armor
         4188, -- great stamina r2
         24549 -- natural armor r2
     },
     [14] = {
-        14281, -- arcane shot 2
-        6197, -- eagle eye
-        1513 -- scare beast
+        6197 -- eagle eye
     },
     [16] = {
-        13795, -- immolation trap
         5118 -- aspect of the cheetah - high prio, can only be trained at 20
     },
     [18] = {
         14318, -- aspect of the hawk r2
         13550, -- serpent sting r3
         3111, -- mend pet r2
-        15147, -- growl r3
+        15147 -- growl r3
     },
     [20] = {
-        781, -- disengage r1
+        2643, -- Multi-Shot r1
+        3044, --Arcane Shot r1
+        13795, --Immolation Trap r1
         4187, -- great stamina r3
-        24550, -- natural armor r3
-        24494, -- nature res
-        24490, -- shadow res
-        24440 -- fire res
+        24550 -- natural armor r3
     },
     [22] = {
-        2643, -- multishot
         14282, -- arcane shot r3
         1499, -- freezing trap r1
         14323, -- hunters mark r2
