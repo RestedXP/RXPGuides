@@ -5,6 +5,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Alliance
 #name 1-6 Shadowglen
+#displayname 1-7 Shadowglen << sod
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor NightElf
@@ -702,7 +703,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Alliance
 #name 6-11 Teldrassil
-#displayname 6-12 Teldrassil << SoD
+#displayname 7-13 Teldrassil << SoD
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor NightElf
