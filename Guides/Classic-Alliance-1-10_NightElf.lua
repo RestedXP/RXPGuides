@@ -5,6 +5,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Alliance
 #name 1-6 Shadowglen
+#displayname 1-7 Shadowglen << sod
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor NightElf
@@ -702,7 +703,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Alliance
 #name 6-11 Teldrassil
-#displayname 6-12 Teldrassil << SoD
+#displayname 7-13 Teldrassil << SoD
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor NightElf
@@ -809,7 +810,7 @@ step << Hunter
     #season 2
     .goto Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeena Featherbow|r
-    .vendor >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_until you have 1 silver left or you have 3 stacks|r
+    .vendor >>|cRXP_BUY_Buy|r |T132382:0|t[Rough Arrows] |cRXP_BUY_until you have 2 silver left or you have 3 stacks|r
     .target Jeena Featherbow
 step << Hunter
     #completewith next
@@ -883,10 +884,10 @@ step << Warrior
     .unitscan Wandering Swordsman
     .train 412507,1
 step << Hunter
-#season 0,1,2
     .goto Teldrassil,56.676,59.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dazalar|r
-	.train 3044>> Train Arcane Shot
+	.train 3044 >> Train Arcane Shot << era
+    .train 5116 >> Train Concussive Shot << sod
     .target Dazalar
 step << Druid
     .goto Teldrassil,55.945,61.566
@@ -1140,18 +1141,14 @@ step << Hunter
 	.vendor >>|cRXP_BUY_Buy up to 800|r |T132382:0|t[Rough Arrows]
     .target Jeena Featherbow
 step << Hunter
-    #season 2
-    .goto Teldrassil,55.890,59.205
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeena Featherbow|r
-	.vendor >>|cRXP_BUY_Buy up to 200|r |T132382:0|t[Rough Arrows]
-    .target Jeena Featherbow
-step << Hunter
     #completewith next
+    #season 0
     +|cRXP_WARN_Equip the|r |T135499:0|t[Hornwood Recurve Bow]
     .use 2506
     .itemcount 2506,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.37
 step << Hunter
+    #season 0
     .goto Teldrassil,56.676,59.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dazalar|r
 	.trainer >> Train your class spells
@@ -1589,6 +1586,7 @@ step << Hunter
     .turnin 6102 >> Turn in Taming the Beast
     .target Dazalar
     .accept 6103 >> Accept Training the Beast
+    .train 1130 >> |cRXP_WARN_Make sure you have trained Hunter's Mark. You will need it to get a rune soon|r
 step << Warrior
 #xprate >1.99
     .goto Teldrassil,55.83,58.31,40,0
@@ -1722,7 +1720,7 @@ step << Hunter
     #season 2
     .goto Teldrassil,55.890,59.205
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeena Featherbow|r
-    >>|cRXP_BUY_Buy 400|r |T132382:0|t[Sharp Arrows]
+    >>|cRXP_BUY_Buy and equip 400|r |T132382:0|t[Sharp Arrows]
     .target Jeena Featherbow
 step << Hunter
     #season 2
@@ -2479,12 +2477,19 @@ step << Warrior
     .complete 1683,1 --Collect Horn of Vorlus (x1)
     .mob Vorlus Vilehoof
 step << Hunter
+    #season 2
     .goto Darnassus,64.2,63.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tLook for |cRXP_FRIENDLY_Jaeana|r, she patrols around the Tradesmen's Terrace
     >>|cRXP_BUY_Buy a stack of|r |T133972:0|t[Tough Jerky] |cRXP_BUY_from her. 
     >>|cRXP_WARN_You will need it to feed your owl, they only eat meat and there's no meat vendor in Darkshore|r
-    .collect 117,20
+    .collect 117,15
     .target Jaeana
+step
+    #season 2
+    .goto Darnassus,70.679,45.379
+    .target Mydrannul
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mydrannul|r
+    .accept 6344 >> Accept Nessa Shadowsong
 step << Hunter
     #season 2
     .goto Darnassus,58.76,44.48
@@ -2652,7 +2657,8 @@ step << Warrior
     .train 412507,1
 step
     #softcore
-	#completewith darn
+	#completewith darn << era
+    #completewith darnSoD << sod
     .deathskip >>Die and respawn at the Darnassus graveyard
     >>|cRXP_WARN_Make sure you're on the west side of the river or you might end up going the wrong way|r << sod
     .target Spirit Healer
@@ -2756,6 +2762,7 @@ step
     .accept 952 >> Accept Grove of the Ancients
 step << !Rogue
     #season 2
+    #label darnSoD
     .goto Darnassus,38.184,21.639
     .target Rellian Greenspyre
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rellian Greenspyre|r
@@ -2869,6 +2876,13 @@ step
     .collect 2449,5,6123,1 << Druid
     .target Auctioneer Tolon
     .target Auctioneer Golothas
+step << Hunter
+    .goto Darnassus,64.2,63.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tLook for |cRXP_FRIENDLY_Jaeana|r, she patrols around the Tradesmen's Terrace
+    >>|cRXP_BUY_Buy a stack of|r |T133972:0|t[Tough Jerky] |cRXP_BUY_from her. 
+    >>|cRXP_WARN_You will need it to feed your owl, they only eat meat and there's no meat vendor in Darkshore|r
+    .collect 117,15
+    .target Jaeana
 step << Hunter
     #season 2
     .goto Darnassus,64.2,59.6
