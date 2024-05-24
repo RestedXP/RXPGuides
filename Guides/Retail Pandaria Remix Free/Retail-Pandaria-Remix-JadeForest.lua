@@ -15,8 +15,6 @@ step
     .cast 441154 >> Use |T134491:0|t[Nostwin's Voucher] to teleport to Infinite Bazaar.
     .use 217930
     .itemcount 217930,1
---x step
---x upgrade gear perhaps
 step
     .goto 371,42.96,27.44 --x left
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arturos|r
@@ -519,7 +517,7 @@ step
     .mob Ancient Spirit
 step
     #completewith next
-    .logout 19 >> Logout to skip roleplay
+    .logout >> |cRXP_WARN_Press Escape and select Logout|r wait until you can log back in to skip roleplay.
 step
     .goto 371,44.23,15.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pei-Zhi|r
