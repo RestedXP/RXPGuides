@@ -1,6 +1,6 @@
 local _, addon = ...
 --regular classic era spell list
-if addon.game ~= "CLASSIC" or addon.player.season == 2 then return end
+if addon.game ~= "CLASSIC" or addon.player.season ~= 2 then return end
 C_Spell.RequestLoadSpellData(2575) -- mining
 C_Spell.RequestLoadSpellData(2368) -- herbalism
 
