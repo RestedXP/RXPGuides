@@ -43,7 +43,7 @@ step
     .target Momentus
 step
     #completewith next
-    .goto 371,42.5,27.32
+    .goto 371,42.5,27.32,10,0
     .vendor >>Talk to |cRXP_FRIENDLY_Momentus|r and upgrade your gear |cRXP_WARN_It's recommended for faster leveling but uses bronze, a cosmetic currency.|r
     .skipgossip
     .target Momentus
@@ -1599,11 +1599,25 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moratari|r
     .target Moratari
     .accept 80012 >>Accept Dragonriding
+    .timer 5,RP
 step
+    .xp >14,1
     .goto 371,28.6,14.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r
-    .buy 217930,2
-    -- .turnin 81976 >>Turn in Bazaar, Isn't It? --high chance of inaccessibility requires level 14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r and buy |T134491:0|t[Nostwin's Voucher.]
+    .collect 217930,10
+    .buy 217930,10
+    .skipgossip
+    .target Nostwin
+step
+    .xp <14,1
+    #loop
+    .goto 371,28.6,14.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r and buy |T134491:0|t[Nostwin's Voucher.]
+    .collect 217930,10
+    .buy 217930,10
+    .skipgossip
+    .accept 81976 >>Turn in Bazaar, Isn't It?
+    .turnin 81976 >>Turn in Bazaar, Isn't It?
     .target Nostwin
 step
     .goto 371,28.53,14.01
@@ -1630,9 +1644,10 @@ step
     .target Lord Andestrasz
 step
     #completewith next
-    .goto 371,65.20,37.45,10,0
-    .goto 371,28.58,13.9740 >> |cRXP_WARN_We pick up this quest for a teleport item to this area.|r
+    .goto 371,65.21,37.46,5,0
+    .goto 371,28.58,14.04,40 >>|cRXP_WARN_We pick up this quest for a teleport item to this area.|r
     *Click on the |cRXP_PICK_Portal to Honeydew Village|r to go back.
+    .itemcount 216712,1
 step
     .goto 371,31.14,17.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zin'Jun|r
@@ -2488,8 +2503,8 @@ step
 step
     .goto 371,41.39,79.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sully "The Pickle" McLeary|r |cRXP_WARN_infont of the temple.|r
-    .turnin 31741 >>Turn in Unfair Trade
-    .turnin 31742 >>Turn in Unfair Trade
+    .turnin 31741 >>Turn in Twinspire Keep
+    .turnin 31742 >>Turn in Fractured Forces
     .turnin 31743 >>Turn in Smoke Before Fire
     .turnin 31744 >>Turn in Unfair Trade
     .accept 30070 >>Accept The Fall of Ga'trul
@@ -2765,26 +2780,7 @@ step
     .goto 371,58.76,81.28
     .target +Bold Karasshi
 step
-    #completewith Clothes
-    #hidewindow
-    #loop
-    .goto 371,65.25,87.01,20,0
-    .goto 371,65.57,87.88,20,0
-    .goto 371,66.05,87.56,10,0
-    .goto 371,66.29,88.06,20,0
-    .goto 371,67.88,87.89,20,0
-    .goto 371,67.29,86.71,20,0
-    .goto 371,65.77,86.17,20,0
-    .goto 371,65.25,87.01,0
-    .goto 371,65.57,87.88,0
-    .goto 371,66.05,87.56,0
-    .goto 371,66.29,88.06,0
-    .goto 371,67.88,87.89,0
-    .goto 371,67.29,86.71,0
-    .goto 371,65.77,86.17,0
-    +1
-step
-    #completewith next
+    #completewith Watersmithing
     >>Kill |cRXP_ENEMY_Slingtail Stickypaw.|r Loot them for |cRXP_LOOT_Clothes.|r
     .complete 29887,3 --1/1 Jade Crown
     .complete 29887,4 --1/1 Rosewood Beads
@@ -2792,17 +2788,44 @@ step
     .complete 29887,1 --1/1 Waterspeaker's Staff
     .mob Slingtail Stickypaw
 step
+    #completewith Watersmithing
     >>Interact with |cRXP_PICK_Dead Pearlfin Villager|r to collect |cRXP_LOOT_Glassfin Heirlooms.|r
     .complete 29762,1 --8/8 Glassfin Heirloom
     .target Pearlfin Villager
 step
-    #label Clothes
+    #label Watersmithing
+    .goto 371,66.03,87.55
+    .achievement 6846,1 >>Click on the |cRXP_PICK_Scroll|r
+step
+    #completewith Clothes
+    #hidewindow
+    #loop
+    .goto 371,67.25,87.32,30,0
+    .goto 371,66.2,88.25,30,0
+    .goto 371,65.46,87.7,30,0
+    .goto 371,65.25,86.94,30,0
+    .goto 371,67.25,87.32,0
+    .goto 371,66.2,88.25,0
+    .goto 371,65.46,87.7,0
+    .goto 371,65.25,86.94,0
+    +1
+step
+    #completewith next
+    >>Interact with |cRXP_PICK_Dead Pearlfin Villager|r to collect |cRXP_LOOT_Glassfin Heirlooms.|r
+    .complete 29762,1 --8/8 Glassfin Heirloom
+    .target Pearlfin Villager
+ste
     >>Kill |cRXP_ENEMY_Slingtail Stickypaw.|r Loot them for |cRXP_LOOT_Clothes.|r
     .complete 29887,3 --1/1 Jade Crown
     .complete 29887,4 --1/1 Rosewood Beads
     .complete 29887,2 --1/1 Ceremonial Robes
     .complete 29887,1 --1/1 Waterspeaker's Staff
     .mob Slingtail Stickypaw
+step
+    #label Clothes
+    >>Interact with |cRXP_PICK_Dead Pearlfin Villager|r to collect |cRXP_LOOT_Glassfin Heirlooms.|r
+    .complete 29762,1 --8/8 Glassfin Heirloom
+    .target Pearlfin Villager
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bold Karasshi|r and |cRXP_FRIENDLY_Pearlkeeper Fujin.|r
     .turnin 29762 >>Turn in Family Heirlooms
@@ -2829,13 +2852,13 @@ step
     .goto 371,45.8,84.6,40 >>|cRXP_WARN_We pick up this quest for a teleport item to this area.|r
     *Click on the |cRXP_PICK_Portal|r to go back.
     .itemcount 216712,1
-    -- step
-    -- .goto 371,31.96,27.76
-    -- .cast 3365 >>Click on the Lucky Pandaren Coin
-    -- step
-    -- .goto 371,26.22,32.35
-    -- .cast 3365 >>Click on the Ancient Pandaren Tea Pot
-    -- step
-    -- .goto 371,23.5,35.04
-    -- .cast 3365 >>Click on the Ancient Pandaren Tea Pot
+-- step
+--     .goto 371,31.96,27.76
+--     .cast 3365 >>Click on the Lucky Pandaren Coin
+-- step
+--     .goto 371,26.22,32.35
+--     .cast 3365 >>Click on the Ancient Pandaren Tea Pot
+-- step
+--     .goto 371,23.5,35.04
+--     .cast 3365 >>Click on the Ancient Pandaren Tea Pot
 ]])
