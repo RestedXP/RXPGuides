@@ -903,6 +903,7 @@ step
     .accept 929 >> Accept Crown of the Earth
 step << Druid
     #ah
+    #season 0
     .goto Teldrassil,57.721,60.641
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malorne Bladeleaf|r
     >>|T136065:0|t[Herbalism] |cRXP_WARN_is required to gather 5|r |T134187:0|t[Earthroot] |cRXP_WARN_for an important class quest soon. You can unlearn it afterwards|r
@@ -912,6 +913,7 @@ step << Druid
     .itemcount 2449,<5 --Earthroot (<5)
 step << Druid
     #ssf
+    #season 0
     .goto Teldrassil,57.721,60.641
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malorne Bladeleaf|r
     >>|T136065:0|t[Herbalism] |cRXP_WARN_is required to gather 5|r |T134187:0|t[Earthroot] |cRXP_WARN_for an important class quest soon. You can unlearn it afterwards|r
@@ -923,6 +925,7 @@ step << Druid
     #optional
     #completewith end
     #label GatheringQ
+    #season 0
     .skill herbalism,15 >>|cRXP_WARN_Level your|r |T136065:0|t[Herbalism] |cRXP_WARN_to 15 to be able to gather 5|r |T134187:0|t[Earthroot] |cRXP_WARN_for an important class quest soon. You can unlearn it afterwards|r
     .collect 2449,5,6123,1 --Earthroot (5)
     .disablecheckbox
@@ -930,6 +933,7 @@ step << Druid
     #optional
     #completewith end
     #requires GatheringQ
+    #season 0
     >>|cRXP_WARN_Collect 5 |T134187:0|t[Earthroot] via |T136065:0|t[Herbalism] and rarely |cRXP_PICK_Battered Chests|r for a future class quest|r
     .collect 2449,5,6123,1 --Earthroot (5)
     .skill herbalism,<15,1
@@ -2856,6 +2860,7 @@ step << Priest
     .trainer >> Train lvl 12 Spells
 step << Druid
 #ssf
+    #season 0
     .goto Darnassus,47.95,68.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Firodren Mooncaller|r
     .train 2366 >> Train |T136065:0|t[Herbalism]
@@ -2867,7 +2872,7 @@ step
     .goto Darnassus,56.374,51.820,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to a |cRXP_FRIENDLY_Darnassus Auctioneer|r
     >>Buy the following items for instant turn ins at Darkshore later:
-    >>|T134187:0|t[Earthroot] << Druid
+    >>|T134187:0|t[Earthroot] << Druid era
     >>|T133912:0|t[Darkshore Grouper]
     >>|T133972:0|t[Strider Meat]
     *Skip this step if you wish to not buy any
