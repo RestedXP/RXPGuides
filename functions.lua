@@ -3315,6 +3315,7 @@ function addon.functions.areapoiexists(self, text, zone, ...)
     end
 end
 
+events.questcount = events.complete
 function addon.functions.questcount(self, text, count, ...)
     if type(self) == "string" then
         local element = {}
