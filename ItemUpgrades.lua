@@ -1062,7 +1062,7 @@ end
 
 -- nil if same item
 -- % change otherwise
-function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
+function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip, singleSlot)
     local comparedData = self:GetItemData(itemLink, tooltip)
 
     -- Failed to load (wait for next try) or not equippable
@@ -1086,6 +1086,7 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
 
     local slotsToCompare = {}
 
+    -- TODO override multi-slot comparison
     if type(session.equippableSlots[comparedData.itemEquipLoc]) == "table" then
         -- print("is multi-slot", comparedData.itemEquipLoc)
         slotsToCompare = session.equippableSlots[comparedData.itemEquipLoc]
@@ -1401,7 +1402,7 @@ function addon.itemUpgrades.AH:Scan()
                       AuctionCategories[ahSession.scanType].filters)
 end
 
-local function calculate(itemLink, scanData)
+local function calculateAHItemWeight(itemLink, scanData)
     if scanData.lowestPrice <= 0 then return end
     local itemData = addon.itemUpgrades:GetItemData("item:" .. scanData.itemID)
 
@@ -1450,7 +1451,7 @@ local function calculate(itemLink, scanData)
     scanData.weightIncrease = hightestWeightIncrease
 end
 
-local function analyzeSlotUpgrade(scanData, itemLink, bAS)
+local function analyzeAHSlotUpgrade(scanData, itemLink, bAS)
     -- Empty slot, so the rest of this won't handle itself
     if not bAS then return end
 
@@ -1513,7 +1514,7 @@ function addon.itemUpgrades.AH:Analyze()
 
     local comparisons = {}
     for itemLink, scanData in pairs(ahSession.scanData) do
-        calculate(itemLink, scanData)
+        calculateAHItemWeight(itemLink, scanData)
 
         slotId = session.equippableSlots[scanData.itemEquipLoc]
         if type(slotId) == "table" then
@@ -1527,7 +1528,7 @@ function addon.itemUpgrades.AH:Analyze()
             -- print("Analyze", itemLink, "weightPerCopper",
             --      scanData.weightPerCopper, "relativeWPC",
             --      scanData.relativeWeightPerCopper, "ratio", scanData.ratio)
-            analyzeSlotUpgrade(scanData, itemLink, bAS)
+            analyzeAHSlotUpgrade(scanData, itemLink, bAS)
         end
     end
 end
