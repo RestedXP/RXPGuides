@@ -26,6 +26,62 @@ step
     .vendor >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy additional gems |cRXP_WARN_It's recommended for faster leveling but uses bronze, a cosmetic currency.|r
     .skipgossip
     .target Lidamorrutu
+-- step
+--     .goto 371,43.01,27.58
+--     .achievementComplete 40223,1
+--     .collect 208555,1 >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy |T634012:0|t[Timerunner's Idol.]
+--     .skipgossip
+--     .buy 208555,1
+--     .target Lidamorrutu
+-- step
+--     .goto 371,43.01,27.58
+--     .achievementComplete 20004,1
+--     .collect 208487,1 >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy |T629696:0|t[Timerunner's Ring.]
+--     .skipgossip
+--     .buy 208487,1
+--     .target Lidamorrutu
+-- step
+--     .goto 371,43.01,27.58
+--     .achievementComplete 20005,1
+--     .collect 208491,1 >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy |T645143:0|t[Timerunner's Seal.]
+--     .skipgossip
+--     .buy 208491,1
+--     .target Lidamorrutu
+-- step
+--     .goto 371,43.01,27.58
+--     .achievementComplete 20006,1
+--     .collect 210523,1 >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy |T632849:0|t[Timerunner's Amulet.]
+--     .skipgossip
+--     .buy 210523,1
+--     .target Lidamorrutu
+-- step
+--     .goto 371,43.01,27.58
+--     .achievementComplete 19881,1
+--     .collect 208554,1 >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy |T971287:0|t[Timerunner's Beacon.]
+--     .skipgossip
+--     .buy 208554,1
+--     .target Lidamorrutu
+step
+    .goto 371,43.01,27.58
+    -- .achievementComplete 20005,1
+    -- .achievementComplete 19881,1
+    -- .achievementComplete 20006,1
+    -- .achievementComplete 20004,1
+    -- .achievementComplete 40223,1
+    >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy the jewellery.
+    .collect 208491,1
+    .collect 210523,1
+    .collect 208554,1
+    .collect 208555,1
+    .collect 208487,1
+    .buy 208487,1
+    .buy 208555,1
+    .buy 208555,1
+    .buy 208554,1
+    .buy 208491,1
+    .buy 210523,1
+    .skipgossip
+    .target Lidamorrutu
 step
     .goto 371,42.95,27.73 --x middle
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pythagorus|r
@@ -589,6 +645,7 @@ step
     .accept 29756 >>Accept A Humble Offering
     .target Pei-Zhi
 step
+    #xprate <2
     #completewith Tidemist Cap
     #hidewindow
     #loop
@@ -609,18 +666,22 @@ step
     +1
 --x step add treasure
 step
+    #xprate <2
     #completewith next
     >>Click on the |cRXP_PICK_Tidemist Caps|r
     .complete 29756,1 --10/10 Tidemist Cap
 step
+    #xprate <2
     >>Use |T461804:0|t[Spirit Bottles] on the ground |cRXP_WARN_on cooldown.|r Kill emerging |cRXP_ENEMY_Raging Beast Spirit.|r
     .complete 29753,1 --8/8 Beast Spirits Returned to Nature
     .mob Raging Beast Spirit
 step
+    #xprate <2
     #label Tidemist Cap
     >>Click on the |cRXP_PICK_Tidemist Caps|r
     .complete 29756,1 --10/10 Tidemist Cap
 step
+    #xprate <2
     .goto 371,44.24,15.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pei-Zhi|r
     .turnin 29753 >>Turn in Back to Nature
@@ -659,9 +720,14 @@ RXPGuides.RegisterGuide([[
 #name 1) Jade Forest Defiance Side Quests
 #internal
 
-step << Alliance
-    #completewith next
-    .goto 371,46.31,80.67,40 >>Look for the Treasure on the shrine.
+-- step << Alliance
+--     #completewith next
+--     .goto 371,46.31,80.67,40 >>Look for the Treasure on the shrine.
+step <<  Horde
+    .goto 371,48.32,46.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Old Man Misteye|r
+    .accept 29576 >>Accept An Air of Worry
+    .target Old Man Misteye
 step
     .goto 371,43.49,75.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shao the Defiant|r
@@ -859,8 +925,18 @@ step
     .itemcount 216712,1
     .use 216712
 step
+    #loop
+    .goto 371,49.21,46.01,8,0
+    .goto 371,49.01,46.13,8,0
+    .goto 371,48.97,45.89,8,0
+    .goto 371,49.16,45.75,8,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Toortle Wider|r
+    .accept 80311 >>Accept Order of the Cloud Serpent
+    .target Toortle Wider
+step
     .goto 371,57.64,44.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
+    .turnin 80311 >>Turn in Order of the Cloud Serpent
     .accept 30134 >>Accept Wild Things
     .target Elder Anli
 step
@@ -1739,7 +1815,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rivett Clutchpop|r
     .accept 31777 >>Accept Choppertunity
     .target Rivett Clutchpop
-
 -- PERMOK: WORK IN PROGRESS
 step
     #completewith Cogswing
@@ -1963,6 +2038,9 @@ step
     >>Pick up |T132108:0|t[Lurching Blossoms] |cRXP_WARN_(possible while mounted)|r
     .complete 29815,1 --8/8 Viscous Chlorophyll
     .target Lurching Blossom
+step << Horde
+    .goto 371,26.39,28.33
+    .achievement 6850,1 >>Click on the |cRXP_PICK_Scroll|r
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rivett Clutchpop|r and |cRXP_FRIENDLY_Shademaster Kiryn|r
     .turnin 31112 >>Turn in They're So Thorny!
@@ -2177,7 +2255,7 @@ step
 step
     .goto 371,45.17,95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rell Nightwind|r
-    .turnin 30069 >>Turn in Welcome Wagons
+    .turnin 30069 >>Turn in No Plan Survives Contact with the Enemy
     .turnin 31734 >>Turn in Welcome Wagons
     .accept 31735 >>Accept The Right Tool For The Job
     .target Rell Nightwind
@@ -2370,6 +2448,7 @@ step
     .goto 371,45.89,84.63,0
     .goto 371,45.83,84.83,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r
+    .accept 81976 >>Turn in Bazaar, Isn't It?
     .turnin 81976 >>Turn in Bazaar, Isn't It?
     .target Nostwin
 step
@@ -2711,7 +2790,6 @@ step
     .turnin 29562 >>Turn in Jailbreak
     .timer 54, RP
     .target Bold Karasshi
---x likely skip at this point with higher xprate
 step
     #completewith Accept The Pearlfin Situation
     +|cRXP_WARN_Wait for the roleplay, which will be completed when the timer runs out.|r |cFFFF0000tidy your bags and optimize your equipment use --x item .|r
@@ -2814,7 +2892,7 @@ step
     >>Interact with |cRXP_PICK_Dead Pearlfin Villager|r to collect |cRXP_LOOT_Glassfin Heirlooms.|r
     .complete 29762,1 --8/8 Glassfin Heirloom
     .target Pearlfin Villager
-ste
+step
     >>Kill |cRXP_ENEMY_Slingtail Stickypaw.|r Loot them for |cRXP_LOOT_Clothes.|r
     .complete 29887,3 --1/1 Jade Crown
     .complete 29887,4 --1/1 Rosewood Beads
