@@ -732,13 +732,14 @@ step << Rogue
     .train 921 >>Train |T133644:0|t[Pick Pocket]
     .target Rwag
     .money <0.011
+    .xp <4,1
 step << Rogue
     #season 2
     .goto Durotar,41.27,68.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
     .turnin 77592 >>Turn in Atop the Cliffs << Troll Rogue
     .turnin 77583 >>Turn in Atop the Cliffs << Orc Rogue
-    .train 921 >>Train |T133644:0|t[Pick Pocket]
+    .train 1784 >>Train |T132320:0|t[Stealth]
     .target Rwag
 step << Warrior
     #season 2
@@ -756,7 +757,7 @@ step
     .goto Durotar,44.98,69.13,20,0
     .goto Durotar,45.64,65.70,45,0
     .goto Durotar,47.37,65.67,45,0
-    >>Use the |T133486:0|t[Foreman's Blackjack] on sleeping |cRXP_FRIENDLY_Lazy Peons|r
+    >>|cRXP_WARN_Use the|r |T133486:0|t[Foreman's Blackjack] |cRXP_WARN_on sleeping |r|cRXP_FRIENDLY_Lazy Peons|r
     .complete 5441,1 --Peons Awoken (5)
     .target Lazy Peon
     .use 16114
@@ -1062,7 +1063,7 @@ step
 	.goto Durotar,40.91,60.41,25,0
 	.goto Durotar,38.83,61.84,25,0
 	.goto Durotar,44.98,69.13,25,0
-    >>Use the |T133486:0|t[Foreman's Blackjack] on sleeping |cRXP_FRIENDLY_Lazy Peons|r
+    >>|cRXP_WARN_Use the|r |T133486:0|t[Foreman's Blackjack] |cRXP_WARN_on sleeping |r|cRXP_FRIENDLY_Lazy Peons|r
     .complete 5441,1 --Peons Awoken (5)
     .target Lazy Peon
     .use 16114
@@ -7670,13 +7671,14 @@ step << Rogue
     .train 921 >>Train |T133644:0|t[Pick Pocket]
     .target Rwag
     .money <0.011
+    .xp <4,1
 step << Rogue
     #season 2
     .goto Durotar,41.27,68.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
     .turnin 77592 >>Turn in Atop the Cliffs << Troll Rogue
     .turnin 77583 >>Turn in Atop the Cliffs << Orc Rogue
-    .train 921 >>Train |T133644:0|t[Pick Pocket]
+    .train 1784 >>Train |T132320:0|t[Stealth]
     .target Rwag
 step << Warrior
     #season 2
@@ -7694,7 +7696,7 @@ step
     .goto Durotar,44.98,69.13,20,0
     .goto Durotar,45.64,65.70,45,0
     .goto Durotar,47.37,65.67,45,0
-    >>Use the |T133486:0|t[Foreman's Blackjack] on sleeping |cRXP_FRIENDLY_Lazy Peons|r
+    >>|cRXP_WARN_Use the|r |T133486:0|t[Foreman's Blackjack] |cRXP_WARN_on sleeping |r|cRXP_FRIENDLY_Lazy Peons|r
     .complete 5441,1 --Peons Awoken (5)
     .target Lazy Peon
     .use 16114
@@ -8000,7 +8002,7 @@ step
 	.goto Durotar,40.91,60.41,25,0
 	.goto Durotar,38.83,61.84,25,0
 	.goto Durotar,44.98,69.13,25,0
-    >>Use the |T133486:0|t[Foreman's Blackjack] on sleeping |cRXP_FRIENDLY_Lazy Peons|r
+    >>|cRXP_WARN_Use the|r |T133486:0|t[Foreman's Blackjack] |cRXP_WARN_on sleeping |r|cRXP_FRIENDLY_Lazy Peons|r
     .complete 5441,1 --Peons Awoken (5)
     .target Lazy Peon
     .use 16114
@@ -8102,6 +8104,12 @@ step << Priest
     .turnin 3085 >>Turn in Hallowed Tablet
     .money <0.01
     .target Ken'jai
+step << Rogue
+    #season 2
+    .goto Durotar,41.27,68.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
+    .train 921 >>Train |T133644:0|t[Pick Pocket]
+    .target Rwag
 step << !Warlock
 	.goto Durotar,42.85,69.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zureetha|r
@@ -8154,12 +8162,6 @@ step << Warrior
     .train 100 >> Train |T132337:0|t[Charge]
     .target Frang
     .money <0.01
-step << Rogue
-    #season 2
-    .goto Durotar,41.27,68.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rwag|r
-    .train 921 >>Train |T133644:0|t[Pick Pocket]
-    .target Rwag
 step
     .goto Durotar,44.63,68.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thazz'ril|r
@@ -10669,6 +10671,15 @@ step
     .hs >> Hearth to The Crossroads
     .use 6948
     .subzoneskip 380
+    .cooldown item,6948,>0
+step
+    #xprate >2.09
+    .goto Orgrimmar,45.12,63.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Doras|r
+    .fly Crossroads >> Fly to Crossroads
+    .target Doras
+    .subzoneskip 380
+    .cooldown item,6948,<0
 step
     #xprate <2.1
     #completewith RazorTurnins2
