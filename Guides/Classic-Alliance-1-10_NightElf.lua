@@ -19,11 +19,6 @@ step
     .target Conservator Ilthalaine
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Conservator Ilthalaine|r
     .accept 456 >> Accept The Balance of Nature
-step << Druid
-    #season2
-    #sticky
-    #completewith DTrain4
-    .equip 5 >> Be on the lookout for a chestpiece drop from the mobs you kill. You will need one to engrave a rune on in a bit
 step
     #sticky
     #label balance1
@@ -90,6 +85,13 @@ step << Hunter
     .turnin 457 >> Turn in The Balance of Nature
     .target Conservator Ilthalaine
 	.accept 3117 >> Accept Etched Sigil
+step << Druid
+    .goto Teldrassil,59.602,40.696
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dellylah|r
+    .vendor >> |cRXP_WARN_Vendor trash|r
+    >>|cRXP_BUY_Buy 15|r |T132794:0|t[Refreshing Spring Water]
+    .collect 159,15 --Collect Refreshing Spring Water (x15)
+    .target Dellylah
 step
 #xprate <1.99 << Hunter
     #requires balance1
@@ -98,12 +100,19 @@ step
     .turnin 456,1 >> Turn in The Balance of Nature << Hunter
     .turnin 456 >> Turn in The Balance of Nature << !Hunter
     .target Conservator Ilthalaine
-    .accept 457 >> Accept The Balance of Nature
+    .accept 457 >> Accept The Balance of Nature << !sod Druid
 	.accept 3116 >> Accept Simple Sigil << Warrior
 	.accept 3117 >> Accept Etched Sigil << Hunter
 --	.accept 3118 >> Accept Encrypted Sigil << Rogue
 	.accept 3119 >> Accept Hallowed Sigil << Priest
 	.accept 3120 >> Accept Verdant Sigil << Druid
+step << Druid
+    #season 2
+    .goto Teldrassil,57.9,45.1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarindrella|r
+    .turnin 458 >> Turn in The Woodland Protector
+    .target Tarindrella
+    .accept 459 >> Accept The Woodland Protector
 step << NightElf Priest
     #season 2
     .goto Teldrassil,59.6,41.2
@@ -215,14 +224,8 @@ step << Warrior
     .accept 77575 >> Accept Amidst the Shadowed Webs << NightElf Warrior
     .trainer >> Train your class spells
     .target Alyissia
-step << Druid
-    .goto Teldrassil,59.602,40.696
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dellylah|r
-    .vendor >> |cRXP_WARN_Vendor trash|r
-    >>|cRXP_BUY_Buy 15|r |T132794:0|t[Refreshing Spring Water]
-    .collect 159,15 --Collect Refreshing Spring Water (x15)
-    .target Dellylah
 step << !Hunter
+    #season 0 << Druid
     .goto Teldrassil,59.8,34.1
     >>Kill |cRXP_ENEMY_Mangy Nightsabers|r and |cRXP_ENEMY_Thistle Boars|r
     .complete 457,1 --Kill Mangy Nightsaber (x7)
@@ -231,11 +234,11 @@ step << !Hunter
     .mob Thistle Boar
 step << Druid
     #season 2
-    .goto Teldrassil,59.8,34.1
-    >>Kill a few more |cRXP_ENEMY_Mangy Nightsabers|r and |cRXP_ENEMY_Thistle Boars|r. This will get your first |T136006:0|t[Wrath] buffing rune unlocked quicker which is very strong
-    .xp 3+710 >>Grind to 710+/1400xp
-    .mob Mangy Nightsaber
-    .mob Thistle Boar
+    .goto Teldrassil,54.9,37.9
+    >>Kill enough |cRXP_ENEMY_Grellkin|r to make sure you reach level 4 after looping back to the trainer in a bit
+    >>Be on the lookout for a |T134903:0|t[|cRXP_FRIENDLY_Lunar Idol|r] that can drop from them. You will need it to unlock a rune soon
+    .xp 3+400 >>Grind to 400+/1400xp
+    .mob Grellkin
 step << !Hunter
     .goto Teldrassil,54.593,32.992
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iverron|r
@@ -262,12 +265,14 @@ step << Warrior
 	#hardcore
     .goto Teldrassil,57.9,45.1,20 >> Run back to |cRXP_FRIENDLY_Tarindrella|r near the spawn point
 step << !Hunter
+    #season 0 << Druid
     .goto Teldrassil,57.9,45.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarindrella|r
     .turnin 458 >> Turn in The Woodland Protector
     .target Tarindrella
     .accept 459 >> Accept The Woodland Protector
 step << !Hunter
+    #season 0 << Druid
     .goto Teldrassil,58.695,44.266
     .target Conservator Ilthalaine
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Conservator Ilthalaine|r
@@ -334,14 +339,6 @@ step << Druid
     >>|cRXP_BUY_Buy 10|r |T132794:0|t[Refreshing Spring Water]
     .collect 159,10 --Collect Refreshing Spring Water (x10)
     .target Dellylah
-step << Druid
-    #season 2
-    .goto Teldrassil,59.456,41.050
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Janna Brightmoon|r up stairs
-	>> Buy and equip a |T135029:0|t[|cRXP_LOOT_Thin Cloth Armor|r] you will need it to engrave a rune on soon
-    >>|cRXP_WARN_Skip this step if you already found a different chestpiece|r
-    .collect 2121,1
-    .target Janna Brightmoon
 step
     .goto Teldrassil,57.807,41.653
     .target Gilshalan Windwalker
@@ -592,7 +589,7 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mardant Strongoak|r
 	.turnin 3120 >> Turn in Verdant Sigil
     .turnin -77571 >> Turn in Relics of the Kaldorei
-    .train 8921 >>Train |T136096:0|t[Moonfire]
+    .train 5177 >>Train |T136006:0|t[|cRXP_FRIENDLY_Wrath|r] rank 2
     .target Mardant Strongoak
 step << NightElf Warrior
     #season 2
