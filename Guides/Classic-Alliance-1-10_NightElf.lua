@@ -19,11 +19,6 @@ step
     .target Conservator Ilthalaine
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Conservator Ilthalaine|r
     .accept 456 >> Accept The Balance of Nature
-step << Druid
-    #season2
-    #sticky
-    #completewith DTrain4
-    .equip 5 >> Be on the lookout for a chestpiece drop from the mobs you kill. You will need one to engrave a rune on in a bit
 step
     #sticky
     #label balance1
@@ -90,6 +85,13 @@ step << Hunter
     .turnin 457 >> Turn in The Balance of Nature
     .target Conservator Ilthalaine
 	.accept 3117 >> Accept Etched Sigil
+step << Druid
+    .goto Teldrassil,59.602,40.696
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dellylah|r
+    .vendor >> |cRXP_WARN_Vendor trash|r
+    >>|cRXP_BUY_Buy 15|r |T132794:0|t[Refreshing Spring Water]
+    .collect 159,15 --Collect Refreshing Spring Water (x15)
+    .target Dellylah
 step
 #xprate <1.99 << Hunter
     #requires balance1
@@ -98,12 +100,19 @@ step
     .turnin 456,1 >> Turn in The Balance of Nature << Hunter
     .turnin 456 >> Turn in The Balance of Nature << !Hunter
     .target Conservator Ilthalaine
-    .accept 457 >> Accept The Balance of Nature
+    .accept 457 >> Accept The Balance of Nature << !sod Druid
 	.accept 3116 >> Accept Simple Sigil << Warrior
 	.accept 3117 >> Accept Etched Sigil << Hunter
 --	.accept 3118 >> Accept Encrypted Sigil << Rogue
 	.accept 3119 >> Accept Hallowed Sigil << Priest
 	.accept 3120 >> Accept Verdant Sigil << Druid
+step << Druid
+    #season 2
+    .goto Teldrassil,57.9,45.1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarindrella|r
+    .turnin 458 >> Turn in The Woodland Protector
+    .target Tarindrella
+    .accept 459 >> Accept The Woodland Protector
 step << NightElf Priest
     #season 2
     .goto Teldrassil,59.6,41.2
@@ -215,14 +224,8 @@ step << Warrior
     .accept 77575 >> Accept Amidst the Shadowed Webs << NightElf Warrior
     .trainer >> Train your class spells
     .target Alyissia
-step << Druid
-    .goto Teldrassil,59.602,40.696
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dellylah|r
-    .vendor >> |cRXP_WARN_Vendor trash|r
-    >>|cRXP_BUY_Buy 15|r |T132794:0|t[Refreshing Spring Water]
-    .collect 159,15 --Collect Refreshing Spring Water (x15)
-    .target Dellylah
 step << !Hunter
+    #season 0 << Druid
     .goto Teldrassil,59.8,34.1
     >>Kill |cRXP_ENEMY_Mangy Nightsabers|r and |cRXP_ENEMY_Thistle Boars|r
     .complete 457,1 --Kill Mangy Nightsaber (x7)
@@ -231,11 +234,11 @@ step << !Hunter
     .mob Thistle Boar
 step << Druid
     #season 2
-    .goto Teldrassil,59.8,34.1
-    >>Kill a few more |cRXP_ENEMY_Mangy Nightsabers|r and |cRXP_ENEMY_Thistle Boars|r. This will get your first |T136006:0|t[Wrath] buffing rune unlocked quicker which is very strong
-    .xp 3+710 >>Grind to 710+/1400xp
-    .mob Mangy Nightsaber
-    .mob Thistle Boar
+    .goto Teldrassil,54.9,37.9
+    >>Kill enough |cRXP_ENEMY_Grellkin|r to make sure you reach level 4 after looping back to the trainer in a bit
+    >>Be on the lookout for a |T134903:0|t[|cRXP_FRIENDLY_Lunar Idol|r] that can drop from them. You will need it to unlock a rune soon
+    .xp 3+400 >>Grind to 400+/1400xp
+    .mob Grellkin
 step << !Hunter
     .goto Teldrassil,54.593,32.992
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iverron|r
@@ -262,12 +265,14 @@ step << Warrior
 	#hardcore
     .goto Teldrassil,57.9,45.1,20 >> Run back to |cRXP_FRIENDLY_Tarindrella|r near the spawn point
 step << !Hunter
+    #season 0 << Druid
     .goto Teldrassil,57.9,45.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarindrella|r
     .turnin 458 >> Turn in The Woodland Protector
     .target Tarindrella
     .accept 459 >> Accept The Woodland Protector
 step << !Hunter
+    #season 0 << Druid
     .goto Teldrassil,58.695,44.266
     .target Conservator Ilthalaine
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Conservator Ilthalaine|r
@@ -334,14 +339,6 @@ step << Druid
     >>|cRXP_BUY_Buy 10|r |T132794:0|t[Refreshing Spring Water]
     .collect 159,10 --Collect Refreshing Spring Water (x10)
     .target Dellylah
-step << Druid
-    #season 2
-    .goto Teldrassil,59.456,41.050
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Janna Brightmoon|r up stairs
-	>> Buy and equip a |T135029:0|t[|cRXP_LOOT_Thin Cloth Armor|r] you will need it to engrave a rune on soon
-    >>|cRXP_WARN_Skip this step if you already found a different chestpiece|r
-    .collect 2121,1
-    .target Janna Brightmoon
 step
     .goto Teldrassil,57.807,41.653
     .target Gilshalan Windwalker
@@ -592,7 +589,7 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mardant Strongoak|r
 	.turnin 3120 >> Turn in Verdant Sigil
     .turnin -77571 >> Turn in Relics of the Kaldorei
-    .train 8921 >>Train |T136096:0|t[Moonfire]
+    .train 5177 >>Train |T136006:0|t[|cRXP_FRIENDLY_Wrath|r] rank 2
     .target Mardant Strongoak
 step << NightElf Warrior
     #season 2
@@ -2096,133 +2093,7 @@ step << Warrior
     >>|cRXP_FRIENDLY_Moon Priestess Amara|r |cRXP_WARN_patrols the road west of Dolanaar|r
     .turnin 487 >> Turn in The Road to Darnassus
     .target Moon Priestess Amara
-step << Druid
-    #season 2
-    #softcore
-    .goto Darnassus,70.679,45.379
-    .target Mydrannul
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mydrannul|r
-    .accept 6344 >> Accept Nessa Shadowsong
-step << Druid
-    #season 2
-    #softcore
-    #completewith next
-    .goto Darnassus,28.52,39.89
-    .zone Teldrassil >> Travel through the purple portal to Rut'theran Village
-    .zoneskip Darkshore
-    .subzoneskip 702
-step << Druid
-    #season 2
-    #softcore
-    .goto Teldrassil,56.25,92.44
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nessa Shadowsong|r
-    .turnin 6344 >> Turn in Nessa Shadowsong
-    .accept 6341 >> Accept The Bounty of Teldrassil
-    .target Nessa Shadowsong
-step << Druid
-    #season 2
-    #softcore
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vesprystus|r
-	.goto Teldrassil,58.39,94.01
-    .turnin 6341 >> Turn in The Bounty of Teldrassil
-    .accept 6342 >> Accept Flight to Auberdine
-    .target Vesprystus
-step << Druid
-    #season 2
-    #softcore
-    #completewith next
-    .goto Teldrassil,58.39,94.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vesprystus|r
-    .fly Auberdine >> Fly to Darkshore
-    .target Vesprystus
-step << Druid
-    #season 2
-    #softcore
-#map Darkshore
-    .goto Felwood,19.27,19.14
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laird|r
-    .turnin 6342 >> Turn in Flight to Auberdine
-    .accept 6343 >> Accept Return to Nessa
-    .target Laird
-step << Druid
-    #season 2
-    #softcore
-    .goto Darkshore,32.44,43.71
-    .zone Wetlands >> |cRXP_WARN_Take the boat to Menethil Harbor. You will now go and get the|r |T135730:0|t[Starsurge] |cRXP_WARN_rune in Wetlands which is incredibly powerful at this level|r
-    >>|cRXP_WARN_You may die a few times during this process|r
-    .train 424718,1
-step << Druid
-    #season 2
-    #softcore
-    .goto Wetlands,36.941,15.157
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grugimdern|r
-    >>|cRXP_WARN_He will give you a|r |T134052:0|t[|cRXP_LOOT_Marshroom|r]
-    .collect 210499,1 -- Marshroom (1)
-    .target Grugimdern
-    .train 424718,1
-    .link https://youtu.be/fWVaDR-NnKU >> |cRXP_WARN_Click here for video reference|r
-step << Druid
-    #season 2
-    #softcore
-    .goto Wetlands,31.187,18.328,15 >> Head to the tree stump protruding from the lake surface
-    .train 424718,1
-step << Druid
-    #season 2
-    #softcore
-    #completewith next
-    .goto Wetlands,31.187,18.328
-    .cast 426019 >>|cRXP_WARN_Use the|r |T134052:0|t[|cRXP_LOOT_Marshroom|r] |cRXP_WARN_to eat it|r
-    >>|cRXP_WARN_Make sure you're safe before using it, if you die you'll have to get the mushroom again|r
-    .use 210499
-    .train 424718,1
-step << Druid
-    #season 2
-    #softcore
-    .goto Wetlands,31.187,18.328
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vodyanoi|r
-    >>You will only be able to see this NPC if you eat the mushroom first
-    .collect 210500,1 -- Rune of the Stars (1)
-    .skipgossip
-    .target Vodyanoi
-    .train 424718,1
-step << Druid
-    #season 2
-    #softcore
-    .train 424718 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Stars|r] |cRXP_WARN_to train|r |T135730:0|t[Starsurge]
-    .use 210500
-    .itemcount 210500,1
-step << Druid
-	#completewith next
-	.cast 18960 >> Cast Teleport: Moonglade
-    .usespell 18960
-    >>|cRXP_WARN_It will be in your spellbook|r
-	.zoneskip Moonglade
-step << Druid
-    .goto Moonglade,56.21,30.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze|r up stairs
-    .turnin 5921 >> Turn in Moonglade
-    .target Dendrite Starblaze
-    .accept 5929 >> Accept Great Bear Spirit
-step << Druid
-    .goto Moonglade,45.12,26.78,15,0
-    .goto Moonglade,39.17,27.42
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Great Bear Spirit|r
-    .complete 5929,1 --Seek out the Great Bear Spirit and learn what it has to share with you about the nature of the bear.
-    .skipgossip
-    .target Great Bear Spirit
-step << Druid
-	#completewith next
-	.cast 18960 >> Cast Teleport: Moonglade
-    >>|cRXP_WARN_This will make you return faster|r
-step << Druid
-    .goto Moonglade,56.21,30.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze|r up stairs
-    .turnin 5929 >> Turn in Great Bear Spirit
-    .target Dendrite Starblaze
-    .accept 5931 >> Accept Back to Darnassus
-step << Druid
-    #season 2
-    .hs >> Hearthstone back to Darnassus
+    .target Laird 
 step
 #xprate <1.99
     #requires xp10 << Rogue
@@ -2521,7 +2392,7 @@ step << Hunter
     .link https://www.wow-petopia.com/classic/training.php >> |cRXP_WARN_Click here for more info about pet training|r
 	.unitscan Strigid Hunter
 step
-    #season 0 << sod Rogue
+    #season 0 << Rogue/Druid
     .goto Teldrassil,43.2,42.8,55,0
     .goto Teldrassil,43.2,32.8,55,0
     .goto Teldrassil,43.6,26.0,55,0
@@ -2551,7 +2422,7 @@ step << Hunter
     #completewith next
     .engrave 7 >> Open your character sheet and engrave your legs with |T132175:0|t[Flanking Strike]
 step
-    #season 0 << sod Rogue
+    #season 0 << Rogue/Druid
     #label Spinnerets
 	.goto Teldrassil,47.3,26.0,0
     .goto Teldrassil,37.9,25.1,0
@@ -2562,7 +2433,7 @@ step
     >>|cRXP_ENEMY_Lady Sathrah|r |cRXP_WARN_can spawn in 3 different locations|r
     .complete 2518,1 --Collect Silvery Spinnerets (x1)
     .mob Lady Sathrah
-step << !sod/Warrior/Rogue
+step << !sod/Warrior/Rogue/Druid
     .goto Teldrassil,38.3,34.3
     .target Sentinel Arynia Cloudsbreak
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
@@ -2605,7 +2476,7 @@ step << Rogue
     .mob Bloodfeather Wind Witch
     .mob Bloodfeather Matriarch
     .train 398196,1
-step << !sod/Warrior/Rogue
+step << !sod/Warrior/Rogue/Druid
     #sticky
 	#label harpies2
     .goto Teldrassil,33.619,29.819,0,0
@@ -2618,7 +2489,7 @@ step << !sod/Warrior/Rogue
     .mob Bloodfeather Fury
     .mob Bloodfeather Wind Witch
     .mob Bloodfeather Matriarch
-step << !sod/Warrior/Rogue
+step << Rogue
     #season 2
     .goto Teldrassil,33.619,29.819,0,0
     .cast 418600 >>|cRXP_WARN_Use any of the|r |T134327:0|t[|cRXP_LOOT_Map Pieces]|r |cRXP_WARN_to combine them into the|r |T134269:0|t[|cRXP_LOOT_Teldrassil Treasure Map|r]
@@ -2632,20 +2503,20 @@ step << !sod/Warrior/Rogue
     .use 208602
     .use 208603
     .train 398196,1
-step << !sod/Warrior/Rogue
+step << !sod/Warrior/Rogue/Druid
     .goto Teldrassil,31.54,31.62
     .target Mist
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mist|r
     >>|cRXP_WARN_This will start an escort quest|r
     >>|cRXP_WARN_Skip this quest if the NPC is not there|r
     .accept 938 >> Accept Mist
-step << !sod/Warrior/Rogue
+step << !sod/Warrior/Rogue/Druid
     .goto Teldrassil,38.3,34.4
     .target Sentinel Arynia Cloudsbreak
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Arynia Cloudsbreak|r
     .turnin 938 >> Turn in Mist
     .isOnQuest 938
-step << !sod/Warrior/Rogue
+step << !sod/Warrior/Rogue/Druid
     #requires harpies2
     #label TeldrassilEnd
     .goto Teldrassil,38.3,34.4
@@ -2653,6 +2524,29 @@ step << !sod/Warrior/Rogue
     .turnin 937 >> Turn in The Enchanted Glade
     .target Sentinel Arynia Cloudsbreak
     .accept 940 >> Accept Teldrassil
+step << Druid
+    #season 2
+    #label Spinnerets
+	.goto Teldrassil,47.3,26.0,0
+    .goto Teldrassil,37.9,25.1,0
+    .goto Teldrassil,47.3,26.0,30,0
+    .goto Teldrassil,37.9,25.1,30,0
+    .goto Teldrassil,40.7,25.4
+    >>Kill |cRXP_ENEMY_Lady Sathrah|r. Loot it for its |cRXP_LOOT_Spinnerets|r
+    >>|cRXP_ENEMY_Lady Sathrah|r |cRXP_WARN_can spawn in 3 different locations|r
+    .complete 2518,1 --Collect Silvery Spinnerets (x1)
+    .mob Lady Sathrah
+step << Druid
+    #season 2
+    .goto Teldrassil,43.2,42.8,55,0
+    .goto Teldrassil,43.2,32.8,55,0
+    .goto Teldrassil,43.6,26.0,55,0
+    .goto Teldrassil,43.2,42.8
+	>>Kill |cRXP_ENEMY_Timberling Tramplers|r, |cRXP_ENEMY_Timberling Mire Beasts|r and |cRXP_ENEMY_Elder Timberlings|r. Loot them for their |cRXP_LOOT_Tumors|r
+    .complete 923,1 --Collect Mossy Tumor (x5)
+    .mob Elder Timberling
+    .mob Timberling Trampler
+    .mob Timberling Mire Beast
 step << Warrior
     #season 2
     .goto Teldrassil,39.8,37.4,25 >>Head to the marked spot. Check if |cRXP_FRIENDLY_Wandering Swordsman|r is there. If you find him you can challenge him to a duel which will award you with the rune of |T132334:0|t[|cRXP_FRIENDLY_Blood Frenzy|r]
@@ -2751,6 +2645,7 @@ step << Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jocaste|r
     .turnin 6103 >> Turn in Training the Beast
 step << Druid
+    #season 0
     .goto Darnassus,35.38,8.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r on the middle level
     .turnin 5931 >> Turn in Back to Darnassus
