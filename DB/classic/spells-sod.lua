@@ -54,12 +54,11 @@ s["DRUID"] = {
         1126 -- mark of the wild
     },
     [4] = {
-        774, -- rejuvenation
         8921 -- moonfire
     },
     [6] = {
-        467, -- thorns
-        5177 -- wrath r2
+        5177, -- wrath r2
+        467 -- thorns
     },
     [8] = {
         339, -- entangling roots
