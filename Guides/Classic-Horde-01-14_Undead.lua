@@ -1132,7 +1132,7 @@ step << Priest
     .target Deathguard Kel
 step
     #completewith Claws
-    >>Loot the |cRXP_LOOT_Gloom Weed| on the ground
+    >>Loot the |cRXP_LOOT_Gloom Weed|r on the ground
     .complete 5481,1 --Gloom Weed (3)
 step
     #completewith GloomWeed
@@ -1158,7 +1158,7 @@ step
     #label GloomWeed
     .goto Tirisfal Glades,39.55,50.64,50,0
     .goto Tirisfal Glades,44.43,57.33
-    >>Finish looting the |cRXP_LOOT_Gloom Weed| on the ground
+    >>Finish looting the |cRXP_LOOT_Gloom Weed|r on the ground
     .complete 5481,1 --Gloom Weed (3)
 step << Warrior
     #optional
@@ -6754,7 +6754,7 @@ step << Priest
     .target Deathguard Kel
 step
     #completewith Claws
-    >>Loot the |cRXP_LOOT_Gloom Weed| on the ground
+    >>Loot the |cRXP_LOOT_Gloom Weed|r on the ground
     .complete 5481,1 --Gloom Weed (3)
 step
     #completewith GloomWeed
@@ -6780,7 +6780,7 @@ step
     #label GloomWeed
     .goto Tirisfal Glades,39.55,50.64,50,0
     .goto Tirisfal Glades,44.43,57.33
-    >>Finish looting the |cRXP_LOOT_Gloom Weed| on the ground
+    >>Finish looting the |cRXP_LOOT_Gloom Weed|r on the ground
     .complete 5481,1 --Gloom Weed (3)
 step << Warrior
     #optional
