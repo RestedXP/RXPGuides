@@ -3278,6 +3278,86 @@ function addon.functions.petfamily(self, text, ...)
     end
 end
 
+function addon.functions.areapoiexists(self, text, zone, ...)
+    if type(self) == "string" then
+        local element = {}
+        element.zone = addon.GetMapId(zone) or zone
+        local ids = {...}
+        for i,v in pairs(ids) do
+            ids[i] = tonumber(v)
+        end
+        if not ids[1] then
+            return addon.error(
+                        L("Error parsing guide") .. " " .. addon.currentGuideName ..
+                           ": Invalid PoI ID\n" .. self)
+        end
+        element.ids = ids
+        if text and text ~= "" then element.text = text end
+        element.textOnly = true
+        return element
+    end
+    local element = self.element
+    local exists = false
+    for _,id in pairs(element.ids) do
+        if C_AreaPoiInfo.GetAreaPOIInfo(zone, id) then
+            exists = true
+        end
+    end
+
+    local event = text
+    local step = element.step
+    if event ~= "WindowUpdate" and step.active and not addon.settings.profile.debug and (not exists) == not element.reverse and not addon.isHidden then
+        element.tooltipText = "Step skipped: Missing pre-requisites"
+        step.completed = true
+        addon.updateSteps = true
+    elseif step.active and not step.completed then
+        element.tooltipText = nil
+    end
+end
+
+events.questcount = events.complete
+function addon.functions.questcount(self, text, count, ...)
+    if type(self) == "string" then
+        local element = {}
+        local operator, n = string.match(count, "([<>]?)%s*(%d+)")
+        if operator == "<" then
+            element.reverse = true
+        end
+        n = tonumber(n)
+        element.total = n
+        local ids = {...}
+        for i,v in pairs(ids) do
+            ids[i] = tonumber(v)
+        end
+        if not (ids[1] and n) then
+            return addon.error(
+                        L("Error parsing guide") .. " " .. addon.currentGuideName ..
+                           ": Invalid PoI ID\n" .. self)
+        end
+        element.ids = ids
+        if text and text ~= "" then element.text = text end
+        element.textOnly = true
+        return element
+    end
+    local element = self.element
+    local event = text
+    count = 0
+    for _,id in pairs(element.ids) do
+        if IsOnQuest(id) then
+            count = count + 1
+        end
+    end
+
+    local step = element.step
+    if event ~= "WindowUpdate" and step.active and not addon.settings.profile.debug and (count < element.total) == not element.reverse and not addon.isHidden then
+        --element.tooltipText = "Step skipped: Missing pre-requisites"
+        step.completed = true
+        addon.updateSteps = true
+    elseif step.active and not step.completed then
+        element.tooltipText = nil
+    end
+end
+
 function addon.functions.isQuestComplete(self, ...)
     if type(self) == "string" then
         local element = {}
@@ -3332,7 +3412,7 @@ function addon.functions.isOnQuest(self, text, ...)
     end
 
 
-    local event = ...
+    local event = text
     local step = element.step
     if event ~= "WindowUpdate" and step.active and not addon.settings.profile.debug and (not onQuest) == not element.reverse and not addon.isHidden then
         element.tooltipText = "Step skipped: Missing pre-requisites"
@@ -3370,7 +3450,7 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
     local step = element.step
     local ids = element.questIds
     local questTurnedIn = false
-    local event = ...
+    local event = text
 
     if element.reverse then
         for _, id in pairs(ids) do
