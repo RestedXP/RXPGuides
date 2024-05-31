@@ -68,7 +68,7 @@ step
     -- .achievementComplete 20006,1
     -- .achievementComplete 20004,1
     -- .achievementComplete 40223,1
-    >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy the jewellery.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lidamorrutu|r and buy the jewellery.
     .collect 208491,1
     .collect 210523,1
     .collect 208554,1
@@ -92,11 +92,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Larah Treebender|r
     .accept 80448 >>Accept A Fresh Scene
     .target Larah Treebender
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
-    .goto 371,42.5,27.32
-    .accept 78894 >>Accept Infinite Growth
-    .target Momentus
+-- step
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
+--     .goto 371,42.5,27.32
+--     .accept 78894 >>Accept Infinite Growth
+--     .target Momentus
 step
     #completewith next
     .goto 371,42.5,27.32,10,0
