@@ -370,6 +370,31 @@ if locale == 'frFR' then
         "%s+Augmente vos chances de parer une attaque de (%d+)%%."
 end
 
+local SPEC_MAP = {
+    ["WARRIOR"] = {[1] = "Arms", [2] = "Fury", [3] = "Protection"},
+    ["PALADIN"] = {[1] = "Holy", [2] = "Protection", [3] = "Retribution"},
+    ["HUNTER"] = {[1] = "BeastMastery", [2] = "Marksmanship", [3] = "Survival"},
+    ["ROGUE"] = {[1] = "Assassination", [2] = "Outlaw", [3] = "Subtlety"},
+    ["PRIEST"] = {[1] = "Discipline", [2] = "Holy", [3] = "Shadow"},
+    ["DEATHKNIGHT"] = {[1] = "Blood", [2] = "Frost", [3] = "Unholy"},
+    ["SHAMAN"] = {[1] = "Elemental", [2] = "Enhancement", [3] = "Restoration"},
+    ["MAGE"] = {[1] = "Arcane", [2] = "Fire", [3] = "Frost"},
+    ["WARLOCK"] = {[1] = "Affliction", [2] = "Demonology", [3] = "Destruction"},
+    ["MONK"] = {[1] = "Brewmaster", [2] = "Mistweaver", [3] = "Windwalker"},
+    ["DRUID"] = {
+        [1] = "Balance",
+        [2] = "Feral",
+        [3] = "Guardian",
+        [4] = "Restoration"
+    },
+    ["DEMONHUNTER"] = {[1] = "Havoc", [2] = "Vengeance"},
+    ["EVOKER"] = {
+        [1] = "Devastation",
+        [2] = "Preservation",
+        [3] = "Augmentation"
+    }
+}
+
 -- Setup reverse lookup in session.weaponSlotToWeightKey
 for weaponKey, d in pairs(WEAPON_SLOT_MAP) do
     if not d.Slot then
@@ -614,21 +639,65 @@ function addon.itemUpgrades:LoadStatWeights()
     return session.specWeights ~= nil
 end
 
+-- TODO fix spec lookup to use classFile instead of localeClass
+local function getSpec()
+    print("getSpec()")
+    -- Classes with className as spec only have one, use that
+    if session.specWeights[addon.player.class] then return addon.player.class end
+    -- RXPD4 = {
+    --    weights = session.specWeights,
+    --    class = addon.player.class,
+    --    spec = session.specWeights[addon.player.class]
+    -- }
+    -- Calculate most likely spec
+    local talentCount
+    local guessedSpec = {index = nil, count = 0}
+
+    for tabIndex = 1, _G.GetNumTalentTabs(false) do
+        _, _, talentCount = _G.GetTalentTabInfo(tabIndex)
+
+        if talentCount > guessedSpec.count then
+            guessedSpec.index = tabIndex
+            guessedSpec.count = talentCount
+        end
+    end
+
+    -- No tabs found with > 0 talents, likely fresh character
+    if guessedSpec.index then
+        local specName = SPEC_MAP[addon.player.class][guessedSpec.index]
+        print("Spec calculated as",
+              SPEC_MAP[addon.player.class][guessedSpec.index])
+
+        -- TODO strip spaces, this evals to 'BeastMastery', but stat weights is 'Beast Mastery'
+        if session.specWeights[specName] then return specName end
+    end
+
+    -- No tabs found with > 0 talents, likely fresh character
+
+    -- If no class-wide spec and no talents, then fallback to arbitrarily pick the first loaded spec
+    -- Returns first spec, or nil
+    return next(session.specWeights)
+
+    -- if addon.settings.profile.enableTalentGuides then
+    --     -- Difficult/impossible to mapp talent guide
+    --     -- addon.settings.profile.activeTalentGuide == "Rogue - Hardcore Rogue 10-60"
+    -- end
+end
+
 -- Always run after LoadStatWeights
 function addon.itemUpgrades:ActivateSpecWeights()
     if not session.specWeights then return end
+    print("addon.itemUpgrades:ActivateSpecWeights()")
+    local spec = getSpec()
 
-    -- TODO check active talent guide
-    -- TODO check talent count per tab
-    local spec = addon.settings.profile.itemUpgradeSpec or
-                     addon.player.localeClass
-
-    -- If only multi-spec (Enhancement / Elemental) arbitrarily pick the first one
-    if not session.specWeights[spec] then
-        spec = next(session.specWeights)
-
+    -- Uninitialized spec, so set to calculated value
+    if not addon.settings.profile.itemUpgradeSpec then
         addon.settings.profile.itemUpgradeSpec = spec
+    elseif addon.settings.profile.itemUpgradeSpec ~= spec then
+        -- Chosen talents don't match itemUpgradeSpec
     end
+
+    if not addon.settings.profile.itemUpgradeSpec then return end
 
     session.activeStatWeights = session.specWeights[spec]
 
