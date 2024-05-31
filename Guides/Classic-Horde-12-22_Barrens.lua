@@ -1851,24 +1851,26 @@ step
     .zoneskip Orgrimmar
 step
     #completewith next
-    .skill firstaid,40 >> Create|T133685:0|t[Linen Bandages] until your skill is 40 or higher
+    .skill firstaid,40 >> |cRXP_WARN_Create|r |T133685:0|t[Linen Bandages] |cRXP_WARN_until your skill is 40 or higher|r
     .skill firstaid,<1,1
 step
     .goto Orgrimmar,34.18,84.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Arnok|r
+    >>|cRXP_WARN_Skip this step if you did not have enough|r |T132889:0|t[Linen Cloth] |cRXP_WARN_to reach 40 skill|r
     .train 3276 >> Train |T133688:0|t[Heavy Linen Bandage]
     .target Arnok
     .skill firstaid,<1,1
 step
     #completewith next
-    .skill firstaid,50 >> Create |T133688:0|t[Heavy Linen Bandages] until your skill is 50 or higher
+    .skill firstaid,50 >> |cRXP_WARN_Create|r |T133688:0|t[Heavy Linen Bandages] |cRXP_WARN_until your skill is 50 or higher|r
     .skill firstaid,<1,1
 step
     .goto Orgrimmar,34.18,84.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Arnok|r
+    >>|cRXP_WARN_Skip this step if you did not have enough|r |T132889:0|t[Linen Cloth] |cRXP_WARN_to reach 50 skill|r
     .train 3274 >> Train Journeyman First Aid
     .target Arnok
-    .skill firstaid,<1,1
+    .skill firstaid,<40,1
 step
     #completewith next
     +|cRXP_WARN_Make sure you don't sell your|r |T132794:0|t[|cRXP_LOOT_Flask of Oil|r]!
@@ -2102,7 +2104,7 @@ step << Troll Warrior/Tauren Warrior/Undead Warrior
     .goto Orgrimmar,81.52,19.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
     .train 172 >>Train Two-Handed Axes
-    .train 227 >>Train Staves << Undead Warrior
+    .train 227 >>Train Staves
     .target Hanashi
 step << Hunter
     .goto Orgrimmar,81.17,18.69
@@ -4229,7 +4231,7 @@ step << Shaman
     .unitscan Owatanka
 step << Shaman
     #completewith CallofWater2
-    .goto The Barrens,43.42,77.41,60>> Travel south toward |cRXP_FRIENDLY_Brine|r
+    .goto The Barrens,43.42,77.41,60>> Travel South toward |cRXP_FRIENDLY_Brine|r
 step << Shaman
     #completewith next
     >>Kill a |cRXP_ENEMY_Thunderhawk|r. Loot it for its |cRXP_LOOT_Wings|r
@@ -4848,11 +4850,12 @@ step << Shaman
     .xp <22,1
 step
     #completewith next
-    .skill firstaid,80 >> Create |T133688:0|t[Heavy Linen Bandages] until your skill is 80 or higher
+    .skill firstaid,80 >> |cRXP_WARN_Create|r |T133688:0|t[Heavy Linen Bandages] |cRXP_WARN_until your skill is 80 or higher|r
     .skill firstaid,<1,1
 step
     .goto Thunder Bluff,29.68,21.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pand|r
+    >>|cRXP_WARN_Skip this step if you did not have enough|r |T132889:0|t[Linen Cloth] |cRXP_WARN_to reach 80 skill|r
     .train 3277 >> Train |T133684:0|t[Wool Bandage]
     .train 7934 >> Train |T134437:0|t[Anti-Venom] << Rogue
     .target Pand Stonebinder
@@ -5299,7 +5302,7 @@ step
     .dungeon WC
 step << skip
     #completewith next
-    .goto The Barrens,44.45,59.16,100 >> Travel south to Camp Taurajo
+    .goto The Barrens,44.45,59.16,100 >> Travel South to Camp Taurajo
     .dungeon WC
 step << skip
     .goto The Barrens,44.45,59.16
@@ -6167,11 +6170,11 @@ step << Rogue
     .goto The Barrens,54.72,5.74
     >>Run into the Rogue Tower and kill |cRXP_ENEMY_Drones|r, |cRXP_ENEMY_Patrollers|r and |cRXP_ENEMY_Lookouts|r
     .complete 2478,1 --Mutated Venture Co. Drone (2)
+    .mob +Mutated Venture Co. Drone
     .complete 2478,3 --Venture Co. Patroller (2)
+    .mob +Venture Co. Patroller
     .complete 2478,2 --Venture Co. Lookout (2)
-    .mob Mutated Venture Co. Drone
-    .mob Venture Co. Patroller
-    .mob Venture Co. Lookout
+    .mob +Venture Co. Lookout
 step << Rogue
     .goto The Barrens,54.77,5.57
     >>At the top of the tower you'll find |cRXP_ENEMY_Gallywix|r. Loot him for his |cRXP_LOOT_Head|r
@@ -7874,19 +7877,23 @@ step
     .mob Sunscale Lashtail
     .mob Sunscale Screecher
 step
+    #xprate <2.1
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .accept 850 >>Accept Kolkar Leaders
     .accept 855 >>Accept Centaur Bracers
     .target Regthar Deathgate
 step
-    #optional
-    #label RegtharDeathgate1
+    #xprate >2.09
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
     .accept 850 >>Accept Kolkar Leaders
     .target Regthar Deathgate
 step
+    #optional
+    #label RegtharDeathgate1
+step
+    #xprate <2.1
     #completewith KodobaneTurnin
     >>Kill |cRXP_ENEMY_Kolkar Wranglers|r and |cRXP_ENEMY_Kolkar Stormers|r. Loot them for their |cRXP_LOOT_Bracers|r
     >>|cRXP_WARN_This quest does not have to be completed now|r
@@ -7960,6 +7967,7 @@ step
     .target Regthar Deathgate
     .isQuestTurnedIn 850
 step
+    #optional
     #xprate >2.09
     .goto The Barrens,45.35,28.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
@@ -8106,6 +8114,7 @@ step
     .isOnQuest 5761
     .dungeon RFC
 step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    #xprate <2.1
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
     .turnin 848 >> Turn in Fungal Spores
@@ -8121,6 +8130,7 @@ step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .target Darsok Swiftdagger
     .dungeon RFC
 step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    #xprate <2.1
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga|r
     .turnin 870 >> Turn in The Forgotten Pools
@@ -8128,6 +8138,7 @@ step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .target Tonga Runetotem
     .dungeon RFC
 step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    #xprate <2.1
     .goto The Barrens,52.24,31.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r
     .turnin 903 >>Turn in Prowlers of the Barrens
@@ -8135,6 +8146,7 @@ step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .target Sergra Darkthorn
     .dungeon RFC
 step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    #xprate <2.1
     .goto The Barrens,55.80,17.03
     >>Use the |T134227:0|t[Horn of Echeyakee] to summon |cRXP_ENEMY_Echeyakee|r
     >>Kill |cRXP_ENEMY_Echeyakee|r. Loot him for |cRXP_LOOT_Echeyakee's Hide|r
@@ -8144,11 +8156,13 @@ step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .use 10327
     .dungeon RFC
 step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    #xprate <2.1
     .goto The Barrens,52.23,31.00
     .abandon 881 >>|cRXP_WARN_If |cRXP_ENEMY_Echeyakee|r didn't spawn after using the|r |T134227:0|t[Horn of Echeyakee]|cRXP_WARN_ or you didn't get the tag when it did spawn, abandon Echeyakee, then return to town and accept it again|r
     .itemcount 5100,<1 --Echeyakee's Hide (0)
     .dungeon RFC
 step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    #xprate <2.1
     .goto The Barrens,52.24,31.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r
     .accept 881 >>Accept Echeyakee
@@ -8156,6 +8170,7 @@ step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .itemcount 5100,<1 --Echeyakee's Hide (0)
     .dungeon RFC
 step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    #xprate <2.1
     .goto The Barrens,55.80,17.03
     >>Use the |T134227:0|t[Horn of Echeyakee] to summon |cRXP_ENEMY_Echeyakee|r
     >>Kill |cRXP_ENEMY_Echeyakee|r. Loot him for |cRXP_LOOT_Echeyakee's Hide|r
@@ -8164,11 +8179,13 @@ step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .use 10327
     .dungeon RFC
 step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    #xprate <2.1
     #completewith Samophlange
     +|cRXP_WARN_Be careful of|r |cRXP_ENEMY_Sunscale Scytheclaws|r |cRXP_WARN_in the area. They are up to level 18 and can|r |T132152:0|t[Thrash]
     .dungeon RFC
     .xp >17,1
 step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+    #xprate <2.1
     #completewith Samophlange
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Kidneys|r
     .complete 821,2 --Plainstrider Kidney (5)
@@ -8183,6 +8200,49 @@ step
     .dungeon !RFC
     .xp >17,1
 step
+    #xprate >2.09
+    .goto The Barrens,51.44,30.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
+    .turnin 848 >> Turn in Fungal Spores
+    .target Apothecary Helbrim
+    .isQuestComplete 848
+step
+    #xprate >2.09
+    .goto The Barrens,52.26,31.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga|r
+    .turnin 870 >> Turn in The Forgotten Pools
+    .accept 877 >> Accept The Stagnant Oasis
+    .target Tonga Runetotem
+step
+    #xprate >2.09
+    .goto The Barrens,52.24,31.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r
+    .turnin 903 >>Turn in Prowlers of the Barrens
+    .accept 881 >>Accept Echeyakee
+    .target Sergra Darkthorn
+step
+    #xprate >2.09
+    .goto The Barrens,55.80,17.03
+    >>Use the |T134227:0|t[Horn of Echeyakee] to summon |cRXP_ENEMY_Echeyakee|r
+    >>Kill |cRXP_ENEMY_Echeyakee|r. Loot him for |cRXP_LOOT_Echeyakee's Hide|r
+    >>|cRXP_WARN_If |cRXP_ENEMY_Echeyakee|r doesn't spawn after using the|r |T134227:0|t[Horn of Echeyakee]|cRXP_WARN_ or you didn't get the tag when it did spawn, skip this step|r
+    .complete 881,1 --Echeyakee's Hide (1)
+    .mob Echeyakee
+    .use 10327
+step
+    #xprate >2.09
+    .goto The Barrens,52.23,31.00
+    .abandon 881 >>|cRXP_WARN_If |cRXP_ENEMY_Echeyakee|r didn't spawn after using the|r |T134227:0|t[Horn of Echeyakee]|cRXP_WARN_ or you didn't get the tag when it did spawn, abandon Echeyakee, then return to town and accept it again|r
+    .itemcount 5100,<1 --Echeyakee's Hide (0)
+step
+    #xprate >2.09
+    .goto The Barrens,52.24,31.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r
+    .accept 881 >>Accept Echeyakee
+    .target Sergra Darkthorn
+    .itemcount 5100,<1 --Echeyakee's Hide (0)
+step
+    #xprate <2.1
     #completewith Samophlange
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Kidneys|r
     .complete 821,2 --Plainstrider Kidney (5)
@@ -8190,6 +8250,14 @@ step
     .mob Fleeting Plainstrider
     .mob Ornery Plainstrider
     .dungeon !RFC
+step
+    #xprate >2.09
+    #completewith Samophlange
+    >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Kidneys|r
+    .complete 821,2 --Plainstrider Kidney (5)
+    .mob Greater Plainstrider
+    .mob Fleeting Plainstrider
+    .mob Ornery Plainstrider
 step
     #xprate <2.1
     .goto The Barrens,43.80,12.22
@@ -8355,24 +8423,26 @@ step
     .zoneskip Orgrimmar
 step
     #completewith next
-    .skill firstaid,40 >> Create|T133685:0|t[Linen Bandages] until your skill is 40 or higher
+    .skill firstaid,40 >> |cRXP_WARN_Create|r |T133685:0|t[Linen Bandages] |cRXP_WARN_until your skill is 40 or higher|r
     .skill firstaid,<1,1
 step
     .goto Orgrimmar,34.18,84.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Arnok|r
+    >>|cRXP_WARN_Skip this step if you did not have enough|r |T132889:0|t[Linen Cloth] |cRXP_WARN_to reach 40 skill|r
     .train 3276 >> Train |T133688:0|t[Heavy Linen Bandage]
     .target Arnok
     .skill firstaid,<1,1
 step
     #completewith next
-    .skill firstaid,50 >> Create |T133688:0|t[Heavy Linen Bandages] until your skill is 50 or higher
+    .skill firstaid,50 >> |cRXP_WARN_Create|r |T133688:0|t[Heavy Linen Bandages] |cRXP_WARN_until your skill is 50 or higher|r
     .skill firstaid,<1,1
 step
     .goto Orgrimmar,34.18,84.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Arnok|r
+    >>|cRXP_WARN_Skip this step if you did not have enough|r |T132889:0|t[Linen Cloth] |cRXP_WARN_to reach 50 skill|r
     .train 3274 >> Train Journeyman First Aid
     .target Arnok
-    .skill firstaid,<1,1
+    .skill firstaid,<40,1
 step
     #completewith next
     +|cRXP_WARN_Make sure you don't sell your|r |T132794:0|t[|cRXP_LOOT_Flask of Oil|r]!
@@ -8513,18 +8583,18 @@ step << Orc Rogue/Troll Rogue
     .goto Orgrimmar,42.74,53.52
     >>|cRXP_WARN_Use|r |T136058:0|t[Pick Lock] |cRXP_WARN_to open|r |T133626:0|t[Tazan's Satchel]
     .complete 1858,1 --Tazan's Logbook (1)
-    .money <0.15
-step << Orc Rogue/Troll Rogue
-    .goto Orgrimmar,42.74,53.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therzok|r
-    .turnin 1858 >>Turn in The Shattered Hand
-    .target Therzok
+    .itemcount 5060,1
 step << Orc Rogue/Troll Rogue
     .goto Orgrimmar,53.99,68.05
     >>|cRXP_WARN_Use|r |T133644:0|t[Pick Pocket] |cRXP_WARN_on|r |cRXP_ENEMY_Gamon|r |cRXP_WARN_in the Inn. Use his key to open|r |T133626:0|t[Tazan's Satchel]
 	.collect 7208,1,1858,1 --Tazan's Key
 	.complete 1858,1 --Tazan's Logbook (1)
     .isOnQuest 1858
+step << Orc Rogue/Troll Rogue
+    .goto Orgrimmar,42.74,53.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therzok|r
+    .turnin 1858 >>Turn in The Shattered Hand
+    .target Therzok
 step << Orc Rogue/Troll Rogue
     .goto Orgrimmar,42.74,53.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Therzok|r
@@ -8539,12 +8609,23 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.8
     .target Kareth
 step << Rogue
+    #optional
     #completewith FoodandWater2
     +Equip the |T135342:0|t[Kris]
     .use 2209
     .itemcount 2209,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.8
+    .xp <19,1
+step << Rogue
+    #optional
+    #completewith FoodandWater2
+    +Equip the |T135342:0|t[Kris] once you are level 19
+    .use 2209
+    .itemcount 2209,1
+    .itemStat 16,QUALITY,<7
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.8
+    .xp >19,1
 step << Warlock
     .goto Orgrimmar,48.62,46.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mirket|r
@@ -8620,7 +8701,7 @@ step << Tauren Warrior/Undead Warrior
     .goto Orgrimmar,81.52,19.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hanashi|r
     .train 172 >>Train Two-Handed Axes
-    .train 227 >>Train Staves << Undead Warrior
+    .train 227 >>Train Staves
     .target Hanashi
 step << Hunter
     .goto Orgrimmar,81.17,18.69
@@ -11220,7 +11301,6 @@ step << Warlock
     #xprate >2.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
     .turnin 853 >> Turn in Apothecary Zamah
-    .turnin 1064 >> Turn in Forsaken Aid
     .accept 962 >> Accept Serpentbloom
     .goto Thunder Bluff,22.82,20.88
     .target Apothecary Zamah
@@ -11230,37 +11310,29 @@ step << Warlock
     #xprate >2.09
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
-    .turnin 1064 >> Turn in Forsaken Aid
     .accept 962 >> Accept Serpentbloom
     .goto Thunder Bluff,22.82,20.88
     .target Apothecary Zamah
     .dungeon WC
 step << Warlock
     #xprate >2.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
-    .turnin 853 >> Turn in Apothecary Zamah
-    .turnin 1064 >> Turn in Forsaken Aid
-    .goto Thunder Bluff,22.82,20.88
-    .target Apothecary Zamah
-    .isOnQuest 853
-step << Warlock
-    #xprate >2.09
-    #optional
     #label ZamahTurnin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
-    .turnin 1064 >> Turn in Forsaken Aid
+    .turnin 853 >> Turn in Apothecary Zamah
     .goto Thunder Bluff,22.82,20.88
     .target Apothecary Zamah
+    .isOnQuest 853
 step << Warlock
     #xprate >2.09
     #completewith next
-    .skill firstaid,80 >> Create |T133688:0|t[Heavy Linen Bandages] until your skill is 80 or higher
+    .skill firstaid,80 >> |cRXP_WARN_Create|r |T133688:0|t[Heavy Linen Bandages] |cRXP_WARN_until your skill is 80 or higher|r
     .skill firstaid,<1,1
 step << Warlock
     #xprate >2.09
     #label FirstAid2
     .goto Thunder Bluff,29.68,21.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pand|r
+    >>|cRXP_WARN_Skip this step if you did not have enough|r |T132889:0|t[Linen Cloth] |cRXP_WARN_to reach 80 skill|r
     .train 3277 >> Train |T133684:0|t[Wool Bandage]
     .train 7934 >> Train |T134437:0|t[Anti-Venom] << Rogue
     .target Pand Stonebinder
@@ -11399,7 +11471,7 @@ step << Shaman
     .unitscan Owatanka
 step << Shaman
     #completewith CallofWater2
-    .goto The Barrens,43.42,77.41,60>> Travel south toward |cRXP_FRIENDLY_Brine|r
+    .goto The Barrens,43.42,77.41,60>> Travel South toward |cRXP_FRIENDLY_Brine|r
 step << Shaman
     #completewith next
     >>Kill a |cRXP_ENEMY_Thunderhawk|r. Loot it for its |cRXP_LOOT_Wings|r
@@ -11938,19 +12010,13 @@ step << !Warlock
     #xprate >2.09
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
-    .accept 1065 >> Accept Journey to Tarren Mill << Rogue/Shaman
     .accept 962 >> Accept Serpentbloom
     .goto Thunder Bluff,22.82,20.88
     .target Apothecary Zamah
     .dungeon WC
-step << !Warlock
-    #xprate >2.09
+step
     #optional
     #label ZamahTurnin
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
-    .accept 1065 >> Accept Journey to Tarren Mill << Rogue/Shaman
-    .goto Thunder Bluff,22.82,20.88
-    .target Apothecary Zamah
 step << Priest
     .goto Thunder Bluff,25.31,15.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miles|r
@@ -12009,13 +12075,14 @@ step << Shaman
 step
     #xprate <2.1 << Warlock
     #completewith next
-    .skill firstaid,80 >> Create |T133688:0|t[Heavy Linen Bandages] until your skill is 80 or higher
+    .skill firstaid,80 >> |cRXP_WARN_Create|r |T133688:0|t[Heavy Linen Bandages] |cRXP_WARN_until your skill in First Aid is 80 or higher|r
     .skill firstaid,<1,1
 step
     #xprate <2.1 << Warlock
     #label FirstAid2
     .goto Thunder Bluff,29.68,21.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to|r |cRXP_FRIENDLY_Pand|r
+    >>|cRXP_WARN_Skip this step if you did not have enough|r |T132889:0|t[Linen Cloth] |cRXP_WARN_to reach 80 skill|r
     .train 3277 >> Train |T133684:0|t[Wool Bandage]
     .train 7934 >> Train |T134437:0|t[Anti-Venom] << Rogue
     .target Pand Stonebinder
@@ -12133,7 +12200,7 @@ step << Hunter
     >>|cRXP_BUY_Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_from her|r
     .collect 2515,1600,493,1 << Hunter --Sharp Arrow (1600)
     .target Kuna Thunderhorn
-step << !Shaman !Rogue
+step 
     #xprate <2.1 << Warlock
     #label FlyCampT
     .goto Thunder Bluff,47.00,49.82
@@ -12142,6 +12209,7 @@ step << !Shaman !Rogue
     .fly Camp Taurajo >>Fly to Camp Taurajo
     .target Tal
     .zoneskip The Barrens
+    .dungeon WC << Shaman/Rogue
 step << Warlock
     #xprate <2.1
     .goto The Barrens,44.62,59.27
@@ -12175,7 +12243,7 @@ step << Shaman
     .unitscan Owatanka
 step << Shaman
     #completewith CallofWater2
-    .goto The Barrens,43.42,77.41,60>> Travel south toward |cRXP_FRIENDLY_Brine|r
+    .goto The Barrens,43.42,77.41,60>> Travel South toward |cRXP_FRIENDLY_Brine|r
 step << Shaman
     #completewith next
     >>Kill a |cRXP_ENEMY_Thunderhawk|r. Loot it for its |cRXP_LOOT_Wings|r
@@ -12561,7 +12629,7 @@ step
     .dungeon WC
 step << skip
     #completewith next
-    .goto The Barrens,44.45,59.16,100 >> Travel south to Camp Taurajo
+    .goto The Barrens,44.45,59.16,100 >> Travel South to Camp Taurajo
     .dungeon WC
 step << skip
     .goto The Barrens,44.45,59.16
@@ -12732,11 +12800,11 @@ step << Rogue
     .goto The Barrens,54.72,5.74
     >>Run into the Rogue Tower and kill |cRXP_ENEMY_Drones|r, |cRXP_ENEMY_Patrollers|r and |cRXP_ENEMY_Lookouts|r
     .complete 2478,1 --Mutated Venture Co. Drone (2)
+    .mob +Mutated Venture Co. Drone
     .complete 2478,3 --Venture Co. Patroller (2)
+    .mob +Venture Co. Patroller
     .complete 2478,2 --Venture Co. Lookout (2)
-    .mob Mutated Venture Co. Drone
-    .mob Venture Co. Patroller
-    .mob Venture Co. Lookout
+    .mob +Venture Co. Lookout
 step << Rogue
     .goto The Barrens,54.77,5.57
     >>At the top of the tower you'll find |cRXP_ENEMY_Gallywix|r. Loot him for his |cRXP_LOOT_Head|r
