@@ -10334,6 +10334,21 @@ step
     .turnin 6384 >>Turn in Ride to Orgrimmar
     .accept 6385 >>Accept Doras the Wind Rider Master
     .target Innkeeper Gryshka
+step << Rogue
+    .goto Orgrimmar,48.12,80.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Trak'gen|r|cRXP_BUY_. Buy |r |T135419:0|t[Sharp Throwing Axe] |cRXP_BUY_from him|r
+    .collect 3135,200 --Sharp Throwing Axe (200)
+    .vendor >> Vendor your trash
+    .target K'waii
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
+step << Rogue
+    #completewith AdmiralTurnin
+    +Equip the |T135421:0|t[Sharp Throwing Axe]
+    .use 3135
+    .itemcount 3135,1
+    .itemStat 18,QUALITY,<7
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
 step
     #xprate >2.09
     .goto Orgrimmar,45.120,63.889

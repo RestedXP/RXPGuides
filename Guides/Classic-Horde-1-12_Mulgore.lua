@@ -3810,7 +3810,6 @@ step << Tauren
     .goto Mulgore,48.53,60.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mull|r
     .turnin 754 >>Turn in Winterhoof Cleansing
-    .accept 756 >>Accept Thunderhorn Totem
     .target Mull Thunderhorn
 step << Warrior
     .goto Mulgore,46.80,60.85
