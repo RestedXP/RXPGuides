@@ -22,6 +22,7 @@ step
 step
     #sticky
     #label balance1
+    #completewith GoodProtector
     >>Kill |cRXP_ENEMY_Young Nightsabers|r and |cRXP_ENEMY_Young Thistle Boars|r
     .goto Teldrassil,62.0,42.6,0,0
     .complete 456,1 --Kill Young Nightsaber (x7)
@@ -32,12 +33,20 @@ step
     .xp 2 >> Grind to level 2
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dirania Silvershine|r and |cRXP_FRIENDLY_Melithar Staghelm|r
+    #label GoodProtector
     .accept 4495 >> Accept A Good Friend
     .goto Teldrassil,60.899,41.961
     .accept 458 >> Accept The Woodland Protector
 	.goto Teldrassil,59.924,42.474
     .target Dirania Silvershine
     .target Melithar Staghelm
+step
+    >>Kill |cRXP_ENEMY_Young Nightsabers|r and |cRXP_ENEMY_Young Thistle Boars|r
+    .goto Teldrassil,62.0,42.6,0,0
+    .complete 456,1 --Kill Young Nightsaber (x7)
+    .complete 456,2 --Kill Young Thistle Boar (x4)
+    .mob Young Nightsaber
+    .mob Young Thistle Boar
 step << Hunter
 #xprate >1.99
     #requires balance1
@@ -337,6 +346,7 @@ step << Druid
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dellylah|r
     .vendor >> |cRXP_WARN_Vendor trash|r
     >>|cRXP_BUY_Buy 10|r |T132794:0|t[Refreshing Spring Water]
+    >>|cRXP_WARN_Make sure you have 1 silver left so you can train|r |T136096:0|t[Moonfire]
     .collect 159,10 --Collect Refreshing Spring Water (x10)
     .target Dellylah
 step
@@ -887,6 +897,7 @@ step << Hunter
     .train 5116 >> Train Concussive Shot << sod
     .target Dazalar
 step << Druid
+    #season 0
     .goto Teldrassil,55.945,61.566
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kal|r
 	.trainer >> Train your class spells
@@ -2359,7 +2370,7 @@ step << Hunter
     >>|cRXP_WARN_You will need it to feed your owl, they only eat meat and there's no meat vendor in Darkshore|r
     .collect 117,15
     .target Jaeana
-step
+step << !Warrior
     #season 2
     .goto Darnassus,70.679,45.379
     .target Mydrannul
@@ -2687,7 +2698,7 @@ step << Rogue
     .target Priestess A'moora
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess A'moora|r
     .turnin 2520 >> Turn in Sathrah's Sacrifice
-step << Warrior/Rogue
+step << Warrior/Rogue/Druid
     #season 2
     .goto Darnassus,34.814,9.255
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arch Druid Fandral Staghelm|r

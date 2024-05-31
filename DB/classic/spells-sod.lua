@@ -51,10 +51,11 @@ s["Scourge"] = {
 }
 s["DRUID"] = {
     [1] = {
-        1126 -- mark of the wild
+        
     },
     [4] = {
-        8921 -- moonfire
+        8921, -- moonfire
+        1126 -- mark of the wild
     },
     [6] = {
         5177, -- wrath r2
@@ -65,31 +66,25 @@ s["DRUID"] = {
         5186 -- healing touch r2
     },
     [10] = {
-        99, -- demoralizing roar
+        8924, -- moonfire r2
         1058, -- rejuvenation r2
-        5232, -- mark of the wild r2
-        8924 -- moonfire r2
+        5232 -- mark of the wild r2
     },
     [12] = {
-        5229, -- enrage
         8936 -- regrowth
     },
     [14] = {
         782, -- thorns r2
         5178, -- wrath r3
-        5187, -- healing touch r3
-        5211 -- bash
+        5187 -- healing touch r3
     },
     [16] = {
-        779, -- swipe
-        1430, -- rejuvenation r3
-        8925 -- moonfire r3
+        8925, -- moonfire r3
+        1430 -- rejuvenation r3
     },
     [18] = {
         1062, -- entangling roots r2
-        770, -- faerie fire
         2637, -- hibernate
-        6808, -- maul r2
         8938 -- regrowth
     },
     [20] = {
