@@ -311,7 +311,7 @@ step
 step << Alliance
     #completewith FirstLieutenantConnor
     .subzone 5536 >> Travel to Forgotten Hill
-step << Horde
+step << Alliance
     .isOnQuest 27949
     #loop
     .goto 245,39.0,75.6,75,0
