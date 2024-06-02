@@ -220,6 +220,7 @@ step << Alliance
     .isOnQuest 28275
     #loop
     .goto 245,22.08,36.61,20,0
+    .goto 245,21.76,47.89,20,0
     .vehicle 48283 >> |cRXP_WARN_Enter a|r |cRXP_FRIENDLY_Wellson Cannon|r
     .target Wellson Cannon
 step << Alliance
@@ -391,6 +392,7 @@ step << Horde
     .isOnQuest 28275
     #loop
     .goto 245,22.08,36.61,20,0
+    .goto 245,21.76,47.89,20,0
     .vehicle 48283 >> |cRXP_WARN_Enter a|r |cRXP_FRIENDLY_Wellson Cannon|r
     .target Wellson Cannon
 step << Horde
