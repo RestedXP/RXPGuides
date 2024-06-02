@@ -26,48 +26,63 @@ step
     .vendor >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy additional gems |cRXP_WARN_It's recommended for faster leveling but uses bronze, a cosmetic currency.|r
     .skipgossip
     .target Lidamorrutu
--- step
---     .goto 371,43.01,27.58
---     .achievementComplete 40223,1
---     .collect 208555,1 >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy |T634012:0|t[Timerunner's Idol.]
---     .skipgossip
---     .buy 208555,1
---     .target Lidamorrutu
--- step
---     .goto 371,43.01,27.58
---     .achievementComplete 20004,1
---     .collect 208487,1 >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy |T629696:0|t[Timerunner's Ring.]
---     .skipgossip
---     .buy 208487,1
---     .target Lidamorrutu
--- step
---     .goto 371,43.01,27.58
---     .achievementComplete 20005,1
---     .collect 208491,1 >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy |T645143:0|t[Timerunner's Seal.]
---     .skipgossip
---     .buy 208491,1
---     .target Lidamorrutu
--- step
---     .goto 371,43.01,27.58
---     .achievementComplete 20006,1
---     .collect 210523,1 >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy |T632849:0|t[Timerunner's Amulet.]
---     .skipgossip
---     .buy 210523,1
---     .target Lidamorrutu
--- step
---     .goto 371,43.01,27.58
---     .achievementComplete 19881,1
---     .collect 208554,1 >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy |T971287:0|t[Timerunner's Beacon.]
---     .skipgossip
---     .buy 208554,1
---     .target Lidamorrutu
 step
+    #hidewindow
+    #completewith All
+    #label all2
+    .achievement 20005,0
+    .achievement 19881,0
+    .achievement 20006,0
+    .achievement 20004,0
+    .achievement 40223,0
+step
+    #completewith all2
     .goto 371,43.01,27.58
-    -- .achievementComplete 20005,1
-    -- .achievementComplete 19881,1
-    -- .achievementComplete 20006,1
-    -- .achievementComplete 20004,1
-    -- .achievementComplete 40223,1
+    .achievementComplete 40223,1
+    .collect 208555,1 >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy |T634012:0|t[Timerunner's Idol.]
+    .skipgossip
+    .buy 208555,1
+    .target Lidamorrutu
+step
+    #completewith all2
+    .goto 371,43.01,27.58
+    .achievementComplete 20004,1
+    .collect 208487,1 >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy |T629696:0|t[Timerunner's Ring.]
+    .skipgossip
+    .buy 208487,1
+    .target Lidamorrutu
+step
+    #completewith all2
+    .goto 371,43.01,27.58
+    .achievementComplete 20005,1
+    .collect 208491,1 >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy |T645143:0|t[Timerunner's Seal.]
+    .skipgossip
+    .buy 208491,1
+    .target Lidamorrutu
+step
+    #completewith all2
+    .goto 371,43.01,27.58
+    .achievementComplete 20006,1
+    .collect 210523,1 >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy |T632849:0|t[Timerunner's Amulet.]
+    .skipgossip
+    .buy 210523,1
+    .target Lidamorrutu
+step
+    #completewith all2
+    #label All
+    .goto 371,43.01,27.58
+    .achievementComplete 19881,0
+    .collect 208554,1 >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy |T971287:0|t[Timerunner's Beacon.]
+    .skipgossip
+    .buy 208554,1
+    .target Lidamorrutu
+step
+    .achievementComplete 20005,0
+    .achievementComplete 19881,0
+    .achievementComplete 20006,0
+    .achievementComplete 20004,0
+    .achievementComplete 40223,0
+    .goto 371,43.01,27.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lidamorrutu|r and buy the jewellery.
     .collect 208491,1
     .collect 210523,1
