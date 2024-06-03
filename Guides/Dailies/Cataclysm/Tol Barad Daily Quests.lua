@@ -220,6 +220,7 @@ step << Alliance
     .isOnQuest 28275
     #loop
     .goto 245,22.08,36.61,20,0
+    .goto 245,21.76,47.89,20,0
     .vehicle 48283 >> |cRXP_WARN_Enter a|r |cRXP_FRIENDLY_Wellson Cannon|r
     .target Wellson Cannon
 step << Alliance
@@ -311,7 +312,7 @@ step
 step << Alliance
     #completewith FirstLieutenantConnor
     .subzone 5536 >> Travel to Forgotten Hill
-step << Horde
+step << Alliance
     .isOnQuest 27949
     #loop
     .goto 245,39.0,75.6,75,0
@@ -391,6 +392,7 @@ step << Horde
     .isOnQuest 28275
     #loop
     .goto 245,22.08,36.61,20,0
+    .goto 245,21.76,47.89,20,0
     .vehicle 48283 >> |cRXP_WARN_Enter a|r |cRXP_FRIENDLY_Wellson Cannon|r
     .target Wellson Cannon
 step << Horde
