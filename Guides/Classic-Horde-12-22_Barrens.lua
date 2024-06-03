@@ -9684,7 +9684,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Horde 1-22
 #next 24-26 Southern Barrens << !Rogue !Shaman
-#next 24-24 Hillsbrad Class Quests << Rogue/Shaman
+#next 23-24 Hillsbrad Class Quests << Rogue/Shaman
 
 
 step << Druid
