@@ -30,8 +30,9 @@ step
     .mob Young Nightsaber
     .mob Young Thistle Boar
 step
+    >>Loot the mobs you kill, make sure you have at least 10 copper worth of vendor trash, you will need it to train |T132333:0|t[Battle Shout]<< Warrior
     .xp 2 >> Grind to level 2
-step
+step << !Warrior sod
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dirania Silvershine|r and |cRXP_FRIENDLY_Melithar Staghelm|r
     #label GoodProtector
     .accept 4495 >> Accept A Good Friend
@@ -40,6 +41,32 @@ step
 	.goto Teldrassil,59.924,42.474
     .target Dirania Silvershine
     .target Melithar Staghelm
+step << Warrior
+    #season 2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Melithar Staghelm|r
+    #label GoodProtector
+    .accept 458 >> Accept The Woodland Protector
+	.goto Teldrassil,59.924,42.474
+    .target Melithar Staghelm
+step << Warrior
+    #season 2
+    .goto Teldrassil,59.306,41.091
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keina|r
+	.vendor >> |cRXP_WARN_Vendor trash|r
+    .target Keina
+step << Warrior
+    #season 2
+    .goto Teldrassil,59.637,38.442
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alyissia|r
+    .accept 77575 >> Accept Amidst the Shadowed Webs << NightElf Warrior
+    .trainer >> Train |T132333:0|t[Battle Shout]
+    .target Alyissia
+step << Warrior
+    #season 2
+    .goto Teldrassil,60.8,42.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dirania Silvershine|r
+    .accept 4495 >> Accept A Good Friend
+    .target Dirania Silvershine
 step
     >>Kill |cRXP_ENEMY_Young Nightsabers|r and |cRXP_ENEMY_Young Thistle Boars|r
     .goto Teldrassil,62.0,42.6,0,0
@@ -47,6 +74,101 @@ step
     .complete 456,2 --Kill Young Thistle Boar (x4)
     .mob Young Nightsaber
     .mob Young Thistle Boar
+
+
+----Start of SoD Warrior Shadowglen Routing for fast Victory Rush----
+
+step << Warrior
+    #season 2
+	.goto Teldrassil,58.695,44.266
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Conservator Ilthalaine|r
+    >>|cRXP_WARN_Take the gloves as reward in order to be able to engrave|r |T132342:0|t[|cRXP_FRIENDLY_Victory Rush|r] |cRXP_WARN_on them as soon as possible|r
+    .turnin 456,1 >> Turn in The Balance of Nature
+    .accept 457 >> Accept The Balance of Nature
+    .accept 3116 >> Accept Simple Sigil
+    .target Conservator Ilthalaine
+step << Warrior
+    #season 2
+    .goto Teldrassil,57.9,45.1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarindrella|r
+    .turnin 458 >> Turn in The Woodland Protector
+    .target Tarindrella
+    .accept 459 >> Accept The Woodland Protector
+step << Warrior
+    #season 2
+    .goto Teldrassil,57.807,41.653
+    .target Gilshalan Windwalker
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilshalan Windwalker|r
+    .accept 916 >> Accept Webwood Venom
+step << Warrior
+    #season 2
+    #sticky
+    #completewith EarlyFriendSoD
+    >>Kill Thistle Boars on your way to Iverron. |cRXP_WARN_You don't have to complete this objective now|r
+    .complete 457,2 --Kill Thistle Boar (x7)
+step << Warrior
+    #season 2
+    #sticky
+    #completewith EarlySpidersSoD
+    #label RoVR
+    >>Kill |cRXP_ENEMY_Webwood Spiders|r. Loot them for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    .collect 204806,1 -- Rune of Victory Rush (1)
+    .mob Webwood Spider
+    .train 402927,1
+step << Warrior
+    #season 2
+    #requires RoVR
+    #label RoVRUse
+    #completewith EarlySpidersSoD
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    .use 204806
+    .itemcount 204806,1
+    .train 402927,1
+step << Warrior
+    #optional
+    #completewith EarlySpidersSoD
+    #season 2
+    #requires RoVRUse
+    .engrave 10 >> Open your character sheet and engrave your gloves with |T132342:0|t[|cRXP_FRIENDLY_Victory Rush|r]
+step << Warrior
+    #season 2
+    #label EarlyFriendSoD
+    .goto Teldrassil,54.593,32.992
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iverron|r
+    .turnin 4495 >> Turn in A Good Friend
+    .target Iverron
+    .accept 3519 >> Accept A Friend in Need
+step << Warrior
+    #season 2
+    #label EarlySpidersSoD
+    >>Kill |cRXP_ENEMY_Webwood Spiders|r. Loot them for their |cRXP_LOOT_Venom Sacs|r
+    .complete 916,1 --Collect Webwood Venom Sac (x10)
+    .mob Webwood Spider
+step << Warrior
+    #season 2
+    #label RoVRLate
+    >>Kill |cRXP_ENEMY_Webwood Spiders|r. Loot them for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    .collect 204806,1 -- Rune of Victory Rush (1)
+    .mob Webwood Spider
+    .train 402927,1
+step << Warrior
+    #season 2
+    #requires RoVRLate
+    #label RoVRUseLate
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
+    .use 204806
+    .itemcount 204806,1
+    .train 402927,1
+step << Warrior
+    #optional
+    #season 2
+    #requires RoVRUseLate
+    .engrave 10 >> Open your character sheet and engrave your gloves with |T132342:0|t[|cRXP_FRIENDLY_Victory Rush|r]
+
+
+----End of SoD Warrior Shadowglen Routing for fast Victory Rush---
+
+
 step << Hunter
 #xprate >1.99
     #requires balance1
@@ -102,7 +224,7 @@ step << Druid
     .collect 159,15 --Collect Refreshing Spring Water (x15)
     .target Dellylah
 step
-#xprate <1.99 << Hunter
+#xprate <1.99 << Hunter/Warrior
     #requires balance1
 	.goto Teldrassil,58.695,44.266
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Conservator Ilthalaine|r
@@ -214,6 +336,7 @@ step << Hunter
     .equip 10 >> Make sure you have an item in your glove slot, you'll need it later for engraving Runes
     .use 5394
 step << Warrior
+    #season 0
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keina|r
 	.vendor >> |cRXP_WARN_Vendor trash|r
@@ -225,14 +348,6 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alyissia|r
 	.turnin 3116 >> Turn in Simple Sigil
     .trainer >> Train your class spells
-step << Warrior
-    #season 2
-    .goto Teldrassil,59.637,38.442
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alyissia|r
-    .turnin 3116 >> Turn in Simple Sigil
-    .accept 77575 >> Accept Amidst the Shadowed Webs << NightElf Warrior
-    .trainer >> Train your class spells
-    .target Alyissia
 step << !Hunter
     #season 0 << Druid
     .goto Teldrassil,59.8,34.1
@@ -249,6 +364,7 @@ step << Druid
     .xp 3+400 >>Grind to 400+/1400xp
     .mob Grellkin
 step << !Hunter
+    #season 0 << Warrior
     .goto Teldrassil,54.593,32.992
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iverron|r
     .turnin 4495 >> Turn in A Good Friend
@@ -274,7 +390,7 @@ step << Warrior
 	#hardcore
     .goto Teldrassil,57.9,45.1,20 >> Run back to |cRXP_FRIENDLY_Tarindrella|r near the spawn point
 step << !Hunter
-    #season 0 << Druid
+    #season 0 << Druid/Warrior
     .goto Teldrassil,57.9,45.1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarindrella|r
     .turnin 458 >> Turn in The Woodland Protector
@@ -329,7 +445,10 @@ step << !Hunter !Druid
     #season 2
     .goto Teldrassil,59.637,38.442
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alyissia|r
-    .trainer >> Train your class spells
+    .turnin 3116 >> Turn in Simple Sigil
+    .turnin 77575 >> Turn in Amidst the shadowed webs
+    .train 772 >> Train |T132155:0|t[Rend]
+    .train 100 >> Train |T132337:0|t[Charge]
     .target Alyissia
 step << Druid
     #season 0,1
@@ -353,7 +472,10 @@ step
     .goto Teldrassil,57.807,41.653
     .target Gilshalan Windwalker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilshalan Windwalker|r
-    .accept 916 >> Accept Webwood Venom
+    .accept 916 >> Accept Webwood Venom << !Warrior sod
+    .turnin 916 >> Turn in Webwood Venom << Warrior sod
+    .accept 917 >> Accept Webwood Egg << Warrior sod
+    .target Gilshalan Windwalker
 step << Druid
     #season 2
     .xp 4
@@ -403,22 +525,6 @@ step << Hunter
     .collect 206168,1,77568,1 -- Rune of the Chimera (1)
     .unitscan Githyiss the Vile
     .engrave 10--skips if it's already engraved
-step << Warrior
-    #season 2
-    #completewith IchorVenomSac
-    #label RoVR
-    >>Kill |cRXP_ENEMY_Webwood Spiders|r. Loot them for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
-    .collect 204806,1 -- Rune of Victory Rush (1)
-    .mob Webwood Spider
-    .train 402927,1
-step << Warrior
-    #season 2
-    #requires RoVR
-    #completewith next
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
-    .use 204806
-    .itemcount 204806,1
-    .train 402927,1
 step << Druid
     #season 2
     #completewith Stormrage
@@ -444,7 +550,7 @@ step << Druid
     .use 208414 >>|cRXP_WARN_Kill a foe 6 times while they are afflicted with|r |T136096:0|t[Moonfire] |cRXP_WARN_to gain stacks of|r |T237556:0|t[Inspiration]
     >>|cRXP_WARN_Once you have the|r |T136116:0|t[Inspired] |cRXP_WARN_buff after 6 kills, use the|r |T134903:0|t[|cRXP_FRIENDLY_Lunar Idol|r] |cRXP_WARN_again which you just equiped|r
     .complete 77571,1 -- Learn: Engrave Chest - Fury of Stormrage
-step << Druid
+step << Druid/Warrior
     #season 2
     #label Stormrage
     .goto Teldrassil,55.0,43.7
@@ -454,18 +560,49 @@ step << Druid
     .mob Grell
     .mob Grellkin
 step
+    #season 0 << Warrior
     #label IchorVenomSac
     .goto Teldrassil,56.8,31.7
     >>Kill |cRXP_ENEMY_Webwood Spiders|r. Loot them for their |cRXP_LOOT_Ichor|r and |cRXP_LOOT_Venom Sacs|r
     .complete 3521,3 --Collect Webwood Ichor (x1)
     .complete 916,1 --Collect Webwood Venom Sac (x10)
     .mob Webwood Spider
-step << Hunter/Druid
+step << Warrior
+    #season 2
+    #sticky
+    #completewith EarlyEggSoD
+    >>Kill |cRXP_ENEMY_Webwood Spiders|r as you clear to the back of the cave. Loot them for their |cRXP_LOOT_Ichor|r
+    .complete 3521,3 --Collect Webwood Ichor (x1)
+    .mob Webwood Spider
+step << Warrior
+    #season 2
+    #completewith next
+    .goto Teldrassil,56.73,31.17,25 >> Enter the Shadowthread Cave
+step << Warrior
+    #season 2
+    #label EarlyEggSoD
+    .goto Teldrassil,57.0,26.4
+    >>Loot a |cRXP_LOOT_Webwood Egg|r on the ground at the back of the Cave
+    .complete 917,1 --Collect Webwood Egg (x1)
+step << Warrior
+    #season 2
+    .goto Teldrassil,56.8,31.7
+    >>Kill |cRXP_ENEMY_Webwood Spiders|r Loot them for their |cRXP_LOOT_Ichor|r
+    .complete 3521,3 --Collect Webwood Ichor (x1)
+    .mob Webwood Spider
+step << Hunter/Druid/Warrior
     #season 2
 	#softcore
 	#completewith next
     .deathskip >> Die and respawn at the Spirit Healer
     .target Spirit Healer
+step << Warrior
+	#hardcore
+	#completewith next
+    #season 2
+	+Logout skip on the ledge behind the eggs. Move your character until it looks like they're floating, then log out, and back in.
+	>>If you fall down, just run out the cave normally to the quest turn in
+	.link https://www.youtube.com/watch?v=TTZZT3jpv1s >> CLICK HERE for reference
 step << Hunter
     #optional
     #completewith next
@@ -487,21 +624,8 @@ step << Hunter
 	+Logout skip on the ledge behind the eggs. Move your character until it looks like they're floating, then log out, and back in.
 	>>If you fall down, just run out the cave normally to the quest turn in
 	.link https://www.youtube.com/watch?v=TTZZT3jpv1s >> CLICK HERE for reference
-step << Warrior
-    #season 2
-    .goto Teldrassil,56.8,31.7
-    >>Kill |cRXP_ENEMY_Webwood Spiders|r. Loot them for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
-    .collect 204806,1 -- Rune of Victory Rush (1)
-    .mob Webwood Spider
-    .train 402927,1
-step << Warrior
-    #season 2
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Victory Rush|r]
-    .use 204806
-    .itemcount 204806,1
-    .train 402927,1
 step << !Hunter
-    #season 0,1 << Druid
+    #season 0 << Druid/Warrior
     #requires hunterRuneChimera << Hunter
     .goto Teldrassil,55.0,43.7
     >>Kill |cRXP_ENEMY_Grell|r and |cRXP_ENEMY_Grellkin|r. Loot them for their |cRXP_LOOT_Mushrooms|r and |cRXP_LOOT_Fel Moss|r
@@ -517,6 +641,14 @@ step << Hunter
     .complete 459,1 --Collect Fel Moss (x8)
     .mob Grell
     .mob Grellkin
+step << Warrior
+    #season 2
+    .goto Teldrassil,57.807,41.653
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilshalan Windwalker|r
+    >>TIP: |cRXP_WARN_Take the Tunic as a reward from this quest and equip it. You will use it to engrave a rune on later|r << sod Hunter/sod Rogue/sod Druid/sod Warrior
+    >>TIP: |cRXP_WARN_Take the Robes as a reward from this quest and equip it. You will use it to engrave a rune on later|r << sod Priest
+    .turnin 917 >> Turn in Webwood Egg
+    .target Gilshalan Windwalker
 step
     .goto Teldrassil,57.8,45.1
     .target Tarindrella
@@ -528,8 +660,8 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dirania Silvershine|r
     .turnin 3521 >> Turn in Iverron's Antidote
     .target Dirania Silvershine
-    .accept 3522 >> Accept Iverron's Antidote
-step << !Priest
+    .accept 3522 >> Accept Iverron's Antidote << !Warrior sod
+step << !Priest !Warrior
     #season 0 << Hunter
     .goto Teldrassil,59.306,41.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keina|r
@@ -571,6 +703,7 @@ step << Priest
     .turnin 77574 >> Turn in Meditation of Elune << sod
 	.trainer >> Train your class spells
 step
+    #season 0 << Warrior
     .goto Teldrassil,57.807,41.653
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilshalan Windwalker|r
     .turnin 916 >> Turn in Webwood Venom
@@ -601,33 +734,32 @@ step << Druid
     .turnin -77571 >> Turn in Relics of the Kaldorei
     .train 5177 >>Train |T136006:0|t[|cRXP_FRIENDLY_Wrath|r] rank 2
     .target Mardant Strongoak
-step << NightElf Warrior
-    #season 2
-    #completewith next
-    #sticky
-   .abandon 77575 >> Abandon Amidst the Shadowed Webs. It's not worth running to the trainer to turn it in
 step
+    #season 0 << Warrior
     .goto Teldrassil,54.593,32.992
     .target Iverron
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Iverron|r
-    >>TIP: |cRXP_WARN_Take the chestpiece as reward from him. You will use it to engrave a rune on later|r << Warrior sod
     >>TIP: |cRXP_WARN_Take the pants as reward from him. You will use them to engrave a rune on later|r << Priest sod
     .turnin 3522 >> Turn in Iverron's Antidote
 step
+    #season 0 << Warrior
     #completewith next
     .goto Teldrassil,56.73,31.17,25 >> Enter the Shadowthread Cave
 step
     .goto Teldrassil,57.0,26.4
+    #season 0 << Warrior
     >>Loot a |cRXP_LOOT_Webwood Egg|r on the ground at the back of the Cave
     .complete 917,1 --Collect Webwood Egg (x1)
 step
 	#softcore
 	#completewith next
+    #season 0 << Warrior
     .deathskip >> Die and respawn at the Spirit Healer
     .target Spirit Healer
 step
 	#hardcore
 	#completewith next
+    #season 0 << Warrior
 	+Logout skip on the ledge behind the eggs. Move your character until it looks like they're floating, then log out, and back in.
 	>>If you fall down, just run out the cave normally to the quest turn in
 	.link https://www.youtube.com/watch?v=TTZZT3jpv1s >> CLICK HERE for reference
@@ -639,7 +771,8 @@ step
     .target Gilshalan Windwalker
     .accept 920 >> Accept Tenaron's Summons
 step
-#xprate >1.99
+    #season 2 << !Warrior sod
+    #season 1 << Warrior sod
 	.goto Teldrassil,57.807,41.653
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilshalan Windwalker|r
     >>TIP: |cRXP_WARN_Take the Tunic as a reward from this quest and equip it. You will use it to engrave a rune on later|r << sod Hunter/sod Rogue/sod Druid

@@ -708,10 +708,10 @@ s["WARRIOR"] = {
     },
     [4] = {
         100, -- charge
-        772, -- rend
-        3128 -- parry
+        772 -- rend
     },
     [8] = {
+        3128, -- parry
         1715, -- hamstring
         284 -- heroic strike r2
     },
