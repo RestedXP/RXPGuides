@@ -3340,9 +3340,12 @@ function addon.functions.questcount(self, text, count, ...)
         return element
     end
     local element = self.element
+    local step = element.step
     local event = text
+    if not step.active then return end
     count = 0
     for _,id in pairs(element.ids) do
+        addon.questAccept[id] = element
         if IsOnQuest(id) then
             count = count + 1
         end
