@@ -1389,14 +1389,14 @@ function addon:UpdateLoop(diff)
     if addon.isHidden then
         updateError = false
         --print('hidden')
-        return
+        return 'hidden'
     elseif errorCount >= 10 then
         addon.lastEvent = event
         tickRate = 10
         errorCount = 0
         updateTick = 0
         updateError = false
-        return
+        return 'error'
     elseif updateTick > (tickRate + rand() / 128) then
         updateError = true
         local guideLoaded
@@ -1463,7 +1463,7 @@ function addon:UpdateLoop(diff)
                 addon.RXPFrame.SetStepFrameAnchor()
                 updateError = false
                 skip = 1
-                return
+                return 'bottomFrame'
             elseif skip % 2 == 1 and next(addon.guideCache) then
                 event = event .. "/cache"
                 local length = 0
