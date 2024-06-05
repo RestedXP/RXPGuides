@@ -98,15 +98,13 @@ step
     .skipgossip
     .target Lidamorrutu
 step
-    .goto 371,42.95,27.73 --x middle
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pythagorus|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pythagorus|r and |cRXP_FRIENDLY_Larah Treebender|r
     .accept 80447 >>Accept Looking for More
-    .target Pythagorus
-step
-    .goto 371,42.81,27.62 --x left
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Larah Treebender|r
+    .goto 371,42.95,27.73 --x middle
+    .target +Pythagorus
     .accept 80448 >>Accept A Fresh Scene
-    .target Larah Treebender
+    .goto 371,42.81,27.62 --x left
+    .target +Larah Treebender
 -- step
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
 --     .goto 371,42.5,27.32
@@ -359,12 +357,12 @@ step
     .turnin 29636 >>Turn in A Test of Endurance
     .target Instructor Myang
     --.accept 29637 >>Accept The Rumpus
-step
-    .isOnQuest 29637
-    .goto 371,38.98,23.82
-    .cast 102953 >> Use |T134273:0|t[Monastery Fireworks] inside of the Ring.
-    .timer 120,RP
-    .use 73369
+-- step
+--     .isOnQuest 29637
+--     .goto 371,38.98,23.82
+--     .cast 102953 >> Use |T134273:0|t[Monastery Fireworks] inside of the Ring.
+--     .timer 120,RP
+--     .use 73369
 -- step
 --     .goto 371,39.00,23.22
 --     >>Survive the Onslaught of Monks
@@ -746,6 +744,7 @@ step <<  Horde
 step
     .goto 371,43.49,75.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shao the Defiant|r
+    .turnin 29576 >>Turn in An Air of Worry
     .accept 29578 >>Accept Defiance
     .accept 29579 >>Accept Rally the Survivors
     .target Shao the Defiant
@@ -939,19 +938,19 @@ step
     .cast 437035 >>Use |T134376:0|t[Bronze Timepiece] to teleport to the dragonriding quests.
     .itemcount 216712,1
     .use 216712
-step
-    #loop
-    .goto 371,49.21,46.01,8,0
-    .goto 371,49.01,46.13,8,0
-    .goto 371,48.97,45.89,8,0
-    .goto 371,49.16,45.75,8,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Toortle Wider|r
-    .accept 80311 >>Accept Order of the Cloud Serpent
-    .target Toortle Wider
+-- step
+--     #loop
+--     .goto 371,49.21,46.01,8,0
+--     .goto 371,49.01,46.13,8,0
+--     .goto 371,48.97,45.89,8,0
+--     .goto 371,49.16,45.75,8,0
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Toortle Wider|r
+--     .accept 80311 >>Accept Order of the Cloud Serpent
+--     .target Toortle Wider
 step
     .goto 371,57.64,44.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
-    .turnin 80311 >>Turn in Order of the Cloud Serpent
+    -- .turnin 80311 >>Turn in Order of the Cloud Serpent
     .accept 30134 >>Accept Wild Things
     .target Elder Anli
 step
@@ -1692,6 +1691,7 @@ step
     .accept 80012 >>Accept Dragonriding
     .timer 5,RP
 step
+    .isOnQuest 80012
     .xp >14,1
     .goto 371,28.6,14.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r and buy |T134491:0|t[Nostwin's Voucher.]
@@ -1700,6 +1700,7 @@ step
     .skipgossip
     .target Nostwin
 step
+    .isOnQuest 80012
     .xp <14,1
     #loop
     .goto 371,28.6,14.13
@@ -2217,51 +2218,67 @@ step
     .mob garrosh'ar gear-greaser
 step
     #loop
-    .goto 371,42.53,92.97,15,0
-    .goto 371,44.09,93.55,15,0
-    .goto 371,43.92,94.27,15,0
-    .goto 371,44.41,94.61,15,0
-    .goto 371,45.10,95.37,15,0
-    .goto 371,45.60,94.07,15,0
-    .goto 371,46.10,93.56,15,0
-    .goto 371,45.14,92.68,15,0
-    .goto 371,44.83,94.02,15,0
-    .goto 371,43.81,95.99,15,0
-    .goto 371,42.53,92.97,0
-    .goto 371,44.09,93.55,0
-    .goto 371,43.92,94.27,0
-    .goto 371,44.41,94.61,0
-    .goto 371,45.10,95.37,0
-    .goto 371,45.60,94.07,0
-    .goto 371,46.10,93.56,0
-    .goto 371,45.14,92.68,0
-    .goto 371,44.83,94.02,0
-    .goto 371,43.81,95.99,0
+    -- .goto 371,42.53,92.97,15,0
+    -- .goto 371,44.09,93.55,15,0
+    -- .goto 371,43.92,94.27,15,0
+    -- .goto 371,44.41,94.61,15,0
+    -- .goto 371,45.10,95.37,15,0
+    -- .goto 371,45.60,94.07,15,0
+    -- .goto 371,46.10,93.56,15,0
+    -- .goto 371,45.14,92.68,15,0
+    -- .goto 371,44.83,94.02,15,0
+    -- .goto 371,43.81,95.99,15,0
+    -- .goto 371,42.53,92.97,0
+    -- .goto 371,44.09,93.55,0
+    -- .goto 371,43.92,94.27,0
+    -- .goto 371,44.41,94.61,0
+    -- .goto 371,45.10,95.37,0
+    -- .goto 371,45.60,94.07,0
+    -- .goto 371,46.10,93.56,0
+    -- .goto 371,45.14,92.68,0
+    -- .goto 371,44.83,94.02,0
+    -- .goto 371,43.81,95.99,0
+    .goto 371,44.11,93.48,20,0
+    .goto 371,43.92,94.31,20,0
+    .goto 371,44.45,94.53,20,0
+    .goto 371,44.85,93.98,20,0
+    .goto 371,44.11,93.48,0
+    .goto 371,43.92,94.31,0
+    .goto 371,44.45,94.53,0
+    .goto 371,44.85,93.98,0
     >>Use |T135619:0|t[Sully's Flare Gun] |cRXP_WARN_near Horde War Wagons.|r
     .complete 31734,1 --5/5 Horde War Wagon destroyed
     .use 89624
 step
     #loop
-    .goto 371,42.53,92.97,15,0
-    .goto 371,44.09,93.55,15,0
-    .goto 371,43.92,94.27,15,0
-    .goto 371,44.41,94.61,15,0
-    .goto 371,45.10,95.37,15,0
-    .goto 371,45.60,94.07,15,0
-    .goto 371,46.10,93.56,15,0
-    .goto 371,45.14,92.68,15,0
-    .goto 371,44.83,94.02,15,0
-    .goto 371,43.81,95.99,15,0
-    .goto 371,42.53,92.97,0
-    .goto 371,44.09,93.55,0
-    .goto 371,43.92,94.27,0
-    .goto 371,44.41,94.61,0
-    .goto 371,45.10,95.37,0
-    .goto 371,45.60,94.07,0
-    .goto 371,46.10,93.56,0
-    .goto 371,45.14,92.68,0
-    .goto 371,44.83,94.02,0
-    .goto 371,43.81,95.99,0
+    -- .goto 371,42.53,92.97,15,0
+    -- .goto 371,44.09,93.55,15,0
+    -- .goto 371,43.92,94.27,15,0
+    -- .goto 371,44.41,94.61,15,0
+    -- .goto 371,45.10,95.37,15,0
+    -- .goto 371,45.60,94.07,15,0
+    -- .goto 371,46.10,93.56,15,0
+    -- .goto 371,45.14,92.68,15,0
+    -- .goto 371,44.83,94.02,15,0
+    -- .goto 371,43.81,95.99,15,0
+    -- .goto 371,42.53,92.97,0
+    -- .goto 371,44.09,93.55,0
+    -- .goto 371,43.92,94.27,0
+    -- .goto 371,44.41,94.61,0
+    -- .goto 371,45.10,95.37,0
+    -- .goto 371,45.60,94.07,0
+    -- .goto 371,46.10,93.56,0
+    -- .goto 371,45.14,92.68,0
+    -- .goto 371,44.83,94.02,0
+    -- .goto 371,43.81,95.99,0
+    .goto 371,45.78,93.33,30,0
+    .goto 371,45.4,94.35,30,0
+    .goto 371,44.63,95.64,30,0
+    .goto 371,44.21,95.97,30,0
+    .goto 371,45.78,93.33,0
+    .goto 371,45.4,94.35,0
+    .goto 371,44.63,95.64,0
+    .goto 371,44.21,95.97,0
     >>Kill |cRXP_ENEMY_Grunts|r and |cRXP_ENEMY_Gear-Greasers.|r
     .complete 30069,1 --6/6 Garrosh'ar Grunt slain
     .complete 30069,2 --4/4 Garrosh'ar Gear-Greaser slain
@@ -2344,6 +2361,7 @@ step
     .accept 80012 >>Accept Dragonriding
     .target Moratari
 step
+    .isOnQuest 80012
     .xp >14,1
     #loop
     .goto 371,45.89,84.63,5,0
@@ -2356,6 +2374,7 @@ step
     .skipgossip
     .target Nostwin
 step
+    .isOnQuest 80012
     .xp <14,1
     #loop
     .goto 371,45.89,84.63,5,0
