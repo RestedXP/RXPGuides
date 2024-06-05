@@ -1791,8 +1791,9 @@ function BottomFrame.UpdateFrame(self, stepn)
             end
         end
         step.text = text
-        frame.text:SetText(text)
-
+        if frame.text then
+            frame.text:SetText(text)
+        end
         if hideStep then
             fheight = 1
             frame:SetAlpha(0)
@@ -1865,14 +1866,17 @@ function BottomFrame.UpdateFrame(self, stepn)
             else
                 frame:SetAlpha(1)
             end
-            if hideStep then
-                --hiddenFrames = hiddenFrames + 1
-                frame.text:SetText(text)
-                fheight = 1.00
-                frame:SetAlpha(0)
-            else
-                frame.text:SetText(text)
-                fheight = math.ceil(frame.text:GetStringHeight() + 8)
+
+            if frame.text then
+                if hideStep then
+                    --hiddenFrames = hiddenFrames + 1
+                    frame.text:SetText(text)
+                    fheight = 1.00
+                    frame:SetAlpha(0)
+                else
+                    frame.text:SetText(text)
+                    fheight = math.ceil(frame.text:GetStringHeight() + 8)
+                end
             end
             step.text = text
 
