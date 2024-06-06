@@ -1020,7 +1020,7 @@ addon.turnInList = {}
 function addon.functions.turnin(self, ...)
 
     if type(self) == "string" then -- on parse
-        local text, id, reward = ...
+        local text, id, reward, flags = ...
         id = tonumber(id)
         if not id then
             return addon.error(
@@ -1029,6 +1029,8 @@ function addon.functions.turnin(self, ...)
         end
         reward = tonumber(reward) or 0
         local element = {title = "", questId = GetQuestId(id)}
+        element.flags = tonumber(flags) or 0
+        --setting the lsb to 1 disables auto turn in
         if id < 0 then
             id = math.abs(id)
             element.skipIfMissing = true
@@ -1063,12 +1065,13 @@ function addon.functions.turnin(self, ...)
             element.tooltip = id
         end
         if step.active or element.retrieveText then
-            addon.questTurnIn[id] = element
+            local autoTurnIn = (element.flags % 2 == 0) and element
+            addon.questTurnIn[id] = autoTurnIn
             -- addon.questAccept[id] = addon.questAccept[id] or element
             local quest = addon.GetQuestName(id)
             if quest then
                 element.title = quest
-                addon.questTurnIn[quest] = element
+                addon.questTurnIn[quest] = autoTurnIn
                 -- addon.questAccept[quest] = addon.questAccept[quest] or element
                 element.text = element.text:gsub("%*quest%*", quest)
                 if element.requestFromServer then

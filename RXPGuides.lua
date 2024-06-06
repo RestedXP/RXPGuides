@@ -686,7 +686,7 @@ end
 
 local function handleQuestComplete()
     local id = GetQuestID()
-    if not id or id < 0 then return end
+    if not id or id < 0 or addon.questTurnIn[id] == false then return end
 
     local numChoices = GetNumQuestChoices()
 
