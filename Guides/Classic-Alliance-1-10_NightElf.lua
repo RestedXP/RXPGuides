@@ -1021,6 +1021,7 @@ step << Warrior
     #season 2
     .goto Teldrassil,54.8,66.0,25 >>Head to the marked spot. Check if |cRXP_FRIENDLY_Wandering Swordsman|r is there. If you find him you can challenge him to a duel which will award you with the rune of |T132334:0|t[|cRXP_FRIENDLY_Blood Frenzy|r]
     >>|cRXP_WARN_He has multiple spawn points and can only be present in one of them at the time. Skip this step if he's not there|r
+    >>|cRXP_WARN_You will most likely be unable to solo him at this level, skip this step if there's no one around to help you, you can come back after you get your hamstring + thrown at lvl 10 and check if he's still there|r
     .unitscan Wandering Swordsman
     .train 412507,1
 step << Hunter
@@ -1177,6 +1178,7 @@ step << Warrior
     #season 2
     .goto Teldrassil,62.6,71.8,25 >>Head to the marked spot. Check if |cRXP_FRIENDLY_Wandering Swordsman|r is there. If you find him you can challenge him to a duel which will award you with the rune of |T132334:0|t[|cRXP_FRIENDLY_Blood Frenzy|r]
     >>|cRXP_WARN_He has multiple spawn points and can only be present in one of them at the time. Skip this step if he's not there|r
+    >>|cRXP_WARN_You will most likely be unable to solo him at this level, skip this step if there's no one around to help you, you can come back after you get your hamstring + thrown at lvl 10 and check if he's still there|r
     .unitscan Wandering Swordsman
     .train 412507,1
 step
@@ -2709,6 +2711,32 @@ step
     #completewith next
     .goto Darnassus,82.01,36.70
     .zone Darnassus >> Travel to Darnassus
+step << Warrior
+    #season 2
+    .goto Teldrassil,39.8,69.6,25 >>Head to the marked spot. Check if |cRXP_FRIENDLY_Wandering Swordsman|r is there if you still haven't found him. If you find him you can challenge him to a duel which will award you with the rune of |T132334:0|t[|cRXP_FRIENDLY_Blood Frenzy|r]
+    >>|cRXP_WARN_He has multiple spawn points and can only be present in one of them at the time. Skip this step if he's not there|r
+    .unitscan Wandering Swordsman
+    .train 412507,1
+step << Warrior
+    #season 2
+    .goto Teldrassil,43.8,77.0,25 >>Head to the marked spot. Check if |cRXP_FRIENDLY_Wandering Swordsman|r is there if you still haven't found him. If you find him you can challenge him to a duel which will award you with the rune of |T132334:0|t[|cRXP_FRIENDLY_Blood Frenzy|r]
+    >>|cRXP_WARN_He has multiple spawn points and can only be present in one of them at the time. Skip this step if he's not there|r
+    .unitscan Wandering Swordsman
+    .train 412507,1
+step
+    #softcore
+    #completewith next
+    #sesaon 2
+    .goto Teldrassil,40.8,75.6
+    .deathskip >>Die and respawn at the Darnassus graveyard
+    >>|cRXP_WARN_Make sure you're closer to Darnassus graveyard than Dolnaar one or you might end up going the wrong way. If you're uncertain die east of the spot marked on your map|r << sod
+    .target Spirit Healer
+step
+    #hardcore
+    #completewith next
+    #season 2
+    .goto Darnassus,82.01,36.70
+    .zone Darnassus >> Travel to Darnassus
 step
     .goto Darnassus,70.679,45.379
     .target Mydrannul
@@ -2982,7 +3010,16 @@ step << Hunter
 step << Warrior
     .goto Darnassus,58.76,44.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariyell Skyshadow|r
-    >>|cRXP_BUY_Buy a|r |T135154:0|t[Quarter Staff]|cRXP_BUY_. Equip it at level 11|r
+    >>|cRXP_BUY_Buy a|r |T135147:0|t[Gnarled Staff]|cRXP_BUY_. Equip it at level 15|r
+	.collect 2030,1
+    .target Ariyell Skyshadow
+    .money <0.5022
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.9
+step << Warrior
+    .goto Darnassus,58.76,44.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariyell Skyshadow|r
+    >>|cRXP_BUY_Buy a|r |T135154:0|t[Quarter Staff]|cRXP_BUY_. Equip it at level 11|r << era
+    >>|cRXP_BUY_Buy and equip a|r |T135154:0|t[Quarter Staff] |cRXP_BUY_if you can't afford a|r |T135147:0|t[Gnarled Staff] << sod
 	.collect 854,1
     .target Ariyell Skyshadow
     .money <0.3022
