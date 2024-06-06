@@ -77,7 +77,6 @@ step << Horde
     .target Captain Prug
     .target Private Sarlosk
 step << Alliance
-    .isOnQuest 27987
     #completewith CommanderLargo
     .goto 245,75.26,44.80
     .subzone 5540 >> Travel to Largo's Overlook
@@ -198,7 +197,6 @@ step << Alliance
     .complete 28059,1 -- Keep Lord Farson slain (1)
     .mob Keep Lord Farson
 step << Alliance
-    .isOnQuest 27973
     #completewith ForemanWellson
     .subzone 5535 >> Travel to the Wellson Shipyard
 step << Alliance
@@ -370,7 +368,6 @@ step << Alliance
     .complete 27948,1 -- Sticky Silk Gland (4)
     .mob Darkwood Broodmother
 step << Horde
-    .isOnQuest 27973
     #completewith ForemanWellson
     .subzone 5535 >> Travel to the Wellson Shipyard
 step << Horde
@@ -500,7 +497,6 @@ step << Horde
     .complete 28137,1 -- Rustberg Seabass (22)
     .mob Rustberg Fisherman
 step << Horde
-    .isOnQuest 27987
     #completewith CommanderLargo
     .goto 245,75.26,44.80
     .subzone 5540 >> Travel to Largo's Overlook
