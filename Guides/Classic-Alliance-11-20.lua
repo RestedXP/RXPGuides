@@ -1659,7 +1659,8 @@ step
 
  step << !sod/Warrior/Rogue
     #optional
-    #completewith AsterionTravel
+    #completewith AsterionTravel << era
+    #completewith AsterionTravelSoD << sod
     .goto 1439,43.509,33.207,0
     >>Kill |cRXP_ENEMY_Foreststrider Fledglings|r. Loot them for their |cRXP_LOOT_Strider Meat|r
     >>|cRXP_WARN_Be careful as they|r |T132307:0|t[Flee] |cRXP_WARN_at <30% health|r
@@ -2052,7 +2053,7 @@ step << NightElf/Dwarf Hunter
     .xp 13 >> Grind to level 13
 step << !sod/Warrior/Rogue
     #optional
-    #completewith MushroomCaveSoD
+    #completewith RedCrystal
     #season 2
     >>Kill |cRXP_ENEMY_Foreststrider Fledglings|r. Loot them for their |cRXP_LOOT_Strider Meat|r
     >>|cRXP_WARN_Be careful as they|r |T132307:0|t[Flee] |cRXP_WARN_at <30% health|r
@@ -2140,7 +2141,8 @@ step
 step
     #season 2 << Warrior/Rogue
     #season 0 << Mage/Warlock/Priest/Paladin/Hunter/Druid
-    #completewith LateTurtleStart
+    #completewith LateTurtleStart << era
+    #completewith RedCrystal << sod
     >>Kill |cRXP_ENEMY_Moonkin|r. Loot them for their |T132832:0|t|cRXP_LOOT_[Small Eggs]|r
     >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r  |cRXP_WARN_to 10 later|r
     .collect 6889,10,2178,1,0x20,cooking --Small Egg (1-9)
@@ -2166,8 +2168,8 @@ step
     .subzoneskip 442 --Auberdine
     .subzoneskip 447 --Ameth'Aran
 step
-    #season 0
-    #season 2 << Warrior
+    #season 0 << !Warrior sod
+    #season 2 << Warrior sod
     #label RedCrystal
     .goto 1439,47.314,48.676
     >>Travel up to the |cRXP_PICK_Mysterious Red Crystal|r
@@ -2179,7 +2181,6 @@ step << Warrior
 step << Warrior
     #completewith next
     #season 2
-    #label LateTurtleStart
     .goto 1439/1,-79.100,6134.300
     .goto 1439,41.705,36.507,20 >>|cRXP_WARN_Kill the Moonkin Oracle inside and jump on top of the large mushroom at the back of the cave, then perform a Logout Skip by logging out and back in|r
 step << Druid
@@ -2294,7 +2295,8 @@ step << NightElf/Hunter/Druid/Warrior
     #season 2 << Warrior
     #optional
     #season 0 << Hunter/Druid
-    #completewith MysteriousCrystalHuntDruidEnd
+    #completewith MysteriousCrystalHuntDruidEnd << era
+    #completewith Anaya << sod
     >>Kill |cRXP_ENEMY_Foreststrider Fledglings|r. Loot them for their |cRXP_LOOT_Strider Meat|r
     >>|cRXP_WARN_Be careful as they|r |T132307:0|t[Flee] |cRXP_WARN_at <30% health|r
     .collect 5469,5,2178,1 --Strider Meat (5)
@@ -2541,7 +2543,8 @@ step << Druid
 ----End of Early Red Crystal turnin Section (NE for xp, Hunters/Druids for staff)/Druid bear q final if not done earlier----
 
 
-step << !sod/Warrior/Rogue
+step
+    #season 0
     #optional
     #completewith AmethStart
     >>Kill |cRXP_ENEMY_Foreststrider Fledglings|r. Loot them for their |cRXP_LOOT_Strider Meat|r
@@ -2691,7 +2694,7 @@ step << !sod/Warrior/Rogue
     .waypoint 1439,43.104,62.563,50,0
     .waypoint 1439,42.794,62.166,50,0
     .waypoint 1439,42.489,60.677,50,0 --Middle spawn
-    >>Kill |cRXP_ENEMY_Anaya Dawnrunner|r. Loot her for her |cRXP_LOOT_Pendant|r
+    >>Kill |cRXP_ENEMY_Anaya Dawnrunner|r. Loot her for her |cRXP_LOOT_Pendant|r 
     >>|cRXP_WARN_Be aware that she has a 7-8 minute spawn time and 4 different spawnpoints across Ameth'Aran|r
     >>|cRXP_WARN_If you can't find her and want to try again later at the cost of potentially grinding more mobs soon, skip this step|r
     .complete 963,1 --Anaya's Pendant (1)
@@ -2943,6 +2946,7 @@ step << !sod/Warrior/Rogue
     .goto 1439,36.621,45.596
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .turnin 4722 >> Turn in Beached Sea Turtle
+    .turnin 4723 >> Turn in Beached Sea Creature << Warrior sod
     .target Gwennyth Bly'Leggonde
 step
     #season 0 << !Warrior
@@ -3123,7 +3127,8 @@ step
     .complete 1002,1 -- Moonstalker Fang (6)
     .mob Moonstalker Runt
     .isOnQuest 1002
-step << !sod/Warrior/Rogue
+step
+    #season 0
     #optional
     #completewith BoatSeaCreature
     .goto 1439,43.509,33.207,0
@@ -3493,7 +3498,14 @@ step
     #optional
     #label MushroomLS
     #completewith CavetoAuber
-    #season 0 << !Warrior
+    #season 0
+    .goto 1439,54.964,34.536
+    .goto 1439,41.705,36.507,20 >>|cRXP_WARN_Jump on top of the rock on the top floor inside the cave. Position your character until it looks like they're floating, then perform a Logout Skip by logging out and back in|r
+step << Warrior
+    #optional
+    #label MushroomLS
+    #completewith CavetoAuber
+    #season 2
     .goto 1439,54.964,34.536
     .goto 1439,41.705,36.507,20 >>|cRXP_WARN_Jump on top of the rock on the top floor inside the cave. Position your character until it looks like they're floating, then perform a Logout Skip by logging out and back in|r
 step
@@ -4096,13 +4108,15 @@ step << !Druid
     #sticky
     #completewith next
     .goto 1457,29.179,41.180
-    .zone Darnassus >> Take the purple portal to Rut'Theran Village
+    .zone Teldrassil >> Take the purple portal to Rut'Theran Village
 step << !Druid
     #season 2
+    #label FlyAuberdineSoD
     .goto Teldrassil,58.39,94.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vesprystus|r
     .fly Darkshore >> Fly to Darkshore
     .target Vesprystus
+    .zoneskip Darkshore
 
 
 ----Start of Druid Quest+SoD rune section----
@@ -5748,6 +5762,7 @@ step
     .target Gubber Blump
     .isQuestComplete 1138
 step
+    #season 1 << Warrior sod -- won't load
     #xprate >1.59
     #label BeachedCloak
     .goto 1439,36.701,45.122,8,0
@@ -5782,7 +5797,6 @@ step << Warrior
 step << Warrior
     #season2
     #sticky
-    .goto Ashenvale,27.26,35.58
     >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Kerlonian|r to Maestra's Post in Ashenvale|r
     .use 13536 >> |cRXP_WARN_Use the|r |T134229:0|t[|cRXP_LOOT_Horn of Awakening|r] |cRXP_WARN_whenever |cRXP_FRIENDLY_Kerlonian|r falls asleep next to him|r
     >>|cRXP_WARN_Avoid running on the main road as much as possible. Enemies will only spawn if you're on the road|r
@@ -5816,8 +5830,8 @@ step << Warrior
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Liadris Moonriver|r
 	.target Liladris Moonriver
     .goto Ashenvale,27.26,35.58
+    >>Skip this step if you haven't completed the quest
     .turnin 5321 >> Turn in The Sleeper Has Awakened
-    .isQuestComplete 5321
 step << Warrior
     #season2
     #label towersod
