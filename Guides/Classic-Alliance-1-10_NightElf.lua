@@ -3044,6 +3044,12 @@ step << Warrior
     .use 854
     .itemcount 854,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.43
+step << Warrior
+    #season 2
+	.goto Darnassus,58.6,35.6
+    .target Arias'ta Bladesinger
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arias'ta Bladesinger|r
+    .trainer >> Train your class spells
 step << Rogue
     #season 0
     .goto Darnassus,62.68,65.58
