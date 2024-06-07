@@ -68,11 +68,12 @@ step
     .turnin 12848 >>Turn in The Endless Hunger
 .target Instructor Razuvious
     .accept 12636 >>Accept The Eye Of Acherus
-step
+step << wotlk
     .goto ScarletEnclave,48.67,32.77
-    >>Talk to Karloff. Buy 4 Corpse Dust from him
+    >>Talk to |cRXP_FRIENDLY_Karloff|r. Buy 4 Corpse Dust from him
     .collect 37201,4 --Corpse Dust (4)
     .isOnQuest 12636
+    .target Alchemist Karloff
 step
     .goto ScarletEnclave,51.3,35.1
 	>>Return to The Lich King
