@@ -434,6 +434,19 @@ step
     .goto 371,34.62,23.61,25,0 << Alliance
     .goto 371,34.32,23.72,25,0 << Alliance
     .goto 371,34.31,22.87,25,0 << Alliance
+    +1
+step
+    #completewith Blushleaf Extract
+    >>Kill |cRXP_ENEMY_Greenwood Trickster|r
+    .complete 29630,1 --10/10 Greenwood Trickster slain
+    .mob greenwood trickster
+step
+    #completewith Blushleaf Extract
+    >>Kill |cRXP_ENEMY_Waxwood Hunter|r
+    .complete 29631,1 --6/6 Waxwood Hunter slain
+    .mob waxwood hunter
+step
+    #label Blushleaf Extract
     .goto 371,37.18,20.65,0 << Horde
     .goto 371,38.31,21.43,0 << Horde
     .goto 371,36.41,22.21,0 << Horde
@@ -455,19 +468,6 @@ step
     .goto 371,34.62,23.61,0 << Alliance
     .goto 371,34.32,23.72,0 << Alliance
     .goto 371,34.31,22.87,0 << Alliance
-    +1
-step
-    #completewith Blushleaf Extract
-    >>Kill |cRXP_ENEMY_Greenwood Trickster|r
-    .complete 29630,1 --10/10 Greenwood Trickster slain
-    .mob greenwood trickster
-step
-    #completewith Blushleaf Extract
-    >>Kill |cRXP_ENEMY_Waxwood Hunter|r
-    .complete 29631,1 --6/6 Waxwood Hunter slain
-    .mob waxwood hunter
-step
-    #label Blushleaf Extract
     >>Click on |cRXP_PICK_Bushleaf Cluster|r |cRXP_WARN_and wait until the channel is over (you're not allowed to move or turn or your character).|r
     .complete 29629,1 --80/80 Blushleaf Extract
 step
@@ -476,6 +476,27 @@ step
     .complete 29630,1 --10/10 Greenwood Trickster slain
     .mob greenwood trickster
 step
+    .goto 371,37.18,20.65,0 << Horde
+    .goto 371,38.31,21.43,0 << Horde
+    .goto 371,36.41,22.21,0 << Horde
+    .goto 371,35.36,23.41,0 << Horde
+    .goto 371,34.62,23.61,0 << Horde
+    .goto 371,34.32,23.72,0 << Horde
+    .goto 371,34.31,22.87,0 << Horde
+    .goto 371,33.93,21.73,0
+    .goto 371,33.59,21.70,0
+    .goto 371,33.67,21.05,0
+    .goto 371,33.29,19.95,0
+    .goto 371,33.79,20.01,0
+    .goto 371,34.99,20.93,0
+    .goto 371,36.05,21.92,0
+    .goto 371,37.18,20.65,0 << Alliance
+    .goto 371,38.31,21.43,0 << Alliance
+    .goto 371,36.41,22.21,0 << Alliance
+    .goto 371,35.36,23.41,0 << Alliance
+    .goto 371,34.62,23.61,0 << Alliance
+    .goto 371,34.32,23.72,0 << Alliance
+    .goto 371,34.31,22.87,0 << Alliance
     #label Waxwood Hunter
     >>Kill |cRXP_ENEMY_Waxwood Hunter|r
     .complete 29631,1 --6/6 Waxwood Hunter slain
