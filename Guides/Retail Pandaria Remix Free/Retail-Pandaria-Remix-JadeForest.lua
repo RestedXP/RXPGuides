@@ -377,17 +377,49 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Shan Long|r
     .accept 29631 >>Accept Burning Bright
     .target Guard Shan Long
-step
-    #completewith next
+step << Alliance
+    #hidewindow
+    #completewith ScrollIntro
+    #loop
+    .goto 371,37.18,20.65,25,0
+    .goto 371,38.31,21.43,25,0
+    .goto 371,36.41,22.21,25,0
+    .goto 371,34.18,22.61,15
+    +1
+step << Alliance
+    #completewith ScrollIntro
+    >>Kill |cRXP_ENEMY_Greenwood Trickster|r
+    .complete 29630,1 --10/10 Greenwood Trickster slain
+    .mob greenwood trickster
+step << Alliance
+    #completewith ScrollIntro
     >>Kill |cRXP_ENEMY_Waxwood Hunter|r
     .complete 29631,1 --6/6 Waxwood Hunter slain
     .mob waxwood hunter
+step << Alliance
+    #label ScrollIntro
+    >>Click on |cRXP_PICK_Bushleaf Cluster|r |cRXP_WARN_and wait until the channel is over (you're not allowed to move or turn or your character).|r
+    .complete 29629,1 --80/80 Blushleaf Extract
+step << Alliance
+    #completewith next
+    .cast 374990 >> Mount on your Dragonriding Mount and use |T134156:0|t[Bronze Timelock]
+step << Alliance
+    .goto 371,26.39,28.33
+    .achievement 6850,1 >>Click on the |cRXP_PICK_Scroll|r
+step << Alliance
+    .isOnQuest 29629
+    .cast 374994 >> Mount on your Dragonriding Mount and use |T4640479:0|t[Bronze Rewind]
 step
+    #hidewindow
+    #completewith Waxwood Hunter
     #loop
-    .goto 371,35.36,23.41,25,0
-    .goto 371,34.62,23.61,25,0
-    .goto 371,34.32,23.72,25,0
-    .goto 371,34.31,22.87,25,0
+    .goto 371,37.18,20.65,25,0 << Horde
+    .goto 371,38.31,21.43,25,0 << Horde
+    .goto 371,36.41,22.21,25,0 << Horde
+    .goto 371,35.36,23.41,25,0 << Horde
+    .goto 371,34.62,23.61,25,0 << Horde
+    .goto 371,34.32,23.72,25,0 << Horde
+    .goto 371,34.31,22.87,25,0 << Horde
     .goto 371,33.93,21.73,25,0
     .goto 371,33.59,21.70,25,0
     .goto 371,33.67,21.05,25,0
@@ -395,10 +427,20 @@ step
     .goto 371,33.79,20.01,25,0
     .goto 371,34.99,20.93,25,0
     .goto 371,36.05,21.92,25,0
-    .goto 371,35.36,23.41,0
-    .goto 371,34.62,23.61,0
-    .goto 371,34.32,23.72,0
-    .goto 371,34.31,22.87,0
+    .goto 371,37.18,20.65,25,0 << Alliance
+    .goto 371,38.31,21.43,25,0 << Alliance
+    .goto 371,36.41,22.21,25,0 << Alliance
+    .goto 371,35.36,23.41,25,0 << Alliance
+    .goto 371,34.62,23.61,25,0 << Alliance
+    .goto 371,34.32,23.72,25,0 << Alliance
+    .goto 371,34.31,22.87,25,0 << Alliance
+    .goto 371,37.18,20.65,0 << Horde
+    .goto 371,38.31,21.43,0 << Horde
+    .goto 371,36.41,22.21,0 << Horde
+    .goto 371,35.36,23.41,0 << Horde
+    .goto 371,34.62,23.61,0 << Horde
+    .goto 371,34.32,23.72,0 << Horde
+    .goto 371,34.31,22.87,0 << Horde
     .goto 371,33.93,21.73,0
     .goto 371,33.59,21.70,0
     .goto 371,33.67,21.05,0
@@ -406,50 +448,38 @@ step
     .goto 371,33.79,20.01,0
     .goto 371,34.99,20.93,0
     .goto 371,36.05,21.92,0
+    .goto 371,37.18,20.65,0 << Alliance
+    .goto 371,38.31,21.43,0 << Alliance
+    .goto 371,36.41,22.21,0 << Alliance
+    .goto 371,35.36,23.41,0 << Alliance
+    .goto 371,34.62,23.61,0 << Alliance
+    .goto 371,34.32,23.72,0 << Alliance
+    .goto 371,34.31,22.87,0 << Alliance
+    +1
+step
+    #completewith Blushleaf Extract
+    >>Kill |cRXP_ENEMY_Greenwood Trickster|r
+    .complete 29630,1 --10/10 Greenwood Trickster slain
+    .mob greenwood trickster
+step
+    #completewith Blushleaf Extract
+    >>Kill |cRXP_ENEMY_Waxwood Hunter|r
+    .complete 29631,1 --6/6 Waxwood Hunter slain
+    .mob waxwood hunter
+step
+    #label Blushleaf Extract
     >>Click on |cRXP_PICK_Bushleaf Cluster|r |cRXP_WARN_and wait until the channel is over (you're not allowed to move or turn or your character).|r
     .complete 29629,1 --80/80 Blushleaf Extract
 step
-    #loop
-    .goto 371,35.36,23.41,25,0
-    .goto 371,34.62,23.61,25,0
-    .goto 371,34.32,23.72,25,0
-    .goto 371,34.31,22.87,25,0
-    .goto 371,34.97,22.48,25,0
-    .goto 371,33.93,21.73,25,0
-    .goto 371,33.59,21.70,25,0
-    .goto 371,33.67,21.05,25,0
-    .goto 371,33.29,19.95,25,0
-    .goto 371,33.79,20.01,25,0
-    .goto 371,34.99,20.93,25,0
-    .goto 371,36.05,21.92,25,0
-    .goto 371,35.36,23.41,0
-    .goto 371,34.62,23.61,0
-    .goto 371,34.32,23.72,0
-    .goto 371,34.31,22.87,0
-    .goto 371,34.97,22.48,0
-    .goto 371,33.93,21.73,0
-    .goto 371,33.59,21.70,0
-    .goto 371,33.67,21.05,0
-    .goto 371,33.29,19.95,0
-    .goto 371,33.79,20.01,0
-    .goto 371,34.99,20.93,0
-    .goto 371,36.05,21.92,0
+    #completewith next
+    >>Kill |cRXP_ENEMY_Greenwood Trickster|r
+    .complete 29630,1 --10/10 Greenwood Trickster slain
+    .mob greenwood trickster
+step
+    #label Waxwood Hunter
     >>Kill |cRXP_ENEMY_Waxwood Hunter|r
     .complete 29631,1 --6/6 Waxwood Hunter slain
     .mob waxwood hunter
---step
---    #completewith next
---    >>Kill |cRXP_ENEMY_Greenwood Trickster|r
---    .complete 29630,1 --10/10 Greenwood Trickster slain
---    .mob greenwood trickster
---step
---    .goto 371,37.74,17.57
---    >>Click on |cRXP_PICK_Boiling Cauldron|r
---    .complete 29628,1 --1/1 Boiling Cauldron obtained
---step
---    #completewith Burning Bright
---    >>be careful not to stretch the rope |cRXP_WARN_beyond 100 yards to avoid disconnecting.|r
---    .complete 29628,2 --1/1 Boiling Cauldron returned
 step
     #loop
     .goto 371,37.83,18.34,20,0
@@ -465,6 +495,19 @@ step
     >>Kill |cRXP_ENEMY_Greenwood Trickster|r
     .complete 29630,1 --10/10 Greenwood Trickster slain
     .mob greenwood trickster
+--step
+--    #completewith next
+--    >>Kill |cRXP_ENEMY_Greenwood Trickster|r
+--    .complete 29630,1 --10/10 Greenwood Trickster slain
+--    .mob greenwood trickster
+--step
+--    .goto 371,37.74,17.57
+--    >>Click on |cRXP_PICK_Boiling Cauldron|r
+--    .complete 29628,1 --1/1 Boiling Cauldron obtained
+--step
+--    #completewith Burning Bright
+--    >>be careful not to stretch the rope |cRXP_WARN_beyond 100 yards to avoid disconnecting.|r
+--    .complete 29628,2 --1/1 Boiling Cauldron returned
 step
     #label Burning Bright
     .goto 371,38.02,23.8
@@ -2763,7 +2806,7 @@ step
     #label Prisoners freed
     >>Click on |cRXP_PICK_Hozen Cages|r to free |cRXP_FRIENDLY_Alliance Prisoners.|r |cRXP_WARN_Don't open empty cages.|r
     .complete 29559,1 --6/6 Prisoners freed
-    .collect 74260,6
+    .collect 74260,6,29559,0x1,-1
     .disablecheckbox
     .target Alliance Prisoner
 step
