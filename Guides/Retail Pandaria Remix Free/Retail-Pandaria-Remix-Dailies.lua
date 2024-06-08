@@ -430,7 +430,65 @@ step
     .target Korven the Prime
     .turnin 31270 >>Turn in The Fight Against Fear
 
+set 2
 
+step
+    .goto 422,54.26,35.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaz'tik the Manipulator|r
+    .accept 31506 >>Accept Shackles of Manipulation
+    .target Kaz'tik the Manipulator
+step
+    .goto 422,54.36,35.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rik'kal the Dissector|r
+    .accept 31509 >>Accept Fear Takes Root
+    .target Rik'kal the Dissector
+    .accept 31508 >>Accept Specimen Request
+step
+    .goto 422,54.30,36.12
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korven the Prime|r
+    .accept 31507 >>Accept Meltdown
+    .target Korven the Prime
+step
+    .goto 422,29.99,73.05
+    .complete 31508,1 --6/6 Kyparite Shards
+step
+    .goto 422,22.20,75.78
+    >>Kill |cRXP_ENEMY_Zan'thik Amberhusk|r
+    .complete 31507,1 --6/6 Zan'thik Amberhusk slain
+    .mob Zan'thik Amberhusk
+step
+    .goto 422,28.46,71.80
+    .complete 31509,1 --15/15 Dreadspore Bulbs destroyed
+step
+    .goto 422,32.34,78.35
+    .complete 31506,1 --6/6 Zan'thik Shackles
+step
+    .goto 422,54.32,36.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korven the Prime|r
+    .turnin 31507 >>Turn in Meltdown
+    .target Korven the Prime
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rik'kal the Dissector|r
+    .turnin 31509 >>Turn in Specimen Request
+    .target Rik'kal the Dissector
+    .turnin 31508 >>Turn in Specimen Request
+
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaz'tik the Manipulator|r
+    .turnin 31506 >>Turn in Shackles of Manipulation
+    .target Kaz'tik the Manipulator
+    .accept 31808 >>Accept Rampage Against the Machine
+step
+    .goto 422,50.82,41.26
+    .complete 31808,1 --1/1 Locate Kovok near the Clutches of Shek'zeer
+step
+    .goto 422,45.09,29.26
+    >>Kill |cRXP_ENEMY_Mantid|r
+    .complete 31808,2 --200/200 Mantid slain
+    .mob Mantid
+step
+    .goto 422,54.25,35.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaz'tik the Manipulator|r
+    .turnin 31808 >>Turn in Rampage Against the Machine
+    .target Kaz'tik the Manipulator
 
 ]])
 
@@ -665,6 +723,158 @@ step
     .turnin 30955 >>Turn in Paying Tribute
     .target High Adept Paosha
 --- SET 2 ---
+
+
+step
+    .goto 422,54.26,35.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaz'tik the Manipulator|r
+    .accept 31506 >>Accept Shackles of Manipulation
+    .target Kaz'tik the Manipulator
+step
+    .goto 422,54.36,35.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rik'kal the Dissector|r
+    .accept 31509 >>Accept Fear Takes Root
+    .target Rik'kal the Dissector
+    .accept 31508 >>Accept Specimen Request
+step
+    .goto 422,54.30,36.12
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korven the Prime|r
+    .accept 31507 >>Accept Meltdown
+    .target Korven the Prime
+step
+    .goto 422,29.99,73.05
+    .complete 31508,1 --6/6 Kyparite Shards
+step
+    .goto 422,22.20,75.78
+    >>Kill |cRXP_ENEMY_Zan'thik Amberhusk|r
+    .complete 31507,1 --6/6 Zan'thik Amberhusk slain
+    .mob Zan'thik Amberhusk
+step
+    .goto 422,28.46,71.80
+    .complete 31509,1 --15/15 Dreadspore Bulbs destroyed
+step
+    .goto 422,32.34,78.35
+    .complete 31506,1 --6/6 Zan'thik Shackles
+step
+    .goto 422,54.32,36.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korven the Prime|r
+    .turnin 31507 >>Turn in Meltdown
+    .target Korven the Prime
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rik'kal the Dissector|r
+    .turnin 31509 >>Turn in Specimen Request
+    .target Rik'kal the Dissector
+    .turnin 31508 >>Turn in Specimen Request
+
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaz'tik the Manipulator|r
+    .turnin 31506 >>Turn in Shackles of Manipulation
+    .target Kaz'tik the Manipulator
+    .accept 31808 >>Accept Rampage Against the Machine
+step
+    .goto 422,50.82,41.26
+    .complete 31808,1 --1/1 Locate Kovok near the Clutches of Shek'zeer
+step
+    .goto 422,45.09,29.26
+    >>Kill |cRXP_ENEMY_Mantid|r
+    .complete 31808,2 --200/200 Mantid slain
+    .mob Mantid
+step
+    .goto 422,54.25,35.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaz'tik the Manipulator|r
+    .turnin 31808 >>Turn in Rampage Against the Machine
+    .target Kaz'tik the Manipulator
+step
+    .goto 388,39.40,61.98
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Commander Qipan|r
+    .turnin 80430 >>Turn in Aid the August Celestials
+    .target Sentinel Commander Qipan
+    .accept 30957 >>Accept The Overwhelming Swarm
+step
+    .goto 388,39.32,62.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ogo the Younger|r
+    .accept 30959 >>Accept The Big Guns
+    .target Ogo the Younger
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ogo the Elder|r
+    .accept 30956 >>Accept The Siege Swells
+    .target Ogo the Elder
+step
+    .goto 388,38.81,62.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Adept Paosha|r
+    .accept 30958 >>Accept In Battle's Shadow
+    .target High Adept Paosha
+step
+    .goto 388,41.46,59.83
+    >>Kill |cRXP_ENEMY_Sra'thik attacker|r
+    .complete 30956,1 --25/25 Sra'thik attacker slain
+    .mob Sra'thik attacker
+step
+    .goto 388,40.26,60.67
+    >>Kill |cRXP_ENEMY_Sra'thik Kunchong|r
+    .complete 30957,1 --4/4 Sra'thik Kunchong slain
+    .mob Sra'thik Kunchong
+step
+    .goto 388,42.51,61.70
+    .complete 30958,1 --10/10 Loose Brick
+step
+    .goto 388,42.82,63.15
+    .complete 30959,1 --3/3 Sra'thik War Wagon exploded
+step
+    .goto 388,39.41,61.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Commander Qipan|r
+    .turnin 30957 >>Turn in The Overwhelming Swarm
+    .target Sentinel Commander Qipan
+    .turnin 80430 >>Turn in Aid the August Celestials
+
+step
+    .goto 388,39.33,62.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ogo the Younger|r
+    .turnin 30959 >>Turn in The Big Guns
+    .target Ogo the Younger
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ogo the Elder|r
+    .turnin 30956 >>Turn in The Siege Swells
+    .target Ogo the Elder
+step
+    .goto 388,39.16,62.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yak-Keeper Kyana|r
+    .turnin 30958 >>Turn in In Battle's Shadow
+    .target Yak-Keeper Kyana
+
+
+    step
+    .goto 388,43.86,65.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ku-Mo|r
+    .accept 30931 >>Accept My Father's Crossbow
+    .target Ku-Mo
+step
+    .goto 388,38.70,65.41
+    .complete 30931,1 --1/1 Father's Crossbow
+step
+    .goto 388,43.89,65.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ku-Mo|r
+    .turnin 30931 >>Turn in My Father's Crossbow
+    .target Ku-Mo
+
+    step
+    .goto 388,39.42,61.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Commander Qipan|r
+    .accept 30932 >>Accept Father's Footsteps
+    .target Sentinel Commander Qipan
+step
+    .goto 388,39.24,61.19
+    .complete 30932,4 --1/1 Find Sentinel Yalo
+step
+    .goto 388,37.56,61.35
+    .complete 30932,2 --1/1 Find Father's Shield
+step
+    .goto 388,37.37,60.93
+    .complete 30932,1 --1/1 Find Father's Bedroll
+step
+    .goto 388,37.64,63.89
+    .complete 30932,3 --1/1 Find Ha-Cha
+step
+    .goto 388,39.45,61.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ku-Mo|r
+    .turnin 30932 >>Turn in Father's Footsteps
+    .target Ku-Mo
 
 ]])
 
