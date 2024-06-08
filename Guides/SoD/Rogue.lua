@@ -1806,14 +1806,17 @@ step
     >>Open the |T133639:0|t|cRXP_LOOT_Kidnapper's Coin Purse|r and loot it for a |T133302:0|t|cRXP_LOOT_Precious Medalion|r
     .collect 221370,1 -- Precious Medalion 1/1
     .use 221371
-step
+step << Rogue
     .goto Tanaris,67,22
-    >>Go to Steamwheedle Port and find |cRXP_FRIENDLY_Jabbey|r the Goblin in one of the northmost huts. Complete the dialogue with him to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Foul Play|r]
+    .gossipoption 122303 >>Talk to |cRXP_FRIENDLY_Jabbey|r to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Foul Play|r]
     .collect 221428,1 -- Rune of Foul Play
     .target Jabbey
-step
+    .train 432301,1
+    .itemcount 221370,1
+step << Rogue
+    .itemcount 221428,1
     .use 221428
-    .train 432273 >>|cRXP_WARN_Use the|T134419:0|t[|cRXP_FRIENDLY_Rune of Foul Play|r] |cRXP_WARN_to train|r |T236285:0|t[Unfair Advantage]
+    .train 432301 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Foul Play|r] |cRXP_WARN_to train|r |T236285:0|t[Unfair Advantage]
 
 ]])
 RXPGuides.RegisterGuide([[
