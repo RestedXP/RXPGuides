@@ -1065,7 +1065,7 @@ function addon.functions.turnin(self, ...)
             element.tooltip = id
         end
         if step.active or element.retrieveText then
-            local autoTurnIn = (element.flags % 2 == 0) and element
+            local autoTurnIn = (not element.flags or element.flags % 2 == 0) and element
             addon.questTurnIn[id] = autoTurnIn
             -- addon.questAccept[id] = addon.questAccept[id] or element
             local quest = addon.GetQuestName(id)
