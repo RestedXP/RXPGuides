@@ -3309,7 +3309,7 @@ function addon.settings:DetectXPRate(softUpdate)
     if not addon.settings.profile.enableAutomaticXpRate then
         return
     elseif addon.gameVersion < 20000 and not softUpdate then
-        local season = addon.player.season or CheckBuff(362859) and 1
+        local season = (C_Seasons and C_Seasons.HasActiveSeason() and C_Seasons.GetActiveSeason()) or CheckBuff(362859) and 1
 
         if season == addon.settings.profile.season then return end
 
