@@ -2374,7 +2374,7 @@ step
     .goto 1414,39.26,57.69
     >>Click on the |cRXP_PICK_Blue Crystal|r amongst the orange crystals to collect |T134088:0|t[Tear of Theradras]
     >>|cRXP_WARN_Be careful as enemies in this area are elite and they can stun.|r |cFFFF0000you are likely going to die multiple times|r
-    .collect 213553,1
+    .collect 213552,1
 step
     .goto 1414,38.45,57.84,25,0
     .goto 1414,38.64,57.69,25,0
@@ -2384,7 +2384,7 @@ step
     .goto 1443,27.72,57.51
     >>Click on a |cRXP_PICK_Blue Crystal|r amongst the purple crystals to collect |T134088:0|t[Tear of Theradras]
     >>|cRXP_WARN_Be careful as enemies in this area are elite and they can stun.|r |cFFFF0000you are likely going to die multiple times|r
-    .collect 213552,1
+    .collect 213553,1
 step
     #completewith next
     .zone Orgrimmar >>Travel to |cFFfa9602Orgrimmar|r
