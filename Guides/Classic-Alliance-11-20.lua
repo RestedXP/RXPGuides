@@ -2317,7 +2317,7 @@ step << !Warrior
 step << NightElf/Hunter/Druid/Warrior
     #season 2 << Warrior
     #optional
-    #season 0 << Hunter/Druid
+    #season 0 << Hunter/Druid/Rogue/Priest
     #completewith MysteriousCrystalHuntDruidEnd << era
     #completewith Anaya << sod
     >>Kill |cRXP_ENEMY_Foreststrider Fledglings|r. Loot them for their |cRXP_LOOT_Strider Meat|r
@@ -2329,7 +2329,7 @@ step << NightElf/Hunter/Druid/Warrior
     #optional
     #completewith EarlyCrystalEnd
     #season 2 << Warrior
-    #season 0 << Hunter/Druid
+    #season 0 << Hunter/Druid/Rogue/Priest
     >>Kill |cRXP_ENEMY_Moonkin|r. Loot them for their |T132832:0|t|cRXP_LOOT_[Small Eggs]|r
     >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r  |cRXP_WARN_to 10 later|r
     .collect 6889,10,2178,1,0x20,cooking --Small Egg (1-9)
@@ -3056,7 +3056,13 @@ step << !sod/Warrior/Rogue/Priest
 
 ----Start of SoD Priest early level 18 wand quest + meditation quest detour----
 
-
+step << Priest
+    #season 2
+    .goto 1439,44.168,36.289
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asterion|r
+    .turnin 957 >> Turn in Bashal'Aran
+    .isOnQuest 957
+    .target Asterion
 step << Priest
     #season 2
     #sticky
@@ -4462,8 +4468,8 @@ step << Priest
     .goto Darnassus,37.90,82.74
     #season 2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maethra Slagheart|r
-    >>|cRXP_WARN_After turning in this quest you will be able to access a second meditation buff without the need of other priest players by visiting and /kneel-ing in front of various human and dwarven holy places, most notably in|r |cRXP_LOOT_Mystic Ward in Ironforge|r |cRXP_WARN_and the|r |cRXP_LOOT_Stormwind Cathedral|r
     .turnin 78192 >> Turn in Secrets of the Light
+    .accept 78193 >> Accept Secrets of the Light 
     .target Maethra Slagheart
 step << Warrior
     #season 2
