@@ -866,7 +866,7 @@ function addon.functions.accept(self, ...)
         if step.active or element.retrieveText or
             (index and index > 1 and
                 addon.currentGuide.steps[index - 1].active) then
-            local autoAccept = bit.band(element.flags,0x1) ~= 0x1
+            local autoAccept = bit.band(element.flags,0x1) ~= 0x1 and not addon.disabledQuests[id]
             if autoAccept then addon.questAccept[id] = element end
             local quest = addon.GetQuestName(id, element)
             if quest then
@@ -1014,6 +1014,22 @@ function addon.functions.daily(self, text, ...)
         end
     end
 
+end
+
+function addon.functions.disablequestautomation(self,text,...)
+    if type(self) == "string" then -- on parse
+        local guide = addon.guide
+        local ids = {...}
+        local disabledQuests = guide.disabledQuests or {}
+        for i,v in pairs(ids) do
+            local id = tonumber(v)
+            if id then
+                disabledQuests[id] = true
+            end
+        end
+        guide.disabledQuests = disabledQuests
+        return
+    end
 end
 
 addon.turnInList = {}
