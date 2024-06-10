@@ -1567,6 +1567,8 @@ function addon:LoadGuide(guide, OnLoad)
     addon.currentGuide = addon.ProcessGuideTable(guide)
     guide = addon.currentGuide
 
+    addon.disabledQuests = guide.disabledQuests or {}
+
     addon.currentGuideName = guide.name
     RXPCData.currentGuideName = guide.name
     RXPCData.currentGuideGroup = guide.group
