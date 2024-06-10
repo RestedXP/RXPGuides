@@ -127,6 +127,7 @@ addon.questQueryList = {}
 addon.itemQueryList = {}
 addon.questAccept = {}
 addon.questTurnIn = {}
+addon.disabledQuests = {}
 addon.activeItems = {}
 addon.activeSpells = {}
 addon.functions = {}
@@ -184,7 +185,7 @@ function addon.QuestAutoAccept(titleOrId)
 
     local element = addon.questAccept[titleOrId]
 
-    if not element then return end
+    if not element or (element.questId and addon.disabledQuests[element.questId]) then return end
     local step = element.step
     if step.active or step.index > 1 and addon.currentGuide.steps[step.index - 1].active then
         addon:SendEvent("RXP_QUEST_ACCEPT",element.questId)
@@ -204,7 +205,7 @@ function addon.GetStepQuestReward(titleOrId)
 
     if not element then return 0 end
 
-    return element.reward >= 0 and element.reward or 0
+    return element.reward >= 0 and element.reward or 0, element
 end
 
 function addon.IsPlayerSpell(id)
@@ -686,7 +687,7 @@ end
 
 local function handleQuestComplete()
     local id = GetQuestID()
-    if not id or id < 0 or addon.questTurnIn[id] == false then return end
+    if not id or id < 0 or addon.questTurnIn[id] == false or addon.disabledQuests[id] then return end
 
     local numChoices = GetNumQuestChoices()
 
@@ -845,9 +846,12 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
     elseif event == "QUEST_COMPLETE" then
         handleQuestComplete()
     elseif event == "QUEST_PROGRESS" then
-        if IsQuestCompletable() then
+        local id = GetQuestID()
+        if id and addon.disabledQuests[id] then
+            return
+        elseif IsQuestCompletable() then
             CompleteQuest()
-        elseif addon.QuestAutoAccept(GetQuestID()) then
+        elseif addon.QuestAutoAccept(id) then
             HideUIPanel(_G.QuestFrame)
         elseif GetTime()-turnInTimer < 0.5 then
             HideUIPanel(_G.QuestFrame)
@@ -856,8 +860,9 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
         -- questProgressTimer = GetTime()
     elseif event == "QUEST_DETAIL" then
         local id = GetQuestID()
-        if addon.QuestAutoAccept(id) then
-            --acceptTimer =
+        if id and addon.disabledQuests[id] then
+            return
+        elseif addon.QuestAutoAccept(id) then
             AcceptQuest()
             HideUIPanel(_G.QuestFrame)
         elseif GetTime()-turnInTimer < 0.5 then
@@ -866,7 +871,7 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
         end
     elseif event == "QUEST_ACCEPTED" then
         local id = arg1 and arg2 or arg1
-        if id == GetQuestID() or addon.QuestAutoAccept(id) then
+        if (id == GetQuestID() or addon.QuestAutoAccept(id)) and not addon.disabledQuests[id] then
            HideUIPanel(_G.QuestFrame)
         end
     elseif event == "QUEST_GREETING" then
@@ -876,7 +881,8 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
         local title, isComplete
         for i = 1, nActive do
             title, isComplete = GetActiveTitle(i)
-            if addon.GetStepQuestReward(title) and isComplete then
+            local reward,exists = addon.GetStepQuestReward(title)
+            if exists and isComplete then
                 return SelectActiveQuest(i)
             end
         end
@@ -902,11 +908,12 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
         end
         for i = 1, nActive do
             local title, isComplete
+            local reward,isAutoTurnIn
             if type(quests) == "table" then
                 title = quests[i].questID
                 isComplete = quests[i].isComplete
-                if not (isComplete or missingTurnIn) and
-                    addon.GetStepQuestReward(title) then
+                reward,isAutoTurnIn = addon.GetStepQuestReward(title)
+                if not (isComplete or missingTurnIn) and isAutoTurnIn then
                     local objectives = addon.GetQuestObjectives(title)
                     missingTurnIn = objectives and objectives[1].generated and
                                         (selectActiveByQuestID and title or i)
@@ -914,9 +921,10 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
             else
                 title, _, _, isComplete = select(i * 6 - 5,
                                                  GossipGetActiveQuests())
+                reward,isAutoTurnIn = addon.GetStepQuestReward(title)
             end
 
-            if isComplete and addon.GetStepQuestReward(title) then
+            if isComplete and isAutoTurnIn then
                 return GossipSelectActiveQuest(
                            selectActiveByQuestID and title or i)
             end
@@ -1719,12 +1727,12 @@ function addon.stepLogic.XpRateCheck(step)
                 else
                     rate = 1.5
                 end
-            elseif addon.settings.profile.season == 2 or addon.settings.profile.enableBetaFeatures then
+            elseif addon.settings.profile.enableBetaFeatures and addon.settings.profile.season == 2 then
+                rate = 2.5
+            elseif addon.settings.profile.season == 2 then
                 --local minLevel = tonumber(guide:sub(1,2))
                 local maxLevel = addon.currentGuide and tonumber(addon.currentGuide.name:match("%d+%-(%d+)"))
-                if addon.settings.profile.enableBetaFeatures then
-                    rate = 2.5
-                elseif UnitLevel('player') < 40 or (not step.elements or not maxLevel or maxLevel < 40) then
+                if UnitLevel('player') < 40 or (not step.elements or not maxLevel or maxLevel < 40) then
                     --print(minLevel,step.elements)
                     rate = 2.5
                 end
