@@ -2118,9 +2118,9 @@ step
     >>Pick up |T132108:0|t[Lurching Blossoms] |cRXP_WARN_(possible while mounted)|r
     .complete 29815,1 --8/8 Viscous Chlorophyll
     .target Lurching Blossom
-step << Horde
-    .goto 371,26.39,28.33
-    .achievement 6850,1 >>Click on the |cRXP_PICK_Scroll|r
+-- step << Horde
+--     .goto 371,26.39,28.33
+--     .achievement 6850,1 >>Click on the |cRXP_PICK_Scroll|r
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rivett Clutchpop|r and |cRXP_FRIENDLY_Shademaster Kiryn|r
     .turnin 31112 >>Turn in They're So Thorny!
@@ -2955,27 +2955,28 @@ step
     .accept 29887 >>Accept The Elder's Instruments
     .goto 371,58.76,81.28
     .target +Bold Karasshi
-step
-    #completewith Watersmithing
-    >>Kill |cRXP_ENEMY_Slingtail Stickypaw.|r Loot them for |cRXP_LOOT_Clothes.|r
-    .complete 29887,3 --1/1 Jade Crown
-    .complete 29887,4 --1/1 Rosewood Beads
-    .complete 29887,2 --1/1 Ceremonial Robes
-    .complete 29887,1 --1/1 Waterspeaker's Staff
-    .mob Slingtail Stickypaw
-step
-    #completewith Watersmithing
-    >>Interact with |cRXP_PICK_Dead Pearlfin Villager|r to collect |cRXP_LOOT_Glassfin Heirlooms.|r
-    .complete 29762,1 --8/8 Glassfin Heirloom
-    .target Pearlfin Villager
-step
-    #label Watersmithing
-    .goto 371,66.03,87.55
-    .achievement 6846,1 >>Click on the |cRXP_PICK_Scroll|r
+-- step
+--     #completewith Watersmithing
+--     >>Kill |cRXP_ENEMY_Slingtail Stickypaw.|r Loot them for |cRXP_LOOT_Clothes.|r
+--     .complete 29887,3 --1/1 Jade Crown
+--     .complete 29887,4 --1/1 Rosewood Beads
+--     .complete 29887,2 --1/1 Ceremonial Robes
+--     .complete 29887,1 --1/1 Waterspeaker's Staff
+--     .mob Slingtail Stickypaw
+-- step
+--     #completewith Watersmithing
+--     >>Interact with |cRXP_PICK_Dead Pearlfin Villager|r to collect |cRXP_LOOT_Glassfin Heirlooms.|r
+--     .complete 29762,1 --8/8 Glassfin Heirloom
+--     .target Pearlfin Villager
+-- step
+--     #label Watersmithing
+--     .goto 371,66.03,87.55
+--     .achievement 6846,1 >>Click on the |cRXP_PICK_Scroll|r
 step
     #completewith Clothes
     #hidewindow
     #loop
+    .goto 371,66.03,87.55,30,0
     .goto 371,67.25,87.32,30,0
     .goto 371,66.2,88.25,30,0
     .goto 371,65.46,87.7,30,0
