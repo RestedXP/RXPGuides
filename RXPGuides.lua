@@ -960,7 +960,7 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
     elseif event == "QUEST_TURNED_IN" and addon.questTurnIn[arg1] then
             turnInTimer = GetTime()
     elseif event == "QUEST_AUTOCOMPLETE" then
-        if addon.gameVersion < 50000 and UnitLevel('player') ~= 80 then
+        if (addon.gameVersion < 50000 and UnitLevel('player') ~= 85) then
             for i = 1, GetNumAutoQuestPopUps() do
                 local id,status = GetAutoQuestPopUp(i)
                 if status == "COMPLETE" or id == arg1 then
@@ -970,7 +970,7 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
                     end
                 end
             end
-        else
+        elseif addon.gameVersion > 50000 and UnitLevel('player') ~= 70 then
             ShowQuestComplete(arg1)
         end
     end
