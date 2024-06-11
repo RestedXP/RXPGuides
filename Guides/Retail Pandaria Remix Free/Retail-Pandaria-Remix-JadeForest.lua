@@ -2191,6 +2191,8 @@ step
     #include 1) Jade Forest Side Quests Sprites Plight
 step
     #include 1) Jade Forest Cloud Serpent Side Quests
+-- step
+-- august celestials
 step
     #include 1) Jade Forest Defiance Side Quests
 ]])
@@ -3012,6 +3014,8 @@ step
     -- .accept 29894 >>Accept Spirits of the Water
     .goto 371,58.76,81.29
     .target +Pearlkeeper Fujin
+-- step
+-- august celestials
 step
     #include 1) Jade Forest Cloud Serpent Side Quests
 step
