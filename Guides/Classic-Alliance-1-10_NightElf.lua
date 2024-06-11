@@ -1792,19 +1792,6 @@ step
     >>|cRXP_FRIENDLY_Moon Priestess Amara|r |cRXP_WARN_patrols the road west of Dolanaar|r
     .turnin 487 >> Turn in The Road to Darnassus
     .target Moon Priestess Amara
-step << Rogue
-    #sticky
-    #label topleft
-    #season 2
-    .goto Teldrassil,44.2,59.2,0,0
-    >>Kill or |T133644:0|t[Pick Pocket] |cRXP_ENEMY_Gnarlpine Furbolgs|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece]|r
-    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
-    .collect 208602,1 -- Top-Left Map Piece (1)
-    .mob Gnarlpine Ambusher
-    .mob Gnarlpine Shaman
-    .mob Gnarlpine Defender
-    .mob Gnarlpine Augur
-    .train 398196,1
 step << Priest
     #season 2
     #completewith next
@@ -1897,7 +1884,7 @@ step << Rogue
 	#xprate < 1.5
     #season 2
     #completewith xp10
-    >>Kill or |T133644:0|t[Pick Pocket] |cRXP_ENEMY_Bloodfeather Harpies|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece]|r
+    >>Kill or |T133644:0|t[Pick Pocket] |cRXP_ENEMY_Bloodfeather Harpies|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Bottom-Right Map Piece]|r
     >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
     .collect 208603,1 -- Bottom-Right Map Piece (1)
     .mob Bloodfeather Harpy
@@ -1995,7 +1982,7 @@ step << Rogue
     .goto Teldrassil,36.0,34.4,60,0
     .goto Teldrassil,34.6,28.8,60,0
     .goto Teldrassil,37.8,43.0
-    >>Kill or |T133644:0|t[Pick Pocket] |cRXP_ENEMY_Bloodfeather Harpies|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece]|r
+    >>Kill or |T133644:0|t[Pick Pocket] |cRXP_ENEMY_Bloodfeather Harpies|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Bottom-Right Map Piece]|r
     >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
     .collect 208603,1 -- Bottom-Right Map Piece (1)
     .mob Bloodfeather Harpy
@@ -2607,12 +2594,9 @@ step << Rogue
 step << Rogue
     #season 2
     #sticky
-    #completewith harpies2
-    .goto Teldrassil,37.8,43.0,60,0
-    .goto Teldrassil,36.0,34.4,60,0
-    .goto Teldrassil,34.6,28.8,60,0
-    .goto Teldrassil,37.8,43.0
-    >>Kill or |T133644:0|t[Pick Pocket] |cRXP_ENEMY_Bloodfeather Harpies|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece]|r
+    #completewith MistStart
+    #label BottomRightMapPiece
+    >>Kill or |T133644:0|t[Pick Pocket] |cRXP_ENEMY_Bloodfeather Harpies|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Bottom-Right Map Piece]|r
     >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
     .collect 208603,1 -- Bottom-Right Map Piece (1)
     .mob Bloodfeather Harpy
@@ -2637,7 +2621,9 @@ step << !sod/Warrior/Rogue/Druid
     .mob Bloodfeather Matriarch
 step << Rogue
     #season 2
-    .goto Teldrassil,33.619,29.819,0,0
+    #sticky
+    #completewith next
+    #requires BottomRightMapPiece
     .cast 418600 >>|cRXP_WARN_Use any of the|r |T134327:0|t[|cRXP_LOOT_Map Pieces]|r |cRXP_WARN_to combine them into the|r |T134269:0|t[|cRXP_LOOT_Teldrassil Treasure Map|r]
     .collect 208605,1
     .itemcount 208604,1
@@ -2652,10 +2638,39 @@ step << Rogue
 step << !sod/Warrior/Rogue/Druid
     .goto Teldrassil,31.54,31.62
     .target Mist
+    #label MistStart
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mist|r
     >>|cRXP_WARN_This will start an escort quest|r
     >>|cRXP_WARN_Skip this quest if the NPC is not there|r
     .accept 938 >> Accept Mist
+step << Rogue
+    #season 2
+    .goto Teldrassil,37.8,43.0,60,0
+    .goto Teldrassil,36.0,34.4,60,0
+    .goto Teldrassil,34.6,28.8,60,0
+    >>Kill or |T133644:0|t[Pick Pocket] |cRXP_ENEMY_Bloodfeather Harpies|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Bottom-Right Map Piece]|r
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    .collect 208603,1 -- Bottom-Right Map Piece (1)
+    .mob Bloodfeather Harpy
+    .mob Bloodfeather Rogue
+    .mob Bloodfeather Sorceress
+    .mob Bloodfeather Fury
+    .mob Bloodfeather Wind Witch
+    .mob Bloodfeather Matriarch
+    .train 398196,1
+step << Rogue
+    #season 2
+    .cast 418600 >>|cRXP_WARN_Use any of the|r |T134327:0|t[|cRXP_LOOT_Map Pieces]|r |cRXP_WARN_to combine them into the|r |T134269:0|t[|cRXP_LOOT_Teldrassil Treasure Map|r]
+    .collect 208605,1
+    .itemcount 208604,1
+    .itemcount 208601,1
+    .itemcount 208602,1
+    .itemcount 208603,1
+    .use 208604
+    .use 208601
+    .use 208602
+    .use 208603
+    .train 398196,1
 step << !sod/Warrior/Rogue/Druid
     .goto Teldrassil,38.3,34.4
     .target Sentinel Arynia Cloudsbreak
@@ -2723,13 +2738,13 @@ step << Warrior
     >>|cRXP_WARN_He has multiple spawn points and can only be present in one of them at the time. Skip this step if he's not there|r
     .unitscan Wandering Swordsman
     .train 412507,1
-step
+step << Warrior
     #softcore
     #completewith next
     #sesaon 2
     .goto Teldrassil,40.8,75.6
     .deathskip >>Die and respawn at the Darnassus graveyard
-    >>|cRXP_WARN_Make sure you're closer to Darnassus graveyard than Dolnaar one or you might end up going the wrong way. If you're uncertain die east of the spot marked on your map|r << sod
+    >>|cRXP_WARN_Make sure you're closer to Darnassus graveyard than Dolnaar one or you might end up going the wrong way. If you're uncertain die east of the spot marked on your map|r
     .target Spirit Healer
 step
     #hardcore
