@@ -1088,11 +1088,11 @@ step << Priest
 step
     .goto Teldrassil,60.900,68.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denalan|r
-    >>|cRXP_WARN_Don't take the sprouts quest|r << !sod/Warrior
+    >>|cRXP_WARN_Don't take the sprouts quest|r << !sod/Warrior/Rogue
     .turnin 997 >> Turn in Denalan's Earth
     .target Denalan
     .accept 918 >> Accept Timberling Seeds
-    .accept 919 >> Accept Timberling Sprouts << !sod/Warrior
+    .accept 919 >> Accept Timberling Sprouts << !sod/Warrior/Rogue
 step << Rogue
     #season 2
     #completewith next
@@ -1152,7 +1152,7 @@ step
     >>Kill |cRXP_ENEMY_Timberlings|r. Loot them for their |cRXP_LOOT_Seeds|r
     >>Loot the |cRXP_LOOT_Timberling Sprouts|r on the ground << !sod
     .complete 918,1 --Collect Timberling Seed (x8)
-    .complete 919,1 << !sod/Warrior --Collect Timberling Sprout (x12)
+    .complete 919,1 << !sod/Warrior/Rogue --Collect Timberling Sprout (x12)
     .mob Timberling
 step << Rogue
     #season 2
@@ -1163,16 +1163,16 @@ step << Rogue
     .mob Timberling Bark Ripper
     .mob Timberling Trampler
     .train 398196,1
-
 step
     .goto Teldrassil,60.900,68.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Denalan|r
     .turnin 918 >> Turn in Timberling Seeds
     .target Denalan
     .accept 922 >> Accept Rellian Greenspyre
-    .turnin 919 >> Turn in Timberling Sprouts << !sod/Warrior
-step << !sod/Warrior
-    #season 2
+    .turnin 919 >> Turn in Timberling Sprouts << !sod/Warrior/Rogue
+step
+    #season 2 << Hunter/Druid/Priest
+    #season 1 << Warrior/Rogue
 	.abandon 919 >> Abandon The Timberling Sprouts quest, it's not worth doing
 step << Warrior
     #season 2
@@ -1625,6 +1625,7 @@ step
     .turnin 4161 >> Turn in Recipe of the Kaldorei
     .target Zarrin
 step << Warrior/Rogue
+    #season 0
     .goto Teldrassil,55.29,56.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Byancie|r
     .train 3273 >> Train |T135966:0|t[First Aid]
@@ -1639,6 +1640,12 @@ step
     .accept 4161 >> Accept Recipe of the Kaldorei
     .turnin 4161 >> Turn in Recipe of the Kaldorei
     >>|cRXP_WARN_If you're already level 10 and you don't have the spider legs yet feel free to skip this quest. Do still train cooking regardless|r
+step << Rogue
+    #season 2
+    .goto Teldrassil,55.29,56.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Byancie|r
+    .train 3273 >> Train |T135966:0|t[First Aid]
+    .target Byancie
 step << !sod/Priest/Rogue
     .goto Teldrassil,55.574,56.948
     .target Tallonkai Swiftroot
@@ -1761,8 +1768,9 @@ step
     .target Moon Priestess Amara
 step << Rogue
     #season 2
-    #completewith next
+    #completewith runeOfPrecision
     #optional
+    #label topleft
     >>Kill or |T133644:0|t[Pick Pocket] |cRXP_ENEMY_Gnarlpine Furbolgs|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece]|r
     >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
     .collect 208602,1 -- Top-Left Map Piece (1)
@@ -1817,17 +1825,28 @@ step << Rogue
     .train 400081,1
 step << Rogue
     #season 2
+    #label runeOfPrecision
     .goto Teldrassil,37.836,82.588
     >>Open the |cRXP_PICK_Gnarlpine Stash|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Precision|r]
     .collect 204174 -- Rune of Precision (1)
     .itemcount 208749,1
     .train 400081,1
 step << Rogue
-#requires topleft
     #season 2
     .train 400081 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Precision|r] |cRXP_WARN_to train|r |T135610:0|t[Between the Eyes]
     .use 204174
     .itemcount 204174,1
+step << Rogue
+    #season 2
+    .goto Teldrassil,38.92,79.93
+    >>Kill or |T133644:0|t[Pick Pocket] |cRXP_ENEMY_Gnarlpine Furbolgs|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Top-Left Map Piece]|r
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    .collect 208602,1 -- Top-Left Map Piece (1)
+    .mob Gnarlpine Ambusher
+    .mob Gnarlpine Shaman
+    .mob Gnarlpine Defender
+    .mob Gnarlpine Augur
+    .train 398196,1
 step << Rogue
     #season 2
     #softcore
