@@ -2178,8 +2178,14 @@ step
     .subzoneskip 442 --Auberdine
     .subzoneskip 447 --Ameth'Aran
 step
-    #season 0 << !Warrior sod
-    #season 2 << Warrior sod
+    #season 0
+    #label RedCrystal
+    .goto 1439,47.314,48.676
+    >>Travel up to the |cRXP_PICK_Mysterious Red Crystal|r
+    >>|cRXP_WARN_Be careful of the two group of 2 |cRXP_ENEMY_Raging Moonkins|r west of the |cRXP_PICK_Mysterious Red Crystal|r as the duos closest to each other are leashed together|r
+    .complete 4811,1 --Locate the large, red crystal on Darkshore's eastern mountain range
+step << Warrior/Rogue
+    #season 2
     #label RedCrystal
     .goto 1439,47.314,48.676
     >>Travel up to the |cRXP_PICK_Mysterious Red Crystal|r
@@ -3003,7 +3009,8 @@ step << !sod/Warrior/Rogue/Priest
     .turnin 963 >> Turn in For Love Eternal
     .target Cerellean Whiteclaw
     .isQuestComplete 963
-step  << !sod/Warrior/Rogue
+step
+    #season 0
     .goto 1439,37.703,43.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .turnin 4811 >> Turn in The Red Crystal
@@ -3011,13 +3018,13 @@ step  << !sod/Warrior/Rogue
     .target Sentinel Glynda Nal'Shea
     .isOnQuest 4811
 step << !sod/Warrior/Rogue/Priest
-    #season 2
     .goto 1439,37.703,43.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .turnin 4812 >> Turn As Water Cascades
     .target Sentinel Glynda Nal'Shea
     .isQuestComplete 4812
-step << !sod/Warrior/Rogue
+step
+    #season 0
     .goto 1439,37.767,44.001
     >>|cRXP_WARN_Use the|r |T134865:0|t[Empty Water Tube] |cRXP_WARN_at the Auberdine moonwell|r
     .complete 4812,1 --Moonwell Water Tube (1)
@@ -3263,7 +3270,8 @@ step << Priest
 
 
 step << !Hunter
-    #season 0
+    #season 0 << Druid/Priest
+    #season 2 << Warrior/Rogue
     #optional
     #completewith Level10CookEnd
     .goto 1439,38.107,41.165
@@ -4065,6 +4073,7 @@ step
     >>|cRXP_WARN_You will most likely not be able to solo this quest!|r I'd recommend not even attempting it unless you can find another player to group with << Warrior
     >>Skip this step if you fail or there's no one to group with << Warrior
     .link https://www.twitch.tv/videos/1182180918 >> |cRXP_WARN_Click here for a video guide|r << Hunter
+    .link https://youtu.be/md926sh3L6U >> |cRXP_WARN_Click here for a video walkthrough|r << !Hunter
     .target Prospector Remtravel
 step
     #requires prospector
@@ -4362,12 +4371,14 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laird|r
     .accept 6343 >> Accept Return to Nessa
     .target Laird
+    .isQuestComplete 741 << Rogue sod
 step << NightElf
     #season 2
     .goto Darkshore,36.336,45.574
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caylais Moonfeather|r
     .fly Teldrassil >> Fly to Teldrassil
     .target Caylais Moonfeather
+    .isQuestComplete 741 << Rogue
 step << NightElf
     #season 2 << !sod Priest
     #season 1 << sod Priest
@@ -4375,6 +4386,7 @@ step << NightElf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nessa Shadowsong|r
     .turnin 6343 >> Turn in Return to Nessa
     .target Nessa Shadowsong
+    .isQuestComplete 741 << Rogue sod
 step << !NightElf
     #season 2
     .goto 1439,33.169,40.179,15 >> Travel to the dock of the Darnassus boat
@@ -4449,8 +4461,27 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Syurna|r
     .goto Darnassus,31.84,16.69,15,0
     .goto Darnassus,37.00,21.92
+    >>|cRXP_WARN_Make sure you have at least 1 gold 30 silver left after training. You will need it to buy weapons|r
     .trainer >> Train your class spells
     .target Syurna
+    .isQuestComplete 741
+step << Rogue
+    #season 2
+    .goto Darnassus,58.76,44.48
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariyell Skyshadow|r
+    >>|cRXP_BUY_Buy and equip two|r |T135342:0|t[Kris] daggers
+    .collect 2209,2
+    .target Ariyell Skyshadow
+    .money <0.9860
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.93 
+    .isQuestComplete 741
+step << Rogue
+    #season 2
+    #completewith next
+    +|cRXP_WARN_Equip the two|r |T135342:0|t[Kris] daggers
+    .use 2209
+    .itemcount 2209,2
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.93
 step << !Druid
     #season 2
     .goto Teldrassil,23.70,64.51
@@ -4472,7 +4503,7 @@ step << Priest
     .turnin 78192 >> Turn in Secrets of the Light
     .accept 78193 >> Accept Secrets of the Light 
     .target Maethra Slagheart
-step << Warrior
+step << Warrior/Rogue
     #season 2
     #optional
     #completewith next
@@ -4480,6 +4511,7 @@ step << Warrior
     >>|cRXP_WARN_Fly back if your hearthstone is on cooldown|r
     .zoneskip Darkshore
     .subzoneskip 442
+    .isQuestComplete 741 << Rogue
 step << !Druid
     #season 2
     #label startSoD
@@ -4487,6 +4519,7 @@ step << !Druid
     #completewith next
     .goto 1457,29.179,41.180
     .zone Teldrassil >> Take the purple portal to Rut'Theran Village
+    .isQuestComplete 741 << Rogue
 step << !Druid
     #season 2
     #label FlyAuberdineSoD
@@ -4495,7 +4528,7 @@ step << !Druid
     .fly Darkshore >> Fly to Darkshore
     .target Vesprystus
     .zoneskip Darkshore
-
+    .isQuestComplete 741 << Rogue
 
 ----Start of Druid Quest+SoD rune section----
 
