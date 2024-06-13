@@ -6513,6 +6513,46 @@ step << Warrior/Paladin/Mage/Warlock/Rogue
     .zoneskip Stormwind City
     .zoneskip Westfall
     .dungeon !DM
+ step << Warrior/Rogue
+    #season 2
+    .goto Wetlands,7.95,56.38
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dewin Shimmerdawn|r
+    .vendor 1453 >> |cRXP_WARN_Buy as many|r |T134831:0|t[Healing Potions] |cRXP_WARN_that are available|r
+    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Dewin Shimmerdawn|r doesn't have any|r
+    .target Dewin Shimmerdawn
+step << Warrior/Rogue
+    #season 2
+    .money <0.08
+    .goto Wetlands,10.4,56.0,25,0
+    .goto Wetlands,10.1,56.9,25,0
+    .goto Wetlands,10.6,57.2,25,0
+    .goto 1437,10.760,56.721
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Neal Allen|r
+    .vendor >> |cRXP_WARN_Buy a|r |T133024:0|t[Bronze Tube]
+    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Neal Allen|r doesn't have one|r
+	.target Neal Allen
+    .bronzetube
+step << Rogue
+    #season 2
+    .goto Wetlands,10.69,60.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Helbrek|r
+    .target Innkeeper Helbrek
+    .home >> Set your Hearthstone to Menethil Harbor
+step << Rogue
+    #season 2
+    .goto Wetlands,10.843,60.435
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Flagongut|r up stairs
+    .target Archaeologist Flagongut
+    .turnin 942 >> Turn in The Absent Minded Prospector
+    .accept 943 >> Accept The Absent Minded Prospector
+    .isQuestComplete 942
+step << Rogue
+    #season 2
+    .goto Wetlands,10.496,60.201
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Samor Festivus|r upstairs
+    .vendor >> |cRXP_BUY_Buy as many|r |T134831:0|t[Healing Potions] |cRXP_BUY_that are available|r
+    >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Samor Festivus|r doesn't have any|r
+    .target Samor Festivus
 step << Warrior/Paladin
     #ah
     #xprate >1.59
@@ -7035,6 +7075,7 @@ step << Rogue
     .goto StormwindClassic,74.65,52.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne the Night Man|r
     >>|cRXP_WARN_Make sure you train|r |T133644:0|t[Pick Pocket]|cRXP_WARN_and|r |T136058:0|t[Pick Lock] |cRXP_WARN_as you'll need them later|r
+    >>|cRXP_WARN_BE VERY CAREFUL with your money management in the coming steps. Only buy essential spells. You will need to have money for vanish soon and 75 silver to obtain a rune after returning to wetlands|r
     .train 921 >>Train |T133644:0|t[Pick Pocket]
     .train 1804 >> Train |T136058:0|t[Pick Lock]
     .trainer >> Train your class spells
@@ -7047,6 +7088,7 @@ step << Rogue
     .goto StormwindClassic,74.65,52.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne the Night Man|r
     >>|cRXP_WARN_Make sure you train|r |T136058:0|t[Pick Lock] |cRXP_WARN_as you'll need it later|r
+    >>|cRXP_WARN_BE VERY CAREFUL with your money management in the coming steps. Only buy essential spells. You will need to have money for vanish soon and 75 silver to obtain a rune after returning to wetlands|r
     .train 1804 >> Train |T136058:0|t[Pick Lock]
     .trainer >> Train your class spells
     .target Osborne the Night Man
@@ -7073,6 +7115,7 @@ step << Rogue
     .dungeon !DM
 step << NightElf Warrior/NightElf Rogue/Mage/Warlock
     #xprate >1.59 << !Hunter
+    #season 1 << Rogue sod
     #label WepTrainNoDM
     #optional << NightElf
     .goto StormwindClassic,57.12,57.69
@@ -7118,30 +7161,32 @@ step << Rogue
     #ah
     .goto StormwindClassic,57.38,56.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r inside
-    >>|cRXP_BUY_Buy a|r |T135324:0|t[Longsword] |cRXP_BUY_from her or check the Auction House for something better/cheaper|r
-    .collect 923,1 --Longsword (1)
+    >>|cRXP_BUY_Buy a|r |T135342:0|t[Kris] |cRXP_BUY_from her or check the Auction House for something better/cheaper|r
+    >>|cRXP_WARN_BE VERY CAREFUL with your money management in the coming steps. Only buy one dagger if you don't have the money. You will need to have money for vanish soon and 75 silver to obtain a rune after returning to wetlands|r
+    .collect 2209,2 --Kris (2)
     .target Marda Weller
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.2
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.93
     .dungeon !DM
 step << Rogue
     #xprate >1.59
     #ssf
     .goto StormwindClassic,57.38,56.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
-    >>|cRXP_WARN_Buy a|r |T135324:0|t[Longsword] |cRXP_BUY_from her if you can afford it|r
-    .collect 923,1 --Longsword (1)
+    >>|cRXP_WARN_Buy a|r |T135342:0|t[Kris] |cRXP_BUY_from her if you can afford it|r
+    >>|cRXP_WARN_BE VERY CAREFUL with your money management in the coming steps. Only buy one dagger if you don't have the money. You will need to have money for vanish soon and 75 silver to obtain a rune after returning to wetlands|r
+    .collect 2209,1 --Kris (2)
     .target Marda Weller
     .money <0.8743
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.2
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.93
     .dungeon !DM
 step << Rogue
     #xprate >1.59
     #optional
     #completewith NoDMStockadeEnd
-    +|cRXP_WARN_Equip the|r |T135324:0|t[Longsword]
-    .use 923
+    +|cRXP_WARN_Equip the|r |T135342:0|t[Kris]
+    .use 2209
     .itemcount 923,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.19
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.93
     .xp <21,1
     .dungeon !DM
 
@@ -7266,6 +7311,35 @@ step << Rogue
     .dungeon !DM
 step << Rogue
     #xprate >1.59
+    .goto Redridge Mountains,32.2,48.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
+    .accept 89 >> Accept The Everstill Bridge
+    .target Foreman Oslow
+    .xp 21.4,1
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
+    #sticky
+    #completewith next
+    .goto Redridge Mountains,39.6,33.2,0
+    .goto Redridge Mountains,38.2,35.7,0
+    .goto Redridge Mountains,35.2,37.8,0
+    .goto Redridge Mountains,31.9,39.5,0
+    .goto Redridge Mountains,28.5,38.7,0
+    .goto Redridge Mountains,25.1,37.7,0
+    >>You can kill some of the gnolls while on the way to Alther's Mill. You will complete this objective on the way back
+    .complete 89,1 --Iron Pike (5)
+    .complete 89,2 --Iron Rivet (5)
+    .isOnQuest 89
+    .dungeon !DM
+    .mob Redridge Brute
+    .mob Redridge Mystic
+    .mob Redridge Basher
+step << Rogue
+    #xprate >1.59
+    .goto 1433,51.846,45.116,100 >> Head toward Alther's Mill
+step << Rogue
+    #xprate >1.59
     .goto 1433,51.846,45.116
     >>|cRXP_WARN_You MUST do this for your|r |T132290:0|t[Poisons] |cRXP_WARN_quest later|r
     >>|cRXP_WARN_Stand on the waypoint location. Position your camera and cursor until you can click 3 |cRXP_PICK_Practice Lockboxes|r at once without having to move anything|r
@@ -7279,6 +7353,30 @@ step << Rogue
     .dungeon !DM
 step << Rogue
     #xprate >1.59
+    .goto Redridge Mountains,39.6,33.2
+    .goto Redridge Mountains,38.2,35.7,0
+    .goto Redridge Mountains,35.2,37.8,0
+    .goto Redridge Mountains,31.9,39.5,0
+    .goto Redridge Mountains,28.5,38.7,0
+    .goto Redridge Mountains,25.1,37.7,0
+    >>Finish off killing |cRXP_WARN_gnolls|r for the bridge parts
+    .complete 89,1 --Iron Pike (5)
+    .complete 89,2 --Iron Rivet (5)
+    .isOnQuest 89
+    .dungeon !DM
+    .mob Redridge Brute
+    .mob Redridge Mystic
+    .mob Redridge Basher
+step << Rogue
+    #xprate >1.59
+    .goto Redridge Mountains,32.2,48.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
+    .turnin 89 >> Turn in The Everstill Bridge
+    .isQuestComplete 89
+    .target Foreman Oslow
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
     .goto Redridge Mountains,28.07,52.02
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lucius|r
     .turnin 2282 >> Turn in Alther's Mill
@@ -7289,6 +7387,10 @@ step << Rogue
     #optional
     #completewith DefiasWestfall2
     .destroy 7907 >> Delete the |T134328:0|t[Certificate of Thievery] from your bags, as it's no longer needed
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
+    .xp 21+14325 >> Make sure you're at least 14k xp into level 21 before leaving redridge. If you're not there yet consider doing |cRXP_ENEMY_Hilary's Necklace|r quest from |cRXP_FRIENDLY_Shawn|r or |cRXP_ENEMY_The Lost Tools|r from |cRXP_FRIENDLY_Foreman Oslow|r
     .dungeon !DM
 step << Rogue
     #xprate >1.59
@@ -7423,6 +7525,9 @@ step << Dwarf Rogue
     .dungeon !DM
 step << Rogue
     #xprate >1.59
+    .xp 22-8200 >> Grind untill you're 8200 xp away from level 22. You will need to reach it in Stormwind to train |T132331:0|t[Vanish] which is required for an extremally powerful rune later
+step << Rogue
+    #xprate >1.59
     #optional
     #completewith KlavenFinish
     .goto Westfall,56.55,52.64
@@ -7493,7 +7598,7 @@ step << Rogue
     #label KlavenFinish
     .goto Stormwind City,75.78,59.84
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Mathias Shaw|r
-    >>|cRXP_WARN_Remember to re-equip your main weapon if you switched to a|r |T135641:0|t[Dagger] |cRXP_WARN_earlier|r << Rogue
+    >>|cRXP_WARN_Remember to re-equip your main weapon if you switched to a|r |T135641:0|t[Dagger] |cRXP_WARN_earlier|r << Rogue !sod
     .turnin 135 >> Turn in The Defias Brotherhood
 --  .accept 141 >> Accept The Defias Brotherhood
     .turnin 2359 >> Turn in Klaven's Tower
@@ -7501,21 +7606,16 @@ step << Rogue
     .dungeon !DM
 step << Rogue
     #xprate >1.59
-    #optional
     .goto StormwindClassic,74.65,52.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne the Night Man|r
-    .train 1856 >> Train your class spells
+    >>|cRXP_WARN_BE VERY CAREFUL with your money management in the coming steps. Only buy essential spells. You will need 75 silver to obtain a rune after a couple quests in wetlands|r
+    >>|cRXP_WARN_Train|r |T132331:0|t[Vanish] You will need it to unlock |T236270:0|t[Deadly Brew] soon
+    .train 1856 >> Train |T132331:0|t[Vanish]
     .target Osborne the Night Man
-    .xp <22,1
     .dungeon !DM
 
 
-
-
 ----End of 2x Non-Deadmines Rogue Class q section----
-
-
-
 
 
 step << Warlock
@@ -7632,6 +7732,7 @@ step << Mage
     .dungeon !DM
 step << NightElf Warrior/Mage/Warlock/Rogue
     #xprate >1.59
+    #season 1 >> Rogue
     #requires Torment2NoDMEnd << Warlock
     .goto StormwindClassic,21.40,55.80
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Argos Nightwhisper|r
@@ -7639,6 +7740,24 @@ step << NightElf Warrior/Mage/Warlock/Rogue
     .zoneskip Ironforge << Warrior
     .zoneskip Darkshore << Warrior
     .target Argos Nightwhisper
+    .dungeon !DM
+step << Rogue
+    #xprate >1.59
+    #optional
+    #completewith next
+    .hs >> Hearthstone to Menethil Harbor. |cRXP_WARN_Ghetto hearth from Stockades instead if it's on cooldown|r
+step << Rogue
+    #xprate >1.59
+    .goto StormwindClassic,39.834,54.360
+    >>|cRXP_WARN_Zone into the Stockade in Stormwind|r
+    >>|cRXP_WARN_Once inside:|r
+    .link /run InviteUnit("a");C_Timer.After(1,function() LeaveParty() end) >> |cRXP_WARN_Click here to Copy + Paste this macro into chat to ghetto hearth back to Auberdine|r
+    .zone Darkshore >>|cRXP_WARN_If you are unable to do this, make your way back to Auberdine|r
+    .zoneskip Teldrassil
+    .zoneskip Darnassus
+    .zoneskip Ironforge
+    .zoneskip Wetlands
+    .cooldown item,6948,<0
     .dungeon !DM
 step << NightElf Warrior/NightElf Rogue
     #xprate >1.59
@@ -7651,6 +7770,7 @@ step << NightElf Warrior/NightElf Rogue
     .zoneskip Teldrassil
     .zoneskip Darnassus
     .zoneskip Ironforge
+    .zoneskip Wetlands
     .dungeon !DM
 step << NightElf Warrior/NightElf Rogue
     #xprate >1.59
@@ -7662,6 +7782,7 @@ step << NightElf Warrior/NightElf Rogue
     .zoneskip Darkshore
     .zoneskip Teldrassil
     .zoneskip Darnassus
+    .zoneskip Wetlands
     .dungeon !DM
 step << NightElf Warrior/NightElf Rogue
     #xprate >1.59
@@ -7677,6 +7798,7 @@ step << NightElf Warrior/NightElf Rogue
     .zoneskip Darkshore
     .zoneskip Teldrassil
     .zoneskip Darnassus
+    .zoneskip Wetlands
     .bronzetube
     .dungeon !DM
 step << NightElf Warrior
@@ -7692,6 +7814,7 @@ step << NightElf Warrior
     .zoneskip Darkshore
     .zoneskip Teldrassil
     .zoneskip Darnassus
+    .zoneskip Wetlands
     .dungeon !DM
 step << NightElf Warrior
     #xprate >1.59
@@ -7707,6 +7830,7 @@ step << NightElf Warrior
     .zoneskip Darkshore
     .zoneskip Teldrassil
     .zoneskip Darnassus
+    .zoneskip Wetlands
     .dungeon !DM
 step << NightElf Warrior
     #xprate >1.59
@@ -7720,6 +7844,7 @@ step << NightElf Warrior
     .zoneskip Darkshore
     .zoneskip Teldrassil
     .zoneskip Darnassus
+    .zoneskip Wetlands
     .dungeon !DM
 step << NightElf Warrior/NightElf Rogue
     #xprate >1.59
@@ -7731,6 +7856,7 @@ step << NightElf Warrior/NightElf Rogue
     .zoneskip Darkshore
     .zoneskip Teldrassil
     .zoneskip Darnassus
+    .zoneskip Wetlands
     .dungeon !DM
 step << NightElf Warrior/NightElf Rogue
     #xprate >1.59
@@ -7741,6 +7867,7 @@ step << NightElf Warrior/NightElf Rogue
     .use 5352
     .itemcount 5352,1
     .zoneskip Ironforge,1
+    .zoneskip Wetlands
     .dungeon !DM
 step << NightElf Warrior/NightElf Rogue
     #xprate >1.59
@@ -7749,6 +7876,7 @@ step << NightElf Warrior/NightElf Rogue
     .turnin 968 >> Turn in The Powers Below
     .target Gerrig Bonegrip
     .zoneskip Ironforge,1
+    .zoneskip Wetlands
     .isOnQuest 968
     .dungeon !DM
 
