@@ -9,6 +9,7 @@ addon = LibStub("AceAddon-3.0"):NewAddon(addon, addonName, "AceEvent-3.0")
 local RegisterMessage_OLD = addon.RegisterMessage
 local rand, tinsert, select = math.random, table.insert, _G.select
 local IsAddOnLoadOnDemand = C_AddOns and C_AddOns.IsAddOnLoadOnDemand or _G.IsAddOnLoadOnDemand
+local GetSpellInfo = C_Spell and C_Spell.GetSpellInfo or _G.GetSpellInfo
 local messageList = {}
 
 local function MessageHandler(message,...)
@@ -195,17 +196,16 @@ end
 
 function addon.GetStepQuestReward(titleOrId)
     -- enableQuestRewardAutomation is setting for hard-coded .turnin step data
-    if not addon.settings.profile.enableQuestRewardAutomation then return 0 end
     if not titleOrId then return 0 end
-
     -- questTurnIn contains quest and title lookups
     -- addon.questTurnIn[747] == addon.questTurnIn["The Hunt Begins"]
 
     local element = addon.questTurnIn[titleOrId]
 
     if not element then return 0 end
+    if not addon.settings.profile.enableQuestRewardAutomation then return 0,element end
 
-    return element.reward >= 0 and element.reward or 0, element
+    return (element.reward >= 0 and element.reward or 0), element
 end
 
 function addon.IsPlayerSpell(id)
@@ -598,7 +598,8 @@ if addon.gameVersion < 40000 then
     createLogRewardChoiceIcons()
 end
 
-local GetItemInfo = _G.GetItemInfo
+local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
+
 local GetQuestLogSelection, GetNumQuestLogChoices = _G.GetQuestLogSelection,
                                                     _G.GetNumQuestLogChoices
 local GetQuestLogChoiceInfo, GetQuestLogItemLink, GetQuestLogTitle =
@@ -840,7 +841,7 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
             return
         end
     end
-
+    print(event)
     if event == "QUEST_ACCEPT_CONFIRM" and addon.QuestAutoAccept(arg2) then
         ConfirmAcceptQuest()
     elseif event == "QUEST_COMPLETE" then
