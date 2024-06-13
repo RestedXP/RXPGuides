@@ -7606,11 +7606,25 @@ step << Rogue
     .dungeon !DM
 step << Rogue
     #xprate >1.59
+    .goto Stormwind City,78.2,58.8
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jasper Fel|r on the ground floor of the building
+    >>Buy reagents for crafting |T132273:0|t[|cRXP_FRIENDLY_Instant Poison|r] and |T132331:0|t[|cRXP_FRIENDLY_Vanish|r] from him
+    .collect 3371,20 --Empty Vial (20)
+    .collect 2928,20 -Dust of Decay (20)
+    .collect 5140,20 --Flash Powder (20)
+    .target Jasper Fel
+step << Rogue
+    #xprate >1.59
+    >>Open your spellbook and find the |T136242:0|t[|cRXP_FRIENDLY_Poisons|r] skill from the general tab. Open it and craft 20 Instant Poisons. |cRXP_WARN_Remember to keep them applied to both your weapons during combat|r
+    .collect 6947,20 --Instant Poison (20)
+step << Rogue
+    #xprate >1.59
     .goto StormwindClassic,74.65,52.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne the Night Man|r
     >>|cRXP_WARN_BE VERY CAREFUL with your money management in the coming steps. Only buy essential spells. You will need 75 silver to obtain a rune after a couple quests in wetlands|r
-    >>|cRXP_WARN_Train|r |T132331:0|t[Vanish] You will need it to unlock |T236270:0|t[Deadly Brew] soon
+    >>|cRXP_WARN_Train|r |T132331:0|t[Vanish] and |T132320:0|t[Stealth](rank 2) You will need it to unlock |T236270:0|t[Deadly Brew] soon
     .train 1856 >> Train |T132331:0|t[Vanish]
+    .train 1785 >> Train |T132320:0|t[Stealth](rank 2)
     .target Osborne the Night Man
     .dungeon !DM
 
