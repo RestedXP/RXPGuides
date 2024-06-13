@@ -12,6 +12,8 @@ local IsAddOnLoaded = C_AddOns and C_AddOns.IsAddOnLoaded or _G.IsAddOnLoaded
 local GetNumAddOns =  C_AddOns and C_AddOns.GetNumAddOns or _G.GetNumAddOns
 local GetAddOnInfo = C_AddOns and C_AddOns.GetAddOnInfo or _G.GetAddOnInfo
 
+local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
+
 local fmt, tostr, next, GetTime = string.format, tostring, next, GetTime
 
 local INV_HEIRLOOM = _G.Enum.ItemQuality.Heirloom

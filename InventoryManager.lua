@@ -5,6 +5,8 @@ local inventoryManager = {}
 addon.inventoryManager = inventoryManager
 
 local gameVersion = select(4, GetBuildInfo())
+
+local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
 local GetContainerNumFreeSlots = C_Container and C_Container.GetContainerNumFreeSlots or _G.GetContainerNumFreeSlots
 local GetContainerNumSlots = C_Container and C_Container.GetContainerNumSlots or _G.GetContainerNumSlots
 

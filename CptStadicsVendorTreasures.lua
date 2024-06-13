@@ -7,6 +7,8 @@ Creative Commons Attribution-NonCommercial 3.0 Unported https://creativecommons.
 
 if addon.gameVersion > 20000 then return end
 
+local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
+
 local GameTooltip, WorldMapFrame = _G.GameTooltip, _G.WorldMapFrame
 local UnitOnTaxi, GetBestMapForUnit, GetPlayerMapPosition = _G.UnitOnTaxi,
                                                             C_Map.GetBestMapForUnit,

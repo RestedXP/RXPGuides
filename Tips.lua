@@ -2,9 +2,11 @@ local _, addon = ...
 
 if addon.gameVersion > 40000 then return end
 
+local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
+local GetSpellInfo = C_Spell and C_Spell.GetSpellInfo or _G.GetSpellInfo
 local GetTime, GetMirrorTimerProgress = _G.GetTime, _G.GetMirrorTimerProgress
 local UnitHealth, UnitHealthMax = UnitHealth, UnitHealthMax
-local GetItemInfo, GetInventoryItemID, IsPlayerSpell = GetItemInfo,
+local GetInventoryItemID, IsPlayerSpell =
                                                        GetInventoryItemID,
                                                        IsPlayerSpell
 local HasAction, GetActionInfo, GetMacroSpell, GetSpellInfo = HasAction,

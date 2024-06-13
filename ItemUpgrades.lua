@@ -10,6 +10,7 @@ local fmt, tinsert, ipairs, pairs, next, type, wipe, tonumber, strlower =
     string.format, table.insert, ipairs, pairs, next, type, wipe, tonumber,
     strlower
 
+local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
 local GetItemInfoInstant, GetInventoryItemLink, IsEquippedItem =
     _G.GetItemInfoInstant, _G.GetInventoryItemLink, _G.IsEquippedItem
 local GetItemStats = _G.GetItemStats
