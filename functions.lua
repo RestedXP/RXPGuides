@@ -5,6 +5,10 @@ local gameVersion = select(4, GetBuildInfo())
 local fmt, tinsert = string.format,tinsert
 local LoadAddOn = C_AddOns and C_AddOns.LoadAddOn or _G.LoadAddOn
 local IsAddOnLoaded = C_AddOns and C_AddOns.IsAddOnLoaded or _G.IsAddOnLoaded
+local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
+local GetSpellInfo = C_Spell and C_Spell.GetSpellInfo or _G.GetSpellInfo
+local GetItemCount = C_Item and C_Item.GetItemCount or _G.GetItemCount
+
 --local RXPGuides = addon.RXPGuides
 local L = addon.locale.Get
 addon.functions.__index = addon.functions

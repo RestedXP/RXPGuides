@@ -1,5 +1,7 @@
 local addonName, addon = ...
 
+local GetItemCount = C_Item and C_Item.GetItemCount or _G.GetItemCount
+
 addon.skipPreReq = {
     [9573] = 1,
     [533] = 1,

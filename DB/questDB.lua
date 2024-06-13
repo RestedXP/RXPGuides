@@ -1,6 +1,7 @@
 local _,addon = ...
 
 local showAllQs
+local GetItemCount = C_Item and C_Item.GetItemCount or _G.GetItemCount
 
 local function GetXPMods()
     return addon.GetXPBonuses(false,80)
