@@ -841,7 +841,7 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
             return
         end
     end
-    print(event)
+    --print(event)
     if event == "QUEST_ACCEPT_CONFIRM" and addon.QuestAutoAccept(arg2) then
         ConfirmAcceptQuest()
     elseif event == "QUEST_COMPLETE" then
