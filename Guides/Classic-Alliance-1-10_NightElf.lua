@@ -1689,7 +1689,7 @@ step << Rogue
     .goto Teldrassil,56.381,60.139
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jannok Breezesong|r
 	.trainer >> Train your class spells
-    .train 5171 >> Train |T132306:0|t[Slice and Dice]
+    .train 5171 >> Train |T132306:0|t[Slice and Dice] << !sod
     .train 921 >> Train |T133644:0|t[Pick Pocket] as well which is needed for your level 10 Rogue quest
     .target Jannok Breezesong
 step << Hunter

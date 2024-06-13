@@ -814,27 +814,27 @@ s["ROGUE"] = {
         1784 -- stealth
     },
     [6] = {
-        1776, -- gouge
         1757 -- sinister strike r2
     },
     [8] = {
-        5277, -- evasion
-        6760 -- eviscerate r2
+        6760, -- eviscerate r2
+        5277 -- evasion
     },
     [10] = {
+        1424, -- dual wield
+        921, -- Pick Pocket
+        1776, -- gouge
         2983, -- sprint
-        6452, -- Anti-venom(FA)
-        1424 -- dual wield
+        6452 -- Anti-venom(FA)
     },
     [12] = {
+        3128, -- parry
         1766, -- kick
         6770, -- sap
-        5171, -- slice and dice
-        3128 -- parry
+        5171 -- slice and dice
     },
     [14] = {
-        703, -- garrote
-        1758 -- sinister strike r3
+        703 -- garrote
     },
     [16] = {
         5167, -- pick pocket
@@ -842,15 +842,10 @@ s["ROGUE"] = {
         1804 -- Pick Lock
     },
     [20] = {
-        1785, -- stealth r2
-        1943, -- rupture
-        8676 -- ambush
+        1785 -- stealth r2
     },
     [22] = {
-        1725, -- distract
-        1759, -- sinister strike r4
-        1856, -- vanish
-        8631 -- garrote r2
+        1856 -- vanish
     },
     [24] = {
         6762 -- eviscerate r4
