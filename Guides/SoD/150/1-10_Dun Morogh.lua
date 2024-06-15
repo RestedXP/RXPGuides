@@ -8,7 +8,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #version 1
 << Alliance --!Hunter
-#group RestedXP Alliance 1-20
+#group RXP SOD TEST
 #name 6-11 Dun Morogh
 #displayname 6-12 Dun Morogh << sod !Warlock
 #next 11-12 Elwynn (Dwarf/Gnome);11-12 Voidwalker Quest;12-14 Loch Modan (Dwarf/Gnome);11-13 Loch Modan (Hunter)

@@ -4,7 +4,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #xprate >2.49
 << Alliance
-#group RestedXP Alliance 1-20
+#group RXP SOD TEST
 #name 16-17 Westfall
 #defaultfor !NightElf
 step
@@ -446,7 +446,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #xprate >2.49
 << Alliance
-#group RestedXP Alliance 1-20
+#group RXP SOD TEST
 #name 17-22 Redridge
 #defaultfor !NightElf
 

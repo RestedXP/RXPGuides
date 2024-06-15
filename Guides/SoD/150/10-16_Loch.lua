@@ -4,7 +4,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #xprate >2.49
 << Alliance
-#group RestedXP Alliance 1-20
+#group RXP SOD TEST
 #name 10-12 Dun Morogh
 #defaultfor !NightElf
 step
@@ -1030,7 +1030,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #xprate >2.49
 << Alliance
-#group RestedXP Alliance 1-20
+#group RXP SOD TEST
 #name 12-16 Loch Modan
 #defaultfor !NightElf
 
