@@ -6513,14 +6513,14 @@ step << Warrior/Paladin/Mage/Warlock/Rogue
     .zoneskip Stormwind City
     .zoneskip Westfall
     .dungeon !DM
- step << Warrior/Rogue
+ step << Rogue
     #season 2
     .goto Wetlands,7.95,56.38
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dewin Shimmerdawn|r
     .vendor 1453 >> |cRXP_WARN_Buy as many|r |T134831:0|t[Healing Potions] |cRXP_WARN_that are available|r
     >>|cRXP_WARN_This is a limited supply item. Skip this step if |cRXP_FRIENDLY_Dewin Shimmerdawn|r doesn't have any|r
     .target Dewin Shimmerdawn
-step << Warrior/Rogue
+step << Rogue
     #season 2
     .money <0.08
     .goto Wetlands,10.4,56.0,25,0
@@ -6555,6 +6555,7 @@ step << Rogue
     .target Samor Festivus
 step << Warrior/Paladin
     #ah
+    #season 1 --Not loading for now
     #xprate >1.59
     #optional
     #label PalWarSkip20
@@ -6573,6 +6574,7 @@ step << Warrior/Paladin
     .dungeon !DM
 step << Warrior/Paladin
     #ssf
+    #season 1 --Not loading for now
     #xprate >1.59
     .goto 1437,11.579,59.540,6,0
     .goto 1437,11.435,59.696
@@ -6591,6 +6593,7 @@ step << Warrior/Paladin
     .dungeon !DM
 step << !NightElf Warrior/Paladin
     #xprate >1.59
+    #season 1 --Not loading for now
     #optional
     +|cRXP_WARN_Equip the|r |T135329:0|t[Executioner's Sword]
     .use 4818
@@ -6599,6 +6602,7 @@ step << !NightElf Warrior/Paladin
     .dungeon !DM
 step << !NightElf Warrior/Paladin
     #xprate >1.59
+    #season 1 --Not loading for now
     #optional
     +|cRXP_WARN_Equip the|r |T135280:0|t[Dacian Falx]
     .use 922
@@ -6608,6 +6612,7 @@ step << !NightElf Warrior/Paladin
     .dungeon !DM
 step << !NightElf Warrior/Paladin/Mage/Warlock/!NightElf Rogue
     #xprate >1.59
+    #season 1 --Not loading for now
     .goto Wetlands,9.490,59.694
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei Brondir|r
     .fly Ironforge >> Fly to Ironforge
@@ -6617,14 +6622,14 @@ step << !NightElf Warrior/Paladin/Mage/Warlock/!NightElf Rogue
     .zoneskip Stormwind City
     .zoneskip Westfall
     .dungeon !DM
-step << NightElf Warrior/NightElf Rogue
+step << NightElf Rogue
     #xprate >1.59
     .goto Wetlands,9.490,59.694
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei Brondir|r
     .fp Menethil Harbor >> Get the Menethil Harbor flight path
     .target Shellei Brondir
     .dungeon !DM
-step << NightElf Warrior/NightElf Rogue
+step << NightElf Rogue
     #xprate >1.59
     #optional
     #completewith next
@@ -6634,7 +6639,7 @@ step << NightElf Warrior/NightElf Rogue
     .zoneskip Ironforge
     .zoneskip Westfall
     .dungeon !DM
-step << NightElf Warrior/NightElf Rogue
+step << NightElf Rogue
     #xprate >1.59
     .goto Wetlands,2.433,78.689,-1
     .goto Ironforge,17.089,83.373,-1
@@ -6656,7 +6661,7 @@ step << NightElf Warrior/NightElf Rogue
 
 
 
-step << NightElf Warrior/NightElf Rogue
+step << NightElf Rogue
     #xprate >1.59
     #optional
     .goto 1415,44.720,49.200,60,0 -- Wetlands to Westfall Swim
@@ -6691,7 +6696,7 @@ step << NightElf Warrior/NightElf Rogue
     .subzoneskip 2257--Deeprun Tram
     .zoneskip Stormwind City
     .dungeon !DM
-step << NightElf Warrior/NightElf Rogue
+step << NightElf Rogue
     #xprate >1.59
     #optional
     #completewith next
@@ -6702,7 +6707,7 @@ step << NightElf Warrior/NightElf Rogue
     .subzoneskip 2257
     .zoneskip Stormwind City
     .dungeon !DM
-step << NightElf Warrior/NightElf Rogue
+step << NightElf Rogue
     #xprate >1.59
     #optional
     .goto Westfall,56.55,52.64
@@ -6723,7 +6728,7 @@ step << NightElf Rogue
     .target Gryan Stoutmantle
     .zoneskip Westfall,1
     .dungeon !DM
-step << NightElf Warrior/NightElf Rogue
+step << NightElf Rogue
     #xprate >1.59
     #optional
     .goto Elwynn Forest,36.809,72.429,100,0
@@ -6733,7 +6738,7 @@ step << NightElf Warrior/NightElf Rogue
     .subzoneskip 809
     .subzoneskip 2257
     .dungeon !DM
-step << NightElf Warrior/NightElf Rogue
+step << NightElf Rogue
     #xprate >1.59 << !Hunter
     #label WepTrainNoDM
     #optional << NightElf
@@ -6758,6 +6763,7 @@ step << NightElf Warrior/NightElf Rogue
 
 step << NightElf Warrior
     #xprate >1.59
+    #season 1 --Not loading for now
     #optional
     .goto Ironforge,61.177,89.508
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Buliwyf Stonehand|r inside
@@ -6771,6 +6777,7 @@ step << NightElf Warrior
     .dungeon !DM
 step << NightElf Warrior
     #xprate >1.59
+    #season 1 --Not loading for now
     #optional
     .goto 1455,62.378,88.671
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r downstairs
@@ -6785,6 +6792,7 @@ step << NightElf Warrior
     .dungeon !DM
 step << Paladin/Warrior
     #xprate >1.59
+    #season 1 --Not loading for now
     #ah
     #optional << NightElf
     .goto 1455,62.378,88.671
@@ -6798,6 +6806,7 @@ step << Paladin/Warrior
     .dungeon !DM
 step << Paladin/Warrior
     #xprate >1.59
+    #season 1 --Not loading for now
     #optional
     +|cRXP_WARN_Equip the|r |T135280:0|t[Dacian Falx]
     .use 922
@@ -6807,6 +6816,7 @@ step << Paladin/Warrior
     .dungeon !DM
 step << NightElf Warrior
     #xprate >1.59
+    #season 1 --Not loading for now
     #optional << NightElf
     #completewith DeeprunDM
     +|cRXP_WARN_Equip the|r |T135425:0|t[Keen Throwing Knives]
@@ -6820,6 +6830,7 @@ step << NightElf Warrior
     .dungeon !DM
 step << Warrior
     #xprate >1.59
+    #season 1 --Not loading for now
     #optional
     #completewith next
     .goto 1455,67.400,84.909,15,0
@@ -6832,6 +6843,7 @@ step << Warrior
     .dungeon !DM
 step << Warrior
     #xprate >1.59
+    #season 1 --Not loading for now
     #optional << NightElf
     .goto Ironforge,65.905,88.405
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bilban Tosslespanner|r
@@ -6843,7 +6855,7 @@ step << Warrior
     .zoneskip Westfall
     .train 202,3 << NightElf Warrior --2h swords trained
     .dungeon !DM
-step << NightElf Warrior/NightElf Rogue
+step << NightElf Rogue
     #xprate >1.59
     .goto Ironforge,55.491,47.751
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
@@ -6854,7 +6866,7 @@ step << NightElf Warrior/NightElf Rogue
     .zoneskip Stormwind City
     .zoneskip Westfall
     .dungeon !DM
-step << Warrior/Paladin/Mage/Warlock/Rogue
+step <<Paladin/Mage/Warlock/Rogue
     #xprate >1.59
     #optional
     .goto Ironforge,50.826,5.613
@@ -6867,7 +6879,7 @@ step << Warrior/Paladin/Mage/Warlock/Rogue
     .zoneskip Stormwind City
     .zoneskip Westfall
     .dungeon !DM
-step << Warrior/Paladin/Mage/Warlock/Rogue
+step << Paladin/Mage/Warlock/Rogue
     #xprate >1.59
     .goto Ironforge,50.826,5.613
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gerrig Bonegrip|r inside
@@ -6929,7 +6941,7 @@ step << Mage
     .zoneskip Stormwind City
     .zoneskip Westfall
     .dungeon !DM
-step << NightElf Warrior/Warlock/Rogue
+step << Warlock/Rogue
     #xprate >1.59
     #optional
     #completewith next
@@ -6941,7 +6953,7 @@ step << NightElf Warrior/Warlock/Rogue
     .isQuestTurnedIn 968
     .train 202,1 << Warrior --2h swords not trained
     .dungeon !DM
-step << NightElf Warrior/Warlock/Rogue
+step << Warlock/Rogue
     #xprate >1.59
     #optional
     #completewith DeeprunNoDM
@@ -6954,7 +6966,7 @@ step << NightElf Warrior/Warlock/Rogue
     .isQuestTurnedIn 968
     .train 202,1 << Warrior --2h swords not trained
     .dungeon !DM
-step << NightElf Warrior/Warlock/Rogue
+step << Warlock/Rogue
     #xprate >1.59
     #optional
     #completewith DeeprunNoDM
@@ -6967,7 +6979,7 @@ step << NightElf Warrior/Warlock/Rogue
     .isQuestAvailable 968
     .train 202,1 << Warrior --2h swords not trained
     .dungeon !DM
-step << NightElf Warrior/Mage/Warlock/Rogue
+step << Mage/Warlock/Rogue
     #xprate >1.59
     #requires MilstaffNoDM << Mage
     .goto 1455,67.842,42.456
@@ -6983,7 +6995,7 @@ step << NightElf Warrior/Mage/Warlock/Rogue
     .bronzetube
     .train 202,1 << Warrior --2h swords not trained
     .dungeon !DM
-step << NightElf Warrior/Mage/Warlock/Rogue
+step << Mage/Warlock/Rogue
     #xprate >1.59
     #requires MilstaffNoDM << Mage
     #label DeeprunNoDM
@@ -6995,7 +7007,7 @@ step << NightElf Warrior/Mage/Warlock/Rogue
     .zoneskip Westfall
     .train 202,1 << Warrior --2h swords not trained
     .dungeon !DM
-step << NightElf Warrior/Mage/Warlock/Rogue
+step << Mage/Warlock/Rogue
     #xprate >1.59
     #completewith WepTrainNoDM << !Warrior
     >>|cRXP_WARN_Level your|r |T135966:0|t[First Aid] |cRXP_WARN_and|r |T133971:0|t[Cooking] |cRXP_WARN_if needed while on the Tram|r
@@ -7006,7 +7018,7 @@ step << NightElf Warrior/Mage/Warlock/Rogue
     .zoneskip Westfall
     .train 202,1 << Warrior --2h swords not trained
     .dungeon !DM
-step << NightElf Warrior/Mage/Warlock/Rogue
+step << Mage/Warlock/Rogue
     #xprate >1.59
     .goto StormwindClassic,55.21,7.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Billibub Cogspinner|r
@@ -7028,6 +7040,7 @@ step << Mage/Warlock/Rogue
     .dungeon !DM
 step << NightElf Warrior
     #xprate >1.59
+    #season 1 --Not loading for now
     #optional
     #completewith next
     .goto 1453,74.592,51.567,15,0
@@ -7038,6 +7051,7 @@ step << NightElf Warrior
     .dungeon !DM
 step << NightElf Warrior
     #xprate >1.59
+    #season 1 --Not loading for now
     .goto 1453,78.673,45.791
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wu Shen|r inside upstairs
     .trainer >> Train your class spells
@@ -7113,7 +7127,7 @@ step << Rogue
     .goto StormwindClassic,75.78,59.84
     .target +Master Mathias Shaw
     .dungeon !DM
-step << NightElf Warrior/NightElf Rogue/Mage/Warlock
+step << NightElf Rogue/Mage/Warlock
     #xprate >1.59 << !Hunter
     #season 1 << Rogue sod
     #label WepTrainNoDM
@@ -7127,6 +7141,7 @@ step << NightElf Warrior/NightElf Rogue/Mage/Warlock
     .dungeon !DM
 step << NightElf Warrior
     #xprate >1.59
+    #season 1 --Not loading for now
     #optional
     #completewith NoDMStockadeEnd
     +|cRXP_WARN_Equip the|r |T135329:0|t[Executioner's Sword]
@@ -7136,6 +7151,7 @@ step << NightElf Warrior
     .dungeon !DM
 step << NightElf Warrior
     #xprate >1.59
+    #season 1 --Not loading for now
     #ah
     #optional
     .goto StormwindClassic,57.38,56.77
@@ -7149,6 +7165,7 @@ step << NightElf Warrior
     .dungeon !DM
 step << NightElf Warrior
     #xprate >1.59
+    #season 1 --Not loading for now
     #optional
     +|cRXP_WARN_Equip the|r |T135280:0|t[Dacian Falx]
     .use 922
@@ -7744,7 +7761,7 @@ step << Mage
     .train 3561 >> Train |T135763:0|t[Teleport: Stormwind]
     .target Larimaine Purdue
     .dungeon !DM
-step << NightElf Warrior/Mage/Warlock/Rogue
+step << Mage/Warlock/Rogue
     #xprate >1.59
     #season 1 >> Rogue
     #requires Torment2NoDMEnd << Warlock
@@ -7773,7 +7790,7 @@ step << Rogue
     .zoneskip Wetlands
     .cooldown item,6948,<0
     .dungeon !DM
-step << NightElf Warrior/NightElf Rogue
+step << NightElf Rogue
     #xprate >1.59
     #optional
     #completewith NEWarRogNoDMIFPP
@@ -7786,7 +7803,7 @@ step << NightElf Warrior/NightElf Rogue
     .zoneskip Ironforge
     .zoneskip Wetlands
     .dungeon !DM
-step << NightElf Warrior/NightElf Rogue
+step << NightElf Rogue
     #xprate >1.59
     #optional
     #label NEWarRogNoDMNoFP1
@@ -7798,7 +7815,7 @@ step << NightElf Warrior/NightElf Rogue
     .zoneskip Darnassus
     .zoneskip Wetlands
     .dungeon !DM
-step << NightElf Warrior/NightElf Rogue
+step << NightElf Rogue
     #xprate >1.59
     #optional
     #requires NEWarRogNoDMNoFP1
@@ -7817,6 +7834,7 @@ step << NightElf Warrior/NightElf Rogue
     .dungeon !DM
 step << NightElf Warrior
     #xprate >1.59
+    #season 1 --Not loading for now
     #requires NEWarRogNoDMNoFP2
     #label NEWarRogNoDMNoFP3
     #completewith NEWarRogNoDMIFPP
@@ -7832,6 +7850,7 @@ step << NightElf Warrior
     .dungeon !DM
 step << NightElf Warrior
     #xprate >1.59
+    #season 1 --Not loading for now
     #requires NEWarRogNoDMNoFP3
     #label NEWarRogNoDMNoFP4
     #completewith NEWarRogNoDMIFPP
@@ -7848,6 +7867,7 @@ step << NightElf Warrior
     .dungeon !DM
 step << NightElf Warrior
     #xprate >1.59
+    #season 1 --Not loading for now
     #requires NEWarRogNoDMNoFP4
     #label NEWarRogNoDMNoFP5
     #completewith NEWarRogNoDMIFPP
@@ -7860,7 +7880,7 @@ step << NightElf Warrior
     .zoneskip Darnassus
     .zoneskip Wetlands
     .dungeon !DM
-step << NightElf Warrior/NightElf Rogue
+step << NightElf Rogue
     #xprate >1.59
     #label NEWarRogNoDMIFPP
     .goto Ironforge,55.491,47.751
@@ -7872,7 +7892,7 @@ step << NightElf Warrior/NightElf Rogue
     .zoneskip Darnassus
     .zoneskip Wetlands
     .dungeon !DM
-step << NightElf Warrior/NightElf Rogue
+step << NightElf Rogue
     #xprate >1.59
     #optional
     .goto Ironforge,50.826,5.613
@@ -7883,7 +7903,7 @@ step << NightElf Warrior/NightElf Rogue
     .zoneskip Ironforge,1
     .zoneskip Wetlands
     .dungeon !DM
-step << NightElf Warrior/NightElf Rogue
+step << NightElf Rogue
     #xprate >1.59
     .goto Ironforge,50.826,5.613
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gerrig Bonegrip|r inside
@@ -7899,7 +7919,7 @@ step << NightElf Warrior/NightElf Rogue
 ----End of 2x Non-Deadmines Training/Class q section----
 ----Start of 2x Non-Deadmines (Darnassus) training section----
 
-step << NightElf Warrior/Mage/Warlock/Rogue
+step << Mage/Warlock/Rogue
     #xprate >1.59
     #label NoDMStockadeEnd
     #requires Torment2NoDMEnd << Warlock
@@ -7913,7 +7933,7 @@ step << NightElf Warrior/Mage/Warlock/Rogue
     .zoneskip Ironforge
     .cooldown item,6948,<0
     .dungeon !DM
-step << Warrior/NightElf Rogue
+step << NightElf Rogue
     #xprate >1.59
     #optional
     #completewith next
