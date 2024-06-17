@@ -162,7 +162,6 @@ step
     .accept 783 >> Accept A Threat Within
     .target Deputy Willem
 step << Warrior
-    #xprate <1.59
     .goto Elwynn Forest,46.4,40.3,35,0
     >>Kill |cRXP_ENEMY_Young Wolves|r until you have 10c+ worth of vendor trash
     >>|cRXP_WARN_You will train|r |T132333:0|t[Battle Shout] |cRXP_WARN_which increases early leveling speeds|r
@@ -247,6 +246,82 @@ step
     >>Kill |cRXP_ENEMY_Kobold Vermins|r
     .complete 7,1 --Kill Kobold Vermin (x10)
     .mob Kobold Vermin
+
+
+----Start of Warrior/Priest Early Laborer Mine rune section----
+
+
+step << Priest
+    #xprate >1.59
+    #season 2
+    #loop
+    #sticky
+    #label Memory
+    .goto 1429,47.813,31.456,0
+    .goto 1429,48.597,27.641,0
+    .goto 1429,50.342,27.011,0
+    .waypoint 1429,47.813,31.456,30,0
+    .waypoint 1429,47.886,30.755,30,0
+    .waypoint 1429,48.440,29.480,30,0
+    .waypoint 1429,48.287,28.397,30,0
+    .waypoint 1429,48.597,27.641,30,0
+    .waypoint 1429,48.695,26.498,30,0
+    .waypoint 1429,49.498,25.840,30,0
+    .waypoint 1429,50.143,25.864,30,0
+    .waypoint 1429,50.342,27.011,30,0
+    >>Kill |cRXP_ENEMY_Kobold Laborers|r inside Echo Ridge Mine. Loot them for the |T136222:0|t|cRXP_LOOT_[Memory of a Troubled Acolyte]|r
+    .collect 205951,1 -- Memory of a Troubled Acolyte (1)
+    .mob Kobold Laborer
+    .train 402862,1
+step << Priest
+    #xprate >1.59
+    #season 2
+    #optional
+    #requires Memory
+    #completewith EarlyWorker
+    .goto 1429,50.626,27.209,-1
+    .goto 1429,48.646,29.703,-1
+    .subzone 9 >>|cRXP_WARN_Jump on top of the light. Perform a Logout Skip by logging out and back in|r
+    .subzoneskip 34,1 --Echo Ridge Mine
+    .train 402862,1
+step << Warrior
+    #xprate >1.59
+    #season 2
+    #optional
+    #completewith next
+    .goto 1429,48.086,30.502,20,0
+    .goto 1429,48.379,29.579,20,0
+    .goto 1429,48.336,28.597,20,0
+    .goto 1429,48.679,26.618,20,0
+    .goto 1429,49.919,25.792,20,0
+    .goto 1429,50.639,27.274,15 >>Travel toward the |cRXP_PICK_Kobold Stashbox|r inside Echo Ridge Mine
+    .train 403470,1
+step << Warrior
+    #xprate >1.59
+    #season 2
+    .goto Elwynn Forest,50.640,27.276
+    >>Open the |cRXP_PICK_Kobold Stashbox|r on the ground. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Victory Rush]|r
+    .collect 204806,1 -- Rune of Victory Rush (1)
+    .train 403470,1
+step << Warrior
+    #xprate >1.59
+    #season 2
+    .train 403470 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Victory Rush]|r |cRXP_WARN_to learn|r |T132342:0|t[Victory Rush]
+    .use 204806
+    .itemcount 204806,1 -- Rune of Victory Rush (1)
+step << Warrior
+    #xprate >1.59
+    #season 2
+    #optional
+    #completewith EarlyWorker
+    .goto 1429,50.626,27.209
+    .subzone 9 >>|cRXP_WARN_Jump on top of the light on the Minecart. Perform a Logout Skip by logging out and back in|r
+    .subzoneskip 34,1 --Echo Ridge Mine
+
+
+----End of Warrior/Priest Early Laborer Mine rune section----
+
+
 step
     #xprate >1.59
     #optional
@@ -383,14 +458,6 @@ step << Priest
     .goto Elwynn Forest,49.8,40.2,10 >> Travel toward |cRXP_FRIENDLY_Priestess Anetta|r inside downstairs
 step << Priest
     #xprate >1.59
-    #season 0,1
-    .goto Elwynn Forest,49.808,39.489
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Anetta|r inside downstairs
-    .turnin 3103 >> Turn in Hallowed Letter
-    .trainer >> Train your class spells
-    .target Priestess Anetta
-step << Priest
-    #xprate >1.59
     #season 2
     .goto Elwynn Forest,49.808,39.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Anetta|r inside downstairs
@@ -398,6 +465,40 @@ step << Priest
     .accept 77619 >> Accept Meditation on the Light << Human Priest
     .trainer >> Train your class spells
     .target Priestess Anetta
+step << Priest
+    #xprate >1.59
+    #season 2
+    .goto Elwynn Forest,49.808,39.489
+    >>|cRXP_WARN_Type /kneel in your chatbox while inside of Northshire Abbey|r
+    >>|cRXP_WARN_You will receive the|r |T135934:0|t[Meditation on the Light] |cRXP_WARN_buff|r
+    .train 402862 >> |cRXP_WARN_Use the|r |T136222:0|t|cRXP_LOOT_[Memory of a Troubled Acolyte]|r |cRXP_WARN_while you have the|r |T135934:0|t[Meditation on the Light] |cRXP_WARN_buff to learn|r |T237545:0|t[Penance]
+    .use 205951
+    .itemcount 205951,1
+step << Human Priest
+    #xprate >1.59
+    #season 2
+    .goto Elwynn Forest,49.808,39.489
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Anetta|r
+    .turnin 77619 >> Turn in Meditation on the Light
+    .target Priestess Anetta
+    .isOnQuest 77619
+step << Human Priest
+    #xprate >1.59
+    #season 2
+    #label GlovesEquip
+    #completewith RestandR
+    .equip 10,711 >> |cRXP_WARN_Equip the|r |T132961:0|t[Tattered Cloth Gloves]
+    .use 711
+    .itemcount 711,1 --Tattered Cloth Gloves (1)
+    .itemStat 10,LEVEL,<5
+    .train 402862,3
+step << Human Priest
+    #xprate >1.59
+    #season 2
+    #requires GlovesEquip
+    #completewith RestandR
+    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132961:0|t[Tattered Cloth Gloves] |cRXP_WARN_with|r |T237545:0|t[Penance]
+    .train 402862,3
 step << Warrior/Paladin
     #xprate >1.59
     #optional
@@ -420,8 +521,17 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Llane Beshere|r inside downstairs
     .turnin 3100 >> Turn in Simple Letter
     .accept 77616 >> Accept The Lost Rune << Human
+    .turnin 77616 >> Turn in The Lost Rune << Human
     .trainer >> Train your class spells
+    >>|cRXP_WARN_If you didn't end up getting 2 silver, train only|r |T132337:0|t[|cRXP_FRIENDLY_Charge|r]
     .target Llane Beshere
+step << Warrior
+    #season 2
+    #optional
+    #completewith RuneWorkers
+    .engrave 10 >>Equip the |T132938:0|t[|cRXP_LOOT_Gloves|r] you got from the quest and engrave |T132342:0|t[|cRXP_FRIENDLY_Victory Rush|r] on them
+    .use 2385 --Tarnished Chain Gloves
+    .train 402927,3
 step << Paladin
     #xprate >1.59
     #season 0,1
@@ -445,28 +555,14 @@ step << Priest/Warrior
     #optional
     #completewith RuneWorkers
     .goto 1429,48.198,41.890,12 >> Exit Northshire Abbey
-step << Priest
+step
     #xprate >1.59
     #season 2
-    #loop
-    #sticky
-    #label Memory
-    .goto 1429,47.813,31.456,0
-    .goto 1429,48.597,27.641,0
-    .goto 1429,50.342,27.011,0
-    .waypoint 1429,47.813,31.456,30,0
-    .waypoint 1429,47.886,30.755,30,0
-    .waypoint 1429,48.440,29.480,30,0
-    .waypoint 1429,48.287,28.397,30,0
-    .waypoint 1429,48.597,27.641,30,0
-    .waypoint 1429,48.695,26.498,30,0
-    .waypoint 1429,49.498,25.840,30,0
-    .waypoint 1429,50.143,25.864,30,0
-    .waypoint 1429,50.342,27.011,30,0
-    >>Kill |cRXP_ENEMY_Kobold Laborers|r inside Echo Ridge Mine. Loot them for the |T136222:0|t|cRXP_LOOT_[Memory of a Troubled Acolyte]|r
-    .collect 205951,1 -- Memory of a Troubled Acolyte (1)
-    .mob Kobold Laborer
-    .train 402862,1
+    #requires Memory << Priest --Season 2
+    .goto Elwynn Forest,48.171,42.943
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r outside
+    .accept 18 >> Accept Brotherhood of Thieves
+    .target Deputy Willem
 step << Priest/Warrior
     #xprate >1.59
     #season 2
@@ -493,66 +589,6 @@ step << Priest/Warrior
     >>Kill |cRXP_ENEMY_Kobold Workers|r
     .complete 15,1 --Kill Kobold Worker (x10)
     .mob Kobold Worker
-step << Warrior
-    #xprate >1.59
-    #season 2
-    #optional
-    #completewith next
-    .goto 1429,48.086,30.502,20,0
-    .goto 1429,48.379,29.579,20,0
-    .goto 1429,48.336,28.597,20,0
-    .goto 1429,48.679,26.618,20,0
-    .goto 1429,49.919,25.792,20,0
-    .goto 1429,50.639,27.274,15 >>Travel toward the |cRXP_PICK_Kobold Stashbox|r inside Echo Ridge Mine
-    .train 403470,1
-step << Warrior
-    #xprate >1.59
-    #season 2
-    .goto Elwynn Forest,50.640,27.276
-    >>Open the |cRXP_PICK_Kobold Stashbox|r on the ground. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Victory Rush]|r
-    .collect 204806,1 -- Rune of Victory Rush (1)
-    .train 403470,1
-step << Warrior
-    #xprate >1.59
-    #season 2
-    .train 403470 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Victory Rush]|r |cRXP_WARN_to learn|r |T132342:0|t[Victory Rush]
-    .use 204806
-    .itemcount 204806,1 -- Rune of Victory Rush (1)
-step << Warrior
-    #xprate >1.59
-    #season 2
-    #optional
-    #completewith EarlyWorker
-    .goto 1429,50.626,27.209
-    .subzone 9 >>|cRXP_WARN_Jump on top of the light on the Minecart. Perform a Logout Skip by logging out and back in|r
-    .subzoneskip 34,1 --Echo Ridge Mine
-step << Priest
-    #xprate >1.59
-    #season 2
-    #optional
-    #requires Memory
-    #completewith EarlyWorker
-    .goto 1429,50.626,27.209,-1
-    .goto 1429,48.646,29.703,-1
-    .subzone 9 >>|cRXP_WARN_Jump on top of the light. Perform a Logout Skip by logging out and back in|r
-    .subzoneskip 34,1 --Echo Ridge Mine
-    .train 402862,1
-step
-    #xprate >1.59
---  #season 2
-    #requires Memory << Priest --Season 2
-    .goto Elwynn Forest,48.171,42.943
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r outside
-    .accept 18 >> Accept Brotherhood of Thieves
-    .target Deputy Willem
-step << Warrior/Priest
-    #xprate >1.59
-    #season 2
-    .goto Elwynn Forest,48.923,41.606
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r inside
-    .turnin 15 >> Turn in Investigate Echo Ridge
-    .accept 21 >> Accept Skirmish at Echo Ridge
-    .target Marshal McBride
 step << Paladin
     #xprate >1.59
     #season 2
@@ -625,7 +661,17 @@ step << Rogue
     .train 400105 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r |cRXP_WARN_to learn|r |T132291:0|t[Shadowstrike]
     .use 204795
     .itemcount 204795,1
-step << Paladin/Rogue
+step << Rogue
+    #sticky
+    #label CuttyNote
+    #season 2
+    .goto 1429,57.518,48.253
+    >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Garrick Padfoot|r for |T134331:0|t[Cutty's Note]
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    .collect 203723,1 -- Cutty's Note (1)
+    .mob Garrick Padfoot
+    .train 400094,1
+step << Paladin/Rogue/Warrior/Priest
     #xprate >1.59
     #season 2
     #loop
@@ -688,7 +734,6 @@ step << Paladin/Rogue
     .turnin 18,1 >> Turn in Brotherhood of Thieves << Rogue
     .turnin 18,4 >> Turn in Brotherhood of Thieves << Paladin
 --  .accept 3903 >> Accept Milly Osworth
-    .accept 6 >> Accept Bounty on Garrick Padfoot
     .target Deputy Willem
 step << Paladin
     #xprate >1.59
@@ -765,14 +810,6 @@ step << Human Warrior/Human Paladin
     .goto Elwynn Forest,48.85,41.76,15,0
     .goto Elwynn Forest,49.6,41.8,15 >> Travel toward |cRXP_FRIENDLY_Llane Beshere|r inside downstairs << Warrior
     .goto Elwynn Forest,49.6,41.8,15 >> Travel toward |cRXP_FRIENDLY_Brother Sammuel|r inside downstairs << Paladin
-step << Human Warrior
-    #xprate >1.59
-    #season 2
-    .goto Elwynn Forest,50.242,42.287
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Llane Beshere|r inside downstairs
-    .turnin 77616 >> Turn in The Lost Rune
-    .target Llane Beshere
-    .isOnQuest 77616
 step << Human Paladin
     #xprate >1.59
     #season 2
@@ -781,7 +818,7 @@ step << Human Paladin
     .turnin 77617 >> Turn in Relics of the Light
     .target Brother Sammuel
     .isOnQuest 77617
-step << Human Warrior/Human Paladin
+step << Human Paladin
     #xprate >1.59
     #season 2
     #completewith RestandR
@@ -792,7 +829,7 @@ step << Human Warrior/Human Paladin
     .train 403470,3 << Warrior
     .train 410002,3 << Paladin
     .itemStat 10,LEVEL,<5
-step << Human Warrior/Human Paladin
+step << Human Paladin
     #xprate >1.59
     #season 2
     #completewith RestandR
@@ -823,374 +860,6 @@ step << Warlock
 ----End of 2x training section----
 
 
-
-step << Priest
-    #xprate <1.59
-    #season 2
-    #loop
-    #sticky
-    #label Memory
-    .goto 1429,47.813,31.456,0
-    .goto 1429,48.597,27.641,0
-    .goto 1429,50.342,27.011,0
-    .waypoint 1429,47.813,31.456,30,0
-    .waypoint 1429,47.886,30.755,30,0
-    .waypoint 1429,48.440,29.480,30,0
-    .waypoint 1429,48.287,28.397,30,0
-    .waypoint 1429,48.597,27.641,30,0
-    .waypoint 1429,48.695,26.498,30,0
-    .waypoint 1429,49.498,25.840,30,0
-    .waypoint 1429,50.143,25.864,30,0
-    .waypoint 1429,50.342,27.011,30,0
-    >>Kill |cRXP_ENEMY_Kobold Laborers|r inside Echo Ridge Mine. Loot them for the |T136222:0|t|cRXP_LOOT_[Memory of a Troubled Acolyte]|r
-    .collect 205951,1 -- Memory of a Troubled Acolyte (1)
-    .mob Kobold Laborer
-    .train 402862,1
-step << Priest/Warrior
-    #xprate <1.59
-    #season 2
-    #loop
-    .goto 1429,47.468,36.298,0
-    .goto 1429,50.224,34.125,0
-    .goto 1429,50.835,38.046,0
-    .goto 1429,47.468,36.298,45,0
-    .goto 1429,47.247,35.164,45,0
-    .goto 1429,47.012,33.828,45,0
-    .goto 1429,46.774,33.271,45,0
-    .goto 1429,46.271,32.489,45,0
-    .goto 1429,47.663,32.058,45,0
-    .goto 1429,48.038,33.075,45,0
-    .goto 1429,48.795,33.815,45,0
-    .goto 1429,49.278,34.610,45,0
-    .goto 1429,50.224,34.125,45,0
-    .goto 1429,50.245,34.884,45,0
-    .goto 1429,51.058,35.582,45,0
-    .goto 1429,52.062,35.801,45,0
-    .goto 1429,51.505,38.064,45,0
-    .goto 1429,50.835,38.046,45,0
-    >>Kill |cRXP_ENEMY_Kobold Workers|r
-    .complete 15,1 --Kill Kobold Worker (x10)
-    .mob Kobold Worker
-step
-    #season 0,1 << Priest/Warrior
-    #loop
-    .goto 1429,47.468,36.298,0
-    .goto 1429,50.224,34.125,0
-    .goto 1429,50.835,38.046,0
-    .goto 1429,47.468,36.298,45,0
-    .goto 1429,47.247,35.164,45,0
-    .goto 1429,47.012,33.828,45,0
-    .goto 1429,46.774,33.271,45,0
-    .goto 1429,46.271,32.489,45,0
-    .goto 1429,47.663,32.058,45,0
-    .goto 1429,48.038,33.075,45,0
-    .goto 1429,48.795,33.815,45,0
-    .goto 1429,49.278,34.610,45,0
-    .goto 1429,50.224,34.125,45,0
-    .goto 1429,50.245,34.884,45,0
-    .goto 1429,51.058,35.582,45,0
-    .goto 1429,52.062,35.801,45,0
-    .goto 1429,51.505,38.064,45,0
-    .goto 1429,50.835,38.046,45,0
-    >>Kill |cRXP_ENEMY_Kobold Workers|r
-    .complete 15,1 --Kill Kobold Worker (x10)
-    .mob Kobold Worker
-
-
-
-----Start of 1x train section----
-
-
-
-
-step
-    #xprate <1.59
-    #requires Memory << Priest --Season 2
-    #sticky
-    #label xp3
-    .goto 1429,49.052,38.270,0
-    .goto 1429,45.708,38.720,0
-    .goto 1429,47.976,39.422,0
-    .goto 1429,46.465,38.272,45,0
-    .goto 1429,45.896,38.013,45,0
-    .goto 1429,45.708,38.720,45,0
-    .goto 1429,46.302,39.994,45,0
-    .goto 1429,45.718,40.733,45,0
-    .goto 1429,46.399,41.838,45,0
-    .goto 1429,46.741,40.987,45,0
-    .goto 1429,47.703,40.299,45,0
-    .goto 1429,47.976,39.422,45,0
-    .goto 1429,49.052,38.270,45,0
-    .goto 1429,48.362,37.582,45,0
-    .goto 1429,47.136,37.636,45,0
-    .goto 1429,46.870,36.906,45,0
-    .goto 1429,46.476,37.034,45,0
-    .xp 3+1110 >>Grind to 1110+/1400xp
-step << Warrior
-    #xprate <1.59
-    #season 2
-    #optional
-    #completewith next
-    .goto 1429,48.086,30.502,20,0
-    .goto 1429,48.379,29.579,20,0
-    .goto 1429,48.336,28.597,20,0
-    .goto 1429,48.679,26.618,20,0
-    .goto 1429,49.919,25.792,20,0
-    .goto 1429,50.639,27.274,15 >>Travel toward the |cRXP_PICK_Kobold Stashbox|r inside Echo Ridge Mine
-    .train 403470,1
-step << Warrior
-    #xprate <1.59
-    #season 2
-    .goto Elwynn Forest,50.640,27.276
-    >>Open the |cRXP_PICK_Kobold Stashbox|r on the ground. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Victory Rush]|r
-    .collect 204806,1 -- Rune of Victory Rush (1)
-    .train 403470,1
-step << Warrior
-    #xprate <1.59
-    #season 2
-    .train 403470 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Victory Rush]|r |cRXP_WARN_to learn|r |T132342:0|t[Victory Rush]
-    .use 204806
-    .itemcount 204806,1 -- Rune of Victory Rush (1)
-step << Warrior
-    #xprate <1.59
-    #season 2
-    #optional
-    #completewith Investigate
-    .goto 1429,50.626,27.209
-    .subzone 9 >>|cRXP_WARN_Jump on top of the light on the Minecart. Perform a Logout Skip by logging out and back in|r
-    .subzoneskip 34,1 --Echo Ridge Mine
-step << Warrior
-    #xprate <1.59
-    #season 2
-    .goto Elwynn Forest,48.171,42.943
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r outside
-    .accept 18 >> Accept Brotherhood of Thieves
-    .target Deputy Willem
-step
-    #xprate <1.59
-    #season 0,1 << Warrior
-    #completewith next
-    .goto Elwynn Forest,47.691,41.417
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Godric Rothgar|r
-    .vendor >> |cRXP_WARN_Vendor trash|r
-    .target Godric Rothgar
---N need SoM xp note
-step
-    #xprate <1.59
-    #requires xp3
-    #label Investigate
-    .goto Elwynn Forest,48.923,41.606
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r
-    .turnin 15 >> Turn in Investigate Echo Ridge
-    .accept 21 >> Accept Skirmish at Echo Ridge
-    .target Marshal McBride
-step << Mage
-    #xprate <1.59
-    #optional
-    #completewith next
-    .goto 1429,48.79,41.58,12,0
-    .goto 1429,48.975,41.146,12,0
-    .goto 1429,49.262,40.633,12,0
-    .goto 1429,49.510,40.095,6,0
-    .goto 1429,49.691,40.230,6,0
-    .goto 1429,49.595,40.673,6,0
-    .goto 1429,49.324,40.492,6,0
-    .goto 1429,49.436,39.881,10,0
-    .goto Elwynn Forest,49.661,39.402,12 >>Travel toward |cRXP_FRIENDLY_Khelden Bremen|r upstairs
-step << Mage
-    #xprate <1.59
-    #season 0,1
-    .goto Elwynn Forest,49.661,39.402
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khelden Bremen|r inside upstairs
-    .turnin 3104 >> Turn in Glyphic Letter
-    .trainer >> Train your class spells
-    .target Khelden Bremen
-step << Mage
-    #xprate <1.59
-    #season 2
-    .goto Elwynn Forest,49.661,39.402
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khelden Bremen|r inside upstairs
-    .turnin 3104 >> Turn in Glyphic Letter
-    .accept 77620 >> Accept Spell Research << Human
-    .trainer >> Train your class spells
-    .target Khelden Bremen
-step << Priest
-    #xprate <1.59
-    #optional
-    #completewith next
-    .goto Elwynn Forest,49.3,40.7,15,0
-    .goto Elwynn Forest,49.8,40.2,10 >> Travel toward |cRXP_FRIENDLY_Priestess Anetta|r inside downstairs
-step << Priest
-    #xprate <1.59
-    #season 0,1
-    .goto Elwynn Forest,49.808,39.489
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Anetta|r inside downstairs
-    .turnin 3103 >> Turn in Hallowed Letter
-    .trainer >> Train your class spells
-    .target Priestess Anetta
-step << Priest
-    #xprate <1.59
-    #season 2
-    .goto Elwynn Forest,49.808,39.489
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Anetta|r inside downstairs
-    .turnin 3103 >> Turn in Hallowed Letter
-    .accept 77619 >> Accept Meditation on the Light << Human
-    .turnin 77619 >> Turn in Meditation on the Light << Human
-    .trainer >> Train your class spells
-    .target Priestess Anetta
-    .xp >5,1
-step << Priest
-    #xprate <1.59
-    #season 2
-    .goto Elwynn Forest,49.808,39.489
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Anetta|r inside downstairs
-    .turnin 3103 >> Turn in Hallowed Letter
-    .accept 5623 >> Accept In Favor of the Light
-    .accept 77619 >> Accept Meditation on the Light << Human
-    .turnin 77619 >> Turn in Meditation on the Light << Human
-    .trainer >> Train your class spells
-    .target Priestess Anetta
-    .xp <5,1
-step << Human Priest
-    #xprate <1.59
-    #season 2
-    #label GlovesEquip
-    #completewith RestandR
-    .equip 10,711 >> |cRXP_WARN_Equip the|r |T132961:0|t[Tattered Cloth Gloves]
-    .use 711
-    .itemcount 711,1 --Tattered Cloth Gloves (1)
-    .itemStat 10,LEVEL,<5
-    .train 402862,3
-step << Human Priest
-    #xprate <1.59
-    #season 2
-    #requires GlovesEquip
-    #completewith RestandR
-    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132961:0|t[Tattered Cloth Gloves] |cRXP_WARN_with|r |T237545:0|t[Penance]
-    .train 402862,3
-step << Warrior/Paladin
-    #xprate <1.59
-    #optional
-    #completewith next
-    .goto Elwynn Forest,48.85,41.76,15,0
-    .goto Elwynn Forest,49.6,41.8,15 >> Travel toward |cRXP_FRIENDLY_Llane Beshere|r inside downstairs << Warrior
-    .goto Elwynn Forest,49.6,41.8,15 >> Travel toward |cRXP_FRIENDLY_Brother Sammuel|r inside downstairs << Paladin
-step << Warrior
-    #xprate <1.59
-    #season 0,1
-    .goto Elwynn Forest,50.242,42.287
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Llane Beshere|r inside downstairs
-    .turnin 3100 >> Turn in Simple Letter
-    .trainer >> Train your class spells
-    .target Llane Beshere
-step << Warrior
-    #xprate <1.59
-    #season 2
-    .goto Elwynn Forest,50.242,42.287
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Llane Beshere|r inside downstairs
-    .turnin 3100 >> Turn in Simple Letter
-    .accept 77616 >> Accept The Lost Rune << Human
-    .turnin 77616 >> Turn in The Lost Rune << Human
-    .trainer >> Train your class spells
-    .target Llane Beshere
-step << Human Warrior
-    #xprate <1.59
-    #season 2
-    #completewith RestandR
-    #label GlovesEquip
-    .equip 10,2385 >> |cRXP_WARN_Equip the|r |T132938:0|t|cRXP_LOOT_[Tarnished Chain Gloves]|r
-    .use 2385
-    .itemcount 2385,1
-    .train 403470,3
-    .itemStat 10,LEVEL,<5
-step << Human Warrior
-    #xprate <1.59
-    #season 2
-    #completewith RestandR
-    #requires GlovesEquip
-    .engrave 10 >> |cRXP_WARN_Engrave the|r |T132938:0|t|cRXP_LOOT_[Tarnished Chain Gloves]|r |cRXP_WARN_with|r |T132342:0|t[Victory Rush] << Warrior
-    .train 403470,3
-    .itemStat 10,LEVEL,<5
-step << Paladin
-    #xprate <1.59
-    #season 0,1
-    .goto Elwynn Forest,50.433,42.124
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Sammuel|r
-    .turnin 3101 >> Turn in Consecrated Letter
-    .trainer >> Train your class spells
-    .target Brother Sammuel
-step << Paladin
-    #xprate <1.59
-    #season 2
-    .goto Elwynn Forest,50.433,42.124
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Sammuel|r
-    .turnin 3101 >> Turn in Consecrated Letter
-    .accept 77617 >> Accept Relics of the Light << Human
-    .train 20271 >> Train your class spells
-    .target Brother Sammuel
-step
-    #xprate <1.59
-    #season 0,1 << Warrior
-    .goto Elwynn Forest,48.171,42.943
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r outside
-    .accept 18 >> Accept Brotherhood of Thieves
-    .target Deputy Willem
-step << Warlock
-    #xprate <1.59
-    .goto Elwynn Forest,49.873,42.649
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drusilla La Salle|r
-    .turnin 3105 >> Turn in Tainted Letter
-    .train 172 >>Train |T136118:0|t[Corruption]
-    .target Drusilla La Salle
-
-
-
-----End of 1x train section----
-
-
-
-
-step
-    #season 0,1
-    #loop
-    .goto Elwynn Forest,52.55,48.79,0
-    .goto Elwynn Forest,55.43,45.87,0
-    .goto Elwynn Forest,52.55,48.79,30,0
-    .goto Elwynn Forest,53.89,50.52,30,0
-    .goto Elwynn Forest,55.09,49.00,30,0
-    .goto Elwynn Forest,55.43,45.87,30,0
-    .goto Elwynn Forest,53.86,47.05,30,0
-    >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for their |cRXP_LOOT_Red Burlap Bandanas|r
-    .complete 18,1 --Collect Red Burlap Bandana (x12)
-    .mob Defias Thug
-step << Rogue
-    #xprate <1.59
-    #season 2
-    .goto Elwynn Forest,50.314,39.916
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorik Kerridan|r
-    .turnin 3102 >> Turn in Encrypted Letter
-    .accept 77618 >> Accept Thrice Stolen << Human
-    .train 1784 >>Train |T132320:0|t[Stealth]
-    .train 921 >>Train |T133644:0|t[Pick Pocket]
-    .target Jorik Kerridan
-step << Rogue
-    #xprate <1.59
-    #season 2
-    #sticky
-    #label Shadowstrike1
-    .goto Elwynn Forest,52.544,51.922
-    >>|cRXP_WARN_Open the |cRXP_PICK_Defias Stashbox|r on the ground. Loot it for the|r |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r
-    .collect 204795,1 -- Rune of Shadowstrike (1)
-    .train 400105,1
-step << Rogue
-    #xprate <1.59
-    #season 2
-    #sticky
-    #requires Shadowstrike1
-    #label Shadowstrike2
-    .train 400105 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r |cRXP_WARN_to learn|r |T132291:0|t[Shadowstrike]
-    .use 204795
-    .itemcount 204795,1
 step << Mage
     #season 2
     #loop
@@ -1216,146 +885,6 @@ step << Human Mage
     .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T135844:0|t[Ice Lance]
     .use 203751
     .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
-step << Paladin
-    #xprate <1.59
-    #season 2
-    #loop
-    #label Libram1
-    #sticky
-    .goto Elwynn Forest,52.55,48.79,0
-    .goto Elwynn Forest,55.43,45.87,0
-    .waypoint Elwynn Forest,52.55,48.79,30,0
-    .waypoint Elwynn Forest,53.89,50.52,30,0
-    .waypoint Elwynn Forest,55.09,49.00,30,0
-    .waypoint Elwynn Forest,55.43,45.87,30,0
-    .waypoint Elwynn Forest,53.86,47.05,30,0
-    >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for the |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r
-    .collect 205420,1 -- Libram of Judgement (1)
-    .mob Defias Thug
-    .train 410002,1
-step << Paladin
-    #xprate <1.59
-    #season 2
-    #sticky
-    #label Libram2
-    #requires Libram1
-    .equip 18,205420 >> |cRXP_WARN_Equip the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r
-    .use 205420
-    .itemcount 205420,1 --Libram of Judgement (1)
-    .train 410002,1
-step << Paladin
-    #xprate <1.59
-    #season 2
-    #loop
-    #sticky
-    #label Libram3
-    #requires Libram2
-    .goto Elwynn Forest,52.55,48.79,0
-    .goto Elwynn Forest,55.43,45.87,0
-    .waypoint Elwynn Forest,53.86,47.05,30,0
-    .waypoint Elwynn Forest,55.43,45.87,30,0
-    .waypoint Elwynn Forest,55.09,49.00,30,0
-    .waypoint Elwynn Forest,53.89,50.52,30,0
-    .waypoint Elwynn Forest,52.55,48.79,30,0
-    .aura 408828 >>|cRXP_WARN_Cast|r |T135959:0|t[Judgement] |cRXP_WARN_10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
-    .itemStat 18,QUALITY,2
-    .train 410002,1
-step << Paladin
-    #xprate <1.59
-    #season 2
-    #sticky
-    #label Libram4
-    #requires Libram3
-    .cast 409920 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r |cRXP_WARN_to learn|r |T135891:0|t[Crusader Strike]
-    .use 205420
-    .aura -408828
-    .train 410002,1
-step << Paladin
-    #xprate <1.59
-    #season 2
-    #label Libram5
-    #requires Libram4
-    #completewith RedBurlapBandana
-    .equip 10 >>|cRXP_WARN_Equip a pair of|r |T132938:0|t|cRXP_LOOT_[Gloves]|r |cRXP_WARN_if you have some or when you loot some|r
-    .train 410002,3
-step << Paladin
-    #xprate <1.59
-    #season 2
-    #requires Libram5
-    #completewith RedBurlapBandana
-    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132938:0|t|cRXP_LOOT_[Gloves]|r |cRXP_WARN_with|r |T135891:0|t[Crusader Strike]
-    .train 410002,3
-step
-    #xprate <1.59 << Paladin/Rogue
-    #season 2
-    #loop
-    #label RedBurlapBandana
-    .goto Elwynn Forest,52.55,48.79,0
-    .goto Elwynn Forest,55.43,45.87,0
-    .goto Elwynn Forest,52.55,48.79,30,0
-    .goto Elwynn Forest,53.89,50.52,30,0
-    .goto Elwynn Forest,55.09,49.00,30,0
-    .goto Elwynn Forest,55.43,45.87,30,0
-    .goto Elwynn Forest,53.86,47.05,30,0
-    >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for their |cRXP_LOOT_Red Burlap Bandanas|r
-    .complete 18,1 --Collect Red Burlap Bandana (x12)
-	.mob Defias Thug
-step << Rogue
-    #xprate <1.59
-    #optional
-    #loop
-    .goto Elwynn Forest,52.55,48.79,0
-    .goto Elwynn Forest,55.43,45.87,0
-    .goto Elwynn Forest,52.55,48.79,30,0
-    .goto Elwynn Forest,53.89,50.52,30,0
-    .goto Elwynn Forest,55.09,49.00,30,0
-    .goto Elwynn Forest,55.43,45.87,30,0
-    .goto Elwynn Forest,53.86,47.05,30,0
-    .xp 4 >> Grind to level 4
-step << Human Rogue
-    #xprate <1.59
-    #season 2
-    .goto Elwynn Forest,50.314,39.916
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorik Kerridan|r
-    .turnin 77618 >> Turn in Thrice Stolen << Human
-    .target Jorik Kerridan
-step << Human Rogue
-    #xprate <1.59
-    #season 2
-    #label GlovesEquip
-    #completewith RestandR
-    .equip 10,2125 >> |cRXP_WARN_Equip the|r |T132952:0|t[Cracked Leather Gloves]
-    .use 2125
-    .itemcount 2125,1 --Cracked Leather Gloves (1)
-    .itemStat 10,LEVEL,<5
-    .train 400105,3
-step << Human Rogue
-    #xprate <1.59
-    #season 2
-    #requires GlovesEquip
-    #completewith RestandR
-    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132952:0|t[Cracked Leather Gloves] |cRXP_WARN_with|r |T132291:0|t[Shadowstrike]
-    .train 400105,3
-step << !Human/!Rogue
-    #xprate <1.59
-    #season 2
-    #softcore
-    #completewith next
-    #requires CALEENCI2 << Mage
-    #requires Libram4 << Paladin
-    #requires Shadowstrike2 << Rogue
-    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-    .target Spirit Healer
---   .subzoneskip 59,1
-step << Human Rogue
-    #xprate <1.59
-    #season 2
-    #requires Shadowstrike2
-    .goto Elwynn Forest,50.314,39.916
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorik Kerridan|r
-    .turnin 77618 >> Turn in Thrice Stolen
-    .target Jorik Kerridan
-    .isOnQuest 77618
 step << !Paladin !Rogue
     #xprate >1.59
     #season 2
@@ -1371,37 +900,6 @@ step << !Paladin !Rogue
     .turnin 18,5 >> Turn in Brotherhood of Thieves << Mage
     .turnin 18 >> Turn in Brotherhood of Thieves << !Warrior !Priest !Mage !Rogue !Warlock !Paladin
 --   .accept 3903 >> Accept Milly Osworth
-    .accept 6 >> Accept Bounty on Garrick Padfoot
-    .target Deputy Willem
-step
-    #xprate <1.59
-    #season 2
-    #requires CALEENCI2 << Mage
-    #requires Libram4 << Paladin
-    #requires Shadowstrike2 << Rogue
-    .goto Elwynn Forest,48.17,42.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r
-    .turnin 18,1 >> Turn in Brotherhood of Thieves << Rogue/Warlock
-    .turnin 18,2 >> Turn in Brotherhood of Thieves << Priest
-    .turnin 18,3 >> Turn in Brotherhood of Thieves << Warrior
-    .turnin 18,4 >> Turn in Brotherhood of Thieves << Paladin
-    .turnin 18,5 >> Turn in Brotherhood of Thieves << Mage
-    .turnin 18 >> Turn in Brotherhood of Thieves << !Warrior !Priest !Mage !Rogue !Warlock !Paladin
-    .accept 3903 >> Accept Milly Osworth
-    .accept 6 >> Accept Bounty on Garrick Padfoot
-    .target Deputy Willem
-step
-    #season 0,1
-    .goto Elwynn Forest,48.17,42.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r
-    .turnin 18,1 >> Turn in Brotherhood of Thieves << Rogue/Warlock
-    .turnin 18,2 >> Turn in Brotherhood of Thieves << Priest
-    .turnin 18,3 >> Turn in Brotherhood of Thieves << Warrior
-    .turnin 18,4 >> Turn in Brotherhood of Thieves << Paladin
-    .turnin 18,5 >> Turn in Brotherhood of Thieves << Mage
-    .turnin 18 >> Turn in Brotherhood of Thieves << !Warrior !Priest !Mage !Rogue !Warlock !Paladin
-    .accept 3903 >> Accept Milly Osworth
-    .accept 6 >> Accept Bounty on Garrick Padfoot
     .target Deputy Willem
 step << Paladin
     #season 0,1
@@ -1441,7 +939,6 @@ step << Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.0
 step
     #xprate >1.59
-    #season 0,1 << Priest/Warrior
     .goto Elwynn Forest,48.923,41.606
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal McBride|r
     .turnin 15 >> Turn in Investigate Echo Ridge
@@ -1547,57 +1044,6 @@ step
     .subzone 9 >>|cRXP_WARN_Jump on top of the light. Perform a Logout Skip by logging out and back in|r
     .subzoneskip 34,1 --Echo Ridge Mine
     .isOnQuest 21
-step << skip
-    #xprate >1.59
-    #season 2
-    .goto Elwynn Forest,50.692,39.347
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milly Osworth|r
-    >>|cRXP_WARN_Skip the followup|r
-    .turnin 3903 >> Turn in Milly Osworth
-    .target Milly Osworth
-step
-    #xprate <1.59
-    .goto Elwynn Forest,50.692,39.347
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milly Osworth|r
-    >>|cRXP_WARN_Skip the followup|r << !Priest !Mage
-    .turnin 3903 >> Turn in Milly Osworth
-    .accept 3904 >> Accept Milly's Harvest << Priest/Mage
-    .target Milly Osworth
-step << Rogue
-    #season 0,1
-    .goto Elwynn Forest,50.314,39.916
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorik Kerridan|r
-    .turnin 3102 >> Turn in Encrypted Letter
-    .train 1784 >>Train |T132320:0|t[Stealth]
-    .train 921 >>Train |T133644:0|t[Pick Pocket]
-    .target Jorik Kerridan
-step << Priest/Mage
-    #xprate <1.5
-    #loop
-    .goto Elwynn Forest,52.55,48.79,0
-    .goto Elwynn Forest,55.43,45.87,0
-    .goto Elwynn Forest,52.55,48.79,30,0
-    .goto Elwynn Forest,53.89,50.52,30,0
-    .goto Elwynn Forest,55.09,49.00,30,0
-    .goto Elwynn Forest,55.43,45.87,30,0
-    .goto Elwynn Forest,53.86,47.05,30,0
-    >>Loot |cRXP_PICK_Milly's Harvest|r on the ground
-    .complete 3904,1 --Collect Milly's Harvest (x8)
-step << Rogue
-    #sticky
-    #label CuttyNote
-    #season 2
-    .goto 1429,57.518,48.253
-    >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Garrick Padfoot|r for |T134331:0|t[Cutty's Note]
-    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
-    .collect 203723,1 -- Cutty's Note (1)
-    .mob Garrick Padfoot
-    .train 400094,1
-step
-    .goto 1429,57.518,48.253
-    >>Kill |cRXP_ENEMY_Garrick Padfoot|r. Loot him for his |cRXP_LOOT_Head|r
-    .complete 6,1 --Collect Garrick's Head (x1)
-    .mob Garrick Padfoot
 step
     #xprate >1.49 << Priest/Mage
     #optional
@@ -1650,12 +1096,6 @@ step << Priest/Mage
     .turnin 3904 >>Turn in Milly's Harvest
     .accept 3905 >>Accept Grape Manifest
     .target Milly Osworth
-step
-    .goto Elwynn Forest,48.17,42.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r
-    .turnin 6,2 >> Turn in Bounty on Garrick Padfoot << Warrior/Rogue/Paladin
-    .turnin 6,1 >> Turn in Bounty on Garrick Padfoot << !Warrior !Rogue !Paladin
-    .target Deputy Willem
 step
     #label RestandR
     .goto Elwynn Forest,48.923,41.606
