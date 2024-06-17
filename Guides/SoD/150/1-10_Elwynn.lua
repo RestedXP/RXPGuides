@@ -4,11 +4,11 @@ if faction == "Horde" then return end
 RXPGuides.RegisterGuide([[
 #classic
 << Alliance
-#name 1-6 Northshire
+#name 1-6 Northshire SoD
 #version 1
 #group RXP SOD TEST
 #defaultfor Human
-#next 6-11 Elwynn Forest
+#next 6-12 Elwynn Forest SoD
 
 
 step << !Human
@@ -1728,12 +1728,12 @@ step << Rogue
 
 RXPGuides.RegisterGuide([[
 #classic
+#xprate >1.59
 #version 1
 << Alliance
 #group RXP SOD TEST
-#name 6-11 Elwynn Forest
-#displayname 6-13 Elwynn Forest << SoD
-#next 11-13 Loch Modan
+#name 6-12 Elwynn Forest SoD
+#next 12-13 Dun Morogh SoD
 #defaultfor Human
 
 step
@@ -2835,101 +2835,12 @@ step << Mage
     #completewith Find
     .train 401768 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: MILEGIN VALF]|r |cRXP_WARN_to learn|r |T135820:0|t[Living Flame]
     .use 203752
-step
+step << Priest
     #optional
     #label ExitJasperlode
     #completewith Find
     .goto 1429,61.820,53.871,15 >> Exit Jasperlode Mine
     .subzoneskip 54,1
-step
-    #optional
-    #requires ExitJasperlode
-    #label WolfMeatCooking2
-    #completewith Find
-    .goto 1429,69.348,67.452,0
-    .goto 1429,67.244,63.880,0
-    .goto 1429,63.748,64.710,0
-    >>Kill |cRXP_ENEMY_Gray Forest Wolves|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
-    .collect 2672,10,2178,1,0x20,cooking --Stringy Wolf Meat (1-10)
-    .mob Gray Forest Wolf
-    .skill cooking,10,1 --XX Shows if cooking skill is <10
-step
-    #optional
-    #requires WolfMeatCooking2
-    #completewith Find
-    .goto 1429,69.348,67.452,0
-    .goto 1429,67.244,63.880,0
-    .goto 1429,63.748,64.710,0
-    >>Kill |cRXP_ENEMY_Gray Forest Wolves|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
-    .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (10-50)
-    .mob Gray Forest Wolf
---  .skill cooking,<10,1
-    .skill cooking,50,1 --XX Shows if cooking skill is between 1-50
-step
-    #optional
-    #completewith Find
-    +|cRXP_WARN_Kite a |cRXP_ENEMY_Young Forest Bear|r toward|r |cRXP_FRIENDLY_Guard Thomas|r
-    >>|cRXP_WARN_Try to talk to |cRXP_FRIENDLY_Guard Thomas|r before the |cRXP_ENEMY_Young Forest Bear|r dies to the |cRXP_FRIENDLY_Stormwind Guards|r get quest credit|r
-    >>|cRXP_WARN_Make sure to deal 51%+ damage to get credit|r
-    .mob Young Forest Bear
-step
-    #label Find
-    #requires JasperlodeRune << Mage --Season 2
-    .goto Elwynn Forest,73.973,72.179
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
-    .turnin 35 >> Turn in Further Concerns
-    .accept 37 >> Accept Find the Lost Guards
-    .accept 52 >> Accept Protect the Frontier
-    .target Guard Thomas
-step << Rogue/Priest
-    #season 2
-    #completewith LostGuards
-    >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r
-    >>|cRXP_WARN_Prioritize killing any |cRXP_ENEMY_Young Forest Bears|r you see|r
-    .complete 52,1 --Kill Prowler (x8)
-    .complete 52,2 --Kill Young Forest Bear (x5)
-    .mob Prowler
-    .mob Young Forest Bear
-step
-    #season 0,1 << Rogue/Priest
-    #completewith AcceptBundle
-    >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r
-    >>|cRXP_WARN_Prioritize killing any |cRXP_ENEMY_Young Forest Bears|r you see|r
-    .complete 52,1 --Kill Prowler (x8)
-    .complete 52,2 --Kill Young Forest Bear (x5)
-    .mob Prowler
-    .mob Young Forest Bear
-step
-    #optional
-    #label WolfMeatCooking3
-    #completewith LostGuards
-    .goto 1429,73.679,67.978,0
-    .goto 1429,72.275,65.278,0
-    .goto 1429,71.605,61.294,0
-    >>Kill |cRXP_ENEMY_Gray Forest Wolves|r and |cRXP_ENEMY_Prowlers|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
-    .collect 2672,10,2178,1,0x20,cooking --Stringy Wolf Meat (1-10)
-    .mob Gray Forest Wolf
-    .mob Prowler
-    .skill cooking,10,1 --XX Shows if cooking skill is <10
-step
-    #optional
-    #requires WolfMeatCooking3
-    #completewith LostGuards
-    .goto 1429,73.679,67.978,0
-    .goto 1429,72.275,65.278,0
-    .goto 1429,71.605,61.294,0
-    >>Kill |cRXP_ENEMY_Gray Forest Wolves|r and |cRXP_ENEMY_Prowlers|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
-    .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (10-50)
-    .mob Gray Forest Wolf
-    .mob Prowler
---  .skill cooking,<10,1
-    .skill cooking,50,1 --XX Shows if cooking skill is between 1-50
-step
-    #label LostGuards
-    .goto Elwynn Forest,72.656,60.334
-    >>Click |cRXP_PICK_A half-eaten body|r on the ground
-    .turnin 37 >> Turn in Find the Lost Guards
-    .accept 45 >> Accept Discover Rolf's Fate
 step << Priest
     #season 2
     #loop
@@ -2952,31 +2863,6 @@ step << Priest
     >>|cRXP_WARN_You must have 2|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buffs by typing /kneel in a holy area such as, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge|r
     .use 205947
     .itemcount 205947,1
-step << Rogue
-    #season 2
-    #optional
-    #label WolfMeatCookingRogue
-    #completewith GnollMapPiece
-    .goto 1429,73.679,67.978,0
-    .goto 1429,72.275,65.278,0
-    .goto 1429,71.605,61.294,0
-    >>Kill |cRXP_ENEMY_Gray Forest Wolves|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
-    .collect 2672,10,2178,1,0x20,cooking --Stringy Wolf Meat (1-10)
-    .mob Gray Forest Wolf
-    .skill cooking,10,1 --XX Shows if cooking skill is <10
-step << Rogue
-    #season 2
-    #optional
-    #requires WolfMeatCookingRogue
-    #completewith GnollMapPiece
-    .goto 1429,73.679,67.978,0
-    .goto 1429,72.275,65.278,0
-    .goto 1429,71.605,61.294,0
-    >>Kill |cRXP_ENEMY_Gray Forest Wolves|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
-    .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (10-50)
-    .mob Gray Forest Wolf
---  .skill cooking,<10,1
-    .skill cooking,50,1 --XX Shows if cooking skill is between 1-50
 step << Rogue
     #season 2
     #label GnollMapPiece
@@ -3009,317 +2895,6 @@ step << Rogue
     .isQuestAvailable 5545
 step << Rogue
     #season 2
-    #completewith AcceptBundle
-    >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r
-    >>|cRXP_WARN_Prioritize killing any |cRXP_ENEMY_Young Forest Bears|r you see|r
-    .complete 52,1 --Kill Prowler (x8)
-    .complete 52,2 --Kill Young Forest Bear (x5)
-    .mob Prowler
-    .mob Young Forest Bear
-    .subzoneskip 88 --Eastvale Logging Camp
-step
-    #optional
-    #label WolfMeatCooking4
-    #completewith AcceptBundle
-    .goto 1429,73.679,67.978,0
-    .goto 1429,72.275,65.278,0
-    .goto 1429,71.605,61.294,0
-    >>Kill |cRXP_ENEMY_Prowlers|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
-    .collect 2672,10,2178,1,0x20,cooking --Stringy Wolf Meat (1-10)
-    .mob Prowler
-    .skill cooking,10,1 --XX Shows if cooking skill is <10
-    .subzoneskip 88 --Eastvale Logging Camp
-step
-    #optional
-    #requires WolfMeatCooking4
-    #completewith AcceptBundle
-    .goto 1429,73.679,67.978,0
-    .goto 1429,72.275,65.278,0
-    .goto 1429,71.605,61.294,0
-    >>Kill |cRXP_ENEMY_Prowlers|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
-    .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (10-50)
-    .mob Prowler
---  .skill cooking,<10,1
-    .skill cooking,50,1 --XX Shows if cooking skill is between 1-50
-    .subzoneskip 88 --Eastvale Logging Camp
-step
-    #label AcceptBundle
-    .goto Elwynn Forest,81.382,66.112
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Supervisor Raelen|r
-    .accept 5545 >> Accept A Bundle of Trouble
-    .target Supervisor Raelen
-step << Rogue
-    #softcore
-    #season 2
-    #optional
-    .goto Elwynn Forest,83.283,66.089
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rallic Finn|r
-    .vendor >> Vendor trash
-    .target Rallic Finn
-    .subzoneskip 88,1
-    .train 398196,3
-step << Rogue
-    #hardcore
-    #season 2
-    #optional
-    #completewith AcceptBundle
-    .goto Elwynn Forest,83.283,66.089
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rallic Finn|r
-    .vendor >> Vendor trash
-    .target Rallic Finn
-step
-    #season 0,1 << Rogue
-    #optional
-    .goto Elwynn Forest,83.283,66.089
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rallic Finn|r
-    .vendor >> Vendor trash
-    .target Rallic Finn
-    .subzoneskip 88,1
-step
-    #optional
-    #label WolfMeatCooking5
-    #completewith Prowlers
-    .goto 1429,73.679,67.978,0
-    .goto 1429,72.275,65.278,0
-    .goto 1429,71.605,61.294,0
-    >>Kill |cRXP_ENEMY_Prowlers|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
-    .collect 2672,10,2178,1,0x20,cooking --Stringy Wolf Meat (1-10)
-    .mob Prowler
-    .skill cooking,10,1 --XX Shows if cooking skill is <10
-    .subzoneskip 86 --Stone Cairn Lake
-step
-    #optional
-    #requires WolfMeatCooking5
-    #completewith Prowlers
-    .goto 1429,73.679,67.978,0
-    .goto 1429,72.275,65.278,0
-    .goto 1429,71.605,61.294,0
-    >>Kill |cRXP_ENEMY_Prowlers|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
-    .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (10-50)
-    .mob Prowler
---  .skill cooking,<10,1
-    .skill cooking,50,1 --XX Shows if cooking skill is between 1-50
-    .subzoneskip 86 --Stone Cairn Lake
-step
-    #completewith Prowlers
-    >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r
-    >>|cRXP_WARN_Prioritize killing any |cRXP_ENEMY_Young Forest Bears|r you see|r
-    .complete 52,1 --Kill Prowler (x8)
-    .complete 52,2 --Kill Young Forest Bear (x5)
-    .mob Prowler
-    .mob Young Forest Bear
-    .subzoneskip 86 --Stone Cairn Lake
-step
-    #completewith next
-    .goto Elwynn Forest,80.48,55.18,0
-    .goto Elwynn Forest,80.15,60.03,0
-    .goto Elwynn Forest,83.48,59.19,0
-    >>Loot the |cRXP_LOOT_Bundles of Wood|r on the ground at the base of the trees
-    .complete 5545,1 -- Bundle of Wood (8)
-step << Paladin
-    #softcore
-    #label Prowlers
-    .goto Elwynn Forest,79.80,55.50
-    >>|cRXP_WARN_Run on top of |cRXP_PICK_Rolf's corpse|r, then cast|r |T135954:0|t[Divine Protection] |cRXP_WARN_and then immediately click|r |cRXP_PICK_Rolf's corpse|r
-    >>|cRXP_WARN_Run away and reset the |cRXP_ENEMY_Murlocs|r after completing the quest|r
-    .turnin 45 >> Turn in Discover Rolf's Fate
-    .accept 71 >> Accept Report to Thomas
-step << Paladin
-    #hardcore
-    #label Prowlers
-    .goto Elwynn Forest,79.80,55.50
-    >>Click |cRXP_PICK_Rolf's corpse|r on the ground
-    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Murloc Foragers|r will cast|r |T135915:0|t[Drink Minor Potion] |cRXP_WARN_which heals themselves for 61-68 health|r
-    >>|cRXP_WARN_Pull the 2|r |cRXP_ENEMY_Murlocs|r |cRXP_WARN_in front of the huts, move away and nuke one of them down fast. Use|r |T135954:0|t[Divine Protection] |cRXP_WARN_and your Heals as required. This is a good opportunity to use|r |T133581:0|t[Bag of Marbles]|cRXP_WARN_. Run away and reset once you've killed one|r << Paladin
-    >>|cRXP_WARN_Remember during|r |T135954:0|t[Divine Protection] |cRXP_WARN_you are unable to attack|r << Paladin
-    .turnin 45 >> Turn in Discover Rolf's Fate
-    .accept 71 >> Accept Report to Thomas
-step << !Paladin
-    #label Prowlers
-    .goto Elwynn Forest,79.80,55.50
-    >>Click |cRXP_PICK_Rolf's corpse|r on the ground
-    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Murloc Foragers|r will cast|r |T135915:0|t[Drink Minor Potion] |cRXP_WARN_which heals themselves for 61-68 health|r
-    >>|cRXP_WARN_Cast|r |T135953:0|t[Renew] |cRXP_WARN_and|r |T135940:0|t[Power Word: Shield] |cRXP_WARN_then get full mana. Pull the 2 |cRXP_ENEMY_Murlocs|r in front of the huts, move away, then nuke one. Run away when you kill one, then kill the other|r << Priest
-    >>|cRXP_WARN_Pull the 2|r |cRXP_ENEMY_Murlocs|r |cRXP_WARN_in front of the huts, move away and|r |T136071:0|t[Polymorph] |cRXP_WARN_one whilst killing the other. Kill the|r |T136071:0|t[Polymorphed] |cRXP_WARN_one after|r << Mage
-    >>|cRXP_WARN_Pool 100 Rage. Pull the 2|r |cRXP_ENEMY_Murlocs|r |cRXP_WARN_in front of the huts, move away and keep|r |T132316:0|t[Hamstring] |cRXP_WARN_on one whilst killing the other. Also use|r |T133581:0|t[Bag of Marbles] |cRXP_WARN_on the one you're killing. Run away and reset the one being kited with|r |T132316:0|t[Hamstring] |cRXP_WARN_after you've killed one|r << Warrior
-    >>|cRXP_WARN_Pull the 2|r |cRXP_ENEMY_Murlocs|r |cRXP_WARN_in front of the huts, move away and focus killing one of them. Use|r |T136205:0|t[Evasion] |cRXP_WARN_once they're both attacking you. This is a good opportunity to use|r |T133581:0|t[Bag of Marbles]|cRXP_WARN_. Run away and reset once you've killed one|r << Rogue
-    >>|cRXP_WARN_Pull the 2|r |cRXP_ENEMY_Murlocs|r |cRXP_WARN_in front of the huts, move away and cast|r |T136183:0|t[Fear] |cRXP_WARN_on one of them constantly, and try to keep DoTs on both|r << Warlock
-    .turnin 45 >> Turn in Discover Rolf's Fate
-    .accept 71 >> Accept Report to Thomas
-step
-    #optional
-    #label WolfMeatCooking6
-    #completewith BundleOT
-    .goto 1429,73.679,67.978,0
-    .goto 1429,72.275,65.278,0
-    .goto 1429,71.605,61.294,0
-    >>Kill |cRXP_ENEMY_Prowlers|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
-    .collect 2672,10,2178,1,0x20,cooking --Stringy Wolf Meat (1-10)
-    .mob Prowler
-    .skill cooking,10,1 --XX Shows if cooking skill is <10
-step
-    #optional
-    #requires WolfMeatCooking6
-    #completewith BundleOT
-    .goto 1429,73.679,67.978,0
-    .goto 1429,72.275,65.278,0
-    .goto 1429,71.605,61.294,0
-    >>Kill |cRXP_ENEMY_Prowlers|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
-    .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (10-50)
-    .mob Prowler
---  .skill cooking,<10,1
-    .skill cooking,50,1 --XX Shows if cooking skill is between 1-50
-step
-    #completewith BundleOT
-    >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r
-    >>|cRXP_WARN_Prioritize killing any |cRXP_ENEMY_Young Forest Bears|r you see|r
-    .complete 52,1 --Kill Prowler (x8)
-    .complete 52,2 --Kill Young Forest Bear (x5)
-    .mob Prowler
-    .mob Young Forest Bear
-step
-    #loop
-    .goto Elwynn Forest,80.48,55.18,0
-    .goto Elwynn Forest,80.15,60.03,0
-    .goto Elwynn Forest,83.48,59.19,0
-    .goto Elwynn Forest,80.48,55.18,40,0
-    .goto Elwynn Forest,80.88,53.88,40,0
-    .goto Elwynn Forest,79.68,52.31,40,0
-    .goto Elwynn Forest,80.86,52.17,40,0
-    .goto Elwynn Forest,80.88,53.88,40,0
-    .goto Elwynn Forest,80.48,55.18,40,0
-    .goto Elwynn Forest,79.76,56.70,40,0
-    .goto Elwynn Forest,80.15,60.03,40,0
-    .goto Elwynn Forest,80.24,61.46,40,0
-    .goto Elwynn Forest,81.27,61.59,40,0
-    .goto Elwynn Forest,81.58,62.64,40,0
-    .goto Elwynn Forest,82.79,60.12,40,0
-    .goto Elwynn Forest,83.25,61.12,40,0
-    .goto Elwynn Forest,83.48,59.19,40,0
-    .goto Elwynn Forest,81.77,59.17,40,0
-    .goto Elwynn Forest,80.48,55.18,40,0
-    .goto Elwynn Forest,83.25,61.12,40,0
-    .goto Elwynn Forest,83.48,59.19,40,0
-    >>Loot the |cRXP_LOOT_Bundles of Wood|r on the ground at the base of the trees
-    .complete 5545,1 -- Bundle of Wood (8)
-step
-    #label BundleOT
-    .goto Elwynn Forest,81.382,66.112
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Supervisor Raelen|r
-    .turnin 5545 >> Turn in A Bundle of Trouble
-    .target Supervisor Raelen
-step << skip --Paladin
-    #xprate >1.59
-    #optional
-    .goto Elwynn Forest,79.457,68.789
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sara Timberlain|r
-    .accept 83 >> Accept Red Linen Goods
-    .target Sara Timberlain
-    .itemcount 2589,<10 --Linen Cloth (<10)
-step
-    #xprate <1.5 << !Warlock
-    .goto Elwynn Forest,79.457,68.789
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sara Timberlain|r
-    .accept 83 >> Accept Red Linen Goods
-    .target Sara Timberlain
-step
-    #optional
-    #label WolfMeatCooking7
-    #completewith DeliverStart
-    .goto 1429,73.679,67.978,0
-    .goto 1429,72.275,65.278,0
-    .goto 1429,71.605,61.294,0
-    >>Kill |cRXP_ENEMY_Prowlers|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
-    .collect 2672,10,2178,1,0x20,cooking --Stringy Wolf Meat (1-10)
-    .mob Prowler
-    .skill cooking,10,1 --XX Shows if cooking skill is <10
-step
-    #optional
-    #requires WolfMeatCooking7
-    #completewith DeliverStart
-    .goto 1429,73.679,67.978,0
-    .goto 1429,72.275,65.278,0
-    .goto 1429,71.605,61.294,0
-    >>Kill |cRXP_ENEMY_Prowlers|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
-    .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (10-50)
-    .mob Prowler
---  .skill cooking,<10,1
-    .skill cooking,50,1 --XX Shows if cooking skill is between 1-50
-step
-    #loop
-    .goto 1429,77.499,74.518,0
-    .goto 1429,80.496,78.223,0
-    .goto 1429,87.342,63.763,0
-    .goto 1429,77.499,74.518,55,0
-    .goto 1429,77.222,77.499,55,0
-    .goto 1429,78.483,79.323,55,0
-    .goto 1429,80.496,78.223,55,0
-    .goto 1429,81.434,76.695,55,0
-    .goto 1429,87.145,69.922,55,0
-    .goto 1429,87.342,63.763,55,0
-    >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r
-    .complete 52,1 --Kill Prowler (x8)
-    .complete 52,2 --Kill Young Forest Bear (x5)
-    .mob Prowler
-    .mob Young Forest Bear
-step
-    #label DeliverStart
-    .goto Elwynn Forest,73.973,72.179
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
-    .turnin 52 >> Turn in Protect the Frontier
-    .turnin 71 >> Turn in Report to Thomas
-    .accept 39 >> Accept Deliver Thomas' Report
-    .target Guard Thomas
-step
-    #xprate >1.49
-    #completewith Level9Grind << Warlock/Warrior/Rogue
-    #completewith PrincessC << !Warlock !Warrior !Rogue
-    >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for the |T134939:0|t[|cRXP_LOOT_Westfall Deed|r]
-    .use 1972>>|cRXP_WARN_Use the |T134939:0|t[|cRXP_LOOT_Westfall Deed|r] to start the quest|r
-    >>|cRXP_WARN_The|r |T134939:0|t[|cRXP_LOOT_Westfall Deed|r] |cRXP_WARN_is a very rare drop. Ignore this step if you don't get it|r
-    .collect 1972,1,184 --Collect Westfall Deed (x1)
-    .accept 184 >> Accept Furlbrow's Deed
-step
-    #xprate <1.5
-    #completewith Level9Grind << Warlock/Warrior/Rogue
-    #completewith DefiasBandits << !Warlock !Warrior !Rogue
-    >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for the |T134939:0|t[|cRXP_LOOT_Westfall Deed|r]
-    .use 1972>>|cRXP_WARN_Use the |T134939:0|t[|cRXP_LOOT_Westfall Deed|r] to start the quest|r
-    >>|cRXP_WARN_The|r |T134939:0|t[|cRXP_LOOT_Westfall Deed|r] |cRXP_WARN_is a very rare drop. Ignore this step if you don't get it|r
-    .collect 1972,1,184 --Collect Westfall Deed (x1)
-    .accept 184 >> Accept Furlbrow's Deed
-step << skip --Paladin
-    #xprate >1.59
-    #optional
-    #completewith next
-    >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for their |cRXP_LOOT_Red Linen Bandanas|r and |T132889:0|t[Linen Cloth]
-    >>|cRXP_WARN_Save the|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for a quest later|r
-    .complete 83,1 --Collect Red Linen Bandana (x6)
-    .collect 2589,10,1644,1 --Linen Cloth (10)
-    .disablecheckbox
-    .mob Defias Bandit
-    .isOnQuest 83
-step
-    #xprate <1.5 << !Warlock
-    #completewith next
-    >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for their |cRXP_LOOT_Red Linen Bandanas|r
-    .complete 83,1 --Collect Red Linen Bandana (x6)
-    .mob Defias Bandit
-    .isOnQuest 83
-step
-    #label PrincessC
-    .goto Elwynn Forest,69.3,79.0
-    >>Kill |cRXP_ENEMY_Princess|r. Loot her for her |cRXP_LOOT_Collar|r
-    >>|cRXP_ENEMY_Princess|r |cRXP_WARN_will agro with both of her|r |cRXP_ENEMY_Porcine Entourage|r
-    >>|cRXP_ENEMY_Princess|r |cRXP_WARN_will also cast|r |T132368:0|t[Rushing Charge] |cRXP_WARN_which deals heavy damage|r
-    >>|cRXP_WARN_Pool 100 Rage before you engage|r |cRXP_ENEMY_Princess|r << Warrior
-    >>|cRXP_WARN_Be sure |T136205:0|t[Evasion] |cRXP_WARN_is ready. If you're struggling, you can use the Fence with Throwing Weapons to abuse pathing and buy time|r << Rogue
-    >>|cRXP_WARN_Be ready to use a|r |T134830:0|t[Lesser Healing Potion]
-    .link https://www.youtube.com/watch?v=GRrXOV-UvD4 >> |cRXP_WARN_Click here for video reference|r << !Warrior
-    .complete 88,1 --Collect Brass Collar (x1)
-    .mob Princess
-step << Rogue
-    #season 2
     .goto Elwynn Forest,67.4,78.6,60,0
     .goto Elwynn Forest,70.8,79.8,60,0
     .goto Elwynn Forest,89.2,78.8
@@ -3329,59 +2904,6 @@ step << Rogue
     .collect 203785,1 -- Top-Left Map Piece (1)
     .mob Defias Bandit
     .train 398196,1
-step << skip --Paladin
-    #xprate >1.59
-    #label DefiasBandits
-    #loop
-    .goto Elwynn Forest,70.5,77.6,0
-    .goto Elwynn Forest,70.8,80.9,0
-    .goto Elwynn Forest,70.5,77.6,60,0
-    .goto Elwynn Forest,68.1,77.5,60,0
-    .goto Elwynn Forest,68.2,81.4,60,0
-    .goto Elwynn Forest,70.8,80.9,60,0
-    >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for their |cRXP_LOOT_Red Linen Bandanas|r
-    >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for their |cRXP_LOOT_Red Linen Bandanas|r and |T132889:0|t[Linen Cloth]
-    >>|cRXP_WARN_Save the|r |T132889:0|t[Linen Cloth] |cRXP_WARN_for a quest later|r
-    .complete 83,1 --Collect Red Linen Bandana (x6)
-    .collect 2589,10,1644,1 --Linen Cloth (10)
-    .disablecheckbox
-    .mob Defias Bandit
-    .isOnQuest 83
-step
-    #completewith Level9Grind << Warlock
-    #xprate <1.5 << !Warlock
-    #label DefiasBandits
-    >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for their |cRXP_LOOT_Red Linen Bandanas|r
-    .goto Elwynn Forest,70.5,77.6,60,0
-    .goto Elwynn Forest,68.1,77.5,60,0
-    .goto Elwynn Forest,68.2,81.4,60,0
-    .goto Elwynn Forest,70.8,80.9,60,0
-    .goto Elwynn Forest,70.5,77.6,60,0
-    .goto Elwynn Forest,68.1,77.5,60,0
-    .goto Elwynn Forest,68.2,81.4,60,0
-    .goto Elwynn Forest,70.8,80.9,60,0
-    .goto Elwynn Forest,70.5,77.6,60,0
-    .goto Elwynn Forest,68.1,77.5,60,0
-    .goto Elwynn Forest,68.2,81.4,60,0
-    .goto Elwynn Forest,70.8,80.9,60,0
-    .goto Elwynn Forest,69.3,79.0
-    .complete 83,1 --Collect Red Linen Bandana (x6)
-    .mob Defias Bandit
-    .isOnQuest 83
-step << Warlock/Warrior/Rogue
-    #xprate <1.5
-    #label Level9Grind
-	.goto Elwynn Forest,69.53,79.47
-    .xp 9+3510 >> Grind to 3510+/6500xp << Warlock
-    .xp 9+3420 >> Grind to 3420+/6500xp << Warrior/Rogue
-step << Warlock/Warrior/Rogue
-    #xprate >1.49
-    #optional
-    #label Level9Grind
-	.goto Elwynn Forest,69.53,79.47
-    .xp 9+2015 >> Grind to 2015+/6500xp << Warlock
-    .xp 9+3050 >> Grind to 3050+/6500xp << Warrior/Rogue
---XX Warlock and Warrior
 step << Rogue
     #season 2
     .cast 401847 >>|cRXP_WARN_Use any of the|r |T134327:0|t[|cRXP_LOOT_Map Pieces]|r |cRXP_WARN_to combine them into the|r |T134269:0|t[|cRXP_LOOT_Elwynn Treasure Map|r]
@@ -3414,7 +2936,7 @@ step << Rogue
     .train 400095 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Draw|r] |cRXP_WARN_to train|r |T134536:0|t[Quick Draw]
     .use 203991
     .itemcount 203991,1
-step << !Warlock
+step << Priest/Paladin
     #season 0,1 << Rogue
     #softcore
     #label EVDeathskip
@@ -3423,65 +2945,23 @@ step << !Warlock
     .target Spirit Healer
     .zoneskip Redridge Mountains
 --XX not worth deathskipping as a warlock due to having to resumm pet
-step << skip --Paladin
-    #xprate >1.59
-    #optional
-    .goto Elwynn Forest,79.457,68.789
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sara Timberlain|r
-    .turnin 83 >> Turn in Red Linen Goods
-    .target Sara Timberlain
-    .isQuestComplete 83
-step
-    #xprate <1.5 << !Warlock
-    #optional << Warlock
-    .goto Elwynn Forest,79.457,68.789
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sara Timberlain|r
-    .turnin 83 >> Turn in Red Linen Goods
-    .target Sara Timberlain
-    .isQuestComplete 83
-step << !Warlock
-    #optional
-    #label WolfMeatCooking8
-    #requires EVDeathskip
-    #completewith RedridgeS
-    .goto 1429,84.448,72.486,0
-    .goto 1429,88.611,71.379,0
-    .goto 1429,89.657,75.373,0
-    .goto 1429,87.250,75.853,0
-    >>Kill |cRXP_ENEMY_Prowlers|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
-    .collect 2672,10,2178,1,0x20,cooking --Stringy Wolf Meat (1-10)
-    .mob Prowler
-    .skill cooking,10,1 --XX Shows if cooking skill is <10
-step << !Warlock
-    #optional
-    #requires WolfMeatCooking8
-    #completewith RedridgeS
-    .goto 1429,84.448,72.486,0
-    .goto 1429,88.611,71.379,0
-    .goto 1429,89.657,75.373,0
-    .goto 1429,87.250,75.853,0
-    >>Kill |cRXP_ENEMY_Prowlers|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Stringy Wolf Meat]|r
-    .collect 2672,50,2178,1,0x20,cooking --Stringy Wolf Meat (10-50)
-    .mob Prowler
---  .skill cooking,<10,1
-    .skill cooking,50,1 --XX Shows if cooking skill is between 1-50
-step << !Warlock
+step << Priest/Paladin
     #label RedridgeS
     .goto Redridge Mountains,17.4,69.6
     .zone Redridge Mountains >> Travel to Redridge Mountains
-step << !Warlock
+step << Priest/Paladin
     #optional
     .goto Redridge Mountains,17.4,69.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Parker|r
     .accept 244 >> Accept Encroaching Gnolls
     .target Guard Parker
     .xp <11,1
-step << !Warlock
+step << Priest/Paladin
     #softcore
     #completewith RRFP
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .target Spirit Healer
-step << !Warlock
+step << Priest/Paladin
     #hardcore
     #optional
     #completewith RRFP
@@ -3489,7 +2969,7 @@ step << !Warlock
     .goto Redridge Mountains,23.325,71.373,25,0
     .goto Redridge Mountains,29.565,67.930,25,0
     .goto Redridge Mountains,30.590,59.410,15 >>|cRXP_WARN_BE CAREFUL: Stick to the main road and avoid any close mobs en-route|r
-step << !Warlock
+step << Priest/Paladin
     #optional
     .goto Redridge Mountains,30.73,59.99
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r
@@ -3497,29 +2977,12 @@ step << !Warlock
     .target Deputy Feldon
     .isOnQuest 244
     .xp <11,1
-step << !Warlock
-    #season 0,1 << Paladin
+step << Priest
     #label RRFP
     .goto Redridge Mountains,30.590,59.410
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
     .fp Redridge Mountains >> Get the Redridge Mountains flight path
     .target Ariena Stormfeather
-step << Paladin
-    #xprate <1.5
-    #season 2
-    #label RRFP
-    .goto Redridge Mountains,30.590,59.410
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
-    .fp Redridge Mountains >> Get the Redridge Mountains flight path
-    .target Ariena Stormfeather
-step << Paladin
-    #xprate >1.49
-    #season 2
-    .goto Redridge Mountains,30.590,59.410
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
-    .fp Redridge Mountains >> Get the Redridge Mountains flight path
-    .target Ariena Stormfeather
-    .train 410015,3
 step << Paladin
     #xprate >1.49
     #season 2
@@ -3612,18 +3075,6 @@ step
     #optional
     #completewith CollectKelp
     .hs >> Hearth to Goldshire
-step << Warrior/Rogue
-    #xprate <1.5
-    #optional
-    #completewith Escape
-    +|cRXP_WARN_Be careful with your money, as you should try to save 32s 8c for Stormwind later|r << Rogue
-    +|cRXP_WARN_Be careful with your money, as you need to save 31s 85c for Stormwind and Ironforge later|r << Warrior
-    >>|cRXP_WARN_You'll receive 16s 50c from turnins until then|r << Rogue
-    >>|cRXP_WARN_You'll receive 18s 25c from turnins until then|r << Warrior
-    .money >0.50
---XX 1s 10c flight to SW, 20s 23c cutlass, 10s 1h sword, 30c/75c level 3/11 thrown - Rogue
---XX 1s 10c flight to SW, 10s 2h sword, 10s 2h mace, 10s thrown, 30c/75c level 3/11 thrown, 81c mining pick - Warrior
---XX 7s from 39, 3.5s from 76, 3.5s from 61, 2.5s from 109, 1.75 from 6281 (warrior)
 step
     #label CollectKelp
     .goto Elwynn Forest,43.318,65.705
@@ -3655,7 +3106,6 @@ step << Rogue
 step
     .goto Elwynn Forest,42.105,65.927
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
-    .turnin 39 >> Turn in Deliver Thomas' Report
     .turnin 76 >> Turn in The Jasperlode Mine
     .accept 239 >> Accept Westbrook Garrison Needs Help!
     .accept 59 >> Accept Cloth and Leather Armor << Warlock
@@ -3679,14 +3129,6 @@ step << Warlock/Warrior
     #optional
     .xp 10 >> Grind to 10
 step << Warrior
-    .goto Elwynn Forest,41.087,65.768
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyria Du Lac|r
-    .accept 1638 >> Accept A Warrior's Training
-    .trainer >> Train your class spells
-    .target Lyria Du Lac
-    .money <0.5
-step << Warrior
-    #optional
     .goto Elwynn Forest,41.087,65.768
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyria Du Lac|r
     >>|cRXP_WARN_Do not train as you need to save your money for later|r
@@ -3761,35 +3203,6 @@ step << !Warlock
     .abandon 59 >> Abandon Cloth and Leather Armor
 step
     #optional
-    #label BoarMeatCooking3
-    #completewith Garrison
-    .goto Elwynn Forest,32.516,85.443,0
-    .goto Elwynn Forest,31.081,81.488,0
-    .goto Elwynn Forest,36.182,87.799,0
-    .goto Elwynn Forest,41.733,86.986,0
-    .goto Elwynn Forest,37.741,78.265,0
-    .goto Elwynn Forest,41.576,69.499,0
-    >>Kill |cRXP_ENEMY_Stonetusk Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
-    .collect 769,10,2178,1,0x20,cooking --Chunk of Boar Meat (1-10)
-    .mob Stonetusk Boar
-    .skill cooking,10,1 --XX Shows if cooking skill is <10
-step
-    #optional
-    #requires BoarMeatCooking3
-    #completewith Garrison
-    .goto Elwynn Forest,32.516,85.443,0
-    .goto Elwynn Forest,31.081,81.488,0
-    .goto Elwynn Forest,36.182,87.799,0
-    .goto Elwynn Forest,41.733,86.986,0
-    .goto Elwynn Forest,37.741,78.265,0
-    .goto Elwynn Forest,41.576,69.499,0
-    >>Kill |cRXP_ENEMY_Stonetusk Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
-    .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
-    .mob Stonetusk Boar
---  .skill cooking,<10,1
-    .skill cooking,50,1 --XX Shows if cooking skill is between 1-50
-step
-    #optional
     #requires GoldshireVendor
     #completewith next
     .goto Elwynn Forest,43.154,89.625,50 >> Travel to The Maclure Vineyards
@@ -3801,39 +3214,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maybell Maclure|r
     .turnin 114 >> Turn in The Escape
     .target Maybell Maclure
-step
-    #xprate <1.5
-    #label PrincessFinish
-    .goto Elwynn Forest,34.660,84.482
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r
-    .turnin 88,1 >> Turn in Princess Must Die! << Rogue/Hunter
-    .turnin 88,2 >> Turn in Princess Must Die! << Warrior/Paladin
-    .turnin 88,3 >> Turn in Princess Must Die! << !Rogue !Hunter !Warrior !Paladin
-    .target Ma Stonefield
-step
-    #xprate >1.49
-    #label PrincessFinish
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r and |cRXP_FRIENDLY_"Auntie" Bernice Stonefield|r
-    .turnin 88,1 >> Turn in Princess Must Die! << Rogue/Hunter
-    .turnin 88,2 >> Turn in Princess Must Die! << Warrior/Paladin
-    .turnin 88,3 >> Turn in Princess Must Die! << !Rogue !Hunter !Warrior !Paladin
-    .goto Elwynn Forest,34.660,84.482
-    .target +Ma Stonefield
-    .turnin 87 >> Turn in Goldtooth
-    .target +"Auntie" Bernice Stonefield
-    .goto Elwynn Forest,34.486,84.253
-step << !Warrior !Warlock
-    #xprate <1.5
-    #optional
-    #completewith Garrison
-    .xp 9+4510 >> Grind en route to 4510+/6500xp
-    .itemcount 1971,1 --Westfall Deed (1)
-step << !Warrior !Warlock
-    #xprate <1.5
-    #optional
-    #completewith Garrison
-    .xp 9+5110 >> Grind en route to 5110+/6500xp
-    .itemcount 1971,<1 --Westfall Deed (0)
 step
     #optional
     #completewith Garrison
@@ -4036,15 +3416,7 @@ step << Paladin
 ----End of Paladin 1.5x Martyrdom Rune section----
 ----Start of Warrior Gnoll Head section----
 
-step << Warrior
-    #xprate <1.49
-    #season 2
-    #label Garrison
-    .goto Elwynn Forest,24.234,74.450
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r
-    .turnin 239 >> Turn in Westbrook Garrison Needs Help!
-    .accept 11 >> Accept Riverpaw Gnoll Bounty
-    .target Deputy Rainer
+
 step << Warrior
     #xprate >1.49
     #season 2
@@ -4053,29 +3425,6 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r
     .turnin 239 >> Turn in Westbrook Garrison Needs Help!
     .target Deputy Rainer
-step << Warrior
-    #xprate <1.49
-    #season 2
-    .goto Elwynn Forest,27.0,86.7,70,0
-    .goto Elwynn Forest,26.1,89.9,70,0
-    .goto Elwynn Forest,25.2,92.7,70,0
-    .goto Elwynn Forest,27.0,93.9,70,0
-    .goto Elwynn Forest,27.0,86.7,70,0
-    .goto Elwynn Forest,26.1,89.9,70,0
-    .goto Elwynn Forest,25.2,92.7,70,0
-    .goto Elwynn Forest,27.0,93.9,70,0
-    .goto Elwynn Forest,27.0,86.7,70,0
-    .goto Elwynn Forest,26.1,89.9,70,0
-    .goto Elwynn Forest,25.2,92.7,70,0
-    .goto Elwynn Forest,27.0,93.9,70,0
-    .goto Elwynn Forest,25.9,93.9
-    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for their |cRXP_LOOT_Armbands|r and a |T134163:0|t[|cRXP_LOOT_Severed Gnoll Head|r]
-    >>|cRXP_WARN_This is one of three items you need to unlock your|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r] |cRXP_WARN_for when you get to Stormwind at level 10|r
-    .complete 11,1 -- Painted Gnoll Armband (8)
-    .collect 204478,1 -- Severed Gnoll Head (1)
-    .mob Riverpaw Runt
-    .mob Riverpaw Outrunner
-    .train 403475,1
 step << Warrior
     #xprate >1.49
     #season 2
@@ -4098,13 +3447,6 @@ step << Warrior
     .mob Riverpaw Runt
     .mob Riverpaw Outrunner
     .train 403475,1
-step << Warrior
-    #xprate <1.49
-    #season 2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r
-    .turnin 11 >> Turn in Riverpaw Gnoll Bounty
-    .goto Elwynn Forest,24.234,74.450
-    .target Deputy Rainer
 step
     #label Garrison
     #season 0,1 << Warrior/Paladin
@@ -4176,18 +3518,6 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r
     .turnin 11 >> Turn in Riverpaw Gnoll Bounty
     .target Deputy Rainer
-step << !Warrior !Warlock
-    #xprate <1.5
-    #optional
-    #completewith WestEntry
-    .xp 9+4575 >> Grind en route to 4575+/6500xp
-    .itemcount 1971,1 --Westfall Deed (1)
-step << !Warrior !Warlock
-    #xprate <1.5
-    #optional
-    #completewith WestEntry
-    .xp 9+5175 >> Grind en route to 5175+/6500xp
-    .itemcount 1971,<1 --Westfall Deed (0)
 step << !Warlock
     #optional
     #completewith WestEntry
@@ -4216,30 +3546,6 @@ step
     .accept 36 >> Accept Westfall Stew
     .goto Westfall,59.92,19.42
 	.target +Verna Furlbrow
-step
-#xprate <1.50
-    #optional
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Furlbrow|r and |cRXP_FRIENDLY_Verna Furlbrow|r
-    .accept 64 >> Accept The Forgotten Heirloom
-    .turnin 184 >> Turn in Furlbrow's Deed
-    .goto Westfall,59.95,19.35
-    .target +Farmer Furlbrow
-    .accept 151 >> Accept Poor Old Blanchy
-    .accept 36 >> Accept Westfall Stew
-    .goto Westfall,59.92,19.42
-	.target +Verna Furlbrow
-    .isOnQuest 184
-step
-#xprate <1.50
-    #label WestEntry
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Furlbrow|r and |cRXP_FRIENDLY_Verna Furlbrow|r
-    .accept 64 >> Accept The Forgotten Heirloom
-    .goto Westfall,59.95,19.35
-    .target +Farmer Furlbrow
-    .accept 151 >> Accept Poor Old Blanchy
-    .accept 36 >> Accept Westfall Stew
-    .goto Westfall,59.92,19.42
-	.target +Verna Furlbrow
 step << Paladin
     #xprate >1.49
     #season 2
@@ -4247,13 +3553,6 @@ step << Paladin
     #requires Charred
 --XXREQ Placeholder invis step
 step
-#xprate <1.50
-    #sticky
-    #label Fields
-    .goto Westfall,56.04,31.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Saldean|r
-    .accept 9 >> Accept The Killing Fields
-    .target Farmer Saldean
 step
 #xprate >1.49
     .goto Westfall,56.416,30.519
@@ -4261,20 +3560,6 @@ step
     >>|cRXP_WARN_Do not accept the other quests|r
     .turnin 36 >> Turn in Westfall Stew
     .target Salma Saldean
-step
-#xprate <1.50
-    .goto Westfall,56.416,30.519
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Salma Saldean|r inside
-    .turnin 36 >> Turn in Westfall Stew
-    .accept 38 >> Accept Westfall Stew
-    .accept 22 >>Accept Goretusk Liver Pie
-    .target Salma Saldean
-step
-    #xprate <1.5
-    #requires Fields
-    .goto Westfall,56.327,47.520
-    .xp 9+5775 >> Grind to 5775+/6500xp
-    .subzoneskip 108
 step
     #xprate >1.49 << !Paladin
     #xprate 1.49-1.59 << Paladin
@@ -4296,37 +3581,17 @@ step
     .target Spirit Healer
 -- .subzoneskip 108
 step
-    #xprate <1.5
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r and |cRXP_FRIENDLY_Captain Danuvin|r
-    .turnin 109 >> Turn in Report to Gryan Stoutmantle
-    .accept 12 >> Accept The People's Militia
-    .goto Westfall,56.327,47.520
-    .target +Gryan Stoutmantle
-    .accept 102 >> Accept Patrolling Westfall
-    .goto Westfall,56.421,47.623
-    .target +Captain Danuvin
-step
     #xprate >1.49
     .goto Westfall,56.327,47.520
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
     .turnin 109 >> Turn in Report to Gryan Stoutmantle
     .target Gryan Stoutmantle
-step << Human
-    #optional
-    .goto Westfall,56.04,31.23
-    .xp 10 >> Grind to level 10
 step
     .goto Westfall,57.002,47.169
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quartermaster Lewis|r
-    >>|cRXP_BUY_Buy a|r |T135435:0|t[Simple Wood] |cRXP_BUY_and a|r |T135237:0|t[Flint and Tinder] |cRXP_BUY_from him|r
-    >>|cRXP_WARN_This is used to make|r |T135805:0|t[Basic Campfires] |cRXP_WARN_on Boats or Trams to level your|r |T133971:0|t[Cooking] |cRXP_WARN_skill without losing time|r
-    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Duskwood later|r
     .accept 6181 >> Accept A Swift Message << Human
-    .collect 4470,1 --Simple Wood (1)
-    .collect 4471,1 --Flint and Tinder (1)
     .target Quartermaster Lewis
     .isQuestAvailable 6181 << Human
-    .skill cooking,50,1 --XX Shows if cooking skill is <50
 step << Human
     #optional
     .goto Westfall,57.002,47.169
@@ -4974,19 +4239,12 @@ step << Rogue
     +|cRXP_WARN_Don't worry if you're not|r |T132147:0|t[Dual Wielding] |cRXP_WARN_right now, you'll buy a weapon later when necessary|r
     .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.4
 step << Human
-    #xprate <1.5
-    #label Continue
-    .goto StormwindClassic,74.312,47.240
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osric Strang|r
-    .turnin 6281 >> Turn in Continue to Stormwind
-    .accept 6261 >> Accept Dungar Longdrink
-    .target Osric Strang
-step << Human
     #xprate >1.49
     #label Continue
     .goto StormwindClassic,74.312,47.240
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osric Strang|r
     .turnin 6281 >> Turn in Continue to Stormwind
+    .accept 6261 >> Accept Dungar Longdrink
     .target Osric Strang
 step << Warrior
     .goto StormwindClassic,74.249,37.244
@@ -5231,87 +4489,6 @@ step
 step
     .zone Ironforge >>Enter Ironforge
     .isQuestAvailable 314
-step << Paladin/Warrior
-    #season 2
-    #optional
-    #completewith next
-    .goto Ironforge,71.54,73.46,10,0
-    .goto Ironforge,72.53,76.94,10 >>Travel toward |cRXP_FRIENDLY_Bruuk Barleybeard|r inside the Inn
-    .train 425621,1 << Paladin
-    .train 425447,1 << Warrior
-step << Paladin/Warrior
-    #season 2
-    .goto Ironforge,72.53,76.94
-    .gossipoption 110791 >>Talk to |cRXP_FRIENDLY_Bruuk Barleybeard|r inside
-    .target Bruuk Barleybeard
-    .skipgossip 5570,1,1
-    .train 425621,1 << Paladin
-    .train 425447,1 << Warrior
---XX 110793 "How's business?"
---XX 110791 "Sounds like you need someone to bounce him for you."
-step << Paladin/Warrior
-    #season 2
-    .goto Ironforge,72.40,73.63
-    .gossipoption 109084 >>Talk to |cRXP_FRIENDLY_Bruart|r to start a fight
-    >>Defeat |cRXP_ENEMY_Bruart|r
-    >>|cRXP_WARN_Be careful as he casts|r |T132939:0|t[Backhand] |cRXP_WARN_(stuns you for 2 seconds)|r
-    >>|cRXP_WARN_Remember to pre-cast|r |T135924:0|t[Seal of the Crusader] |cRXP_WARN_on him|r << Paladin
-    >>|cRXP_WARN_DO NOT accidentally cast|r |T135906:0|t[Blessing of Might] |cRXP_WARN_on him|r << Paladin
-    >>|cRXP_WARN_Kite him upstairs to the balcony, then drop down outside the inn and cast|r |T135920:0|t[Holy Light] |cRXP_WARN_if needed|r << Paladin
-    >>|cRXP_WARN_Kite him upstairs to the balcony, then drop down outside the inn and use|r |T133688:0|t[Bandages] |cRXP_WARN_if you have them/if needed|r << Warrior
-    .mob Bruart
-    .skipgossip 209004,1
-    .train 425621,1 << Paladin
-    .train 425447,1 << Warrior
---XX 109084 "Seems you've had a few too many"
---XX Check if another player can skip the "how's business" dialogue for you (paladin, warrior)
-step << Paladin/Warrior
-    #season 2
-    #optional
-    .goto Ironforge,72.40,73.63,-1
-    .goto Ironforge,72.53,76.94,-1
-    >>Defeat |cRXP_ENEMY_Bruart|r
-    >>|cRXP_WARN_Be careful as he casts|r |T132939:0|t[Backhand] |cRXP_WARN_(stuns you for 2 seconds)|r
-    >>|cRXP_WARN_Remember to pre-cast|r |T135924:0|t[Seal of the Crusader] |cRXP_WARN_on him|r << Paladin
-    >>|cRXP_WARN_DO NOT accidentally cast|r |T135906:0|t[Blessing of Might] |cRXP_WARN_on him|r << Paladin
-    >>|cRXP_WARN_Kite him upstairs to the balcony, then drop down outside the inn and cast|r |T135920:0|t[Holy Light] |cRXP_WARN_if needed|r << Paladin
-    >>|cRXP_WARN_Kite him upstairs to the balcony, then drop down outside the inn and use|r |T133688:0|t[Bandages] |cRXP_WARN_if you have them/if needed|r << Warrior
-    >>|cRXP_WARN_After defeating |cRXP_ENEMY_Bruart|r:|r
-    >>Talk to |cRXP_FRIENDLY_Bruuk Barleybeard|r again to receive the |T134419:0|t[Rune of Rebuke] << Paladin
-    >>|cRXP_WARN_If he doesn't give you the|r |T134419:0|t[Rune of Rebuke]|cRXP_WARN_, you may need to fight |cRXP_ENEMY_Bruart|r again|r << Paladin
-    >>Talk to |cRXP_FRIENDLY_Bruuk Barleybeard|r again to receive the |T134419:0|t[Rune of Frenzied Assault] << Warrior
-    >>|cRXP_WARN_If he doesn't give you the|r |T134419:0|t[Rune of Frenzied Assault]|cRXP_WARN_, you may need to fight |cRXP_ENEMY_Bruart|r again|r << Warrior
-    >>|cRXP_WARN_NOTE: This can be difficult to solo. Look for some help, or you will be told to complete it again later in the guide|r << Warrior
-    .collect 205683,1 << Paladin --Rune of Rebuke (1)
-    .collect 204716,1 << Warrior --Rune of Frenzied Assault (1)
-    .target Bruuk Barleybeard
-    .skipgossip 5570,2,1
-    .skipgossip 209004,1
-    .train 425621,1 << Paladin
-    .train 425447,1 << Warrior
---XX 109539 "I've taken care of Stuart. He shouldn't be a problem anymore."
-step << Paladin
-    #season 2
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Rebuke] |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants - Rebuke]
-    .use 205683
-    .itemcount 205683,1 --Rune of Rebuke (1)
-    .train 425621,1
-step << Paladin
-    #season 2
-    #completewith Dirt
-    .engrave 7 >>|cRXP_WARN_Engrave your|r |T134596:0|t|cRXP_LOOT_[Pants]|r |cRXP_WARN_with|r |T134596:0|t[Engrave Pants - Rebuke]
-    >>|cRXP_WARN_Remember to put|r |T134919:0|t[Rebuke] |cRXP_WARN_onto your action bars|r
-    .train 425621,3
-step << Warrior
-    #season 2
-    .train 425447 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Frenzied Assault] |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants - Frenzied Assault]
-    .use 204716
-    .itemcount 204716,1 --Rune of Frenzied Assault (1)
-step << Warrior
-    #season 2
-    #completewith Dirt
-    .engrave 7 >>|cRXP_WARN_Engrave your|r |T134596:0|t|cRXP_LOOT_[Pants]|r |cRXP_WARN_with|r |T134596:0|t[Engrave Pants - Frenzied Assault]
-    .train 425447,3
 step << Warrior
     #optional
     #completewith WarriorTrain
@@ -5328,6 +4505,7 @@ step << Warrior
 step << Warrior
     #xprate >1.59
     #optional
+    #label WarriorTrain
     .goto Ironforge,65.905,88.405
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bilban Tosslespanner|r
     >>|cRXP_WARN_Ensure you save 20s 70c for later|r
@@ -5347,26 +4525,6 @@ step << Warrior
     .train 199 >> Train 2h Maces
     .goto Ironforge,61.177,89.508
     .target +Buliwyf Stonehand
-step << Warrior
-    #xprate <1.5
-    .goto Ironforge,62.375,88.679
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r down stairs
-    >>|cRXP_BUY_Buy the|r |T135425:0|t[Keen Throwing Knives] |cRXP_BUY_from her|r
-    .collect 3107,200 --Collect Keen Throwing Knife (200)
-    .target Brenwyn Wintersteel
-    .xp <10+7405,1
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
---XX 420 6281, 110 1097, 900 6661, 85 IF, 65 Gate IF, 65 refuge, 65 Amberstill
---XX (WARR ONLY): 90 1638, 90 1639, 210 1640, 420 1665
-step << Warrior
-    #xprate <1.5
-    .goto Ironforge,62.375,88.679
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brenwyn Wintersteel|r down stairs
-    >>|cRXP_BUY_Buy the|r |T135641:0|t[Balanced Throwing Daggers] |cRXP_BUY_from her|r
-    .collect 2946,200 --Collect Balanced Throwing Dagger (200)
-    .target Brenwyn Wintersteel
-    .xp >10+7405,1
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
 step << Warrior
     #xprate >1.49
     .goto Ironforge,62.375,88.679
@@ -5405,6 +4563,86 @@ step << Warrior
     #optional
     #completewith next
     .goto 1455,61.356,88.398,6 >> Exit the Timberline Arms building
+step << Paladin/Warrior
+    #season 2
+    #optional
+    #completewith next
+    .goto Ironforge,71.54,73.46,10,0
+    .goto Ironforge,72.53,76.94,10 >>Travel toward |cRXP_FRIENDLY_Bruuk Barleybeard|r inside the Inn
+    .train 425621,1 << Paladin
+    .train 425447,1 << Warrior
+step << Paladin/Warrior
+    #season 2
+    .goto Ironforge,72.53,76.94
+    .gossipoption 110791 >>Talk to |cRXP_FRIENDLY_Bruuk Barleybeard|r inside
+    .target Bruuk Barleybeard
+    .skipgossip 5570,1,1
+    .train 425621,1 << Paladin
+    .train 425447,1 << Warrior
+--XX 110793 "How's business?"
+--XX 110791 "Sounds like you need someone to bounce him for you."
+step << Paladin/Warrior
+    #season 2
+    .goto Ironforge,72.40,73.63
+    .gossipoption 109084 >>Talk to |cRXP_FRIENDLY_Bruart|r to start a fight
+    >>Defeat |cRXP_ENEMY_Bruart|r
+    >>|cRXP_WARN_Be careful as he casts|r |T132939:0|t[Backhand] |cRXP_WARN_(stuns you for 2 seconds)|r
+    >>|cRXP_WARN_Remember to pre-cast|r |T135924:0|t[Seal of the Crusader] |cRXP_WARN_on him|r << Paladin
+    >>|cRXP_WARN_DO NOT accidentally cast|r |T135906:0|t[Blessing of Might] |cRXP_WARN_on him|r << Paladin
+    >>|cRXP_WARN_Kite him upstairs to the balcony, then drop down outside the inn and cast|r |T135920:0|t[Holy Light] |cRXP_WARN_if needed|r << Paladin
+    >>|cRXP_WARN_Kite him upstairs to the balcony, then drop down outside the inn and use|r |T133688:0|t[Bandages] |cRXP_WARN_if you have them/if needed|r << Warrior
+    >>|cRXP_WARN_Try to kite him around using|r |T132316:0|t[|cRXP_FRIENDLY_Hamstring|r] |cRXP_WARN_and|r |T132324:0|t[|cRXP_FRIENDLY_Thrown|r] << Warrior
+    .mob Bruart
+    .skipgossip 209004,1
+    .train 425621,1 << Paladin
+    .train 425447,1 << Warrior
+--XX 109084 "Seems you've had a few too many"
+--XX Check if another player can skip the "how's business" dialogue for you (paladin, warrior)
+step << Paladin/Warrior
+    #season 2
+    #optional
+    .goto Ironforge,72.40,73.63,-1
+    .goto Ironforge,72.53,76.94,-1
+    >>Defeat |cRXP_ENEMY_Bruart|r
+    >>|cRXP_WARN_Be careful as he casts|r |T132939:0|t[Backhand] |cRXP_WARN_(stuns you for 2 seconds)|r
+    >>|cRXP_WARN_Remember to pre-cast|r |T135924:0|t[Seal of the Crusader] |cRXP_WARN_on him|r << Paladin
+    >>|cRXP_WARN_DO NOT accidentally cast|r |T135906:0|t[Blessing of Might] |cRXP_WARN_on him|r << Paladin
+    >>|cRXP_WARN_Kite him upstairs to the balcony, then drop down outside the inn and cast|r |T135920:0|t[Holy Light] |cRXP_WARN_if needed|r << Paladin
+    >>|cRXP_WARN_Kite him upstairs to the balcony, then drop down outside the inn and use|r |T133688:0|t[Bandages] |cRXP_WARN_if you have them/if needed|r << Warrior
+    >>|cRXP_WARN_After defeating |cRXP_ENEMY_Bruart|r:|r
+    >>Talk to |cRXP_FRIENDLY_Bruuk Barleybeard|r again to receive the |T134419:0|t[Rune of Rebuke] << Paladin
+    >>|cRXP_WARN_If he doesn't give you the|r |T134419:0|t[Rune of Rebuke]|cRXP_WARN_, you may need to fight |cRXP_ENEMY_Bruart|r again|r << Paladin
+    >>Talk to |cRXP_FRIENDLY_Bruuk Barleybeard|r again to receive the |T134419:0|t[Rune of Frenzied Assault] << Warrior
+    >>|cRXP_WARN_If he doesn't give you the|r |T134419:0|t[Rune of Frenzied Assault]|cRXP_WARN_, you may need to fight |cRXP_ENEMY_Bruart|r again|r << Warrior
+    >>|cRXP_WARN_NOTE: This can be difficult to solo. Look for some help, or you will be told to complete it again later in the guide|r << Warrior
+    .collect 205683,1 << Paladin --Rune of Rebuke (1)
+    .collect 204716,1 << Warrior --Rune of Frenzied Assault (1)
+    .target Bruuk Barleybeard
+    .train 425621,1 << Paladin
+    .train 425447,1 << Warrior
+--XX 109539 "I've taken care of Stuart. He shouldn't be a problem anymore."
+step << Paladin
+    #season 2
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Rebuke] |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants - Rebuke]
+    .use 205683
+    .itemcount 205683,1 --Rune of Rebuke (1)
+    .train 425621,1
+step << Paladin
+    #season 2
+    #completewith Dirt
+    .engrave 7 >>|cRXP_WARN_Engrave your|r |T134596:0|t|cRXP_LOOT_[Pants]|r |cRXP_WARN_with|r |T134596:0|t[Engrave Pants - Rebuke]
+    >>|cRXP_WARN_Remember to put|r |T134919:0|t[Rebuke] |cRXP_WARN_onto your action bars|r
+    .train 425621,3
+step << Warrior
+    #season 2
+    .train 425447 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Frenzied Assault] |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants - Frenzied Assault]
+    .use 204716
+    .itemcount 204716,1 --Rune of Frenzied Assault (1)
+step << Warrior
+    #season 2
+    #completewith Dirt
+    .engrave 7 >>|cRXP_WARN_Engrave your|r |T134596:0|t|cRXP_LOOT_[Pants]|r |cRXP_WARN_with|r |T134596:0|t[Engrave Pants - Frenzied Assault]
+    .train 425447,3
 step
     .goto Ironforge,55.501,47.742
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
@@ -5498,65 +4736,6 @@ step
     .zone Dun Morogh >>|cRXP_WARN_Jump on top of the Candles on the table. Perform a Logout Skip by logging out and back in|r
     .isQuestAvailable 314
 step
-    #xprate <1.5
-    #ssf
-    #optional
-    #completewith next
-    .goto 1455,48.773,55.875,20,0
-    .goto 1455,48.257,55.177,20,0
-    .goto 1455,46.648,50.482,20,0
-    .goto 1455,44.781,49.811,20,0
-    .goto 1455,38.628,56.436,20 >>Enter The High Seat
-    .zoneskip Dun Morogh
-    .isQuestAvailable 314
-    .train 122,3 << Mage
-    .train 633,3 << Paladin
-step
-    #xprate <1.5
-    #ssf
-    #optional
-    .goto 1455,38.628,56.436
-    .zone Dun Morogh >>|cRXP_WARN_Jump on top of either shoulder of the throne, then perform a Logout Skip by logging out and back in|r
-    .isQuestAvailable 314
-    .train 122,3 << Mage
-    .train 633,3 << Paladin
-step << Mage/Paladin
-    #xprate <1.5
-    #optional
-    #completewith next
-    .goto Ironforge,49.11,56.02,30,0
-    .goto Ironforge,44.08,46.60,20,0
-    .goto Ironforge,40.84,44.59,20,0
-    .goto Ironforge,35.30,32.76,20,0
-    .goto Ironforge,27.17,12.58,20,0 << Paladin
-    .goto Ironforge,27.60,11.06,20,0 << Mage
-    .goto Ironforge,27.17,8.58,12 >>Travel toward |cRXP_FRIENDLY_Dink|r << Mage
-    .goto Ironforge,23.131,6.143,12 >>Travel toward |cRXP_FRIENDLY_Brandur Ironhammer|r << Paladin
-step << Mage
-    #xprate <1.5
-    .goto Ironforge,27.17,8.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dink|r inside
-    .train 122 >> Train your class spells
-    .target Dink
---XX Alternative mage train if they didn't get 10 in Goldshire
-step << Paladin
-    #xprate <1.5
-    .goto Ironforge,23.131,6.143
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brandur Ironhammer|r inside
-    .train 633 >> Train your class spells
-    .target Brandur Ironhammer
---XX Alternative paladin train if they didn't get 10 in Goldshire
-step << Mage/Paladin
-    #xprate <1.5
-    #ssf
-    #optional
-    .goto 1455,25.238,10.965,-1
-    .goto 1455,24.300,8.708,-1
-    .zone Dun Morogh >>|cRXP_WARN_Jump on top of either pillar above |cRXP_FRIENDLY_Toldren Deepiron|r or |cRXP_FRIENDLY_Braenna Flintcrag|r, position your character until it looks like they're floating, then perform a Logout Skip by logging out and back in|r
-    .isQuestAvailable 314
-    .train 122,3 << Mage
-    .train 633,3 << Paladin
-step
     #ah
     .goto Ironforge,25.800,75.500,-1
     .goto Ironforge,24.200,74.600,-1
@@ -5611,298 +4790,12 @@ step
     .goto 1455,33.220,64.649
     .zone Dun Morogh >>|cRXP_WARN_Jump onto the very top of the |cRXP_PICK_Mailbox|r, then perform a Logout Skip by logging out and back in|r
     .isQuestAvailable 314
-step
-    #optional
-    #label BoarMeatDunMorogh1
-    #completewith Dirt
-    .goto 1426,57.936,50.787,0
-    >>Kill |cRXP_ENEMY_Elder Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
-    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r
-    >>|cRXP_WARN_You need 10|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Auberdine later|r
-    .collect 769,10,2178,1,0x20,cooking --Chunk of Boar Meat (1-10)
-    .mob Elder Crag Boar
-    .skill cooking,10,1 --XX Shows if cooking skill is <10
-step
-    #optional
-    #requires BoarMeatDunMorogh1
-    #completewith Dirt
-    .goto 1426,57.936,50.787,0
-    >>Kill |cRXP_ENEMY_Elder Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
-    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r
-    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
-    .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
-    .mob Elder Crag Boar
---  .skill cooking,<10,1
-    .skill cooking,50,1 --XX Shows if cooking skill is between 1-50
-step
-    #optional
-    #label Dirt
-    #completewith Rudra
-    .goto Dun Morogh,59.84,49.56,40,0
-    .goto Dun Morogh,61.36,47.07,40 >>Go up the dirt path
-    .isQuestAvailable 314
-step
-    #completewith next
-    #requires Dirt
-    .goto 1426,62.778,54.591,0
-    .goto 1426,62.538,46.195,0
-    +|cRXP_WARN_Kite |cRXP_ENEMY_Vagash|r down to|r |cRXP_FRIENDLY_Rudra|r
-    .link https://youtu.be/Zg4FNWw-P5k?t=3815 >>|cRXP_WARN_CLICK HERE If you're struggling|r << Mage
-    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r << !Mage
-    .mob Vagash
-step << Warrior/Rogue
-    #optional
-    #requires Dirt
-    #completewith VagashEnd
-    +|cRXP_WARN_Equip the|r |T135425:0|t[Keen Throwing Knives]
-    .use 3107
-    .itemcount 3107,1
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
-    .xp <11,1
-step
-    #label Rudra
-    .goto Dun Morogh,63.082,49.851
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
-    .accept 314 >> Accept Protecting the Herd
-    .target Rudra Amberstill
-step
-    #label VagashEnd
-    .goto 1426,62.778,54.591,0
-    .goto 1426,62.094,47.154,40,0
-    .goto 1426,62.434,48.989,40,0
-    .goto 1426,62.538,46.195
-    >>Kill |cRXP_ENEMY_Vagash|r. Loot him for his |cRXP_LOOT_Fang|r
-    >>|cRXP_WARN_Kite him to the guard south of the ranch. Make sure you do 51%+ damage to him|r
-    >>|cRXP_WARN_Watch the video below before you attempt to kill |cRXP_ENEMY_Vagash|r. It can be solo'd on any class|r
-    .link https://youtu.be/Zg4FNWw-P5k?t=3815 >> |cRXP_WARN_Click here for video reference|r << Mage
-    .link https://www.youtube.com/watch?v=ZJX6sCkm5JY >> |cRXP_WARN_Click here for video reference|r << !Mage
-    .complete 314,1 --Collect Fang of Vagash (1)
-    .mob Vagash
-step
-    .goto Dun Morogh,63.082,49.851
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r
-    .turnin 314 >> Turn in Protecting the Herd
-    .target Rudra Amberstill
-step
-    #optional
-    #label BoarMeatDunMorogh2
-    #completewith QuarryStart
-    .goto 1426,66.356,51.02,0
-    >>Kill |cRXP_ENEMY_Large Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
-    .collect 769,10,2178,1,0x20,cooking --Chunk of Boar Meat (1-10)
-    .mob Large Crag Boar
-    .skill cooking,10,1 --XX Shows if cooking skill is <10
-    .subzoneskip 134 --Gol'Bolar Quarry
-step
-    #optional
-    #requires BoarMeatDunMorogh2
-    #completewith QuarryStart
-    .goto 1426,66.356,51.02,0
-    >>Kill |cRXP_ENEMY_Large Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
-    .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
-    .mob Large Crag Boar
---  .skill cooking,<10,1
-    .skill cooking,50,1 --XX Shows if cooking skill is between 1-50
-    .subzoneskip 134 --Gol'Bolar Quarry
-step
-    .goto Dun Morogh,68.379,54.492
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cook Ghilm|r
-    .train 2550 >> Train |T133971:0|t[Cooking]
-    .target Cook Ghilm
-step << !Human
-    .goto Dun Morogh,68.614,54.643
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kazan Mogosh|r
-    .vendor >> |cRXP_BUY_Buy|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_if needed|r << Warrior/Rogue
-    .vendor >> |cRXP_BUY_Buy|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_and|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_if needed|r << !Warrior !Rogue
-    .target Kazan Mogosh
-    .xp >15,1
-step << Rogue
-    #completewith QuarryEnd
-    #label RogueWep
-    .goto 1426,68.866,55.958,8,0
-    .goto 1426,69.002,55.896
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frast Dokner|r
-    >>|cRXP_WARN_Buy a|r |T135321:0|t[Gladius] |cRXP_WARN_from him|r
-    .collect 2488,1 --Collect Gladius (1)
-    .target Frast Dokner
-    .money <0.0482
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.4
---XX Shows if you didn't get a cutlass or better wep earlier
-step << Rogue
-    #optional
-    #completewith QuarryEnd
-    #requires RogueWep
-    #label Gladius
-    .equip 16,2488 >> |cRXP_WARN_Equip the|r |T135321:0|t[Gladius] |cRXP_WARN_in your mainhand|r
-    .use 2488
-    .itemcount 2488,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.4
-step << Rogue
-    #optional
-    #completewith QuarryEnd
-    #requires Gladius
-    .equip 17,2494 >> |cRXP_WARN_Equip the|r |T135641:0|t[Stiletto] |cRXP_WARN_in your offhand|r
-    .use 2494
-    .itemcount 2494,1
-    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
-step
-    #xprate <1.5
-    #label QuarryStart
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r and |cRXP_FRIENDLY_Foreman Stonebrow|r
-    .accept 433 >> Accept The Public Servant
-    .goto Dun Morogh,68.671,55.969
-    .target +Senator Mehr Stonehallow
-    .accept 432 >> Accept Those Blasted Troggs!
-    .goto Dun Morogh,69.084,56.330
-    .target +Foreman Stonebrow
-step
-    #xprate >1.49
-    #label QuarryStart
-    .goto Dun Morogh,69.084,56.330
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Stonebrow|r
-    .accept 432 >> Accept Those Blasted Troggs!
-    .target Foreman Stonebrow
-    .xp >14,1
-step << Warrior/Paladin/Rogue
-    .goto Dun Morogh,69.324,55.456
-    #requires RogueWep << Rogue
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dank Drizzlecut|r
-    .train 2575 >>Train |T134708:0|t[Mining]
-    >>|cRXP_WARN_This is used in conjunction with|r |T136241:0|t[Blacksmithing] |cRXP_WARN_to make|r |T135248:0|t[Rough Sharpening Stones] |cRXP_WARN_and|r |T135255:0|t[Rough Weightstones] |cRXP_WARN_to increase your weapon damage|r
-    >>|cRXP_WARN_If you don't want to do this, skip this step|r
-    .target Dank Drizzlecut
-    .train 2018,3 --Blacksmithing
-step << Warrior/Paladin/Rogue
-    #optional
-    #completewith QuarryEnd
-    .cast 2580 >> |cRXP_WARN_Cast|r |T136025:0|t[Find Minerals]
-    .usespell 2580
-    .train 2575,3 --Mining Trained
-step
-    #xprate <1.5
-    .goto Dun Morogh,70.7,56.4,40,0
-    .goto Dun Morogh,70.62,52.39,25,0
-    .goto Dun Morogh,70.7,56.4
-    >>Kill |cRXP_ENEMY_Rockjaw Skullthumpers|r and |cRXP_ENEMY_Rockjaw Bonesnappers|r inside the cave
-    .complete 432,1 --Kill Rockjaw Skullthumper (x6)
-    .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
-    .mob Rockjaw Skullthumper
-    .mob Rockjaw Bonesnapper
-step
-    #xprate >1.49
-    .goto Dun Morogh,70.49,58.35,50,0
-    .goto Dun Morogh,68.23,59.37,50,0
-    .goto Dun Morogh,70.49,58.35
-    >>Kill |cRXP_ENEMY_Rockjaw Skullthumpers|r
-    .complete 432,1 --Kill Rockjaw Skullthumper (x6)
-    .mob Rockjaw Skullthumper
-    .isOnQuest 432
-step
-    #xprate <1.5
-    #label QuarryEnd
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Stonebrow|r and |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
-    .turnin 432 >> Turn in Those Blasted Troggs!
-    .goto Dun Morogh,69.084,56.330
-    .target +Foreman Stonebrow
-    .turnin 433 >> Turn in The Public Servant
-    .goto Dun Morogh,68.671,55.969
-    .target +Senator Mehr Stonehallow
-step
-    #xprate >1.49
-    #label QuarryEnd
-    .goto Dun Morogh,69.084,56.330
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Stonebrow|r
-    .turnin 432 >> Turn in Those Blasted Troggs!
-    .target Foreman Stonebrow
-    .isQuestComplete 432
-step << !Warrior !Rogue !Paladin
-    .goto Dun Morogh,68.614,54.643
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kazan Mogosh|r
-    .vendor >> |cRXP_BUY_Buy up to 20|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him|r
-    .target Kazan Mogosh
-    .xp >15,1
-step
-    #optional
-    #label BoarMeatDunMorogh3
-    #completewith Revenge
-    .goto 1426,70.845,51.784,0
-    .goto 1426,73.533,50.850,0
-    .goto 1426,75.353,48.533,0
-    .goto 1426,79.881,46.805,0
-    .goto 1426,81.040,43.456,0
-    .goto 1426,80.583,36.040,0
-    >>Kill |cRXP_ENEMY_Scarred Crag Boars|r and |cRXP_ENEMY_Elder Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
-    .collect 769,10,2178,1,0x20,cooking --Chunk of Boar Meat (1-10)
-    .mob Scarred Crag Boar
-    .mob Elder Crag Boar
-    .skill cooking,10,1 --XX Shows if cooking skill is <10
-step
-    #optional
-    #requires BoarMeatDunMorogh3
-    #completewith Revenge
-    .goto 1426,70.845,51.784,0
-    .goto 1426,73.533,50.850,0
-    .goto 1426,75.353,48.533,0
-    .goto 1426,79.881,46.805,0
-    .goto 1426,81.040,43.456,0
-    .goto 1426,80.583,36.040,0
-    >>Kill |cRXP_ENEMY_Scarred Crag Boars|r and |cRXP_ENEMY_Elder Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
-    .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
-    .mob Scarred Crag Boar
-    .mob Elder Crag Boar
---  .skill cooking,<10,1
-    .skill cooking,50,1 --XX Shows if cooking skill is between 1-50
-step
-    .goto Dun Morogh,81.2,42.7,45,0
-    .goto Dun Morogh,83.892,39.188
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Hammerfoot|r
-    .accept 419 >> Accept The Lost Pilot
-    .target Pilot Hammerfoot
-step
-    .goto Dun Morogh,79.672,36.171
-    >>Click the |cRXP_PICK_Dwarven Corpse|r on the ground
-    .turnin 419 >> Turn in The Lost Pilot
-    .accept 417 >> Accept A Pilot's Revenge
-step << Mage
-    #season 2
-    #completewith next
-    >>Kill |cRXP_ENEMY_Mangeclaw|r. Loot him for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r]
-    .collect 203753,1 -- Spell Notes: RING SEFF OSTROF (1)
-    .train 401765,1
-step
-    .goto Dun Morogh,78.97,37.14
-    >>Kill |cRXP_ENEMY_Mangeclaw|r. Loot him for his |cRXP_LOOT_Claw|r
-    .complete 417,1 --Collect Mangy Claw (x1)
-    .mob Mangeclaw
-step << Mage
-    #season 2
-    #completewith enterloch
-    .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r]
-    .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] |cRXP_WARN_to train|r |T236227:0|t[Fingers of Frost]
-    .use 203753
-step
-    #label Revenge
-    .goto Dun Morogh,83.892,39.188
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Hammerfoot|r
-    .turnin 417,1 >> Turn in A Pilot's Revenge << Rogue
-    .turnin 417 >> Turn in A Pilot's Revenge << !Rogue
-    .target Pilot Hammerfoot
-step << Rogue
-    #optional
-    #completewith next
-    +|cRXP_WARN_Equip the|r |T135641:0|t[Craftsman's Dagger] |cRXP_WARN_in your offhand|r
-    .use 2218
-    .itemcount 2218,1
-    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
-step
-    #label enterloch
-    .goto Dun Morogh,84.4,31.1,25 >>Go through the tunnel to Loch Modan
-    .zoneskip Loch Modan
-]])
+    ]])
 
 RXPGuides.RegisterGuide([[
 #classic
 #version 1
+#xprate <2.49
 << Alliance
 #group RXP SOD TEST
 #name 11-13 Loch Modan

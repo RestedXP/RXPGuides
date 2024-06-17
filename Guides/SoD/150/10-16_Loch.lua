@@ -5,7 +5,8 @@ RXPGuides.RegisterGuide([[
 #xprate >2.49
 << Alliance
 #group RXP SOD TEST
-#name 10-12 Dun Morogh
+#name 12-13 Dun Morogh SoD
+#next 13-16 Loch Modan SoD
 #defaultfor !NightElf
 step
     #completewith Rudra
@@ -1031,7 +1032,8 @@ RXPGuides.RegisterGuide([[
 #xprate >2.49
 << Alliance
 #group RXP SOD TEST
-#name 12-16 Loch Modan
+#name 13-16 Loch Modan SoD
+#next 16-17 Westfall SoD
 #defaultfor !NightElf
 
 step << Hunter

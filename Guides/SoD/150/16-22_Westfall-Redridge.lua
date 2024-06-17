@@ -5,7 +5,8 @@ RXPGuides.RegisterGuide([[
 #xprate >2.49
 << Alliance
 #group RXP SOD TEST
-#name 16-17 Westfall
+#name 16-17 Westfall SoD
+#next 17-22 Redridge SoD
 #defaultfor !NightElf
 step
     .goto StormwindClassic,58.08,16.52
@@ -447,7 +448,8 @@ RXPGuides.RegisterGuide([[
 #xprate >2.49
 << Alliance
 #group RXP SOD TEST
-#name 17-22 Redridge
+#name 17-22 Redridge SoD
+#next 22-24 Wetlands SoD
 #defaultfor !NightElf
 
 
