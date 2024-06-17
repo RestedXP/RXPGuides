@@ -1575,7 +1575,7 @@ function addon:LoadGuide(guide, OnLoad)
     end
 
     if addon.disabledQuestList then
-        for _,id in pairs(guide.disabledQuests) do
+        for _,id in pairs(addon.disabledQuestList) do
             disabledQuests[id] = true
         end
     end
