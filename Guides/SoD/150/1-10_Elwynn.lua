@@ -1845,7 +1845,6 @@ step
     .turnin 62 >> Turn in The Fargodeep Mine
     .accept 76 >> Accept The Jasperlode Mine
     .turnin 40 >> Turn in A Fishy Peril
-    .accept 35 >> Accept Further Concerns
     .target Marshal Dughan
 step
     #optional << Warrior/Rogue/Paladin
