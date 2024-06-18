@@ -563,7 +563,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r outside
     .accept 18 >> Accept Brotherhood of Thieves
     .target Deputy Willem
-step << Priest/Warrior
+step
     #xprate >1.59
     #season 2
     #label RuneWorkers
@@ -661,16 +661,6 @@ step << Rogue
     .train 400105 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r |cRXP_WARN_to learn|r |T132291:0|t[Shadowstrike]
     .use 204795
     .itemcount 204795,1
-step << Rogue
-    #sticky
-    #label CuttyNote
-    #season 2
-    .goto 1429,57.518,48.253
-    >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Garrick Padfoot|r for |T134331:0|t[Cutty's Note]
-    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
-    .collect 203723,1 -- Cutty's Note (1)
-    .mob Garrick Padfoot
-    .train 400094,1
 step << Paladin/Rogue/Warrior/Priest
     #xprate >1.59
     #season 2
@@ -686,6 +676,41 @@ step << Paladin/Rogue/Warrior/Priest
     >>Kill |cRXP_ENEMY_Defias Thugs|r. Loot them for their |cRXP_LOOT_Red Burlap Bandanas|r
     .complete 18,1 --Collect Red Burlap Bandana (x12)
 	.mob Defias Thug
+step << Paladin
+    #xprate >1.59
+    #season 2
+    #softcore
+    #completewith next
+    #requires EarlyLibram4
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .target Spirit Healer
+-- .subzoneskip 59,1
+step
+    #optional
+    #softcore
+    #completewith next
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .target Spirit Healer
+step << Paladin/Rogue
+    #xprate >1.59
+    #season 2
+    #requires Shadowstrike2 << Rogue
+    #requires EarlyLibram4 << Paladin
+    .goto Elwynn Forest,48.17,42.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r
+    .turnin 18,1 >> Turn in Brotherhood of Thieves << Rogue
+    .turnin 18,4 >> Turn in Brotherhood of Thieves << Paladin
+    .accept 6 >> Accept Bounty on Garrick Padfoot << Rogue
+--  .accept 3903 >> Accept Milly Osworth
+    .target Deputy Willem
+step << Rogue
+    #xprate >1.59
+    #season 2
+    #completewith RestandR
+    .equip 16,2224 >> Equip the |T135641:0|t[Militia Dagger]
+    .use 2224
+    .itemcount 2224,1
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.0
 step << Rogue
     #xprate >1.59
     #season 2
@@ -715,26 +740,29 @@ step << Human Rogue
     #completewith RestandR
     .engrave 10 >>|cRXP_WARN_Engrave your|r |T132952:0|t[Cracked Leather Gloves] |cRXP_WARN_with|r |T132291:0|t[Shadowstrike]
     .train 400105,3
-step << Paladin
-    #xprate >1.59
+step << Rogue
+    #label CuttyNote
     #season 2
+    .goto 1429,57.518,48.253
+    >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Garrick Padfoot|r for |T134331:0|t[Cutty's Note]
+    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    >>|cRXP_WARN_You HAVE TO|r |T133644:0|t[Pick Pocket] |cRXP_ENEMY_him to get the note! Don't kill him before you do so|r
+    .collect 203723,1 -- Cutty's Note (1)
+    .mob Garrick Padfoot
+    .train 400094,1
+step << Rogue
+    #season 2
+    .goto 1429,57.518,48.253
+    >>Kill |cRXP_ENEMY_Garrick Padfoot|r and loot him for his head
+    .collect 182,1 -- Cutty's Note (1)
+    .mob Garrick Padfoot
+    .train 400094,1
+step
+    #optional
     #softcore
     #completewith next
-    #requires EarlyLibram4
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .target Spirit Healer
--- .subzoneskip 59,1
-step << Paladin/Rogue
-    #xprate >1.59
-    #season 2
-    #requires Shadowstrike2 << Rogue
-    #requires EarlyLibram4 << Paladin
-    .goto Elwynn Forest,48.17,42.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r
-    .turnin 18,1 >> Turn in Brotherhood of Thieves << Rogue
-    .turnin 18,4 >> Turn in Brotherhood of Thieves << Paladin
---  .accept 3903 >> Accept Milly Osworth
-    .target Deputy Willem
 step << Paladin
     #xprate >1.59
     #season 2
@@ -743,14 +771,6 @@ step << Paladin
     .use 5579
     .itemcount 5579,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.6
-step << Rogue
-    #xprate >1.59
-    #season 2
-    #completewith RestandR
-    .equip 16,2224 >> Equip the |T135641:0|t[Militia Dagger]
-    .use 2224
-    .itemcount 2224,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.0
 step << Priest
     #xprate >1.59
     #season 2
@@ -1195,14 +1215,13 @@ step
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .target Spirit Healer
     .subzoneskip 87
-step << Warrior/Rogue/Paladin
-    .goto Elwynn Forest,41.706,65.544
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smith Argus|r
-    >>|cRXP_WARN_This will allow you to make|r |T135248:0|t[Rough Sharpening Stones] |cRXP_WARN_which increase your melee damage by 2|r << Warrior/Rogue
-    >>|cRXP_WARN_This will allow you to make|r |T135255:0|t[Rough Weightstones] |cRXP_WARN_which increase your melee damage by 2|r << Paladin
-    >>|cRXP_WARN_If you don't want to do this, skip this step|r
-    .train 2018 >> Train |T136241:0|t[Blacksmithing]
-    .target Smith Argus
+step
+    #softcore
+    .goto Elwynn Forest,42.105,65.927
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshall Dughan|r
+    .turnin 54 >> Turn in Report to Goldshire
+    .accept 62 >> Accept The Fargodeep Mine
+    .target Marshal Dughan
 step << Warrior
     .goto Elwynn Forest,41.529,65.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
@@ -1248,6 +1267,14 @@ step << Paladin
     .use 2493
     .itemcount 2493,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.0
+step << Warrior/Rogue/Paladin
+    .goto Elwynn Forest,41.706,65.544
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smith Argus|r
+    >>|cRXP_WARN_This will allow you to make|r |T135248:0|t[Rough Sharpening Stones] |cRXP_WARN_which increase your melee damage by 2|r << Warrior/Rogue
+    >>|cRXP_WARN_This will allow you to make|r |T135255:0|t[Rough Weightstones] |cRXP_WARN_which increase your melee damage by 2|r << Paladin
+    >>|cRXP_WARN_If you don't want to do this, skip this step|r
+    .train 2018 >> Train |T136241:0|t[Blacksmithing]
+    .target Smith Argus
 step << Mage/Priest/Warlock
     #optional
     #completewith next
@@ -1256,13 +1283,6 @@ step << Mage/Priest/Warlock
     .vendor >> Vendor Trash
     .target Andrew Krighton
 --  .money >1.0
-step
-    #label Goldshire
-    .goto Elwynn Forest,42.105,65.927
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshall Dughan|r
-    .turnin 54 >> Turn in Report to Goldshire
-    .accept 62 >> Accept The Fargodeep Mine
-    .target Marshal Dughan
 step
     .goto Elwynn Forest,43.318,65.705
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
@@ -1400,7 +1420,7 @@ step
     .accept 85 >> Accept Lost Necklace
     .goto Elwynn Forest,34.486,84.253
     .target +"Auntie" Bernice Stonefield
-    .accept 88 >> Accept Princess Must Die!
+    .accept 88 >> Accept Princess Must Die! << Rogue
 	.goto Elwynn Forest,34.660,84.482
     .target +Ma Stonefield
 step << Warrior/Paladin/Rogue
@@ -1617,6 +1637,7 @@ step << Rogue
     #season 2
     #sticky
     #label KoboldRune
+    #completewith Exchange
     #loop
     .goto Elwynn Forest,37.81,85.40,0
     .waypoint Elwynn Forest,39.14,82.87,35,0
@@ -1626,6 +1647,7 @@ step << Rogue
     .waypoint Elwynn Forest,38.02,81.70,35,0
     >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Kobold Miners|r and |cRXP_ENEMY_Kobold Tunnelers|r. Loot them for the |T134327:0|t|cRXP_LOOT_[Top-Right Map Piece]|r
     >>|cRXP_WARN_You must be|r |T132320:0|t[Stealthed] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    >>|cRXP_ENEMY_NOTE:|r |cRXP_WARN_All of the|r |T134327:0|t[|cRXP_LOOT_Map Piece|r] |cRXP_WARN_steps are for unlocking the|r |T134536:0|t[Quick Draw] |cRXP_WARN_rune.|r |cRXP_WARN_It's useful but not mandatory for leveling and becomes obsolete around level 22 after unlocking your poisons. Feel free to skip all of those steps if you aren't interested in getting the rune ASAP and want to save some time in the short term.|r
     .collect 203784,1 -- Top-Right Map Piece (1)
     .mob Kobold Miner
     .mob Kobold Tunneler
@@ -1633,6 +1655,7 @@ step << Rogue
 step
     #sticky
     #label KoboldEnd
+    #completewith BernicesNecklace
     #loop
     .goto Elwynn Forest,37.81,85.40,0
     .waypoint Elwynn Forest,39.14,82.87,35,0
@@ -1657,14 +1680,8 @@ step
     >>Enter one of the larger open spaces in Fargodeep Mine
     .complete 62,1 --Scout Through the Fargodeep Mine
 step
-    #season 0,1
-    .goto 1429,41.732,78.024
-    >>Kill |cRXP_ENEMY_Goldtooth|r. Loot him for |cRXP_LOOT_Bernice's Necklace|r
-    >>|cRXP_WARN_Be careful as he usually pulls with the |cRXP_ENEMY_Kobold Miner|r next to him|r
-    .complete 87,1 --Bernice's Necklace (1)
-    .mob Goldtooth
-step
     #season 2
+    #label BernicesNecklace
     .goto 1429,41.732,78.024
     >>Kill |cRXP_ENEMY_Goldtooth|r. Loot him for |cRXP_LOOT_Bernice's Necklace|r << !Warrior !Priest
     >>Kill |cRXP_ENEMY_Goldtooth|r. Loot him for |cRXP_LOOT_Bernice's Necklace|r and the |T134419:0|t|cRXP_LOOT_[Rune of Furious Thunder]|r << Warrior
@@ -1676,6 +1693,22 @@ step
     .mob Goldtooth
     .train 403476,1 << Warrior
     .train 425216,1 << Priest
+step
+    #loop
+    .goto Elwynn Forest,37.81,85.40,0
+    .waypoint Elwynn Forest,39.14,82.87,35,0
+    .waypoint Elwynn Forest,39.16,84.79,35,0
+    .waypoint Elwynn Forest,37.81,85.40,35,0
+    .waypoint Elwynn Forest,36.76,83.19,35,0
+    .waypoint Elwynn Forest,38.02,81.70,35,0
+    >>Finish off killing |cRXP_ENEMY_Kobold Tunnelers|r and |cRXP_ENEMY_Kobold Miners|r. Loot them for their |cRXP_LOOT_Kobold Candles|r and |cRXP_LOOT_Gold Dust|r
+    .complete 60,1 --Kobold Candle (8)
+    .complete 47,1 --Gold Dust (10)
+    .mob Kobold Tunneler
+    .mob Kobold Miner
+step << Rogue
+    .xp 9+2000 >> Grind untill you're 2000 xp into level 9. 
+    >> If you're not close you can turn in the goldtooth quest but grinding mobs is more efficient
 step << Warrior
     #season 2
     #sticky
@@ -1700,42 +1733,6 @@ step << Warrior
     #optional
     #requires KoboldRune
 --XXREQ Placeholder invis step
-step
-    #xprate <1.5
-    #requires KoboldEnd
-    #loop
-    .goto Elwynn Forest,37.81,85.40,0
-    .goto Elwynn Forest,39.14,82.87,35,0
-    .goto Elwynn Forest,39.16,84.79,35,0
-    .goto Elwynn Forest,37.81,85.40,35,0
-    .goto Elwynn Forest,36.76,83.19,35,0
-    .goto Elwynn Forest,38.02,81.70,35,0
-    .xp 7+1800 >>Grind to 1800+/4500xp << !Priest
-    .xp 7+1460 >>Grind to 1460+/4500xp << Priest
-    .mob Kobold Tunneler
-    .mob Kobold Miner
---XX <1.5x turns in goldtooth early
-step
-    #xprate >1.49
-    #requires KoboldEnd
-    #loop
-    .goto Elwynn Forest,37.81,85.40,0
-    .goto Elwynn Forest,39.14,82.87,35,0
-    .goto Elwynn Forest,39.16,84.79,35,0
-    .goto Elwynn Forest,37.81,85.40,35,0
-    .goto Elwynn Forest,36.76,83.19,35,0
-    .goto Elwynn Forest,38.02,81.70,35,0
-    .xp 7+1770 >>Grind to 1770+/4500xp << !Priest
-    .xp 7+1260 >>Grind to 1260+/4500xp << Priest
-    .mob Kobold Tunneler
-    .mob Kobold Miner
-step
-    #xprate <1.5
-    #label Goldtooth
-    .goto Elwynn Forest,34.486,84.253
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Auntie" Bernice Stonefield|r
-    .turnin 87 >> Turn in Goldtooth
-    .target "Auntie" Bernice Stonefield
 step
     #xprate >1.49
     #hardcore
@@ -1789,7 +1786,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
     .vendor >>Vendor Trash
     .target Corina Steele
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,>3.3 << Rogue
+    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,>3.3 << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,>3.8 << Warrior
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,>5.0 << Paladin
 step << Warrior
@@ -1810,18 +1807,22 @@ step << Warrior
 step << Rogue
     .goto Elwynn Forest,41.529,65.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
-    .vendor 54 >>|cRXP_BUY_Buy a|r |T135641:0|t[Stiletto] |cRXP_BUY_from her if you can afford it|r
+    .vendor 54 >>|cRXP_BUY_Buy a second|r |T135641:0|t[Stiletto] |cRXP_BUY_from her if you can afford it|r
     .collect 2494,1 --Collect Stiletto (1)
     .disablecheckbox
     .target Corina Steele
 --   .money <0.0400
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
+    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
 step << Rogue
     #completewith CandlesEnd
     +|cRXP_WARN_Equip the|r |T135641:0|t[Stiletto]
     .use 2494
     .itemcount 2494,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
+step << Rogue
+    #optional
+    #completewith next
+    .engrave 10,399960 >> Open your character sheet and engrave |T132304:0|t[|cRXP_FRIENDLY_Mutilate|r] on gloves. It is by far the strongest rune for fighting mobs.
 step << Paladin
     .goto Elwynn Forest,41.529,65.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
@@ -1869,10 +1870,6 @@ step
     .turnin 107 >> Turn in Note to William
     .accept 112 >> Accept Collecting Kelp
     .target William Pestle
-step
-    #xprate <1.5
-    #optional
-    .xp 8 >> Grind to 8
 step << Warrior
     #xprate <1.59
     .goto Elwynn Forest,41.087,65.768
@@ -1983,6 +1980,7 @@ step << Rogue
     #season 2
     #sticky
     #label MurlocRune
+    #completewith JasperlodeExplore
     #loop
     .goto 1429,50.833,65.453,0
     .goto 1429,57.435,63.662,0
@@ -2000,7 +1998,7 @@ step << Rogue
     .waypoint 1429,54.236,66.888,50,0
     >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Murloc Steamrunners|r and |cRXP_ENEMY_Murlocs|r. Loot them for the |T134269:0|t|cRXP_LOOT_[Bottom-Right Map Piece]|r
     >>|cRXP_WARN_You must be|r |T132320:0|t[Stealthed] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
---   >>|cRXP_WARN_Note: This can also come from any other |cRXP_ENEMY_Murloc|r in Elwynn Forest|r
+    >>|cRXP_ENEMY_NOTE:|r |cRXP_WARN_All of the|r |T134327:0|t[|cRXP_LOOT_Map Piece|r] |cRXP_WARN_steps are for unlocking the|r |T134536:0|t[Quick Draw] |cRXP_WARN_rune.|r |cRXP_WARN_It's useful but not mandatory for leveling and becomes obsolete around level 22 after unlocking your poisons. Feel free to skip all of those steps if you aren't interested in getting the rune ASAP and want to save some time in the short term.|r
     .collect 203786,1 -- Bottom-Right Map Piece (1)
     .mob Murloc Streamrunner
     .mob Murloc
@@ -2221,6 +2219,8 @@ step << Rogue
     .goto 1429,66.618,40.849
     >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Riverpaw Outrunners|r and |cRXP_ENEMY_Riverpaw Runts|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Bottom-Left Map Piece]|r
     >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
+    >>|cRXP_ENEMY_NOTE:|r |cRXP_WARN_All of the|r |T134327:0|t[|cRXP_LOOT_Map Piece|r] |cRXP_WARN_steps are for unlocking the|r |T134536:0|t[Quick Draw] |cRXP_WARN_rune.|r |cRXP_WARN_It's useful but not mandatory for leveling and becomes obsolete around level 22 after unlocking your poisons. Feel free to skip all of those steps if you aren't interested in getting the rune ASAP and want to save some time in the short term.|r
+    >>|cRXP_WARN_If you decide to skip getting the rune you can skip the run to redridge for now and just hearthstone or deathskip back straight to Goldshire|r
     .collect 203787,1 -- Bottom-Left Map Piece (1)
     .mob Riverpaw Outrunner
     .mob Riverpaw Runt
@@ -2232,16 +2232,18 @@ step << Rogue
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .target Spirit Healer
     .train 398196,1
+    .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
 step << Rogue
     #softcore
     #season 2
     #optional
     .goto Elwynn Forest,83.283,66.089
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rallic Finn|r
-    .vendor >> Vendor trash
+    .vendor >> Vendor trash and repair
     .target Rallic Finn
     .train 398196,1
     .isQuestAvailable 5545
+    .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
 step << Rogue
     #season 2
     .goto Elwynn Forest,67.4,78.6,60,0
@@ -2253,6 +2255,7 @@ step << Rogue
     .collect 203785,1 -- Top-Left Map Piece (1)
     .mob Defias Bandit
     .train 398196,1
+    .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
 step << Rogue
     #season 2
     .cast 401847 >>|cRXP_WARN_Use any of the|r |T134327:0|t[|cRXP_LOOT_Map Pieces]|r |cRXP_WARN_to combine them into the|r |T134269:0|t[|cRXP_LOOT_Elwynn Treasure Map|r]
@@ -2266,6 +2269,7 @@ step << Rogue
     .use 203785
     .use 203786
     .train 398196,1
+    .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
 step << Rogue
     #season 2
     #completewith next
@@ -2274,19 +2278,21 @@ step << Rogue
     .use 203750
     .itemcount 203750,1
     .train 398196,1
+    .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
 step << Rogue
     #season 2
     .goto Elwynn Forest,80.365,79.134
     >>Open the |cRXP_PICK_Buried Treasure|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Draw|r]
     .collect 203991,1 -- Rune of Quick Draw (1)
     .train 398196,1
+    .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
 step << Rogue
     #season 2
     .train 400095 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Draw|r] |cRXP_WARN_to train|r |T134536:0|t[Quick Draw]
     .use 203991
     .itemcount 203991,1
+    .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
 step << Priest/Paladin
-    #season 0,1 << Rogue
     #softcore
     #label EVDeathskip
     #completewith RedridgeS
@@ -2294,23 +2300,26 @@ step << Priest/Paladin
     .target Spirit Healer
     .zoneskip Redridge Mountains
 --XX not worth deathskipping as a warlock due to having to resumm pet
-step << Priest/Paladin
+step << Priest/Paladin/Rogue
     #label RedridgeS
     .goto Redridge Mountains,17.4,69.6
     .zone Redridge Mountains >> Travel to Redridge Mountains
-step << Priest/Paladin
+    .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
+step << Priest/Paladin/Rogue
     #optional
     .goto Redridge Mountains,17.4,69.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Parker|r
     .accept 244 >> Accept Encroaching Gnolls
     .target Guard Parker
     .xp <11,1
-step << Priest/Paladin
+    .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
+step << Priest/Paladin/Rogue
     #softcore
     #completewith RRFP
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .target Spirit Healer
-step << Priest/Paladin
+    .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
+step << Priest/Paladin/Rogue
     #hardcore
     #optional
     #completewith RRFP
@@ -2318,7 +2327,8 @@ step << Priest/Paladin
     .goto Redridge Mountains,23.325,71.373,25,0
     .goto Redridge Mountains,29.565,67.930,25,0
     .goto Redridge Mountains,30.590,59.410,15 >>|cRXP_WARN_BE CAREFUL: Stick to the main road and avoid any close mobs en-route|r
-step << Priest/Paladin
+    .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
+step << Priest/Paladin/Rogue
     #optional
     .goto Redridge Mountains,30.73,59.99
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r
@@ -2326,12 +2336,14 @@ step << Priest/Paladin
     .target Deputy Feldon
     .isOnQuest 244
     .xp <11,1
-step << Priest
+    .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
+step << Priest/Rogue
     #label RRFP
     .goto Redridge Mountains,30.590,59.410
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
     .fp Redridge Mountains >> Get the Redridge Mountains flight path
     .target Ariena Stormfeather
+    .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
 step << Paladin
     #xprate >1.49
     #season 2
@@ -2424,6 +2436,7 @@ step
     #optional
     #completewith CollectKelp
     .hs >> Hearth to Goldshire
+    .subzoneskip 87
 step
     #label CollectKelp
     .goto Elwynn Forest,43.318,65.705
@@ -2556,13 +2569,22 @@ step
     #completewith next
     .goto Elwynn Forest,43.154,89.625,50 >> Travel to The Maclure Vineyards
 step
---  #xprate <1.59
     #label Escape
     #requires GoldshireVendor
     .goto Elwynn Forest,43.154,89.625
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maybell Maclure|r
     .turnin 114 >> Turn in The Escape
     .target Maybell Maclure
+step
+    .goto Elwynn Forest,34.486,84.253
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Auntie" Bernice Stonefield|r
+    .turnin 87 >> Turn in Goldtooth
+    .turnin 88 >> Turn in Princess Must Die! << Rogue
+    .target "Auntie" Bernice Stonefield
+step
+    #optional
+    #completewith next
+    .abandon 88 >> Abandon Princess Must Die! since you haven't completed the quest
 step
     #optional
     #completewith Garrison
@@ -2572,15 +2594,6 @@ step
 ----Start of Paladin 1.5x Martyrdom Rune section----
 
 
-
-step << Paladin
-    #xprate <1.5
-    #label Garrison
-    #season 2
-    .goto Elwynn Forest,24.234,74.450
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r
-    .turnin 239 >> Turn in Westbrook Garrison Needs Help!
-    .target Deputy Rainer
 step << Paladin
     #xprate >1.49
     #season 2
@@ -2996,7 +3009,7 @@ step << skip --Human Paladin
     .target Stephanie Turner
     .isQuestTurnedIn 1643
     .xp 12,1
-step << Paladin
+step
     #xprate >1.49
     #season 2
     #optional
@@ -3006,52 +3019,12 @@ step << Paladin
     >>|cRXP_WARN_We choose the|r |T132383:0|t[Explosive Rockets] |cRXP_WARN_as the reward. It deals decent damage, and can be used for "Split pulling" which is incredibly useful|r
     .link https://www.youtube.com/watch?v=H-IwZ6P-ldY >> |cRXP_WARN_Click here for video reference on "Split pulling". It is a short video and invaluable to learn|r
     .target Morgan Pestle
-step << Rogue
-    #optional
-    #completewith next
-    .goto 1453,57.764,61.412,6 >> Enter the Everyday Merchandise building
---XX 420 6281, 110 1097, 900 6661, 85 IF, 65 Gate IF, 65 refuge, 65 Amberstill
---XX (WARR ONLY): 90 1638, 90 1639, 210 1640, 420 1665
-step << Rogue
-    #xprate >1.49
-    .goto 1453,58.380,61.683
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thurman Mullby|r
-    >>|cRXP_BUY_Buy the|r |T135425:0|t[Keen Throwing Knives] |cRXP_BUY_from him|r
-    .collect 3107,200 --Collect Keen Throwing Knife (200)
-    .target Thurman Mullby
-    .xp <10+5035,1
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
---XX 420 6281, 110 1097, 900 6661, 85 IF, 65 Gate IF, 65 refuge, 65 Amberstill
-step << Rogue
-    #xprate >1.49
-    .goto 1453,58.380,61.683
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thurman Mullby|r
-    >>|cRXP_BUY_Buy the|r |T135641:0|t[Balanced Throwing Daggers] |cRXP_BUY_from him|r
-    .collect 2946,200 --Collect Balanced Throwing Dagger (200)
-    .target Thurman Mullby
-    .xp >10+5035,1
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
-step << Rogue
-    #optional
-    #completewith Continue
-    +|cRXP_WARN_Equip the|r |T135425:0|t[Keen Throwing Knives]
-    .use 3107
-    .itemcount 3107,1
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
-    .xp <11,1
-step << Rogue
-    #optional
-    #completewith Continue
-    +|cRXP_WARN_Equip the|r |T135641:0|t[Balanced Throwing Daggers]
-    .use 2946
-    .itemcount 2946,1
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.0
-step
+    .isQuestComplete 61
+step << !Rogue
     #optional << Warlock/Mage/Warrior
     .goto StormwindClassic,57.129,57.698
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Woo Ping|r
     .trainer >>Train 1h Swords and Staves << Warlock/Mage
-    .trainer >>Train 1h Swords << Rogue
     .trainer >>Train Staves << Priest
     .trainer >>Train 2h Swords << Warrior/Paladin
     .target Woo Ping
@@ -3062,83 +3035,11 @@ step << Warlock/Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Woo Ping|r
     .trainer >>Train Staves
     .target Woo Ping
-step << Rogue
-    #ssf
-    #optional
-    .goto StormwindClassic,57.547,57.076
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
-    >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
-    .collect 851,1 -- Cutlass (1)
-    .target Gunther Weller
-    .money <0.2623
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
-    .train 2983,1 --Sprint not Trained
-step << Rogue
-    #ssf
-    #optional
-    .goto StormwindClassic,57.547,57.076
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
-    >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
-    .collect 851,1 -- Cutlass (1)
-    .target Gunther Weller
-    .money <0.2023
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
-    .train 2983,3 --Sprint Trained
-step << Rogue
-    #optional
-    #ah
-    .goto StormwindClassic,57.547,57.076
-    .goto 1453,53.615,59.767,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
-    >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
-    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
-    >>|cRXP_WARN_Make sure you save 6s for training later|r
-    .collect 851,1 -- Cutlass (1)
-    .target Gunther Weller
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
-    .train 2983,1 --Sprint not Trained
-    .money <0.06
---XX No money gate factoring cutlass in case something cheaper on AH
-step << Rogue
-    #optional
-    #ah
-    .goto StormwindClassic,57.547,57.076
-    .goto 1453,53.615,59.767,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
-    >>|cRXP_BUY_Buy a|r |T135346:0|t[Cutlass] |cRXP_BUY_from him|r
-    >>|cRXP_WARN_Alternatively, check the Auction House for something better or cheaper|r
-    .collect 851,1 -- Cutlass (1)
-    .target Gunther Weller
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
-    .train 2983,3 --Sprint Trained
---XX No money gate factoring cutlass in case something cheaper on AH
-step << Rogue
-    #optional
-    #completewith Continue
-    +|cRXP_WARN_Equip the|r |T135346:0|t[Cutlass]
-    .use 851
-    .itemcount 851,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.8
 step
     .goto StormwindClassic,52.623,65.701
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Allison|r
     .home >> Set your Hearthstone to Stormwind City
     .target Innkeeper Allison
-step << skip --Warrior
-    #season 2
-    .gossipoption 109045 >> Talk to |cRXP_FRIENDLY_Liv Bradford|r inside the Inn at the Park
-    .gossipoption 109047
-    .goto Stormwind City,22.608,64.621
-    .gossipoption 109084 >> Talk to |cRXP_ENEMY_Stuart|r, then beat him up. He will pass out at 0%
-    .goto Stormwind City,21.213,62.781
-    >>If |cRXP_ENEMY_Stuart|r is not there wait for him to respawn
-    .gossipoption 109044 >> Talk to |cRXP_FRIENDLY_Liv Bradford|r again after knocking out |cRXP_ENEMY_Stuart|r to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r]
-    .goto Stormwind City,22.608,64.621
-    .train 425447,1 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Frenzied Assault|r] |cRXP_WARN_to train|r |T236317:0|t[Frenzied Assault]
-    >>|cRXP_WARN_Note: This can be quite difficult to solo at this level. Look for some help or you'll complete it soon at level 12|r
-    .use 204716
-    .target Liv Bradford
-    .mob Stuart
 step << Human Paladin
     #xprate >1.59
     #optional
@@ -3440,18 +3341,19 @@ step << Warrior
     .train 403475 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r] |cRXP_WARN_to train|r |T135291:0|t[Devastate]
     .use 204703
     .itemcount 204703,1
-step << Rogue
-    #xprate <1.59
-    .goto 1453,74.645,52.818
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne the Night Man|r
-    >>|cRXP_WARN_Only train|r |T132147:0|t[Dual Wield] |cRXP_WARN_and|r |T132307:0|t[Sprint]
-    .train 674 >> Train |T132147:0|t[Dual Wield]
-    .train 2983 >> Train |T132307:0|t[Sprint]
-    .target Osborne the Night Man
+step << Human
+    #xprate >1.49
+    #label Continue
+    .goto StormwindClassic,74.312,47.240
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osric Strang|r
+    .turnin 6281 >> Turn in Continue to Stormwind
+    .accept 6261 >> Accept Dungar Longdrink
+    .target Osric Strang
 step << Rogue
     #xprate >1.59
     .goto 1453,74.645,52.818
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne the Night Man|r
+    >>|cRXP_WARN_Make sure you have at least 24 silver left after the training. You will need it to get a Gun in Ironforge in order to be able to use your runes|r
     .train 674 >> Train |T132147:0|t[Dual Wield]
     .train 2983 >> Train |T132307:0|t[Sprint]
     .target Osborne the Night Man
@@ -3461,41 +3363,10 @@ step << Rogue
     #xprate >1.59
     .goto 1453,74.645,52.818
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne the Night Man|r
+    >>|cRXP_WARN_Make sure you have at least 24 silver left after the training. You will need it to get a Gun in Ironforge in order to be able to use your runes|r
     .train 1766 >> Train your class spells
     .target Osborne the Night Man
     .xp <12,1
-    .xp >14,1
-step << Rogue
-    #xprate >1.59
-    #optional
-    .goto 1453,74.645,52.818
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne the Night Man|r
-    .trainer >> Train your class spells
-    .target Osborne the Night Man
-    .xp <14,1
-step << Rogue
-    #optional
-    #label StilettoDW
-    #completewith Continue
-    +|cRXP_WARN_Equip the|r |T135346:0|t[Stiletto] |cRXP_WARN_in your offhand|r
-    .use 2494
-    .itemcount 2494,1
-    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,>6.7
-    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.3
-step << Rogue
-    #optional
-    #requires StilettoDW
-    #completewith Continue
-    +|cRXP_WARN_Don't worry if you're not|r |T132147:0|t[Dual Wielding] |cRXP_WARN_right now, you'll buy a weapon later when necessary|r
-    .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<3.4
-step << Human
-    #xprate >1.49
-    #label Continue
-    .goto StormwindClassic,74.312,47.240
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osric Strang|r
-    .turnin 6281 >> Turn in Continue to Stormwind
-    .accept 6261 >> Accept Dungar Longdrink
-    .target Osric Strang
 step << Warrior
     .goto StormwindClassic,74.249,37.244
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Harry Burlguard|r
@@ -3680,17 +3551,18 @@ step << Warrior
     .train 5242 >> Train your class spells
     .target Bilban Tosslespanner
     .xp <12,1
-step << Warrior
+step << Warrior/Rogue
     #optional
     #completewith next
     .goto 1455,61.552,85.636,10,0
     .goto 1455,61.356,88.398,6 >> Enter the Timberline Arms building
-step << Warrior
+step << Warrior/Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bixi Wobblebonk|r and |cRXP_FRIENDLY_Buliwyf Stonehand|r
-    .train 2567 >> Train Thrown
+    .train 2567 >> Train Thrown << Warrior
     .goto Ironforge,62.237,89.628
     .target +Bixi Wobblebonk
-    .train 199 >> Train 2h Maces
+    .train 199 >> Train 2h Maces << Warrior
+    .train 266 >> Train Guns << Rogue
     .goto Ironforge,61.177,89.508
     .target +Buliwyf Stonehand
 step << Warrior
@@ -3702,7 +3574,24 @@ step << Warrior
     .target Brenwyn Wintersteel
     .xp <10+7310,1
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.3
---XX 420 6281, 110 1097, 900 6661, 85 IF, 65 Gate IF, 65 refuge, 65 Amberstill
+step << Rogue
+    #xprate >1.49
+    .goto Ironforge,62.375,88.679
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thalgus Thunderfist|r down stairs
+    >>|cRXP_BUY_Buy a|r |T135613:0|t[Hunter's Boomstick] and |T132384:0|t[Heavy Shot] |cRXP_BUY_from him|r
+    .collect 2511,1 --Collect Hunter's Boomstick (1)
+    .collect 2519,200 --Heavy Shot (200)
+    .money <0.14
+    .target Thalgus Thunderfist
+step << Rogue
+    #xprate >1.49
+    .goto Ironforge,62.375,88.679
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thalgus Thunderfist|r down stairs
+    >>|cRXP_BUY_Buy a|r |T135611:0|t[Ornate Blunderbuss] and |T132384:0|t[Heavy Shot] |cRXP_BUY_from him|r
+    .collect 2509,1 --Collect Hunter's Boomstick (1)
+    .collect 2519,200 --Heavy Shot (200)
+    .money >0.14
+    .target Thalgus Thunderfist
 step << Warrior
     #xprate >1.49
     .goto Ironforge,62.375,88.679

@@ -829,12 +829,12 @@ s["ROGUE"] = {
     },
     [12] = {
         3128, -- parry
-        1766, -- kick
-        6770, -- sap
-        5171 -- slice and dice
+        1766 -- kick
     },
     [14] = {
-        703 -- garrote
+        703, -- garrote
+        6770, -- sap
+        5171 -- slice and dice
     },
     [16] = {
         5167, -- pick pocket
