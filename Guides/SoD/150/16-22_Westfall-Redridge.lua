@@ -116,7 +116,7 @@ step << Warlock
     .target Gakin the Darkbinder
     .goto StormwindClassic,25.25,78.59
     .turnin 1689 >> Turn in The Binding
-step
+step << Priest/Mage/Warlock
     .goto StormwindClassic,42.65,67.16,14,0
     .goto StormwindClassic,42.88,65.11
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ardwyn Cailen|r inside
@@ -425,9 +425,9 @@ step
     .goto Westfall,53.84,32.00,60,0
     .goto Westfall,44.47,35.35,60,0
     .goto Westfall,50.80,21.76,60,0
-    >>Kill |cRXP_ENEMY_Harvest Watchers|r. Loot them for their |cRXP_LOOT_Flasks of Oil|r
+    >>Kill |cRXP_ENEMY_Harvest Watchers|r
+    >>You can stay on the Saldean field. They will keep respawning if all are dead
     .complete 9,1 --Harvest Watcher (20)
-    .collect 814,5,103,1 --Flask of Oil (5)
     .mob Harvest Watcher
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Saldean|r
@@ -449,7 +449,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #group RXP SOD TEST
 #name 17-22 Redridge SoD
-#next 22-24 Wetlands SoD
+#next 22-24 Wetlands SoD Two
 #defaultfor !NightElf
 
 
@@ -680,7 +680,7 @@ step
     .accept 121 >> Accept Messenger to Stormwind
     .target General Marcus Jonathan
     .isQuestTurnedIn 118
-step
+step << Rogue
 #label db1
     .goto Stormwind City,75.78,59.84
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Mathias Shaw|r
@@ -736,8 +736,12 @@ step << Warrior/Paladin
     .goto StormwindClassic,57.54,57.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
     >>|cRXP_WARN_Buy a|r |T135280:0|t[Dacian Falx] |cRXP_WARN_if you have enough money. Equip it at 21|r
+    >>|cRXP_WARN_If you were using maces up to this point you can buy a|r |T133044:0|t[Maul] |cRXP_WARN_to avoid weapon skill issues for now|r
     >>|cRXP_WARN_Buy something from the Auction House if there's something cheaper/better|r
-    .collect 922,1 --Dacian Falx (1)
+    .collect 922,1 --Heavy Spiked Mace (1)
+    .collect 924,1 --Ironwood Maul (1)
+    .itemcount 4778,<1 --Heavy Spiked Mace (<1)
+    .itemcount 4777,<1 --Ironwood Maul (<1)
     .target Gunther Weller
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<16.0
 step << Warlock/Priest
@@ -1342,4 +1346,56 @@ step << Mage
     >>Talk to |cRXP_FRIENDLY_Milstaff|r
     .train 3562 >> Train |T135757:0|t[Teleport: Ironforge]
     .target Milstaff Stormeye
+step
+    #completewith next
+    .goto Dun Morogh,53.48,37.50,30,0
+    .goto Dun Morogh,54.04,38.60,30,0
+    .goto Dun Morogh,59.43,42.85,150 >> Travel to the skip spot. Hug the left side of the mountain en route
+step
+    .goto Dun Morogh,60.18,43.01,12,0
+    .goto Dun Morogh,60.42,43.75,12,0
+    .goto Dun Morogh,60.71,44.18,4,0
+    .goto Dun Morogh,60.95,44.16,6,0
+    .goto Dun Morogh,61.45,41.68,10,0
+    .goto Dun Morogh,61.76,41.50,4,0
+    .goto Dun Morogh,61.84,41.63,4,0
+    .goto Dun Morogh,62.01,41.30,8,0
+    .goto Dun Morogh,61.79,39.71,15,0
+    .goto Dun Morogh,61.48,36.85,12,0
+    .goto Dun Morogh,61.46,32.76,15,0
+    .goto Dun Morogh,61.38,28.92,30,0
+    .goto Dun Morogh,60.91,22.82,30,0
+    .goto Dun Morogh,60.51,16.20,5,0
+    .goto Dun Morogh,60.52,15.81,5,0
+    .goto Dun Morogh,60.74,15.16,15,0
+    .goto Dun Morogh,60.41,14.35,8,0
+    .goto Dun Morogh,60.64,13.89,6,0
+    .goto Dun Morogh,61.40,13.27,10,0
+    .goto Dun Morogh,61.52,12.58,8,0
+    >>|cRXP_WARN_Do the Deathless Dun Morogh -> Wetlands skip|r
+    >>|cRXP_WARN_Eat to full after each fall if you don't feel confident|r
+    .link https://youtu.be/QcEUvwu49KI?t=73 >> |cRXP_WARN_CLICK HERE for reference (it is HEAVILY advised you do so)|r
+    .goto Dun Morogh,60.65,11.38,20 >>Carefully drop down the mountain side
+    .isQuestAvailable 983
+step
+    .goto Dun Morogh,60.80,10.33,10,0
+    .goto Dun Morogh,60.61,9.73,8,0
+    .goto Wetlands,18.79,72.53,12,0
+    .goto Wetlands,18.70,70.97,12,0
+    .goto Wetlands,18.50,69.39,12,0
+    .goto Wetlands,17.62,68.35,15,0
+    .goto Wetlands,17.00,67.68,12,0
+    .goto Wetlands,15.96,67.15,12,0
+    .goto Wetlands,15.07,66.41,20,0
+    .goto Wetlands,15.31,65.47,20,0
+    .goto Wetlands,15.10,63.72,12,0
+    >>|cRXP_WARN_Do the Deathless Dun Morogh -> Wetlands skip|r
+    >>|cRXP_WARN_Be careful of |cRXP_ENEMY_Sludginn|r (rare) before you drop down toward the coast (if he's up)|r
+    >>|cRXP_WARN_Be careful of the |cRXP_ENEMY_Bluegill Raiders|r to the west when you reach the sea|r
+    .link https://youtu.be/QcEUvwu49KI?t=336 >> |cRXP_WARN_CLICK HERE for reference (it is HEAVILY advised you do so)|r
+    .goto Wetlands,12.69,60.97,15 >> Travel to Menethil Harbor
+    .mob Young Wetlands Crocolisk
+    .mob Bluegill Raider
+    .unitscan Sludginn
+    .isQuestAvailable 983
 ]])

@@ -396,8 +396,7 @@ step
     #label lochstart1
     #optional
     .goto 1432,34.405,48.276
-    .deathskip >> Die and respawn at Thelsamar << !Warlock
-    .subzone 144 >> Travel to Thelsamar << Warlock
+    .subzone 144 >> Travel to Thelsamar
 step
     #completewith lochpatrol3
     .abandon 1338 >> Abandon the quest |cRXP_FRIENDLY_Stormpike's Task|r if you have it, otherwise you won't be able to accept a quest later
@@ -1225,6 +1224,21 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r
     .turnin 307 >> Turn in Filthy Paws
     .target Mountaineer Stormpike
+step << Paladin/Warrior
+    #label BuyMace
+    #optional
+    #completewith RatEar
+    .goto Loch Modan,42.867,9.885
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nillen Andemar|r
+    >>|cRXP_BUY_Buy the|r |T133476:0|t[Heavy Spiked Mace] |cRXP_BUY_from him (if it's up)|r
+    >>|cRXP_WARN_DON'T BUY THE|r |T133053:0|t[Ironwood Maul] |cRXP_WARN_if|r |T133476:0|t[Heavy Spiked Mace] |cRXP_WARN_is not there. You'll get a better weapon in stormwind shortly|r
+    >>|cRXP_WARN_If you can't afford this, but you're not far off then grind money from the nearby |cRXP_ENEMY_Tunnel Rats|r until you have enough|r
+    >>|cRXP_WARN_Do this quickly as another player may purchase it before you do|r
+    >>|cRXP_WARN_If you don't wish to do this, skip this step|r
+    .collect 4778,1,307,1 --Heavy Spiked Mace (1)
+    .target Nillen Andemar
+    .itemcount 4778,<1 --Heavy Spiked Mace (<1)
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<12.5
 step
     #label RatEar
     .goto Loch Modan,25.05,30.19,0
