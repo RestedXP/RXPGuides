@@ -1646,13 +1646,15 @@ step
     .zone Feralas >>Travel to Feralas
 step
     .goto Feralas,75,35.2,20 >>Head towards the Gordunni Outpost cave north of Camp Mojache
+    .train 427081,1
 step
     .goto Feralas,74.8,24.9
     >>Enter the cave, look for Ohk'zi a lvl 43 elite Ogre. Kill him for |T134419:0|t[|cRXP_FRIENDLY_Rune of the Unbridled|r]
     .collect 220682,1 -- Rune of Unbridled 1/1
     .unitscan Ohk'zi
+    .train 427081,1
 step
-    .train 426940 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Unbridled|r] |cRXP_WARN_to learn|r |T132352:0|t[Rampage]
+    .train 427081 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Unbridled|r] |cRXP_WARN_to learn|r |T132352:0|t[Rampage]
     .use 220682
 
 ]])
@@ -1680,14 +1682,17 @@ step
     .mob Witherbark Zealot
     .mob Witherbark Hideskinner
     .mob Witherbark Venomblood
+    .train 427084,1
 step
     .equip 16,220912 >>Equip the |T133054:0|t|cRXP_LOOT_Geode Hammer|r as your mainhand weapon. Continue fighting mobs untill the hammer breaks and turns into a |T133054:0|t|cRXP_LOOT_Broken Geode Hammer|r
     .collect 220914,1 --Broken Geode Hammer
+    .train 427084,1
 step
     >>Right click on the |T133054:0|t|cRXP_LOOT_Broken Geode Hammer|r to loot it for |T134419:0|t[|cRXP_FRIENDLY_Rune of the Demolition|r]
     .collect 220913,1 --Rune of the Demolition
+    .train 427084,1
 step
-    .train 427065 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Demolition|r] |cRXP_WARN_to learn|r |T132364:0|t[Wrecking Crew]
+    .train 427084 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Demolition|r] |cRXP_WARN_to learn|r |T132364:0|t[Wrecking Crew]
     .use 220913
 ]])
 
@@ -1713,28 +1718,36 @@ step
 step
     #label SlagPits
     .goto 1427/0,-1247.100,-6906.900,10 >>Enter the Slag Pits through the cave here
+    .train 427076,1
 step
     .goto 1427/0,-1257.200,-6764.300
     >>Follow the curved path forward after you enter the cave. The |cRXP_LOOT_Right Arm of the Obliterator|r is laying on the ground next to a pile of boxes and barrels
     .collect 221256,1 --Right Arm of the Obliterator 1/1
+    .train 427076,1
 step
     .goto 1427/0,-1161.500,-6756.500,10 >>Run towards and through the gate
+    .train 427076,1
 step
     .goto 1427/0,-1303.200,-6461.500,15 >>Keep going along the path forward. In the big room with a massive golem on the floor take the ramp to the upper level of the Pits
+    .train 427076,1
 step
     .goto 1427/0,-1301.900,-6584.700
     >>Loot the |cRXP_LOOT_Right Foot of the Obliterator|r laying on the ground
     .collect 221258,1 --Right Foot of the Obliterator
+    .train 427076,1
 step
     .goto 1427/0,-1387.200,-6722.700,10 >>Head towards the southern end of the bridge
+    .train 427076,1
 step
     .goto 1427/0,-1428.600,-6656.800
     >>Jump off the bridge towards the Incendosaur cave. Loot the |cRXP_LOOT_Left Arm of the Obliterator|r from the floor next to the lava pool
     .collect 221257,1 --Left Arm of the Obliterator
+    .train 427076,1
 step
     .goto 1427/0,-1271.900,-6553.500
     >>Go to the very back of the Incendosaur cave. Loot the |cRXP_LOOT_Left Foot of the Obliterator|r from the ground there
     .collect 221259,1
+    .train 427076,1
 step
 	#completewith next
 	+Logout skip by jumping on the rock behind the foot and logging out
@@ -1746,13 +1759,15 @@ step
     .goto 1427/0,-1791.400,-6774.900
     .cast 446363 >>Go to the Head of the Obliterator marked on your map. Use the parts you collected to summon |cRXP_ENEMY_Iodax the Obliterator|r a lvl 50 elite giant
     .unitscan Iodax the Obliterator
+    .train 427076,1
 step
     .goto 1427/0,-1791.400,-6774.900
     >>Kill |cRXP_ENEMY_Iodax the Obliterator|r and loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of the Bloodthirsty|r]
     .collect 221267,1 --Rune of the Bloodthirsty
     .unitscan Iodax the Obliterator
+    .train 427076,1
 step
-    .train 426953 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Bloodthirsty|r] |cRXP_WARN_to learn|r |T236276:0|t[Taste for Blood]
+    .train 427076 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Bloodthirsty|r] |cRXP_WARN_to learn|r |T236276:0|t[Taste for Blood]
     .use 221267
     .itemcount 221267,1
 ]])
@@ -1770,13 +1785,15 @@ step
     .zone Feralas >>Travel to Feralas
 step
     .goto Feralas,77.6,62.0,30 >>Head towards the Writhing Deep, a silithid hive in Feralas. |cRXP_WARN_You will need to kill a hard hitting lvl 46 elite mob. Look for a group if you're not level 50|r
+    .train 427078,1
 step
     .goto Feralas,77.6,62.0
     >>Look for the |cRXP_ENEMY_Tyrant of the Hive|r, kill him and loot for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Watchman|r]
     .collect 221473,1 --Rune of the watchman
     .unitscan Tyrant of the Hive
+    .train 427078,1
 step
-    .train 426972 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Watchman|r] |cRXP_WARN_to learn|r |T236318:0|t[Vigilance]
+    .train 427078 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Watchman|r] |cRXP_WARN_to learn|r |T236318:0|t[Vigilance]
     .use 221473
 ]])
 RXPGuides.RegisterGuide([[
@@ -1805,6 +1822,7 @@ step
     .zone Azshara >>Travel to Azshara
 step
     .goto Azshara,27,61,40 >>Look for a path leading up the mountain. It's marked with horde banners
+    .train 416002,1
 step
     .goto Azshara,25.4,66.2
     >>Talk to |cRXP_FRIENDLY_Kajind|r atop the mountain path
@@ -1841,6 +1859,6 @@ step
     .turnin 81877 >>Turn in Fight Night
     .target Fizbuz Mithril
 step
-    .train 412513 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Gladiator|r] |cRXP_WARN_to learn|r |T236541:0|t[Gladiator Stance]
+    .train 416002 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Gladiator|r] |cRXP_WARN_to learn|r |T236541:0|t[Gladiator Stance]
     .use 220164
 ]])
