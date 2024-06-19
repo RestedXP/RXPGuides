@@ -562,6 +562,7 @@ step
     .goto Elwynn Forest,48.171,42.943
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r outside
     .accept 18 >> Accept Brotherhood of Thieves
+    .accept 3903 >> Accept Milly Osworth << Rogue
     .target Deputy Willem
 step
     #xprate >1.59
@@ -712,6 +713,12 @@ step << Rogue
     .itemcount 2224,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<2.0
 step << Rogue
+    .goto Elwynn Forest,50.8,39.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milly Osworth|r
+    >>|cRXP_WARN_Don't accept the followup quest|r
+    .turnin 3903 >> Turn in Milly Osworth
+    .target Milly Osworth
+step << Rogue
     #xprate >1.59
     #season 2
     #requires Shadowstrike2
@@ -763,6 +770,12 @@ step
     #completewith next
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .target Spirit Healer
+step << Rogue
+    .goto Elwynn Forest,48.17,42.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Willem|r
+    >>|cRXP_WARN_Equip the chest you get as reward from this quest. You will use it to engrave a rune on later|r
+    .turnin 6,2 >> Turn in Bounty on Garrick Padfoot
+    .target Deputy Willem
 step << Paladin
     #xprate >1.59
     #season 2
@@ -1415,14 +1428,25 @@ step
     >>Kill |cRXP_ENEMY_Stonetusk Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
     .collect 769,4,86,1 --Chunk of Boar Meat (4)
     .mob Stonetusk Boar
+step << Warrior
+    #season 2
+    #sticky
+    #completewith next
+    >>Be on the lookout for |cRXP_FRIENDLY_Wandering Swordsman|r. If you find him you can challenge him to a duel which will award you with the rune of |T132334:0|t[|cRXP_FRIENDLY_Blood Frenzy|r]
+    >>|cRXP_WARN_He has multiple spawn points and can only be present in one of them at the time|r  
+    >>|cRXP_WARN_You will most likely be unable to solo him at this level, skip this step if there's no one around to help you, you can come back after you get level 10 and check if he's still there|r
+    .collect 204441,1 --Rune of Blood Frenzy (1)
+    .unitscan Wandering Swordsman
+    .train 412507,1
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Auntie" Bernice Stonefield|r and |cRXP_FRIENDLY_Ma Stonefield|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Auntie" Bernice Stonefield|r and |cRXP_FRIENDLY_Ma Stonefield|r << Rogue
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Auntie" Bernice Stonefield|r << !Rogue
     .accept 85 >> Accept Lost Necklace
     .goto Elwynn Forest,34.486,84.253
     .target +"Auntie" Bernice Stonefield
     .accept 88 >> Accept Princess Must Die! << Rogue
-	.goto Elwynn Forest,34.660,84.482
-    .target +Ma Stonefield
+	.goto Elwynn Forest,34.660,84.482 << Rogue
+    .target +Ma Stonefield << Rogue
 step << Warrior/Paladin/Rogue
     #optional
     #label RoughStone1
@@ -1707,8 +1731,15 @@ step
     .mob Kobold Tunneler
     .mob Kobold Miner
 step << Rogue
-    .xp 9+2000 >> Grind untill you're 2000 xp into level 9. 
-    >> If you're not close you can turn in the goldtooth quest but grinding mobs is more efficient
+    #loop
+    .goto Elwynn Forest,37.81,85.40,0
+    .waypoint Elwynn Forest,39.14,82.87,35,0
+    .waypoint Elwynn Forest,39.16,84.79,35,0
+    .waypoint Elwynn Forest,37.81,85.40,35,0
+    .waypoint Elwynn Forest,36.76,83.19,35,0
+    .waypoint Elwynn Forest,38.02,81.70,35,0
+    .xp 9+2000 >> Grind kobolds untill you're 2000 xp into level 9. 
+    >> |cRXP_WARN_If you're not close you can turn in the goldtooth quest but grinding mobs is more efficient|r
 step << Warrior
     #season 2
     #sticky
@@ -2563,6 +2594,15 @@ step << !Warlock
     #completewith PrincessFinish
     #optional
     .abandon 59 >> Abandon Cloth and Leather Armor
+step << Warrior
+    #season 2
+    #sticky
+    #completewith GoldtoothEnd
+    >>Be on the lookout for |cRXP_FRIENDLY_Wandering Swordsman|r while running. If you find him you can challenge him to a duel which will award you with the rune of |T132334:0|t[|cRXP_FRIENDLY_Blood Frenzy|r]
+    >>|cRXP_WARN_He has multiple spawn points and can only be present in one of them at the time. Skip this step if he's not there|r  
+    .collect 204441,1 --Rune of Blood Frenzy (1)
+    .unitscan Wandering Swordsman
+    .train 412507,1
 step
     #optional
     #requires GoldshireVendor
@@ -2576,6 +2616,7 @@ step
     .turnin 114 >> Turn in The Escape
     .target Maybell Maclure
 step
+    #label GoldtoothEnd
     .goto Elwynn Forest,34.486,84.253
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Auntie" Bernice Stonefield|r
     .turnin 87 >> Turn in Goldtooth
@@ -2585,6 +2626,14 @@ step
     #optional
     #completewith next
     .abandon 88 >> Abandon Princess Must Die! since you haven't completed the quest
+step << Warrior
+    #season 2
+    .goto Elwynn Forest,30.0,73.4
+    >>Checked the marked spot for the |cRXP_FRIENDLY_Wandering Swordsman|r. If he's there challenge him to a duel which will award you with the rune of |T132334:0|t[|cRXP_FRIENDLY_Blood Frenzy|r]
+    >>|cRXP_WARN_He has multiple spawn points and can only be present in one of them at the time. Skip this step if he's not there|r  
+    .collect 204441,1 --Rune of Blood Frenzy (1)
+    .unitscan Wandering Swordsman
+    .train 412507,1
 step
     #optional
     #completewith Garrison
@@ -2788,6 +2837,22 @@ step << Warrior
     .turnin 239 >> Turn in Westbrook Garrison Needs Help!
     .target Deputy Rainer
 step << Warrior
+    #season 2
+    .goto Elwynn Forest,25.3,70.2
+    >>Checked the marked spot for the |cRXP_FRIENDLY_Wandering Swordsman|r. If he's there challenge him to a duel which will award you with the rune of |T132334:0|t[|cRXP_FRIENDLY_Blood Frenzy|r]
+    >>|cRXP_WARN_He has multiple spawn points and can only be present in one of them at the time. Skip this step if he's not there|r  
+    .collect 204441,1 --Rune of Blood Frenzy (1)
+    .unitscan Wandering Swordsman
+    .train 412507,1
+step << Warrior
+    #season 2
+    .goto Elwynn Forest,22.3,73.3
+    >>Checked the marked spot for the |cRXP_FRIENDLY_Wandering Swordsman|r. If he's there challenge him to a duel which will award you with the rune of |T132334:0|t[|cRXP_FRIENDLY_Blood Frenzy|r]
+    >>|cRXP_WARN_He has multiple spawn points and can only be present in one of them at the time. Skip this step if he's not there|r  
+    .collect 204441,1 --Rune of Blood Frenzy (1)
+    .unitscan Wandering Swordsman
+    .train 412507,1
+step << Warrior
     #xprate >1.49
     #season 2
     .goto Elwynn Forest,27.0,86.7,70,0
@@ -2957,7 +3022,7 @@ step
 step
     .goto Westfall,52.86,53.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Heather|r
-    >>|cRXP_BUY_Buy up to 20|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_from her|r
+    >>|cRXP_BUY_Buy up to 20|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_from her. They are very cheap level 5 food|r
     .collect 4592,20,314,1 --Longjaw Mud Snapper (20)
 	.target Innkeeper Heather
 step << Human
@@ -3592,6 +3657,7 @@ step << Rogue
     .collect 2519,200 --Heavy Shot (200)
     .money >0.14
     .target Thalgus Thunderfist
+    .itemcount 2511,<1
 step << Warrior
     #xprate >1.49
     .goto Ironforge,62.375,88.679

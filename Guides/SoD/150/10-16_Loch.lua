@@ -75,11 +75,6 @@ step
     #completewith next
     .goto Dun Morogh,68.379,54.492,60 >> Travel to Gol'Bolar Quarry
     .subzoneskip 134
-step
-    .goto Dun Morogh,68.379,54.492
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cook Ghilm|r
-    .train 2550 >> Train |T133971:0|t[Cooking]
-    .target Cook Ghilm
 step << !Hunter
     #optional
     #completewith next
@@ -89,6 +84,12 @@ step << !Hunter
     .vendor 1237 >> |cRXP_BUY_Buy up to 5|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_and|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him if needed|r << !Warrior !Rogue
     .target Kazan Mogosh
 --XX Mud slappers instead
+step << Warrior/Paladin/Rogue
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dank Drizzlecut|r
+    .goto Dun Morogh,69.3,55.5
+    .train 2581 >>Train Mining, cast Find Minerals
+    .target Dank Drizzlecut
+    .skill mining,1
 step
     #label QuarryStart
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r and |cRXP_FRIENDLY_Foreman Stonebrow|r
@@ -98,7 +99,7 @@ step
     .goto Dun Morogh,69.084,56.330
     .target Senator Mehr Stonehallow
     .target Foreman Stonebrow
-step << Rogue
+step << !Human Rogue
     #season 2
     #loop
     .goto 1426,70.073,57.030,0
@@ -116,7 +117,7 @@ step << Rogue
     .mob Rockjaw Skullthumper
     .mob Rockjaw Bonesnapper
     .train 398196,1
-step << Rogue
+step << !Human Rogue
     #season 2
     .goto Dun Morogh,77.86,61.66
     >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Dark Iron Spies|r. Loot them for |T134331:0|t[Blackrat's Note] and the |T134327:0|t[|cRXP_LOOT_Bottom-Left Map Piece]|r
@@ -126,7 +127,7 @@ step << Rogue
     .mob Dark Iron Spy
     .train 400094,1
     .train 398196,1
-step << Rogue
+step <<< !Human Rogue
     #season 2
     #optional
     .goto Dun Morogh,77.86,61.66
@@ -135,7 +136,7 @@ step << Rogue
     .collect 208205,1
     .mob Dark Iron Spy
     .train 400094,1
-step << Rogue
+step <<< !Human Rogue
     #season 2
     #optional
     .goto Dun Morogh,77.86,61.66
@@ -144,7 +145,7 @@ step << Rogue
     .collect 208219,1 -- Bottom-Left Map Piece (1)
     .mob Dark Iron Spy
     .train 398196,1
-step << Rogue
+step <<< !Human Rogue
     #season 2
     .cast 418600 >>|cRXP_WARN_Use any of the|r |T134327:0|t[|cRXP_LOOT_Map Pieces]|r |cRXP_WARN_to combine them into the|r |T134269:0|t[|cRXP_LOOT_Dun Morogh Treasure Map|r]
     .collect 208220,1
@@ -165,7 +166,7 @@ step << Rogue
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .target Spirit Healer
     .train 398196,1
-step << Rogue
+step <<< !Human Rogue
     #season 2
     #completewith next
     .goto Dun Morogh,46.985,43.632
@@ -173,24 +174,24 @@ step << Rogue
     .use 208220
     .itemcount 208220,1
     .train 398196,1
-step << Rogue
+step <<< !Human Rogue
     #season 2
     >>Open the |cRXP_PICK_Buried Treasure|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Draw|r]
     .collect 203991,1 -- Rune of Quick Draw (1)
     .train 398196,1
-step << Rogue
+step << !Human Rogue
     #season 2
     .train 400095 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Draw|r] |cRXP_WARN_to train|r |T134536:0|t[Quick Draw]
     .use 203991
     .itemcount 203991,1
-step << Rogue
+step << !Human Rogue
     #season 2
     .goto Dun Morogh,57.256,45.227
     >>Talk to |cRXP_FRIENDLY_Blackrat|r to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r]
     .collect 203990,1
     .skipgossip
     .train 400094,1
-step << Rogue
+step << !Human Rogue
     #season 2
     .cast 402265 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r]
     .use 203990 -- Rune of Mutilation (1)
