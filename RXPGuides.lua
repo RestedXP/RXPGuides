@@ -10,6 +10,11 @@ local RegisterMessage_OLD = addon.RegisterMessage
 local rand, tinsert, select = math.random, table.insert, _G.select
 local IsAddOnLoadOnDemand = C_AddOns and C_AddOns.IsAddOnLoadOnDemand or _G.IsAddOnLoadOnDemand
 local GetSpellInfo = C_Spell and C_Spell.GetSpellInfo or _G.GetSpellInfo
+local GetSpellTexture = C_Spell and C_Spell.GetSpellTexture or _G.GetSpellTexture
+local GetSpellSubtext = C_Spell and C_Spell.GetSpellSubtext or _G.GetSpellSubtext
+local IsCurrentSpell = C_Spell and C_Spell.IsCurrentSpell or _G.IsCurrentSpell
+local IsSpellKnown = C_Spell and C_Spell.IsSpellKnown or _G.IsSpellKnown
+local IsPlayerSpell = C_Spell and C_Spell.IsPlayerSpell or _G.IsPlayerSpell
 local messageList = {}
 
 local function MessageHandler(message,...)
@@ -105,6 +110,9 @@ local maxLevel
 if gameVersion > 50000 then
     addon.game = "RETAIL"
     maxLevel = 70
+    if gameVersion > 120000 then
+        maxLevel = 80
+    end
 elseif gameVersion > 40000 then
     addon.game = "CATA"
     maxLevel = 85
@@ -1596,8 +1604,8 @@ addon.stepLogic = {}
 
 function addon.stepLogic.AldorScryerCheck(faction)
     if addon.game == "CLASSIC" then return true end
-    local _, _, _, _, _, aldorRep = GetFactionInfoByID(932)
-    local _, _, _, _, _, scryerRep = GetFactionInfoByID(934)
+    local _, _, _, _, _, aldorRep = addon.GetFactionInfoByID(932)
+    local _, _, _, _, _, scryerRep = addon.GetFactionInfoByID(934)
 
     if aldorRep and scryerRep then
         if type(faction) == "table" then

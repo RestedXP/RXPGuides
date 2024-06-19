@@ -3184,7 +3184,7 @@ function addon.settings.ToggleActive()
 end
 
 local function CheckBuff(buffId)
-    local UnitBuff = UnitBuff
+    local UnitBuff = _G.UnitBuff or addon.UnitBuff
     local id = 0
     local i = 1
     while id do

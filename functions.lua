@@ -7,6 +7,53 @@ local LoadAddOn = C_AddOns and C_AddOns.LoadAddOn or _G.LoadAddOn
 local IsAddOnLoaded = C_AddOns and C_AddOns.IsAddOnLoaded or _G.IsAddOnLoaded
 local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
 local GetSpellInfo = C_Spell and C_Spell.GetSpellInfo or _G.GetSpellInfo
+local GetSpellTexture = C_Spell and C_Spell.GetSpellTexture or _G.GetSpellTexture
+local GetSpellSubtext = C_Spell and C_Spell.GetSpellSubtext or _G.GetSpellSubtext
+local IsCurrentSpell = C_Spell and C_Spell.IsCurrentSpell or _G.IsCurrentSpell
+local IsSpellKnown = C_Spell and C_Spell.IsSpellKnown or _G.IsSpellKnown
+local IsPlayerSpell = C_Spell and C_Spell.IsPlayerSpell or _G.IsPlayerSpell
+
+addon.GetFactionInfoByID = _G.GetFactionInfoByID or function(factionID)
+    local name, description, standingID, barMin, barMax, barValue
+
+    local factionData = C_Reputation.GetFactionDataByID(factionID);
+    name = factionData.name
+    standingID = factionData.reaction
+    barValue = factionData.currentStanding
+    barMin = factionData.currentReactionThreshold
+    barMax = factionData.nextReactionThreshold
+
+    return name, description, standingID, barMin, barMax, barValue
+end
+
+if not (UnitAura and UnitBuff and UnitDebuff) then
+    UnitAura = function(unitToken, index, filter)
+        local auraData = C_UnitAuras.GetAuraDataByIndex(unitToken, index, filter);
+        if not auraData then
+            return nil;
+        end
+
+        return AuraUtil.UnpackAuraData(auraData);
+    end
+    UnitBuff = function(unitToken, index, filter)
+        local auraData = C_UnitAuras.GetBuffDataByIndex(unitToken, index, filter);
+        if not auraData then
+            return nil;
+        end
+
+        return AuraUtil.UnpackAuraData(auraData);
+    end
+    UnitDebuff = function(unitToken, index, filter)
+        local auraData = C_UnitAuras.GetDebuffDataByIndex(unitToken, index, filter);
+        if not auraData then
+            return nil;
+        end
+
+        return AuraUtil.UnpackAuraData(auraData);
+    end
+    addon.UnitBuff = UnitBuff
+end
+
 local GetItemCount = C_Item and C_Item.GetItemCount or _G.GetItemCount
 
 --local RXPGuides = addon.RXPGuides
@@ -2794,7 +2841,7 @@ function addon.functions.reputation(self, ...)
             local standinglabel = getglobal(
                                       "FACTION_STANDING_LABEL" ..
                                           element.standing)
-            local factionname = GetFactionInfoByID(element.faction) or ""
+            local factionname = addon.GetFactionInfoByID(element.faction) or ""
             if element.repValue and element.repValue ~= 0 then
                 if element.repValue < 0 then
                     element.text = fmt(
@@ -2823,7 +2870,7 @@ function addon.functions.reputation(self, ...)
     local element = self.element
     local step = element.step
     local _, _, standing, bottomValue, topValue, earnedValue =
-        GetFactionInfoByID(element.faction)
+        addon.GetFactionInfoByID(element.faction)
     local relativeValue = earnedValue
     local replength = topValue - bottomValue
     if relativeValue < 0 then
@@ -5108,6 +5155,17 @@ end
 
 function addon.functions.ironchain()
     local id
+    local UnitAura = _G.UnitAura
+    if not UnitAura then
+        UnitAura = function(unitToken, index, filter)
+            local auraData = C_UnitAuras.GetAuraDataByIndex(unitToken, index, filter);
+            if not auraData then
+                return nil;
+            end
+
+            return AuraUtil.UnpackAuraData(auraData);
+	    end
+    end
     for i = 1, 5 do
         _, id = UnitAura("vehicle", i)
         if id == 133273 then return true end
