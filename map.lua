@@ -1041,10 +1041,15 @@ local corpseWP = {title = "Corpse", generated = 1, wpHash = 0}
 local function updateArrow()
 
     local lowPrioWPs
+    local loop = {}
     local function ProcessWaypoint(element, lowPrio, isComplete)
         if element.lowPrio and not lowPrio then
             table.insert(lowPrioWPs, element)
             return
+        end
+        local step = element.step
+        if step.loop then
+            loop[step] = true
         end
         local generated = element.generated or 0
         if (bit.band(generated,0x1) == 0x1) or (element.arrow and element.step.active and
@@ -1079,17 +1084,37 @@ local function updateArrow()
             return
         end
     end
-    lowPrioWPs = {}
-    for i, element in ipairs(addon.activeWaypoints) do
-        if ProcessWaypoint(element) then
-            return
+
+    local function SetArrowWP()
+        lowPrioWPs = {}
+        for i, element in ipairs(addon.activeWaypoints) do
+            if ProcessWaypoint(element) then
+                return true
+            end
+        end
+
+        for i, element in ipairs(lowPrioWPs) do
+            if ProcessWaypoint(element, true) then
+                return true
+            end
         end
     end
 
-    for i, element in ipairs(lowPrioWPs) do
-        if ProcessWaypoint(element, true) then
-            return
+    if SetArrowWP() then
+        return
+    end
+
+    for step in pairs(loop) do
+        for _,element in ipairs(step.elements) do
+            if element.arrow and element.wpHash ~= element.wpHash and element.textOnly then
+                element.skip = false
+                RXPCData.completedWaypoints[step.index or "tip"][element.wpHash] = false
+            end
         end
+    end
+
+    if SetArrowWP() then
+        return
     end
 
     af:Hide()
@@ -1188,9 +1213,9 @@ function addon.UpdateGotoSteps()
                 end
             end
             --A = step
-            --print('ok1',step.index)
+            --print('ok1',hasValidWPs)
             if not hasValidWPs then
-                --print('ok2',step.index)
+                --print('noValidWPs',step.index)
                 for _,wp in pairs(step.elements) do
                     if wp.arrow and wp.wpHash ~= element.wpHash and wp.textOnly then
                         wp.skip = false
@@ -1257,6 +1282,7 @@ function addon.UpdateGotoSteps()
                     end
                 end
             end
+            --
         end
     end
 
