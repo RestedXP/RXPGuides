@@ -1383,7 +1383,11 @@ function addon.ProcessGuideTable(guide)
     local currentGuide = {}
 
     for k, v in pairs(guide) do
-        currentGuide[k] = v
+        if type(v) ~= "table" then
+            currentGuide[k] = v
+        elseif k ~= "steps" and k ~= "tips" then
+            currentGuide[k] = CopyTable(v)
+        end
     end
 
     currentGuide.steps = {}
@@ -1429,17 +1433,19 @@ function addon.ProcessGuideTable(guide)
                 startAt = nil
             end
             if isShown and not startAt then
-                if step.tip then
-                    tinsert(currentGuide.tips,step)
-                    lastTip = step
-                    step.title = step.title or "Tip"
-                else
-                    tinsert(currentGuide.steps, step)
-                    step.tipWindow = lastTip
-                end
-                if step.elements then
-                    for _,element in pairs(step.elements) do
-                        addon.settings.ReplaceColors(element)
+                if not(step.include and step.elements and #step.elements == 0 and not step.requires) then
+                    if step.tip then
+                        tinsert(currentGuide.tips,step)
+                        lastTip = step
+                        step.title = step.title or "Tip"
+                    else
+                        tinsert(currentGuide.steps, step)
+                        step.tipWindow = lastTip
+                    end
+                    if step.elements then
+                        for _,element in pairs(step.elements) do
+                            addon.settings.ReplaceColors(element)
+                        end
                     end
                 end
                 IncludeGuide(step)
