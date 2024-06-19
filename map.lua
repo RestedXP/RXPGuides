@@ -97,8 +97,16 @@ function addon.UpdateArrow(self)
             local step = element.step
             local title = step and (step.title or step.index and ("Step "..step.index))
             if element.title then
+                for RXP_ in string.gmatch(element.title, "RXP_[A-Z]+_") do
+                    element.title = element.title:gsub(RXP_, addon.guideTextColors[RXP_] or
+                                                 addon.guideTextColors.default["error"])
+                end
+                --self.text:SetText(string.format("%s\n(%dyd)",element.title, dist))
                 self.text:SetText(string.format("%s\n(%dyd)",element.title, dist))
             elseif title then
+                for RXP_ in string.gmatch(title, "RXP_[A-Z]+_") do
+                    title = title:gsub(RXP_, addon.guideTextColors[RXP_] or addon.guideTextColors.default["error"])
+                end
                 self.text:SetText(string.format("%s\n(%dyd)", title, dist))
             else
                 self.text:SetText(string.format("(%dyd)", dist))
@@ -191,11 +199,162 @@ end
 -- The Frame Pool that will manage pins on the world and mini map
 -- You must use a frame pool to aquire and release pin frames,
 -- otherwise the pins will not be properly removed from the map.
+local CreateFramePool
+if _G.CreateSecureFramePool then
+    local ObjectPoolBaseMixin = {};
+    local function Reserve(pool, capacity)
+        pool.capacity = capacity or math.huge;
+
+        if pool.capacity ~= math.huge then
+            for index = 1, pool.capacity do
+                pool:Acquire();
+            end
+            pool:ReleaseAll();
+        end
+    end
+
+    local function GetObjectIsInvalidMsg(object, poolCollection)
+        return string.format("Attempted to release inactive object '%s'", tostring(object));
+    end
+
+    function ObjectPoolBaseMixin:Acquire()
+        if self:GetNumActive() == self.capacity then
+            return nil, false;
+        end
+
+        local object = self:PopInactiveObject();
+        local new = object == nil;
+        if new then
+            object = self:CallCreate();
+
+            --[[
+            While pools don't necessarily need to only contain tables, support for other types
+            has not been tested, and therefore isn't allowed until we can justify a use for them.
+            ]]--
+            assert(type(object) == "table");
+
+            --[[
+            The reset function will error if forbidden actions are attempted insecurely,
+            particularly in scenarios involving forbidden and protected frames. If an error
+            is thrown, it will do so before we make any further modifications to this pool.
+
+            Note this does create a potential for a dangling frame or region, but that is less of a
+            concern than mutating the pool.
+            ]]--
+            self:CallReset(object, new);
+        end
+
+        self:AddObject(object);
+        return object, new;
+    end
+
+    function ObjectPoolBaseMixin:Release(object, canFailToFindObject)
+        local active = self:IsActive(object);
+
+        --[[
+        If Release() is called on a pool directly from external code, then we expect
+        an assert if the object is not found. However, if it was called from a pool
+        collection, the object not being active is expected as the pool collection iterates
+        all the pools until it is found. A separate assert in pool collections accounts for
+        the case where the object was not found in any pool.
+        ]]--
+        if not canFailToFindObject then
+            assertsafe(active, GetObjectIsInvalidMsg, object, self);
+        end
+
+        if active then
+            --[[
+            The reset function will error if forbidden actions are attempted insecurely,
+            particularly in scenarios involving forbidden and protected frames. If an error
+            is thrown, it will do so before we make any further modifications to this pool.
+            ]]--
+            self:CallReset(object);
+
+            self:ReclaimObject(object);
+        end
+
+        return active;
+    end
+
+    function ObjectPoolBaseMixin:Dump()
+        for index, object in self:EnumerateActive() do
+            print(tostring(object));
+        end
+    end
+    local ObjectPoolMixin = CreateFromMixins(ObjectPoolBaseMixin);
+
+    function ObjectPoolMixin:Init(createFunc, resetFunc, capacity)
+        self.createFunc = createFunc;
+        self.resetFunc = resetFunc;
+        self.activeObjects = {};
+        self.inactiveObjects = {};
+        self.activeObjectCount = 0;
+
+        Reserve(self, capacity);
+    end
+
+    function ObjectPoolMixin:CallReset(object, new)
+        self.resetFunc(self, object, new);
+    end
+
+    function ObjectPoolMixin:CallCreate()
+        -- The pool argument 'self' is passed only for addons already reliant on it.
+        return self.createFunc(self);
+    end
+
+    function ObjectPoolMixin:PopInactiveObject()
+        return tremove(self.inactiveObjects);
+    end
+
+    function ObjectPoolMixin:AddObject(object)
+        local dummy = true;
+        self.activeObjects[object] = dummy;
+        self.activeObjectCount = self.activeObjectCount + 1;
+    end
+
+    function ObjectPoolMixin:ReclaimObject(object)
+        tinsert(self.inactiveObjects, object);
+        self.activeObjects[object] = nil;
+        self.activeObjectCount = self.activeObjectCount - 1;
+    end
+
+    function ObjectPoolMixin:ReleaseAll()
+        for object in pairs(self.activeObjects) do
+            self:Release(object);
+        end
+    end
+
+    function ObjectPoolMixin:EnumerateActive()
+        return pairs(self.activeObjects);
+    end
+
+    function ObjectPoolMixin:GetNextActive(current)
+        return next(self.activeObjects, current);
+    end
+
+    function ObjectPoolMixin:IsActive(object)
+        return self.activeObjects[object] ~= nil;
+    end
+
+    function ObjectPoolMixin:GetNumActive()
+        return self.activeObjectCount;
+    end
+    CreateFramePool = function(ref)
+        local framePool = CreateFromMixins(ObjectPoolMixin)
+        framePool:Init(ref.creationFunc, ref.resetterFunc)
+        return framePool
+    end
+else
+    CreateFramePool = function(ref)
+        local framePool = _G.CreateFramePool()
+        framePool.creationFunc = ref.creationFunc
+        framePool.resetterFunc = ref.resetterFunc
+        return framePool
+    end
+end
 
 MapPinPool.create = function()
-    local framePool = _G.CreateFramePool()
-    framePool.creationFunc = MapPinPool.creationFunc
-    framePool.resetterFunc = MapPinPool.resetterFunc
+    local framePool = CreateFramePool(MapPinPool)
 
     return framePool
 end
@@ -343,10 +502,7 @@ end
 
 
 MapLinePool.create = function()
-    local framePool = _G.CreateFramePool()
-    framePool.creationFunc = MapLinePool.creationFunc
-    framePool.resetterFunc = MapLinePool.resetterFunc
-
+    local framePool = CreateFramePool(MapLinePool)
     return framePool
 end
 
@@ -356,7 +512,6 @@ end
 -- the frame is given a "render" function that can be used to bind the corect data
 -- to the frame
 MapLinePool.creationFunc = function(framePool)
-
     local f = CreateFrame("Button", nil, _G.WorldMapFrame:GetCanvas());
     f.line = f.line or f:CreateLine();
     local border = f.border or f:CreateLine();
@@ -809,6 +964,7 @@ local function addWorldMapPins()
                               RXPCData.currentStep, false)
 
     -- Convert each "pin" data structure into a WoW frame. Then add that frame to the world map
+    if IsInInstance() then return end
     for i = #pins, 1, -1 do
         local pin = pins[i]
         if not pin.hidePin then
@@ -866,6 +1022,7 @@ local function addMiniMapPins(pins)
                               RXPCData.currentStep, true)
 
     -- Convert each "pin" data structure into a WoW frame. Then add that frame to the mini map
+    if IsInInstance() then return end
     for i = #pins, 1, -1 do
         local pin = pins[i]
         local element = pin.elements[1]
