@@ -7,6 +7,7 @@ local currentFPS = GetCVar("maxfps")
 local HSstart = 0
 local batchingWindow = 0.006
 local bindConfirmation = string.gsub(CONFIRM_BINDER,"%%s",".-")
+local IsCurrentSpell = C_Spell and C_Spell.IsCurrentSpell or _G.IsCurrentSpell
 
 local ConfirmBinder
 if C_PlayerInteractionManager and C_PlayerInteractionManager.ConfirmationInteraction and Enum and Enum.PlayerInteractionType and Enum.PlayerInteractionType.Binder then

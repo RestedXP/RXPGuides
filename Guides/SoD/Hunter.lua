@@ -1153,8 +1153,9 @@ RXPGuides.RegisterGuide([[
 #name Focus Fire - 40 (Searing Gorge)
 
 step
-    >>|cRXP_WARN_You will have to kill a level 45 mob in a hostile area to acquire this rune. Make sure to being help if you're lower level.
-    .goto Searing Gorge,53.29,57.35,5
+    #completewith next
+    +|cRXP_WARN_You will have to kill a level 45 mob in a hostile area to acquire this rune. Make sure to bring help if you're lower level|r
+    .xp <45,1
 step
     .goto Searing Gorge,53.10,55.85
     >>Carefully walk along the tree branch towards the bird nest. Loot the |cRXP_PICK_Stormcrow Egg|r from it.
@@ -1164,10 +1165,11 @@ step
     >>Walk back along the tree branch. Wait a couple seconds for |cRXP_ENEMY_Enraged Stormcrow|r to spawn. Kill it and loot it for |T134419:0|t[|cRXP_FRIENDLY_Rune of Focused Fire|r]
     .collect 221445,1
     .mob Enraged Stormcrow
+    .train 431601,1
 step
     .itemcount 221445,1
     .use 221445
-    .train 428726 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Focused Fire|r] |cRXP_WARN_to train|r |T135548:0|t[Focus Fire]
+    .train 431601 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Focused Fire|r] |cRXP_WARN_to train|r |T135548:0|t[Focus Fire]
  ]])
 
  RXPGuides.RegisterGuide([[
@@ -1194,8 +1196,9 @@ step
     >>TIP: Instead of running around you can use |T132172:0|t[|cRXP_FRIENDLY_Eagle Eye|r] to scout for his position. If you can't find him he's probably dead and should respawn arond the spot marked with "2+" on your map
     .collect 220687,1
     .unitscan Zopilote
+    .train 416093,1
 step
-    .train 415358 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Raptor|r] |cRXP_WARN_to train|r |T132253:0|t[Raptor Fury]
+    .train 416093 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Raptor|r] |cRXP_WARN_to train|r |T132253:0|t[Raptor Fury]
     .use 2220687
     .itemcount 220687,1
 
@@ -1217,21 +1220,25 @@ step
     .itemcount 4537,<1 --Tel'Abim Banana
     .target Innkeeper Greul
     .target Madrack Greenwell
+    .train 416083,1
 step
     >>Go to the Yeti cave in The High Wilderness
     .goto 1444/1,1599.300,-4977.800,10
+    .train 416083,1
 step
     .goto 1444/1,1778.900,-5179.100,
     >>Take the middle path at the crossroads after you enter the second cave. At the back of it you'll find a |cRXP_FRIENDLY_Groddoc Infant|r
     .gossip 222376,1 >>Complete the monkeys dialogue to feed it the |T133951:0|t|cRXP_PICK_Soft Banana Bread|r or |T133980:0|t|cRXP_PICK_Tel'Abim Banana|r. It will spawn a version of it that follows you around.
     .target Groddoc Infant
+    .train 416083,1
 step
     .goto 1444/1,1330.900,-5078.100
     >>Escort the |cRXP_FRIENDLY_Groddoc Infant|r to a |cRXP_FRIENDLY_Groddoc Matriarch|r marked on your map. Be careful, the infant is agressive and will attack nearby enemies including opposing faction players.
     .gossip 222406,1 >>Once you're there talk to the Matriarch and complete her dialogue to receive |T134419:0|t[|cRXP_FRIENDLY_Rune of the Jungle Cat|r]
     .collect 220791,1 -- Rune of the Jungle Cat
+    .train 416083,1
 step
-    .train 415428 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of the Jungle Cat|r] |cRXP_WARN_to train|r |T132167:0|t[Catlike Reflexes]
+    .train 416083 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of the Jungle Cat|r] |cRXP_WARN_to train|r |T132167:0|t[Catlike Reflexes]
     .use 220791
 ]])
 
@@ -1248,6 +1255,7 @@ step
 step
     .goto 1427/0,-832.800,-6647.500,10
     >>Travel to the cave entrance in Firewatch Ridge. Note that you'll need to enter a cave filled with lvl 47-48 elites. That being said it is possible to complete this part using deathruns.
+    .train 416090,1
 step
     .goto Searing Gorge,14.5,36.5
     >>|cRXP_WARN_As you enter the cave take the path to the right. You'll quickly see a large tablet called |cRXP_FRIENDLY_Weathered Etching|r atop a rise in the middle section of the cave. Run to it and accept the quest.
@@ -1291,7 +1299,7 @@ step
     .turnin 81919 >>Turnin Brought to Heel
     .target Bloodmage Lynnore
 step
-    .train 415405 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of the Ravenous|r] |cRXP_WARN_to train|r |T132205:0|t[Rapid Killing]
+    .train 416090 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of the Ravenous|r] |cRXP_WARN_to train|r |T132205:0|t[Rapid Killing]
     >>You also received an |T136091:0|t|cRXP_LOOT_Infernal Lasso|r trinket which can be used to tame Corehounds
     .use 220217
 ]])

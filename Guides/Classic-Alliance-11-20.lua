@@ -4959,8 +4959,8 @@ RXPGuides.RegisterGuide([[
 #name 16-19 Darkshore
 #displayname 20-22 Darkshore << sod !Warrior
 #displayname 20-22 Darkshore/Ashenvale << sod Warrior
-#next 19-20 Redridge;20-21 Darkshore/Ashenvale << era !Hunter
-#next 19-21 Darkshore/Ashenvale << era Hunter
+#next 19-20 Redridge;20-21 Darkshore/Ashenvale << !Hunter
+#next 19-21 Darkshore/Ashenvale << !sod Hunter
 #next 22-24 Wetlands SoD << sod
 
 step << NightElf !Druid
@@ -12250,12 +12250,11 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #version 1
+#season 0
 << Alliance Hunter
-<< era
 #group RestedXP Alliance 1-20
 #name 19-21 Darkshore/Ashenvale
-#displayname 20-21 Darkshore/Ashenvale << SoD
-#next RestedXP Alliance 20-30\21-23 Ashenvale/Stonetalon;RestedXP Alliance 20-30\21-22 Ashenvale SoD
+#next RestedXP Alliance 20-30\21-23 Ashenvale/Stonetalon
 
 step
     #xprate >1.59

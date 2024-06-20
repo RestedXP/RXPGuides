@@ -1566,8 +1566,8 @@ step << Alliance
     .target Darla Harris
     .train 400101,1
 step
-    .goto Undercity,68.290,38.043,5 >> |cRXP_WARN_Enter Undercity. Check your mailbox for the letter from *C* and take it with you|r << Horde
-    .goto Ironforge,71.485,72.280,5 >> |cRXP_WARN_Enter Ironforge. Check your mailbox for the letter from *C* and take it with you. Skip this step if you're doing it in another major city|r << Alliance
+    .goto Undercity,68.290,38.043,5 >> |cRXP_WARN_Enter Undercity. Check your mailbox for the letter from *C*|r << Horde
+    .goto Ironforge,71.485,72.280,5 >> |cRXP_WARN_Enter Ironforge. Check your mailbox for the letter from *C*. Skip this step if you're doing it in another major city|r << Alliance
     .train 400101,1
 step
     #completewith next
@@ -1931,6 +1931,7 @@ step
     .goto Alterac Mountains,84.45,80.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fahrad|r upstairs
     .turnin 6681 >> Turn in The Manor, Ravenholdt
+    .target Fahrad
     .isOnQuest 6681
 step << Alliance
     +|cRXP_WARN_Travel to any Major City|r
@@ -1940,6 +1941,7 @@ step << Alliance
     .zoneskip Darnassus
     .zoneskip Ironforge
     .zoneskip Stormwind City
+    .train 432295,1
 step << Horde
     +|cRXP_WARN_Travel to any Major City|r
     >>Undercity
@@ -1948,17 +1950,27 @@ step << Horde
     .zoneskip Undercity
     .zoneskip Thunder Bluff
     .zoneskip Orgrimmar
+    .train 432295,1
 step
     #label letterC
-    >>Go to any mailbox. You will receive a letter which starts a quest. Accept it
-    .accept 80526 >>Accept Fool Me Twice
+    +|cRXP_WARN_Check your mailbox for the letter from *Fahrad*|r
+    >>|cRXP_WARN_Skip this step when ready|r
+    .train 432295,1
 step
-    #optional
     #completewith next
-    .zone Alterac Mountains >>Travel to Alterac Mountains
+    .zone Hillsbrad Foothills >>Travel to |cFFfa9602Hillsbrad Foothills|r
 step
-    .goto Alterac Mountains,84.6,80.2
-    >>Go to the Ravenholdt Manor and talk to |cRXP_FRIENDLY_Fahrad|r
+    #completewith next
+    .goto Hillsbrad Foothills,75.27,23.66,15,0
+    .goto Hillsbrad Foothills,75.66,20.30,15,0
+    .goto Hillsbrad Foothills,77.24,21.98,15,0
+    .goto Hillsbrad Foothills,78.62,17.96,20 >>Enter Ravenholdt Manor
+step
+    .goto Alterac Mountains,85.51,79.41,10,0
+    .goto Alterac Mountains,86.11,80.22,10,0
+    .goto Alterac Mountains,84.45,80.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fahrad|r upstairs
+    .accept 80526 >>Accept Fool Me Twice
     .turnin 80526 >>Turn in Fool Me Twice
     .accept 80411 >>Accept The Talisman of Kazdor
     .target Fahrad
@@ -1967,69 +1979,111 @@ step
     #completewith next
     .zone Tanaris >>Travel to Tanaris
 step
+    #completewith next
     .goto Tanaris,38.69,20.20
-    >>|cRXP_WARN_Head to Zul'Farrak in Tanaris. You can't be in a group. Entering Zul'Farrak will put you in a special version of the instance where you will be able to complete the objectives of your quest|r
-    >>Scout the troll tents looking for |cRXP_PICK_Clay Vessels|r loot them for |T134799:0|t|cRXP_LOOT_Vile Concoctions|r. You will need two of these to complete the quest
-    .collect 217716,2
+    .subzone 1176 >>Enter Zul'Farrak
+    >>|cRXP_WARN_You can't be in a group to be able to complete the quest for this rune|r
 step
-    >>Go to to |cRXP_ENEMY_Antu'sul's|r cave, use one of your |T134799:0|t|cRXP_LOOT_Vile Concoctions|r on the cauldron next to it. It will not break your stealth. While the boss is distracted you can loot |cRXP_PICK_Antu'Sul's Satchel|r for an |T133724:0|t|cRXP_LOOT_Offering of Bone|r
+    .goto Tanaris,38.69,20.20
+    >>Open |cRXP_PICK_Clay Vessels|r for |T134799:0|t[|cRXP_LOOT_Vile Concoctions|r]
+    >>|cRXP_WARN_They are located in troll tents throughout Zul'Farrak|r
+    .collect 217716,2
+    .train 432295,1
+step
+    #completewith next
+    +|cRXP_WARN_Move toward|r |cRXP_ENEMY_Antu'sul's|r |cRXP_WARN_cave|r
+step
+    >>Use a |T134799:0|t[|cRXP_LOOT_Vile Concoction|r] on the cauldron. |cRXP_WARN_It will not break your stealth|r
+    >>While the boss is distracted loot |cRXP_PICK_Antu'Sul's Satchel|r for an |T133724:0|t[|cRXP_LOOT_Offering of Bone|r]
     .collect 217721,1 --Offering of Bone
     .use 217716
+    .train 432295,1
 step
-    >>Go to the graveyard area. Use your second |T134799:0|t|cRXP_LOOT_Vile Concoction|r on the cauldron next to |cRXP_ENEMY_Witch Doctor Zum'rah|r. While he's distracted loot the |T136232:0|t|cRXP_LOOT_Ward of the Dead|r
+    #completewith next
+    +|cRXP_WARN_Move toward |cRXP_ENEMY_Witch Doctor Zum'rah|r in the graveyard area|r
+step
+    >>Use your second |T134799:0|t[|cRXP_LOOT_Vile Concoction|r] on the cauldron next to |cRXP_ENEMY_Witch Doctor Zum'rah|r. |cRXP_WARN_It will not break your stealth|r
+    >>While he's distracted loot |cRXP_PICK_Zum'rahs Satchel|r for |T136232:0|t|cRXP_LOOT_Ward of the Dead|r
     .collect 217727,1 --ward of the dead
     .use 217716
+    .train 432295,1
 step
-    .equip 13,217727 >>Equip the |T136232:0|t|cRXP_LOOT_Ward of the Dead|r trinket you just looted. It will reveal one of the |cRXP_PICK_graves|r which you need to loot for an |T236304:0|t|cRXP_LOOT_Offering of Flesh|r
+    #completewith next
+    .equip 13,217727 >>Equip the |T136232:0|t|cRXP_LOOT_Ward of the Dead|r trinket you just looted
+    >>|cRXP_WARN_This will reveal which|r |cRXP_PICK_Shallow Grave|r |cRXP_WARN_needs to be looted|r
+step
+    >>Loot the |cRXP_PICK_Shallow Grave|r that is revealed with a blue aura for the |T236304:0|t|cRXP_LOOT_Offering of Flesh|r
     .collect 217720,1 --offering of flesh
+    .use 217727
+    .train 432295,1
 step
-    >>Use the |T236304:0|t|cRXP_LOOT_Offering of Flesh|r you just collected to combine it with the |T133724:0|t|cRXP_LOOT_Offering of Bone|r into a |T236305:0|t|cRXP_LOOT_Blood Magic Essence|r
+    >>Use the |T236304:0|t[|cRXP_LOOT_Offering of Flesh|r] you just collected to combine it with the |T133724:0|t[|cRXP_LOOT_Offering of Bone|r] into a |T236305:0|t[|cRXP_LOOT_Blood Magic Essence|r]
     .collect 217719,1 --Blood Magic Essence
     .use 217720
+    .train 432295,1
 step
-    >>Go to the foot of the pyramid staircase and look to your right. On the side of the wall you will see a small stone block. Jump onto it and then walk onto the edge. On the second balcony you will find a small chest. Loot it for a |T237274:0|t|cRXP_LOOT_Hollow Emblem|r
+    >>Go to the foot of the pyramid staircase and look to your right. On the side of the wall you will see a small stone block. Jump onto it and then walk onto the edge
+    >>On the second wood balcony to the right you will find a |cRXP_PICK_Sandfury Cache|r. Loot it for the |T237274:0|t[|cRXP_LOOT_Hollow Emblem|r]
     .collect 217717,1 --Hollow Emblem
+    .train 432295,1
 step
-    >>Use the |T237274:0|t|cRXP_LOOT_Hollow Emblem|r you just looted to combine it with the |T236305:0|t|cRXP_LOOT_Blood Magic Essence|r and receive an |T133572:0|t|cRXP_LOOT_Emblem of Blood Magic|r
+    >>Use the |T237274:0|t|cRXP_LOOT_Hollow Emblem|r you just looted to combine it with the |T236305:0|t[|cRXP_LOOT_Blood Magic Essence|r] into an |T133572:0|t[|cRXP_LOOT_Emblem of Blood Magic|r]
     .collect 217718,1 --Emblem of Blood Magic
+    .use 217717
+    .train 432295,1
 step
-    >>Climb the stairs to the top of the pyramid and loot the |cRXP_PICK_Spellbound War Chest|r for |T133313:0|t|cRXP_LOOT_Talisman of Kazdor|r
+    >>Climb the stairs to the top of the pyramid and loot the |cRXP_PICK_Spellbound War Chest|r for |T133313:0|t[|cRXP_LOOT_Talisman of Kazdor|r]
     .collect 217609,1 --Talisman of Kazdor
+    .train 432295,1
 step
-    #optional
     #completewith next
-    .zone Alterac Mountains >>Travel to Alterac Mountains
+    .zone Hillsbrad Foothills >>Travel to |cFFfa9602Hillsbrad Foothills|r
 step
-    .goto Alterac Mountains,84.6,80.2
-    >>Return to the Ravenholdt Manor and talk to |cRXP_FRIENDLY_Fahrad|r
+    #completewith next
+    .goto Hillsbrad Foothills,75.27,23.66,15,0
+    .goto Hillsbrad Foothills,75.66,20.30,15,0
+    .goto Hillsbrad Foothills,77.24,21.98,15,0
+    .goto Hillsbrad Foothills,78.62,17.96,20 >>Enter Ravenholdt Manor
+step
+    .goto Alterac Mountains,85.51,79.41,10,0
+    .goto Alterac Mountains,86.11,80.22,10,0
+    .goto Alterac Mountains,84.45,80.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fahrad|r upstairs
     .turnin 80411 >>Turn in The Talisman of Kazdor
     .accept 80453 >>Accept Best Laid Plans
     .target Fahrad
 step
     .goto Alterac Mountains,86.0,80.0
-    >>Head to the basement of the mansion. Look for |cRXP_FRIENDLY_Zan Shivsproket|r a gnome engineer
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zan Shivsproket|r downstairs in the basement
     .turnin 80453 >>Turn in Best Laid Plans
     .accept 80454 >>Accept One Last Drop
     .target Zan Shivsproket
 step
-    #optional
     #completewith next
-    .zone Silverpine Forest >>Travel to the Silverpine Forest
+    .zone Silverpine Forest >>Travel to Silverpine Forest
 step
-    .goto Silverpine Forest,47.1,71.1
-    >>Head to a cabin in Pyrewood Village in Silverpine Forest
-    .turnin 80454 >>Turnin One Last Drop
+    .goto Silverpine Forest,47.114,70.974
+    >>Click the |cRXP_PICK_Dead Drop|r chest
+    .turnin 80454 >>Turn in One Last Drop
     .accept 80455 >>Accept Biding Our Time
+    .train 432295,1
 step
-    #optional
     #completewith next
-    .zone Alterac Mountains >>Travel to Alterac Mountains
+    .zone Hillsbrad Foothills >>Travel to |cFFfa9602Hillsbrad Foothills|r
 step
-    .goto Alterac Mountains,84.6,80.2
-    >>Return to the Ravenholdt Manor and talk to |cRXP_FRIENDLY_Fahrad|r
+    #completewith next
+    .goto Hillsbrad Foothills,75.27,23.66,15,0
+    .goto Hillsbrad Foothills,75.66,20.30,15,0
+    .goto Hillsbrad Foothills,77.24,21.98,15,0
+    .goto Hillsbrad Foothills,78.62,17.96,20 >>Enter Ravenholdt Manor
+step
+    .goto Alterac Mountains,85.51,79.41,10,0
+    .goto Alterac Mountains,86.11,80.22,10,0
+    .goto Alterac Mountains,84.45,80.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fahrad|r upstairs
     .turnin 80455 >>Turn in Biding Our Time
     .target Fahrad
 step
-    .train 432264 >>Use the |T134419:0|t|cRXP_FRIENDLY_Rune of the Coterie|r you received to train |T236275:0|t[Honor Among Thieves]
+    .train 432295 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Coterie|r] |cRXP_WARN_to train|r |T236275:0|t[Honor Among Thieves]
     .use 217736
 ]])

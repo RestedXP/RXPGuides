@@ -1061,7 +1061,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #optional
-    .train 431468,1
+    .train 431449,1
     .train 22812 >> |cRXP_WARN_You must have|r |T136097:0|t[Barkskin] |cRXP_WARN_trained in order to aquire the|r |T136097:0|t[Improved Barkskin] |cRXP_WARN_rune|r
 step
     #completewith next
@@ -1076,13 +1076,16 @@ step
     .collect 220915,1
     .mob Thistleshrub Dew Collector
     .mob Thistleshrub Rootshaper
+    .train 431449,1
 step
     .equip 18,220915 >>|cRXP_WARN_Equip the|r |T136061:0|t[|cRXP_FRIENDLY_Idol of the Raging Shambler|r]
+    .train 431449,1
 step
     .aura 408828 >>Kill |cRXP_WARN_five enemies with a Nature spell (e.g. Wrath) while under the effect of |T136097:0|t[Barkskin].|r 
     *|cRXP_WARN_Use |T136097:0|t[Barkskin] when the enemy is at low HP and finish him with a Wrath or another Nature spell|r
+    .train 431449,1
 step
     .itemcount 221020,1
     .use 221020
-    .train 416051 >> |cRXP_WARN_Use the|r |T136061:0|t[|cRXP_FRIENDLY_Idol of the Raging Shambler|r] |cRXP_WARN_to train|r |T136097:0|t[Improved Barkskin]
+    .train 431449 >> |cRXP_WARN_Use the|r |T136061:0|t[|cRXP_FRIENDLY_Idol of the Raging Shambler|r] |cRXP_WARN_to train|r |T136097:0|t[Improved Barkskin]
 ]])
