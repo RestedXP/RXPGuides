@@ -808,7 +808,7 @@ step <<  Horde
 step
     .goto 371,43.49,75.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shao the Defiant|r
-    .turnin 29576 >>Turn in An Air of Worry
+    .turnin 29576 >>Turn in An Air of Worry << Horde
     .accept 29578 >>Accept Defiance
     .accept 29579 >>Accept Rally the Survivors
     .target Shao the Defiant
@@ -2721,6 +2721,17 @@ step
     .goto 371,48.06,88.4
     >>|cRXP_WARN_Follow the Arrow|r
     .complete 31745,1 --1/1 Return to Paw'don Village
+step
+    .xp <14,1
+    #loop
+    .goto 371,45.89,84.63,5,0
+    .goto 371,45.83,84.83,5,0
+    .goto 371,45.89,84.63,0
+    .goto 371,45.83,84.83,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r
+    .accept 81976 >>Turn in Bazaar, Isn't It?
+    .turnin 81976 >>Turn in Bazaar, Isn't It?
+    .target Nostwin
 step
     .goto 371,48.05,88.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sky Admiral Rogers|r
