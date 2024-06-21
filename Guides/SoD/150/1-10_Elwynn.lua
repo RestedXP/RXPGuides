@@ -2988,6 +2988,11 @@ step
     .turnin 36 >> Turn in Westfall Stew
     .target Salma Saldean
 step
+    .goto Westfall,56.04,31.23
+    .target Farmer Saldean
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Saldean|r
+    .accept 9 >> Accept The Killing Fields
+step
     #xprate >1.49 << !Paladin
     #xprate 1.49-1.59 << Paladin
     #optional

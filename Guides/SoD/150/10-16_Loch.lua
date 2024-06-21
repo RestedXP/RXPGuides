@@ -339,8 +339,14 @@ step << Rogue
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<6.7
 step
     #label enterloch
+    #completewith next
     .goto Dun Morogh,84.4,31.1,25 >>Go through the tunnel to Loch Modan
     .zoneskip Loch Modan
+step
+    .goto Loch Modan,32.56,46.86,200 >>|cRXP_WARN_Perform a logout skip by jumping on top of a brazier in the tunnel. Then jumping off of it and logging out using a /camp macro or alt+f4 closing the game. This will move your character to Thelsamar|r
+    >>Run to thelsamar if you're unable to do it
+-- .link ADD GUIDE VIDEO
+    .subzoneskip 144
 step
     #optional
     #completewith lochstart1
@@ -421,6 +427,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r inside
     .accept 418 >> Accept Thelsamar Blood Sausages
     .target Vidra Hearthstove
+step
+    .goto Loch Modan,34.8,48.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yanni Stoutheart|r inside
+    .vendor >> |cRXP_BUY_Vendor trash, buy up to four|r |T133634:0|t[Small Brown Pouches] |cRXP_BUY_if you still need|r
+    .target Yanni Stoutheart 
 step << Dwarf/Gnome
     #label ThelsaHS
     .goto Loch Modan,35.534,48.404

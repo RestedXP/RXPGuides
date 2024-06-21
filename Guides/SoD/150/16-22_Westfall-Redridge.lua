@@ -176,10 +176,11 @@ step << Hunter
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.3
 step << !Human/!Mage
+    #season 1 << Rogue
     .goto StormwindClassic,57.129,57.698
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Woo Ping|r
     .train 227 >>Train Staves << Priest/Warlock/Hunter
-    .train 201 >>Train 1h Swords << Mage/Warlock/Rogue
+    .train 201 >>Train 1h Swords << Mage/Warlock
     .train 202 >>Train 2h Swords << Warrior/Paladin/Hunter
     --.train 5011 >>Train Crossbows << Hunter
     .target Woo Ping
@@ -403,7 +404,6 @@ step
 	.target Gryan Stoutmantle
     .goto Westfall,56.33,47.52
     .turnin 12 >> Turn in The People's Militia
-    .accept 13 >> The People's Militia
     .accept 65 >> Accept The Defias Brotherhood
 step
     .goto Westfall,56.04,31.23
@@ -459,6 +459,7 @@ step
     .goto Redridge Mountains,33.50,48.97
     .accept 20 >> Accept Blackrock Menace
     .target Marshal Marris
+    .xp <18,1
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
     .goto Redridge Mountains,32.13,48.63
@@ -564,6 +565,13 @@ step
     .turnin 125 >> Turn in The Lost Tools
     .accept 89 >> Accept The Everstill Bridge
 step
+    #label BMenace
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
+    .goto Redridge Mountains,33.50,48.97
+    .accept 20 >> Accept Blackrock Menace
+    .target Marshal Marris
+    .xp <18,1
+step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hilary|r
 	.target Hilary
     .goto Redridge Mountains,29.24,53.63
@@ -617,55 +625,6 @@ step
 	.target Deputy Feldon
     .goto Redridge Mountains,30.73,59.99
     .turnin 246 >> Turn in Assessing the Threat
-step << Rogue
-    .goto 1433,51.846,45.116
-    >>|cRXP_WARN_You MUST do this for your|r |T132290:0|t[Poisons] |cRXP_WARN_quest later|r
-    >>|cRXP_WARN_Stand on the waypoint location. Position your camera and cursor until you can click 3 |cRXP_PICK_Practice Lockboxes|r at once without having to move anything|r
-    .skill lockpicking,80 >>|cRXP_WARN_Open the |cRXP_PICK_Practice Lockboxes|r on the ground in Alther's Mill until your|r |T136058:0|t[Lockpicking] skill is 80|r
-step << Rogue
-	.goto Redridge Mountains,52.05,44.69
-    >>Open |cRXP_PICK_Lucius's Lockbox|r. Loot it for the |cRXP_LOOT_Token of Thievery|r
-    .complete 2282,1 --Token of Thievery (1)
-step << Rogue
-    .goto Redridge Mountains,28.07,52.02
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lucius|r
-    .turnin 2282 >> Turn in Alther's Mill
-    .target Lucius
-step << Rogue
-    .goto Redridge Mountains,21.85,46.32
-    .target Martie Jainrose
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Martie Jainrose|r
-    .turnin 130 >> Turn in Visit the Herbalist
-    .accept 131 >> Accept Delivering Daffodils
-    .accept 34 >> Accept An Unwelcome Guest
-step << Rogue
-#completewith xp20
-#label Bellygrub
-    .goto Redridge Mountains,15.68,49.30
-    >>Kill |cRXP_ENEMY_Bellygrub|r. Loot him for his |cRXP_LOOT_Tusk|r
-    >>Use your thrown weapon and your ranged runes to kite him back to Lakeshire so the guards can assist you, remember that you need to do at least 50% of the damage to get kill credit
-    >>|cRXP_WARN_This quest is VERY difficult. You can skip this step and come back later|r
-    .complete 34,1 -- Bellygrub's Tusk (1)
-    .mob Bellygrub
-step << Rogue
-    #label bellygrub2
-    #completewith xp20
-    #requires Bellygrub
-    .goto Redridge Mountains,21.85,46.32
-    .target Martie Jainrose
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Martie Jainrose|r
-    .turnin 34 >> Turn in An Unwelcome Guest
-step << Rogue
-    #completewith xp20
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darcy|r
-    >>|cRXP_FRIENDLY_Darcy|r |cRXP_WARN_walks around inside the Inn|r
-	.target Darcy
-    .goto Redridge Mountains,26.80,44.30
-    .turnin 131 >> Turn in Delivering Daffodils
-step << Rogue
-#label xp20
-    >> You should be almost level 20 here, if you're not, do the gnoll quests north of Lakeshire or the murloc quests east and grind until you are 20
-    .xp 20-1700
 step
     #completewith db1
     .goto Redridge Mountains,30.59,59.42
@@ -680,18 +639,6 @@ step
     .accept 121 >> Accept Messenger to Stormwind
     .target General Marcus Jonathan
     .isQuestTurnedIn 118
-step << Rogue
-#label db1
-    .goto Stormwind City,75.78,59.84
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Mathias Shaw|r
-    .turnin 135 >> Turn in The Defias Brotherhood
-    .accept 141 >> Accept The Defias Brotherhood
-    .target Master Mathias Shaw
-step << Rogue
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Mathias Shaw|r
-    .accept 2360 >> Accept Mathias and the Defias
-    .goto StormwindClassic,75.78,59.84
-    .target Master Mathias Shaw
 step
     .accept 167 >> Accept Oh Brother. . .
     .accept 168 >> Accept Collecting Memories
@@ -765,16 +712,12 @@ step
 	.target Smith Argus
     .turnin 118 >> Turn in The Price of Shoes
     .accept 119 >> Accept Return to Verner
-step << !Rogue
+step
     .dungeon !DM
     .cooldown item,6948,>120,1
     .hs >> Hearth to Lakeshire
     .zoneskip Redridge Mountains
-step << Rogue
-    .cooldown item,6948,>120,1
-    .hs >> Hearth to Westfall
-    .zoneskip Westfall
-step << !Rogue
+step
 #optional
 .dungeon !DM
     .goto StormwindClassic,66.277,62.137
@@ -782,7 +725,166 @@ step << !Rogue
     .fly Redridge >> Fly to Redridge
     .target Dungar Longdrink
     .zoneskip Redridge Mountains
+step
+    #label BMenace
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
+    .goto Redridge Mountains,33.50,48.97
+    .accept 20 >> Accept Blackrock Menace
+    .target Marshal Marris
+    .xp <18,1
+step
+    .goto Redridge Mountains,30.97,47.27
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
+	.target Verner Osgood
+    .turnin 119 >> Turn in Return to Verner
+step
+    .goto Redridge Mountains,30.97,47.27
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
+	.target Verner Osgood
+    .accept 124 >> Accept A Baying of Gnolls
+    .accept 122 >> Accept Underbelly Scales
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Soloman|r
+	.target Magistrate Solomon
+    .goto Redridge Mountains,29.31,45.33,15,0
+    .goto Redridge Mountains,29.98,44.45
+    .turnin 121 >> Turn in Messenger to Stormwind
+step
+    .goto Redridge Mountains,29.71,44.26
+    .target Bailiff Conacher
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bailiff Conacher|r
+    .accept 91 >> Accept Solomon's Law
+step
+    .goto Redridge Mountains,26.75,46.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tClick on |cRXP_FRIENDLY_The Wanted Poster|r
+    .accept 180 >> Accept Wanted: Lieutenant Fangore
+step
+    .goto Redridge Mountains,21.85,46.32
+    .target Martie Jainrose
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Martie Jainrose|r
+    .turnin 130 >> Turn in Visit the Herbalist
+    .accept 131 >> Accept Delivering Daffodils
+    .accept 34 >> Accept An Unwelcome Guest
+step
+#optional
+	#completewith BayingOfGnolls
+	>>Kill |cRXP_ENEMY_Black Dragon Whelps|r. Loot them for their |cRXP_LOOT_Scales|r
+    .complete 122,1 --Underbelly Whelp Scale (6)
+    .mob Black Dragon Whelp
+step << !Rogue
+    #label BayingOfGnolls
+    .goto Redridge Mountains,21.23,36.17,60,0
+    .goto Redridge Mountains,34.20,39.70,60,0
+    .goto Redridge Mountains,39.61,31.46,60,0
+    .goto Redridge Mountains,34.20,39.70,60,0
+    .goto Redridge Mountains,21.23,36.17,60,0
+    .goto Redridge Mountains,34.20,39.70,60,0
+    .goto Redridge Mountains,39.61,31.46,60,0
+    .goto Redridge Mountains,22.5,35.7,0
+    >>Kill |cRXP_ENEMY_Redridge Brutes|r and |cRXP_ENEMY_Redridge Mystics|r. Loot them for their |cRXP_LOOT_Iron Pikes|r and |cRXP_LOOT_Iron Rivets|r
+    .complete 124,1 --Redridge Brute (10)
+    .complete 124,2 --Redridge Mystic (8)
+    .complete 89,1 --Iron Pike (5)
+    .complete 89,2 --Iron Rivet (5)
+	.mob Redridge Mystic
+	.mob Redridge Brute
+step << Rogue
+    #sticky
+    #completewith next
+    #label BayingOfGnolls
+    .goto Redridge Mountains,21.23,36.17,60,0
+    .goto Redridge Mountains,34.20,39.70,60,0
+    .goto Redridge Mountains,39.61,31.46,60,0
+    .goto Redridge Mountains,34.20,39.70,60,0
+    .goto Redridge Mountains,21.23,36.17,60,0
+    .goto Redridge Mountains,34.20,39.70,60,0
+    .goto Redridge Mountains,39.61,31.46,60,0
+    .goto Redridge Mountains,22.5,35.7,0
+    >>Kill |cRXP_ENEMY_Redridge Brutes|r and |cRXP_ENEMY_Redridge Mystics|r. Loot them for their |cRXP_LOOT_Iron Pikes|r and |cRXP_LOOT_Iron Rivets|r. |cRXP_WARN_Progress this quest on your way to Alther's Mill. You will complete it on the way back|r
+    .complete 124,1 --Redridge Brute (10)
+    .complete 124,2 --Redridge Mystic (8)
+    .complete 89,1 --Iron Pike (5)
+    .complete 89,2 --Iron Rivet (5)
+	.mob Redridge Mystic
+	.mob Redridge Brute
+step << Rogue
+    .goto 1433,51.846,45.116
+    >>|cRXP_WARN_You MUST do this for your|r |T132290:0|t[Poisons] |cRXP_WARN_quest later|r
+    >>|cRXP_WARN_Stand on the waypoint location. Position your camera and cursor until you can click 3 |cRXP_PICK_Practice Lockboxes|r at once without having to move anything|r
+    .skill lockpicking,80 >>|cRXP_WARN_Open the |cRXP_PICK_Practice Lockboxes|r on the ground in Alther's Mill until your|r |T136058:0|t[Lockpicking] skill is 80|r
+step << Rogue
+	.goto Redridge Mountains,52.05,44.69
+    >>Open |cRXP_PICK_Lucius's Lockbox|r. Loot it for the |cRXP_LOOT_Token of Thievery|r
+    .complete 2282,1 --Token of Thievery (1)
+step << Rogue
+    #label BayingOfGnolls
+    .goto Redridge Mountains,21.23,36.17,60,0
+    .goto Redridge Mountains,34.20,39.70,60,0
+    .goto Redridge Mountains,39.61,31.46,60,0
+    .goto Redridge Mountains,34.20,39.70,60,0
+    .goto Redridge Mountains,21.23,36.17,60,0
+    .goto Redridge Mountains,34.20,39.70,60,0
+    .goto Redridge Mountains,39.61,31.46,60,0
+    .goto Redridge Mountains,22.5,35.7,0
+    >>Finish killing |cRXP_ENEMY_Redridge Brutes|r and |cRXP_ENEMY_Redridge Mystics|r. Loot them for their |cRXP_LOOT_Iron Pikes|r and |cRXP_LOOT_Iron Rivets|r
+    .complete 124,1 --Redridge Brute (10)
+    .complete 124,2 --Redridge Mystic (8)
+    .complete 89,1 --Iron Pike (5)
+    .complete 89,2 --Iron Rivet (5)
+	.mob Redridge Mystic
+	.mob Redridge Brute
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darcy|r
+    >>|cRXP_FRIENDLY_Darcy|r |cRXP_WARN_walks around inside the Inn|r
+	.target Darcy
+    .goto Redridge Mountains,26.80,44.30
+    .turnin 131 >> Turn in Delivering Daffodils
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
+	.target Verner Osgood
+    .goto Redridge Mountains,31.00,47.30
+    .turnin 124 >> Turn in A Baying of Gnolls
+    .accept 126 >> Accept Howling in the Hills
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
+	.target Foreman Oslow
+    .goto Redridge Mountains,32.13,48.63
+    .turnin 89 >> Turn in The Everstill Bridge
+step << Rogue
+    .goto Redridge Mountains,28.07,52.02
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lucius|r
+    .turnin 2282 >> Turn in Alther's Mill
+    .target Lucius
+step << Rogue
+#label xp20
+    >> You should be level 20 here, if you're not, do the murloc quests east and grind until you are 20
+    .xp 20
 
+
+----Start of Rogue Poison and Deadmines section----
+
+step << Rogue
+    .goto Redridge Mountains,30.6,59.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
+    .fly Stormwind >> Fly to Stormwind
+    .target Ariena Stormfeather
+    .zoneskip Westfall
+step << Rogue
+    .goto StormwindClassic,74.64,52.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r
+    >>|cRXP_WARN_Be careful with your money management from this point. You will need 75 silver spare once you reach wetlands in order to unlock a rune|r
+    .trainer >> Train your class spells
+    .target Osborne the Night Man
+step << Rogue
+    #completewith next
+    .goto StormwindClassic,74.90,54.00,20,0
+    .goto StormwindClassic,78.43,60.15,20,0
+    .goto StormwindClassic,78.67,60.13,5 >> Enter the SI:7 Headquarters. Travel up stairs toward |cRXP_FRIENDLY_Master Mathias Shaw|r
+step << Rogue
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Mathias Shaw|r
+    .accept 2360 >> Accept Mathias and the Defias
+    .goto StormwindClassic,75.78,59.84
+    .target Master Mathias Shaw
 step
 #completewith next
 .dungeon DM << !Rogue
@@ -795,7 +897,8 @@ step << Rogue
 .dungeon !DM
     .goto Westfall,56.325,47.519
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
-    .turnin 141 >> Turn in The Defias Brotherhood
+    .turnin 132 >> Turn in The Defias Brotherhood
+    .accept 135 >> Accept The Defias Brotherhood
     .target Gryan Stoutmantle
 step
 .dungeon DM
@@ -981,8 +1084,8 @@ step << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Mathias Shaw|r
     >>|cRXP_WARN_Remember to re-equip your main weapon if you switched to a|r |T135641:0|t[Dagger] |cRXP_WARN_earlier|r << Rogue
     .turnin 2359 >> Turn in Klaven's Tower
+    .turnin 135 >> Turn in The Defias Brotherhood
     .target Master Mathias Shaw
-
 step << Rogue
 #completewith next
 .dungeon DM
@@ -1100,85 +1203,17 @@ step
     .target Shoni the Shilent
     .dungeon DM
 step
-.dungeon DM << !Rogue
+    .dungeon DM
     .goto StormwindClassic,66.277,62.137
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
     .fly Redridge >> Fly to Redridge
     .target Dungar Longdrink
     .zoneskip Redridge Mountains
-step
-    .goto Redridge Mountains,30.97,47.27
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
-	.target Verner Osgood
-    .turnin 119 >> Turn in Return to Verner
-step
-    .goto Redridge Mountains,30.97,47.27
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
-	.target Verner Osgood
-    .accept 124 >> Accept A Baying of Gnolls
-    .accept 122 >> Accept Underbelly Scales
-step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Soloman|r
-	.target Magistrate Solomon
-    .goto Redridge Mountains,29.31,45.33,15,0
-    .goto Redridge Mountains,29.98,44.45
-    .turnin 121 >> Turn in Messenger to Stormwind
-step
-    .goto Redridge Mountains,29.71,44.26
-    .target Bailiff Conacher
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bailiff Conacher|r
-    .accept 91 >> Accept Solomon's Law
-step
-    .goto Redridge Mountains,26.75,46.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tClick on |cRXP_FRIENDLY_The Wanted Poster|r
-    .accept 180 >> Accept Wanted: Lieutenant Fangore
-step << Rogue
-    .goto Redridge Mountains,27.0,44.8
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Brianna|r
-    .target Innkeeper Brianna
-    .home >> Set your Hearthstone to Lakeshire
 
-step
-    .goto Redridge Mountains,21.85,46.32
-    .target Martie Jainrose
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Martie Jainrose|r
-    .turnin 130 >> Turn in Visit the Herbalist
-    .accept 131 >> Accept Delivering Daffodils
-    .accept 34 >> Accept An Unwelcome Guest
-step
-#optional
-	#completewith next
-	>>Kill |cRXP_ENEMY_Black Dragon Whelps|r. Loot them for their |cRXP_LOOT_Scales|r
-    .complete 122,1 --Underbelly Whelp Scale (6)
-    .mob Black Dragon Whelp
-step
-    .goto Redridge Mountains,21.23,36.17,60,0
-    .goto Redridge Mountains,34.20,39.70,60,0
-    .goto Redridge Mountains,39.61,31.46,60,0
-    .goto Redridge Mountains,34.20,39.70,60,0
-    .goto Redridge Mountains,21.23,36.17,60,0
-    .goto Redridge Mountains,34.20,39.70,60,0
-    .goto Redridge Mountains,39.61,31.46,60,0
-    .goto Redridge Mountains,22.5,35.7,0
-    >>Kill |cRXP_ENEMY_Redridge Brutes|r and |cRXP_ENEMY_Redridge Mystics|r. Loot them for their |cRXP_LOOT_Iron Pikes|r and |cRXP_LOOT_Iron Rivets|r
-    .complete 124,1 --Redridge Brute (10)
-    .complete 124,2 --Redridge Mystic (8)
-    .complete 89,1 --Iron Pike (5)
-    .complete 89,2 --Iron Rivet (5)
-	.mob Redridge Mystic
-	.mob Redridge Brute
-step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darcy|r
-    >>|cRXP_FRIENDLY_Darcy|r |cRXP_WARN_walks around inside the Inn|r
-	.target Darcy
-    .goto Redridge Mountains,26.80,44.30
-    .turnin 131 >> Turn in Delivering Daffodils
-step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
-	.target Verner Osgood
-    .goto Redridge Mountains,31.00,47.30
-    .turnin 124 >> Turn in A Baying of Gnolls
-    .accept 126 >> Accept Howling in the Hills
+
+----End of Rogue Poison and Deadmines section----
+
+
 step
     #optional
     #completewith orcs
@@ -1234,15 +1269,28 @@ step
     .mob +Black Dragon Whelp
     .collect 1080,5,92,1
     .mob +Dire Condor
+step << Rogue
+    .goto Redridge Mountains,74.00,79.00,60,0
+    .goto Redridge Mountains,76.18,83.39,60,0
+    .goto Redridge Mountains,77.80,68.50,60,0
+    .goto Redridge Mountains,70.11,77.34,60,0
+    .goto Redridge Mountains,74.00,79.00,60,0
+    .goto Redridge Mountains,74.00,79.00,0
+    .xp 22-18500 >> Grind untill you're 18500 xp away from level 22
+    .itemcount 1080,5 --Tough condor meat (5)
+    .itemcount 2296,5 --Great goretusk snout (5)
+    .itemcount 1221,5 --Underbelly Whelp Scale (6)
 step
-    #completewith next
-    .hs >> Hearth to Lakeshire
-    .cooldown item,6948,>0,1
-    .subzoneskip 69
+    #softcore
+    .deathskip >> Die and respawn at the spirit healer. Take the resurrection sickness, you will not be fighting any mobs for a while
+    .itemcount 1080,5 --Tough condor meat (5)
+    .itemcount 2296,5 --Great goretusk snout (5)
+    .itemcount 1221,5 --Underbelly Whelp Scale (6)
+    .itemcount 3014,10 --Battleworn Axe (10)
+    .xp <21.25
 step
     #loop
     >>Kill |cRXP_ENEMY_Great Goretusks|r. Loot them for their |cRXP_LOOT_Great Goretusk Snouts|r
-    >>|cRXP_WARN_Save any|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_you loot as well as you can use them to level|r |T133971:0|t[Cooking] |cRXP_WARN_to 50 which is required for Duskwood later|r
     .goto Redridge Mountains,15.73,52.83,60,0
     .goto Redridge Mountains,32.25,70.20,60,0
     .goto Redridge Mountains,31.02,72.14,60,0
@@ -1251,6 +1299,8 @@ step
     .goto Redridge Mountains,31.02,72.14,0
     .collect 2296,5,92,1
     .mob Great Goretusk
+step << Rogue
+    .xp 22-18500 >> Grind mobs untill you're 18500 xp away from level 22
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Breanna|r
 	.target Chef Breanna
@@ -1306,6 +1356,8 @@ step << Warrior
 step << Rogue
     .goto StormwindClassic,74.65,52.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Osborne|r
+    >>|cRXP_WARN_Make sure you have 75 silver left after training. You will need it to unlock a rune soon. Only buy essential spells if necessary|r
+    .train 1856 >> |cRXP_WARN_Make sure you train |T132331:0|t[Vanish].|r |cRXP_WARN_You will need it to unlock a rune soon|r
     .trainer >> Train your class spells
     .target Osborne the Night Man
 step << Paladin
