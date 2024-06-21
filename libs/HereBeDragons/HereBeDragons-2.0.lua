@@ -1,6 +1,6 @@
 -- HereBeDragons is a data API for the World of Warcraft mapping system
 
-local MAJOR, MINOR = "HereBeDragons-2.0", 23
+local MAJOR, MINOR = "HereBeDragons-2.0", 24
 assert(LibStub, MAJOR .. " requires LibStub")
 
 local HereBeDragons, oldversion = LibStub:NewLibrary(MAJOR, MINOR)
@@ -125,6 +125,7 @@ if not oldversion or oldversion < 23 then
             { 1545, 1220, -2666.7, 0, 4800, 8000, 0, -0 },
             { 1599, 1, 4800, 5866.7, -4266.7, -3200, -490.6, -0.4 },
             { 1609, 571, 6400, 8533.3, -1600, 533.3, 512.8, 545.3 },
+            { 2601, 2552, -3881.25, 5085.42, -7487.5, 5962.5, -4640.6, -6861.9 },
         }
     end
 
@@ -157,7 +158,12 @@ if not oldversion or oldversion < 23 then
     local vector00, vector05 = CreateVector2D(0, 0), CreateVector2D(0.5, 0.5)
     -- gather the data of one map (by uiMapID)
     local function processMap(id, data, parent)
-        if not id or not data or mapData[id] then return end
+        if not id or mapData[id] then return end
+
+        if not data then
+            data = C_Map.GetMapInfo(id)
+            if not data then return end
+        end
 
         if data.parentMapID and data.parentMapID ~= 0 then
             parent = data.parentMapID
@@ -199,7 +205,7 @@ if not oldversion or oldversion < 23 then
                             for k = 1, #groupMembers do
                                 local memberId = groupMembers[k].mapID
                                 if memberId and not mapData[memberId] then
-                                    processMap(memberId, C_Map.GetMapInfo(memberId), parent)
+                                    processMap(memberId, nil, parent)
                                     processMapChildrenRecursive(memberId)
                                 end
                             end
