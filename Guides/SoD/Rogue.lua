@@ -1612,15 +1612,18 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 400096,1
-    .train 1842 >>You have to learn |T136162:0|t[Disarm Trap] before you can obtain |T134419:0|t[|cRXP_FRIENDLY_Rune of the Assassin|r]
-    .collect 5060,1 >>You also need |T134065:0|t[Thieves' Tools]
+    .train 1842 >>|cRXP_WARN_You have to learn|r |T136162:0|t[Disarm Trap] |cRXP_WARN_before you can obtain|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Assassin|r]
+    .collect 5060,1 >>|cRXP_WARN_You also need|r |T134065:0|t[Thieves' Tools]
 step
     #completewith next
     .zone Swamp of Sorrows >>Travel to Swamp of Sorrows
 step
+    .goto Swamp of Sorrows,41.48,29.97
     .train 400096,1
-    >>Use |T136162:0|t[Disarm Trap] on the |cRXP_PICK_Dart Trap|r on the tree. |cRXP_WARN_Loot the chest to obtain the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Assassin|r]|r
-    .goto Swamp of Sorrows,41.9,30.2
+    .cast 1842 >>|cRXP_WARN_Cast|r |T136162:0|t[Disarm Trap] |cRXP_WARN_on the|r |cRXP_PICK_Dart Trap|r |cRXP_WARN_on the tree|r
+step
+    .goto Swamp of Sorrows,42.76,30.77
+    >>Loot the |cRXP_PICK_Conspicuous Cache|r that spawned for |T134419:0|t[|cRXP_FRIENDLY_Rune of the Assassin|r]|r
     .collect 213139,1
 step
     .itemcount 213139,1
@@ -1650,7 +1653,7 @@ step
 step
     .train 425103,1
     #completewith next
-    >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Kurzen Elites|r and |cRXP_ENEMY_Kurzen Subchiefs|r for the |cRXP_LOOT_Compound Cage Key|r
+    >>Cast |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Kurzen Elites|r and |cRXP_ENEMY_Kurzen Subchiefs|r for the |cRXP_LOOT_Compound Cage Key|r
     .collect 216616,1
     .mob Kurzen Elite
     .mob Kurzen Subchief
@@ -1864,15 +1867,17 @@ step
     .zone Blasted Lands >>Travel to |cFFfa9602Blasted Lands|r
 step
     #completewith next
-    .goto Blasted Lands,45.27,16.52 >>Travel to the top of the tower in front of Dreadmaul Hold
+    .goto Blasted Lands,45.27,16.52,10 >>Travel to the top of the tower in front of Dreadmaul Hold
 step
     .goto Blasted Lands,45.27,16.52
     >>Open the |cRXP_PICK_Abandoned Cache|r. Kill the |cRXP_ENEMY_Murderous Lost One|r (level 46) that spawns
     >>Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Carnage|r]
     .collect 221461,1 -- Rune of Carnage 1/1
     .unitscan Murderous Lost One
+    .train 432299,1
 step
     .use 221461
+    .itemcount 221461,1
     .train 432299 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Carnage|r] |cRXP_WARN_to train|r |T236268:0|t[Carnage]
 
 ]])
