@@ -6538,8 +6538,8 @@ step << Warlock/Mage
     .itemcount 220792,1 << Mage --Scroll of Spatial Mending
     .use 223148 << Warlock --Otherworldy Treasure
     .use 220792 << Mage
-    .train 428878,1 << Mage
-    .train 427733,1 << Warlock
+    .train 429311,1 << Mage
+    .train 431756,1 << Warlock
     .train 1120,3 << Warlock --Skips if you don't have drain soul
     .unitscan Fel Sliver
     .unitscan Fel Crack
@@ -6553,8 +6553,8 @@ step << Warlock/Mage
     #completewith BarrensEnd
     .itemcount 221499,1 << Warlock --Rune of the Felguard
     .itemcount 223147,1 << Mage --Spell Notes: Balefire Bolt
-    .train 427733 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Felguard|r] |cRXP_WARN_to learn|r |T136216:0|t[Summon Felguard] << Warlock
-    .train 428878 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt] << Mage
+    .train 431756 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Felguard|r] |cRXP_WARN_to learn|r |T136216:0|t[Summon Felguard] << Warlock
+    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt] << Mage
     .use 221499 << Warlock
     .use 223147 << Mage
 step
@@ -10282,8 +10282,8 @@ step << Warlock/Mage
     .itemcount 220792,1 << Mage --Scroll of Spatial Mending
     .use 223148 << Warlock --Otherworldy Treasure
     .use 220792 << Mage
-    .train 428878,1 << Mage
-    .train 427733,1 << Warlock
+    .train 429311,1 << Mage
+    .train 431756,1 << Warlock
     .train 1120,3 << Warlock --Skips if you don't have drain soul
     .unitscan Fel Sliver
     .unitscan Fel Crack
@@ -10297,8 +10297,8 @@ step << Warlock/Mage
     #completewith CounterattackTurnin3
     .itemcount 221499,1 << Warlock --Rune of the Felguard
     .itemcount 223147,1 << Mage --Spell Notes: Balefire Bolt
-    .train 427733 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Felguard|r] |cRXP_WARN_to learn|r |T136216:0|t[Summon Felguard] << Warlock
-    .train 428878 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt] << Mage
+    .train 431756 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Felguard|r] |cRXP_WARN_to learn|r |T136216:0|t[Summon Felguard] << Warlock
+    .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt] << Mage
     .use 221499 << Warlock
     .use 223147 << Mage
 step

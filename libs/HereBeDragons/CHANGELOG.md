@@ -1,15 +1,17 @@
 # Lib: HereBeDragons
 
-## [2.13-release](https://github.com/Nevcairiel/HereBeDragons/tree/2.13-release) (2023-07-12)
-[Full Changelog](https://github.com/Nevcairiel/HereBeDragons/compare/2.12-release...2.13-release) [Previous Releases](https://github.com/Nevcairiel/HereBeDragons/releases)
+## [2.13-release-6-g8a4bed6](https://github.com/Nevcairiel/HereBeDragons/tree/8a4bed65d2a0d5633cb8f4106d5dac5008fbe2d3) (2024-06-20)
+[Full Changelog](https://github.com/Nevcairiel/HereBeDragons/compare/2.13-release...8a4bed65d2a0d5633cb8f4106d5dac5008fbe2d3) [Previous Releases](https://github.com/Nevcairiel/HereBeDragons/releases)
 
-- Update TOC for 10.1.5
-- HBD-Pins-2.0: Hack around combat limitations in 10.1.5
-    SetPassThroughButtons can no longer be called in combat, but we allow
-    creating pins at any time during play. Until such a point when this is
-    fixed by Blizzard, noop out the function so that creating pins no longer
-    errors.
-    This function is called on the pin by Blizzards pin handler, which is of
-    course insecure on addon-created pins.
-- Update TOC for 10.1
-- Update TOC for 10.0.7
+- Let processMap lookup map info if not provided  
+    This simplifies the lookup logic a bit  
+- Add TWW transform data  
+- Update pin frame pool for 11.x compat  
+    This is a bit ugly since the exposed frame pools use a secure pool that  
+    we can't mess with, so instead create an unsecure texture pool (because  
+    frame or even object pools are not exposed, thanks Blizzard), and  
+    repurpose it to be a frame pool once again.  
+- Update Library version, forgotten in previous commit  
+    Also force a data update for Cataclysm  
+- Update for Cataclysm Classic  
+- Update TOC for 10.2.6  
