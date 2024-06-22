@@ -20,12 +20,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arturos|r
     .accept 80446 >>Accept Looking for Group
     .target Arturos
-step
-    #completewith next
-    .goto 371,43.01,27.58,10,0
-    .vendor >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy additional gems |cRXP_WARN_It's recommended for faster leveling but uses bronze, a cosmetic currency.|r
-    .skipgossip
-    .target Lidamorrutu
+-- step
+--     #completewith next
+--     .goto 371,43.01,27.58,10,0
+--     .vendor >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy additional gems |cRXP_WARN_It's recommended for faster leveling but uses bronze, a cosmetic currency.|r
+--     .skipgossip
+--     .target Lidamorrutu
 step
     #hidewindow
     #completewith All
