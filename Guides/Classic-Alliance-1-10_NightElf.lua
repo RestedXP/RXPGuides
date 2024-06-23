@@ -32,7 +32,8 @@ step
 step
     >>Loot the mobs you kill, make sure you have at least 10 copper worth of vendor trash, you will need it to train |T132333:0|t[Battle Shout]<< Warrior
     .xp 2 >> Grind to level 2
-step << !Warrior sod
+step
+    #xprate >2.49 << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dirania Silvershine|r and |cRXP_FRIENDLY_Melithar Staghelm|r
     #label GoodProtector
     .accept 4495 >> Accept A Good Friend
