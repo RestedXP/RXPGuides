@@ -470,6 +470,10 @@ step << Dwarf/Gnome
     .turnin 6387 >> Turn in Honor Students
     .accept 6391 >> Accept Ride to Ironforge
     .target Thorgrum Borrelson
+step
+    .goto Loch Modan,33.938,50.954
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
+    .fp Thelsamar >> Get the Thelsamar Flight Path
 step << Dwarf/Gnome
     #label flyIF
     .goto Loch Modan,33.938,50.954

@@ -662,7 +662,7 @@ step << Rogue
     .train 400105 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r |cRXP_WARN_to learn|r |T132291:0|t[Shadowstrike]
     .use 204795
     .itemcount 204795,1
-step << Paladin/Rogue/Warrior/Priest
+step
     #xprate >1.59
     #season 2
     #loop
@@ -1083,23 +1083,6 @@ step
     #completewith RestandR
     .abandon 3904 >> Abandon Milly's Harvest
 step
-    #xprate <1.5
-    #requires CuttyNote << Rogue --Season 2
-    #optional
-    #loop
-    .goto Elwynn Forest,52.55,48.79,0
-    .goto Elwynn Forest,55.43,45.87,0
-    .goto Elwynn Forest,52.55,48.79,30,0
-    .goto Elwynn Forest,53.89,50.52,30,0
-    .goto Elwynn Forest,55.09,49.00,30,0
-    .goto Elwynn Forest,55.43,45.87,30,0
-    .goto Elwynn Forest,53.86,47.05,30,0
-    .xp 5+1735 >> Grind to 1735+/2800xp << Paladin/Warrior
-    .xp 5+1625 >> Grind to 1625+/2800xp << !Paladin !Warrior !Priest !Mage
-    .xp 5+1085 >> Grind to 1085+/2800xp << Mage
-    .xp 5+975 >> Grind to 975+/2800xp << Priest
-    .mob Defias Thug
-step
     #xprate >1.49
     #requires CuttyNote << Rogue --Season 2
     #optional
@@ -1118,17 +1101,10 @@ step
 step
     #optional
     #softcore
-    #completewith next
+    #completewith #label RestandR
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .target Spirit Healer
--- .subzoneskip 59,1
-step << Priest/Mage
-    #xprate <1.5
-    .goto Elwynn Forest,50.692,39.347
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milly Osworth|r
-    .turnin 3904 >>Turn in Milly's Harvest
-    .accept 3905 >>Accept Grape Manifest
-    .target Milly Osworth
+    .subzoneskip 59,1
 step
     #label RestandR
     .goto Elwynn Forest,48.923,41.606
@@ -1138,27 +1114,9 @@ step
     .turnin 21,3 >> Turn in Skirmish at Echo Ridge << !Warrior !Paladin !Rogue
     .accept 54 >> Accept Report to Goldshire
     .target Marshal McBride
-step << Priest/Mage
-    #xprate <1.5
-    #optional
-    #completewith next
-    .goto Elwynn Forest,49.6,41.6,15,0
-    .goto Elwynn Forest,48.9,41.3,10 >>Travel upstairs
-step << Priest/Mage
-    #xprate <1.5
-    .goto Elwynn Forest,49.471,41.586
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Neals|r upstairs
-    .turnin 3905,1 >>Turn in Grape Manifest
-    .target Brother Neals
 step << Priest
     #optional
     #season 2
-    .goto Elwynn Forest,49.808,39.489
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Anetta|r inside
-    .accept 5623 >> Accept In Favor of the Light
-    .target Priestess Anetta
-step << Priest
-    #season 0,1
     .goto Elwynn Forest,49.808,39.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Anetta|r inside
     .accept 5623 >> Accept In Favor of the Light
@@ -1907,22 +1865,6 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lyria Du Lac|r
     .trainer >> Train your class spells
     .target Lyria Du Lac
-step << Paladin
-    #season 2
-    #xprate <1.59
-    .goto Elwynn Forest,41.096,66.041
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Wilhelm|r
-    >>|cRXP_WARN_Train|r |T135949:0|t[Purify] |cRXP_WARN_in order to acquire|r |T133815:0|t[Engrave Chest - Aegis] |cRXP_WARN_soon|r
-    .train 1152 >>Train |T135949:0|t[Purify]
-    .trainer >> Train your class spells
-    .target Brother Wilhelm
-step << Paladin
-    #season 0,1
-    #xprate <1.59
-    .goto Elwynn Forest,41.096,66.041
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Wilhelm|r
-    .trainer >> Train your class spells
-    .target Brother Wilhelm
 step << Warlock
     #optional
     #completewith next
@@ -2323,7 +2265,7 @@ step << Rogue
     .use 203991
     .itemcount 203991,1
     .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
-step << Priest/Paladin
+step << Priest
     #softcore
     #label EVDeathskip
     #completewith RedridgeS
@@ -2331,12 +2273,12 @@ step << Priest/Paladin
     .target Spirit Healer
     .zoneskip Redridge Mountains
 --XX not worth deathskipping as a warlock due to having to resumm pet
-step << Priest/Paladin/Rogue
+step << Priest/Rogue
     #label RedridgeS
     .goto Redridge Mountains,17.4,69.6
     .zone Redridge Mountains >> Travel to Redridge Mountains
     .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
-step << Priest/Paladin/Rogue
+step << Priest/Rogue
     #optional
     .goto Redridge Mountains,17.4,69.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Parker|r
@@ -2344,13 +2286,13 @@ step << Priest/Paladin/Rogue
     .target Guard Parker
     .xp <11,1
     .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
-step << Priest/Paladin/Rogue
+step << Priest/Rogue
     #softcore
     #completewith RRFP
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .target Spirit Healer
     .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
-step << Priest/Paladin/Rogue
+step << Priest/Rogue
     #hardcore
     #optional
     #completewith RRFP
@@ -2359,7 +2301,7 @@ step << Priest/Paladin/Rogue
     .goto Redridge Mountains,29.565,67.930,25,0
     .goto Redridge Mountains,30.590,59.410,15 >>|cRXP_WARN_BE CAREFUL: Stick to the main road and avoid any close mobs en-route|r
     .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
-step << Priest/Paladin/Rogue
+step << Priest/Rogue
     #optional
     .goto Redridge Mountains,30.73,59.99
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r
@@ -2376,15 +2318,10 @@ step << Priest/Rogue
     .target Ariena Stormfeather
     .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
 step << Paladin
-    #xprate >1.49
-    #season 2
-    #label RRFP
-    .goto Redridge Mountains,30.590,59.410
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
-    .fp Redridge Mountains >> Get the Redridge Mountains flight path
-    .fly Stormwind >> Fly to Stormwind City
-    .target Ariena Stormfeather
-    .train 410015,1
+    #optional
+    #completewith next
+    .goto Elwynn Forest,33.5,52.0
+    .zone Stormwind City >> Run to Stormwind
 step << Paladin
     #xprate >1.49
     #season 2
@@ -2501,7 +2438,6 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .turnin 76 >> Turn in The Jasperlode Mine
     .accept 239 >> Accept Westbrook Garrison Needs Help!
-    .accept 59 >> Accept Cloth and Leather Armor << Warlock
     .accept 109 >> Accept Report to Gryan Stoutmantle
     .target Marshal Dughan
 step
@@ -2590,7 +2526,7 @@ step << skip --Rogue
     .train 2983 >> Train |T132307:0|t[Sprint]
     .target Keryn Sylvius
 --XX skip quest, not worth going inside for
-step << !Warlock
+step
     #completewith PrincessFinish
     #optional
     .abandon 59 >> Abandon Cloth and Leather Armor
@@ -2651,30 +2587,6 @@ step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r
     .turnin 239 >> Turn in Westbrook Garrison Needs Help!
     .target Deputy Rainer
-    .train 410015,3
-step << Paladin
-    #xprate >1.49
-    #season 2
-    #label Garrison
-    .goto Elwynn Forest,24.234,74.450
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r
-    .turnin 239 >> Turn in Westbrook Garrison Needs Help!
-    .accept 11 >> Accept Riverpaw Gnoll Bounty
-    .target Deputy Rainer
-    .train 410015,1
-step << Paladin
-    #xprate 1.49-1.59
-    #season 2
-    #optional
-    #completewith Martyrdom
-    .goto Elwynn Forest,27.0,86.7,0
-    .goto Elwynn Forest,26.1,89.9,0
-    .goto Elwynn Forest,27.0,93.9,0
-    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for their |cRXP_LOOT_Painted Gnoll Armbands|r
-    .complete 11,1 -- Painted Gnoll Armband (8)
-    .mob Riverpaw Runt
-    .mob Riverpaw Outrunner
-    .train 410015,1
 step << Paladin
     #xprate >1.59
     #season 2
@@ -2683,27 +2595,12 @@ step << Paladin
     .goto Elwynn Forest,27.0,86.7,0
     .goto Elwynn Forest,26.1,89.9,0
     .goto Elwynn Forest,27.0,93.9,0
-    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for their |cRXP_LOOT_Painted Gnoll Armbands|r and |T132889:0|t[Linen Cloth]
-    .complete 11,1 -- Painted Gnoll Armband (8)
+    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for their |T132889:0|t[Linen Cloth], you will need 10 for a quest later
     .collect 2589,10,1644,1 --Linen Cloth (10)
     .mob Riverpaw Runt
     .mob Riverpaw Outrunner
     .train 410015,1
     .isQuestAvailable 1644
-step << Paladin
-    #xprate >1.59
-    #season 2
-    #optional
-    #completewith Martyrdom
-    .goto Elwynn Forest,27.0,86.7,0
-    .goto Elwynn Forest,26.1,89.9,0
-    .goto Elwynn Forest,27.0,93.9,0
-    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for their |cRXP_LOOT_Painted Gnoll Armbands|r and |T132889:0|t[Linen Cloth]
-    .complete 11,1 -- Painted Gnoll Armband (8)
-    .mob Riverpaw Runt
-    .mob Riverpaw Outrunner
-    .train 410015,1
-    .isQuestTurnedIn 1644
 step << Paladin
     #xprate >1.49
     #season 2
@@ -2729,7 +2626,7 @@ step << Paladin
     .goto Duskwood,4.33,28.26
     >>Defeat |cRXP_ENEMY_Ada Gelhardt|r
     >>|cRXP_WARN_Remember to pre-cast|r |T135924:0|t[Seal of the Crusader] |cRXP_WARN_on her|r
-    >>|cRXP_WARN_Be careful as she casts|r |T136197:0|t[Shadow Shock] |cRXP_WARN_(instantly deals 45 shadow damage. Costs her 75 mana. You should kill her quick enough for her to only cast it 3 times)|r
+    >>|cRXP_WARN_This step is HARD. Be careful as she casts|r |T136197:0|t[Shadow Shock] |cRXP_WARN_(instantly deals 45 shadow damage. Costs her 75 mana. You should kill her quick enough for her to only cast it 3 times)|r
     >>|cRXP_WARN_After defeating |cRXP_ENEMY_Ada Gelhardt|r:|r
     >>Talk to |cRXP_FRIENDLY_Ada Gelhardt|r again to receive the |T134419:0|t[Rune of Martyrdom]
     .collect 205897,1 --Rune of Martyrdom (1)
@@ -2879,27 +2776,20 @@ step
     #season 0,1 << Warrior/Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r
     .turnin 239 >> Turn in Westbrook Garrison Needs Help!
-    .accept 11 >> Accept Riverpaw Gnoll Bounty << Warlock
     .goto Elwynn Forest,24.234,74.450
     .target +Deputy Rainer
     >>Click the |cRXP_PICK_Wanted Poster|r << Warlock
     .accept 176 >> Accept Wanted: "Hogger" << Warlock
     .goto Elwynn Forest,24.548,74.672 << Warlock
-step << Warlock
+step << Warlock/Paladin
     #completewith GnollEnd
-    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for the |T134939:0|t[|cRXP_LOOT_Gold Pickup Schedule|r]
+    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r while running. Loot them for the |T134939:0|t[|cRXP_LOOT_Gold Pickup Schedule|r]
     .use 1307 >>|cRXP_WARN_Use the |T134939:0|t[|cRXP_LOOT_Gold Pickup Schedule|r] to start the quest|r
     >>|cRXP_WARN_The|r |T134939:0|t[|cRXP_LOOT_Gold Pickup Schedule|r] |cRXP_WARN_is a very rare drop. Ignore this step if you don't get it|r
     >>|cRXP_ENEMY_Gruff Swiftbite|r |cRXP_WARN_a rare spawn, does have a 100% drop chance|r
     .collect 1307,1,123 --Collect Gold Pickup Schedule (x1)
     .accept 123 >> Accept The Collector
     .unitscan Gruff Swiftbite
-step << Warlock
-    #completewith next
-    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for their |cRXP_LOOT_Armbands|r
-    .complete 11,1 -- Painted Gnoll Armband (8)
-    .mob Riverpaw Runt
-    .mob Riverpaw Outrunner
 step << Warlock
     .goto Elwynn Forest,27.0,86.7,70,0
     .goto Elwynn Forest,26.1,89.9,70,0
@@ -2917,34 +2807,12 @@ step << Warlock
     >>Kill |cRXP_ENEMY_Hogger|r. Loot him for his |cRXP_LOOT_Claw|r
     >>|cRXP_ENEMY_Hogger|r |cRXP_WARN_can spawn in multiple locations|r
     >>|cRXP_WARN_Cast|r |T136183:0|t[Fear] |cRXP_WARN_on |cRXP_ENEMY_Hogger|r continously and use your regular DoTs to kill him|r
-    >>|cRXP_WARN_Kite him back to the guard tower if required ensuring you've done at least 50% damage to him|r
+    >>|cRXP_WARN_Use|r |T136163:0|t[Drain Soul] |cRXP_WARN_as hogger is about to die. If he dies while under the effect of it you will receive a|r |T134085:0|t[Tainted Soul Shard] |cRXP_WARN_which is used for unlocking the rune of|r |T136169:0|t[Soul Siphon]
+    >>|cRXP_WARN_Skip this step if you fail to get the soul shard or Hogger isn't up. The rune is not very strong|r
     .complete 176,1 --Huge Gnoll Claw (1)
+    .collect 205019,1 --Tainted Soul shard
+    .disablecheckbox
     .unitscan Hogger
-step << Warlock
-    #label GnollEnd
-    .goto Elwynn Forest,27.0,86.7,70,0
-    .goto Elwynn Forest,26.1,89.9,70,0
-    .goto Elwynn Forest,25.2,92.7,70,0
-    .goto Elwynn Forest,27.0,93.9,70,0
-    .goto Elwynn Forest,27.0,86.7,70,0
-    .goto Elwynn Forest,26.1,89.9,70,0
-    .goto Elwynn Forest,25.2,92.7,70,0
-    .goto Elwynn Forest,27.0,93.9,70,0
-    .goto Elwynn Forest,27.0,86.7,70,0
-    .goto Elwynn Forest,26.1,89.9,70,0
-    .goto Elwynn Forest,25.2,92.7,70,0
-    .goto Elwynn Forest,27.0,93.9,70,0
-    .goto Elwynn Forest,25.9,93.9
-    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for their |cRXP_LOOT_Armbands|r
-    .complete 11,1 -- Painted Gnoll Armband (8)
-    .mob Riverpaw Runt
-    .mob Riverpaw Outrunner
-    .isOnQuest 11
-step << Warlock
-    .goto Elwynn Forest,24.234,74.450
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r
-    .turnin 11 >> Turn in Riverpaw Gnoll Bounty
-    .target Deputy Rainer
 step << !Warlock
     #optional
     #completewith WestEntry
@@ -2954,7 +2822,7 @@ step
     .goto Westfall,59.95,19.35
     .zone Westfall >> Travel to Westfall
 step
-#xprate >1.49
+    #xprate >1.49
     #optional
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Furlbrow|r and |cRXP_FRIENDLY_Verna Furlbrow|r
     >>|cRXP_WARN_Do not accept the other quests|r
@@ -2965,7 +2833,7 @@ step
     .goto Westfall,59.92,19.42
 	.target +Verna Furlbrow
     .isOnQuest 184
-step
+step << !Paladin !Warlock
 #xprate >1.49
     #label WestEntry
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verna Furlbrow|r
@@ -2980,14 +2848,14 @@ step << Paladin
     #requires Charred
 --XXREQ Placeholder invis step
 step
-step
+step << !Paladin !Warlock
 #xprate >1.49
     .goto Westfall,56.416,30.519
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Salma Saldean|r inside
     >>|cRXP_WARN_Do not accept the other quests|r
     .turnin 36 >> Turn in Westfall Stew
     .target Salma Saldean
-step
+step << !Paladin !Warlock
     .goto Westfall,56.04,31.23
     .target Farmer Saldean
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Saldean|r
@@ -3006,6 +2874,9 @@ step << Paladin
     .goto 1436,48.249,46.729
     .xp 11+5360 >> Grind to 5360+/8800xp
 --XX 625+210+85+800 = 1720 x2 = 3440
+step << Paladin/Warlock
+    .goto Westfall,62.3,35.4
+    .zone Westfall >> Swim across the river to Westfall
 step
     #softcore
     #completewith next
@@ -3099,7 +2970,7 @@ step << !Rogue
     .trainer >>Train 2h Swords << Warrior/Paladin
     .target Woo Ping
     .money <0.2 << Warlock/Mage
-    .money <0.3 << Warrior
+    .money <0.3 << Warrior/Paladin
 step << Warlock/Mage
     .goto StormwindClassic,57.129,57.698
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Woo Ping|r
@@ -3218,6 +3089,13 @@ step << Warlock
     .goto Elwynn Forest,42.105,65.927
     .subzone 87 >> Travel to Goldshire
 step << Warlock
+    #optional
+    #completewith LockGoldshireEnd
+    >>Look for any |cRXP_ENEMY_critter|r running around near the spirit healer. Cast |T136163:0|t[Drain Soul] on it to receive a |T134095:0|t[Pure Soul Shard]
+    .collect 205020,1 --Pure Soul Shard (1)
+    .itemcount 205019,1 --Skip if no Hogger shard
+    .train 403920,1
+step << Warlock
     .goto Elwynn Forest,42.105,65.927
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     >>|cRXP_WARN_Choose the|r |T135145:0|t[Balanced Fighting Stick]
@@ -3233,12 +3111,32 @@ step << Warlock
     .turnin 176 >> Turn in Wanted: "Hogger"
     .target Marshal Dughan
 step << Warlock
+    #label SoulSiphon
+    .goto Elwynn Forest,44.0,66.2
+    >>|cRXP_WARN_Head to the basement of the Goldshire Inn|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Damien Kane|r. Complete his dialogue to trade the soul shards for |T134419:0|t[Rune of Soul Siphon]
+    .collect 205022,1
+    .train 403920,1
+    .itemcount 205020,1 --Pure Soul Shard (1)
+    .itemcount 205019,1 --Tainted Soul Shard (1)
+step << Warlock
+    #optional
+    #requires SoulSiphon
+    #completewith next
+    .train 403920 >> Use the |T134419:0|t[Rune of Soul Siphon] to train |T136169:0|t[Soul Siphon]
+    .use 205022
+    .train 403920,1
+    .itemcount 205022,1
+step << Warlock
     #optional
     #completewith WLBandanaEnd
     +|cRXP_WARN_Equip the|r |T135145:0|t[Balanced Fighting Stick]
     .use 6215
     .itemcount 6215,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.9
+step << Warlock
+    #label LockGoldshireEnd
+    --Invisible step
 step << Warlock
     #optional
     >>|cRXP_WARN_Grind en-route. Try to level your|r |T135145:0|t[Balanced Fighting Stick] |cRXP_WARN_skill|r
@@ -3254,20 +3152,6 @@ step << Warlock
     .collect 1972,1,184 --Collect Westfall Deed (x1)
     .accept 184 >> Accept Furlbrow's Deed
 step << Warlock
-    #sticky
-    #label WLBandanaEnd
-    #loop
-    .goto Elwynn Forest,70.5,77.6,0
-    .goto Elwynn Forest,70.8,80.9,0
-    .waypoint Elwynn Forest,70.5,77.6,60,0
-    .waypoint Elwynn Forest,68.1,77.5,60,0
-    .waypoint Elwynn Forest,68.2,81.4,60,0
-    .waypoint Elwynn Forest,70.8,80.9,60,0
-    >>Kill |cRXP_ENEMY_Defias Bandits|r. Loot them for their |cRXP_LOOT_Red Linen Bandanas|r
-    .complete 83,1 --Collect Red Linen Bandana (x6)
-    .mob Defias Bandit
-    .isOnQuest 83
-step << Warlock
     #label SChoker
     .goto Elwynn Forest,71.10,80.66
     >>Kill |cRXP_ENEMY_Surena Caledon|r. Loot her for her |cRXP_LOOT_Choker|r
@@ -3275,21 +3159,6 @@ step << Warlock
     >>|cRXP_WARN_Cast|r |T136183:0|t[Fear] |cRXP_WARN_on |cRXP_ENEMY_Morgan the Collector|r continously|r
     .complete 1688,1 --Surena's Choker (1)
     .mob Surena Caledon
-step << Warlock
-    #requires WLBandanaEnd
-    .goto Elwynn Forest,79.457,68.789
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sara Timberlain|r
-    .turnin 59 >> Turn in Cloth and Leather Armor
-    .turnin 83 >> Turn in Red Linen Goods
-    .target Sara Timberlain
-    .isOnQuest 83
-step << Warlock
-    #optional
-    #requires WLBandanaEnd
-    .goto Elwynn Forest,79.457,68.789
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sara Timberlain|r
-    .turnin 59 >> Turn in Cloth and Leather Armor
-    .target Sara Timberlain
 step << Warlock
     #optional
     #label WlockRedridge
@@ -3324,8 +3193,15 @@ step << Warlock
     .goto Redridge Mountains,30.590,59.410
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
     .fp Redridge Mountains >> Get the Redridge Mountains flight path
+    .target Ariena Stormfeather
+step << Warlock
+    .hs >> Hearthstone to Stormwind, skip this step and take the flight path if it's on cooldown
+step << Warlock
+    .goto Redridge Mountains,30.590,59.410
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
     .fly Stormwind >> Fly to Stormwind
     .target Ariena Stormfeather
+    .zoneskip Stormwind City
 step << Warlock
     #completewith next
     .goto StormwindClassic,29.2,74.0,20,0

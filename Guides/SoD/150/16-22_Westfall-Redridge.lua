@@ -290,11 +290,6 @@ step << !Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
     .fp Redridge Mountains >> Get the Redridge Mountains flight path
     .target Ariena Stormfeather
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
-	.target Verner Osgood
-    .goto Redridge Mountains,30.97,47.27
-    .accept 118 >> Accept The Price of Shoes
 step << Human/Dwarf Paladin
     .goto Redridge Mountains,30.590,59.410
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
@@ -395,17 +390,6 @@ step << Mage
     .use 208754
     .itemcount 208754,1 --Spell Notes: TENGI RONEERA (1)
 step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scout Galiaan|r
-	.target Scout Galiaan
-    .goto Westfall,54.00,53.00
-    .turnin 153 >> Turn in Red Leather Bandanas
-step
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
-	.target Gryan Stoutmantle
-    .goto Westfall,56.33,47.52
-    .turnin 12 >> Turn in The People's Militia
-    .accept 65 >> Accept The Defias Brotherhood
-step
     .goto Westfall,56.04,31.23
     .target Farmer Saldean
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Saldean|r
@@ -434,6 +418,17 @@ step
 	.target Farmer Saldean
     .goto Westfall,56.04,31.23
     .turnin 9 >> Turn in The Killing Fields
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scout Galiaan|r
+	.target Scout Galiaan
+    .goto Westfall,54.00,53.00
+    .turnin 153 >> Turn in Red Leather Bandanas
+step
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+	.target Gryan Stoutmantle
+    .goto Westfall,56.33,47.52
+    .turnin 12 >> Turn in The People's Militia
+    .accept 65 >> Accept The Defias Brotherhood
 step
     .goto Westfall,56.55,52.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
@@ -465,6 +460,11 @@ step
     .goto Redridge Mountains,32.13,48.63
     .accept 125 >> Accept The Lost Tools
     .target Foreman Oslow
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
+	.target Verner Osgood
+    .goto Redridge Mountains,30.97,47.27
+    .accept 118 >> Accept The Price of Shoes
 step
 #optional
     .goto Redridge Mountains,30.97,47.27
