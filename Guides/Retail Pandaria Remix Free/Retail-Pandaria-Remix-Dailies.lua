@@ -920,11 +920,7 @@ step
 
 ]])
 
-<<<<<<< Updated upstream
--- Landfall Dailies
-=======
 -- Domination Point Dailies Horde
->>>>>>> Stashed changes
 RXPGuides.RegisterGuide([[
 #df
 #version 1
