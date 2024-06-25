@@ -673,18 +673,6 @@ step
     .accept 30953 >>Accept Fallen Sentinels
     .target Yak-Keeper Kyana
 step
-    .goto 388,39.41,61.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Commander Qipan|r
-    .turnin 80430 >>Turn in Aid the August Celestials
-    .target Sentinel Commander Qipan
-    .turnin 80430 >>Turn in Aid the August Celestials
-
-    .turnin 80430 >>Turn in Aid the August Celestials
-
-    .turnin 80430 >>Turn in Aid the August Celestials
-
-    .turnin 80430 >>Turn in Aid the August Celestials
-step
     .goto 388,39.35,62.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ogo the Elder|r
     .turnin 31383 >>Turn in Defense At Niuzao Temple
@@ -839,7 +827,7 @@ step
     .target Yak-Keeper Kyana
 
 
-    step
+step
     .goto 388,43.86,65.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ku-Mo|r
     .accept 30931 >>Accept My Father's Crossbow
@@ -853,7 +841,7 @@ step
     .turnin 30931 >>Turn in My Father's Crossbow
     .target Ku-Mo
 
-    step
+step
     .goto 388,39.42,61.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Commander Qipan|r
     .accept 30932 >>Accept Father's Footsteps
@@ -935,7 +923,7 @@ step
 
 ]])
 
--- Landafall Dailies
+-- Landfall Dailies
 RXPGuides.RegisterGuide([[
 #df
 #version 1
