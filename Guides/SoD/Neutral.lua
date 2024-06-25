@@ -1453,7 +1453,7 @@ step
     .train 410029 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Eclipse|r] |cRXP_WARN_to train|r |T236151:0|t[Eclipse] << Druid
     .train 403467 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Healing Rage|r] |cRXP_WARN_to train|r |T132345:0|t[Enraged Regeneration] << Warrior
     .train 426452 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Burning Darkness|r] |cRXP_WARN_to train|r |T135823:0|t[Shadow and Flame] << Warlock
-    .train 425102 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Poisoned Blade|r] |cRXP_WARN_to train|r |T236270:0|t[Poisoned Blade] << Rogue
+    .train 425102 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Poisoned Blade|r] |cRXP_WARN_to train|r |T236270:0|t[Poisoned Knife] << Rogue
     .train 425883 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Ancestral Awakening|r] |cRXP_WARN_to train|r |T237571:0|t[Ancestral Awakening] << Shaman
     .use 212552 << Priest
     .use 212551 << Paladin
@@ -1891,15 +1891,15 @@ step
     .collect 221517,1 << Druid --Rune of Bloodshed
     .collect 223288,1 << Paladin --Rune of the Hammer
 step
-    .train 431681 >>|cRXP_WARN_Use the|r |T135791:0|t[|cRXP_FRIENDLY_Nihilist Epiphany|r] |cRXP_WARN_to train|r |T132886:0|t[Void Zone] << Priest
-    .train 428741 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Molten Armor|r] |cRXP_WARN_to train|r |T132221:0|t[Molten Armor] << Mage
-    .train 427717 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Affliction|r] |cRXP_WARN_to train|r |T136228:0|t[Unstable Affliciton] << Warlock
-    .train 415231 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Burn|r] |cRXP_WARN_to train|r |T135822:0|t[Burn] << Shaman
-    .train 426980 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Protector|r] |cRXP_WARN_to train|r |T132359:0|t[Shield Mastery] << Warrior
-    .train 432271 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Alclarity|r] |cRXP_WARN_to train|r |T236269:0|t[Cut to the Chase] << Rogue
-    .train 428717 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Detonation|r] |cRXP_WARN_to train|r |T133713:0|t[T.N.T.] << Hunter
-    .train 417145 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Bloodshed|r] |cRXP_WARN_to train|r |T304501:0|t[Gore] << Druid
-    .train 429152 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Hammer|r] |cRXP_WARN_to train|r |T236262:0|t[Improved Hammer of Wrath] << Paladin
+    .train 431705 >>|cRXP_WARN_Use the|r |T135791:0|t[|cRXP_FRIENDLY_Nihilist Epiphany|r] |cRXP_WARN_to train|r |T132886:0|t[Void Zone] << Priest
+    .train 429308 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Molten Armor|r] |cRXP_WARN_to train|r |T132221:0|t[Molten Armor] << Mage
+    .train 431747 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Affliction|r] |cRXP_WARN_to train|r |T136228:0|t[Unstable Affliction] << Warlock
+    .train 416066 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Burn|r] |cRXP_WARN_to train|r |T135822:0|t[Burn] << Shaman
+    .train 410098 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Protector|r] |cRXP_WARN_to train|r |T132359:0|t[Shield Mastery] << Warrior
+    .train 432297 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Alclarity|r] |cRXP_WARN_to train|r |T236269:0|t[Cut to the Chase] << Rogue
+    .train 431611 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Detonation|r] |cRXP_WARN_to train|r |T133713:0|t[T.N.T.] << Hunter
+    .train 431447 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Bloodshed|r] |cRXP_WARN_to train|r |T304501:0|t[Gore] << Druid
+    .train 429261 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Hammer|r] |cRXP_WARN_to train|r |T236262:0|t[Improved Hammer of Wrath] << Paladin
     .use 221480 << Mage -- Spell Notes: Molten Armor
     .use 221481 << Priest --Nihilist Epiphany
     .use 221482 << Warlock --Rune of Affliciton
@@ -1971,15 +1971,15 @@ step
     .turnin 82044 >>Turn in The Wild Gods
     .target Shadowtooth Emissary
 step
-    .train 431622 >>|cRXP_WARN_Use the|r |T236160:0|t[|cRXP_FRIENDLY_Hyjal's Wisdom|r] item you received |cRXP_WARN_to train|r |T237539:0|t[Divine Aegis] << Priest
-    .train 431389 >>|cRXP_WARN_Use the|r |T236160:0|t[|cRXP_FRIENDLY_Hyjal's Wisdom|r] item you received |cRXP_WARN_to train|r |T132091:0|t[Improved Frenzied Regeneration] << Druid
-    .train 428738 >>|cRXP_WARN_Use the|r |T236160:0|t[|cRXP_FRIENDLY_Hyjal's Wisdom|r] item you received |cRXP_WARN_to train|r |T135733:0|t[Advanced Warding] << Mage
-    .train 415413 >>|cRXP_WARN_Use the|r |T236160:0|t[|cRXP_FRIENDLY_Hyjal's Wisdom|r] item you received |cRXP_WARN_to train|r |T236185:0|t[Lock and Load] << Hunter
-    .train 429133 >>|cRXP_WARN_Use the|r |T236160:0|t[|cRXP_FRIENDLY_Hyjal's Wisdom|r] item you received |cRXP_WARN_to train|r |T135925:0|t[Improved Sanctuary] << Paladin
-    .train 432259 >>|cRXP_WARN_Use the|r |T236160:0|t[|cRXP_FRIENDLY_Hyjal's Wisdom|r] item you received |cRXP_WARN_to train|r |T135673:0|t[Combat Potency] << Rogue
-    .train 409954 >>|cRXP_WARN_Use the|r |T236160:0|t[|cRXP_FRIENDLY_Hyjal's Wisdom|r] item you received |cRXP_WARN_to train|r |T252995:0|t[Riptide] << Shaman
-    .train 426469 >>|cRXP_WARN_Use the|r |T236160:0|t[|cRXP_FRIENDLY_Hyjal's Wisdom|r] item you received |cRXP_WARN_to train|r |T236299:0|t[Vengeance] << Warlock
-    .train 426978 >>|cRXP_WARN_Use the|r |T236160:0|t[|cRXP_FRIENDLY_Hyjal's Wisdom|r] item you received |cRXP_WARN_to train|r |T236315:0|t[Sword and Board] << Warrior
+    .train 431650 >>|cRXP_WARN_Use the|r |T236160:0|t[|cRXP_FRIENDLY_Hyjal's Wisdom|r] item you received |cRXP_WARN_to train|r |T237539:0|t[Divine Aegis] << Priest
+    .train 431461 >>|cRXP_WARN_Use the|r |T236160:0|t[|cRXP_FRIENDLY_Hyjal's Wisdom|r] item you received |cRXP_WARN_to train|r |T132091:0|t[Improved Frenzied Regeneration] << Druid
+    .train 401754 >>|cRXP_WARN_Use the|r |T236160:0|t[|cRXP_FRIENDLY_Hyjal's Wisdom|r] item you received |cRXP_WARN_to train|r |T135733:0|t[Advanced Warding] << Mage
+    .train 416085 >>|cRXP_WARN_Use the|r |T236160:0|t[|cRXP_FRIENDLY_Hyjal's Wisdom|r] item you received |cRXP_WARN_to train|r |T236185:0|t[Lock and Load] << Hunter
+    .train 429247 >>|cRXP_WARN_Use the|r |T236160:0|t[|cRXP_FRIENDLY_Hyjal's Wisdom|r] item you received |cRXP_WARN_to train|r |T135925:0|t[Improved Sanctuary] << Paladin
+    .train 432293 >>|cRXP_WARN_Use the|r |T236160:0|t[|cRXP_FRIENDLY_Hyjal's Wisdom|r] item you received |cRXP_WARN_to train|r |T135673:0|t[Combat Potency] << Rogue
+    .train 410105 >>|cRXP_WARN_Use the|r |T236160:0|t[|cRXP_FRIENDLY_Hyjal's Wisdom|r] item you received |cRXP_WARN_to train|r |T252995:0|t[Riptide] << Shaman
+    .train 426470 >>|cRXP_WARN_Use the|r |T236160:0|t[|cRXP_FRIENDLY_Hyjal's Wisdom|r] item you received |cRXP_WARN_to train|r |T236299:0|t[Vengeance] << Warlock
+    .train 427082 >>|cRXP_WARN_Use the|r |T236160:0|t[|cRXP_FRIENDLY_Hyjal's Wisdom|r] item you received |cRXP_WARN_to train|r |T236315:0|t[Sword and Board] << Warrior
     .use 222962 --Hyjal's Wisdom
 ]])
 
@@ -2018,11 +2018,15 @@ step
     .collect 221319,1 >>|T237192:0|t|cRXP_LOOT_Blackrock Leycryst|r from southern |cRXP_PICK_Searing Gorge|r
     .collect 221320,1 >>|T237191:0|t|cRXP_LOOT_Hinterlands Leycryst|r from |cRXP_PICK_The Hinterlands|r north of Altar of Zul
     .mob Enraged Leywalker
+    .train 429309,1 << Mage
+    .train 431745,1 << Warlock
+    .train 429255,1 << Paladin
+    .train 431673,1 << Priest
 step
-    .train 428861 >> |cRXP_WARN_Use any of the four crystals you collected to combine them and learn|r |T132171:0|t[Displacement] << Mage
-    .train 427713 >> |cRXP_WARN_Use any of the four crystals you collected to combine them and learn|r |T236290:0|t[Backdraft] << Warlock
-    .train 429144 >> |cRXP_WARN_Use any of the four crystals you collected to combine them and learn|r |T135950:0|t[Purifying Power] << Paladin
-    .train 431670 >> |cRXP_WARN_Use any of the four crystals you collected to combine them and learn|r |T237555:0|t[Despair] << Priest
+    .train 429309 >> |cRXP_WARN_Use any of the four crystals you collected to combine them and learn|r |T132171:0|t[Displacement] << Mage
+    .train 431745 >> |cRXP_WARN_Use any of the four crystals you collected to combine them and learn|r |T236290:0|t[Backdraft] << Warlock
+    .train 429255 >> |cRXP_WARN_Use any of the four crystals you collected to combine them and learn|r |T135950:0|t[Purifying Power] << Paladin
+    .train 431673 >> |cRXP_WARN_Use any of the four crystals you collected to combine them and learn|r |T237555:0|t[Despair] << Priest
     .use 221318 --Azshara Leycryst
 ]])
 

@@ -1,5 +1,7 @@
 local addonName, addon = ...
 
+local GetItemCount = C_Item and C_Item.GetItemCount or _G.GetItemCount
+
 addon.skipPreReq = {
     [9573] = 1,
     [533] = 1,
@@ -221,7 +223,7 @@ local function IsQuestAvailable(quest,id,skipRepCheck)
     id = id or quest.Id
 
     local function ProcessRep(rep,faction)
-        local _, _, standing = GetFactionInfoByID(faction)
+        local _, _, standing = addon.GetFactionInfoByID(faction)
         local current = addon.repStandingID[strlower(rep)]
         if skipRepCheck then
             if (skipRepCheck == 932 and faction == 934) or

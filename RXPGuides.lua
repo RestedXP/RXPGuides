@@ -9,6 +9,12 @@ addon = LibStub("AceAddon-3.0"):NewAddon(addon, addonName, "AceEvent-3.0")
 local RegisterMessage_OLD = addon.RegisterMessage
 local rand, tinsert, select = math.random, table.insert, _G.select
 local IsAddOnLoadOnDemand = C_AddOns and C_AddOns.IsAddOnLoadOnDemand or _G.IsAddOnLoadOnDemand
+local GetSpellInfo = C_Spell and C_Spell.GetSpellInfo or _G.GetSpellInfo
+local GetSpellTexture = C_Spell and C_Spell.GetSpellTexture or _G.GetSpellTexture
+local GetSpellSubtext = C_Spell and C_Spell.GetSpellSubtext or _G.GetSpellSubtext
+local IsCurrentSpell = C_Spell and C_Spell.IsCurrentSpell or _G.IsCurrentSpell
+local IsSpellKnown = C_Spell and C_Spell.IsSpellKnown or _G.IsSpellKnown
+local IsPlayerSpell = C_Spell and C_Spell.IsPlayerSpell or _G.IsPlayerSpell
 local messageList = {}
 
 local function MessageHandler(message,...)
@@ -104,6 +110,9 @@ local maxLevel
 if gameVersion > 50000 then
     addon.game = "RETAIL"
     maxLevel = 70
+    if gameVersion > 120000 then
+        maxLevel = 80
+    end
 elseif gameVersion > 40000 then
     addon.game = "CATA"
     maxLevel = 85
@@ -127,6 +136,7 @@ addon.questQueryList = {}
 addon.itemQueryList = {}
 addon.questAccept = {}
 addon.questTurnIn = {}
+addon.disabledQuests = {}
 addon.activeItems = {}
 addon.activeSpells = {}
 addon.functions = {}
@@ -184,7 +194,7 @@ function addon.QuestAutoAccept(titleOrId)
 
     local element = addon.questAccept[titleOrId]
 
-    if not element then return end
+    if not element or (element.questId and addon.disabledQuests[element.questId]) then return end
     local step = element.step
     if step.active or step.index > 1 and addon.currentGuide.steps[step.index - 1].active then
         addon:SendEvent("RXP_QUEST_ACCEPT",element.questId)
@@ -194,17 +204,16 @@ end
 
 function addon.GetStepQuestReward(titleOrId)
     -- enableQuestRewardAutomation is setting for hard-coded .turnin step data
-    if not addon.settings.profile.enableQuestRewardAutomation then return 0 end
     if not titleOrId then return 0 end
-
     -- questTurnIn contains quest and title lookups
     -- addon.questTurnIn[747] == addon.questTurnIn["The Hunt Begins"]
 
     local element = addon.questTurnIn[titleOrId]
 
     if not element then return 0 end
+    if not addon.settings.profile.enableQuestRewardAutomation then return 0,element end
 
-    return element.reward >= 0 and element.reward or 0
+    return (element.reward >= 0 and element.reward or 0), element
 end
 
 function addon.IsPlayerSpell(id)
@@ -597,7 +606,8 @@ if addon.gameVersion < 40000 then
     createLogRewardChoiceIcons()
 end
 
-local GetItemInfo = _G.GetItemInfo
+local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
+
 local GetQuestLogSelection, GetNumQuestLogChoices = _G.GetQuestLogSelection,
                                                     _G.GetNumQuestLogChoices
 local GetQuestLogChoiceInfo, GetQuestLogItemLink, GetQuestLogTitle =
@@ -686,7 +696,7 @@ end
 
 local function handleQuestComplete()
     local id = GetQuestID()
-    if not id or id < 0 then return end
+    if not id or id < 0 or addon.questTurnIn[id] == false or addon.disabledQuests[id] then return end
 
     local numChoices = GetNumQuestChoices()
 
@@ -839,15 +849,18 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
             return
         end
     end
-
+    --print(event)
     if event == "QUEST_ACCEPT_CONFIRM" and addon.QuestAutoAccept(arg2) then
         ConfirmAcceptQuest()
     elseif event == "QUEST_COMPLETE" then
         handleQuestComplete()
     elseif event == "QUEST_PROGRESS" then
-        if IsQuestCompletable() then
+        local id = GetQuestID()
+        if id and addon.disabledQuests[id] then
+            return
+        elseif IsQuestCompletable() then
             CompleteQuest()
-        elseif addon.QuestAutoAccept(GetQuestID()) then
+        elseif addon.QuestAutoAccept(id) then
             HideUIPanel(_G.QuestFrame)
         elseif GetTime()-turnInTimer < 0.5 then
             HideUIPanel(_G.QuestFrame)
@@ -856,8 +869,9 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
         -- questProgressTimer = GetTime()
     elseif event == "QUEST_DETAIL" then
         local id = GetQuestID()
-        if addon.QuestAutoAccept(id) then
-            --acceptTimer =
+        if id and addon.disabledQuests[id] then
+            return
+        elseif addon.QuestAutoAccept(id) then
             AcceptQuest()
             HideUIPanel(_G.QuestFrame)
         elseif GetTime()-turnInTimer < 0.5 then
@@ -866,7 +880,7 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
         end
     elseif event == "QUEST_ACCEPTED" then
         local id = arg1 and arg2 or arg1
-        if id == GetQuestID() or addon.QuestAutoAccept(id) then
+        if (id == GetQuestID() or addon.QuestAutoAccept(id)) and not addon.disabledQuests[id] then
            HideUIPanel(_G.QuestFrame)
         end
     elseif event == "QUEST_GREETING" then
@@ -876,7 +890,8 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
         local title, isComplete
         for i = 1, nActive do
             title, isComplete = GetActiveTitle(i)
-            if addon.GetStepQuestReward(title) and isComplete then
+            local reward,exists = addon.GetStepQuestReward(title)
+            if exists and isComplete then
                 return SelectActiveQuest(i)
             end
         end
@@ -902,11 +917,12 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
         end
         for i = 1, nActive do
             local title, isComplete
+            local reward,isAutoTurnIn
             if type(quests) == "table" then
                 title = quests[i].questID
                 isComplete = quests[i].isComplete
-                if not (isComplete or missingTurnIn) and
-                    addon.GetStepQuestReward(title) then
+                reward,isAutoTurnIn = addon.GetStepQuestReward(title)
+                if not (isComplete or missingTurnIn) and isAutoTurnIn then
                     local objectives = addon.GetQuestObjectives(title)
                     missingTurnIn = objectives and objectives[1].generated and
                                         (selectActiveByQuestID and title or i)
@@ -914,9 +930,10 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
             else
                 title, _, _, isComplete = select(i * 6 - 5,
                                                  GossipGetActiveQuests())
+                reward,isAutoTurnIn = addon.GetStepQuestReward(title)
             end
 
-            if isComplete and addon.GetStepQuestReward(title) then
+            if isComplete and isAutoTurnIn then
                 return GossipSelectActiveQuest(
                            selectActiveByQuestID and title or i)
             end
@@ -952,7 +969,9 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
     elseif event == "QUEST_TURNED_IN" and addon.questTurnIn[arg1] then
             turnInTimer = GetTime()
     elseif event == "QUEST_AUTOCOMPLETE" then
-        if addon.gameVersion < 50000 and UnitLevel('player') ~= 80 then
+        if arg1 and addon.disabledQuests[arg1] then
+            return
+        elseif (addon.gameVersion < 50000 and UnitLevel('player') ~= 85) then
             for i = 1, GetNumAutoQuestPopUps() do
                 local id,status = GetAutoQuestPopUp(i)
                 if status == "COMPLETE" or id == arg1 then
@@ -962,7 +981,7 @@ function addon:QuestAutomation(event, arg1, arg2, arg3)
                     end
                 end
             end
-        else
+        elseif addon.gameVersion > 50000 and UnitLevel('player') ~= 70 then
             ShowQuestComplete(arg1)
         end
     end
@@ -1389,14 +1408,14 @@ function addon:UpdateLoop(diff)
     if addon.isHidden then
         updateError = false
         --print('hidden')
-        return
+        return 'hidden'
     elseif errorCount >= 10 then
         addon.lastEvent = event
         tickRate = 10
         errorCount = 0
         updateTick = 0
         updateError = false
-        return
+        return 'error'
     elseif updateTick > (tickRate + rand() / 128) then
         updateError = true
         local guideLoaded
@@ -1463,7 +1482,7 @@ function addon:UpdateLoop(diff)
                 addon.RXPFrame.SetStepFrameAnchor()
                 updateError = false
                 skip = 1
-                return
+                return 'bottomFrame'
             elseif skip % 2 == 1 and next(addon.guideCache) then
                 event = event .. "/cache"
                 local length = 0
@@ -1585,8 +1604,8 @@ addon.stepLogic = {}
 
 function addon.stepLogic.AldorScryerCheck(faction)
     if addon.game == "CLASSIC" then return true end
-    local _, _, _, _, _, aldorRep = GetFactionInfoByID(932)
-    local _, _, _, _, _, scryerRep = GetFactionInfoByID(934)
+    local _, _, _, _, _, aldorRep = addon.GetFactionInfoByID(932)
+    local _, _, _, _, _, scryerRep = addon.GetFactionInfoByID(934)
 
     if aldorRep and scryerRep then
         if type(faction) == "table" then
@@ -1719,12 +1738,12 @@ function addon.stepLogic.XpRateCheck(step)
                 else
                     rate = 1.5
                 end
-            elseif addon.settings.profile.season == 2 or addon.settings.profile.enableBetaFeatures then
+            elseif addon.settings.profile.enableBetaFeatures and addon.settings.profile.season == 2 then
+                rate = 2.5
+            elseif addon.settings.profile.season == 2 then
                 --local minLevel = tonumber(guide:sub(1,2))
                 local maxLevel = addon.currentGuide and tonumber(addon.currentGuide.name:match("%d+%-(%d+)"))
-                if addon.settings.profile.enableBetaFeatures then
-                    rate = 2.5
-                elseif UnitLevel('player') < 40 or (not step.elements or not maxLevel or maxLevel < 40) then
+                if UnitLevel('player') < 40 or (not step.elements or not maxLevel or maxLevel < 40) then
                     --print(minLevel,step.elements)
                     rate = 2.5
                 end

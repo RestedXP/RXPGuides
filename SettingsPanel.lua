@@ -12,6 +12,8 @@ local IsAddOnLoaded = C_AddOns and C_AddOns.IsAddOnLoaded or _G.IsAddOnLoaded
 local GetNumAddOns =  C_AddOns and C_AddOns.GetNumAddOns or _G.GetNumAddOns
 local GetAddOnInfo = C_AddOns and C_AddOns.GetAddOnInfo or _G.GetAddOnInfo
 
+local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
+
 local fmt, tostr, next, GetTime = string.format, tostring, next, GetTime
 
 local INV_HEIRLOOM = _G.Enum.ItemQuality.Heirloom
@@ -3182,7 +3184,7 @@ function addon.settings.ToggleActive()
 end
 
 local function CheckBuff(buffId)
-    local UnitBuff = UnitBuff
+    local UnitBuff = _G.UnitBuff or addon.UnitBuff
     local id = 0
     local i = 1
     while id do
@@ -3308,8 +3310,8 @@ end
 function addon.settings:DetectXPRate(softUpdate)
     if not addon.settings.profile.enableAutomaticXpRate then
         return
-    elseif addon.gameVersion < 20000 and not softUpdate then
-        local season = addon.player.season or CheckBuff(362859) and 1
+    elseif addon.gameVersion < 20000 then
+        local season = (C_Seasons and C_Seasons.HasActiveSeason() and C_Seasons.GetActiveSeason()) or CheckBuff(362859) and 1
 
         if season == addon.settings.profile.season then return end
 

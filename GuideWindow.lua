@@ -1383,7 +1383,11 @@ function addon.ProcessGuideTable(guide)
     local currentGuide = {}
 
     for k, v in pairs(guide) do
-        currentGuide[k] = v
+        if type(v) ~= "table" then
+            currentGuide[k] = v
+        elseif k ~= "steps" and k ~= "tips" then
+            currentGuide[k] = CopyTable(v)
+        end
     end
 
     currentGuide.steps = {}
@@ -1429,17 +1433,19 @@ function addon.ProcessGuideTable(guide)
                 startAt = nil
             end
             if isShown and not startAt then
-                if step.tip then
-                    tinsert(currentGuide.tips,step)
-                    lastTip = step
-                    step.title = step.title or "Tip"
-                else
-                    tinsert(currentGuide.steps, step)
-                    step.tipWindow = lastTip
-                end
-                if step.elements then
-                    for _,element in pairs(step.elements) do
-                        addon.settings.ReplaceColors(element)
+                if not(step.include and step.elements and #step.elements == 0 and not step.requires) then
+                    if step.tip then
+                        tinsert(currentGuide.tips,step)
+                        lastTip = step
+                        step.title = step.title or "Tip"
+                    else
+                        tinsert(currentGuide.steps, step)
+                        step.tipWindow = lastTip
+                    end
+                    if step.elements then
+                        for _,element in pairs(step.elements) do
+                            addon.settings.ReplaceColors(element)
+                        end
                     end
                 end
                 IncludeGuide(step)
@@ -1566,6 +1572,20 @@ function addon:LoadGuide(guide, OnLoad)
 
     addon.currentGuide = addon.ProcessGuideTable(guide)
     guide = addon.currentGuide
+
+    local disabledQuests = {}
+    if guide.disabledQuests then
+        for id in pairs(guide.disabledQuests) do
+            disabledQuests[id] = true
+        end
+    end
+
+    if addon.disabledQuestList then
+        for _,id in pairs(addon.disabledQuestList) do
+            disabledQuests[id] = true
+        end
+    end
+    addon.disabledQuests = disabledQuests
 
     addon.currentGuideName = guide.name
     RXPCData.currentGuideName = guide.name
@@ -1791,8 +1811,9 @@ function BottomFrame.UpdateFrame(self, stepn)
             end
         end
         step.text = text
-        frame.text:SetText(text)
-
+        if frame.text then
+            frame.text:SetText(text)
+        end
         if hideStep then
             fheight = 1
             frame:SetAlpha(0)
@@ -1865,14 +1886,17 @@ function BottomFrame.UpdateFrame(self, stepn)
             else
                 frame:SetAlpha(1)
             end
-            if hideStep then
-                --hiddenFrames = hiddenFrames + 1
-                frame.text:SetText(text)
-                fheight = 1.00
-                frame:SetAlpha(0)
-            else
-                frame.text:SetText(text)
-                fheight = math.ceil(frame.text:GetStringHeight() + 8)
+
+            if frame.text then
+                if hideStep then
+                    --hiddenFrames = hiddenFrames + 1
+                    frame.text:SetText(text)
+                    fheight = 1.00
+                    frame:SetAlpha(0)
+                else
+                    frame.text:SetText(text)
+                    fheight = math.ceil(frame.text:GetStringHeight() + 8)
+                end
             end
             step.text = text
 

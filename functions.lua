@@ -5,6 +5,57 @@ local gameVersion = select(4, GetBuildInfo())
 local fmt, tinsert = string.format,tinsert
 local LoadAddOn = C_AddOns and C_AddOns.LoadAddOn or _G.LoadAddOn
 local IsAddOnLoaded = C_AddOns and C_AddOns.IsAddOnLoaded or _G.IsAddOnLoaded
+local GetItemInfo = C_Item and C_Item.GetItemInfo or _G.GetItemInfo
+local GetSpellInfo = C_Spell and C_Spell.GetSpellInfo or _G.GetSpellInfo
+local GetSpellTexture = C_Spell and C_Spell.GetSpellTexture or _G.GetSpellTexture
+local GetSpellSubtext = C_Spell and C_Spell.GetSpellSubtext or _G.GetSpellSubtext
+local IsCurrentSpell = C_Spell and C_Spell.IsCurrentSpell or _G.IsCurrentSpell
+local IsSpellKnown = C_Spell and C_Spell.IsSpellKnown or _G.IsSpellKnown
+local IsPlayerSpell = C_Spell and C_Spell.IsPlayerSpell or _G.IsPlayerSpell
+
+addon.GetFactionInfoByID = _G.GetFactionInfoByID or function(factionID)
+    local name, description, standingID, barMin, barMax, barValue
+
+    local factionData = C_Reputation.GetFactionDataByID(factionID);
+    name = factionData.name
+    standingID = factionData.reaction
+    barValue = factionData.currentStanding
+    barMin = factionData.currentReactionThreshold
+    barMax = factionData.nextReactionThreshold
+
+    return name, description, standingID, barMin, barMax, barValue
+end
+
+if not (UnitAura and UnitBuff and UnitDebuff) then
+    UnitAura = function(unitToken, index, filter)
+        local auraData = C_UnitAuras.GetAuraDataByIndex(unitToken, index, filter);
+        if not auraData then
+            return nil;
+        end
+
+        return AuraUtil.UnpackAuraData(auraData);
+    end
+    UnitBuff = function(unitToken, index, filter)
+        local auraData = C_UnitAuras.GetBuffDataByIndex(unitToken, index, filter);
+        if not auraData then
+            return nil;
+        end
+
+        return AuraUtil.UnpackAuraData(auraData);
+    end
+    UnitDebuff = function(unitToken, index, filter)
+        local auraData = C_UnitAuras.GetDebuffDataByIndex(unitToken, index, filter);
+        if not auraData then
+            return nil;
+        end
+
+        return AuraUtil.UnpackAuraData(auraData);
+    end
+    addon.UnitBuff = UnitBuff
+end
+
+local GetItemCount = C_Item and C_Item.GetItemCount or _G.GetItemCount
+
 --local RXPGuides = addon.RXPGuides
 local L = addon.locale.Get
 addon.functions.__index = addon.functions
@@ -866,7 +917,7 @@ function addon.functions.accept(self, ...)
         if step.active or element.retrieveText or
             (index and index > 1 and
                 addon.currentGuide.steps[index - 1].active) then
-            local autoAccept = bit.band(element.flags,0x1) ~= 0x1
+            local autoAccept = bit.band(element.flags,0x1) ~= 0x1 and not addon.disabledQuests[id]
             if autoAccept then addon.questAccept[id] = element end
             local quest = addon.GetQuestName(id, element)
             if quest then
@@ -1016,11 +1067,27 @@ function addon.functions.daily(self, text, ...)
 
 end
 
+function addon.functions.disablequestautomation(self,text,...)
+    if type(self) == "string" then -- on parse
+        local guide = addon.guide
+        local ids = {...}
+        local disabledQuests = guide.disabledQuests or {}
+        for i,v in pairs(ids) do
+            local id = tonumber(v)
+            if id then
+                disabledQuests[id] = true
+            end
+        end
+        guide.disabledQuests = disabledQuests
+        return
+    end
+end
+
 addon.turnInList = {}
 function addon.functions.turnin(self, ...)
 
     if type(self) == "string" then -- on parse
-        local text, id, reward = ...
+        local text, id, reward, flags = ...
         id = tonumber(id)
         if not id then
             return addon.error(
@@ -1029,6 +1096,8 @@ function addon.functions.turnin(self, ...)
         end
         reward = tonumber(reward) or 0
         local element = {title = "", questId = GetQuestId(id)}
+        element.flags = tonumber(flags) or 0
+        --setting the lsb to 1 disables auto turn in
         if id < 0 then
             id = math.abs(id)
             element.skipIfMissing = true
@@ -1063,12 +1132,13 @@ function addon.functions.turnin(self, ...)
             element.tooltip = id
         end
         if step.active or element.retrieveText then
-            addon.questTurnIn[id] = element
+            local autoTurnIn = (not element.flags or element.flags % 2 == 0) and element
+            addon.questTurnIn[id] = autoTurnIn
             -- addon.questAccept[id] = addon.questAccept[id] or element
             local quest = addon.GetQuestName(id)
             if quest then
                 element.title = quest
-                addon.questTurnIn[quest] = element
+                addon.questTurnIn[quest] = autoTurnIn
                 -- addon.questAccept[quest] = addon.questAccept[quest] or element
                 element.text = element.text:gsub("%*quest%*", quest)
                 if element.requestFromServer then
@@ -2771,7 +2841,7 @@ function addon.functions.reputation(self, ...)
             local standinglabel = getglobal(
                                       "FACTION_STANDING_LABEL" ..
                                           element.standing)
-            local factionname = GetFactionInfoByID(element.faction) or ""
+            local factionname = addon.GetFactionInfoByID(element.faction) or ""
             if element.repValue and element.repValue ~= 0 then
                 if element.repValue < 0 then
                     element.text = fmt(
@@ -2800,7 +2870,7 @@ function addon.functions.reputation(self, ...)
     local element = self.element
     local step = element.step
     local _, _, standing, bottomValue, topValue, earnedValue =
-        GetFactionInfoByID(element.faction)
+        addon.GetFactionInfoByID(element.faction)
     local relativeValue = earnedValue
     local replength = topValue - bottomValue
     if relativeValue < 0 then
@@ -3278,6 +3348,89 @@ function addon.functions.petfamily(self, text, ...)
     end
 end
 
+function addon.functions.areapoiexists(self, text, zone, ...)
+    if type(self) == "string" then
+        local element = {}
+        element.zone = addon.GetMapId(zone) or zone
+        local ids = {...}
+        for i,v in pairs(ids) do
+            ids[i] = tonumber(v)
+        end
+        if not ids[1] then
+            return addon.error(
+                        L("Error parsing guide") .. " " .. addon.currentGuideName ..
+                           ": Invalid PoI ID\n" .. self)
+        end
+        element.ids = ids
+        if text and text ~= "" then element.text = text end
+        element.textOnly = true
+        return element
+    end
+    local element = self.element
+    local exists = false
+    for _,id in pairs(element.ids) do
+        if C_AreaPoiInfo.GetAreaPOIInfo(zone, id) then
+            exists = true
+        end
+    end
+
+    local event = text
+    local step = element.step
+    if event ~= "WindowUpdate" and step.active and not addon.settings.profile.debug and (not exists) == not element.reverse and not addon.isHidden then
+        element.tooltipText = "Step skipped: Missing pre-requisites"
+        step.completed = true
+        addon.updateSteps = true
+    elseif step.active and not step.completed then
+        element.tooltipText = nil
+    end
+end
+
+events.questcount = events.complete
+function addon.functions.questcount(self, text, count, ...)
+    if type(self) == "string" then
+        local element = {}
+        local operator, n = string.match(count, "([<>]?)%s*(%d+)")
+        if operator == "<" then
+            element.reverse = true
+        end
+        n = tonumber(n)
+        element.total = n
+        local ids = {...}
+        for i,v in pairs(ids) do
+            ids[i] = tonumber(v)
+        end
+        if not (ids[1] and n) then
+            return addon.error(
+                        L("Error parsing guide") .. " " .. addon.currentGuideName ..
+                           ": Invalid PoI ID\n" .. self)
+        end
+        element.ids = ids
+        if text and text ~= "" then element.text = text end
+        element.textOnly = true
+        return element
+    end
+    local element = self.element
+    local step = element.step
+    local event = text
+    if not step.active then return end
+    count = 0
+    for _,id in pairs(element.ids) do
+        addon.questAccept[id] = element
+        if IsOnQuest(id) then
+            count = count + 1
+        end
+    end
+
+    local step = element.step
+    if event ~= "WindowUpdate" and step.active and not addon.settings.profile.debug and (count < element.total) == not element.reverse and not addon.isHidden then
+        --element.tooltipText = "Step skipped: Missing pre-requisites"
+        step.completed = true
+        addon.updateSteps = true
+    elseif step.active and not step.completed then
+        element.tooltipText = nil
+    end
+end
+
 function addon.functions.isQuestComplete(self, ...)
     if type(self) == "string" then
         local element = {}
@@ -3332,7 +3485,7 @@ function addon.functions.isOnQuest(self, text, ...)
     end
 
 
-    local event = ...
+    local event = text
     local step = element.step
     if event ~= "WindowUpdate" and step.active and not addon.settings.profile.debug and (not onQuest) == not element.reverse and not addon.isHidden then
         element.tooltipText = "Step skipped: Missing pre-requisites"
@@ -3370,7 +3523,7 @@ function addon.functions.isQuestTurnedIn(self, text, ...)
     local step = element.step
     local ids = element.questIds
     local questTurnedIn = false
-    local event = ...
+    local event = text
 
     if element.reverse then
         for _, id in pairs(ids) do
@@ -4897,101 +5050,168 @@ function addon.functions.logout(self, text, duration)
     end
 end
 
+if addon.gameVersion >= 110000 then
+    events.scenario = {"SCENARIO_UPDATE", "SCENARIO_CRITERIA_UPDATE", "CRITERIA_COMPLETE"}
+    addon.icons.scenario = addon.icons.complete
 
-function addon.GetCurrentStageId()
-    local criteriaId = select(9, C_Scenario.GetCriteriaInfo(1))
-    for i = 1, 1e6 do
-        local criteria = select(9, C_Scenario.GetCriteriaInfoByStep(i, 1))
-        if criteria == criteriaId then
-            print("Current Scenario Stage ID: " .. i) --ok
+    function addon.functions.scenario(self, ...)
+        if type(self) == "string" then -- on parse
+            local element = {}
+            local text, stage, criteriaIndex, objMax = ...
+            stage = tonumber(stage)
+            criteriaIndex = tonumber(criteriaIndex)
+            if not (stage and criteriaIndex) then
+                addon.error(L("Error parsing guide") .. " " .. addon.currentGuideName ..
+                                ": Invalid arguments\n" .. self)
+                return
+            end
+
+            element.objMax = tonumber(objMax)
+            element.dynamicText = true
+
+            element.stage = stage
+            element.criteriaIndex = criteriaIndex
+            element.rawtext = text or ""
+            element.text = text or ""
+            element.requestFromServer = true
+            element.criteria = ""
+            return element
+        end
+        local event = ...
+
+        local element = self.element
+        local step = element.step
+        local criteriaIndex = element.criteriaIndex
+        local criteriaInfoByStep = C_ScenarioInfo.GetCriteriaInfoByStep(element.stage, criteriaIndex)
+        if not criteriaInfoByStep then return end
+        local criteriaString = criteriaInfoByStep.description
+        local required = element.objMax or criteriaInfoByStep.totalQuantity
+        local quantity = criteriaInfoByStep.quantity
+        local completed = criteriaInfoByStep.completed
+        local scenario = C_ScenarioInfo.GetScenarioInfo()
+        local currentStage = scenario and scenario.currentStage
+        local currentInfo = C_ScenarioInfo.GetCriteriaInfo(criteriaIndex)
+        local criteriaID = currentInfo and currentInfo.criteriaID
+        if currentInfo and criteriaID == currentInfo.criteriaID then element.stagePos = currentStage end
+
+        -- print(required,quantity)
+        if not (required and quantity) then
+            if completed then
+                required = 1
+                quantity = 1
+            else
+                required = 1
+                quantity = 0
+            end
+        end
+        if not criteriaString then return end
+        local fulfilled = math.min(required, quantity)
+        element.criteria = fmt("%s: %d/%d", criteriaString, fulfilled,
+                                        required)
+        if element.rawtext ~= "" then element.criteria = "\n" .. element.criteria end
+
+        if completed or quantity >= required or (element.stagePos and currentStage and currentStage > element.stagePos) then
+            addon.SetElementComplete(self)
+        end
+
+        element.text = element.rawtext .. element.criteria
+    end
+
+else
+    function addon.GetCurrentStageId()
+        local criteriaId = select(9, C_Scenario.GetCriteriaInfo(1))
+        for i = 1, 1e6 do
+            local criteria = select(9, C_Scenario.GetCriteriaInfoByStep(i, 1))
+            if criteria == criteriaId then
+                print("Current Scenario Stage ID: " .. i) --ok
+            end
         end
     end
-end
 
-events.scenario = "CRITERIA_UPDATE"
-addon.icons.scenario = addon.icons.complete
+    events.scenario = "CRITERIA_UPDATE"
+    addon.icons.scenario = addon.icons.complete
 
-function addon.functions.scenario(self, ...)
-    if type(self) == "string" then -- on parse
-        local element = {}
-        local text, stage, criteriaIndex, objMax = ...
-        stage = tonumber(stage)
-        criteriaIndex = tonumber(criteriaIndex)
-        if not (stage and criteriaIndex) then
-            addon.error(L("Error parsing guide") .. " " .. addon.currentGuideName ..
-                            ": Invalid arguments\n" .. self)
+    function addon.functions.scenario(self, ...)
+        if type(self) == "string" then -- on parse
+            local element = {}
+            local text, stage, criteriaIndex, objMax = ...
+            stage = tonumber(stage)
+            criteriaIndex = tonumber(criteriaIndex)
+            if not (stage and criteriaIndex) then
+                addon.error(L("Error parsing guide") .. " " .. addon.currentGuideName ..
+                                ": Invalid arguments\n" .. self)
+                return
+            end
+
+            element.objMax = tonumber(objMax)
+            element.dynamicText = true
+
+            element.stage = stage
+            element.criteriaIndex = criteriaIndex
+            element.rawtext = text or ""
+            element.text = text or ""
+            element.requestFromServer = true
+            element.criteria = ""
+            return element
+        end
+        local event = ...
+
+        local element = self.element
+        local step = element.step
+        local criteriaIndex = element.criteriaIndex
+        local criteriaString, criteriaType, completed, quantity, totalQuantity,
+            flags, assetID, quantityString, criteriaID, duration, elapsed, _,
+            isWeightedProgress = C_Scenario.GetCriteriaInfoByStep(element.stage,
+                                                                    criteriaIndex)
+        local required = element.objMax or totalQuantity
+        local scenario = C_ScenarioInfo.GetScenarioInfo()
+        local currentStage = scenario and scenario.currentStage
+        local currentObj = select(9, C_Scenario.GetCriteriaInfo(criteriaIndex))
+        if criteriaID == currentObj then element.stagePos = currentStage end
+
+        -- print(required,quantity)
+        if not (required and quantity) then
+            if completed then
+                required = 1
+                quantity = 1
+            else
+                required = 1
+                quantity = 0
+            end
+        end
+        if not criteriaString then return end
+        local fulfilled = math.min(required, quantity)
+        element.criteria = fmt("%s: %d/%d", criteriaString, fulfilled,
+                                        required)
+        if element.rawtext ~= "" then element.criteria = "\n" .. element.criteria end
+
+        if completed or quantity >= required or (element.stagePos and currentStage and currentStage > element.stagePos) then
+            addon.SetElementComplete(self)
+        end
+
+        element.text = element.rawtext .. element.criteria
+    end
+
+    function addon.functions.timer(self,text,duration,timerText,callback,...)
+        if type(self) == "string" then
+            local eventList = callback and {...}
+            return {textOnly = true, timer = tonumber(duration), events = eventList,
+                    callback = callback, timerText = timerText, parent = true, text = text}
+        end
+        local element = self.element
+        local parent = element.parent
+        if parent and not element.callback then
+            parent.timer = element.timer
+            parent.timerText = element.timerText
             return
         end
 
-        element.objMax = tonumber(objMax)
-        element.dynamicText = true
-
-        element.stage = stage
-        element.criteriaIndex = criteriaIndex
-        element.rawtext = text or ""
-        element.text = text or ""
-        element.requestFromServer = true
-        element.criteria = ""
-        return element
-    end
-    local event = ...
-
-    local element = self.element
-    local step = element.step
-    local criteriaIndex = element.criteriaIndex
-    local criteriaString, criteriaType, completed, quantity, totalQuantity,
-          flags, assetID, quantityString, criteriaID, duration, elapsed, _,
-          isWeightedProgress = C_Scenario.GetCriteriaInfoByStep(element.stage,
-                                                                criteriaIndex)
-    local required = element.objMax or totalQuantity
-    local scenario = C_ScenarioInfo.GetScenarioInfo()
-    local currentStage = scenario and scenario.currentStage
-    local currentObj = select(9, C_Scenario.GetCriteriaInfo(criteriaIndex))
-    if criteriaID == currentObj then element.stagePos = currentStage end
-
-    -- print(required,quantity)
-    if not (required and quantity) then
-        if completed then
-            required = 1
-            quantity = 1
-        else
-            required = 1
-            quantity = 0
+        local f = addon.functions[element.callback]
+        if type(f) == "function" and f(self,text,duration,timerText,callback,...) then
+            addon.StartTimer(element.timer,element.timerText)
         end
     end
-    if not criteriaString then return end
-    local fulfilled = math.min(required, quantity)
-    element.criteria = fmt("%s: %d/%d", criteriaString, fulfilled,
-                                     required)
-    if element.rawtext ~= "" then element.criteria = "\n" .. element.criteria end
-
-    if completed or quantity >= required or (element.stagePos and currentStage and currentStage > element.stagePos) then
-        addon.SetElementComplete(self)
-    end
-
-    element.text = element.rawtext .. element.criteria
 end
-
-function addon.functions.timer(self,text,duration,timerText,callback,...)
-    if type(self) == "string" then
-        local eventList = callback and {...}
-        return {textOnly = true, timer = tonumber(duration), events = eventList,
-                callback = callback, timerText = timerText, parent = true, text = text}
-    end
-    local element = self.element
-    local parent = element.parent
-    if parent and not element.callback then
-        parent.timer = element.timer
-        parent.timerText = element.timerText
-        return
-    end
-
-    local f = addon.functions[element.callback]
-    if type(f) == "function" and f(self,text,duration,timerText,callback,...) then
-        addon.StartTimer(element.timer,element.timerText)
-    end
-end
-
 
 --Waypoint functions:
 
@@ -5002,6 +5222,17 @@ end
 
 function addon.functions.ironchain()
     local id
+    local UnitAura = _G.UnitAura
+    if not UnitAura then
+        UnitAura = function(unitToken, index, filter)
+            local auraData = C_UnitAuras.GetAuraDataByIndex(unitToken, index, filter);
+            if not auraData then
+                return nil;
+            end
+
+            return AuraUtil.UnpackAuraData(auraData);
+	    end
+    end
     for i = 1, 5 do
         _, id = UnitAura("vehicle", i)
         if id == 133273 then return true end

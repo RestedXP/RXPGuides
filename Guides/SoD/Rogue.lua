@@ -1252,7 +1252,7 @@ step
 step
     #season 2
     .goto Tirisfal Glades,60.73,50.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jamie Nore|r to receive |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jamie Nore|r to receive |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r] from her
     .collect 203990,1 --Rune of Mutilation (1)
     .target Jamie Nore
     .skipgossip
@@ -1483,14 +1483,14 @@ step
     .zone Silverpine Forest >>Travel to Silverpine Forest
 step
     .train 400101,1
-    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with the |cRXP_PICK_Dead Drop|r chest on the ground
+    >>Click the |cRXP_PICK_Dead Drop|r chest on the ground
     .goto Silverpine Forest,47.114,70.974
-    .accept 78699 >>Accept The Eye of Bhossca
+    .accept 78676 >>Accept The Eye of Bhossca
 step
     #completewith next
     .zone Tirisfal Glades >>Travel to Tirisfal Glades to the Scarlet Monastery
 step
-    >>Open the |cRXP_PICK_Supply Locker|r |cRXP_WARN_inside the stable|r to get the |T132665:0|t[Scarlet Initiate's Uniform]
+    >>|cRXP_WARN_Open the|r |cRXP_PICK_Supply Locker|r |cRXP_WARN_inside the stable to get the|r |T132665:0|t[Scarlet Initiate's Uniform]
     .goto Tirisfal Glades,81.2,32.12
     .collect 210955,1
     .train 400101,1
@@ -1500,7 +1500,7 @@ step
     .goto Eastern Kingdoms,47.73,19.39,5 >> Enter the Scarlet Monastery: |cRXP_WARN_Graveyard|r dungeon |cRXP_WARN_ALONE|r
 step
     >>Use |T133644:0|t[Pick Pocket] on a |cRXP_ENEMY_Scarlet Scryer|r to get |T134241:0|t[Scryer's Key]
-    *|cRXP_WARN_Make use of|r |T132289:0|t[Distract] to avoid being detected
+    >>|cRXP_WARN_Make use of|r |T132289:0|t[Distract] |cRXP_WARN_to avoid being detected|r
     .goto Eastern Kingdoms,47.73,19.39
     .collect 210963,1
     .mob Scarlet Scryer
@@ -1509,8 +1509,11 @@ step
     #completewith next
     .goto Eastern Kingdoms,47.79,19.59,5 >> Enter the Scarlet Monastery: |cRXP_WARN_Library|r dungeon |cRXP_WARN_ALONE|r
 step
-    >>|cRXP_WARN_Run to the hallway before the last boss|r, and loot the |cRXP_PICK_Personal Letterbox|r on the left for the |T134331:0|t[Confidential Message]
-    .cast 427592 >>Use the |T132665:0|t[Scarlet Initiate's Uniform] to make the NPCs neutral
+    #completewith next
+    +|cRXP_WARN_Run to the hallway before the last boss|r
+step
+    >>Loot the |cRXP_PICK_Personal Letterbox|r on the left for the |T134331:0|t[|cRXP_LOOT_Confidential Message|r]
+    .use 210955 >>|cRXP_WARN_Use the|r |T132665:0|t[Scarlet Initiate's Uniform] |cRXP_WARN_to make the NPCs neutral|r
     .goto Eastern Kingdoms,47.79,19.59
     .collect 210967,1
     .train 400101,1
@@ -1528,19 +1531,22 @@ step
     #completewith next
     .goto Eastern Kingdoms,47.79,19.59,5 >> Enter the Scarlet Monastery: |cRXP_WARN_Library|r dungeon |cRXP_WARN_ALONE|r
 step
-    >>|cRXP_WARN_Run to the "Gallery of Treasures"|r, and loot the |cRXP_PICK_Padlocked Reliquary|r in the first room on the left for the |T134331:0|t[Eye of Bhossca]
-    .cast 427592 >>Use the |T132665:0|t[Scarlet Initiate's Uniform] to make the NPCs neutral
+    #completewith next
+    +|cRXP_WARN_Run to the "Gallery of Treasures"|r
+step
+    >>Loot the |cRXP_PICK_Padlocked Reliquary|r in the first room on the left for the |T134331:0|t[|cRXP_LOOT_Eye of Bhossca|r]
+    .use 210955 >>|cRXP_WARN_Use the|r |T132665:0|t[Scarlet Initiate's Uniform] |cRXP_WARN_to make the NPCs neutral|r
     .goto Eastern Kingdoms,47.79,19.59
-    .complete 78699,1 --1/1 Eye of Bhossca
+    .complete 78676,1 --1/1 Eye of Bhossca
     .train 400101,1
 step
     #completewith next
     .zone Silverpine Forest >>Travel to Silverpine Forest
 step
     .train 400101,1
-    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with the |cRXP_PICK_Dead Drop|r chest on the ground
+    >>Click the |cRXP_PICK_Dead Drop|r chest on the ground
     .goto Silverpine Forest,47.1,71.1
-    .turnin 78699 >>Turn in The Eye of Bhossca
+    .turnin 78676 >>Turn in The Eye of Bhossca
 step
     #completewith next
     +|cRXP_WARN_You now need to enter a capital city to receive mail from *C*|r
@@ -1560,8 +1566,8 @@ step << Alliance
     .target Darla Harris
     .train 400101,1
 step
-    .goto Undercity,68.290,38.043,5 >> |cRXP_WARN_Enter Undercity. Check your mailbox for the letter from *C* and take it with you|r << Horde
-    .goto Ironforge,71.485,72.280,5 >> |cRXP_WARN_Enter Ironforge. Check your mailbox for the letter from *C* and take it with you. Skip this step if you're doing it in another major city|r << Alliance
+    .goto Undercity,68.290,38.043,5 >> |cRXP_WARN_Enter Undercity. Check your mailbox for the letter from *C*|r << Horde
+    .goto Ironforge,71.485,72.280,5 >> |cRXP_WARN_Enter Ironforge. Check your mailbox for the letter from *C*. Skip this step if you're doing it in another major city|r << Alliance
     .train 400101,1
 step
     #completewith next
@@ -1587,11 +1593,11 @@ step << Alliance
     .train 400101,1
 step
     .goto Silverpine Forest,47.114,70.974
-    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with the |cRXP_PICK_Dead Drop|r in for |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadwostep|r]
+    >>Click the |cRXP_PICK_Dead Drop|r chest for |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstep|r]
     .collect 210979,1 --Rune of Shadowstep (1)
     .train 400101,1
 step
-    .train 400101 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadwostep|r] |cRXP_WARN_to learn|r |T132303:0|t[Shadowstep]
+    .train 400101 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadowstep|r] |cRXP_WARN_to learn|r |T132303:0|t[Shadowstep]
     .use 210979
     .itemcount 210979,1
 ]])
@@ -1606,15 +1612,18 @@ RXPGuides.RegisterGuide([[
 
 step
     .train 400096,1
-    .train 1842 >>You have to learn |T136162:0|t[Disarm Trap] before you can obtain |T134419:0|t[|cRXP_FRIENDLY_Rune of the Assassin|r]
-    .collect 5060,1 >>You also need |T134065:0|t[Thieves' Tools]
+    .train 1842 >>|cRXP_WARN_You have to learn|r |T136162:0|t[Disarm Trap] |cRXP_WARN_before you can obtain|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Assassin|r]
+    .collect 5060,1 >>|cRXP_WARN_You also need|r |T134065:0|t[Thieves' Tools]
 step
     #completewith next
     .zone Swamp of Sorrows >>Travel to Swamp of Sorrows
 step
+    .goto Swamp of Sorrows,41.48,29.97
     .train 400096,1
-    >>Use |T136162:0|t[Disarm Trap] on the |cRXP_PICK_Dart Trap|r on the tree. |cRXP_WARN_Loot the chest to obtain the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Assassin|r]|r
-    .goto Swamp of Sorrows,41.9,30.2
+    .cast 1842 >>|cRXP_WARN_Cast|r |T136162:0|t[Disarm Trap] |cRXP_WARN_on the|r |cRXP_PICK_Dart Trap|r |cRXP_WARN_on the tree|r
+step
+    .goto Swamp of Sorrows,42.76,30.77
+    >>Loot the |cRXP_PICK_Conspicuous Cache|r that spawned for |T134419:0|t[|cRXP_FRIENDLY_Rune of the Assassin|r]|r
     .collect 213139,1
 step
     .itemcount 213139,1
@@ -1644,7 +1653,7 @@ step
 step
     .train 425103,1
     #completewith next
-    >>|T133644:0|t[Pick Pocket] |cRXP_ENEMY_Kurzen Elites|r and |cRXP_ENEMY_Kurzen Subchiefs|r for the |cRXP_LOOT_Compound Cage Key|r
+    >>Cast |T133644:0|t[Pick Pocket] on |cRXP_ENEMY_Kurzen Elites|r and |cRXP_ENEMY_Kurzen Subchiefs|r for the |cRXP_LOOT_Compound Cage Key|r
     .collect 216616,1
     .mob Kurzen Elite
     .mob Kurzen Subchief
@@ -1767,21 +1776,23 @@ step
  #name Focused Attacks - 34 (Hinterlands)
 
  step
-    >>|cRXP_WARN_You will need|r |T136175:0|t[Blind] |cRXP_WARN_to obtain the|r |T236274:0|t[Focused Attacks] |cRXP_WARN_rune|r. |cRXP_WARN_Make sure you have the spell and blinding powder with you
+    >>|cRXP_WARN_You will need|r |T136175:0|t[Blind] |cRXP_WARN_and|r |T133587:0|t[Blinding Powder] |cRXP_WARN_to obtain the|r |T236274:0|t[Focused Attacks] |cRXP_WARN_rune|r
+    .train 2094 >>Train |T136175:0|t[Blind]
     .collect 5530,1 -- Blinding Powder 1/1
-    
+    .train 432291,1
 step
     #completewith next
     .zone The Hinterlands >>Travel to |cFFfa9602The Hinterlands|r
 step
-    .goto The Hinterlands,72,53
-    >>Look for a small chest in front of an altar in the ruins. It's guarded by a |cRXP_ENEMY_Vilebranch Mask|r use |T136175:0|t[Blind] on it and loot the chest for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Focus|r]
+    .goto The Hinterlands,72.76,52.91
+    >>Cast |T136175:0|t[Blind] on the |cRXP_ENEMY_Vilebranch Mask|r, then loot the |cRXP_PICK_Treasure of the Bat|r chest for |T134419:0|t[|cRXP_FRIENDLY_Rune of Focus|r]
     .collect 221433,1 -- rune of focus
     .mob Vilebranch Mask
+    .train 432291,1
 step
     .itemcount 221433,1
     .use 221433
-    .train 400093 >>|cRXP_WARN_Use the|T134419:0|t[|cRXP_FRIENDLY_Rune of Focus|r] |cRXP_WARN_to train|r |T236274:0|t[Focused Attacks]
+    .train 432291 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Focus|r] |cRXP_WARN_to train|r |T236274:0|t[Focused Attacks]
  ]])
 
 RXPGuides.RegisterGuide([[
@@ -1793,27 +1804,51 @@ RXPGuides.RegisterGuide([[
 #name Unfair Advantage - 40 (Tanaris)
 
 step
-    #completewith next
-    .zone Tanaris >>|cRXP_WARN_Travel to|r |cFFfa9602Tanaris|r, |cRXP_WARN_you will need|r |T133644:0|t[Pick Pocket] |cRXP_WARN_to obtain the|r |T236285:0|t[Unfair Advantage] |cRXP_WARN_rune|r
+    .train 921 >>|cRXP_WARN_You need to train|r |T133644:0|t[Pick Pocket] |cRXP_WARN_to obtain the|r |T236285:0|t[Unfair Advantage] |cRXP_WARN_rune|r
+    .train 432301,1
 step
-    .goto Tanaris,71,45
-    >>Go to the Lost Rigger Cove in Tanaris. Look for |cRXP_ENEMY_Southsea Pirates|r or |cRXP_ENEMY_Southsea Freebooters|r, cast |r |T133644:0|t[Pick Pocket] on them untill you receive a |T133639:0|t|cRXP_LOOT_Kidnapper's Coin Purse|r
+    #completewith CoinPurse
+    .zone Tanaris >>|cRXP_WARN_Travel to|r |cFFfa9602Tanaris|r
+step
+    #completewith next
+    .subzone 1336 >>Travel to Lost Rigger Cove
+step
+    #label CoinPurse
+	.line Tanaris,70.94,42.85,72.22,44.35,72.58,45.30,71.07,46.03,71.25,47.98,72.39,48.23,72.59,47.10,73.27,47.99,74.25,47.27,73.68,45.89,72.58,45.30,72.22,44.35,70.94,42.85
+	.goto Tanaris,70.94,42.85,50,0
+	.goto Tanaris,72.22,44.35,50,0
+	.goto Tanaris,72.58,45.30,50,0
+	.goto Tanaris,71.07,46.03,50,0
+	.goto Tanaris,71.25,47.98,50,0
+	.goto Tanaris,72.39,48.23,50,0
+	.goto Tanaris,72.59,47.10,50,0
+	.goto Tanaris,73.27,47.99,50,0
+	.goto Tanaris,74.25,47.27,50,0
+	.goto Tanaris,73.68,45.89,50,0
+	.goto Tanaris,72.58,45.30,50,0
+	.goto Tanaris,72.22,44.35,50,0
+	.goto Tanaris,70.94,42.85,50,0
+    >>|cRXP_WARN_Cast|r |T133644:0|t[Pick Pocket] |cRXP_WARN_on|r |cRXP_ENEMY_Southsea Pirates|r |cRXP_WARN_and|r |cRXP_ENEMY_Southsea Freebooters|r |cRXP_WARN_untill you receive a|r |T133639:0|t|cRXP_LOOT_Kidnapper's Coin Purse|r
     .collect 221371,1 - Kidnapper's Coin Purse 1/1
     .mob Southsea Pirate
     .mob Southsea Freebooter
+    .train 432301,1
 step
-    .goto Tanaris,71,45
     >>Open the |T133639:0|t|cRXP_LOOT_Kidnapper's Coin Purse|r and loot it for a |T133302:0|t|cRXP_LOOT_Precious Medalion|r
     .collect 221370,1 -- Precious Medalion 1/1
     .use 221371
-step
+    .train 432301,1
+step << Rogue
     .goto Tanaris,67,22
-    >>Go to Steamwheedle Port and find |cRXP_FRIENDLY_Jabbey|r the Goblin in one of the northmost huts. Complete the dialogue with him to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Foul Play|r]
+    .gossipoption 122303 >>Talk to |cRXP_FRIENDLY_Jabbey|r to receive the |T134419:0|t[|cRXP_FRIENDLY_Rune of Foul Play|r]
     .collect 221428,1 -- Rune of Foul Play
     .target Jabbey
-step
+    .train 432301,1
+    .itemcount 221370,1
+step << Rogue
+    .itemcount 221428,1
     .use 221428
-    .train 432273 >>|cRXP_WARN_Use the|T134419:0|t[|cRXP_FRIENDLY_Rune of Foul Play|r] |cRXP_WARN_to train|r |T236285:0|t[Unfair Advantage]
+    .train 432301 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Foul Play|r] |cRXP_WARN_to train|r |T236285:0|t[Unfair Advantage]
 
 ]])
 RXPGuides.RegisterGuide([[
@@ -1831,13 +1866,19 @@ step
     #completewith next
     .zone Blasted Lands >>Travel to |cFFfa9602Blasted Lands|r
 step
-    .goto Blasted Lands,45.3,16.4 
-    >>Go to the tower near Dreadmaul Hold in the Blasted Lands. At the top you will find an Abandoned Cache requiring lockpicking 225 to open. After unlocking it a level 46 |cRXP_FRIENDLY_Murderous Lost One|r will spawn. Kill it and loot it for the|T134419:0|t[|cRXP_FRIENDLY_Rune of Carnage|r]
+    #completewith next
+    .goto Blasted Lands,45.27,16.52,10 >>Travel to the top of the tower in front of Dreadmaul Hold
+step
+    .goto Blasted Lands,45.27,16.52
+    >>Open the |cRXP_PICK_Abandoned Cache|r. Kill the |cRXP_ENEMY_Murderous Lost One|r (level 46) that spawns
+    >>Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Carnage|r]
     .collect 221461,1 -- Rune of Carnage 1/1
     .unitscan Murderous Lost One
+    .train 432299,1
 step
     .use 221461
-    .train 432276 >>|cRXP_WARN_Use the|T134419:0|t[|cRXP_FRIENDLY_Rune of Carnage|r] |cRXP_WARN_to train|r |T236268:0|t[Carnage]
+    .itemcount 221461,1
+    .train 432299 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Carnage|r] |cRXP_WARN_to train|r |T236268:0|t[Carnage]
 
 ]])
 
@@ -1851,38 +1892,90 @@ RXPGuides.RegisterGuide([[
 
 step
     #optional
-    #completewith letterC
-    +|cRXP_WARN_In order to start the quest for this rune you need to have completed "The Manor, Ravenholdt" quest introducing you to the Ravenholdt rogue faction. In order to receive it talk to a|r|cRXP_WARN_|r|cRXP_WARN_|r|cRXP_WARN_|r |cRXP_FRIENDLY_Osborne the Night Man|r |cRXP_WARN_in Stormwind|r|cRXP_WARN_|r|cRXP_WARN_|r << Alliance
-    +|cRXP_WARN_In order to start the quest for this rune you need to have completed "The Manor, Ravenholdt" quest introducing you to the Ravenholdt rogue faction. In order to receive it talk to a|r |cRXP_FRIENDLY_Ormok|r |cRXP_WARN_in Orgrimmar|r << Horde
+    .xp 45 >>|cRXP_WARN_You need to reach level 45 in order to obtain this rune|r
 step
-    .xp 45 >>You need to reach level 45 in order to receive the quest starting this runehunt
+    #optional
+    .train 400101 >>|cRXP_WARN_You must have trained|r |T132303:0|t[Shadowstep] |cRXP_WARN_in order to obtain this rune|r
+step
+    #optional
+    .train 400080,1 >>|cRXP_WARN_You must have trained|r |T236270:0|t[Deadly Brew] |cRXP_WARN_in order to obtain this rune|r
+step
+    #optional
+    #completewith letterC
+    >>|cRXP_WARN_In order to start the quest for this rune you need to have completed "The Manor, Ravenholdt" quest introducing you to the Ravenholdt rogue faction. In order to receive it talk to|r |cRXP_FRIENDLY_Osborne the Night Man|r |cRXP_WARN_in Stormwind|r << Alliance
+    +|cRXP_WARN_In order to start the quest for this rune you need to have completed "The Manor, Ravenholdt" quest introducing you to the Ravenholdt rogue faction. In order to receive it talk to|r |cRXP_FRIENDLY_Ormok|r |cRXP_WARN_in Orgrimmar|r << Horde
+    .accept 6681 >>Accept The Manor, Ravenholdt << Alliance
+    .isQuestAvailable 6681
+step << Horde
+    .goto Orgrimmar,43.91,54.69
+    .gossipoption 96925 >>Talk to |cRXP_FRIENDLY_Ormok|r to receive an |T133460:0|t[|cRXP_LOOT_Elegant Letter|r]. Use it to accept the quest
+    .disablecheckbox
+    .collect 17126,1,6681
+    .accept 6681 >>Accept The Manor, Ravenholdt
+    .target Ormok
+    .isQuestAvailable 6681
+step
+    #completewith next
+    .zone Hillsbrad Foothills >>Travel to |cFFfa9602Hillsbrad Foothills|r
+    .isOnQuest 6681
+step
+    #completewith next
+    .goto Hillsbrad Foothills,75.27,23.66,15,0
+    .goto Hillsbrad Foothills,75.66,20.30,15,0
+    .goto Hillsbrad Foothills,77.24,21.98,15,0
+    .goto Hillsbrad Foothills,78.62,17.96,20 >>Enter Ravenholdt Manor
+    .isOnQuest 6681
+step
+    .goto Hillsbrad Foothills,78.62,17.96
+    >>Move toward the |cRXP_PICK_Chest|r
+    .complete 6681,1 --Rite of Cunning: 1/1
+    .isOnQuest 6681
+step
+    .goto Alterac Mountains,85.51,79.41,10,0
+    .goto Alterac Mountains,86.11,80.22,10,0
+    .goto Alterac Mountains,84.45,80.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fahrad|r upstairs
+    .turnin 6681 >> Turn in The Manor, Ravenholdt
+    .target Fahrad
+    .isOnQuest 6681
 step << Alliance
-    +Go to any Major City
+    +|cRXP_WARN_Travel to any Major City|r
     >>Darnassus
     >>Ironforge
     >>Stormwind City
     .zoneskip Darnassus
     .zoneskip Ironforge
     .zoneskip Stormwind City
+    .train 432295,1
 step << Horde
-    +Go to any Major City
+    +|cRXP_WARN_Travel to any Major City|r
     >>Undercity
     >>Thunder Bluff
     >>Orgrimmar
     .zoneskip Undercity
     .zoneskip Thunder Bluff
     .zoneskip Orgrimmar
+    .train 432295,1
 step
     #label letterC
-    >>Go to any mailbox. You will receive a letter which starts a quest. Accept it
-    .accept 80526 >>Accept Fool Me Twice
+    +|cRXP_WARN_Check your mailbox for the letter from *Fahrad*|r
+    >>|cRXP_WARN_Skip this step when ready|r
+    .train 432295,1
 step
-    #optional
     #completewith next
-    .zone Alterac Mountains >>Travel to Alterac Mountains
+    .zone Hillsbrad Foothills >>Travel to |cFFfa9602Hillsbrad Foothills|r
 step
-    .goto Alterac Mountains,84.6,80.2
-    >>Go to the Ravenholdt Manor and talk to |cRXP_FRIENDLY_Fahrad|r
+    #completewith next
+    .goto Hillsbrad Foothills,75.27,23.66,15,0
+    .goto Hillsbrad Foothills,75.66,20.30,15,0
+    .goto Hillsbrad Foothills,77.24,21.98,15,0
+    .goto Hillsbrad Foothills,78.62,17.96,20 >>Enter Ravenholdt Manor
+step
+    .goto Alterac Mountains,85.51,79.41,10,0
+    .goto Alterac Mountains,86.11,80.22,10,0
+    .goto Alterac Mountains,84.45,80.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fahrad|r upstairs
+    .accept 80526 >>Accept Fool Me Twice
     .turnin 80526 >>Turn in Fool Me Twice
     .accept 80411 >>Accept The Talisman of Kazdor
     .target Fahrad
@@ -1891,69 +1984,111 @@ step
     #completewith next
     .zone Tanaris >>Travel to Tanaris
 step
+    #completewith next
     .goto Tanaris,38.69,20.20
-    >>|cRXP_WARN_Head to Zul'Farrak in Tanaris. You can't be in a group. Entering Zul'Farrak will put you in a special version of the instance where you will be able to complete the objectives of your quest|r
-    >>Scout the troll tents looking for |cRXP_PICK_Clay Vessels|r loot them for |T134799:0|t|cRXP_LOOT_Vile Concoctions|r. You will need two of these to complete the quest
-    .collect 217716,2
+    .subzone 1176 >>Enter Zul'Farrak
+    >>|cRXP_WARN_You can't be in a group to be able to complete the quest for this rune|r
 step
-    >>Go to to |cRXP_ENEMY_Antu'sul's|r cave, use one of your |T134799:0|t|cRXP_LOOT_Vile Concoctions|r on the cauldron next to it. It will not break your stealth. While the boss is distracted you can loot |cRXP_PICK_Antu'Sul's Satchel|r for an |T133724:0|t|cRXP_LOOT_Offering of Bone|r
+    .goto Tanaris,38.69,20.20
+    >>Open |cRXP_PICK_Clay Vessels|r for |T134799:0|t[|cRXP_LOOT_Vile Concoctions|r]
+    >>|cRXP_WARN_They are located in troll tents throughout Zul'Farrak|r
+    .collect 217716,2
+    .train 432295,1
+step
+    #completewith next
+    +|cRXP_WARN_Move toward|r |cRXP_ENEMY_Antu'sul's|r |cRXP_WARN_cave|r
+step
+    >>Use a |T134799:0|t[|cRXP_LOOT_Vile Concoction|r] on the cauldron. |cRXP_WARN_It will not break your stealth|r
+    >>While the boss is distracted loot |cRXP_PICK_Antu'Sul's Satchel|r for an |T133724:0|t[|cRXP_LOOT_Offering of Bone|r]
     .collect 217721,1 --Offering of Bone
     .use 217716
+    .train 432295,1
 step
-    >>Go to the graveyard area. Use your second |T134799:0|t|cRXP_LOOT_Vile Concoction|r on the cauldron next to |cRXP_ENEMY_Witch Doctor Zum'rah|r. While he's distracted loot the |T136232:0|t|cRXP_LOOT_Ward of the Dead|r
+    #completewith next
+    +|cRXP_WARN_Move toward |cRXP_ENEMY_Witch Doctor Zum'rah|r in the graveyard area|r
+step
+    >>Use your second |T134799:0|t[|cRXP_LOOT_Vile Concoction|r] on the cauldron next to |cRXP_ENEMY_Witch Doctor Zum'rah|r. |cRXP_WARN_It will not break your stealth|r
+    >>While he's distracted loot |cRXP_PICK_Zum'rahs Satchel|r for |T136232:0|t|cRXP_LOOT_Ward of the Dead|r
     .collect 217727,1 --ward of the dead
     .use 217716
+    .train 432295,1
 step
-    .equip 13,217727 >>Equip the |T136232:0|t|cRXP_LOOT_Ward of the Dead|r trinket you just looted. It will reveal one of the |cRXP_PICK_graves|r which you need to loot for an |T236304:0|t|cRXP_LOOT_Offering of Flesh|r
+    #completewith next
+    .equip 13,217727 >>Equip the |T136232:0|t|cRXP_LOOT_Ward of the Dead|r trinket you just looted
+    >>|cRXP_WARN_This will reveal which|r |cRXP_PICK_Shallow Grave|r |cRXP_WARN_needs to be looted|r
+step
+    >>Loot the |cRXP_PICK_Shallow Grave|r that is revealed with a blue aura for the |T236304:0|t|cRXP_LOOT_Offering of Flesh|r
     .collect 217720,1 --offering of flesh
+    .use 217727
+    .train 432295,1
 step
-    >>Use the |T236304:0|t|cRXP_LOOT_Offering of Flesh|r you just collected to combine it with the |T133724:0|t|cRXP_LOOT_Offering of Bone|r into a |T236305:0|t|cRXP_LOOT_Blood Magic Essence|r
+    >>Use the |T236304:0|t[|cRXP_LOOT_Offering of Flesh|r] you just collected to combine it with the |T133724:0|t[|cRXP_LOOT_Offering of Bone|r] into a |T236305:0|t[|cRXP_LOOT_Blood Magic Essence|r]
     .collect 217719,1 --Blood Magic Essence
     .use 217720
+    .train 432295,1
 step
-    >>Go to the foot of the pyramid staircase and look to your right. On the side of the wall you will see a small stone block. Jump onto it and then walk onto the edge. On the second balcony you will find a small chest. Loot it for a |T237274:0|t|cRXP_LOOT_Hollow Emblem|r
+    >>Go to the foot of the pyramid staircase and look to your right. On the side of the wall you will see a small stone block. Jump onto it and then walk onto the edge
+    >>On the second wood balcony to the right you will find a |cRXP_PICK_Sandfury Cache|r. Loot it for the |T237274:0|t[|cRXP_LOOT_Hollow Emblem|r]
     .collect 217717,1 --Hollow Emblem
+    .train 432295,1
 step
-    >>Use the |T237274:0|t|cRXP_LOOT_Hollow Emblem|r you just looted to combine it with the |T236305:0|t|cRXP_LOOT_Blood Magic Essence|r and receive an |T133572:0|t|cRXP_LOOT_Emblem of Blood Magic|r
+    >>Use the |T237274:0|t|cRXP_LOOT_Hollow Emblem|r you just looted to combine it with the |T236305:0|t[|cRXP_LOOT_Blood Magic Essence|r] into an |T133572:0|t[|cRXP_LOOT_Emblem of Blood Magic|r]
     .collect 217718,1 --Emblem of Blood Magic
+    .use 217717
+    .train 432295,1
 step
-    >>Climb the stairs to the top of the pyramid and loot the |cRXP_PICK_Spellbound War Chest|r for |T133313:0|t|cRXP_LOOT_Talisman of Kazdor|r
+    >>Climb the stairs to the top of the pyramid and loot the |cRXP_PICK_Spellbound War Chest|r for |T133313:0|t[|cRXP_LOOT_Talisman of Kazdor|r]
     .collect 217609,1 --Talisman of Kazdor
+    .train 432295,1
 step
-    #optional
     #completewith next
-    .zone Alterac Mountains >>Travel to Alterac Mountains
+    .zone Hillsbrad Foothills >>Travel to |cFFfa9602Hillsbrad Foothills|r
 step
-    .goto Alterac Mountains,84.6,80.2
-    >>Return to the Ravenholdt Manor and talk to |cRXP_FRIENDLY_Fahrad|r
+    #completewith next
+    .goto Hillsbrad Foothills,75.27,23.66,15,0
+    .goto Hillsbrad Foothills,75.66,20.30,15,0
+    .goto Hillsbrad Foothills,77.24,21.98,15,0
+    .goto Hillsbrad Foothills,78.62,17.96,20 >>Enter Ravenholdt Manor
+step
+    .goto Alterac Mountains,85.51,79.41,10,0
+    .goto Alterac Mountains,86.11,80.22,10,0
+    .goto Alterac Mountains,84.45,80.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fahrad|r upstairs
     .turnin 80411 >>Turn in The Talisman of Kazdor
     .accept 80453 >>Accept Best Laid Plans
     .target Fahrad
 step
     .goto Alterac Mountains,86.0,80.0
-    >>Head to the basement of the mansion. Look for |cRXP_FRIENDLY_Zan Shivsproket|r a gnome engineer
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zan Shivsproket|r downstairs in the basement
     .turnin 80453 >>Turn in Best Laid Plans
     .accept 80454 >>Accept One Last Drop
     .target Zan Shivsproket
 step
-    #optional
     #completewith next
-    .zone Silverpine Forest >>Travel to the Silverpine Forest
+    .zone Silverpine Forest >>Travel to Silverpine Forest
 step
-    .goto Silverpine Forest,47.1,71.1
-    >>Head to a cabin in Pyrewood Village in Silverpine Forest
-    .turnin 80454 >>Turnin One Last Drop
+    .goto Silverpine Forest,47.114,70.974
+    >>Click the |cRXP_PICK_Dead Drop|r chest
+    .turnin 80454 >>Turn in One Last Drop
     .accept 80455 >>Accept Biding Our Time
+    .train 432295,1
 step
-    #optional
     #completewith next
-    .zone Alterac Mountains >>Travel to Alterac Mountains
+    .zone Hillsbrad Foothills >>Travel to |cFFfa9602Hillsbrad Foothills|r
 step
-    .goto Alterac Mountains,84.6,80.2
-    >>Return to the Ravenholdt Manor and talk to |cRXP_FRIENDLY_Fahrad|r
+    #completewith next
+    .goto Hillsbrad Foothills,75.27,23.66,15,0
+    .goto Hillsbrad Foothills,75.66,20.30,15,0
+    .goto Hillsbrad Foothills,77.24,21.98,15,0
+    .goto Hillsbrad Foothills,78.62,17.96,20 >>Enter Ravenholdt Manor
+step
+    .goto Alterac Mountains,85.51,79.41,10,0
+    .goto Alterac Mountains,86.11,80.22,10,0
+    .goto Alterac Mountains,84.45,80.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fahrad|r upstairs
     .turnin 80455 >>Turn in Biding Our Time
     .target Fahrad
 step
-    .train 432264 >>Use the |T134419:0|t|cRXP_FRIENDLY_Rune of the Coterie|r you received to train |T236275:0|t[Honor Among Thieves]
+    .train 432295 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Coterie|r] |cRXP_WARN_to train|r |T236275:0|t[Honor Among Thieves]
     .use 217736
 ]])

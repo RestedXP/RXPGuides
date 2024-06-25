@@ -1,6 +1,7 @@
 local _,addon = ...
 
 local showAllQs
+local GetItemCount = C_Item and C_Item.GetItemCount or _G.GetItemCount
 
 local function GetXPMods()
     return addon.GetXPBonuses(false,80)
@@ -41,7 +42,7 @@ local function IsQuestAvailable(quest,id,skipRepCheck)
     id = id or quest.Id
 
     local function ProcessRep(rep,faction)
-        local _, _, standing,_,_,value = GetFactionInfoByID(faction)
+        local _, _, standing,_,_,value = addon.GetFactionInfoByID(faction)
         local target
         local repname, bonus = rep:match("(%w+)%s*([%+%-]?%d*)")
         bonus = tonumber(bonus) or 0

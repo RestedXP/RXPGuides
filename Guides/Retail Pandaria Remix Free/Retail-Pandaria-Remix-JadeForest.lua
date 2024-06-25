@@ -20,27 +20,96 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arturos|r
     .accept 80446 >>Accept Looking for Group
     .target Arturos
+-- step
+--     #completewith next
+--     .goto 371,43.01,27.58,10,0
+--     .vendor >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy additional gems |cRXP_WARN_It's recommended for faster leveling but uses bronze, a cosmetic currency.|r
+--     .skipgossip
+--     .target Lidamorrutu
 step
-    #completewith next
-    .goto 371,43.01,27.58,10,0
-    .vendor >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy additional gems |cRXP_WARN_It's recommended for faster leveling but uses bronze, a cosmetic currency.|r
+    #hidewindow
+    #completewith All
+    #label all2
+    .achievement 20005,0
+    .achievement 19881,0
+    .achievement 20006,0
+    .achievement 20004,0
+    .achievement 40223,0
+step
+    #completewith all2
+    .goto 371,43.01,27.58
+    .achievementComplete 40223,1
+    .collect 208555,1 >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy |T634012:0|t[Timerunner's Idol.]
+    .skipgossip
+    .buy 208555,1
+    .target Lidamorrutu
+step
+    #completewith all2
+    .goto 371,43.01,27.58
+    .achievementComplete 20004,1
+    .collect 208487,1 >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy |T629696:0|t[Timerunner's Ring.]
+    .skipgossip
+    .buy 208487,1
+    .target Lidamorrutu
+step
+    #completewith all2
+    .goto 371,43.01,27.58
+    .achievementComplete 20005,1
+    .collect 208491,1 >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy |T645143:0|t[Timerunner's Seal.]
+    .skipgossip
+    .buy 208491,1
+    .target Lidamorrutu
+step
+    #completewith all2
+    .goto 371,43.01,27.58
+    .achievementComplete 20006,1
+    .collect 210523,1 >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy |T632849:0|t[Timerunner's Amulet.]
+    .skipgossip
+    .buy 210523,1
+    .target Lidamorrutu
+step
+    #completewith all2
+    #label All
+    .goto 371,43.01,27.58
+    .achievementComplete 19881,0
+    .collect 208554,1 >>Talk to |cRXP_FRIENDLY_Lidamorrutu|r and buy |T971287:0|t[Timerunner's Beacon.]
+    .skipgossip
+    .buy 208554,1
+    .target Lidamorrutu
+step
+    .achievementComplete 20005,0
+    .achievementComplete 19881,0
+    .achievementComplete 20006,0
+    .achievementComplete 20004,0
+    .achievementComplete 40223,0
+    .goto 371,43.01,27.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lidamorrutu|r and buy the jewellery.
+    .collect 208491,1
+    .collect 210523,1
+    .collect 208554,1
+    .collect 208555,1
+    .collect 208487,1
+    .buy 208487,1
+    .buy 208555,1
+    .buy 208555,1
+    .buy 208554,1
+    .buy 208491,1
+    .buy 210523,1
     .skipgossip
     .target Lidamorrutu
 step
-    .goto 371,42.95,27.73 --x middle
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pythagorus|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pythagorus|r and |cRXP_FRIENDLY_Larah Treebender|r
     .accept 80447 >>Accept Looking for More
-    .target Pythagorus
-step
-    .goto 371,42.81,27.62 --x left
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Larah Treebender|r
+    .goto 371,42.95,27.73 --x middle
+    .target +Pythagorus
     .accept 80448 >>Accept A Fresh Scene
-    .target Larah Treebender
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
-    .goto 371,42.5,27.32
-    .accept 78894 >>Accept Infinite Growth
-    .target Momentus
+    .goto 371,42.81,27.62 --x left
+    .target +Larah Treebender
+-- step
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Momentus|r
+--     .goto 371,42.5,27.32
+--     .accept 78894 >>Accept Infinite Growth
+--     .target Momentus
 step
     #completewith next
     .goto 371,42.5,27.32,10,0
@@ -82,6 +151,7 @@ step
     .target Lin Tenderpaw
     .accept 29620 >>Accept The Great Banquet
 step
+    #hidewindow
     #completewith next
     #label SkipElderCloudfall
     .gossipoption 39493 >>Talk to |cRXP_FRIENDLY_High Elder Cloudfall|r (for the skip)
@@ -95,17 +165,10 @@ step
     .timer 162, RP
     .target High Elder Cloudfall
 step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Elder Cloudfall|r
     .goto 371,42.75,23.17
-    >>|cRXP_WARN_During quest downtime, maximize efficiency by focusing on the following activities based on your current needs:|r
-    *- Open |cRXP_FRIENDLY_|T1542852:0|t[Caches of Infinite Treasures]|r
-    *- Replace Old Gear
-    *- Extract Old Gems
-    *- Scrap Obsolete Gear
-    *- Combine Prismatic Gems
-    .use 211279
-    .usespell 436523
-    .usespell 433397
     .complete 29620,1 --1/1 Speak with High Elder Cloudfall
+    .target High Elder Cloudfall
 step
     .goto 371,42.74,23.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Elder Cloudfall|r
@@ -278,7 +341,6 @@ step
     .goto 371,41.62,23.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Groundskeeper Wu|r
     .turnin 29627 >>Turn in A Proper Weapon
-    --.accept 29628 >>Accept A Strong Back
     .accept 29629 >>Accept A Steady Hand
     .accept 29630 >>Accept And a Heavy Fist
     .target Groundskeeper Wu
@@ -287,37 +349,19 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Myang|r
     .turnin 29636 >>Turn in A Test of Endurance
     .target Instructor Myang
-    --.accept 29637 >>Accept The Rumpus
-step
-    .isOnQuest 29637
-    .goto 371,38.98,23.82
-    .cast 102953 >> Use |T134273:0|t[Monastery Fireworks] inside of the Ring.
-    .timer 120,RP
-    .use 73369
--- step
---     .goto 371,39.00,23.22
---     >>Survive the Onslaught of Monks
---     .complete 29637,1 --1/1 Survive the Melee
--- step
---     .goto 371,38.97,24.04
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Myang|r
---     .turnin 29637 >>Turn in The Rumpus
---     .target Instructor Myang
 step
     .goto 371,38.02,23.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Shan Long|r
     .accept 29631 >>Accept Burning Bright
     .target Guard Shan Long
 step
-    #completewith next
-    >>Kill |cRXP_ENEMY_Waxwood Hunter|r
-    .complete 29631,1 --6/6 Waxwood Hunter slain
-    .mob waxwood hunter
-step
+    #hidewindow
+    #completewith Waxwood Hunter
     #loop
+    .goto 371,37.18,20.65,25,0
+    .goto 371,36.41,22.21,25,0
     .goto 371,35.36,23.41,25,0
     .goto 371,34.62,23.61,25,0
-    .goto 371,34.32,23.72,25,0
     .goto 371,34.31,22.87,25,0
     .goto 371,33.93,21.73,25,0
     .goto 371,33.59,21.70,25,0
@@ -326,6 +370,29 @@ step
     .goto 371,33.79,20.01,25,0
     .goto 371,34.99,20.93,25,0
     .goto 371,36.05,21.92,25,0
+    -- .goto 371,37.18,20.65,25,0 << Alliance
+    -- .goto 371,38.31,21.43,25,0 << Alliance
+    -- .goto 371,36.41,22.21,25,0 << Alliance
+    -- .goto 371,35.36,23.41,25,0 << Alliance
+    -- .goto 371,34.62,23.61,25,0 << Alliance
+    -- .goto 371,34.32,23.72,25,0 << Alliance
+    -- .goto 371,34.31,22.87,25,0 << Alliance
+    +1
+step
+    #completewith Blushleaf Extract
+    >>Kill |cRXP_ENEMY_Greenwood Trickster|r
+    .complete 29630,1 --10/10 Greenwood Trickster slain
+    .mob greenwood trickster
+step
+    #completewith Blushleaf Extract
+    >>Kill |cRXP_ENEMY_Waxwood Hunter|r
+    .complete 29631,1 --6/6 Waxwood Hunter slain
+    .mob waxwood hunter
+step
+    #label Blushleaf Extract
+    .goto 371,37.18,20.65,0
+    .goto 371,38.31,21.43,0
+    .goto 371,36.41,22.21,0
     .goto 371,35.36,23.41,0
     .goto 371,34.62,23.61,0
     .goto 371,34.32,23.72,0
@@ -337,27 +404,28 @@ step
     .goto 371,33.79,20.01,0
     .goto 371,34.99,20.93,0
     .goto 371,36.05,21.92,0
+    -- .goto 371,37.18,20.65,0 << Alliance
+    -- .goto 371,38.31,21.43,0 << Alliance
+    -- .goto 371,36.41,22.21,0 << Alliance
+    -- .goto 371,35.36,23.41,0 << Alliance
+    -- .goto 371,34.62,23.61,0 << Alliance
+    -- .goto 371,34.32,23.72,0 << Alliance
+    -- .goto 371,34.31,22.87,0 << Alliance
     >>Click on |cRXP_PICK_Bushleaf Cluster|r |cRXP_WARN_and wait until the channel is over (you're not allowed to move or turn or your character).|r
     .complete 29629,1 --80/80 Blushleaf Extract
 step
-    #loop
-    .goto 371,35.36,23.41,25,0
-    .goto 371,34.62,23.61,25,0
-    .goto 371,34.32,23.72,25,0
-    .goto 371,34.31,22.87,25,0
-    .goto 371,34.97,22.48,25,0
-    .goto 371,33.93,21.73,25,0
-    .goto 371,33.59,21.70,25,0
-    .goto 371,33.67,21.05,25,0
-    .goto 371,33.29,19.95,25,0
-    .goto 371,33.79,20.01,25,0
-    .goto 371,34.99,20.93,25,0
-    .goto 371,36.05,21.92,25,0
+    #completewith next
+    >>Kill |cRXP_ENEMY_Greenwood Trickster|r
+    .complete 29630,1 --10/10 Greenwood Trickster slain
+    .mob greenwood trickster
+step
+    .goto 371,37.18,20.65,0
+    .goto 371,38.31,21.43,0
+    .goto 371,36.41,22.21,0
     .goto 371,35.36,23.41,0
     .goto 371,34.62,23.61,0
     .goto 371,34.32,23.72,0
     .goto 371,34.31,22.87,0
-    .goto 371,34.97,22.48,0
     .goto 371,33.93,21.73,0
     .goto 371,33.59,21.70,0
     .goto 371,33.67,21.05,0
@@ -365,22 +433,17 @@ step
     .goto 371,33.79,20.01,0
     .goto 371,34.99,20.93,0
     .goto 371,36.05,21.92,0
+    -- .goto 371,37.18,20.65,0 << Alliance
+    -- .goto 371,38.31,21.43,0 << Alliance
+    -- .goto 371,36.41,22.21,0 << Alliance
+    -- .goto 371,35.36,23.41,0 << Alliance
+    -- .goto 371,34.62,23.61,0 << Alliance
+    -- .goto 371,34.32,23.72,0 << Alliance
+    -- .goto 371,34.31,22.87,0 << Alliance
+    #label Waxwood Hunter
     >>Kill |cRXP_ENEMY_Waxwood Hunter|r
     .complete 29631,1 --6/6 Waxwood Hunter slain
     .mob waxwood hunter
---step
---    #completewith next
---    >>Kill |cRXP_ENEMY_Greenwood Trickster|r
---    .complete 29630,1 --10/10 Greenwood Trickster slain
---    .mob greenwood trickster
---step
---    .goto 371,37.74,17.57
---    >>Click on |cRXP_PICK_Boiling Cauldron|r
---    .complete 29628,1 --1/1 Boiling Cauldron obtained
---step
---    #completewith Burning Bright
---    >>be careful not to stretch the rope |cRXP_WARN_beyond 100 yards to avoid disconnecting.|r
---    .complete 29628,2 --1/1 Boiling Cauldron returned
 step
     #loop
     .goto 371,37.83,18.34,20,0
@@ -396,6 +459,19 @@ step
     >>Kill |cRXP_ENEMY_Greenwood Trickster|r
     .complete 29630,1 --10/10 Greenwood Trickster slain
     .mob greenwood trickster
+--step
+--    #completewith next
+--    >>Kill |cRXP_ENEMY_Greenwood Trickster|r
+--    .complete 29630,1 --10/10 Greenwood Trickster slain
+--    .mob greenwood trickster
+--step
+--    .goto 371,37.74,17.57
+--    >>Click on |cRXP_PICK_Boiling Cauldron|r
+--    .complete 29628,1 --1/1 Boiling Cauldron obtained
+--step
+--    #completewith Burning Bright
+--    >>be careful not to stretch the rope |cRXP_WARN_beyond 100 yards to avoid disconnecting.|r
+--    .complete 29628,2 --1/1 Boiling Cauldron returned
 step
     #label Burning Bright
     .goto 371,38.02,23.8
@@ -589,6 +665,7 @@ step
     .accept 29756 >>Accept A Humble Offering
     .target Pei-Zhi
 step
+    #xprate <2
     #completewith Tidemist Cap
     #hidewindow
     #loop
@@ -609,18 +686,23 @@ step
     +1
 --x step add treasure
 step
+    #xprate <2
     #completewith next
     >>Click on the |cRXP_PICK_Tidemist Caps|r
     .complete 29756,1 --10/10 Tidemist Cap
 step
+    #xprate <2
     >>Use |T461804:0|t[Spirit Bottles] on the ground |cRXP_WARN_on cooldown.|r Kill emerging |cRXP_ENEMY_Raging Beast Spirit.|r
     .complete 29753,1 --8/8 Beast Spirits Returned to Nature
+    .use 74808
     .mob Raging Beast Spirit
 step
+    #xprate <2
     #label Tidemist Cap
     >>Click on the |cRXP_PICK_Tidemist Caps|r
     .complete 29756,1 --10/10 Tidemist Cap
 step
+    #xprate <2
     .goto 371,44.24,15.02
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pei-Zhi|r
     .turnin 29753 >>Turn in Back to Nature
@@ -659,12 +741,18 @@ RXPGuides.RegisterGuide([[
 #name 1) Jade Forest Defiance Side Quests
 #internal
 
-step << Alliance
-    #completewith next
-    .goto 371,46.31,80.67,40 >>Look for the Treasure on the shrine.
+-- step << Alliance
+--     #completewith next
+--     .goto 371,46.31,80.67,40 >>Look for the Treasure on the shrine.
+step <<  Horde
+    .goto 371,48.32,46.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Old Man Misteye|r
+    .accept 29576 >>Accept An Air of Worry
+    .target Old Man Misteye
 step
     .goto 371,43.49,75.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shao the Defiant|r
+    .turnin 29576 >>Turn in An Air of Worry << Horde
     .accept 29578 >>Accept Defiance
     .accept 29579 >>Accept Rally the Survivors
     .target Shao the Defiant
@@ -802,16 +890,20 @@ step
     .accept 29670 >>Accept Maul Gormal
     .target Shao the Defiant
 step
+    #completewith FarmersSetFree
+    #hidewindow
+    .goto 371,40.3,74.49,22,0
+    .goto 371,39.8,75.48,22,0
+    .goto 371,39.58,74.39,22,0
+    .goto 371,39.27,74.82,22 >> 1
+step
+    #label FarmersSetFree
     #completewith next
     >>Free the |cRXP_FRIENDLY_Captured Nectarbreeze Farmer|r by interacting with their |cRXP_PICK_Net|r and killing |cRXP_ENEMY_Gormali Slavers|r chained to them.
     .complete 29587,1 --10/10 Farmers Set Free
     .mob Gormali Slaver
     .target Captured Nectarbreeze Farmer
 step
-    .goto 371,40.3,74.49,22,0
-    .goto 371,39.8,75.48,22,0
-    .goto 371,39.58,74.39,22,0
-    .goto 371,39.27,74.82,22,0
     .goto 371,37.8,76.19
     >>Kill |cRXP_ENEMY_Subjugator Gormal|r
     .complete 29670,1 --1/1 Subjugator Gormal slain
@@ -858,11 +950,31 @@ step
     .cast 437035 >>Use |T134376:0|t[Bronze Timepiece] to teleport to the dragonriding quests.
     .itemcount 216712,1
     .use 216712
+-- step
+--     #loop
+--     .goto 371,49.21,46.01,8,0
+--     .goto 371,49.01,46.13,8,0
+--     .goto 371,48.97,45.89,8,0
+--     .goto 371,49.16,45.75,8,0
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Toortle Wider|r
+--     .accept 80311 >>Accept Order of the Cloud Serpent
+--     .target Toortle Wider
 step
     .goto 371,57.64,44.94
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
+    -- .turnin 80311 >>Turn in Order of the Cloud Serpent
     .accept 30134 >>Accept Wild Things
     .target Elder Anli
+step << Alliance
+    .goto 371,47.17,47.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jade Forest Flame Guardian|r
+    .accept 32498 >>Accept Honor the Flame
+    .target Jade Forest Flame Guardian
+step << Alliance
+    .goto 371,47.17,47.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Midsummer Bonfire|r
+    .turnin 32498 >>Turn in Honor the Flame
+    .target Midsummer Bonfire
 step
     #completewith next
     .goto 371,65.25,37.20,20,0
@@ -1060,7 +1172,7 @@ RXPGuides.RegisterGuide([[
 #name 1) Pandaria Remix Leveling Guide: How to Use & Essential Tips
 #next 2) Pandaria Remix Introduction
 -- #subweight 11
-#displayname How to Use & Essential Tips
+#displayname |cFFFCDC00How to Use & Essential Tips|r
 
 step
     #completewith test
@@ -1142,7 +1254,8 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Panda Remix
 #name 2) Pandaria Remix Introduction
-#displayname Chapter 0 - Timeless Isle Introduction
+#displayname |cFFFCDC00Chapter 0|r - Timeless Isle Introduction
+#title Timeless Isle Introduction
 -- #subweight 1
 #next 3) Jade Forest Horde << Horde
 #next 3) Jade Forest Alliance << Alliance
@@ -1301,7 +1414,8 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Panda Remix
 #name 3) Jade Forest Horde
-#displayname Chapter 1 - Jade Forest
+#displayname |cFFFCDC00Chapter 1|r - Jade Forest
+#title Jade Forest
 #next 4) Valley of the Four Winds 1
 -- #subweight 9
 << Horde
@@ -1465,8 +1579,7 @@ step
     .goto 371,34.55,11.31,30,0
     .goto 371,34.66,10.61,10,0
     .goto 371,35.00,10.62,10,0
-    .goto 371,34.63,8.83,10,0
-    .goto 371,34.00,9.90,10,0
+    .goto 371,33.13,10.62,20,0
     .goto 371,34.77,10.62,20,0
     .goto 371,33.08,10.60,25,0
     .goto 371,34.27,13.17,25,0
@@ -1513,7 +1626,6 @@ step
     .mob Sha-Infested Prowler
 step
     #completewith next
-    .goto 371,31.78,11.61,18,0
     >>Click on the |cRXP_PICK_Barrels of Honeybrew|r
     .complete 31978,1 --6/6 Barrel of Honeybrew
 step
@@ -1601,6 +1713,7 @@ step
     .accept 80012 >>Accept Dragonriding
     .timer 5,RP
 step
+    .isOnQuest 80012
     .xp >14,1
     .goto 371,28.6,14.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r and buy |T134491:0|t[Nostwin's Voucher.]
@@ -1609,6 +1722,7 @@ step
     .skipgossip
     .target Nostwin
 step
+    .isOnQuest 80012
     .xp <14,1
     #loop
     .goto 371,28.6,14.13
@@ -1739,7 +1853,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rivett Clutchpop|r
     .accept 31777 >>Accept Choppertunity
     .target Rivett Clutchpop
-
 -- PERMOK: WORK IN PROGRESS
 step
     #completewith Cogswing
@@ -1963,6 +2076,9 @@ step
     >>Pick up |T132108:0|t[Lurching Blossoms] |cRXP_WARN_(possible while mounted)|r
     .complete 29815,1 --8/8 Viscous Chlorophyll
     .target Lurching Blossom
+-- step << Horde
+--     .goto 371,26.39,28.33
+--     .achievement 6850,1 >>Click on the |cRXP_PICK_Scroll|r
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rivett Clutchpop|r and |cRXP_FRIENDLY_Shademaster Kiryn|r
     .turnin 31112 >>Turn in They're So Thorny!
@@ -2034,6 +2150,16 @@ step
 step
     #include 1) Jade Forest Cloud Serpent Side Quests
 step
+    .goto 371,47.17,47.19
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jade Forest Flame Guardian|r
+    .accept 32498 >>Accept Honor the Flame
+    .target Jade Forest Flame Guardian
+step
+    .goto 371,47.17,47.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Midsummer Bonfire|r
+    .turnin 32498 >>Turn in Honor the Flame
+    .target Midsummer Bonfire
+step
     #include 1) Jade Forest Defiance Side Quests
 ]])
 
@@ -2043,7 +2169,8 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Panda Remix
 #name 3) Jade Forest Alliance
-#displayname Chapter 1 - Jade Forest
+#displayname |cFFFCDC00Chapter 1|r - Jade Forest
+#title Jade Forest
 #next 4) Valley of the Four Winds 1
 -- #subweight 9
 <<Alliance
@@ -2124,51 +2251,67 @@ step
     .mob garrosh'ar gear-greaser
 step
     #loop
-    .goto 371,42.53,92.97,15,0
-    .goto 371,44.09,93.55,15,0
-    .goto 371,43.92,94.27,15,0
-    .goto 371,44.41,94.61,15,0
-    .goto 371,45.10,95.37,15,0
-    .goto 371,45.60,94.07,15,0
-    .goto 371,46.10,93.56,15,0
-    .goto 371,45.14,92.68,15,0
-    .goto 371,44.83,94.02,15,0
-    .goto 371,43.81,95.99,15,0
-    .goto 371,42.53,92.97,0
-    .goto 371,44.09,93.55,0
-    .goto 371,43.92,94.27,0
-    .goto 371,44.41,94.61,0
-    .goto 371,45.10,95.37,0
-    .goto 371,45.60,94.07,0
-    .goto 371,46.10,93.56,0
-    .goto 371,45.14,92.68,0
-    .goto 371,44.83,94.02,0
-    .goto 371,43.81,95.99,0
+    -- .goto 371,42.53,92.97,15,0
+    -- .goto 371,44.09,93.55,15,0
+    -- .goto 371,43.92,94.27,15,0
+    -- .goto 371,44.41,94.61,15,0
+    -- .goto 371,45.10,95.37,15,0
+    -- .goto 371,45.60,94.07,15,0
+    -- .goto 371,46.10,93.56,15,0
+    -- .goto 371,45.14,92.68,15,0
+    -- .goto 371,44.83,94.02,15,0
+    -- .goto 371,43.81,95.99,15,0
+    -- .goto 371,42.53,92.97,0
+    -- .goto 371,44.09,93.55,0
+    -- .goto 371,43.92,94.27,0
+    -- .goto 371,44.41,94.61,0
+    -- .goto 371,45.10,95.37,0
+    -- .goto 371,45.60,94.07,0
+    -- .goto 371,46.10,93.56,0
+    -- .goto 371,45.14,92.68,0
+    -- .goto 371,44.83,94.02,0
+    -- .goto 371,43.81,95.99,0
+    .goto 371,44.11,93.48,20,0
+    .goto 371,43.92,94.31,20,0
+    .goto 371,44.45,94.53,20,0
+    .goto 371,44.85,93.98,20,0
+    .goto 371,44.11,93.48,0
+    .goto 371,43.92,94.31,0
+    .goto 371,44.45,94.53,0
+    .goto 371,44.85,93.98,0
     >>Use |T135619:0|t[Sully's Flare Gun] |cRXP_WARN_near Horde War Wagons.|r
     .complete 31734,1 --5/5 Horde War Wagon destroyed
     .use 89624
 step
     #loop
-    .goto 371,42.53,92.97,15,0
-    .goto 371,44.09,93.55,15,0
-    .goto 371,43.92,94.27,15,0
-    .goto 371,44.41,94.61,15,0
-    .goto 371,45.10,95.37,15,0
-    .goto 371,45.60,94.07,15,0
-    .goto 371,46.10,93.56,15,0
-    .goto 371,45.14,92.68,15,0
-    .goto 371,44.83,94.02,15,0
-    .goto 371,43.81,95.99,15,0
-    .goto 371,42.53,92.97,0
-    .goto 371,44.09,93.55,0
-    .goto 371,43.92,94.27,0
-    .goto 371,44.41,94.61,0
-    .goto 371,45.10,95.37,0
-    .goto 371,45.60,94.07,0
-    .goto 371,46.10,93.56,0
-    .goto 371,45.14,92.68,0
-    .goto 371,44.83,94.02,0
-    .goto 371,43.81,95.99,0
+    -- .goto 371,42.53,92.97,15,0
+    -- .goto 371,44.09,93.55,15,0
+    -- .goto 371,43.92,94.27,15,0
+    -- .goto 371,44.41,94.61,15,0
+    -- .goto 371,45.10,95.37,15,0
+    -- .goto 371,45.60,94.07,15,0
+    -- .goto 371,46.10,93.56,15,0
+    -- .goto 371,45.14,92.68,15,0
+    -- .goto 371,44.83,94.02,15,0
+    -- .goto 371,43.81,95.99,15,0
+    -- .goto 371,42.53,92.97,0
+    -- .goto 371,44.09,93.55,0
+    -- .goto 371,43.92,94.27,0
+    -- .goto 371,44.41,94.61,0
+    -- .goto 371,45.10,95.37,0
+    -- .goto 371,45.60,94.07,0
+    -- .goto 371,46.10,93.56,0
+    -- .goto 371,45.14,92.68,0
+    -- .goto 371,44.83,94.02,0
+    -- .goto 371,43.81,95.99,0
+    .goto 371,45.78,93.33,30,0
+    .goto 371,45.4,94.35,30,0
+    .goto 371,44.63,95.64,30,0
+    .goto 371,44.21,95.97,30,0
+    .goto 371,45.78,93.33,0
+    .goto 371,45.4,94.35,0
+    .goto 371,44.63,95.64,0
+    .goto 371,44.21,95.97,0
     >>Kill |cRXP_ENEMY_Grunts|r and |cRXP_ENEMY_Gear-Greasers.|r
     .complete 30069,1 --6/6 Garrosh'ar Grunt slain
     .complete 30069,2 --4/4 Garrosh'ar Gear-Greaser slain
@@ -2177,7 +2320,7 @@ step
 step
     .goto 371,45.17,95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rell Nightwind|r
-    .turnin 30069 >>Turn in Welcome Wagons
+    .turnin 30069 >>Turn in No Plan Survives Contact with the Enemy
     .turnin 31734 >>Turn in Welcome Wagons
     .accept 31735 >>Accept The Right Tool For The Job
     .target Rell Nightwind
@@ -2251,6 +2394,7 @@ step
     .accept 80012 >>Accept Dragonriding
     .target Moratari
 step
+    .isOnQuest 80012
     .xp >14,1
     #loop
     .goto 371,45.89,84.63,5,0
@@ -2263,6 +2407,7 @@ step
     .skipgossip
     .target Nostwin
 step
+    .isOnQuest 80012
     .xp <14,1
     #loop
     .goto 371,45.89,84.63,5,0
@@ -2370,6 +2515,7 @@ step
     .goto 371,45.89,84.63,0
     .goto 371,45.83,84.83,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r
+    .accept 81976 >>Turn in Bazaar, Isn't It?
     .turnin 81976 >>Turn in Bazaar, Isn't It?
     .target Nostwin
 step
@@ -2543,6 +2689,17 @@ step
     >>|cRXP_WARN_Follow the Arrow|r
     .complete 31745,1 --1/1 Return to Paw'don Village
 step
+    .xp <14,1
+    #loop
+    .goto 371,45.89,84.63,5,0
+    .goto 371,45.83,84.83,5,0
+    .goto 371,45.89,84.63,0
+    .goto 371,45.83,84.83,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nostwin|r
+    .accept 81976 >>Turn in Bazaar, Isn't It?
+    .turnin 81976 >>Turn in Bazaar, Isn't It?
+    .target Nostwin
+step
     .goto 371,48.05,88.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sky Admiral Rogers|r
     .turnin 31745 >>Turn in Onward and Inward
@@ -2650,7 +2807,7 @@ step
     #label Prisoners freed
     >>Click on |cRXP_PICK_Hozen Cages|r to free |cRXP_FRIENDLY_Alliance Prisoners.|r |cRXP_WARN_Don't open empty cages.|r
     .complete 29559,1 --6/6 Prisoners freed
-    .collect 74260,6
+    .collect 74260,6,29559,0x1,-1
     .disablecheckbox
     .target Alliance Prisoner
 step
@@ -2711,7 +2868,6 @@ step
     .turnin 29562 >>Turn in Jailbreak
     .timer 54, RP
     .target Bold Karasshi
---x likely skip at this point with higher xprate
 step
     #completewith Accept The Pearlfin Situation
     +|cRXP_WARN_Wait for the roleplay, which will be completed when the timer runs out.|r |cFFFF0000tidy your bags and optimize your equipment use --x item .|r
@@ -2779,27 +2935,28 @@ step
     .accept 29887 >>Accept The Elder's Instruments
     .goto 371,58.76,81.28
     .target +Bold Karasshi
-step
-    #completewith Watersmithing
-    >>Kill |cRXP_ENEMY_Slingtail Stickypaw.|r Loot them for |cRXP_LOOT_Clothes.|r
-    .complete 29887,3 --1/1 Jade Crown
-    .complete 29887,4 --1/1 Rosewood Beads
-    .complete 29887,2 --1/1 Ceremonial Robes
-    .complete 29887,1 --1/1 Waterspeaker's Staff
-    .mob Slingtail Stickypaw
-step
-    #completewith Watersmithing
-    >>Interact with |cRXP_PICK_Dead Pearlfin Villager|r to collect |cRXP_LOOT_Glassfin Heirlooms.|r
-    .complete 29762,1 --8/8 Glassfin Heirloom
-    .target Pearlfin Villager
-step
-    #label Watersmithing
-    .goto 371,66.03,87.55
-    .achievement 6846,1 >>Click on the |cRXP_PICK_Scroll|r
+-- step
+--     #completewith Watersmithing
+--     >>Kill |cRXP_ENEMY_Slingtail Stickypaw.|r Loot them for |cRXP_LOOT_Clothes.|r
+--     .complete 29887,3 --1/1 Jade Crown
+--     .complete 29887,4 --1/1 Rosewood Beads
+--     .complete 29887,2 --1/1 Ceremonial Robes
+--     .complete 29887,1 --1/1 Waterspeaker's Staff
+--     .mob Slingtail Stickypaw
+-- step
+--     #completewith Watersmithing
+--     >>Interact with |cRXP_PICK_Dead Pearlfin Villager|r to collect |cRXP_LOOT_Glassfin Heirlooms.|r
+--     .complete 29762,1 --8/8 Glassfin Heirloom
+--     .target Pearlfin Villager
+-- step
+--     #label Watersmithing
+--     .goto 371,66.03,87.55
+--     .achievement 6846,1 >>Click on the |cRXP_PICK_Scroll|r
 step
     #completewith Clothes
     #hidewindow
     #loop
+    .goto 371,66.03,87.55,30,0
     .goto 371,67.25,87.32,30,0
     .goto 371,66.2,88.25,30,0
     .goto 371,65.46,87.7,30,0
@@ -2814,7 +2971,7 @@ step
     >>Interact with |cRXP_PICK_Dead Pearlfin Villager|r to collect |cRXP_LOOT_Glassfin Heirlooms.|r
     .complete 29762,1 --8/8 Glassfin Heirloom
     .target Pearlfin Villager
-ste
+step
     >>Kill |cRXP_ENEMY_Slingtail Stickypaw.|r Loot them for |cRXP_LOOT_Clothes.|r
     .complete 29887,3 --1/1 Jade Crown
     .complete 29887,4 --1/1 Rosewood Beads
@@ -2835,6 +2992,8 @@ step
     -- .accept 29894 >>Accept Spirits of the Water
     .goto 371,58.76,81.29
     .target +Pearlkeeper Fujin
+-- step
+-- august celestials
 step
     #include 1) Jade Forest Cloud Serpent Side Quests
 step

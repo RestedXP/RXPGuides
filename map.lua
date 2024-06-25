@@ -97,8 +97,16 @@ function addon.UpdateArrow(self)
             local step = element.step
             local title = step and (step.title or step.index and ("Step "..step.index))
             if element.title then
+                for RXP_ in string.gmatch(element.title, "RXP_[A-Z]+_") do
+                    element.title = element.title:gsub(RXP_, addon.guideTextColors[RXP_] or
+                                                 addon.guideTextColors.default["error"])
+                end
+                --self.text:SetText(string.format("%s\n(%dyd)",element.title, dist))
                 self.text:SetText(string.format("%s\n(%dyd)",element.title, dist))
             elseif title then
+                for RXP_ in string.gmatch(title, "RXP_[A-Z]+_") do
+                    title = title:gsub(RXP_, addon.guideTextColors[RXP_] or addon.guideTextColors.default["error"])
+                end
                 self.text:SetText(string.format("%s\n(%dyd)", title, dist))
             else
                 self.text:SetText(string.format("(%dyd)", dist))
@@ -191,11 +199,24 @@ end
 -- The Frame Pool that will manage pins on the world and mini map
 -- You must use a frame pool to aquire and release pin frames,
 -- otherwise the pins will not be properly removed from the map.
+local CreateFramePool
+if _G.CreateSecureFramePool == _G.CreateFramePool then
+    CreateFramePool = function(ref)
+        local framePool = _G.CreateUnsecuredTexturePool(nil, nil, nil, "BackdropTemplate",ref.resetterFunc)
+        framePool.createFunc = ref.creationFunc
+        return framePool
+    end
+else
+    CreateFramePool = function(ref)
+        local framePool = _G.CreateFramePool()
+        framePool.creationFunc = ref.creationFunc
+        framePool.resetterFunc = ref.resetterFunc
+        return framePool
+    end
+end
 
 MapPinPool.create = function()
-    local framePool = _G.CreateFramePool()
-    framePool.creationFunc = MapPinPool.creationFunc
-    framePool.resetterFunc = MapPinPool.resetterFunc
+    local framePool = CreateFramePool(MapPinPool)
 
     return framePool
 end
@@ -343,10 +364,7 @@ end
 
 
 MapLinePool.create = function()
-    local framePool = _G.CreateFramePool()
-    framePool.creationFunc = MapLinePool.creationFunc
-    framePool.resetterFunc = MapLinePool.resetterFunc
-
+    local framePool = CreateFramePool(MapLinePool)
     return framePool
 end
 
@@ -356,7 +374,6 @@ end
 -- the frame is given a "render" function that can be used to bind the corect data
 -- to the frame
 MapLinePool.creationFunc = function(framePool)
-
     local f = CreateFrame("Button", nil, _G.WorldMapFrame:GetCanvas());
     f.line = f.line or f:CreateLine();
     local border = f.border or f:CreateLine();
@@ -809,6 +826,7 @@ local function addWorldMapPins()
                               RXPCData.currentStep, false)
 
     -- Convert each "pin" data structure into a WoW frame. Then add that frame to the world map
+    if IsInInstance() then return end
     for i = #pins, 1, -1 do
         local pin = pins[i]
         if not pin.hidePin then
@@ -866,6 +884,7 @@ local function addMiniMapPins(pins)
                               RXPCData.currentStep, true)
 
     -- Convert each "pin" data structure into a WoW frame. Then add that frame to the mini map
+    if IsInInstance() then return end
     for i = #pins, 1, -1 do
         local pin = pins[i]
         local element = pin.elements[1]
@@ -884,10 +903,15 @@ local corpseWP = {title = "Corpse", generated = 1, wpHash = 0}
 local function updateArrow()
 
     local lowPrioWPs
+    local loop = {}
     local function ProcessWaypoint(element, lowPrio, isComplete)
         if element.lowPrio and not lowPrio then
             table.insert(lowPrioWPs, element)
             return
+        end
+        local step = element.step
+        if step.loop then
+            loop[step] = true
         end
         local generated = element.generated or 0
         if (bit.band(generated,0x1) == 0x1) or (element.arrow and element.step.active and
@@ -922,17 +946,37 @@ local function updateArrow()
             return
         end
     end
-    lowPrioWPs = {}
-    for i, element in ipairs(addon.activeWaypoints) do
-        if ProcessWaypoint(element) then
-            return
+
+    local function SetArrowWP()
+        lowPrioWPs = {}
+        for i, element in ipairs(addon.activeWaypoints) do
+            if ProcessWaypoint(element) then
+                return true
+            end
+        end
+
+        for i, element in ipairs(lowPrioWPs) do
+            if ProcessWaypoint(element, true) then
+                return true
+            end
         end
     end
 
-    for i, element in ipairs(lowPrioWPs) do
-        if ProcessWaypoint(element, true) then
-            return
+    if SetArrowWP() then
+        return
+    end
+
+    for step in pairs(loop) do
+        for _,element in ipairs(step.elements) do
+            if element.arrow and element.wpHash ~= element.wpHash and element.textOnly then
+                element.skip = false
+                RXPCData.completedWaypoints[step.index or "tip"][element.wpHash] = false
+            end
         end
+    end
+
+    if SetArrowWP() then
+        return
     end
 
     af:Hide()
@@ -1031,9 +1075,9 @@ function addon.UpdateGotoSteps()
                 end
             end
             --A = step
-            --print('ok1',step.index)
+            --print('ok1',hasValidWPs)
             if not hasValidWPs then
-                --print('ok2',step.index)
+                --print('noValidWPs',step.index)
                 for _,wp in pairs(step.elements) do
                     if wp.arrow and wp.wpHash ~= element.wpHash and wp.textOnly then
                         wp.skip = false
@@ -1100,6 +1144,7 @@ function addon.UpdateGotoSteps()
                     end
                 end
             end
+            --
         end
     end
 

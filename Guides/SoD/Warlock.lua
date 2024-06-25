@@ -1388,6 +1388,7 @@ step
     .zone Ashenvale >> Travel to Ashenvale
 step
     .goto Ashenvale,93.5,38.0,100 >> Head to the Ashenvale Nightmare Incursion area marked on your map
+    .train 431758,1
 step
     >>Kill the demons outside the portal untill you loot all of the three items listed below
     .collect 221972,1 >>|T132839:0|t|cRXP_LOOT_Dreampyre Fire|r dropped by |cRXP_ENEMY_Dreampyre Imps|r
@@ -1396,12 +1397,14 @@ step
     .mob Dreampyre Imp
     .mob Emberspark Dreamsworn
     .mob Dreamhunter Hound
+    .train 431758,1
 step
     .cast 447537 >> Right click on any of the items from your bag to combine them and receive |T134419:0|t[|cRXP_FRIENDLY_Rune of Immolation Aura|r]
     .collect 220618,1 --Rune of Immolation Aura
     .use 221972
+    .train 431758,1
 step
-    .train 427726 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Immolation Aura|r] |cRXP_WARN_to learn|r |T135802:0|t[Immolation Aura]
+    .train 431758 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Immolation Aura|r] |cRXP_WARN_to learn|r |T135802:0|t[Immolation Aura]
     .use 220618
 ]])
 
@@ -1600,7 +1603,7 @@ step
     .unitscan Fel Scar
     .unitscan Fel Rift
 step
-    .train 427733 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Felguard|r] |cRXP_WARN_to learn|r |T136216:0|t[Summon Felguard]
+    .train 431756 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Felguard|r] |cRXP_WARN_to learn|r |T136216:0|t[Summon Felguard]
     .use 221499
 
 ]])
@@ -1621,26 +1624,31 @@ step
     >>Head to the marked location west of Camp Mojache. Look for a |cRXP_ENEMY_Dead Diseased Grimtotem Shaman|r laying next to a tree. Next to the corpse you will find a |cRXP_PICK_Grimtotem Chest|r, loot it for |T133291:0|t|cRXP_LOOT_Grimtotem Necklace|r
     .collect 221974,1 --Grimtotem Necklace 1/1
     .unitscan Dead Diseased Grimtotem Shaman
+    .train 431743,1
 step
     .goto 1444/1,695.400,-4920.300,20 >>Go to the path leading up the hill towards the Woodpaw Den
+    .train 431743,1
 step
     .goto 1444/1,831.200,-4851.000,20 >>Go up the path marked by torches
+    .train 431743,1
 step
     .goto 1444/1,826.500,-4725.100
     >>Stick to the right edge of the camp and go to the |cRXP_ENEMY_Dead Diseased Woodpaw Mystic|r. Next to him you will find a |cRXP_PICK_Woodpaw Bag|r, loot it for a |T135139:0|t|cRXP_LOOT_Broken Woodpaw Staff|r
     .collect 221975,1 --Broken Woodpaw Staff
     .unitscan Dead Diseased Woodpaw Mystic
+    .train 431743,1
 step
     >>Use the |T135139:0|t|cRXP_LOOT_Broken Woodpaw Staff|r to combine it with the |T133291:0|t|cRXP_LOOT_Grimtotem Necklace|r and create a |T135153:0|t|cRXP_LOOT_Diseased Nature Staff|r
     .collect 221976,1 --Diseased Nature Staff
     .use 221975
+    .train 431743,1
 step
     .goto Feralas,72.6,50.8
     >>Look for a sleeping |cRXP_ENEMY_Diseased Forest Walker|r, use your |T135153:0|t|cRXP_LOOT_Diseased Nature Staff|r to awaken him. Defeat him and loot for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Pandemic|r]
     .collect 220617,1 --Rune of Pandemic
     .use 221976
+    .train 431743,1
 step
-    .train 427712 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Pandemic|r] |cRXP_WARN_to learn|r |T136227:0|t[Pandemic]
+    .train 431743 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Pandemic|r] |cRXP_WARN_to learn|r |T136227:0|t[Pandemic]
     .use 220617
-
 ]])

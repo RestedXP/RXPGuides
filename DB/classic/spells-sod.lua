@@ -51,46 +51,40 @@ s["Scourge"] = {
 }
 s["DRUID"] = {
     [1] = {
-        1126 -- mark of the wild
+        
     },
     [4] = {
-        774, -- rejuvenation
-        8921 -- moonfire
+        8921, -- moonfire
+        1126 -- mark of the wild
     },
     [6] = {
-        467, -- thorns
-        5177 -- wrath r2
+        5177, -- wrath r2
+        467 -- thorns
     },
     [8] = {
         339, -- entangling roots
         5186 -- healing touch r2
     },
     [10] = {
-        99, -- demoralizing roar
+        8924, -- moonfire r2
         1058, -- rejuvenation r2
-        5232, -- mark of the wild r2
-        8924 -- moonfire r2
+        5232 -- mark of the wild r2
     },
     [12] = {
-        5229, -- enrage
         8936 -- regrowth
     },
     [14] = {
         782, -- thorns r2
         5178, -- wrath r3
-        5187, -- healing touch r3
-        5211 -- bash
+        5187 -- healing touch r3
     },
     [16] = {
-        779, -- swipe
-        1430, -- rejuvenation r3
-        8925 -- moonfire r3
+        8925, -- moonfire r3
+        1430 -- rejuvenation r3
     },
     [18] = {
         1062, -- entangling roots r2
-        770, -- faerie fire
         2637, -- hibernate
-        6808, -- maul r2
         8938 -- regrowth
     },
     [20] = {
@@ -714,10 +708,10 @@ s["WARRIOR"] = {
     },
     [4] = {
         100, -- charge
-        772, -- rend
-        3128 -- parry
+        772 -- rend
     },
     [8] = {
+        3128, -- parry
         1715, -- hamstring
         284 -- heroic strike r2
     },
@@ -820,27 +814,27 @@ s["ROGUE"] = {
         1784 -- stealth
     },
     [6] = {
-        1776, -- gouge
         1757 -- sinister strike r2
     },
     [8] = {
-        5277, -- evasion
-        6760 -- eviscerate r2
+        6760, -- eviscerate r2
+        5277 -- evasion
     },
     [10] = {
+        1424, -- dual wield
+        921, -- Pick Pocket
+        1776, -- gouge
         2983, -- sprint
-        6452, -- Anti-venom(FA)
-        1424 -- dual wield
+        6452 -- Anti-venom(FA)
     },
     [12] = {
+        3128, -- parry
         1766, -- kick
         6770, -- sap
-        5171, -- slice and dice
-        3128 -- parry
+        5171 -- slice and dice
     },
     [14] = {
-        703, -- garrote
-        1758 -- sinister strike r3
+        703 -- garrote
     },
     [16] = {
         5167, -- pick pocket
@@ -848,15 +842,10 @@ s["ROGUE"] = {
         1804 -- Pick Lock
     },
     [20] = {
-        1785, -- stealth r2
-        1943, -- rupture
-        8676 -- ambush
+        1785 -- stealth r2
     },
     [22] = {
-        1725, -- distract
-        1759, -- sinister strike r4
-        1856, -- vanish
-        8631 -- garrote r2
+        1856 -- vanish
     },
     [24] = {
         6762 -- eviscerate r4
