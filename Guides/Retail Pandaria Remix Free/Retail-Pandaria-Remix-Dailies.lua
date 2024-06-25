@@ -8,6 +8,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Panda Remix
 #name X) Cloud Serpent Dailies
+#internal
 
 step
     +|cRXP_WARN_Pick up the 3 available dailies in The Arboretum|r
@@ -133,6 +134,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Panda Remix
 #name X) Vale Dailies 1
+#internal
 
 step
     .goto 390,21.40,71.46
@@ -1372,6 +1374,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Panda Remix
 #name X) Shado-Pan Daillies
+#internal
 
 step
     #loop
