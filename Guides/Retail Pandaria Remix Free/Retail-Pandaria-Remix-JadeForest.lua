@@ -151,6 +151,7 @@ step
     .target Lin Tenderpaw
     .accept 29620 >>Accept The Great Banquet
 step
+    #hidewindow
     #completewith next
     #label SkipElderCloudfall
     .gossipoption 39493 >>Talk to |cRXP_FRIENDLY_High Elder Cloudfall|r (for the skip)
@@ -164,17 +165,10 @@ step
     .timer 162, RP
     .target High Elder Cloudfall
 step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Elder Cloudfall|r
     .goto 371,42.75,23.17
-    >>|cRXP_WARN_During quest downtime, maximize efficiency by focusing on the following activities based on your current needs:|r
-    *- Open |cRXP_FRIENDLY_|T1542852:0|t[Caches of Infinite Treasures]|r
-    *- Replace Old Gear
-    *- Extract Old Gems
-    *- Scrap Obsolete Gear
-    *- Combine Prismatic Gems
-    .use 211279
-    .usespell 436523
-    .usespell 433397
     .complete 29620,1 --1/1 Speak with High Elder Cloudfall
+    .target High Elder Cloudfall
 step
     .goto 371,42.74,23.17
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Elder Cloudfall|r
@@ -347,7 +341,6 @@ step
     .goto 371,41.62,23.70
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Groundskeeper Wu|r
     .turnin 29627 >>Turn in A Proper Weapon
-    --.accept 29628 >>Accept A Strong Back
     .accept 29629 >>Accept A Steady Hand
     .accept 29630 >>Accept And a Heavy Fist
     .target Groundskeeper Wu
@@ -356,69 +349,19 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Myang|r
     .turnin 29636 >>Turn in A Test of Endurance
     .target Instructor Myang
-    --.accept 29637 >>Accept The Rumpus
--- step
---     .isOnQuest 29637
---     .goto 371,38.98,23.82
---     .cast 102953 >> Use |T134273:0|t[Monastery Fireworks] inside of the Ring.
---     .timer 120,RP
---     .use 73369
--- step
---     .goto 371,39.00,23.22
---     >>Survive the Onslaught of Monks
---     .complete 29637,1 --1/1 Survive the Melee
--- step
---     .goto 371,38.97,24.04
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Myang|r
---     .turnin 29637 >>Turn in The Rumpus
---     .target Instructor Myang
 step
     .goto 371,38.02,23.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Shan Long|r
     .accept 29631 >>Accept Burning Bright
     .target Guard Shan Long
--- step << Alliance
---     #hidewindow
---     #completewith ScrollIntro
---     #loop
---     .goto 371,37.18,20.65,25,0
---     .goto 371,38.31,21.43,25,0
---     .goto 371,36.41,22.21,25,0
---     .goto 371,34.18,22.61,15
---     +1
--- step << Alliance
---     #completewith ScrollIntro
---     >>Kill |cRXP_ENEMY_Greenwood Trickster|r
---     .complete 29630,1 --10/10 Greenwood Trickster slain
---     .mob greenwood trickster
--- step << Alliance
---     #completewith ScrollIntro
---     >>Kill |cRXP_ENEMY_Waxwood Hunter|r
---     .complete 29631,1 --6/6 Waxwood Hunter slain
---     .mob waxwood hunter
--- step << Alliance
---     #label ScrollIntro
---     >>Click on |cRXP_PICK_Bushleaf Cluster|r |cRXP_WARN_and wait until the channel is over (you're not allowed to move or turn or your character).|r
---     .complete 29629,1 --80/80 Blushleaf Extract
--- step << Alliance
---     #completewith next
---     .cast 374990 >> Mount on your Dragonriding Mount and use |T134156:0|t[Bronze Timelock]
--- step << Alliance
---     .goto 371,26.39,28.33
---     .achievement 6850,1 >>Click on the |cRXP_PICK_Scroll|r
--- step << Alliance
---     .isOnQuest 29629
---     .cast 374994 >> Mount on your Dragonriding Mount and use |T4640479:0|t[Bronze Rewind]
 step
     #hidewindow
     #completewith Waxwood Hunter
     #loop
     .goto 371,37.18,20.65,25,0
-    .goto 371,38.31,21.43,25,0
     .goto 371,36.41,22.21,25,0
     .goto 371,35.36,23.41,25,0
     .goto 371,34.62,23.61,25,0
-    .goto 371,34.32,23.72,25,0
     .goto 371,34.31,22.87,25,0
     .goto 371,33.93,21.73,25,0
     .goto 371,33.59,21.70,25,0
@@ -751,6 +694,7 @@ step
     #xprate <2
     >>Use |T461804:0|t[Spirit Bottles] on the ground |cRXP_WARN_on cooldown.|r Kill emerging |cRXP_ENEMY_Raging Beast Spirit.|r
     .complete 29753,1 --8/8 Beast Spirits Returned to Nature
+    .use 74808
     .mob Raging Beast Spirit
 step
     #xprate <2
@@ -946,16 +890,20 @@ step
     .accept 29670 >>Accept Maul Gormal
     .target Shao the Defiant
 step
+    #completewith FarmersSetFree
+    #hidewindow
+    .goto 371,40.3,74.49,22,0
+    .goto 371,39.8,75.48,22,0
+    .goto 371,39.58,74.39,22,0
+    .goto 371,39.27,74.82,22 >> 1
+step
+    #label FarmersSetFree
     #completewith next
     >>Free the |cRXP_FRIENDLY_Captured Nectarbreeze Farmer|r by interacting with their |cRXP_PICK_Net|r and killing |cRXP_ENEMY_Gormali Slavers|r chained to them.
     .complete 29587,1 --10/10 Farmers Set Free
     .mob Gormali Slaver
     .target Captured Nectarbreeze Farmer
 step
-    .goto 371,40.3,74.49,22,0
-    .goto 371,39.8,75.48,22,0
-    .goto 371,39.58,74.39,22,0
-    .goto 371,39.27,74.82,22,0
     .goto 371,37.8,76.19
     >>Kill |cRXP_ENEMY_Subjugator Gormal|r
     .complete 29670,1 --1/1 Subjugator Gormal slain
@@ -1224,7 +1172,7 @@ RXPGuides.RegisterGuide([[
 #name 1) Pandaria Remix Leveling Guide: How to Use & Essential Tips
 #next 2) Pandaria Remix Introduction
 -- #subweight 11
-#displayname How to Use & Essential Tips
+#displayname |cFFFCDC00How to Use & Essential Tips|r
 
 step
     #completewith test
@@ -1306,7 +1254,8 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Panda Remix
 #name 2) Pandaria Remix Introduction
-#displayname Chapter 0 - Timeless Isle Introduction
+#displayname |cFFFCDC00Chapter 0|r - Timeless Isle Introduction
+#title Timeless Isle Introduction
 -- #subweight 1
 #next 3) Jade Forest Horde << Horde
 #next 3) Jade Forest Alliance << Alliance
@@ -1465,7 +1414,8 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Panda Remix
 #name 3) Jade Forest Horde
-#displayname Chapter 1 - Jade Forest
+#displayname |cFFFCDC00Chapter 1|r - Jade Forest
+#title Jade Forest
 #next 4) Valley of the Four Winds 1
 -- #subweight 9
 << Horde
@@ -1629,8 +1579,7 @@ step
     .goto 371,34.55,11.31,30,0
     .goto 371,34.66,10.61,10,0
     .goto 371,35.00,10.62,10,0
-    .goto 371,34.63,8.83,10,0
-    .goto 371,34.00,9.90,10,0
+    .goto 371,33.13,10.62,20,0
     .goto 371,34.77,10.62,20,0
     .goto 371,33.08,10.60,25,0
     .goto 371,34.27,13.17,25,0
@@ -1677,7 +1626,6 @@ step
     .mob Sha-Infested Prowler
 step
     #completewith next
-    .goto 371,31.78,11.61,18,0
     >>Click on the |cRXP_PICK_Barrels of Honeybrew|r
     .complete 31978,1 --6/6 Barrel of Honeybrew
 step
@@ -2201,8 +2149,6 @@ step
     #include 1) Jade Forest Side Quests Sprites Plight
 step
     #include 1) Jade Forest Cloud Serpent Side Quests
--- step
--- august celestials
 step
     .goto 371,47.17,47.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jade Forest Flame Guardian|r
@@ -2223,7 +2169,8 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Panda Remix
 #name 3) Jade Forest Alliance
-#displayname Chapter 1 - Jade Forest
+#displayname |cFFFCDC00Chapter 1|r - Jade Forest
+#title Jade Forest
 #next 4) Valley of the Four Winds 1
 -- #subweight 9
 <<Alliance
