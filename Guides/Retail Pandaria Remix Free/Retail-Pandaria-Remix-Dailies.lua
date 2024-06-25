@@ -1374,14 +1374,15 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Panda Remix
 #name X) Shado-Pan Daillies
-#internal
+#interal
 
 step
     #loop
     .goto 388,49.61,70.50,10,0
     .goto 388,49.01,71.33,10,0
-    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Snowdrift|r or |cRXP_FRIENDLY_Ling of the Six Pools|r
-    .questcount <4,31113,31114,31116,31118,31119,31196,31197,31199,31200,31201,31203,31198 >>|cRXP_WARN_Get all the Shado-Pan Dailies|r
+    .goto 388,49.02,70.45,10,0
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Snowdrift|r, |cRXP_FRIENDLY_Ling of the Six Pools|r or |cRXP_FRIENDLY_Ban Bearheart|r
+    .questcount <4,31113,31114,31116,31118,31119,31196,31197,31199,31200,31201,31203,31198,31044,31045,31048,31106 >>|cRXP_WARN_Get all the Shado-Pan Dailies|r
     .target Master Snowdrift
     .target Ling of the Six Pools
 step
@@ -1785,4 +1786,121 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ling of the Six Pools|r
     .dailyturnin 31204 >>Turn in Target of Opportunity: Sra'thik Hivelord
     .target Ling of the Six Pools
+step
+    #completewith ShanzeAncestorsSlain
+    #hidewindow
+    #loop
+    .goto 388,29.96,22.40,35,0
+    .goto 388,28.98,17.46,35,0
+    .goto 388,21.74,13.51,45,0
+    +1
+step
+    .isOnQuest 31106
+    #completewith ShanzeIllusionistsSlain
+    >>Kill |cRXP_ENEMY_Shan'ze Serpentbinders|r or |cRXP_ENEMY_Shan'ze Beastmasters|r
+    .complete 31106,1 --12/12 Shan'ze Serpentbinders or Beastmasters slain
+    .mob Shan'ze Serpentbinder
+    .mob Shan'ze BeastMaster
+step
+    .isOnQuest 31048
+    #completewith ShanzeIllusionistsSlain
+    >>Click on |cRXP_PICK_Mogu Burial Urns|r. Kill the |cRXP_ENEMY_Shan'ze Ancestors|r
+    .complete 31048,1 --24/24 Shan'ze Ancestor slain
+    .mob Shan'ze Ancestor
+step
+    .isOnQuest 31044
+    #completewith ShanzeIllusionistsSlain
+    >>Kill the |cRXP_ENEMY_Bronze Quilen|r. Loot them for the |T370770:0|t[|cRXP_LOOT_Bronze Claws|r]
+    .complete 31044,1 --20/20 Bronze Claw
+    .mob Bronze Quilen
+step
+    #label ShanzeIllusionistsSlain
+    .isOnQuest 31045
+    >>Kill the |cRXP_ENEMY_Shan'ze Illusionists|r
+    .complete 31045,1 --3/3 Shan'ze Illusionist slain
+    .mob Shan'ze Illusionist
+step
+    .isOnQuest 31106
+    #completewith BronzeClaws
+    >>Kill |cRXP_ENEMY_Shan'ze Serpentbinders|r or |cRXP_ENEMY_Shan'ze Beastmasters|r
+    .complete 31106,1 --12/12 Shan'ze Serpentbinders or Beastmasters slain
+    .mob Shan'ze Serpentbinder
+    .mob Shan'ze BeastMaster
+step
+    .isOnQuest 31048
+    #completewith BronzeClaws
+    >>Click on |cRXP_PICK_Mogu Burial Urns|r. Kill the |cRXP_ENEMY_Shan'ze Ancestors|r
+    .complete 31048,1 --24/24 Shan'ze Ancestor slain
+    .mob Shan'ze Ancestor
+step
+    .isOnQuest 31044
+    #label BronzeClaws
+    >>Kill the |cRXP_ENEMY_Bronze Quilen|r. Loot them for the |T370770:0|t[|cRXP_LOOT_Bronze Claws|r]
+    .complete 31044,1 --20/20 Bronze Claw
+    .mob Bronze Quilen
+step
+    .isOnQuest 31106
+    #completewith next
+    >>Kill |cRXP_ENEMY_Shan'ze Serpentbinders|r or |cRXP_ENEMY_Shan'ze Beastmasters|r
+    .complete 31106,1 --12/12 Shan'ze Serpentbinders or Beastmasters slain
+    .mob Shan'ze Serpentbinder
+    .mob Shan'ze BeastMaster
+step
+    .isOnQuest 31048
+    #label ShanzeAncestorsSlain
+    >>Click on |cRXP_PICK_Mogu Burial Urns|r. Kill the |cRXP_ENEMY_Shan'ze Ancestors|r
+    .complete 31048,1 --24/24 Shan'ze Ancestor slain
+    .mob Shan'ze Ancestor
+step
+    .isOnQuest 31106
+    #loop
+    .goto 388,22.75,8.46,45,0
+    .goto 388,30.24,8.35,45,0
+    .goto 388,25.05,19.09,50,0
+    >>Kill |cRXP_ENEMY_Shan'ze Serpentbinders|r or |cRXP_ENEMY_Shan'ze Beastmasters|r
+    .complete 31106,1 --12/12 Shan'ze Serpentbinders or Beastmasters slain
+    .mob Shan'ze Serpentbinder
+    .mob Shan'ze BeastMaster
+step
+    .isOnQuest 31044
+    .goto 388,49.02,70.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ban Bearheart|r
+    .dailyturnin 31044 >>Turn in Bronze Claws
+    .target Ban Bearheart
+step
+    .isOnQuest 31045
+    .goto 388,49.02,70.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ban Bearheart|r
+    .dailyturnin 31045 >>Turn in Illusions Of The Past
+    .target Ban Bearheart
+step
+    .isOnQuest 31048
+    .goto 388,49.02,70.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ban Bearheart|r
+    .dailyturnin 31048 >>Turn in Grave Consequences
+    .target Ban Bearheart
+step
+    .isOnQuest 31106
+    .goto 388,49.02,70.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ban Bearheart|r
+    .dailyturnin 31106 >>Turn in The Mogu Menace
+    .target Ban Bearheart
+step
+    .isQuestTurnedIn 31106
+    .goto 388,49.02,70.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ban Bearheart|r
+    .daily 31062 >>Accept When The Dead Speak
+    .target Ban Bearheart
+step
+    .isOnQuest 31062
+    .goto 388,32.35,9.56
+    >>Kill |cRXP_ENEMY_Shan'ze Deathspeaker|r
+    .complete 31062,1 --1/1 Shan'ze Deathspeaker slain
+    .mob Shan'ze Deathspeaker
+step
+    .isOnQuest 31062
+    .goto 388,49.01,70.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ban Bearheart|r
+    .dailyturnin 31062 >>Turn in When The Dead Speak
+    .target Ban Bearheart
 ]])
