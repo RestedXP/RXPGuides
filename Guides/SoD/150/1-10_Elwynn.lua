@@ -977,6 +977,14 @@ step
     .turnin 15 >> Turn in Investigate Echo Ridge
     .accept 21 >> Accept Skirmish at Echo Ridge
     .target Marshal McBride
+step << Priest
+    #xprate >1.59
+    #season 2
+    .goto Elwynn Forest,49.808,39.489
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Anetta|r inside downstairs
+    .accept 5623 >> Accept In Favor of the Light
+    .trainer >> Train your class spells
+    .target Priestess Anetta
 step << Human Mage
     #season 2
     #optional
@@ -1656,6 +1664,24 @@ step
     .turnin 84 >> Turn in Back to Billy
     .accept 87 >> Accept Goldtooth
     .target Billy Maclure
+step << Priest
+    #sticky
+    #label SharedPain
+    #completewith BernicesNecklace
+    .goto Elwynn Forest,40.6,81.8
+    >>Kill |cRXP_ENEMY_Kobold Miners|r. Loot them for the |T136222:0|t[|cRXP_FRIENDLY_Memory of an Imprisoned Savior|r]
+    >>|cRXP_WARN_Don't go out of your way to farm it now, you can get this rune later|r
+    .collect 205945,1 -- Memory of an Imprisoned Savior (1)
+    .mob Kobold Miner
+    .train 402854,1
+step << Priest
+    #sticky
+    #requires SharedPain
+    #completewith BernicesNecklace
+    .train 402854 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of an Imprisoned Savior|r] |cRXP_WARN_to train|r |T136160:0|t[Shared Pain]
+    >>|cRXP_WARN_You must have a|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buff by typing /kneel in a holy area such as, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge|r
+    .use 205945
+    .itemcount 205945,1
 step
     .goto Elwynn Forest,39.01,82.20,15,0
     .goto Elwynn Forest,39.92,80.11
@@ -2042,6 +2068,23 @@ step << Warrior/Paladin/Rogue
     .aura 2828 << Warrior/Rogue
     .aura 3112 << Paladin
     .train 2018,3
+step << Priest
+    #sticky
+    #label SharedPainTwo
+    #completewith JasperlodeExplore
+    .goto Elwynn Forest,40.6,81.8
+    >>Kill |cRXP_ENEMY_Kobold Miners|r. Loot them for the |T136222:0|t[|cRXP_FRIENDLY_Memory of an Imprisoned Savior|r]
+    .collect 205945,1 -- Memory of an Imprisoned Savior (1)
+    .mob Kobold Miner
+    .train 402854,1
+step << Priest
+    #sticky
+    #requires SharedPainTwo
+    #completewith JasperlodeExplore
+    .train 402854 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of an Imprisoned Savior|r] |cRXP_WARN_to train|r |T136160:0|t[Shared Pain]
+    >>|cRXP_WARN_You must have a|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buff by typing /kneel in a holy area such as, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge|r
+    .use 205945
+    .itemcount 205945,1
 step
     #optional
     #requires MurlocRune << Warrior/Rogue --Season 2
@@ -2076,6 +2119,19 @@ step
     .goto Elwynn Forest,60.39,50.16
     >>Follow the path through middle to explore Jasperlode Mine
     .complete 76,1 --Scout through the Jasperlode Mine
+step << Priest
+    .goto Elwynn Forest,62.2,57.4
+    >>Kill |cRXP_ENEMY_Kobold Miners|r. Loot them for the |T136222:0|t[|cRXP_FRIENDLY_Memory of an Imprisoned Savior|r]
+    .collect 205945,1 -- Memory of an Imprisoned Savior (1)
+    .mob Kobold Miner
+    .train 402854,1
+step << Priest
+    #optional
+    #completewith next
+    .train 402854 >> |cRXP_WARN_Use the|r |T136222:0|t[|cRXP_FRIENDLY_Memory of an Imprisoned Savior|r] |cRXP_WARN_to train|r |T136160:0|t[Shared Pain]
+    >>|cRXP_WARN_You must have a|r |T135934:0|t|T136057:0|t[Meditation] |cRXP_WARN_buff by typing /kneel in a holy area such as, Northshire Abbey, Stormwind Cathedral, the Altars of Light in Anvilmar, Loch Modan or the Mystic Ward in Ironforge|r
+    .use 205945
+    .itemcount 205945,1
 step << Warrior/Paladin/Rogue
     #optional
     #label RoughStone5
@@ -2901,6 +2957,11 @@ step
     >>|cRXP_BUY_Buy up to 20|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_from her. They are very cheap level 5 food|r
     .collect 4592,20,314,1 --Longjaw Mud Snapper (20)
 	.target Innkeeper Heather
+step
+    .goto Westfall,54.00,53.00
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scout Galiaan|r
+    .target Scout Galiaan
+    .accept 153 >> Accept Red Leather Bandanas
 step << Human
     .goto Westfall,56.55,52.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
@@ -2962,16 +3023,16 @@ step
     .target Morgan Pestle
     .isQuestComplete 61
 step << !Rogue
-    #optional << Warlock/Mage/Warrior
+    #optional << Warlock/Warrior
     .goto StormwindClassic,57.129,57.698
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Woo Ping|r
-    .trainer >>Train 1h Swords and Staves << Warlock/Mage
+    .trainer >>Train 1h Swords and Staves << Warlock
     .trainer >>Train Staves << Priest
     .trainer >>Train 2h Swords << Warrior/Paladin
     .target Woo Ping
-    .money <0.2 << Warlock/Mage
+    .money <0.2 << Warlock
     .money <0.3 << Warrior/Paladin
-step << Warlock/Mage
+step << Warlock
     .goto StormwindClassic,57.129,57.698
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Woo Ping|r
     .trainer >>Train Staves
@@ -3663,11 +3724,11 @@ step << Mage/Paladin
     .goto Ironforge,35.30,32.76,20,0
     .goto Ironforge,27.17,12.58,20,0 << Paladin
     .goto Ironforge,27.60,11.06,20,0 << Mage
-    .goto Ironforge,27.17,8.58,12 >>Travel toward |cRXP_FRIENDLY_Dink|r << Mage
+    .goto Ironforge,26.8,8.6,12 >>Travel toward |cRXP_FRIENDLY_Dink|r << Mage
     .goto Ironforge,23.131,6.143,12 >>Travel toward |cRXP_FRIENDLY_Brandur Ironhammer|r << Paladin
 step << Mage
     #xprate >1.49
-    .goto Ironforge,27.17,8.58
+    .goto Ironforge,26.8,8.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dink|r inside
     .train 122 >> Train your class spells
     .target Dink
@@ -3675,7 +3736,7 @@ step << Mage
     .xp >12,1
 step << Mage
     #xprate >1.49
-    .goto Ironforge,27.17,8.58
+    .goto Ironforge,26.8,8.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dink|r inside
     .train 145 >> Train your class spells
     .target Dink
@@ -3684,7 +3745,7 @@ step << Mage
 step << Mage
     #xprate >1.49
     #label MageIFTrain
-    .goto Ironforge,27.17,8.58
+    .goto Ironforge,26.8,8.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dink|r inside
     .train 1460 >> Train your class spells
     .target Dink

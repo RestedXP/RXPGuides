@@ -210,6 +210,12 @@ step
     .collect 1080,5,92,1 -- Tough Condor Meat (5)
     .collect 1081,5,92,1 -- Crisp Spider Meat (5)
     .target Auctioneer Jaxon
+step << Mage
+    #season 2
+    .goto StormwindClassic,55.8,65.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keldric Boucher|r
+    .collect 211779,3 >> Buy a couple |T135933:0|t[|cRXP_LOOT_Comprehension Charms|r] from him
+    .target Keldric Boucher
 step << Human
     .goto StormwindClassic,66.28,62.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r

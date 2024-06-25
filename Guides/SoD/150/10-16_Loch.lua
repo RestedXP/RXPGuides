@@ -158,7 +158,7 @@ step <<< !Human Rogue
     .use 208215
     .use 208218
     .train 398196,1
-step << Rogue
+step << !Human Rogue
     #season 2
     #softcore
     #optional
@@ -257,6 +257,18 @@ step
     >>Kill |cRXP_ENEMY_Rockjaw Bonesnappers|r inside the mine
     .complete 433,1 --Kill Rockjaw Bonesnapper (x10)
     .mob Rockjaw Bonesnapper
+step << Mage
+    .goto 1426,69.369,58.311
+    >>|cRXP_WARN_Look for other Mages or Warlocks near the |cRXP_ENEMY_Frozen Trogg|r or in General Chat (Type /1 into chat). You can still solo this if no one is there|r
+    >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Trogg|r to apply a stack of|r |T135805:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Trogg|r. Loot it for the|r |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: Burnout]|r
+    >>|cRXP_WARN_If there is no one there to help you walk into meele range of the Trogg and use|r |T135820:0|t[Living Flame] |cRXP_WARN_on him. Stay in meele range to keep yourself in combat and keep using|r |T135820:0|t[Living Flame] |cRXP_WARN_living flame on cooldown. It will kill the trogg after 5-6 casts.|r
+    .collect 203748,1 --Spell Notes: Burnout (1)
+    .train 401759,1
+    .mob Frozen Trogg
+step << Mage
+    .train 401759 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: Burnout]|r |cRXP_WARN_to learn|r |T132686:0|t[Engrave Chest - Burnout]
+    .use 203748
+    .itemcount 203748,1 --Spell Notes: Burnout (1)
 step << Dwarf Paladin
     #optional
     #label RockjawEnd
@@ -271,7 +283,6 @@ step
     .goto Dun Morogh,68.671,55.969
     .target Senator Mehr Stonehallow
     .target Foreman Stonebrow
-
 step
     #optional
     #completewith next
@@ -1126,6 +1137,31 @@ step << Warrior
     .use 208848 >>|cRXP_WARN_Use the|r |T236489:0|t[|cRXP_LOOT_Cracked Skull-Shaped Geode|r] |cRXP_WARN_to receive the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Quick Strike|r]
     .collect 208778,1 -- Rune of Quick Strike (1)
     .train 425443,1
+step << Mage
+    #season 2
+    .goto Loch Modan,29.2,81.2,15,0
+    .goto Loch Modan,28.8,83.4,15,0
+    .goto Loch Modan,30.0,83.8,15,0
+    .goto Loch Modan,32.2,87.2,15,0
+    .goto Loch Modan,33.8,88.6,15,0
+    .goto Loch Modan,36.0,88.0,15,0
+    .goto Loch Modan,36.6,81.2,15,0
+    .goto Loch Modan,36.6,79.6,15,0
+    .train 415936,1
+    >>Kill |cRXP_ENEMY_Stonesplinter Seer|r and loot them for |cRXP_LOOT_|T134939:0|t[Chewed Spell Notes]|r
+    .collect 208854,1
+    .mob Stonesplinter Seer
+step << Mage
+    #season 2
+    .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
+    .train 415936 >>|T134939:0|t[|cRXP_FRIENDLY_Chewed Spell Notes|r] to learn |T236220:0|t[Living Bomb]
+    .use 208854
+step << Mage
+    #season 2
+    #optional
+    #completewith next
+    .train 415936,3
+    .engrave 9,400613 >> Open your character sheet and engrave your gloves with |T236220:0|t[Living Bomb.]
 step
 #loop
     .goto Loch Modan,34.7,71.6,0
@@ -1240,6 +1276,50 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r
     .turnin 307 >> Turn in Filthy Paws
     .target Mountaineer Stormpike
+step << Mage
+    #season 2
+    #sticky
+    #completewith next
+    .goto Loch Modan,25.05,30.19,0
+    .goto Loch Modan,26.06,43.44,0
+    .goto Loch Modan,37.71,16.84,0
+    .goto Loch Modan,37.71,16.84,50,0
+    .goto Loch Modan,35.48,16.82,50,0
+    .goto Loch Modan,25.05,30.19,50,0
+    .goto Loch Modan,26.06,43.44,50,0
+    .goto Loch Modan,37.71,16.84,50,0
+    >>Kill |cRXP_ENEMY_Tunnel Rats|r. Loot them for their |cRXP_LOOT_Ears|r
+    >>|cRXP_ENEMY_Tunnel Rats|r |cRXP_WARN_can spawn throughout Loch Modan. Check your World Map for their locations|r
+    .complete 416,1 --Collect Tunnel Rat Ear (x12)
+    .mob Tunnel Rat Scout
+    .mob Tunnel Rat Vermin
+    .mob Tunnel Rat Forager
+    .mob Tunnel Rat Geomancer
+    .mob Tunnel Rat Digger
+    .mob Tunnel Rat Surveyor
+step << Mage
+    #season 2
+    #label Loch1
+    .goto Loch Modan,50.7,23.9,200 >>Travel to the island on the northern part of the Loch
+    .train 401767,1
+step << Mage
+    #season 2
+    #optional
+    #completewith next
+    .goto 1432,54.33,26.82,5 >> Enter the tent on the east side of the island
+    .train 401767,1
+step << Mage
+    #season 2
+    .goto 1432,54.33,26.82,5,0
+    .goto 1432,54.17,27.03
+    >>Open the |cRXP_PICK_Pile of Stolen Books|r inside. Loot them for the |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r]
+    .collect 208754,1 --Spell Notes: TENGI RONEERA (1)
+    .train 401767,1
+step << Mage
+    #season 2
+    .train 401767 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Regeneration]
+    .use 208754
+    .itemcount 208754,1 --Spell Notes: TENGI RONEERA (1)
 step << Paladin/Warrior
     #label BuyMace
     #optional
