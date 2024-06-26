@@ -1382,9 +1382,10 @@ step
     .goto 388,49.01,71.33,10,0
     .goto 388,49.02,70.45,10,0
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Snowdrift|r, |cRXP_FRIENDLY_Ling of the Six Pools|r or |cRXP_FRIENDLY_Ban Bearheart|r
-    .questcount <4,31113,31114,31116,31118,31119,31196,31197,31199,31200,31201,31203,31198,31044,31045,31048,31106 >>|cRXP_WARN_Get all the Shado-Pan Dailies|r
+    .questcount <4,31039,31040,31041,31046,31042,31043,31047,31105,31113,31114,31116,31118,31119,31196,31197,31199,31200,31201,31203,31198,31044,31045,31048,31106 >>|cRXP_WARN_Get all the Shado-Pan Dailies|r
     .target Master Snowdrift
     .target Ling of the Six Pools
+    .target Ban Bearheart
 step
     #completewith DeadTalkerAssault
     #hidewindow
@@ -1862,6 +1863,135 @@ step
     .mob Shan'ze Serpentbinder
     .mob Shan'ze BeastMaster
 step
+    .isOnQuest 31105
+    #completewith WildCloudridersFreed
+    >>Kill |cRXP_ENEMY_Shan'ze Serpentbinders|r or |cRXP_ENEMY_Shan'ze Beastmasters|r
+    .complete 31105,1 --12/12 Shan'ze Serpentbinders or Beastmasters slain
+    .mob Shan'ze Serpentbinder
+    .mob Shan'ze BeastMaster
+step
+    .isOnQuest 31042
+    #completewith WildCloudridersFreed
+    >>Kill the |cRXP_ENEMY_Onyx Stormclaws|r. Loot them for the |T399041:0|t[|cRXP_LOOT_Onyx Hearts|r]
+    .complete 31042,1 --4/4 Onyx Heart
+    .mob Onyx Stormclaw
+step
+    .isOnQuest 31043
+    >>Click on the |cRXP_PICK_Shan'ze Tablets|r
+    .complete 31043,1 --8/8 Shan'ze Tablet
+step
+    .isOnQuest 31047
+    #label WildCloudridersFreed
+    #loop
+    .goto 388,30.26,26.06,35,0
+    .goto 388,33.48,27.21,35,0
+    .goto 388,34.97,20.17,35,0
+    .goto 388,31.75,21.86,35,0
+    >>Click on the |cRXP_PICK_Ball and Chain|r
+    .complete 31047,1 --6/6 Wild Cloudriders freed
+step
+    #completewith ShanzeeSerpenbindersBeastmastersSlain
+    #hidewindow
+    #loop
+    .goto 388,25.71,19.64,35,0
+    .goto 388,21.84,11.62,35,0
+    .goto 388,24.39,8.36,35,0
+    .goto 388,30.12,9.33,35,0
+    .goto 388,25.71,19.64,35,0
+    .goto 388,30.26,26.06,35,0
+    .goto 388,33.48,27.21,35,0
+    .goto 388,34.97,20.17,35,0
+    .goto 388,31.75,21.86,35,0
+    +1
+step
+    .isOnQuest 31105
+    #completewith OnyxHeart
+    >>Kill |cRXP_ENEMY_Shan'ze Serpentbinders|r or |cRXP_ENEMY_Shan'ze Beastmasters|r
+    .complete 31105,1 --12/12 Shan'ze Serpentbinders or Beastmasters slain
+    .mob Shan'ze Serpentbinder
+    .mob Shan'ze BeastMaster
+step
+    .isOnQuest 31043
+    #completewith OnyxHeart
+    >>Click on the |cRXP_PICK_Shan'ze Tablets|r
+    .complete 31043,1 --8/8 Shan'ze Tablet
+step
+    .isOnQuest 31042
+    #label OnyxHeart
+    >>Kill the |cRXP_ENEMY_Onyx Stormclaws|r. Loot them for the |T399041:0|t[|cRXP_LOOT_Onyx Hearts|r]
+    .complete 31042,1 --4/4 Onyx Heart
+    .mob Onyx Stormclaw
+step
+    .isOnQuest 31105
+    #completewith next
+    >>Kill |cRXP_ENEMY_Shan'ze Serpentbinders|r or |cRXP_ENEMY_Shan'ze Beastmasters|r
+    .complete 31105,1 --12/12 Shan'ze Serpentbinders or Beastmasters slain
+    .mob Shan'ze Serpentbinder
+    .mob Shan'ze BeastMaster
+step
+    .isOnQuest 31043
+    >>Click on the |cRXP_PICK_Shan'ze Tablets|r
+    .complete 31043,1 --8/8 Shan'ze Tablet
+step
+    .isOnQuest 31105
+    #label ShanzeeSerpenbindersBeastmastersSlain
+    >>Kill |cRXP_ENEMY_Shan'ze Serpentbinders|r or |cRXP_ENEMY_Shan'ze Beastmasters|r
+    .complete 31105,1 --12/12 Shan'ze Serpentbinders or Beastmasters slain
+    .mob Shan'ze Serpentbinder
+    .mob Shan'ze BeastMaster
+step
+    .isOnQuest 31039
+    #completewith CloudrunnerHatchlingsFreed
+    >>Kill |cRXP_ENEMY_Shan'ze Serpentbinders|r or |cRXP_ENEMY_Shan'ze Beastmasters|r
+    .complete 31039,1 --12/12 Shan'ze Serpentbinders or Beastmasters slain
+    .mob Shan'ze Serpentbinder
+    .mob Shan'ze BeastMaster
+step
+    .isOnQuest 31041
+    #completewith CloudrunnerHatchlingsFreed
+    >>Click on the |cRXP_PICK_Cloudrunner Eggs|r
+    .complete 31041,1 --8/8 Cloudrunner Egg
+step
+    #label CloudrunnerHatchlingsFreed
+    .isOnQuest 31046
+    #loop
+    .goto 388,30.26,26.06,35,0
+    .goto 388,33.48,27.21,35,0
+    .goto 388,34.97,20.17,35,0
+    .goto 388,31.75,21.86,35,0
+    >>Click on the |cRXP_PICK_Cloudrunner Hatchlings|r
+    .complete 31046,1 --20/20 Cloudrunner Hatchlings freed
+    .target Cloudrunner Hatchling
+step
+    #completewith DarkwoodPixieCharmer
+    #hidewindow
+    #loop
+    .goto 388,27.39,24.52,40,0
+    .goto 388,25.16,24.07,35,0
+    .goto 388,22.07,18.62,35,0
+    .goto 388,19.33,16.52,35,0
+    .goto 388,22.21,10.14,35,0
+    .goto 388,23.38,17.98,40,0
+    +1
+step
+    .isOnQuest 31030
+    #completewith next
+    >>Kill |cRXP_ENEMY_Darkwoods Pixies|r or |cRXP_ENEMY_Darkwoods Charmers|r
+    .complete 31030,1 --30/30 Darkwoods Pixies or Darkwoods Charmers slain
+    .mob Darkwoods Pixie
+    .mob Darkwoods Charmer
+step
+    .isOnQuest 31041
+    >>Click on the |cRXP_PICK_Cloudrunner Eggs|r
+    .complete 31041,1 --8/8 Cloudrunner Egg
+step
+    .isOnQuest 31030
+    #label DarkwoodPixieCharmer
+    >>Kill |cRXP_ENEMY_Darkwoods Pixies|r or |cRXP_ENEMY_Darkwoods Charmers|r
+    .complete 31030,1 --30/30 Darkwoods Pixies or Darkwoods Charmers slain
+    .mob Darkwoods Pixie
+    .mob Darkwoods Charmer
+step
     .isOnQuest 31044
     .goto 388,49.02,70.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ban Bearheart|r
@@ -1892,15 +2022,115 @@ step
     .daily 31062 >>Accept When The Dead Speak
     .target Ban Bearheart
 step
+    .isOnQuest 31040
+    .goto 388,49.02,70.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ban Bearheart|r
+    .dailyturnin 31040 >>Turn in Spiteful Sprites
+    .target Ban Bearheart
+step
+    .isOnQuest 31041
+    .goto 388,49.02,70.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ban Bearheart|r
+    .dailyturnin 31041 >>Turn in Egg Rescue!
+    .target Ban Bearheart
+step
+    .isOnQuest 31046
+    .goto 388,49.02,70.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ban Bearheart|r
+    .dailyturnin 31046 >>Turn in Little Hatchlings
+    .target Ban Bearheart
+step
+    .isOnQuest 31039
+    .goto 388,49.02,70.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ban Bearheart|r
+    .dailyturnin 31039 >>Turn in The Mogu Menace
+    .target Ban Bearheart
+step
+    .isNotOnQuest 31062
+    .isQuestTurnedIn 31039
+    .goto 388,49.02,70.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ban Bearheart|r
+    .daily 31049 >>Accept In Sprite of Everything
+    .target Ban Bearheart
+step
+    .isOnQuest 31042
+    .goto 388,49.02,70.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ban Bearheart|r
+    .dailyturnin 31042 >>Turn in Onyx Hearts
+    .target Ban Bearheart
+step
+    .isOnQuest 31043
+    .goto 388,49.02,70.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ban Bearheart|r
+    .dailyturnin 31043 >>Turn in Dark Arts
+    .target Ban Bearheart
+step
+    .isOnQuest 31047
+    .goto 388,49.02,70.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ban Bearheart|r
+    .dailyturnin 31047 >>Turn in Born Free
+    .target Ban Bearheart
+step
+    .isOnQuest 31105
+    .goto 388,49.02,70.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ban Bearheart|r
+    .dailyturnin 31105 >>Turn in The Mogu Menace
+    .target Ban Bearheart
+step
+    .isNotOnQuest 31062,31039
+    .isQuestTurnedIn 31105
+    .goto 388,49.02,70.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ban Bearheart|r
+    .daily 31061 >>Accept Riding the Storm
+    .target Ban Bearheart
+step
     .isOnQuest 31062
     .goto 388,32.35,9.56
     >>Kill |cRXP_ENEMY_Shan'ze Deathspeaker|r
     .complete 31062,1 --1/1 Shan'ze Deathspeaker slain
     .mob Shan'ze Deathspeaker
 step
+    .isOnQuest 31049
+    #completewith next
+    #label DarkwoodsFaerieSlain
+    >>Kill the |cRXP_ENEMY_Darkwoods Faerie|r
+    .complete 31049,1 --1/1 Darkwoods Faerie slain
+    .mob Darkwoods Faerie
+step
+    .isOnQuest 31049
+    #title Enter Cave
+    #completewith DarkwoodsFaerieSlain
+    .goto 388,20.23,15.70,6 >>Enter the cave
+step
+    .isOnQuest 31049
+    .goto 388,20.23,15.70,0
+    .goto 388,19.53,13.87
+    >>Kill the |cRXP_ENEMY_Darkwoods Faerie|r
+    .complete 31049,1 --1/1 Darkwoods Faerie slain
+    .mob Darkwoods Faerie
+step
+    .isOnQuest 31061
+    .goto 388,33.47,15.63
+    >>Click on a |cRXP_ENEMY_Shan'ze Cloudrunner|r. Kill the |cRXP_ENEMY_Shan'ze Cloudrunner|r you're sitting on
+    .complete 31061,1 --8/8 Shan'ze Cloudrider saved
+    .use 83134
+    .mob Shan'ze Cloudrunner
+step
     .isOnQuest 31062
     .goto 388,49.01,70.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ban Bearheart|r
     .dailyturnin 31062 >>Turn in When The Dead Speak
+    .target Ban Bearheart
+step
+    .isOnQuest 31049
+    .goto 388,49.01,70.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ban Bearheart|r
+    .dailyturnin 31049 >>Turn in In Sprite of Everything
+    .target Ban Bearheart
+step
+    .isOnQuest 31061
+    .goto 388,49.01,70.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ban Bearheart|r
+    .dailyturnin 31061 >>Turn in Riding the Storm
     .target Ban Bearheart
 ]])
