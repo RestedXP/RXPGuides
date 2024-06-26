@@ -1374,7 +1374,9 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Panda Remix
 #name X) Shado-Pan Daillies
-#interal
+#displayname Shado-Pan Dailies
+#title Shado-Pan Dailies
+#internal
 
 step
     #loop
