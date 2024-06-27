@@ -1,6 +1,1214 @@
 local faction = UnitFactionGroup("player")
 if faction == "Horde" then return end
 
+RXPGuides.RegisterGuide([[
+#classic
+#version 1
+<< Alliance
+#group RXP SOD TEST
+#name 1-7 Coldridge Valley
+#next 6-11 Dun Morogh SoD
+#defaultfor Dwarf/Gnome
+
+step << !Gnome !Dwarf
+    #completewith next
+    +You have selected a guide meant for Gnomes and Dwarves. You should choose the same starter zone that you start in
+step << Mage
+    #completewith next
+    +Note that you have selected the single target mage guide. Single target is a lot safer than AoE Mage, but a LOT slower
+step << !Gnome Mage
+    #season 2
+    #completewith next
+    +In Season of Discovery, you should NOT start outside of your race's starter zone as a Mage, as you will be unable to get your first rune here (|T133816:0|t[Engrave Gloves - Ice Lance])
+step
+    .goto Dun Morogh,29.927,71.201
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sten Stoutarm|r
+    .accept 179 >> Accept Dwarven Outfitters
+    .target Sten Stoutarm
+step << Warlock
+#sticky
+#label wlrune1
+    #season 2
+    .goto Dun Morogh,26.733,72.552
+    >>Open the |cRXP_PICK_Rockjaw Footlocker|r on the ground. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Haunting]|r
+    .collect 205230,1 -- Rune of Haunting (1)
+    .train 403919,1
+step << Warlock
+#requires wlrune1
+#sticky
+    #season 2
+    .train 403919 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Haunting]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Haunt]
+    .use 205230
+    .itemcount 205230,1 -- Rune of Haunting (1)
+--XX Era Level 1 Warrior/Warlock training, Era Warlock imp accept start
+step << Warrior/Warlock
+    #season 0,1
+    #completewith next
+    .goto 1426,28.533,72.587,50,0
+    .goto 1426,28.239,71.707,50,0
+    +|cRXP_WARN_Kill and loot |cRXP_ENEMY_Ragged Young Wolves|r until you have 10 copper or more of vendor trash|r
+    >>|cRXP_WARN_Unequip your|r |T132665:0|t[Acolyte's Robe]|cRXP_WARN_,|r |T135005:0|t[Acolyte's Shirt]|cRXP_WARN_,|r |T134581:0|t[Acolyte's Pants]|cRXP_WARN_, and|r |T132535:0|t[Acolyte's Shoes] |cRXP_WARN_so you can vendor them for 4 copper|r << Warlock
+    >>|cRXP_WARN_Unequip your|r |T135009:0|t[Recruit's Shirt]|cRXP_WARN_,|r |T134582:0|t[Recruit's Pants]|cRXP_WARN_, and|r |T132540:0|t[Recruit's Boots] |cRXP_WARN_so you can vendor them for 3 copper|r << Warrior
+    .complete 179,1 --Tough Wolf Meat (8)
+    .disablecheckbox
+    .mob Ragged Young Wolf
+    .money >0.001
+step << Warrior/Warlock
+    #season 0,1
+    #optional
+    #completewith next
+    .goto 1426,28.792,68.804,12,0
+    .goto 1426,28.939,68.387,12 >> Enter Anvilmar
+step << Warrior/Warlock
+    #season 0,1
+    .goto 1426,28.792,67.837
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grundel Harkin|r inside
+    .vendor >> Vendor Trash
+    .target Grundel Harkin
+    .train 6673,1 << Warrior
+    .train 348.1 << Warlock
+step << Warrior
+    #season 0,1
+    .goto 1426,28.831,67.238
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thran Khorman|r inside
+    .train 6673 >>Train |T132333:0|t[Battle Shout]
+    .target Thran Khorman
+step << Warlock
+    #season 0,1
+    .goto Dun Morogh,28.650,66.145
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alamar Grimm|r inside
+    .train 348 >> Train |T135817:0|t[Immolate]
+    .accept 1599 >> Accept Beginnings
+    .target Alamar Grimm
+step << Warrior/Warlock
+    #season 0,1
+    #softcore << Warlock
+    #label WarriorHS
+    #completewith WolfMeat
+    .hs >> Hearth to Coldridge Valley
+    .subzoneskip 77,1
+--XX All era warriors, era softcore warlocks
+step << Warrior/Warlock
+    #season 0,1
+    #softcore << Warlock
+    #optional
+    #requires WarriorHS
+    #completewith WolfMeat
+	.destroy 6948 >> Delete the |T134414:0|t[Hearthstone] from your bags, as it's no longer needed
+--XX Era Warriors, Era Softcore Warlocks drop HS
+step << Warlock
+    #season 0,1
+    #optional
+    #completewith next
+    .goto 1426,28.938,68.358,12,0
+    .goto 1426,28.831,68.698,12 >> Exit Anvilmar
+    .subzoneskip 77,1
+--XX Era Level 1 Warrior/Warlock training, warlock imp accept end
+step
+    #label WolfMeat
+    .goto 1426,29.529,73.286,0
+    .goto 1426,28.117,75.088,0
+    .goto 1426,28.557,72.487,0
+    .goto 1426,29.529,73.286,60,0
+    .goto 1426,29.054,74.608,60,0
+    .goto 1426,28.558,75.781,60,0
+    .goto 1426,28.117,75.088,60,0
+    .goto 1426,27.562,74.331,60,0
+    .goto 1426,27.793,73.123,60,0
+    .goto 1426,28.557,72.487,60,0
+    >>Kill |cRXP_ENEMY_Ragged Young Wolves|r. Loot them for their |cRXP_LOOT_Tough Wolf Meat|r
+    .complete 179,1 --Collect Tough Wolf Meat (x8)
+    .mob Ragged Young Wolf
+step
+    #optional
+    .goto 1426,29.529,73.286,0
+    .goto 1426,28.117,75.088,0
+    .goto 1426,28.557,72.487,0
+    .goto 1426,29.529,73.286,60,0
+    .goto 1426,29.054,74.608,60,0
+    .goto 1426,28.558,75.781,60,0
+    .goto 1426,28.117,75.088,60,0
+    .goto 1426,27.562,74.331,60,0
+    .goto 1426,27.793,73.123,60,0
+    .goto 1426,28.557,72.487,60,0
+    .xp 2 >> Grind to level 2
+    .mob Ragged Young Wolf
+step << Priest/Mage/Warlock
+    #season 0,1
+    .goto Dun Morogh,30.087,71.563
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adlin Pridedrift|r
+    >>Vendor Trash
+    >>|cRXP_BUY_Buy 15|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
+    >>|cRXP_WARN_Grind extra |cRXP_ENEMY_Ragged Young Wolves|r if you don't have enough money|r
+    .collect 159,15 --Collect Refreshing Spring Water (x15)
+    .target Adlin Pridedrift
+    .xp >6,1
+step << Mage
+    #season 2
+    .goto Dun Morogh,30.087,71.563
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adlin Pridedrift|r
+    >>Vendor Trash
+    >>|cRXP_BUY_Buy 15|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
+    >>|cRXP_WARN_Grind extra |cRXP_ENEMY_Ragged Young Wolves|r if you don't have enough money|r
+    >>|cRXP_WARN_Make sure you save 10c for later|r
+    .collect 159,15 --Collect Refreshing Spring Water (x15)
+    .target Adlin Pridedrift
+    .xp >6,1
+step << !Priest !Mage !Warlock
+    #completewith next << !Hunter
+    .goto Dun Morogh,30.087,71.563
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adlin Pridedrift|r
+    >>Vendor Trash << Hunter
+    >>|cRXP_BUY_Buy 600|r |T132384:0|t[Light Shots] |cRXP_BUY_from him|r << Hunter
+    .vendor >> |cRXP_WARN_Vendor trash|r << !Hunter
+    .collect 2516,600 << Hunter --Light Shot (600)
+    .target Adlin Pridedrift
+    .xp >6,1
+step
+    .goto Dun Morogh,29.927,71.201
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sten Stoutarm|r
+    >>|cRXP_WARN_Make sure to equip the gloves you get from this quest so you can engrave a rune of them later|r
+    .turnin 179 >> Turn in Dwarven Outfitters
+    .accept 233 >> Accept Coldridge Valley Mail Delivery
+    .accept 3106 >> Accept Simple Rune << Dwarf Warrior
+    .accept 3107 >> Accept Consecrated Rune << Dwarf Paladin
+    .accept 3108 >> Accept Etched Rune << Dwarf Hunter
+    .accept 3109 >> Accept Encrypted Rune << Dwarf Rogue
+    .accept 3110 >> Accept Hallowed Rune << Dwarf Priest
+    .accept 3112 >> Accept Simple Memorandum << Gnome Warrior
+    .accept 3113 >> Accept Encrypted Memorandum << Gnome Rogue
+    .accept 3114 >> Accept Glyphic Memorandum << Gnome Mage
+    .accept 3115 >> Accept Tainted Memorandum << Gnome Warlock
+    .target Sten Stoutarm
+step
+    #xprate <1.1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balir Frosthammer|r
+    .goto Dun Morogh,29.709,71.255
+    .accept 170 >> Accept A New Threat
+    .target Balir Frosthammer
+--XX SoD level 2 Training/Rune quest accept start (-Paladin, they don't need to yet)
+step << Priest/Mage/Warlock
+    #season 2
+    #xprate <1.1
+    #completewith EnterAnvilmar
+    .goto 1426,27.096,72.545,0
+    .goto 1426,26.620,73.548,0
+    .goto 1426,25.722,72.261,0
+    .goto 1426,24.878,72.329,0
+    .goto 1426,24.100,73.749,0
+    .goto 1426,24.920,74.697,0
+    .goto 1426,21.813,72.584,0
+    .goto 1426,19.578,72.086,0
+    .goto 1426,20.627,70.415,0
+    >>Kill |cRXP_ENEMY_Rockjaw Troggs|r and |cRXP_ENEMY_Burly Rockjaw Troggs|r
+    .complete 170,1 --Kill Rockjaw Trogg (x6)
+    .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
+    .mob Rockjaw Trogg
+    .mob Burly Rockjaw Trogg
+step << Priest
+    #season 2
+    .goto Dun Morogh,26.733,72.552
+    >>Open the |cRXP_PICK_Rockjaw Footlocker|r on the ground. Loot it for the |T136222:0|t|cRXP_LOOT_[Memory of a Troubled Acolyte]|r
+    .collect 205951,1 -- Memory of a Troubled Acolyte (1)
+    .train 402862,1
+step << Mage
+    #season 2
+    .goto Dun Morogh,26.733,72.552
+    >>Open the |cRXP_PICK_Rockjaw Footlocker|r on the ground. Loot it for the |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r
+    >>|cRXP_WARN_NOTE: You will be unable to train|r |T133816:0|t[Engrave Gloves - Ice Lance] |cRXP_WARN_here as you can only get a|r |T133736:0|t[Comprehension Primer] |cRXP_WARN_in your race's starting zone|r << !Gnome
+    .collect 203751,1,77667,1 -- Spell Notes: CALE ENCI (1)
+    .train 401760,1
+step << !Paladin !Hunter
+    #season 2
+    #label EnterAnvilmar
+    #optional
+    #completewith next
+    .goto 1426,28.792,68.804,12,0
+    .goto 1426,28.642,68.375,12 >> Enter Anvilmar << Rogue/Warlock/Mage
+    .goto 1426,28.939,68.387,12 >> Enter Anvilmar << !Rogue !Warlock !Mage
+step << Warlock
+    #season 2
+    .goto Dun Morogh,28.650,66.145
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alamar Grimm|r upstairs
+    .accept 1599 >> Accept Beginnings
+    .turnin 3115 >> Turn in Tainted Memorandum << Gnome
+    .accept 77666 >> Accept Stolen Power << Gnome
+    .turnin 77666 >> Turn in Stolen Power << Gnome
+    .train 348 >> Train |T135817:0|t[Immolate]
+    .target Alamar Grimm
+step << Warrior
+    #season 2
+    .goto Dun Morogh,28.832,67.242
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thran Khorman|r inside
+    .turnin 3106 >> Turn in Simple Rune << Dwarf
+    .turnin 3112 >> Turn in Simple Memorandum << Gnome
+    .accept 77655 >> Accept The Lost Rune << Dwarf
+    .accept 77656 >> Accept The Lost Rune << Gnome
+    .train 6673 >>Train |T132333:0|t[Battle Shout]
+    .trainer >> Train your class spells
+    .target Thran Khorman
+step << Rogue
+    #season 2
+    .goto Dun Morogh,28.369,67.513
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Solm Hargrin|r inside
+    .turnin 3109 >> Turn in Encrypted Rune << Dwarf
+    .turnin 3113 >> Turn in Encrypted Memorandum << Gnome
+    .accept 77658 >> Accept Thrice Stolen << Dwarf
+    .accept 77659 >> Accept Thrice Stolen << Gnome
+    .train 1784 >>Train |T132320:0|t[Stealth]
+    .target Solm Hargrin
+step << Priest
+    #season 2
+    .goto Dun Morogh,28.600,66.385
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branstock Khalder|r inside
+    >>|cRXP_WARN_Train|r |T135987:0|t[Power Word: Fortitude] |cRXP_WARN_as you'll need it for a class quest soon|r << Dwarf
+    .turnin 3110 >> Turn in Hallowed Rune << Dwarf
+    .accept 5626 >> Accept In Favor of the Light << Dwarf
+    .accept 77661 >> Accept Meditation on the Light << Dwarf
+    .train 1243 >> Train |T135987:0|t[Power Word: Fortitude]
+    .target Branstock Khalder
+step << Priest
+    #season 2
+    .goto 1426,28.922,66.378
+    .aura 410935 >>|cRXP_WARN_Target the |cRXP_FRIENDLY_Altar of the Light|r inside to receive the|r |T135934:0|t[Meditation on the Light] |cRXP_WARN_buff|r
+    >>|cRXP_WARN_If this doesn't work, type /kneel with the |cRXP_FRIENDLY_Altar of the Light|r targetted|r
+    .target Altar of the Light
+    .emote KNEEL,208565
+    .train 402862,1
+step << Priest
+    #season 2
+    .train 402862 >> |cRXP_WARN_Use the|r |T136222:0|t|cRXP_LOOT_[Memory of a Troubled Acolyte]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Penance]
+    .aura -410935
+    .use 205951
+step << Dwarf Priest
+    #season 2
+    .goto Dun Morogh,28.600,66.385
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branstock Khalder|r inside
+    .turnin 77661 >> Turn in Meditation on the Light
+    .target Branstock Khalder
+    .isQuestComplete 77661
+step << Gnome Warlock/Dwarf Priest
+    #season 2
+    #label GlovesEquip
+    #completewith Observations
+    .equip 10,711 >> |cRXP_WARN_Equip the|r |T132961:0|t[Tattered Cloth Gloves]
+    .use 711
+    .train 402862,3 << Priest
+    .train 403919,3 << Warlock
+step << Gnome Warlock/Dwarf Priest
+    #season 2
+    #requires GlovesEquip
+    #completewith Observations
+    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132961:0|t[Tattered Cloth Gloves] with|r |T133816:0|t[Engrave Gloves - Haunt] << Warlock
+    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132961:0|t[Tattered Cloth Gloves] with|r |T133816:0|t[Engrave Gloves - Penance] << Priest
+    .train 402862,3 << Priest
+    .train 403919,3 << Warlock
+step << !Paladin !Hunter
+    #season 2 << !Warlock --Only Warlock is inside Anvilmar in Era at this step
+    #optional
+    #completewith Talin
+    .goto 1426,28.792,68.804,12 >> Exit Anvilmar
+    .subzoneskip 77,1
+step
+    #xprate <1.1
+    #completewith Rockjaw
+    .goto 1426,27.096,72.545,0
+    .goto 1426,26.620,73.548,0
+    .goto 1426,25.722,72.261,0
+    .goto 1426,24.878,72.329,0
+    .goto 1426,24.100,73.749,0
+    .goto 1426,24.920,74.697,0
+    .goto 1426,21.813,72.584,0
+    .goto 1426,19.578,72.086,0
+    .goto 1426,20.627,70.415,0
+    >>Kill |cRXP_ENEMY_Rockjaw Troggs|r and |cRXP_ENEMY_Burly Rockjaw Troggs|r
+    .complete 170,1 --Kill Rockjaw Trogg (x6)
+    .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
+    .mob Rockjaw Trogg
+    .mob Burly Rockjaw Trogg
+step
+#season 0,1
+    #label Talin
+    .goto Dun Morogh,22.601,71.433
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talin Keeneye|r
+    .turnin 233 >> Turn in Coldridge Valley Mail Delivery
+    .accept 183 >> Accept The Boar Hunter
+    .accept 234 >> Accept Coldridge Valley Mail Delivery
+    .target Talin Keeneye
+step
+#season 2
+    #label Talin
+    .goto Dun Morogh,22.601,71.433
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talin Keeneye|r
+    .turnin 233 >> Turn in Coldridge Valley Mail Delivery
+    .accept 234 >> Accept Coldridge Valley Mail Delivery
+    .target Talin Keeneye
+step
+#season 0,1
+    #loop
+    .goto 1426,22.276,72.549,0
+    .goto 1426,20.924,70.393,0
+    .goto 1426,22.662,69.331,0
+    .goto 1426,24.358,72.591,0
+    .goto 1426,22.276,72.549,45,0
+    .goto 1426,21.209,72.266,45,0
+    .goto 1426,20.880,71.470,45,0
+    .goto 1426,20.924,70.393,45,0
+    .goto 1426,21.330,69.261,45,0
+    .goto 1426,22.035,69.231,45,0
+    .goto 1426,22.662,69.331,45,0
+    .goto 1426,24.317,68.026,45,0
+    .goto 1426,24.754,69.257,45,0
+    .goto 1426,24.878,71.191,45,0
+    .goto 1426,24.358,72.591,45,0
+    >>Kill |cRXP_ENEMY_Small Crag Boars|r
+    .complete 183,1 --Kill Small Crag Boar (x12)
+    .mob Small Crag Boar
+step
+#season 0,1
+    .goto Dun Morogh,22.601,71.433
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talin Keeneye|r
+    .turnin 183 >> Turn in The Boar Hunter
+    .target Talin Keeneye
+step << Paladin/Warlock/Hunter
+    #xprate <1.1
+    .goto 1426,27.858,76.482,0
+    .goto 1426,30.727,76.831,0
+    .goto 1426,29.280,75.500,0
+    .goto 1426,27.858,76.482,50,0
+    .goto 1426,28.946,77.153,50,0
+    .goto 1426,29.716,77.605,50,0
+    .goto 1426,30.727,76.831,50,0
+    .goto 1426,32.814,75.221,50,0
+    .goto 1426,31.138,74.048,50,0
+    .goto 1426,30.077,74.479,50,0
+    .goto 1426,29.280,75.500,50,0
+    >>Kill |cRXP_ENEMY_Rockjaw Troggs|r and |cRXP_ENEMY_Burly Rockjaw Troggs|r
+    .complete 170,1 --Kill Rockjaw Trogg (x6)
+    .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
+    .mob Rockjaw Trogg
+    .mob Burly Rockjaw Trogg
+step << Paladin/Warlock
+    #xprate <1.5
+    #loop
+    .goto 1426,23.595,72.462,0
+    .goto 1426,26.117,74.469,0
+    .goto 1426,26.832,74.649,0
+    .goto 1426,26.884,72.733,0
+    .goto 1426,23.595,72.462,50,0
+    .goto 1426,24.290,73.406,50,0
+    .goto 1426,24.642,74.138,50,0
+    .goto 1426,26.117,74.469,50,0
+    .goto 1426,26.832,74.649,50,0
+    .goto 1426,26.884,72.733,50,0
+    .xp 3+1130 >> Grind to 1130+/1400xp
+step << Paladin/Warlock
+    #xprate >1.49
+    #loop
+    .goto 1426,23.595,72.462,0
+    .goto 1426,26.117,74.469,0
+    .goto 1426,26.832,74.649,0
+    .goto 1426,26.884,72.733,0
+    .goto 1426,23.595,72.462,50,0
+    .goto 1426,24.290,73.406,50,0
+    .goto 1426,24.642,74.138,50,0
+    .goto 1426,26.117,74.469,50,0
+    .goto 1426,26.832,74.649,50,0
+    .goto 1426,26.884,72.733,50,0
+    .xp 3+995 >> Grind to 995+/1400xp
+step
+    #label Rockjaw
+    .goto 1426,25.077,75.711
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grelin Whitebeard|r
+    .turnin 234 >> Turn in Coldridge Valley Mail Delivery
+    .accept 182 >> Accept The Troll Cave
+    .target Grelin Whitebeard
+step << Hunter
+    #completewith next
+    .goto 1426,25.861,78.197,0
+    .goto 1426,23.716,80.257,0
+    .goto 1426,20.671,75.838,0
+    .goto 1426,25.861,78.197,45,0
+    .goto 1426,26.382,78.409,45,0
+    .goto 1426,26.031,79.854,45,0
+    .goto 1426,23.716,80.257,45,0
+    .goto 1426,22.836,79.962,45,0
+    .goto 1426,22.684,78.888,45,0
+    .goto 1426,21.029,76.459,45,0
+    .goto 1426,20.671,75.838,45,0
+    >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r
+    .complete 182,1 --Kill Frostmane Troll Whelp (x14)
+    .mob Frostmane Troll Whelp
+step << Hunter
+    .goto 1426,25.861,78.197,0
+    .goto 1426,23.716,80.257,0
+    .goto 1426,20.671,75.838,0
+    .xp 4 >> Grind to level 4
+step << Paladin/Warlock/Hunter
+    .goto Dun Morogh,24.980,75.963
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r
+    >>|cRXP_WARN_This will start a 5 minute timer for the quest. Do NOT go AFK or log out for the next 5 minutes|r
+    .accept 3364 >> Accept Scalding Mornbrew Delivery
+    .target Nori Pridedrift
+step << Warlock
+#season 2
+#completewith next
+    .goto Dun Morogh,26.85,79.83,20 >> Enter the troll cave
+step << Warlock
+#loop
+#season 2
+    #label Feathers
+    .goto 1426,28.696,83.148,0
+    .goto 1426,30.216,80.254,0
+    .goto 1426,28.696,83.148,40,0
+    .goto 1426,28.999,82.504,40,0
+    .goto 1426,29.298,81.579,15,0
+    .goto 1426,29.041,81.168,40,0
+    .goto 1426,30.055,82.385,40,0
+    .goto 1426,30.381,80.766,40,0
+    .goto 1426,30.216,80.254,40,0
+    >>Kill |cRXP_ENEMY_Frostmane Novices|r inside the troll cave. Loot them for their |cRXP_LOOT_Feather Charms|r
+    >>|cRXP_WARN_You're on a timer. Do NOT go AFK or log out|r
+    .complete 1599,1 --Collect Feather Charm (x3)
+    .mob Frostmane Novice
+step << Warlock/Paladin/Hunter
+    #season 2
+    #completewith next
+    >>|cRXP_WARN_Make sure you will have at least one silver after vendoring. You will need it to train|r |T132204:0|t[Serpent Sting] << Hunter
+    >>|cRXP_WARN_Make sure you will have at least one silver after vendoring. You will need it to train|r |T135959:0|t[Judgement] << Paladin
+    .hs >> Hearth to Anvilmar
+step << Paladin/Warlock/Hunter
+    #optional
+    #completewith next
+    .goto 1426,28.792,68.804,12,0
+    >>|cRXP_WARN_You have 5 minutes to return to Anvilmar before|r |T132791:0|t[Duncan's Scalding Mornbrew] |cRXP_WARN_expires|r
+    .goto 1426,28.939,68.387,20 >> Enter Anvilmar
+step << Paladin/Warlock/Hunter
+    .goto Dun Morogh,28.769,66.377
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Durnan Furcutter|r inside
+    .turnin 3364 >> Turn in Scalding Mornbrew Delivery
+    .accept 3365 >> Accept Bring Back the Mug
+    .vendor >> Vendor Trash
+    .target Durnan Furcutter
+    .isQuestAvailable 317
+step << Hunter
+    #season 2
+    .goto Dun Morogh,29.175,67.455
+    .target Thorgas Grimson
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgas Grimson|r
+    .turnin 3108 >>Turn in Etched Rune << Dwarf
+    .accept 77660 >> Accept Trek Through the Caves << Dwarf
+    .train 1978 >> Train |T132204:0|t[Serpent Sting]
+step << Paladin
+    #season 2
+    .goto Dun Morogh,28.833,68.332
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bromos Grummner|r inside
+    .turnin 3107 >> Turn in Consecrated Rune << Dwarf
+    .accept 77657 >> Accept Relics of the Light << Dwarf
+    .train 20271 >> Train |T135959:0|t[Judgement]
+    .target Bromos Grummner
+step << Warlock
+    #season 0,1
+    .goto Dun Morogh,28.650,66.145
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alamar Grimm|r upstairs
+    .turnin 3115 >> Turn in Tainted Memorandum
+    .train 172 >>Train |T136118:0|t[Corruption]
+    .target Alamar Grimm
+step << Warlock
+    #season 2
+    .goto Dun Morogh,28.650,66.145
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alamar Grimm|r upstairs
+    .train 172 >>Train |T136118:0|t[Corruption]
+    .turnin 1599 >> Turn in Beginnings
+    .target Alamar Grimm
+step << Paladin/Warlock/Hunter
+    #hardcore
+    #optional
+    #completewith next
+    .goto 1426,28.792,68.804,12 >> Exit Anvilmar
+    .subzoneskip 77,1
+step << Paladin/Warlock/Hunter
+    #xprate <1.1
+    .goto Dun Morogh,29.709,71.255
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balir Frosthammer|r
+    .turnin 170 >> Turn in A New Threat
+    .target Balir Frosthammer
+step << Warlock
+#season 0,1
+    .goto Dun Morogh,30.087,71.563
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adlin Pridedrift|r
+    >>Vendor Trash
+    >>|cRXP_BUY_Buy 15|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
+    .collect 159,15 --Collect Refreshing Spring Water (x15)
+    .target Adlin Pridedrift
+    .xp >6,1
+step << !Paladin !Warlock !Hunter
+    #xprate <1.1
+    #sticky
+    #label TroggEnd
+    .goto 1426,24.193,77.305,0
+    .goto 1426,22.529,74.512,0
+    .goto 1426,24.288,73.154,0
+    .goto 1426,29.303,77.337,0
+    .waypoint 1426,24.193,77.305,55,0
+    .waypoint 1426,23.497,76.707,55,0
+    .waypoint 1426,22.828,76.017,55,0
+    .waypoint 1426,22.529,74.512,55,0
+    .waypoint 1426,22.735,73.285,55,0
+    .waypoint 1426,23.616,72.634,55,0
+    .waypoint 1426,24.288,73.154,55,0
+    .waypoint 1426,24.619,74.280,55,0
+    .waypoint 1426,25.920,74.571,55,0
+    .waypoint 1426,28.812,76.397,55,0
+    .waypoint 1426,29.303,77.337,55,0
+    >>Kill |cRXP_ENEMY_Rockjaw Troggs|r and |cRXP_ENEMY_Burly Rockjaw Troggs|r
+    .complete 170,1 --Kill Rockjaw Trogg (x6)
+    .complete 170,2 --Kill Burly Rockjaw Trogg (x6)
+    .mob Rockjaw Trogg
+    .mob Burly Rockjaw Trogg
+step << Warrior/Paladin
+    #season 2
+    #completewith Observations
+    #label Victory1 << Warrior
+    #label Libram1 << Paladin
+    .goto 1426,25.861,78.197,0
+    .goto 1426,23.716,80.257,0
+    .goto 1426,20.671,75.838,0
+    .waypoint 1426,22.836,79.962,45,0
+    .waypoint 1426,22.684,78.888,45,0
+    .waypoint 1426,21.029,76.459,45,0
+    .waypoint 1426,20.671,75.838,45,0
+    .waypoint 1426,25.861,78.197,45,0
+    .waypoint 1426,26.382,78.409,45,0
+    .waypoint 1426,26.031,79.854,45,0
+    .waypoint 1426,23.716,80.257,45,0
+    >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r. Loot them for the |T134419:0|t|cRXP_LOOT_[Rune of Victory Rush]|r << Warrior
+    >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r. Loot them for the |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r << Paladin
+    .collect 204806,1 << Warrior --Rune of Victory Rush (1)
+    .collect 205420,1 << Paladin -- Libram of Judgement (1)
+    .mob Frostmane Troll Whelp
+    .train 403470,1 << Warrior
+    .train 410002,1 << Paladin
+step << Warrior
+    #season 2
+    #completewith Observations
+    #label Victory2
+    #requires Victory1
+    .train 403470 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Victory Rush]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Victory Rush]
+    .use 204806
+    .itemcount 204806,1
+step << Warrior
+    #season 2
+    #completewith Observations
+    #label Victory3
+    #requires Victory2
+    .equip 10 >>|cRXP_WARN_Equip a pair of|r |T132938:0|t|cRXP_LOOT_[Gloves]|r |cRXP_WARN_if you have a pair or you loot a pair|r
+    .train 403470,3
+step << Warrior
+    #season 2
+    #completewith Observations
+    #requires Victory3
+    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132938:0|t|cRXP_LOOT_[Gloves]|r with|r |T133816:0|t[Engrave Gloves - Victory Rush]
+    .train 403470,3
+step << Paladin
+    #season 2
+    #completewith Observations
+    #label Libram2
+    #requires Libram1
+    .equip 18,205420 >> |cRXP_WARN_Equip the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r
+    .use 205420
+    .itemcount 205420,1 --Libram of Judgement (1)
+--  .itemStat 18,QUALITY,<2
+    .train 410002,1
+step << Paladin
+    #season 2
+    #completewith Observations
+    #label Libram3
+    #requires Libram2
+    .goto 1426,24.193,77.305,0
+    .goto 1426,22.529,74.512,0
+    .goto 1426,24.288,73.154,0
+    .goto 1426,29.303,77.337,0
+    .waypoint 1426,29.303,77.337,55,0
+    .waypoint 1426,28.812,76.397,55,0
+    .waypoint 1426,25.920,74.571,55,0
+    .waypoint 1426,24.619,74.280,55,0
+    .waypoint 1426,24.288,73.154,55,0
+    .waypoint 1426,23.616,72.634,55,0
+    .waypoint 1426,22.735,73.285,55,0
+    .waypoint 1426,22.529,74.512,55,0
+    .waypoint 1426,22.828,76.017,55,0
+    .waypoint 1426,23.497,76.707,55,0
+    .waypoint 1426,24.193,77.305,55,0
+    .aura 408828 >>|cRXP_WARN_Cast|r |T135959:0|t[Judgement] |cRXP_WARN_10 times to gain the|r |T136116:0|t[Inspired] |cRXP_WARN_buff|r
+    .itemStat 18,QUALITY,2
+    .train 410002,1
+step << Paladin
+    #season 2
+    #completewith Observations
+    #label Libram4
+    #requires Libram3
+    .cast 409920 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Judgement]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Crusader Strike]
+    .use 205420
+    .aura -408828
+    .train 410002,1
+step << Paladin
+    #season 2
+    #completewith Observations
+    #label Libram5
+    #requires Libram4
+    .equip 10 >>|cRXP_WARN_Equip a pair of|r |T132938:0|t|cRXP_LOOT_[Gloves]|r |cRXP_WARN_if you have a pair or you loot a pair|r
+    .train 410002,3
+step << Paladin
+    #season 2
+    #completewith Observations
+    #requires Libram5
+    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132938:0|t|cRXP_LOOT_[Gloves]|r with|r |T133816:0|t[Engrave Gloves - Crusader Strike]
+    .train 410002,3
+step
+    #loop
+    #label TrollWhelps
+    .goto 1426,25.861,78.197,0
+    .goto 1426,23.716,80.257,0
+    .goto 1426,20.671,75.838,0
+    .goto 1426,25.861,78.197,45,0
+    .goto 1426,26.382,78.409,45,0
+    .goto 1426,26.031,79.854,45,0
+    .goto 1426,23.716,80.257,45,0
+    .goto 1426,22.836,79.962,45,0
+    .goto 1426,22.684,78.888,45,0
+    .goto 1426,21.029,76.459,45,0
+    .goto 1426,20.671,75.838,45,0
+    >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r
+    .complete 182,1 --Kill Frostmane Troll Whelp (x14)
+    .mob Frostmane Troll Whelp
+step << Warrior/Paladin
+    #season 2
+    #optional
+    #requires Victory2 << Warrior
+    #requires Libram4 << Paladin
+--XXREQ Placeholder invis step until multiple requires per step
+step
+    #requires TroggEnd << !Paladin !Warlock !Hunter
+    .goto Dun Morogh,25.076,75.713
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grelin Whitebeard|r
+    .turnin 182 >> Turn in The Troll Cave
+    .accept 218 >> Accept The Stolen Journal
+    .target Grelin Whitebeard
+step << Paladin/Warlock/Hunter
+    .goto Dun Morogh,24.980,75.963
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r
+    .turnin 3365 >> Turn in Bring Back the Mug
+    .target Nori Pridedrift
+step << !Paladin !Warlock !Hunter
+    #softcore
+    .goto Dun Morogh,24.980,75.963
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r
+    >>|cRXP_WARN_This will start a 5 minute timer for the quest. Do NOT go AFK or log out for the next 5 minutes|r
+    .accept 3364 >> Accept Scalding Mornbrew Delivery
+    .target Nori Pridedrift
+step << !Paladin !Warlock !Hunter
+    #softcore
+    #completewith next
+    +|cRXP_WARN_You have 5 minutes to get |cRXP_LOOT_Grelin Whitebeard's Journal|r and return to Anvilmar before|r |T132791:0|t[Duncan's Scalding Mornbrew] |cRXP_WARN_expires|r
+    >>|cRXP_WARN_If you fail the quest don't worry as you can get it again later|r
+step
+    #optional
+    #label FrostMCave1
+    #completewith Grelin
+    .goto 1426,27.098,80.707,20 >> Enter the Frostmane Cave
+step
+    #optional
+    #requires FrostMCave1
+    #completewith Grelin
+    .goto 1426,28.298,79.836,15,0
+    .goto 1426,29.252,79.043,15,0
+    .goto 1426,30.489,80.165,50 >> Travel towards |cRXP_ENEMY_Grik'nir the Cold|r inside
+step
+    #sticky << Rogue/Hunter
+    #label Grelin
+    .goto 1426,30.489,80.165,0,0
+    >>Kill |cRXP_ENEMY_Grik'nir the Cold|r inside. Loot him for |cRXP_LOOT_Grelin Whitebeard's Journal|r
+    >>|cRXP_WARN_Try to make sure you will have 2 silver after vendoring. You will need it to train spells soon|r << Warrior
+    .complete 218,1 --Collect Grelin Whitebeard's Journal (x1)
+    .mob Grik'nir the Cold
+--XXSOD xpgate for early 6 training?
+step << Rogue/Hunter
+    #season 2
+    .goto Dun Morogh,30.773,80.063
+    >>Open the |cRXP_PICK_Frostmane Loot Cache|r on the ground inside. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r << Rogue
+    >>Open the |cRXP_PICK_Frostmane Loot Cache|r on the ground inside. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of the Chimera]|r << Hunter
+    .collect 204795,1 << Rogue --Rune of Shadowstrike (1)
+    .collect 206168,1 << Hunter -- Rune of the Chimera (1)
+    .train 400105,1 << Rogue
+    .train 410121,1 << Hunter
+step << Rogue
+    #season 2
+    #hardcore
+    .train 400105 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Shadowstrike]
+    .use 204795
+    .itemcount 204795,1 --Rune of Shadowstrike (1)
+--XX HC as softcore have timed quest turnin in Anvilmar (softcore rogues do it after turnin)
+step << Hunter
+    #season 2
+    .train 410121 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of the Chimera]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Chimera Shot]
+    .use 206168
+    .itemcount 206168,1
+step << Rogue
+    #season 2
+    #hardcore
+    #completewith Observations
+    #label Shadowstrike1
+    .equip 10 >>|cRXP_WARN_Equip a pair of|r |T132952:0|t|cRXP_LOOT_[Gloves]|r |cRXP_WARN_if you have a pair or you loot a pair|r
+    .train 400105,3
+step << Hunter
+    #season 2
+    #completewith Observations
+    #label Chimera1
+    .equip 10 >>|cRXP_WARN_Equip a pair of|r |T132952:0|t|cRXP_LOOT_[Gloves]|r |cRXP_WARN_if you have a pair or you loot a pair|r
+    .train 410121,1
+step << Rogue
+    #season 2
+    #hardcore
+    #completewith Observations
+    #requires Shadowstrike1
+    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132952:0|t|cRXP_LOOT_[Gloves]|r with|r |T133816:0|t[Engrave Gloves - Shadowstrike]
+    .train 400105,3
+step << Hunter
+    #season 2
+    #completewith Observations
+    #requires Chimera1
+    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132952:0|t|cRXP_LOOT_[Gloves]|r with|r |T133816:0|t[Engrave Gloves - Chimera Shot]
+    .train 410121,1
+step << !Paladin !Warlock !Hunter
+    #softcore
+    #requires Grelin << Rogue
+    #completewith next
+    >|cRXP_WARN_>Make sure you will have two silver after vendoring to be able to train level 4 spells|r << Warrior
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .target Spirit Healer
+step
+    #hardcore << !Paladin !Warlock !Hunter
+    #optional
+    #requires Grelin << Rogue/Hunter
+    #completewith Stolen
+    .goto 1426,29.252,79.043,15,0
+    .goto 1426,28.298,79.836,15,0
+    .goto 1426,27.098,80.707,20 >> Exit the Frostmane Cave
+    .subzoneskip 132
+--XX HC only unless you're a Paladin, Warlock, or Hunter
+step << !Paladin !Warlock !Hunter
+    #hardcore
+    #requires Grelin << Rogue
+    .goto Dun Morogh,24.980,75.963
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r
+    .accept 3364 >> Accept Scalding Mornbrew Delivery
+    .target Nori Pridedrift
+step
+    #hardcore << !Paladin !Warlock !Hunter
+    #requires Grelin << Rogue/Hunter
+    #label Stolen
+    .goto Dun Morogh,25.075,75.715
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grelin Whitebeard|r
+    .turnin 218 >> Turn in The Stolen Journal
+    .accept 282 >> Accept Senir's Observations
+    .target Grelin Whitebeard
+step << !Paladin !Warlock !Hunter
+    #softcore
+    #requires Grelin << Rogue
+    .goto Dun Morogh,28.769,66.377
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Durnan Furcutter|r
+    >>|cRXP_WARN_If you failed the quest, skip this step|r
+    .turnin 3364 >> Turn in Scalding Mornbrew Delivery
+    .accept 3365 >> Accept Bring Back the Mug
+    .vendor >> Vendor Trash
+    .target Durnan Furcutter
+    .isOnQuest 3364
+step << !Paladin !Warlock !Hunter
+    #optional
+    #softcore
+    .goto Dun Morogh,28.769,66.377
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Durnan Furcutter|r
+    .accept 3365 >> Accept Bring Back the Mug
+    .vendor >> Vendor Trash
+    .target Durnan Furcutter
+    .isQuestTurnedIn 3364
+    .isQuestAvailable 317
+step << !Paladin !Warlock !Hunter
+    #softcore
+    #requires Grelin << Rogue
+    .abandon 3364 >> Abandon Scalding Mornbrew Delivery. You'll pick it up again
+step << Rogue
+    #season 2
+    #softcore
+    .train 400105 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Shadowstrike]
+    .use 204795
+    .itemcount 204795,1 --Rune of Shadowstrike (1)
+step << Rogue
+    #season 2
+    #softcore
+    #completewith Observations
+    #label Shadowstrike1
+    .equip 10 >>|cRXP_WARN_Equip a pair of|r |T132952:0|t|cRXP_LOOT_[Gloves]|r |cRXP_WARN_if you have a pair or you loot a pair|r
+    .train 400105,3
+step << Rogue
+    #season 2
+    #softcore
+    #completewith Observations
+    #requires Shadowstrike1
+    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132952:0|t|cRXP_LOOT_[Gloves]|r with|r |T133816:0|t[Engrave Gloves - Shadowstrike]
+    .train 400105,3
+step << !Paladin !Warlock !Hunter
+    #softcore
+    #optional
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r and |cRXP_FRIENDLY_Grelin Whitebeard|r
+    .accept 3364 >> Accept Scalding Mornbrew Delivery
+    .goto Dun Morogh,24.980,75.963
+    .target +Nori Pridedrift
+    .turnin 218 >> Turn in The Stolen Journal
+    .accept 282 >> Accept Senir's Observations
+    .goto Dun Morogh,25.075,75.715
+    .target +Grelin Whitebeard
+    .isQuestAvailable 3364
+step << !Paladin !Warlock !Hunter
+    #softcore
+    #optional
+    .goto Dun Morogh,28.769,66.377
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Durnan Furcutter|r
+    .turnin 3364 >> Turn in Scalding Mornbrew Delivery
+    .accept 3365 >> Accept Bring Back the Mug
+    .target Durnan Furcutter
+step << !Paladin !Warlock !Hunter
+    #hardcore
+    .goto Dun Morogh,28.769,66.377
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Durnan Furcutter|r
+    .turnin 3364 >> Turn in Scalding Mornbrew Delivery
+    .accept 3365 >> Accept Bring Back the Mug
+--  .vendor >> Vendor Trash
+    .target Durnan Furcutter
+    .isQuestAvailable 317
+
+
+
+
+----Start of >1.59x training section----
+
+
+
+
+step << Mage
+    #xprate >1.59
+    #season 0,1
+    .goto Dun Morogh,28.709,66.366
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r inside
+    .turnin 3114 >> Turn in Glyphic Memorandum << Gnome
+    .trainer >> Train your class spells
+    .target Marryk Nurribit
+step << Mage
+    #xprate >1.59
+    #season 2
+    .goto Dun Morogh,28.709,66.366
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r inside
+    .turnin 3114 >> Turn in Glyphic Memorandum << Gnome
+    .accept 77667 >> Accept Spell Research << Gnome
+    .trainer >> Train your class spells
+    .target Marryk Nurribit
+step << Gnome Mage
+    #xprate >1.59
+    #season 2
+    #completewith next
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
+    .use 203751
+    .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
+step << Gnome Mage
+    #xprate >1.59
+    #season 2
+    .goto Dun Morogh,28.709,66.366
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r inside
+    .turnin 77667 >> Turn in Spell Research
+    .target Marryk Nurribit
+step << Gnome Mage
+    #xprate >1.59
+    #season 2
+    #label GlovesEquip
+    #completewith Observations
+    .equip 10,711 >> |cRXP_WARN_Equip the|r |T132961:0|t[Tattered Cloth Gloves]
+    .use 711
+    .train 401760,3
+step << Gnome Mage
+    #xprate >1.59
+    #season 2
+    #requires GlovesEquip
+    #completewith Observations
+    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132961:0|t[Tattered Cloth Gloves] with|r |T133816:0|t[Engrave Gloves - Ice Lance]
+    .train 401760,3
+step << Rogue
+    #xprate >1.59
+    #season 0,1
+    .goto Dun Morogh,28.369,67.513
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Solm Hargrin|r
+    .turnin 3113 >> Turn in Encrypted Memorandum << Gnome
+    .turnin 3109 >> Turn in Encrypted Rune << Dwarf
+    .train 1784 >>Train |T132320:0|t[Stealth]
+    .trainer >>Train your class spells
+    .target Solm Hargrin
+step << Rogue
+    #xprate >1.59
+    #season 2
+    .goto Dun Morogh,28.369,67.513
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Solm Hargrin|r
+    .turnin 77658 >> Turn in Thrice Stolen << Dwarf
+    .turnin 77659 >> Turn in Thrice Stolen << Gnome
+    .train 921 >>Train |T133644:0|t[Pick Pocket]
+    .trainer >>Train your class spells
+    .target Solm Hargrin
+step << Priest
+    #xprate >1.59
+    #season 0,1
+    .goto Dun Morogh,28.600,66.385
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branstock Khalder|r
+    >>|cRXP_WARN_Train|r |T135987:0|t[Power Word: Fortitude] |cRXP_WARN_and|r |T135929:0|t[Lesser Heal] (Rank 2) |cRXP_WARN_as you'll need them for a class quest soon|r << Dwarf
+    .turnin 3110 >> Turn in Hallowed Rune << Dwarf
+    .accept 5626 >> Accept In Favor of the Light << Dwarf
+    .train 1243 >> Train |T135987:0|t[Power Word: Fortitude]
+    .train 2052 >> Train |T135929:0|t[Lesser Heal] (Rank 2) << Dwarf
+    .trainer >> Train your class spells
+    .target Branstock Khalder
+step << Priest
+    #xprate >1.59
+    #season 2
+    .goto Dun Morogh,28.600,66.385
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branstock Khalder|r
+    >>|cRXP_WARN_Train|r |T135929:0|t[Lesser Heal] (Rank 2) |cRXP_WARN_as you'll need it for a class quest soon|r << Dwarf
+    .accept 5626 >> Accept In Favor of the Light << Dwarf
+    .train 2052 >> Train |T135929:0|t[Lesser Heal] (Rank 2) << Dwarf
+    .trainer >> Train your class spells
+    .target Branstock Khalder
+step << Warrior
+    #xprate >1.59
+    #season 0,1
+    .goto Dun Morogh,28.832,67.242
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thran Khorman|r
+    .turnin 3106 >> Turn in Simple Rune << Dwarf
+    .turnin 3112 >> Turn in Simple Memorandum << Gnome
+    .trainer >> Train your class spells
+    .target Thran Khorman
+step << Warrior
+    #xprate >1.59
+    #season 2
+    .goto Dun Morogh,28.832,67.242
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thran Khorman|r
+    .turnin 77655 >> Turn in The Lost Rune << Dwarf
+    .turnin 77656 >> Turn in The Lost Rune << Gnome
+    .trainer >> Train your class spells
+    .target Thran Khorman
+
+
+
+
+
+----End of >1.59x training section----
+----Start of <1.59x training section----
+
+
+
+
+
+step << Mage
+    #xprate <1.59
+    #season 0,1
+    .goto Dun Morogh,28.709,66.366
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r inside
+    .turnin 3114 >> Turn in Glyphic Memorandum << Gnome
+    .train 1459 >> Train |T135932:0|t[Arcane Intellect]
+    .train 116 >> Train |T135846:0|t[Frostbolt]
+    .target Marryk Nurribit
+step << Mage
+    #xprate <1.59
+    #season 2
+    .goto Dun Morogh,28.709,66.366
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r inside
+    .turnin 3114 >> Turn in Glyphic Memorandum << Gnome
+    .accept 77667 >> Accept Spell Research << Gnome
+    .train 1459 >> Train |T135932:0|t[Arcane Intellect]
+    .train 116 >> Train |T135846:0|t[Frostbolt]
+    .target Marryk Nurribit
+step << Gnome Mage
+    #xprate <1.59
+    #season 2
+    #completewith next
+    .train 401760 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: CALE ENCI]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Ice Lance]
+    .use 203751
+    .itemcount 203751,1 -- Spell Notes: CALE ENCI (1)
+step << Gnome Mage
+    #xprate <1.59
+    #season 2
+    .goto Dun Morogh,28.709,66.366
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r inside
+    .turnin 77667 >> Turn in Spell Research
+    .target Marryk Nurribit
+step << Gnome Mage
+    #xprate <1.59
+    #season 2
+    #label GlovesEquip
+    #completewith Observations
+    .equip 10,711 >> |cRXP_WARN_Equip the|r |T132961:0|t[Tattered Cloth Gloves]
+    .use 711
+    .train 401760,3
+step << Gnome Mage
+    #xprate <1.59
+    #season 2
+    #requires GlovesEquip
+    #completewith Observations
+    .engrave 10 >>|cRXP_WARN_Engrave your|r |T132961:0|t[Tattered Cloth Gloves] with|r |T133816:0|t[Engrave Gloves - Ice Lance]
+    .train 401760,3
+step << Rogue
+    #xprate <1.59
+    #season 0,1
+    .goto Dun Morogh,28.369,67.513
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Solm Hargrin|r
+    .turnin 3113 >> Turn in Encrypted Memorandum << Gnome
+    .turnin 3109 >> Turn in Encrypted Rune << Dwarf
+    .train 1784 >>Train |T132320:0|t[Stealth]
+    .target Solm Hargrin
+step << Rogue
+    #xprate <1.59
+    #season 2
+    .goto Dun Morogh,28.369,67.513
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Solm Hargrin|r
+    .turnin 77658 >> Turn in Thrice Stolen << Dwarf
+    .turnin 77659 >> Turn in Thrice Stolen << Gnome
+    .target Solm Hargrin
+step << Priest
+    #xprate <1.59
+    #season 0,1
+    .goto Dun Morogh,28.600,66.385
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branstock Khalder|r
+    >>|cRXP_WARN_Train|r |T135987:0|t[Power Word: Fortitude] |cRXP_WARN_and|r |T135929:0|t[Lesser Heal] (Rank 2) |cRXP_WARN_as you'll need them for a class quest soon|r << Dwarf
+    .turnin 3110 >> Turn in Hallowed Rune << Dwarf
+    .accept 5626 >> Accept In Favor of the Light << Dwarf
+    .train 1243 >> Train |T135987:0|t[Power Word: Fortitude]
+    .train 2052 >> Train |T135929:0|t[Lesser Heal] (Rank 2) << Dwarf
+    .trainer >> Train your class spells
+    .target Branstock Khalder
+step << Priest
+    #xprate <1.59
+    #season 2
+    .goto Dun Morogh,28.600,66.385
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branstock Khalder|r
+    .train 589 >> Train |T136207:0|t[Shadow Word: Pain]
+    .target Branstock Khalder
+step << Warrior
+    #xprate <1.59
+    #season 0,1
+    .goto Dun Morogh,28.832,67.242
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thran Khorman|r
+    .turnin 3106 >> Turn in Simple Rune << Dwarf
+    .turnin 3112 >> Turn in Simple Memorandum << Gnome
+    .train 100 >> Train |T132337:0|t[Charge]
+    .train 772 >> Train |T132155:0|t[Rend]
+    .target Thran Khorman
+step << Warrior
+    #xprate <1.59
+    #season 2
+    .goto Dun Morogh,28.832,67.242
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thran Khorman|r
+    .turnin 77655 >> Turn in The Lost Rune << Dwarf
+    .turnin 77656 >> Turn in The Lost Rune << Gnome
+    .train 100 >> Train |T132337:0|t[Charge]
+    .train 772 >> Train |T132155:0|t[Rend]
+    .target Thran Khorman
+
+
+
+
+----End of <1.59x training section----
+
+
+
+
+
+step << !Paladin !Warlock !Hunter
+    #optional
+    #completewith Stolen
+    .goto 1426,28.831,68.698,12 >> Exit Anvilmar
+    .subzoneskip 77,1
+step << !Paladin !Warlock !Hunter
+    #xprate <1.1
+    .goto Dun Morogh,29.709,71.255
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balir Frosthammer|r
+    .turnin 170 >> Turn in A New Threat
+    .target Balir Frosthammer
+step << Priest/Mage
+#season 0,1
+    .goto Dun Morogh,30.087,71.563
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adlin Pridedrift|r
+    >>Vendor Trash
+    >>|cRXP_BUY_Buy 5|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
+    .collect 159,5 --Collect Refreshing Spring Water (x5)
+    .target Adlin Pridedrift
+    .money <0.0025
+    .xp >8,1
+step << !Paladin !Warlock !Hunter
+    #softcore
+    #label Stolen
+    .goto Dun Morogh,25.075,75.715
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grelin Whitebeard|r
+    .turnin 218 >> Turn in The Stolen Journal
+    .accept 282 >> Accept Senir's Observations
+    .target Grelin Whitebeard
+step << !Paladin !Warlock !Hunter
+    .goto Dun Morogh,24.980,75.963
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r
+    .turnin 3365 >> Turn in Bring Back the Mug
+    .target Nori Pridedrift
+step << Dwarf Paladin/Dwarf Hunter
+    #season 2
+    #optional
+    #completewith next
+    .goto 1426,28.792,68.804,12,0
+    .goto 1426,28.939,68.387,12 >> Enter Anvilmar
+step << Dwarf Paladin
+    #season 2
+    #optional
+    .goto Dun Morogh,28.833,68.332
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bromos Grummner|r
+    .turnin 77657 >> Turn in Relics of the Light
+    .target Bromos Grummner
+    .isQuestComplete 77657
+    .equip 10 --Show step if you don't have gloves
+step << Dwarf Hunter
+    #season 2
+    #optional
+    .goto Dun Morogh,29.175,67.455
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgas Grimson|r
+    .turnin 77660 >> Turn in Trek Through the Caves
+    .target Thorgas Grimson
+    .isQuestComplete 77660
+    .equip 10 --Show step if you don't have gloves
+step << Dwarf Paladin/Dwarf Hunter
+    #season 2
+    #optional
+    #completewith ColdridgePass
+    .abandon 77657 >> Abandon Relics of the Light as you already have a pair of |T132938:0|t[Gloves] equipped << Paladin
+    .abandon 77660 >> Abandon Trek Through the Caves as you already have a pair of |T132952:0|t[Gloves] equipped << Hunter
+step
+    #label Observations
+    >>Talk to |cRXP_FRIENDLY_Mountaineer Thalos|r and |cRXP_FRIENDLY_Hands Springsprocket|r
+    .turnin 282 >> Turn in Senir's Observations
+    .accept 420 >> Accept Senir's Observations
+    .goto Dun Morogh,33.484,71.841
+    .target +Mountaineer Thalos
+    .accept 2160 >> Accept Supplies to Tannok
+    .goto Dun Morogh,33.85,72.24
+    .target +Hands Springsprocket
+step
+    #label ColdridgePass
+    .goto Dun Morogh,34.32,70.95,15,0
+    .goto Dun Morogh,35.65,65.79,15 >> Travel through Coldridge Pass
+    .subzoneskip 800,1
+    .isOnQuest 2160
+]])
 
 RXPGuides.RegisterGuide([[
 #xprate >1.49 << Hunter
@@ -9,31 +1217,23 @@ RXPGuides.RegisterGuide([[
 #version 1
 << Alliance --!Hunter
 #group RXP SOD TEST
-#name 6-11 Dun Morogh
-#displayname 6-12 Dun Morogh << sod !Warlock
-#next 11-12 Elwynn (Dwarf/Gnome);11-12 Voidwalker Quest;12-14 Loch Modan (Dwarf/Gnome);11-13 Loch Modan (Hunter)
+#name 6-11 Dun Morogh SoD
+#displayname 7-12 Dun Morogh
+#next 12-13 Dun Morogh SoD
 #defaultfor Dwarf/Gnome
 
 step
     #optional
     #label BoarMeatQuest
     #completewith SenirEnd
-    >>Kill |cRXP_ENEMY_Crag Boars|r. Loot them for |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r and |cRXP_LOOT_Crag Boar Ribs|r
+    >>Kill |cRXP_ENEMY_Crag Boars|r as you travel towards Kharanos. Loot them for |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r and |cRXP_LOOT_Crag Boar Ribs|r
     >>|cRXP_WARN_Save all the|r |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r |cRXP_WARN_you get for Stocking Jetsteam and then for leveling your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r
-    >>|cRXP_WARN_You need 10|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Auberdine later|r
-    >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
     .collect 769,4,317,1 --Collect Chunk of Boar Meat (x4)
     .collect 2886,6,384,1 --Collect Crag Boar Rib (x6)
     .mob Crag Boar
     .subzoneskip 131 --Kharanos
 --XX 270 from priest quest
 --XX 340 from quest, 45 from explore
-
-step
-    #completewith next
-    >>|cRXP_WARN_Make sure your subzone is NOT Coldridge Pass|r
-    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-    .target Spirit Healer
 step
     #label SenirEnd
     .goto Dun Morogh,46.726,53.826
@@ -563,79 +1763,8 @@ step
     #label EvershineEnd
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rejold Barleybrew|r
     .turnin 318 >> Turn in Evershine
-    .accept 319 >> Accept A Favor for Evershine
     .goto Dun Morogh,30.190,45.726
     .target +Rejold Barleybrew
-step
-#optional
-    #sticky
-    #label ForceFavorRibNo
-    #loop
-    .waypoint 1426,31.212,39.189,60,0
-    .waypoint 1426,30.049,38.561,60,0
-    .waypoint 1426,29.198,40.458,60,0
-    .waypoint 1426,29.362,42.975,60,0
-    .waypoint 1426,28.298,44.441,60,0
-    .waypoint 1426,27.876,45.549,60,0
-    .waypoint 1426,26.294,46.484,60,0
-    .waypoint 1426,27.562,47.657,60,0
-    .waypoint 1426,28.020,48.267,60,0
-    .waypoint 1426,27.874,49.402,60,0
-    .waypoint 1426,29.443,50.102,60,0
-    .waypoint 1426,28.412,52.449,60,0
-    .waypoint 1426,27.650,53.709,60,0
-    .waypoint 1426,26.769,55.778,60,0
-    .waypoint 1426,29.294,54.249,60,0
-    .waypoint 1426,31.767,49.790,60,0
-    .waypoint 1426,33.832,48.153,60,0
-    .waypoint 1426,31.691,46.837,60,0
-    >>Kill |cRXP_ENEMY_Elder Crag Boars|r. Loot them for their |cRXP_LOOT_Crag Boar Ribs|r
-    >>Kill |cRXP_ENEMY_Ice Claw Bears|r and |cRXP_ENEMY_Snow Leopards|r
-    .complete 319,2 --Kill Elder Crag Boar (x8)
-    .mob +Elder Crag Boar
-    .collect 2886,6,384,1 --Collect Crag Boar Rib (x6)
-    .mob +Elder Crag Boar
-    .complete 319,1 --Kill Ice Claw Bear (x6)
-    .mob +Ice Claw Bear
-    .complete 319,3 --Kill Snow Leopard (x8)
-    .mob +Snow Leopard
-    .isQuestAvailable 384
-step
-    #requires ForceFavorRibNo
-    #sticky
-    #label ForceFavorRibYes
-    #loop
-    .goto 1426,31.212,39.189,0
-    .goto 1426,27.876,45.549,0
-    .goto 1426,29.443,50.102,0
-    .goto 1426,31.691,46.837,0
-    .waypoint 1426,31.212,39.189,60,0
-    .waypoint 1426,30.049,38.561,60,0
-    .waypoint 1426,29.198,40.458,60,0
-    .waypoint 1426,29.362,42.975,60,0
-    .waypoint 1426,28.298,44.441,60,0
-    .waypoint 1426,27.876,45.549,60,0
-    .waypoint 1426,26.294,46.484,60,0
-    .waypoint 1426,27.562,47.657,60,0
-    .waypoint 1426,28.020,48.267,60,0
-    .waypoint 1426,27.874,49.402,60,0
-    .waypoint 1426,29.443,50.102,60,0
-    .waypoint 1426,28.412,52.449,60,0
-    .waypoint 1426,27.650,53.709,60,0
-    .waypoint 1426,26.769,55.778,60,0
-    .waypoint 1426,29.294,54.249,60,0
-    .waypoint 1426,31.767,49.790,60,0
-    .waypoint 1426,33.832,48.153,60,0
-    .waypoint 1426,31.691,46.837,60,0
-    >>Kill |cRXP_ENEMY_Ice Claw Bears|r, |cRXP_ENEMY_Elder Crag Boars|r, and |cRXP_ENEMY_Snow Leopards|r
-    .complete 319,1 --Kill Ice Claw Bear (x6)
-    .mob +Ice Claw Bear
-    .complete 319,2 --Kill Elder Crag Boar (x8)
-    .mob +Elder Crag Boar
-    .complete 319,3 --Kill Snow Leopard (x8)
-    .mob +Snow Leopard
-    .isQuestTurnedIn 384
---XX Forcing this so people are a higher level for second wave of west quests (even on 2x)
 step << Hunter
     #season 2
     #sticky
@@ -670,7 +1799,7 @@ step << Hunter
     .train 425762 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Flanking]|r |cRXP_WARN_to train|r |T132175:0|t[Flanking Strike]
     .use 205979
     .itemcount 205979,1
-step << Hunter/Mage/Warrior
+step << Hunter/Mage
     #season 2
     #requires Marksmanship2 << Hunter
     #label Fyodi1
@@ -782,13 +1911,6 @@ step << Rogue
 step
     #optional
     #requires ForceFavorRibYes
-step
-    #requires FyodiEnd << Hunter/Mage/Warrior --Season 2
-    .goto Dun Morogh,30.189,45.725
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rejold Barleybrew|r
-    .turnin 319 >> Turn in A Favor for Evershine
-    .accept 320 >> Accept Return to Bellowfiz
-    .target Rejold Barleybrew
 step << !Hunter
     #optional
     .goto 1426,24.975,50.473,20,0
@@ -935,8 +2057,7 @@ step << Warrior/Rogue/Paladin
     .train 3273 >> Train |T135966:0|t[First Aid]
     .target Thamner Pol
     .money <0.01
-step << !Rogue !Warrior !Paladin
-    #xprate <1.5
+step
     .goto Dun Morogh,49.622,48.612
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Stonegear|r
     .turnin 313 >> Turn in The Grizzled Den

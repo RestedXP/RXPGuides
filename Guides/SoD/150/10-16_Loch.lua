@@ -8,6 +8,27 @@ RXPGuides.RegisterGuide([[
 #name 12-13 Dun Morogh SoD
 #next 13-16 Loch Modan SoD
 #defaultfor !NightElf
+
+step << Warrior
+    #season 2
+    >>|cRXP_WARN_Look for the|r |cRXP_FRIENDLY_Wandering Swordsman|r. |cRXP_WARN_He can be anywhere in the small area marked on your map|r
+    >>Find him and challenge him to a duel. After beating him he will spanw a small chest which will award you with the rune of |T132334:0|t[|cRXP_FRIENDLY_Blood Frenzy|r]
+    .goto Dun Morogh,52.6,45.0
+    .goto Dun Morogh,52.4,47.4,0
+    .goto Dun Morogh,52.6,48.8,0
+    .goto Dun Morogh,53.6,47.6,0
+    .goto Dun Morogh,53.0,46.2,0
+    .goto Dun Morogh,55.0,46.6,0
+    .collect 204441,1 --Rune of Blood Frenzy (1)
+    .unitscan Wandering Swordsman
+    .train 412507,1
+step << Warrior
+    #season 2
+    #optional
+    #completewith next
+    .train 403474 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Blood Frenzy|r] |cRXP_WARN_to train|r |T136012:0|t[Blood Frenzy]
+    .use 204441
+    .itemcount 204441,1
 step
     #completewith Rudra
     #label Dirt
@@ -84,7 +105,7 @@ step << !Hunter
     .vendor 1237 >> |cRXP_BUY_Buy up to 5|r |T133968:0|t[Freshly Baked Bread] |cRXP_BUY_and|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him if needed|r << !Warrior !Rogue
     .target Kazan Mogosh
 --XX Mud slappers instead
-step << Warrior/Paladin/Rogue
+step << Human Warrior/Paladin/Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dank Drizzlecut|r
     .goto Dun Morogh,69.3,55.5
     .train 2581 >>Train Mining, cast Find Minerals
@@ -571,16 +592,12 @@ step << Dwarf Paladin
     .goto 1455,44.403,49.020,20,0
     .goto 1455,35.239,32.789,20,0
     .goto 1455,27.208,12.552,20,0
-    .goto Ironforge,23.131,6.143,12 >>Travel toward |cRXP_FRIENDLY_Brandur Ironhammer|r
-step << Dwarf Paladin
-    .goto Ironforge,23.131,6.143
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brandur Ironhammer|r downstairs
-    .trainer >> Train your class spells
-    .target Brandur Ironhammer
+    .goto Ironforge,24.2,6.8,12 >>Travel toward |cRXP_FRIENDLY_Brandur Ironhammer|r
 step << Dwarf Paladin
     .goto Ironforge,23.131,6.143
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brandur Ironhammer|r
     .accept 2999 >>Accept Tome of Divinity
+    .trainer >> Train your class spells
     .target Brandur Ironhammer
 step << Dwarf Paladin
     #optional
@@ -831,6 +848,7 @@ step << Dwarf/Gnome
     .mob Deeprun Rat
 step << Dwarf/Gnome
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monty|r on the middle platform in the Deeprun Tram
+    >>He will roleplay for a couple seconds after turning in the first quest. |cRXP_WARN_Skip the follow-up if waiting would make you miss the tram|r
     .turnin 6661 >> Turn in Deeprun Rat Roundup
     .timer 11,Deeprun Rat Roundup RP
     .accept 6662 >> Accept Me Brother, Nipsy
@@ -842,6 +860,7 @@ step << Dwarf/Gnome
     >>|cRXP_WARN_You will need your|r |T135966:0|t[First Aid] |cRXP_WARN_to be 80 for a quest at level 24|r << Rogue !Dwarf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nipsy|r on the middle platform on the Stormwind side of the Deeprun Tram
     .turnin 6662 >> Turn in Me Brother, Nipsy
+    .isOnQuest 6662
     .target Nipsy
     .subzoneskip 2257,1 --Deeprun Tram
 step << Dwarf/Gnome
@@ -966,6 +985,37 @@ step << Warlock !Human
     .target Ariena Stormfeather
 step << Dwarf Paladin
     #season 2
+    #label Romulus
+    .goto StormwindClassic,38.10,28.10
+    .gossipoption 109653 >>Talk to |cRXP_FRIENDLY_Brother Romulus|r
+    .target Brother Romulus
+    .skipgossip
+    .train 410015,1
+step << Dwarf Paladin
+    #season 2
+    #completewith next
+    .goto StormwindClassic,37.39,29.76,5,0
+    .goto StormwindClassic,37.87,29.10,5,0
+    .goto StormwindClassic,36.52,32.67,8,0
+    .goto StormwindClassic,36.55,33.45,8,0
+    .goto StormwindClassic,35.95,34.05,8,0
+    .goto StormwindClassic,35.46,33.03,8,0
+    .goto StormwindClassic,35.95,31.54,8,0
+    .goto StormwindClassic,34.79,29.31,8,0
+    .goto StormwindClassic,33.69,29.69,8,0
+    .goto StormwindClassic,32.57,27.49,8,0
+    .goto StormwindClassic,33.41,25.61,8,0
+    >>Go downstairs into the western side of the Cathedral's Crypt
+    .goto StormwindClassic,32.86,24.77,8 >>Travel toward the |cRXP_LOOT_Charred Note|r in the crypt
+    .train 410015,1
+step << Dwarf Paladin
+    #season 2
+    .goto StormwindClassic,32.86,24.87
+    >>Loot the |cRXP_LOOT_Charred Note|r next to the candles
+    .collect 205864,1 --Charred Note (1)
+    .train 410015,1
+step << Dwarf Paladin
+    #season 2
     #completewith next
     .zone Elwynn Forest >> Exit Stormwind
     .zoneskip Stormwind City,1
@@ -1023,7 +1073,7 @@ step << Dwarf Paladin
 step << Dwarf Paladin
     #season 2
     .goto Westfall,36.24,54.52
-    .engrave 5 >>|cRXP_WARN_Engrave your|r |T134596:0|t|cRXP_LOOT_[Chest]|r with|r |T133815:0|t[Engrave Chest - Seal of Martyrdom]
+    .engrave 5 >>|cRXP_WARN_Engrave your|r |T133815:0|t|cRXP_LOOT_[Chest]|r with|r |T133815:0|t[Engrave Chest - Seal of Martyrdom]
     >>|cRXP_WARN_Remember to put|r |T135961:0|t[Seal of Martyrdom] |cRXP_WARN_onto your action bars. It is better than both|r |T132325:0|t[Seal of Righteousness] |cRXP_WARN_and|r |T132347:0|t[Seal of Command] |cRXP_WARN_(until you get|r |T133815:0|t[Engrave Chest - Divine Storm]|cRXP_WARN_)|r
     .train 410015,3
 step << Dwarf Paladin
@@ -1032,6 +1082,12 @@ step << Dwarf Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
     .fp Sentinel Hill >> Get the Sentinel Hill flight path
     .target Thor
+step << Dwarf Paladin
+    .goto Westfall,52.86,53.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Heather|r
+    >>|cRXP_BUY_Buy up to 40|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_from her. They are very cheap level 5 food|r
+    .collect 4592,20,314,1 --Longjaw Mud Snapper (20)
+	.target Innkeeper Heather
 step << Dwarf Paladin
     .goto Westfall,56.33,47.52
     .target Gryan Stoutmantle
