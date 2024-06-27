@@ -384,6 +384,10 @@ function addon.functions.requires(self,text,mode,...)
         local element = {textOnly = true,text = text, args = args, mode = mode, requestFromServer = true}
         if mode == "quest" then
             element.event = "QUEST_LOG_UPDATE"
+        elseif mode == "!quest" then
+            element.event = "QUEST_LOG_UPDATE"
+            element.reverse = true
+            mode = "quest"
         end
         return element
     end
@@ -400,6 +404,9 @@ function addon.functions.requires(self,text,mode,...)
             if id then
                 pass = pass or addon.IsGuideQuestActive(id)
             end
+        end
+        if element.reverse then
+            pass = not pass
         end
 
         if not pass then
