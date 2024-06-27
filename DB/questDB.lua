@@ -387,7 +387,7 @@ function addon.functions.requires(self,text,mode,...)
         elseif mode == "!quest" then
             element.event = "QUEST_LOG_UPDATE"
             element.reverse = true
-            mode = "quest"
+            element.mode = "quest"
         end
         return element
     end
