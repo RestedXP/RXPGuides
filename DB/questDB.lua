@@ -2,8 +2,14 @@ local _,addon = ...
 
 local showAllQs
 local GetItemCount = C_Item and C_Item.GetItemCount or _G.GetItemCount
+local QUEST_LOG_SIZE = 25
+
+if addon.gameVersion < 20000 then
+    QUEST_LOG_SIZE = 20
+end
 
 local function GetXPMods()
+    print(addon.GetXPBonuses(false,80))
     return addon.GetXPBonuses(false,80)
 end
 
@@ -203,7 +209,7 @@ function addon.GetBestQuests(refreshQuestDB,output)
         for i = #qDB, 1, -1 do
             local xp = qDB[i].xp or 0
             local id = qDB[i].Id
-            if i > 25 and xp < (qDB[25].xp or 1) or addon.IsQuestTurnedIn(id) then
+            if i > QUEST_LOG_SIZE and xp < (qDB[QUEST_LOG_SIZE].xp or 1) or addon.IsQuestTurnedIn(id) then
                 QuestDB[id].isActive = false
                 if not showAllQs then
                     table.remove(qDB, i)
@@ -233,7 +239,7 @@ function addon.GetBestQuests(refreshQuestDB,output)
     end
 
     for i = #qDB, 1, -1 do
-        if i > 25 then
+        if i > QUEST_LOG_SIZE then
             qDB[i].isActive = false
         else
             break
@@ -286,7 +292,7 @@ end
 
 function addon.functions.show25quests(self,text,flags)
     if type(self) == "string" then
-        return { text = text, event = "OnUpdate", hideTooltip = true, tooltip = "Click to view the 25 best quests", icon = addon.icons.link, textOnly = true}
+        return { text = text, event = "OnUpdate", hideTooltip = true, tooltip = format("Click to view the %d best quests",QUEST_LOG_SIZE), icon = addon.icons.link, textOnly = true}
     end
     if self and self.highlight and not self.highlight:IsShown() then
         self.highlight:Show()
@@ -307,9 +313,9 @@ function CreatePanel()
             importBox = {
                 order = 10,
                 type = 'input',
-                name = 'List of 25 best quests',
+                name = format('List of %d best quests',QUEST_LOG_SIZE),
                 width = "full",
-                multiline = 25,
+                multiline = QUEST_LOG_SIZE,
                 confirmText = "Refresh",
                 -- usage = "Usage string",
                 get = SetText,
@@ -319,7 +325,7 @@ function CreatePanel()
 
             showAvailable = {
                 order = 14,
-                name = "Show 25 Best Quests",
+                name = format("Show %d Best Quests",QUEST_LOG_SIZE),
                 type = 'execute',
                 func = function()
                     mode = "quests"
@@ -488,7 +494,7 @@ function addon.CalculateTotalXP(flags)
     end
     if not addon.questLogQuests then addon.GetBestQuests(true) end
     if ignorePreReqs then
-        for i = 1, 25 do
+        for i = 1, QUEST_LOG_SIZE do
             local quest = addon.questLogQuests[i]
             if quest then
                 ProcessQuest(quest)

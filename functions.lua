@@ -3992,7 +3992,7 @@ function addon.functions.blastedLands(self)
     }
 
     for n, item in pairs(id) do
-        local iName = GetItemInfo(item)
+        local iName = addon.GetItemName(item)
         if iName then name[n] = iName end
     end
 
