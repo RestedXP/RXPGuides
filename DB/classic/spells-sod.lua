@@ -1107,11 +1107,13 @@ s["MAGE"] = {
         1459, -- Arcane Intellect
     },
     [4] = {
-        116 -- frostbolt
+        143, -- fireball r2
+        2136 -- fire blast
     },
     [6] = {
         2136, -- fire blast
-        143 -- fireball r2
+        143, -- fireball r2
+        116 -- frostbolt r1
     },
     [8] = {
         205, -- frostbolt r2

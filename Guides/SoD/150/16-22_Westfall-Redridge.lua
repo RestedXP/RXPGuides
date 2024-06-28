@@ -214,6 +214,7 @@ step << Mage
     #season 2
     .goto StormwindClassic,55.8,65.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keldric Boucher|r
+    >>Check if he has |T134830:0|t[|cRXP_LOOT_Lesser Healing Potions|r], buy them if they're available
     .collect 211779,3 >> Buy a couple |T135933:0|t[|cRXP_LOOT_Comprehension Charms|r] from him
     .target Keldric Boucher
 step << Human
@@ -296,6 +297,11 @@ step << !Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
     .fp Redridge Mountains >> Get the Redridge Mountains flight path
     .target Ariena Stormfeather
+step << !Human
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verner Osgood|r
+	.target Verner Osgood
+    .goto Redridge Mountains,30.97,47.27
+    .accept 118 >> Accept The Price of Shoes
 step << Human/Dwarf Paladin
     .goto Redridge Mountains,30.590,59.410
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
@@ -637,6 +643,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
     .fly Stormwind >> Fly to Stormwind
     .target Ariena Stormfeather
+    .dungeon DM << !Human
 step
     #optional
     .goto StormwindClassic,63.982,75.338
@@ -645,6 +652,7 @@ step
     .accept 121 >> Accept Messenger to Stormwind
     .target General Marcus Jonathan
     .isQuestTurnedIn 118
+    .dungeon DM << !Human
 step
     .accept 167 >> Accept Oh Brother. . .
     .accept 168 >> Accept Collecting Memories
@@ -677,6 +685,7 @@ step << Hunter
     .collect 3024,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.6
+    .dungeon DM << !Human
 step << Rogue
     .goto StormwindClassic,57.38,56.77
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marda Weller|r
@@ -685,6 +694,7 @@ step << Rogue
     >>|cRXP_WARN_Buy something from the Auction House if there's something cheaper/better|r
     .collect 2209,1
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<10.9
+    .dungeon DM << !Human
 step << Warrior/Paladin
     .goto StormwindClassic,57.54,57.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gunther Weller|r
@@ -697,6 +707,7 @@ step << Warrior/Paladin
     .itemcount 4777,<1 --Ironwood Maul (<1)
     .target Gunther Weller
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<16.0
+    .dungeon DM << !Human
 step << Warlock/Priest
     .goto StormwindClassic,42.65,67.16,14,0
     .goto StormwindClassic,42.88,65.11
@@ -706,24 +717,27 @@ step << Warlock/Priest
     .disablecheckbox
     .target Ardwyn Cailen
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<17.4
+    .dungeon DM << !Human
 step
     .goto StormwindClassic,63.982,75.338
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Marcus Jonathan|r
     .turnin 120 >> Turn in Messenger to Stormwind
     .accept 121 >> Accept Messenger to Stormwind
     .target General Marcus Jonathan
+    .dungeon DM << !Human
 step
     .goto Elwynn Forest,41.71,65.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smith Argus|r
 	.target Smith Argus
     .turnin 118 >> Turn in The Price of Shoes
     .accept 119 >> Accept Return to Verner
-step
+    .dungeon DM << !Human
+step << Human
     .dungeon !DM
     .cooldown item,6948,>120,1
     .hs >> Hearth to Lakeshire
     .zoneskip Redridge Mountains
-step
+step << Human
 #optional
 .dungeon !DM
     .goto StormwindClassic,66.277,62.137

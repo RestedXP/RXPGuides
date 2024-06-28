@@ -13,9 +13,6 @@ RXPGuides.RegisterGuide([[
 step << !Gnome !Dwarf
     #completewith next
     +You have selected a guide meant for Gnomes and Dwarves. You should choose the same starter zone that you start in
-step << Mage
-    #completewith next
-    +Note that you have selected the single target mage guide. Single target is a lot safer than AoE Mage, but a LOT slower
 step << !Gnome Mage
     #season 2
     #completewith next
@@ -1163,12 +1160,29 @@ step << !Paladin !Warlock !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r
     .turnin 3365 >> Turn in Bring Back the Mug
     .target Nori Pridedrift
-step << Dwarf Paladin/Dwarf Hunter
+step << Mage
+    #completewith next
+    .hs >> Use your Hearthstone and head back to Anvilmar
+step << Mage
+    .goto Dun Morogh,28.709,66.366
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r inside
+    .train 143 >> Train |T135812:0|t[Fireball] (Rank2)
+    .train 2136 >> Train |T135807:0|t[Fire Blast]
+    .target Marryk Nurribit
+step << Dwarf Paladin/Dwarf Hunter/Mage
     #season 2
     #optional
     #completewith next
     .goto 1426,28.792,68.804,12,0
     .goto 1426,28.939,68.387,12 >> Enter Anvilmar
+step << Mage
+    .goto Dun Morogh,30.087,71.563
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adlin Pridedrift|r
+    >>Vendor Trash
+    >>|cRXP_BUY_Buy some more|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
+    .collect 159,5 --Collect Refreshing Spring Water (x5)
+    .target Adlin Pridedrift
+    .money <0.0025
 step << Dwarf Paladin
     #season 2
     #optional
@@ -1515,6 +1529,20 @@ step
     .turnin 317 >> Turn in Stocking Jetsteam
     .accept 318 >> Accept Evershine
     .target Pilot Bellowfiz
+step << Mage
+    #optional
+    #completewith next
+    .goto 1426,46.952,52.050,8,0
+    .goto 1426,47.153,51.939,8 >> Enter the Thunderbrew Distillery
+step << Mage
+    #completewith next
+    .goto Dun Morogh,47.377,52.523
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
+    .vendor 1247 >> |cRXP_BUY_Buy as much|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him as you can afford|r
+    .target Innkeeper Belm
+    .money <0.0125
+    .itemcount 1179,<1 --Ice Cold Milk (1)
+    .xp >10,1
 step << Warlock
     .xp 8
     --should be 8.5 here with 2.5x
@@ -1596,7 +1624,6 @@ step
     .goto 1426,46.952,52.050,8,0
     .goto 1426,47.153,51.939,8 >> Enter the Thunderbrew Distillery
 step
-    #optional
     .goto Dun Morogh,47.377,52.523
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
     >>|cRXP_BUY_Buy a|r |T132800:0|t[Rhapsody Malt] |cRXP_BUY_from him|r
@@ -1604,10 +1631,9 @@ step
     .target Innkeeper Belm
     .itemcount 2886,6 --Crag Boar Rib (6)
 step
-    #optional
     .goto Dun Morogh,46.825,52.361
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ragnar Thunderbrew|r outside
-    .turnin 384 >> Turn in Beer Basted Boar Ribs
+    .turnin 384 >> Turn in Beer Blasted Boar Ribs
     .target Ragnar Thunderbrew
     .isQuestComplete 384
 step << Paladin/Warrior/Rogue
@@ -1689,15 +1715,7 @@ step << Hunter
     .train 1130 >> Train |T132212:0|t[Hunter's Mark]
     >>|cRXP_WARN_If you don't have enough money, farm mobs around Kharanos. You'll need this spell for a rune later|r
     .target Grif Wildheart
-step << Mage
-    #completewith next
-    .goto Dun Morogh,47.377,52.523
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
-    .vendor 1247 >> |cRXP_BUY_Buy as much|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from him as you can afford|r
-    .target Innkeeper Belm
-    .money <0.0125
-    .itemcount 1179,<1 --Ice Cold Milk (1)
-    .xp >10,1
+
 step
     #optional
     #completewith next

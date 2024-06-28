@@ -282,7 +282,7 @@ step << Mage
     .goto 1426,69.369,58.311
     >>|cRXP_WARN_Look for other Mages or Warlocks near the |cRXP_ENEMY_Frozen Trogg|r or in General Chat (Type /1 into chat). You can still solo this if no one is there|r
     >>|cRXP_WARN_Cast|r |T135812:0|t[Fireball] |cRXP_WARN_on the |cRXP_ENEMY_Frozen Trogg|r to apply a stack of|r |T135805:0|t[Applying Heat]|cRXP_WARN_. Apply 5 stacks at once together to kill the |cRXP_ENEMY_Frozen Trogg|r. Loot it for the|r |T134939:0|t|cRXP_FRIENDLY_[Spell Notes: Burnout]|r
-    >>|cRXP_WARN_If there is no one there to help you walk into meele range of the Trogg and use|r |T135820:0|t[Living Flame] |cRXP_WARN_on him. Stay in meele range to keep yourself in combat and keep using|r |T135820:0|t[Living Flame] |cRXP_WARN_living flame on cooldown. It will kill the trogg after 5-6 casts.|r
+    >>|cRXP_WARN_If there is no one there to help you, walk into meele range of the Trogg and use|r |T135820:0|t[Living Flame] |cRXP_WARN_on him. Stay in meele range to keep yourself in combat and keep using|r |T135820:0|t[Living Flame] |cRXP_WARN_on cooldown. It will kill the trogg after 5-6 casts.|r
     .collect 203748,1 --Spell Notes: Burnout (1)
     .train 401759,1
     .mob Frozen Trogg
@@ -460,7 +460,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r inside
     .accept 418 >> Accept Thelsamar Blood Sausages
     .target Vidra Hearthstove
-step
+step << Human
     .goto Loch Modan,34.8,48.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yanni Stoutheart|r inside
     .vendor >> |cRXP_BUY_Vendor trash, buy up to four|r |T133634:0|t[Small Brown Pouches] |cRXP_BUY_if you still need|r
@@ -511,7 +511,7 @@ step << Hunter
     .train 172551 >> Tame a Forest Lurker 
     >>|cRXP_WARN_It's the highest DPS pet easily available to dwarven hunters, you will eventually aim to replace it with a raptor from Wetlands|r
     .unitscan Forest Lurker
-step
+step << Human
     .goto Loch Modan,33.938,50.954
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
     .fp Thelsamar >> Get the Thelsamar Flight Path
@@ -580,7 +580,6 @@ step << !Human Rogue
     .collect 2207,1 --Jambyia
     .target Brenwyn Wintersteel
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<7.0
-
 step << Dwarf/Gnome
     #label Ride
     .goto Ironforge,51.521,26.311
@@ -660,12 +659,17 @@ step << Dwarf Paladin
     --.accept 1778 >>Accept The Tome of Divinity
     .unitscan John Turner
 step << Gnome Mage
+    .goto Ironforge,27.0,8.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bink|r
+    .trainer >> Train your class spells
+    .target Bink   
+step << Gnome Mage
     #season 2
     .goto Ironforge,19.197,56.094
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barim Jurgenstaad|r
-    >>|cRXP_BUY_Buy 5|r |T135933:0|t[Comprehension Charms] |cRXP_BUY_from him|r
+    >>|cRXP_BUY_Buy at least 2|r |T135933:0|t[Comprehension Charms] |cRXP_BUY_from him|r
     >>|cRXP_WARN_These are needed for learning runes|r
-    .collect 211779,5
+    .collect 211779,2
     .target Barim Jurgenstaad
 step << Dwarf/Gnome
     #ah
@@ -1115,6 +1119,11 @@ step << !Warlock !Human
     .zoneskip Loch Modan
     .zoneskip Dun Morogh
     .zoneskip Wetlands
+step << !Human
+    .goto Loch Modan,34.8,48.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yanni Stoutheart|r inside
+    .vendor >> |cRXP_BUY_Vendor trash, buy up to four|r |T133634:0|t[Small Brown Pouches] |cRXP_BUY_if you still need|r
+    .target Yanni Stoutheart 
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1203,6 +1212,25 @@ step << Warrior
     .collect 208778,1 -- Rune of Quick Strike (1)
     .train 425443,1
 step << Mage
+    #sticky
+    #completewith next
+    .goto Loch Modan,30.0,72.4,50,0
+    .goto Loch Modan,34.7,71.6,50,0
+    .goto Loch Modan,30.9,81.1,50,0
+    .goto Loch Modan,30.0,72.4,50,0
+    .goto Loch Modan,34.7,71.6,50,0
+    .goto Loch Modan,30.9,81.1,50,0
+    .goto Loch Modan,30.0,72.4,50,0
+    .goto Loch Modan,34.7,71.6,50,0
+    .goto Loch Modan,30.9,81.1,50,0
+    >>Kill |cRXP_ENEMY_Stonesplinter Troggs|r and |cRXP_ENEMY_Stonesplinter Scouts|r. Loot them for their |cRXP_LOOT_Trogg Stone Teeth|r
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Stonesplinter Scouts|r cast|r |T132222:0|t[Shoot] |cRXP_WARN_(Ranged Cast: Deals 14-20 damage)|r
+    .complete 224,1 --Kill Stonesplinter Trogg (x10)
+    .complete 224,2 --Kill Stonesplinter Scout (x10)
+    .complete 267,1 --Collect Trogg Stone Tooth (x8)
+    .mob Stonesplinter Trogg
+    .mob Stonesplinter Scout
+step << Mage
     #season 2
     .goto Loch Modan,29.2,81.2,15,0
     .goto Loch Modan,28.8,83.4,15,0
@@ -1213,7 +1241,7 @@ step << Mage
     .goto Loch Modan,36.6,81.2,15,0
     .goto Loch Modan,36.6,79.6,15,0
     .train 415936,1
-    >>Kill |cRXP_ENEMY_Stonesplinter Seer|r and loot them for |cRXP_LOOT_|T134939:0|t[Chewed Spell Notes]|r
+    >>Kill |cRXP_ENEMY_Stonesplinter Seers|r and loot them for |cRXP_LOOT_|T134939:0|t[Chewed Spell Notes]|r
     .collect 208854,1
     .mob Stonesplinter Seer
 step << Mage
@@ -1348,11 +1376,11 @@ step << Mage
     .goto Loch Modan,25.05,30.19,0
     .goto Loch Modan,26.06,43.44,0
     .goto Loch Modan,37.71,16.84,0
-    .goto Loch Modan,37.71,16.84,50,0
-    .goto Loch Modan,35.48,16.82,50,0
-    .goto Loch Modan,25.05,30.19,50,0
-    .goto Loch Modan,26.06,43.44,50,0
-    .goto Loch Modan,37.71,16.84,50,0
+    .goto Loch Modan,37.71,16.84,0
+    .goto Loch Modan,35.48,16.82,0
+    .goto Loch Modan,25.05,30.19,0
+    .goto Loch Modan,26.06,43.44,0
+    .goto Loch Modan,37.71,16.84,0
     >>Kill |cRXP_ENEMY_Tunnel Rats|r. Loot them for their |cRXP_LOOT_Ears|r
     >>|cRXP_ENEMY_Tunnel Rats|r |cRXP_WARN_can spawn throughout Loch Modan. Check your World Map for their locations|r
     .complete 416,1 --Collect Tunnel Rat Ear (x12)
@@ -1568,4 +1596,14 @@ step << Warrior !Human
 step << !Human
     .goto Ironforge,78.00,51.40
     .zone Stormwind City >>Enter the Deeprun Tram and take the Tram to Stormwind
+    .isQuestTurnedIn 6662
+step << !Human
+    .goto Ironforge,78.00,51.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monty|r on the Ironforge side of the tram and then |cRXP_FRIENDLY_Nipsy|r on the Stormwind side
+    .zone Stormwind City >>Enter the Deeprun Tram and take the Tram to Stormwind
+    .accept 6662 >> Accept Me Brother, Nipsy from |cRXP_FRIENDLY_Monty|r before taking the tram
+    .turnin 6662 >> Turn in Me Brother, Nipsy to |cRXP_FRIENDLY_Nipsy|r after taking the tram
+    .isQuestAvailable 6662
+    .target Monty
+    .target Nipsy
 ]])
