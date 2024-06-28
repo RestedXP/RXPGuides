@@ -360,135 +360,128 @@ RXPGuides.RegisterGuide([[
 
 ]])
 
--- Dreadwastes Dailies
+-- The Klaxxi Dailies
 RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP Panda Remix
-#name X) Dreadwastes Daillies
-#internal
-
+#name X) The Klaxxi Daillies
+#displayname The Klaxxi Dailies
+#title The Klaxxi Dailies
 
 step
-    .goto 422,54.25,35.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaz'tik the Manipulator|r
-    .accept 31268 >>Accept A Little Brain Work
+    #loop
+    .goto 422,54.29,35.93,15,0
+    .goto 422,55.06,35.85,10,0
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaz'tik the Manipulator|r, |cRXP_FRIENDLY_Rik'kal the Dissector|r, |cRXP_FRIENDLY_Korven the Prime|r or |cRXP_FRIENDLY_Kil'ruk the Wind-Reaver|r
+    .questcount <6,31232,31238,31231,31235,31234,31233 >>|cRXP_WARN_Get all the Shado-Pan Dailies|r
     .target Kaz'tik the Manipulator
-    .accept 31024 >>Accept Kunchong Treats
-step
-    .goto 422,54.36,35.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rik'kal the Dissector|r
-    .accept 31271 >>Accept Bad Genes
     .target Rik'kal the Dissector
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korven the Prime|r
-    .accept 31270 >>Accept The Fight Against Fear
     .target Korven the Prime
-    .accept 31269 >>Accept The Scale-Lord
+    .target Kil'ruk the Wind-Reaver
 step
-    .goto 422,59.13,53.27
-    >>Kill |cRXP_ENEMY_Horrorscale Scorpid|r
-    .complete 31270,1 --15/15 Horrorscale Scorpid slain
-    .mob Horrorscale Scorpid
+    .isOnQuest 31233
+    #completewith next
+    >>Click on |cRXP_PICK_Amber Taps|r |cRXP_WARN_found on trees|r. Afterwards click on the |cRXP_PICK_Amber Pot|r below the tap
+    .complete 31233,1 --6/6 Amber Sap
 step
-    .goto 422,61.74,54.07
-    .complete 31024,1 --4/4 Meaty Turtle Haunch
+    .isOnQuest 31234
+    >>Kill |cRXP_ENEMY_Mire Beasts|r. Loot them for the |T237299:0|t[|cRXP_LOOT_Pristine Mire Beast Eye|r]
+    .complete 31234,1 --1/1 Pristine Mire Beast Eye
+    .goto 422,67.35,36.63
+    .mob Mire Beast
 step
-    .goto 422,62.55,66.55
-    >>Kill |cRXP_ENEMY_Ik'thik Genemancer|r
-    .complete 31271,1 --3/3 Ik'thik Genemancer slain
-    .mob Ik'thik Genemancer
+    #completewith DreadspinnerTenderSlain
+    #hidewindow
+    #loop
+    .goto 422,66.22,29.08,40,0
+    .goto 422,72.50,29.17,35,0
+    .goto 422,71.46,22.47,40,0
+    .goto 422,74.72,20.60,40,0
+    +1
 step
-    .goto 422,61.67,70.77
-    .complete 31268,1 --3/3 Amber-Encrusted Brain
+    .isOnQuest 31231
+    #completewith GurhtaniTablets
+    >>Kill |cRXP_ENEMY_Dreadspinner Tender|r
+    .complete 31231,1 --8/8 Dreadspinner Tender slain
+    .mob Dreadspinner Tender
 step
-    .goto 422,60.90,71.95
-    >>Kill |cRXP_ENEMY_Ik'thik Egg-Drone|r
-    .complete 31271,2 --6/6 Ik'thik Egg-Drone slain
-    .mob Ik'thik Egg-Drone
+    .isOnQuest 31235
+    #completewith GurhtaniTablets
+    >>Use the |T133837:0|t[Shado-Pan Dragon Gun] to destroy |cRXP_PICK_Dreadspinner Eggs|r
+    .complete 31235,1 --20/20 Dreadspinner Egg slain
+    .use 82807
+    .mob Dreadspinner Egg
 step
-    .goto 422,66.40,66.21
-    >>Kill |cRXP_ENEMY_Mistblade Scale-Lord|r
-    .complete 31269,1 --1/1 Mistblade Scale-Lord slain
-    .mob Mistblade Scale-Lord
+    .isOnQuest 31232
+    #label GurhtaniTablets
+    >>Click on the |cRXP_PICK_Gurthani Tablets|r
+    .complete 31232,1 --8/8 Gurthani Tablet
 step
-    .goto 422,54.26,35.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaz'tik the Manipulator|r
-    .turnin 31024 >>Turn in Kunchong Treats
-    .target Kaz'tik the Manipulator
-    .turnin 31268 >>Turn in A Little Brain Work
-
+    .isOnQuest 31231
+    #completewith next
+    >>Kill |cRXP_ENEMY_Dreadspinner Tender|r
+    .complete 31231,1 --8/8 Dreadspinner Tender slain
+    .mob Dreadspinner Tender
 step
-    .goto 422,54.36,35.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rik'kal the Dissector|r
-    .turnin 31271 >>Turn in Bad Genes
-    .target Rik'kal the Dissector
+    .isOnQuest 31235
+    >>Use the |T133837:0|t[Shado-Pan Dragon Gun] to destroy |cRXP_PICK_Dreadspinner Eggs|r
+    .complete 31235,1 --20/20 Dreadspinner Egg slain
+    .use 82807
+    .mob Dreadspinner Egg
 step
-    .goto 422,54.30,36.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korven the Prime|r
-    .turnin 31269 >>Turn in The Fight Against Fear
-    .target Korven the Prime
-    .turnin 31270 >>Turn in The Fight Against Fear
-
-set 2
-
+    .isOnQuest 31231
+    #label DreadspinnerTenderSlain
+    >>Kill |cRXP_ENEMY_Dreadspinner Tender|r
+    .complete 31231,1 --8/8 Dreadspinner Tender slain
+    .mob Dreadspinner Tender
 step
-    .goto 422,54.26,35.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaz'tik the Manipulator|r
-    .accept 31506 >>Accept Shackles of Manipulation
-    .target Kaz'tik the Manipulator
+    .isOnQuest 31238
+    #completewith next
+    >>Kill |cRXP_ENEMY_Greatback Mushans|r and |cRXP_ENEMY_Greatback Calfs|r. Loot them for the |T1:0|t[|cRXP_LOOT_Mushan Tongues|r]
+    .complete 31238,1 --4/4 Mushan Tongue
+    .mob Greatback Mushan
+    .mob Greatback Calf
 step
-    .goto 422,54.36,35.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rik'kal the Dissector|r
-    .accept 31509 >>Accept Fear Takes Root
-    .target Rik'kal the Dissector
-    .accept 31508 >>Accept Specimen Request
-step
-    .goto 422,54.30,36.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korven the Prime|r
-    .accept 31507 >>Accept Meltdown
-    .target Korven the Prime
-step
-    .goto 422,29.99,73.05
-    .complete 31508,1 --6/6 Kyparite Shards
-step
-    .goto 422,22.20,75.78
-    >>Kill |cRXP_ENEMY_Zan'thik Amberhusk|r
-    .complete 31507,1 --6/6 Zan'thik Amberhusk slain
-    .mob Zan'thik Amberhusk
-step
-    .goto 422,28.46,71.80
-    .complete 31509,1 --15/15 Dreadspore Bulbs destroyed
-step
-    .goto 422,32.34,78.35
-    .complete 31506,1 --6/6 Zan'thik Shackles
-step
-    .goto 422,54.32,36.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korven the Prime|r
-    .turnin 31507 >>Turn in Meltdown
-    .target Korven the Prime
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rik'kal the Dissector|r
-    .turnin 31509 >>Turn in Specimen Request
-    .target Rik'kal the Dissector
-    .turnin 31508 >>Turn in Specimen Request
-
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaz'tik the Manipulator|r
-    .turnin 31506 >>Turn in Shackles of Manipulation
-    .target Kaz'tik the Manipulator
-    .accept 31808 >>Accept Rampage Against the Machine
-step
-    .goto 422,50.82,41.26
-    .complete 31808,1 --1/1 Locate Kovok near the Clutches of Shek'zeer
-step
-    .goto 422,45.09,29.26
-    >>Kill |cRXP_ENEMY_Mantid|r
-    .complete 31808,2 --200/200 Mantid slain
-    .mob Mantid
-step
-    .goto 422,54.25,35.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaz'tik the Manipulator|r
-    .turnin 31808 >>Turn in Rampage Against the Machine
-    .target Kaz'tik the Manipulator
-
+    .isOnQuest 31233
+    .goto 422,69.71,17.14,0
+    .goto 422,68.07,17.10,0
+    .goto 422,67.51,20.31,0
+    .goto 422,67.24,19.92,0
+    .goto 422,66.24,17.56,0
+    .goto 422,65.61,17.81,0
+    .goto 422,65.53,21.69,0
+    .goto 422,66.23,24.31,0
+    .goto 422,63.92,19.48,0
+    .goto 422,66.13,26.99,0
+    .goto 422,71.14,30.27,0
+    .goto 422,73.36,31.55,0
+    .goto 422,71.16,24.12,0
+    .goto 422,65.06,32.14,0
+    .goto 422,65.82,34.00,0
+    .goto 422,68.33,33.99,0
+    .goto 422,69.65,34.20,0
+    .goto 422,69.37,32.31,0
+    .goto 422,66.53,39.27,0
+    .goto 422,65.62,38.33,0
+    .goto 422,64.76,41.82,0
+    .goto 422,64.38,42.00,0
+    .goto 422,65.88,44.49,0
+    .goto 422,66.13,44.80,0
+    .goto 422,66.58,43.75,0
+    .goto 422,67.49,43.83,0
+    .goto 422,67.38,42.65,0
+    #loop
+    .goto 422,69.70,17.03,15,0
+    .goto 422,68.12,17.09,15,0
+    .goto 422,65.82,17.69,15,0
+    .goto 422,63.89,19.55,15,0
+    .goto 422,65.52,21.68,15,0
+    .goto 422,66.26,24.31,15,0
+    .goto 422,66.14,26.92,15,0
+    .goto 422,65.06,32.36,15,0
+    >>Click on |cRXP_PICK_Amber Taps|r |cRXP_WARN_found on trees|r. Afterwards click on the |cRXP_PICK_Amber Pot|r below the tap
+    .complete 31233,1 --6/6 Amber Sap
 ]])
 
 -- August Celestial Dailies: Jade Forest
@@ -1917,7 +1910,6 @@ RXPGuides.RegisterGuide([[
 #name X) Shado-Pan Daillies
 #displayname Shado-Pan Dailies
 #title Shado-Pan Dailies
-#internal
 
 step
     #loop
