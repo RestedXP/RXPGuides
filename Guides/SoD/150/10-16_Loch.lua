@@ -379,6 +379,7 @@ step
     >>Run to thelsamar if you're unable to do it
 -- .link ADD GUIDE VIDEO
     .subzoneskip 144
+    .zoneskip Loch Modan
 step
     #optional
     #completewith lochstart1
@@ -502,6 +503,14 @@ step << Dwarf/Gnome
     .turnin 6387 >> Turn in Honor Students
     .accept 6391 >> Accept Ride to Ironforge
     .target Thorgrum Borrelson
+step << Hunter
+    #sticky
+	.goto Loch Modan,33.9,54.0
+    .goto Loch Modan,36.6,53.2,0
+    .goto Loch Modan,30.0,53.5,0
+    .train 172551 >> Tame a Forest Lurker 
+    >>|cRXP_WARN_It's the highest DPS pet easily available to dwarven hunters, you will eventually aim to replace it with a raptor from Wetlands|r
+    .unitscan Forest Lurker
 step
     .goto Loch Modan,33.938,50.954
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r

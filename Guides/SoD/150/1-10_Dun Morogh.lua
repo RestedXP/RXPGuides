@@ -738,6 +738,7 @@ step << Rogue/Hunter
     .goto Dun Morogh,30.773,80.063
     >>Open the |cRXP_PICK_Frostmane Loot Cache|r on the ground inside. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of Shadowstrike]|r << Rogue
     >>Open the |cRXP_PICK_Frostmane Loot Cache|r on the ground inside. Loot it for the |T134419:0|t|cRXP_LOOT_[Rune of the Chimera]|r << Hunter
+    >>|cRXP_WARN_Watch out, |cRXP_ENEMY_Grik'nir the Cold|r respawns very quickly! You might have to kill him again to loot the chest|r
     .collect 204795,1 << Rogue --Rune of Shadowstrike (1)
     .collect 206168,1 << Hunter -- Rune of the Chimera (1)
     .train 400105,1 << Rogue
@@ -1321,6 +1322,18 @@ step
     .home >> Set your Hearthstone to Thunderbrew Distillery
     .vendor >> |cRXP_BUY_Buy as much|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_as you can afford|r << Mage
     .target Innkeeper Belm
+step
+    .goto Dun Morogh,47.377,52.523
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r
+    >>Buy a |T132800:0|t[|cRXP_LOOT_Rhapsody Malt|r] from him
+    .collect 2894,1 --Rhapsody Malt (1)
+    .itemcount 2886,6 --Crag Boar Ribs (6)
+step
+    .goto Dun Morogh,46.825,52.361
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ragnar Thunderbrew|r
+    .turnin 384 >> Turn in Beer Basted Boar Ribs
+    .target Ragnar Thunderbrew
+    .isQuestComplete 384
 step << Warrior
     .goto Dun Morogh,47.360,52.646
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Granis Swiftaxe|r inside
@@ -1743,10 +1756,31 @@ step
     .link https://www.youtube.com/watch?v=o55Y3LjgKoE >> |cRXP_WARN_Click here for video reference|r
     .complete 312,1 --MacGrann's Dried Meats (1)
 step
+    .goto Dun Morogh,36.4,52.8
+    >>Try to finish off looting |T133972:0|t[|cRXP_LOOT_Crag Boar Ribs|r] from the boars outside the cave. |cRXP_WARN_Skip this step if there's none there|r
+    >>|cRXP_WARN_Make sure you have looted a |T134026:0|t[Dun Morogh Pig Meat]. |cRXP_WARN_You will need it to get a rune now|r << Hunter
+    .collect 2886,6 --Crag Boar Rib (6)
+    .collect 208192,1 << Hunter --Dun Morogh Pig Meat (1)
+step
     .goto Dun Morogh,34.577,51.652
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tundra MacGrann|r
     .turnin 312 >> Turn in Tundra MacGrann's Stolen Stash
     .target Tundra MacGrann
+step << Hunter
+    #season 2
+    #requires pigmeat
+    .train 425762,1
+    .goto Dun Morogh,37.78,42.55
+    >>Use |T134026:0|t[Dun Morogh Pig Meat] near the corpse inside the cave to summon |cRXP_ENEMY_Jorul|r
+    >>Kill |cRXP_ENEMY_Jorul|r. Loot him for the |T134419:0|t|cRXP_LOOT_[Rune of Flanking]|r
+    .collect 205979,1
+    .use 208192
+    .mob Jorul
+step << Hunter
+    #season 2
+    .train 425762 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Flanking]|r |cRXP_WARN_to train|r |T132175:0|t[Flanking Strike]
+    .use 205979
+    .itemcount 205979,1
 step
     #completewith next
     .goto Dun Morogh,30.453,46.005
@@ -1784,74 +1818,6 @@ step << Hunter
     .cast 402265 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
     .use 206155
     .train 410113,1
-step << Hunter
-    #season 2
-    #requires pigmeat
-    .train 425762,1
-    .goto Dun Morogh,37.78,42.55
-    >>Use |T134026:0|t[Dun Morogh Pig Meat] near the corpse inside the cave to summon |cRXP_ENEMY_Jorul|r
-    >>Kill |cRXP_ENEMY_Jorul|r. Loot him for the |T134419:0|t|cRXP_LOOT_[Rune of Flanking]|r
-    .collect 205979,1
-    .use 208192
-    .mob Jorul
-step << Hunter
-    #season 2
-    .train 425762 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Flanking]|r |cRXP_WARN_to train|r |T132175:0|t[Flanking Strike]
-    .use 205979
-    .itemcount 205979,1
-step << Hunter/Mage
-    #season 2
-    #requires Marksmanship2 << Hunter
-    #label Fyodi1
-    #loop
-    .goto 1426,31.87,38.45,0
-    .goto 1426,30.42,39.84,0
-    .goto 1426,30.02,39.08,0
-    .goto 1426,33.82,37.26,0
-    .goto 1426,31.87,38.45,50,0
-    .goto 1426,30.42,39.84,50,0
-    .goto 1426,30.02,39.08,50,0
-    .goto 1426,33.82,37.26,50,0
-    >>Kill |cRXP_ENEMY_Fyodi|r. Loot him for the |T134419:0|t|cRXP_LOOT_[Rune of Explosive Shot]|r << Hunter
-    >>Kill |cRXP_ENEMY_Fyodi|r. Loot him for the |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r << Mage
-    >>Kill |cRXP_ENEMY_Fyodi|r. Loot him for the |T134419:0|t|cRXP_LOOT_[Rune of Furious Thunder]|r << Warrior
-    >>|cRXP_WARN_Even though |cRXP_ENEMY_Fyodi|r shows as an elite, his health, damage, and armor values are that of a standard mob|r
-    >>|cRXP_WARN_Be careful as he casts|r |T132337:0|t[Charge] |cRXP_WARN_(Self Instant: Increases movespeed for 3 seconds, dealing 35-80 melee damage on hit. Only castable at range)|r
-    >>|cRXP_WARN_NOTE: The|r |T134419:0|t|cRXP_LOOT_[Rune of Explosive Shot]|r |cRXP_WARN_can also drop off every rare mob in Dun Morogh, as well as |cRXP_ENEMY_Vagash|r, |cRXP_ENEMY_Mangeclaw|r, and|r |cRXP_ENEMY_Old Icebeard|r << Hunter
-    >>|cRXP_WARN_NOTE: The|r |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r |cRXP_WARN_can also drop off every rare mob in Dun Morogh, as well as |cRXP_ENEMY_Vagash|r, |cRXP_ENEMY_Mangeclaw|r, and|r |cRXP_ENEMY_Old Icebeard|r << Mage
-    >>|cRXP_WARN_NOTE: The|r |T134419:0|t|cRXP_LOOT_[Rune of Furious Thunder]|r |cRXP_WARN_can also drop off every rare mob in Dun Morogh, as well as |cRXP_ENEMY_Vagash|r, |cRXP_ENEMY_Mangeclaw|r, and|r |cRXP_ENEMY_Old Icebeard|r << Warrior
-    .collect 206169,1 << Hunter --Rune of Explosive Shot (1)
-    .collect 203753,1 << Mage --Spell Notes: RING SEFF OSTROF (1)
-    .collect 204809,1 << Warrior --Rune of Furious Thunder (1)
-    .mob Fyodi
-    .train 410123,1 << Hunter
-    .train 401765,1 << Mage
-    .train 403476,1 << Warrior
-step << Hunter
-    #season 2
-    #sticky
-    #requires Fyodi1
-    #label FyodiEnd
-    .train 410123 >> |cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Explosive Shot]|r |cRXP_WARN_to learn|r |T133816:0|t[Engrave Gloves - Explosive Shot]
-    .use 206169
-    .itemcount 206169,1
-step << Mage
-    #season 2
-    #sticky
-    #requires Fyodi1
-    #label FyodiEnd
-    .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t|cRXP_LOOT_[Spell Notes: RING SEFF OSTROF]|r |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Fingers of Frost]
-    .use 203753
-    .itemcount 203753,1 --Spell Notes: RING SEFF OSTROF (1)
-    .itemcount 211779,1 --Comprehension Charm (1)
-step << Warrior
-    #season 2
-    #sticky
-    #requires Fyodi1
-    #label FyodiEnd
-    .train 403476 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Furious Thunder]|r |cRXP_WARN_to learn|r |T136048:0|t[Furious Thunder]
-    .use 204809
-    .itemcount 204809,1 --Rune of Furious Thunder (1)
 step << Priest
     #season 2
     >>Kill |cRXP_ENEMY_Leper Gnomes|r. Loot them for the |T136222:0|t[|cRXP_FRIENDLY_Memory of a Dark Purpose|r]
@@ -1911,12 +1877,12 @@ step << Rogue
 step
     #optional
     #requires ForceFavorRibYes
-step << !Hunter
+step
     #optional
     .goto 1426,24.975,50.473,20,0
     .goto 1426,24.682,50.836,20 >> Run up the side of the cave entrance. Jump down into Frostmane Hold
     .isOnQuest 287
-step << !Hunter
+step
     #sticky
     #label Headhunters
     #loop
@@ -1956,7 +1922,7 @@ step << Rogue
     .mob Frostmane Headhunter
     .mob Frostmane Snowstrider
     .train 398196,1
-step << !Hunter
+step
     #requires Headhunters
     .goto Dun Morogh,22.86,52.16
     >>|cRXP_WARN_Drop down into the small dead-end room of the cave|r
@@ -1970,13 +1936,15 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Belm|r inside
     >>|cRXP_BUY_Buy a|r |T132800:0|t[Rhapsody Malt] |cRXP_BUY_and a|r |T132800:0|t[Thunder Ale] |cRXP_BUY_from him|r
     .complete 384,2 --Collect Rhapsody Malt (x1)
+    .itemcount 2886,6 --Crag Boar Rib (6)
     .target Innkeeper Belm
 step
     .goto Dun Morogh,46.825,52.361
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ragnar Thunderbrew|r outside
     .turnin 384 >> Turn in Beer Basted Boar Ribs
     .target Ragnar Thunderbrew
-step << !Hunter
+    .isQuestComplete 384
+step
     #label dm10end
     .goto Dun Morogh,46.726,53.826
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senir Whitebeard|r
@@ -1994,6 +1962,7 @@ step << Dwarf Hunter
     .goto Dun Morogh,48.3,56.9
     >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Large Crag Boar|r
     .complete 6064,1 --Tame a Large Crag Boar (1)
+    .use 15911
     .mob Large Crag Boar
 step << Dwarf Hunter
     .goto Dun Morogh,45.810,53.039
@@ -2005,6 +1974,7 @@ step << Dwarf Hunter
     .goto Dun Morogh,49.4,59.4
     >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Snow Leopard|r
     .complete 6084,1 --Tame a Snow Leopard (1)
+    .use 15913
     .mob Snow Leopard
 step << Dwarf Hunter
     .goto Dun Morogh,45.810,53.039
@@ -2016,6 +1986,7 @@ step << Dwarf Hunter
     .goto Dun Morogh,50.4,59.7
     >>|cRXP_WARN_Use the|r |T132164:0|t[Taming Rod] |cRXP_WARN_on a|r |cRXP_ENEMY_Ice Claw Bear|r
     .complete 6085,1 --Tame an Ice Claw Bear (1)
+    .use 15908
     .mob Ice Claw Bear
 step << Dwarf Hunter
     .goto Dun Morogh,45.810,53.039
@@ -2062,13 +2033,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Stonegear|r
     .turnin 313 >> Turn in The Grizzled Den
     .target Pilot Stonegear
-step
-    .goto Dun Morogh,49.426,48.410
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Bellowfiz|r
-    >>|cRXP_WARN_Choose the|r |T135637:0|t[Camping Knife]|cRXP_WARN_. Save it for later|r << Rogue
-    .turnin 320 >> Turn in Return to Bellowfiz << !Rogue
-    .turnin 320,3 >> Turn in Return to Bellowfiz << Rogue
-    .target Pilot Bellowfiz
 step << Warrior
     #optional
     #completewith next
