@@ -800,8 +800,8 @@ RXPGuides.RegisterGuide([[
 #displayname 13-20 Darkshore << NightElf SoD !Priest
 #displayname 13-22 Darkshore << NightElf SoD Priest
 #displayname 15-18 Darkshore << !NightElf SoD
-#next 16-19 Darkshore << !sod/Warrior/Rogue/Druid/Hunter
-#next 22-24 Wetlands SoD << sod Priest
+#next 16-19 Darkshore << !sod/Warrior/Rogue/Druid/Hunter/Paladin/Mage/Warlock/!NightElf Priest
+#next 22-24 Wetlands SoD << sod NightElf Priest
 
 -- #displayname 11-16 Darkshore << NightElf/Dwarf Hunter !SoD
 -- #displayname 15-17 Darkshore << !NightElf !Dwarf/!Hunter !SoD
@@ -4954,7 +4954,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #version 1
 << Alliance
-<< !sod/Warrior/Rogue/Hunter/Druid
+<< !sod/Warrior/Rogue/Hunter/Druid/Paladin/Mage/Warlock/!NightElf Priest
 #group RestedXP Alliance 1-20
 #name 16-19 Darkshore
 #displayname 20-22 Darkshore << sod !Warrior
