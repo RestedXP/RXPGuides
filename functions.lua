@@ -4035,7 +4035,7 @@ function addon.functions.questitemcount(self,text,itemId,qty,...)
 
     if type(self) == "string" then -- on parse
         local element = {}
-        element.text = text
+        element.text = text or "  "
         element.icon = addon.icons.collect
         itemId = tonumber(itemId)
         if not itemId then return end
@@ -4046,6 +4046,7 @@ function addon.functions.questitemcount(self,text,itemId,qty,...)
         for i,v in ipairs(quests) do
             quests[i] = tonumber(v) or 0
         end
+        element.quests = quests
         return element
     end
     local element = self.element
