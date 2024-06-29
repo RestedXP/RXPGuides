@@ -2,7 +2,7 @@
 RXPGuides.RegisterGuide([[
 #classic
 #version 1
-#xprate >2.49
+#season 2
 << Alliance
 #group RXP SOD TEST
 #name 16-17 Westfall SoD
@@ -452,7 +452,7 @@ step
 RXPGuides.RegisterGuide([[
 #classic
 #version 1
-#xprate >2.49
+#season 2
 << Alliance
 #group RXP SOD TEST
 #name 17-22 Redridge SoD

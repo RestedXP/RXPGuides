@@ -9,6 +9,7 @@ RXPGuides.RegisterGuide([[
 #group RXP SOD TEST
 #defaultfor Human
 #next 6-12 Elwynn Forest SoD
+#season 2
 
 
 step << !Human
@@ -1167,7 +1168,7 @@ step << Rogue
 
 RXPGuides.RegisterGuide([[
 #classic
-#xprate >1.59
+#season 2
 #version 1
 << Alliance
 #group RXP SOD TEST

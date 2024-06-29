@@ -2,7 +2,7 @@
 RXPGuides.RegisterGuide([[
 #classic
 #version 1
-#xprate >2.49
+#season 2
 << Alliance
 #group RXP SOD TEST
 #name 12-13 Dun Morogh SoD
@@ -1129,7 +1129,7 @@ step << !Human
 RXPGuides.RegisterGuide([[
 #classic
 #version 1
-#xprate >2.49
+#season 2
 << Alliance
 #group RXP SOD TEST
 #name 13-16 Loch Modan SoD

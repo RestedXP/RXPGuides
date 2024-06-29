@@ -42,8 +42,13 @@
 	<Script file="Guides/SoD/Horde.lua"/>
 
     <Script file="Guides/SoD/150/1-10_Dun Morogh.lua"/>
+	<Script file="Guides/SoD/150/1-13_Teldrassil.lua"/>
     <Script file="Guides/SoD/150/1-10_Elwynn.lua"/>
+	<Script file="Guides/SoD/150/13-22_Darkshore.lua"/>
     <Script file="Guides/SoD/150/10-16_Loch.lua"/>
     <Script file="Guides/SoD/150/16-22_Westfall-Redridge.lua"/>
 	<Script file="Guides/SoD/150/22-24_Wetlands.lua"/>
+	<Script file="Guides/SoD/150/24-32_Duskwood.lua"/>
+	<Script file="Guides/SoD/150/32-40_AllianceSoD.lua"/>
+	<Script file="Guides/SoD/150/40-50_AllianceSoD.lua"/>
 </Ui>

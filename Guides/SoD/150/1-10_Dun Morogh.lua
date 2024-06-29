@@ -4,6 +4,7 @@ if faction == "Horde" then return end
 RXPGuides.RegisterGuide([[
 #classic
 #version 1
+#season 2
 << Alliance
 #group RXP SOD TEST
 #name 1-7 Coldridge Valley
@@ -1727,7 +1728,7 @@ step
     .goto 1426,42.982,54.755,0
     .goto 1426,41.918,54.053,0
     .goto 1426,41.100,48.927,0
-    .goo 1426,42.982,54.755,40,0
+    .goto 1426,42.982,54.755,40,0
     .goto 1426,41.901,55.217,40,0
     .goto 1426,41.918,54.053,40,0
     .goto 1426,42.177,53.274,40,0
@@ -1739,7 +1740,7 @@ step
 step
     .goto Dun Morogh,44.13,56.95
     >>Open the |cRXP_PICK_Ammo Crate|r. Loot it for |cRXP_LOOT_Rumbleshot's Ammo|r
-    .complette 5541,1 --Collect Rumbleshot's Ammo (x1)
+    .complete 5541,1 --Collect Rumbleshot's Ammo (x1)
 step
     #optional
     #completewith next
