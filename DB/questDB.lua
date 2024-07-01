@@ -9,8 +9,11 @@ if addon.gameVersion < 20000 then
 end
 
 local function GetXPMods()
-    print(addon.GetXPBonuses(false,80))
-    return addon.GetXPBonuses(false,80)
+    if addon.player.season == 2 then
+        return 1.5
+    else
+        return addon.GetXPBonuses(false,80)
+    end
 end
 
 local function IsPreReqComplete(quest)
@@ -471,7 +474,7 @@ function addon.CalculateTotalXP(flags)
     else
         addon.questsDone = {}
     end
-    local xpmod = addon.GetXPBonuses(false,80)
+    local xpmod = GetXPMods()
     --print(xpmod)
     local groups = {}
     local function ProcessQuest(quest,qid,skipgrpcheck)
