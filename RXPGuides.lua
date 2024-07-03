@@ -1741,6 +1741,7 @@ function addon.stepLogic.XpRateCheck(step)
             elseif addon.settings.profile.enableBetaFeatures and addon.settings.profile.season == 2 then
                 rate = 2.5
             elseif addon.settings.profile.season == 2 then
+                rate = 1.5
                 --local minLevel = tonumber(guide:sub(1,2))
                 local maxLevel = addon.currentGuide and tonumber(addon.currentGuide.name:match("%d+%-(%d+)"))
                 if UnitLevel('player') < 40 or (not step.elements or not maxLevel or maxLevel < 40) then

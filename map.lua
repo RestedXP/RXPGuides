@@ -909,7 +909,7 @@ local function updateArrow()
             table.insert(lowPrioWPs, element)
             return
         end
-        local step = element.step
+        local step = element.step or {}
         if step.loop then
             loop[step] = true
         end

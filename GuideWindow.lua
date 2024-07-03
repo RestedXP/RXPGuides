@@ -2204,13 +2204,16 @@ function RXPFrame:GenerateMenuTable(menu)
     })
 
     if addon.settings.profile and addon.settings.profile.enableTracker then
-        tinsert(menuList, {
-            text = L("Leveling report"),
-            notCheckable = 1,
-            func = function()
-                addon.tracker:ShowReport(_G.CharacterFrame)
-            end
-        })
+        -- Don't show leveling report if in Gold Assistant mode
+        if not (RXPCData and RXPCData.GA) then
+            tinsert(menuList, {
+                text = L("Leveling report"),
+                notCheckable = 1,
+                func = function()
+                    addon.tracker:ShowReport(_G.CharacterFrame)
+                end
+            })
+        end
     end
 
     tinsert(menuList, {

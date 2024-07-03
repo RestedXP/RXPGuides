@@ -3992,7 +3992,7 @@ function addon.functions.blastedLands(self)
     }
 
     for n, item in pairs(id) do
-        local iName = GetItemInfo(item)
+        local iName = addon.GetItemName(item)
         if iName then name[n] = iName end
     end
 
@@ -4028,6 +4028,76 @@ function addon.functions.blastedLands(self)
     end
 
     addon.UpdateStepText(self)
+end
+
+events.questitemcount = events.collect
+function addon.functions.questitemcount(self,text,itemId,qty,...)
+
+    if type(self) == "string" then -- on parse
+        local element = {}
+        element.text = text or "  "
+        element.icon = addon.icons.collect
+        itemId = tonumber(itemId)
+        if not itemId then return end
+        element.id = itemId
+        element.itemName = addon.GetItemName(itemId)
+        element.qty = tonumber(qty)
+        local quests = {...}
+        for i,v in ipairs(quests) do
+            quests[i] = tonumber(v) or 0
+        end
+        element.quests = quests
+        return element
+    end
+    local element = self.element
+    local id = element.id
+    local name = addon.GetItemName(id)
+    if name then
+        element.requestFromServer = nil
+    else
+        name = ""
+        element.requestFromServer = true
+    end
+    element.itemName = name
+
+    local count = GetItemCount(id)
+    if count == 0 then
+        if C_ToyBox and PlayerHasToy(id) and C_ToyBox.IsToyUsable(id) then
+            count = count + 1
+        end
+
+        for i = 1, _G.INVSLOT_LAST_EQUIPPED do
+            if GetInventoryItemID("player", i) == id then
+                count = count + 1
+                break
+            end
+        end
+    end
+    local nQuests = 0
+    for _,questId in ipairs(element.quests) do
+        if questId ~= 0 then
+            if not IsQuestTurnedIn(questId) then
+                nQuests = nQuests + 1
+            end
+        end
+    end
+    local numRequired = nQuests * element.qty
+
+    if (numRequired > 0 and count > numRequired) then
+        count = numRequired
+    end
+
+    element.text = fmt("%s: %d/%d", element.itemName, count,
+                                numRequired)
+    element.tooltipText = addon.icons.collect .. element.text
+
+    if numRequired > 0 and count >= numRequired then
+        addon.SetElementComplete(self, true)
+    elseif numRequired == count then
+        addon.SetElementComplete(self, true)
+    elseif not element.textOnly then
+        addon.SetElementIncomplete(self)
+    end
 end
 
 function addon.PutItemInBank(bagContents)
