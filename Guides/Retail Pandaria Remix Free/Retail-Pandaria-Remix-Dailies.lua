@@ -499,85 +499,186 @@ RXPGuides.RegisterGuide([[
 #name X) August Celestial Daillies
 #internal
 
-
+-- step
+--     .accept 30066 >>Accept Hidden Power
+--     .accept 30065 >>Accept Arrows of Fortune
+--     .target +Elder Sage Tai-Feng
+--     .accept 30063 >>Accept Behind the Masks
+--     .accept 30064 >>Accept Saving the Sutras
+--     .target +Elder Sage Storm-Sing
 step
-    .goto 371,53.90,61.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Sage Tai-Feng|r
-    .accept 30066 >>Accept Hidden Power
-    .target Elder Sage Tai-Feng
-    .accept 30065 >>Accept Arrows of Fortune
+    .areapoiexists 371,7734,7735,7736,7737
+    #loop
+    .goto 371,53.90,61.96,10,0
+    .goto 371,53.8,61.8,10,0
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Sage Tai-Feng|r and |cRXP_FRIENDLY_Elder Sage Storm-Sing|r
+    .questcount <4,30066,30065,30063,30064  >>|cRXP_WARN_Get all the Daillies|r
+step
+    .goto 371,53.8,61.8
+    .reputation 1269,revered,<0,1
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Sage Tai-Feng|r
     .accept 30006 >>Accept The Darkness Around Us
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Sage Storm-Sing|r
-    .turnin 80429 >>Turn in Aid the August Celestials
-    .target Elder Sage Storm-Sing
 step
-    .goto 371,52.63,55.65
+    #hidewindow
+    #completewith AugustLoop1
+    #loop
+    .goto 371,53.6,54.06,40,0
+    .goto 371,56.3,51.04,40,0
+    .goto 371,56.1,53.41,40,0
+    .goto 371,55.16,57.24,40,0
+    +1
+step
+    #completewith Ancient Mantras
+    .isOnQuest 30006
+    >>Kill |cRXP_ENEMY_Lingering Doubt|r and |cRXP_ENEMY_Final Doubt|r
+    .complete 30006,1 --15/15 Sha invaders slain
+    .mob Lingering Doubt
+    .mob Final Doubt
+step
+    #completewith Ancient Mantras
+    .isOnQuest 30063
+    >>Kill |cRXP_ENEMY_Lingering Doubt|r and |cRXP_ENEMY_Final Doubt.|r Loot them for |cRXP_LOOT_Mask of Doubt.|r
+    .complete 30063,1 --8/8 Mask of Doubt
+    .mob Lingering Doubt
+    .mob Final Doubt
+step
+    #completewith Ancient Mantras
+    .isOnQuest 30065
+    >>Click on |cRXP_PICK_Arrows|r
     .complete 30065,1 --8/8 Defender's Arrow
 step
-    .goto 371,53.73,56.63
-    .complete 30066,1 --6/6 Ancient Mantras delivered
+    #completewith Ancient Mantras
+    .isOnQuest 30064
+    >>Click on the |cRXP_PICK_Books|r
+    .complete 30064,1 --6/6 Ancient Sutra
 step
-    .goto 371,55.08,57.07
-    >>Kill |cRXP_ENEMY_Sha invaders|r
+    #label Ancient Mantras
+    >>Interact with |cRXP_FRIENDLY_Yu'lon Adept|r and |cRXP_FRIENDLY_Yu'lon Guardian|r to deliver mantras
+    .complete 30066,1 --6/6 Ancient Mantras delivered
+    .use 77475
+    .target Yu'lon Adept
+    .target Yu'lon Guardian
+step
+    #completewith Defender's Arrow
+    .isOnQuest 30006
+    >>Kill |cRXP_ENEMY_Lingering Doubts|r and |cRXP_ENEMY_Final Doubts.|r
     .complete 30006,1 --15/15 Sha invaders slain
-    .mob Sha invaders
+    .mob Lingering Doubt
+    .mob Final Doubt
+step
+    #completewith Defender's Arrow
+    .isOnQuest 30063
+    >>Kill |cRXP_ENEMY_Lingering Doubt|r and |cRXP_ENEMY_Final Doubt.|r Loot them for |cRXP_LOOT_Mask of Doubt.|r
+    .complete 30063,1 --8/8 Mask of Doubt
+    .mob Lingering Doubt
+    .mob Final Doubt
+step
+    #label Defender's Arrow
+    .isOnQuest 30065
+    >>Click on |cRXP_PICK_Arrows|r
+    .complete 30065,1 --8/8 Defender's Arrow
+step
+    #completewith Ancient Sutra
+    .isOnQuest 30006
+    >>Kill |cRXP_ENEMY_Lingering Doubt|r and |cRXP_ENEMY_Final Doubt|r
+    .complete 30006,1 --15/15 Sha invaders slain
+    .mob Lingering Doubt
+    .mob Final Doubt
+step
+    #completewith Ancient Sutra
+    .isOnQuest 30063
+    >>Kill |cRXP_ENEMY_Lingering Doubt|r and |cRXP_ENEMY_Final Doubt.|r Loot them for |cRXP_LOOT_Mask of Doubt.|r
+    .complete 30063,1 --8/8 Mask of Doubt
+    .mob Lingering Doubt
+    .mob Final Doubt
+step
+    #label Ancient Sutra
+    .isOnQuest 30064
+    >>Click on the |cRXP_PICK_Books|r
+    .complete 30064,1 --6/6 Ancient Sutra
+step
+    #completewith next
+    .isOnQuest 30063
+    >>Kill |cRXP_ENEMY_Lingering Doubt|r and |cRXP_ENEMY_Final Doubt.|r Loot them for |cRXP_LOOT_Mask of Doubt.|r
+    .complete 30063,1 --8/8 Mask of Doubt
+    .mob Lingering Doubt
+    .mob Final Doubt
+step
+    .isOnQuest 30006
+    >>Kill |cRXP_ENEMY_Lingering Doubt|r and |cRXP_ENEMY_Final Doubt|r
+    .complete 30006,1 --15/15 Sha invaders slain
+    .mob Lingering Doubt
+    .mob Final Doubt
+step
+    #label AugustLoop1
+    .isOnQuest 30063
+    >>Kill |cRXP_ENEMY_Lingering Doubt|r and |cRXP_ENEMY_Final Doubt.|r Loot them for |cRXP_LOOT_Mask of Doubt.|r
+    .complete 30063,1 --8/8 Mask of Doubt
+    .mob Lingering Doubt
+    .mob Final Doubt
+step
+    .reputation 1269,revered,<0,1
+    .goto 371,53.90,61.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Sage Tai-Feng|r
+    .dailyturnin 30006 >>Turn in The Darkness Around Us
+    .target Elder Sage Tai-Feng
 step
     .goto 371,53.90,61.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Sage Tai-Feng|r
-    .turnin 30006 >>Turn in Arrows of Fortune
+    .dailyturnin 30066 >>Turn in Hidden Power
     .target Elder Sage Tai-Feng
-    .turnin 30066 >>Turn in Arrows of Fortune
-
-    .turnin 30065 >>Turn in Arrows of Fortune
-
-    .accept 30067 >>Accept The Shadow of Doubt
 step
-    .goto 371,57.53,62.36
+    .goto 371,53.90,61.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Sage Tai-Feng|r
+    .dailyturnin 30065 >>Turn in Arrows of Fortune
+    .target Elder Sage Tai-Feng
+step
+    .goto 371,53.8,61.8
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Sage Storm-Sing|r
+    .dailyturnin 30064 >>Turn in Saving the Sutras
+    .target Elder Sage Storm-Sing
+step
+    .goto 371,53.90,61.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Sage Tai-Feng|r
+    .accept 30067 >>Accept The Shadow of Doubt
+    .accept 30068 >>Accept Flames of the Void
+    .target Elder Sage Tai-Feng
+step
+    .isOnQuest 30067
+    .goto 371,57.53,62.26
     >>Kill |cRXP_ENEMY_Shadow of Doubt|r
     .complete 30067,1 --1/1 Shadow of Doubt slain
     .mob Shadow of Doubt
 step
-    .goto 371,53.91,61.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Sage Tai-Feng|r
-    .turnin 30067 >>Turn in The Shadow of Doubt
-    .target Elder Sage Tai-Feng
-
-
-    SET2
-    step
-    .goto 371,53.92,61.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Sage Tai-Feng|r
-    .accept 30066 >>Accept Hidden Power
-    .target Elder Sage Tai-Feng
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Sage Storm-Sing|r
-    .accept 30064 >>Accept Saving the Sutras
-    .target Elder Sage Storm-Sing
-    .accept 30063 >>Accept Behind the Masks
+    .isOnQuest 30068
+    #completewith next
+    .goto 371,54.13,60.87
+    .vehicle >>Interact with the |cRXP_FRIENDLY_War Serpent|r
+    .target War Serpent
 step
-    .goto 371,53.89,54.57
-    .complete 30063,1 --8/8 Mask of Doubt
-    .complete 30066,1 --6/6 Ancient Mantras delivered
-step
-    .goto 371,54.93,51.21
-    .complete 30064,1 --6/6 Ancient Sutra
-step
-    .goto 371,53.89,61.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Sage Storm-Sing|r
-    .turnin 30063 >>Turn in Behind the Masks
-    .target Elder Sage Storm-Sing
-    .turnin 30064 >>Turn in Saving the Sutras
-
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Sage Tai-Feng|r
-    .turnin 30066 >>Turn in Hidden Power
-    .target Elder Sage Tai-Feng
-    .accept 30068 >>Accept Flames of the Void
-step
-    .goto 371,55.57,54.36
+    .isOnQuest 30068
+    #loop
+    .goto 371,52.32,57.21,30,0
+    .goto 371,53.95,57.25,30,0
+    .goto 371,52.87,55.57,30,0
+    .goto 371,54.45,55.66,30,0
+    .goto 371,54.27,53.43,30,0
+    .goto 371,54.62,52.25,30,0
+    .goto 371,55.75,52.3,30,0
+    .goto 371,55.07,53.91,30,0
+    >>Fly close to water pools to pick up water, then use the |cRXP_WARN_(1)|r|T135975:0|t[Water Cannon] on smoky void fissures. repeat.
     .complete 30068,1 --6/6 Void Flames doused
 step
-    .goto 371,53.91,61.94
+    .isOnQuest 30067
+    .goto 371,53.91,61.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Sage Tai-Feng|r
-    .turnin 30068 >>Turn in Flames of the Void
+    .dailyturnin 30067 >>Turn in The Shadow of Doubt
+    .target Elder Sage Tai-Feng
+step
+    .isOnQuest 30068
+    .goto 371,53.91,61.96
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Sage Tai-Feng|r
+    .dailyturnin 30068 >>Turn in Flames of the Void
     .target Elder Sage Tai-Feng
 ]])
 
@@ -591,9 +692,9 @@ RXPGuides.RegisterGuide([[
 
 
 step
+    .areapoiexists 379,7734,7735,7736,7737
     .goto 379,67.24,55.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
-    .turnin 80431 >>Turn in Aid the August Celestials
     .target Xuen
     .accept 31517 >>Accept Contending With Bullies
     .accept 30879 >>Accept Round 1: Brewmaster Chani
@@ -646,9 +747,87 @@ step
 
 
 
+
+    --August Celestial Xuen
+step
+    .goto 379,67.24,55.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
+    .accept 31517 >>Accept Contending With Bullies
+    .accept 30879 >>Accept Round 1: Brewmaster Chani
+    .target Xuen
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shonuf|r
+    .target Shonuf
+step
+    .goto 379,71.09,55.93
+    >>Kill |cRXP_ENEMY_Shonuf|r
+    .complete 31517,1 --1/1 Shonuf slain
+    .mob Shonuf
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brewmaster Chani|r
+    .target Brewmaster Chani
+step
+    .goto 379,70.96,51.82
+    >>Kill |cRXP_ENEMY_Brewmaster Chani|r
+    .complete 30879,1 --1/1 Defeat Brewmaster Chani
+    .mob Brewmaster Chani
+step
+    .goto 379,70.28,51.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
+    .turnin 30879 >>Turn in Round 1: Brewmaster Chani
+    .accept 30881 >>Accept Round 2: Clever Ashyo & Ken-Ken
+    .turnin 31517 >>Turn in Contending With Bullies
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken-Ken|r
+    .target Ken-Ken
+step
+    .goto 379,71.67,45.35
+    >>Kill |cRXP_ENEMY_Ken-Ken|r and |cRXP_ENEMY_Clever Ashyo|r
+    .complete 30881,2 --1/1 Defeat Ken-Ken
+    .complete 30881,1 --1/1 Defeat Clever Ashyo
+    .mob Ken-Ken
+    .mob Clever Ashyo
+step
+    .goto 379,71.76,44.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
+    .turnin 30881 >>Turn in Round 2: Clever Ashyo & Ken-Ken
+    .accept 30883 >>Accept Round 3: The Wrestler
+    .target Xuen
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrestler|r
+    .target Wrestler
+step
+    .goto 379,66.74,46.53
+    >>Kill |cRXP_ENEMY_Wrestler|r
+    .complete 30883,1 --1/1 Defeat The Wrestler
+    .mob Wrestler
+step
+    .goto 379,66.39,46.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
+    .turnin 30883 >>Turn in Round 3: The Wrestler
+    .accept 30907 >>Accept Round 4: The P.U.G.
+    .target Xuen
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tankiss|r
+    .target Tankiss
+step
+    .goto 379,69.02,43.76
+    .complete 30907,3 --1/1 Defeat Tankiss
+    .complete 30907,1 --1/1 Defeat Hackiss
+    .complete 30907,2 --1/1 Defeat Healiss
+step
+    .goto 379,68.49,44.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
+    .turnin 30907 >>Turn in Round 4: The P.U.G.
+    .target Xuen
+
+
+
+
 ]])
 
 -- August Celestial Dailies: Townlong
+
 RXPGuides.RegisterGuide([[
 #df
 #version 1
@@ -656,213 +835,110 @@ RXPGuides.RegisterGuide([[
 #name X) August Celestial Daillies
 #internal
 
+
 step
-    .goto 388,38.90,62.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Adept Paosha|r
-    .accept 30955 >>Accept Paying Tribute
-    .target High Adept Paosha
-step
-    .goto 388,39.33,62.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ogo the Younger|r
-    .accept 30954 >>Accept A Blade is a Blade
-    .target Ogo the Younger
-step
+    .areapoiexists 388,7734,7735,7736,7737
+    #loop
+    .goto 388,38.90,62.75,10,0
+    .goto 388,39.33,62.22,10,0
     .goto 388,39.14,62.05
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yak-Keeper Kyana|r
-    .accept 30953 >>Accept Fallen Sentinels
+    .goto 388,39.40,61.98
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Adept Paosha|r, |cRXP_FRIENDLY_Ogo the Younger|r, |cRXP_FRIENDLY_Yak-Keeper Kyana|r, |cRXP_FRIENDLY_Sentinel Commander Qipan|r and |cRXP_FRIENDLY_Ogo the Elder|r
+    .questcount <4,30955,30954,30953,30957,30956,30952,30959,30958  >>|cRXP_WARN_Get all the Daillies|r
+    .target High Adept Paosha
+    .target Ogo the Younger
     .target Yak-Keeper Kyana
-step
-    .goto 388,39.35,62.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ogo the Elder|r
-    .turnin 31383 >>Turn in Defense At Niuzao Temple
+    .target Sentinel Commander Qipan
     .target Ogo the Elder
-    .accept 30952 >>Accept The Unending Siege
+
+
 step
-    .goto 388,41.36,58.39
+    .isOnQuest 30952
     >>Kill |cRXP_ENEMY_Sra'thik attacker|r
     .complete 30952,1 --12/12 Sra'thik attacker slain
     .mob Sra'thik attacker
 step
-    .goto 388,41.80,57.85
+    .isOnQuest 30956
+    >>Kill |cRXP_ENEMY_Sra'thik attacker|r
+    .complete 30956,1 --25/25 Sra'thik attacker slain
+    .mob Sra'thik attacker
+
+step
+    .isOnQuest 30954
     .complete 30954,1 --10/10 Sra'thik Weapon
 step
-    .goto 388,40.43,58.80
+    .isOnQuest 30955
     .complete 30955,1 --6/6 Gather Food for Niuzao
+
+
+
 step
-    .goto 388,41.86,59.42
+    .isOnQuest 30957
+    >>Kill |cRXP_ENEMY_Sra'thik Kunchong|r
+    .complete 30957,1 --4/4 Sra'thik Kunchong slain
+    .mob Sra'thik Kunchong
+step
+    .isOnQuest 30953
     .complete 30953,1 --8/8 Niuzao Sentinel healed
+
+
 step
+    .isOnQuest 30958
+    >>Click on |cRXP_PICK_Bricks|r
+    .complete 30958,1 --10/10 Loose Brick
+step
+    .isOnQuest 30959
+    .complete 30959,1 --3/3 Sra'thik War Wagon exploded
+
+
+step
+    .isOnQuest 30955
+    .goto 388,38.91,62.72
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Adept Paosha|r
+    .turnin 30955 >>Turn in Paying Tribute
+    .target High Adept Paosha
+step
+    .isOnQuest 30954
     .goto 388,39.33,62.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ogo the Younger|r
     .turnin 30954 >>Turn in A Blade is a Blade
     .target Ogo the Younger
+step
+    .isOnQuest 30952
+    .goto 388,39.2,62.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ogo the Elder|r
     .turnin 30952 >>Turn in The Unending Siege
     .target Ogo the Elder
 step
+    .isOnQuest 30956
+    .goto 388,39.2,62.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ogo the Elder|r
+    .turnin 30956 >>Turn in The Siege Swells
+    .target Ogo the Elder
+step
+    .isOnQuest 30953
     .goto 388,39.16,62.07
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yak-Keeper Kyana|r
     .turnin 30953 >>Turn in Fallen Sentinels
     .target Yak-Keeper Kyana
 step
-    .goto 388,38.91,62.72
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Adept Paosha|r
-    .turnin 30955 >>Turn in Paying Tribute
-    .target High Adept Paosha
---- SET 2 ---
-
-
-step
-    .goto 422,54.26,35.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaz'tik the Manipulator|r
-    .accept 31506 >>Accept Shackles of Manipulation
-    .target Kaz'tik the Manipulator
-step
-    .goto 422,54.36,35.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rik'kal the Dissector|r
-    .accept 31509 >>Accept Fear Takes Root
-    .target Rik'kal the Dissector
-    .accept 31508 >>Accept Specimen Request
-step
-    .goto 422,54.30,36.12
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korven the Prime|r
-    .accept 31507 >>Accept Meltdown
-    .target Korven the Prime
-step
-    .goto 422,29.99,73.05
-    .complete 31508,1 --6/6 Kyparite Shards
-step
-    .goto 422,22.20,75.78
-    >>Kill |cRXP_ENEMY_Zan'thik Amberhusk|r
-    .complete 31507,1 --6/6 Zan'thik Amberhusk slain
-    .mob Zan'thik Amberhusk
-step
-    .goto 422,28.46,71.80
-    .complete 31509,1 --15/15 Dreadspore Bulbs destroyed
-step
-    .goto 422,32.34,78.35
-    .complete 31506,1 --6/6 Zan'thik Shackles
-step
-    .goto 422,54.32,36.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korven the Prime|r
-    .turnin 31507 >>Turn in Meltdown
-    .target Korven the Prime
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rik'kal the Dissector|r
-    .turnin 31509 >>Turn in Specimen Request
-    .target Rik'kal the Dissector
-    .turnin 31508 >>Turn in Specimen Request
-
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaz'tik the Manipulator|r
-    .turnin 31506 >>Turn in Shackles of Manipulation
-    .target Kaz'tik the Manipulator
-    .accept 31808 >>Accept Rampage Against the Machine
-step
-    .goto 422,50.82,41.26
-    .complete 31808,1 --1/1 Locate Kovok near the Clutches of Shek'zeer
-step
-    .goto 422,45.09,29.26
-    >>Kill |cRXP_ENEMY_Mantid|r
-    .complete 31808,2 --200/200 Mantid slain
-    .mob Mantid
-step
-    .goto 422,54.25,35.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaz'tik the Manipulator|r
-    .turnin 31808 >>Turn in Rampage Against the Machine
-    .target Kaz'tik the Manipulator
-step
-    .goto 388,39.40,61.98
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Commander Qipan|r
-    .turnin 80430 >>Turn in Aid the August Celestials
-    .target Sentinel Commander Qipan
-    .accept 30957 >>Accept The Overwhelming Swarm
-step
-    .goto 388,39.32,62.25
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ogo the Younger|r
-    .accept 30959 >>Accept The Big Guns
-    .target Ogo the Younger
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ogo the Elder|r
-    .accept 30956 >>Accept The Siege Swells
-    .target Ogo the Elder
-step
-    .goto 388,38.81,62.39
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Adept Paosha|r
-    .accept 30958 >>Accept In Battle's Shadow
-    .target High Adept Paosha
-step
-    .goto 388,41.46,59.83
-    >>Kill |cRXP_ENEMY_Sra'thik attacker|r
-    .complete 30956,1 --25/25 Sra'thik attacker slain
-    .mob Sra'thik attacker
-step
-    .goto 388,40.26,60.67
-    >>Kill |cRXP_ENEMY_Sra'thik Kunchong|r
-    .complete 30957,1 --4/4 Sra'thik Kunchong slain
-    .mob Sra'thik Kunchong
-step
-    .goto 388,42.51,61.70
-    .complete 30958,1 --10/10 Loose Brick
-step
-    .goto 388,42.82,63.15
-    .complete 30959,1 --3/3 Sra'thik War Wagon exploded
-step
+    .isOnQuest 30957
     .goto 388,39.41,61.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Commander Qipan|r
     .turnin 30957 >>Turn in The Overwhelming Swarm
     .target Sentinel Commander Qipan
-    .turnin 80430 >>Turn in Aid the August Celestials
-
 step
+    .isOnQuest 30959
     .goto 388,39.33,62.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ogo the Younger|r
     .turnin 30959 >>Turn in The Big Guns
     .target Ogo the Younger
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ogo the Elder|r
-    .turnin 30956 >>Turn in The Siege Swells
-    .target Ogo the Elder
 step
+    .isOnQuest 30958
     .goto 388,39.16,62.09
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yak-Keeper Kyana|r
     .turnin 30958 >>Turn in In Battle's Shadow
     .target Yak-Keeper Kyana
-
-
-step
-    .goto 388,43.86,65.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ku-Mo|r
-    .accept 30931 >>Accept My Father's Crossbow
-    .target Ku-Mo
-step
-    .goto 388,38.70,65.41
-    .complete 30931,1 --1/1 Father's Crossbow
-step
-    .goto 388,43.89,65.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ku-Mo|r
-    .turnin 30931 >>Turn in My Father's Crossbow
-    .target Ku-Mo
-
-step
-    .goto 388,39.42,61.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Commander Qipan|r
-    .accept 30932 >>Accept Father's Footsteps
-    .target Sentinel Commander Qipan
-step
-    .goto 388,39.24,61.19
-    .complete 30932,4 --1/1 Find Sentinel Yalo
-step
-    .goto 388,37.56,61.35
-    .complete 30932,2 --1/1 Find Father's Shield
-step
-    .goto 388,37.37,60.93
-    .complete 30932,1 --1/1 Find Father's Bedroll
-step
-    .goto 388,37.64,63.89
-    .complete 30932,3 --1/1 Find Ha-Cha
-step
-    .goto 388,39.45,61.92
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ku-Mo|r
-    .turnin 30932 >>Turn in Father's Footsteps
-    .target Ku-Mo
-
 ]])
 
 -- August Celestial Dailies: Krasarang
@@ -874,52 +950,264 @@ RXPGuides.RegisterGuide([[
 #internal
 
 step
-    .goto 418,31.34,63.44
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thelonius|r
-    .accept 30718 >>Accept Students of Chi-Ji
-    .target Thelonius
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kuo-Na Quillpaw|r
-    .accept 30716 >>Accept Chasing Hope
-    .target Kuo-Na Quillpaw
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yan Quillpaw|r
-    .accept 30717 >>Accept Gifts of the Great Crane
-    .target Yan Quillpaw
+    .areapoiexists 418,7734,7735,7736,7737
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thelonius,|r |cRXP_FRIENDLY_Kuo-Na Quillpaw|r and |cRXP_FRIENDLY_Yan Quillpaw|r
+    .daily 30718 >>Accept Students of Chi-Ji
+    .goto 418,31.35,63.44
+    .target +Thelonius
+    .daily 30716 >>Accept Chasing Hope
+    .goto 418,31.14,63.56
+    .target +Kuo-Na Quillpaw
+    .daily 30717 >>Accept Gifts of the Great Crane
+    .goto 418,31.52,63.75
+    .target +Yan Quillpaw
 step
-    .goto 418,33.20,80.65
+    #hidewindow
+    #completewith Gift of the Great Crane
+    #loop
+    .goto 418,30.61,66.15,40,0
+    .goto 418,30.4,68.7,40,0
+    .goto 418,30.12,71.67,40,0
+    .goto 418,30.79,76.26,40,0
+    .goto 418,32.65,76.13,40,0
+    .goto 418,33.65,79.76,40,0
+    .goto 418,35.98,78.81,40,0
+    .goto 418,36.35,73.26,40,0
+    .goto 418,33.87,69.19,40,0
+    +1
+step
+    #completewith Spirit of the Crane found
+    >>Click on |cRXP_PICK_Feathers|r
     .complete 30717,1 --10/10 Gift of the Great Crane
 step
-    .goto 418,33.88,79.47
+    #completewith Spirit of the Crane found
+    >>Kill |cRXP_ENEMY_Student of Chi-Ji|r
     .complete 30718,1 --10/10 Student of Chi-Ji dueled
+    .mob Student of Chi-Ji
 step
-    .goto 418,32.50,69.62
+    #label Spirit of the Crane found
+    >>There are ghost cranes roaming this area; run into them.
     .complete 30716,1 --3/3 Spirit of the Crane found
 step
-    .goto 418,31.33,63.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thelonius|r
-    .turnin 30718 >>Turn in Students of Chi-Ji
-    .target Thelonius
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kuo-Na Quillpaw|r
-    .turnin 30716 >>Turn in Chasing Hope
-    .target Kuo-Na Quillpaw
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yan Quillpaw|r
-    .turnin 30717 >>Turn in Gifts of the Great Crane
-    .target Yan Quillpaw
+    #completewith next
+    >>Click on |cRXP_PICK_Feathers|r
+    .complete 30717,1 --10/10 Gift of the Great Crane
+step
+    >>Kill |cRXP_ENEMY_Student of Chi-Ji|r
+    .complete 30718,1 --10/10 Student of Chi-Ji dueled
+    .mob Student of Chi-Ji
+step
+    #label Gift of the Great Crane
+    >>Click on |cRXP_PICK_Feathers|r
+    .complete 30717,1 --10/10 Gift of the Great Crane
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thelonius,|r |cRXP_FRIENDLY_Kuo-Na Quillpaw|r and |cRXP_FRIENDLY_Yan Quillpaw|r
+    .dailyturnin 30718 >>Turn in Students of Chi-Ji
+    .target +Thelonius
+    .dailyturnin 30716 >>Turn in Chasing Hope
+    .target +Kuo-Na Quillpaw
+    .dailyturnin 30717 >>Turn in Gifts of the Great Crane
+    .target +Yan Quillpaw
 step
     .goto 418,31.34,63.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thelonius|r
-    .turnin 80433 >>Turn in Aid the August Celestials
+    .daily 30725,30725,30728,30729,30730,30731,30732,30733,30734,30735,30736,30737,30738,30739
+    -- .accept 30725 >>Accept Ellia Ravenmane
+    -- .accept 30728 >>Accept Fat Long-Fat
+    -- .accept 30729 >>Accept Julia Bates
+    -- .accept 30730 >>Accept Dextrous Izissha
+    -- .accept 30731 >>Accept Kuo-Na Quillpaw
+    -- .accept 30732 >>Accept Ellia Ravenmane: Revenge
+    -- .accept 30733 >>Accept Tukka-Tuk
+    -- .accept 30734 >>Accept Huck Wheelbarrow
+    -- .accept 30735 >>Accept Mindel Sunspeaker
+    -- .accept 30736 >>Accept Yan Quillpaw
+    -- .accept 30737 >>Accept Fat Long-Fat: Rematch
+    -- .accept 30738 >>Accept Thelonius
+    -- .accept 30739 >>Accept Ellia Ravenmane: Redemption
     .target Thelonius
-    .accept 30725 >>Accept Ellia Ravenmane
 step
-    .goto 418,31.84,71.11
+    .isOnQuest 30725
+    .goto 418,31.8,71.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ellia Ravenmane|r and kill |cRXP_ENEMY_Ellia Ravenmane|r
     .complete 30725,1 --1/1 Ellia Ravenmane defeated
+    .skipgossip
+    .target Ellia Ravenmane
+    .mob Ellia Ravenmane
 step
-    .goto 418,31.34,63.43
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thelonius|r
-    .turnin 30725 >>Turn in Ellia Ravenmane
+    .isOnQuest 30728
+    .goto 418,32.0,70.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fat Long-Fat|r and kill |cRXP_ENEMY_Fat Long-Fat|r
+    .complete 30728,1 --1/1 Fat Long-Fat defeated
+    .skipgossip
+    .target Fat Long-Fat
+    .mob Fat Long-Fat
+step
+    .isOnQuest 30729
+    .goto 418,28.8,75.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Julia Bates|r and kill |cRXP_ENEMY_Julia Bates|r
+    .complete 30729,1 --1/1 Julia Bates defeated
+    .skipgossip
+    .target Julia Bates
+    .mob Julia Bates
+step
+    .isOnQuest 30730
+    .goto 418,31.6,80.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dextrous Izissha|r and kill |cRXP_ENEMY_Dextrous Izissha|r
+    .complete 30730,1 --1/1 Dextrous Izissha defeated
+    .skipgossip
+    .target Dextrous Izissha
+    .mob Dextrous Izissha
+step
+    .isOnQuest 30731
+    .goto 418,36.6,74.8
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kuo-Na Quillpaw|r and kill |cRXP_ENEMY_Kuo-Na Quillpaw|r
+    .complete 30731,1 --1/1 Kuo-Na Quillpaw defeated
+    .skipgossip
+    .target Kuo-Na Quillpaw
+    .mob Kuo-Na Quillpaw
+step
+    .isOnQuest 30732
+    .goto 418,34.6,83.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ellia Ravenmane|r and kill |cRXP_ENEMY_Ellia Ravenmane|r
+    .complete 30732,1 --1/1 Ellia Ravenmane defeated
+    .skipgossip
+    .target Ellia Ravenmane
+    .mob Ellia Ravenmane
+step
+    .isOnQuest 30733
+    .goto 418,34.0,75.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tukka-Tuk|r and kill |cRXP_ENEMY_Tukka-Tuk|r
+    .complete 30733,1 --1/1 Tukka-Tuk defeated
+    .skipgossip
+    .target Tukka-Tuk
+    .mob Tukka-Tuk
+step
+    .isOnQuest 30734
+    .goto 418,27.8,70.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Huck Wheelbarrow|r and kill |cRXP_ENEMY_Huck Wheelbarrow|r
+    .complete 30734,1 --1/1 Huck Wheelbarrow defeated
+    .skipgossip
+    .target Huck Wheelbarrow
+    .mob Huck Wheelbarrow
+step
+    .isOnQuest 30735
+    .goto 418,32.0,70.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mindel Sunspeaker|r and kill |cRXP_ENEMY_Mindel Sunspeaker|r
+    .complete 30735,1 --1/1 Mindel Sunspeaker defeated
+    .skipgossip
+    .target Mindel Sunspeaker
+    .mob Mindel Sunspeaker
+step
+    .isOnQuest 30736
+    .goto 418,36.6,76.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yan Quillpaw|r and kill |cRXP_ENEMY_Yan Quillpaw|r
+    .complete 30736,1 --1/1 Yan Quillpaw defeated
+    .skipgossip
+    .target Yan Quillpaw
+    .mob Yan Quillpaw
+step
+    .isOnQuest 30737
+    .goto 418,34.8,82.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fat Long-Fat|r and kill |cRXP_ENEMY_Fat Long-Fat|r
+    .complete 30737,1 --1/1 Fat Long-Fat defeated
+    .skipgossip
+    .target Fat Long-Fat
+    .mob Fat Long-Fat
+step
+    .isOnQuest 30738
+    .goto 418,28.8,72.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thelonius|r and kill |cRXP_ENEMY_Thelonius|r
+    .complete 30738,1 --1/1 Thelonius defeated
+    .skipgossip
     .target Thelonius
-
-
+    .mob Thelonius
+step
+    .isOnQuest 30739
+    .goto 418,36.2,75.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ellia Ravenmane|r and kill |cRXP_ENEMY_Ellia Ravenmane|r
+    .complete 30739,1 --1/1 Ellia Ravenmane defeated
+    .skipgossip
+    .target Ellia Ravenmane
+    .mob Ellia Ravenmane
+step
+    .isOnQuest 30725
+    .goto 418,31.34,63.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thelonius|r
+    .dailyturnin 30725 >>Turn in Ellia Ravenmane
+    .target Thelonius
+step
+    .isOnQuest 30728
+    .goto 418,31.34,63.44
+    .target Thelonius
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thelonius|r
+    .dailyturnin 30728 >>Turn in Fat Long-Fat
+step
+    .isOnQuest 30729
+    .goto 418,31.34,63.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thelonius|r
+    .dailyturnin 30729 >>Turn in Julia Bates
+    .target Thelonius
+step
+    .isOnQuest 30730
+    .goto 418,31.34,63.44
+    .target Thelonius
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thelonius|r
+    .dailyturnin 30730 >>Turn in Dextrous Izissha
+step
+    .isOnQuest 30731
+    .goto 418,31.34,63.44
+    .target Thelonius
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thelonius|r
+    .dailyturnin 30731 >>Turn in Kuo-Na Quillpaw
+step
+    .isOnQuest 30732
+    .goto 418,31.34,63.44
+    .target Thelonius
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thelonius|r
+    .dailyturnin 30732 >>Turn in Ellia Ravenmane: Revenge
+step
+    .isOnQuest 30733
+    .goto 418,31.34,63.44
+    .target Thelonius
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thelonius|r
+    .dailyturnin 30733 >>Turn in Tukka-Tuk
+step
+    .isOnQuest 30734
+    .goto 418,31.34,63.44
+    .target Thelonius
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thelonius|r
+    .dailyturnin 30734 >>Turn in Huck Wheelbarrow
+step
+    .isOnQuest 30735
+    .goto 418,31.34,63.44
+    .target Thelonius
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thelonius|r
+    .dailyturnin 30735 >>Turn in Mindel Sunspeaker
+step
+    .isOnQuest 30736
+    .goto 418,31.34,63.44
+    .target Thelonius
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thelonius|r
+    .dailyturnin 30736 >>Turn in Yan Quillpaw
+step
+    .isOnQuest 30737
+    .goto 418,31.34,63.44
+    .target Thelonius
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thelonius|r
+    .dailyturnin 30737 >>Turn in Fat Long-Fat: Rematch
+step
+    .isOnQuest 30738
+    .goto 418,31.34,63.44
+    .target Thelonius
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thelonius|r
+    .dailyturnin 30738 >>Turn in Thelonius
+step
+    .isOnQuest 30739
+    .goto 418,31.34,63.44
+    .target Thelonius
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thelonius|r
+    .dailyturnin 30739 >>Turn in Ellia Ravenmane: Redemption
 ]])
 
 -- Domination Point Dailies Horde
@@ -1154,218 +1442,471 @@ RXPGuides.RegisterGuide([[
 #name X) Landfall Daillies Alliance
 #internal
 
-
----SET1---
+--Ruins of Ogudei
+-- step
+--     .goto 418,89.70,33.09
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Troteman|r
+--     .accept 32116 >>Accept Priorities, People!
+--     .target Marshal Troteman
 step
-    .goto 418,89.66,32.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mishka|r
-    .accept 32150 >>Accept Supply Block
-    .target Mishka
-    .accept 32149 >>Accept Resource Gathering
+    #loop
+    #label startlandfall1
+    .goto 418,89.70,33.09,10,0
+    .goto 418,89.79,32.43,10,0
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Troteman|r and |cRXP_FRIENDLY_Amber Kearnen.|r
+    .questcount <1,32116,32451,32452 >>|cRXP_WARN_Get the Landfall Starting Daily|r
 step
-    .goto 418,89.69,33.08
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Troteman|r
-    .accept 32153 >>Accept Hero Killer
-    .target Marshal Troteman
-    .accept 32151 >>Accept Tower Defense
-    .accept 32148 >>Accept Attack! Move!
+    .isOnQuest 32116
+    .goto 419,30.20,27.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hilda Hornswaggle|r
+    .dailyturnin 32116 >>Turn in Priorities, People!
+    .target Hilda Hornswaggle
 step
-    .goto 418,79.16,27.32
-    >>Kill |cRXP_ENEMY_Horde Hero|r
-    .complete 32153,1 --1/1 Horde Hero slain
-    .mob Horde Hero
+    .isQuestTurnedIn 32116
+    .goto 419,30.20,27.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hilda Hornswaggle|r
+    .target Hilda Hornswaggle
+    .daily 32347 >>Accept Eviction Notice
+    .daily 32346 >>Accept Oi Ain't Afraid o' No Ghosts!
+    .daily 32122 >>Accept Ogudei's Lieutenants
+    .daily 32121 >>Accept The Spirit Trap
+    .daily 32115,32119 >>Accept Shackles of the Past or It Is A Mystery
 step
-    .goto 418,76.90,22.55
-    .complete 32149,1 --12/12 Lion's Landing Lumber
+    .isOnQuest 32347
+    .goto 419,39.81,16.62,15,0
+    .goto 419,57.57,37.52,20 >> Enter the Mine
 step
-    .goto 418,77.22,22.10
-    >>Kill |cRXP_ENEMY_Dominance Shaman or Raider|r
-    .complete 32148,1 --12/12 Dominance Shaman or Raider slain
-    .mob Dominance Shaman or Raider
+    .isOnQuest 32346,32121
+    #completewith Reliquary Area
+    >>Kill |cRXP_ENEMY_Spiritbound Mogu's|r and |cRXP_ENEMY_Spirit Traps.|r
+    .complete 32346,1 --12/12 Spiritbound Mogu slain
+    .complete 32121,1 --3/3 Spirit Trap destroyed
+    .mob Spiritbound Mogu
+    .mob Spiritbound Arcanist
+    .mob Spiritbound Brutalizer
+    .mob Spirit Trap
 step
-    .goto 418,76.06,18.93
-    .complete 32151,1 --20/20 Animatable Stone
+    .isOnQuest 32115
+    #completewith Reliquary Area
+    >>Kill |cRXP_ENEMY_Troubled Slave Spirits|r to free them.
+    .complete 32115,1 --14/14 Troubled Slave Spirits released
+    .mob Troubled Slave Spirit
 step
-    .goto 418,77.85,30.09
-    .complete 32150,1 --8/8 Domination Point Supplies destroyed
+    .isOnQuest 32119
+    .goto 421,74.86,14.23
+    >>|cRXP_WARN_Follow the Arrow|r
+    .complete 32119,1 --1/1 Anomaly dispersed
 step
-    .goto 418,89.66,32.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mishka|r
-    .turnin 32150 >>Turn in Supply Block
-    .target Mishka
-    .turnin 32149 >>Turn in Resource Gathering
-
+    .isOnQuest 32122
+    #completewith next
+    .goto 421,74.86,14.23,20,0
+    .goto 421,95.99,47.12,10,0
+    .goto 420,78.86,52.69,10,0
+    .goto 420,76.78,63.49,10  >> Enter the Boss Domain
 step
-    .goto 418,89.67,33.08
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Troteman|r
-    .turnin 32153 >>Turn in Hero Killer
-    .target Marshal Troteman
-    .turnin 32148 >>Turn in Tower Defense
-
-    .turnin 32151 >>Turn in Tower Defense
----SET2---
-
+    .isOnQuest 32122
+    .goto 420,68.66,78.64
+    >>Kill |cRXP_ENEMY_Gen-li, Twister of Words|r and |cRXP_ENEMY_Meng-do, Strength of Mountains|r
+    .complete 32122,1 --1/1 Gen-li, Twister of Words slain
+    .complete 32122,2 --1/1 Meng-do, Strength of Mountains slain
+    .mob Meng-do, Strength of Mountains
+    .mob Gen-li, Twister of Words
 step
-    .goto 418,89.82,32.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amber Kearnen|r
-    .accept 32451 >>Accept Send A Message
-    .target Amber Kearnen
-
-
+    .isOnQuest 32122
+    .goto 420,76.78,63.49,10,0
+    .goto 420,78.86,52.69,10,0
+    .goto 421,95.99,47.12,10 >> Leave the Boss Domain
 step
+    .isOnQuest 32347
+    #completewith next
+    #label Reliquary Area
+    .goto 421,80.8,83.47
+    .goto 421,58.81,84.44
+    .goto 421,68.68,45.48,10 >> Enter the Reliquary Area
+step
+    .isOnQuest 32347
+    #loop
+    .goto 421,80.56,52.81,20,0
+    .goto 421,51.78,48.62,20,0
+    .goto 421,33.68,37.72,20,0
+    .goto 421,42.83,74.62,20,0
+    >>Kill |cRXP_ENEMY_Reliquary Blood Knights|r |cRXP_ENEMY_Knights|r and |cRXP_ENEMY_Scouts.|r
+    .complete 32347,1 --10/10 Reliquary slain
+    .mob Reliquary Blood Knight
+    .mob Reliquary Scout
+    .mob Reliquary Mage
+step
+    .isOnQuest 32347
+    #completewith next
+    .goto 421,80.13,44.45,20,0
+    .goto 421,75.28,23.51,20,0
+    .goto 421,68.68,45.48,10 >> Leave the Reliquary Area
+step
+    .isOnQuest 32346,32121
+    #hidewindow
+    #completewith Spirit Trap destroyed
+    #loop
+    .goto 421,40.73,29.01,20,0
+    .goto 420,48.61,15.97,20,0
+    .goto 421,59.56,1.41,20,0
+    .goto 420,73.16,16.77,20,0
+    .goto 421,90,48.12,20,0
+    .goto 421,86.81,78.17,20,0
+    .goto 421,70.78,86.37,20,0
+    .goto 421,57.26,91.21,20,0
+    +1
+step
+    .isOnQuest 32346,32121
+    #completewith next
+    >>Kill |cRXP_ENEMY_Spiritbound Mogu's|r and |cRXP_ENEMY_Spirit Traps.|r
+    .complete 32346,1 --12/12 Spiritbound Mogu slain
+    .complete 32121,1 --3/3 Spirit Trap destroyed
+    .mob Spiritbound Mogu
+    .mob Spiritbound Arcanist
+    .mob Spiritbound Brutalizer
+    .mob Spirit Trap
+step
+    .isOnQuest 32115
+    >>Kill |cRXP_ENEMY_Troubled Slave Spirits|r to free them.
+    .complete 32115,1 --14/14 Troubled Slave Spirits released
+    .mob Troubled Slave Spirit
+step
+    .isOnQuest 32346,32121
+    #label Spirit Trap destroyed
+    >>Kill |cRXP_ENEMY_Spiritbound Mogu's|r and |cRXP_ENEMY_Spirit Traps.|r
+    .complete 32346,1 --12/12 Spiritbound Mogu slain
+    .complete 32121,1 --3/3 Spirit Trap destroyed
+    .mob Spiritbound Mogu
+    .mob Spiritbound Arcanist
+    .mob Spiritbound Brutalizer
+    .mob Spirit Trap
+step
+    #completewith next
+    .goto 421,63.56,37.09,15,0
+    .goto 421,61.18,24.34,15,0
+    .goto 419,63.72,46.52,15,0
+    .goto 419,56.43,29.72,15,0
+    .goto 419,36.07,17.57,20 >> Go back to the entrance of the mine.
+step
+    .isQuestTurnedIn 32116
+    .goto 419,30.07,27.46
+    #label endlandfall1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hilda Hornswaggle|r
+    .dailyturnin 32115 >>Turn in Shackles of the Past
+    .dailyturnin 32119,32115 >>Turn in It Is A Mystery or Shackles of the Past
+    .dailyturnin 32121 >>Turn in The Spirit Trap
+    .dailyturnin 32122 >>Turn in Ogudei's Lieutenants
+    .dailyturnin 32346 >>Turn in Oi Ain't Afraid o' No Ghosts!
+    .dailyturnin 32347 >>Turn in Eviction Notice
+    .target Hilda Hornswaggle
+--Domination Point
+-- step
+--     .goto 418,89.82,32.41
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amber Kearnen|r
+--     .accept 32451 >>Accept Send A Message
+--     .target Amber Kearnen
+step
+    .isOnQuest 32451
     .goto 418,16.46,79.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sky Admiral Rogers|r
-    .turnin 32451 >>Turn in Send A Message
-    .target Sky Admiral Rogers
-    .accept 32142 >>Accept We Will Rock You
-    .accept 32146 >>Accept Hammer to Fall
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tinkmaster Overspark|r
-    .accept 32143 >>Accept A Kind of Magic
-    .target Tinkmaster Overspark
+    .dailyturnin 32451 >>Turn in Send A Message
+    .target +Sky Admiral Rogers
 step
+    .isQuestTurnedIn 32451
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sky Admiral Rogers|r
+    .daily 32142 >>Accept We Will Rock You
+    .daily 32146 >>Accept Hammer to Fall
+    .goto 418,16.48,79.2
+    .target +Sky Admiral Rogers
+step
+    .isQuestTurnedIn 32451
+    #loop
+    .goto 418,16.45,79.27,20,0
+    .goto 418,16.74,79.69,20,0
+    .goto 418,16.26,79.21,20,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tinkmaster Overspark|r
+    .daily 32143 >>Accept A Kind of Magic
+    .target +Tinkmaster Overspark
+step
+    .isQuestTurnedIn 32451
     .goto 418,16.66,78.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mishka|r
-    .accept 32144 >>Accept Under Pressure
+    .daily 32144 >>Accept Under Pressure
     .target Mishka
 step
-    .goto 418,11.66,67.84
-    .complete 32143,1 --1/1 Eliminate the Beachhead Demolishers
+    .isOnQuest 32142,32146
+    #completewith Scout-o-Meter Mk III
+    >>Kill |cRXP_ENEMY_Domination Orcs|r and |cRXP_ENEMY_Heavy Mook|r
+    .complete 32142,1 --10/10 Domination Orc slain
+    .complete 32146,1 --5/5 Heavy Mook slain
+    .mob Domination Orc
+    .mob Dominance Grunt
+    .mob Heavy Mook
+    .mob Bloodhilt Honor Guard
+    .mob Dominance Raider
 step
-    .goto 418,8.38,65.87
+.isOnQuest 32144
+    #completewith Scout-o-Meter Mk III
+    >>Click on |cRXP_PICK_Crates|r
     .complete 32144,1 --8/8 Horde Supply Crates Destroyed
 step
-    .goto 418,8.65,61.42
-    >>Kill |cRXP_ENEMY_Domination Orc|r
-    .complete 32142,1 --10/10 Domination Orc slain
-    .mob Domination Orc
+.isOnQuest 32143
+    .goto 418,11.66,67.84
+    >>Interact with |cRXP_FRIENDLY_Scout-o-Meter Mk I|r
+    .complete 32143,1 --1/1 Eliminate the Beachhead Demolishers
+    .target Scout-o-Meter Mk I
 step
-    .goto 418,8.78,60.67
-    >>Kill |cRXP_ENEMY_Heavy Mook|r
-    .complete 32146,1 --5/5 Heavy Mook slain
-    .mob Heavy Mook
-step
+.isOnQuest 32143
     .goto 418,10.89,60.91
+    >>Interact with |cRXP_FRIENDLY_Scout-o-Meter Mk II|r
     .complete 32143,2 --1/1 Eliminate the Horde Wolves
+    .target Scout-o-Meter Mk II
 step
+    .isOnQuest 32143
     .goto 418,12.64,56.60
+    >>Interact with |cRXP_FRIENDLY_Scout-o-Meter Mk III|r
     .complete 32143,3 --1/1 Destroy the Horde Bomb Stockpile
+    .target Scout-o-Meter Mk III
 step
-    .goto 418,12.64,56.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shiekrunners|r
+    .isOnQuest 32143
+    >>Click on the Quest PoP-UP to turn in the quest
     .turnin 32143 >>Turn in A Kind of Magic
-    .target Shiekrunners
+step
+    .isQuestTurnedIn 32145
+    >>Click on the Quest PoP-UP to accept the new quest
     .accept 32145 >>Accept Don't Lose Your Head
 step
+.isOnQuest 32145
     .goto 418,13.29,56.25
     >>Kill |cRXP_ENEMY_Chief Bombgineer Snicklefritz|r
     .complete 32145,3 --1/1 Chief Bombgineer Snicklefritz slain
     .mob Chief Bombgineer Snicklefritz
 step
+    .isOnQuest 32145
     .goto 418,13.40,57.85
     >>Kill |cRXP_ENEMY_Stone Guard Ruk'Ra|r
     .complete 32145,2 --1/1 Stone Guard Ruk'Ra slain
     .mob Stone Guard Ruk'Ra
 step
+    .isOnQuest 32145
+    #label Scout-o-Meter Mk III
     .goto 418,10.38,58.00
     >>Kill |cRXP_ENEMY_Or'Dac|r
     .complete 32145,1 --1/1 Or'Dac slain
     .mob Or'Dac
 step
+    .isOnQuest 32142,32146
+    #hidewindow
+    #completewith Domination Orcs
+    #loop
+    .goto 418,8.21,61.03,30,0
+    .goto 418,9.56,64.58,30,0
+    .goto 418,12.73,65.31,30,0
+    .goto 418,11.3,60.34,30,0
+    .goto 418,13.45,59.88,30,0
+    .goto 418,14.07,56.99,30,0
+    +1
+step
+    .isOnQuest 32142,32146
+    #completewith next
+    >>Kill |cRXP_ENEMY_Domination Orcs|r and |cRXP_ENEMY_Heavy Mook|r
+    .complete 32142,1 --10/10 Domination Orc slain
+    .complete 32146,1 --5/5 Heavy Mook slain
+    .mob Domination Orc
+    .mob Dominance Grunt
+    .mob Heavy Mook
+    .mob Bloodhilt Honor Guard
+    .mob Dominance Raider
+step
+    .isOnQuest 32144
+    >>Click on |cRXP_PICK_Crates|r
+    .complete 32144,1 --8/8 Horde Supply Crates Destroyed
+step
+    .isOnQuest 32142,32146
+    #label Domination Orcs
+    >>Kill |cRXP_ENEMY_Domination Orcs|r and |cRXP_ENEMY_Heavy Mook|r
+    .complete 32142,1 --10/10 Domination Orc slain
+    .complete 32146,1 --5/5 Heavy Mook slain
+    .mob Domination Orc
+    .mob Dominance Grunt
+    .mob Heavy Mook
+    .mob Bloodhilt Honor Guard
+    .mob Dominance Raider
+step
+    .isOnQuest 32144
     .goto 418,16.68,78.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mishka|r
-    .turnin 32144 >>Turn in Under Pressure
+    .dailyturnin 32144 >>Turn in Under Pressure
     .target Mishka
 step
+    .isOnQuest 32142,32146
     .goto 418,16.47,79.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sky Admiral Rogers|r
-    .turnin 32142 >>Turn in We Will Rock You
+    .dailyturnin 32142 >>Turn in We Will Rock You
+    .dailyturnin 32146 >>Turn in Hammer to Fall
     .target Sky Admiral Rogers
-    .turnin 32146 >>Turn in Hammer to Fall
-
 step
-    .goto 418,16.52,79.42
+    .isOnQuest 32145
+    #loop
+    .goto 418,16.45,79.27,20,0
+    .goto 418,16.74,79.69,20,0
+    .goto 418,16.26,79.21,20,0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tinkmaster Overspark|r
-    .turnin 32145 >>Turn in Don't Lose Your Head
+    .dailyturnin 32145 >>Turn in Don't Lose Your Head
     .target Tinkmaster Overspark
-
-    ---SET1---
-
+--Domination Point 2
+-- step
+--     .goto 418,89.79,32.43
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Amber Kearnen|r
+--     .accept 32452 >>Accept And Then There Were Goblins
+--     .target Amber Kearnen
 step
-    .goto 418,68.31,43.45
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_John "Big Hook" Marsock|r
-    .accept 30753 >>Accept Jumping the Shark
-    .target John "Big Hook" Marsock
+    .isOnQuest 32452
+    .goto 418,16.47,79.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sky Admiral Rogers|r
+    .dailyturnin 32452 >>Turn in And Then There Were Goblins
+    .target Sky Admiral Rogers
 step
-    .goto 418,67.94,45.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fisherman Haito|r
-    .accept 30586 >>Accept Jagged Abalone
-    .target Fisherman Haito
+    .isQuestTurnedIn 32157
+    .goto 418,16.47,79.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sky Admiral Rogers|r
+    .target Sky Admiral Rogers
+    .daily 32157 >>Accept The Only Good Goblin...
 step
-    .goto 418,68.91,37.96
-    .complete 30586,1 --9/9 Jagged Abalone Meat
+    .isQuestTurnedIn 32156,32158
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mishka|r and |cRXP_FRIENDLY_Seraphine of the Winter|r
+    .daily 32156 >>Accept It's Only Right
+    .goto 418,16.66,78.52
+    .target +Mishka
+    .daily 32158 >>Accept Two Step Program
+    .goto 418,16.71,78.52
+    .target +Seraphine of the Winter
 step
-    .goto 418,68.33,43.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_John "Big Hook" Marsock|r
-    .turnin 30753 >>Turn in Jumping the Shark
-    .target John "Big Hook" Marsock
+    .isQuestTurnedIn 32154,32446
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sully "The Pickle" McLeary|r
+    .daily 32154 >>Accept Burn Out!
+    .daily 32446 >>Accept Dis-Assembly Required
+    #loop
+    .goto 418,17.36,78.68,10,0
+    .goto 418,16.73,78.6,10,0
+    .target +Sully "The Pickle" McLeary
 step
-    .goto 418,67.93,45.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Fisherman Haito|r
-    .turnin 30586 >>Turn in Jagged Abalone
-    .target Fisherman Haito
----SET2---
-
+    .isOnQuest 32157
+    #completewith Northwestern
+    >>Kill |cRXP_ENEMY_Bilgewater Goblins|r
+    .complete 32157,1 --10/10 Bilgewater Goblins slain
+    .mob Off-Duty Logger
+    .mob Grease Worker
 step
-    .goto 418,89.70,33.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Troteman|r
-    .accept 32116 >>Accept Priorities, People!
-    .target Marshal Troteman
+    .isOnQuest 32156
+    #completewith Northwestern
+    >>Interact with |cRXP_FRIENDLY_Fallen Shieldwall Soldier|r
+    .complete 32156,1 --7/7 Shieldwall Soldier Dog Tag
+    .target Fallen Shieldwall Soldier
 step
-    .goto 419,30.20,27.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hilda Hornswaggle|r
-    .turnin 32116 >>Turn in Priorities, People!
-    .target Hilda Hornswaggle
-    .accept 32347 >>Accept Eviction Notice
-    .accept 32346 >>Accept Oi Ain't Afraid o' No Ghosts!
-    .accept 32122 >>Accept Ogudei's Lieutenants
-    .accept 32121 >>Accept The Spirit Trap
-    .accept 32115 >>Accept Shackles of the Past
+    .isOnQuest 32446
+    #completewith Northwestern
+    >>Click on |cRXP_ENEMY_Jungle Shredders|r then kill and loot them |cRXP_LOOT_Scrap Metals|r
+    .complete 32446,1 --6/6 Scrap Metal
+    .mob Jungle Shredder
 step
-    .goto 421,57.97,3.19
-    .complete 32115,1 --14/14 Troubled Slave Spirits released
+    .isOnQuest 32158
+    .goto 418,19.49,62.11
+    >>Kill |cRXP_ENEMY_Shredmaster Packle|r
+    .complete 32158,1 --1/1 Shredmaster Packle slain
+    .mob Shredmaster Packle
 step
-    .goto 421,62.17,1.69
-    >>Kill |cRXP_ENEMY_Spiritbound Mogu|r
-    .complete 32346,1 --12/12 Spiritbound Mogu slain
-    .mob Spiritbound Mogu
+    .isOnQuest 32154
+   .goto 418,25.48,59.44
+    >>Use |T133717:0|t[Unstable Explosive] near the |cRXP_WARN_Goblin Explosixe Crate|r
+    .complete 32154,1 --1/1 Northeastern Fuel Tank destroyed
+    .use 93187
 step
-    .goto 421,81.92,96.31
-    .complete 32121,1 --3/3 Spirit Trap destroyed
+    .isOnQuest 32154
+    .goto 418,23.92,54.63
+    >>Use |T133717:0|t[Unstable Explosive] near the |cRXP_WARN_Goblin Explosixe Crate|r
+    .complete 32154,2 --1/1 Northern Fuel Tank destroyed
+    .use 93187
 step
-    .goto 420,68.66,78.64
-    >>Kill |cRXP_ENEMY_Gen-li, Twister of Words|r
-    .complete 32122,1 --1/1 Gen-li, Twister of Words slain
-    .mob Gen-li, Twister of Words
-    >>Kill |cRXP_ENEMY_Meng-do, Strength of Mountains|r
-    .complete 32122,2 --1/1 Meng-do, Strength of Mountains slain
-    .mob Meng-do, Strength of Mountains
+    .isOnQuest 32154
+    #label Northwestern
+    .goto 418,15.28,59
+    >>Use |T133717:0|t[Unstable Explosive] near the |cRXP_WARN_Goblin Explosixe Crate|r
+    .complete 32154,3 --1/1 Northwestern Fuel Tank destroyed
+    .use 93187
 step
-    .goto 421,60.11,52.81
-    >>Kill |cRXP_ENEMY_Reliquary|r
-    .complete 32347,1 --10/10 Reliquary slain
-    .mob Reliquary
+    .isOnQuest 32157,32156
+    #hidewindow
+    #completewith Bilgewater Goblins
+    #loop
+    .goto 418,19.49,62.11,40,0
+    .goto 418,25.48,59.44,40,0
+    .goto 418,23.92,54.63 ,40,0
+    .goto 418,15.28,59,40,0
+    +1
 step
-    .goto 419,30.07,27.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hilda Hornswaggle|r
-    .turnin 32347 >>Turn in Eviction Notice
-    .target Hilda Hornswaggle
-    .turnin 32115 >>Turn in Shackles of the Past
-
-    .turnin 32346 >>Turn in Oi Ain't Afraid o' No Ghosts!
-
-    .turnin 32121 >>Turn in The Spirit Trap
-
-    .turnin 32122 >>Turn in Ogudei's Lieutenants
+    .isOnQuest 32157
+    #completewith Scrap Metal
+    >>Kill |cRXP_ENEMY_Bilgewater Goblins|r
+    .complete 32157,1 --10/10 Bilgewater Goblins slain
+    .mob Off-Duty Logger
+    .mob Grease Worker
+step
+    .isOnQuest 32156
+    #completewith Scrap Metal
+    >>Interact with |cRXP_FRIENDLY_Fallen Shieldwall Soldier|r
+    .complete 32156,1 --7/7 Shieldwall Soldier Dog Tag
+    .target Fallen Shieldwall Soldier
+step
+    .isOnQuest 32446
+    #label Scrap Metal
+    >>Click on |cRXP_ENEMY_Jungle Shredders|r then kill and loot them |cRXP_LOOT_Scrap Metals|r
+    .complete 32446,1 --6/6 Scrap Metal
+    .mob Jungle Shredder
+step
+    .isOnQuest 32157
+    #completewith next
+    >>Kill |cRXP_ENEMY_Bilgewater Goblins|r
+    .complete 32157,1 --10/10 Bilgewater Goblins slain
+    .mob Off-Duty Logger
+    .mob Grease Worker
+step
+    .isOnQuest 32156
+    >>Interact with |cRXP_FRIENDLY_Fallen Shieldwall Soldier|r
+    .complete 32156,1 --7/7 Shieldwall Soldier Dog Tag
+    .target Fallen Shieldwall Soldier
+step
+    .isOnQuest 32157
+    #label Bilgewater Goblins
+    >>Kill |cRXP_ENEMY_Bilgewater Goblins|r
+    .complete 32157,1 --10/10 Bilgewater Goblins slain
+    .mob Off-Duty Logger
+    .mob Grease Worker
+    .mob Refining Specialist
+step
+    .isOnQuest 32154,32446
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sully "The Pickle" McLeary|r
+    .dailyturnin 32154 >>Turn in Burn Out!
+    .dailyturnin 32446 >>Turn in Dis-Assembly Required
+    #loop
+    .goto 418,17.36,78.68,10,0
+    .goto 418,16.73,78.6,10,0
+    .target +Sully "The Pickle" McLeary
+step
+    .isOnQuest 32156,32158
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mishka|r and |cRXP_FRIENDLY_Seraphine of the Winter|r
+    .dailyturnin 32156 >>Turn in It's Only Right
+    .goto 418,16.66,78.52
+    .target +Mishka
+    .dailyturnin 32158 >>Turn in Two Step Program
+    .goto 418,16.71,78.52
+    .target +Seraphine of the Winter
+step
+    .isOnQuest 32157
+    .goto 418,16.47,79.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sky Admiral Rogers|r
+    .target Sky Admiral Rogers
+    .dailyturnin 32157 >>Turn in The Only Good Goblin...
 ]])
 
 -- Shado-Pan Dailies
