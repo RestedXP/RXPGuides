@@ -903,7 +903,7 @@ step
     >>|cRXP_WARN_You must have a|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buff by typing|r /kneel |cRXP_WARN_at a graveyard or by kneeling in front of another priest with the buff when they /pray for you|r << Undead
     .goto Durotar,55.32,72.66,0
     .goto The Barrens,51.5,29.5,0
-    .goto The Barrent,50.7,32.8 << Undead
+    .goto The Barrens,50.7,32.8 << Undead
     .use 205905
     .itemcount 205905,1
 ]])
