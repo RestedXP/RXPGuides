@@ -3,6 +3,7 @@ local _,addon = ...
 local showAllQs
 local GetItemCount = C_Item and C_Item.GetItemCount or _G.GetItemCount
 local QUEST_LOG_SIZE = 25
+local reloadTimer = 0
 
 if addon.gameVersion < 20000 then
     QUEST_LOG_SIZE = 20
@@ -433,8 +434,9 @@ function addon.functions.requires(self,text,mode,...)
         end
         if addon.settings.profile.debug then
             step.optional = nil
-        elseif optional ~= step.optional then
-            addon:ScheduleTask(addon.ReloadGuide)
+        elseif optional ~= step.optional and GetTime() - reloadTimer > 60 then
+            addon:ScheduleTask(addon.ReloadGuide,true)
+            reloadTimer = GetTime()
         end
     end
     element.requestFromServer = false
