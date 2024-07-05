@@ -3434,12 +3434,15 @@ end
 function addon.functions.isQuestComplete(self, ...)
     if type(self) == "string" then
         local element = {}
-        local text, id = ...
+        local text, id, reverse = ...
         id = GetQuestId(tonumber(id))
         if not id then
             return addon.error(
                         L("Error parsing guide") .. " " .. addon.currentGuideName ..
                            ": Invalid quest ID\n" .. self)
+        end
+        if reverse then
+            element.reverse = true
         end
         element.questId = id
         if text and text ~= "" then element.text = text end
@@ -3450,13 +3453,21 @@ function addon.functions.isQuestComplete(self, ...)
     local step = element.step
     local id = element.questId
     local event = ...
-    if event ~= "WindowUpdate" and step.active and not (IsOnQuest(id) and IsQuestComplete(id)) and not addon.settings.profile.debug and not addon.isHidden then
+    local isCompleted = not(IsOnQuest(id) and IsQuestComplete(id)) == not(element.reverse)
+    if event ~= "WindowUpdate" and step.active and isCompleted and not addon.settings.profile.debug and not addon.isHidden then
         step.completed = true
         addon.updateSteps = true
         element.tooltipText = "Step skipped: Missing pre-requisites"
     elseif step.active and not step.completed then
         element.tooltipText = nil
     end
+end
+
+function addon.functions.isQuestNotComplete(self, text, id, ...)
+    if type(self) == "string" then
+        return addon.functions.isQuestComplete(self,text,id,true)
+    end
+    return addon.functions.isQuestComplete(self,text,id,...)
 end
 
 function addon.functions.isOnQuest(self, text, ...)
