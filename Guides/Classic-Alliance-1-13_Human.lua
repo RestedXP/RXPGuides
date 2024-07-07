@@ -3,6 +3,7 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
+#season 0,1
 << Alliance
 #name 1-6 Northshire
 #version 1
@@ -39,7 +40,7 @@ step << Human Warlock
     #loop
     .goto 1429,49.052,38.270,0
     .goto 1429,45.708,38.720,0
-    .goto 1429,47.976,39.422,0  
+    .goto 1429,47.976,39.422,0
     .goto 1429,46.465,38.272,45,0
     .goto 1429,45.896,38.013,45,0
     .goto 1429,45.708,38.720,45,0
@@ -209,7 +210,7 @@ step
     #label WolfMeatEnd
     .goto 1429,49.052,38.270,0
     .goto 1429,45.708,38.720,0
-    .goto 1429,47.976,39.422,0  
+    .goto 1429,47.976,39.422,0
     .waypoint 1429,49.052,38.270,45,0
     .waypoint 1429,48.362,37.582,45,0
     .waypoint 1429,47.136,37.636,45,0
@@ -910,7 +911,7 @@ step
     #label xp3
     .goto 1429,49.052,38.270,0
     .goto 1429,45.708,38.720,0
-    .goto 1429,47.976,39.422,0  
+    .goto 1429,47.976,39.422,0
     .goto 1429,46.465,38.272,45,0
     .goto 1429,45.896,38.013,45,0
     .goto 1429,45.708,38.720,45,0
@@ -1728,6 +1729,7 @@ step << Rogue
 
 RXPGuides.RegisterGuide([[
 #classic
+#season 0,1
 #version 1
 << Alliance
 #group RestedXP Alliance 1-20
@@ -1966,7 +1968,7 @@ step
     .goto Elwynn Forest,37.741,78.265,0
     .goto Elwynn Forest,41.576,69.499,0
     >>Kill |cRXP_ENEMY_Stonetusk Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
-    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r 
+    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r
     >>|cRXP_WARN_You need 10|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Auberdine later|r
     .collect 769,10,86,1,0x20,cooking --Chunk of Boar Meat (1-10)
     .mob Stonetusk Boar
@@ -1982,7 +1984,7 @@ step
     .goto Elwynn Forest,37.741,78.265,0
     .goto Elwynn Forest,41.576,69.499,0
     >>Kill |cRXP_ENEMY_Stonetusk Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
-    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r 
+    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r
     >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
     .collect 769,50,86,1,0x20,cooking --Chunk of Boar Meat (10-50)
     .mob Stonetusk Boar
@@ -2435,7 +2437,7 @@ step << Warrior
 step << Rogue
     .goto Elwynn Forest,41.529,65.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corina Steele|r
-    .vendor 54 >>|cRXP_BUY_Buy a|r |T135641:0|t[Stiletto] |cRXP_BUY_from her if you can afford it|r 
+    .vendor 54 >>|cRXP_BUY_Buy a|r |T135641:0|t[Stiletto] |cRXP_BUY_from her if you can afford it|r
     .collect 2494,1 --Collect Stiletto (1)
     .disablecheckbox
     .target Corina Steele
@@ -3744,7 +3746,7 @@ step << Mage
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaldimar Wefhellt|r
     .trainer >> Train your class spells
     .target Zaldimar Wefhellt
-    .xp <10,1 
+    .xp <10,1
 step << skip --Rogue
     #optional
     #requires GoldshireVendor
@@ -5414,7 +5416,7 @@ step
     #xprate >1.49
     #optional
     #completewith IFHS
-    .goto 1455,43.883,59.467,15,0 
+    .goto 1455,43.883,59.467,15,0
     .goto 1455,38.497,71.135,15,0
     .goto 1455,25.658,61.707,20,0
     .goto 1455,20.419,53.269,10 >> Enter the Stonefire Tavern
@@ -5440,7 +5442,7 @@ step << Mage
     .train 122 >> Train your class spells
     .target Dink
     .xp <10,1
-    .xp >12,1 
+    .xp >12,1
 step << Mage
     #xprate >1.49
     .goto Ironforge,27.17,8.58
@@ -5448,7 +5450,7 @@ step << Mage
     .train 145 >> Train your class spells
     .target Dink
     .xp <12,1
-    .xp >14,1 
+    .xp >14,1
 step << Mage
     #xprate >1.49
     #label MageIFTrain
@@ -5456,7 +5458,7 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dink|r inside
     .train 1460 >> Train your class spells
     .target Dink
-    .xp <14,1 
+    .xp <14,1
 step << Paladin
     #xprate >1.49
     .goto Ironforge,23.131,6.143
@@ -5617,7 +5619,7 @@ step
     #completewith Dirt
     .goto 1426,57.936,50.787,0
     >>Kill |cRXP_ENEMY_Elder Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
-    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r 
+    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r
     >>|cRXP_WARN_You need 10|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Auberdine later|r
     .collect 769,10,2178,1,0x20,cooking --Chunk of Boar Meat (1-10)
     .mob Elder Crag Boar
@@ -5628,7 +5630,7 @@ step
     #completewith Dirt
     .goto 1426,57.936,50.787,0
     >>Kill |cRXP_ENEMY_Elder Crag Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
-    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r 
+    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r
     >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
     .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
     .mob Elder Crag Boar
@@ -5902,6 +5904,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#season 0,1
 #version 1
 << Alliance
 #group RestedXP Alliance 1-20
@@ -5935,7 +5938,7 @@ step
     .goto 1426,81.040,43.456,0
     .goto 1426,80.583,36.040,0
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
-    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r 
+    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r
     >>|cRXP_WARN_You need 10|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Auberdine later|r
     .collect 769,10,2178,1,0x20,cooking --Chunk of Boar Meat (1-10)
     .mob Mountain Boar
@@ -5952,7 +5955,7 @@ step
     .goto 1426,81.040,43.456,0
     .goto 1426,80.583,36.040,0
     >>Kill |cRXP_ENEMY_Mountain Boars|r. Loot them for their |T133970:0|t|cRXP_LOOT_[Chunks of Boar Meat]|r
-    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r 
+    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r
     >>|cRXP_WARN_You need 50|r |T133971:0|t[Cooking] |cRXP_WARN_for a quest in Darkshire later|r
     .collect 769,50,2178,1,0x20,cooking --Chunk of Boar Meat (10-50)
     .mob Mountain Boar
@@ -7113,7 +7116,7 @@ step
     >>|cRXP_WARN_If you don't want to or can't do this, skip this step|r
     >>|cRXP_BUY_Buy the following items for faster turn ins in Darkshore shortly:|r
     >>|T133972:0|t[Strider Meat]
-    >>|T133912:0|t[Darkshore Grouper]  
+    >>|T133912:0|t[Darkshore Grouper]
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .collect 12238,6,1141,1 -- Darkshore Grouper (6)
     .target Auctioneer Lympkin

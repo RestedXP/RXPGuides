@@ -3,14 +3,14 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
-#season 0,1
 << Alliance
-#name 1-6 Shadowglen
-#displayname 1-7 Shadowglen << sod
+#season 2
+#name 1-7 Shadowglen SoD
+#displayname 1-7 Shadowglen
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor NightElf
-#next 6-11 Teldrassil
+#next 7-13 Teldrassil SoD
 step << !NightElf
     #sticky
     #completewith next
@@ -33,7 +33,8 @@ step
 step
     >>Loot the mobs you kill, make sure you have at least 10 copper worth of vendor trash, you will need it to train |T132333:0|t[Battle Shout]<< Warrior
     .xp 2 >> Grind to level 2
-step << !sod/Warrior
+step
+    #xprate >2.49 << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dirania Silvershine|r and |cRXP_FRIENDLY_Melithar Staghelm|r
     #label GoodProtector
     .accept 4495 >> Accept A Good Friend
@@ -842,14 +843,16 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
-#season 0,1
 << Alliance
-#name 6-11 Teldrassil
-#displayname 7-13 Teldrassil << SoD
+#season 2
+#name 7-13 Teldrassil SoD
+#displayname 7-13 Teldrassil
 #version 1
 #group RestedXP Alliance 1-20
 #defaultfor NightElf
-#next 14-16 Darkshore
+#next 13-20 Darkshore SoD
+
+
 step
     .goto Teldrassil,60.5,56.3
     .target Zenn Foulhoof
@@ -1378,7 +1381,7 @@ step
     .goto 1438/1,854.400,9952.500,6 >>Next to a small tree
     .goto 1438/1,822.200,9948.500,6 >>On the small hill
     .goto 1438/1,809.800,9926.400,6 >>Next to the massive tree
-    >>Loot the 3 felcones from the locations marked on your map.
+    >>Loot the 3 felcones from the locations marked on your map. 
     >>|cRXP_WARN_Skip this step if any of them is not there and you're unable to complete the objective|r
     .complete 489,1 --Fel Cone 3/3
     .isOnQuest 489
@@ -1863,7 +1866,7 @@ step << Hunter
     .collect 2507,1
     .target Ariyell Skyshadow
     .money <0.1751
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.77
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.77 
 step << Hunter
     #season 2
     #completewith next
@@ -2247,7 +2250,7 @@ step << Warrior
     >>|cRXP_FRIENDLY_Moon Priestess Amara|r |cRXP_WARN_patrols the road west of Dolanaar|r
     .turnin 487 >> Turn in The Road to Darnassus
     .target Moon Priestess Amara
-    .target Laird
+    .target Laird 
 step
 #xprate <1.99
     #requires xp10 << Rogue
@@ -2509,7 +2512,7 @@ step << Hunter
     #season 2
     .goto Darnassus,64.2,63.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tLook for |cRXP_FRIENDLY_Jaeana|r, she patrols around the Tradesmen's Terrace
-    >>|cRXP_BUY_Buy a stack of|r |T133972:0|t[Tough Jerky] |cRXP_BUY_from her.
+    >>|cRXP_BUY_Buy a stack of|r |T133972:0|t[Tough Jerky] |cRXP_BUY_from her. 
     >>|cRXP_WARN_You will need it to feed your owl, they only eat meat and there's no meat vendor in Darkshore|r
     .collect 117,15
     .target Jaeana
@@ -2527,7 +2530,7 @@ step << Hunter
     .collect 2507,1
     .target Ariyell Skyshadow
     .money <0.1751
-    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.77
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<5.77 
 step << Hunter
     #season 2
     #completewith next
@@ -2987,7 +2990,7 @@ step
 step << Hunter
     .goto Darnassus,64.2,63.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tLook for |cRXP_FRIENDLY_Jaeana|r, she patrols around the Tradesmen's Terrace
-    >>|cRXP_BUY_Buy a stack of|r |T133972:0|t[Tough Jerky] |cRXP_BUY_from her.
+    >>|cRXP_BUY_Buy a stack of|r |T133972:0|t[Tough Jerky] |cRXP_BUY_from her. 
     >>|cRXP_WARN_You will need it to feed your owl, they only eat meat and there's no meat vendor in Darkshore|r
     .collect 117,15
     .target Jaeana

@@ -3,6 +3,7 @@ if faction == "Horde" then return end
 
 RXPGuides.RegisterGuide([[
 #classic
+#season 0,1
 #version 1
 << Alliance
 #group RestedXP Alliance 1-20
@@ -1321,6 +1322,7 @@ RXPGuides.RegisterGuide([[
 #xprate >1.49 << Hunter
 #era/som--h
 #classic
+#season 0,1
 #version 1
 << Alliance --!Hunter
 #group RestedXP Alliance 1-20
@@ -4914,6 +4916,7 @@ step << Dwarf Paladin
 RXPGuides.RegisterGuide([[
 #xprate >1.49
 #classic
+#season 0,1
 #version 1
 << Gnome Warlock
 #group RestedXP Alliance 1-20
@@ -5179,6 +5182,7 @@ step
 RXPGuides.RegisterGuide([[
 #xprate <1.5
 #classic
+#season 0,1
 << Alliance !Hunter
 #group RestedXP Alliance 1-20
 #name 11-12 Elwynn (Dwarf/Gnome)
@@ -5886,6 +5890,7 @@ step << Dwarf Paladin
 RXPGuides.RegisterGuide([[
 #era/som--h
 #classic
+#season 0,1
 #version 1
 << Alliance !Hunter
 #group RestedXP Alliance 1-20
@@ -8066,6 +8071,7 @@ step
 RXPGuides.RegisterGuide([[
 #xprate <1.5
 #classic
+#season 0,1
 #era/som--h
 #version 1
 << Alliance Hunter
@@ -8782,6 +8788,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #classic
+#season 0,1
 #era/som--h
 #version 1
 << Alliance Hunter
