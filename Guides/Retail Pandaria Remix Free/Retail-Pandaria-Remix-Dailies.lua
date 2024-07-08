@@ -8,13 +8,18 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Panda Remix
 #name X) Cloud Serpent Dailies
-#internal
+#displayname Cloud Serpent Dailies
 
 step
-    +|cRXP_WARN_Pick up the 3 available dailies in The Arboretum|r
-    .goto 371,57.69,44.93
-    .questcount <3,31706,31711,31708,31194,30155,30156,30158
-
+    #loop
+    .goto 371,57.51,45.36,10,0
+    .goto 371,57.75,44.94,10,0
+    .goto 371,58.28,45.04,10,0
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r, |cRXP_FRIENDLY_Your Hatchling|r, |cRXP_FRIENDLY_Ningna Darkwheel|r
+    .questcount <3,31706,31711,31708,31194,30155,30156,30158,31700,31701,30154 >> |cRXP_WARN_Pick up the 3 available dailies in The Arboretum|r
+    .target Elder Anli
+    .target Your Hatchling
+    .target Ningna Darkwheel
 -- DAILIES DAY A
 step
     .isOnQuest 31706
@@ -103,6 +108,63 @@ step
     #label SlitherscaleSaurokSlainB
     #optional
 step
+    .isOnQuest 31700
+    #completewith WindwardHuntressSlain
+    >>Kill |cRXP_ENEMY_Shadowfae Trickster|r. Loot them for the |T1:0|t[|cRXP_LOOT_Stolen Boots|r]
+    .complete 31700,1 --14/14 Stolen Boots
+    .mob Shadowfae Trickster
+step
+    .isOnQuest 30154
+    #completewith WindwardHuntressSlain
+    >>Kill |cRXP_ENEMY_Windward Tigers|r. Loot them for the |T237347:0|t[|cRXP_LOOT_Tiger Flanks|r]
+    .complete 30154,1 --5/5 Tiger Flank
+    .mob Windward Tiger
+step
+    .isOnQuest 31701
+    #completewith next
+    #label WindwardHuntressSlain
+    >>Kill the |cRXP_ENEMY_Windward Huntress|r
+    .complete 31701,1 --1/1 Windward Huntress slain
+    .mob Windward Huntress
+step
+    #title Enter Cave
+    #completewith WindwardHuntressSlain
+    .goto 371,64.40,25.86,10 >>Enter the cave
+step
+    .isOnQuest 31701
+    #requires WindwardHuntressSlain
+    .goto 371,64.92,25.54
+    >>Kill the |cRXP_ENEMY_Windward Huntress|r
+    .complete 31701,1 --1/1 Windward Huntress slain
+    .mob Windward Huntress
+step
+    #completewith StolenBoots
+    #hidewindow
+    #loop
+    .goto 371,64.08,27.32,35,0
+    .goto 371,61.10,26.14,35,0
+    .goto 371,62.38,20.81,35,0
+    .goto 371,63.56,23.84,35,0
+    +1
+step
+    .isOnQuest 31700
+    #completewith next
+    >>Click on the |cRXP_PICK_Stolen Boots|r
+    .complete 31700,1 --14/14 Stolen Boots
+    .mob Shadowfae Trickster
+step
+    .isOnQuest 30154
+    >>Kill |cRXP_ENEMY_Windward Tigers|r and |cRXP_ENEMY_Windward Alphas|r. Loot them for the |T237347:0|t[|cRXP_LOOT_Tiger Flanks|r]
+    .complete 30154,1 --5/5 Tiger Flank
+    .mob Windward Tiger
+    .mob Windward Alpha
+step
+    .isOnQuest 31700
+    #label StolenBoots
+    >>Click on the |cRXP_PICK_Stolen Boots|r
+    .complete 31700,1 --14/14 Stolen Boots
+    .mob Shadowfae Trickster
+step
     .isOnQuest 30155
     .goto 371,57.63,44.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
@@ -125,6 +187,24 @@ step
     .goto 371,57.63,44.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
     .dailyturnin 30158 >>Turn in Disarming the Enemy
+    .target Elder Anli
+step
+    .isOnQuest 31700
+    .goto 371,57.63,44.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
+    .dailyturnin 31700 >>Turn in The Shoe Is On The Other Foot
+    .target Elder Anli
+step
+    .isOnQuest 31701
+    .goto 371,57.63,44.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
+    .dailyturnin 31701 >>Turn in Dark Huntress
+    .target Elder Anli
+step
+    .isOnQuest 30154
+    .goto 371,57.63,44.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
+    .dailyturnin 30154 >>Turn in The Easiest Way To A Serpent's Heart
     .target Elder Anli
 ]])
 
