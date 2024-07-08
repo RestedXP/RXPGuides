@@ -155,6 +155,11 @@ step
     .target +Mountaineer Wallbang
     .goto 48,23.298,75.054
 step
+    .goto 48,33.940,50.955
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
+    .fp Thelsamar >> Get the Thelsamar flight path
+    .target Thorgrum Borrelson
+step
     .goto 48,35.079,46.663
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Kadrell|r
     .target Mountaineer Kadrell

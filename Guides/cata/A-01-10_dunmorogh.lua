@@ -98,7 +98,7 @@ step
     .goto 27,35.672,72.677,15,0
     .goto 27,35.923,72.086,15,0
     .goto 27,35.620,71.276,15,0
-    >>Use |T133675:0|t[Sten's First Aid Kit] on |cRXP_FRIENDLY_Wounded Coldridge Mountaineers|r
+    >>|cRXP_WARN_Use|r |T133675:0|t[Sten's First Aid Kit] |cRXP_WARN_on|r |cRXP_FRIENDLY_Wounded Coldridge Mountaineers|r
     .complete 24471,1 --Wounded Coldridge Mountaineers Aided (4)
 	.target Wounded Coldridge Mountaineer
 	.use 49743
@@ -266,6 +266,7 @@ step << Dwarf !DK
     .cooldown item,6948,>2,1
     .isOnQuest 24474
     .noflyable  --Azeroth Flying
+    .subzoneskip 77
 step
     #optional
     #completewith FirstThing
@@ -343,7 +344,7 @@ step
     .goto 27,33.203,71.701,30,0
     .goto 27,34.104,71.636,30,0
     >>Kill |cRXP_ENEMY_Rockjaw Scavengers|r. Loot them for their |cRXP_LOOT_Priceless Rockjaw Artifacts|r
-    >>|cRXP_PICK_Be aware as |cRXP_ENEMY_Rockjaw Scavengers|r cast|r |T135238:0|t[Throw Priceless Artifact] |cRXP_PICK_(Deals damage, but gives you a |cRXP_LOOT_Priceless Rockjaw Artifact|r)|r
+    >>|cRXP_WARN_Be aware as |cRXP_ENEMY_Rockjaw Scavengers|r cast|r |T135238:0|t[Throw Priceless Artifact] |cRXP_WARN_(Deals damage, but gives you a |cRXP_LOOT_Priceless Rockjaw Artifact|r)|r
     .complete 24486,1 --Priceless Rockjaw Artifact (5)
 	.mob Rockjaw Scavenger
 --XX May need to drop duplicates?
@@ -560,19 +561,76 @@ step
     .goto 27,32.064,74.170
 	.target +Grelin Whitebeard
 --XX 182 can be completed later
-step
+
+--steps for strictly cata, changes in mop
+step << cata
+    #optional
+    #completewith Griknir
+    .goto 428,12.774,40.711,15 >> Enter the Coldridge Valley cave
+	.isOnQuest 218
+step << cata
+    #optional
+    #completewith Griknir
+    >>Kill |cRXP_ENEMY_Frostmane Blades|r and |cRXP_ENEMY_Frostmane Novices|r
+    .complete 218,2 --Grik'nir's Servant slain (10)
+	.mob Frostmane Blade
+step << cata
+    #label Griknir
+    .goto Dun Morogh,35.80,77.36,30,0
+    .goto 428,76.449,32.098
+    >>Kill |cRXP_ENEMY_Grik'nir the Cold|r
+    .complete 218,1 --Grik'nir the Cold (1)
+	.mob Grik'nir the Cold
+step << cata
+    #completewith next
+    .goto 428,77.421,26.068,0
+    .goto 428,60.009,17.985,0
+    .goto 428,60.865,46.816,0
+    >>Kill |cRXP_ENEMY_Frostmane Blades|r and |cRXP_ENEMY_Frostmane Novices|r
+    .complete 218,2 --Grik'nir's Servant slain (10)
+	.mob Frostmane Blade
+    .mob Frostmane Novice
+step << cata
+    .line 428,63.523,21.372,63.490,25.701,64.533,33.319,65.216,34.130,67.843,33.396,69.711,31.243,69.677,26.654,66.486,22.402,63.523,21.372
+    .goto 428,63.523,21.372,10,0
+    .goto 428,63.490,25.701,10,0
+    .goto 428,64.533,33.319,10,0
+    .goto 428,65.216,34.130,10,0
+    .goto 428,67.843,33.396,10,0
+    .goto 428,69.711,31.243,10,0
+    .goto 428,69.677,26.654,10,0
+    .goto 428,66.486,22.402,10,0
+    >>Kill the |cRXP_ENEMY_Wayward Fire Elemental|r inside
+    .complete 218,3 --Wayward Fire Elemental (1)
+	.mob Wayward Fire Elemental
+step << cata
+    .goto 428,77.421,26.068,0
+    .goto 428,60.009,17.985,0
+    .goto 428,60.865,46.816,0
+    >>Kill |cRXP_ENEMY_Frostmane Blades|r and |cRXP_ENEMY_Frostmane Novices|r
+    .complete 218,2 --Grik'nir's Servant slain (10)
+    .waypoint 428,71.104,18.539,20,0
+    .waypoint 428,55.686,13.478,12,0
+    .waypoint 428,58.225,33.709,12,0
+    .waypoint 428,59.189,40.829,12,0
+    .waypoint 428,67.202,42.936,12,0
+	.mob Frostmane Blade
+    .mob Frostmane Novice
+
+--steps for mop onwards
+step << !tbc !wotlk !cata
     #optional
     #completewith Hovel2
     >>Kill |cRXP_ENEMY_Frostmane Blades|r
     .complete 218,4 --Frostmane Blade (6)
 	.mob Frostmane Blade
-step
+step << !tbc !wotlk !cata
     #optional
     #completewith Griknir
     #label Hovel1
     .goto 428,12.774,40.711,15 >> Enter the Coldridge Valley cave
 	.isOnQuest 218
-step
+step << !tbc !wotlk !cata
     #optional
     #completewith Griknir
     #label Hovel2
@@ -583,7 +641,7 @@ step
     .goto 428,52.353,14.297,15,0
     .goto 428,76.449,32.098,80 >> Travel toward |cRXP_ENEMY_Grik'nir the Cold|r inside
 	.isOnQuest 218
-step
+step << !tbc !wotlk !cata
     #sticky
     #label Novices
     #requires Hovel2
@@ -608,7 +666,7 @@ step
     .waypoint 428,59.189,40.829,12,0
     .waypoint 428,67.202,42.936,12,0
 	.mob +*Frostmane Blade
-step
+step << !tbc !wotlk !cata
     #sticky
     #label FireElemental
     #requires Hovel2
@@ -625,12 +683,12 @@ step
     >>Kill the |cRXP_ENEMY_Wayward Fire Elemental|r inside
     .complete 218,2 --Wayward Fire Elemental (1)
 	.mob Wayward Fire Elemental
-step
+step << !tbc !wotlk !cata
     .goto 428,76.449,32.098
     >>Kill |cRXP_ENEMY_Grik'nir the Cold|r inside
     .complete 218,1 --Grik'nir the Cold (1)
 	.mob Grik'nir the Cold
-step
+step << !tbc !wotlk !cata
     #optional
     #requires Novices
 --XXREQ Placeholder invis step until multiple requires per step
@@ -638,11 +696,7 @@ step
     #optional
     #completewith next
     #requires FireElemental
-    .goto 428,52.316,13.778,12,0
-    .goto 428,46.537,19.510,12,0
-    .goto 428,36.573,30.430,12,0
-    .goto 428,20.348,46.954,12,0
-    .goto 428,14.750,45.019,12,0
+    .goto 428,14.750,45.019,30,0
     .goto 27,33.772,78.335,15 >>Exit the Coldridge Valley cave
     .isOnQuest 218
 step
@@ -687,18 +741,20 @@ step
     .accept 24493 >>Accept Don't Forget About Us
 	.target Jona Ironstock
 step
-    >>Loot the |cRXP_LOOT_Leftover Boar Meat|r on the table
-    >>Open the |cRXP_PICK_Beer Barrel on the ground|r. Loot it for the |cRXP_LOOT_Coldridge Beer Flagon|r
-    >>Open the box of |cRXP_PICK_Wolf-Hide Cloaks|r on the ground. Loot it for the |cRXP_LOOT_Ragged Wolf-Hide Cloak|r
-    .complete 24492,3 --|Leftover Boar Meat: 1/1
     .goto Dun Morogh,35.39,66.03
-    --.goto 1426/0,403.10001,-6098.60010 << cata
+    >>Loot the |cRXP_LOOT_Leftover Boar Meat|r on the table
+    .complete 24492,3 --|Leftover Boar Meat: 1/1
+step
+    .goto Dun Morogh,35.480,65.151
+    >>Open the |cRXP_PICK_Beer Barrel|r on the ground. Loot it for the |cRXP_LOOT_Coldridge Beer Flagon|r
     .complete 24492,1 --|Coldridge Beer Flagon: 1/1
-    .goto Dun Morogh,35.80,64.51
-    --.goto 1426/0,395.70001,-6068.10010 << cata
+step
+    #completewith next
+    .goto Dun Morogh,36.120,64.787,8 >> Run up stairs
+step
+    .goto Dun Morogh,35.782,64.496
+    >>Open the box of |cRXP_PICK_Wolf-Hide Cloaks|r on the ground. Loot it for the |cRXP_LOOT_Ragged Wolf-Hide Cloak|r
     .complete 24492,2 --|Ragged Wolf-Hide Cloak: 1/1
-    .goto Dun Morogh,35.51,65.14
-    --.goto 1426/0,384.00000,-6048.89990 << cata
 step
     #optional
     #requires Forget
@@ -717,6 +773,7 @@ step
 --   .timer 83.5,Pack Your Bags RP
 	.target Milo Geartwinge
 step
+    .goto 27,53.713,52.190
     >>|cRXP_WARN_When the 26-second timer expires (26 seconds after accepting the ride), log out and then back on whilst on |cRXP_FRIENDLY_Milo's Gyro|r to logout skip to Kharanos|r
     >>|cRXP_WARN_If you do it before the timer expires you may logout skip to New Tinkertown or back to Coldridge Valley. If this happens, travel to Kharanos normally|r
     .subzone 131 >> Travel to Kharanos
@@ -732,7 +789,7 @@ RXPGuides.RegisterGuide([[
 #cata
 #name 1-6 New Tinkertown
 #displayname 1-6 New Tinkertown
-#next 6-9 Dun Morogh
+#next 6-7 Dun Morogh;6-9 Elwynn Forest
 #defaultfor Gnome !DK
 
 << Gnome Alliance
@@ -741,6 +798,7 @@ step
     .goto 30,34.101,32.243
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nevin Twistwrench|r
     .accept 27670 >>Accept Pinned Down
+    .target Nevin Twistwrench
 step
     #loop
     .goto 30,40.712,32.200,0
@@ -791,7 +849,7 @@ step
     .goto 30,42.540,36.441,15,0
     .goto 30,50.993,42.921,15,0
     .goto 30,51.591,37.316,15,0
-    >>Use the |T967530:0|t[Teleport Beacon] on |cRXP_FRIENDLY_Survivors|r
+    >>|cRXP_WARN_Use the|r |T133860:0|t[Teleport Beacon] |cRXP_WARN_on|r |cRXP_FRIENDLY_Survivors|r
     .complete 27671,1 --Survivors Rescued (6)
     .use 62057
 	.target Survivor
@@ -813,13 +871,24 @@ step
     .turnin 28169 >>Turn in Withdraw to the Loading Room!
     .accept 27635 >>Accept Decontamination
 	.target Gaffer Coilspring
-step
+step << skip -- not working currently in cata
     .goto 30,58.746,82.974
     >>|cRXP_WARN_Type /sit in front of the |cRXP_FRIENDLY_Sanitron 500|r then enter it to skip the RP|r
     .complete 27635,1 --Decontamination Process started (1)
     .target Sanitron 500
 --XX  .emote SIT,46185 Doesn't work here, needs a delay (batch makes this not work)
 --   .timer 26,Decontamination RP
+
+step
+    .isOnQuest 27635
+    .goto 30,58.746,82.974
+    .vehicle >> Click the |cRXP_FRIENDLY_Sanitron 500|r
+    .timer 30,Decontamination RP
+    .target Sanitron 500
+step
+    >>|cRXP_WARN_Wait out the RP|r
+    .complete 27635,1 --Decontamination Process started (1)
+    .target Sanitron 500
 step
     .goto 30,66.420,81.624
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Technician Braggle|r
@@ -828,10 +897,10 @@ step
 	.target Technician Braggle
 step
     .goto 30,67.282,84.148
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torben Zapblast|r
-    .complete 27674,1 --Speak to Torben Zapblast (1)
+    .gossip 46293,0 >> Talk to |cRXP_FRIENDLY_Torben Zapblast|r
+    .skipgossip 46293,1
+    .isOnQuest 27674
     .target Torben Zapblast
-	.skipgossip
 step
     .goto 469,39.504,38.383
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nevin Twistwrench|r
@@ -902,7 +971,7 @@ step
     .turnin 31137 >>Turn in Meet the High Tinker << Monk
     .turnin 41218 >>Turn in Meet the High Tinker << Hunter/Druid
     .accept 26208 >>Accept The Fight Continues
-	.timer 5,Meet the High Tinker RP
+	.timer 115,Meet the High Tinker RP
 	.target High Tinker Mekkatorque
 step
     .goto 469,38.802,32.715
@@ -1014,6 +1083,7 @@ step
     >>|cRXP_WARN_If your |cRXP_FRIENDLY_GS-9x Multi-bot|r dies, go back to |cRXP_FRIENDLY_Engineer Grindspark|r for a new one|r
     .complete 26205,1 --Clean up Toxic Geysers (5)
     .skipgossip 42553,1
+    .target GS-9x Multi-bot
 step
     #optional
     #loop
@@ -1046,6 +1116,16 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Engineer Grindspark|r
     .turnin 26205 >>Turn in A Job for the Multi-Bot
 	.target Engineer Grindspark
+step << Priest
+    .goto Dun Morogh,33.898,34.782
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_"Doc" Cogspin|r
+    .trainer >> Train your class spells
+	.target "Doc" Cogspin
+step << Mage
+    .goto Dun Morogh,34.534,35.065
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bipsi Frostflinger|r
+    .trainer >> Train your class spells
+	.target Bipsi Frostflinger
 step
     .goto 469,39.225,26.552
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Tock Sprysprocket|r
@@ -1054,15 +1134,94 @@ step
 step
     .goto 469,38.385,33.488
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Tread Sparknozzle|r
-    .accept 26316 >>Accept What's Keeping Kharmarn?
+    .accept 26316 >>Accept What's Keeping Jessup? << cata
+    .accept 26316 >>Accept What's Keeping Kharmarn? << !tbc !wotlk !cata
 	.target Captain Tread Sparknozzle
+step << Warrior
+    .goto Dun Morogh,34.274,37.520
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drill Sergeant Steamcrank|r
+    .trainer >> Train your class spells
+	.target Drill Sergeant Steamcrank
+step << Warrior
+    #optional
+    .goto Dun Morogh,34.274,37.520
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drill Sergeant Steamcrank|r
+    .accept 26204 >> Accept The Arts of a Warrior
+	.target Drill Sergeant Steamcrank
+    .itemStat 16,QUALITY,<7
+step << Warrior
+    #optional
+    .isOnQuest 26204
+    .goto Dun Morogh,34.53,37.45
+    >>|cRXP_WARN_Cast|r |T132337:0|t[Charge] |cRXP_WARN_on the|r |cRXP_ENEMY_Training Dummy|r
+    .complete 26204,1 -- Practice Charge (1)
+    .mob Training Dummy
+    .itemStat 16,QUALITY,<7
+step << Warrior
+    #optional
+    .isQuestComplete 26204
+    .goto Dun Morogh,34.274,37.520
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Drill Sergeant Steamcrank|r
+    .turnin 26204 >> Turn in The Arts of a Warrior
+	.target Drill Sergeant Steamcrank
+    .itemStat 16,QUALITY,<7
+step << Warrior
+    #optional
+    #completewith next
+    .equip 16,59039 >> |cRXP_WARN_Equip the|r |T135275:0|t[Very Light Sabre]
+    .use 59039
+    .itemcount 59039,1
+    .itemStat 16,QUALITY,<7
+step << Warlock
+    .goto Dun Morogh,33.246,38.397
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alamar Grimm|r
+    .trainer >> Train your class spells
+	.target Alamar Grimm
+step << Rogue
+    .goto Dun Morogh,33.376,36.738
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kelsey Steelspark|r
+    .trainer >> Train your class spells
+	.target Kelsey Steelspark
+step << Rogue
+    #optional
+    .goto Dun Morogh,33.376,36.738
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kelsey Steelspark|r
+    .accept 26207 >> Accept The Arts of a Rogue
+	.target Kelsey Steelspark
+    .itemStat 16,QUALITY,<7
+step << Rogue
+    #optional
+    .isOnQuest 26207
+    .goto Dun Morogh,34.53,37.45
+    >>|cRXP_WARN_Cast|r |T136189:0|t[Sinister Strike] |cRXP_WARN_and then|r |T132292:0|t[Eviscerate] |cRXP_WARN_on a|r |cRXP_ENEMY_Training Dummy|r |cRXP_WARN_3 times|r << Rogue
+    .complete 26207,1 -- Practice Eviscerate (1)
+    .mob Training Dummy
+    .itemStat 16,QUALITY,<7
+step << Rogue
+    #optional
+    .isQuestComplete 26207
+    .goto Dun Morogh,33.376,36.738
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kelsey Steelspark|r
+    .turnin 26207 >> Turn in The Arts of a Rogue
+	.target Kelsey Steelspark
+    .itemStat 16,QUALITY,<7
+step << Rogue
+    #optional
+    #completewith next
+    .equip 16,59043 >> |cRXP_WARN_Equip the|r |T133514:0|t[Death Star]
+    .use 59043
+    .itemcount 59043,1
+    .itemStat 16,QUALITY,<7
 step
     .goto 469,37.283,65.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Kharmarn Palegrip|r
-    .turnin 26316 >>Turn in What's Keeping Kharmarn?
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Jessup McCree|r << cata
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Kharmarn Palegrip|r << !tbc !wotlk !cata
+    .turnin 26316 >>Turn in What's Keeping Jessup? << cata
+    .turnin 26316 >>Turn in What's Keeping Kharmarn? << !tbc !wotlk !cata
     .accept 26284 >>Accept Missing in Action
     .accept 26285 >>Accept Get Me Explosives Back!
-	.target Kharmarn Palegrip
+    .target Jessup McCree << cata
+    .target Kharmarn Palegrip << !tbc !wotlk !cata
 step
     #sticky
     #label PowderKegs
@@ -1108,11 +1267,13 @@ step
 step
     #requires PowderKegs
     .goto 469,37.283,65.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Kharmarn Palegrip|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Jessup McCree|r << cata
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Kharmarn Palegrip|r << !tbc !wotlk !cata
     .turnin 26284 >>Turn in Missing in Action
     .turnin 26285 >>Turn in Get Me Explosives Back!
     .accept 26318 >>Accept Finishin' the Job
-	.target Kharmarn Palegrip
+    .target Jessup McCree << cata
+    .target Kharmarn Palegrip << !tbc !wotlk !cata
 step
 	#completewith next
     .goto 470,95.285,56.045,15 >>Enter the Frostmane Hold cave
@@ -1179,10 +1340,12 @@ step
     #label Finishing
     #requires Detonator
     .goto 469,37.283,65.200
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Kharmarn Palegrip|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Jessup McCree|r << cata
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk |cRXP_FRIENDLY_Kharmarn Palegrip|r << !tbc !wotlk !cata
     .turnin 26318 >>Turn in Finishin' the Job
     .accept 26329 >>Accept One More Thing
-	.target Kharmarn Palegrip
+    .target Jessup McCree << cata
+    .target Kharmarn Palegrip << !tbc !wotlk !cata
 step
     #completewith next
     .goto 469,36.284,70.305,-1
@@ -1221,7 +1384,7 @@ step
     .waypoint 469,56.513,23.676,15,0
     .waypoint 469,57.585,23.609,15,0
     .waypoint 469,58.619,23.568,15,0
-    >>Use the |T133710:0|t[Techno-Grenades] on the |cRXP_ENEMY_Repaired Mechano-Tanks|r
+    >>|cRXP_WARN_Use the|r |T133710:0|t[Techno-Grenades] |cRXP_WARN_on the|r |cRXP_ENEMY_Repaired Mechano-Tanks|r
     .complete 26333,1 --Repaired Mechano-Tanks destroyed (5)
 	.mob Repaired Mechano-Tank
     .use 58200
@@ -1291,7 +1454,7 @@ step
     .goto 469,52.556,44.220,50,0
     .goto 469,54.584,39.961,50,0
     .goto 469,61.154,48.908,50,0
-    >>Use the |T133037:0|t[Paintinator] on |cRXP_ENEMY_Crushcog Sentry-Bots|r
+    >>|cRXP_WARN_Use the|r |T133037:0|t[Paintinator] |cRXP_WARN_on|r |cRXP_ENEMY_Crushcog Sentry-Bots|r
     .complete 26342,1 --Crushcog's Sentry Bot blinded (5)
 	.mob Crushcog Sentry Bot
     .use 58203
@@ -1325,7 +1488,7 @@ step
     #completewith next
     #requires Mekkatalk
     >>|cRXP_WARN_Wait out the RP|r
-    +Use the |T308321:0|t[Orbital Targeting Device] on |cRXP_ENEMY_Razlo Crushcog|r and |cRXP_ENEMY_Crushcog's Guardians|r
+    +|cRXP_WARN_Use the|r |T308321:0|t[Orbital Targeting Device] |cRXP_WARN_on|r |cRXP_ENEMY_Razlo Crushcog|r |cRXP_WARN_and|r |cRXP_ENEMY_Crushcog's Guardians|r
     .isOnQuest 26364
     .use 58253
 step
@@ -1384,7 +1547,16 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Tharran|r
     .accept 25724 >>Accept Frostmane Aggression
 	.target Captain Tharran
-
+step
+    .goto 27,54.196,51.169
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rejold Barleybrew|r
+    .accept 315 >>Accept The Perfect Stout
+	.target Rejold Barleybrew
+step
+    .goto 27,53.933,50.684
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ragnar Thunderbrew|r
+    .accept 384 >>Accept Beer Basted Boar Ribs
+	.target Ragnar Thunderbrew
 
 step
     #optional
@@ -1403,6 +1575,8 @@ step << Gnome
 	.target Innkeeper Belm
     .isOnQuest 26380
 --XX not sure how to do this otherwise
+
+
 step
     #label Belm
     .goto 27,54.485,50.847
@@ -1411,7 +1585,12 @@ step
     .collect 2894,1,384,1 --Rhapsody Malt (1)
     .home >>Set your Hearthstone to Thunderbrew Distillery
 	.target Innkeeper Belm
-    .isOnQuest 384
+    .zoneskip 27,1
+step << Warrior
+    .goto 27,54.470,50.974
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Granis Swiftaxe|r
+    .trainer >> Train your class spells
+    .target Granis Swiftaxe
 step << Dwarf/Gnome/DarkIronDwarf
     .goto 27,54.723,50.607,8,0
     .goto 27,54.784,50.629,8,0
@@ -1420,6 +1599,41 @@ step << Dwarf/Gnome/DarkIronDwarf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gremlock Pilsnor|r inside in the backroom
     .accept 6387 >>Accept Honor Students
 	.target Gremlock Pilsnor
+step << Rogue
+    .goto 27,54.673,50.933
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hogral Bakkan|r
+    .trainer >> Train your class spells
+    .target Hogral Bakkan
+step << Priest
+    .goto 27,54.455,50.508
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maxan Anvol|r
+    .trainer >> Train your class spells
+    .target Maxan Anvol
+step << Shaman
+    .goto 27,54.605,50.232
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Halbin Frosthammer|r
+    .trainer >> Train your class spells
+    .target Halbin Frosthammer
+step << Mage
+    .goto 27,54.609,50.397
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magis Sparkmantle|r
+    .trainer >> Train your class spells
+    .target Magis Sparkmantle
+step << Paladin
+    .goto 27,54.709,50.392
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azar Stronghammer|r
+    .trainer >> Train your class spells
+    .target Azar Stronghammer
+step << Warlock
+    .goto 27,54.437,52.022
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gimrizz Shadowcog|r
+    .trainer >> Train your class spells
+    .target Gimrizz Shadowcog
+step << Hunter
+    .goto 27,52.913,51.364
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grif Wildheart|r
+    .trainer >> Train your class spells
+    .target Grif Wildheart
 step
     .goto 27,53.124,49.995
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharek Blackstone|r
@@ -1548,6 +1762,18 @@ step
     .goto 27,53.707,52.095
 	.target +Quartermaster Glynna
 step
+    .goto 27,54.196,51.169
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rejold Barleybrew|r
+    .turnin 315 >>Turn in The Perfect Stout
+	.target Rejold Barleybrew
+step
+    #optional
+    .isQuestComplete 384
+    .goto 27,53.933,50.684
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ragnar Thunderbrew|r
+    .turnin 384 >>Turn in Beer Basted Boar Ribs
+	.target Ragnar Thunderbrew
+step
     #completewith WendigoCave
     .goto 27,51.697,54.360,0
     .goto 27,50.738,54.065,0
@@ -1642,6 +1868,7 @@ step
     >>|cRXP_WARN_Make sure you die in a spot that is east/southeast of where |cRXP_FRIENDLY_Mountaineer Valgrum|r is|r
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .isOnQuest 313
+    .subzoneskip 131
 step
     #requires Wendigos
     #label Afar
@@ -1653,6 +1880,11 @@ step
     .turnin 25668 >>Turn in Pilfered Supplies
     .goto 27,53.707,52.095
 	.target +Quartermaster Glynna
+step
+    .goto 27,53.933,50.684
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ragnar Thunderbrew|r
+    .turnin 384 >>Turn in Beer Basted Boar Ribs
+	.target Ragnar Thunderbrew
 ]])
 
 RXPGuides.RegisterGuide([[
