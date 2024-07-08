@@ -744,7 +744,7 @@ RXPGuides.RegisterGuide([[
 -- step << Alliance
 --     #completewith next
 --     .goto 371,46.31,80.67,40 >>Look for the Treasure on the shrine.
-step <<  Horde
+step << Horde
     .goto 371,48.32,46.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Old Man Misteye|r
     .accept 29576 >>Accept An Air of Worry
@@ -1108,20 +1108,7 @@ step
 step
     .goto 371,65.34,31.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Tong.|r
-    .accept 30140 >>Accept The Rider's Journey
-    .itemcount 78960,1
-    .target Instructor Tong
-step
-    .goto 371,65.34,31.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Tong.|r
-    .accept 30141 >>Accept The Rider's Journey
-    .itemcount 78961,1
-    .target Instructor Tong
-step
-    .goto 371,65.34,31.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Tong.|r
-    .accept 30139 >>Accept The Rider's Journey
-    .itemcount 78962,1
+    .daily 30140,30141,30139 >>Accept The Rider's Journey
     .target Instructor Tong
 step
     #completewith Egg hatched
@@ -1134,7 +1121,6 @@ step
     .isOnQuest 30139
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Skythorn|r
     .turnin 30139 >>Turn in The Rider's Journey
-    -- .itemcount 78962,1
     .target Instructor Skythorn
 step
     .goto 371,57.55,45.10
@@ -1142,14 +1128,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Skythorn|r
     .turnin 30140 >>Turn in The Rider's Journey
     .target Instructor Skythorn
-    -- .itemcount 78960,1
 step
     .isOnQuest 30141
     .goto 371,57.55,45.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Skythorn|r
     .turnin 30141 >>Turn in The Rider's Journey
     .target Instructor Skythorn
-    -- .itemcount 78961,1
 step
     #label Egg hatched
     .goto 371,57.55,45.10
@@ -2149,6 +2133,11 @@ step
     #include 1) Jade Forest Side Quests Sprites Plight
 step
     #include 1) Jade Forest Cloud Serpent Side Quests
+step
+    .goto 371,48.32,46.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Old Man Misteye|r
+    .accept 29576 >>Accept An Air of Worry
+    .target Old Man Misteye
 step
     .goto 371,47.17,47.19
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jade Forest Flame Guardian|r
