@@ -12,15 +12,141 @@ RXPGuides.RegisterGuide([[
 
 step
     #loop
-    .goto 371,57.51,45.36,10,0
+    .goto 371,57.51,45.36,15,0
     .goto 371,57.75,44.94,10,0
-    .goto 371,58.28,45.04,10,0
-    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r, |cRXP_FRIENDLY_Your Hatchling|r, |cRXP_FRIENDLY_Ningna Darkwheel|r
-    .questcount <3,31706,31711,31708,31194,30155,30156,30158,31700,31701,30154 >> |cRXP_WARN_Pick up the 3 available dailies in The Arboretum|r
+    .goto 371,58.28,45.04,15,0
+    .goto 371,58.61,43.65,15,0
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r, |cRXP_FRIENDLY_Your Hatchling|r, |cRXP_FRIENDLY_Ningna Darkwheel|r, and |cRXP_FRIENDLY_Instructor Windblade|r
+    .questcount <3,31706,31711,31708,31194,30155,30156,30158,31700,31701,30154,31719,31721 >> |cRXP_WARN_Pick up the 3 available dailies in The Arboretum|r
     .target Elder Anli
     .target Your Hatchling
     .target Ningna Darkwheel
--- DAILIES DAY A
+    .target Instructor Windblade
+step
+    .isOnQuest 31719
+    .goto 371,58.26,45.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ningna Darkwheel|r, |cRXP_WARN_defeat her|r
+    .complete 31719,1 --1/1 Ningna Darkwheel defeated
+    .target Ningna Darkwheel
+    .skipgossipid 41480
+step
+    .isOnQuest 31721
+    .goto 371,57.29,43.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Qua-Ro Whitebrow|r, |cRXP_WARN_defeat him|r
+    .complete 31721,1 --1/1 Qua-Ro Whitebrow defeated
+    .target Qua-Ro Whitebrow
+    .mob Qua-Ro Whitebrow
+    .skipgossipid 40479
+step
+    .isOnQuest 30152
+    #completewith next
+    #label TheSkyRace
+    .complete 30152,1 --10/10 Checkpoints passed
+    .complete 30152,2 --1/1 Pass underneath the Finish Line
+step
+    .isOnQuest 30152
+    #completewith TheSkyRace
+    .goto 371,58.61,43.65
+    .gossipoption 40400 >>Talk to |cRXP_FRIENDLY_Instructor Windblade|r
+    .target Instructor Windblade
+step
+    .isOnQuest 30152
+    #title Checkpoint (1/10)
+    #requires TheSkyRace
+    .goto 371,60.60,39.34
+    >>|cRXP_WARN_Fly through the baloons with the flag|r
+    *Try to fly through the cloud rings to gain a speed buff
+    .complete 30152,1,1 --1/10 Checkpoints passed
+    .target Instructor Windblade
+    .skipgossipid 40400
+step
+    .isOnQuest 30152
+    #title Checkpoint (2/10)
+    .goto 371,59.67,31.51
+    >>|cRXP_WARN_Fly through the baloons with the flag|r
+    *Try to fly through the cloud rings to gain a speed buff
+    .complete 30152,1,2 --2/10 Checkpoints passed
+    .target Instructor Windblade
+    .skipgossipid 40400
+step
+    .isOnQuest 30152
+    #title Checkpoint (3/10)
+    .goto 371,61.29,25.20
+    >>|cRXP_WARN_Fly through the baloons with the flag|r
+    *Try to fly through the cloud rings to gain a speed buff
+    .complete 30152,1,3 --3/10 Checkpoints passed
+    .target Instructor Windblade
+    .skipgossipid 40400
+step
+    .isOnQuest 30152
+    #title Checkpoint (4/10)
+    .goto 371,66.30,35.91
+    >>|cRXP_WARN_Fly through the baloons with the flag|r
+    *Try to fly through the cloud rings to gain a speed buff
+    .complete 30152,1,4 --4/10 Checkpoints passed
+    .target Instructor Windblade
+    .skipgossipid 40400
+step
+    .isOnQuest 30152
+    #title Checkpoint (5/10)
+    .goto 371,66.11,42.49
+    >>|cRXP_WARN_Fly through the baloons with the flag|r
+    *Try to fly through the cloud rings to gain a speed buff
+    .complete 30152,1,5 --5/10 Checkpoints passed
+    .target Instructor Windblade
+    .skipgossipid 40400
+step
+    .isOnQuest 30152
+    #title Checkpoint (6/10)
+    .goto 371,66.73,51.47
+    >>|cRXP_WARN_Fly through the baloons with the flag|r
+    *Try to fly through the cloud rings to gain a speed buff
+    .complete 30152,1,6 --6/10 Checkpoints passed
+    .target Instructor Windblade
+    .skipgossipid 40400
+step
+    .isOnQuest 30152
+    #title Checkpoint (7/10)
+    .goto 371,64.05,51.04
+    >>|cRXP_WARN_Fly through the baloons with the flag|r
+    *Try to fly through the cloud rings to gain a speed buff
+    .complete 30152,1,7 --7/10 Checkpoints passed
+    .target Instructor Windblade
+    .skipgossipid 40400
+step
+    .isOnQuest 30152
+    #title Checkpoint (8/10)
+    .goto 371,61.82,54.54
+    >>|cRXP_WARN_Fly through the baloons with the flag|r
+    *Try to fly through the cloud rings to gain a speed buff
+    .complete 30152,1,8 --8/10 Checkpoints passed
+    .target Instructor Windblade
+    .skipgossipid 40400
+step
+    .isOnQuest 30152
+    #title Checkpoint (9/10)
+    .goto 371,60.40,52.88
+    >>|cRXP_WARN_Fly through the baloons with the flag|r
+    *Try to fly through the cloud rings to gain a speed buff
+    .complete 30152,1,9 --9/10 Checkpoints passed
+    .target Instructor Windblade
+    .skipgossipid 40400
+step
+    .isOnQuest 30152
+    #title Checkpoint (10/10)
+    .goto 371,58.76,46.83
+    >>|cRXP_WARN_Fly through the baloons with the flag|r
+    *Try to fly through the cloud rings to gain a speed buff
+    .complete 30152,1 --10/10 Checkpoints passed
+    .target Instructor Windblade
+    .skipgossipid 40400
+step
+    .isOnQuest 30152
+    #title Finish Line
+    .goto 371,58.38,46.35
+    >>|cRXP_WARN_Fly through the Finish Line|r
+    .complete 30152,2 --1/1 Pass underneath the Finish Line
+    .skipgossipid 40400
 step
     .isOnQuest 31706
     .goto 374,42.00,32.18
@@ -55,8 +181,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
     .dailyturnin 31711 >>Turn in The Seed of Doubt
     .target Elder Anli
-
--- DAILIES DAY B
 step
     .isOnQuest 31194
     .goto 371,69.68,31.28
@@ -205,6 +329,24 @@ step
     .goto 371,57.63,44.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
     .dailyturnin 30154 >>Turn in The Easiest Way To A Serpent's Heart
+    .target Elder Anli
+step
+    .isOnQuest 31719
+    .goto 371,57.63,44.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
+    .dailyturnin 31719 >>Turn in The Trainer's Challenge: Ningna Darkwheel
+    .target Elder Anli
+step
+    .isOnQuest 31721
+    .goto 371,57.63,44.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
+    .dailyturnin 31721 >>Turn in The Trainer's Challenge: Qua-Ro Whitebrow
+    .target Elder Anli
+step
+    .isOnQuest 30152
+    .goto 371,57.63,44.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
+    .dailyturnin 30152 >>Turn in The Sky Race
     .target Elder Anli
 ]])
 
