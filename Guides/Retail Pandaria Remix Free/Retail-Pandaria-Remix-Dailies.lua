@@ -454,7 +454,7 @@ step
     .goto 422,54.29,35.93,15,0
     .goto 422,55.06,35.85,10,0
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaz'tik the Manipulator|r, |cRXP_FRIENDLY_Rik'kal the Dissector|r, |cRXP_FRIENDLY_Korven the Prime|r or |cRXP_FRIENDLY_Kil'ruk the Wind-Reaver|r
-    .questcount <6,31232,31238,31231,31235,31234,31233 >>|cRXP_WARN_Get all the Shado-Pan Dailies|r
+    .questcount <6,31232,31238,31231,31235,31234,31233 >>|cRXP_WARN_Get all the Shado-Pan Dailies, skip this step if it doesn't complete|r
     .target Kaz'tik the Manipulator
     .target Rik'kal the Dissector
     .target Korven the Prime
@@ -517,40 +517,45 @@ step
     .mob Dreadspinner Tender
 step
     .isOnQuest 31238
-    #completewith next
-    >>Kill |cRXP_ENEMY_Greatback Mushans|r and |cRXP_ENEMY_Greatback Calfs|r. Loot them for the |T1:0|t[|cRXP_LOOT_Mushan Tongues|r]
+    #completewith AmberSapA
+    >>Kill |cRXP_ENEMY_Greatback Mushans|r and |cRXP_ENEMY_Greatback Calfs|r. Loot them for the |T350575:0|t[|cRXP_LOOT_Mushan Tongues|r]
     .complete 31238,1 --4/4 Mushan Tongue
     .mob Greatback Mushan
     .mob Greatback Calf
 step
+    #completewith next
+    #hidewindow
+    --.goto 422,69.71,17.14,0
+    --.goto 422,68.07,17.10,0
+    --.goto 422,67.51,20.31,0
+    --.goto 422,67.24,19.92,0
+    --.goto 422,66.24,17.56,0
+    --.goto 422,65.61,17.81,0
+    --.goto 422,65.53,21.69,0
+    --.goto 422,66.23,24.31,0
+    --.goto 422,63.92,19.48,0
+    --.goto 422,66.13,26.99,0
+    --.goto 422,71.14,30.27,0
+    --.goto 422,73.36,31.55,0
+    --.goto 422,71.16,24.12,0
+    --.goto 422,65.06,32.14,0
+    --.goto 422,65.82,34.00,0
+    --.goto 422,68.33,33.99,0
+    --.goto 422,69.65,34.20,0
+    --.goto 422,69.37,32.31,0
+    --.goto 422,66.53,39.27,0
+    --.goto 422,65.62,38.33,0
+    --.goto 422,64.76,41.82,0
+    --.goto 422,64.38,42.00,0
+    --.goto 422,65.88,44.49,0
+    --.goto 422,66.13,44.80,0
+    --.goto 422,66.58,43.75,0
+    --.goto 422,67.49,43.83,0
+    --.goto 422,67.38,42.65,0
+    +1
+step
+    #label AmberSapA
     .isOnQuest 31233
-    .goto 422,69.71,17.14,0
-    .goto 422,68.07,17.10,0
-    .goto 422,67.51,20.31,0
-    .goto 422,67.24,19.92,0
-    .goto 422,66.24,17.56,0
-    .goto 422,65.61,17.81,0
-    .goto 422,65.53,21.69,0
-    .goto 422,66.23,24.31,0
-    .goto 422,63.92,19.48,0
-    .goto 422,66.13,26.99,0
-    .goto 422,71.14,30.27,0
-    .goto 422,73.36,31.55,0
-    .goto 422,71.16,24.12,0
-    .goto 422,65.06,32.14,0
-    .goto 422,65.82,34.00,0
-    .goto 422,68.33,33.99,0
-    .goto 422,69.65,34.20,0
-    .goto 422,69.37,32.31,0
-    .goto 422,66.53,39.27,0
-    .goto 422,65.62,38.33,0
-    .goto 422,64.76,41.82,0
-    .goto 422,64.38,42.00,0
-    .goto 422,65.88,44.49,0
-    .goto 422,66.13,44.80,0
-    .goto 422,66.58,43.75,0
-    .goto 422,67.49,43.83,0
-    .goto 422,67.38,42.65,0
     #loop
     .goto 422,69.70,17.03,15,0
     .goto 422,68.12,17.09,15,0
@@ -560,8 +565,72 @@ step
     .goto 422,66.26,24.31,15,0
     .goto 422,66.14,26.92,15,0
     .goto 422,65.06,32.36,15,0
+    .goto 422,65.81,34.08,15,0
+    .goto 422,65.61,38.37,15,0
+    .goto 422,64.56,41.99,15,0
+    .goto 422,66.28,43.33,15,0
+    .goto 422,65.99,44.77,15,0
+    .goto 422,67.49,43.81,15,0
+    .goto 422,68.09,40.08,15,0
+    .goto 422,66.51,39.17,15,0
+    .goto 422,70.31,37.98,15,0
+    .goto 422,69.65,34.21,15,0
+    .goto 422,71.13,30.23,15,0
+    .goto 422,72.21,30.65,15,0
+    .goto 422,73.35,31.56,15,0
+    .goto 422,73.83,28.74,15,0
+    .goto 422,71.13,24.09,15,0
     >>Click on |cRXP_PICK_Amber Taps|r |cRXP_WARN_found on trees|r. Afterwards click on the |cRXP_PICK_Amber Pot|r below the tap
     .complete 31233,1 --6/6 Amber Sap
+step
+    .isOnQuest 31238
+    #loop
+    .goto 422,59.88,22.23,55,0
+    .goto 422,63.44,20.32,55,0
+    .goto 422,67.03,20.71,45,0
+    .goto 422,62.41,25.75,45,0
+    .goto 422,50.10,29.42,45,0
+    >>Kill |cRXP_ENEMY_Greatback Mushans|r and |cRXP_ENEMY_Greatback Calfs|r. Loot them for the |T350575:0|t[|cRXP_LOOT_Mushan Tongues|r]
+    .complete 31238,1 --4/4 Mushan Tongue
+    .mob Greatback Mushan
+    .mob Greatback Calf
+
+step
+    .isOnQuest 31231
+    .goto 422,55.06,35.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kil'ruk the Wind-Reaver|r
+    .dailyturnin 31231 >>Turn in Dreadspinner Extermination
+    .target Kil'ruk the Wind-Reaver
+step
+    .isOnQuest 31235
+    .goto 422,55.06,35.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kil'ruk the Wind-Reaver|r
+    .dailyturnin 31235 >>Turn in Nope Nope Nope
+    .target Kil'ruk the Wind-Reaver
+step
+    .isOnQuest 31234
+    .goto 422,54.37,35.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rik'kal the Dissector|r
+    .dailyturnin 31234 >>Turn in Putting An Eye Out
+    .target Rik'kal the Dissector
+step
+    .isOnQuest 31233
+    .goto 422,54.31,36.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korven the Prime|r
+    .dailyturnin 31233 >>Turn in Sap Tapping
+    .target Korven the Prime
+step
+    .isOnQuest 31232
+    .goto 422,54.31,36.08
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korven the Prime|r
+    .dailyturnin 31232 >>Turn in An Ancient Empire
+    .target Korven the Prime
+step
+    .isOnQuest 31238
+    .goto 422,54.25,35.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaz'tik the Manipulator|r
+    .dailyturnin 31238 >>Turn in Brain Food
+    .target Kaz'tik the Manipulator
 ]])
 
 -- August Celestial Dailies: Jade Forest
@@ -2492,6 +2561,7 @@ step
     .mob Onyx Stormclaw
 step
     .isOnQuest 31043
+    #completewith WildCloudridersFreed
     >>Click on the |cRXP_PICK_Shan'ze Tablets|r
     .complete 31043,1 --8/8 Shan'ze Tablet
 step
@@ -2726,7 +2796,7 @@ step
 step
     .isOnQuest 31061
     .goto 388,33.47,15.63
-    >>Click on a |cRXP_ENEMY_Shan'ze Cloudrunner|r. Kill the |cRXP_ENEMY_Shan'ze Cloudrunner|r you're sitting on
+    >>Click on a |cRXP_ENEMY_Shan'ze Cloudrunner|r or use |T134226:0|t[Bronze Claws]. Kill the |cRXP_ENEMY_Shan'ze Cloudrunner|r you're sitting on
     .complete 31061,1 --8/8 Shan'ze Cloudrider saved
     .use 83134
     .mob Shan'ze Cloudrunner
