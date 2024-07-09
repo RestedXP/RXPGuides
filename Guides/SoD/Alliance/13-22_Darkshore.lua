@@ -901,10 +901,10 @@ step << !Warrior !Rogue
 step << Druid
     #season 2
     .xp 14-1600 >>Grind the moonkin untill you're 1600 xp away from lvl 14
-step << !Warrior !Rogue
+step << skip --logout skip !Warrior !Rogue
     #season 2
     .goto 1439/1,-33.200,6141.300,20 >> Head to the nearby cave
-step << !Warrior !Rogue
+step << skip --logout skip !Warrior !Rogue
     #optional
     #label OracleLS
     #completewith AsterionTravelSoD
@@ -1093,10 +1093,10 @@ step << Druid
     .turnin 4812 >> Turn in As Water Cascades
     .accept 4813 >> Accept The Fragments Within
     .isQuestTurnedIn 4811
-step << Druid
+step << skip --logout skip Druid
     #season 2
     .goto 1439/1,-33.200,6141.300,20 >> Head to the nearby cave
-step << Druid
+step << skip --logout skip Druid
     #optional
     #label OracleLS
     #completewith AsterionTravelSoD
@@ -1321,44 +1321,13 @@ step << !Warrior !Rogue
     .goto Darkshore,55.04,33.34
     .complete 947,2 --Death Cap (1)
     .goto Darkshore,55.38,36.34
-step << !Warrior !Rogue
+step << skip --logout skip !Warrior !Rogue
     #optional
     #label MushroomLSSoD
     #completewith CavetoAuberSoD
     #season 2
     .goto 1439,54.964,34.536
     .goto 1439,41.705,36.507,20 >>|cRXP_WARN_Jump on top of the rock on the top floor inside the cave. Position your character until it looks like they're floating, then perform a Logout Skip by logging out and back in|r
-step
-    #xprate <1.5 --<< !NightElf/Hunter
-    #optional
-    #completewith RedCrystal
-    >>Kill |cRXP_ENEMY_Moonstalker Runts|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
-    .complete 1002,1 -- Moonstalker Fang (6)
-    .mob Moonstalker Runt
-    .isQuestTurnedIn 1001
-step
-    #xprate <1.5
-    #completewith AuberdineTurnin2
-    >>Kill |cRXP_ENEMY_Moonkin|r. Loot them for their |T132832:0|t|cRXP_LOOT_[Small Eggs]|r
-    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r  |cRXP_WARN_to 10 later|r
-    .collect 6889,10,2178,1,0x20,cooking --Small Egg (1-9)
-    .mob Young Moonkin
-    .mob Raging Moonkin
-    .mob Moonkin Oracle
-    .mob Moonkin
-    .skill cooking,10,1 --XX Shows if cooking skill is <10
-step
-    #xprate <1.5
-    #completewith AuberdineTurnin2
-    >>Kill |cRXP_ENEMY_Moonkin|r. Loot them for their |T132832:0|t|cRXP_LOOT_[Small Eggs]|r
-    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r  |cRXP_WARN_to 50 later|r
-    .collect 6889,50,90,1,0x20,cooking --Small Egg (10-49)
-    .mob Young Moonkin
-    .mob Raging Moonkin
-    .mob Moonkin Oracle
-    .mob Moonkin
-    .skill cooking,<10,1 --XX Shows if cooking skill is 10-50
-    .skill cooking,50,1
 step
     #season 2 << Warrior/Rogue
     #season 0 << Mage/Warlock/Priest/Paladin/Hunter/Druid
@@ -1374,27 +1343,6 @@ step
     .skill cooking,10,1 --XX Shows if cooking skill is <10
     .subzoneskip 442 --Auberdine
     .subzoneskip 447 --Ameth'Aran
-step
-    #season 0
-    #completewith LateTurtleStart
-    >>Kill |cRXP_ENEMY_Moonkin|r. Loot them for their |T132832:0|t|cRXP_LOOT_[Small Eggs]|r
-    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r  |cRXP_WARN_to 50 later|r
-    .collect 6889,50,90,1,0x20,cooking --Small Egg (10-49)
-    .mob Young Moonkin
-    .mob Raging Moonkin
-    .mob Moonkin Oracle
-    .mob Moonkin
-    .skill cooking,<10,1 --XX Shows if cooking skill is 10-50
-    .skill cooking,50,1
-    .subzoneskip 442 --Auberdine
-    .subzoneskip 447 --Ameth'Aran
-step
-    #season 0
-    #label RedCrystal
-    .goto 1439,47.314,48.676
-    >>Travel up to the |cRXP_PICK_Mysterious Red Crystal|r
-    >>|cRXP_WARN_Be careful of the two group of 2 |cRXP_ENEMY_Raging Moonkins|r west of the |cRXP_PICK_Mysterious Red Crystal|r as the duos closest to each other are leashed together|r
-    .complete 4811,1 --Locate the large, red crystal on Darkshore's eastern mountain range
 step << Warrior/Rogue
     #season 2
     #label RedCrystal
@@ -1402,36 +1350,14 @@ step << Warrior/Rogue
     >>Travel up to the |cRXP_PICK_Mysterious Red Crystal|r
     >>|cRXP_WARN_Be careful of the two group of 2 |cRXP_ENEMY_Raging Moonkins|r west of the |cRXP_PICK_Mysterious Red Crystal|r as the duos closest to each other are leashed together|r
     .complete 4811,1 --Locate the large, red crystal on Darkshore's eastern mountain range
-step << Warrior/Rogue
+step << skip --logout skip Warrior/Rogue
     #season 2
     .goto 1439/1,-33.200,6141.300,20 >> Head to the nearby cave
-step << Warrior/Rogue
+step << skip --logout skip Warrior/Rogue
     #completewith next
     #season 2
     .goto 1439/1,-79.100,6134.300
     .goto 1439,41.705,36.507,20 >>|cRXP_WARN_Kill the Moonkin Oracle inside and jump on top of the large mushroom at the back of the cave, then perform a Logout Skip by logging out and back in|r
-step << Druid
-    #optional
-    #season 0
-    #completewith Lunaclaw
-    .goto 1439,43.126,45.593,15 >> Enter the |cRXP_PICK_Moonkin Stone|r cave
-step << Druid
-    #optional
-    #season 0
-    #completewith Lunaclaw
-    .goto Darkshore,43.50,45.97
-    .cast 18974 >>|cRXP_WARN_Use the|r |T132857:0|t[Cenarion Moondust] |cRXP_WARN_at the |cRXP_PICK_Moonkin Stone|r inside the cave to summon |cRXP_ENEMY_Lunaclaw|r at the entrance of the cave|r
-    .timer 4,Body and Heart RP
-    .use 15208
-    .isOnQuest 6001
-step << Druid
-    #label Lunaclaw
-    #season 0
-    .goto Darkshore,43.09,45.55
-    >>Kill |cRXP_ENEMY_Lunaclaw|r
-    .complete 6001,1 --Defeat Lunaclaw (x1)
-    .use 15208
-    .mob Lunaclaw
 step << !Warrior !Rogue
     #optional
     #season 2
@@ -1450,14 +1376,6 @@ step << !Warrior !Rogue
 ----Start of Early Red Crystal turnin Section (NE below 14 for xp, Hunters/Druids for staff wep upgrade)/Druid bear q final if not done earlier----
 
 
-step << NightElf/Hunter/Druid
-    #optional
-    #completewith Cascade
-    #season 0
-    .hs >> Hearth to Auberdine
-    .cooldown item,6948,>0,1
-    .subzoneskip 442
-    .isQuestTurnedIn 6001 << Druid
 step << NightElf/Hunter/Druid/Warrior
     #season 2 << Warrior/Rogue
     #optional
@@ -1598,11 +1516,11 @@ step << !Druid sod
     .turnin 4812 >> Turn in As Water Cascades
     .accept 4813 >> Accept The Fragments Within
     .isQuestTurnedIn 4811
-step
+step << skip --logout skip
     #season 2 << Hunter
     #season 1 << Druid/Warrior/Rogue/Priest
     .goto 1439/1,-33.200,6141.300,20 >> Head to the nearby cave
-step
+step <<  skip --logout skip
     #optional
     #label OracleLSTwo
     #completewith MysteriousCrystalHuntDruidEnd
@@ -1610,49 +1528,6 @@ step
     #season 1 << Druid/Warrior/Rogue/Priest
     .goto 1439/1,-79.100,6134.300
     .goto 1439,41.705,36.507,20 >>|cRXP_WARN_Kill the Moonkin Oracle inside and jump on top of the large mushroom at the back of the cave, then perform a Logout Skip by logging out and back in|r
-step << NightElf/Hunter/Druid
-    #optional
-    #season 0
-    #loop
-    .goto 1439,46.918,48.630,0
-    .goto 1439,45.338,54.337,0
-    .goto 1439,45.108,49.184,0
-    .goto 1439,45.322,44.756,0
-    .goto 1439,46.918,48.630,60,0
-    .goto 1439,46.233,49.578,60,0
-    .goto 1439,46.110,50.828,60,0
-    .goto 1439,45.766,51.560,60,0
-    .goto 1439,45.652,52.729,60,0
-    .goto 1439,45.338,54.337,60,0
-    .goto 1439,44.817,53.601,60,0
-    .goto 1439,44.398,52.137,60,0
-    .goto 1439,44.424,50.766,60,0
-    .goto 1439,45.090,50.415,60,0
-    .goto 1439,45.108,49.184,60,0
-    .goto 1439,44.578,48.547,60,0
-    .goto 1439,44.311,47.903,60,0
-    .goto 1439,43.577,46.772,60,0
-    .goto 1439,42.237,46.108,60,0
-    .goto 1439,42.715,45.372,60,0
-    .goto 1439,43.101,44.400,60,0
-    .goto 1439,45.322,44.756,60,0
-    >>Kill |cRXP_ENEMY_Moonkin|r. Loot them for their |T132832:0|t|cRXP_LOOT_[Small Eggs]|r
-    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r  |cRXP_WARN_to 10 later|r
-    .collect 6889,10,2178,1,0x20,cooking --Small Egg (1-9)
-    .mob Young Moonkin
-    .mob Raging Moonkin
-    .mob Moonkin Oracle
-    .mob Moonkin
-    .skill cooking,10,1 --XX Shows if cooking skill is <10
-    .isQuestTurnedIn 4811
-step << NightElf/Hunter/Druid/Warrior
-    #season 0
-    #optional
-    #label MysteriousCrystalHuntDruidEnd
-    #completewith next
-    .goto 1439,37.703,43.393
-    .subzone 442 >> Return to Auberdine
-    .isQuestTurnedIn 4811
 step
     #season 2 << Hunter
     #season 1 << Druid/Warrior/Rogue/Priest
@@ -2386,7 +2261,7 @@ step << Priest
     .turnin 966 >> Turn in The Tower of Althalaxx
     .accept 967 >> Accept The Tower of Althalaxx
     .target Balthule Shadowstrike
-step << Priest
+step << skip --logout skip Priest
     #season 2
     #loop
     .goto 1439,55.231,26.508,0
@@ -2950,37 +2825,13 @@ step
     .goto Darkshore,55.04,33.34
     .complete 947,2 --Death Cap (1)
     .goto Darkshore,55.38,36.34
-step << NightElf !Druid
-    #softcore
-    #optional
-    #completewith CavetoAuber
-    #season 0
-    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-    .target Spirit Healer
-step
-    #hardcore << NightElf !Druid
-    #optional
-    #label MushroomLS
-    #completewith CavetoAuber
-    #season 0
-    .goto 1439,54.964,34.536
-    .goto 1439,41.705,36.507,20 >>|cRXP_WARN_Jump on top of the rock on the top floor inside the cave. Position your character until it looks like they're floating, then perform a Logout Skip by logging out and back in|r
-step << Warrior/Rogue
+step << skip --logout skip Warrior/Rogue
     #optional
     #label MushroomLS
     #completewith CavetoAuber
     #season 2
     .goto 1439,54.964,34.536
     .goto 1439,41.705,36.507,20 >>|cRXP_WARN_Jump on top of the rock on the top floor inside the cave. Position your character until it looks like they're floating, then perform a Logout Skip by logging out and back in|r
-step
-    #hardcore << NightElf !Druid
-    #xprate <1.5 --<< !NightElf/Hunter
-    #requires MushroomLS
-    #completewith CavetoAuber
-    >>Kill |cRXP_ENEMY_Moonstalker Runts|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
-    .complete 1002,1 -- Moonstalker Fang (6)
-    .mob Moonstalker Runt
-    .isOnQuest 1002
 step
     #optional
     #season 0 << !Warrior !Rogue
@@ -4096,7 +3947,7 @@ step << Warrior
     >>|cRXP_WARN_Be aware of the |cRXP_ENEMY_Thistle Cubs|r which can stun you for 2 seconds|r
     .complete 2139,1 --Den Mother (1)
     .mob Den Mother
-step << Warrior
+step << skip --logout skip Warrior
     #season 2
     .goto Darkshore,51.48,38.43
     .goto 1439,41.705,36.507,20 >>|cRXP_WARN_Jump on top of the mushroom at the back of Den Mother's cave and perform a logout skip by logging out on top of it|r
@@ -4105,54 +3956,6 @@ step << Warrior
     #season 2
     #completewith BlackwoodSod
     .subzone 442 >> Travel to Auberdine
-step << !Hunter
-    #xprate <1.5
-    #label CompleteFangs
-    .goto Darkshore,52.6,33.6
-    .xp 18 >> Grind to level 18
-step << Hunter
-    #label CompleteFangs
-    #season 0
-    .goto Darkshore,52.6,33.6
-    .xp 18.75 >> Grind to 18 + 75%
-    >>Make sure your HS cooldown is <10 min
-    >>Skip this step if the area is too crowded
-step
-    #xprate <1.5 --<< !NightElf/Hunter
-    #optional
-    #loop
-    .goto 1439,53.629,26.054,0
-    .goto 1439,54.204,30.475,0
-    .goto 1439,49.775,30.351,0
-    .goto 1439,48.894,26.514,0
-    .goto 1439,48.022,27.199,60,0
-    .goto 1439,48.894,26.514,60,0
-    .goto 1439,49.558,26.087,60,0
-    .goto 1439,49.902,27.511,60,0
-    .goto 1439,49.776,28.393,60,0
-    .goto 1439,49.775,30.351,60,0
-    .goto 1439,50.818,30.486,60,0
-    .goto 1439,50.689,32.001,60,0
-    .goto 1439,51.267,32.319,60,0
-    .goto 1439,54.204,30.475,60,0
-    .goto 1439,53.899,28.638,60,0
-    .goto 1439,53.049,27.983,60,0
-    .goto 1439,52.764,26.312,60,0
-    .goto 1439,53.629,26.054,60,0
-    >>Kill |cRXP_ENEMY_Moonstalker Runts|r and |cRXP_ENEMY_Moonstalkers|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
-    .complete 1002,1 -- Moonstalker Fang (6)
-    .mob Moonstalker Runt
-    .mob Moonstalker
-    .isOnQuest 1002
---XX Can do later during Pelts but better if player gets more xp beforehand
-step
-    #xprate <1.5 --<< !NightElf/Hunter
-    #label Buzzbox323End
-    #requires SicklyDeers << Druid --xprate <1.5
-    .goto 1439,51.288,24.554
-    >>Click the |cRXP_PICK_Buzzbox 323|r on the ground
-    .turnin 1002 >> Turn in Buzzbox 323
-    .accept 1003 >> Accept Buzzbox 525
 step
     #season 0 << Warrior
 	#xprate >1.49 << Hunter/Druid
@@ -4506,7 +4309,7 @@ step << !Druid !Warrior
     #completewith next
     .goto 1439,37.703,43.393
     .subzone 442 >> Return to Auberdine
-    >>|cRXP_WARN_If your hearthstone is still on cooldown you can use the same logout skip in the cave with Nagas and mushrooms as before to get back to town faster|r
+--logout skip    >>|cRXP_WARN_If your hearthstone is still on cooldown you can use the same logout skip in the cave with Nagas and mushrooms as before to get back to town faster|r
 step
     #xprate >1.59
     #label BlackwoodSod
@@ -5063,7 +4866,7 @@ step << Rogue
     .zoneskip Stormwind City
     .zoneskip Westfall
     .dungeon !DM
-step << Rogue
+step << skip --logout skip Rogue
     #xprate >1.59
     #optional
     #completewith DeeprunNoDM
@@ -6076,7 +5879,7 @@ step << Priest
     .zoneskip Stormwind City
     .zoneskip Westfall
     .dungeon DM
-step << Mage/Priest
+step << skip --logout skip Mage/Priest
     #xprate >1.59
     #optional
     #requires MilstaffDM << Mage
@@ -6137,7 +5940,7 @@ step << !Mage !Priest
     .zoneskip Westfall
     .isQuestTurnedIn 968
     .dungeon DM
-step << !Mage !Priest
+step << skip --logout skip !Mage !Priest
     #xprate >1.59 << !Hunter
     #completewith DeeprunDM
     #optional
@@ -6161,7 +5964,7 @@ step << skip --NightElf Hunter/NightElf Warrior
     .zoneskip Westfall
     .isQuestAvailable 968
     .dungeon DM
-step << !Mage !Priest
+step << skip --logout skip !Mage !Priest
     #xprate >1.59 << !Hunter
     #completewith DeeprunDM
     #optional

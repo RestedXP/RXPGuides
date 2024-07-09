@@ -598,7 +598,7 @@ step << Hunter/Druid/Warrior
 	#completewith next
     .deathskip >> Die and respawn at the Spirit Healer
     .target Spirit Healer
-step << Warrior
+step << skip --logout skip Warrior
 	#hardcore
 	#completewith next
     #season 2
@@ -619,7 +619,7 @@ step << Hunter
     #requires hunterRuneChimera
     #label hunterEngrave
     .engrave 10 >> Open your character sheet and engrave your gloves with |T133816:0|t[|cRXP_FRIENDLY_Chimera Shot|r]
-step << Hunter
+step << skip --logout skip Hunter
 	#hardcore
     #season 2
 	#completewith next
@@ -758,7 +758,7 @@ step
     #season 0 << Warrior
     .deathskip >> Die and respawn at the Spirit Healer
     .target Spirit Healer
-step
+step << skip --logout skip
 	#hardcore
 	#completewith next
     #season 0 << Warrior
@@ -781,59 +781,12 @@ step
     >>TIP: |cRXP_WARN_Take the Robes as a reward from this quest and equip it. You will use it to engrave a rune on later|r << sod Priest
     .turnin 917 >> Turn in Webwood Egg
     .target Gilshalan Windwalker
-step
-#xprate <1.99
-    .goto Teldrassil,57.80,40.97,25,0
-    .goto Teldrassil,59.062,39.448
-    >>Ascend the Aldrassil Tree
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tenaron Stormgrip|r
-    .turnin 920 >> Turn in Tenaron's Summons
-    .target Tenaron Stormgrip
-    .accept 921 >> Accept Crown of the Earth
-step
-#xprate <1.99
-    #sticky
-    #label vial1
-    .goto Teldrassil,59.9,33.0
-	.use 5185 >> |cRXP_WARN_Use the|r |T134776:0|t[Crystal Phial] |cRXP_WARN_at the Moonwell|r
-    .complete 921,1 --Collect Filled Crystal Phial (x1)
-step << Hunter
-#xprate <1.99
-    .goto Teldrassil,59.8,34.1
-    >>Kill |cRXP_ENEMY_Mangy Nightsabers|r and |cRXP_ENEMY_Thistle Boars|r
-    .complete 457,1 --Kill Mangy Nightsaber (x7)
-    .complete 457,2 --Kill Thistle Boar (x7)
-    .mob Mangy Nightsaber
-    .mob Thistle Boar
-step
-#xprate <1.99
-    #requires vial1
-    #completewith next
-    .deathskip >> Die and respawn at the Spirit Healer
-    .target Spirit Healer
-step << Hunter
-#xprate <1.99
-    #requires vial1
-    .goto Teldrassil,58.695,44.266
-    .target Conservator Ilthalaine
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Conservator Ilthalaine|r
-    .turnin 457,2 >> Turn in The Balance of Nature
 step << Priest
     #requires vial1
     .goto Teldrassil,59.2,40.5
     .target Shanda
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shanda|r
     .accept 5622 >> Accept In Favor of Elune
-step
-#xprate <1.99
-    #requires vial1
-    .goto Teldrassil,57.80,40.97,25,0
-    .goto Teldrassil,59.062,39.448
-    >>Ascend the Aldrassil Tree
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tenaron Stormgrip|r
-    .turnin 921 >> Turn in Crown of the Earth
-    .target Tenaron Stormgrip
-    .accept 928 >> Accept Crown of the Earth
 step
     .goto Teldrassil,61.159,47.644
     .target Porthannius

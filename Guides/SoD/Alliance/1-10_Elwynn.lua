@@ -275,7 +275,7 @@ step << Priest
     .collect 205951,1 -- Memory of a Troubled Acolyte (1)
     .mob Kobold Laborer
     .train 402862,1
-step << Priest
+step << skip --logout skip Priest
     #xprate >1.59
     #season 2
     #optional
@@ -286,6 +286,11 @@ step << Priest
     .subzone 9 >>|cRXP_WARN_Jump on top of the light. Perform a Logout Skip by logging out and back in|r
     .subzoneskip 34,1 --Echo Ridge Mine
     .train 402862,1
+step << Priest
+	#softcore
+    #completewith next
+    .deathskip >> Die and respawn at the Spirit Healer in Northshire
+    .target Spirit Healer
 step << Warrior
     #xprate >1.59
     #season 2
@@ -311,7 +316,7 @@ step << Warrior
     .train 403470 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Victory Rush]|r |cRXP_WARN_to learn|r |T132342:0|t[Victory Rush]
     .use 204806
     .itemcount 204806,1 -- Rune of Victory Rush (1)
-step << Warrior
+step << skip --logout skip Warrior
     #xprate >1.59
     #season 2
     #optional
@@ -319,7 +324,11 @@ step << Warrior
     .goto 1429,50.626,27.209
     .subzone 9 >>|cRXP_WARN_Jump on top of the light on the Minecart. Perform a Logout Skip by logging out and back in|r
     .subzoneskip 34,1 --Echo Ridge Mine
-
+step << Warrior
+	#softcore
+    #completewith next
+    .deathskip >> Die and respawn at the Spirit Healer in Northshire
+    .target Spirit Heale
 
 ----End of Warrior/Priest Early Laborer Mine rune section----
 
@@ -1079,7 +1088,7 @@ step
     >>Kill |cRXP_ENEMY_Kobold Laborers|r inside Echo Ridge Mine
     .complete 21,1 --Kill Kobold Laborer (x12)
     .mob Kobold Laborer
-step
+step << skip --logout skip
     #xprate >1.59
     #season 2
     .goto 1429,50.626,27.209,-1
@@ -1087,6 +1096,11 @@ step
     .subzone 9 >>|cRXP_WARN_Jump on top of the light. Perform a Logout Skip by logging out and back in|r
     .subzoneskip 34,1 --Echo Ridge Mine
     .isOnQuest 21
+step
+	#softcore
+    #completewith next
+    .deathskip >> Die and respawn at the Spirit Healer in Northshire
+    .target Spirit Healer
 step
     #xprate >1.49 << Priest/Mage
     #optional
@@ -1742,16 +1756,16 @@ step << Priest
     .train 425216 >>|cRXP_WARN_Use the|r |T136222:0|t|cRXP_LOOT_[Memory of a Dark Purpose]|r |cRXP_WARN_to learn|r |T237514:0|t[Void Plague]
     .use 205940
 step << Warrior
-    #optional
-    #completewith Exchange
-    +|cRXP_WARN_Try to save a single|r |T134829:0|t[Minor Healing Potion] |cRXP_WARN_from now on as you will need it for Rolf's Corpse later|r
-    .subzoneskip 87 --Goldshire
-step << Warrior
     #season 2
     #optional
     #requires KoboldRune
 --XXREQ Placeholder invis step
 step
+	#softcore
+    #completewith next
+    .deathskip >> Die and respawn at the Spirit Healer in Goldshire
+    .target Spirit Healer
+step << skip --logout skip
     #xprate >1.49
     #hardcore
     #optional
@@ -3803,7 +3817,7 @@ step
     .target Auctioneer Buckler
     .zoneskip Dun Morogh
     .isQuestAvailable 418
-step
+step << skip --logout skip
     #ah
     #optional
     .goto 1455,33.220,64.649

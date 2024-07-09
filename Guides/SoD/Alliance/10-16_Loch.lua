@@ -376,12 +376,6 @@ step
     .goto Dun Morogh,84.4,31.1,25 >>Go through the tunnel to Loch Modan
     .zoneskip Loch Modan
 step
-    .goto Loch Modan,32.56,46.86,200 >>|cRXP_WARN_Perform a logout skip by jumping on top of a brazier in the tunnel. Then jumping off of it and logging out using a /camp macro or alt+f4 closing the game. This will move your character to Thelsamar|r
-    >>Run to thelsamar if you're unable to do it
--- .link ADD GUIDE VIDEO
-    .subzoneskip 144
-    .zoneskip Loch Modan
-step
     #optional
     #completewith lochstart1
     >>Kill |cRXP_ENEMY_Elder Black Bears|r. Loot them for their |cRXP_LOOT_Bear Meat|r
