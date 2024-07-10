@@ -773,110 +773,6 @@ step << !Druid sod
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
     .turnin 4761 >> Turn in Thundris Windweaver
     .accept 4762 >> Accept The Cliffspring River
-
-----Start of NE >1.49x catchup (everyone 1x) Early boat section----
-
-
-step
-    #xprate <1.5 --<< !NightElf/Hunter
-    #completewith MistVeil
-    .goto Darkshore,35.44,35.83,0
-    .goto Darkshore,35.71,32.27,0
-    .goto Darkshore,36.70,30.00,0
-    .goto Darkshore,38.73,28.25,0
-    .goto Darkshore,40.17,28.76,0
-    .goto Darkshore,35.44,35.83,55,0
-    .goto Darkshore,35.71,32.27,55,0
-    >>Kill |cRXP_ENEMY_Darkshore Threshers|r. Loot them for their |cRXP_LOOT_Thresher Eyes|r
-    .complete 1001,1 --Thresher Eye (3)
-    .mob Darkshore Thresher
-    .isOnQuest 1001
-step
-    #xprate <1.5 --<< !NightElf/Hunter
-    #optional
-    #completewith next
-    +|cRXP_WARN_Press Escape, then go into -> Options -> Controls|r
-    >>|cRXP_WARN_Check "Enable Interact Key" and bind the "Interact with Target" option to a key|r
-step
-    #xprate <1.5 --<< !NightElf/Hunter
-    .goto 1439,38.213,28.754
---  .goto 1439,38.234,28.796
-    >>|cRXP_WARN_==BE AWARE OF YOUR BREATH METER==|r
-    >>|cRXP_WARN_Swim underwater to the outside of the back of the boat|r
-    >>|cRXP_WARN_On the arrow location, press your "Interact with Target" keybind to loot the |cRXP_LOOT_Silver Dawning's Lockbox|r from outside the boat|r
-    >>|cRXP_WARN_If you don't want to do this, swim underwater into the bottom floor of the boat then loot the |cRXP_LOOT_Silver Dawning's Lockbox|r inside|r
-    .complete 982,1 --Silver Dawning's Lockbox (1)
-    .isOnQuest 982
-step
-    #xprate <1.5 --<< !NightElf/Hunter
-    #label MistVeil
-    .goto 1439,39.581,27.487
---  .goto 1439,39.629,27.462
-    >>|cRXP_WARN_==BE AWARE OF YOUR BREATH METER==|r
-    >>|cRXP_WARN_Swim underwater to the outside of the back of the boat|r
-    >>|cRXP_WARN_On the arrow location, press your "Interact with Target" keybind to loot the |cRXP_LOOT_Mist Veil's Lockbox|r from outside the boat|r
-    >>|cRXP_WARN_If you don't want to do this, swim underwater into the bottom floor of the boat then loot the |cRXP_LOOT_Mist Veil's Lockbox|r inside|r
-    .complete 982,2 --Mist Veil Lockbox (1)
-    .isOnQuest 982
-step
-    #xprate <1.5 --<< !NightElf/Hunter
-    #loop
-    .goto Darkshore,40.17,28.76,0
-    .goto Darkshore,38.73,28.25,0
-    .goto Darkshore,36.70,30.00,0
-    .goto Darkshore,40.17,28.76,55,0
-    .goto Darkshore,38.73,28.25,55,0
-    .goto Darkshore,36.70,30.00,55,0
-    .goto Darkshore,35.71,32.27,55,0
-    .goto Darkshore,35.44,35.83,55,0
-    .goto Darkshore,35.71,32.27,55,0
-    .goto Darkshore,35.44,35.83,55,0
-    >>Kill |cRXP_ENEMY_Darkshore Threshers|r. Loot them for their |cRXP_LOOT_Thresher Eyes|r
-    .complete 1001,1 --Thresher Eye (3)
-    .mob Darkshore Thresher
-    .isOnQuest 1001
-step
-    #xprate <1.5 --<< !NightElf/Hunter
-    #optional
-    .goto 1439,41.901,31.339
-    >>Click the |cRXP_PICK_Beached Sea Creature|r
-    .accept 4723 >> Accept Beached Sea Creature
-    .isOnQuest 1001
-step
-    #xprate <1.5 --<< !NightElf/Hunter
-    #optional
-    .goto 1439,41.901,31.339
-    >>Click the |cRXP_PICK_Beached Sea Creature|r
-    .accept 4723 >> Accept Beached Sea Creature
-    .isOnQuest 982
-step
-    #xprate <1.5 --<< !NightElf/Hunter
-    .goto 1439,41.960,28.616
-    >>Click the |cRXP_PICK_Buzzbox 411|r on the ground
-    .turnin 1001 >> Turn in Buzzbox 411
-    .accept 1002 >> Accept Buzzbox 323
-    .isQuestComplete 1001
-step
-    #xprate <1.5 --<< !NightElf/Hunter
-    #optional
-    .goto 1439,41.960,28.616
-    >>Click the |cRXP_PICK_Buzzbox 411|r on the ground
-    .accept 1002 >> Accept Buzzbox 323
-    .isQuestTurnedIn 1001
-step
-    #xprate <1.5 --<< !NightElf/Hunter
-    #optional
-    #completewith AsterionTravel
-    .goto 1439,44.190,33.697,0
-    >>Kill |cRXP_ENEMY_Moonstalker Runts|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
-    .complete 1002,1 -- Moonstalker Fang (6)
-    .mob Moonstalker Runt
-    .isQuestTurnedIn 1001
-
-
-----End of NE >1.49x catchup (everyone 1x) Early boat section----
-
-
  step << !sod/Warrior/Rogue
     #optional
     #completewith AsterionTravel << era
@@ -1107,14 +1003,6 @@ step << skip --logout skip Druid
 
 ----End of SoD Druid Starsurge segment----
 
-
-step
-    #xprate <1.5
-    #optional
-    #label AsterionTravel
-    #completewith Bashal1
-    .goto 1439,44.629,36.316,20,0
-    .goto 1439,44.168,36.289,15 >> Travel toward |cRXP_FRIENDLY_Asterion|r
 step
     #xprate >1.49
     #optional
@@ -1248,29 +1136,6 @@ step
     .accept 957 >> Accept Bashal'Aran
     .target Asterion
     .isQuestTurnedIn 956
-step << NightElf/Dwarf Hunter
-    #optional
-    #xprate <1.5
-    .goto 1439,44.528,36.587,0
-    .goto 1439,45.334,39.393,0
-    .goto 1439,46.096,36.541,0
-    .goto 1439,44.528,36.587,50,0
-    .goto 1439,44.435,37.404,50,0
-    .goto 1439,44.443,38.202,50,0
-    .goto 1439,44.493,39.008,50,0
-    .goto 1439,44.821,39.711,50,0
-    .goto 1439,45.334,39.393,50,0
-    .goto 1439,45.167,38.652,50,0
-    .goto 1439,45.091,37.865,50,0
-    .goto 1439,45.495,37.019,50,0
-    .goto 1439,45.831,36.790,50,0
-    .goto 1439,46.096,36.541,50,0
-    .goto 1439,46.906,36.171,50,0
-    .goto 1439,47.431,36.151,50,0
-    .goto 1439,47.022,37.083,50,0
-    .goto 1439,47.166,37.580,50,0
-    .goto 1439,45.827,36.812,50,0
-    .xp 13 >> Grind to level 13
 step << !sod/Warrior/Rogue
     #optional
     #completewith RedCrystal
@@ -1321,6 +1186,11 @@ step << !Warrior !Rogue
     .goto Darkshore,55.04,33.34
     .complete 947,2 --Death Cap (1)
     .goto Darkshore,55.38,36.34
+step << !Warrior !Rogue
+    .hs >> Hearthstone back to Auberdine
+    >>|cRXP_BUY_Buy food/water if needed|r << !Warrior !Rogue
+	>>|cRXP_BUY_Buy food if needed|r << Warrior/Rogue
+    .cooldown item,6948,>0,1
 step << skip --logout skip !Warrior !Rogue
     #optional
     #label MushroomLSSoD
@@ -2415,88 +2285,6 @@ step << !sod/Rogue
 ----End of small south loop for ERA and SoD Warrior/Rogue/Priest----
 
 
-----Start of NE >1.49x catchup (everyone 1x) Final boat section----
-
-
-step
-    #xprate <1.5 --<< !NightElf/Hunter
-    #optional
-    #completewith next
-    +|cRXP_WARN_Press Escape, then go into -> Options -> Controls|r
-    >>|cRXP_WARN_Check "Enable Interact Key" and bind the "Interact with Target" option to a key|r
-step
-    #xprate <1.5 --<< !NightElf/Hunter
-    .goto 1439,38.213,28.754
---  .goto 1439,38.234,28.796
-    >>|cRXP_WARN_==BE AWARE OF YOUR BREATH METER==|r
-    >>|cRXP_WARN_Swim underwater to the outside of the back of the boat|r
-    >>|cRXP_WARN_On the arrow location, press your "Interact with Target" keybind to loot the |cRXP_LOOT_Silver Dawning's Lockbox|r from outside the boat|r
-    >>|cRXP_WARN_If you don't want to do this, swim underwater into the bottom floor of the boat then loot the |cRXP_LOOT_Silver Dawning's Lockbox|r inside|r
-    .complete 982,1 --Silver Dawning's Lockbox (1)
-    .isOnQuest 982
-step
-    #xprate <1.5 --<< !NightElf/Hunter
-    #label MistVeil
-    .goto 1439,39.581,27.487
---  .goto 1439,39.629,27.462
-    >>|cRXP_WARN_==BE AWARE OF YOUR BREATH METER==|r
-    >>|cRXP_WARN_Swim underwater to the outside of the back of the boat|r
-    >>|cRXP_WARN_On the arrow location, press your "Interact with Target" keybind to loot the |cRXP_LOOT_Mist Veil's Lockbox|r from outside the boat|r
-    >>|cRXP_WARN_If you don't want to do this, swim underwater into the bottom floor of the boat then loot the |cRXP_LOOT_Mist Veil's Lockbox|r inside|r
-    .complete 982,2 --Mist Veil Lockbox (1)
-    .isOnQuest 982
-step
-    #xprate <1.5 --<< !NightElf/Hunter
-    #optional
-    .goto 1439,41.901,31.339
-    >>Click the |cRXP_PICK_Beached Sea Creature|r
-    .accept 4723 >> Accept Beached Sea Creature
-    .isOnQuest 982
-
-
-----End of NE >1.49x catchup (everyone 1x) Final boat section----
-
-
-step
-    #xprate <1.5 --<< !NightElf/Hunter
-    #optional
-    #completewith BoatSeaCreature
-    .goto 1439,44.190,33.697,0
-    >>Kill |cRXP_ENEMY_Moonstalker Runts|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
-    .complete 1002,1 -- Moonstalker Fang (6)
-    .mob Moonstalker Runt
-    .isOnQuest 1002
-step
-    #season 0
-    #optional
-    #completewith BoatSeaCreature
-    .goto 1439,43.509,33.207,0
-    >>Kill |cRXP_ENEMY_Foreststrider Fledglings|r. Loot them for their |cRXP_LOOT_Strider Meat|r
-    >>|cRXP_WARN_Be careful as they|r |T132307:0|t[Flee] |cRXP_WARN_at <30% health|r
-    .collect 5469,5,2178,1 --Strider Meat (5)
-    .mob Foreststrider Fledgling
-step
-    #season 0
-    #optional
-    #completewith BoatSeaCreature
-    >>Kill |cRXP_ENEMY_Moonkin|r. Loot them for their |T132832:0|t|cRXP_LOOT_[Small Eggs]|r
-    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_later|r  |cRXP_WARN_to 50 later|r
-    .collect 6889,50,90,1,0x20,cooking --Small Egg (10-49)
-    .mob Young Moonkin
-    .mob Raging Moonkin
-    .mob Moonkin Oracle
-    .mob Moonkin
-    .subzoneskip 446 --BashalAran
-    .subzoneskip 452 --Mists Edge
---   .skill cooking,<10,1
-    .skill cooking,50,1 --XX Shows if cooking skill is between 10-50
-step
-    #season 0
-    .goto 1439,47.314,48.676
-    >>Click the |cRXP_PICK_Mysterious Red Crystal|r
-    >>|cRXP_WARN_Be careful of the two group of 2 |cRXP_ENEMY_Raging Moonkins|r west of the |cRXP_PICK_Mysterious Red Crystal|r as the duos closest to each other are leashed together|r
-    .turnin 4812 >> Turn in As Water Cascades
-    .accept 4813 >> Accept The Fragments Within
 step
     #season 0 << !Warrior !Rogue
     #label BashalEnd
@@ -2514,12 +2302,6 @@ step
     .complete 2138,1 -- Rabid Thistle Bear slain (20)
     .mob Rabid Thistle Bear
 step
-    #label BoatSeaCreature
-    #season 0
-    .goto 1439,41.901,31.339
-    >>Click the |cRXP_PICK_Beached Sea Creature|r
-    .accept 4723 >> Accept Beached Sea Creature
-step
     #optional
     #season 0 << !Warrior !Rogue
     #completewith CrabTurtle
@@ -2528,15 +2310,6 @@ step
     .collect 5469,5,2178,1 -- Strider Meat (5)
     .mob Foreststrider Fledgling
     .mob Foreststrider
-step
-    #xprate <1.5 --<< !NightElf/Hunter
-    #optional
-    #completewith CrabTurtle
-    >>Kill |cRXP_ENEMY_Moonstalker Runts|r and |cRXP_ENEMY_Moonstalkers|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
-    .complete 1002,1 -- Moonstalker Fang (6)
-    .mob Moonstalker Runt
-    .mob Moonstalker
-    .isOnQuest 1002
 step
     #label CrabTurtle
     #season 0 << !Warrior !Rogue
@@ -2567,29 +2340,6 @@ step
     >>|cRXP_WARN_Use the|r |T134865:0|t[Empty Sampling Tube] |cRXP_WARN_at the base of the Cliffspring River|r
     .complete 4762,1 --Cliffspring River Sample (1)
     .use 12350
-step
-	#xprate <1.5 --<< !NightElf/Hunter
-    #optional
-    #completewith next
-    .goto 1439,51.118,23.670,20,0
-    .goto 1439,51.288,24.554,12 >>Travel up the ramp toward the |cRXP_PICK_Buzzbox 323|r
-    .isQuestComplete 1002
-step
-    #optional
-	#xprate <1.5 --<< !NightElf/Hunter
-    .goto 1439,51.288,24.554
-    >>Click the |cRXP_PICK_Buzzbox 323|r on the ground
-    .turnin 1002 >> Turn in Buzzbox 323
-    .accept 1003 >> Accept Buzzbox 525
-    .isQuestComplete 1002
-step
-	#xprate <1.5 --<< !NightElf/Hunter
-    .goto 1439,51.288,24.554
-    >>Click the |cRXP_PICK_Buzzbox 323|r on the ground
-    .accept 1003 >> Accept Buzzbox 525
-    .isQuestTurnedIn 1002
-
-
 ----Start of Hunter/Druid 1x and SoD Warrior/Rogue early Althalaxx section (for money+xp)----
 
 
@@ -3073,6 +2823,7 @@ step
     >>Kill |cRXP_ENEMY_Twilight Disciples|r and |cRXP_ENEMY_Twilight Thugs|r. Loot them for the |T133743:0|t[|cRXP_LOOT_Book: The Powers Below|r]
     *|cRXP_WARN_Be careful as |cRXP_ENEMY_Twilight Thugs|r can|r |T132343:0|t[Disarm] |cRXP_WARN_you for 6 seconds|r << Rogue/Paladin/Warrior
     *|cRXP_WARN_Be careful as |cRXP_ENEMY_Twilight Disciples|r cast|r |T135953:0|t[Renew] |cRXP_WARN_and a 3 second|r |T135915:0|t[Heal]
+    >>|cRXP_WARN_The dropchance of this item is extremally low. Do not go out of your way to farm it|r
     .collect 5352,1,968,1 --Book: The Powers Below (1)
     .mob Twilight Disciple
     .mob Twilight Thug
@@ -3228,7 +2979,9 @@ step << !Warrior !Rogue !Priest
     .goto 1439,37.105,62.167
     >>Click the |cRXP_PICK_Beached Sea Turtle|r
     .accept 4722 >> Accept Beached Sea Turtle
-
+step << skip -- Hunter
+    .goto Darkshore,39.5,55.5
+    .xp 19+800 >> Grind untill you're 800 xp into level 19. This way you will have level 20 for training in Darnassus after turning in all the quests
 
 ----Start of SoD Priest Ashenvale Meditation quest section----
 
@@ -4308,8 +4061,7 @@ step << !Druid !Warrior
     #season 2
     #completewith next
     .goto 1439,37.703,43.393
-    .subzone 442 >> Return to Auberdine
---logout skip    >>|cRXP_WARN_If your hearthstone is still on cooldown you can use the same logout skip in the cave with Nagas and mushrooms as before to get back to town faster|r
+    .subzone 442 >> Run back to Auberdine if your hearthstone is not available
 step
     #xprate >1.59
     #label BlackwoodSod

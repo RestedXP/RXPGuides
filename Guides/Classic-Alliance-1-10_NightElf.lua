@@ -597,7 +597,7 @@ step << Hunter/Druid/Warrior
 	#completewith next
     .deathskip >> Die and respawn at the Spirit Healer
     .target Spirit Healer
-step << Warrior
+step << skip --logout skip Warrior
 	#hardcore
 	#completewith next
     #season 2
@@ -618,7 +618,7 @@ step << Hunter
     #requires hunterRuneChimera
     #label hunterEngrave
     .engrave 10 >> Open your character sheet and engrave your gloves with |T133816:0|t[|cRXP_FRIENDLY_Chimera Shot|r]
-step << Hunter
+step << skip --logout skip Hunter
 	#hardcore
     #season 2
 	#completewith next
@@ -757,7 +757,7 @@ step
     #season 0 << Warrior
     .deathskip >> Die and respawn at the Spirit Healer
     .target Spirit Healer
-step
+step << skip --logout skip
 	#hardcore
 	#completewith next
     #season 0 << Warrior

@@ -1764,7 +1764,7 @@ step
 step << Human
     .goto Ironforge,27.15,8.57
     .trainer >> Train your class spells
-step << Human
+step << skip --logout skip << Human
     #completewith next
     +Go toward the staircase behind the paladin trainers at the back of the room. Go about halfway up, then move yourself to the edge of the stairs until it looks like you're floating. Logout, then back in
     .link https://www.youtube.com/watch?v=E8b90bzJMSI >> CLICK HERE for reference
