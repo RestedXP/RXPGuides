@@ -7,13 +7,31 @@ if not L then return end
 -- https://github.com/tekkub/wow-globalstrings/blob/master/GlobalStrings/enUS.lua
 
 _G["BINDING_NAME_" .. "CLICK RXPItemFrameButton1:LeftButton"] =
-    "當前物品按鈕 1"
+    "激活物品1"
 _G["BINDING_NAME_" .. "CLICK RXPItemFrameButton2:LeftButton"] =
-    "當前物品按鈕 2"
+    "激活物品2"
 _G["BINDING_NAME_" .. "CLICK RXPItemFrameButton3:LeftButton"] =
-    "當前物品按鈕 3"
+    "激活物品3"
 _G["BINDING_NAME_" .. "CLICK RXPItemFrameButton4:LeftButton"] =
-    "當前物品按鈕 4"
+    "激活物品4"
+
+_G["BINDING_NAME_" .. "CLICK RXPTargetFrame_FriendlyButton1:LeftButton"] =
+    "激活友方目標1"
+_G["BINDING_NAME_" .. "CLICK RXPTargetFrame_FriendlyButton2:LeftButton"] =
+    "激活友方目標2"
+_G["BINDING_NAME_" .. "CLICK RXPTargetFrame_FriendlyButton3:LeftButton"] =
+    "激活友方目標3"
+_G["BINDING_NAME_" .. "CLICK RXPTargetFrame_FriendlyButton4:LeftButton"] =
+    "激活友方目標4"
+
+_G["BINDING_NAME_" .. "CLICK RXPTargetFrame_EnemyButton1:LeftButton"] =
+    "激活敵方目標1"
+_G["BINDING_NAME_" .. "CLICK RXPTargetFrame_EnemyButton2:LeftButton"] =
+    "激活敵方目標2"
+_G["BINDING_NAME_" .. "CLICK RXPTargetFrame_EnemyButton3:LeftButton"] =
+    "激活敵方目標3"
+_G["BINDING_NAME_" .. "CLICK RXPTargetFrame_EnemyButton4:LeftButton"] =
+    "激活敵方目標4"
 
 -- Full common phrases
 
