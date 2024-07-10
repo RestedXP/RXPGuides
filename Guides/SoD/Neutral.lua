@@ -1,4 +1,5 @@
-if not C_Seasons or C_Seasons.GetActiveSeason() ~= 2 then return end
+local _,addon = ...
+if addon.GetSeason() ~= 2 then return end
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD/Hunter SoD
@@ -1990,7 +1991,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Helmet <<Warlock
 #subgroup Bracers <<Paladin/Priest/Mage
-#name Ley Crystal Runes 
+#name Ley Crystal Runes
 #displayname Displacement - 45 (Azeroth) <<Mage
 #displayname Purifying Power - 45 (Azeroth) <<Paladin
 #displayname Despair - 45 (Azeroth) <<Priest
