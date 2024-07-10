@@ -17,7 +17,7 @@ step
     .goto 371,58.28,45.04,15,0
     .goto 371,58.61,43.65,15,0
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r, |cRXP_FRIENDLY_Your Hatchling|r, |cRXP_FRIENDLY_Ningna Darkwheel|r, and |cRXP_FRIENDLY_Instructor Windblade|r
-    .questcount <3,31706,31711,31708,31194,30155,30156,30158,31700,31701,30154,31719,31721 >> |cRXP_WARN_Pick up the 3 available dailies in The Arboretum|r
+    .questcount <3,31706,31711,31708,31194,30155,30156,30158,31700,31701,30154,31719,31721,31699 >> |cRXP_WARN_Pick up the 3 available dailies in The Arboretum|r
     .target Elder Anli
     .target Your Hatchling
     .target Ningna Darkwheel
@@ -232,6 +232,12 @@ step
     #label SlitherscaleSaurokSlainB
     #optional
 step
+    .isOnQuest 31699
+    #completewith WindwardHuntressSlain
+    >>Kill |cRXP_FRIENDLY_ShadowfaeTrickster|r
+    .complete 31699,1 --7/7 Shadowfae Trickster slain
+    .mob Shadowfae Trickster
+step
     .isOnQuest 31700
     #completewith WindwardHuntressSlain
     >>Kill |cRXP_ENEMY_Shadowfae Trickster|r. Loot them for the |T1:0|t[|cRXP_LOOT_Stolen Boots|r]
@@ -271,17 +277,35 @@ step
     .goto 371,63.56,23.84,35,0
     +1
 step
+    .isOnQuest 31699
+    #completewith TigerFlank
+    >>Kill |cRXP_ENEMY_ShadowfaeTrickster|r
+    .complete 31699,1 --7/7 Shadowfae Trickster slain
+    .mob Shadowfae Trickster
+step
+    .isOnQuest 31700
+    #completewith TigerFlank
+    >>Click on the |cRXP_PICK_Stolen Boots|r
+    .complete 31700,1 --14/14 Stolen Boots
+    .mob Shadowfae Trickster
+step
+    .isOnQuest 30154
+    #label TigerFlank
+    >>Kill |cRXP_ENEMY_Windward Tigers|r and |cRXP_ENEMY_Windward Alphas|r. Loot them for the |T237347:0|t[|cRXP_LOOT_Tiger Flanks|r]
+    .complete 30154,1 --5/5 Tiger Flank
+    .mob Windward Tiger
+    .mob Windward Alpha
+step
     .isOnQuest 31700
     #completewith next
     >>Click on the |cRXP_PICK_Stolen Boots|r
     .complete 31700,1 --14/14 Stolen Boots
     .mob Shadowfae Trickster
 step
-    .isOnQuest 30154
-    >>Kill |cRXP_ENEMY_Windward Tigers|r and |cRXP_ENEMY_Windward Alphas|r. Loot them for the |T237347:0|t[|cRXP_LOOT_Tiger Flanks|r]
-    .complete 30154,1 --5/5 Tiger Flank
-    .mob Windward Tiger
-    .mob Windward Alpha
+    .isOnQuest 31699
+    >>Kill |cRXP_FRIENDLY_ShadowfaeTrickster|r
+    .complete 31699,1 --7/7 Shadowfae Trickster slain
+    .mob Shadowfae Trickster
 step
     .isOnQuest 31700
     #label StolenBoots
@@ -323,6 +347,12 @@ step
     .goto 371,57.63,44.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
     .dailyturnin 31701 >>Turn in Dark Huntress
+    .target Elder Anli
+step
+    .isOnQuest 31699
+    .goto 371,57.63,44.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
+    .dailyturnin 31699 >>Turn in Sprite Fright
     .target Elder Anli
 step
     .isOnQuest 30154
@@ -1510,10 +1540,17 @@ step
     .goto 418,12.74,56.74,15,0
     .goto 418,12.91,56.13,15,0
     .goto 418,13.79,55.78,15,0
-    +|cRXP_WARN_Accept all the Domination Point Dailies|r
-    .questcount <3,32235,32126,32123,32214,32199,32222,32136
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blood Guard Gro'tash|r, |cRXP_FRIENDLY_Brolic|r, |cRXP_FRIENDLY_Shokia|r, |cRXP_FRIENDLY_Rivett Clutchpop|r, |cRXP_FRIENDLY_Bounty Board|r, |cRXP_FRIENDLY_Boss-Lady Trixel|r, |cRXP_FRIENDLY_Duke|r
+    .questcount <3,32235,32126,32123,32214,32199,32222,32136,32223,32221,32318 >>|cRXP_WARN_Accept all the Domination Point Dailies|r
     .target Master Snowdrift
     .target Ling of the Six Pools
+    .target Rivett Clutchpop
+    .target Bounty Board
+    .target Boss-Lady Trixel
+    .target Shokia
+    .target Brolic
+    .target Duke
+    .target Blood Guard Gro'tash
 step
     .xp >69,1
     .abandon 32214 >>Abandon Bildgewater Infiltrators
@@ -1569,11 +1606,18 @@ step
     .isOnQuest 32199
     .goto 418,13.79,55.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boss-Lady Trixel|r
-    .accept 32136 >>Accept Work Order: Fuel
+    .daily 32136,32138 >>Accept Work Order
     .target Boss-Lady Trixel
 step
+    .isOnQuest 32221
+    #completewith next
+    >>Kill |cRXP_ENEMY_Shieldwall forces|r
+    .complete 32221,1 --10/10 Shieldwall forces slain
+    .mob Shieldwall forces
+step
     .isOnQuest 32199
-    .goto 418,18.58,55.87
+    #label PollutedViseclawMeatA
+    .goto 418,18.01,55.41
     >>Kill |cRXP_ENEMY_Polluted Visceclaws|r and |cRXP_ENEMY_Polluted Visceclaw Scuttlers|r. Loot them for the |T645112:0|t[Polluted Visceclaw Meat]
     .complete 32199,1,3 --3/5 Polluted Viseclaw Meat
     .mob Polluted Visceclaw
@@ -1591,6 +1635,12 @@ step
     >>Kill |cRXP_ENEMY_Chief Engineer Cogwrench|r
     .complete 32222,1 --1/1 Chief Engineer Cogwrench slain
     .mob Chief Engineer Cogwrench
+step
+    .isOnQuest 32221
+    #completewith WorkOrderFuel
+    >>Kill |cRXP_ENEMY_Shieldwall forces|r
+    .complete 32221,1 --10/10 Shieldwall forces slain
+    .mob Shieldwall forces
 step
     .isOnQuest 32214
     #completewith WorkOrderFuel
@@ -1614,6 +1664,157 @@ step
     .turnin 32136 >>Turn in Work Order: Fuel
     .target Grizzle Gearslip
 step
+    .isOnQuest 32221
+    #completewith WorkOrderLumber
+    >>Kill |cRXP_ENEMY_Shieldwall forces|r
+    .complete 32221,1 --10/10 Shieldwall forces slain
+    .mob Shieldwall forces
+step
+    .isOnQuest 32214
+    #completewith WorkOrderLumber
+    >>Kill the |cRXP_ENEMY_SI:7 Saboteurs|r
+    *Use the |T644269:0|t["New" and "Improved" Infrared Heat Focals]
+    .complete 32214,1 --10/10 SI:/ Saboteur slain
+    .use 92475
+    .mob SI:7 Saboteur
+step
+    .isOnQuest 32199
+    #completewith WorkOrderLumber
+    >>Kill |cRXP_ENEMY_Polluted Visceclaws|r and |cRXP_ENEMY_Polluted Visceclaw Scuttlers|r. Loot them for the |T645112:0|t[Polluted Visceclaw Meat]
+    .complete 32199,1 --5/5 Polluted Viseclaw Meat
+    .mob Polluted Visceclaw
+    .mob Polluted Visceclaw Scuttler
+step
+    #label WorkOrderLumber
+    .isOnQuest 32138
+    .goto 418,20.48,60.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zino "The Shredder" Quickchop|r
+    .turnin 32138 >>Turn in Work Order: Lumber
+    .target Zino "The Shredder" Quickchop
+step
+    .isQuestTurnedIn 32138
+    .goto 418,20.48,60.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zino "The Shredder" Quickchop|r
+    .daily 32139 >>Accept Stacked!
+    .target Zino "The Shredder" Quickchop
+step
+    .isQuestTurnedIn 32138
+    .goto 418,20.61,58.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bixy Buzzsaw|r
+    .daily 32238 >>Accept Universal Remote-Explode
+    .target Bixy Buzzsaw
+step
+    #completewith ShieldwallMechaPounderExploded
+    #hidewindow
+    #loop
+    .goto 418,18.66,62.38,25,0
+    .goto 418,21.46,63.05,25,0
+    .goto 418,20.57,58.35,35,0
+    +1
+step
+    .isOnQuest 32221
+    #completewith ShieldwallMechaPounderExploded
+    >>Kill |cRXP_ENEMY_Shieldwall forces|r
+    .complete 32221,1 --10/10 Shieldwall forces slain
+    .mob Shieldwall Engineer
+    .mob SI:7 Saboteur
+    .mob 7th Legion Paratrooper
+step
+    .isOnQuest 32214
+    #completewith ShieldwallMechaPounderExploded
+    >>Kill the |cRXP_ENEMY_SI:7 Saboteurs|r
+    *Use the |T644269:0|t["New" and "Improved" Infrared Heat Focals]
+    .complete 32214,1 --10/10 SI:/ Saboteur slain
+    .use 92475
+    .mob SI:7 Saboteur
+step
+    #completewith next
+    >>Click on |cRXP_ENEMY_Shieldwall Mecha Pounder|r to weaken them with the |T133015:0|t[Universal Remote]. Kill the |cRXP_ENEMY_Shieldwall Mecha Pounder|r
+    .complete 32238,1 --9/9 Shieldwall Mecha Pounder exploded
+    .use 91902
+    .mob Shieldwall Mecha Pounder
+step
+    >>Click on |cRXP_PICK_Domination Point Lumber|r
+    .complete 32139,1 --9/9 Domination Point Lumber collected
+step
+    #label ShieldwallMechaPounderExploded
+    >>Click on |cRXP_ENEMY_Shieldwall Mecha Pounder|r to weaken them with the |T133015:0|t[Universal Remote]. Kill the |cRXP_ENEMY_Shieldwall Mecha Pounder|r
+    .complete 32238,1 --9/9 Shieldwall Mecha Pounder exploded
+    .use 91902
+    .mob Shieldwall Mecha Pounder
+step
+    .isOnQuest 32238
+    .goto 418,20.61,58.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bixy Buzzsaw|r
+    .dailyturnin 32238 >>Turn in Universal Remote-Explode
+    .target Bixy Buzzsaw
+step
+    .isOnQuest 32139
+    .goto 418,20.54,60.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zino "The Shredder" Quickchop|r
+    .dailyturnin 32139 >>Turn in Stacked!
+    .target Zino "The Shredder" Quickchop
+step
+    .isOnQuest 32221
+    #completewith LieutenantEthanJacobsonSlain
+    >>Kill |cRXP_ENEMY_Shieldwall forces|r
+    .complete 32221,1 --10/10 Shieldwall forces slain
+    .mob Shieldwall Engineer
+    .mob SI:7 Saboteur
+    .mob 7th Legion Paratrooper
+step
+    .isOnQuest 32214
+    #completewith LieutenantEthanJacobsonSlain
+    >>Kill the |cRXP_ENEMY_SI:7 Saboteurs|r
+    *Use the |T644269:0|t["New" and "Improved" Infrared Heat Focals]
+    .complete 32214,1 --10/10 SI:/ Saboteur slain
+    .use 92475
+    .mob SI:7 Saboteur
+step
+    .isOnQuest 32199
+    #completewith LieutenantEthanJacobsonSlain
+    >>Kill |cRXP_ENEMY_Polluted Visceclaws|r and |cRXP_ENEMY_Polluted Visceclaw Scuttlers|r. Loot them for the |T645112:0|t[Polluted Visceclaw Meat]
+    .complete 32199,1 --5/5 Polluted Viseclaw Meat
+    .mob Polluted Visceclaw
+    .mob Polluted Visceclaw Scuttler
+step
+    .isOnQuest 32223
+    #label LieutenantEthanJacobsonSlain
+    .goto 418,19.05,70.96
+    .complete 32223,1 --1/1 Lieutenant Ethan Jacobson slain
+    .mob Lieutenant Ethan Jacobson
+step
+    #completewith ShieldwallForcesSlain
+    #hidewindow
+    #loop
+    .goto 418,16.10,71.22,35,0
+    .goto 418,21.56,67.09,35,0
+    .goto 418,24.58,56.15,35,0
+    .goto 418,19.44,58.99,35,0
+    +1
+step
+    .isOnQuest 32221
+    #completewith next
+    >>Kill |cRXP_ENEMY_Shieldwall forces|r
+    .complete 32221,1 --10/10 Shieldwall forces slain
+    .mob Shieldwall Engineer
+    .mob SI:7 Saboteur
+    .mob 7th Legion Paratrooper
+step
+    .isOnQuest 32199
+    >>Kill |cRXP_ENEMY_Polluted Visceclaws|r and |cRXP_ENEMY_Polluted Visceclaw Scuttlers|r. Loot them for the |T645112:0|t[Polluted Visceclaw Meat]
+    .complete 32199,1 --5/5 Polluted Viseclaw Meat
+    .mob Polluted Visceclaw
+    .mob Polluted Visceclaw Scuttler
+step
+    .isOnQuest 32221
+    #label ShieldwallForcesSlain
+    >>Kill |cRXP_ENEMY_Shieldwall forces|r
+    .complete 32221,1 --10/10 Shieldwall forces slain
+    .mob Shieldwall Engineer
+    .mob SI:7 Saboteur
+    .mob 7th Legion Paratrooper
+step
     .isOnQuest 32214
     #completewith next
     >>Kill the |cRXP_ENEMY_SI:7 Saboteurs|r
@@ -1633,6 +1834,12 @@ step
     .mob Polluted Visceclaw
     .mob Polluted Visceclaw Scuttler
 step
+    .isOnQuest 32199
+    .goto 418,26.06,58.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sezik Steampot|r
+    .dailyturnin 32199 >>Turn in Krasarang Steampot
+    .target Sezik Steampot
+step
     .isOnQuest 32214
     #loop
     .goto 418,21.88,53.96,22,0
@@ -1645,24 +1852,36 @@ step
     .use 92475
     .mob SI:7 Saboteur
 step
-    .isQuestComplete 32214
+    .isOnQuest 32221
+    .goto 418,12.91,56.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rivett Clutchpop|r
+    .dailyturnin 32221 >>Turn in Storming the Beach
+    .target Rivett Clutchpop
+step
+    .isOnQuest 32214
     .goto 418,12.91,56.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rivett Clutchpop|r
     .dailyturnin 32214 >>Turn in Bilgewater Infiltrators
     .target Rivett Clutchpop
 step
-    .isQuestComplete 32222
+    .isOnQuest 32222
     .goto 418,10.07,53.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blood Guard Gro'tash|r
     .turnin 32222 >>Turn in WANTED: Chief Engineer Cogwrench
     .target Blood Guard Gro'tash
 step
-    .xp >69,1
-    .isQuestTurnedIn 32449
-    .goto 418,10.07,53.87
+    .isOnQuest 32223
+    .goto 418,10.06,53.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blood Guard Gro'tash|r
+    .dailyturnin 32223 >>Turn in WANTED: Lieutenant Ethan Jacobson
     .target Blood Guard Gro'tash
-    .accept 32449 >>Accept The Ruins of Ogudei
+--step
+--    .xp >69,1
+--    .isQuestTurnedIn 32449
+--    .goto 418,10.07,53.87
+--    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blood Guard Gro'tash|r
+--    .target Blood Guard Gro'tash
+--    .accept 32449 >>Accept The Ruins of Ogudei
 step
     .isQuestTurnedIn 32235
     .isQuestTurnedIn 32126
