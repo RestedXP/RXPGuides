@@ -5272,28 +5272,27 @@ else
 
         element.text = element.rawtext .. element.criteria
     end
-
-    function addon.functions.timer(self,text,duration,timerText,callback,...)
-        if type(self) == "string" then
-            local eventList = callback and {...}
-            return {textOnly = true, timer = tonumber(duration), events = eventList,
-                    callback = callback, timerText = timerText, parent = true, text = text}
-        end
-        local element = self.element
-        local parent = element.parent
-        if parent and not element.callback then
-            parent.timer = element.timer
-            parent.timerText = element.timerText
-            return
-        end
-
-        local f = addon.functions[element.callback]
-        if type(f) == "function" and f(self,text,duration,timerText,callback,...) then
-            addon.StartTimer(element.timer,element.timerText)
-        end
-    end
 end
 
+function addon.functions.timer(self,text,duration,timerText,callback,...)
+    if type(self) == "string" then
+        local eventList = callback and {...}
+        return {textOnly = true, timer = tonumber(duration), events = eventList,
+                callback = callback, timerText = timerText, parent = true, text = text}
+    end
+    local element = self.element
+    local parent = element.parent
+    if parent and not element.callback then
+        parent.timer = element.timer
+        parent.timerText = element.timerText
+        return
+    end
+
+    local f = addon.functions[element.callback]
+    if type(f) == "function" and f(self,text,duration,timerText,callback,...) then
+        addon.StartTimer(element.timer,element.timerText)
+    end
+end
 --Waypoint functions:
 
 --Waypoints will turn into low prio WPs whenever it returns true
