@@ -14,7 +14,7 @@ local GetContainerItemID = C_Container and C_Container.GetContainerItemID or _G.
 
 local PickupContainerItem = C_Container and C_Container.PickupContainerItem or _G.PickupContainerItem
 
---local UseContainerItem = C_Container and C_Container.UseContainerItem or _G.UseContainerItem
+local UseContainerItem = C_Container and C_Container.UseContainerItem or _G.UseContainerItem
 --local GetContainerItemLink = C_Container and C_Container.GetContainerItemLink or _G.GetContainerItemLink
 
 
@@ -320,6 +320,19 @@ local DeleteCheapestItem = function(self,deleteIfFull)
     inventoryManager.manualDelete = false
 end
 
+inventoryManager.itemsToOpen = {}
+local function OpenItems()
+    if not next(inventoryManager.itemsToOpen) then return end
+    for bag = _G.BACKPACK_CONTAINER, _G.NUM_BAG_FRAMES do
+        for slot = 1, GetContainerNumSlots(bag) do
+            local _, _, locked, _, _, _, _, _, _, id = GetContainerItemInfo(bag, slot)
+            if not locked and inventoryManager.itemsToOpen[id] then
+                UseContainerItem(bag, slot)
+            end
+        end
+    end
+end
+
 addon.DeleteCheapestItem = DeleteCheapestItem
 --A3 =DeleteCheapestItem
 
@@ -338,6 +351,7 @@ local WorldFrameHook = function()
     if inventoryManager.IsBagAutomationEnabled() then
         DeleteItems()
     end
+    OpenItems()
 end
 local f = inventoryManager.DeleteJunkFrame or CreateFrame("Frame","RXPDeleteJunk",WorldFrame)
 f:RegisterEvent("PLAYER_ENTERING_WORLD")

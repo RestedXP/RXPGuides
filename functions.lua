@@ -6309,3 +6309,13 @@ function addon.functions.engrave(self, ...)
         end
     end
 end
+
+function addon.functions.openitem(self,text,id)
+    if type(self) == "string" then
+        return {id = tonumber(id), text = text, textOnly = true}
+    end
+    local element = self.element
+    if element.step.active then
+        addon.inventoryManager.itemsToOpen[element.id] = true
+    end
+end
