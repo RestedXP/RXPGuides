@@ -378,21 +378,22 @@ f:SetScript("OnEvent",function(self)
     self:SetScript("OnKeyDown", WorldFrameHook)
     self:SetScript("OnKeyUp", WorldFrameHook)
 
+    if _G["ContainerFrameItemButton_OnModifiedClick"] then
+        hooksecurefunc("ContainerFrameItemButton_OnModifiedClick", function(self,button)
+            local mod = inventoryManager.GetModKey()
+            if not inventoryManager.IsRightClickEnabled() or not mod or button ~= inventoryManager.GetMouseButton() then
+                return
+            end
+            local parent = self:GetParent()
+            local bag = parent and parent:GetID()
+            local slot = self:GetID()
+            if bag and slot then
+                local id = GetContainerItemID(bag,slot)
+                ToggleJunk(id,bag,slot)
+            end
 
-    hooksecurefunc("ContainerFrameItemButton_OnModifiedClick", function(self,button)
-        local mod = inventoryManager.GetModKey()
-        if not inventoryManager.IsRightClickEnabled() or not mod or button ~= inventoryManager.GetMouseButton() then
-            return
-        end
-        local parent = self:GetParent()
-        local bag = parent and parent:GetID()
-        local slot = self:GetID()
-        if bag and slot then
-            local id = GetContainerItemID(bag,slot)
-            ToggleJunk(id,bag,slot)
-        end
-
-    end)
+        end)
+    end
 
     hooksecurefunc('ToggleAllBags', inventoryManager.InitializeBags)
     hooksecurefunc('ToggleBag', inventoryManager.InitializeBags)
