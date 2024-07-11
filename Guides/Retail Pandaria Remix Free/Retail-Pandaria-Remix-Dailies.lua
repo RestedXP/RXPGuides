@@ -712,17 +712,165 @@ step
     .goto 422,54.29,35.93,15,0
     .goto 422,55.06,35.85,10,0
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaz'tik the Manipulator|r, |cRXP_FRIENDLY_Rik'kal the Dissector|r, |cRXP_FRIENDLY_Korven the Prime|r or |cRXP_FRIENDLY_Kil'ruk the Wind-Reaver|r
-    .questcount <6,31232,31238,31231,31235,31234,31233,31109 >>|cRXP_WARN_Get all the Shado-Pan Dailies, skip this step if it doesn't complete|r
+    .questcount <6,31232,31238,31231,31235,31234,31233,31109,31487,31494,31502,31503,31496, >>|cRXP_WARN_Get all the Shado-Pan Dailies, skip this step if it doesn't complete|r
     .target Kaz'tik the Manipulator
     .target Rik'kal the Dissector
     .target Korven the Prime
     .target Kil'ruk the Wind-Reaver
 step
     .isOnQuest 31109
+    #completewith KunchongHatchlingReleased
     >>Kill |cRXP_ENEMY_Shek'zeer Mantid|r
     .complete 31109,1 --40/40 Shek'zeer Mantid Slain
     .mob Shek'zeer Bladesworn
-    .mob Manipulator
+    .mob Shek'zeer Manipulator
+step
+    .isOnQuest 31487
+    #completewith KunchongHatchlingReleased
+    >>Kill |cRXP_ENEMY_Dread Kunchong|r and |cRXP_ENEMY_Shek'zeer Manipulator|r
+    *|cRXP_WARN_Use the|r |T458772:0|t[Sonic Disruption Tool] |cRXP_WARN_near |cRXP_ENEMY_Dread Kunchong|r to weaken them and make them attack the |cRXP_ENEMY_Shek'zeer Manipulator|r|r
+    .complete 31487,1 --4/4 Dread Kunchong slain
+    .complete 31487,2 --6/6 Shek'zeer Manipulator slain
+    .mob Dread Kunchong
+    .mob Shek'zeer Manipulator
+step
+    .isOnQuest 31494
+    #label KunchongHatchlingReleased
+    #loop
+    .goto 422,47.78,36.52,30,0
+    .goto 422,49.71,33.25,30,0
+    .goto 422,46.05,30.11,30,0
+    .goto 422,44.73,34.43,27,0
+    >>Click on the |cRXP_PICK_Kunchong Cages|r
+    .complete 31494,1 --8/8 Kunchong Hatchling released
+step
+    .isOnQuest 31109
+    #completewith DreadKunchongShekzeerManipulator
+    >>Kill |cRXP_ENEMY_Shek'zeer Mantid|r
+    .complete 31109,1 --40/40 Shek'zeer Mantid Slain
+    .mob Shek'zeer Bladesworn
+    .mob Shek'zeer Manipulator
+    .mob Shek'zeer Needler
+step
+    .isOnQuest 31487
+    #completewith VessGuardNakalSlain
+    >>Kill |cRXP_ENEMY_Dread Kunchong|r and |cRXP_ENEMY_Shek'zeer Manipulator|r
+    *|cRXP_WARN_Use the|r |T458772:0|t[Sonic Disruption Tool] |cRXP_WARN_near |cRXP_ENEMY_Dread Kunchong|r to weaken them and make them attack the |cRXP_ENEMY_Shek'zeer Manipulator|r|r
+    .complete 31487,1 --4/4 Dread Kunchong slain
+    .complete 31487,2 --6/6 Shek'zeer Manipulator slain
+    .mob Dread Kunchong
+    .mob Shek'zeer Manipulator
+step
+    .isOnQuest 31503
+    #label VessGuardNakalSlain
+    .goto 422,39.24,31.37
+    >>Kill |cRXP_ENEMY_Vess-Guard Na'kal|r
+    .complete 31503,1 --1/1 Vess-Guard Na'kal slain
+    .mob Vess-Guard Na'kal
+step
+    .isOnQuest 31502
+    #completewith FeederA
+    >>Kill |cRXP_ENEMY_Shek'zeer Needler|r. Loot them for the |T237143:0|t[|cRXP_LOOT_Needler Wing|r]
+    .complete 31502,1 --24/24 Needler Wing
+    .mob Shek'zeer Needler
+step
+    .isOnQuest 31496
+    #completewith next
+    #label EastFeeder
+    #hidewindow
+    .complete 31496,2 --1/1 East Feeder
+step
+    #title Enter House
+    #completewith EastFeeder
+    .goto 422,38.29,31.95,6 >>Enter the house
+step
+    .isOnQuest 31496
+    #requires EastFeeder
+    >>Click on the |cRXP_PICK_East Feeder|r
+    .goto 422,37.85,33.06
+    .complete 31496,2 --1/1 East Feeder
+step
+    .isOnQuest 31496
+    #completewith next
+    #label NorthFeeder
+    #hidewindow
+    .complete 31496,3 --1/1 North Feeder
+step
+    #title Enter House
+    #completewith NorthFeeder
+    .goto 422,36.25,32.26,6 >>Enter the house
+step
+    .isOnQuest 31496
+    #requires NorthFeeder
+    >>Click on the |cRXP_PICK_North Feeder|r
+    .goto 422,37.03,32.83
+    .complete 31496,3 --1/1 North Feeder
+step
+    .isOnQuest 31496
+    #completewith next
+    #label CentralFeeder
+    #hidewindow
+    .complete 31496,1 --1/1 Central Feeder
+step
+    #title Enter House
+    #completewith CentralFeeder
+    .goto 422,37.03,28.07,6 >>Enter the house
+step
+    .isOnQuest 31496
+    #requires CentralFeeder
+    >>Click on the |cRXP_PICK_Central Feeder|r
+    .goto 422,37.40,29.24
+    .complete 31496,1 --1/1 Central Feeder
+step
+    .isOnQuest 31496
+    #completewith next
+    #label NortheastFeeder
+    #hidewindow
+    .complete 31496,4 --1/1 Northeast Feeder
+step
+    #title Enter House
+    #completewith NortheastFeeder
+    .goto 422,39.35,29.24,6 >>Enter the house
+step
+    .isOnQuest 31496
+    #requires NortheastFeeder
+    #label FeederA
+    >>Click on the |cRXP_PICK_Northeast Feeder|r
+    .goto 422,39.04,30.47
+    .complete 31496,4 --1/1 Northeast Feeder
+step
+    .isOnQuest 31502
+    #loop
+    .goto 422,40.10,31.25,35,0
+    .goto 422,33.92,30.95,35,0
+    .goto 422,38.50,28.84,35,0
+    >>Kill |cRXP_ENEMY_Shek'zeer Needler|r. Loot them for the |T237143:0|t[|cRXP_LOOT_Needler Wing|r]
+    .complete 31502,1 --24/24 Needler Wing
+    .mob Shek'zeer Needler
+step
+    .isOnQuest 31487
+    #label DreadKunchongShekzeerManipulator
+    #loop
+    .goto 422,43.38,31.81,50,0
+    .goto 422,49.86,25.29,50,0
+    .goto 422,48.41,36.73,50,0
+    >>Kill |cRXP_ENEMY_Dread Kunchong|r and |cRXP_ENEMY_Shek'zeer Manipulator|r
+    *|cRXP_WARN_Use the|r |T458772:0|t[Sonic Disruption Tool] |cRXP_WARN_near |cRXP_ENEMY_Dread Kunchong|r to weaken them and make them attack the |cRXP_ENEMY_Shek'zeer Manipulator|r|r
+    .complete 31487,1 --4/4 Dread Kunchong slain
+    .complete 31487,2 --6/6 Shek'zeer Manipulator slain
+    .mob Dread Kunchong
+    .mob Shek'zeer Manipulator
+step
+    .isOnQuest 31109
+    #loop
+    .goto 422,34.59,30.45,40,0
+    .goto 422,50.40,23.56,50,0
+    .goto 422,48.40,36.80,45,0
+    >>Kill |cRXP_ENEMY_Shek'zeer Mantid|r
+    .complete 31109,1 --40/40 Shek'zeer Mantid Slain
+    .mob Shek'zeer Bladesworn
+    .mob Shek'zeer Manipulator
+    .mob Shek'zeer Needler
 step
     .isOnQuest 31233
     #completewith next
@@ -858,7 +1006,6 @@ step
     .complete 31238,1 --4/4 Mushan Tongue
     .mob Greatback Mushan
     .mob Greatback Calf
-
 step
     .isOnQuest 31231
     .goto 422,55.06,35.87
@@ -895,6 +1042,42 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaz'tik the Manipulator|r
     .dailyturnin 31238 >>Turn in Brain Food
     .target Kaz'tik the Manipulator
+step
+    .isOnQuest 31487
+    .goto 422,54.26,35.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaz'tik the Manipulator|r
+    .dailyturnin 31487 >>Turn in Sonic Disruption
+    .target Kaz'tik the Manipulator
+step
+    .isOnQuest 31494
+    .goto 422,54.26,35.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaz'tik the Manipulator|r
+    .dailyturnin 31494 >>Turn in Free From Her Clutches
+    .target Kaz'tik the Manipulator
+step
+    .isOnQuest 31502
+    .goto 422,54.37,35.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rik'kal the Dissector|r
+    .dailyturnin 31502 >>Turn in Wing Clip
+    .target Rik'kal the Dissector
+step
+    .isOnQuest 31503
+    .goto 422,54.37,35.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rik'kal the Dissector|r
+    .dailyturnin 31503 >>Turn in Shortcut to Ruin
+    .target Rik'kal the Dissector
+step
+    .isOnQuest 31496
+    .goto 422,54.30,36.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korven the Prime|r
+    .dailyturnin 31496 >>Turn in Sampling the Empire's Finest
+    .target Korven the Prime
+step
+    .isOnQuest 31109
+    .goto 422,55.06,35.86
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kil'ruk the Wind-Reaver|r
+    .dailyturnin 31109 >>Turn in Culling the Swarm
+    .target Kil'ruk the Wind-Reaver
 ]])
 
 -- August Celestial Dailies: Jade Forest
