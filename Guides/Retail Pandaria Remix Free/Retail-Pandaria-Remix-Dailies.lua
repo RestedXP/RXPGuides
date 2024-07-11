@@ -17,7 +17,7 @@ step
     .goto 371,58.28,45.04,15,0
     .goto 371,58.61,43.65,15,0
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r, |cRXP_FRIENDLY_Your Hatchling|r, |cRXP_FRIENDLY_Ningna Darkwheel|r, and |cRXP_FRIENDLY_Instructor Windblade|r
-    .questcount <3,31706,31711,31708,31194,30155,30156,30158,31700,31701,30154,31719,31721,31699 >> |cRXP_WARN_Pick up the 3 available dailies in The Arboretum|r
+    .questcount <3,31706,31711,31708,31194,30155,30156,30158,31700,31701,30154,31719,31721,31699,31702,31710 >> |cRXP_WARN_Pick up the 3 available dailies in The Arboretum|r
     .target Elder Anli
     .target Your Hatchling
     .target Ningna Darkwheel
@@ -148,21 +148,95 @@ step
     .complete 30152,2 --1/1 Pass underneath the Finish Line
     .skipgossipid 40400
 step
+    .isOnQuest 31710
+    #completewith SeedofDoubtSlainB
+    >>Kill |cRXP_ENEMY_Widowspawns|r. Loot them for the |T463856:0|t[|cRXP_LOOT_Tiny Spider Eye|r]
+    .complete 31710,1 --100/100 Tiny Spider Eye
+    .mob Widowspawn
+step
     .isOnQuest 31706
-    .goto 374,42.00,32.18
-    >>Kill |cRXP_ENEMY_Weeping Widow|r
+    #completewith SeedofDoubtSlainB
+    >>Kill |cRXP_ENEMY_Weeping Widows|r
     .complete 31706,1 --7/7 Weeping Widow slain
     .mob Weeping Widow
 step
     .isOnQuest 31708
-    .goto 374,50.41,37.38
+    #completewith SeedofDoubtSlainB
     .complete 31708,1 --25/25 Serpent's Scale
 step
     .isOnQuest 31711
+    #completewith next
+    #label SeedofDoubtSlainA
+    #hidewindow
+    >>Kill |cRXP_ENEMY_Seed of Doubt|r
+    .complete 31711,1 --1/1 Seed of Doubt slain
+    .mob Seed of Doubt
+step
+    #title Enter Cave
+    #completewith SeedofDoubtSlainA
+    .goto 371,57.69,31.72,10 >>Enter the cave
+step
+    .isOnQuest 31711
+    #requires SeedofDoubtSlainA
+    #label SeedofDoubtSlainB
+    .goto 374,47.73,20.00,20,0
     .goto 374,33.23,38.52
     >>Kill |cRXP_ENEMY_Seed of Doubt|r
     .complete 31711,1 --1/1 Seed of Doubt slain
     .mob Seed of Doubt
+step
+    #completewith WeepingWidowSlain
+    #hidewindow
+    #loop
+    .goto 374,30.30,72.86,18,0
+    .goto 374,46.61,85.36,18,0
+    .goto 374,73.39,49.73,18,0
+    .goto 374,41.79,15.36,25,0
+    +1
+step
+    .isOnQuest 31706
+    #completewith TinySpiderEyes
+    >>Kill |cRXP_ENEMY_Weeping Widows|r
+    .complete 31706,1 --7/7 Weeping Widow slain
+    .mob Weeping Widow
+step
+    .isOnQuest 31708
+    #completewith TinySpiderEyes
+    .complete 31708,1 --25/25 Serpent's Scale
+step
+    .isOnQuest 31710
+    #label TinySpiderEyes
+    >>Kill |cRXP_ENEMY_Widowspawns|r. Loot them for the |T463856:0|t[|cRXP_LOOT_Tiny Spider Eye|r]
+    .complete 31710,1 --100/100 Tiny Spider Eye
+    .mob Widowspawn
+step
+    .isOnQuest 31706
+    #completewith next
+    >>Kill |cRXP_ENEMY_Weeping Widows|r
+    .complete 31706,1 --7/7 Weeping Widow slain
+    .mob Weeping Widow
+step
+    .isOnQuest 31708
+    #completewith TinySpiderEyes
+    .complete 31708,1 --25/25 Serpent's Scale
+step
+    .isOnQuest 31706
+    #label WeepingWidowSlain
+    >>Kill |cRXP_ENEMY_Weeping Widows|r
+    .complete 31706,1 --7/7 Weeping Widow slain
+    .mob Weeping Widow
+step
+    .isOnQuest 31711,31706,31710
+    .zoneskip 374,1
+    #title Leave Cave
+    .goto 371,57.94,31.72
+    .zone 371 >>Leave the cave
+step
+    .isOnQuest 31710
+    .goto 371,57.54,45.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azure Hatchling|r
+    .dailyturnin 31710 >>Turn in Tiny Treats
+    .target Azure Hatchling
 step
     .isOnQuest 31708
     .goto 371,57.54,45.33
@@ -250,6 +324,12 @@ step
     .complete 30154,1 --5/5 Tiger Flank
     .mob Windward Tiger
 step
+    .isOnQuest 31702
+    .goto 371,63.86,22.36
+    >>Kill |cRXP_ENEMY_Windward Saber|r
+    .complete 31702,1 --1/1 Windward Saber slain
+    .mob Windward Saber
+step
     .isOnQuest 31701
     #completewith next
     #label WindwardHuntressSlain
@@ -335,6 +415,12 @@ step
     .goto 371,57.63,44.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
     .dailyturnin 30158 >>Turn in Disarming the Enemy
+    .target Elder Anli
+step
+    .isOnQuest 31702
+    .goto 371,57.63,44.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
+    .dailyturnin 31702 >>Turn in On The Prowl
     .target Elder Anli
 step
     .isOnQuest 31700
