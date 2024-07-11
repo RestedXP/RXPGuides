@@ -970,11 +970,11 @@ step << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jade Forest Flame Guardian|r
     .accept 32498 >>Accept Honor the Flame
     .target Jade Forest Flame Guardian
-step << Alliance
-    .goto 371,47.17,47.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Midsummer Bonfire|r
-    .turnin 32498 >>Turn in Honor the Flame
-    .target Midsummer Bonfire
+-- step << Alliance
+--     .goto 371,47.17,47.13
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Midsummer Bonfire|r
+--     .turnin 32498 >>Turn in Honor the Flame
+--     .target Midsummer Bonfire
 step
     #completewith next
     .goto 371,65.25,37.20,20,0
@@ -2143,11 +2143,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jade Forest Flame Guardian|r
     .accept 32498 >>Accept Honor the Flame
     .target Jade Forest Flame Guardian
-step
-    .goto 371,47.17,47.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Midsummer Bonfire|r
-    .turnin 32498 >>Turn in Honor the Flame
-    .target Midsummer Bonfire
+-- step
+--     .goto 371,47.17,47.13
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Midsummer Bonfire|r
+--     .turnin 32498 >>Turn in Honor the Flame
+--     .target Midsummer Bonfire
 step
     #include 1) Jade Forest Defiance Side Quests
 ]])
