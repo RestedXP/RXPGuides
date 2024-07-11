@@ -18,6 +18,8 @@ local UseContainerItem = C_Container and C_Container.UseContainerItem or _G.UseC
 --local GetContainerItemLink = C_Container and C_Container.GetContainerItemLink or _G.GetContainerItemLink
 --local GetItemCount = C_Item and C_Item.GetItemCount or _G.GetItemCount
 
+inventoryManager.bagHook = _G.ContainerFrame_Update
+
 local GetContainerItemInfo
 
 if C_Container.GetContainerItemInfo then
@@ -44,18 +46,22 @@ end
 
 --TODO: Handle UI options:
 function inventoryManager.IsRightClickEnabled()
+    if not inventoryManager.bagHook then return false end
     return addon.settings.profile.rightClickJunk
 end
 
 function inventoryManager.IsBagAutomationEnabled()
+    if not inventoryManager.bagHook then return false end
     return addon.settings.profile.autoDiscardItems
 end
 
 function inventoryManager.IsMerchantAutomationEnabled()
+    if not inventoryManager.bagHook then return false end
     return addon.settings.profile.autoSellJunk
 end
 
 function inventoryManager.IsJunkIconEnabled()
+    if not inventoryManager.bagHook then return false end
     return addon.settings.profile.showJunkIcon
 end
 
@@ -603,9 +609,11 @@ function inventoryManager.InitializeBags()
     --UpdateAllBags()
 end
 
-hooksecurefunc('ContainerFrame_Update', function(self)
-    UpdateBag(self,nil,"%sItem%d")
-end)
+if _G['ContainerFrame_Update'] then
+    hooksecurefunc('ContainerFrame_Update', function(self)
+        UpdateBag(self,nil,"%sItem%d")
+    end)
+end
 
 --[[
 hooksecurefunc('ContainerFrameItemButton_OnEnter',function(self)
