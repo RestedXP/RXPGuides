@@ -626,11 +626,17 @@ step
     .goto 422,54.29,35.93,15,0
     .goto 422,55.06,35.85,10,0
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaz'tik the Manipulator|r, |cRXP_FRIENDLY_Rik'kal the Dissector|r, |cRXP_FRIENDLY_Korven the Prime|r or |cRXP_FRIENDLY_Kil'ruk the Wind-Reaver|r
-    .questcount <6,31232,31238,31231,31235,31234,31233 >>|cRXP_WARN_Get all the Shado-Pan Dailies, skip this step if it doesn't complete|r
+    .questcount <6,31232,31238,31231,31235,31234,31233,31109 >>|cRXP_WARN_Get all the Shado-Pan Dailies, skip this step if it doesn't complete|r
     .target Kaz'tik the Manipulator
     .target Rik'kal the Dissector
     .target Korven the Prime
     .target Kil'ruk the Wind-Reaver
+step
+    .isOnQuest 31109
+    >>Kill |cRXP_ENEMY_Shek'zeer Mantid|r
+    .complete 31109,1 --40/40 Shek'zeer Mantid Slain
+    .mob Shek'zeer Bladesworn
+    .mob Manipulator
 step
     .isOnQuest 31233
     #completewith next
@@ -2995,17 +3001,17 @@ step
 step
     .isOnQuest 31041
     #completewith CloudrunnerHatchlingsFreed
-    >>Click on the |cRXP_PICK_Cloudrunner Eggs|r
+    >>Click on the |cRXP_PICK_Shiny Eggs|r
     .complete 31041,1 --8/8 Cloudrunner Egg
 step
     #label CloudrunnerHatchlingsFreed
     .isOnQuest 31046
     #loop
-    .goto 388,30.26,26.06,35,0
     .goto 388,33.48,27.21,35,0
     .goto 388,34.97,20.17,35,0
     .goto 388,31.75,21.86,35,0
-    >>Click on the |cRXP_PICK_Cloudrunner Hatchlings|r
+    .goto 388,30.26,26.06,35,0
+    >>Click on the |cRXP_PICK_Shan'ze Cages|r
     .complete 31046,1 --20/20 Cloudrunner Hatchlings freed
     .target Cloudrunner Hatchling
 step
@@ -3020,21 +3026,43 @@ step
     .goto 388,23.38,17.98,40,0
     +1
 step
-    .isOnQuest 31030
-    #completewith next
+    .isOnQuest 31040
+    #completewith CloudrunnerEggs
     >>Kill |cRXP_ENEMY_Darkwoods Pixies|r or |cRXP_ENEMY_Darkwoods Charmers|r
-    .complete 31030,1 --30/30 Darkwoods Pixies or Darkwoods Charmers slain
+    .complete 31040,1 --30/30 Darkwoods Pixies or Darkwoods Charmers slain
     .mob Darkwoods Pixie
     .mob Darkwoods Charmer
 step
+    .isOnQuest 31039
+    #completewith CloudrunnerEggs
+    >>Kill |cRXP_ENEMY_Shan'ze Serpentbinders|r or |cRXP_ENEMY_Shan'ze Beastmasters|r
+    .complete 31039,1 --12/12 Shan'ze Serpentbinders or Beastmasters slain
+    .mob Shan'ze Serpentbinder
+    .mob Shan'ze BeastMaster
+step
     .isOnQuest 31041
+    #label CloudrunnerEggs
     >>Click on the |cRXP_PICK_Cloudrunner Eggs|r
     .complete 31041,1 --8/8 Cloudrunner Egg
 step
-    .isOnQuest 31030
+    .isOnQuest 31040
+    #completewith next
+    >>Kill |cRXP_ENEMY_Darkwoods Pixies|r or |cRXP_ENEMY_Darkwoods Charmers|r
+    .complete 31040,1 --30/30 Darkwoods Pixies or Darkwoods Charmers slain
+    .mob Darkwoods Pixie
+    .mob Darkwoods Charmer
+step
+    .isOnQuest 31039
+    #completewith CloudrunnerEggs
+    >>Kill |cRXP_ENEMY_Shan'ze Serpentbinders|r or |cRXP_ENEMY_Shan'ze Beastmasters|r
+    .complete 31039,1 --12/12 Shan'ze Serpentbinders or Beastmasters slain
+    .mob Shan'ze Serpentbinder
+    .mob Shan'ze BeastMaster
+step
+    .isOnQuest 31040
     #label DarkwoodPixieCharmer
     >>Kill |cRXP_ENEMY_Darkwoods Pixies|r or |cRXP_ENEMY_Darkwoods Charmers|r
-    .complete 31030,1 --30/30 Darkwoods Pixies or Darkwoods Charmers slain
+    .complete 31040,1 --30/30 Darkwoods Pixies or Darkwoods Charmers slain
     .mob Darkwoods Pixie
     .mob Darkwoods Charmer
 step
@@ -3123,7 +3151,7 @@ step
     .dailyturnin 31105 >>Turn in The Mogu Menace
     .target Ban Bearheart
 step
-    .isNotOnQuest 31062,31039
+    .isNotOnQuest 31062,31049
     .isQuestTurnedIn 31105
     .goto 388,49.02,70.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ban Bearheart|r
@@ -3149,6 +3177,7 @@ step
     .goto 388,20.23,15.70,6 >>Enter the cave
 step
     .isOnQuest 31049
+    #requires DarkwoodsFaerieSlain
     .goto 388,20.23,15.70,0
     .goto 388,19.53,13.87
     >>Kill the |cRXP_ENEMY_Darkwoods Faerie|r
