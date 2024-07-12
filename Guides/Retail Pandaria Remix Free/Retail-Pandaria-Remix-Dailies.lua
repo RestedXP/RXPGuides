@@ -265,8 +265,8 @@ step
     #completewith SlitherscaleSaurokSlainB
     #hidewindow
     #loop
-    .goto 371,68.27,32.88,25,0
-    .goto 371,66.74,25.68,25,0
+    .goto 371,68.27,32.88,40,0
+    .goto 371,66.74,25.68,40,0
     .goto 371,69.51,25.81,35,0
     +1
 step
@@ -314,7 +314,7 @@ step
 step
     .isOnQuest 31700
     #completewith WindwardHuntressSlain
-    >>Kill |cRXP_ENEMY_Shadowfae Trickster|r. Loot them for the |T1:0|t[|cRXP_LOOT_Stolen Boots|r]
+    >>Click on the |cRXP_PICK_Stolen Boots|r
     .complete 31700,1 --14/14 Stolen Boots
     .mob Shadowfae Trickster
 step
@@ -775,6 +775,14 @@ step
     .mob Shek'zeer Needler
 step
     .isOnQuest 31496
+    #hidewindow
+    #label FeederB
+    .complete 31496,2 --1/1 East Feeder
+    .complete 31496,3 --1/1 North Feeder
+    .complete 31496,1 --1/1 Central Feeder
+    .complete 31496,4 --1/1 Northeast Feeder
+step
+    .isOnQuest 31496
     #completewith next
     #label EastFeeder
     #hidewindow
@@ -786,9 +794,15 @@ step
 step
     .isOnQuest 31496
     #requires EastFeeder
-    >>Click on the |cRXP_PICK_East Feeder|r
+    >>Click on the |cRXP_PICK_East Feeder|r or use the |T134772:0|t[Sap Jar]
     .goto 422,37.85,33.06
+    .use 87400
     .complete 31496,2 --1/1 East Feeder
+step
+    --PRMK: Is there no better way?
+    .isOnQuest 31496
+    #title Leave House
+    .goto 422,38.29,31.95,6 >>Leave the house
 step
     .isOnQuest 31496
     #completewith next
@@ -802,9 +816,14 @@ step
 step
     .isOnQuest 31496
     #requires NorthFeeder
-    >>Click on the |cRXP_PICK_North Feeder|r
+    >>Click on the |cRXP_PICK_North Feeder|r or use the |T134772:0|t[Sap Jar]
     .goto 422,37.03,32.83
+    .use 87400
     .complete 31496,3 --1/1 North Feeder
+step
+    .isOnQuest 31496
+    #title Leave House
+    .goto 422,36.25,32.26,6 >>Leave the house
 step
     .isOnQuest 31496
     #completewith next
@@ -818,9 +837,14 @@ step
 step
     .isOnQuest 31496
     #requires CentralFeeder
-    >>Click on the |cRXP_PICK_Central Feeder|r
+    >>Click on the |cRXP_PICK_Central Feeder|r or use the |T134772:0|t[Sap Jar]
     .goto 422,37.40,29.24
+    .use 87400
     .complete 31496,1 --1/1 Central Feeder
+step
+    .isOnQuest 31496
+    #title Leave House
+    .goto 422,37.03,28.07,6 >>Leave the house
 step
     .isOnQuest 31496
     #completewith next
@@ -835,8 +859,9 @@ step
     .isOnQuest 31496
     #requires NortheastFeeder
     #label FeederA
-    >>Click on the |cRXP_PICK_Northeast Feeder|r
+    >>Click on the |cRXP_PICK_Northeast Feeder|r or use the |T134772:0|t[Sap Jar]
     .goto 422,39.04,30.47
+    .use 87400
     .complete 31496,4 --1/1 Northeast Feeder
 step
     .isOnQuest 31502
@@ -2899,7 +2924,7 @@ step
     .mob Sra'thik Swarm-Leader
 step
     .isOnQuest 31198
-    .goto 388,23.69,55.50
+    .goto 388,23.57,55.64
     >>Click on the |cRXP_PICK_Sra'thik Idol|r
     .complete 31198,1 --1/1 Southern idol
 step
@@ -3084,6 +3109,12 @@ step
     >>Kill |cRXP_ENEMY_Sra'thik Swarmlord|r
     .complete 31203,1 --1/1 Sra'thik Swarmlord slain
     .mob Sra'thik Swarmlord
+step
+    .isOnQuest 31203
+    .goto 388,49.01,71.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ling of the Six Pools|r
+    .dailyturnin 31203 >>Turn in Target of Opportunity: Sra'thik Swarmlord
+    .target Ling of the Six Pools
 step
     .isOnQuest 31204
     #completewith next
