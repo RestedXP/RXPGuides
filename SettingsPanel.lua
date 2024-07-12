@@ -1370,7 +1370,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L(
                             "Adjust the leveling routes to the current season"),
                         type = "select",
-                        values = {[false] = L"None", [1] = L"Season of Mastery", [2] = L"Season of Discovery"},
+                        values = {[0] = L"None", [1] = L"Season of Mastery", [2] = L"Season of Discovery"},
                         --sorting = {0, 1, 2},
                         width = optionsWidth,
                         order = 2.5,

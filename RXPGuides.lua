@@ -129,7 +129,7 @@ end
 
 function addon.GetSeason()
 
-return C_Seasons and C_Seasons.HasActiveSeason() and (not(C_GameRules and C_GameRules.IsHardcoreActive and C_GameRules.IsHardcoreActive()) and C_Seasons.GetActiveSeason() or 0)
+return C_Seasons and C_Seasons.HasActiveSeason() and (not(C_GameRules and C_GameRules.IsHardcoreActive and C_GameRules.IsHardcoreActive()) and C_Seasons.GetActiveSeason()) or 0
 
 end
 
