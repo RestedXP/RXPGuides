@@ -29,39 +29,34 @@ step
     .accept 13518 >>Accept The Last Wave of Survivors
 	.target Dentaria Silverglade
 step
-    .goto 62,50.92,18.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyrisse.|r
-    .vendor 43439 >> |cRXP_WARN_Vendor and Repair.|r
-	.target Nyrisse
-step
     .goto 62,50.22,19.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ranger Glynda Nal'Shea.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ranger Glynda Nal'Shea|r
     .accept 13522 >>Accept Threat from the Water
 	.target Ranger Glynda Nal'Shea
 step
     #completewith finalrescue
-    >>Kill |cRXP_ENEMY_Vile Spray.|r
+    >>Kill |cRXP_ENEMY_Vile Sprays|r
     .complete 13522,1 --8/8 Vile Spray slain
 	.mob Vile Spray
 step
     .goto 62,45.02,18.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Volcor.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Volcor|r
     .complete 13518,4 --1/1 Volcor rescued
 	.target Volcor
 step
     .goto 62,44.11,17.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gershala.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gershala|r
     .complete 13518,2 --1/1 Gershala Nightwhisper rescued
 	.target Gershala Nightwhisper
 step
     .goto 62,44.58,19.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Whiteclaw.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Whiteclaw|r
     .complete 13518,1 --1/1 Cerellean Whiteclaw rescued
 	.target Cerellean Whiteclaw
 step
 	#label finalrescue
     .goto 62,42.91,21.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shaldyn.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shaldyn|r
     .complete 13518,3 --1/1 Shaldyn rescued
 	.target Shaldyn
 step
@@ -70,35 +65,37 @@ step
     .goto 62,44.06,20.31
     .goto 62,42.91,21.51
     .goto 62,46.22,17.15
-    >>Kill |cRXP_ENEMY_Vile Spray.|r
+    >>Kill |cRXP_ENEMY_Vile Sprays|r
     .complete 13522,1 --8/8 Vile Spray slain
-	.target Vile Spray
+	.mob Vile Spray
 step
     .goto 62,50.21,19.78
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ranger Glynda Nal'Shea.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ranger Glynda Nal'Shea|r
     .turnin 13522 >>Turn in Threat from the Water
 	.target Ranger Glynda Nal'Shea
 step
     .goto 62,51.78,17.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dentaria Silverglade.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dentaria Silverglade|r
     .turnin 13518 >>Turn in The Last Wave of Survivors
 	.target Dentaria Silverglade
 step
     .goto 62,51.8,18.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Serendia Oakwhisper|r |cFFfa9602patrolling up and down the stairs in the Inn.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Serendia Oakwhisper|r |cFFfa9602patrolling up and down the stairs in the Inn|r
     .accept 13520 >>Accept The Boon of the Seas
 	.target Serendia Oakwhisper
 step
-    .goto 62,50.934,18.614
+    .goto 62,50.964,18.556
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Kyteran|r
     .home >>Set your Hearthstone to Lor'danel
+    .target Innkeeper Kyteran
 step
     .goto 62,51.14,19.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wizbang Cranktoggle.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wizbang Cranktoggle|r
     .accept 13521 >>Accept Buzzbox 413
 	.target Wizbang Cranktoggle
 step
     #completewith next
-    >>Kill |cRXP_ENEMY_Corrupted Tide Crawlers|r and loot them for their |cRXP_LOOT_Corrupted Tide Crawler Flesh.|r
+    >>Kill |cRXP_ENEMY_Corrupted Tide Crawlers|r. Loot them for their |cRXP_LOOT_Crawler Flesh|r
     .complete 13521,1 --4/4 Corrupted Tide Crawler Flesh
 	.mob Corrupted Tide Crawler
 step
@@ -107,7 +104,7 @@ step
     .goto 62,52.57,17.53,20,0
     .goto 62,53.18,18.53,20,0
     .goto 62,52.41,19.60
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Encrusted Clams|r underwater.
+    >>Loot the |cRXP_PICK_Encrusted Clams|r underwater
     .complete 13520,1 --16/16 Encrusted Clam Muscle
 step
     .goto 62,52.41,19.60,20,0
@@ -115,61 +112,98 @@ step
     .goto 62,52.57,17.53,20,0
     .goto 62,53.18,18.53,20,0
     .goto 62,52.41,19.60
-    >>Kill |cRXP_ENEMY_Corrupted Tide Crawlers|r and loot them for their |cRXP_LOOT_Corrupted Tide Crawler Flesh.|r
+    >>Kill |cRXP_ENEMY_Corrupted Tide Crawlers|r. Loot them for their |cRXP_LOOT_Crawler Flesh|r
     .complete 13521,1 --4/4 Corrupted Tide Crawler Flesh
 	.mob Corrupted Tide Crawler
 step
     .goto 62,53.24,19.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Buzzbox 413.|r
+    >>Click the |cRXP_PICK_Buzzbox 413|r on the ground
     .turnin 13521 >>Turn in Buzzbox 413
     .accept 13527 >>Accept No Accounting for Taste
 step
     .goto 62,55.1,21.0
-    >>|TInterface/cursor/crosshair/interact.blp:20|tInteract with the |cRXP_ENEMY_Decomposing Thistle Bear.|r
+    >>Loot the |cRXP_FRIENDLY_Decomposing Thistle Bear|r
     .complete 13527,1 --1/1 Foul Bear Carcass Sample
 	.target Decomposing Thistle Bear
 step
     .goto 62,51.17,19.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wizbang Cranktoggle.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wizbang Cranktoggle|r
     .turnin 13527 >>Turn in No Accounting for Taste
     .accept 13528 >>Accept Buzzbox 723
 	.target Wizbang Cranktoggle
+step
+    .goto 62,50.90,18.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Serendia Oakwhisper|r |cFFfa9602patrolling up and down the stairs in the Inn.|r
+    .turnin 13520 >>Turn in The Boon of the Seas
+	.target Serendia Oakwhisper
+step << Priest
+    .goto 62,50.647,19.840
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Irlara Morninglight|r
+    .trainer >> Train your class spells
+    .target Irlara Morninglight
+step << Hunter
+    .goto 62,50.352,19.126
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lanla Bowleaf|r
+    .trainer >> Train your class spells
+    .target Lanla Bowleaf
+step << Mage
+    .goto 62,50.465,19.210
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lareth Beld|r
+    .trainer >> Train your class spells
+    .target Lareth Beld
+step << Warlock
+    .goto 62,50.487,19.240
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laera Dubois|r
+    .trainer >> Train your class spells
+    .target Laera Dubois
+step << Rogue
+    .goto 62,50.684,18.509
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kenral Nightwind|r
+    .trainer >> Train your class spells
+    .target Kenral Nightwind
+step << Warrior
+    .goto 62,50.831,18.787
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Moonwing|r
+    .trainer >> Train your class spells
+    .target Sentinel Moonwing
+step << Druid
+    .goto 62,50.120,19.495
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dular|r
+    .trainer >> Train your class spells
+    .target Dular
 step
     .goto 62,52.96,25.46,40,0
     .goto 62,54.02,25.28,40,0
     .goto 62,55.73,23.95,40,0
     .goto 62,54.87,27.67,40,0
     .goto 62,52.96,25.46
-    >>Kill |cRXP_ENEMY_Bears|r and loot them for their |cRXP_LOOT_Corrupted Thistle Bear Guts.|r
+    >>Kill |cRXP_ENEMY_Bears|r. Loot them for their |cRXP_LOOT_Corrupted Thistle Bear Guts|r
     .complete 13528,1 --6/6 Corrupted Thistle Bear Guts
 	.mob Corrupted Thistle Bear
 	.mob Corrupted Thistle Bear Matriarch
 	.mob Thistle Bear Cub
 step
     .goto 62,54.17,29.24
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Buzzbox 723.|r
+    >>Click the |cRXP_PICK_Buzzbox 723|r on the ground
     .turnin 13528 >>Turn in Buzzbox 723
     .accept 13554 >>Accept A Cure In The Dark
 step
     #label itall
     .goto 62,56.26,27.41,40,0
     .goto 62,56.78,30.1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun|r
     .accept 13529 >>Accept The Corruption's Source
 	.target Tharnariun
 step
-    #completewith next
-	>>Kill |cRXP_ENEMY_Vile Grells|r and |cRXP_ENEMY_Vile Corrupters|r and loot them for |cRXP_LOOT_Foul Ichor|r and the |cRXP_LOOT_Corruptor's Master Key.|r
-	>>|cRXP_WARN_Check for |cRXP_ENEMY_Licillin(Rare|r) as you quest.|r
-    .complete 13554,1 --6/6 Foul Ichor
+    #completewith GrellsIchor
+	>>Kill |cRXP_ENEMY_Vile Grells|r and |cRXP_ENEMY_Vile Corrupters|r. Loot them for their |cRXP_LOOT_Foul Ichor|r and the |T134245:0|t[|cRXP_LOOT_Corruptor's Master Key|r]
+    .use 44927 >>|cRXP_WARN_Use the|r |T134245:0|t[|cRXP_LOOT_Corruptor's Master Key|r] |cRXP_WARN_to start the quest|r
     .complete 13529,2 --8/8 Vile Grell slain
+    .complete 13554,1 --6/6 Foul Ichor
 	.collect 44927,1,13557
-	>>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Corruptor's Master Key.|r
     .accept 13557 >>Accept Bearer of Good Fortune
-    .use 44927
 	.mob Vile Grell
 	.mob Vile Corruptor
-	.unitscan Licillin
 step
     .goto 62,57.51,32.31,15,0
     .goto 62,58.58,32.24,15,0
@@ -179,18 +213,19 @@ step
     .goto 62,56.97,32.66,15,0
     .goto 62,56.58,33.64,15,0
     .goto 62,57.10,34.18
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Cages|r |cFFfa9602throughout the Cave.|r
+    >>Open the |cRXP_PICK_Cages|r throughout the cave
 	.complete 13557,1
 step
     .goto 62,58.41,33.08
-    >>Go down into the bottom level of the cave and kill |cRXP_ENEMY_Zenn|r
-    >>|cRXP_WARN_Check for a chest next to him. It may not be there.|r
+    >>Kill |cRXP_ENEMY_Zenn Foulhoof|r
+    >>|cRXP_ENEMY_Zenn Foulhoof|r |cRXP_WARN_is on the bottom level of the cave|r
     .complete 13529,1 --1/1 Zenn Foulhoof slain
 	.mob Zenn Foulhoof
 step
+    #label GrellsIchor
     .goto 62,56.79,33.52,20,0
     .goto 62,57.43,33.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tClick on the |cRXP_PICK_Disgusting Workbench|r at the back of the cave.
+    >>Click on the |cRXP_PICK_Disgusting Workbench|r at the back of the cave
     .accept 13831 >>Accept A Troubling Prescription
 step
     .goto 62,57.51,32.31,30,0
@@ -201,51 +236,42 @@ step
     .goto 62,56.97,32.66,30,0
     .goto 62,56.58,33.64,30,0
     .goto 62,57.10,34.18
-    >>Kill |cRXP_ENEMY_Vile Grells|r and |cRXP_ENEMY_Vile Corrupters|r and loot them for |cRXP_LOOT_Foul Ichor|r and the |cRXP_LOOT_Corruptor's Master Key.|r
-    >>|cRXP_WARN_Check for |cRXP_ENEMY_Licillin(Rare|r) as you quest.|r
-    .complete 13554,1 --6/6 Foul Ichor
+	>>Kill |cRXP_ENEMY_Vile Grells|r and |cRXP_ENEMY_Vile Corrupters|r. Loot them for their |cRXP_LOOT_Foul Ichor|r and the |T134245:0|t[|cRXP_LOOT_Corruptor's Master Key|r]
+    .use 44927 >>|cRXP_WARN_Use the|r |T134245:0|t[|cRXP_LOOT_Corruptor's Master Key|r] |cRXP_WARN_to start the quest|r
     .complete 13529,2 --8/8 Vile Grell slain
+    .complete 13554,1 --6/6 Foul Ichor
 	.collect 44927,1,13557
-	>>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Corruptor's Master Key.|r
     .accept 13557 >>Accept Bearer of Good Fortune
 	.mob Vile Grell
-	.mob Vile Corrup
-	.unitscan Licillin
-    .use 44927
+	.mob Vile Corruptor
 step
     #completewith next
     .hs >> Hearth to Lor'Danel
-    --TODO: Check if logout skips work on the beta, might not need to hs
+    .cooldown item,6948,>2
 step
-    .goto 62,51.13,19.71
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun Treetender.|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wizbang Cranktoggle|r and |cRXP_FRIENDLY_Tharnariun Treetender|r
+    .turnin 13554 >>Turn in A Cure In The Dark
+	.target +Wizbang Cranktoggle
+    .goto 62,51.142,19.658
     .turnin 13557 >>Turn in A Troubling Prescription
     .turnin 13831 >>Turn in A Troubling Prescription
     .turnin 13529 >>Turn in The Corruption's Source
-	.target Tharnariun Treetender
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wizbang.|r
-    .turnin 13554 >>Turn in A Cure In The Dark
-	.target Wizbang
-step
-    #sticky
-    #label boon1
-    .goto 62,50.90,18.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Serendia Oakwhisper|r |cFFfa9602patrolling up and down the stairs in the Inn.|r
-    .turnin 13520 >>Turn in The Boon of the Seas
-	.target Serendia Oakwhisper
+	.target +Tharnariun Treetender
+    .goto 62,51.134,19.709
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Volcor|r 
     .target Volcor
     .accept 13564 >>Accept A Lost Companion
-    .goto 62,50.887,17.995
+    .goto 62,50.943,18.026
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cerellean Whiteclaw|r 
     .target Cerellean Whiteclaw
     .accept 13563 >>Accept A Love Eternal
-    .goto 62,50.881,17.961
+    .goto 62,50.821,17.884
 step
-#requires boon1
     .goto 62,50.649,19.992
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ranger Glynda Nal'Shea|r, she patrols the area around the moonwell.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ranger Glynda Nal'Shea|r
+    >>|cRXP_FRIENDLY_Ranger Glynda Nal'Shea|r |cRXP_WARN_patrols throughout Lor'danel|r
     .target Ranger Glynda Nal'Shea
     .accept 13562 >>Accept The Final Flame of Bashal'Aran
 step
@@ -255,11 +281,16 @@ step
     .accept 13561 >>Accept Solace for the Highborne
 step
     .goto 62,45.958,34.240
-    >>Click on the |cRXP_PICK_Brazier|r inside the gazebo.
+    >>Click the |cRXP_PICK_The Final Flame of Bashal'Aran|r on the ground
     .complete 13562,1
 step
-#sticky
-#label pendant1
+    #completewith next
+    >>Kill |cRXP_ENEMY_Cursed Highbornes|r and |cRXP_ENEMY_Writhing Highbornes|r
+    .complete 13561,1 --|6/6 Cursed Highborne slain
+    .mob +Cursed Highborne
+    .complete 13561,2 --|6/6 Writhing Highborne slain
+    .mob +Writhing Highborne
+step
     .goto 62,48.482,36.634
     >>Kill |cRXP_ENEMY_Anaya Dawnrunner|r. Loot her for |cRXP_LOOT_Anaya's Pendant|r
     .complete 13563,1 --|1/1 Anaya Dawnrunner slain
@@ -269,9 +300,9 @@ step
     .goto 62,47.180,35.201
     >>Kill |cRXP_ENEMY_Cursed Highbornes|r and |cRXP_ENEMY_Writhing Highbornes|r
     .complete 13561,1 --|6/6 Cursed Highborne slain
+    .mob +Cursed Highborne
     .complete 13561,2 --|6/6 Writhing Highborne slain
-    .mob Cursed Highborne
-    .mob Writhing Highborne
+    .mob +Writhing Highborne
 step
     .goto 62,46.807,33.281
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arya Autumnlight|r 
@@ -284,18 +315,20 @@ step
     .turnin 13564 >>Turn in A Lost Companion
     .accept 13566 >>Accept Ritual Materials
     .accept 13598 >>Accept Unsavory Remedies
+step
+    .goto 62,42.932,38.958
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seraphine|r 
     .target Seraphine
     .accept 13565 >>Accept Twice Removed
 step
     .goto 62,40.944,38.615
-    >>Click the |cRXP_PICK_Moonstalkers|r sleeping next to the trees to loot their whiskers
+    >>Click the |cRXP_PICK_Moonstalkers|r sleeping next to the trees to loot them their |cRXP_LOOT_Whiskers|r
     *|cRXP_WARN_Only some of the mobs are neutral and are able to be looted|r
     .complete 13566,1 --|3/3 Moonstalker Whisker
     .mob Moonstalker
 step
     .goto 62,45.206,41.222
-    >>Click the |cRXP_PICK_Mottled Does|r around the area
+    >>Click the |cRXP_PICK_Mottled Does|r to loot them for their |cRXP_LOOT_Hair|r
     .complete 13566,2 --|3/3 Tuft of Mottled Doe Hair
     .mob Mottled Doe
 step
@@ -317,8 +350,8 @@ step
     .goto 62,49.074,39.158,30,0
     .goto 62,48.422,40.225,30,0
     .goto 62,48.422,40.225,30,0
-    >>Click the |cRXP_PICK_yellow mushrooms|r around Ruins of Lornesta
-    .use 45911 >>Kill Darkscale nagas and use the |T134413:0|t[|cRXP_LOOT_Petrified Root|r] on their corpses to summon an Ent
+    >>Loot the |cRXP_LOOT_Fuming Toadstools|r on the ground
+    .use 45911 >>Kill |cRXP_ENEMY_Darkscale Scouts|r. |cRXP_WARN_Use the|r |T134413:0|t[Petrified Root] |cRXP_WARN_on their corpses|r
     .complete 13598,1 --|6/6 Fuming Toadstool
     .complete 13565,2 --|6/6 Withered Ents called
     .mob Darkscale Scout
@@ -328,16 +361,17 @@ step
     .goto 62,46.459,38.829,0
     .goto 62,48.579,38.630,30,0
     .goto 62,46.459,38.829,30,0
-    >>Click the |cRXP_PICK_Hungry Thistle Bears|r drinking water next to the riverbed to loot their furs
+    >>Click the |cRXP_PICK_Hungry Thistle Bears|r drinking water next to the riverbed to loot them for their |cRXP_LOOT_Fur|r
     *|cRXP_WARN_Only some of the mobs are neutral and are able to be looted|r
     .complete 13566,3 --|3/3 Thistle Bear Fur
-
 step
-#requires janira
-    .goto 62,42.960,38.956
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seraphine|r
+    #requires janira
+    .goto 62,42.932,38.958
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seraphine|r 
     .target Seraphine
     .turnin 13565 >>Turn in Twice Removed
+step
+    .goto 62,42.954,39.006
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Keeper Karithus|r
     .target Keeper Karithus
     .turnin 13566 >>Turn in Ritual Materials
@@ -345,9 +379,9 @@ step
     .accept 13569 >>Accept The Ritual Bond
 step
     #completewith next
-    .goto 62,42.960,38.956
-    .gossipoption 37215>>Click the |cRXP_PICK_Grovekeeper's Incense|r right in front of the quest giver.
-    .aura 64198
+    .goto 62,42.938,39.031
+    .aura 64198 >> Click the |cRXP_PICK_Grovekeeper's Incense|r on the ground
+    .skipgossip
 step
     .goto 62,43.683,39.926
     .turnin 13567>>Speak with the |cRXP_FRIENDLY_Great Stag Spirit|r
@@ -367,65 +401,66 @@ step
 ----CENTRAL DARKSHORE
 
 step
+    .isOnQuest 13601
     .goto 62,42.596,45.155
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Priestess Alinya|r
     .target Priestess Alinya
-    .turnin -13601 >>Turn in In Aid of the Refugees
+    .turnin 13601 >>Turn in In Aid of the Refugees
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Selarin|r and |cRXP_FRIENDLY_Corvine Moonrise|r
     .accept 13542 >>Accept Against the Wind
+    .goto 62,42.513,45.154
+    .target +Sentinel Selarin
     .accept 13543 >>Accept Three Hammers to Break
     .accept 13573 >>Accept Malfurion's Return
+    .goto 62,42.681,45.151
+    .target +Corvine Moonrise
 step
-    #optional
-    #completewith windmaster
-    >>Kill |cRXP_ENEMY_Frenzied Cyclone|r elementals and loot them for their |T236968:0|t[Frenzied Cyclone Bracers]
-    .collect 44868,8,13542,1,-1
+    #completewith WindmasterTzuTzu
+    >>Kill |cRXP_ENEMY_Frenzied Cyclones|r. Loot them for their |T236968:0|t[|cRXP_LOOT_Frenzied Cyclone Bracers|r]
+    .collect 44868,8,13542,1
     .mob Frenzied Cyclone
 step
     .goto 62,40.818,41.476
     >>Kill |cRXP_ENEMY_Cloudtamer Wildmane|r
     .complete 13543,1 --|1/1 Cloudtamer Wildmane slain
-    .unitscan Cloudtamer Wildmane
+    .mob Cloudtamer Wildmane
 step
     .goto 62,39.159,38.314
     >>Kill |cRXP_ENEMY_Skylord Braax|r
     .complete 13543,3 --|1/1 Skylord Braax slain
-    .unitscan Skylord Braax
+    .mob Skylord Braax
 step
-#label windmaster
+    #label WindmasterTzuTzu
     .goto 62,37.829,42.721
     >>Kill |cRXP_ENEMY_Cloudtamer Wildmane|r
     .complete 13543,2 --|1/1 Windmaster Tzu-Tzu slain
-    .unitscan Windmaster Tzu-Tzu
+    .mob Windmaster Tzu-Tzu
 step
-    #optional
-    #completewith windmaster
-    >>Kill |cRXP_ENEMY_Frenzied Cyclone|r elementals and loot them for their |cRXP_LOOT_bracers|r
-    .collect 44868,8,13542,1,-1
-    .mob Frenzied Cyclone
-step
-#loop
+    #loop
     .goto 62,39.466,42.096,0
     .goto 62,40.585,41.779,40,0
     .goto 62,39.379,39.127,40,0
     .goto 62,37.963,43.867,40,0
-    >>Kill |cRXP_ENEMY_Frenzied Cyclone|r elementals and loot them for their |cRXP_LOOT_bracers|r
-    .collect 44868,8,13542,1,-1
+    >>Kill |cRXP_ENEMY_Frenzied Cyclones|r. Loot them for their |T236968:0|t[|cRXP_LOOT_Frenzied Cyclone Bracers|r]
+    .collect 44868,8,13542,1
     .mob Frenzied Cyclone
 step
     .goto 62,39.466,42.096
-    .use 44868 >>Destroy the |T236968:0|t[Frenzied Cyclone Bracers] by right clicking them next to the Auberdine moonwell
+    .use 44868 >>|cRXP_WARN_Use the|r |T236968:0|t[Frenzied Cyclone Bracers] |cRXP_WARN_next to the Auberdine moonwell|r
     .complete 13542,1 --|8/8 Frenzied Cyclone bracers destroyed
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Selarin|r and |cRXP_FRIENDLY_Corvine Moonrise|r
     .turnin 13542 >>Turn in Against the Wind
-    .goto 62,42.595,45.160
+    .goto 62,42.513,45.154
     .target +Sentinel Selarin
     .turnin 13543 >>Turn in Three Hammers to Break
-    .goto 62,42.680,45.152
+    .goto 62,42.681,45.151
     .target +Corvine Moonrise
+
 --
 step
-    .goto 62,43.638,53.501
+    .goto 62,43.662,53.441
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malfurion Stormrage|r
     .target Malfurion Stormrage
     .turnin 13573 >>Turn in Malfurion's Return
@@ -434,7 +469,7 @@ step
     .accept 13579 >>Accept Protector of Ameth'Aran
 --
 step
-    .goto 62,45.558,48.483
+    .goto 62,45.584,48.470
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aroom|r
     .target Aroom
     .turnin 13577 >>Turn in The Last Wildkin
@@ -446,10 +481,10 @@ step
     .goto 62,46.463,47.371,40,0
     .goto 62,45.046,49.702,40,0
     .goto 62,43.670,47.028,40,0
-    >>Look for |cRXP_PICK_Wildkin Feathers|r on the ground, usually next to trees and bushes
+    >>Loot the |cRXP_LOOT_Slain Wildkin Feathers|r on the ground
     .complete 13578,1 --|8/8 Slain Wildkin Feather
 step
-    .goto 62,45.556,48.475
+    .goto 62,45.584,48.470
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aroom|r
     .target Aroom
     .turnin 13578 >>Turn in Aroom's Farewell
@@ -460,18 +495,19 @@ step
     .goto 62,46.875,50.147,40,0
     .goto 62,45.698,52.584,40,0
     .goto 62,46.867,50.276,40,0
-    >>Kill |cRXP_ENEMY_Horoo the Flamekeeper|r and loot |T135777:0|t[Elune's Torch], he patrols the area around the eastern lake
+    >>Kill |cRXP_ENEMY_Horoo the Flamekeeper|r. Loot him for |cRXP_LOOT_Elune's Torch|r
+    >>|cRXP_ENEMY_Horoo the Flamekeeper|r |cRXP_WARN_patrols slightly|r
     .complete 13582,1 --|1/1 Elune's Torch
     .unitscan Horoo the Flamekeeper
 step
-    .goto 62,45.593,48.472
+    .goto 62,45.584,48.470
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Aroom|r
     .target Aroom
     .turnin 13582 >>Turn in Elune's Fire
     .accept 13583 >>Accept The Wildkin's Oath
 --
 step
-    .goto 62,40.952,56.480
+    .goto 62,40.945,56.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Brownpaw|r
     .target Elder Brownpaw
     .turnin 13575 >>Turn in The Land Is in Their Blood
@@ -482,29 +518,40 @@ step
     .goto 62,40.288,61.724,0
     .goto 62,40.576,59.527,40,0
     .goto 62,39.982,63.824,40,0
-    .use 44959 >>Kill |cRXP_ENEMY_Unbound Fire Elementals|r and use the |T136061:0|t[Soothing Totem] on their corpses
+    .use 44959 >>Kill |cRXP_ENEMY_Unbound Fire Elementals|r
+    >>|cRXP_WARN_Use the|r |T136061:0|t[Soothing Totem] |cRXP_WARN_on their corpses|r
     .complete 13576,1 --|8/8 Unbound Fire Elemental absorbed
     .mob Unbound Fire Elemental
 step
-    .goto 62,40.933,56.516
+    .goto 62,40.945,56.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Brownpaw|r
     .target Elder Brownpaw
     .turnin 13576 >>Turn in Mutual Aid
     .accept 13580 >>Accept Soothing the Elements
 step
-    .goto 62,39.329,62.143
-    .use 46546 >>Use the |T135839:0|t[Energized Soothing Totem] next to the altar on top of the overlook, then defend it from the incoming waves of enemies
-    .complete 13580,1 --|1/1 Ritual of Soothing complete
-
+    #completewith next
+    .goto 62,38.77,60.82,25,0
+    .goto 62,39.66,62.12,30 >> Travel to the altar at the top of the small hill
 step
-    .goto 62,40.938,56.548
+    .goto 62,39.66,62.12
+    .cast 65361 >> |cRXP_WARN_Use the|r |T135839:0|t[Energized Soothing Totem] |cRXP_WARN_next to the altar then defend it|r
+    .use 46546
+    .isOnQuest 13580
+step
+    .goto 62,39.66,62.12
+    .use 46546 >> |cRXP_WARN_Defend the|r |T135839:0|t[Energized Soothing Totem] |cRXP_WARN_against the attackers|r
+    .complete 13580,1 --|1/1 Ritual of Soothing complete
+    .mob Fire Elemental Remnant
+    .mob Fire Elemental Rager
+step
+    .goto 62,40.945,56.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Brownpaw|r
     .target Elder Brownpaw
     .turnin 13580 >>Turn in Soothing the Elements
     .accept 13581 >>Accept The Blackwood Pledge
 --
 step
-    .goto 62,44.451,56.699
+    .goto 62,44.442,56.757
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Selenn|r
     .target Selenn
     .turnin 13579 >>Turn in Protector of Ameth'Aran
@@ -519,7 +566,7 @@ step
     .complete 13584,1 --|8/8 Enraged Earth Elemental slain
     .mob Enraged Earth Elemental
 step
-    .goto 62,44.423,56.745
+    .goto 62,44.442,56.757
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Selenn|r
     .target Selenn
     .turnin 13584 >>Turn in Calming the Earth
@@ -539,22 +586,24 @@ step
     .goto 62,47.366,55.964,25 >> Head towards the Earthshatter Cavern
     .subzoneskip 4708
 step
-    .goto 62,49.082,57.007
+    .goto 62,49.003,57.076
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tClick the Nightmare Portal and talk to |cRXP_FRIENDLY_Thessera|r
     .target Thessera
     .turnin 13586 >>Turn in The Emerald Dream
     .accept 13587 >>Accept The Waking Nightmare
 step
+    .goto 62,49.06,55.97,40,0
     .goto 62,50.115,55.431
-    >>Kill and loot |cRXP_ENEMY_Nightmare Guardian|r
+    >>Kill the |cRXP_ENEMY_Nightmare Guardian|r. Loot it for the |cRXP_LOOT_Emerald Scroll|r
     .complete 13587,1 --|1/1 Emerald Scroll
     .mob Nightmare Guardian
 step
-    .goto 62,49.163,56.923
+    .goto 62,49.210,56.935
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thessera|r
     .target Thessera
     .turnin 13587 >>Turn in The Waking Nightmare
     .accept 13940 >>Accept Leaving the Dream
+    .timer 30,Leaving the Dream RP
 step
     .goto 62/1,192.60001,5918.10010
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malfurion Stormrage|r
@@ -580,12 +629,13 @@ step
 ----
 step
     #completewith next
-    .hs >> Hearth to Lor'Danel
+    .hs >> Hearth to Lor'danel
 step
 #sticky
 #label glynda2
     .goto 62,50.649,19.992,0,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ranger Glynda Nal'Shea|r, she patrols the area around the moonwell.
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ranger Glynda Nal'Shea|r
+    >>|cRXP_FRIENDLY_Ranger Glynda Nal'Shea|r |cRXP_WARN_patrols throughout Lor'danel|r
     .target Ranger Glynda Nal'Shea
     .turnin 13562 >>Turn in The Final Flame of Bashal'Aran
     .accept 13589 >>Accept The Shatterspear Invaders
@@ -612,14 +662,63 @@ step << skip--terrible xp/hr
     .target Gary
     >>Use the robot to kill murlocs around the sunken ships nearby
     .complete 13560,1
+
+step << Priest
+    .goto 62,50.647,19.840
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Irlara Morninglight|r
+    .trainer >> Train your class spells
+    .target Irlara Morninglight
+step << Hunter
+    .goto 62,50.352,19.126
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lanla Bowleaf|r
+    .trainer >> Train your class spells
+    .target Lanla Bowleaf
+step << Mage
+    .goto 62,50.465,19.210
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lareth Beld|r
+    .trainer >> Train your class spells
+    .target Lareth Beld
+step << Warlock
+    .goto 62,50.487,19.240
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laera Dubois|r
+    .trainer >> Train your class spells
+    .target Laera Dubois
+step << Rogue
+    .goto 62,50.684,18.509
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kenral Nightwind|r
+    .trainer >> Train your class spells
+    .target Kenral Nightwind
+step << Warrior
+    .goto 62,50.831,18.787
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Moonwing|r
+    .trainer >> Train your class spells
+    .target Sentinel Moonwing  
+step << Druid
+    .goto 62,50.120,19.495
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dular|r
+    .trainer >> Train your class spells
+    .target Dular
+
+step
+    #optional
+    .maxlevel 18,DarkshoreEnd
+
 step
 #requires glynda2
-    .goto 62,58.930,19.411
+    .goto 62,58.912,19.448
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lieutenant Morra Starbreeze|r
     .target Lieutenant Morra Starbreeze
     .turnin 13589 >>Turn in The Shatterspear Invaders
+step
+    .goto 62,58.893,19.411
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
     .accept 13504 >>Accept Shatterspear Laborers
+    .target Sentinel Tysha Moonblade
+step
+    .goto 62,58.880,19.530
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balthule Shadowstrike|r
     .accept 13505 >>Accept Remnants of the Highborne
+    .target Balthule Shadowstrike
 step
     #sticky
     #label overseer
@@ -629,7 +728,8 @@ step
     .waypoint 62,63.258,15.511,45,0
     .waypoint 62,62.593,19.890,45,0
     .goto 62,61.832,17.573,0,0
-    .use 44979>>Kill and loot a |cRXP_ENEMY_Shatterspear Overseer|r
+    .use 44979>>Kill |cRXP_ENEMY_Shatterspear Overseers|r. Loot them for the |T134939:0|t[|cRXP_LOOT_Overseer's Orders|r]
+    >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_LOOT_Overseer's Orders|r] |cRXP_WARN_to start the quest|r
     .unitscan Shatterspear Overseer
     .collect 44979,1,13506
     .accept 13506 >>Accept Reason to Worry
@@ -642,27 +742,35 @@ step
     .goto 62,62.593,19.890,45,0
     .line 62,60.342,17.689,60.691,13.745,63.258,15.511,62.593,19.890,60.342,17.689
     >>Kill |cRXP_ENEMY_Shatterspear Laborers|r
-    >>Loot the small |cRXP_PICK_relics|r scattered around the dig site
+    >>Loot the |cRXP_LOOT_Highborne Relics|r on the ground
     .complete 13504,1 --|10/10 Shatterspear Laborer slain
     .complete 13505,1 --|8/8 Highborne Relic
-
     .mob Shatterspear Laborer
 step
     #requires overseer
-    .goto 62,58.893,19.462
+    .goto 62,58.880,19.530
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balthule Shadowstrike|r
+    .turnin 13505 >>Turn in Remnants of the Highborne
+    .target Balthule Shadowstrike
+step
+    .goto 62,58.893,19.411
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
+    .turnin 13504 >>Turn in Shatterspear Laborers
+    .accept 13507 >>Accept Denying Manpower
+    .target Sentinel Tysha Moonblade
+step
+    .goto 62,58.912,19.448
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lieutenant Morra Starbreeze|r
     .target Lieutenant Morra Starbreeze
     .turnin 13506 >>Turn in Reason to Worry
     .accept 13508 >>Accept Swift Response
-    .turnin 13504 >>Turn in Shatterspear Laborers
     .turnin 13505 >>Turn in Remnants of the Highborne
     .accept 13509 >>Accept War Supplies
-    .accept 13507 >>Accept Denying Manpower
 step
 #completewith escort1a
     .goto 62,62.143,9.604,0
-    >>Kill |cRXP_ENEMY_Enforcers|r and |cRXP_ENEMY_Mystics|r
-    .use 44999 >> Use the |T135433:0|t[Sentinel Torch] on the boxes around the horde camp
+    >>Kill |cRXP_ENEMY_Horde Enforcers|r and |cRXP_ENEMY_Shatterspear Mystics|r
+    .use 44999 >> |cRXP_WARN_Use the|r |T135433:0|t[Sentinel Torch] |cRXP_WARN_on the |cRXP_PICK_Shatterspear Armaments|r around the Horde camp|r
     .complete 13507,1 --|6/6 Horde Enforcer slain
     .mob +Horde Enforcer
     .complete 13507,2 --|6/6 Shatterspear Mystic slain
@@ -676,18 +784,19 @@ step
     .accept 13511 >>Accept One Bitter Wish
 step
     .goto 62,64.122,5.336
-    >>Kill and loot |cRXP_ENEMY_Rit'ko|r
+    >>Kill |cRXP_ENEMY_Rit'ko|r. Loot him for the |cRXP_LOOT_Shatterspear Torturer's Cage Key|r
     .complete 13511,1 --|1/1 Rit'ko slain
     .collect 45040,1,13510--Key
     .mob Rit'ko
 step
-    .goto 62,64.439,5.527
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tUse the key you got from earlier to free |cRXP_FRIENDLY_Sentinel Aynasha|r 
+    .goto 62,64.500,5.455
+    >>Click the |cRXP_PICK_Shatterspear Cage|r
     .target Sentinel Aynasha
     .accept 13510 >>Accept Timely Arrival
 step
     #label escort1a
-    >>Escort |cRXP_FRIENDLY_Sentinel Aynasha|r
+    .goto 62,60.21,6.9
+    >>|cRXP_WARN_Escort|r |cRXP_FRIENDLY_Sentinel Aynasha|r
     .complete 13510,1
     .target Sentinel Aynasha
 step 
@@ -695,23 +804,31 @@ step
     .goto 62,62.929,8.213,30,0
     .goto 62,61.720,11.021,30,0
     .goto 62,62.143,9.604,0
-    >>Kill |cRXP_ENEMY_Enforcers|r and |cRXP_ENEMY_Mystics|r
-    .use 44999 >> Use the |T135433:0|t[Sentinel Torch] on the boxes around the horde camp
+    >>Kill |cRXP_ENEMY_Horde Enforcers|r and |cRXP_ENEMY_Shatterspear Mystics|r
+    .use 44999 >> |cRXP_WARN_Use the|r |T135433:0|t[Sentinel Torch] |cRXP_WARN_on the |cRXP_PICK_Shatterspear Armaments|r around the Horde camp|r
     .complete 13507,1 --|6/6 Horde Enforcer slain
     .mob +Horde Enforcer
     .complete 13507,2 --|6/6 Shatterspear Mystic slain
     .mob +Shatterspear Mystic
     .complete 13509,1 --|12/12 Shatterspear Armaments burned
 step
-    .goto 62,58.901,19.483
+    .goto 62,58.893,19.411
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
-    .target Sentinel Tysha Moonblade
     .turnin 13507 >>Turn in Denying Manpower
+    .target Sentinel Tysha Moonblade
+step
+    .goto 62,58.912,19.448
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lieutenant Morra Starbreeze|r
+    .target Lieutenant Morra Starbreeze
     .turnin 13509 >>Turn in War Supplies
     .turnin 13510 >>Turn in Timely Arrival
     .turnin 13511 >>Turn in One Bitter Wish
     .accept 13512 >>Accept Strategic Strikes
+step
+    .goto 62,58.880,19.530
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balthule Shadowstrike|r
     .accept 13513 >>Accept On the Brink
+    .target Balthule Shadowstrike   
 step
     .goto 62,59.154,19.624
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathas Wildwood|r 
@@ -721,9 +838,9 @@ step
 #sticky
 #label sheya
     .goto 62,61.233,20.367
-    .use 44995 >> Use the |T136021:0|t[Dryad Spear] to kill |cRXP_ENEMY_Sheya Stormweaver|r
+    .use 44995 >> |cRXP_WARN_Use the|r |T136021:0|t[Dryad Spear] |cRXP_WARN_to kill|r |cRXP_ENEMY_Sheya Stormweaver|r
     .complete 13512,2 --|1/1 Sheya Stormweaver slain
-    .unitscan Sheya Stormweaver
+    .mob Sheya Stormweaver
 step
 #sticky
 #loop
@@ -732,20 +849,20 @@ step
     .waypoint 62,56.801,25.781,20,0
     .waypoint 62,61.233,20.367,0
     .waypoint 62,56.801,25.781,0
-    >>Kill and loot |cRXP_ENEMY_Shatterspear Shamans|r for their amulets
+    >>Kill |cRXP_ENEMY_Shatterspear Shamans|r. Loot them for their |cRXP_LOOT_Shatterspear Amulets|r
     .complete 13513,1 --|6/6 Shatterspear Amulet
     .mob Shatterspear Shaman
 step
 #requires sheya
     .goto 62,58.242,23.971
-    >>Climb the tower and kill |cRXP_ENEMY_Teegan|r
-    >>Loot |cRXP_LOOT_Narassin's Tome|r, a small tome located at the middle level of the tower
+    >>Kill |cRXP_ENEMY_Teegan Holloway|r atop the tower
+    >>Loot |cRXP_LOOT_Narassin's Tome|r located on the middle level of the tower
     .complete 13844,1 --|1/1 Teegan Holloway slain
     .complete 13844,2 --|1/1 Narassin's Tome
     .mob Teegan Holloway
 step
     .goto 62,56.801,25.781
-    .use 44995 >> Use the |T136021:0|t[Dryad Spear] to kill |cRXP_ENEMY_Lorenth Thundercall|r
+    .use 44995 >> |cRXP_WARN_Use the|r |T136021:0|t[Dryad Spear] |cRXP_WARN_to kill|r |cRXP_ENEMY_Lorenth Thundercall|r
     .complete 13512,1 --|1/1 Lorenth Thundercall slain
     .mob Lorenth Thundercall
 step--TODO: Fix this bit
@@ -773,18 +890,26 @@ step
 step
 #completewith next
     .goto 62,69.435,19.546
-    .vehicle >> Right click the |cRXP_FRIENDLY_Vengeful Protector|r
+    .vehicle >> |cRXP_WARN_Mount the|r |cRXP_FRIENDLY_Vengeful Protector|r
+    .target Vengeful Protector
 step
     .goto 62,70.684,20.841,0
     .goto 62,70.589,16.872,0
     .goto 62,70.684,20.841,50,0
     .goto 62,70.589,16.872,50,0
-    >>Use your first ability to kill the small trolls and the second to burn the huts
+    >>|cRXP_WARN_Cast|r |T136025:0|t[Shockwave] (1) |cRXP_WARN_to kill|r |cRXP_ENEMY_Shatterspear Trolls|r
+    >>|cRXP_WARN_Cast|r |T135734:0|t[Moonsurge] (2) |cRXP_WARN_to burn Shatterspear buildings|r
     .complete 13514,1 --|30/30 Shatterspear Vale Trolls killed
+    .mob +Shatterspear Champion
+    .mob +Shatterspear Priestess
+    .mob +Shatterspear Raider
     .complete 13514,2 --|6/6 Shatterspear Structures destroyed
 step
+    .isOnQuest 13514
+    .exitvehicle >> |cRXP_WARN_Exit the|r |cRXP_FRIENDLY_Vengeful Protector|r
+step
     .goto 62,72.263,19.096
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tLeave your vehicle and talk to |cRXP_FRIENDLY_Huntress Sandrya Moonfall|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Huntress Sandrya Moonfall|r
     .target Huntress Sandrya Moonfall
     .turnin 13590 >>Turn in The Front Line
     .accept 13515 >>Accept Ending the Threat
@@ -796,7 +921,8 @@ step
     .target Huntress Sandrya Moonfall
 step
     .goto 62,72.857,18.019
-    >>Follow the Night Elf sentinels and let them tank |cRXP_ENEMY_Jor'kil the Soulripper|r, then loot him for the quest item
+    >>Kill |cRXP_ENEMY_Jor'kil the Soulripper|r. Loot him for |T133466:0|t[|cRXP_LOOT_Hellscream's Missive|r]
+    .use 46318 >>|cRXP_WARN_Use|r |T133466:0|t[|cRXP_LOOT_Hellscream's Missive|r] |cRXP_WARN_to start the quest|r
     .complete 13515,1 --|1/1 Jor'kil the Soulripper slain
     .collect 46318,1,13591
     .accept 13591 >>Accept Disturbing Connections
@@ -814,7 +940,7 @@ step
     .turnin 13514 >>Turn in The Ancients' Ire
 step
     #completewith next
-    .hs >> Hearth to Lor'Danel
+    .hs >> Hearth to Lor'danel
 step << skip
     .goto 62,51.004,19.217
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
@@ -826,10 +952,50 @@ step
     .target Ranger Glynda Nal'Shea
     .turnin 13591 >>Turn in Disturbing Connections
 step
-    .goto 62,50.175,19.525
+    .goto 62,50.129,19.461
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cerellean Whiteclaw|r
     .target Cerellean Whiteclaw
+    .accept 13570 >>Accept Remembrance of Auberdine
     .turnin 13570 >>Turn in Remembrance of Auberdine
+step << Priest
+    .goto 62,50.647,19.840
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Irlara Morninglight|r
+    .trainer >> Train your class spells
+    .target Irlara Morninglight
+step << Hunter
+    .goto 62,50.352,19.126
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lanla Bowleaf|r
+    .trainer >> Train your class spells
+    .target Lanla Bowleaf
+step << Mage
+    .goto 62,50.465,19.210
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lareth Beld|r
+    .trainer >> Train your class spells
+    .target Lareth Beld
+step << Warlock
+    .goto 62,50.487,19.240
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laera Dubois|r
+    .trainer >> Train your class spells
+    .target Laera Dubois
+step << Rogue
+    .goto 62,50.684,18.509
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kenral Nightwind|r
+    .trainer >> Train your class spells
+    .target Kenral Nightwind
+step << Warrior
+    .goto 62,50.831,18.787
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Moonwing|r
+    .trainer >> Train your class spells
+    .target Sentinel Moonwing
+step << Druid
+    .goto 62,50.120,19.495
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dular|r
+    .trainer >> Train your class spells
+    .target Dular
+step
+    #optional
+    .maxlevel 18,DarkshoreEnd
+
 --NORTHERN DARKSHORE END
 step
 #questguide
@@ -1266,6 +1432,5 @@ step
 step
 #questguide
     #completewith next
-    .hs >> Hearth to Lor'Danel
-
+    .hs >> Hearth to Lor'danel
 ]])

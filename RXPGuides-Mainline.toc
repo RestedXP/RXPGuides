@@ -28,6 +28,7 @@ LevelingTracker.lua
 Timers.lua
 Communications.lua
 Targeting.lua
+InventoryManager.lua
 
 map.lua
 functions.lua

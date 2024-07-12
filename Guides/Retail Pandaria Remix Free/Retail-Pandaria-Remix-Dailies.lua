@@ -12,31 +12,231 @@ RXPGuides.RegisterGuide([[
 
 step
     #loop
-    .goto 371,57.51,45.36,10,0
+    .goto 371,57.51,45.36,15,0
     .goto 371,57.75,44.94,10,0
-    .goto 371,58.28,45.04,10,0
-    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r, |cRXP_FRIENDLY_Your Hatchling|r, |cRXP_FRIENDLY_Ningna Darkwheel|r
-    .questcount <3,31706,31711,31708,31194,30155,30156,30158,31700,31701,30154 >> |cRXP_WARN_Pick up the 3 available dailies in The Arboretum|r
+    .goto 371,58.28,45.04,15,0
+    .goto 371,58.61,43.65,15,0
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r, |cRXP_FRIENDLY_Your Hatchling|r, |cRXP_FRIENDLY_Ningna Darkwheel|r, and |cRXP_FRIENDLY_Instructor Windblade|r
+    .questcount <3,31706,31711,31708,31194,30155,30156,30158,31700,31701,30154,31719,31721,31699,31702,31710 >> |cRXP_WARN_Pick up the 3 available dailies in The Arboretum|r
     .target Elder Anli
     .target Your Hatchling
     .target Ningna Darkwheel
--- DAILIES DAY A
+    .target Instructor Windblade
+step
+    .isOnQuest 31719
+    .goto 371,58.26,45.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ningna Darkwheel|r, |cRXP_WARN_defeat her|r
+    .complete 31719,1 --1/1 Ningna Darkwheel defeated
+    .target Ningna Darkwheel
+    .skipgossipid 41480
+step
+    .isOnQuest 31721
+    .goto 371,57.29,43.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Qua-Ro Whitebrow|r, |cRXP_WARN_defeat him|r
+    .complete 31721,1 --1/1 Qua-Ro Whitebrow defeated
+    .target Qua-Ro Whitebrow
+    .mob Qua-Ro Whitebrow
+    .skipgossipid 40479
+step
+    .isOnQuest 30152
+    #completewith next
+    #label TheSkyRace
+    .complete 30152,1 --10/10 Checkpoints passed
+    .complete 30152,2 --1/1 Pass underneath the Finish Line
+step
+    .isOnQuest 30152
+    #completewith TheSkyRace
+    .goto 371,58.61,43.65
+    .gossipoption 40400 >>Talk to |cRXP_FRIENDLY_Instructor Windblade|r
+    .target Instructor Windblade
+step
+    .isOnQuest 30152
+    #title Checkpoint (1/10)
+    #requires TheSkyRace
+    .goto 371,60.60,39.34
+    >>|cRXP_WARN_Fly through the baloons with the flag|r
+    *Try to fly through the cloud rings to gain a speed buff
+    .complete 30152,1,1 --1/10 Checkpoints passed
+    .target Instructor Windblade
+    .skipgossipid 40400
+step
+    .isOnQuest 30152
+    #title Checkpoint (2/10)
+    .goto 371,59.67,31.51
+    >>|cRXP_WARN_Fly through the baloons with the flag|r
+    *Try to fly through the cloud rings to gain a speed buff
+    .complete 30152,1,2 --2/10 Checkpoints passed
+    .target Instructor Windblade
+    .skipgossipid 40400
+step
+    .isOnQuest 30152
+    #title Checkpoint (3/10)
+    .goto 371,61.29,25.20
+    >>|cRXP_WARN_Fly through the baloons with the flag|r
+    *Try to fly through the cloud rings to gain a speed buff
+    .complete 30152,1,3 --3/10 Checkpoints passed
+    .target Instructor Windblade
+    .skipgossipid 40400
+step
+    .isOnQuest 30152
+    #title Checkpoint (4/10)
+    .goto 371,66.30,35.91
+    >>|cRXP_WARN_Fly through the baloons with the flag|r
+    *Try to fly through the cloud rings to gain a speed buff
+    .complete 30152,1,4 --4/10 Checkpoints passed
+    .target Instructor Windblade
+    .skipgossipid 40400
+step
+    .isOnQuest 30152
+    #title Checkpoint (5/10)
+    .goto 371,66.11,42.49
+    >>|cRXP_WARN_Fly through the baloons with the flag|r
+    *Try to fly through the cloud rings to gain a speed buff
+    .complete 30152,1,5 --5/10 Checkpoints passed
+    .target Instructor Windblade
+    .skipgossipid 40400
+step
+    .isOnQuest 30152
+    #title Checkpoint (6/10)
+    .goto 371,66.73,51.47
+    >>|cRXP_WARN_Fly through the baloons with the flag|r
+    *Try to fly through the cloud rings to gain a speed buff
+    .complete 30152,1,6 --6/10 Checkpoints passed
+    .target Instructor Windblade
+    .skipgossipid 40400
+step
+    .isOnQuest 30152
+    #title Checkpoint (7/10)
+    .goto 371,64.05,51.04
+    >>|cRXP_WARN_Fly through the baloons with the flag|r
+    *Try to fly through the cloud rings to gain a speed buff
+    .complete 30152,1,7 --7/10 Checkpoints passed
+    .target Instructor Windblade
+    .skipgossipid 40400
+step
+    .isOnQuest 30152
+    #title Checkpoint (8/10)
+    .goto 371,61.82,54.54
+    >>|cRXP_WARN_Fly through the baloons with the flag|r
+    *Try to fly through the cloud rings to gain a speed buff
+    .complete 30152,1,8 --8/10 Checkpoints passed
+    .target Instructor Windblade
+    .skipgossipid 40400
+step
+    .isOnQuest 30152
+    #title Checkpoint (9/10)
+    .goto 371,60.40,52.88
+    >>|cRXP_WARN_Fly through the baloons with the flag|r
+    *Try to fly through the cloud rings to gain a speed buff
+    .complete 30152,1,9 --9/10 Checkpoints passed
+    .target Instructor Windblade
+    .skipgossipid 40400
+step
+    .isOnQuest 30152
+    #title Checkpoint (10/10)
+    .goto 371,58.76,46.83
+    >>|cRXP_WARN_Fly through the baloons with the flag|r
+    *Try to fly through the cloud rings to gain a speed buff
+    .complete 30152,1 --10/10 Checkpoints passed
+    .target Instructor Windblade
+    .skipgossipid 40400
+step
+    .isOnQuest 30152
+    #title Finish Line
+    .goto 371,58.38,46.35
+    >>|cRXP_WARN_Fly through the Finish Line|r
+    .complete 30152,2 --1/1 Pass underneath the Finish Line
+    .skipgossipid 40400
+step
+    .isOnQuest 31710
+    #completewith SeedofDoubtSlainB
+    >>Kill |cRXP_ENEMY_Widowspawns|r. Loot them for the |T463856:0|t[|cRXP_LOOT_Tiny Spider Eye|r]
+    .complete 31710,1 --100/100 Tiny Spider Eye
+    .mob Widowspawn
 step
     .isOnQuest 31706
-    .goto 374,42.00,32.18
-    >>Kill |cRXP_ENEMY_Weeping Widow|r
+    #completewith SeedofDoubtSlainB
+    >>Kill |cRXP_ENEMY_Weeping Widows|r
     .complete 31706,1 --7/7 Weeping Widow slain
     .mob Weeping Widow
 step
     .isOnQuest 31708
-    .goto 374,50.41,37.38
+    #completewith SeedofDoubtSlainB
     .complete 31708,1 --25/25 Serpent's Scale
 step
     .isOnQuest 31711
+    #completewith next
+    #label SeedofDoubtSlainA
+    #hidewindow
+    >>Kill |cRXP_ENEMY_Seed of Doubt|r
+    .complete 31711,1 --1/1 Seed of Doubt slain
+    .mob Seed of Doubt
+step
+    #title Enter Cave
+    #completewith SeedofDoubtSlainA
+    .goto 371,57.69,31.72,10 >>Enter the cave
+step
+    .isOnQuest 31711
+    #requires SeedofDoubtSlainA
+    #label SeedofDoubtSlainB
+    .goto 374,47.73,20.00,20,0
     .goto 374,33.23,38.52
     >>Kill |cRXP_ENEMY_Seed of Doubt|r
     .complete 31711,1 --1/1 Seed of Doubt slain
     .mob Seed of Doubt
+step
+    #completewith WeepingWidowSlain
+    #hidewindow
+    #loop
+    .goto 374,30.30,72.86,18,0
+    .goto 374,46.61,85.36,18,0
+    .goto 374,73.39,49.73,18,0
+    .goto 374,41.79,15.36,25,0
+    +1
+step
+    .isOnQuest 31706
+    #completewith TinySpiderEyes
+    >>Kill |cRXP_ENEMY_Weeping Widows|r
+    .complete 31706,1 --7/7 Weeping Widow slain
+    .mob Weeping Widow
+step
+    .isOnQuest 31708
+    #completewith TinySpiderEyes
+    .complete 31708,1 --25/25 Serpent's Scale
+step
+    .isOnQuest 31710
+    #label TinySpiderEyes
+    >>Kill |cRXP_ENEMY_Widowspawns|r. Loot them for the |T463856:0|t[|cRXP_LOOT_Tiny Spider Eye|r]
+    .complete 31710,1 --100/100 Tiny Spider Eye
+    .mob Widowspawn
+step
+    .isOnQuest 31706
+    #completewith next
+    >>Kill |cRXP_ENEMY_Weeping Widows|r
+    .complete 31706,1 --7/7 Weeping Widow slain
+    .mob Weeping Widow
+step
+    .isOnQuest 31708
+    #completewith TinySpiderEyes
+    .complete 31708,1 --25/25 Serpent's Scale
+step
+    .isOnQuest 31706
+    #label WeepingWidowSlain
+    >>Kill |cRXP_ENEMY_Weeping Widows|r
+    .complete 31706,1 --7/7 Weeping Widow slain
+    .mob Weeping Widow
+step
+    .isOnQuest 31711,31706,31710
+    .zoneskip 374,1
+    #title Leave Cave
+    .goto 371,57.94,31.72
+    .zone 371 >>Leave the cave
+step
+    .isOnQuest 31710
+    .goto 371,57.54,45.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Azure Hatchling|r
+    .dailyturnin 31710 >>Turn in Tiny Treats
+    .target Azure Hatchling
 step
     .isOnQuest 31708
     .goto 371,57.54,45.33
@@ -55,8 +255,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
     .dailyturnin 31711 >>Turn in The Seed of Doubt
     .target Elder Anli
-
--- DAILIES DAY B
 step
     .isOnQuest 31194
     .goto 371,69.68,31.28
@@ -67,8 +265,8 @@ step
     #completewith SlitherscaleSaurokSlainB
     #hidewindow
     #loop
-    .goto 371,68.27,32.88,25,0
-    .goto 371,66.74,25.68,25,0
+    .goto 371,68.27,32.88,40,0
+    .goto 371,66.74,25.68,40,0
     .goto 371,69.51,25.81,35,0
     +1
 step
@@ -108,9 +306,15 @@ step
     #label SlitherscaleSaurokSlainB
     #optional
 step
+    .isOnQuest 31699
+    #completewith WindwardHuntressSlain
+    >>Kill |cRXP_FRIENDLY_ShadowfaeTrickster|r
+    .complete 31699,1 --7/7 Shadowfae Trickster slain
+    .mob Shadowfae Trickster
+step
     .isOnQuest 31700
     #completewith WindwardHuntressSlain
-    >>Kill |cRXP_ENEMY_Shadowfae Trickster|r. Loot them for the |T1:0|t[|cRXP_LOOT_Stolen Boots|r]
+    >>Click on the |cRXP_PICK_Stolen Boots|r
     .complete 31700,1 --14/14 Stolen Boots
     .mob Shadowfae Trickster
 step
@@ -119,6 +323,12 @@ step
     >>Kill |cRXP_ENEMY_Windward Tigers|r. Loot them for the |T237347:0|t[|cRXP_LOOT_Tiger Flanks|r]
     .complete 30154,1 --5/5 Tiger Flank
     .mob Windward Tiger
+step
+    .isOnQuest 31702
+    .goto 371,63.86,22.36
+    >>Kill |cRXP_ENEMY_Windward Saber|r
+    .complete 31702,1 --1/1 Windward Saber slain
+    .mob Windward Saber
 step
     .isOnQuest 31701
     #completewith next
@@ -147,17 +357,35 @@ step
     .goto 371,63.56,23.84,35,0
     +1
 step
+    .isOnQuest 31699
+    #completewith TigerFlank
+    >>Kill |cRXP_ENEMY_ShadowfaeTrickster|r
+    .complete 31699,1 --7/7 Shadowfae Trickster slain
+    .mob Shadowfae Trickster
+step
+    .isOnQuest 31700
+    #completewith TigerFlank
+    >>Click on the |cRXP_PICK_Stolen Boots|r
+    .complete 31700,1 --14/14 Stolen Boots
+    .mob Shadowfae Trickster
+step
+    .isOnQuest 30154
+    #label TigerFlank
+    >>Kill |cRXP_ENEMY_Windward Tigers|r and |cRXP_ENEMY_Windward Alphas|r. Loot them for the |T237347:0|t[|cRXP_LOOT_Tiger Flanks|r]
+    .complete 30154,1 --5/5 Tiger Flank
+    .mob Windward Tiger
+    .mob Windward Alpha
+step
     .isOnQuest 31700
     #completewith next
     >>Click on the |cRXP_PICK_Stolen Boots|r
     .complete 31700,1 --14/14 Stolen Boots
     .mob Shadowfae Trickster
 step
-    .isOnQuest 30154
-    >>Kill |cRXP_ENEMY_Windward Tigers|r and |cRXP_ENEMY_Windward Alphas|r. Loot them for the |T237347:0|t[|cRXP_LOOT_Tiger Flanks|r]
-    .complete 30154,1 --5/5 Tiger Flank
-    .mob Windward Tiger
-    .mob Windward Alpha
+    .isOnQuest 31699
+    >>Kill |cRXP_FRIENDLY_ShadowfaeTrickster|r
+    .complete 31699,1 --7/7 Shadowfae Trickster slain
+    .mob Shadowfae Trickster
 step
     .isOnQuest 31700
     #label StolenBoots
@@ -189,6 +417,12 @@ step
     .dailyturnin 30158 >>Turn in Disarming the Enemy
     .target Elder Anli
 step
+    .isOnQuest 31702
+    .goto 371,57.63,44.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
+    .dailyturnin 31702 >>Turn in On The Prowl
+    .target Elder Anli
+step
     .isOnQuest 31700
     .goto 371,57.63,44.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
@@ -201,10 +435,34 @@ step
     .dailyturnin 31701 >>Turn in Dark Huntress
     .target Elder Anli
 step
+    .isOnQuest 31699
+    .goto 371,57.63,44.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
+    .dailyturnin 31699 >>Turn in Sprite Fright
+    .target Elder Anli
+step
     .isOnQuest 30154
     .goto 371,57.63,44.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
     .dailyturnin 30154 >>Turn in The Easiest Way To A Serpent's Heart
+    .target Elder Anli
+step
+    .isOnQuest 31719
+    .goto 371,57.63,44.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
+    .dailyturnin 31719 >>Turn in The Trainer's Challenge: Ningna Darkwheel
+    .target Elder Anli
+step
+    .isOnQuest 31721
+    .goto 371,57.63,44.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
+    .dailyturnin 31721 >>Turn in The Trainer's Challenge: Qua-Ro Whitebrow
+    .target Elder Anli
+step
+    .isOnQuest 30152
+    .goto 371,57.63,44.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
+    .dailyturnin 30152 >>Turn in The Sky Race
     .target Elder Anli
 ]])
 
@@ -454,11 +712,190 @@ step
     .goto 422,54.29,35.93,15,0
     .goto 422,55.06,35.85,10,0
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaz'tik the Manipulator|r, |cRXP_FRIENDLY_Rik'kal the Dissector|r, |cRXP_FRIENDLY_Korven the Prime|r or |cRXP_FRIENDLY_Kil'ruk the Wind-Reaver|r
-    .questcount <6,31232,31238,31231,31235,31234,31233 >>|cRXP_WARN_Get all the Shado-Pan Dailies, skip this step if it doesn't complete|r
+    .questcount <6,31232,31238,31231,31235,31234,31233,31109,31487,31494,31502,31503,31496, >>|cRXP_WARN_Get all the Shado-Pan Dailies, skip this step if it doesn't complete|r
     .target Kaz'tik the Manipulator
     .target Rik'kal the Dissector
     .target Korven the Prime
     .target Kil'ruk the Wind-Reaver
+step
+    .isOnQuest 31109
+    #completewith KunchongHatchlingReleased
+    >>Kill |cRXP_ENEMY_Shek'zeer Mantid|r
+    .complete 31109,1 --40/40 Shek'zeer Mantid Slain
+    .mob Shek'zeer Bladesworn
+    .mob Shek'zeer Manipulator
+step
+    .isOnQuest 31487
+    #completewith KunchongHatchlingReleased
+    >>Kill |cRXP_ENEMY_Dread Kunchong|r and |cRXP_ENEMY_Shek'zeer Manipulator|r
+    *|cRXP_WARN_Use the|r |T458772:0|t[Sonic Disruption Tool] |cRXP_WARN_near |cRXP_ENEMY_Dread Kunchong|r to weaken them and make them attack the |cRXP_ENEMY_Shek'zeer Manipulator|r|r
+    .complete 31487,1 --4/4 Dread Kunchong slain
+    .complete 31487,2 --6/6 Shek'zeer Manipulator slain
+    .mob Dread Kunchong
+    .mob Shek'zeer Manipulator
+step
+    .isOnQuest 31494
+    #label KunchongHatchlingReleased
+    #loop
+    .goto 422,47.78,36.52,30,0
+    .goto 422,49.71,33.25,30,0
+    .goto 422,46.05,30.11,30,0
+    .goto 422,44.73,34.43,27,0
+    >>Click on the |cRXP_PICK_Kunchong Cages|r
+    .complete 31494,1 --8/8 Kunchong Hatchling released
+step
+    .isOnQuest 31109
+    #completewith DreadKunchongShekzeerManipulator
+    >>Kill |cRXP_ENEMY_Shek'zeer Mantid|r
+    .complete 31109,1 --40/40 Shek'zeer Mantid Slain
+    .mob Shek'zeer Bladesworn
+    .mob Shek'zeer Manipulator
+    .mob Shek'zeer Needler
+step
+    .isOnQuest 31487
+    #completewith VessGuardNakalSlain
+    >>Kill |cRXP_ENEMY_Dread Kunchong|r and |cRXP_ENEMY_Shek'zeer Manipulator|r
+    *|cRXP_WARN_Use the|r |T458772:0|t[Sonic Disruption Tool] |cRXP_WARN_near |cRXP_ENEMY_Dread Kunchong|r to weaken them and make them attack the |cRXP_ENEMY_Shek'zeer Manipulator|r|r
+    .complete 31487,1 --4/4 Dread Kunchong slain
+    .complete 31487,2 --6/6 Shek'zeer Manipulator slain
+    .mob Dread Kunchong
+    .mob Shek'zeer Manipulator
+step
+    .isOnQuest 31503
+    #label VessGuardNakalSlain
+    .goto 422,39.24,31.37
+    >>Kill |cRXP_ENEMY_Vess-Guard Na'kal|r
+    .complete 31503,1 --1/1 Vess-Guard Na'kal slain
+    .mob Vess-Guard Na'kal
+step
+    .isOnQuest 31502
+    #completewith FeederA
+    >>Kill |cRXP_ENEMY_Shek'zeer Needler|r. Loot them for the |T237143:0|t[|cRXP_LOOT_Needler Wing|r]
+    .complete 31502,1 --24/24 Needler Wing
+    .mob Shek'zeer Needler
+step
+    .isOnQuest 31496
+    #hidewindow
+    #label FeederB
+    .complete 31496,2 --1/1 East Feeder
+    .complete 31496,3 --1/1 North Feeder
+    .complete 31496,1 --1/1 Central Feeder
+    .complete 31496,4 --1/1 Northeast Feeder
+step
+    .isOnQuest 31496
+    #completewith next
+    #label EastFeeder
+    #hidewindow
+    .complete 31496,2 --1/1 East Feeder
+step
+    #title Enter House
+    #completewith EastFeeder
+    .goto 422,38.29,31.95,6 >>Enter the house
+step
+    .isOnQuest 31496
+    #requires EastFeeder
+    >>Click on the |cRXP_PICK_East Feeder|r or use the |T134772:0|t[Sap Jar]
+    .goto 422,37.85,33.06
+    .use 87400
+    .complete 31496,2 --1/1 East Feeder
+step
+    --PRMK: Is there no better way?
+    .isOnQuest 31496
+    #title Leave House
+    .goto 422,38.29,31.95,6 >>Leave the house
+step
+    .isOnQuest 31496
+    #completewith next
+    #label NorthFeeder
+    #hidewindow
+    .complete 31496,3 --1/1 North Feeder
+step
+    #title Enter House
+    #completewith NorthFeeder
+    .goto 422,36.25,32.26,6 >>Enter the house
+step
+    .isOnQuest 31496
+    #requires NorthFeeder
+    >>Click on the |cRXP_PICK_North Feeder|r or use the |T134772:0|t[Sap Jar]
+    .goto 422,37.03,32.83
+    .use 87400
+    .complete 31496,3 --1/1 North Feeder
+step
+    .isOnQuest 31496
+    #title Leave House
+    .goto 422,36.25,32.26,6 >>Leave the house
+step
+    .isOnQuest 31496
+    #completewith next
+    #label CentralFeeder
+    #hidewindow
+    .complete 31496,1 --1/1 Central Feeder
+step
+    #title Enter House
+    #completewith CentralFeeder
+    .goto 422,37.03,28.07,6 >>Enter the house
+step
+    .isOnQuest 31496
+    #requires CentralFeeder
+    >>Click on the |cRXP_PICK_Central Feeder|r or use the |T134772:0|t[Sap Jar]
+    .goto 422,37.40,29.24
+    .use 87400
+    .complete 31496,1 --1/1 Central Feeder
+step
+    .isOnQuest 31496
+    #title Leave House
+    .goto 422,37.03,28.07,6 >>Leave the house
+step
+    .isOnQuest 31496
+    #completewith next
+    #label NortheastFeeder
+    #hidewindow
+    .complete 31496,4 --1/1 Northeast Feeder
+step
+    #title Enter House
+    #completewith NortheastFeeder
+    .goto 422,39.35,29.24,6 >>Enter the house
+step
+    .isOnQuest 31496
+    #requires NortheastFeeder
+    #label FeederA
+    >>Click on the |cRXP_PICK_Northeast Feeder|r or use the |T134772:0|t[Sap Jar]
+    .goto 422,39.04,30.47
+    .use 87400
+    .complete 31496,4 --1/1 Northeast Feeder
+step
+    .isOnQuest 31502
+    #loop
+    .goto 422,40.10,31.25,35,0
+    .goto 422,33.92,30.95,35,0
+    .goto 422,38.50,28.84,35,0
+    >>Kill |cRXP_ENEMY_Shek'zeer Needler|r. Loot them for the |T237143:0|t[|cRXP_LOOT_Needler Wing|r]
+    .complete 31502,1 --24/24 Needler Wing
+    .mob Shek'zeer Needler
+step
+    .isOnQuest 31487
+    #label DreadKunchongShekzeerManipulator
+    #loop
+    .goto 422,43.38,31.81,50,0
+    .goto 422,49.86,25.29,50,0
+    .goto 422,48.41,36.73,50,0
+    >>Kill |cRXP_ENEMY_Dread Kunchong|r and |cRXP_ENEMY_Shek'zeer Manipulator|r
+    *|cRXP_WARN_Use the|r |T458772:0|t[Sonic Disruption Tool] |cRXP_WARN_near |cRXP_ENEMY_Dread Kunchong|r to weaken them and make them attack the |cRXP_ENEMY_Shek'zeer Manipulator|r|r
+    .complete 31487,1 --4/4 Dread Kunchong slain
+    .complete 31487,2 --6/6 Shek'zeer Manipulator slain
+    .mob Dread Kunchong
+    .mob Shek'zeer Manipulator
+step
+    .isOnQuest 31109
+    #loop
+    .goto 422,34.59,30.45,40,0
+    .goto 422,50.40,23.56,50,0
+    .goto 422,48.40,36.80,45,0
+    >>Kill |cRXP_ENEMY_Shek'zeer Mantid|r
+    .complete 31109,1 --40/40 Shek'zeer Mantid Slain
+    .mob Shek'zeer Bladesworn
+    .mob Shek'zeer Manipulator
+    .mob Shek'zeer Needler
 step
     .isOnQuest 31233
     #completewith next
@@ -594,7 +1031,6 @@ step
     .complete 31238,1 --4/4 Mushan Tongue
     .mob Greatback Mushan
     .mob Greatback Calf
-
 step
     .isOnQuest 31231
     .goto 422,55.06,35.87
@@ -631,6 +1067,42 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaz'tik the Manipulator|r
     .dailyturnin 31238 >>Turn in Brain Food
     .target Kaz'tik the Manipulator
+step
+    .isOnQuest 31487
+    .goto 422,54.26,35.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaz'tik the Manipulator|r
+    .dailyturnin 31487 >>Turn in Sonic Disruption
+    .target Kaz'tik the Manipulator
+step
+    .isOnQuest 31494
+    .goto 422,54.26,35.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaz'tik the Manipulator|r
+    .dailyturnin 31494 >>Turn in Free From Her Clutches
+    .target Kaz'tik the Manipulator
+step
+    .isOnQuest 31502
+    .goto 422,54.37,35.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rik'kal the Dissector|r
+    .dailyturnin 31502 >>Turn in Wing Clip
+    .target Rik'kal the Dissector
+step
+    .isOnQuest 31503
+    .goto 422,54.37,35.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rik'kal the Dissector|r
+    .dailyturnin 31503 >>Turn in Shortcut to Ruin
+    .target Rik'kal the Dissector
+step
+    .isOnQuest 31496
+    .goto 422,54.30,36.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korven the Prime|r
+    .dailyturnin 31496 >>Turn in Sampling the Empire's Finest
+    .target Korven the Prime
+step
+    .isOnQuest 31109
+    .goto 422,55.06,35.86
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kil'ruk the Wind-Reaver|r
+    .dailyturnin 31109 >>Turn in Culling the Swarm
+    .target Kil'ruk the Wind-Reaver
 ]])
 
 -- August Celestial Dailies: Jade Forest
@@ -1368,10 +1840,17 @@ step
     .goto 418,12.74,56.74,15,0
     .goto 418,12.91,56.13,15,0
     .goto 418,13.79,55.78,15,0
-    +|cRXP_WARN_Accept all the Domination Point Dailies|r
-    .questcount <3,32235,32126,32123,32214,32199,32222,32136
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blood Guard Gro'tash|r, |cRXP_FRIENDLY_Brolic|r, |cRXP_FRIENDLY_Shokia|r, |cRXP_FRIENDLY_Rivett Clutchpop|r, |cRXP_FRIENDLY_Bounty Board|r, |cRXP_FRIENDLY_Boss-Lady Trixel|r, |cRXP_FRIENDLY_Duke|r
+    .questcount <3,32235,32126,32123,32214,32199,32222,32136,32223,32221,32318 >>|cRXP_WARN_Accept all the Domination Point Dailies|r
     .target Master Snowdrift
     .target Ling of the Six Pools
+    .target Rivett Clutchpop
+    .target Bounty Board
+    .target Boss-Lady Trixel
+    .target Shokia
+    .target Brolic
+    .target Duke
+    .target Blood Guard Gro'tash
 step
     .xp >69,1
     .abandon 32214 >>Abandon Bildgewater Infiltrators
@@ -1427,11 +1906,18 @@ step
     .isOnQuest 32199
     .goto 418,13.79,55.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Boss-Lady Trixel|r
-    .accept 32136 >>Accept Work Order: Fuel
+    .daily 32136,32138 >>Accept Work Order
     .target Boss-Lady Trixel
 step
+    .isOnQuest 32221
+    #completewith next
+    >>Kill |cRXP_ENEMY_Shieldwall forces|r
+    .complete 32221,1 --10/10 Shieldwall forces slain
+    .mob Shieldwall forces
+step
     .isOnQuest 32199
-    .goto 418,18.58,55.87
+    #label PollutedViseclawMeatA
+    .goto 418,18.01,55.41
     >>Kill |cRXP_ENEMY_Polluted Visceclaws|r and |cRXP_ENEMY_Polluted Visceclaw Scuttlers|r. Loot them for the |T645112:0|t[Polluted Visceclaw Meat]
     .complete 32199,1,3 --3/5 Polluted Viseclaw Meat
     .mob Polluted Visceclaw
@@ -1449,6 +1935,12 @@ step
     >>Kill |cRXP_ENEMY_Chief Engineer Cogwrench|r
     .complete 32222,1 --1/1 Chief Engineer Cogwrench slain
     .mob Chief Engineer Cogwrench
+step
+    .isOnQuest 32221
+    #completewith WorkOrderFuel
+    >>Kill |cRXP_ENEMY_Shieldwall forces|r
+    .complete 32221,1 --10/10 Shieldwall forces slain
+    .mob Shieldwall forces
 step
     .isOnQuest 32214
     #completewith WorkOrderFuel
@@ -1472,6 +1964,157 @@ step
     .turnin 32136 >>Turn in Work Order: Fuel
     .target Grizzle Gearslip
 step
+    .isOnQuest 32221
+    #completewith WorkOrderLumber
+    >>Kill |cRXP_ENEMY_Shieldwall forces|r
+    .complete 32221,1 --10/10 Shieldwall forces slain
+    .mob Shieldwall forces
+step
+    .isOnQuest 32214
+    #completewith WorkOrderLumber
+    >>Kill the |cRXP_ENEMY_SI:7 Saboteurs|r
+    *Use the |T644269:0|t["New" and "Improved" Infrared Heat Focals]
+    .complete 32214,1 --10/10 SI:/ Saboteur slain
+    .use 92475
+    .mob SI:7 Saboteur
+step
+    .isOnQuest 32199
+    #completewith WorkOrderLumber
+    >>Kill |cRXP_ENEMY_Polluted Visceclaws|r and |cRXP_ENEMY_Polluted Visceclaw Scuttlers|r. Loot them for the |T645112:0|t[Polluted Visceclaw Meat]
+    .complete 32199,1 --5/5 Polluted Viseclaw Meat
+    .mob Polluted Visceclaw
+    .mob Polluted Visceclaw Scuttler
+step
+    #label WorkOrderLumber
+    .isOnQuest 32138
+    .goto 418,20.48,60.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zino "The Shredder" Quickchop|r
+    .turnin 32138 >>Turn in Work Order: Lumber
+    .target Zino "The Shredder" Quickchop
+step
+    .isQuestTurnedIn 32138
+    .goto 418,20.48,60.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zino "The Shredder" Quickchop|r
+    .daily 32139 >>Accept Stacked!
+    .target Zino "The Shredder" Quickchop
+step
+    .isQuestTurnedIn 32138
+    .goto 418,20.61,58.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bixy Buzzsaw|r
+    .daily 32238 >>Accept Universal Remote-Explode
+    .target Bixy Buzzsaw
+step
+    #completewith ShieldwallMechaPounderExploded
+    #hidewindow
+    #loop
+    .goto 418,18.66,62.38,25,0
+    .goto 418,21.46,63.05,25,0
+    .goto 418,20.57,58.35,35,0
+    +1
+step
+    .isOnQuest 32221
+    #completewith ShieldwallMechaPounderExploded
+    >>Kill |cRXP_ENEMY_Shieldwall forces|r
+    .complete 32221,1 --10/10 Shieldwall forces slain
+    .mob Shieldwall Engineer
+    .mob SI:7 Saboteur
+    .mob 7th Legion Paratrooper
+step
+    .isOnQuest 32214
+    #completewith ShieldwallMechaPounderExploded
+    >>Kill the |cRXP_ENEMY_SI:7 Saboteurs|r
+    *Use the |T644269:0|t["New" and "Improved" Infrared Heat Focals]
+    .complete 32214,1 --10/10 SI:/ Saboteur slain
+    .use 92475
+    .mob SI:7 Saboteur
+step
+    #completewith next
+    >>Click on |cRXP_ENEMY_Shieldwall Mecha Pounder|r to weaken them with the |T133015:0|t[Universal Remote]. Kill the |cRXP_ENEMY_Shieldwall Mecha Pounder|r
+    .complete 32238,1 --9/9 Shieldwall Mecha Pounder exploded
+    .use 91902
+    .mob Shieldwall Mecha Pounder
+step
+    >>Click on |cRXP_PICK_Domination Point Lumber|r
+    .complete 32139,1 --9/9 Domination Point Lumber collected
+step
+    #label ShieldwallMechaPounderExploded
+    >>Click on |cRXP_ENEMY_Shieldwall Mecha Pounder|r to weaken them with the |T133015:0|t[Universal Remote]. Kill the |cRXP_ENEMY_Shieldwall Mecha Pounder|r
+    .complete 32238,1 --9/9 Shieldwall Mecha Pounder exploded
+    .use 91902
+    .mob Shieldwall Mecha Pounder
+step
+    .isOnQuest 32238
+    .goto 418,20.61,58.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bixy Buzzsaw|r
+    .dailyturnin 32238 >>Turn in Universal Remote-Explode
+    .target Bixy Buzzsaw
+step
+    .isOnQuest 32139
+    .goto 418,20.54,60.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zino "The Shredder" Quickchop|r
+    .dailyturnin 32139 >>Turn in Stacked!
+    .target Zino "The Shredder" Quickchop
+step
+    .isOnQuest 32221
+    #completewith LieutenantEthanJacobsonSlain
+    >>Kill |cRXP_ENEMY_Shieldwall forces|r
+    .complete 32221,1 --10/10 Shieldwall forces slain
+    .mob Shieldwall Engineer
+    .mob SI:7 Saboteur
+    .mob 7th Legion Paratrooper
+step
+    .isOnQuest 32214
+    #completewith LieutenantEthanJacobsonSlain
+    >>Kill the |cRXP_ENEMY_SI:7 Saboteurs|r
+    *Use the |T644269:0|t["New" and "Improved" Infrared Heat Focals]
+    .complete 32214,1 --10/10 SI:/ Saboteur slain
+    .use 92475
+    .mob SI:7 Saboteur
+step
+    .isOnQuest 32199
+    #completewith LieutenantEthanJacobsonSlain
+    >>Kill |cRXP_ENEMY_Polluted Visceclaws|r and |cRXP_ENEMY_Polluted Visceclaw Scuttlers|r. Loot them for the |T645112:0|t[Polluted Visceclaw Meat]
+    .complete 32199,1 --5/5 Polluted Viseclaw Meat
+    .mob Polluted Visceclaw
+    .mob Polluted Visceclaw Scuttler
+step
+    .isOnQuest 32223
+    #label LieutenantEthanJacobsonSlain
+    .goto 418,19.05,70.96
+    .complete 32223,1 --1/1 Lieutenant Ethan Jacobson slain
+    .mob Lieutenant Ethan Jacobson
+step
+    #completewith ShieldwallForcesSlain
+    #hidewindow
+    #loop
+    .goto 418,16.10,71.22,35,0
+    .goto 418,21.56,67.09,35,0
+    .goto 418,24.58,56.15,35,0
+    .goto 418,19.44,58.99,35,0
+    +1
+step
+    .isOnQuest 32221
+    #completewith next
+    >>Kill |cRXP_ENEMY_Shieldwall forces|r
+    .complete 32221,1 --10/10 Shieldwall forces slain
+    .mob Shieldwall Engineer
+    .mob SI:7 Saboteur
+    .mob 7th Legion Paratrooper
+step
+    .isOnQuest 32199
+    >>Kill |cRXP_ENEMY_Polluted Visceclaws|r and |cRXP_ENEMY_Polluted Visceclaw Scuttlers|r. Loot them for the |T645112:0|t[Polluted Visceclaw Meat]
+    .complete 32199,1 --5/5 Polluted Viseclaw Meat
+    .mob Polluted Visceclaw
+    .mob Polluted Visceclaw Scuttler
+step
+    .isOnQuest 32221
+    #label ShieldwallForcesSlain
+    >>Kill |cRXP_ENEMY_Shieldwall forces|r
+    .complete 32221,1 --10/10 Shieldwall forces slain
+    .mob Shieldwall Engineer
+    .mob SI:7 Saboteur
+    .mob 7th Legion Paratrooper
+step
     .isOnQuest 32214
     #completewith next
     >>Kill the |cRXP_ENEMY_SI:7 Saboteurs|r
@@ -1491,6 +2134,12 @@ step
     .mob Polluted Visceclaw
     .mob Polluted Visceclaw Scuttler
 step
+    .isOnQuest 32199
+    .goto 418,26.06,58.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sezik Steampot|r
+    .dailyturnin 32199 >>Turn in Krasarang Steampot
+    .target Sezik Steampot
+step
     .isOnQuest 32214
     #loop
     .goto 418,21.88,53.96,22,0
@@ -1503,24 +2152,36 @@ step
     .use 92475
     .mob SI:7 Saboteur
 step
-    .isQuestComplete 32214
+    .isOnQuest 32221
+    .goto 418,12.91,56.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rivett Clutchpop|r
+    .dailyturnin 32221 >>Turn in Storming the Beach
+    .target Rivett Clutchpop
+step
+    .isOnQuest 32214
     .goto 418,12.91,56.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rivett Clutchpop|r
     .dailyturnin 32214 >>Turn in Bilgewater Infiltrators
     .target Rivett Clutchpop
 step
-    .isQuestComplete 32222
+    .isOnQuest 32222
     .goto 418,10.07,53.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blood Guard Gro'tash|r
     .turnin 32222 >>Turn in WANTED: Chief Engineer Cogwrench
     .target Blood Guard Gro'tash
 step
-    .xp >69,1
-    .isQuestTurnedIn 32449
-    .goto 418,10.07,53.87
+    .isOnQuest 32223
+    .goto 418,10.06,53.87
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blood Guard Gro'tash|r
+    .dailyturnin 32223 >>Turn in WANTED: Lieutenant Ethan Jacobson
     .target Blood Guard Gro'tash
-    .accept 32449 >>Accept The Ruins of Ogudei
+--step
+--    .xp >69,1
+--    .isQuestTurnedIn 32449
+--    .goto 418,10.07,53.87
+--    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Blood Guard Gro'tash|r
+--    .target Blood Guard Gro'tash
+--    .accept 32449 >>Accept The Ruins of Ogudei
 step
     .isQuestTurnedIn 32235
     .isQuestTurnedIn 32126
@@ -2263,7 +2924,7 @@ step
     .mob Sra'thik Swarm-Leader
 step
     .isOnQuest 31198
-    .goto 388,23.69,55.50
+    .goto 388,23.57,55.64
     >>Click on the |cRXP_PICK_Sra'thik Idol|r
     .complete 31198,1 --1/1 Southern idol
 step
@@ -2448,6 +3109,12 @@ step
     >>Kill |cRXP_ENEMY_Sra'thik Swarmlord|r
     .complete 31203,1 --1/1 Sra'thik Swarmlord slain
     .mob Sra'thik Swarmlord
+step
+    .isOnQuest 31203
+    .goto 388,49.01,71.33
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ling of the Six Pools|r
+    .dailyturnin 31203 >>Turn in Target of Opportunity: Sra'thik Swarmlord
+    .target Ling of the Six Pools
 step
     .isOnQuest 31204
     #completewith next
@@ -2634,17 +3301,17 @@ step
 step
     .isOnQuest 31041
     #completewith CloudrunnerHatchlingsFreed
-    >>Click on the |cRXP_PICK_Cloudrunner Eggs|r
+    >>Click on the |cRXP_PICK_Shiny Eggs|r
     .complete 31041,1 --8/8 Cloudrunner Egg
 step
     #label CloudrunnerHatchlingsFreed
     .isOnQuest 31046
     #loop
-    .goto 388,30.26,26.06,35,0
     .goto 388,33.48,27.21,35,0
     .goto 388,34.97,20.17,35,0
     .goto 388,31.75,21.86,35,0
-    >>Click on the |cRXP_PICK_Cloudrunner Hatchlings|r
+    .goto 388,30.26,26.06,35,0
+    >>Click on the |cRXP_PICK_Shan'ze Cages|r
     .complete 31046,1 --20/20 Cloudrunner Hatchlings freed
     .target Cloudrunner Hatchling
 step
@@ -2659,21 +3326,43 @@ step
     .goto 388,23.38,17.98,40,0
     +1
 step
-    .isOnQuest 31030
-    #completewith next
+    .isOnQuest 31040
+    #completewith CloudrunnerEggs
     >>Kill |cRXP_ENEMY_Darkwoods Pixies|r or |cRXP_ENEMY_Darkwoods Charmers|r
-    .complete 31030,1 --30/30 Darkwoods Pixies or Darkwoods Charmers slain
+    .complete 31040,1 --30/30 Darkwoods Pixies or Darkwoods Charmers slain
     .mob Darkwoods Pixie
     .mob Darkwoods Charmer
 step
+    .isOnQuest 31039
+    #completewith CloudrunnerEggs
+    >>Kill |cRXP_ENEMY_Shan'ze Serpentbinders|r or |cRXP_ENEMY_Shan'ze Beastmasters|r
+    .complete 31039,1 --12/12 Shan'ze Serpentbinders or Beastmasters slain
+    .mob Shan'ze Serpentbinder
+    .mob Shan'ze BeastMaster
+step
     .isOnQuest 31041
+    #label CloudrunnerEggs
     >>Click on the |cRXP_PICK_Cloudrunner Eggs|r
     .complete 31041,1 --8/8 Cloudrunner Egg
 step
-    .isOnQuest 31030
+    .isOnQuest 31040
+    #completewith next
+    >>Kill |cRXP_ENEMY_Darkwoods Pixies|r or |cRXP_ENEMY_Darkwoods Charmers|r
+    .complete 31040,1 --30/30 Darkwoods Pixies or Darkwoods Charmers slain
+    .mob Darkwoods Pixie
+    .mob Darkwoods Charmer
+step
+    .isOnQuest 31039
+    #completewith CloudrunnerEggs
+    >>Kill |cRXP_ENEMY_Shan'ze Serpentbinders|r or |cRXP_ENEMY_Shan'ze Beastmasters|r
+    .complete 31039,1 --12/12 Shan'ze Serpentbinders or Beastmasters slain
+    .mob Shan'ze Serpentbinder
+    .mob Shan'ze BeastMaster
+step
+    .isOnQuest 31040
     #label DarkwoodPixieCharmer
     >>Kill |cRXP_ENEMY_Darkwoods Pixies|r or |cRXP_ENEMY_Darkwoods Charmers|r
-    .complete 31030,1 --30/30 Darkwoods Pixies or Darkwoods Charmers slain
+    .complete 31040,1 --30/30 Darkwoods Pixies or Darkwoods Charmers slain
     .mob Darkwoods Pixie
     .mob Darkwoods Charmer
 step
@@ -2762,7 +3451,7 @@ step
     .dailyturnin 31105 >>Turn in The Mogu Menace
     .target Ban Bearheart
 step
-    .isNotOnQuest 31062,31039
+    .isNotOnQuest 31062,31049
     .isQuestTurnedIn 31105
     .goto 388,49.02,70.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ban Bearheart|r
@@ -2788,6 +3477,7 @@ step
     .goto 388,20.23,15.70,6 >>Enter the cave
 step
     .isOnQuest 31049
+    #requires DarkwoodsFaerieSlain
     .goto 388,20.23,15.70,0
     .goto 388,19.53,13.87
     >>Kill the |cRXP_ENEMY_Darkwoods Faerie|r

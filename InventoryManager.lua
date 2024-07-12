@@ -14,9 +14,11 @@ local GetContainerItemID = C_Container and C_Container.GetContainerItemID or _G.
 
 local PickupContainerItem = C_Container and C_Container.PickupContainerItem or _G.PickupContainerItem
 
---local UseContainerItem = C_Container and C_Container.UseContainerItem or _G.UseContainerItem
+local UseContainerItem = C_Container and C_Container.UseContainerItem or _G.UseContainerItem
 --local GetContainerItemLink = C_Container and C_Container.GetContainerItemLink or _G.GetContainerItemLink
+--local GetItemCount = C_Item and C_Item.GetItemCount or _G.GetItemCount
 
+inventoryManager.bagHook = _G.ContainerFrame_Update
 
 local GetContainerItemInfo
 
@@ -44,18 +46,22 @@ end
 
 --TODO: Handle UI options:
 function inventoryManager.IsRightClickEnabled()
+    if not inventoryManager.bagHook then return false end
     return addon.settings.profile.rightClickJunk
 end
 
 function inventoryManager.IsBagAutomationEnabled()
+    if not inventoryManager.bagHook then return false end
     return addon.settings.profile.autoDiscardItems
 end
 
 function inventoryManager.IsMerchantAutomationEnabled()
+    if not inventoryManager.bagHook then return false end
     return addon.settings.profile.autoSellJunk
 end
 
 function inventoryManager.IsJunkIconEnabled()
+    if not inventoryManager.bagHook then return false end
     return addon.settings.profile.showJunkIcon
 end
 
@@ -320,6 +326,19 @@ local DeleteCheapestItem = function(self,deleteIfFull)
     inventoryManager.manualDelete = false
 end
 
+inventoryManager.itemsToOpen = {}
+local function OpenItems()
+    if not next(inventoryManager.itemsToOpen) then return end
+    for bag = _G.BACKPACK_CONTAINER, _G.NUM_BAG_FRAMES do
+        for slot = 1, GetContainerNumSlots(bag) do
+            local _, _, locked, _, _, _, _, _, _, id = GetContainerItemInfo(bag, slot)
+            if not locked and inventoryManager.itemsToOpen[id] then
+                UseContainerItem(bag, slot)
+            end
+        end
+    end
+end
+
 addon.DeleteCheapestItem = DeleteCheapestItem
 --A3 =DeleteCheapestItem
 
@@ -338,6 +357,7 @@ local WorldFrameHook = function()
     if inventoryManager.IsBagAutomationEnabled() then
         DeleteItems()
     end
+    OpenItems()
 end
 local f = inventoryManager.DeleteJunkFrame or CreateFrame("Frame","RXPDeleteJunk",WorldFrame)
 f:RegisterEvent("PLAYER_ENTERING_WORLD")
@@ -364,21 +384,22 @@ f:SetScript("OnEvent",function(self)
     self:SetScript("OnKeyDown", WorldFrameHook)
     self:SetScript("OnKeyUp", WorldFrameHook)
 
+    if _G["ContainerFrameItemButton_OnModifiedClick"] then
+        hooksecurefunc("ContainerFrameItemButton_OnModifiedClick", function(self,button)
+            local mod = inventoryManager.GetModKey()
+            if not inventoryManager.IsRightClickEnabled() or not mod or button ~= inventoryManager.GetMouseButton() then
+                return
+            end
+            local parent = self:GetParent()
+            local bag = parent and parent:GetID()
+            local slot = self:GetID()
+            if bag and slot then
+                local id = GetContainerItemID(bag,slot)
+                ToggleJunk(id,bag,slot)
+            end
 
-    hooksecurefunc("ContainerFrameItemButton_OnModifiedClick", function(self,button)
-        local mod = inventoryManager.GetModKey()
-        if not inventoryManager.IsRightClickEnabled() or not mod or button ~= inventoryManager.GetMouseButton() then
-            return
-        end
-        local parent = self:GetParent()
-        local bag = parent and parent:GetID()
-        local slot = self:GetID()
-        if bag and slot then
-            local id = GetContainerItemID(bag,slot)
-            ToggleJunk(id,bag,slot)
-        end
-
-    end)
+        end)
+    end
 
     hooksecurefunc('ToggleAllBags', inventoryManager.InitializeBags)
     hooksecurefunc('ToggleBag', inventoryManager.InitializeBags)
@@ -588,9 +609,11 @@ function inventoryManager.InitializeBags()
     --UpdateAllBags()
 end
 
-hooksecurefunc('ContainerFrame_Update', function(self)
-    UpdateBag(self,nil,"%sItem%d")
-end)
+if _G['ContainerFrame_Update'] then
+    hooksecurefunc('ContainerFrame_Update', function(self)
+        UpdateBag(self,nil,"%sItem%d")
+    end)
+end
 
 --[[
 hooksecurefunc('ContainerFrameItemButton_OnEnter',function(self)

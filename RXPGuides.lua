@@ -127,6 +127,12 @@ else
     maxLevel = 60
 end
 
+function addon.GetSeason()
+
+return C_Seasons and C_Seasons.HasActiveSeason() and (not(C_GameRules and C_GameRules.IsHardcoreActive and C_GameRules.IsHardcoreActive()) and C_Seasons.GetActiveSeason()) or 0
+
+end
+
 local RXPGuides = {}
 addon.RXPGuides = RXPGuides
 _G.RXPGuides = RXPGuides
@@ -149,7 +155,7 @@ addon.player = {
     guid = UnitGUID("player"),
     name = UnitName("player"),
     maxlevel = maxLevel,
-    season = C_Seasons and C_Seasons.HasActiveSeason() and C_Seasons.GetActiveSeason(),
+    season = addon.GetSeason(),
 }
 addon.player.neutral = addon.player.faction == "Neutral"
 

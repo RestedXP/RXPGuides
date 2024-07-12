@@ -1,4 +1,5 @@
-if not C_Seasons or C_Seasons.GetActiveSeason() ~= 2 then return end
+local _,addon = ...
+if addon.GetSeason() ~= 2 then return end
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD/Hunter SoD
@@ -1485,146 +1486,114 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Spell Books
 #name Spell Book Runes
-#displayname Totemic Projection - 27-40 (Scarlet Monastery) << Shaman
-#title Totemic Projection << Shaman
-#displayname Expanded Intellect - 27-40 (Scarlet Monastery) << Mage
+
+#displayname Expanded Intellect (Stormwind) << Alliance Mage
+#displayname Expanded Intellect (Orgrimmar) << Horde Mage
 #title Expanded Intellect << Mage
-#displayname Treatise on Aspect of the Viper - 27-40 (Scarlet Monastery) << Hunter
-#title Treatise on Aspect of the Viper << Hunter
-#displayname Soul Harvesting/Portal of Summoning - 27-40 (Scarlet Monastery) << Warlock
-#title Soul Harvesting/Portal of Summoning << Warlock
-#displayname Redirect - 27-40 (Scarlet Monastery) << Rogue
-#title Redirect << Rogue
-#displayname Shadowfiend/Increased Fortitude - 27-40 (Scarlet Monastery) << Priest
+#displayname Aspect of the Viper/Heart of the Lion (Stormwind) << Alliance Hunter
+#displayname Aspect of the Viper/Heart of the Lion (Orgrimmar) << Horde Hunter
+#title Aspect of the Viper/Heart of the Lion << Hunter
+#displayname Soul Harvesting/Portal of Summoning/Fel Armor (Stormwind) << Alliance Warlock
+#displayname Soul Harvesting/Portal of Summoning/Fel Armor (Orgrimmar) << Horde Warlock
+#title Soul Harvesting/Portal of Summoning/Fel Armor << Warlock
+#displayname Redirect/Occult Poison/Numbing Poison/Sebacious Poison/Atrophic Poison (Stormwind) << Alliance Rogue
+#displayname Redirect/Occult Poison/Numbing Poison/Sebacious Poison/Atrophic Poison (Orgrimmar) << Horde Rogue
+#title Redirect/Occult Poison/Numbing Poison/Sebacious Poison/Atrophic Poison << Rogue
+#displayname Shadowfiend/Increased Fortitude (Stormwind) << Alliance Priest
+#displayname Shadowfiend/Increased Fortitude (Orgrimmar) << Horde Priest
 #title Shadowfiend/Increased Fortitude << Priest
-#displayname Enhanced Blessings - 27-40 (Scarlet Monastery) << Paladin
-#title Enhanced Blessings << Paladin
-#displayname Enhanced Restoration/Revive/Deeper Wilds - 27-40 (Scarlet Monastery) << Druid
+#displayname Enhanced Restoration/Revive/Deeper Wilds (Stormwind) << Alliance Druid
+#displayname Enhanced Restoration/Revive/Deeper Wilds (Orgrimmar) << Horde Druid
 #title Enhanced Restoration/Revive/Deeper Wilds << Druid
-#displayname Commanding Shout - 27-40 (Scarlet Monastery) << Warrior
-#title Commanding Shout << Warrior
+#displayname Commanding Shout/Meathook (Stormwind) << Alliance Warrior
+#displayname Commanding Shout/Meathook (Orgrimmar) << Horde Warrior
+#title Commanding Shout/Meathook << Warrior
+#displayname Testament of the Exorcist/Enhanced Blessings (Stormwind) << Paladin
+#title Testament of the Exorcist/Enhanced Blessings << Paladin
+#displayname Totemic Projection/Shamanistic Rage (Orgrimmar) << Shaman
+#title Totemic Projection/Shamanistic Rage << Shaman
 
 step
-    .train 438040,1 << Rogue
-    .train 436949,1 << Mage
-    .train 436956,1 << Druid
-    .train 417123,1 << Druid
-    .train 437138,1 << Druid
-    .train 415423,1 << Hunter
-    .train 435984,1 << Paladin
-    .train 401977,1 << Priest
-    .train 436951,1 << Priest
-    .train 437032,1 << Warlock
-    .train 437169,1 << Warlock
-    .train 403215,1 << Warrior
-    .train 437009,1 << Shaman
-    #completewith Interrogator Vishas
-    +The Skill Books can be acquired by mobs within Scarlet Monastery: Graveyard/Library. The following enemies have an increased chance to drop them: the first and last dungeon bosses, or the rare enemy, |cRXP_ENEMY_Ironspine|r. |cRXP_WARN_It is highly recommended to form a group of 5 players.|r
+    #completewith BuyBook
+    >>|cRXP_WARN_Skill Books can now bought with gold from Stormwind instead of having to run Scarlet Monastery for them.|r << Alliance
+    >>|cRXP_WARN_Skill Books can now bought with gold from Orgrimmar instead of having to run Scarlet Monastery for them.|r << Horde
+    .zone Stormwind City >> Travel to Stormwind << Alliance
+    .zone Orgrimmar >> Travel to Orgrimmar << Horde
+step << Alliance
+    #optional
+    #completewith next
+    .goto Stormwind City,70.347,27.208,15,0
+    .goto Stormwind City,72.005,21.542,20 >> Travel to the Stormwind Keep
 step
-    .train 438040,1 << Rogue
-    .train 436949,1 << Mage
-    .train 436956,1 << Druid
-    .train 417123,1 << Druid
-    .train 437138,1 << Druid
-    .train 415423,1 << Hunter
-    .train 435984,1 << Paladin
-    .train 401977,1 << Priest
-    .train 436951,1 << Priest
-    .train 437032,1 << Warlock
-    .train 437169,1 << Warlock
-    .train 403215,1 << Warrior
-    .train 437009,1 << Shaman
-    .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
-step
-    .train 438040,1 << Rogue
-    .train 436949,1 << Mage
-    .train 436956,1 << Druid
-    .train 417123,1 << Druid
-    .train 437138,1 << Druid
-    .train 415423,1 << Hunter
-    .train 435984,1 << Paladin
-    .train 401977,1 << Priest
-    .train 436951,1 << Priest
-    .train 437032,1 << Warlock
-    .train 437169,1 << Warlock
-    .train 403215,1 << Warrior
-    .train 437009,1 << Shaman
-    .goto 1415,47.44,19.75,10,0
-    .goto 1415,47.45,19.69,5,0
-    .goto 1415,47.62,19.59,10,0
-    .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
-step
-    .train 438040,1 << Rogue
-    .train 436949,1 << Mage
-    .train 436956,1 << Druid
-    .train 417123,1 << Druid
-    .train 437138,1 << Druid
-    .train 415423,1 << Hunter
-    .train 435984,1 << Paladin
-    .train 401977,1 << Priest
-    .train 436951,1 << Priest
-    .train 437032,1 << Warlock
-    .train 437169,1 << Warlock
-    .train 403215,1 << Warrior
-    .train 437009,1 << Shaman
-    #label Interrogator Vishas
-    >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Manual of Redirect|r |cRXP_WARN_This might require multiple runs.|r << Rogue
-    >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Leaflet of Enhanced Restoration|r, |T134914:0|t|cRXP_LOOT_[Leaflet of Revive]|r and |T134914:0|t|cRXP_LOOT_[Leaflet of Deeper Wilds]|r |cRXP_WARN_This might require multiple runs.|r << Druid
-    >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Treatise on Aspect of the Viper|r |cRXP_WARN_This might require multiple runs.|r << Hunter
-    >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Tome of Expanded Intellect|r |cRXP_WARN_This might require multiple runs.|r << Mage
-    >>Kill Bosses,Rares and monsters.Loot them for |T133745:0|t|cRXP_LOOT_[Testament of Enhanced Blessings]|r |cRXP_WARN_This might require multiple runs.|r << Paladin
-    >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Scroll of Shadowfiend|r, |T237543:0|t[Increased Fortitude] |cRXP_WARN_This might require multiple runs.|r << Priest
-    >>|cRXP_WARN_Additionally, click on the |cRXP_PICK_Tombstone|r near the Headless Horseman's spawn location to collect the |cRXP_LOOT_|T136222:0|t[Graveyard Echo]|r |cFFFF0000This is necessary for the Pain Suppression Rune. If you already have this rune, you can skip it|r. << Priest
-    >>Kill Bosses,Rares and monsters.Loot them for |T133733:0|t|cRXP_LOOT_[Grimoire of Soul Harvesting]|r,|T133733:0|t|cRXP_LOOT_[Grimoire of Portal of Summoning]|r |cRXP_WARN_This might require multiple runs.|r << Warlock
-    >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Rune of the Commander|r |cRXP_WARN_This might require multiple runs.|r << Warrior
-    >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Rune of the Commander|r |cRXP_WARN_This might require multiple runs.|r << Shaman
-    .link https://imgur.com/a/lqRc0i6 >> |cRXP_WARN_Click here for a picture reference for the |T136222:0|t[Graveyard Echo]|r. << Priest
-    .collect 216738,1 << Rogue -- Manual of Redirect
-    .collect 216740,1 << Mage -- Tome of Expanded Intellect
-    .collect 216744,1 << Priest -- Scroll of Increased Fortitude
-    .collect 216745,1 << Priest -- Scroll of Shadowfiend
-    .collect 215426,1 << Priest -- Graveyard Echo
-    .collect 216746,1 << Warrior -- Handbook of Commanding Shout
-    .collect 216747,1 << Warlock -- Grimoire of Soul Harvesting
-    .collect 216748,1 << Warlock -- Grimoire of Portal of Summoning
-    .collect 216764,1 << Druid -- Leaflet of Deeper Wilds
-    .collect 216767,1 << Druid -- Leaflet of Revive
-    .collect 216768,1 << Paladin -- Testament of Enhanced Blessings
-    .collect 216769,1 << Shaman -- Revelation of Totemic Projection
-    .collect 216770,1 << Hunter -- Treatise on Aspect of the Viper
-    .collect 216771,1 << Druid -- Leaflet of Enhanced Restoration
-    .mob Interrogator Vishas
-    .mob Bloodmage Thalnos
-    .mob Ironspine
-    .mob Houndmaster Loksey
-    .mob Arcanist Doan
-step
-    .train 438040 >>|cRXP_WARN_Use the|r |T133735:0|t|cRXP_LOOT_[Manual of Redirect]|r |cRXP_WARN_to learn|r |T135425:0|t[Redirect] << Rogue
-    .train 436949 >>|cRXP_WARN_Use the|r |T133736:0|t|cRXP_LOOT_[Tome of Expanded Intellect]|r |cRXP_WARN_to learn|r |T236513:0|t[Expanded Intellect] << Mage
-    .train 436956 >>|cRXP_WARN_Use the|r |T134914:0|t|cRXP_LOOT_[Leaflet of Deeper Wilds]|r |cRXP_WARN_to learn|r |T132124:0|t[Deeper Wilds] << Druid
-    .train 417123 >>|cRXP_WARN_Use the|r |T134914:0|t|cRXP_LOOT_[Leaflet of Enhanced Restoration]|r |cRXP_WARN_to learn|r |T136073:0|t[Enhanced Restoration] << Druid
-    .train 437138 >>|cRXP_WARN_Use the|r |T134914:0|t|cRXP_LOOT_[Leaflet of Revive]|r |cRXP_WARN_to learn|r |T132132:0|t[437138] << Druid
-    .train 415423 >>|cRXP_WARN_Use the|r |T133739:0|t|cRXP_LOOT_[Treatise on Aspect of the Viper]|r |cRXP_WARN_to learn|r |T132160:0|t[Aspect of the Viper] << Hunter
-    .train 435984 >>|cRXP_WARN_Use the|r |T133745:0|t|cRXP_LOOT_[Testament of Enhanced Blessings]|r |cRXP_WARN_to learn|r |T236248:0|t[Enhanced Blessings] << Paladin
-    .train 401977 >>|cRXP_WARN_Use the|r |T237162:0|t|cRXP_LOOT_[Scroll of Shadowfiend]|r |cRXP_WARN_to learn|r |T136199:0|t[Shadowfiend] << Priest
-    .train 436951 >>|cRXP_WARN_Use the|r |T237162:0|t|cRXP_LOOT_[Scroll of Increased Fortitude]|r |cRXP_WARN_to learn|r |T237543:0|t[Increased Fortitude] << Priest
-    .train 437032 >>|cRXP_WARN_Use the|r |T133733:0|t|cRXP_LOOT_[Grimoire of Soul Harvesting]|r |cRXP_WARN_to learn|r |T132851:0|t[Soul Harvesting] << Warlock
-    .train 437169 >>|cRXP_WARN_Use the|r |T133733:0|t|cRXP_LOOT_[Grimoire of Portal of Summoning]|r |cRXP_WARN_to learn|r |T134423:0|t[Portal of Summoning] << Warlock
-    .train 403215 >>|cRXP_WARN_Use the|r |T133741:0|t|cRXP_LOOT_[Handbook of Commanding Shout]|r |cRXP_WARN_to learn|r |T132351:0|t[Commanding Shout] << Warrior
-    .train 437009 >>|cRXP_WARN_Use the|r |T133747:0|t|cRXP_LOOT_[Revelation of Totemic Projection]|r |cRXP_WARN_to learn|r |T310733:0|t[Totemic Projection] << Shaman
+    #label BuyBook
+    .goto Stormwind City,74.182,7.465 << Alliance
+    .goto Orgrimmar,38.923,38.398 << Horde
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milton Sheaf|r << Alliance
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zor Lonetree|r << Horde
+    >>|cRXP_WARN_Note: |T133736:0|t|cRXP_LOOT_[Tome of Expanded Intellect]|r requires level 25 to use|r << Mage
+    >>|cRXP_WARN_Note: |T133733:0|t|cRXP_LOOT_[Grimoire of Soul Harvesting]|r and |T133733:0|t|cRXP_LOOT_[Grimoire of Portal of Summoning]|r require level 25 to use|r << Warlock
+    >>|cRXP_WARN_Note: |T133733:0|t|cRXP_LOOT_[Grimoire of Fel Armor]|r requires level 50 to use|r << Warlock
+    >>|cRXP_WARN_Note: |T133745:0|t|cRXP_LOOT_[Testament of the Exorcist]|r and |T133745:0|t|cRXP_LOOT_[Testament of Martyrdom]|r requires level 10 to use|r << Paladin
+    >>|cRXP_WARN_Note: |T133745:0|t|cRXP_LOOT_[Testament of Enhanced Blessings]|r requires level 25 to use|r << Paladin
+    >>|cRXP_WARN_Note: |T133739:0|t|cRXP_LOOT_[Treatise on the Heart of the Lion]|r requires level 10 to use|r << Hunter
+    >>|cRXP_WARN_Note: |T133739:0|t|cRXP_LOOT_[Treatise on Aspect of the Viper]|r requires level 25 to use|r << Hunter
+    >>|cRXP_WARN_Note: |T133735:0|t|cRXP_LOOT_[Manual of Redirect]|r requires level 25 to use|r << Rogue
+    >>|cRXP_WARN_Note: |T133735:0|t|cRXP_LOOT_[Manual of Occult Poison]|r requires level 54 to use|r << Rogue
+    >>|cRXP_WARN_Note: |T133735:0|t|cRXP_LOOT_[Manual of Numbing Poison]|r, |cRXP_LOOT_[Manual of Sebacious Poison]|r and |cRXP_LOOT_[Manual of Atrophic Poison]|r requires level 60 to use|r << Rogue
+    >>|cRXP_WARN_Note: |T237162:0|t|cRXP_LOOT_[Scroll of Shadowfiend]|r and |T237162:0|t|cRXP_LOOT_[Scroll of Increased Fortitude]|r require level 25 to use|r << Priest
+    >>|cRXP_WARN_Note: |T134914:0|t|cRXP_LOOT_[Leaflet of Deeper Wilds]|r|cRXP_WARN_,|r |T134914:0|t|cRXP_LOOT_[Leaflet of Enhanced Restoration]|r |cRXP_WARN_and |T134914:0|t|cRXP_LOOT_[Leaflet of Revive]|r require level 25 to use|r << Druid   
+    >>|cRXP_WARN_Note: |T133741:0|t|cRXP_LOOT_[Handbook of Commanding Shout]|r requires level 25 to use|r << Warrior
+    >>|cRXP_WARN_Note: |T133741:0|t|cRXP_LOOT_[Handbook of Meathook]|r requires level 40 to use|r << Warrior
+    >>|cRXP_WARN_Note: |T133747:0|t|cRXP_LOOT_[Revelation of Shamanistic Rage]|r requires level 10 to use|r << Shaman
+    >>|cRXP_WARN_Note: |T133747:0|t|cRXP_LOOT_[Revelation of Totemic Projection]|r requires level 25 to use|r << Shaman
+    .train 438040 >>|cRXP_WARN_Buy and use the|r |T133735:0|t|cRXP_LOOT_[Manual of Redirect]|r |cRXP_WARN_to learn|r |T135425:0|t[Redirect] << Rogue
+    .train 458822 >>|cRXP_WARN_Buy and use the|r |T133735:0|t|cRXP_LOOT_[Manual of Occult Poison]|r |cRXP_WARN_to learn|r |T135935:0|t[Occult Poison I] << Rogue
+    .train 438040 >>|cRXP_WARN_Buy and use the|r |T133735:0|t|cRXP_LOOT_[Manual of Numbing Poison]|r |cRXP_WARN_to learn|r |T132098:0|t[Numbing Poison] << Rogue
+    .train 439500 >>|cRXP_WARN_Buy and use the|r |T133735:0|t|cRXP_LOOT_[Manual of Sebacious Poison]|r |cRXP_WARN_to learn|r |T132108:0|t[Sebacious Poison] << Rogue
+    .train 438040 >>|cRXP_WARN_Buy and use the|r |T133735:0|t|cRXP_LOOT_[Manual of Atrophic Poison]|r |cRXP_WARN_to learn|r |T132100:0|t[Atrophic Poison] << Rogue
+    .train 436949 >>|cRXP_WARN_Buy and use the|r |T133736:0|t|cRXP_LOOT_[Tome of Expanded Intellect]|r |cRXP_WARN_to learn|r |T236513:0|t[Expanded Intellect] << Mage
+    .train 436956 >>|cRXP_WARN_Buy and use the|r |T134914:0|t|cRXP_LOOT_[Leaflet of Deeper Wilds]|r |cRXP_WARN_to learn|r |T132124:0|t[Deeper Wilds] << Druid
+    .train 417123 >>|cRXP_WARN_Buy and use the|r |T134914:0|t|cRXP_LOOT_[Leaflet of Enhanced Restoration]|r |cRXP_WARN_to learn|r |T136073:0|t[Enhanced Restoration] << Druid
+    .train 437138 >>|cRXP_WARN_Buy and use the|r |T134914:0|t|cRXP_LOOT_[Leaflet of Revive]|r |cRXP_WARN_to learn|r |T132132:0|t[Revive] << Druid
+    .train 409580 >>|cRXP_WARN_Buy and use the|r |T133739:0|t|cRXP_LOOT_[Treatise on the Heart of the Lion]|r |cRXP_WARN_to learn|r |T132185:0|t[Heart of the Lion] << Hunter
+    .train 415423 >>|cRXP_WARN_Buy and use the|r |T133739:0|t|cRXP_LOOT_[Treatise on Aspect of the Viper]|r |cRXP_WARN_to learn|r |T132160:0|t[Aspect of the Viper] << Hunter
+    .train 415076 >>|cRXP_WARN_Buy and use the|r |T133745:0|t|cRXP_LOOT_[Testament of the Exorcist]|r |cRXP_WARN_to learn|r |T135956:0|t[Exorcist] << Paladin
+    .train 407798 >>|cRXP_WARN_Buy and use the|r |T133745:0|t|cRXP_LOOT_[Testament of Martyrdom]|r |cRXP_WARN_to learn|r |T135961:0|t[Seal of Martyrdom] << Paladin
+    .train 435984 >>|cRXP_WARN_Buy and use the|r |T133745:0|t|cRXP_LOOT_[Testament of Enhanced Blessings]|r |cRXP_WARN_to learn|r |T236248:0|t[Enhanced Blessings] << Paladin
+    .train 401977 >>|cRXP_WARN_Buy and use the|r |T237162:0|t|cRXP_LOOT_[Scroll of Shadowfiend]|r |cRXP_WARN_to learn|r |T136199:0|t[Shadowfiend] << Priest
+    .train 436951 >>|cRXP_WARN_Buy and use the|r |T237162:0|t|cRXP_LOOT_[Scroll of Increased Fortitude]|r |cRXP_WARN_to learn|r |T237543:0|t[Increased Fortitude] << Priest
+    .train 437032 >>|cRXP_WARN_Buy and use the|r |T133733:0|t|cRXP_LOOT_[Grimoire of Soul Harvesting]|r |cRXP_WARN_to learn|r |T132851:0|t[Soul Harvesting] << Warlock
+    .train 437169 >>|cRXP_WARN_Buy and use the|r |T133733:0|t|cRXP_LOOT_[Grimoire of Portal of Summoning]|r |cRXP_WARN_to learn|r |T134423:0|t[Portal of Summoning] << Warlock
+    .train 403619 >>|cRXP_WARN_Buy and use the|r |T133733:0|t|cRXP_LOOT_[Grimoire of Fel Armor]|r |cRXP_WARN_to learn|r |T136156:0|t[Fel Armor] << Warlock
+    .train 403215 >>|cRXP_WARN_Buy and use the|r |T133741:0|t|cRXP_LOOT_[Handbook of Commanding Shout]|r |cRXP_WARN_to learn|r |T132351:0|t[Commanding Shout] << Warrior
+    .train 403228 >>|cRXP_WARN_Buy and use the|r |T133741:0|t|cRXP_LOOT_[Handbook of Meathook]|r |cRXP_WARN_to learn|r |T132507:0|t[Meathook] << Warrior
+    .train 425336 >>|cRXP_WARN_Buy and use the|r |T133747:0|t|cRXP_LOOT_[Revelation of Shamanistic Rage]|r |cRXP_WARN_to learn|r |T136088:0|t[Shamanistic Rage] << Shaman
+    .train 437009 >>|cRXP_WARN_Buy and use the|r |T133747:0|t|cRXP_LOOT_[Revelation of Totemic Projection]|r |cRXP_WARN_to learn|r |T310733:0|t[Totemic Projection] << Shaman
     .use 216738 << Rogue -- Manual of Redirect
+    .use 226396 << Rogue -- Manual of Occult Poison
+    .use 226394 << Rogue -- Manual of Atrophic Poison
+    .use 226397 << Rogue -- Manual of Sebacious Poison
+    .use 226395 << Rogue -- Manual of Numbing Poison
     .use 216740 << Mage -- Tome of Expanded Intellect
     .use 216744 << Priest -- Scroll of Increased Fortitude
     .use 216745 << Priest -- Scroll of Shadowfiend
     .use 216746 << Warrior -- Handbook of Commanding Shout
+    .use 226403 << Warrior -- Handbook of Meathook
     .use 216747 << Warlock -- Grimoire of Soul Harvesting
     .use 216748 << Warlock -- Grimoire of Portal of Summoning
+    .use 403619 << Warlock -- Grimoire of Fel Armor
     .use 216764 << Druid -- Leaflet of Deeper Wilds
     .use 216767 << Druid -- Leaflet of Revive
     .use 216768 << Paladin -- Testament of Enhanced Blessings
+    .use 226400 << Paladin -- Testament of the Exorcist
+    .use 226398 << Paladin -- Testament of Martyrdom
     .use 216769 << Shaman -- Revelation of Totemic Projection
+    .use 226402 << Shaman -- Revelation of Shamanistic Rage
     .use 216770 << Hunter -- Treatise on Aspect of the Viper
+    .use 226401 << Hunter -- Treatise on the Heart of the Lion
     .use 216771 << Druid -- Leaflet of Enhanced Restoration
+    .target Milton Sheaf << Alliance
+    .target Zor Lonetree << Horde
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1990,7 +1959,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Helmet <<Warlock
 #subgroup Bracers <<Paladin/Priest/Mage
-#name Ley Crystal Runes 
+#name Ley Crystal Runes
 #displayname Displacement - 45 (Azeroth) <<Mage
 #displayname Purifying Power - 45 (Azeroth) <<Paladin
 #displayname Despair - 45 (Azeroth) <<Priest

@@ -5131,6 +5131,49 @@ function addon.functions.logout(self, text, duration)
     end
 end
 
+function addon.functions.countdown(self, text, duration)
+    if type(self) == "string" then
+        return {duration = tonumber(duration) or 0, text = text, textOnly = not text}
+    end
+
+    local element = self.element or self
+    local step = element.step
+    local event = text
+    if not step.active or step.completed or addon.isHidden or
+                     (not element.textOnly and element.completed) then
+        element.isActive = false
+        element.completed = false
+        element.skip = false
+        element.startTime = false
+        return
+    elseif not element.isActive then
+        element.isActive = true
+    end
+
+    if element.isActive and not element.startTime then
+        local t = GetTime()
+        element.startTime = t
+        addon.ScheduleTask(t + element.duration, element)
+        if element.timer then
+            addon.StartTimer(element.timer,element.timerText)
+        end
+        element.frame = self
+    end
+
+    if element.startTime and element.startTime > 0 and
+            (GetTime() - element.startTime >= element.duration) then
+
+        element.startTime = -1
+        addon.SetElementComplete(element.frame)
+        element.frame = nil
+        if element.textOnly then
+            addon.updateSteps = true
+            step.completed = true
+            element.isActive = false
+        end
+    end
+end
+
 if addon.gameVersion >= 110000 then
     events.scenario = {"SCENARIO_UPDATE", "SCENARIO_CRITERIA_UPDATE", "CRITERIA_COMPLETE"}
     addon.icons.scenario = addon.icons.complete
@@ -5272,28 +5315,27 @@ else
 
         element.text = element.rawtext .. element.criteria
     end
-
-    function addon.functions.timer(self,text,duration,timerText,callback,...)
-        if type(self) == "string" then
-            local eventList = callback and {...}
-            return {textOnly = true, timer = tonumber(duration), events = eventList,
-                    callback = callback, timerText = timerText, parent = true, text = text}
-        end
-        local element = self.element
-        local parent = element.parent
-        if parent and not element.callback then
-            parent.timer = element.timer
-            parent.timerText = element.timerText
-            return
-        end
-
-        local f = addon.functions[element.callback]
-        if type(f) == "function" and f(self,text,duration,timerText,callback,...) then
-            addon.StartTimer(element.timer,element.timerText)
-        end
-    end
 end
 
+function addon.functions.timer(self,text,duration,timerText,callback,...)
+    if type(self) == "string" then
+        local eventList = callback and {...}
+        return {textOnly = true, timer = tonumber(duration), events = eventList,
+                callback = callback, timerText = timerText, parent = true, text = text}
+    end
+    local element = self.element
+    local parent = element.parent
+    if parent and not element.callback then
+        parent.timer = element.timer
+        parent.timerText = element.timerText
+        return
+    end
+
+    local f = addon.functions[element.callback]
+    if type(f) == "function" and f(self,text,duration,timerText,callback,...) then
+        addon.StartTimer(element.timer,element.timerText)
+    end
+end
 --Waypoint functions:
 
 --Waypoints will turn into low prio WPs whenever it returns true
@@ -6307,5 +6349,15 @@ function addon.functions.engrave(self, ...)
         elseif not element.textOnly then
             addon.SetElementIncomplete(self)
         end
+    end
+end
+
+function addon.functions.openitem(self,text,id)
+    if type(self) == "string" then
+        return {id = tonumber(id), text = text, textOnly = true}
+    end
+    local element = self.element
+    if element.step.active then
+        addon.inventoryManager.itemsToOpen[element.id] = true
     end
 end
