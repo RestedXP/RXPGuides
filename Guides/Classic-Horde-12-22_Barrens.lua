@@ -83,7 +83,6 @@ step << !Shaman !Warrior/Undead
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga|r
     .accept 870 >>Accept The Forgotten Pools
     .target Tonga Runetotem
-    .subzoneskip 380
 step << Orc !Warrior !Shaman/Troll !Warrior !Shaman
     #hardcore
     .goto The Barrens,52.62,29.84

@@ -1513,7 +1513,7 @@ step
     .xp 5+1255 >> Grind to 1255+/2800xp << !Shaman
     .xp 5+265 >> Grind to 265+/2800xp << Shaman
     .isOnQuest 4402
-step
+step << skip
 	#completewith next
     .goto Durotar,44.70,52.47
     .goto Durotar,53.55,44.68,30 >>|cRXP_WARN_Perform a Logout Skip by positioning your character on the edge of the rock until it looks like they're floating, then logging out and back in|r
@@ -1526,6 +1526,7 @@ step
     .target Spirit Healer
     .subzoneskip 362
 step
+    #softcore
     #label Betrayers
     .goto Durotar,51.95,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gar'thok|r
@@ -1533,6 +1534,7 @@ step
     .accept 784 >>Accept Vanquish the Betrayers
     .target Gar'thok
 step << Hunter
+    #softcore
     #season 2
     .goto Durotar,51.85,43.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r inside the bunker
@@ -1541,6 +1543,7 @@ step << Hunter
     .train 410113,1
     .target Thotar
 step
+    #softcore
     #completewith next
     .goto Durotar,50.22,43.06,12,0
     .goto Durotar,50.09,42.97,8,0
@@ -1548,6 +1551,7 @@ step
     .goto Durotar,49.96,40.96,12,0
     .goto Durotar,49.67,40.42,10 >>Travel toward the tower
 step
+    #softcore
     #completewith next
     .goto Durotar,49.75,40.38,6,0
     .goto Durotar,49.77,40.24,6,0
@@ -1557,28 +1561,33 @@ step
     .goto Durotar,49.79,39.96,6,0
     .goto Durotar,49.60,40.04,8 >>Travel up the tower toward Furl
 step
+    #softcore
     .goto Durotar,49.89,40.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furl|r
     .accept 791 >>Accept Carry Your Weight
     .target Furl Scornbrow
 step << Warrior/Rogue
+    #softcore
     .goto Durotar,51.81,40.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krunn|r
     .train 2575 >> Train |T136248:0|t[Mining]. This will allow you to find |T135232:0|t|cRXP_LOOT_[Rough Stones]|r from nodes in order to craft |T135248:0|t[Sharpening Stones] (+2 Weapon Damage for 30 minutes)
     .target Krunn
 step << Warrior/Rogue
+    #softcore
     .goto Durotar,51.90,41.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wuark|r
     >>|cRXP_BUY_Buy a|r |T134708:0|t[Mining Pick] |cRXP_BUY_from|r |cRXP_FRIENDLY_him|r
     .collect 2901,1,9144,1 --Mining Pick (1)
     .target Wuark
 step << Warrior/Rogue
+    #softcore
     .goto Durotar,52.05,40.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dwukk|r
     .train 2018 >> Train |T136241:0|t[Blacksmithing]
     .target Dwukk
     .skill blacksmithing,1,1
 step << Hunter
+    #softcore
     #season 2
     .goto Durotar,40.61,52.19
     >>|cRXP_WARN_Cast|r |T132212:0|t[Hunter's Mark] |cRXP_WARN_on the|r |cRXP_ENEMY_Rustling Bush|r
@@ -1588,6 +1597,7 @@ step << Hunter
     .mob Razormane Poacher
     .train 410113,1
 step << Hunter
+    #softcore
     #season 2
     .train 410113 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r] to train |T132177:0|t[Master Marksman]
     .use 206155
@@ -2305,6 +2315,83 @@ step << Rogue
     .train 400094 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r] |cRXP_WARN_to train|r |T132304:0|t[Mutilate]
     .use 203990
     .itemcount 203990,1
+step
+    #hardcore
+    #label Betrayers
+    .goto Durotar,51.95,43.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gar'thok|r
+    >>|cRXP_WARN_You can talk to him from outside or on top of the bunker|r
+    .accept 784 >>Accept Vanquish the Betrayers
+    .target Gar'thok
+step << Hunter
+    #hardcore
+    #season 2
+    .goto Durotar,51.85,43.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r inside the bunker
+    >>|cRXP_WARN_You will need|r |T132212:0|t[Hunter's Mark] |cRXP_WARN_to be able to obtain|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
+    .train 1130 >> Train |T132212:0|t[Hunter's Mark]
+    .train 410113,1
+    .target Thotar
+step
+    #hardcore
+    #completewith next
+    .goto Durotar,50.22,43.06,12,0
+    .goto Durotar,50.09,42.97,8,0
+    .goto Durotar,50.20,42.30,12,0
+    .goto Durotar,49.96,40.96,12,0
+    .goto Durotar,49.67,40.42,10 >>Travel toward the tower
+step
+    #hardcore
+    #completewith next
+    .goto Durotar,49.75,40.38,6,0
+    .goto Durotar,49.77,40.24,6,0
+    .goto Durotar,49.69,40.21,6,0
+    .goto Durotar,49.68,40.30,6,0
+    .goto Durotar,49.78,40.34,6,0
+    .goto Durotar,49.79,39.96,6,0
+    .goto Durotar,49.60,40.04,8 >>Travel up the tower toward Furl
+step
+    #hardcore
+    .goto Durotar,49.89,40.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furl|r
+    .accept 791 >>Accept Carry Your Weight
+    .target Furl Scornbrow
+step << Warrior/Rogue
+    #hardcore
+    .goto Durotar,51.81,40.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krunn|r
+    .train 2575 >> Train |T136248:0|t[Mining]. This will allow you to find |T135232:0|t|cRXP_LOOT_[Rough Stones]|r from nodes in order to craft |T135248:0|t[Sharpening Stones] (+2 Weapon Damage for 30 minutes)
+    .target Krunn
+step << Warrior/Rogue
+    #hardcore
+    .goto Durotar,51.90,41.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wuark|r
+    >>|cRXP_BUY_Buy a|r |T134708:0|t[Mining Pick] |cRXP_BUY_from|r |cRXP_FRIENDLY_him|r
+    .collect 2901,1,9144,1 --Mining Pick (1)
+    .target Wuark
+step << Warrior/Rogue
+    #hardcore
+    .goto Durotar,52.05,40.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dwukk|r
+    .train 2018 >> Train |T136241:0|t[Blacksmithing]
+    .target Dwukk
+    .skill blacksmithing,1,1
+step << Hunter
+    #hardcore
+    #season 2
+    .goto Durotar,40.61,52.19
+    >>|cRXP_WARN_Cast|r |T132212:0|t[Hunter's Mark] |cRXP_WARN_on the|r |cRXP_ENEMY_Rustling Bush|r
+    >>Kill the |cRXP_ENEMY_Razormane Poacher|r that spawns. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
+    .collect 206155,1 --Rune of Marksmanship (1)
+    .mob Rustling Bush
+    .mob Razormane Poacher
+    .train 410113,1
+step << Hunter
+    #hardcore
+    #season 2
+    .train 410113 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r] to train |T132177:0|t[Master Marksman]
+    .use 206155
+    .itemcount 206155,1
 step
     #label TravelToTiragarde
     .goto Durotar,54.42,62.64,60,0
@@ -5230,12 +5317,15 @@ step << Orc Rogue/Troll Rogue
 	.collect 3164,6,429,1 >>|cRXP_BUY_Buy Six|r |T134339:0|t[Discolored Worg Hearts] |cRXP_BUY_from the Auction House|r
 	.target Auctioneer Rhyker
     .zoneskip Undercity,1
-step << Orc Rogue/Troll Rogue
+step << skip --Orc Rogue/Troll Rogue
     .goto Undercity,84.86,20.34
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Perform a Logout Skip in the Magic Quarter by positioning your character on the highest part of the lowest staircase until it looks like they're floating, then logging out and back in|r
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_CLICK HERE for an example|r
     >>|cRXP_WARN_If you can't do this, just run out of Undercity normally|r
     .zoneskip Undercity,1
+step
+    #completewith next
+    .zone Tirisfal Glades >>Exit Undercity
 step
     #completewith DeliverytoSPF
     .goto Tirisfal Glades,61.52,53.20,80 >> Travel to Brill
@@ -5877,7 +5967,7 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin|r
     .turnin 1471 >>Turn in The Binding
     .target Carendin Halgar
-step << Warlock
+step << skip --Warlock
     .goto Undercity,84.86,20.34
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Perform a Logout Skip by positioning your character on the highest part of the lowest staircase until it looks like they're floating, then logging out and back in|r
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_CLICK HERE for an example|r
@@ -6649,11 +6739,19 @@ step << Warrior
     .complete 1821,3 --Agamand Family Mace (1)
     .complete 1821,4 --Agamand Family Sword (1)
     .isOnQuest 1821
-step << Warrior
+step << skip --Warrior
     .goto Tirisfal Glades,51.68,25.67
     .goto Tirisfal Glades,56.24,49.42,30 >>|cRXP_WARN_Jump onto one of the weapon racks. Perform a Logout Skip by logging out and back in|r
     .link https://www.youtube.com/watch?v=bH_NYmWf8Lc&ab >> |cRXP_WARN_CLICK HERE for an example|r
     .isQuestComplete 408
+step << Warrior
+    #softcore
+    #completewith next
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+step << Warrior
+    #hardcore
+    #completewith next
+    .subzone 159 >>Travel to Brill
 step << Warrior
     .goto Tirisfal Glades,61.26,50.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sevren|r
@@ -8308,7 +8406,7 @@ step << Hunter
     .mob Felstalker
     .mob Vile Familiar
     .train 410113,1
-step
+step << skip
 	#completewith next
     .goto Durotar,44.70,52.47
     .goto Durotar,53.55,44.68,30 >>|cRXP_WARN_Perform a Logout Skip by positioning your character on the edge of the rock until it looks like they're floating, then logging out and back in|r
@@ -8321,6 +8419,7 @@ step
     .target Spirit Healer
     .subzoneskip 362
 step
+    #softcore
     #label Betrayers
     .goto Durotar,51.95,43.50
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gar'thok|r
@@ -8328,6 +8427,7 @@ step
     .accept 784 >>Accept Vanquish the Betrayers
     .target Gar'thok
 step << Hunter
+    #softcore
     #season 2
     .goto Durotar,51.85,43.49
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r inside the bunker
@@ -8336,6 +8436,7 @@ step << Hunter
     .train 410113,1
     .target Thotar
 step
+    #softcore
     #completewith next
     .goto Durotar,50.22,43.06,12,0
     .goto Durotar,50.09,42.97,8,0
@@ -8343,6 +8444,7 @@ step
     .goto Durotar,49.96,40.96,12,0
     .goto Durotar,49.67,40.42,10 >>Travel toward the tower
 step
+    #softcore
     #completewith next
     .goto Durotar,49.75,40.38,6,0
     .goto Durotar,49.77,40.24,6,0
@@ -8352,28 +8454,33 @@ step
     .goto Durotar,49.79,39.96,6,0
     .goto Durotar,49.60,40.04,8 >>Travel up the tower toward Furl
 step
+    #softcore
     .goto Durotar,49.89,40.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furl|r
     .accept 791 >>Accept Carry Your Weight
     .target Furl Scornbrow
 step << Warrior/Rogue
+    #softcore
     .goto Durotar,51.81,40.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krunn|r
     .train 2575 >> Train |T136248:0|t[Mining]. This will allow you to find |T135232:0|t|cRXP_LOOT_[Rough Stones]|r from nodes in order to craft |T135248:0|t[Sharpening Stones] (+2 Weapon Damage for 30 minutes)
     .target Krunn
 step << Warrior/Rogue
+    #softcore
     .goto Durotar,51.90,41.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wuark|r
     >>|cRXP_BUY_Buy a|r |T134708:0|t[Mining Pick] |cRXP_BUY_from|r |cRXP_FRIENDLY_him|r
     .collect 2901,1,9144,1 --Mining Pick (1)
     .target Wuark
 step << Warrior/Rogue
+    #softcore
     .goto Durotar,52.05,40.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dwukk|r
     .train 2018 >> Train |T136241:0|t[Blacksmithing]
     .target Dwukk
     .skill blacksmithing,1,1
 step << Hunter
+    #softcore
     #season 2
     .goto Durotar,40.61,52.19
     >>|cRXP_WARN_Cast|r |T132212:0|t[Hunter's Mark] |cRXP_WARN_on the|r |cRXP_ENEMY_Rustling Bush|r
@@ -8383,6 +8490,7 @@ step << Hunter
     .mob Razormane Poacher
     .train 410113,1
 step << Hunter
+    #softcore
     #season 2
     .train 410113 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r] to train |T132177:0|t[Master Marksman]
     .use 206155
@@ -9103,6 +9211,90 @@ step << Rogue
     .train 400094 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Mutilation|r] |cRXP_WARN_to train|r |T132304:0|t[Mutilate]
     .use 203990
     .itemcount 203990,1
+step
+    #hardcore
+    #completewith next
+    .goto Durotar,44.70,52.47
+    .deathskip >> |cRXP_WARN_Alternatively, die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r near the arrow|r
+    .target Spirit Healer
+    .subzoneskip 362
+step
+    #hardcore
+    #label Betrayers
+    .goto Durotar,51.95,43.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gar'thok|r
+    >>|cRXP_WARN_You can talk to him from outside or on top of the bunker|r
+    .accept 784 >>Accept Vanquish the Betrayers
+    .target Gar'thok
+step << Hunter
+    #hardcore
+    #season 2
+    .goto Durotar,51.85,43.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thotar|r inside the bunker
+    >>|cRXP_WARN_You will need|r |T132212:0|t[Hunter's Mark] |cRXP_WARN_to be able to obtain|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
+    .train 1130 >> Train |T132212:0|t[Hunter's Mark]
+    .train 410113,1
+    .target Thotar
+step
+    #hardcore
+    #completewith next
+    .goto Durotar,50.22,43.06,12,0
+    .goto Durotar,50.09,42.97,8,0
+    .goto Durotar,50.20,42.30,12,0
+    .goto Durotar,49.96,40.96,12,0
+    .goto Durotar,49.67,40.42,10 >>Travel toward the tower
+step
+    #hardcore
+    #completewith next
+    .goto Durotar,49.75,40.38,6,0
+    .goto Durotar,49.77,40.24,6,0
+    .goto Durotar,49.69,40.21,6,0
+    .goto Durotar,49.68,40.30,6,0
+    .goto Durotar,49.78,40.34,6,0
+    .goto Durotar,49.79,39.96,6,0
+    .goto Durotar,49.60,40.04,8 >>Travel up the tower toward Furl
+step
+    #hardcore
+    .goto Durotar,49.89,40.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furl|r
+    .accept 791 >>Accept Carry Your Weight
+    .target Furl Scornbrow
+step << Warrior/Rogue
+    #hardcore
+    .goto Durotar,51.81,40.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Krunn|r
+    .train 2575 >> Train |T136248:0|t[Mining]. This will allow you to find |T135232:0|t|cRXP_LOOT_[Rough Stones]|r from nodes in order to craft |T135248:0|t[Sharpening Stones] (+2 Weapon Damage for 30 minutes)
+    .target Krunn
+step << Warrior/Rogue
+    #hardcore
+    .goto Durotar,51.90,41.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wuark|r
+    >>|cRXP_BUY_Buy a|r |T134708:0|t[Mining Pick] |cRXP_BUY_from|r |cRXP_FRIENDLY_him|r
+    .collect 2901,1,9144,1 --Mining Pick (1)
+    .target Wuark
+step << Warrior/Rogue
+    #hardcore
+    .goto Durotar,52.05,40.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dwukk|r
+    .train 2018 >> Train |T136241:0|t[Blacksmithing]
+    .target Dwukk
+    .skill blacksmithing,1,1
+step << Hunter
+    #hardcore
+    #season 2
+    .goto Durotar,40.61,52.19
+    >>|cRXP_WARN_Cast|r |T132212:0|t[Hunter's Mark] |cRXP_WARN_on the|r |cRXP_ENEMY_Rustling Bush|r
+    >>Kill the |cRXP_ENEMY_Razormane Poacher|r that spawns. Loot him for |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r]
+    .collect 206155,1 --Rune of Marksmanship (1)
+    .mob Rustling Bush
+    .mob Razormane Poacher
+    .train 410113,1
+step << Hunter
+    #hardcore
+    #season 2
+    .train 410113 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Marksmanship|r] to train |T132177:0|t[Master Marksman]
+    .use 206155
+    .itemcount 206155,1
 step
     #xprate <1.5
     #label TravelToTiragarde
