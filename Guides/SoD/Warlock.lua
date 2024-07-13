@@ -422,7 +422,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Warlock SoD
 #group RestedXP Rune & Books Guide
-#subgroup Legs
+#subgroup Bracers
 #name Incinerate - 22 (Redridge Mountains)
 #title Incinerate
 
@@ -890,7 +890,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
 #group RestedXP Rune & Books Guide
-#subgroup Chest
+#subgroup Cloak
 #name Soul Siphon - 10 (Dun Morogh)
 #title Soul Siphon
 

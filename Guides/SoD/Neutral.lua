@@ -8,9 +8,9 @@ RXPGuides.RegisterGuide([[
 #subgroup Chest << Hunter
 #name Carrodin Runes
 #displayname Consumed by Rage - 25 (Wetlands) << Warrior
-#displayname Aspect of the Lion - 25 (Wetlands) << Hunter
+#displayname Cobra Slayer - 25 (Wetlands) << Hunter
 #title Consumed by Rage << Warrior
-#title Aspect of the Lion << Hunter
+#title Cobra Slayer << Hunter
 
 step
     #season 2
@@ -39,7 +39,7 @@ step << Warrior
     .itemcount 210573,1
 step << Hunter
     #season 2
-    .train 410115 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Aspect of the Lion|r] |cRXP_WARN_to train|r |T132185:0|t[Aspect of the Lion]
+    .train 410115 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Cobra Slayer|r] |cRXP_WARN_to train|r |T136040:0|t[Cobra Slayer]
     .use 211205
     .itemcount 211205,1
 
@@ -96,11 +96,8 @@ RXPGuides.RegisterGuide([[
 << Rogue SoD
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
-#name Shiv - 25 (Duskwood)
-#title Shiv
-
-
-    --Rune of Shiving
+#name Cutthroat - 25 (Duskwood)
+#title Cutthroat
 
 step
     #season 2
@@ -128,7 +125,7 @@ step
     .train 424988,1
 step
     #season 2
-    .train 424988 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shiving|r]
+    .train 424988 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shiving|r] to train |T236280:0|t[Cutthroat]
     .use 210252
     .itemcount 210252,1
 
@@ -211,7 +208,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest << Priest/Hunter/Druid/Warrior/Shaman
 #subgroup Legs << Warlock/Paladin
-#subgroup Gloves << Mage/Rogue
+#subgroup Gloves << Rogue
+#subgroup Bracers << Mage
 #name Grizzby Runes
 #displayname Serendipity - 25 (The Barrens) << Priest
 #displayname Lone Wolf - 25 (The Barrens) << Hunter
@@ -606,7 +604,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
 #group RestedXP Rune & Books Guide
-#subgroup Legs
+#subgroup Bracers
 #name Power Word: Barrier - 22 (Redridge Mountains)
 #title Power Word: Barrier
 
@@ -799,7 +797,7 @@ step
     .train 410111,1
 step
     #season 2
-    .train 410111 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Kill Command|r] |cRXP_WARN_to train|r |T132176:0|t[Kill Command]
+    .train 410111 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Kill Command|r] |cRXP_WARN_to train|r |T236174:0|t[Kill Shot]
     .use 209852
     .itemcount 209852,1
 
@@ -1602,9 +1600,9 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Boots
 #name Bugcatcher Runes
-#displayname Invigoration - 35 (Azeroth) << Hunter
+#displayname Wyvern Strike - 35 (Azeroth) << Hunter
 #displayname Survival Instincts - 35 (Azeroth) << Druid
-#title Invigoration << Hunter
+#title Wyvern Strike << Hunter
 #title Survival Instincts << Druid
 
 step
@@ -1701,7 +1699,7 @@ step
     .skipgossip 217412,1
     .target Amaryllis Webb
 step
-    .train 416089 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Invigoration|r] |cRXP_WARN_to train|r |T236184:0|t[Invigoration] << Hunter
+    .train 416089 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Invigoration|r] |cRXP_WARN_to train|r |T135125:0|t[Wyvern Strike] << Hunter
     .train 410027 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Instinct|r] |cRXP_WARN_to train|r |T132266:0|t[Survival Instincts] << Druid
     .use 213125 << Hunter
     .use 213119 << Druid
@@ -2066,4 +2064,33 @@ step
     .use 221979 << Priest
     .train 416055 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Mental Dexterity|r] |cRXP_WARN_to learn|r |T136055:0|t[Mental Dexterity] << Shaman
     .train 415991 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of Verdant Winter|r] |cRXP_WARN_to learn|r |T237567:0|t[Pain and Suffering] << Priest
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warrior SoD/Hunter SoD/Rogue SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Ranged Weapon Specialization
+#name Ranged Weapon Specialization - 58 (Eastern Plaguelands)
+
+step
+    #completewith rangeSpec
+    .zone Eastern Plaguelands >>Travel to Eastern Plaguelands
+step << Horde
+    #label rangeSpec
+    .goto Eastern Plaguelands,26.0,74.0
+    >>Loot the red book next to |cRXP_FRIENDLY_Nathanos Blightcaller|r. Its outside the house, to the left of the door. It contains the |T134419:0|t[|cRXP_FRIENDLY_Rune of Ranged Weapon Specialization|r]
+    .collect 226410,1 --Rune of Ranged Weapon Specialization
+step << Alliance
+    #label rangeSpec
+    .goto Eastern Plaguelands,26.0,74.0
+    >>Loot the red book next to |cRXP_ENEMY_Nathanos Blightcaller|r. Its outside the house, to the left of the door. It contains the |T134419:0|t[|cRXP_FRIENDLY_Rune of Ranged Weapon Specialization|r]
+    >>|cRXP_WARN_If there's someone nearby ask them to pull|r |cRXP_ENEMY_Nathanos Blightcaller|r |cRXP_WARN_away for a while while you safely loot the rune|r
+    >>|cRXP_WARN_If there's no one nearby you can die to|r |cRXP_ENEMY_Nathanos|r |cRXP_WARN_and then respawn while standing inside the house and outside of his line of sight. Then loot the book from inside the house either by using the interact key or angling your camera so you can click it|r << Warrior/Rogue
+    >>|cRXP_WARN_If there's no one nearby set your pet to|r |T136106:0|t[Stay] |cRXP_WARN_a decent distance away from|r |cRXP_ENEMY_Nathanos|r |cRXP_WARN_then send a pet|r |T132152:0|t[Attack] |cRXP_WARN_command to aggro him onto your pet. Once he's targetting your pet set your pet to|r |T132311:0|t[Passive], |cRXP_WARN_this will make your pet return to it's Stay position and give you time to loot the rune|r << Hunter
+    .collect 226410,1 --Rune of Ranged Weapon Specialization
+step
+    .train 453692 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Ranged Weapon Specialization|r] |cRXP_WARN_to learn|r |T135490:0|t[Ranged Weapon Specialization]
+    .use 226410
 ]])

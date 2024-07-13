@@ -1982,13 +1982,13 @@ RXPGuides.RegisterGuide([[
 << Horde Shaman SoD
 #group RestedXP Rune & Books Guide
 #subgroup Legs
-#name Shamanistic Rage - 25 (Stonetalon Mountains)
-#title Shamanistic Rage
+#name Greater Ghost Wolf - 25 (Stonetalon Mountains)
+#title Greater Ghost Wolf
 #next Dual Wield Specialization - 25 (Ratchet)
 
 
 step
-    +|cRXP_WARN_You should be at least level 25 in order to acquire|r |T134596:0|t[Engrave Pants - Shamanistic Rage] |cRXP_WARN_in Stonetalon Mountains alone|r
+    +|cRXP_WARN_You should be at least level 25 in order to acquire|r |T134596:0|t[Engrave Pants - Greater Ghost Wolf] |cRXP_WARN_in Stonetalon Mountains alone|r
     .train 425343,1
     .xp >25,1
 step
@@ -2010,7 +2010,7 @@ step
     .mob Primordial Anomaly
     .train 425343,1
 step
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Primordial Fury]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants - Shamanistic Rage]
+    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t|cRXP_LOOT_[Rune of Primordial Fury]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants - Greater Ghost Wolf]
     .use 210811
     .itemcount 210811,1 --Rune of Primordial Fury (1)
     .train 425343,1

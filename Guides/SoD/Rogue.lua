@@ -2092,3 +2092,67 @@ step
     .train 432295 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Coterie|r] |cRXP_WARN_to train|r |T236275:0|t[Honor Among Thieves]
     .use 217736
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Rogue SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#title Crimson Tempest
+#name Crimson Tempest - 60 (Western Plaguelands)
+
+step
+    .train 415918,1
+    .zone Western Plaguelands >>Travel to Western Plaguelands
+step
+    .train 415918,1
+    #completewith next
+    .subzone 190 >> Travel to Hearthglen
+step
+    #label ToolboxKey
+    .train 415918,1
+    .goto Western Plaguelands,45.0,13.6
+    >>Kill or |T133644:0|t[Pick Pocket] |cRXP_ENEMY_Scarlet Workers|r. Loot them for the |cRXP_LOOT_Toolbox Key|r
+    .collect 227928,1 -- Toolbox Key 1/1
+    .mob Scarlet Worker
+step
+    .train 415918,1
+    .goto Western Plaguelands,45.0,14.2
+    >>Open the |cRXP_PICK_Scarlet Toolbox|r. Loot it for the |cRXP_LOOT_Rusty Crowbar|r
+    .collect 227932,1 -- Rusty Crowbar 1/1
+step
+    .goto Western Plaguelands,49.5,18.5
+    >>Open the |cRXP_PICK_Marked Crate|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Crimson Tempest|r]
+    .collect 227456,1
+step
+    .use 227456
+    .itemcount 227456,1
+    .train 415918 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Crimson Tempest|r] |cRXP_WARN_to train|r |T135315:0|t[Crimson Tempest]
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Rogue SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#title Fan of Knives
+#name Fan of Knives - 55 (Winterspring)
+
+step
+    .train 436609,1
+    .zone Winterspring >>Travel to Winterspring
+step
+    .train 436609,1
+    .goto Winterspring,67.7,35.4
+    >>Open the |cRXP_PICK_Wooden Chest|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Knives|r]
+    >>|cRXP_WARN_While opening the |cRXP_PICK_Wooden Chest|r, choose the following options in this order:|r
+    >>|cRXP_WARN_Frostsaber|r
+    >>|cRXP_WARN_Owl|r
+    >>|cRXP_WARN_Bear|r
+    >>|cRXP_WARN_Owl|r
+    .collect 227921,1
+step
+    .use 227921
+    .itemcount 227921,1
+    .train 436609 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Knives|r] |cRXP_WARN_to train|r |T236273:0|t[Fan of Knives]
+]])
