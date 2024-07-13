@@ -2183,12 +2183,58 @@ step
     .train 410013,1
 ]])
 
---RXPGuides.RegisterGuide([[
---#classic
---<< Paladin SoD
---#group RestedXP Rune & Books Guide
---#subgroup Cloak
---#name Shield of Righteousness - 60 (Eastern Plaguelands)
+RXPGuides.RegisterGuide([[
+#classic
+<< Paladin SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#name Shield of Righteousness - 60 (Eastern Plaguelands)
 
+--There wasn't very precise info for this available, might need confirmation if it works properly
 
---]])
+step
+    #completewith next
+    >>|cRXP_WARN_Unlocking this rune will require killing a boss in Stratholme(undead). Start looking for a group for it if you wish|r
+    .zone Eastern Plaguelands >> Travel to Eastern Plaguelands
+step
+    .line Eastern Plaguelands,28.6,84.2,33.2,83.0,35.30,82.55,41.19,81.68,45.42,80.68,48.8,79.9,51.5,78.3,55.1,76.4
+    >>Look for a |cRXP_ENEMY_Slack-Jawed Ghoul|r. Kill him and |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orthas|r a dwarf spirit that will appear. Accept his quest
+    >>|cRXP_WARN_The|r |cRXP_ENEMY_Slack-Jawed Ghoul|r |cRXP_WARN_patrolls the area south of the road between the Undercroft and Corrin's Crossing|r
+    .accept 84318 >> Accept Oi!
+    .unitscan Slack-Jawed Ghoul
+    .target Orthas
+step
+    .goto Eastern Plaguelands,59.8,70.8 --Not sure if this is the house or the other one, need more info
+    >>Enter the house in Corrin's Crossing. Loot the |T133040:0|t[|cRXP_PICK_Ornate Warhammer|r] |cRXP_WARN_on the second floor|r
+    .complete 84318,1
+step
+    .goto Eastern Plaguelands,59.8,70.8
+    >>Use |T134566:0|t[Orthas' Favourite Gold Tooth] to summon |cRXP_FRIENDLY_Orthas|r again. Talk to him to turnin the quest and get the followup
+    .turnin 84318 >> Turn in Oi!
+    .accept 84319 >> Accept Oh No Ye Don't
+    .use 227687
+step
+    .goto Eastern Plaguelands,59.7,68.7
+    >>Kill any |cRXP_ENEMY_Stitched Horror|r and loot it for the |T133823:0|t[|cRXP_LOOT_Partially-Digested Plate Armor|r]
+    .complete 84319,1
+    .mob Stitched Horror
+step
+    >>Use |T134566:0|t[Orthas' Favourite Gold Tooth] to summon |cRXP_FRIENDLY_Orthas|r again. Talk to him to turnin the quest and get the followup
+    .turnin 84319 >> Turn in Oh No Ye Don't
+    .accept 84330 >> Accept A Wee Bit O' Necromancy
+step
+    >>Find a group for Stratholme(undead)
+    >>Kill |cRXP_ENEMY_Maleki the Pallid|r one of the bosses in the undead side of the dungeon and loot him for the |T134415:0|t[Necrotic Runestone]
+    .complete 84330,1 --Necrotic Runestone
+    .mob Maleki the Pallid
+step
+    .goto Eastern Plaguelands,22.7,86.1
+    >>Return to the Undercroft, look for the |cRXP_FRIENDLY_Rotting Dwarf Corpse|r. Interact with it to turn in the quest
+    .turnin 84330 >> Turn in A Wee Bit O' Necromancy
+step
+    >>Accept the followup quest from the corpse. It's an instant turnin that will teach you how to engrave |T236265:0|t[|cRXP_FRIENDLY_Shield of Righteousness|r]
+    .goto Eastern Plaguelands,22.7,86.1
+    .accept 84332 >> Accept A Thane's Gratitude
+    .turnin 84332 >> Turnin A Thane's Gratitude
+
+]])
