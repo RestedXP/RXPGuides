@@ -2238,3 +2238,120 @@ step
     .turnin 84332 >> Turnin A Thane's Gratitude
 
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Paladin SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#name Righteous Vengeance - 55 (Western Plaguelands)
+#title Righteous Vengeance
+#next Shock and Awe - 55 (Western and Eastern Plaguelands)
+
+step
+    #completewith next
+    .zone Western Plaguelands >> Head to the Western Plaguelands
+step
+    .goto Western Plaguelands,44.6,46.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Fallen Knight|r
+    .gossip 227519,1 >> Go through his dialogue
+    .target Fallen Knight
+--Not entirely sure if you even need to talk to him or if you do how deep the dialogue is
+step
+    .goto Western Plaguelands,47.5,50.4
+    >>Enter the barn next to the |cRXP_FRIENDLY_Fallen Knight|r and |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Cuthbert|r
+    .accept 83808 >> Accept In a Bind
+    .target Squire Cuthbert
+step
+    .goto Western Plaguelands,47.5,50.4
+    .goto Western Plaguelands,45.7,53.9
+    >>Loot [|cRXP_PICK_Squire Cuthbert's Sword|r] laying on the field nearby
+    .complete 83808,1
+step
+    >>Go back to the barn and |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Cuthbert|r
+    .turnin 83808 >> Turn in In a Bind
+    .accept 83935 >> Accept Clearing the Path
+    .target Squire Cuthbert
+step
+    .goto Western Plaguelands,45.7,53.9
+    >>Kill |cRXP_ENEMY_Blighted Zombies|r, |cRXP_ENEMY_Skeletal Terrors|r and |cRXP_ENEMY_Rotting Cadavers|r
+    .complete 83935,1 --Blighted Zombie(5)
+    .complete 83935,2 --Skeletal Terror(10)
+    .complete 83935,3 --Rotting Cadaver(10)
+    .mob Blighted Zombie
+    .mob Skeletal Terror
+    .mob Rotting Cadaver
+step
+    .goto Western Plaguelands,47.5,50.4
+    >>Go back to the barn and |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Cuthbert|r
+    .turnin 83935 >> Turn in Clearing the Path
+    .accept 83822,1 >> Accept The Fallen Knight, |cRXP_WARN_this is an escort quest|r
+    .target Squire Cuthbert
+step
+    .goto Western Plaguelands,44.6,46.6
+    >>Escort |cRXP_FRIENDLY_Squire Cuthbert|r back to the Fallen Knight and help him burn the corpse
+    .complete 83822
+step
+    .goto Western Plaguelands,44.6,46.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Cuthbert|r
+    .turnin 83822 >> Turn in The Fallen Knight
+    .accept 83936 >> Accept Dalton's Quest
+    .target Squire Cuthbert
+step
+    .goto Western Plaguelands,44.6,46.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Cuthbert|r and go through his dialogue
+    .complete 83936,1
+    .target Squire Cuthbert
+step
+    .goto Western Plaguelands,44.6,46.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Cuthbert|r and go through his dialogue. Turning in this quest will train you on how to engrave |T236260:0|t[|cRXP_FRIENDLY_Righteous Vengeance|r]
+    >>You will also receive |T237377:0|t[|cFF0070FFDalton's Horn|r] which you will need in order to unlock the rune of |T252188:0|t[Shock and Awe]
+    .turnin 83936 >> Turn in Dalton's Quest
+    .target Squire Cuthbert
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Paladin SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#name Shock and Awe - 55 (Western and Eastern Plaguelands)
+#title Shock and Awe & Avenging Wrath
+
+step
+    #completewith next
+    +|cRXP_WARN_In order to begin the quest for this rune you will need to have unlocked the rune of|r |T236260:0|t[|cRXP_FRIENDLY_Righteous Vengeance|r]. |cRXP_WARN_Go to the Righteous Vengeance guide to begin|r
+    .train 440792,1 --Righteous Vengeance
+step
+    .goto Eastern Plaguelands,78.6,47.6
+    >>|cRXP_WARN_Use the|r |T237377:0|t[|cFF0070FFDalton's Horn|r] |cRXP_WARN_to summon|r |cRXP_FRIENDLY_Squire Cuthbert|r |cRXP_WARN_and kill mobs untill he reaches level 60|r
+    >>|cRXP_WARN_Once he's level 60 enter Noxious Glade, an area just north of Light's Hope chapel. Once you're there he will give you a quest, accept it|r
+    .accept 84125 >> Accept Close Enough To Touch
+    .use 226122
+step
+    .goto Eastern Plaguelands,83.7,41.9
+    >>Kill |cRXP_ENEMY_Shadowmages|r and |cRXP_ENEMY_Dread Weavers|r in the Noxious Glade. Loot them for |T135482:0|t[|cRXP_LOOT_Scourge Shadow Scalpel|r]
+    .complete 84125,1
+    .mob Shadowmage
+    .mob Dread Weaver
+step
+    >>Use the |T237377:0|t[|cFF0070FFDalton's Horn|r] to summon |cRXP_FRIENDLY_Squire Cuthbert|r if you lost him. Talk to him
+    .turnin 84125 >> Turn in Close Enough To Touch
+    .accept 84126 >> Accept Finish the Fight
+    .use 226122
+    .target Squire Cuthbert
+step
+    .goto Eastern Plaguelands,86.6,39.8
+    >>Use the |T237490:0|t[|cRXP_LOOT_Modified Shadow Scalpel|r] you got to dispell |cRXP_ENEMY_Arkonos's|r shield. Kill him to complete the quest
+    .complete 84126,1 --Arkonos the cursed slain
+    .use 227685
+step
+    >>Use the |T237377:0|t[|cFF0070FFDalton's Horn|r] to summon |cRXP_FRIENDLY_Squire Cuthbert|r if you lost him. Talk to him
+    >>Turning in this quest will train you on how to engrave |T252188:0|t[Shock and Awe] and also give you the |T133745:0|t[|cRXP_FRIENDLY_Testament of Avenging Wrath|r] which will teach you |T135875:0|t[Avenging Wrath]
+    .turnin 84126 >> Turn in Finish the Fight
+    .use 226122
+    .target Squire Cuthbert
+step
+    .train 407788 >> Use the |T133745:0|t[|cRXP_FRIENDLY_Testament of Avenging Wrath|r] to train |T135875:0|t[Avenging Wrath]
+    .use 226399
+]])
