@@ -1303,3 +1303,79 @@ step
     >>You also received an |T136091:0|t|cRXP_LOOT_Infernal Lasso|r trinket which can be used to tame Corehounds
     .use 220217
 ]])
+
+RXPGuides.RegisterGuide([[
+    #classic
+    << Hunter SoD
+    #group RestedXP Rune & Books Guide
+    #subgroup Cloak
+    #title Hit and Run
+    #name Hit and Run - 50 (Burning Steppes)
+step
+    #completewith next
+    .zone Burning Steppes >>Travel to Burning Steppes
+step
+    >>Look for an |cRXP_ENEMY_Escaped Core Hound|r he can spawn in multiple spots in the zone, |cRXP_WARN_check your map for waypoints for possible spawn locations|r. Loot him for the rune
+    >>TIP: Instead of running around you can use |T132172:0|t[|cRXP_FRIENDLY_Eagle Eye|r] to scout for his position
+    .goto Burning Steppes,84.8,68.0,0
+    .goto Burning Steppes,83.8,60.0,0
+    .goto Burning Steppes,88.6,54.8
+    .goto Burning Steppes,61.6,54.4,0
+    .goto Burning Steppes,39.8,59.4,0
+    .goto Burning Steppes,31.8,53.0,0
+    .goto Burning Steppes,24.8,55.6,0
+    .unitscan Escaped Core Hound
+    .collect 226252,1 --rune of the guerrilla (1)
+step
+    .train 440563 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of the Guerrilla|r] |cRXP_WARN_to train|r |T132171:0|t[Hit and Run]
+    .use 226252
+]])
+
+RXPGuides.RegisterGuide([[
+    #classic
+    << Hunter SoD
+    #group RestedXP Rune & Books Guide
+    #subgroup Cloak
+    #title Resourcefulness
+    #name Resourcefulness - 58 (Eastern Plaguelands)
+step
+    #completewith next
+    .zone Eastern Plaguelands >>Travel to Eastern Plaguelands
+step
+    .goto Eastern Plaguelands,74.4,62.7
+    .goto Eastern Plaguelands,72.5,66.4,0
+    .goto Eastern Plaguelands,72.6,63.7,0
+    .goto Eastern Plaguelands,76.7,62.6,0
+    .goto Eastern Plaguelands,74.8,58.9,0
+    .goto Eastern Plaguelands,76.7,58.7,0
+    .goto Eastern Plaguelands,55.6,67.0,0
+    .goto Eastern Plaguelands,54.3,70.1,0
+    .goto Eastern Plaguelands,51.9,70.0,0
+    >>Kill and loot any |cRXP_ENEMY_Rotting Sludges|r and |cRXP_ENEMY_Living Decay|r untill you loot a |T132108:0|t[|cRXP_LOOT_Bubbling Green Ichor|r]
+    >>|cRXP_WARN_The ichor is a gray item, be careful not to vendor it!|r
+    .collect 20770,1 --Bubbling Green Ichor (1)
+    .mob Living Decay
+    .mob Rotting Sludge
+step
+    .goto Eastern Plaguelands,17.8,30.2
+    >>Head to Terrordale and kill |cRXP_ENEMY_Plagued Swines|r untill you loot a |T134046:0|t[|cRXP_LOOT_Tainted Boar Meat|r]
+    .collect 225942,1 --Tainted Boar Meat (1)
+    .mob Plagued Swine
+step
+    >>Use the |T134046:0|t[|cRXP_LOOT_Tainted Boar Meat|r] to combine it with the |T132108:0|t[|cRXP_LOOT_Bubbling Green Ichor|r] and create a |T134047:0|t[Rancid Hunk of Flesh]
+    .collect 225943,1 --Rancid Hunk of Flesh (1)
+    .use 225942
+step
+    .goto Eastern Plaguelands,22.68,37.12,-1
+    .goto Eastern Plaguelands,19.37,26.42,-1
+    .goto Eastern Plaguelands,29.83,39.05,-1
+    >>Look for a |cRXP_ENEMY_Carrion Grub|r or a |cRXP_ENEMY_Carrion Devourer|r. The closest possible spawns to Terrordale are just north and south of it
+    >>Use the |T134047:0|t[Rancid Hunk of Flesh] on it to feed it. |cRXP_WARN_The grub will spawn a skeleton after a short animation, loot it for|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Resourceful|r]
+    .use 225943
+    .collect 225955,1 --Rune of the resourceful (1)
+    .mob Carrion Grub
+    .mob Carrion Devourer
+step
+    .train 440557 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of the Resourceful|r] |cRXP_WARN_to train|r |T132178:0|t[Resourcefulness]
+    .use 225955
+]])

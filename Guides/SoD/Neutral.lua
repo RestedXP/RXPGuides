@@ -2067,3 +2067,32 @@ step
     .train 416055 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Mental Dexterity|r] |cRXP_WARN_to learn|r |T136055:0|t[Mental Dexterity] << Shaman
     .train 415991 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of Verdant Winter|r] |cRXP_WARN_to learn|r |T237567:0|t[Pain and Suffering] << Priest
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warrior SoD/Hunter SoD/Rogue SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Ranged Weapon Specialization
+#name Ranged Weapon Specialization - 58 (Eastern Plaguelands)
+
+step
+    #completewith rangeSpec
+    .zone Eastern Plaguelands >>Travel to Eastern Plaguelands
+step << Horde
+    #label rangeSpec
+    .goto Eastern Plaguelands,26.0,74.0
+    >>Loot the red book next to |cRXP_FRIENDLY_Nathanos Blightcaller|r. Its outside the house, to the left of the door. It contains the |T134419:0|t[|cRXP_FRIENDLY_Rune of Ranged Weapon Specialization|r]
+    .collect 226410,1 --Rune of Ranged Weapon Specialization
+step << Alliance
+    #label rangeSpec
+    .goto Eastern Plaguelands,26.0,74.0
+    >>Loot the red book next to |cRXP_ENEMY_Nathanos Blightcaller|r. Its outside the house, to the left of the door. It contains the |T134419:0|t[|cRXP_FRIENDLY_Rune of Ranged Weapon Specialization|r]
+    >>|cRXP_WARN_If there's someone nearby ask them to pull|r |cRXP_ENEMY_Nathanos Blightcaller|r |cRXP_WARN_away for a while while you safely loot the rune|r
+    >>|cRXP_WARN_If there's no one nearby you can die to|r |cRXP_ENEMY_Nathanos|r |cRXP_WARN_and then respawn while standing inside the house and outside of his line of sight. Then loot the book from inside the house either by using the interact key or angling your camera so you can click it|r << Warrior/Rogue
+    >>|cRXP_WARN_If there's no one nearby set your pet to|r |T136106:0|t[Stay] |cRXP_WARN_a decent distance away from|r |cRXP_ENEMY_Nathanos|r |cRXP_WARN_then send a pet|r |T132152:0|t[Attack] |cRXP_WARN_command to aggro him onto your pet. Once he's targetting your pet set your pet to|r |T132311:0|t[Passive], |cRXP_WARN_this will make your pet return to it's Stay position and give you time to loot the rune|r << Hunter
+    .collect 226410,1 --Rune of Ranged Weapon Specialization
+step
+    .train 453692 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Ranged Weapon Specialization|r] |cRXP_WARN_to learn|r |T135490:0|t[Ranged Weapon Specialization]
+    .use 226410
+]])
