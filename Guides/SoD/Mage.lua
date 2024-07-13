@@ -2646,7 +2646,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Mage SoD
 #group RestedXP Rune & Books Guide
-#subgroup Belt
+#subgroup Helmet
 #name Hot Streak - 32 (Alterac Mountains)
 #title Hot Streak
 

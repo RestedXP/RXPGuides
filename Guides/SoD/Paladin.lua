@@ -458,14 +458,14 @@ RXPGuides.RegisterGuide([[
 << Alliance Paladin SoD
 #group RestedXP Rune & Books Guide
 #subgroup Chest
-#name Horn of Lordaeron - 4 (Loch Modan)
-#title Horn of Lordaeron
+#name Hallowed Ground - 4 (Loch Modan)
+#title Hallowed Ground
 #next Hand of Reckoning - 14 (Loch Modan)
 
 step
-    +|cRXP_WARN_You MUST be at least level 4 in order to acquire|r |T133815:0|t[Engrave Chest - Horn of Lordaeron] |cRXP_WARN_as it is the level requirement of training|r |T135906:0|t[Blessing of Might]
-    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest - Horn of Lordaeron]
---  >>|cRXP_WARN_It is NOT recommended to use|r |T133815:0|t[Engrave Chest - Horn of Lordaeron] |cRXP_WARN_over|r |T133815:0|t[Engrave Chest - Divine Storm] |cRXP_WARN_or|r |T133815:0|t[Engrave Chest - Seal of Martyrdom]
+    +|cRXP_WARN_You MUST be at least level 4 in order to acquire|r |T133815:0|t[Engrave Chest - Hallowed Ground] |cRXP_WARN_as it is the level requirement of training|r |T135906:0|t[Blessing of Might]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest - Hallowed Ground]
+--  >>|cRXP_WARN_It is NOT recommended to use|r |T133815:0|t[Engrave Chest - Hallowed Ground] |cRXP_WARN_over|r |T133815:0|t[Engrave Chest - Divine Storm] |cRXP_WARN_or|r |T133815:0|t[Engrave Chest - Seal of Martyrdom]
     .train 425618,1
     .xp >4,1
 step
@@ -532,7 +532,7 @@ step
     .xp >14,1
     .xp <4,1
 step
-    .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t[Libram of Blessings] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Horn of Lordaeron]
+    .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t[Libram of Blessings] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Hallowed Ground]
     .aura -408828
     .use 208849
     .train 425618,1
@@ -791,13 +791,13 @@ RXPGuides.RegisterGuide([[
 << Alliance Paladin SoD
 #group RestedXP Rune & Books Guide
 #subgroup Chest
-#name Seal of Martyrdom - 10 (Stormwind)
-#title Seal of Martyrdom
+#name Divine Light - 10 (Stormwind)
+#title Divine Light
 #next Horn of Lordaeron - 12 (Westfall)
 
 step
     #completewith LibramS
-    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T133815:0|t[Engrave Chest - Seal of Martyrdom] |cRXP_WARN_in Stormwind alone|r
+    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T133815:0|t[Engrave Chest - Divine Light] |cRXP_WARN_in Stormwind alone|r
     .train 410015,1
     .xp >10,1
 step
@@ -862,8 +862,8 @@ step
     >>|cRXP_WARN_Remember to pre-cast|r |T135924:0|t[Seal of the Crusader] |cRXP_WARN_on her|r
     >>|cRXP_WARN_Be careful as she casts|r |T136197:0|t[Shadow Shock] |cRXP_WARN_(instantly deals 45 shadow damage. Costs her 75 mana. You should kill her quick enough for her to only cast it 3 times)|r
     >>|cRXP_WARN_After defeating |cRXP_ENEMY_Ada Gelhardt|r:|r
-    >>Talk to |cRXP_FRIENDLY_Ada Gelhardt|r again to receive the |T134419:0|t[Rune of Martyrdom]
-    .collect 205897,1 --Rune of Martyrdom (1)
+    >>Talk to |cRXP_FRIENDLY_Ada Gelhardt|r again to receive the |T134419:0|t[Rune of Divine Light]
+    .collect 205897,1 --Rune of Divine Light (1)
     .target Ada Gelhardt
     .skipgossip 205153,1
     .train 410015,1
@@ -872,9 +872,9 @@ step
     #sticky
     .destroy 205864 >> Delete the |T134939:0|t[Charred Note] from your bags, as it's no longer needed
 step
-    .train 410015 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Martyrdom] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Seal of Martyrdom]
+    .train 410015 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Divine Light] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Divine Light]
     .use 205897
-    .itemcount 205897,1 --Rune of Martyrdom (1)
+    .itemcount 205897,1 --Rune of Divine Light (1)
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1347,13 +1347,13 @@ RXPGuides.RegisterGuide([[
 << Alliance Paladin SoD
 #group RestedXP Rune & Books Guide
 #subgroup Legs
-#name Exorcist - 24 (Duskwood)
-#title Exorcist
+#name Aura Mastery - 24 (Duskwood)
+#title Aura Mastery
 #next Beacon of Light - 25 (Reputation)
 
 step
-    +|cRXP_WARN_You MUST be at least level 24 in order to acquire|r |T134596:0|t[Engrave Pants - Exorcist] |cRXP_WARN_as it is the level requirement of training|r |T135983:0|t[Turn Undead]
-    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T134596:0|t[Engrave Pants - Exorcist]
+    +|cRXP_WARN_You MUST be at least level 24 in order to acquire|r |T134596:0|t[Engrave Pants - Aura Mastery] |cRXP_WARN_as it is the level requirement of training|r |T135983:0|t[Turn Undead]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T134596:0|t[Engrave Pants - Aura Mastery]
     .train 416037,1
     .xp >24,1
 step
@@ -1411,7 +1411,7 @@ step
     .train 416037,1
     .xp <24,1
 step
-    .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Banishment]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants - Exorcist]
+    .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Banishment]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants - Aura Mastery]
     .use 211472
     .aura -408828
     .train 416037,1
@@ -1467,8 +1467,8 @@ RXPGuides.RegisterGuide([[
 << Paladin SoD
 #group RestedXP Rune & Books Guide
 #subgroup Belt
-#title Enlightened Judgements
-#name Enlightened Judgements - 34 (Arathi Highlands)
+#title Malleable Protection
+#name Malleable Protection - 34 (Arathi Highlands)
 
 step
     #optional
@@ -1623,7 +1623,7 @@ step
 step
     .itemcount 213128,1
     .use 213128
-    .train 426175 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Piety|r] |cRXP_WARN_to train|r |T236251:0|t[Enlightened Judgements]
+    .train 426175 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Piety|r] |cRXP_WARN_to train|r |T236251:0|t[Malleable Protection]
 ]])
 
 
@@ -2182,3 +2182,13 @@ step
     .target Aoenas the Vindicated
     .train 410013,1
 ]])
+
+--RXPGuides.RegisterGuide([[
+--#classic
+--<< Paladin SoD
+--#group RestedXP Rune & Books Guide
+--#subgroup Cloak
+--#name Shield of Righteousness - 60 (Eastern Plaguelands)
+
+
+--]])

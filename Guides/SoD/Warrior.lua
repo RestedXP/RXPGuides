@@ -317,7 +317,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
 #group RestedXP Rune & Books Guide
-#subgroup Gloves
+#subgroup Helmet
 #name Endless Rage - 20 (Westfall)
 #title Endless Rage
 
