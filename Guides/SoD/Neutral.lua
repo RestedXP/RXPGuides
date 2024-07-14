@@ -2094,3 +2094,31 @@ step
     .train 453692 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Ranged Weapon Specialization|r] |cRXP_WARN_to learn|r |T135490:0|t[Ranged Weapon Specialization]
     .use 226410
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Priest SoD/Paladin SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Holy Specialization
+#name Holy Specialization - 60 (Eastern Plaguelands)
+
+step
+    #completewith next
+    >>|cRXP_WARN_Getting this rune will require you to fight mobs in an elite area. It's possible to do solo but if you're lower level or not very geared consider looking for someone to help you|r
+    .zone Eastern Plaguelands >> Travel to Eastern Plaguelands
+step
+    >>|cRXP_WARN_You can get this rune at the same time as|r |T135883:0|t[|cRXP_FRIENDLY_Binding Heal|r] |cRXP_WARN_if you progress that questline first. Go to the|r |T135883:0|t[|cRXP_FRIENDLY_Binding Heal|r] |cRXP_WARN_rune guide if you'd rather get both runes at the same time|r << Priest
+    .goto Eastern Plaguelands,77.5,81.7,50 >> Travel to Tyr's Hand, |cRXP_WARN_keep in mind that this is an elite area|r
+step
+    .goto Eastern Plaguelands,83.6,78.2
+    >>|cRXP_WARN_Head to the library wing of the building marked on your map and look for a book located on top of a bookshelf. Loot it for the rune. Keep in mind you can't loot it in combat|r
+    >>|cRXP_WARN_You can either clear all mobs in the room or die next to the book and release in a spot thats out of line of sight of mobs to loot the rune without having to kill anything|r
+    .collect 226418,1 --Rune of Holy Specialization
+    .train 453702,1
+step
+    #completewith next
+    .train 453702 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Holy Specialization|r] to train |T237537:0|t[Holy Specialization]
+    .train 453702,1
+    .itemcount 226418,1
+]])

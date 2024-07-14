@@ -1546,6 +1546,7 @@ step
     .goto Eastern Plaguelands,83.6,78.2
     >>|cRXP_WARN_The rune of|r |T237537:0|t[Holy Specialization] |cRXP_WARN_is also located in Tyr's Hand, if you don't want to get it now skip this step|r 
     >>|cRXP_WARN_If you want to get it head to the library wing of the building marked on your map and look for a book located on top of a bookshelf. Loot it for the rune. Keep in mind you can't loot it in combat|r
+    >>|cRXP_WARN_You can either clear all mobs in the room or die next to the book and release in a spot thats out of line of sight of mobs to loot the rune without having to kill anything|r
     .collect 226418,1 --Rune of Holy Specialization
     .train 453702,1
 step
@@ -1586,4 +1587,63 @@ step << Horde
 step
     .train 402853 >> Use the |T135791:0|t[|cRXP_FRIENDLY_Jubilant Epiphany|r] to train |T135883:0|t[|cRXP_FRIENDLY_Binding Heal|r]
     .use 228123
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Priest SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#title Vampiric Touch
+#name Vampiric Touch - 60 (Demon Fall Canyon Dungeon)
+
+step
+    #completewith next
+    >>The rune of |T135978:0|t[|cRXP_FRIENDLY_Vampiric Touch|r] drops from the last boss of Demon Fall Canyon the new dungeon added in SoD
+    .zone Felwood >> |cRXP_WARN_In order to enter the dungeon you first need a trinket rewarded from a short quest, head to Felwood to begin it|r
+    .itemcount 228172,<1 --Only shows if you don't have the trinket
+step
+    .goto Felwood,51.4,82.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Shadowtooth Emissary|r
+    .accept 84384 >> Accept Demonic Deceptions
+    .target Shadowtooth Emissary
+    .itemcount 228172,<1 --Only shows if you don't have the trinket
+step
+    #completewith next
+    .zone Winterspring >> Travel to Winterspring
+    .itemcount 228172,<1 --Only shows if you don't have the trinket
+step
+    .goto Winterspring,65.6,21.4
+    >>Look for |cRXP_ENEMY_Berserk Owlbeasts|r north of Everlook. Kill them and loot them for the |T237413:0|t[|cRXP_LOOT_Owlbeast Pineal Glands|r]
+    .complete 84384,1
+    .mob Berserk Owlbeast
+    .itemcount 228172,<1 --Only shows if you don't have the trinket
+step
+    #completewith next
+    .zone Felwood >> Return to Felwood
+    .itemcount 228172,<1 --Only shows if you don't have the trinket
+step
+    .goto Felwood,51.4,82.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Shadowtooth Emissary|r
+    .turnin 84384 >> Turn in Demonic Deceptions
+    .target Shadowtooth Emissary
+    .itemcount 228172,<1 --Only shows if you don't have the trinket
+step
+    #completewith next
+    +Equip the |T136232:0|t[|cRXP_FRIENDLY_Shadowtooth Illusion Ward|r] in any of your trinket slots. You need it equipped in order to be able to enter the dungeon
+    .use 228172
+    .itemcount 228172,<1
+step
+    >>|cRXP_WARN_The rune of|r |T135978:0|t[|cRXP_FRIENDLY_Vampiric Touch|r] |cRXP_WARN_drops from the last boss of Demon Fall Canyon the new dungeon added in SoD. Start looking for a group for it as you head to Ashenvale|r
+    >>If you're flying, fly to Talendris Point in Azshara instead of Astranaar. It's closer to the dungeon entrance << Alliance
+    .zone Ashenvale >> Travel to Ashenvale
+step
+    .goto Ashenvale,84.5,75.0,50 >> Head to the entrance of the Demon Fall Canyon dungeon
+step
+    >>Clear the dungeon. |T135791:0|t[|cRXP_FRIENDLY_Aperitive Epiphany|r] which teaches you |T135978:0|t[|cRXP_FRIENDLY_Vampiric Touch|r] drops from the last boss of the dungeon, |cRXP_ENEMY_Hellscream's Phantom|r. |cRXP_WARN_Make sure you loot him for the rune!|r
+    .collect 228126,1 --Apperitive Epiphany
+    .mob Hellscream's Phantom
+step
+    .train 402857 >> Use the |T135791:0|t[|cRXP_FRIENDLY_Aperitive Epiphany|r] to train |T135978:0|t[|cRXP_FRIENDLY_Vampiric Touch|r]
+    .use 228126
 ]])
