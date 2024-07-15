@@ -1379,3 +1379,33 @@ step
     .train 440557 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of the Resourceful|r] |cRXP_WARN_to train|r |T132178:0|t[Resourcefulness]
     .use 225955
 ]])
+
+RXPGuides.RegisterGuide([[
+    #classic
+    << Hunter SoD
+    #group RestedXP Rune & Books Guide
+    #subgroup Cloak
+    #title Improved Volley
+    #name Improved Volley - 60 (Silithus)
+step
+    #completewith next
+    .zone Silithus >>Travel to Silithus
+step
+    >>Kill |cRXP_WARN_ANY mobs|r in silithus untill you loot a |T132997:0|t[|cRXP_LOOT_Busted Gizmo|r]. The droprate is relatively low but it can drop from all mobs in the zone
+    .collect 226526,1
+    .itemcount 226546,<1
+step
+    .goto Silithus,41.2,88.8
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Edwi Copperbolt|r at the Bronzebeard Encampment. Go through his dialogue to receive a |T133878:0|t[Desert Sonar]
+    .collect 226546,1 --Desert Sonar (1)
+    .itemcount 226546,<1
+step
+    .goto Silithus,36.00,71.00
+    >>|cRXP_WARN_Run around the spot marked on your map untill you see the ground moving. When you do, use the|r |T133878:0|t[Desert Sonar] |cRXP_WARN_to summon a |cRXP_ENEMY_Sandworm|r. Kill it and loot for the rune|r
+    >>The worm has a solid amount of HP and a burrow ability allowing it to disappear for a while. Make sure you're ready for a fight before spawning it
+    .collect 226587,1 --rune of shelling
+    .mob Sandworm
+step
+    .train 440560 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shelling|r] to train |T236179:0|t[|cRXP_FRIENDLY_Improved Volley|r]
+    .use 226587
+]])

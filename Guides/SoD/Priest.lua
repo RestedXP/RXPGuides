@@ -1468,4 +1468,182 @@ step
     .train 431669 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of the Lost Tribe|r] |cRXP_WARN_to train|r |T135981:0|t[Surge of Light]
 ]])
 
+RXPGuides.RegisterGuide([[
+#classic
+<< Priest SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#title Binding Heal
+#name Binding Heal - 58 (Western and Eastern Plaguelands)
 
+step << Alliance
+    #completewith next
+    .zone Stormwind City >> Travel to Stormwind
+step << Alliance
+    .goto Stormwind City,38.8,26.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r in the Stormwind Cathedral
+    .accept 84320 >> Accept Lost Heirloom
+    .target High Priestess Laurena
+step << Horde
+    #completewith next
+    .zone Orgrimmar >> Travel to Orgrimmar
+step << Horde
+    .goto Orgrimmar,35.8,87.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dietrich Praice|r in the Valley of Spirits
+    .accept 84405 >> Accept Lost Heirloom
+    .target Dietrich Praice
+step
+    #completewith next
+    .zone Western Plaguelands >> Travel to Western Plaguelands
+step
+    .goto Western Plaguelands,51.9,82.4,50 >> Travel to the large crypt located next to Sorrow Hill
+step
+    .goto Western Plaguelands,54.8,81.2
+    >>|cRXP_WARN_Enter the crypt and go left. Go downstairs and look for a small wooden chest in a small alcove to your right. Loot it for the|r |T133299:0|t[|cRXP_PICK_Family Heirloom|r]
+    .collect 227745,1 --Family Heirloom(1)
+step
+    .goto Western Plaguelands,53.8,80.2
+    >>|cRXP_WARN_Head to the bottom of the crypt. Loot the|r |T133741:0|t[|cRXP_PICK_Family Records|r] |cRXP_WARN_from a Bookshelf to the right and|r |T133735:0|t[|cRXP_PICK_Survivor Journal|r] |cRXP_WARN_from the table on the left|r
+    .collect 227747,1 --Family Records
+    .collect 227748,1 --Survivor Journal
+step << Alliance
+    #completewith next
+    .zone Stormwind City >> Return to Stormwind
+step << Alliance
+    .goto Stormwind City,38.8,26.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r in the Stormwind Cathedral
+    .turnin 84320 >> Turn in Lost Heirloom
+    .accept 84321 >> Accept Relic of Light
+    .target High Priestess Laurena
+step << Horde
+    #completewith next
+    .zone Orgrimmar >> Return to Orgrimmar
+step << Horde
+    .goto Orgrimmar,35.8,87.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dietrich Praice|r in the Valley of Spirits
+    .turnin 84405 >> Turn in Lost Heirloom
+    .accept 84406 >> Accept Relic of Light
+    .target Dietrich Praice
+step
+    #completewith next
+    >>|cRXP_WARN_The next quest will require you to loot an item from an elite area. It's possible to do solo but if you're lower level or not very geared consider looking for someone to help you|r
+    .zone Western Plaguelands >> Return to Western Plaguelands
+step
+    .goto Western Plaguelands,48.2,21.7,50 >> Head to Hearthglen, |cRXP_WARN_keep in mind that this is an elite area|r
+step
+    .goto Western Plaguelands,42.2,18.1
+    >>|cRXP_WARN_Enter the Town Hall in Hearthglen and interact with the|r |cRXP_PICK_Scarlet Ledger|r |cRXP_WARN_located on the podium. Watch out as the area is filled with elite mobs|r
+    .turnin 84406 >> Turn in Relic of Light << Horde
+    .turnin 84321 >> Turn in Relic of Light << Alliance
+    .accept 84322 >> Accept Scarlet Research
+step
+    #completewith next
+    >>|cRXP_WARN_The next quest will require you to loot an item from an elite area. It's possible to do solo but if you're lower level or not very geared consider looking for someone to help you|r
+    .zone Eastern Plaguelands >> Travel to Eastern Plaguelands
+step
+    .goto Eastern Plaguelands,77.5,81.7,50 >> Travel to Tyr's Hand, |cRXP_WARN_keep in mind that this is an elite area|r
+step
+    .goto Eastern Plaguelands,83.6,78.2
+    >>|cRXP_WARN_The rune of|r |T237537:0|t[Holy Specialization] |cRXP_WARN_is also located in Tyr's Hand, if you don't want to get it now skip this step|r 
+    >>|cRXP_WARN_If you want to get it head to the library wing of the building marked on your map and look for a book located on top of a bookshelf. Loot it for the rune. Keep in mind you can't loot it in combat|r
+    >>|cRXP_WARN_You can either clear all mobs in the room or die next to the book and release in a spot thats out of line of sight of mobs to loot the rune without having to kill anything|r
+    .collect 226418,1 --Rune of Holy Specialization
+    .train 453702,1
+step
+    #completewith next
+    .train 453702 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Holy Specialization|r] to train |T237537:0|t[Holy Specialization]
+    .train 453702,1
+    .itemcount 226418,1
+step
+    .goto Eastern Plaguelands,83.6,78.2
+    >>|cRXP_WARN_Enter the bell tower and head to the top floor. Interact with the locked box located there|r
+    .turnin 84322 >> Turn in Scarlet Research
+    .accept 84323 >> Accept The Prize Within
+step
+    .goto Eastern Plaguelands,83.6,78.2
+    >>Kill any scarlet mobs in Tyr's Hand. Loot them for an |T134245:0|t[|cRXP_LOOT_Artifact Storage Key|r]
+    >>|cRXP_WARN_You can skip farming the key and find a rogue with lockpicking of 175+ as they can also open the box for you. Skip this step if you would rather look for a rogue than farm the key|r
+    .collect 228912,1 --Artifact Storage Key
+    .itemcount 132874,<1 --Skips if you get the Shard of Light without the key
+step
+    >>Use the |T134245:0|t[|cRXP_LOOT_Artifact Storage Key|r] to unlock the |T133876:0|t[|cRXP_LOOT_Puzzle Box|r] or have a rogue open it for you with lockpicking. Loot it for the |T132874:0|t[|cRXP_LOOT_Shard of Light|r]
+    .collect 227938,1 --Shard of Light(1)
+step << Alliance
+    #completewith next
+    .zone Stormwind City >> Return to Stormwind
+step << Alliance
+    .goto Stormwind City,38.8,26.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r in the Stormwind Cathedral
+    .turnin 84323 >> Turn in The Prize Within
+    .target High Priestess Laurena
+step << Horde
+    #completewith next
+    .zone Orgrimmar >> Return to Orgrimmar
+step << Horde
+    .goto Orgrimmar,35.8,87.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dietrich Praice|r in the Valley of Spirits
+    .turnin 84323 >> Turn in The Prize Within
+    .target Dietrich Praice
+step
+    .train 402853 >> Use the |T135791:0|t[|cRXP_FRIENDLY_Jubilant Epiphany|r] to train |T135883:0|t[|cRXP_FRIENDLY_Binding Heal|r]
+    .use 228123
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Priest SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#title Vampiric Touch
+#name Vampiric Touch - 60 (Demon Fall Canyon Dungeon)
+
+step
+    #completewith next
+    >>The rune of |T135978:0|t[|cRXP_FRIENDLY_Vampiric Touch|r] drops from the last boss of Demon Fall Canyon the new dungeon added in SoD
+    .zone Felwood >> |cRXP_WARN_In order to enter the dungeon you first need a trinket rewarded from a short quest, head to Felwood to begin it|r
+    .itemcount 228172,<1 --Only shows if you don't have the trinket
+step
+    .goto Felwood,51.4,82.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Shadowtooth Emissary|r
+    .accept 84384 >> Accept Demonic Deceptions
+    .target Shadowtooth Emissary
+    .itemcount 228172,<1 --Only shows if you don't have the trinket
+step
+    #completewith next
+    .zone Winterspring >> Travel to Winterspring
+    .itemcount 228172,<1 --Only shows if you don't have the trinket
+step
+    .goto Winterspring,65.6,21.4
+    >>Look for |cRXP_ENEMY_Berserk Owlbeasts|r north of Everlook. Kill them and loot them for the |T237413:0|t[|cRXP_LOOT_Owlbeast Pineal Glands|r]
+    .complete 84384,1
+    .mob Berserk Owlbeast
+    .itemcount 228172,<1 --Only shows if you don't have the trinket
+step
+    #completewith next
+    .zone Felwood >> Return to Felwood
+    .itemcount 228172,<1 --Only shows if you don't have the trinket
+step
+    .goto Felwood,51.4,82.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Shadowtooth Emissary|r
+    .turnin 84384 >> Turn in Demonic Deceptions
+    .target Shadowtooth Emissary
+    .itemcount 228172,<1 --Only shows if you don't have the trinket
+step
+    #completewith next
+    +Equip the |T136232:0|t[|cRXP_FRIENDLY_Shadowtooth Illusion Ward|r] in any of your trinket slots. You need it equipped in order to be able to enter the dungeon
+    .use 228172
+    .itemcount 228172,<1
+step
+    >>|cRXP_WARN_The rune of|r |T135978:0|t[|cRXP_FRIENDLY_Vampiric Touch|r] |cRXP_WARN_drops from the last boss of Demon Fall Canyon the new dungeon added in SoD. Start looking for a group for it as you head to Ashenvale|r
+    >>If you're flying, fly to Talendris Point in Azshara instead of Astranaar. It's closer to the dungeon entrance << Alliance
+    .zone Ashenvale >> Travel to Ashenvale
+step
+    .goto Ashenvale,84.5,75.0,50 >> Head to the entrance of the Demon Fall Canyon dungeon
+step
+    >>Clear the dungeon. |T135791:0|t[|cRXP_FRIENDLY_Aperitive Epiphany|r] which teaches you |T135978:0|t[|cRXP_FRIENDLY_Vampiric Touch|r] drops from the last boss of the dungeon, |cRXP_ENEMY_Hellscream's Phantom|r. |cRXP_WARN_Make sure you loot him for the rune!|r
+    .collect 228126,1 --Apperitive Epiphany
+    .mob Hellscream's Phantom
+step
+    .train 402857 >> Use the |T135791:0|t[|cRXP_FRIENDLY_Aperitive Epiphany|r] to train |T135978:0|t[|cRXP_FRIENDLY_Vampiric Touch|r]
+    .use 228126
+]])

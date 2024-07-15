@@ -2088,9 +2088,361 @@ step << Alliance
     >>Loot the red book next to |cRXP_ENEMY_Nathanos Blightcaller|r. Its outside the house, to the left of the door. It contains the |T134419:0|t[|cRXP_FRIENDLY_Rune of Ranged Weapon Specialization|r]
     >>|cRXP_WARN_If there's someone nearby ask them to pull|r |cRXP_ENEMY_Nathanos Blightcaller|r |cRXP_WARN_away for a while while you safely loot the rune|r
     >>|cRXP_WARN_If there's no one nearby you can die to|r |cRXP_ENEMY_Nathanos|r |cRXP_WARN_and then respawn while standing inside the house and outside of his line of sight. Then loot the book from inside the house either by using the interact key or angling your camera so you can click it|r << Warrior/Rogue
-    >>|cRXP_WARN_If there's no one nearby set your pet to|r |T136106:0|t[Stay] |cRXP_WARN_a decent distance away from|r |cRXP_ENEMY_Nathanos|r |cRXP_WARN_then send a pet|r |T132152:0|t[Attack] |cRXP_WARN_command to aggro him onto your pet. Once he's targetting your pet set your pet to|r |T132311:0|t[Passive], |cRXP_WARN_this will make your pet return to it's Stay position and give you time to loot the rune|r << Hunter
+    >>|cRXP_WARN_If there's no one nearby set your pet to|r |T136106:0|t[Stay] |cRXP_WARN_a decent distance away from|r |cRXP_ENEMY_Nathanos|r |cRXP_WARN_then send a pet|r |T132152:0|t[Attack] |cRXP_WARN_command to aggro him onto your pet. Once he's targetting your pet set your pet to|r |T132311:0|t[Passive], |cRXP_WARN_this will make your pet return to it's Stay position. Walk next to the book and use |T132293:0|t[Feign Death] to drop combat and loot the rune|r << Hunter
     .collect 226410,1 --Rune of Ranged Weapon Specialization
 step
     .train 453692 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Ranged Weapon Specialization|r] |cRXP_WARN_to learn|r |T135490:0|t[Ranged Weapon Specialization]
     .use 226410
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Priest SoD/Paladin SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Holy Specialization
+#name Holy Specialization - 60 (Eastern Plaguelands)
+
+step
+    #completewith next
+    >>|cRXP_WARN_Getting this rune will require you to fight mobs in an elite area. It's possible to do solo but if you're lower level or not very geared consider looking for someone to help you|r
+    .zone Eastern Plaguelands >> Travel to Eastern Plaguelands
+step
+    >>|cRXP_WARN_You can get this rune at the same time as|r |T135883:0|t[|cRXP_FRIENDLY_Binding Heal|r] |cRXP_WARN_if you progress that questline first. Go to the|r |T135883:0|t[|cRXP_FRIENDLY_Binding Heal|r] |cRXP_WARN_rune guide if you'd rather get both runes at the same time|r << Priest
+    .goto Eastern Plaguelands,77.5,81.7,50 >> Travel to Tyr's Hand, |cRXP_WARN_keep in mind that this is an elite area|r
+step
+    .goto Eastern Plaguelands,83.6,78.2
+    >>|cRXP_WARN_Head to the library wing of the building marked on your map and look for a book located on top of a bookshelf. Loot it for the rune. Keep in mind you can't loot it in combat|r
+    >>|cRXP_WARN_You can either clear all mobs in the room or die next to the book and release in a spot thats out of line of sight of mobs to loot the rune without having to kill anything|r
+    .collect 226418,1 --Rune of Holy Specialization
+    .train 453702,1
+step
+    #completewith next
+    .train 453702 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Holy Specialization|r] to train |T237537:0|t[Holy Specialization]
+    .train 453702,1
+    .itemcount 226418,1
+    .use 226418
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Mage SoD/Druid SoD/Hunter SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Arcane Specialization
+#name Arcane Specialization - 60 (Western Plaguelands)
+
+step
+    #completewith next
+    >>|cRXP_WARN_Getting this rune will require you to fight mobs in an elite area. It's possible to do solo but if you're lower level or not very geared consider looking for someone to help you|r
+    .zone Western Plaguelands >> Travel to Western Plaguelands
+step
+    .goto Western Plaguelands,48.7,22.4,50 >> Travel to Hearthglen, |cRXP_WARN_keep in mind that this is an elite area|r
+step
+    .goto Western Plaguelands,47.3,13.6
+    >>|cRXP_WARN_Head to the top of the tower marked on your map. Look for a red book laying in a corner next to a bookshelf, it's guarded by a|r |cRXP_ENEMY_Scarlet Priest|r. |cRXP_WARN_Loot it for the rune|r
+    .collect 226413,1 --Rune of Arcane Specialization
+    .train 453702,1
+step
+    #completewith next
+    .train 453695 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Arcane Specialization|r] to train |T132849:0|t[Arcane Specialization]
+    .train 453695,1
+    .itemcount 226413,1
+    .use 226413
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Hunter SoD/Paladin SoD/Warrior SoD/Shaman SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Axe Specialization
+#name Axe Specialization - 58 (Burning Steppes)
+
+step
+    #completewith next
+    .zone Burning Steppes >> Travel to Burning Steppes
+step
+    .goto Burning Steppes,40.3,34.9,100 >> Travel to the Blackrock Stronghold
+step
+    .goto Burning Steppes,39.9,34.1
+    >>|cRXP_WARN_Enter the Stronghold and look for a red book laying in the location marked on your map. Loot it for the rune|r
+    .collect 226407,1 --Rune of Axe Specialization
+step
+    #completewith next
+    .train 453688 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Axe Specialization|r] to train |T132394:0|t[Axe Specialization]
+    .itemcount 226407,1
+    .use 226407
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Hunter SoD/Druid SoD/Warrior SoD/Shaman SoD/Mage SoD/Priest SoD/Rogue SoD/Warlock SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Dagger Specialization
+#name Dagger Specialization - 60 (Silithus)
+
+step
+    #completewith next
+    .zone Burning Steppes >> Travel to Silithus
+step
+    .goto Silithus,20,85,50 >> Travel to the south of the zone to a tent near the gates of Ahn'Qiraj
+step
+    .goto Silithus,20,85
+    >>|cRXP_WARN_Enter the tent and look for a red book laying in the location marked on your map. Loot it for the rune|r
+    .collect 226409,1 --Rune of Dagger Specialization
+step
+    #completewith next
+    .train 453690 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Dagger Specialization|r] to train |T135641:0|t[Dagger Specialization]
+    .itemcount 226409,1
+    .use 226409
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Druid SoD/Warrior SoD/Shaman SoD/Rogue SoD/Warlock SoD/Paladin SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Defense Specialization
+#name Defense Specialization - 60 (Blackrock Mountain)
+
+step
+    #completewith next
+    .zone 25 >> Travel to the Blackrock Mountain either through Searing Gorge or the Burning Steppes
+step
+    .goto 1415/0,-1232.500,-7612.600,20 >> Travel to the east side of the molten span circle untill you find a doorway leading to a path to the Lower Blackrock Spire
+step
+    .goto 1415/0,-1294.200,-7574.700,5 >> Travel up the path and enter the first side room to your right. |cRXP_WARN_You might have to kill elite mobs standing in your way as you cannot loot the book while in combat|r
+step
+    .goto 1415/0,-1302.100,-7583.400
+    >>|cRXP_WARN_Look for a red book laying on the ground in this room. It can spawn in multiple locations. Loot it for the rune|r
+    .collect 226694,1 --Rune of Defense Specialization
+step
+    #completewith next
+    .train 459313 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Defense Specialization|r] to train |T134952:0|t[Defense Specialization]
+    .itemcount 226694,1
+    .use 226694
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Druid SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Feral Combat Specialization
+#name Feral Combat Specialization - 60 (Winterspring)
+
+step
+    #completewith next
+    .zone Winterspring >> Travel to Winterspring
+step
+    .goto Winterspring,49.0,8.0,50 >> Head north to the Frostsaber Rock
+step
+    .goto Winterspring,49.0,8.0
+    >>|cRXP_WARN_Look for a red book in the marked location. It might be guarded by two level 55-56|r |cRXP_ENEMY_Frostsabers|r |cRXP_WARN_Loot it for the rune|r
+    .collect 226419,1 --Rune of Feral Combat Specialization
+step
+    #completewith next
+    .train 453703 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Feral Combat Specialization|r] to train |T132116:0|t[Feral Combat Specialization]
+    .itemcount 226419,1
+    .use 226419
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Hunter SoD/Mage SoD/Shaman SoD/Warlock SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Fire Specialization
+#name Fire Specialization - 52 (Searing Gorge)
+
+step
+    #completewith next
+    .zone Searing Gorge >> Travel to Searing Gorge
+step
+    .goto 1427/0,-1425.800,-6772.400,25 >> Enter the Slag Pits via the cave entrance marked on your map
+step
+    .goto 1427/0,-1306.900,-6642.800,25 >> Cross the bridge heading north
+step
+    .goto 1427/0,-1225.300,-6623.600
+    >>|cRXP_WARN_Look for a red book on a bench behind|r |cRXP_ENEMY_Overseer Maltorius|r. |cRXP_WARN_Loot it for the rune. Keep in mind you can't do it while in combat|r
+    >>|cRXP_WARN_If you're higher level you can loot it without pulling|r |cRXP_ENEMY_Overseer Maltorius|r |cRXP_WARN_if you hug the very edge of his balcony, if you can't do it try asking someone to pull him away as you loot the book or kill him and his guards|r
+    >>|cRXP_WARN_As a Hunter you can pull him away with your pet then cast|r |T132293:0|t[Feign Death] |cRXP_WARN_while next to the book to drop combat and loot it. Make sure you pull the Overseer somewhere oustide of your line of sight or he might put you back in combat|r << Hunter
+    .collect 226414,1 --Rune of Fire Specialization
+step
+    #completewith next
+    .train 453696 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Fire Specialization|r] to train |T132847:0|t[Fire Specialization]
+    .itemcount 226414,1
+    .use 226414
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Hunter SoD/Warrior SoD/Rogue SoD/Druid SoD/Shaman SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Fist Weapon Specialization
+#name Fist Weapon Specialization - 60 (Silithus)
+
+step
+    #completewith next
+    .zone Silithus >> Travel to Silithus
+step
+    .goto 1427/0,-1225.300,-6623.600
+    >>|cRXP_WARN_Look for a red book in the marked location. It's shrouded by twilight and might be a bit hard to see|r
+    .collect 226411,1 --Rune of Fist Weapon Specialization
+step
+    #completewith next
+    .train 453691 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Fist Weapon Specialization|r] to train |T133832:0|t[Fist Weapon Specialization]
+    .itemcount 226411,1
+    .use 226411
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Mage SoD/Hunter SoD/Shaman SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Frost Specialization
+#name Frost Specialization - 60 (Winterspring)
+
+step
+    #completewith next
+    .zone Winterspring >> Travel to Winterspring
+step
+    .goto Winterspring,59.0,59.0,50 >> Head south to the Owlbeast Camp
+step
+    .goto Winterspring,59.0,59.0
+    >>|cRXP_WARN_Look for a red book in the marked location. It might be guarded by a couple level 57-58|r |cRXP_ENEMY_Owlbeasts|r |cRXP_WARN_Loot it for the rune|r
+    .collect 226415,1 --Rune of Frost Specialization
+step
+    #completewith next
+    .train 453697 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frost Specialization|r] to train |T132852:0|t[Frost Specialization]
+    .itemcount 226415,1
+    .use 226415
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Druid SoD/Rogue SoD/Shaman SoD/Hunter SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Nature Specialization
+#name Nature Specialization - 56 (Felwood)
+
+step
+    #completewith next
+    .zone Felwood >> Travel to Felwood
+step
+    .goto Felwood,63.42,7.71,50 >> Head north to Felpaw Village
+step
+    .goto Felwood,62.8,7.5
+    >>|cRXP_WARN_Look for a red book in the marked location. It's in a camp next to|r |cRXP_ENEMY_Chieftain Bloodmaw|r |cRXP_WARN_Loot it for the rune|r
+    .collect 226416,1 --Rune of Nature Specialization
+step
+    #completewith next
+    .train 453698 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Nature Specialization|r] to train |T132848:0|t[Nature Specialization]
+    .itemcount 226416,1
+    .use 226416
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warrior SoD/Rogue SoD/Shaman SoD/Paladin SoD/Priest SoD/Druid SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Mace Specialization
+#name Mace Specialization - 60 (Wetlands)
+
+step
+    #completewith next
+    .zone Wetlands >> Travel to Wetlands
+step
+    .goto 1437/0,-3451.700,-3450.800,25 >> Head east to the start of the path to Grim Batol
+step
+    .goto 1437/0,-3582.500,-4138.200,25 >> Follow the road up all the way to Grim Batol. |cRXP_WARN_Don't fight any of the red drakes on the way you can make it there without having to kill any of them|r
+step
+     .goto 1437/0,-3451.900,-4052.500
+    >>|cRXP_WARN_Go up the path to the gate of Grim Batol. Look for a red book to the right side of the entrance. Loot it for the rune|r
+    .collect 226408,1 --Rune of Mace Specialization
+step
+    #completewith next
+    .train 453689 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Mace Specialization|r] to train |T133038:0|t[Mace Specialization]
+    .itemcount 226408,1
+    .use 226408
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warrior SoD/Warlock SoD/Shaman SoD/Mage SoD/Priest SoD/Druid SoD/Hunter SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Pole Weapon Specialization
+#name Pole Weapon Specialization - 60 (Azshara)
+
+step
+    #completewith next
+    .zone Azshara >> Travel to Azshara
+step
+    .goto Azshara,76.43,43.95,100 >> Head to the Temple of Arkkoran
+step
+    .goto Azshara,76.88,44.24
+    >>|cRXP_WARN_Look for red book laying on a moonwell inside the temple. Loot it for the rune|r
+    .collect 226412,1 --Rune of Pole Weapon Specialization
+step
+    #completewith next
+    .train 453694 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Pole Weapon Specialization|r] to train |T135145:0|t[Pole Weapon Specialization]
+    .itemcount 226412,1
+    .use 226412
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warlock SoD/Priest SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Shadow Specialization
+#name Shadow Specialization - 60 (Blasted Lands)
+
+step
+    #completewith next
+    .zone Blasted Lands >> Travel to Blasted Lands
+step
+    .goto Blasted Lands,45.19,55.29,100 >> Head south to the Tainted Scar. |cRXP_WARN_You will have to traverse an elite area with a lot of CC immune high level mobs. You will most likely have to deathrun your way to the rune location|r
+step
+    .goto Blasted Lands,33.0,48.0
+    >>|cRXP_WARN_Look for red book laying on an altar marked on your map. Loot it for the rune|r
+    .collect 226417,1 --Rune of Shadow Specialization
+step
+    #completewith next
+    .train 453700 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadow Specialization|r] to train |T132851:0|t[Shadow Specialization]
+    .itemcount 226417,1
+    .use 226417
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Hunter SoD/Warrior SoD/Rogue SoD/Paladin SoD/Mage SoD/Warlock SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Sword Specialization
+#name Sword Specialization - 60 (Deadwind Pass)
+
+step
+    #completewith next
+    .zone Deadwind Pass >> Travel to Deadwind Pass
+step
+    .goto Deadwind Pass,47.40,75.50 >> Head south to Karazhan
+step
+    .goto 1430/0,-2019.100,-11170.300,10 >> Enter the Master's Cellar
+step
+    .goto Deadwind Pass,43.06,74.58
+    >>|cRXP_WARN_Enter the cave area and look for a red book in the location marked on your map. Loot it for the rune|r
+    .collect 226406,1 --Rune of Sword Specialization
+step
+    #completewith next
+    .train 453635 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Sword Specialization|r] to train |T132223:0|t[Sword Specialization]
+    .itemcount 226406,1
+    .use 226406
 ]])

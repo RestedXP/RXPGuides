@@ -1862,3 +1862,79 @@ step
     .train 416002 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Gladiator|r] |cRXP_WARN_to learn|r |T236541:0|t[Gladiator Stance]
     .use 220164
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warrior SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#title Fresh Meat
+#name Fresh Meat - 55 (Burning Steppes)
+
+step
+    #completewith next
+    .zone Burning Steppes >>Travel to Burning Steppes
+step
+    .train 440492,1
+    .goto Burning Steppes,40.4,33.6
+    .aura 459616 >>|cRXP_WARN_Kill |cRXP_ENEMY_Blackrock Orcs|r at Blackrock Stronghold until you receive the|r |T132353:0|t[Rhythm of War] |cRXP_WARN_buff|r
+    .mob Blackrock Battlemaster
+    .mob Blackrock Slayer
+    .mob Blackrock Warlock
+    .mob Blackrock Sorcerer
+step
+    .train 440492,1
+    .goto Burning Steppes,39.549,27.828
+    >>|cRXP_WARN_Head to the|r |cRXP_PICK_Altar of Reverence|r
+    >>|cRXP_WARN_Once there, type "/salute" in your chatbox. This will summon a|r |cRXP_ENEMY_Revered Champion|r
+    >>Kill the |cRXP_ENEMY_Revered Champion|r, then click the |cRXP_PICK_Altar of Reverence|r after
+    .accept 84124 >> Accept Legacy of Valor
+    .turnin 84124 >> Turn in Legacy of Valor
+    .mob Revered Champion
+step
+    .train 440492 >>|cRXP_WARN_Use the|r |T133747:0|t[|cRXP_LOOT_Rune of the First Warrior|r] |cRXP_WARN_to learn|r |T237516:0|t[Fresh Meat]
+    .use 226680
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warrior SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#title Sudden Death
+#name Sudden Death - 57 (Silithus)
+
+step
+    #completewith next
+    .zone Silithus >>Travel to Silithus
+step
+    .train 440494,1
+    #loop
+    .goto Silithus,55.4,53.2,60,0
+    .goto Silithus,47.0,53.6,60,0
+    .goto Silithus,45.0,74.0,60,0
+    .goto Silithus,44.2,83.4,60,0
+    .goto Silithus,33.6,69.2,60,0
+    .goto Silithus,41.0,65.2,60,0
+    .goto Silithus,34.8,33.6,60,0
+    .goto Silithus,31.0,17.2,60,0
+    .gossip 228611,2 >>|cRXP_WARN_Look for a |cRXP_FRIENDLY_Wandering Swordsman|r throughout Silithus|r
+    >>|cRXP_WARN_Talk to the |cRXP_FRIENDLY_Wandering Swordsman|r. You must select the Medium or Hard difficulty to be awarded with the rune|r
+    >>|cRXP_WARN_You will be instantly teleported to a small platform and the encounter will begin against|r |cRXP_ENEMY_Khonsu|r
+    >>|cRXP_WARN_It will cast abilities that look like [Cleave]. When you see those animations quickly move away from them|r
+    >>|cRXP_WARN_When he casts [Thundering Stomp] you MUST move to one of the small edges sticking off the platform, otherwise you'll be knocked off|r
+    >>|cRXP_WARN_It is also recommended you run the|r |T132342:0|t[Victory Rush] |cRXP_WARN_rune as you will be killing adds throughout the fight|r
+    .unitscan Wandering Swordsman
+step
+    .train 440494,1
+    >>|cRXP_WARN_Defeat |cRXP_ENEMY_Khonsu|r
+    >>|cRXP_WARN_It will cast abilities that look like [Cleave]. When you see those animations quickly move away from them|r
+    >>|cRXP_WARN_When he casts [Thundering Stomp] you MUST move to one of the small edges sticking off the platform, otherwise you'll be knocked off|r
+    >>|cRXP_WARN_Once you are successful, accept and turn in the quest|r
+    .accept 84317 >> Accept Infinite Midnight
+    .turnin 84317 >> Turn in Infinite Midnight
+    .mob Titanic Watcher
+step
+    .train 440494 >>|cRXP_WARN_Use the|r |T133739:0|t[|cRXP_LOOT_Timeless Wanderer's Insights|r] |cRXP_WARN_to learn|r |T132346:0|t[Sudden Death]
+    .use 226679
+]])

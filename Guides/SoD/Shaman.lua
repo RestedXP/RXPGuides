@@ -3092,3 +3092,112 @@ step
 step
     .train 432241 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Overcharged|r] |cRXP_WARN_to train|r |T132213:0|t[Overcharged]
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Shaman SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#title Storm, Earth, and Fire
+#name Storm, Earth, and Fire - 52 (Felwood)
+
+step
+    .train 440634,1
+    #completewith next
+    .zone Felwood >>Travel to Felwood
+step
+    .goto Felwood,62.4,9.0
+    .train 440634,1
+    >>Kill |cRXP_ENEMY_Deadwood Shamans|r, |cRXP_ENEMY_Deadwood Avengers|r and |cRXP_ENEMY_Deadwood Den Watchers|r. Loot them for the |T134918:0|t[|cRXP_LOOT_Voltaic Icon|r]
+    .goto Feralas,76.6,48.0
+    .collect 225838,1
+    .mob Deadwood Shaman
+    .mob Deadwood Avenger
+    .mob Deadwood Den Watcher
+step
+    .train 440634,1
+    .equip 18,225838 >> |cRXP_WARN_Equip the|r |T134918:0|t[|cRXP_LOOT_Voltaic Icon|r]
+    .use 225838
+step
+    .train 440634,1
+    .aura 408828 >>|cRXP_WARN_You must now kill 3 enemies with a single cast of|r |T136015:0|t[Chain Lightning]
+    >>|cRXP_WARN_Pull 3 mobs and lower their health to roughly 5% each then cast|r |T136015:0|t[Chain Lightning]
+step
+    .itemcount 225838,1
+    .use 225838
+    .train 440634 >>|cRXP_WARN_Use the|r |T134918:0|t[|cRXP_LOOT_Voltaic Icon|r] |cRXP_WARN_to learn|r |T237588:0|t[Storm, Earth, and Fire]
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Shaman SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#title Coherence
+#name Coherence - 55 (Burning Steppes)
+
+step
+    .train 416062,1
+    #completewith next
+    .zone Burning Steppes >>Travel to Burning Steppes
+step
+    .train 416062,1
+    #loop
+    .goto Burning Steppes,62.4,9.0,60,0
+    .goto Burning Steppes,69.4,31.8,60,0
+    .goto Burning Steppes,61.4,31.8,60,0
+    .goto Burning Steppes,51.2,35.6,60,0
+    .goto Burning Steppes,55.6,49.2,60,0
+    .goto Burning Steppes,54.8,62.2,60,0
+    .goto Burning Steppes,35.6,61.6,60,0
+    .goto Burning Steppes,41.6,43.6,60,0
+    >>Kill |cRXP_ENEMY_Greater Obsidian Elementals|r. Loot them for the |cRXP_LOOT_Molten Obsidian Core|r
+    .collect 225676,1
+    .mob Greater Obsidian Elemental
+step
+    .train 416062,1
+    .goto Redridge Mountains,44.6,50.0
+    >>|cRXP_WARN_You now have 10 minutes to jump into water anywhere in the world|r
+    >>|cRXP_WARN_Travel to Redridge Mountains and jump into the lake|r
+    >>|cRXP_WARN_If you Hearthstone is near water you may also do that instead|r
+    >>|cRXP_WARN_Jumping into water will transform the |cRXP_LOOT_Molten Obsidian Core|r into a|r |T237477:0|t[|cRXP_LOOT_Sooty Obsidian Core|r]
+    .collect 225675,1
+step
+    .train 416062,1
+    .use 225675 >> |cRXP_WARN_Open the|r |T237477:0|t[|cRXP_LOOT_Sooty Obsidian Core|r] |cRXP_WARN_to receive the|r |T134419:0|t[|cRXP_LOOT_Rune of Composure|r]
+    .collect 225740,1
+step
+    .itemcount 225740,1
+    .use 225740
+    .train 416062 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_LOOT_Rune of Composure|r] |cRXP_WARN_to learn|r |T237586:0|t[Coherence]
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Shaman SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#title Feral Sprit
+#name Feral Sprit - 60 (Winterspring)
+
+step
+    .train 440630,1
+    #completewith next
+    .zone Winterspring >>Travel to Winterspring
+    >>|cRXP_WARN_Note you must kill a level 60 elite. Consider bringing a friend|r
+step
+    #completewith next
+    .goto Winterspring,67.93,41.44,50 >> Enter the Yeti cave
+step
+    Winterspring,69.87,37.92
+    >>|cRXP_WARN_Travel to the back of the Yeti cave and talk to the chained elemental|r |cRXP_FRIENDLY_Frijidar|r
+    >>|cRXP_WARN_He will become hostile after a few seconds|r
+    >>Kill |cRXP_ENEMY_Frijidar|r. Loot it for the |T134419:0|t[|cRXP_LOOT_Rune of the Bound Spirit|r]
+    .collect 225914,1
+    .mob Frijidar
+    .skipgossip
+step
+    .itemcount 225914,1
+    .use 225914
+    .train 440630 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_LOOT_Rune of the Bound Spirit|r] |cRXP_WARN_to learn|r |T237577:0|t[Feral Spirit]
+]])

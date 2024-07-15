@@ -2156,3 +2156,51 @@ step
     .itemcount 227921,1
     .train 436609 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Knives|r] |cRXP_WARN_to train|r |T236273:0|t[Fan of Knives]
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Rogue SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#title Blunderbuss
+#name Blunderbuss - 60 (Eastern Plaguelands)
+
+step
+    .train 415922,1
+    .zone Eastern Plaguelands >>Travel to Eastern Plaguelands
+step
+    .train 415922,1
+    .goto Eastern Plaguelands,83,85
+    >>Open |cRXP_LOOT_Scarlet Footlockers|r throughout Try's Hand until you loot a |cRXP_LOOT_Sending Signal|r
+    .collect 227451,1
+step
+    .train 415922,1
+    #completewith FinalPillar
+    >>|cRXP_WARN_For the following steps you must click FOUR |cRXP_PICK_Sending Pillars|r in the correct order. After clicking one you will be RANDOMLY teleported to a different one. Ensure you are at the correct location before you click another one!|r
+step
+    .train 415922,1
+    .goto Eastern Plaguelands,82,57
+    .cast 6477,6478 >>Click the first |cRXP_PICK_Sending Pillar|r |cRXP_WARN_behind Light's Hope Chapel|r
+step
+    .train 415922,1
+    .goto Eastern Plaguelands,40,92
+    .cast 6477,6478 >>Click the second |cRXP_PICK_Sending Pillar|r |cRXP_WARN_in Darrowshire|r
+step
+    .train 415922,1
+    .goto Eastern Plaguelands,70,34
+    .cast 6477,6478 >>Click the third |cRXP_PICK_Sending Pillar|r |cRXP_WARN_in Northdale|r
+step
+    .train 415922,1
+    #label FinalPillar
+    .goto Eastern Plaguelands,14,30
+    .cast 6477,6478 >>Click the fourth |cRXP_PICK_Sending Pillar|r |cRXP_WARN_in Terrordale|r
+step
+    .train 415922,1
+    >>|cRXP_WARN_Enter the House|r
+    >>Open |cRXP_PICK_Adon's Trunk|r on the ground. Loot it for the |T134419:0|t[|cRXP_LOOT_Rune of the Swashbuckler|r]
+    .collect 227922,1
+step
+    .use 227922
+    .itemcount 227922,1
+    .train 415922 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Swashbuckler|r] |cRXP_WARN_to train|r |T134538:0|t[Blunderbuss]
+]])

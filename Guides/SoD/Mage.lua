@@ -3475,3 +3475,114 @@ step
     .train 440858 >> |cRXP_WARN_Use the|r |T134939:0|t[|cRXP_LOOT_Spell Notes: Frozen Orb|r] |cRXP_WARN_to train|r |T135851:0|t[Frozen Orb]
     .use 225690
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#name Arcane Barrage - 60 (Azeroth)
+#title Arcane Barrage
+
+<< Mage SoD
+
+step
+    .train 401722,1
+    #completewith Necromancy101
+    .zone Western Plaguelands >> Travel to Western Plaguelands
+step
+    .train 401722,1
+    .goto Western Plaguelands,38.3,54.6
+    >>Loot the |cRXP_LOOT_Undead Potatoes|r book in the Felstone Field farmhouse upstairs
+    .collect 228132,1
+    .isQuestAvailable 84395
+step
+    .train 401722,1
+    #label Necromancy101
+    .goto Western Plaguelands,69.41,72.84
+    >>Loot the |cRXP_LOOT_Necromancy 101|r in the Scholomance Keep
+    .collect 228141,1
+    .isQuestAvailable 84402
+step
+    .train 401722,1
+    #completewith UndeadMenace
+    .zone Eastern Plaguelands >> Travel to Western Plaguelands
+step
+    .train 401722,1
+    .goto Eastern Plaguelands,81.7,57.8
+    >>Loot |cRXP_LOOT_A Study of the Light|r book
+    .collect 228135,1
+    .isQuestAvailable 84398
+step
+    .train 401722,1
+    .goto Eastern Plaguelands,54.5,50.8
+    >>Loot |cRXP_LOOT_The Knight and the Lady|r book
+    .collect 228138,1
+    .isQuestAvailable 84400
+step
+    .train 401722,1
+    #label UndeadMenace
+    .goto Eastern Plaguelands,31.250,21.000
+    >>Loot the |cRXP_LOOT_Scourge: Undead Menace or Misunderstood?|r book
+    .collect 228140,1
+    .isQuestAvailable 84401
+step
+    .train 401722,1
+    #completewith next
+    .subzone 1445 >> Travel to Searing Gorge or Burning Steppes and head into Blackrock Mountain
+step
+    .train 401722,1
+    .goto 1415,48.388,63.626
+    >>|cRXP_WARN_Drop down the chain and head towards the Blackrock Depths enterance|r
+    >>Loot the |cRXP_LOOT_Magma or Lava?|r book on the ground
+    .collect 228133,1
+    .isQuestAvailable 84396
+step
+    .train 401722,1
+    #completewith next
+    .zone Winterspring >> Travel to Winterspring
+step
+    .train 401722,1
+    .goto Winterspring,60.7,37.7
+    >>Loot the |cRXP_LOOT_Ka-Boom!|r book on the shelf
+    .collect 228136,1
+    .isQuestAvailable 84399
+step
+    .train 401722,1
+    #completewith next
+    .zone Felwood >> Travel to Felwood
+    .subzoneskip 1216
+step
+    .train 401722,1
+    .goto Felwood,65.214,3.248
+    >>|cRXP_WARN_Head to the Timbermaw Hold tunnel. Note if you are not at least Unfriendly with Timbermaw Hold the furbolgs will attack you|r
+    >>Loot the |cRXP_LOOT_Northern Kalimdor - A Comprehensive Guide|r book on the ground
+    .collect 228134,1
+    .isQuestAvailable 84397
+step
+    .train 401722,1
+    .goto Stormwind City,38.6,79.6 << Alliance
+    .goto 1458,73.6,32.6 << Horde
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r << Alliance
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oran Snakewrithe|r  << Horde
+    .accept 84395 >> Turn in Undead Potatoes
+    .accept 84402 >> Turn in Necromancy 101
+    .accept 84398 >> Turn in A Study of the Light
+    .accept 84400 >> Turn in The Knight and the Lady
+    .accept 84401 >> Turn in Scourge: Undead Menace or Misunderstood?
+    .accept 84396 >> Turn in Magma or Lava?
+    .accept 84399 >> Turn in Ka-Boom!
+    .accept 84397 >> Turn in Northern Kalimdor - A Comprehensive Guide
+    .target Jennea Cannon << Alliance
+    .target Oran Snakewrithe << Horde
+step
+    .train 401722,1
+    .goto Stormwind City,38.6,79.6 << Alliance
+    .goto 1458,73.6,32.6 << Horde
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r << Alliance
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oran Snakewrithe|r << Horde
+    >>|cRXP_WARN_IF YOU CANNOT ACCEPT THIS QUEST ENSURE YOU HAVE ACQUIRED THE RUNES FOR Icy Veins/Spell Power/Deep Freeze AS THIS IS A CONTINUATION OF THOSE RUNES AND IS REQUIRED|r
+    .accept 84394 >> Accept Greater Friend of the Library
+    .turnin 84394 >> Turn in Greater Friend of the Library
+    .target Jennea Cannon << Alliance
+    .target Oran Snakewrithe << Horde
+]])
