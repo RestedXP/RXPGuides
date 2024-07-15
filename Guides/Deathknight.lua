@@ -50,9 +50,9 @@ step
     .complete 12842,1 --Weapon emblazoned (1)
 step
     .goto ScarletEnclave,48.3,28.2
-    |cRXP_FRIENDLY_Instructor Razuvious|r
+    >>Talk to |cRXP_FRIENDLY_Instructor Razuvious|r
     .turnin 12842 >>Turn in Runeforging: Preparation For Battle
-    get Instructor Razuvious
+    .target Instructor Razuvious
     .accept 12848 >>Accept The Endless Hunger
 step
     .goto ScarletEnclave,48.4,29.0
@@ -153,7 +153,6 @@ step
 step
     .goto ScarletEnclave,53.7,36.3,50,0
     .goto ScarletEnclave,52.1,38.2
-	>>Talk to Orithos
     .target Orithos the Sky Darkener
     >>Talk to |cRXP_FRIENDLY_Orithos the Sky Darkener|r
     .accept 12679 >>Accept Tonight We Dine In Havenshire
@@ -610,7 +609,7 @@ step
     .accept 12755 >>Accept A Meeting With Fate
 step
     .goto ScarletEnclave,65.6,83.9
-	>>Ride all the way to General Abbendis on the beach
+	>>Ride all the way to |cRXP_FRIENDLY_General Abbendis|r on the beach
     >>Talk to |cRXP_FRIENDLY_High General Abbendis|r
     .turnin 12755 >>Turn in A Meeting With Fate
     .target High General Abbendis
