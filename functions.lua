@@ -3351,15 +3351,15 @@ end
 function addon.functions.areapoiexists(self, text, zone, ...)
     if type(self) == "string" then
         local element = {}
-        element.zone = addon.GetMapId(zone) or zone
+        element.zone = addon.GetMapId(zone) or tonumber(zone)
         local ids = {...}
         for i,v in pairs(ids) do
             ids[i] = tonumber(v)
         end
-        if not ids[1] then
+        if not (ids[1] and element.zone) then
             return addon.error(
                         L("Error parsing guide") .. " " .. addon.currentGuideName ..
-                           ": Invalid PoI ID\n" .. self)
+                           ": Invalid PoI ID or map ID\n" .. self)
         end
         element.ids = ids
         if text and text ~= "" then element.text = text end
