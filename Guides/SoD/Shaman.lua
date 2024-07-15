@@ -3171,3 +3171,33 @@ step
     .use 225740
     .train 416062 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_LOOT_Rune of Composure|r] |cRXP_WARN_to learn|r |T237586:0|t[Coherence]
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Shaman SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#title Feral Sprit
+#name Feral Sprit - 60 (Winterspring)
+
+step
+    .train 440630,1
+    #completewith next
+    .zone Winterspring >>Travel to Winterspring
+    >>|cRXP_WARN_Note you must kill a level 60 elite. Consider bringing a friend|r
+step
+    #completewith next
+    .goto Winterspring,67.93,41.44,50 >> Enter the Yeti cave
+step
+    Winterspring,69.87,37.92
+    >>|cRXP_WARN_Travel to the back of the Yeti cave and talk to the chained elemental|r |cRXP_FRIENDLY_Frijidar|r
+    >>|cRXP_WARN_He will become hostile after a few seconds|r
+    >>Kill |cRXP_ENEMY_Frijidar|r. Loot it for the |T134419:0|t[|cRXP_LOOT_Rune of the Bound Spirit|r]
+    .collect 225914,1
+    .mob Frijidar
+    .skipgossip
+step
+    .itemcount 225914,1
+    .use 225914
+    .train 440630 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_LOOT_Rune of the Bound Spirit|r] |cRXP_WARN_to learn|r |T237577:0|t[Feral Spirit]
+]])
