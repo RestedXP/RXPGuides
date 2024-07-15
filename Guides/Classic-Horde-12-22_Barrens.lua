@@ -707,13 +707,26 @@ step << Tauren
     .isOnQuest 5724
     .isQuestComplete 5723
     .dungeon RFC
-step << Tauren
+step << !Tauren
+    #completewith KreenigSnarlsnout
+    .hs >> Hearth to The Crossroads
+    .use 6948
+    .zoneskip The Barrens
+    .dungeon RFC
+step << !Tauren
+    #completewith RFCTurninsTB1
+    .zone Thunder Bluff >>Travel South to Camp Taurajo and enter Mulgore. Travel to Thunder Bluff from there
+    >>|cRXP_WARN_If you have the Thunder Bluff flight path, fly there instead|r
+    .isOnQuest 5724
+    .isQuestComplete 5723
+    .dungeon RFC
+step --<< Tauren
     #completewith RFCTurninsTB1
     .goto Thunder Bluff,69.88,30.90,80 >> Travel to the Elder Rise
     .isOnQuest 5724
     .isQuestComplete 5723
     .dungeon RFC
-step << Tauren
+step --<< Tauren
     .goto Thunder Bluff,70.4,29.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
     .turnin 5724 >> Turn in Returning the Lost Satchel
@@ -722,7 +735,7 @@ step << Tauren
     .isOnQuest 5724
     .isQuestComplete 5723
     .dungeon RFC
-step << Tauren
+step --<< Tauren
     .goto Thunder Bluff,70.4,29.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
     .turnin 5724 >> Turn in Returning the Lost Satchel
@@ -730,7 +743,7 @@ step << Tauren
     .isOnQuest 5724
     .zoneskip Thunder Bluff,1
     .dungeon RFC
-step << Tauren
+step --<< Tauren
     #label RFCTurninsTB1
     .goto Thunder Bluff,70.4,29.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
@@ -744,7 +757,16 @@ step
     .hs >> Hearth to The Crossroads
     .use 6948
     .zoneskip The Barrens
+    .cooldown item,6948,>0
     .dungeon RFC
+step 
+    #completewith KreenigSnarlsnout
+    .goto Thunder Bluff,47.00,49.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
+    .fly Crossroads >>Fly to Crossroads
+    .target Tal
+    .zoneskip The Barrens
+    .cooldown item,6948,<0
 step
     .goto The Barrens,55.70,27.30,20,0
     .goto The Barrens,55.78,20.00
@@ -1509,14 +1531,17 @@ step
     .complete 867,1 --Witchwing Talon (8)
     .mob Witchwing Harpy
     .mob Witchwing Roguefeather
-step << !Tauren
+
+    --RFC turnin section below no longer possible due to TB logout skip no longer workng
+
+step << skip --!Tauren
     #completewith next
     .zone Stonetalon Mountains >> Travel to Stonetalon Mountains
     .zoneskip Stonetalon Mountains
     .dungeon RFC
     .isOnQuest 5724
     .isQuestComplete 5723
-step << !Tauren
+step << skip --!Tauren
     #completewith next
     .goto Stonetalon Mountains,82.57,98.63,60,0
     .goto Stonetalon Mountains,80.10,98.20,40,0
@@ -1524,26 +1549,26 @@ step << !Tauren
     .dungeon RFC
     .isOnQuest 5724
     .isQuestComplete 5723
-step << !Tauren
+step << skip --!Tauren
     .goto Stonetalon Mountains,74.69,98.10
     .goto Thunder Bluff,56.65,18.96,30 >>|cRXP_WARN_Jump onto one of the cages. Perform a Logout Skip by logging out and back in|r
     .link https://www.youtube.com/watch?v=cp2YI86AO4Y&ab >> |cRXP_WARN_CLICK HERE for an example|r
     .dungeon RFC
     .isOnQuest 5724
     .isQuestComplete 5723
-step << !Tauren
+step << skip --!Tauren
     #completewith RFCPickups
     .goto Thunder Bluff,50.75,37.07,40 >> Take the lift up to Thunder Bluff
     .isOnQuest 5724
     .isQuestComplete 5723
     .dungeon RFC
-step << !Tauren
+step << skip --!Tauren
     #completewith next
     .goto Thunder Bluff,69.88,30.90,80 >> Travel to the Elder Rise
     .isOnQuest 5724
     .isQuestComplete 5723
     .dungeon RFC
-step << !Tauren
+step << skip --!Tauren
     .goto Thunder Bluff,70.4,29.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
     .turnin 5724 >> Turn in Returning the Lost Satchel
@@ -1552,27 +1577,27 @@ step << !Tauren
     .dungeon RFC
     .isOnQuest 5724
     .isQuestComplete 5723
-step << !Tauren
+step << skip --!Tauren
     .goto Thunder Bluff,70.4,29.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
     .turnin 5724 >> Turn in Returning the Lost Satchel
     .target Rahauro
     .dungeon RFC
     .isOnQuest 5724
-step << !Tauren
+step << skip --!Tauren
     .goto Thunder Bluff,70.4,29.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rahauro|r
     .turnin 5723 >> Turn in Testing an Enemy's Strength
     .target Rahauro
     .dungeon RFC
     .isQuestComplete 5723
-step << !Tauren
+step << skip --!Tauren
     #completewith Samophlange
     .hs >> Hearth to The Crossroads
     .cooldown item,6948,>0
     .use 6948
     .dungeon RFC
-step << !Tauren
+step << skip --!Tauren
     #completewith Samophlange
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
@@ -1601,14 +1626,14 @@ step
     .abandon 5761 >> Abandon Slaying the Beast
     .isOnQuest 5761
     .dungeon RFC
-step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .goto The Barrens,51.44,30.15
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
     .turnin 848 >> Turn in Fungal Spores
     .target Apothecary Helbrim
     .isQuestComplete 848
     .dungeon RFC
-step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     #xprate <1.5
     .goto The Barrens,51.62,30.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r
@@ -1616,28 +1641,28 @@ step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .accept 875 >>Accept Harpy Lieutenants
     .target Darsok Swiftdagger
     .dungeon RFC
-step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     #xprate >1.49
     .goto The Barrens,51.62,30.90
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r
     .turnin 867 >>Turn in Harpy Raiders
     .target Darsok Swiftdagger
     .dungeon RFC
-step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .goto The Barrens,52.26,31.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tonga|r
     .turnin 870 >> Turn in The Forgotten Pools
     .accept 877 >> Accept The Stagnant Oasis
     .target Tonga Runetotem
     .dungeon RFC
-step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .goto The Barrens,52.24,31.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r
     .turnin 903 >>Turn in Prowlers of the Barrens
     .accept 881 >>Accept Echeyakee
     .target Sergra Darkthorn
     .dungeon RFC
-step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .goto The Barrens,55.80,17.03
     >>Use the |T134227:0|t[Horn of Echeyakee] to summon |cRXP_ENEMY_Echeyakee|r
     >>Kill |cRXP_ENEMY_Echeyakee|r. Loot him for |cRXP_LOOT_Echeyakee's Hide|r
@@ -1646,19 +1671,19 @@ step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .mob Echeyakee
     .use 10327
     .dungeon RFC
-step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .goto The Barrens,52.23,31.00
     .abandon 881 >>|cRXP_WARN_If |cRXP_ENEMY_Echeyakee|r didn't spawn after using the|r |T134227:0|t[Horn of Echeyakee]|cRXP_WARN_ or you didn't get the tag when it did spawn, abandon Echeyakee, then return to town and accept it again|r
     .itemcount 5100,<1 --Echeyakee's Hide (0)
     .dungeon RFC
-step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .goto The Barrens,52.24,31.01
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergra|r
     .accept 881 >>Accept Echeyakee
     .target Sergra Darkthorn
     .itemcount 5100,<1 --Echeyakee's Hide (0)
     .dungeon RFC
-step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .goto The Barrens,55.80,17.03
     >>Use the |T134227:0|t[Horn of Echeyakee] to summon |cRXP_ENEMY_Echeyakee|r
     >>Kill |cRXP_ENEMY_Echeyakee|r. Loot him for |cRXP_LOOT_Echeyakee's Hide|r
@@ -1666,12 +1691,12 @@ step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     .mob Echeyakee
     .use 10327
     .dungeon RFC
-step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     #completewith Samophlange
     +|cRXP_WARN_Be careful of|r |cRXP_ENEMY_Sunscale Scytheclaws|r |cRXP_WARN_in the area. They are up to level 18 and can|r |T132152:0|t[Thrash]
     .dungeon RFC
     .xp >17,1
-step << !Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
+step << skip --!Tauren Orc !Warrior !Shaman/Troll !Warrior !Shaman
     #completewith Samophlange
     >>Kill |cRXP_ENEMY_Plainstriders|r. Loot them for their |cRXP_LOOT_Kidneys|r
     .complete 821,2 --Plainstrider Kidney (5)
@@ -1691,13 +1716,13 @@ step
     .mob Greater Plainstrider
     .mob Fleeting Plainstrider
     .mob Ornery Plainstrider
-    .dungeon !RFC
+    --.dungeon !RFC
 step
     .goto The Barrens,43.80,12.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vrang|r
     >>|cRXP_FRIENDLY_Vrang|r |cRXP_WARN_sells|r |T133476:0|t[|cRXP_FRIENDLY_Heavy Spiked Mace|r] |cRXP_WARN_which is a limited supply item|r << Orc Warrior/Troll Warrior/Tauren Warrior
 	.vendor	>> Vendor trash and repair
-    .dungeon !RFC
+    --.dungeon !RFC
 step
 	#label Samophlange
     .goto The Barrens,52.40,11.65
@@ -1843,11 +1868,15 @@ step
     >>Kill |cRXP_ENEMY_Venture Co. Overseers|r. Loot them for their |T132794:0|t[|cRXP_LOOT_Flask of Oil|r]
     .collect 814,5,103,1 --Flask of Oil (5)
     .dungeon DM
-step
+step << skip
     .goto The Barrens,60.48,3.76
     .goto Orgrimmar,40.05,68.05,30 >>|cRXP_WARN_Jump onto the wooden beam. Perform a Logout Skip by logging out and back in. Run back to Orgrimmar if you don't succeed|r
     .link https://www.youtube.com/watch?v=U7YfoaO-X8E&ab_channel=RestedXP >> |cRXP_WARN_CLICK HERE for an example|r
     .zoneskip Orgrimmar
+step
+    #completewith SpiritsPickup
+    .goto Kalimdor,56.81,45.47
+    .zone Orgrimmar >>Enter Orgrimmar through the Eastern entrance
 step
     #completewith next
     .skill firstaid,40 >> |cRXP_WARN_Create|r |T133685:0|t[Linen Bandages] |cRXP_WARN_until your skill is 40 or higher|r
@@ -1871,8 +1900,8 @@ step
     .target Arnok
     .skill firstaid,<40,1
 step
-    #completewith next
-    +|cRXP_WARN_Make sure you don't sell your|r |T132794:0|t[|cRXP_LOOT_Flask of Oil|r]!
+    #completewith SpiritsPickup
+    +|cRXP_WARN_Make sure you don't sell your|r |T132794:0|t[|cRXP_LOOT_Flask of Oil|r]
     .itemcount 814,5
     .dungeon DM
 step << Priest
@@ -3783,6 +3812,11 @@ step
     .vendor >>|cRXP_BUY_Sell your junk, then restock on food if necessary|r << Rogue/Warrior
     .target Innkeeper Boorand Plainswind
     .dungeon !WC
+step
+    .goto The Barrens,51.10,29.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korran|r
+    .accept 868 >> Accept Egg Hunt
+    .target Korran
 step << Shaman
     #completewith next
     .goto The Barrens,51.50,30.34
@@ -4085,21 +4119,33 @@ step << Shaman
     .target Doras
     .zoneskip Orgrimmar,1
 step << Shaman
-    #optional
-    #completewith CallofWater01
-    .goto The Barrens,63.09,37.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
-    .fly Ratchet >> Fly to Ratchet
-    .target Bragok
-    .subzoneskip 392,1
-    .dungeon DM
-step << Shaman
     #label CallofWater01
     .goto The Barrens,65.83,43.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Islen|r
     .turnin 1528 >>Turn in Call of Water
     .accept 1530 >>Accept Call of Water
     .target Islen Waterseer
+step << !Warlock !Shaman
+    #completewith next
+    .goto The Barrens,63.09,37.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
+    .fly Crossroads >> Fly to Crossroads
+    .target Bragok
+    .subzoneskip 392,1
+    .dungeon WC
+step
+    .goto The Barrens,51.44,30.15
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
+    >>|cRXP_FRIENDLY_Helbrim|r |cRXP_WARN_Starts a 45-minute timed quest|r
+    .accept 853 >> Accept Apothecary Zamah
+    .target Apothecary Helbrim
+    .isQuestTurnedIn 848
+    .isQuestAvailable 853
+step
+    #sticky
+    #completewith ZamahTurnin
+    +|cRXP_WARN_You are on a timed quest, don't go afk. It will get turned in 10-15 minutes after pick-up|r
+    .isOnQuest 853
 step << !Warlock !Shaman
     #completewith TribesTurnin
     .goto The Barrens,63.09,37.16
@@ -4313,436 +4359,20 @@ step
     .accept 874 >>Accept Mahren Skyseer
     .accept 6382 >>Accept The Ashenvale Hunt << Hunter
     .target Jorn Skyseer
-step
-    #xprate <1.5
-    #completewith Serena
-    .goto The Barrens,44.45,59.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Omusa|r
-    .fly Crossroads >>Fly to The Crossroads
-    .target Omusa Thunderhorn
-    .isQuestTurnedIn 852 << !Hunter
-step
-    #xprate >1.49
-    #completewith CounterattackTurnin2
-    .goto The Barrens,44.45,59.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Omusa|r
-    .fly Crossroads >>Fly to The Crossroads
-    .target Omusa Thunderhorn
-    .isQuestTurnedIn 852 << !Hunter
-step
-    .goto The Barrens,45.35,28.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
-    .turnin 852 >>Turn in Hezrul Bloodmark
-    .target Regthar Deathgate
-    .isQuestComplete 852
-step
-    #xprate <1.5
-    .goto The Barrens,45.35,28.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
-    .turnin 855 >>Turn in Centaur Bracers
-    .target Regthar Deathgate
-    .isQuestComplete 855
-step
-    #xprate <1.5
-    #completewith Serena
-    .abandon 855 >>Abandon Centaur Bracers
-step
-    #completewith CounterattackTurnin2
-    +|cRXP_WARN_This next quest is very hard & grouping up is recommended. You can kite Warlord Krom'zar around using the building where the quest giver is|r
-step
-    .goto The Barrens,45.35,28.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
-    .accept 4021 >>Accept Counterattack!
-    .target Regthar Deathgate
-    --.timer 183,Warlord Krom'zar Spawn
-    .isQuestTurnedIn 852
-    --timer is random, generally somewhere between 120-210 seconds
-step
-    .goto The Barrens,44.48,28.15
-    >>Kill |cRXP_ENEMY_Warlord Krom'zar|r once he appears. Loot the |cRXP_PICK_Banner|r that he drops on the ground
-    >>|cRXP_WARN_Be careful! He is a strong elite and is guarded by at least two|r |cRXP_ENEMY_Kolkar|r |cRXP_WARN_mobs|r
-    >>|cRXP_WARN_It can take up to 3 minutes until he spawns|r
-    .complete 4021,1 --Piece of Krom'zar's Banner (1)
-    .unitscan Warlord Krom'zar
-    .isQuestTurnedIn 852
-step
-    #label CounterattackTurnin2
-    .goto The Barrens,45.35,28.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
-    .turnin 4021 >>Turn in Counterattack!
-    .target Regthar Deathgate
-    .isQuestComplete 4021
-step
-    #xprate <1.5
-    .goto The Barrens,45.35,28.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
-    .turnin 855 >>Turn in Centaur Bracers
-    .target Regthar Deathgate
-    .isQuestComplete 855
-step
-    #xprate <1.5
-    #label Serena
-    .goto The Barrens,39.16,12.16
-    >>Kill |cRXP_ENEMY_Serena Bloodfeather|r. Loot her for her |cRXP_LOOT_Head|r
-    .complete 876,1 --Serena's Head (1)
-    .mob Serena Bloodfeather
-    .isQuestTurnedIn 875
-step << Hunter
-    .goto The Barrens,49.05,11.17
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wenikee|r
-    .turnin 3921 >> Turn in Wenikee Boltbucket
-    .target Wenikee Boltbucket
-    .isOnQuest 3921
-step << Hunter
-    .goto The Barrens,48.12,5.42
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torek|r
-    .turnin 6541 >> Turn in Report to Kadrak
-    .target Kadrak
-step << Hunter
-    .goto Ashenvale,68.34,75.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torek|r to start the escort
-    >>|cRXP_FRIENDLY_Torek|r |cRXP_WARN_has a 5 minute respawn time|r
-    .accept 6544 >> Accept Torek's Assault
-    .target Torek
-step << Hunter
-    .goto Ashenvale,66.08,74.50,60,0
-    .goto Ashenvale,65.07,75.36,20,0
-    .goto Ashenvale,64.28,75.33,10,0
-    .goto Ashenvale,64.81,75.34
-    >>Follow |cRXP_FRIENDLY_Torek|r
-    >>Let |cRXP_FRIENDLY_Torek|r and his |cRXP_FRIENDLY_Splintertree Raiders|r tank the |cRXP_ENEMY_Silverwing Warriors|r and |cRXP_ENEMY_Silverwing Sentinels|r
-    >>When you clear the building, run toward the Balcony. When |cRXP_ENEMY_Duriel Moonfire|r comes, let |cRXP_FRIENDLY_Torek|r and his |cRXP_FRIENDLY_Splintertree Raiders|r take aggro before you deal damage
-    .complete 6544,1 --Take Silverwing Outpost
-    .mob Silverwing Warrior
-    .mob Silverwing Sentinel
-    .unitscan Duriel Moonfire
-step << Hunter
-    .goto Ashenvale,73.04,62.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ertog|r
-    .turnin 6544 >> Turn in Torek's Assault
-    .target Ertog Ragetusk
-    .isQuestComplete 6544
-step << Hunter
-    .goto Ashenvale,73.78,61.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senani|r
-    .turnin 6382 >> Turn in The Ashenvale Hunt
-    .turnin 6383 >> Turn in The Ashenvale Hunt
-    .target Senani Thunderheart
-step << Hunter
-    .goto Ashenvale,73.18,61.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vhulgra|r
-    .fp Splintertree Post >> Get the Splintertree Post flight path
-    .target Vhulgra
-step << Hunter
-    #completewith EnterSTM2
-    .goto Ashenvale,73.18,61.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vhulgra|r
-    .fly Crossroads >> Fly to Crossroads
-    .target Vhulgra
-    .cooldown item,6948,<0
-    .zoneskip The Barrens
-step
-    #completewith EnterSTM2
-    .hs >> Hearth to The Crossroads
-    .use 6948
-    .cooldown item,6948,>0
-    .isQuestComplete 876
-    .dungeon !WC
-    .zoneskip The Barrens
-step << !Hunter
-    #completewith EnterSTM2
-    .goto The Barrens,52.09,30.43,120 >>Travel to The Crossroads. You can also grind until your |T134414:0|t[Hearthstone] is back up
-    .cooldown item,6948,<0
-    .isQuestComplete 876
-    .dungeon !WC
-step
+step << !Tauren
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mangletooth|r
+    .aura 16618 >>|cRXP_WARN_If you have 10|r |T134128:0|t[|cRXP_LOOT_Blood Shards|r |cRXP_WARN_left, use them to obtain|r |T136022:0|t[Spirit of the Wind] |cRXP_WARN_from|r |cRXP_FRIENDLY_Mangletooth|r
+    >>|cRXP_WARN_Skip this step if you have the Thunder Bluff flight path|r
+    .itemcount 5075,10
+step << !Tauren
     #completewith next
-    .hs >> Hearth to Ratchet
-    .use 6948
-    .cooldown item,6948,>0
-    .isQuestComplete 876
-    .dungeon WC
-step
-    #completewith EnterSTM2
-    .goto The Barrens,63.09,37.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bragok|r
-    .fly Crossroads >> Fly to The Crossroads
-    .target Bragok
-    .dungeon WC
-step
-    #xprate <1.5
-    .goto The Barrens,51.62,30.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r
-    .turnin 876 >> Turn in Serena Bloodfeather
-    .accept 1060 >> Accept Letter to Jin'Zil
-    .target Darsok Swiftdagger
-    .isQuestComplete 876
-step
-    #xprate <1.5
-    #optional
-    .goto The Barrens,51.62,30.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r
-    .accept 1060 >> Accept Letter to Jin'Zil
-    .target Darsok Swiftdagger
-    .isQuestTurnedIn 876
-step
-    .goto The Barrens,51.44,30.15
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Helbrim|r
-    >>|cRXP_FRIENDLY_Helbrim|r |cRXP_WARN_Starts a 45-minute timed quest|r
-    .accept 853 >> Accept Apothecary Zamah
-    .target Apothecary Helbrim
-    .isQuestTurnedIn 848
-step
-    .goto The Barrens,51.10,29.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korran|r
-    .accept 868 >> Accept Egg Hunt
-    .target Korran
-step
-    #sticky
-    #completewith ZamahTurnin
-    +|cRXP_WARN_You are on a timed quest, don't go afk. It will get turned in 10-15 minutes after pick-up|r
-    .isOnQuest 853
-step
-    #label EnterSTM2
-    #completewith STMturnins1
-    .zone Stonetalon Mountains >> Travel to Stonetalon Mountains
-    .zoneskip Stonetalon Mountains
-step
-    #map Stonetalon Mountains
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seereth|r and |cRXP_FRIENDLY_Makaba|r
-    .turnin 1062 >>Turn in Goblin Invaders
-    .timer 4,Goblin Invaders RP
-    .accept 1063 >>Accept The Elder Crone
-    .accept 1068 >> Accept Shredding Machines
-    .goto The Barrens,35.26,27.88
-    .turnin 6629 >>Turn in Kill Grundig Darkcloud
-    .turnin 6523 >>Turn in Protect Kaya
-    .accept 6401 >>Accept Kaya's Alive
-    .goto The Barrens,35.19,27.79
-    .target Seereth Stonebreak
-    .target Makaba Flathoof
-    .isQuestComplete 6629
-    .isQuestComplete 6523
-step
-    #optional
-    #map Stonetalon Mountains
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seereth|r and |cRXP_FRIENDLY_Makaba|r
-    .turnin 1062 >>Turn in Goblin Invaders
-    .timer 4,Goblin Invaders RP
-    .accept 1063 >>Accept The Elder Crone
-    .accept 1068 >> Accept Shredding Machines
-    .goto The Barrens,35.26,27.88
-    .turnin 6629 >>Turn in Kill Grundig Darkcloud
-    .goto The Barrens,35.19,27.79
-    .target Seereth Stonebreak
-    .target Makaba Flathoof
-    .isQuestComplete 6629
-step
-    #optional
-    #map Stonetalon Mountains
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seereth|r and |cRXP_FRIENDLY_Makaba|r
-    .turnin 1062 >>Turn in Goblin Invaders
-    .timer 4,Goblin Invaders RP
-    .accept 1063 >>Accept The Elder Crone
-    .accept 1068 >> Accept Shredding Machines
-    .goto The Barrens,35.26,27.88
-    .turnin 6523 >>Turn in Protect Kaya
-    .accept 6401 >>Accept Kaya's Alive
-    .goto The Barrens,35.19,27.79
-    .target Seereth Stonebreak
-    .target Makaba Flathoof
-    .isQuestComplete 6523
-step
-    #label STMturnins1
-    #optional
-    #map Stonetalon Mountains
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seereth|r
-    .turnin 1062 >>Turn in Goblin Invaders
-    .timer 4,Goblin Invaders RP
-    .accept 1063 >>Accept The Elder Crone
-    .accept 1068 >> Accept Shredding Machines
-    .goto The Barrens,35.26,27.88
-    .target Seereth Stonebreak
-step
-    #completewith next
-    .goto Stonetalon Mountains,82.57,98.63,60,0
-    .goto Stonetalon Mountains,80.10,98.20,40,0
-    .goto Stonetalon Mountains,77.17,98.61,40 >> Follow the path on the left upward
-step << Warlock
-    .goto Stonetalon Mountains,73.25,95.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken'zigla|r
-    .turnin 1510 >>Turn in News of Dogran
-    .accept 1511 >>Accept Ken'zigla's Draught
-    .target Ken'zigla
-step
-    .goto Stonetalon Mountains,71.25,95.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xen'Zilla|r
-    .turnin 6461 >>Turn in Blood Feeders
-    .target Xen'Zilla
-step
-    .goto Stonetalon Mountains,74.54,97.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jin'Zil|r
-    .turnin 1060 >> Turn in Letter to Jin'Zil
-    .accept 1058 >> Accept Jin'Zils Forest Magic
-    .target Witch Doctor Jin'Zil
-    .isQuestTurnedIn 876
-step
-    .goto Stonetalon Mountains,74.54,97.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jin'Zil|r
-    .accept 1058 >> Accept Jin'Zils Forest Magic
-    .target Witch Doctor Jin'Zil
-step
-    .goto Stonetalon Mountains,74.69,98.10
-    .goto Thunder Bluff,56.65,18.96,30 >>|cRXP_WARN_Jump onto one of the cages. Perform a Logout Skip by logging out and back in|r
-    .link https://www.youtube.com/watch?v=cp2YI86AO4Y&ab >> |cRXP_WARN_CLICK HERE for an example|r
-step
-    #completewith ElderCroneTurnin
-    .goto Thunder Bluff,54.18,27.01,20,0
-    .goto Thunder Bluff,50.75,37.07,40 >> Take the lift up to Thunder Bluff
-step << Druid
-    .goto Thunder Bluff,47.12,57.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chesmu|r
-    .bankdeposit 5075 >> Deposit your |T134128:0|t[Blood Shards]
-    .bankdeposit 5059 >> Deposit your |T132938:0|t[Digging Claw]
-    .target Chesmu
-    .isOnQuest 868
-step << Druid
-    #optional
-    .goto Thunder Bluff,47.12,57.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chesmu|r
-    .bankdeposit 5075 >> Deposit your |T134128:0|t[Blood Shards]
-    .target Chesmu
-step << Druid
-    .goto Thunder Bluff,45.83,64.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Pala|r
-    .home >>Set your Hearthstone to Thunder Bluff
-    .target Innkeeper Pala
-    .dungeon !WC
-step
-    #completewith next
-    .goto Thunder Bluff,69.88,30.90,80 >> Travel to the Elder Rise
-step
-    #label ElderCroneTurnin
-    .goto Thunder Bluff,69.88,30.90
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magatha|r
-    >>|cRXP_WARN_Wait for the RP to finish|r
-    .turnin 1063 >> Turn in The Elder Crone
-    .timer 6,The Elder Crone RP
-    .accept 1064 >> Accept Forsaken Aid
-    .target Magatha Grimtotem
-step
-    .goto Thunder Bluff,78.61,28.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamuul|r and |cRXP_FRIENDLY_Nara|r
-    .turnin 1489 >> Turn in Hamuul Runetotem
-    .accept 1490 >> Accept Nara Wildmane
-    .target Arch Druid Hamuul Runetotem
-step
-    .goto Thunder Bluff,75.65,31.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamuul|r and |cRXP_FRIENDLY_Nara|r
-    .turnin 1490 >> Turn in Nara Wildmane
-    .accept 914 >> Accept Leaders of the Fang
-    .target Nara Wildmane
-    .dungeon WC
-step
-    .goto Thunder Bluff,75.65,31.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamuul|r and |cRXP_FRIENDLY_Nara|r
-    .turnin 1490 >> Turn in Nara Wildmane
-    .target Nara Wildmane
-step << Druid
-    .goto Thunder Bluff,76.48,27.25
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turak|r
-    .trainer >> Train your class spells
-    .accept 27 >> Accept A Lesson to Learn
-    .target Turak Runetotem
-step << Druid
-    #completewith next
-    .cast 18960 >>Cast |T135758:0|t[Teleport: Moonglade]
-    .zoneskip Moonglade
-step << Druid
-    .goto Moonglade,56.21,30.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite|r
-    .turnin 27 >> Turn in A Lesson to Learn
-    .accept 28 >> Accept Trial of the Lake
-    .target Dendrite Starblaze
-step << Druid
-    #completewith next
-    .goto Moonglade,54.30,55.68
-    .collect 15877,1,30,1 >>Loot the |cRXP_PICK_Bauble Container|r at the bottom of the lake for a|T134125:0|t[Shrine Bauble]
-    >>|cRXP_WARN_Do not go underwater untill you arive right above the Bauble|r
-step << Druid
-    .goto Moonglade,36.40,42.01
-    .cast 19719 >> Use the |T134125:0|t[Shrine Bauble] at the Shrine of Remulos
-    .complete 30,1 -- Complete the Trial of the Lake
-    .use 15877
-step << Druid
-    .goto Moonglade,36.52,40.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tajarri|r
-    .turnin 28 >> Turn in Trial of the Lake
-    .accept 30 >> Accept Trial of the Sea Lion
-    .target Tajarri
-step << Druid
-    .hs >> Hearth to Thunder Bluff
-    .use 6948
-    .cooldown item,6948,>0
-    .dungeon !WC
-step << Druid
-    #completewith next
-    .goto Moonglade,44.29,45.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bunthen|r
-    .fly Thunder Bluff >> Fly to Thunder Bluff
-    .target Bunthen Plainswind
-    .cooldown item,6948,<0
-step << Hunter
-    #completewith HunterTraining2
-    .goto Thunder Bluff,61.31,78.25,60 >> Travel to the Hunter Rise
-step << Hunter
-    .goto Thunder Bluff,59.13,86.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urek|r
-    .train 5118 >> Train your class spells
-    .target Urek Thunderhorn
-    .xp <20,1
-    .xp >22,1
-step << Hunter
-    #label HunterTraining2
-    #optional
-    .goto Thunder Bluff,59.13,86.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urek|r
-    .train 5118 >> Train your class spells
-    .target Urek Thunderhorn
-    .xp <22,1
-step << Hunter
-    .goto Thunder Bluff,54.07,84.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hesuwa|r
-    .train 24494 >> Train your pet spells
-    .target Hesuwa Thunderhorn
-step << Warrior
-    #completewith next
-    .goto Thunder Bluff,61.31,78.25,60 >> Travel to the Hunter Rise
-step << Warrior
-    .goto Thunder Bluff,57.27,87.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torm|r
-    .train 845 >> Train your class spells
-    .accept 1823 >>Accept Speak with Ruga
-    .target Torm Ragetotem
-step << !Druid
-    .goto Thunder Bluff,45.83,64.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Pala|r
-    .home >>Set your Hearthstone to Thunder Bluff
-    .target Innkeeper Pala
-    .dungeon !WC
-step << !Druid
-    .goto Thunder Bluff,47.12,57.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chesmu|r
-    .bankdeposit 5075 >> Deposit your |T134128:0|t[Blood Shards]
-    .bankdeposit 5059 >> Deposit your |T132938:0|t[Digging Claw]
-    .target Chesmu
-    .isOnQuest 868
-step << !Druid
-    #optional
-    .goto Thunder Bluff,47.12,57.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chesmu|r
-    .bankdeposit 5075 >> Deposit your |T134128:0|t[Blood Shards]
-    .target Chesmu
+    .goto Mulgore,68.68,60.34
+    .zone Mulgore >>Travel into Mulgore
+step << !Tauren
+    #completewith DeathDUPpickup
+    .goto Thunder Bluff,31.78,65.92
+    .zone Thunder Bluff >>Take the lift into Thunder Bluff
+    >>|cRXP_WARN_If you have the Thunder Bluff flight path, fly there instead|r
 step << Undead Warrior/Orc Warrior/Troll Warrior
     .goto Thunder Bluff,40.93,62.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ansekhwa|r
@@ -4764,6 +4394,25 @@ step << Rogue
     .collect 3137,200,6544,1 --Deadly Throwing Axe (200)
     .target Kuruk
 step
+    .goto Thunder Bluff,47.12,57.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chesmu|r
+    .bankdeposit 5075 >> Deposit your |T134128:0|t[Blood Shards]
+    .bankdeposit 5059 >> Deposit your |T132938:0|t[Digging Claw]
+    .target Chesmu
+    .isOnQuest 868
+step
+    #optional
+    .goto Thunder Bluff,47.12,57.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chesmu|r
+    .bankdeposit 5075 >> Deposit your |T134128:0|t[Blood Shards]
+    .target Chesmu
+step
+    .goto Thunder Bluff,45.83,64.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Pala|r
+    .home >>Set your Hearthstone to Thunder Bluff
+    .target Innkeeper Pala
+    .dungeon !WC
+step
     #completewith next
     .goto Thunder Bluff,28.14,32.97,40,0
     .goto Thunder Bluff,28.51,28.95,10 >> Travel to the Spirit Rise and enter the pools of vision
@@ -4777,8 +4426,6 @@ step
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
     .turnin 853 >> Turn in Apothecary Zamah
-    .turnin 1064 >> Turn in Forsaken Aid
-    .accept 1065 >> Accept Journey to Tarren Mill
     .accept 962 >> Accept Serpentbloom
     .goto Thunder Bluff,22.82,20.88
     .target Apothecary Zamah
@@ -4787,28 +4434,18 @@ step
 step
     #optional
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
-    .turnin 1064 >> Turn in Forsaken Aid
-    .accept 1065 >> Accept Journey to Tarren Mill
     .accept 962 >> Accept Serpentbloom
     .goto Thunder Bluff,22.82,20.88
     .target Apothecary Zamah
     .dungeon WC
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
-    .turnin 853 >> Turn in Apothecary Zamah
-    .turnin 1064 >> Turn in Forsaken Aid
-    .accept 1065 >> Accept Journey to Tarren Mill
-    .goto Thunder Bluff,22.82,20.88
-    .target Apothecary Zamah
-    .isOnQuest 853
 step
     #optional
     #label ZamahTurnin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
-    .turnin 1064 >> Turn in Forsaken Aid
-    .accept 1065 >> Accept Journey to Tarren Mill
+    .turnin 853 >> Turn in Apothecary Zamah
     .goto Thunder Bluff,22.82,20.88
     .target Apothecary Zamah
+    .isOnQuest 853
 step << Priest
     .goto Thunder Bluff,25.31,15.24
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Miles|r
@@ -4864,6 +4501,111 @@ step << Rogue
     >>|cRXP_WARN_Save them for later|r
     .collect 6452,1 --Anti Venom
     .itemcount 1475,1
+step
+    #completewith next
+    .goto Thunder Bluff,69.88,30.90,80 >> Travel to the Elder Rise
+step
+    .goto Thunder Bluff,78.61,28.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamuul|r
+    .turnin 1489 >> Turn in Hamuul Runetotem
+    .accept 1490 >> Accept Nara Wildmane
+    .target Arch Druid Hamuul Runetotem
+step
+    .goto Thunder Bluff,75.65,31.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nara|r
+    .turnin 1490 >> Turn in Nara Wildmane
+    .accept 914 >> Accept Leaders of the Fang
+    .target Nara Wildmane
+    .dungeon WC
+step
+    .goto Thunder Bluff,75.65,31.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nara|r
+    .turnin 1490 >> Turn in Nara Wildmane
+    .target Nara Wildmane
+step << Druid
+    .goto Thunder Bluff,76.48,27.25
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Turak|r
+    .trainer >> Train your class spells
+    .accept 27 >> Accept A Lesson to Learn
+    .target Turak Runetotem
+step << Druid
+    #completewith next
+    .cast 18960 >>Cast |T135758:0|t[Teleport: Moonglade]
+    .zoneskip Moonglade
+step << Druid
+    .goto Moonglade,56.21,30.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite|r
+    .turnin 27 >> Turn in A Lesson to Learn
+    .accept 28 >> Accept Trial of the Lake
+    .target Dendrite Starblaze
+step << Druid
+    #completewith next
+    .goto Moonglade,54.30,55.68
+    .collect 15877,1,30,1 >>Loot the |cRXP_PICK_Bauble Container|r at the bottom of the lake for a|T134125:0|t[Shrine Bauble]
+    >>|cRXP_WARN_Do not go underwater untill you arive right above the Bauble|r
+step << Druid
+    .goto Moonglade,36.40,42.01
+    .cast 19719 >> Use the |T134125:0|t[Shrine Bauble] at the Shrine of Remulos
+    .complete 30,1 -- Complete the Trial of the Lake
+    .use 15877
+step << Druid
+    .goto Moonglade,36.52,40.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tajarri|r
+    .turnin 28 >> Turn in Trial of the Lake
+    .accept 30 >> Accept Trial of the Sea Lion
+    .target Tajarri
+step << Druid
+    .hs >> Hearth to Thunder Bluff
+    .use 6948
+    .cooldown item,6948,>0
+    .dungeon !WC
+step << Druid
+    #completewith next
+    .goto Moonglade,44.29,45.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bunthen|r
+    .fly Thunder Bluff >> Fly to Thunder Bluff
+    .target Bunthen Plainswind
+    .dungeon WC
+step << Druid
+    #completewith next
+    .goto Moonglade,44.29,45.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bunthen|r
+    .fly Thunder Bluff >> Fly to Thunder Bluff
+    .target Bunthen Plainswind
+    .cooldown item,6948,<0
+    .dungeon !WC
+step << Hunter
+    #completewith HunterTraining2
+    .goto Thunder Bluff,61.31,78.25,60 >> Travel to the Hunter Rise
+step << Hunter
+    .goto Thunder Bluff,59.13,86.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urek|r
+    .train 5118 >> Train your class spells
+    .target Urek Thunderhorn
+    .xp <20,1
+    .xp >22,1
+step << Hunter
+    #label HunterTraining2
+    #optional
+    .goto Thunder Bluff,59.13,86.91
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Urek|r
+    .train 5118 >> Train your class spells
+    .target Urek Thunderhorn
+    .xp <22,1
+step << Hunter
+    .goto Thunder Bluff,54.07,84.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hesuwa|r
+    .train 24494 >> Train your pet spells
+    .target Hesuwa Thunderhorn
+step << Warrior
+    #completewith next
+    .goto Thunder Bluff,61.31,78.25,60 >> Travel to the Hunter Rise
+step << Warrior
+    .goto Thunder Bluff,57.27,87.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torm|r
+    .train 845 >> Train your class spells
+    .accept 1823 >>Accept Speak with Ruga
+    .target Torm Ragetotem
 step << Rogue
     .goto Thunder Bluff,53.00,56.63
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_Talk to|r |cRXP_FRIENDLY_Kard|r|cRXP_BUY_. Buy a|r |T135324:0|t[Longsword] |cRXP_BUY_from him.|r
@@ -4953,31 +4695,13 @@ step << Hunter
     >>|cRXP_BUY_Buy|r |T132382:0|t[Sharp Arrows] |cRXP_BUY_from her|r
     .collect 2515,1600,493,1 << Hunter --Sharp Arrow (1600)
     .target Kuna Thunderhorn
-step << Warlock
+
+    --WC 
+
+step
     #completewith next
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
-    .fp Thunder Bluff >> Get the Thunder Bluff flight path << !Tauren
-    .fly Camp Taurajo >>Fly to Camp Taurajo
-    .target Tal
-    .zoneskip The Barrens
-step << Warlock
-    .goto The Barrens,44.62,59.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Logmar|r
-    .turnin 1511 >>Turn in Ken'zigla's Draught
-    .accept 1515 >>Accept Dogran's Captivity
-    .target Grunt Logma
-step << Warlock
-    .goto The Barrens,43.31,47.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dogran|r
-    .turnin 1515 >>Turn in Dogran's Captivity
-    .accept 1512 >>Accept Love's Gift
-    .target Grunt Dogran
-step << !Warlock
-    #completewith next
-    .goto Thunder Bluff,47.00,49.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
-    .fp Thunder Bluff >> Get the Thunder Bluff flight path << !Tauren
     .fly Camp Taurajo >>Fly to Camp Taurajo
     .target Tal
     .zoneskip The Barrens
@@ -5342,23 +5066,6 @@ step
     .home >>Set your Hearthstone to Thunder Bluff
     .target Innkeeper Pala
     .dungeon WC
-step << Warlock
-    #completewith KayaLives
-    .goto The Barrens,44.45,59.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Omusa|r
-    .fly Sun Rock Retreat >>Fly to Sun Rock Retreat
-    .target Omusa Thunderhorn
-    .zoneskip Stonetalon Mountains
-    .dungeon !WC
-step
-    #xprate <1.5
-    #completewith KayaLives
-    .goto Thunder Bluff,47.00,49.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
---   .fp Thunder Bluff >> Get the Thunder Bluff flight path << !Tauren
-    .fly Sun Rock Retreat >>Fly to Sun Rock Retreat
-    .target Tal
-    .zoneskip Thunder Bluff,1
 step
     #optional
     .abandon 1486 >> Abandon Deviate Hides
@@ -5391,6 +5098,282 @@ step
     .dungeon WC
 step
     #xprate <1.5
+    #completewith Serena
+    .goto Thunder Bluff,47.00,49.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
+    .fly Crossroads >>Fly to The Crossroads
+    .target Tal
+    .isQuestTurnedIn 852 << !Hunter
+step
+    #xprate >1.49
+    #completewith CounterattackTurnin2
+    .goto Thunder Bluff,47.00,49.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
+    .fly Crossroads >>Fly to The Crossroads
+    .target Tal
+    .isQuestTurnedIn 852 << !Hunter
+step
+    .goto The Barrens,45.35,28.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
+    .turnin 852 >>Turn in Hezrul Bloodmark
+    .target Regthar Deathgate
+    .isQuestComplete 852
+step
+    #xprate <1.5
+    .goto The Barrens,45.35,28.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
+    .turnin 855 >>Turn in Centaur Bracers
+    .target Regthar Deathgate
+    .isQuestComplete 855
+step
+    #xprate <1.5
+    #completewith Serena
+    .abandon 855 >>Abandon Centaur Bracers
+step
+    #completewith CounterattackTurnin2
+    +|cRXP_WARN_This next quest is very hard & grouping up is recommended. You can kite Warlord Krom'zar around using the building where the quest giver is|r
+step
+    .goto The Barrens,45.35,28.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
+    .accept 4021 >>Accept Counterattack!
+    .target Regthar Deathgate
+    --.timer 183,Warlord Krom'zar Spawn
+    .isQuestTurnedIn 852
+    --timer is random, generally somewhere between 120-210 seconds
+step
+    .goto The Barrens,44.48,28.15
+    >>Kill |cRXP_ENEMY_Warlord Krom'zar|r once he appears. Loot the |cRXP_PICK_Banner|r that he drops on the ground
+    >>|cRXP_WARN_Be careful! He is a strong elite and is guarded by at least two|r |cRXP_ENEMY_Kolkar|r |cRXP_WARN_mobs|r
+    >>|cRXP_WARN_It can take up to 3 minutes until he spawns|r
+    .complete 4021,1 --Piece of Krom'zar's Banner (1)
+    .unitscan Warlord Krom'zar
+    .isQuestTurnedIn 852
+step
+    #label CounterattackTurnin2
+    .goto The Barrens,45.35,28.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
+    .turnin 4021 >>Turn in Counterattack!
+    .target Regthar Deathgate
+    .isQuestComplete 4021
+step
+    #xprate <1.5
+    .goto The Barrens,45.35,28.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Regthar|r
+    .turnin 855 >>Turn in Centaur Bracers
+    .target Regthar Deathgate
+    .isQuestComplete 855
+step
+    #xprate <1.5
+    #label Serena
+    .goto The Barrens,39.16,12.16
+    >>Kill |cRXP_ENEMY_Serena Bloodfeather|r. Loot her for her |cRXP_LOOT_Head|r
+    .complete 876,1 --Serena's Head (1)
+    .mob Serena Bloodfeather
+    .isQuestTurnedIn 875
+step << Hunter
+    .goto The Barrens,49.05,11.17
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wenikee|r
+    .turnin 3921 >> Turn in Wenikee Boltbucket
+    .target Wenikee Boltbucket
+    .isOnQuest 3921
+step << Hunter
+    .goto The Barrens,48.12,5.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torek|r
+    .turnin 6541 >> Turn in Report to Kadrak
+    .target Kadrak
+step << Hunter
+    .goto Ashenvale,68.34,75.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Torek|r to start the escort
+    >>|cRXP_FRIENDLY_Torek|r |cRXP_WARN_has a 5 minute respawn time|r
+    .accept 6544 >> Accept Torek's Assault
+    .target Torek
+step << Hunter
+    .goto Ashenvale,66.08,74.50,60,0
+    .goto Ashenvale,65.07,75.36,20,0
+    .goto Ashenvale,64.28,75.33,10,0
+    .goto Ashenvale,64.81,75.34
+    >>Follow |cRXP_FRIENDLY_Torek|r
+    >>Let |cRXP_FRIENDLY_Torek|r and his |cRXP_FRIENDLY_Splintertree Raiders|r tank the |cRXP_ENEMY_Silverwing Warriors|r and |cRXP_ENEMY_Silverwing Sentinels|r
+    >>When you clear the building, run toward the Balcony. When |cRXP_ENEMY_Duriel Moonfire|r comes, let |cRXP_FRIENDLY_Torek|r and his |cRXP_FRIENDLY_Splintertree Raiders|r take aggro before you deal damage
+    .complete 6544,1 --Take Silverwing Outpost
+    .mob Silverwing Warrior
+    .mob Silverwing Sentinel
+    .unitscan Duriel Moonfire
+step << Hunter
+    .goto Ashenvale,73.04,62.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ertog|r
+    .turnin 6544 >> Turn in Torek's Assault
+    .target Ertog Ragetusk
+    .isQuestComplete 6544
+step << Hunter
+    .goto Ashenvale,73.78,61.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senani|r
+    .turnin 6382 >> Turn in The Ashenvale Hunt
+    .turnin 6383 >> Turn in The Ashenvale Hunt
+    .target Senani Thunderheart
+step << Hunter
+    .goto Ashenvale,73.18,61.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vhulgra|r
+    .fp Splintertree Post >> Get the Splintertree Post flight path
+    .target Vhulgra
+step << Hunter
+    #completewith EnterSTM2
+    .goto Ashenvale,73.18,61.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vhulgra|r
+    .fly Crossroads >> Fly to Crossroads
+    .target Vhulgra
+    .zoneskip The Barrens
+step << !Hunter
+    #xprate <1.5
+    #softcore
+    #completewith next
+    .deathskip >>Deathskip to Crossroads
+step << !Hunter
+    #xprate <1.5
+    #hardcore
+    #completewith next
+    .subzone 380 >>Travel to Crossroads
+step
+    #xprate <1.5
+    .goto The Barrens,51.62,30.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r
+    .turnin 876 >> Turn in Serena Bloodfeather
+    .accept 1060 >> Accept Letter to Jin'Zil
+    .target Darsok Swiftdagger
+    .isQuestComplete 876
+step
+    #xprate <1.5
+    #optional
+    .goto The Barrens,51.62,30.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darsok|r
+    .accept 1060 >> Accept Letter to Jin'Zil
+    .target Darsok Swiftdagger
+    .isQuestTurnedIn 876
+step
+    .goto The Barrens,51.10,29.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Korran|r
+    .accept 868 >> Accept Egg Hunt
+    .target Korran
+step
+    #label EnterSTM2
+    #completewith STMturnins1
+    .zone Stonetalon Mountains >> Travel to Stonetalon Mountains
+    .zoneskip Stonetalon Mountains
+step
+    #map Stonetalon Mountains
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seereth|r and |cRXP_FRIENDLY_Makaba|r
+    .turnin 1062 >>Turn in Goblin Invaders
+    .timer 4,Goblin Invaders RP
+    .accept 1063 >>Accept The Elder Crone
+    .accept 1068 >> Accept Shredding Machines
+    .goto The Barrens,35.26,27.88
+    .turnin 6629 >>Turn in Kill Grundig Darkcloud
+    .turnin 6523 >>Turn in Protect Kaya
+    .accept 6401 >>Accept Kaya's Alive
+    .goto The Barrens,35.19,27.79
+    .target Seereth Stonebreak
+    .target Makaba Flathoof
+    .isQuestComplete 6629
+    .isQuestComplete 6523
+step
+    #optional
+    #map Stonetalon Mountains
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seereth|r and |cRXP_FRIENDLY_Makaba|r
+    .turnin 1062 >>Turn in Goblin Invaders
+    .timer 4,Goblin Invaders RP
+    .accept 1063 >>Accept The Elder Crone
+    .accept 1068 >> Accept Shredding Machines
+    .goto The Barrens,35.26,27.88
+    .turnin 6629 >>Turn in Kill Grundig Darkcloud
+    .goto The Barrens,35.19,27.79
+    .target Seereth Stonebreak
+    .target Makaba Flathoof
+    .isQuestComplete 6629
+step
+    #optional
+    #map Stonetalon Mountains
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seereth|r and |cRXP_FRIENDLY_Makaba|r
+    .turnin 1062 >>Turn in Goblin Invaders
+    .timer 4,Goblin Invaders RP
+    .accept 1063 >>Accept The Elder Crone
+    .accept 1068 >> Accept Shredding Machines
+    .goto The Barrens,35.26,27.88
+    .turnin 6523 >>Turn in Protect Kaya
+    .accept 6401 >>Accept Kaya's Alive
+    .goto The Barrens,35.19,27.79
+    .target Seereth Stonebreak
+    .target Makaba Flathoof
+    .isQuestComplete 6523
+step
+    #label STMturnins1
+    #optional
+    #map Stonetalon Mountains
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Seereth|r
+    .turnin 1062 >>Turn in Goblin Invaders
+    .timer 4,Goblin Invaders RP
+    .accept 1063 >>Accept The Elder Crone
+    .accept 1068 >> Accept Shredding Machines
+    .goto The Barrens,35.26,27.88
+    .target Seereth Stonebreak
+step
+    #completewith BloodFeedersTI
+    .goto Stonetalon Mountains,82.57,98.63,60,0
+    .goto Stonetalon Mountains,80.10,98.20,40,0
+    .goto Stonetalon Mountains,77.17,98.61,40 >> Follow the path on the left upward
+step
+    .goto Stonetalon Mountains,74.54,97.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jin'Zil|r
+    .turnin 1060 >> Turn in Letter to Jin'Zil
+    .accept 1058 >> Accept Jin'Zils Forest Magic
+    .target Witch Doctor Jin'Zil
+    .isQuestTurnedIn 876
+step
+    .goto Stonetalon Mountains,74.54,97.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jin'Zil|r
+    .accept 1058 >> Accept Jin'Zils Forest Magic
+    .target Witch Doctor Jin'Zil
+step << Warlock
+    .goto Stonetalon Mountains,73.25,95.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken'zigla|r
+    .turnin 1510 >>Turn in News of Dogran
+    .accept 1511 >>Accept Ken'zigla's Draught
+    .target Ken'zigla
+step
+    #label BloodFeedersTI
+    .goto Stonetalon Mountains,71.25,95.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xen'Zilla|r
+    .turnin 6461 >>Turn in Blood Feeders
+    .target Xen'Zilla
+step << skip
+    .goto Stonetalon Mountains,74.69,98.10
+    .goto Thunder Bluff,56.65,18.96,30 >>|cRXP_WARN_Jump onto one of the cages. Perform a Logout Skip by logging out and back in|r
+    .link https://www.youtube.com/watch?v=cp2YI86AO4Y&ab >> |cRXP_WARN_CLICK HERE for an example|r
+step << skip
+    #completewith ElderCroneTurnin
+    .goto Thunder Bluff,54.18,27.01,20,0
+    .goto Thunder Bluff,50.75,37.07,40 >> Take the lift up to Thunder Bluff
+step << Hunter
+    .goto Stonetalon Mountains,59.08,75.70
+    >>Click the |cRXP_FRIENDLY_Wanted Poster|r
+    .accept 6284 >>Accept Arachnophobia
+step << Hunter
+    .goto Stonetalon Mountains,51.89,73.81,50,0
+    .goto Stonetalon Mountains,52.46,71.67
+    >>Kill |cRXP_ENEMY_Besseleth|r. Loot her for for her |cRXP_LOOT_Fang|r
+    >>|cRXP_WARN_Clear the area around|r |cRXP_ENEMY_Besseleth|r|cRXP_WARN_. Be careful as she webs you|r
+    >>|cRXP_WARN_This quest is optional. If you can't do it, skip this quest|r
+    .complete 6284,1 --Collect Besseleth's Fang (x1)
+	.unitscan Besseleth
+step
+    #completewith Tsunaman1
+    .subzone 460 >>Travel to Sun Rock Retreat
+step
+    .goto Stonetalon Mountains,47.20,61.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maggran|r
+	.turnin 6284 >> Turn in Arachnophobia
+    .target Maggran Earthbinder
+    .isQuestComplete 6284
+step
     #label KayaLives
     .goto Stonetalon Mountains,47.46,58.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tammra|r
@@ -5398,7 +5381,6 @@ step
     .target Tammra Windfield
     .isQuestTurnedIn 6523
 step
-    #xprate <1.5
     .goto Stonetalon Mountains,47.47,62.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Jayka|r
     >>|cRXP_WARN_Do NOT set your|r |T134414:0|t[Hearthstone]
@@ -5408,7 +5390,6 @@ step
     .target Innkeeper Jayka
     .isOnQuest 1095
 step
-    #xprate <1.5
     .goto Stonetalon Mountains,47.52,62.38,5,0
     .goto Stonetalon Mountains,47.61,61.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jeeda|r on the second floor of the inn
@@ -5425,27 +5406,13 @@ step
     .goto Stonetalon Mountains,47.21,64.05,30 >> Run up the path to the right
 step
     #xprate <1.5
+    #label Tsunaman1
     .goto Stonetalon Mountains,47.36,64.25
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tsunaman|r
     .accept 6562 >>Accept Trouble in the Deeps
     .accept 6393 >>Accept Elemental War
     .target Tsunaman
-step << Hunter
-    #xprate <1.5
-    .goto Stonetalon Mountains,59.08,75.70
-    >>Click the |cRXP_FRIENDLY_Wanted Poster|r
-    .accept 6284 >>Accept Arachnophobia
-step << Hunter
-    #xprate <1.5
-    .goto Stonetalon Mountains,51.89,73.81,50,0
-    .goto Stonetalon Mountains,52.46,71.67
-    >>Kill |cRXP_ENEMY_Besseleth|r. Loot her for for her |cRXP_LOOT_Fang|r
-    >>|cRXP_WARN_Clear the area around|r |cRXP_ENEMY_Besseleth|r|cRXP_WARN_. Be careful as she webs you|r
-    >>|cRXP_WARN_This quest is optional. If you can't do it, skip this quest|r
-    .complete 6284,1 --Collect Besseleth's Fang (x1)
-	.unitscan Besseleth
 step
-    #xprate <1.5
     .goto Stonetalon Mountains,58.99,62.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz|r
     .turnin 1095 >>Turn in Further Instructions
@@ -5537,7 +5504,7 @@ step
     .accept 1092 >> Accept Gerenzo's Orders
     .target Piznik
     .group
-step
+step << skip
     #xprate <1.5
     .goto Stonetalon Mountains,71.83,60.34
     .goto Stonetalon Mountains,57.57,61.99,30 >>|cRXP_WARN_Jump onto the wooden wheel. Perform a Logout Skip by logging out and back in|r
@@ -5547,7 +5514,7 @@ step
     #xprate <1.5
     .goto Stonetalon Mountains,58.99,62.60
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ziz|r
-    .turnin 1092 >> Turnin Gerenzo's Orders
+    .turnin 1092 >> Turn in Gerenzo's Orders
     .target Ziz Fizziks
     .isQuestTurnedIn 1090
     .group
@@ -5615,7 +5582,7 @@ step
     #xprate <1.5
     #completewith next
     .goto Stonetalon Mountains,78.29,42.51,30 >> Enter the Talondeep Path
-step
+step << skip
     #xprate <1.5
     .goto Stonetalon Mountains,78.89,41.24
     .goto Ashenvale,40.40,53.06,30 >>|cRXP_WARN_Jump onto the white stone on your right. Perform a Logout Skip by logging out and back in|r
@@ -6010,18 +5977,71 @@ step
     .accept 216 >> Accept Between a Rock and a Thistlefur
     .target Karang Amakkar
 step
+    #completewith flytoORG
+    .hs >> Hearth to Thunder Bluff
+    .use 6948
+    .cooldown item,6948,>0
+step
     #xprate >1.49
+    #completewith flytoORG
+    .goto Stonetalon Mountains,45.13,59.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharm|r
+    .fly Thunder Bluff >>Fly to Thunder Bluff
+    .target Tharm
+    .cooldown item,6948,<0
+step
+    #xprate <1.5
+    #completewith flytoORG
+    .goto Ashenvale,12.24,33.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andruk|r
+    .fly Thunder Bluff >> Fly to Thunder Bluff
+    .target Andruk
+    .cooldown item,6948,<0
+step
+    .goto Thunder Bluff,69.88,30.90
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magatha|r
+    >>|cRXP_WARN_Wait for the RP to finish|r
+    .turnin 1063 >> Turn in The Elder Crone
+    .timer 6,The Elder Crone RP
+    .accept 1064 >> Accept Forsaken Aid
+    .target Magatha Grimtotem
+step
+    .goto Thunder Bluff,22.82,20.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
+    .turnin 1064 >> Turn in Forsaken Aid
+    .accept 1065 >> Accept Journey to Tarren Mill
+    .target Apothecary Zamah
+step << Warlock
+    .goto Thunder Bluff,47.00,49.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
+    .fly Camp Taurajo >>Fly to Camp Taurajo
+    .target Tal
+step << !Warlock
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Orgrimmar >>Fly to Orgrimmar
     .target Tal
-    .zoneskip Thunder Bluff,1
+step << Warlock
+    .goto The Barrens,44.62,59.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Logmar|r
+    .turnin 1511 >>Turn in Ken'zigla's Draught
+    .accept 1515 >>Accept Dogran's Captivity
+    .target Grunt Logma
+step << Warlock
+    .goto The Barrens,43.31,47.88
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dogran|r
+    .turnin 1515 >>Turn in Dogran's Captivity
+    .accept 1512 >>Accept Love's Gift
+    .target Grunt Dogran
+step << Warlock
+    .goto The Barrens,44.45,59.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Omusa|r
+    .fly Orgrimmar >>Fly to Orgrimmar
+    .target Omusa Thunderhorn
+    .zoneskip The Barrens,1
 step
-    .goto Ashenvale,12.24,33.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andruk|r
-    .fly Orgrimmar >> Fly to Orgrimmar
-    .target Andruk
-    .zoneskip Ashenvale,1
+    #optional
+    #label flytoORG
 step << Warlock
     .goto Orgrimmar,48.25,45.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gan'rul|r
@@ -6190,7 +6210,7 @@ step << Rogue/Druid
     #hardcore
     #completewith next
     .goto The Barrens,61.33,4.21,120 >>Travel toward the Boulder Lode Mine
-step << Rogue/Druid
+step << skip --Rogue/Druid
     #hardcore
     .goto The Barrens,60.48,3.76
     .goto Orgrimmar,40.05,68.05,30 >>|cRXP_WARN_Jump onto the wooden beam. Perform a Logout Skip by logging out and back in. Run back to Orgrimmar if you don't succeed|r
