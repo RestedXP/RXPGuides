@@ -1105,14 +1105,17 @@ step
     .target Kil'ruk the Wind-Reaver
 ]])
 
--- August Celestial Dailies: Jade Forest
+-- August Celestial Dailies
 RXPGuides.RegisterGuide([[
 #df
 #version 1
 #group RestedXP Panda Remix
 #name X) August Celestial Daillies
-#internal
+#displayname August Celestial Daillies
+#title August Celestial Daillies
 
+
+--Jade Forest
 -- step
 --     .accept 30066 >>Accept Hidden Power
 --     .accept 30065 >>Accept Arrows of Fortune
@@ -1294,162 +1297,224 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Sage Tai-Feng|r
     .dailyturnin 30068 >>Turn in Flames of the Void
     .target Elder Sage Tai-Feng
-]])
-
--- August Celestial Dailies: Kunlai
-RXPGuides.RegisterGuide([[
-#df
-#version 1
-#group RestedXP Panda Remix
-#name X) August Celestial Daillies
-#internal
-
-
+--Kun-Lai
+step << Alliance
+    .isQuestAvailable 31394
+    .goto 379,68.78,43.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anduin Wrynn|r
+    .accept 31394 >>Accept A Celestial Experience
+    .target Anduin Wrynn
+step << Horde
+    .isQuestAvailable 31395
+    .goto 379,68.73,43.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sunwalker Dezco|r
+    .accept 31395 >>Accept A Celestial Experience
+    .target Sunwalker Dezco
+step << Alliance
+    .isOnQuest 31394
+    .goto 379,68.87,42.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
+    .complete 31394,1 --1/1 Speak to Xuen
+    .timer 55,RP
+    .target Xuen
+step << Alliance
+    .isOnQuest 31394
+    .goto 379,68.79,43.99
+    -- #loop
+    -- .goto 379,68.79,43.99,5,0
+    -- .goto 379,68.81,43.69,5,0
+    >>Kill |cRXP_ENEMY_Spirit of Violence|r |cRXP_WARN_after the roleplay.|r
+    .complete 31394,2 --1/1 Pass the First Test
+    .mob Spirit of Violence
+step << Alliance
+    .isOnQuest 31394
+    .goto 379,68.79,43.99
+    -- #loop
+    -- .goto 379,68.79,43.99,5,0
+    -- .goto 379,68.81,43.69,5,0
+    >>Kill |cRXP_ENEMY_Spirit of Anger|r |cRXP_WARN_after the roleplay|r
+    .complete 31394,3 --1/1 Pass the Second Test
+    .mob Spirit of Anger
+step
+    .convertquest 31394,31395 <<Horde
+    .isOnQuest 31394,31395
+    .goto 379,68.79,43.99
+    -- #loop
+    -- .goto 379,68.79,43.99,5,0
+    -- .goto 379,68.81,43.69,5,0
+    >>Kill |cRXP_ENEMY_Spirit of Hatred|r |cRXP_WARN_after the roleplay|r
+    .complete 31394,4 --1/1 Pass the Third Test
+    .mob Spirit of Hatred
+step << Alliance
+    .goto 379,68.78,43.12
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anduin Wrynn|r
+    .turnin 31394 >>Turn in A Celestial Experience
+    .target Anduin Wrynn
+step << Horde
+    .goto 379,68.73,43.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sunwalker Dezco|r
+    .turnin 31395 >>Turn in A Celestial Experience
+    .target Sunwalker Dezco
+step << Alliance
+    .isQuestTurnedIn 31394
+    .goto 379,68.78,43.12
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anduin Wrynn|r
+    .target Anduin Wrynn
+    .accept 31512 >>Accept A Witness to History
+step << Horde
+    .isQuestTurnedIn 31395
+    .goto 379,68.73,43.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sunwalker Dezco|r
+    .target Sunwalker Dezco
+    .accept 31511 >>Accept A Witness to History
+step << Alliance
+    .isOnQuest 31512
+    .goto 379,55.10,91.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anduin at the Gate of the August Celestials|r
+    .complete 31512,1 --1/1 Speak to Anduin at the Gate of the August Celestials
+    .skipgossip
+    .target Anduin
+step << Horde
+    .goto 379,56.18,91.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dezco at the Gate of the August Celestials|r
+    .complete 31511,1 --1/1 Speak with Dezco at the Gate of the August Celestials
+    .skipgossip
+    .target Dezco at the Gate of the August Celestials
+step << Alliance
+    .isOnQuest 31512
+    .goto 393,36.20,66.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Matron Vi Vinh|r
+    .turnin 31512 >>Turn in A Witness to History
+    .target Matron Vi Vinh
+step << Horde
+    #completewith next
+    .goto 391,77.48,71.91,10 >> Enter Shrine of Two Moons
+step << Horde
+    .goto 391,68.38,47.54
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Madam Vee Luo|r
+    .turnin 31511 >>Turn in A Witness to History
+    .target Madam Vee Luo
 step
     .areapoiexists 379,7734,7735,7736,7737
     .goto 379,67.24,55.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
     .target Xuen
-    .accept 31517 >>Accept Contending With Bullies
-    .accept 30879 >>Accept Round 1: Brewmaster Chani
+    .daily 31517,31492 >>Accept Contending With Bullies or The Torch of Strength
+    .daily 30879,30880 >>Accept Round 1: Brewmaster Chani or Round 1: The Streetfighter
 step
+    .isOnQuest 31517
     .goto 379,71.09,55.93
     >>Kill |cRXP_ENEMY_Shonuf|r
     .complete 31517,1 --1/1 Shonuf slain
     .mob Shonuf
 step
+    .isOnQuest 30879
     .goto 379,70.96,51.82
-    .complete 30879,1 --1/1 Defeat Brewmaster Chani
-step
-    .goto 379,70.28,51.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
-    .turnin 30879 >>Turn in Round 1: Brewmaster Chani
-    .target Xuen
-    .accept 30881 >>Accept Round 2: Clever Ashyo & Ken-Ken
-    .turnin 31517 >>Turn in Contending With Bullies
-
-step
-    .goto 379,71.67,45.35
-    .complete 30881,2 --1/1 Defeat Ken-Ken
-    .complete 30881,1 --1/1 Defeat Clever Ashyo
-step
-    .goto 379,71.76,44.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
-    .turnin 30881 >>Turn in Round 2: Clever Ashyo & Ken-Ken
-    .target Xuen
-    .accept 30883 >>Accept Round 3: The Wrestler
-step
-    .goto 379,66.74,46.53
-    .complete 30883,1 --1/1 Defeat The Wrestler
-step
-    .goto 379,66.39,46.34
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
-    .turnin 30883 >>Turn in Round 3: The Wrestler
-    .target Xuen
-    .accept 30907 >>Accept Round 4: The P.U.G.
-step
-    .goto 379,69.02,43.76
-    .complete 30907,3 --1/1 Defeat Tankiss
-    .complete 30907,1 --1/1 Defeat Hackiss
-    .complete 30907,2 --1/1 Defeat Healiss
-step
-    .goto 379,68.49,44.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
-    .turnin 30907 >>Turn in Round 4: The P.U.G.
-    .target Xuen
-    .turnin 80431 >>Turn in Aid the August Celestials
-
-
-
-
-    --August Celestial Xuen
-step
-    .goto 379,67.24,55.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
-    .accept 31517 >>Accept Contending With Bullies
-    .accept 30879 >>Accept Round 1: Brewmaster Chani
-    .target Xuen
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shonuf|r
-    .target Shonuf
-step
-    .goto 379,71.09,55.93
-    >>Kill |cRXP_ENEMY_Shonuf|r
-    .complete 31517,1 --1/1 Shonuf slain
-    .mob Shonuf
-step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brewmaster Chani|r
-    .target Brewmaster Chani
-step
-    .goto 379,70.96,51.82
-    >>Kill |cRXP_ENEMY_Brewmaster Chani|r
     .complete 30879,1 --1/1 Defeat Brewmaster Chani
+    .skipgossip
+    .target Brewmaster Chani
     .mob Brewmaster Chani
 step
+    .isOnQuest 30902
+    .goto 379,70.81,51.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lun-Chi|r
+    .complete 30902,1 --1/1 Defeat Lun-Chi
+    .skipgossip
+    .target Lun-Chi
+    .mob Lun-Chi
+step
+    .isOnQuest 30879,31517
     .goto 379,70.28,51.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
-    .turnin 30879 >>Turn in Round 1: Brewmaster Chani
-    .accept 30881 >>Accept Round 2: Clever Ashyo & Ken-Ken
-    .turnin 31517 >>Turn in Contending With Bullies
+    .dailyturnin 30879 >>Turn in Round 1: Brewmaster Chani
+    .dailyturnin 31517 >>Turn in Contending With Bullies or Round 1: The Streetfighter
+    .target Xuen
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ken-Ken|r
-    .target Ken-Ken
+    .isOnQuest 30881
+    .goto 379,70.28,51.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
+    .daily 30881,30882 >>Accept Round 2: Clever Ashyo & Ken-Ken or Round 2: Kang Bramblestaff
+    .target Xuen
 step
+    .isOnQuest 30881
     .goto 379,71.67,45.35
-    >>Kill |cRXP_ENEMY_Ken-Ken|r and |cRXP_ENEMY_Clever Ashyo|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clever Ashyo|r and then defeat them.
     .complete 30881,2 --1/1 Defeat Ken-Ken
     .complete 30881,1 --1/1 Defeat Clever Ashyo
-    .mob Ken-Ken
+    .target Clever Ashyo
     .mob Clever Ashyo
+    .mob Ken-Ken
 step
+    .isOnQuest 30882
+    .goto 379,71.61,45.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kang Bramblestaff|r and then defeat them.
+    .complete 30882,1 --1/1 Defeat Kang Bramblestaff
+    .target Kang Bramblestaff
+    .mob Kang Bramblestaff
+step
+    .isOnQuest 30881
     .goto 379,71.76,44.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
-    .turnin 30881 >>Turn in Round 2: Clever Ashyo & Ken-Ken
-    .accept 30883 >>Accept Round 3: The Wrestler
+    .dailyturnin 30881,30882 >>Turn in Round 2: Clever Ashyo & Ken-Ken or Round 2: Kang Bramblestaff
     .target Xuen
+ step
+    .isOnQuest 30883
+    .goto 379,71.76,44.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
+    .target Xuen
+    .daily 30883,30885 >>Accept Round 3: The Wrestler or Round 3: Master Boom Boom
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wrestler|r
-    .target Wrestler
-step
+    .isOnQuest 30883
     .goto 379,66.74,46.53
-    >>Kill |cRXP_ENEMY_Wrestler|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Wrestler|r and defeat him.
     .complete 30883,1 --1/1 Defeat The Wrestler
-    .mob Wrestler
+    .target The Wrestler
+    .mob The Wrestler
 step
+    .isOnQuest 30885
+    .goto 379,66.61,46.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Boom Boom|r and defeat him.
+    .complete 30885,1 --1/1 Defeat Master Boom Boom
+    .target Master Boom Boom
+    .mob Master Boom Boom
+step
+    .isOnQuest 30883
     .goto 379,66.39,46.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
-    .turnin 30883 >>Turn in Round 3: The Wrestler
-    .accept 30907 >>Accept Round 4: The P.U.G.
+    .dailyturnin 30883,30885 >>Turn in Round 3: The Wrestler or Round 3: Master Boom Boom
     .target Xuen
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tankiss|r
-    .target Tankiss
+    .isOnQuest 30907
+    .goto 379,66.39,46.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
+    .target Xuen
+    .daily 30907,30902 >>Accept Round 4: The P.U.G. or Round 4: Master Windfur
 step
+    .isOnQuest 30907
     .goto 379,69.02,43.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Healiss|r and then defeat them.
     .complete 30907,3 --1/1 Defeat Tankiss
     .complete 30907,1 --1/1 Defeat Hackiss
     .complete 30907,2 --1/1 Defeat Healiss
+    .target Healiss
+    .mob Hackiss
+    .mob Healiss
+    .mob Tankiss
 step
+    .isOnQuest 30902
+    .goto 379,68.81,43.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Windfur|r and then defeat them.
+    .complete 30902,1 --1/1 Defeat Master Windfur
+    .target Master Windfur
+    .mob Master Windfur
+step
+    .isOnQuest 30907
     .goto 379,68.49,44.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
-    .turnin 30907 >>Turn in Round 4: The P.U.G.
+    .dailyturnin 30907,30902 >>Turn in Round 4: The P.U.G. or Round 4: Master Windfur
     .target Xuen
-
-
-
-
-]])
-
--- August Celestial Dailies: Townlong
-
-RXPGuides.RegisterGuide([[
-#df
-#version 1
-#group RestedXP Panda Remix
-#name X) August Celestial Daillies
-#internal
-
-
+--Townlong
 step
     .areapoiexists 388,7734,7735,7736,7737
     #loop
@@ -1464,8 +1529,6 @@ step
     .target Yak-Keeper Kyana
     .target Sentinel Commander Qipan
     .target Ogo the Elder
-
-
 step
     .isOnQuest 30952
     >>Kill |cRXP_ENEMY_Sra'thik attacker|r
@@ -1553,16 +1616,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yak-Keeper Kyana|r
     .turnin 30958 >>Turn in In Battle's Shadow
     .target Yak-Keeper Kyana
-]])
-
--- August Celestial Dailies: Krasarang
-RXPGuides.RegisterGuide([[
-#df
-#version 1
-#group RestedXP Panda Remix
-#name X) August Celestial Daillies
-#internal
-
+--Krasarang
 step
     .areapoiexists 418,7734,7735,7736,7737
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thelonius,|r |cRXP_FRIENDLY_Kuo-Na Quillpaw|r and |cRXP_FRIENDLY_Yan Quillpaw|r
