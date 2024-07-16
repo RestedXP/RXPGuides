@@ -1840,3 +1840,48 @@ step
 step
     +Turning in the above quest should complete the questline and unlock the ability to train a racial priest ability from another race server-wide
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Priest SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#title Soul Warding
+#name Soul Warding - 60 (Stratholme)
+
+step
+    #completewith next
+    >>|cRXP_WARN_In order to complete this rune you will need to complete a couple tasks within the Stratholme Dungeon (both living and dead sides). Start looking for a group for it|r
+    .zone Eastern Plaguelands >> Travel to the Eastern Plaguelands
+step
+    .goto Eastern Plaguelands,47.8,24.2
+    >>Enter Stratholme
+    >>|cRXP_WARN_READ THIS SECTION CAREFULLY AS THIS RUNE QUEST IS A BIT UNCONVENTIONAL|r
+    >>In order to get the rune you will need to gather 3 essences from bosses in Stratholme. The bosses who have the essnces are |cRXP_WARN_RANDOM AND DIFFERENT EVERY DUNGEON ID|r. In order to know which bosses have the essence in your run you need to find clues located on pillars within the Scarlet Building in the live side of the dungeon
+    >>To gather the essences you will need 3 |T134799:0|t[|cRXP_LOOT_Stratholme Shadow Jars|r] which drop from the [|cRXP_PICK_Postbox Parcels|r] within the dungeon, to open the [|cRXP_PICK_Postboxes|r] in the first place you need to kill the |cRXP_ENEMY_Stratholme Courier|r to get the |T134237:0|t[|cRXP_LOOT_Postbox Keys|r] from him
+    >>Once you gathered all the essences you have to return to the pillars with the clues and activate them with the essence corresponding to the hint they gave. This spawns an orb next to them which you have to loot to get the rune
+    +|cRXP_WARN_Click here once you read the above and want to see more details about which clue corresponds to which boss. You can always go back to this step if you need to|r
+step
+    >>|cRXP_WARN_Here are the clues and bosses which they correspond to:|r
+    >>Among the dead this mortal dwells with acolytes and icy spells = Maleki the Pallid
+    >>A specter cursed to guard a tower No solace gained from Wealth or power = Baroness Anastari
+    >>The ancient kingdom rediscovered. Trades one master for another = Nerub'enkan
+    >>Built from flesh, a sin of science hunted by Forsakens finest = Ramstein the Gorger
+    >>The people looked to him to lead in their hour of greatest need = Magistrate Barthilas
+    >>A champion of wicked malice, hulking horrors guard his palace = Baron Rivendare
+    >>Holy furor purges sin and yet a shadow lurks within. = Balnazzar
+    >>The smell of brimstone fills the room. This zealot greets you with a boom. = Cannon Master Willey
+    +|cRXP_WARN_Click here if you want to see the recommended efficient order of steps you can take to complete this quest. You can always go back to this step to read the clues again if you need to|r
+step
+    >>|cRXP_WARN_The efficient order of business while doing this quest is as follows:|r
+    >>1. Start in the Living side of the dungeon 
+    >>2. Loot three [|cRXP_PICK_Postbox Parcels|r] for the |T134799:0|t[|cRXP_LOOT_Stratholme Shadow Jars|r], the jars are unique so have a different player pick up each one 
+    >>3. Clear to the pedestal room and figure out which bosses have the essences in your ID 
+    >>4. Collect all the essences as you progress through the dungeon 
+    >>5. Return to the pedestal room and activate each one with its essence 
+    >>6. Loot the orb that spawns for your rune
+    .collect 228124,1 --Oneiric Epiphany
+step
+    .train 402850 >> Use the |T135791:0|t[|cRXP_FRIENDLY_Oneiric Epiphany|r] to train |T135948:0|t[|cRXP_FRIENDLY_Soul Warding|r]
+    .use 228124
+]])
