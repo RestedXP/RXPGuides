@@ -1938,3 +1938,107 @@ step
     .train 440494 >>|cRXP_WARN_Use the|r |T133739:0|t[|cRXP_LOOT_Timeless Wanderer's Insights|r] |cRXP_WARN_to learn|r |T132346:0|t[Sudden Death]
     .use 226679
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warrior SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#title Shockwave
+#name Shockwave - 60 (Azeroth)
+
+step
+    #completewith next
+    .zone Tanaris >>Travel to Tanaris
+step
+    .train 440496,1
+    .goto Tanaris,59.2,91.5 
+    >>|cRXP_WARN_Head to southern Tanaris along the coastline|r
+    >>Click the |cRXP_PICK_Half-Buried Mech|r and |cRXP_PICK_Access Hatch|r on the ground
+    .accept 84135 >> Accept Beach Bot
+    .turnin 84135 >> Turn In Beach Bot
+    .accept 84137 >> Accept Mechanical Romance
+step
+    .train 440496,1
+    #completewith next
+    .cast 459613 >> |cRXP_WARN_Use the|r |T134731:0|t[Guided Buoyancy Accelerant] |cRXP_WARN_to increase you swim speed for the next 4 min.|r
+    .use 226856
+step
+    .train 440496,1
+    >>|cRXP_WARN_NOTE: THERE IS NO ARROW FOR THIS STEP!|r
+    >>|cRXP_WARN_You must now swim south to the remote island and talk to |cRXP_FRIENDLY_Sebastian Jurgens|r. You must swim through fatigue water to reach him. Head toward the Oilrig located on the island to find him|r
+    .turnin 84137 >> Turn In Mechanical Romance
+    .accept 84138 >> Accept Frosty Favors
+    .target Sebastian Jurgens
+step
+    .train 440496,1
+    #completewith next
+    .zone Winterspring >>Travel to Winterspring
+step
+    .train 440496,1
+    .goto Winterspring,61.2,37.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Numi|r
+    .turnin 84138 >> Turn in Frosty Favors
+    .accept 84146 >> Accept Red Bag Blues
+    .target Numi
+step
+    #completewith next
+    .zone Burning Steppes >> Travel to Burning Steppes
+step
+    .train 440496,1
+    .goto Burning Steppes,52.955,24.374
+    >>Click the |cRXP_PICK_Red Bag|r on the ground
+    .turnin 84146 >> Turn in Red Bag Blues
+    .accept 84211 >> Accept Poacher's Den
+    .target Red Bag
+step
+    .train 440496,1
+    #loop
+    .goto Burning Steppes,47.0,27.2,45,0
+    .goto Burning Steppes,46.4,21.4,45,0
+    .goto Burning Steppes,52.95,24.37,45,0
+    >>Kill |cRXP_ENEMY_Blackrock Bootleggers|r and |cRXP_ENEMY_Sulfuron Smugglers|r. Loot them for their |cRXP_LOOT_Vertically Composited Patch Hamplers|r and |cRXP_LOOT_Brass-fitted Flam-Tamp Flange|r
+    .complete 84211,1
+    .complete 84211,2
+    .mob Blackrock Bootlegger
+    .mob Sulfuron Smuggler
+step
+    .train 440496,1
+    #completewith next
+    .zone Winterspring >>Travel to Winterspring
+step
+    .train 440496,1
+    .goto Winterspring,61.2,37.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Numi|r
+    .turnin 84211 >> Turn in Poacher's Den
+    .accept 84212 >> Accept Bookin' it Back
+    .target Numi
+step
+    #completewith next
+    .zone Tanaris >>Travel to Tanaris
+step
+    .train 440496,1
+    >>|cRXP_WARN_Return to |cRXP_FRIENDLY_Sebastian Jurgens|r on the southern remote island again|r
+    .turnin 84212 >> Turn In Bookin' it Back
+    .accept 84213 >> Accept Rift Away
+    .target Sebastian Jurgens
+step
+    .train 440496,1
+    .zone Westfall >> |cRXP_WARN_Follow |cRXP_FRIENDLY_Sebastian Jurgens|r to the teleporter. He will teleport you to Westfall|r << Alliance
+    .zone Tirisfal Glades >> |cRXP_WARN_Follow |cRXP_FRIENDLY_Sebastian Jurgens|r to the teleporter. He will teleport you to Tirisfal Glades|r << Horde
+    .target Sebastian Jurgens
+step
+    .train 440496,1
+    >>|cRXP_WARN_FIND A GROUP TO HELP YOU WITH THIS! YOU MUST HAVE AT LEAST A TANK AND A HEALER HELP YOU!|r
+    >>Talk to |cRXP_FRIENDLY_Sebastian Jurgens|r to summon the |cRXP_ENEMY_Harvest Golem V000-A|r
+    >>Kill the |cRXP_ENEMY_Harvest Golem V000-A|r
+    .complete 84213,1
+    .mob Harvest Golem V000-A
+step
+    .train 440496,1
+    >>Click the |cRXP_PICK_Mech Arm|r on the ground
+    .turnin 84213 >> Turn in Rift Away
+step
+    .train 440496 >>|cRXP_WARN_Use the|r |T133738:0|t[|cRXP_LOOT_Premonition and Combat Foresight|r] |cRXP_WARN_to learn|r |T236312:0|t[Shockwave]
+    .use 226678
+]])

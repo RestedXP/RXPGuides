@@ -1191,8 +1191,20 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 1.0
                     },
                     enableAutomaticXpRate = {
-                        name = L("Detect Rate"),
-                        desc = L("Checks for heirlooms and experience buffs"),
+                        name = function()
+                            if addon.game == "CLASSIC" then
+                                return L("Detect Season")
+                            else
+                                return L("Detect Rate")
+                            end
+                        end,
+                        desc = function()
+                            if addon.game == "CLASSIC" then
+                                return L("Auto detects seasonal buffs and adjust the routes accordingly")
+                            else
+                                return L("Checks for heirlooms and experience buffs")
+                            end
+                        end,
                         type = "toggle",
                         width = optionsWidth,
                         order = 1.1,
