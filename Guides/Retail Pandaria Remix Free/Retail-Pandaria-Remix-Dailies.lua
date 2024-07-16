@@ -17,7 +17,7 @@ step
     .goto 371,58.28,45.04,15,0
     .goto 371,58.61,43.65,15,0
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r, |cRXP_FRIENDLY_Your Hatchling|r, |cRXP_FRIENDLY_Ningna Darkwheel|r, and |cRXP_FRIENDLY_Instructor Windblade|r
-    .questcount <3,31706,31711,31708,31194,30155,30156,30158,31700,31701,30154,31719,31721,31699,31702,31710 >> |cRXP_WARN_Pick up the 3 available dailies in The Arboretum|r
+    .questcount <3,31706,31711,31708,31194,30155,30156,30158,31700,31701,30154,31719,31721,31699,31702,31710,31703,31698 >> |cRXP_WARN_Pick up the 3 available dailies in The Arboretum|r
     .target Elder Anli
     .target Your Hatchling
     .target Ningna Darkwheel
@@ -312,6 +312,12 @@ step
     .complete 31699,1 --7/7 Shadowfae Trickster slain
     .mob Shadowfae Trickster
 step
+    .isOnQuest 31698
+    #completewith WindwardHuntressSlain
+    >>Kill |cRXP_ENEMY_Shadowfae Trickster|r
+    .complete 31698,1 --7/7 Windward Tiger slain
+    .mob Windward Tiger
+step
     .isOnQuest 31700
     #completewith WindwardHuntressSlain
     >>Click on the |cRXP_PICK_Stolen Boots|r
@@ -347,21 +353,71 @@ step
     >>Kill the |cRXP_ENEMY_Windward Huntress|r
     .complete 31701,1 --1/1 Windward Huntress slain
     .mob Windward Huntress
+
+step
+    .isOnQuest 31699
+    #completewith ShadowfaeMadcapSlain
+    >>Kill |cRXP_FRIENDLY_ShadowfaeTrickster|r
+    .complete 31699,1 --7/7 Shadowfae Trickster slain
+    .mob Shadowfae Trickster
+step
+    .isOnQuest 31698
+    #completewith ShadowfaeMadcapSlain
+    >>Kill |cRXP_ENEMY_Shadowfae Trickster|r
+    .complete 31698,1 --7/7 Windward Tiger slain
+    .mob Windward Tiger
+step
+    .isOnQuest 31700
+    #completewith ShadowfaeMadcapSlain
+    >>Click on the |cRXP_PICK_Stolen Boots|r
+    .complete 31700,1 --14/14 Stolen Boots
+    .mob Shadowfae Trickster
+step
+    .isOnQuest 30154
+    #completewith ShadowfaeMadcapSlain
+    >>Kill |cRXP_ENEMY_Windward Tigers|r. Loot them for the |T237347:0|t[|cRXP_LOOT_Tiger Flanks|r]
+    .complete 30154,1 --5/5 Tiger Flank
+    .mob Windward Tiger
+step
+    .isOnQuest 31703
+    #completewith next
+    #label ShadowfaeMadcapSlain
+    >>Kill the |cRXP_ENEMY_Shadowfae Madcap|r
+    .complete 31703,1 --1/1 Shadowfae Madcap slain
+    .mob Shadowfae Madcap
+step
+    #title Enter Cave
+    #completewith ShadowfaeMadcapSlain
+    .goto 371,62.68,26.79,10 >>Enter the cave
+step
+    .isOnQuest 31703
+    #requires ShadowfaeMadcapSlain
+    .goto 371,62.65,27.45
+    >>Kill the |cRXP_ENEMY_Shadowfae Madcap|r
+    .complete 31703,1 --1/1 Shadowfae Madcap slain
+    .mob Shadowfae Madcap
+
 step
     #completewith StolenBoots
     #hidewindow
     #loop
-    .goto 371,64.08,27.32,35,0
     .goto 371,61.10,26.14,35,0
     .goto 371,62.38,20.81,35,0
     .goto 371,63.56,23.84,35,0
+    .goto 371,64.08,27.32,35,0
     +1
 step
     .isOnQuest 31699
     #completewith TigerFlank
-    >>Kill |cRXP_ENEMY_ShadowfaeTrickster|r
+    >>Kill |cRXP_ENEMY_Shadowfae Trickster|r
     .complete 31699,1 --7/7 Shadowfae Trickster slain
     .mob Shadowfae Trickster
+step
+    .isOnQuest 31698
+    #completewith TigerFlank
+    >>Kill |cRXP_ENEMY_Shadowfae Trickster|r
+    .complete 31698,1 --7/7 Windward Tiger slain
+    .mob Windward Tiger
 step
     .isOnQuest 31700
     #completewith TigerFlank
@@ -377,15 +433,33 @@ step
     .mob Windward Alpha
 step
     .isOnQuest 31700
+    #completewith ShadowfaeTricksterSlain
+    >>Click on the |cRXP_PICK_Stolen Boots|r
+    .complete 31700,1 --14/14 Stolen Boots
+    .mob Shadowfae Trickster
+step
+    .isOnQuest 31698
+    #completewith ShadowfaeTricksterSlain
+    >>Kill |cRXP_ENEMY_Shadowfae Trickster|r
+    .complete 31698,1 --7/7 Windward Tiger slain
+    .mob Windward Tiger
+step
+    .isOnQuest 31699
+    #label ShadowfaeTricksterSlain
+    >>Kill |cRXP_FRIENDLY_ShadowfaeTrickster|r
+    .complete 31699,1 --7/7 Shadowfae Trickster slain
+    .mob Shadowfae Trickster
+step
+    .isOnQuest 31700
     #completewith next
     >>Click on the |cRXP_PICK_Stolen Boots|r
     .complete 31700,1 --14/14 Stolen Boots
     .mob Shadowfae Trickster
 step
-    .isOnQuest 31699
-    >>Kill |cRXP_FRIENDLY_ShadowfaeTrickster|r
-    .complete 31699,1 --7/7 Shadowfae Trickster slain
-    .mob Shadowfae Trickster
+    .isOnQuest 31698
+    >>Kill |cRXP_ENEMY_Shadowfae Trickster|r
+    .complete 31698,1 --7/7 Windward Tiger slain
+    .mob Windward Tiger
 step
     .isOnQuest 31700
     #label StolenBoots
@@ -423,6 +497,12 @@ step
     .dailyturnin 31702 >>Turn in On The Prowl
     .target Elder Anli
 step
+    .isOnQuest 31703
+    .goto 371,57.63,44.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
+    .dailyturnin 31703 >>Turn Madcap Mayhem
+    .target Elder Anli
+step
     .isOnQuest 31700
     .goto 371,57.63,44.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
@@ -439,6 +519,12 @@ step
     .goto 371,57.63,44.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
     .dailyturnin 31699 >>Turn in Sprite Fright
+    .target Elder Anli
+step
+    .isOnQuest 31698
+    .goto 371,57.63,44.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
+    .dailyturnin 31698 >>Turn in Thinning The Pack
     .target Elder Anli
 step
     .isOnQuest 30154
@@ -1884,7 +1970,7 @@ RXPGuides.RegisterGuide([[
 #version 1
 #group RestedXP Panda Remix
 #name X) Domination Point Dailies
-#internal
+#displayname Domination Point Dailies
 
 step
     #loop
