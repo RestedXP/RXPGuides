@@ -2068,7 +2068,7 @@ step
     .target Blood Guard Gro'tash
 step
     .isOnQuest 32126
-    .goto 418,10.25,53.64
+    .goto 418,10.47,53.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brolic|r
     .dailyturnin 32126 >>Turn in Tear It Up
     .target Brolic
@@ -2198,15 +2198,18 @@ step
     .use 92475
     .mob SI:7 Saboteur
 step
+    .isOnQuest 32238
     #completewith next
     >>Click on |cRXP_ENEMY_Shieldwall Mecha Pounder|r to weaken them with the |T133015:0|t[Universal Remote]. Kill the |cRXP_ENEMY_Shieldwall Mecha Pounder|r
     .complete 32238,1 --9/9 Shieldwall Mecha Pounder exploded
     .use 91902
     .mob Shieldwall Mecha Pounder
 step
+    .isOnQuest 32139
     >>Click on |cRXP_PICK_Domination Point Lumber|r
     .complete 32139,1 --9/9 Domination Point Lumber collected
 step
+    .isOnQuest 32238
     #label ShieldwallMechaPounderExploded
     >>Click on |cRXP_ENEMY_Shieldwall Mecha Pounder|r to weaken them with the |T133015:0|t[Universal Remote]. Kill the |cRXP_ENEMY_Shieldwall Mecha Pounder|r
     .complete 32238,1 --9/9 Shieldwall Mecha Pounder exploded
@@ -2364,7 +2367,7 @@ step
     .isQuestTurnedIn 32235
     .isQuestTurnedIn 32126
     .isQuestTurnedIn 32123
-    .goto 418,10.23,53.63
+    .goto 418,10.47,53.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brolic|r
     .accept 32127 >>Accept All Dead, All Dead
     .target Brolic
@@ -2400,7 +2403,7 @@ step
     .target Blood Guard Gro'tash
 step
     .isOnQuest 32127
-    .goto 418,10.37,53.87
+    .goto 418,10.47,53.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brolic|r
     .dailyturnin 32127 >>Turn in All Dead, All Dead
     .target Brolic
