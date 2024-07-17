@@ -798,11 +798,35 @@ step
     .goto 422,54.29,35.93,15,0
     .goto 422,55.06,35.85,10,0
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaz'tik the Manipulator|r, |cRXP_FRIENDLY_Rik'kal the Dissector|r, |cRXP_FRIENDLY_Korven the Prime|r or |cRXP_FRIENDLY_Kil'ruk the Wind-Reaver|r
-    .questcount <6,31232,31238,31231,31235,31234,31233,31109,31487,31494,31502,31503,31496, >>|cRXP_WARN_Get all the Shado-Pan Dailies, skip this step if it doesn't complete|r
+    .questcount <6,31232,31238,31231,31235,31234,31233,31109,31487,31494,31502,31503,31496,31808 >>|cRXP_WARN_Get all the Shado-Pan Dailies, skip this step if it doesn't complete|r
     .target Kaz'tik the Manipulator
     .target Rik'kal the Dissector
     .target Korven the Prime
     .target Kil'ruk the Wind-Reaver
+step
+    .isOnQuest 31808
+    .goto 422,50.82,41.37
+    >>|cRXP_WARN_Follow the arrow|r. Click on |cRXP_FRIENDLY_Kovok|r
+    .complete 31808,1 --1/1 Locate Kovok near the Clutches of Shek'zeer
+    .target Kovok
+step
+    .isOnQuest 31808
+    #loop
+    .goto 422,50.65,45.84,40,0
+    .goto 422,41.68,41.22,50,0
+    .goto 422,40.63,34.35,45,0
+    .goto 422,41.76,27.94,40,0
+    .goto 422,68.01,12.87,50,0
+    .goto 422,41.76,27.94,40,0
+    .goto 422,40.63,34.35,45,0
+    .goto 422,41.68,41.22,50,0
+    >>Spam |T132104:0|t[Poison Blast] (1) to kill the |cRXP_ENEMY_Mantid|r
+    .complete 31808,2 --200/200 Mantid slain
+    .mob Ik'thik Warrior
+    .mob Ik'thik Slayer
+    .mob Krik'thik Battletank
+    .mob Krik'thik Wingguard
+    .mob Krik'thik Wingleader
 step
     .isOnQuest 31109
     #completewith KunchongHatchlingReleased
@@ -1164,6 +1188,12 @@ step
     .goto 422,54.26,35.78
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaz'tik the Manipulator|r
     .dailyturnin 31494 >>Turn in Free From Her Clutches
+    .target Kaz'tik the Manipulator
+step
+    .isOnQuest 31808
+    .goto 422,54.25,35.78
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kaz'tik the Manipulator|r
+    .dailyturnin 31808 >>Turn in Rampage Against the Machine
     .target Kaz'tik the Manipulator
 step
     .isOnQuest 31502
