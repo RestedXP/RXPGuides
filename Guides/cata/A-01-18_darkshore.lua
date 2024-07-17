@@ -1026,13 +1026,13 @@ step
 step
 #questguide
 #completewith furbolgs
-    >>Kill |cRXP_ENEMY_Consumed Thistle Bear|r
+    >>Kill |cRXP_ENEMY_Consumed Thistle Bears|r
     .complete 13881,1
     .mob Consumed Thistle Bear
 step
 #questguide
-    .goto 62,45.062,79.069
-    >>Swim down the watering hole
+    .goto 62,45.031,79.192
+    >>|cRXP_WARN_Swim to the |cRXP_PICK_Devouring Artifact|r underwater|r
     .complete 13881,2 --|Watering Hole Investigated
 step
 #questguide
@@ -1041,7 +1041,6 @@ step
     .target Elder Brolg
     .turnin 13525 >>Turn in What's Happening to the Blackwood Furbolg?
     .accept 13526 >>Accept The Bear's Paw
-
 step
 #questguide
 #loop
@@ -1051,7 +1050,8 @@ step
     .goto 62,45.275,85.286,40,0
     .goto 62,44.143,81.923,40,0
     .goto 62,44.828,83.242,0
-    >>Click on |cRXP_PICK_Bear's Paw|r, they look like small bushes on the ground
+    >>Loot the |cRXP_LOOT_Bear's Paws|r on the ground
+    >>|cRXP_WARN_They look like small plants|r
     .complete 13526,1 --|8/8 Bear's Paw
 step
 #questguide
@@ -1061,19 +1061,24 @@ step
 step
 #questguide
     #completewith next
-    .cast 65426 >> Use the |T133236:0|t[Panther Figurine] to transform into a panther
+    .cast 65426 >> |cRXP_WARN_Use the|r |T133236:0|t[Panther Figurine] |cRXP_WARN_to transform into a Panther|r
+    .use 46696
 step
 #questguide
     .goto 62,40.634,84.297
-    >>as you transform into a panther sneak up to |cRXP_FRIENDLY_Foreman Balsoth|r to overhear his conversation
+    >>|cRXP_WARN_Head to |cRXP_ENEMY_Foreman Balsoth|r and wait for the RP to complete|r
+    >>|cRXP_WARN_Note if you take fall damage you will lose the Panther buff|r
     .complete 13892,1 --|1/1 Twilight's Hammer surveillance
     .target Foreman Balsoth
     .use 46696
 step
 #questguide
-    >>Click the Quest Turn in Pop-Up in your Questlog.
+    .goto 62,45.311,75.131
+    >>Click on the quest popup under your minimap to turn in the quest
+    >>|cRXP_WARN_If you cannot do this head back and talk to|r |cRXP_FRIENDLY_Balren of the Claw|r
     .turnin 13892 >>Turn in Leave No Tracks
     .accept 13948 >>Accept Stepping Up Surveillance
+    .target Balren of the Claw
 step
 #questguide
     .goto 62,39.658,86.384,10,0
@@ -1081,8 +1086,9 @@ step
     .goto 62,40.733,85.046,10,0
     .goto 62,39.809,85.356,10,0
     .goto 62,40.101,84.651
-    .use 46696 >> Use the |T133236:0|t[Panther Figurine] to transform into a panther
-    >>Sneak up to |cRXP_FRIENDLY_Doomspeaker Trevellion|r all the way up the scaffolding
+    .use 46696 >> |cRXP_WARN_Use the|r |T133236:0|t[Panther Figurine] |cRXP_WARN_to transform into a Panther again|r
+    >>|cRXP_WARN_Sneak up to|r |cRXP_ENEMY_Doomspeaker Trevellion|r |cRXP_WARN_all the way up the scaffolding. Wait out the RP again|r
+    >>|cRXP_WARN_Avoid |cRXP_ENEMY_Faceless Ones|r as they have stealth detection|r
     .target Doomspeaker Trevellion
     .complete 13948,1
 step
@@ -1097,7 +1103,7 @@ step
 #sticky
 #label fleetfoot
     .goto 62,45.103,78.471
-    >>Kill and loot |cRXP_ENEMY_Fleetfoot|r
+    >>Kill |cRXP_ENEMY_Fleetfoot|r. Loot it for its |cRXP_LOOT_Tailfeathers|r
     .collect 44886,1,13544,1
     .mob Fleetfoot
 step
@@ -1107,21 +1113,21 @@ step
     .goto 62,42.014,76.593,0
     .goto 62,45.945,78.353,40,0
     .goto 62,42.014,76.593,40,0
-    >>Kill |cRXP_ENEMY_Consumed Thistle Bear|r
+    >>Kill |cRXP_ENEMY_Consumed Thistle Bears|r
     .complete 13881,1
+    .mob Consumed Thistle Bear
 step
 #questguide
 #requires fleetfoot
     .goto 62,45.300,76.734
-    .use 44888 >> Use the |T134189:0|t[Bear's Paw Bundle] next to the |cRXP_PICK_Ancient Bear Statue|r
+    .use 44888 >> |cRXP_WARN_Use the|r |T134189:0|t[Bear's Paw Bundle] |cRXP_WARN_next to the|r |cRXP_PICK_Ancient Bear Statue|r
     .complete 13544,1
 step
 #questguide
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balren of the Claw|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balren of the Claw|r and |cRXP_FRIENDLY_Larien|r 
     .turnin 13948 >>Turn in Stepping Up Surveillance
     .target +Balren of the Claw
     .goto 62,45.284,75.170
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Larien|r 
     .accept 13896 >>Accept Unearthed Knowledge
     .target +Larien
     .goto 62,45.324,75.050
@@ -1135,7 +1141,7 @@ step
 step
 #questguide
     .goto 62,45.405,74.859
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Onu|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Onu|r to receive the |cRXP_LOOT_Seed of the Earth|r
     .complete 13882,1
     .skipgossip
     .target Onu
@@ -1150,18 +1156,19 @@ step
     .waypoint 62,41.860,77.050,40,0
     .waypoint 62,44.292,78.937,40,0
     .waypoint 62,40.902,79.825,40,0
-    >>Look for |cRXP_PICK_Darkshore Wisps|r, right click them as they get to the ground
+    >>|cRXP_WARN_Look for the |cRXP_FRIENDLY_Darkshore Wisps|r flying around. Click on them once they approach the ground|r
     .unitscan Darkshore Wisp
     .complete 13882,3
 step
 #questguide
-    .goto 62,43.541,80.996
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Brolg|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Brolg|r and |cRXP_FRIENDLY_Gren Tornfur|r
     .turnin 13544 >>Turn in The Bear's Blessing
     .accept 13545 >>Accept Cleansing the Afflicted
     .target +Elder Brolg
+    .goto 62,43.515,81.018
     .accept 13572 >>Accept Jadefire Braziers
     .target +Gren Tornfur
+    .goto 62,43.576,81.023
 step
 #questguide
     #loop
@@ -1172,7 +1179,6 @@ step
     .goto 62,45.275,85.286,40,0
     .goto 62,44.143,81.923,40,0
     .goto 62,44.828,83.242,0
-
     >>Click the |cRXP_PICK_Jadefire Braziers|r scattered around the camp
     .complete 13572,1 --|8/8 Jadefire Brazier
 step
@@ -1183,7 +1189,7 @@ step
     .goto 62,45.275,85.286,40,0
     .goto 62,44.143,81.923,40,0
     .goto 62,44.828,83.242,0
-    .use 44889>>Use the |T237425:0|t[Blessed Herb Bundle] on a blackwood furbolg, then kill the |cRXP_ENEMY_Spirit of Corruption|r that spawns
+    .use 44889>>|cRXP_WARN_Use the|r |T237425:0|t[Blessed Herb Bundle] |cRXP_WARN_on a |cRXP_ENEMY_Blackwood Furbolg|r, then kill the|r |cRXP_ENEMY_Spirit of Corruption|r |cRXP_WARN_that spawns|r
     .complete 13545,1
     .mob Spirit of Corruption
     .target Maddened Blackwood
@@ -1191,13 +1197,14 @@ step
 step
 #questguide
 #requires braziers
-    .goto 62,43.539,80.984
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gren Tornfur|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gren Tornfur|r and |cRXP_FRIENDLY_Elder Brolg|r
     .turnin 13572 >>Turn in Jadefire Braziers
     .target +Gren Tornfur
+    .goto 62,43.576,81.023
     .turnin 13545 >>Turn in Cleansing the Afflicted
     .accept 13546 >>Accept The Defiler
     .target +Elder Brolg
+    .goto 62,43.515,81.018
 step
 #questguide
     .goto 62,46.754,84.038
@@ -1210,7 +1217,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Brolg|r
     .target Elder Brolg
     .turnin 13546 >>Turn in The Defiler
-
 step
 #questguide
 #loop
@@ -1218,17 +1224,16 @@ step
     .goto 62,38.645,78.225,0
     .goto 62,37.263,76.834,0
     .goto 62,37.999,74.396,0
-    
     .goto 62,38.060,79.195,20,0
     .goto 62,38.645,78.225,20,0
     .goto 62,37.263,76.834,20,0
     .goto 62,37.999,74.396,20,0
-    >>Loot |cRXP_PICK_Glittering Shells|r scattered around the shore east
+    >>Open the |cRXP_PICK_Glittering Shells|r on the ground . Loot them for the |cRXP_LOOT_Seed of the Sea|r
     .complete 13882,2 --|1/1 Seed of the Sea
 step
 #questguide
 #requires skyseed
-    .goto 62,37.707,82.870
+    .goto 62,37.626,82.824
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Groff|r
     .target Archaeologist Groff
     .turnin 13896 >>Turn in Unearthed Knowledge
@@ -1236,35 +1241,41 @@ step
     .accept 13907 >>Accept Sweeping Clean the Ruins
 step
 #questguide
-#sticky
-#label prospector
-    .goto 62,37.738,82.897
+    .goto 62,37.747,82.932
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jr. Archaeologist Ferd|r 
     .target Jr. Archaeologist Ferd
     .accept 13912 >>Accept Swamped Secrets
 step
 #questguide
-    .goto 62,37.709,82.903
+    .goto 62,37.695,82.932
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Remtravel|r 
     .target Prospector Remtravel
     .accept 13911 >>Accept The Absent-Minded Prospector
     >>|cRXP_WARN_This will start an escort quest|r
 step
 #questguide
-    #completewith next
+    #completewith prospector
     #optional
-    >>Kill |cRXP_ENEMY_Murlocs|r
+    >>Kill |cRXP_ENEMY_Greymist Refugees|r and |cRXP_ENEMY_Greymist Oracle|r
     .complete 13907,1
+    .mob Greymist Refugee
+    .mob Greymist Oracle
 step
 #questguide
-    >>Escort |cRXP_FRIENDLY_Prospector Remtravel|r
+    >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Prospector Remtravel|r through the Excavation site|r
     .complete 13911,1
     .target Prospector Remtravel
 step
 #questguide
-#requires prospector
+    .goto 62,37.747,82.932
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jr. Archaeologist Ferd|r 
+    .target Jr. Archaeologist Ferd
+    .turnin 13911 >>Turn in The Absent-Minded Prospector
+step
+#questguide
+#label prospector
     .goto 62,37.023,83.441
-    >>Click the yellow plate like disc underwater
+    >>Click the |cRXP_PICK_Mud-Crusted Ancient Disc|r underwater
     .complete 13912,1 --|1/1 Mud-Crusted Ancient Disc
 step
 #questguide
@@ -1273,28 +1284,31 @@ step
     .goto 62,37.393,82.425,20,0
     .goto 62,36.572,84.501,20,0
     .goto 62,37.669,84.418,0
-    >>Kill |cRXP_ENEMY_Murlocs|r
+    >>Kill |cRXP_ENEMY_Greymist Refugees|r and |cRXP_ENEMY_Greymist Oracle|r
     .complete 13907,1
-
+    .mob Greymist Refugee
+    .mob Greymist Oracle
 step
 #questguide
-#sticky
-#label debris
-#loop
-    .goto 62,38.407,78.988,0
-    .goto 62,36.452,81.574,0
-    .goto 62,36.126,84.743,0
-    .goto 62,37.149,86.795,0
-    
-    .goto 62,38.407,78.988,40,0
-    .goto 62,36.452,81.574,40,0
-    .goto 62,36.126,84.743,40,0
-    .goto 62,37.149,86.795,40,0
-    >>Loot |cRXP_PICK_Greymist Debris|r along the coast
-    .complete 13909,1
+    .goto 62,37.626,82.824
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Groff|r
+    .target Archaeologist Groff
+    .turnin 13907 >>Turn in Sweeping Clean the Ruins
+    .accept 13909 >>Accept Got Some Flotsam?
+step
+#questguide
+    .goto 62,37.747,82.932
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jr. Archaeologist Ferd|r 
+    .target Jr. Archaeologist Ferd
+    .turnin 13912 >>Turn in Swamped Secrets
+    .accept 13918 >>Accept The Titans' Terminal
 step
 #questguide
 #completewith next
+    >>Loot |cRXP_PICK_Floating Greymist Debris|r along the coast
+    .complete 13909,1
+step
+#questguide
 #loop
     .goto 62,38.407,78.988,0
     .goto 62,36.452,81.574,0
@@ -1304,28 +1318,41 @@ step
     .goto 62,36.452,81.574,40,0
     .goto 62,36.126,84.743,40,0
     .goto 62,37.149,86.795,40,0
-    .use 46388 >>Keep using the |T134519:0|t[Buried Artifact Detector] to reveal the |cRXP_PICK_Buried Debris|r
-    >>Click them to loot |cRXP_LOOT_Device Fragments|r
+    .use 46388 >>|cRXP_WARN_Use the|r |T134519:0|t[Buried Artifact Detector] |cRXP_WARN_to reveal the |cRXP_PICK_Buried Debris|r along the coast. Loot them for the|r |cRXP_LOOT_Ancient Device Fragments|r
     .collect 46702,5,13918,1
     .isOnQuest 13918
 step
 #questguide
-#requires debris
-    .use 46702 >> Click the |T132997:0|t[Ancient Device Fragments] to combine them
+#loop
+    .goto 62,38.407,78.988,0
+    .goto 62,36.452,81.574,0
+    .goto 62,36.126,84.743,0
+    .goto 62,37.149,86.795,0
+    .goto 62,38.407,78.988,40,0
+    .goto 62,36.452,81.574,40,0
+    .goto 62,36.126,84.743,40,0
+    .goto 62,37.149,86.795,40,0
+    >>Loot |cRXP_PICK_Floating Greymist Debris|r along the coast
+    .complete 13909,1
+step
+#questguide
+    .use 46702 >> |cRXP_WARN_Use the|r |T132997:0|t[Ancient Device Fragments] |cRXP_WARN_to combine them into the|r |cRXP_LOOT_Ancient Slotted Device|r
     .complete 13918,1
 step
 #questguide
-    .goto 62,37.645,82.832
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Groff|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Groff|r and |cRXP_FRIENDLY_Jr. Archaeologist Ferd|r 
     .turnin 13909 >>Turn in Got Some Flotsam?
     .accept 13910 >>Accept A New Home
     .target +Archaeologist Groff
+    .goto 62,37.645,82.832
     .turnin 13918 >>Turn in The Titans' Terminal
+    .target +Jr. Archaeologist Ferd
+    .goto 62,37.747,82.932
 step
 #questguide
-    .goto 62,35.945,81.989
+    .goto 62,35.905,81.942
+    .use 46385 >> |cRXP_WARN_Use the|r |T132281:0|t[Marvelous Mobile Murloc Manor Maker] |cRXP_WARN_next to the|r |cRXP_PICK_Greymist Murloc Build Site|r
     .complete 13910,1 --|1/1 Greymist Murloc Home Built
-    .use 46385 >> Use the |T132281:0|[Marvelous Mobile Murloc Manor Maker] near the construction banner
 step
 #questguide
     .goto 62,37.643,82.805
@@ -1351,7 +1378,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Onu|r 
     .target Onu
     .accept 13895 >>Accept The Slumbering Ancients
-
 step
 #questguide
     .goto 62,45.683,71.701
@@ -1366,12 +1392,14 @@ step
     .accept 13953 >>Accept Naga In Our Midst
 step
 #questguide
-    .goto 62,45.303,75.129
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balren of the Claw|r
-    .target Balren of the Claw
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balren of the Claw|r and |cRXP_FRIENDLY_Felros|r
     .turnin 13953 >>Turn in Naga In Our Midst
     .accept 13899 >>Accept The Darkscale Warlord
+    .target +Balren of the Claw
+    .goto 62,45.303,75.129
     .accept 13898 >>Accept The Tides Turn Against Us
+    .target +Felros
+    .goto 62,45.352,75.115
 step
 #questguide
 #loop
@@ -1379,8 +1407,8 @@ step
     .goto 62,40.264,73.207,0
     .goto 62,41.893,75.131,30,0
     .goto 62,40.264,73.207,30,0
+    .use 46363 >>|cRXP_WARN_Use the|r |T133749:0|t[Lifebringer Sapling] |cRXP_WARN_on a |cRXP_ENEMY_Whitetail Stag|r, |cRXP_ENEMY_Grizzled Thistle Bear|r, |cRXP_ENEMY_Moonstalker Matriarch|r or|r |cRXP_ENEMY_Moonstalker Sire|r
     .complete 13925,1 --|1/1 Lifebringer Sapling Tested
-    .use 46363 >>Use the |T133749:0|t[Lifebringer Sapling] on an uncorrupted animal
     .target Whitetail Stag
     .target Grizzled Thistle Bear
     .target Moonstalker Matriarch
@@ -1391,22 +1419,79 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kathrena Winterwisp|r
     .target Kathrena Winterwisp
     .turnin 13925 >>Turn in An Ounce of Prevention
-    --.accept 13885 >>Accept In Defense of Darkshore
+    .accept 13885 >>Accept In Defense of Darkshore
 step
 #questguide
+#completewith next
+    .goto 62,44.474,75.350
+    .vehicle >> |cRXP_WARN_Talk to |cRXP_FRIENDLY_Orseus|r to mount a|r |cRXP_FRIENDLY_Hippogryph|r
+    .skipgossip
+step
+#questguide
+    >>|cRXP_WARN_Cast|r |T136065:0|t[Protect Wildlife] (1) |cRXP_WARN_on |cRXP_ENEMY_Grizzled Thistle Bears|r, |cRXP_ENEMY_Moonstalkers|r and|r |cRXP_ENEMY_Whitetail Deer|r
+    .complete 13885,1 -- Grizzled Thistle Bear Protected (8)
+    .target +Grizzled Thistle Bear
+    .complete 13885,2 -- Moonstalker Protected (8)
+    .target +Moonstalker
+    .complete 13885,3 -- Whitetail Deer Protected (8)
+    .target +Whitetail Deer
+step
+#questguide
+    .goto 62,45.198,74.627
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kathrena Winterwisp|r
+    .target Kathrena Winterwisp
+    .turnin 13885 >>Turn in In Defense of Darkshore
+    .accept 13891 >>Accept The Devourer of Darkshore
+step
+#questguide
+    #completewith next
+    .goto 62,45.031,79.192
+    .cast 65207 >> |cRXP_WARN_Use the|r |T133749:0|t[Lifebringer Sapling] |cRXP_WARN_at the |cRXP_PICK_Devouring Artifact|r underwater to summon|r |cRXP_ENEMY_Yoth'al the Devourer|r 
+    .timer 10,The Devourer of Darkshore RP
+    .use 46370
+step
+#questguide
+    .goto 62,45.031,79.192
+    .use 46370 >> Kill |cRXP_ENEMY_Yoth'al the Devourer|r 
+    .complete 13891,1
+    .mob Yoth'al the Devourer
+step
+#questguide
+    #completewith AzsharaOffering
+    >>Kill |cRXP_ENEMY_Darkscale Myrmidons|r
+    .complete 13898,1 --|8/8 Darkscale Myrmidon slain
+    .mob Darkscale Myrmidon
+step
+#questguide
+    .goto 62,33.43,83.65,50,0
     .goto 62,33.040,83.773,15,0
     .goto 62,32.269,84.069,15,0
     .goto 62,32.263,85.379
-    >>Kill |cRXP_ENEMY_Warlord Wrathspine|r and click on his corpse
+    >>Kill |cRXP_ENEMY_Warlord Wrathspine|r
+    >>Click |cRXP_FRIENDLY_Warlord Wrathspines|r corpse after
     .mob Warlord Wrathspine
     .turnin 13899 >>Turn in The Darkscale Warlord
     .accept 13900 >>Accept The Offering to Azshara
---TODO: logout skip maybe?
 step
 #questguide
+    #label AzsharaOffering
     .goto 62,32.874,84.131
-    >>Exit the cave and run to the terrace above the cave entrance
+    >>|cRXP_WARN_Exit the cave and head to the terrace above the entrance|r
+    >>Kill the |cRXP_ENEMY_Darkscale Priestesses|r
     .complete 13900,1 --|1/1 Offering to Azshara prevented
+    .timer 64,The Offering to Azshara RP
+    .mob Darkscale Priestess
+step
+#questguide
+#completewith next
+    +|cRXP_WARN_Wait out the RP with |cRXP_ENEMY_Queen Azshara|r and wait for |cRXP_FRIENDLY_Malfurion Stormrage|r to arrive|r
+step
+#questguide
+    .goto 62,32.796,84.294
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Malfurion Stormrage|r
+    .turnin 13900 >>Turn in The Offering to Azshara
+    .accept 13897 >> Accept The Battle for Darkshore
+    .target Malfurion Stormrage
 step
 #questguide
     .goto 62,32.874,84.131
@@ -1415,20 +1500,34 @@ step
     .mob Darkscale Myrmidon
 step
 #questguide
+#completewith next
+    .cast 80230 >>|cRXP_WARN_Travel to the The Master's Glaive and use the|r |T237377:0|t[Horn of the Ancients]
+    .use 58365
+step
+#questguide
     .goto 62,40.552,83.946
-    >>Kill |cRXP_ENEMY_Avatar of Soggoth|r
-    .use 58365 >> Use the |T237377:0|t[Horn of the Ancients] to help you with the fight
+    .use 58365 >>Kill the |cRXP_ENEMY_Avatar of Soggoth|r
     .mob Avatar of Soggoth
     .complete 13897,1 --|1/1 Avatar of Soggoth slain
 step
 #questguide
-    .goto 62,45.340,75.115
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balren of the Claw|r
-    .target Balren of the Claw
     .turnin 13897 >>Turn in The Battle for Darkshore
+    --.accept 26408 >> Accept Ashes in Ashenvale
+    .target Balren of the Claw
+    .goto 62,45.305,75.134
+step
+#questguide
+    .goto 62,45.352,75.115
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Felros|r
     .turnin 13898 >>Turn in The Tides Turn Against Us
---
---Should be level 20 here, still missing the bombing run quest, garbage xp/hr
+    .target Felros
+step
+#questguide
+    .goto 62,45.198,74.627
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kathrena Winterwisp|r
+    .target Kathrena Winterwisp
+    .turnin 13891 >>Turn in The Devourer of Darkshore
 step
 #questguide
     #completewith next
