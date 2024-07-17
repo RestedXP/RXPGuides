@@ -16,11 +16,13 @@ step
     .goto 371,57.75,44.94,10,0
     .goto 371,58.28,45.04,15,0
     .goto 371,58.61,43.65,15,0
-    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r, |cRXP_FRIENDLY_Your Hatchling|r, |cRXP_FRIENDLY_Ningna Darkwheel|r, and |cRXP_FRIENDLY_Instructor Windblade|r
-    .questcount <3,31706,31711,31708,31194,30155,30156,30158,31700,31701,30154,31719,31721,31699,31702,31710,31703,31698 >> |cRXP_WARN_Pick up the 3 available dailies in The Arboretum|r
+    .goto 371,57.29,43.46,15,0
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r, |cRXP_FRIENDLY_Your Hatchling|r, |cRXP_FRIENDLY_Ningna Darkwheel|r, |cRXP_FRIENDLY_Qua-Ro Whitebrow|r, and |cRXP_FRIENDLY_Instructor Windblade|r
+    .questcount <3,31706,31711,31708,31194,30155,30156,30158,31700,31701,30154,31719,31721,31699,31702,31710,31703,31698,31712,31715,31714 >> |cRXP_WARN_Pick up the 3 available dailies in The Arboretum|r
     .target Elder Anli
     .target Your Hatchling
     .target Ningna Darkwheel
+    .target Qua-Ro Whitebrow
     .target Instructor Windblade
 step
     .isOnQuest 31719
@@ -147,6 +149,73 @@ step
     >>|cRXP_WARN_Fly through the Finish Line|r
     .complete 30152,2 --1/1 Pass underneath the Finish Line
     .skipgossipid 40400
+step
+    .isOnQuest 31712
+    #completewith LordOonaSlainB
+    >>Kill |cRXP_ENEMY_Oona Hozen|r
+    .complete 31712,1 --13/13 Oona Hozen slain
+    .mob Oona Goon
+    .mob Oona Brewchugger
+    .mob Oona Tuna-Catcher
+step
+    .isOnQuest 31714
+    #completewith LordOonaSlainB
+    >>Click on |cRXP_FRIENDLY_Misguided Serpents|r. |cRXP_WARN_Be careful as you're able to kill them accidentally|r
+    .complete 31714,1 --10/10 Rescued Serpent
+    .target Misguided Serpent
+step
+    .isOnQuest 31715
+    #completewith next
+    #label LordOonaSlainA
+    >>Kill |cRXP_ENEMY_Load Oona|r
+    .complete 31715,1 --1/1 Lord Oona slain
+    .mob Lord Oona
+step
+    #title Enter Cave
+    #completewith LordOonaSlainA
+    .goto 371,57.50,27.72,10 >>Enter the cave
+step
+    #requires LordOonaSlainA
+    #label LordOonaSlainB
+    .goto 375,47.51,28.36,20,0
+    .goto 375,24.43,44.19,20,0
+    .goto 375,46.44,81.04
+    >>Kill |cRXP_ENEMY_Load Oona|r
+    .complete 31715,1 --1/1 Lord Oona slain
+    .mob Lord Oona
+step
+    #completewith OonaHozenSlain
+    #hidewindow
+    #loop
+    .goto 375,37.18,41.68,8,0
+    .goto 375,57.06,30.82,15,0
+    .goto 375,76.14,52.98,18,0
+    .goto 375,79.01,35.69,18,0
+    .goto 375,57.06,30.82,15,0
+    .goto 375,24.43,44.19,20,0
+    .goto 375,46.44,81.04,20,0
+    +1
+step
+    .isOnQuest 31712
+    #completewith next
+    >>Kill |cRXP_ENEMY_Oona Hozen|r
+    .complete 31712,1 --13/13 Oona Hozen slain
+    .mob Oona Goon
+    .mob Oona Brewchugger
+    .mob Oona Tuna-Catcher
+step
+    .isOnQuest 31714
+    >>Click on |cRXP_FRIENDLY_Misguided Serpents|r. |cRXP_WARN_Be careful as you're able to kill them accidentally|r
+    .complete 31714,1 --10/10 Rescued Serpent
+    .target Misguided Serpent
+step
+    .isOnQuest 31712
+    #label OonaHozenSlain
+    >>Kill |cRXP_ENEMY_Oona Hozen|r
+    .complete 31712,1 --13/13 Oona Hozen slain
+    .mob Oona Goon
+    .mob Oona Brewchugger
+    .mob Oona Tuna-Catcher
 step
     .isOnQuest 31710
     #completewith SeedofDoubtSlainB
@@ -549,6 +618,24 @@ step
     .goto 371,57.63,44.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
     .dailyturnin 30152 >>Turn in The Sky Race
+    .target Elder Anli
+step
+    .isOnQuest 31712
+    .goto 371,57.72,44.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
+    .dailyturnin 31712 >>Turn in Monkey Mischief
+    .target Elder Anli
+step
+    .isOnQuest 31715
+    .goto 371,57.72,44.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
+    .dailyturnin 31715 >>Turn in The Big Kah-Oona
+    .target Elder Anli
+step
+    .isOnQuest 31714
+    .goto 371,57.72,44.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Anli|r
+    .dailyturnin 31714 >>Turn in Saving the Serpents
     .target Elder Anli
 ]])
 
