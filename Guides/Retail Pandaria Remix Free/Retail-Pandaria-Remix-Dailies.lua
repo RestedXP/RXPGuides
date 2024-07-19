@@ -1602,7 +1602,8 @@ step
     .goto 379,67.24,55.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
     .target Xuen
-    .daily 31517,31492 >>Accept Contending With Bullies or The Torch of Strength
+    -- .daily 31517,31492 >>Accept Contending With Bullies or The Torch of Strength
+    .daily 31517 >>Accept Contending With Bullies
     .daily 30879,30880 >>Accept Round 1: Brewmaster Chani or Round 1: The Streetfighter
 step
     .isOnQuest 31517
@@ -1619,19 +1620,30 @@ step
     .target Brewmaster Chani
     .mob Brewmaster Chani
 step
-    .isOnQuest 30902
+    .isOnQuest 30880
     .goto 379,70.81,51.81
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lun-Chi|r
-    .complete 30902,1 --1/1 Defeat Lun-Chi
+    .complete 30880,1 --1/1 Defeat Lun-Chi
     .skipgossip
     .target Lun-Chi
     .mob Lun-Chi
 step
-    .isOnQuest 30879,31517
-    .goto 379,70.28,51.26
+    .isOnQuest 31517
+    .goto 379,67.24,55.89
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
+    .dailyturnin 31517 >>Turn in Contending With Bullies
+    .target Xuen
+step
+    .isOnQuest 30879
+    .goto 379,67.24,55.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
     .dailyturnin 30879 >>Turn in Round 1: Brewmaster Chani
-    .dailyturnin 31517 >>Turn in Contending With Bullies or Round 1: The Streetfighter
+    .target Xuen
+step
+    .isOnQuest 30880
+    .goto 379,70.41,51.21
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
+    .dailyturnin 30880 >>Turn in Round 1: The Streetfighter
     .target Xuen
 step
     .isOnQuest 30881
@@ -1723,8 +1735,8 @@ step
     #loop
     .goto 388,38.90,62.75,10,0
     .goto 388,39.33,62.22,10,0
-    .goto 388,39.14,62.05
-    .goto 388,39.40,61.98
+    .goto 388,39.14,62.05,10,0
+    .goto 388,39.40,61.98,10,0
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Adept Paosha|r, |cRXP_FRIENDLY_Ogo the Younger|r, |cRXP_FRIENDLY_Yak-Keeper Kyana|r, |cRXP_FRIENDLY_Sentinel Commander Qipan|r and |cRXP_FRIENDLY_Ogo the Elder|r
     .questcount <4,30955,30954,30953,30957,30956,30952,30959,30958  >>|cRXP_WARN_Get all the Daillies|r
     .target High Adept Paosha
@@ -1733,92 +1745,246 @@ step
     .target Sentinel Commander Qipan
     .target Ogo the Elder
 step
+    #hidewindow
+    #completewith Pot of Fire
+    #loop
+    +1
+    .goto 388,42.55,61.38,30,0
+    .goto 388,43.2,62.23,30,0
+    .goto 388,41.81,60.47,30,0
+    .goto 388,41.98,57.45,30,0
+    .goto 388,41.08,59,30,0
+    .goto 388,39.81,57.03,30,0
+    .goto 388,38.5,59.78,30,0
+    .goto 388,40.04,60.15,30,0
+    .goto 388,40.58,62.05,30,0
+step
+    #completewith 1
     .isOnQuest 30952
-    >>Kill |cRXP_ENEMY_Sra'thik attacker|r
+    >>Kill |cRXP_ENEMY_Sra'thik Warcaller|r and |cRXP_ENEMY_Sra'thik Swiftclaw.|r
     .complete 30952,1 --12/12 Sra'thik attacker slain
-    .mob Sra'thik attacker
+    .mob Sra'thik Warcaller
+    .mob Sra'thik Swiftclaw
 step
+    #completewith 1
     .isOnQuest 30956
-    >>Kill |cRXP_ENEMY_Sra'thik attacker|r
+    >>Kill |cRXP_ENEMY_Sra'thik Warcaller|r and |cRXP_ENEMY_Sra'thik Swiftclaw.|r
     .complete 30956,1 --25/25 Sra'thik attacker slain
-    .mob Sra'thik attacker
-
+    .mob Sra'thik Warcaller
+    .mob Sra'thik Swiftclaw
 step
+    #completewith 1
     .isOnQuest 30954
+    >>Click on the |cRXP_PICK_Weapons|r
     .complete 30954,1 --10/10 Sra'thik Weapon
 step
+    #completewith 1
     .isOnQuest 30955
+    >>Click on the |cRXP_PICK_Niuzao Food Supplies|r
     .complete 30955,1 --6/6 Gather Food for Niuzao
-
-
-
 step
+    #completewith 1
     .isOnQuest 30957
-    >>Kill |cRXP_ENEMY_Sra'thik Kunchong|r
+    >>Kill |cRXP_ENEMY_Sra'thik Kunchongs|r
     .complete 30957,1 --4/4 Sra'thik Kunchong slain
     .mob Sra'thik Kunchong
 step
+    #completewith 1
     .isOnQuest 30953
+    >>Use |T135975:0|t[Yak's Milk Flask] on |cRXP_FRIENDLY_Wounded Niuzao Sentinels.|r
     .complete 30953,1 --8/8 Niuzao Sentinel healed
-
-
+    .target Wounded Niuzao Sentinel
+    .use 82381
 step
+    #completewith 1
     .isOnQuest 30958
     >>Click on |cRXP_PICK_Bricks|r
     .complete 30958,1 --10/10 Loose Brick
 step
+    #label 1
     .isOnQuest 30959
+    >>Use |T135975:0|t[Pot of Fire] on |cRXP_ENEMY_Sra'thik War Wagons|r
     .complete 30959,1 --3/3 Sra'thik War Wagon exploded
-
-
+    .mob Sra'thik War Wagon
+    .use 82346
+step
+    #completewith 2
+    .isOnQuest 30952
+    >>Kill |cRXP_ENEMY_Sra'thik Warcaller|r and |cRXP_ENEMY_Sra'thik Swiftclaw.|r
+    .complete 30952,1 --12/12 Sra'thik attacker slain
+    .mob Sra'thik Warcaller
+    .mob Sra'thik Swiftclaw
+step
+    #completewith 2
+    .isOnQuest 30956
+    >>Kill |cRXP_ENEMY_Sra'thik Warcaller|r and |cRXP_ENEMY_Sra'thik Swiftclaw.|r
+    .complete 30956,1 --25/25 Sra'thik attacker slain
+    .mob Sra'thik Warcaller
+    .mob Sra'thik Swiftclaw
+step
+    #completewith 2
+    .isOnQuest 30954
+    >>Click on the |cRXP_PICK_Weapons|r
+    .complete 30954,1 --10/10 Sra'thik Weapon
+step
+    #completewith 2
+    .isOnQuest 30955
+    >>Click on the |cRXP_PICK_Niuzao Food Supplies|r
+    .complete 30955,1 --6/6 Gather Food for Niuzao
+step
+    #completewith 2
+    .isOnQuest 30957
+    >>Kill |cRXP_ENEMY_Sra'thik Kunchongs|r
+    .complete 30957,1 --4/4 Sra'thik Kunchong slain
+    .mob Sra'thik Kunchong
+step
+    #completewith 2
+    .isOnQuest 30953
+    >>Use |T135975:0|t[Yak's Milk Flask] on |cRXP_FRIENDLY_Wounded Niuzao Sentinels.|r
+    .complete 30953,1 --8/8 Niuzao Sentinel healed
+    .target Wounded Niuzao Sentinel
+    .use 82381
+step
+    #label 2
+    .isOnQuest 30958
+    >>Click on |cRXP_PICK_Bricks|r
+    .complete 30958,1 --10/10 Loose Brick
+step
+    #completewith 3
+    .isOnQuest 30956
+    >>Kill |cRXP_ENEMY_Sra'thik Warcaller|r and |cRXP_ENEMY_Sra'thik Swiftclaw.|r
+    .complete 30956,1 --25/25 Sra'thik attacker slain
+    .mob Sra'thik Warcaller
+    .mob Sra'thik Swiftclaw
+step
+    #completewith 3
+    .isOnQuest 30954
+    >>Click on the |cRXP_PICK_Weapons|r
+    .complete 30954,1 --10/10 Sra'thik Weapon
+step
+    #completewith 3
+    .isOnQuest 30955
+    >>Click on the |cRXP_PICK_Niuzao Food Supplies|r
+    .complete 30955,1 --6/6 Gather Food for Niuzao
+step
+    #completewith 3
+    .isOnQuest 30957
+    >>Kill |cRXP_ENEMY_Sra'thik Kunchongs|r
+    .complete 30957,1 --4/4 Sra'thik Kunchong slain
+    .mob Sra'thik Kunchong
+step
+    #label 3
+    .isOnQuest 30953
+    >>Use |T135975:0|t[Yak's Milk Flask] on |cRXP_FRIENDLY_Wounded Niuzao Sentinels.|r
+    .complete 30953,1 --8/8 Niuzao Sentinel healed
+    .target Wounded Niuzao Sentinel
+    .use 82381
+step
+    #completewith 4
+    .isOnQuest 30956
+    >>Kill |cRXP_ENEMY_Sra'thik Warcaller|r and |cRXP_ENEMY_Sra'thik Swiftclaw.|r
+    .complete 30956,1 --25/25 Sra'thik attacker slain
+    .mob Sra'thik Warcaller
+    .mob Sra'thik Swiftclaw
+step
+    #completewith 4
+    .isOnQuest 30954
+    >>Click on the |cRXP_PICK_Weapons|r
+    .complete 30954,1 --10/10 Sra'thik Weapon
+step
+    #completewith 4
+    .isOnQuest 30955
+    >>Click on the |cRXP_PICK_Niuzao Food Supplies|r
+    .complete 30955,1 --6/6 Gather Food for Niuzao
+step
+    #label 4
+    .isOnQuest 30957
+    >>Kill |cRXP_ENEMY_Sra'thik Kunchongs|r
+    .complete 30957,1 --4/4 Sra'thik Kunchong slain
+    .mob Sra'thik Kunchong
+step
+    #completewith 5
+    .isOnQuest 30956
+    >>Kill |cRXP_ENEMY_Sra'thik Warcaller|r and |cRXP_ENEMY_Sra'thik Swiftclaw.|r
+    .complete 30956,1 --25/25 Sra'thik attacker slain
+    .mob Sra'thik Warcaller
+    .mob Sra'thik Swiftclaw
+step
+    #completewith 5
+    .isOnQuest 30954
+    >>Click on the |cRXP_PICK_Weapons|r
+    .complete 30954,1 --10/10 Sra'thik Weapon
+step
+    #label 5
+    .isOnQuest 30955
+    >>Click on the |cRXP_PICK_Niuzao Food Supplies|r
+    .complete 30955,1 --6/6 Gather Food for Niuzao
+step
+    #completewith next
+    .isOnQuest 30956
+    >>Kill |cRXP_ENEMY_Sra'thik Warcaller|r and |cRXP_ENEMY_Sra'thik Swiftclaw.|r
+    .complete 30956,1 --25/25 Sra'thik attacker slain
+    .mob Sra'thik Warcaller
+    .mob Sra'thik Swiftclaw
+step
+    .isOnQuest 30954
+    >>Click on the |cRXP_PICK_Weapons|r
+    .complete 30954,1 --10/10 Sra'thik Weapon
+step
+    #label Pot of Fire
+    .isOnQuest 30956
+    >>Kill |cRXP_ENEMY_Sra'thik Warcaller|r and |cRXP_ENEMY_Sra'thik Swiftclaw.|r
+    .complete 30956,1 --25/25 Sra'thik attacker slain
+    .mob Sra'thik Warcaller
+    .mob Sra'thik Swiftclaw
+step
+    .isOnQuest 30953
+    .goto 388,39.16,62.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yak-Keeper Kyana|r
+    .dailyturnin 30953 >>Turn in Fallen Sentinels
+    .target Yak-Keeper Kyana
+step
+    .isOnQuest 30958
+    .goto 388,39.16,62.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yak-Keeper Kyana|r
+    .dailyturnin 30958 >>Turn in In Battle's Shadow
+    .target Yak-Keeper Kyana
 step
     .isOnQuest 30955
     .goto 388,38.91,62.72
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Adept Paosha|r
-    .turnin 30955 >>Turn in Paying Tribute
+    .dailyturnin 30955 >>Turn in Paying Tribute
     .target High Adept Paosha
 step
     .isOnQuest 30954
     .goto 388,39.33,62.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ogo the Younger|r
-    .turnin 30954 >>Turn in A Blade is a Blade
+    .dailyturnin 30954 >>Turn in A Blade is a Blade
+    .target Ogo the Younger
+step
+    .isOnQuest 30959
+    .goto 388,39.33,62.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ogo the Younger|r
+    .dailyturnin 30959 >>Turn in The Big Guns
     .target Ogo the Younger
 step
     .isOnQuest 30952
     .goto 388,39.2,62.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ogo the Elder|r
-    .turnin 30952 >>Turn in The Unending Siege
+    .dailyturnin 30952 >>Turn in The Unending Siege
     .target Ogo the Elder
 step
     .isOnQuest 30956
     .goto 388,39.2,62.2
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ogo the Elder|r
-    .turnin 30956 >>Turn in The Siege Swells
+    .dailyturnin 30956 >>Turn in The Siege Swells
     .target Ogo the Elder
-step
-    .isOnQuest 30953
-    .goto 388,39.16,62.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yak-Keeper Kyana|r
-    .turnin 30953 >>Turn in Fallen Sentinels
-    .target Yak-Keeper Kyana
 step
     .isOnQuest 30957
     .goto 388,39.41,61.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Commander Qipan|r
-    .turnin 30957 >>Turn in The Overwhelming Swarm
+    .dailyturnin 30957 >>Turn in The Overwhelming Swarm
     .target Sentinel Commander Qipan
-step
-    .isOnQuest 30959
-    .goto 388,39.33,62.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ogo the Younger|r
-    .turnin 30959 >>Turn in The Big Guns
-    .target Ogo the Younger
-step
-    .isOnQuest 30958
-    .goto 388,39.16,62.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yak-Keeper Kyana|r
-    .turnin 30958 >>Turn in In Battle's Shadow
-    .target Yak-Keeper Kyana
 --Krasarang
 step
     .areapoiexists 418,7734,7735,7736,7737
