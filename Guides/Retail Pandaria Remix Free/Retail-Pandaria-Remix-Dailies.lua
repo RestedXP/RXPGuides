@@ -1341,6 +1341,7 @@ step
 step
     #hidewindow
     #completewith AugustLoop1
+    #label startaugustjade
     #loop
     .goto 371,53.6,54.06,40,0
     .goto 371,56.3,51.04,40,0
@@ -1496,12 +1497,14 @@ step
     .target Elder Sage Tai-Feng
 step
     .isOnQuest 30068
+    #label endaugustjade
     .goto 371,53.91,61.96
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Sage Tai-Feng|r
     .dailyturnin 30068 >>Turn in Flames of the Void
     .target Elder Sage Tai-Feng
 --Kun-Lai
 step << Alliance
+    #label startaugustkunlai
     .isQuestAvailable 31394
     .goto 379,68.78,43.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anduin Wrynn|r
@@ -1724,6 +1727,7 @@ step
     .target Master Windfur
     .mob Master Windfur
 step
+    #label endaugustkunlai
     .isOnQuest 30907
     .goto 379,68.49,44.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
@@ -1731,6 +1735,7 @@ step
     .target Xuen
 --Townlong
 step
+    #label startaugusttownlong
     .areapoiexists 388,7734,7735,7736,7737
     #loop
     .goto 388,38.90,62.75,10,0
@@ -1980,6 +1985,7 @@ step
     .dailyturnin 30956 >>Turn in The Siege Swells
     .target Ogo the Elder
 step
+    #label endaugusttownlong
     .isOnQuest 30957
     .goto 388,39.41,61.97
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Commander Qipan|r
@@ -1987,6 +1993,7 @@ step
     .target Sentinel Commander Qipan
 --Krasarang
 step
+    #label startaugustkrasa
     .areapoiexists 418,7734,7735,7736,7737
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thelonius,|r |cRXP_FRIENDLY_Kuo-Na Quillpaw|r and |cRXP_FRIENDLY_Yan Quillpaw|r
     .daily 30718 >>Accept Students of Chi-Ji
@@ -2240,6 +2247,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thelonius|r
     .dailyturnin 30738 >>Turn in Thelonius
 step
+    #label endaugustkrasa
     .isOnQuest 30739
     .goto 418,31.34,63.44
     .target Thelonius
@@ -2836,6 +2844,7 @@ step
 --     .target Amber Kearnen
 step
     .isOnQuest 32451
+    #label startlandfallfinal
     .goto 418,16.46,79.20
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sky Admiral Rogers|r
     .dailyturnin 32451 >>Turn in Send A Message
@@ -2874,18 +2883,18 @@ step
     .mob Bloodhilt Honor Guard
     .mob Dominance Raider
 step
-.isOnQuest 32144
+    .isOnQuest 32144
     #completewith Scout-o-Meter Mk III
     >>Click on |cRXP_PICK_Crates|r
     .complete 32144,1 --8/8 Horde Supply Crates Destroyed
 step
-.isOnQuest 32143
+    .isOnQuest 32143
     .goto 418,11.66,67.84
     >>Interact with |cRXP_FRIENDLY_Scout-o-Meter Mk I|r
     .complete 32143,1 --1/1 Eliminate the Beachhead Demolishers
     .target Scout-o-Meter Mk I
 step
-.isOnQuest 32143
+    .isOnQuest 32143
     .goto 418,10.89,60.91
     >>Interact with |cRXP_FRIENDLY_Scout-o-Meter Mk II|r
     .complete 32143,2 --1/1 Eliminate the Horde Wolves
@@ -2905,7 +2914,7 @@ step
     >>Click on the Quest PoP-UP to accept the new quest
     .accept 32145 >>Accept Don't Lose Your Head
 step
-.isOnQuest 32145
+    .isOnQuest 32145
     .goto 418,13.29,56.25
     >>Kill |cRXP_ENEMY_Chief Bombgineer Snicklefritz|r
     .complete 32145,3 --1/1 Chief Bombgineer Snicklefritz slain
@@ -3131,6 +3140,7 @@ step
     .goto 418,16.71,78.52
     .target +Seraphine of the Winter
 step
+    #label endlandfallfinal
     .isOnQuest 32157
     .goto 418,16.47,79.21
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sky Admiral Rogers|r

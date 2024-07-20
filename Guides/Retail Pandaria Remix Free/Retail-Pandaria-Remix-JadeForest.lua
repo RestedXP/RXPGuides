@@ -2134,6 +2134,8 @@ step
 step
     #include 1) Jade Forest Cloud Serpent Side Quests
 step
+    #include X) August Celestial Daillies@startaugustjade-endaugustjade
+step
     .goto 371,48.32,46.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Old Man Misteye|r
     .accept 29576 >>Accept An Air of Worry
@@ -2981,8 +2983,8 @@ step
     -- .accept 29894 >>Accept Spirits of the Water
     .goto 371,58.76,81.29
     .target +Pearlkeeper Fujin
--- step
--- august celestials
+step
+    #include X) August Celestial Daillies@startaugustjade-endaugustjade
 step
     #include 1) Jade Forest Cloud Serpent Side Quests
 step
