@@ -3399,7 +3399,7 @@ step
     >>|cRXP_WARN_Using Fire spells, unfreeze the|r |cRXP_FRIENDLY_Novice Frost Mages|r|cRXP_WARN_. DO NOT KILL THEM!|r
     >>|cRXP_WARN_Afterwards cast|r |T136082:0|t[Remove Lesser Curse] |cRXP_WARN_on them and talk to them to receive their|r |T134937:0|t|T134938:0|t|T134943:0|t|T134945:0|t[|cRXP_LOOT_Torn Spell Notes|r]
     >>|cRXP_WARN_Repeat this for each |cRXP_FRIENDLY_Novice Frost Mage|r in each of the Western Plaguelands Fields|r
-    .collect 225938,1
+    .collect 225938,1 --Felstone Field
     .collect 225939,1
     .collect 225940,1
     .collect 225941,1

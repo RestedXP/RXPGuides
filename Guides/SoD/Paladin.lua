@@ -2290,7 +2290,7 @@ step
 step
     .goto Western Plaguelands,44.6,46.6
     >>Escort |cRXP_FRIENDLY_Squire Cuthbert|r back to the Fallen Knight and help him burn the corpse
-    .complete 83822
+    .complete 83822,1
 step
     .goto Western Plaguelands,44.6,46.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Cuthbert|r
@@ -2305,7 +2305,7 @@ step
 step
     .goto Western Plaguelands,44.6,46.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Cuthbert|r and go through his dialogue. Turning in this quest will train you on how to engrave |T236260:0|t[|cRXP_FRIENDLY_Righteous Vengeance|r]
-    >>You will also receive |T237377:0|t[|cFF0070FFDalton's Horn|r] which you will need in order to unlock the rune of |T252188:0|t[Shock and Awe]
+    >>You will also receive |T237377:0|t[|cFF0070FFDalton's Horn|r] which you will need in order to unlock the rune of |T252188:0|t[|cRXP_FRIENDLY_Shock and Awe|r]
     .turnin 83936 >> Turn in Dalton's Quest
     .target Squire Cuthbert
 ]])
@@ -2315,7 +2315,7 @@ RXPGuides.RegisterGuide([[
 << Paladin SoD
 #group RestedXP Rune & Books Guide
 #subgroup Cloak
-#name Shock and Awe - 55 (Western and Eastern Plaguelands)
+#name Shock and Awe - 60 (Western and Eastern Plaguelands)
 #title Shock and Awe & Avenging Wrath
 
 step
@@ -2324,10 +2324,23 @@ step
     .train 440792,1 --Righteous Vengeance
 step
     .goto Eastern Plaguelands,78.6,47.6
-    >>|cRXP_WARN_Use the|r |T237377:0|t[|cFF0070FFDalton's Horn|r] |cRXP_WARN_to summon|r |cRXP_FRIENDLY_Squire Cuthbert|r |cRXP_WARN_and kill mobs untill he reaches level 60|r
-    >>|cRXP_WARN_Once he's level 60 enter Noxious Glade, an area just north of Light's Hope chapel. Once you're there he will give you a quest, accept it|r
-    .accept 84125 >> Accept Close Enough To Touch
+    >>|cRXP_WARN_Use the|r |T237377:0|t[|cFF0070FFDalton's Horn|r] |cRXP_WARN_to summon|r |cRXP_FRIENDLY_Squire Cuthbert|r |cRXP_WARN_and kill mobs untill he levels up. Once he does he will give you a free turn-in quest|r
+    .accept 83823 >> Accept a Lesson in Violence
+    .turnin 83823 >> Turn in a Lesson in Violence
     .use 226122
+step
+    .goto Eastern Plaguelands,78.6,47.6
+    >>|cRXP_WARN_Use the|r |T237377:0|t[|cFF0070FFDalton's Horn|r] |cRXP_WARN_to summon|r |cRXP_FRIENDLY_Squire Cuthbert|r |cRXP_WARN_and keep killing mobs untill he levels up again. Once he does he will give you another free turn-in quest and another quest to find a lich named|r |cRXP_ENEMY_Arkonos the Cursed|r
+    .accept 84008 >> Accept a Lesson in Grace
+    .turnin 84008 >> Turn in a Lesson in Grace
+    .accept 84017 >> Accept A Time to Kill
+    .use 226523
+step
+    .goto Eastern Plaguelands,78.6,47.6
+    >>|cRXP_WARN_Head to the Noxious Glade, an area just north of Light's Hope chapel. Once you're there summon your squire again. The quest to find Arkonos should complete and you will get another quest, accept it|r
+    .turnin 84017 >> Turn in A Time to Kill
+    .accept 84125 >> Accept Close Enough To Touch
+    .use 226545
 step
     .goto Eastern Plaguelands,83.7,41.9
     >>Kill |cRXP_ENEMY_Shadowmages|r and |cRXP_ENEMY_Dread Weavers|r in the Noxious Glade. Loot them for |T135482:0|t[|cRXP_LOOT_Scourge Shadow Scalpel|r]
