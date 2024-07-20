@@ -3368,8 +3368,9 @@ function addon.functions.areapoiexists(self, text, zone, ...)
     end
     local element = self.element
     local exists = false
+    local zoneId = element.zone
     for _,id in pairs(element.ids) do
-        if C_AreaPoiInfo.GetAreaPOIInfo(zone, id) then
+        if zoneId and id and C_AreaPoiInfo.GetAreaPOIInfo(zoneId, id) then
             exists = true
         end
     end
@@ -3377,7 +3378,7 @@ function addon.functions.areapoiexists(self, text, zone, ...)
     local event = text
     local step = element.step
     if event ~= "WindowUpdate" and step.active and not addon.settings.profile.debug and (not exists) == not element.reverse and not addon.isHidden then
-        element.tooltipText = "Step skipped: Missing pre-requisites"
+        element.tooltipText = "Step skipped: Quest unavailable today"
         step.completed = true
         addon.updateSteps = true
     elseif step.active and not step.completed then
