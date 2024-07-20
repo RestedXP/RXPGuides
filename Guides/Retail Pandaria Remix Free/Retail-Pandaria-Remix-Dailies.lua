@@ -1373,6 +1373,7 @@ step
     >>Click on the |cRXP_PICK_Books|r
     .complete 30064,1 --6/6 Ancient Sutra
 step
+    .isOnQuest 30066
     #label Ancient Mantras
     >>Interact with |cRXP_FRIENDLY_Yu'lon Adept|r and |cRXP_FRIENDLY_Yu'lon Guardian|r to deliver mantras
     .complete 30066,1 --6/6 Ancient Mantras delivered
@@ -1444,21 +1445,25 @@ step
     .dailyturnin 30006 >>Turn in The Darkness Around Us
     .target Elder Sage Tai-Feng
 step
+    .isOnQuest 30066
     .goto 371,53.90,61.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Sage Tai-Feng|r
     .dailyturnin 30066 >>Turn in Hidden Power
     .target Elder Sage Tai-Feng
 step
+    .isOnQuest 30065
     .goto 371,53.90,61.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Sage Tai-Feng|r
     .dailyturnin 30065 >>Turn in Arrows of Fortune
     .target Elder Sage Tai-Feng
 step
+    .isOnQuest 30064
     .goto 371,53.8,61.8
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Sage Storm-Sing|r
     .dailyturnin 30064 >>Turn in Saving the Sutras
     .target Elder Sage Storm-Sing
 step
+    .areapoiexists 371,7734,7735,7736,7737
     .goto 371,53.90,61.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elder Sage Tai-Feng|r
     .accept 30067 >>Accept The Shadow of Doubt
@@ -1631,16 +1636,16 @@ step
     .target Lun-Chi
     .mob Lun-Chi
 step
-    .isOnQuest 31517
-    .goto 379,67.24,55.89
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
-    .dailyturnin 31517 >>Turn in Contending With Bullies
-    .target Xuen
-step
     .isOnQuest 30879
-    .goto 379,67.24,55.89
+    .goto 379,70.3,51.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
     .dailyturnin 30879 >>Turn in Round 1: Brewmaster Chani
+    .target Xuen
+step
+    .isOnQuest 31517
+    .goto 379,70.3,51.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
+    .dailyturnin 31517 >>Turn in Contending With Bullies
     .target Xuen
 step
     .isOnQuest 30880
@@ -1649,7 +1654,6 @@ step
     .dailyturnin 30880 >>Turn in Round 1: The Streetfighter
     .target Xuen
 step
-    .isOnQuest 30881
     .goto 379,70.28,51.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
     .daily 30881,30882 >>Accept Round 2: Clever Ashyo & Ken-Ken or Round 2: Kang Bramblestaff
@@ -1660,6 +1664,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clever Ashyo|r and then defeat them.
     .complete 30881,2 --1/1 Defeat Ken-Ken
     .complete 30881,1 --1/1 Defeat Clever Ashyo
+    .skipgossip
     .target Clever Ashyo
     .mob Clever Ashyo
     .mob Ken-Ken
@@ -1677,16 +1682,17 @@ step
     .dailyturnin 30881,30882 >>Turn in Round 2: Clever Ashyo & Ken-Ken or Round 2: Kang Bramblestaff
     .target Xuen
  step
-    .isOnQuest 30883
     .goto 379,71.76,44.89
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
     .target Xuen
     .daily 30883,30885 >>Accept Round 3: The Wrestler or Round 3: Master Boom Boom
 step
     .isOnQuest 30883
+    .goto 379,71.53,45.95,10,0
     .goto 379,66.74,46.53
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Wrestler|r and defeat him.
     .complete 30883,1 --1/1 Defeat The Wrestler
+    .skipgossip
     .target The Wrestler
     .mob The Wrestler
 step
@@ -1703,18 +1709,20 @@ step
     .dailyturnin 30883,30885 >>Turn in Round 3: The Wrestler or Round 3: Master Boom Boom
     .target Xuen
 step
-    .isOnQuest 30907
     .goto 379,66.39,46.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Xuen|r
     .target Xuen
     .daily 30907,30902 >>Accept Round 4: The P.U.G. or Round 4: Master Windfur
 step
     .isOnQuest 30907
+    .goto 379,67.15,46.79,10,0
+    .goto 379,68.66,45.71,10,0
     .goto 379,69.02,43.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Healiss|r and then defeat them.
     .complete 30907,3 --1/1 Defeat Tankiss
     .complete 30907,1 --1/1 Defeat Hackiss
     .complete 30907,2 --1/1 Defeat Healiss
+    .skipgossip
     .target Healiss
     .mob Hackiss
     .mob Healiss
@@ -2020,31 +2028,38 @@ step
     .goto 418,33.87,69.19,40,0
     +1
 step
+    .isOnQuest 30717
     #completewith Spirit of the Crane found
     >>Click on |cRXP_PICK_Feathers|r
     .complete 30717,1 --10/10 Gift of the Great Crane
 step
+    .isOnQuest 30718
     #completewith Spirit of the Crane found
     >>Kill |cRXP_ENEMY_Student of Chi-Ji|r
     .complete 30718,1 --10/10 Student of Chi-Ji dueled
     .mob Student of Chi-Ji
 step
+    .isOnQuest 30716
     #label Spirit of the Crane found
     >>There are ghost cranes roaming this area; run into them.
     .complete 30716,1 --3/3 Spirit of the Crane found
 step
+    .isOnQuest 30717
     #completewith next
     >>Click on |cRXP_PICK_Feathers|r
     .complete 30717,1 --10/10 Gift of the Great Crane
 step
+    .isOnQuest 30718
     >>Kill |cRXP_ENEMY_Student of Chi-Ji|r
     .complete 30718,1 --10/10 Student of Chi-Ji dueled
     .mob Student of Chi-Ji
 step
+    .isOnQuest 30717
     #label Gift of the Great Crane
     >>Click on |cRXP_PICK_Feathers|r
     .complete 30717,1 --10/10 Gift of the Great Crane
 step
+    .isOnQuest 30718,30716,30717
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thelonius,|r |cRXP_FRIENDLY_Kuo-Na Quillpaw|r and |cRXP_FRIENDLY_Yan Quillpaw|r
     .dailyturnin 30718 >>Turn in Students of Chi-Ji
     .target +Thelonius
@@ -2053,6 +2068,7 @@ step
     .dailyturnin 30717 >>Turn in Gifts of the Great Crane
     .target +Yan Quillpaw
 step
+    .areapoiexists 418,7734,7735,7736,7737
     .goto 418,31.34,63.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thelonius|r
     .daily 30725,30725,30728,30729,30730,30731,30732,30733,30734,30735,30736,30737,30738,30739
