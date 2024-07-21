@@ -2122,8 +2122,12 @@ step
     .collect 227932,1 -- Rusty Crowbar 1/1
 step
     .goto Western Plaguelands,49.5,18.5
-    >>Open the |cRXP_PICK_Marked Crate|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Crimson Tempest|r]
-    .collect 227456,1
+    >>Head to the top of the tower in the middle of Hearthglen. Open the |cRXP_PICK_Marked Crate|r there. Loot it for the |T133640:0|t[|cRXP_LOOT_Hidden Bundle|r] and open it to loot a |T134237:0|t[|cRXP_LOOT_Safe Box Key|r]
+    .collect 227930,1
+step
+    .goto Western Plaguelands,46.3,14.6
+    >>Head to the middle floor of the second tower in Hearthglen located on the northern side of the city. Use the |T134237:0|t[|cRXP_LOOT_Safe Box Key|r] to open [|cRXP_PICK_Belavus' Safe Box|r] and loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Crimson Tempest|r]
+    .collect 227456,1 --Rune of the crimson tempest
 step
     .use 227456
     .itemcount 227456,1
