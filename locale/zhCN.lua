@@ -1,6 +1,6 @@
 local addonName, addon = ...
 
-local L = LibStub("AceLocale-3.0"):NewLocale(addonName, "zhCN", true)
+local L = LibStub("AceLocale-3.0"):NewLocale(addonName, "zhCN", false)
 if not L then return end
 
 _G["BINDING_NAME_" .. "CLICK RXPItemFrameButton1:LeftButton"] =
