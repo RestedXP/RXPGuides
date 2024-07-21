@@ -6,9 +6,9 @@
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group RestedXP Panda Remix
+#group RestedXP Pandaria Remix
 #name X) Cloud Serpent Dailies
-#displayname Cloud Serpent Dailies
+#displayname |cFFFF0000Daillies - |rCloud Serpent Dailies
 
 step
     #loop
@@ -643,7 +643,7 @@ step
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group RestedXP Panda Remix
+#group RestedXP Pandaria Remix
 #name X) Vale Dailies 1
 #internal
 
@@ -864,7 +864,7 @@ step
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group RestedXP Panda Remix
+#group RestedXP Pandaria Remix
 #name X) Niuzao Daillies
 #internal
 
@@ -875,9 +875,9 @@ RXPGuides.RegisterGuide([[
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group RestedXP Panda Remix
+#group RestedXP Pandaria Remix
 #name X) The Klaxxi Daillies
-#displayname The Klaxxi Dailies
+#displayname |cFFFF0000Daillies - |rThe Klaxxi Dailies
 #title The Klaxxi Dailies
 
 step
@@ -1312,9 +1312,9 @@ step
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group RestedXP Panda Remix
+#group RestedXP Pandaria Remix
 #name X) August Celestial Daillies
-#displayname August Celestial Daillies
+#displayname |cFFFF0000Daillies - |rAugust Celestial Daillies
 #title August Celestial Daillies
 
 
@@ -2275,9 +2275,9 @@ step
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group RestedXP Panda Remix
+#group RestedXP Pandaria Remix
 #name X) Domination Point Dailies
-#displayname Domination Point Dailies
+#displayname |cFFFF0000Daillies - |rDomination Point Dailies
 
 step
     #loop
@@ -2691,9 +2691,9 @@ step
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group RestedXP Panda Remix
+#group RestedXP Pandaria Remix
 #name X) Landfall Daillies Alliance
-#internal
+#displayname |cFFFF0000Daillies - |rLandfall Daillies Alliance
 
 --Ruins of Ogudei
 -- step
@@ -3168,9 +3168,9 @@ step
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group RestedXP Panda Remix
+#group RestedXP Pandaria Remix
 #name X) Shado-Pan Daillies
-#displayname Shado-Pan Dailies
+#displayname |cFFFF0000Daillies - |rShado-Pan Dailies
 #title Shado-Pan Dailies
 
 step

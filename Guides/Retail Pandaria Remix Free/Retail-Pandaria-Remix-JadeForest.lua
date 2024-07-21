@@ -6,7 +6,7 @@
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group RestedXP Panda Remix
+#group RestedXP Pandaria Remix
 #name 1) Jade Forest Side Quests Tian Monastery
 #internal
 
@@ -503,7 +503,7 @@ step
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group RestedXP Panda Remix
+#group RestedXP Pandaria Remix
 #name 1) Jade Forest Side Quests Sprites Plight
 #internal
 
@@ -737,7 +737,7 @@ step
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group RestedXP Panda Remix
+#group RestedXP Pandaria Remix
 #name 1) Jade Forest Defiance Side Quests
 #internal
 
@@ -940,7 +940,7 @@ step
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group RestedXP Panda Remix
+#group RestedXP Pandaria Remix
 #name 1) Jade Forest Cloud Serpent Side Quests
 #internal
 
@@ -1152,7 +1152,7 @@ step
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group RestedXP Panda Remix
+#group RestedXP Pandaria Remix
 #name 1) Pandaria Remix Leveling Guide: How to Use & Essential Tips
 #next 2) Pandaria Remix Introduction
 -- #subweight 11
@@ -1236,7 +1236,7 @@ step
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group RestedXP Panda Remix
+#group RestedXP Pandaria Remix
 #name 2) Pandaria Remix Introduction
 #displayname |cFFFCDC00Chapter 0|r - Timeless Isle Introduction
 #title Timeless Isle Introduction
@@ -1396,7 +1396,7 @@ step << Alliance
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group RestedXP Panda Remix
+#group RestedXP Pandaria Remix
 #name 3) Jade Forest Horde
 #displayname |cFFFCDC00Chapter 1|r - Jade Forest
 #title Jade Forest
@@ -2158,7 +2158,7 @@ step
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group RestedXP Panda Remix
+#group RestedXP Pandaria Remix
 #name 3) Jade Forest Alliance
 #displayname |cFFFCDC00Chapter 1|r - Jade Forest
 #title Jade Forest
