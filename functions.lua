@@ -5666,28 +5666,28 @@ function addon.functions.collecttoy(self, ...)
     end
 end
 
-function addon.functions.collectpet(self, ...)
+function addon.functions.collectpet(self, text, id, total, flags)
     if type(self) == "string" then -- on parse
         local element = {}
         element.dynamicText = true
-        local text, id = ...
         id = tonumber(id)
         if not id then
             return addon.error(
                         L("Error parsing guide") .. " "  .. addon.currentGuideName ..
                            ': No pet npc ID provided\n' .. self)
         end
-        element.id = id
-        if text and text ~= "" then
-            element.rawtext = text
-            element.tooltipText = element.rawtext
-        else
-            element.text = " "
+        if flags then
+            element.skpStep = true
         end
+        element.total = tonumber(total) or 1
+        element.id = id
+        element.rawtext = text
+        element.text = text or " "
         return element
     end
 
     local element = self.element
+    local step = element.step
 
     -- we need to reset petjournal search, as owned parameter could be received only from journal by index
     C_PetJournal.SetSearchFilter("")
@@ -5696,27 +5696,30 @@ function addon.functions.collectpet(self, ...)
     C_PetJournal.SetAllPetTypesChecked(true)
     C_PetJournal.SetAllPetSourcesChecked(true)
 
-    local isCollected = false -- default values so it doesn't break
+    local count = 0
     element.itemName = ""
 
     for index = 1, C_PetJournal.GetNumPets() do
         local petID, speciesID, owned, cutomName, _, _, _, speciesName, _, _, companionID = C_PetJournal.GetPetInfoByIndex(index);
         if (companionID == element.id) then -- we found it
             element.itemName = speciesName
-            isCollected = owned
-            break
+            if owned then
+                count = count + 1
+            end
         end
     end
 
-    if element.rawtext then
-        element.tooltipText = element.rawtext
-        element.text = fmt("%s\n%s", element.rawtext, element.itemName)
-    else
-        element.text = fmt("%s", element.itemName)
+    if not element.rawtext then
+        element.text = fmt("%s: %d/%d", element.itemName,count,element.total)
         element.tooltipText = element.text
     end
-    if isCollected then
-        addon.SetElementComplete(self)
+    if step.active and count >= element.total then
+        if element.skipStep then
+            element.step.completed = true
+            addon.updateSteps = true
+        else
+            addon.SetElementComplete(self)
+        end
     end
 end
 
