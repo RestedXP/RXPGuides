@@ -377,7 +377,7 @@ step
     .target Thrall
     .dungeon RFC
 step
-    .goto Durotar,53.08,9.19,0
+    .goto Durotar,53.08,9.19
     >>Kill |cRXP_ENEMY_Burning Blade|r mobs in Skull Rock until |cRXP_LOOT_Lieutenant's Insignia|r drops
     .complete 5726,1 --Lieutenant's Insignia (1)
     .dungeon RFC
