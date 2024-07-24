@@ -747,7 +747,7 @@ step
     .complete 424,1 --Head of Grimson (1)
     .target Grimson the Pale
     .group 2
-step
+step << skip
     .goto Silverpine Forest,58.12,45.50
     .goto Silverpine Forest,44.29,41.09,30 >>|cRXP_WARN_Jump onto the wooden wheel. Perform a Logout Skip by logging out and back in. If you don't manage to do this, run back to The Sepulcher|r
     .link https://www.youtube.com/watch?v=uD2CUb3rdQ0&ab >> |cRXP_WARN_CLICK HERE for an example|r
