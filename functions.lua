@@ -1750,6 +1750,8 @@ function addon.functions.waypoint(self, text, zone, x, y, radius, lowPrio, ...)
                     zone = info.parentMapID
                     zx,zy = HBD:GetZoneCoordinatesFromWorld(element.wx, element.wy, zone)
                 end
+                zx = zx or 0
+                zy = zy or 0
                 element.x = zx * 100
                 element.y = zy * 100
                 element.zone = zone
