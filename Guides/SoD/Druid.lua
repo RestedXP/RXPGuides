@@ -1119,7 +1119,7 @@ step
     #title Gain 5x |T237556:0|t[Building Inspiration]
     .itemcount 227444,1
     .train 439765,1
-    .aura 408828 >> |cRXP_WARN_Attack a |cRXP_ENEMY_Ravasaurs|r until they are down to roughly 5-10% HP and ensure you have 5 combo points on them|r
+    .aura 408828 >> |cRXP_WARN_Attack a |cRXP_ENEMY_Ravasaur|r until they are down to roughly 5-10% HP and ensure you have 5 combo points on them|r
     >>|cRXP_WARN_Once they are 5-10% HP, cast|r |T136090:0|t[Hibernate] |cRXP_WARN_then switch into|r |T132115:0|t[Cat Form] |cRXP_WARN_and cast|r |T132127:0|t[Ferocious Bite] |cRXP_WARN_to kill them to gain a stack of|r |T237556:0|t[Building Inspiration]
     >>|cRXP_WARN_Repeat this process 5 times|r
     .mob Venomhide Ravasaur
@@ -1150,7 +1150,7 @@ step
     .goto Felwood,42,19,70,0
     .goto Felwood,42,15,0
     .goto Felwood,42,19,0
-    >>|cRXP_WARN_Talk to a|r |cRXP_FRIENDLY_Vengeful Wisp|r |cRXP_WARN_in northern Felwood, then follow it through Jadefire Run and kill any |cRXP_ENEMY_Satyrs|r in runs through|r
+    >>|cRXP_WARN_Talk to a|r |cRXP_FRIENDLY_Vengeful Wisp|r |cRXP_WARN_in northern Felwood, then follow it through Jadefire Run and kill any |cRXP_ENEMY_Satyrs|r it runs through|r
     >>|cRXP_WARN_The |cRXP_FRIENDLY_Vengeful Wisp|r has multiple spawn locations. If you see another Druid already with the |cRXP_FRIENDLY_Vengeful Wisp|r, you can help them and still receive credit|r
     >>Once completed, the |cRXP_FRIENDLY_Vengeful Wisp|r will drop the |cRXP_PICK_Gift of the Wisp|r on the ground. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the World Tree|r]
     .collect 227746,1

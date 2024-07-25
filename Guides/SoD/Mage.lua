@@ -3407,10 +3407,10 @@ step
     .skipgossip
 step
     .train 401764,1
-    .use 213113 >> |cRXP_WARN_Use any of the|r |T134937:0|t|T134938:0|t|T134943:0|t|T134945:0|t[|cRXP_LOOT_Torn Spell Notes|r] |cRXP_WARN_to combine them into|r |T134939:0|t[|cRXP_LOOT_Spell Notes: Overheat|r]
-    .use 213113
-    .use 213113
-    .use 213113
+    .use 225938 >> |cRXP_WARN_Use any of the|r |T134937:0|t|T134938:0|t|T134943:0|t|T134945:0|t[|cRXP_LOOT_Torn Spell Notes|r] |cRXP_WARN_to combine them into|r |T134939:0|t[|cRXP_LOOT_Spell Notes: Overheat|r]
+    .use 225939
+    .use 225940
+    .use 225941
     .collect 225691,1
 step
     .train 401764 >> |cRXP_WARN_Use the|r |T134939:0|t[|cRXP_LOOT_Spell Notes: Overheat|r] |cRXP_WARN_to train|r |T135813:0|t[Overheat]
