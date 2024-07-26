@@ -2513,7 +2513,7 @@ step
     .mob Timberling Trampler
     .mob Timberling Mire Beast
 step << Hunter
-    #season2
+    #season 2
     .train 425762,1
     .goto Teldrassil,48.3,31.4
     >>Use |T134025:0|t[Teldrassil Bird Meat] near the corpse to summon |cRXP_ENEMY_Mowgh|r

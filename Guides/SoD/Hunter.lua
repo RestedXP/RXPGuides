@@ -830,7 +830,7 @@ RXPGuides.RegisterGuide([[
     --Rune of the Sniper
 
 step
-    #season2
+    #season 2
     #completewith next
     .train 416091,1
     .zone Westfall >>Travel to Westfall
@@ -863,7 +863,7 @@ RXPGuides.RegisterGuide([[
     --Rune of the Sniper
 
 step
-    #season2
+    #season 2
     #completewith next
     .train 416091,1
     .zone Loch Modan >>Travel to Loch Modan
@@ -897,7 +897,7 @@ RXPGuides.RegisterGuide([[
     --Rune of Flanking
 
 step
-    #season2
+    #season 2
     #loop
     .goto Dun Morogh,43.4,65.6,20,0
     .goto Dun Morogh,49.2,61.4,20,0
@@ -913,7 +913,7 @@ step
     .mob Elder Crag Boar
     .mob Scarred Crag Boar
 step
-    #season2
+    #season 2
     .train 425762,1
     .goto Dun Morogh,37.78,42.55
     >>Use |T134026:0|t[Dun Morogh Pig Meat] near the corpse in the |cFFfa9602Iceflow Cavern|r to summon |cRXP_ENEMY_Jorul|r
@@ -939,7 +939,7 @@ RXPGuides.RegisterGuide([[
 
     --Rune of Flanking
 step
-    #season2
+    #season 2
     #loop
     .goto Teldrassil,42.6,52.6,20,0
     .goto Teldrassil,39.8,53.2,20,0
@@ -953,7 +953,7 @@ step
     .mob Strigid Screecher
     .mob Strigid Hunter
 step
-    #season2
+    #season 2
     .train 425762,1
     .goto Teldrassil,48.3,31.4
     >>Use |T134025:0|t[Teldrassil Bird Meat] near the corpse to summon |cRXP_ENEMY_Mowgh|r

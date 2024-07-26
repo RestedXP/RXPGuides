@@ -4180,25 +4180,25 @@ step << Priest
     .turnin 950 >> Turn in Return to Onu
     .target Onu
 step << Priest
-    #season2
+    #season 2
     .goto 1439,44.401,76.425
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kerlonian Evershade|r to start the escort
     >>|cRXP_WARN_Skip this step if he is not there. It can take up to 25 minutes for him to respawn|r
     .accept 5321 >> Accept The Sleeper Has Awakened
     .target Kerlonian Evershade
 step << Priest
-    #season2
+    #season 2
     .isOnQuest 5321
     .goto Darkshore,44.38,76.30
     >>Open |cRXP_PICK_Kerlonian's Chest|r. Loot it for the |T134229:0|t[|cRXP_LOOT_Horn of Awakening|r]
     .complete 5321,1 -- Horn of Awakening (1)
 step << Priest
-    #season2
+    #season 2
     #completewith towersod
     .zone Ashenvale >> Travel south to Ashenvale
     .goto Ashenvale,29.7,13.6
 step << Priest
-    #season2
+    #season 2
     .goto Ashenvale,27.26,35.58
     >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Kerlonian|r to Maestra's Post in Ashenvale|r
     .use 13536 >> |cRXP_WARN_Use the|r |T134229:0|t[|cRXP_LOOT_Horn of Awakening|r] |cRXP_WARN_whenever |cRXP_FRIENDLY_Kerlonian|r falls asleep next to him|r
@@ -4206,14 +4206,14 @@ step << Priest
     .complete 5321,2
     .isOnQuest 5321
 step << Priest
-    #season2
+    #season 2
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Liadris Moonriver|r
 	.target Liladris Moonriver
     .goto Ashenvale,27.26,35.58
     >>Skip this step if you haven't completed the quest
     .turnin 5321 >> Turn in The Sleeper Has Awakened
 step << Priest
-    #season2
+    #season 2
     #label towersod
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
 	.target Delgren the Purifier
@@ -6219,20 +6219,20 @@ step << Warrior
     .turnin 950 >> Turn in Return to Onu
     .target Onu
 step << Warrior
-    #season2
+    #season 2
     .goto 1439,44.401,76.425
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kerlonian Evershade|r to start the escort
     >>|cRXP_WARN_Skip this step if he is not there. It can take up to 25 minutes for him to respawn|r
     .accept 5321 >> Accept The Sleeper Has Awakened
     .target Kerlonian Evershade
 step << Warrior
-    #season2
+    #season 2
     .isOnQuest 5321
     .goto Darkshore,44.38,76.30
     >>Open |cRXP_PICK_Kerlonian's Chest|r. Loot it for the |T134229:0|t[|cRXP_LOOT_Horn of Awakening|r]
     .complete 5321,1 -- Horn of Awakening (1)
 step << Warrior
-    #season2
+    #season 2
     #sticky
     >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Kerlonian|r to Maestra's Post in Ashenvale|r
     .use 13536 >> |cRXP_WARN_Use the|r |T134229:0|t[|cRXP_LOOT_Horn of Awakening|r] |cRXP_WARN_whenever |cRXP_FRIENDLY_Kerlonian|r falls asleep next to him|r
@@ -6252,7 +6252,7 @@ step << Warrior
     >>|cRXP_WARN_Don't forget to keep waking|r |cRXP_FRIENDLY_Kerlonian|r |cRXP_WARN_while doing this quest. He will help you with the mobs|r
     .complete 5713,1
 step << Warrior
-    #season2
+    #season 2
     #completewith towersod
     .zone Ashenvale >> Travel south to Ashenvale
     .goto Ashenvale,29.7,13.6
@@ -6263,14 +6263,14 @@ step << Warrior
     .turnin 5713,1 >> Turn in One Shot. One Kill.
     .target Sentinel Onaeya
 step << Warrior
-    #season2
+    #season 2
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Liadris Moonriver|r
 	.target Liladris Moonriver
     .goto Ashenvale,27.26,35.58
     >>Skip this step if you haven't completed the quest
     .turnin 5321 >> Turn in The Sleeper Has Awakened
 step << Warrior
-    #season2
+    #season 2
     #label towersod
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
 	.target Delgren the Purifier
@@ -6335,25 +6335,25 @@ step << Druid
     .turnin 950 >> Turn in Return to Onu
     .target Onu
 step << Druid
-    #season2
+    #season 2
     .goto 1439,44.401,76.425
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kerlonian Evershade|r to start the escort
     >>|cRXP_WARN_Skip this step if he is not there. It can take up to 25 minutes for him to respawn|r
     .accept 5321 >> Accept The Sleeper Has Awakened
     .target Kerlonian Evershade
 step << Druid
-#season2
+#season 
     .isOnQuest 5321
     .goto Darkshore,44.38,76.30
     >>Open |cRXP_PICK_Kerlonian's Chest|r. Loot it for the |T134229:0|t[|cRXP_LOOT_Horn of Awakening|r]
     .complete 5321,1 -- Horn of Awakening (1)
 step << Druid
-#season2
+#season 
     #completewith towersod
     .zone Ashenvale >> Travel south to Ashenvale
     .goto Ashenvale,29.7,13.6
 step << Druid
-#season2
+#season 
     .goto Ashenvale,27.26,35.58
     >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Kerlonian|r to Maestra's Post in Ashenvale|r
     .use 13536 >> |cRXP_WARN_Use the|r |T134229:0|t[|cRXP_LOOT_Horn of Awakening|r] |cRXP_WARN_whenever |cRXP_FRIENDLY_Kerlonian|r falls asleep next to him|r
@@ -6361,14 +6361,14 @@ step << Druid
     .complete 5321,2
     .isOnQuest 5321
 step << Druid
-#season2
+#season 
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Liadris Moonriver|r
 	.target Liladris Moonriver
     .goto Ashenvale,27.26,35.58
     .turnin 5321 >> Turn in The Sleeper Has Awakened
     .isQuestComplete 5321
 step << Druid
-#season2
+#season 
     #label towersod
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Delgren the Purifier|r
 	.target Delgren the Purifier
@@ -6419,7 +6419,7 @@ step << Druid
     .train 410021 >> |cRXP_WARN_Use the|r |T134233:0|t[|cRXP_FRIENDLY_Idol of the Wild|r] |cRXP_WARN_to train|r |T132143:0|t[Wild Strikes]
     .itemcount 210534,1
 step << Druid
-    #season2
+    #season 2
     #optional
 	#completewith next
 	.cast 18960 >> Cast Teleport: Moonglade
