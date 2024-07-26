@@ -3189,7 +3189,7 @@ step
     #completewith next
     .goto Winterspring,67.93,41.44,50 >> Enter the Yeti cave
 step
-    Winterspring,69.87,37.92
+    .goto Winterspring,69.87,37.92
     >>|cRXP_WARN_Travel to the back of the Yeti cave and talk to the chained elemental|r |cRXP_FRIENDLY_Frijidar|r
     >>|cRXP_WARN_He will become hostile after a few seconds|r
     >>Kill |cRXP_ENEMY_Frijidar|r. Loot it for the |T134419:0|t[|cRXP_LOOT_Rune of the Bound Spirit|r]
