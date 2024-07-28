@@ -5,7 +5,7 @@ RXPGuides.RegisterGuide([[
 #classic
 #version 1
 #season 2
-<< Alliance
+<< NightElf
 #group RestedXP Alliance 1-20
 #name 13-20 Darkshore SoD
 #displayname 13-20 Darkshore << NightElf SoD !Priest

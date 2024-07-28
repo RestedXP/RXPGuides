@@ -2390,89 +2390,6 @@ step << Priest/Rogue
     .fp Redridge Mountains >> Get the Redridge Mountains flight path
     .target Ariena Stormfeather
     .subzoneskip 87 --Skip the Quick Draw steps if the user went back to goldshire instead
-step << Paladin
-    #optional
-    #completewith next
-    .goto Elwynn Forest,33.5,52.0
-    .zone Stormwind City >> Run to Stormwind
-step << Paladin
-    #xprate >1.49
-    #season 2
-    .goto StormwindClassic,56.201,64.585
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Morgan Pestle|r
-    .turnin 61,1 >> Turn in Shipment to Stormwind
-    >>|cRXP_WARN_We choose the|r |T132383:0|t[Explosive Rockets] |cRXP_WARN_as the reward. It deals decent damage, and can be used for "Split pulling" which is incredibly useful|r
-    .link https://www.youtube.com/watch?v=H-IwZ6P-ldY >> |cRXP_WARN_Click here for video reference on "Split pulling". It is a short video and invaluable to learn|r
-    .target Morgan Pestle
-    .train 410015,1
-step << Paladin
-    #season 2
-    #xprate >1.59
-    #optional
-    #completewith Romulus
-    .goto StormwindClassic,42.51,33.51,20 >> Travel to the Stormwind Cathedral
-    .train 410015,1
-step << skip --Human Paladin
-    #season 2
-    #xprate >1.59
-    .goto StormwindClassic,39.80,29.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
-    .accept 1641 >> Accept The Tome of Divinity
-    .turnin 1641 >> Turn in The Tome of Divinity
-    .target Duthorian Rall
-    .xp <12,1
---XX so you can get the 500xp breadcrumb in goldshire
-step << skip --Human Paladin
-    #season 2
-    #xprate >1.59
-    .goto StormwindClassic,39.80,29.77
-    >>|cRXP_WARN_Use the |T133739:0|t[|cRXP_LOOT_The Tome of Divinity|r] to start the quest|r
-    .accept 1642 >>Accept The Tome of Divinity
-    .use 6775
-    .xp <12,1
-step << skip --Human Paladin
-    #season 2
-    #xprate >1.59
-    .goto StormwindClassic,39.80,29.77
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
-    .turnin 1642 >>Turn in The Tome of Divinity
-    .accept 1643 >>Accept The Tome of Divinity
-    .target Duthorian Rall
-    .xp <12,1
-step << Paladin
-    #xprate >1.49
-    #season 2
-    #label Romulus
-    .goto StormwindClassic,38.10,28.10
-    .gossipoption 109653 >>Talk to |cRXP_FRIENDLY_Brother Romulus|r
-    .target Brother Romulus
-    .skipgossip
-    .train 410015,1
-step << Paladin
-    #xprate >1.49
-    #season 2
-    #completewith next
-    .goto StormwindClassic,37.39,29.76,5,0
-    .goto StormwindClassic,37.87,29.10,5,0
-    .goto StormwindClassic,36.52,32.67,8,0
-    .goto StormwindClassic,36.55,33.45,8,0
-    .goto StormwindClassic,35.95,34.05,8,0
-    .goto StormwindClassic,35.46,33.03,8,0
-    .goto StormwindClassic,35.95,31.54,8,0
-    .goto StormwindClassic,34.79,29.31,8,0
-    .goto StormwindClassic,33.69,29.69,8,0
-    .goto StormwindClassic,32.57,27.49,8,0
-    .goto StormwindClassic,33.41,25.61,8,0
-    >>Go downstairs into the western side of the Cathedral's Crypt
-    .goto StormwindClassic,32.86,24.77,8 >>Travel toward the |cRXP_LOOT_Charred Note|r in the crypt
-    .train 410015,1
-step << Paladin
-    #season 2
-    #xprate >1.49
-    .goto StormwindClassic,32.86,24.87
-    >>Loot the |cRXP_LOOT_Charred Note|r next to the candles
-    .collect 205864,1 --Charred Note (1)
-    .train 410015,1
 step
     #optional
     #completewith CollectKelp
@@ -2663,66 +2580,6 @@ step << Paladin
 step << Paladin
     #xprate >1.59
     #season 2
-    #optional
-    #completewith Martyrdom
-    .goto Elwynn Forest,27.0,86.7,0
-    .goto Elwynn Forest,26.1,89.9,0
-    .goto Elwynn Forest,27.0,93.9,0
-    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for their |T132889:0|t[Linen Cloth], you will need 10 for a quest later
-    .collect 2589,10,1644,1 --Linen Cloth (10)
-    .mob Riverpaw Runt
-    .mob Riverpaw Outrunner
-    .train 410015,1
-    .isQuestAvailable 1644
-step << Paladin
-    #xprate >1.49
-    #season 2
-    #optional
-    #completewith Martyrdom
-    #label Island
-    .goto Duskwood,4.33,28.26,50 >>Travel toward |cRXP_FRIENDLY_Ada Gelhardt|r on the island
-    .train 410015,1
-step << Paladin
-    #xprate >1.49
-    #season 2
-    #requires Island
-    #completewith Martyrdom
-    .goto Duskwood,4.33,28.26
-    .gossipoption 109610 >>Talk to |cRXP_FRIENDLY_Ada Gelhardt|r to start a fight
-    .target Ada Gelhardt
-    .skipgossip 205153,1
-    .train 410015,1
-step << Paladin
-    #xprate >1.49
-    #season 2
-    #requires Island
-    .goto Duskwood,4.33,28.26
-    >>Defeat |cRXP_ENEMY_Ada Gelhardt|r
-    >>|cRXP_WARN_Remember to pre-cast|r |T135924:0|t[Seal of the Crusader] |cRXP_WARN_on her|r
-    >>|cRXP_WARN_This step is HARD. Be careful as she casts|r |T136197:0|t[Shadow Shock] |cRXP_WARN_(instantly deals 45 shadow damage. Costs her 75 mana. You should kill her quick enough for her to only cast it 3 times)|r
-    >>|cRXP_WARN_After defeating |cRXP_ENEMY_Ada Gelhardt|r:|r
-    >>Talk to |cRXP_FRIENDLY_Ada Gelhardt|r again to receive the |T134419:0|t[Rune of Martyrdom]
-    .collect 205897,1 --Rune of Martyrdom (1)
-    .target Ada Gelhardt
-    .skipgossip 205153,1
-    .train 410015,1
-step << Paladin
-    #xprate >1.49
-    #season 2
-    #sticky
-    #optional
-    #label Charred
-    .destroy 205864 >> Delete the |T134939:0|t[Charred Note] from your bags, as it's no longer needed
-step << Paladin
-    #xprate >1.49
-    #season 2
-    #label Martyrdom
-    .train 410015 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Martyrdom] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Seal of Martyrdom]
-    .use 205897
-    .itemcount 205897,1 --Rune of Martyrdom (1)
-step << Paladin
-    #xprate 1.49-1.59
-    #season 2
     #loop
     .goto Elwynn Forest,27.0,86.7,0
     .goto Elwynn Forest,26.1,89.9,0
@@ -2731,70 +2588,13 @@ step << Paladin
     .goto Elwynn Forest,26.1,89.9,70,0
     .goto Elwynn Forest,25.2,92.7,70,0
     .goto Elwynn Forest,27.0,93.9,70,0
-    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for their |cRXP_LOOT_Painted Gnoll Armbands|r
-    .complete 11,1 -- Painted Gnoll Armband (8)
-    .mob Riverpaw Runt
-    .mob Riverpaw Outrunner
-    .isOnQuest 11
-step << Paladin
-    #xprate 1.49-1.59
-    #season 2
-    #loop
-    .goto Elwynn Forest,27.0,86.7,0
-    .goto Elwynn Forest,26.1,89.9,0
-    .goto Elwynn Forest,27.0,93.9,0
-    .goto Elwynn Forest,27.0,86.7,70,0
-    .goto Elwynn Forest,26.1,89.9,70,0
-    .goto Elwynn Forest,25.2,92.7,70,0
-    .goto Elwynn Forest,27.0,93.9,70,0
-    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for their |cRXP_LOOT_Painted Gnoll Armbands|r
-    .complete 11,1 -- Painted Gnoll Armband (8)
-    .mob Riverpaw Runt
-    .mob Riverpaw Outrunner
-    .isOnQuest 11
-step << Paladin
-    #xprate >1.59
-    #season 2
-    #loop
-    .goto Elwynn Forest,27.0,86.7,0
-    .goto Elwynn Forest,26.1,89.9,0
-    .goto Elwynn Forest,27.0,93.9,0
-    .goto Elwynn Forest,27.0,86.7,70,0
-    .goto Elwynn Forest,26.1,89.9,70,0
-    .goto Elwynn Forest,25.2,92.7,70,0
-    .goto Elwynn Forest,27.0,93.9,70,0
-    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for their |cRXP_LOOT_Painted Gnoll Armbands|r and |T132889:0|t[Linen Cloth]
-    .complete 11,1 -- Painted Gnoll Armband (8)
+    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for |T132889:0|t[Linen Cloth]. You will need 10 for a quest soon
     .collect 2589,10,1644,1 --Linen Cloth (10)
     .mob Riverpaw Runt
     .mob Riverpaw Outrunner
     .isOnQuest 11
     .isQuestAvailable 1644
-step << Paladin
-    #xprate >1.59
-    #season 2
-    #optional
-    #loop
-    .goto Elwynn Forest,27.0,86.7,0
-    .goto Elwynn Forest,26.1,89.9,0
-    .goto Elwynn Forest,27.0,93.9,0
-    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for their |cRXP_LOOT_Painted Gnoll Armbands|r and |T132889:0|t[Linen Cloth]
-    .complete 11,1 -- Painted Gnoll Armband (8)
-    .mob Riverpaw Runt
-    .mob Riverpaw Outrunner
-    .isOnQuest 11
-    .isQuestTurnedIn 1644
-step << Paladin
-    #xprate >1.49
-    #season 2
-    .goto Elwynn Forest,24.234,74.450
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r
-    .turnin 11 >> Turn in Riverpaw Gnoll Bounty
-    .target Deputy Rainer
-    .isQuestComplete 11
 
-
-----End of Paladin 1.5x Martyrdom Rune section----
 ----Start of Warrior Gnoll Head section----
 
 
@@ -2854,7 +2654,7 @@ step
     >>Click the |cRXP_PICK_Wanted Poster|r << Warlock
     .accept 176 >> Accept Wanted: "Hogger" << Warlock
     .goto Elwynn Forest,24.548,74.672 << Warlock
-step << Warlock/Paladin
+step << Warlock
     #completewith GnollEnd
     >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r while running. Loot them for the |T134939:0|t[|cRXP_LOOT_Gold Pickup Schedule|r]
     .use 1307 >>|cRXP_WARN_Use the |T134939:0|t[|cRXP_LOOT_Gold Pickup Schedule|r] to start the quest|r
@@ -3470,17 +3270,24 @@ step << Rogue
     .train 400081 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Precision|r] |cRXP_WARN_to train|r |T135610:0|t[Between the Eyes]
     .use 204174
     .itemcount 204174,1
+step << Paladin
+    .goto Stormwind City,74.182,7.465 << Alliance
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milton Sheaf|r << Alliance
+    >>Buy the |T133745:0|t|cRXP_LOOT_[Testament of Martyrdom]|r from him, use it to train |T135961:0|t[Seal of Martyrdom] << Paladin
+    .collect 226398,1 << Paladin
+step << Paladin
+    .goto Stormwind City,74.182,7.465 << Alliance
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milton Sheaf|r << Alliance
+    >>If you have a lot of spare money you can buy the other two Testaments from milton for later use << Paladin
+    .collect 216768,1 << Paladin -- Testament of Enhanced Blessings
+    .collect 226400,1 << Paladin -- Testament of the Exorcist
+    .money <5
 step
     .goto StormwindClassic,51.757,12.091
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grimand Elmore|r
     .turnin 1097 >> Turn in Elmore's Task
     .accept 353 >> Accept Stormpike's Delivery
     .target Grimand Elmore
-step << Warrior
-    #season 0,1
-    #optional
-    #completewith DeeprunEnter
-    +|cRXP_WARN_Put|r |T132363:0|t[Sunder Armor] |cRXP_WARN_on your action bar and ensure to use it constantly. It is more effective than using|r |T132282:0|t[Heroic Strike]
 step << Warrior/Paladin/Rogue
     #optional
     .goto StormwindClassic,56.3,17.0

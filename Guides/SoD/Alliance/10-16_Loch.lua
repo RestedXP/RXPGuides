@@ -991,117 +991,6 @@ step << Warlock !Human
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r
     .fp Redridge Mountains >> Get the Redridge Mountains flight path
     .target Ariena Stormfeather
-step << Dwarf Paladin
-    #season 2
-    #label Romulus
-    .goto StormwindClassic,38.10,28.10
-    .gossipoption 109653 >>Talk to |cRXP_FRIENDLY_Brother Romulus|r
-    .target Brother Romulus
-    .skipgossip
-    .train 410015,1
-step << Dwarf Paladin
-    #season 2
-    #completewith next
-    .goto StormwindClassic,37.39,29.76,5,0
-    .goto StormwindClassic,37.87,29.10,5,0
-    .goto StormwindClassic,36.52,32.67,8,0
-    .goto StormwindClassic,36.55,33.45,8,0
-    .goto StormwindClassic,35.95,34.05,8,0
-    .goto StormwindClassic,35.46,33.03,8,0
-    .goto StormwindClassic,35.95,31.54,8,0
-    .goto StormwindClassic,34.79,29.31,8,0
-    .goto StormwindClassic,33.69,29.69,8,0
-    .goto StormwindClassic,32.57,27.49,8,0
-    .goto StormwindClassic,33.41,25.61,8,0
-    >>Go downstairs into the western side of the Cathedral's Crypt
-    .goto StormwindClassic,32.86,24.77,8 >>Travel toward the |cRXP_LOOT_Charred Note|r in the crypt
-    .train 410015,1
-step << Dwarf Paladin
-    #season 2
-    .goto StormwindClassic,32.86,24.87
-    >>Loot the |cRXP_LOOT_Charred Note|r next to the candles
-    .collect 205864,1 --Charred Note (1)
-    .train 410015,1
-step << Dwarf Paladin
-    #season 2
-    #completewith next
-    .zone Elwynn Forest >> Exit Stormwind
-    .zoneskip Stormwind City,1
-    .train 410015,1
-    .itemcount 205864,1 --Charred Note (1)
-step << Dwarf Paladin
-    .goto 1429/0,73.800,-9465.000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
-    .target Marshal Dughan
-    .accept 109 >>Accept Report to Gryan Stoutmantle
-step << Dwarf Paladin
-    #season 2
-    #completewith next
-    #label Island
-    .goto Duskwood,4.33,28.26,50 >>Travel toward |cRXP_FRIENDLY_Ada Gelhardt|r on the island in Duskwood
-    .train 410015,1
-    .itemcount 205864,1 --Charred Note (1)
-step << Dwarf Paladin
-    #season 2
-    #completewith next
-    .goto Duskwood,4.33,28.26
-    .gossipoption 109610 >>Talk to |cRXP_FRIENDLY_Ada Gelhardt|r to start a fight
-    .target Ada Gelhardt
-    .skipgossip 205153,1
-    .train 410015,1
-    .itemcount 205864,1 --Charred Note (1)
---XX 109612 "As one candle is snuffed out, another is lit"
---XX 109611 "I've been sent by brother Romulus. Please, Ada, return with me to the Cathedral of Light"
---XX 109610 "I see. I'm sorry it has come to this, sister. (Fight Ada)"
-step << Dwarf Paladin
-    #season 2
-    #requires Island
-    .goto Duskwood,4.33,28.26
-    >>Defeat |cRXP_ENEMY_Ada Gelhardt|r
-    >>|cRXP_WARN_Remember to pre-cast|r |T135924:0|t[Seal of the Crusader] |cRXP_WARN_on her|r
-    >>|cRXP_WARN_Be careful as she casts|r |T136197:0|t[Shadow Shock] |cRXP_WARN_(instantly deals 45 shadow damage. Costs her 75 mana. You should kill her quick enough for her to only cast it 3 times)|r
-    >>|cRXP_WARN_After defeating |cRXP_ENEMY_Ada Gelhardt|r:|r
-    >>Talk to |cRXP_FRIENDLY_Ada Gelhardt|r again to receive the |T134419:0|t[Rune of Martyrdom]
-    .collect 205897,1 --Rune of Martyrdom (1)
-    .target Ada Gelhardt
-    .skipgossip 205153,1
-    .train 410015,1
-    .itemcount 205864,1 --Charred Note (1)
---XX Must have had the Charred Note to unlock the dialogue
-step << Dwarf Paladin
-    #season 2
-    #sticky
-    .destroy 205864 >> Delete the |T134939:0|t[Charred Note] from your bags, as it's no longer needed
-step << Dwarf Paladin
-    #season 2
-    .cast 402265 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Martyrdom] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Seal of Martyrdom]
-    .use 205897
-    .itemcount 205897,1 --Rune of Martyrdom (1)
-    .train 410015,1
-step << Dwarf Paladin
-    #season 2
-    .goto Westfall,36.24,54.52
-    .engrave 5 >>|cRXP_WARN_Engrave your|r |T133815:0|t|cRXP_LOOT_[Chest]|r with|r |T133815:0|t[Engrave Chest - Seal of Martyrdom]
-    >>|cRXP_WARN_Remember to put|r |T135961:0|t[Seal of Martyrdom] |cRXP_WARN_onto your action bars. It is better than both|r |T132325:0|t[Seal of Righteousness] |cRXP_WARN_and|r |T132347:0|t[Seal of Command] |cRXP_WARN_(until you get|r |T133815:0|t[Engrave Chest - Divine Storm]|cRXP_WARN_)|r
-    .train 410015,3
-step << Dwarf Paladin
-    #season 2
-    .goto Westfall,56.55,52.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
-    .fp Sentinel Hill >> Get the Sentinel Hill flight path
-    .target Thor
-step << Dwarf Paladin
-    .goto Westfall,52.86,53.71
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Heather|r
-    >>|cRXP_BUY_Buy up to 40|r |T133918:0|t[Longjaw Mud Snappers] |cRXP_BUY_from her. They are very cheap level 5 food|r
-    .collect 4592,20,314,1 --Longjaw Mud Snapper (20)
-	.target Innkeeper Heather
-step << Dwarf Paladin
-    .goto Westfall,56.33,47.52
-    .target Gryan Stoutmantle
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
-    .turnin 109 >> Turn in Report to Gryan Stoutmantle
-    .isOnQuest 109
 step << !Human
     .hs >> Hearth to Loch Modan
     .cooldown item,6948,>0,1 << !Warlock
@@ -1114,6 +1003,22 @@ step << !Warlock !Human
     .zoneskip Loch Modan
     .zoneskip Dun Morogh
     .zoneskip Wetlands
+step << Dwarf Paladin/Dwarf Hunter
+    .goto Stormwind City,74.182,7.465
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milton Sheaf|r
+    >>Buy the |T133745:0|t|cRXP_LOOT_[Testament of Martyrdom]|r from him, use it to train |T135961:0|t[Seal of Martyrdom] << Paladin
+    >>Buy the |T133739:0|t|cRXP_LOOT_[Treatise on the Heart of the Lion]|r from him, use it to train |T132185:0|t[Heart of the Lion] << Hunter
+    .collect 226401,1 << Hunter
+    .collect 226398,1 << Paladin
+step << Dwarf Paladin/Dwarf Hunter
+    .goto Stormwind City,74.182,7.465
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milton Sheaf|r
+    >>If you have a lot of spare money you can buy the other two Testaments from milton for later use << Paladin
+    >>If you have a lot of spare money buy the |T133739:0|t|cRXP_LOOT_[Treatise on Aspect of the Viper]|r from him as well << Hunter
+    .collect 216768,1 << Paladin -- Testament of Enhanced Blessings
+    .collect 226400,1 << Paladin -- Testament of the Exorcist
+    .collect 216770,1 << Hunter -- Treatise on Aspect of the Viper
+    .money <5
 step << !Human
     .goto Loch Modan,34.8,48.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Yanni Stoutheart|r inside

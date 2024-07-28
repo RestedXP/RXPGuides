@@ -9,6 +9,13 @@ RXPGuides.RegisterGuide([[
 #displayname 16-17 Westfall
 #next 17-22 Redridge SoD
 #defaultfor !NightElf
+
+step << Paladin
+    .goto Stormwind City,74.182,7.465 << Alliance
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milton Sheaf|r << Alliance
+    >>Buy the |T133745:0|t|cRXP_LOOT_[Testament of the Exorcist]|r from him, use it to train |T135956:0|t[Exorcist] << Paladin
+    .collect 226398,1 << Paladin
+    .train 415076,1 << Paladin
 step
     .goto StormwindClassic,58.08,16.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furen Longbeard|r

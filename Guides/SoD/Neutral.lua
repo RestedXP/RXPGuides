@@ -26,9 +26,9 @@ step
     #season 2
     .goto Wetlands,47.24,65.34
     >>Kill |cRXP_ENEMY_Carrodin|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Consuming Rage|r] << Warrior
-    >>Kill |cRXP_ENEMY_Carrodin|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Aspect of the Lion|r] << Hunter
+    >>Kill |cRXP_ENEMY_Carrodin|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Cobra Slayer|r] << Hunter
     .collect 210573,1 << Warrior --Rune of Consuming Rage (1)
-    .collect 211205,1 << Hunter --Rune of Aspect of the Lion (1)
+    .collect 211205,1 << Hunter --Rune of Aspect of Cobra Slayer (1)
     .mob Carrodin
     .train 425446,1 << Warrior
     .train 410115,1 << Hunter
@@ -719,8 +719,8 @@ RXPGuides.RegisterGuide([[
 << Hunter SoD
 #group RestedXP Rune & Books Guide
 #subgroup Legs
-#name Kill Command - 25 (Multiple Zones)
-#title Kill Command
+#name Kill Shot - 25 (Multiple Zones)
+#title Kill Shot
 
 step
     #completewith WyvernWrangling
