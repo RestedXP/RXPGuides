@@ -1817,8 +1817,7 @@ RXPGuides.RegisterGuide([[
 #displayname Shield Mastery <<Warrior
 
 step
-    +|cRXP_WARN_Go to any of the zones listed below. At the marked locations in each respecive one you will find an NPC from a new faction,|r |cRXP_FRIENDLY_The Emerald Wardens|r. |cRXP_WARN_To unlock this rune you will need to complete their quests and reach|r |cRXP_FRIENDLY_friendly|r |cRXP_WARN_reputation with them|r
-    >>|cRXP_WARN_TIP: If you're close to level 50 or above go to Feralas or The Hinterlands. In those zones you can complete a daily quest for an additional 1000 reputation|r. |cRXP_WARN_Farming this reputation is also much more efficient when done in a group so you can share quests between party members|r
+    +|cRXP_WARN_Go to any of the zones listed below. At the marked locations in each respecive one you will find an NPC from a new faction,|r |cRXP_FRIENDLY_The Emerald Wardens|r.
     >>Duskwood
     >>Ashenvale
     >>Feralas
@@ -1828,18 +1827,7 @@ step
     .zoneskip Feralas
     .zoneskip The Hinterlands
 step
-    .reputation 2641,friendly >>Look for a Quartermaster of |cRXP_FRIENDLY_The Emerald Wardens|r in the marked location. Start doing quests for them untill you reach |cRXP_FRIENDLY_friendly|r status
-    .link https://www.wowhead.com/classic/guide/season-of-discovery/emerald-wardens-reputation-nightmare-incursions >>Click here for a more in-depth guide for |cRXP_FRIENDLY_The Emerald Wardens|r reputation
-    .goto Duskwood,45.6,51.2,-1
-    .goto Ashenvale,89.6,40.6,-1
-    .goto Feralas,48.6,12.6,-1
-    .goto The Hinterlands,61.4,34.6,-1
-    .target Quartermaster Falinar
-    .target Quartermaster Kyleen
-    .target Quartermaster Valdane
-    .target Quartermaster Alandra
-step
-    >>Go back to |cRXP_FRIENDLY_the Quartermaster|r and buy your rune from them
+    >>Look for a Quartermaster of |cRXP_FRIENDLY_The Emerald Wardens|r in the marked location and buy your rune from them
     .goto Duskwood,45.6,51.2,-1
     .goto Ashenvale,89.6,40.6,-1
     .goto Feralas,48.6,12.6,-1
@@ -1871,7 +1859,7 @@ step
     .use 221481 << Priest --Nihilist Epiphany
     .use 221482 << Warlock --Rune of Affliciton
     .use 221483 << Shaman --Rune of Burn
-    .use 221511 << Shaman --Rune of the Protector
+    .use 221511 << Warrior --Rune of the Protector
     .use 221512 << Rogue --Rune of Alclarity
     .use 221515 << Hunter --Rune of Detonation
     .use 221517 << Druid --Rune of Bloodshed
