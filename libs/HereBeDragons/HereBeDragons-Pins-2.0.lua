@@ -1,6 +1,6 @@
 -- HereBeDragons-Pins is a library to show pins/icons on the world map and minimap
 
-local MAJOR, MINOR = "HereBeDragons-Pins-2.0", 13
+local MAJOR, MINOR = "HereBeDragons-Pins-2.0", 14
 assert(LibStub, MAJOR .. " requires LibStub")
 
 local pins, _oldversion = LibStub:NewLibrary(MAJOR, MINOR)
@@ -26,10 +26,8 @@ pins.worldmapProviderPin  = pins.worldmapProviderPin or CreateFromMixins(MapCanv
 
 if not pins.worldmapPinsPool then
     -- new frame pools in WoW 11.x
-    if CreateFramePool == CreateSecureFramePool then
-        -- the proper unsecure frame pool type isn't exposed (not even a plain object pool), so create a texture pool and replace its innards
-        pins.worldmapPinsPool = CreateUnsecuredTexturePool(nil, nil, nil, "HereBeDragonsPinsTemplate")
-        pins.worldmapPinsPool.createFunc = nil
+    if CreateUnsecuredRegionPoolInstance then
+        pins.worldmapPinsPool = CreateUnsecuredRegionPoolInstance("HereBeDragonsPinsTemplate")
     else
         pins.worldmapPinsPool = CreateFramePool("FRAME")
     end
