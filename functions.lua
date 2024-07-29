@@ -1750,11 +1750,15 @@ function addon.functions.waypoint(self, text, zone, x, y, radius, lowPrio, ...)
                     zone = info.parentMapID
                     zx,zy = HBD:GetZoneCoordinatesFromWorld(element.wx, element.wy, zone)
                 end
-                zx = zx or 0
-                zy = zy or 0
-                element.x = zx * 100
-                element.y = zy * 100
-                element.zone = zone
+                if zx and zy then
+                    element.x = zx * 100
+                    element.y = zy * 100
+                    element.zone = zone
+                else
+                    return addon.error(
+                        '2-'..L("Error parsing guide") .. " "  .. addon.currentGuideName ..
+                           ": Invalid coordinates or map name\n" .. self)
+                end
             end
         end
         element.arrow = true
