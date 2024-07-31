@@ -8598,6 +8598,16 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zor|r
     .accept 1061 >>Accept The Spirits of Stonetalon
     .target Zor Lonetree
+step << Shaman/Hunter
+    #season 2
+    .goto Orgrimmar,38.923,38.398
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zor Lonetree|r
+    .train 409580 >>|cRXP_WARN_Buy and use the|r |T133739:0|t|cRXP_LOOT_[Treatise on the Heart of the Lion]|r |cRXP_WARN_to learn|r |T132185:0|t[Heart of the Lion] << Hunter
+    .train 425336 >>|cRXP_WARN_Buy and use the|r |T133747:0|t|cRXP_LOOT_[Revelation of Shamanistic Rage]|r |cRXP_WARN_to learn|r |T136088:0|t[Shamanistic Rage] << Shaman
+    .use 226401 << Hunter -- Treatise on the Heart of the Lion
+    .use 226402 << Shaman -- Revelation of Shamanistic Rage
+    .target Zor Lonetree
+    .money <0.5
 step
     #optional
     #label SpiritsPickup

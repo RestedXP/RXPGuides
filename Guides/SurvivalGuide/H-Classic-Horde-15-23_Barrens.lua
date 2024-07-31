@@ -4728,6 +4728,7 @@ step
     .goto Durotar,50.8,13.8,40 >>Go up the Zeppelin Tower
     .zone Tirisfal Glades >>Take the Zeppelin to Tirisfal Glades
     .zoneskip Tirisfal Glades
+    .zoneskip Undercity
 
 ]])
 

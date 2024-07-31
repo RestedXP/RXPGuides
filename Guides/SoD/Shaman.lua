@@ -607,7 +607,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Gloves
 #name Water Shield - 20 (The Barrens)
 #title Water Shield
-#next Shamanistic Rage - 25 (Stonetalon Mountains)
+#next Greater Ghost Wolf - 25 (Stonetalon Mountains)
 
 
 step
@@ -820,7 +820,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Gloves
 #name Water Shield - 20 (Silverpine Forest)
 #title Water Shield
-#next Shamanistic Rage - 25 (Stonetalon Mountains)
+#next Greater Ghost Wolf - 25 (Stonetalon Mountains)
 
 step
     +|cRXP_WARN_You MUST be at least level 20 in order to acquire|r |T133816:0|t[Engrave Gloves - Water Shield] |cRXP_WARN_as it is the level requirement of training|r |T135849:0|t[Frost Shock]
@@ -1997,6 +1997,7 @@ step
     .train 425343,1
 step
     #loop
+    .goto Stonetalon Mountains,28.45,65.00,0
     .goto Stonetalon Mountains,28.45,65.00,50,0
     .goto Stonetalon Mountains,29.08,71.97,50,0
     .goto Stonetalon Mountains,33.43,68.97,50,0
@@ -2316,7 +2317,7 @@ step
     .train 410101,1
     .xp <25,1
     --XX Rune Routing will never be good for this
-step
+step << skip
     +Congratulations! You have acquired all |T134419:0|t|cRXP_LOOT_[Runes]|r currently available.
     .train 410094,3 --Overload
     .train 410095,3 --Lava Burst
