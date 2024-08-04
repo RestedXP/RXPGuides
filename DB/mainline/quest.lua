@@ -22,6 +22,8 @@ addon.disabledQuestList = {
     31780,
     38934,
     66458,
+    31781,
+    31819,
 }
 
 addon.skipPreReq = {
