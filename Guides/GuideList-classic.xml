@@ -49,5 +49,6 @@
 	<Script file="Guides\SoD\Alliance\16-22_Westfall-Redridge.lua"/>
 	
 	<Script file="Guides\Classic-Attunements.lua"/>
+	<Script file="Guides\Classic-0.5.lua"/>
 
 </Ui>

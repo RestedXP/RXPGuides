@@ -65,6 +65,13 @@ function addon.UpdateArrow(self)
 
     if addon.settings.profile.disableArrow or not self then return end
     local element = self.element
+    if af.wrongContinent then
+        af.alpha = 1
+        af:SetAlpha(1)
+        self.texture:SetRotation(0)
+        self.text:SetText("~")
+        return
+    end
     if element then
         local x, y, instance = HBD:GetPlayerWorldPosition()
         local angle, dist = HBD:GetWorldVector(instance, x, y, element.wx,
@@ -472,12 +479,12 @@ local function elementIsCloseToOtherPins(element, pins, isMiniMapPin)
         for j, pinElement in ipairs(pin.elements) do
             if not (pinElement.hidePin or element.hidePin) then
                 local relativeDist, dist, dx, dy
-                if element.instance == pinElement.instance then
+                --if element.instance == pinElement.instance then
                     dist, dx, dy = HBD:GetWorldDistance(pinElement.instance,
                                                         pinElement.wx,
                                                         pinElement.wy,
                                                         element.wx, element.wy)
-                end
+                --end
                 if not isMiniMapPin then
                     local zx, zy = HBD:GetZoneSize(pin.zone)
                     if dx ~= nil and zx ~= nil then
@@ -1091,7 +1098,14 @@ function addon.UpdateGotoSteps()
     local minDist
     --local zone = C_Map.GetBestMapForUnit("player")
     local x, y, instance = HBD:GetPlayerWorldPosition()
-    if af.element and af.element.instance ~= instance and instance ~= -1 then hideArrow = true end
+    if af.element and af.element.instance ~= instance and instance ~= -1 then
+        af.wrongContinent = true
+    else
+        af.wrongContinent = false
+        if IsInInstance() then
+            hideArrow = true
+        end
+    end
     for i, element in ipairs(addon.activeWaypoints) do
         local step = element.step
         if step and step.active then
