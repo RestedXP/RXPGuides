@@ -4642,10 +4642,18 @@ function addon.functions.skipgossipid(self, text, ...)
                 --print(v.gossipOptionID, gossipId)
                 if v.gossipOptionID == gossipId then
                     C_GossipInfo.SelectOption(v.gossipOptionID)
+                    element.select = true
                     return
                 end
             end
         end
+    elseif element.select and event == "GOSSIP_CONFIRM_CANCEL" or event == "PLAYER_INTERACTION_MANAGER_FRAME_HIDE" then
+        if element.timer then
+            addon.StartTimer(element.timer, element.timerText)
+        end
+        element.select = false
+    elseif not event then
+        element.select = false
     end
 
 end
