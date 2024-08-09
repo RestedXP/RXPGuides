@@ -1437,7 +1437,7 @@ step
     .target Gazrog
     .target Thork
     .target Jahan Hawkwing
-step << !Hunter !Druid
+step
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .turnin 6361 >>Turn in A Bundle of Hides
@@ -1447,8 +1447,6 @@ step << Hunter/Druid
     #completewith next
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
-    .turnin 6361 >>Turn in A Bundle of Hides
-    .accept 6362 >>Accept Ride to Thunder Bluff
     .fly Thunder Bluff >>Fly to Thunder Bluff
     .target Devrak
 step << Hunter/Druid
