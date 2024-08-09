@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 #name 1Retail_Exile's Reach
 #displayname Exile's Reach
 #next RestedXP Alliance 10-60\1A_Elwynn Forest << Alliance
-#next RestedXP Horde 10-60\1 BfA Intro << Horde
+#next RestedXP Speedrun Guide\a) The Waking Shores Fresh;RestedXP Horde 10-60\1 BfA Intro << Horde
 
 << !DemonHunter !DK !Kultiran !DarkIronDwarf !LightforgedDraenei !Mechagnome !VoidElf !NightBorne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
 
@@ -95,7 +95,7 @@ step
     .goto 1409,60.02,81.97,20,0
     .goto 1409,61.75,79.36,20,0
     .goto 1409,61.12,77.68
-    >>Kill |cRXP_ENEMY_Murloc Spearhunters|r and |cRXP_ENEMY_Watershapers|r. Loot them for their |cRXP_LOOT_First Aid Kits|r
+    >>Kill |cRXP_ENEMY_Murloc Spearhunters|r and |cRXP_ENEMY_Watershapers|r. Loot them for their |T1387611:0|t[|cRXP_LOOT_First Aid Kits|r]
     .complete 55122,1 << Alliance   --6/6 First Aid Kits recovered from defeated Murlocs
     .complete 59929,1 << Horde      --6/6 First Aid Kits recovered from defeated Murlocs
     .mob Murloc Spearhunter
@@ -233,7 +233,7 @@ step << Alliance !Hunter
     .goto 1409,58.87,73.55 << Monk
     >>Follow |cRXP_FRIENDLY_Garrick|r. Once |cRXP_ENEMY_Garrick|r turns hostile, attack her
     >>Cast |T136207:0|tShadow Word: Pain. Apply it 3 more times before the debuff falls off << Priest
-    >>Cast |T132337:0|tCharge on |cRXP_ENEMY_Garrick|r 3 times << Warrior
+    >>Cast |T132337:0|tCharge on |cRXP_ENEMY_Garrick|r 3 times. You can use |T132316:0|tHamstring to slow her. << Warrior
     >>Cast |T136096:0|tMoonfire on |cRXP_ENEMY_Garrick|r when she prompts you to  << Druid
     >>Cast |T135846:0|tFrostbolt at range, then cast |T135807:0|tFire Blast in melee range -> Repeat << Mage
     >>Cast |T136048:0|tLightning Bolt at range, then cast |T460956:0|tPrimal Strike 4 times -> Repeat << Shaman
@@ -247,7 +247,7 @@ step << Horde !Hunter
     .goto 1409,58.87,73.55 << Monk
     >>Follow |cRXP_FRIENDLY_Breka|r. Once |cRXP_ENEMY_Breka|r turns hostile, attack her
     >>Cast |T136207:0|tShadow Word: Pain. Apply it 3 more times before the debuff falls off << Priest
-    >>Cast |T132337:0|tCharge on |cRXP_ENEMY_Breka|r 3 times << Warrior
+    >>Cast |T132337:0|tCharge on |cRXP_ENEMY_Breka|r 3 times. You can use |T132316:0|tHamstring to slow her. << Warrior
     >>Cast |T136096:0|tMoonfire on |cRXP_ENEMY_Breka|r when she prompts you to  << Druid
     >>Cast |T135846:0|tFrostbolt at range, then cast |T135807:0|tFire Blast in melee range -> Repeat << Mage
     >>Cast |T136048:0|tLightning Bolt at range, then cast |T460956:0|tPrimal Strike 4 times -> Repeat << Shaman
@@ -384,11 +384,17 @@ step << Alliance
     .complete 55193,1 --1/1 Use the Scout-o-Matic 5000 to scout the Area
 	.timer 27,Scout-o-Matic Flight RP
 step << Horde
-	#completewith next
+    #completewith next
+    #label ChoppyBoosterMk
+    .goto 1409,56.08,58.81,0,0
+    .complete 59940,1 --1/1 Use the Choppy Booster Mk. 5 to scout the Area
+step << Horde
+	#completewith ChoppyBoosterMk
     .goto 1409,56.08,58.81
 	.vehicle >>Wait out the RP. Get into the |cRXP_FRIENDLY_Choppy Booster Mk. 5|r
 	.timer 33,Choppy Booster Flight RP
 step << Horde
+    #requires ChoppyBoosterMk
     .goto 1409,56.08,58.81
     >>Wait out the RP on the |cRXP_FRIENDLY_Choppy Booster Mk. 5|r. |cRXP_WARN_Press "Escape" on your keyboard to skip the cinematic|r
     .complete 59940,1 --1/1 Use the Choppy Booster Mk. 5 to scout the Area
@@ -416,7 +422,7 @@ step
 	.goto 1409,56.63,55.46,40,0
     .goto 1409,58.51,59.30
     >>Use the |T2735166:0|t[Re-Sizer v9.0.1] on |cRXP_ENEMY_Wandering Boars|r in melee range << Alliance
-    >>Use the |T178051:0|t[Re-Sizer v9.0.1] on |cRXP_ENEMY_Wandering Boars|r in melee range << Horde
+    >>Use the |T2735166:0|t[Re-Sizer v9.0.1] on |cRXP_ENEMY_Wandering Boars|r in melee range << Horde
     .complete 56034,1 << Alliance --3/3 Re-Sizer v9.0.1 tested on Wandering Boars
     .complete 59941,1 << Horde --3/3 Re-Sizer v9.0.1 tested on Wandering Boars
 	.mob Wandering Boar
@@ -461,7 +467,7 @@ step << Horde
     .goto 1409,52.59,53.34
     >>Use |T2735166:0|t[Re-Sizer Blast] (1) on |cRXP_ENEMY_Monstrous Cadavers|r to kill them
     .complete 59942,2 --8/8 Monstrous Cadaver slain
-	.timer 13,The Re-Deather RP
+	.timer 13,Roleplay Duration
 	.mob Monstrous Cadaver
 step
     .goto 1409,50.94,52.78
@@ -473,8 +479,7 @@ step
 	.mob Torgok
 step << Alliance
     .goto 1409,52.60,53.35
-    >>Wait out the RP
-	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Henry|r
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWait for the RP. Talk to |cRXP_FRIENDLY_Henry|r
 	>>|cRXP_WARN_Press "Escape" on your keyboard to skip the cinematic|r
     .turnin 55879,1 >>Turn in Ride of the Scientifically Enhanced Boar
 	.target Henry Garrick
@@ -508,6 +513,7 @@ step << Horde
 	>>Buy |cRXP_BUY_Tough Jerky|r or a |cRXP_BUY_Horde Tabard|r. Sell any trash in your bags
     .complete 59950,1 -- A Purchase an item from Provisioner Jin'hake
     .complete 59950,2 -- Sell an item to Provisioner Jin'hake
+    .buy 178120,1
 	.target Provisioner Jin'hake
 step << Alliance
     .goto 1409,52.35,55.33
@@ -528,8 +534,8 @@ step << Alliance Warrior/Alliance Warlock/Alliance Paladin/Alliance Priest
     .accept 58962 >>Accept A Warlock's Bargain << Warlock
 	.target Private Cole
 step << Horde Warrior/Horde Warlock/Horde Paladin/Horde Priest
-    .goto 1409,52.08,55.29
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Throg|r
+    .goto 1409,52.02,55.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grunt Throg|r
     .accept 59971 >>Accept A Warrior's End << Warrior
     .accept 59961 >>Accept A Priest's End << Priest
     .accept 59958 >>Accept A Paladin's Service << Paladin
@@ -588,6 +594,7 @@ step << Alliance
 	.target Kee-La
 step << Horde
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bo|r and |cRXP_FRIENDLY_Shuja|r
+    *|cRXP_WARN_You may have to wait for |cRXP_FRIENDLY_Shuja|r|r
     .turnin 59943 >>Turn in The Harpy Problem
     .accept 59945 >>Accept Harpy Culling
     .accept 59946 >>Accept Purge the Totems
@@ -647,7 +654,7 @@ step
     .goto 1409,54.29,41.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Meredy|r << Alliance
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Herbert|r << Horde
-	>>Kill the oncoming waves of enemies. Kill |cRXP_ENEMY_Bloodbeak|r when he comes
+	>>Kill the oncoming waves of enemies. Kill |cRXP_ENEMY_Bloodbeak|r when he appears
     .complete 55763,1 << Alliance --1/1 Meredy Huntswell rescued
     .complete 59944,1 << Horde --1/1 Herbert Gloomburst rescued
     .skipgossip
@@ -700,10 +707,16 @@ step
 	>>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Orbs|r to disperse the energy
     .complete 54933,1 --1/1 First necrotic energy dispersed
     .goto 1409,57.42,49.68
+step
+	>>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Orbs|r to disperse the energy
     .complete 54933,2 --1/1 Second necrotic energy dispersed
     .goto 1409,58.49,49.16
+step
+	>>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Orbs|r to disperse the energy
     .complete 54933,3 --1/1 Third necrotic energy dispersed
     .goto 1409,59.00,50.69
+step
+	>>|TInterface/GossipFrame/HealerGossipIcon:0|tClick the |cRXP_PICK_Orbs|r to disperse the energy
     .complete 54933,4 --1/1 Fourth necrotic energy dispersed
 	.timer 11,Freeing the Light RP
     .goto 1409,57.82,51.19
@@ -1603,17 +1616,17 @@ step << Horde
 	.target Shuja Grimaxe
 step
     .goto 1409,39.93,32.44
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on the |cRXP_PICK_Rune|r to disable it
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on the |cRXP_PICK_Ogre Runestone|r to disable it
     .complete 55990,4,1 << Alliance --1/3 Disable runes holding Warlord Thunderwalker
     .complete 59981,4,1 << Horde --1/3 Disable runes holding Warlord Thunderwalker
 step
     .goto 1409,39.73,32.04
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on the |cRXP_PICK_Rune|r to disable it
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on the |cRXP_PICK_Ogre Runestone|r to disable it
     .complete 55990,4,2 << Alliance --2/3 Disable runes holding Warlord Thunderwalker
     .complete 59981,4,2 << Horde --2/3 Disable runes holding Warlord Thunderwalker
 step
     .goto 1409,40.07,31.96
-    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on the |cRXP_PICK_Rune|r to disable it
+    >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick on the |cRXP_PICK_Ogre Runestone|r to disable it
     .complete 55990,4,3 << Alliance --3/3 Disable runes holding Warlord Thunderwalker
     .complete 59981,4,3 << Horde --3/3 Disable runes holding Warlord Thunderwalker
 step << Alliance
@@ -2021,9 +2034,10 @@ step << Horde
     .complete 60344,1 --1/1 Ask a guard for directions to the Stable Master
     .goto 85,52.48,84.18
     .complete 60344,2 --1/1 Speak with Cork Fizzlepop
+    .timer 100,Ride Duration
     .goto 85,52.25,84.42
     .skipgossip 168441,1
-    .gossipoption 109405
+    .skipgossipid 109405
     .isQuestAvailable 63219
 	.target Orgrimmar Grunt
 	.target Cork Fizzlepop
@@ -2042,6 +2056,7 @@ step << Horde
 	#completewith Specialize
 	.cast 55884 >>Use the mount in your bags to learn it
 	.use 87800 << Pandaren
+    .use 25474 << Pandaren
     .isQuestAvailable 63219
 --VV CHANGE TO OTHER RACES LATER. MUST DO THE QUEST/FIND A WAY TO FIND ALL MOUNT IDS FOR EACH RACE
 --PRMK Cast ID is the same regardless of the mount. Will level through Exile's Reach with each race when I have the time for it.
@@ -2065,15 +2080,11 @@ step << Horde
     #completewith next
     +|cRXP_WARN_Move the mount in your Mount Journal to your Action Bars (Default: SHIFT+P). Use the mount to move faster|r
     .isQuestAvailable 63219
-step << Horde
-    #completewith HordeERIntroBrekaGrommashHold
-    .goto 85,71.55,42.30,10,0
-    .goto 85,72.38,45.14,30 >>Swim across the water then run up the makeshift ramp. Go inside the building
-    .isQuestAvailable 63219
 step << Horde Druid
     #label Specialize
     .goto 85,72.92,43.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Telotha|r
+    >>|cRXP_WARN_Press N and select a specialization|r
     .complete 60346,1 --1/1 Speak with Telotha Pinegrove to learn about specializations
     .complete 60346,2 --1/1 Activate a combat specialization
 	.target Telotha Pinegrove
@@ -2089,6 +2100,7 @@ step << Horde Hunter
     #label Specialize
     .goto 85,73.89,43.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tamanji|r
+    >>|cRXP_WARN_Press N and select a specialization|r
     .complete 60347,1 --1/1 Speak with Tamanji to learn about specializations
     .complete 60347,2 --1/1 Activate a combat specialization
 	.target Tamanji
@@ -2104,6 +2116,7 @@ step << Horde Warrior
     #label Specialize
     .goto 85,73.76,47.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gormok|r
+    >>|cRXP_WARN_Press N and select a specialization|r
     .complete 60357,1 --1/1 Speak with Gormok Ogrefist to learn about specializations
     .complete 60357,2 --1/1 Activate a combat specialization
 	.target Gormok Ogrefist
@@ -2119,6 +2132,7 @@ step << Horde Shaman
     #label Specialize
     .goto 85,73.41,43.13
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hretar|r
+    >>|cRXP_WARN_Press N and select a specialization|r
     .complete 60353,1 --1/1 Speak with Hretar Riverspeaker to learn about specializations
     .complete 60353,2 --1/1 Activate a combat specialization
 	.target Hretar Riverspeaker
@@ -2134,6 +2148,7 @@ step << Horde Priest
     #label Specialize
     .goto 85,72.64,46.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Martin|r
+    >>|cRXP_WARN_Press N and select a specialization|r
     .complete 60351,1 --1/1 Speak with Martin Goodchilde to learn about specializations
     .complete 60351,2 --1/1 Activate a combat specialization
 	.target Martin Goodchilde
@@ -2149,6 +2164,7 @@ step << Horde Paladin
     #label Specialize
     .goto 85,73.19,47.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avaros|r
+    >>|cRXP_WARN_Press N and select a specialization|r
     .complete 60350,1 --1/1 Speak with Avaros Dawnglaive to learn about specializations
     .complete 60350,2 --1/1 Activate a combat specialization
 	.target Avaros Dawnglaive
@@ -2164,6 +2180,7 @@ step << Horde Mage
     #label Specialize
     .goto 85,74.68,43.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Feenix|r
+    >>|cRXP_WARN_Press N and select a specialization|r
     .complete 60348,1 --1/1 Speak with Feenix Arcshine to learn about specializations
     .complete 60348,2 --1/1 Activate a combat specialization
 	.target Feenix Arcshine
@@ -2179,6 +2196,7 @@ step << Horde Monk
     #label Specialize
     .goto 85,75.69,43.58
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Huinli|r
+    >>|cRXP_WARN_Press N and select a specialization|r
     .complete 60349,1 --1/1 Speak with Huinli Wingpaw to learn about specializations
     .complete 60349,2 --1/1 Activate a combat specialization
 	.target Huinli Wingpaw
@@ -2194,6 +2212,7 @@ step << Horde Rogue
     #label Specialize
     .goto 85,75.47,47.51
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thega|r
+    >>|cRXP_WARN_Press N and select a specialization|r
     .complete 60352,1 --1/1 Speak with Huinli Wingpaw to learn about specializations
     .complete 60352,2 --1/1 Activate a combat specialization
 	.target Thega Graveblade
@@ -2209,6 +2228,7 @@ step << Horde Warlock
     #label Specialize
     .goto 85,74.63,47.42
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kazak|r
+    >>|cRXP_WARN_Press N and select a specialization|r
     .complete 60355,1 --1/1 Speak with Kazak Darkscream to learn about specializations
     .complete 60355,2 --1/1 Activate a combat specialization
 	.target Kazak Darkscream
@@ -2236,45 +2256,4 @@ step << Horde
     .turnin 60359 >>Turn in Home Is Where the Hearth Is
 	.target Innkeeper Nufa
     .isOnQuest 60359
-step << Horde
-    .goto 85,70.86,49.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shuja|r
-    *|cRXP_WARN_Relog if you can't see her.|r
-    .accept 60360 >>Accept An Urgent Meeting
-	.target Shuja Grimaxe
-    .isQuestAvailable 63219
-step << Horde
-	#completewith next
-    .goto 85,64.89,46.56,30,0
-    .goto 85,60.47,50.16,30,0
-    .goto 85,58.35,61.57,30,0
-    .goto 85,52.16,66.44,30,0
-    .goto 85,49.90,75.60,15,0
-    .goto 85,49.29,73.94,15 >>Travel to Grommash Hold. |cRXP_WARN_Remember to use your mount|r
-step << skip
-    .goto 85,49.29,73.94
-	>>Go inside Grommash 
-    .complete 60360,2 --1/1 Find Warlord Breka Grimaxe at Grommash Hold
-    .isOnQuest 60360
---VV Horde
-step << Horde
-    .goto 85,48.26,71.38
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Breka|r
-    .turnin 60360 >>Turn in An Urgent Meeting
-    .accept 60361 >>Accept Battle for Azeroth: Mission Statement
-	.timer 42,Mission Statement RP
-	.target Warlord Breka Grimaxe
-    .isQuestTurnedIn 60359
-step << Horde
-	#completewith next
-    >>Wait out the RP
-    .complete 60361,1 --Meet with Warchief Sylvanas Windrunner
-    .isQuestTurnedIn 60359
-step << Horde
-    .goto 85,48.51,71.22
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nathanos|r
-    .complete 60361,2 --Speak with Nathanos Blightcaller
-	.target Nathanos Blightcaller
-    .skipgossip
-    .isQuestTurnedIn 60359
 ]])
