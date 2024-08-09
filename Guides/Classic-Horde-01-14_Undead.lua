@@ -1327,6 +1327,7 @@ step << Mage
     .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
     .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] |cRXP_WARN_to learn|r |T236227:0|t[Fingers of Frost]
     .use 203753
+    .itemcount 203753,1
 step
     #hardcore
     #completewith BrillTurnin1
@@ -2449,6 +2450,7 @@ step << Mage
     .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item
     .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] |cRXP_WARN_to learn|r |T236227:0|t[Fingers of Frost.]
     .use 203753
+    .itemcount 203753,1
 step
     #xprate <1.5
     #hardcore
@@ -4578,9 +4580,11 @@ step << Mage
     .collect 208754,1 --Spell Notes: TENGI RONEERA (1)
     .mob Dalaran Apprentice
 step << Mage
+    #season 2
     .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
     .train 401767 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r] |cRXP_WARN_to learn|r |T132871:0|t[Regeneration.]
     .use 208754
+    .itemcount 211779,1
 step << Rogue
     #season 2
     .goto Silverpine Forest,45.25,68.06,20,0
@@ -6954,6 +6958,7 @@ step << Mage
     .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
     .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] |cRXP_WARN_to learn|r |T236227:0|t[Fingers of Frost]
     .use 203753
+    .itemcount 203753,1
 step
     #hardcore
     #completewith BrillTurnin1
@@ -8181,6 +8186,7 @@ step << Mage
     .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item
     .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] |cRXP_WARN_to learn|r |T236227:0|t[Fingers of Frost.]
     .use 203753
+    .itemcount 203753,1
 step << skip
     #xprate <1.5
     #hardcore
@@ -8922,6 +8928,7 @@ step << Mage
     .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item
     .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] |cRXP_WARN_to learn|r |T236227:0|t[Fingers of Frost.]
     .use 203753
+    .itemcount 211779,1
 step
     #xprate >2.09
     #hardcore
