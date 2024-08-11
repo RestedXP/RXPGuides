@@ -5190,8 +5190,15 @@ function addon.functions.countdown(self, text, duration)
 end
 
 if addon.gameVersion >= 110000 then
-    events.scenario = {"SCENARIO_UPDATE", "SCENARIO_CRITERIA_UPDATE", "CRITERIA_COMPLETE"}
+    events.scenario = {"CRITERIA_UPDATE", "SCENARIO_CRITERIA_UPDATE"}
     addon.icons.scenario = addon.icons.complete
+
+    function addon.GetCurrentStageId()
+        local stepInfo = C_ScenarioInfo.GetScenarioStepInfo()
+        if stepInfo then
+            return stepInfo.stepID
+        end
+    end
 
     function addon.functions.scenario(self, ...)
         if type(self) == "string" then -- on parse
@@ -5216,7 +5223,6 @@ if addon.gameVersion >= 110000 then
             element.criteria = ""
             return element
         end
-        local event = ...
 
         local element = self.element
         local step = element.step
@@ -5229,9 +5235,13 @@ if addon.gameVersion >= 110000 then
         local completed = criteriaInfoByStep.completed
         local scenario = C_ScenarioInfo.GetScenarioInfo()
         local currentStage = scenario and scenario.currentStage
+        local scenarioStepInfo = C_ScenarioInfo.GetScenarioStepInfo()
+        local currentStep = scenarioStepInfo and scenarioStepInfo.stepID
         local currentInfo = C_ScenarioInfo.GetCriteriaInfo(criteriaIndex)
         local criteriaID = currentInfo and currentInfo.criteriaID
-        if currentInfo and criteriaID == currentInfo.criteriaID then element.stagePos = currentStage end
+        if currentStep and currentStep == element.stage then
+            element.stagePos = currentStage
+        end
 
         -- print(required,quantity)
         if not (required and quantity) then
@@ -5248,7 +5258,6 @@ if addon.gameVersion >= 110000 then
         element.criteria = fmt("%s: %d/%d", criteriaString, fulfilled,
                                         required)
         if element.rawtext ~= "" then element.criteria = "\n" .. element.criteria end
-
         if completed or quantity >= required or (element.stagePos and currentStage and currentStage > element.stagePos) then
             addon.SetElementComplete(self)
         end
