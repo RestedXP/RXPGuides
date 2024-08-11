@@ -19,6 +19,11 @@ function addon.arrowFrame:UpdateVisuals()
         "rxp_navigation_arrow-1"))
 end
 
+local function IsInInstance()
+    if _G.IsInInstance() and not select(2, GetInstanceInfo()) == "scenario" then
+        return true
+    end
+end
 
 addon.enabledFrames["arrowFrame"] = af
 af.IsFeatureEnabled = function ()
