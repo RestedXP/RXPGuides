@@ -1420,7 +1420,7 @@ step
 step
     .goto Orgrimmar,26.22,61.58,80,0
     .goto Orgrimmar,15.66,63.33,30,0
-    .zone The Barrens >> Enter The Barrens through the Western Exit
+    .goto Orgrimmar,18.03,60.51,50 >> Enter The Barrens through the Western Exit
     .zoneskip The Barrens
     .isOnQuest 896
 step
@@ -4403,6 +4403,7 @@ step << Rogue
 step << Rogue
     .goto Orgrimmar,43.05,53.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shenthul|r
+    .train 921 >> Train |T133644:0|t[Pick Pocket]
     .train 8676 >> Train |T132282:0|t[Ambush]
     .train 1943 >> Train |T132302:0|t[Rupture]
     .train 1856 >> Train |T132331:0|t[Vanish]
@@ -4485,8 +4486,7 @@ step << Rogue/Druid
     #completewith MissionProbable
     .goto Orgrimmar,26.22,61.58,80,0
     .goto Orgrimmar,15.66,63.33,30,0
-    .goto Orgrimmar,18.03,60.51,30,0
-    .zone The Barrens >> Enter The Barrens through the Western Exit
+    .goto Orgrimmar,18.03,60.51,50 >> Enter The Barrens through the Western Exit
     .zoneskip The Barrens
 step << Rogue/Druid
     #completewith MissionProbable
@@ -4548,7 +4548,7 @@ step << Rogue/Druid
 step << !Rogue/Druid
     .goto Orgrimmar,26.22,61.58,80,0
     .goto Orgrimmar,15.66,63.33,30,0
-    .zone The Barrens >> Enter The Barrens through the Western Exit
+    .goto Orgrimmar,18.03,60.51,50 >> Enter The Barrens through the Western Exit
     .zoneskip The Barrens
     .isOnQuest 3924
 step

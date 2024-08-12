@@ -5596,28 +5596,12 @@ step << skip
     .zoneskip Ashenvale
 step
     #xprate <1.5
-    #season 0
-	#completewith ZoramFP
-    .goto Ashenvale,39.45,55.29,50,0
-    .goto Ashenvale,36.47,57.15,50,0
-    .goto Ashenvale,34.56,54.13,30,0
-    .goto Ashenvale,32.14,52.12,60,0
-    .goto Ashenvale,28.64,48.10,50,0
-    .goto Ashenvale,26.34,45.44,50,0
-    .goto Ashenvale,25.40,39.00,70,0
-    .goto Ashenvale,11.96,34.28,80 >>Travel toward the Zoram'gar Outpost
-    >>|cRXP_WARN_Make sure to avoid Astranaar guards en route. Follow the waypoint for safety|r
-    .unitscan Astranaar Sentinel
-step
-    #xprate <1.5
-    #season 2
 	#completewith ZoramFP
     .goto Ashenvale,34.14,53.61,50,0
     .goto Ashenvale,18.43,32.94,50,0
     .goto Ashenvale,11.96,34.28,80 >>Travel toward the Zoram'gar Outpost
     >>|cRXP_WARN_Make sure to avoid Astranaar guards en route. Follow the waypoint for safety|r
     .unitscan Astranaar Sentinel
---XX Get teleported to just in front of Mystral lake in SoD
 step
     #xprate <1.5
     #optional
@@ -5983,13 +5967,8 @@ step
     .accept 216 >> Accept Between a Rock and a Thistlefur
     .target Karang Amakkar
 step
-    #completewith flytoORG
-    .hs >> Hearth to Thunder Bluff
-    .use 6948
-    .cooldown item,6948,>0
-step
     #xprate >1.49
-    #completewith flytoORG
+    #completewith JourneytoTM
     .goto Stonetalon Mountains,45.13,59.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharm|r
     .fly Thunder Bluff >>Fly to Thunder Bluff
@@ -5997,12 +5976,17 @@ step
     .cooldown item,6948,<0
 step
     #xprate <1.5
-    #completewith flytoORG
+    #completewith JourneytoTM
     .goto Ashenvale,12.24,33.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andruk|r
     .fly Thunder Bluff >> Fly to Thunder Bluff
     .target Andruk
     .cooldown item,6948,<0
+step
+    #completewith JourneytoTM
+    .hs >> Hearth to Thunder Bluff
+    .use 6948
+    .cooldown item,6948,>0
 step
     #completewith next
     .goto Thunder Bluff,69.88,30.90,80 >> Travel to the Elder Rise
@@ -6015,6 +5999,7 @@ step
     .accept 1064 >> Accept Forsaken Aid
     .target Magatha Grimtotem
 step
+    #label JourneytoTM
     .goto Thunder Bluff,22.82,20.88
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zamah|r
     .turnin 1064 >> Turn in Forsaken Aid
@@ -6025,11 +6010,25 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Camp Taurajo >>Fly to Camp Taurajo
     .target Tal
+    .zoneskip Thunder Bluff,1
 step << !Warlock
     .goto Thunder Bluff,47.00,49.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tal|r
     .fly Orgrimmar >>Fly to Orgrimmar
     .target Tal
+    .zoneskip Thunder Bluff,1
+step << Warlock
+   .goto Ashenvale,12.24,33.80
+   >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andruk|r
+    .fly Camp Taurajo >>Fly to Camp Taurajo
+    .target Andruk
+    .zoneskip Ashenvale,1
+step << !Warlock
+    .goto Ashenvale,12.24,33.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Andruk|r
+    .fly Orgrimmar >>Fly to Orgrimmar
+    .target Andruk
+    .zoneskip Ashenvale,1
 step << Warlock
     .goto The Barrens,44.62,59.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Logmar|r
@@ -6048,9 +6047,6 @@ step << Warlock
     .fly Orgrimmar >>Fly to Orgrimmar
     .target Omusa Thunderhorn
     .zoneskip The Barrens,1
-step
-    #optional
-    #label flytoORG
 step << Warlock
     .goto Orgrimmar,48.25,45.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gan'rul|r
@@ -6082,6 +6078,7 @@ step << Rogue
 step << Rogue
     .goto Orgrimmar,43.05,53.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shenthul|r
+    .train 921 >> Train |T133644:0|t[Pick Pocket]
     .train 8676 >> Train |T132282:0|t[Ambush]
     .train 1943 >> Train |T132302:0|t[Rupture]
     .train 1856 >> Train |T132331:0|t[Vanish]
@@ -6158,8 +6155,7 @@ step << Rogue/Druid
     #completewith MissionProbable
     .goto Orgrimmar,26.22,61.58,80,0
     .goto Orgrimmar,15.66,63.33,30,0
-    .goto Orgrimmar,18.03,60.51,30,0
-    .zone The Barrens >> Enter The Barrens through the Western Exit
+    .goto Orgrimmar,18.03,60.51,50 >> Enter The Barrens through the Western Exit
     .zoneskip The Barrens
 step << Rogue/Druid
     #completewith MissionProbable
@@ -6314,6 +6310,9 @@ step << Rogue
 step << Rogue
     .destroy 8051 >> |cRXP_WARN_Delete the|r |T134536:0|t[Flare Gun] |cRXP_WARN_from your bags, as it's no longer needed|r
     .destroy 8066 >> |cRXP_WARN_Delete|r |T134374:0|t[Fizzule's Whistle] |cRXP_WARN_from your bags, as it's no longer needed|r
+step
+    #optional
+    #label flytoORG
 step
     #optional
     .abandon 6421 >> Abandon Boulderslide Ravine
@@ -12378,6 +12377,7 @@ step << Rogue
 step << Rogue
     .goto Orgrimmar,43.05,53.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shenthul|r
+    .train 921 >> Train |T133644:0|t[Pick Pocket]
     .train 8676 >> Train |T132282:0|t[Ambush]
     .train 1943 >> Train |T132302:0|t[Rupture]
     .train 1856 >> Train |T132331:0|t[Vanish]
@@ -12407,8 +12407,7 @@ step << Rogue
     #completewith MissionProbable
     .goto Orgrimmar,26.22,61.58,80,0
     .goto Orgrimmar,15.66,63.33,30,0
-    .goto Orgrimmar,18.03,60.51,30,0
-    .zone The Barrens >> Enter The Barrens through the Western Exit
+    .goto Orgrimmar,18.03,60.51,50 >> Enter The Barrens through the Western Exit
     .zoneskip The Barrens
 step << Rogue
     #completewith MissionProbable

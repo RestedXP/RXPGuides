@@ -4604,7 +4604,7 @@ step
     .goto Silverpine Forest,45.51,41.26,100 >> Travel back to The Sepulcher
 step
     #softcore
-    #completewith
+    #completewith next
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step
     #xprate <1.5

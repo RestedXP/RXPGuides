@@ -2032,11 +2032,14 @@ step << Druid
     .target Tal
 step << Druid
     .goto The Barrens,42.00,60.86
-    .use 15710 >>Run to the Moonkin Stone and use the |T132857:0|t[Cenarion Lunardust]. Kill |cRXP_ENEMY_Lunaclaw|r
+    .use 15710 >>|cRXP_WARN_Use|r |T132857:0|t[Cenarion Lunardust] |cRXP_WARN_at the|r |cRXP_PICK_Moonkin Stone|r
+    >>Kill |cRXP_ENEMY_Lunaclaw|r as he spawns. Talk to the |cRXP_FRIENDLY_Lunaclaw Spirit|r afterwards
+    >>|cRXP_WARN_Be careful! |cRXP_ENEMY_Lunaclaw|r casts|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r
     >>|cRXP_WARN_Steer clear of the|r |cRXP_ENEMY_Thunderheads|r |cRXP_WARN_in the area|r
     .complete 6002,1 --Face Lunaclaw and earn the strength of body and heart it possesses. (1)
-    .use 15710
     .mob Lunaclaw
+    .target Lunaclaw Spirit
+    .skipgossip
 step << Tauren
     .goto The Barrens,44.9,58.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kirge Sternhorn|r
@@ -2454,7 +2457,6 @@ step
 step
     .goto Mulgore,42.5,13.8
     >>|cRXP_WARN_Use the|r |T135139:0|t[Wildmane Cleansing Totem] |cRXP_WARN_at the Well|r
-    >>Use the Wildmane Cleansing Totem at the Well
     .complete 760,1 --Cleanse the Wildmane Well (1)
 step << Warrior/Hunter
     season 2
@@ -2466,9 +2468,10 @@ step << Warrior/Hunter
     .goto Mulgore,48.6,16.1,90,0
     .goto Mulgore,51.8,33.8,90,0
     .goto Mulgore,56.2,32.9
-    >>Look around for |cRXP_ENEMY_Arra'Chea |r (Big black kodo). He walks clockwise. Kill and Loot him for his |cRXP_LOOT_Horn|r << !Warrior !Hunter
-    >>Look around for |cRXP_ENEMY_Arra'Chea|r (Big black kodo). He walks clockwise. Kill and Loot him for his |cRXP_LOOT_Horn|r and |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r] << Warrior
-    >>Look around for |cRXP_ENEMY_Arra'Chea|r (Big black kodo). He walks clockwise. Kill and Loot him for his |cRXP_LOOT_Horn|r and |T134419:0|t[|cRXP_FRIENDLY_Rune of Explosive Shot|r] << Hunter
+    >>Kill |cRXP_ENEMY_Arra'Chea|r (Big black kodo). Kill and loot him for his |cRXP_LOOT_Horn|r << !Warrior !Hunter
+    >>Kill |cRXP_ENEMY_Arra'Chea|r (Big black kodo). Kill and loot him for his |cRXP_LOOT_Horn|r and |T134419:0|t[|cRXP_FRIENDLY_Rune of Furious Thunder|r] << Warrior
+    >>Kill |cRXP_ENEMY_Arra'Chea|r (Big black kodo). Kill and loot him for his |cRXP_LOOT_Horn|r and |T134419:0|t[|cRXP_FRIENDLY_Rune of Explosive Shot|r] << Hunter
+     >>|cRXP_WARN_He patrols clockwise around Northern Mulgore|r
     .complete 776,1 --Horn of Arra'chea (1)
     .collect 204809,1 << Warrior --Rune of Furious Thunder(1)
     .collect 206169,1 << Hunter --Rune of Explosive Shot (1)
@@ -2496,7 +2499,8 @@ step
     .goto Mulgore,48.6,16.1,90,0
     .goto Mulgore,51.8,33.8,90,0
     .goto Mulgore,56.2,32.9
-    >>Look around for |cRXP_ENEMY_Arra'Chea |r (Big black kodo). He walks clockwise. Kill and Loot him for his |cRXP_LOOT_Horn|r
+    >>Kill |cRXP_ENEMY_Arra'Chea|r (Big black kodo). Kill and loot him for his |cRXP_LOOT_Horn|r
+    >>|cRXP_WARN_He patrols clockwise around Northern Mulgore|r
     .complete 776,1 --Horn of Arra'chea (1)
     .unitscan Arra'chea
     --VV .line
