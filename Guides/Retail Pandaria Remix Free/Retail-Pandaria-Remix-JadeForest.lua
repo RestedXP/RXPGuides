@@ -965,11 +965,11 @@ step
     -- .turnin 80311 >>Turn in Order of the Cloud Serpent
     .accept 30134 >>Accept Wild Things
     .target Elder Anli
-step << Alliance
-    .goto 371,47.17,47.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jade Forest Flame Guardian|r
-    .accept 32498 >>Accept Honor the Flame
-    .target Jade Forest Flame Guardian
+-- step << Alliance
+--     .goto 371,47.17,47.19
+--    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jade Forest Flame Guardian|r
+--    .accept 32498 >>Accept Honor the Flame
+--    .target Jade Forest Flame Guardian
 -- step << Alliance
 --     .goto 371,47.17,47.13
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Midsummer Bonfire|r
@@ -2140,11 +2140,11 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Old Man Misteye|r
     .accept 29576 >>Accept An Air of Worry
     .target Old Man Misteye
-step
-    .goto 371,47.17,47.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jade Forest Flame Guardian|r
-    .accept 32498 >>Accept Honor the Flame
-    .target Jade Forest Flame Guardian
+-- step
+--    .goto 371,47.17,47.19
+--    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jade Forest Flame Guardian|r
+--    .accept 32498 >>Accept Honor the Flame
+--    .target Jade Forest Flame Guardian
 -- step
 --     .goto 371,47.17,47.13
 --     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Midsummer Bonfire|r
