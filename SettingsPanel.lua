@@ -3227,7 +3227,10 @@ function addon.GetXPBonuses(ignoreBuffs,playerLevel)
     if addon.game == "RETAIL" then
         local cloakBonus = C_CurrencyInfo.GetCurrencyInfo(3001).quantity
         local warModeBonus = (C_PvP.IsWarModeActive() or CheckBuff(282559) or CheckBuff(269083) or CheckBuff(289954)) and C_PvP.GetWarModeRewardBonus() or 0
-        calculatedRate = calculatedRate + (cloakBonus + warModeBonus)/100
+        local warbandBuff = C_UnitAuras.GetPlayerAuraBySpellID(430191)
+        --1,2: xp buff, 3: max level
+        local warbandBonus = warbandBuff and warbandBuff.points[1] or 0
+        calculatedRate = calculatedRate + (cloakBonus + warModeBonus + warbandBonus)/100
         return calculatedRate
     elseif addon.game == "WOTLK" then
         local itemQuality
