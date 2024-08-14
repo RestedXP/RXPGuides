@@ -473,9 +473,7 @@ step
     .goto Teldrassil,57.807,41.653
     .target Gilshalan Windwalker
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gilshalan Windwalker|r
-    .accept 916 >> Accept Webwood Venom << !Warrior sod
-    .turnin 916 >> Turn in Webwood Venom << Warrior sod
-    .accept 917 >> Accept Webwood Egg << Warrior sod
+    .accept 916 >> Accept Webwood Venom
     .target Gilshalan Windwalker
 step << Druid
     #season 2
