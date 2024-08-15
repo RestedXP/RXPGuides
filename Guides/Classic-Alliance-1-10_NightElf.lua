@@ -1221,15 +1221,6 @@ step
     .complete 487,1 --Kill Gnarlpine Ambusher (x6)
     .mob Gnarlpine Ambusher
 step
-    #season 0
-    .goto Teldrassil,55.83,58.31,40,0
-    .goto Teldrassil,50.22,53.83
-    .goto Teldrassil,55.83,58.31,0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moon Priestess Amara|r
-    >>|cRXP_FRIENDLY_Moon Priestess Amara|r |cRXP_WARN_patrols the road west of Dolanaar|r
-    .turnin 487 >> Turn in The Road to Darnassus
-    .target Moon Priestess Amara
-step
 	#xprate < 1.5
     #completewith next
     .goto Teldrassil,38.32,34.36,50 >> Travel to The Oracle Glade
@@ -1244,20 +1235,6 @@ step
     .goto Teldrassil,38.43,34.03
     .use 18152 >>|cRXP_WARN_Use the|r |T134798:0|t[Amethyst Phial] |cRXP_WARN_at The Oracle Glade moonwell|r
     .complete 7383,1 --Collect Filled Amethyst Phial (x1)
-step << Rogue
-	#xprate < 1.5
-    #season 2
-    #completewith xp10
-    >>Kill or |T133644:0|t[Pick Pocket] |cRXP_ENEMY_Bloodfeather Harpies|r. Loot them for the |T134327:0|t[|cRXP_LOOT_Bottom-Right Map Piece]|r
-    >>|cRXP_WARN_You must be in|r |T132320:0|t[Stealth] |cRXP_WARN_to use|r |T133644:0|t[Pick Pocket]
-    .collect 208603,1 -- Bottom-Right Map Piece (1)
-    .mob Bloodfeather Harpy
-    .mob Bloodfeather Rogue
-    .mob Bloodfeather Sorceress
-    .mob Bloodfeather Fury
-    .mob Bloodfeather Wind Witch
-    .mob Bloodfeather Matriarch
-    .train 398196,1
 step
 	#xprate < 1.5
     #completewith xp10
@@ -1847,12 +1824,6 @@ step << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elanaria|r
     .turnin 1683 >> Turn in Vorlus Vilehoof
 --	.accept 1686 >> Accept The Shade of Elura
-step << Hunter
-#xprate <1.99
-    .goto Darnassus,40.377,8.545
-    .target Jocaste
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jocaste|r
-    .turnin 6103 >> Turn in Training the Beast
 step << Druid
     #season 0
     .goto Darnassus,35.38,8.40
@@ -1868,21 +1839,22 @@ step
     .turnin -940 >> Turn in Teldrassil
     .target Arch Druid Fandral Staghelm
     .accept 952 >> Accept Grove of the Ancients
+step << Hunter
+#xprate <1.99
+    .goto Darnassus,40.377,8.545
+    .target Jocaste
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jocaste|r
+    .turnin 6103 >> Turn in Training the Beast
+step << Hunter
+    .goto Darnassus,42.2,8.8
+    .trainer >>Train pet spells
+    .target Silvaria
 step
     #season 0
     .goto Darnassus,38.184,21.639
     .target Rellian Greenspyre
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rellian Greenspyre|r
     .turnin 923 >> Turn in Tumors
-step << Hunter
-    .goto Darnassus,40.2,9.8
-    .trainer >>Train lvl 12 spells << sod
-    >>|cRXP_WARN_Skip this step and come back after turning in Tears of the Moon if you don't have enough money or aren't level 12 yet|r << sod
-    .target Jocaste
-step << Hunter
-    .goto Darnassus,42.2,8.8
-    .trainer >>Train pet spells
-    .target Silvaria
 step << Rogue
     .goto Darnassus,31.21,17.72,8,0
     .goto Darnassus,36.99,21.91
