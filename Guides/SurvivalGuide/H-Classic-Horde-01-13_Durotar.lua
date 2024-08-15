@@ -3164,7 +3164,7 @@ step << Shaman/Hunter
     .target Misha Tor'kren
     .isQuestComplete 816
 step << Shaman/Hunter
-    #Label FarWatchPost
+    #label FarWatchPost
     .goto The Barrens,62.26,19.38,40 >> Travel to Far Watch Post
     .zoneskip The Barrens
 step << Shaman/Hunter

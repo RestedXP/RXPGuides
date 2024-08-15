@@ -2591,7 +2591,7 @@ step
     .target Misha Tor'kren
     .isQuestComplete 816
 step
-    #Label FarWatchPost
+    #label FarWatchPost
     .goto The Barrens,62.26,19.38,40 >> Travel to Far Watch Post
 step
     #label Conscript
