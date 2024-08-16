@@ -4746,8 +4746,9 @@ function addon.functions.maxlevel(self, ...)
     local element = self.element
     local step = element.step
     local ref = element.ref
+    local guide = addon.currentGuide
 
-    if addon.isHidden then
+    if addon.isHidden or (ref and not guide.labels[ref]) then
         return
     elseif level > element.level and addon.settings.profile.enableXpStepSkipping then
         if step.active and not step.completed and not addon.settings.profile.northrendLM then
@@ -4759,7 +4760,7 @@ function addon.functions.maxlevel(self, ...)
         elseif step.active and not step.completed then
             element.tooltipText = nil
         end
-        local guide = addon.currentGuide
+
         if ref and guide.labels[ref] then
             local n = guide.labels[ref]
             element.text = fmt(
