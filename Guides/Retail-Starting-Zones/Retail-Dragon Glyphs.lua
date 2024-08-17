@@ -1,10 +1,12 @@
+--DF
+
 RXPGuides.RegisterGuide([[
 #df
 #name A1 Waking Shores Dragon Glyphs
 #displayname Waking Shores Dragon Glyphs
-#version 2
-#groupweight 7
-#group RestedXP Dragon Glyphs
+#version 3
+#group RestedXP Skyriding Glyphs
+#subgroup Dragonflight
 #next B1 Ohn'ahran Plains Dragon Glyphs
 
 step
@@ -145,8 +147,9 @@ RXPGuides.RegisterGuide([[
 #df
 #name B1 Ohn'ahran Plains Dragon Glyphs
 #displayname Ohn'ahran Plains Dragon Glyphs
-#version 2
-#group RestedXP Dragon Glyphs
+#version 3
+#group RestedXP Skyriding Glyphs
+#subgroup Dragonflight
 #next C1 Azure Span Dragon Glyphs
 
 step
@@ -251,8 +254,9 @@ RXPGuides.RegisterGuide([[
 #df
 #name C1 Azure Span Dragon Glyphs
 #displayname Azure Span Dragon Glyphs
-#version 2
-#group RestedXP Dragon Glyphs
+#version 3
+#group RestedXP Skyriding Glyphs
+#subgroup Dragonflight
 #next D1 Thaldraszus Dragon Glyphs
 
 step
@@ -379,8 +383,9 @@ RXPGuides.RegisterGuide([[
 #df
 #name D1 Thaldraszus Dragon Glyphs
 #displayname Thaldraszus Dragon Glyphs
-#version 2
-#group RestedXP Dragon Glyphs
+#version 3
+#group RestedXP Skyriding Glyphs
+#subgroup Dragonflight
 #next E1 Forbidden Reach Dragon Glyphs
 
 step
@@ -490,8 +495,9 @@ RXPGuides.RegisterGuide([[
 #name E1 Forbidden Reach Dragon Glyphs
 #displayname Forbidden Reach Dragon Glyphs
 #next F1 Zaralek Cavern Dragon Glyphs
-#version 2
-#group RestedXP Dragon Glyphs
+#version 3
+#group RestedXP Skyriding Glyphs
+#subgroup Dragonflight
 
 step
     #completewith next
@@ -603,8 +609,9 @@ RXPGuides.RegisterGuide([[
 #df
 #name F1 Zaralek Cavern Dragon Glyphs
 #displayname Zaralek Cavern Dragon Glyphs
-#version 2
-#group RestedXP Dragon Glyphs
+#version 3
+#group RestedXP Skyriding Glyphs
+#subgroup Dragonflight
 
 
 step
@@ -691,8 +698,9 @@ RXPGuides.RegisterGuide([[
 #df
 #name G1 Emerald Dream Dragon Glyphs
 #displayname Emerald Dream Dragon Glyphs
-#version 1
-#group RestedXP Dragon Glyphs
+#version 2
+#group RestedXP Skyriding Glyphs
+#subgroup Dragonflight
 
 
 step
@@ -746,4 +754,228 @@ step
     .line 2200,61.68,75.40,31.84,80.60
     .goto 2200,31.84,80.60
     .achievement 19306,7 >> Pick up the Dragon Glyph: Whorlwing Basin
+]])
+
+--TWW
+
+RXPGuides.RegisterGuide([[
+#version 1
+#df
+#group RestedXP Skyriding Glyphs
+#subgroup The War Within
+#name A1 Isle of the Dorn Skyriding Glyphs
+#displayname Isle of the Dorn Skyriding Glyphs
+#next B1 The Ringing Deeps Skyriding Glyphs
+
+step
+    #completewith
+    +Welcome to the Skyriding Glyph Guide
+    *This will guide you through all the Skyriding Glyphs.
+step
+    #title Skyriding Glyph: Storm's Watch
+    .goto 2248,37.88,40.96
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40166,3 >>Pick up the Skyriding Glyph: Storm's Watch
+step
+    #title Skyriding: Thul Medran
+    .goto 2248,47.78,26.71
+    >>Use |T4640498:0|t[Skyward Ascend] multiple times and use |T4640489:0|t[Second Wind] |cRXP_WARN_to increase vigor charges if needed.|r
+    .achievement 40166,6 >>Pick up the Skyriding: Thul Medran
+step
+    #title Skyriding Glyph: Thunderhead Peak
+    .goto 2248,56.21,17.86
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40166,7 >>Pick up the Skyriding Glyph: Thunderhead Peak
+step
+    #title Skyriding Glyph: The Three Shields
+    .goto 2248,75.75,22.23
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40166,1 >>Pick up the Skyriding Glyph: The Three Shields
+step
+    #title Skyriding Glyph: Cinderbrew Meadery
+    .goto 2248,78.22,42.76
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40166,8 >>Pick up the Skyriding Glyph: Cinderbrew Meadery
+step
+    #title Skyriding Glyph: Ironwold
+    .goto 2248,71.91,47.22
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40166,10 >>Pick up the Skyriding Glyph: Ironwold
+step
+    #title Skyriding Glyph: Sunken Shield
+    .goto 2248,68.24,71.8
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40166,5 >>Pick up the Skyriding Glyph: Sunken Shield
+step
+    #title Skyriding Glyph: Dhar Durgaz
+    .goto 2248,44.47,79.75
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40166,4 >>Pick up the Skyriding Glyph: Dhar Durgaz
+step
+    #title Skyriding Glyph: Dhar Oztan
+    .goto 2248,23.15,58.56
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40166,2 >>Pick up the Skyriding Glyph: Dhar Oztan
+]])
+
+RXPGuides.RegisterGuide([[
+#version 1
+#group RestedXP Skyriding Glyphs
+#subgroup The War Within
+#name A1 The Ringing Deeps Skyriding Glyphs
+#displayname The Ringing Deeps Skyriding Glyphs
+#next C1 Hallowfall Skyriding Glyphs
+
+
+step
+    #title Skyriding: The Stonevault Exterior
+    .goto 2214,46.88,10.06
+    >>Use |T4640498:0|t[Skyward Ascend] multiple times and use |T4640489:0|t[Second Wind] |cRXP_WARN_to increase vigor charges if needed.|r
+    .achievement 40703,2 >>Pick up the Skyriding: The Stonevault Exterior
+step
+    #title Skyriding Glyph: Gundargaz
+    .goto 2214,49.02,31.61
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40703,1 >>Pick up the Skyriding Glyph: Gundargaz
+step
+    #title Skyriding Glyph: Lost Mines
+    .goto 2214,57.26,31.54
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40703,3 >>Pick up the Skyriding Glyph: Lost Mines
+step
+    #title Skyriding Glyph: Chittering Den
+    .goto 2214,69.46,34.52
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40703,4 >>Pick up the Skyriding Glyph: Chittering Den
+step
+    #title Skyriding Glyph: The Rumbling Wastes
+    .goto 2214,56.22,56.21
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40703,5 >>Pick up the Skyriding Glyph: The Rumbling Wastes
+step
+    .goto 2214,62.93,66.06
+    #title Skyriding Glyph: Taelloch Mine
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40703,8 >>Pick up the Skyriding Glyph: Taelloch Mine
+step
+    .goto 2214,63.89,94.94
+    #title Skyriding Glyph: Abyssal Excavation
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40703,7 >>Pick up the Skyriding Glyph: Abyssal Excavation
+step
+    #title Skyriding Glyph: The Living Grotto
+    .goto 2214,49.26,66.16
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40703,6 >>Pick up the Skyriding Glyph: The Living Grotto
+step
+    #title Skyriding Glyph: The Waterworks
+    .goto 2214,46.46,51.67
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40703,9 >>Pick up the Skyriding Glyph: The Waterworks
+]])
+
+RXPGuides.RegisterGuide([[
+#version 1
+#df
+#group RestedXP Skyriding Glyphs
+#subgroup The War Within
+#name C1 Hallowfall Skyriding Glyphs
+#displayname Hallowfall Skyriding Glyphs
+#next Azj-Kahet Skyriding Glyphs
+
+step
+    #title Skyriding: The Fangs
+    >>Use |T4640498:0|t[Skyward Ascend] multiple times and use |T4640489:0|t[Second Wind] |cRXP_WARN_to increase vigor charges if needed.|r
+    .achievement 40704,1 >>Pick up the Skyriding: The Fangs
+step
+    #title Skyriding Glyph: Sina's Yearning
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40704,2 >>Pick up the Skyriding Glyph: Sina's Yearning
+step
+    #title Skyriding Glyph: Sanguine Grasps
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40704,3 >>Pick up the Skyriding Glyph: Sanguine Grasps
+step
+    #title Skyriding Glyph: Dunelle's Kindness
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40704,4 >>Pick up the Skyriding Glyph: Dunelle's Kindness
+step
+    #title Skyriding Glyph: Bleak Sand
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40704,5 >>Pick up the Skyriding Glyph: Bleak Sand
+step
+    #title Skyriding Glyph: Mereldar
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40704,6 >>Pick up the Skyriding Glyph: Mereldar
+step
+    #title Skyriding Glyph: Priory of the Sacred Flame
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40704,7 >>Pick up the Skyriding Glyph: Priory of the Sacred Flame
+step
+    #title Skyriding Glyph: Fortune's Fall
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40704,8 >>Pick up the Skyriding Glyph: Fortune's Fall
+step
+    #title Skyriding Glyph: Velhan's Claim
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40704,9 >>Pick up the Skyriding Glyph: Velhan's Claim
+step
+    #title Skyriding Glyph: Tenir's Ascent
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40704,10 >>Pick up the Skyriding Glyph: Tenir's Ascent
+
+]])
+
+RXPGuides.RegisterGuide([[
+#version 1
+#df
+#group RestedXP Skyriding Glyphs
+#subgroup The War Within
+#name D1 Azj-Kahet Skyriding Glyphs
+#displayname Azj-Kahet Skyriding Glyphs
+
+step
+    #title Skyriding: Trickling Abyss
+    >>Use |T4640498:0|t[Skyward Ascend] multiple times and use |T4640489:0|t[Second Wind] |cRXP_WARN_to increase vigor charges if needed.|r
+    .achievement 40705,10 >>Pick up the Skyriding: Trickling Abyss
+step
+    #title Skyriding Glyph: Arathi's End
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40705,1 >>Pick up the Skyriding Glyph: Arathi's End
+step
+    #title Skyriding Glyph: Siegehold
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40705,2 >>Pick up the Skyriding Glyph: Siegehold
+step
+    #title Skyriding Glyph: Ruptured Lake
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40705,3 >>Pick up the Skyriding Glyph: Ruptured Lake
+step
+    #title Skyriding Glyph: Eye of Ansurek
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40705,4 >>Pick up the Skyriding Glyph: Eye of Ansurek
+step
+    #title Skyriding Glyph: Old Sacrificial Pit
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40705,5 >>Pick up the Skyriding Glyph: Old Sacrificial Pit
+step
+    #title Skyriding Glyph: Deepwalker Pass
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40705,6 >>Pick up the Skyriding Glyph: Deepwalker Pass
+step
+    #title Skyriding Glyph: The Maddening Deep
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40705,7 >>Pick up the Skyriding Glyph: The Maddening Deep
+step
+    #title Skyriding Glyph: Rak-Ush
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40705,8 >>Pick up the Skyriding Glyph: Rak-Ush
+step
+    #title Skyriding Glyph: Untamed Valley
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40705,11 >>Pick up the Skyriding Glyph: Untamed Valley
+step
+    #title Skyriding Glyph: Silken Ward
+    >>Use |T4640498:0|t[Skyward Ascend] three times |cRXP_WARN_if you haven't unlocked the ferry|r
+    .achievement 40705,9 >>Pick up the Skyriding Glyph: Silken Ward
 ]])
