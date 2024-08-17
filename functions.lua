@@ -4641,7 +4641,7 @@ function addon.functions.skipgossipid(self, text, ...)
             for _, v in pairs(gossipOptions) do
                 --print(v.gossipOptionID, gossipId)
                 if v.gossipOptionID == gossipId then
-                    C_GossipInfo.SelectOption(v.gossipOptionID)
+                    C_GossipInfo.SelectOption(v.gossipOptionID,"",true)
                     element.select = true
                     return
                 end
@@ -4697,7 +4697,7 @@ function addon.functions.gossipoption(self, ...)
     for _, v in pairs(options) do
         if v.gossipOptionID == element.gossipId then
             if addon.settings.profile.enableGossipAutomation and not IsShiftKeyDown() then
-                C_GossipInfo.SelectOption(v.gossipOptionID)
+                C_GossipInfo.SelectOption(v.gossipOptionID,"",true)
                 --print('??')
             end
             --GossipSelectOption(i)
