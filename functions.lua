@@ -101,7 +101,7 @@ else
     events.subzoneskip = "ZONE_CHANGED"
 end
 events.bankdeposit = {"BANKFRAME_OPENED", "BAG_UPDATE_DELAYED"}
-events.skipgossip = {"GOSSIP_SHOW", "GOSSIP_CLOSED", "GOSSIP_CONFIRM_CANCEL"}
+events.skipgossip = {"GOSSIP_SHOW", "GOSSIP_CLOSED", "GOSSIP_CONFIRM_CANCEL", "GOSSIP_CONFIRM"}
 events.gossip = {"GOSSIP_SHOW", "PLAYER_INTERACTION_MANAGER_FRAME_HIDE"}
 events.gossipoption = events.skipgossip
 events.skipgossipid = "GOSSIP_SHOW"
@@ -234,13 +234,13 @@ if C_GossipInfo and C_GossipInfo.SelectOptionByIndex then
 
         local gossipOptionID = gossipOptions[index].gossipOptionID
         if gossipOptionID then
-            C_GossipInfo.SelectOption(gossipOptionID)
+            C_GossipInfo.SelectOption(gossipOptionID,"",true)
             return
         end
 
         local orderIndex = gossipOptions[index].orderIndex
         if orderIndex then
-            C_GossipInfo.SelectOptionByIndex(orderIndex)
+            C_GossipInfo.SelectOptionByIndex(orderIndex,"",true)
         end
     end
 end
