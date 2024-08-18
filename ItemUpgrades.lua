@@ -459,11 +459,12 @@ local function TooltipSetItem(tooltip, ...)
         if data.itemEquipLoc and data.itemEquipLoc == 'INVTYPE_WEAPONOFFHAND' then
             tinsert(lines,
                     fmt("  %s: %s / %s EP (%s)", data['ItemLink'] or _G.UNKNOWN,
-                        ratioText, data.WeightIncrease, _G.INVTYPE_WEAPONOFFHAND))
+                        ratioText, addon.Round(data.WeightIncrease, 2),
+                        _G.INVTYPE_WEAPONOFFHAND))
         elseif data.ItemLink ~= _G.EMPTY then
             tinsert(lines,
                     fmt("  %s: %s / %s EP", data['ItemLink'] or _G.UNKNOWN,
-                        ratioText, data.WeightIncrease))
+                        ratioText, addon.Round(data.WeightIncrease, 2)))
         end
     end
 
