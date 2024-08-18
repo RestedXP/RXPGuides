@@ -373,7 +373,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Allied Race DK << KulTiran DK/DarkIronDwarf DK/LightforgedDraenei DK/Mechagnome DK/VoidElf DK/Pandaren DK
 #displayname Chapter 2 - Elwynn Forest
 #name B-Elwynn Forest
-#next RestedXP Speedrun Guide\a) The Waking Shores Fresh
+#next RestedXP Speedrun Guide\a) The Waking Shores Fresh (A)
 #defaultfor Human/KulTiran DK/DarkIronDwarf DK/LightforgedDraenei DK/Mechagnome DK/VoidElf DK/Pandaren DK
 
 << Alliance

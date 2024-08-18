@@ -189,7 +189,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Night Elf Starting Zones
 #displayname Chapter 2 - Teldrassil
 #name 3Retail-Alliance-Night Elf_Teldrassil
-#next RestedXP Speedrun Guide\a) The Waking Shores Fresh
+#next RestedXP Speedrun Guide\a) The Waking Shores Fresh (A)
 #defaultfor NightElf !DemonHunter !DK
 
 << Alliance

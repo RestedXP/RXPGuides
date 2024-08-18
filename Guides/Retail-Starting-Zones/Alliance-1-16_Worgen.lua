@@ -5,7 +5,7 @@ RXPGuides.RegisterGuide([[
 #groupweight 8
 #displayname Gilneas
 #name 2Retail-Alliance-Worgen_Gilneas
-#next RestedXP Speedrun Guide\a) The Waking Shores Fresh
+#next RestedXP Speedrun Guide\a) The Waking Shores Fresh (A)
 #defaultfor Worgen !DK
 
 << Worgen !DK

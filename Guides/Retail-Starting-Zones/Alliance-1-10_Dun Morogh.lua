@@ -1412,7 +1412,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Gnome Starting Zones << Gnome
 #name 3Retail-Alliance-Gnome,Dwarf_Dun Morogh
 #displayname Chapter 2 - Dun Morogh
-#next RestedXP Speedrun Guide\a) The Waking Shores Fresh
+#next RestedXP Speedrun Guide\a) The Waking Shores Fresh (A)
 #defaultfor Dwarf !DK/Gnome !DK
 
 << Alliance

@@ -263,7 +263,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Draenei Starting Zones
 #name 3Retail-Alliance-Draenei_Azuremyst Isle
 #displayname Chapter 2 - Azuremyst Isle
-#next RestedXP Speedrun Guide\a) The Waking Shores Fresh
+#next RestedXP Speedrun Guide\a) The Waking Shores Fresh (A)
 #defaultfor Draenei !DK
 
 << Alliance
