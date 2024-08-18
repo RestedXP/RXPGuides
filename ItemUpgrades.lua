@@ -694,6 +694,12 @@ local function IsWeaponSlot(itemEquipLoc)
             'INVTYPE_RANGEDRIGHT'
 end
 
+local function IsMeleeSlot(itemEquipLoc)
+    return itemEquipLoc == 'INVTYPE_WEAPON' or itemEquipLoc ==
+               'INVTYPE_2HWEAPON' or itemEquipLoc == 'INVTYPE_WEAPONMAINHAND' or
+               itemEquipLoc == 'INVTYPE_WEAPONOFFHAND'
+end
+
 local function IsUsableForClass(itemSubTypeID, itemEquipLoc)
     if type(itemSubTypeID) ~= "number" then
         addon.error("IsUsableForClass, itemSubTypeID number required")
@@ -1507,7 +1513,7 @@ function addon.itemUpgrades.AH:Analyze()
 
     -- We already know all of this is usable, so just care about slots
     for invEquipType, slotId in pairs(session.equippableSlots) do
-        if type(slotId) == "table" then
+        if type(slotId) == "table" then -- ring or trinket slot
             for j, _ in pairs(slotId) do
                 ahSession.bestAnalysis[j] = {
                     slotName = _G[invEquipType],
@@ -1515,6 +1521,9 @@ function addon.itemUpgrades.AH:Analyze()
                     budget = {rwpc = 0, lowestPrice = 0, itemLink = nil} -- Biggest upgrade ratio / copper
                 }
             end
+        elseif IsMeleeSlot(invEquipType) then
+            -- TODO re-enable after fixing melee weapon comparison logic, highly complex because of MH+OH vs 2H vs weapon skills
+            -- print("Ignoring weapons", slotId, invEquipType)
         else
             ahSession.bestAnalysis[slotId] = {
                 slotName = _G[invEquipType],
