@@ -1191,11 +1191,6 @@ addon.itemUpgrades.AH = addon:NewModule("ItemUpgradesAH", "AceEvent-3.0")
 
 function addon.itemUpgrades.AH:Setup()
     if not addon.settings.profile.enableItemUpgradesAH then return end
-    if not addon.settings.profile.enableBetaFeatures then return end
-
-    addon.settings.enabledBetaFeatures[fmt("%s %s", _G.ENABLE,
-                                           _G.MINIMAP_TRACKING_AUCTIONEER)] =
-        fmt("%s %s", _G.AUCTION_ITEM, _G.SEARCH)
 
     if ahSession.isInitialized then return end
 
