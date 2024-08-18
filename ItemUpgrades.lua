@@ -1249,7 +1249,7 @@ function addon.itemUpgrades.AH:SearchForBuyoutItem(itemData)
 
     if not session.windowOpen then return end
 
-    print("SearchForBuyoutItem", itemData.itemLink)
+    -- print("SearchForBuyoutItem", itemData.itemLink)
 
     if _G.BrowseResetButton then _G.BrowseResetButton:Click() end
 
@@ -1286,7 +1286,7 @@ function addon.itemUpgrades.AH:FindItemAuction(itemData, recursive)
     local resultCount, totalAuctions = GetNumAuctionItems("list")
 
     if resultCount == 0 then
-        print("FindItemAuction no results, recursive =", recursive)
+        -- print("FindItemAuction no results, recursive =", recursive)
         return
     end
 
@@ -1317,7 +1317,7 @@ function addon.itemUpgrades.AH:FindItemAuction(itemData, recursive)
         return self:FindItemAuction(itemData, true)
     else
         -- If next page not enabled, and we're here; then no results at all
-        print("FindItemAuction no matches in", totalAuctions, "results")
+        -- print("FindItemAuction no matches in", totalAuctions, "results")
         return nil
     end
 end
@@ -1427,7 +1427,7 @@ local function calculate(itemLink, scanData)
 
     -- Should only have queried usable items, so not intentionally nil
     if not itemData then
-        print("itemData nil", itemLink)
+        -- print("itemData nil", itemLink)
         return
     end
 
