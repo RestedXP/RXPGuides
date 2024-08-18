@@ -267,7 +267,7 @@ RXPGuides.RegisterGuide([[
 #groupweight 8
 #name 2 Blood Elf Eversong Woods
 #displayname Chapter 2 - Eversong Woods
-#next RestedXP Horde 10-60\1 BfA Intro
+#next RestedXP Speedrun Guide\a) The Waking Shores Fresh
 #subgroup Blood Elf Starting Zones
 #defaultfor BloodElf !DK
 
