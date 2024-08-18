@@ -198,7 +198,7 @@ RXPGuides.RegisterGuide([[
 #groupweight 8
 #name 2 Tauren Mulgore
 #displayname Chapter 2 - Mulgore
-#next RestedXP Horde 10-60\1 BfA Intro
+#next RestedXP Speedrun Guide\a) The Waking Shores Fresh
 #subgroup Tauren Starting Zones
 #defaultfor Tauren !DK
 
