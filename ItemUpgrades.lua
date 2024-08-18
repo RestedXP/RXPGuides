@@ -1245,15 +1245,21 @@ local function getNameFromLink(itemLink)
     return string.match(itemLink, "h%[(.*)%]|h")
 end
 
-function addon.itemUpgrades.AH:SearchForBuyoutItem(nodeData)
+function addon.itemUpgrades.AH:SearchForBuyoutItem(itemData)
+    if not itemData.name then return end
 
-    -- print("SearchForBuyoutItem", nodeData.Name)
+    if not session.windowOpen then return end
+
+    print("SearchForBuyoutItem", itemData.itemLink)
 
     if _G.BrowseResetButton then _G.BrowseResetButton:Click() end
 
-    _G.BrowseName:SetText(getNameFromLink(nodeData.ItemLink))
-    _G.BrowseMinLevel:SetText(nodeData.ItemLevel)
-    _G.BrowseMaxLevel:SetText(nodeData.ItemLevel)
+    _G.BrowseName:SetText('"' .. itemData.name .. '"')
+
+    if itemData.itemLevel then
+        _G.BrowseMinLevel:SetText(itemData.itemLevel)
+        _G.BrowseMaxLevel:SetText(itemData.itemLevel)
+    end
 
     -- Sort to make item very likely on first page
     -- sortTable, sortColumn, oppositeOrder
@@ -1261,27 +1267,32 @@ function addon.itemUpgrades.AH:SearchForBuyoutItem(nodeData)
     _G.AuctionFrameTab1:Click()
 
     -- Pre-populates UI, so let user retry if server overloaded
-    if CanSendAuctionQuery() then _G.AuctionFrameBrowse_Search() end
+    if CanSendAuctionQuery() then
+        session.sentQuery = true
+        _G.AuctionFrameBrowse_Search()
+    end
 
-    -- TODO scan page handling
+    -- Results get processed async by AUCTION_ITEM_LIST_UPDATE
 end
 
-function addon.itemUpgrades.AH:FindItemOnPage(nodeData)
-    if not nodeData then
-        -- print("FindItemOnPage error: selectedRow nil")
+function addon.itemUpgrades.AH:FindItemAuction(itemData, recursive)
+    if not itemData then
+        -- print("FindItemAuction error: itemData nil")
+        return
+    end
+    if not (itemData.ItemID and itemData.ItemLink and itemData.BuyoutMoney) then
         return
     end
 
-    local resultCount = GetNumAuctionItems("list")
+    local resultCount, totalAuctions = GetNumAuctionItems("list")
 
     if resultCount == 0 then
-        -- print("FindItemOnPage error: no results")
+        print("FindItemAuction no results, recursive =", recursive)
         return
     end
 
-    -- print("FindItemOnPage", nodeData.Name, resultCount)
-    local itemLink
-    local buyoutPrice, itemID
+    -- print("FindItemAuction", itemData.Name, resultCount)
+    local itemLink, buyoutPrice, itemID
 
     for i = 1, resultCount do
         itemLink = GetAuctionItemLink("list", i)
@@ -1291,17 +1302,25 @@ function addon.itemUpgrades.AH:FindItemOnPage(nodeData)
             GetAuctionItemInfo("list", i)
         -- print("Evaluating", i, itemLink, buyoutPrice)
 
-        if itemID == nodeData.ItemID and itemLink == nodeData.ItemLink and
-            buyoutPrice == nodeData.BuyoutMoney then
+        if itemID == itemData.ItemID and itemLink == itemData.ItemLink and
+            buyoutPrice == itemData.BuyoutMoney then
             SetSelectedAuctionItem("list", i)
             return i
         end
 
     end
 
-    -- Shouldn't need to handle Pagination, sorted by cheapest which is the goal
-    --  May hit issues if 10+ bid-only
-    -- Rely on BrowseNextPageButton:Click() :IsEnabled for easy pagination handling
+    -- Rely on BrowseNextPageButton:IsEnabled() for easy pagination handling
+    if _G.BrowseNextPageButton:IsEnabled() then
+        -- If next button is enabled, and we're down here; then auction not found
+        -- Additionally, the next page button is disabled on final page, so no need to track count
+        _G.BrowseNextPageButton:Click()
+        return self:FindItemAuction(itemData, true)
+    else
+        -- If next page not enabled, and we're here; then no results at all
+        print("FindItemAuction no matches in", totalAuctions, "results")
+        return nil
+    end
 end
 
 -- Triggers each time the scroll panel is updated
@@ -1310,7 +1329,7 @@ end
 function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
     -- TODO prevent overwriting/blocking full scan
     if ahSession.selectedRow and ahSession.selectedRow.nodeData then
-        self:FindItemOnPage(ahSession.selectedRow.nodeData)
+        self:FindItemAuction(ahSession.selectedRow.nodeData)
     end
 
     if not ahSession.sentQuery then return end
@@ -1378,6 +1397,7 @@ end
 function addon.itemUpgrades.AH:Scan()
     -- Prevent double calls
     if ahSession.sentQuery then return end
+    if not AuctionCategories then return end -- AH frame isn't loaded yet
 
     -- TODO use better queueing
     -- TODO abort on multiple retries
@@ -1576,10 +1596,15 @@ local function setKindIcon(frame, image)
 end
 
 local function getColorizedName(itemLink, itemName)
+    if not (itemLink and itemName) then return end
     local quality = C_Item.GetItemQualityByID(itemLink)
-    local h = ITEM_QUALITY_COLORS[quality].hex
+    if quality then
+        local h = ITEM_QUALITY_COLORS[quality].hex
 
-    return h .. itemName .. '|r'
+        return h .. itemName .. '|r'
+    end
+
+    return itemName
 end
 
 local function prettyPrintUpgradeColumn(data)
