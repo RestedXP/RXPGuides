@@ -458,11 +458,12 @@ local function TooltipSetItem(tooltip, ...)
 
         if data.itemEquipLoc and data.itemEquipLoc == 'INVTYPE_WEAPONOFFHAND' then
             tinsert(lines,
-                    fmt("  %s: %s (%s)", data['ItemLink'] or _G.UNKNOWN,
-                        ratioText, _G.INVTYPE_WEAPONOFFHAND))
+                    fmt("  %s: %s / %s EP (%s)", data['ItemLink'] or _G.UNKNOWN,
+                        ratioText, data.WeightIncrease, _G.INVTYPE_WEAPONOFFHAND))
         elseif data.ItemLink ~= _G.EMPTY then
             tinsert(lines,
-                    fmt("  %s: %s", data['ItemLink'] or _G.UNKNOWN, ratioText))
+                    fmt("  %s: %s / %s EP", data['ItemLink'] or _G.UNKNOWN,
+                        ratioText, data.WeightIncrease))
         end
     end
 
@@ -1630,8 +1631,9 @@ local function prettyPrintBudgetColumn(data)
 
     if epPerCopper == 0 then epPerCopper = addon.Round(data.rwpc, 4) end
 
-    return fmt("%s / %s EP (BIS/gold)", prettyPrintRatio(data.ratio),
-               addon.Round(data.weightIncrease, 2))
+    return fmt("%s / %s EP (BIS/%s)", prettyPrintRatio(data.ratio),
+               addon.Round(data.weightIncrease, 2),
+               _G.ICON_TAG_RAID_TARGET_STAR3)
 end
 
 function addon.itemUpgrades.AH.RowOnEnter(row)
