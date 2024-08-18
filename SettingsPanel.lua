@@ -2296,8 +2296,7 @@ function addon.settings:CreateAceOptionsPanel()
                             return not (self.profile.enableTips and
                                        self.profile.enableItemUpgrades) or
                                        UnitLevel("player") ==
-                                       GetMaxPlayerLevel() or
-                                       self.profile.soloSelfFound
+                                       GetMaxPlayerLevel()
                         end,
                         set = function(info, value)
                             SetProfileOption(info, value)
