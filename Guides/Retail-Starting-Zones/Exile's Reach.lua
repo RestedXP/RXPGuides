@@ -1713,40 +1713,43 @@ step << Alliance
 	.skipgossip 154169,1
 step << Alliance
     .goto 84,70.15,85.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lindie|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lindie Springstock|r
     .turnin 59583 >>Turn in Welcome to Stormwind
 	.target Lindie Springstock
     .isOnQuest 59583
 step << Alliance
     .goto 84,70.15,85.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lindie|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lindie Springstock|r
     .accept 58908 >>Accept Finding Your Way
 	.target Lindie Springstock
     .isQuestTurnedIn 59583
 step << Alliance
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to a |cRXP_FRIENDLY_Stormwind Guard|r and |cRXP_FRIENDLY_Lindie|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to a |cRXP_FRIENDLY_Stormwind Guard|r
     .complete 58908,1 --1/1 Ask a guard for directions to the Stable Master in Old Town
-    .goto 84,69.47,84.58,-1
-    .goto 84,70.29,83.60,-1
-    .complete 58908,2 --1/1 Speak with Lindie Springstock
-    .goto 84,69.79,83.82
-	.target Stormwind City Guard
-	.target Lindie Springstock
-	.skipgossip 68,15,1
-	.skipgossip 186180,15,1
-	.skipgossip 1976,15,1
-	.skipgossip 163095,1
-    .isQuestTurnedIn 59583
+    .goto 84,70.29,83.60
+    .skipgossipid 109407
+    .target Stormwind City Guard
 step << Alliance
-    .goto 84,70.28,79.83,20,0
-    .goto 84,67.72,80.03,30,0
-    .goto 84,63.77,73.59
-    >>|cRXP_WARN_Follow|r|cRXP_FRIENDLY_Lindie|r. |cRXP_WARN_Stay near him otherwise he will stop moving|r
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renato|r
-    .accept 332 >>Accept Wine Shop Advert
+    .goto 84,70.04,83.86
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lindie Springstock|r
+    .complete 58908,2 --1/1 Speak with Lindie Springstock
+    .timer 115,RP
+    .skipgossip
 	.target Lindie Springstock
-	.target Renato Gallina
+	-- .skipgossip 68,15,1
+	-- .skipgossip 1976,15,1
+	-- .skipgossip 163095,1
     .isQuestTurnedIn 59583
+-- step << Alliance
+--     .goto 84,70.28,79.83,20,0
+--     .goto 84,67.72,80.03,30,0
+--     .goto 84,63.77,73.59
+--     >>|cRXP_WARN_Follow|r|cRXP_FRIENDLY_Lindie|r. |cRXP_WARN_Stay near him otherwise he will stop moving|r
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renato|r
+--     .accept 332 >>Accept Wine Shop Advert
+-- 	.target Lindie Springstock
+-- 	.target Renato Gallina
+--     .isQuestTurnedIn 59583
 step << Alliance
     .goto 84,64.28,70.36,20,0
     .goto 84,64.89,68.42,20,0
@@ -1759,7 +1762,8 @@ step << Alliance
     .goto 84,73.08,62.03,20,0
     .goto 84,76.42,64.84,20,0
     .goto 84,77.41,65.91,20,0
-    >>|cRXP_WARN_Follow|r|cRXP_FRIENDLY_Lindie|r. |cRXP_WARN_Stay near him otherwise he will stop moving|r
+    .goto 84,77.29,66.95
+    >>Wait until the arrival at the stables.
     .complete 58908,3 --1/1 Follow Lindie Springstock to the Stable Master in Old Town
 	.target Lindie Springstock
     .isQuestTurnedIn 59583
@@ -1767,19 +1771,12 @@ step << Alliance
     .goto 84,77.29,66.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Curly|r
     .turnin 58908 >>Turn in Finding Your Way
-step << skip
-	#label UseMount
-	#completewith Specialize
-	>> Use the |T132254:0|t[Brown Elekk] to learn it << Draenei --CASTID NEEDED
-	.use 28481 << Draenei
---VV CHANGE TO OTHER RACES LATER. MUST DO THE QUEST/FIND A WAY TO FIND ALL MOUNT IDS FOR EACH RACE
 step << Alliance
     #completewith Specialization
     +|cRXP_WARN_Move the mount in your Mount Journal to your Action Bars (Default: SHIFT+P). Use the mount to move faster|r
     .isQuestTurnedIn 59583
 step << Alliance
-    .goto 84,77.28,66.96
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lindie|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_ Lindie Springstock|r |cRXP_WARN_next to you|r
     .accept 58910 >>Accept What's Your Specialty? << Druid
     .accept 59586 >>Accept What's Your Specialty? << Hunter
     .accept 59587 >>Accept What's Your Specialty? << Mage
@@ -1792,82 +1789,72 @@ step << Alliance
     .accept 59594 >>Accept What's Your Specialty? << Warrior
 	.target Lindie Springstock
     .isQuestTurnedIn 59583
-step << Alliance Hunter/Shaman/Priest/Paladin/Warrior
-	#completewith next
-    .goto 84,79.34,68.39,10 >>Go inside the building
-step << Alliance Rogue/Warlock
-	#completewith next
-    .goto 84,79.34,68.39,10,0
-    .goto 84,80.11,68.41,6,0
-	.goto 84,79.40,69.61,6 >>Go inside the building. Go downstairs
-step << Alliance Druid/Mage/Monk
-	#completewith next
-    .goto 84,79.34,68.39,10,0
-    .goto 84,79.62,71.28,8,0
-	.goto 84,80.19,70.56,8 >>Go inside the building. Go upstairs
+step << Alliance
+    .isOnQuest 58910,59593,59594,59592,59591,59590,59589,59588,59587,59586
+    .goto 84,79.54,68.76,10 >> Enter the House
 step << Alliance Druid
 	#label Specialization
-    .goto 84,79.20,68.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mithlos|r upstairs
+    .goto 84,78.81,71.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mithlos Falconbriar|r
     .complete 58910,1 --1/1 Speak with Mithlos Falconbriar to learn about specializations
     .complete 58910,2 --1/1 Activate a combat specialization
 	.target Mithlos Falconbriar
 	.skipgossip 164962,1
     .isQuestTurnedIn 59583
 step << Alliance Druid
-    .goto 84,79.20,68.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mithlos|r upstairs
+    .goto 84,78.81,71.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mithlos Falconbriar|r
     .turnin 58910 >>Turn In What's Your Specialty?
 	.target Mithlos Falconbriar
     .isQuestTurnedIn 59583
 step << Alliance Hunter
 	#label Specialization
-    .goto 84,79.13,71.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalgrun|r
+    .goto 84,79.13,71.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalgrun Steelpine|r
     .complete 59586,1 --1/1 Speak with Dalgrun Steelpine to learn about specializations
     .complete 59586,2 --1/1 Activate a combat specialization
 	.target Dalgrun Steelpine
 	.skipgossip 164960,1
     .isQuestTurnedIn 59583
 step << Alliance Hunter
-    .goto 84,79.13,71.41
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalgrun|r
+    .goto 84,79.13,71.43
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dalgrun Steelpine|r
     .turnin 59586 >>Turn In What's Your Specialty?
 	.target Dalgrun Steelpine
     .isQuestTurnedIn 59583
 step << Alliance Mage
 	#label Specialization
-    .goto 84,80.16,69.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frazzle|r upstairs
+    .goto 84,80.02,69.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frazzle Frostfingers|r
     .complete 59587,1 --1/1 Speak with Frazzle Frostfingers to learn about specializations
     .complete 59587,2 --1/1 Activate a combat specialization
 	.target Frazzle Frostfingers
 	.skipgossip 164955,1
     .isQuestTurnedIn 59583
 step << Alliance Mage
-    .goto 84,80.16,69.53
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frazzle|r upstairs
+    .goto 84,80.02,69.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Frazzle Frostfingers|r
     .turnin 59587 >>Turn In What's Your Specialty?
 	.target Frazzle Frostfingers
     .isQuestTurnedIn 59583
 step << Alliance Monk
 	#label Specialization
-    .goto 84,80.35,70.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Juisheng|r upstairs
+    .goto 84,79.59,70.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Juisheng Halfclaw|r
     .complete 59588,1 --1/1 Speak with Juisheng Halfclaw to learn about specializations
     .complete 59588,2 --1/1 Activate a combat specialization
 	.target Juisheng Halfclaw
 	.skipgossip 164954,1
     .isQuestTurnedIn 59583
 step << Alliance Monk
-    .goto 84,80.35,70.04
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Juisheng|r upstairs
+    .goto 84,79.59,70.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Juisheng Halfclaw|r
     .turnin 59588 >>Turn In What's Your Specialty?
 	.target Juisheng Halfclaw
     .isQuestTurnedIn 59583
 step << Alliance Paladin
 	#label Specialization
-    .goto 84,79.13,69.42
+    .goto 84,79.32,70.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ezul'aan|r
     .complete 59589,1 --1/1 Speak with Ezul'aan to learn about specializations
     .complete 59589,2 --1/1 Activate a combat specialization
@@ -1875,89 +1862,88 @@ step << Alliance Paladin
 	.skipgossip 164952,1
     .isQuestTurnedIn 59583
 step << Alliance Paladin
-    .goto 84,79.13,69.42
+    .goto 84,79.32,70.73
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ezul'aan|r
     .turnin 59589 >>Turn In What's Your Specialty?
 	.target Ezul'aan
     .isQuestTurnedIn 59583
 step << Alliance Priest
 	#label Specialization
-    .goto 84,78.88,69.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Patrice|r
+    .goto 84,79.8,70.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Patrice Lancaster|r
     .complete 59590,1 --1/1 Speak with Patrice Lancaster to learn about specializations
     .complete 59590,2 --1/1 Activate a combat specialization
 	.target Patrice Lancaster
 	.skipgossip 164949,1
     .isQuestTurnedIn 59583
 step << Alliance Priest
-    .goto 84,78.88,69.75
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Patrice|r
+    .goto 84,79.8,70.39
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Patrice Lancaster|r
     .turnin 59590 >>Turn In What's Your Specialty?
 	.target Patrice Lancaster
     .isQuestTurnedIn 59583
 step << Alliance Rogue
 	#label Specialization
-    .goto 84,78.53,70.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veruca|r downstairs
+    .goto 84,79.27,70.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veruca Darkstream|r
     .complete 59591,1 --1/1 Speak with Patrice Lancaster to learn about specializations
     .complete 59591,2 --1/1 Activate a combat specialization
 	.target Veruca Darkstream
 	.skipgossip 164946,1
     .isQuestTurnedIn 59583
 step << Alliance Rogue
-    .goto 84,78.53,70.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veruca|r downstairs
+    .goto 84,79.27,70.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veruca Darkstream|r
     .turnin 59591 >>Turn In What's Your Specialty?
 	.target Veruca Darkstream
     .isQuestTurnedIn 59583
 step << Alliance Shaman
 	#label Specialization
-    .goto 84,78.72,70.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mulric|r
+    .goto 84,78.72,70.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mulric Boldrock|r
     .complete 59592,1 --1/1 Speak with Mulric Boldrock to learn about specializations
     .complete 59592,2 --1/1 Activate a combat specialization
 	.target Mulric Boldrock
 	.skipgossip 164945,1
     .isQuestTurnedIn 59583
 step << Alliance Shaman
-    .goto 84,78.72,70.87
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mulric|r
+    .goto 84,78.72,70.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mulric Boldrock|r
     .turnin 59592 >>Turn In What's Your Specialty?
 	.target Mulric Boldrock
     .isQuestTurnedIn 59583
 step << Alliance Warrior
 	#label Specialization
-    .goto 84,80.01,70.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kualiang|r
+    .goto 84,80.02,70.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kualiang Thunderfist|r
     .complete 59594,1 --1/1 Speak with Kualiang Thunderfist to learn about specializations
     .complete 59594,2 --1/1 Activate a combat specialization
 	.target Kualiang Thunderfist
 	.skipgossip 164940,1
     .isQuestTurnedIn 59583
 step << Alliance Warrior
-    .goto 84,80.01,70.68
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kualiang|r
+    .goto 84,80.02,70.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kualiang Thunderfist|r
     .turnin 59594 >>Turn In What's Your Specialty?
 	.target Kualiang Thunderfist
     .isQuestTurnedIn 59583
 step << Alliance Warlock
 	#label Specialization
-    .goto 84,78.99,69.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laphandrus|r downstairs
+    .goto 84,80.12,69.86
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laphandrus Voidheart|r
     .complete 59593,1 --1/1 Speak with Laphandrus Voidheart to learn about specializations
     .complete 59593,2 --1/1 Activate a combat specialization
 	.target Laphandrus Voidheart
 	.skipgossip 164941,1
     .isQuestTurnedIn 59583
 step << Alliance Warlock
-    .goto 84,78.99,69.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laphandrus|r downstairs
+    .goto 84,80.12,69.86
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laphandrus Voidheart|r
     .turnin 59593 >>Turn In What's Your Specialty?
 	.target Laphandrus Voidheart
     .isQuestTurnedIn 59583
 step << Alliance
-    .goto 84,79.68,69.91
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lindie|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lindie Springstock|r |cRXP_WARN_next to you.|r
     .accept 58911 >>Accept Home Is Where the Hearth Is
 	.target Lindie Springstock
     .isQuestTurnedIn 59583
@@ -1965,50 +1951,53 @@ step << Alliance
     .goto 84,76.34,64.55,25,0
     .goto 84,75.11,55.32,15,0
     .goto 84,75.69,54.09
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maegan|r
-	.home >> Set your Hearthstone to the Pig and Whistle
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maegan Tillman|r
     .complete 58911,1 --1/1 Make the Pig and Whistle Tavern your home
+step << Alliance
+    .goto 84,75.69,54.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maegan Tillman|r
+    .home >>Set your Hearthstone to Pig and Whistle Tavern
     .turnin 58911 >>Turn in Home Is Where the Hearth Is
 	.target Maegan Tillman
 	.isOnQuest 58911
     .isQuestTurnedIn 59583
-step << Alliance
-    .goto 84,75.25,54.31
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Henry|r
-    .accept 58912 >>Accept An Urgent Meeting
-	.target Henry Garrick
-    .isQuestTurnedIn 59583
-step << Alliance
-	#completewith next
-    .goto 84,71.45,55.76,20,0
-    .goto 84,70.05,52.73,20,0
-    .goto 84,80.66,37.87,20,0
-    .goto 84,85.22,32.07,40 >> Travel to the Stormwind Keep
-step << skip
-    .goto 84,85.22,32.06
-    .complete 58912,2 --1/1 Find Captain Garrick in Stormwind Keep
-    .isQuestTurnedIn 59583
-step << Alliance
-    .goto 84,85.22,32.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garrick|r
-    .turnin 58912 >>Turn in An Urgent Meeting
-    .accept 58983 >>Accept Battle for Azeroth: Tides of War
-	.timer 58,BFA: Tides of War RP
-	.target Captain Garrick
-    .isQuestTurnedIn 59583
-step << Alliance
-    .goto 84,85.92,31.57
-    >>Wait out the RP
-	.timer 45,War Council Roleplay
-    .complete 58983,1 --1/1 Attend the War Council
-    .isOnQuest 58983
-step << Alliance
-    .goto 84,85.92,31.57
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anduin|r
-    .turnin 58983 >>Turn in Battle for Azeroth: Tides of War
-	.accept 59641 >>Accept The Nation of Kul Tiras
-	.target Anduin Wrynn
-    .isOnQuest 58983
+-- step << Alliance
+--     .goto 84,75.25,54.31
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Henry Garrick|r
+--     .accept 58912 >>Accept An Urgent Meeting
+-- 	.target Henry Garrick
+--     .isQuestTurnedIn 59583
+-- step << Alliance
+-- 	#completewith next
+--     .goto 84,71.45,55.76,20,0
+--     .goto 84,70.05,52.73,20,0
+--     .goto 84,80.66,37.87,20,0
+--     .goto 84,85.22,32.07,40 >> Travel to the Stormwind Keep
+-- -- step << skip
+-- --     .goto 84,85.22,32.06
+-- --     .complete 58912,2 --1/1 Find Captain Garrick in Stormwind Keep
+-- --     .isQuestTurnedIn 59583
+-- step << Alliance
+--     .goto 84,85.22,32.06
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garrick|r
+--     .turnin 58912 >>Turn in An Urgent Meeting
+--     .accept 58983 >>Accept Battle for Azeroth: Tides of War
+-- 	.timer 58,BFA: Tides of War RP
+-- 	.target Captain Garrick
+--     .isQuestTurnedIn 59583
+-- step << Alliance
+--     .goto 84,85.92,31.57
+--     >>Wait out the RP
+-- 	.timer 45,War Council Roleplay
+--     .complete 58983,1 --1/1 Attend the War Council
+--     .isOnQuest 58983
+-- step << Alliance
+--     .goto 84,85.92,31.57
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Anduin|r
+--     .turnin 58983 >>Turn in Battle for Azeroth: Tides of War
+-- 	.accept 59641 >>Accept The Nation of Kul Tiras
+-- 	.target Anduin Wrynn
+--     .isOnQuest 58983
 step << Horde
     .goto 85,52.52,88.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Breka|r. |cRXP_WARN_Skip the tutorial if you can|r
