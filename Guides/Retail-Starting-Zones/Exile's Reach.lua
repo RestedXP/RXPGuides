@@ -5,8 +5,8 @@ RXPGuides.RegisterGuide([[
 #groupweight 8
 #name 1Retail_Exile's Reach
 #displayname Exile's Reach
-#next RestedXP Alliance 10-60\1A_Elwynn Forest << Alliance
-#next RestedXP Speedrun Guide\a) The Waking Shores Fresh;RestedXP Horde 10-60\1 BfA Intro << Horde
+#next RestedXP Speedrun Guide\a) The Waking Shores Fresh << Alliance
+#next RestedXP Speedrun Guide\a) The Waking Shores Fresh << Horde
 
 << !DemonHunter !DK !Kultiran !DarkIronDwarf !LightforgedDraenei !Mechagnome !VoidElf !NightBorne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
 
@@ -124,7 +124,7 @@ step << Alliance
     .goto 1409,61.37,82.60,-1
     .complete 54951,1 --1/1 First Aid Kit used on Bjorn Stouthands
     .goto 1409,61.56,82.24,-1
-	.use 168410 
+	.use 168410
     .target Kee-La
     .target Austin Huxworth
     .target Bjorn Stouthands
@@ -136,7 +136,7 @@ step << Horde
     .goto 1409,61.37,82.60,-1
     .complete 59930,1 --1/1 First Aid Kit used on Lana Jordan
     .goto 1409,61.56,82.24,-1
-	.use 168410 
+	.use 168410
     .target Bo
     .target Mithdran Dawntracker
     .target Lana Jordan
@@ -258,7 +258,7 @@ step << Horde !Hunter
 	.mob Warlord Breka Grimaxe
 step << Alliance !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garrick|r and |cRXP_FRIENDLY_Alaria|r
-    .turnin 59339 >>Turn in Enhanced Combat Tactics << Monk 
+    .turnin 59339 >>Turn in Enhanced Combat Tactics << Monk
     .turnin 59254 >>Turn in Enhanced Combat Tactics << !Hunter !Monk
     .goto 1409,58.36,74.63
     .accept 55173 >>Accept Northbound
@@ -841,7 +841,7 @@ step << Alliance Warlock
     .goto 1409,52.53,45.89
     .complete 58962,2 --1/1 Old Grimoire
     .goto 1409,52.59,45.85
-	.target Hubert Lucas 
+	.target Hubert Lucas
     .skipgossip
 step << Horde Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sprag|r's Corpse on the ground
@@ -1103,7 +1103,7 @@ step << skip
 	.timer 51,Who Lurks in the Pit RP
 	.target Ralia Dreamchaser
 --VV ALLIANCE Ralia/Crenna not classified as either vehicle or flight paths so can't do this. unluko
-step << Alliance 
+step << Alliance
     .goto 1409,47.79,60.27
 --  .goto 1409,51.83,58.76
     >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick |cRXP_FRIENDLY_Ralia|r to ride her. Wait out the RP
@@ -1116,7 +1116,7 @@ step << skip
 	.timer 51,Who Lurks in the Pit RP
 	.target Crenna Earth-Daughter
 --VV HORDE Ralia/Crenna not classified as either vehicle or flight paths so can't do this. unluko
-step << Horde 
+step << Horde
     .goto 1409,47.79,60.27
 --   .goto 1409,51.83,58.76
     >>|TInterface/GossipFrame/HealerGossipIcon:0|tClick |cRXP_FRIENDLY_Crenna|r to ride her. Wait out the RP
@@ -1266,7 +1266,7 @@ step << Alliance Hunter
 	.skipgossip 161666,2
 	.timer 7,The Art of Taming RP
 	.target Austin Huxworth
-	.mob Wolf 
+	.mob Wolf
 	.mob Dog << Worgen
 	.mob Moth << Draenei
 --VV GOSSIP OBJECTIVE STEP
@@ -1705,7 +1705,7 @@ step << Horde
     .turnin 59985 >>Turn in An End to Beginnings
 	.target Warlord Breka Grimaxe
 	.isOnQuest 59985
-step << Alliance 
+step << Alliance
     .goto 84,73.70,91.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Garrick|r. |cRXP_WARN_Skip the Tutorial if you can|r
 	.accept 59583 >> Accept Welcome to Stormwind
@@ -1798,7 +1798,7 @@ step << Alliance Hunter/Shaman/Priest/Paladin/Warrior
 step << Alliance Rogue/Warlock
 	#completewith next
     .goto 84,79.34,68.39,10,0
-    .goto 84,80.11,68.41,6,0 
+    .goto 84,80.11,68.41,6,0
 	.goto 84,79.40,69.61,6 >>Go inside the building. Go downstairs
 step << Alliance Druid/Mage/Monk
 	#completewith next

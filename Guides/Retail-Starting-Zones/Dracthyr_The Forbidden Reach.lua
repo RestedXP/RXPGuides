@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Dracthyr Starting Zones
 #name Retail-Dracthyr_The Forbidden Reach
 #displayname Chapter 1 - The Forbidden Reach
-#next Dragonflight 60-70\1) The Waking Shores Campaign
+#next RestedXP Speedrun Guide\a) The Waking Shores Fresh
 
 << Dracthyr
 
