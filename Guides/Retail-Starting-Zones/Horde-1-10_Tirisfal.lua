@@ -258,7 +258,7 @@ RXPGuides.RegisterGuide([[
 #groupweight 8
 #name 2 Undead Eversong Woods
 #displayname Chapter 2 - Eversong Woods
-#next RestedXP Speedrun Guide\a) The Waking Shores Fresh
+#next RestedXP Speedrun Guide\a) The Waking Shores Fresh (H)
 #subgroup Undead Starting Zones
 #defaultfor Undead !DK
 

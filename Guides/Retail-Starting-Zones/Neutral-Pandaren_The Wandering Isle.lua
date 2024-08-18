@@ -5,8 +5,8 @@ RXPGuides.RegisterGuide([[
 #groupweight 8
 #name 2Retail-Panda_The Wandering Isle
 #displayname The Wandering Isle
-#next RestedXP Speedrun Guide\a) The Waking Shores Fresh << Alliance
-#next RestedXP Speedrun Guide\a) The Waking Shores Fresh << Horde
+#next RestedXP Speedrun Guide\a) The Waking Shores Fresh (A) << Alliance
+#next RestedXP Speedrun Guide\a) The Waking Shores Fresh (H) << Horde
 #defaultfor Pandaren
 
 << Pandaren !DK
