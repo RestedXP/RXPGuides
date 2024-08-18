@@ -1617,10 +1617,11 @@ local function prettyPrintUpgradeColumn(data)
     --      addon.Round(data.weightIncrease, 2))
 
     if data.ratio < 0 then
-        return fmt("%s / %s EP", _G.EMPTY, addon.Round(data.weightIncrease, 2))
+        return fmt("%s / %s EP (BIS)", _G.EMPTY,
+                   addon.Round(data.weightIncrease, 2))
     end
 
-    return fmt("%s / %s EP", prettyPrintRatio(data.ratio),
+    return fmt("%s / %s EP (BIS)", prettyPrintRatio(data.ratio),
                addon.Round(data.weightIncrease, 2))
 end
 
@@ -1629,7 +1630,7 @@ local function prettyPrintBudgetColumn(data)
 
     if epPerCopper == 0 then epPerCopper = addon.Round(data.rwpc, 4) end
 
-    return fmt("%s / %s (EP/c)", prettyPrintRatio(data.ratio),
+    return fmt("%s / %s EP (BIS/gold)", prettyPrintRatio(data.ratio),
                addon.Round(data.weightIncrease, 2))
 end
 
