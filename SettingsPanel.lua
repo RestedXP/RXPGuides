@@ -2238,12 +2238,25 @@ function addon.settings:CreateAceOptionsPanel()
                                        nil
                         end
                     },
+                    enableTotalEP = {
+                        name = L("Always Show Total EP"), -- TODO locale
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 5.3,
+                        hidden = function()
+                            return not addon.itemUpgrades
+                        end,
+                        disabled = function()
+                            return not (self.profile.enableTips and
+                                       self.profile.enableItemUpgrades)
+                        end
+                    },
                     enableQuestChoiceRecommendation = {
                         name = L("Quest Reward Recommendation"), -- TODO locale
                         desc = L("Displays the best calculated item upgrade"),
                         type = "toggle",
                         width = optionsWidth * 1.5,
-                        order = 5.3,
+                        order = 5.4,
                         hidden = function()
                             return not addon.itemUpgrades
                         end,

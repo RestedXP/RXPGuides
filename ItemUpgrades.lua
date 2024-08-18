@@ -443,7 +443,20 @@ local function TooltipSetItem(tooltip, ...)
 
     local comparisons = addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
 
-    if not comparisons or next(comparisons) == nil then return end
+    if not comparisons or next(comparisons) == nil then
+        if addon.settings.profile.enableTotalEP then
+            tooltip:AddLine(fmt("%s - %s", addon.title, _G.ITEM_UPGRADE))
+
+            local item = addon.itemUpgrades:GetItemData(itemLink, tooltip)
+
+            if item then
+                tooltip:AddLine(fmt("  Total EP: %s",
+                                    addon.Round(item.totalWeight, 2)))
+            end
+        end
+        return
+
+    end
     local lines = {}
 
     local ratioText
@@ -458,13 +471,23 @@ local function TooltipSetItem(tooltip, ...)
 
         if data.itemEquipLoc and data.itemEquipLoc == 'INVTYPE_WEAPONOFFHAND' then
             tinsert(lines,
-                    fmt("  %s: %s / %s EP (%s)", data['ItemLink'] or _G.UNKNOWN,
-                        ratioText, addon.Round(data.WeightIncrease, 2),
+                    fmt("  %s: %s / +%s EP (%s)",
+                        data['ItemLink'] or _G.UNKNOWN, ratioText,
+                        addon.Round(data.WeightIncrease, 2),
                         _G.INVTYPE_WEAPONOFFHAND))
         elseif data.ItemLink ~= _G.EMPTY then
             tinsert(lines,
-                    fmt("  %s: %s / %s EP", data['ItemLink'] or _G.UNKNOWN,
+                    fmt("  %s: %s / +%s EP", data['ItemLink'] or _G.UNKNOWN,
                         ratioText, addon.Round(data.WeightIncrease, 2)))
+        end
+    end
+
+    if addon.settings.profile.enableTotalEP then
+        local item = addon.itemUpgrades:GetItemData(itemLink, tooltip)
+
+        if item then
+            tinsert(lines,
+                    fmt("  Total EP: %s", addon.Round(item.totalWeight, 2)))
         end
     end
 
@@ -1140,6 +1163,7 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
         if ratio or equippedItemLink == _G.EMPTY or equippedItemLink == _G.NONE then
             tinsert(comparisons, {
                 ['Ratio'] = ratio,
+                ['TotalWeight'] = comparedData.totalWeight,
                 ['WeightIncrease'] = weightIncrease,
                 ['ItemLink'] = equippedItemLink or _G.UNKNOWN, -- Pass "Unknown" for debugging
                 ['itemEquipLoc'] = itemEquipLoc, -- Is actually slotID for rings/trinkets
@@ -1482,6 +1506,7 @@ local function analyzeSlotUpgrade(scanData, itemLink, bAS)
         bAS.best.name = scanData.name
         bAS.best.level = scanData.level
         bAS.best.weightIncrease = scanData.weightIncrease
+        bAS.best.totalWeight = scanData.totalWeight
 
         bAS.best.lowestPrice = ahSession.scanData[itemLink].lowestPrice
     end
@@ -1498,6 +1523,7 @@ local function analyzeSlotUpgrade(scanData, itemLink, bAS)
         bAS.budget.name = scanData.name
         bAS.budget.level = scanData.level
         bAS.budget.weightIncrease = scanData.weightIncrease
+        bAS.budget.totalWeight = scanData.totalWeight
 
         bAS.budget.lowestPrice = ahSession.scanData[itemLink].lowestPrice
     end
@@ -1615,18 +1641,21 @@ local function prettyPrintUpgradeColumn(data)
     --      addon.Round(data.weightIncrease, 2))
 
     if data.ratio < 0 then
-        return fmt("%s / %s EP (BIS)", _G.EMPTY,
+        return fmt("%s / +%s EP (BIS)", _G.EMPTY,
                    addon.Round(data.weightIncrease, 2))
     end
 
-    return fmt("%s / %s EP (BIS)", prettyPrintRatio(data.ratio),
+    return fmt("%s / +%s EP (BIS)", prettyPrintRatio(data.ratio),
                addon.Round(data.weightIncrease, 2))
 end
 
 local function prettyPrintBudgetColumn(data)
-    return fmt("%s / %s EP (BIS/%s)", prettyPrintRatio(data.ratio),
-               addon.Round(data.weightIncrease, 2),
-               _G.ICON_TAG_RAID_TARGET_STAR3)
+    local epPerCopper = addon.Round(data.rwpc, 2)
+
+    if epPerCopper == 0 then epPerCopper = addon.Round(data.rwpc, 4) end
+
+    return fmt("%s / %s EP/c (BIS/%s)", prettyPrintRatio(data.ratio),
+               epPerCopper, _G.ICON_TAG_RAID_TARGET_STAR3)
 end
 
 function addon.itemUpgrades.AH.RowOnEnter(row)
@@ -1845,6 +1874,7 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
                     Name = getColorizedName(data.best.itemLink, data.best.name),
                     ItemLevel = data.best.level,
                     UpdateEPText = prettyPrintUpgradeColumn(data.best),
+                    TotalWeight = data.best.totalWeight,
                     BuyoutMoney = data.best.lowestPrice,
                     ItemIcon = data.best.itemIcon
                 }
@@ -1862,6 +1892,7 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
                                                 data.budget.name),
                         ItemLevel = data.budget.level,
                         UpdateEPText = prettyPrintBudgetColumn(data.budget),
+                        TotalWeight = data.budget.totalWeight,
                         BuyoutMoney = data.budget.lowestPrice,
                         ItemIcon = data.budget.itemIcon
                     }
