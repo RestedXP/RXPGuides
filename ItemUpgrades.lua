@@ -1244,10 +1244,6 @@ function addon.itemUpgrades.AH:SearchForSelectedItem()
     return self:SearchForBuyoutItem(ahSession.selectedRow.nodeData)
 end
 
-local function getNameFromLink(itemLink)
-    return string.match(itemLink, "h%[(.*)%]|h")
-end
-
 function addon.itemUpgrades.AH:SearchForBuyoutItem(itemData)
     if not itemData.name then return end
 
@@ -1628,10 +1624,6 @@ local function prettyPrintUpgradeColumn(data)
 end
 
 local function prettyPrintBudgetColumn(data)
-    local epPerCopper = addon.Round(data.rwpc, 2)
-
-    if epPerCopper == 0 then epPerCopper = addon.Round(data.rwpc, 4) end
-
     return fmt("%s / %s EP (BIS/%s)", prettyPrintRatio(data.ratio),
                addon.Round(data.weightIncrease, 2),
                _G.ICON_TAG_RAID_TARGET_STAR3)
