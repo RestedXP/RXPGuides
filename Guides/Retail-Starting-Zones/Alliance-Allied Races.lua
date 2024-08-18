@@ -12,7 +12,7 @@ RXPGuides.RegisterGuide([[
 #displayname Chapter 1 - Mechagnome Intro << Mechagnome !DK
 #displayname Chapter 1 - Void Elf Intro << VoidElf !DK
 #displayname Chapter 1 - New Deathknight Intro << DK
-#next RestedXP Speedrun Guide\a) The Waking Shores Fresh
+#next RestedXP Speedrun Guide\a) The Waking Shores Fresh (A)
 
 << KulTiran/DarkIronDwarf/LightforgedDraenei/Mechagnome/VoidElf/Alliance Pandaren DK
 
