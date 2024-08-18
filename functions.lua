@@ -2538,13 +2538,14 @@ end
 function addon.functions.xp(self, ...)
     if type(self) == "string" then -- on parse
         local element = {}
-        local text, str, skipstep = ...
+        local text, str, skipstep, arg1 = ...
         skipstep = tonumber(skipstep)
         local operator, level, xp
         if str then
             str = str:gsub(" ", "")
             operator, level, xp = str:match("(<?)%s*(%d+)([%+%.%-]?%d*)")
         end
+        element.ref = arg1
         element.xp = tonumber(xp)
         element.level = tonumber(level)
         if not level then
@@ -2597,6 +2598,13 @@ function addon.functions.xp(self, ...)
     local reverseLogic = element.reverseLogic
     local xp = element.xp
 
+    local ref = element.ref
+    local guide = addon.currentGuide
+
+    if ref and not guide.labels[ref] then
+        return
+    end
+
     if element.rawtext then
         local reqlevel = element.level
         if xp < 0 then
@@ -2628,11 +2636,18 @@ function addon.functions.xp(self, ...)
         not reverseLogic then
         if element.skipstep then
             if step.active and not step.completed and not(addon.settings.profile.northrendLM and not reverseLogic) then
-                addon.updateSteps = true
-                step.completed = true
-                if element.textOnly == true then
+                local n = ref and guide.labels[ref]
+                if n then
+                    element.tooltipText = fmt(
+                                    L("Level requirements not met - Skip to step %d"),
+                                    n)
+                    addon.nextStep = guide.labels[ref]
+                    return
+                elseif element.textOnly == true then
                     element.tooltipText = L"Step skipped: XP requirements are not met"
                 end
+                addon.updateSteps = true
+                step.completed = true
             elseif step.active and not step.completed then
                 element.tooltipText = nil
             end
