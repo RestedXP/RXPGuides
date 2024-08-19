@@ -6404,3 +6404,32 @@ function addon.functions.openitem(self,text,id)
         addon.inventoryManager.itemsToOpen[element.id] = true
     end
 end
+
+events.isInScenario = {"SCENARIO_UPDATE"}
+function addon.functions.isInScenario(self, ...)
+    if type(self) == "string" then
+        local element = {}
+        local text, scenario = ...
+        element.scenario = tonumber(scenario)
+        element.textOnly = true
+        return element
+    end
+
+    local event, newStep = ...
+    local element = self.element
+    local step = element.step
+
+    if event ~= "WindowUpdate" then
+        local scenarioInfo = C_ScenarioInfo.GetScenarioInfo()
+        if step.active and not addon.settings.profile.debug and not addon.isHidden and scenarioInfo and scenarioInfo.scenarioID ~= element.scenario then
+            element.tooltipText = "Step skipped: Wrong scenario"
+            step.completed = true
+            addon.updateSteps = true
+        elseif step.active and not step.completed then
+            element.tooltipText = nil
+        end
+        if addon.settings.profile.debug then
+            print(scenarioInfo and scenarioInfo.scenarioID)
+        end
+    end
+end
