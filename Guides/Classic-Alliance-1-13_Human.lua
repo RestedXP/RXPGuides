@@ -941,6 +941,7 @@ step << Human Mage
     .train 401760,3
 step << Warrior/Paladin
     #xprate <1.59
+    #season 2
     #optional
     #completewith next
     .goto Elwynn Forest,48.85,41.76,15,0
