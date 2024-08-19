@@ -5054,6 +5054,13 @@ step << skip --logout skip
     .isQuestAvailable 314
 step
     #optional
+    #completewith Dirt
+    .goto 1426,53.47,35.02
+    >>Exit Ironforge
+    .zone Dun Morogh >> Travel to Dun Morogh
+--logout skip - remove if logout skips re-added
+step
+    #optional
     #label BoarMeatDunMorogh1
     #completewith Dirt
     .goto 1426,57.936,50.787,0
