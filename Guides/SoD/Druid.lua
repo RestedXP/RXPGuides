@@ -106,7 +106,7 @@ RXPGuides.RegisterGuide([[
 
 step << Druid
     #sticky
-    +|cRXP_WARN_You must have a helper to collect this rune! It cannot be solo'd as they must assist in clicking a summoning ritual which requires a second player!|r
+    +|cRXP_WARN_You must have a helper to collect this rune! It cannot be soloed as they must assist in clicking a summoning ritual which requires a second player!|r
     .train 410033,1
 step << Druid
     .goto Teldrassil,33.610,35.732
