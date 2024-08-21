@@ -1211,7 +1211,6 @@ local ahSession = {
     -- Cannot cache to RXPCData, because comparisons are mutable and embedded in weighting
     scanData = {},
 
-    windowOpen = false,
     scanPage = 0,
     scanResults = 0,
     scanType = AuctionFilterButtons["Armor"],
@@ -1235,16 +1234,11 @@ function addon.itemUpgrades.AH:Setup()
     ahSession.isInitialized = true
 end
 
-function addon.itemUpgrades.AH:AUCTION_HOUSE_SHOW()
-    ahSession.windowOpen = true
-
-    self:CreateEmbeddedGui()
-end
+function addon.itemUpgrades.AH:AUCTION_HOUSE_SHOW() self:CreateEmbeddedGui() end
 
 function addon.itemUpgrades.AH:AUCTION_HOUSE_CLOSED()
 
     -- Reset session
-    ahSession.windowOpen = false
     ahSession.sentQuery = false
     ahSession.scanPage = 0
     ahSession.scanResults = 0
@@ -1269,19 +1263,26 @@ function addon.itemUpgrades.AH:SearchForSelectedItem()
 end
 
 function addon.itemUpgrades.AH:SearchForBuyoutItem(itemData)
-    if not itemData.name then return end
+    RXPD4 = itemData
+    if not itemData.Name then
+        print("not itemData.name")
+        return
+    end
 
-    if not session.windowOpen then return end
+    if not _G.AuctionFrame:IsShown() then
+        print("not session.windowOpen")
+        return
+    end
 
     -- print("SearchForBuyoutItem", itemData.itemLink)
 
     if _G.BrowseResetButton then _G.BrowseResetButton:Click() end
 
-    _G.BrowseName:SetText('"' .. itemData.name .. '"')
+    _G.BrowseName:SetText('"' .. itemData.Name .. '"')
 
-    if itemData.itemLevel then
-        _G.BrowseMinLevel:SetText(itemData.itemLevel)
-        _G.BrowseMaxLevel:SetText(itemData.itemLevel)
+    if itemData.ItemLevel then
+        _G.BrowseMinLevel:SetText(itemData.ItemLevel)
+        _G.BrowseMaxLevel:SetText(itemData.ItemLevel)
     end
 
     -- Sort to make item very likely on first page
@@ -1701,7 +1702,7 @@ local function Initializer(frame, data)
         f.nodeData = d -- TODO minimize reference
         f.ItemLink = d.ItemLink
         f.ItemID = d.ItemID
-        f.Name:SetText(d.Name)
+        f.Name:SetText(d.ColorizedName)
         f.ItemLevel.Text:SetText(d.ItemLevel)
         f.UpdateEP.Text:SetText(d.UpdateEPText)
         f.ItemIcon:SetNormalTexture(d.ItemIcon)
@@ -1723,7 +1724,7 @@ local function Initializer(frame, data)
         f.nodeData = d
         f.ItemLink = d.ItemLink
         f.ItemID = d.ItemID
-        f.Name:SetText(d.Name)
+        f.Name:SetText(d.ColorizedName)
         f.ItemLevel.Text:SetText(d.ItemLevel)
         f.UpdateEP.Text:SetText(d.UpdateEPText)
         f.ItemIcon:SetNormalTexture(d.ItemIcon)
@@ -1863,7 +1864,9 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
                     ItemID = data.best.itemID,
                     ItemKindIcon = "Interface/AddOns/" .. addonName ..
                         "/Textures/rxp_logo-64",
-                    Name = getColorizedName(data.best.itemLink, data.best.name),
+                    Name = data.best.name,
+                    ColorizedName = getColorizedName(data.best.itemLink,
+                                                     data.best.name),
                     ItemLevel = data.best.level,
                     UpdateEPText = prettyPrintUpgradeColumn(data.best),
                     TotalWeight = data.best.totalWeight,
@@ -1880,8 +1883,9 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
                         ItemLink = data.budget.itemLink,
                         ItemID = data.budget.itemID,
                         ItemKindIcon = 'Interface/GossipFrame/VendorGossipIcon.blp',
-                        Name = getColorizedName(data.budget.itemLink,
-                                                data.budget.name),
+                        Name = data.budget.name,
+                        ColorizedName = getColorizedName(data.budget.itemLink,
+                                                         data.budget.name),
                         ItemLevel = data.budget.level,
                         UpdateEPText = prettyPrintBudgetColumn(data.budget),
                         TotalWeight = data.budget.totalWeight,
