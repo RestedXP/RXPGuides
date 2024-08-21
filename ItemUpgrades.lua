@@ -707,17 +707,17 @@ function addon.itemUpgrades:ActivateSpecWeights()
     if not addon.settings.profile.itemUpgradeSpec then
         addon.settings.profile.itemUpgradeSpec = spec
     elseif addon.settings.profile.itemUpgradeSpec ~= spec then
+        -- Handle spec name changes
+        if not session.specWeights[addon.settings.profile.itemUpgradeSpec] then
+            addon.settings.profile.itemUpgradeSpec = spec
+        end
+
         -- Chosen talents don't match itemUpgradeSpec
         -- Leave alone as is, don't spam user if there's a mismatch
         if addon.settings.profile.debug then
             addon.comms.PrettyPrint(
                 "ItemUpgrades selected spec (%s) differs from calculated spec (%s)",
                 addon.settings.profile.itemUpgradeSpec, spec)
-        end
-
-        -- Handle spec name changes
-        if not session.specWeights[addon.settings.profile.itemUpgradeSpec] then
-            addon.settings.profile.itemUpgradeSpec = spec
         end
     end
 
