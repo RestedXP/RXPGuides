@@ -374,26 +374,13 @@ end
 local SPEC_MAP = {
     ["WARRIOR"] = {[1] = "Arms", [2] = "Fury", [3] = "Protection"},
     ["PALADIN"] = {[1] = "Holy", [2] = "Protection", [3] = "Retribution"},
-    ["HUNTER"] = {[1] = "BeastMastery", [2] = "Marksmanship", [3] = "Survival"},
-    ["ROGUE"] = {[1] = "Assassination", [2] = "Outlaw", [3] = "Subtlety"},
+    ["HUNTER"] = {[1] = "Beast Mastery", [2] = "Marksmanship", [3] = "Survival"},
+    ["ROGUE"] = {[1] = "Assassination", [2] = "Combat", [3] = "Subtlety"},
     ["PRIEST"] = {[1] = "Discipline", [2] = "Holy", [3] = "Shadow"},
-    ["DEATHKNIGHT"] = {[1] = "Blood", [2] = "Frost", [3] = "Unholy"},
     ["SHAMAN"] = {[1] = "Elemental", [2] = "Enhancement", [3] = "Restoration"},
     ["MAGE"] = {[1] = "Arcane", [2] = "Fire", [3] = "Frost"},
     ["WARLOCK"] = {[1] = "Affliction", [2] = "Demonology", [3] = "Destruction"},
-    ["MONK"] = {[1] = "Brewmaster", [2] = "Mistweaver", [3] = "Windwalker"},
-    ["DRUID"] = {
-        [1] = "Balance",
-        [2] = "Feral",
-        [3] = "Guardian",
-        [4] = "Restoration"
-    },
-    ["DEMONHUNTER"] = {[1] = "Havoc", [2] = "Vengeance"},
-    ["EVOKER"] = {
-        [1] = "Devastation",
-        [2] = "Preservation",
-        [3] = "Augmentation"
-    }
+    ["DRUID"] = {[1] = "Balance", [2] = "Feral Combat", [4] = "Restoration"}
 }
 
 -- Setup reverse lookup in session.weaponSlotToWeightKey
