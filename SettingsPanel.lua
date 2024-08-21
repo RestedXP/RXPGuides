@@ -2003,7 +2003,13 @@ function addon.settings:CreateAceOptionsPanel()
                         name = L("Enable Tips"), -- TODO locale
                         type = "toggle",
                         width = optionsWidth,
-                        order = 1.1
+                        order = 1.1,
+                        set = function(info, value) -- Address initialization issues during toggle
+                            SetProfileOption(info, value)
+                            if addon.itemUpgrades then
+                                addon.itemUpgrades:Setup()
+                            end
+                        end,
                     },
                     enableTipsFrame = {
                         name = L("Enable Tips Frame"), -- TODO locale
@@ -2194,6 +2200,13 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.itemUpgrades:Setup()
+                        end,
+                        disabled = function()
+                            return not self.profile.enableTips or
+                                       UnitLevel("player") ==
+                                       GetMaxPlayerLevel() or
+                                       addon.itemUpgrades:GetSpecWeights() ==
+                                       nil
                         end
                     },
                     itemUpgradeSpec = {
@@ -2217,11 +2230,25 @@ function addon.settings:CreateAceOptionsPanel()
                             return not addon.itemUpgrades
                         end,
                         disabled = function()
-                            return not self.profile.enableItemUpgrades or
+                            return not (self.profile.enableTips and
+                                       self.profile.enableItemUpgrades) or
                                        UnitLevel("player") ==
                                        GetMaxPlayerLevel() or
                                        addon.itemUpgrades:GetSpecWeights() ==
                                        nil
+                        end
+                    },
+                    enableTotalEP = {
+                        name = L("Always Show Total EP"), -- TODO locale
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 5.3,
+                        hidden = function()
+                            return not addon.itemUpgrades
+                        end,
+                        disabled = function()
+                            return not (self.profile.enableTips and
+                                       self.profile.enableItemUpgrades)
                         end
                     },
                     enableQuestChoiceRecommendation = {
@@ -2229,12 +2256,13 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Displays the best calculated item upgrade"),
                         type = "toggle",
                         width = optionsWidth * 1.5,
-                        order = 5.3,
+                        order = 5.4,
                         hidden = function()
                             return not addon.itemUpgrades
                         end,
                         disabled = function()
-                            return not self.profile.enableItemUpgrades
+                            return not (self.profile.enableTips and
+                                       self.profile.enableItemUpgrades)
                         end
                     },
                     enableQuestChoiceAutomation = {
@@ -2248,27 +2276,27 @@ function addon.settings:CreateAceOptionsPanel()
                             return not addon.itemUpgrades
                         end,
                         disabled = function()
-                            return not (self.profile.enableItemUpgrades and
+                            return not (self.profile.enableTips and
+                                       self.profile.enableItemUpgrades and
                                        self.profile
                                            .enableQuestChoiceRecommendation)
                         end
                     },
                     enableItemUpgradesAH = {
-                        name = fmt("%s %s (Beta)", _G.ENABLE,
+                        name = fmt("%s %s", _G.ENABLE,
                                    _G.MINIMAP_TRACKING_AUCTIONEER),
                         desc = fmt("%s %s", _G.AUCTION_ITEM, _G.SEARCH),
                         type = "toggle",
                         width = optionsWidth,
                         order = 5.6,
                         hidden = function()
-                            return not addon.itemUpgrades or
-                                       not self.profile.enableBetaFeatures
+                            return not addon.itemUpgrades
                         end,
                         disabled = function()
-                            return not self.profile.enableItemUpgrades or
+                            return not (self.profile.enableTips and
+                                       self.profile.enableItemUpgrades) or
                                        UnitLevel("player") ==
-                                       GetMaxPlayerLevel() or
-                                       self.profile.soloSelfFound
+                                       GetMaxPlayerLevel()
                         end,
                         set = function(info, value)
                             SetProfileOption(info, value)
