@@ -469,6 +469,32 @@
                     </Layer>
                 </Layers>
             </Button>
+            <Frame name="$parentScrollFrame" inherits="WowScrollBoxList" parentKey="ScrollBox">
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                            <AbsDimension x="20" y="-78"/>
+                        </Offset>
+                    </Anchor>
+                    <Anchor point="BOTTOMRIGHT">
+                        <Offset>
+                            <AbsDimension x="0" y="37"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    <EventFrame name="$parentScrollBar" inherits="WowTrimScrollBar" parentKey="ScrollBar">
+                        <Anchors>
+                            <Anchor point="TOPRIGHT" relativeTo="$parent" relativePoint="TOPRIGHT">
+                                <Offset>
+                                    <AbsDimension x="-9" y="6"/>
+                                </Offset>
+                            </Anchor>
+                            <Anchor point="BOTTOMRIGHT" relativeTo="$parent" relativePoint="BOTTOMRIGHT"/>
+                        </Anchors>
+                    </EventFrame>
+                </Frames>
+            </Frame>
         </Frames>
     </Frame>
 </Ui>

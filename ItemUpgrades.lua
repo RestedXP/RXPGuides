@@ -1754,17 +1754,8 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
     _G.RXP_IU_AH_Title:SetText(fmt("%s - %s", addon.title,
                                    _G.MINIMAP_TRACKING_AUCTIONEER))
 
-    local scrollBox = CreateFrame("Frame", 'RXP_IU_AH_ScrollFrame',
-                                  ahSession.displayFrame, "WowScrollBoxList")
-
-    scrollBox:SetPoint("TOPLEFT", 20, -78)
-    scrollBox:SetPoint("BOTTOMRIGHT", 0, 37)
-
-    local ScrollBar = CreateFrame("EventFrame", nil, ahSession.displayFrame,
-                                  "WowTrimScrollBar")
+    local ScrollBar = ahSession.displayFrame.ScrollBox.ScrollBar
     ScrollBar:SetHideIfUnscrollable(false)
-    ScrollBar:SetPoint("TOPRIGHT", scrollBox, "TOPRIGHT", -9, 6)
-    ScrollBar:SetPoint("BOTTOMRIGHT", scrollBox, "BOTTOMRIGHT")
 
     local DataProvider = CreateDataProvider()
     local ScrollView = CreateScrollBoxListLinearView()
@@ -1772,7 +1763,8 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
     ScrollView:SetElementExtent(37 * 2 + 19)
     ahSession.displayFrame.DataProvider = DataProvider
 
-    ScrollUtil.InitScrollBoxListWithScrollBar(scrollBox, ScrollBar, ScrollView)
+    ScrollUtil.InitScrollBoxListWithScrollBar(ahSession.displayFrame.ScrollBox,
+                                              ScrollBar, ScrollView)
 
     ScrollView:SetElementInitializer("RXP_IU_AH_ItemBlock", Initializer)
 
