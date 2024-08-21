@@ -371,6 +371,18 @@ if locale == 'frFR' then
         "%s+Augmente vos chances de parer une attaque de (%d+)%%."
 end
 
+local SPEC_MAP = {
+    ["WARRIOR"] = {[1] = "Arms", [2] = "Fury", [3] = "Protection"},
+    ["PALADIN"] = {[1] = "Holy", [2] = "Protection", [3] = "Retribution"},
+    ["HUNTER"] = {[1] = "Beast Mastery", [2] = "Marksmanship", [3] = "Survival"},
+    ["ROGUE"] = {[1] = "Assassination", [2] = "Combat", [3] = "Subtlety"},
+    ["PRIEST"] = {[1] = "Discipline", [2] = "Holy", [3] = "Shadow"},
+    ["SHAMAN"] = {[1] = "Elemental", [2] = "Enhancement", [3] = "Restoration"},
+    ["MAGE"] = {[1] = "Arcane", [2] = "Fire", [3] = "Frost"},
+    ["WARLOCK"] = {[1] = "Affliction", [2] = "Demonology", [3] = "Destruction"},
+    ["DRUID"] = {[1] = "Balance", [2] = "Feral Combat", [4] = "Restoration"}
+}
+
 -- Setup reverse lookup in session.weaponSlotToWeightKey
 for weaponKey, d in pairs(WEAPON_SLOT_MAP) do
     if not d.Slot then
@@ -640,23 +652,84 @@ function addon.itemUpgrades:LoadStatWeights()
     return session.specWeights ~= nil
 end
 
+local function getSpec()
+    -- Classes with className as spec only have one (Rogue, Warrior), use that
+    if session.specWeights[addon.player.class] then return addon.player.class end
+
+    -- if addon.settings.profile.enableTalentGuides then
+    --     -- Difficult/impossible to map talent guide
+    --     -- addon.settings.profile.activeTalentGuide == "Rogue - Hardcore Rogue 10-60"
+    -- end
+
+    -- Calculate most likely spec
+    local pointsSpent
+    local guessedSpec = {index = nil, count = 0}
+
+    for tabIndex = 1, _G.GetNumTalentTabs(false) do
+        -- id, name, description, icon, pointsSpent, background, previewPointsSpent, isUnlocked
+        _, _, _, _, pointsSpent = _G.GetTalentTabInfo(tabIndex)
+
+        if pointsSpent > guessedSpec.count then
+            guessedSpec.index = tabIndex
+            guessedSpec.count = pointsSpent
+        end
+    end
+
+    local specName
+    -- No tabs found with > 0 talents, likely fresh character
+    if guessedSpec.index then
+        specName = SPEC_MAP[addon.player.class][guessedSpec.index]
+
+        if addon.settings.profile.debug then
+            addon.comms
+                .PrettyPrint("ItemUpgrades, spec guessed as %s", specName)
+        end
+    end
+
+    -- If calculated spec has no weights, then class is unsupported
+    -- Likely exited earlier with Rogue/Warrior in this scenario then
+    if session.specWeights[specName] then return specName end
+
+    -- If no class-wide spec and no talents, then fallback to arbitrarily pick the first loaded spec
+    specName, _ = next(session.specWeights)
+
+    -- Returns first specName, or nil
+    return specName
+end
+
 -- Always run after LoadStatWeights
 function addon.itemUpgrades:ActivateSpecWeights()
     if not session.specWeights then return end
 
-    -- TODO check active talent guide
-    -- TODO check talent count per tab
-    local spec = addon.settings.profile.itemUpgradeSpec or
-                     addon.player.localeClass
+    local spec = getSpec()
 
-    -- If only multi-spec (Enhancement / Elemental) arbitrarily pick the first one
-    if not session.specWeights[spec] then
-        spec = next(session.specWeights)
-
+    -- Uninitialized spec, so set to calculated value
+    if not addon.settings.profile.itemUpgradeSpec then
         addon.settings.profile.itemUpgradeSpec = spec
+    elseif addon.settings.profile.itemUpgradeSpec ~= spec then
+        -- Handle spec name changes
+        if not session.specWeights[addon.settings.profile.itemUpgradeSpec] then
+            addon.settings.profile.itemUpgradeSpec = spec
+        end
+
+        -- Chosen talents don't match itemUpgradeSpec
+        -- Leave alone as is, don't spam user if there's a mismatch
+        if addon.settings.profile.debug then
+            addon.comms.PrettyPrint(
+                "ItemUpgrades selected spec (%s) differs from calculated spec (%s)",
+                addon.settings.profile.itemUpgradeSpec, spec)
+        end
     end
 
-    session.activeStatWeights = session.specWeights[spec]
+    if not addon.settings.profile.itemUpgradeSpec then return end
+
+    if addon.settings.profile.debug then
+        addon.comms.PrettyPrint("Activating spec weights for %s",
+                                addon.settings.profile.itemUpgradeSpec)
+    end
+
+    session.activeStatWeights = session.specWeights[addon.settings.profile
+                                    .itemUpgradeSpec]
 
     if not session.activeStatWeights then return end
 
