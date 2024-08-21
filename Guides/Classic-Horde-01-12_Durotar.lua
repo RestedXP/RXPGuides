@@ -894,7 +894,6 @@ step << Shaman
 step << Shaman
     #season 2
     #label OverloadRune
-step 
     >>Use the |T134918:0|t[|cRXP_FRIENDLY_Dyadic Icon|r]
     .use 206381
     .complete 77587,1 << Troll Shaman --Learn Spell: Engrave Chest - Overload
@@ -2107,11 +2106,11 @@ step << Warrior
 step
     #xprate <1.5
     #softcore
-    #completewith next
     .goto Durotar,46.43,79.25,-1
     .goto Durotar,57.50,73.26,-1
     .deathskip >> Die at the Bonfire and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .isQuestComplete 786
+    .subzoneskip 366,1
 step
     #xprate <1.5
     #hardcore
@@ -7931,7 +7930,6 @@ step << Shaman
 step << Shaman
     #season 2
     #label OverloadRune
-step 
     >>Use the |T134918:0|t[|cRXP_FRIENDLY_Dyadic Icon|r]
     .use 206381
     .complete 77587,1 << Troll Shaman --Learn Spell: Engrave Chest - Overload
@@ -9003,11 +9001,11 @@ step << Warrior
 step
     #xprate <1.5
     #softcore
-    #completewith next
     .goto Durotar,46.43,79.25,-1
     .goto Durotar,57.50,73.26,-1
     .deathskip >> Die at the Bonfire and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
     .isQuestComplete 786
+    .subzoneskip 366,1
 step
     #xprate <1.5
     #hardcore

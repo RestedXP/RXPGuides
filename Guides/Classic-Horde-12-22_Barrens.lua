@@ -1104,7 +1104,7 @@ step << Rogue
     .itemStat 17,QUALITY,<7
     .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
     .target Ironzar
-step << Rogue
+step << skip
     #completewith BaronLongshore
     +Equip the second |T135343:0|t[Scimitar] in your off-hand
     .use 2027
@@ -1998,7 +1998,7 @@ step << Shaman
     .target Kardris Dreamseeker
     .xp <18,1
 step
-    #Label SpiritsPickup
+    #label SpiritsPickup
     .goto Orgrimmar,38.94,38.39
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zor|r
     .accept 1061 >>Accept The Spirits of Stonetalon
@@ -3733,6 +3733,7 @@ step << Warrior
     .itemcount 4800,1
     .itemStat 7,ITEM_MOD_ARMOR_SHORT,<155
     .isQuestTurnedIn 865
+    .equip 7,4800
 step << Rogue/Hunter/Warrior/Shaman/Druid
     #completewith FlytoXroads
     +Equip the |T132603:0|t[|cRXP_FRIENDLY_Wolf Bracers|r]
@@ -3741,6 +3742,7 @@ step << Rogue/Hunter/Warrior/Shaman/Druid
     .itemStat 9,ITEM_MOD_ARMOR_SHORT,<37
     .isQuestTurnedIn 865
     .xp <20,1
+    .equip 9,4794
 step
     .goto The Barrens,62.05,39.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Wiley|r
@@ -7572,7 +7574,7 @@ step << Rogue
     .itemStat 17,QUALITY,<7
     .itemStat 17,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<8.6
     .target Ironzar
-step << Rogue
+step << skip
     #season 0
     #completewith BaronLongshore
     +Equip the second |T135343:0|t[Scimitar] in your off-hand
@@ -10660,6 +10662,7 @@ step << Warrior
     .itemcount 4800,1
     .itemStat 7,ITEM_MOD_ARMOR_SHORT,<155
     .isQuestTurnedIn 865
+    .equip 7,4800
 step << Rogue/Hunter/Warrior/Shaman/Druid
     #completewith FlytoXroads
     +Equip the |T132603:0|t[|cRXP_FRIENDLY_Wolf Bracers|r]
@@ -10668,6 +10671,7 @@ step << Rogue/Hunter/Warrior/Shaman/Druid
     .itemStat 9,ITEM_MOD_ARMOR_SHORT,<37
     .isQuestTurnedIn 865
     .xp <20,1
+    .equip 9,4794
 step
     .goto The Barrens,62.05,39.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Wiley|r

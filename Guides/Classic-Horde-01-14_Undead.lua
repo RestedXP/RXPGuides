@@ -4517,12 +4517,14 @@ step << Warlock/Mage/Priest
     .use 4786
     .itemcount 4786,1
     .xp <15,1
+    .equip 6,4786
 step << Rogue
     #completewith Shackles
     +Equip the |T132539:0|t[|cRXP_FRIENDLY_Agile Boots|r]
     .use 4788
     .itemcount 4788,1
     .xp <15,1
+    .equip 8,4788
 step
     #label DecrepitFerry
     .goto Silverpine Forest,58.39,34.79
