@@ -652,56 +652,60 @@ function addon.itemUpgrades:LoadStatWeights()
     return session.specWeights ~= nil
 end
 
--- TODO fix spec lookup to use classFile instead of localeClass
 local function getSpec()
-    print("getSpec()")
-    -- Classes with className as spec only have one, use that
+    -- Classes with className as spec only have one (Rogue, Warrior), use that
     if session.specWeights[addon.player.class] then return addon.player.class end
-    -- RXPD4 = {
-    --    weights = session.specWeights,
-    --    class = addon.player.class,
-    --    spec = session.specWeights[addon.player.class]
-    -- }
+
+    -- if addon.settings.profile.enableTalentGuides then
+    --     -- Difficult/impossible to map talent guide
+    --     -- addon.settings.profile.activeTalentGuide == "Rogue - Hardcore Rogue 10-60"
+    -- end
+
     -- Calculate most likely spec
-    local talentCount
+    local pointsSpent
     local guessedSpec = {index = nil, count = 0}
 
     for tabIndex = 1, _G.GetNumTalentTabs(false) do
-        _, _, talentCount = _G.GetTalentTabInfo(tabIndex)
+        -- id, name, description, icon, pointsSpent, background, previewPointsSpent, isUnlocked
+        _, _, _, _, pointsSpent = _G.GetTalentTabInfo(tabIndex)
 
-        if talentCount > guessedSpec.count then
+        if pointsSpent > guessedSpec.count then
             guessedSpec.index = tabIndex
-            guessedSpec.count = talentCount
+            guessedSpec.count = pointsSpent
         end
     end
 
+    local specName
     -- No tabs found with > 0 talents, likely fresh character
     if guessedSpec.index then
-        local specName = SPEC_MAP[addon.player.class][guessedSpec.index]
-        print("Spec calculated as",
-              SPEC_MAP[addon.player.class][guessedSpec.index])
+        specName = SPEC_MAP[addon.player.class][guessedSpec.index]
 
-        -- TODO strip spaces, this evals to 'BeastMastery', but stat weights is 'Beast Mastery'
-        if session.specWeights[specName] then return specName end
+        if addon.settings.profile.debug then
+            addon.comms
+                .PrettyPrint("ItemUpgrades, spec guessed as %s", specName)
+        end
     end
 
-    -- No tabs found with > 0 talents, likely fresh character
+    -- If calculated spec has no weights, then class is unsupported
+    -- Likely exited earlier with Rogue/Warrior in this scenario then
+    if session.specWeights[specName] then return specName end
 
     -- If no class-wide spec and no talents, then fallback to arbitrarily pick the first loaded spec
-    -- Returns first spec, or nil
-    return next(session.specWeights)
+    specName, _ = next(session.specWeights)
 
-    -- if addon.settings.profile.enableTalentGuides then
-    --     -- Difficult/impossible to mapp talent guide
-    --     -- addon.settings.profile.activeTalentGuide == "Rogue - Hardcore Rogue 10-60"
-    -- end
+    -- Returns first specName, or nil
+    return specName
 end
 
 -- Always run after LoadStatWeights
 function addon.itemUpgrades:ActivateSpecWeights()
     if not session.specWeights then return end
-    print("addon.itemUpgrades:ActivateSpecWeights()")
+
     local spec = getSpec()
+
+    if addon.settings.profile.debug then
+        addon.comms.PrettyPrint("Activating spec weights for %s", spec)
+    end
 
     -- Uninitialized spec, so set to calculated value
     if not addon.settings.profile.itemUpgradeSpec then
