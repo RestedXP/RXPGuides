@@ -703,10 +703,6 @@ function addon.itemUpgrades:ActivateSpecWeights()
 
     local spec = getSpec()
 
-    if addon.settings.profile.debug then
-        addon.comms.PrettyPrint("Activating spec weights for %s", spec)
-    end
-
     -- Uninitialized spec, so set to calculated value
     if not addon.settings.profile.itemUpgradeSpec then
         addon.settings.profile.itemUpgradeSpec = spec
@@ -726,6 +722,11 @@ function addon.itemUpgrades:ActivateSpecWeights()
     end
 
     if not addon.settings.profile.itemUpgradeSpec then return end
+
+    if addon.settings.profile.debug then
+        addon.comms.PrettyPrint("Activating spec weights for %s",
+                                addon.settings.profile.itemUpgradeSpec)
+    end
 
     session.activeStatWeights = session.specWeights[addon.settings.profile
                                     .itemUpgradeSpec]
