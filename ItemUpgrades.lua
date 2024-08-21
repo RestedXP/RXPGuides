@@ -1760,7 +1760,7 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
     local DataProvider = CreateDataProvider()
     local ScrollView = CreateScrollBoxListLinearView()
     ScrollView:SetDataProvider(DataProvider)
-    ScrollView:SetElementExtent(37 * 2 + 19)
+    ScrollView:SetElementExtent(19 + 37 * 2)
     ahSession.displayFrame.DataProvider = DataProvider
 
     ScrollUtil.InitScrollBoxListWithScrollBar(ahSession.displayFrame.ScrollBox,
