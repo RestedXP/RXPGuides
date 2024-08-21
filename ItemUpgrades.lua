@@ -727,7 +727,8 @@ function addon.itemUpgrades:ActivateSpecWeights()
 
     if not addon.settings.profile.itemUpgradeSpec then return end
 
-    session.activeStatWeights = session.specWeights[spec]
+    session.activeStatWeights = session.specWeights[addon.settings.profile
+                                    .itemUpgradeSpec]
 
     if not session.activeStatWeights then return end
 
