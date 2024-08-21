@@ -1017,7 +1017,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "header",
                         width = "full",
                         order = 4.8,
-                        hidden = not addon.inventoryManager,
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
                     },
                     showJunkIcon = {
                         name = L("Show junk item indicator"), -- TODO locale
@@ -1025,7 +1025,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth * 1.5,
                         order = 4.81,
-                        hidden = not addon.inventoryManager,
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
                     },
                     autoDiscardItems = {
                         name = L("Discard junk items if bag is full"), -- TODO locale
@@ -1033,7 +1033,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth * 1.5,
                         order = 4.83,
-                        hidden = not addon.inventoryManager,
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
                     },
                     rightClickJunk = {
                         name = L("Toggle junk with modified right click"), -- TODO locale
@@ -1041,7 +1041,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth * 1.5,
                         order = 4.84,
-                        hidden = not addon.inventoryManager,
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
                     },
                     rightClickMod = {
                         name = L("Right Click Modifier"), -- TODO locale
@@ -1060,7 +1060,7 @@ function addon.settings:CreateAceOptionsPanel()
                             [2] = "ALT",
                             [3] = "CTRL+ALT",
                         },
-                        hidden = not addon.inventoryManager,
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
                     },
                     autoSellJunk = {
                         name = L("Auto Sell Junk"), -- TODO locale
@@ -1068,7 +1068,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth * 1.5,
                         order = 4.86,
-                        hidden = not addon.inventoryManager,
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
                     },
                     sellKeybind = {
                         name = L("Delete Cheapest Junk Item Keybind"), -- TODO locale
@@ -1076,7 +1076,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "keybinding",
                         width = optionsWidth * 1.25,
                         order = 4.87,
-                        hidden = not addon.inventoryManager,
+                        hidden = not (addon.inventoryManager and addon.inventoryManager.bagHook),
                         get = function()
                             local commandName = "CLICK RXPInventory_DeleteJunk:LeftButton"
                             local i = addon.inventoryManager.bindingIndex
@@ -1191,8 +1191,20 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 1.0
                     },
                     enableAutomaticXpRate = {
-                        name = L("Detect Rate"),
-                        desc = L("Checks for heirlooms and experience buffs"),
+                        name = function()
+                            if addon.game == "CLASSIC" then
+                                return L("Detect Season")
+                            else
+                                return L("Detect Rate")
+                            end
+                        end,
+                        desc = function()
+                            if addon.game == "CLASSIC" then
+                                return L("Auto detects seasonal buffs and adjust the routes accordingly")
+                            else
+                                return L("Checks for heirlooms and experience buffs")
+                            end
+                        end,
                         type = "toggle",
                         width = optionsWidth,
                         order = 1.1,
@@ -1370,7 +1382,7 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L(
                             "Adjust the leveling routes to the current season"),
                         type = "select",
-                        values = {[false] = L"None", [1] = L"Season of Mastery", [2] = L"Season of Discovery"},
+                        values = {[0] = L"None", [1] = L"Season of Mastery", [2] = L"Season of Discovery"},
                         --sorting = {0, 1, 2},
                         width = optionsWidth,
                         order = 2.5,
@@ -1991,7 +2003,13 @@ function addon.settings:CreateAceOptionsPanel()
                         name = L("Enable Tips"), -- TODO locale
                         type = "toggle",
                         width = optionsWidth,
-                        order = 1.1
+                        order = 1.1,
+                        set = function(info, value) -- Address initialization issues during toggle
+                            SetProfileOption(info, value)
+                            if addon.itemUpgrades then
+                                addon.itemUpgrades:Setup()
+                            end
+                        end,
                     },
                     enableTipsFrame = {
                         name = L("Enable Tips Frame"), -- TODO locale
@@ -2182,6 +2200,13 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(info, value)
                             SetProfileOption(info, value)
                             addon.itemUpgrades:Setup()
+                        end,
+                        disabled = function()
+                            return not self.profile.enableTips or
+                                       UnitLevel("player") ==
+                                       GetMaxPlayerLevel() or
+                                       addon.itemUpgrades:GetSpecWeights() ==
+                                       nil
                         end
                     },
                     itemUpgradeSpec = {
@@ -2205,11 +2230,25 @@ function addon.settings:CreateAceOptionsPanel()
                             return not addon.itemUpgrades
                         end,
                         disabled = function()
-                            return not self.profile.enableItemUpgrades or
+                            return not (self.profile.enableTips and
+                                       self.profile.enableItemUpgrades) or
                                        UnitLevel("player") ==
                                        GetMaxPlayerLevel() or
                                        addon.itemUpgrades:GetSpecWeights() ==
                                        nil
+                        end
+                    },
+                    enableTotalEP = {
+                        name = L("Always Show Total EP"), -- TODO locale
+                        type = "toggle",
+                        width = optionsWidth,
+                        order = 5.3,
+                        hidden = function()
+                            return not addon.itemUpgrades
+                        end,
+                        disabled = function()
+                            return not (self.profile.enableTips and
+                                       self.profile.enableItemUpgrades)
                         end
                     },
                     enableQuestChoiceRecommendation = {
@@ -2217,12 +2256,13 @@ function addon.settings:CreateAceOptionsPanel()
                         desc = L("Displays the best calculated item upgrade"),
                         type = "toggle",
                         width = optionsWidth * 1.5,
-                        order = 5.3,
+                        order = 5.4,
                         hidden = function()
                             return not addon.itemUpgrades
                         end,
                         disabled = function()
-                            return not self.profile.enableItemUpgrades
+                            return not (self.profile.enableTips and
+                                       self.profile.enableItemUpgrades)
                         end
                     },
                     enableQuestChoiceAutomation = {
@@ -2236,27 +2276,27 @@ function addon.settings:CreateAceOptionsPanel()
                             return not addon.itemUpgrades
                         end,
                         disabled = function()
-                            return not (self.profile.enableItemUpgrades and
+                            return not (self.profile.enableTips and
+                                       self.profile.enableItemUpgrades and
                                        self.profile
                                            .enableQuestChoiceRecommendation)
                         end
                     },
                     enableItemUpgradesAH = {
-                        name = fmt("%s %s (Beta)", _G.ENABLE,
+                        name = fmt("%s %s", _G.ENABLE,
                                    _G.MINIMAP_TRACKING_AUCTIONEER),
                         desc = fmt("%s %s", _G.AUCTION_ITEM, _G.SEARCH),
                         type = "toggle",
                         width = optionsWidth,
                         order = 5.6,
                         hidden = function()
-                            return not addon.itemUpgrades or
-                                       not self.profile.enableBetaFeatures
+                            return not addon.itemUpgrades
                         end,
                         disabled = function()
-                            return not self.profile.enableItemUpgrades or
+                            return not (self.profile.enableTips and
+                                       self.profile.enableItemUpgrades) or
                                        UnitLevel("player") ==
-                                       GetMaxPlayerLevel() or
-                                       self.profile.soloSelfFound
+                                       GetMaxPlayerLevel()
                         end,
                         set = function(info, value)
                             SetProfileOption(info, value)
@@ -3215,7 +3255,10 @@ function addon.GetXPBonuses(ignoreBuffs,playerLevel)
     if addon.game == "RETAIL" then
         local cloakBonus = C_CurrencyInfo.GetCurrencyInfo(3001).quantity
         local warModeBonus = (C_PvP.IsWarModeActive() or CheckBuff(282559) or CheckBuff(269083) or CheckBuff(289954)) and C_PvP.GetWarModeRewardBonus() or 0
-        calculatedRate = calculatedRate + (cloakBonus + warModeBonus)/100
+        local warbandBuff = C_UnitAuras.GetPlayerAuraBySpellID(430191)
+        --1,2: xp buff, 3: max level
+        local warbandBonus = warbandBuff and warbandBuff.points[1] or 0
+        calculatedRate = calculatedRate + (cloakBonus + warModeBonus + warbandBonus)/100
         return calculatedRate
     elseif addon.game == "WOTLK" then
         local itemQuality
@@ -3311,7 +3354,7 @@ function addon.settings:DetectXPRate(softUpdate)
     if not addon.settings.profile.enableAutomaticXpRate then
         return
     elseif addon.gameVersion < 20000 then
-        local season = (C_Seasons and C_Seasons.HasActiveSeason() and C_Seasons.GetActiveSeason()) or CheckBuff(362859) and 1
+        local season = addon.GetSeason() or CheckBuff(362859) and 1
 
         if season == addon.settings.profile.season then return end
 

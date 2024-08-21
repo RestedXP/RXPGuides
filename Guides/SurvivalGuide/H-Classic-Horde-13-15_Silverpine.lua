@@ -330,29 +330,34 @@ step << Warlock/Mage/Priest
     .use 4786
     .itemcount 4786,1
     .xp <15,1
+    .equip 6,4786
 step << Hunter
     #completewith Shackles
     +Equip the |T135490:0|t[|cRXP_FRIENDLY_Fine Longbow|r] 
     .use 11304
     .itemcount 11304,1
     .xp <14,1
+    .equip 18,11304
 step << Hunter/Rogue
     #completewith Shackles
     +Equip the |T132539:0|t[|cRXP_FRIENDLY_Agile Boots|r]
     .use 4788
     .itemcount 4788,1
     .xp <15,1
+    .equip 8,4788
 step << Shaman/Warrior/Druid
     #completewith Shackles
     +Equip the |T132539:0|t[|cRXP_FRIENDLY_Agile Boots|r]
     .use 4788
     .itemcount 4788,1
     .xp <15,1
+    .equip 8,4788
 step << Shaman/Warrior/Druid
     #completewith Shackles
     +Equip the |T132537:0|t[|cRXP_FRIENDLY_Stable Boots|r]
     .use 4789
     .itemcount 4789,1
+    .equip 8,4789
 step
     #completewith Shackles
     .goto Silverpine Forest,44.20,38.17,15,0
@@ -747,7 +752,7 @@ step
     .complete 424,1 --Head of Grimson (1)
     .target Grimson the Pale
     .group 2
-step
+step << skip
     .goto Silverpine Forest,58.12,45.50
     .goto Silverpine Forest,44.29,41.09,30 >>|cRXP_WARN_Jump onto the wooden wheel. Perform a Logout Skip by logging out and back in. If you don't manage to do this, run back to The Sepulcher|r
     .link https://www.youtube.com/watch?v=uD2CUb3rdQ0&ab >> |cRXP_WARN_CLICK HERE for an example|r

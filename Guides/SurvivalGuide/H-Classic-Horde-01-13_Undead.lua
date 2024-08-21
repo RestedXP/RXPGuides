@@ -506,7 +506,7 @@ step << Warlock
     #softcore
     #completewith ScarletC
     .cast 688 >>|cRXP_WARN_Cast|r |T136218:0|t[Summon Imp]
-step
+step << skip
     #hardcore
     #completewith next
     >>|cRXP_WARN_Perform a jumping Logout Skip by jumping off something in the cave, then pressing your Camp macro|r
@@ -2600,7 +2600,7 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Carendin|r
     .turnin 1471 >>Turn in The Binding
     .target Carendin Halgar
-step << Warlock
+step << skip --Warlock
     .goto Undercity,84.86,20.34
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Perform a Logout Skip by positioning your character on the highest part of the lowest staircase until it looks like they're floating, then logging out and back in|r
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_CLICK HERE for an example|r
@@ -3229,10 +3229,15 @@ step << Warrior
     .complete 1821,4 --Agamand Family Sword (1)
     .isOnQuest 1821
     .group 2
-step
+step << skip
     .goto Tirisfal Glades,51.68,25.67
     .goto Tirisfal Glades,56.24,49.42,30 >>|cRXP_WARN_Jump onto one of the weapon racks. Perform a Logout Skip by logging out and back in|r
     .link https://www.youtube.com/watch?v=bH_NYmWf8Lc&ab >> |cRXP_WARN_CLICK HERE for an example|r
+    .isQuestComplete 408
+    .group
+step
+    #completewith NewPlagueFinal
+    .subzone 159 >>Travel to Brill
     .isQuestComplete 408
     .group
 step
@@ -3265,6 +3270,7 @@ step
     .target Captured Scarlet Zealot
     .isQuestTurnedIn 365
 step
+    #label NewPlagueFinal
     .goto Tirisfal Glades,61.94,51.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Captured Mountaineer|r downstairs in the back of the inn
     .turnin 492 >> Turn in A New Plague

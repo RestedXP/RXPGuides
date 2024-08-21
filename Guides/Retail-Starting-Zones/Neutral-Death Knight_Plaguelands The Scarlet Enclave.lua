@@ -7,8 +7,8 @@ RXPGuides.RegisterGuide([[
 #name 1Retail-Alliance-Death Knight_Plaguelands The Scarlet Enclave << Alliance
 #name 1Retail-Horde-Death Knight_Plaguelands The Scarlet Enclave << Horde
 #displayname Death Knight Plaguelands
-#next RestedXP Alliance 10-60\1A_Elwynn Forest << Alliance
-#next RestedXP Horde 10-60\1 BfA Intro << Horde
+#next RestedXP Speedrun Guide\a) The Waking Shores Fresh (A) << Alliance
+#next RestedXP Speedrun Guide\a) The Waking Shores Fresh (H) << Horde
 #defaultfor DK !Pandaren !KulTiran !DarkIronDwarf !LightforgedDraenei !Mechagnome !VoidElf !HighmountainTauren !ZandalariTroll !Nightborne !Vulpera !MagharOrc
 
 <<DK !Pandaren !KulTiran !DarkIronDwarf !LightforgedDraenei !Mechagnome !VoidElf !HighmountainTauren !ZandalariTroll !Nightborne !Vulpera !MagharOrc

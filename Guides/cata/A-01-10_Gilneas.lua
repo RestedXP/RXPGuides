@@ -645,6 +645,16 @@ step
     .target Jack "All Trades" Derrington
     .skipgossip 50247,2,3,2
     .train 2366,3 --Herbalism
+step << Hunter
+    .goto 179,38.032,63.359
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Huntsman Blake|r
+    .trainer >> Train your class spells
+    .target Huntsman Blake
+step << Warrior
+    .goto 179,38.278,63.457
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Cleese|r
+    .trainer >> Train your class spells
+    .target Sergeant Cleese
 step
     #completewith INOG
     #optional
@@ -661,6 +671,31 @@ step
     .target Samantha Buckley
     .train 2575,3 --Mining
     .subzoneskip 4786,1
+step << Priest
+    .goto 179,36.015,64.943
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sister Almyra|r
+    .trainer >> Train your class spells
+    .target Sister Almyra
+step << Druid
+    .goto 179,36.276,64.123
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celestine of the Harvest|r
+    .trainer >> Train your class spells
+    .target Celestine of the Harvest
+step << Mage
+    .goto 179,36.099,63.825
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Myriam Spellwaker|r
+    .trainer >> Train your class spells
+    .target Myriam Spellwaker
+step << Warlock
+    .goto 179,35.824,63.866
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vitus Darkwalker|r
+    .trainer >> Train your class spells
+    .target Vitus Darkwalker
+step << Rogue
+    .goto 179,36.735,65.379
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loren the Fence|r
+    .trainer >> Train your class spells
+    .target Loren the Fence
 step
     #label INOG
     .goto 179,32.77,66.39
@@ -1239,6 +1274,41 @@ step
 step
     #completewith next
     .hs >> Hearth to Duskhaven
+step << Priest
+    .goto 179,36.015,64.943
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sister Almyra|r
+    .trainer >> Train your class spells
+    .target Sister Almyra
+step << Druid
+    .goto 179,36.276,64.123
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celestine of the Harvest|r
+    .trainer >> Train your class spells
+    .target Celestine of the Harvest
+step << Mage
+    .goto 179,36.099,63.825
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Myriam Spellwaker|r
+    .trainer >> Train your class spells
+    .target Celestine of the Harvest
+step << Warlock
+    .goto 179,35.824,63.866
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vitus Darkwalker|r
+    .trainer >> Train your class spells
+    .target Vitus Darkwalker
+step << Rogue
+    .goto 179,36.735,65.379
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loren the Fence|r
+    .trainer >> Train your class spells
+    .target Loren the Fence
+step << Hunter
+    .goto 179,38.032,63.359
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Huntsman Blake|r
+    .trainer >> Train your class spells
+    .target Huntsman Blake
+step << Warrior
+    .goto 179,38.278,63.457
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Cleese|r
+    .trainer >> Train your class spells
+    .target Sergeant Cleese
 step
     .goto 179,37.63,65.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r
@@ -1367,7 +1437,7 @@ step
     .turnin 24472 >>Turn in Introductions Are in Order
     .accept 24483 >>Accept Stormglen
 	.target Prince Liam Greymane
-step
+step << !Mage
     #optional
     #completewith next
     .goto 179,53.19,84.01,30,0
@@ -1375,6 +1445,11 @@ step
     .goto 179,58.49,91.88,30,0
     .goto 179,59.33,92.34,12,0
     .goto 179,59.84,91.92,6 >>Enter |cRXP_FRIENDLY_Gwen Armstead|r's house in Stormglen
+step << Mage
+    .goto 179,59.073,92.955
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Myriam Spellwaker|r
+    .trainer >> Train your class spells
+    .target Myriam Spellwaker
 step
     .goto 179,59.86,91.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwen Armstead|r inside
@@ -1393,11 +1468,36 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lorna Crowley|r inside
     .accept 24495 >>Accept Pieces of the Past
 	.target Lorna Crowley
-step
-    #optional
-    #requires Stormglen
-    #completewith next
-    .goto 179,60.44,91.30,8 >>Exit the house
+step << Priest
+    .goto 179,60.482,91.587
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sister Almyra|r upstairs
+    .trainer >> Train your class spells
+    .target Sister Almyra
+step << Druid
+    .goto 179,60.002,92.230
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Celestine of the Harvest|r
+    .trainer >> Train your class spells
+    .target Celestine of the Harvest
+step << Warrior
+    .goto 179,59.500,91.003
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant Cleese|r
+    .trainer >> Train your class spells
+    .target Sergeant Cleese
+step << Rogue
+    .goto 179,60.255,90.426
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Loren the Fence|r
+    .trainer >> Train your class spells
+    .target Loren the Fence
+step << Hunter
+    .goto 179,60.468,90.790
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Huntsman Blake|r
+    .trainer >> Train your class spells
+    .target Huntsman Blake  
+step << Warlock
+    .goto 179,61.723,91.088
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vitus Darkwalker|r
+    .trainer >> Train your class spells
+    .target Vitus Darkwalker
 step
     #sticky
     #requires Stormglen

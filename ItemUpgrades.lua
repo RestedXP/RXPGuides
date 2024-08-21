@@ -468,7 +468,20 @@ local function TooltipSetItem(tooltip, ...)
 
     local comparisons = addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
 
-    if not comparisons or next(comparisons) == nil then return end
+    if not comparisons or next(comparisons) == nil then
+        if addon.settings.profile.enableTotalEP then
+            tooltip:AddLine(fmt("%s - %s", addon.title, _G.ITEM_UPGRADE))
+
+            local item = addon.itemUpgrades:GetItemData(itemLink, tooltip)
+
+            if item then
+                tooltip:AddLine(fmt("  Total EP: %s",
+                                    addon.Round(item.totalWeight, 2)))
+            end
+        end
+        return
+
+    end
     local lines = {}
 
     local ratioText
@@ -483,11 +496,23 @@ local function TooltipSetItem(tooltip, ...)
 
         if data.itemEquipLoc and data.itemEquipLoc == 'INVTYPE_WEAPONOFFHAND' then
             tinsert(lines,
-                    fmt("  %s: %s (%s)", data['ItemLink'] or _G.UNKNOWN,
-                        ratioText, _G.INVTYPE_WEAPONOFFHAND))
+                    fmt("  %s: %s / +%s EP (%s)",
+                        data['ItemLink'] or _G.UNKNOWN, ratioText,
+                        addon.Round(data.WeightIncrease, 2),
+                        _G.INVTYPE_WEAPONOFFHAND))
         elseif data.ItemLink ~= _G.EMPTY then
             tinsert(lines,
-                    fmt("  %s: %s", data['ItemLink'] or _G.UNKNOWN, ratioText))
+                    fmt("  %s: %s / +%s EP", data['ItemLink'] or _G.UNKNOWN,
+                        ratioText, addon.Round(data.WeightIncrease, 2)))
+        end
+    end
+
+    if addon.settings.profile.enableTotalEP then
+        local item = addon.itemUpgrades:GetItemData(itemLink, tooltip)
+
+        if item then
+            tinsert(lines,
+                    fmt("  Total EP: %s", addon.Round(item.totalWeight, 2)))
         end
     end
 
@@ -761,6 +786,12 @@ local function IsWeaponSlot(itemEquipLoc)
             'INVTYPE_WEAPONMAINHAND' or itemEquipLoc == 'INVTYPE_WEAPONOFFHAND' or
             itemEquipLoc == 'INVTYPE_THROWN' or itemEquipLoc ==
             'INVTYPE_RANGEDRIGHT'
+end
+
+local function IsMeleeSlot(itemEquipLoc)
+    return itemEquipLoc == 'INVTYPE_WEAPON' or itemEquipLoc ==
+               'INVTYPE_2HWEAPON' or itemEquipLoc == 'INVTYPE_WEAPONMAINHAND' or
+               itemEquipLoc == 'INVTYPE_WEAPONOFFHAND'
 end
 
 local function IsUsableForClass(itemSubTypeID, itemEquipLoc)
@@ -1201,6 +1232,7 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
         if ratio or equippedItemLink == _G.EMPTY or equippedItemLink == _G.NONE then
             tinsert(comparisons, {
                 ['Ratio'] = ratio,
+                ['TotalWeight'] = comparedData.totalWeight,
                 ['WeightIncrease'] = weightIncrease,
                 ['ItemLink'] = equippedItemLink or _G.UNKNOWN, -- Pass "Unknown" for debugging
                 ['itemEquipLoc'] = itemEquipLoc, -- Is actually slotID for rings/trinkets
@@ -1248,7 +1280,6 @@ local ahSession = {
     -- Cannot cache to RXPCData, because comparisons are mutable and embedded in weighting
     scanData = {},
 
-    windowOpen = false,
     scanPage = 0,
     scanResults = 0,
     scanType = AuctionFilterButtons["Armor"],
@@ -1260,11 +1291,6 @@ addon.itemUpgrades.AH = addon:NewModule("ItemUpgradesAH", "AceEvent-3.0")
 
 function addon.itemUpgrades.AH:Setup()
     if not addon.settings.profile.enableItemUpgradesAH then return end
-    if not addon.settings.profile.enableBetaFeatures then return end
-
-    addon.settings.enabledBetaFeatures[fmt("%s %s", _G.ENABLE,
-                                           _G.MINIMAP_TRACKING_AUCTIONEER)] =
-        fmt("%s %s", _G.AUCTION_ITEM, _G.SEARCH)
 
     if ahSession.isInitialized then return end
 
@@ -1277,16 +1303,11 @@ function addon.itemUpgrades.AH:Setup()
     ahSession.isInitialized = true
 end
 
-function addon.itemUpgrades.AH:AUCTION_HOUSE_SHOW()
-    ahSession.windowOpen = true
-
-    self:CreateEmbeddedGui()
-end
+function addon.itemUpgrades.AH:AUCTION_HOUSE_SHOW() self:CreateEmbeddedGui() end
 
 function addon.itemUpgrades.AH:AUCTION_HOUSE_CLOSED()
 
     -- Reset session
-    ahSession.windowOpen = false
     ahSession.sentQuery = false
     ahSession.scanPage = 0
     ahSession.scanResults = 0
@@ -1310,19 +1331,28 @@ function addon.itemUpgrades.AH:SearchForSelectedItem()
     return self:SearchForBuyoutItem(ahSession.selectedRow.nodeData)
 end
 
-local function getNameFromLink(itemLink)
-    return string.match(itemLink, "h%[(.*)%]|h")
-end
+function addon.itemUpgrades.AH:SearchForBuyoutItem(itemData)
+    RXPD4 = itemData
+    if not itemData.Name then
+        print("not itemData.name")
+        return
+    end
 
-function addon.itemUpgrades.AH:SearchForBuyoutItem(nodeData)
+    if not _G.AuctionFrame:IsShown() then
+        print("not session.windowOpen")
+        return
+    end
 
-    -- print("SearchForBuyoutItem", nodeData.Name)
+    -- print("SearchForBuyoutItem", itemData.itemLink)
 
     if _G.BrowseResetButton then _G.BrowseResetButton:Click() end
 
-    _G.BrowseName:SetText(getNameFromLink(nodeData.ItemLink))
-    _G.BrowseMinLevel:SetText(nodeData.ItemLevel)
-    _G.BrowseMaxLevel:SetText(nodeData.ItemLevel)
+    _G.BrowseName:SetText('"' .. itemData.Name .. '"')
+
+    if itemData.ItemLevel then
+        _G.BrowseMinLevel:SetText(itemData.ItemLevel)
+        _G.BrowseMaxLevel:SetText(itemData.ItemLevel)
+    end
 
     -- Sort to make item very likely on first page
     -- sortTable, sortColumn, oppositeOrder
@@ -1330,27 +1360,32 @@ function addon.itemUpgrades.AH:SearchForBuyoutItem(nodeData)
     _G.AuctionFrameTab1:Click()
 
     -- Pre-populates UI, so let user retry if server overloaded
-    if CanSendAuctionQuery() then _G.AuctionFrameBrowse_Search() end
+    if CanSendAuctionQuery() then
+        session.sentQuery = true
+        _G.AuctionFrameBrowse_Search()
+    end
 
-    -- TODO scan page handling
+    -- Results get processed async by AUCTION_ITEM_LIST_UPDATE
 end
 
-function addon.itemUpgrades.AH:FindItemOnPage(nodeData)
-    if not nodeData then
-        -- print("FindItemOnPage error: selectedRow nil")
+function addon.itemUpgrades.AH:FindItemAuction(itemData, recursive)
+    if not itemData then
+        -- print("FindItemAuction error: itemData nil")
+        return
+    end
+    if not (itemData.ItemID and itemData.ItemLink and itemData.BuyoutMoney) then
         return
     end
 
-    local resultCount = GetNumAuctionItems("list")
+    local resultCount, totalAuctions = GetNumAuctionItems("list")
 
     if resultCount == 0 then
-        -- print("FindItemOnPage error: no results")
+        -- print("FindItemAuction no results, recursive =", recursive)
         return
     end
 
-    -- print("FindItemOnPage", nodeData.Name, resultCount)
-    local itemLink
-    local buyoutPrice, itemID
+    -- print("FindItemAuction", itemData.Name, resultCount)
+    local itemLink, buyoutPrice, itemID
 
     for i = 1, resultCount do
         itemLink = GetAuctionItemLink("list", i)
@@ -1360,17 +1395,25 @@ function addon.itemUpgrades.AH:FindItemOnPage(nodeData)
             GetAuctionItemInfo("list", i)
         -- print("Evaluating", i, itemLink, buyoutPrice)
 
-        if itemID == nodeData.ItemID and itemLink == nodeData.ItemLink and
-            buyoutPrice == nodeData.BuyoutMoney then
+        if itemID == itemData.ItemID and itemLink == itemData.ItemLink and
+            buyoutPrice == itemData.BuyoutMoney then
             SetSelectedAuctionItem("list", i)
             return i
         end
 
     end
 
-    -- Shouldn't need to handle Pagination, sorted by cheapest which is the goal
-    --  May hit issues if 10+ bid-only
-    -- Rely on BrowseNextPageButton:Click() :IsEnabled for easy pagination handling
+    -- Rely on BrowseNextPageButton:IsEnabled() for easy pagination handling
+    if _G.BrowseNextPageButton:IsEnabled() then
+        -- If next button is enabled, and we're down here; then auction not found
+        -- Additionally, the next page button is disabled on final page, so no need to track count
+        _G.BrowseNextPageButton:Click()
+        return self:FindItemAuction(itemData, true)
+    else
+        -- If next page not enabled, and we're here; then no results at all
+        -- print("FindItemAuction no matches in", totalAuctions, "results")
+        return nil
+    end
 end
 
 -- Triggers each time the scroll panel is updated
@@ -1379,7 +1422,7 @@ end
 function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
     -- TODO prevent overwriting/blocking full scan
     if ahSession.selectedRow and ahSession.selectedRow.nodeData then
-        self:FindItemOnPage(ahSession.selectedRow.nodeData)
+        self:FindItemAuction(ahSession.selectedRow.nodeData)
     end
 
     if not ahSession.sentQuery then return end
@@ -1447,6 +1490,7 @@ end
 function addon.itemUpgrades.AH:Scan()
     -- Prevent double calls
     if ahSession.sentQuery then return end
+    if not AuctionCategories then return end -- AH frame isn't loaded yet
 
     -- TODO use better queueing
     -- TODO abort on multiple retries
@@ -1477,7 +1521,7 @@ local function calculate(itemLink, scanData)
 
     -- Should only have queried usable items, so not intentionally nil
     if not itemData then
-        print("itemData nil", itemLink)
+        -- print("itemData nil", itemLink)
         return
     end
 
@@ -1532,6 +1576,7 @@ local function analyzeSlotUpgrade(scanData, itemLink, bAS)
         bAS.best.name = scanData.name
         bAS.best.level = scanData.level
         bAS.best.weightIncrease = scanData.weightIncrease
+        bAS.best.totalWeight = scanData.totalWeight
 
         bAS.best.lowestPrice = ahSession.scanData[itemLink].lowestPrice
     end
@@ -1548,6 +1593,7 @@ local function analyzeSlotUpgrade(scanData, itemLink, bAS)
         bAS.budget.name = scanData.name
         bAS.budget.level = scanData.level
         bAS.budget.weightIncrease = scanData.weightIncrease
+        bAS.budget.totalWeight = scanData.totalWeight
 
         bAS.budget.lowestPrice = ahSession.scanData[itemLink].lowestPrice
     end
@@ -1561,7 +1607,7 @@ function addon.itemUpgrades.AH:Analyze()
 
     -- We already know all of this is usable, so just care about slots
     for invEquipType, slotId in pairs(session.equippableSlots) do
-        if type(slotId) == "table" then
+        if type(slotId) == "table" then -- ring or trinket slot
             for j, _ in pairs(slotId) do
                 ahSession.bestAnalysis[j] = {
                     slotName = _G[invEquipType],
@@ -1569,6 +1615,9 @@ function addon.itemUpgrades.AH:Analyze()
                     budget = {rwpc = 0, lowestPrice = 0, itemLink = nil} -- Biggest upgrade ratio / copper
                 }
             end
+        elseif IsMeleeSlot(invEquipType) then
+            -- TODO re-enable after fixing melee weapon comparison logic, highly complex because of MH+OH vs 2H vs weapon skills
+            -- print("Ignoring weapons", slotId, invEquipType)
         else
             ahSession.bestAnalysis[slotId] = {
                 slotName = _G[invEquipType],
@@ -1645,10 +1694,15 @@ local function setKindIcon(frame, image)
 end
 
 local function getColorizedName(itemLink, itemName)
+    if not (itemLink and itemName) then return end
     local quality = C_Item.GetItemQualityByID(itemLink)
-    local h = ITEM_QUALITY_COLORS[quality].hex
+    if quality then
+        local h = ITEM_QUALITY_COLORS[quality].hex
 
-    return h .. itemName .. '|r'
+        return h .. itemName .. '|r'
+    end
+
+    return itemName
 end
 
 local function prettyPrintUpgradeColumn(data)
@@ -1657,10 +1711,11 @@ local function prettyPrintUpgradeColumn(data)
     --      addon.Round(data.weightIncrease, 2))
 
     if data.ratio < 0 then
-        return fmt("%s / %s EP", _G.EMPTY, addon.Round(data.weightIncrease, 2))
+        return fmt("%s / +%s EP (BIS)", _G.EMPTY,
+                   addon.Round(data.weightIncrease, 2))
     end
 
-    return fmt("%s / %s EP", prettyPrintRatio(data.ratio),
+    return fmt("%s / +%s EP (BIS)", prettyPrintRatio(data.ratio),
                addon.Round(data.weightIncrease, 2))
 end
 
@@ -1669,8 +1724,8 @@ local function prettyPrintBudgetColumn(data)
 
     if epPerCopper == 0 then epPerCopper = addon.Round(data.rwpc, 4) end
 
-    return fmt("%s / %s (EP/c)", prettyPrintRatio(data.ratio),
-               addon.Round(data.weightIncrease, 2))
+    return fmt("%s / %s EP/c (BIS/%s)", prettyPrintRatio(data.ratio),
+               epPerCopper, _G.ICON_TAG_RAID_TARGET_STAR3)
 end
 
 function addon.itemUpgrades.AH.RowOnEnter(row)
@@ -1716,7 +1771,7 @@ local function Initializer(frame, data)
         f.nodeData = d -- TODO minimize reference
         f.ItemLink = d.ItemLink
         f.ItemID = d.ItemID
-        f.Name:SetText(d.Name)
+        f.Name:SetText(d.ColorizedName)
         f.ItemLevel.Text:SetText(d.ItemLevel)
         f.UpdateEP.Text:SetText(d.UpdateEPText)
         f.ItemIcon:SetNormalTexture(d.ItemIcon)
@@ -1738,7 +1793,7 @@ local function Initializer(frame, data)
         f.nodeData = d
         f.ItemLink = d.ItemLink
         f.ItemID = d.ItemID
-        f.Name:SetText(d.Name)
+        f.Name:SetText(d.ColorizedName)
         f.ItemLevel.Text:SetText(d.ItemLevel)
         f.UpdateEP.Text:SetText(d.UpdateEPText)
         f.ItemIcon:SetNormalTexture(d.ItemIcon)
@@ -1769,25 +1824,17 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
     _G.RXP_IU_AH_Title:SetText(fmt("%s - %s", addon.title,
                                    _G.MINIMAP_TRACKING_AUCTIONEER))
 
-    local scrollBox = CreateFrame("Frame", 'RXP_IU_AH_ScrollFrame',
-                                  ahSession.displayFrame, "WowScrollBoxList")
-
-    scrollBox:SetPoint("TOPLEFT", 20, -78)
-    scrollBox:SetPoint("BOTTOMRIGHT", 0, 37)
-
-    local ScrollBar = CreateFrame("EventFrame", nil, ahSession.displayFrame,
-                                  "WowTrimScrollBar")
+    local ScrollBar = ahSession.displayFrame.ScrollBox.ScrollBar
     ScrollBar:SetHideIfUnscrollable(false)
-    ScrollBar:SetPoint("TOPRIGHT", scrollBox, "TOPRIGHT", -9, 6)
-    ScrollBar:SetPoint("BOTTOMRIGHT", scrollBox, "BOTTOMRIGHT")
 
     local DataProvider = CreateDataProvider()
     local ScrollView = CreateScrollBoxListLinearView()
     ScrollView:SetDataProvider(DataProvider)
-    ScrollView:SetElementExtent(37 * 2 + 19)
+    ScrollView:SetElementExtent(19 + 37 * 2)
     ahSession.displayFrame.DataProvider = DataProvider
 
-    ScrollUtil.InitScrollBoxListWithScrollBar(scrollBox, ScrollBar, ScrollView)
+    ScrollUtil.InitScrollBoxListWithScrollBar(ahSession.displayFrame.ScrollBox,
+                                              ScrollBar, ScrollView)
 
     ScrollView:SetElementInitializer("RXP_IU_AH_ItemBlock", Initializer)
 
@@ -1886,9 +1933,12 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
                     ItemID = data.best.itemID,
                     ItemKindIcon = "Interface/AddOns/" .. addonName ..
                         "/Textures/rxp_logo-64",
-                    Name = getColorizedName(data.best.itemLink, data.best.name),
+                    Name = data.best.name,
+                    ColorizedName = getColorizedName(data.best.itemLink,
+                                                     data.best.name),
                     ItemLevel = data.best.level,
                     UpdateEPText = prettyPrintUpgradeColumn(data.best),
+                    TotalWeight = data.best.totalWeight,
                     BuyoutMoney = data.best.lowestPrice,
                     ItemIcon = data.best.itemIcon
                 }
@@ -1902,10 +1952,12 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults()
                         ItemLink = data.budget.itemLink,
                         ItemID = data.budget.itemID,
                         ItemKindIcon = 'Interface/GossipFrame/VendorGossipIcon.blp',
-                        Name = getColorizedName(data.budget.itemLink,
-                                                data.budget.name),
+                        Name = data.budget.name,
+                        ColorizedName = getColorizedName(data.budget.itemLink,
+                                                         data.budget.name),
                         ItemLevel = data.budget.level,
                         UpdateEPText = prettyPrintBudgetColumn(data.budget),
+                        TotalWeight = data.budget.totalWeight,
                         BuyoutMoney = data.budget.lowestPrice,
                         ItemIcon = data.budget.itemIcon
                     }

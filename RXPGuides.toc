@@ -2,7 +2,7 @@
 ## Interface-Mainline: 100107
 ## Interface-Cata: 40400
 ## Interface-Wrath: 30403
-## Interface-Classic: 11501
+## Interface-Classic: 11503
 ## Title: RestedXP Guides
 ## Notes: In-game leveling guides
 ## Author: RestedXP
@@ -11,6 +11,7 @@
 ## SavedVariables: RXPData, RXPDB, RXPSettings
 ## SavedVariablesPerCharacter: RXPCData, RXPCTrackingData, RXPCComms, RXPCSettings
 ## X-Curse-Project-ID: 486246
+## X-Wago-ID: ZKbebq61
 
 libs\embeds.xml
 locale\locales.xml

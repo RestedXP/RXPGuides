@@ -1,4 +1,4 @@
-## Interface: 11501
+## Interface: 11503
 ## Title: RestedXP Guides
 ## Notes: In-game leveling guides
 ## Notes-zhCN: TODO
@@ -8,6 +8,7 @@
 ## SavedVariables: RXPData, RXPDB, RXPSettings
 ## SavedVariablesPerCharacter: RXPCData, RXPCTrackingData, RXPCComms, RXPCSettings
 ## X-Curse-Project-ID: 486246
+## X-Wago-ID: ZKbebq61
 
 libs\embeds.xml
 locale\locales.xml

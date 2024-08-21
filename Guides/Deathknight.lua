@@ -16,15 +16,14 @@ RXPGuides.RegisterGuide([[
 
 step
     .goto ScarletEnclave,51.3,35.1
-.target The Lich King
->>Talk to |cRXP_FRIENDLY_The Lich King|r
+    .target The Lich King
+    >>Talk to |cRXP_FRIENDLY_The Lich King|r
     .accept 12593 >>Accept In Service Of The Lich King
 step
     .goto ScarletEnclave,48.3,28.2
-	>>Talk to Instructor Razuvious to turn in your quest
->>Talk to |cRXP_FRIENDLY_Instructor Razuvious|r
+    >>Talk to |cRXP_FRIENDLY_Instructor Razuvious|r
     .turnin 12593 >>Turn in In Service Of The Lich King
-.target Instructor Razuvious
+    .target Instructor Razuvious
     .accept 12619 >>Accept The Emblazoned Runeblade
 step
     .goto ScarletEnclave,46.8,29.1,40,0
@@ -41,10 +40,9 @@ step
     .complete 12619,1 --Runebladed Sword (1)
 step
     .goto ScarletEnclave,48.3,28.2
-	>>Return to Razuvious
->>Talk to |cRXP_FRIENDLY_Instructor Razuvious|r
+    >>Talk to |cRXP_FRIENDLY_Instructor Razuvious|r
     .turnin 12619 >>Turn in The Emblazoned Runeblade
-.target Instructor Razuvious
+    .target Instructor Razuvious
     .accept 12842 >>Accept Runeforging: Preparation For Battle
 step
     .goto ScarletEnclave,47.9,27.5
@@ -52,10 +50,9 @@ step
     .complete 12842,1 --Weapon emblazoned (1)
 step
     .goto ScarletEnclave,48.3,28.2
-	>>Return to Razuvious
->>Talk to |cRXP_FRIENDLY_Instructor Razuvious|r
+    >>Talk to |cRXP_FRIENDLY_Instructor Razuvious|r
     .turnin 12842 >>Turn in Runeforging: Preparation For Battle
-.target Instructor Razuvious
+    .target Instructor Razuvious
     .accept 12848 >>Accept The Endless Hunger
 step
     .goto ScarletEnclave,48.4,29.0
@@ -63,10 +60,9 @@ step
     .complete 12848,1 --Unworthy Initiate dominated (1)
 step
     .goto ScarletEnclave,48.3,28.2
-	>>Return to Razuvious
->>Talk to |cRXP_FRIENDLY_Instructor Razuvious|r
+    >>Talk to |cRXP_FRIENDLY_Instructor Razuvious|r
     .turnin 12848 >>Turn in The Endless Hunger
-.target Instructor Razuvious
+    .target Instructor Razuvious
     .accept 12636 >>Accept The Eye Of Acherus
 step << wotlk
     .goto ScarletEnclave,48.67,32.77
@@ -76,10 +72,9 @@ step << wotlk
     .target Alchemist Karloff
 step
     .goto ScarletEnclave,51.3,35.1
-	>>Return to The Lich King
->>Talk to |cRXP_FRIENDLY_The Lich King|r
+    >>Talk to |cRXP_FRIENDLY_The Lich King|r
     .turnin 12636 >>Turn in The Eye Of Acherus
-.target The Lich King
+    .target The Lich King
     .accept 12641 >>Accept Death Comes From On High
 step
 	#label dkeyes
@@ -108,27 +103,24 @@ step
 step
 	#requires dkeyes
     .goto ScarletEnclave,51.3,35.3
-	>>Return to The Lich King
->>Talk to |cRXP_FRIENDLY_The Lich King|r
+    >>Talk to |cRXP_FRIENDLY_The Lich King|r
     .turnin 12641 >>Turn in Death Comes From On High
-.target The Lich King
+    .target The Lich King
     .accept 12657 >>Accept The Might Of The Scourge
 step
 	#completewith next
     .goto ScarletEnclave,50.5,33.4,10 >>Run into the purple portal
 step
     .goto ScarletEnclave,48.871,29.739
-	>>Talk to Darion in the middle of the room on the bottom floor
->>Talk to |cRXP_FRIENDLY_Highlord Darion Mograine|r
+    >>Talk to |cRXP_FRIENDLY_Highlord Darion Mograine|r
     .turnin 12657 >>Turn in The Might Of The Scourge
-.target Highlord Darion Mograine
+    .target Highlord Darion Mograine
     .accept 12850 >>Accept Report To Scourge Commander Thalanor
 step
     .goto ScarletEnclave,51.0,34.6
-	>>Talk to Scourge Commander Thalanor on the floor that you're currently on
->>Talk to |cRXP_FRIENDLY_Scourge Commander Thalanor|r
+    >>Talk to |cRXP_FRIENDLY_Scourge Commander Thalanor|r
     .turnin 12850 >>Turn in Report To Scourge Commander Thalanor
-.target Scourge Commander Thalanor
+    .target Scourge Commander Thalanor
     .accept 12670 >>Accept The Scarlet Harvest
 step
 	#completewith next
@@ -136,38 +128,33 @@ step
     .fly >>Click on the Scourge Gryphon to go to Death's Breach
 step
     .goto ScarletEnclave,52.3,33.9
-	>>Talk to Prince Valanar
->>Talk to |cRXP_FRIENDLY_Prince Valanar|r
+    >>Talk to |cRXP_FRIENDLY_Prince Valanar|r
     .turnin 12670 >>Turn in The Scarlet Harvest
-.target Prince Valanar
+    .target Prince Valanar
     .accept 12678 >>Accept If Chaos Drives, Let Suffering Hold The Reins
 step
 	#completewith next
     .goto ScarletEnclave,53.2,33.5,0
     .goto ScarletEnclave,51.4,36.1,0
-	>>Talk to Salanar patrolling on the road
-.target Salanar the Horseman
->>Talk to |cRXP_FRIENDLY_Salanar the Horseman|r
+    .target Salanar the Horseman
+    >>Talk to |cRXP_FRIENDLY_Salanar the Horseman|r
     .accept 12680 >>Accept Grand Theft Palomino
 step
     .goto ScarletEnclave,54.5,34.2
-	>>Talk to Olrun in the body pit
-.target Olrun the Battlecaller
->>Talk to |cRXP_FRIENDLY_Olrun the Battlecaller|r
+    .target Olrun the Battlecaller
+    >>Talk to |cRXP_FRIENDLY_Olrun the Battlecaller|r
     .accept 12733 >>Accept Death's Challenge
 step
     .goto ScarletEnclave,53.2,33.5,30,0
     .goto ScarletEnclave,51.4,36.1
-	>>Talk to Salanar patrolling on the road
-.target Salanar the Horseman
->>Talk to |cRXP_FRIENDLY_Salanar the Horseman|r
+    .target Salanar the Horseman
+    >>Talk to |cRXP_FRIENDLY_Salanar the Horseman|r
     .accept 12680 >>Accept Grand Theft Palomino
 step
     .goto ScarletEnclave,53.7,36.3,50,0
     .goto ScarletEnclave,52.1,38.2
-	>>Talk to Orithos (the patrolling skeleton archer)
-.target Orithos the Sky Darkener
->>Talk to |cRXP_FRIENDLY_Orithos the Sky Darkener|r
+    .target Orithos the Sky Darkener
+    >>Talk to |cRXP_FRIENDLY_Orithos the Sky Darkener|r
     .accept 12679 >>Accept Tonight We Dine In Havenshire
 step
 	#completewith next
@@ -187,10 +174,9 @@ step
 step
     .goto ScarletEnclave,53.2,33.5,30,0
     .goto ScarletEnclave,51.4,36.1
-	>>Talk to Salanar patrolling on the road
->>Talk to |cRXP_FRIENDLY_Salanar the Horseman|r
+    >>Talk to |cRXP_FRIENDLY_Salanar the Horseman|r
     .turnin 12680 >>Turn in Grand Theft Palomino
-.target Salanar the Horseman
+    .target Salanar the Horseman
     .accept 12687 >>Accept Into the Realm of Shadows
 step
 	#completewith next
@@ -203,9 +189,8 @@ step
 step
     .goto ScarletEnclave,53.2,33.5,30,0
     .goto ScarletEnclave,51.4,36.1
-	>>Talk to Salanar patrolling on the road
-.target Salanar the Horseman
->>Talk to |cRXP_FRIENDLY_Salanar the Horseman|r
+    .target Salanar the Horseman
+    >>Talk to |cRXP_FRIENDLY_Salanar the Horseman|r
     .turnin 12687 >>Turn in Into the Realm of Shadows
 step
 	#completewith next
@@ -237,36 +222,37 @@ step
     .goto ScarletEnclave,51.0,33.6,30,0
     .goto ScarletEnclave,53.8,30.9,30,0
     .goto ScarletEnclave,51.9,35.4
-	>>Around Death's Breach, talk to and duel 5 Death Knight Initiates. Do not run out of the 30 yard duel range
+    >>Talk to a |cRXP_FRIENDLY_Death Knight Initiate|r then defeat them in a duel
+	>>|cRXP_WARN_Do not run out of the 30 yard duel range|r
     .complete 12733,1 --Death Knights defeated in a duel (5)
 	.skipgossip
+    .target Death Knight Initiate
 step
 	#requires Citizens
 	>>Ride back to Death's Breach
-.target Orithos the Sky Darkener
->>Talk to |cRXP_FRIENDLY_Orithos the Sky Darkener|r
+    .target Orithos the Sky Darkener
+    >>Talk to |cRXP_FRIENDLY_Orithos the Sky Darkener|r
     .turnin 12679 >>Turn in Tonight We Dine In Havenshire
     .goto ScarletEnclave,53.3,36.8
-.target Olrun the Battlecaller
->>Talk to |cRXP_FRIENDLY_Olrun the Battlecaller|r
+    .target Olrun the Battlecaller
+    >>Talk to |cRXP_FRIENDLY_Olrun the Battlecaller|r
     .turnin 12733 >>Turn in Death's Challenge
     .goto ScarletEnclave,54.5,34.5
->>Talk to |cRXP_FRIENDLY_Prince Valanar|r
+    >>Talk to |cRXP_FRIENDLY_Prince Valanar|r
     .turnin 12678 >>Turn in If Chaos Drives, Let Suffering Hold The Reins
-.target Prince Valanar
     .accept 12697 >>Accept Gothik the Harvester
+    .target Prince Valanar
     .goto ScarletEnclave,52.273,33.967
 step
     .goto ScarletEnclave,54.0,35.0
-	>>Talk to Gothik the Harvester
->>Talk to |cRXP_FRIENDLY_Gothik the Harvester|r
+    >>Talk to |cRXP_FRIENDLY_Gothik the Harvester|r
     .turnin 12697 >>Turn in Gothik the Harvester
-.target Gothik the Harvester
+    .target Gothik the Harvester
     .accept 12698 >>Accept The Gift That Keeps On Giving
 step
 	#completewith next
 	.use 39253
-	+Run inside the Havenshire Mines. Use your Gift of the Harvester in your bags on Scarlet Miners that are NOT in combat until you have 5 Ghouls following you, then return to Death's Breach.
+	+Run inside the Havenshire Mines. Use your Gift of the Harvester in your bags on |cRXP_FRIENDLY_Scarlet Miners|r that are NOT in combat until you have 5 Ghouls following you, then return to Death's Breach.
     .goto ScarletEnclave,58.4,30.9,30,0
     .goto ScarletEnclave,60.0,31.6,30,0
     .goto ScarletEnclave,61.6,27.5,0
@@ -278,10 +264,9 @@ step
     .accept 12700 >>Accept An Attack Of Opportunity
 step
     .goto ScarletEnclave,52.273,33.967
-	>>Return to Valanar
->>Talk to |cRXP_FRIENDLY_Prince Valanar|r
+    >>Talk to |cRXP_FRIENDLY_Prince Valanar|r
     .turnin 12700 >>Turn in An Attack Of Opportunity
-.target Prince Valanar
+    .target Prince Valanar
     .accept 12701 >>Accept Massacre At Light's Point
 step
     .goto ScarletEnclave,60.2,32.7,40,0
@@ -295,10 +280,9 @@ step
 	.vehicle >> When you have killed all 100 defenders, use "Skeletal Gryphon Escape" (3) to return to Death's Reach
 step
     .goto ScarletEnclave,52.3,34.1
-	>>Return to Valanar
->>Talk to |cRXP_FRIENDLY_Prince Valanar|r
+    >>Talk to |cRXP_FRIENDLY_Prince Valanar|r
     .turnin 12701 >>Turn in Massacre At Light's Point
-.target Prince Valanar
+    .target Prince Valanar
     .accept 12706 >>Accept Victory At Death's Breach!
 step << skip
     .hs >> Hearth back to Acherus (Your Hearth is automatically set here)
@@ -312,34 +296,32 @@ step
 	.fly >> Take one of the Scourge Gryphons back up to Acherus
 step
     .goto ScarletEnclave,48.9,29.9
-	>>Return to Darion Mograine
->>Talk to |cRXP_FRIENDLY_Highlord Darion Mograine|r
+    >>Talk to |cRXP_FRIENDLY_Highlord Darion Mograine|r
     .turnin 12706 >>Turn in Victory At Death's Breach!
-.target Highlord Darion Mograine
+    .target Highlord Darion Mograine
     .accept 12714 >>Accept The Will Of The Lich King
 step
     .goto ScarletEnclave,47.472,26.550
-.target Lord Thorval
->>Talk to |cRXP_FRIENDLY_Lord Thorval|r
+    .target Lord Thorval
+    >>Talk to |cRXP_FRIENDLY_Lord Thorval|r
 	.turnin 12849 >>Turn in The Power of Blood, Frost And Unholy
 	.trainer >> Train your class spells
 step
     .goto ScarletEnclave,47.472,26.550
-.target Lord Thorval
->>Talk to |cRXP_FRIENDLY_Lord Thorval|r
+    .target Lord Thorval
+    >>Talk to |cRXP_FRIENDLY_Lord Thorval|r
 	.turnin 12849 >>Turn in The Power of Blood, Frost And Unholy
 step
 	#completewith next
-.goto ScarletEnclave,52.1,35.0
+    .goto ScarletEnclave,52.1,35.0
     .fly >>Click the Gryphon to return to Death's Breach
 step
     .goto ScarletEnclave,53.4,36.5
-	>>Talk to Valanar. He's moved closer to the mountain edge
->>Talk to |cRXP_FRIENDLY_Prince Valanar|r
+    >>Talk to |cRXP_FRIENDLY_Prince Valanar|r
     .turnin 12714 >>Turn in The Will Of The Lich King
-.target Prince Valanar
+    .target Prince Valanar
     .accept 12715 >>Accept The Crypt of Remembrance
-step
+step << wotlk
     .goto ScarletEnclave,52.9,35.2
     >> Buy 40 Corpse Dust
     .collect 37201,40
@@ -349,20 +331,19 @@ step
     .turnin 12711 >>Turn in Abandoned Mail
 step
     .goto ScarletEnclave,55.8,52.4
-	>>Talk to Noth in the field in front of the cauldron
-.target Noth the Plaguebringer
->>Talk to |cRXP_FRIENDLY_Noth the Plaguebringer|r
+    .target Noth the Plaguebringer
+    >>Talk to |cRXP_FRIENDLY_Noth the Plaguebringer|r
     .accept 12716 >>Accept The Plaguebringer's Request
 step
     .goto ScarletEnclave,53.9,58.1,15,0
 	>>Head to the bottom of the Crypt of Remembrance
->>Talk to |cRXP_FRIENDLY_Prince Keleseth|r
+    >>Talk to |cRXP_FRIENDLY_Prince Keleseth|r
     .turnin 12715 >>Turn in The Crypt of Remembrance
-.target Prince Keleseth
+    .target Prince Keleseth
     .accept 12719 >>Accept Nowhere To Run And Nowhere To Hide
     .goto ScarletEnclave,54.3,57.4
-.target Baron Rivendare
->>Talk to |cRXP_FRIENDLY_Baron Rivendare|r
+    .target Baron Rivendare
+    >>Talk to |cRXP_FRIENDLY_Baron Rivendare|r
     .accept 12722 >>Accept Lambs To The Slaughter
     .goto ScarletEnclave,54.6,57.4
 step
@@ -381,7 +362,7 @@ step
 step
     .goto ScarletEnclave,53.9,58.1,15,0
 	>>Ride back to the Crypt
->>Talk to |cRXP_FRIENDLY_Prince Keleseth|r
+    >>Talk to |cRXP_FRIENDLY_Prince Keleseth|r
     .turnin 12719 >>Turn in Nowhere To Run And Nowhere To Hide
 .target Prince Keleseth
     .accept 12720 >>Accept How To Win Friends And Influence Enemies
@@ -437,10 +418,9 @@ step
 	>>Loot the Humanoids of New Avalon for their skulls
     .complete 12716,3 --Crusader Skull (10)
 step
-	>>Talk to Noth the Plaguebringer, then talk to the Cauldron
->>Talk to |cRXP_FRIENDLY_Noth the Plaguebringer|r
+    >>Talk to |cRXP_FRIENDLY_Noth the Plaguebringer|r
     .turnin 12716 >>Turn in The Plaguebringer's Request
-.target Noth the Plaguebringer
+    .target Noth the Plaguebringer
     .accept 12717 >>Accept Noth's Special Brew
     .goto ScarletEnclave,55.893,52.400
     .turnin 12717 >>Turn in Noth's Special Brew
@@ -453,24 +433,24 @@ step
 step
     .goto ScarletEnclave,53.9,58.1,15,0
 	>>Ride back to the Crypt. Re-Equip your normal weapon. Bind Noth's Special Brew to your bars
-.target Baron Rivendare
->>Talk to |cRXP_FRIENDLY_Baron Rivendare|r
+    .target Baron Rivendare
+    >>Talk to |cRXP_FRIENDLY_Baron Rivendare|r
 	.turnin 12722 >> Turn in Lambs To The Slaughter
 	.goto ScarletEnclave,54.6,57.5
->>Talk to |cRXP_FRIENDLY_Prince Keleseth|r
+    >>Talk to |cRXP_FRIENDLY_Prince Keleseth|r
     .turnin 12720 >>Turn in How To Win Friends And Influence Enemies
-.target Prince Keleseth
+    .target Prince Keleseth
     .accept 12723 >>Accept Behind Scarlet Lines
     .goto ScarletEnclave,54.2,57.4
 step
 	>>Ride to the house, then go upstairs to the second floor
->>Talk to |cRXP_FRIENDLY_Orbaz Bloodbane|r
+    >>Talk to |cRXP_FRIENDLY_Orbaz Bloodbane|r
     .turnin 12723 >>Turn in Behind Scarlet Lines
-.target Orbaz Bloodbane
+    .target Orbaz Bloodbane
     .accept 12724 >>Accept The Path Of The Righteous Crusader
     .goto ScarletEnclave,56.3,79.8
-.target Thassarian
->>Talk to |cRXP_FRIENDLY_Thassarian|r
+    .target Thassarian
+    >>Talk to |cRXP_FRIENDLY_Thassarian|r
     .accept 12725 >>Accept Brothers In Death
     .goto ScarletEnclave,56.3,80.0
 step
@@ -478,9 +458,9 @@ step
     .goto ScarletEnclave,63.0,68.0
 	>>Run down to the cellar of Scarlet Hold and talk to Koltira Deathweaver. Avoid fighting the mobs en route - if you die, let the Val'kyr resurrect you (DO NOT RELEASE)
 	>>Don't defend Koltira after starting the quest, it is not an escort
->>Talk to |cRXP_FRIENDLY_Koltira Deathweaver|r
+    >>Talk to |cRXP_FRIENDLY_Koltira Deathweaver|r
     .turnin 12725 >>Turn in Brothers In Death
-.target Koltira Deathweaver
+    .target Koltira Deathweaver
     .accept 12727 >>Accept Bloody Breakout
 step
 	#completewith next
@@ -510,22 +490,22 @@ step
 	.destroy 39328 >> Delete any leftover Crusader Skulls that you have in your bags
 step
 	>>Return to the 2nd floor of the House
-.target Orbaz Bloodbane
->>Talk to |cRXP_FRIENDLY_Orbaz Bloodbane|r
+    .target Orbaz Bloodbane
+    >>Talk to |cRXP_FRIENDLY_Orbaz Bloodbane|r
     .turnin 12724 >>Turn in The Path Of The Righteous Crusader
     .goto ScarletEnclave,56.3,79.8
->>Talk to |cRXP_FRIENDLY_Thassarian|r
+    >>Talk to |cRXP_FRIENDLY_Thassarian|r
     .turnin 12727 >>Turn in Bloody Breakout
-.target Thassarian
+    .target Thassarian
     .accept 12738 >>Accept A Cry For Vengeance!
     .goto ScarletEnclave,56.3,80.0
 step
     .goto ScarletEnclave,52.6,80.7,40,0
     .goto ScarletEnclave,53.1,82.1
 	>>Ride out of the house to the Chapel. Talk to Plaguefist
->>Talk to |cRXP_FRIENDLY_Knight Commander Plaguefist|r
+    >>Talk to |cRXP_FRIENDLY_Knight Commander Plaguefist|r
     .turnin 12738 >>Turn in A Cry For Vengeance!
-.target Knight Commander Plaguefist
+    .target Knight Commander Plaguefist
     .accept 12748 >>Accept A Special Surprise << Orc
     .accept 12739 >>Accept A Special Surprise << Tauren
     .accept 12742 >>Accept A Special Surprise << Human
@@ -536,6 +516,8 @@ step
     .accept 12747 >>Accept A Special Surprise << BloodElf
     .accept 12749 >>Accept A Special Surprise << Troll
     .accept 12750 >>Accept A Special Surprise << Undead
+    .accept 28649 >>Accept A Special Surprise << Worgen
+    .accept 28650 >>Accept A Special Surprise << Goblin
 step << Orc
     .goto ScarletEnclave,53.8,83.4
 	>>Stand infront of Kug and wait for the RP to finish. Kill him after
@@ -576,11 +558,19 @@ step << Undead
     .goto ScarletEnclave,53.6,83.4
 	>>Stand infront of Antoine and wait for the RP to finish. Kill him after
     .complete 12750,1 -- Antoine Brack (1)
+step << Worgen
+    .goto ScarletEnclave,54.145,83.282
+	>>Stand infront of Lord Harford and wait for the RP to finish. Kill him after
+    .complete 28649,1 -- Lord Harford (1)
+step << Goblin
+    .goto ScarletEnclave,54.111,83.756
+	>>Stand infront of Gally Lumpstain and wait for the RP to finish. Kill him after
+    .complete 28650,1 -- Gally Lumpstain (1)
 step
     .goto ScarletEnclave,53.1,82.1
 	>>Return to Plaguefist
->>Talk to |cRXP_FRIENDLY_Knight Commander Plaguefist|r
-     .turnin 12748 >>Turn in A Special Surprise << Orc
+    >>Talk to |cRXP_FRIENDLY_Knight Commander Plaguefist|r
+    .turnin 12748 >>Turn in A Special Surprise << Orc
     .turnin 12739 >>Turn in A Special Surprise << Tauren
     .turnin 12742 >>Turn in A Special Surprise << Human
     .turnin 12743 >>Turn in A Special Surprise << Nightelf
@@ -590,17 +580,19 @@ step
     .turnin 12747 >>Turn in A Special Surprise << Bloodelf
     .turnin 12749 >>Turn in A Special Surprise << Troll
     .turnin 12750 >>Turn in A Special Surprise << Undead
-.target Knight Commander Plaguefist
+    .turnin 28649 >>Turn in A Special Surprise << Worgen
+    .turnin 28650 >>Turn in A Special Surprise << Goblin
+    .target Knight Commander Plaguefist
 	.accept 12751 >>Accept A Sort Of Homecoming
 step
     .goto ScarletEnclave,56.3,80.0
 	>>Return to the 2nd floor of the house
-.target Thassarian
->>Talk to |cRXP_FRIENDLY_Thassarian|r
+    .target Thassarian
+    >>Talk to |cRXP_FRIENDLY_Thassarian|r
     .turnin 12751 >>Turn in A Sort Of Homecoming
     .goto ScarletEnclave,56.3,80.0
-.target Orbaz Bloodbane
->>Talk to |cRXP_FRIENDLY_Orbaz Bloodbane|r
+    .target Orbaz Bloodbane
+    >>Talk to |cRXP_FRIENDLY_Orbaz Bloodbane|r
     .accept 12754 >>Accept Ambush At The Overlook
     .goto ScarletEnclave,56.3,79.8
 step
@@ -611,23 +603,23 @@ step
 step
     .goto ScarletEnclave,56.3,79.8
 	>>Return to the 2nd floor of the house
->>Talk to |cRXP_FRIENDLY_Orbaz Bloodbane|r
+    >>Talk to |cRXP_FRIENDLY_Orbaz Bloodbane|r
     .turnin 12754 >>Turn in Ambush At The Overlook
-.target Orbaz Bloodbane
+    .target Orbaz Bloodbane
     .accept 12755 >>Accept A Meeting With Fate
 step
     .goto ScarletEnclave,65.6,83.9
-	>>Ride all the way to General Abbendis on the beach
->>Talk to |cRXP_FRIENDLY_High General Abbendis|r
+	>>Ride all the way to |cRXP_FRIENDLY_General Abbendis|r on the beach
+    >>Talk to |cRXP_FRIENDLY_High General Abbendis|r
     .turnin 12755 >>Turn in A Meeting With Fate
-.target High General Abbendis
+    .target High General Abbendis
     .accept 12756 >>Accept The Scarlet Onslaught Emerges
 step
     .goto ScarletEnclave,56.3,79.8
 	>>Return to the 2nd floor of the house
->>Talk to |cRXP_FRIENDLY_Orbaz Bloodbane|r
+    >>Talk to |cRXP_FRIENDLY_Orbaz Bloodbane|r
     .turnin 12756 >>Turn in The Scarlet Onslaught Emerges
-.target Orbaz Bloodbane
+    .target Orbaz Bloodbane
     .accept 12757 >>Accept Scarlet Armies Approach...
 step
 	#completewith next
@@ -635,23 +627,22 @@ step
 step
     .goto ScarletEnclave,48.9,29.9
 	>>Return to Darion Mograine
->>Talk to |cRXP_FRIENDLY_Highlord Darion Mograine|r
+    >>Talk to |cRXP_FRIENDLY_Highlord Darion Mograine|r
     .turnin 12757 >>Turn in Scarlet Armies Approach...
-.target Highlord Darion Mograine
+    .target Highlord Darion Mograine
     .accept 12778 >>Accept The Scarlet Apocalypse
 step
     .goto ScarletEnclave,47.4,26.8
 	.trainer >> Train your class spells
 --X SPELL IDS BASED ON SPECIALIZATION, COPY PASTE THIS FROM EARLIER
 step
-.goto ScarletEnclave,52.0,35.0
- .fly >>Click the Gryphon to return to Death's Breach
+    .goto ScarletEnclave,52.0,35.0
+    .fly >>Click the Gryphon to return to Death's Breach
 step
     .goto ScarletEnclave,53.5,36.8
-	>>Talk to The Lich King who's overlooking Death's Breach
->>Talk to |cRXP_FRIENDLY_The Lich King|r
+    >>Talk to |cRXP_FRIENDLY_The Lich King|r
     .turnin 12778 >>Turn in The Scarlet Apocalypse
-.target The Lich King
+    .target The Lich King
     .accept 12779 >>Accept An End To All Things...
 step
 	#completewith next
@@ -678,18 +669,18 @@ step
 step
 	>>Fly back to The Lich King
     .goto ScarletEnclave,53.5,36.8
->>Talk to |cRXP_FRIENDLY_The Lich King|r
+    >>Talk to |cRXP_FRIENDLY_The Lich King|r
     .turnin 12779 >>Turn in An End To All Things...
-.target The Lich King
+    .target The Lich King
     .accept 12800 >>Accept The Lich King's Command
 step
     .goto ScarletEnclave,49.3,28.7,45,0
     .goto ScarletEnclave,47.1,24.1,45,0
     .goto ScarletEnclave,34.1,30.4
 	>> Run through The Noxious Pass to the north. Ride to Browman Mill and talk to Thalanor
->>Talk to |cRXP_FRIENDLY_Scourge Commander Thalanor|r
+    >>Talk to |cRXP_FRIENDLY_Scourge Commander Thalanor|r
     .turnin 12800 >>Turn in The Lich King's Command
-.target Scourge Commander Thalanor
+    .target Scourge Commander Thalanor
     .accept 12801 >>Accept The Light of Dawn
 step
 	#completewith next
@@ -701,28 +692,26 @@ step
     .complete 12801,1 --The Light of Dawn Uncovered (1)
 step
     .goto Eastern Plaguelands,39,39
->>Talk to |cRXP_FRIENDLY_Highlord Darion Mograine|r
+    >>Talk to |cRXP_FRIENDLY_Highlord Darion Mograine|r
     .turnin 12801 >>Turn in The Light of Dawn
-.target Highlord Darion Mograine
+    .target Highlord Darion Mograine
     .accept 13165 >>Accept Taking Back Acherus
 step
 	#completewith next
 	.cast 50977 >>Use your Death Gate spell to return to Ebon Hold
 step
     .goto Eastern Plaguelands,83.4,49.4
-	>>Talk to Darion Mograine inside of Ebon Hold
->>Talk to |cRXP_FRIENDLY_Highlord Darion Mograine|r
+    >>Talk to |cRXP_FRIENDLY_Highlord Darion Mograine|r
     .turnin 13165 >>Turn in Taking Back Acherus
-.target Highlord Darion Mograine
+    .target Highlord Darion Mograine
     .accept 13166 >>Accept The Battle For The Ebon Hold
     .train 48721 >> Train your class spells
 	.xp <58,1
 step
     .goto Eastern Plaguelands,83.4,49.4
-	>>Talk to Darion Mograine inside of Ebon Hold
->>Talk to |cRXP_FRIENDLY_Highlord Darion Mograine|r
+    >>Talk to |cRXP_FRIENDLY_Highlord Darion Mograine|r
     .turnin 13165 >>Turn in Taking Back Acherus
-.target Highlord Darion Mograine
+    .target Highlord Darion Mograine
     .accept 13166 >>Accept The Battle For The Ebon Hold
 	.xp <57,1
 step
@@ -734,15 +723,15 @@ step
     .cast 53341 >> Make sure you've equipped your new weapon. Enchant your new weapon with the Rune of Cinderglacier at any of the Runeforges in the room
 step
 	#completewith next
-	>>Kill the Scourge within the main floor of The Ebon Hold
+	>>Kill the |cRXP_ENEMY_Scourge|r within the main floor of The Ebon Hold
     .goto ScarletEnclave,48.1,28.4,0,0
     .complete 13166,2 --Scourge (10)
 step
     .goto ScarletEnclave,48.871,29.739
-	>>Kill Patchwerk in the middle of the main floor of The Ebon Hold
+	>>Kill |cRXP_ENEMY_Patchwerk|r in the middle of the main floor of The Ebon Hold
     .complete 13166,1 --Patchwerk (1)
 step
-	>>Kill the Scourge within the main floor of The Ebon Hold
+	>>Kill the |cRXP_ENEMY_Scourge|r within the main floor of The Ebon Hold
     .goto ScarletEnclave,48.1,28.4
     .complete 13166,2 --Scourge (10)
 step
@@ -753,9 +742,9 @@ step
     #requires Cinderglacier
     .goto ScarletEnclave,50.7,33.7
 	>>Return to Darion Mograine
->>Talk to |cRXP_FRIENDLY_Highlord Darion Mograine|r
+    >>Talk to |cRXP_FRIENDLY_Highlord Darion Mograine|r
     .turnin 13166 >>Turn in The Battle For The Ebon Hold
-.target Highlord Darion Mograine
+    .target Highlord Darion Mograine
     .accept 13188 >>Accept Where Kings Walk << Alliance
     .accept 13189 >>Accept Warchief's Blessing << Horde
 step << Horde
@@ -763,8 +752,8 @@ step << Horde
 	.zone Durotar >>Take the portal to Orgrimmar
 step << Horde
     .goto Orgrimmar,31.74,37.82
-.target Thrall
->>Talk to |cRXP_FRIENDLY_Thrall|r
+    .target Thrall
+    >>Talk to |cRXP_FRIENDLY_Thrall|r
     .turnin 13189 >>Turn in Warchief's Blessing
 step << Horde
     .goto Orgrimmar,38.1,85.8
@@ -774,8 +763,8 @@ step << Alliance
 	.zone Elwynn Forest >>Take the portal to Stormwind
 step << Alliance
     .goto Stormwind City,79.989,38.468
-.target King Varian Wrynn
->>Talk to |cRXP_FRIENDLY_King Varian Wrynn|r
+    .target King Varian Wrynn
+    >>Talk to |cRXP_FRIENDLY_King Varian Wrynn|r
     .turnin 13188 >>Turn in Where Kings Walk
 step << Alliance
     .goto Stormwind City,48.99,87.36

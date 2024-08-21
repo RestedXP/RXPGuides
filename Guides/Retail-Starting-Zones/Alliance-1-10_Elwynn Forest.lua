@@ -373,7 +373,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Allied Race DK << KulTiran DK/DarkIronDwarf DK/LightforgedDraenei DK/Mechagnome DK/VoidElf DK/Pandaren DK
 #displayname Chapter 2 - Elwynn Forest
 #name B-Elwynn Forest
-#next RestedXP Alliance 10-60\2A_Redridge Mountains
+#next RestedXP Speedrun Guide\a) The Waking Shores Fresh (A)
 #defaultfor Human/KulTiran DK/DarkIronDwarf DK/LightforgedDraenei DK/Mechagnome DK/VoidElf DK/Pandaren DK
 
 << Alliance
@@ -455,7 +455,7 @@ step
     #veteran
     #completewith Cooking
     .goto 37,43.77,65.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Farley|r. 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Farley|r.
     >>|cRXP_BUY_Buy 5|r |T132789:0|t[Moonberry Juice] |cRXP_BUY_from him|r
     >>|cRXP_WARN_The|r |T132789:0|t[Moonberry Juice] |cRXP_WARN_is for an|r |T4620669:0|t[Alchemy] |cRXP_WARN_Darkmoon Faire quest. If you don't want to train|r |T4620669:0|t[Alchemy]|cRXP_WARN_, skip the objective|r
     .turnin 37112 >>Turn in Rest and Relaxation

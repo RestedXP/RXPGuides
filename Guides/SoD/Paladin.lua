@@ -458,14 +458,14 @@ RXPGuides.RegisterGuide([[
 << Alliance Paladin SoD
 #group RestedXP Rune & Books Guide
 #subgroup Chest
-#name Horn of Lordaeron - 4 (Loch Modan)
-#title Horn of Lordaeron
+#name Hallowed Ground - 4 (Loch Modan)
+#title Hallowed Ground
 #next Hand of Reckoning - 14 (Loch Modan)
 
 step
-    +|cRXP_WARN_You MUST be at least level 4 in order to acquire|r |T133815:0|t[Engrave Chest - Horn of Lordaeron] |cRXP_WARN_as it is the level requirement of training|r |T135906:0|t[Blessing of Might]
-    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest - Horn of Lordaeron]
---  >>|cRXP_WARN_It is NOT recommended to use|r |T133815:0|t[Engrave Chest - Horn of Lordaeron] |cRXP_WARN_over|r |T133815:0|t[Engrave Chest - Divine Storm] |cRXP_WARN_or|r |T133815:0|t[Engrave Chest - Seal of Martyrdom]
+    +|cRXP_WARN_You MUST be at least level 4 in order to acquire|r |T133815:0|t[Engrave Chest - Hallowed Ground] |cRXP_WARN_as it is the level requirement of training|r |T135906:0|t[Blessing of Might]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T133815:0|t[Engrave Chest - Hallowed Ground]
+--  >>|cRXP_WARN_It is NOT recommended to use|r |T133815:0|t[Engrave Chest - Hallowed Ground] |cRXP_WARN_over|r |T133815:0|t[Engrave Chest - Divine Storm] |cRXP_WARN_or|r |T133815:0|t[Engrave Chest - Seal of Martyrdom]
     .train 425618,1
     .xp >4,1
 step
@@ -532,7 +532,7 @@ step
     .xp >14,1
     .xp <4,1
 step
-    .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t[Libram of Blessings] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Horn of Lordaeron]
+    .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t[Libram of Blessings] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Hallowed Ground]
     .aura -408828
     .use 208849
     .train 425618,1
@@ -791,13 +791,13 @@ RXPGuides.RegisterGuide([[
 << Alliance Paladin SoD
 #group RestedXP Rune & Books Guide
 #subgroup Chest
-#name Seal of Martyrdom - 10 (Stormwind)
-#title Seal of Martyrdom
+#name Divine Light - 10 (Stormwind)
+#title Divine Light
 #next Horn of Lordaeron - 12 (Westfall)
 
 step
     #completewith LibramS
-    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T133815:0|t[Engrave Chest - Seal of Martyrdom] |cRXP_WARN_in Stormwind alone|r
+    +|cRXP_WARN_You should be at least level 10 in order to acquire|r |T133815:0|t[Engrave Chest - Divine Light] |cRXP_WARN_in Stormwind alone|r
     .train 410015,1
     .xp >10,1
 step
@@ -862,8 +862,8 @@ step
     >>|cRXP_WARN_Remember to pre-cast|r |T135924:0|t[Seal of the Crusader] |cRXP_WARN_on her|r
     >>|cRXP_WARN_Be careful as she casts|r |T136197:0|t[Shadow Shock] |cRXP_WARN_(instantly deals 45 shadow damage. Costs her 75 mana. You should kill her quick enough for her to only cast it 3 times)|r
     >>|cRXP_WARN_After defeating |cRXP_ENEMY_Ada Gelhardt|r:|r
-    >>Talk to |cRXP_FRIENDLY_Ada Gelhardt|r again to receive the |T134419:0|t[Rune of Martyrdom]
-    .collect 205897,1 --Rune of Martyrdom (1)
+    >>Talk to |cRXP_FRIENDLY_Ada Gelhardt|r again to receive the |T134419:0|t[Rune of Divine Light]
+    .collect 205897,1 --Rune of Divine Light (1)
     .target Ada Gelhardt
     .skipgossip 205153,1
     .train 410015,1
@@ -872,9 +872,9 @@ step
     #sticky
     .destroy 205864 >> Delete the |T134939:0|t[Charred Note] from your bags, as it's no longer needed
 step
-    .train 410015 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Martyrdom] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Seal of Martyrdom]
+    .train 410015 >>|cRXP_WARN_Use the|r |T134419:0|t[Rune of Divine Light] |cRXP_WARN_to learn|r |T133815:0|t[Engrave Chest - Divine Light]
     .use 205897
-    .itemcount 205897,1 --Rune of Martyrdom (1)
+    .itemcount 205897,1 --Rune of Divine Light (1)
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1347,13 +1347,13 @@ RXPGuides.RegisterGuide([[
 << Alliance Paladin SoD
 #group RestedXP Rune & Books Guide
 #subgroup Legs
-#name Exorcist - 24 (Duskwood)
-#title Exorcist
+#name Aura Mastery - 24 (Duskwood)
+#title Aura Mastery
 #next Beacon of Light - 25 (Reputation)
 
 step
-    +|cRXP_WARN_You MUST be at least level 24 in order to acquire|r |T134596:0|t[Engrave Pants - Exorcist] |cRXP_WARN_as it is the level requirement of training|r |T135983:0|t[Turn Undead]
-    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T134596:0|t[Engrave Pants - Exorcist]
+    +|cRXP_WARN_You MUST be at least level 24 in order to acquire|r |T134596:0|t[Engrave Pants - Aura Mastery] |cRXP_WARN_as it is the level requirement of training|r |T135983:0|t[Turn Undead]
+    >>|cRXP_WARN_You need to level up more before even attempting to acquire|r |T134596:0|t[Engrave Pants - Aura Mastery]
     .train 416037,1
     .xp >24,1
 step
@@ -1411,7 +1411,7 @@ step
     .train 416037,1
     .xp <24,1
 step
-    .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Banishment]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants - Exorcist]
+    .cast 421508 >>|cRXP_WARN_Use the|r |T134916:0|t|cRXP_LOOT_[Libram of Banishment]|r |cRXP_WARN_to learn|r |T134596:0|t[Engrave Pants - Aura Mastery]
     .use 211472
     .aura -408828
     .train 416037,1
@@ -1467,8 +1467,8 @@ RXPGuides.RegisterGuide([[
 << Paladin SoD
 #group RestedXP Rune & Books Guide
 #subgroup Belt
-#title Enlightened Judgements
-#name Enlightened Judgements - 34 (Arathi Highlands)
+#title Malleable Protection
+#name Malleable Protection - 34 (Arathi Highlands)
 
 step
     #optional
@@ -1623,7 +1623,7 @@ step
 step
     .itemcount 213128,1
     .use 213128
-    .train 426175 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Piety|r] |cRXP_WARN_to train|r |T236251:0|t[Enlightened Judgements]
+    .train 426175 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Piety|r] |cRXP_WARN_to train|r |T236251:0|t[Malleable Protection]
 ]])
 
 
@@ -2181,4 +2181,190 @@ step
     .turnin 81885 >>Turn in The Ritual
     .target Aoenas the Vindicated
     .train 410013,1
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Paladin SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#name Shield of Righteousness - 60 (Eastern Plaguelands)
+
+--There wasn't very precise info for this available, might need confirmation if it works properly
+
+step
+    #completewith next
+    >>|cRXP_WARN_Unlocking this rune will require killing a boss in Stratholme(undead). Start looking for a group for it if you wish|r
+    .zone Eastern Plaguelands >> Travel to Eastern Plaguelands
+step
+    .line Eastern Plaguelands,28.6,84.2,33.2,83.0,35.30,82.55,41.19,81.68,45.42,80.68,48.8,79.9,51.5,78.3,55.1,76.4
+    >>Look for a |cRXP_ENEMY_Slack-Jawed Ghoul|r. Kill him and |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orthas|r a dwarf spirit that will appear. Accept his quest
+    >>|cRXP_WARN_The|r |cRXP_ENEMY_Slack-Jawed Ghoul|r |cRXP_WARN_patrolls the area south of the road between the Undercroft and Corrin's Crossing|r
+    .accept 84318 >> Accept Oi!
+    .unitscan Slack-Jawed Ghoul
+    .target Orthas
+step
+    .goto Eastern Plaguelands,59.8,70.8 --Not sure if this is the house or the other one, need more info
+    >>Enter the house in Corrin's Crossing. Loot the |T133040:0|t[|cRXP_PICK_Ornate Warhammer|r] |cRXP_WARN_on the second floor|r
+    .complete 84318,1
+step
+    .goto Eastern Plaguelands,59.8,70.8
+    >>Use |T134566:0|t[Orthas' Favourite Gold Tooth] to summon |cRXP_FRIENDLY_Orthas|r again. Talk to him to turnin the quest and get the followup
+    .turnin 84318 >> Turn in Oi!
+    .accept 84319 >> Accept Oh No Ye Don't
+    .use 227687
+step
+    .goto Eastern Plaguelands,59.7,68.7
+    >>Kill any |cRXP_ENEMY_Stitched Horror|r and loot it for the |T133823:0|t[|cRXP_LOOT_Partially-Digested Plate Armor|r]
+    .complete 84319,1
+    .mob Stitched Horror
+step
+    >>Use |T134566:0|t[Orthas' Favourite Gold Tooth] to summon |cRXP_FRIENDLY_Orthas|r again. Talk to him to turnin the quest and get the followup
+    .turnin 84319 >> Turn in Oh No Ye Don't
+    .accept 84330 >> Accept A Wee Bit O' Necromancy
+step
+    >>Find a group for Stratholme(undead)
+    >>Kill |cRXP_ENEMY_Maleki the Pallid|r one of the bosses in the undead side of the dungeon and loot him for the |T134415:0|t[Necrotic Runestone]
+    .complete 84330,1 --Necrotic Runestone
+    .mob Maleki the Pallid
+step
+    .goto Eastern Plaguelands,22.7,86.1
+    >>Return to the Undercroft, look for the |cRXP_FRIENDLY_Rotting Dwarf Corpse|r. Interact with it to turn in the quest
+    .turnin 84330 >> Turn in A Wee Bit O' Necromancy
+step
+    >>Accept the followup quest from the corpse. It's an instant turnin that will teach you how to engrave |T236265:0|t[|cRXP_FRIENDLY_Shield of Righteousness|r]
+    .goto Eastern Plaguelands,22.7,86.1
+    .accept 84332 >> Accept A Thane's Gratitude
+    .turnin 84332 >> Turnin A Thane's Gratitude
+
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Paladin SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#name Righteous Vengeance - 55 (Western Plaguelands)
+#title Righteous Vengeance
+#next Shock and Awe - 55 (Western and Eastern Plaguelands)
+
+step
+    #completewith next
+    .zone Western Plaguelands >> Head to the Western Plaguelands
+step
+    .goto Western Plaguelands,44.6,46.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Fallen Knight|r
+    .gossip 227519,1 >> Go through his dialogue
+    .target Fallen Knight
+--Not entirely sure if you even need to talk to him or if you do how deep the dialogue is
+step
+    .goto Western Plaguelands,47.5,50.4
+    >>Enter the barn next to the |cRXP_FRIENDLY_Fallen Knight|r and |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Cuthbert|r
+    .accept 83808 >> Accept In a Bind
+    .target Squire Cuthbert
+step
+    .goto Western Plaguelands,47.5,50.4
+    .goto Western Plaguelands,45.7,53.9
+    >>Loot [|cRXP_PICK_Squire Cuthbert's Sword|r] laying on the field nearby
+    .complete 83808,1
+step
+    >>Go back to the barn and |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Cuthbert|r
+    .turnin 83808 >> Turn in In a Bind
+    .accept 83935 >> Accept Clearing the Path
+    .target Squire Cuthbert
+step
+    .goto Western Plaguelands,45.7,53.9
+    >>Kill |cRXP_ENEMY_Blighted Zombies|r, |cRXP_ENEMY_Skeletal Terrors|r and |cRXP_ENEMY_Rotting Cadavers|r
+    .complete 83935,1 --Blighted Zombie(5)
+    .complete 83935,2 --Skeletal Terror(10)
+    .complete 83935,3 --Rotting Cadaver(10)
+    .mob Blighted Zombie
+    .mob Skeletal Terror
+    .mob Rotting Cadaver
+step
+    .goto Western Plaguelands,47.5,50.4
+    >>Go back to the barn and |Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Cuthbert|r
+    .turnin 83935 >> Turn in Clearing the Path
+    .accept 83822,1 >> Accept The Fallen Knight, |cRXP_WARN_this is an escort quest|r
+    .target Squire Cuthbert
+step
+    .goto Western Plaguelands,44.6,46.6
+    >>Escort |cRXP_FRIENDLY_Squire Cuthbert|r back to the Fallen Knight and help him burn the corpse
+    .complete 83822,1
+step
+    .goto Western Plaguelands,44.6,46.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Cuthbert|r
+    .turnin 83822 >> Turn in The Fallen Knight
+    .accept 83936 >> Accept Dalton's Quest
+    .target Squire Cuthbert
+step
+    .goto Western Plaguelands,44.6,46.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Cuthbert|r and go through his dialogue
+    .complete 83936,1
+    .target Squire Cuthbert
+step
+    .goto Western Plaguelands,44.6,46.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Squire Cuthbert|r and go through his dialogue. Turning in this quest will train you on how to engrave |T236260:0|t[|cRXP_FRIENDLY_Righteous Vengeance|r]
+    >>You will also receive |T237377:0|t[|cFF0070FFDalton's Horn|r] which you will need in order to unlock the rune of |T252188:0|t[|cRXP_FRIENDLY_Shock and Awe|r]
+    .turnin 83936 >> Turn in Dalton's Quest
+    .target Squire Cuthbert
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Paladin SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#name Shock and Awe - 60 (Western and Eastern Plaguelands)
+#title Shock and Awe & Avenging Wrath
+
+step
+    #completewith next
+    +|cRXP_WARN_In order to begin the quest for this rune you will need to have unlocked the rune of|r |T236260:0|t[|cRXP_FRIENDLY_Righteous Vengeance|r]. |cRXP_WARN_Go to the Righteous Vengeance guide to begin|r
+    .train 440792,1 --Righteous Vengeance
+step
+    .goto Eastern Plaguelands,78.6,47.6
+    >>|cRXP_WARN_Use the|r |T237377:0|t[|cFF0070FFDalton's Horn|r] |cRXP_WARN_to summon|r |cRXP_FRIENDLY_Squire Cuthbert|r |cRXP_WARN_and kill mobs untill he levels up. Once he does he will give you a free turn-in quest|r
+    .accept 83823 >> Accept a Lesson in Violence
+    .turnin 83823 >> Turn in a Lesson in Violence
+    .use 226122
+step
+    .goto Eastern Plaguelands,78.6,47.6
+    >>|cRXP_WARN_Use the|r |T237377:0|t[|cFF0070FFDalton's Horn|r] |cRXP_WARN_to summon|r |cRXP_FRIENDLY_Squire Cuthbert|r |cRXP_WARN_and keep killing mobs untill he levels up again. Once he does he will give you another free turn-in quest and another quest to find a lich named|r |cRXP_ENEMY_Arkonos the Cursed|r
+    .accept 84008 >> Accept a Lesson in Grace
+    .turnin 84008 >> Turn in a Lesson in Grace
+    .accept 84017 >> Accept A Time to Kill
+    .use 226523
+step
+    .goto Eastern Plaguelands,78.6,47.6
+    >>|cRXP_WARN_Head to the Noxious Glade, an area just north of Light's Hope chapel. Once you're there summon your squire again. The quest to find Arkonos should complete and you will get another quest, accept it|r
+    .turnin 84017 >> Turn in A Time to Kill
+    .accept 84125 >> Accept Close Enough To Touch
+    .use 226545
+step
+    .goto Eastern Plaguelands,83.7,41.9
+    >>Kill |cRXP_ENEMY_Shadowmages|r and |cRXP_ENEMY_Dread Weavers|r in the Noxious Glade. Loot them for |T135482:0|t[|cRXP_LOOT_Scourge Shadow Scalpel|r]
+    .complete 84125,1
+    .mob Shadowmage
+    .mob Dread Weaver
+step
+    >>Use the |T237377:0|t[|cFF0070FFDalton's Horn|r] to summon |cRXP_FRIENDLY_Squire Cuthbert|r if you lost him. Talk to him
+    .turnin 84125 >> Turn in Close Enough To Touch
+    .accept 84126 >> Accept Finish the Fight
+    .use 226122
+    .target Squire Cuthbert
+step
+    .goto Eastern Plaguelands,86.6,39.8
+    >>Use the |T237490:0|t[|cRXP_LOOT_Modified Shadow Scalpel|r] you got to dispell |cRXP_ENEMY_Arkonos's|r shield. Kill him to complete the quest
+    .complete 84126,1 --Arkonos the cursed slain
+    .use 227685
+step
+    >>Use the |T237377:0|t[|cFF0070FFDalton's Horn|r] to summon |cRXP_FRIENDLY_Squire Cuthbert|r if you lost him. Talk to him
+    >>Turning in this quest will train you on how to engrave |T252188:0|t[Shock and Awe] and also give you the |T133745:0|t[|cRXP_FRIENDLY_Testament of Avenging Wrath|r] which will teach you |T135875:0|t[Avenging Wrath]
+    .turnin 84126 >> Turn in Finish the Fight
+    .use 226122
+    .target Squire Cuthbert
+step
+    .train 407788 >> Use the |T133745:0|t[|cRXP_FRIENDLY_Testament of Avenging Wrath|r] to train |T135875:0|t[Avenging Wrath]
+    .use 226399
 ]])

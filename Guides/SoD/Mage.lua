@@ -2646,7 +2646,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Mage SoD
 #group RestedXP Rune & Books Guide
-#subgroup Belt
+#subgroup Helmet
 #name Hot Streak - 32 (Alterac Mountains)
 #title Hot Streak
 
@@ -3376,4 +3376,213 @@ step
 step
     .train 429311 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: Balefire Bolt|r |cRXP_WARN_to train|r |T135809:0|t[Balefire Bolt.]
     .use 223147
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Mage SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#name Overheat - 55 (Western Plaguelands)
+#title Overheat
+
+step
+    .train 401764,1
+    .zone Western Plaguelands >> Travel to Western Plaguelands
+step
+    .train 401764,1
+    #loop -- not sure which coord is tied to which itemid, update in future
+    .goto Western Plaguelands,36.8,54.7,30,0
+    .goto Western Plaguelands,64.2,57.7,30,0
+    .goto Western Plaguelands,53.3,64.5,30,0
+    .goto Western Plaguelands,45.1,51.9,30,0
+    >>|cRXP_WARN_Using Fire spells, unfreeze the|r |cRXP_FRIENDLY_Novice Frost Mages|r|cRXP_WARN_. DO NOT KILL THEM!|r
+    >>|cRXP_WARN_Afterwards cast|r |T136082:0|t[Remove Lesser Curse] |cRXP_WARN_on them and talk to them to receive their|r |T134937:0|t|T134938:0|t|T134943:0|t|T134945:0|t[|cRXP_LOOT_Torn Spell Notes|r]
+    >>|cRXP_WARN_Repeat this for each |cRXP_FRIENDLY_Novice Frost Mage|r in each of the Western Plaguelands Fields|r
+    .collect 225938,1 --Felstone Field
+    .collect 225939,1
+    .collect 225940,1
+    .collect 225941,1
+    .target Novice Frost Mage
+    .skipgossip
+step
+    .train 401764,1
+    .use 225938 >> |cRXP_WARN_Use any of the|r |T134937:0|t|T134938:0|t|T134943:0|t|T134945:0|t[|cRXP_LOOT_Torn Spell Notes|r] |cRXP_WARN_to combine them into|r |T134939:0|t[|cRXP_LOOT_Spell Notes: Overheat|r]
+    .use 225939
+    .use 225940
+    .use 225941
+    .collect 225691,1
+step
+    .train 401764 >> |cRXP_WARN_Use the|r |T134939:0|t[|cRXP_LOOT_Spell Notes: Overheat|r] |cRXP_WARN_to train|r |T135813:0|t[Overheat]
+    .use 225691
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Mage SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#name Frozen Orb - 55 (Felwood/Winterspring)
+#title Frozen Orb
+
+step
+    #completewith next
+    .train 440858,1
+    .zone Felwood >> Travel to Felwood
+step
+    .train 440858,1
+    .goto Felwood,63.0,9.0
+    >>Kill |cRXP_ENEMY_Deadwood Avengers|r and |cRXP_ENEMY_Deadwood Shamans|r. Loot them for the |T237446:0|t[|cRXP_LOOT_Mysterious Darnassian Scroll|r]
+    .collect 227796,1 -- Mysterious Darnassian Scroll 1/1
+    .mob Deadwood Shaman
+    .mob Deadwood Avenger
+step
+    .train 440858,1
+    >>|cRXP_WARN_Use a|r |T135933:0|t[|cRXP_LOOT_Comprehension Charm|r] |cRXP_WARN_on the|r |T237446:0|t[|cRXP_LOOT_Mysterious Darnassian Scroll|r] |cRXP_WARN_to decipher it into the|r |T134937:0|t[|cRXP_LOOT_Deciphered Darnassian Scroll|r]
+    .collect 227797,1 -- Deciphered Darnassian Scroll 1/1
+    .use 211779
+    .use 227796
+step
+    .train 440858,1
+    .goto Felwood,61.0,12.0
+    .use 227797 >>|cRXP_WARN_Use the|r |T134937:0|t[|cRXP_LOOT_Deciphered Darnassian Scroll|r] |cRXP_WARN_on |cRXP_FRIENDLY_Calyx Greenglow|r and accept his quest|r
+    >>|cRXP_FRIENDLY_Calyx Greenglow|r |cRXP_WARN_patrols around slightly|r
+    .accept 84369 >> Accept Healing the Healer
+    .unitscan Calyx Greenglow
+step
+    .train 440858,1
+    .goto Winterspring,55.0,22.0
+    >>Kill |cRXP_ENEMY_Irontree Stompers|r. Loot them for the |cRXP_LOOT_Unusual Flask|r
+    .collect 227924,1,84369,1 -- Unusual Flask 1/1
+    .mob Irontree Stomper
+step
+    .train 440858,1
+    #completewith next
+    .zone Winterspring >> Travel to Winterspring
+step
+    .train 440858,1
+    .goto Winterspring,29.0,35.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calyx Greenglow|r
+    >>|cRXP_WARN_You will need to kill |cRXP_ENEMY_Calyx Greenglow|r after turning this quest in|r
+    .turnin 84369 >> Turn in Healing the Healer
+    .unitscan Calyx Greenglow
+step
+    .train 440858,1
+    >>Kill the |cRXP_ENEMY_Enraged Shade|r. Loot it for the |T134939:0|t[|cRXP_LOOT_Spell Notes: Frozen Orb|r]
+    .collect 225690,1 -- Spell Notes: Frozen Orb 1/1
+    .mob Enraged Shade
+step
+    .train 440858 >> |cRXP_WARN_Use the|r |T134939:0|t[|cRXP_LOOT_Spell Notes: Frozen Orb|r] |cRXP_WARN_to train|r |T135851:0|t[Frozen Orb]
+    .use 225690
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#name Arcane Barrage - 60 (Azeroth)
+#title Arcane Barrage
+
+<< Mage SoD
+
+step
+    .train 401722,1
+    #completewith Necromancy101
+    .zone Western Plaguelands >> Travel to Western Plaguelands
+step
+    .train 401722,1
+    .goto Western Plaguelands,38.3,54.6
+    >>Loot the |cRXP_LOOT_Undead Potatoes|r book in the Felstone Field farmhouse upstairs
+    .collect 228132,1
+    .isQuestAvailable 84395
+step
+    .train 401722,1
+    #label Necromancy101
+    .goto Western Plaguelands,69.41,72.84
+    >>Loot the |cRXP_LOOT_Necromancy 101|r in the Scholomance Keep
+    .collect 228141,1
+    .isQuestAvailable 84402
+step
+    .train 401722,1
+    #completewith UndeadMenace
+    .zone Eastern Plaguelands >> Travel to Western Plaguelands
+step
+    .train 401722,1
+    .goto Eastern Plaguelands,81.7,57.8
+    >>Loot |cRXP_LOOT_A Study of the Light|r book
+    .collect 228135,1
+    .isQuestAvailable 84398
+step
+    .train 401722,1
+    .goto Eastern Plaguelands,54.5,50.8
+    >>Loot |cRXP_LOOT_The Knight and the Lady|r book
+    .collect 228138,1
+    .isQuestAvailable 84400
+step
+    .train 401722,1
+    #label UndeadMenace
+    .goto Eastern Plaguelands,31.250,21.000
+    >>Loot the |cRXP_LOOT_Scourge: Undead Menace or Misunderstood?|r book
+    .collect 228140,1
+    .isQuestAvailable 84401
+step
+    .train 401722,1
+    #completewith next
+    .subzone 1445 >> Travel to Searing Gorge or Burning Steppes and head into Blackrock Mountain
+step
+    .train 401722,1
+    .goto 1415,48.388,63.626
+    >>|cRXP_WARN_Drop down the chain and head towards the Blackrock Depths enterance|r
+    >>Loot the |cRXP_LOOT_Magma or Lava?|r book on the ground
+    .collect 228133,1
+    .isQuestAvailable 84396
+step
+    .train 401722,1
+    #completewith next
+    .zone Winterspring >> Travel to Winterspring
+step
+    .train 401722,1
+    .goto Winterspring,60.7,37.7
+    >>Loot the |cRXP_LOOT_Ka-Boom!|r book on the shelf
+    .collect 228136,1
+    .isQuestAvailable 84399
+step
+    .train 401722,1
+    #completewith next
+    .zone Felwood >> Travel to Felwood
+    .subzoneskip 1216
+step
+    .train 401722,1
+    .goto Felwood,65.214,3.248
+    >>|cRXP_WARN_Head to the Timbermaw Hold tunnel. Note if you are not at least Unfriendly with Timbermaw Hold the furbolgs will attack you|r
+    >>Loot the |cRXP_LOOT_Northern Kalimdor - A Comprehensive Guide|r book on the ground
+    .collect 228134,1
+    .isQuestAvailable 84397
+step
+    .train 401722,1
+    .goto Stormwind City,38.6,79.6 << Alliance
+    .goto 1458,73.6,32.6 << Horde
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r << Alliance
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oran Snakewrithe|r  << Horde
+    .accept 84395 >> Turn in Undead Potatoes
+    .accept 84402 >> Turn in Necromancy 101
+    .accept 84398 >> Turn in A Study of the Light
+    .accept 84400 >> Turn in The Knight and the Lady
+    .accept 84401 >> Turn in Scourge: Undead Menace or Misunderstood?
+    .accept 84396 >> Turn in Magma or Lava?
+    .accept 84399 >> Turn in Ka-Boom!
+    .accept 84397 >> Turn in Northern Kalimdor - A Comprehensive Guide
+    .target Jennea Cannon << Alliance
+    .target Oran Snakewrithe << Horde
+step
+    .train 401722,1
+    .goto Stormwind City,38.6,79.6 << Alliance
+    .goto 1458,73.6,32.6 << Horde
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r << Alliance
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Oran Snakewrithe|r << Horde
+    >>|cRXP_WARN_IF YOU CANNOT ACCEPT THIS QUEST ENSURE YOU HAVE ACQUIRED THE RUNES FOR Icy Veins/Spell Power/Deep Freeze AS THIS IS A CONTINUATION OF THOSE RUNES AND IS REQUIRED|r
+    .accept 84394 >> Accept Greater Friend of the Library
+    .turnin 84394 >> Turn in Greater Friend of the Library
+    .target Jennea Cannon << Alliance
+    .target Oran Snakewrithe << Horde
 ]])

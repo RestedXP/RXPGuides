@@ -106,7 +106,7 @@ RXPGuides.RegisterGuide([[
 
 step << Druid
     #sticky
-    +|cRXP_WARN_You must have a helper to collect this rune! It cannot be solo'd as they must assist in clicking a summoning ritual which requires a second player!|r
+    +|cRXP_WARN_You must have a helper to collect this rune! It cannot be soloed as they must assist in clicking a summoning ritual which requires a second player!|r
     .train 410033,1
 step << Druid
     .goto Teldrassil,33.610,35.732
@@ -1088,4 +1088,103 @@ step
     .itemcount 221020,1
     .use 221020
     .train 431449 >> |cRXP_WARN_Use the|r |T136061:0|t[|cRXP_FRIENDLY_Idol of the Raging Shambler|r] |cRXP_WARN_to train|r |T136097:0|t[Improved Barkskin]
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Druid SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#name Improved Swipe - 50 (Un'Goro Crater)
+#title Improved Swipe
+
+step
+    #completewith next
+    .train 439765,1
+    .zone Un'Goro Crater >>Travel to Un'Goro Crater
+step
+    .train 439765,1
+    .goto Un'Goro Crater,68.0,51.4
+    >>Kill |cRXP_ENEMY_Ravasaurs|r, |cRXP_ENEMY_Ravasaur Hunters|r and |cRXP_ENEMY_Venomhide Ravasaurs|r. Loot them for the |T134912:0|t[|cRXP_FRIENDLY_Idol of the Huntress|r]
+    .collect 227444,1
+    .mob Venomhide Ravasaur
+    .mob Ravasaur Hunter
+    .mob Ravasaur
+step
+    .train 439765,1
+    .equip 18,227444 >> Equip the |T134912:0|t[|cRXP_FRIENDLY_Idol of the Huntress|r]
+    .use 227444
+step
+    .goto Un'Goro Crater,68.0,51.4
+    #title Gain 5x |T237556:0|t[Building Inspiration]
+    .itemcount 227444,1
+    .train 439765,1
+    .aura 408828 >> |cRXP_WARN_Attack a |cRXP_ENEMY_Ravasaur|r until they are down to roughly 5-10% HP and ensure you have 5 combo points on them|r
+    >>|cRXP_WARN_Once they are 5-10% HP, cast|r |T136090:0|t[Hibernate] |cRXP_WARN_then switch into|r |T132115:0|t[Cat Form] |cRXP_WARN_and cast|r |T132127:0|t[Ferocious Bite] |cRXP_WARN_to kill them to gain a stack of|r |T237556:0|t[Building Inspiration]
+    >>|cRXP_WARN_Repeat this process 5 times|r
+    .mob Venomhide Ravasaur
+    .mob Ravasaur Hunter
+    .mob Ravasaur   
+step
+    .itemcount 227444,1
+    .use 227444
+    .train 439765 >> |cRXP_WARN_Use the|r |T134912:0|t[|cRXP_FRIENDLY_Idol of the Huntress|r] |cRXP_WARN_to train|r |T134296:0|t[Improved Swipe]
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Druid SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#name Tree of Life - 50 (Felwood)
+#title Tree of Life
+
+step
+    #completewith next
+    .train 439767,1
+    .zone Felwood >>Travel to Felwood
+step
+    .train 439767,1
+    #loop
+    .goto Felwood,42,15,70,0
+    .goto Felwood,42,19,70,0
+    .goto Felwood,42,15,0
+    .goto Felwood,42,19,0
+    >>|cRXP_WARN_Talk to a|r |cRXP_FRIENDLY_Vengeful Wisp|r |cRXP_WARN_in northern Felwood, then follow it through Jadefire Run and kill any |cRXP_ENEMY_Satyrs|r it runs through|r
+    >>|cRXP_WARN_The |cRXP_FRIENDLY_Vengeful Wisp|r has multiple spawn locations. If you see another Druid already with the |cRXP_FRIENDLY_Vengeful Wisp|r, you can help them and still receive credit|r
+    >>Once completed, the |cRXP_FRIENDLY_Vengeful Wisp|r will drop the |cRXP_PICK_Gift of the Wisp|r on the ground. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the World Tree|r]
+    .collect 227746,1
+    .unitscan Vengeful Wisp  
+step
+    .itemcount 227746,1
+    .use 227746
+    .train 439767 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the World Tree|r] |cRXP_WARN_to train|r |T132145:0|t[Tree of Life]
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Druid SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#name Starfall - 60 (Winterspring)
+#title Starfall
+
+step
+    #completewith next
+    .train 439770,1
+    .zone Winterspring >>Travel to Winterspring
+    >>|cRXP_WARN_Note that for this rune you must kill a level 58 Elite. Consider inviting friends to help you|r
+step
+    .train 439770,1
+    #loop
+    .goto Winterspring,64.8,19.4,50,0
+    .goto Winterspring,63.8,16.4
+    >>Kill |cRXP_ENEMY_Arcterris|r. Loot him for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Falling Star|r]
+    >>|cRXP_WARN_Note |cRXP_ENEMY_Arcterris|r is a level 58 Elite. Consider inviting friends to help you|r
+    .collect 227749,1
+    .mob Arcterris
+step
+    .itemcount 227749,1
+    .use 227749
+    .train 439770 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Falling Star|r] |cRXP_WARN_to train|r |T236168:0|t[Starfall]
 ]])

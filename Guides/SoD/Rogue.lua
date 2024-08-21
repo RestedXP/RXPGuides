@@ -2092,3 +2092,119 @@ step
     .train 432295 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Coterie|r] |cRXP_WARN_to train|r |T236275:0|t[Honor Among Thieves]
     .use 217736
 ]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Rogue SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#title Crimson Tempest
+#name Crimson Tempest - 60 (Western Plaguelands)
+
+step
+    .train 415918,1
+    .zone Western Plaguelands >>Travel to Western Plaguelands
+step
+    .train 415918,1
+    #completewith next
+    .subzone 190 >> Travel to Hearthglen
+step
+    #label ToolboxKey
+    .train 415918,1
+    .goto Western Plaguelands,45.0,13.6
+    >>Kill or |T133644:0|t[Pick Pocket] |cRXP_ENEMY_Scarlet Workers|r. Loot them for the |cRXP_LOOT_Toolbox Key|r
+    .collect 227928,1 -- Toolbox Key 1/1
+    .mob Scarlet Worker
+step
+    .train 415918,1
+    .goto Western Plaguelands,45.0,14.2
+    >>Open the |cRXP_PICK_Scarlet Toolbox|r. Loot it for the |cRXP_LOOT_Rusty Crowbar|r
+    .collect 227932,1 -- Rusty Crowbar 1/1
+step
+    .goto Western Plaguelands,49.5,18.5
+    >>Head to the top of the tower in the middle of Hearthglen. Open the |cRXP_PICK_Marked Crate|r there. Loot it for the |T133640:0|t[|cRXP_LOOT_Hidden Bundle|r] and open it to loot a |T134237:0|t[|cRXP_LOOT_Safe Box Key|r]
+    .collect 227930,1
+step
+    .goto Western Plaguelands,46.3,14.6
+    >>Head to the middle floor of the second tower in Hearthglen located on the northern side of the city. Use the |T134237:0|t[|cRXP_LOOT_Safe Box Key|r] to open [|cRXP_PICK_Belavus' Safe Box|r] and loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of the Crimson Tempest|r]
+    .collect 227456,1 --Rune of the crimson tempest
+step
+    .use 227456
+    .itemcount 227456,1
+    .train 415918 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Crimson Tempest|r] |cRXP_WARN_to train|r |T135315:0|t[Crimson Tempest]
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Rogue SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#title Fan of Knives
+#name Fan of Knives - 55 (Winterspring)
+
+step
+    .train 436609,1
+    .zone Winterspring >>Travel to Winterspring
+step
+    .train 436609,1
+    .goto Winterspring,67.7,35.4
+    >>Open the |cRXP_PICK_Wooden Chest|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Knives|r]
+    >>|cRXP_WARN_While opening the |cRXP_PICK_Wooden Chest|r, choose the following options in this order:|r
+    >>|cRXP_WARN_Frostsaber|r
+    >>|cRXP_WARN_Owl|r
+    >>|cRXP_WARN_Bear|r
+    >>|cRXP_WARN_Owl|r
+    .collect 227921,1
+step
+    .use 227921
+    .itemcount 227921,1
+    .train 436609 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Knives|r] |cRXP_WARN_to train|r |T236273:0|t[Fan of Knives]
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Rogue SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#title Blunderbuss
+#name Blunderbuss - 60 (Eastern Plaguelands)
+
+step
+    .train 415922,1
+    .zone Eastern Plaguelands >>Travel to Eastern Plaguelands
+step
+    .train 415922,1
+    .goto Eastern Plaguelands,83,85
+    >>Open |cRXP_LOOT_Scarlet Footlockers|r throughout Try's Hand until you loot a |cRXP_LOOT_Sending Signal|r
+    .collect 227451,1
+step
+    .train 415922,1
+    #completewith FinalPillar
+    >>|cRXP_WARN_For the following steps you must click FOUR |cRXP_PICK_Sending Pillars|r in the correct order. After clicking one you will be RANDOMLY teleported to a different one. Ensure you are at the correct location before you click another one!|r
+step
+    .train 415922,1
+    .goto Eastern Plaguelands,82,57
+    .cast 6477,6478 >>Click the first |cRXP_PICK_Sending Pillar|r |cRXP_WARN_behind Light's Hope Chapel|r
+step
+    .train 415922,1
+    .goto Eastern Plaguelands,40,92
+    .cast 6477,6478 >>Click the second |cRXP_PICK_Sending Pillar|r |cRXP_WARN_in Darrowshire|r
+step
+    .train 415922,1
+    .goto Eastern Plaguelands,70,34
+    .cast 6477,6478 >>Click the third |cRXP_PICK_Sending Pillar|r |cRXP_WARN_in Northdale|r
+step
+    .train 415922,1
+    #label FinalPillar
+    .goto Eastern Plaguelands,14,30
+    .cast 6477,6478 >>Click the fourth |cRXP_PICK_Sending Pillar|r |cRXP_WARN_in Terrordale|r
+step
+    .train 415922,1
+    >>|cRXP_WARN_Enter the House|r
+    >>Open |cRXP_PICK_Adon's Trunk|r on the ground. Loot it for the |T134419:0|t[|cRXP_LOOT_Rune of the Swashbuckler|r]
+    .collect 227922,1
+step
+    .use 227922
+    .itemcount 227922,1
+    .train 415922 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Swashbuckler|r] |cRXP_WARN_to train|r |T134538:0|t[Blunderbuss]
+]])

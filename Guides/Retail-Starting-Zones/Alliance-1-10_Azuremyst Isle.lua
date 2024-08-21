@@ -100,7 +100,7 @@ step
 	.target Botanist Taerix
     .target Apprentice Vishael
 step
-    #completewith next 
+    #completewith next
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Corrupted Flowers.|r
     .complete 9799,1 --3/3 Corrupted Flower
 step
@@ -156,7 +156,7 @@ step
     .isOnQuest 9294
     #completewith next
     +|cRXP_WARN_To enable keybinding for quest items, follow these steps:|r
-    *[1] Press the |cRXP_WARN_Escape key.|r 
+    *[1] Press the |cRXP_WARN_Escape key.|r
     *[2] Select |cRXP_WARN_Options.|r
     *[3] Navigate to |cRXP_WARN_Keybindings.|r
     *[4] Within |cRXP_WARN_Keybindings|r, find |cRXP_WARN_RestedXP Guides.|r
@@ -169,14 +169,14 @@ step
 step
     #completewith next
     >>Use the |T22962:0|t[Inoculating Crystal] on |cRXP_ENEMY_Nestlewood Owlkins.|r
-    .use 22962 
+    .use 22962
     .complete 37444,1 --6/6 Nestlewood Owlkin inoculated
 	.mob Nestlewood Owlkin
 step
     .goto 468,55.91,66.37,10,0
     .goto 468,58.26,70.67,10,0
     .goto 468,61.21,78.37
-    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Spare Parts.|r 
+    >>|TInterface/cursor/crosshair/interact.blp:20|tClick on |cRXP_PICK_Spare Parts.|r
     .complete 37445,1 --4/4 Emitter Spare Part
 step
     .goto 468,55.91,66.37,10,0
@@ -235,7 +235,7 @@ step
 step
 	>>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Blood Elf Plans.|r
     .accept 9798 >>Accept Blood Elf Plans
-    .use 24414 
+    .use 24414
 	.target Surveyor Candress
 step
     .isOnQuest 9311
@@ -243,7 +243,7 @@ step
 step
     .goto 468,50.66,48.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vindicator Aldar.|r
-    .turnin 9311 >>Turn in Blood Elf Spy 
+    .turnin 9311 >>Turn in Blood Elf Spy
     .turnin 9798 >>Turn in Blood Elf Plans
     .accept 9312 >>Accept The Emitter
 	.target Vindicator Aldar
@@ -263,7 +263,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Draenei Starting Zones
 #name 3Retail-Alliance-Draenei_Azuremyst Isle
 #displayname Chapter 2 - Azuremyst Isle
-#next RestedXP Alliance 10-60\1A_Elwynn Forest
+#next RestedXP Speedrun Guide\a) The Waking Shores Fresh (A)
 #defaultfor Draenei !DK
 
 << Alliance
@@ -284,7 +284,7 @@ step
     .goto 97,49.78,51.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Acteon.|r
     .accept 9454 >>Accept The Great Moongraze Hunt
-	.target Acteon	
+	.target Acteon
 step
 	#completewith next
     .goto 97,48.68,52.41
@@ -342,7 +342,7 @@ step
     .accept 9604 >>Accept On the Wings of a Hippogryph
 	.target Zaldaan
 step
-    #completewith roottenders	
+    #completewith roottenders
     >>Kill |cRXP_ENEMY_Moongraze Stags|r and |cRXP_ENEMY_Moongraze Buck|r and loot them for |cRXP_LOOT_Moongraze Stag Tenderloin.|r
     .complete 9454,1 --6/6 Moongraze Stag Tenderloin
 	.mob Moongraze Stag
@@ -492,7 +492,7 @@ step
 	.mob Wrathscale Myrmidon
 	.mob Wrathscale Naga
 	.mob Wrathscale Siren
-    .use 23759 
+    .use 23759
 step
     .goto 97,39.11,75.21,35,0
     .goto 97,35.21,80.17,35,0
@@ -628,7 +628,7 @@ step
     .turnin 9605 >>Turn in Hippogryph Master Stephanos
 	.target Stephanos
 step
-    .nodmf 
+    .nodmf
     .goto 103,48.34,62.9,5 >> |TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Stormwind Portal|r
     .zoneskip 84
 step

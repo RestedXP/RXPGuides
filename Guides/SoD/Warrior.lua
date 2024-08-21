@@ -317,7 +317,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warrior SoD
 #group RestedXP Rune & Books Guide
-#subgroup Gloves
+#subgroup Helmet
 #name Endless Rage - 20 (Westfall)
 #title Endless Rage
 
@@ -1861,4 +1861,184 @@ step
 step
     .train 416002 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Gladiator|r] |cRXP_WARN_to learn|r |T236541:0|t[Gladiator Stance]
     .use 220164
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warrior SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#title Fresh Meat
+#name Fresh Meat - 55 (Burning Steppes)
+
+step
+    #completewith next
+    .zone Burning Steppes >>Travel to Burning Steppes
+step
+    .train 440492,1
+    .goto Burning Steppes,40.4,33.6
+    .aura 459616 >>|cRXP_WARN_Kill |cRXP_ENEMY_Blackrock Orcs|r at Blackrock Stronghold until you receive the|r |T132353:0|t[Rhythm of War] |cRXP_WARN_buff|r
+    .mob Blackrock Battlemaster
+    .mob Blackrock Slayer
+    .mob Blackrock Warlock
+    .mob Blackrock Sorcerer
+step
+    .train 440492,1
+    .goto Burning Steppes,39.549,27.828
+    >>|cRXP_WARN_Head to the|r |cRXP_PICK_Altar of Reverence|r
+    >>|cRXP_WARN_Once there, type "/salute" in your chatbox. This will summon a|r |cRXP_ENEMY_Revered Champion|r
+    >>Kill the |cRXP_ENEMY_Revered Champion|r, then click the |cRXP_PICK_Altar of Reverence|r after
+    .accept 84124 >> Accept Legacy of Valor
+    .turnin 84124 >> Turn in Legacy of Valor
+    .mob Revered Champion
+step
+    .train 440492 >>|cRXP_WARN_Use the|r |T133747:0|t[|cRXP_LOOT_Rune of the First Warrior|r] |cRXP_WARN_to learn|r |T237516:0|t[Fresh Meat]
+    .use 226680
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warrior SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#title Sudden Death
+#name Sudden Death - 57 (Silithus)
+
+step
+    #completewith next
+    .zone Silithus >>Travel to Silithus
+step
+    .train 440494,1
+    #loop
+    .goto Silithus,55.4,53.2,60,0
+    .goto Silithus,47.0,53.6,60,0
+    .goto Silithus,45.0,74.0,60,0
+    .goto Silithus,44.2,83.4,60,0
+    .goto Silithus,33.6,69.2,60,0
+    .goto Silithus,41.0,65.2,60,0
+    .goto Silithus,34.8,33.6,60,0
+    .goto Silithus,31.0,17.2,60,0
+    .gossip 228611,2 >>|cRXP_WARN_Look for a |cRXP_FRIENDLY_Wandering Swordsman|r throughout Silithus|r
+    >>|cRXP_WARN_Talk to the |cRXP_FRIENDLY_Wandering Swordsman|r. You must select the Medium or Hard difficulty to be awarded with the rune|r
+    >>|cRXP_WARN_You will be instantly teleported to a small platform and the encounter will begin against|r |cRXP_ENEMY_Khonsu|r
+    >>|cRXP_WARN_It will cast abilities that look like [Cleave]. When you see those animations quickly move away from them|r
+    >>|cRXP_WARN_When he casts [Thundering Stomp] you MUST move to one of the small edges sticking off the platform, otherwise you'll be knocked off|r
+    >>|cRXP_WARN_It is also recommended you run the|r |T132342:0|t[Victory Rush] |cRXP_WARN_rune as you will be killing adds throughout the fight|r
+    .unitscan Wandering Swordsman
+step
+    .train 440494,1
+    >>|cRXP_WARN_Defeat |cRXP_ENEMY_Khonsu|r
+    >>|cRXP_WARN_It will cast abilities that look like [Cleave]. When you see those animations quickly move away from them|r
+    >>|cRXP_WARN_When he casts [Thundering Stomp] you MUST move to one of the small edges sticking off the platform, otherwise you'll be knocked off|r
+    >>|cRXP_WARN_Once you are successful, accept and turn in the quest|r
+    .accept 84317 >> Accept Infinite Midnight
+    .turnin 84317 >> Turn in Infinite Midnight
+    .mob Titanic Watcher
+step
+    .train 440494 >>|cRXP_WARN_Use the|r |T133739:0|t[|cRXP_LOOT_Timeless Wanderer's Insights|r] |cRXP_WARN_to learn|r |T132346:0|t[Sudden Death]
+    .use 226679
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warrior SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#title Shockwave
+#name Shockwave - 60 (Azeroth)
+
+step
+    #completewith next
+    .zone Tanaris >>Travel to Tanaris
+step
+    .train 440496,1
+    .goto Tanaris,59.2,91.5 
+    >>|cRXP_WARN_Head to southern Tanaris along the coastline|r
+    >>Click the |cRXP_PICK_Half-Buried Mech|r and |cRXP_PICK_Access Hatch|r on the ground
+    .accept 84135 >> Accept Beach Bot
+    .turnin 84135 >> Turn In Beach Bot
+    .accept 84137 >> Accept Mechanical Romance
+step
+    .train 440496,1
+    #completewith next
+    .cast 459613 >> |cRXP_WARN_Use the|r |T134731:0|t[Guided Buoyancy Accelerant] |cRXP_WARN_to increase you swim speed for the next 4 min.|r
+    .use 226856
+step
+    .train 440496,1
+    >>|cRXP_WARN_NOTE: THERE IS NO ARROW FOR THIS STEP!|r
+    >>|cRXP_WARN_You must now swim south to the remote island and talk to |cRXP_FRIENDLY_Sebastian Jurgens|r. You must swim through fatigue water to reach him. Head toward the Oilrig located on the island to find him|r
+    .turnin 84137 >> Turn In Mechanical Romance
+    .accept 84138 >> Accept Frosty Favors
+    .target Sebastian Jurgens
+step
+    .train 440496,1
+    #completewith next
+    .zone Winterspring >>Travel to Winterspring
+step
+    .train 440496,1
+    .goto Winterspring,61.2,37.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Numi|r
+    .turnin 84138 >> Turn in Frosty Favors
+    .accept 84146 >> Accept Red Bag Blues
+    .target Numi
+step
+    #completewith next
+    .zone Burning Steppes >> Travel to Burning Steppes
+step
+    .train 440496,1
+    .goto Burning Steppes,52.955,24.374
+    >>Click the |cRXP_PICK_Red Bag|r on the ground
+    .turnin 84146 >> Turn in Red Bag Blues
+    .accept 84211 >> Accept Poacher's Den
+    .target Red Bag
+step
+    .train 440496,1
+    #loop
+    .goto Burning Steppes,47.0,27.2,45,0
+    .goto Burning Steppes,46.4,21.4,45,0
+    .goto Burning Steppes,52.95,24.37,45,0
+    >>Kill |cRXP_ENEMY_Blackrock Bootleggers|r and |cRXP_ENEMY_Sulfuron Smugglers|r. Loot them for their |cRXP_LOOT_Vertically Composited Patch Hamplers|r and |cRXP_LOOT_Brass-fitted Flam-Tamp Flange|r
+    .complete 84211,1
+    .complete 84211,2
+    .mob Blackrock Bootlegger
+    .mob Sulfuron Smuggler
+step
+    .train 440496,1
+    #completewith next
+    .zone Winterspring >>Travel to Winterspring
+step
+    .train 440496,1
+    .goto Winterspring,61.2,37.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Numi|r
+    .turnin 84211 >> Turn in Poacher's Den
+    .accept 84212 >> Accept Bookin' it Back
+    .target Numi
+step
+    #completewith next
+    .zone Tanaris >>Travel to Tanaris
+step
+    .train 440496,1
+    >>|cRXP_WARN_Return to |cRXP_FRIENDLY_Sebastian Jurgens|r on the southern remote island again|r
+    .turnin 84212 >> Turn In Bookin' it Back
+    .accept 84213 >> Accept Rift Away
+    .target Sebastian Jurgens
+step
+    .train 440496,1
+    .zone Westfall >> |cRXP_WARN_Follow |cRXP_FRIENDLY_Sebastian Jurgens|r to the teleporter. He will teleport you to Westfall|r << Alliance
+    .zone Tirisfal Glades >> |cRXP_WARN_Follow |cRXP_FRIENDLY_Sebastian Jurgens|r to the teleporter. He will teleport you to Tirisfal Glades|r << Horde
+    .target Sebastian Jurgens
+step
+    .train 440496,1
+    >>|cRXP_WARN_FIND A GROUP TO HELP YOU WITH THIS! YOU MUST HAVE AT LEAST A TANK AND A HEALER HELP YOU!|r
+    >>Talk to |cRXP_FRIENDLY_Sebastian Jurgens|r to summon the |cRXP_ENEMY_Harvest Golem V000-A|r
+    >>Kill the |cRXP_ENEMY_Harvest Golem V000-A|r
+    .complete 84213,1
+    .mob Harvest Golem V000-A
+step
+    .train 440496,1
+    >>Click the |cRXP_PICK_Mech Arm|r on the ground
+    .turnin 84213 >> Turn in Rift Away
+step
+    .train 440496 >>|cRXP_WARN_Use the|r |T133738:0|t[|cRXP_LOOT_Premonition and Combat Foresight|r] |cRXP_WARN_to learn|r |T236312:0|t[Shockwave]
+    .use 226678
 ]])

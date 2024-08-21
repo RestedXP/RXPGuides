@@ -12,14 +12,14 @@ RXPGuides.RegisterGuide([[
 #displayname Chapter 1 - Mechagnome Intro << Mechagnome !DK
 #displayname Chapter 1 - Void Elf Intro << VoidElf !DK
 #displayname Chapter 1 - New Deathknight Intro << DK
-#next B-Elwynn Forest
+#next RestedXP Speedrun Guide\a) The Waking Shores Fresh (A)
 
 << KulTiran/DarkIronDwarf/LightforgedDraenei/Mechagnome/VoidElf/Alliance Pandaren DK
 
 -- step << !Pandaren !DK
 -- #completewith next
 --   .zoneskip 84
---   +Press the default 'N' key to open your Talents.|cRXP_WARN_Then, pick the Talent specialization you want.|r 
+--   +Press the default 'N' key to open your Talents.|cRXP_WARN_Then, pick the Talent specialization you want.|r
 step << DarkIronDwarf !DK
     .goto 1186,56.43,31.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Moira Thaurissan|r
@@ -198,14 +198,14 @@ step << DK
     .isQuestComplete 58877
 step << DK
     #completewith next
-    +Press the default 'N' key to open your Talents.|cRXP_WARN_Then, pick the Talent specialization you want.|r 
+    +Press the default 'N' key to open your Talents.|cRXP_WARN_Then, pick the Talent specialization you want.|r
     .zoneskip 84
     .isQuestTurnedIn 58877 --x New Type of DK Check
 step << DK
     .goto 1602,50.7,71.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Highlord Darion Morgraine|r
     .skipgossip
-    .complete 58902,1 << Alliance --1/1 Speak with Highlord Darion Mograine 
+    .complete 58902,1 << Alliance --1/1 Speak with Highlord Darion Mograine
     .complete 58903,1 << Horde --1/1 Speak with Highlord Darion Mograine
     .target Highlord Darion Morgraine
     .isQuestTurnedIn 58877 --x New Type of DK Check
@@ -213,7 +213,7 @@ step << DK
     .goto 1602,49.96,39.08
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Death Gate|r
     .complete 58902,2 << Alliance --1/1 Death Gate Used
-    .complete 58903,2 << Horde --1/1 Death Gate Used 
+    .complete 58903,2 << Horde --1/1 Death Gate Used
     .isQuestTurnedIn 58877 --x New Type of DK Check
 step << DK
     .goto 84,67.16,83.4,20,0
@@ -322,7 +322,7 @@ step << DK
     .dmf
     .isQuestTurnedIn 58902  --x new type of dk check
     .target Darkmoon Faire Mystic Mage
-step << DK 
+step << DK
     .goto 84,64.63,70.45,25,0
     .goto 84,68.29,74.57,25,0
     .goto 84,70.92,72.45

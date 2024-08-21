@@ -1437,7 +1437,7 @@ step
     .target Gazrog
     .target Thork
     .target Jahan Hawkwing
-step << !Hunter !Druid
+step
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
     .turnin 6361 >>Turn in A Bundle of Hides
@@ -1447,8 +1447,6 @@ step << Hunter/Druid
     #completewith next
     .goto The Barrens,51.50,30.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Devrak|r
-    .turnin 6361 >>Turn in A Bundle of Hides
-    .accept 6362 >>Accept Ride to Thunder Bluff
     .fly Thunder Bluff >>Fly to Thunder Bluff
     .target Devrak
 step << Hunter/Druid
@@ -1585,11 +1583,14 @@ step << Druid
     .target Tal
 step << Druid
     .goto The Barrens,42.00,60.86
-    .use 15710  >>Run to the Moonkin Stone and use the |T132857:0|t[Cenarion Lunardust]. Kill |cRXP_ENEMY_Lunaclaw|r
+    .use 15710 >>|cRXP_WARN_Use|r |T132857:0|t[Cenarion Lunardust] |cRXP_WARN_at the|r |cRXP_PICK_Moonkin Stone|r
+    >>Kill |cRXP_ENEMY_Lunaclaw|r as he spawns. Talk to the |cRXP_FRIENDLY_Lunaclaw Spirit|r afterwards
+    >>|cRXP_WARN_Be careful! |cRXP_ENEMY_Lunaclaw|r casts|r |T132152:0|t[Thrash] |cRXP_WARN_(Charges 2 extra attacks every 10 seconds)|r
     >>|cRXP_WARN_Steer clear of the|r |cRXP_ENEMY_Thunderheads|r |cRXP_WARN_in the area|r
     .complete 6002,1 --Face Lunaclaw and earn the strength of body and heart it possesses. (1)
-    .use 15710
     .mob Lunaclaw
+    .target Lunaclaw Spirit
+    .skipgossip
 step << Druid
     #completewith next
     .goto The Barrens,44.45,59.15
@@ -2590,7 +2591,7 @@ step
     .target Misha Tor'kren
     .isQuestComplete 816
 step
-    #Label FarWatchPost
+    #label FarWatchPost
     .goto The Barrens,62.26,19.38,40 >> Travel to Far Watch Post
 step
     #label Conscript

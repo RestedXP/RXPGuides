@@ -1,4 +1,5 @@
-if not C_Seasons or C_Seasons.GetActiveSeason() ~= 2 then return end
+local _,addon = ...
+if addon.GetSeason() ~= 2 then return end
 RXPGuides.RegisterGuide([[
 #classic
 << Warrior SoD/Hunter SoD
@@ -7,9 +8,9 @@ RXPGuides.RegisterGuide([[
 #subgroup Chest << Hunter
 #name Carrodin Runes
 #displayname Consumed by Rage - 25 (Wetlands) << Warrior
-#displayname Aspect of the Lion - 25 (Wetlands) << Hunter
+#displayname Cobra Slayer - 25 (Wetlands) << Hunter
 #title Consumed by Rage << Warrior
-#title Aspect of the Lion << Hunter
+#title Cobra Slayer << Hunter
 
 step
     #season 2
@@ -25,9 +26,9 @@ step
     #season 2
     .goto Wetlands,47.24,65.34
     >>Kill |cRXP_ENEMY_Carrodin|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Consuming Rage|r] << Warrior
-    >>Kill |cRXP_ENEMY_Carrodin|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Aspect of the Lion|r] << Hunter
+    >>Kill |cRXP_ENEMY_Carrodin|r. Loot it for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Cobra Slayer|r] << Hunter
     .collect 210573,1 << Warrior --Rune of Consuming Rage (1)
-    .collect 211205,1 << Hunter --Rune of Aspect of the Lion (1)
+    .collect 211205,1 << Hunter --Rune of Aspect of Cobra Slayer (1)
     .mob Carrodin
     .train 425446,1 << Warrior
     .train 410115,1 << Hunter
@@ -38,7 +39,7 @@ step << Warrior
     .itemcount 210573,1
 step << Hunter
     #season 2
-    .train 410115 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Aspect of the Lion|r] |cRXP_WARN_to train|r |T132185:0|t[Aspect of the Lion]
+    .train 410115 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Cobra Slayer|r] |cRXP_WARN_to train|r |T136040:0|t[Cobra Slayer]
     .use 211205
     .itemcount 211205,1
 
@@ -95,11 +96,8 @@ RXPGuides.RegisterGuide([[
 << Rogue SoD
 #group RestedXP Rune & Books Guide
 #subgroup Gloves
-#name Shiv - 25 (Duskwood)
-#title Shiv
-
-
-    --Rune of Shiving
+#name Cutthroat - 25 (Duskwood)
+#title Cutthroat
 
 step
     #season 2
@@ -127,7 +125,7 @@ step
     .train 424988,1
 step
     #season 2
-    .train 424988 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shiving|r]
+    .train 424988 >>Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shiving|r] to train |T236280:0|t[Cutthroat]
     .use 210252
     .itemcount 210252,1
 
@@ -210,7 +208,8 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Chest << Priest/Hunter/Druid/Warrior/Shaman
 #subgroup Legs << Warlock/Paladin
-#subgroup Gloves << Mage/Rogue
+#subgroup Gloves << Rogue
+#subgroup Bracers << Mage
 #name Grizzby Runes
 #displayname Serendipity - 25 (The Barrens) << Priest
 #displayname Lone Wolf - 25 (The Barrens) << Hunter
@@ -605,7 +604,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Priest SoD
 #group RestedXP Rune & Books Guide
-#subgroup Legs
+#subgroup Bracers
 #name Power Word: Barrier - 22 (Redridge Mountains)
 #title Power Word: Barrier
 
@@ -720,8 +719,8 @@ RXPGuides.RegisterGuide([[
 << Hunter SoD
 #group RestedXP Rune & Books Guide
 #subgroup Legs
-#name Kill Command - 25 (Multiple Zones)
-#title Kill Command
+#name Kill Shot - 25 (Multiple Zones)
+#title Kill Shot
 
 step
     #completewith WyvernWrangling
@@ -798,7 +797,7 @@ step
     .train 410111,1
 step
     #season 2
-    .train 410111 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Kill Command|r] |cRXP_WARN_to train|r |T132176:0|t[Kill Command]
+    .train 410111 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Kill Command|r] |cRXP_WARN_to train|r |T236174:0|t[Kill Shot]
     .use 209852
     .itemcount 209852,1
 
@@ -1485,146 +1484,114 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Spell Books
 #name Spell Book Runes
-#displayname Totemic Projection - 27-40 (Scarlet Monastery) << Shaman
-#title Totemic Projection << Shaman
-#displayname Expanded Intellect - 27-40 (Scarlet Monastery) << Mage
+
+#displayname Expanded Intellect (Stormwind) << Alliance Mage
+#displayname Expanded Intellect (Orgrimmar) << Horde Mage
 #title Expanded Intellect << Mage
-#displayname Treatise on Aspect of the Viper - 27-40 (Scarlet Monastery) << Hunter
-#title Treatise on Aspect of the Viper << Hunter
-#displayname Soul Harvesting/Portal of Summoning - 27-40 (Scarlet Monastery) << Warlock
-#title Soul Harvesting/Portal of Summoning << Warlock
-#displayname Redirect - 27-40 (Scarlet Monastery) << Rogue
-#title Redirect << Rogue
-#displayname Shadowfiend/Increased Fortitude - 27-40 (Scarlet Monastery) << Priest
+#displayname Aspect of the Viper/Heart of the Lion (Stormwind) << Alliance Hunter
+#displayname Aspect of the Viper/Heart of the Lion (Orgrimmar) << Horde Hunter
+#title Aspect of the Viper/Heart of the Lion << Hunter
+#displayname Soul Harvesting/Portal of Summoning/Fel Armor (Stormwind) << Alliance Warlock
+#displayname Soul Harvesting/Portal of Summoning/Fel Armor (Orgrimmar) << Horde Warlock
+#title Soul Harvesting/Portal of Summoning/Fel Armor << Warlock
+#displayname Redirect/Occult Poison/Numbing Poison/Sebacious Poison/Atrophic Poison (Stormwind) << Alliance Rogue
+#displayname Redirect/Occult Poison/Numbing Poison/Sebacious Poison/Atrophic Poison (Orgrimmar) << Horde Rogue
+#title Redirect/Occult Poison/Numbing Poison/Sebacious Poison/Atrophic Poison << Rogue
+#displayname Shadowfiend/Increased Fortitude (Stormwind) << Alliance Priest
+#displayname Shadowfiend/Increased Fortitude (Orgrimmar) << Horde Priest
 #title Shadowfiend/Increased Fortitude << Priest
-#displayname Enhanced Blessings - 27-40 (Scarlet Monastery) << Paladin
-#title Enhanced Blessings << Paladin
-#displayname Enhanced Restoration/Revive/Deeper Wilds - 27-40 (Scarlet Monastery) << Druid
+#displayname Enhanced Restoration/Revive/Deeper Wilds (Stormwind) << Alliance Druid
+#displayname Enhanced Restoration/Revive/Deeper Wilds (Orgrimmar) << Horde Druid
 #title Enhanced Restoration/Revive/Deeper Wilds << Druid
-#displayname Commanding Shout - 27-40 (Scarlet Monastery) << Warrior
-#title Commanding Shout << Warrior
+#displayname Commanding Shout/Meathook (Stormwind) << Alliance Warrior
+#displayname Commanding Shout/Meathook (Orgrimmar) << Horde Warrior
+#title Commanding Shout/Meathook << Warrior
+#displayname Testament of the Exorcist/Enhanced Blessings (Stormwind) << Paladin
+#title Testament of the Exorcist/Enhanced Blessings << Paladin
+#displayname Totemic Projection/Shamanistic Rage (Orgrimmar) << Shaman
+#title Totemic Projection/Shamanistic Rage << Shaman
 
 step
-    .train 438040,1 << Rogue
-    .train 436949,1 << Mage
-    .train 436956,1 << Druid
-    .train 417123,1 << Druid
-    .train 437138,1 << Druid
-    .train 415423,1 << Hunter
-    .train 435984,1 << Paladin
-    .train 401977,1 << Priest
-    .train 436951,1 << Priest
-    .train 437032,1 << Warlock
-    .train 437169,1 << Warlock
-    .train 403215,1 << Warrior
-    .train 437009,1 << Shaman
-    #completewith Interrogator Vishas
-    +The Skill Books can be acquired by mobs within Scarlet Monastery: Graveyard/Library. The following enemies have an increased chance to drop them: the first and last dungeon bosses, or the rare enemy, |cRXP_ENEMY_Ironspine|r. |cRXP_WARN_It is highly recommended to form a group of 5 players.|r
+    #completewith BuyBook
+    >>|cRXP_WARN_Skill Books can now bought with gold from Stormwind instead of having to run Scarlet Monastery for them.|r << Alliance
+    >>|cRXP_WARN_Skill Books can now bought with gold from Orgrimmar instead of having to run Scarlet Monastery for them.|r << Horde
+    .zone Stormwind City >> Travel to Stormwind << Alliance
+    .zone Orgrimmar >> Travel to Orgrimmar << Horde
+step << Alliance
+    #optional
+    #completewith next
+    .goto Stormwind City,70.347,27.208,15,0
+    .goto Stormwind City,72.005,21.542,20 >> Travel to the Stormwind Keep
 step
-    .train 438040,1 << Rogue
-    .train 436949,1 << Mage
-    .train 436956,1 << Druid
-    .train 417123,1 << Druid
-    .train 437138,1 << Druid
-    .train 415423,1 << Hunter
-    .train 435984,1 << Paladin
-    .train 401977,1 << Priest
-    .train 436951,1 << Priest
-    .train 437032,1 << Warlock
-    .train 437169,1 << Warlock
-    .train 403215,1 << Warrior
-    .train 437009,1 << Shaman
-    .zone Tirisfal Glades >>Travel to |cFFfa9602Tirisfal Glades|r
-step
-    .train 438040,1 << Rogue
-    .train 436949,1 << Mage
-    .train 436956,1 << Druid
-    .train 417123,1 << Druid
-    .train 437138,1 << Druid
-    .train 415423,1 << Hunter
-    .train 435984,1 << Paladin
-    .train 401977,1 << Priest
-    .train 436951,1 << Priest
-    .train 437032,1 << Warlock
-    .train 437169,1 << Warlock
-    .train 403215,1 << Warrior
-    .train 437009,1 << Shaman
-    .goto 1415,47.44,19.75,10,0
-    .goto 1415,47.45,19.69,5,0
-    .goto 1415,47.62,19.59,10,0
-    .goto 1415,47.73,19.39,5 >> Enter The Scarlet Monastery Dungeon: Graveyard
-step
-    .train 438040,1 << Rogue
-    .train 436949,1 << Mage
-    .train 436956,1 << Druid
-    .train 417123,1 << Druid
-    .train 437138,1 << Druid
-    .train 415423,1 << Hunter
-    .train 435984,1 << Paladin
-    .train 401977,1 << Priest
-    .train 436951,1 << Priest
-    .train 437032,1 << Warlock
-    .train 437169,1 << Warlock
-    .train 403215,1 << Warrior
-    .train 437009,1 << Shaman
-    #label Interrogator Vishas
-    >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Manual of Redirect|r |cRXP_WARN_This might require multiple runs.|r << Rogue
-    >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Leaflet of Enhanced Restoration|r, |T134914:0|t|cRXP_LOOT_[Leaflet of Revive]|r and |T134914:0|t|cRXP_LOOT_[Leaflet of Deeper Wilds]|r |cRXP_WARN_This might require multiple runs.|r << Druid
-    >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Treatise on Aspect of the Viper|r |cRXP_WARN_This might require multiple runs.|r << Hunter
-    >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Tome of Expanded Intellect|r |cRXP_WARN_This might require multiple runs.|r << Mage
-    >>Kill Bosses,Rares and monsters.Loot them for |T133745:0|t|cRXP_LOOT_[Testament of Enhanced Blessings]|r |cRXP_WARN_This might require multiple runs.|r << Paladin
-    >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Scroll of Shadowfiend|r, |T237543:0|t[Increased Fortitude] |cRXP_WARN_This might require multiple runs.|r << Priest
-    >>|cRXP_WARN_Additionally, click on the |cRXP_PICK_Tombstone|r near the Headless Horseman's spawn location to collect the |cRXP_LOOT_|T136222:0|t[Graveyard Echo]|r |cFFFF0000This is necessary for the Pain Suppression Rune. If you already have this rune, you can skip it|r. << Priest
-    >>Kill Bosses,Rares and monsters.Loot them for |T133733:0|t|cRXP_LOOT_[Grimoire of Soul Harvesting]|r,|T133733:0|t|cRXP_LOOT_[Grimoire of Portal of Summoning]|r |cRXP_WARN_This might require multiple runs.|r << Warlock
-    >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Rune of the Commander|r |cRXP_WARN_This might require multiple runs.|r << Warrior
-    >>Kill Bosses,Rares and monsters.Loot them for |cRXP_LOOT_Rune of the Commander|r |cRXP_WARN_This might require multiple runs.|r << Shaman
-    .link https://imgur.com/a/lqRc0i6 >> |cRXP_WARN_Click here for a picture reference for the |T136222:0|t[Graveyard Echo]|r. << Priest
-    .collect 216738,1 << Rogue -- Manual of Redirect
-    .collect 216740,1 << Mage -- Tome of Expanded Intellect
-    .collect 216744,1 << Priest -- Scroll of Increased Fortitude
-    .collect 216745,1 << Priest -- Scroll of Shadowfiend
-    .collect 215426,1 << Priest -- Graveyard Echo
-    .collect 216746,1 << Warrior -- Handbook of Commanding Shout
-    .collect 216747,1 << Warlock -- Grimoire of Soul Harvesting
-    .collect 216748,1 << Warlock -- Grimoire of Portal of Summoning
-    .collect 216764,1 << Druid -- Leaflet of Deeper Wilds
-    .collect 216767,1 << Druid -- Leaflet of Revive
-    .collect 216768,1 << Paladin -- Testament of Enhanced Blessings
-    .collect 216769,1 << Shaman -- Revelation of Totemic Projection
-    .collect 216770,1 << Hunter -- Treatise on Aspect of the Viper
-    .collect 216771,1 << Druid -- Leaflet of Enhanced Restoration
-    .mob Interrogator Vishas
-    .mob Bloodmage Thalnos
-    .mob Ironspine
-    .mob Houndmaster Loksey
-    .mob Arcanist Doan
-step
-    .train 438040 >>|cRXP_WARN_Use the|r |T133735:0|t|cRXP_LOOT_[Manual of Redirect]|r |cRXP_WARN_to learn|r |T135425:0|t[Redirect] << Rogue
-    .train 436949 >>|cRXP_WARN_Use the|r |T133736:0|t|cRXP_LOOT_[Tome of Expanded Intellect]|r |cRXP_WARN_to learn|r |T236513:0|t[Expanded Intellect] << Mage
-    .train 436956 >>|cRXP_WARN_Use the|r |T134914:0|t|cRXP_LOOT_[Leaflet of Deeper Wilds]|r |cRXP_WARN_to learn|r |T132124:0|t[Deeper Wilds] << Druid
-    .train 417123 >>|cRXP_WARN_Use the|r |T134914:0|t|cRXP_LOOT_[Leaflet of Enhanced Restoration]|r |cRXP_WARN_to learn|r |T136073:0|t[Enhanced Restoration] << Druid
-    .train 437138 >>|cRXP_WARN_Use the|r |T134914:0|t|cRXP_LOOT_[Leaflet of Revive]|r |cRXP_WARN_to learn|r |T132132:0|t[437138] << Druid
-    .train 415423 >>|cRXP_WARN_Use the|r |T133739:0|t|cRXP_LOOT_[Treatise on Aspect of the Viper]|r |cRXP_WARN_to learn|r |T132160:0|t[Aspect of the Viper] << Hunter
-    .train 435984 >>|cRXP_WARN_Use the|r |T133745:0|t|cRXP_LOOT_[Testament of Enhanced Blessings]|r |cRXP_WARN_to learn|r |T236248:0|t[Enhanced Blessings] << Paladin
-    .train 401977 >>|cRXP_WARN_Use the|r |T237162:0|t|cRXP_LOOT_[Scroll of Shadowfiend]|r |cRXP_WARN_to learn|r |T136199:0|t[Shadowfiend] << Priest
-    .train 436951 >>|cRXP_WARN_Use the|r |T237162:0|t|cRXP_LOOT_[Scroll of Increased Fortitude]|r |cRXP_WARN_to learn|r |T237543:0|t[Increased Fortitude] << Priest
-    .train 437032 >>|cRXP_WARN_Use the|r |T133733:0|t|cRXP_LOOT_[Grimoire of Soul Harvesting]|r |cRXP_WARN_to learn|r |T132851:0|t[Soul Harvesting] << Warlock
-    .train 437169 >>|cRXP_WARN_Use the|r |T133733:0|t|cRXP_LOOT_[Grimoire of Portal of Summoning]|r |cRXP_WARN_to learn|r |T134423:0|t[Portal of Summoning] << Warlock
-    .train 403215 >>|cRXP_WARN_Use the|r |T133741:0|t|cRXP_LOOT_[Handbook of Commanding Shout]|r |cRXP_WARN_to learn|r |T132351:0|t[Commanding Shout] << Warrior
-    .train 437009 >>|cRXP_WARN_Use the|r |T133747:0|t|cRXP_LOOT_[Revelation of Totemic Projection]|r |cRXP_WARN_to learn|r |T310733:0|t[Totemic Projection] << Shaman
+    #label BuyBook
+    .goto Stormwind City,74.182,7.465 << Alliance
+    .goto Orgrimmar,38.923,38.398 << Horde
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Milton Sheaf|r << Alliance
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zor Lonetree|r << Horde
+    >>|cRXP_WARN_Note: |T133736:0|t|cRXP_LOOT_[Tome of Expanded Intellect]|r requires level 25 to use|r << Mage
+    >>|cRXP_WARN_Note: |T133733:0|t|cRXP_LOOT_[Grimoire of Soul Harvesting]|r and |T133733:0|t|cRXP_LOOT_[Grimoire of Portal of Summoning]|r require level 25 to use|r << Warlock
+    >>|cRXP_WARN_Note: |T133733:0|t|cRXP_LOOT_[Grimoire of Fel Armor]|r requires level 50 to use|r << Warlock
+    >>|cRXP_WARN_Note: |T133745:0|t|cRXP_LOOT_[Testament of the Exorcist]|r and |T133745:0|t|cRXP_LOOT_[Testament of Martyrdom]|r requires level 10 to use|r << Paladin
+    >>|cRXP_WARN_Note: |T133745:0|t|cRXP_LOOT_[Testament of Enhanced Blessings]|r requires level 25 to use|r << Paladin
+    >>|cRXP_WARN_Note: |T133739:0|t|cRXP_LOOT_[Treatise on the Heart of the Lion]|r requires level 10 to use|r << Hunter
+    >>|cRXP_WARN_Note: |T133739:0|t|cRXP_LOOT_[Treatise on Aspect of the Viper]|r requires level 25 to use|r << Hunter
+    >>|cRXP_WARN_Note: |T133735:0|t|cRXP_LOOT_[Manual of Redirect]|r requires level 25 to use|r << Rogue
+    >>|cRXP_WARN_Note: |T133735:0|t|cRXP_LOOT_[Manual of Occult Poison]|r requires level 54 to use|r << Rogue
+    >>|cRXP_WARN_Note: |T133735:0|t|cRXP_LOOT_[Manual of Numbing Poison]|r, |cRXP_LOOT_[Manual of Sebacious Poison]|r and |cRXP_LOOT_[Manual of Atrophic Poison]|r requires level 60 to use|r << Rogue
+    >>|cRXP_WARN_Note: |T237162:0|t|cRXP_LOOT_[Scroll of Shadowfiend]|r and |T237162:0|t|cRXP_LOOT_[Scroll of Increased Fortitude]|r require level 25 to use|r << Priest
+    >>|cRXP_WARN_Note: |T134914:0|t|cRXP_LOOT_[Leaflet of Deeper Wilds]|r|cRXP_WARN_,|r |T134914:0|t|cRXP_LOOT_[Leaflet of Enhanced Restoration]|r |cRXP_WARN_and |T134914:0|t|cRXP_LOOT_[Leaflet of Revive]|r require level 25 to use|r << Druid   
+    >>|cRXP_WARN_Note: |T133741:0|t|cRXP_LOOT_[Handbook of Commanding Shout]|r requires level 25 to use|r << Warrior
+    >>|cRXP_WARN_Note: |T133741:0|t|cRXP_LOOT_[Handbook of Meathook]|r requires level 40 to use|r << Warrior
+    >>|cRXP_WARN_Note: |T133747:0|t|cRXP_LOOT_[Revelation of Shamanistic Rage]|r requires level 10 to use|r << Shaman
+    >>|cRXP_WARN_Note: |T133747:0|t|cRXP_LOOT_[Revelation of Totemic Projection]|r requires level 25 to use|r << Shaman
+    .train 438040 >>|cRXP_WARN_Buy and use the|r |T133735:0|t|cRXP_LOOT_[Manual of Redirect]|r |cRXP_WARN_to learn|r |T135425:0|t[Redirect] << Rogue
+    .train 458822 >>|cRXP_WARN_Buy and use the|r |T133735:0|t|cRXP_LOOT_[Manual of Occult Poison]|r |cRXP_WARN_to learn|r |T135935:0|t[Occult Poison I] << Rogue
+    .train 438040 >>|cRXP_WARN_Buy and use the|r |T133735:0|t|cRXP_LOOT_[Manual of Numbing Poison]|r |cRXP_WARN_to learn|r |T132098:0|t[Numbing Poison] << Rogue
+    .train 439500 >>|cRXP_WARN_Buy and use the|r |T133735:0|t|cRXP_LOOT_[Manual of Sebacious Poison]|r |cRXP_WARN_to learn|r |T132108:0|t[Sebacious Poison] << Rogue
+    .train 438040 >>|cRXP_WARN_Buy and use the|r |T133735:0|t|cRXP_LOOT_[Manual of Atrophic Poison]|r |cRXP_WARN_to learn|r |T132100:0|t[Atrophic Poison] << Rogue
+    .train 436949 >>|cRXP_WARN_Buy and use the|r |T133736:0|t|cRXP_LOOT_[Tome of Expanded Intellect]|r |cRXP_WARN_to learn|r |T236513:0|t[Expanded Intellect] << Mage
+    .train 436956 >>|cRXP_WARN_Buy and use the|r |T134914:0|t|cRXP_LOOT_[Leaflet of Deeper Wilds]|r |cRXP_WARN_to learn|r |T132124:0|t[Deeper Wilds] << Druid
+    .train 417123 >>|cRXP_WARN_Buy and use the|r |T134914:0|t|cRXP_LOOT_[Leaflet of Enhanced Restoration]|r |cRXP_WARN_to learn|r |T136073:0|t[Enhanced Restoration] << Druid
+    .train 437138 >>|cRXP_WARN_Buy and use the|r |T134914:0|t|cRXP_LOOT_[Leaflet of Revive]|r |cRXP_WARN_to learn|r |T132132:0|t[Revive] << Druid
+    .train 409580 >>|cRXP_WARN_Buy and use the|r |T133739:0|t|cRXP_LOOT_[Treatise on the Heart of the Lion]|r |cRXP_WARN_to learn|r |T132185:0|t[Heart of the Lion] << Hunter
+    .train 415423 >>|cRXP_WARN_Buy and use the|r |T133739:0|t|cRXP_LOOT_[Treatise on Aspect of the Viper]|r |cRXP_WARN_to learn|r |T132160:0|t[Aspect of the Viper] << Hunter
+    .train 415076 >>|cRXP_WARN_Buy and use the|r |T133745:0|t|cRXP_LOOT_[Testament of the Exorcist]|r |cRXP_WARN_to learn|r |T135956:0|t[Exorcist] << Paladin
+    .train 407798 >>|cRXP_WARN_Buy and use the|r |T133745:0|t|cRXP_LOOT_[Testament of Martyrdom]|r |cRXP_WARN_to learn|r |T135961:0|t[Seal of Martyrdom] << Paladin
+    .train 435984 >>|cRXP_WARN_Buy and use the|r |T133745:0|t|cRXP_LOOT_[Testament of Enhanced Blessings]|r |cRXP_WARN_to learn|r |T236248:0|t[Enhanced Blessings] << Paladin
+    .train 401977 >>|cRXP_WARN_Buy and use the|r |T237162:0|t|cRXP_LOOT_[Scroll of Shadowfiend]|r |cRXP_WARN_to learn|r |T136199:0|t[Shadowfiend] << Priest
+    .train 436951 >>|cRXP_WARN_Buy and use the|r |T237162:0|t|cRXP_LOOT_[Scroll of Increased Fortitude]|r |cRXP_WARN_to learn|r |T237543:0|t[Increased Fortitude] << Priest
+    .train 437032 >>|cRXP_WARN_Buy and use the|r |T133733:0|t|cRXP_LOOT_[Grimoire of Soul Harvesting]|r |cRXP_WARN_to learn|r |T132851:0|t[Soul Harvesting] << Warlock
+    .train 437169 >>|cRXP_WARN_Buy and use the|r |T133733:0|t|cRXP_LOOT_[Grimoire of Portal of Summoning]|r |cRXP_WARN_to learn|r |T134423:0|t[Portal of Summoning] << Warlock
+    .train 403619 >>|cRXP_WARN_Buy and use the|r |T133733:0|t|cRXP_LOOT_[Grimoire of Fel Armor]|r |cRXP_WARN_to learn|r |T136156:0|t[Fel Armor] << Warlock
+    .train 403215 >>|cRXP_WARN_Buy and use the|r |T133741:0|t|cRXP_LOOT_[Handbook of Commanding Shout]|r |cRXP_WARN_to learn|r |T132351:0|t[Commanding Shout] << Warrior
+    .train 403228 >>|cRXP_WARN_Buy and use the|r |T133741:0|t|cRXP_LOOT_[Handbook of Meathook]|r |cRXP_WARN_to learn|r |T132507:0|t[Meathook] << Warrior
+    .train 425336 >>|cRXP_WARN_Buy and use the|r |T133747:0|t|cRXP_LOOT_[Revelation of Shamanistic Rage]|r |cRXP_WARN_to learn|r |T136088:0|t[Shamanistic Rage] << Shaman
+    .train 437009 >>|cRXP_WARN_Buy and use the|r |T133747:0|t|cRXP_LOOT_[Revelation of Totemic Projection]|r |cRXP_WARN_to learn|r |T310733:0|t[Totemic Projection] << Shaman
     .use 216738 << Rogue -- Manual of Redirect
+    .use 226396 << Rogue -- Manual of Occult Poison
+    .use 226394 << Rogue -- Manual of Atrophic Poison
+    .use 226397 << Rogue -- Manual of Sebacious Poison
+    .use 226395 << Rogue -- Manual of Numbing Poison
     .use 216740 << Mage -- Tome of Expanded Intellect
     .use 216744 << Priest -- Scroll of Increased Fortitude
     .use 216745 << Priest -- Scroll of Shadowfiend
     .use 216746 << Warrior -- Handbook of Commanding Shout
+    .use 226403 << Warrior -- Handbook of Meathook
     .use 216747 << Warlock -- Grimoire of Soul Harvesting
     .use 216748 << Warlock -- Grimoire of Portal of Summoning
+    .use 403619 << Warlock -- Grimoire of Fel Armor
     .use 216764 << Druid -- Leaflet of Deeper Wilds
     .use 216767 << Druid -- Leaflet of Revive
     .use 216768 << Paladin -- Testament of Enhanced Blessings
+    .use 226400 << Paladin -- Testament of the Exorcist
+    .use 226398 << Paladin -- Testament of Martyrdom
     .use 216769 << Shaman -- Revelation of Totemic Projection
+    .use 226402 << Shaman -- Revelation of Shamanistic Rage
     .use 216770 << Hunter -- Treatise on Aspect of the Viper
+    .use 226401 << Hunter -- Treatise on the Heart of the Lion
     .use 216771 << Druid -- Leaflet of Enhanced Restoration
+    .target Milton Sheaf << Alliance
+    .target Zor Lonetree << Horde
 ]])
 
 RXPGuides.RegisterGuide([[
@@ -1633,9 +1600,9 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Boots
 #name Bugcatcher Runes
-#displayname Invigoration - 35 (Azeroth) << Hunter
+#displayname Wyvern Strike - 35 (Azeroth) << Hunter
 #displayname Survival Instincts - 35 (Azeroth) << Druid
-#title Invigoration << Hunter
+#title Wyvern Strike << Hunter
 #title Survival Instincts << Druid
 
 step
@@ -1732,7 +1699,7 @@ step
     .skipgossip 217412,1
     .target Amaryllis Webb
 step
-    .train 416089 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Invigoration|r] |cRXP_WARN_to train|r |T236184:0|t[Invigoration] << Hunter
+    .train 416089 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Invigoration|r] |cRXP_WARN_to train|r |T135125:0|t[Wyvern Strike] << Hunter
     .train 410027 >> |cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Instinct|r] |cRXP_WARN_to train|r |T132266:0|t[Survival Instincts] << Druid
     .use 213125 << Hunter
     .use 213119 << Druid
@@ -1850,8 +1817,7 @@ RXPGuides.RegisterGuide([[
 #displayname Shield Mastery <<Warrior
 
 step
-    +|cRXP_WARN_Go to any of the zones listed below. At the marked locations in each respecive one you will find an NPC from a new faction,|r |cRXP_FRIENDLY_The Emerald Wardens|r. |cRXP_WARN_To unlock this rune you will need to complete their quests and reach|r |cRXP_FRIENDLY_friendly|r |cRXP_WARN_reputation with them|r
-    >>|cRXP_WARN_TIP: If you're close to level 50 or above go to Feralas or The Hinterlands. In those zones you can complete a daily quest for an additional 1000 reputation|r. |cRXP_WARN_Farming this reputation is also much more efficient when done in a group so you can share quests between party members|r
+    +|cRXP_WARN_Go to any of the zones listed below. At the marked locations in each respecive one you will find an NPC from a new faction,|r |cRXP_FRIENDLY_The Emerald Wardens|r.
     >>Duskwood
     >>Ashenvale
     >>Feralas
@@ -1861,18 +1827,7 @@ step
     .zoneskip Feralas
     .zoneskip The Hinterlands
 step
-    .reputation 2641,friendly >>Look for a Quartermaster of |cRXP_FRIENDLY_The Emerald Wardens|r in the marked location. Start doing quests for them untill you reach |cRXP_FRIENDLY_friendly|r status
-    .link https://www.wowhead.com/classic/guide/season-of-discovery/emerald-wardens-reputation-nightmare-incursions >>Click here for a more in-depth guide for |cRXP_FRIENDLY_The Emerald Wardens|r reputation
-    .goto Duskwood,45.6,51.2,-1
-    .goto Ashenvale,89.6,40.6,-1
-    .goto Feralas,48.6,12.6,-1
-    .goto The Hinterlands,61.4,34.6,-1
-    .target Quartermaster Falinar
-    .target Quartermaster Kyleen
-    .target Quartermaster Valdane
-    .target Quartermaster Alandra
-step
-    >>Go back to |cRXP_FRIENDLY_the Quartermaster|r and buy your rune from them
+    >>Look for a Quartermaster of |cRXP_FRIENDLY_The Emerald Wardens|r in the marked location and buy your rune from them
     .goto Duskwood,45.6,51.2,-1
     .goto Ashenvale,89.6,40.6,-1
     .goto Feralas,48.6,12.6,-1
@@ -1904,7 +1859,7 @@ step
     .use 221481 << Priest --Nihilist Epiphany
     .use 221482 << Warlock --Rune of Affliciton
     .use 221483 << Shaman --Rune of Burn
-    .use 221511 << Shaman --Rune of the Protector
+    .use 221511 << Warrior --Rune of the Protector
     .use 221512 << Rogue --Rune of Alclarity
     .use 221515 << Hunter --Rune of Detonation
     .use 221517 << Druid --Rune of Bloodshed
@@ -1990,7 +1945,7 @@ RXPGuides.RegisterGuide([[
 #group RestedXP Rune & Books Guide
 #subgroup Helmet <<Warlock
 #subgroup Bracers <<Paladin/Priest/Mage
-#name Ley Crystal Runes 
+#name Ley Crystal Runes
 #displayname Displacement - 45 (Azeroth) <<Mage
 #displayname Purifying Power - 45 (Azeroth) <<Paladin
 #displayname Despair - 45 (Azeroth) <<Priest
@@ -2097,4 +2052,385 @@ step
     .use 221979 << Priest
     .train 416055 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Mental Dexterity|r] |cRXP_WARN_to learn|r |T136055:0|t[Mental Dexterity] << Shaman
     .train 415991 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of Verdant Winter|r] |cRXP_WARN_to learn|r |T237567:0|t[Pain and Suffering] << Priest
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warrior SoD/Hunter SoD/Rogue SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Ranged Weapon Specialization
+#name Ranged Weapon Specialization - 58 (Eastern Plaguelands)
+
+step
+    #completewith rangeSpec
+    .zone Eastern Plaguelands >>Travel to Eastern Plaguelands
+step << Horde
+    #label rangeSpec
+    .goto Eastern Plaguelands,26.0,74.0
+    >>Loot the red book next to |cRXP_FRIENDLY_Nathanos Blightcaller|r. Its outside the house, to the left of the door. It contains the |T134419:0|t[|cRXP_FRIENDLY_Rune of Ranged Weapon Specialization|r]
+    .collect 226410,1 --Rune of Ranged Weapon Specialization
+step << Alliance
+    #label rangeSpec
+    .goto Eastern Plaguelands,26.0,74.0
+    >>Loot the red book next to |cRXP_ENEMY_Nathanos Blightcaller|r. Its outside the house, to the left of the door. It contains the |T134419:0|t[|cRXP_FRIENDLY_Rune of Ranged Weapon Specialization|r]
+    >>|cRXP_WARN_If there's someone nearby ask them to pull|r |cRXP_ENEMY_Nathanos Blightcaller|r |cRXP_WARN_away for a while while you safely loot the rune|r
+    >>|cRXP_WARN_If there's no one nearby you can die to|r |cRXP_ENEMY_Nathanos|r |cRXP_WARN_and then respawn while standing inside the house and outside of his line of sight. Then loot the book from inside the house either by using the interact key or angling your camera so you can click it|r << Warrior/Rogue
+    >>|cRXP_WARN_If there's no one nearby set your pet to|r |T136106:0|t[Stay] |cRXP_WARN_a decent distance away from|r |cRXP_ENEMY_Nathanos|r |cRXP_WARN_then send a pet|r |T132152:0|t[Attack] |cRXP_WARN_command to aggro him onto your pet. Once he's targetting your pet set your pet to|r |T132311:0|t[Passive], |cRXP_WARN_this will make your pet return to it's Stay position. Walk next to the book and use |T132293:0|t[Feign Death] to drop combat and loot the rune|r << Hunter
+    .collect 226410,1 --Rune of Ranged Weapon Specialization
+step
+    .train 453692 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Ranged Weapon Specialization|r] |cRXP_WARN_to learn|r |T135490:0|t[Ranged Weapon Specialization]
+    .use 226410
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Priest SoD/Paladin SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Holy Specialization
+#name Holy Specialization - 60 (Eastern Plaguelands)
+
+step
+    #completewith next
+    >>|cRXP_WARN_Getting this rune will require you to fight mobs in an elite area. It's possible to do solo but if you're lower level or not very geared consider looking for someone to help you|r
+    .zone Eastern Plaguelands >> Travel to Eastern Plaguelands
+step
+    >>|cRXP_WARN_You can get this rune at the same time as|r |T135883:0|t[|cRXP_FRIENDLY_Binding Heal|r] |cRXP_WARN_if you progress that questline first. Go to the|r |T135883:0|t[|cRXP_FRIENDLY_Binding Heal|r] |cRXP_WARN_rune guide if you'd rather get both runes at the same time|r << Priest
+    .goto Eastern Plaguelands,77.5,81.7,50 >> Travel to Tyr's Hand, |cRXP_WARN_keep in mind that this is an elite area|r
+step
+    .goto Eastern Plaguelands,83.6,78.2
+    >>|cRXP_WARN_Head to the library wing of the building marked on your map and look for a book located on top of a bookshelf. Loot it for the rune. Keep in mind you can't loot it in combat|r
+    >>|cRXP_WARN_You can either clear all mobs in the room or die next to the book and release in a spot thats out of line of sight of mobs to loot the rune without having to kill anything|r
+    .collect 226418,1 --Rune of Holy Specialization
+    .train 453702,1
+step
+    #completewith next
+    .train 453702 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Holy Specialization|r] to train |T237537:0|t[Holy Specialization]
+    .train 453702,1
+    .itemcount 226418,1
+    .use 226418
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Mage SoD/Druid SoD/Hunter SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Arcane Specialization
+#name Arcane Specialization - 60 (Western Plaguelands)
+
+step
+    #completewith next
+    >>|cRXP_WARN_Getting this rune will require you to fight mobs in an elite area. It's possible to do solo but if you're lower level or not very geared consider looking for someone to help you|r
+    .zone Western Plaguelands >> Travel to Western Plaguelands
+step
+    .goto Western Plaguelands,48.7,22.4,50 >> Travel to Hearthglen, |cRXP_WARN_keep in mind that this is an elite area|r
+step
+    .goto Western Plaguelands,47.3,13.6
+    >>|cRXP_WARN_Head to the top of the tower marked on your map. Look for a red book laying in a corner next to a bookshelf, it's guarded by a|r |cRXP_ENEMY_Scarlet Priest|r. |cRXP_WARN_Loot it for the rune|r
+    .collect 226413,1 --Rune of Arcane Specialization
+    .train 453702,1
+step
+    #completewith next
+    .train 453695 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Arcane Specialization|r] to train |T132849:0|t[Arcane Specialization]
+    .train 453695,1
+    .itemcount 226413,1
+    .use 226413
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Hunter SoD/Paladin SoD/Warrior SoD/Shaman SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Axe Specialization
+#name Axe Specialization - 58 (Burning Steppes)
+
+step
+    #completewith next
+    .zone Burning Steppes >> Travel to Burning Steppes
+step
+    .goto Burning Steppes,40.3,34.9,100 >> Travel to the Blackrock Stronghold
+step
+    .goto Burning Steppes,39.9,34.1
+    >>|cRXP_WARN_Enter the Stronghold and look for a red book laying in the location marked on your map. Loot it for the rune|r
+    .collect 226407,1 --Rune of Axe Specialization
+step
+    #completewith next
+    .train 453688 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Axe Specialization|r] to train |T132394:0|t[Axe Specialization]
+    .itemcount 226407,1
+    .use 226407
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Hunter SoD/Druid SoD/Warrior SoD/Shaman SoD/Mage SoD/Priest SoD/Rogue SoD/Warlock SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Dagger Specialization
+#name Dagger Specialization - 60 (Silithus)
+
+step
+    #completewith next
+    .zone Burning Steppes >> Travel to Silithus
+step
+    .goto Silithus,20,85,50 >> Travel to the south of the zone to a tent near the gates of Ahn'Qiraj
+step
+    .goto Silithus,20,85
+    >>|cRXP_WARN_Enter the tent and look for a red book laying in the location marked on your map. Loot it for the rune|r
+    .collect 226409,1 --Rune of Dagger Specialization
+step
+    #completewith next
+    .train 453690 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Dagger Specialization|r] to train |T135641:0|t[Dagger Specialization]
+    .itemcount 226409,1
+    .use 226409
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Druid SoD/Warrior SoD/Shaman SoD/Rogue SoD/Warlock SoD/Paladin SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Defense Specialization
+#name Defense Specialization - 60 (Blackrock Mountain)
+
+step
+    #completewith next
+    .zone 25 >> Travel to the Blackrock Mountain either through Searing Gorge or the Burning Steppes
+step
+    .goto 1415/0,-1232.500,-7612.600,20 >> Travel to the east side of the molten span circle untill you find a doorway leading to a path to the Lower Blackrock Spire
+step
+    .goto 1415/0,-1294.200,-7574.700,5 >> Travel up the path and enter the first side room to your right. |cRXP_WARN_You might have to kill elite mobs standing in your way as you cannot loot the book while in combat|r
+step
+    .goto 1415/0,-1302.100,-7583.400
+    >>|cRXP_WARN_Look for a red book laying on the ground in this room. It can spawn in multiple locations. Loot it for the rune|r
+    .collect 226694,1 --Rune of Defense Specialization
+step
+    #completewith next
+    .train 459313 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Defense Specialization|r] to train |T134952:0|t[Defense Specialization]
+    .itemcount 226694,1
+    .use 226694
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Druid SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Feral Combat Specialization
+#name Feral Combat Specialization - 60 (Winterspring)
+
+step
+    #completewith next
+    .zone Winterspring >> Travel to Winterspring
+step
+    .goto Winterspring,49.0,8.0,50 >> Head north to the Frostsaber Rock
+step
+    .goto Winterspring,49.0,8.0
+    >>|cRXP_WARN_Look for a red book in the marked location. It might be guarded by two level 55-56|r |cRXP_ENEMY_Frostsabers|r |cRXP_WARN_Loot it for the rune|r
+    .collect 226419,1 --Rune of Feral Combat Specialization
+step
+    #completewith next
+    .train 453703 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Feral Combat Specialization|r] to train |T132116:0|t[Feral Combat Specialization]
+    .itemcount 226419,1
+    .use 226419
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Hunter SoD/Mage SoD/Shaman SoD/Warlock SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Fire Specialization
+#name Fire Specialization - 52 (Searing Gorge)
+
+step
+    #completewith next
+    .zone Searing Gorge >> Travel to Searing Gorge
+step
+    .goto 1427/0,-1425.800,-6772.400,25 >> Enter the Slag Pits via the cave entrance marked on your map
+step
+    .goto 1427/0,-1306.900,-6642.800,25 >> Cross the bridge heading north
+step
+    .goto 1427/0,-1225.300,-6623.600
+    >>|cRXP_WARN_Look for a red book on a bench behind|r |cRXP_ENEMY_Overseer Maltorius|r. |cRXP_WARN_Loot it for the rune. Keep in mind you can't do it while in combat|r
+    >>|cRXP_WARN_If you're higher level you can loot it without pulling|r |cRXP_ENEMY_Overseer Maltorius|r |cRXP_WARN_if you hug the very edge of his balcony, if you can't do it try asking someone to pull him away as you loot the book or kill him and his guards|r
+    >>|cRXP_WARN_As a Hunter you can pull him away with your pet then cast|r |T132293:0|t[Feign Death] |cRXP_WARN_while next to the book to drop combat and loot it. Make sure you pull the Overseer somewhere oustide of your line of sight or he might put you back in combat|r << Hunter
+    .collect 226414,1 --Rune of Fire Specialization
+step
+    #completewith next
+    .train 453696 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Fire Specialization|r] to train |T132847:0|t[Fire Specialization]
+    .itemcount 226414,1
+    .use 226414
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Hunter SoD/Warrior SoD/Rogue SoD/Druid SoD/Shaman SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Fist Weapon Specialization
+#name Fist Weapon Specialization - 60 (Silithus)
+
+step
+    #completewith next
+    .zone Silithus >> Travel to Silithus
+step
+    .goto 1427/0,-1225.300,-6623.600
+    >>|cRXP_WARN_Look for a red book in the marked location. It's shrouded by twilight and might be a bit hard to see|r
+    .collect 226411,1 --Rune of Fist Weapon Specialization
+step
+    #completewith next
+    .train 453691 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Fist Weapon Specialization|r] to train |T133832:0|t[Fist Weapon Specialization]
+    .itemcount 226411,1
+    .use 226411
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Mage SoD/Hunter SoD/Shaman SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Frost Specialization
+#name Frost Specialization - 60 (Winterspring)
+
+step
+    #completewith next
+    .zone Winterspring >> Travel to Winterspring
+step
+    .goto Winterspring,59.0,59.0,50 >> Head south to the Owlbeast Camp
+step
+    .goto Winterspring,59.0,59.0
+    >>|cRXP_WARN_Look for a red book in the marked location. It might be guarded by a couple level 57-58|r |cRXP_ENEMY_Owlbeasts|r |cRXP_WARN_Loot it for the rune|r
+    .collect 226415,1 --Rune of Frost Specialization
+step
+    #completewith next
+    .train 453697 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Frost Specialization|r] to train |T132852:0|t[Frost Specialization]
+    .itemcount 226415,1
+    .use 226415
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Druid SoD/Rogue SoD/Shaman SoD/Hunter SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Nature Specialization
+#name Nature Specialization - 56 (Felwood)
+
+step
+    #completewith next
+    .zone Felwood >> Travel to Felwood
+step
+    .goto Felwood,63.42,7.71,50 >> Head north to Felpaw Village
+step
+    .goto Felwood,62.8,7.5
+    >>|cRXP_WARN_Look for a red book in the marked location. It's in a camp next to|r |cRXP_ENEMY_Chieftain Bloodmaw|r |cRXP_WARN_Loot it for the rune|r
+    .collect 226416,1 --Rune of Nature Specialization
+step
+    #completewith next
+    .train 453698 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Nature Specialization|r] to train |T132848:0|t[Nature Specialization]
+    .itemcount 226416,1
+    .use 226416
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warrior SoD/Rogue SoD/Shaman SoD/Paladin SoD/Priest SoD/Druid SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Mace Specialization
+#name Mace Specialization - 60 (Wetlands)
+
+step
+    #completewith next
+    .zone Wetlands >> Travel to Wetlands
+step
+    .goto 1437/0,-3451.700,-3450.800,25 >> Head east to the start of the path to Grim Batol
+step
+    .goto 1437/0,-3582.500,-4138.200,25 >> Follow the road up all the way to Grim Batol. |cRXP_WARN_Don't fight any of the red drakes on the way you can make it there without having to kill any of them|r
+step
+     .goto 1437/0,-3451.900,-4052.500
+    >>|cRXP_WARN_Go up the path to the gate of Grim Batol. Look for a red book to the right side of the entrance. Loot it for the rune|r
+    .collect 226408,1 --Rune of Mace Specialization
+step
+    #completewith next
+    .train 453689 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Mace Specialization|r] to train |T133038:0|t[Mace Specialization]
+    .itemcount 226408,1
+    .use 226408
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warrior SoD/Warlock SoD/Shaman SoD/Mage SoD/Priest SoD/Druid SoD/Hunter SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Pole Weapon Specialization
+#name Pole Weapon Specialization - 60 (Azshara)
+
+step
+    #completewith next
+    .zone Azshara >> Travel to Azshara
+step
+    .goto Azshara,76.43,43.95,100 >> Head to the Temple of Arkkoran
+step
+    .goto Azshara,76.88,44.24
+    >>|cRXP_WARN_Look for red book laying on a moonwell inside the temple. Loot it for the rune|r
+    .collect 226412,1 --Rune of Pole Weapon Specialization
+step
+    #completewith next
+    .train 453694 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Pole Weapon Specialization|r] to train |T135145:0|t[Pole Weapon Specialization]
+    .itemcount 226412,1
+    .use 226412
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warlock SoD/Priest SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Shadow Specialization
+#name Shadow Specialization - 60 (Blasted Lands)
+
+step
+    #completewith next
+    .zone Blasted Lands >> Travel to Blasted Lands
+step
+    .goto Blasted Lands,45.19,55.29,100 >> Head south to the Tainted Scar. |cRXP_WARN_You will have to traverse an elite area with a lot of CC immune high level mobs. You will most likely have to deathrun your way to the rune location|r
+step
+    .goto Blasted Lands,33.0,48.0
+    >>|cRXP_WARN_Look for red book laying on an altar marked on your map. Loot it for the rune|r
+    .collect 226417,1 --Rune of Shadow Specialization
+step
+    #completewith next
+    .train 453700 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shadow Specialization|r] to train |T132851:0|t[Shadow Specialization]
+    .itemcount 226417,1
+    .use 226417
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Hunter SoD/Warrior SoD/Rogue SoD/Paladin SoD/Mage SoD/Warlock SoD
+#group RestedXP Rune & Books Guide
+#subgroup Ring
+#title Sword Specialization
+#name Sword Specialization - 60 (Deadwind Pass)
+
+step
+    #completewith next
+    .zone Deadwind Pass >> Travel to Deadwind Pass
+step
+    .goto Deadwind Pass,47.40,75.50 >> Head south to Karazhan
+step
+    .goto 1430/0,-2019.100,-11170.300,10 >> Enter the Master's Cellar
+step
+    .goto Deadwind Pass,43.06,74.58
+    >>|cRXP_WARN_Enter the cave area and look for a red book in the location marked on your map. Loot it for the rune|r
+    .collect 226406,1 --Rune of Sword Specialization
+step
+    #completewith next
+    .train 453635 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Sword Specialization|r] to train |T132223:0|t[Sword Specialization]
+    .itemcount 226406,1
+    .use 226406
 ]])

@@ -422,7 +422,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Warlock SoD
 #group RestedXP Rune & Books Guide
-#subgroup Legs
+#subgroup Bracers
 #name Incinerate - 22 (Redridge Mountains)
 #title Incinerate
 
@@ -890,7 +890,7 @@ RXPGuides.RegisterGuide([[
 #classic
 << Alliance Warlock SoD
 #group RestedXP Rune & Books Guide
-#subgroup Chest
+#subgroup Cloak
 #name Soul Siphon - 10 (Dun Morogh)
 #title Soul Siphon
 
@@ -1651,4 +1651,144 @@ step
 step
     .train 431743 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Pandemic|r] |cRXP_WARN_to learn|r |T136227:0|t[Pandemic]
     .use 220617
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warlock SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#title Decimation
+#name Decimation - 55 (Azeroth)
+
+step
+    #completewith next
+    .zone Burning Steppes >> Travel to Burning Steppes
+step
+    #loop
+    .goto Burning Steppes,93.2,59.0,55,0
+    .goto Burning Steppes,72.2,31.6,55,0
+    .goto Burning Steppes,69.0,26.4,55,0
+    .goto Burning Steppes,59.8,65.0,55,0
+    .goto Burning Steppes,36.4,60.8,55,0
+    .goto Burning Steppes,24.2,64.6,55,0
+    .goto Burning Steppes,37.6,42.2,55,0
+    >>|cRXP_WARN_Look for |cRXP_PICK_Fel Rifts|r. These are portals which can appear throughout the zone|r
+    >>|cRXP_WARN_Talk to the |cRXP_PICK_Rift|r to send your |cRXP_FRIENDLY_Explorer Imp|r through the |cRXP_PICK_Rift|r and wait for it to return with a|r |T135222:0|t[|cRXP_LOOT_Legion Portal Tuner|r]
+    >>|cRXP_WARN_You may have to repeat this a few times until it returns with the|r |T135222:0|t[|cRXP_LOOT_Legion Portal Tuner|r]
+    .collect 224806,1
+    .train 440922,1
+    .skipgossip
+step
+    #completewith next
+    .zone Blasted Lands >> Travel to Blasted Lands
+step
+    #loop
+    .goto Blasted Lands,43.6,25.6,50,0
+    .goto Blasted Lands,41.4,33.8,50,0
+    .goto Blasted Lands,46.6,39.2,50,0
+    .goto Blasted Lands,49.0,48.2,50,0
+    .goto Blasted Lands,60.6,46.2,50,0
+    .goto Blasted Lands,62.0,39.2,50,0
+    .goto Blasted Lands,56.2,36.8,50,0
+    .use 224806 >> |cRXP_WARN_Use the|r |T135222:0|t[|cRXP_LOOT_Legion Portal Tuner|r] |cRXP_WARN_on a |cRXP_PICK_Fel Scar|r which will turn it into an|r |cRXP_PICK_Otherwordly Portal|r
+    >>|cRXP_WARN_Talk to the |cRXP_PICK_Otherwordly Portal|r and send your |cRXP_FRIENDLY_Explorer Imp|r through it and wait for it to return with a|r |T134429:0|t[|cRXP_LOOT_Portal Tuner Tuner|r]
+    >>|cRXP_WARN_You may have to repeat this a few times until it returns with the|r |T134429:0|t[|cRXP_LOOT_Portal Tuner Tuner|r]
+    .collect 224912,1
+    .train 440922,1
+    .skipgossip
+step
+    .use 224912 >> |cRXP_WARN_Use the|r |T134429:0|t[|cRXP_LOOT_Portal Tuner Tuner|r] |cRXP_WARN_to turn it into a|r |T135224:0|t[|cRXP_LOOT_Overcharged Portal Tuner|r]
+    .collect 224893,1
+    .train 440922,1
+step
+    #loop
+    .goto Blasted Lands,43.6,25.6,50,0
+    .goto Blasted Lands,41.4,33.8,50,0
+    .goto Blasted Lands,46.6,39.2,50,0
+    .goto Blasted Lands,49.0,48.2,50,0
+    .goto Blasted Lands,60.6,46.2,50,0
+    .goto Blasted Lands,62.0,39.2,50,0
+    .goto Blasted Lands,56.2,36.8,50,0
+    .use 224893 >> |cRXP_WARN_Use the|r |T135224:0|t[|cRXP_LOOT_Overcharged Portal Tuner|r] |cRXP_WARN_on a |cRXP_PICK_Fel Scar|r which will make it turn red|r
+    >>|cRXP_WARN_Talk to it and send your |cRXP_FRIENDLY_Explorer Imp|r through it and wait for it to return with the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Decimation|r]
+    .collect 225686,1
+    .train 440922,1
+    .skipgossip
+step
+    .train 440922 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Decimation|r] |cRXP_WARN_to learn|r |T135808:0|t[Decimation]
+    .use 225686
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warlock SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#title Mark of Chaos
+#name Mark of Chaos - 50 (Western Plaguelands)
+
+step
+    #completewith next
+    .zone Western Plaguelands >> Travel to Western Plaguelands
+step
+    #loop
+    .goto Western Plaguelands,50.6,77.6
+    >>|cRXP_WARN_Cast|r |T136163:0|t[Drain Soul] |cRXP_WARN_on |cRXP_ENEMY_Skeletal Flayers|r until you have received 3|r |cRXP_LOOT_Plagued Soul Shards|r
+    .collect 225929,3
+    .mob Skeletal Flayer
+    .train 440924,1
+step
+    .goto Western Plaguelands,43.361,84.143 << Alliance
+    .goto Tirisfal Glades,83.035,72.631 << Horde
+    >>|cRXP_WARN_Turn in your |cRXP_LOOT_Plagued Soul Shards|r to |cRXP_FRIENDLY_Pixi Pilfershard|r at Chillwind Camp to receive the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Mark of Chaos|r] << Alliance
+    >>|cRXP_WARN_Turn in your |cRXP_LOOT_Plagued Soul Shards|r to |cRXP_FRIENDLY_Prazik Pilfershard|r at The Bulwark to receive the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Mark of Chaos|r] << Horde
+    .collect 225688,1
+    .target Pixi Pilfershard << Alliance
+    .target Prazik Pilfershard << Horde
+    .train 440924,1
+step
+    .train 440924 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Mark of Chaos|r] |cRXP_WARN_to learn|r |T136226:0|t[Mark of Chaos]
+    .use 225688
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Warlock SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#title Infernal Armor
+#name Infernal Armor - 55 (Blasted Lands)
+
+step
+    #completewith next
+    .zone Blasted Lands >> Travel to Blasted Lands
+    >>|cRXP_WARN_Ensure you have the following abilities trained, and considering bringing a healer as you need to kill a level 56 elite|r
+    >>|T134131:0|t[Greater Spellstone]
+    >>|T136121:0|t[Shadow Ward]
+    >>|T136190:0|t[Sacrifice] |cRXP_WARN_for your|r |T136221:0|t[Voidwalker]
+step
+    .train 440926,1
+    #loop
+    .goto Blasted Lands,65.31,32.63,20,0
+    .goto Blasted Lands,68.050,28.667
+    >>Kill any |cRXP_ENEMY_Shadowsworn|r. Loot them for the |cRXP_LOOT_Shadowsworn Note|r
+    .collect 227658,1
+    .mob Shadowsworn Cultist
+    .mob Shadowsworn Thug
+    .mob Shadowsworn Adept
+    .mob Shadowsworn Enforcer
+    .mob Shadowsworn Warlock
+    .mob Shadowsworn Dreadweaver
+step
+    .train 440926,1
+    .goto Blasted Lands,68.050,28.667
+    >>Head to the |cRXP_PICK_Altar|r at the back of the cave
+    >>|cRXP_WARN_Before clicking the |cRXP_PICK_Altar|r, ensure you have used your|r |T134131:0|t[Greater Spellstone]|cRXP_WARN_,|r |T136121:0|t[Shadow Ward] |cRXP_WARN_and|r |T136190:0|t[Sacrifice] |cRXP_WARN_as you are about to take substantial damage upon clicking the |cRXP_PICK_Altar|r, and summoning |cRXP_ENEMY_Heliath|r in the process. |cRXP_ENEMY_Heliath|r is a level 56 elite|r
+    >>Kill |cRXP_ENEMY_Heliath|r. Loot him for the |T134419:0|t[|cRXP_FRIENDLY_Rune of Infernal Armor|r] 
+    .collect 225687,1
+    .mob Heliath
+step
+    .train 440926 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Infernal Armor|r] |cRXP_WARN_to learn|r |T236418:0|t[Infernal Armor]
+    .use 225687
 ]])

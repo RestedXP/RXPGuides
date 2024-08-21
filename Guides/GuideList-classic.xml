@@ -40,5 +40,15 @@
 	<Script file="Guides/SoD/Alliance.lua"/>
 	<Script file="Guides/SoD/Shaman.lua"/>
 	<Script file="Guides/SoD/Horde.lua"/>
+	
+	<Script file="Guides\SoD\Alliance\1-10_Dun Morogh.lua"/>
+	<Script file="Guides\SoD\Alliance\1-10_Elwynn.lua"/>
+	<Script file="Guides\SoD\Alliance\1-13_Teldrassil.lua"/>
+	<Script file="Guides\SoD\Alliance\10-16_Loch.lua"/>
+	<Script file="Guides\SoD\Alliance\13-22_Darkshore.lua"/>
+	<Script file="Guides\SoD\Alliance\16-22_Westfall-Redridge.lua"/>
+	
+	<Script file="Guides\Classic-Attunements.lua"/>
+	<Script file="Guides\Classic-0.5.lua"/>
 
 </Ui>

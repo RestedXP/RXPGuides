@@ -903,7 +903,7 @@ step
     >>|cRXP_WARN_You must have a|r |T237569:0|t|T136077:0|t[Meditation] |cRXP_WARN_buff by typing|r /kneel |cRXP_WARN_at a graveyard or by kneeling in front of another priest with the buff when they /pray for you|r << Undead
     .goto Durotar,55.32,72.66,0
     .goto The Barrens,51.5,29.5,0
-    .goto The Barrent,50.7,32.8 << Undead
+    .goto The Barrens,50.7,32.8 << Undead
     .use 205905
     .itemcount 205905,1
 ]])
@@ -1468,4 +1468,420 @@ step
     .train 431669 >>|cRXP_WARN_Use the|r |T135975:0|t[|cRXP_FRIENDLY_Prophecy of the Lost Tribe|r] |cRXP_WARN_to train|r |T135981:0|t[Surge of Light]
 ]])
 
+RXPGuides.RegisterGuide([[
+#classic
+<< Priest SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#title Binding Heal
+#name Binding Heal - 58 (Western and Eastern Plaguelands)
+#next Priest Racials - 60 (Azeroth)
 
+step << Alliance
+    #completewith next
+    .zone Stormwind City >> Travel to Stormwind
+step << Alliance
+    .goto Stormwind City,38.8,26.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r in the Stormwind Cathedral
+    .accept 84320 >> Accept Lost Heirloom
+    .target High Priestess Laurena
+step << Horde
+    #completewith next
+    .zone Orgrimmar >> Travel to Orgrimmar
+step << Horde
+    .goto Orgrimmar,35.8,87.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dietrich Praice|r in the Valley of Spirits
+    .accept 84405 >> Accept Lost Heirloom
+    .target Dietrich Praice
+step
+    #completewith next
+    .zone Western Plaguelands >> Travel to Western Plaguelands
+step
+    .goto Western Plaguelands,51.9,82.4,50 >> Travel to the large crypt located next to Sorrow Hill
+step
+    .goto Western Plaguelands,54.8,81.2
+    >>|cRXP_WARN_Enter the crypt and go left. Go downstairs and look for a small wooden chest in a small alcove to your right. Loot it for the|r |T133299:0|t[|cRXP_PICK_Family Heirloom|r]
+    .collect 227745,1 --Family Heirloom(1)
+step
+    .goto Western Plaguelands,53.8,80.2
+    >>|cRXP_WARN_Head to the bottom of the crypt. Loot the|r |T133741:0|t[|cRXP_PICK_Family Records|r] |cRXP_WARN_from a Bookshelf to the right and|r |T133735:0|t[|cRXP_PICK_Survivor Journal|r] |cRXP_WARN_from the table on the left|r
+    .collect 227747,1 --Family Records
+    .collect 227748,1 --Survivor Journal
+step << Alliance
+    #completewith next
+    .zone Stormwind City >> Return to Stormwind
+step << Alliance
+    .goto Stormwind City,38.8,26.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r in the Stormwind Cathedral
+    .turnin 84320 >> Turn in Lost Heirloom
+    .accept 84321 >> Accept Relic of Light
+    .target High Priestess Laurena
+step << Horde
+    #completewith next
+    .zone Orgrimmar >> Return to Orgrimmar
+step << Horde
+    .goto Orgrimmar,35.8,87.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dietrich Praice|r in the Valley of Spirits
+    .turnin 84405 >> Turn in Lost Heirloom
+    .accept 84406 >> Accept Relic of Light
+    .target Dietrich Praice
+step
+    #completewith next
+    >>|cRXP_WARN_The next quest will require you to loot an item from an elite area. It's possible to do solo but if you're lower level or not very geared consider looking for someone to help you|r
+    .zone Western Plaguelands >> Return to Western Plaguelands
+step
+    .goto Western Plaguelands,48.2,21.7,50 >> Head to Hearthglen, |cRXP_WARN_keep in mind that this is an elite area|r
+step
+    .goto Western Plaguelands,42.2,18.1
+    >>|cRXP_WARN_Enter the Town Hall in Hearthglen and interact with the|r |cRXP_PICK_Scarlet Ledger|r |cRXP_WARN_located on the podium. Watch out as the area is filled with elite mobs|r
+    .turnin 84406 >> Turn in Relic of Light << Horde
+    .turnin 84321 >> Turn in Relic of Light << Alliance
+    .accept 84322 >> Accept Scarlet Research
+step
+    #completewith next
+    >>|cRXP_WARN_The next quest will require you to loot an item from an elite area. It's possible to do solo but if you're lower level or not very geared consider looking for someone to help you|r
+    .zone Eastern Plaguelands >> Travel to Eastern Plaguelands
+step
+    .goto Eastern Plaguelands,77.5,81.7,50 >> Travel to Tyr's Hand, |cRXP_WARN_keep in mind that this is an elite area|r
+step
+    .goto Eastern Plaguelands,83.6,78.2
+    >>|cRXP_WARN_The rune of|r |T237537:0|t[Holy Specialization] |cRXP_WARN_is also located in Tyr's Hand, if you don't want to get it now skip this step|r 
+    >>|cRXP_WARN_If you want to get it head to the library wing of the building marked on your map and look for a book located on top of a bookshelf. Loot it for the rune. Keep in mind you can't loot it in combat|r
+    >>|cRXP_WARN_You can either clear all mobs in the room or die next to the book and release in a spot thats out of line of sight of mobs to loot the rune without having to kill anything|r
+    .collect 226418,1 --Rune of Holy Specialization
+    .train 453702,1
+step
+    #completewith next
+    .train 453702 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Holy Specialization|r] to train |T237537:0|t[Holy Specialization]
+    .train 453702,1
+    .itemcount 226418,1
+step
+    .goto Eastern Plaguelands,83.6,78.2
+    >>|cRXP_WARN_Enter the bell tower and head to the top floor. Interact with the locked box located there|r
+    .turnin 84322 >> Turn in Scarlet Research
+    .accept 84323 >> Accept The Prize Within
+step
+    .goto Eastern Plaguelands,83.6,78.2
+    >>Kill any scarlet mobs in Tyr's Hand. Loot them for an |T134245:0|t[|cRXP_LOOT_Artifact Storage Key|r]
+    >>|cRXP_WARN_You can skip farming the key and find a rogue with lockpicking of 175+ as they can also open the box for you. Skip this step if you would rather look for a rogue than farm the key|r
+    .collect 228912,1 --Artifact Storage Key
+    .itemcount 132874,<1 --Skips if you get the Shard of Light without the key
+step
+    >>Use the |T134245:0|t[|cRXP_LOOT_Artifact Storage Key|r] to unlock the |T133876:0|t[|cRXP_LOOT_Puzzle Box|r] or have a rogue open it for you with lockpicking. Loot it for the |T132874:0|t[|cRXP_LOOT_Shard of Light|r]
+    .collect 227938,1 --Shard of Light(1)
+step << Alliance
+    #completewith next
+    .zone Stormwind City >> Return to Stormwind
+step << Alliance
+    .goto Stormwind City,38.8,26.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r in the Stormwind Cathedral
+    .turnin 84323 >> Turn in The Prize Within
+    .target High Priestess Laurena
+step << Horde
+    #completewith next
+    .zone Orgrimmar >> Return to Orgrimmar
+step << Horde
+    .goto Orgrimmar,35.8,87.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dietrich Praice|r in the Valley of Spirits
+    .turnin 84323 >> Turn in The Prize Within
+    .target Dietrich Praice
+step
+    .train 402853 >> Use the |T135791:0|t[|cRXP_FRIENDLY_Jubilant Epiphany|r] to train |T135883:0|t[|cRXP_FRIENDLY_Binding Heal|r]
+    .use 228123
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Priest SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#title Vampiric Touch
+#name Vampiric Touch - 60 (Demon Fall Canyon Dungeon)
+
+step
+    #completewith next
+    >>The rune of |T135978:0|t[|cRXP_FRIENDLY_Vampiric Touch|r] drops from the last boss of Demon Fall Canyon the new dungeon added in SoD
+    .zone Felwood >> |cRXP_WARN_In order to enter the dungeon you first need a trinket rewarded from a short quest, head to Felwood to begin it|r
+    .itemcount 228172,<1 --Only shows if you don't have the trinket
+step
+    .goto Felwood,51.4,82.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Shadowtooth Emissary|r
+    .accept 84384 >> Accept Demonic Deceptions
+    .target Shadowtooth Emissary
+    .itemcount 228172,<1 --Only shows if you don't have the trinket
+step
+    #completewith next
+    .zone Winterspring >> Travel to Winterspring
+    .itemcount 228172,<1 --Only shows if you don't have the trinket
+step
+    .goto Winterspring,65.6,21.4
+    >>Look for |cRXP_ENEMY_Berserk Owlbeasts|r north of Everlook. Kill them and loot them for the |T237413:0|t[|cRXP_LOOT_Owlbeast Pineal Glands|r]
+    .complete 84384,1
+    .mob Berserk Owlbeast
+    .itemcount 228172,<1 --Only shows if you don't have the trinket
+step
+    #completewith next
+    .zone Felwood >> Return to Felwood
+    .itemcount 228172,<1 --Only shows if you don't have the trinket
+step
+    .goto Felwood,51.4,82.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Shadowtooth Emissary|r
+    .turnin 84384 >> Turn in Demonic Deceptions
+    .target Shadowtooth Emissary
+    .itemcount 228172,<1 --Only shows if you don't have the trinket
+step
+    #completewith next
+    +Equip the |T136232:0|t[|cRXP_FRIENDLY_Shadowtooth Illusion Ward|r] in any of your trinket slots. You need it equipped in order to be able to enter the dungeon
+    .use 228172
+    .itemcount 228172,<1
+step
+    >>|cRXP_WARN_The rune of|r |T135978:0|t[|cRXP_FRIENDLY_Vampiric Touch|r] |cRXP_WARN_drops from the last boss of Demon Fall Canyon the new dungeon added in SoD. Start looking for a group for it as you head to Ashenvale|r
+    >>If you're flying, fly to Talendris Point in Azshara instead of Astranaar. It's closer to the dungeon entrance << Alliance
+    .zone Ashenvale >> Travel to Ashenvale
+step
+    .goto Ashenvale,84.5,75.0,50 >> Head to the entrance of the Demon Fall Canyon dungeon
+step
+    >>Clear the dungeon. |T135791:0|t[|cRXP_FRIENDLY_Aperitive Epiphany|r] which teaches you |T135978:0|t[|cRXP_FRIENDLY_Vampiric Touch|r] drops from the last boss of the dungeon, |cRXP_ENEMY_Hellscream's Phantom|r. |cRXP_WARN_Make sure you loot him for the rune!|r
+    .collect 228126,1 --Apperitive Epiphany
+    .mob Hellscream's Phantom
+step
+    .train 402857 >> Use the |T135791:0|t[|cRXP_FRIENDLY_Aperitive Epiphany|r] to train |T135978:0|t[|cRXP_FRIENDLY_Vampiric Touch|r]
+    .use 228126
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Priest SoD
+#group RestedXP Rune & Books Guide
+#subgroup Extras
+#title Priest Racials
+#name Priest Racials - 60 (Azeroth)
+
+
+step
+    #completewith next
+    >>|cRXP_WARN_The extra priest ability is a server-wide unlock. This means that if someone has already done it on your server you can skip the entire questline and go straight to Karazhan to train your new racial ability. If thats not the case you can use the guide below to be the person who unlocks it for your server!|r
+    .zone Deadwind Pass >> Travel to the Deadwind Pass
+step
+    .goto Deadwind Pass,40.8,78.4
+    >>Travel to a small shrine located next to Karazhan
+    +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Divine Apprehension|r at a shrine next to Karazhan to pick which racial ability you would like to choose
+    .target Divine Apprehension
+step
+    #completewith PreQStart
+    +This is the begining of the questchain for the server-wide unlock of the additional priest racial. |cRXP_WARN_There's a good chance that it was already completed on your server and you don't need to do the below. Proceed with it only if you want to try the chain or you know that it's not been unlocked yet|r
+step
+    #completewith QStart
+    +|cRXP_WARN_In order to begin this quest you need to have previously done the questline awarding|r |T135883:0|t[|cRXP_FRIENDLY_Binding Heal|r]|cRXP_WARN_. You can find a guide for it in the cloak runes section|r
+    .train 402853,1
+step
+    #label PreQStart
+    .goto Eastern Plaguelands,48.1,24.0
+    >>|cRXP_WARN_To turn in the first quest in this chain you will need 4|r |T134855:0|t[|cRXP_LOOT_Stratholme Holy Water|r] |cRXP_WARN_on top of other materials which can be bought from the auction house. Look for a group to run the Stratholme(undead) dungeon|r
+    >>|cRXP_WARN_Once inside look for and loot Supply Crates laying on the ground scattered across the instance. They can contain Holy Water but also be decoys which spawn annoying to deal with enemies|r
+    .collect 13180,4 --Stratholme Holy Water(4)
+step << Alliance
+    #completewith next
+    .zone Stormwind City >> Travel to Stormwind
+step << Alliance
+    .goto Stormwind City,53.612,59.764
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
+    >>Buy 6 |T133682:0|t[|cRXP_LOOT_Heavy Runecloth Bandages|r], 4 |T134834:0|t[|cRXP_LOOT_Major Healing Potions|r] and 8 |T132834:0|t[|cRXP_LOOT_Giant Eggs|r] from the auction house. You will need them for the first quest in this chain together with the |T134855:0|t[|cRXP_LOOT_Stratholme Holy Water|r] you collected already
+    .collect 14530,6 --Heavy runecloth bandage (6)
+    .collect 13446,4 --Major Healing Potion (4)
+    .collect 12207,8 --Giant Egg(8)
+    .collect 13180,4 --Stratholme Holy Water(4)
+    .target Auctioneer Jaxon
+step << Alliance
+    #label QStart
+    .goto Stormwind City,38.8,26.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r in the Stormwind Cathedral
+    .accept 84324 >> Accept Diplomatic Overtures
+    .turnin 84324 >> Turn in Diplomatic Overtures
+    .target High Priestess Laurena
+step << Horde
+    #completewith next
+    .zone Orgrimmar >> Travel to Orgrimmar
+step << Horde
+    .goto Orgrimmar,55.59,62.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thathung|r
+    >>Buy 6 |T133682:0|t[|cRXP_LOOT_Heavy Runecloth Bandages|r], 4 |T134834:0|t[|cRXP_LOOT_Major Healing Potions|r] and 8 |T132834:0|t[|cRXP_LOOT_Giant Eggs|r] from the auction house. You will need them for the first quest in this chain together with the |T134855:0|t[|cRXP_LOOT_Stratholme Holy Water|r] you collected already
+    .collect 14530,6 --Heavy runecloth bandage (6)
+    .collect 13446,4 --Major Healing Potion (4)
+    .collect 12207,8 --Giant Egg(8)
+    .collect 13180,4 --Stratholme Holy Water(4)
+    .target Thathung
+step << Horde
+    #label QStart
+    .goto Orgrimmar,35.8,87.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dietrich Praice|r in the Valley of Spirits
+    .accept 84408 >> Accept Diplomatic Overtures
+    .turnin 84408 >> Turn in Diplomatic Overtures
+    .target Dietrich Praice
+step
+    #completewith next
+    >>|cRXP_WARN_For the next part of the quest you will need to find an opposite faction priest that is also on the questline in order to progress|r
+    .zone Eastern Plaguelands >> Travel to Eastern Plaguelands
+step
+    .goto Eastern Plaguelands,47,58
+    >>|cRXP_WARN_Travel to the|r |cRXP_FRIENDLY_Shrine of Cooperation|r |cRXP_WARN_located in EPL. Damage one another with the opposite faction priest and then use the|r |T134918:0|t[|cRXP_FRIENDLY_Altruist Ward|r] |cRXP_WARN_item you received from turning in the previous quest to heal each other|r
+    >>If done correctly the |cRXP_FRIENDLY_Shrine of Cooperation|r will offer you a quest, accept it
+    .accept 84325 >> Accept Shrine of Cooperation << Alliance
+    .accept 84410 >> Accept Shrine of Cooperation << Horde
+    .use 228130
+step << Alliance
+    #completewith next
+    .zone Stormwind City >> Return to Stormwind
+step << Alliance
+    .goto Stormwind City,53.612,59.764
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r
+    >>Buy 2 |T134459:0|t[|cRXP_LOOT_Arcanite Bars|r], 2 |T134086:0|t[|cRXP_LOOT_Blood of the Mountain|r] and 3 |T134132:0|t[|cRXP_LOOT_Blue Sapphires|r] from the auction house. You will need them to turnin a quest soon. These items might be expensive
+    .collect 12360,2 --Arcanite Bar(2)
+    .collect 11382,2 --Blood of the Mountain(2)
+    .collect 12361,3 --Blue Sapphire(3)
+    .target Auctioneer Jaxon
+step << Alliance
+    .goto Stormwind City,38.8,26.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r in the Stormwind Cathedral
+    .turnin 84325 >> Turn in Shrine of Cooperation
+    .accept 84326 >> Accept Diplomat Ring
+    .turnin 84326 >> Turn in Diplomat Ring
+    .accept 84327 >> Accept A Diplomatic Mission
+    .target High Priestess Laurena
+step << Horde
+    #completewith next
+    .zone Orgrimmar >> Return to Orgrimmar
+step << Horde
+    .goto Orgrimmar,55.59,62.92
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thathung|r
+    >>Buy 2 |T134459:0|t[|cRXP_LOOT_Arcanite Bars|r], 2 |T134086:0|t[|cRXP_LOOT_Blood of the Mountain|r] and 3 |T134132:0|t[|cRXP_LOOT_Blue Sapphires|r] from the auction house. You will need them to turnin a quest soon. These items might be expensive
+    .collect 12360,2 --Arcanite Bar(2)
+    .collect 11382,2 --Blood of the Mountain(2)
+    .collect 12361,3 --Blue Sapphire(3)
+    .target Thathung
+step << Horde
+    .goto Orgrimmar,35.8,87.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dietrich Praice|r in the Valley of Spirits
+    .turnin 84410 >> Turn in Shrine of Cooperation
+    .accept 84411 >> Accept Diplomat Ring
+    .turnin 84411 >> Turn in Diplomat Ring
+    .accept 84412 >> Accept A Diplomatic Mission
+    .target Dietrich Praice
+step << Horde
+    #completewith next
+    >>|cRXP_WARN_To complete this quest you will once again need to find an opposite faction priest and have them use their|r |T133396:0|t[|cFF0070FFDiplomat Ring|r] |cRXP_WARN_on you while you're next to the gates of Stormwind. This will make the city guards no longer attack you and let you safely enter the enemy capital|r
+    >>|cRXP_WARN_Keep in mind that opposing faction players can still atack you on a PvP server!|r
+    .zone Elwynn Forest >> Travel to the gates of Stormwind
+step << Horde
+    .goto Stormwind City,38.8,26.6
+    >>Have an opposing faction priest use their |T133396:0|t[|cFF0070FFDiplomat Ring|r] on you so the city guards don't attack you and head to the Stormwind Cathedral. |cRXP_WARN_You can still be attacked by other players!|r
+    >>|cRXP_WARN_The opposing faction priest has to escort you to the quest giver or you will lose the diplomatic immunity buff|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r in the Stormwind Cathedral
+    .turnin 84412 >> Turn in Diplomatic Mission
+    .accept 84413 >> Accept Repairing the Shard
+    .target High Priestess Laurena
+step << Alliance
+    #completewith next
+    >>|cRXP_WARN_To complete this quest you will once again need to find an opposite faction priest and have them use their|r |T133396:0|t[|cFF0070FFDiplomat Ring|r] |cRXP_WARN_on you while you're next to the gates of Orgrimmar. This will make the city guards no longer attack you and let you safely enter the enemy capital|r
+    >>|cRXP_WARN_Keep in mind that opposing faction players can still atack you on a PvP server!|r
+    .zone Durotar >> Travel to the gates of Orgrimmar
+step << Alliance
+    .goto Orgrimmar,35.8,87.2
+    >>Have an opposing faction priest use their |T133396:0|t[|cFF0070FFDiplomat Ring|r] on you so the city guards don't attack you and head to the Valley of Spirits. |cRXP_WARN_You can still be attacked by other players!|r
+    >>|cRXP_WARN_The opposing faction priest has to escort you to the quest giver or you will lose the diplomatic immunity buff|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dietrich Praice|r in the Valley of Spirits
+    .turnin 84327 >> Turn in A Diplomatic Mission
+    .accept 84328 >> Accept Repairing the Shard
+    .target Dietrich Praice
+step
+    #completewith next
+    >>|cRXP_WARN_Start looking for a group for the Dire Maul West dungeon, for the next quest you need to kill|r |cRXP_ENEMY_Magister Kalendris|r |cRXP_WARN_one of the dungeon bosses|r
+    .zone Feralas >> Travel to Feralas
+step
+    .goto Feralas,59.1,43.2,100 >> Enter the Dire Maul area
+step
+    .goto Feralas,60.4,30.2
+    >>Enter Dire Maul West and kill |cRXP_ENEMY_Magister Kalendris|r. Loot him for the book |T133737:0|t[|cRXP_LOOT_Applied Divinity|r]. He is located in the ghost section of the dungeon
+    .collect 227912,1
+step << Horde
+    #completewith next
+    >>|cRXP_WARN_To complete this quest you will once again need to find an opposite faction priest and have them use their|r |T133396:0|t[|cFF0070FFDiplomat Ring|r] |cRXP_WARN_on you while you're next to the gates of Stormwind. This will make the city guards no longer attack you and let you safely enter the enemy capital|r
+    >>|cRXP_WARN_Keep in mind that opposing faction players can still atack you on a PvP server!|r
+    .zone Elwynn Forest >> Travel to the gates of Stormwind
+step << Horde
+    .goto Stormwind City,38.8,26.6
+    >>Have an opposing faction priest use their |T133396:0|t[|cFF0070FFDiplomat Ring|r] on you so the city guards don't attack you and head to the Stormwind Cathedral. |cRXP_WARN_You can still be attacked by other players!|r
+    >>|cRXP_WARN_The opposing faction priest has to escort you to the quest giver or you will lose the diplomatic immunity buff|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Priestess Laurena|r in the Stormwind Cathedral
+    .turnin 84413 >> Turn in Repairing the Shard
+    .accept 84329 >> Accept The Convocation Assembles
+    .target High Priestess Laurena
+step << Alliance
+    #completewith next
+    >>|cRXP_WARN_To complete this quest you will once again need to find an opposite faction priest and have them use their|r |T133396:0|t[|cFF0070FFDiplomat Ring|r] |cRXP_WARN_on you while you're next to the gates of Orgrimmar. This will make the city guards no longer attack you and let you safely enter the enemy capital|r
+    >>|cRXP_WARN_Keep in mind that opposing faction players can still atack you on a PvP server!|r
+    .zone Durotar >> Travel to the gates of Orgrimmar
+step << Alliance
+    .goto Orgrimmar,35.8,87.2
+    >>Have an opposing faction priest use their |T133396:0|t[|cFF0070FFDiplomat Ring|r] on you so the city guards don't attack you and head to the Valley of Spirits. |cRXP_WARN_You can still be attacked by other players!|r
+    >>|cRXP_WARN_The opposing faction priest has to escort you to the quest giver or you will lose the diplomatic immunity buff|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dietrich Praice|r in the Valley of Spirits
+    .turnin 84328 >> Turn in Repairing the Shard
+    .accept 84329 >> Accept The Convocation Assembles
+    .target Dietrich Praice
+step
+    #completewith next
+    .zone Deadwind Pass >> Travel to the Deadwind Pass
+step
+    .goto Deadwind Pass,40.8,78.4
+    >>Travel to a small shrine located next to Karazhan
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maethra Slagheart|r at a shrine next to Karazhan
+    .turnin 84329 >> Turn in The Convocation Assembles
+step
+    +Turning in the above quest should complete the questline and unlock the ability to train a racial priest ability from another race server-wide
+]])
+
+RXPGuides.RegisterGuide([[
+#classic
+<< Priest SoD
+#group RestedXP Rune & Books Guide
+#subgroup Cloak
+#title Soul Warding
+#name Soul Warding - 60 (Stratholme)
+
+step
+    #completewith next
+    >>|cRXP_WARN_In order to complete this rune you will need to complete a couple tasks within the Stratholme Dungeon (both living and dead sides). Start looking for a group for it|r
+    .zone Eastern Plaguelands >> Travel to the Eastern Plaguelands
+step
+    .goto Eastern Plaguelands,47.8,24.2
+    >>Enter Stratholme
+    >>|cRXP_WARN_READ THIS SECTION CAREFULLY AS THIS RUNE QUEST IS A BIT UNCONVENTIONAL|r
+    >>In order to get the rune you will need to gather 3 essences from bosses in Stratholme. The bosses who have the essnces are |cRXP_WARN_RANDOM AND DIFFERENT EVERY DUNGEON ID|r. In order to know which bosses have the essence in your run you need to find clues located on pillars within the Scarlet Building in the live side of the dungeon
+    >>To gather the essences you will need 3 |T134799:0|t[|cRXP_LOOT_Stratholme Shadow Jars|r] which drop from the [|cRXP_PICK_Postbox Parcels|r] within the dungeon, to open the [|cRXP_PICK_Postboxes|r] in the first place you need to kill the |cRXP_ENEMY_Stratholme Courier|r to get the |T134237:0|t[|cRXP_LOOT_Postbox Keys|r] from him
+    >>Once you gathered all the essences you have to return to the pillars with the clues and activate them with the essence corresponding to the hint they gave. This spawns an orb next to them which you have to loot to get the rune
+    +|cRXP_WARN_Click here once you read the above and want to see more details about which clue corresponds to which boss. You can always go back to this step if you need to|r
+step
+    >>|cRXP_WARN_Here are the clues and bosses which they correspond to:|r
+    >>Among the dead this mortal dwells with acolytes and icy spells = Maleki the Pallid
+    >>A specter cursed to guard a tower No solace gained from Wealth or power = Baroness Anastari
+    >>The ancient kingdom rediscovered. Trades one master for another = Nerub'enkan
+    >>Built from flesh, a sin of science hunted by Forsakens finest = Ramstein the Gorger
+    >>The people looked to him to lead in their hour of greatest need = Magistrate Barthilas
+    >>A champion of wicked malice, hulking horrors guard his palace = Baron Rivendare
+    >>Holy furor purges sin and yet a shadow lurks within. = Balnazzar
+    >>The smell of brimstone fills the room. This zealot greets you with a boom. = Cannon Master Willey
+    +|cRXP_WARN_Click here if you want to see the recommended efficient order of steps you can take to complete this quest. You can always go back to this step to read the clues again if you need to|r
+step
+    >>|cRXP_WARN_The efficient order of business while doing this quest is as follows:|r
+    >>1. Start in the Living side of the dungeon 
+    >>2. Loot three [|cRXP_PICK_Postbox Parcels|r] for the |T134799:0|t[|cRXP_LOOT_Stratholme Shadow Jars|r], the jars are unique so have a different player pick up each one 
+    >>3. Clear to the pedestal room and figure out which bosses have the essences in your ID 
+    >>4. Collect all the essences as you progress through the dungeon 
+    >>5. Return to the pedestal room and activate each one with its essence 
+    >>6. Loot the orb that spawns for your rune
+    .collect 228124,1 --Oneiric Epiphany
+step
+    .train 402850 >> Use the |T135791:0|t[|cRXP_FRIENDLY_Oneiric Epiphany|r] to train |T135948:0|t[|cRXP_FRIENDLY_Soul Warding|r]
+    .use 228124
+]])

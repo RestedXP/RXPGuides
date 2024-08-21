@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 #name 2Retail-Alliance-Night Elf_Shadowglen
 #displayname Chapter 1 - Shadowglen
 #next 3Retail-Alliance-Night Elf_Teldrassil
-#defaultfor NightElf !DemonHunter !DK 
+#defaultfor NightElf !DemonHunter !DK
 
 << Alliance
 
@@ -138,7 +138,7 @@ step
 step
     #completewith next
     +|cRXP_WARN_To enable keybinding for quest items, follow these steps:|r
-    *[1] Press the |cRXP_WARN_Escape key.|r 
+    *[1] Press the |cRXP_WARN_Escape key.|r
     *[2] Select |cRXP_WARN_Options.|r
     *[3] Navigate to |cRXP_WARN_Keybindings.|r
     *[4] Within |cRXP_WARN_Keybindings|r, find |cRXP_WARN_RestedXP Guides.|r
@@ -189,7 +189,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Night Elf Starting Zones
 #displayname Chapter 2 - Teldrassil
 #name 3Retail-Alliance-Night Elf_Teldrassil
-#next RestedXP Alliance 10-60\1A_Elwynn Forest
+#next RestedXP Speedrun Guide\a) The Waking Shores Fresh (A)
 #defaultfor NightElf !DemonHunter !DK
 
 << Alliance
@@ -267,11 +267,11 @@ step
     .complete 488,3 --2/2 Webwood Spider Silk
 	.mob Nightsaber Fang
 	.mob Strigid Owl Feather
-	.mob Webwood Spider Silk	
+	.mob Webwood Spider Silk
 step
     #completewith next
     +|cRXP_WARN_To enable keybinding for quest items, follow these steps:|r
-    *[1] Press the |cRXP_WARN_Escape key.|r 
+    *[1] Press the |cRXP_WARN_Escape key.|r
     *[2] Select |cRXP_WARN_Options.|r
     *[3] Navigate to |cRXP_WARN_Keybindings.|r
     *[4] Within |cRXP_WARN_Keybindings|r, find |cRXP_WARN_RestedXP Guides.|r
@@ -357,12 +357,12 @@ step
     >>Kill |cRXP_ENEMY_Ferocitas the Dream Eater|r and loot him for |cRXP_LOOT_Tallonkai's Jewel.|r
     .complete 2459,2 --1/1 Tallonkai's Jewel
 	.mob Ferocitas the Dream Eater
-step	
+step
     .goto 57,66.88,46.87,40,0
     .goto 57,65.76,46.40,40,0
     .goto 57,65.75,44.83,40,0
     .goto 57,67.26,46.83
-    >>Kill |cRXP_ENEMY_Gnarlpine Mystics|r 
+    >>Kill |cRXP_ENEMY_Gnarlpine Mystics|r
     >>|cRXP_WARN_Get low health once almost complete. You will deathskip after.|r
     .complete 2459,1 --7/7 Gnarlpine Mystic slain
 	.mob Gnarlpine Mystic
@@ -434,7 +434,7 @@ step
 	.target Dentaria Silverglade
 step
     .goto 62,50.92,18.88
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyrisse.|r 
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nyrisse.|r
     .vendor 43439 >> |cRXP_WARN_Vendor and Repair.|r
 	.target Nyrisse
 step
@@ -563,11 +563,11 @@ step
 	>>Kill |cRXP_ENEMY_Vile Grells|r and |cRXP_ENEMY_Vile Corrupters|r and loot them for |cRXP_LOOT_Foul Ichor|r and the |cRXP_LOOT_Corruptor's Master Key.|r
 	>>|cRXP_WARN_Check for |cRXP_ENEMY_Licillin(Rare|r) as you quest.|r
     .complete 13554,1 --6/6 Foul Ichor
-    .complete 13529,2 --8/8 Vile Grell slain	
-	.collect 44927,1,13557	
+    .complete 13529,2 --8/8 Vile Grell slain
+	.collect 44927,1,13557
 	>>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Corruptor's Master Key.|r
     .accept 13557 >>Accept Bearer of Good Fortune
-    .use 44927 
+    .use 44927
 	.mob Vile Grell
 	.mob Vile Corruptor
 	.unitscan Licillin
@@ -600,19 +600,19 @@ step
     >>Kill |cRXP_ENEMY_Vile Grells|r and |cRXP_ENEMY_Vile Corrupters|r and loot them for |cRXP_LOOT_Foul Ichor|r and the |cRXP_LOOT_Corruptor's Master Key.|r
     >>|cRXP_WARN_Check for |cRXP_ENEMY_Licillin(Rare|r) as you quest.|r
     .complete 13554,1 --6/6 Foul Ichor
-    .complete 13529,2 --8/8 Vile Grell slain	
-	.collect 44927,1,13557	
+    .complete 13529,2 --8/8 Vile Grell slain
+	.collect 44927,1,13557
 	>>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Corruptor's Master Key.|r
-    .accept 13557 >>Accept Bearer of Good Fortune	
+    .accept 13557 >>Accept Bearer of Good Fortune
 	.mob Vile Grell
 	.mob Vile Corrup
-	.unitscan Licillin	
-    .use 44927 
+	.unitscan Licillin
+    .use 44927
 step
     .goto 62,56.79,33.52,20,0
     .goto 62,57.43,33.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tClick on the |cRXP_PICK_Disgusting Workbench|r |cFFfa9602in the back of the cave.|r
-    .accept 13831 >>Accept A Troubling Prescription  
+    .accept 13831 >>Accept A Troubling Prescription
 step
     #completewith next
     .deathskip >> Die and respawn |cFFfa9602rat the Spirit Healer.|
@@ -689,40 +689,40 @@ step
     .accept 7905 >>Accept The Darkmoon Faire
 	.target Darkmoon Faire Mystic Mage
     .dmf
-step 
+step
     .goto 89,38.58,49.38
     +|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darkmoon Faire Mystic Mage.|r
     .skipgossip
     .zoneskip 37
     .dmf
 	.target Darkmoon Faire Mystic Mage
-step 
+step
     #completewith next
     .goto 89,36.58,49.23,20 >>Walk |cFFfa9602into the Purple Zone|r to get teleported.
     .zoneskip 97
     .nodmf
-step 
+step
     .goto 57,52.28,89.47,5 >>|TInterface/cursor/crosshair/interact.blp:20|tClick the |cRXP_PICK_Exodar Portal.|r
     .zoneskip 97
     .nodmf
-step 
+step
     .goto 103,41.87,72.93,10 >>Enter |cFFfa9602Exodar City|r and |cFFfa9602go down the Spiral Staircase.|r
     .goto 103,48.33,62.94,10 >>Click the |cRXP_PICK_Stormwind Portal|r
     .zoneskip 84
     .nodmf
-step 
+step
 	.goto 84,62.81,71.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hero's Herald.|r
     .accept 46727 >>Accept Tides of War
 	.target Hero's Herald
     .nodmf
-step 
+step
     .nodmf
 	.goto 84,63.76,73.59
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Renato Gallina.|r
     .accept 332 >>Accept Wine Shop Advert
 	.target Renato Gallina
-step 
+step
     .nodmf
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bartlett the Brave|r |cFFfa9602in Goldshire.|r
     .goto 37,41.71,64.64

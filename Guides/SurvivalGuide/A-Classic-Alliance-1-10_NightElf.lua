@@ -230,7 +230,7 @@ step
 	#softcore
 	#completewith next
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
-step
+step << skip --logout skip
 	#hardcore
 	#completewith next
 	+|cRXP_WARN_Logout skip on the ledge behind the |cRXP_LOOT_Webwood Eggs|r. Move your character until it looks like they're floating, then log out, and back in|r

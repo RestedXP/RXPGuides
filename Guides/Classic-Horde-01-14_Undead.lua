@@ -656,7 +656,7 @@ step << Warlock
     #softcore
     #completewith ScarletC
     .cast 688 >>|cRXP_WARN_Cast|r |T136218:0|t[Summon Imp]
-step
+step << skip
     #hardcore
     #completewith next
     .goto 1420,26.027,60.607,-1
@@ -1327,6 +1327,7 @@ step << Mage
     .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
     .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] |cRXP_WARN_to learn|r |T236227:0|t[Fingers of Frost]
     .use 203753
+    .itemcount 203753,1
 step
     #hardcore
     #completewith BrillTurnin1
@@ -2449,6 +2450,7 @@ step << Mage
     .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item
     .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] |cRXP_WARN_to learn|r |T236227:0|t[Fingers of Frost.]
     .use 203753
+    .itemcount 203753,1
 step
     #xprate <1.5
     #hardcore
@@ -2874,16 +2876,17 @@ step << Mage/Warlock
     .turnin 405 >>Turn in The Prodigal Lich
     .target Bethor Iceshard
 step
-    #xprate <1.5 << !Mage !Warlock
+    #optional
     #label LogoutSkip1
+step << skip
+    #xprate <1.5 << !Mage !Warlock
     .goto Undercity,84.86,20.34
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Perform a Logout Skip by positioning your character on the highest part of the lowest staircase until it looks like they're floating, then logging out and back in|r
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_CLICK HERE for an example|r
     >>|cRXP_WARN_If you can't do this, just run out of Undercity normally|r
-step << !Mage !Warlock
+step << skip -- !Mage !Warlock
     #xprate >1.49
     #ah << Priest
-    #label LogoutSkip1
     .goto Undercity,61.10,54.11 << Priest
     .goto Undercity,78.03,50.36 << Warrior
     .goto Undercity,82.75,65.23 << Rogue
@@ -3553,7 +3556,7 @@ step << Rogue
     .turnin 1978 >>Turn in The Deathstalkers
     .target Varimathras
     .isQuestTurnedIn 1886
-step << Rogue
+step << skip --Rogue
     #xprate <1.5
     #optional
     .goto Undercity,55.22,90.88
@@ -3569,7 +3572,7 @@ step << Rogue
     .accept 366 >>Accept Return the Book
     .target Bethor Iceshard
     .isOnQuest 1886
-step
+step << skip
     #xprate <1.5
     #label UndercityLS2
     .goto Undercity,84.86,20.34
@@ -3915,7 +3918,7 @@ step << Warrior
     .itemcount 1198,1
     .itemStat 16,QUALITY,<7
     .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<9.0
-step << Warrior/Rogue
+step << skip --Warrior/Rogue
     #xprate >1.49
     #season 0,1 << Warrior
     #optional
@@ -3961,7 +3964,7 @@ step << Warrior
     .use 204703
     .itemcount 204703,1
     .zoneskip Undercity,1
-step << Warrior
+step << skip --Warrior
     #xprate >1.49
     #season 2
     .goto 1458,48.906,70.156
@@ -3985,7 +3988,7 @@ step << Rogue/Warrior/Priest
     .turnin 411 >>Turn in The Prodigal Lich Returns
     .target Bethor Iceshard
     .zoneskip Undercity,1
-step << Rogue/Warrior
+step << skip --Rogue/Warrior
     #xprate <1.5
     #optional
     #label UndercityLS3
@@ -4078,7 +4081,7 @@ step << Priest
     .itemcount 11287,1
     .itemStat 18,QUALITY,<7
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
-step << Priest
+step << skip --Priest
     #optional
     #label UndercityLS3
     .goto 1458,61.990,62.272
@@ -4130,7 +4133,7 @@ step << Rogue
     .turnin 1978 >>Turn in The Deathstalkers
     .target Varimathras
     .isQuestTurnedIn 1886
-step << Rogue
+step << skip --Rogue
     #optional
     .goto Undercity,55.22,90.88
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Position your character on the edge of the circle until it looks like they're floating. Perform a Logout Skip by logging out and back in|r
@@ -4514,12 +4517,14 @@ step << Warlock/Mage/Priest
     .use 4786
     .itemcount 4786,1
     .xp <15,1
+    .equip 6,4786
 step << Rogue
     #completewith Shackles
     +Equip the |T132539:0|t[|cRXP_FRIENDLY_Agile Boots|r]
     .use 4788
     .itemcount 4788,1
     .xp <15,1
+    .equip 8,4788
 step
     #label DecrepitFerry
     .goto Silverpine Forest,58.39,34.79
@@ -4577,9 +4582,11 @@ step << Mage
     .collect 208754,1 --Spell Notes: TENGI RONEERA (1)
     .mob Dalaran Apprentice
 step << Mage
+    #season 2
     .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
     .train 401767 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: TENGI RONEERA|r] |cRXP_WARN_to learn|r |T132871:0|t[Regeneration.]
     .use 208754
+    .itemcount 211779,1
 step << Rogue
     #season 2
     .goto Silverpine Forest,45.25,68.06,20,0
@@ -4599,7 +4606,7 @@ step
     .goto Silverpine Forest,45.51,41.26,100 >> Travel back to The Sepulcher
 step
     #softcore
-    #completewith
+    #completewith next
     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
 step
     #xprate <1.5
@@ -4862,7 +4869,7 @@ step << Undead Warrior
     .train 403475 >>|cRXP_WARN_Use the|r |T134419:0|t[|cRXP_FRIENDLY_Rune of Devastate|r]
     .use 204703
     .itemcount 204703,1
-step << Undead Rogue/Undead Warrior
+step << skip --Undead Rogue/Undead Warrior
     #xprate <1.5
     #optional
     .goto 1458,48.906,70.156
@@ -4904,7 +4911,7 @@ step << Undead Rogue
     .turnin 1978 >>Turn in The Deathstalkers
     .target Varimathras
     .isQuestTurnedIn 1886
-step << Undead Rogue
+step << skip --Undead Rogue
     #xprate <1.5
     #optional
     .goto Undercity,55.22,90.88
@@ -5086,7 +5093,7 @@ step << Undead Rogue
     >>Abandon The Deathstalkers, there's no opportunity left to do it
     .abandon 1886 >> Abandon The Deathstalkers
     .isOnQuest 1886
-step << Undead !Rogue !Warrior
+step << skip --Undead !Rogue !Warrior
     #xprate <1.5
     #requires TouchOW << Undead Priest
     .goto Undercity,56.89,16.77 << Priest
@@ -5096,7 +5103,7 @@ step << Undead !Rogue !Warrior
     >>|cRXP_WARN_If you can't do this, just run out of Undercity normally|r
     .zoneskip Undercity,1
     .dungeon RFC
-step << Undead !Rogue !Warrior
+step << skip --Undead !Rogue !Warrior
     #xprate <1.5
     .goto Undercity,69.46,25.85 << Priest/Mage/Warlock
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Perform a Logout Skip by jumping on top of the stack of barrels, then logging out and back in|r << Priest/Mage/Warlock
@@ -5104,8 +5111,11 @@ step << Undead !Rogue !Warrior
     >>|cRXP_WARN_If you can't do this, just run out of Undercity normally|r
     .zoneskip Undercity,1
     .dungeon !RFC
-
-
+step << Undead !Rogue !Warrior
+    #xprate <1.5
+    #requires TouchOW << Undead Priest
+    #completewith ZeptoDurotar
+    .zone Tirisfal Glades >>Exit Undercity
 
 
 
@@ -6278,7 +6288,7 @@ step << Warlock
     #softcore
     #completewith ScarletC
     .cast 688 >>|cRXP_WARN_Cast|r |T136218:0|t[Summon Imp]
-step
+step << skip
     #hardcore
     #completewith next
     .goto 1420,26.027,60.607,-1
@@ -6950,6 +6960,7 @@ step << Mage
     .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item.
     .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] |cRXP_WARN_to learn|r |T236227:0|t[Fingers of Frost]
     .use 203753
+    .itemcount 203753,1
 step
     #hardcore
     #completewith BrillTurnin1
@@ -8177,6 +8188,7 @@ step << Mage
     .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item
     .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] |cRXP_WARN_to learn|r |T236227:0|t[Fingers of Frost.]
     .use 203753
+    .itemcount 203753,1
 step << skip
     #xprate <1.5
     #hardcore
@@ -8735,13 +8747,13 @@ step << Warlock
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bethor|r in the Magic Quarter
     .turnin 405 >>Turn in The Prodigal Lich
     .target Bethor Iceshard
-step << Warlock
+step << skip --Warlock
     #xprate <2.1
     .goto Undercity,84.86,20.34
     .goto Undercity,67.90,15.28,30 >>|cRXP_WARN_Perform a Logout Skip by positioning your character on the highest part of the lowest staircase until it looks like they're floating, then logging out and back in|r
     .link https://www.youtube.com/watch?v=-Bi95bCN8dM >> |cRXP_WARN_CLICK HERE for an example|r
     >>|cRXP_WARN_If you can't do this, just run out of Undercity normally|r
-step << !Mage !Warlock
+step << skip --!Mage !Warlock
     #xprate <2.1
     .goto Undercity,61.10,54.11 << Priest
     .goto Undercity,78.03,50.36 << Warrior
@@ -8918,6 +8930,7 @@ step << Mage
     .collect 211779,1 >>You need a |T135933:0|t[Comprehension Charm] from a |cRXP_FRIENDLY_Reagent Vendor|r to use the item
     .train 401765 >>|cRXP_WARN_Use the|r |T134939:0|t[|cRXP_FRIENDLY_Spell Notes: RING SEFF OSTROF|r] |cRXP_WARN_to learn|r |T236227:0|t[Fingers of Frost.]
     .use 203753
+    .itemcount 211779,1
 step
     #xprate >2.09
     #hardcore

@@ -755,7 +755,7 @@ step
 step
     .goto Wetlands,9.49,59.69
     .fly Ironforge >> Fly to Ironforge
-step
+step << skip --logout skip
     #completewith next
     .goto Ironforge,56.23,46.83,0
     +Perform a Logout skip by jumping on top of one of the Gryphon's heads, and logging out, then back in

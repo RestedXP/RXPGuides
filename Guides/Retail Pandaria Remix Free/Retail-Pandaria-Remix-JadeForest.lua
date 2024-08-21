@@ -6,7 +6,7 @@
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group RestedXP Panda Remix
+#group RestedXP Pandaria Remix
 #name 1) Jade Forest Side Quests Tian Monastery
 #internal
 
@@ -503,7 +503,7 @@ step
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group RestedXP Panda Remix
+#group RestedXP Pandaria Remix
 #name 1) Jade Forest Side Quests Sprites Plight
 #internal
 
@@ -737,14 +737,14 @@ step
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group RestedXP Panda Remix
+#group RestedXP Pandaria Remix
 #name 1) Jade Forest Defiance Side Quests
 #internal
 
 -- step << Alliance
 --     #completewith next
 --     .goto 371,46.31,80.67,40 >>Look for the Treasure on the shrine.
-step <<  Horde
+step << Horde
     .goto 371,48.32,46.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Old Man Misteye|r
     .accept 29576 >>Accept An Air of Worry
@@ -940,7 +940,7 @@ step
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group RestedXP Panda Remix
+#group RestedXP Pandaria Remix
 #name 1) Jade Forest Cloud Serpent Side Quests
 #internal
 
@@ -965,16 +965,16 @@ step
     -- .turnin 80311 >>Turn in Order of the Cloud Serpent
     .accept 30134 >>Accept Wild Things
     .target Elder Anli
-step << Alliance
-    .goto 371,47.17,47.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jade Forest Flame Guardian|r
-    .accept 32498 >>Accept Honor the Flame
-    .target Jade Forest Flame Guardian
-step << Alliance
-    .goto 371,47.17,47.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Midsummer Bonfire|r
-    .turnin 32498 >>Turn in Honor the Flame
-    .target Midsummer Bonfire
+-- step << Alliance
+--     .goto 371,47.17,47.19
+--    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jade Forest Flame Guardian|r
+--    .accept 32498 >>Accept Honor the Flame
+--    .target Jade Forest Flame Guardian
+-- step << Alliance
+--     .goto 371,47.17,47.13
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Midsummer Bonfire|r
+--     .turnin 32498 >>Turn in Honor the Flame
+--     .target Midsummer Bonfire
 step
     #completewith next
     .goto 371,65.25,37.20,20,0
@@ -1108,20 +1108,7 @@ step
 step
     .goto 371,65.34,31.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Tong.|r
-    .accept 30140 >>Accept The Rider's Journey
-    .itemcount 78960,1
-    .target Instructor Tong
-step
-    .goto 371,65.34,31.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Tong.|r
-    .accept 30141 >>Accept The Rider's Journey
-    .itemcount 78961,1
-    .target Instructor Tong
-step
-    .goto 371,65.34,31.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Tong.|r
-    .accept 30139 >>Accept The Rider's Journey
-    .itemcount 78962,1
+    .daily 30140,30141,30139 >>Accept The Rider's Journey
     .target Instructor Tong
 step
     #completewith Egg hatched
@@ -1134,7 +1121,6 @@ step
     .isOnQuest 30139
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Skythorn|r
     .turnin 30139 >>Turn in The Rider's Journey
-    -- .itemcount 78962,1
     .target Instructor Skythorn
 step
     .goto 371,57.55,45.10
@@ -1142,14 +1128,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Skythorn|r
     .turnin 30140 >>Turn in The Rider's Journey
     .target Instructor Skythorn
-    -- .itemcount 78960,1
 step
     .isOnQuest 30141
     .goto 371,57.55,45.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Instructor Skythorn|r
     .turnin 30141 >>Turn in The Rider's Journey
     .target Instructor Skythorn
-    -- .itemcount 78961,1
 step
     #label Egg hatched
     .goto 371,57.55,45.10
@@ -1168,7 +1152,7 @@ step
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group RestedXP Panda Remix
+#group RestedXP Pandaria Remix
 #name 1) Pandaria Remix Leveling Guide: How to Use & Essential Tips
 #next 2) Pandaria Remix Introduction
 -- #subweight 11
@@ -1252,7 +1236,7 @@ step
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group RestedXP Panda Remix
+#group RestedXP Pandaria Remix
 #name 2) Pandaria Remix Introduction
 #displayname |cFFFCDC00Chapter 0|r - Timeless Isle Introduction
 #title Timeless Isle Introduction
@@ -1412,7 +1396,7 @@ step << Alliance
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group RestedXP Panda Remix
+#group RestedXP Pandaria Remix
 #name 3) Jade Forest Horde
 #displayname |cFFFCDC00Chapter 1|r - Jade Forest
 #title Jade Forest
@@ -2150,15 +2134,22 @@ step
 step
     #include 1) Jade Forest Cloud Serpent Side Quests
 step
-    .goto 371,47.17,47.19
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jade Forest Flame Guardian|r
-    .accept 32498 >>Accept Honor the Flame
-    .target Jade Forest Flame Guardian
+    #include X) August Celestial Daillies@startaugustjade-endaugustjade
 step
-    .goto 371,47.17,47.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Midsummer Bonfire|r
-    .turnin 32498 >>Turn in Honor the Flame
-    .target Midsummer Bonfire
+    .goto 371,48.32,46.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Old Man Misteye|r
+    .accept 29576 >>Accept An Air of Worry
+    .target Old Man Misteye
+-- step
+--    .goto 371,47.17,47.19
+--    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jade Forest Flame Guardian|r
+--    .accept 32498 >>Accept Honor the Flame
+--    .target Jade Forest Flame Guardian
+-- step
+--     .goto 371,47.17,47.13
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Midsummer Bonfire|r
+--     .turnin 32498 >>Turn in Honor the Flame
+--     .target Midsummer Bonfire
 step
     #include 1) Jade Forest Defiance Side Quests
 ]])
@@ -2167,7 +2158,7 @@ step
 RXPGuides.RegisterGuide([[
 #df
 #version 1
-#group RestedXP Panda Remix
+#group RestedXP Pandaria Remix
 #name 3) Jade Forest Alliance
 #displayname |cFFFCDC00Chapter 1|r - Jade Forest
 #title Jade Forest
@@ -2992,8 +2983,8 @@ step
     -- .accept 29894 >>Accept Spirits of the Water
     .goto 371,58.76,81.29
     .target +Pearlkeeper Fujin
--- step
--- august celestials
+step
+    #include X) August Celestial Daillies@startaugustjade-endaugustjade
 step
     #include 1) Jade Forest Cloud Serpent Side Quests
 step

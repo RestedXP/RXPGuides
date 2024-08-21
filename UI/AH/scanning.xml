@@ -44,20 +44,17 @@
         <NormalFont style="GameFontHighlightSmall"/>
     </Button>
     <Button name="RXP_IU_AH_ItemKindHeader" hidden="false" virtual="true">
-        <Size x="773" y="19"/>
+        <Size x="776" y="19"/>
         <Layers>
             <Layer level="BACKGROUND">
-                <FontString parentKey="Name" inherits="GameFontNormal" justifyH="CENTER" text="Foo">
+                <FontString parentKey="Name" inherits="GameFontNormal" justifyH="CENTER" text="Type">
                     <Size x="96" y="19"/>
                     <Anchors>
-                        <Anchor point="TOP">
-                            <Offset>
-                                <AbsDimension x="0" y="3"/>
-                            </Offset>
-                        </Anchor>
+                        <Anchor point="TOP"/>
                     </Anchors>
                 </FontString>
-                <Texture parentKey="Left" file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
+                <!-- TODO make Left and Right textures look better -->
+                <Texture parentKey="Left" file="Interface\AuctionFrame\UI-AuctionItemNameFrame" hidden="true">
                     <Size>
                         <AbsDimension x="10" y="19"/>
                     </Size>
@@ -70,7 +67,7 @@
                     </Anchors>
                     <TexCoords left="0" right="0.078125" top="0" bottom="1.0"/>
                 </Texture>
-                <Texture parentKey="Right" file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
+                <Texture parentKey="Right" file="Interface\AuctionFrame\UI-AuctionItemNameFrame" hidden="true">
                     <Size>
                         <AbsDimension x="10" y="19"/>
                     </Size>
@@ -88,16 +85,8 @@
                         <AbsDimension x="10" y="19"/>
                     </Size>
                     <Anchors>
-                        <Anchor point="LEFT" relativeKey="$parent.left" relativePoint="RIGHT">
-                            <Offset>
-                                <AbsDimension x="0" y="0"/>
-                            </Offset>
-                        </Anchor>
-                        <Anchor point="RIGHT" relativeKey="$parent.right" relativePoint="LEFT">
-                            <Offset>
-                                <AbsDimension x="0" y="0"/>
-                            </Offset>
-                        </Anchor>
+                        <Anchor point="LEFT" relativeKey="$parent.left" relativePoint="RIGHT"/>
+                        <Anchor point="RIGHT" relativeKey="$parent.right" relativePoint="LEFT"/>
                     </Anchors>
                     <TexCoords left="0.078125" right="0.75" top="0" bottom="1.0"/>
                 </Texture>
@@ -105,7 +94,7 @@
         </Layers>
     </Button>
     <Button name="RXP_IU_AH_ItemRow" hidden="false" virtual="true" enableMouse="true">
-        <Size x="773" y="37"/>
+        <Size x="776" y="37"/>
         <Layers>
             <Layer level="BACKGROUND">
                 <FontString parentKey="Name" inherits="GameFontNormal" justifyH="LEFT" text="$parentName">
@@ -128,30 +117,8 @@
                         </Anchor>
                     </Anchors>
                 </FontString>
-                <Texture parentKey="Left" file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
-                    <Size x="10" y="32"/>
-                    <Anchors>
-                        <Anchor point="LEFT">
-                            <Offset>
-                                <AbsDimension x="34" y="0"/>
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                    <TexCoords left="0" right="0.078125" top="0" bottom="1.0"/>
-                </Texture>
-                <Texture parentKey="Right" file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
-                    <Size x="10" y="32"/>
-                    <Anchors>
-                        <Anchor point="RIGHT">
-                            <Offset>
-                                <AbsDimension x="0" y="0"/>
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                    <TexCoords left="0.75" right="0.828125" top="0" bottom="1.0"/>
-                </Texture>
                 <Texture file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
-                    <Size x="10" y="32"/>
+                    <Size x="10" y="37"/>
                     <Anchors>
                         <Anchor point="LEFT" relativeKey="$parent.left" relativePoint="RIGHT"/>
                         <Anchor point="RIGHT" relativeKey="$parent.right" relativePoint="LEFT"/>
@@ -309,16 +276,8 @@
         </Scripts>
         <HighlightTexture parentKey="Highlight" file="Interface\HelpFrame\HelpFrameButton-Highlight" alphaMode="ADD">
             <Anchors>
-                <Anchor point="TOPLEFT">
-                    <Offset>
-                        <AbsDimension x="33" y="-2"/>
-                    </Offset>
-                </Anchor>
-                <Anchor point="BOTTOMRIGHT">
-                    <Offset>
-                        <AbsDimension x="0" y="2"/>
-                    </Offset>
-                </Anchor>
+                <Anchor point="TOPLEFT"/>
+                <Anchor point="BOTTOMRIGHT"/>
             </Anchors>
             <TexCoords left="0" right="1.0" top="0" bottom="0.578125"/>
         </HighlightTexture>
@@ -332,7 +291,7 @@
             </Frame>
             <Button inherits="RXP_IU_AH_ItemRow" parentKey="Best">
                 <Anchors>
-                    <Anchor point="TOPRIGHT" relativeKey="$parent.Header" relativePoint="BOTTOMRIGHT"/>
+                    <Anchor point="TOPLEFT" relativeKey="$parent.Header" relativePoint="BOTTOMLEFT"/>
                 </Anchors>
             </Button>
             <Button inherits="RXP_IU_AH_ItemRow" parentKey="Budget">
@@ -469,6 +428,28 @@
                     </Layer>
                 </Layers>
             </Button>
+            <Frame name="$parentScrollFrame" inherits="WowScrollBoxList" parentKey="ScrollBox">
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                            <AbsDimension x="21" y="-74"/>
+                        </Offset>
+                    </Anchor>
+                    <Anchor point="BOTTOMRIGHT">
+                        <Offset>
+                            <AbsDimension x="-9" y="37"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Frames>
+                    <EventFrame name="$parentScrollBar" inherits="WowTrimScrollBar" parentKey="ScrollBar">
+                        <Anchors>
+                            <Anchor point="TOPRIGHT" relativeTo="$parent" relativePoint="TOPRIGHT"/>
+                            <Anchor point="BOTTOMRIGHT" relativeTo="$parent" relativePoint="BOTTOMRIGHT"/>
+                        </Anchors>
+                    </EventFrame>
+                </Frames>
+            </Frame>
         </Frames>
     </Frame>
 </Ui>

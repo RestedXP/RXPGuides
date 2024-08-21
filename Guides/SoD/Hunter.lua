@@ -830,7 +830,7 @@ RXPGuides.RegisterGuide([[
     --Rune of the Sniper
 
 step
-    #season2
+    #season 2
     #completewith next
     .train 416091,1
     .zone Westfall >>Travel to Westfall
@@ -863,7 +863,7 @@ RXPGuides.RegisterGuide([[
     --Rune of the Sniper
 
 step
-    #season2
+    #season 2
     #completewith next
     .train 416091,1
     .zone Loch Modan >>Travel to Loch Modan
@@ -897,7 +897,7 @@ RXPGuides.RegisterGuide([[
     --Rune of Flanking
 
 step
-    #season2
+    #season 2
     #loop
     .goto Dun Morogh,43.4,65.6,20,0
     .goto Dun Morogh,49.2,61.4,20,0
@@ -913,7 +913,7 @@ step
     .mob Elder Crag Boar
     .mob Scarred Crag Boar
 step
-    #season2
+    #season 2
     .train 425762,1
     .goto Dun Morogh,37.78,42.55
     >>Use |T134026:0|t[Dun Morogh Pig Meat] near the corpse in the |cFFfa9602Iceflow Cavern|r to summon |cRXP_ENEMY_Jorul|r
@@ -939,7 +939,7 @@ RXPGuides.RegisterGuide([[
 
     --Rune of Flanking
 step
-    #season2
+    #season 2
     #loop
     .goto Teldrassil,42.6,52.6,20,0
     .goto Teldrassil,39.8,53.2,20,0
@@ -953,7 +953,7 @@ step
     .mob Strigid Screecher
     .mob Strigid Hunter
 step
-    #season2
+    #season 2
     .train 425762,1
     .goto Teldrassil,48.3,31.4
     >>Use |T134025:0|t[Teldrassil Bird Meat] near the corpse to summon |cRXP_ENEMY_Mowgh|r
@@ -1302,4 +1302,110 @@ step
     .train 416090 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of the Ravenous|r] |cRXP_WARN_to train|r |T132205:0|t[Rapid Killing]
     >>You also received an |T136091:0|t|cRXP_LOOT_Infernal Lasso|r trinket which can be used to tame Corehounds
     .use 220217
+]])
+
+RXPGuides.RegisterGuide([[
+    #classic
+    << Hunter SoD
+    #group RestedXP Rune & Books Guide
+    #subgroup Cloak
+    #title Hit and Run
+    #name Hit and Run - 50 (Burning Steppes)
+step
+    #completewith next
+    .zone Burning Steppes >>Travel to Burning Steppes
+step
+    >>Look for an |cRXP_ENEMY_Escaped Core Hound|r he can spawn in multiple spots in the zone, |cRXP_WARN_check your map for waypoints for possible spawn locations|r. Loot him for the rune
+    >>TIP: Instead of running around you can use |T132172:0|t[|cRXP_FRIENDLY_Eagle Eye|r] to scout for his position
+    .goto Burning Steppes,84.8,68.0,0
+    .goto Burning Steppes,83.8,60.0,0
+    .goto Burning Steppes,88.6,54.8
+    .goto Burning Steppes,61.6,54.4,0
+    .goto Burning Steppes,39.8,59.4,0
+    .goto Burning Steppes,31.8,53.0,0
+    .goto Burning Steppes,24.8,55.6,0
+    .unitscan Escaped Core Hound
+    .collect 226252,1 --rune of the guerrilla (1)
+step
+    .train 440563 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of the Guerrilla|r] |cRXP_WARN_to train|r |T132171:0|t[Hit and Run]
+    .use 226252
+]])
+
+RXPGuides.RegisterGuide([[
+    #classic
+    << Hunter SoD
+    #group RestedXP Rune & Books Guide
+    #subgroup Cloak
+    #title Resourcefulness
+    #name Resourcefulness - 58 (Eastern Plaguelands)
+step
+    #completewith next
+    .zone Eastern Plaguelands >>Travel to Eastern Plaguelands
+step
+    .goto Eastern Plaguelands,74.4,62.7
+    .goto Eastern Plaguelands,72.5,66.4,0
+    .goto Eastern Plaguelands,72.6,63.7,0
+    .goto Eastern Plaguelands,76.7,62.6,0
+    .goto Eastern Plaguelands,74.8,58.9,0
+    .goto Eastern Plaguelands,76.7,58.7,0
+    .goto Eastern Plaguelands,55.6,67.0,0
+    .goto Eastern Plaguelands,54.3,70.1,0
+    .goto Eastern Plaguelands,51.9,70.0,0
+    >>Kill and loot any |cRXP_ENEMY_Rotting Sludges|r and |cRXP_ENEMY_Living Decay|r untill you loot a |T132108:0|t[|cRXP_LOOT_Bubbling Green Ichor|r]
+    >>|cRXP_WARN_The ichor is a gray item, be careful not to vendor it!|r
+    .collect 20770,1 --Bubbling Green Ichor (1)
+    .mob Living Decay
+    .mob Rotting Sludge
+step
+    .goto Eastern Plaguelands,17.8,30.2
+    >>Head to Terrordale and kill |cRXP_ENEMY_Plagued Swines|r untill you loot a |T134046:0|t[|cRXP_LOOT_Tainted Boar Meat|r]
+    .collect 225942,1 --Tainted Boar Meat (1)
+    .mob Plagued Swine
+step
+    >>Use the |T134046:0|t[|cRXP_LOOT_Tainted Boar Meat|r] to combine it with the |T132108:0|t[|cRXP_LOOT_Bubbling Green Ichor|r] and create a |T134047:0|t[Rancid Hunk of Flesh]
+    .collect 225943,1 --Rancid Hunk of Flesh (1)
+    .use 225942
+step
+    .goto Eastern Plaguelands,22.68,37.12,-1
+    .goto Eastern Plaguelands,19.37,26.42,-1
+    .goto Eastern Plaguelands,29.83,39.05,-1
+    >>Look for a |cRXP_ENEMY_Carrion Grub|r or a |cRXP_ENEMY_Carrion Devourer|r. The closest possible spawns to Terrordale are just north and south of it
+    >>Use the |T134047:0|t[Rancid Hunk of Flesh] on it to feed it. |cRXP_WARN_The grub will spawn a skeleton after a short animation, loot it for|r |T134419:0|t[|cRXP_FRIENDLY_Rune of the Resourceful|r]
+    .use 225943
+    .collect 225955,1 --Rune of the resourceful (1)
+    .mob Carrion Grub
+    .mob Carrion Devourer
+step
+    .train 440557 >>Use |T134419:0|t[|cRXP_FRIENDLY_Rune of the Resourceful|r] |cRXP_WARN_to train|r |T132178:0|t[Resourcefulness]
+    .use 225955
+]])
+
+RXPGuides.RegisterGuide([[
+    #classic
+    << Hunter SoD
+    #group RestedXP Rune & Books Guide
+    #subgroup Cloak
+    #title Improved Volley
+    #name Improved Volley - 60 (Silithus)
+step
+    #completewith next
+    .zone Silithus >>Travel to Silithus
+step
+    >>Kill |cRXP_WARN_ANY mobs|r in silithus untill you loot a |T132997:0|t[|cRXP_LOOT_Busted Gizmo|r]. The droprate is relatively low but it can drop from all mobs in the zone
+    .collect 226526,1
+    .itemcount 226546,<1
+step
+    .goto Silithus,41.2,88.8
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Edwi Copperbolt|r at the Bronzebeard Encampment. Go through his dialogue to receive a |T133878:0|t[Desert Sonar]
+    .collect 226546,1 --Desert Sonar (1)
+    .itemcount 226546,<1
+step
+    .goto Silithus,36.00,71.00
+    >>|cRXP_WARN_Run around the spot marked on your map untill you see the ground moving. When you do, use the|r |T133878:0|t[Desert Sonar] |cRXP_WARN_to summon a |cRXP_ENEMY_Sandworm|r. Kill it and loot for the rune|r
+    >>The worm has a solid amount of HP and a burrow ability allowing it to disappear for a while. Make sure you're ready for a fight before spawning it
+    .collect 226587,1 --rune of shelling
+    .mob Sandworm
+step
+    .train 440560 >> Use the |T134419:0|t[|cRXP_FRIENDLY_Rune of Shelling|r] to train |T236179:0|t[|cRXP_FRIENDLY_Improved Volley|r]
+    .use 226587
 ]])

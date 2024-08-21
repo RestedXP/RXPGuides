@@ -8,6 +8,7 @@
 ## SavedVariables: RXPData, RXPDB, RXPSettings
 ## SavedVariablesPerCharacter: RXPCData, RXPCTrackingData, RXPCComms, RXPCSettings
 ## X-Curse-Project-ID: 486246
+## X-Wago-ID: ZKbebq61
 
 libs\embeds_Mainline.xml
 locale\locales.xml
@@ -27,6 +28,7 @@ LevelingTracker.lua
 Timers.lua
 Communications.lua
 Targeting.lua
+InventoryManager.lua
 
 map.lua
 functions.lua

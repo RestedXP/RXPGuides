@@ -635,7 +635,7 @@ step << Dwarf/Gnome
     .accept 6392 >>Accept Return to Gremlock
 step << Dwarf/Gnome
 #completewith next
-    .goto 1455/0,-1154.90002,-4820.70020
+    .goto Ironforge,55.501,47.743
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r
     .target Gryth Thurden
     .fly Goldshire >> Fly to Goldshire

@@ -91,7 +91,7 @@ end
 local GetAddOnMetadata = C_AddOns and C_AddOns.GetAddOnMetadata or _G.GetAddOnMetadata
 addon.release = GetAddOnMetadata(addonName, "Version")
 addon.title = GetAddOnMetadata(addonName, "Title")
-local cacheVersion = 24
+local cacheVersion = 25
 local L = addon.locale.Get
 
 if string.match(addon.release, 'project') then
@@ -127,6 +127,12 @@ else
     maxLevel = 60
 end
 
+function addon.GetSeason()
+
+return C_Seasons and C_Seasons.HasActiveSeason() and (not(C_GameRules and C_GameRules.IsHardcoreActive and C_GameRules.IsHardcoreActive()) and C_Seasons.GetActiveSeason()) or 0
+
+end
+
 local RXPGuides = {}
 addon.RXPGuides = RXPGuides
 _G.RXPGuides = RXPGuides
@@ -149,7 +155,7 @@ addon.player = {
     guid = UnitGUID("player"),
     name = UnitName("player"),
     maxlevel = maxLevel,
-    season = C_Seasons and C_Seasons.HasActiveSeason() and C_Seasons.GetActiveSeason(),
+    season = addon.GetSeason(),
 }
 addon.player.neutral = addon.player.faction == "Neutral"
 
@@ -1721,7 +1727,7 @@ end
 
 function addon.stepLogic.HardcoreCheck(step)
     local hc = addon.settings.profile.hardcore
-    local hcserver = C_GameRules and C_GameRules.IsHardcoreActive()
+    local hcserver = C_GameRules and C_GameRules.IsHardcoreActive and C_GameRules.IsHardcoreActive()
     if step.softcoreserver and hcserver or step.hardcoreserver and not hcserver then return false end
     if step.softcore and hc or step.hardcore and not hc then return false end
     return true
@@ -1741,6 +1747,7 @@ function addon.stepLogic.XpRateCheck(step)
             elseif addon.settings.profile.enableBetaFeatures and addon.settings.profile.season == 2 then
                 rate = 2.5
             elseif addon.settings.profile.season == 2 then
+                rate = 1.5
                 --local minLevel = tonumber(guide:sub(1,2))
                 local maxLevel = addon.currentGuide and tonumber(addon.currentGuide.name:match("%d+%-(%d+)"))
                 if UnitLevel('player') < 40 or (not step.elements or not maxLevel or maxLevel < 40) then
