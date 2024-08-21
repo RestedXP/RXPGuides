@@ -718,6 +718,11 @@ function addon.itemUpgrades:ActivateSpecWeights()
                 "ItemUpgrades selected spec (%s) differs from calculated spec (%s)",
                 addon.settings.profile.itemUpgradeSpec, spec)
         end
+
+        -- Handle spec name changes
+        if not session.specWeights[addon.settings.profile.itemUpgradeSpec] then
+            addon.settings.profile.itemUpgradeSpec = spec
+        end
     end
 
     if not addon.settings.profile.itemUpgradeSpec then return end
