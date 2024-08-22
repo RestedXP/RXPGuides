@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 #name 1Retail-Demon Hunter_Mardum
 #displayname Demon Hunter Starting Zone
 #next RestedXP Speedrun Guide\a) The Waking Shores Fresh (A) << Alliance
-#next RestedXP Speedrun Guide\a) The Waking Shores Fresh (H) << Horde
+#next RestedXP Speedrun Guide\a) BfA Intro;RestedXP Speedrun Guide\a) The Waking Shores Fresh (H) << Horde
 
 << DemonHunter
 

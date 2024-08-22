@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 #name 1Retail_Exile's Reach
 #displayname Exile's Reach
 #next RestedXP Speedrun Guide\a) The Waking Shores Fresh (A) << Alliance
-#next RestedXP Speedrun Guide\a) The Waking Shores Fresh (H) << Horde
+#next RestedXP Speedrun Guide\a) BfA Intro;RestedXP Speedrun Guide\a) The Waking Shores Fresh (H) << Horde
 
 << !DemonHunter !DK !Kultiran !DarkIronDwarf !LightforgedDraenei !Mechagnome !VoidElf !NightBorne !HighmountainTauren !Vulpera !MagharOrc !ZandalariTroll
 

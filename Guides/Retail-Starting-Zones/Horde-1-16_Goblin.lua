@@ -6,7 +6,7 @@ RXPGuides.RegisterGuide([[
 #subgroup Goblin Starting Zones
 #name Goblin Starting Zone
 #displayname Chapter 1 - Kezan & The Lost Isles
-#next RestedXP Speedrun Guide\a) The Waking Shores Fresh (H)
+#next RestedXP Speedrun Guide\a) BfA Intro;RestedXP Speedrun Guide\a) The Waking Shores Fresh (H)
 
 << Goblin !DK
 

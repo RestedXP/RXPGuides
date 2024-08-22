@@ -7,7 +7,7 @@ RXPGuides.RegisterGuide([[
 #name Retail-Dracthyr_The Forbidden Reach
 #displayname Chapter 1 - The Forbidden Reach
 #next RestedXP Speedrun Guide\a) The Waking Shores Fresh (A) << Alliance
-#next RestedXP Speedrun Guide\a) The Waking Shores Fresh (H) << Horde
+#next RestedXP Speedrun Guide\a) BfA Intro;RestedXP Speedrun Guide\a) The Waking Shores Fresh (H) << Horde
 #defaultfor Dracthyr
 
 << Dracthyr

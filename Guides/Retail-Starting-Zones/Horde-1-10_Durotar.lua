@@ -13,7 +13,7 @@ RXPGuides.RegisterGuide([[
 #displayname Chapter 1 - Valley of Trials << !Troll --Orc
 -- #displayname Valley of Trials (Orc) << !Orc !Troll
 #next 2Troll Starting Zone << !Troll --Orc
-#next RestedXP Speedrun Guide\a) The Waking Shores Fresh (H) << Troll
+#next RestedXP Speedrun Guide\a) BfA Intro;RestedXP Speedrun Guide\a) The Waking Shores Fresh (H) << Troll
 #defaultfor Orc !DK/Troll !DK
     
 << Horde
@@ -346,7 +346,7 @@ RXPGuides.RegisterGuide([[
 #displayname Chapter 2 - Echo Isles << !Troll --Orc
 -- #displayname Echo Isles (Troll) << !Troll !Orc
 #next 2Orc Starting Zone << Troll
-#next RestedXP Speedrun Guide\a) The Waking Shores Fresh (H) << !Troll --Orc
+#next RestedXP Speedrun Guide\a) BfA Intro;RestedXP Speedrun Guide\a) The Waking Shores Fresh (H) << !Troll --Orc
 #defaultfor Orc !DK/Troll !DK
 
 << Horde

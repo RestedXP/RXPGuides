@@ -11,7 +11,7 @@ RXPGuides.RegisterGuide([[
 #displayname Chapter 1 - Mag'har Orc Intro << MagharOrc !DK
 #displayname Chapter 1 - Vulpera Intro << Vulpera !DK
 #displayname Chapter 1 - New Deathknight Intro << DK
-#next RestedXP Speedrun Guide\a) The Waking Shores Fresh (H)
+#next RestedXP Speedrun Guide\a) BfA Intro;RestedXP Speedrun Guide\a) The Waking Shores Fresh (H)
 
 << HighmountainTauren/ZandalariTroll/Nightborne/MagharOrc/Vulpera/Horde Pandaren DK
 
