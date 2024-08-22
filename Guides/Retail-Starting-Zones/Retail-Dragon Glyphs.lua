@@ -779,42 +779,42 @@ step
 step
     #title Skyriding: Thul Medran
     .goto 2248,47.78,26.71
-    >>
+    >>Use |T372608:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40166,6 >>Pick up the Skyriding: Thul Medran
 step
     #title Skyriding Glyph: Thunderhead Peak
     .goto 2248,56.21,17.86
-    >>
+    >>Use |T372608:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40166,7 >>Pick up the Skyriding Glyph: Thunderhead Peak
 step
     #title Skyriding Glyph: The Three Shields
     .goto 2248,75.75,22.23
-    >>
+    >>Use |T372608:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40166,1 >>Pick up the Skyriding Glyph: The Three Shields
 step
     #title Skyriding Glyph: Cinderbrew Meadery
     .goto 2248,78.22,42.76
-    >>
+    >>Use |T372608:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40166,8 >>Pick up the Skyriding Glyph: Cinderbrew Meadery
 step
     #title Skyriding Glyph: Ironwold
     .goto 2248,71.91,47.22
-    >>
+    >>Use |T372608:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40166,10 >>Pick up the Skyriding Glyph: Ironwold
 step
     #title Skyriding Glyph: Sunken Shield
     .goto 2248,68.24,71.8
-    >>
+    >>Use |T372608:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40166,5 >>Pick up the Skyriding Glyph: Sunken Shield
 step
     #title Skyriding Glyph: Dhar Durgaz
     .goto 2248,44.47,79.75
-    >>
+    >>Use |T372608:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40166,4 >>Pick up the Skyriding Glyph: Dhar Durgaz
 step
     #title Skyriding Glyph: Dhar Oztan
     .goto 2248,23.15,58.56
-    >>
+    >>Use |T372608:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40166,2 >>Pick up the Skyriding Glyph: Dhar Oztan
 ]])
 
@@ -830,47 +830,47 @@ RXPGuides.RegisterGuide([[
 step
     #title Skyriding: The Stonevault Exterior
     .goto 2214,46.88,10.06
-    >>
+    >>Use |T372608:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40703,2 >>Pick up the Skyriding: The Stonevault Exterior
 step
     #title Skyriding Glyph: Gundargaz
     .goto 2214,49.02,31.61
-    >>
+    >>Use |T372608:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40703,1 >>Pick up the Skyriding Glyph: Gundargaz
 step
     #title Skyriding Glyph: Lost Mines
     .goto 2214,57.26,31.54
-    >>
+    >>Use |T372608:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40703,3 >>Pick up the Skyriding Glyph: Lost Mines
 step
     #title Skyriding Glyph: Chittering Den
     .goto 2214,69.46,34.52
-    >>
+    >>Use |T372608:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40703,4 >>Pick up the Skyriding Glyph: Chittering Den
 step
     #title Skyriding Glyph: The Rumbling Wastes
     .goto 2214,56.22,56.21
-    >>
+    >>Use |T372608:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40703,5 >>Pick up the Skyriding Glyph: The Rumbling Wastes
 step
     .goto 2214,62.93,66.06
     #title Skyriding Glyph: Taelloch Mine
-    >>
+    >>Use |T372608:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40703,8 >>Pick up the Skyriding Glyph: Taelloch Mine
 step
     .goto 2214,63.89,94.94
     #title Skyriding Glyph: Abyssal Excavation
-    >>
+    >>Use |T372608:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40703,7 >>Pick up the Skyriding Glyph: Abyssal Excavation
 step
     #title Skyriding Glyph: The Living Grotto
     .goto 2214,49.26,66.16
-    >>
+    >>Use |T372608:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40703,6 >>Pick up the Skyriding Glyph: The Living Grotto
 step
     #title Skyriding Glyph: The Waterworks
     .goto 2214,46.46,51.67
-    >>
+    >>Use |T372608:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40703,9 >>Pick up the Skyriding Glyph: The Waterworks
 ]])
 
@@ -886,54 +886,53 @@ RXPGuides.RegisterGuide([[
 step
     #title Skyriding: The Fangs
     .goto 2215,62.86,51.79
-    >>
+    >>Use |T372608:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40704,1 >>Pick up the Skyriding: The Fangs
 step
     #title Skyriding Glyph: Sina's Yearning
     .goto 2215,57.21,32.6
-    >>
+    >>Use |T372608:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40704,2 >>Pick up the Skyriding Glyph: Sina's Yearning
 step
     #title Skyriding Glyph: Sanguine Grasps
-    >>
+    >>Use |T372608:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .goto 2215,63.69,65.35
     .achievement 40704,3 >>Pick up the Skyriding Glyph: Sanguine Grasps
 step
     #title Skyriding Glyph: Dunelle's Kindness
     .goto 2215,69.95,44.23
-    >>
+    >>Use |T372608:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40704,4 >>Pick up the Skyriding Glyph: Dunelle's Kindness
 step
     #title Skyriding Glyph: Bleak Sand
     .goto 2215,62.74,7.21
-    >>
+    >>Use |T372608:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40704,5 >>Pick up the Skyriding Glyph: Bleak Sand
 step
     #title Skyriding Glyph: Mereldar
     .goto 2215,43.33,52.77
-    >>
+    >>Use |T372608:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40704,6 >>Pick up the Skyriding Glyph: Mereldar
 step
     #title Skyriding Glyph: Priory of the Sacred Flame
     .goto 2215,35.43,33.85
-    >>
+    >>Use |T372608:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40704,7 >>Pick up the Skyriding Glyph: Priory of the Sacred Flame
 step
     #title Skyriding Glyph: Fortune's Fall
     .goto 2215,30.77,51.58
-    >>
+    >>Use |T372608:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40704,8 >>Pick up the Skyriding Glyph: Fortune's Fall
 step
     #title Skyriding Glyph: Velhan's Claim
     .goto 2215,45.77,12.34
-    >>
+    >>Use |T372608:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40704,9 >>Pick up the Skyriding Glyph: Velhan's Claim
 step
     #title Skyriding Glyph: Tenir's Ascent
     .goto 2215,57.64,64.67
-    >>
+    >>Use |T372608:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40704,10 >>Pick up the Skyriding Glyph: Tenir's Ascent
-
 ]])
 
 RXPGuides.RegisterGuide([[
