@@ -1,7 +1,7 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..FrameXMLUI.xsd">
     <Script file="Guides/Import.lua"/>
-  
-  
+
+
  <Script file="Guides/Retail-Starting-Zones/Alliance-1-10_Azuremyst Isle.lua"/>
  <Script file="Guides/Retail-Starting-Zones/Alliance-1-10_Dun Morogh.lua"/>
  <Script file="Guides/Retail-Starting-Zones/Alliance-1-10_Elwynn Forest.lua"/>
@@ -20,6 +20,7 @@
  <Script file="Guides/Retail-Starting-Zones/Neutral-Demon Hunter_Mardum.lua"/>
  <Script file="Guides/Retail-Starting-Zones/Neutral-Pandaren_The Wandering Isle.lua"/>
  <Script file="Guides/Retail-Starting-Zones/Retail-Dragon Glyphs.lua"/>
+ <Script file="Guides/Retail-Starting-Zones/Earthen Starting Zone.lua"/>
 
 <Script file="Guides/Retail-Allied-Races/Retail-Alliance-DarkIronDwarf.lua"/>
 <Script file="Guides/Retail-Allied-Races/Retail-Alliance-Kultiran.lua"/>
