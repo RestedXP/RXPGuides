@@ -1688,17 +1688,27 @@ local function QuestWP(element)
     if element.currentObjective then
         local id = element.questId
         local objIndex = element.objIndex
+        local step = element.step
         if not addon.IsOnQuest(id) then
             element.currentObjective = 0
         else
             local quest = addon.GetQuestObjectives(id,element.step.index)
             local obj = quest and quest[objIndex]
             element.currentObjective = obj and obj.numFulfilled or 0
+            if element.objMax and element.objMax > 0 and element.currentObjective >= element.objMax then
+                local enabled = not element.skip
+                element.skip = true
+                local wpList = RXPCData.completedWaypoints[step.index or "tip"]
+                if wpList and element.wpHash then wpList[element.wpHash] = true end
+                if enabled then
+                    addon.UpdateMap()
+                end
+            end
         end
     end
 end
 events.questwaypoint = "QUEST_LOG_UPDATE"
-function addon.functions.questwaypoint(self, text, zone, x, y, radius, questId, objIndex, lowPrio)
+function addon.functions.questwaypoint(self, text, zone, x, y, radius, questId, objIndex, objMax, lowPrio)
     if type(self) == "string" then
         questId = tonumber(questId)
         objIndex = tonumber(objIndex)
@@ -1707,6 +1717,7 @@ function addon.functions.questwaypoint(self, text, zone, x, y, radius, questId, 
             return
         end
         local element = addon.functions.waypoint(self,text,zone,x,y,radius,lowPrio)
+        element.objMax = tonumber(objMax)
         element.questId = questId
         element.objIndex = objIndex
         element.currentObjective = 0
@@ -1717,7 +1728,7 @@ function addon.functions.questwaypoint(self, text, zone, x, y, radius, questId, 
 end
 
 events.questgoto = "QUEST_LOG_UPDATE"
-function addon.functions.questgoto(self, text, zone, x, y, radius, questId, objIndex, optional)
+function addon.functions.questgoto(self, text, zone, x, y, radius, questId, objIndex, objMax, optional)
     if type(self) == "string" then
         questId = tonumber(questId)
         objIndex = tonumber(objIndex)
@@ -1725,7 +1736,8 @@ function addon.functions.questgoto(self, text, zone, x, y, radius, questId, objI
         if not (questId and radius and objIndex) then
             return
         end
-        local element = addon.functions['goto'](self,text,zone,x,y,radius,optional)
+        local element = addon.functions['goto'](self,text,zone,x,y,radius,"0",optional)
+        element.objMax = tonumber(objMax)
         element.questId = questId
         element.objIndex = objIndex
         element.currentObjective = 0
