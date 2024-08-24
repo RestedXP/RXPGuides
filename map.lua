@@ -623,6 +623,7 @@ local function generatePins(steps, numPins, startingIndex, isMiniMap)
                             zone = element.zone,
                             parent = element.parent,
                             wpHash = element.wpHash,
+                            source = element,
                         })
                     end
                 end
@@ -723,6 +724,7 @@ local function generateLines(steps, numPins, startingIndex, isMiniMap)
                 range = element.range,
                 generated = flags,
                 step = step,
+                source = element,
                 parent = element.parent,
                 mapTooltip = element.mapTooltip,
             }
@@ -1139,7 +1141,15 @@ function addon.UpdateGotoSteps()
                         end
                     end
                     if element.radius then
-                        if dist <= element.radius then
+                        local source = element.source or element
+                        local objectiveCheck = true
+                        if source.currentObjective then
+                            if source.currentObjective <= source.previousObjective then
+                                objectiveCheck = false
+                            end
+                            source.previousObjective = source.currentObjective
+                        end
+                        if dist <= element.radius and objectiveCheck then
                             if element.persistent and not element.skip then
                                 element.skip = true
                                 addon.UpdateMap()
