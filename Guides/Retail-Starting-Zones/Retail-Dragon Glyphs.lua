@@ -774,7 +774,7 @@ step
 step
     #title Skyriding Glyph: Storm's Watch
     .goto 2248,37.88,40.96
-    >>
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40166,3 >>Pick up the Skyriding Glyph: Storm's Watch
 step
     #title Skyriding: Thul Medran
@@ -802,6 +802,11 @@ step
     >>Use |T4640490:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
     .achievement 40166,10 >>Pick up the Skyriding Glyph: Ironwold
 step
+    #title Skyriding Glyph: Mourning Rise
+    .goto 2248,62.12,44.95
+    >>Use |T4640490:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
+    .achievement 40166,9 >>Pick up the Skyriding Glyph: Mourning Rise
+step
     #title Skyriding Glyph: Sunken Shield
     .goto 2248,68.24,71.8
     >>Use |T4640490:0|t[Surge Forward] for a speed boost, |T4640498:0|t[Skyward Ascent] for an uplift and |T4640489:0|t[Second Wind] to renew vigor charges.
@@ -820,6 +825,7 @@ step
 
 RXPGuides.RegisterGuide([[
 #version 1
+#df
 #group RestedXP Skyriding Glyphs
 #subgroup The War Within
 #name B1 The Ringing Deeps Skyriding Glyphs
@@ -999,3 +1005,4 @@ step
     >>
     .achievement 40705,9 >>Pick up the Skyriding Glyph: Silken Ward
 ]])
+
